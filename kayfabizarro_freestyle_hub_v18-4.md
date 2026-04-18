@@ -3,7 +3,7 @@
 > Uncle FrizzleBob's Komik Kard Kult · v18.4  
 > The Social Story-Wrestling Card Game · 1–6 Players · 20–60 Min · CC BY-NC-SA 4.0
 
-*"This is not a game you play. This is a reality you negotiate, one card at a time, until somebody flinches. Nobody wins. Nobody loses. Everybody leaves slightly changed. That's the plan. Stay fluffy."*  
+*"This is not a game you play. It's a game you USE. This is a reality you negotiate, one card at a time, until somebody flinches. Nobody wins. Nobody loses. Everybody leaves slightly changed. That's the plan. Stay fluffy."*  
 — Uncle FrizzleBob
 
 ---
