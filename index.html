@@ -1204,13 +1204,23 @@ body.med-mode .fetch-status {
 </div><!-- /hub-wrap -->
 
 <script>
-/* ── CONFIG: Set your raw GitHub URLs here ── */
+/* ── CONFIG ── */
 const SOURCES = {
   kfb: 'https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/kayfabizarro_freestyle_hub_v18-4.md',
   med: 'https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/medkayfab_hub_v1-0.md'
 };
 
+const TAB_MAP = {
+  kfb: ['what','setup','turn','quest','socials','powers','ref'],
+  med: ['what','setup','turn','quest','socials','powers','addons','ref']
+};
+
 let currentMode = 'kfb';
+
+/* Safe hash setter — works in sandboxed iframes too */
+function setHash(hash) {
+  try { location.hash = hash; } catch(e) {}
+}
 
 function switchMode(mode) {
   currentMode = mode;
@@ -1223,17 +1233,18 @@ function switchMode(mode) {
     mode === 'kfb'
       ? 'Freestyle Kayfabizarro v18.4 · Georg von Westphalen'
       : 'MedKayfab v1.0 · Georg von Westphalen';
+  setHash(mode);
   fetchStatus(mode);
 }
 
 function showSection(mode, id, btn) {
-  const prefix = mode + '-';
   document.querySelectorAll('#panel-' + mode + ' .section')
     .forEach(s => s.classList.remove('active'));
   document.querySelectorAll('#' + mode + '-nav .nav-btn')
     .forEach(b => b.classList.remove('active'));
-  document.getElementById(prefix + id).classList.add('active');
+  document.getElementById(mode + '-' + id).classList.add('active');
   btn.classList.add('active');
+  setHash(mode + '-' + id);
 }
 
 function fetchStatus(mode) {
@@ -1243,87 +1254,26 @@ function fetchStatus(mode) {
     .then(r => {
       if (r.ok) {
         const d = new Date();
-        el.textContent = 'Rules loaded live from GitHub · ' + d.toLocaleDateString('de-DE') + ' ' + d.toLocaleTimeString('de-DE', {hour:'2-digit',minute:'2-digit'});
+        el.textContent = 'Rules live from GitHub · ' + d.toLocaleDateString('de-DE') + ' ' + d.toLocaleTimeString('de-DE', {hour:'2-digit',minute:'2-digit'});
       } else {
-        el.textContent = 'GitHub source unreachable — showing embedded rules';
+        el.textContent = 'GitHub unreachable — showing embedded rules';
       }
     })
-    .catch(() => {
-      el.textContent = 'Offline — showing embedded rules';
-    });
+    .catch(() => { el.textContent = 'Offline — showing embedded rules'; });
 }
 
-/* ── HASH ROUTING ── */
-/* Supported hashes:
-   #med              → MedKayfab, first tab
-   #kfb              → Kayfabizarro, first tab
-   #med-ref          → MedKayfab, Quick Ref tab
-   #med-setup        → MedKayfab, Setup tab
-   #med-turn         → MedKayfab, Your Turn tab
-   #med-quest        → MedKayfab, Quest Die tab
-   #med-socials      → MedKayfab, Socials tab
-   #med-powers       → MedKayfab, Powers tab
-   #med-addons       → MedKayfab, Add-Ons tab
-   #kfb-setup        → Kayfabizarro, Setup tab
-   #kfb-turn         → Kayfabizarro, Your Turn tab
-   #kfb-quest        → Kayfabizarro, Quest Die tab
-   #kfb-socials      → Kayfabizarro, Socials tab
-   #kfb-powers       → Kayfabizarro, Powers tab
-   #kfb-ref          → Kayfabizarro, Quick Ref tab
-*/
+/* Apply a hash string like "med" or "med-ref" or "kfb-setup" */
+function applyHash(raw) {
+  const h = (raw || '').replace(/^#/, '').trim();
+  if (!h) return;
 
-const TAB_LABELS = {
-  'kfb': { what:'What?', setup:'Setup', turn:'Your Turn', quest:'Quest Die', socials:'Socials', powers:'Powers', ref:'Quick Ref' },
-  'med': { what:'What?', setup:'Setup', turn:'Your Turn', quest:'Quest Die', socials:'Socials', powers:'Powers', addons:'Add-Ons', ref:'Quick Ref' }
-};
+  const dashIdx = h.indexOf('-');
+  const mode = dashIdx === -1 ? h : h.slice(0, dashIdx);
+  const tab  = dashIdx === -1 ? null : h.slice(dashIdx + 1);
 
-function applyHash(hash) {
-  if (!hash || hash === '#') { fetchStatus('kfb'); return; }
-  const h = hash.replace('#', '');
+  if (mode !== 'kfb' && mode !== 'med') return;
 
-  // mode only: #kfb or #med
-  if (h === 'kfb' || h === 'med') {
-    switchMode(h);
-    return;
-  }
-
-  // mode + tab: #med-ref, #kfb-setup etc.
-  const parts = h.split('-');
-  const mode = parts[0];
-  const tab  = parts.slice(1).join('-');
-
-  if ((mode === 'kfb' || mode === 'med') && tab) {
-    switchMode(mode);
-    const sectionEl = document.getElementById(mode + '-' + tab);
-    if (sectionEl) {
-      const navBtns = document.querySelectorAll('#' + mode + '-nav .nav-btn');
-      navBtns.forEach(b => {
-        b.classList.remove('active');
-        if (b.textContent.trim() === (TAB_LABELS[mode][tab] || '')) {
-          b.classList.add('active');
-        }
-      });
-      document.querySelectorAll('#panel-' + mode + ' .section').forEach(s => s.classList.remove('active'));
-      sectionEl.classList.add('active');
-    }
-  }
-}
-
-/* Update hash on tab click without page reload */
-function showSection(mode, id, btn) {
-  const prefix = mode + '-';
-  document.querySelectorAll('#panel-' + mode + ' .section')
-    .forEach(s => s.classList.remove('active'));
-  document.querySelectorAll('#' + mode + '-nav .nav-btn')
-    .forEach(b => b.classList.remove('active'));
-  document.getElementById(prefix + id).classList.add('active');
-  btn.classList.add('active');
-  history.replaceState(null, '', '#' + mode + '-' + id);
-}
-
-/* Update hash on mode switch */
-const _switchMode = switchMode;
-function switchMode(mode) {
+  /* Switch mode visually without setting hash again */
   currentMode = mode;
   document.body.classList.toggle('med-mode', mode === 'med');
   document.getElementById('panel-kfb').classList.toggle('active', mode === 'kfb');
@@ -1334,16 +1284,30 @@ function switchMode(mode) {
     mode === 'kfb'
       ? 'Freestyle Kayfabizarro v18.4 · Georg von Westphalen'
       : 'MedKayfab v1.0 · Georg von Westphalen';
-  history.replaceState(null, '', '#' + mode);
   fetchStatus(mode);
+
+  /* Activate tab if specified and valid */
+  if (tab && TAB_MAP[mode].includes(tab)) {
+    document.querySelectorAll('#panel-' + mode + ' .section')
+      .forEach(s => s.classList.remove('active'));
+    const target = document.getElementById(mode + '-' + tab);
+    if (target) target.classList.add('active');
+
+    /* Highlight correct nav button */
+    document.querySelectorAll('#' + mode + '-nav .nav-btn').forEach(b => {
+      b.classList.remove('active');
+      if (b.getAttribute('onclick') && b.getAttribute('onclick').includes("'" + tab + "'")) {
+        b.classList.add('active');
+      }
+    });
+  }
 }
 
-/* Handle browser back/forward */
-window.addEventListener('popstate', () => applyHash(window.location.hash));
+window.addEventListener('hashchange', () => applyHash(location.hash));
 
-/* Check on load */
-fetchStatus('kfb');
-applyHash(window.location.hash);
+/* On load: apply hash if present, else fetch status */
+applyHash(location.hash);
+if (!location.hash) fetchStatus('kfb');
 </script>
 
 </body>
