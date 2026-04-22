@@ -127,7 +127,7 @@ body.med .ph-title { color: var(--m-ink); }
   font-size: clamp(2rem, 5vw, 3.2rem);
   font-weight: 400;
 }
-.ph-title.kfb-logo em { color: var(--k-accent2); font-style: normal; }
+.ph-title.kfb-logo em { color: var(--k-accent); font-style: normal; }
 
 .ph-meta {
   font-size: 13px; color: var(--k-muted);
@@ -546,7 +546,7 @@ body.med .hub-foot { background: var(--m-bg2); border-top-color: var(--m-border)
 <div class="topbar">
   <button class="tb-btn active" id="tb-home" onclick="goPage('home',this)">
     <span class="tb-title">The Game</span>
-    <span class="tb-sub">Cut &amp; Play</span>
+    <span class="tb-sub">Cut &amp; Play Comics</span>
   </button>
   <div class="tb-sep"></div>
   <button class="tb-btn" id="tb-kfb" onclick="goPage('kfb',this)">
@@ -568,14 +568,13 @@ body.med .hub-foot { background: var(--m-bg2); border-top-color: var(--m-border)
     <div class="page-header-inner">
       <div class="ph-eyebrow">Uncle FrizzleBob's Komik Kard Kult</div>
       <div class="ph-title kfb-logo">KAYFA<em>BIZARRO</em> — The Game</div>
-      <div class="ph-meta">The Social Story-Wrestling Card Game · Free Cut &amp; Play · CC BY-NC-SA 4.0</div>
+      <div class="ph-meta">The Social Story-Wrestling Card Game by Georg v. Westphalen · Free Cut &amp; Play · CC BY-NC-SA 4.0</div>
     </div>
   </div>
 
   <div class="page-body">
     <!-- Sidebar -->
     <nav class="sidebar">
-      <div class="sidebar-label">Links</div>
       <div class="sidebar-section">Play</div>
       <a href="#kfb" onclick="goPage('kfb', document.getElementById('tb-kfb')); return false;">KayfaBizarro Rules</a>
       <a href="#med" onclick="goPage('med', document.getElementById('tb-med')); return false;">MedKayfab Rules</a>
@@ -593,7 +592,6 @@ body.med .hub-foot { background: var(--m-bg2); border-top-color: var(--m-border)
         <cite>— Uncle FrizzleBob (Professional Reality-Wrestler &amp; Epistemiologic Outlaw)</cite>
       </div>
 
-      <div class="lp-video-label">Watch: How to Play</div>
       <div class="lp-video">
         <iframe src="https://www.youtube.com/embed/O5LSnJ1WMt8?si=hyVJ3Wcf-iiVG9a7" title="KayfaBizarro — How to Play" allowfullscreen allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
       </div>
@@ -610,8 +608,8 @@ body.med .hub-foot { background: var(--m-bg2); border-top-color: var(--m-border)
         </a>
         <a class="lp-card med-card" href="#med" onclick="goPage('med', document.getElementById('tb-med')); return false;">
           <div class="lc-badge">Clinical Edition · Active Recall</div>
-          <div class="lc-title">MedKayfab</div>
-          <div class="lc-desc">Someone draws Fibby Fitz, rolls a 3, and has to explain atrial fibrillation to the table — from memory, without looking. They get it wrong. They get it right the next round. That's the game. <strong>Solo or 1–6.</strong></div>
+          <div class="lc-title">MedKayfab Medicine</div>
+          <div class="lc-desc">Someone draws Fibby Fitz — Atrial Fibrillation — and rolls a 3. Mechanism Flash. They have to explain the mechanism from memory, without looking. They get it wrong. They get it right the next round. <strong>That's the game. Solo or 1–6.</strong></div>
           <span class="lc-cta">Read the rules →</span>
         </a>
       </div>
@@ -640,6 +638,7 @@ body.med .hub-foot { background: var(--m-bg2); border-top-color: var(--m-border)
   <div class="page-body">
     <nav class="sidebar" id="toc-kfb">
       <div class="sidebar-label">Contents</div>
+      <a href="#kfb-booklet">Illustrated Rulebook</a>
       <a href="#kfb-what">What is this?</a>
       <a href="#kfb-setup">Setup</a>
       <a href="#kfb-ritual">Intro Ritual</a>
@@ -672,6 +671,21 @@ body.med .hub-foot { background: var(--m-bg2); border-top-color: var(--m-border)
 
       <div class="quote fb-quote">"This is not a game you play. This is a reality you negotiate, one card at a time, until somebody flinches. Nobody wins. Nobody loses. Everybody leaves slightly changed. That's the plan. Stay fluffy."<cite>— Uncle FrizzleBob</cite></div>
 
+      <div class="rules-section" id="kfb-booklet">
+        <div class="sec-title">Illustrated Rulebook</div>
+        <p>Uncle FrizzleBob's illustrated Anti-Rule Book — browse all pages inline.</p>
+        <div class="pdf-block">
+          <div class="pdf-bar">
+            <button onclick="pdfNav('kfb_book',-1)">← Prev</button>
+            <button onclick="pdfNav('kfb_book',1)">Next →</button>
+            <button onclick="pdfZoom('kfb_book',-0.25)">− Zoom</button>
+            <button onclick="pdfZoom('kfb_book',0.25)">+ Zoom</button>
+            <span class="pdf-info" id="kfb_book-pdf-info">—</span>
+          </div>
+          <div class="pdf-canvas" id="kfb_book-pdf-canvas"><div class="pdf-msg">Click "Next" to browse the illustrated rulebook.</div></div>
+        </div>
+      </div>
+
       <div class="rules-section" id="kfb-what">
         <div class="sec-title">What is this?</div>
         <p>You tell a <strong>shared story</strong> using cards, two dice, and whatever's in your head. One sentence at a time — everyone takes turns introducing a card and building on what came before, until the Quest Die hits 6 and the story lands.</p>
@@ -689,9 +703,8 @@ body.med .hub-foot { background: var(--m-bg2); border-top-color: var(--m-border)
 
       <div class="rules-section" id="kfb-setup">
         <div class="sec-title">Setup</div>
-        <p><em>Two minutes.</em></p>
         <div class="steps">
-          <div class="step-row"><span class="step-num">1</span><span class="step-label">Deal</span><span class="step-desc">Give 3 secret cards to each player.</span></div>
+          <div class="step-row"><span class="step-num">1</span><span class="step-label">Deal</span><span class="step-desc">Give 3 secret cards to each player. (Two minutes total.)</span></div>
           <div class="step-row"><span class="step-num">2</span><span class="step-label">Characters</span><span class="step-desc">Each player picks 1 card face-up and runs the Intro Ritual.</span></div>
           <div class="step-row"><span class="step-num">3</span><span class="step-label">Quest Reveal</span><span class="step-desc">Starter draws a Quest card, runs Intro Ritual. Quest Die to <strong>1</strong>.</span></div>
           <div class="step-row"><span class="step-num">4</span><span class="step-label">Stage</span><span class="step-desc">Place 3 Scene Cards face-down in the center.</span></div>
@@ -913,6 +926,7 @@ body.med .hub-foot { background: var(--m-bg2); border-top-color: var(--m-border)
   <div class="page-body">
     <nav class="sidebar" id="toc-med">
       <div class="sidebar-label">Contents</div>
+      <a href="#med-booklet">Illustrated Rulebook</a>
       <a href="#med-what">What is this?</a>
       <a href="#med-setup">Setup</a>
       <a href="#med-ritual">Intro Ritual</a>
@@ -946,6 +960,21 @@ body.med .hub-foot { background: var(--m-bg2); border-top-color: var(--m-border)
 
       <div class="quote fb-quote">It's 2am in the ambulance bay. Someone draws Fibby Fitz — Atrial Fibrillation — and rolls a 3. Mechanism Flash. They have to explain why the ventricles only catch every third beat, without looking at the card. They get it half-right. The table fills in the rest. By the end of the round, everyone at the table can describe the mechanism. <em>That's not a side effect of the game. That's the point.</em><cite>— Doc FrizzleBob, Professor of Anarcho-Medicine &amp; Reluctant Attending</cite></div>
 
+      <div class="rules-section" id="med-booklet">
+        <div class="sec-title">Illustrated Rulebook</div>
+        <p>Doc FrizzleBob's illustrated clinical rulebook — browse all pages inline.</p>
+        <div class="pdf-block">
+          <div class="pdf-bar">
+            <button onclick="pdfNav('med_book',-1)">← Prev</button>
+            <button onclick="pdfNav('med_book',1)">Next →</button>
+            <button onclick="pdfZoom('med_book',-0.25)">− Zoom</button>
+            <button onclick="pdfZoom('med_book',0.25)">+ Zoom</button>
+            <span class="pdf-info" id="med_book-pdf-info">—</span>
+          </div>
+          <div class="pdf-canvas" id="med_book-pdf-canvas"><div class="pdf-msg">Click "Next" to browse the illustrated rulebook.</div></div>
+        </div>
+      </div>
+
       <div class="rules-section" id="med-what">
         <div class="sec-title">What is this?</div>
         <p>You each play a Character — a <strong>clinician, a drug, an immune cell, a rogue signalling molecule, or a personified disease</strong>. Together you build a shared Clinical Stage and push a Medical Quest toward resolution.</p>
@@ -962,9 +991,8 @@ body.med .hub-foot { background: var(--m-bg2); border-top-color: var(--m-border)
 
       <div class="rules-section" id="med-setup">
         <div class="sec-title">Setup</div>
-        <p><em>2 minutes. Scrub in.</em></p>
         <div class="steps">
-          <div class="step-row"><span class="step-num">1</span><span class="step-label">Deal</span><span class="step-desc">Give 3 cards to each player. Keep them secret.</span></div>
+          <div class="step-row"><span class="step-num">1</span><span class="step-label">Deal</span><span class="step-desc">Give 3 cards to each player. Keep them secret. (Scrub in — two minutes.)</span></div>
           <div class="step-row"><span class="step-num">2</span><span class="step-label">Characters</span><span class="step-desc">Everyone picks 1 card face-up. Run the Intro Ritual — in character, out loud.</span></div>
           <div class="step-row"><span class="step-num">3</span><span class="step-label">Quest Reveal</span><span class="step-desc">Starting player draws Quest card, runs Intro Ritual, frames clinical tension. Quest Die to <strong>1</strong>.</span></div>
           <div class="step-row"><span class="step-num">4</span><span class="step-label">Go</span><span class="step-desc">Stage empty. Starting player tells the first story.</span></div>
@@ -1191,7 +1219,9 @@ body.med .hub-foot { background: var(--m-bg2); border-top-color: var(--m-border)
 <script>
 const PDF_SRC = {
   kfb: 'https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/Kayfabizarro_Protopia_WEB_v1.pdf',
-  med: 'https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/MedKayfab_Cardiology_WEB_v1.pdf'
+  med: 'https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/MedKayfab_Cardiology_WEB_v1.pdf',
+  kfb_book: 'https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/Kayfabizarro_Freestyle_ComicBooklet_WEB_v1.pdf',
+  med_book: 'https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/MedKayfab_Rules_ComicBooklet_WEB_v1.pdf'
 };
 
 /* ── NAV ── */
@@ -1305,8 +1335,11 @@ function scrollTo(id) {
 }
 
 /* ── PDF ── */
-let pdf={kfb:null,med:null}, pdfPage={kfb:1,med:1}, pdfTotal={kfb:0,med:0},
-    pdfScale={kfb:1.4,med:1.4}, pdfReady={kfb:false,med:false}, wSet=false;
+let pdf={kfb:null,med:null,kfb_book:null,med_book:null},
+    pdfPage={kfb:1,med:1,kfb_book:1,med_book:1},
+    pdfTotal={kfb:0,med:0,kfb_book:0,med_book:0},
+    pdfScale={kfb:1.4,med:1.4,kfb_book:1.4,med_book:1.4},
+    pdfReady={kfb:false,med:false,kfb_book:false,med_book:false}, wSet=false;
 function ensureWorker() {
   if (!wSet && window.pdfjsLib) {
     pdfjsLib.GlobalWorkerOptions.workerSrc='https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
