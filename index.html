@@ -5,17 +5,19 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>KayfaBizarro & MedKayfab — Uncle FrizzleBob's Hub</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,500;1,400&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Barlow+Condensed:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,600&family=Barlow+Semi+Condensed:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&family=IBM+Plex+Mono:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; }
 
 /* ── DESIGN TOKENS ── */
 :root {
-  /* Type — fallback stack until Fonteys PRO loads locally */
-  --ff-display: 'IBM Plex Sans', sans-serif; /* → Next Sunday when local */
-  --ff-body:    'IBM Plex Sans', -apple-system, sans-serif; /* → Fonteys PRO */
-  --ff-hand:    'IBM Plex Sans', sans-serif; /* → Baby Eliot */
+  /* Type */
+  --ff-display: 'Barlow Condensed', sans-serif;   /* hero wordmark, big headlines */
+  --ff-body:    'Barlow Semi Condensed', 'Barlow', sans-serif; /* UI, labels, steps */
+  --ff-text:    'Barlow', sans-serif;              /* body copy, longer paragraphs */
+  --ff-hand:    'Barlow Condensed', sans-serif;   /* marginalia / FrizzleBob italic */
   --ff-mono:    'IBM Plex Mono', 'SF Mono', Menlo, monospace;
 
   /* Scale */
@@ -90,9 +92,9 @@ body.med {
 
 /* ── BASE ── */
 body {
-  font-family: var(--ff-body);
-  font-size: var(--fs-base);
-  line-height: 1.6;
+  font-family: var(--ff-text);
+  font-size: 17px;
+  line-height: 1.65;
   background: var(--bg);
   color: var(--ink);
   -webkit-font-smoothing: antialiased;
@@ -102,7 +104,7 @@ body {
 a { color: inherit; text-decoration: none; }
 strong { font-weight: 700; }
 em { font-style: italic; }
-p { margin-bottom: 14px; max-width: var(--lay-content); line-height: 1.65; }
+p { margin-bottom: 14px; max-width: var(--lay-content); line-height: 1.65; font-family: var(--ff-text); font-size: 17px; }
 
 /* ── TOPBAR ── */
 .topbar {
@@ -153,20 +155,19 @@ body.med .page-header { border-bottom-color: var(--med-accent); }
   transition: color var(--dur-norm) var(--ease-out);
 }
 .ph-title {
-  font-family: var(--ff-body);
+  font-family: var(--ff-display);
   font-weight: 800;
-  font-size: clamp(28px, 4vw, 40px);
-  line-height: 1.05;
-  letter-spacing: -0.01em;
+  font-size: clamp(28px, 4vw, 46px);
+  line-height: 1.0;
+  letter-spacing: 0;
   margin-bottom: var(--sp-2);
   color: var(--ink);
   transition: color var(--dur-norm) var(--ease-out);
 }
-/* Home gets big display treatment */
 .ph-title.hero {
-  font-size: clamp(40px, 6.5vw, 72px);
+  font-size: clamp(48px, 7.5vw, 88px);
   line-height: 0.95;
-  letter-spacing: -0.02em;
+  letter-spacing: 0;
 }
 .ph-title em { font-style: normal; color: var(--accent); transition: color var(--dur-norm) var(--ease-out); }
 .ph-meta {
@@ -247,10 +248,10 @@ body.med .sidebar-label { border-bottom-color: var(--med-accent); }
 
 /* ── SECTION HEADERS ── */
 .sec-title {
-  font-family: var(--ff-body);
+  font-family: var(--ff-display);
   font-weight: 800;
-  font-size: 26px;
-  line-height: 1.1;
+  font-size: 28px;
+  line-height: 1.05;
   color: var(--ink);
   border-bottom: 2px solid var(--ink);
   padding-bottom: var(--sp-2);
@@ -261,16 +262,16 @@ body.med .sidebar-label { border-bottom-color: var(--med-accent); }
 }
 body.med .sec-title { border-bottom-color: var(--med-accent); }
 .sec-num {
-  font-family: var(--ff-body);
-  font-weight: 600;
-  font-size: var(--fs-sm);
+  font-family: var(--ff-mono);
+  font-weight: 500;
+  font-size: var(--fs-xs);
   color: var(--accent);
   transition: color var(--dur-norm);
 }
 .sec-sub {
-  font-family: var(--ff-body);
+  font-family: var(--ff-display);
   font-weight: 700;
-  font-size: var(--fs-base);
+  font-size: 18px;
   color: var(--accent);
   margin: var(--sp-6) 0 var(--sp-3);
   transition: color var(--dur-norm);
@@ -326,15 +327,15 @@ mark { background: var(--mark); padding: 0 2px; border-radius: 2px; }
 }
 .step-row:last-child { border-bottom: none; }
 .step-num {
-  font-family: var(--ff-body); font-weight: 700; font-size: var(--fs-sm);
+  font-family: var(--ff-mono); font-weight: 500; font-size: var(--fs-sm);
   color: var(--accent); min-width: 26px; flex-shrink: 0;
   transition: color var(--dur-norm);
 }
 .step-label {
-  font-weight: 700; font-size: 15px; min-width: 92px; flex-shrink: 0;
+  font-family: var(--ff-body); font-weight: 700; font-size: 17px; min-width: 92px; flex-shrink: 0;
   color: var(--ink); transition: color var(--dur-norm);
 }
-.step-desc { font-size: 15px; line-height: 1.55; color: var(--ink-2); flex: 1; }
+.step-desc { font-family: var(--ff-text); font-size: 17px; line-height: 1.6; color: var(--ink-2); flex: 1; }
 
 /* ── RITUAL ── */
 .ritual { margin: var(--sp-4) 0 var(--sp-5); max-width: var(--lay-content); }
@@ -613,7 +614,7 @@ body.med .ref-table { border-top-color: var(--med-accent); }
   <div class="page-header">
     <div class="page-header-inner">
       <div class="ph-eyebrow">Uncle FrizzleBob's Komik Kard Kult</div>
-      <div class="ph-title hero">Kayfa<em>Bizarro</em><br><span style="font-size:.45em;font-weight:800;letter-spacing:-.01em">— The Game</span></div>
+      <div class="ph-title hero"><em>KayfaBizarro</em> — The Game</div>
       <div class="ph-meta" style="margin-top:var(--sp-3)">The Social Story-Wrestling Card Game by Georg v. Westphalen · Free Cut &amp; Play Comics · CC BY-NC-SA 4.0</div>
     </div>
   </div>
@@ -645,13 +646,13 @@ body.med .ref-table { border-top-color: var(--med-accent); }
       <div class="lp-cards">
         <a class="lp-card" href="#kfb" onclick="goPage('kfb',document.getElementById('tb-kfb'));return false;">
           <div class="lc-badge">Original · Story Wrestling</div>
-          <div class="lc-title">KayfaBizarro Freestyle</div>
+          <div class="lc-title"><em style="font-style:normal;color:var(--accent)">KayfaBizarro</em> Freestyle</div>
           <div class="lc-desc">Six story modes from <em>Tragic</em> to <em>Forbidden</em>. Someone plays The Copernican Shift and triggers EGO TRIP — the Quest flips, the win condition reverses, and the table has to negotiate a new reality. <strong>1–6 players · 20–60 min.</strong></div>
           <span class="lc-cta">Read the rules →</span>
         </a>
         <a class="lp-card med-card" href="#med" onclick="goPage('med',document.getElementById('tb-med'));return false;">
           <div class="lc-badge" style="color:var(--med-accent)">Clinical Edition · Active Recall</div>
-          <div class="lc-title" style="color:var(--med-ink)">MedKayfab Medicine</div>
+          <div class="lc-title" style="color:var(--med-ink)"><em style="font-style:normal;color:var(--med-accent)">MedKayfab</em> Medicine</div>
           <div class="lc-desc" style="color:var(--med-muted)">Someone draws Fibby Fitz — Atrial Fibrillation — and rolls a 3. Mechanism Flash. They have to explain the mechanism from memory, without looking. They get it wrong. They get it right the next round. <strong style="color:var(--med-ink)">Solo or 1–6.</strong></div>
           <span class="lc-cta" style="color:var(--med-accent)">Read the rules →</span>
         </a>
@@ -670,7 +671,7 @@ body.med .ref-table { border-top-color: var(--med-accent); }
   <div class="page-header">
     <div class="page-header-inner">
       <div class="ph-eyebrow">Uncle FrizzleBob's Komik Kard Kult · v18.4</div>
-      <div class="ph-title">Kayfa<em>Bizarro</em> Freestyle Rules</div>
+      <div class="ph-title"><em>KayfaBizarro</em> — Freestyle Rules</div>
       <div class="ph-meta">The Social Story-Wrestling Card Game · 1–6 Players · 20–60 Min · CC BY-NC-SA 4.0</div>
     </div>
   </div>
@@ -944,7 +945,7 @@ body.med .ref-table { border-top-color: var(--med-accent); }
   <div class="page-header">
     <div class="page-header-inner">
       <div class="ph-eyebrow">Doc FrizzleBob's Medical Kard Kult · v1.0</div>
-      <div class="ph-title">MedKayfab Rules — <em>Mnemonic Medicine</em></div>
+      <div class="ph-title"><em>MedKayfab</em> Rules — Mnemonic Medicine</div>
       <div class="ph-meta">The Clinical Story Wrestling Card Game · Solo or 1–6 · 20–60 Min · CC BY-NC-SA 4.0</div>
     </div>
   </div>
