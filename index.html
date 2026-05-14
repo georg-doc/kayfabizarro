@@ -202,7 +202,7 @@ body.med .cta-dashed{color:var(--accent);border-color:var(--accent);}
 .step-row{display:flex;gap:var(--sp-5);align-items:baseline;padding:var(--sp-4) var(--sp-6);border-bottom:1px dashed var(--border);}
 .step-row:last-child{border-bottom:none;}
 .step-num{font-family:var(--ff-mono);font-weight:500;font-size:var(--fs-lg);color:var(--accent);min-width:30px;flex-shrink:0;line-height:1;}
-.step-label{font-family:var(--ff-ui);font-weight:700;font-size:var(--fs-sm);letter-spacing:var(--ls-stamp);text-transform:uppercase;color:var(--ink);min-width:90px;flex-shrink:0;padding-top:2px;}
+.step-label{font-family:var(--ff-ui);font-weight:700;font-size:var(--fs-base);letter-spacing:0.02em;text-transform:uppercase;color:var(--ink);min-width:90px;flex-shrink:0;line-height:var(--lh-norm);}
 .step-body{font-size:var(--fs-base);line-height:var(--lh-norm);color:var(--ink-2);flex:1;}
 
 .steps{max-width:var(--lay-prose);margin:var(--sp-4) 0;}
@@ -223,13 +223,13 @@ body.med .cta-dashed{color:var(--accent);border-color:var(--accent);}
 .mode-cell:nth-last-child(-n+2){border-bottom:none;}
 .mode-num{font-family:var(--ff-display);font-weight:800;font-size:28px;line-height:1;color:var(--accent);min-width:22px;flex-shrink:0;}
 .mode-name{font-family:var(--ff-ui);font-weight:700;font-size:var(--fs-base);color:var(--ink);margin-bottom:2px;}
-.mode-desc{font-size:var(--fs-sm);line-height:var(--lh-norm);color:var(--ink-3);}
+.mode-desc{font-size:var(--fs-base);line-height:var(--lh-norm);color:var(--ink-3);}
 
 /* SOCIAL CALLS */
 .socials-table{border:1px solid var(--border);border-radius:var(--r-3);overflow:hidden;max-width:var(--lay-prose);margin:var(--sp-4) 0;}
-.soc-row{display:flex;gap:0;border-bottom:1px dashed var(--border);}
+.soc-row{display:flex;gap:0;align-items:stretch;border-bottom:1px dashed var(--border);}
 .soc-row:last-child{border-bottom:none;}
-.soc-term{font-family:var(--ff-ui);font-weight:700;font-size:var(--fs-sm);letter-spacing:0.02em;background:var(--paper-3);padding:var(--sp-4) var(--sp-5);min-width:160px;flex-shrink:0;display:flex;align-items:flex-start;color:var(--ink);border-right:1px solid var(--border);}
+.soc-term{font-family:var(--ff-ui);font-weight:700;font-size:var(--fs-base);letter-spacing:0.02em;background:var(--paper-3);padding:var(--sp-4) var(--sp-5);min-width:160px;flex-shrink:0;display:flex;align-items:center;color:var(--ink);border-right:1px solid var(--border);}
 .soc-term.bingo{color:var(--kfb-accent);}
 .soc-term.boggle{color:#28507a;}
 .soc-term.bongo{color:#1a6040;}
@@ -240,9 +240,9 @@ body.med .soc-term.blodsinn{color:var(--med-rust);}
 
 /* GLOSSARY */
 .gloss-table{border:1px solid var(--border);border-radius:var(--r-3);overflow:hidden;max-width:var(--lay-prose);margin:var(--sp-4) 0;}
-.gloss-row{display:flex;border-bottom:1px dashed var(--border);}
+.gloss-row{display:flex;align-items:stretch;border-bottom:1px dashed var(--border);}
 .gloss-row:last-child{border-bottom:none;}
-.gloss-term{font-family:var(--ff-ui);font-weight:700;font-size:var(--fs-sm);letter-spacing:0.02em;text-transform:uppercase;background:var(--paper-3);padding:var(--sp-4) var(--sp-5);min-width:140px;flex-shrink:0;color:var(--ink);border-right:1px solid var(--border);display:flex;align-items:flex-start;}
+.gloss-term{font-family:var(--ff-ui);font-weight:700;font-size:var(--fs-base);letter-spacing:0.02em;text-transform:uppercase;background:var(--paper-3);padding:var(--sp-4) var(--sp-5);min-width:140px;flex-shrink:0;color:var(--ink);border-right:1px solid var(--border);display:flex;align-items:center;}
 .gloss-def{font-size:var(--fs-base);line-height:var(--lh-prose);color:var(--ink-2);padding:var(--sp-4) var(--sp-5);flex:1;}
 
 /* QUEST STRIP */
@@ -276,8 +276,8 @@ body.med .do{background:#d4ebe6;border-left-color:var(--med-accent);}
 
 .ref-table{width:100%;max-width:var(--lay-prose);border-collapse:collapse;margin:var(--sp-4) 0;}
 .ref-table tr{border-bottom:1px dashed var(--border);}
-.ref-table td{padding:10px 14px;font-size:var(--fs-base);line-height:var(--lh-norm);vertical-align:top;}
-.ref-table td:first-child{font-family:var(--ff-ui);font-weight:700;font-size:var(--fs-sm);color:var(--accent);white-space:nowrap;min-width:120px;padding-right:var(--sp-5);}
+.ref-table td{padding:10px 14px;font-size:var(--fs-base);line-height:var(--lh-norm);vertical-align:baseline;}
+.ref-table td:first-child{font-family:var(--ff-ui);font-weight:700;font-size:var(--fs-base);color:var(--accent);white-space:nowrap;min-width:120px;padding-right:var(--sp-5);}
 
 .pdf-block{margin:var(--sp-5) 0;max-width:var(--lay-prose);border:1px solid var(--border);border-radius:var(--r-3);overflow:hidden;}
 .pdf-bar{background:var(--head-bg);padding:8px 14px;display:flex;align-items:center;gap:var(--sp-2);}
@@ -341,6 +341,13 @@ body.med .mode-num.m6{color:var(--med-rust);}
 .lp-video-poster:hover .lp-play-btn{transform:scale(1.1);}
 .lp-video-label{font-family:var(--ff-ui);font-weight:600;font-size:var(--fs-sm);color:rgba(255,255,255,.85);letter-spacing:0.03em;text-shadow:0 1px 4px rgba(0,0,0,.7);background:rgba(0,0,0,.35);padding:5px 14px;border-radius:20px;}
 
+/* FOOTER VIDEO */
+.foot-video-wrap{background:var(--ink);padding:var(--sp-8) var(--sp-8) 0;}
+.foot-video-poster{position:relative;max-width:var(--lay-max);margin:0 auto;border-radius:var(--r-3);overflow:hidden;cursor:pointer;background:#111;min-height:200px;aspect-ratio:16/9;}
+.foot-video-poster img{width:100%;height:100%;object-fit:cover;display:block;transition:opacity var(--dur-norm);}
+.foot-video-poster:hover img{opacity:.85;}
+.foot-video-poster:hover .lp-play-btn{transform:scale(1.1);}
+
 /* PRINT */
 @media print{
   .topbar,.sidebar,.pdf-block,.lp-video,.hub-foot,.search-wrap,.search-results{display:none!important;}
@@ -358,7 +365,7 @@ body.med .mode-num.m6{color:var(--med-rust);}
 <div class="topbar">
   <a class="tb-wordmark" href="#home" onclick="goPage('home',null);return false;">
     <div class="tb-logo">K</div>
-    <span class="tb-name">Kayfabizarro</span>
+    <span class="tb-name">KayfaBizarro</span>
   </a>
   <nav class="tb-nav">
     <button class="tb-nav-btn active" id="tb-home" onclick="goPage('home',this)">The Game</button>
@@ -701,11 +708,11 @@ body.med .mode-num.m6{color:var(--med-rust);}
         <div class="sec-eyebrow">Akt I · Setup</div>
         <div class="sec-title">Setup</div>
         <div class="steps">
-          <div class="step-row-plain"><span class="step-num" style="font-family:var(--ff-mono);font-size:var(--fs-lg);color:var(--accent);min-width:30px;flex-shrink:0;">1</span><span class="step-label">Deal</span><span class="step-body">Give 3 secret cards to each player. Two minutes total.</span></div>
-          <div class="step-row-plain"><span class="step-num" style="font-family:var(--ff-mono);font-size:var(--fs-lg);color:var(--accent);min-width:30px;flex-shrink:0;">2</span><span class="step-label">Characters</span><span class="step-body">Each player picks 1 card from their hand, reveals it face-up, and runs the Intro Ritual.</span></div>
-          <div class="step-row-plain"><span class="step-num" style="font-family:var(--ff-mono);font-size:var(--fs-lg);color:var(--accent);min-width:30px;flex-shrink:0;">3</span><span class="step-label">Quest Reveal</span><span class="step-body"><strong>Fluffiest player (you know who)</strong> draws a Quest card and runs the Intro Ritual. Quest Die to <strong>1</strong>.</span></div>
-          <div class="step-row-plain"><span class="step-num" style="font-family:var(--ff-mono);font-size:var(--fs-lg);color:var(--accent);min-width:30px;flex-shrink:0;">4</span><span class="step-label">Stage</span><span class="step-body">The Stage starts empty. Three Scene slots, all open.</span></div>
-          <div class="step-row-plain"><span class="step-num" style="font-family:var(--ff-mono);font-size:var(--fs-lg);color:var(--accent);min-width:30px;flex-shrink:0;">5</span><span class="step-label">Go</span><span class="step-body">They take the first turn.</span></div>
+          <div class="step-row-plain"><span class="step-num">1</span><span class="step-label">Deal</span><span class="step-body">Give 3 secret cards to each player. Two minutes total.</span></div>
+          <div class="step-row-plain"><span class="step-num">2</span><span class="step-label">Characters</span><span class="step-body">Each player picks 1 card from their hand, reveals it face-up, and runs the Intro Ritual.</span></div>
+          <div class="step-row-plain"><span class="step-num">3</span><span class="step-label">Quest Reveal</span><span class="step-body"><strong>Fluffiest player (you know who)</strong> draws a Quest card and runs the Intro Ritual. Quest Die to <strong>1</strong>.</span></div>
+          <div class="step-row-plain"><span class="step-num">4</span><span class="step-label">Stage</span><span class="step-body">The Stage starts empty. Three Scene slots, all open.</span></div>
+          <div class="step-row-plain"><span class="step-num">5</span><span class="step-label">Go</span><span class="step-body">They take the first turn.</span></div>
         </div>
         <div class="blockquote">"New to this? Skip the Story-Mode Die for the first round - everyone just runs the Intro Ritual for their Character. Once everyone's in, roll as normal."</div>
       </div>
@@ -903,11 +910,11 @@ body.med .mode-num.m6{color:var(--med-rust);}
         <div class="sec-eyebrow">Akt I · Setup</div>
         <div class="sec-title">Setup</div>
         <div class="steps">
-          <div class="step-row-plain"><span class="step-num" style="font-family:var(--ff-mono);font-size:var(--fs-lg);color:var(--accent);min-width:30px;flex-shrink:0;">1</span><span class="step-label">Austeilen</span><span class="step-body">Jedem 3 Karten geheim geben. Zwei Minuten.</span></div>
-          <div class="step-row-plain"><span class="step-num" style="font-family:var(--ff-mono);font-size:var(--fs-lg);color:var(--accent);min-width:30px;flex-shrink:0;">2</span><span class="step-label">Charactere</span><span class="step-body">Jeder zieht 1 Karte aus seiner Hand, deckt sie offen auf und macht das Intro-Ritual.</span></div>
-          <div class="step-row-plain"><span class="step-num" style="font-family:var(--ff-mono);font-size:var(--fs-lg);color:var(--accent);min-width:30px;flex-shrink:0;">3</span><span class="step-label">Quest-Reveal</span><span class="step-body"><strong>Die flauschigste Person</strong> zieht eine Quest-Karte und macht das Intro-Ritual. Quest-Würfel auf <strong>1</strong>.</span></div>
-          <div class="step-row-plain"><span class="step-num" style="font-family:var(--ff-mono);font-size:var(--fs-lg);color:var(--accent);min-width:30px;flex-shrink:0;">4</span><span class="step-label">Bühne</span><span class="step-body">Die Bühne startet leer. Drei Scene-Slots, alle offen.</span></div>
-          <div class="step-row-plain"><span class="step-num" style="font-family:var(--ff-mono);font-size:var(--fs-lg);color:var(--accent);min-width:30px;flex-shrink:0;">5</span><span class="step-label">Los!</span><span class="step-body">Sie fängt mit der ersten Runde an.</span></div>
+          <div class="step-row-plain"><span class="step-num">1</span><span class="step-label">Austeilen</span><span class="step-body">Jedem 3 Karten geheim geben. Zwei Minuten.</span></div>
+          <div class="step-row-plain"><span class="step-num">2</span><span class="step-label">Charactere</span><span class="step-body">Jeder zieht 1 Karte aus seiner Hand, deckt sie offen auf und macht das Intro-Ritual.</span></div>
+          <div class="step-row-plain"><span class="step-num">3</span><span class="step-label">Quest-Reveal</span><span class="step-body"><strong>Die flauschigste Person</strong> zieht eine Quest-Karte und macht das Intro-Ritual. Quest-Würfel auf <strong>1</strong>.</span></div>
+          <div class="step-row-plain"><span class="step-num">4</span><span class="step-label">Bühne</span><span class="step-body">Die Bühne startet leer. Drei Scene-Slots, alle offen.</span></div>
+          <div class="step-row-plain"><span class="step-num">5</span><span class="step-label">Los!</span><span class="step-body">Sie fängt mit der ersten Runde an.</span></div>
         </div>
       </div>
 
@@ -1053,11 +1060,11 @@ body.med .mode-num.m6{color:var(--med-rust);}
         <div class="sec-eyebrow">Akt I · Setup</div>
         <div class="sec-title">Setup</div>
         <div class="steps">
-          <div class="step-row-plain"><span class="step-num" style="font-family:var(--ff-mono);font-size:var(--fs-lg);color:var(--accent);min-width:30px;flex-shrink:0;">1</span><span class="step-label">Deal</span><span class="step-body">Give 3 cards to each player. Keep them secret. Scrub in.</span></div>
-          <div class="step-row-plain"><span class="step-num" style="font-family:var(--ff-mono);font-size:var(--fs-lg);color:var(--accent);min-width:30px;flex-shrink:0;">2</span><span class="step-label">Characters</span><span class="step-body">Everyone picks 1 card, reveals it face-up, runs the Intro Ritual.</span></div>
-          <div class="step-row-plain"><span class="step-num" style="font-family:var(--ff-mono);font-size:var(--fs-lg);color:var(--accent);min-width:30px;flex-shrink:0;">3</span><span class="step-label">Quest Reveal</span><span class="step-body"><strong>Most caffeinated player</strong> draws a Quest card. Quest Die to <strong>1</strong>.</span></div>
-          <div class="step-row-plain"><span class="step-num" style="font-family:var(--ff-mono);font-size:var(--fs-lg);color:var(--accent);min-width:30px;flex-shrink:0;">4</span><span class="step-label">Stage</span><span class="step-body">Stage empty. Three Scene slots.</span></div>
-          <div class="step-row-plain"><span class="step-num" style="font-family:var(--ff-mono);font-size:var(--fs-lg);color:var(--accent);min-width:30px;flex-shrink:0;">5</span><span class="step-label">Go</span><span class="step-body">First turn.</span></div>
+          <div class="step-row-plain"><span class="step-num">1</span><span class="step-label">Deal</span><span class="step-body">Give 3 cards to each player. Keep them secret. Scrub in.</span></div>
+          <div class="step-row-plain"><span class="step-num">2</span><span class="step-label">Characters</span><span class="step-body">Everyone picks 1 card, reveals it face-up, runs the Intro Ritual.</span></div>
+          <div class="step-row-plain"><span class="step-num">3</span><span class="step-label">Quest Reveal</span><span class="step-body"><strong>Most caffeinated player</strong> draws a Quest card. Quest Die to <strong>1</strong>.</span></div>
+          <div class="step-row-plain"><span class="step-num">4</span><span class="step-label">Stage</span><span class="step-body">Stage empty. Three Scene slots.</span></div>
+          <div class="step-row-plain"><span class="step-num">5</span><span class="step-label">Go</span><span class="step-body">First turn.</span></div>
         </div>
       </div>
 
@@ -1219,7 +1226,18 @@ body.med .mode-num.m6{color:var(--med-rust);}
 
 
 <!-- ========== FOOTER ========== -->
-<div class="hub-foot">
+<!-- FOOTER VIDEO -->
+<div class="foot-video-wrap">
+  <div class="foot-video-poster" id="foot-video" onclick="playLpVideo('foot-video','O5LSnJ1WMt8')">
+    <img src="https://img.youtube.com/vi/O5LSnJ1WMt8/hqdefault.jpg" alt="KayfaBizarro - the original video" style="width:100%;height:100%;object-fit:cover;display:block;" onerror="this.style.display='none'">
+    <div class="lp-video-overlay">
+      <div class="lp-play-btn"><svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="32" cy="32" r="32" fill="rgba(0,0,0,0.55)"/><polygon points="26,20 50,32 26,44" fill="white"/></svg></div>
+      <div class="lp-video-label">KayfaBizarro — the original</div>
+    </div>
+  </div>
+</div>
+
+<div class="hub-foot" style="border-top:none;">
   <div class="foot-display">
     <div class="foot-big">STAY FLUFFY.</div>
     <div class="foot-sig">- Uncle FrizzleBob</div>
