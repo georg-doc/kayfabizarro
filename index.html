@@ -321,6 +321,16 @@ body.med .mode-num.m6{color:var(--med-rust);}
 .foot-bar a{color:var(--ink-3);border-bottom:1px dotted var(--ink-4);}
 .foot-bar a:hover{color:var(--ink);}
 
+/* LP VIDEO POSTER */
+.lp-video-wrap{max-width:var(--lay-max);margin:0 auto;padding:0 var(--sp-8) var(--sp-2);}
+.lp-video-poster{position:relative;width:100%;border-radius:var(--r-3);overflow:hidden;cursor:pointer;background:#111;border:1px solid var(--border);}
+.lp-video-poster img{width:100%;display:block;aspect-ratio:16/9;object-fit:cover;transition:opacity var(--dur-norm);}
+.lp-video-poster:hover img{opacity:.85;}
+.lp-video-overlay{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:var(--sp-3);}
+.lp-play-btn{width:72px;height:72px;filter:drop-shadow(0 2px 12px rgba(0,0,0,.6));transition:transform var(--dur-fast) var(--ease-out);}
+.lp-video-poster:hover .lp-play-btn{transform:scale(1.1);}
+.lp-video-label{font-family:var(--ff-ui);font-weight:600;font-size:var(--fs-sm);color:rgba(255,255,255,.85);letter-spacing:0.03em;text-shadow:0 1px 4px rgba(0,0,0,.7);background:rgba(0,0,0,.35);padding:5px 14px;border-radius:20px;}
+
 /* PRINT */
 @media print{
   .topbar,.sidebar,.pdf-block,.lp-video,.hub-foot,.search-wrap,.search-results{display:none!important;}
@@ -390,6 +400,17 @@ body.med .mode-num.m6{color:var(--med-rust);}
     <div class="hero-ctas">
       <a class="cta-dashed" href="https://georgvw.gumroad.com/" target="_blank" rel="noopener">Free Cut &amp; Play Comic Cards (PDF, PWYW) ↗</a>
       <button class="cta-solid" onclick="document.getElementById('home-origin').scrollIntoView({behavior:'smooth'})">Read the Anti-Rules ↓</button>
+    </div>
+  </div>
+
+  <!-- VIDEO CLICK-TO-PLAY EN -->
+  <div class="lp-video-wrap">
+    <div class="lp-video-poster" id="lp-video-en" onclick="playLpVideo('lp-video-en','2wT--0Y8jlk')">
+      <img src="https://img.youtube.com/vi/2wT--0Y8jlk/maxresdefault.jpg" alt="KayfaBizarro session" onerror="this.src='https://img.youtube.com/vi/2wT--0Y8jlk/hqdefault.jpg'">
+      <div class="lp-video-overlay">
+        <div class="lp-play-btn"><svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="32" cy="32" r="32" fill="rgba(0,0,0,0.55)"/><polygon points="26,20 50,32 26,44" fill="white"/></svg></div>
+        <div class="lp-video-label">Watch a session · plays on YouTube ↗</div>
+      </div>
     </div>
   </div>
 
@@ -506,6 +527,17 @@ body.med .mode-num.m6{color:var(--med-rust);}
     <div class="hero-ctas">
       <a class="cta-dashed" href="https://georgvw.gumroad.com/" target="_blank" rel="noopener">Freie Cut &amp; Play Comic-Karten (PDF, PWYW) ↗</a>
       <button class="cta-solid" onclick="document.getElementById('home_de-origin').scrollIntoView({behavior:'smooth'})">Lies die Anti-Regeln ↓</button>
+    </div>
+  </div>
+
+  <!-- VIDEO CLICK-TO-PLAY DE -->
+  <div class="lp-video-wrap">
+    <div class="lp-video-poster" id="lp-video-de" onclick="playLpVideo('lp-video-de','2wT--0Y8jlk')">
+      <img src="https://img.youtube.com/vi/2wT--0Y8jlk/maxresdefault.jpg" alt="KayfaBizarro Session" onerror="this.src='https://img.youtube.com/vi/2wT--0Y8jlk/hqdefault.jpg'">
+      <div class="lp-video-overlay">
+        <div class="lp-play-btn"><svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="32" cy="32" r="32" fill="rgba(0,0,0,0.55)"/><polygon points="26,20 50,32 26,44" fill="white"/></svg></div>
+        <div class="lp-video-label">Eine Runde ansehen · öffnet YouTube ↗</div>
+      </div>
     </div>
   </div>
 
@@ -1363,6 +1395,11 @@ function pdfNav(mode,dir){
 }
 function pdfZoom(mode,delta){
   pdfScale[mode]=Math.min(3,Math.max(0.5,pdfScale[mode]+delta));renderPdf(mode);
+}
+
+/* LP VIDEO */
+function playLpVideo(id,videoId){
+  window.open('https://www.youtube.com/watch?v='+videoId,'_blank','noopener');
 }
 
 /* INIT */
