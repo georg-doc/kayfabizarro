@@ -323,7 +323,7 @@ body.med .mode-num.m6{color:var(--med-rust);}
 
 /* LP VIDEO POSTER */
 .lp-video-wrap{max-width:var(--lay-max);margin:0 auto;padding:0 var(--sp-8) var(--sp-2);}
-.lp-video-poster{position:relative;width:100%;border-radius:var(--r-3);overflow:hidden;cursor:pointer;background:#111;border:1px solid var(--border);}
+.lp-video-poster{position:relative;width:100%;border-radius:var(--r-3);overflow:hidden;cursor:pointer;background:#1a1612;border:1px solid var(--border);min-height:200px;}
 .lp-video-poster img{width:100%;display:block;aspect-ratio:16/9;object-fit:cover;transition:opacity var(--dur-norm);}
 .lp-video-poster:hover img{opacity:.85;}
 .lp-video-overlay{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:var(--sp-3);}
@@ -406,10 +406,10 @@ body.med .mode-num.m6{color:var(--med-rust);}
   <!-- VIDEO CLICK-TO-PLAY EN -->
   <div class="lp-video-wrap">
     <div class="lp-video-poster" id="lp-video-en" onclick="playLpVideo('lp-video-en','2wT--0Y8jlk')">
-      <img src="https://img.youtube.com/vi/2wT--0Y8jlk/maxresdefault.jpg" alt="KayfaBizarro session" onerror="this.src='https://img.youtube.com/vi/2wT--0Y8jlk/hqdefault.jpg'">
+      <img src="https://img.youtube.com/vi/2wT--0Y8jlk/hqdefault.jpg" alt="KayfaBizarro session">
       <div class="lp-video-overlay">
         <div class="lp-play-btn"><svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="32" cy="32" r="32" fill="rgba(0,0,0,0.55)"/><polygon points="26,20 50,32 26,44" fill="white"/></svg></div>
-        <div class="lp-video-label">Watch a session · plays on YouTube ↗</div>
+        <div class="lp-video-label">Watch a session</div>
       </div>
     </div>
   </div>
@@ -533,10 +533,10 @@ body.med .mode-num.m6{color:var(--med-rust);}
   <!-- VIDEO CLICK-TO-PLAY DE -->
   <div class="lp-video-wrap">
     <div class="lp-video-poster" id="lp-video-de" onclick="playLpVideo('lp-video-de','2wT--0Y8jlk')">
-      <img src="https://img.youtube.com/vi/2wT--0Y8jlk/maxresdefault.jpg" alt="KayfaBizarro Session" onerror="this.src='https://img.youtube.com/vi/2wT--0Y8jlk/hqdefault.jpg'">
+      <img src="https://img.youtube.com/vi/2wT--0Y8jlk/hqdefault.jpg" alt="KayfaBizarro Session">
       <div class="lp-video-overlay">
         <div class="lp-play-btn"><svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="32" cy="32" r="32" fill="rgba(0,0,0,0.55)"/><polygon points="26,20 50,32 26,44" fill="white"/></svg></div>
-        <div class="lp-video-label">Eine Runde ansehen · öffnet YouTube ↗</div>
+        <div class="lp-video-label">Eine Runde ansehen</div>
       </div>
     </div>
   </div>
