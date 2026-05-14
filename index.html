@@ -1004,6 +1004,7 @@ body.med .mode-num.m6{color:var(--med-rust);}
   <div class="page-body">
     <nav class="sidebar" id="toc-med">
       <div class="sidebar-label">On This Page</div>
+      <a href="#med-booklet">Illustrated Rulebook</a>
       <a href="#med-what">What is this?</a>
       <a href="#med-setup">Setup</a>
       <a href="#med-ritual">Intro Ritual</a>
@@ -1021,6 +1022,13 @@ body.med .mode-num.m6{color:var(--med-rust);}
     </nav>
     <div class="main" id="med-content">
       <div class="blockquote">It's 2am in the ambulance bay. Someone draws Fibby Fitz - Atrial Fibrillation - and rolls a 3. Mechanism Flash. They explain why the ventricles only catch every third beat, without looking at the card. <em>That's not a side effect of the game. That's the point.</em><cite>- Doc FrizzleBob, Professor of Anarcho-Medicine &amp; Reluctant Attending</cite></div>
+
+      <div class="rules-section" id="med-booklet">
+        <div class="sec-eyebrow">Illustrated Rulebook</div>
+        <div class="sec-title">The Anti-Rule Book</div>
+        <p class="prose">Doc FrizzleBob's illustrated Anti-Rule Book - browse all pages inline.</p>
+        <div class="pdf-block"><div class="pdf-bar"><button onclick="pdfNav('med_book',-1)">← Prev</button><button onclick="pdfNav('med_book',1)">Next →</button><button onclick="pdfZoom('med_book',-.25)">− Zoom</button><button onclick="pdfZoom('med_book',.25)">+ Zoom</button><span class="pdf-info" id="med_book-pdf-info">—</span></div><div class="pdf-canvas" id="med_book-pdf-canvas"><div class="pdf-loading"><div class="pdf-spinner"></div></div></div></div>
+      </div>
 
       <div class="rules-section" id="med-what">
         <div class="sec-eyebrow">Akt I · Setup</div>
@@ -1379,7 +1387,11 @@ var pdf={},pdfPage={kfb:1,med:1,kfb_book:1,med_book:1},
     pdfScale={kfb:1.4,med:1.4,kfb_book:1.4,med_book:1.4},
     pdfReady={kfb:false,med:false,kfb_book:false,med_book:false};
 function ensureWorker(){
-  pdfjsLib.GlobalWorkerOptions.workerSrc='https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+  try {
+    pdfjsLib.GlobalWorkerOptions.workerSrc='https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+  } catch(e) {
+    pdfjsLib.GlobalWorkerOptions.workerSrc='';
+  }
 }
 function loadPdf(mode){
   ensureWorker();
@@ -1389,13 +1401,21 @@ function loadPdf(mode){
   if(!cv) return;
   cv.innerHTML='<div class="pdf-loading"><div class="pdf-spinner"></div><div class="pdf-msg" style="padding:0">Loading…</div></div>';
   if(info) info.textContent='Loading…';
-  pdfjsLib.getDocument({url:PDF_SRC[mode],cMapUrl:'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/cmaps/',cMapPacked:true})
-    .promise.then(function(doc){
+  // Fetch as ArrayBuffer first — avoids postMessage Headers cloning error in sandboxed iframes
+  fetch(PDF_SRC[mode])
+    .then(function(r){
+      if(!r.ok) throw new Error('HTTP '+r.status);
+      return r.arrayBuffer();
+    })
+    .then(function(buf){
+      return pdfjsLib.getDocument({data:buf,cMapUrl:'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/cmaps/',cMapPacked:true}).promise;
+    })
+    .then(function(doc){
       pdf[mode]=doc;pdfTotal[mode]=doc.numPages;pdfPage[mode]=1;pdfReady[mode]=true;
       cv.innerHTML='';
       renderPdf(mode);
     }).catch(function(err){
-      cv.innerHTML='<div class="pdf-msg" style="min-height:300px;display:flex;align-items:center;justify-content:center">Could not load PDF.<br><small style="opacity:.6">'+err.message+'</small></div>';
+      cv.innerHTML='<div class="pdf-msg" style="min-height:300px;display:flex;align-items:center;justify-content:center;flex-direction:column">Could not load PDF.<br><small style="opacity:.6;margin-top:6px">'+err.message+'</small></div>';
       if(info) info.textContent='Error';
     });
 }
@@ -1405,11 +1425,16 @@ function renderPdf(mode){
   if(info) info.textContent='Page '+pdfPage[mode]+' / '+pdfTotal[mode];
   var wrap=document.getElementById(mode+'-pdf-canvas');
   if(!wrap) return;
-  wrap.innerHTML='';
+  wrap.innerHTML='';  // clear immediately, before async
+  var token=Date.now();
+  wrap._renderToken=token;
   pdf[mode].getPage(pdfPage[mode]).then(function(page){
+    if(wrap._renderToken!==token) return; // stale render, abort
     var vp=page.getViewport({scale:pdfScale[mode]});
     var c=document.createElement('canvas');c.width=vp.width;c.height=vp.height;
-    wrap.appendChild(c);page.render({canvasContext:c.getContext('2d'),viewport:vp});
+    wrap.innerHTML='';  // clear again in case anything snuck in
+    wrap.appendChild(c);
+    page.render({canvasContext:c.getContext('2d'),viewport:vp});
   });
 }
 function pdfNav(mode,dir){
