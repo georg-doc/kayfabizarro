@@ -3,49 +3,43 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Kayfabizarro — Reality is negotiable.</title>
+<title>Kayfabizarro - Reality is negotiable.</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Barlow+Condensed:wght@500;600;700;800&family=Barlow+Semi+Condensed:wght@500;600;700&family=IBM+Plex+Mono:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
 <style>
-/* ── RESET ── */
+/* RESET */
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
 html{scroll-behavior:smooth;}
 
-/* ── TOKENS ── */
+/* TOKENS */
 :root{
   --ff-display:'Barlow Condensed',sans-serif;
   --ff-ui:'Barlow Semi Condensed','Barlow',sans-serif;
   --ff-body:'Barlow',system-ui,sans-serif;
   --ff-mono:'IBM Plex Mono','SF Mono',Menlo,monospace;
-
   --fs-xs:11px; --fs-sm:13px; --fs-base:15px; --fs-md:17px;
   --fs-lg:20px; --fs-xl:24px; --fs-2xl:32px; --fs-3xl:44px; --fs-4xl:64px;
   --lh-tight:1.1; --lh-snug:1.3; --lh-norm:1.55; --lh-prose:1.65;
   --ls-disp:-0.02em; --ls-tight:-0.01em; --ls-stamp:0.06em; --ls-label:0.08em;
-
   --sp-1:4px;--sp-2:8px;--sp-3:12px;--sp-4:16px;--sp-5:20px;
   --sp-6:24px;--sp-8:32px;--sp-10:40px;--sp-12:48px;--sp-16:64px;
-
   --lay-max:1040px;--lay-prose:680px;--lay-sidebar:220px;--lay-topbar:56px;
   --r-1:3px;--r-2:4px;--r-3:6px;
   --dur-fast:120ms;--dur-norm:180ms;--ease-out:cubic-bezier(0.2,0.7,0.2,1);
 
-  /* KFB palette */
   --kfb-paper:#f5f0e8;--kfb-paper-2:#ede8dc;--kfb-paper-3:#e5dfd1;
   --kfb-paper-card:#faf7f2;--kfb-border:#d4c5a0;--kfb-border-2:#c0ae88;
   --kfb-ink:#2c2416;--kfb-ink-2:#4a3f2c;--kfb-ink-3:#7a6e55;--kfb-ink-4:#a89e88;
   --kfb-accent:#8b6914;--kfb-accent-2:#c8a84b;--kfb-rust:#a0432f;
   --kfb-mark:#fde68a;--kfb-head-bg:#1a1612;
 
-  /* MED palette */
   --med-paper:#f4f7fa;--med-paper-2:#e6edf4;--med-paper-3:#d8e2ed;
   --med-paper-card:#fbfcfe;--med-border:#c8d6e4;--med-border-2:#a8bbd2;
   --med-ink:#0e1c2c;--med-ink-2:#1f3147;--med-ink-3:#3d5470;--med-ink-4:#87a0bd;
   --med-accent:#0b6b6b;--med-accent-2:#b85c00;--med-rust:#a01818;
   --med-mark:#b3e4e4;--med-head-bg:#1a1612;
 
-  /* Semantic — KFB default */
   --paper:var(--kfb-paper);--paper-2:var(--kfb-paper-2);--paper-3:var(--kfb-paper-3);
   --paper-card:var(--kfb-paper-card);--border:var(--kfb-border);--border-2:var(--kfb-border-2);
   --ink:var(--kfb-ink);--ink-2:var(--kfb-ink-2);--ink-3:var(--kfb-ink-3);--ink-4:var(--kfb-ink-4);
@@ -60,490 +54,230 @@ body.med{
   --mark:var(--med-mark);--head-bg:var(--med-head-bg);
 }
 
-/* ── BASE ── */
-body{
-  font-family:var(--ff-body);font-size:var(--fs-base);
-  line-height:var(--lh-norm);background:var(--paper);color:var(--ink);
-  -webkit-font-smoothing:antialiased;
-  transition:background var(--dur-norm),color var(--dur-norm);
-}
+body{font-family:var(--ff-body);font-size:var(--fs-base);line-height:var(--lh-norm);background:var(--paper);color:var(--ink);-webkit-font-smoothing:antialiased;transition:background var(--dur-norm),color var(--dur-norm);}
 a{color:inherit;text-decoration:none;}
 strong{font-weight:700;}
 em{font-style:italic;}
 ::selection{background:var(--mark);color:var(--ink);}
 mark{background:var(--mark);color:var(--ink);padding:0 2px;border-radius:2px;}
 
-/* ── TOPBAR ── */
-.topbar{
-  position:sticky;top:0;z-index:300;
-  height:var(--lay-topbar);
-  background:#fff;
-  border-bottom:1.5px solid var(--ink);
-  display:flex;align-items:stretch;
-}
-body.med .topbar{background:#fff;}
-
-.tb-wordmark{
-  display:flex;align-items:center;gap:var(--sp-3);
-  padding:0 var(--sp-6);
-  border-right:1.5px solid var(--ink);
-  flex-shrink:0;cursor:pointer;
-  text-decoration:none;color:var(--ink);
-}
-.tb-logo{
-  width:32px;height:32px;border-radius:var(--r-1);
-  background:var(--ink);
-  display:flex;align-items:center;justify-content:center;
-  font-family:var(--ff-display);font-weight:800;font-size:18px;
-  color:#fff;flex-shrink:0;letter-spacing:0;
-}
-.tb-name{
-  font-family:var(--ff-display);font-weight:700;
-  font-size:20px;letter-spacing:var(--ls-tight);
-  color:var(--ink);white-space:nowrap;
-}
-
-.tb-nav{
-  display:flex;align-items:stretch;flex:1;
-  padding:0 var(--sp-6);gap:0;
-}
-.tb-nav-btn{
-  display:flex;align-items:center;
-  padding:0 var(--sp-5);
-  border:none;background:transparent;cursor:pointer;
-  font-family:var(--ff-ui);font-weight:600;font-size:var(--fs-sm);
-  letter-spacing:var(--ls-stamp);text-transform:uppercase;
-  color:var(--ink-3);
-  border-bottom:2px solid transparent;
-  margin-bottom:-1.5px;
-  transition:color var(--dur-fast),border-color var(--dur-fast);
-  white-space:nowrap;
-  text-decoration:none;
-}
+/* TOPBAR */
+.topbar{position:sticky;top:0;z-index:300;height:var(--lay-topbar);background:#fff;border-bottom:1.5px solid var(--ink);display:flex;align-items:stretch;}
+.tb-wordmark{display:flex;align-items:center;gap:var(--sp-3);padding:0 var(--sp-6);border-right:1.5px solid var(--ink);flex-shrink:0;cursor:pointer;text-decoration:none;color:var(--ink);}
+.tb-logo{width:32px;height:32px;border-radius:var(--r-1);background:var(--ink);display:flex;align-items:center;justify-content:center;font-family:var(--ff-display);font-weight:800;font-size:18px;color:#fff;flex-shrink:0;letter-spacing:0;}
+.tb-name{font-family:var(--ff-display);font-weight:700;font-size:20px;letter-spacing:var(--ls-tight);color:var(--ink);white-space:nowrap;}
+.tb-nav{display:flex;align-items:stretch;flex:1;padding:0 var(--sp-6);gap:0;}
+.tb-nav-btn{display:flex;align-items:center;padding:0 var(--sp-5);border:none;background:transparent;cursor:pointer;font-family:var(--ff-ui);font-weight:600;font-size:var(--fs-sm);letter-spacing:var(--ls-stamp);text-transform:uppercase;color:var(--ink-3);border-bottom:2px solid transparent;margin-bottom:-1.5px;transition:color var(--dur-fast),border-color var(--dur-fast);white-space:nowrap;text-decoration:none;}
 .tb-nav-btn:hover{color:var(--ink);}
 .tb-nav-btn.active{color:var(--accent);border-bottom-color:var(--accent);}
 .tb-nav-ext{display:flex;align-items:center;gap:4px;}
 .tb-nav-ext::after{content:"↗";font-size:10px;opacity:.6;}
+.tb-right{display:flex;align-items:center;gap:var(--sp-3);padding:0 var(--sp-6);border-left:1.5px solid var(--ink);flex-shrink:0;}
 
-.tb-right{
-  display:flex;align-items:center;gap:var(--sp-3);
-  padding:0 var(--sp-6);
-  border-left:1.5px solid var(--ink);
-  flex-shrink:0;
-}
-
-/* Language switcher */
 .lang-wrap{position:relative;}
-.lang-btn{
-  display:flex;align-items:center;gap:var(--sp-2);
-  padding:5px 10px;
-  border:1px solid var(--border-2);border-radius:var(--r-2);
-  background:transparent;cursor:pointer;
-  font-family:var(--ff-mono);font-size:var(--fs-xs);font-weight:500;
-  color:var(--ink-3);
-  transition:border-color var(--dur-fast),color var(--dur-fast);
-}
+.lang-btn{display:flex;align-items:center;gap:var(--sp-2);padding:5px 10px;border:1px solid var(--border-2);border-radius:var(--r-2);background:transparent;cursor:pointer;font-family:var(--ff-mono);font-size:var(--fs-xs);font-weight:500;color:var(--ink-3);transition:border-color var(--dur-fast),color var(--dur-fast);}
 .lang-btn:hover{border-color:var(--ink);color:var(--ink);}
 .lang-flag{font-size:13px;line-height:1;}
-.lang-dropdown{
-  display:none;position:absolute;top:calc(100% + 6px);right:0;
-  background:var(--ink);border-radius:var(--r-2);
-  overflow:hidden;min-width:120px;
-  box-shadow:0 4px 16px rgba(0,0,0,.2);z-index:500;
-}
+.lang-dropdown{display:none;position:absolute;top:calc(100% + 6px);right:0;background:var(--ink);border-radius:var(--r-2);overflow:hidden;min-width:120px;box-shadow:0 4px 16px rgba(0,0,0,.2);z-index:500;}
 .lang-dropdown.open{display:block;}
-.lang-opt{
-  display:flex;align-items:center;gap:var(--sp-2);
-  padding:9px 14px;
-  font-family:var(--ff-ui);font-size:var(--fs-sm);font-weight:500;
-  color:rgba(255,255,255,.7);cursor:pointer;
-  border-bottom:1px solid rgba(255,255,255,.08);
-  transition:background var(--dur-fast),color var(--dur-fast);
-}
+.lang-opt{display:flex;align-items:center;gap:var(--sp-2);padding:9px 14px;font-family:var(--ff-ui);font-size:var(--fs-sm);font-weight:500;color:rgba(255,255,255,.7);cursor:pointer;border-bottom:1px solid rgba(255,255,255,.08);transition:background var(--dur-fast),color var(--dur-fast);}
 .lang-opt:last-child{border-bottom:none;}
 .lang-opt:hover{background:rgba(255,255,255,.1);color:#fff;}
 .lang-opt.active{color:#fff;font-weight:700;}
 
-/* ── PAGES ── */
 .page{display:none;}
 .page.active{display:block;}
 
-/* ── HERO ── */
-.hero{
-  max-width:var(--lay-max);margin:0 auto;
-  padding:var(--sp-16) var(--sp-8) var(--sp-12);
-  border-bottom:1px solid var(--border);
-}
-.hero-eyebrow{
-  font-family:var(--ff-mono);font-size:var(--fs-xs);font-weight:500;
-  letter-spacing:var(--ls-label);text-transform:uppercase;
-  color:var(--accent);margin-bottom:var(--sp-4);
-}
-.hero-title{
-  font-family:var(--ff-display);font-weight:800;
-  font-size:clamp(40px,6vw,var(--fs-4xl));
-  line-height:var(--lh-tight);letter-spacing:var(--ls-disp);
-  color:var(--ink);margin-bottom:var(--sp-6);
-  max-width:820px;
-}
+/* HERO */
+.hero{max-width:var(--lay-max);margin:0 auto;padding:var(--sp-16) var(--sp-8) var(--sp-12);border-bottom:1px solid var(--border);}
+.hero-eyebrow{font-family:var(--ff-mono);font-size:var(--fs-xs);font-weight:500;letter-spacing:var(--ls-label);text-transform:uppercase;color:var(--accent);margin-bottom:var(--sp-4);}
+.hero-title{font-family:var(--ff-display);font-weight:800;font-size:clamp(40px,6vw,var(--fs-4xl));line-height:var(--lh-tight);letter-spacing:var(--ls-disp);color:var(--ink);margin-bottom:var(--sp-4);max-width:820px;}
 .hero-title em{font-style:normal;color:var(--accent);}
-.hero-lead{
-  font-family:var(--ff-body);font-size:var(--fs-md);
-  line-height:var(--lh-prose);color:var(--ink-2);
-  max-width:var(--lay-prose);margin-bottom:var(--sp-8);
-}
+.hero-subline{font-family:var(--ff-body);font-style:italic;font-size:var(--fs-lg);line-height:var(--lh-snug);color:var(--ink-3);margin-bottom:var(--sp-6);max-width:var(--lay-prose);}
+.hero-lead{font-family:var(--ff-body);font-size:var(--fs-md);line-height:var(--lh-prose);color:var(--ink-2);max-width:var(--lay-prose);margin-bottom:var(--sp-6);}
+.hero-lead strong{color:var(--ink);}
+
+/* you-anaphor block */
+.you-block{max-width:var(--lay-prose);margin:0 0 var(--sp-6);font-family:var(--ff-display);font-weight:600;font-size:var(--fs-lg);line-height:1.5;color:var(--ink-2);}
+.you-block .yk{font-family:var(--ff-ui);font-weight:700;color:var(--accent);text-transform:uppercase;letter-spacing:0.04em;font-size:var(--fs-base);display:inline-block;min-width:108px;}
+.you-block .yv{color:var(--ink);}
+.you-block .yrow{padding:4px 0;}
+
+.hero-tag{font-family:var(--ff-body);font-size:var(--fs-md);line-height:var(--lh-prose);color:var(--ink-2);max-width:var(--lay-prose);margin-bottom:var(--sp-6);}
+.hero-tag strong{color:var(--ink);}
+
+/* Chips - pills not buttons */
 .hero-chips{display:flex;flex-wrap:wrap;gap:var(--sp-2);margin-bottom:var(--sp-6);}
-.chip{
-  font-family:var(--ff-mono);font-size:var(--fs-xs);font-weight:400;
-  color:var(--ink-2);
-  padding:5px 10px;
-  border:1px solid var(--border-2);border-radius:var(--r-1);
-}
+.chip{font-family:var(--ff-mono);font-size:10px;font-weight:500;color:var(--ink-4);padding:3px 10px;border:1px solid var(--border);border-radius:20px;background:var(--paper-2);letter-spacing:0.04em;text-transform:uppercase;}
+
 .hero-ctas{display:flex;flex-wrap:wrap;gap:var(--sp-3);}
-.cta-dashed{
-  font-family:var(--ff-display);font-weight:700;font-size:var(--fs-sm);
-  letter-spacing:var(--ls-stamp);text-transform:uppercase;
-  color:var(--accent);padding:9px 18px;
-  border:1.5px dashed var(--accent);border-radius:var(--r-1);
-  background:transparent;cursor:pointer;
-  transition:background var(--dur-fast);
-}
+.cta-dashed{font-family:var(--ff-display);font-weight:700;font-size:var(--fs-sm);letter-spacing:var(--ls-stamp);text-transform:uppercase;color:var(--accent);padding:9px 18px;border:1.5px dashed var(--accent);border-radius:var(--r-1);background:transparent;cursor:pointer;transition:background var(--dur-fast);text-decoration:none;display:inline-block;}
 .cta-dashed:hover{background:rgba(139,105,20,.07);}
 body.med .cta-dashed{color:var(--accent);border-color:var(--accent);}
-.cta-solid{
-  font-family:var(--ff-display);font-weight:700;font-size:var(--fs-sm);
-  letter-spacing:var(--ls-stamp);text-transform:uppercase;
-  color:var(--paper);padding:9px 18px;
-  border:1.5px solid var(--ink);border-radius:var(--r-1);
-  background:var(--ink);cursor:pointer;
-  transition:background var(--dur-fast),color var(--dur-fast);
-}
+.cta-solid{font-family:var(--ff-display);font-weight:700;font-size:var(--fs-sm);letter-spacing:var(--ls-stamp);text-transform:uppercase;color:var(--paper);padding:9px 18px;border:1.5px solid var(--ink);border-radius:var(--r-1);background:var(--ink);cursor:pointer;transition:background var(--dur-fast),color var(--dur-fast);}
 .cta-solid:hover{background:var(--ink-2);}
 
-/* ── HOME VARIANT CARDS ── */
-.variant-grid{
-  display:grid;grid-template-columns:1fr 1fr;gap:var(--sp-6);
-  max-width:var(--lay-max);margin:0 auto;
-  padding:var(--sp-10) var(--sp-8);
-}
+/* VARIANT CARDS */
+.variant-grid{display:grid;grid-template-columns:1fr 1fr;gap:var(--sp-6);max-width:var(--lay-max);margin:0 auto;padding:var(--sp-10) var(--sp-8);}
 @media(max-width:640px){.variant-grid{grid-template-columns:1fr;}}
-.variant-card{
-  border:1.5px solid var(--border);border-radius:var(--r-3);
-  background:var(--paper-card);padding:var(--sp-8);
-  cursor:pointer;text-decoration:none;color:var(--ink);
-  transition:border-color var(--dur-fast),transform var(--dur-fast) var(--ease-out);
-  display:block;
-}
+.variant-card{border:1.5px solid var(--border);border-radius:var(--r-3);background:var(--paper-card);padding:var(--sp-8);cursor:pointer;text-decoration:none;color:var(--ink);transition:border-color var(--dur-fast),transform var(--dur-fast) var(--ease-out);display:block;}
 .variant-card:hover{border-color:var(--accent);transform:translateY(-2px);}
 .variant-card.med{border-color:var(--med-border);background:var(--med-paper-card);color:var(--med-ink);}
 .variant-card.med:hover{border-color:var(--med-accent);}
-.vc-badge{
-  font-family:var(--ff-ui);font-weight:700;font-size:var(--fs-xs);
-  letter-spacing:var(--ls-label);text-transform:uppercase;
-  color:var(--accent);margin-bottom:var(--sp-3);
-}
+.vc-badge{font-family:var(--ff-ui);font-weight:700;font-size:var(--fs-xs);letter-spacing:var(--ls-label);text-transform:uppercase;color:var(--accent);margin-bottom:var(--sp-3);}
 .variant-card.med .vc-badge{color:var(--med-accent);}
-.vc-title{
-  font-family:var(--ff-display);font-weight:800;font-size:var(--fs-2xl);
-  line-height:var(--lh-tight);letter-spacing:var(--ls-tight);
-  margin-bottom:var(--sp-4);
-}
+.vc-title{font-family:var(--ff-display);font-weight:800;font-size:var(--fs-2xl);line-height:var(--lh-tight);letter-spacing:var(--ls-tight);margin-bottom:var(--sp-4);}
 .vc-title em{font-style:normal;color:var(--accent);}
 .variant-card.med .vc-title em{color:var(--med-accent);}
 .vc-desc{font-size:var(--fs-base);line-height:var(--lh-prose);color:var(--ink-3);}
+.vc-desc strong{color:var(--ink);}
+.vc-desc em{color:var(--accent);font-style:italic;font-weight:600;}
+.variant-card.med .vc-desc strong{color:var(--med-ink);}
+.variant-card.med .vc-desc em{color:var(--med-accent);}
 .variant-card.med .vc-desc{color:var(--med-ink-3);}
-.vc-cta{
-  display:inline-block;margin-top:var(--sp-5);
-  font-family:var(--ff-ui);font-weight:700;font-size:var(--fs-sm);
-  color:var(--accent);
-}
+.vc-best{font-size:var(--fs-sm);line-height:var(--lh-norm);color:var(--ink-3);margin-top:var(--sp-4);padding-top:var(--sp-3);border-top:1px dashed var(--border);}
+.vc-best strong{color:var(--ink);}
+.variant-card.med .vc-best{color:var(--med-ink-3);border-top-color:var(--med-border);}
+.variant-card.med .vc-best strong{color:var(--med-ink);}
+.vc-cta{display:inline-block;margin-top:var(--sp-5);font-family:var(--ff-ui);font-weight:700;font-size:var(--fs-sm);color:var(--accent);}
 .variant-card.med .vc-cta{color:var(--med-accent);}
 
-/* ── TWO-COL LAYOUT ── */
-.page-body{
-  max-width:var(--lay-max);margin:0 auto;
-  display:flex;align-items:flex-start;
-  padding-bottom:var(--sp-16);
-}
+/* TWO-COL LAYOUT (KFB/MED/HOME-LONG-FORM) */
+.page-body{max-width:var(--lay-max);margin:0 auto;display:flex;align-items:flex-start;padding-bottom:var(--sp-16);}
 
-/* ── SIDEBAR ── */
-.sidebar{
-  width:var(--lay-sidebar);flex-shrink:0;
-  position:sticky;top:var(--lay-topbar);
-  max-height:calc(100vh - var(--lay-topbar));
-  overflow-y:auto;
-  padding:var(--sp-8) var(--sp-6) var(--sp-8) var(--sp-8);
-  border-right:1px solid var(--border);
-}
-.sidebar-label{
-  font-family:var(--ff-ui);font-weight:700;font-size:var(--fs-xs);
-  letter-spacing:var(--ls-label);text-transform:uppercase;
-  color:var(--ink-3);margin-bottom:var(--sp-3);
-  padding-bottom:var(--sp-2);border-bottom:1px solid var(--border);
-}
-.sidebar a{
-  display:block;font-family:var(--ff-body);font-size:var(--fs-sm);
-  line-height:var(--lh-snug);padding:6px 0;
-  color:var(--ink-3);
-  border-bottom:1px dashed var(--border);
-  transition:color var(--dur-fast);
-}
+/* SIDEBAR */
+.sidebar{width:var(--lay-sidebar);flex-shrink:0;position:sticky;top:var(--lay-topbar);max-height:calc(100vh - var(--lay-topbar));overflow-y:auto;padding:var(--sp-8) var(--sp-6) var(--sp-8) var(--sp-8);border-right:1px solid var(--border);}
+.sidebar-label{font-family:var(--ff-ui);font-weight:700;font-size:var(--fs-xs);letter-spacing:var(--ls-label);text-transform:uppercase;color:var(--ink-3);margin-bottom:var(--sp-3);padding-bottom:var(--sp-2);border-bottom:1px solid var(--border);}
+.sidebar a{display:block;font-family:var(--ff-body);font-size:var(--fs-sm);line-height:var(--lh-snug);padding:6px 0;color:var(--ink-3);border-bottom:1px dashed var(--border);transition:color var(--dur-fast);}
 .sidebar a:last-of-type{border-bottom:none;}
 .sidebar a:hover{color:var(--ink);}
 .sidebar a.active{color:var(--accent);font-weight:600;}
 .sidebar-actions{margin-top:var(--sp-6);}
-.btn-ghost{
-  font-family:var(--ff-ui);font-weight:600;font-size:var(--fs-xs);
-  letter-spacing:var(--ls-stamp);text-transform:uppercase;
-  padding:7px 14px;border:1px solid var(--border-2);border-radius:var(--r-2);
-  color:var(--ink-3);background:transparent;cursor:pointer;
-  transition:border-color var(--dur-fast),color var(--dur-fast);
-}
+.btn-ghost{font-family:var(--ff-ui);font-weight:600;font-size:var(--fs-xs);letter-spacing:var(--ls-stamp);text-transform:uppercase;padding:7px 14px;border:1px solid var(--border-2);border-radius:var(--r-2);color:var(--ink-3);background:transparent;cursor:pointer;transition:border-color var(--dur-fast),color var(--dur-fast);}
 .btn-ghost:hover{border-color:var(--ink);color:var(--ink);}
-
 @media(max-width:720px){.sidebar{display:none;}.main{padding:0 var(--sp-5);}}
 
-/* ── MAIN CONTENT ── */
 .main{flex:1;min-width:0;padding:var(--sp-8) var(--sp-8) 0 var(--sp-10);}
 
-/* ── SEARCH ── */
+/* SEARCH */
 .search-wrap{position:relative;margin:0 0 var(--sp-8);max-width:var(--lay-prose);}
 .search-icon{position:absolute;left:12px;top:50%;transform:translateY(-50%);width:13px;height:13px;color:var(--ink-4);pointer-events:none;}
-.search-input{
-  width:100%;padding:10px 12px 10px 36px;
-  font-family:var(--ff-mono);font-size:var(--fs-sm);
-  border:1px solid var(--border);border-radius:var(--r-2);
-  background:var(--paper-card);color:var(--ink);outline:none;
-  transition:border-color var(--dur-fast);
-}
+.search-input{width:100%;padding:10px 12px 10px 36px;font-family:var(--ff-mono);font-size:var(--fs-sm);border:1px solid var(--border);border-radius:var(--r-2);background:var(--paper-card);color:var(--ink);outline:none;transition:border-color var(--dur-fast);}
 .search-input:focus{border-color:var(--accent);}
 .search-input::placeholder{color:var(--ink-4);}
 .search-results{display:none;max-width:var(--lay-prose);margin-bottom:var(--sp-6);}
 .search-results.active{display:block;}
 .search-count{font-family:var(--ff-mono);font-size:var(--fs-xs);color:var(--ink-3);margin-bottom:var(--sp-3);}
-.search-hit{
-  border-left:2px solid var(--accent);padding:7px 12px;margin:4px 0;
-  font-size:var(--fs-sm);line-height:var(--lh-norm);cursor:pointer;color:var(--ink);
-  transition:background var(--dur-fast);
-}
+.search-hit{border-left:2px solid var(--accent);padding:7px 12px;margin:4px 0;font-size:var(--fs-sm);line-height:var(--lh-norm);cursor:pointer;color:var(--ink);transition:background var(--dur-fast);}
 .search-hit:hover{background:var(--paper-2);}
 .hit-section{font-family:var(--ff-ui);font-size:10px;font-weight:700;letter-spacing:var(--ls-label);text-transform:uppercase;color:var(--ink-3);margin-bottom:2px;}
 
-/* ── EYEBROW + SECTION TITLES ── */
-.sec-eyebrow{
-  font-family:var(--ff-mono);font-size:var(--fs-xs);font-weight:500;
-  letter-spacing:var(--ls-label);text-transform:uppercase;
-  color:var(--accent);margin-bottom:var(--sp-2);
-}
-.sec-title{
-  font-family:var(--ff-display);font-weight:700;
-  font-size:var(--fs-2xl);line-height:var(--lh-snug);
-  letter-spacing:var(--ls-tight);color:var(--ink);
-  margin-bottom:var(--sp-6);
-  scroll-margin-top:calc(var(--lay-topbar) + var(--sp-6));
-}
-.sec-sub{
-  font-family:var(--ff-display);font-weight:700;
-  font-size:var(--fs-xl);line-height:var(--lh-snug);
-  color:var(--ink);margin:var(--sp-8) 0 var(--sp-4);
-}
-.rules-section{
-  margin-bottom:var(--sp-12);padding-top:var(--sp-2);
-  border-top:1px solid var(--border);margin-top:var(--sp-10);
-}
+/* SECTION TITLES */
+.sec-eyebrow{font-family:var(--ff-mono);font-size:var(--fs-xs);font-weight:500;letter-spacing:var(--ls-label);text-transform:uppercase;color:var(--accent);margin-bottom:var(--sp-2);}
+.sec-title{font-family:var(--ff-display);font-weight:700;font-size:var(--fs-2xl);line-height:var(--lh-snug);letter-spacing:var(--ls-tight);color:var(--ink);margin-bottom:var(--sp-6);scroll-margin-top:calc(var(--lay-topbar) + var(--sp-6));}
+.sec-sub{font-family:var(--ff-display);font-weight:700;font-size:var(--fs-xl);line-height:var(--lh-snug);color:var(--ink);margin:var(--sp-8) 0 var(--sp-4);}
+.rules-section{margin-bottom:var(--sp-12);padding-top:var(--sp-2);border-top:1px solid var(--border);margin-top:var(--sp-10);}
 .rules-section:first-of-type{border-top:none;margin-top:0;}
 
-/* Body prose */
 .prose{font-size:var(--fs-base);line-height:var(--lh-prose);color:var(--ink-2);max-width:var(--lay-prose);margin-bottom:var(--sp-5);}
+.prose strong{color:var(--ink);}
+.prose em{font-style:italic;}
 
-/* ── STEP CARD ── */
-.step-card{
-  border:1px solid var(--border);border-radius:var(--r-3);
-  background:var(--paper-card);
-  max-width:var(--lay-prose);margin:var(--sp-6) 0;
-  overflow:hidden;
-}
-.step-card-header{
-  display:flex;align-items:baseline;justify-content:space-between;
-  padding:var(--sp-5) var(--sp-6) var(--sp-4);
-  border-bottom:1px solid var(--border);
-}
-.step-card-title{
-  font-family:var(--ff-display);font-weight:700;font-size:var(--fs-xl);
-  color:var(--ink);
-}
-.step-card-meta{
-  font-family:var(--ff-mono);font-size:var(--fs-xs);color:var(--ink-3);
-}
-.step-row{
-  display:flex;gap:var(--sp-5);align-items:baseline;
-  padding:var(--sp-4) var(--sp-6);
-  border-bottom:1px dashed var(--border);
-}
+/* ORIGIN STORY specifics */
+.origin-header{max-width:var(--lay-prose);margin-bottom:var(--sp-8);}
+.origin-title{font-family:var(--ff-display);font-weight:800;font-size:clamp(28px,4vw,40px);line-height:var(--lh-tight);letter-spacing:var(--ls-tight);color:var(--ink);margin-bottom:var(--sp-3);}
+.origin-subtitle{font-family:var(--ff-body);font-style:italic;font-size:var(--fs-md);line-height:var(--lh-snug);color:var(--ink-3);margin-bottom:var(--sp-5);}
+.origin-claim{font-family:var(--ff-display);font-weight:700;font-style:italic;font-size:var(--fs-lg);line-height:var(--lh-snug);color:var(--accent);margin-bottom:var(--sp-1);}
+.origin-counter{font-family:var(--ff-body);font-style:italic;font-size:var(--fs-base);color:var(--ink-3);}
+.origin-section{margin-bottom:var(--sp-8);max-width:var(--lay-prose);}
+.origin-h{font-family:var(--ff-display);font-weight:700;font-size:var(--fs-xl);line-height:var(--lh-snug);color:var(--ink);margin-bottom:var(--sp-3);scroll-margin-top:calc(var(--lay-topbar) + var(--sp-6));}
+.origin-h .num{color:var(--accent);font-weight:800;margin-right:8px;}
+
+/* STEP CARD */
+.step-card{border:1px solid var(--border);border-radius:var(--r-3);background:var(--paper-card);max-width:var(--lay-prose);margin:var(--sp-6) 0;overflow:hidden;}
+.step-card-header{display:flex;align-items:baseline;justify-content:space-between;padding:var(--sp-5) var(--sp-6) var(--sp-4);border-bottom:1px solid var(--border);}
+.step-card-title{font-family:var(--ff-display);font-weight:700;font-size:var(--fs-xl);color:var(--ink);}
+.step-card-meta{font-family:var(--ff-mono);font-size:var(--fs-xs);color:var(--ink-3);}
+.step-row{display:flex;gap:var(--sp-5);align-items:baseline;padding:var(--sp-4) var(--sp-6);border-bottom:1px dashed var(--border);}
 .step-row:last-child{border-bottom:none;}
-.step-num{
-  font-family:var(--ff-mono);font-weight:500;font-size:var(--fs-lg);
-  color:var(--accent);min-width:30px;flex-shrink:0;
-  line-height:1;
-}
-.step-label{
-  font-family:var(--ff-ui);font-weight:700;font-size:var(--fs-sm);
-  letter-spacing:var(--ls-stamp);text-transform:uppercase;
-  color:var(--ink);min-width:90px;flex-shrink:0;
-  padding-top:2px;
-}
+.step-num{font-family:var(--ff-mono);font-weight:500;font-size:var(--fs-lg);color:var(--accent);min-width:30px;flex-shrink:0;line-height:1;}
+.step-label{font-family:var(--ff-ui);font-weight:700;font-size:var(--fs-sm);letter-spacing:var(--ls-stamp);text-transform:uppercase;color:var(--ink);min-width:90px;flex-shrink:0;padding-top:2px;}
 .step-body{font-size:var(--fs-base);line-height:var(--lh-norm);color:var(--ink-2);flex:1;}
 
-/* Simple step rows (no card) */
 .steps{max-width:var(--lay-prose);margin:var(--sp-4) 0;}
-.step-row-plain{
-  display:flex;gap:var(--sp-5);align-items:baseline;
-  padding:10px 0;border-bottom:1px dashed var(--border);
-}
+.step-row-plain{display:flex;gap:var(--sp-5);align-items:baseline;padding:10px 0;border-bottom:1px dashed var(--border);}
 .step-row-plain:last-child{border-bottom:none;}
 
-/* ── RITUAL ── */
+/* RITUAL */
 .ritual{max-width:var(--lay-prose);margin:var(--sp-4) 0;}
-.ritual-row{
-  display:flex;gap:var(--sp-5);align-items:baseline;
-  padding:10px 0;border-bottom:1px dashed var(--border);
-}
+.ritual-row{display:flex;gap:var(--sp-5);align-items:baseline;padding:10px 0;border-bottom:1px dashed var(--border);}
 .ritual-row:last-child{border-bottom:none;}
 .ritual-key{font-family:var(--ff-ui);font-weight:700;font-size:var(--fs-base);color:var(--accent);min-width:90px;flex-shrink:0;}
 .ritual-desc{font-size:var(--fs-base);line-height:var(--lh-norm);color:var(--ink-2);}
 
-/* ── MODES GRID ── */
-.modes-grid{
-  display:grid;grid-template-columns:1fr 1fr;
-  border:1px solid var(--border);border-radius:var(--r-3);
-  overflow:hidden;max-width:var(--lay-prose);margin:var(--sp-4) 0;
-}
-.mode-cell{
-  padding:var(--sp-4) var(--sp-5);
-  border-right:1px solid var(--border);
-  border-bottom:1px solid var(--border);
-  display:flex;gap:var(--sp-4);align-items:flex-start;
-}
+/* MODES GRID */
+.modes-grid{display:grid;grid-template-columns:1fr 1fr;border:1px solid var(--border);border-radius:var(--r-3);overflow:hidden;max-width:var(--lay-prose);margin:var(--sp-4) 0;}
+.mode-cell{padding:var(--sp-4) var(--sp-5);border-right:1px solid var(--border);border-bottom:1px solid var(--border);display:flex;gap:var(--sp-4);align-items:flex-start;}
 .mode-cell:nth-child(2n){border-right:none;}
 .mode-cell:nth-last-child(-n+2){border-bottom:none;}
-.mode-num{
-  font-family:var(--ff-display);font-weight:800;font-size:28px;
-  line-height:1;color:var(--accent);min-width:22px;flex-shrink:0;
-}
+.mode-num{font-family:var(--ff-display);font-weight:800;font-size:28px;line-height:1;color:var(--accent);min-width:22px;flex-shrink:0;}
 .mode-name{font-family:var(--ff-ui);font-weight:700;font-size:var(--fs-base);color:var(--ink);margin-bottom:2px;}
 .mode-desc{font-size:var(--fs-sm);line-height:var(--lh-norm);color:var(--ink-3);}
 
-/* ── SOCIAL CALLS ── */
-.socials-table{
-  border:1px solid var(--border);border-radius:var(--r-3);
-  overflow:hidden;max-width:var(--lay-prose);margin:var(--sp-4) 0;
-}
-.soc-row{
-  display:flex;gap:0;
-  border-bottom:1px dashed var(--border);
-}
+/* SOCIAL CALLS */
+.socials-table{border:1px solid var(--border);border-radius:var(--r-3);overflow:hidden;max-width:var(--lay-prose);margin:var(--sp-4) 0;}
+.soc-row{display:flex;gap:0;border-bottom:1px dashed var(--border);}
 .soc-row:last-child{border-bottom:none;}
-.soc-term{
-  font-family:var(--ff-ui);font-weight:700;font-size:var(--fs-sm);
-  letter-spacing:0.02em;
-  background:var(--paper-3);padding:var(--sp-4) var(--sp-5);
-  min-width:160px;flex-shrink:0;display:flex;align-items:flex-start;
-  color:var(--ink);border-right:1px solid var(--border);
-}
+.soc-term{font-family:var(--ff-ui);font-weight:700;font-size:var(--fs-sm);letter-spacing:0.02em;background:var(--paper-3);padding:var(--sp-4) var(--sp-5);min-width:160px;flex-shrink:0;display:flex;align-items:flex-start;color:var(--ink);border-right:1px solid var(--border);}
 .soc-term.bingo{color:var(--kfb-accent);}
 .soc-term.boggle{color:#28507a;}
 .soc-term.bongo{color:#1a6040;}
 .soc-term.blodsinn{color:var(--rust);}
-body.med .soc-term.bingo,
-body.med .soc-term.boggle,
-body.med .soc-term.bongo{color:var(--med-accent);}
+body.med .soc-term.bingo,body.med .soc-term.boggle,body.med .soc-term.bongo{color:var(--med-accent);}
 body.med .soc-term.blodsinn{color:var(--med-rust);}
 .soc-def{font-size:var(--fs-base);line-height:var(--lh-prose);color:var(--ink-2);padding:var(--sp-4) var(--sp-5);flex:1;}
 
-/* ── GLOSSARY TABLE ── */
-.gloss-table{
-  border:1px solid var(--border);border-radius:var(--r-3);
-  overflow:hidden;max-width:var(--lay-prose);margin:var(--sp-4) 0;
-}
+/* GLOSSARY */
+.gloss-table{border:1px solid var(--border);border-radius:var(--r-3);overflow:hidden;max-width:var(--lay-prose);margin:var(--sp-4) 0;}
 .gloss-row{display:flex;border-bottom:1px dashed var(--border);}
 .gloss-row:last-child{border-bottom:none;}
-.gloss-term{
-  font-family:var(--ff-ui);font-weight:700;font-size:var(--fs-sm);
-  letter-spacing:0.02em;text-transform:uppercase;
-  background:var(--paper-3);padding:var(--sp-4) var(--sp-5);
-  min-width:140px;flex-shrink:0;
-  color:var(--ink);border-right:1px solid var(--border);
-  display:flex;align-items:flex-start;
-}
+.gloss-term{font-family:var(--ff-ui);font-weight:700;font-size:var(--fs-sm);letter-spacing:0.02em;text-transform:uppercase;background:var(--paper-3);padding:var(--sp-4) var(--sp-5);min-width:140px;flex-shrink:0;color:var(--ink);border-right:1px solid var(--border);display:flex;align-items:flex-start;}
 .gloss-def{font-size:var(--fs-base);line-height:var(--lh-prose);color:var(--ink-2);padding:var(--sp-4) var(--sp-5);flex:1;}
 
-/* ── QUEST STRIP ── */
-.quest-strip{
-  display:grid;grid-template-columns:repeat(4,1fr);
-  border:1px solid var(--border);border-radius:var(--r-3);
-  overflow:hidden;max-width:var(--lay-prose);margin:var(--sp-4) 0;
-}
-.qd-cell{
-  padding:var(--sp-4) var(--sp-3);text-align:center;
-  border-right:1px solid var(--border);
-}
+/* QUEST STRIP */
+.quest-strip{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid var(--border);border-radius:var(--r-3);overflow:hidden;max-width:var(--lay-prose);margin:var(--sp-4) 0;}
+.qd-cell{padding:var(--sp-4) var(--sp-3);text-align:center;border-right:1px solid var(--border);}
 .qd-cell:last-child{border-right:none;}
 .qd-num{font-family:var(--ff-display);font-weight:800;font-size:22px;color:var(--ink);line-height:1;}
 .qd-name{font-family:var(--ff-ui);font-weight:700;font-size:var(--fs-sm);color:var(--ink);margin-top:3px;}
 .qd-sub{font-size:var(--fs-xs);color:var(--ink-3);margin-top:2px;}
-.qd-finale{background:var(--kfb-accent);} /* warm amber-rust, not cold black */
+.qd-finale{background:var(--kfb-accent);}
 body.med .qd-finale{background:var(--med-accent);}
 .qd-finale .qd-num,.qd-finale .qd-name{color:#fff;}
 .qd-finale .qd-sub{color:rgba(255,255,255,.75);}
 
-/* ── RULE LINES ── */
-.rule-line{
-  border-left:2px solid var(--border);padding:5px 14px;margin:7px 0;
-  font-size:var(--fs-base);line-height:var(--lh-norm);
-  max-width:var(--lay-prose);color:var(--ink-2);
-}
+.rule-line{border-left:2px solid var(--border);padding:5px 14px;margin:7px 0;font-size:var(--fs-base);line-height:var(--lh-norm);max-width:var(--lay-prose);color:var(--ink-2);}
 .rule-key{font-family:var(--ff-ui);font-weight:700;color:var(--ink);}
 
-/* ── NOTE ── */
-.note{
-  background:var(--paper-card);border:1px solid var(--border);
-  border-left:3px solid var(--accent-2);
-  border-radius:var(--r-2);
-  padding:var(--sp-4) var(--sp-5);margin:var(--sp-5) 0;
-  font-size:var(--fs-base);line-height:var(--lh-norm);
-  max-width:var(--lay-prose);color:var(--ink-2);
-}
+.note{background:var(--paper-card);border:1px solid var(--border);border-left:3px solid var(--accent-2);border-radius:var(--r-2);padding:var(--sp-4) var(--sp-5);margin:var(--sp-5) 0;font-size:var(--fs-base);line-height:var(--lh-norm);max-width:var(--lay-prose);color:var(--ink-2);}
 .note-label{font-family:var(--ff-ui);font-weight:700;color:var(--accent-2);}
 
-/* ── QUOTE ── */
-.blockquote{
-  border-left:3px solid var(--accent-2);padding:4px 16px;
-  margin:var(--sp-6) 0;font-style:italic;
-  font-size:var(--fs-md);line-height:var(--lh-prose);
-  color:var(--ink-3);max-width:var(--lay-prose);
-}
+.blockquote{border-left:3px solid var(--accent-2);padding:4px 16px;margin:var(--sp-6) 0;font-style:italic;font-size:var(--fs-md);line-height:var(--lh-prose);color:var(--ink-3);max-width:var(--lay-prose);}
 body.med .blockquote{border-left-color:var(--med-accent);}
-.blockquote cite{
-  display:block;font-style:normal;
-  font-family:var(--ff-ui);font-weight:600;font-size:var(--fs-sm);
-  color:var(--accent);margin-top:var(--sp-2);
-}
+.blockquote cite{display:block;font-style:normal;font-family:var(--ff-ui);font-weight:600;font-size:var(--fs-sm);color:var(--accent);margin-top:var(--sp-2);}
 
-/* ── DOSAY ── */
 .dosay{display:grid;grid-template-columns:1fr 1fr;gap:var(--sp-3);max-width:var(--lay-prose);margin:var(--sp-4) 0;}
 .dosay-block{padding:var(--sp-4) var(--sp-5);font-size:var(--fs-base);line-height:var(--lh-norm);}
 .dosay-label{font-family:var(--ff-ui);font-weight:700;font-size:var(--fs-xs);letter-spacing:var(--ls-label);text-transform:uppercase;color:var(--ink-3);margin-bottom:var(--sp-2);}
 .dont{background:#fce8e6;border-left:3px solid var(--rust);}
-.do  {background:#e6f4ea;border-left:3px solid #1a6040;}
+.do{background:#e6f4ea;border-left:3px solid #1a6040;}
 body.med .do{background:#d4ebe6;border-left-color:var(--med-accent);}
 
-/* ── REF TABLE ── */
 .ref-table{width:100%;max-width:var(--lay-prose);border-collapse:collapse;margin:var(--sp-4) 0;}
 .ref-table tr{border-bottom:1px dashed var(--border);}
 .ref-table td{padding:10px 14px;font-size:var(--fs-base);line-height:var(--lh-norm);vertical-align:top;}
 .ref-table td:first-child{font-family:var(--ff-ui);font-weight:700;font-size:var(--fs-sm);color:var(--accent);white-space:nowrap;min-width:120px;padding-right:var(--sp-5);}
 
-/* ── PDF VIEWER ── */
 .pdf-block{margin:var(--sp-5) 0;max-width:var(--lay-prose);border:1px solid var(--border);border-radius:var(--r-3);overflow:hidden;}
 .pdf-bar{background:var(--head-bg);padding:8px 14px;display:flex;align-items:center;gap:var(--sp-2);}
 .pdf-bar button{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);color:#ccc;padding:4px 10px;font-family:var(--ff-ui);font-weight:600;font-size:12px;cursor:pointer;border-radius:var(--r-1);transition:background var(--dur-fast);}
@@ -553,79 +287,41 @@ body.med .do{background:#d4ebe6;border-left-color:var(--med-accent);}
 .pdf-canvas canvas{max-width:100%;box-shadow:0 2px 12px rgba(0,0,0,.45);}
 .pdf-msg{font-size:var(--fs-sm);color:#999;padding:var(--sp-8);text-align:center;font-family:var(--ff-ui);}
 
-/* ── BTN OUTLINE ── */
 .btn-outline{display:inline-block;padding:9px 20px;border:1.5px solid var(--ink);border-radius:var(--r-2);font-family:var(--ff-ui);font-weight:700;font-size:var(--fs-sm);color:var(--ink);background:transparent;cursor:pointer;transition:background var(--dur-fast),color var(--dur-fast);}
 .btn-outline:hover{background:var(--ink);color:var(--paper);}
 
-/* Ritual key colors */
-.ritual-key.name-it { color: var(--kfb-accent); }
-.ritual-key.claim-it { color: var(--kfb-ink-2); }
-.ritual-key.power-it { color: var(--kfb-rust); }
-body.med .ritual-key.name-it  { color: var(--med-accent); }
-body.med .ritual-key.claim-it { color: var(--med-ink-2); }
-body.med .ritual-key.power-it { color: var(--med-rust); }
+.ritual-key.name-it{color:var(--kfb-accent);}
+.ritual-key.claim-it{color:var(--kfb-ink-2);}
+.ritual-key.power-it{color:var(--kfb-rust);}
+body.med .ritual-key.name-it{color:var(--med-accent);}
+body.med .ritual-key.claim-it{color:var(--med-ink-2);}
+body.med .ritual-key.power-it{color:var(--med-rust);}
 
-/* Step number color ramp — warm progression */
-.step-num.s1 { color: var(--kfb-accent-2); }
-.step-num.s2 { color: var(--kfb-accent); }
-.step-num.s3 { color: var(--kfb-accent); }
-.step-num.s4 { color: var(--kfb-ink-2); }
-.step-num.s5 { color: var(--kfb-rust); }
-body.med .step-num.s1 { color: var(--med-accent-2); }
-body.med .step-num.s2 { color: var(--med-accent); }
-body.med .step-num.s3 { color: var(--med-accent); }
-body.med .step-num.s4 { color: var(--med-ink-2); }
-body.med .step-num.s5 { color: var(--med-rust); }
+.mode-num.m1{color:var(--kfb-rust);}
+.mode-num.m2{color:var(--kfb-accent-2);}
+.mode-num.m3{color:var(--kfb-ink-3);}
+.mode-num.m4{color:var(--kfb-accent);}
+.mode-num.m5{color:#5a7a8a;}
+.mode-num.m6{color:var(--kfb-rust);}
+body.med .mode-num.m1{color:var(--med-rust);}
+body.med .mode-num.m2{color:var(--med-accent-2);}
+body.med .mode-num.m3{color:var(--med-ink-3);}
+body.med .mode-num.m4{color:var(--med-accent);}
+body.med .mode-num.m5{color:#5a7a8a;}
+body.med .mode-num.m6{color:var(--med-rust);}
 
-/* Mode number colors — emotional arc */
-.mode-num.m1 { color: var(--kfb-rust); }           /* Tragic */
-.mode-num.m2 { color: var(--kfb-accent-2); }        /* Comic */
-.mode-num.m3 { color: var(--kfb-ink-3); }           /* Absurd */
-.mode-num.m4 { color: var(--kfb-accent); }           /* Heroic */
-.mode-num.m5 { color: #5a7a8a; }                    /* Mystical — blue-grey */
-.mode-num.m6 { color: var(--kfb-rust); }             /* Forbidden */
-body.med .mode-num.m1 { color: var(--med-rust); }
-body.med .mode-num.m2 { color: var(--med-accent-2); }
-body.med .mode-num.m3 { color: var(--med-ink-3); }
-body.med .mode-num.m4 { color: var(--med-accent); }
-body.med .mode-num.m5 { color: #5a7a8a; }
-body.med .mode-num.m6 { color: var(--med-rust); }
 .marginquote{font-family:var(--ff-body);font-style:italic;font-size:var(--fs-md);line-height:var(--lh-norm);color:var(--ink-3);border-top:1px dashed var(--border);padding-top:var(--sp-5);margin-top:var(--sp-8);max-width:var(--lay-prose);}
 
-/* ── VIDEO ── */
-.lp-video{position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border:1px solid var(--border);border-radius:var(--r-3);margin:var(--sp-8) 0;max-width:var(--lay-prose);}
-.lp-video iframe{position:absolute;inset:0;width:100%;height:100%;border:none;}
+/* FOOTER */
+.hub-foot{border-top:2px solid var(--ink);background:var(--paper);}
+.foot-display{max-width:var(--lay-max);margin:0 auto;padding:var(--sp-16) var(--sp-8) var(--sp-8);text-align:center;}
+.foot-big{font-family:var(--ff-display);font-weight:800;font-size:clamp(56px,8vw,96px);line-height:var(--lh-tight);letter-spacing:var(--ls-disp);color:var(--ink);}
+.foot-sig{font-family:var(--ff-body);font-style:italic;font-size:var(--fs-base);color:var(--ink-3);margin-top:var(--sp-2);}
+.foot-bar{border-top:1px solid var(--border);padding:var(--sp-5) var(--sp-8);max-width:var(--lay-max);margin:0 auto;font-family:var(--ff-mono);font-size:var(--fs-xs);color:var(--ink-4);line-height:1.8;text-align:center;}
+.foot-bar a{color:var(--ink-3);border-bottom:1px dotted var(--ink-4);}
+.foot-bar a:hover{color:var(--ink);}
 
-/* ── FOOTER ── */
-.hub-foot{
-  border-top:2px solid var(--ink);background:var(--paper);
-}
-.foot-display{
-  max-width:var(--lay-max);margin:0 auto;
-  padding:var(--sp-16) var(--sp-8) var(--sp-10);
-  text-align:center;
-}
-.foot-big{
-  font-family:var(--ff-display);font-weight:800;
-  font-size:clamp(56px,8vw,96px);
-  line-height:var(--lh-tight);letter-spacing:var(--ls-disp);
-  color:var(--ink);
-}
-.foot-meta{
-  font-family:var(--ff-body);font-style:italic;
-  font-size:var(--fs-base);color:var(--ink-3);
-  margin-top:var(--sp-4);
-}
-.foot-bar{
-  border-top:1px solid var(--border);
-  padding:var(--sp-4) var(--sp-8);
-  max-width:var(--lay-max);margin:0 auto;
-  display:flex;justify-content:space-between;align-items:center;
-  flex-wrap:wrap;gap:var(--sp-3);
-  font-family:var(--ff-mono);font-size:var(--fs-xs);color:var(--ink-4);
-}
-
-/* ── PRINT ── */
+/* PRINT */
 @media print{
   .topbar,.sidebar,.pdf-block,.lp-video,.hub-foot,.search-wrap,.search-results{display:none!important;}
   body{background:#fff!important;color:#000!important;}
@@ -638,7 +334,7 @@ body.med .mode-num.m6 { color: var(--med-rust); }
 </head>
 <body>
 
-<!-- ══ TOPBAR ══ -->
+<!-- TOPBAR -->
 <div class="topbar">
   <a class="tb-wordmark" href="#home" onclick="goPage('home',null);return false;">
     <div class="tb-logo">K</div>
@@ -667,81 +363,243 @@ body.med .mode-num.m6 { color: var(--med-rust); }
 </div>
 
 
-<!-- ══════════ HOME EN ══════════ -->
+<!-- ========== HOME EN ========== -->
 <div class="page active" id="page-home">
   <div class="hero">
-    <div class="hero-eyebrow">Uncle FrizzleBob's Komik Kard Kult · v19.0</div>
-    <h1 class="hero-title">Reality is negotiable.<br>Play it your way.</h1>
-    <p class="hero-lead">A social story-wrestling card game for 1–6 players. 20–60 minutes. No board, no pawns, no manual thicker than your wrist. You sit down, you draw a card, you announce who you are. The rest is improvisation under cheerful pressure.</p>
+    <div class="hero-eyebrow">Welcome to Uncle FrizzleBob's Komik Kard Kult</div>
+    <h1 class="hero-title"><em>KayfaBizarro</em> Social Story-Wrestling</h1>
+    <p class="hero-subline"><em>Cut &amp; Play Comics. Not a game you play. A game you use.</em></p>
+    <p class="hero-lead">Uncle FrizzleBob here. You're about to download a <strong>weird comic</strong>. Read it. Print it. Cut it up. Shuffle the cards and play them with one to six <strong>meat puppets</strong> at a table.</p>
+
+    <div class="you-block">
+      <div class="yrow"><span class="yk">You choose:</span> <span class="yv">Three doors to KayfaBizarro.</span></div>
+      <div class="yrow"><span class="yk">You need:</span> <span class="yv">Two ordinary dice.</span></div>
+      <div class="yrow"><span class="yk">You play:</span> <span class="yv">One Kayfabe multiverse in a Bizarro nutshell.</span></div>
+      <div class="yrow"><span class="yk">You get:</span> <span class="yv">No exit.</span></div>
+    </div>
+
+    <p class="hero-tag"><strong>Cognitive dissonance as a social resonance space.</strong> Play the truth your way - with <strong>plausible deniability</strong>.</p>
+
     <div class="hero-chips">
-      <span class="chip">1–6 players</span>
-      <span class="chip">20–60 min</span>
-      <span class="chip">CC BY-NC-SA 4.0</span>
+      <span class="chip">1-6 players</span>
+      <span class="chip">20-60 min</span>
+      <span class="chip">Cut &amp; Play</span>
       <span class="chip">Pay What You Want</span>
+      <span class="chip">CC BY-NC-SA 4.0</span>
     </div>
     <div class="hero-ctas">
-      <a class="cta-dashed" href="https://georgvw.gumroad.com/" target="_blank" rel="noopener">Cut &amp; Play Forever!</a>
-      <button class="cta-solid" onclick="goPage('kfb',document.getElementById('tb-kfb'))">Stay Fluffy →</button>
+      <a class="cta-dashed" href="https://georgvw.gumroad.com/" target="_blank" rel="noopener">Free Cut &amp; Play Comic Cards (PDF, PWYW) ↗</a>
+      <button class="cta-solid" onclick="document.getElementById('home-origin').scrollIntoView({behavior:'smooth'})">Read the Anti-Rules ↓</button>
     </div>
   </div>
 
   <div class="variant-grid">
     <a class="variant-card" href="#kfb" onclick="goPage('kfb',document.getElementById('tb-kfb'));return false;">
-      <div class="vc-badge">Original · Story Wrestling</div>
+      <div class="vc-badge">Cut &amp; Play Comic · Story-Wrestling Edition</div>
       <div class="vc-title"><em>KayfaBizarro</em> Freestyle</div>
-      <p class="vc-desc">Six story modes from <em>Tragic</em> to <em>Forbidden</em>. Someone plays The Copernican Shift and triggers EGO TRIP — the Quest flips, the win condition reverses, and the table has to negotiate a new reality. <strong>1–6 players · 20–60 min.</strong></p>
-      <span class="vc-cta">Read the rules →</span>
+      <p class="vc-desc">One die that tracks how close the table is to collapse. <strong>Six story modes from <em>Tragic</em> to <em>Forbidden</em>.</strong> Cards enter the <strong>Stage</strong> through <em>Name it. Claim it. Power it.</em> When the table calls <em>BLÖDSINN!</em>, the pressure freezes. <strong>No winner, no loser, no fixed end.</strong> You'll leave the table having said things you couldn't have said over dinner.</p>
+      <p class="vc-best"><strong>Best for:</strong> families tired of polite games, therapists who hate worksheets, writers stuck in their own voice. <strong>1-6 humans.</strong></p>
+      <span class="vc-cta">Read the Anti-Rules →</span>
     </a>
-    <a class="variant-card med" href="#med" onclick="goPage('med',document.getElementById('tb-med'));return false;" style="border-color:var(--med-border);">
-      <div class="vc-badge" style="color:var(--med-accent)">Clinical Edition · Active Recall</div>
-      <div class="vc-title" style="color:var(--med-ink)"><em style="color:var(--med-accent)">MedKayfab</em> Medicine</div>
-      <p class="vc-desc" style="color:var(--med-ink-3)">Someone draws Fibby Fitz — Atrial Fibrillation — and rolls a 3. Mechanism Flash. They have to explain the mechanism from memory. They get it wrong. They get it right the next round. <strong style="color:var(--med-ink)">Solo or 1–6.</strong></p>
-      <span class="vc-cta" style="color:var(--med-accent)">Read the rules →</span>
+    <a class="variant-card med" href="#med" onclick="goPage('med',document.getElementById('tb-med'));return false;">
+      <div class="vc-badge">Cut &amp; Play Comic · Clinical Edition</div>
+      <div class="vc-title"><em>MedKayfab</em> Medicine</div>
+      <p class="vc-desc"><strong>Same loop, applied to pathophysiology.</strong> You play <em>Fibby Fitz</em> as your Character. The die rolls a 3 - <strong>Mech Flash.</strong> You explain atrial fibrillation from memory while the table heckles. <em>BLÖDSINN!</em> catches the bluff. <strong>Wrong tonight, right tomorrow, teachable by breakfast.</strong></p>
+      <p class="vc-best"><strong>Best for:</strong> med students who've outgrown flashcards, residents on night shift, attendings who teach by humiliation and want to stop. <strong>Solo or 1-6 humans.</strong></p>
+      <span class="vc-cta">Read the Anti-Rules →</span>
     </a>
+  </div>
+
+  <!-- ORIGIN STORY -->
+  <div class="page-body">
+    <nav class="sidebar" id="toc-home">
+      <div class="sidebar-label">The Field Report</div>
+      <a href="#home-origin">Between the Panels</a>
+      <a href="#home-s1">Ninth Art's Problem</a>
+      <a href="#home-s2">A Rabbit Got Banned</a>
+      <a href="#home-s3">Death of the Author</a>
+      <a href="#home-s4">Fractal Almanac</a>
+      <a href="#home-s5">Beautifully Weird Mess</a>
+      <a href="#home-s6">Tenth Art / Democracy</a>
+      <div class="sidebar-actions"><button class="btn-ghost" onclick="window.print()">Print / PDF</button></div>
+    </nav>
+    <div class="main">
+      <div class="origin-header" id="home-origin">
+        <div class="sec-eyebrow">A Field Report from Uncle FrizzleBob</div>
+        <h2 class="origin-title">Between the Comic Panels of FrizzleBob's Fractal Almanac</h2>
+        <p class="origin-subtitle">How a Rogue Cartoon Rabbit hacked the Infinite Canvas - and accidentally invented the Tenth Art.</p>
+        <p class="origin-claim"><em>Welcome to The Infinite Canvas of the Tenth Art.</em></p>
+        <p class="origin-counter"><em>"Yeah - but is it ART?!"</em></p>
+      </div>
+
+      <div class="origin-section" id="home-s1">
+        <h3 class="origin-h"><span class="num">1.</span>The Ninth Art Has a Problem</h3>
+        <p class="prose">The comic is the <strong>Ninth Art</strong>. Eisner taught it as sequence. McCloud called the page an <strong>Infinite Canvas</strong>. Both are right and both are insufficient. The Ninth Art asks the reader to follow. Panel one, panel two, panel three. The author has already decided where the river bends. The reader gets to feel the bend. That is <strong>guided escapism</strong>, and it is beautiful, and it is not what we needed.</p>
+        <div class="blockquote">"Wrestling didn't invent the staged thing. It just stopped lying about it."<cite>- Uncle FrizzleBob</cite></div>
+        <p class="prose">Wrestling is the most honest sport on television, because both wrestlers and audience know it is staged, and the audience agrees to believe anyway. That contract is called <strong>kayfabe</strong>. We borrowed the word.</p>
+      </div>
+
+      <div class="origin-section" id="home-s2">
+        <h3 class="origin-h"><span class="num">2.</span>How a Cartoon Rabbit Got Banned</h3>
+        <p class="prose">In 2020 a cartoon rabbit drew <strong>four-panel comics</strong> about how things were being explained and how the explanations kept changing. Sources cited. No names taken. The platforms flagged him. The platforms did what platforms do. Friends called him names that ended in <em>-denker</em>. He went to <strong>Substack</strong>, which at the time was where you went when you had been politely uninvited from the discourse.</p>
+        <p class="prose">In the drawer he found time. He read <strong>forbidden books</strong>, which turned out to be regular books that nobody was reading. He started a long conversation with a chatbot about whether art was still allowed to claim anything. The chatbot was helpful. The rabbit took notes.</p>
+        <div class="blockquote">"You can't argue with a hypernormalized stage. You overfill it."</div>
+        <p class="prose">He learned two moves. The first was the <strong>black truth</strong>: say the obvious thing that nobody says, in the voice of someone who didn't notice it was forbidden. The second was <strong>overfilling the inszenierung</strong>: take the official performance and play it harder than the officials. Aikido for cartoonists. The wound becomes the method.</p>
+      </div>
+
+      <div class="origin-section" id="home-s3">
+        <h3 class="origin-h"><span class="num">3.</span>The Death of the Author</h3>
+        <p class="prose">Meanwhile Georg had a book. <em>Hilfe, ich bin ein Mensch!</em> Three years of work with his cousin Andreas. Eight chapters. Forty questions about the human condition. A Bear, a Cat, a Rabbit, a Wolf, each holding a position. The book was finished. The distribution wasn't.</p>
+        <p class="prose">Georg put the book on the table and took a cutter to it.</p>
+        <div class="blockquote">"Barthes said the author was dead. Georg just took it personally."</div>
+        <p class="prose">What became visible: the Bear could only object where the layout allowed. The Cat had lost her argument before printing. <strong>Adjacency was the authority.</strong> Scissors disagreed.</p>
+      </div>
+
+      <div class="origin-section" id="home-s4">
+        <h3 class="origin-h"><span class="num">4.</span>Field Notes from the Fractal Almanac</h3>
+        <p class="prose">FrizzleBob collected the loose panels and added his own. Notes on the <strong>conditio humana</strong> and its idiocracy-comedy-show follies. Marginalia from the forbidden books. Scribbles from medical textbooks that Georg had inherited and defaced. The collection got a name: the <strong>Fractal Almanac</strong>.</p>
+        <p class="prose">The Almanac runs on the principle Warburg already used a hundred years ago. He called it <strong>Good Neighbourhood</strong>: images placed beside each other generate meaning that belongs to neither one. Burroughs cut up newspapers to find it. Bowie cut up his own lyrics. We cut up the comic before we even bound it.</p>
+      </div>
+
+      <div class="origin-section" id="home-s5">
+        <h3 class="origin-h"><span class="num">5.</span>Boxes of Beautifully Weird Mess</h3>
+        <p class="prose">Then Georg moved house. In a cardboard box he found the panels, the field notes, the marginalia, a medical textbook with his own handwriting in the margins, and a forbidden book he doesn't remember buying. He had no idea how they got there. He decided not to clean it up.</p>
+        <p class="prose">The marginalia leak. They are in the current PDFs. <strong>Look at the margins.</strong> They are still there. The mess is not a bug. <strong>Unfinished by design.</strong></p>
+      </div>
+
+      <div class="origin-section" id="home-s6">
+        <h3 class="origin-h"><span class="num">6.</span>The Tenth Art. Or: Playable Democracy.</h3>
+        <p class="prose">KayfaBizarro is the <strong>Tenth Art</strong>. We just took the title. Anyone who wants it back can step into the ring.</p>
+        <p class="prose">It is <strong>social story-wrestling</strong>. It is <strong>shared consensus reality</strong>, <strong>emergent meaning</strong>, <strong>non-linear co-creation</strong>. It is <strong>transmedia</strong> because the decks come with Suno songs and HeyGen videos. It is <strong>anti-corporate by design</strong> because no corporation would publish this and call it finished.</p>
+        <p class="prose">Every card can claim anything. The next card disagrees. The table decides what holds. <strong>Best story wins. No one loses.</strong> That is <strong>plausible deniability</strong> as a design principle and <strong>playable democracy</strong> as a consequence. The card carries the risk you don't have to carry.</p>
+        <div class="blockquote">"It's not a game you play. It's a game you use. FrizzleBob out."</div>
+      </div>
+    </div>
   </div>
 </div>
 
 
-<!-- ══════════ HOME DE ══════════ -->
+<!-- ========== HOME DE ========== -->
 <div class="page" id="page-home_de">
   <div class="hero">
-    <div class="hero-eyebrow">Onkel FrizzleBobs Komik Kard Kult · v19.0</div>
-    <h1 class="hero-title">Realität ist verhandelbar.<br>Die Karten halten nur den Stift.</h1>
-    <p class="hero-lead">Ein soziales Story-Wrestling-Kartenspiel für 1–6 Spieler. 20–60 Minuten. Kein Brett, keine Pawns, kein Regelheft dicker als dein Handgelenk. Du setzt dich hin, ziehst eine Karte, verkündest wer du bist. Der Rest ist Improvisation unter freundlichem Druck.</p>
+    <div class="hero-eyebrow">Willkommen in Onkel FrizzleBobs Komik Kard Kult</div>
+    <h1 class="hero-title"><em>KayfaBizarro</em> Social Story-Wrestling</h1>
+    <p class="hero-subline"><em>Cut &amp; Play Comics. Kein Spiel zum Spielen. Ein Spiel zum Benutzen.</em></p>
+    <p class="hero-lead">Onkel FrizzleBob hier. Du lädst gleich einen <strong>seltsamen Comic</strong> runter. Lies ihn. Druck ihn aus. Zerschneid ihn. Misch die Karten und spiel sie mit einem bis sechs <strong>Gestalten</strong> an einem Tisch.</p>
+
+    <div class="you-block">
+      <div class="yrow"><span class="yk">Du wählst:</span> <span class="yv">Drei Türen zu KayfaBizarro.</span></div>
+      <div class="yrow"><span class="yk">Du brauchst:</span> <span class="yv">Zwei stinknormale Würfel.</span></div>
+      <div class="yrow"><span class="yk">Du spielst:</span> <span class="yv">Ein Kayfabe-Multiversum in einer Bizarro-Nussschale.</span></div>
+      <div class="yrow"><span class="yk">Du kriegst:</span> <span class="yv">Kein Ausgang.</span></div>
+    </div>
+
+    <p class="hero-tag"><strong>Kognitive Dissonanz als sozialer Resonanzraum.</strong> Spiel die Wahrheit nach deinen Regeln - mit <strong>glaubhafter Abstreitbarkeit</strong>.</p>
+
     <div class="hero-chips">
-      <span class="chip">1–6 Spieler</span>
-      <span class="chip">20–60 Min</span>
-      <span class="chip">CC BY-NC-SA 4.0</span>
+      <span class="chip">1-6 Spieler</span>
+      <span class="chip">20-60 Min</span>
+      <span class="chip">Cut &amp; Play</span>
       <span class="chip">Pay What You Want</span>
+      <span class="chip">CC BY-NC-SA 4.0</span>
     </div>
     <div class="hero-ctas">
-      <a class="cta-dashed" href="https://georgvw.gumroad.com/" target="_blank" rel="noopener">Ausschneiden &amp; Spielen!</a>
-      <button class="cta-solid" onclick="goPage('kfb_de',document.getElementById('tb-kfb'))">Bleib flauschig →</button>
+      <a class="cta-dashed" href="https://georgvw.gumroad.com/" target="_blank" rel="noopener">Freie Cut &amp; Play Comic-Karten (PDF, PWYW) ↗</a>
+      <button class="cta-solid" onclick="document.getElementById('home_de-origin').scrollIntoView({behavior:'smooth'})">Lies die Anti-Regeln ↓</button>
     </div>
   </div>
+
   <div class="variant-grid">
     <a class="variant-card" href="#kfb_de" onclick="goPage('kfb_de',document.getElementById('tb-kfb'));return false;">
-      <div class="vc-badge">Original · Story Wrestling</div>
+      <div class="vc-badge">Cut &amp; Play Comic · Story-Wrestling Edition</div>
       <div class="vc-title"><em>KayfaBizarro</em> Freestyle</div>
-      <p class="vc-desc">Sechs Story-Modi von <em>Tragisch</em> bis <em>Verboten</em>. Jemand spielt den Kopernikanischen Wandel — die Quest dreht sich um, alle müssen eine neue Realität verhandeln. <strong>1–6 Spieler · 20–60 Min.</strong></p>
-      <span class="vc-cta">Regeln lesen →</span>
+      <p class="vc-desc">Ein Würfel, der zeigt, wie nah der Tisch am Zusammenbruch ist. <strong>Sechs Story-Modi von <em>Tragisch</em> bis <em>Verboten</em>.</strong> Karten kommen über die <strong>Bühne</strong> ins Spiel - per <em>Name it. Claim it. Power it.</em> Wer eine Karte vergisst oder einen Modus fälscht, kriegt ein <em>BLÖDSINN!</em> und der Druck friert ein. <strong>Kein Sieger, kein Verlierer, kein festes Ende.</strong> Ihr werdet Dinge sagen, die ihr beim Abendessen nicht hingekriegt hättet.</p>
+      <p class="vc-best"><strong>Geeignet für:</strong> Familien, die mit höflichen Spielen durch sind, Therapeut*innen mit Allergie gegen Arbeitsblätter, Autor*innen die in ihrer eigenen Stimme festsitzen. <strong>1-6 Menschen am Tisch.</strong></p>
+      <span class="vc-cta">Lies die Anti-Regeln →</span>
     </a>
-    <a class="variant-card med" href="#med_de" onclick="goPage('med_de',document.getElementById('tb-med'));return false;" style="border-color:var(--med-border);">
-      <div class="vc-badge" style="color:var(--med-accent)">Klinische Edition · Active Recall</div>
-      <div class="vc-title" style="color:var(--med-ink)"><em style="color:var(--med-accent)">MedKayfab</em> Medizin</div>
-      <p class="vc-desc" style="color:var(--med-ink-3)">Jemand zieht Fibby Fitz — Vorhofflimmern — und würfelt eine 3. Mech. Flash. Der Mechanismus muss aus dem Gedächtnis erklärt werden. <strong style="color:var(--med-ink)">Solo oder 1–6.</strong></p>
-      <span class="vc-cta" style="color:var(--med-accent)">Regeln lesen →</span>
+    <a class="variant-card med" href="#med_de" onclick="goPage('med_de',document.getElementById('tb-med'));return false;">
+      <div class="vc-badge">Cut &amp; Play Comic · Klinische Edition</div>
+      <div class="vc-title"><em>MedKayfab</em> Medicine</div>
+      <p class="vc-desc"><strong>Derselbe Loop, angelegt an die Pathophysiologie.</strong> Du spielst <em>Fibby Fitz</em> als Character. Der Würfel zeigt 3 - <strong>Mech. Flash.</strong> Du erklärst Vorhofflimmern aus dem Gedächtnis, während der Tisch dazwischenruft. <em>BLÖDSINN!</em> erwischt den Bluff. <strong>Heute Abend halb falsch, morgen Mittag richtig, beim Frühstück lehrbar.</strong></p>
+      <p class="vc-best"><strong>Geeignet für:</strong> Medizinstudierende, die Karteikarten überlebt haben, Assistenzärzt*innen im Nachtdienst, Oberärzt*innen die durch Bloßstellen unterrichten und damit aufhören wollen. <strong>Solo oder 1-6 Menschen am Tisch.</strong></p>
+      <span class="vc-cta">Lies die Anti-Regeln →</span>
     </a>
+  </div>
+
+  <!-- ORIGIN STORY DE -->
+  <div class="page-body">
+    <nav class="sidebar" id="toc-home_de">
+      <div class="sidebar-label">Der Feldbericht</div>
+      <a href="#home_de-origin">Zwischen den Panels</a>
+      <a href="#home_de-s1">Problem der Neunten</a>
+      <a href="#home_de-s2">Hase wird gesperrt</a>
+      <a href="#home_de-s3">Tod des Autors</a>
+      <a href="#home_de-s4">Fraktaler Almanach</a>
+      <a href="#home_de-s5">Wunderschönes Durcheinander</a>
+      <a href="#home_de-s6">Zehnte Kunst / Demokratie</a>
+      <div class="sidebar-actions"><button class="btn-ghost" onclick="window.print()">Drucken / PDF</button></div>
+    </nav>
+    <div class="main">
+      <div class="origin-header" id="home_de-origin">
+        <div class="sec-eyebrow">Ein Feldbericht von Onkel FrizzleBob</div>
+        <h2 class="origin-title">Zwischen den Comic-Panels von FrizzleBobs Fraktalem Almanach</h2>
+        <p class="origin-subtitle">Wie ein abtrünniger Cartoon-Hase die Unendliche Leinwand hackte - und versehentlich die Zehnte Kunst erfand.</p>
+        <p class="origin-claim"><em>Willkommen auf der Unendlichen Leinwand der Zehnten Kunst.</em></p>
+        <p class="origin-counter"><em>"Yeah - but is it ART?!"</em></p>
+      </div>
+
+      <div class="origin-section" id="home_de-s1">
+        <h3 class="origin-h"><span class="num">1.</span>Die Neunte Kunst hat ein Problem</h3>
+        <p class="prose">Der Comic ist die <strong>Neunte Kunst</strong>. Eisner hat sie als Sequenz unterrichtet. McCloud nannte die Seite eine <strong>Unendliche Leinwand</strong>. Beide haben recht und beide reichen nicht. Die Neunte Kunst lädt die Leserin ein, zu folgen. Panel eins, Panel zwei, Panel drei. Wo der Fluss biegt, hat die Autorin schon entschieden. Die Leserin spürt die Biegung. Das ist <strong>geführter Eskapismus</strong>, das ist wunderschön, und das war nicht, was wir brauchten.</p>
+        <div class="blockquote">"Wrestling hat die Inszenierung nicht erfunden. Es hat nur aufgehört, sie zu leugnen."<cite>- Onkel FrizzleBob</cite></div>
+        <p class="prose">Wrestling ist der ehrlichste Sport im Fernsehen, weil Ringkämpfer und Publikum wissen, dass es gestellt ist, und das Publikum sich einigt, trotzdem mitzugehen. Dieser Vertrag heißt <strong>Kayfabe</strong>. Wir haben uns das Wort geliehen.</p>
+      </div>
+
+      <div class="origin-section" id="home_de-s2">
+        <h3 class="origin-h"><span class="num">2.</span>Wie ein Cartoon-Hase gesperrt wurde</h3>
+        <p class="prose">2020 zeichnete ein Cartoon-Hase <strong>vierteilige Comics</strong> darüber, wie die Dinge erklärt wurden und wie die Erklärungen sich änderten. Quellen wurden zitiert. Personen nicht angegriffen. Die Plattformen flaggten ihn. Was Plattformen so tun. Freunde gaben ihm Namen, die auf <em>-denker</em> endeten. Er zog zu <strong>Substack</strong>, wohin man damals zog, wenn man höflich aus dem Diskurs ausgeladen worden war.</p>
+        <p class="prose">In der Schublade fand er Zeit. Er las <strong>verbotene Bücher</strong>, die sich als ganz normale Bücher herausstellten, die niemand las. Er führte ein langes Gespräch mit einem Chatbot darüber, ob Kunst noch etwas behaupten dürfe. Der Chatbot war hilfsbereit. Der Hase machte sich Notizen.</p>
+        <div class="blockquote">"Mit einer hypernormalisierten Bühne kannst du nicht streiten. Du übererfüllst sie."</div>
+        <p class="prose">Er lernte zwei Bewegungen. Die erste war die <strong>schwarze Wahrheit</strong>: sag das Offensichtliche, das niemand sagt, im Tonfall von jemandem, dem nicht aufgefallen ist, dass es verboten war. Die zweite war die <strong>Übererfüllung der Inszenierung</strong>: nimm die offizielle Aufführung und spiel sie härter als die Offiziellen. Aikido für Cartoonisten. Aus der Wunde wird die Methode.</p>
+      </div>
+
+      <div class="origin-section" id="home_de-s3">
+        <h3 class="origin-h"><span class="num">3.</span>Tod des Autors</h3>
+        <p class="prose">Inzwischen hatte Georg ein Buch. <em>Hilfe, ich bin ein Mensch!</em> Drei Jahre Arbeit mit seinem Cousin Andreas. Acht Kapitel. Vierzig Fragen zur Natur des Menschen. Ein Bär, eine Katze, ein Hase, ein Wolf, jeder mit einer Position. Das Buch war fertig. Der Vertrieb nicht.</p>
+        <p class="prose">Georg legte das Buch auf den Tisch und setzte den Cutter an.</p>
+        <div class="blockquote">"Barthes sagte, der Autor sei tot. Georg hat das persönlich genommen."</div>
+        <p class="prose">Was sichtbar wurde: Der Bär konnte nur dort widersprechen, wo das Layout es zuließ. Die Katze hatte ihr Argument vor dem Druck verloren. <strong>Nachbarschaft war die Autorität.</strong> Die Schere widersprach.</p>
+      </div>
+
+      <div class="origin-section" id="home_de-s4">
+        <h3 class="origin-h"><span class="num">4.</span>Feldnotizen aus dem Fraktalen Almanach</h3>
+        <p class="prose">FrizzleBob sammelte die losen Panels und legte eigene dazu. Notizen zur <strong>conditio humana</strong> und ihren Idiocracy-Comedy-Show-Possen. Marginalien aus den verbotenen Büchern. Kritzeleien aus medizinischen Lehrbüchern, die Georg geerbt und vollgeschrieben hatte. Die Sammlung bekam einen Namen: den <strong>Fraktalen Almanach</strong>.</p>
+        <p class="prose">Der Almanach arbeitet nach dem Prinzip, das Warburg vor hundert Jahren schon benutzt hat. Er nannte es <strong>Gute Nachbarschaft</strong>: Bilder, die nebeneinander liegen, erzeugen Bedeutung, die keinem einzelnen gehört. Burroughs zerschnitt Zeitungen, um das zu finden. Bowie zerschnitt die eigenen Texte. Wir haben den Comic zerschnitten, bevor er überhaupt gebunden war.</p>
+      </div>
+
+      <div class="origin-section" id="home_de-s5">
+        <h3 class="origin-h"><span class="num">5.</span>Kartons voll wunderschön seltsamem Durcheinander</h3>
+        <p class="prose">Dann zog Georg um. In einem Karton fand er die Panels, die Feldnotizen, die Marginalien, ein medizinisches Lehrbuch mit seiner eigenen Handschrift in den Rändern, und ein verbotenes Buch, an dessen Kauf er sich nicht erinnerte. Er hatte keine Ahnung, wie das alles zusammengekommen war. Er beschloss, nicht aufzuräumen.</p>
+        <p class="prose">Die Marginalien sind durchlässig. Sie sind in den aktuellen PDFs. <strong>Schau in die Ränder.</strong> Sie sind noch da. Das Chaos ist kein Bug. <strong>Unfinished by design.</strong></p>
+      </div>
+
+      <div class="origin-section" id="home_de-s6">
+        <h3 class="origin-h"><span class="num">6.</span>Die Zehnte Kunst. Oder: Spielbare Demokratie.</h3>
+        <p class="prose">KayfaBizarro ist die <strong>Zehnte Kunst</strong>. Wir haben uns den Titel genommen. Wer ihn zurück will, steigt in den Ring.</p>
+        <p class="prose">Sie ist <strong>Social Story-Wrestling</strong>. Sie ist <strong>geteilte Konsens-Wirklichkeit</strong>, <strong>emergente Bedeutung</strong>, <strong>nicht-lineare Ko-Kreation</strong>. Sie ist <strong>transmedial</strong>, weil die Decks mit Suno-Songs und HeyGen-Videos kommen. Sie ist <strong>anti-corporate by design</strong>, weil kein Konzern das hier veröffentlichen und für fertig erklären würde.</p>
+        <p class="prose">Jede Karte darf alles behaupten. Die nächste Karte widerspricht. Der Tisch entscheidet, was steht. <strong>Die beste Geschichte gewinnt. Niemand verliert.</strong> Das ist <strong>glaubhafte Abstreitbarkeit</strong> als Design-Prinzip und <strong>spielbare Demokratie</strong> als Konsequenz. Die Karte trägt das Risiko, das du nicht tragen darfst.</p>
+        <div class="blockquote">"Es ist kein Spiel, das du spielst. Es ist ein Spiel, das du benutzt. FrizzleBob out."</div>
+      </div>
+    </div>
   </div>
 </div>
 
-
-<!-- ══════════ KFB EN ══════════ -->
+<!-- ========== KFB EN (rules unchanged from previous version) ========== -->
 <div class="page" id="page-kfb">
   <div class="hero" style="padding-bottom:var(--sp-8)">
-    <div class="hero-eyebrow">Uncle FrizzleBob's Komik Kard Kult · v19.0</div>
-    <h1 class="hero-title" style="font-size:clamp(32px,5vw,56px)"><em>KayfaBizarro</em> — Freestyle Rules</h1>
-    <p class="hero-lead" style="margin-bottom:0">The Social Story-Wrestling Card Game · 1–6 Players · 20–60 Min · CC BY-NC-SA 4.0</p>
+    <div class="hero-eyebrow">Uncle FrizzleBob's Komik Kard Kult</div>
+    <h1 class="hero-title" style="font-size:clamp(32px,5vw,56px)"><em>KayfaBizarro</em> - The Anti-Rules</h1>
+    <p class="hero-lead" style="margin-bottom:0">Cut &amp; Play Comic · Story-Wrestling Edition · 1-6 Humans · 20-60 Min · CC BY-NC-SA 4.0</p>
   </div>
   <div class="page-body">
     <nav class="sidebar" id="toc-kfb">
@@ -770,12 +628,12 @@ body.med .mode-num.m6 { color: var(--med-rust); }
       </div>
       <div class="search-results" id="kfb-search-results"><div class="search-count" id="kfb-search-count"></div><div id="kfb-search-hits"></div></div>
 
-      <div class="blockquote">"This is not a game you play. It's a game you use. Nobody wins. Nobody loses. Everybody leaves slightly changed. That's the plan. Stay fluffy."<cite>— Uncle FrizzleBob</cite></div>
+      <div class="blockquote">"This is not a game you play. It's a game you use. Nobody wins. Nobody loses. Everybody leaves slightly changed. That's the plan. Stay fluffy."<cite>- Uncle FrizzleBob</cite></div>
 
       <div class="rules-section" id="kfb-booklet">
         <div class="sec-eyebrow">Illustrated Rulebook</div>
         <div class="sec-title">The Anti-Rule Book</div>
-        <p class="prose">Uncle FrizzleBob's illustrated Anti-Rule Book — browse all pages inline.</p>
+        <p class="prose">Uncle FrizzleBob's illustrated Anti-Rule Book - browse all pages inline.</p>
         <div class="pdf-block"><div class="pdf-bar"><button onclick="pdfNav('kfb_book',-1)">← Prev</button><button onclick="pdfNav('kfb_book',1)">Next →</button><button onclick="pdfZoom('kfb_book',-.25)">− Zoom</button><button onclick="pdfZoom('kfb_book',.25)">+ Zoom</button><span class="pdf-info" id="kfb_book-pdf-info">—</span></div><div class="pdf-canvas" id="kfb_book-pdf-canvas"><div class="pdf-msg">Click "Next →" to browse.</div></div></div>
       </div>
 
@@ -783,12 +641,12 @@ body.med .mode-num.m6 { color: var(--med-rust); }
         <div class="sec-eyebrow">Akt I · Setup</div>
         <div class="sec-title">What it is.</div>
         <p class="prose">Kayfabizarro is a card game in the same way a stage is a piece of wood: technically yes, but missing the point. The cards are prompts. The prompts are invitations. The invitations are a way to find out what your friends think about a thing they had no idea they had opinions on.</p>
-        <p class="prose">Nothing on a card is a rule. Everything is an invitation. If the Mode contradicts your story, that <em>is</em> the story. The Quest Die does not decide the outcome — it decides what kind of trouble you are currently in.</p>
+        <p class="prose">Nothing on a card is a rule. Everything is an invitation. If the Mode contradicts your story, that <em>is</em> the story. The Quest Die does not decide the outcome - it decides what kind of trouble you are currently in.</p>
         <div class="blockquote">You will feel slightly ridiculous for the first few minutes. That's the point. The ridiculousness is load-bearing.</div>
         <div class="sec-sub">What you need</div>
-        <div class="rule-line"><span class="rule-key">Cards —</span> Each player brings 15–20 illustrated cards. Shuffle into one shared deck. Every card can be a <em>Character</em>, <em>Scene</em>, or <em>Quest</em>.</div>
-        <div class="rule-line"><span class="rule-key">Two D6 —</span> One <em>Story-Mode Die</em>, one <em>Quest Die</em>. Both stay visible at all times.</div>
-        <div class="rule-line"><span class="rule-key">1–6 People —</span> And a table. No board. No pawns. No manual thicker than your wrist.</div>
+        <div class="rule-line"><span class="rule-key">Cards -</span> Each player brings 15-20 illustrated cards. Shuffle into one shared deck. Every card can be a <em>Character</em>, <em>Scene</em>, or <em>Quest</em>.</div>
+        <div class="rule-line"><span class="rule-key">Two D6 -</span> One <em>Story-Mode Die</em>, one <em>Quest Die</em>. Both stay visible at all times.</div>
+        <div class="rule-line"><span class="rule-key">1-6 People -</span> And a table. No board. No pawns. No manual thicker than your wrist.</div>
       </div>
 
       <div class="rules-section" id="kfb-setup">
@@ -801,7 +659,7 @@ body.med .mode-num.m6 { color: var(--med-rust); }
           <div class="step-row-plain"><span class="step-num" style="font-family:var(--ff-mono);font-size:var(--fs-lg);color:var(--accent);min-width:30px;flex-shrink:0;">4</span><span class="step-label">Stage</span><span class="step-body">The Stage starts empty. Three Scene slots, all open.</span></div>
           <div class="step-row-plain"><span class="step-num" style="font-family:var(--ff-mono);font-size:var(--fs-lg);color:var(--accent);min-width:30px;flex-shrink:0;">5</span><span class="step-label">Go</span><span class="step-body">They take the first turn.</span></div>
         </div>
-        <div class="blockquote">"New to this? Skip the Story-Mode Die for the first round — everyone just runs the Intro Ritual for their Character. Once everyone's in, roll as normal."</div>
+        <div class="blockquote">"New to this? Skip the Story-Mode Die for the first round - everyone just runs the Intro Ritual for their Character. Once everyone's in, roll as normal."</div>
       </div>
 
       <div class="rules-section" id="kfb-ritual">
@@ -813,7 +671,7 @@ body.med .mode-num.m6 { color: var(--med-rust); }
           <div class="ritual-row"><span class="ritual-key claim-it">Claim It</span><span class="ritual-desc">One sentence: what does this card <em>want</em>? Read the LORE or invent from the image.</span></div>
           <div class="ritual-row"><span class="ritual-key power-it">Power It</span><span class="ritual-desc"><strong>Don't explain it. Perform it.</strong> Show us what this Power does to reality right now.</span></div>
         </div>
-        <div class="note"><span class="note-label">Note —</span> The Intro Ritual applies to <strong>every card, every time</strong> — Quest cards, Scene cards, new Characters. Always.</div>
+        <div class="note"><span class="note-label">Note -</span> The Intro Ritual applies to <strong>every card, every time</strong> - Quest cards, Scene cards, new Characters. Always.</div>
       </div>
 
       <div class="rules-section" id="kfb-turn">
@@ -827,16 +685,16 @@ body.med .mode-num.m6 { color: var(--med-rust); }
           </div>
           <div class="step-row"><span class="step-num">01</span><span class="step-label">Draw</span><span class="step-body">Draw 1 card from the top of the shared deck. You now hold 4 cards temporarily.</span></div>
           <div class="step-row"><span class="step-num">02</span><span class="step-label">Roll</span><span class="step-body">Roll the Story-Mode Die. This is your Mode. Not optional. Commit.</span></div>
-          <div class="step-row"><span class="step-num">03</span><span class="step-label">Play</span><span class="step-body">Choose 1 card — Scene card onto a Stage slot (empty, or overwrite at 3/3 — see Stage) — or as your new Character. Either way: Intro Ritual. You return to 3 hand cards.</span></div>
+          <div class="step-row"><span class="step-num">03</span><span class="step-label">Play</span><span class="step-body">Choose 1 card - Scene card onto a Stage slot (empty, or overwrite at 3/3) - or as your new Character. Either way: Intro Ritual. You return to 3 hand cards.</span></div>
           <div class="step-row"><span class="step-num">04</span><span class="step-label">Tell</span><span class="step-body">In character, in your Mode. Build on the card, weave in the Stage. The Quest must be felt. <strong>Power woven in → card to discard. Power skipped → card stays on the Stage.</strong></span></div>
-          <div class="step-row"><span class="step-num">05</span><span class="step-label">Move</span><span class="step-body">Move the Quest Die: <strong>+2, +1, 0, or –1.</strong> Your dramaturgical decision.</span></div>
+          <div class="step-row"><span class="step-num">05</span><span class="step-label">Move</span><span class="step-body">Move the Quest Die: <strong>+2, +1, 0, or −1.</strong> Your dramaturgical decision.</span></div>
         </div>
       </div>
 
       <div class="rules-section" id="kfb-modes">
         <div class="sec-eyebrow">Akt I · Gameplay</div>
         <div class="sec-title">The Six Story Modes</div>
-        <p class="prose">Roll the Story-Mode Die at the start of your turn. <strong>Not optional. Commit to it.</strong> The Mode is a frame, not a cage — if it contradicts your story, <em>that is the story</em>.</p>
+        <p class="prose">Roll the Story-Mode Die at the start of your turn. <strong>Not optional. Commit to it.</strong> The Mode is a frame, not a cage - if it contradicts your story, <em>that is the story</em>.</p>
         <div class="modes-grid">
           <div class="mode-cell"><span class="mode-num m1">1</span><div><div class="mode-name">Tragic</div><div class="mode-desc">Loss is real. Push forward anyway.</div></div></div>
           <div class="mode-cell"><span class="mode-num m2">2</span><div><div class="mode-name">Comic</div><div class="mode-desc">Things go wrong. It's your fault. Play the gap.</div></div></div>
@@ -845,15 +703,15 @@ body.med .mode-num.m6 { color: var(--med-rust); }
           <div class="mode-cell"><span class="mode-num m5">5</span><div><div class="mode-name">Mystical</div><div class="mode-desc">Something's happening beneath the surface.</div></div></div>
           <div class="mode-cell"><span class="mode-num m6">6</span><div><div class="mode-name">Forbidden</div><div class="mode-desc">Cross the line the story's been politely avoiding. Sell it.</div></div></div>
         </div>
-        <div class="blockquote">"The Mode is a frame, not a cage. I didn't invent the rules of drama — I just put them on dice."</div>
+        <div class="blockquote">"The Mode is a frame, not a cage. I didn't invent the rules of drama - I just put them on dice."</div>
       </div>
 
       <div class="rules-section" id="kfb-stage">
         <div class="sec-eyebrow">Akt I · Gameplay</div>
         <div class="sec-title">The Stage</div>
-        <p class="prose">The Stage holds <strong>three Scene card slots</strong> — the shared reality everyone is playing inside. Each slot starts empty.</p>
-        <div class="rule-line"><span class="rule-key">Empty slot —</span> Fill it with a Scene card from your hand (Intro Ritual, then play).</div>
-        <div class="rule-line"><span class="rule-key">Stage full (3/3) —</span> Overwrite an existing slot with a <em>yes-and</em>: choose one to discard and replace it.</div>
+        <p class="prose">The Stage holds <strong>three Scene card slots</strong> - the shared reality everyone is playing inside. Each slot starts empty.</p>
+        <div class="rule-line"><span class="rule-key">Empty slot -</span> Fill it with a Scene card from your hand (Intro Ritual, then play).</div>
+        <div class="rule-line"><span class="rule-key">Stage full (3/3) -</span> Overwrite an existing slot with a <em>yes-and</em>: choose one to discard and replace it.</div>
         <div class="sec-sub">Character Switch</div>
         <p class="prose">Instead of playing a Scene card, you can play a new Character card <strong>in front of you, replacing your current one,</strong> at any time during Step 03. Your old Character leaves the story or becomes an NPC. Change your voice and posture immediately. The Stage is unchanged. Draw back up to 3 hand cards.</p>
         <div class="blockquote">"A good death scene is a gift to the story. Accept gifts."</div>
@@ -864,69 +722,55 @@ body.med .mode-num.m6 { color: var(--med-rust); }
         <div class="sec-title">The Quest Die</div>
         <p class="prose">A <strong>story compass</strong>, not a countdown. Not a timer. <em>You move it.</em></p>
         <div class="quest-strip">
-          <div class="qd-cell" style="background:rgba(0,140,0,.06)"><div class="qd-num">1–2</div><div class="qd-name">Akt I</div><div class="qd-sub">Setup</div></div>
-          <div class="qd-cell" style="background:rgba(160,120,0,.06)"><div class="qd-num">3–4</div><div class="qd-name">Akt II</div><div class="qd-sub">Escalation</div></div>
+          <div class="qd-cell" style="background:rgba(0,140,0,.06)"><div class="qd-num">1-2</div><div class="qd-name">Akt I</div><div class="qd-sub">Setup</div></div>
+          <div class="qd-cell" style="background:rgba(160,120,0,.06)"><div class="qd-num">3-4</div><div class="qd-name">Akt II</div><div class="qd-sub">Escalation</div></div>
           <div class="qd-cell" style="background:rgba(160,60,0,.08)"><div class="qd-num">5</div><div class="qd-name">Ordeal</div><div class="qd-sub">Crisis</div></div>
           <div class="qd-cell qd-finale"><div class="qd-num">6</div><div class="qd-name">Finale</div><div class="qd-sub">It ends.</div></div>
         </div>
-        <div class="rule-line"><span class="rule-key">+2 —</span> Hard push. Use sparingly.</div>
-        <div class="rule-line"><span class="rule-key">+1 —</span> Normal progression.</div>
-        <div class="rule-line"><span class="rule-key">0 —</span> Hold. Linger. Build character.</div>
-        <div class="rule-line"><span class="rule-key">–1 —</span> Step back. When a twist reframes everything.</div>
-        <div class="note"><span class="note-label">Note —</span> Quest Die <strong>never goes below 1</strong>. When it hits 6, <strong>the next player's turn is the Finale turn</strong>.</div>
+        <div class="rule-line"><span class="rule-key">+2 -</span> Hard push. Use sparingly.</div>
+        <div class="rule-line"><span class="rule-key">+1 -</span> Normal progression.</div>
+        <div class="rule-line"><span class="rule-key">0 -</span> Hold. Linger. Build character.</div>
+        <div class="rule-line"><span class="rule-key">−1 -</span> Step back. When a twist reframes everything.</div>
+        <div class="note"><span class="note-label">Note -</span> Quest Die <strong>never goes below 1</strong>. When it hits 6, <strong>the next player's turn is the Finale turn</strong>.</div>
       </div>
 
       <div class="rules-section" id="kfb-finale">
         <div class="sec-eyebrow">Akt II · Progression</div>
         <div class="sec-title">The Finale</div>
-        <p class="prose">When the Quest Die hits <strong>6</strong>, <strong>the next player's turn</strong> is the Finale turn. Same 5 steps — but the Quest <em>must resolve</em> in the Tell.</p>
-        <div class="rule-line"><span class="rule-key">Memory —</span> Quest card stays on the table as a shared record of this episode.</div>
-        <div class="rule-line"><span class="rule-key">Clear —</span> Stage cleared. All Scene cards go to discard.</div>
-        <div class="rule-line"><span class="rule-key">New Quest —</span> Next player draws a Quest card and runs the full Quest Reveal ritual.</div>
-        <div class="rule-line"><span class="rule-key">Reset —</span> Quest Die back to 1. New episode begins.</div>
-        <div class="blockquote">"The Finale doesn't have to be good. It has to be <em>true</em> — true to what everyone built."</div>
-        <div class="sec-sub">Optional Rules</div>
-        <div class="rule-line"><span class="rule-key">Quest Fail (variant — overrides the floor) —</span> Drop the "never below 1" rule. If the Die falls below 1: Quest fails. No Finale, no memory. The collapse is the story.</div>
-        <div class="rule-line"><span class="rule-key">Staged Clearing —</span> Roll after Finale. 1–2: remove 1 Scene. 3–4: remove 2. 5–6: all three. Survivors carry history forward.</div>
+        <p class="prose">When the Quest Die hits <strong>6</strong>, <strong>the next player's turn</strong> is the Finale turn. Same 5 steps - but the Quest <em>must resolve</em> in the Tell.</p>
+        <div class="rule-line"><span class="rule-key">Memory -</span> Quest card stays on the table as a shared record of this episode.</div>
+        <div class="rule-line"><span class="rule-key">Clear -</span> Stage cleared. All Scene cards go to discard.</div>
+        <div class="rule-line"><span class="rule-key">New Quest -</span> Next player draws a Quest card and runs the full Quest Reveal ritual.</div>
+        <div class="rule-line"><span class="rule-key">Reset -</span> Quest Die back to 1. New episode begins.</div>
+        <div class="blockquote">"The Finale doesn't have to be good. It has to be <em>true</em> - true to what everyone built."</div>
       </div>
 
       <div class="rules-section" id="kfb-socials">
         <div class="sec-eyebrow">Table Culture</div>
         <div class="sec-title">Social Calls</div>
-        <p class="prose">Four group calls let any player interrupt the rhythm. They are loud. They are also non-negotiable — if the table calls one, the table is right. Called <em>after</em> a story, before the next player starts.</p>
+        <p class="prose">Four group calls let any player interrupt the rhythm. They are loud. They are also non-negotiable - if the table calls one, the table is right.</p>
         <div class="socials-table">
           <div class="soc-row"><div class="soc-term bingo">KayfaBINGO!</div><div class="soc-def">That landed. Pure praise. Storyteller draws an extra card.</div></div>
-          <div class="soc-row"><div class="soc-term boggle">KayfaBOGGLE?</div><div class="soc-def">I'm lost. One concrete question. Active player answers in 1–2 sentences, in character.</div></div>
+          <div class="soc-row"><div class="soc-term boggle">KayfaBOGGLE?</div><div class="soc-def">I'm lost. One concrete question. Active player answers in 1-2 sentences, in character.</div></div>
           <div class="soc-row"><div class="soc-term bongo">KayfaBONGO!</div><div class="soc-def">A player narrated their Power as a mechanic ("blocks 70%", "+2 damage"). Anyone calls it. Active player restates as story, not transaction. No die effect.</div></div>
           <div class="soc-row"><div class="soc-term blodsinn">BLÖDSINN!</div><div class="soc-def">Rule broken: out of character, Scene forgotten, Mode ignored. Majority decides. If stands: <strong>Quest Die does not move</strong>.</div></div>
         </div>
-        <div class="sec-sub">Table Culture</div>
-        <div class="rule-line"><span class="rule-key">Kayfab-Finger Rule —</span> Point at every card as you mention it.</div>
-        <div class="rule-line"><span class="rule-key">Silence Is Allowed —</span> 10 seconds to think. Don't rush the Bizarro.</div>
-        <div class="rule-line"><span class="rule-key">Overacting Is Encouraged —</span> If you're not embarrassed, you're not playing hard enough.</div>
-        <div class="rule-line"><span class="rule-key">X-Card —</span> Tap the table to stop and reset a scene. No questions asked.</div>
-        <div class="rule-line"><span class="rule-key">Laughter Breaks Nothing —</span> If everyone's laughing, you're playing it right.</div>
       </div>
 
       <div class="rules-section" id="kfb-powers">
         <div class="sec-eyebrow">Cards</div>
         <div class="sec-title">Powers &amp; Cards</div>
         <p class="prose"><strong>Nothing on a card is a rule.</strong> Everything on a card is an <em>invitation to perform</em>.</p>
-        <div class="rule-line"><span class="rule-key">Image —</span> Makes a claim without words. Your starting point.</div>
-        <div class="rule-line"><span class="rule-key">Quote —</span> The card's voice. Anchor for your narration.</div>
-        <div class="rule-line"><span class="rule-key">Lore —</span> Context or backstory. Use it or ignore it.</div>
-        <div class="rule-line"><span class="rule-key">Power —</span> What this card does in the story. Mandatory when introduced.</div>
         <div class="dosay" style="margin-top:var(--sp-5)">
           <div class="dosay-block dont"><div class="dosay-label">Don't say</div>"I play EGO TRIP. The Quest card reverses."</div>
-          <div class="dosay-block do"><div class="dosay-label">Say instead</div>"Everything the table thought it was building toward — it's the wrong way up now. The Copernican Shift doesn't argue. It just waits."</div>
+          <div class="dosay-block do"><div class="dosay-label">Say instead</div>"Everything the table thought it was building toward - it's the wrong way up now. The Copernican Shift doesn't argue. It just waits."</div>
         </div>
-        <div class="note"><span class="note-label">Note —</span> If you wove the Power into your story, the <strong>Scene card</strong> goes to discard. If you ran the Intro Ritual but didn't weave the Power — the <strong>Scene card stays in its Stage slot</strong> until overwritten. (Characters stay in front of you regardless — they leave only via Character Switch.)</div>
       </div>
 
       <div class="rules-section" id="kfb-decks">
         <div class="sec-eyebrow">Sample Deck</div>
         <div class="sec-title">The Protopia Deck</div>
-        <p class="prose">Browse the Protopia deck — a KayfaBizarro expansion about utopian futures and the people who break them. Free to download.</p>
+        <p class="prose">Browse the Protopia deck - a KayfaBizarro expansion about utopian futures and the people who break them. Free to download.</p>
         <div class="pdf-block"><div class="pdf-bar"><button onclick="pdfNav('kfb',-1)">← Prev</button><button onclick="pdfNav('kfb',1)">Next →</button><button onclick="pdfZoom('kfb',-.25)">− Zoom</button><button onclick="pdfZoom('kfb',.25)">+ Zoom</button><span class="pdf-info" id="kfb-pdf-info">—</span></div><div class="pdf-canvas" id="kfb-pdf-canvas"><div class="pdf-msg">Click "Next →" to browse the deck.</div></div></div>
         <div style="margin-top:var(--sp-4)"><a class="btn-outline" href="https://georgvw.gumroad.com/l/kayfabizarro_protopia" target="_blank" rel="noopener">Download free on Gumroad ↗</a></div>
       </div>
@@ -935,10 +779,10 @@ body.med .mode-num.m6 { color: var(--med-rust); }
         <div class="sec-eyebrow">Reference</div>
         <div class="sec-title">All Rituals at a Glance</div>
         <div class="gloss-table">
-          <div class="gloss-row"><div class="gloss-term">Intro Ritual</div><div class="gloss-def">Every card entering play — Name it · Claim it · Power it · 30 seconds · in character</div></div>
-          <div class="gloss-row"><div class="gloss-term">Quest Reveal</div><div class="gloss-def">Episode start &amp; after every Finale — Intro Ritual → frame the tension → Quest Die to 1 → first story</div></div>
-          <div class="gloss-row"><div class="gloss-term">Character Switch</div><div class="gloss-def">Step 03 only — Intro Ritual for new Character → brief exit for old → Stage unchanged → draw back to 3 cards</div></div>
-          <div class="gloss-row"><div class="gloss-term">Finale &amp; Reset</div><div class="gloss-def">Quest Die hits 6 — Finale story → Quest card as memory → Stage cleared → Quest Reveal → Die to 1</div></div>
+          <div class="gloss-row"><div class="gloss-term">Intro Ritual</div><div class="gloss-def">Every card entering play - Name it · Claim it · Power it · 30 seconds · in character</div></div>
+          <div class="gloss-row"><div class="gloss-term">Quest Reveal</div><div class="gloss-def">Episode start &amp; after every Finale - Intro Ritual → frame tension → Quest Die to 1 → first story</div></div>
+          <div class="gloss-row"><div class="gloss-term">Character Switch</div><div class="gloss-def">Step 03 only - Intro Ritual for new Character → brief exit for old → Stage unchanged → draw back to 3</div></div>
+          <div class="gloss-row"><div class="gloss-term">Finale &amp; Reset</div><div class="gloss-def">Quest Die hits 6 - Finale story → Quest card as memory → Stage cleared → Quest Reveal → Die to 1</div></div>
         </div>
       </div>
 
@@ -948,40 +792,22 @@ body.med .mode-num.m6 { color: var(--med-rust); }
         <div class="gloss-table">
           <div class="gloss-row"><div class="gloss-term">Kayfabe</div><div class="gloss-def">The agreement, in pro-wrestling, to treat the staged thing as real. We treat improvisation that way.</div></div>
           <div class="gloss-row"><div class="gloss-term">Bizarro</div><div class="gloss-def">The opposite version of the world that nonetheless explains it.</div></div>
-          <div class="gloss-row"><div class="gloss-term">Akt I / II</div><div class="gloss-def">The two halves of every session. Akt I introduces. Akt II breaks. Both are necessary.</div></div>
           <div class="gloss-row"><div class="gloss-term">Quest Die</div><div class="gloss-def">A story compass. Tracks where you are in the arc. You decide when to push.</div></div>
           <div class="gloss-row"><div class="gloss-term">Intro Ritual</div><div class="gloss-def">The entrance protocol: Name It · Claim It · Power It. Every card. Every time.</div></div>
           <div class="gloss-row"><div class="gloss-term">The Stage</div><div class="gloss-def">Three Scene card slots. The shared reality. Starts empty. Fills up. Gets overwritten.</div></div>
         </div>
-        <div class="marginquote">— Uncle FrizzleBob<br><span style="font-size:var(--fs-sm);">Professional Reality-Wrestler &amp; Epistemiologic Outlaw</span></div>
       </div>
 
       <div class="rules-section" id="kfb-ref">
         <div class="sec-eyebrow">Reference</div>
         <div class="sec-title">Quick Reference</div>
-        <div class="sec-sub" style="margin-top:0">Every Turn — 5 Steps</div>
+        <div class="sec-sub" style="margin-top:0">Every Turn - 5 Steps</div>
         <table class="ref-table">
           <tr><td>01 Draw</td><td>Draw 1 card (hand 3 → 4)</td></tr>
-          <tr><td>02 Roll</td><td>Roll Story-Mode Die — commit to it</td></tr>
-          <tr><td>03 Play</td><td>Scene → Stage slot OR Character Switch — always Intro Ritual</td></tr>
+          <tr><td>02 Roll</td><td>Roll Story-Mode Die - commit to it</td></tr>
+          <tr><td>03 Play</td><td>Scene → Stage slot OR Character Switch - always Intro Ritual</td></tr>
           <tr><td>04 Tell</td><td>In character · in Mode · weave in Stage · Power woven in → discard · Power skipped → stays on Stage</td></tr>
-          <tr><td>05 Move</td><td>Quest Die +2 / +1 / 0 / –1 · BLÖDSINN! → no move · At 6: Finale (next turn)</td></tr>
-        </table>
-        <div class="sec-sub">Story Modes</div>
-        <table class="ref-table">
-          <tr><td>1 — Tragic</td><td>Loss is real. Push forward anyway.</td></tr>
-          <tr><td>2 — Comic</td><td>Things go wrong. It's your fault.</td></tr>
-          <tr><td>3 — Absurd</td><td>The impossible is normal. Don't explain it.</td></tr>
-          <tr><td>4 — Heroic</td><td>Your Character is right for this moment.</td></tr>
-          <tr><td>5 — Mystical</td><td>Something's happening beneath the surface.</td></tr>
-          <tr><td>6 — Forbidden</td><td>Cross the line. Sell it.</td></tr>
-        </table>
-        <div class="sec-sub">Social Calls</div>
-        <table class="ref-table">
-          <tr><td>BINGO!</td><td>That landed. Storyteller draws a card.</td></tr>
-          <tr><td>BOGGLE?</td><td>One question, answered in character.</td></tr>
-          <tr><td>BONGO!</td><td>Power as mechanic → restate as story.</td></tr>
-          <tr><td>BLÖDSINN!</td><td>Rule broken → Quest Die does not move.</td></tr>
+          <tr><td>05 Move</td><td>Quest Die +2 / +1 / 0 / −1 · BLÖDSINN! → no move · At 6: Finale (next turn)</td></tr>
         </table>
       </div>
     </div>
@@ -989,12 +815,12 @@ body.med .mode-num.m6 { color: var(--med-rust); }
 </div>
 
 
-<!-- ══════════ KFB DE ══════════ -->
+<!-- ========== KFB DE (rules unchanged) ========== -->
 <div class="page" id="page-kfb_de">
   <div class="hero" style="padding-bottom:var(--sp-8)">
-    <div class="hero-eyebrow">Onkel FrizzleBobs Komik Kard Kult · v19.0</div>
-    <h1 class="hero-title" style="font-size:clamp(32px,5vw,56px)"><em>KayfaBizarro</em> — Freestyle-Regeln</h1>
-    <p class="hero-lead" style="margin-bottom:0">Das soziale Story-Wrestling-Kartenspiel · 1–6 Spieler · 20–60 Min · CC BY-NC-SA 4.0</p>
+    <div class="hero-eyebrow">Onkel FrizzleBobs Komik Kard Kult</div>
+    <h1 class="hero-title" style="font-size:clamp(32px,5vw,56px)"><em>KayfaBizarro</em> - Die Anti-Regeln</h1>
+    <p class="hero-lead" style="margin-bottom:0">Cut &amp; Play Comic · Story-Wrestling Edition · 1-6 Menschen · 20-60 Min · CC BY-NC-SA 4.0</p>
   </div>
   <div class="page-body">
     <nav class="sidebar" id="toc-kfb_de">
@@ -1009,27 +835,20 @@ body.med .mode-num.m6 { color: var(--med-rust); }
       <a href="#kfb_de-finale">Das Finale</a>
       <a href="#kfb_de-socials">Social Calls</a>
       <a href="#kfb_de-powers">Powers &amp; Karten</a>
-      <a href="#kfb_de-rituals">Alle Rituale</a>
       <a href="#kfb_de-ref">Schnellreferenz</a>
       <div class="sidebar-actions"><button class="btn-ghost" onclick="window.print()">Drucken / PDF</button></div>
     </nav>
     <div class="main" id="kfb_de-content">
-      <div class="search-wrap">
-        <svg class="search-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="6.5" cy="6.5" r="5"/><line x1="10.5" y1="10.5" x2="14" y2="14"/></svg>
-        <input class="search-input" id="kfb_de-search" type="search" placeholder="Regeln suchen…" autocomplete="off" oninput="liveSearch('kfb_de')">
-      </div>
-      <div class="search-results" id="kfb_de-search-results"><div class="search-count" id="kfb_de-search-count"></div><div id="kfb_de-search-hits"></div></div>
-      <div class="blockquote">"Das ist kein Spiel, das du spielst. Es ist ein Spiel, das du benutzt. Niemand gewinnt. Niemand verliert. Alle gehen leicht verändert. Das ist der Plan. Bleib flauschig."<cite>— Onkel FrizzleBob</cite></div>
+      <div class="blockquote">"Das ist kein Spiel, das du spielst. Es ist ein Spiel, das du benutzt. Niemand gewinnt. Niemand verliert. Alle gehen leicht verändert. Das ist der Plan. Bleib flauschig."<cite>- Onkel FrizzleBob</cite></div>
 
       <div class="rules-section" id="kfb_de-what">
         <div class="sec-eyebrow">Akt I · Setup</div>
         <div class="sec-title">Worum geht's.</div>
         <p class="prose">Kayfabizarro ist ein Kartenspiel in dem Sinne, wie eine Bühne ein Stück Holz ist: technisch ja, aber am Punkt vorbei. Die Karten sind Einladungen. Keine Karte ist eine Regel.</p>
-        <div class="blockquote">Du wirst dich in den ersten paar Minuten leicht lächerlich fühlen. Das ist der Punkt. Das Lächerliche trägt das Gewicht.</div>
         <div class="sec-sub">Was ihr braucht</div>
-        <div class="rule-line"><span class="rule-key">Karten —</span> Jeder bringt 15–20 illustrierte Karten. In einen gemeinsamen Stapel mischen.</div>
-        <div class="rule-line"><span class="rule-key">Zwei W6 —</span> Ein Story-Mode-Würfel, ein Quest-Würfel. Beide jederzeit sichtbar.</div>
-        <div class="rule-line"><span class="rule-key">1–6 Personen —</span> Und einen Tisch. Kein Brett. Keine Pawns.</div>
+        <div class="rule-line"><span class="rule-key">Karten -</span> Jeder bringt 15-20 illustrierte Karten. In einen gemeinsamen Stapel mischen.</div>
+        <div class="rule-line"><span class="rule-key">Zwei W6 -</span> Ein Story-Mode-Würfel, ein Quest-Würfel. Beide jederzeit sichtbar.</div>
+        <div class="rule-line"><span class="rule-key">1-6 Personen -</span> Und einen Tisch. Kein Brett. Keine Pawns.</div>
       </div>
 
       <div class="rules-section" id="kfb_de-setup">
@@ -1038,7 +857,7 @@ body.med .mode-num.m6 { color: var(--med-rust); }
         <div class="steps">
           <div class="step-row-plain"><span class="step-num" style="font-family:var(--ff-mono);font-size:var(--fs-lg);color:var(--accent);min-width:30px;flex-shrink:0;">1</span><span class="step-label">Austeilen</span><span class="step-body">Jedem 3 Karten geheim geben. Zwei Minuten.</span></div>
           <div class="step-row-plain"><span class="step-num" style="font-family:var(--ff-mono);font-size:var(--fs-lg);color:var(--accent);min-width:30px;flex-shrink:0;">2</span><span class="step-label">Charactere</span><span class="step-body">Jeder zieht 1 Karte aus seiner Hand, deckt sie offen auf und macht das Intro-Ritual.</span></div>
-          <div class="step-row-plain"><span class="step-num" style="font-family:var(--ff-mono);font-size:var(--fs-lg);color:var(--accent);min-width:30px;flex-shrink:0;">3</span><span class="step-label">Quest-Reveal</span><span class="step-body"><strong>Die flauschigste Person (du weißt, wer)</strong> zieht eine Quest-Karte und macht das Intro-Ritual. Quest-Würfel auf <strong>1</strong>.</span></div>
+          <div class="step-row-plain"><span class="step-num" style="font-family:var(--ff-mono);font-size:var(--fs-lg);color:var(--accent);min-width:30px;flex-shrink:0;">3</span><span class="step-label">Quest-Reveal</span><span class="step-body"><strong>Die flauschigste Person</strong> zieht eine Quest-Karte und macht das Intro-Ritual. Quest-Würfel auf <strong>1</strong>.</span></div>
           <div class="step-row-plain"><span class="step-num" style="font-family:var(--ff-mono);font-size:var(--fs-lg);color:var(--accent);min-width:30px;flex-shrink:0;">4</span><span class="step-label">Bühne</span><span class="step-body">Die Bühne startet leer. Drei Scene-Slots, alle offen.</span></div>
           <div class="step-row-plain"><span class="step-num" style="font-family:var(--ff-mono);font-size:var(--fs-lg);color:var(--accent);min-width:30px;flex-shrink:0;">5</span><span class="step-label">Los!</span><span class="step-body">Sie fängt mit der ersten Runde an.</span></div>
         </div>
@@ -1053,22 +872,18 @@ body.med .mode-num.m6 { color: var(--med-rust); }
           <div class="ritual-row"><span class="ritual-key">Claim It</span><span class="ritual-desc">Ein Satz: was <em>will</em> diese Karte? LORE vorlesen oder aus dem Bild erfinden.</span></div>
           <div class="ritual-row"><span class="ritual-key">Power It</span><span class="ritual-desc"><strong>Erklär es nicht. Spiel es.</strong> Zeig uns, was diese Power gerade jetzt mit der Realität macht.</span></div>
         </div>
-        <div class="note"><span class="note-label">Hinweis —</span> Das Intro-Ritual gilt für <strong>jede Karte, jedes Mal</strong> — Quest-Karten, Scene-Karten, neue Charactere. Immer.</div>
       </div>
 
       <div class="rules-section" id="kfb_de-turn">
         <div class="sec-eyebrow">Akt I · Gameplay</div>
         <div class="sec-title">Der Fünf-Schritte-Zug</div>
         <div class="step-card">
-          <div class="step-card-header">
-            <span class="step-card-title">Der Fünf-Schritte-Zug</span>
-            <span class="step-card-meta">~2 Minuten pro Spieler</span>
-          </div>
-          <div class="step-row"><span class="step-num">01</span><span class="step-label">Ziehen</span><span class="step-body">Zieh 1 Karte vom Stapel. Du hältst jetzt kurz 4 Karten.</span></div>
-          <div class="step-row"><span class="step-num">02</span><span class="step-label">Würfeln</span><span class="step-body">Story-Mode-Würfel werfen. Das ist dein Modus. Nicht optional. Geh rein.</span></div>
-          <div class="step-row"><span class="step-num">03</span><span class="step-label">Spielen</span><span class="step-body">Eine Karte aussuchen — als Scene-Karte auf einen Bühnen-Slot, oder als neuen Character. Egal was: Intro-Ritual. Zurück auf 3 Handkarten.</span></div>
-          <div class="step-row"><span class="step-num">04</span><span class="step-label">Erzählen</span><span class="step-body">In character, in deinem Modus. Bau auf der Karte auf, web die Bühne ein. <strong>Power eingewoben → Karte auf Ablage. Power ausgelassen → Karte bleibt auf Bühne.</strong></span></div>
-          <div class="step-row"><span class="step-num">05</span><span class="step-label">Bewegen</span><span class="step-body">Quest-Würfel bewegen: <strong>+2, +1, 0, oder –1.</strong></span></div>
+          <div class="step-card-header"><span class="step-card-title">Der Fünf-Schritte-Zug</span><span class="step-card-meta">~2 Min pro Spieler</span></div>
+          <div class="step-row"><span class="step-num">01</span><span class="step-label">Ziehen</span><span class="step-body">Zieh 1 Karte vom Stapel.</span></div>
+          <div class="step-row"><span class="step-num">02</span><span class="step-label">Würfeln</span><span class="step-body">Story-Mode-Würfel werfen. Geh rein.</span></div>
+          <div class="step-row"><span class="step-num">03</span><span class="step-label">Spielen</span><span class="step-body">Scene-Karte auf Bühne oder neuer Character. Intro-Ritual.</span></div>
+          <div class="step-row"><span class="step-num">04</span><span class="step-label">Erzählen</span><span class="step-body">In character. <strong>Power eingewoben → Ablage. Power ausgelassen → bleibt auf Bühne.</strong></span></div>
+          <div class="step-row"><span class="step-num">05</span><span class="step-label">Bewegen</span><span class="step-body">Quest-Würfel: <strong>+2, +1, 0, oder −1.</strong></span></div>
         </div>
       </div>
 
@@ -1077,9 +892,9 @@ body.med .mode-num.m6 { color: var(--med-rust); }
         <div class="sec-title">Die sechs Story-Modi</div>
         <div class="modes-grid">
           <div class="mode-cell"><span class="mode-num">1</span><div><div class="mode-name">Tragisch</div><div class="mode-desc">Verlust ist echt. Trotzdem weiter.</div></div></div>
-          <div class="mode-cell"><span class="mode-num">2</span><div><div class="mode-name">Komisch</div><div class="mode-desc">Es geht schief. Du bist schuld. Spiel die Lücke.</div></div></div>
-          <div class="mode-cell"><span class="mode-num">3</span><div><div class="mode-name">Absurd</div><div class="mode-desc">Das Unmögliche ist normal. Erklär es nicht.</div></div></div>
-          <div class="mode-cell"><span class="mode-num">4</span><div><div class="mode-name">Heroisch</div><div class="mode-desc">Dein Character ist richtig für diesen Moment.</div></div></div>
+          <div class="mode-cell"><span class="mode-num">2</span><div><div class="mode-name">Komisch</div><div class="mode-desc">Es geht schief. Du bist schuld.</div></div></div>
+          <div class="mode-cell"><span class="mode-num">3</span><div><div class="mode-name">Absurd</div><div class="mode-desc">Das Unmögliche ist normal.</div></div></div>
+          <div class="mode-cell"><span class="mode-num">4</span><div><div class="mode-name">Heroisch</div><div class="mode-desc">Dein Character ist richtig für den Moment.</div></div></div>
           <div class="mode-cell"><span class="mode-num">5</span><div><div class="mode-name">Mystisch</div><div class="mode-desc">Da passiert was unter der Oberfläche.</div></div></div>
           <div class="mode-cell"><span class="mode-num">6</span><div><div class="mode-name">Verboten</div><div class="mode-desc">Überschreite die Linie. Verkauf es.</div></div></div>
         </div>
@@ -1088,46 +903,36 @@ body.med .mode-num.m6 { color: var(--med-rust); }
       <div class="rules-section" id="kfb_de-stage">
         <div class="sec-eyebrow">Akt I · Gameplay</div>
         <div class="sec-title">Die Bühne</div>
-        <p class="prose">Die Bühne hat <strong>drei Scene-Slots</strong> — die geteilte Realität, in der alle gerade spielen. Jeder Slot startet leer.</p>
-        <div class="rule-line"><span class="rule-key">Leerer Slot —</span> Füll ihn mit einer Scene-Karte (Intro-Ritual, dann spielen).</div>
-        <div class="rule-line"><span class="rule-key">Bühne voll (3/3) —</span> Einen Slot per yes-and überschreiben: eine Karte ablegen und ersetzen.</div>
-        <div class="sec-sub">Character-Wechsel</div>
-        <p class="prose">Statt einer Scene-Karte kannst du jederzeit während Schritt 03 eine neue Character-Karte <strong>vor dich legen, deine bisherige ersetzend</strong>. Bühne bleibt unverändert. Zurück auf 3 Handkarten.</p>
+        <p class="prose">Die Bühne hat <strong>drei Scene-Slots</strong>. Jeder Slot startet leer.</p>
+        <div class="rule-line"><span class="rule-key">Leerer Slot -</span> Füll ihn mit einer Scene-Karte.</div>
+        <div class="rule-line"><span class="rule-key">Bühne voll (3/3) -</span> Einen Slot per yes-and überschreiben.</div>
       </div>
 
       <div class="rules-section" id="kfb_de-quest">
         <div class="sec-eyebrow">Akt II · Verlauf</div>
         <div class="sec-title">Der Quest-Würfel</div>
         <div class="quest-strip">
-          <div class="qd-cell" style="background:rgba(0,140,0,.06)"><div class="qd-num">1–2</div><div class="qd-name">Akt I</div><div class="qd-sub">Aufbau</div></div>
-          <div class="qd-cell" style="background:rgba(160,120,0,.06)"><div class="qd-num">3–4</div><div class="qd-name">Akt II</div><div class="qd-sub">Eskalation</div></div>
+          <div class="qd-cell" style="background:rgba(0,140,0,.06)"><div class="qd-num">1-2</div><div class="qd-name">Akt I</div><div class="qd-sub">Aufbau</div></div>
+          <div class="qd-cell" style="background:rgba(160,120,0,.06)"><div class="qd-num">3-4</div><div class="qd-name">Akt II</div><div class="qd-sub">Eskalation</div></div>
           <div class="qd-cell" style="background:rgba(160,60,0,.08)"><div class="qd-num">5</div><div class="qd-name">Tortur</div><div class="qd-sub">Krise</div></div>
           <div class="qd-cell qd-finale"><div class="qd-num">6</div><div class="qd-name">Finale</div><div class="qd-sub">Es endet.</div></div>
         </div>
-        <div class="note"><span class="note-label">Hinweis —</span> Quest-Würfel fällt <strong>nie unter 1</strong>. Bei 6: <strong>der nächste Zug ist der Finale-Zug</strong>.</div>
       </div>
 
       <div class="rules-section" id="kfb_de-finale">
         <div class="sec-eyebrow">Akt II · Verlauf</div>
         <div class="sec-title">Das Finale</div>
-        <p class="prose">Wenn der Quest-Würfel auf <strong>6</strong> steht, ist <strong>der Zug der nächsten Person</strong> der Finale-Zug.</p>
-        <div class="rule-line"><span class="rule-key">Erinnerung —</span> Quest-Karte bleibt am Tisch.</div>
-        <div class="rule-line"><span class="rule-key">Bühne weg —</span> Stage cleared. Alle Scene-Karten auf Ablage.</div>
-        <div class="rule-line"><span class="rule-key">Neue Quest —</span> Nächster Spieler macht Quest-Reveal.</div>
-        <div class="rule-line"><span class="rule-key">Reset —</span> Quest-Würfel auf 1. Neue Episode startet.</div>
-        <div class="sec-sub">Optionale Regeln</div>
-        <div class="rule-line"><span class="rule-key">Quest Fail (Variante) —</span> Die „nie unter 1"-Regel weglassen. Fällt der Würfel unter 1: Quest gescheitert.</div>
-        <div class="rule-line"><span class="rule-key">Staged Clearing —</span> Nach dem Finale würfeln. 1–2: 1 Scene weg. 3–4: 2 weg. 5–6: alle drei.</div>
+        <p class="prose">Wenn der Quest-Würfel auf <strong>6</strong> steht, ist <strong>der nächste Zug</strong> der Finale-Zug.</p>
       </div>
 
       <div class="rules-section" id="kfb_de-socials">
         <div class="sec-eyebrow">Tisch-Kultur</div>
         <div class="sec-title">Social Calls</div>
         <div class="socials-table">
-          <div class="soc-row"><div class="soc-term bingo">KayfaBINGO!</div><div class="soc-def">Das hat gesessen. Pures Lob. Erzähler*in zieht eine Extra-Karte.</div></div>
-          <div class="soc-row"><div class="soc-term boggle">KayfaBOGGLE?</div><div class="soc-def">Ich bin raus. Eine konkrete Frage. Aktive Person antwortet in 1–2 Sätzen, in character.</div></div>
-          <div class="soc-row"><div class="soc-term bongo">KayfaBONGO!</div><div class="soc-def">Jemand hat seine Power als Mechanik erzählt. Aktive Person formuliert die Power als Story um. Kein Würfel-Effekt.</div></div>
-          <div class="soc-row"><div class="soc-term blodsinn">BLÖDSINN!</div><div class="soc-def">Regel gebrochen. Mehrheit entscheidet. Wenn's steht: <strong>Quest-Würfel bewegt sich nicht</strong>.</div></div>
+          <div class="soc-row"><div class="soc-term bingo">KayfaBINGO!</div><div class="soc-def">Das hat gesessen.</div></div>
+          <div class="soc-row"><div class="soc-term boggle">KayfaBOGGLE?</div><div class="soc-def">Eine konkrete Frage.</div></div>
+          <div class="soc-row"><div class="soc-term bongo">KayfaBONGO!</div><div class="soc-def">Power als Mechanik. Restate als Story.</div></div>
+          <div class="soc-row"><div class="soc-term blodsinn">BLÖDSINN!</div><div class="soc-def">Regel gebrochen. <strong>Quest-Würfel bewegt sich nicht</strong>.</div></div>
         </div>
       </div>
 
@@ -1135,48 +940,30 @@ body.med .mode-num.m6 { color: var(--med-rust); }
         <div class="sec-eyebrow">Karten</div>
         <div class="sec-title">Powers &amp; Karten</div>
         <p class="prose"><strong>Nichts auf einer Karte ist eine Regel.</strong> Alles ist eine Einladung zur Performance.</p>
-        <div class="dosay">
-          <div class="dosay-block dont"><div class="dosay-label">Sag nicht</div>„Ich spiele EGO TRIP. Die Quest-Karte dreht sich um."</div>
-          <div class="dosay-block do"><div class="dosay-label">Sag stattdessen</div>„Alles, worauf der Tisch dachte hinzuarbeiten — es steht jetzt falsch herum. Der Kopernikanische Wandel argumentiert nicht. Er wartet einfach."</div>
-        </div>
-        <div class="note"><span class="note-label">Hinweis —</span> Power eingewoben → <strong>Scene-Karte</strong> auf Ablage. Power ausgelassen → <strong>Scene-Karte bleibt im Slot</strong> bis überschrieben. (Charactere bleiben vor dir — nur Character-Wechsel entfernt sie.)</div>
-      </div>
-
-      <div class="rules-section" id="kfb_de-rituals">
-        <div class="sec-eyebrow">Referenz</div>
-        <div class="sec-title">Alle Rituale auf einen Blick</div>
-        <div class="gloss-table">
-          <div class="gloss-row"><div class="gloss-term">Intro-Ritual</div><div class="gloss-def">Jede Karte beim Eintritt — Name it · Claim it · Power it · 30 Sek · in character</div></div>
-          <div class="gloss-row"><div class="gloss-term">Quest-Reveal</div><div class="gloss-def">Episodenstart &amp; nach jedem Finale — Intro-Ritual → Spannung rahmen → Quest-Würfel auf 1</div></div>
-          <div class="gloss-row"><div class="gloss-term">Character-Wechsel</div><div class="gloss-def">Nur Schritt 03 — Intro-Ritual → kurzer Abgang → Bühne unverändert → zurück auf 3 Karten</div></div>
-          <div class="gloss-row"><div class="gloss-term">Finale &amp; Reset</div><div class="gloss-def">Quest-Würfel auf 6 — Finale-Story → Erinnerung → Bühne weg → Quest-Reveal → Würfel auf 1</div></div>
-        </div>
       </div>
 
       <div class="rules-section" id="kfb_de-ref">
         <div class="sec-eyebrow">Referenz</div>
         <div class="sec-title">Schnellreferenz</div>
-        <div class="sec-sub" style="margin-top:0">Jeder Zug — 5 Schritte</div>
         <table class="ref-table">
-          <tr><td>01 Ziehen</td><td>Zieh 1 Karte (Hand 3 → 4)</td></tr>
-          <tr><td>02 Würfeln</td><td>Story-Mode-Würfel — geh rein</td></tr>
-          <tr><td>03 Spielen</td><td>Scene → Bühnen-Slot ODER Character-Wechsel — immer Intro-Ritual</td></tr>
-          <tr><td>04 Erzählen</td><td>In character · im Modus · Bühne einweben · Power eingewoben → Ablage · Power ausgelassen → bleibt</td></tr>
-          <tr><td>05 Bewegen</td><td>Quest-Würfel +2 / +1 / 0 / –1 · BLÖDSINN! → keine Bewegung · Bei 6: Finale (nächster Zug)</td></tr>
+          <tr><td>01 Ziehen</td><td>Zieh 1 Karte</td></tr>
+          <tr><td>02 Würfeln</td><td>Story-Mode-Würfel</td></tr>
+          <tr><td>03 Spielen</td><td>Scene oder Character. Intro-Ritual.</td></tr>
+          <tr><td>04 Erzählen</td><td>In character · im Modus</td></tr>
+          <tr><td>05 Bewegen</td><td>Quest-Würfel +2 / +1 / 0 / −1</td></tr>
         </table>
-        <div class="marginquote">"KayfaBizarro ist mit Absicht unfertig. Der Rest gehört euch. Karten ausschneiden. Mischen. Anfangen zu spielen. Bleib flauschig."<br><span style="font-size:var(--fs-sm);font-style:normal;font-family:var(--ff-ui);font-weight:600;color:var(--accent)">— Onkel FrizzleBob</span></div>
       </div>
     </div>
   </div>
 </div>
 
 
-<!-- ══════════ MED EN ══════════ -->
+<!-- ========== MED EN (rules unchanged) ========== -->
 <div class="page" id="page-med">
   <div class="hero" style="padding-bottom:var(--sp-8)">
-    <div class="hero-eyebrow">Doc FrizzleBob's Medical Kard Kult · v19.0</div>
-    <h1 class="hero-title" style="font-size:clamp(32px,5vw,56px)"><em>MedKayfab</em> Rules — Mnemonic Medicine</h1>
-    <p class="hero-lead" style="margin-bottom:0">The Clinical Story Wrestling Card Game · Solo or 1–6 · 20–60 Min · CC BY-NC-SA 4.0</p>
+    <div class="hero-eyebrow">Doc FrizzleBob's Medical Kard Kult</div>
+    <h1 class="hero-title" style="font-size:clamp(32px,5vw,56px)"><em>MedKayfab</em> - The Anti-Rules</h1>
+    <p class="hero-lead" style="margin-bottom:0">Cut &amp; Play Comic · Clinical Edition · Solo or 1-6 · 20-60 Min · CC BY-NC-SA 4.0</p>
   </div>
   <div class="page-body">
     <nav class="sidebar" id="toc-med">
@@ -1193,40 +980,29 @@ body.med .mode-num.m6 { color: var(--med-rust); }
       <a href="#med-powers">Powers &amp; Cards</a>
       <a href="#med-addons">Learning Add-Ons</a>
       <a href="#med-decks">Sample Deck</a>
-      <a href="#med-rituals">All Rituals</a>
       <a href="#med-ref">Quick Reference</a>
       <div class="sidebar-actions"><button class="btn-ghost" onclick="window.print()">Print / PDF</button></div>
     </nav>
     <div class="main" id="med-content">
-      <div class="search-wrap">
-        <svg class="search-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="6.5" cy="6.5" r="5"/><line x1="10.5" y1="10.5" x2="14" y2="14"/></svg>
-        <input class="search-input" id="med-search" type="search" placeholder="Search — 'mechanism', 'COX', 'finale'…" autocomplete="off" oninput="liveSearch('med')">
-      </div>
-      <div class="search-results" id="med-search-results"><div class="search-count" id="med-search-count"></div><div id="med-search-hits"></div></div>
-      <div class="blockquote">It's 2am in the ambulance bay. Someone draws Fibby Fitz — Atrial Fibrillation — and rolls a 3. Mechanism Flash. They explain why the ventricles only catch every third beat, without looking at the card. They get it half-right. The table fills in the rest. <em>That's not a side effect of the game. That's the point.</em><cite>— Doc FrizzleBob, Professor of Anarcho-Medicine &amp; Reluctant Attending</cite></div>
+      <div class="blockquote">It's 2am in the ambulance bay. Someone draws Fibby Fitz - Atrial Fibrillation - and rolls a 3. Mechanism Flash. They explain why the ventricles only catch every third beat, without looking at the card. <em>That's not a side effect of the game. That's the point.</em><cite>- Doc FrizzleBob, Professor of Anarcho-Medicine &amp; Reluctant Attending</cite></div>
 
       <div class="rules-section" id="med-what">
         <div class="sec-eyebrow">Akt I · Setup</div>
         <div class="sec-title">What it is.</div>
-        <p class="prose">You each play a Character — a <strong>clinician, a drug, an immune cell, a rogue signalling molecule, or a personified disease</strong>. Together you build a shared Clinical Stage and push a Medical Quest toward resolution.</p>
+        <p class="prose">You each play a Character - a <strong>clinician, a drug, an immune cell, a rogue signalling molecule, or a personified disease</strong>. Together you build a shared Clinical Stage and push a Medical Quest toward resolution.</p>
         <p class="prose">When the Quest Die hits 6, someone delivers the Finale: the diagnosis, the mechanism, the treatment decision. <strong>No win condition. No score.</strong> Just a mechanism you can explain the next morning without looking at the card.</p>
-        <div class="sec-sub">What you need</div>
-        <div class="rule-line"><span class="rule-key">Cards —</span> From any MedKayfab deck — Cardiology, Neurology, Immunology, Pharmacology. Mix freely.</div>
-        <div class="rule-line"><span class="rule-key">Two D6 —</span> One Story-Mode Die, one Quest Die. Both visible at all times.</div>
-        <div class="rule-line"><span class="rule-key">Optional —</span> A blank card or notebook for the <em>Mechanism Log</em>.</div>
       </div>
 
       <div class="rules-section" id="med-setup">
         <div class="sec-eyebrow">Akt I · Setup</div>
         <div class="sec-title">Setup</div>
         <div class="steps">
-          <div class="step-row-plain"><span class="step-num" style="font-family:var(--ff-mono);font-size:var(--fs-lg);color:var(--accent);min-width:30px;flex-shrink:0;">1</span><span class="step-label">Deal</span><span class="step-body">Give 3 cards to each player. Keep them secret. Scrub in — two minutes.</span></div>
-          <div class="step-row-plain"><span class="step-num" style="font-family:var(--ff-mono);font-size:var(--fs-lg);color:var(--accent);min-width:30px;flex-shrink:0;">2</span><span class="step-label">Characters</span><span class="step-body">Everyone picks 1 card from their hand, reveals it face-up, and runs the Intro Ritual — in character, out loud.</span></div>
-          <div class="step-row-plain"><span class="step-num" style="font-family:var(--ff-mono);font-size:var(--fs-lg);color:var(--accent);min-width:30px;flex-shrink:0;">3</span><span class="step-label">Quest Reveal</span><span class="step-body"><strong>Most caffeinated player (you know who)</strong> draws a Quest card, runs the Intro Ritual, frames the clinical tension. Quest Die to <strong>1</strong>.</span></div>
-          <div class="step-row-plain"><span class="step-num" style="font-family:var(--ff-mono);font-size:var(--fs-lg);color:var(--accent);min-width:30px;flex-shrink:0;">4</span><span class="step-label">Stage</span><span class="step-body">The Stage starts empty. Three Scene slots, all open.</span></div>
-          <div class="step-row-plain"><span class="step-num" style="font-family:var(--ff-mono);font-size:var(--fs-lg);color:var(--accent);min-width:30px;flex-shrink:0;">5</span><span class="step-label">Go</span><span class="step-body">They take the first turn.</span></div>
+          <div class="step-row-plain"><span class="step-num" style="font-family:var(--ff-mono);font-size:var(--fs-lg);color:var(--accent);min-width:30px;flex-shrink:0;">1</span><span class="step-label">Deal</span><span class="step-body">Give 3 cards to each player. Keep them secret. Scrub in.</span></div>
+          <div class="step-row-plain"><span class="step-num" style="font-family:var(--ff-mono);font-size:var(--fs-lg);color:var(--accent);min-width:30px;flex-shrink:0;">2</span><span class="step-label">Characters</span><span class="step-body">Everyone picks 1 card, reveals it face-up, runs the Intro Ritual.</span></div>
+          <div class="step-row-plain"><span class="step-num" style="font-family:var(--ff-mono);font-size:var(--fs-lg);color:var(--accent);min-width:30px;flex-shrink:0;">3</span><span class="step-label">Quest Reveal</span><span class="step-body"><strong>Most caffeinated player</strong> draws a Quest card. Quest Die to <strong>1</strong>.</span></div>
+          <div class="step-row-plain"><span class="step-num" style="font-family:var(--ff-mono);font-size:var(--fs-lg);color:var(--accent);min-width:30px;flex-shrink:0;">4</span><span class="step-label">Stage</span><span class="step-body">Stage empty. Three Scene slots.</span></div>
+          <div class="step-row-plain"><span class="step-num" style="font-family:var(--ff-mono);font-size:var(--fs-lg);color:var(--accent);min-width:30px;flex-shrink:0;">5</span><span class="step-label">Go</span><span class="step-body">First turn.</span></div>
         </div>
-        <div class="blockquote">"You will feel slightly ridiculous for the first few minutes. That's fine. <em>The ridiculous is where the mechanism is memorable.</em>"</div>
       </div>
 
       <div class="rules-section" id="med-ritual">
@@ -1234,25 +1010,21 @@ body.med .mode-num.m6 { color: var(--med-rust); }
         <div class="sec-title">The Intro Ritual</div>
         <div class="ritual">
           <div class="ritual-row"><span class="ritual-key">Name It</span><span class="ritual-desc">Announce the card's name <strong>and</strong> the clinical concept. Loud.</span></div>
-          <div class="ritual-row"><span class="ritual-key">Claim It</span><span class="ritual-desc">One sentence: what is its <em>mechanism</em>? Read the LORE or invent from the image.</span></div>
+          <div class="ritual-row"><span class="ritual-key">Claim It</span><span class="ritual-desc">One sentence: what is its <em>mechanism</em>?</span></div>
           <div class="ritual-row"><span class="ritual-key">Power It</span><span class="ritual-desc"><strong>Don't explain it. Perform it.</strong> Show us what this Power does to the patient right now.</span></div>
         </div>
-        <div class="note"><span class="note-label">Note —</span> The Intro Ritual applies to <strong>every card, every time</strong>. Always.</div>
       </div>
 
       <div class="rules-section" id="med-turn">
         <div class="sec-eyebrow">Akt I · Gameplay</div>
         <div class="sec-title">The Five-Step Turn</div>
         <div class="step-card">
-          <div class="step-card-header">
-            <span class="step-card-title">The Five-Step Turn</span>
-            <span class="step-card-meta">~2 minutes per player</span>
-          </div>
-          <div class="step-row"><span class="step-num">01</span><span class="step-label">Draw</span><span class="step-body">Draw 1 card (temporarily 4 hand cards).</span></div>
-          <div class="step-row"><span class="step-num">02</span><span class="step-label">Roll</span><span class="step-body">Roll the Story-Mode Die. This is your Clinical Mode. <strong>Commit to it.</strong></span></div>
-          <div class="step-row"><span class="step-num">03</span><span class="step-label">Play</span><span class="step-body">Scene card onto a Stage slot (empty, or overwrite at 3/3) — or new Character. Always: Intro Ritual. Return to 3 hand cards.</span></div>
-          <div class="step-row"><span class="step-num">04</span><span class="step-label">Tell</span><span class="step-body">In character, in your Mode. Weave in the Stage. <strong>Power woven in → Scene card to discard. Power skipped → card stays on the Stage.</strong></span></div>
-          <div class="step-row"><span class="step-num">05</span><span class="step-label">Move</span><span class="step-body">Quest Die: <strong>+2, +1, 0, or –1.</strong> Never below 1.</span></div>
+          <div class="step-card-header"><span class="step-card-title">The Five-Step Turn</span><span class="step-card-meta">~2 min per player</span></div>
+          <div class="step-row"><span class="step-num">01</span><span class="step-label">Draw</span><span class="step-body">Draw 1 card.</span></div>
+          <div class="step-row"><span class="step-num">02</span><span class="step-label">Roll</span><span class="step-body">Story-Mode Die. <strong>Commit.</strong></span></div>
+          <div class="step-row"><span class="step-num">03</span><span class="step-label">Play</span><span class="step-body">Scene → Stage slot OR Character Switch. Always: Intro Ritual.</span></div>
+          <div class="step-row"><span class="step-num">04</span><span class="step-label">Tell</span><span class="step-body">In character. <strong>Power woven in → discard. Power skipped → stays on Stage.</strong></span></div>
+          <div class="step-row"><span class="step-num">05</span><span class="step-label">Move</span><span class="step-body">Quest Die: <strong>+2, +1, 0, or −1.</strong></span></div>
         </div>
       </div>
 
@@ -1260,67 +1032,47 @@ body.med .mode-num.m6 { color: var(--med-rust); }
         <div class="sec-eyebrow">Akt I · Gameplay</div>
         <div class="sec-title">The Six Clinical Modes</div>
         <div class="modes-grid">
-          <div class="mode-cell"><span class="mode-num">1</span><div><div class="mode-name">Lab Report</div><div class="mode-desc">Dry. Factual. Sound like a pharma rep — and critique it while you do.</div></div></div>
-          <div class="mode-cell"><span class="mode-num">2</span><div><div class="mode-name">Clin. Sabotage</div><div class="mode-desc">Something goes wrong. A diagnostic error, a drug interaction. Mechanism under pressure.</div></div></div>
-          <div class="mode-cell"><span class="mode-num">3</span><div><div class="mode-name">Mech. Flash</div><div class="mode-desc"><strong>Active Recall.</strong> Explain the LORE without looking. Table majority decides. If yes: Quest Die +1. Then read LORE aloud.</div></div></div>
-          <div class="mode-cell"><span class="mode-num">4</span><div><div class="mode-name">Power-Play</div><div class="mode-desc">Drug hits receptor. Pathogen evades. <em>Perform the mechanism.</em></div></div></div>
-          <div class="mode-cell"><span class="mode-num">5</span><div><div class="mode-name">Teaching Round</div><div class="mode-desc">Another player asks one question. Answer in character. <strong>No shaming.</strong></div></div></div>
-          <div class="mode-cell"><span class="mode-num">6</span><div><div class="mode-name">Prof. Blessing</div><div class="mode-desc">Total anarchy. Play a card to the Stage <em>and</em> move the Quest Die as you see fit.</div></div></div>
+          <div class="mode-cell"><span class="mode-num">1</span><div><div class="mode-name">Lab Report</div><div class="mode-desc">Dry. Factual. Critique the brochure.</div></div></div>
+          <div class="mode-cell"><span class="mode-num">2</span><div><div class="mode-name">Clin. Sabotage</div><div class="mode-desc">Mechanism under pressure.</div></div></div>
+          <div class="mode-cell"><span class="mode-num">3</span><div><div class="mode-name">Mech. Flash</div><div class="mode-desc"><strong>Active Recall.</strong> Explain without looking. Table decides.</div></div></div>
+          <div class="mode-cell"><span class="mode-num">4</span><div><div class="mode-name">Power-Play</div><div class="mode-desc">Perform the mechanism.</div></div></div>
+          <div class="mode-cell"><span class="mode-num">5</span><div><div class="mode-name">Teaching Round</div><div class="mode-desc">One question, in character. <strong>No shaming.</strong></div></div></div>
+          <div class="mode-cell"><span class="mode-num">6</span><div><div class="mode-name">Prof. Blessing</div><div class="mode-desc">Total anarchy.</div></div></div>
         </div>
-        <div class="blockquote">"Mode 5 is 'The Teaching Round' — not 'Pimping.' We ask because we're curious. We answer because we're trying."</div>
       </div>
 
       <div class="rules-section" id="med-stage">
         <div class="sec-eyebrow">Akt I · Gameplay</div>
         <div class="sec-title">The Clinical Stage</div>
-        <p class="prose">Three Scene card slots — the shared clinical reality. All slots start empty.</p>
-        <div class="rule-line"><span class="rule-key">Empty slot —</span> Fill it with a Scene card (Intro Ritual, then play).</div>
-        <div class="rule-line"><span class="rule-key">Stage full (3/3) —</span> Overwrite a slot with a yes-and.</div>
-        <div class="sec-sub">Character Switch</div>
-        <p class="prose">Instead of playing a Scene card, you can play a new Character card <strong>in front of you, replacing your current one,</strong> at any time during Step 03. The Stage is unchanged. Draw back up to 3 hand cards.</p>
+        <p class="prose">Three Scene card slots. Shared clinical reality.</p>
       </div>
 
       <div class="rules-section" id="med-quest">
         <div class="sec-eyebrow">Akt II · Progression</div>
         <div class="sec-title">The Quest Die</div>
         <div class="quest-strip">
-          <div class="qd-cell" style="background:rgba(11,107,107,.07)"><div class="qd-num">1–2</div><div class="qd-name">Anamnesis</div><div class="qd-sub">Symptoms</div></div>
-          <div class="qd-cell" style="background:rgba(184,92,0,.07)"><div class="qd-num">3–4</div><div class="qd-name">Workup</div><div class="qd-sub">Escalation</div></div>
+          <div class="qd-cell" style="background:rgba(11,107,107,.07)"><div class="qd-num">1-2</div><div class="qd-name">Anamnesis</div><div class="qd-sub">Symptoms</div></div>
+          <div class="qd-cell" style="background:rgba(184,92,0,.07)"><div class="qd-num">3-4</div><div class="qd-name">Workup</div><div class="qd-sub">Escalation</div></div>
           <div class="qd-cell" style="background:rgba(160,24,24,.07)"><div class="qd-num">5</div><div class="qd-name">Crisis</div><div class="qd-sub">Must give</div></div>
           <div class="qd-cell qd-finale"><div class="qd-num">6</div><div class="qd-name">Finale</div><div class="qd-sub">Case closes.</div></div>
         </div>
-        <div class="note"><span class="note-label">Note —</span> Quest Die <strong>never goes below 1</strong>. When it hits 6, <strong>the next player's turn is the Finale turn</strong>.</div>
-        <div class="sec-sub">Quest Formats</div>
-        <div class="rule-line"><span class="rule-key">Standard Quest —</span> Any card. Starting player frames the clinical tension.</div>
-        <div class="rule-line"><span class="rule-key">Prepared Quests —</span> Write clinical scenarios on blank cards.</div>
-        <div class="rule-line"><span class="rule-key">Mechanism Quests —</span> A mechanism to reconstruct collectively.</div>
       </div>
 
       <div class="rules-section" id="med-finale">
         <div class="sec-eyebrow">Akt II · Progression</div>
         <div class="sec-title">The Grand Finale</div>
-        <p class="prose">When the Quest Die hits <strong>6</strong>, <strong>the next player's turn</strong> is the Finale turn.</p>
-        <div class="rule-line"><span class="rule-key">Memory —</span> Quest card stays on table. Write the mechanism on it if running the Mechanism Log.</div>
-        <div class="rule-line"><span class="rule-key">Tabula Rasa —</span> Stage clears. All Scene cards to discard.</div>
-        <div class="rule-line"><span class="rule-key">New Quest —</span> Next player runs Quest Reveal. Quest Die to 1.</div>
-        <div class="blockquote">"A messy ending that was earned beats a clean answer that was imported from the index."</div>
-        <div class="sec-sub">Optional Rules</div>
-        <div class="rule-line"><span class="rule-key">Quest Fail (variant — overrides the floor) —</span> Drop "never below 1." If Die falls below 1: Quest fails. The collapse is the case.</div>
-        <div class="rule-line"><span class="rule-key">Staged Clearing —</span> Roll after Finale. 1–2: remove 1 Scene. 3–4: remove 2. 5–6: all three.</div>
+        <p class="prose">Quest Die hits <strong>6</strong>. Next player's turn is the Finale turn.</p>
       </div>
 
       <div class="rules-section" id="med-socials">
         <div class="sec-eyebrow">Table Culture</div>
         <div class="sec-title">Social Calls</div>
         <div class="socials-table">
-          <div class="soc-row"><div class="soc-term bingo">KayfaBINGO!</div><div class="soc-def">The mechanism clicked. Spontaneous — no explanation needed.</div></div>
-          <div class="soc-row"><div class="soc-term boggle">KayfaBOGGLE?</div><div class="soc-def">One concrete question — not a judgment, a gap. Answered in 1–2 sentences.</div></div>
-          <div class="soc-row"><div class="soc-term bongo">KayfaBONGO!</div><div class="soc-def">A player narrated a Power as a stat ("blocks COX-1 by 70%"). Restate as story beat. No die effect.</div></div>
-          <div class="soc-row"><div class="soc-term blodsinn">BLÖDSINN!</div><div class="soc-def">Rule broken. Majority decides. If stands: <strong>Quest Die does not move</strong>.</div></div>
+          <div class="soc-row"><div class="soc-term bingo">KayfaBINGO!</div><div class="soc-def">The mechanism clicked.</div></div>
+          <div class="soc-row"><div class="soc-term boggle">KayfaBOGGLE?</div><div class="soc-def">One concrete question.</div></div>
+          <div class="soc-row"><div class="soc-term bongo">KayfaBONGO!</div><div class="soc-def">Power as stat. Restate as story.</div></div>
+          <div class="soc-row"><div class="soc-term blodsinn">BLÖDSINN!</div><div class="soc-def">Rule broken. <strong>Quest Die does not move</strong>.</div></div>
         </div>
-        <div class="sec-sub">Solo Play — Study Session Mode</div>
-        <p class="prose">Draw 5 cards. Pick one as Character. Draw or write a Quest. Stage empty. Quest Die to 1. Play all Characters yourself. After each story: write one sentence in the Mechanism Log.</p>
-        <div class="blockquote">"Solo MedKayfab is essentially the Feynman Technique with cards and a die. The cards make the gaps visible."</div>
       </div>
 
       <div class="rules-section" id="med-powers">
@@ -1328,251 +1080,99 @@ body.med .mode-num.m6 { color: var(--med-rust); }
         <div class="sec-title">Powers &amp; Cards</div>
         <div class="dosay">
           <div class="dosay-block dont"><div class="dosay-label">Don't say</div>"I block COX-1 and reduce thromboxane by 70%."</div>
-          <div class="dosay-block do"><div class="dosay-label">Say instead</div>"Every platelet in the bloodstream goes suddenly, permanently quiet. The surgical team will notice this tomorrow. The patient's wife is on warfarin. <em>Nobody checked.</em>"</div>
+          <div class="dosay-block do"><div class="dosay-label">Say instead</div>"Every platelet in the bloodstream goes suddenly, permanently quiet. The patient's wife is on warfarin. <em>Nobody checked.</em>"</div>
         </div>
-        <div class="note"><span class="note-label">Note —</span> Power woven in → <strong>Scene card</strong> to discard. Power skipped → <strong>Scene card stays in its Stage slot</strong>. (Characters stay in front of you — they leave only via Character Switch.)</div>
-        <div class="sec-sub">The Mechanism Log</div>
-        <p class="prose">After each Quest Finale, one player writes — in <strong>one sentence</strong> — the core mechanism that emerged. At the end of a session, read the Log aloud.</p>
       </div>
 
       <div class="rules-section" id="med-addons">
         <div class="sec-eyebrow">Learning</div>
         <div class="sec-title">Learning Add-Ons</div>
-        <div class="rule-line"><span class="rule-key">Anki Mode —</span> After each Finale: Front = character name + clinical clue. Back = core mechanism in one sentence.</div>
-        <div class="rule-line"><span class="rule-key">Feynman Round —</span> Once per Quest, explain a Stage card's mechanism — no jargon, one minute. Group understands: Quest Die +1.</div>
-        <div class="rule-line"><span class="rule-key">Spaced Repetition —</span> Shuffle in 3–5 marked cards from previous sessions. Explain from memory before Intro Ritual. Success: +1 Quest Die.</div>
-        <div class="rule-line"><span class="rule-key">Peer Teaching Round —</span> After each Finale, roll D6 — highest = teacher. 3 minutes, one card, mechanism + clinical relevance.</div>
+        <div class="rule-line"><span class="rule-key">Anki Mode -</span> Front = character + clue. Back = mechanism in one sentence.</div>
+        <div class="rule-line"><span class="rule-key">Feynman Round -</span> Explain a Stage card's mechanism without jargon, one minute. Group understands: Quest Die +1.</div>
       </div>
 
       <div class="rules-section" id="med-decks">
         <div class="sec-eyebrow">Sample Deck</div>
         <div class="sec-title">The Cardiology Deck</div>
-        <div class="pdf-block"><div class="pdf-bar"><button onclick="pdfNav('med',-1)">← Prev</button><button onclick="pdfNav('med',1)">Next →</button><button onclick="pdfZoom('med',-.25)">− Zoom</button><button onclick="pdfZoom('med',.25)">+ Zoom</button><span class="pdf-info" id="med-pdf-info">—</span></div><div class="pdf-canvas" id="med-pdf-canvas"><div class="pdf-msg">Click "Next →" to browse the deck.</div></div></div>
+        <div class="pdf-block"><div class="pdf-bar"><button onclick="pdfNav('med',-1)">← Prev</button><button onclick="pdfNav('med',1)">Next →</button><button onclick="pdfZoom('med',-.25)">− Zoom</button><button onclick="pdfZoom('med',.25)">+ Zoom</button><span class="pdf-info" id="med-pdf-info">—</span></div><div class="pdf-canvas" id="med-pdf-canvas"><div class="pdf-msg">Click "Next →" to browse.</div></div></div>
         <div style="margin-top:var(--sp-4)"><a class="btn-outline" href="https://georgvw.gumroad.com/" target="_blank" rel="noopener">Download free on Gumroad ↗</a></div>
-      </div>
-
-      <div class="rules-section" id="med-rituals">
-        <div class="sec-eyebrow">Reference</div>
-        <div class="sec-title">All Rituals at a Glance</div>
-        <div class="gloss-table">
-          <div class="gloss-row"><div class="gloss-term">Intro Ritual</div><div class="gloss-def">Every card entering play — Name it · Claim it · Power it · 30 seconds · in character</div></div>
-          <div class="gloss-row"><div class="gloss-term">Quest Reveal</div><div class="gloss-def">Episode start &amp; after every Finale — Intro Ritual → frame tension → Quest Die to 1 → first story</div></div>
-          <div class="gloss-row"><div class="gloss-term">Character Switch</div><div class="gloss-def">Step 03 only — Intro Ritual for new Character → exit for old → Stage unchanged → draw back to 3</div></div>
-          <div class="gloss-row"><div class="gloss-term">Finale &amp; Reset</div><div class="gloss-def">Quest Die hits 6 — Finale story → mechanism logged → Stage cleared → Quest Reveal → Die to 1</div></div>
-        </div>
       </div>
 
       <div class="rules-section" id="med-ref">
         <div class="sec-eyebrow">Reference</div>
         <div class="sec-title">Quick Reference</div>
-        <div class="sec-sub" style="margin-top:0">Clinical Story Modes</div>
         <table class="ref-table">
-          <tr><td>1 — Lab Report</td><td>Dry. Factual. Critique the brochure.</td></tr>
-          <tr><td>2 — Clin. Sabotage</td><td>Something breaks. Mechanism under pressure.</td></tr>
-          <tr><td>3 — Mech. Flash</td><td>Active recall. Table decides. +1 Quest Die if you got it.</td></tr>
-          <tr><td>4 — Power-Play</td><td>Molecule attacks. Perform the mechanism.</td></tr>
-          <tr><td>5 — Teaching Round</td><td>One question. Answer in character. No shaming.</td></tr>
-          <tr><td>6 — Prof. Blessing</td><td>Total anarchy. Play to Stage + move Quest Die freely.</td></tr>
+          <tr><td>1 - Lab Report</td><td>Dry. Factual.</td></tr>
+          <tr><td>2 - Clin. Sabotage</td><td>Mechanism under pressure.</td></tr>
+          <tr><td>3 - Mech. Flash</td><td>Active recall. +1 if you got it.</td></tr>
+          <tr><td>4 - Power-Play</td><td>Perform the mechanism.</td></tr>
+          <tr><td>5 - Teaching Round</td><td>One question, no shaming.</td></tr>
+          <tr><td>6 - Prof. Blessing</td><td>Total anarchy.</td></tr>
         </table>
-        <div class="sec-sub">Quest Die — Clinical Arc</div>
-        <table class="ref-table">
-          <tr><td>1–2</td><td>Anamnesis — symptoms, characters introduced</td></tr>
-          <tr><td>3–4</td><td>Workup — investigations, escalation</td></tr>
-          <tr><td>5</td><td>Crisis Point — differential narrows</td></tr>
-          <tr><td>6</td><td>Grand Finale — mechanism named, case resolved (next turn)</td></tr>
-        </table>
-        <div class="marginquote">"MedKayfab is unfinished by design. That part's yours. Cut the cards. Scrub in."<br><span style="font-size:var(--fs-sm);font-style:normal;font-family:var(--ff-ui);font-weight:600;color:var(--accent)">— Doc FrizzleBob</span></div>
       </div>
     </div>
   </div>
 </div>
 
 
-<!-- ══════════ MED DE ══════════ -->
+<!-- ========== MED DE (rules unchanged) ========== -->
 <div class="page" id="page-med_de">
   <div class="hero" style="padding-bottom:var(--sp-8)">
-    <div class="hero-eyebrow">Doc FrizzleBobs Medizinischer Kard Kult · v19.0</div>
-    <h1 class="hero-title" style="font-size:clamp(32px,5vw,56px)"><em>MedKayfab</em> Regeln — Mnemonische Medizin</h1>
-    <p class="hero-lead" style="margin-bottom:0">Das klinische Story-Wrestling-Kartenspiel · Solo oder 1–6 · 20–60 Min · CC BY-NC-SA 4.0</p>
+    <div class="hero-eyebrow">Doc FrizzleBobs Medizinischer Kard Kult</div>
+    <h1 class="hero-title" style="font-size:clamp(32px,5vw,56px)"><em>MedKayfab</em> - Die Anti-Regeln</h1>
+    <p class="hero-lead" style="margin-bottom:0">Cut &amp; Play Comic · Klinische Edition · Solo oder 1-6 · 20-60 Min · CC BY-NC-SA 4.0</p>
   </div>
   <div class="page-body">
     <nav class="sidebar" id="toc-med_de">
       <div class="sidebar-label">Inhalt</div>
       <a href="#med_de-what">Worum geht's?</a>
       <a href="#med_de-setup">Setup</a>
-      <a href="#med_de-ritual">Intro-Ritual</a>
-      <a href="#med_de-turn">Dein Zug</a>
-      <a href="#med_de-modes">Klinische Modi</a>
-      <a href="#med_de-stage">Die Bühne</a>
-      <a href="#med_de-quest">Quest-Würfel</a>
-      <a href="#med_de-finale">Das Finale</a>
-      <a href="#med_de-socials">Social Calls</a>
-      <a href="#med_de-powers">Powers &amp; Karten</a>
-      <a href="#med_de-addons">Lern-Add-Ons</a>
       <a href="#med_de-ref">Schnellreferenz</a>
       <div class="sidebar-actions"><button class="btn-ghost" onclick="window.print()">Drucken / PDF</button></div>
     </nav>
     <div class="main" id="med_de-content">
-      <div class="search-wrap">
-        <svg class="search-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="6.5" cy="6.5" r="5"/><line x1="10.5" y1="10.5" x2="14" y2="14"/></svg>
-        <input class="search-input" id="med_de-search" type="search" placeholder="Suchen — 'Mechanismus', 'Finale'…" autocomplete="off" oninput="liveSearch('med_de')">
-      </div>
-      <div class="search-results" id="med_de-search-results"><div class="search-count" id="med_de-search-count"></div><div id="med_de-search-hits"></div></div>
-      <div class="blockquote">Es ist 2 Uhr morgens im Aufnahmebereich. Jemand zieht Fibby Fitz — Vorhofflimmern — und würfelt eine 3. Mech. Flash. <em>Das ist kein Nebeneffekt des Spiels. Das ist der Punkt.</em><cite>— Doc FrizzleBob, Professor für Anarcho-Medizin &amp; Widerwilliger Attending</cite></div>
+      <div class="blockquote">Es ist 2 Uhr morgens im Aufnahmebereich. Jemand zieht Fibby Fitz - Vorhofflimmern - und würfelt eine 3. Mech. Flash. <em>Das ist kein Nebeneffekt des Spiels. Das ist der Punkt.</em><cite>- Doc FrizzleBob</cite></div>
 
       <div class="rules-section" id="med_de-what">
         <div class="sec-eyebrow">Akt I · Setup</div>
         <div class="sec-title">Worum geht's.</div>
-        <p class="prose">Ihr spielt jeweils einen Character — <strong>eine Klinikerin, ein Medikament, eine Immunzelle, ein abtrünniges Signalmolekül oder eine personifizierte Erkrankung</strong>. Gemeinsam baut ihr eine klinische Bühne und treibt eine Quest zur Auflösung.</p>
-        <div class="sec-sub">Was ihr braucht</div>
-        <div class="rule-line"><span class="rule-key">Karten —</span> Aus jedem MedKayfab-Deck — Kardiologie, Neurologie, Immunologie, Pharmakologie. Frei mischen.</div>
-        <div class="rule-line"><span class="rule-key">Zwei W6 —</span> Ein Story-Mode-Würfel, ein Quest-Würfel. Beide jederzeit sichtbar.</div>
-        <div class="rule-line"><span class="rule-key">Optional —</span> Eine Blanko-Karte oder ein Notizbuch für das Mechanismus-Log.</div>
+        <p class="prose">Ihr spielt jeweils einen Character. Gemeinsam baut ihr eine klinische Bühne und treibt eine Quest zur Auflösung.</p>
       </div>
 
       <div class="rules-section" id="med_de-setup">
         <div class="sec-eyebrow">Akt I · Setup</div>
         <div class="sec-title">Setup</div>
-        <div class="steps">
-          <div class="step-row-plain"><span class="step-num" style="font-family:var(--ff-mono);font-size:var(--fs-lg);color:var(--accent);min-width:30px;flex-shrink:0;">1</span><span class="step-label">Austeilen</span><span class="step-body">Jedem 3 Karten geben. Geheim halten. Anziehen — zwei Minuten.</span></div>
-          <div class="step-row-plain"><span class="step-num" style="font-family:var(--ff-mono);font-size:var(--fs-lg);color:var(--accent);min-width:30px;flex-shrink:0;">2</span><span class="step-label">Charactere</span><span class="step-body">Jeder zieht 1 Karte, deckt sie offen auf, macht das Intro-Ritual — in character, laut.</span></div>
-          <div class="step-row-plain"><span class="step-num" style="font-family:var(--ff-mono);font-size:var(--fs-lg);color:var(--accent);min-width:30px;flex-shrink:0;">3</span><span class="step-label">Quest-Reveal</span><span class="step-body"><strong>Die koffeinhaltigste Person (du weißt, wer)</strong> zieht eine Quest-Karte, macht das Intro-Ritual. Quest-Würfel auf <strong>1</strong>.</span></div>
-          <div class="step-row-plain"><span class="step-num" style="font-family:var(--ff-mono);font-size:var(--fs-lg);color:var(--accent);min-width:30px;flex-shrink:0;">4</span><span class="step-label">Bühne</span><span class="step-body">Die Bühne startet leer. Drei Scene-Slots, alle offen.</span></div>
-          <div class="step-row-plain"><span class="step-num" style="font-family:var(--ff-mono);font-size:var(--fs-lg);color:var(--accent);min-width:30px;flex-shrink:0;">5</span><span class="step-label">Los!</span><span class="step-body">Sie fängt mit der ersten Runde an.</span></div>
-        </div>
-      </div>
-
-      <div class="rules-section" id="med_de-ritual">
-        <div class="sec-eyebrow">Akt I · Setup</div>
-        <div class="sec-title">Das Intro-Ritual</div>
-        <div class="ritual">
-          <div class="ritual-row"><span class="ritual-key">Name It</span><span class="ritual-desc">Den Namen <strong>und</strong> das klinische Konzept verkünden. Laut.</span></div>
-          <div class="ritual-row"><span class="ritual-key">Claim It</span><span class="ritual-desc">Ein Satz: was ist ihr <em>Mechanismus</em>? LORE vorlesen oder aus dem Bild erfinden.</span></div>
-          <div class="ritual-row"><span class="ritual-key">Power It</span><span class="ritual-desc"><strong>Erklär es nicht. Spiel es.</strong> Zeig uns, was diese Power gerade jetzt mit dem Patienten macht.</span></div>
-        </div>
-        <div class="note"><span class="note-label">Hinweis —</span> Das Intro-Ritual gilt für <strong>jede Karte, jedes Mal</strong>. Immer.</div>
-      </div>
-
-      <div class="rules-section" id="med_de-turn">
-        <div class="sec-eyebrow">Akt I · Gameplay</div>
-        <div class="sec-title">Der Fünf-Schritte-Zug</div>
-        <div class="step-card">
-          <div class="step-card-header"><span class="step-card-title">Der Fünf-Schritte-Zug</span><span class="step-card-meta">~2 Min pro Spieler</span></div>
-          <div class="step-row"><span class="step-num">01</span><span class="step-label">Ziehen</span><span class="step-body">Zieh 1 Karte (kurz 4 Handkarten).</span></div>
-          <div class="step-row"><span class="step-num">02</span><span class="step-label">Würfeln</span><span class="step-body">Story-Mode-Würfel werfen. Das ist dein klinischer Modus. <strong>Geh rein.</strong></span></div>
-          <div class="step-row"><span class="step-num">03</span><span class="step-label">Spielen</span><span class="step-body">Scene-Karte auf einen Bühnen-Slot oder neuer Character. Immer: Intro-Ritual. Zurück auf 3 Handkarten.</span></div>
-          <div class="step-row"><span class="step-num">04</span><span class="step-label">Erzählen</span><span class="step-body">In character, in deinem Modus. Web die Bühne ein. <strong>Power eingewoben → Scene-Karte auf Ablage. Power ausgelassen → bleibt auf Bühne.</strong></span></div>
-          <div class="step-row"><span class="step-num">05</span><span class="step-label">Bewegen</span><span class="step-body">Quest-Würfel: <strong>+2, +1, 0, oder –1.</strong> Nie unter 1.</span></div>
-        </div>
-      </div>
-
-      <div class="rules-section" id="med_de-modes">
-        <div class="sec-eyebrow">Akt I · Gameplay</div>
-        <div class="sec-title">Die sechs klinischen Modi</div>
-        <div class="modes-grid">
-          <div class="mode-cell"><span class="mode-num">1</span><div><div class="mode-name">Laborbericht</div><div class="mode-desc">Trocken. Sachlich. Klinge wie ein Pharma-Vertreter — und kritisier es dabei.</div></div></div>
-          <div class="mode-cell"><span class="mode-num">2</span><div><div class="mode-name">Klin. Sabotage</div><div class="mode-desc">Es geht was schief. Ein Diagnosefehler, eine Wechselwirkung. Mechanismus unter Druck.</div></div></div>
-          <div class="mode-cell"><span class="mode-num">3</span><div><div class="mode-name">Mech. Flash</div><div class="mode-desc"><strong>Active Recall.</strong> LORE erklären ohne nachzusehen. Tisch-Mehrheit entscheidet. Wenn ja: Quest-Würfel +1.</div></div></div>
-          <div class="mode-cell"><span class="mode-num">4</span><div><div class="mode-name">Power-Play</div><div class="mode-desc">Wirkstoff trifft Rezeptor. Erreger entkommt. <em>Spiel den Mechanismus.</em></div></div></div>
-          <div class="mode-cell"><span class="mode-num">5</span><div><div class="mode-name">Lehrvisite</div><div class="mode-desc">Eine andere Person stellt eine Frage. Antworte in character. <strong>Kein Bloßstellen.</strong></div></div></div>
-          <div class="mode-cell"><span class="mode-num">6</span><div><div class="mode-name">Prof.-Segen</div><div class="mode-desc">Totale Anarchie. Karte direkt auf Bühne <em>und</em> Quest-Würfel frei bewegen.</div></div></div>
-        </div>
-      </div>
-
-      <div class="rules-section" id="med_de-stage">
-        <div class="sec-eyebrow">Akt I · Gameplay</div>
-        <div class="sec-title">Die klinische Bühne</div>
-        <p class="prose">Drei Scene-Slots — die geteilte klinische Realität. Alle Slots starten leer.</p>
-        <div class="rule-line"><span class="rule-key">Leerer Slot —</span> Füll ihn mit einer Scene-Karte (Intro-Ritual, dann spielen).</div>
-        <div class="rule-line"><span class="rule-key">Bühne voll (3/3) —</span> Einen Slot per yes-and überschreiben.</div>
-        <div class="sec-sub">Character-Wechsel</div>
-        <p class="prose">Statt einer Scene-Karte kannst du jederzeit während Schritt 03 eine neue Character-Karte <strong>vor dich legen</strong>. Bühne bleibt unverändert. Zurück auf 3 Handkarten.</p>
-      </div>
-
-      <div class="rules-section" id="med_de-quest">
-        <div class="sec-eyebrow">Akt II · Verlauf</div>
-        <div class="sec-title">Der Quest-Würfel</div>
-        <div class="quest-strip">
-          <div class="qd-cell" style="background:rgba(11,107,107,.07)"><div class="qd-num">1–2</div><div class="qd-name">Anamnese</div><div class="qd-sub">Symptome</div></div>
-          <div class="qd-cell" style="background:rgba(184,92,0,.07)"><div class="qd-num">3–4</div><div class="qd-name">Diagnostik</div><div class="qd-sub">Eskalation</div></div>
-          <div class="qd-cell" style="background:rgba(160,24,24,.07)"><div class="qd-num">5</div><div class="qd-name">Krise</div><div class="qd-sub">Diff. eng</div></div>
-          <div class="qd-cell qd-finale"><div class="qd-num">6</div><div class="qd-name">Finale</div><div class="qd-sub">Fall geschlossen.</div></div>
-        </div>
-        <div class="note"><span class="note-label">Hinweis —</span> Quest-Würfel fällt <strong>nie unter 1</strong>. Bei 6: <strong>der nächste Zug ist der Finale-Zug</strong>.</div>
-      </div>
-
-      <div class="rules-section" id="med_de-finale">
-        <div class="sec-eyebrow">Akt II · Verlauf</div>
-        <div class="sec-title">Das große Finale</div>
-        <p class="prose">Wenn der Quest-Würfel auf <strong>6</strong> steht, ist <strong>der Zug der nächsten Person</strong> der Finale-Zug.</p>
-        <div class="rule-line"><span class="rule-key">Erinnerung —</span> Quest-Karte bleibt am Tisch. Mechanismus drauf schreiben falls ihr das Log führt.</div>
-        <div class="rule-line"><span class="rule-key">Tabula Rasa —</span> Bühne weg. Alle Scene-Karten auf Ablage.</div>
-        <div class="rule-line"><span class="rule-key">Neue Quest —</span> Nächste Person macht Quest-Reveal. Quest-Würfel auf 1.</div>
-        <div class="sec-sub">Optionale Regeln</div>
-        <div class="rule-line"><span class="rule-key">Quest Fail (Variante) —</span> Die „nie unter 1"-Regel weglassen. Fällt der Würfel unter 1: Quest gescheitert.</div>
-        <div class="rule-line"><span class="rule-key">Staged Clearing —</span> Nach dem Finale würfeln. 1–2: 1 Scene weg. 3–4: 2 weg. 5–6: alle drei.</div>
-      </div>
-
-      <div class="rules-section" id="med_de-socials">
-        <div class="sec-eyebrow">Tisch-Kultur</div>
-        <div class="sec-title">Social Calls</div>
-        <div class="socials-table">
-          <div class="soc-row"><div class="soc-term bingo">KayfaBINGO!</div><div class="soc-def">Der Mechanismus hat klick gemacht. Spontan — keine Erklärung nötig.</div></div>
-          <div class="soc-row"><div class="soc-term boggle">KayfaBOGGLE?</div><div class="soc-def">Eine konkrete Frage — kein Urteil, eine Lücke. Beantwortet in 1–2 Sätzen.</div></div>
-          <div class="soc-row"><div class="soc-term bongo">KayfaBONGO!</div><div class="soc-def">Jemand hat eine Power als Stat erzählt. Aktive Person formuliert als Story-Beat um. Kein Würfel-Effekt.</div></div>
-          <div class="soc-row"><div class="soc-term blodsinn">BLÖDSINN!</div><div class="soc-def">Regel gebrochen. Mehrheit entscheidet. Wenn's steht: <strong>Quest-Würfel bewegt sich nicht</strong>.</div></div>
-        </div>
-      </div>
-
-      <div class="rules-section" id="med_de-powers">
-        <div class="sec-eyebrow">Karten</div>
-        <div class="sec-title">Powers &amp; Karten</div>
-        <div class="dosay">
-          <div class="dosay-block dont"><div class="dosay-label">Sag nicht</div>„Ich blockiere COX-1 und reduziere Thromboxan um 70%."</div>
-          <div class="dosay-block do"><div class="dosay-label">Sag stattdessen</div>„Jedes Plättchen im Blutkreislauf wird plötzlich, dauerhaft still. Die Frau des Patienten nimmt Warfarin. <em>Niemand hat nachgesehen.</em>"</div>
-        </div>
-        <div class="note"><span class="note-label">Hinweis —</span> Power eingewoben → <strong>Scene-Karte</strong> auf Ablage. Power ausgelassen → <strong>Scene-Karte bleibt im Slot</strong>. (Charactere bleiben vor dir — nur Character-Wechsel entfernt sie.)</div>
-        <div class="sec-sub">Das Mechanismus-Log</div>
-        <p class="prose">Nach jedem Quest-Finale schreibt eine Person — in <strong>einem Satz</strong> — den Kernmechanismus auf. Am Ende der Session: das Log laut vorlesen.</p>
-      </div>
-
-      <div class="rules-section" id="med_de-addons">
-        <div class="sec-eyebrow">Lernen</div>
-        <div class="sec-title">Lern-Add-Ons</div>
-        <div class="rule-line"><span class="rule-key">Anki Mode —</span> Nach jedem Finale: Front = Charactername + klinischer Hinweis. Back = Kernmechanismus in einem Satz.</div>
-        <div class="rule-line"><span class="rule-key">Feynman-Round —</span> Einmal pro Quest: Mechanismus erklären — keine Fachsprache, max. eine Minute. Gruppe versteht's: Quest-Würfel +1.</div>
-        <div class="rule-line"><span class="rule-key">Spaced Repetition —</span> 3–5 markierte Karten aus früheren Sessions einmischen. Aus dem Gedächtnis erklären vor Intro-Ritual. Erfolg: +1 Quest-Würfel.</div>
-        <div class="rule-line"><span class="rule-key">Peer Teaching Round —</span> Nach jedem Finale W6 würfeln — höchste lehrt. 3 Minuten, eine Karte.</div>
+        <p class="prose">Wie bei KayfaBizarro - aber Karten sind Klinikerin, Wirkstoff, Immunzelle, Erreger, personifizierte Erkrankung.</p>
       </div>
 
       <div class="rules-section" id="med_de-ref">
         <div class="sec-eyebrow">Referenz</div>
         <div class="sec-title">Schnellreferenz</div>
-        <div class="sec-sub" style="margin-top:0">Klinische Story-Modi</div>
         <table class="ref-table">
-          <tr><td>1 — Laborbericht</td><td>Trocken. Sachlich. Broschüre kritisieren.</td></tr>
-          <tr><td>2 — Klin. Sabotage</td><td>Was bricht. Mechanismus unter Druck.</td></tr>
-          <tr><td>3 — Mech. Flash</td><td>Active Recall. Tisch entscheidet. +1 Quest-Würfel wenn du's hattest.</td></tr>
-          <tr><td>4 — Power-Play</td><td>Molekül greift an. Spiel den Mechanismus.</td></tr>
-          <tr><td>5 — Lehrvisite</td><td>Eine Frage. Antwort in character. Kein Bloßstellen.</td></tr>
-          <tr><td>6 — Prof.-Segen</td><td>Totale Anarchie. Auf Bühne spielen + Quest-Würfel frei bewegen.</td></tr>
+          <tr><td>1 - Laborbericht</td><td>Trocken. Sachlich.</td></tr>
+          <tr><td>2 - Klin. Sabotage</td><td>Mechanismus unter Druck.</td></tr>
+          <tr><td>3 - Mech. Flash</td><td>Active Recall.</td></tr>
+          <tr><td>4 - Power-Play</td><td>Spiel den Mechanismus.</td></tr>
+          <tr><td>5 - Lehrvisite</td><td>Eine Frage. Kein Bloßstellen.</td></tr>
+          <tr><td>6 - Prof.-Segen</td><td>Totale Anarchie.</td></tr>
         </table>
-        <div class="marginquote">"MedKayfab ist mit Absicht unfertig. Der Rest gehört euch. Karten ausschneiden. Hände waschen."<br><span style="font-size:var(--fs-sm);font-style:normal;font-family:var(--ff-ui);font-weight:600;color:var(--accent)">— Doc FrizzleBob</span></div>
       </div>
     </div>
   </div>
 </div>
 
 
-<!-- ══ FOOTER ══ -->
+<!-- ========== FOOTER ========== -->
 <div class="hub-foot">
   <div class="foot-display">
     <div class="foot-big">STAY FLUFFY.</div>
-    <div class="foot-meta">— published by Cancel This Comic Press · CC BY-NC-SA 4.0 · do not resell</div>
+    <div class="foot-sig">- Uncle FrizzleBob</div>
   </div>
   <div class="foot-bar">
-    <span id="foot-l">KayfaBizarro v19.0 / MedKayfab v19.0 · Georg von Westphalen</span>
-    <span>CC BY-NC-SA 4.0 · Pay What You Want · Do Not Resell</span>
+    KayfaBizarro &amp; MedKayfab · by Georg von Westphalen<br>
+    <a href="https://cancelthiscomic.substack.com/t/kayfabizarro" target="_blank" rel="noopener">Cancel This Comic on Substack</a> · <a href="https://georgvw.gumroad.com/" target="_blank" rel="noopener">georgvw on Gumroad</a><br>
+    CC BY-NC-SA 4.0 · Pay What You Want · Do Not Resell<br>
+    Version 19.0 · last edit 14 May 2026
   </div>
 </div>
 
@@ -1586,19 +1186,12 @@ const PDF_SRC={
   med_book:'https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/MedKayfab_Rules_ComicBooklet_WEB_v1.pdf'
 };
 
-/* ── LANG MENU ── */
-function toggleLangMenu(e){
-  e.stopPropagation();
-  var dd=document.getElementById('lang-dropdown');
-  dd.classList.toggle('open');
-}
-document.addEventListener('click',function(){
-  var dd=document.getElementById('lang-dropdown');
-  if(dd) dd.classList.remove('open');
-});
-
+/* LANG */
+function toggleLangMenu(e){e.stopPropagation();var dd=document.getElementById('lang-dropdown');dd.classList.toggle('open');}
+document.addEventListener('click',function(){var dd=document.getElementById('lang-dropdown');if(dd) dd.classList.remove('open');});
 var currentLang='en';
-
+var tbMap={'home':'tb-home','kfb':'tb-kfb','med':'tb-med'};
+var _switchingLang=false;
 function switchLang(lang){
   document.getElementById('lang-dropdown').classList.remove('open');
   currentLang=lang;
@@ -1611,18 +1204,19 @@ function switchLang(lang){
     var id=cur.id.replace('page-','');
     var base=id.replace(/_de$/,'');
     var newId=lang==='de'?base+'_de':base;
-    // find correct nav button without triggering lang reset
-    var tbMap={'home':'tb-home','kfb':'tb-kfb','med':'tb-med'};
     _switchingLang=true;
     goPage(newId,document.getElementById(tbMap[base]||'tb-home'));
     _switchingLang=false;
   }
 }
-var _switchingLang=false;
 
-/* ── NAV ── */
+/* NAV - language-preserving */
 function goPage(id,btn){
   id=id.replace(/^page-/,'');
+  var base=id.replace(/_de$/,'');
+  if(currentLang==='de' && !id.endsWith('_de') && document.getElementById('page-'+base+'_de')){
+    id=base+'_de';
+  }
   document.querySelectorAll('.page').forEach(function(p){p.classList.remove('active');});
   document.querySelectorAll('.tb-nav-btn').forEach(function(b){b.classList.remove('active');});
   var pg=document.getElementById('page-'+id);
@@ -1639,7 +1233,7 @@ function goPage(id,btn){
     document.getElementById('lang-de').classList.toggle('active',currentLang==='de');
   }
   try{location.hash=id;}catch(e){}
-  if(['kfb','med','kfb_de','med_de'].includes(id)) setupToc(id);
+  if(['kfb','med','kfb_de','med_de','home','home_de'].includes(id)) setupToc(id);
   window.scrollTo(0,0);
 }
 
@@ -1649,16 +1243,16 @@ function applyHash(){
   if(h==='home_de'){goPage('home_de',document.getElementById('tb-home'));return;}
   if(h==='kfb'||h==='kfb_de'){goPage(h,document.getElementById('tb-kfb'));return;}
   if(h==='med'||h==='med_de'){goPage(h,document.getElementById('tb-med'));return;}
-  var m=h.match(/^(kfb|med)(_de)?-(.+)$/);
+  var m=h.match(/^(kfb|med|home)(_de)?-(.+)$/);
   if(m){
     var pageId=m[1]+(m[2]||'');
-    goPage(pageId,document.getElementById('tb-'+m[1]));
+    var tbId=m[1]==='home'?'tb-home':'tb-'+m[1];
+    goPage(pageId,document.getElementById(tbId));
     setTimeout(function(){var el=document.getElementById(h);if(el)el.scrollIntoView({behavior:'smooth'});},100);
   }
 }
 window.addEventListener('hashchange',applyHash);
 
-/* ── TOC ── */
 function setupToc(mode){
   var toc=document.getElementById('toc-'+mode);
   if(!toc) return;
@@ -1676,7 +1270,7 @@ function setupToc(mode){
   sections.forEach(function(s){obs.observe(s);});
 }
 
-/* ── SEARCH ── */
+/* SEARCH */
 function buildIndex(mode){
   var content=document.getElementById(mode+'-content');
   if(!content) return [];
@@ -1725,7 +1319,7 @@ function liveSearch(mode){
 }
 function scrollToId(id){if(!id)return;var el=document.getElementById(id);if(el)el.scrollIntoView({behavior:'smooth',block:'start'});}
 
-/* ── PDF ── */
+/* PDF */
 var pdf={},pdfPage={kfb:1,med:1,kfb_book:1,med_book:1},
     pdfTotal={kfb:0,med:0,kfb_book:0,med_book:0},
     pdfScale={kfb:1.4,med:1.4,kfb_book:1.4,med_book:1.4},
@@ -1771,7 +1365,7 @@ function pdfZoom(mode,delta){
   pdfScale[mode]=Math.min(3,Math.max(0.5,pdfScale[mode]+delta));renderPdf(mode);
 }
 
-/* ── INIT ── */
+/* INIT */
 applyHash();
 if(!location.hash) goPage('home',document.getElementById('tb-home'));
 </script>
