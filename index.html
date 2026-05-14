@@ -89,7 +89,8 @@ mark{background:var(--mark);color:var(--ink);padding:0 2px;border-radius:2px;}
 .page.active{display:block;}
 
 /* HERO */
-.hero{max-width:var(--lay-max);margin:0 auto;padding:var(--sp-16) var(--sp-8) var(--sp-12);border-bottom:1px solid var(--border);}
+.hero{max-width:var(--lay-max);margin:0 auto;padding:var(--sp-16) var(--sp-8) var(--sp-12);}
+.hero.with-border{border-bottom:1px solid var(--border);}
 .hero-eyebrow{font-family:var(--ff-mono);font-size:var(--fs-xs);font-weight:500;letter-spacing:var(--ls-label);text-transform:uppercase;color:var(--accent);margin-bottom:var(--sp-4);}
 .hero-title{font-family:var(--ff-display);font-weight:800;font-size:clamp(40px,6vw,var(--fs-4xl));line-height:var(--lh-tight);letter-spacing:var(--ls-disp);color:var(--ink);margin-bottom:var(--sp-4);max-width:820px;}
 .hero-title em{font-style:normal;color:var(--accent);}
@@ -283,9 +284,12 @@ body.med .do{background:#d4ebe6;border-left-color:var(--med-accent);}
 .pdf-bar button{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);color:#ccc;padding:4px 10px;font-family:var(--ff-ui);font-weight:600;font-size:12px;cursor:pointer;border-radius:var(--r-1);transition:background var(--dur-fast);}
 .pdf-bar button:hover{background:rgba(255,255,255,.18);}
 .pdf-info{font-family:var(--ff-mono);font-size:11px;color:#888;margin-left:auto;}
-.pdf-canvas{background:#2a2a2a;display:flex;flex-direction:column;align-items:center;padding:10px;gap:6px;max-height:520px;overflow-y:auto;}
+.pdf-canvas{background:#2a2a2a;display:flex;flex-direction:column;align-items:center;padding:10px;gap:6px;max-height:520px;min-height:320px;overflow-y:auto;}
 .pdf-canvas canvas{max-width:100%;box-shadow:0 2px 12px rgba(0,0,0,.45);}
 .pdf-msg{font-size:var(--fs-sm);color:#999;padding:var(--sp-8);text-align:center;font-family:var(--ff-ui);}
+.pdf-loading{display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:300px;gap:var(--sp-4);}
+.pdf-spinner{width:32px;height:32px;border:3px solid rgba(255,255,255,.1);border-top-color:rgba(255,255,255,.5);border-radius:50%;animation:spin .8s linear infinite;}
+@keyframes spin{to{transform:rotate(360deg);}}
 
 .btn-outline{display:inline-block;padding:9px 20px;border:1.5px solid var(--ink);border-radius:var(--r-2);font-family:var(--ff-ui);font-weight:700;font-size:var(--fs-sm);color:var(--ink);background:transparent;cursor:pointer;transition:background var(--dur-fast),color var(--dur-fast);}
 .btn-outline:hover{background:var(--ink);color:var(--paper);}
@@ -628,7 +632,7 @@ body.med .mode-num.m6{color:var(--med-rust);}
 
 <!-- ========== KFB EN (rules unchanged from previous version) ========== -->
 <div class="page" id="page-kfb">
-  <div class="hero" style="padding-bottom:var(--sp-8)">
+  <div class="hero with-border" style="padding-bottom:var(--sp-8)">
     <div class="hero-eyebrow">Uncle FrizzleBob's Komik Kard Kult</div>
     <h1 class="hero-title" style="font-size:clamp(32px,5vw,56px)"><em>KayfaBizarro</em> - The Anti-Rules</h1>
     <p class="hero-lead" style="margin-bottom:0">Cut &amp; Play Comic · Story-Wrestling Edition · 1-6 Humans · 20-60 Min · CC BY-NC-SA 4.0</p>
@@ -666,7 +670,7 @@ body.med .mode-num.m6{color:var(--med-rust);}
         <div class="sec-eyebrow">Illustrated Rulebook</div>
         <div class="sec-title">The Anti-Rule Book</div>
         <p class="prose">Uncle FrizzleBob's illustrated Anti-Rule Book - browse all pages inline.</p>
-        <div class="pdf-block"><div class="pdf-bar"><button onclick="pdfNav('kfb_book',-1)">← Prev</button><button onclick="pdfNav('kfb_book',1)">Next →</button><button onclick="pdfZoom('kfb_book',-.25)">− Zoom</button><button onclick="pdfZoom('kfb_book',.25)">+ Zoom</button><span class="pdf-info" id="kfb_book-pdf-info">—</span></div><div class="pdf-canvas" id="kfb_book-pdf-canvas"><div class="pdf-msg">Click "Next →" to browse.</div></div></div>
+        <div class="pdf-block"><div class="pdf-bar"><button onclick="pdfNav('kfb_book',-1)">← Prev</button><button onclick="pdfNav('kfb_book',1)">Next →</button><button onclick="pdfZoom('kfb_book',-.25)">− Zoom</button><button onclick="pdfZoom('kfb_book',.25)">+ Zoom</button><span class="pdf-info" id="kfb_book-pdf-info">—</span></div><div class="pdf-canvas" id="kfb_book-pdf-canvas"><div class="pdf-loading"><div class="pdf-spinner"></div></div></div></div>
       </div>
 
       <div class="rules-section" id="kfb-what">
@@ -803,7 +807,7 @@ body.med .mode-num.m6{color:var(--med-rust);}
         <div class="sec-eyebrow">Sample Deck</div>
         <div class="sec-title">The Protopia Deck</div>
         <p class="prose">Browse the Protopia deck - a KayfaBizarro expansion about utopian futures and the people who break them. Free to download.</p>
-        <div class="pdf-block"><div class="pdf-bar"><button onclick="pdfNav('kfb',-1)">← Prev</button><button onclick="pdfNav('kfb',1)">Next →</button><button onclick="pdfZoom('kfb',-.25)">− Zoom</button><button onclick="pdfZoom('kfb',.25)">+ Zoom</button><span class="pdf-info" id="kfb-pdf-info">—</span></div><div class="pdf-canvas" id="kfb-pdf-canvas"><div class="pdf-msg">Click "Next →" to browse the deck.</div></div></div>
+        <div class="pdf-block"><div class="pdf-bar"><button onclick="pdfNav('kfb',-1)">← Prev</button><button onclick="pdfNav('kfb',1)">Next →</button><button onclick="pdfZoom('kfb',-.25)">− Zoom</button><button onclick="pdfZoom('kfb',.25)">+ Zoom</button><span class="pdf-info" id="kfb-pdf-info">—</span></div><div class="pdf-canvas" id="kfb-pdf-canvas"><div class="pdf-loading"><div class="pdf-spinner"></div></div></div></div>
         <div style="margin-top:var(--sp-4)"><a class="btn-outline" href="https://georgvw.gumroad.com/l/kayfabizarro_protopia" target="_blank" rel="noopener">Download free on Gumroad ↗</a></div>
       </div>
 
@@ -849,7 +853,7 @@ body.med .mode-num.m6{color:var(--med-rust);}
 
 <!-- ========== KFB DE (rules unchanged) ========== -->
 <div class="page" id="page-kfb_de">
-  <div class="hero" style="padding-bottom:var(--sp-8)">
+  <div class="hero with-border" style="padding-bottom:var(--sp-8)">
     <div class="hero-eyebrow">Onkel FrizzleBobs Komik Kard Kult</div>
     <h1 class="hero-title" style="font-size:clamp(32px,5vw,56px)"><em>KayfaBizarro</em> - Die Anti-Regeln</h1>
     <p class="hero-lead" style="margin-bottom:0">Cut &amp; Play Comic · Story-Wrestling Edition · 1-6 Menschen · 20-60 Min · CC BY-NC-SA 4.0</p>
@@ -992,7 +996,7 @@ body.med .mode-num.m6{color:var(--med-rust);}
 
 <!-- ========== MED EN (rules unchanged) ========== -->
 <div class="page" id="page-med">
-  <div class="hero" style="padding-bottom:var(--sp-8)">
+  <div class="hero with-border" style="padding-bottom:var(--sp-8)">
     <div class="hero-eyebrow">Doc FrizzleBob's Medical Kard Kult</div>
     <h1 class="hero-title" style="font-size:clamp(32px,5vw,56px)"><em>MedKayfab</em> - The Anti-Rules</h1>
     <p class="hero-lead" style="margin-bottom:0">Cut &amp; Play Comic · Clinical Edition · Solo or 1-6 · 20-60 Min · CC BY-NC-SA 4.0</p>
@@ -1126,7 +1130,7 @@ body.med .mode-num.m6{color:var(--med-rust);}
       <div class="rules-section" id="med-decks">
         <div class="sec-eyebrow">Sample Deck</div>
         <div class="sec-title">The Cardiology Deck</div>
-        <div class="pdf-block"><div class="pdf-bar"><button onclick="pdfNav('med',-1)">← Prev</button><button onclick="pdfNav('med',1)">Next →</button><button onclick="pdfZoom('med',-.25)">− Zoom</button><button onclick="pdfZoom('med',.25)">+ Zoom</button><span class="pdf-info" id="med-pdf-info">—</span></div><div class="pdf-canvas" id="med-pdf-canvas"><div class="pdf-msg">Click "Next →" to browse.</div></div></div>
+        <div class="pdf-block"><div class="pdf-bar"><button onclick="pdfNav('med',-1)">← Prev</button><button onclick="pdfNav('med',1)">Next →</button><button onclick="pdfZoom('med',-.25)">− Zoom</button><button onclick="pdfZoom('med',.25)">+ Zoom</button><span class="pdf-info" id="med-pdf-info">—</span></div><div class="pdf-canvas" id="med-pdf-canvas"><div class="pdf-loading"><div class="pdf-spinner"></div></div></div></div>
         <div style="margin-top:var(--sp-4)"><a class="btn-outline" href="https://georgvw.gumroad.com/" target="_blank" rel="noopener">Download free on Gumroad ↗</a></div>
       </div>
 
@@ -1149,7 +1153,7 @@ body.med .mode-num.m6{color:var(--med-rust);}
 
 <!-- ========== MED DE (rules unchanged) ========== -->
 <div class="page" id="page-med_de">
-  <div class="hero" style="padding-bottom:var(--sp-8)">
+  <div class="hero with-border" style="padding-bottom:var(--sp-8)">
     <div class="hero-eyebrow">Doc FrizzleBobs Medizinischer Kard Kult</div>
     <h1 class="hero-title" style="font-size:clamp(32px,5vw,56px)"><em>MedKayfab</em> - Die Anti-Regeln</h1>
     <p class="hero-lead" style="margin-bottom:0">Cut &amp; Play Comic · Klinische Edition · Solo oder 1-6 · 20-60 Min · CC BY-NC-SA 4.0</p>
@@ -1209,8 +1213,16 @@ body.med .mode-num.m6{color:var(--med-rust);}
 </div>
 
 
+<script>
+// PDF.js worker must be set immediately, before any pdfjsLib calls
+if(window.pdfjsLib){
+  pdfjsLib.GlobalWorkerOptions.workerSrc='https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+}
+</script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
 <script>
+// Set worker again after pdf.js loads (handles race condition)
+pdfjsLib.GlobalWorkerOptions.workerSrc='https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
 const PDF_SRC={
   kfb:'https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/Kayfabizarro_Protopia_WEB_v1.pdf',
   med:'https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/MedKayfab_Cardiology_WEB_v1.pdf',
@@ -1266,6 +1278,16 @@ function goPage(id,btn){
   }
   try{location.hash=id;}catch(e){}
   if(['kfb','med','kfb_de','med_de','home','home_de'].includes(id)) setupToc(id);
+  // Auto-load rule-book PDF when tab opens
+  var pdfMap={kfb:'kfb_book',kfb_de:'kfb_book',med:'med_book',med_de:'med_book'};
+  if(pdfMap[id]){
+    var pdfMode=pdfMap[id];
+    setTimeout(function(){
+      ensureWorker();
+      if(!pdfReady[pdfMode]) loadPdf(pdfMode);
+      else renderPdf(pdfMode);
+    },100);
+  }
   window.scrollTo(0,0);
 }
 
@@ -1355,22 +1377,25 @@ function scrollToId(id){if(!id)return;var el=document.getElementById(id);if(el)e
 var pdf={},pdfPage={kfb:1,med:1,kfb_book:1,med_book:1},
     pdfTotal={kfb:0,med:0,kfb_book:0,med_book:0},
     pdfScale={kfb:1.4,med:1.4,kfb_book:1.4,med_book:1.4},
-    pdfReady={kfb:false,med:false,kfb_book:false,med_book:false},wSet=false;
-function ensureWorker(){if(!wSet&&window.pdfjsLib){pdfjsLib.GlobalWorkerOptions.workerSrc='https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';wSet=true;}}
+    pdfReady={kfb:false,med:false,kfb_book:false,med_book:false};
+function ensureWorker(){
+  pdfjsLib.GlobalWorkerOptions.workerSrc='https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+}
 function loadPdf(mode){
   ensureWorker();
   if(pdfReady[mode]){renderPdf(mode);return;}
   var cv=document.getElementById(mode+'-pdf-canvas');
   var info=document.getElementById(mode+'-pdf-info');
   if(!cv) return;
-  cv.innerHTML='<div class="pdf-msg">Loading PDF…</div>';
+  cv.innerHTML='<div class="pdf-loading"><div class="pdf-spinner"></div><div class="pdf-msg" style="padding:0">Loading…</div></div>';
   if(info) info.textContent='Loading…';
   pdfjsLib.getDocument({url:PDF_SRC[mode],cMapUrl:'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/cmaps/',cMapPacked:true})
     .promise.then(function(doc){
       pdf[mode]=doc;pdfTotal[mode]=doc.numPages;pdfPage[mode]=1;pdfReady[mode]=true;
-      cv.innerHTML='';renderPdf(mode);
+      cv.innerHTML='';
+      renderPdf(mode);
     }).catch(function(err){
-      cv.innerHTML='<div class="pdf-msg">Could not load PDF.<br><small>'+err.message+'</small></div>';
+      cv.innerHTML='<div class="pdf-msg" style="min-height:300px;display:flex;align-items:center;justify-content:center">Could not load PDF.<br><small style="opacity:.6">'+err.message+'</small></div>';
       if(info) info.textContent='Error';
     });
 }
