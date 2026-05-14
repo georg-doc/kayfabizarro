@@ -491,9 +491,10 @@ body.med .soc-term.blodsinn{color:var(--med-rust);}
 .qd-num{font-family:var(--ff-display);font-weight:800;font-size:22px;color:var(--ink);line-height:1;}
 .qd-name{font-family:var(--ff-ui);font-weight:700;font-size:var(--fs-sm);color:var(--ink);margin-top:3px;}
 .qd-sub{font-size:var(--fs-xs);color:var(--ink-3);margin-top:2px;}
-.qd-finale{background:var(--ink);}
+.qd-finale{background:var(--kfb-accent);} /* warm amber-rust, not cold black */
+body.med .qd-finale{background:var(--med-accent);}
 .qd-finale .qd-num,.qd-finale .qd-name{color:#fff;}
-.qd-finale .qd-sub{color:rgba(255,255,255,.6);}
+.qd-finale .qd-sub{color:rgba(255,255,255,.75);}
 
 /* ── RULE LINES ── */
 .rule-line{
@@ -556,7 +557,39 @@ body.med .do{background:#d4ebe6;border-left-color:var(--med-accent);}
 .btn-outline{display:inline-block;padding:9px 20px;border:1.5px solid var(--ink);border-radius:var(--r-2);font-family:var(--ff-ui);font-weight:700;font-size:var(--fs-sm);color:var(--ink);background:transparent;cursor:pointer;transition:background var(--dur-fast),color var(--dur-fast);}
 .btn-outline:hover{background:var(--ink);color:var(--paper);}
 
-/* ── MARGINQUOTE ── */
+/* Ritual key colors */
+.ritual-key.name-it { color: var(--kfb-accent); }
+.ritual-key.claim-it { color: var(--kfb-ink-2); }
+.ritual-key.power-it { color: var(--kfb-rust); }
+body.med .ritual-key.name-it  { color: var(--med-accent); }
+body.med .ritual-key.claim-it { color: var(--med-ink-2); }
+body.med .ritual-key.power-it { color: var(--med-rust); }
+
+/* Step number color ramp — warm progression */
+.step-num.s1 { color: var(--kfb-accent-2); }
+.step-num.s2 { color: var(--kfb-accent); }
+.step-num.s3 { color: var(--kfb-accent); }
+.step-num.s4 { color: var(--kfb-ink-2); }
+.step-num.s5 { color: var(--kfb-rust); }
+body.med .step-num.s1 { color: var(--med-accent-2); }
+body.med .step-num.s2 { color: var(--med-accent); }
+body.med .step-num.s3 { color: var(--med-accent); }
+body.med .step-num.s4 { color: var(--med-ink-2); }
+body.med .step-num.s5 { color: var(--med-rust); }
+
+/* Mode number colors — emotional arc */
+.mode-num.m1 { color: var(--kfb-rust); }           /* Tragic */
+.mode-num.m2 { color: var(--kfb-accent-2); }        /* Comic */
+.mode-num.m3 { color: var(--kfb-ink-3); }           /* Absurd */
+.mode-num.m4 { color: var(--kfb-accent); }           /* Heroic */
+.mode-num.m5 { color: #5a7a8a; }                    /* Mystical — blue-grey */
+.mode-num.m6 { color: var(--kfb-rust); }             /* Forbidden */
+body.med .mode-num.m1 { color: var(--med-rust); }
+body.med .mode-num.m2 { color: var(--med-accent-2); }
+body.med .mode-num.m3 { color: var(--med-ink-3); }
+body.med .mode-num.m4 { color: var(--med-accent); }
+body.med .mode-num.m5 { color: #5a7a8a; }
+body.med .mode-num.m6 { color: var(--med-rust); }
 .marginquote{font-family:var(--ff-body);font-style:italic;font-size:var(--fs-md);line-height:var(--lh-norm);color:var(--ink-3);border-top:1px dashed var(--border);padding-top:var(--sp-5);margin-top:var(--sp-8);max-width:var(--lay-prose);}
 
 /* ── VIDEO ── */
@@ -776,9 +809,9 @@ body.med .do{background:#d4ebe6;border-left-color:var(--med-accent);}
         <div class="sec-title">The Intro Ritual</div>
         <p class="prose">Every card that enters the game must be introduced via the Ritual. Think: wrestling entrance. Three beats. Thirty seconds. In character.</p>
         <div class="ritual">
-          <div class="ritual-row"><span class="ritual-key">Name It</span><span class="ritual-desc">Point at the card. Announce its name <strong>loud</strong>. This is who just entered.</span></div>
-          <div class="ritual-row"><span class="ritual-key">Claim It</span><span class="ritual-desc">One sentence: what does this card <em>want</em>? Read the LORE or invent from the image.</span></div>
-          <div class="ritual-row"><span class="ritual-key">Power It</span><span class="ritual-desc"><strong>Don't explain it. Perform it.</strong> Show us what this Power does to reality right now.</span></div>
+          <div class="ritual-row"><span class="ritual-key name-it">Name It</span><span class="ritual-desc">Point at the card. Announce its name <strong>loud</strong>. This is who just entered.</span></div>
+          <div class="ritual-row"><span class="ritual-key claim-it">Claim It</span><span class="ritual-desc">One sentence: what does this card <em>want</em>? Read the LORE or invent from the image.</span></div>
+          <div class="ritual-row"><span class="ritual-key power-it">Power It</span><span class="ritual-desc"><strong>Don't explain it. Perform it.</strong> Show us what this Power does to reality right now.</span></div>
         </div>
         <div class="note"><span class="note-label">Note —</span> The Intro Ritual applies to <strong>every card, every time</strong> — Quest cards, Scene cards, new Characters. Always.</div>
       </div>
@@ -805,12 +838,12 @@ body.med .do{background:#d4ebe6;border-left-color:var(--med-accent);}
         <div class="sec-title">The Six Story Modes</div>
         <p class="prose">Roll the Story-Mode Die at the start of your turn. <strong>Not optional. Commit to it.</strong> The Mode is a frame, not a cage — if it contradicts your story, <em>that is the story</em>.</p>
         <div class="modes-grid">
-          <div class="mode-cell"><span class="mode-num">1</span><div><div class="mode-name">Tragic</div><div class="mode-desc">Loss is real. Push forward anyway.</div></div></div>
-          <div class="mode-cell"><span class="mode-num">2</span><div><div class="mode-name">Comic</div><div class="mode-desc">Things go wrong. It's your fault. Play the gap.</div></div></div>
-          <div class="mode-cell"><span class="mode-num">3</span><div><div class="mode-name">Absurd</div><div class="mode-desc">The impossible is normal. Don't explain it.</div></div></div>
-          <div class="mode-cell"><span class="mode-num">4</span><div><div class="mode-name">Heroic</div><div class="mode-desc">Your Character is right for this moment. Play the peak.</div></div></div>
-          <div class="mode-cell"><span class="mode-num">5</span><div><div class="mode-name">Mystical</div><div class="mode-desc">Something's happening beneath the surface.</div></div></div>
-          <div class="mode-cell"><span class="mode-num">6</span><div><div class="mode-name">Forbidden</div><div class="mode-desc">Cross the line the story's been politely avoiding. Sell it.</div></div></div>
+          <div class="mode-cell"><span class="mode-num m1">1</span><div><div class="mode-name">Tragic</div><div class="mode-desc">Loss is real. Push forward anyway.</div></div></div>
+          <div class="mode-cell"><span class="mode-num m2">2</span><div><div class="mode-name">Comic</div><div class="mode-desc">Things go wrong. It's your fault. Play the gap.</div></div></div>
+          <div class="mode-cell"><span class="mode-num m3">3</span><div><div class="mode-name">Absurd</div><div class="mode-desc">The impossible is normal. Don't explain it.</div></div></div>
+          <div class="mode-cell"><span class="mode-num m4">4</span><div><div class="mode-name">Heroic</div><div class="mode-desc">Your Character is right for this moment. Play the peak.</div></div></div>
+          <div class="mode-cell"><span class="mode-num m5">5</span><div><div class="mode-name">Mystical</div><div class="mode-desc">Something's happening beneath the surface.</div></div></div>
+          <div class="mode-cell"><span class="mode-num m6">6</span><div><div class="mode-name">Forbidden</div><div class="mode-desc">Cross the line the story's been politely avoiding. Sell it.</div></div></div>
         </div>
         <div class="blockquote">"The Mode is a frame, not a cage. I didn't invent the rules of drama — I just put them on dice."</div>
       </div>
@@ -1578,10 +1611,14 @@ function switchLang(lang){
     var id=cur.id.replace('page-','');
     var base=id.replace(/_de$/,'');
     var newId=lang==='de'?base+'_de':base;
+    // find correct nav button without triggering lang reset
     var tbMap={'home':'tb-home','kfb':'tb-kfb','med':'tb-med'};
+    _switchingLang=true;
     goPage(newId,document.getElementById(tbMap[base]||'tb-home'));
+    _switchingLang=false;
   }
 }
+var _switchingLang=false;
 
 /* ── NAV ── */
 function goPage(id,btn){
@@ -1594,11 +1631,13 @@ function goPage(id,btn){
   var isMed=id==='med'||id==='med_de';
   document.body.classList.toggle('med',isMed);
   document.getElementById('html-root').lang=id.endsWith('_de')?'de':'en';
-  currentLang=id.endsWith('_de')?'de':'en';
-  document.getElementById('lang-flag').textContent=currentLang==='de'?'🇩🇪':'🇬🇧';
-  document.getElementById('lang-label').textContent=currentLang==='de'?'DE':'EN';
-  document.getElementById('lang-en').classList.toggle('active',currentLang==='en');
-  document.getElementById('lang-de').classList.toggle('active',currentLang==='de');
+  if(!_switchingLang){
+    currentLang=id.endsWith('_de')?'de':'en';
+    document.getElementById('lang-flag').textContent=currentLang==='de'?'🇩🇪':'🇬🇧';
+    document.getElementById('lang-label').textContent=currentLang==='de'?'DE':'EN';
+    document.getElementById('lang-en').classList.toggle('active',currentLang==='en');
+    document.getElementById('lang-de').classList.toggle('active',currentLang==='de');
+  }
   try{location.hash=id;}catch(e){}
   if(['kfb','med','kfb_de','med_de'].includes(id)) setupToc(id);
   window.scrollTo(0,0);
