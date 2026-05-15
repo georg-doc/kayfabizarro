@@ -68,7 +68,7 @@ mark{background:var(--mark);color:var(--ink);padding:0 2px;border-radius:2px;}
 .tb-name{font-family:var(--ff-display);font-weight:700;font-size:20px;letter-spacing:var(--ls-tight);color:var(--ink);white-space:nowrap;}
 .tb-nav{display:flex;align-items:stretch;flex:1;padding:0 var(--sp-6);gap:0;overflow-x:auto;overflow-y:hidden;scrollbar-width:none;min-width:0;}.tb-nav::-webkit-scrollbar{display:none;}
 .tb-nav-btn{display:flex;align-items:center;padding:0 var(--sp-5);border:none;background:transparent;cursor:pointer;font-family:var(--ff-ui);font-weight:600;font-size:var(--fs-sm);letter-spacing:var(--ls-stamp);text-transform:uppercase;color:var(--ink-3);border-bottom:2px solid transparent;margin-bottom:-1.5px;transition:color var(--dur-fast),border-color var(--dur-fast);white-space:nowrap;text-decoration:none;}
-.tb-nav-btn:hover{color:var(--ink);}
+.tb-nav-btn:hover{color:var(--ink);}.tb-nav-btn:focus,.tb-nav-btn:focus-visible{outline:none;}
 .tb-nav-btn.active{color:var(--accent);border-bottom-color:var(--accent);}
 .tb-nav-ext{display:flex;align-items:center;gap:4px;}
 .tb-nav-ext::after{content:"↗";font-size:10px;opacity:.6;}
@@ -76,7 +76,7 @@ mark{background:var(--mark);color:var(--ink);padding:0 2px;border-radius:2px;}
 
 .lang-wrap{position:relative;}
 .lang-btn{display:flex;align-items:center;gap:var(--sp-2);padding:5px 10px;border:1px solid var(--border-2);border-radius:var(--r-2);background:transparent;cursor:pointer;font-family:var(--ff-mono);font-size:var(--fs-xs);font-weight:500;color:var(--ink-3);transition:border-color var(--dur-fast),color var(--dur-fast);}
-.lang-btn:hover{border-color:var(--ink);color:var(--ink);}
+.lang-btn:hover{border-color:var(--ink);color:var(--ink);}.lang-btn:focus,.lang-btn:focus-visible{outline:none;}
 .lang-flag{font-size:13px;line-height:1;}
 .lang-dropdown{display:none;position:absolute;top:calc(100% + 6px);right:0;background:var(--ink);border-radius:var(--r-2);overflow:hidden;min-width:120px;box-shadow:0 4px 16px rgba(0,0,0,.2);z-index:500;}
 .lang-dropdown.open{display:block;}
@@ -120,7 +120,7 @@ body.med .cta-dashed{color:var(--accent);border-color:var(--accent);}
 
 /* VARIANT CARDS */
 .variant-grid{display:grid;grid-template-columns:1fr 1fr;gap:var(--sp-6);max-width:var(--lay-max);margin:0 auto;padding:var(--sp-10) var(--sp-8);}
-@media(max-width:640px){.variant-grid{grid-template-columns:1fr;}.dosay{grid-template-columns:1fr;}.modes-grid{grid-template-columns:1fr;}.gloss-row,.soc-row{grid-template-columns:1fr;}.gloss-term,.soc-term{white-space:normal;border-right:none;border-bottom:1px solid var(--border);}}
+@media(max-width:640px){.variant-grid{grid-template-columns:1fr;}.dosay{grid-template-columns:1fr;}.modes-grid{grid-template-columns:1fr;}.gloss-row,.soc-row{display:block;}.gloss-term,.soc-term,.gloss-def,.soc-def{display:block;white-space:normal;width:100%;border-right:none;border-bottom:1px solid var(--border);}.gloss-def,.soc-def{border-bottom:none;}}
 .variant-card{border:1.5px solid var(--border);border-radius:var(--r-3);background:var(--paper-card);padding:var(--sp-8);cursor:pointer;text-decoration:none;color:var(--ink);transition:border-color var(--dur-fast),transform var(--dur-fast) var(--ease-out);display:block;}
 .variant-card:hover{border-color:var(--accent);transform:translateY(-2px);}
 .variant-card.med{border-color:var(--med-border);background:var(--med-paper-card);color:var(--med-ink);}
@@ -218,32 +218,44 @@ body.med .cta-dashed{color:var(--accent);border-color:var(--accent);}
 
 /* MODES GRID */
 .modes-grid{display:grid;grid-template-columns:1fr 1fr;border:1px solid var(--border);border-radius:var(--r-3);overflow:hidden;max-width:var(--lay-prose);margin:var(--sp-4) 0;}
-.mode-cell{padding:var(--sp-4) var(--sp-5);border-right:1px solid var(--border);border-bottom:1px solid var(--border);display:flex;gap:var(--sp-4);align-items:flex-start;}
+.mode-cell{padding:var(--sp-4) var(--sp-5);border-right:1px solid var(--border);border-bottom:1px solid var(--border);display:flex;gap:var(--sp-4);align-items:flex-start;background:var(--paper-card);}
 .mode-cell:nth-child(2n){border-right:none;}
 .mode-cell:nth-last-child(-n+2){border-bottom:none;}
+.mode-cell.mc1{background:rgba(163,56,40,.05);}
+.mode-cell.mc2{background:rgba(160,122,16,.05);}
+.mode-cell.mc3{background:rgba(90,122,82,.05);}
+.mode-cell.mc4{background:rgba(139,105,20,.05);}
+.mode-cell.mc5{background:rgba(61,104,120,.05);}
+.mode-cell.mc6{background:rgba(139,32,32,.06);}
+body.med .mode-cell.mc1{background:rgba(139,96,96,.05);}
+body.med .mode-cell.mc2{background:rgba(192,104,0,.05);}
+body.med .mode-cell.mc3{background:rgba(10,112,112,.06);}
+body.med .mode-cell.mc4{background:rgba(30,122,104,.05);}
+body.med .mode-cell.mc5{background:rgba(58,90,128,.05);}
+body.med .mode-cell.mc6{background:rgba(144,64,64,.06);}
 .mode-num{font-family:var(--ff-display);font-weight:800;font-size:28px;line-height:1;color:var(--accent);min-width:22px;flex-shrink:0;}
 .mode-name{font-family:var(--ff-ui);font-weight:700;font-size:var(--fs-base);color:var(--ink);margin-bottom:2px;}
 .mode-desc{font-size:var(--fs-base);line-height:var(--lh-norm);color:var(--ink-3);}
 
 /* SOCIAL CALLS */
-.socials-table{border:1px solid var(--border);border-radius:var(--r-3);overflow:hidden;max-width:var(--lay-prose);margin:var(--sp-4) 0;display:grid;}
-.soc-row{display:grid;grid-template-columns:auto 1fr;border-bottom:1px dashed var(--border);}
+.socials-table{display:table;border-collapse:collapse;border:1px solid var(--border);border-radius:var(--r-3);overflow:hidden;max-width:var(--lay-prose);margin:var(--sp-4) 0;width:100%;}
+.soc-row{display:table-row;border-bottom:1px dashed var(--border);}
 .soc-row:last-child{border-bottom:none;}
-.soc-term{font-family:var(--ff-ui);font-weight:700;font-size:var(--fs-base);letter-spacing:0.02em;background:var(--paper-3);padding:var(--sp-4) var(--sp-5);white-space:nowrap;display:flex;align-items:center;color:var(--ink);border-right:1px solid var(--border);}
+.soc-term{display:table-cell;font-family:var(--ff-ui);font-weight:700;font-size:var(--fs-base);letter-spacing:0.02em;background:var(--paper-3);padding:var(--sp-4) var(--sp-5);white-space:nowrap;color:var(--ink);border-right:1px solid var(--border);vertical-align:middle;width:1%;}
 .soc-term.bingo{color:#8b6914;}
 .soc-term.boggle{color:#3d6080;}
 .soc-term.bongo{color:#3d6b50;}
 .soc-term.blodsinn{color:#9c3d2e;}
 body.med .soc-term.bingo{color:#0b6b6b;}body.med .soc-term.boggle{color:#4a6080;}body.med .soc-term.bongo{color:#2a7a6a;}
 body.med .soc-term.blodsinn{color:#8b4040;}
-.soc-def{font-size:var(--fs-base);line-height:var(--lh-prose);color:var(--ink-2);padding:var(--sp-4) var(--sp-5);}
+.soc-def{display:table-cell;font-size:var(--fs-base);line-height:var(--lh-prose);color:var(--ink-2);padding:var(--sp-4) var(--sp-5);width:100%;}
 
 /* GLOSSARY */
-.gloss-table{border:1px solid var(--border);border-radius:var(--r-3);overflow:hidden;max-width:var(--lay-prose);margin:var(--sp-4) 0;display:grid;}
-.gloss-row{display:grid;grid-template-columns:auto 1fr;border-bottom:1px dashed var(--border);}
+.gloss-table{display:table;border-collapse:collapse;border:1px solid var(--border);border-radius:var(--r-3);overflow:hidden;max-width:var(--lay-prose);margin:var(--sp-4) 0;width:100%;}
+.gloss-row{display:table-row;border-bottom:1px dashed var(--border);}
 .gloss-row:last-child{border-bottom:none;}
-.gloss-term{font-family:var(--ff-ui);font-weight:700;font-size:var(--fs-base);letter-spacing:0.02em;text-transform:uppercase;background:var(--paper-3);padding:var(--sp-4) var(--sp-5);white-space:nowrap;color:var(--ink);border-right:1px solid var(--border);display:flex;align-items:center;}
-.gloss-def{font-size:var(--fs-base);line-height:var(--lh-prose);color:var(--ink-2);padding:var(--sp-4) var(--sp-5);}
+.gloss-term{display:table-cell;font-family:var(--ff-ui);font-weight:700;font-size:var(--fs-base);letter-spacing:0.02em;text-transform:uppercase;background:var(--paper-3);padding:var(--sp-4) var(--sp-5);white-space:nowrap;color:var(--ink);border-right:1px solid var(--border);vertical-align:middle;width:1%;}
+.gloss-def{display:table-cell;font-size:var(--fs-base);line-height:var(--lh-prose);color:var(--ink-2);padding:var(--sp-4) var(--sp-5);width:100%;}
 
 /* QUEST STRIP */
 .quest-strip{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid var(--border);border-radius:var(--r-3);overflow:hidden;max-width:var(--lay-prose);margin:var(--sp-4) 0;overflow-x:auto;}
@@ -301,18 +313,18 @@ body.med .ritual-key.name-it{color:#0b6b6b;}
 body.med .ritual-key.claim-it{color:#1f3147;}
 body.med .ritual-key.power-it{color:#8b4040;}
 
-.mode-num.m1{color:#9c3d2e;}
-.mode-num.m2{color:#b8860b;}
-.mode-num.m3{color:#6b7c5a;}
+.mode-num.m1{color:#a33828;}
+.mode-num.m2{color:#a07a10;}
+.mode-num.m3{color:#5a7a52;}
 .mode-num.m4{color:#8b6914;}
-.mode-num.m5{color:#4a6b7a;}
-.mode-num.m6{color:#7a2e28;}
+.mode-num.m5{color:#3d6878;}
+.mode-num.m6{color:#8b2020;}
 body.med .mode-num.m1{color:#8b6060;}
-body.med .mode-num.m2{color:#b85c00;}
-body.med .mode-num.m3{color:#0b6b6b;}
-body.med .mode-num.m4{color:#2a7a6a;}
-body.med .mode-num.m5{color:#4a6b7a;}
-body.med .mode-num.m6{color:#8b4040;}
+body.med .mode-num.m2{color:#c06800;}
+body.med .mode-num.m3{color:#0a7070;}
+body.med .mode-num.m4{color:#1e7a68;}
+body.med .mode-num.m5{color:#3d6878;}
+body.med .mode-num.m6{color:#904040;}
 
 .marginquote{font-family:var(--ff-body);font-style:italic;font-size:var(--fs-md);line-height:var(--lh-norm);color:var(--ink-3);border-top:1px dashed var(--border);padding-top:var(--sp-5);margin-top:var(--sp-8);max-width:var(--lay-prose);}
 
@@ -445,7 +457,7 @@ body.med .mode-num.m6{color:#8b4040;}
     <a class="variant-card med" href="#med" onclick="goPage('med',document.getElementById('tb-med'));return false;">
       <div class="vc-badge">Cut &amp; Play Comic · Clinical Edition</div>
       <div class="vc-title"><em>MedKayfab</em> Medicine</div>
-      <p class="vc-desc"><strong>Same loop, applied to pathophysiology.</strong> You play <em>Fibby Fitz</em> as your Character. The die rolls a 3 - <strong>Mech Flash.</strong> You explain atrial fibrillation from memory while the table heckles. Someone at the table calls <em>BLÖDSINN!</em> — and the room turns on you immediately. <strong>Wrong tonight, right tomorrow, teachable by breakfast.</strong></p>
+      <p class="vc-desc"><strong>Same loop, applied to pathophysiology.</strong> You play <em>Fibby Fitz</em> as your Character. The die rolls a 3 - <strong>Mechanism Flash.</strong> You explain atrial fibrillation from memory while the table heckles. Someone at the table calls <em>BLÖDSINN!</em> — and the room turns on you immediately. <strong>Wrong tonight, right tomorrow, teachable by breakfast.</strong></p>
       <p class="vc-best"><strong>Best for:</strong> med students who've outgrown flashcards, residents on night shift, attendings who teach by humiliation and want to stop. <strong>Solo or 1-6 humans.</strong></p>
       <span class="vc-cta">Read the Anti-Rules →</span>
     </a>
@@ -575,7 +587,7 @@ body.med .mode-num.m6{color:#8b4040;}
     <a class="variant-card med" href="#med_de" onclick="goPage('med_de',document.getElementById('tb-med'));return false;">
       <div class="vc-badge">Cut &amp; Play Comic · Klinische Edition</div>
       <div class="vc-title"><em>MedKayfab</em> Medicine</div>
-      <p class="vc-desc"><strong>Derselbe Loop, angelegt an die Pathophysiologie.</strong> Du spielst <em>Fibby Fitz</em> als Character. Der Würfel zeigt 3 - <strong>Mech. Flash.</strong> Du erklärst Vorhofflimmern aus dem Gedächtnis, während der Tisch dazwischenruft. Jemand am Tisch ruft <em>BLÖDSINN!</em> — und der Raum dreht sich gegen dich. <strong>Heute Abend halb falsch, morgen Mittag richtig, beim Frühstück lehrbar.</strong></p>
+      <p class="vc-desc"><strong>Derselbe Loop, angelegt an die Pathophysiologie.</strong> Du spielst <em>Fibby Fitz</em> als Character. Der Würfel zeigt 3 - <strong>Mechanism Flash.</strong> Du erklärst Vorhofflimmern aus dem Gedächtnis, während der Tisch dazwischenruft. Jemand am Tisch ruft <em>BLÖDSINN!</em> — und der Raum dreht sich gegen dich. <strong>Heute Abend halb falsch, morgen Mittag richtig, beim Frühstück lehrbar.</strong></p>
       <p class="vc-best"><strong>Geeignet für:</strong> Medizinstudierende, die Karteikarten überlebt haben, Assistenzärzt*innen im Nachtdienst, Oberärzt*innen die durch Bloßstellen unterrichten und damit aufhören wollen. <strong>Solo oder 1-6 Menschen am Tisch.</strong></p>
       <span class="vc-cta">Lies die Anti-Regeln →</span>
     </a>
@@ -752,12 +764,12 @@ body.med .mode-num.m6{color:#8b4040;}
         <div class="sec-title">The Six Story Modes</div>
         <p class="prose">Roll the Story-Mode Die at the start of your turn. <strong>Not optional. Commit to it.</strong> The Mode is a frame, not a cage - if it contradicts your story, <em>that is the story</em>.</p>
         <div class="modes-grid">
-          <div class="mode-cell"><span class="mode-num m1">1</span><div><div class="mode-name">Tragic</div><div class="mode-desc">Loss is real. Push forward anyway.</div></div></div>
-          <div class="mode-cell"><span class="mode-num m2">2</span><div><div class="mode-name">Comic</div><div class="mode-desc">Things go wrong. It's your fault. Play the gap.</div></div></div>
-          <div class="mode-cell"><span class="mode-num m3">3</span><div><div class="mode-name">Absurd</div><div class="mode-desc">The impossible is normal. Don't explain it.</div></div></div>
-          <div class="mode-cell"><span class="mode-num m4">4</span><div><div class="mode-name">Heroic</div><div class="mode-desc">Your Character is right for this moment. Play the peak.</div></div></div>
-          <div class="mode-cell"><span class="mode-num m5">5</span><div><div class="mode-name">Mystical</div><div class="mode-desc">Something's happening beneath the surface.</div></div></div>
-          <div class="mode-cell"><span class="mode-num m6">6</span><div><div class="mode-name">Forbidden</div><div class="mode-desc">Cross the line the story's been politely avoiding. Sell it.</div></div></div>
+          <div class="mode-cell mc1"><span class="mode-num m1">1</span><div><div class="mode-name">Tragic</div><div class="mode-desc">Loss is real. Push forward anyway.</div></div></div>
+          <div class="mode-cell mc2"><span class="mode-num m2">2</span><div><div class="mode-name">Comic</div><div class="mode-desc">Things go wrong. It's your fault. Play the gap.</div></div></div>
+          <div class="mode-cell mc3"><span class="mode-num m3">3</span><div><div class="mode-name">Absurd</div><div class="mode-desc">The impossible is normal. Don't explain it.</div></div></div>
+          <div class="mode-cell mc4"><span class="mode-num m4">4</span><div><div class="mode-name">Heroic</div><div class="mode-desc">Your Character is right for this moment. Play the peak.</div></div></div>
+          <div class="mode-cell mc5"><span class="mode-num m5">5</span><div><div class="mode-name">Mystical</div><div class="mode-desc">Something's happening beneath the surface.</div></div></div>
+          <div class="mode-cell mc6"><span class="mode-num m6">6</span><div><div class="mode-name">Forbidden</div><div class="mode-desc">Cross the line the story's been politely avoiding. Sell it.</div></div></div>
         </div>
         <div class="blockquote">"The Mode is a frame, not a cage. I didn't invent the rules of drama - I just put them on dice."</div>
       </div>
@@ -1056,106 +1068,142 @@ body.med .mode-num.m6{color:#8b4040;}
       <div class="rules-section" id="med-what">
         <div class="sec-eyebrow">Akt I · Setup</div>
         <div class="sec-title">What it is.</div>
-        <p class="prose">You each play a Character - a <strong>clinician, a drug, an immune cell, a rogue signalling molecule, or a personified disease</strong>. Together you build a shared Clinical Stage and push a Medical Quest toward resolution.</p>
-        <p class="prose">When the Quest Die hits 6, someone delivers the Finale: the diagnosis, the mechanism, the treatment decision. <strong>No win condition. No score.</strong> Just a mechanism you can explain the next morning without looking at the card.</p>
+        <p class="prose">MedKayfab is the KayfaBizarro engine applied to pathophysiology. You each play a Character — a <strong>clinician, a drug, an immune cell, a rogue signalling molecule, or a personified disease</strong>. Together you build a shared Clinical Stage and push a Medical Quest toward resolution.</p>
+        <p class="prose">The mechanism you perform on your turn is the mechanism you remember at 4am. <strong>No win condition. No score.</strong> Just a pathophysiology you can explain the next morning without looking at the card.</p>
+        <p class="prose">If you know KayfaBizarro Freestyle already: same five steps, same Stage, same BLÖDSINN! — but the Story-Mode Die becomes the <strong>Clinical Mode Die</strong>, and every card carries a disease mechanism instead of a story beat.</p>
+        <div class="sec-sub">What you need</div>
+        <div class="rule-line"><span class="rule-key">Cards —</span> Each player brings 15–20 MedKayfab cards. Shuffle into one shared deck. Characters are clinicians, drugs, cells, or personified diseases. Scene cards are clinical contexts. Quest cards are cases.</div>
+        <div class="rule-line"><span class="rule-key">Two D6 —</span> One <em>Clinical Mode Die</em>, one <em>Quest Die</em>. Both visible at all times.</div>
+        <div class="rule-line"><span class="rule-key">Solo or 1–6 —</span> Works solo for exam prep. Works best at 3–5 around a table. Works at any hour, but 2am hits different.</div>
       </div>
 
       <div class="rules-section" id="med-setup">
         <div class="sec-eyebrow">Akt I · Setup</div>
         <div class="sec-title">Setup</div>
+        <p class="prose">Two minutes. No pre-reading required. The cards teach themselves.</p>
         <div class="steps">
           <div class="step-row-plain"><span class="step-num">1</span><span class="step-label">Deal</span><span class="step-body">Give 3 cards to each player. Keep them secret. Scrub in.</span></div>
-          <div class="step-row-plain"><span class="step-num">2</span><span class="step-label">Characters</span><span class="step-body">Everyone picks 1 card, reveals it face-up, runs the Intro Ritual.</span></div>
-          <div class="step-row-plain"><span class="step-num">3</span><span class="step-label">Quest Reveal</span><span class="step-body"><strong>Most caffeinated player</strong> draws a Quest card. Quest Die to <strong>1</strong>.</span></div>
-          <div class="step-row-plain"><span class="step-num">4</span><span class="step-label">Stage</span><span class="step-body">Stage empty. Three Scene slots.</span></div>
-          <div class="step-row-plain"><span class="step-num">5</span><span class="step-label">Go</span><span class="step-body">First turn.</span></div>
+          <div class="step-row-plain"><span class="step-num">2</span><span class="step-label">Characters</span><span class="step-body">Everyone picks 1 card from their hand and reveals it face-up. Run the Intro Ritual for your Character. This is who you are for this episode — a cardiologist, an aspirin molecule, an arrhythmia, whatever the card says.</span></div>
+          <div class="step-row-plain"><span class="step-num">3</span><span class="step-label">Quest Reveal</span><span class="step-body"><strong>Most caffeinated player</strong> draws a Quest card and runs the Intro Ritual. This is the clinical case. Quest Die to <strong>1</strong>.</span></div>
+          <div class="step-row-plain"><span class="step-num">4</span><span class="step-label">Stage</span><span class="step-body">Stage empty. Three Scene slots open — to be filled with clinical context cards as the case develops.</span></div>
+          <div class="step-row-plain"><span class="step-num">5</span><span class="step-label">Go</span><span class="step-body">First turn. The Quest Die is at 1. The patient just walked in.</span></div>
         </div>
+        <div class="blockquote">"New to this? Skip the Clinical Mode Die for the first round — everyone just introduces their Character. Once the table has found its voice, roll as normal."</div>
       </div>
 
       <div class="rules-section" id="med-ritual">
         <div class="sec-eyebrow">Akt I · Setup</div>
         <div class="sec-title">The Intro Ritual</div>
+        <p class="prose">Every card that enters the game must be introduced. Three beats. Thirty seconds. In character. This is not a summary — it is a performance. The table only remembers what was performed, not what was read.</p>
         <div class="ritual">
-          <div class="ritual-row"><span class="ritual-key">Name It</span><span class="ritual-desc">Announce the card's name <strong>and</strong> the clinical concept. Loud.</span></div>
-          <div class="ritual-row"><span class="ritual-key">Claim It</span><span class="ritual-desc">One sentence: what is its <em>mechanism</em>?</span></div>
-          <div class="ritual-row"><span class="ritual-key">Power It</span><span class="ritual-desc"><strong>Don't explain it. Perform it.</strong> Show us what this Power does to the patient right now.</span></div>
+          <div class="ritual-row"><span class="ritual-key name-it">Name It</span><span class="ritual-desc">Announce the card's name <strong>and</strong> the clinical concept it represents. Loud. "Fibby Fitz. Atrial fibrillation."</span></div>
+          <div class="ritual-row"><span class="ritual-key claim-it">Claim It</span><span class="ritual-desc">One sentence: what is its <em>mechanism</em>? Not the treatment — the mechanism. "The atria fire chaotically. The AV node only lets some impulses through. The ventricles never know what's coming."</span></div>
+          <div class="ritual-row"><span class="ritual-key power-it">Power It</span><span class="ritual-desc"><strong>Don't explain it. Perform it.</strong> Show us what this mechanism does to the patient right now. Embody the drug's action. Voice the disease. Make the room feel the arrhythmia.</span></div>
         </div>
+        <div class="note"><span class="note-label">Note —</span> The Intro Ritual applies to <strong>every card, every time</strong> — Quest cards, Scene cards, new Characters. Always. The table skips it at its own peril: the mechanism that wasn't performed is the mechanism nobody remembers at 6am.</div>
       </div>
 
       <div class="rules-section" id="med-turn">
         <div class="sec-eyebrow">Akt I · Gameplay</div>
         <div class="sec-title">The Five-Step Turn</div>
+        <p class="prose">Each turn runs the same five steps. The Clinical Mode Die determines how you engage with the mechanism on this turn — not whether you engage with it. You always engage with it.</p>
         <div class="step-card">
           <div class="step-card-header"><span class="step-card-title">The Five-Step Turn</span><span class="step-card-meta">~2 min per player</span></div>
-          <div class="step-row"><span class="step-num">01</span><span class="step-label">Draw</span><span class="step-body">Draw 1 card.</span></div>
-          <div class="step-row"><span class="step-num">02</span><span class="step-label">Roll</span><span class="step-body">Story-Mode Die. <strong>Commit.</strong></span></div>
-          <div class="step-row"><span class="step-num">03</span><span class="step-label">Play</span><span class="step-body">Scene → Stage slot OR Character Switch. Always: Intro Ritual.</span></div>
-          <div class="step-row"><span class="step-num">04</span><span class="step-label">Tell</span><span class="step-body">In character. <strong>Power woven in → discard. Power skipped → stays on Stage.</strong></span></div>
-          <div class="step-row"><span class="step-num">05</span><span class="step-label">Move</span><span class="step-body">Quest Die: <strong>+2, +1, 0, or −1.</strong></span></div>
+          <div class="step-row"><span class="step-num">01</span><span class="step-label">Draw</span><span class="step-body">Draw 1 card from the top of the shared deck. You now hold 4 cards temporarily.</span></div>
+          <div class="step-row"><span class="step-num">02</span><span class="step-label">Roll</span><span class="step-body">Roll the Clinical Mode Die. This is your Mode for this turn. Not optional. Commit to it — the Mode tells you <em>how</em> to approach the mechanism, not whether to approach it.</span></div>
+          <div class="step-row"><span class="step-num">03</span><span class="step-label">Play</span><span class="step-body">Play 1 card: Scene card into a Stage slot (empty, or overwrite one at 3/3) OR switch your Character. Always run the Intro Ritual. Return to 3 hand cards.</span></div>
+          <div class="step-row"><span class="step-num">04</span><span class="step-label">Tell</span><span class="step-body">In character, in your Mode. Weave the Stage into the clinical narrative. <strong>Power woven in → card to discard. Power skipped → card stays on Stage.</strong></span></div>
+          <div class="step-row"><span class="step-num">05</span><span class="step-label">Move</span><span class="step-body">Move the Quest Die: <strong>+2, +1, 0, or −1.</strong> Your call. How far along is this case?</span></div>
         </div>
       </div>
 
       <div class="rules-section" id="med-modes">
         <div class="sec-eyebrow">Akt I · Gameplay</div>
         <div class="sec-title">The Six Clinical Modes</div>
+        <p class="prose">Roll the Clinical Mode Die at the start of your turn. The Mode is a frame for how you engage with the mechanism — not a constraint on what you say. If the Mode contradicts your read on the case, play that contradiction. The best teaching moments come from unexpected angles.</p>
         <div class="modes-grid">
-          <div class="mode-cell"><span class="mode-num">1</span><div><div class="mode-name">Lab Report</div><div class="mode-desc">Dry. Factual. Critique the brochure.</div></div></div>
-          <div class="mode-cell"><span class="mode-num">2</span><div><div class="mode-name">Clin. Sabotage</div><div class="mode-desc">Mechanism under pressure.</div></div></div>
-          <div class="mode-cell"><span class="mode-num">3</span><div><div class="mode-name">Mech. Flash</div><div class="mode-desc"><strong>Active Recall.</strong> Explain without looking. Table decides.</div></div></div>
-          <div class="mode-cell"><span class="mode-num">4</span><div><div class="mode-name">Power-Play</div><div class="mode-desc">Perform the mechanism.</div></div></div>
-          <div class="mode-cell"><span class="mode-num">5</span><div><div class="mode-name">Teaching Round</div><div class="mode-desc">One question, in character. <strong>No shaming.</strong></div></div></div>
-          <div class="mode-cell"><span class="mode-num">6</span><div><div class="mode-name">Prof. Blessing</div><div class="mode-desc">Total anarchy.</div></div></div>
+          <div class="mode-cell mc1"><span class="mode-num m1">1</span><div><div class="mode-name">Lab Report</div><div class="mode-desc">Dry. Factual. Critique the brochure. Read the number, question the reference range. The least exciting mode. Use it to build the baseline the other modes tear apart.</div></div></div>
+          <div class="mode-cell mc2"><span class="mode-num m2">2</span><div><div class="mode-name">Clinical Sabotage</div><div class="mode-desc">The mechanism is under pressure. Something is interfering — a comorbidity, a drug interaction, a patient who lied about their medications. Play the complication, not the textbook case.</div></div></div>
+          <div class="mode-cell mc3"><span class="mode-num m3">3</span><div><div class="mode-name">Mechanism Flash</div><div class="mode-desc"><strong>Active Recall.</strong> Put the card face-down. Explain the full mechanism from memory. The table listens and calls BLÖDSINN! if you drift. If you nail it: Quest Die +1.</div></div></div>
+          <div class="mode-cell mc4"><span class="mode-num m4">4</span><div><div class="mode-name">Power-Play</div><div class="mode-desc">Feynman mode. Perform the mechanism — not for an examiner, for a confused patient. If a confused patient couldn't follow it, BLÖDSINN! applies.</div></div></div>
+          <div class="mode-cell mc5"><span class="mode-num m5">5</span><div><div class="mode-name">Teaching Round</div><div class="mode-desc">You ask one question — in character, to the table. Not a pimping question. A genuine one. The table answers or calls BLÖDSINN! if the question was unanswerable. <strong>No shaming.</strong></div></div></div>
+          <div class="mode-cell mc6"><span class="mode-num m6">6</span><div><div class="mode-name">Prof. Kayfabe</div><div class="mode-desc">Total anarchy. The attending has left the building. Roll a second die and play whatever Mode comes up — but play it at twice the intensity. Or invent a Mode. The table decides if it counts.</div></div></div>
         </div>
+        <div class="blockquote">"Mode 3 is the one residents avoid. Mode 3 is the only one that actually works."<cite>— Doc FrizzleBob</cite></div>
       </div>
 
       <div class="rules-section" id="med-stage">
         <div class="sec-eyebrow">Akt I · Gameplay</div>
         <div class="sec-title">The Clinical Stage</div>
-        <p class="prose">Three Scene card slots. Shared clinical reality.</p>
+        <p class="prose">The Stage holds <strong>three Scene card slots</strong> — the shared clinical context everyone is playing inside. Think of it as the patient's presentation: the ECG trace, the ward, the comorbidity list. Each slot starts empty.</p>
+        <div class="rule-line"><span class="rule-key">Empty slot —</span> Fill it with a Scene card (Intro Ritual, then place). The Scene becomes part of the shared clinical reality for all players.</div>
+        <div class="rule-line"><span class="rule-key">Stage full (3/3) —</span> Overwrite one slot with a yes-and: pick a Scene to discard and replace it. The new Scene reframes the case.</div>
+        <div class="sec-sub">Character Switch</div>
+        <p class="prose">At Step 03, instead of playing a Scene card, you can play a new Character card — switching the clinician, drug, or disease you embody. Run the Intro Ritual for the new Character. Your old Character exits or becomes an NPC. The Stage is unchanged. Draw back to 3 hand cards.</p>
+        <div class="blockquote">"The best character switches happen when someone draws the antidote mid-crisis."</div>
       </div>
 
       <div class="rules-section" id="med-quest">
         <div class="sec-eyebrow">Akt II · Progression</div>
         <div class="sec-title">The Quest Die</div>
+        <p class="prose">The Quest Die tracks where the case is in its arc. It is not a timer — it is a clinical compass. <em>You decide when to move it.</em> A Quest Die at 1 is a patient in triage. At 5, someone is about to make a decision they cannot take back. At 6, the case closes.</p>
         <div class="quest-strip">
           <div class="qd-cell" style="background:rgba(42,122,106,.09)"><div class="qd-num">1-2</div><div class="qd-name">Anamnesis</div><div class="qd-sub">Symptoms</div></div>
           <div class="qd-cell" style="background:rgba(184,92,0,.09)"><div class="qd-num">3-4</div><div class="qd-name">Workup</div><div class="qd-sub">Escalation</div></div>
           <div class="qd-cell" style="background:rgba(139,64,64,.10)"><div class="qd-num">5</div><div class="qd-name">Crisis</div><div class="qd-sub">Must give</div></div>
           <div class="qd-cell qd-finale"><div class="qd-num">6</div><div class="qd-name">Finale</div><div class="qd-sub">Case closes.</div></div>
         </div>
+        <table class="ref-table" style="margin:var(--sp-4) 0">
+          <tr><td>+2</td><td><strong>Hard push.</strong> The case is deteriorating fast. Use when a complication has just landed and there's no time to work up.</td></tr>
+          <tr><td>+1</td><td><strong>Steady escalation.</strong> Default forward move. The workup is revealing something. Keep going.</td></tr>
+          <tr><td>0</td><td><strong>Hold.</strong> The attending needs more data. Sit in the uncertainty. This is where real clinical thinking happens.</td></tr>
+          <tr><td>−1</td><td><strong>Retreat.</strong> New information changed the picture. The diagnosis was wrong. Step back and re-examine.</td></tr>
+        </table>
+        <div class="note"><span class="note-label">Note —</span> Quest Die <strong>never goes below 1</strong>. When it hits 6, <strong>the next player's turn is the Finale turn</strong>.</div>
       </div>
 
       <div class="rules-section" id="med-finale">
         <div class="sec-eyebrow">Akt II · Progression</div>
         <div class="sec-title">The Grand Finale</div>
-        <p class="prose">Quest Die hits <strong>6</strong>. Next player's turn is the Finale turn.</p>
+        <p class="prose">When the Quest Die hits <strong>6</strong>, the next player's turn is the Finale turn. Same five steps — but the Tell must close the case: diagnosis, mechanism, treatment decision. Not a summary. A performance.</p>
+        <div class="rule-line"><span class="rule-key">Memory —</span> Quest card stays on the table. It is the case record. The mechanism that was performed stays with the table.</div>
+        <div class="rule-line"><span class="rule-key">Clear —</span> Stage cleared. All Scene cards to discard. The ward has moved on.</div>
+        <div class="rule-line"><span class="rule-key">New Quest —</span> Next player draws a Quest card and runs the full Quest Reveal ritual. New case.</div>
+        <div class="rule-line"><span class="rule-key">Reset —</span> Quest Die to 1. New patient, new presentation, same table.</div>
+        <div class="blockquote">"The Finale doesn't have to be right. It has to be confident enough that the table believes it for the next twelve hours."<cite>— Doc FrizzleBob</cite></div>
       </div>
 
       <div class="rules-section" id="med-socials">
         <div class="sec-eyebrow">Table Culture</div>
         <div class="sec-title">Social Calls</div>
+        <p class="prose">Four calls any player can make at any time. They interrupt the current turn. They are non-negotiable — if the table calls one, the table is right.</p>
         <div class="socials-table">
-          <div class="soc-row"><div class="soc-term bingo">KayfaBINGO!</div><div class="soc-def">The mechanism clicked.</div></div>
-          <div class="soc-row"><div class="soc-term boggle">KayfaBOGGLE?</div><div class="soc-def">One concrete question.</div></div>
-          <div class="soc-row"><div class="soc-term bongo">KayfaBONGO!</div><div class="soc-def">Power as stat. Restate as story.</div></div>
-          <div class="soc-row"><div class="soc-term blodsinn">BLÖDSINN!</div><div class="soc-def">Rule broken. <strong>Quest Die does not move</strong>.</div></div>
+          <div class="soc-row"><div class="soc-term bingo">KayfaBINGO!</div><div class="soc-def">The mechanism clicked. Pure praise. The active player draws an extra card. Use generously — the table learns from the moments it applauds, not just the moments it corrects.</div></div>
+          <div class="soc-row"><div class="soc-term boggle">KayfaBOGGLE?</div><div class="soc-def">One concrete question. "What's the mechanism behind the rate control?" — not "I don't understand". Active player answers in 1–2 sentences, in character, and continues their turn.</div></div>
+          <div class="soc-row"><div class="soc-term bongo">KayfaBONGO!</div><div class="soc-def">A player described their Power as a statistic ("blocks COX-1 by 80%"). Anyone calls it. Active player restates as a clinical narrative — what happens to the patient, not to the number. No Quest Die effect.</div></div>
+          <div class="soc-row"><div class="soc-term blodsinn">BLÖDSINN!</div><div class="soc-def">A rule was broken: out of character, mechanism skipped, Mode ignored, or a flat-out incorrect mechanism stated with confidence. Majority decides. If it stands: <strong>Quest Die does not move</strong>. If overturned: play continues.</div></div>
         </div>
       </div>
 
       <div class="rules-section" id="med-powers">
         <div class="sec-eyebrow">Cards</div>
         <div class="sec-title">Powers &amp; Cards</div>
+        <p class="prose"><strong>Nothing on a card is a fact to be recited.</strong> Everything is a mechanism to be performed. The card gives you the name and the concept — the performance is yours.</p>
         <div class="dosay">
-          <div class="dosay-block dont"><div class="dosay-label">Don't say</div>"I block COX-1 and reduce thromboxane by 70%."</div>
+          <div class="dosay-block dont"><div class="dosay-label">Don't say</div>"I block COX-1 and reduce thromboxane A2 synthesis by inhibiting platelet aggregation."</div>
           <div class="dosay-block do"><div class="dosay-label">Say instead</div>"Every platelet in the bloodstream goes suddenly, permanently quiet. The patient's wife is on warfarin. <em>Nobody checked.</em>"</div>
         </div>
+        <p class="prose" style="margin-top:var(--sp-5)">The difference: the first is a pharmacology lecture. The second is a clinical scenario the table will remember. If someone calls BLÖDSINN! on the second, that is a conversation worth having. Nobody calls BLÖDSINN! on the first — because it is already dead.</p>
       </div>
 
       <div class="rules-section" id="med-addons">
         <div class="sec-eyebrow">Learning</div>
         <div class="sec-title">Learning Add-Ons</div>
-        <div class="rule-line"><span class="rule-key">Anki Mode -</span> Front = character + clue. Back = mechanism in one sentence.</div>
-        <div class="rule-line"><span class="rule-key">Feynman Round -</span> Explain a Stage card's mechanism without jargon, one minute. Group understands: Quest Die +1.</div>
+        <p class="prose">MedKayfab is a complete game without these. Add them when the table wants more structure, or when a specific learning goal needs targeting.</p>
+        <div class="rule-line"><span class="rule-key">Anki Mode —</span> After each Finale, each player writes one card: front = Character name + one clinical clue, back = mechanism in one sentence. Stack the cards. Review before the next session. The table built its own Anki deck.</div>
+        <div class="rule-line"><span class="rule-key">Feynman Round —</span> After any Mechanism Flash (Mode 3) success, the active player explains the mechanism without jargon — as if talking to the patient's family. One minute. Group understands: Quest Die +1 as a bonus on the next turn.</div>
+        <div class="rule-line"><span class="rule-key">Complication Deck —</span> Shuffle a second deck of complication cards face-down beside the main deck. Whenever the Quest Die moves to 5, draw the top complication card and add it to the Stage. The Finale must now address both the Quest and the complication.</div>
+        <div class="rule-line"><span class="rule-key">Solo Mode —</span> Play all five steps alone. For Mechanism Flash (Mode 3): voice the mechanism out loud, then check the card. BLÖDSINN! is your own standard — did you actually explain the mechanism, or did you hand-wave it? Be honest. The exam will not be.</div>
       </div>
 
       <div class="rules-section" id="med-decks">
@@ -1170,11 +1218,11 @@ body.med .mode-num.m6{color:#8b4040;}
         <div class="sec-title">Quick Reference</div>
         <table class="ref-table">
           <tr><td>1 - Lab Report</td><td>Dry. Factual.</td></tr>
-          <tr><td>2 - Clin. Sabotage</td><td>Mechanism under pressure.</td></tr>
-          <tr><td>3 - Mech. Flash</td><td>Active recall. +1 if you got it.</td></tr>
+          <tr><td>2 - Clinical Sabotage</td><td>Mechanism under pressure.</td></tr>
+          <tr><td>3 - Mechanism Flash</td><td>Active recall. +1 if you got it.</td></tr>
           <tr><td>4 - Power-Play</td><td>Perform the mechanism.</td></tr>
           <tr><td>5 - Teaching Round</td><td>One question, no shaming.</td></tr>
-          <tr><td>6 - Prof. Blessing</td><td>Total anarchy.</td></tr>
+          <tr><td>6 - Prof. Kayfabe</td><td>Total anarchy.</td></tr>
         </table>
       </div>
     </div>
@@ -1198,7 +1246,7 @@ body.med .mode-num.m6{color:#8b4040;}
       <div class="sidebar-actions"><button class="btn-ghost" onclick="window.print()">Drucken / PDF</button></div>
     </nav>
     <div class="main" id="med_de-content">
-      <div class="blockquote">Es ist 2 Uhr morgens im Aufnahmebereich. Jemand zieht Fibby Fitz - Vorhofflimmern - und würfelt eine 3. Mech. Flash. <em>Das ist kein Nebeneffekt des Spiels. Das ist der Punkt.</em><cite>- Doc FrizzleBob</cite></div>
+      <div class="blockquote">Es ist 2 Uhr morgens im Aufnahmebereich. Jemand zieht Fibby Fitz - Vorhofflimmern - und würfelt eine 3. Mechanism Flash. <em>Das ist kein Nebeneffekt des Spiels. Das ist der Punkt.</em><cite>- Doc FrizzleBob</cite></div>
 
       <div class="rules-section" id="med_de-what">
         <div class="sec-eyebrow">Akt I · Setup</div>
@@ -1218,7 +1266,7 @@ body.med .mode-num.m6{color:#8b4040;}
         <table class="ref-table">
           <tr><td>1 - Laborbericht</td><td>Trocken. Sachlich.</td></tr>
           <tr><td>2 - Klin. Sabotage</td><td>Mechanismus unter Druck.</td></tr>
-          <tr><td>3 - Mech. Flash</td><td>Active Recall.</td></tr>
+          <tr><td>3 - Mechanism Flash</td><td>Active Recall.</td></tr>
           <tr><td>4 - Power-Play</td><td>Spiel den Mechanismus.</td></tr>
           <tr><td>5 - Lehrvisite</td><td>Eine Frage. Kein Bloßstellen.</td></tr>
           <tr><td>6 - Prof.-Segen</td><td>Totale Anarchie.</td></tr>
