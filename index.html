@@ -120,7 +120,7 @@ body.med .cta-dashed{color:var(--accent);border-color:var(--accent);}
 
 /* VARIANT CARDS */
 .variant-grid{display:grid;grid-template-columns:1fr 1fr;gap:var(--sp-6);max-width:var(--lay-max);margin:0 auto;padding:var(--sp-10) var(--sp-8);}
-@media(max-width:640px){.variant-grid{grid-template-columns:1fr;}.dosay{grid-template-columns:1fr;}.modes-grid{grid-template-columns:1fr;}.gloss-row,.soc-row{flex-wrap:wrap;}.gloss-term,.soc-term{white-space:normal;min-width:100%;border-right:none;border-bottom:1px solid var(--border);}}
+@media(max-width:640px){.variant-grid{grid-template-columns:1fr;}.dosay{grid-template-columns:1fr;}.modes-grid{grid-template-columns:1fr;}.gloss-row,.soc-row{grid-template-columns:1fr;}.gloss-term,.soc-term{white-space:normal;border-right:none;border-bottom:1px solid var(--border);}}
 .variant-card{border:1.5px solid var(--border);border-radius:var(--r-3);background:var(--paper-card);padding:var(--sp-8);cursor:pointer;text-decoration:none;color:var(--ink);transition:border-color var(--dur-fast),transform var(--dur-fast) var(--ease-out);display:block;}
 .variant-card:hover{border-color:var(--accent);transform:translateY(-2px);}
 .variant-card.med{border-color:var(--med-border);background:var(--med-paper-card);color:var(--med-ink);}
@@ -226,24 +226,24 @@ body.med .cta-dashed{color:var(--accent);border-color:var(--accent);}
 .mode-desc{font-size:var(--fs-base);line-height:var(--lh-norm);color:var(--ink-3);}
 
 /* SOCIAL CALLS */
-.socials-table{border:1px solid var(--border);border-radius:var(--r-3);overflow:hidden;max-width:var(--lay-prose);margin:var(--sp-4) 0;}
-.soc-row{display:flex;gap:0;align-items:stretch;border-bottom:1px dashed var(--border);}
+.socials-table{border:1px solid var(--border);border-radius:var(--r-3);overflow:hidden;max-width:var(--lay-prose);margin:var(--sp-4) 0;display:grid;}
+.soc-row{display:grid;grid-template-columns:auto 1fr;border-bottom:1px dashed var(--border);}
 .soc-row:last-child{border-bottom:none;}
-.soc-term{font-family:var(--ff-ui);font-weight:700;font-size:var(--fs-base);letter-spacing:0.02em;background:var(--paper-3);padding:var(--sp-4) var(--sp-5);min-width:160px;flex-shrink:0;display:flex;align-items:center;color:var(--ink);border-right:1px solid var(--border);white-space:nowrap;}
-.soc-term.bingo{color:var(--kfb-accent);}
-.soc-term.boggle{color:#28507a;}
-.soc-term.bongo{color:#1a6040;}
-.soc-term.blodsinn{color:var(--rust);}
-body.med .soc-term.bingo,body.med .soc-term.boggle,body.med .soc-term.bongo{color:var(--med-accent);}
-body.med .soc-term.blodsinn{color:var(--med-rust);}
-.soc-def{font-size:var(--fs-base);line-height:var(--lh-prose);color:var(--ink-2);padding:var(--sp-4) var(--sp-5);flex:1;}
+.soc-term{font-family:var(--ff-ui);font-weight:700;font-size:var(--fs-base);letter-spacing:0.02em;background:var(--paper-3);padding:var(--sp-4) var(--sp-5);white-space:nowrap;display:flex;align-items:center;color:var(--ink);border-right:1px solid var(--border);}
+.soc-term.bingo{color:#8b6914;}
+.soc-term.boggle{color:#3d6080;}
+.soc-term.bongo{color:#3d6b50;}
+.soc-term.blodsinn{color:#9c3d2e;}
+body.med .soc-term.bingo{color:#0b6b6b;}body.med .soc-term.boggle{color:#4a6080;}body.med .soc-term.bongo{color:#2a7a6a;}
+body.med .soc-term.blodsinn{color:#8b4040;}
+.soc-def{font-size:var(--fs-base);line-height:var(--lh-prose);color:var(--ink-2);padding:var(--sp-4) var(--sp-5);}
 
 /* GLOSSARY */
-.gloss-table{border:1px solid var(--border);border-radius:var(--r-3);overflow:hidden;max-width:var(--lay-prose);margin:var(--sp-4) 0;}
-.gloss-row{display:flex;align-items:stretch;border-bottom:1px dashed var(--border);}
+.gloss-table{border:1px solid var(--border);border-radius:var(--r-3);overflow:hidden;max-width:var(--lay-prose);margin:var(--sp-4) 0;display:grid;}
+.gloss-row{display:grid;grid-template-columns:auto 1fr;border-bottom:1px dashed var(--border);}
 .gloss-row:last-child{border-bottom:none;}
-.gloss-term{font-family:var(--ff-ui);font-weight:700;font-size:var(--fs-base);letter-spacing:0.02em;text-transform:uppercase;background:var(--paper-3);padding:var(--sp-4) var(--sp-5);min-width:160px;flex-shrink:0;color:var(--ink);border-right:1px solid var(--border);display:flex;align-items:center;white-space:nowrap;}
-.gloss-def{font-size:var(--fs-base);line-height:var(--lh-prose);color:var(--ink-2);padding:var(--sp-4) var(--sp-5);flex:1;}
+.gloss-term{font-family:var(--ff-ui);font-weight:700;font-size:var(--fs-base);letter-spacing:0.02em;text-transform:uppercase;background:var(--paper-3);padding:var(--sp-4) var(--sp-5);white-space:nowrap;color:var(--ink);border-right:1px solid var(--border);display:flex;align-items:center;}
+.gloss-def{font-size:var(--fs-base);line-height:var(--lh-prose);color:var(--ink-2);padding:var(--sp-4) var(--sp-5);}
 
 /* QUEST STRIP */
 .quest-strip{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid var(--border);border-radius:var(--r-3);overflow:hidden;max-width:var(--lay-prose);margin:var(--sp-4) 0;overflow-x:auto;}
@@ -294,25 +294,25 @@ body.med .do{background:#d4ebe6;border-left-color:var(--med-accent);}
 .btn-outline{display:inline-block;padding:9px 20px;border:1.5px solid var(--ink);border-radius:var(--r-2);font-family:var(--ff-ui);font-weight:700;font-size:var(--fs-sm);color:var(--ink);background:transparent;cursor:pointer;transition:background var(--dur-fast),color var(--dur-fast);}
 .btn-outline:hover{background:var(--ink);color:var(--paper);}
 
-.ritual-key.name-it{color:var(--kfb-accent);}
-.ritual-key.claim-it{color:var(--kfb-ink-2);}
-.ritual-key.power-it{color:var(--kfb-rust);}
-body.med .ritual-key.name-it{color:var(--med-accent);}
-body.med .ritual-key.claim-it{color:var(--med-ink-2);}
-body.med .ritual-key.power-it{color:var(--med-rust);}
+.ritual-key.name-it{color:#8b6914;}
+.ritual-key.claim-it{color:#4a3f2c;}
+.ritual-key.power-it{color:#9c3d2e;}
+body.med .ritual-key.name-it{color:#0b6b6b;}
+body.med .ritual-key.claim-it{color:#1f3147;}
+body.med .ritual-key.power-it{color:#8b4040;}
 
-.mode-num.m1{color:var(--kfb-rust);}
-.mode-num.m2{color:var(--kfb-accent-2);}
-.mode-num.m3{color:var(--kfb-ink-3);}
-.mode-num.m4{color:var(--kfb-accent);}
-.mode-num.m5{color:#5a7a8a;}
-.mode-num.m6{color:var(--kfb-rust);}
-body.med .mode-num.m1{color:var(--med-rust);}
-body.med .mode-num.m2{color:var(--med-accent-2);}
-body.med .mode-num.m3{color:var(--med-ink-3);}
-body.med .mode-num.m4{color:var(--med-accent);}
-body.med .mode-num.m5{color:#5a7a8a;}
-body.med .mode-num.m6{color:var(--med-rust);}
+.mode-num.m1{color:#9c3d2e;}
+.mode-num.m2{color:#b8860b;}
+.mode-num.m3{color:#6b7c5a;}
+.mode-num.m4{color:#8b6914;}
+.mode-num.m5{color:#4a6b7a;}
+.mode-num.m6{color:#7a2e28;}
+body.med .mode-num.m1{color:#8b6060;}
+body.med .mode-num.m2{color:#b85c00;}
+body.med .mode-num.m3{color:#0b6b6b;}
+body.med .mode-num.m4{color:#2a7a6a;}
+body.med .mode-num.m5{color:#4a6b7a;}
+body.med .mode-num.m6{color:#8b4040;}
 
 .marginquote{font-family:var(--ff-body);font-style:italic;font-size:var(--fs-md);line-height:var(--lh-norm);color:var(--ink-3);border-top:1px dashed var(--border);padding-top:var(--sp-5);margin-top:var(--sp-8);max-width:var(--lay-prose);}
 
@@ -778,9 +778,9 @@ body.med .mode-num.m6{color:var(--med-rust);}
         <div class="sec-title">The Quest Die</div>
         <p class="prose">A <strong>story compass</strong>, not a countdown. Not a timer. <em>You move it.</em></p>
         <div class="quest-strip">
-          <div class="qd-cell" style="background:rgba(0,140,0,.06)"><div class="qd-num">1-2</div><div class="qd-name">Akt I</div><div class="qd-sub">Setup</div></div>
-          <div class="qd-cell" style="background:rgba(160,120,0,.06)"><div class="qd-num">3-4</div><div class="qd-name">Akt II</div><div class="qd-sub">Escalation</div></div>
-          <div class="qd-cell" style="background:rgba(160,60,0,.08)"><div class="qd-num">5</div><div class="qd-name">Ordeal</div><div class="qd-sub">Crisis</div></div>
+          <div class="qd-cell" style="background:rgba(107,124,90,.09)"><div class="qd-num">1-2</div><div class="qd-name">Akt I</div><div class="qd-sub">Setup</div></div>
+          <div class="qd-cell" style="background:rgba(184,134,11,.09)"><div class="qd-num">3-4</div><div class="qd-name">Akt II</div><div class="qd-sub">Escalation</div></div>
+          <div class="qd-cell" style="background:rgba(156,61,46,.10)"><div class="qd-num">5</div><div class="qd-name">Ordeal</div><div class="qd-sub">Crisis</div></div>
           <div class="qd-cell qd-finale"><div class="qd-num">6</div><div class="qd-name">Finale</div><div class="qd-sub">It ends.</div></div>
         </div>
         <table class="ref-table" style="margin:var(--sp-4) 0">
@@ -970,9 +970,9 @@ body.med .mode-num.m6{color:var(--med-rust);}
         <div class="sec-eyebrow">Akt II · Verlauf</div>
         <div class="sec-title">Der Quest-Würfel</div>
         <div class="quest-strip">
-          <div class="qd-cell" style="background:rgba(0,140,0,.06)"><div class="qd-num">1-2</div><div class="qd-name">Akt I</div><div class="qd-sub">Aufbau</div></div>
-          <div class="qd-cell" style="background:rgba(160,120,0,.06)"><div class="qd-num">3-4</div><div class="qd-name">Akt II</div><div class="qd-sub">Eskalation</div></div>
-          <div class="qd-cell" style="background:rgba(160,60,0,.08)"><div class="qd-num">5</div><div class="qd-name">Tortur</div><div class="qd-sub">Krise</div></div>
+          <div class="qd-cell" style="background:rgba(107,124,90,.09)"><div class="qd-num">1-2</div><div class="qd-name">Akt I</div><div class="qd-sub">Aufbau</div></div>
+          <div class="qd-cell" style="background:rgba(184,134,11,.09)"><div class="qd-num">3-4</div><div class="qd-name">Akt II</div><div class="qd-sub">Eskalation</div></div>
+          <div class="qd-cell" style="background:rgba(156,61,46,.10)"><div class="qd-num">5</div><div class="qd-name">Tortur</div><div class="qd-sub">Krise</div></div>
           <div class="qd-cell qd-finale"><div class="qd-num">6</div><div class="qd-name">Finale</div><div class="qd-sub">Es endet.</div></div>
         </div>
       </div>
@@ -1118,9 +1118,9 @@ body.med .mode-num.m6{color:var(--med-rust);}
         <div class="sec-eyebrow">Akt II · Progression</div>
         <div class="sec-title">The Quest Die</div>
         <div class="quest-strip">
-          <div class="qd-cell" style="background:rgba(11,107,107,.07)"><div class="qd-num">1-2</div><div class="qd-name">Anamnesis</div><div class="qd-sub">Symptoms</div></div>
-          <div class="qd-cell" style="background:rgba(184,92,0,.07)"><div class="qd-num">3-4</div><div class="qd-name">Workup</div><div class="qd-sub">Escalation</div></div>
-          <div class="qd-cell" style="background:rgba(160,24,24,.07)"><div class="qd-num">5</div><div class="qd-name">Crisis</div><div class="qd-sub">Must give</div></div>
+          <div class="qd-cell" style="background:rgba(42,122,106,.09)"><div class="qd-num">1-2</div><div class="qd-name">Anamnesis</div><div class="qd-sub">Symptoms</div></div>
+          <div class="qd-cell" style="background:rgba(184,92,0,.09)"><div class="qd-num">3-4</div><div class="qd-name">Workup</div><div class="qd-sub">Escalation</div></div>
+          <div class="qd-cell" style="background:rgba(139,64,64,.10)"><div class="qd-num">5</div><div class="qd-name">Crisis</div><div class="qd-sub">Must give</div></div>
           <div class="qd-cell qd-finale"><div class="qd-num">6</div><div class="qd-name">Finale</div><div class="qd-sub">Case closes.</div></div>
         </div>
       </div>
