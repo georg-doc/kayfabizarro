@@ -72,7 +72,7 @@ mark{background:var(--mark);color:var(--ink);padding:0 2px;border-radius:2px;}
 .tb-nav-btn:hover{color:var(--ink);}.tb-nav-btn:focus,.tb-nav-btn:focus-visible{outline:none;}
 .tb-nav-btn.active{color:var(--accent);border-bottom-color:var(--accent);}
 .tb-nav-ext{display:flex;align-items:center;gap:4px;}
-.tb-nav-ext::after{content:"↗";font-size:10px;opacity:.6;}
+.tb-nav-ext::after{content:"";}
 .tb-right{display:flex;align-items:center;gap:var(--sp-3);padding:0 var(--sp-6);border-left:1.5px solid var(--ink);flex-shrink:0;}
 
 .lang-wrap{position:relative;}
@@ -331,7 +331,7 @@ body.med .mode-num.m6{color:#904040;}
 .marginquote{font-family:var(--ff-body);font-style:italic;font-size:var(--fs-md);line-height:var(--lh-norm);color:var(--ink-3);border-top:1px dashed var(--border);padding-top:var(--sp-5);margin-top:var(--sp-8);max-width:var(--lay-prose);}
 
 /* FOOTER */
-.hub-foot{border-top:2px solid var(--ink);background:var(--paper);}
+.hub-foot{border-top:1px solid var(--border);background:var(--paper);}
 .foot-display{max-width:var(--lay-max);margin:0 auto;padding:var(--sp-16) var(--sp-8) var(--sp-8);text-align:center;}
 .foot-big{font-family:var(--ff-display);font-weight:800;font-size:clamp(56px,8vw,96px);line-height:var(--lh-tight);letter-spacing:var(--ls-disp);color:var(--ink);}
 .foot-sig{font-family:var(--ff-body);font-style:italic;font-size:var(--fs-base);color:var(--ink-3);margin-top:var(--sp-2);}
@@ -449,10 +449,10 @@ body{font-size:15px;line-height:1.7;}
 .tb-nav-btn:hover{color:#f6efd9;background:var(--accent);transform:rotate(-1.4deg);box-shadow:2px 2px 0 rgba(31,26,20,.22);}
 .tb-nav-btn.active{color:#f6efd9;background:var(--accent);border-bottom-color:transparent;transform:rotate(-1.4deg);box-shadow:2px 2px 0 rgba(31,26,20,.22);}
 .tb-nav-btn.active:hover{transform:rotate(.8deg);}
-.topbar{background:#f3ead3;border-bottom:2px solid var(--ink);}
+.topbar{background:#f3ead3;border-bottom:1px solid var(--border);}
 .tb-wordmark{border-right:none;}
 .tb-right{border-left:none;}
-.tb-nav-ext::after{display:none;}   /* drop tiny ↗ glyphs — read as glitches */
+.tb-nav-ext::after{display:none;}   /* drop tiny glyphs — read as glitches */
 .lang-btn{font-family:var(--ff-mono);border:none;background:transparent;color:var(--ink-2);padding:6px 4px;}
 .lang-btn:hover{border:none;background:transparent;color:var(--accent);}
 
@@ -477,10 +477,10 @@ body{font-size:15px;line-height:1.7;}
 .btn-ghost:hover{transform:rotate(-1deg);}
 
 /* ─── SIDEBAR ─── */
-.sidebar{border-right:2px solid var(--ink);}
+.sidebar{border-right:1px solid var(--border);}
 .sidebar a{font-family:var(--ff-mono);}
 .sidebar a.active{color:var(--accent);font-weight:400;}
-.sidebar-label{font-family:var(--ff-mono);color:var(--accent);border-bottom:2px solid var(--ink);}
+.sidebar-label{font-family:var(--ff-mono);color:var(--accent);border-bottom:1px solid var(--border);}
 
 /* ─── PROSE / QUOTES ─── */
 .prose,.hero-lead,.origin-subtitle{font-family:var(--ff-body);}
@@ -490,10 +490,10 @@ body{font-size:15px;line-height:1.7;}
 .origin-claim{font-family:var(--ff-display);font-weight:400;letter-spacing:.01em;color:var(--accent);}
 
 /* ─── INK PANELS (notes, cards, tables) ─── */
-.note{background:var(--paper-2);border:2px solid var(--ink);border-left:2px solid var(--ink);border-radius:0;box-shadow:var(--sh-paper-sm);font-family:var(--ff-body);}
+.note{background:var(--paper-2);border:1.4px solid var(--border-2);border-left:1.4px solid var(--border-2);border-radius:0;box-shadow:var(--sh-paper-sm);font-family:var(--ff-body);}
 .note-label{font-family:var(--ff-body);font-weight:800;color:var(--accent);}
-.step-card,.modes-grid,.socials-table,.gloss-table,.quest-strip,.ladder,.vtable{border:2px solid var(--ink)!important;border-radius:0!important;box-shadow:var(--sh-paper);}
-.step-card-header{border-bottom:2px solid var(--ink);background:var(--paper-2);}
+.step-card,.modes-grid,.socials-table,.gloss-table,.quest-strip,.ladder,.vtable{border:1.4px solid var(--border-2)!important;border-radius:0!important;box-shadow:var(--sh-paper);}
+.step-card-header{border-bottom:1.4px solid var(--border-2);background:var(--paper-2);}
 .step-card-title{font-family:var(--ff-display);font-weight:400;letter-spacing:.01em;}
 .step-card-meta,.step-num,.qd-num{font-family:var(--ff-mono);}
 .step-label,.mode-name,.ritual-key,.rule-key,.soc-term,.gloss-term,.qd-name{font-family:var(--ff-body);font-weight:700;}
@@ -512,6 +512,9 @@ body{font-size:15px;line-height:1.7;}
 .mode-cell.mc6{background:rgba(var(--w-forbidden),.16);}
 .mode-num.m1{color:#34576b;}.mode-num.m2{color:#5e6f33;}.mode-num.m3{color:#8a6a16;}
 .mode-num.m4{color:#b35e22;}.mode-num.m5{color:#5b4470;}.mode-num.m6{color:#8f3a60;}
+/* mode NAMES colour-coded like Quest-Die stage names */
+.mode-cell.mc1 .mode-name{color:#34576b;}.mode-cell.mc2 .mode-name{color:#5e6f33;}.mode-cell.mc3 .mode-name{color:#8a6a16;}.mode-cell.mc4 .mode-name{color:#b35e22;}.mode-cell.mc5 .mode-name{color:#5b4470;}.mode-cell.mc6 .mode-name{color:#8f3a60;}
+body.med .mode-cell.mc1 .mode-name{color:#8b6060;}body.med .mode-cell.mc2 .mode-name{color:#c06800;}body.med .mode-cell.mc3 .mode-name{color:#0a7070;}body.med .mode-cell.mc4 .mode-name{color:#1e7a68;}body.med .mode-cell.mc5 .mode-name{color:#3d6878;}body.med .mode-cell.mc6 .mode-name{color:#904040;}
 
 /* ─── QUEST LADDER (Booklet B 6-rung) ─── */
 .ladder{display:flex;flex-direction:column;background:var(--paper-card);max-width:var(--lay-prose);margin:var(--sp-4) 0;overflow:hidden;}
@@ -544,7 +547,7 @@ body{font-size:15px;line-height:1.7;}
 .soc-term.bingo{color:#5e6f33;}.soc-term.boggle{color:#34576b;}.soc-term.bongo{color:#5b4470;}.soc-term.blodsinn{color:var(--accent);}
 
 /* dosay blocks */
-.dosay-block{border-radius:0;border:2px solid var(--ink);box-shadow:var(--sh-paper-sm);}
+.dosay-block{border-radius:0;border:1.4px solid var(--border-2);box-shadow:var(--sh-paper-sm);}
 .dosay-block.dont{background:rgba(184,54,31,.08);border-left:6px solid var(--accent);}
 .dosay-block.do{background:rgba(122,141,74,.12);border-left:6px solid #5e6f33;}
 .dosay-label{font-family:var(--ff-body);font-weight:800;}
@@ -563,13 +566,13 @@ body{font-size:15px;line-height:1.7;}
 .vc-cta{font-family:var(--ff-ui);font-weight:400;letter-spacing:.04em;}
 
 /* footer */
-.hub-foot{border-top:2px solid var(--ink);background:var(--paper);}
+.hub-foot{border-top:1px solid var(--border);background:var(--paper);}
 .foot-sig{font-family:var(--ff-body);font-style:italic;}
 .foot-bar{font-family:var(--ff-mono);}
 .quest-strip .qd-finale{background:var(--accent);}
 
 /* search */
-.search-input{font-family:var(--ff-mono);border:2px solid var(--ink);border-radius:0;background:var(--paper-card);}
+.search-input{font-family:var(--ff-mono);border:1.4px solid var(--border-2);border-radius:0;background:var(--paper-card);}
 .search-hit{border-left:3px solid var(--accent);}
 .hit-section{font-family:var(--ff-mono);}
 mark,::selection{background:var(--mark);}
@@ -578,7 +581,7 @@ mark,::selection{background:var(--mark);}
 .lp-video-poster,.foot-video-poster{border-radius:0;border:2.5px solid var(--ink);box-shadow:var(--sh-paper);}
 
 /* PDF viewer chrome — warm it up */
-.pdf-block{border:2px solid var(--ink);border-radius:0;box-shadow:var(--sh-paper);}
+.pdf-block{border:1.4px solid var(--border-2);border-radius:0;box-shadow:var(--sh-paper);}
 .pdf-bar{background:var(--head-bg);}
 .pdf-bar button{font-family:var(--ff-ui);border-radius:0;}
 .pdf-canvas{background:#2a241c;}
@@ -653,7 +656,7 @@ mark,::selection{background:var(--mark);}
       <span class="chip">20-60 min</span>
       <span class="chip">Cut &amp; Play</span>
       <span class="chip">Pay What You Want</span>
-      <span class="chip">CC BY-NC-SA 4.0</span>
+      <span class="chip">CC BY-NC-SA&nbsp;4.0</span>
     </div>
     <div class="hero-ctas">
       <a class="cta-dashed" href="https://georgvw.gumroad.com/" target="_blank" rel="noopener">Free Cut &amp; Play Cards</a>
@@ -678,14 +681,14 @@ mark,::selection{background:var(--mark);}
       <div class="vc-title"><span class="kb-mark"><span class="a">Kayfa</span><span class="b">Bizarro</span></span> Freestyle</div>
       <p class="vc-desc">You move one die. It shows you how close the story is to breaking. <strong>Six modes from <em>Tragic</em> to <em>Forbidden</em></strong> — the die rolls, you commit. Cards enter the <strong>Stage</strong> through <em>Name it. Claim it. Power it.</em> When someone calls <em>BLÖDSINN!</em>, the room stops and decides. <strong>Nobody leaves having lost. Everyone leaves slightly different.</strong> Including the things said that couldn't have been said over dinner.</p>
       <p class="vc-best"><strong>Best for:</strong> families tired of polite games, therapists who hate worksheets, writers stuck in their own voice. <strong>1-6 humans.</strong></p>
-      <span class="vc-cta">Read the Free Style Rules →</span>
+      <span class="vc-cta">Read the Free Style Rules</span>
     </a>
     <a class="variant-card med" href="#med" onclick="goPage('med',document.getElementById('tb-med'));return false;">
       <div class="vc-badge">Cut &amp; Play Comic · Clinical Edition</div>
       <div class="vc-title"><span class="mk-mark"><span class="a">Med</span><span class="b">Kayfab</span></span> Medicine</div>
       <p class="vc-desc"><strong>Same loop, applied to pathophysiology.</strong> You play <em>Fibby Fitz</em> as your Character. The die rolls a 3 - <strong>Mechanism Flash.</strong> You explain atrial fibrillation from memory while the table heckles. Someone at the table calls <em>BLÖDSINN!</em> — and the room turns on you immediately. <strong>Wrong tonight, right tomorrow, teachable by breakfast.</strong></p>
       <p class="vc-best"><strong>Best for:</strong> med students who've outgrown flashcards, residents on night shift, attendings who teach by humiliation and want to stop. <strong>Solo or 1-6 humans.</strong></p>
-      <span class="vc-cta">Read the MedKayfab Rules →</span>
+      <span class="vc-cta">Read the MedKayfab Rules</span>
     </a>
   </div>
 
@@ -783,7 +786,7 @@ mark,::selection{background:var(--mark);}
       <span class="chip">20-60 Min</span>
       <span class="chip">Cut &amp; Play</span>
       <span class="chip">Pay What You Want</span>
-      <span class="chip">CC BY-NC-SA 4.0</span>
+      <span class="chip">CC BY-NC-SA&nbsp;4.0</span>
     </div>
     <div class="hero-ctas">
       <a class="cta-dashed" href="https://georgvw.gumroad.com/" target="_blank" rel="noopener">Gratis Cut &amp; Play Karten</a>
@@ -808,14 +811,14 @@ mark,::selection{background:var(--mark);}
       <div class="vc-title"><span class="kb-mark"><span class="a">Kayfa</span><span class="b">Bizarro</span></span> Freestyle</div>
       <p class="vc-desc">Du bewegst einen Würfel. Er zeigt dir, wie nah die Geschichte am Reißen ist. <strong>Sechs Modi von <em>Tragisch</em> bis <em>Verboten</em></strong> — gewürfelt, committed. Karten kommen über die <strong>Bühne</strong> per <em>Name it. Claim it. Power it.</em> Wer <em>BLÖDSINN!</em> ruft, hält den Tisch an — und der Tisch entscheidet. <strong>Niemand verliert. Alle gehen leicht verändert.</strong> Einschließlich der Dinge, die beim Abendessen nicht hingekriegt worden wären.</p>
       <p class="vc-best"><strong>Geeignet für:</strong> Familien, die mit höflichen Spielen durch sind, Therapeut*innen mit Allergie gegen Arbeitsblätter, Autor*innen die in ihrer eigenen Stimme festsitzen. <strong>1-6 Menschen am Tisch.</strong></p>
-      <span class="vc-cta">Lies die Free-Style-Regeln →</span>
+      <span class="vc-cta">Lies die Free-Style-Regeln</span>
     </a>
     <a class="variant-card med" href="#med_de" onclick="goPage('med_de',document.getElementById('tb-med'));return false;">
       <div class="vc-badge">Cut &amp; Play Comic · Klinische Edition</div>
       <div class="vc-title"><span class="mk-mark"><span class="a">Med</span><span class="b">Kayfab</span></span> Medicine</div>
       <p class="vc-desc"><strong>Derselbe Loop, angelegt an die Pathophysiologie.</strong> Du spielst <em>Fibby Fitz</em> als Character. Der Würfel zeigt 3 - <strong>Mechanism Flash.</strong> Du erklärst Vorhofflimmern aus dem Gedächtnis, während der Tisch dazwischenruft. Jemand am Tisch ruft <em>BLÖDSINN!</em> — und der Raum dreht sich gegen dich. <strong>Heute Abend halb falsch, morgen Mittag richtig, beim Frühstück lehrbar.</strong></p>
       <p class="vc-best"><strong>Geeignet für:</strong> Medizinstudierende, die Karteikarten überlebt haben, Assistenzärzt*innen im Nachtdienst, Oberärzt*innen die durch Bloßstellen unterrichten und damit aufhören wollen. <strong>Solo oder 1-6 Menschen am Tisch.</strong></p>
-      <span class="vc-cta">Lies die MedKayfab-Regeln →</span>
+      <span class="vc-cta">Lies die MedKayfab-Regeln</span>
     </a>
   </div>
 
@@ -892,11 +895,10 @@ mark,::selection{background:var(--mark);}
   <div class="hero with-border" style="padding-bottom:var(--sp-8)">
     <div class="hero-eyebrow">Uncle FrizzleBob's Komik Kard Kult</div>
     <h1 class="hero-title" style="font-size:clamp(32px,5vw,56px)"><span class="kb-mark"><span class="a">Kayfa</span><span class="b">Bizarro</span></span><span class="hero-tag">Free Style Rules</span></h1>
-    <p class="hero-lead" style="margin-bottom:0">Cut &amp; Play Comic · Story-Wrestling Edition · 1-6 Humans · 20-60 Min · CC BY-NC-SA 4.0</p>
+    <p class="hero-lead" style="margin-bottom:0">Cut &amp; Play Comic · Story-Wrestling Edition · 1-6 Humans · 20-60 Min · CC BY-NC-SA&nbsp;4.0</p>
   </div>
   <div class="page-body">
     <nav class="sidebar" id="toc-kfb">
-      <div class="sidebar-label">On This Page</div>
       <a href="#kfb-booklet">The Booklet</a>
       <a href="#kfb-start">Start Here</a>
       <a href="#kfb-setup">Setup</a>
@@ -927,8 +929,8 @@ mark,::selection{background:var(--mark);}
       <div class="rules-section" id="kfb-booklet">
         <div class="sec-title">The Booklet</div>
         <p class="prose">Flip through every page inline, or read the full rules below.</p>
-        <div class="pdf-block"><div class="pdf-bar"><button onclick="pdfNav('kfb_book',-1)">← Prev</button><button onclick="pdfNav('kfb_book',1)">Next →</button><button onclick="pdfZoom('kfb_book',-.25)">− Zoom</button><button onclick="pdfZoom('kfb_book',.25)">+ Zoom</button><span class="pdf-info" id="kfb_book-pdf-info">—</span></div><div class="pdf-canvas" id="kfb_book-pdf-canvas"><div class="pdf-loading"><div class="pdf-spinner"></div></div></div></div>
-        <div style="margin-top:var(--sp-3)"><a class="btn-outline" href="media/Kayfabizarro_Freestyle_ComicBooklet_WEB_v1.pdf" target="_blank" rel="noopener" download>↓ Download Rule Book PDF</a></div>
+        <div class="pdf-block"><div class="pdf-bar"><button onclick="pdfNav('kfb_book',-1)">Prev</button><button onclick="pdfNav('kfb_book',1)">Next</button><button onclick="pdfZoom('kfb_book',-.25)">−</button><button onclick="pdfZoom('kfb_book',.25)">+</button><span class="pdf-info" id="kfb_book-pdf-info">—</span></div><div class="pdf-canvas" id="kfb_book-pdf-canvas"><div class="pdf-loading"><div class="pdf-spinner"></div></div></div></div>
+        <div style="margin-top:var(--sp-3)"><a class="btn-outline" href="media/Kayfabizarro_Freestyle_ComicBooklet_WEB_v1.pdf" target="_blank" rel="noopener" download>Download Rule Book PDF</a></div>
       </div>
 
       <div class="rules-section" id="kfb-start">
@@ -1092,8 +1094,8 @@ mark,::selection{background:var(--mark);}
         <div class="sec-eyebrow">Sample Deck</div>
         <div class="sec-title">The Protopia <em>Deck</em></div>
         <p class="prose">Browse the Protopia deck — a KayfaBizarro expansion about utopian futures and the people who break them. Free to download.</p>
-        <div class="pdf-block"><div class="pdf-bar"><button onclick="pdfNav('kfb',-1)">← Prev</button><button onclick="pdfNav('kfb',1)">Next →</button><button onclick="pdfZoom('kfb',-.25)">− Zoom</button><button onclick="pdfZoom('kfb',.25)">+ Zoom</button><span class="pdf-info" id="kfb-pdf-info">—</span></div><div class="pdf-canvas" id="kfb-pdf-canvas"><div class="pdf-loading"><div class="pdf-spinner"></div></div></div></div>
-        <div style="margin-top:var(--sp-4)"><a class="btn-outline" href="https://georgvw.gumroad.com/l/kayfabizarro_protopia" target="_blank" rel="noopener">Download free on Gumroad ↗</a></div>
+        <div class="pdf-block"><div class="pdf-bar"><button onclick="pdfNav('kfb',-1)">Prev</button><button onclick="pdfNav('kfb',1)">Next</button><button onclick="pdfZoom('kfb',-.25)">−</button><button onclick="pdfZoom('kfb',.25)">+</button><span class="pdf-info" id="kfb-pdf-info">—</span></div><div class="pdf-canvas" id="kfb-pdf-canvas"><div class="pdf-loading"><div class="pdf-spinner"></div></div></div></div>
+        <div style="margin-top:var(--sp-4)"><a class="btn-outline" href="https://georgvw.gumroad.com/l/kayfabizarro_protopia" target="_blank" rel="noopener">Download free on Gumroad</a></div>
       </div>
 
       <div class="rules-section" id="kfb-glossary">
@@ -1129,11 +1131,10 @@ mark,::selection{background:var(--mark);}
   <div class="hero with-border" style="padding-bottom:var(--sp-8)">
     <div class="hero-eyebrow">Onkel FrizzleBobs Komik Kard Kult</div>
     <h1 class="hero-title" style="font-size:clamp(32px,5vw,56px)"><span class="kb-mark"><span class="a">Kayfa</span><span class="b">Bizarro</span></span><span class="hero-tag">Free-Style-Regeln</span></h1>
-    <p class="hero-lead" style="margin-bottom:0">Cut &amp; Play Comic · Story-Wrestling Edition · 1-6 Menschen · 20-60 Min · CC BY-NC-SA 4.0</p>
+    <p class="hero-lead" style="margin-bottom:0">Cut &amp; Play Comic · Story-Wrestling Edition · 1-6 Menschen · 20-60 Min · CC BY-NC-SA&nbsp;4.0</p>
   </div>
   <div class="page-body">
     <nav class="sidebar" id="toc-kfb_de">
-      <div class="sidebar-label">Inhalt</div>
       <a href="#kfb_de-booklet">Das Heft</a>
       <a href="#kfb_de-start">Fang hier an</a>
       <a href="#kfb_de-setup">Setup</a>
@@ -1164,8 +1165,8 @@ mark,::selection{background:var(--mark);}
       <div class="rules-section" id="kfb_de-booklet">
         <div class="sec-title">Das Heft</div>
         <p class="prose">Blättere jede Seite inline durch, oder lies die vollständigen Regeln unten.</p>
-        <div class="pdf-block"><div class="pdf-bar"><button onclick="pdfNav('kfb_book',-1)">← Zurück</button><button onclick="pdfNav('kfb_book',1)">Weiter →</button><button onclick="pdfZoom('kfb_book',-.25)">− Zoom</button><button onclick="pdfZoom('kfb_book',.25)">+ Zoom</button><span class="pdf-info" id="kfb_book-pdf-info">—</span></div><div class="pdf-canvas" id="kfb_book-pdf-canvas"><div class="pdf-loading"><div class="pdf-spinner"></div></div></div></div>
-        <div style="margin-top:var(--sp-3)"><a class="btn-outline" href="media/Kayfabizarro_Freestyle_ComicBooklet_WEB_v1.pdf" target="_blank" rel="noopener" download>↓ Regelheft als PDF</a></div>
+        <div class="pdf-block"><div class="pdf-bar"><button onclick="pdfNav('kfb_book',-1)">Zurück</button><button onclick="pdfNav('kfb_book',1)">Weiter</button><button onclick="pdfZoom('kfb_book',-.25)">−</button><button onclick="pdfZoom('kfb_book',.25)">+</button><span class="pdf-info" id="kfb_book-pdf-info">—</span></div><div class="pdf-canvas" id="kfb_book-pdf-canvas"><div class="pdf-loading"><div class="pdf-spinner"></div></div></div></div>
+        <div style="margin-top:var(--sp-3)"><a class="btn-outline" href="media/Kayfabizarro_Freestyle_ComicBooklet_WEB_v1.pdf" target="_blank" rel="noopener" download>Regelheft als PDF</a></div>
       </div>
 
       <div class="rules-section" id="kfb_de-start">
@@ -1329,8 +1330,8 @@ mark,::selection{background:var(--mark);}
         <div class="sec-eyebrow">Beispiel-Deck</div>
         <div class="sec-title">Das Protopia-<em>Deck</em></div>
         <p class="prose">Blättere durchs Protopia-Deck — eine KayfaBizarro-Erweiterung über utopische Zukünfte und die Leute, die sie brechen. Kostenlos zum Download.</p>
-        <div class="pdf-block"><div class="pdf-bar"><button onclick="pdfNav('kfb',-1)">← Zurück</button><button onclick="pdfNav('kfb',1)">Weiter →</button><button onclick="pdfZoom('kfb',-.25)">− Zoom</button><button onclick="pdfZoom('kfb',.25)">+ Zoom</button><span class="pdf-info" id="kfb-pdf-info">—</span></div><div class="pdf-canvas" id="kfb-pdf-canvas"><div class="pdf-loading"><div class="pdf-spinner"></div></div></div></div>
-        <div style="margin-top:var(--sp-4)"><a class="btn-outline" href="https://georgvw.gumroad.com/l/kayfabizarro_protopia" target="_blank" rel="noopener">Kostenlos auf Gumroad ↗</a></div>
+        <div class="pdf-block"><div class="pdf-bar"><button onclick="pdfNav('kfb',-1)">Zurück</button><button onclick="pdfNav('kfb',1)">Weiter</button><button onclick="pdfZoom('kfb',-.25)">−</button><button onclick="pdfZoom('kfb',.25)">+</button><span class="pdf-info" id="kfb-pdf-info">—</span></div><div class="pdf-canvas" id="kfb-pdf-canvas"><div class="pdf-loading"><div class="pdf-spinner"></div></div></div></div>
+        <div style="margin-top:var(--sp-4)"><a class="btn-outline" href="https://georgvw.gumroad.com/l/kayfabizarro_protopia" target="_blank" rel="noopener">Kostenlos auf Gumroad</a></div>
       </div>
 
       <div class="rules-section" id="kfb_de-glossary">
@@ -1366,11 +1367,10 @@ mark,::selection{background:var(--mark);}
   <div class="hero with-border" style="padding-bottom:var(--sp-8)">
     <div class="hero-eyebrow">Doc FrizzleBob's Medical Kard Kult</div>
     <h1 class="hero-title" style="font-size:clamp(32px,5vw,56px)"><span class="mk-mark"><span class="a">Med</span><span class="b">Kayfab</span></span><span class="hero-tag">Medical Mnemonics</span></h1>
-    <p class="hero-lead" style="margin-bottom:0">Cut &amp; Play Comic · Clinical Edition · Solo or 1-6 · 20-60 Min · CC BY-NC-SA 4.0</p>
+    <p class="hero-lead" style="margin-bottom:0">Cut &amp; Play Comic · Clinical Edition · Solo or 1-6 · 20-60 Min · CC BY-NC-SA&nbsp;4.0</p>
   </div>
   <div class="page-body">
     <nav class="sidebar" id="toc-med">
-      <div class="sidebar-label">On This Page</div>
       <a href="#med-booklet">The Booklet</a>
       <a href="#med-what">What is this?</a>
       <a href="#med-setup">Setup</a>
@@ -1393,7 +1393,7 @@ mark,::selection{background:var(--mark);}
       <div class="rules-section" id="med-booklet">
         <div class="sec-title">The Booklet</div>
         <p class="prose">Flip through every page inline, or read the full rules below.</p>
-        <div class="pdf-block"><div class="pdf-bar"><button onclick="pdfNav('med_book',-1)">← Prev</button><button onclick="pdfNav('med_book',1)">Next →</button><button onclick="pdfZoom('med_book',-.25)">−</button><button onclick="pdfZoom('med_book',.25)">+</button><span class="pdf-info" id="med_book-pdf-info">—</span></div><div class="pdf-canvas" id="med_book-pdf-canvas"><div class="pdf-loading"><div class="pdf-spinner"></div></div></div></div>
+        <div class="pdf-block"><div class="pdf-bar"><button onclick="pdfNav('med_book',-1)">Prev</button><button onclick="pdfNav('med_book',1)">Next</button><button onclick="pdfZoom('med_book',-.25)">−</button><button onclick="pdfZoom('med_book',.25)">+</button><span class="pdf-info" id="med_book-pdf-info">—</span></div><div class="pdf-canvas" id="med_book-pdf-canvas"><div class="pdf-loading"><div class="pdf-spinner"></div></div></div></div>
         <div style="margin-top:var(--sp-3)"><a class="btn-outline" href="media/MedKayfab_Rules_ComicBooklet_WEB_v1.pdf" target="_blank" rel="noopener" download>Download Rule Book PDF</a></div>
       </div>
 
@@ -1541,7 +1541,7 @@ mark,::selection{background:var(--mark);}
       <div class="rules-section" id="med-decks">
         <div class="sec-eyebrow">Sample Deck</div>
         <div class="sec-title">The Cardiology Deck</div>
-        <div class="pdf-block"><div class="pdf-bar"><button onclick="pdfNav('med',-1)">← Prev</button><button onclick="pdfNav('med',1)">Next →</button><button onclick="pdfZoom('med',-.25)">−</button><button onclick="pdfZoom('med',.25)">+</button><span class="pdf-info" id="med-pdf-info">—</span></div><div class="pdf-canvas" id="med-pdf-canvas"><div class="pdf-loading"><div class="pdf-spinner"></div></div></div></div>
+        <div class="pdf-block"><div class="pdf-bar"><button onclick="pdfNav('med',-1)">Prev</button><button onclick="pdfNav('med',1)">Next</button><button onclick="pdfZoom('med',-.25)">−</button><button onclick="pdfZoom('med',.25)">+</button><span class="pdf-info" id="med-pdf-info">—</span></div><div class="pdf-canvas" id="med-pdf-canvas"><div class="pdf-loading"><div class="pdf-spinner"></div></div></div></div>
         <div style="margin-top:var(--sp-4)"><a class="btn-outline" href="https://georgvw.gumroad.com/" target="_blank" rel="noopener">Download free on Gumroad</a></div>
       </div>
 
@@ -1566,11 +1566,10 @@ mark,::selection{background:var(--mark);}
   <div class="hero with-border" style="padding-bottom:var(--sp-8)">
     <div class="hero-eyebrow">Doc FrizzleBobs Medizinischer Kard Kult</div>
     <h1 class="hero-title" style="font-size:clamp(32px,5vw,56px)"><span class="mk-mark"><span class="a">Med</span><span class="b">Kayfab</span></span><span class="hero-tag">Medizinische Eselsbrücken</span></h1>
-    <p class="hero-lead" style="margin-bottom:0">Cut &amp; Play Comic · Klinische Edition · Solo oder 1-6 · 20-60 Min · CC BY-NC-SA 4.0</p>
+    <p class="hero-lead" style="margin-bottom:0">Cut &amp; Play Comic · Klinische Edition · Solo oder 1-6 · 20-60 Min · CC BY-NC-SA&nbsp;4.0</p>
   </div>
   <div class="page-body">
     <nav class="sidebar" id="toc-med_de">
-      <div class="sidebar-label">Inhalt</div>
       <a href="#med_de-booklet">Das Heft</a>
       <a href="#med_de-what">Worum geht's?</a>
       <a href="#med_de-setup">Setup</a>
@@ -1599,7 +1598,7 @@ mark,::selection{background:var(--mark);}
       <div class="rules-section" id="med_de-booklet">
         <div class="sec-title">Das Heft</div>
         <p class="prose">Blättere jede Seite inline durch, oder lies die vollständigen Regeln unten.</p>
-        <div class="pdf-block"><div class="pdf-bar"><button onclick="pdfNav('med_book',-1)">← Zurück</button><button onclick="pdfNav('med_book',1)">Weiter →</button><button onclick="pdfZoom('med_book',-.25)">−</button><button onclick="pdfZoom('med_book',.25)">+</button><span class="pdf-info" id="med_book-pdf-info">—</span></div><div class="pdf-canvas" id="med_book-pdf-canvas"><div class="pdf-loading"><div class="pdf-spinner"></div></div></div></div>
+        <div class="pdf-block"><div class="pdf-bar"><button onclick="pdfNav('med_book',-1)">Zurück</button><button onclick="pdfNav('med_book',1)">Weiter</button><button onclick="pdfZoom('med_book',-.25)">−</button><button onclick="pdfZoom('med_book',.25)">+</button><span class="pdf-info" id="med_book-pdf-info">—</span></div><div class="pdf-canvas" id="med_book-pdf-canvas"><div class="pdf-loading"><div class="pdf-spinner"></div></div></div></div>
         <div style="margin-top:var(--sp-3)"><a class="btn-outline" href="media/MedKayfab_Rules_ComicBooklet_WEB_v1.pdf" target="_blank" rel="noopener" download>Regelheft als PDF</a></div>
       </div>
 
@@ -1747,7 +1746,7 @@ mark,::selection{background:var(--mark);}
       <div class="rules-section" id="med_de-decks">
         <div class="sec-eyebrow">Beispiel-Deck</div>
         <div class="sec-title">Das Kardiologie-Deck</div>
-        <div class="pdf-block"><div class="pdf-bar"><button onclick="pdfNav('med',-1)">← Zurück</button><button onclick="pdfNav('med',1)">Weiter →</button><button onclick="pdfZoom('med',-.25)">−</button><button onclick="pdfZoom('med',.25)">+</button><span class="pdf-info" id="med-pdf-info">—</span></div><div class="pdf-canvas" id="med-pdf-canvas"><div class="pdf-loading"><div class="pdf-spinner"></div></div></div></div>
+        <div class="pdf-block"><div class="pdf-bar"><button onclick="pdfNav('med',-1)">Zurück</button><button onclick="pdfNav('med',1)">Weiter</button><button onclick="pdfZoom('med',-.25)">−</button><button onclick="pdfZoom('med',.25)">+</button><span class="pdf-info" id="med-pdf-info">—</span></div><div class="pdf-canvas" id="med-pdf-canvas"><div class="pdf-loading"><div class="pdf-spinner"></div></div></div></div>
         <div style="margin-top:var(--sp-4)"><a class="btn-outline" href="https://georgvw.gumroad.com/" target="_blank" rel="noopener">Kostenlos auf Gumroad</a></div>
       </div>
 
@@ -1787,7 +1786,7 @@ mark,::selection{background:var(--mark);}
   <div class="foot-bar">
     KayfaBizarro &amp; MedKayfab · by Georg von Westphalen<br>
     <a href="https://cancelthiscomic.substack.com/t/kayfabizarro" target="_blank" rel="noopener">Cancel This Comic on Substack</a> · <a href="https://georgvw.gumroad.com/" target="_blank" rel="noopener">georgvw on Gumroad</a><br>
-    CC BY-NC-SA 4.0 · Pay What You Want · Do Not Resell<br>
+    CC BY-NC-SA&nbsp;4.0 · Pay What You Want · Do Not Resell<br>
     Version 19.0 · last edit 14 May 2026
   </div>
 </div>
@@ -1987,8 +1986,9 @@ function loadPdf(mode){
       cv.innerHTML='';
       renderPdf(mode);
     }).catch(function(err){
-      cv.innerHTML='<div class="pdf-msg" style="min-height:300px;display:flex;align-items:center;justify-content:center;flex-direction:column">Could not load PDF.<br><small style="opacity:.6;margin-top:6px">'+err.message+'</small></div>';
-      if(info) info.textContent='Error';
+      // file:// blocks fetch(); fall back to a native <iframe> view (renders locally too)
+      cv.innerHTML='<iframe src="'+PDF_SRC[mode]+'#toolbar=0" style="width:100%;aspect-ratio:16/9;height:auto;border:0;background:#fff" title="PDF preview"></iframe>';
+      if(info) info.textContent='';
     });
 }
 function renderPdf(mode){
