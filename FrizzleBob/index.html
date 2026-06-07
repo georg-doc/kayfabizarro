@@ -96,7 +96,7 @@ mark{background:var(--mark);color:var(--ink);padding:0 2px;}
 .swipe{color:#f6efd9;background:var(--accent);padding:0 .14em .04em;-webkit-box-decoration-break:clone;box-decoration-break:clone;box-shadow:2px 2px 0 rgba(31,26,20,.22);}
 
 /* TOPBAR */
-.topbar{position:fixed;top:0;left:0;width:100%;z-index:1000;min-height:var(--lay-topbar);background:var(--paper);border-bottom:2px solid var(--ink);display:flex;align-items:center;flex-wrap:wrap;gap:var(--sp-2);padding:8px var(--sp-6);
+.topbar{position:sticky;top:0;z-index:2147483647;min-height:var(--lay-topbar);background:var(--paper);border-bottom:2px solid var(--ink);display:flex;align-items:center;flex-wrap:wrap;gap:var(--sp-2);padding:8px var(--sp-6);
   background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n2'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n2)' opacity='0.05'/%3E%3C/svg%3E");}
 .tb-wordmark{display:flex;align-items:center;gap:var(--sp-3);flex-shrink:0;cursor:pointer;}
 .tb-logo{position:relative;width:40px;height:40px;background:var(--accent);border:2px solid var(--ink);box-shadow:2px 2px 0 rgba(0,0,0,.22);transform:rotate(-3deg);overflow:hidden;flex-shrink:0;transition:transform var(--dur-norm) var(--ease-out);}
@@ -410,7 +410,6 @@ mark{background:var(--mark);color:var(--ink);padding:0 2px;}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;}}
 .tool-note{margin:6px 0 var(--sp-6);padding:12px 16px;border:2px solid var(--border-2);border-left:4px solid var(--accent);background:var(--paper-card);font-family:var(--ff-ui);font-size:var(--fs-sm);line-height:var(--lh-norm);color:var(--ink-2);box-shadow:var(--sh-soft);}
 .tool-note strong{color:var(--ink);}
-body{padding-top:var(--lay-topbar);}
 </style>
 </head>
 <body>
@@ -1011,7 +1010,7 @@ function A(h,t){return '<a href="'+h+'" target="_blank" rel="noopener">'+t+'</a>
 const ESSAY={};
 ESSAY.de=`
 <h1 class="origin-title">Lass die KI deine Comics <span class="swipe">lesen</span> \u2013 nicht zeichnen</h1>
-<p class="origin-subtitle">Ein Vorschlag, die Debatte konstruktiv zu erweitern – mit Lesarten zum Mitnehmen.</p>
+<p class="origin-subtitle">Ein Vorschlag, die Debatte konstruktiv zu erweitern. Mit 14 Comic-Lesarten als Prompts zum <a class="tablink" href="#readings_de">sofort Ausprobieren</a>.</p>
 <div class="note">Vorbemerkung für meine Freunde aus dem Comicseminar: Dieser Text ist die praktische Verlängerung meines `+A(L.vid,'Mini-Workshops beim Comicseminar Erlangen 2023')+` und des Artikels `+A(L.sub,'\u201eKI: dein Feind und Helfer\u201c')+`, der daraus entstand. Das \u201eund\u201c war Absicht, es ging mir nie um ein Entweder-oder. Die wirklich großen Fragen klammere ich hier bewusst aus: Technokratie, `+A(L.darkDE,'\u201eDark Enlightenment\u201c')+`, den `+A(L.alj,'militärischen Einsatz von KI in Ukraine, Gaza und anderswo')+`. Über die ließen sich mit gutem Grund mehr Tränen vergießen als über das Schicksal der eigenen Zeichenkunst, und in unserer zeichnerischen Nabelschau tauchen sie viel zu selten überhaupt auf. Aber sie gehören an einen anderen Tisch. Hier geht es ums Handwerk, um das, was man morgen ausprobieren kann.</div>
 <p class="prose">\u201eKI: Freund oder Feind?\u201c So stand es auf dem Podium, und ehrlich gesagt fand ich die Frage schon platt, bevor sie diskutiert wurde. Nicht weil die Sorge unbegründet wäre: <span class="hl">Die Angst vor Jobverlust ist real</span>, der generative Stil-Klau ein echtes Problem, und die urheberrechtlichen Fragen sind alles andere als geklärt. Diese Auseinandersetzung muss geführt werden, und sie wird vielerorts zu Recht hart geführt.</p>
 <p class="prose">Aber die Debatte hat sich an einer einzigen Nutzung festgebissen: an der KI, die <em>zeichnet</em> (animiert, musiziert etc.). An der Maschine, die einen Stil imitiert, ein Bild ausspuckt, einen Menschen am Zeichentisch ersetzen soll. Daneben gibt es <span class="hl">ein zweites Register, über das kaum jemand spricht</span>: die KI, die <em>liest</em>.</p>
@@ -1086,7 +1085,7 @@ ESSAY.de=`
 `;
 ESSAY.en=`
 <h1 class="origin-title">Let the AI <span class="swipe">Read</span> Your Comics, Not Draw Them</h1>
-<p class="origin-subtitle">A proposal to broaden the debate, constructively – with readings to take with you.</p>
+<p class="origin-subtitle">A proposal to broaden the debate, constructively. With 14 comic readings as prompts to <a class="tablink" href="#readings">try out right now</a>.</p>
 <div class="note">A note for my friends from the comic seminar: This piece is the practical extension of my `+A(L.vid,'mini-workshop at the Erlangen Comic Seminar in 2023')+` and the article `+A(L.sub,'\u201cAI: Your Enemy and Helper\u201d')+` that grew out of it (both in German). The \u201cand\u201d was deliberate; it was never an either/or for me. The really big questions I\u2019m leaving out on purpose: technocracy, the `+A(L.darkEN,'\u201cDark Enlightenment\u201d')+`, the `+A(L.alj,'military use of AI in Ukraine, Gaza and elsewhere')+`. Those deserve more tears, with good reason, than the fate of our own draftsmanship, and in our artistic navel-gazing they barely come up at all. But they belong at a different table. This is about craft, about what you can try tomorrow.</div>
 <p class="prose">\u201cAI: friend or foe?\u201d That was the framing on the panel, and honestly I found the question flat before it was even discussed. Not because the worry is groundless. <span class="hl">The fear of losing work is real</span>, generative style-theft is a genuine problem, and the copyright questions are anything but settled. That fight has to happen, and in many places it is being fought hard, rightly so.</p>
 <p class="prose">But the debate has fixated on a single use: the AI that <em>draws</em> (animates, composes, and so on). The machine that imitates a style, spits out an image, is meant to replace a human at the drawing table. Next to it sits <span class="hl">a second register almost nobody talks about</span>: the AI that <em>reads</em>.</p>
