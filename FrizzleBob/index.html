@@ -344,9 +344,10 @@ mark{background:var(--mark);color:var(--ink);padding:0 2px;}
 .prompt-intro{font-style:italic;color:var(--ink-3);max-width:var(--lay-prose);margin:var(--sp-4) 0 var(--sp-3);line-height:var(--lh-norm);}
 .promptblock{position:relative;border:2px solid var(--ink);background:var(--paper-card);padding:14px 16px;font-family:var(--ff-ui);font-size:12.5px;line-height:1.55;white-space:pre-wrap;color:var(--ink);max-width:var(--lay-prose);margin-bottom:var(--sp-6);box-shadow:var(--sh-soft);}
 .pi-title{display:block;font-family:var(--ff-display);font-size:var(--fs-lg);line-height:1.2;color:var(--ink);font-style:normal;margin-bottom:5px;}
-.pb-copy{position:absolute;top:8px;right:8px;opacity:0;pointer-events:none;display:flex;align-items:center;gap:5px;font-family:var(--ff-ui);font-size:13px;color:var(--ink-2);background:var(--paper-card);border:1.5px solid var(--ink);padding:4px 9px;cursor:pointer;transition:opacity var(--dur-fast);box-shadow:var(--sh-soft);}
+.pb-copy{position:absolute;top:8px;right:8px;opacity:0;pointer-events:none;display:flex;align-items:center;gap:5px;font-family:var(--ff-ui);font-size:13px;text-transform:uppercase;letter-spacing:.04em;color:#f6efd9;background:var(--accent);border:1.5px solid var(--ink);padding:4px 9px;cursor:pointer;transition:opacity var(--dur-fast),transform var(--dur-fast),background var(--dur-fast),box-shadow var(--dur-fast);box-shadow:var(--sh-soft);}
 .pb-copy svg{width:15px;height:15px;}
 .promptblock:hover .pb-copy,.pb-copy:focus-visible{opacity:1;pointer-events:auto;}
+.pb-copy:hover{transform:rotate(-1.4deg);box-shadow:2px 2px 0 rgba(31,26,20,.22);}
 .pb-copy.done{background:var(--accent);color:#fff;border-color:var(--ink);}
 .bigq{font-family:var(--ff-display);font-size:var(--fs-lg);color:var(--accent);line-height:var(--lh-snug);max-width:var(--lay-prose);margin:var(--sp-4) 0;}
 .prompt-cc{font-family:var(--ff-ui);font-size:11.5px;color:var(--ink-3);max-width:var(--lay-prose);margin:0 0 var(--sp-5);line-height:var(--lh-norm);font-style:italic;}
@@ -1043,13 +1044,13 @@ ESSAY.de=`
 <p class="prose">Eine KI, die meinen Stil abkupfert, zieht Wert ab. Eine KI, die meinen Comic für mehr Menschen lesbar macht oder mir ein ehrliches erstes Feedback gibt, fügt welchen hinzu. Das ist kein Argument für die Konzerne, sondern eines dafür, sich <span class="hl">die Nutzung nicht von ihnen diktieren zu lassen</span>.</p>
 <h2 class="sec-sub">Lesarten für deinen Comic</h2>
 <p class="prose">Am überzeugendsten ist das alles ohnehin nicht als Argument, sondern als Erfahrung. Darum hier ein paar Prompts zum Ausprobieren – oder gleich der Tab <a class="tablink" href="#readings_de">Lesarten</a> oben.</p>
-<p class="prompt-intro">1. Die erste Lesung. Liest deinen Comic wie ein echtes Publikum, das ihn zum ersten Mal sieht.</p>
+<p class="prompt-intro">1. Die erste Lesung. Liest deinen Comic wie ein echtes Publikum, das ihn zum ersten Mal sieht. Bewertet nicht, ob er „gut“ ist, sondern berichtet, was beim Lesen tatsächlich im Kopf passiert. Die Zielgruppe in eckigen Klammern tauschst du gegen deine eigene aus: Fantasy-Fans, Comic-Nerds, Schulklasse, wer auch immer.</p>
 <div class="promptblock" data-prompt="first">`+esc(VOICES[0].de.prompt)+`</div>
-<p class="prompt-intro">2. Die kollegiale Kritik. Erfahrene, wohlwollende Kollegin. Stärken zuerst, dann konkrete Verbesserungen.</p>
+<p class="prompt-intro">2. Die kollegiale Kritik. Eine erfahrene, wohlwollende Kollegin, die das Handwerk sieht. Erst die Stärken, dann konkrete, umsetzbare Verbesserungen, und am Ende die eine Frage, die beim Überarbeiten am weitesten bringt.</p>
 <div class="promptblock" data-prompt="colleague">`+esc(VOICES[1].de.prompt)+`</div>
-<p class="prompt-intro">3. Der Finger in der Wunde. Keine Diplomatie, aber im Dienst der Arbeit.</p>
+<p class="prompt-intro">3. Der Finger in der Wunde. Keine Diplomatie. Benennt die schwächste Stelle, das Konventionelle, das Bequeme: schonungslos, aber im Dienst der Arbeit, nicht der Grausamkeit. Dreht ruhig den stumpfen Löffel in der Wunde, sagt dir aber am Ende, was die Arbeit retten würde.</p>
 <div class="promptblock" data-prompt="critic">`+esc(VOICES[2].de.prompt)+`</div>
-<p class="prompt-intro">4. Du selbst in fünf Jahren. Nicht ein Fremder, sondern du, mit Abstand.</p>
+<p class="prompt-intro">4. Du selbst in fünf Jahren. Nicht ein Fremder, sondern du selbst: älter, weiter, mit Abstand auf die eigene Arbeit. Was wird dich noch stolz machen, wofür wirst du dich fremdschämen, und welcher Keim steckt hier, den es weiterzuentwickeln lohnt?</p>
 <div class="promptblock" data-prompt="future">`+esc(VOICES[3].de.prompt)+`</div>
 <p class="prompt-intro">5. Das Auge. Keine Meinung, nur Mechanik: wohin der Blick zuerst springt, welchen Weg er nimmt, wo er stolpert.</p>
 <div class="promptblock" data-prompt="eye">`+esc(voiceById('eye').de.prompt)+`</div>
@@ -1118,13 +1119,13 @@ ESSAY.en=`
 <p class="prose">An AI that copies my style subtracts value. An AI that makes my comic readable for more people, or gives me an honest first round of feedback, adds some. That\u2019s not an argument for the corporations, it\u2019s an argument for not letting them dictate the use.</p>
 <h2 class="sec-sub">Readings for Your Comic</h2>
 <p class="prose">The most convincing version of all this isn’t an argument anyway, it’s an experience. So here are a few prompts to try – or just use the <a class="tablink" href="#readings">Readings</a> tab above.</p>
-<p class="prompt-intro">1. The First Reading. Reads your comic the way a real audience would, seeing it for the first time.</p>
+<p class="prompt-intro">1. The First Reading. Reads your comic the way a real audience would, seeing it for the first time. It doesn’t judge whether it’s “good”, it reports what actually goes through the reader’s head. Swap the target audience in square brackets for your own: fantasy fans, comic nerds, a school class, whoever.</p>
 <div class="promptblock" data-prompt="first">`+esc(VOICES[0].en.prompt)+`</div>
-<p class="prompt-intro">2. The Collegial Critique. An experienced, well-meaning colleague. Strengths first, then concrete improvements.</p>
+<p class="prompt-intro">2. The Collegial Critique. An experienced, well-meaning colleague who sees the craft. Strengths first, then concrete, actionable improvements, and at the end the one question that gets you furthest in revising.</p>
 <div class="promptblock" data-prompt="colleague">`+esc(VOICES[1].en.prompt)+`</div>
-<p class="prompt-intro">3. The Finger in the Wound. No diplomacy, but in service of the work.</p>
+<p class="prompt-intro">3. The Finger in the Wound. No diplomacy. It names the weakest spot, the conventional, the comfortable: unsparing, but in service of the work, not of cruelty. It’ll twist the blunt spoon in the wound, but at the end it tells you what would save the piece.</p>
 <div class="promptblock" data-prompt="critic">`+esc(VOICES[2].en.prompt)+`</div>
-<p class="prompt-intro">4. Yourself in Five Years. Not a stranger, but you, with distance.</p>
+<p class="prompt-intro">4. Yourself in Five Years. Not a stranger, but you yourself: older, further along, with distance on your own work. What will still make you proud, what will make you cringe a little, and which seed in here is worth developing further?</p>
 <div class="promptblock" data-prompt="future">`+esc(VOICES[3].en.prompt)+`</div>
 <p class="prompt-intro">5. The Eye. No opinion, just mechanics: where the eye lands first, the path it takes, where it snags.</p>
 <div class="promptblock" data-prompt="eye">`+esc(voiceById('eye').en.prompt)+`</div>
