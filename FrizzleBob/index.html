@@ -420,7 +420,7 @@ mark{background:var(--mark);color:var(--ink);padding:0 2px;}
   </div>
   <nav class="tb-nav">
     <button class="tb-nav-btn active" id="tb-essay" onclick="showTab('essay',this)">Essay</button>
-    <button class="tb-nav-btn" id="tb-tool" onclick="showTab('tool',this)">Readings</button>
+    <button class="tb-nav-btn" id="tb-tool" onclick="showTab('tool',this)">AI Comic Readings</button>
     <button class="tb-nav-btn" id="tb-video" onclick="showTab('video',this)">Cut &amp; Play Comic</button>
   </nav>
   <div class="tb-right">
@@ -967,7 +967,7 @@ async function syncPrompts(){
 
 // ---------------- STRINGS ----------------
 const STR = {
-  de:{ tabs:{voices:'Lesarten',video:'Cut & Play Comic',essay:'Essay'},
+  de:{ tabs:{voices:'KI Comic Lesarten',video:'Cut & Play Comic',essay:'Essay'},
     vEyebrow:'Werkzeug', vTitle:'Lass FrizzleBob deinen Comic lesen',
     vSub:'Lad eine Seite hoch, wähl eine Lesart, lass die FrizzleBob-KI lesen statt zeichnen.',
     cut:'an der punktierten linie schneiden',
@@ -984,7 +984,7 @@ const STR = {
     vidCaption:'„Epistemic Sabotage“ \u2013 das Cut-&-Play-Kartendeck zu diesem Essay, vertont als FrizzleTune. Jede Karte ist eine der Anwendungen oder eine der Lesarten, in ein Bestiarium übersetzt.',
     footSig:'Lies meinen Comic. Zeichne ihn nicht.',
     footBar:'Text &amp; Prompts von Georg Graf von Westphalen · <a href="https://www.cimoc.de/post/818535352848596992/lass-die-ki-deine-comics-lesen-nicht-zeichnen" target="_blank" rel="noopener">Originalartikel lesen</a>' },
-  en:{ tabs:{voices:'Readings',video:'Cut & Play Comic',essay:'Essay'},
+  en:{ tabs:{voices:'AI Comic Readings',video:'Cut & Play Comic',essay:'Essay'},
     vEyebrow:'Tool', vTitle:'Let FrizzleBob read your comic',
     vSub:'Upload a page, pick a reading stance, let the FrizzleBob AI read instead of draw.',
     cut:'cut along the dotted line',
