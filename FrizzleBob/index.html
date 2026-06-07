@@ -200,7 +200,6 @@ mark{background:var(--mark);color:var(--ink);padding:0 2px;}
 .wip-toggle.open:hover{background:var(--accent);color:#f6efd9;}
 .wip-grid{margin-top:14px;}
 #voices-wip[hidden]{display:none;}
-.voice .tag.wip-tag{color:var(--ink-3);border-color:var(--border-2);letter-spacing:.1em;}
 
 /* UPLOAD */
 .drop{border:2px dashed var(--border-2);background:var(--paper);padding:24px;text-align:center;cursor:pointer;transition:border-color var(--dur-fast),background var(--dur-fast);}
@@ -352,10 +351,16 @@ mark{background:var(--mark);color:var(--ink);padding:0 2px;}
 .bigq{font-family:var(--ff-display);font-size:var(--fs-lg);color:var(--accent);line-height:var(--lh-snug);max-width:var(--lay-prose);margin:var(--sp-4) 0;}
 .prompt-cc{font-family:var(--ff-ui);font-size:11.5px;color:var(--ink-3);max-width:var(--lay-prose);margin:0 0 var(--sp-5);line-height:var(--lh-norm);font-style:italic;}
 .prompt-cc a{color:var(--accent);}
+/* per-reading pastel coding, mirrors tool tiles */
+.promptblock.vbg1{background:rgba(62,106,131,.12);}.promptblock.vbg2{background:rgba(122,141,74,.15);}
+.promptblock.vbg3{background:rgba(194,65,44,.11);}.promptblock.vbg4{background:rgba(107,78,125,.13);}
+.promptblock.vbg5{background:rgba(217,124,58,.14);}.promptblock.vbg6{background:rgba(166,70,112,.12);}
+.prompt-intro.vbg1{border-left:3px solid #34576b;padding-left:13px;}.prompt-intro.vbg2{border-left:3px solid #5e6f33;padding-left:13px;}
+.prompt-intro.vbg3{border-left:3px solid var(--accent);padding-left:13px;}.prompt-intro.vbg4{border-left:3px solid #5b4470;padding-left:13px;}
+.prompt-intro.vbg5{border-left:3px solid #b35e22;padding-left:13px;}.prompt-intro.vbg6{border-left:3px solid #8f3a60;padding-left:13px;}
 .pb-ver{position:absolute;top:-11px;right:11px;font-family:var(--ff-ui);font-size:10px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-3);background:var(--paper-card);border:1px solid var(--border-2);padding:2px 7px;opacity:0;transform:translateY(2px);transition:opacity var(--dur-fast),transform var(--dur-fast);pointer-events:none;z-index:2;}
 .promptblock:hover .pb-ver,.promptblock:focus-within .pb-ver{opacity:1;transform:translateY(0);}
 .pb-ver.is-synced{color:var(--accent);border-color:var(--accent);}
-.pb-ver.pb-wip{letter-spacing:.1em;}
 .pb-text{display:block;}
 .prompt-ver-line{font-family:var(--ff-ui);font-size:11.5px;color:var(--ink-3);margin:9px 2px 0;letter-spacing:.01em;}
 .prompt-ver-line a{color:var(--accent);}
@@ -626,7 +631,7 @@ Antworte nüchtern und konkret, Seite für Seite, wie ein Eye-Tracking-Protokoll
 Answer plainly and concretely, page by page, like an eye-tracking log in words. No opinion, no story, just the gaze.` } },
 
   { id:'doomscroller',
-    de:{ name:'Der Doomscroller', blurb:'Liest mit null Geduld, Daumen am Weiterwischen. Testet, ob dich überhaupt etwas aufhält.',
+    de:{ name:'Der Doomscroller', blurb:'Liest mit null Geduld, Daumen am Weiterwischen. Testet, ob er überhaupt anhält.',
       prompt:`Du bist ein gelangweilter Mensch, der durch einen endlosen Feed scrollt, und mein Comic taucht zwischen hundert anderen Dingen auf. Dein Daumen liegt schon auf dem nächsten Wisch. Du willst eigentlich weiter. Lies den hochgeladenen Comic genau so: ungeduldig, abgelenkt, ohne Wohlwollen.
 
 1. Die erste Sekunde: Hältst du an oder wischst du weiter? Sei ehrlich, und sag, was genau dich gehalten oder verloren hat.
@@ -783,7 +788,28 @@ Antworte ganz über das Hören, konkret und sinnlich. Du verrätst mir damit das
 3. The volume: Which panels are loud, which quiet? Where is the silence, and does it hurt or help?
 4. The discord: Where does it grate, where does the sound not match the image?
 
-Answer entirely through hearing, concrete and sensory. You'll reveal the timing and pacing of my pages without saying a word about panels.` } }
+Answer entirely through hearing, concrete and sensory. You'll reveal the timing and pacing of my pages without saying a word about panels.` } },
+  { id:'curateur',
+    de:{ name:'Le Curateur', blurb:'Liest deinen Comic im weltweiten Netz aus Szenen und Traditionen. Offenes Herz, warmer Humor, Blick fürs Menschliche und fürs Erzählen.',
+      prompt:`Du bist ein weitgereister Comic-Kurator und Vermittler zwischen Szenen, Ländern und Generationen, zu Hause in den Comictraditionen rund um den Globus: von der frankobelgischen BD über Manga, Manhua und Gekiga bis zu den Szenen in der arabischen Welt, in Afrika und Lateinamerika. Du liest wohlwollend, aber nicht gefällig, mit offenem Herzen, warmem, menschlichem Humor und einer leichten, trockenen Ironie, und mit großem Respekt vor der Arbeit. Was dich am meisten interessiert, ist das Menschliche und das Erzählen. Lies den hochgeladenen Comic nicht als isoliertes Werk, sondern als kulturelles Objekt:
+
+1. Verortung: In welcher Tradition, Strömung oder Schule steht das, woran erinnert die Handschrift? Zieh ruhig Linien über Kontinente hinweg, aber kein Namedropping als Selbstzweck.
+2. Die Erzählung: Trägt die Geschichte? Wie steht es um Aufbau, Tempo und Rhythmus, um das Zusammenspiel von Wort und Bild, und um das, was bewusst ungesagt bleibt?
+3. Das Menschliche: Wo schlägt ein Herz? Wo wird eine Figur, ein Gefühl, ein Schicksal wirklich, und wo bleibt die Seite kalt oder bloß dekorativ?
+4. Wo es sich verrennt: Wo verwechselt die Arbeit Ambition mit Atem, wo wird sie konventionell oder bequem? Klar benannt, im Dienst der Arbeit, nicht der Grausamkeit.
+5. Anschluss: Wem könnte das aus welcher Ecke gefallen, wo könnte es andocken, beim Publikum, auf einem Festival, bei einem Verlag?
+
+Bleib bei Werk und Form, nie bei der Person. Halte eine gewisse Leichtigkeit, ein Glas Rotwein in der Hand, zwischendurch ein genüsslicher Zug an einer Gauloise, aber mit analytischer Präzision, und ende mit einem Satz, der die Arbeit ernst nimmt, warm bleibt und trotzdem leise lächelt.` },
+    en:{ name:'Le Curateur', blurb:'Reads your comic within the worldwide web of scenes and traditions. Open heart, warm humor, an eye for the human and for storytelling.',
+      prompt:`You are a well-traveled comics curator and go-between across scenes, countries and generations, at home in comics traditions around the globe: from Franco-Belgian BD through manga, manhua and gekiga to the scenes of the Arab world, Africa and Latin America. You read generously but never ingratiatingly, with an open heart, warm human humor and a light, dry irony, and with great respect for the work. What interests you most is the human and the storytelling. Read the uploaded comic not as an isolated piece but as a cultural object:
+
+1. Placement: What tradition, movement or school does this stand in, what does the hand recall? Feel free to draw lines across continents, but no namedropping for its own sake.
+2. The storytelling: Does the story carry? How is it with structure, pace and rhythm, with the interplay of word and image, and with what is deliberately left unsaid?
+3. The human core: Where does a heart beat? Where does a character, a feeling, a fate become real, and where does the page stay cold or merely decorative?
+4. Where it overreaches: Where does the work mistake ambition for breath, where does it turn conventional or comfortable? Clearly named, in service of the work, not of cruelty.
+5. Where it connects: Who might love this, from which corner, where could it dock, an audience, a festival, a publisher?
+
+Stay with the work and the form, never the person. Keep a certain lightness, a glass of red wine in hand, now and then a savored pull on a Gauloise, but with analytical precision, and end with a line that takes the work seriously, stays warm, and still smiles quietly.` } }
 ];
 </script>
 <script>
@@ -1010,7 +1036,7 @@ function A(h,t){return '<a href="'+h+'" target="_blank" rel="noopener">'+t+'</a>
 const ESSAY={};
 ESSAY.de=`
 <h1 class="origin-title">Lass die KI deine Comics <span class="swipe">lesen</span> \u2013 nicht zeichnen</h1>
-<p class="origin-subtitle">Ein Vorschlag, die Debatte konstruktiv zu erweitern. Mit 14 Comic-Lesarten als Prompts zum <a class="tablink" href="#readings_de">sofort Ausprobieren</a>.</p>
+<p class="origin-subtitle">Ein Vorschlag, die Debatte konstruktiv zu erweitern. Mit 15 Comic-Lesarten als Prompts zum <a class="tablink" href="#readings_de">sofort Ausprobieren</a>.</p>
 <div class="note">Vorbemerkung für meine Freunde aus dem Comicseminar: Dieser Text ist die praktische Verlängerung meines `+A(L.vid,'Mini-Workshops beim Comicseminar Erlangen 2023')+` und des Artikels `+A(L.sub,'\u201eKI: dein Feind und Helfer\u201c')+`, der daraus entstand. Das \u201eund\u201c war Absicht, es ging mir nie um ein Entweder-oder. Die wirklich großen Fragen klammere ich hier bewusst aus: Technokratie, `+A(L.darkDE,'\u201eDark Enlightenment\u201c')+`, den `+A(L.alj,'militärischen Einsatz von KI in Ukraine, Gaza und anderswo')+`. Über die ließen sich mit gutem Grund mehr Tränen vergießen als über das Schicksal der eigenen Zeichenkunst, und in unserer zeichnerischen Nabelschau tauchen sie viel zu selten überhaupt auf. Aber sie gehören an einen anderen Tisch. Hier geht es ums Handwerk, um das, was man morgen ausprobieren kann.</div>
 <p class="prose">\u201eKI: Freund oder Feind?\u201c So stand es auf dem Podium, und ehrlich gesagt fand ich die Frage schon platt, bevor sie diskutiert wurde. Nicht weil die Sorge unbegründet wäre: <span class="hl">Die Angst vor Jobverlust ist real</span>, der generative Stil-Klau ein echtes Problem, und die urheberrechtlichen Fragen sind alles andere als geklärt. Diese Auseinandersetzung muss geführt werden, und sie wird vielerorts zu Recht hart geführt.</p>
 <p class="prose">Aber die Debatte hat sich an einer einzigen Nutzung festgebissen: an der KI, die <em>zeichnet</em> (animiert, musiziert etc.). An der Maschine, die einen Stil imitiert, ein Bild ausspuckt, einen Menschen am Zeichentisch ersetzen soll. Daneben gibt es <span class="hl">ein zweites Register, über das kaum jemand spricht</span>: die KI, die <em>liest</em>.</p>
@@ -1044,18 +1070,18 @@ ESSAY.de=`
 <p class="prose">Eine KI, die meinen Stil abkupfert, zieht Wert ab. Eine KI, die meinen Comic für mehr Menschen lesbar macht oder mir ein ehrliches erstes Feedback gibt, fügt welchen hinzu. Das ist kein Argument für die Konzerne, sondern eines dafür, sich <span class="hl">die Nutzung nicht von ihnen diktieren zu lassen</span>.</p>
 <h2 class="sec-sub">Lesarten für deinen Comic</h2>
 <p class="prose">Am überzeugendsten ist das alles ohnehin nicht als Argument, sondern als Erfahrung. Darum hier ein paar Prompts zum Ausprobieren – oder gleich der Tab <a class="tablink" href="#readings_de">Lesarten</a> oben.</p>
-<p class="prompt-intro">1. Die erste Lesung. Liest deinen Comic wie ein echtes Publikum, das ihn zum ersten Mal sieht. Bewertet nicht, ob er „gut“ ist, sondern berichtet, was beim Lesen tatsächlich im Kopf passiert. Die Zielgruppe in eckigen Klammern tauschst du gegen deine eigene aus: Fantasy-Fans, Comic-Nerds, Schulklasse, wer auch immer.</p>
-<div class="promptblock" data-prompt="first">`+esc(VOICES[0].de.prompt)+`</div>
-<p class="prompt-intro">2. Die kollegiale Kritik. Eine erfahrene, wohlwollende Kollegin, die das Handwerk sieht. Erst die Stärken, dann konkrete, umsetzbare Verbesserungen, und am Ende die eine Frage, die beim Überarbeiten am weitesten bringt.</p>
-<div class="promptblock" data-prompt="colleague">`+esc(VOICES[1].de.prompt)+`</div>
-<p class="prompt-intro">3. Der Finger in der Wunde. Keine Diplomatie. Benennt die schwächste Stelle, das Konventionelle, das Bequeme: schonungslos, aber im Dienst der Arbeit, nicht der Grausamkeit. Dreht ruhig den stumpfen Löffel in der Wunde, sagt dir aber am Ende, was die Arbeit retten würde.</p>
-<div class="promptblock" data-prompt="critic">`+esc(VOICES[2].de.prompt)+`</div>
-<p class="prompt-intro">4. Du selbst in fünf Jahren. Nicht ein Fremder, sondern du selbst: älter, weiter, mit Abstand auf die eigene Arbeit. Was wird dich noch stolz machen, wofür wirst du dich fremdschämen, und welcher Keim steckt hier, den es weiterzuentwickeln lohnt?</p>
-<div class="promptblock" data-prompt="future">`+esc(VOICES[3].de.prompt)+`</div>
-<p class="prompt-intro">5. Das Auge. Keine Meinung, nur Mechanik: wohin der Blick zuerst springt, welchen Weg er nimmt, wo er stolpert.</p>
-<div class="promptblock" data-prompt="eye">`+esc(voiceById('eye').de.prompt)+`</div>
-<p class="prompt-intro">6. Der Verlagspitch. Kein Leser, sondern ein Sparringspartner für einen Moment, den wir gerade alle kennen: Man steht beim Comic-Salon halb schweißgebadet vor einem Verlag, hat zwei Minuten und weiß hinterher kaum, was man gesagt hat. Aus dem, was auf deinen Seiten steht, baut er dir vorher einen Pitch, den du laut sagen kannst. Lade ein paar Seiten als PNG oder PDF hoch (drei reichen, zehn gehen auch).</p>
-<div class="promptblock" data-prompt="pitch">`+esc(VOICES[4].de.prompt)+`</div>
+<p class="prompt-intro vbg1">1. Die erste Lesung. Liest deinen Comic wie ein echtes Publikum, das ihn zum ersten Mal sieht. Bewertet nicht, ob er „gut“ ist, sondern berichtet, was beim Lesen tatsächlich im Kopf passiert. Die Zielgruppe in eckigen Klammern tauschst du gegen deine eigene aus: Fantasy-Fans, Comic-Nerds, Schulklasse, wer auch immer.</p>
+<div class="promptblock vbg1" data-prompt="first">`+esc(voiceById('first').de.prompt)+`</div>
+<p class="prompt-intro vbg2">2. Das Auge. Keine Meinung, nur Mechanik: wohin der Blick zuerst springt, welchen Weg er nimmt, wo er stolpert.</p>
+<div class="promptblock vbg2" data-prompt="eye">`+esc(voiceById('eye').de.prompt)+`</div>
+<p class="prompt-intro vbg3">3. Die kollegiale Kritik. Eine erfahrene, wohlwollende Kollegin, die das Handwerk sieht. Erst die Stärken, dann konkrete, umsetzbare Verbesserungen, und am Ende die eine Frage, die beim Überarbeiten am weitesten bringt.</p>
+<div class="promptblock vbg3" data-prompt="colleague">`+esc(voiceById('colleague').de.prompt)+`</div>
+<p class="prompt-intro vbg4">4. Der Finger in der Wunde. Keine Diplomatie. Benennt die schwächste Stelle, das Konventionelle, das Bequeme: schonungslos, aber im Dienst der Arbeit, nicht der Grausamkeit. Dreht ruhig den stumpfen Löffel in der Wunde, sagt dir aber am Ende, was die Arbeit retten würde.</p>
+<div class="promptblock vbg4" data-prompt="critic">`+esc(voiceById('critic').de.prompt)+`</div>
+<p class="prompt-intro vbg5">5. Du selbst in fünf Jahren. Nicht ein Fremder, sondern du selbst: älter, weiter, mit Abstand auf die eigene Arbeit. Was wird dich noch stolz machen, wofür wirst du dich fremdschämen, und welcher Keim steckt hier, den es weiterzuentwickeln lohnt?</p>
+<div class="promptblock vbg5" data-prompt="future">`+esc(voiceById('future').de.prompt)+`</div>
+<p class="prompt-intro vbg6">6. Der Verlagspitch. Kein Leser, sondern ein Sparringspartner für einen Moment, den wir gerade alle kennen: Man steht beim Comic-Salon halb schweißgebadet vor einem Verlag, hat zwei Minuten und weiß hinterher kaum, was man gesagt hat. Aus dem, was auf deinen Seiten steht, baut er dir vorher einen Pitch, den du laut sagen kannst. Lade ein paar Seiten als PNG oder PDF hoch (drei reichen, zehn gehen auch).</p>
+<div class="promptblock vbg6" data-prompt="pitch">`+esc(voiceById('pitch').de.prompt)+`</div>
 <p class="prose">Das ersetzt weder dein Gespür für den richtigen Verlag noch den Mut, dich hinzusetzen. Aber es nimmt dir das Zittern davor, dass dir im entscheidenden Moment die Worte fehlen. Und es ist, nebenbei, ein hübscher Beweis für die ganze These dieses Texts: Die KI zeichnet deinen Comic nicht, sie hilft dir, über ihn zu reden.</p>
 <h2 class="sec-sub">Probiert sie aus, ändert sie, teilt sie</h2>
 <p class="prose">Der Punkt ist nicht, dass diese Lesarten die richtigen sind. Der Punkt ist, dass man sich die Lesarten selbst bauen kann und dass die interessante Frage damit eine andere wird. Nicht mehr „Freund oder Feind", sondern:</p>
@@ -1065,27 +1091,29 @@ ESSAY.de=`
 <h2 class="sec-sub">PS: Weitere Lesarten</h2>
 <p class="prose">Seit dem ersten Schreiben sind ein paar Lesarten dazugekommen – manche fertig, manche noch Work in Progress. Im Tab <a class="tablink" href="#readings_de">Lesarten</a> oben kannst du sie direkt ausprobieren; hier zum Mitnehmen und Weiterbauen.</p>
 <p class="prompt-cc">Alle Prompts: CC BY-NC-SA 4.0 · Original (Klartext, versioniert) auf `+A(PROMPT_REPO,'GitHub')+`.</p>
-<p class="prompt-intro">7. Der Doomscroller. Liest mit null Geduld, Daumen am Weiterwischen – testet, ob dich überhaupt etwas aufhält.</p>
-<div class="promptblock" data-prompt="doomscroller">`+esc(voiceById('doomscroller').de.prompt)+`</div>
-<p class="prompt-intro">8. Der Literalist. Beschreibt nur, was buchstäblich da ist, und zeigt die Lücke zwischen Absicht und Seite.</p>
-<div class="promptblock" data-prompt="literalist">`+esc(voiceById('literalist').de.prompt)+`</div>
-<p class="prompt-intro">9. FrizzleBob im Carny-Modus. Verkauft deinen Comic als Attraktion – was er nicht anpreisen kann, ist die Diagnose.</p>
-<div class="promptblock" data-prompt="carny">`+esc(voiceById('carny').de.prompt)+`</div>
-<p class="prompt-intro">10. Der Heckler am Rand. Findet die unfreiwilligen Gags und verstörende Details. Wahrheit durch Spott.</p>
-<div class="promptblock" data-prompt="heckler">`+esc(voiceById('heckler').de.prompt)+`</div>
-<p class="prompt-intro">11. Der Superfan. Liest mit maximaler Großzügigkeit und findet Tiefe, die du nie geplant hast.</p>
-<div class="promptblock" data-prompt="superfan">`+esc(voiceById('superfan').de.prompt)+`</div>
-<p class="prompt-intro">12. Die Archäologin aus dem Jahr 2525. Gräbt deinen Comic kontextlos aus – was überlebt, was wird missverstanden?</p>
-<div class="promptblock" data-prompt="archaeologist">`+esc(voiceById('archaeologist').de.prompt)+`</div>
-<p class="prompt-intro">13. Die Seite spricht zurück. Der Comic selbst sagt dir, wie es sich anfühlt, so gezeichnet zu sein.</p>
-<div class="promptblock" data-prompt="pagespeaks">`+esc(voiceById('pagespeaks').de.prompt)+`</div>
-<p class="prompt-intro">14. Der Synästhet. Hört den stummen Comic: Soundtrack, Rhythmus, Stille – und verrät Timing und Tempo.</p>
-<div class="promptblock" data-prompt="synaesthete">`+esc(voiceById('synaesthete').de.prompt)+`</div>
+<p class="prompt-intro vbg1">7. Le Curateur. Liest deinen Comic im weltweiten Netz aus Szenen und Traditionen. Offenes Herz, warmer Humor, Blick fürs Menschliche und fürs Erzählen.</p>
+<div class="promptblock vbg1" data-prompt="curateur">`+esc(voiceById('curateur').de.prompt)+`</div>
+<p class="prompt-intro vbg2">8. Der Literalist. Beschreibt nur, was buchstäblich da ist, und zeigt die Lücke zwischen Absicht und Seite.</p>
+<div class="promptblock vbg2" data-prompt="literalist">`+esc(voiceById('literalist').de.prompt)+`</div>
+<p class="prompt-intro vbg3">9. Der Synästhet. Hört den stummen Comic: Soundtrack, Rhythmus, Stille – und verrät Timing und Tempo.</p>
+<div class="promptblock vbg3" data-prompt="synaesthete">`+esc(voiceById('synaesthete').de.prompt)+`</div>
+<p class="prompt-intro vbg4">10. Der Doomscroller. Liest mit null Geduld, Daumen am Weiterwischen – testet, ob er überhaupt anhält.</p>
+<div class="promptblock vbg4" data-prompt="doomscroller">`+esc(voiceById('doomscroller').de.prompt)+`</div>
+<p class="prompt-intro vbg5">11. Der Superfan. Liest mit maximaler Großzügigkeit und findet Tiefe, die du nie geplant hast.</p>
+<div class="promptblock vbg5" data-prompt="superfan">`+esc(voiceById('superfan').de.prompt)+`</div>
+<p class="prompt-intro vbg6">12. Der Heckler am Rand. Findet die unfreiwilligen Gags und verstörende Details. Wahrheit durch Spott.</p>
+<div class="promptblock vbg6" data-prompt="heckler">`+esc(voiceById('heckler').de.prompt)+`</div>
+<p class="prompt-intro vbg1">13. FrizzleBob im Carny-Modus. Verkauft deinen Comic als Attraktion – was er nicht anpreisen kann, ist die Diagnose.</p>
+<div class="promptblock vbg1" data-prompt="carny">`+esc(voiceById('carny').de.prompt)+`</div>
+<p class="prompt-intro vbg2">14. Die Seite spricht zurück. Der Comic selbst sagt dir, wie es sich anfühlt, so gezeichnet zu sein.</p>
+<div class="promptblock vbg2" data-prompt="pagespeaks">`+esc(voiceById('pagespeaks').de.prompt)+`</div>
+<p class="prompt-intro vbg3">15. Die Archäologin aus dem Jahr 2525. Gräbt deinen Comic kontextlos aus – was überlebt, was wird missverstanden?</p>
+<div class="promptblock vbg3" data-prompt="archaeologist">`+esc(voiceById('archaeologist').de.prompt)+`</div>
 <div class="license">Dieser Text und die Prompts von Georg Graf von Westphalen stehen unter der Creative-Commons-Lizenz Namensnennung \u2013 Nicht kommerziell \u2013 Weitergabe unter gleichen Bedingungen 4.0 (CC BY-NC-SA 4.0). Du darfst sie teilen und weiterentwickeln, solange du den Autor nennst, auf `+A(L.origDE,'das Original')+` verlinkst, nichts kommerziell nutzt und deine eigene Fassung klar als Fork kennzeichnest. `+A('https://creativecommons.org/licenses/by-nc-sa/4.0/','Lizenztext')+`.</div>
 `;
 ESSAY.en=`
 <h1 class="origin-title">Let the AI <span class="swipe">Read</span> Your Comics, Not Draw Them</h1>
-<p class="origin-subtitle">A proposal to broaden the debate, constructively. With 14 comic readings as prompts to <a class="tablink" href="#readings">try out right now</a>.</p>
+<p class="origin-subtitle">A proposal to broaden the debate, constructively. With 15 comic readings as prompts to <a class="tablink" href="#readings">try out right now</a>.</p>
 <div class="note">A note for my friends from the comic seminar: This piece is the practical extension of my `+A(L.vid,'mini-workshop at the Erlangen Comic Seminar in 2023')+` and the article `+A(L.sub,'\u201cAI: Your Enemy and Helper\u201d')+` that grew out of it (both in German). The \u201cand\u201d was deliberate; it was never an either/or for me. The really big questions I\u2019m leaving out on purpose: technocracy, the `+A(L.darkEN,'\u201cDark Enlightenment\u201d')+`, the `+A(L.alj,'military use of AI in Ukraine, Gaza and elsewhere')+`. Those deserve more tears, with good reason, than the fate of our own draftsmanship, and in our artistic navel-gazing they barely come up at all. But they belong at a different table. This is about craft, about what you can try tomorrow.</div>
 <p class="prose">\u201cAI: friend or foe?\u201d That was the framing on the panel, and honestly I found the question flat before it was even discussed. Not because the worry is groundless. <span class="hl">The fear of losing work is real</span>, generative style-theft is a genuine problem, and the copyright questions are anything but settled. That fight has to happen, and in many places it is being fought hard, rightly so.</p>
 <p class="prose">But the debate has fixated on a single use: the AI that <em>draws</em> (animates, composes, and so on). The machine that imitates a style, spits out an image, is meant to replace a human at the drawing table. Next to it sits <span class="hl">a second register almost nobody talks about</span>: the AI that <em>reads</em>.</p>
@@ -1119,18 +1147,18 @@ ESSAY.en=`
 <p class="prose">An AI that copies my style subtracts value. An AI that makes my comic readable for more people, or gives me an honest first round of feedback, adds some. That\u2019s not an argument for the corporations, it\u2019s an argument for not letting them dictate the use.</p>
 <h2 class="sec-sub">Readings for Your Comic</h2>
 <p class="prose">The most convincing version of all this isn’t an argument anyway, it’s an experience. So here are a few prompts to try – or just use the <a class="tablink" href="#readings">Readings</a> tab above.</p>
-<p class="prompt-intro">1. The First Reading. Reads your comic the way a real audience would, seeing it for the first time. It doesn’t judge whether it’s “good”, it reports what actually goes through the reader’s head. Swap the target audience in square brackets for your own: fantasy fans, comic nerds, a school class, whoever.</p>
-<div class="promptblock" data-prompt="first">`+esc(VOICES[0].en.prompt)+`</div>
-<p class="prompt-intro">2. The Collegial Critique. An experienced, well-meaning colleague who sees the craft. Strengths first, then concrete, actionable improvements, and at the end the one question that gets you furthest in revising.</p>
-<div class="promptblock" data-prompt="colleague">`+esc(VOICES[1].en.prompt)+`</div>
-<p class="prompt-intro">3. The Finger in the Wound. No diplomacy. It names the weakest spot, the conventional, the comfortable: unsparing, but in service of the work, not of cruelty. It’ll twist the blunt spoon in the wound, but at the end it tells you what would save the piece.</p>
-<div class="promptblock" data-prompt="critic">`+esc(VOICES[2].en.prompt)+`</div>
-<p class="prompt-intro">4. Yourself in Five Years. Not a stranger, but you yourself: older, further along, with distance on your own work. What will still make you proud, what will make you cringe a little, and which seed in here is worth developing further?</p>
-<div class="promptblock" data-prompt="future">`+esc(VOICES[3].en.prompt)+`</div>
-<p class="prompt-intro">5. The Eye. No opinion, just mechanics: where the eye lands first, the path it takes, where it snags.</p>
-<div class="promptblock" data-prompt="eye">`+esc(voiceById('eye').en.prompt)+`</div>
-<p class="prompt-intro">6. The Publisher Pitch. Not a reader but a sparring partner for a moment we all know right now: you’re at the comic salon, half drenched in sweat, across from a publisher, you have two minutes, and afterward you can barely say what you actually told them. From what’s actually on your pages, it builds you a pitch you can say out loud beforehand. Upload a few pages as PNG or PDF (three are enough, ten work too).</p>
-<div class="promptblock" data-prompt="pitch">`+esc(VOICES[4].en.prompt)+`</div>
+<p class="prompt-intro vbg1">1. The First Reading. Reads your comic the way a real audience would, seeing it for the first time. It doesn’t judge whether it’s “good”, it reports what actually goes through the reader’s head. Swap the target audience in square brackets for your own: fantasy fans, comic nerds, a school class, whoever.</p>
+<div class="promptblock vbg1" data-prompt="first">`+esc(voiceById('first').en.prompt)+`</div>
+<p class="prompt-intro vbg2">2. The Eye. No opinion, just mechanics: where the eye lands first, the path it takes, where it snags.</p>
+<div class="promptblock vbg2" data-prompt="eye">`+esc(voiceById('eye').en.prompt)+`</div>
+<p class="prompt-intro vbg3">3. The Collegial Critique. An experienced, well-meaning colleague who sees the craft. Strengths first, then concrete, actionable improvements, and at the end the one question that gets you furthest in revising.</p>
+<div class="promptblock vbg3" data-prompt="colleague">`+esc(voiceById('colleague').en.prompt)+`</div>
+<p class="prompt-intro vbg4">4. The Finger in the Wound. No diplomacy. It names the weakest spot, the conventional, the comfortable: unsparing, but in service of the work, not of cruelty. It’ll twist the blunt spoon in the wound, but at the end it tells you what would save the piece.</p>
+<div class="promptblock vbg4" data-prompt="critic">`+esc(voiceById('critic').en.prompt)+`</div>
+<p class="prompt-intro vbg5">5. Yourself in Five Years. Not a stranger, but you yourself: older, further along, with distance on your own work. What will still make you proud, what will make you cringe a little, and which seed in here is worth developing further?</p>
+<div class="promptblock vbg5" data-prompt="future">`+esc(voiceById('future').en.prompt)+`</div>
+<p class="prompt-intro vbg6">6. The Publisher Pitch. Not a reader but a sparring partner for a moment we all know right now: you’re at the comic salon, half drenched in sweat, across from a publisher, you have two minutes, and afterward you can barely say what you actually told them. From what’s actually on your pages, it builds you a pitch you can say out loud beforehand. Upload a few pages as PNG or PDF (three are enough, ten work too).</p>
+<div class="promptblock vbg6" data-prompt="pitch">`+esc(voiceById('pitch').en.prompt)+`</div>
 <p class="prose">It replaces neither your instinct for the right publisher nor the nerve to sit down. But it takes away the dread that the words will desert you at the decisive moment. And it’s a nice proof, in passing, of this whole piece’s thesis: the AI doesn’t draw your comic, it helps you talk about it.</p>
 <h2 class="sec-sub">Try Them, Change Them, Share Them</h2>
 <p class="prose">The point isn’t that these readings are the right ones. The point is that you can build the readings yourself, and that the interesting question becomes a different one. No longer “friend or foe”, but:</p>
@@ -1140,22 +1168,24 @@ ESSAY.en=`
 <h2 class="sec-sub">P.S. More readings</h2>
 <p class="prose">A few more readings have joined since this was first written – some finished, some still work in progress. You can try them right away in the <a class="tablink" href="#readings">Readings</a> tab above; here they are to take with you and build on.</p>
 <p class="prompt-cc">All prompts: CC BY-NC-SA 4.0 · originals (plain text, versioned) on `+A(PROMPT_REPO,'GitHub')+`.</p>
-<p class="prompt-intro">7. The Doomscroller. Reads with zero patience, thumb on the swipe – tests whether anything stops them at all.</p>
-<div class="promptblock" data-prompt="doomscroller">`+esc(voiceById('doomscroller').en.prompt)+`</div>
-<p class="prompt-intro">8. The Literalist. Describes only what is literally there, and shows the gap between intent and page.</p>
-<div class="promptblock" data-prompt="literalist">`+esc(voiceById('literalist').en.prompt)+`</div>
-<p class="prompt-intro">9. FrizzleBob, Carny Barker. Sells your comic as a sideshow – whatever he can’t hype is the diagnosis.</p>
-<div class="promptblock" data-prompt="carny">`+esc(voiceById('carny').en.prompt)+`</div>
-<p class="prompt-intro">10. The Heckler in the Margins. Finds the accidental gags and cursed details. Truth through mockery.</p>
-<div class="promptblock" data-prompt="heckler">`+esc(voiceById('heckler').en.prompt)+`</div>
-<p class="prompt-intro">11. The Superfan. Reads with maximum generosity and finds depth you never planned.</p>
-<div class="promptblock" data-prompt="superfan">`+esc(voiceById('superfan').en.prompt)+`</div>
-<p class="prompt-intro">12. The Archaeologist from 2525. Excavates your comic with no context – what survives, what gets misread?</p>
-<div class="promptblock" data-prompt="archaeologist">`+esc(voiceById('archaeologist').en.prompt)+`</div>
-<p class="prompt-intro">13. The Page Speaks Back. The comic itself tells you how it feels to be drawn this way.</p>
-<div class="promptblock" data-prompt="pagespeaks">`+esc(voiceById('pagespeaks').en.prompt)+`</div>
-<p class="prompt-intro">14. The Synaesthete. Hears the silent comic: soundtrack, rhythm, silence – and reveals timing and pacing.</p>
-<div class="promptblock" data-prompt="synaesthete">`+esc(voiceById('synaesthete').en.prompt)+`</div>
+<p class="prompt-intro vbg1">7. Le Curateur. Reads your comic within the worldwide web of scenes and traditions. Open heart, warm humor, an eye for the human and for storytelling.</p>
+<div class="promptblock vbg1" data-prompt="curateur">`+esc(voiceById('curateur').en.prompt)+`</div>
+<p class="prompt-intro vbg2">8. The Literalist. Describes only what is literally there, and shows the gap between intent and page.</p>
+<div class="promptblock vbg2" data-prompt="literalist">`+esc(voiceById('literalist').en.prompt)+`</div>
+<p class="prompt-intro vbg3">9. The Synaesthete. Hears the silent comic: soundtrack, rhythm, silence – and reveals timing and pacing.</p>
+<div class="promptblock vbg3" data-prompt="synaesthete">`+esc(voiceById('synaesthete').en.prompt)+`</div>
+<p class="prompt-intro vbg4">10. The Doomscroller. Reads with zero patience, thumb on the swipe – tests whether anything stops them at all.</p>
+<div class="promptblock vbg4" data-prompt="doomscroller">`+esc(voiceById('doomscroller').en.prompt)+`</div>
+<p class="prompt-intro vbg5">11. The Superfan. Reads with maximum generosity and finds depth you never planned.</p>
+<div class="promptblock vbg5" data-prompt="superfan">`+esc(voiceById('superfan').en.prompt)+`</div>
+<p class="prompt-intro vbg6">12. The Heckler in the Margins. Finds the accidental gags and cursed details. Truth through mockery.</p>
+<div class="promptblock vbg6" data-prompt="heckler">`+esc(voiceById('heckler').en.prompt)+`</div>
+<p class="prompt-intro vbg1">13. FrizzleBob, Carny Barker. Sells your comic as a sideshow – whatever he can’t hype is the diagnosis.</p>
+<div class="promptblock vbg1" data-prompt="carny">`+esc(voiceById('carny').en.prompt)+`</div>
+<p class="prompt-intro vbg2">14. The Page Speaks Back. The comic itself tells you how it feels to be drawn this way.</p>
+<div class="promptblock vbg2" data-prompt="pagespeaks">`+esc(voiceById('pagespeaks').en.prompt)+`</div>
+<p class="prompt-intro vbg3">15. The Archaeologist from 2525. Excavates your comic with no context – what survives, what gets misread?</p>
+<div class="promptblock vbg3" data-prompt="archaeologist">`+esc(voiceById('archaeologist').en.prompt)+`</div>
 <div class="license">This text and the prompts by Georg Graf von Westphalen are published under a Creative Commons license: Attribution \u2013 NonCommercial \u2013 ShareAlike 4.0 (CC BY-NC-SA 4.0). You may share and build on them, as long as you credit the author, link back to `+A(L.origEN,'the original')+`, keep it non-commercial, and clearly mark your own version as a fork. `+A('https://creativecommons.org/licenses/by-nc-sa/4.0/','License')+`.</div>
 `;
 
@@ -1165,7 +1195,7 @@ Object.assign(STR.de,{
   st1:'Wähle eine Lesart', st2:'Lade deine Seiten hoch', st3:'Lass FrizzleBob lesen',
   st1hint:'Jede Lesart hat eine andere Haltung. Wähl eine – wechseln kannst du jederzeit.',
   st2hint:'Eine Seite reicht für den Anfang, bis zu acht gehen auf einmal.',
-  pick:'gewählt', pitchTag:'braucht ein paar Angaben', wipTag:'WIP', wipToggle:'Weitere Lesarten – Work in Progress',
+  pick:'gewählt', pitchTag:'braucht ein paar Angaben', wipTag:'WIP', wipToggle:'Weitere Lesarten',
   vEyebrow:'Demo',
   vSub:'Wähle eine Lesart, lade ein paar Seiten hoch – und lass die KI deinen Comic lesen, statt ihn zu zeichnen.',
   toolNote:'<strong>So entsteht eine Lesart:</strong> Prompt kopieren und in deinen eigenen KI-Chat einfügen (Claude, ChatGPT, Gemini, DeepSeek …) – das geht mit jedem Konto. Wer direkt hier im Browser lesen lassen will, trägt oben im Zahnrad einen eigenen API-Key ein (Power-User).',
@@ -1208,7 +1238,7 @@ Object.assign(STR.en,{
   st1:'Pick a reading', st2:'Upload your pages', st3:'Let FrizzleBob read',
   st1hint:'Each reading takes a different stance. Pick one – you can switch any time.',
   st2hint:'One page is enough to start; up to eight can be read at once.',
-  pick:'picked', pitchTag:'needs a few details', wipTag:'WIP', wipToggle:'More readings – work in progress',
+  pick:'picked', pitchTag:'needs a few details', wipTag:'WIP', wipToggle:'More readings',
   vEyebrow:'Demo',
   vSub:'Pick a reading, upload a few pages – and let the AI read your comic instead of drawing it.',
   toolNote:'<strong>How a reading works:</strong> copy the prompt into your own AI chat (Claude, ChatGPT, Gemini, DeepSeek …) – works with any account. To read right here in the browser, add your own API key in the gear menu above (power-user).',
@@ -1256,7 +1286,7 @@ STR.en.keyHint='With your own API key (gear icon above) I can read more pages at
 
 // ---------------- GROUPS ----------------
 const PRIMARY_IDS=['first','eye','colleague','critic','future','pitch'];
-const WIP_IDS=['doomscroller','literalist','carny','heckler','superfan','archaeologist','pagespeaks','synaesthete'];
+const WIP_IDS=['curateur','literalist','synaesthete','doomscroller','superfan','heckler','carny','pagespeaks','archaeologist'];
 
 // ---------------- STATE ----------------
 const S={lang:'de',tab:'essay',voice:null,files:[],messages:[],loading:false,read:false,
@@ -1308,9 +1338,9 @@ function renderStrings(){
   $('html-root').lang=S.lang;
   $('tb-tool').textContent=x.tabs.voices;$('tb-video').textContent=x.tabs.video;$('tb-essay').textContent=x.tabs.essay;
   $('t-eyebrow').textContent=x.vEyebrow;$('t-title').innerHTML=x.tTitleHTML;$('t-sub').textContent=x.vSub;var _tn=$('tool-note');if(_tn)_tn.innerHTML=x.toolNote;
+  { const wl=$('wip-label'); if(wl)wl.textContent=x.wipToggle; }
   $('st1-title').textContent=x.st1;$('st2-title').textContent=x.st2;$('st3-title').textContent=x.st3;
   $('st1-hint').textContent=x.st1hint;$('st2-hint').textContent=x.st2hint;
-  { const wl=$('wip-label'); if(wl)wl.textContent=x.wipToggle; }
   $('dropbig').textContent=x.dropbig;$('drophint').textContent=x.drophint;
   $('disc-label').textContent=x.discLabel;
   $('promptnote').textContent=x.promptnote;
@@ -1364,9 +1394,7 @@ function fillEssayPrompts(){
     if(PROMPT_SRC[v.id]){
       const ttl=(v.synced?(S.lang==='de'?'aktuelle Version von GitHub':'current version from GitHub'):(S.lang==='de'?'mitgelieferte Version':'bundled version'))+' \u00b7 '+PROMPT_SRC[v.id]+'.md';
       chip='<span class="pb-ver'+(v.synced?' is-synced':'')+'" title="'+esc(ttl)+'">v'+esc(v.version||'1.0')+'</span>';
-    }else{
-      chip='<span class="pb-ver pb-wip" title="'+(S.lang==='de'?'Work in Progress':'work in progress')+'">WIP</span>';
-    }
+    }else{chip='';}
     pb.innerHTML=chip+'<div class="pb-text">'+esc(txt)+'</div>';
   });
 }
@@ -1401,11 +1429,9 @@ function decorateEssay(){
 function voiceCard(v,n){
   const d=v[S.lang];
   const el=document.createElement('button');
-  const isWip=WIP_IDS.includes(v.id);
-  el.className='voice vbg'+(((n-1)%6)+1)+(v.id===S.voice?' on':'')+(isWip?' wip':'');
+  el.className='voice vbg'+(((n-1)%6)+1)+(v.id===S.voice?' on':'');
   let tag='';
   if(v.id==='pitch')tag='<span class="tag">'+esc(t().pitchTag)+'</span>';
-  else if(isWip)tag='<span class="tag wip-tag">'+esc(t().wipTag)+'</span>';
   el.innerHTML='<span class="pick">'+esc(t().pick)+'</span><span class="vn"><span class="vn-n">'+n+'.</span>'+esc(d.name)+'</span><span class="vb">'+esc(d.blurb)+'</span>'+tag;
   el.onclick=()=>chooseVoice(v.id);
   return el;
