@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="de" id="html-root">
 <head>
@@ -230,6 +229,7 @@ mark{background:var(--mark);color:var(--ink);padding:0 2px;}
 .promptwrap:hover .copybtn,#prompt:focus+.copybtn{opacity:1;pointer-events:auto;}
 .copybtn:hover{transform:rotate(-1.4deg);box-shadow:2px 2px 0 rgba(31,26,20,.22);}
 .copybtn.done{color:#fff;background:var(--accent);border-color:var(--ink);}
+.tablink{color:var(--accent);text-decoration:underline;text-underline-offset:2px;cursor:pointer;}
 .smallnote{font-size:12.5px;color:var(--ink-3);font-style:italic;margin:10px 2px 0;}
 
 /* READ BUTTON */
@@ -1041,8 +1041,8 @@ ESSAY.de=`
 <h2 class="sec-sub">Der ehrliche Vorbehalt</h2>
 <p class="prose">Das macht die Werkzeuge nicht unschuldig. Sie stammen von denselben Konzernen, deren Umgang mit Trainingsdaten zu Recht umkämpft ist. Aber die Frage \u201ewelches Werkzeug\u201c ist die kleinere. Die größere lautet: Welche Nutzung verschiebt Macht zu den Urhebenden, und welche von ihnen weg?</p>
 <p class="prose">Eine KI, die meinen Stil abkupfert, zieht Wert ab. Eine KI, die meinen Comic für mehr Menschen lesbar macht oder mir ein ehrliches erstes Feedback gibt, fügt welchen hinzu. Das ist kein Argument für die Konzerne, sondern eines dafür, sich <span class="hl">die Nutzung nicht von ihnen diktieren zu lassen</span>.</p>
-<h2 class="sec-sub">Lesarten an deinem Tisch</h2>
-<p class="prose">Am überzeugendsten ist das alles ohnehin nicht als Argument, sondern als Erfahrung. Darum hier ein paar Prompts zum Ausprobieren – oder gleich der Tab „Lesarten" oben.</p>
+<h2 class="sec-sub">Lesarten für deinen Comic</h2>
+<p class="prose">Am überzeugendsten ist das alles ohnehin nicht als Argument, sondern als Erfahrung. Darum hier ein paar Prompts zum Ausprobieren – oder gleich der Tab <a class="tablink" href="#readings_de">Lesarten</a> oben.</p>
 <p class="prompt-intro">1. Die erste Lesung. Liest deinen Comic wie ein echtes Publikum, das ihn zum ersten Mal sieht.</p>
 <div class="promptblock" data-prompt="first">`+esc(VOICES[0].de.prompt)+`</div>
 <p class="prompt-intro">2. Die kollegiale Kritik. Erfahrene, wohlwollende Kollegin. Stärken zuerst, dann konkrete Verbesserungen.</p>
@@ -1058,11 +1058,11 @@ ESSAY.de=`
 <p class="prose">Das ersetzt weder dein Gespür für den richtigen Verlag noch den Mut, dich hinzusetzen. Aber es nimmt dir das Zittern davor, dass dir im entscheidenden Moment die Worte fehlen. Und es ist, nebenbei, ein hübscher Beweis für die ganze These dieses Texts: Die KI zeichnet deinen Comic nicht, sie hilft dir, über ihn zu reden.</p>
 <h2 class="sec-sub">Probiert sie aus, ändert sie, teilt sie</h2>
 <p class="prose">Der Punkt ist nicht, dass diese Lesarten die richtigen sind. Der Punkt ist, dass man sich die Lesarten selbst bauen kann und dass die interessante Frage damit eine andere wird. Nicht mehr „Freund oder Feind", sondern:</p>
-<p class="bigq">Welche Lesart hätte ich gern an meinem Tisch, die ich sonst nie bekomme?</p>
-<p class="prose">Eine Lektorin, die nie müde wird. Ein Kind, das nichts beschönigt. Ein Fremder aus der Zielgruppe, den ich sonst nie zu Gesicht bekomme. Mein eigenes Ich in zehn Jahren. Das sind keine Ersatzmenschen, sondern Probebühnen, bevor die echten Menschen ins Spiel kommen.</p>
+<p class="bigq">Welche Lesart meines Comics hätte ich gern, die ich sonst nie bekomme?</p>
+<p class="prose">Eine Lektorin, die nie müde wird. Ein Kind, das nichts beschönigt. Ein Fremder aus der Zielgruppe, den ich sonst nie zu Gesicht bekomme. Mein eigenes Ich in zehn Jahren. Das sind keine Ersatzmenschen, sondern ein Probelauf, bevor du den Comic aus der Hand gibst.</p>
 <p class="prose">Bringt eure eigenen Comics mit, ändert die Prompts, schreibt eigene. Und lasst uns darüber reden, welche Lesarten euch noch fehlen.</p>
 <h2 class="sec-sub">PS: Weitere Lesarten</h2>
-<p class="prose">Seit dem ersten Schreiben sind ein paar Lesarten dazugekommen – manche fertig, manche noch Work in Progress. Im Tab „Lesarten" oben kannst du sie direkt ausprobieren; hier zum Mitnehmen und Weiterbauen.</p>
+<p class="prose">Seit dem ersten Schreiben sind ein paar Lesarten dazugekommen – manche fertig, manche noch Work in Progress. Im Tab <a class="tablink" href="#readings_de">Lesarten</a> oben kannst du sie direkt ausprobieren; hier zum Mitnehmen und Weiterbauen.</p>
 <p class="prompt-cc">Alle Prompts: CC BY-NC-SA 4.0 · Original (Klartext, versioniert) auf `+A(PROMPT_REPO,'GitHub')+`.</p>
 <p class="prompt-intro">7. Der Doomscroller. Liest mit null Geduld, Daumen am Weiterwischen – testet, ob dich überhaupt jemand anhält.</p>
 <div class="promptblock" data-prompt="doomscroller">`+esc(voiceById('doomscroller').de.prompt)+`</div>
@@ -1116,8 +1116,8 @@ ESSAY.en=`
 <h2 class="sec-sub">The Honest Caveat</h2>
 <p class="prose">None of this makes the tools innocent. They come from the same corporations whose handling of training data is rightly being fought over. But the question of which tool is the smaller one. The bigger one is: <span class="hl">which use shifts power toward creators</span>, and which shifts it away from them?</p>
 <p class="prose">An AI that copies my style subtracts value. An AI that makes my comic readable for more people, or gives me an honest first round of feedback, adds some. That\u2019s not an argument for the corporations, it\u2019s an argument for not letting them dictate the use.</p>
-<h2 class="sec-sub">Readings at Your Table</h2>
-<p class="prose">The most convincing version of all this isn’t an argument anyway, it’s an experience. So here are a few prompts to try – or just use the “Readings” tab above.</p>
+<h2 class="sec-sub">Readings for Your Comic</h2>
+<p class="prose">The most convincing version of all this isn’t an argument anyway, it’s an experience. So here are a few prompts to try – or just use the <a class="tablink" href="#readings">Readings</a> tab above.</p>
 <p class="prompt-intro">1. The First Reading. Reads your comic the way a real audience would, seeing it for the first time.</p>
 <div class="promptblock" data-prompt="first">`+esc(VOICES[0].en.prompt)+`</div>
 <p class="prompt-intro">2. The Collegial Critique. An experienced, well-meaning colleague. Strengths first, then concrete improvements.</p>
@@ -1133,11 +1133,11 @@ ESSAY.en=`
 <p class="prose">It replaces neither your instinct for the right publisher nor the nerve to sit down. But it takes away the dread that the words will desert you at the decisive moment. And it’s a nice proof, in passing, of this whole piece’s thesis: the AI doesn’t draw your comic, it helps you talk about it.</p>
 <h2 class="sec-sub">Try Them, Change Them, Share Them</h2>
 <p class="prose">The point isn’t that these readings are the right ones. The point is that you can build the readings yourself, and that the interesting question becomes a different one. No longer “friend or foe”, but:</p>
-<p class="bigq">Which reading would I love to have at my table that I could never otherwise get?</p>
-<p class="prose">An editor who never tires. A child who sugarcoats nothing. A stranger from the target audience I’d otherwise never meet. My own self ten years from now. These aren’t replacement people, they’re rehearsal stages before the real people come into play.</p>
+<p class="bigq">Which reading of my comic would I love to have that I could never otherwise get?</p>
+<p class="prose">An editor who never tires. A child who sugarcoats nothing. A stranger from the target audience I’d otherwise never meet. My own self ten years from now. These aren’t replacement people, they’re a trial run before you hand the comic over.</p>
 <p class="prose">Bring your own comics, change the prompts, write your own. And let’s talk about which readings you’re still missing.</p>
 <h2 class="sec-sub">P.S. More readings</h2>
-<p class="prose">A few more readings have joined since this was first written – some finished, some still work in progress. You can try them right away in the “Readings” tab above; here they are to take with you and build on.</p>
+<p class="prose">A few more readings have joined since this was first written – some finished, some still work in progress. You can try them right away in the <a class="tablink" href="#readings">Readings</a> tab above; here they are to take with you and build on.</p>
 <p class="prompt-cc">All prompts: CC BY-NC-SA 4.0 · originals (plain text, versioned) on `+A(PROMPT_REPO,'GitHub')+`.</p>
 <p class="prompt-intro">7. The Doomscroller. Reads with zero patience, thumb on the swipe – tests whether anything stops them at all.</p>
 <div class="promptblock" data-prompt="doomscroller">`+esc(voiceById('doomscroller').en.prompt)+`</div>
@@ -1291,7 +1291,13 @@ function showTab(name,btn){
   if(name==='essay') renderEssay();
   if(name==='video') ensureDeck();
   window.scrollTo(0,0);
+  syncHash();
 }
+function slugFromTab(t){return {essay:'essay',tool:'readings',video:'video'}[t];}
+function tabFromSlug(b){return {essay:'essay',readings:'tool',video:'video'}[b];}
+function currentSlug(){return slugFromTab(S.tab)+(S.lang==='de'?'_de':'');}
+function syncHash(){try{history.replaceState(null,'','#'+currentSlug());}catch(e){try{location.hash=currentSlug();}catch(_){}}}
+function routeFromHash(){var h=(location.hash||'').slice(1).toLowerCase();if(!h)return false;var de=/_de$/.test(h),base=h.replace(/_de$/,'');var tab=tabFromSlug(base);if(!tab)return false;var lang=de?'de':'en';if(lang!==S.lang)setLang(lang);showTab(tab);return true;}
 const COPY_ICON='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="9" y="9" width="11" height="11" rx="1"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg>';
 const SPK_ICON='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M4 9v6h4l5 4V5L8 9H4z"/><path d="M16.5 8.5a5 5 0 0 1 0 7"/></svg>';
 const STOP_ICON='<svg viewBox="0 0 24 24" fill="currentColor"><rect x="6" y="6" width="12" height="12" rx="1"/></svg>';
@@ -1336,7 +1342,7 @@ function updateLangBtn(){
   document.querySelectorAll('.lang-opt').forEach(o=>o.classList.toggle('on',o.dataset.l===S.lang));
   updateReadState();
 }
-function setLang(l){stopEssayRead();S.lang=l;setPrompt();renderVoices();renderStrings();if(S.tab==='essay')renderEssay();}
+function setLang(l){stopEssayRead();S.lang=l;setPrompt();renderVoices();renderStrings();if(S.tab==='essay')renderEssay();syncHash();}
 
 // ---------------- COPY ----------------
 function copyPrompt(){
@@ -1797,7 +1803,8 @@ if(window.speechSynthesis)window.speechSynthesis.onvoiceschanged=()=>{};
 setAutoread(S.autoread);
 renderVoices();renderStrings();
 applyTheme(localStorage.getItem('fb_theme')||'paper');
-showTab('essay');
+if(!routeFromHash())showTab('essay');
+window.addEventListener('hashchange',routeFromHash);
 syncPrompts();
 </script>
 </body>
