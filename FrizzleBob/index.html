@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="de" id="html-root">
 <head>
@@ -139,7 +140,7 @@ mark{background:var(--mark);color:var(--ink);padding:0 2px;}
 .pop-sec{font-family:var(--ff-ui);font-size:var(--fs-xs);letter-spacing:var(--ls-label);text-transform:uppercase;color:var(--accent);font-weight:700;margin-bottom:6px;}
 .pop-note{font-size:11.5px;color:var(--ink-3);line-height:1.5;margin-bottom:10px;}
 .pop-note.tiny{font-size:10.5px;margin-top:8px;margin-bottom:0;font-style:italic;}
-.apikey-in{width:100%;border:1.5px solid var(--ink);background:#fffdf3;padding:8px 10px;font-family:var(--ff-ui);font-size:12px;color:var(--ink);}
+.apikey-in{width:100%;border:1.5px solid var(--ink);background:var(--paper-card);padding:8px 10px;font-family:var(--ff-ui);font-size:12px;color:var(--ink);}
 .apikey-in:focus{outline:none;border-color:var(--accent);}
 .pop-actions{display:flex;gap:8px;margin-top:8px;}
 .minibtn{font-family:var(--ff-ui);font-size:11px;letter-spacing:.04em;text-transform:uppercase;border:1.5px solid var(--ink);background:var(--paper);color:var(--ink);padding:6px 12px;cursor:pointer;}
@@ -183,7 +184,7 @@ mark{background:var(--mark);color:var(--ink);padding:0 2px;}
 .voice.vbg6{background:rgba(166,70,112,.12);}.voice.vbg6 .vn-n{color:#8f3a60;}
 .voice:hover{transform:translateY(-2px) rotate(-.5deg);border-style:solid;border-color:var(--accent);box-shadow:var(--sh-soft);}
 .voice:focus-visible{outline:2px solid var(--accent);outline-offset:2px;}
-.voice.on{border:2px solid var(--ink);box-shadow:3px 3px 0 var(--accent);background:#fffdf3;}
+.voice.on{border:2px solid var(--ink);box-shadow:3px 3px 0 var(--accent);background:var(--paper-card);}
 .voice.on .vn{color:var(--accent);}
 .voice .vn{display:block;font-family:var(--ff-display);font-size:19px;margin-bottom:5px;line-height:1.16;}
 .voice .vn-n{margin-right:.12em;}
@@ -204,7 +205,7 @@ mark{background:var(--mark);color:var(--ink);padding:0 2px;}
 
 /* UPLOAD */
 .drop{border:2px dashed var(--border-2);background:var(--paper);padding:24px;text-align:center;cursor:pointer;transition:border-color var(--dur-fast),background var(--dur-fast);}
-.drop:hover,.drop.hot{border-color:var(--accent);background:#fbf5e2;}
+.drop:hover,.drop.hot{border-color:var(--accent);background:var(--paper-3);}
 .drop .big{font-family:var(--ff-display);font-size:24px;line-height:1.2;letter-spacing:.01em;}
 .drop .hint{font-family:var(--ff-ui);font-size:11.5px;color:var(--ink-3);margin-top:6px;}
 .thumbs{display:flex;flex-wrap:wrap;gap:9px;margin-top:14px;}
@@ -222,11 +223,12 @@ mark{background:var(--mark);color:var(--ink);padding:0 2px;}
 .disc-toggle.open:hover{background:var(--accent);color:#f6efd9;}
 .promptwrap{position:relative;display:none;margin-top:8px;}
 .promptwrap.show{display:block;}
-#prompt{width:100%;min-height:160px;max-height:380px;overflow-y:auto;background:#fffdf3;color:var(--ink);border:1.5px solid var(--ink);padding:14px;font-family:var(--ff-ui);font-size:13px;line-height:1.6;white-space:pre-wrap;outline:none;}
+#prompt{width:100%;min-height:160px;max-height:380px;overflow-y:auto;background:var(--paper-card);color:var(--ink);border:1.5px solid var(--ink);padding:14px;font-family:var(--ff-ui);font-size:13px;line-height:1.6;white-space:pre-wrap;outline:none;}
 #prompt:focus{border-color:var(--accent);box-shadow:0 0 0 3px rgba(184,54,31,.12);}
-.copybtn{position:absolute;top:9px;right:9px;display:flex;align-items:center;gap:5px;opacity:0;pointer-events:none;font-family:var(--ff-ui);font-size:11px;color:var(--ink-2);background:var(--paper-card);border:1.5px solid var(--ink);padding:5px 9px;cursor:pointer;transition:opacity var(--dur-fast);z-index:2;box-shadow:var(--sh-soft);}
+.copybtn{position:absolute;top:9px;right:9px;display:flex;align-items:center;gap:5px;opacity:0;pointer-events:none;font-family:var(--ff-ui);font-size:11px;text-transform:uppercase;letter-spacing:.04em;color:#f6efd9;background:var(--accent);border:1.5px solid var(--ink);padding:5px 9px;cursor:pointer;transition:opacity var(--dur-fast),transform var(--dur-fast),background var(--dur-fast),box-shadow var(--dur-fast);z-index:2;box-shadow:var(--sh-soft);}
 .copybtn svg{width:13px;height:13px;}
 .promptwrap:hover .copybtn,#prompt:focus+.copybtn{opacity:1;pointer-events:auto;}
+.copybtn:hover{transform:rotate(-1.4deg);box-shadow:2px 2px 0 rgba(31,26,20,.22);}
 .copybtn.done{color:#fff;background:var(--accent);border-color:var(--ink);}
 .smallnote{font-size:12.5px;color:var(--ink-3);font-style:italic;margin:10px 2px 0;}
 
@@ -278,7 +280,7 @@ mark{background:var(--mark);color:var(--ink);padding:0 2px;}
 .tts.playing{color:var(--accent);border-color:var(--accent);}
 #followup{margin-top:var(--sp-5);display:none;gap:10px;align-items:flex-end;}
 #followup.show{display:flex;}
-#followup textarea{flex:1;min-height:46px;max-height:140px;resize:vertical;background:#fffdf3;border:1.5px solid var(--ink);padding:10px 12px;font-family:var(--ff-body);font-size:15px;line-height:1.4;color:var(--ink);}
+#followup textarea{flex:1;min-height:46px;max-height:140px;resize:vertical;background:var(--paper-card);border:1.5px solid var(--ink);padding:10px 12px;font-family:var(--ff-body);font-size:15px;line-height:1.4;color:var(--ink);}
 #followup textarea:focus{outline:none;border-color:var(--accent);}
 
 .disclaimer{margin-top:var(--sp-8);border-top:2px dashed var(--border-2);padding-top:var(--sp-3);font-size:13px;color:var(--ink-3);font-style:italic;max-width:var(--lay-prose);}
@@ -340,7 +342,7 @@ mark{background:var(--mark);color:var(--ink);padding:0 2px;}
 .elist{max-width:var(--lay-prose);margin:0 0 var(--sp-5) 0;padding-left:20px;}
 .elist li{margin-bottom:8px;line-height:var(--lh-norm);color:var(--ink-2);}
 .prompt-intro{font-style:italic;color:var(--ink-3);max-width:var(--lay-prose);margin:var(--sp-4) 0 var(--sp-3);line-height:var(--lh-norm);}
-.promptblock{position:relative;border:2px solid var(--ink);background:#fffdf3;padding:14px 16px;font-family:var(--ff-ui);font-size:12.5px;line-height:1.55;white-space:pre-wrap;color:var(--ink);max-width:var(--lay-prose);margin-bottom:var(--sp-6);box-shadow:var(--sh-soft);}
+.promptblock{position:relative;border:2px solid var(--ink);background:var(--paper-card);padding:14px 16px;font-family:var(--ff-ui);font-size:12.5px;line-height:1.55;white-space:pre-wrap;color:var(--ink);max-width:var(--lay-prose);margin-bottom:var(--sp-6);box-shadow:var(--sh-soft);}
 .pi-title{display:block;font-family:var(--ff-display);font-size:var(--fs-lg);line-height:1.2;color:var(--ink);font-style:normal;margin-bottom:5px;}
 .pb-copy{position:absolute;top:8px;right:8px;opacity:0;pointer-events:none;display:flex;align-items:center;gap:5px;font-family:var(--ff-ui);font-size:13px;color:var(--ink-2);background:var(--paper-card);border:1.5px solid var(--ink);padding:4px 9px;cursor:pointer;transition:opacity var(--dur-fast);box-shadow:var(--sh-soft);}
 .pb-copy svg{width:15px;height:15px;}
@@ -418,7 +420,7 @@ mark{background:var(--mark);color:var(--ink);padding:0 2px;}
   </div>
   <nav class="tb-nav">
     <button class="tb-nav-btn active" id="tb-essay" onclick="showTab('essay',this)">Essay</button>
-    <button class="tb-nav-btn" id="tb-tool" onclick="showTab('tool',this)">Twelve Voices</button>
+    <button class="tb-nav-btn" id="tb-tool" onclick="showTab('tool',this)">Readings</button>
     <button class="tb-nav-btn" id="tb-video" onclick="showTab('video',this)">Cut &amp; Play Comic</button>
   </nav>
   <div class="tb-right">
@@ -458,7 +460,7 @@ mark{background:var(--mark);color:var(--ink);padding:0 2px;}
   </div>
 </div>
 
-<!-- TAB: TOOL (Five Voices) -->
+<!-- TAB: TOOL (Readings) -->
 <div class="page" id="page-tool">
   <div class="wrap">
     <div class="hero-kicker" id="t-eyebrow"></div>
@@ -965,40 +967,40 @@ async function syncPrompts(){
 
 // ---------------- STRINGS ----------------
 const STR = {
-  de:{ tabs:{voices:'Zwölf Stimmen',video:'Cut & Play Comic',essay:'Essay'},
+  de:{ tabs:{voices:'Lesarten',video:'Cut & Play Comic',essay:'Essay'},
     vEyebrow:'Werkzeug', vTitle:'Lass FrizzleBob deinen Comic lesen',
-    vSub:'Lad eine Seite hoch, wähl eine Lesehaltung, lass die FrizzleBob-KI lesen statt zeichnen.',
+    vSub:'Lad eine Seite hoch, wähl eine Lesart, lass die FrizzleBob-KI lesen statt zeichnen.',
     cut:'an der punktierten linie schneiden',
-    s1:'1 · Stimme wählen', s2:'2 · Seiten hochladen', s3:'3 · Prompt (frei editierbar)',
+    s1:'1 · Lesart wählen', s2:'2 · Seiten hochladen', s3:'3 · Prompt (frei editierbar)',
     dropbig:'Seiten hierher ziehen oder klicken', drophint:'PNG, JPG oder PDF · bis zu 8 Seiten',
-    promptnote:'Editierbar. Tausch die gelb markierten Platzhalter gegen deine eigenen Angaben, oder schreib eine eigene Stimme.',
-    read:'Lesen lassen', reset:'Neu anfangen', send:'Senden', fu:'Diese Stimme weiterfragen \u2026',
+    promptnote:'Editierbar. Tausch die gelb markierten Platzhalter gegen deine eigenen Angaben, oder schreib eine eigene Lesart.',
+    read:'Lesen lassen', reset:'Neu anfangen', send:'Senden', fu:'Diese Lesart weiterfragen \u2026',
     copy:'Prompt kopieren', copied:'Kopiert',
     thinking:'liest', needfile:'Bitte zuerst mindestens eine Seite hochladen.',
     pages:'Seite(n)', err:'Da ist etwas schiefgegangen. Nochmal versuchen?',
     disclaimer:'Erste Lesung, kein Urteil. Die KI verliest Handlettering gelegentlich und erfindet manchmal Details. Gegenprüfen bleibt deine Aufgabe.',
     vidEyebrow:'Slideshow', vidSub:'Das '+KBLINK+'-Kartendeck zum Essay, als Video mit FrizzleTune.',
     vidYt:'\u2197 Auf YouTube ansehen',
-    vidCaption:'„Epistemic Sabotage“ \u2013 das Cut-&-Play-Kartendeck zu diesem Essay, vertont als FrizzleTune. Jede Karte ist eine der Anwendungen oder eine der zwölf Stimmen, in ein Bestiarium übersetzt.',
+    vidCaption:'„Epistemic Sabotage“ \u2013 das Cut-&-Play-Kartendeck zu diesem Essay, vertont als FrizzleTune. Jede Karte ist eine der Anwendungen oder eine der Lesarten, in ein Bestiarium übersetzt.',
     footSig:'Lies meinen Comic. Zeichne ihn nicht.',
-    footBar:'Text &amp; Prompts von Georg Graf von Westphalen · CC BY-NC-SA 4.0 · <a href="https://www.cimoc.de/post/818535352848596992/lass-die-ki-deine-comics-lesen-nicht-zeichnen" target="_blank" rel="noopener">Originalartikel lesen</a> · Nicht kommerziell, mit Namensnennung; eigene Fassungen bitte als Fork kennzeichnen.' },
-  en:{ tabs:{voices:'Twelve Voices',video:'Cut & Play Comic',essay:'Essay'},
+    footBar:'Text &amp; Prompts von Georg Graf von Westphalen · <a href="https://www.cimoc.de/post/818535352848596992/lass-die-ki-deine-comics-lesen-nicht-zeichnen" target="_blank" rel="noopener">Originalartikel lesen</a>' },
+  en:{ tabs:{voices:'Readings',video:'Cut & Play Comic',essay:'Essay'},
     vEyebrow:'Tool', vTitle:'Let FrizzleBob read your comic',
     vSub:'Upload a page, pick a reading stance, let the FrizzleBob AI read instead of draw.',
     cut:'cut along the dotted line',
-    s1:'1 · Choose a voice', s2:'2 · Upload pages', s3:'3 · Prompt (edit freely)',
+    s1:'1 · Choose a reading', s2:'2 · Upload pages', s3:'3 · Prompt (edit freely)',
     dropbig:'Drag pages here or click', drophint:'PNG, JPG or PDF · up to 8 pages',
-    promptnote:'Editable. Swap the highlighted placeholders for your own details, or write a voice of your own.',
-    read:'Read it', reset:'Start over', send:'Send', fu:'Ask this voice a follow-up \u2026',
+    promptnote:'Editable. Swap the highlighted placeholders for your own details, or write a reading of your own.',
+    read:'Read it', reset:'Start over', send:'Send', fu:'Ask this reading a follow-up \u2026',
     copy:'Copy prompt', copied:'Copied',
     thinking:'is reading', needfile:'Upload at least one page first.',
     pages:'page(s)', err:'Something went wrong. Try again?',
     disclaimer:'A first read, not a verdict. The AI sometimes misreads hand-lettering and invents details. Checking stays your job.',
     vidEyebrow:'Slideshow', vidSub:'The '+KBLINK+' card deck companion to the essay, as a video with the FrizzleTune.',
     vidYt:'\u2197 Watch on YouTube',
-    vidCaption:'\u201cEpistemic Sabotage\u201d \u2013 the Cut & Play card deck companion to this essay, set to a FrizzleTune. Each card is one of the uses or one of the twelve voices, translated into a bestiary.',
+    vidCaption:'\u201cEpistemic Sabotage\u201d \u2013 the Cut & Play card deck companion to this essay, set to a FrizzleTune. Each card is one of the uses or one of the readings, translated into a bestiary.',
     footSig:'Read my comic. Don\u2019t draw it.',
-    footBar:'Text &amp; prompts by Georg Graf von Westphalen · CC BY-NC-SA 4.0 · <a href="https://cancelthiscomic.substack.com/p/let-the-ai-read-your-comics-not-draw" target="_blank" rel="noopener">Read the original article</a> · Non-commercial, with attribution; please mark your own versions as a fork.' }
+    footBar:'Text &amp; prompts by Georg Graf von Westphalen · <a href="https://cancelthiscomic.substack.com/p/let-the-ai-read-your-comics-not-draw" target="_blank" rel="noopener">Read the original article</a>' }
 };
 
 // ---------------- ESSAY ----------------
@@ -1007,7 +1009,7 @@ function A(h,t){return '<a href="'+h+'" target="_blank" rel="noopener">'+t+'</a>
 const ESSAY={};
 ESSAY.de=`
 <h1 class="origin-title">Lass die KI deine Comics <span class="swipe">lesen</span> \u2013 nicht zeichnen</h1>
-<p class="origin-subtitle">Ein Vorschlag, die Debatte konstruktiv zu erweitern – mit zwölf Lesehaltungen zum Mitnehmen.</p>
+<p class="origin-subtitle">Ein Vorschlag, die Debatte konstruktiv zu erweitern – mit Lesarten zum Mitnehmen.</p>
 <div class="note">Vorbemerkung für meine Freunde aus dem Comicseminar: Dieser Text ist die praktische Verlängerung meines `+A(L.vid,'Mini-Workshops beim Comicseminar Erlangen 2023')+` und des Artikels `+A(L.sub,'\u201eKI: dein Feind und Helfer\u201c')+`, der daraus entstand. Das \u201eund\u201c war Absicht, es ging mir nie um ein Entweder-oder. Die wirklich großen Fragen klammere ich hier bewusst aus: Technokratie, `+A(L.darkDE,'\u201eDark Enlightenment\u201c')+`, den `+A(L.alj,'militärischen Einsatz von KI in Ukraine, Gaza und anderswo')+`. Über die ließen sich mit gutem Grund mehr Tränen vergießen als über das Schicksal der eigenen Zeichenkunst, und in unserer zeichnerischen Nabelschau tauchen sie viel zu selten überhaupt auf. Aber sie gehören an einen anderen Tisch. Hier geht es ums Handwerk, um das, was man morgen ausprobieren kann.</div>
 <p class="prose">\u201eKI: Freund oder Feind?\u201c So stand es auf dem Podium, und ehrlich gesagt fand ich die Frage schon platt, bevor sie diskutiert wurde. Nicht weil die Sorge unbegründet wäre: <span class="hl">Die Angst vor Jobverlust ist real</span>, der generative Stil-Klau ein echtes Problem, und die urheberrechtlichen Fragen sind alles andere als geklärt. Diese Auseinandersetzung muss geführt werden, und sie wird vielerorts zu Recht hart geführt.</p>
 <p class="prose">Aber die Debatte hat sich an einer einzigen Nutzung festgebissen: an der KI, die <em>zeichnet</em> (animiert, musiziert etc.). An der Maschine, die einen Stil imitiert, ein Bild ausspuckt, einen Menschen am Zeichentisch ersetzen soll. Daneben gibt es <span class="hl">ein zweites Register, über das kaum jemand spricht</span>: die KI, die <em>liest</em>.</p>
@@ -1039,8 +1041,8 @@ ESSAY.de=`
 <h2 class="sec-sub">Der ehrliche Vorbehalt</h2>
 <p class="prose">Das macht die Werkzeuge nicht unschuldig. Sie stammen von denselben Konzernen, deren Umgang mit Trainingsdaten zu Recht umkämpft ist. Aber die Frage \u201ewelches Werkzeug\u201c ist die kleinere. Die größere lautet: Welche Nutzung verschiebt Macht zu den Urhebenden, und welche von ihnen weg?</p>
 <p class="prose">Eine KI, die meinen Stil abkupfert, zieht Wert ab. Eine KI, die meinen Comic für mehr Menschen lesbar macht oder mir ein ehrliches erstes Feedback gibt, fügt welchen hinzu. Das ist kein Argument für die Konzerne, sondern eines dafür, sich <span class="hl">die Nutzung nicht von ihnen diktieren zu lassen</span>.</p>
-<h2 class="sec-sub">Vier Stimmen an deinem Tisch</h2>
-<p class="prose">Am überzeugendsten ist das alles ohnehin nicht als Argument, sondern als Erfahrung. Darum hier vier Prompts zum Ausprobieren \u2013 oder gleich der Tab \u201eZwölf Stimmen\u201c oben.</p>
+<h2 class="sec-sub">Lesarten an deinem Tisch</h2>
+<p class="prose">Am überzeugendsten ist das alles ohnehin nicht als Argument, sondern als Erfahrung. Darum hier ein paar Prompts zum Ausprobieren – oder gleich der Tab „Lesarten" oben.</p>
 <p class="prompt-intro">1. Die erste Lesung. Liest deinen Comic wie ein echtes Publikum, das ihn zum ersten Mal sieht.</p>
 <div class="promptblock" data-prompt="first">`+esc(VOICES[0].de.prompt)+`</div>
 <p class="prompt-intro">2. Die kollegiale Kritik. Erfahrene, wohlwollende Kollegin. Stärken zuerst, dann konkrete Verbesserungen.</p>
@@ -1049,42 +1051,40 @@ ESSAY.de=`
 <div class="promptblock" data-prompt="critic">`+esc(VOICES[2].de.prompt)+`</div>
 <p class="prompt-intro">4. Du selbst in fünf Jahren. Nicht ein Fremder, sondern du, mit Abstand.</p>
 <div class="promptblock" data-prompt="future">`+esc(VOICES[3].de.prompt)+`</div>
-<h2 class="sec-sub">Probiert sie aus, ändert sie, teilt sie</h2>
-<p class="prose">Der Punkt ist nicht, dass diese vier Stimmen die richtigen sind. Der Punkt ist, dass man sich die Stimmen selbst bauen kann und dass die interessante Frage damit eine andere wird. Nicht mehr \u201eFreund oder Feind\u201c, sondern:</p>
-<p class="bigq">Welche Lesehaltung hätte ich gern an meinem Tisch, die ich sonst nie bekomme?</p>
-<p class="prose">Eine Lektorin, die nie müde wird. Ein Kind, das nichts beschönigt. Ein Fremder aus der Zielgruppe, den ich sonst nie zu Gesicht bekomme. Mein eigenes Ich in zehn Jahren. Das sind keine Ersatzmenschen, sondern Probebühnen, bevor die echten Menschen ins Spiel kommen.</p>
-<p class="prose">Bringt eure eigenen Comics mit, ändert die Prompts, schreibt eigene. Und lasst uns darüber reden, welche Stimmen euch noch fehlen.</p>
-<h2 class="sec-sub">PS: Ein fünfter Prompt für den Verlagspitch</h2>
-<p class="prose">Die vier Stimmen oben sind Leser. Dieser hier ist etwas anderes: ein Sparringspartner für einen Moment, den wir gerade alle kennen. Man sitzt beim Comic-Salon halb schweißgebadet vor einem Verlag, hat zwei Minuten und weiß hinterher kaum, was man eigentlich gesagt hat.</p>
-<p class="prose">Eine KI, die deine Seiten gelesen hat, kann dir helfen, vorher in Worte zu fassen, worum es geht. Nicht, indem sie etwas erfindet, sondern indem sie aus dem, was auf den Seiten steht, einen Pitch baut, den du laut sagen kannst. Lade ein paar Seiten als PNG oder PDF hoch (drei reichen, zehn gehen auch) und nutze diesen Prompt:</p>
+<p class="prompt-intro">5. Das Auge. Keine Meinung, nur Mechanik: wohin der Blick zuerst springt, welchen Weg er nimmt, wo er stolpert.</p>
+<div class="promptblock" data-prompt="eye">`+esc(voiceById('eye').de.prompt)+`</div>
+<p class="prompt-intro">6. Der Verlagspitch. Kein Leser, sondern ein Sparringspartner für einen Moment, den wir gerade alle kennen: Man steht beim Comic-Salon halb schweißgebadet vor einem Verlag, hat zwei Minuten und weiß hinterher kaum, was man gesagt hat. Aus dem, was auf deinen Seiten steht, baut er dir vorher einen Pitch, den du laut sagen kannst. Lade ein paar Seiten als PNG oder PDF hoch (drei reichen, zehn gehen auch).</p>
 <div class="promptblock" data-prompt="pitch">`+esc(VOICES[4].de.prompt)+`</div>
 <p class="prose">Das ersetzt weder dein Gespür für den richtigen Verlag noch den Mut, dich hinzusetzen. Aber es nimmt dir das Zittern davor, dass dir im entscheidenden Moment die Worte fehlen. Und es ist, nebenbei, ein hübscher Beweis für die ganze These dieses Texts: Die KI zeichnet deinen Comic nicht, sie hilft dir, über ihn zu reden.</p>
-<h2 class="sec-sub">Weitere Lesehaltungen</h2>
-<p class="prose">Seit dem ersten Schreiben sind ein paar Stimmen dazugekommen \u2013 manche fertig, manche noch Work in Progress. Im Tab \u201eZwölf Stimmen\u201c oben kannst du sie direkt ausprobieren; hier zum Mitnehmen und Weiterbauen.</p>
-<p class="prompt-cc">Die Prompts stehen unter `+A('https://creativecommons.org/licenses/by-nc-sa/4.0/','CC BY-NC-SA 4.0')+`: frei nutzbar und veränderbar, nicht kommerziell, mit Namensnennung. Eigene Fassungen bitte als Fork kennzeichnen. Alle Prompts im Original (Klartext, versioniert) auf `+A(PROMPT_REPO,'GitHub')+`.</p>
-<p class="prompt-intro">6. Das Auge. Keine Meinung, nur Mechanik: wohin der Blick zuerst springt, welchen Weg er nimmt, wo er stolpert.</p>
-<div class="promptblock" data-prompt="eye">`+esc(voiceById('eye').de.prompt)+`</div>
-<p class="prompt-intro">7. Der Doomscroller. Liest mit null Geduld, Daumen am Weiterwischen \u2013 testet, ob dich überhaupt jemand anhält.</p>
+<h2 class="sec-sub">Probiert sie aus, ändert sie, teilt sie</h2>
+<p class="prose">Der Punkt ist nicht, dass diese Lesarten die richtigen sind. Der Punkt ist, dass man sich die Lesarten selbst bauen kann und dass die interessante Frage damit eine andere wird. Nicht mehr „Freund oder Feind", sondern:</p>
+<p class="bigq">Welche Lesart hätte ich gern an meinem Tisch, die ich sonst nie bekomme?</p>
+<p class="prose">Eine Lektorin, die nie müde wird. Ein Kind, das nichts beschönigt. Ein Fremder aus der Zielgruppe, den ich sonst nie zu Gesicht bekomme. Mein eigenes Ich in zehn Jahren. Das sind keine Ersatzmenschen, sondern Probebühnen, bevor die echten Menschen ins Spiel kommen.</p>
+<p class="prose">Bringt eure eigenen Comics mit, ändert die Prompts, schreibt eigene. Und lasst uns darüber reden, welche Lesarten euch noch fehlen.</p>
+<h2 class="sec-sub">PS: Weitere Lesarten</h2>
+<p class="prose">Seit dem ersten Schreiben sind ein paar Lesarten dazugekommen – manche fertig, manche noch Work in Progress. Im Tab „Lesarten" oben kannst du sie direkt ausprobieren; hier zum Mitnehmen und Weiterbauen.</p>
+<p class="prompt-cc">Alle Prompts: CC BY-NC-SA 4.0 · Original (Klartext, versioniert) auf `+A(PROMPT_REPO,'GitHub')+`.</p>
+<p class="prompt-intro">7. Der Doomscroller. Liest mit null Geduld, Daumen am Weiterwischen – testet, ob dich überhaupt jemand anhält.</p>
 <div class="promptblock" data-prompt="doomscroller">`+esc(voiceById('doomscroller').de.prompt)+`</div>
 <p class="prompt-intro">8. Der Literalist. Beschreibt nur, was buchstäblich da ist, und zeigt die Lücke zwischen Absicht und Seite.</p>
 <div class="promptblock" data-prompt="literalist">`+esc(voiceById('literalist').de.prompt)+`</div>
-<p class="prompt-intro">9. FrizzleBob im Carny-Modus. Verkauft deinen Comic als Attraktion \u2013 was er nicht anpreisen kann, ist die Diagnose.</p>
+<p class="prompt-intro">9. FrizzleBob im Carny-Modus. Verkauft deinen Comic als Attraktion – was er nicht anpreisen kann, ist die Diagnose.</p>
 <div class="promptblock" data-prompt="carny">`+esc(voiceById('carny').de.prompt)+`</div>
 <p class="prompt-intro">10. Der Heckler am Rand. Findet die unfreiwilligen Gags und cursed Details. Wahrheit durch Spott.</p>
 <div class="promptblock" data-prompt="heckler">`+esc(voiceById('heckler').de.prompt)+`</div>
 <p class="prompt-intro">11. Der Superfan. Liest mit maximaler Großzügigkeit und findet Tiefe, die du nie geplant hast.</p>
 <div class="promptblock" data-prompt="superfan">`+esc(voiceById('superfan').de.prompt)+`</div>
-<p class="prompt-intro">12. Die Archäologin aus dem Jahr 2525. Gräbt deinen Comic kontextlos aus \u2013 was überlebt, was wird missverstanden?</p>
+<p class="prompt-intro">12. Die Archäologin aus dem Jahr 2525. Gräbt deinen Comic kontextlos aus – was überlebt, was wird missverstanden?</p>
 <div class="promptblock" data-prompt="archaeologist">`+esc(voiceById('archaeologist').de.prompt)+`</div>
 <p class="prompt-intro">13. Die Seite spricht zurück. Der Comic selbst sagt dir, wie es sich anfühlt, so gezeichnet zu sein.</p>
 <div class="promptblock" data-prompt="pagespeaks">`+esc(voiceById('pagespeaks').de.prompt)+`</div>
-<p class="prompt-intro">14. Der Synästhet. Hört den stummen Comic: Soundtrack, Rhythmus, Stille \u2013 und verrät Timing und Pacing.</p>
+<p class="prompt-intro">14. Der Synästhet. Hört den stummen Comic: Soundtrack, Rhythmus, Stille – und verrät Timing und Pacing.</p>
 <div class="promptblock" data-prompt="synaesthete">`+esc(voiceById('synaesthete').de.prompt)+`</div>
 <div class="license">Dieser Text und die Prompts von Georg Graf von Westphalen stehen unter der Creative-Commons-Lizenz Namensnennung \u2013 Nicht kommerziell \u2013 Weitergabe unter gleichen Bedingungen 4.0 (CC BY-NC-SA 4.0). Du darfst sie teilen und weiterentwickeln, solange du den Autor nennst, auf `+A(L.origDE,'das Original')+` verlinkst, nichts kommerziell nutzt und deine eigene Fassung klar als Fork kennzeichnest. `+A('https://creativecommons.org/licenses/by-nc-sa/4.0/','Lizenztext')+`.</div>
 `;
 ESSAY.en=`
 <h1 class="origin-title">Let the AI <span class="swipe">Read</span> Your Comics, Not Draw Them</h1>
-<p class="origin-subtitle">A proposal to broaden the debate, constructively – with twelve reading stances to take with you.</p>
+<p class="origin-subtitle">A proposal to broaden the debate, constructively – with readings to take with you.</p>
 <div class="note">A note for my friends from the comic seminar: This piece is the practical extension of my `+A(L.vid,'mini-workshop at the Erlangen Comic Seminar in 2023')+` and the article `+A(L.sub,'\u201cAI: Your Enemy and Helper\u201d')+` that grew out of it (both in German). The \u201cand\u201d was deliberate; it was never an either/or for me. The really big questions I\u2019m leaving out on purpose: technocracy, the `+A(L.darkEN,'\u201cDark Enlightenment\u201d')+`, the `+A(L.alj,'military use of AI in Ukraine, Gaza and elsewhere')+`. Those deserve more tears, with good reason, than the fate of our own draftsmanship, and in our artistic navel-gazing they barely come up at all. But they belong at a different table. This is about craft, about what you can try tomorrow.</div>
 <p class="prose">\u201cAI: friend or foe?\u201d That was the framing on the panel, and honestly I found the question flat before it was even discussed. Not because the worry is groundless. <span class="hl">The fear of losing work is real</span>, generative style-theft is a genuine problem, and the copyright questions are anything but settled. That fight has to happen, and in many places it is being fought hard, rightly so.</p>
 <p class="prose">But the debate has fixated on a single use: the AI that <em>draws</em> (animates, composes, and so on). The machine that imitates a style, spits out an image, is meant to replace a human at the drawing table. Next to it sits <span class="hl">a second register almost nobody talks about</span>: the AI that <em>reads</em>.</p>
@@ -1116,8 +1116,8 @@ ESSAY.en=`
 <h2 class="sec-sub">The Honest Caveat</h2>
 <p class="prose">None of this makes the tools innocent. They come from the same corporations whose handling of training data is rightly being fought over. But the question of which tool is the smaller one. The bigger one is: <span class="hl">which use shifts power toward creators</span>, and which shifts it away from them?</p>
 <p class="prose">An AI that copies my style subtracts value. An AI that makes my comic readable for more people, or gives me an honest first round of feedback, adds some. That\u2019s not an argument for the corporations, it\u2019s an argument for not letting them dictate the use.</p>
-<h2 class="sec-sub">Four Voices at Your Table</h2>
-<p class="prose">The most convincing version of all this isn\u2019t an argument anyway, it\u2019s an experience. So here are four prompts to try \u2013 or just use the \u201cTwelve Voices\u201d tab above.</p>
+<h2 class="sec-sub">Readings at Your Table</h2>
+<p class="prose">The most convincing version of all this isn’t an argument anyway, it’s an experience. So here are a few prompts to try – or just use the “Readings” tab above.</p>
 <p class="prompt-intro">1. The First Reading. Reads your comic the way a real audience would, seeing it for the first time.</p>
 <div class="promptblock" data-prompt="first">`+esc(VOICES[0].en.prompt)+`</div>
 <p class="prompt-intro">2. The Collegial Critique. An experienced, well-meaning colleague. Strengths first, then concrete improvements.</p>
@@ -1126,36 +1126,34 @@ ESSAY.en=`
 <div class="promptblock" data-prompt="critic">`+esc(VOICES[2].en.prompt)+`</div>
 <p class="prompt-intro">4. Yourself in Five Years. Not a stranger, but you, with distance.</p>
 <div class="promptblock" data-prompt="future">`+esc(VOICES[3].en.prompt)+`</div>
-<h2 class="sec-sub">Try Them, Change Them, Share Them</h2>
-<p class="prose">The point isn\u2019t that these four voices are the right ones. The point is that you can build the voices yourself, and that the interesting question becomes a different one. No longer \u201cfriend or foe\u201d, but:</p>
-<p class="bigq">Which reading stance would I love to have at my table that I could never otherwise get?</p>
-<p class="prose">An editor who never tires. A child who sugarcoats nothing. A stranger from the target audience I\u2019d otherwise never meet. My own self ten years from now. These aren\u2019t replacement people, they\u2019re rehearsal stages before the real people come into play.</p>
-<p class="prose">Bring your own comics, change the prompts, write your own. And let\u2019s talk about which voices you\u2019re still missing.</p>
-<h2 class="sec-sub">P.S. A Fifth Prompt for the Publisher Pitch</h2>
-<p class="prose">The four voices above are readers. This one is something else: a sparring partner for a moment we all know right now. You\u2019re sitting at the comic salon, half drenched in sweat, across from a publisher, you have two minutes, and afterward you can barely say what you actually told them.</p>
-<p class="prose">An AI that has read your pages can help you put into words, beforehand, what it\u2019s about. Not by inventing anything, but by building a pitch out of what\u2019s actually on the pages, one you can say out loud. Upload a few pages as PNG or PDF (three are enough, ten work too) and use this prompt:</p>
-<div class="promptblock" data-prompt="pitch">`+esc(VOICES[4].en.prompt)+`</div>
-<p class="prose">It replaces neither your instinct for the right publisher nor the nerve to sit down. But it takes away the dread that the words will desert you at the decisive moment. And it\u2019s a nice proof, in passing, of this whole piece\u2019s thesis: the AI doesn\u2019t draw your comic, it helps you talk about it.</p>
-<h2 class="sec-sub">More reading stances</h2>
-<p class="prose">A few more voices have joined since this was first written \u2013 some finished, some still work in progress. You can try them right away in the \u201cTwelve Voices\u201d tab above; here they are to take with you and build on.</p>
-<p class="prompt-cc">The prompts are under `+A('https://creativecommons.org/licenses/by-nc-sa/4.0/','CC BY-NC-SA 4.0')+`: free to use and adapt, non-commercial, with attribution. Please mark your own versions as a fork. All prompts in the original (plain text, versioned) on `+A(PROMPT_REPO,'GitHub')+`.</p>
-<p class="prompt-intro">6. The Eye. No opinion, just mechanics: where the eye lands first, the path it takes, where it snags.</p>
+<p class="prompt-intro">5. The Eye. No opinion, just mechanics: where the eye lands first, the path it takes, where it snags.</p>
 <div class="promptblock" data-prompt="eye">`+esc(voiceById('eye').en.prompt)+`</div>
-<p class="prompt-intro">7. The Doomscroller. Reads with zero patience, thumb on the swipe \u2013 tests whether anything stops them at all.</p>
+<p class="prompt-intro">6. The Publisher Pitch. Not a reader but a sparring partner for a moment we all know right now: you’re at the comic salon, half drenched in sweat, across from a publisher, you have two minutes, and afterward you can barely say what you actually told them. From what’s actually on your pages, it builds you a pitch you can say out loud beforehand. Upload a few pages as PNG or PDF (three are enough, ten work too).</p>
+<div class="promptblock" data-prompt="pitch">`+esc(VOICES[4].en.prompt)+`</div>
+<p class="prose">It replaces neither your instinct for the right publisher nor the nerve to sit down. But it takes away the dread that the words will desert you at the decisive moment. And it’s a nice proof, in passing, of this whole piece’s thesis: the AI doesn’t draw your comic, it helps you talk about it.</p>
+<h2 class="sec-sub">Try Them, Change Them, Share Them</h2>
+<p class="prose">The point isn’t that these readings are the right ones. The point is that you can build the readings yourself, and that the interesting question becomes a different one. No longer “friend or foe”, but:</p>
+<p class="bigq">Which reading would I love to have at my table that I could never otherwise get?</p>
+<p class="prose">An editor who never tires. A child who sugarcoats nothing. A stranger from the target audience I’d otherwise never meet. My own self ten years from now. These aren’t replacement people, they’re rehearsal stages before the real people come into play.</p>
+<p class="prose">Bring your own comics, change the prompts, write your own. And let’s talk about which readings you’re still missing.</p>
+<h2 class="sec-sub">P.S. More readings</h2>
+<p class="prose">A few more readings have joined since this was first written – some finished, some still work in progress. You can try them right away in the “Readings” tab above; here they are to take with you and build on.</p>
+<p class="prompt-cc">All prompts: CC BY-NC-SA 4.0 · originals (plain text, versioned) on `+A(PROMPT_REPO,'GitHub')+`.</p>
+<p class="prompt-intro">7. The Doomscroller. Reads with zero patience, thumb on the swipe – tests whether anything stops them at all.</p>
 <div class="promptblock" data-prompt="doomscroller">`+esc(voiceById('doomscroller').en.prompt)+`</div>
 <p class="prompt-intro">8. The Literalist. Describes only what is literally there, and shows the gap between intent and page.</p>
 <div class="promptblock" data-prompt="literalist">`+esc(voiceById('literalist').en.prompt)+`</div>
-<p class="prompt-intro">9. FrizzleBob, Carny Barker. Sells your comic as a sideshow \u2013 whatever he can\u2019t hype is the diagnosis.</p>
+<p class="prompt-intro">9. FrizzleBob, Carny Barker. Sells your comic as a sideshow – whatever he can’t hype is the diagnosis.</p>
 <div class="promptblock" data-prompt="carny">`+esc(voiceById('carny').en.prompt)+`</div>
 <p class="prompt-intro">10. The Heckler in the Margins. Finds the accidental gags and cursed details. Truth through mockery.</p>
 <div class="promptblock" data-prompt="heckler">`+esc(voiceById('heckler').en.prompt)+`</div>
 <p class="prompt-intro">11. The Superfan. Reads with maximum generosity and finds depth you never planned.</p>
 <div class="promptblock" data-prompt="superfan">`+esc(voiceById('superfan').en.prompt)+`</div>
-<p class="prompt-intro">12. The Archaeologist from 2525. Excavates your comic with no context \u2013 what survives, what gets misread?</p>
+<p class="prompt-intro">12. The Archaeologist from 2525. Excavates your comic with no context – what survives, what gets misread?</p>
 <div class="promptblock" data-prompt="archaeologist">`+esc(voiceById('archaeologist').en.prompt)+`</div>
 <p class="prompt-intro">13. The Page Speaks Back. The comic itself tells you how it feels to be drawn this way.</p>
 <div class="promptblock" data-prompt="pagespeaks">`+esc(voiceById('pagespeaks').en.prompt)+`</div>
-<p class="prompt-intro">14. The Synaesthete. Hears the silent comic: soundtrack, rhythm, silence \u2013 and reveals timing and pacing.</p>
+<p class="prompt-intro">14. The Synaesthete. Hears the silent comic: soundtrack, rhythm, silence – and reveals timing and pacing.</p>
 <div class="promptblock" data-prompt="synaesthete">`+esc(voiceById('synaesthete').en.prompt)+`</div>
 <div class="license">This text and the prompts by Georg Graf von Westphalen are published under a Creative Commons license: Attribution \u2013 NonCommercial \u2013 ShareAlike 4.0 (CC BY-NC-SA 4.0). You may share and build on them, as long as you credit the author, link back to `+A(L.origEN,'the original')+`, keep it non-commercial, and clearly mark your own version as a fork. `+A('https://creativecommons.org/licenses/by-nc-sa/4.0/','License')+`.</div>
 `;
@@ -1163,20 +1161,20 @@ ESSAY.en=`
 // ---------------- EXTRA STRINGS (new UI) ----------------
 Object.assign(STR.de,{
   tTitleHTML:'Lass FrizzleBob deinen Comic <span class="swipe">lesen</span>',
-  st1:'Wähle eine Stimme', st2:'Lade deine Seiten hoch', st3:'Lass FrizzleBob lesen',
-  st1hint:'Jede Stimme liest mit einer anderen Haltung. Wähl eine – wechseln kannst du jederzeit.',
+  st1:'Wähle eine Lesart', st2:'Lade deine Seiten hoch', st3:'Lass FrizzleBob lesen',
+  st1hint:'Jede Lesart hat eine andere Haltung. Wähl eine – wechseln kannst du jederzeit.',
   st2hint:'Eine Seite reicht für den Anfang, bis zu acht gehen auf einmal.',
-  pick:'gewählt', pitchTag:'braucht ein paar Angaben', wipTag:'WIP', wipToggle:'Weitere Lesehaltungen – Work in Progress',
+  pick:'gewählt', pitchTag:'braucht ein paar Angaben', wipTag:'WIP', wipToggle:'Weitere Lesarten – Work in Progress',
   vEyebrow:'Demo',
-  vSub:'Wähle eine Stimme, lad ein paar Seiten hoch – und lass die KI deinen Comic lesen, statt ihn zu zeichnen.',
-  toolNote:'<strong>So liest eine Stimme deine Seite:</strong> Prompt kopieren und in deinen eigenen KI-Chat einfügen (Claude, ChatGPT, Gemini, DeepSeek …) – das geht mit jedem Konto. Wer direkt hier im Browser lesen lassen will, trägt oben im Zahnrad einen eigenen API-Key ein (Power-User).',
-  promptnote:'Du kannst den Prompt frei bearbeiten: Tausch die gelb markierten Platzhalter gegen deine Angaben – oder schreib dir eine eigene Stimme. Prompts unter CC BY-NC-SA 4.0: nicht kommerziell, mit Namensnennung, Änderungen als Fork.',
+  vSub:'Wähle eine Lesart, lad ein paar Seiten hoch – und lass die KI deinen Comic lesen, statt ihn zu zeichnen.',
+  toolNote:'<strong>So entsteht eine Lesart:</strong> Prompt kopieren und in deinen eigenen KI-Chat einfügen (Claude, ChatGPT, Gemini, DeepSeek …) – das geht mit jedem Konto. Wer direkt hier im Browser lesen lassen will, trägt oben im Zahnrad einen eigenen API-Key ein (Power-User).',
+  promptnote:'Du kannst den Prompt frei bearbeiten: Tausch die gelb markierten Platzhalter gegen deine Angaben – oder schreib dir eine eigene Lesart. (CC BY-NC-SA 4.0)',
   read:'Lesen lassen', reset:'Neu anfangen', send:'Senden',
-  fu:'Stell dieser Stimme eine Rückfrage …',
+  fu:'Stell dieser Lesart eine Rückfrage …',
   copy:'Prompt kopieren', copied:'Kopiert',
   needfile:'Lade zuerst mindestens eine Seite hoch.',
   nbTitle:'Dafür brauchst du ein KI-Modell.', nbBody:'Am einfachsten: Prompt kopieren und in deinen eigenen KI-Chat einfügen (Claude, ChatGPT, Gemini, DeepSeek …) – jedes Konto reicht. Oder oben im Zahnrad einen eigenen API-Key eintragen, dann läuft es direkt hier.', nbKey:'API-Key eintragen', nbCopy:'Prompt kopieren',
-  readNeed:'Wähle oben eine Stimme und lade mindestens eine Seite hoch.',
+  readNeed:'Wähle oben eine Lesart und lade mindestens eine Seite hoch.',
   disclaimer:'Eine erste Lesung, kein Urteil. Die KI verliest Handlettering schon mal und erfindet gelegentlich Details. Das Gegenprüfen bleibt deine Sache.',
   discLabel:'Prompt ansehen und anpassen',
   setAutoread:'Antworten automatisch vorlesen',
@@ -1188,16 +1186,16 @@ Object.assign(STR.de,{
   ttsRead:'Vorlesen', ttsStop:'Stopp', essayRead:'Vorlesen',
   setTheme:'Darstellung', themePaper:'Papier \u00b7 Standard', themeDark:'Dunkel \u00b7 MedKayfab', themeA11y:'Barrierearm \u00b7 klare Schrift',
   uniEyebrow:'Das Spiel dahinter',
-  uniText:'FrizzleBob kommt nicht von allein. Er ist der Hausgeist von '+KBLINK+' \u2013 einem Anti-Regel-Erz\u00e4hlspiel, in dem ein Tisch zur B\u00fchne wird und Kayfabe zur Methode. MedKayfab nimmt dieselbe Engine und legt sie auf die Pathophysiologie: derselbe Loop, andere Diagnose. Wenn dir die Stimmen hier gefallen, ist das ihr Zuhause.',
+  uniText:'Erst zensieren sie dich. Dann zensierst du dich selbst. FrizzleBob, ein gelber Cartoon-Hase, hat irgendwann aufgehört mitzumachen. Was ihm an Stimmen, Fundstücken und schönen Denkfehlern unterkommt, hebt er auf, zwei mal zwei Panels pro Seite, in seinem Fractal Almanac. Damit es nicht so tut, als wäre es nie passiert.<br><br>Genau dafür gibt es das Spiel. Druck den Comic aus, zerschneide ihn in Karten, und leg sie mit ein bis sechs Leuten neu, in einer Reihenfolge, die kein Autor vorgesehen hat. Jede Karte darf alles behaupten, die nächste widerspricht, ihr entscheidet, was hält. Keiner gewinnt, keiner verliert, die beste Geschichte zählt. Das Risiko trägt die Karte, nicht du. Spiel die Wahrheit nach deinen Regeln, mit glaubhafter Abstreitbarkeit.',
   uc1eye:'Cut & Play Comic · Story-Wrestling-Edition',
   uc1h:'<span class="kb-mark"><span class="a">Kayfa</span><span class="b">Bizarro</span></span> Freestyle',
-  uc1p:'Du bewegst einen Würfel. Er zeigt, wie nah die Geschichte am Zerbrechen ist. <strong>Sechs Modi von <em class="ac">Tragisch</em> bis <em class="ac">Verboten</em></strong> — der Würfel rollt, du committest. Karten betreten die <strong>Bühne</strong> durch <strong class="ac">Name it. Claim it. Power it.</strong> Ruft jemand <strong class="ac">BLÖDSINN!</strong>, hält der Tisch an und entscheidet. <strong>Niemand geht als Verlierer. Alle gehen ein bisschen verändert.</strong> Samt der Dinge, die beim Abendessen nie hätten gesagt werden können.',
-  uc1best:'<strong>Für:</strong> Familien, die höfliche Spiele satthaben · Therapeut:innen mit Arbeitsblatt-Allergie · Autor:innen, die in der eigenen Stimme feststecken. <strong>1–6 Menschen.</strong>',
+  uc1p:'Jede Karte ist eins von FrizzleBobs Fundstücken: eine Figur, ein Ort, eine Ideologie, ein Gott, ein Gedanke, der Kölner Dom, der Kategorische Imperativ. Du nimmst eins, stellst dich davor und redest als es. Ein Würfel gibt den Ton vor, von tragisch bis verboten, den Rest erzählst du: ein Auftritt, drei Szenen, ein Schlussbild. Ruft jemand <strong class="ac">BLÖDSINN!</strong>, unterbrichst du, und die anderen entscheiden, ob deine Version trägt. Trotzdem verteidigst du irgendwann eine Position, die du vor zehn Minuten noch verachtet hast, weil die Geschichte dich gerade braucht.',
+  uc1best:'Für Comic-Leute, die ihre Panels endlich anfassen wollen. Für Nerds, Gamer, Improv-Fans und jeden, der Satire mag und gern mal die Seite wechselt. Solo oder bis zu sechst.',
   uc1link:'Zu den Freestyle-Regeln →',
   uc2eye:'Cut & Play Comic · Klinik-Edition',
   uc2h:'<span class="mk-mark"><span class="a">Med</span><span class="b">Kayfab</span></span> Medicine',
-  uc2p:'Derselbe Loop, auf die Pathophysiologie gedreht. Du spielst <em class="ac">Fibby Fitz</em> als Character. Der Würfel zeigt eine 3 – <strong>Mechanism Flash.</strong> Du erklärst Vorhofflimmern aus dem Kopf, während der Tisch dazwischenruft. Jemand ruft <strong class="ac">BLÖDSINN!</strong> — und der Raum dreht sich sofort gegen dich. <strong>Heute falsch, morgen richtig, bis zum Frühstück sitzt’s.</strong>',
-  uc2best:'<strong>Für:</strong> Medizinstudis jenseits der Karteikarten · Assistenzärzt:innen im Nachtdienst · Oberärzt:innen, die mit dem Lehren-durch-Demütigung aufhören wollen. <strong>Solo oder 1–6 Menschen.</strong>',
+  uc2p:'Gleicher Schnitt, andere Beute: MedKayfab sammelt Mechanismen. Jede Karte ist eine Merkfigur, hinter der ein klinischer Mechanismus steckt. Du ziehst <em class="ac">Fibby Fitz</em>, das Vorhofflimmern, und erklärst frei aus dem Kopf, warum das Herz aus dem Takt gerät, während dir die anderen reinquatschen. Karte umdrehen gilt nicht. Wer schwindelt, fängt sich ein <strong class="ac">BLÖDSINN!</strong> Was du heute Abend laut erklärst, sitzt morgen in der Visite.',
+  uc2best:'Für Medizinstudis, die ihre Anki-Decks nicht mehr sehen können. Für den Nachtdienst. Für alle, die Mechanismen behalten statt nachschlagen wollen. Solo oder bis zu sechst.',
   uc2link:'Zu den MedKayfab-Regeln →',
   uniCta1:'Decks auf Gumroad', uniCta2:'Zu den Anti-Regeln', uniCta3:'Substack lesen',
   deckLabel:'Oder blättere durchs Deck', deckLoadTitle:'Deck laden', deckLoadSub:'≈ 3 MB PDF · klick zum Öffnen',
@@ -1206,20 +1204,20 @@ Object.assign(STR.de,{
 });
 Object.assign(STR.en,{
   tTitleHTML:'Let FrizzleBob <span class="swipe">read</span> your comic',
-  st1:'Pick a voice', st2:'Upload your pages', st3:'Let FrizzleBob read',
-  st1hint:'Each voice reads with a different attitude. Pick one – you can switch any time.',
+  st1:'Pick a reading', st2:'Upload your pages', st3:'Let FrizzleBob read',
+  st1hint:'Each reading takes a different stance. Pick one – you can switch any time.',
   st2hint:'One page is enough to start; up to eight can be read at once.',
-  pick:'picked', pitchTag:'needs a few details', wipTag:'WIP', wipToggle:'More reading stances – work in progress',
+  pick:'picked', pitchTag:'needs a few details', wipTag:'WIP', wipToggle:'More readings – work in progress',
   vEyebrow:'Demo',
-  vSub:'Pick a voice, upload a few pages – and let the AI read your comic instead of drawing it.',
-  toolNote:'<strong>How a voice reads your page:</strong> copy the prompt into your own AI chat (Claude, ChatGPT, Gemini, DeepSeek …) – works with any account. To read right here in the browser, add your own API key in the gear menu above (power-user).',
-  promptnote:'Edit the prompt freely: swap the highlighted placeholders for your own details – or write a voice of your own. Prompts under CC BY-NC-SA 4.0: non-commercial, with attribution, changes as a fork.',
+  vSub:'Pick a reading, upload a few pages – and let the AI read your comic instead of drawing it.',
+  toolNote:'<strong>How a reading works:</strong> copy the prompt into your own AI chat (Claude, ChatGPT, Gemini, DeepSeek …) – works with any account. To read right here in the browser, add your own API key in the gear menu above (power-user).',
+  promptnote:'Edit the prompt freely: swap the highlighted placeholders for your own details – or write a reading of your own. (CC BY-NC-SA 4.0)',
   read:'Read it', reset:'Start over', send:'Send',
-  fu:'Ask this voice a follow-up …',
+  fu:'Ask this reading a follow-up …',
   copy:'Copy prompt', copied:'Copied',
   needfile:'Upload at least one page first.',
   nbTitle:'This needs an AI model.', nbBody:'Easiest: copy the prompt into your own AI chat (Claude, ChatGPT, Gemini, DeepSeek …) – any account works. Or add your own API key in the gear menu above to read right here.', nbKey:'Add API key', nbCopy:'Copy prompt',
-  readNeed:'Pick a voice above and upload at least one page.',
+  readNeed:'Pick a reading above and upload at least one page.',
   disclaimer:'A first read, not a verdict. The AI sometimes misreads hand-lettering and invents details. Double-checking stays your job.',
   discLabel:'View and edit the prompt',
   setAutoread:'Read answers aloud automatically',
@@ -1230,17 +1228,17 @@ Object.assign(STR.en,{
   save:'Save', clear:'Clear',
   ttsRead:'Read aloud', ttsStop:'Stop', essayRead:'Read aloud',
   setTheme:'Theme', themePaper:'Paper \u00b7 default', themeDark:'Dark \u00b7 MedKayfab', themeA11y:'Accessible \u00b7 clear type',
-  uniEyebrow:'The game behind this',
-  uniText:'FrizzleBob doesn\u2019t come from nowhere. He\u2019s the house spirit of '+KBLINK+' \u2013 an anti-rules storytelling game where a table turns into a stage and kayfabe turns into a method. MedKayfab runs the same engine on pathophysiology: same loop, different diagnosis. If the voices here clicked, this is where they live.',
+  uniEyebrow:'The game behind it',
+  uniText:'First they censor you. Then you censor yourself. FrizzleBob, a yellow cartoon rabbit, stopped playing along at some point. Whatever crosses his path (voices, found things, beautiful errors of thought) he keeps, two by two panels a page, in his Fractal Almanac. So it can’t pretend it never happened.<br><br>That’s what the game is for. Print the comic, cut it into cards, and lay them out with one to six people in an order no author intended. Every card can claim anything, the next one disagrees, you decide what holds. Nobody wins, nobody loses, the best story counts. The card carries the risk, not you. Play the truth your way, with plausible deniability.',
   uc1eye:'Cut & Play Comic · Story-Wrestling Edition',
   uc1h:'<span class="kb-mark"><span class="a">Kayfa</span><span class="b">Bizarro</span></span> Freestyle',
-  uc1p:'You move one die. It shows you how close the story is to breaking. <strong>Six modes from <em class="ac">Tragic</em> to <em class="ac">Forbidden</em></strong> — the die rolls, you commit. Cards enter the <strong>Stage</strong> through <strong class="ac">Name it. Claim it. Power it.</strong> When someone calls <strong class="ac">BLÖDSINN!</strong>, the room stops and decides. <strong>Nobody leaves having lost. Everyone leaves slightly different.</strong> Including the things said that couldn’t have been said over dinner.',
-  uc1best:'<strong>Best for:</strong> families tired of polite games · therapists who hate worksheets · writers stuck in their own voice. <strong>1–6 humans.</strong>',
+  uc1p:'Every card is one of FrizzleBob’s found things: a character, a place, an ideology, a god, a thought, Cologne Cathedral, the Categorical Imperative. You pick one, stand in front of it, and speak as it. A die sets the tone, from tragic to forbidden; the rest you tell: an entrance, three scenes, a closing image. If someone calls <strong class="ac">BLÖDSINN!</strong>, you stop, and the others decide whether your version holds. And still, sooner or later you’ll defend a position you despised ten minutes ago, because the story needs you to.',
+  uc1best:'For comics people who finally want to touch their panels. For nerds, gamers, improv fans, and anyone who likes satire and enjoys switching sides. Solo or up to six.',
   uc1link:'Read the Freestyle Rules →',
   uc2eye:'Cut & Play Comic · Clinical Edition',
   uc2h:'<span class="mk-mark"><span class="a">Med</span><span class="b">Kayfab</span></span> Medicine',
-  uc2p:'Same loop, applied to pathophysiology. You play <em class="ac">Fibby Fitz</em> as your Character. The die rolls a 3 – <strong>Mechanism Flash.</strong> You explain atrial fibrillation from memory while the table heckles. Someone at the table calls <strong class="ac">BLÖDSINN!</strong> — and the room turns on you immediately. <strong>Wrong tonight, right tomorrow, teachable by breakfast.</strong>',
-  uc2best:'<strong>Best for:</strong> med students who’ve outgrown flashcards · residents on night shift · attendings who teach by humiliation and want to stop. <strong>Solo or 1–6 humans.</strong>',
+  uc2p:'Same cut, different loot: MedKayfab collects mechanisms. Every card is a mnemonic figure with a clinical mechanism behind it. You draw <em class="ac">Fibby Fitz</em>, atrial fibrillation, and explain from memory why the heart loses its rhythm while the others heckle. No flipping the card over. Whoever bluffs catches a <strong class="ac">BLÖDSINN!</strong> What you explain out loud tonight sticks on rounds tomorrow.',
+  uc2best:'For med students who can’t look at their Anki decks anymore. For the night shift. For anyone who wants to keep mechanisms instead of looking them up. Solo or up to six.',
   uc2link:'Read the MedKayfab Rules →',
   uniCta1:'Decks on Gumroad', uniCta2:'Read the Anti-Rules', uniCta3:'Read on Substack',
   deckLabel:'Or page through the deck', deckLoadTitle:'Load the deck', deckLoadSub:'≈ 3 MB PDF · click to open',
