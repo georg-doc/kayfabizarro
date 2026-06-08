@@ -1332,6 +1332,8 @@ function showTab(name,btn){
   document.querySelectorAll('.tb-nav-btn').forEach(b=>b.classList.remove('active'));
   $('page-'+name).classList.add('active');
   (btn||$('tb-'+name)).classList.add('active');
+  var _uni=document.querySelector('.universe'); if(_uni)_uni.style.display=(name==='video')?'':'none';
+  var _hf=document.querySelector('.hub-foot'); if(_hf)_hf.style.display=(name==='essay')?'none':'';
   if(name==='essay') renderEssay();
   if(name==='video') ensureDeck();
   window.scrollTo(0,0);
