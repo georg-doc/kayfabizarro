@@ -153,6 +153,7 @@ mark{background:var(--mark);color:var(--ink);padding:0 2px;}
 
 /* HERO */
 .hero-kicker{font-family:var(--ff-ui);font-size:var(--fs-xs);font-weight:700;letter-spacing:var(--ls-label);text-transform:uppercase;color:var(--accent);margin-bottom:var(--sp-3);}
+.hero-kicker:empty{display:none;}
 .hero-title{font-family:var(--ff-display);font-size:clamp(28px,4.5vw,42px);line-height:1.16;color:var(--ink);margin-bottom:var(--sp-4);max-width:780px;}
 .hero-sub{font-style:italic;font-size:var(--fs-md);line-height:var(--lh-snug);color:var(--ink-3);margin-bottom:var(--sp-8);max-width:var(--lay-prose);}
 
@@ -535,12 +536,12 @@ mark{background:var(--mark);color:var(--ink);padding:0 2px;}
 <div class="page" id="page-video">
   <div class="wrap">
     <div class="hero-kicker" id="vid-eyebrow"></div>
-    <h1 class="hero-title">Cut &amp; Play Comic</h1>
+    <h1 class="hero-title">Cut &amp; <span class="swipe">Play</span> Comic</h1>
     <p class="hero-sub" id="vid-subline"></p>
     <div class="lp-video-poster" id="videoposter" onclick="playVideo()">
       <div class="lp-poster-inner">
         <svg class="lp-play" viewBox="0 0 80 80" fill="none"><circle cx="40" cy="40" r="38" fill="rgba(184,54,31,.95)" stroke="#fff" stroke-width="2"/><path d="M32 26 L56 40 L32 54 Z" fill="#fff"/></svg>
-        <div class="lp-title">Cut &amp; Play Comic</div>
+        <div class="lp-title">Cut &amp; <span class="swipe">Play</span> Comic</div>
       </div>
     </div>
     <div class="vid-fallback"><a href="https://www.youtube.com/watch?v=Eeub2W2Ljdc" target="_blank" rel="noopener" id="vid-yt"></a></div>
@@ -553,10 +554,6 @@ mark{background:var(--mark);color:var(--ink);padding:0 2px;}
           <button class="deck-btn" id="deck-prev" aria-label="Prev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"/></svg></button>
           <button class="deck-btn" id="deck-next" aria-label="Next"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></button>
           <span class="deck-info" id="deck-info"></span>
-          <span class="deck-spacer"></span>
-          <button class="deck-btn" id="deck-zout" aria-label="Zoom out"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M6 12h12"/></svg></button>
-          <span class="deck-zlabel" id="deck-zlabel">100%</span>
-          <button class="deck-btn" id="deck-zin" aria-label="Zoom in"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 6v12M6 12h12"/></svg></button>
         </div>
         <div class="deck-canvas" id="deck-canvas"><div class="deck-ph" id="deck-ph"></div></div>
       </div>
@@ -1044,7 +1041,7 @@ const STR = {
     thinking:'liest', needfile:'Bitte zuerst mindestens eine Seite hochladen.',
     pages:'Seite(n)', err:'Da ist etwas schiefgegangen. Nochmal versuchen?',
     disclaimer:'Erste Lesung, kein Urteil. Die KI liest Handlettering gelegentlich falsch und erfindet manchmal Details. Gegenprüfen bleibt deine Aufgabe.',
-    vidEyebrow:'Slideshow', vidSub:'Das '+KBLINK+'-Kartendeck zum Essay, als Video mit FrizzleTune.',
+    vidEyebrow:'', vidSub:'Das '+KBLINK+'-Kartenspiel zum Essay, als Video mit FrizzleTune.',
     vidYt:'\u2197 Auf YouTube ansehen',
     vidCaption:'„Epistemic Sabotage“ \u2013 das Cut-&-Play-Kartendeck zu diesem Essay, vertont als FrizzleTune. Jede Karte ist eine der Anwendungen oder eine der Lesarten, in ein Bestiarium übersetzt.',
     footSig:'Lies meinen Comic. Zeichne ihn nicht.',
@@ -1061,7 +1058,7 @@ const STR = {
     thinking:'is reading', needfile:'Upload at least one page first.',
     pages:'page(s)', err:'Something went wrong. Try again?',
     disclaimer:'A first read, not a verdict. The AI sometimes misreads hand-lettering and invents details. Checking stays your job.',
-    vidEyebrow:'Slideshow', vidSub:'The '+KBLINK+' card deck companion to the essay, as a video with the FrizzleTune.',
+    vidEyebrow:'', vidSub:'The '+KBLINK+' card game companion to the essay, as a video with the FrizzleTune.',
     vidYt:'\u2197 Watch on YouTube',
     vidCaption:'\u201cEpistemic Sabotage\u201d \u2013 the Cut & Play card deck companion to this essay, set to a FrizzleTune. Each card is one of the uses or one of the readings, translated into a bestiary.',
     footSig:'Read my comic. Don\u2019t draw it.',
@@ -1238,7 +1235,7 @@ Object.assign(STR.de,{
   st1hint:'Jede Lesart hat eine andere Haltung. Wähl eine – wechseln kannst du jederzeit.',
   st2hint:'Eine Seite reicht für den Anfang, bis zu acht gehen auf einmal.',
   pick:'gewählt', pitchTag:'braucht ein paar Angaben', wipTag:'WIP', wipToggle:'Weitere Lesarten',
-  vEyebrow:'Demo',
+  vEyebrow:'',
   vSub:'Wähle eine Lesart, lade ein paar Seiten hoch – und lass die KI deinen Comic lesen, statt ihn zu zeichnen.',
   toolNote:'<strong>So entsteht eine Lesart:</strong> Prompt kopieren und in deinen eigenen KI-Chat einfügen (Claude, ChatGPT, Gemini, DeepSeek …) – das geht mit jedem Konto. Wer direkt hier im Browser lesen lassen will, trägt oben im Zahnrad einen eigenen API-Key ein (Power-User).',
   promptnote:'Du kannst den Prompt frei bearbeiten: Tausch die gelb markierten Platzhalter gegen deine Angaben – oder schreib dir eine eigene Lesart. (CC BY-NC-SA 4.0)',
@@ -1272,7 +1269,7 @@ Object.assign(STR.de,{
   uc2link:'Zu den MedKayfab-Regeln →',
   uniCta1:'Decks auf Gumroad', uniCta2:'Zu den Anti-Regeln', uniCta3:'Substack lesen',
   deckLabel:'Oder blättere durchs Deck', deckLoadTitle:'Deck laden', deckLoadSub:'≈ 3 MB PDF · klick zum Öffnen',
-  deckDl:'↗ PDF herunterladen', deckNote:'Das „Epistemic Sabotage“-Kartendeck – die Cut-&-Play-Vorlage zu diesem Essay.',
+  deckDl:'↗ PDF herunterladen', deckNote:'Das „Epistemic Sabotage“-Kartendeck – die Print, Cut-&-Play-Vorlage zu diesem Essay.',
   deckPagePrefix:'Seite', deckLoading:'Deck wird geladen …', deckErr:'Deck konnte nicht geladen werden – nutze den Download-Link.'
 });
 Object.assign(STR.en,{
@@ -1281,7 +1278,7 @@ Object.assign(STR.en,{
   st1hint:'Each reading takes a different stance. Pick one – you can switch any time.',
   st2hint:'One page is enough to start; up to eight can be read at once.',
   pick:'picked', pitchTag:'needs a few details', wipTag:'WIP', wipToggle:'More readings',
-  vEyebrow:'Demo',
+  vEyebrow:'',
   vSub:'Pick a reading, upload a few pages – and let the AI read your comic instead of drawing it.',
   toolNote:'<strong>How a reading works:</strong> copy the prompt into your own AI chat (Claude, ChatGPT, Gemini, DeepSeek …) – works with any account. To read right here in the browser, add your own API key in the gear menu above (power-user).',
   promptnote:'Edit the prompt freely: swap the highlighted placeholders for your own details – or write a reading of your own. (CC BY-NC-SA 4.0)',
@@ -1315,7 +1312,7 @@ Object.assign(STR.en,{
   uc2link:'Read the MedKayfab Rules →',
   uniCta1:'Decks on Gumroad', uniCta2:'Read the Anti-Rules', uniCta3:'Read on Substack',
   deckLabel:'Or page through the deck', deckLoadTitle:'Load the deck', deckLoadSub:'≈ 3 MB PDF · click to open',
-  deckDl:'↗ Download the PDF', deckNote:'The “Epistemic Sabotage” card deck – the Cut-&-Play companion to this essay.',
+  deckDl:'↗ Download the PDF', deckNote:'The “Epistemic Sabotage” card deck – the Print, Cut-&-Play companion to this essay.',
   deckPagePrefix:'Page', deckLoading:'Loading the deck …', deckErr:'Could not load the deck – use the download link.'
 });
 
@@ -1853,8 +1850,6 @@ $('file').addEventListener('change',e=>addFiles(e.target.files));
 $('drop').addEventListener('drop',e=>{if(e.dataTransfer&&e.dataTransfer.files)addFiles(e.dataTransfer.files);});
 $('deck-prev').addEventListener('click',()=>deckNav(-1));
 $('deck-next').addEventListener('click',()=>deckNav(1));
-$('deck-zout').addEventListener('click',()=>deckZoomBy(-0.25));
-$('deck-zin').addEventListener('click',()=>deckZoomBy(0.25));
 window.addEventListener('resize',()=>{if(deckDoc&&S.tab==='video')renderDeck();});
 $('read').addEventListener('click',runRead);
 $('reset').addEventListener('click',resetAll);
