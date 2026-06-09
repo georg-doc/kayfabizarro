@@ -314,9 +314,17 @@ mark{background:var(--mark);color:var(--ink);padding:0 2px;}
 .deck-actions{margin-top:var(--sp-4);display:flex;flex-wrap:wrap;gap:var(--sp-3);align-items:center;}
 
 /* ESSAY */
-.origin-title{font-family:var(--ff-display);font-size:clamp(28px,4.5vw,42px);line-height:1.16;color:var(--ink);margin-bottom:var(--sp-4);max-width:780px;}
+.origin-title{font-family:var(--ff-display);font-size:clamp(28px,4.5vw,42px);line-height:1.16;color:var(--ink);margin-bottom:var(--sp-4);max-width:var(--lay-prose);}
 .origin-title .swipe{box-shadow:2px 2px 0 rgba(31,26,20,.22);}
 .origin-subtitle{font-style:italic;font-size:var(--fs-md);line-height:var(--lh-snug);color:var(--ink-3);margin-bottom:var(--sp-8);max-width:var(--lay-prose);}
+/* floating essay ToC (right marginalia, like the rules nav) */
+.essay-toc{display:none;}
+.essay-toc .toc-label{font-family:var(--ff-ui);font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-4);margin-bottom:10px;}
+.essay-toc a{display:block;padding:7px 0;color:var(--ink-3);text-decoration:none;border-bottom:1px dotted var(--border);font-family:var(--ff-ui);font-size:12px;line-height:1.3;letter-spacing:.01em;transition:color var(--dur-fast);}
+.essay-toc a:hover{color:var(--ink);}
+.essay-toc a.active{color:var(--accent);font-weight:700;}
+.sec-sub{scroll-margin-top:88px;}
+@media(min-width:1080px){.essay-toc{display:block;position:fixed;top:92px;left:calc(50% + 240px);width:196px;max-height:calc(100vh - 130px);overflow-y:auto;z-index:10;}}
 /* hand-drawn yellow highlighter — slightly irregular, sits under the ink */
 .hl{background-image:linear-gradient(101deg,rgba(233,193,74,0) 0.4%,var(--mark) 1.8%,rgba(233,193,74,.62) 50%,var(--mark) 97%,rgba(233,193,74,0) 99.6%);background-repeat:no-repeat;background-size:100% 88%;background-position:0 60%;border-radius:42% 12% 38% 16%/26% 60% 22% 50%;padding:0 .1em;margin:0 -.04em;-webkit-box-decoration-break:clone;box-decoration-break:clone;}
 /* demo callout — surfaces the interactive Five-Voices tab from the article */
@@ -566,7 +574,7 @@ mark{background:var(--mark);color:var(--ink);padding:0 2px;}
 </div>
 
 <!-- TAB: ESSAY -->
-<div class="page active" id="page-essay"><div class="wrap"><div id="essay-content"></div></div></div>
+<div class="page active" id="page-essay"><div class="wrap"><div id="essay-content"></div></div><nav id="essay-toc" class="essay-toc" aria-label="Inhalt"></nav></div>
 
 <!-- UNIVERSE TEASER -->
 <div class="universe">
@@ -1424,7 +1432,24 @@ function copyPrompt(){
 }
 function fallbackCopy(txt,done){try{const ta=document.createElement('textarea');ta.value=txt;ta.style.position='fixed';ta.style.opacity='0';document.body.appendChild(ta);ta.select();document.execCommand('copy');ta.remove();done();}catch(e){}}
 function copyText(txt,b){const done=()=>{b.classList.add('done');b.innerHTML='<span>✓ '+t().copied+'</span>';setTimeout(()=>{b.classList.remove('done');b.innerHTML=COPY_ICON+'<span>'+t().copy+'</span>';},1500);};if(navigator.clipboard&&navigator.clipboard.writeText)navigator.clipboard.writeText(txt).then(done).catch(()=>fallbackCopy(txt,done));else fallbackCopy(txt,done);}
-function renderEssay(){$('essay-content').innerHTML=ESSAY[S.lang];fillEssayPrompts();decorateEssay();}
+function buildEssayToc(){
+  var nav=$('essay-toc'); if(!nav) return;
+  var heads=document.querySelectorAll('#essay-content h2.sec-sub');
+  if(!heads.length){nav.innerHTML='';return;}
+  var html='<div class="toc-label">'+(S.lang==='de'?'Inhalt':'Contents')+'</div>';
+  heads.forEach(function(h,i){h.id='esec-'+i;html+='<a href="#esec-'+i+'" data-i="'+i+'">'+h.textContent+'</a>';});
+  nav.innerHTML=html;
+  nav.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(e){e.preventDefault();var t=$(a.getAttribute('href').slice(1));if(t)window.scrollTo({top:t.getBoundingClientRect().top+window.pageYOffset-88,behavior:'smooth'});});});
+  tocSpy();
+}
+function tocSpy(){
+  var nav=$('essay-toc'); if(!nav||S.tab!=='essay') return;
+  var heads=document.querySelectorAll('#essay-content h2.sec-sub'); if(!heads.length) return;
+  var cur=0; for(var i=0;i<heads.length;i++){ if(heads[i].getBoundingClientRect().top<=96) cur=i; }
+  nav.querySelectorAll('a').forEach(function(a){a.classList.toggle('active',(+a.getAttribute('data-i'))===cur);});
+}
+window.addEventListener('scroll',function(){if(S.tab==='essay')requestAnimationFrame(tocSpy);},{passive:true});
+function renderEssay(){$('essay-content').innerHTML=ESSAY[S.lang];fillEssayPrompts();decorateEssay();buildEssayToc();}
 function fillEssayPrompts(){
   const root=$('essay-content');if(!root)return;
   root.querySelectorAll('.promptblock[data-prompt]').forEach(pb=>{
