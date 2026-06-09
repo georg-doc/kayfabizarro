@@ -1021,7 +1021,7 @@ const STR = {
     vidYt:'\u2197 Auf YouTube ansehen',
     vidCaption:'„Epistemic Sabotage“ \u2013 das Cut-&-Play-Kartendeck zu diesem Essay, vertont als FrizzleTune. Jede Karte ist eine der Anwendungen oder eine der Lesarten, in ein Bestiarium übersetzt.',
     footSig:'Lies meinen Comic. Zeichne ihn nicht.',
-    footBar:'Text &amp; Prompts von Georg Graf von Westphalen · <a href="https://www.cimoc.de/post/818535352848596992/lass-die-ki-deine-comics-lesen-nicht-zeichnen" target="_blank" rel="noopener">Originalartikel lesen</a>' },
+    footBar:'Lizenz: <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener">CC BY-NC-SA 4.0</a> · Text &amp; Prompts von Georg Graf von Westphalen · <a href="https://www.cimoc.de/post/818535352848596992/lass-die-ki-deine-comics-lesen-nicht-zeichnen" target="_blank" rel="noopener">Originalartikel lesen</a>' },
   en:{ tabs:{voices:'AI Comic Readings',video:'Cut & Play Comic',essay:'Essay'},
     vEyebrow:'Tool', vTitle:'Let FrizzleBob read your comic',
     vSub:'Upload a page, pick a reading stance, let the FrizzleBob AI read instead of draw.',
@@ -1038,7 +1038,7 @@ const STR = {
     vidYt:'\u2197 Watch on YouTube',
     vidCaption:'\u201cEpistemic Sabotage\u201d \u2013 the Cut & Play card deck companion to this essay, set to a FrizzleTune. Each card is one of the uses or one of the readings, translated into a bestiary.',
     footSig:'Read my comic. Don\u2019t draw it.',
-    footBar:'Text &amp; prompts by Georg Graf von Westphalen · <a href="https://cancelthiscomic.substack.com/p/let-the-ai-read-your-comics-not-draw" target="_blank" rel="noopener">Read the original article</a>' }
+    footBar:'License: <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener">CC BY-NC-SA 4.0</a> · Text &amp; prompts by Georg Graf von Westphalen · <a href="https://cancelthiscomic.substack.com/p/let-the-ai-read-your-comics-not-draw" target="_blank" rel="noopener">Read the original article</a>' }
 };
 
 // ---------------- ESSAY ----------------
@@ -1121,7 +1121,6 @@ ESSAY.de=`
 <div class="promptblock vbg2" data-prompt="pagespeaks">`+esc(voiceById('pagespeaks').de.prompt)+`</div>
 <p class="prompt-intro vbg3">15. Die Archäologin aus dem Jahr 2525. Gräbt deinen Comic kontextlos aus – was überlebt, was wird missverstanden?</p>
 <div class="promptblock vbg3" data-prompt="archaeologist">`+esc(voiceById('archaeologist').de.prompt)+`</div>
-<div class="license">Dieser Text und die Prompts von Georg Graf von Westphalen stehen unter der Creative-Commons-Lizenz Namensnennung \u2013 Nicht kommerziell \u2013 Weitergabe unter gleichen Bedingungen 4.0 (CC BY-NC-SA 4.0). Du darfst sie teilen und weiterentwickeln, solange du den Autor nennst, auf `+A(L.origDE,'das Original')+` verlinkst, nichts kommerziell nutzt und deine eigene Fassung klar als Fork kennzeichnest. `+A('https://creativecommons.org/licenses/by-nc-sa/4.0/','Lizenztext')+`.</div>
 `;
 ESSAY.en=`
 <h1 class="origin-title">Let the AI <span class="swipe">Read</span> Your Comics, Not Draw Them</h1>
@@ -1199,7 +1198,6 @@ ESSAY.en=`
 <div class="promptblock vbg2" data-prompt="pagespeaks">`+esc(voiceById('pagespeaks').en.prompt)+`</div>
 <p class="prompt-intro vbg3">15. The Archaeologist from 2525. Excavates your comic with no context – what survives, what gets misread?</p>
 <div class="promptblock vbg3" data-prompt="archaeologist">`+esc(voiceById('archaeologist').en.prompt)+`</div>
-<div class="license">This text and the prompts by Georg Graf von Westphalen are published under a Creative Commons license: Attribution \u2013 NonCommercial \u2013 ShareAlike 4.0 (CC BY-NC-SA 4.0). You may share and build on them, as long as you credit the author, link back to `+A(L.origEN,'the original')+`, keep it non-commercial, and clearly mark your own version as a fork. `+A('https://creativecommons.org/licenses/by-nc-sa/4.0/','License')+`.</div>
 `;
 
 // ---------------- EXTRA STRINGS (new UI) ----------------
@@ -1333,7 +1331,6 @@ function showTab(name,btn){
   $('page-'+name).classList.add('active');
   (btn||$('tb-'+name)).classList.add('active');
   var _uni=document.querySelector('.universe'); if(_uni)_uni.style.display=(name==='video')?'':'none';
-  var _hf=document.querySelector('.hub-foot'); if(_hf)_hf.style.display=(name==='essay')?'none':'';
   if(name==='essay') renderEssay();
   if(name==='video') ensureDeck();
   window.scrollTo(0,0);
