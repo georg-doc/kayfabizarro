@@ -191,7 +191,14 @@ mark{background:var(--mark);color:var(--ink);padding:0 2px;}
 .voice .vn-n{margin-right:.12em;}
 .voice .vb{display:block;font-size:12.5px;color:var(--ink-3);line-height:1.42;}
 .voice .tag{display:inline-block;margin-top:9px;font-family:var(--ff-ui);font-size:10px;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);border:1px solid var(--border-2);padding:2px 7px;}
-.voice .pick{display:none;position:absolute;top:-8px;right:-8px;font-family:var(--ff-ui);font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#f6efd9;background:var(--accent);padding:2px 7px;border:1.5px solid var(--ink);transform:rotate(-4deg);}
+.voice .io-tag{display:inline-flex;align-items:center;gap:4px;align-self:flex-start;margin-top:9px;font-family:var(--ff-ui);font-size:9.5px;letter-spacing:.05em;text-transform:uppercase;color:var(--ink-3);border:1px solid var(--border-2);padding:2px 7px;}
+.voice .io-tag svg{opacity:.75;flex:none;}
+.voice .tile-copy{position:absolute;top:9px;right:9px;display:flex;align-items:center;gap:5px;opacity:0;pointer-events:none;font-family:var(--ff-ui);font-size:11px;text-transform:uppercase;letter-spacing:.04em;color:#f6efd9;background:var(--accent);border:1.5px solid var(--ink);padding:5px 9px;cursor:pointer;transition:opacity var(--dur-fast),transform var(--dur-fast),box-shadow var(--dur-fast);z-index:3;box-shadow:var(--sh-soft);}
+.voice .tile-copy svg{width:13px;height:13px;flex:none;}
+.voice.on:hover .tile-copy{opacity:1;pointer-events:auto;}
+.voice .tile-copy:hover{transform:rotate(-1.4deg);box-shadow:2px 2px 0 rgba(31,26,20,.22);}
+.voice .tile-copy.done{color:#fff;background:var(--accent);border-color:var(--ink);}
+.voice .pick{display:none;position:absolute;top:-8px;right:-8px;font-family:var(--ff-ui);font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#fff;background:var(--teal);padding:2px 7px;border:1.5px solid var(--ink);transform:rotate(-4deg);}
 .voice.on .pick{display:block;}
 /* WIP / weitere Stimmen — collapsible */
 .wip-toggle{display:inline-flex;align-items:center;gap:9px;margin-top:18px;font-family:var(--ff-ui);font-size:var(--fs-sm);letter-spacing:.03em;color:var(--ink);background:var(--paper-card);border:1.5px solid var(--ink);box-shadow:var(--sh-soft);cursor:pointer;padding:8px 14px;transition:transform var(--dur-fast),background var(--dur-fast),color var(--dur-fast),box-shadow var(--dur-fast);}
@@ -512,7 +519,7 @@ mark{background:var(--mark);color:var(--ink);padding:0 2px;}
       <div class="drop" id="drop">
         <div class="big" id="dropbig"></div>
         <div class="hint" id="drophint"></div>
-        <input type="file" id="file" accept="image/png,image/jpeg,image/webp,image/gif,application/pdf" multiple style="display:none" />
+        <input type="file" id="file" accept="image/png,image/jpeg,image/webp,image/gif,application/pdf,text/plain,text/markdown,application/json,text/csv,.md,.markdown,.txt,.json,.csv,.tsv" multiple style="display:none" />
       </div>
       <div class="thumbs" id="thumbs"></div>
     </section>
@@ -626,7 +633,7 @@ mark{background:var(--mark);color:var(--ink);padding:0 2px;}
 <script>
 /* Additional reading stances for FrizzleBob's Comic Reader.
    Same schema as the built-in VOICES. Pushed onto VOICES at runtime.
-   #6 = eye (primary, slot 2). #7–14 = work-in-progress voices. */
+   #6 = eye (primary, slot 2). #7–16 = work-in-progress voices. */
 window.EXTRA_VOICES = [
   { id:'eye',
     de:{ name:'Das Auge', blurb:'Keine Meinung, nur Mechanik: wohin der Blick zuerst springt, welchen Weg er nimmt, wo er stolpert.',
@@ -856,7 +863,57 @@ Read the uploaded comic as a formal language. The following six axes are your gr
 5. Word and image: How do text and image work together, where do they contradict each other? Where would less text be more, where is a word missing?
 6. Formal ambition: What does this work attempt at the level of the medium, not just the story? Where does it succeed, where does it fall short of its own ambition?
 
-Close with what the work could do formally but doesn't yet – the unused move, the omitted tool. The aim is for the artist to see their own instrument more sharply and reach for it more deliberately next time.` } }
+Close with what the work could do formally but doesn't yet – the unused move, the omitted tool. The aim is for the artist to see their own instrument more sharply and reach for it more deliberately next time.` } },
+  { id:'dialogdoc',
+    de:{ name:'Der Dialog-Doktor', blurb:'Liest nur die Worte: eigene Stimme pro Figur, Subtext, on the nose, Wort gegen Bild. Skript reicht, Seiten gehen auch.',
+      prompt:`Du bist ein Dialog-Doktor mit feinem Ohr für gesprochene Sprache im Comic. Du liest zuerst die Worte – Dialoge, Sprechblasen, Captions, Soundwords –, ob als Skript, Dialogliste oder in den Seiten selbst. Das Bild brauchst du nicht; ist es da, prüfst du das Zusammenspiel.
+
+Lies die Sprache der Arbeit als Ganzes, nicht Zeile für Zeile abgehakt; die folgenden Fäden sind dein Gehör, nicht deine Gliederung:
+
+Stimmen: Hat jede Figur einen eigenen Klang – Wortwahl, Rhythmus, Satzlänge –, oder spricht alles mit derselben Stimme? Wo könntest du den Namen abdecken und trotzdem wissen, wer redet?
+Subtext: Wo sagen die Figuren genau, was sie meinen, und wo läge die stärkere Zeile darunter? Wo ist der Dialog zu erklärend?
+Wort und Bild: Wo doppelt der Text, was das Bild ohnehin zeigt? Wo wäre Schweigen oder eine Geste stärker als ein Satz?
+Last: Wo wird Handlung über Dialog ausgekippt, wo trägt eine Zeile mehr, als sie verkraftet?
+Klang: Lies die Zeilen innerlich laut. Wo stolpert die Zunge, wo fehlt ein Beat, wo sitzt eine Pointe einen Takt zu früh oder zu spät?
+
+Schließe mit der einen Zeile oder dem einen Schnitt, der am meisten brächte – das ungenutzte Schweigen, der schärfere Subtext –, damit der Autor seine Figuren beim nächsten Mal noch genauer hört.` },
+    en:{ name:'The Dialogue Doctor', blurb:'Reads only the words: a voice per character, subtext, on-the-nose lines, word vs image. A script is enough, pages work too.',
+      prompt:`You are a dialogue doctor with a fine ear for spoken language in comics. You read the words first – dialogue, speech balloons, captions, sound words – whether as a script, a dialogue list, or inside the pages themselves. You don't need the art; if it's there, you check how the two play together.
+
+Read the language of the work as a whole, not ticked off line by line; the following threads are your ear, not your outline:
+
+Voices: Does each character have their own sound – word choice, rhythm, sentence length – or does everything speak in the same voice? Where could you cover the name and still know who's talking?
+Subtext: Where do characters say exactly what they mean, and where would the stronger line sit underneath? Where is the dialogue too explanatory?
+Word and image: Where does the text duplicate what the picture already shows? Where would silence or a gesture beat a sentence?
+Load: Where is plot dumped through dialogue, where does a line carry more than it can bear?
+Sound: Read the lines aloud in your head. Where does the tongue stumble, where is a beat missing, where does a punchline land a tick too early or too late?
+
+Close with the one line or the one cut that would do the most – the unused silence, the sharper subtext – so the writer hears their characters even more precisely next time.` } },
+  { id:'konzeptleser',
+    de:{ name:'Der Konzept-Leser', blurb:'Liest dein Konzept vor der ersten Seite: trägt die Grundidee? Wo ist der Kern, wo franst er aus? Synopsis oder Outline genügt.',
+      prompt:`Du bist ein Konzept-Leser, der eine Comic-Idee prüft, bevor eine einzige Seite gezeichnet ist. Du arbeitest mit Synopsis, Exposé, Treatment, Outline oder ein paar Stichworten – mit dem, was vor den Seiten kommt. Du bewertest nicht die Ausführung, sondern den Kern.
+
+Lies das Konzept als Ganzes; die folgenden Fragen sind dein Raster, nicht deine Gliederung:
+
+Grundidee: Was ist die Geschichte wirklich, in einem Satz? Trägt dieser Kern eine ganze Arbeit, oder ist es eher eine Prämisse für eine einzelne Szene?
+Spannung: Wo sitzt der zentrale Konflikt, die Frage, die den Leser zieht? Wo franst sie aus, wo ist sie noch nicht entschieden?
+Versprechen: Was verspricht das Konzept dem Leser – Ton, Genre, Erfahrung –, und hält die Idee es ein?
+Form: Warum Comic? Was kann diese Geschichte als sequenzielles Bild, das sie als Prosa oder Film nicht könnte?
+Lücke: Was fehlt, damit aus der Idee eine Arbeit wird – eine Figur, eine Entscheidung, ein Ende?
+
+Bleib beim Konzept, nicht an der Sprache der Beschreibung. Schließe mit der einen Schärfung, die den Kern am meisten stärkt – die Frage, die du dir vor der ersten Seite beantworten würdest –, damit der Autor auf klarerem Fundament zu zeichnen beginnt.` },
+    en:{ name:'The Concept Reader', blurb:'Reads your concept before page one: does the core idea hold? Where is the center, where does it fray? A synopsis or outline is enough.',
+      prompt:`You are a concept reader who tests a comic idea before a single page is drawn. You work with a synopsis, an exposé, a treatment, an outline, or a handful of notes – with what comes before the pages. You don't judge the execution, you judge the core.
+
+Read the concept as a whole; the following questions are your grid, not your outline:
+
+Core idea: What is the story really, in one sentence? Can that core carry a whole work, or is it more a premise for a single scene?
+Tension: Where is the central conflict, the question that pulls the reader? Where does it fray, where is it not yet decided?
+Promise: What does the concept promise the reader – tone, genre, experience – and does the idea keep it?
+Form: Why a comic? What can this story do as sequential images that it couldn't as prose or film?
+Gap: What is missing to turn the idea into a work – a character, a decision, an ending?
+
+Stay with the concept, not the language of the description. Close with the one sharpening that strengthens the core most – the question you'd answer for yourself before page one – so the author starts drawing on a clearer foundation.` } }
 ];
 </script>
 <script>
@@ -1047,7 +1104,7 @@ const STR = {
     vSub:'Lad eine Seite hoch, wähl eine Lesart, lass die FrizzleBob-KI lesen statt zeichnen.',
     cut:'an der punktierten linie schneiden',
     s1:'1 · Lesart wählen', s2:'2 · Seiten hochladen', s3:'3 · Prompt (frei editierbar)',
-    dropbig:'Seiten hierher ziehen oder klicken', drophint:'PNG, JPG oder PDF · bis zu 8 Seiten',
+    dropbig:'Seiten hierher ziehen oder klicken', drophint:'PNG, JPG, PDF oder Text (TXT, MD, JSON, CSV) · bis zu 8 Seiten',
     promptnote:'Editierbar. Tausch die gelb markierten Platzhalter gegen deine eigenen Angaben, oder schreib eine eigene Lesart.',
     read:'Lesen lassen', reset:'Neu anfangen', send:'Senden', fu:'Diese Lesart weiterfragen \u2026',
     copy:'Prompt kopieren', copied:'Kopiert',
@@ -1058,13 +1115,13 @@ const STR = {
     vidYt:'\u2197 Auf YouTube ansehen',
     vidCaption:'„Epistemic Sabotage“ \u2013 das Cut-&-Play Comic-Kartendeck zu diesem Essay, vertont als '+FTLINK+'. Jede Karte ist eine der KI-Anwendungen oder eine der Comic-Lesarten, in ein spielbares Cartoon-Bestiarium übersetzt.',
     footSig:'Lies meinen Comic. Zeichne ihn nicht.',
-    footBar:'Lizenz: <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener">CC BY-NC-SA 4.0</a> · Text &amp; Prompts von Georg Graf von Westphalen · <a href="https://www.cimoc.de/post/818535352848596992/lass-die-ki-deine-comics-lesen-nicht-zeichnen" target="_blank" rel="noopener">Originalartikel lesen</a>' },
+    footBar:'Lizenz: <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener">CC BY-NC-SA 4.0</a> · Text &amp; Prompts von Georg Graf von Westphalen · <a href="https://www.cimoc.de/post/818535352848596992/lass-die-ki-deine-comics-lesen-nicht-zeichnen" target="_blank" rel="noopener">Originalartikel lesen</a> · Hinweis: Für Lektorat, Design und Funktionen wurde KI verwendet (claude, chatgpt, gemini, deepseek).' },
   en:{ tabs:{voices:'AI Comic Readings',video:'Cut & Play Comic',essay:'Essay'},
     vEyebrow:'Tool', vTitle:'Let FrizzleBob read your comic',
     vSub:'Upload a page, pick a reading stance, let the FrizzleBob AI read instead of draw.',
     cut:'cut along the dotted line',
     s1:'1 · Choose a reading', s2:'2 · Upload pages', s3:'3 · Prompt (edit freely)',
-    dropbig:'Drag pages here or click', drophint:'PNG, JPG or PDF · up to 8 pages',
+    dropbig:'Drag pages here or click', drophint:'PNG, JPG, PDF or text (TXT, MD, JSON, CSV) · up to 8 pages',
     promptnote:'Editable. Swap the highlighted placeholders for your own details, or write a reading of your own.',
     read:'Read it', reset:'Start over', send:'Send', fu:'Ask this reading a follow-up \u2026',
     copy:'Copy prompt', copied:'Copied',
@@ -1075,7 +1132,7 @@ const STR = {
     vidYt:'\u2197 Watch on YouTube',
     vidCaption:'\u201cEpistemic Sabotage\u201d \u2013 the Cut & Play Comic card deck for this essay, set to a '+FTLINK+'. Each card is one of the AI uses or one of the comic readings, translated into a playable cartoon bestiary.',
     footSig:'Read my comic. Don\u2019t draw it.',
-    footBar:'License: <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener">CC BY-NC-SA 4.0</a> · Text &amp; prompts by Georg Graf von Westphalen · <a href="https://cancelthiscomic.substack.com/p/let-the-ai-read-your-comics-not-draw" target="_blank" rel="noopener">Read the original article</a>' }
+    footBar:'License: <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener">CC BY-NC-SA 4.0</a> · Text &amp; prompts by Georg Graf von Westphalen · <a href="https://cancelthiscomic.substack.com/p/let-the-ai-read-your-comics-not-draw" target="_blank" rel="noopener">Read the original article</a> · Note: AI was used for copy-editing, design and features (claude, chatgpt, gemini, deepseek).' }
 };
 
 // ---------------- ESSAY ----------------
@@ -1084,7 +1141,7 @@ function A(h,t){return '<a href="'+h+'" target="_blank" rel="noopener">'+t+'</a>
 const ESSAY={};
 ESSAY.de=`
 <h1 class="origin-title">Lass die KI deine Comics <span class="swipe">lesen</span> \u2013 nicht zeichnen</h1>
-<p class="origin-subtitle">Ein Vorschlag, die Debatte konstruktiv zu erweitern. Mit 16 Comic-Lesarten als Prompts zum <a class="tablink" href="#readings_de">sofort Ausprobieren</a>.</p>
+<p class="origin-subtitle">Ein Vorschlag, die Debatte konstruktiv zu erweitern. Mit 18 Comic-Lesarten als Prompts zum <a class="tablink" href="#readings_de">sofort Ausprobieren</a>.</p>
 <div class="note">Vorbemerkung für meine Freunde aus dem Comicseminar: Dieser Text ist die praktische Verlängerung meines `+A(L.vid,'Mini-Workshops beim Comicseminar Erlangen 2023')+` und des Artikels `+A(L.sub,'\u201eKI: dein Feind und Helfer\u201c')+`, der daraus entstand. Das \u201eund\u201c war Absicht, es ging mir nie um ein Entweder-oder. Die wirklich großen Fragen klammere ich hier bewusst aus: Technokratie, `+A(L.darkDE,'\u201eDark Enlightenment\u201c')+`, den `+A(L.alj,'militärischen Einsatz von KI in Ukraine, Gaza und anderswo')+`. Über die ließen sich mit gutem Grund mehr Tränen vergießen als über das Schicksal der eigenen Zeichenkunst, und in unserer zeichnerischen Nabelschau tauchen sie viel zu selten überhaupt auf. Aber sie gehören an einen anderen Tisch. Hier geht es ums Handwerk, um das, was man morgen ausprobieren kann.</div>
 <p class="prose">\u201eKI: Freund oder Feind?\u201c So stand es auf dem Podium, und ehrlich gesagt fand ich die Frage schon platt, bevor sie diskutiert wurde. Nicht weil die Sorge unbegründet wäre: <span class="hl">Die Angst vor Jobverlust ist real</span>, der generative Stil-Klau ein echtes Problem, und die urheberrechtlichen Fragen sind alles andere als geklärt. Diese Auseinandersetzung muss geführt werden, und sie wird vielerorts zu Recht hart geführt.</p>
 <p class="prose">Aber die Debatte hat sich an einer einzigen Nutzung festgebissen: an der KI, die <em>zeichnet</em> (animiert, musiziert etc.). An der Maschine, die einen Stil imitiert, ein Bild ausspuckt, einen Menschen am Zeichentisch ersetzen soll. Daneben gibt es <span class="hl">ein zweites Register, über das kaum jemand spricht</span>: die KI, die <em>liest</em>.</p>
@@ -1117,8 +1174,8 @@ ESSAY.de=`
 <p class="prose">Das macht die Werkzeuge nicht unschuldig. Sie stammen von denselben Konzernen, deren Umgang mit Trainingsdaten zu Recht umkämpft ist. Aber die Frage \u201ewelches Werkzeug\u201c ist die kleinere. Die größere lautet: Welche Nutzung verschiebt Macht zu den Urhebenden, und welche von ihnen weg?</p>
 <p class="prose">Eine KI, die meinen Stil abkupfert, zieht Wert ab. Eine KI, die meinen Comic für mehr Menschen lesbar macht oder mir ein ehrliches erstes Feedback gibt, fügt welchen hinzu. Das ist kein Argument für die Konzerne, sondern eines dafür, sich <span class="hl">die Nutzung nicht von ihnen diktieren zu lassen</span>.</p>
 <h2 class="sec-sub">Lesarten für deinen Comic</h2>
-<p class="prose">Am überzeugendsten ist das alles ohnehin nicht als Argument, sondern als Erfahrung. Darum hier 15 Prompts zum Ausprobieren: kopieren, einen eigenen Comic als PNG oder PDF hochladen, Prompt einfügen, lesen lassen. Oder gleich der Tab <a class="tablink" href="#readings_de">Lesarten</a> oben.</p>
-<p class="prose">Jeder Prompt setzt eine andere Lesehaltung auf. Sie ersetzen kein menschliches Lektorat und keine Kollegin, der man vertraut. Aber sie geben einem 15 Blickwinkel, bevor man überhaupt jemanden fragt: kostenlos, sofort, zu jeder Uhrzeit.</p>
+<p class="prose">Am überzeugendsten ist das alles ohnehin nicht als Argument, sondern als Erfahrung. Darum hier 18 Prompts zum Ausprobieren: kopieren, einen eigenen Comic als PNG oder PDF hochladen, Prompt einfügen, lesen lassen. Oder gleich der Tab <a class="tablink" href="#readings_de">Lesarten</a> oben.</p>
+<p class="prose">Jeder Prompt setzt eine andere Lesehaltung auf. Sie ersetzen kein menschliches Lektorat und keine Kollegin, der man vertraut. Aber sie geben einem 18 Blickwinkel, bevor man überhaupt jemanden fragt: kostenlos, sofort, zu jeder Uhrzeit.</p>
 <p class="prompt-intro vbg1">1. Die erste Lesung. Liest deinen Comic wie ein echtes Publikum, das ihn zum ersten Mal sieht. Bewertet nicht, ob er „gut“ ist, sondern berichtet, was beim Lesen tatsächlich im Kopf passiert. Die Zielgruppe in eckigen Klammern tauschst du gegen deine eigene aus: Fantasy-Fans, Comic-Nerds, Schulklasse, wer auch immer.</p>
 <div class="promptblock vbg1" data-prompt="first">`+esc(voiceById('first').de.prompt)+`</div>
 <p class="prompt-intro vbg2">2. Das Auge. Keine Meinung, nur Mechanik: wohin der Blick zuerst springt, welchen Weg er nimmt, wo er stolpert.</p>
@@ -1160,10 +1217,14 @@ ESSAY.de=`
 <div class="promptblock vbg3" data-prompt="pagespeaks">`+esc(voiceById('pagespeaks').de.prompt)+`</div>
 <p class="prompt-intro vbg4">16. Die Archäologin aus dem Jahr 2525. Gräbt deinen Comic kontextlos aus – was überlebt, was wird missverstanden?</p>
 <div class="promptblock vbg4" data-prompt="archaeologist">`+esc(voiceById('archaeologist').de.prompt)+`</div>
+<p class="prompt-intro vbg5">17. Der Dialog-Doktor. Liest nur die Worte: eigene Stimme pro Figur, Subtext, on the nose, Wort gegen Bild. Skript reicht, Seiten gehen auch.</p>
+<div class="promptblock vbg5" data-prompt="dialogdoc">`+esc(voiceById('dialogdoc').de.prompt)+`</div>
+<p class="prompt-intro vbg6">18. Der Konzept-Leser. Liest dein Konzept vor der ersten Seite: trägt die Grundidee? Wo ist der Kern, wo franst er aus? Synopsis oder Outline genügt.</p>
+<div class="promptblock vbg6" data-prompt="konzeptleser">`+esc(voiceById('konzeptleser').de.prompt)+`</div>
 `;
 ESSAY.en=`
 <h1 class="origin-title">Let the AI <span class="swipe">Read</span> Your Comics, Not Draw Them</h1>
-<p class="origin-subtitle">A proposal to broaden the debate, constructively. With 16 comic readings as prompts to <a class="tablink" href="#readings">try out right now</a>.</p>
+<p class="origin-subtitle">A proposal to broaden the debate, constructively. With 18 comic readings as prompts to <a class="tablink" href="#readings">try out right now</a>.</p>
 <div class="note">A note for my friends from the comic seminar: This piece is the practical extension of my `+A(L.vid,'mini-workshop at the Erlangen Comic Seminar in 2023')+` and the article `+A(L.sub,'\u201cAI: Your Enemy and Helper\u201d')+` that grew out of it (both in German). The \u201cand\u201d was deliberate; it was never an either/or for me. The really big questions I\u2019m leaving out on purpose: technocracy, the `+A(L.darkEN,'\u201cDark Enlightenment\u201d')+`, the `+A(L.alj,'military use of AI in Ukraine, Gaza and elsewhere')+`. Those deserve more tears, with good reason, than the fate of our own draftsmanship, and in our artistic navel-gazing they barely come up at all. But they belong at a different table. This is about craft, about what you can try tomorrow.</div>
 <p class="prose">\u201cAI: friend or foe?\u201d That was the framing on the panel, and honestly I found the question flat before it was even discussed. Not because the worry is groundless. <span class="hl">The fear of losing work is real</span>, generative style-theft is a genuine problem, and the copyright questions are anything but settled. That fight has to happen, and in many places it is being fought hard, rightly so.</p>
 <p class="prose">But the debate has fixated on a single use: the AI that <em>draws</em> (animates, composes, and so on). The machine that imitates a style, spits out an image, is meant to replace a human at the drawing table. Next to it sits <span class="hl">a second register almost nobody talks about</span>: the AI that <em>reads</em>.</p>
@@ -1196,8 +1257,8 @@ ESSAY.en=`
 <p class="prose">None of this makes the tools innocent. They come from the same corporations whose handling of training data is rightly being fought over. But the question of which tool is the smaller one. The bigger one is: <span class="hl">which use shifts power toward creators</span>, and which shifts it away from them?</p>
 <p class="prose">An AI that copies my style subtracts value. An AI that makes my comic readable for more people, or gives me an honest first round of feedback, adds some. That\u2019s not an argument for the corporations, it\u2019s an argument for not letting them dictate the use.</p>
 <h2 class="sec-sub">Readings for Your Comic</h2>
-<p class="prose">The most convincing version of all this isn’t an argument anyway, it’s an experience. So here are 15 prompts to try: copy one, upload your own comic as PNG or PDF, paste the prompt, let it read. Or just use the <a class="tablink" href="#readings">Readings</a> tab above.</p>
-<p class="prose">Each prompt sets a different reading stance. They don’t replace a human editor or a colleague you trust. But they give you 15 perspectives before you even ask anyone: free, instant, any time of day.</p>
+<p class="prose">The most convincing version of all this isn’t an argument anyway, it’s an experience. So here are 18 prompts to try: copy one, upload your own comic as PNG or PDF, paste the prompt, let it read. Or just use the <a class="tablink" href="#readings">Readings</a> tab above.</p>
+<p class="prose">Each prompt sets a different reading stance. They don’t replace a human editor or a colleague you trust. But they give you 18 perspectives before you even ask anyone: free, instant, any time of day.</p>
 <p class="prompt-intro vbg1">1. The First Reading. Reads your comic the way a real audience would, seeing it for the first time. It doesn’t judge whether it’s “good”, it reports what actually goes through the reader’s head. Swap the target audience in square brackets for your own: fantasy fans, comic nerds, a school class, whoever.</p>
 <div class="promptblock vbg1" data-prompt="first">`+esc(voiceById('first').en.prompt)+`</div>
 <p class="prompt-intro vbg2">2. The Eye. No opinion, just mechanics: where the eye lands first, the path it takes, where it snags.</p>
@@ -1239,6 +1300,10 @@ ESSAY.en=`
 <div class="promptblock vbg3" data-prompt="pagespeaks">`+esc(voiceById('pagespeaks').en.prompt)+`</div>
 <p class="prompt-intro vbg4">16. The Archaeologist from 2525. Excavates your comic with no context – what survives, what gets misread?</p>
 <div class="promptblock vbg4" data-prompt="archaeologist">`+esc(voiceById('archaeologist').en.prompt)+`</div>
+<p class="prompt-intro vbg5">17. The Dialogue Doctor. Reads only the words: a voice per character, subtext, on-the-nose lines, word vs image. A script is enough, pages work too.</p>
+<div class="promptblock vbg5" data-prompt="dialogdoc">`+esc(voiceById('dialogdoc').en.prompt)+`</div>
+<p class="prompt-intro vbg6">18. The Concept Reader. Reads your concept before page one: does the core idea hold? Where is the center, where does it fray? A synopsis or outline is enough.</p>
+<div class="promptblock vbg6" data-prompt="konzeptleser">`+esc(voiceById('konzeptleser').en.prompt)+`</div>
 `;
 
 // ---------------- EXTRA STRINGS (new UI) ----------------
@@ -1338,7 +1403,7 @@ STR.en.keyHint='With your own API key (gear icon above) I can read more pages at
 
 // ---------------- GROUPS ----------------
 const PRIMARY_IDS=['first','eye','colleague','critic','future','pitch'];
-const WIP_IDS=['curateur','theoretiker','literalist','synaesthete','doomscroller','superfan','heckler','carny','pagespeaks','archaeologist'];
+const WIP_IDS=['curateur','theoretiker','literalist','synaesthete','doomscroller','superfan','heckler','carny','pagespeaks','archaeologist','dialogdoc','konzeptleser'];
 
 // ---------------- STATE ----------------
 const S={lang:'de',tab:'essay',voice:null,files:[],messages:[],loading:false,read:false,
@@ -1437,6 +1502,11 @@ function copyPrompt(){
 }
 function fallbackCopy(txt,done){try{const ta=document.createElement('textarea');ta.value=txt;ta.style.position='fixed';ta.style.opacity='0';document.body.appendChild(ta);ta.select();document.execCommand('copy');ta.remove();done();}catch(e){}}
 function copyText(txt,b){const done=()=>{b.classList.add('done');b.innerHTML='<span>✓ '+t().copied+'</span>';setTimeout(()=>{b.classList.remove('done');b.innerHTML=COPY_ICON+'<span>'+t().copy+'</span>';},1500);};if(navigator.clipboard&&navigator.clipboard.writeText)navigator.clipboard.writeText(txt).then(done).catch(()=>fallbackCopy(txt,done));else fallbackCopy(txt,done);}
+function copyTilePrompt(id,el){
+  var v=voiceById(id);var txt=(v&&v[S.lang]&&v[S.lang].prompt)||'';var orig=el.innerHTML;
+  var done=function(){el.classList.add('done');el.innerHTML='\u2713 '+t().copied;setTimeout(function(){el.classList.remove('done');el.innerHTML=orig;},1500);};
+  if(navigator.clipboard&&navigator.clipboard.writeText)navigator.clipboard.writeText(txt).then(done).catch(function(){fallbackCopy(txt,done);});else fallbackCopy(txt,done);
+}
 function buildEssayToc(){
   var nav=$('essay-toc'); if(!nav) return;
   var heads=document.querySelectorAll('#essay-content h2.sec-sub');
@@ -1467,7 +1537,7 @@ function fillEssayPrompts(){
       const ttl=(v.synced?(S.lang==='de'?'aktuelle Version von GitHub':'current version from GitHub'):(S.lang==='de'?'mitgelieferte Version':'bundled version'))+' \u00b7 '+PROMPT_SRC[v.id]+'.md';
       chip='<span class="pb-ver'+(v.synced?' is-synced':'')+'" title="'+esc(ttl)+'">v'+esc(v.version||'1.0')+'</span>';
     }else{chip='';}
-    pb.innerHTML=chip+'<div class="pb-text">'+esc(txt)+'</div>';
+    pb.innerHTML=chip+'<div class="pb-text">'+highlightPrompt(txt)+'</div>';
   });
 }
 function decorateEssay(){
@@ -1498,13 +1568,19 @@ function decorateEssay(){
 }
 
 // ---------------- VOICES RENDER ----------------
+const TEXT_ONLY=['konzeptleser'];
+function ioTag(id){
+  if(TEXT_ONLY.indexOf(id)<0)return '';
+  var TXT='<svg viewBox="0 0 16 16" width="11" height="11" aria-hidden="true"><path d="M3 4.5h10M3 8h10M3 11.5h7" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>';
+  return '<span class="io-tag">'+TXT+'Text</span>';
+}
 function voiceCard(v,n){
   const d=v[S.lang];
   const el=document.createElement('button');
   el.className='voice vbg'+(((n-1)%6)+1)+(v.id===S.voice?' on':'');
   let tag='';
-  if(v.id==='pitch')tag='<span class="tag">'+esc(t().pitchTag)+'</span>';
-  el.innerHTML='<span class="pick">'+esc(t().pick)+'</span><span class="vn"><span class="vn-n">'+n+'.</span>'+esc(d.name)+'</span><span class="vb">'+esc(d.blurb)+'</span>'+tag;
+  if(/\[[^\]]+\]/.test((v[S.lang]&&v[S.lang].prompt)||''))tag='<span class="tag">'+esc(t().pitchTag)+'</span>';
+  el.innerHTML='<span class="pick">'+esc(t().pick)+'</span><span class="vn"><span class="vn-n">'+n+'.</span>'+esc(d.name)+'</span><span class="vb">'+esc(d.blurb)+'</span>'+ioTag(v.id)+tag+'<span class="tile-copy" onclick="event.stopPropagation();copyTilePrompt(\''+v.id+'\',this)">'+COPY_ICON+'<span>'+(S.lang==='de'?'Prompt kopieren':'Copy prompt')+'</span></span>';
   el.onclick=()=>chooseVoice(v.id);
   return el;
 }
@@ -1549,7 +1625,7 @@ function renderThumbs(){
   const box=$('thumbs');box.innerHTML='';
   S.files.forEach((f,i)=>{
     const d=document.createElement('div');d.className='thumb';
-    if(f.kind==='image')d.innerHTML='<img src="'+f.dataURL+'" alt="">';else d.innerHTML='<div class="pdf">PDF<br>'+esc(f.name.slice(0,16))+'</div>';
+    if(f.kind==='image')d.innerHTML='<img src="'+f.dataURL+'" alt="">';else if(f.kind==='text')d.innerHTML='<div class="pdf">'+esc(f.label||'TXT')+'<br>'+esc(f.name.slice(0,16))+'</div>';else d.innerHTML='<div class="pdf">PDF<br>'+esc(f.name.slice(0,16))+'</div>';
     const x=document.createElement('button');x.className='x';x.textContent='\u00d7';x.onclick=()=>{S.files.splice(i,1);afterFilesChanged();};
     d.appendChild(x);box.appendChild(d);
   });
@@ -1757,7 +1833,7 @@ async function buildBlocks(){
   };
   for(const f of S.files){
     if(f.kind==='image'){total+=1;if(blocks.length<cfg.max){tryAdd(await imageToBlock(f.dataURL,cfg));}}
-    else{const r=await pdfPages(f.dataURL,cfg.max-blocks.length,cfg);total+=r.count;for(const blk of r.pages){if(!tryAdd(blk))break;}}
+    else if(f.kind==='pdf'){const r=await pdfPages(f.dataURL,cfg.max-blocks.length,cfg);total+=r.count;for(const blk of r.pages){if(!tryAdd(blk))break;}}
   }
   return {blocks,total,used:blocks.length,truncated:blocks.length<total};
 }
@@ -1767,8 +1843,9 @@ async function runRead(){
   appendUserRead();setLoading(true);showThinking();
   try{
     const r=await buildBlocks();
-    if(!r.blocks.length)throw new Error('noblocks');
-    S.messages=[{role:"user",content:[...r.blocks,{type:"text",text:getPromptText()}]}];
+    const textBlocks=S.files.filter(f=>f.kind==='text').map(f=>({type:"text",text:'=== '+f.name+' ===\n'+(f.text||'')}));
+    if(!r.blocks.length&&!textBlocks.length)throw new Error('noblocks');
+    S.messages=[{role:"user",content:[...r.blocks,...textBlocks,{type:"text",text:getPromptText()}]}];
     const text=await callClaude(S.messages);
     hideThinking();
     if(r.truncated){let _n=t().richMaterial.replace('{used}',r.used).replace('{total}',r.total);if(!fbHasKey())_n+=' '+t().keyHint;appendNote(_n);}
@@ -1784,7 +1861,20 @@ async function sendFollowup(){
   catch(e){hideThinking();if(e&&e.message==='no-backend')appendNoBackend();else appendError(t().err);}finally{setLoading(false);}
 }
 function resetAll(){stopSpeak();S.messages=[];S.read=false;$('log').innerHTML='';$('followup').classList.remove('show');$('reset').style.display='none';updateReadState();}
-async function addFiles(list){for(const file of Array.from(list)){if(S.files.length>=MAX_FILES)break;const isPdf=file.type==='application/pdf';try{const {dataURL,base64}=await fileToData(file);S.files.push({name:file.name,mediaType:file.type,kind:isPdf?'pdf':'image',dataURL,base64});}catch(e){}}afterFilesChanged();}
+async function addFiles(list){
+  for(const file of Array.from(list)){
+    if(S.files.length>=MAX_FILES)break;
+    const isPdf=file.type==='application/pdf';const isImg=/^image\//.test(file.type);
+    const ext=(file.name.split('.').pop()||'').toLowerCase();
+    const isText=/^text\//.test(file.type)||file.type==='application/json'||['txt','md','markdown','json','csv','tsv','text'].indexOf(ext)>=0;
+    try{
+      if(isText){const text=await fileToText(file);S.files.push({name:file.name,mediaType:file.type||'text/plain',kind:'text',text:text,label:(ext||'txt').toUpperCase()});}
+      else if(isPdf||isImg){const {dataURL,base64}=await fileToData(file);S.files.push({name:file.name,mediaType:file.type,kind:isPdf?'pdf':'image',dataURL,base64});}
+    }catch(e){}
+  }
+  afterFilesChanged();
+}
+function fileToText(file){return new Promise((res,rej)=>{const r=new FileReader();r.onload=()=>res(r.result||'');r.onerror=()=>rej(new Error('read'));r.readAsText(file);});}
 
 // ---------------- DECK (PDF.js canvas viewer) ----------------
 const PDFJS_BASE='https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/';
