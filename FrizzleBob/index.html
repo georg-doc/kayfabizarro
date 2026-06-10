@@ -295,7 +295,7 @@ mark{background:var(--mark);color:var(--ink);padding:0 2px;}
 .lp-video-poster:hover .lp-play{transform:scale(1.12);}
 .lp-title{font-family:var(--ff-display);font-size:clamp(22px,4vw,34px);color:#fff;text-shadow:0 2px 8px rgba(0,0,0,.6);}
 .vid-fallback{margin-top:var(--sp-4);font-family:var(--ff-ui);font-size:var(--fs-sm);}
-.vid-caption{max-width:var(--lay-prose);margin-top:var(--sp-5);font-size:var(--fs-base);line-height:var(--lh-prose);color:var(--ink-2);}
+.vid-caption{margin-top:var(--sp-5);font-size:var(--fs-base);line-height:var(--lh-prose);color:var(--ink-2);}
 .deck-sec{margin-top:var(--sp-12);}
 .deck-divider{display:flex;align-items:center;gap:12px;color:var(--ink-3);font-family:var(--ff-ui);font-size:11px;letter-spacing:.16em;text-transform:uppercase;margin:0 0 var(--sp-5);}
 .deck-divider::before,.deck-divider::after{content:"";flex:1;border-top:2px dashed var(--border-2);}
@@ -389,7 +389,8 @@ mark{background:var(--mark);color:var(--ink);padding:0 2px;}
 .uni-inner{max-width:var(--lay-max);margin:0 auto;padding:var(--sp-12) var(--sp-8);}
 .uni-eyebrow{font-family:var(--ff-ui);font-size:var(--fs-xs);font-weight:700;letter-spacing:var(--ls-label);text-transform:uppercase;color:var(--accent);margin-bottom:var(--sp-3);}
 .uni-title{font-family:var(--ff-display);font-size:clamp(26px,4vw,40px);line-height:var(--lh-tight);color:var(--ink);margin-bottom:var(--sp-4);}
-.uni-text{font-size:var(--fs-base);line-height:var(--lh-prose);color:var(--ink-2);max-width:var(--lay-prose);margin-bottom:var(--sp-6);}
+.uni-sub{font-style:italic;font-size:var(--fs-md);line-height:var(--lh-snug);color:var(--ink-3);margin-bottom:var(--sp-6);}
+.uni-text{font-size:var(--fs-base);line-height:var(--lh-prose);color:var(--ink-2);margin-bottom:var(--sp-6);}
 .uni-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:22px;margin-bottom:var(--sp-8);}
 .uni-card{display:flex;flex-direction:column;border:2px solid var(--ink);padding:24px 26px;position:relative;transition:transform var(--dur-norm) var(--ease-out),box-shadow var(--dur-norm);--ff-display:'Irish Grover',cursive;--ff-body:'Special Elite','Courier New',monospace;}
 .uni-card.kb{background:#f7f0da;border-color:#1f1a14;box-shadow:4px 5px 0 rgba(31,26,20,.2);transform:rotate(-.5deg);--ink:#1f1a14;--ink-2:#3a342a;--ink-3:#6f6450;--accent:#b8361f;--border-2:#c2ad79;}
@@ -581,7 +582,8 @@ mark{background:var(--mark);color:var(--ink);padding:0 2px;}
 <div class="universe">
   <div class="uni-inner">
     <div class="uni-eyebrow" id="uni-eyebrow"></div>
-    <h2 class="uni-title"><a class="kb-marklink" href="https://kayfabizarro.pages.dev/" target="_blank" rel="noopener"><span class="kb-mark"><span class="a">Kayfa</span><span class="b">Bizarro</span></span></a> &amp; <span class="mk-mark"><span class="a">Med</span><span class="b">Kayfab</span></span></h2>
+    <h2 class="uni-title"><a class="kb-marklink" id="uni-kfb-link" href="https://kayfabizarro.pages.dev/#kfb" target="_blank" rel="noopener"><span class="kb-mark"><span class="a">Kayfa</span><span class="b">Bizarro</span></span></a> &amp; <a class="kb-marklink" id="uni-med-link" href="https://kayfabizarro.pages.dev/#med" target="_blank" rel="noopener"><span class="mk-mark"><span class="a">Med</span><span class="b">Kayfab</span></span></a></h2>
+    <p class="uni-sub" id="uni-sub"></p>
     <p class="uni-text" id="uni-text"></p>
     <div class="uni-cards">
       <div class="uni-card kb">
@@ -861,6 +863,7 @@ const FB_AVATAR='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMgAAADICAYAAACtW
 function esc(s){ return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
 const DECK_PDF='https://cdn.jsdelivr.net/gh/georg-doc/kayfabizarro@main/media/kfb/Epistemic_Sabotage_LET_AI_READ_YOUR_COMIC_v1%20-%20ADD%20web.pdf';
 const KBLINK='<a href="https://kayfabizarro.pages.dev/" target="_blank" rel="noopener" class="kb-link">KayfaBizarro</a>';
+const FTLINK='<a href="https://www.youtube.com/playlist?list=PLXkttda-5VwEFQdRuKvVo3zCZfetqPAIk" target="_blank" rel="noopener" class="kb-link">FrizzleTune</a>';
 function highlightPrompt(text){ return esc(text).replace(/\[[^\]]*\]/g, m=>'<mark>'+m+'</mark>'); }
 
 // ---------------- VOICES ----------------
@@ -1052,7 +1055,7 @@ const STR = {
     disclaimer:'Erste Lesung, kein Urteil. Die KI liest Handlettering gelegentlich falsch und erfindet manchmal Details. Gegenprüfen bleibt deine Aufgabe.',
     vidEyebrow:'', vidSub:'Das '+KBLINK+'-Kartenspiel zum Essay, als Video mit FrizzleTune.',
     vidYt:'\u2197 Auf YouTube ansehen',
-    vidCaption:'„Epistemic Sabotage“ \u2013 das Cut-&-Play-Kartendeck zu diesem Essay, vertont als FrizzleTune. Jede Karte ist eine der Anwendungen oder eine der Lesarten, in ein Bestiarium übersetzt.',
+    vidCaption:'„Epistemic Sabotage“ \u2013 das Cut-&-Play Comic-Kartendeck zu diesem Essay, vertont als '+FTLINK+'. Jede Karte ist eine der KI-Anwendungen oder eine der Comic-Lesarten, in ein spielbares Cartoon-Bestiarium übersetzt.',
     footSig:'Lies meinen Comic. Zeichne ihn nicht.',
     footBar:'Lizenz: <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener">CC BY-NC-SA 4.0</a> · Text &amp; Prompts von Georg Graf von Westphalen · <a href="https://www.cimoc.de/post/818535352848596992/lass-die-ki-deine-comics-lesen-nicht-zeichnen" target="_blank" rel="noopener">Originalartikel lesen</a>' },
   en:{ tabs:{voices:'AI Comic Readings',video:'Cut & Play Comic',essay:'Essay'},
@@ -1069,7 +1072,7 @@ const STR = {
     disclaimer:'A first read, not a verdict. The AI sometimes misreads hand-lettering and invents details. Checking stays your job.',
     vidEyebrow:'', vidSub:'The '+KBLINK+' card game companion to the essay, as a video with the FrizzleTune.',
     vidYt:'\u2197 Watch on YouTube',
-    vidCaption:'\u201cEpistemic Sabotage\u201d \u2013 the Cut & Play card deck companion to this essay, set to a FrizzleTune. Each card is one of the uses or one of the readings, translated into a bestiary.',
+    vidCaption:'\u201cEpistemic Sabotage\u201d \u2013 the Cut & Play Comic card deck for this essay, set to a '+FTLINK+'. Each card is one of the AI uses or one of the comic readings, translated into a playable cartoon bestiary.',
     footSig:'Read my comic. Don\u2019t draw it.',
     footBar:'License: <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener">CC BY-NC-SA 4.0</a> · Text &amp; prompts by Georg Graf von Westphalen · <a href="https://cancelthiscomic.substack.com/p/let-the-ai-read-your-comics-not-draw" target="_blank" rel="noopener">Read the original article</a>' }
 };
@@ -1264,8 +1267,8 @@ Object.assign(STR.de,{
   save:'Speichern', clear:'L\u00f6schen',
   ttsRead:'Vorlesen', ttsStop:'Stopp', essayRead:'Vorlesen',
   setTheme:'Darstellung', themePaper:'Papier \u00b7 Standard', themeDark:'Dunkel \u00b7 MedKayfab', themeA11y:'Barrierearm \u00b7 klare Schrift',
-  uniEyebrow:'Das Spiel dahinter',
-  uniText:'Erst zensieren sie dich. Dann zensierst du dich selbst. FrizzleBob, ein gelber Cartoon-Hase, hat irgendwann aufgehört mitzumachen. Was ihm an Stimmen, Fundstücken und schönen Denkfehlern unterkommt, hebt er auf, zwei mal zwei Panels pro Seite, in seinem Fractal Almanac. Damit es nicht so tut, als wäre es nie passiert.<br><br>Genau dafür gibt es das Spiel. Druck den Comic aus, zerschneide ihn in Karten, und leg sie mit ein bis sechs Leuten neu, in einer Reihenfolge, die kein Autor vorgesehen hat. Jede Karte darf alles behaupten, die nächste widerspricht, ihr entscheidet, was hält. Keiner gewinnt, keiner verliert, die beste Geschichte zählt. Das Risiko trägt die Karte, nicht du. Spiel die Wahrheit nach deinen Regeln, mit glaubhafter Abstreitbarkeit.',
+  uniEyebrow:'Georg’s Cut & Play Comics', uniSub:'Not a game you play. A game you use.',
+  uniText:'Erst zensieren sie dich. Dann zensierst du dich selbst. FrizzleBob, ein gelber Cartoon-Hase, hat irgendwann die Schere im Kopf gespürt. Im Gutter der Overton-Fenster im Infinite Kanvas hat er Kayfabe-Komik-Wrestling mit Bizarro-Storytelling-Aikidō kombiniert und zur „<a href="https://cancelthiscomic.substack.com/p/uncle-frizzlebob-guide-to-the-infinite" target="_blank" rel="noopener" class="kb-link">Zehnten Kunst</a>“ erklärt („Yeah – but is it ART?“). Was ihm an Artefakten, Stimmen, Ereignissen und schönen Denkfehlern („Blödsinn!“) unterkommt, zerschneidet er, klebt zwei mal zwei Panel in „guter Nachbarschaft“ als Comic-Seiten in seinen „<a href="https://georgvw.gumroad.com/?section=V4n4XYemvn1-_RTR-Oew8A==#V4n4XYemvn1-_RTR-Oew8A==" target="_blank" rel="noopener" class="kb-link">Fraktalen Almanach</a>“. Damit es nicht so tut, als wäre es nie passiert.<br><br>Genau dafür gibt es das Spiel. Druck den Comic aus, zerschneide ihn in Karten, und leg sie mit ein bis sechs Leuten neu, in einer Reihenfolge, die kein Autor vorgesehen hat. Jede Karte darf alles behaupten, die nächste widerspricht, ihr entscheidet, was hält. Keiner gewinnt, keiner verliert, die beste Geschichte zählt. Das Risiko trägt die Karte, nicht du. Spiel die Wahrheit nach deinen Regeln, mit glaubhafter Abstreitbarkeit.',
   uc1eye:'Cut & Play Comic · Story-Wrestling-Edition',
   uc1h:'<span class="kb-mark"><span class="a">Kayfa</span><span class="b">Bizarro</span></span> Freestyle',
   uc1p:'Jede Karte ist eins von FrizzleBobs Fundstücken: eine Figur, ein Ort, eine Ideologie, ein Gott, ein Gedanke, der Kölner Dom, der Kategorische Imperativ. Du nimmst eins, stellst dich davor und redest als es. Ein Würfel gibt den Ton vor, von tragisch bis verboten, den Rest erzählst du: ein Auftritt, drei Szenen, ein Schlussbild. Ruft jemand <strong class="ac">BLÖDSINN!</strong>, unterbrichst du, und die anderen entscheiden, ob deine Version trägt. Trotzdem verteidigst du irgendwann eine Position, die du vor zehn Minuten noch verachtet hast, weil die Geschichte dich gerade braucht.',
@@ -1307,8 +1310,8 @@ Object.assign(STR.en,{
   save:'Save', clear:'Clear',
   ttsRead:'Read aloud', ttsStop:'Stop', essayRead:'Read aloud',
   setTheme:'Theme', themePaper:'Paper \u00b7 default', themeDark:'Dark \u00b7 MedKayfab', themeA11y:'Accessible \u00b7 clear type',
-  uniEyebrow:'The game behind it',
-  uniText:'First they censor you. Then you censor yourself. FrizzleBob, a yellow cartoon rabbit, stopped playing along at some point. Whatever crosses his path (voices, found things, beautiful errors of thought) he keeps, two by two panels a page, in his Fractal Almanac. So it can’t pretend it never happened.<br><br>That’s what the game is for. Print the comic, cut it into cards, and lay them out with one to six people in an order no author intended. Every card can claim anything, the next one disagrees, you decide what holds. Nobody wins, nobody loses, the best story counts. The card carries the risk, not you. Play the truth your way, with plausible deniability.',
+  uniEyebrow:'Georg’s Cut & Play Comics', uniSub:'Not a game you play. A game you use.',
+  uniText:'First they censor you. Then you censor yourself. FrizzleBob, a yellow cartoon rabbit, eventually felt the scissors in his own head. In the gutter of the Overton windows, out on the Infinite Kanvas, he crossed Kayfabe-Komik-Wrestling with Bizarro-Storytelling-Aikidō and declared it the “<a href="https://cancelthiscomic.substack.com/p/uncle-frizzlebob-guide-to-the-infinite" target="_blank" rel="noopener" class="kb-link">Tenth Art</a>” (“Yeah – but is it ART?”). Whatever crosses his path (artefacts, voices, events and beautiful errors of thought, “Blödsinn!”) he cuts up, glues two by two panels in “good neighbourhood” as comic pages into his “<a href="https://georgvw.gumroad.com/?section=V4n4XYemvn1-_RTR-Oew8A==#V4n4XYemvn1-_RTR-Oew8A==" target="_blank" rel="noopener" class="kb-link">Fractal Almanac</a>”. So it can’t pretend it never happened.<br><br>That’s what the game is for. Print the comic, cut it into cards, and lay them out with one to six people in an order no author intended. Every card can claim anything, the next one disagrees, you decide what holds. Nobody wins, nobody loses, the best story counts. The card carries the risk, not you. Play the truth your way, with plausible deniability.',
   uc1eye:'Cut & Play Comic · Story-Wrestling Edition',
   uc1h:'<span class="kb-mark"><span class="a">Kayfa</span><span class="b">Bizarro</span></span> Freestyle',
   uc1p:'Every card is one of FrizzleBob’s found things: a character, a place, an ideology, a god, a thought, Cologne Cathedral, the Categorical Imperative. You pick one, stand in front of it, and speak as it. A die sets the tone, from tragic to forbidden; the rest you tell: an entrance, three scenes, a closing image. If someone calls <strong class="ac">BLÖDSINN!</strong>, you stop, and the others decide whether your version holds. And still, sooner or later you’ll defend a position you despised ten minutes ago, because the story needs you to.',
@@ -1321,7 +1324,7 @@ Object.assign(STR.en,{
   uc2link:'Read the MedKayfab Rules →',
   uniCta1:'Decks on Gumroad', uniCta2:'Read the Anti-Rules', uniCta3:'Read on Substack',
   deckLabel:'Or page through the deck', deckLoadTitle:'Load the deck', deckLoadSub:'≈ 3 MB PDF · click to open',
-  deckDl:'↗ Download the PDF', deckNote:'The “Epistemic Sabotage” card deck – the Print, Cut-&-Play companion to this essay.',
+  deckDl:'↗ Download the PDF', deckNote:'The “Epistemic Sabotage” card deck – the Print, Cut-&-Play template for this essay.',
   deckPagePrefix:'Page', deckLoading:'Loading the deck …', deckErr:'Could not load the deck – use the download link.'
 });
 
@@ -1396,7 +1399,7 @@ function renderStrings(){
   $('read').textContent=x.read;$('reset').textContent=x.reset;$('send').textContent=x.send;
   $('fuinput').placeholder=x.fu;$('disclaimer').textContent=x.disclaimer;
   $('copybtn').innerHTML=COPY_ICON+'<span>'+x.copy+'</span>';
-  $('vid-eyebrow').textContent=x.vidEyebrow;$('vid-subline').innerHTML=x.vidSub;$('vid-yt').textContent=x.vidYt;$('vid-caption').textContent=x.vidCaption;
+  $('vid-eyebrow').textContent=x.vidEyebrow;$('vid-subline').innerHTML=x.vidSub;$('vid-yt').textContent=x.vidYt;$('vid-caption').innerHTML=x.vidCaption;
   $('deck-label').textContent=x.deckLabel;
   $('deck-dl').textContent=x.deckDl;$('deck-dl').href=DECK_PDF;$('deck-note').textContent=x.deckNote;
   const _ph=$('deck-ph');if(_ph&&!deckDoc)_ph.textContent=x.deckLoading;
@@ -1409,7 +1412,7 @@ function renderStrings(){
   $('key-save').textContent=x.save;$('key-clear').textContent=x.clear;
   $('key-state').textContent=localStorage.getItem('fb_key')?x.keySaved:x.keyNone;
   // universe
-  $('uni-eyebrow').textContent=x.uniEyebrow;$('uni-text').innerHTML=x.uniText;
+  $('uni-eyebrow').textContent=x.uniEyebrow;$('uni-text').innerHTML=x.uniText;var _suf=(S.lang==='de'?'_de':'');var _k=$('uni-kfb-link');if(_k)_k.href='https://kayfabizarro.pages.dev/#kfb'+_suf;var _m=$('uni-med-link');if(_m)_m.href='https://kayfabizarro.pages.dev/#med'+_suf;var _us=$('uni-sub');if(_us)_us.textContent=x.uniSub;
   $('uc1-eyebrow').textContent=x.uc1eye;$('uc1-h').innerHTML=x.uc1h;$('uc1-p').innerHTML=x.uc1p;$('uc1-best').innerHTML=x.uc1best;$('uc1-link').textContent=x.uc1link;
   $('uc2-eyebrow').textContent=x.uc2eye;$('uc2-h').innerHTML=x.uc2h;$('uc2-p').innerHTML=x.uc2p;$('uc2-best').innerHTML=x.uc2best;$('uc2-link').textContent=x.uc2link;
   $('uni-cta1').textContent=x.uniCta1;$('uni-cta2').textContent=x.uniCta2;$('uni-cta3').textContent=x.uniCta3;
