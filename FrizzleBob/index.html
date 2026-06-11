@@ -1060,10 +1060,12 @@ if(window.EXTRA_VOICES){VOICES.push.apply(VOICES,window.EXTRA_VOICES);}
 const PROMPT_REPO='https://github.com/georg-doc/kayfabizarro/tree/main/FrizzleBob';
 const PROMPT_RAW='https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/FrizzleBob/';
 const PROMPT_SRC={
-  first:'01-first-reading', colleague:'02-collegial-critique', critic:'03-finger-in-the-wound',
-  future:'04-yourself-in-five-years', pitch:'05-publisher-pitch', eye:'06-the-eye',
-  doomscroller:'07-the-doomscroller', literalist:'08-the-literalist', carny:'09-frizzlebob-carny',
-  heckler:'10-the-heckler', superfan:'11-the-superfan', archaeologist:'12-archaeologist-2525'
+  first:'01-first-reading', eye:'02-the-eye', colleague:'03-collegial-critique',
+  critic:'04-finger-in-the-wound', future:'05-yourself-in-five-years', pitch:'06-publisher-pitch',
+  curateur:'07-le-curateur', theoretiker:'08-the-comics-theorist', literalist:'09-the-literalist',
+  synaesthete:'10-the-synaesthete', doomscroller:'11-the-doomscroller', superfan:'12-the-superfan',
+  heckler:'13-the-heckler', carny:'14-frizzlebob-carny', pagespeaks:'15-the-page-speaks-back',
+  archaeologist:'16-archaeologist-2525', dialogdoc:'17-the-dialogue-doctor', konzeptleser:'18-the-concept-reader'
 };
 VOICES.forEach(v=>{ if(PROMPT_SRC[v.id]&&!v.version) v.version='1.0'; });
 function grabPromptBlock(md,lang){
