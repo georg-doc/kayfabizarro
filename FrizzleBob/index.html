@@ -177,12 +177,24 @@ mark{background:var(--mark);color:var(--ink);padding:0 2px;}
 @media(max-width:440px){.voices{grid-template-columns:1fr;}}
 .voice{display:flex;flex-direction:column;text-align:left;cursor:pointer;background:var(--paper);border:1.7px dashed var(--border-2);padding:15px 17px;font:inherit;color:var(--ink);transition:transform var(--dur-fast),border-color var(--dur-fast),box-shadow var(--dur-fast);position:relative;}
 /* dezente Pastell-Washes + passende lfd. Nummer (vgl. Quest-Die-Table) */
-.voice.vbg1{background:rgba(62,106,131,.12);}.voice.vbg1 .vn-n{color:#34576b;}
-.voice.vbg2{background:rgba(122,141,74,.15);}.voice.vbg2 .vn-n{color:#5e6f33;}
-.voice.vbg3{background:rgba(194,65,44,.11);}.voice.vbg3 .vn-n{color:var(--accent);}
-.voice.vbg4{background:rgba(107,78,125,.13);}.voice.vbg4 .vn-n{color:#5b4470;}
-.voice.vbg5{background:rgba(217,124,58,.14);}.voice.vbg5 .vn-n{color:#b35e22;}
-.voice.vbg6{background:rgba(166,70,112,.12);}.voice.vbg6 .vn-n{color:#8f3a60;}
+.voice.voice.vbg1{background:rgba(167,68,68,.13);}.voice.vbg1 .vn-n{color:#862727;}
+.voice.vbg2{background:rgba(167,101,68,.13);}.voice.vbg2 .vn-n{color:#864727;}
+.voice.vbg3{background:rgba(167,134,68,.13);}.voice.vbg3 .vn-n{color:#866727;}
+.voice.vbg4{background:rgba(167,167,68,.13);}.voice.vbg4 .vn-n{color:#868627;}
+.voice.vbg5{background:rgba(134,167,68,.13);}.voice.vbg5 .vn-n{color:#678627;}
+.voice.vbg6{background:rgba(101,167,68,.13);}.voice.vbg6 .vn-n{color:#478627;}
+.voice.vbg7{background:rgba(68,167,68,.13);}.voice.vbg7 .vn-n{color:#278627;}
+.voice.vbg8{background:rgba(68,167,101,.13);}.voice.vbg8 .vn-n{color:#278647;}
+.voice.vbg9{background:rgba(68,167,134,.13);}.voice.vbg9 .vn-n{color:#278667;}
+.voice.vbg10{background:rgba(68,167,167,.13);}.voice.vbg10 .vn-n{color:#278686;}
+.voice.vbg11{background:rgba(68,134,167,.13);}.voice.vbg11 .vn-n{color:#276786;}
+.voice.vbg12{background:rgba(68,101,167,.13);}.voice.vbg12 .vn-n{color:#274786;}
+.voice.vbg13{background:rgba(68,68,167,.13);}.voice.vbg13 .vn-n{color:#272786;}
+.voice.vbg14{background:rgba(101,68,167,.13);}.voice.vbg14 .vn-n{color:#472786;}
+.voice.vbg15{background:rgba(134,68,167,.13);}.voice.vbg15 .vn-n{color:#672786;}
+.voice.vbg16{background:rgba(167,68,167,.13);}.voice.vbg16 .vn-n{color:#862786;}
+.voice.vbg17{background:rgba(167,68,134,.13);}.voice.vbg17 .vn-n{color:#862767;}
+.voice.vbg18{background:rgba(167,68,101,.13);}.voice.vbg18 .vn-n{color:#862747;}
 .voice:hover{transform:translateY(-2px) rotate(-.5deg);border-style:solid;border-color:var(--accent);box-shadow:var(--sh-soft);}
 .voice:focus-visible{outline:2px solid var(--accent);outline-offset:2px;}
 .voice.on{border:2px solid var(--ink);box-shadow:3px 3px 0 var(--accent);background:var(--paper-card);}
@@ -370,12 +382,42 @@ mark{background:var(--mark);color:var(--ink);padding:0 2px;}
 .prompt-cc{font-family:var(--ff-ui);font-size:11.5px;color:var(--ink-3);max-width:var(--lay-prose);margin:0 0 var(--sp-5);line-height:var(--lh-norm);font-style:italic;}
 .prompt-cc a{color:var(--accent);}
 /* per-reading pastel coding, mirrors tool tiles */
-.promptblock.vbg1{background:rgba(62,106,131,.12);}.promptblock.vbg2{background:rgba(122,141,74,.15);}
-.promptblock.vbg3{background:rgba(194,65,44,.11);}.promptblock.vbg4{background:rgba(107,78,125,.13);}
-.promptblock.vbg5{background:rgba(217,124,58,.14);}.promptblock.vbg6{background:rgba(166,70,112,.12);}
-.prompt-intro.vbg1{border-left:3px solid #34576b;padding-left:13px;}.prompt-intro.vbg2{border-left:3px solid #5e6f33;padding-left:13px;}
-.prompt-intro.vbg3{border-left:3px solid var(--accent);padding-left:13px;}.prompt-intro.vbg4{border-left:3px solid #5b4470;padding-left:13px;}
-.prompt-intro.vbg5{border-left:3px solid #b35e22;padding-left:13px;}.prompt-intro.vbg6{border-left:3px solid #8f3a60;padding-left:13px;}
+.promptblock.promptblock.vbg1{background:rgba(167,68,68,.13);}
+.promptblock.vbg2{background:rgba(167,101,68,.13);}
+.promptblock.vbg3{background:rgba(167,134,68,.13);}
+.promptblock.vbg4{background:rgba(167,167,68,.13);}
+.promptblock.vbg5{background:rgba(134,167,68,.13);}
+.promptblock.vbg6{background:rgba(101,167,68,.13);}
+.promptblock.vbg7{background:rgba(68,167,68,.13);}
+.promptblock.vbg8{background:rgba(68,167,101,.13);}
+.promptblock.vbg9{background:rgba(68,167,134,.13);}
+.promptblock.vbg10{background:rgba(68,167,167,.13);}
+.promptblock.vbg11{background:rgba(68,134,167,.13);}
+.promptblock.vbg12{background:rgba(68,101,167,.13);}
+.promptblock.vbg13{background:rgba(68,68,167,.13);}
+.promptblock.vbg14{background:rgba(101,68,167,.13);}
+.promptblock.vbg15{background:rgba(134,68,167,.13);}
+.promptblock.vbg16{background:rgba(167,68,167,.13);}
+.promptblock.vbg17{background:rgba(167,68,134,.13);}
+.promptblock.vbg18{background:rgba(167,68,101,.13);}
+.prompt-intro.vbg1{border-left:3px solid #862727;padding-left:13px;}
+.prompt-intro.vbg2{border-left:3px solid #864727;padding-left:13px;}
+.prompt-intro.vbg3{border-left:3px solid #866727;padding-left:13px;}
+.prompt-intro.vbg4{border-left:3px solid #868627;padding-left:13px;}
+.prompt-intro.vbg5{border-left:3px solid #678627;padding-left:13px;}
+.prompt-intro.vbg6{border-left:3px solid #478627;padding-left:13px;}
+.prompt-intro.vbg7{border-left:3px solid #278627;padding-left:13px;}
+.prompt-intro.vbg8{border-left:3px solid #278647;padding-left:13px;}
+.prompt-intro.vbg9{border-left:3px solid #278667;padding-left:13px;}
+.prompt-intro.vbg10{border-left:3px solid #278686;padding-left:13px;}
+.prompt-intro.vbg11{border-left:3px solid #276786;padding-left:13px;}
+.prompt-intro.vbg12{border-left:3px solid #274786;padding-left:13px;}
+.prompt-intro.vbg13{border-left:3px solid #272786;padding-left:13px;}
+.prompt-intro.vbg14{border-left:3px solid #472786;padding-left:13px;}
+.prompt-intro.vbg15{border-left:3px solid #672786;padding-left:13px;}
+.prompt-intro.vbg16{border-left:3px solid #862786;padding-left:13px;}
+.prompt-intro.vbg17{border-left:3px solid #862767;padding-left:13px;}
+.prompt-intro.vbg18{border-left:3px solid #862747;padding-left:13px;}
 .pb-ver{position:absolute;top:-11px;right:11px;font-family:var(--ff-ui);font-size:10px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-3);background:var(--paper-card);border:1px solid var(--border-2);padding:2px 7px;opacity:0;transform:translateY(2px);transition:opacity var(--dur-fast),transform var(--dur-fast);pointer-events:none;z-index:2;}
 .promptblock:hover .pb-ver,.promptblock:focus-within .pb-ver{opacity:1;transform:translateY(0);}
 .pb-ver.is-synced{color:var(--accent);border-color:var(--accent);}
@@ -1196,33 +1238,33 @@ ESSAY.de=`
 <p class="bigq">Welche Lesart meines Comics hätte ich gern, die ich sonst nie bekomme?</p>
 <p class="prose">Eine Lektorin, die nie müde wird. Ein Kind, das nichts beschönigt. Ein Fremder aus der Zielgruppe, den ich sonst nie zu Gesicht bekomme. Mein eigenes Ich in zehn Jahren. Das sind keine Ersatzmenschen, sondern ein Probelauf, bevor du den Comic aus der Hand gibst.</p>
 <p class="prose">Bringt eure eigenen Comics mit, ändert die Prompts, schreibt eigene. Und lasst uns darüber reden, welche Lesarten euch noch fehlen.</p>
-<h2 class="sec-sub">PS: Weitere Lesarten</h2>
+<h2 class="sec-sub">Was seither dazukam</h2>
 <p class="prose">Seit dem ersten Schreiben sind ein paar Lesarten dazugekommen – manche fertig, manche noch Work in Progress. Im Tab <a class="tablink" href="#readings_de">Lesarten</a> oben kannst du sie direkt ausprobieren; hier zum Mitnehmen und Weiterbauen.</p>
 <p class="prompt-cc">Alle Prompts: CC BY-NC-SA 4.0 · Original (Klartext, versioniert) auf `+A(PROMPT_REPO,'GitHub')+`.</p>
-<p class="prompt-intro vbg1">7. Le Curateur. Liest deinen Comic im weltweiten Netz aus Szenen und Traditionen. Offenes Herz, warmer Humor, Blick fürs Menschliche und fürs Erzählen.</p>
-<div class="promptblock vbg1" data-prompt="curateur">`+esc(voiceById('curateur').de.prompt)+`</div>
-<p class="prompt-intro vbg2">8. Der Comic-Theoretiker. Liest deinen Comic als Medium: Panelgrammatik, Closure, Zeitdarstellung, Seitenarchitektur. McCloud und Groensteen im Rücken, nie im Weg.</p>
-<div class="promptblock vbg2" data-prompt="theoretiker">`+esc(voiceById('theoretiker').de.prompt)+`</div>
-<p class="prompt-intro vbg3">9. Der Literalist. Beschreibt nur, was buchstäblich da ist, und zeigt die Lücke zwischen Absicht und Seite.</p>
-<div class="promptblock vbg3" data-prompt="literalist">`+esc(voiceById('literalist').de.prompt)+`</div>
-<p class="prompt-intro vbg4">10. Der Synästhet. Hört den stummen Comic: Soundtrack, Rhythmus, Stille – und verrät Timing und Tempo.</p>
-<div class="promptblock vbg4" data-prompt="synaesthete">`+esc(voiceById('synaesthete').de.prompt)+`</div>
-<p class="prompt-intro vbg5">11. Der Doomscroller. Liest mit null Geduld, Daumen am Weiterwischen – testet, ob er überhaupt anhält.</p>
-<div class="promptblock vbg5" data-prompt="doomscroller">`+esc(voiceById('doomscroller').de.prompt)+`</div>
-<p class="prompt-intro vbg6">12. Der Superfan. Liest mit maximaler Großzügigkeit und findet Tiefe, die du nie geplant hast.</p>
-<div class="promptblock vbg6" data-prompt="superfan">`+esc(voiceById('superfan').de.prompt)+`</div>
-<p class="prompt-intro vbg1">13. Der Heckler am Rand. Findet die unfreiwilligen Gags und verstörende Details. Wahrheit durch Spott.</p>
-<div class="promptblock vbg1" data-prompt="heckler">`+esc(voiceById('heckler').de.prompt)+`</div>
-<p class="prompt-intro vbg2">14. FrizzleBob im Carny-Modus. Verkauft deinen Comic als Attraktion – was er nicht anpreisen kann, ist die Diagnose.</p>
-<div class="promptblock vbg2" data-prompt="carny">`+esc(voiceById('carny').de.prompt)+`</div>
-<p class="prompt-intro vbg3">15. Die Seite spricht zurück. Der Comic selbst sagt dir, wie es sich anfühlt, so gezeichnet zu sein.</p>
-<div class="promptblock vbg3" data-prompt="pagespeaks">`+esc(voiceById('pagespeaks').de.prompt)+`</div>
-<p class="prompt-intro vbg4">16. Die Archäologin aus dem Jahr 2525. Gräbt deinen Comic kontextlos aus – was überlebt, was wird missverstanden?</p>
-<div class="promptblock vbg4" data-prompt="archaeologist">`+esc(voiceById('archaeologist').de.prompt)+`</div>
-<p class="prompt-intro vbg5">17. Der Dialog-Doktor. Liest nur die Worte: eigene Stimme pro Figur, Subtext, on the nose, Wort gegen Bild. Skript reicht, Seiten gehen auch.</p>
-<div class="promptblock vbg5" data-prompt="dialogdoc">`+esc(voiceById('dialogdoc').de.prompt)+`</div>
-<p class="prompt-intro vbg6">18. Der Konzept-Leser. Liest dein Konzept vor der ersten Seite: trägt die Grundidee? Wo ist der Kern, wo franst er aus? Synopsis oder Outline genügt.</p>
-<div class="promptblock vbg6" data-prompt="konzeptleser">`+esc(voiceById('konzeptleser').de.prompt)+`</div>
+<p class="prompt-intro vbg7">7. Le Curateur. Liest deinen Comic im weltweiten Netz aus Szenen und Traditionen. Offenes Herz, warmer Humor, Blick fürs Menschliche und fürs Erzählen.</p>
+<div class="promptblock vbg7" data-prompt="curateur">`+esc(voiceById('curateur').de.prompt)+`</div>
+<p class="prompt-intro vbg8">8. Der Comic-Theoretiker. Liest deinen Comic als Medium: Panelgrammatik, Closure, Zeitdarstellung, Seitenarchitektur. McCloud und Groensteen im Rücken, nie im Weg.</p>
+<div class="promptblock vbg8" data-prompt="theoretiker">`+esc(voiceById('theoretiker').de.prompt)+`</div>
+<p class="prompt-intro vbg9">9. Der Literalist. Beschreibt nur, was buchstäblich da ist, und zeigt die Lücke zwischen Absicht und Seite.</p>
+<div class="promptblock vbg9" data-prompt="literalist">`+esc(voiceById('literalist').de.prompt)+`</div>
+<p class="prompt-intro vbg10">10. Der Synästhet. Hört den stummen Comic: Soundtrack, Rhythmus, Stille – und verrät Timing und Tempo.</p>
+<div class="promptblock vbg10" data-prompt="synaesthete">`+esc(voiceById('synaesthete').de.prompt)+`</div>
+<p class="prompt-intro vbg11">11. Der Doomscroller. Liest mit null Geduld, Daumen am Weiterwischen – testet, ob er überhaupt anhält.</p>
+<div class="promptblock vbg11" data-prompt="doomscroller">`+esc(voiceById('doomscroller').de.prompt)+`</div>
+<p class="prompt-intro vbg12">12. Der Superfan. Liest mit maximaler Großzügigkeit und findet Tiefe, die du nie geplant hast.</p>
+<div class="promptblock vbg12" data-prompt="superfan">`+esc(voiceById('superfan').de.prompt)+`</div>
+<p class="prompt-intro vbg13">13. Der Heckler am Rand. Findet die unfreiwilligen Gags und verstörende Details. Wahrheit durch Spott.</p>
+<div class="promptblock vbg13" data-prompt="heckler">`+esc(voiceById('heckler').de.prompt)+`</div>
+<p class="prompt-intro vbg14">14. FrizzleBob im Carny-Modus. Verkauft deinen Comic als Attraktion – was er nicht anpreisen kann, ist die Diagnose.</p>
+<div class="promptblock vbg14" data-prompt="carny">`+esc(voiceById('carny').de.prompt)+`</div>
+<p class="prompt-intro vbg15">15. Die Seite spricht zurück. Der Comic selbst sagt dir, wie es sich anfühlt, so gezeichnet zu sein.</p>
+<div class="promptblock vbg15" data-prompt="pagespeaks">`+esc(voiceById('pagespeaks').de.prompt)+`</div>
+<p class="prompt-intro vbg16">16. Die Archäologin aus dem Jahr 2525. Gräbt deinen Comic kontextlos aus – was überlebt, was wird missverstanden?</p>
+<div class="promptblock vbg16" data-prompt="archaeologist">`+esc(voiceById('archaeologist').de.prompt)+`</div>
+<p class="prompt-intro vbg17">17. Der Dialog-Doktor. Liest nur die Worte: eigene Stimme pro Figur, Subtext, on the nose, Wort gegen Bild. Skript reicht, Seiten gehen auch.</p>
+<div class="promptblock vbg17" data-prompt="dialogdoc">`+esc(voiceById('dialogdoc').de.prompt)+`</div>
+<p class="prompt-intro vbg18">18. Der Konzept-Leser. Liest dein Konzept vor der ersten Seite: trägt die Grundidee? Wo ist der Kern, wo franst er aus? Synopsis oder Outline genügt.</p>
+<div class="promptblock vbg18" data-prompt="konzeptleser">`+esc(voiceById('konzeptleser').de.prompt)+`</div>
 `;
 ESSAY.en=`
 <h1 class="origin-title">Let the AI <span class="swipe">Read</span> Your Comics, Not Draw Them</h1>
@@ -1279,33 +1321,33 @@ ESSAY.en=`
 <p class="bigq">Which reading of my comic would I love to have that I could never otherwise get?</p>
 <p class="prose">An editor who never tires. A child who sugarcoats nothing. A stranger from the target audience I’d otherwise never meet. My own self ten years from now. These aren’t replacement people, they’re a trial run before you hand the comic over.</p>
 <p class="prose">Bring your own comics, change the prompts, write your own. And let’s talk about which readings you’re still missing.</p>
-<h2 class="sec-sub">P.S. More readings</h2>
+<h2 class="sec-sub">What’s Been Added Since</h2>
 <p class="prose">A few more readings have joined since this was first written – some finished, some still work in progress. You can try them right away in the <a class="tablink" href="#readings">Readings</a> tab above; here they are to take with you and build on.</p>
 <p class="prompt-cc">All prompts: CC BY-NC-SA 4.0 · originals (plain text, versioned) on `+A(PROMPT_REPO,'GitHub')+`.</p>
-<p class="prompt-intro vbg1">7. Le Curateur. Reads your comic within the worldwide web of scenes and traditions. Open heart, warm humor, an eye for the human and for storytelling.</p>
-<div class="promptblock vbg1" data-prompt="curateur">`+esc(voiceById('curateur').en.prompt)+`</div>
-<p class="prompt-intro vbg2">8. The Comics Theorist. Reads your comic as a medium: panel grammar, closure, time, page architecture. McCloud and Groensteen at his back, never in the way.</p>
-<div class="promptblock vbg2" data-prompt="theoretiker">`+esc(voiceById('theoretiker').en.prompt)+`</div>
-<p class="prompt-intro vbg3">9. The Literalist. Describes only what is literally there, and shows the gap between intent and page.</p>
-<div class="promptblock vbg3" data-prompt="literalist">`+esc(voiceById('literalist').en.prompt)+`</div>
-<p class="prompt-intro vbg4">10. The Synaesthete. Hears the silent comic: soundtrack, rhythm, silence – and reveals timing and pacing.</p>
-<div class="promptblock vbg4" data-prompt="synaesthete">`+esc(voiceById('synaesthete').en.prompt)+`</div>
-<p class="prompt-intro vbg5">11. The Doomscroller. Reads with zero patience, thumb on the swipe – tests whether anything stops them at all.</p>
-<div class="promptblock vbg5" data-prompt="doomscroller">`+esc(voiceById('doomscroller').en.prompt)+`</div>
-<p class="prompt-intro vbg6">12. The Superfan. Reads with maximum generosity and finds depth you never planned.</p>
-<div class="promptblock vbg6" data-prompt="superfan">`+esc(voiceById('superfan').en.prompt)+`</div>
-<p class="prompt-intro vbg1">13. The Heckler in the Margins. Finds the accidental gags and cursed details. Truth through mockery.</p>
-<div class="promptblock vbg1" data-prompt="heckler">`+esc(voiceById('heckler').en.prompt)+`</div>
-<p class="prompt-intro vbg2">14. FrizzleBob, Carny Barker. Sells your comic as a sideshow – whatever he can’t hype is the diagnosis.</p>
-<div class="promptblock vbg2" data-prompt="carny">`+esc(voiceById('carny').en.prompt)+`</div>
-<p class="prompt-intro vbg3">15. The Page Speaks Back. The comic itself tells you how it feels to be drawn this way.</p>
-<div class="promptblock vbg3" data-prompt="pagespeaks">`+esc(voiceById('pagespeaks').en.prompt)+`</div>
-<p class="prompt-intro vbg4">16. The Archaeologist from 2525. Excavates your comic with no context – what survives, what gets misread?</p>
-<div class="promptblock vbg4" data-prompt="archaeologist">`+esc(voiceById('archaeologist').en.prompt)+`</div>
-<p class="prompt-intro vbg5">17. The Dialogue Doctor. Reads only the words: a voice per character, subtext, on-the-nose lines, word vs image. A script is enough, pages work too.</p>
-<div class="promptblock vbg5" data-prompt="dialogdoc">`+esc(voiceById('dialogdoc').en.prompt)+`</div>
-<p class="prompt-intro vbg6">18. The Concept Reader. Reads your concept before page one: does the core idea hold? Where is the center, where does it fray? A synopsis or outline is enough.</p>
-<div class="promptblock vbg6" data-prompt="konzeptleser">`+esc(voiceById('konzeptleser').en.prompt)+`</div>
+<p class="prompt-intro vbg7">7. Le Curateur. Reads your comic within the worldwide web of scenes and traditions. Open heart, warm humor, an eye for the human and for storytelling.</p>
+<div class="promptblock vbg7" data-prompt="curateur">`+esc(voiceById('curateur').en.prompt)+`</div>
+<p class="prompt-intro vbg8">8. The Comics Theorist. Reads your comic as a medium: panel grammar, closure, time, page architecture. McCloud and Groensteen at his back, never in the way.</p>
+<div class="promptblock vbg8" data-prompt="theoretiker">`+esc(voiceById('theoretiker').en.prompt)+`</div>
+<p class="prompt-intro vbg9">9. The Literalist. Describes only what is literally there, and shows the gap between intent and page.</p>
+<div class="promptblock vbg9" data-prompt="literalist">`+esc(voiceById('literalist').en.prompt)+`</div>
+<p class="prompt-intro vbg10">10. The Synaesthete. Hears the silent comic: soundtrack, rhythm, silence – and reveals timing and pacing.</p>
+<div class="promptblock vbg10" data-prompt="synaesthete">`+esc(voiceById('synaesthete').en.prompt)+`</div>
+<p class="prompt-intro vbg11">11. The Doomscroller. Reads with zero patience, thumb on the swipe – tests whether anything stops them at all.</p>
+<div class="promptblock vbg11" data-prompt="doomscroller">`+esc(voiceById('doomscroller').en.prompt)+`</div>
+<p class="prompt-intro vbg12">12. The Superfan. Reads with maximum generosity and finds depth you never planned.</p>
+<div class="promptblock vbg12" data-prompt="superfan">`+esc(voiceById('superfan').en.prompt)+`</div>
+<p class="prompt-intro vbg13">13. The Heckler in the Margins. Finds the accidental gags and cursed details. Truth through mockery.</p>
+<div class="promptblock vbg13" data-prompt="heckler">`+esc(voiceById('heckler').en.prompt)+`</div>
+<p class="prompt-intro vbg14">14. FrizzleBob, Carny Barker. Sells your comic as a sideshow – whatever he can’t hype is the diagnosis.</p>
+<div class="promptblock vbg14" data-prompt="carny">`+esc(voiceById('carny').en.prompt)+`</div>
+<p class="prompt-intro vbg15">15. The Page Speaks Back. The comic itself tells you how it feels to be drawn this way.</p>
+<div class="promptblock vbg15" data-prompt="pagespeaks">`+esc(voiceById('pagespeaks').en.prompt)+`</div>
+<p class="prompt-intro vbg16">16. The Archaeologist from 2525. Excavates your comic with no context – what survives, what gets misread?</p>
+<div class="promptblock vbg16" data-prompt="archaeologist">`+esc(voiceById('archaeologist').en.prompt)+`</div>
+<p class="prompt-intro vbg17">17. The Dialogue Doctor. Reads only the words: a voice per character, subtext, on-the-nose lines, word vs image. A script is enough, pages work too.</p>
+<div class="promptblock vbg17" data-prompt="dialogdoc">`+esc(voiceById('dialogdoc').en.prompt)+`</div>
+<p class="prompt-intro vbg18">18. The Concept Reader. Reads your concept before page one: does the core idea hold? Where is the center, where does it fray? A synopsis or outline is enough.</p>
+<div class="promptblock vbg18" data-prompt="konzeptleser">`+esc(voiceById('konzeptleser').en.prompt)+`</div>
 `;
 
 // ---------------- EXTRA STRINGS (new UI) ----------------
@@ -1579,7 +1621,7 @@ function ioTag(id){
 function voiceCard(v,n){
   const d=v[S.lang];
   const el=document.createElement('button');
-  el.className='voice vbg'+(((n-1)%6)+1)+(v.id===S.voice?' on':'');
+  el.className='voice vbg'+n+(v.id===S.voice?' on':'');
   let tag='';
   if(/\[[^\]]+\]/.test((v[S.lang]&&v[S.lang].prompt)||''))tag='<span class="tag">'+esc(t().pitchTag)+'</span>';
   el.innerHTML='<span class="pick">'+esc(t().pick)+'</span><span class="vn"><span class="vn-n">'+n+'.</span>'+esc(d.name)+'</span><span class="vb">'+esc(d.blurb)+'</span>'+ioTag(v.id)+tag+'<span class="tile-copy" onclick="event.stopPropagation();copyTilePrompt(\''+v.id+'\',this)">'+COPY_ICON+'<span>'+(S.lang==='de'?'Prompt kopieren':'Copy prompt')+'</span></span>';
