@@ -3,7 +3,28 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Georg's Comic Reader</title>
+<title>Lass die KI deine Comics lesen – nicht zeichnen · Georg's Comic Reader</title>
+<!-- ===== SHARE / SEO META (added 2026-06) ===== -->
+<meta name="description" content="Ein Vorschlag, die KI-Debatte konstruktiv zu erweitern: die KI, die liest statt zeichnet – für Barrierefreiheit, Lektorat, Recherche und ehrliches Erstfeedback. Mit 18 freien Comic-Lesarten als Prompts (DE/EN, CC BY-SA) zum sofort Ausprobieren." />
+<link rel="canonical" href="https://kayfabizarro.pages.dev/FrizzleBob/" />
+<meta property="og:type" content="article" />
+<meta property="og:site_name" content="Georg's Comic Reader" />
+<meta property="og:url" content="https://kayfabizarro.pages.dev/FrizzleBob/" />
+<meta property="og:title" content="Lass die KI deine Comics lesen – nicht zeichnen" />
+<meta property="og:description" content="Essay + 18 Comic-Lesarten als freie Prompts (DE/EN, CC BY-SA): Barrierefreiheit, Lektorat, Recherche, ehrliches Erstfeedback. Essay + 18 comic-reading prompts to try." />
+<meta property="og:image" content="https://kayfabizarro.pages.dev/media/FrizzleBob_Avatar_03.png" />
+<meta property="og:image:width" content="514" />
+<meta property="og:image:height" content="482" />
+<meta property="og:image:alt" content="Uncle FrizzleBob – Cartoon-Hase mit Brille" />
+<meta property="og:locale" content="de_DE" />
+<meta property="og:locale:alternate" content="en_US" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="Lass die KI deine Comics lesen – nicht zeichnen" />
+<meta name="twitter:description" content="Essay + 18 Comic-Lesarten als freie Prompts (DE/EN, CC BY-SA) zum sofort Ausprobieren." />
+<meta name="twitter:image" content="https://kayfabizarro.pages.dev/media/FrizzleBob_Avatar_03.png" />
+<link rel="icon" type="image/png" href="https://kayfabizarro.pages.dev/media/FrizzleBob_Avatar_03.png" />
+<link rel="apple-touch-icon" href="https://kayfabizarro.pages.dev/media/FrizzleBob_Avatar_03.png" />
+<!-- ===== /SHARE META ===== -->
 <script>try{var _t=localStorage.getItem('fb_theme');if(_t)document.documentElement.setAttribute('data-theme',_t);}catch(e){}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -375,7 +396,8 @@ mark{background:var(--mark);color:var(--ink);padding:0 2px;}
 .pi-title{display:block;font-family:var(--ff-display);font-size:var(--fs-lg);line-height:1.2;color:var(--ink);font-style:normal;margin-bottom:5px;}
 .pb-copy{position:absolute;top:8px;right:8px;opacity:0;pointer-events:none;display:flex;align-items:center;gap:5px;font-family:var(--ff-ui);font-size:13px;text-transform:uppercase;letter-spacing:.04em;color:#f6efd9;background:var(--accent);border:1.5px solid var(--ink);padding:4px 9px;cursor:pointer;transition:opacity var(--dur-fast),transform var(--dur-fast),background var(--dur-fast),box-shadow var(--dur-fast);box-shadow:var(--sh-soft);}
 .pb-copy svg{width:15px;height:15px;}
-.promptblock:hover .pb-copy,.pb-copy:focus-visible{opacity:1;pointer-events:auto;}
+.promptblock:hover .pb-copy,.note.teaser:hover .pb-copy,.pb-copy:focus-visible{opacity:1;pointer-events:auto;}
+.note.teaser{position:relative;}
 .pb-copy:hover{transform:rotate(-1.4deg);box-shadow:2px 2px 0 rgba(31,26,20,.22);}
 .pb-copy.done{background:var(--accent);color:#fff;border-color:var(--ink);}
 .bigq{font-family:var(--ff-display);font-size:var(--fs-lg);color:var(--accent);line-height:var(--lh-snug);max-width:var(--lay-prose);margin:var(--sp-4) 0;}
@@ -1159,7 +1181,7 @@ const STR = {
     vidYt:'\u2197 Auf YouTube ansehen',
     vidCaption:'„Epistemic Sabotage“ \u2013 das Cut-&-Play Comic-Kartendeck zu diesem Essay, vertont als '+FTLINK+'. Jede Karte ist eine der KI-Anwendungen oder eine der Comic-Lesarten, in ein spielbares Cartoon-Bestiarium übersetzt.',
     footSig:'Lies meinen Comic. Zeichne ihn nicht.',
-    footBar:'Lizenz: <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener">CC BY-NC-SA 4.0</a> · Text &amp; Prompts von Georg Graf von Westphalen · <a href="https://www.cimoc.de/post/818535352848596992/lass-die-ki-deine-comics-lesen-nicht-zeichnen" target="_blank" rel="noopener">Originalartikel lesen</a> · Hinweis: Für Lektorat, Design und Funktionen wurde KI verwendet (claude, chatgpt, gemini, deepseek).' },
+    footBar:'Lizenz: <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener">CC BY-SA 4.0</a> · Text &amp; Prompts von Georg Graf von Westphalen · Fair-Play-Bitte: nicht 1:1 weiterverkaufen oder neu verpacken · <a href="https://www.cimoc.de/post/818535352848596992/lass-die-ki-deine-comics-lesen-nicht-zeichnen" target="_blank" rel="noopener">Originalartikel lesen</a> · Hinweis: Für Lektorat, Design und Funktionen wurde KI verwendet (claude, chatgpt, gemini, deepseek).' },
   en:{ tabs:{voices:'AI Comic Readings',video:'Cut & Play Comic',essay:'Essay'},
     vEyebrow:'Tool', vTitle:'Let FrizzleBob read your comic',
     vSub:'Upload a page, pick a reading stance, let the FrizzleBob AI read instead of draw.',
@@ -1176,7 +1198,7 @@ const STR = {
     vidYt:'\u2197 Watch on YouTube',
     vidCaption:'\u201cEpistemic Sabotage\u201d \u2013 the Cut & Play Comic card deck for this essay, set to a '+FTLINK+'. Each card is one of the AI uses or one of the comic readings, translated into a playable cartoon bestiary.',
     footSig:'Read my comic. Don\u2019t draw it.',
-    footBar:'License: <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener">CC BY-NC-SA 4.0</a> · Text &amp; prompts by Georg Graf von Westphalen · <a href="https://cancelthiscomic.substack.com/p/let-the-ai-read-your-comics-not-draw" target="_blank" rel="noopener">Read the original article</a> · Note: AI was used for copy-editing, design and features (claude, chatgpt, gemini, deepseek).' }
+    footBar:'License: <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener">CC BY-SA 4.0</a> · Text &amp; prompts by Georg Graf von Westphalen · Fair play: please don\u2019t resell or repackage as-is · <a href="https://cancelthiscomic.substack.com/p/let-the-ai-read-your-comics-not-draw" target="_blank" rel="noopener">Read the original article</a> · Note: AI was used for copy-editing, design and features (claude, chatgpt, gemini, deepseek).' }
 };
 
 // ---------------- ESSAY ----------------
@@ -1238,9 +1260,11 @@ ESSAY.de=`
 <p class="bigq">Welche Lesart meines Comics hätte ich gern, die ich sonst nie bekomme?</p>
 <p class="prose">Eine Lektorin, die nie müde wird. Ein Kind, das nichts beschönigt. Ein Fremder aus der Zielgruppe, den ich sonst nie zu Gesicht bekomme. Mein eigenes Ich in zehn Jahren. Das sind keine Ersatzmenschen, sondern ein Probelauf, bevor du den Comic aus der Hand gibst.</p>
 <p class="prose">Bringt eure eigenen Comics mit, ändert die Prompts, schreibt eigene. Und lasst uns darüber reden, welche Lesarten euch noch fehlen.</p>
+<p class="prose"><strong class="hl">Zum Weitergeben</strong> – ein kopierfertiger Dreizeiler für Mail, Forum, Newsletter oder Feed:</p>
+<div class="note teaser">„Lass die KI deine Comics lesen – nicht zeichnen": Georg von Westphalen schlägt vor, die festgefahrene KI-Debatte um ein zweites Register zu erweitern – die KI, die liest statt zeichnet: für Barrierefreiheit, Lektorat, Recherche und ehrliches Erstfeedback. Mit 18 freien Comic-Lesarten als Prompts zum Ausprobieren (DE/EN, CC BY-SA): https://kayfabizarro.pages.dev/FrizzleBob/</div>
 <h2 class="sec-sub">Was seither dazukam</h2>
 <p class="prose">Seit dem ersten Schreiben sind ein paar Lesarten dazugekommen – manche fertig, manche noch Work in Progress. Im Tab <a class="tablink" href="#readings_de">Lesarten</a> oben kannst du sie direkt ausprobieren; hier zum Mitnehmen und Weiterbauen.</p>
-<p class="prompt-cc">Alle Prompts: CC BY-NC-SA 4.0 · Original (Klartext, versioniert) auf `+A(PROMPT_REPO,'GitHub')+`.</p>
+<p class="prompt-cc">Alle Prompts: CC BY-SA 4.0 · Original (Klartext, versioniert) auf `+A(PROMPT_REPO,'GitHub')+` · Fair-Play-Bitte: nicht 1:1 weiterverkaufen oder neu verpacken.</p>
 <p class="prompt-intro vbg7">7. Le Curateur. Liest deinen Comic im weltweiten Netz aus Szenen und Traditionen. Offenes Herz, warmer Humor, Blick fürs Menschliche und fürs Erzählen.</p>
 <div class="promptblock vbg7" data-prompt="curateur">`+esc(voiceById('curateur').de.prompt)+`</div>
 <p class="prompt-intro vbg8">8. Der Comic-Theoretiker. Liest deinen Comic als Medium: Panelgrammatik, Closure, Zeitdarstellung, Seitenarchitektur. McCloud und Groensteen im Rücken, nie im Weg.</p>
@@ -1321,9 +1345,11 @@ ESSAY.en=`
 <p class="bigq">Which reading of my comic would I love to have that I could never otherwise get?</p>
 <p class="prose">An editor who never tires. A child who sugarcoats nothing. A stranger from the target audience I’d otherwise never meet. My own self ten years from now. These aren’t replacement people, they’re a trial run before you hand the comic over.</p>
 <p class="prose">Bring your own comics, change the prompts, write your own. And let’s talk about which readings you’re still missing.</p>
+<p class="prose"><strong class="hl">To pass along</strong> – a copy-ready blurb for mail, forums, newsletters or your feed:</p>
+<div class="note teaser">“Let the AI read your comics – not draw them”: Georg von Westphalen proposes widening the stuck AI debate by a second register – AI that reads instead of draws: accessibility, editing, research, and honest first feedback. With 18 free comic-reading prompts to try (DE/EN, CC BY-SA): https://kayfabizarro.pages.dev/FrizzleBob/</div>
 <h2 class="sec-sub">What’s Been Added Since</h2>
 <p class="prose">A few more readings have joined since this was first written – some finished, some still work in progress. You can try them right away in the <a class="tablink" href="#readings">Readings</a> tab above; here they are to take with you and build on.</p>
-<p class="prompt-cc">All prompts: CC BY-NC-SA 4.0 · originals (plain text, versioned) on `+A(PROMPT_REPO,'GitHub')+`.</p>
+<p class="prompt-cc">All prompts: CC BY-SA 4.0 · originals (plain text, versioned) on `+A(PROMPT_REPO,'GitHub')+` · Fair play: please don\u2019t resell or repackage as-is.</p>
 <p class="prompt-intro vbg7">7. Le Curateur. Reads your comic within the worldwide web of scenes and traditions. Open heart, warm humor, an eye for the human and for storytelling.</p>
 <div class="promptblock vbg7" data-prompt="curateur">`+esc(voiceById('curateur').en.prompt)+`</div>
 <p class="prompt-intro vbg8">8. The Comics Theorist. Reads your comic as a medium: panel grammar, closure, time, page architecture. McCloud and Groensteen at his back, never in the way.</p>
@@ -1360,7 +1386,7 @@ Object.assign(STR.de,{
   vEyebrow:'',
   vSub:'Wähle eine Lesart, lade ein paar Seiten hoch – und lass die KI deinen Comic lesen, statt ihn zu zeichnen.',
   toolNote:'<strong>So entsteht eine Lesart:</strong> Prompt kopieren und in deinen eigenen KI-Chat einfügen (Claude, ChatGPT, Gemini, DeepSeek …) – das geht mit jedem Konto. Wer direkt hier im Browser lesen lassen will, trägt oben im Zahnrad einen eigenen API-Key ein (Power-User).',
-  promptnote:'Du kannst den Prompt frei bearbeiten: Tausch die gelb markierten Platzhalter gegen deine Angaben – oder schreib dir eine eigene Lesart. (CC BY-NC-SA 4.0)',
+  promptnote:'Du kannst den Prompt frei bearbeiten: Tausch die gelb markierten Platzhalter gegen deine Angaben – oder schreib dir eine eigene Lesart. (CC BY-SA 4.0)',
   read:'Lesen lassen', reset:'Neu anfangen', send:'Senden',
   fu:'Stell dieser Lesart eine Rückfrage …',
   copy:'Prompt kopieren', copied:'Kopiert',
@@ -1403,7 +1429,7 @@ Object.assign(STR.en,{
   vEyebrow:'',
   vSub:'Pick a reading, upload a few pages – and let the AI read your comic instead of drawing it.',
   toolNote:'<strong>How a reading works:</strong> copy the prompt into your own AI chat (Claude, ChatGPT, Gemini, DeepSeek …) – works with any account. To read right here in the browser, add your own API key in the gear menu above (power-user).',
-  promptnote:'Edit the prompt freely: swap the highlighted placeholders for your own details – or write a reading of your own. (CC BY-NC-SA 4.0)',
+  promptnote:'Edit the prompt freely: swap the highlighted placeholders for your own details – or write a reading of your own. (CC BY-SA 4.0)',
   read:'Read it', reset:'Start over', send:'Send',
   fu:'Ask this reading a follow-up …',
   copy:'Copy prompt', copied:'Copied',
@@ -1590,10 +1616,11 @@ function decorateEssay(){
     const m=p.textContent.match(/^(\d+\.\s+[^.]+\.)\s*([\s\S]*)$/);
     if(m)p.innerHTML='<span class="pi-title">'+esc(m[1])+'</span>'+esc(m[2]);
   });
-  root.querySelectorAll('.promptblock').forEach(pb=>{
+  root.querySelectorAll('.promptblock, .note.teaser').forEach(pb=>{
     const tEl=pb.querySelector('.pb-text');const text=tEl?tEl.textContent:pb.textContent;
     const b=document.createElement('button');b.className='pb-copy';b.type='button';
-    b.innerHTML=COPY_ICON+'<span>'+esc(t().copy)+'</span>';
+    const lbl=pb.classList.contains('teaser')?(S.lang==='de'?'Text kopieren':'Copy text'):t().copy;
+    b.innerHTML=COPY_ICON+'<span>'+esc(lbl)+'</span>';
     b.onclick=()=>copyText(text,b);
     pb.appendChild(b);
   });
