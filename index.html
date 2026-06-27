@@ -89,6 +89,8 @@ body.dark .cta-dashed:hover,body.dark .btn-outline:hover{background:var(--paper-
 
 body{font-family:var(--ff-body);font-size:var(--fs-base);line-height:var(--lh-norm);background:var(--paper);color:var(--ink);-webkit-font-smoothing:antialiased;transition:background var(--dur-norm),color var(--dur-norm);}
 a{color:inherit;text-decoration:none;}
+*:focus{outline:none;}
+*:focus-visible{outline:none;}
 strong{font-weight:700;}
 em{font-style:italic;}
 ::selection{background:var(--mark);color:var(--ink);}
@@ -330,11 +332,21 @@ body.med .do{background:#d4ebe6;border-left-color:var(--med-accent);}
 .pdf-bar button{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);color:#ccc;padding:4px 10px;font-family:var(--ff-ui);font-weight:600;font-size:12px;cursor:pointer;border-radius:var(--r-1);transition:background var(--dur-fast);}
 .pdf-bar button:hover{background:rgba(255,255,255,.18);}
 .pdf-info{font-family:var(--ff-mono);font-size:11px;color:#888;margin-left:auto;}
-.pdf-canvas{background:#2a2a2a;display:flex;flex-direction:column;align-items:flex-start;padding:10px;gap:6px;max-height:520px;min-height:320px;overflow-y:auto;overflow-x:auto;}
+.pdf-canvas{background:#2a2a2a;position:relative;display:flex;align-items:center;justify-content:center;padding:10px;max-height:78vh;min-height:280px;overflow:hidden;}
 .pdf-canvas canvas{max-width:100%;box-shadow:0 2px 12px rgba(0,0,0,.45);}
+.pdf-frame{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;will-change:transform,opacity;}
 .pdf-msg{font-size:var(--fs-sm);color:#999;padding:var(--sp-8);text-align:center;font-family:var(--ff-ui);}
 .pdf-loading{display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:300px;gap:var(--sp-4);}
 .pdf-spinner{width:32px;height:32px;border:3px solid rgba(255,255,255,.1);border-top-color:rgba(255,255,255,.5);border-radius:50%;animation:spin .8s linear infinite;}
+.pdf-block{position:relative;}
+.pdf-nav{position:absolute;top:50%;transform:translateY(-50%);z-index:4;display:flex;align-items:center;justify-content:center;width:44px;height:44px;padding:0;border:none;border-radius:50%;background:rgba(20,16,12,.5);color:#f6efd9;cursor:pointer;opacity:0;transition:opacity var(--dur-fast),background var(--dur-fast);}
+.pdf-nav svg{width:24px;height:24px;}
+.pdf-prev{left:12px;}
+.pdf-next{right:12px;}
+.pdf-block:hover .pdf-nav,.pdf-nav:focus-visible{opacity:1;}
+.pdf-nav:hover{background:rgba(20,16,12,.82);}
+.pdf-pagepill{position:absolute;top:10px;right:12px;z-index:4;font-family:var(--ff-mono);font-size:11px;letter-spacing:.02em;color:#f6efd9;background:rgba(20,16,12,.5);padding:3px 9px;border-radius:20px;pointer-events:none;}
+@media(hover:none){.pdf-nav{opacity:.9;}}
 @keyframes spin{to{transform:rotate(360deg);}}
 
 .btn-outline{display:inline-block;padding:9px 20px;border:1.5px solid var(--ink);border-radius:var(--r-2);font-family:var(--ff-ui);font-weight:700;font-size:var(--fs-sm);color:var(--ink);background:transparent;cursor:pointer;transition:background var(--dur-fast),color var(--dur-fast);}
@@ -504,7 +516,7 @@ body{font-size:15px;line-height:1.7;}
 .cta-dashed{background:var(--paper-card);color:var(--ink);border:2px solid var(--ink);transform:rotate(.6deg);}
 .cta-dashed:hover{transform:rotate(-.8deg) scale(1.02);color:var(--accent);background:#fff;}
 .btn-outline{border:2px solid var(--ink);background:var(--paper-card);}
-.btn-outline:hover{transform:rotate(-.8deg);background:#fff;}
+.btn-outline:hover{transform:rotate(-.8deg);background:#fff;color:var(--ink);}
 .btn-ghost{font-family:var(--ff-ui);font-weight:400;border-radius:0;border:1.5px solid var(--border-2);}
 .btn-ghost:hover{transform:rotate(-1deg);}
 
@@ -1238,7 +1250,7 @@ body{padding-top:var(--lay-topbar);}
       <div class="rules-section" id="kfb-booklet">
         <div class="sec-title">The Comic</div>
         <p class="prose">Flip through every page inline, or read the full rules below.</p>
-        <div class="pdf-block"><div class="pdf-bar"><button onclick="pdfNav('kfb_book',-1)">Prev</button><button onclick="pdfNav('kfb_book',1)">Next</button><button onclick="pdfZoom('kfb_book',-.25)">−</button><button onclick="pdfZoom('kfb_book',.25)">+</button><span class="pdf-info" id="kfb_book-pdf-info">—</span></div><div class="pdf-canvas" id="kfb_book-pdf-canvas"><div class="pdf-loading"><div class="pdf-spinner"></div></div></div></div>
+        <div class="pdf-block"><div class="pdf-canvas" id="kfb_book-pdf-canvas"><div class="pdf-loading"><div class="pdf-spinner"></div></div></div><button class="pdf-nav pdf-prev" onclick="pdfNav('kfb_book',-1)" aria-label="Prev"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button><button class="pdf-nav pdf-next" onclick="pdfNav('kfb_book',1)" aria-label="Next"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button><span class="pdf-pagepill" id="kfb_book-pdf-info">—</span></div>
         <div style="margin-top:var(--sp-3)"><a class="btn-outline" href="media/Kayfabizarro_Freestyle_ComicBooklet_WEB_v1.pdf" target="_blank" rel="noopener" download>Download the Comic (PDF)</a></div>
       </div>
 
@@ -1251,8 +1263,8 @@ body{padding-top:var(--lay-topbar);}
         <div class="rule-line"><span class="rule-key">Two D6 —</span> One <em>Story-Mode Die</em>, one <em>Quest Die</em>. Both stay visible.</div>
         <div class="rule-line"><span class="rule-key">1–6 People —</span> And a table. No board. No pawns.</div>
         <figure class="onepager">
-          <a href="media/kfb/KayfaBizarro%20Quick-Rules%20OnePager%20EN%20v6.png" target="_blank" rel="noopener"><img src="media/kfb/KayfaBizarro%20Quick-Rules%20OnePager%20EN%20v6.png" alt="KayfaBizarro Quick-Rules one-pager (EN)" loading="lazy"></a>
-          <div class="onepager-actions"><a class="btn-outline" href="media/kfb/KayfaBizarro%20Quick-Rules%20OnePager%20EN%20v6.pdf" target="_blank" rel="noopener" download>Download the One-Pager (PDF)</a></div>
+          <a href="media/kfb/KayfaBizarro%20Quick-Rules%20OnePager%20EN%20v6.png?v=6" target="_blank" rel="noopener"><img src="media/kfb/KayfaBizarro%20Quick-Rules%20OnePager%20EN%20v6.png?v=6" alt="KayfaBizarro Quick-Rules one-pager (EN)" loading="lazy"></a>
+          <div class="onepager-actions"><a class="btn-outline" href="media/kfb/KayfaBizarro%20Quick-Rules%20OnePager%20EN%20v6.pdf?v=6" target="_blank" rel="noopener" download>Download the One-Pager (PDF)</a></div>
           <div class="onepager-cap">The whole game on one page — print it, cut along the lines, play.</div>
         </figure>
       </div>
@@ -1410,7 +1422,7 @@ body{padding-top:var(--lay-topbar);}
       <div class="rules-section" id="kfb-decks">
         <div class="sec-title">The Protopia <em>Deck</em></div>
         <p class="prose">Browse the Protopia deck — a KayfaBizarro expansion about utopian futures and the people who break them. Free to download.</p>
-        <div class="pdf-block"><div class="pdf-bar"><button onclick="pdfNav('kfb',-1)">Prev</button><button onclick="pdfNav('kfb',1)">Next</button><button onclick="pdfZoom('kfb',-.25)">−</button><button onclick="pdfZoom('kfb',.25)">+</button><span class="pdf-info" id="kfb-pdf-info">—</span></div><div class="pdf-canvas" id="kfb-pdf-canvas"><div class="pdf-loading"><div class="pdf-spinner"></div></div></div></div>
+        <div class="pdf-block"><div class="pdf-canvas" id="kfb-pdf-canvas"><div class="pdf-loading"><div class="pdf-spinner"></div></div></div><button class="pdf-nav pdf-prev" onclick="pdfNav('kfb',-1)" aria-label="Prev"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button><button class="pdf-nav pdf-next" onclick="pdfNav('kfb',1)" aria-label="Next"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button><span class="pdf-pagepill" id="kfb-pdf-info">—</span></div>
         <div style="margin-top:var(--sp-4)"><a class="btn-outline" href="https://georgvw.gumroad.com/l/kayfabizarro_protopia" target="_blank" rel="noopener">Download free on Gumroad</a></div>
       </div>
 
@@ -1484,7 +1496,7 @@ body{padding-top:var(--lay-topbar);}
       <div class="rules-section" id="kfb_de-booklet">
         <div class="sec-title">Der Comic</div>
         <p class="prose">Blättere jede Seite inline durch, oder lies die vollständigen Regeln unten.</p>
-        <div class="pdf-block"><div class="pdf-bar"><button onclick="pdfNav('kfb_book_de',-1)">Zurück</button><button onclick="pdfNav('kfb_book_de',1)">Weiter</button><button onclick="pdfZoom('kfb_book_de',-.25)">−</button><button onclick="pdfZoom('kfb_book_de',.25)">+</button><span class="pdf-info" id="kfb_book_de-pdf-info">—</span></div><div class="pdf-canvas" id="kfb_book_de-pdf-canvas"><div class="pdf-loading"><div class="pdf-spinner"></div></div></div></div>
+        <div class="pdf-block"><div class="pdf-canvas" id="kfb_book_de-pdf-canvas"><div class="pdf-loading"><div class="pdf-spinner"></div></div></div><button class="pdf-nav pdf-prev" onclick="pdfNav('kfb_book_de',-1)" aria-label="Prev"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button><button class="pdf-nav pdf-next" onclick="pdfNav('kfb_book_de',1)" aria-label="Next"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button><span class="pdf-pagepill" id="kfb_book_de-pdf-info">—</span></div>
         <div style="margin-top:var(--sp-3)"><a class="btn-outline" href="media/Kayfabizarro_Freestyle_ComicBooklet_WEB_v1.pdf" target="_blank" rel="noopener" download>Comic als PDF</a></div>
       </div>
 
@@ -1497,8 +1509,8 @@ body{padding-top:var(--lay-topbar);}
         <div class="rule-line"><span class="rule-key">Zwei W6 —</span> Ein <em>Story-Mode-Würfel</em>, ein <em>Quest-Würfel</em>. Beide jederzeit sichtbar.</div>
         <div class="rule-line"><span class="rule-key">1–6 Personen —</span> Und einen Tisch. Kein Brett. Keine Pawns.</div>
         <figure class="onepager">
-          <a href="media/kfb/KayfaBizarro%20Quick-Rules%20OnePager%20DE%20v6.png" target="_blank" rel="noopener"><img src="media/kfb/KayfaBizarro%20Quick-Rules%20OnePager%20DE%20v6.png" alt="KayfaBizarro Quick-Rules OnePager (DE)" loading="lazy"></a>
-          <div class="onepager-actions"><a class="btn-outline" href="media/kfb/KayfaBizarro%20Quick-Rules%20OnePager%20DE%20v6.pdf" target="_blank" rel="noopener" download>OnePager als PDF herunterladen</a></div>
+          <a href="media/kfb/KayfaBizarro%20Quick-Rules%20OnePager%20DE%20v6.png?v=6" target="_blank" rel="noopener"><img src="media/kfb/KayfaBizarro%20Quick-Rules%20OnePager%20DE%20v6.png?v=6" alt="KayfaBizarro Quick-Rules OnePager (DE)" loading="lazy"></a>
+          <div class="onepager-actions"><a class="btn-outline" href="media/kfb/KayfaBizarro%20Quick-Rules%20OnePager%20DE%20v6.pdf?v=6" target="_blank" rel="noopener" download>OnePager als PDF herunterladen</a></div>
           <div class="onepager-cap">Das ganze Spiel auf einer Seite — ausdrucken, entlang der Linien schneiden, spielen.</div>
         </figure>
       </div>
@@ -1656,7 +1668,7 @@ body{padding-top:var(--lay-topbar);}
       <div class="rules-section" id="kfb_de-decks">
         <div class="sec-title">Das Protopia-<em>Deck</em></div>
         <p class="prose">Blättere durchs Protopia-Deck — eine KayfaBizarro-Erweiterung über utopische Zukünfte und die Leute, die sie brechen. Kostenlos zum Download.</p>
-        <div class="pdf-block"><div class="pdf-bar"><button onclick="pdfNav('kfb_de',-1)">Zurück</button><button onclick="pdfNav('kfb_de',1)">Weiter</button><button onclick="pdfZoom('kfb_de',-.25)">−</button><button onclick="pdfZoom('kfb_de',.25)">+</button><span class="pdf-info" id="kfb_de-pdf-info">—</span></div><div class="pdf-canvas" id="kfb_de-pdf-canvas"><div class="pdf-loading"><div class="pdf-spinner"></div></div></div></div>
+        <div class="pdf-block"><div class="pdf-canvas" id="kfb_de-pdf-canvas"><div class="pdf-loading"><div class="pdf-spinner"></div></div></div><button class="pdf-nav pdf-prev" onclick="pdfNav('kfb_de',-1)" aria-label="Prev"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button><button class="pdf-nav pdf-next" onclick="pdfNav('kfb_de',1)" aria-label="Next"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button><span class="pdf-pagepill" id="kfb_de-pdf-info">—</span></div>
         <div style="margin-top:var(--sp-4)"><a class="btn-outline" href="https://georgvw.gumroad.com/l/kayfabizarro_protopia" target="_blank" rel="noopener">Kostenlos auf Gumroad</a></div>
       </div>
 
@@ -1722,7 +1734,7 @@ body{padding-top:var(--lay-topbar);}
       <div class="rules-section" id="med-booklet">
         <div class="sec-title">The Comic</div>
         <p class="prose">Flip through every page inline, or read the full rules below.</p>
-        <div class="pdf-block"><div class="pdf-bar"><button onclick="pdfNav('med_book',-1)">Prev</button><button onclick="pdfNav('med_book',1)">Next</button><button onclick="pdfZoom('med_book',-.25)">−</button><button onclick="pdfZoom('med_book',.25)">+</button><span class="pdf-info" id="med_book-pdf-info">—</span></div><div class="pdf-canvas" id="med_book-pdf-canvas"><div class="pdf-loading"><div class="pdf-spinner"></div></div></div></div>
+        <div class="pdf-block"><div class="pdf-canvas" id="med_book-pdf-canvas"><div class="pdf-loading"><div class="pdf-spinner"></div></div></div><button class="pdf-nav pdf-prev" onclick="pdfNav('med_book',-1)" aria-label="Prev"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button><button class="pdf-nav pdf-next" onclick="pdfNav('med_book',1)" aria-label="Next"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button><span class="pdf-pagepill" id="med_book-pdf-info">—</span></div>
         <div style="margin-top:var(--sp-3)"><a class="btn-outline" href="media/MedKayfab_Rules_ComicBooklet_WEB_v1.pdf" target="_blank" rel="noopener" download>Download the Comic (PDF)</a></div>
       </div>
 
@@ -1873,7 +1885,7 @@ body{padding-top:var(--lay-topbar);}
 
       <div class="rules-section" id="med-decks">
         <div class="sec-title">The Cardiology Deck</div>
-        <div class="pdf-block"><div class="pdf-bar"><button onclick="pdfNav('med',-1)">Prev</button><button onclick="pdfNav('med',1)">Next</button><button onclick="pdfZoom('med',-.25)">−</button><button onclick="pdfZoom('med',.25)">+</button><span class="pdf-info" id="med-pdf-info">—</span></div><div class="pdf-canvas" id="med-pdf-canvas"><div class="pdf-loading"><div class="pdf-spinner"></div></div></div></div>
+        <div class="pdf-block"><div class="pdf-canvas" id="med-pdf-canvas"><div class="pdf-loading"><div class="pdf-spinner"></div></div></div><button class="pdf-nav pdf-prev" onclick="pdfNav('med',-1)" aria-label="Prev"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button><button class="pdf-nav pdf-next" onclick="pdfNav('med',1)" aria-label="Next"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button><span class="pdf-pagepill" id="med-pdf-info">—</span></div>
         <div style="margin-top:var(--sp-4)"><a class="btn-outline" href="https://georgvw.gumroad.com/?section=V4n4XYemvn1-_RTR-Oew8A==#V4n4XYemvn1-_RTR-Oew8A==" target="_blank" rel="noopener">Download free on Gumroad</a></div>
       </div>
 
@@ -1932,7 +1944,7 @@ body{padding-top:var(--lay-topbar);}
       <div class="rules-section" id="med_de-booklet">
         <div class="sec-title">Der Comic</div>
         <p class="prose">Blättere jede Seite inline durch, oder lies die vollständigen Regeln unten.</p>
-        <div class="pdf-block"><div class="pdf-bar"><button onclick="pdfNav('med_book_de',-1)">Zurück</button><button onclick="pdfNav('med_book_de',1)">Weiter</button><button onclick="pdfZoom('med_book_de',-.25)">−</button><button onclick="pdfZoom('med_book_de',.25)">+</button><span class="pdf-info" id="med_book_de-pdf-info">—</span></div><div class="pdf-canvas" id="med_book_de-pdf-canvas"><div class="pdf-loading"><div class="pdf-spinner"></div></div></div></div>
+        <div class="pdf-block"><div class="pdf-canvas" id="med_book_de-pdf-canvas"><div class="pdf-loading"><div class="pdf-spinner"></div></div></div><button class="pdf-nav pdf-prev" onclick="pdfNav('med_book_de',-1)" aria-label="Prev"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button><button class="pdf-nav pdf-next" onclick="pdfNav('med_book_de',1)" aria-label="Next"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button><span class="pdf-pagepill" id="med_book_de-pdf-info">—</span></div>
         <div style="margin-top:var(--sp-3)"><a class="btn-outline" href="media/MedKayfab_Rules_ComicBooklet_WEB_v1.pdf" target="_blank" rel="noopener" download>Comic als PDF</a></div>
       </div>
 
@@ -2083,7 +2095,7 @@ body{padding-top:var(--lay-topbar);}
 
       <div class="rules-section" id="med_de-decks">
         <div class="sec-title">Das Kardiologie-Deck</div>
-        <div class="pdf-block"><div class="pdf-bar"><button onclick="pdfNav('med_de',-1)">Zurück</button><button onclick="pdfNav('med_de',1)">Weiter</button><button onclick="pdfZoom('med_de',-.25)">−</button><button onclick="pdfZoom('med_de',.25)">+</button><span class="pdf-info" id="med_de-pdf-info">—</span></div><div class="pdf-canvas" id="med_de-pdf-canvas"><div class="pdf-loading"><div class="pdf-spinner"></div></div></div></div>
+        <div class="pdf-block"><div class="pdf-canvas" id="med_de-pdf-canvas"><div class="pdf-loading"><div class="pdf-spinner"></div></div></div><button class="pdf-nav pdf-prev" onclick="pdfNav('med_de',-1)" aria-label="Prev"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button><button class="pdf-nav pdf-next" onclick="pdfNav('med_de',1)" aria-label="Next"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button><span class="pdf-pagepill" id="med_de-pdf-info">—</span></div>
         <div style="margin-top:var(--sp-4)"><a class="btn-outline" href="https://georgvw.gumroad.com/?section=V4n4XYemvn1-_RTR-Oew8A==#V4n4XYemvn1-_RTR-Oew8A==" target="_blank" rel="noopener">Kostenlos auf Gumroad</a></div>
       </div>
 
@@ -2132,13 +2144,13 @@ body{padding-top:var(--lay-topbar);}
 <script>
 // PDF.js worker must be set immediately, before any pdfjsLib calls
 if(window.pdfjsLib){
-  pdfjsLib.GlobalWorkerOptions.workerSrc='https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+  pdfjsLib.GlobalWorkerOptions.workerSrc='media/vendor/pdf.worker.min.js';
 }
 </script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+<script src="media/vendor/pdf.min.js"></script>
 <script>
 // Set worker again after pdf.js loads (handles race condition)
-pdfjsLib.GlobalWorkerOptions.workerSrc='https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+pdfjsLib.GlobalWorkerOptions.workerSrc='media/vendor/pdf.worker.min.js';
 const PDF_SRC={
   kfb:'Kayfabizarro_Protopia_WEB_v1.pdf',
   med:'MedKayfab_Cardiology_WEB_v1.pdf',
@@ -2307,7 +2319,7 @@ var pdf={},pdfPage={kfb:1,med:1,kfb_book:1,med_book:1},
 var pdfIframe={};
 function ensureWorker(){
   try {
-    pdfjsLib.GlobalWorkerOptions.workerSrc='https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+    pdfjsLib.GlobalWorkerOptions.workerSrc='media/vendor/pdf.worker.min.js';
   } catch(e) {
     pdfjsLib.GlobalWorkerOptions.workerSrc='';
   }
@@ -2315,7 +2327,7 @@ function ensureWorker(){
 function pdfFrame(mode){
   var cv=document.getElementById(mode+'-pdf-canvas'); if(!cv) return;
   var p=pdfPage[mode]||1; var z=Math.round((pdfScale[mode]/1.4)*100);
-  cv.innerHTML='<iframe src="'+PDF_SRC[mode]+'#page='+p+'&zoom='+z+'&toolbar=0&navpanes=0" style="width:100%;aspect-ratio:16/9;height:auto;border:0;background:#fff" title="PDF preview"></iframe>';
+  cv.innerHTML='<iframe src="'+PDF_SRC[mode]+'#page='+p+'&toolbar=0&navpanes=0&scrollbar=0&view=Fit" style="width:100%;aspect-ratio:745/416;height:auto;border:0;background:#fff" title="PDF preview"></iframe>';
   var info=document.getElementById(mode+'-pdf-info'); if(info) info.textContent='Page '+p;
 }
 function loadPdf(mode){
@@ -2343,24 +2355,47 @@ function loadPdf(mode){
       pdfIframe[mode]=true; pdfPage[mode]=1; pdfFrame(mode);
     });
 }
-function renderPdf(mode){
+function pdfSwap(wrap,c,dir){
+  if(dir!==0 && window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches) dir=0;
+  var h=parseInt(c.style.height,10)||0;
+  if(h) wrap.style.height=(h+20)+'px';
+  var ld=wrap.querySelector('.pdf-loading'); if(ld) ld.remove();
+  var oldFrames=[].slice.call(wrap.querySelectorAll('.pdf-frame'));
+  var nf=document.createElement('div'); nf.className='pdf-frame'; nf.appendChild(c);
+  if(dir!==0){ nf.style.transform='translateX('+(dir>0?100:-100)+'%)'; nf.style.opacity='0'; }
+  wrap.appendChild(nf);
+  if(dir===0){ oldFrames.forEach(function(f){f.remove();}); return; }
+  requestAnimationFrame(function(){ requestAnimationFrame(function(){
+    nf.style.transition='transform .32s ease, opacity .32s ease';
+    nf.style.transform='translateX(0)'; nf.style.opacity='1';
+    oldFrames.forEach(function(f){
+      f.style.transition='transform .32s ease, opacity .32s ease';
+      f.style.transform='translateX('+(dir>0?-100:100)+'%)'; f.style.opacity='0';
+      setTimeout(function(){ f.remove(); },360);
+    });
+  }); });
+}
+function renderPdf(mode,dir){
   if(pdfIframe[mode]){pdfFrame(mode);return;}
   if(!pdf[mode]){loadPdf(mode);return;}
   var info=document.getElementById(mode+'-pdf-info');
   if(info) info.textContent='Page '+pdfPage[mode]+' / '+pdfTotal[mode];
   var wrap=document.getElementById(mode+'-pdf-canvas');
   if(!wrap) return;
-  wrap.innerHTML='';  // clear immediately, before async
-  var token=Date.now();
-  wrap._renderToken=token;
+  var token=Date.now(); wrap._renderToken=token;
   pdf[mode].getPage(pdfPage[mode]).then(function(page){
     if(wrap._renderToken!==token) return; // stale render, abort
-    var vp=page.getViewport({scale:pdfScale[mode]});
+    var avail=(wrap.clientWidth||700)-20;
+    var base=page.getViewport({scale:1});
+    var dpr=window.devicePixelRatio||1;
+    var vp=page.getViewport({scale:(avail/base.width)*dpr});
     var c=document.createElement('canvas');c.width=vp.width;c.height=vp.height;
-    c.style.maxWidth='none';c.style.display='block';c.style.width=Math.round(((wrap.clientWidth||700)-20)*(pdfScale[mode]/1.4))+'px';
-    wrap.innerHTML='';  // clear again in case anything snuck in
-    wrap.appendChild(c);
-    page.render({canvasContext:c.getContext('2d'),viewport:vp});
+    c.style.display='block';c.style.width=avail+'px';c.style.height=Math.round(avail*(base.height/base.width))+'px';c.style.maxWidth='100%';
+    var task=page.render({canvasContext:c.getContext('2d'),viewport:vp});
+    (task.promise||task).then(function(){
+      if(wrap._renderToken!==token) return; // a newer nav superseded this
+      pdfSwap(wrap,c,dir||0);
+    });
   });
 }
 function pdfNav(mode,dir){
@@ -2368,7 +2403,7 @@ function pdfNav(mode,dir){
   if(!pdf[mode]&&dir===1){loadPdf(mode);return;}
   var next=pdfPage[mode]+dir;
   if(next<1||next>pdfTotal[mode]) return;
-  pdfPage[mode]=next;renderPdf(mode);
+  pdfPage[mode]=next;renderPdf(mode,dir);
 }
 function pdfZoom(mode,delta){
   if(pdfIframe[mode]){pdfScale[mode]=Math.min(3,Math.max(0.5,pdfScale[mode]+delta));pdfFrame(mode);return;}
