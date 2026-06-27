@@ -102,7 +102,7 @@ mark{background:var(--mark);color:var(--ink);padding:0 2px;border-radius:2px;}
 .tb-logo{width:32px;height:32px;border-radius:var(--r-1);background:var(--ink);display:flex;align-items:center;justify-content:center;font-family:var(--ff-display);font-weight:800;font-size:18px;color:#fff;flex-shrink:0;letter-spacing:0;}
 .tb-name{font-family:var(--ff-display);font-weight:700;font-size:20px;letter-spacing:var(--ls-tight);color:var(--ink);white-space:nowrap;}
 .tb-nav{display:flex;align-items:center;flex:1;padding:0 var(--sp-6);gap:0;overflow-x:auto;overflow-y:hidden;scrollbar-width:none;min-width:0;}.tb-nav::-webkit-scrollbar{display:none;}
-.tb-nav-btn{display:flex;align-items:center;padding:0 var(--sp-5);border:none;background:transparent;cursor:pointer;font-family:var(--ff-ui);font-weight:600;font-size:var(--fs-sm);letter-spacing:var(--ls-stamp);text-transform:uppercase;color:var(--ink-3);border-bottom:2px solid transparent;margin-bottom:-1.5px;transition:color var(--dur-fast),border-color var(--dur-fast);white-space:nowrap;text-decoration:none;}
+.tb-nav-btn{display:flex;align-items:center;padding:0 var(--sp-5);border:none;background:transparent;cursor:pointer;font-family:var(--ff-ui);font-weight:700;font-size:var(--fs-sm);letter-spacing:.01em;text-transform:none;-webkit-text-stroke:0.3px currentColor;color:var(--ink-3);border-bottom:2px solid transparent;margin-bottom:-1.5px;transition:color var(--dur-fast),border-color var(--dur-fast);white-space:nowrap;text-decoration:none;}
 .tb-nav-btn:hover{color:var(--ink);}.tb-nav-btn:focus,.tb-nav-btn:focus-visible{outline:none;}
 .tb-nav-btn.active{color:var(--accent);border-bottom-color:var(--accent);}
 .tb-nav-ext{display:flex;align-items:center;gap:4px;}
@@ -519,7 +519,7 @@ body{font-size:15px;line-height:1.7;}
 /* ─── CHIPS / CTAS as stamps ─── */
 .chip{font-family:var(--ff-mono);border:1.5px solid var(--border-2);border-radius:0;background:var(--paper-card);color:var(--ink-3);transform:rotate(-.6deg);}
 .hero-chips .chip:nth-child(even){transform:rotate(.7deg);}
-.cta-dashed,.cta-solid,.btn-outline{font-family:var(--ff-ui);font-weight:400;letter-spacing:.04em;text-transform:uppercase;font-size:var(--fs-sm);border-radius:0;padding:11px 20px;box-shadow:var(--sh-paper-sm);transition:transform var(--dur-fast) var(--ease-out),background var(--dur-fast);}
+.cta-dashed,.cta-solid,.btn-outline{font-family:var(--ff-ui);font-weight:700;letter-spacing:.02em;text-transform:none;-webkit-text-stroke:0.35px currentColor;font-size:var(--fs-sm);border-radius:0;padding:11px 20px;box-shadow:var(--sh-paper-sm);transition:transform var(--dur-fast) var(--ease-out),background var(--dur-fast);}
 .cta-solid{background:var(--accent);color:#f6efd9;border:2px solid var(--ink);transform:rotate(-1deg);}
 .cta-solid:hover{transform:rotate(.6deg) scale(1.02);background:var(--accent);}
 .cta-dashed{background:var(--paper-card);color:var(--ink);border:2px solid var(--ink);transform:rotate(.6deg);}
@@ -786,8 +786,9 @@ body{padding-top:var(--lay-topbar);}
       <span class="chip"><span style="white-space:nowrap">CC BY-NC-SA 4.0</span></span>
     </div>
     <div class="hero-ctas">
-      <a class="cta-dashed" href="https://georgvw.gumroad.com/?section=V4n4XYemvn1-_RTR-Oew8A==#V4n4XYemvn1-_RTR-Oew8A==" target="_blank" rel="noopener">Free Cut &amp; Play Cards</a>
-      <button class="cta-solid" onclick="document.getElementById('home-origin').scrollIntoView({behavior:'smooth'})">Read the Anti-Rules</button>
+      <a class="cta-dashed" href="https://georgvw.gumroad.com/?section=V4n4XYemvn1-_RTR-Oew8A==#V4n4XYemvn1-_RTR-Oew8A==" target="_blank" rel="noopener">Free Cut &amp; Play Comics</a>
+      <button class="cta-solid" onclick="document.getElementById('home-origin').scrollIntoView({behavior:'smooth'})">Freestyle Rules</button>
+      <button class="cta-solid" onclick="goPage('med',document.getElementById('tb-med'))">MedKayfab Rules</button>
     </div>
   </div>
 
@@ -873,8 +874,9 @@ body{padding-top:var(--lay-topbar);}
       <span class="chip"><span style="white-space:nowrap">CC BY-NC-SA 4.0</span></span>
     </div>
     <div class="hero-ctas">
-      <a class="cta-dashed" href="https://georgvw.gumroad.com/?section=V4n4XYemvn1-_RTR-Oew8A==#V4n4XYemvn1-_RTR-Oew8A==" target="_blank" rel="noopener">Gratis Cut &amp; Play Karten</a>
-      <button class="cta-solid" onclick="document.getElementById('home_de-origin').scrollIntoView({behavior:'smooth'})">Lies die Anti-Regeln</button>
+      <a class="cta-dashed" href="https://georgvw.gumroad.com/?section=V4n4XYemvn1-_RTR-Oew8A==#V4n4XYemvn1-_RTR-Oew8A==" target="_blank" rel="noopener">Gratis Cut &amp; Play Comics</a>
+      <button class="cta-solid" onclick="document.getElementById('home_de-origin').scrollIntoView({behavior:'smooth'})">Freestyle-Regeln</button>
+      <button class="cta-solid" onclick="goPage('med',document.getElementById('tb-med'))">MedKayfab-Regeln</button>
     </div>
   </div>
 
