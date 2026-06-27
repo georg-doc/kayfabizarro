@@ -628,7 +628,8 @@ mark,::selection{background:var(--mark);}
 
 /* essay reader (Cut & Play) — ported from Comic Essay&Tools */
 .hl{background-image:linear-gradient(101deg,rgba(233,193,74,0) 0.4%,var(--mark,#e9c14a) 1.8%,rgba(233,193,74,.62) 50%,var(--mark,#e9c14a) 97%,rgba(233,193,74,0) 99.6%);background-repeat:no-repeat;background-size:100% 88%;background-position:0 60%;border-radius:42% 12% 38% 16%/26% 60% 22% 50%;padding:0 .1em;margin:0 -.04em;-webkit-box-decoration-break:clone;box-decoration-break:clone;}
-.swipe{color:#f6efd9;background:var(--accent,#b8361f);padding:0 .14em .04em;-webkit-box-decoration-break:clone;box-decoration-break:clone;box-shadow:2px 2px 0 rgba(31,26,20,.22);}
+.swipe{display:inline-block;transform:rotate(-1.4deg);color:#f6efd9;background:var(--accent,#b8361f);padding:0 .14em .04em;-webkit-box-decoration-break:clone;box-decoration-break:clone;box-shadow:2px 2px 0 rgba(31,26,20,.22);}
+body.a11y .swipe,html[data-theme="a11y"] .swipe{transform:none;}
 .bigq{font-family:var(--ff-display);font-size:var(--fs-lg);color:var(--accent);line-height:var(--lh-snug);max-width:var(--lay-prose);margin:var(--sp-6) 0;}
 .sec-sub{margin:var(--sp-10) 0 var(--sp-4);max-width:var(--lay-prose);scroll-margin-top:90px;}
 .essay-toc{display:none;transition:opacity var(--dur-fast);}
@@ -649,6 +650,10 @@ mark,::selection{background:var(--mark);}
 .tb-logo{width:42px;height:42px;overflow:hidden;padding:0;}
 .tb-logo img{width:100%;height:100%;object-fit:cover;display:block;}
 
+/* inline song embeds inside the Protopia essay */
+.essay-embed{max-width:var(--lay-prose);margin:26px 0;}
+.essay-embed .lp-video-poster{min-height:0;}
+.essay-embed-cap{font-family:var(--ff-ui);font-size:var(--fs-sm,14px);color:var(--ink-3);margin-top:8px;letter-spacing:.01em;}
 /* keep Cut & Play essay text within reading width (clear of floating ToC) */
 #page-cutplay .prose,#page-cutplay .origin-subtitle,#page-cutplay .bigq,#page-cutplay .note,#page-cutplay .origin-title,#page-cutplay .sec-sub,#page-cutplay .origin-header,#page-cutplay_de .prose,#page-cutplay_de .origin-subtitle,#page-cutplay_de .bigq,#page-cutplay_de .note,#page-cutplay_de .origin-title,#page-cutplay_de .sec-sub,#page-cutplay_de .origin-header,#page-protopia .prose,#page-protopia .origin-subtitle,#page-protopia .bigq,#page-protopia .note,#page-protopia .origin-title,#page-protopia .sec-sub,#page-protopia .origin-header,#page-protopia_de .prose,#page-protopia_de .origin-subtitle,#page-protopia_de .bigq,#page-protopia_de .note,#page-protopia_de .origin-title,#page-protopia_de .sec-sub,#page-protopia_de .origin-header{max-width:var(--lay-prose);}
 
@@ -788,7 +793,7 @@ body{padding-top:var(--lay-topbar);}
   <div class="page-body" style="display:block;max-width:var(--lay-prose,760px);margin:0 auto;">
     <div class="origin-header" id="home-start" style="text-align:center">
       <div class="sec-eyebrow">How it works</div>
-      <h2 class="origin-title">Print it. Cut it. Play the future.</h2>
+      <h2 class="origin-title">Print it. Cut it. <span class="swipe">Play</span> the future.</h2>
       <p class="origin-subtitle">A weird little comic you cut into cards and turn into a wild story with friends. You each play a character, you roll for the mood, and it careens somewhere nobody saw coming. Twenty minutes, a lot of laughing, and a few things said that would never survive dinner. The kind of evening you want to run again with other people.</p>
     </div>
     <div style="display:flex;gap:16px;flex-wrap:wrap;justify-content:center;margin:24px 0">
@@ -875,7 +880,7 @@ body{padding-top:var(--lay-topbar);}
   <div class="page-body" style="display:block;max-width:var(--lay-prose,760px);margin:0 auto;">
     <div class="origin-header" id="home_de-start" style="text-align:center">
       <div class="sec-eyebrow">So geht's</div>
-      <h2 class="origin-title">Ausdrucken. Zerschneiden. Zukunft spielen.</h2>
+      <h2 class="origin-title">Ausdrucken. Zerschneiden. Zukunft <span class="swipe">spielen</span>.</h2>
       <p class="origin-subtitle">Ein schräger kleiner Comic, den du in Karten schneidest und mit Freunden in eine wilde Geschichte verwandelst. Jede und jeder spielt eine Figur, ihr würfelt die Stimmung aus, und es läuft irgendwohin, das keiner kommen sah. Zwanzig Minuten, viel Gelächter, und ein paar Sätze, die beim Abendessen nie fallen würden. So ein Abend, den du gleich mit anderen wiederholen willst.</p>
     </div>
     <div style="display:flex;gap:16px;flex-wrap:wrap;justify-content:center;margin:24px 0">
@@ -902,7 +907,7 @@ body{padding-top:var(--lay-topbar);}
   <div class="wrap">
     <div class="origin-header">
       <div class="sec-eyebrow">A Field Report from Uncle FrizzleBob</div>
-      <h1 class="origin-title">Between the Panels</h1>
+      <h1 class="origin-title">Between the <span class="swipe">Panels</span></h1>
       <p class="origin-subtitle">How a runaway cartoon rabbit wandered onto the Infinite Canvas, and, not quite meaning to, left a Tenth Art behind.</p>
     </div>
     <p class="prose"><strong class="hl">Welcome to the Infinite Canvas of the Tenth Art.</strong> <em>&ldquo;Yeah, but is it ART?!&rdquo;</em></p>
@@ -954,7 +959,7 @@ body{padding-top:var(--lay-topbar);}
   <div class="wrap">
     <div class="origin-header">
       <div class="sec-eyebrow">Ein Feldbericht von Onkel FrizzleBob</div>
-      <h1 class="origin-title">Zwischen den Panels</h1>
+      <h1 class="origin-title">Zwischen den <span class="swipe">Panels</span></h1>
       <p class="origin-subtitle">Wie ein entlaufener Cartoon-Hase auf den Infinite Canvas geriet und, ohne es ganz zu wollen, eine Zehnte Kunst zurückließ.</p>
     </div>
     <p class="prose"><strong class="hl">Willkommen auf dem Infinite Canvas der Zehnten Kunst.</strong> <em>„Ja, aber ist das KUNST?!“</em></p>
@@ -1019,8 +1024,38 @@ body{padding-top:var(--lay-topbar);}
       <h2 class="sec-sub" id="cpen-three-futures-three-flav">Three futures, three flavours</h2>
       <p class="prose">There are three decks, and you understand them with your fingers before your brain catches up. Same artist, same warm watercolour and ink, same recurring rabbit and dials and beetles. What changes is the weather.</p>
       <p class="prose">The first deck is <strong>Hopium</strong>, the brightest, glossiest, most seductive sheet, painted in the palette of advertising: rainbows, glass skylines, surfaces that shine. Its sharpest card is The Moving Launch Date, where "Q3 2024" is crossed out to "2025," then "2026," then simply "SOON." A future sold as a permanent pre order.</p>
+      <figure class="essay-embed">
+        <div class="lp-video-poster" id="yt-protopia-a-en" onclick="playLpVideo('yt-protopia-a-en','BOgt2SAVCQc')">
+          <img src="https://img.youtube.com/vi/BOgt2SAVCQc/hqdefault.jpg" alt="FORGET UTOPIA — KayfaBizarro song" loading="lazy" onerror="this.style.display='none'">
+          <div class="lp-video-overlay">
+            <div class="lp-play-btn"><svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="32" cy="32" r="32" fill="rgba(0,0,0,0.55)"/><polygon points="26,20 50,32 26,44" fill="white"/></svg></div>
+            <div class="lp-video-label">Hopium Lane · Forget Utopia</div>
+          </div>
+        </div>
+        <figcaption class="essay-embed-cap">Deck A · Forget Utopia — the song for the Hopium row. Print, cut, and play it free.</figcaption>
+      </figure>
       <p class="prose">The second deck is <strong>Doom</strong>, the dark sheet, heavy with ink, and it sells you the opposite: not a finished future but a lost one, on a loop, with ads. The Doomsday Clock, The Perpetual Almost, The Frozen Watcher. Where Hopium says the future is already done, Doom says it is already over. Both, notice, quietly take the future out of your hands.</p>
+      <figure class="essay-embed">
+        <div class="lp-video-poster" id="yt-protopia-b-en" onclick="playLpVideo('yt-protopia-b-en','CogPUJUye_s')">
+          <img src="https://img.youtube.com/vi/CogPUJUye_s/hqdefault.jpg" alt="IGNORE DYSTOPIA — KayfaBizarro song" loading="lazy" onerror="this.style.display='none'">
+          <div class="lp-video-overlay">
+            <div class="lp-play-btn"><svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="32" cy="32" r="32" fill="rgba(0,0,0,0.55)"/><polygon points="26,20 50,32 26,44" fill="white"/></svg></div>
+            <div class="lp-video-label">Fearmonger Lane · Ignore Dystopia</div>
+          </div>
+        </div>
+        <figcaption class="essay-embed-cap">Deck B · Ignore Dystopia — the song for the Fearmonger row. Print, cut, and play it free.</figcaption>
+      </figure>
       <p class="prose">The third deck is <strong>Protopia</strong>, and its title is the whole argument: Protopia in Pencil. In pencil, that is, provisional, erasable, not yet fixed, the opposite of the finished city. Its cards are not promises but small instructions: The Held Breath, The Reclaimed Second. "Place attention on purpose. Take one second back, then another." It is the only one of the three futures that gives your hand something to do instead of something to believe.</p>
+      <figure class="essay-embed">
+        <div class="lp-video-poster" id="yt-protopia-c-en" onclick="playLpVideo('yt-protopia-c-en','PTbyElt7AE8')">
+          <img src="https://img.youtube.com/vi/PTbyElt7AE8/hqdefault.jpg" alt="EMBRACE PROTOPIA — KayfaBizarro song" loading="lazy" onerror="this.style.display='none'">
+          <div class="lp-video-overlay">
+            <div class="lp-play-btn"><svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="32" cy="32" r="32" fill="rgba(0,0,0,0.55)"/><polygon points="26,20 50,32 26,44" fill="white"/></svg></div>
+            <div class="lp-video-label">Curiosity Lane · Embrace Protopia</div>
+          </div>
+        </div>
+        <figcaption class="essay-embed-cap">Deck C · Embrace Protopia — the song for the Curiosity row. Print, cut, and play it free.</figcaption>
+      </figure>
       <p class="prose">Three moods, three palettes, one world drawn three times. Before a single card is played, your hand already knows whether it is holding a seduction, a threat, or an exercise. That is colour doing the storytelling, exactly as McCloud promised it could.</p>
       <h2 class="sec-sub" id="cpen-what-the-scissors-throw-">What the scissors throw away</h2>
       <p class="prose">Here is the most elegant thing about the whole contraption, and it only shows up once you actually start cutting.</p>
@@ -1083,8 +1118,38 @@ body{padding-top:var(--lay-topbar);}
       <h2 class="sec-sub" id="cpde-drei-zuk-nfte-drei-gesch">Drei Zukünfte, drei Geschmacksrichtungen</h2>
       <p class="prose">Es gibt drei Decks, und du verstehst sie mit den Fingern, bevor der Kopf nachkommt. Gleicher Zeichner, gleiche warme Mischung aus Aquarell und Tusche, derselbe wiederkehrende Hase, dieselben Drehscheiben und Käfer. Was sich ändert, ist das Wetter.</p>
       <p class="prose">Das erste Deck ist <strong>Hopium</strong>, der hellste, glänzendste, verführerischste Bogen, gemalt in der Palette der Werbung: Regenbogen, gläserne Skylines, Oberflächen, die glänzen. Seine schärfste Karte ist The Moving Launch Date, auf der „Q3 2024" durchgestrichen wird zu „2025", dann „2026", dann nur noch „SOON". Eine Zukunft als Dauer-Vorbestellung.</p>
+      <figure class="essay-embed">
+        <div class="lp-video-poster" id="yt-protopia-a-de" onclick="playLpVideo('yt-protopia-a-de','BOgt2SAVCQc')">
+          <img src="https://img.youtube.com/vi/BOgt2SAVCQc/hqdefault.jpg" alt="FORGET UTOPIA — KayfaBizarro-Song" loading="lazy" onerror="this.style.display='none'">
+          <div class="lp-video-overlay">
+            <div class="lp-play-btn"><svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="32" cy="32" r="32" fill="rgba(0,0,0,0.55)"/><polygon points="26,20 50,32 26,44" fill="white"/></svg></div>
+            <div class="lp-video-label">Hopium Lane · Forget Utopia</div>
+          </div>
+        </div>
+        <figcaption class="essay-embed-cap">Deck A · Forget Utopia — der Song zur Hopium-Reihe. Frei zum Drucken, Schneiden und Spielen.</figcaption>
+      </figure>
       <p class="prose">Das zweite Deck ist <strong>Doom</strong>, der dunkle Bogen, schwer von Tusche, und es verkauft dir das Gegenteil: keine fertige Zukunft, sondern eine verlorene, in Dauerschleife, mit Werbung. The Doomsday Clock, The Perpetual Almost, The Frozen Watcher. Wo Hopium sagt, die Zukunft sei schon fertig, sagt Doom, sie sei schon vorbei. Beide nehmen dir die Zukunft leise aus der Hand.</p>
+      <figure class="essay-embed">
+        <div class="lp-video-poster" id="yt-protopia-b-de" onclick="playLpVideo('yt-protopia-b-de','CogPUJUye_s')">
+          <img src="https://img.youtube.com/vi/CogPUJUye_s/hqdefault.jpg" alt="IGNORE DYSTOPIA — KayfaBizarro-Song" loading="lazy" onerror="this.style.display='none'">
+          <div class="lp-video-overlay">
+            <div class="lp-play-btn"><svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="32" cy="32" r="32" fill="rgba(0,0,0,0.55)"/><polygon points="26,20 50,32 26,44" fill="white"/></svg></div>
+            <div class="lp-video-label">Fearmonger Lane · Ignore Dystopia</div>
+          </div>
+        </div>
+        <figcaption class="essay-embed-cap">Deck B · Ignore Dystopia — der Song zur Fearmonger-Reihe. Frei zum Drucken, Schneiden und Spielen.</figcaption>
+      </figure>
       <p class="prose">Das dritte Deck ist <strong>Protopia</strong>, und sein Titel ist das ganze Argument: Protopia in Pencil. Mit dem Bleistift, also vorläufig, radierbar, noch nicht festgeschrieben, das Gegenteil der fertigen Stadt. Seine Karten sind keine Versprechen, sondern kleine Anweisungen: The Held Breath, The Reclaimed Second. „Richte deine Aufmerksamkeit mit Absicht. Hol dir eine Sekunde zurück, dann noch eine." Es ist die einzige der drei Zukünfte, die deiner Hand etwas zu tun gibt statt etwas zu glauben.</p>
+      <figure class="essay-embed">
+        <div class="lp-video-poster" id="yt-protopia-c-de" onclick="playLpVideo('yt-protopia-c-de','PTbyElt7AE8')">
+          <img src="https://img.youtube.com/vi/PTbyElt7AE8/hqdefault.jpg" alt="EMBRACE PROTOPIA — KayfaBizarro-Song" loading="lazy" onerror="this.style.display='none'">
+          <div class="lp-video-overlay">
+            <div class="lp-play-btn"><svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="32" cy="32" r="32" fill="rgba(0,0,0,0.55)"/><polygon points="26,20 50,32 26,44" fill="white"/></svg></div>
+            <div class="lp-video-label">Curiosity Lane · Embrace Protopia</div>
+          </div>
+        </div>
+        <figcaption class="essay-embed-cap">Deck C · Embrace Protopia — der Song zur Curiosity-Reihe. Frei zum Drucken, Schneiden und Spielen.</figcaption>
+      </figure>
       <p class="prose">Drei Stimmungen, drei Paletten, eine Welt dreimal gezeichnet. Bevor eine einzige Karte gespielt ist, weiß deine Hand schon, ob sie eine Verführung, eine Drohung oder eine Übung hält. Das ist Farbe, die erzählt, genau wie McCloud es versprochen hat.</p>
       <h2 class="sec-sub" id="cpde-was-die-schere-wegwirft">Was die Schere wegwirft</h2>
       <p class="prose">Das Eleganteste an der ganzen Konstruktion zeigt sich erst, wenn du wirklich anfängst zu schneiden.</p>
