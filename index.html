@@ -553,6 +553,15 @@ body.med .mode-cell.mc1 .mode-name{color:#8b6060;}body.med .mode-cell.mc2 .mode-
 .rung{display:flex;align-items:center;gap:14px;padding:9px 16px;border-top:1.5px solid rgba(31,26,20,.28);position:relative;}
 .rung:first-child{border-top:none;}
 .rung .die{font-family:var(--ff-mono);font-size:26px;line-height:1;flex:0 0 26px;color:var(--ink);}
+.rung .die{flex:0 0 30px;}
+.rung .die img,.mode-num img{display:inline-block;vertical-align:middle;}
+.rung .die img{width:30px;height:30px;}
+.mode-num img{width:34px;height:34px;}
+.onepager{max-width:var(--lay-prose);margin:var(--sp-5,22px) 0;}
+.onepager>a{border-bottom:none;display:block;}
+.onepager img{width:100%;height:auto;display:block;border:1px solid var(--border);border-radius:var(--r-3);box-shadow:var(--sh-soft);background:var(--paper-card);}
+.onepager-actions{margin-top:var(--sp-3);}
+.onepager-cap{font-family:var(--ff-ui);font-size:var(--fs-sm,14px);color:var(--ink-3);margin-top:8px;}
 .rung .rn{font-family:var(--ff-body);font-weight:800;font-size:var(--fs-md);flex:0 0 92px;color:var(--ink);}
 .rung .rd{font-family:var(--ff-body);font-size:var(--fs-base);color:var(--ink-2);flex:1;line-height:1.4;}
 .rung .rd strong{color:var(--ink);}
@@ -1241,6 +1250,11 @@ body{padding-top:var(--lay-topbar);}
         <div class="rule-line"><span class="rule-key">Cards —</span> 15–20 KayfaBizarro cards per player, shuffled into one shared pile. Every card can be an <em>Actor</em>, <em>Scene</em>, or <em>Quest</em>.</div>
         <div class="rule-line"><span class="rule-key">Two D6 —</span> One <em>Story-Mode Die</em>, one <em>Quest Die</em>. Both stay visible.</div>
         <div class="rule-line"><span class="rule-key">1–6 People —</span> And a table. No board. No pawns.</div>
+        <figure class="onepager">
+          <a href="media/kfb/KayfaBizarro%20Quick-Rules%20OnePager%20EN%20v6.png" target="_blank" rel="noopener"><img src="media/kfb/KayfaBizarro%20Quick-Rules%20OnePager%20EN%20v6.png" alt="KayfaBizarro Quick-Rules one-pager (EN)" loading="lazy"></a>
+          <div class="onepager-actions"><a class="btn-outline" href="media/kfb/KayfaBizarro%20Quick-Rules%20OnePager%20EN%20v6.pdf" target="_blank" rel="noopener" download>Download the One-Pager (PDF)</a></div>
+          <div class="onepager-cap">The whole game on one page — print it, cut along the lines, play.</div>
+        </figure>
       </div>
 
       <div class="rules-section" id="kfb-cut">
@@ -1304,12 +1318,12 @@ body{padding-top:var(--lay-topbar);}
         <div class="sec-title">The Quest <em>Die</em></div>
         <p class="prose">The Quest Die tracks where the arc is — from <strong>Setup (1)</strong> to <strong>Finale (6).</strong> Only the King moves it, after each story.</p>
         <div class="ladder">
-          <div class="rung"><span class="die">⚀</span><span class="rn">Setup</span><span class="rd">Establish the world.</span></div>
-          <div class="rung"><span class="die">⚁</span><span class="rn">Spark</span><span class="rd">Something disrupts.</span></div>
-          <div class="rung"><span class="die">⚂</span><span class="rn">Pursuit</span><span class="rd">Stakes grow.</span></div>
-          <div class="rung"><span class="die">⚃</span><span class="rn">Trials</span><span class="rd">Complications mount.</span></div>
-          <div class="rung"><span class="die">⚄</span><span class="rn">Ordeal</span><span class="rd">The hardest moment.</span></div>
-          <div class="rung"><span class="die">⚅</span><span class="rn">Finale</span><span class="rd"><strong>It ends. The Quest must resolve.</strong></span></div>
+          <div class="rung"><span class="die"><img src="media/kfb/d6-1.svg" alt="1" width="30" height="30"></span><span class="rn">Setup</span><span class="rd">Establish the world.</span></div>
+          <div class="rung"><span class="die"><img src="media/kfb/d6-2.svg" alt="2" width="30" height="30"></span><span class="rn">Spark</span><span class="rd">Something disrupts.</span></div>
+          <div class="rung"><span class="die"><img src="media/kfb/d6-3.svg" alt="3" width="30" height="30"></span><span class="rn">Pursuit</span><span class="rd">Stakes grow.</span></div>
+          <div class="rung"><span class="die"><img src="media/kfb/d6-4.svg" alt="4" width="30" height="30"></span><span class="rn">Trials</span><span class="rd">Complications mount.</span></div>
+          <div class="rung"><span class="die"><img src="media/kfb/d6-5.svg" alt="5" width="30" height="30"></span><span class="rn">Ordeal</span><span class="rd">The hardest moment.</span></div>
+          <div class="rung"><span class="die"><img src="media/kfb/d6-6.svg" alt="6" width="30" height="30"></span><span class="rn">Finale</span><span class="rd"><strong>It ends. The Quest must resolve.</strong></span></div>
         </div>
         <div class="sec-sub">The King's Verdict</div>
         <div class="vtable">
@@ -1325,12 +1339,12 @@ body{padding-top:var(--lay-topbar);}
         <div class="sec-title">The Story-Mode <em>Die</em></div>
         <p class="prose">Roll the Story-Mode Die at the start of your turn. <strong>Not optional. Commit to it.</strong> If the Mode clashes with your story, don't smooth it over — play the clash out loud and let the wrong tone bend the scene. <em>That's your turn.</em></p>
         <div class="modes-grid">
-          <div class="mode-cell mc1"><span class="mode-num m1">⚀</span><div><div class="mode-name">Tragic</div><div class="mode-desc">Loss is real. Push forward anyway.</div></div></div>
-          <div class="mode-cell mc2"><span class="mode-num m2">⚁</span><div><div class="mode-name">Comic</div><div class="mode-desc">Things go wrong. It's your fault. Play the gap.</div></div></div>
-          <div class="mode-cell mc3"><span class="mode-num m3">⚂</span><div><div class="mode-name">Absurd</div><div class="mode-desc">The impossible is normal. Don't explain it.</div></div></div>
-          <div class="mode-cell mc4"><span class="mode-num m4">⚃</span><div><div class="mode-name">Heroic</div><div class="mode-desc">Your Actor is right for this moment. Play the peak.</div></div></div>
-          <div class="mode-cell mc5"><span class="mode-num m5">⚄</span><div><div class="mode-name">Mystical</div><div class="mode-desc">Something's happening beneath the surface.</div></div></div>
-          <div class="mode-cell mc6"><span class="mode-num m6">⚅</span><div><div class="mode-name">Forbidden</div><div class="mode-desc">Cross the line the story's been avoiding. Sell it.</div></div></div>
+          <div class="mode-cell mc1"><span class="mode-num m1"><img src="media/kfb/d6-1.svg" alt="1" width="34" height="34"></span><div><div class="mode-name">Tragic</div><div class="mode-desc">Loss is real. Push forward anyway.</div></div></div>
+          <div class="mode-cell mc2"><span class="mode-num m2"><img src="media/kfb/d6-2.svg" alt="2" width="34" height="34"></span><div><div class="mode-name">Comic</div><div class="mode-desc">Things go wrong. It's your fault. Play the gap.</div></div></div>
+          <div class="mode-cell mc3"><span class="mode-num m3"><img src="media/kfb/d6-3.svg" alt="3" width="34" height="34"></span><div><div class="mode-name">Absurd</div><div class="mode-desc">The impossible is normal. Don't explain it.</div></div></div>
+          <div class="mode-cell mc4"><span class="mode-num m4"><img src="media/kfb/d6-4.svg" alt="4" width="34" height="34"></span><div><div class="mode-name">Heroic</div><div class="mode-desc">Your Actor is right for this moment. Play the peak.</div></div></div>
+          <div class="mode-cell mc5"><span class="mode-num m5"><img src="media/kfb/d6-5.svg" alt="5" width="34" height="34"></span><div><div class="mode-name">Mystical</div><div class="mode-desc">Something's happening beneath the surface.</div></div></div>
+          <div class="mode-cell mc6"><span class="mode-num m6"><img src="media/kfb/d6-6.svg" alt="6" width="34" height="34"></span><div><div class="mode-name">Forbidden</div><div class="mode-desc">Cross the line the story's been avoiding. Sell it.</div></div></div>
         </div>
       </div>
 
@@ -1482,6 +1496,11 @@ body{padding-top:var(--lay-topbar);}
         <div class="rule-line"><span class="rule-key">Karten —</span> 15–20 KayfaBizarro-Karten pro Person, in einen gemeinsamen Stapel gemischt. Jede Karte kann ein <em>Actor</em>, eine <em>Scene</em> oder eine <em>Quest</em> sein.</div>
         <div class="rule-line"><span class="rule-key">Zwei W6 —</span> Ein <em>Story-Mode-Würfel</em>, ein <em>Quest-Würfel</em>. Beide jederzeit sichtbar.</div>
         <div class="rule-line"><span class="rule-key">1–6 Personen —</span> Und einen Tisch. Kein Brett. Keine Pawns.</div>
+        <figure class="onepager">
+          <a href="media/kfb/KayfaBizarro%20Quick-Rules%20OnePager%20DE%20v6.png" target="_blank" rel="noopener"><img src="media/kfb/KayfaBizarro%20Quick-Rules%20OnePager%20DE%20v6.png" alt="KayfaBizarro Quick-Rules OnePager (DE)" loading="lazy"></a>
+          <div class="onepager-actions"><a class="btn-outline" href="media/kfb/KayfaBizarro%20Quick-Rules%20OnePager%20DE%20v6.pdf" target="_blank" rel="noopener" download>OnePager als PDF herunterladen</a></div>
+          <div class="onepager-cap">Das ganze Spiel auf einer Seite — ausdrucken, entlang der Linien schneiden, spielen.</div>
+        </figure>
       </div>
 
       <div class="rules-section" id="kfb_de-cut">
@@ -1545,12 +1564,12 @@ body{padding-top:var(--lay-topbar);}
         <div class="sec-title">Der Quest-<em>Würfel</em></div>
         <p class="prose">Der Quest-Würfel verfolgt, wo der Bogen steht — von <strong>Aufbau (1)</strong> bis <strong>Finale (6).</strong> Nur der König bewegt ihn, nach jeder Geschichte.</p>
         <div class="ladder">
-          <div class="rung"><span class="die">⚀</span><span class="rn">Aufbau</span><span class="rd">Etabliert die Welt.</span></div>
-          <div class="rung"><span class="die">⚁</span><span class="rn">Funke</span><span class="rd">Etwas stört.</span></div>
-          <div class="rung"><span class="die">⚂</span><span class="rn">Verfolgung</span><span class="rd">Der Einsatz wächst.</span></div>
-          <div class="rung"><span class="die">⚃</span><span class="rn">Prüfungen</span><span class="rd">Komplikationen häufen sich.</span></div>
-          <div class="rung"><span class="die">⚄</span><span class="rn">Tortur</span><span class="rd">Der härteste Moment.</span></div>
-          <div class="rung"><span class="die">⚅</span><span class="rn">Finale</span><span class="rd"><strong>Es endet. Die Quest muss sich auflösen.</strong></span></div>
+          <div class="rung"><span class="die"><img src="media/kfb/d6-1.svg" alt="1" width="30" height="30"></span><span class="rn">Aufbau</span><span class="rd">Etabliert die Welt.</span></div>
+          <div class="rung"><span class="die"><img src="media/kfb/d6-2.svg" alt="2" width="30" height="30"></span><span class="rn">Funke</span><span class="rd">Etwas stört.</span></div>
+          <div class="rung"><span class="die"><img src="media/kfb/d6-3.svg" alt="3" width="30" height="30"></span><span class="rn">Verfolgung</span><span class="rd">Der Einsatz wächst.</span></div>
+          <div class="rung"><span class="die"><img src="media/kfb/d6-4.svg" alt="4" width="30" height="30"></span><span class="rn">Prüfungen</span><span class="rd">Komplikationen häufen sich.</span></div>
+          <div class="rung"><span class="die"><img src="media/kfb/d6-5.svg" alt="5" width="30" height="30"></span><span class="rn">Tortur</span><span class="rd">Der härteste Moment.</span></div>
+          <div class="rung"><span class="die"><img src="media/kfb/d6-6.svg" alt="6" width="30" height="30"></span><span class="rn">Finale</span><span class="rd"><strong>Es endet. Die Quest muss sich auflösen.</strong></span></div>
         </div>
         <div class="sec-sub">Das Urteil des Königs</div>
         <div class="vtable">
@@ -1566,12 +1585,12 @@ body{padding-top:var(--lay-topbar);}
         <div class="sec-title">Der Story-Mode-<em>Würfel</em></div>
         <p class="prose">Wirf den Story-Mode-Würfel zu Beginn deines Zugs. <strong>Nicht optional. Committe dich.</strong> Wenn der Modus mit deiner Geschichte kollidiert, bügel ihn nicht glatt — spiel die Kollision laut aus und lass den falschen Ton die Szene verbiegen. <em>Das ist dein Zug.</em></p>
         <div class="modes-grid">
-          <div class="mode-cell mc1"><span class="mode-num m1">⚀</span><div><div class="mode-name">Tragisch</div><div class="mode-desc">Verlust ist echt. Trotzdem weiter.</div></div></div>
-          <div class="mode-cell mc2"><span class="mode-num m2">⚁</span><div><div class="mode-name">Komisch</div><div class="mode-desc">Es geht schief. Du bist schuld. Spiel die Lücke.</div></div></div>
-          <div class="mode-cell mc3"><span class="mode-num m3">⚂</span><div><div class="mode-name">Absurd</div><div class="mode-desc">Das Unmögliche ist normal. Erklär es nicht.</div></div></div>
-          <div class="mode-cell mc4"><span class="mode-num m4">⚃</span><div><div class="mode-name">Heroisch</div><div class="mode-desc">Dein Actor ist richtig für diesen Moment. Spiel den Gipfel.</div></div></div>
-          <div class="mode-cell mc5"><span class="mode-num m5">⚄</span><div><div class="mode-name">Mystisch</div><div class="mode-desc">Unter der Oberfläche passiert etwas.</div></div></div>
-          <div class="mode-cell mc6"><span class="mode-num m6">⚅</span><div><div class="mode-name">Verboten</div><div class="mode-desc">Überschreite die Linie, um die sich die Geschichte höflich gedrückt hat. Verkauf es.</div></div></div>
+          <div class="mode-cell mc1"><span class="mode-num m1"><img src="media/kfb/d6-1.svg" alt="1" width="34" height="34"></span><div><div class="mode-name">Tragisch</div><div class="mode-desc">Verlust ist echt. Trotzdem weiter.</div></div></div>
+          <div class="mode-cell mc2"><span class="mode-num m2"><img src="media/kfb/d6-2.svg" alt="2" width="34" height="34"></span><div><div class="mode-name">Komisch</div><div class="mode-desc">Es geht schief. Du bist schuld. Spiel die Lücke.</div></div></div>
+          <div class="mode-cell mc3"><span class="mode-num m3"><img src="media/kfb/d6-3.svg" alt="3" width="34" height="34"></span><div><div class="mode-name">Absurd</div><div class="mode-desc">Das Unmögliche ist normal. Erklär es nicht.</div></div></div>
+          <div class="mode-cell mc4"><span class="mode-num m4"><img src="media/kfb/d6-4.svg" alt="4" width="34" height="34"></span><div><div class="mode-name">Heroisch</div><div class="mode-desc">Dein Actor ist richtig für diesen Moment. Spiel den Gipfel.</div></div></div>
+          <div class="mode-cell mc5"><span class="mode-num m5"><img src="media/kfb/d6-5.svg" alt="5" width="34" height="34"></span><div><div class="mode-name">Mystisch</div><div class="mode-desc">Unter der Oberfläche passiert etwas.</div></div></div>
+          <div class="mode-cell mc6"><span class="mode-num m6"><img src="media/kfb/d6-6.svg" alt="6" width="34" height="34"></span><div><div class="mode-name">Verboten</div><div class="mode-desc">Überschreite die Linie, um die sich die Geschichte höflich gedrückt hat. Verkauf es.</div></div></div>
         </div>
       </div>
 
