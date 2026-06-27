@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="de" id="html-root">
 <head>
@@ -114,7 +115,8 @@ mark{background:var(--mark);color:var(--ink);padding:0 2px;}
 .kb-mark .b,.mk-mark .b{color:#f6efd9;padding:0 .16em .04em;margin-left:.04em;-webkit-box-decoration-break:clone;box-decoration-break:clone;box-shadow:2px 2px 0 rgba(31,26,20,.22);}
 .kb-mark .b{background:var(--accent);}
 .mk-mark .b{background:var(--teal);}
-.swipe{color:#f6efd9;background:var(--accent);padding:0 .14em .04em;-webkit-box-decoration-break:clone;box-decoration-break:clone;box-shadow:2px 2px 0 rgba(31,26,20,.22);}
+.swipe{display:inline-block;transform:rotate(-1.4deg);color:#f6efd9;background:var(--accent);padding:0 .14em .04em;-webkit-box-decoration-break:clone;box-decoration-break:clone;box-shadow:2px 2px 0 rgba(31,26,20,.22);}
+html[data-theme="a11y"] .swipe{transform:none;}
 
 /* TOPBAR */
 .topbar{position:sticky;top:0;z-index:2147483647;min-height:var(--lay-topbar);background:var(--paper);border-bottom:2px solid var(--ink);display:flex;align-items:center;flex-wrap:wrap;gap:var(--sp-2);padding:8px var(--sp-6);
