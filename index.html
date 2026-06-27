@@ -347,6 +347,15 @@ body.med .do{background:#d4ebe6;border-left-color:var(--med-accent);}
 .pdf-nav:hover{background:rgba(20,16,12,.82);}
 .pdf-pagepill{position:absolute;top:10px;right:12px;z-index:4;font-family:var(--ff-mono);font-size:11px;letter-spacing:.02em;color:#f6efd9;background:rgba(20,16,12,.5);padding:3px 9px;border-radius:20px;pointer-events:none;}
 @media(hover:none){.pdf-nav{opacity:.9;}}
+.wall-figure{max-width:var(--lay-prose);margin:26px 0;}
+.wall-figure .wall-thumb{display:block;width:100%;padding:0;border:1px solid var(--border);border-radius:var(--r-3);overflow:hidden;background:none;cursor:zoom-in;box-shadow:var(--sh-soft);transition:border-color var(--dur-fast);}
+.wall-figure .wall-thumb:hover{border-color:var(--accent);}
+.wall-figure img{display:block;width:100%;height:auto;}
+.wall-cap{font-family:var(--ff-ui);font-size:var(--fs-sm,14px);color:var(--ink-3);margin-top:8px;}
+.lb-overlay{position:fixed;inset:0;z-index:9999;background:rgba(10,8,6,.92);display:none;align-items:center;justify-content:center;padding:24px;cursor:zoom-out;}
+.lb-overlay.open{display:flex;}
+.lb-overlay img{max-width:100%;max-height:100%;box-shadow:0 8px 40px rgba(0,0,0,.6);border-radius:4px;}
+.lb-close{position:absolute;top:14px;right:20px;font-size:30px;line-height:1;color:#f6efd9;background:none;border:none;cursor:pointer;}
 @keyframes spin{to{transform:rotate(360deg);}}
 
 .btn-outline{display:inline-block;padding:9px 20px;border:1.5px solid var(--ink);border-radius:var(--r-2);font-family:var(--ff-ui);font-weight:700;font-size:var(--fs-sm);color:var(--ink);background:transparent;cursor:pointer;transition:background var(--dur-fast),color var(--dur-fast);}
@@ -757,7 +766,7 @@ body{padding-top:var(--lay-topbar);}
     <p class="hero-subline"><em>Cut &amp; Play Comics. Not a game you play. A game you use.</em></p>
     <div class="fb-lead">
       <div class="fb-avatar"><img src="media/FrizzleBob_Avatar_03.png" alt="Uncle FrizzleBob" style="width:100%;height:100%;object-fit:cover;display:block;" onerror="this.style.display='none';this.parentNode.textContent='FB'"></div>
-      <p class="hero-lead">Uncle FrizzleBob here. You're about to download a <strong>weird comic</strong>. Read it. Print it. Cut it up. Shuffle the cards and play them with one to six <strong>meat puppets</strong> at a table.</p>
+      <p class="hero-lead">Uncle FrizzleBob here. You're about to download a <strong>weird comic</strong>. Read it. Print it. Cut it up. Shuffle the cards and play them with one to six <strong>fluffy accomplices</strong>.</p>
     </div>
 
     <div class="you-block">
@@ -844,7 +853,7 @@ body{padding-top:var(--lay-topbar);}
     <p class="hero-subline"><em>Cut &amp; Play Comics. Kein Spiel zum Spielen. Ein Spiel zum Benutzen.</em></p>
     <div class="fb-lead">
       <div class="fb-avatar"><img src="media/FrizzleBob_Avatar_03.png" alt="Onkel FrizzleBob" style="width:100%;height:100%;object-fit:cover;display:block;" onerror="this.style.display='none';this.parentNode.textContent='FB'"></div>
-      <p class="hero-lead">Onkel FrizzleBob hier. Du lädst gleich einen <strong>seltsamen Comic</strong> runter. Lies ihn. Druck ihn aus. Zerschneid ihn. Misch die Karten und spiel sie mit einem bis sechs <strong>Gestalten</strong> an einem Tisch.</p>
+      <p class="hero-lead">Onkel FrizzleBob hier. Du lädst gleich einen <strong>seltsamen Comic</strong> runter. Lies ihn. Druck ihn aus. Zerschneid ihn. Misch die Karten und spiel sie mit einem bis sechs <strong>flauschigen Komplizen</strong>.</p>
     </div>
 
     <div class="you-block">
@@ -1100,6 +1109,12 @@ body{padding-top:var(--lay-topbar);}
       <p class="prose">KayfaBizarro is free. Print it, pay what you want, cut it up, and play. The decks, the rules, and a growing pile of these comics live at KayfaBizarro.Pages.dev.</p>
       <p class="prose">You will need three things a download cannot give you: a few friends, a pair of scissors, and the willingness to be wrong out loud. The rabbit will handle the rest.</p>
       <p class="bigq">Find your nearest lever. What is your one percent today?</p>
+      <figure class="wall-figure">
+        <button class="wall-thumb" type="button" onclick="openLightbox('media/kfb/wall_protopia_full.webp','media/kfb/wall_protopia_full.jpg','KayfaBizarro Protopia wall, Kunstverein Wunstorf 2026')" aria-label="Enlarge the exhibition wall">
+          <picture><source type="image/webp" srcset="media/kfb/wall_protopia_thumb.webp"><img src="media/kfb/wall_protopia_thumb.jpg" alt="The KayfaBizarro Protopia triptych on the wall at Kunstverein Wunstorf" loading="lazy" width="900" height="711"></picture>
+        </button>
+        <figcaption class="wall-cap">The triptych on the wall — “Utopia – Aufbruch oder Untergang?”, Kunstverein Wunstorf, July 2026. Tap to enlarge.</figcaption>
+      </figure>
       <p class="origin-subtitle" style="margin-top:var(--sp-8,32px);font-size:var(--fs-sm,14px)">A companion reading after Scott McCloud and Thierry Groensteen, based on the KayfaBizarro Cut &amp; Play decks. KayfaBizarro and MedKayfab are free print, cut and play comics by Georg Graf von Westphalen. The book "Hilfe, ich bin ein Mensch!" is published by Westend Verlag.</p>
   </div>
   <nav class="essay-toc" aria-label="Contents">
@@ -1194,6 +1209,12 @@ body{padding-top:var(--lay-topbar);}
       <p class="prose">KayfaBizarro ist kostenlos. Druck es, zahl was du willst, schneide es zu und spiel. Die Decks, die Regeln und ein wachsender Stapel dieser Comics liegen auf KayfaBizarro.Pages.dev.</p>
       <p class="prose">Drei Dinge brauchst du, die ein Download dir nicht geben kann: ein paar Freunde, eine Schere und die Bereitschaft, sich laut zu irren. Den Rest macht der Hase.</p>
       <p class="bigq">Finde deinen nächsten Hebel. Was ist dein eine Prozent heute?</p>
+      <figure class="wall-figure">
+        <button class="wall-thumb" type="button" onclick="openLightbox('media/kfb/wall_protopia_full.webp','media/kfb/wall_protopia_full.jpg','KayfaBizarro-Protopia-Wand, Kunstverein Wunstorf 2026')" aria-label="Ausstellungswand vergrößern">
+          <picture><source type="image/webp" srcset="media/kfb/wall_protopia_thumb.webp"><img src="media/kfb/wall_protopia_thumb.jpg" alt="Das KayfaBizarro-Protopia-Triptychon an der Wand im Kunstverein Wunstorf" loading="lazy" width="900" height="711"></picture>
+        </button>
+        <figcaption class="wall-cap">Das Triptychon an der Wand — „Utopia – Aufbruch oder Untergang?“, Kunstverein Wunstorf, Juli 2026. Zum Vergrößern tippen.</figcaption>
+      </figure>
       <p class="origin-subtitle" style="margin-top:var(--sp-8,32px);font-size:var(--fs-sm,14px)">Eine Begleitlektüre nach Scott McCloud und Thierry Groensteen, auf Grundlage der KayfaBizarro Cut &amp; Play-Decks. KayfaBizarro und MedKayfab sind freie Print-, Cut- und Play-Comics von Georg Graf von Westphalen. Das Buch „Hilfe, ich bin ein Mensch!" erscheint im Westend Verlag.</p>
   </div>
   <nav class="essay-toc" aria-label="Inhalt">
@@ -1271,7 +1292,7 @@ body{padding-top:var(--lay-topbar);}
 
       <div class="rules-section" id="kfb-cut">
         <div class="sec-title">The First <em>Cut</em></div>
-        <p class="prose">Before anyone tells a story, the table cuts together. Each person takes a printed sheet and a pair of scissors and turns it into a deck of cards. This is not prep. It is already the first move.</p>
+        <p class="prose">Before anyone tells a story, everyone cuts together. Each person takes a printed sheet and a pair of scissors and turns it into a deck of cards. This is not prep. It is already the first move.</p>
         <p class="prose">You destroy something finished to get something playable. It is the best ice-breaker at the table: hands busy, eyes free, talking comes easier. And you meet every card once, because it passed through your fingers on the way in.</p>
         <div class="note"><span class="note-label">Confetti of the Cut, </span>don't bin the off-cuts. Drop them in the middle of the table. King Kayfabian may pull a random twist from the pile at any time.</div>
       </div>
@@ -1304,11 +1325,11 @@ body{padding-top:var(--lay-topbar);}
         <p class="prose">Every turn is the same five beats — in order, in character, out loud. After a round or two it runs by itself.</p>
         <div class="step-card">
           <div class="step-card-header"><span class="step-card-title">The Five Beats</span><span class="step-card-meta">~2 minutes per player</span></div>
-          <div class="step-row"><span class="step-num">1</span><span class="step-label">Draw</span><span class="step-body">Take 1 card from the shared deck. You hold 4 for a moment.</span></div>
-          <div class="step-row"><span class="step-num">2</span><span class="step-label">Roll</span><span class="step-body">Roll the Story-Mode Die. Whatever it shows is your tone this turn. Commit.</span></div>
-          <div class="step-row"><span class="step-num">3</span><span class="step-label">Play</span><span class="step-body">Put 1 card into the story — onto the Stage, or as your new Actor — and introduce it: <em>Name · Claim · Power.</em> Back to 3 cards.</span></div>
-          <div class="step-row"><span class="step-num">4</span><span class="step-label">Story</span><span class="step-body">Stay in character, stay in your Mode, build on what's on the Stage. A line or two, then hand off — leave the next player something to answer.</span></div>
-          <div class="step-row"><span class="step-num">5</span><span class="step-label">Rule</span><span class="step-body">The next player — now <strong>King Kayfabian</strong> — weighs your story and moves the Quest Die: <strong>+2, +1, 0, or −1.</strong> Then it's their turn.</span></div>
+          <div class="step-row"><span class="step-num">1</span><span class="step-label">Roll the Mode Die</span><span class="step-body">Roll the Story-Mode Die. Whatever it shows is your tone this turn. Commit.</span></div>
+          <div class="step-row"><span class="step-num">2</span><span class="step-label">Play a Card</span><span class="step-body">Play one of your three into the story — onto the Stage, or as your new Actor — and introduce it: <em>Name · Claim · Power.</em></span></div>
+          <div class="step-row"><span class="step-num">3</span><span class="step-label">Perform</span><span class="step-body">Stay in character, stay in your Mode, build on what's on the Stage. A line or two, then hand off — leave the next player something to answer.</span></div>
+          <div class="step-row"><span class="step-num">4</span><span class="step-label">Draw a Card</span><span class="step-body">Top your hand back up to three. You keep this card a full round, so there's time to read it before you play it.</span></div>
+          <div class="step-row"><span class="step-num">5</span><span class="step-label">Verdict</span><span class="step-body">The next player — now <strong>King Kayfabian</strong> — weighs your story and gives a verdict: a hard push <strong>(+2)</strong>, a push <strong>(+1)</strong>, a hold <strong>(0)</strong>, or a twist <strong>(−1)</strong> on the Quest Die. Then it's their turn.</span></div>
         </div>
       </div>
 
@@ -1366,7 +1387,7 @@ body{padding-top:var(--lay-topbar);}
         <div class="rule-line"><span class="rule-key">Empty slot —</span> Fill it with a Scene card from your hand (Intro Ritual, then play).</div>
         <div class="rule-line"><span class="rule-key">Stage full (3/3) —</span> Overwrite an existing slot with a <em>yes-and:</em> choose one to discard and replace it.</div>
         <div class="sec-sub">Actor Switch</div>
-        <p class="prose">Instead of a Scene card, you can play a new Actor in front of you at any time, replacing your current one. Your old Actor exits or becomes a background figure. Switch your voice and posture. The Stage is unchanged. Draw back up to 3.</p>
+        <p class="prose">Instead of a Scene card, you can play a new Actor in front of you at any time, replacing your current one. Your old Actor exits or becomes a background figure. Switch your voice and posture. The Stage is unchanged.</p>
       </div>
 
       <div class="rules-section" id="kfb-finale">
@@ -1443,11 +1464,11 @@ body{padding-top:var(--lay-topbar);}
         <div class="sec-title">Quick Reference</div>
         <div class="sec-sub" style="margin-top:0">Every turn — 5 beats</div>
         <table class="ref-table">
-          <tr><td>1 Draw</td><td>Take 1 card (hand 3 → 4)</td></tr>
-          <tr><td>2 Roll</td><td>Roll the Story-Mode Die — commit to it</td></tr>
-          <tr><td>3 Play</td><td>Scene → Stage slot, or Actor Switch — always Intro Ritual</td></tr>
-          <tr><td>4 Story</td><td>In character · in your Mode · build on the Stage</td></tr>
-          <tr><td>5 Rule</td><td>King Kayfabian moves the Quest Die +2 / +1 / 0 / −1 · BLÖDSINN! → no move · at 6: Finale next turn</td></tr>
+          <tr><td>1 Roll the Mode Die</td><td>Roll the Story-Mode Die — commit to it</td></tr>
+          <tr><td>2 Play a Card</td><td>play one of your three → Stage slot or Actor Switch — always Intro Ritual</td></tr>
+          <tr><td>3 Perform</td><td>In character · in your Mode · build on the Stage, then hand off</td></tr>
+          <tr><td>4 Draw a Card</td><td>top back up to 3 — you keep it a full round before you play it</td></tr>
+          <tr><td>5 Verdict</td><td>King Kayfabian gives a verdict +2 / +1 / 0 / −1 on the Quest Die · BLÖDSINN! → no move · at 6: Finale next turn</td></tr>
         </table>
       </div>
     </div>
@@ -1517,7 +1538,7 @@ body{padding-top:var(--lay-topbar);}
 
       <div class="rules-section" id="kfb_de-cut">
         <div class="sec-title">Der erste <em>Schnitt</em></div>
-        <p class="prose">Bevor jemand eine Geschichte erzählt, schneidet der Tisch gemeinsam. Jede:r nimmt ein gedrucktes Blatt und eine Schere und macht daraus ein Kartendeck. Das ist keine Vorbereitung. Das ist schon der erste Zug.</p>
+        <p class="prose">Bevor jemand eine Geschichte erzählt, schneidet ihr gemeinsam. Jede:r nimmt ein gedrucktes Blatt und eine Schere und macht daraus ein Kartendeck. Das ist keine Vorbereitung. Das ist schon der erste Zug.</p>
         <p class="prose">Du zerstörst etwas Fertiges, um etwas Spielbares zu bekommen. Der beste Eisbrecher am Tisch: die Hände beschäftigt, die Augen frei, das Reden fällt leichter. Und jede Karte begegnet dir einmal, weil sie auf dem Weg ins Spiel durch deine Finger ging.</p>
         <div class="note"><span class="note-label">Konfetti des Schnitts — </span>wirf die Schnipsel nicht weg. Kipp sie in die Tischmitte. King Kayfabian darf jederzeit eine zufällige Wendung aus dem Haufen ziehen.</div>
       </div>
@@ -1550,11 +1571,11 @@ body{padding-top:var(--lay-topbar);}
         <p class="prose">Jeder Zug sind dieselben fünf Beats — der Reihe nach, in character, laut. Nach ein, zwei Runden läuft es von selbst.</p>
         <div class="step-card">
           <div class="step-card-header"><span class="step-card-title">Die fünf Beats</span><span class="step-card-meta">~2 Min pro Spieler</span></div>
-          <div class="step-row"><span class="step-num">1</span><span class="step-label">Ziehen</span><span class="step-body">Zieh 1 Karte vom gemeinsamen Stapel. Du hältst kurz 4.</span></div>
-          <div class="step-row"><span class="step-num">2</span><span class="step-label">Würfeln</span><span class="step-body">Wirf den Story-Mode-Würfel. Was er zeigt, ist dein Ton in diesem Zug. Geh rein.</span></div>
-          <div class="step-row"><span class="step-num">3</span><span class="step-label">Spielen</span><span class="step-body">Spiel 1 Karte in die Geschichte — auf die Bühne oder als neuen Actor — und führ sie ein: <em>Name · Claim · Power.</em> Zurück auf 3 Karten.</span></div>
-          <div class="step-row"><span class="step-num">4</span><span class="step-label">Erzählen</span><span class="step-body">Bleib in character, bleib in deinem Modus, bau auf das, was auf der Bühne steht. Ein, zwei Sätze, dann übergib — lass der nächsten Person etwas zum Beantworten.</span></div>
-          <div class="step-row"><span class="step-num">5</span><span class="step-label">Urteilen</span><span class="step-body">Die nächste Person — jetzt <strong>King Kayfabian</strong> — wägt deine Geschichte und bewegt den Quest-Würfel: <strong>+2, +1, 0, oder −1.</strong> Dann ist sie dran.</span></div>
+          <div class="step-row"><span class="step-num">1</span><span class="step-label">Mode-Würfel werfen</span><span class="step-body">Wirf den Story-Mode-Würfel. Was er zeigt, ist dein Ton in diesem Zug. Geh rein.</span></div>
+          <div class="step-row"><span class="step-num">2</span><span class="step-label">Karte spielen</span><span class="step-body">Spiel eine deiner drei Karten in die Geschichte — auf die Bühne oder als neuen Actor — und führ sie ein: <em>Name · Claim · Power.</em></span></div>
+          <div class="step-row"><span class="step-num">3</span><span class="step-label">Performen</span><span class="step-body">Bleib in character, bleib in deinem Modus, bau auf das, was auf der Bühne steht. Ein, zwei Sätze, dann übergib — lass der nächsten Person etwas zum Beantworten.</span></div>
+          <div class="step-row"><span class="step-num">4</span><span class="step-label">Karte ziehen</span><span class="step-body">Füll deine Hand wieder auf drei auf. Diese Karte behältst du eine ganze Runde — also Zeit, sie zu lesen, bevor du sie spielst.</span></div>
+          <div class="step-row"><span class="step-num">5</span><span class="step-label">Urteil</span><span class="step-body">Die nächste Person — jetzt <strong>King Kayfabian</strong> — wägt deine Geschichte und fällt ein Urteil: ein harter Schub <strong>(+2)</strong>, ein Schub <strong>(+1)</strong>, ein Halten <strong>(0)</strong> oder eine Wendung <strong>(−1)</strong> am Quest-Würfel. Dann ist sie dran.</span></div>
         </div>
       </div>
 
@@ -1612,7 +1633,7 @@ body{padding-top:var(--lay-topbar);}
         <div class="rule-line"><span class="rule-key">Leerer Slot —</span> Füll ihn mit einer Scene-Karte aus deiner Hand (Intro-Ritual, dann spielen).</div>
         <div class="rule-line"><span class="rule-key">Bühne voll (3/3) —</span> Überschreib einen Slot per <em>yes-and:</em> wähl einen zum Ablegen und ersetz ihn.</div>
         <div class="sec-sub">Actor-Wechsel</div>
-        <p class="prose">Statt einer Scene-Karte kannst du jederzeit eine neue Actor-Karte vor dir ablegen und deine aktuelle ersetzen. Dein alter Actor verlässt die Geschichte oder wird zur Nebenfigur. Wechsle Stimme und Haltung. Die Bühne bleibt unverändert. Zieh wieder auf 3 auf.</p>
+        <p class="prose">Statt einer Scene-Karte kannst du jederzeit eine neue Actor-Karte vor dir ablegen und deine aktuelle ersetzen. Dein alter Actor verlässt die Geschichte oder wird zur Nebenfigur. Wechsle Stimme und Haltung. Die Bühne bleibt unverändert.</p>
       </div>
 
       <div class="rules-section" id="kfb_de-finale">
@@ -1689,11 +1710,11 @@ body{padding-top:var(--lay-topbar);}
         <div class="sec-title">Schnellreferenz</div>
         <div class="sec-sub" style="margin-top:0">Jeder Zug — 5 Beats</div>
         <table class="ref-table">
-          <tr><td>1 Ziehen</td><td>Zieh 1 Karte (Hand 3 → 4)</td></tr>
-          <tr><td>2 Würfeln</td><td>Story-Mode-Würfel werfen — committen</td></tr>
-          <tr><td>3 Spielen</td><td>Scene → Bühnen-Slot, oder Actor-Wechsel — immer Intro-Ritual</td></tr>
-          <tr><td>4 Erzählen</td><td>In character · im Modus · bau auf die Bühne</td></tr>
-          <tr><td>5 Urteilen</td><td>King Kayfabian bewegt den Quest-Würfel +2 / +1 / 0 / −1 · BLÖDSINN! → keine Bewegung · bei 6: Finale im nächsten Zug</td></tr>
+          <tr><td>1 Mode-Würfel werfen</td><td>Story-Mode-Würfel werfen — committen</td></tr>
+          <tr><td>2 Karte spielen</td><td>eine deiner drei → Bühnen-Slot oder Actor-Wechsel — immer Intro-Ritual</td></tr>
+          <tr><td>3 Performen</td><td>In character · im Modus · bau auf die Bühne, dann übergib</td></tr>
+          <tr><td>4 Karte ziehen</td><td>wieder auf 3 auffüllen — behältst du eine Runde, bevor du sie spielst</td></tr>
+          <tr><td>5 Urteil</td><td>King Kayfabian fällt ein Urteil +2 / +1 / 0 / −1 am Quest-Würfel · BLÖDSINN! → keine Bewegung · bei 6: Finale im nächsten Zug</td></tr>
         </table>
       </div>
     </div>
@@ -1751,7 +1772,7 @@ body{padding-top:var(--lay-topbar);}
 
       <div class="rules-section" id="med-cut">
         <div class="sec-title">The First <em>Cut</em></div>
-        <p class="prose">Before anyone works up a case, the table cuts together. Each person takes a printed sheet and a pair of scissors and turns it into a deck. This is not prep — it is already the first pass through the material. Every mechanism goes once through your hands before it ever reaches the table.</p>
+        <p class="prose">Before anyone works up a case, everyone cuts together. Each person takes a printed sheet and a pair of scissors and turns it into a deck. This is not prep — it is already the first pass through the material. Every mechanism goes once through your hands before it ever reaches the table.</p>
         <p class="prose">You destroy something finished to get something you can shuffle, deal, and argue with. Hands busy, eyes free, the talking comes easier — and the deck you build is one you have already met card by card.</p>
         <div class="note"><span class="note-label">Confetti of the Cut — </span>don’t bin the off-cuts. Drop them in the middle of the table. Any player may pull a scrap from the pile as a random complication to throw into the case.</div>
       </div>
@@ -1785,11 +1806,11 @@ body{padding-top:var(--lay-topbar);}
         <p class="prose">Each turn runs the same five steps. The Clinical Mode Die determines how you engage with the mechanism on this turn — not whether you engage with it. You always engage with it.</p>
         <div class="step-card">
           <div class="step-card-header"><span class="step-card-title">The Five-Step Turn</span><span class="step-card-meta">~2 min per player</span></div>
-          <div class="step-row"><span class="step-num">1</span><span class="step-label">Draw</span><span class="step-body">Draw 1 card from the top of the shared deck. You now hold 4 cards temporarily.</span></div>
-          <div class="step-row"><span class="step-num">2</span><span class="step-label">Roll</span><span class="step-body">Roll the Clinical Mode Die. This is your Mode for this turn. Not optional. Commit to it — the Mode tells you <em>how</em> to approach the mechanism, not whether to approach it.</span></div>
-          <div class="step-row"><span class="step-num">3</span><span class="step-label">Play</span><span class="step-body">Play 1 card: Scene card into a Stage slot (empty, or overwrite one at 3/3) OR switch your Character. Always run the Intro Ritual. Return to 3 hand cards.</span></div>
-          <div class="step-row"><span class="step-num">4</span><span class="step-label">Tell</span><span class="step-body">In character, in your Mode. Weave the Stage into the clinical narrative. <strong>Power woven in → card to discard. Power skipped → card stays on Stage.</strong></span></div>
-          <div class="step-row"><span class="step-num">5</span><span class="step-label">Move</span><span class="step-body">Move the Quest Die: <strong>+2, +1, 0, or −1.</strong> Your call. How far along is this case?</span></div>
+          <div class="step-row"><span class="step-num">1</span><span class="step-label">Roll the Mode Die</span><span class="step-body">Roll the Clinical Mode Die. This is your Mode for this turn. Not optional. Commit to it — the Mode tells you <em>how</em> to approach the mechanism, not whether to approach it.</span></div>
+          <div class="step-row"><span class="step-num">2</span><span class="step-label">Play a Card</span><span class="step-body">Play one of your three: a Scene card into a Stage slot (empty, or overwrite one at 3/3) OR switch your Character. Always run the Intro Ritual.</span></div>
+          <div class="step-row"><span class="step-num">3</span><span class="step-label">Perform</span><span class="step-body">In character, in your Mode. Weave the Stage into the clinical narrative. <strong>Power woven in → card to discard. Power skipped → card stays on Stage.</strong></span></div>
+          <div class="step-row"><span class="step-num">4</span><span class="step-label">Draw a Card</span><span class="step-body">Top your hand back up to three. You keep this card a full round, so there's time to read it before you play it.</span></div>
+          <div class="step-row"><span class="step-num">5</span><span class="step-label">Your Call</span><span class="step-body">How far along is this case? Your call: <strong>+2, +1, 0, or −1</strong> on the Quest Die.</span></div>
         </div>
       </div>
 
@@ -1802,7 +1823,7 @@ body{padding-top:var(--lay-topbar);}
           <div class="mode-cell mc3"><span class="mode-num m3">3</span><div><div class="mode-name">Mechanism Flash</div><div class="mode-desc"><strong>Active Recall.</strong> Put the card face-down. Explain the full mechanism from memory. The table listens and calls BLÖDSINN! if you drift. If you nail it: Quest Die +1.</div></div></div>
           <div class="mode-cell mc4"><span class="mode-num m4">4</span><div><div class="mode-name">Power-Play</div><div class="mode-desc">Feynman mode. Perform the mechanism — not for an examiner, for a confused patient. If a confused patient couldn't follow it, BLÖDSINN! applies.</div></div></div>
           <div class="mode-cell mc5"><span class="mode-num m5">5</span><div><div class="mode-name">Teaching Round</div><div class="mode-desc">You ask one question — in character, to the table. Not a pimping question. A genuine one. The table answers or calls BLÖDSINN! if the question was unanswerable. <strong>No shaming.</strong></div></div></div>
-          <div class="mode-cell mc6"><span class="mode-num m6">6</span><div><div class="mode-name">Prof. Kayfabe</div><div class="mode-desc">Total anarchy. The attending has left the building. Roll a second die and play whatever Mode comes up — but play it at twice the intensity. Or invent a Mode. The table decides if it counts.</div></div></div>
+          <div class="mode-cell mc6"><span class="mode-num m6">6</span><div><div class="mode-name">Prof. Kayfabe</div><div class="mode-desc">Total anarchy. The attending has left the building. Roll a second die and play whatever Mode comes up — but play it at twice the intensity. Or invent a Mode. The group decides if it counts.</div></div></div>
         </div>
         <div class="blockquote">"Mode 3 is the one residents avoid. Mode 3 is the only one that actually works."<cite>— Doc FrizzleBob</cite></div>
       </div>
@@ -1813,7 +1834,7 @@ body{padding-top:var(--lay-topbar);}
         <div class="rule-line"><span class="rule-key">Empty slot —</span> Fill it with a Scene card (Intro Ritual, then place). The Scene becomes part of the shared clinical reality for all players.</div>
         <div class="rule-line"><span class="rule-key">Stage full (3/3) —</span> Overwrite one slot with a yes-and: pick a Scene to discard and replace it. The new Scene reframes the case.</div>
         <div class="sec-sub">Character Switch</div>
-        <p class="prose">At Step 03, instead of playing a Scene card, you can play a new Character card — switching the clinician, drug, or disease you embody. Run the Intro Ritual for the new Character. Your old Character exits or becomes an NPC. The Stage is unchanged. Draw back to 3 hand cards.</p>
+        <p class="prose">When you Play, instead of a Scene card, you can play a new Character card — switching the clinician, drug, or disease you embody. Run the Intro Ritual for the new Character. Your old Character exits or becomes an NPC. The Stage is unchanged.</p>
         <div class="blockquote">"The best character switches happen when someone draws the antidote mid-crisis."</div>
       </div>
 
@@ -1961,7 +1982,7 @@ body{padding-top:var(--lay-topbar);}
 
       <div class="rules-section" id="med_de-cut">
         <div class="sec-title">Der erste <em>Schnitt</em></div>
-        <p class="prose">Bevor jemand einen Fall aufarbeitet, schneidet der Tisch gemeinsam. Jede:r nimmt ein gedrucktes Blatt und eine Schere und macht daraus ein Deck. Das ist keine Vorbereitung — es ist schon der erste Durchgang durch den Stoff. Jeder Mechanismus geht einmal durch deine Hände, bevor er je auf dem Tisch landet.</p>
+        <p class="prose">Bevor jemand einen Fall aufarbeitet, schneidet ihr gemeinsam. Jede:r nimmt ein gedrucktes Blatt und eine Schere und macht daraus ein Deck. Das ist keine Vorbereitung — es ist schon der erste Durchgang durch den Stoff. Jeder Mechanismus geht einmal durch deine Hände, bevor er je auf dem Tisch landet.</p>
         <p class="prose">Du zerstörst etwas Fertiges, um etwas zu bekommen, das du mischen, austeilen und mit dem du streiten kannst. Hände beschäftigt, Augen frei, das Reden fällt leichter — und das Deck, das du baust, hast du schon Karte für Karte angefasst.</p>
         <div class="note"><span class="note-label">Konfetti des Schnitts — </span>wirf die Schnipsel nicht weg. Kipp sie in die Tischmitte. Jede:r darf einen Schnipsel als zufällige Komplikation in den Fall werfen.</div>
       </div>
@@ -1995,11 +2016,11 @@ body{padding-top:var(--lay-topbar);}
         <p class="prose">Jeder Zug läuft über dieselben fünf Schritte. Der Clinical-Mode-Würfel bestimmt, <em>wie</em> du dich mit dem Mechanismus auseinandersetzt — nicht ob. Du setzt dich immer mit ihm auseinander.</p>
         <div class="step-card">
           <div class="step-card-header"><span class="step-card-title">Der Fünf-Schritte-Zug</span><span class="step-card-meta">~2 Min pro Spieler</span></div>
-          <div class="step-row"><span class="step-num">1</span><span class="step-label">Ziehen</span><span class="step-body">Zieh 1 Karte vom Stapel. Du hältst kurz 4 Karten.</span></div>
-          <div class="step-row"><span class="step-num">2</span><span class="step-label">Würfeln</span><span class="step-body">Wirf den Clinical-Mode-Würfel. Das ist dein Modus für diesen Zug. Nicht optional. Committe dich — der Modus sagt, <em>wie</em> du an den Mechanismus rangehst.</span></div>
-          <div class="step-row"><span class="step-num">3</span><span class="step-label">Spielen</span><span class="step-body">Spiel 1 Karte: Scene auf einen Bühnen-Slot (leer, oder bei 3/3 überschreiben) ODER wechsle deinen Character. Immer das Intro-Ritual. Zurück auf 3 Handkarten.</span></div>
-          <div class="step-row"><span class="step-num">4</span><span class="step-label">Erzählen</span><span class="step-body">In character, in deinem Modus. Webe die Bühne in die klinische Erzählung. <strong>Power eingewoben → Ablage. Power ausgelassen → bleibt auf der Bühne.</strong></span></div>
-          <div class="step-row"><span class="step-num">5</span><span class="step-label">Bewegen</span><span class="step-body">Bewege den Quest-Würfel: <strong>+2, +1, 0, oder −1.</strong> Deine Entscheidung. Wie weit ist dieser Fall?</span></div>
+          <div class="step-row"><span class="step-num">1</span><span class="step-label">Mode-Würfel werfen</span><span class="step-body">Wirf den Clinical-Mode-Würfel. Das ist dein Modus für diesen Zug. Nicht optional. Committe dich — der Modus sagt, <em>wie</em> du an den Mechanismus rangehst.</span></div>
+          <div class="step-row"><span class="step-num">2</span><span class="step-label">Karte spielen</span><span class="step-body">Spiel eine deiner drei: eine Scene auf einen Bühnen-Slot (leer, oder bei 3/3 überschreiben) ODER wechsle deinen Character. Immer das Intro-Ritual.</span></div>
+          <div class="step-row"><span class="step-num">3</span><span class="step-label">Performen</span><span class="step-body">In character, in deinem Modus. Webe die Bühne in die klinische Erzählung. <strong>Power eingewoben → Ablage. Power ausgelassen → bleibt auf der Bühne.</strong></span></div>
+          <div class="step-row"><span class="step-num">4</span><span class="step-label">Karte ziehen</span><span class="step-body">Füll deine Hand wieder auf drei auf. Diese Karte behältst du eine ganze Runde — also Zeit, sie zu lesen, bevor du sie spielst.</span></div>
+          <div class="step-row"><span class="step-num">5</span><span class="step-label">Deine Entscheidung</span><span class="step-body">Wie weit ist dieser Fall? Deine Entscheidung: <strong>+2, +1, 0 oder −1</strong> am Quest-Würfel.</span></div>
         </div>
       </div>
 
@@ -2023,7 +2044,7 @@ body{padding-top:var(--lay-topbar);}
         <div class="rule-line"><span class="rule-key">Leerer Slot —</span> Füll ihn mit einer Scene-Karte (Intro-Ritual, dann ablegen). Die Scene wird Teil der geteilten klinischen Realität.</div>
         <div class="rule-line"><span class="rule-key">Bühne voll (3/3) —</span> Überschreib einen Slot per yes-and: wähl eine Scene zum Ablegen und ersetz sie. Die neue Scene rahmt den Fall neu.</div>
         <div class="sec-sub">Character-Wechsel</div>
-        <p class="prose">In Schritt 03 kannst du statt einer Scene-Karte eine neue Character-Karte spielen — und so Klinikerin, Wirkstoff oder Erkrankung wechseln. Mach das Intro-Ritual für den neuen Character. Dein alter Character geht ab oder wird zur Nebenfigur. Die Bühne bleibt unverändert. Zieh wieder auf 3 Handkarten.</p>
+        <p class="prose">Beim Spielen kannst du statt einer Scene-Karte eine neue Character-Karte spielen — und so Klinikerin, Wirkstoff oder Erkrankung wechseln. Mach das Intro-Ritual für den neuen Character. Dein alter Character geht ab oder wird zur Nebenfigur. Die Bühne bleibt unverändert.</p>
         <div class="blockquote">"Die besten Character-Wechsel passieren, wenn jemand mitten in der Krise das Gegenmittel zieht."</div>
       </div>
 
@@ -2455,6 +2476,15 @@ if(!location.hash) goPage('home',document.getElementById('tb-home'));
   }
   if(document.readyState!=='loading')spy();else document.addEventListener('DOMContentLoaded',spy);
 })();
+</script>
+<div class="lb-overlay" id="lb" onclick="closeLightbox()">
+  <button class="lb-close" type="button" aria-label="Close" onclick="event.stopPropagation();closeLightbox()">×</button>
+  <picture><source id="lb-webp" type="image/webp" srcset=""><img id="lb-img" src="" alt=""></picture>
+</div>
+<script>
+function openLightbox(webp,jpg,alt){var o=document.getElementById('lb');if(!o)return;document.getElementById('lb-webp').srcset=webp;var i=document.getElementById('lb-img');i.src=jpg;i.alt=alt||'';o.classList.add('open');document.body.style.overflow='hidden';}
+function closeLightbox(){var o=document.getElementById('lb');if(o)o.classList.remove('open');document.body.style.overflow='';}
+document.addEventListener('keydown',function(e){if(e.key==='Escape')closeLightbox();});
 </script>
 </body>
 </html>
