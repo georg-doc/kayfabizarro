@@ -25,6 +25,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Irish+Grover&family=Special+Elite&display=swap" rel="stylesheet">
 <style>
+@import url("https://fonts.googleapis.com/css2?family=Literata:ital,wght@0,400;0,500;0,700;1,400;1,500&display=swap");
 /* RESET */
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
 html{scroll-behavior:smooth;overflow-x:clip;}
@@ -90,8 +91,7 @@ body.dark .cta-dashed:hover,body.dark .btn-outline:hover{background:var(--paper-
 
 body{font-family:var(--ff-body);font-size:var(--fs-base);line-height:var(--lh-norm);background:var(--paper);color:var(--ink);-webkit-font-smoothing:antialiased;transition:background var(--dur-norm),color var(--dur-norm);}
 a{color:inherit;text-decoration:none;}
-*:focus{outline:none;}
-*:focus-visible{outline:none;}
+:focus-visible{outline:3px solid var(--accent);outline-offset:2px;border-radius:1px;}
 strong{font-weight:700;}
 em{font-style:italic;}
 ::selection{background:var(--mark);color:var(--ink);}
@@ -104,7 +104,7 @@ mark{background:var(--mark);color:var(--ink);padding:0 2px;border-radius:2px;}
 .tb-name{font-family:var(--ff-display);font-weight:700;font-size:20px;letter-spacing:var(--ls-tight);color:var(--ink);white-space:nowrap;}
 .tb-nav{display:flex;align-items:center;flex:1;padding:0 var(--sp-6);gap:0;overflow-x:auto;overflow-y:hidden;scrollbar-width:none;min-width:0;}.tb-nav::-webkit-scrollbar{display:none;}
 .tb-nav-btn{display:flex;align-items:center;padding:0 var(--sp-5);border:none;background:transparent;cursor:pointer;font-family:var(--ff-ui);font-weight:700;font-size:var(--fs-sm);letter-spacing:.01em;text-transform:none;-webkit-text-stroke:0.3px currentColor;color:var(--ink-3);border-bottom:2px solid transparent;margin-bottom:-1.5px;transition:color var(--dur-fast),border-color var(--dur-fast);white-space:nowrap;text-decoration:none;}
-.tb-nav-btn:hover{color:var(--ink);}.tb-nav-btn:focus,.tb-nav-btn:focus-visible{outline:none;}
+.tb-nav-btn:hover{color:var(--ink);}
 .tb-nav-btn.active{color:var(--accent);border-bottom-color:var(--accent);}
 .tb-nav-ext{display:flex;align-items:center;gap:4px;}
 .tb-nav-ext::after{content:"";}
@@ -112,7 +112,7 @@ mark{background:var(--mark);color:var(--ink);padding:0 2px;border-radius:2px;}
 
 .lang-wrap{position:relative;}
 .lang-btn{display:flex;align-items:center;gap:var(--sp-2);padding:5px 10px;border:1px solid var(--border-2);border-radius:var(--r-2);background:transparent;cursor:pointer;font-family:var(--ff-mono);font-size:var(--fs-xs);font-weight:500;color:var(--ink-3);transition:border-color var(--dur-fast),color var(--dur-fast);}
-.lang-btn:hover{border-color:var(--ink);color:var(--ink);}.lang-btn:focus,.lang-btn:focus-visible{outline:none;}
+.lang-btn:hover{border-color:var(--ink);color:var(--ink);}
 .lang-flag{font-size:13px;line-height:1;}
 .lang-dropdown{display:none;position:absolute;top:calc(100% + 6px);right:0;background:var(--paper-card);border:1px solid var(--border-2);border-radius:var(--r-2);overflow:hidden;min-width:120px;box-shadow:0 8px 22px rgba(0,0,0,.18);z-index:500;}
 .lang-dropdown.open{display:block;}
@@ -283,8 +283,6 @@ body.med .mode-cell.mc6{background:rgba(144,64,64,.06);}
 .soc-term.boggle{color:#3d6080;}
 .soc-term.bongo{color:#3d6b50;}
 .soc-term.blodsinn{color:#9c3d2e;}
-body.med .soc-term.bingo{color:#0b6b6b;}body.med .soc-term.boggle{color:#4a6080;}body.med .soc-term.bongo{color:#2a7a6a;}
-body.med .soc-term.blodsinn{color:#8b4040;}
 .soc-def{display:table-cell;font-size:var(--fs-base);line-height:var(--lh-prose);color:var(--ink-2);padding:var(--sp-4) var(--sp-5);width:100%;}
 
 /* GLOSSARY */
@@ -434,6 +432,7 @@ body.med .mode-num.m6{color:#904040;}
   /* type roles — TWO fonts only */
   --ff-display:'Irish Grover',cursive;                /* brand + all headlines */
   --ff-brand:'Irish Grover',cursive;
+  --ff-read:'Literata',Georgia,serif;   /* rollback: var(--ff-body) */
   --ff-body:'Special Elite','Courier New',monospace;  /* ALL body text */
   --ff-ui:'Special Elite','Courier New',monospace;
   --ff-mono:'Special Elite','Courier New',monospace;
@@ -454,6 +453,13 @@ body.med .mode-num.m6{color:#904040;}
   --w-tragic:62,106,131; --w-comic:122,141,74; --w-absurd:233,193,74;
   --w-heroic:217,124,58; --w-mystic:107,78,125; --w-forbidden:166,70,112;
   --w-blood:194,65,44;
+  /* Phase-1 colour logics */
+  --m-1:#34576b; --m-2:#5e6f33; --m-3:#b8901c; --m-4:#b35e22; --m-5:#5b4470; --m-6:#8f3a60;
+  --q-1:#c2503a; --q-2:#b3401f; --q-3:#9e3318; --q-4:#882715; --q-5:#6b1c0f; --q-6:#8a2a18;
+  --q-1-bg:rgba(184,54,31,.07); --q-2-bg:rgba(184,54,31,.13); --q-3-bg:rgba(184,54,31,.21);
+  --q-4-bg:rgba(184,54,31,.31); --q-5-bg:rgba(184,54,31,.44); --q-6-bg:rgba(184,54,31,.26);
+  --v-push:#4f6029; --v-hold:#6e685a; --v-twist:#b8361f;
+  --call-bingo:#4f6029; --call-bongo:#8a6f3e; --call-boggle:#5a6b76; --call-blodsinn:#b8361f;
   /* hard paper drop-shadow */
   --sh-paper:3px 3.5px 0 rgba(31,26,20,.22);
   --sh-paper-sm:2px 2.5px 0 rgba(31,26,20,.2);
@@ -465,6 +471,9 @@ body.med{
   --med-paper-card:#f4f8f9; --med-border:#c2d3d6; --med-border-2:#a6bcc0;
   --med-ink:#16201f; --med-ink-2:#26332f; --med-ink-3:#4d635e; --med-ink-4:#90a8a4;
   --med-accent:#2f7a72; --med-accent-2:#b06a1a; --med-rust:#b8361f;
+  --m-1:#8b6060; --m-2:#c06800; --m-3:#0a7070; --m-4:#1e7a68; --m-5:#3d6878; --m-6:#904040;
+  --v-push:#2f7a72; --v-hold:#4d635e; --v-twist:#b8361f;
+  --call-bingo:#2f7a72; --call-bongo:#6e7a52; --call-boggle:#586a74; --call-blodsinn:#b8361f;
   --med-mark:rgba(120,190,180,.45); --med-head-bg:#16201f;
 }
 
@@ -485,8 +494,9 @@ body{font-size:15px;line-height:1.7;}
 .sec-sub,.origin-h{line-height:1.1;}
 .origin-h .num{color:var(--accent);}
 /* eyebrows / labels / meta → typewriter, one small size */
-.hero-eyebrow,.sec-eyebrow,.sidebar-label,.vc-badge,.step-card-meta,.chip,.cv-meta{font-family:var(--ff-mono);font-weight:400;font-size:var(--fs-xs);letter-spacing:.04em;}
+.hero-eyebrow,.sec-eyebrow,.sidebar-label,.vc-badge,.step-card-meta,.chip,.cv-meta{font-family:var(--ff-mono);font-weight:400;font-size:var(--fs-sm);letter-spacing:.04em;}
 .sec-eyebrow,.hero-eyebrow{color:var(--accent);font-style:normal;}
+.hero-eyebrow,.sec-eyebrow,.chip,.sidebar-label,.toc-label,.essay-toc .toc-label{text-transform:none;}
 
 /* ─── WORDMARK / LOGO / NAV ─── */
 .tb-name{font-family:var(--ff-brand);font-weight:400;font-size:23px;letter-spacing:.01em;}
@@ -537,7 +547,11 @@ body{font-size:15px;line-height:1.7;}
 .sidebar-label{font-family:var(--ff-mono);color:var(--accent);border-bottom:1px solid var(--border);}
 
 /* ─── PROSE / QUOTES ─── */
-.prose,.hero-lead,.origin-subtitle{font-family:var(--ff-body);}
+.prose,.hero-lead,.origin-subtitle,.gloss-def,.vc-desc,.soc-def{
+  font-family:var(--ff-read);font-size:16px;line-height:1.6;letter-spacing:0;}
+.prose strong,.hero-lead strong,.origin-subtitle strong,.vc-desc strong,.gloss-def strong{font-weight:700;}
+body.dark .prose,body.dark .hero-lead,body.dark .origin-subtitle,
+body.dark .gloss-def,body.dark .vc-desc,body.dark .soc-def{font-weight:500;}
 .prose em,.hero-lead em,.vc-desc em{color:var(--accent);}
 .blockquote{font-family:var(--ff-body);font-style:normal;line-height:1.6;border-left:4px solid var(--accent);font-size:var(--fs-md);color:var(--ink-2);background:linear-gradient(90deg,rgba(184,54,31,.05),transparent 60%);padding:8px 18px;}
 .blockquote cite{font-family:var(--ff-mono);color:var(--gold);font-weight:400;font-style:normal;}
@@ -567,8 +581,7 @@ body{font-size:15px;line-height:1.7;}
 .mode-num.m1{color:#34576b;}.mode-num.m2{color:#5e6f33;}.mode-num.m3{color:#8a6a16;}
 .mode-num.m4{color:#b35e22;}.mode-num.m5{color:#5b4470;}.mode-num.m6{color:#8f3a60;}
 /* mode NAMES colour-coded like Quest-Die stage names */
-.mode-cell.mc1 .mode-name{color:#34576b;}.mode-cell.mc2 .mode-name{color:#5e6f33;}.mode-cell.mc3 .mode-name{color:#8a6a16;}.mode-cell.mc4 .mode-name{color:#b35e22;}.mode-cell.mc5 .mode-name{color:#5b4470;}.mode-cell.mc6 .mode-name{color:#8f3a60;}
-body.med .mode-cell.mc1 .mode-name{color:#8b6060;}body.med .mode-cell.mc2 .mode-name{color:#c06800;}body.med .mode-cell.mc3 .mode-name{color:#0a7070;}body.med .mode-cell.mc4 .mode-name{color:#1e7a68;}body.med .mode-cell.mc5 .mode-name{color:#3d6878;}body.med .mode-cell.mc6 .mode-name{color:#904040;}
+.mode-cell.mc1 .mode-name{color:var(--m-1);}.mode-cell.mc2 .mode-name{color:var(--m-2);}.mode-cell.mc3 .mode-name{color:var(--m-3);}.mode-cell.mc4 .mode-name{color:var(--m-4);}.mode-cell.mc5 .mode-name{color:var(--m-5);}.mode-cell.mc6 .mode-name{color:var(--m-6);}
 
 /* ─── QUEST LADDER (Booklet B 6-rung) ─── */
 .ladder{display:flex;flex-direction:column;background:var(--paper-card);max-width:var(--lay-prose);margin:var(--sp-4) 0;overflow:hidden;}
@@ -587,12 +600,12 @@ body.med .mode-cell.mc1 .mode-name{color:#8b6060;}body.med .mode-cell.mc2 .mode-
 .rung .rn{font-family:var(--ff-body);font-weight:800;font-size:var(--fs-md);flex:0 0 92px;color:var(--ink);}
 .rung .rd{font-family:var(--ff-body);font-size:var(--fs-base);color:var(--ink-2);flex:1;line-height:1.4;}
 .rung .rd strong{color:var(--ink);}
-.ladder .rung:nth-child(1){background:rgba(var(--w-comic),.13);} .ladder .rung:nth-child(1) .rn{color:#5e6f33;}
-.ladder .rung:nth-child(2){background:rgba(var(--w-absurd),.15);} .ladder .rung:nth-child(2) .rn{color:#8a6a16;}
-.ladder .rung:nth-child(3){background:rgba(var(--w-heroic),.13);} .ladder .rung:nth-child(3) .rn{color:#b35e22;}
-.ladder .rung:nth-child(4){background:rgba(var(--w-mystic),.13);} .ladder .rung:nth-child(4) .rn{color:#5b4470;}
-.ladder .rung:nth-child(5){background:rgba(var(--w-forbidden),.14);} .ladder .rung:nth-child(5) .rn{color:#8f3a60;}
-.ladder .rung:nth-child(6){background:rgba(var(--w-blood),.16);} .ladder .rung:nth-child(6) .rn{color:var(--accent);}
+.ladder .rung:nth-child(1){background:var(--q-1-bg);} .ladder .rung:nth-child(1) .rn{color:var(--q-1);}
+.ladder .rung:nth-child(2){background:var(--q-2-bg);} .ladder .rung:nth-child(2) .rn{color:var(--q-2);}
+.ladder .rung:nth-child(3){background:var(--q-3-bg);} .ladder .rung:nth-child(3) .rn{color:var(--q-3);}
+.ladder .rung:nth-child(4){background:var(--q-4-bg);} .ladder .rung:nth-child(4) .rn{color:var(--q-4);}
+.ladder .rung:nth-child(5){background:var(--q-5-bg);} .ladder .rung:nth-child(5) .rn{color:var(--q-5);}
+.ladder .rung:nth-child(6){background:var(--q-6-bg);} .ladder .rung:nth-child(6) .rn{color:var(--q-6);}
 
 /* ─── VERDICT TABLE ─── */
 .vtable{display:flex;flex-direction:column;background:var(--paper-card);max-width:var(--lay-prose);margin:var(--sp-4) 0;overflow:hidden;}
@@ -601,13 +614,22 @@ body.med .mode-cell.mc1 .mode-name{color:#8b6060;}body.med .mode-cell.mc2 .mode-
 .vrow .vv{font-family:var(--ff-body);font-weight:800;font-size:var(--fs-lg);flex:0 0 34px;text-align:center;color:var(--ink);}
 .vrow .vl{font-family:var(--ff-body);font-weight:800;font-size:var(--fs-base);flex:0 0 84px;color:var(--ink);}
 .vrow .vd{font-family:var(--ff-body);font-size:var(--fs-base);color:var(--ink-2);flex:1;line-height:1.4;}
-.vtable .vrow:nth-child(1) .vv{color:var(--accent);}
-.vtable .vrow:nth-child(2) .vv{color:#b35e22;}
-.vtable .vrow:nth-child(4) .vv{color:#34576b;}
+.vtable .vrow:nth-child(1) .vv{color:var(--v-push);}
+.vtable .vrow:nth-child(2) .vv{color:var(--v-push);}
+.vtable .vrow:nth-child(3) .vv{color:var(--v-hold);}
+.vtable .vrow:nth-child(4) .vv{color:var(--v-twist);}
 
 /* social-call names → Irish Grover, mode-tinted */
 .soc-term{font-family:var(--ff-brand)!important;font-weight:400!important;letter-spacing:.01em;font-size:var(--fs-md)!important;}
-.soc-term.bingo{color:#5e6f33;}.soc-term.boggle{color:#34576b;}.soc-term.bongo{color:#5b4470;}.soc-term.blodsinn{color:var(--accent);}
+.soc-term.bingo{color:var(--call-bingo);}.soc-term.bongo{color:var(--call-bongo);}.soc-term.boggle{color:var(--call-boggle);}.soc-term.blodsinn{color:var(--call-blodsinn);}
+.soc-row:has(.soc-term.bingo){background:rgba(11,107,107,.05);}
+.soc-row:has(.soc-term.boggle){background:rgba(74,96,128,.05);}
+.soc-row:has(.soc-term.bongo){background:rgba(42,122,106,.05);}
+.soc-row:has(.soc-term.blodsinn){background:rgba(139,64,64,.06);}
+.soc-row:has(.soc-term.bingo) .soc-term{background:rgba(11,107,107,.12);}
+.soc-row:has(.soc-term.boggle) .soc-term{background:rgba(74,96,128,.12);}
+.soc-row:has(.soc-term.bongo) .soc-term{background:rgba(42,122,106,.12);}
+.soc-row:has(.soc-term.blodsinn) .soc-term{background:rgba(139,64,64,.13);}
 
 /* dosay blocks */
 .dosay-block{border-radius:0;border:1.4px solid var(--border-2);box-shadow:var(--sh-paper-sm);}
@@ -694,14 +716,6 @@ body{padding-top:var(--lay-topbar);}
 
 /* ─── Sprint 2c · consistent pastel colour-coding (analog Quick-Rules) ─── */
 /* Social Calls — pastel row + stronger term cell per call (readability) */
-.soc-row:has(.soc-term.bingo){background:rgba(11,107,107,.05);}
-.soc-row:has(.soc-term.boggle){background:rgba(74,96,128,.05);}
-.soc-row:has(.soc-term.bongo){background:rgba(42,122,106,.05);}
-.soc-row:has(.soc-term.blodsinn){background:rgba(139,64,64,.06);}
-.soc-row:has(.soc-term.bingo) .soc-term{background:rgba(11,107,107,.12);}
-.soc-row:has(.soc-term.boggle) .soc-term{background:rgba(74,96,128,.12);}
-.soc-row:has(.soc-term.bongo) .soc-term{background:rgba(42,122,106,.12);}
-.soc-row:has(.soc-term.blodsinn) .soc-term{background:rgba(139,64,64,.13);}
 /* Card Ritual (Name/Claim/Power it) — pastel row + colour accent per beat */
 .ritual-row:has(.name-it){background:rgba(11,107,107,.05);border-left:3px solid rgba(11,107,107,.55);}
 .ritual-row:has(.claim-it){background:rgba(31,49,71,.045);border-left:3px solid rgba(31,49,71,.5);}
@@ -712,6 +726,185 @@ body{padding-top:var(--lay-topbar);}
 .step-card{background:rgba(31,26,20,.015);}
 .step-card-header{background:rgba(184,54,31,.07);}
 .steps{background:rgba(31,26,20,.02);border-radius:var(--r-2);padding:var(--sp-3) var(--sp-4);}
+
+/* ════════════════════════════════════════════════════════════════════
+   UNIFIED CONTAINER SYSTEM  ·  final authoritative layer
+   One shell, one row, one separator for EVERY rules/hub table & list.
+   Normalises: Five Beats, Setup, Card Ritual, Story-Modes, Verdict,
+   Social Calls, Quest-Ladder, Glossary, Quick Reference.
+   Colour semantics (mode washes, quest ramp, verdict/social polarity)
+   are preserved — only the container/row/separator CHROME is unified.
+   ════════════════════════════════════════════════════════════════════ */
+:root{
+  --tbl-radius:0;
+  --tbl-border:1.4px solid var(--border-2);
+  --tbl-divider-c:rgba(31,26,20,.16);
+  /* NB: compose the divider at the ROW element (var resolves there), not as a
+     pre-composed token — otherwise the dark-theme colour override never takes. */
+  --tbl-pad-y:11px; --tbl-pad-x:16px;
+  --tbl-head-bg:var(--paper-2);
+  --tbl-term-bg:var(--paper-2);
+  --tbl-gap:var(--sp-5);
+}
+body.dark{ --tbl-divider-c:rgba(236,225,192,.15); }
+
+/* ── 1 · the shell — identical for every container ── */
+.ritual,.steps,.step-card,.modes-grid,.socials-table,.gloss-table,
+.ladder,.vtable,.quest-strip,.ref-table{
+  max-width:var(--lay-prose);
+  margin:var(--tbl-gap) 0;
+  background:var(--paper-card)!important;
+  border:var(--tbl-border)!important;
+  border-radius:var(--tbl-radius)!important;
+  box-shadow:var(--sh-paper)!important;
+  overflow:hidden;
+}
+.ref-table{width:100%;border-collapse:collapse;}
+.modes-grid{display:grid;grid-template-columns:1fr 1fr;}
+
+/* ── 2 · the row — identical padding + single hairline divider ── */
+.ritual-row,.step-row,.step-row-plain,.soc-row,.gloss-row,
+.rung,.vrow,.ref-table tr{
+  border:0!important;
+  border-top:1px solid var(--tbl-divider-c)!important;
+  border-radius:0!important;
+  margin:0!important;
+  background:transparent;
+}
+.ritual-row:first-child,.step-row:first-child,.step-row-plain:first-child,
+.soc-row:first-child,.gloss-row:first-child,.rung:first-child,
+.vrow:first-child,.ref-table tr:first-child{ border-top:0!important; }
+
+/* flex rows pad themselves; table rows pad their cells */
+.ritual-row,.step-row,.step-row-plain,.rung,.vrow{
+  padding:var(--tbl-pad-y) var(--tbl-pad-x)!important;
+  gap:var(--sp-4);align-items:baseline;
+}
+.rung,.vrow{align-items:center;}
+.soc-term,.soc-def,.gloss-term,.gloss-def,.ref-table td{
+  padding:var(--tbl-pad-y) var(--tbl-pad-x)!important;
+  vertical-align:baseline;
+}
+
+/* ── 3 · headers (Five Beats) — unified head fill ── */
+.step-card{background:var(--paper-card)!important;}
+.step-card-header{
+  background:var(--tbl-head-bg)!important;
+  border-bottom:1px solid var(--tbl-divider-c)!important;
+  padding:var(--tbl-pad-y) var(--tbl-pad-x)!important;
+}
+
+/* ── 4 · term cells — one neutral fill (names keep their colour) ── */
+.gloss-term{background:var(--tbl-term-bg)!important;white-space:normal;}
+.soc-term{background:var(--tbl-term-bg)!important;}
+.gloss-term,.soc-term{min-width:120px;}
+
+/* ── 5 · Story-Modes grid — unify cell dividers, keep mode washes ── */
+.mode-cell{
+  border-right:1px solid var(--tbl-divider-c)!important;
+  border-bottom:1px solid var(--tbl-divider-c)!important;
+  padding:12px 16px!important;align-items:center;
+}
+.mode-cell:nth-child(2n){border-right:0!important;}
+.mode-cell:nth-last-child(-n+2){border-bottom:0!important;}
+
+/* ── 6 · sweep the leftover clinical leak on the KFB side ──
+   Card Ritual is a procedure, not a taxonomy: clean rows, warm keys,
+   no borrowed teal/navy/maroon washes. */
+.ritual-row:has(.name-it),.ritual-row:has(.claim-it),.ritual-row:has(.power-it){
+  background:transparent!important;border-left:0!important;
+}
+.ritual-key{min-width:90px;}
+
+/* ── 7 · Social Calls — keep the per-call wash, but tie it to the
+   polarity tokens (auto-adapts per edition) instead of stale clinical rgba ── */
+.soc-row:has(.soc-term.bingo){background:color-mix(in srgb,var(--call-bingo) 9%,transparent)!important;}
+.soc-row:has(.soc-term.bongo){background:color-mix(in srgb,var(--call-bongo) 9%,transparent)!important;}
+.soc-row:has(.soc-term.boggle){background:color-mix(in srgb,var(--call-boggle) 9%,transparent)!important;}
+.soc-row:has(.soc-term.blodsinn){background:color-mix(in srgb,var(--call-blodsinn) 10%,transparent)!important;}
+.soc-row:has(.soc-term.bingo) .soc-term{background:color-mix(in srgb,var(--call-bingo) 16%,transparent)!important;}
+.soc-row:has(.soc-term.bongo) .soc-term{background:color-mix(in srgb,var(--call-bongo) 16%,transparent)!important;}
+.soc-row:has(.soc-term.boggle) .soc-term{background:color-mix(in srgb,var(--call-boggle) 16%,transparent)!important;}
+.soc-row:has(.soc-term.blodsinn) .soc-term{background:color-mix(in srgb,var(--call-blodsinn) 17%,transparent)!important;}
+
+/* ── 8 · Quick Reference — drop the odd dashed rule, match the system ── */
+.ref-table td:first-child{min-width:120px;white-space:nowrap;}
+
+/* ── 9 · footer — retire the hard black band; the poster becomes a
+   framed cut-paper media card on paper, like every other poster ── */
+.foot-video-wrap{
+  background:transparent!important;
+  max-width:var(--lay-max);margin:0 auto;
+  padding:var(--sp-10) var(--sp-8) 0!important;
+}
+.foot-video-wrap .sec-eyebrow{color:var(--accent)!important;opacity:1!important;}
+.hub-foot{border-top:1px solid var(--border)!important;}
+
+/* ── 10 · vertical rhythm — consistent breathing around blocks ── */
+.note,.dosay-block{margin:var(--tbl-gap) 0;}
+.sec-sub{margin:var(--sp-8) 0 var(--sp-3);}
+
+/* ── 11 · edition CTAs + grain tuning ── */
+/* the two #home rule-buttons carry their EDITION colour in any theme, so they
+   read as a visual handshake with the KFB(red)/MedKayfab(teal) teaser boxes below */
+.hero-ctas button.cta-solid[onclick*="home-origin"]{background:var(--kfb-accent)!important;border-color:var(--ink)!important;color:#f6efd9!important;}
+.hero-ctas button.cta-solid[onclick*="'med'"]{background:#2f7a72!important;border-color:var(--ink)!important;color:#f6efd9!important;}
+.hero-ctas button.cta-solid[onclick*="'med'"]:hover{background:#28645d!important;}
+/* tone the paper-grain down so dense table rows stop reading as faint banding
+   (rows are already uniformly transparent; this is the perceived-tint fix) */
+body::before{opacity:.4;}
+
+
+/* ── 13 · rules pages — right floating ToC, unified with the essay ToC.
+   Left-aligned reading column + ToC in the right gutter (same pattern &
+   typography as .essay-toc). :has(.sidebar) scopes this to rules pages only
+   (home/essays have no .sidebar). ── */
+@media(min-width:1080px){
+  .page-body:has(.sidebar){display:block;max-width:var(--lay-max);margin:0 auto;}
+  .page-body:has(.sidebar) .main{max-width:var(--lay-prose);margin:0;padding:var(--sp-8) 0 0;}
+  .sidebar{
+    position:fixed;top:92px;left:calc(50% + 248px);right:24px;
+    width:auto;max-width:280px;max-height:calc(100vh - 130px);
+    overflow-y:auto;border-right:none!important;padding:0;background:transparent;z-index:10;
+  }
+  .sidebar a{font-family:var(--ff-ui);font-size:12px;line-height:1.3;letter-spacing:.01em;
+    padding:7px 0;border-bottom:1px dotted var(--border);color:var(--ink-3);}
+  .sidebar a:hover{color:var(--ink);}
+  .sidebar a.active{color:var(--accent);font-weight:700;}
+  .sidebar-label{font-family:var(--ff-ui);font-size:10px;font-weight:700;letter-spacing:.14em;
+    text-transform:uppercase;color:var(--ink-4);border-bottom:none;margin-bottom:10px;}
+  .sidebar-actions{margin-top:var(--sp-5);}
+}
+/* tablet: ToC hidden (as the essays already do); content reflows full reading width */
+@media(min-width:721px) and (max-width:1079px){
+  .page-body:has(.sidebar) .sidebar{display:none;}
+  .page-body:has(.sidebar) .main{padding-left:0;}
+}
+
+
+/* ── 15 · typography polish — prevent widows/orphans (no lone last word
+   like “accomplices.”) on body copy; balance display headlines. ── */
+.prose,.hero-lead,.hero-tag,.hero-subline,.origin-subtitle,.vc-desc,.vc-best,
+.gloss-def,.soc-def,.blockquote,.note,.rd,.step-body,.ritual-desc,.mode-desc{text-wrap:pretty;}
+.hero-title,.sec-title,.origin-title,.vc-title,.sec-sub,.bigq,.origin-h,.foot-big{text-wrap:balance;}
+
+/* ── 16 · global type ramp tightened + How-it-works tiles + footer polish ── */
+/* pull the small UI sizes up toward the 15/16 reading band (tighter ramp) */
+:root{ --fs-xs:13px; --fs-sm:14px; }
+
+/* How-it-works tiles — faint background matching each tile's own accent */
+[style*="dotted #c8911f"]{background:rgba(200,145,31,.09);}
+[style*="dotted #b85636"]{background:rgba(184,86,54,.09);}
+[style*="dotted #5d6b78"]{background:rgba(93,107,120,.09);}
+
+/* footer — smaller sign-off; make the legal line + disclaimer readable again
+   (was --ink-4 at opacity .75 → near-invisible) */
+.foot-big{font-size:clamp(38px,5vw,62px);}
+.foot-bar{color:var(--ink-3);}
+.foot-bar a{color:var(--ink-2);}
+.foot-bar span[style*="italic"]{opacity:1!important;color:var(--ink-3)!important;}
+
+
 
 </style>
 </head>
@@ -815,7 +1008,7 @@ body{padding-top:var(--lay-topbar);}
     <a class="variant-card med" href="#med" onclick="goPage('med',document.getElementById('tb-med'));return false;">
       <div class="vc-badge">Cut &amp; Play Comic · Clinical Edition</div>
       <div class="vc-title"><span class="mk-mark"><span class="a">Med</span><span class="b">Kayfab</span></span> Medicine</div>
-      <p class="vc-desc"><strong>Same loop, applied to pathophysiology.</strong> You play <em>Fibby Fitz</em> as your Character. The die rolls a 3 - <strong>Mechanism Flash.</strong> You explain atrial fibrillation from memory while the others heckle. Someone at the table calls <em>BLÖDSINN!</em> — and everyone turns on you immediately. <strong>Wrong tonight, right tomorrow, teachable by breakfast.</strong></p>
+      <p class="vc-desc"><strong>Same loop, applied to pathophysiology.</strong> Your Character is a disease, a drug, a failing organ. The die rolls a 3 - <strong>Mechanism Flash.</strong> You explain how it actually works from memory while the others heckle. Someone at the table calls <em>BLÖDSINN!</em> — and everyone turns on you immediately. <strong>Wrong tonight, right tomorrow, teachable by breakfast.</strong></p>
       <p class="vc-best"><strong>Best for:</strong> med students who've outgrown flashcards, residents on night shift, attendings who teach by humiliation and want to stop. <strong>Solo or 1-6 humans.</strong></p>
       <span class="vc-cta">Read the MedKayfab Rules</span>
     </a>
@@ -833,6 +1026,7 @@ body{padding-top:var(--lay-topbar);}
       <div style="flex:1;min-width:180px;border:1.5px dotted #b85636;border-radius:0;padding:14px 16px"><div style="font-weight:700;color:#b85636">2. Cut &amp; shuffle</div><div>Scissors turn the page into a deck of cards.</div></div>
       <div style="flex:1;min-width:180px;border:1.5px dotted #5d6b78;border-radius:0;padding:14px 16px"><div style="font-weight:700;color:#5d6b78">3. Play &amp; pass it on</div><div>One to six friends, twenty minutes, one shared comic.</div></div>
     </div>
+    <p style="font-family:var(--ff-display);font-weight:800;font-size:clamp(20px,2.7vw,30px);line-height:1.25;letter-spacing:var(--ls-tight);color:var(--ink);text-align:center;margin:0 0 var(--sp-4)">You don't just play cards or tell boring stories.<br>You <span class="swipe">suplex</span> consensus reality till it taps out.</p>
     <p class="prose" style="text-align:center"><strong>Best played with people who do not quite agree with you.</strong> So bring a few, bring scissors, and pass it on. The rabbit will handle the rest.</p>
     <div style="text-align:center;margin-top:24px">
       <div class="sec-eyebrow">Share the Kult</div>
@@ -903,7 +1097,7 @@ body{padding-top:var(--lay-topbar);}
     <a class="variant-card med" href="#med_de" onclick="goPage('med_de',document.getElementById('tb-med'));return false;">
       <div class="vc-badge">Cut &amp; Play Comic · Klinische Edition</div>
       <div class="vc-title"><span class="mk-mark"><span class="a">Med</span><span class="b">Kayfab</span></span> Medicine</div>
-      <p class="vc-desc"><strong>Derselbe Loop, angelegt an die Pathophysiologie.</strong> Du spielst <em>Fibby Fitz</em> als Character. Der Würfel zeigt 3 - <strong>Mechanism Flash.</strong> Du erklärst Vorhofflimmern aus dem Gedächtnis, während die anderen dazwischenrufen. Jemand am Tisch ruft <em>BLÖDSINN!</em> — und alle drehen sich gegen dich. <strong>Heute Abend halb falsch, morgen Mittag richtig, beim Frühstück lehrbar.</strong></p>
+      <p class="vc-desc"><strong>Derselbe Loop, angelegt an die Pathophysiologie.</strong> Dein Character ist eine Krankheit, ein Medikament, ein versagendes Organ. Der Würfel zeigt 3 - <strong>Mechanism Flash.</strong> Du erklärst aus dem Gedächtnis, wie es wirklich funktioniert, während die anderen dazwischenrufen. Jemand am Tisch ruft <em>BLÖDSINN!</em> — und alle drehen sich gegen dich. <strong>Heute Abend halb falsch, morgen Mittag richtig, beim Frühstück lehrbar.</strong></p>
       <p class="vc-best"><strong>Geeignet für:</strong> Medizinstudierende, die Karteikarten überlebt haben, Assistenzärzt*innen im Nachtdienst, Oberärzt*innen die durch Bloßstellen unterrichten und damit aufhören wollen. <strong>Solo oder 1-6 Menschen am Tisch.</strong></p>
       <span class="vc-cta">Lies die MedKayfab-Regeln</span>
     </a>
@@ -921,6 +1115,7 @@ body{padding-top:var(--lay-topbar);}
       <div style="flex:1;min-width:180px;border:1.5px dotted #b85636;border-radius:0;padding:14px 16px"><div style="font-weight:700;color:#b85636">2. Schneiden &amp; mischen</div><div>Die Schere macht aus der Seite ein Kartendeck.</div></div>
       <div style="flex:1;min-width:180px;border:1.5px dotted #5d6b78;border-radius:0;padding:14px 16px"><div style="font-weight:700;color:#5d6b78">3. Spielen &amp; weitergeben</div><div>Eine bis sechs Personen, zwanzig Minuten, ein gemeinsamer Comic.</div></div>
     </div>
+    <p style="font-family:var(--ff-display);font-weight:800;font-size:clamp(20px,2.7vw,30px);line-height:1.25;letter-spacing:var(--ls-tight);color:var(--ink);text-align:center;margin:0 0 var(--sp-4)">You don't just play cards or tell boring stories.<br>You <span class="swipe">suplex</span> consensus reality till it taps out.</p>
     <p class="prose" style="text-align:center"><strong>Am besten mit Leuten, die nicht ganz deiner Meinung sind.</strong> Also bring ein paar mit, bring eine Schere, und gib es weiter. Den Rest macht der Hase.</p>
     <div style="text-align:center;margin-top:24px">
       <div class="sec-eyebrow">Teilt den Kult</div>
@@ -1048,14 +1243,14 @@ body{padding-top:var(--lay-topbar);}
       <p class="prose">That single instruction is the whole trick, and it is worth slowing down for, because it quietly does something to comics that the textbooks did not see coming.</p>
       <h2 class="sec-sub" id="cpen-what-you-are-actually-lo">What you are actually looking at</h2>
       <p class="prose">It is called Cut &amp; Play Comics, and its master of ceremonies is Uncle FrizzleBob, a rogue cartoon rabbit who has opinions about the future and very little patience for people selling it.</p>
-      <p class="prose">Each sheet is dense with little hand drawn cards, watercolour and scratchy ink, named like wrestling moves and tarot trumps at the same time: <strong>The Finished City, The Doomsday Clock, The Held Breath.</strong> It looks like a slightly unhinged comic. It is not, quite. The dotted lines give the rest away.</p>
+      <p class="prose">Each sheet is dense with little hand drawn cards, watercolour and scratchy ink, each with a name like a small claim: <strong>The Finished City, The Doomsday Clock, The Held Breath.</strong> It looks like a slightly unhinged comic. It is not, quite. The dotted lines give the rest away.</p>
       <h2 class="sec-sub" id="cpen-the-twist-this-is-not-a-">The twist: this is not a comic, it is a deck</h2>
       <p class="prose">What you printed is the uncut sheet of a card game. "Cut &amp; Play" is not a slogan, it is the assembly instruction. Snip along the dotted lines and the panels fall into your hand as a deck of cards. What looked like captions are the two lines every card carries into play: <strong>POWER</strong>, what the card can do, and <strong>LORE</strong>, what it wants.</p>
-      <p class="prose">The game has a wonderfully accurate name: social story wrestling. A few friends sit down and build one story together, card by card. Nobody wins. The point is a story that goes somewhere surprising. Two dice steer it, one for the mood (tragic, comic, absurd) and one that pushes the tale from opening to finale. A referee called King Kayfabian rotates around the table and rules on what just happened. The word kayfabe comes from wrestling: the shared agreement to treat the staged as real, even though everyone at the table knows it is staged. That handshake is the only rule that really matters.</p>
-      <p class="prose">A small piece of comic theory makes the magic legible. Between any two comic pictures there is a gap. Scott McCloud calls it the gutter, and he made a career out of one observation: the reader fills that gap in their own head, supplying the bit of story that happens between panel and panel. He calls that small act of imagination closure. Normally one reader does it silently, alone. KayfaBizarro takes that private gap and turns it into a dotted line. The closure is no longer in your head, it is in your hands, and you do it with other people, out loud, at a table.</p>
+      <p class="prose">The game has a wonderfully accurate name: social story wrestling. A few friends sit down and build one story together, card by card. Nobody wins. The point is a story that goes somewhere surprising. Two dice steer it, one for the mood (tragic, comic, absurd) and one that pushes the tale from opening to finale. What holds, you work out together at the table, out loud, through the Social Calls. There is a referee role, King Kayfabian, that passes to the next player after every turn, but it only steps in when you cannot agree at all. The word kayfabe comes from wrestling: the shared agreement to treat the staged as real, even though everyone at the table knows it is staged. You settle into that agreement not by a handshake but simply by convention.</p>
+      <p class="prose">A small piece of comic theory makes the magic legible. Between any two comic pictures there is a gap. Scott McCloud calls it the gutter, the thin white space between two panels, and he made a career out of one observation: the reader fills that gap in their own head, supplying the bit of story that happens between panel and panel. He calls that small act of imagination closure. Normally one reader does it silently, alone. KayfaBizarro takes that private gap and turns it into a dotted line. The closure is no longer in your head, it is in your hands, and you do it with other people, out loud, at a table.</p>
       <p class="prose">That is the move. <span class="hl">A silent act of reading becomes a shared act of cutting.</span> No author hands you the meaning finished. You assemble it.</p>
       <h2 class="sec-sub" id="cpen-three-futures-three-flav">Three futures, three flavours</h2>
-      <p class="prose">There are three decks, and you understand them with your fingers before your brain catches up. Same artist, same warm watercolour and ink, same recurring rabbit and dials and beetles. What changes is the weather.</p>
+      <p class="prose">There are three decks, and you understand them with your fingers before your brain catches up. Same artist, same warm watercolour and ink, same recurring rabbit. What changes is the weather.</p>
       <p class="prose">The first deck is <strong>Hopium</strong>, the brightest, glossiest, most seductive sheet, painted in the palette of advertising: rainbows, glass skylines, surfaces that shine. Its sharpest card is The Moving Launch Date, where "Q3 2024" is crossed out to "2025," then "2026," then simply "SOON." A future sold as a permanent pre order.</p>
       <figure class="essay-embed">
         <div class="lp-video-poster" id="yt-protopia-a-en" onclick="playLpVideo('yt-protopia-a-en','BOgt2SAVCQc')">
@@ -1090,19 +1285,17 @@ body{padding-top:var(--lay-topbar);}
         <figcaption class="essay-embed-cap">Deck C · Embrace Protopia — the song for the Curiosity row. Print, cut, and play it free.</figcaption>
       </figure>
       <p class="prose">Three moods, three palettes, one world drawn three times. Before a single card is played, your hand already knows whether it is holding a seduction, a threat, or an exercise. That is colour doing the storytelling, exactly as McCloud promised it could.</p>
-      <h2 class="sec-sub" id="cpen-what-the-scissors-throw-">What the scissors throw away</h2>
-      <p class="prose">Here is the most elegant thing about the whole contraption, and it only shows up once you actually start cutting.</p>
-      <p class="prose">Look closely and almost all the cleverness, the beetles, the spinning dials, the shouted asides, the little footnotes to Aby Warburg and McCloud, sits in the margins. In the gutters. In exactly the places the scissors pass through. Cut the cards out and all of that erudition ends up on the floor as confetti. What stays in your hand is the bare card: one image, one name, two lines.</p>
-      <p class="prose"><span class="hl">The cut is an editor.</span> It removes precisely the chatter, and leaves the sermon in the offcuts. The comic talks a lot so that the deck does not have to.</p>
+      <h2 class="sec-sub" id="cpen-what-the-scissors-throw-">The teeming margin</h2>
+      <p class="prose">Look closely and the margins, between the panels, teem: aliens, plants in pots, animals, little scribbled asides, footnotes to Aby Warburg and McCloud, a whole seek and find picture. When you cut, some of it ends up as scraps on the table, and that is not a loss, it is the point. The teeming margin is the unfinished texture of these comics, rough on purpose, a refusal of the glossy, sanded down surface.</p>
       <h2 class="sec-sub" id="cpen-two-evenings-and-the-mom">Two evenings, and the moment it caught fire</h2>
       <p class="prose">Three of us sat down to test it. The first evening we played the decks one at a time, each on its own, and each one bent our stories into a different shape. Hopium made us run in circles, because every card promises a payoff that never lands. Doom funnelled everything toward the same grim ending. Only Protopia opened the room up, because its cards propose actions instead of asserting states. Breathe. Pause. Take the second back. The deck that promised the least gave us the most to play.</p>
       <p class="prose">The second evening we did the obvious reckless thing. We threw all three cut piles together and shuffled them into one deck. That was a different and much better game. Now The Finished City landed next to The Doomsday Clock in the same hand, and the collision forced a turn no single card contained: the perfect city that starts to crumble in the very moment it is finished. That spark between two cards is closure again, only now it jumps between two whole moods.</p>
-      <p class="prose">Apart, the three decks are three tidy theses about the future: it is finished, it is doomed, it is unfinished. <span class="hl">Shuffled, they stop being theses and start being an argument.</span> And an argument, it turns out, tells a far better story than any thesis. Nobody at the table is being told what to think. The deck just keeps handing you contradictions and trusting you to do something human with them.</p>
+      <p class="prose">Apart, the three decks are three tidy theses about the future: it is finished, it is doomed, it is unfinished. <span class="hl">Shuffled, they stop being theses and start being an argument.</span> And an argument, it turns out, tells a far better story than any thesis. Nobody at the table is being told what to think. You keep getting fresh contradictions in your hand, and together you have to make something human of them.</p>
       <h2 class="sec-sub" id="cpen-a-family-the-rabbit-poli">A family the rabbit politely forgets to mention</h2>
       <p class="prose">Scissors have ancestors. In 1920 Tristan Tzara pulled cut up newspaper words from a hat to write a Dada poem, the first cheerful claim that order can be left to luck. In the 1950s Brion Gysin and William Burroughs turned that into the cut up technique, slicing finished pages apart to find the meaning the author never planned. Raymond Queneau cut ten sonnets into strips so readers could build a hundred thousand billion of their own. The Fluxus artists wrote instructions that only became artworks when somebody performed them.</p>
-      <p class="prose">The idea, in other words, is old: the work gets finished by the person holding it. What KayfaBizarro adds is not the cut but the company. A referee, two dice, and a table. The avant garde cut alone in the studio, against meaning. KayfaBizarro cuts three handed at the kitchen table, for meaning, and turns a radical gesture from the sixties into a party game you can actually play on a Tuesday without it smelling of seminar. Not smaller for that. Warmer.</p>
+      <p class="prose">The idea, in other words, is old: the work gets finished by the person holding it. What KayfaBizarro adds is not the cut but the company. A table, two dice, a few people. The avant garde cut alone in the studio, against meaning. KayfaBizarro cuts three handed at the kitchen table, for meaning, and turns a radical gesture from the sixties into a party game you can actually play on a Tuesday without it smelling of seminar. Not smaller for that. Warmer.</p>
       <h2 class="sec-sub" id="cpen-what-the-page-can-and-ca">What the page can and cannot do</h2>
-      <p class="prose">As a game, it keeps its promise. It turns reading into doing, meaning into negotiation, and a few friends into a group willing to risk a story together for an hour. That little republic of the table is not a democracy, King Kayfabian is a benevolent travelling monarch, but it is something rarer: a voluntary agreement to share one reality for a while.</p>
+      <p class="prose">As a game, it keeps its promise. It turns reading into doing, meaning into negotiation, and a few friends into a group willing to risk a story together for an hour. That little republic of the table is not a democracy, King Kayfabian stays a benevolent fallback, but it is something rarer: a voluntary agreement to share one reality for a while.</p>
       <p class="prose">And here is the honest catch. A printed sheet on its own does nothing. The game lives in the cutting, the shuffling, the table. <span class="hl">The page is a billboard for a performance that happens at your table.</span> Which is exactly why it ends not with a conclusion but with a deck in your hands.</p>
       <h2 class="sec-sub" id="cpen-the-move-that-lies-open">The move that lies open</h2>
       <p class="prose">The best evening was the shuffled one, and even then we only had three futures to mix. Three moods, three palettes, three ready made attitudes.</p>
@@ -1118,14 +1311,14 @@ body{padding-top:var(--lay-topbar);}
         </button>
         <figcaption class="wall-cap">The triptych on the wall — “Utopia – Aufbruch oder Untergang?”, Kunstverein Wunstorf, July 2026. Tap to enlarge.</figcaption>
       </figure>
-      <p class="origin-subtitle" style="margin-top:var(--sp-8,32px);font-size:var(--fs-sm,14px)">A companion reading after Scott McCloud and Thierry Groensteen, based on the KayfaBizarro Cut &amp; Play decks. KayfaBizarro and MedKayfab are free print, cut and play comics by Georg Graf von Westphalen. The book "Hilfe, ich bin ein Mensch!" is published by Westend Verlag.</p>
+      <p class="origin-subtitle" style="margin-top:var(--sp-8,32px);font-size:var(--fs-sm,14px)">A companion reading after Scott McCloud and Thierry Groensteen, based on the KayfaBizarro Cut &amp; Play decks. KayfaBizarro and MedKayfab are free print, cut and play comics by Georg von Westphalen. The book "Hilfe, ich bin ein Mensch!" is published by Westend Verlag.</p>
   </div>
   <nav class="essay-toc" aria-label="Contents">
     <div class="toc-label">Contents</div>
     <a href="#cpen-what-you-are-actually-lo">What you are actually looking at</a>
     <a href="#cpen-the-twist-this-is-not-a-">The twist: this is not a comic, it is a deck</a>
     <a href="#cpen-three-futures-three-flav">Three futures, three flavours</a>
-    <a href="#cpen-what-the-scissors-throw-">What the scissors throw away</a>
+    <a href="#cpen-what-the-scissors-throw-">The teeming margin</a>
     <a href="#cpen-two-evenings-and-the-mom">Two evenings, and the moment it caught fire</a>
     <a href="#cpen-a-family-the-rabbit-poli">A family the rabbit politely forgets to mention</a>
     <a href="#cpen-what-the-page-can-and-ca">What the page can and cannot do</a>
@@ -1143,19 +1336,19 @@ body{padding-top:var(--lay-topbar);}
       <p class="origin-subtitle">Wie ein Comic sich als Spiel entpuppt, das man mit eigener Hand zu Ende bringt.</p>
     </div>
       <div class="note">Eine kurze Lektüre für alle, die gerade ein Deck heruntergeladen haben und jetzt eine Schere in der Hand halten. Keine Ausstellung nötig.</div>
-      <p class="prose">Du hältst einen Comic in der Hand, der zerstört werden will.</p>
+      <p class="prose">Du hältst einen Comic in der Hand, der zerschnitten werden will.</p>
       <p class="prose">Über die Panels laufen gepunktete Linien. Unten, in fröhlichen Großbuchstaben, ein Befehl: „Zerschneide diesen Comic und spiel die Zukunft." Ein Cartoon-Hase in der Ecke wirkt begeistert von der Idee. Die meiste Kunst will bewundert und in Ruhe gelassen werden. <span class="hl">Diese hier verlangt nach einer Schere.</span></p>
       <p class="prose">Diese eine Anweisung ist der ganze Trick, und es lohnt sich, hier kurz innezuhalten, denn sie tut mit dem Comic leise etwas, das die Lehrbücher nicht kommen sahen.</p>
       <h2 class="sec-sub" id="cpde-was-du-eigentlich-vor-di">Was du eigentlich vor dir hast</h2>
       <p class="prose">Es heißt Cut &amp; Play Comics, und sein Zeremonienmeister ist Onkel FrizzleBob, ein aufmüpfiger Cartoon-Hase mit Meinungen über die Zukunft und wenig Geduld für Leute, die sie verkaufen.</p>
-      <p class="prose">Jeder Bogen ist dicht mit kleinen handgezeichneten Karten, Aquarell und kratzige Tusche, benannt wie Wrestling-Moves und Tarot-Trümpfe zugleich: <strong>The Finished City, The Doomsday Clock, The Held Breath.</strong> Es sieht aus wie ein leicht durchgeknallter Comic. Ist es aber nicht ganz. Die gepunkteten Linien verraten den Rest.</p>
+      <p class="prose">Jeder Bogen ist dicht mit kleinen, handgezeichneten Karten in Aquarell und kratziger Tusche, und jede trägt einen Namen wie eine kleine Behauptung: <strong>The Finished City, The Doomsday Clock, The Held Breath.</strong> Es sieht aus wie ein leicht durchgeknallter Comic. Ist es aber nicht ganz. Die gepunkteten Linien verraten den Rest.</p>
       <h2 class="sec-sub" id="cpde-der-twist-das-ist-kein-c">Der Twist: das ist kein Comic, das ist ein Deck</h2>
       <p class="prose">Was du ausgedruckt hast, ist der ungeschnittene Bogen eines Kartenspiels. „Cut &amp; Play" ist kein Slogan, es ist die Bauanleitung. Schneide entlang der Linien, und die Panels fallen dir als Kartendeck in die Hand. Was wie Bildunterschriften aussah, sind die zwei Zeilen, die jede Karte ins Spiel trägt: <strong>POWER</strong>, was die Karte kann, und <strong>LORE</strong>, was sie will.</p>
-      <p class="prose">Das Spiel trägt einen treffenden Namen: Social Story-Wrestling. Ein paar Freunde setzen sich hin und bauen gemeinsam eine Geschichte, Karte für Karte. Niemand gewinnt. Es geht um eine Geschichte, die irgendwohin läuft, das überrascht. Zwei Würfel steuern sie, einer für die Stimmung (tragisch, komisch, absurd), einer, der die Geschichte vom Anfang zum Finale schiebt. Ein Schiedsrichter namens King Kayfabian wandert um den Tisch und entscheidet, was gerade gilt. Das Wort Kayfabe kommt aus dem Wrestling: die stille Abmachung, das Inszenierte als echt zu behandeln, obwohl alle am Tisch wissen, dass es inszeniert ist. Dieser Handschlag ist die einzige Regel, auf die es wirklich ankommt.</p>
-      <p class="prose">Ein kleines Stück Comic-Theorie macht den Zauber lesbar. Zwischen zwei Comic-Bildern liegt immer eine Lücke. Scott McCloud nennt sie den Rinnstein, und er hat aus einer Beobachtung eine Laufbahn gemacht: Der Leser füllt diese Lücke im eigenen Kopf, er ergänzt das Stück Geschichte, das zwischen Panel und Panel passiert. Dieser kleine Akt der Vorstellung heißt bei ihm Closure. Normalerweise vollzieht ihn ein Leser still, allein. KayfaBizarro nimmt diese private Lücke und macht eine gepunktete Linie daraus. Die Closure steckt nicht mehr im Kopf, sie steckt in deinen Händen, und du vollziehst sie mit anderen, laut, an einem Tisch.</p>
+      <p class="prose">Das Spiel trägt einen treffenden Namen: Social Story-Wrestling. Ein paar Freunde setzen sich hin und bauen gemeinsam eine Geschichte, Karte für Karte. Niemand gewinnt. Es geht um eine Geschichte, die irgendwohin läuft, wohin keiner geplant hatte. Zwei Würfel steuern sie, einer für die Stimmung (tragisch, komisch, absurd), einer, der die Geschichte vom Anfang zum Finale schiebt. Was gerade gilt, handelt ihr am Tisch gemeinsam aus, laut, mit den Social Calls. Es gibt zwar eine Schiedsrichterrolle, King Kayfabian, die nach jedem Zug an die nächste Person weiterwandert, aber sie greift nur ein, wenn ihr euch gar nicht einig werdet. Das Wort Kayfabe kommt aus dem Wrestling: die stille Übereinkunft, das Inszenierte als echt zu behandeln, obwohl alle am Tisch wissen, dass es inszeniert ist. Auf diese Übereinkunft einigt ihr euch nicht per Handschlag, sondern einfach per Konvention.</p>
+      <p class="prose">Ein kleines Stück Comic-Theorie macht den Zauber lesbar. Zwischen zwei Comic-Bildern liegt immer eine Lücke. Scott McCloud nennt sie den Rinnstein, den schmalen weißen Zwischenraum zwischen zwei Panels, und er hat aus einer Beobachtung eine Laufbahn gemacht: Der Leser füllt diese Lücke im eigenen Kopf, er ergänzt das Stück Geschichte, das zwischen Panel und Panel passiert. Dieser kleine Akt der Vorstellung heißt bei ihm Closure. Normalerweise vollzieht ihn ein Leser still, allein. KayfaBizarro nimmt diese private Lücke und macht eine gepunktete Linie daraus. Die Closure steckt nicht mehr im Kopf, sie steckt in deinen Händen, und du vollziehst sie mit anderen, laut, an einem Tisch.</p>
       <p class="prose">Das ist der Zug. <span class="hl">Aus einem stillen Akt des Lesens wird ein gemeinsamer Akt des Schneidens.</span> Kein Autor reicht dir die Bedeutung fertig. Du baust sie selbst zusammen.</p>
       <h2 class="sec-sub" id="cpde-drei-zuk-nfte-drei-gesch">Drei Zukünfte, drei Geschmacksrichtungen</h2>
-      <p class="prose">Es gibt drei Decks, und du verstehst sie mit den Fingern, bevor der Kopf nachkommt. Gleicher Zeichner, gleiche warme Mischung aus Aquarell und Tusche, derselbe wiederkehrende Hase, dieselben Drehscheiben und Käfer. Was sich ändert, ist das Wetter.</p>
+      <p class="prose">Es gibt drei Decks, und du verstehst sie mit den Fingern, bevor der Kopf nachkommt. Gleicher Zeichner, gleiche warme Mischung aus Aquarell und Tusche, derselbe wiederkehrende Hase. Was sich ändert, ist das Wetter.</p>
       <p class="prose">Das erste Deck ist <strong>Hopium</strong>, der hellste, glänzendste, verführerischste Bogen, gemalt in der Palette der Werbung: Regenbogen, gläserne Skylines, Oberflächen, die glänzen. Seine schärfste Karte ist The Moving Launch Date, auf der „Q3 2024" durchgestrichen wird zu „2025", dann „2026", dann nur noch „SOON". Eine Zukunft als Dauer-Vorbestellung.</p>
       <figure class="essay-embed">
         <div class="lp-video-poster" id="yt-protopia-a-de" onclick="playLpVideo('yt-protopia-a-de','BOgt2SAVCQc')">
@@ -1190,19 +1383,17 @@ body{padding-top:var(--lay-topbar);}
         <figcaption class="essay-embed-cap">Deck C · Embrace Protopia — der Song zur Curiosity-Reihe. Frei zum Drucken, Schneiden und Spielen.</figcaption>
       </figure>
       <p class="prose">Drei Stimmungen, drei Paletten, eine Welt dreimal gezeichnet. Bevor eine einzige Karte gespielt ist, weiß deine Hand schon, ob sie eine Verführung, eine Drohung oder eine Übung hält. Das ist Farbe, die erzählt, genau wie McCloud es versprochen hat.</p>
-      <h2 class="sec-sub" id="cpde-was-die-schere-wegwirft">Was die Schere wegwirft</h2>
-      <p class="prose">Das Eleganteste an der ganzen Konstruktion zeigt sich erst, wenn du wirklich anfängst zu schneiden.</p>
-      <p class="prose">Schau genau hin, und fast alle Cleverness, die Käfer, die Drehscheiben, die hineingerufenen Kommentare, die kleinen Fußnoten zu Aby Warburg und McCloud, sitzt an den Rändern. In den Rinnsteinen. Genau dort, wo die Schere durchgeht. Schneide die Karten aus, und all diese Belesenheit landet als Konfetti auf dem Boden. Übrig bleibt die nackte Karte: ein Bild, ein Name, zwei Zeilen.</p>
-      <p class="prose"><span class="hl">Der Schnitt ist ein Lektor.</span> Er entfernt genau das Geschwätz und lässt die Predigt im Abfall. Der Comic redet viel, damit das Deck es nicht muss.</p>
+      <h2 class="sec-sub" id="cpde-was-die-schere-wegwirft">Das Wimmelbild am Rand</h2>
+      <p class="prose">Schau genau hin, dann siehst du es. In den Rändern, zwischen den Panels, wimmelt es: Aliens, Topfpflanzen, Tiere, kleine hineingekritzelte Witze, Fußnoten an Aby Warburg und McCloud, ein ganzes Suchbild. Beim Schneiden bleibt ein Teil davon als Schnipsel auf dem Tisch liegen, und das ist kein Verlust, sondern Absicht. Das Wimmelbild ist die unfertige Textur dieser Comics, roh mit Absicht, eine Absage an die glattgebügelte Hochglanz-Oberfläche.</p>
       <h2 class="sec-sub" id="cpde-zwei-abende-und-der-mome">Zwei Abende, und der Moment, in dem es zündete</h2>
       <p class="prose">Wir waren zu dritt und haben es ausprobiert. Am ersten Abend spielten wir die Decks einzeln, jedes für sich, und jedes bog unsere Geschichten in eine andere Form. Hopium ließ uns im Kreis laufen, weil jede Karte eine Belohnung verspricht, die nie kommt. Doom trichterte alles auf dasselbe düstere Ende. Erst Protopia öffnete den Raum, weil seine Karten Handlungen vorschlagen statt Zustände zu behaupten. Atme. Halt inne. Hol dir die Sekunde zurück. Das Deck, das am wenigsten versprach, gab uns am meisten zu spielen.</p>
-      <p class="prose">Am zweiten Abend taten wir das offensichtlich Leichtsinnige. Wir warfen die drei geschnittenen Stapel zusammen und mischten sie zu einem Deck. Das war ein anderes und viel besseres Spiel. Jetzt lag The Finished City neben The Doomsday Clock in derselben Hand, und der Zusammenprall erzwang eine Wendung, die keine Karte allein enthielt: die perfekte Stadt, die im selben Moment zu zerfallen beginnt, in dem sie fertig ist. Dieser Funke zwischen zwei Karten ist wieder Closure, nur springt er jetzt zwischen zwei ganzen Stimmungen.</p>
-      <p class="prose">Getrennt sind die drei Decks drei ordentliche Thesen über die Zukunft: sie ist fertig, sie ist verloren, sie ist unfertig. <span class="hl">Gemischt hören sie auf, Thesen zu sein, und werden ein Streitgespräch.</span> Und ein Streitgespräch erzählt eine weit bessere Geschichte als jede These. Niemandem am Tisch wird gesagt, was er denken soll. Das Deck reicht dir einfach immer neue Widersprüche und traut dir zu, etwas Menschliches damit zu machen.</p>
+      <p class="prose">Am zweiten Abend taten wir das offensichtlich Leichtsinnige. Wir warfen die drei geschnittenen Stapel zusammen und mischten sie zu einem Deck. Das war ein anderes und viel besseres Spiel. Jetzt lag The Finished City neben The Doomsday Clock in derselben Hand, und der Zusammenprall erzwang eine Wendung, die keine Karte allein enthielt: die perfekte Stadt, die im selben Moment zu zerfallen beginnt, in dem sie fertig wird. Dieser Funke zwischen zwei Karten ist wieder Closure, nur springt er jetzt zwischen zwei ganzen Stimmungen.</p>
+      <p class="prose">Getrennt sind die drei Decks drei ordentliche Thesen über die Zukunft: sie ist fertig, sie ist verloren, sie ist unfertig. <span class="hl">Gemischt hören sie auf, Thesen zu sein, und werden ein Streitgespräch.</span> Und ein Streitgespräch erzählt eine weit bessere Geschichte als jede These. Niemandem am Tisch wird gesagt, was er denken soll. Ihr bekommt immer neue Widersprüche in die Hand und müsst gemeinsam etwas Menschliches daraus machen.</p>
       <h2 class="sec-sub" id="cpde-eine-familie-die-der-has">Eine Familie, die der Hase höflich verschweigt</h2>
-      <p class="prose">Die Schere hat Vorfahren. 1920 zog Tristan Tzara für ein Dada-Gedicht zerschnittene Zeitungswörter aus dem Hut, die erste fröhliche Behauptung, dass man die Reihenfolge dem Zufall überlassen darf. In den fünfziger Jahren machten Brion Gysin und William Burroughs daraus die Cut-up-Technik: fertige Seiten zerschneiden und neu zusammenlegen, um den Sinn zu finden, den der Autor nie geplant hat. Raymond Queneau schnitt zehn Sonette in Streifen, damit Leser sich hunderttausend Milliarden eigene bauen können. Die Fluxus-Künstler schrieben Anweisungen, die erst zum Kunstwerk wurden, wenn jemand sie ausführte.</p>
-      <p class="prose">Die Idee ist also alt: Das Werk wird von dem fertiggemacht, der es in der Hand hält. Was KayfaBizarro hinzufügt, ist nicht der Schnitt, sondern die Gesellschaft. Ein Schiedsrichter, zwei Würfel und ein Tisch. Die Avantgarde schnitt allein im Atelier, gegen den Sinn. KayfaBizarro schneidet zu dritt am Küchentisch, für den Sinn, und macht aus einer radikalen Geste der Sechziger ein Gesellschaftsspiel, das man an einem Dienstag tatsächlich spielen kann, ohne dass es nach Seminar riecht. Nicht kleiner dadurch. Wärmer.</p>
+      <p class="prose">Die Schere hat Vorfahren. 1920 zog Tristan Tzara für ein Dada-Gedicht zerschnittene Zeitungswörter aus dem Hut, die erste fröhliche Behauptung, dass man die Reihenfolge dem Zufall überlassen darf. In den fünfziger Jahren machten Brion Gysin und William Burroughs daraus die Cut-up-Technik: fertige Seiten zerschneiden und neu zusammenlegen, um einen Sinn zu finden, den der Autor nie geplant hatte. Raymond Queneau schnitt zehn Sonette in Streifen, damit Leser sich hunderttausend Milliarden eigene bauen können. Die Fluxus-Künstler schrieben Anweisungen, die erst zum Kunstwerk wurden, wenn jemand sie ausführte.</p>
+      <p class="prose">Die Idee ist also alt: Das Werk wird von dem fertiggemacht, der es in der Hand hält. Was KayfaBizarro hinzufügt, ist nicht der Schnitt, sondern die Gesellschaft. Eine Runde, zwei Würfel, ein Tisch. Die Avantgarde schnitt allein im Atelier, gegen den Sinn. Hier schneidet ihr zu dritt am Küchentisch, für den Sinn, und macht aus einer radikalen Geste der Sechziger ein Gesellschaftsspiel, das man an einem Dienstag tatsächlich spielen kann, ohne dass es nach Seminar riecht. Nicht kleiner dadurch. Wärmer.</p>
       <h2 class="sec-sub" id="cpde-was-die-seite-kann-und-w">Was die Seite kann und was nicht</h2>
-      <p class="prose">Als Spiel hält es sein Versprechen. Es macht aus Lesen ein Tun, aus Bedeutung ein Aushandeln, und aus ein paar Freunden eine Runde, die für eine Stunde gemeinsam eine Geschichte riskiert. Diese kleine Republik des Tisches ist keine Demokratie, King Kayfabian ist ein wohlwollender Wandermonarch, aber sie ist etwas Selteneres: eine freiwillige Abmachung, für eine Weile eine Wirklichkeit zu teilen.</p>
+      <p class="prose">Als Spiel hält es sein Versprechen. Es macht aus Lesen ein Tun, aus Bedeutung ein Aushandeln, und aus ein paar Freunden eine Runde, die für eine Stunde gemeinsam eine Geschichte riskiert. Diese kleine Republik des Tisches ist keine Demokratie, King Kayfabian bleibt ein wohlwollender Notbehelf, aber sie ist etwas Selteneres: eine freiwillige Übereinkunft, für eine Weile eine Wirklichkeit zu teilen.</p>
       <p class="prose">Und hier ist der ehrliche Haken. Ein gedruckter Bogen allein tut nichts. Das Spiel lebt im Schneiden, im Mischen, am Tisch. <span class="hl">Die Seite ist die Reklame einer Aufführung, die an deinem Tisch stattfindet.</span> Genau deshalb endet sie nicht mit einem Fazit, sondern mit einem Deck in deinen Händen.</p>
       <h2 class="sec-sub" id="cpde-der-zug-der-offen-liegt">Der Zug, der offen liegt</h2>
       <p class="prose">Der beste Abend war der gemischte, und selbst da hatten wir nur drei Zukünfte zu mischen. Drei Stimmungen, drei Paletten, drei fertige Haltungen.</p>
@@ -1211,21 +1402,21 @@ body{padding-top:var(--lay-topbar);}
       <h2 class="sec-sub" id="cpde-jetzt-bist-du-dran">Jetzt bist du dran</h2>
       <p class="prose">KayfaBizarro ist kostenlos. Druck es, zahl was du willst, schneide es zu und spiel. Die Decks, die Regeln und ein wachsender Stapel dieser Comics liegen auf KayfaBizarro.Pages.dev.</p>
       <p class="prose">Drei Dinge brauchst du, die ein Download dir nicht geben kann: ein paar Freunde, eine Schere und die Bereitschaft, sich laut zu irren. Den Rest macht der Hase.</p>
-      <p class="bigq">Finde deinen nächsten Hebel. Was ist dein eine Prozent heute?</p>
+      <p class="bigq">Finde deinen nächsten Hebel. Was machst du heute um ein Prozent besser?</p>
       <figure class="wall-figure">
         <button class="wall-thumb" type="button" onclick="openLightbox('media/kfb/wall_protopia_full.webp','media/kfb/wall_protopia_full.jpg','KayfaBizarro-Protopia-Wand, Kunstverein Wunstorf 2026')" aria-label="Ausstellungswand vergrößern">
           <picture><source type="image/webp" srcset="media/kfb/wall_protopia_thumb.webp"><img src="media/kfb/wall_protopia_thumb.jpg" alt="Das KayfaBizarro-Protopia-Triptychon an der Wand im Kunstverein Wunstorf" loading="lazy" width="900" height="711"></picture>
         </button>
         <figcaption class="wall-cap">Das Triptychon an der Wand — „Utopia – Aufbruch oder Untergang?“, Kunstverein Wunstorf, Juli 2026. Zum Vergrößern tippen.</figcaption>
       </figure>
-      <p class="origin-subtitle" style="margin-top:var(--sp-8,32px);font-size:var(--fs-sm,14px)">Eine Begleitlektüre nach Scott McCloud und Thierry Groensteen, auf Grundlage der KayfaBizarro Cut &amp; Play-Decks. KayfaBizarro und MedKayfab sind freie Print-, Cut- und Play-Comics von Georg Graf von Westphalen. Das Buch „Hilfe, ich bin ein Mensch!" erscheint im Westend Verlag.</p>
+      <p class="origin-subtitle" style="margin-top:var(--sp-8,32px);font-size:var(--fs-sm,14px)">Eine Begleitlektüre nach Scott McCloud und Thierry Groensteen, auf Grundlage der KayfaBizarro Cut &amp; Play-Decks. KayfaBizarro und MedKayfab sind freie Print-, Cut- und Play-Comics von Georg von Westphalen. Das Buch „Hilfe, ich bin ein Mensch!" erscheint im Westend Verlag.</p>
   </div>
   <nav class="essay-toc" aria-label="Inhalt">
     <div class="toc-label">Inhalt</div>
     <a href="#cpde-was-du-eigentlich-vor-di">Was du eigentlich vor dir hast</a>
     <a href="#cpde-der-twist-das-ist-kein-c">Der Twist: das ist kein Comic, das ist ein Deck</a>
     <a href="#cpde-drei-zuk-nfte-drei-gesch">Drei Zukünfte, drei Geschmacksrichtungen</a>
-    <a href="#cpde-was-die-schere-wegwirft">Was die Schere wegwirft</a>
+    <a href="#cpde-was-die-schere-wegwirft">Das Wimmelbild am Rand</a>
     <a href="#cpde-zwei-abende-und-der-mome">Zwei Abende, und der Moment, in dem es zündete</a>
     <a href="#cpde-eine-familie-die-der-has">Eine Familie, die der Hase höflich verschweigt</a>
     <a href="#cpde-was-die-seite-kann-und-w">Was die Seite kann und was nicht</a>
@@ -1377,7 +1568,7 @@ body{padding-top:var(--lay-topbar);}
           <div class="vrow"><span class="vv">0</span><span class="vl">Hold</span><span class="vd">Linger here. Build character, not plot.</span></div>
           <div class="vrow"><span class="vv">−1</span><span class="vl">Twist</span><span class="vd">Reframe what just happened.</span></div>
         </div>
-        <div class="note"><span class="note-label">Note —</span> Drop <strong>below 1</strong> and the Quest fails: no Finale, no canon — <em>the collapse is the story.</em> Reach <strong>6</strong> and the next player's turn is the Finale.</div>
+        <div class="note"><span class="note-label">Note —</span> Drop <strong>below 1</strong> and the Quest fails: no Finale, no loot — <em>the collapse is the story.</em> Reach <strong>6</strong> and the next player's turn is the Finale.</div>
       </div>
 
       <div class="rules-section" id="kfb-modes">
@@ -1406,7 +1597,7 @@ body{padding-top:var(--lay-topbar);}
         <div class="sec-title">The <em>Finale</em></div>
         <p class="prose">When the Quest Die hits <strong>6</strong>, the next player's turn is the Finale turn. Same 5 beats — but the Quest <em>must resolve</em> in the story. Happy, tragic, absurd — but not just an ending: <strong>the return.</strong> You come back to the world you set out from — and what you bring back is what changes it.</p>
         <div class="sec-sub">After the Finale</div>
-        <div class="rule-line"><span class="rule-key">Canon —</span> Before the next Quest, settle the official version together: what happened across the steps, what the highlights were, what's now true. Anyone adds or edits; when you all sign off, that's canon — the Quest card (and your record sheet) keep it. Only then does a new Quest begin.</div>
+        <div class="rule-line"><span class="rule-key">Kayfabulation Loot —</span> Forget gold, collect the experience. Your haul is the kayfabe you confabulated together: the best gags, the absurd twists, the gaping plot holes, the heroic fails, the epic Blödsinn, the story that should never have been told … Grab pens, scissors and glue: draw, write and paste up your kayfabulations. That's your quest loot, and it's yours to keep.</div>
         <div class="rule-line"><span class="rule-key">Clear —</span> The player who told the Finale clears the Stage by choice: keep any Scene that should haunt the next story, drop the rest.</div>
         <div class="rule-line"><span class="rule-key">New Quest —</span> The Finale-teller launches the next Quest — draw it, run the Card Ritual, and frame the die: what reaching <strong>6</strong> looks like, what sliding to <strong>1</strong> looks like, so everyone pushes the same card the same way. Set the Quest Die to 1.</div>
         <div class="rule-line"><span class="rule-key">Reset —</span> Play resumes in normal rotation. A new episode begins.</div>
@@ -1463,6 +1654,7 @@ body{padding-top:var(--lay-topbar);}
         <div class="gloss-table">
           <div class="gloss-row"><div class="gloss-term">Kayfabe</div><div class="gloss-def">The iron agreement to treat everything staged, invented, and improvised at the table as absolute, unshakable reality. Bring a card into play and you defend its existence — vehemently, no ironic distance.</div></div>
           <div class="gloss-row"><div class="gloss-term">Bizarro</div><div class="gloss-def">The literary genre of the absurd and grotesque — rooted in Weird Tales, surrealism, and the pulps. Your licence to build a deliberately strange mirror-world that defies the laws of nature but obeys its own merciless rules at the table.</div></div>
+          <div class="gloss-row"><div class="gloss-term">Kayfabulation</div><div class="gloss-def">Kayfabe + confabulation. The bizarre shared reality that emerges from the Quest and your stories, and the loot you keep.</div></div>
           <div class="gloss-row"><div class="gloss-term">King Kayfabian</div><div class="gloss-def">The rotating judge — the next player. Weighs each story, moves the Quest Die, has the final say. Everyone is King once per round.</div></div>
           <div class="gloss-row"><div class="gloss-term">Actor</div><div class="gloss-def">The card you embody this turn — your perspective in the story. Swap it any turn via an Actor Switch.</div></div>
           <div class="gloss-row"><div class="gloss-term">Quest Die</div><div class="gloss-def">A story compass from Setup (1) to Finale (6). Only the King moves it.</div></div>
@@ -1642,7 +1834,7 @@ body{padding-top:var(--lay-topbar);}
           <div class="vrow"><span class="vv">0</span><span class="vl">Halten</span><span class="vd">Verweile hier. Bau Figur auf, nicht Plot.</span></div>
           <div class="vrow"><span class="vv">−1</span><span class="vl">Wendung</span><span class="vd">Rahme neu, was gerade passiert ist.</span></div>
         </div>
-        <div class="note"><span class="note-label">Hinweis —</span> Fällt er <strong>unter 1</strong>, scheitert die Quest: kein Finale, kein Kanon — <em>der Zusammenbruch ist die Geschichte.</em> Erreicht er <strong>6</strong>, ist der Zug der nächsten Person das Finale.</div>
+        <div class="note"><span class="note-label">Hinweis —</span> Fällt er <strong>unter 1</strong>, scheitert die Quest: kein Finale, keine Beute — <em>der Zusammenbruch ist die Geschichte.</em> Erreicht er <strong>6</strong>, ist der Zug der nächsten Person das Finale.</div>
       </div>
 
       <div class="rules-section" id="kfb_de-modes">
@@ -1671,7 +1863,7 @@ body{padding-top:var(--lay-topbar);}
         <div class="sec-title">Das <em>Finale</em></div>
         <p class="prose">Wenn der Quest-Würfel auf <strong>6</strong> steht, ist der Zug der nächsten Person der Finale-Zug. Dieselben 5 Beats — aber die Quest <em>muss sich</em> im Erzählen <em>auflösen.</em> Glücklich, tragisch, absurd — aber nicht bloß ein Ende: <strong>die Rückkehr.</strong> Ihr kommt in die Welt zurück, aus der ihr aufgebrochen seid — und was ihr mitbringt, ist es, was sie verändert.</p>
         <div class="sec-sub">Nach dem Finale</div>
-        <div class="rule-line"><span class="rule-key">Canon —</span> Bevor die nächste Quest startet, einigt euch gemeinsam auf die offizielle Version: was über die Schritte passiert ist, was die Highlights waren, was jetzt wahr ist. Jede:r ergänzt oder ändert; wenn alle abnicken, ist das Kanon — die Quest-Karte (und euer Record-Sheet) halten ihn fest. Erst dann beginnt eine neue Quest.</div>
+        <div class="rule-line"><span class="rule-key">Kayfabulation Loot —</span> Vergesst Gold, sammelt die Erfahrung. Eure Beute ist das Kayfabe, das ihr zusammen fabuliert habt: die besten Gags, die absurden Twists, die klaffenden Plot Holes, die heroischen Fails, der epische Blödsinn, die Geschichte, die niemals hätte erzählt werden dürfen … Schnappt euch Stifte, Schere und Kleber: zeichnet, beschreibt, beklebt eure Kayfabulationen. Das ist eure Quest-Beute, die ihr behaltet.</div>
         <div class="rule-line"><span class="rule-key">Clear —</span> Wer das Finale erzählt hat, räumt die Bühne nach Wahl: behalte jede Scene, die die nächste Geschichte heimsuchen soll, lass den Rest fallen.</div>
         <div class="rule-line"><span class="rule-key">Neue Quest —</span> Wer das Finale erzählt hat, setzt die nächste Quest — zieh sie, mach das Karten-Ritual, und rahme den Würfel: was die <strong>6</strong> bedeutet, was die <strong>1</strong> bedeutet, damit alle dieselbe Karte gleich pushen. Quest-Würfel auf 1.</div>
         <div class="rule-line"><span class="rule-key">Reset —</span> Das Spiel läuft in normaler Rotation weiter. Eine neue Episode beginnt.</div>
@@ -1728,6 +1920,7 @@ body{padding-top:var(--lay-topbar);}
         <div class="gloss-table">
           <div class="gloss-row"><div class="gloss-term">Kayfabe</div><div class="gloss-def">Die eiserne Übereinkunft, das Inszenierte, Erfundene und Improvisierte am Tisch als absolute, unumstößliche Realität zu behandeln. Wer eine Karte ins Spiel bringt, verteidigt deren Existenz — vehement, ohne ironische Distanz.</div></div>
           <div class="gloss-row"><div class="gloss-term">Bizarro</div><div class="gloss-def">Das literarische Genre des Absurden und Grotesken — verwurzelt in Weird Tales, Surrealismus und den Pulp-Magazinen. Die Erlaubnis, eine absichtlich seltsame Spiegelwelt zu erschaffen, die den Naturgesetzen trotzt, aber am Tisch ihren eigenen, unerbittlichen Regeln folgt.</div></div>
+          <div class="gloss-row"><div class="gloss-term">Kayfabulation</div><div class="gloss-def">Kayfabe + Fabulieren. Die bizarre gemeinsame Realität, die aus der Quest und euren Geschichten entsteht, euer Erfahrungsschatz aus dem Spiel.</div></div>
           <div class="gloss-row"><div class="gloss-term">King Kayfabian</div><div class="gloss-def">Der rotierende Richter — die nächste Person. Wägt jede Geschichte, bewegt den Quest-Würfel, hat das letzte Wort. Jeder ist einmal pro Runde König.</div></div>
           <div class="gloss-row"><div class="gloss-term">Actor</div><div class="gloss-def">Die Karte, die du diesen Zug verkörperst — deine Perspektive in der Geschichte. Per Actor-Wechsel jederzeit tauschbar.</div></div>
           <div class="gloss-row"><div class="gloss-term">Quest-Würfel</div><div class="gloss-def">Ein Story-Kompass von Aufbau (1) bis Finale (6). Nur der König bewegt ihn.</div></div>
