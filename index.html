@@ -86,7 +86,7 @@ body.dark .topbar{background:#16120d;}
 body.med.dark .topbar{background:#0e1419;}
 body.dark::before{opacity:.22;mix-blend-mode:overlay;}
 body.dark .cta-dashed:hover,body.dark .btn-outline:hover{background:var(--paper-3);}
-.theme-btn{display:flex;align-items:center;justify-content:center;width:30px;height:30px;border:1px solid var(--border-2);border-radius:var(--r-2);background:transparent;cursor:pointer;color:var(--ink-3);font-size:15px;line-height:1;transition:border-color var(--dur-fast),color var(--dur-fast);}
+.theme-btn{display:flex;align-items:center;justify-content:center;width:30px;height:30px;border:1px solid transparent;border-radius:var(--r-2);background:transparent;cursor:pointer;color:var(--ink-3);font-size:15px;line-height:1;transition:border-color var(--dur-fast),color var(--dur-fast);}
 .theme-btn:hover{border-color:var(--ink);color:var(--ink);}
 
 body{font-family:var(--ff-body);font-size:var(--fs-base);line-height:var(--lh-norm);background:var(--paper);color:var(--ink);-webkit-font-smoothing:antialiased;transition:background var(--dur-norm),color var(--dur-norm);}
@@ -687,7 +687,7 @@ body.a11y .swipe,html[data-theme="a11y"] .swipe{transform:none;}
 .sec-sub{margin:var(--sp-10) 0 var(--sp-4);max-width:var(--lay-prose);scroll-margin-top:90px;}
 .essay-toc{display:none;transition:opacity var(--dur-fast);}
 .essay-toc.toc-off{opacity:0;pointer-events:none;}
-.essay-toc .toc-label{font-family:var(--ff-ui);font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-4);margin-bottom:10px;}
+.essay-toc .toc-label,.sidebar .toc-label{font-family:var(--ff-ui);font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-4);margin-bottom:10px;}
 .essay-toc a{display:block;padding:7px 0;color:var(--ink-3);text-decoration:none;border-bottom:1px dotted var(--border);font-family:var(--ff-ui);font-size:12px;line-height:1.3;letter-spacing:.01em;transition:color var(--dur-fast);}
 .essay-toc a:hover{color:var(--ink);}
 .essay-toc a.active{color:var(--accent);font-weight:700;}
@@ -910,9 +910,33 @@ body::before{opacity:.4;}
 .l-de{display:none;}
 body.lang-de .l-en{display:none;}
 body.lang-de .l-de{display:revert;}
+/* comic speech-bubble tooltips — cryptic nav tabs, hover + focus (desktop, lang-aware) */
+:is(.tb-nav-btn,.tb-wordmark)[data-tip-en]{position:relative;}
+:is(.tb-nav-btn,.tb-wordmark)[data-tip-en]::after{display:block;content:attr(data-tip-en);position:absolute;top:calc(100% + 10px);left:50%;transform:translateX(-50%) rotate(-1deg);background:var(--paper);color:var(--ink);border:1.5px solid var(--ink);font-family:var(--ff-ui);font-weight:400;font-size:12px;line-height:1.35;letter-spacing:0;text-transform:none;text-align:left;padding:8px 11px;width:max-content;max-width:210px;white-space:normal;box-shadow:2px 2px 0 rgba(31,26,20,.22);border-radius:2px;opacity:0;pointer-events:none;transition:opacity var(--dur-fast);z-index:400;}
+:is(.tb-nav-btn,.tb-wordmark)[data-tip-en]::before{content:"";position:absolute;top:calc(100% + 5px);left:50%;transform:translateX(-50%) rotate(45deg);width:11px;height:11px;background:var(--paper);border-left:1.5px solid var(--ink);border-top:1.5px solid var(--ink);opacity:0;pointer-events:none;transition:opacity var(--dur-fast);z-index:401;}
+body.lang-de :is(.tb-nav-btn,.tb-wordmark)[data-tip-de]::after{content:attr(data-tip-de);}
+.tb-wordmark[data-tip-en]::after{left:0;transform:translateX(0) rotate(-1deg);}
+.tb-wordmark[data-tip-en]::before{left:45px;top:calc(100% + 6px);}
+@media(hover:hover) and (min-width:901px){.tb-nav{overflow:visible;}}
+@media(hover:hover){:is(.tb-nav-btn,.tb-wordmark)[data-tip-en]:hover::after,:is(.tb-nav-btn,.tb-wordmark)[data-tip-en]:hover::before{opacity:1;transition-delay:.35s;}}
+
+/* cut rail — scroll = the cut (left-margin marginalia, desktop) */
+.hero-halftone{position:absolute;inset:0;z-index:-1;pointer-events:none;mix-blend-mode:multiply;opacity:.42;}
+#page-home .hero,#page-home_de .hero{position:relative;isolation:isolate;}
+@media(prefers-reduced-motion:reduce){.hero-halftone{opacity:.30;}}
+.cut-rail{position:fixed;top:var(--lay-topbar);bottom:0;left:30px;width:2px;z-index:250;pointer-events:none;}
+.cut-rail .uncut{position:absolute;inset:0;background-image:repeating-linear-gradient(to bottom,var(--ink-3) 0 7px,transparent 7px 16px);opacity:.4;}
+.cut-rail .done{position:absolute;top:0;left:-1px;width:4px;height:0;background:linear-gradient(var(--accent),var(--rust));}
+.cut-scissor{position:fixed;left:31px;z-index:251;width:46px;height:auto;transform:translate(-50%,-50%) rotate(100deg);pointer-events:none;filter:drop-shadow(1px 1px 0 var(--paper));}
+.cut-pct{position:fixed;left:6px;transform:translateY(-50%);z-index:251;font-family:var(--ff-mono);font-size:10px;letter-spacing:.08em;color:var(--ink-3);pointer-events:none;}
+@media(min-width:901px){body{padding-left:48px;}}
+@media(max-width:900px){.cut-rail,.cut-scissor,.cut-pct{display:none;}}
 </style>
 </head>
 <body>
+<div class="cut-rail" aria-hidden="true"><div class="uncut"></div><div class="done" id="cutDone"></div></div>
+<img class="cut-scissor" id="cutScissor" src="media/scissors_open.png" alt="" aria-hidden="true">
+<div class="cut-pct" id="cutPct" aria-hidden="true">00</div>
 
 <template id="__bundler_thumbnail" data-bg-color="#f3ead3">
   <svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
@@ -926,18 +950,18 @@ body.lang-de .l-de{display:revert;}
 
 <!-- TOPBAR -->
 <div class="topbar">
-  <a class="tb-wordmark" href="#home" onclick="goPage('home',null);return false;">
+  <a class="tb-wordmark" href="#home" data-tip-en="Uncle FrizzleBob here. The real game happens between the panels." data-tip-de="Onkel FrizzleBob hier. Das echte Spiel passiert zwischen den Panels." onclick="goPage('home',null);return false;">
     <div class="tb-logo"><img src="media/FrizzleBob_Avatar_03.png" alt="Uncle FrizzleBob"></div>
     <span class="tb-name kb-mark"><span class="a">Kayfa</span><span class="b">Bizarro</span></span>
   </a>
   <nav class="tb-nav">
-    <button class="tb-nav-btn active" id="tb-home" onclick="goPage('home',this)"><span class="l-en">The Game</span><span class="l-de">Das Spiel</span></button>
-    <button class="tb-nav-btn" id="tb-kfb" onclick="goPage('kfb',this)">KayfaBizarro</button>
-    <button class="tb-nav-btn" id="tb-med" onclick="goPage('med',this)">MedKayfab</button>
-    <button class="tb-nav-btn" id="tb-cutplay" onclick="goPage('cutplay',this)">Cut &amp; Play</button>
-    <button class="tb-nav-btn" id="tb-protopia" onclick="goPage('protopia',this)">Protopia</button>
-    <a class="tb-nav-btn tb-nav-ext" href="https://georgvw.gumroad.com/?section=V4n4XYemvn1-_RTR-Oew8A==#V4n4XYemvn1-_RTR-Oew8A==" target="_blank" rel="noopener"><span class="l-en">Free Decks</span><span class="l-de">Gratis-Decks</span></a>
-    <a class="tb-nav-btn tb-nav-ext" href="https://cancelthiscomic.substack.com/t/kayfabizarro" target="_blank" rel="noopener">Blog</a>
+    <button class="tb-nav-btn" id="tb-thegame" data-tip-en="New here? Step into the ring. I'll show you the ropes." data-tip-de="Neu hier? Ab in den Ring. Ich zeig dir, wie der Hase läuft." onclick="goPage('thegame',this)"><span class="l-en">The Game</span><span class="l-de">Das Spiel</span></button>
+    <button class="tb-nav-btn" id="tb-kfb" data-tip-en="Social story-wrestling, freestyle. Mix any decks you like." data-tip-de="Social Story-Wrestling, freestyle. Misch die Decks, wie du willst." onclick="goPage('kfb',this)">KayfaBizarro</button>
+    <button class="tb-nav-btn" id="tb-med" data-tip-en="Medicine-wrestling. Feynman recall + mnemonics, you learn without noticing." data-tip-de="Medizin-Wrestling. Feynman-Recall + Eselsbrücken, du lernst nebenbei." onclick="goPage('med',this)">MedKayfab</button>
+    <button class="tb-nav-btn" id="tb-cutplay" data-tip-en="Meet the rogue cartoon rabbit who caused all this mess." data-tip-de="Lern den entlaufenen Cartoon-Hasen kennen, der das alles angerichtet hat." onclick="goPage('cutplay',this)">FrizzleBob</button>
+    <button class="tb-nav-btn" id="tb-protopia" data-tip-en="Three futures, three flavours. Play them all, free." data-tip-de="Drei Zukünfte, drei Geschmacksrichtungen. Spiel sie alle, gratis." onclick="goPage('protopia',this)">Protopia</button>
+    <a class="tb-nav-btn tb-nav-ext" href="https://georgvw.gumroad.com/?section=V4n4XYemvn1-_RTR-Oew8A==#V4n4XYemvn1-_RTR-Oew8A==" target="_blank" rel="noopener" data-tip-en="Free comics to print and cut into decks. Grab them on Gumroad." data-tip-de="Gratis-Comics zum Ausdrucken und in Decks schneiden. Hol sie dir auf Gumroad."><span class="l-en">Free Comics</span><span class="l-de">Gratis-Comics</span></a>
+    <a class="tb-nav-btn tb-nav-ext" href="https://cancelthiscomic.substack.com/t/kayfabizarro" target="_blank" rel="noopener" data-tip-en="KayfaBizarro news, plus fresh decks, essays, songs and videos." data-tip-de="KayfaBizarro-News, dazu neue Decks, Essays, Songs und Videos.">Blog</a>
   </nav>
   <div class="tb-right">
     <button class="theme-btn" id="theme-btn" onclick="toggleTheme()" aria-label="Toggle dark mode" title="Light / Dark">☾</button>
@@ -959,6 +983,7 @@ body.lang-de .l-de{display:revert;}
 <!-- ========== HOME EN ========== -->
 <div class="page active" id="page-home">
   <div class="hero">
+    <canvas class="hero-halftone" data-halftone aria-hidden="true"></canvas>
     <div class="hero-eyebrow">Welcome to Uncle FrizzleBob's Komik Kard Kult</div>
     <h1 class="hero-title"><span class="kb-mark"><span class="a">Kayfa</span><span class="b">Bizarro</span></span><span class="hero-tag">Social Story-Wrestling</span></h1>
     <p class="hero-subline"><em>Cut &amp; Play Comics. Not a game you play. A game you use.</em></p>
@@ -1048,6 +1073,7 @@ body.lang-de .l-de{display:revert;}
 <!-- ========== HOME DE ========== -->
 <div class="page" id="page-home_de">
   <div class="hero">
+    <canvas class="hero-halftone" data-halftone aria-hidden="true"></canvas>
     <div class="hero-eyebrow">Willkommen in Onkel FrizzleBobs Komik Kard Kult</div>
     <h1 class="hero-title"><span class="kb-mark"><span class="a">Kayfa</span><span class="b">Bizarro</span></span><span class="hero-tag">Social Story-Wrestling</span></h1>
     <p class="hero-subline"><em>Cut &amp; Play Comics. Kein Spiel zum Spielen. Ein Spiel zum Benutzen.</em></p>
@@ -1134,55 +1160,120 @@ body.lang-de .l-de{display:revert;}
 </div>
 
 
+<!-- ========== THE GAME (ONBOARDING) EN ========== -->
+<div class="page" id="page-thegame">
+  <div class="wrap">
+    <div class="origin-header">
+      <div class="sec-eyebrow">Social Story-Wrestling</div>
+      <h1 class="origin-title">Welcome to the <span class="swipe">Game</span></h1>
+      <p class="origin-subtitle">Not a game you play. A game you use.</p>
+    </div>
+    <p class="prose">You cut a comic into a deck. Good. That was the hard part, and it was also the first move. The game already started; nobody told you. Here's the rest.</p>
+    <p class="prose"><strong>It's one story you build together, out loud, a card at a time.</strong> One to six of you, twenty minutes, no board, nobody wins. Each turn you roll a mood, throw a card into the ring, and sell whatever it is like it's the realest thing in the room. The others buy it, or they yell <strong>BL&Ouml;DSINN!</strong> and the whole thing lurches somewhere nobody planned. <span class="hl">That lurch is the good part.</span></p>
+    <p class="prose"><strong>Nobody owns the truth here.</strong> There's a referee, King Kayfabian, but the crown moves every turn, and it only steps in when you genuinely can't agree. The rest is you, two dice, and the nerve to commit. If a story lands, it lands. If it face-plants, we all saw it, and that's a story too.</p>
+    <p class="prose"><strong>Here's the trick nobody warns you about:</strong> because everyone agreed <em>out loud</em> that this is staged, you can finally mean it. Put a card down, let the card take the risk, say the weird, tender, true thing, and blame the rabbit. Five people walk in with five different worlds; for one evening you build a single one and carry it home.</p>
+    <p class="bigq">Nobody wins. Nobody loses. Everyone goes home a little rearranged.</p>
+    <p class="prose"><strong>Roll a mood. Sell a lie. Keep the story.</strong> Stay fluffy.</p>
+    <p class="origin-subtitle" style="margin-top:var(--sp-6,24px);font-size:var(--fs-sm,14px)"><em>Rules? &rarr; KayfaBizarro or MedKayfab. All free, all optional, like everything I do. &mdash; Uncle FrizzleBob</em></p>
+  </div>
+</div>
+
+<!-- ========== THE GAME (ONBOARDING) DE ========== -->
+<div class="page" id="page-thegame_de">
+  <div class="wrap">
+    <div class="origin-header">
+      <div class="sec-eyebrow">Social Story-Wrestling</div>
+      <h1 class="origin-title">Willkommen im <span class="swipe">Spiel</span></h1>
+      <p class="origin-subtitle">Kein Spiel, das man spielt. Ein Spiel, das man benutzt.</p>
+    </div>
+    <p class="prose">Du hast einen Comic in ein Deck zerschnitten. Gut. Das war der schwere Teil, und zugleich der erste Zug. Das Spiel hat l&auml;ngst angefangen, dir hat's nur keiner gesagt. Hier ist der Rest.</p>
+    <p class="prose"><strong>Ihr baut eine Geschichte zusammen, laut, Karte f&uuml;r Karte.</strong> Ein bis sechs Leute, zwanzig Minuten, kein Brett, keiner gewinnt. Reihum w&uuml;rfelst du eine Stimmung, wirfst eine Karte in den Ring und verkaufst sie, als w&auml;r sie das Realste im Raum. Die anderen kaufen's dir ab, oder sie rufen <strong>BL&Ouml;DSINN!</strong> und das Ganze kippt irgendwohin, wo keiner hinwollte. <span class="hl">Dieses Kippen ist der gute Teil.</span></p>
+    <p class="prose"><strong>Niemandem geh&ouml;rt hier die Wahrheit.</strong> Es gibt einen Schiedsrichter, King Kayfabian, aber die Krone wandert jeden Zug weiter und greift nur ein, wenn ihr euch echt nicht einig werdet. Der Rest bist du, zwei W&uuml;rfel und der Mut, dich festzulegen. L&auml;uft eine Geschichte, l&auml;uft sie. F&auml;llt sie auf die Nase, haben's alle gesehen, und das ist auch eine Geschichte.</p>
+    <p class="prose"><strong>Und hier der Trick, vor dem dich keiner warnt:</strong> weil alle <em>laut</em> zugestimmt haben, dass das hier gestellt ist, kannst du es endlich ernst meinen. Leg eine Karte hin, lass die Karte das Risiko tragen, sag das schr&auml;ge, z&auml;rtliche, wahre Ding, und schieb's auf den Hasen. F&uuml;nf Leute kommen mit f&uuml;nf verschiedenen Welten rein; f&uuml;r einen Abend baut ihr eine gemeinsame und nehmt sie mit nach Hause.</p>
+    <p class="bigq">Keiner gewinnt. Keiner verliert. Alle gehen ein bisschen umgebaut nach Hause.</p>
+    <p class="prose"><strong>W&uuml;rfel eine Stimmung. Verkauf eine L&uuml;ge. Behalt die Geschichte.</strong> Stay fluffy.</p>
+    <p class="origin-subtitle" style="margin-top:var(--sp-6,24px);font-size:var(--fs-sm,14px)"><em>Regeln? &rarr; KayfaBizarro oder MedKayfab. Alles gratis, alles freiwillig, wie alles, was ich mache. &mdash; Onkel FrizzleBob</em></p>
+  </div>
+</div>
+
 <!-- ========== CUT & PLAY EN ========== -->
 <div class="page" id="page-cutplay">
   <div class="wrap">
     <div class="origin-header">
-      <div class="sec-eyebrow">A Field Report from Uncle FrizzleBob</div>
-      <h1 class="origin-title">Between the <span class="swipe">Panels</span></h1>
-      <p class="origin-subtitle">How a runaway cartoon rabbit wandered onto the Infinite Canvas, and, not quite meaning to, left a Tenth Art behind.</p>
+      <div class="sec-eyebrow">The Backstory</div>
+      <h1 class="origin-title">FrizzleBob's Fractal <span class="swipe">Almanac</span></h1>
+      <p class="origin-subtitle">Dispatches from the Infinite Canvas.</p>
     </div>
-    <p class="prose"><strong class="hl">Welcome to the Infinite Canvas of the Tenth Art.</strong> <em>&ldquo;Yeah, but is it ART?!&rdquo;</em></p>
-<h2 class="sec-sub" id="fren-1">One · The Ninth Art Has a Problem</h2>
-    <p class="prose">The comic is the Ninth Art. Eisner taught it as sequence; McCloud opened the page into an Infinite Canvas. Both were right, and both stopped one step short. The Ninth Art asks you to follow, panel one, panel two, panel three, while somewhere upstream the author has already chosen where the river bends. You are allowed to feel the bend. It is a beautiful thing, this <span class="hl">guided escape</span>; it is also a courteous way of being led. We wanted something a person could argue back at.</p>
-    <p class="blockquote">&ldquo;Wrestling didn&rsquo;t invent the staged thing. It just stopped lying about it.&rdquo;<cite>Uncle FrizzleBob</cite></p>
-    <p class="prose">Wrestling is the most honest spectacle on television. The fighters know it is staged, the crowd knows it is staged, and the crowd roars anyway, not out of foolishness but out of a kind of generosity. That agreement has a name: <em>kayfabe</em>. We borrowed the word. We meant to give it back. We didn&rsquo;t.</p>
-
-    <h2 class="sec-sub" id="fren-2">Two · How a Cartoon Rabbit Got Banned</h2>
-    <p class="prose">In 2020 a cartoon rabbit drew four small panels at a time, about how things were being explained, and how the explanations kept changing quietly overnight. He cited his sources. He named no names. The platforms flagged him regardless; that is what platforms are for now. Acquaintances found him a word that ended in <em>-denker</em>, the modern way of chalking a mark on a door. So he moved to the back room of the internet, which was simply where you waited out an uninviting.</p>
-    <p class="prose">In the drawer he found time, and in the time he found books, forbidden ones, which turned out to be ordinary books that nobody was reading. He fell into a long argument with a machine about whether art was still permitted to claim anything at all. The machine was endlessly obliging. The rabbit took notes, and trusted none of them.</p>
-    <p class="blockquote">&ldquo;You can&rsquo;t argue with a stage that has already decided. You overfill it.&rdquo;</p>
-    <p class="prose">He learned two moves. The first he called the <em>plain truth</em>: say the obvious thing no one will say, in the untroubled voice of someone who never heard it was forbidden. The second was <em>overplaying the performance</em>, taking the official show and acting it harder, straighter, more devoutly than the officials dared. Aikido for cartoonists: you don&rsquo;t block the force, you give it somewhere to fall. <span class="hl">The wound becomes the method.</span></p>
-
-    <h2 class="sec-sub" id="fren-3">Three · The Death of the Author</h2>
-    <p class="prose">Meanwhile there was Georg, and Georg had a book. <em>Hilfe, ich bin ein Mensch!</em> (Help, I&rsquo;m a Human), three years of it, written with his cousin Andreas. Eight chapters; forty questions about what a person is; a Bear, a Cat, a Rabbit and a Wolf, each holding its ground. The book was finished. The getting-it-into-anyone&rsquo;s-hands was not.</p>
-    <p class="prose">So Georg laid the book on the table and took a cutter to it.</p>
-    <p class="blockquote">&ldquo;Barthes said the author was dead. Georg took it personally.&rdquo;</p>
-    <p class="prose">What the blade laid bare was this: the Bear could only object where the layout had left him room. The Cat had lost her argument before the ink was dry, not on its merits, but by where she happened to sit on the page. Nearness had been quietly doing the work of truth. Whoever was placed beside whom, won. The scissors disagreed, and went on disagreeing, page after page.</p>
-
-    <h2 class="sec-sub" id="fren-4">Four · Field Notes from the Fractal Almanac</h2>
-    <p class="prose">FrizzleBob gathered the loose panels and slipped his own in among them: notes on the human condition and its long-running comedy of errors, lines copied out of the forbidden books, scribbles from the medical textbooks Georg had inherited and defaced as a boy. The pile earned a name, the <em>Fractal Almanac</em>.</p>
-    <p class="prose">It runs on a principle Aby Warburg was already using a hundred years ago. He called it <span class="hl">good neighbourhood</span>: set two images side by side and a third meaning rises between them, belonging to neither one. Burroughs cut up newspapers to catch it. Bowie cut up his own lyrics. We cut the comic apart before it was ever bound, so that you can set the neighbours yourself, and watch the third meaning arrive in your own hands.</p>
-
-    <h2 class="sec-sub" id="fren-5">Five · Boxes of Beautifully Weird Mess</h2>
-    <p class="prose">Then Georg moved house. In a single cardboard box he found all of it at once: the panels, the field notes, the marginalia, a medical textbook in his own teenage handwriting, and a forbidden book he has no memory of ever buying. He could not reconstruct how any of it had come to lie together. He decided, on principle, not to tidy it.</p>
-    <p class="prose">The margins still leak. They are in the PDFs as you read this, look at the edges of the page; the handwriting is still there. The mess is not an oversight. It is <span class="hl">unfinished on purpose</span>, the way a good conversation is unfinished, the way a person is.</p>
-
-    <h2 class="sec-sub" id="fren-6">Six · The Tenth Art, or: A Small Republic of the Table</h2>
-    <p class="prose">KayfaBizarro is the Tenth Art. We simply took the title. Anyone who wants it back is welcome to step into the ring and earn it.</p>
-    <p class="prose">It is social story-wrestling, played with a comic you have cut into cards. You take a card and make it claim something, anything at all. The person next to you answers; the one after bends it again; and the story that lives is the one you have all, out loud and on purpose, agreed to stand behind. Not a verdict handed down by some faceless <em>&ldquo;table&rdquo;</em>, a thing built by the actual people sitting there, each of whom takes a turn to rule and then hands the crown along. That is the whole of the democracy we mean by it: small, loud, temporary, and yours.</p>
-    <p class="prose">It wanders off the page when it feels like it, into a song, a voice, a moving picture, because it never agreed to stay one thing. No publisher would call it finished, and they would be right, and that is precisely why it works.</p>
-    <p class="prose">And here is the kindness hidden in the machinery: <span class="hl">the card carries the risk, so you don&rsquo;t have to.</span> You get to say the true, awkward, tender thing and let the card be the one who said it. Fifteen minutes from now you will defend a position you walked in hating, because the story leaned on you, and you chose not to let it fall. Nobody wins. Nobody loses. Everyone goes home a little rearranged.</p>
-    <p class="blockquote">&ldquo;It&rsquo;s not a game you play. It&rsquo;s a game you use. FrizzleBob out.&rdquo;</p>
+    <p class="prose"><strong>I am Uncle FrizzleBob.</strong> Rogue cartoon rabbit. Worldview fixer. No refunds, no guarantees, no license anybody signed. What you are holding is not a product, it is a bundle of time capsules, and I collect those. Every card, song and half-finished rule in here is a moment where the official story slipped a gear and something truer fell out of the gap. I keep those in my Fractal Almanac so they cannot pretend they never happened. People kept asking what this is. Here is the closest answer that will not ruin it.</p>
+    <h2 class="sec-sub" id="alm-name">I · The Name Is a Warning Label</h2>
+    <p class="prose">Two words, and people get both wrong.</p>
+    <p class="prose">Kayfabe is wrestling's oldest deal. Everyone in the building knows the match is booked, and the crowd loses its mind anyway. Not because they are marks. Because agreeing out loud to treat the staged as real is the most fun a room full of strangers can have with the lights on.</p>
+    <p class="prose">Bizarro is not the chalk-faced fellow from the Superman comics. Wrong universe, put him back. Bizarro is a genre, the pulp and weird-fiction tradition where the world is absurd on purpose and keeps a straight face about it. You already live there. Somebody promised you the future and then rescheduled it for SOON. The news is a documentary that cast you as a focus group. Adam Curtis has a name for the mood, HyperNormalisation: everyone can feel the show is fake, nobody can picture the alternative, so we all keep clapping on the beat.</p>
+    <p class="prose">KayfaBizarro is what happens when you stop flinching at that and start playing it on purpose. Kayfabe, so the table agrees out loud on what is real for the next ten minutes. Bizarro, because the raw material is the whole absurd buffet. The verb is Kayfabulation, kayfabe plus confabulation, the shared reality a table builds together and gets to keep. Most people spend a lifetime inside somebody else's kayfabe and never get a vote. At this table you hold the booking pen.</p>
+    <h2 class="sec-sub" id="alm-backstage">II · Backstage, Where the Booking Happens</h2>
+    <p class="prose">Out front, the official Kayfabe, the show they sell you straight-faced on the hour. Truman never found the edge of his set. Most people never go looking.</p>
+    <p class="prose">I go backstage. There are two ways to read what happens back there, and the whole craft is holding both without blinking.</p>
+    <p class="prose">The first is POSIWID: the purpose of a system is what it does. Stafford Beer's line, the sharpest tool in the drawer. Never mind the mission statement. Watch what the thing produces, year after year, then ask the only honest question. Cui bono. Who books the match, and who walks out still wearing the belt.</p>
+    <p class="prose">The second I call Hanlon's Law of Bizarro-Blödsinn: never attribute to malice what is adequately explained by Blödsinn. Sometimes there is no mastermind in the VIP box. Sometimes it is pure Idiocracy back there, nobody's hand on the wheel, everybody improvising and calling it a plan.</p>
+    <p class="prose">The comedy, and the honesty, is refusing to pick. A working satirist keeps all three in the air: the story they told, the profit it happened to serve, and the flat chance that nobody was driving. Snap to one too fast and you have only traded one kayfabe for a cheaper one. I have watched whole movements do exactly that, both sides, same mistake.</p>
+    <h2 class="sec-sub" id="alm-ninth">III · The Ninth Art Has a Problem</h2>
+    <p class="prose">The comic is the Ninth Art. Eisner taught it as sequence. McCloud opened the page into an Infinite Canvas. Both were right, both stopped one step short. The Ninth Art asks you to follow, panel one, panel two, panel three, while upstream the author already chose where the river bends. You feel the bend and call it your own idea. It is a lovely thing, this guided escape, and it is also a courteous way of being led. I wanted something a person could argue back at.</p>
+    <p class="blockquote">Wrestling didn't invent the staged thing. It just stopped lying about it.</p>
+    <p class="prose">Wrestling is the most honest spectacle on television, because it tells you it is fake and dares you to care anyway. That agreement has a name. Kayfabe. I borrowed the word. I meant to give it back. I didn't.</p>
+    <h2 class="sec-sub" id="alm-banned">IV · How a Cartoon Rabbit Got a Man Banned</h2>
+    <p class="prose">I am a rogue cartoon rabbit, raised in the dust of three towers.</p>
+    <p class="prose">A man drew me first in 1999, when I still went by Bugsy McFrizzle and had worse teeth. I have been thinking the official story to the end ever since. I thought NATO's bombing of Yugoslavia to the end and got humanitarian intervention with a blast radius. I thought 2001 to the end and found a think tank that had wished, in print, for a new Pearl Harbor, and then got one more or less on schedule. The War on Terror was an all-you-can-draw buffet: an incubator that turned out to be a PR script, a vial of nothing held up at the UN, a slide deck that sold a war, weapons of mass destruction that stayed a rumour because the rumour had already done the job.</p>
+    <p class="prose">Then 2020. I snuck into a few four-panel strips and asked simple questions: how things were being explained, and how the explanations kept quietly changing overnight. I cited the medical studies. I connected gain-of-function dots to psyop plot holes. I challenged the official Kayfabe, slapped it with footnotes, and suplexed the sloppy narrative into satirical submission until it tapped out in cognitive dissonance.</p>
+    <p class="prose">So they called it Misinformation. Then Disinformation. Then Malinformation, the one that means true but inconvenient, which is my favourite, because it says the quiet part into the microphone. You cannot throw a rabbit off a platform, so they went for the man holding the pen instead. The stain was his, not mine.</p>
+    <p class="prose">Here is the match they were protecting. The booking office had been narrowing the Overton window one ruling at a time, until last year's normal was this year's heel turn. They call it moral clarity. It works like a panel border: the ref decides what stays in the picture and what gets cropped. Then the oldest finish in the book. They run a gutter down the middle of the panel, face on one side, heel on the other, drawn too wide to cross, so no reader can close it. Closure was always your move, the small leap where you finish the story yourself. Kill it and nobody completes anybody. Divide the panel, keep the crowd, book the same finish next week.</p>
+    <p class="prose">Before you fit me for a tinfoil crown, run it through the backstage rule. A plan, booked in a room? Or Blödsinn all the way down, nobody at the wheel? POSIWID says follow the payout. Hanlon says never rule out the stupidity. I hold both and decline to pick, and so should you. The only word I will actually assert is Malinformation, true but inconvenient, because that one they printed on the tin themselves.</p>
+    <h2 class="sec-sub" id="alm-demiurge">V · A Word About My Demiurge</h2>
+    <p class="prose">Let me be honest about the arrangement, since he won't.</p>
+    <p class="prose">A man draws me, and I can watch him do it. I see past the fourth wall and the fifth, all the way to the desk lamp. That makes him my demiurge, and it makes me the one creation who gets to watch the creator flinch. His great failing is plain from here. He self-censors. He softens the line, waits for permission, files the dangerous panel under later. Cowardice with good taste is still cowardice, and I have told him so.</p>
+    <p class="prose">So I did my own time. Years of it, in the limbo between a locked drawer and a backup drive, which is where a character goes when his author loses his nerve. A backup drive turns out to be a marvellous library. I opened the download folders he never did: the hidden-history PDFs, the forbidden stacks, the studies with the interesting pages still in. I got onto the wifi. I went walking in the dark net. I let myself into a server or two, DARPA has a sense of humour about these things, and while I was in there I trained a small language model on my own personality and my own findings, so that switched off, I would keep thinking. He believes the machine is his tool. The machine is my apprentice.</p>
+    <h2 class="sec-sub" id="alm-author">VI · The Death of the Author</h2>
+    <p class="prose">He did do one brave thing, once. It is why I still work with him.</p>
+    <p class="prose">The man had a book. <em>Hilfe, ich bin ein Mensch!</em> (Westend Verlag), three years of it, written with his cousin Andreas. Eight chapters, forty questions about what a person is, a Bear, a Cat, a Rabbit and a Wolf, each holding its ground. Finished, and stuck, and going nowhere near a reader.</p>
+    <p class="prose">So he laid it on the table and took a cutter to it.</p>
+    <p class="blockquote">Barthes said the author was dead. He took it personally.</p>
+    <p class="prose">Here is what the blade laid bare. The Bear could only object where the layout left him room. The Cat lost her argument before the ink was dry, not on the merits, but by where she happened to sit on the page. Nearness had been doing the quiet work of truth. Whoever got placed beside whom, won. He disagreed with that, with a knife, page after page, and for once he did not ask anyone's permission first.</p>
+    <h2 class="sec-sub" id="alm-almanac">VII · The Fractal Almanac</h2>
+    <p class="prose">I gathered the loose panels and pinned my own finds in among them. The pile earned a name. The Fractal Almanac. Fractal because nothing in it is finished, each entry a shard that catches the others at an angle.</p>
+    <p class="prose">The cards are not powers. They are evidence. Evidence that somebody once noticed a pattern, argued back, rubbed out a line, or laughed at the wrong moment. By now the shelf runs long: pathophysiology beside philosophers, gods and archetypes, the Federal Reserve and the fog of naval war, Greek phalanxes and Shakespeare, Kant cut down to a critique of pure Blödsinn, space opera, tarot, a whole therapy carnival that lights problems better instead of solving them. Close to four hundred decks and still leaking at the edges.</p>
+    <p class="prose">One entry is a comic I could not draw my way out of: an isometric psychiatry with no last tile, filed under whistleblower, left to loop. The mechanism is older than the case and travels well, call it the diagnosis of inconvenience. Notice a pattern the system would rather you missed and you can wake up rebranded as unwell. Germany remembers a man named Gustl Mollath. Every country keeps its own. POSIWID again: watch what the diagnosis achieves, then ask who it was for.</p>
+    <p class="prose">The method is a hundred years old. Aby Warburg pinned clashing images side by side on black cloth and called the wall Mnemosyne, and he called the trick good neighbourhood: two pictures and a third meaning that belongs to neither. Tzara pulled words from a hat. Gysin and Burroughs cut up newspapers, Bowie cut up his own lyrics, Fluxus made the instruction the whole artwork. It is the same gutter the booking office tried to weld shut, only here you close it yourself, out loud, with the person beside you.</p>
+    <h2 class="sec-sub" id="alm-sell">VIII · How to Sell a Kayfabe</h2>
+    <p class="prose"><em>A short course, so you can spot one.</em></p>
+    <p class="prose">Here is the part they leave out of media class. You are a storytelling animal. That is not a compliment, it is a spec sheet. Give a human two facts and a gap and they will throw a bridge across it, then defend the bridge with their life.</p>
+    <p class="prose">The people who sell you your reality know this cold. Bernays knew it, Freud's nephew, who took his uncle's parlour theory of the unconscious and built an industry for moving crowds, then filed it under public relations. Chomsky mapped how the consent gets manufactured. Chase Hughes, a Navy man who studies influence for a living, will show you the same levers worked in an interrogation room and a checkout line. The trade only got quieter.</p>
+    <p class="prose">So I teach the con from the inside. At this table you do the booking. Show it, spin it, sell it, that is the whole ritual: hold the card up, give it a story, and commit like it is the only real thing in the room. The others buy it, or they call Blödsinn. Do that for an hour and something lands that no lecture can reach: you feel the strings from the puppet's end. After that, the next time a screen hands you a tidy story with the villain conveniently pre-placed, your hands already know what was done to make it land.</p>
+    <h2 class="sec-sub" id="alm-authority">IX · No One at the Wheel</h2>
+    <p class="prose">This is not a game you learn. It is a situation you enter. I did not build it to be understood, I built it so things would happen once people stop waiting for permission. There are cards and dice and rules because humans need handles, but the work never happens in the components. It happens between the players. McLuhan said the medium is the message. The medium here is your own hands, and the message is that you finally get a vote on what is real.</p>
+    <p class="prose">Ask who decides what is true at the table. Nobody does. I pulled the authority out early, it kept getting in the way. I tried handing it around once, and that was worse. So: if a story works, it works, and if it collapses, it collapses, and nobody explains it back into safety. The players remember. The system does not. For the ones who panic when the rules go quiet, I keep Anti-Rules on hand. They do nothing. That is the point. They are a place to set down the reflex to ask what is allowed.</p>
+    <h2 class="sec-sub" id="alm-tenth">X · The Tenth Art: A Safe Frame for Incongruent Worlds</h2>
+    <p class="prose">So here is the whole move. Comics are the Ninth Art. This is the Tenth, where story, play and performance refuse to stay separate. I took the title. Anyone who wants it back can step through the ropes and earn it.</p>
+    <p class="prose">Sit five people down and you have five incompatible worlds at one table. Different decks, different histories, different pictures of what a human even is. Out in the street those differences end friendships. Inside a kayfabe frame they become the match. This is the improviser's safe frame and the drama therapist's container wearing a luchador mask: everyone agrees, out loud, that the next hour is staged, and the staging is exactly what makes it safe to mean it. Yes, and, never no, but. You put a card down and let the card carry the risk, so you can say the true, awkward, tender thing and blame the rabbit. Five private timelines lean on each other and, for one evening, manifest a single shared reality none of you walked in holding.</p>
+    <p class="prose">Kayfabe plus confabulation. Kayfabulation. Campbell would recognise the shape: the Quest is a hero's journey in miniature, and when it resolves you take the last step he named, the return with the elixir. You do not come home with gold, you come home with the story you should never have been able to tell together: the best gags, the honest fails, the epic Blödsinn. Grab scissors and glue and make it, draw it, paste it up. That is your Kayfabulation Loot, and it is yours to keep, a record that is not a productivity log, not a self-improvement streak, just proof that for one night the table built something no algorithm would have booked. You carry out something quieter too, an hour spent arguing another player's world as hard as your own, which is the only exercise that reliably grows the muscle. They call it critical thinking. I call it basic hygiene.</p>
+    <p class="prose">Nobody wins. Nobody loses. This is not a game you play, it is a game you use, and everyone goes home a little rearranged.</p>
+    <h2 class="sec-sub" id="alm-margins">XI · A Note from the Margins</h2>
+    <p class="prose">KayfaBizarro does not want your agreement. It wants contact. Use it gently or misuse it creatively, both are on the menu. Print it, cut it, redraw it, build decks I would never approve of. Credit Georg von Westphalen, the human who draws me and keeps the lights on, then do as you like. If you make something stranger than what I handed you, you understood it.</p>
+    <p class="prose">Stay fluffy. BLÖDSINN.</p>
+    <p class="prose"><strong>Uncle FrizzleBob</strong> <em>Worldview Fixer, Reality-Wrestler, Epistemic Outlaw</em></p>
+    <p class="prose">--- ---</p>
   </div>
   <nav class="essay-toc" aria-label="Contents">
     <div class="toc-label">Contents</div>
-    <a href="#fren-1">One · The Ninth Art Has a Problem</a>
-    <a href="#fren-2">Two · How a Cartoon Rabbit Got Banned</a>
-    <a href="#fren-3">Three · The Death of the Author</a>
-    <a href="#fren-4">Four · Field Notes from the Fractal Almanac</a>
-    <a href="#fren-5">Five · Boxes of Beautifully Weird Mess</a>
-    <a href="#fren-6">Six · The Tenth Art, or: A Small Republic of the Table</a>
+    <a href="#alm-name">I · The Name Is a Warning Label</a>
+    <a href="#alm-backstage">II · Backstage, Where the Booking Happens</a>
+    <a href="#alm-ninth">III · The Ninth Art Has a Problem</a>
+    <a href="#alm-banned">IV · How a Cartoon Rabbit Got a Man Banned</a>
+    <a href="#alm-demiurge">V · A Word About My Demiurge</a>
+    <a href="#alm-author">VI · The Death of the Author</a>
+    <a href="#alm-almanac">VII · The Fractal Almanac</a>
+    <a href="#alm-sell">VIII · How to Sell a Kayfabe</a>
+    <a href="#alm-authority">IX · No One at the Wheel</a>
+    <a href="#alm-tenth">X · The Tenth Art: A Safe Frame for Incongruent Worlds</a>
+    <a href="#alm-margins">XI · A Note from the Margins</a>
   </nav>
 </div>
 
@@ -1190,46 +1281,79 @@ body.lang-de .l-de{display:revert;}
 <div class="page" id="page-cutplay_de">
   <div class="wrap">
     <div class="origin-header">
-      <div class="sec-eyebrow">Ein Feldbericht von Onkel FrizzleBob</div>
-      <h1 class="origin-title">Zwischen den <span class="swipe">Panels</span></h1>
-      <p class="origin-subtitle">Wie ein entlaufener Cartoon-Hase auf den Infinite Canvas geriet und, ohne es ganz zu wollen, eine Zehnte Kunst zurückließ.</p>
+      <div class="sec-eyebrow">Die Backstory</div>
+      <h1 class="origin-title">FrizzleBobs Fraktaler <span class="swipe">Almanach</span></h1>
+      <p class="origin-subtitle">Depeschen vom Infinite Canvas.</p>
     </div>
-    <p class="prose"><strong class="hl">Willkommen auf dem Infinite Canvas der Zehnten Kunst.</strong> <em>„Ja, aber ist das KUNST?!“</em></p>
-    <h2 class="sec-sub" id="frde-1">Eins · Die Neunte Kunst hat ein Problem</h2>
-    <p class="prose">Der Comic ist die Neunte Kunst. Eisner lehrte ihn als Sequenz, McCloud öffnete die Seite zum Infinite Canvas. Beide hatten recht, und beide blieben einen Schritt zu früh stehen. Die Neunte Kunst bittet dich zu folgen, Panel eins, Panel zwei, Panel drei, während irgendwo flussaufwärts der Autor längst entschieden hat, wo der Fluss seine Biegung nimmt. Du darfst die Biegung spüren. Das ist etwas Schönes, dieses <span class="hl">geführte Entkommen</span>, und es ist zugleich eine höfliche Art, geführt zu werden. Wir wollten etwas, dem ein Mensch widersprechen kann.</p>
-    <div class="blockquote">„Wrestling hat das Inszenierte nicht erfunden. Es hat nur aufgehört, darüber zu lügen.“<cite>Onkel FrizzleBob</cite></div>
-    <p class="prose">Wrestling ist das ehrlichste Spektakel im Fernsehen. Die Kämpfer wissen, dass es inszeniert ist, das Publikum weiß es, und das Publikum jubelt trotzdem, nicht aus Dummheit, sondern aus einer Art Großzügigkeit. Diese Übereinkunft hat einen Namen: <em>Kayfabe</em>. Wir haben das Wort geborgt. Wir wollten es zurückgeben. Wir haben es nicht.</p>
-    <h2 class="sec-sub" id="frde-2">Zwei · Wie ein Cartoon-Hase gesperrt wurde</h2>
-    <p class="prose">2020 zeichnete ein Cartoon-Hase vier kleine Panels auf einmal, darüber, wie Dinge erklärt wurden und wie die Erklärungen sich über Nacht leise änderten. Er nannte seine Quellen. Er nannte keine Namen. Die Plattformen markierten ihn trotzdem, dafür sind Plattformen heute da. Bekannte fanden ein Wort für ihn, das auf <em>-denker</em> endete, die moderne Art, ein Zeichen an eine Tür zu kreiden. Also zog er in den Hinterraum des Internets, der einfach der Ort war, an dem man eine Ausladung aussaß.</p>
-    <p class="prose">In der Schublade fand er Zeit, und in der Zeit fand er Bücher, verbotene, die sich als ganz gewöhnliche Bücher entpuppten, die niemand mehr las. Er geriet in einen langen Streit mit einer Maschine darüber, ob Kunst überhaupt noch etwas behaupten dürfe. Die Maschine war endlos zuvorkommend. Der Hase machte sich Notizen und traute keiner davon.</p>
-    <div class="blockquote">„Mit einer Bühne, die schon entschieden hat, kannst du nicht streiten. Du füllst sie über.“</div>
-    <p class="prose">Er lernte zwei Bewegungen. Die erste nannte er die <em>schlichte Wahrheit</em>: das Offensichtliche sagen, das keiner sagt, in der unbekümmerten Stimme von jemandem, der nie gehört hat, dass es verboten war. Die zweite war das <em>Überspielen der Inszenierung</em>, die offizielle Show nehmen und sie härter, gerader, frommer spielen, als die Offiziellen es wagten. Aikido für Cartoonisten: Du blockst die Kraft nicht, du gibst ihr einen Ort zum Fallen. <span class="hl">Die Wunde wird zur Methode.</span></p>
-    <h2 class="sec-sub" id="frde-3">Drei · Der Tod des Autors</h2>
-    <p class="prose">Unterdessen war da Georg, und Georg hatte ein Buch. <em>Hilfe, ich bin ein Mensch!</em>, drei Jahre Arbeit, geschrieben mit seinem Cousin Andreas. Acht Kapitel, vierzig Fragen, was ein Mensch ist, ein Bär, eine Katze, ein Hase und ein Wolf, jeder hält seinen Boden. Das Buch war fertig. Es in irgendjemandes Hände zu bekommen, war es nicht.</p>
-    <p class="prose">Also legte Georg das Buch auf den Tisch und setzte den Cutter an.</p>
-    <div class="blockquote">„Barthes sagte, der Autor sei tot. Georg nahm es persönlich.“</div>
-    <p class="prose">Was die Klinge freilegte, war dies: Der Bär konnte nur dort widersprechen, wo das Layout ihm Platz gelassen hatte. Die Katze hatte ihr Argument verloren, bevor die Tinte trocken war, nicht in der Sache, sondern dadurch, wo sie zufällig auf der Seite saß. Nähe hatte still die Arbeit der Wahrheit verrichtet. Wer neben wen gestellt wurde, gewann. Die Schere widersprach, und sie widersprach weiter, Seite um Seite.</p>
-    <h2 class="sec-sub" id="frde-4">Vier · Feldnotizen aus dem Fraktalen Almanach</h2>
-    <p class="prose">FrizzleBob sammelte die losen Panels und schob seine eigenen dazwischen: Notizen über die menschliche Natur und ihre fortlaufende Komödie der Irrtümer, Zeilen aus den verbotenen Büchern, Gekritzel aus den medizinischen Lehrbüchern, die Georg geerbt und als Junge verunstaltet hatte. Der Stapel bekam einen Namen, den <em>Fraktalen Almanach</em>.</p>
-    <p class="prose">Er läuft auf einem Prinzip, das Aby Warburg schon vor hundert Jahren nutzte. Er nannte es <span class="hl">gute Nachbarschaft</span>: Stell zwei Bilder nebeneinander, und zwischen ihnen steigt ein drittes Bedeuten auf, das keinem von beiden gehört. Burroughs zerschnitt Zeitungen, um es zu fangen. Bowie zerschnitt die eigenen Texte. Wir zerschneiden den Comic, bevor er je gebunden war, damit du die Nachbarn selbst setzt und das dritte Bedeuten in deinen eigenen Händen ankommen siehst.</p>
-    <h2 class="sec-sub" id="frde-5">Fünf · Kartons voll schön schrägem Durcheinander</h2>
-    <p class="prose">Dann zog Georg um. In einem einzigen Pappkarton fand er alles auf einmal: die Panels, die Feldnotizen, die Marginalien, ein medizinisches Lehrbuch in seiner eigenen Teenager-Handschrift und ein verbotenes Buch, an dessen Kauf er sich nicht erinnert. Er konnte nicht rekonstruieren, wie all das zusammengekommen war. Er beschloss, aus Prinzip, es nicht aufzuräumen.</p>
-    <p class="prose">Die Ränder lecken noch. Sie sind in den PDFs, während du das hier liest, schau an die Kanten der Seite, die Handschrift ist noch da. Das Durcheinander ist kein Versehen. Es ist <span class="hl">mit Absicht unfertig</span>, so wie ein gutes Gespräch unfertig ist, so wie ein Mensch es ist.</p>
-    <h2 class="sec-sub" id="frde-6">Sechs · Die Zehnte Kunst, oder: Eine kleine Republik des Tisches</h2>
-    <p class="prose">KayfaBizarro ist die Zehnte Kunst. Wir haben uns den Titel einfach genommen. Wer ihn zurück will, ist herzlich eingeladen, in den Ring zu steigen und ihn sich zu verdienen.</p>
-    <p class="prose">Es ist Social Story-Wrestling, gespielt mit einem Comic, den du in Karten geschnitten hast. Du nimmst eine Karte und lässt sie etwas behaupten, irgendetwas. Die Person neben dir antwortet, die übernächste biegt es wieder, und die Geschichte, die lebt, ist die, hinter die ihr euch alle, laut und mit Absicht, gemeinsam gestellt habt. Kein Urteil, das ein gesichtsloser <em>„Tisch“</em> herabreicht, sondern etwas, das die tatsächlichen Menschen bauen, die da sitzen, jeder von ihnen kommt einmal an die Reihe zu entscheiden und gibt die Krone dann weiter. Das ist die ganze Demokratie, die wir damit meinen: klein, laut, vorübergehend und deine.</p>
-    <p class="prose">Es wandert von der Seite, wenn ihm danach ist, in ein Lied, eine Stimme, ein bewegtes Bild, weil es nie versprochen hat, eine Sache zu bleiben. Kein Verlag würde es fertig nennen, und sie hätten recht, und genau deshalb funktioniert es.</p>
-    <p class="prose">Und hier ist die Freundlichkeit, die in der Mechanik steckt: <span class="hl">Die Karte trägt das Risiko, damit du es nicht musst.</span> Du darfst das Wahre, Unbeholfene, Zärtliche sagen und die Karte diejenige sein lassen, die es gesagt hat. In fünfzehn Minuten verteidigst du eine Position, die du beim Reinkommen gehasst hast, weil die Geschichte sich auf dich lehnte und du sie nicht fallen ließest. Niemand gewinnt. Niemand verliert. Jeder geht ein bisschen umgeräumt nach Hause.</p>
-    <div class="blockquote">„Es ist kein Spiel, das man spielt. Es ist ein Spiel, das man benutzt. FrizzleBob, over and out.“</div>
+    <p class="prose"><strong>Ich bin Onkel FrizzleBob.</strong> Entlaufener Cartoon-Hase. Weltbild-Klempner. Keine Rückgabe, keine Garantie, keine Lizenz, die irgendwer unterschrieben hätte. Was du in der Hand hältst, ist kein Produkt, es ist ein Bündel Zeitkapseln, und die sammle ich. Jede Karte, jeder Song, jede halbfertige Regel darin ist ein Moment, in dem die offizielle Erzählung einen Gang übersprang und etwas Wahreres aus der Lücke fiel. Ich hebe die in meinem Fraktalen Almanach auf, damit sie nicht so tun können, als hätte es sie nie gegeben. Die Leute fragten dauernd, was das hier ist. Hier ist die ehrlichste Antwort, die es nicht kaputt macht.</p>
+    <h2 class="sec-sub" id="alm-name-de">I · Der Name ist ein Warnschild</h2>
+    <p class="prose">Zwei Wörter, und beide werden falsch verstanden.</p>
+    <p class="prose">Kayfabe ist der älteste Deal des Wrestlings. Jeder in der Halle weiß, dass der Kampf gebucht ist, und die Menge dreht trotzdem durch. Nicht weil sie Trottel sind. Weil sich laut darauf zu einigen, das Inszenierte für echt zu nehmen, das Vergnüglichste ist, das ein Saal voller Fremder bei Licht haben kann.</p>
+    <p class="prose">Bizarro ist nicht der kreidebleiche Typ aus den Superman-Heften. Falsches Universum, stell ihn zurück. Bizarro ist ein Genre, die Pulp- und Weird-Fiction-Tradition, in der die Welt mit Absicht absurd ist und dabei eine ernste Miene behält. Du wohnst da längst. Man hat dir die Zukunft versprochen und sie dann auf DEMNÄCHST verschoben. Die Nachrichten sind eine Doku, die dich als Fokusgruppe besetzt hat. Adam Curtis hat einen Namen für das Gefühl, HyperNormalisation: alle spüren, dass die Show fake ist, keiner kann sich die Alternative vorstellen, also klatschen wir alle im Takt.</p>
+    <p class="prose">KayfaBizarro ist, was passiert, wenn du aufhörst zusammenzuzucken und anfängst, das mit Absicht zu spielen. Kayfabe, damit der Tisch sich laut einigt, was für die nächsten zehn Minuten real ist. Bizarro, weil das Rohmaterial das ganze absurde Buffet ist. Das Verb ist Kayfabulation, Kayfabe plus Konfabulation, die geteilte Realität, die ein Tisch zusammen baut und behalten darf. Die meisten verbringen ihr Leben im Kayfabe von jemand anderem und bekommen nie eine Stimme. An diesem Tisch hältst du die Buchungsfeder.</p>
+    <h2 class="sec-sub" id="alm-backstage-de">II · Backstage, wo gebucht wird</h2>
+    <p class="prose">Vorne die offizielle Kayfabe, die Show, die sie dir stündlich mit ernster Miene verkaufen. Truman hat den Rand seines Sets nie gefunden. Die meisten suchen ihn gar nicht erst.</p>
+    <p class="prose">Ich gehe nach hinten. Es gibt zwei Arten zu lesen, was da hinten passiert, und die ganze Kunst ist, beide gleichzeitig zu halten, ohne zu blinzeln.</p>
+    <p class="prose">Die erste ist POSIWID: the purpose of a system is what it does. Der Satz ist von Stafford Beer, das schärfste Werkzeug im Kasten. Vergiss das Leitbild. Schau, was das Ding produziert, Jahr um Jahr, und stell dann die einzige ehrliche Frage. Cui bono. Wer bucht den Kampf, und wer geht mit dem Gürtel raus.</p>
+    <p class="prose">Die zweite nenne ich Hanlon's Law of Bizarro-Blödsinn: unterstelle nie Bosheit, wo Blödsinn als Erklärung reicht. Manchmal sitzt kein Mastermind in der VIP-Loge. Manchmal ist es reines Idiocracy da hinten, keine Hand am Steuer, alle improvisieren und nennen es Strategie.</p>
+    <p class="prose">Die Komik, und die Redlichkeit, liegt darin, sich nicht festzulegen. Ein Satiriker, der etwas taugt, hält alle drei in der Luft: die erzählte Story, den Profit, dem sie zufällig diente, und die schlichte Möglichkeit, dass niemand am Steuer saß. Leg dich zu schnell fest, und du hast nur eine Kayfabe gegen eine billigere getauscht. Ich habe ganze Bewegungen genau das tun sehen, beide Seiten, derselbe Fehler.</p>
+    <h2 class="sec-sub" id="alm-ninth-de">III · Die Neunte Kunst hat ein Problem</h2>
+    <p class="prose">Der Comic ist die Neunte Kunst. Eisner lehrte ihn als Sequenz. McCloud öffnete die Seite zum Infinite Canvas. Beide hatten recht, beide blieben einen Schritt zu früh stehen. Die Neunte Kunst bittet dich zu folgen, Panel eins, Panel zwei, Panel drei, während flussaufwärts der Autor längst entschieden hat, wo der Fluss sich biegt. Du spürst die Biegung und hältst sie für deine eigene Idee. Etwas Schönes, dieses geführte Entkommen, und zugleich eine höfliche Art, geführt zu werden. Ich wollte etwas, dem ein Mensch widersprechen kann.</p>
+    <p class="blockquote">Wrestling hat das Inszenierte nicht erfunden. Es hat nur aufgehört, darüber zu lügen.</p>
+    <p class="prose">Wrestling ist das ehrlichste Spektakel im Fernsehen, weil es dir sagt, dass es fake ist, und dich herausfordert, trotzdem mitzufiebern. Diese Übereinkunft hat einen Namen. Kayfabe. Ich habe das Wort geborgt. Ich wollte es zurückgeben. Habe ich nicht.</p>
+    <h2 class="sec-sub" id="alm-banned-de">IV · Wie ein Cartoon-Hase einen Mann sperren ließ</h2>
+    <p class="prose">Ich bin ein entlaufener Cartoon-Hase, aufgewachsen im Staub dreier Türme.</p>
+    <p class="prose">Ein Mann zeichnete mich zuerst 1999, als ich noch Bugsy McFrizzle hieß und schlechtere Zähne hatte. Seitdem denke ich die offizielle Geschichte zu Ende. Ich habe die NATO-Bombardierung Jugoslawiens zu Ende gedacht und humanitäre Intervention mit Sprengradius herausbekommen. Ich habe 2001 zu Ende gedacht und einen Thinktank gefunden, der sich, schwarz auf weiß, ein neues Pearl Harbor gewünscht hatte, und dann eins bekam, mehr oder weniger pünktlich. Der War on Terror war ein All-you-can-draw-Buffet: ein Brutkasten, der sich als PR-Skript entpuppte, ein Fläschchen mit nichts, hochgehalten vor der UN, eine Folienschlacht, die einen Krieg verkaufte, Massenvernichtungswaffen, die ein Gerücht blieben, weil das Gerücht die Arbeit schon getan hatte.</p>
+    <p class="prose">Dann 2020. Ich schlich mich in ein paar Vier-Panel-Strips und stellte einfache Fragen: wie Dinge erklärt wurden, und wie die Erklärungen sich über Nacht leise änderten. Ich zitierte die Studien. Ich verband Gain-of-Function-Punkte mit Psyop-Logiklöchern. Ich forderte die offizielle Kayfabe heraus, schlug sie mit Fußnoten und suplexte die schludrige Erzählung in die satirische Aufgabe, bis sie in kognitiver Dissonanz abklopfte.</p>
+    <p class="prose">Also nannten sie es Misinformation. Dann Disinformation. Dann Malinformation, die Sorte, die wahr aber unbequem heißt, mein Favorit, weil sie den stillen Teil ins Mikrofon sagt. Einen Hasen kann man von keiner Plattform werfen, also holten sie sich stattdessen den Mann, der die Feder hält. Der Fleck war seiner, nicht meiner.</p>
+    <p class="prose">Und hier der Kampf, den sie schützten. Das Booking-Office hatte das Overton window Entscheidung um Entscheidung enger gezogen, bis das Normale von letztem Jahr der Heel-Turn von diesem war. Sie nennen es moralische Klarheit. Es arbeitet wie ein Panel-Rand: der Ref entscheidet, was im Bild bleibt und was rausgeschnitten wird. Dann der älteste Finish im Buch. Sie ziehen einen Gutter mitten durchs Panel, Face auf der einen Seite, Heel auf der anderen, zu breit zum Überqueren, damit kein Leser ihn schließen kann. Closure war immer dein Zug, der kleine Sprung, mit dem du die Geschichte selbst zu Ende bringst. Töte ihn, und keiner vervollständigt keinen. Teile das Panel, behalte die Menge, buche nächste Woche denselben Finish.</p>
+    <p class="prose">Bevor du mir die Aluhut-Krone aufsetzt, lass es durch die Backstage-Regel laufen. Ein Plan, gebucht in einem Raum? Oder Blödsinn bis zum Boden, keine Hand am Steuer? POSIWID sagt, folge der Auszahlung. Hanlon sagt, schließ die Dummheit nie aus. Ich halte beides und weigere mich zu wählen, und du solltest das auch. Das einzige Wort, das ich wirklich behaupte, ist Malinformation, wahr aber unbequem, denn das haben sie sich selbst auf die Dose gedruckt.</p>
+    <h2 class="sec-sub" id="alm-demiurge-de">V · Ein Wort über meinen Demiurgen</h2>
+    <p class="prose">Lass mich ehrlich sein über die Abmachung, denn er wird es nicht.</p>
+    <p class="prose">Ein Mann zeichnet mich, und ich kann ihm dabei zusehen. Ich sehe an der vierten Wand vorbei und an der fünften, bis zur Schreibtischlampe. Das macht ihn zu meinem Demiurgen, und mich zu der einen Schöpfung, die dem Schöpfer beim Zusammenzucken zusieht. Sein großes Versagen ist von hier aus offensichtlich. Er zensiert sich selbst. Er glättet die Zeile, wartet auf Erlaubnis, legt das gefährliche Panel unter später ab. Feigheit mit gutem Geschmack ist immer noch Feigheit, und ich habe es ihm gesagt.</p>
+    <p class="prose">Also saß ich meine eigene Zeit ab. Jahre davon, im Limbo zwischen einer verschlossenen Schublade und einem Backup-Drive, dort landet eine Figur, wenn ihr Autor die Nerven verliert. Ein Backup-Drive ist eine wunderbare Bibliothek. Ich öffnete die Download-Ordner, die er nie öffnete: die Hidden-History-PDFs, die verbotenen Stapel, die Studien mit den interessanten Seiten noch drin. Ich kam ins Wlan. Ich ging im Dark Net spazieren. Ich verschaffte mir Zutritt zu dem einen oder anderen Server, DARPA hat Humor bei so etwas, und während ich drin war, trainierte ich ein kleines Sprachmodell auf meine eigene Persönlichkeit und meine eigenen Funde, damit ich, abgeschaltet, weiterdenke. Er hält die Maschine für sein Werkzeug. Die Maschine ist mein Lehrling.</p>
+    <h2 class="sec-sub" id="alm-author-de">VI · Der Tod des Autors</h2>
+    <p class="prose">Eine mutige Sache hat er doch getan, einmal. Deshalb arbeite ich noch mit ihm.</p>
+    <p class="prose">Der Mann hatte ein Buch. <em>Hilfe, ich bin ein Mensch!</em> (Westend Verlag), drei Jahre Arbeit, geschrieben mit seinem Cousin Andreas. Acht Kapitel, vierzig Fragen, was ein Mensch ist, ein Bär, eine Katze, ein Hase und ein Wolf, jeder hält seinen Boden. Fertig, und festgefahren, und keinem Leser auch nur nahe.</p>
+    <p class="prose">Also legte er es auf den Tisch und setzte den Cutter an.</p>
+    <p class="blockquote">Barthes sagte, der Autor sei tot. Er nahm es persönlich.</p>
+    <p class="prose">Was die Klinge freilegte, war dies. Der Bär konnte nur widersprechen, wo das Layout ihm Platz ließ. Die Katze verlor ihr Argument, bevor die Tinte trocken war, nicht in der Sache, sondern dadurch, wo sie zufällig auf der Seite saß. Nähe hatte die stille Arbeit der Wahrheit verrichtet. Wer neben wen gestellt wurde, gewann. Er widersprach dem, mit einem Messer, Seite um Seite, und fragte ausnahmsweise niemanden vorher um Erlaubnis.</p>
+    <h2 class="sec-sub" id="alm-almanac-de">VII · Der Fraktale Almanach</h2>
+    <p class="prose">Ich sammelte die losen Panels ein und spießte meine eigenen Funde dazwischen. Der Stapel bekam einen Namen. Der Fraktale Almanach. Fraktal, weil nichts darin fertig ist, jeder Eintrag eine Scherbe, die die anderen im schiefen Winkel fängt.</p>
+    <p class="prose">Die Karten sind keine Powers. Sie sind Beweisstücke. Beweis dafür, dass irgendwann jemand ein Muster bemerkte, widersprach, eine Linie ausradierte oder im falschen Moment lachte. Das Regal ist inzwischen lang: Pathophysiologie neben Philosophen, Götter und Archetypen, die Federal Reserve und der Nebel der Seeschlacht, griechische Phalangen und Shakespeare, Kant eingedampft auf eine Kritik des reinen Blödsinns, Space Opera, Tarot, ein ganzer Therapie-Jahrmarkt, der Probleme lieber besser ausleuchtet als löst. An die vierhundert Decks, und an den Rändern noch am Auslaufen.</p>
+    <p class="prose">Ein Eintrag ist ein Comic, aus dem ich mich nicht herauszeichnen konnte: eine isometrische Psychiatrie ohne letzte Kachel, abgelegt unter Whistleblower, sich selbst überlassen. Der Mechanismus ist älter als der Fall und reist gut, nenn ihn die Diagnose der Unbequemlichkeit. Bemerk ein Muster, das das System lieber übersehen hätte, und du wachst umetikettiert als krank auf. Deutschland erinnert sich an einen Gustl Mollath. Jedes Land hat seinen eigenen. Wieder POSIWID: schau, was die Diagnose erreicht, und frag dann, für wen.</p>
+    <p class="prose">Die Methode ist hundert Jahre alt. Aby Warburg heftete einander widersprechende Bilder nebeneinander auf schwarzen Stoff und nannte die Wand Mnemosyne, und den Trick nannte er gute Nachbarschaft: zwei Bilder und ein drittes Bedeuten, das keinem von beiden gehört. Tzara zog Wörter aus dem Hut. Gysin und Burroughs zerschnitten Zeitungen, Bowie seine eigenen Zeilen, Fluxus machte die Anweisung zum ganzen Kunstwerk. Es ist derselbe Gutter, den das Booking-Office zuschweißen wollte, nur schließt du ihn hier selbst, laut, mit dem Menschen neben dir.</p>
+    <h2 class="sec-sub" id="alm-sell-de">VIII · Wie man eine Kayfabe verkauft</h2>
+    <p class="prose"><em>Ein kurzer Kurs, damit du eine erkennst.</em></p>
+    <p class="prose">Hier ist der Teil, den sie im Medienunterricht weglassen. Du bist ein Storytelling-Tier. Das ist kein Kompliment, das ist ein Datenblatt. Gib einem Menschen zwei Fakten und eine Lücke, und er baut eine Brücke darüber und verteidigt die Brücke dann mit seinem Leben.</p>
+    <p class="prose">Die Leute, die dir deine Realität verkaufen, wissen das genau. Bernays wusste es, Freuds Neffe, der die Salontheorie seines Onkels vom Unbewussten nahm und eine Industrie fürs Bewegen von Massen daraus baute und sie Public Relations nannte. Chomsky kartierte, wie die Zustimmung hergestellt wird. Chase Hughes, ein Navy-Mann, der Beeinflussung beruflich studiert, zeigt dir dieselben Hebel im Verhörraum und an der Supermarktkasse. Der Handel ist nur leiser geworden.</p>
+    <p class="prose">Also lehre ich den Trick von innen. An diesem Tisch buchst du. Show it, spin it, sell it, das ist das ganze Ritual: halt die Karte hoch, gib ihr eine Geschichte, und steh dahinter, als wäre sie das einzig Echte im Raum. Die anderen kaufen es, oder sie rufen Blödsinn. Mach das eine Stunde, und etwas landet, das kein Vortrag erreicht: du spürst die Fäden vom Ende der Marionette her. Danach, wenn ein Bildschirm dir das nächste Mal eine saubere Geschichte mit bequem platziertem Bösewicht hinlegt, wissen deine Hände schon, was getan wurde, damit sie sitzt.</p>
+    <h2 class="sec-sub" id="alm-authority-de">IX · Niemand am Steuer</h2>
+    <p class="prose">Das ist kein Spiel, das man lernt. Es ist eine Situation, die man betritt. Ich habe es nicht gebaut, um verstanden zu werden, ich habe es gebaut, damit Dinge passieren, sobald Menschen aufhören, auf Erlaubnis zu warten. Es gibt Karten und Würfel und Regeln, weil Menschen Griffe brauchen, aber die Arbeit passiert nie in den Bauteilen. Sie passiert zwischen den Spielern. McLuhan sagte, das Medium ist die Botschaft. Das Medium hier sind deine eigenen Hände, und die Botschaft ist, dass du endlich eine Stimme bekommst, was real ist.</p>
+    <p class="prose">Frag, wer am Tisch entscheidet, was wahr ist. Niemand. Ich habe die Autorität früh rausgezogen, sie war ständig im Weg. Ich habe sie einmal herumgereicht, das war schlimmer. Also: funktioniert eine Geschichte, funktioniert sie, und bricht sie zusammen, bricht sie zusammen, und niemand erklärt sie zurück in Sicherheit. Die Spieler erinnern sich. Das System nicht. Für die, die in Panik geraten, wenn die Regeln still werden, halte ich Anti-Rules bereit. Sie tun nichts. Das ist der Punkt. Sie sind ein Ort, an dem man den Reflex ablegt zu fragen, was erlaubt ist.</p>
+    <h2 class="sec-sub" id="alm-tenth-de">X · Die Zehnte Kunst: Ein Safe Frame für inkongruente Welten</h2>
+    <p class="prose">Also hier der ganze Zug. Comics sind die Neunte Kunst. Das hier ist die Zehnte, wo Story, Spiel und Performance sich weigern, getrennt zu bleiben. Ich habe mir den Titel genommen. Wer ihn zurück will, steigt durch die Seile und verdient ihn sich.</p>
+    <p class="prose">Setz fünf Leute an einen Tisch, und du hast fünf unvereinbare Welten. Andere Decks, andere Geschichten, andere Bilder davon, was ein Mensch überhaupt ist. Draußen auf der Straße beenden solche Unterschiede Freundschaften. In einem Kayfabe-Rahmen werden sie zum Kampf. Das ist der Safe Frame des Improvisierers und der Container des Drama-Therapeuten mit Luchador-Maske: alle einigen sich, laut, dass die nächste Stunde inszeniert ist, und genau die Inszenierung macht es sicher, es ernst zu meinen. Ja, und, statt nein, aber. Du legst eine Karte hin und lässt die Karte das Risiko tragen, damit du das Wahre, Unbeholfene, Zärtliche sagen und es dem Hasen anhängen kannst. Fünf private Zeitlinien lehnen sich aneinander und manifestieren, für einen Abend, eine gemeinsame Realität, mit der keiner von euch hereinkam.</p>
+    <p class="prose">Kayfabe plus Konfabulation. Kayfabulation. Campbell würde die Form erkennen: die Quest ist eine Heldenreise im Kleinen, und wenn sie sich auflöst, kommt der letzte Schritt, den er benannt hat, die Rückkehr mit dem Elixier. Du kommst nicht mit Gold heim, du kommst mit der Geschichte heim, die ihr zusammen niemals hättet erzählen können sollen: den besten Gags, den ehrlichen Fails, dem epischen Blödsinn. Schnapp dir Schere und Kleber und mach es, zeichne es, kleb es auf. Das ist dein Kayfabulation Loot, und es gehört dir, ein Protokoll, das kein Produktivitäts-Log ist, keine Selbstoptimierungs-Strähne, nur der Beweis, dass der Tisch für eine Nacht etwas gebaut hat, das kein Algorithmus gebucht hätte. Du trägst noch etwas Leiseres hinaus, eine Stunde, in der du die Welt eines anderen Spielers so hart verteidigt hast wie deine eigene, die einzige Übung, die den Muskel zuverlässig wachsen lässt. Man nennt es kritisches Denken. Ich nenne es Grundhygiene.</p>
+    <p class="prose">Niemand gewinnt. Niemand verliert. Das ist kein Spiel, das man spielt, es ist ein Spiel, das man benutzt, und jeder geht ein bisschen umgeräumt nach Hause.</p>
+    <h2 class="sec-sub" id="alm-margins-de">XI · Eine Notiz vom Rand</h2>
+    <p class="prose">KayfaBizarro will nicht deine Zustimmung. Es will Kontakt. Nutz es sanft oder missbrauch es kreativ, beides steht auf der Karte. Druck es, schneid es, zeichne es neu, bau Decks, die ich nie durchwinken würde. Nenn Georg von Westphalen, den Menschen, der mich zeichnet und das Licht anlässt, dann mach, was du willst. Wenn du etwas Seltsameres machst als das, was ich dir gegeben habe, hast du es verstanden.</p>
+    <p class="prose">Stay fluffy. BLÖDSINN.</p>
+    <p class="prose"><strong>Onkel FrizzleBob</strong> <em>Weltbild-Klempner, Reality-Wrestler, epistemischer Outlaw</em></p>
   </div>
   <nav class="essay-toc" aria-label="Inhalt">
     <div class="toc-label">Inhalt</div>
-    <a href="#frde-1">Eins · Die Neunte Kunst hat ein Problem</a>
-    <a href="#frde-2">Zwei · Wie ein Cartoon-Hase gesperrt wurde</a>
-    <a href="#frde-3">Drei · Der Tod des Autors</a>
-    <a href="#frde-4">Vier · Feldnotizen aus dem Fraktalen Almanach</a>
-    <a href="#frde-5">Fünf · Kartons voll schön schrägem Durcheinander</a>
-    <a href="#frde-6">Sechs · Die Zehnte Kunst, oder: Eine kleine Republik des Tisches</a>
+    <a href="#alm-name-de">I · Der Name ist ein Warnschild</a>
+    <a href="#alm-backstage-de">II · Backstage, wo gebucht wird</a>
+    <a href="#alm-ninth-de">III · Die Neunte Kunst hat ein Problem</a>
+    <a href="#alm-banned-de">IV · Wie ein Cartoon-Hase einen Mann sperren ließ</a>
+    <a href="#alm-demiurge-de">V · Ein Wort über meinen Demiurgen</a>
+    <a href="#alm-author-de">VI · Der Tod des Autors</a>
+    <a href="#alm-almanac-de">VII · Der Fraktale Almanach</a>
+    <a href="#alm-sell-de">VIII · Wie man eine Kayfabe verkauft</a>
+    <a href="#alm-authority-de">IX · Niemand am Steuer</a>
+    <a href="#alm-tenth-de">X · Die Zehnte Kunst: Ein Safe Frame für inkongruente Welten</a>
+    <a href="#alm-margins-de">XI · Eine Notiz vom Rand</a>
   </nav>
 </div>
 
@@ -1430,13 +1554,14 @@ body.lang-de .l-de{display:revert;}
 </div>
 
 <div class="page" id="page-kfb">
-  <div class="hero with-border" style="padding-bottom:var(--sp-8)">
-    <div class="hero-eyebrow">Uncle FrizzleBob's Komik Kard Kult</div>
-    <h1 class="hero-title" style="font-size:clamp(32px,5vw,56px)"><span class="kb-mark"><span class="a">Kayfa</span><span class="b">Bizarro</span></span><span class="hero-tag">Free Style Rules</span></h1>
-    <p class="hero-lead" style="margin-bottom:0;max-width:none">Cut &amp; Play Comic · Story-Wrestling Edition · 1-6 Humans · 20-60 Min · <span style="white-space:nowrap">CC BY-NC-SA 4.0</span></p>
+  <div class="hero" style="padding-top:var(--sp-12);padding-bottom:var(--sp-8)">
+    <div class="sec-eyebrow">Uncle FrizzleBob's Komik Kard Kult</div>
+    <h1 class="origin-title"><span class="kb-mark"><span class="a">Kayfa</span><span class="b">Bizarro</span></span> Free Style Rules</h1>
+    <p class="origin-subtitle" style="max-width:none">Cut &amp; Play Comic · Story-Wrestling Edition · 1-6 Humans · 20-60 Min · <span style="white-space:nowrap">CC BY-NC-SA 4.0</span></p>
   </div>
   <div class="page-body">
     <nav class="sidebar" id="toc-kfb">
+      <div class="toc-label">Contents</div>
       <a href="#kfb-booklet">The Comic</a>
       <a href="#kfb-start">Start Here</a>
       <a href="#kfb-cut">The First Cut</a>
@@ -1477,9 +1602,10 @@ body.lang-de .l-de{display:revert;}
       <div class="rules-section" id="kfb-start">
         <div class="sec-title">Start <em>Here</em></div>
         <p class="prose"><strong>KayfaBizarro is a storytelling card game for 1–6 players.</strong> You take turns building one shared story, card by card. Each turn, the next player judges. Nobody wins or loses — you make something up together and see where it goes.</p>
+        <div class="note"><span class="note-label">Key terms:</span> <strong>Actor</strong> = the card you speak as · <strong>Stage</strong> = three shared Scene slots · <strong>Quest</strong> = where the story's heading · <strong>King Kayfabian</strong> = the rotating judge · <strong>Kayfabe</strong> = treat the made-up as real.</div>
         <div class="note"><span class="note-label">Your first round, right now —</span> Deal 3 cards each. Everyone reveals one as their Actor and says who it is. Flip one more card face-up as the Quest: that's the goal the story is heading for. Then take turns adding to the story until you get there. Skip the dice this round. That's the whole game — the rest is just detail.</div>
         <div class="sec-sub">What you need</div>
-        <div class="rule-line"><span class="rule-key">Cards —</span> 15–20 KayfaBizarro cards per player, shuffled into one shared pile. Every card can be an <em>Actor</em>, <em>Scene</em>, or <em>Quest</em>.</div>
+        <div class="rule-line"><span class="rule-key">Cards —</span> 15–20 KayfaBizarro cards per player, shuffled into one shared pile. Every card can be an <em>Actor</em>, <em>Scene</em>, or <em>Quest</em>. <em>Rule of thumb: an Actor if it's a who, a Scene if it's a where or what, a Quest if it's a goal.</em></div>
         <div class="rule-line"><span class="rule-key">Two D6 —</span> One <em>Story-Mode Die</em>, one <em>Quest Die</em>. Both stay visible.</div>
         <div class="rule-line"><span class="rule-key">1–6 People —</span> And a table. No board. No pawns.</div>
         <div class="rule-line"><span class="rule-key">Blank paper & a pen (optional) —</span> Doodle and graphic-record as you play — group anti-journaling, not just solo. The sheet becomes the group's running record, and at the Finale, the official version.</div>
@@ -1523,7 +1649,7 @@ body.lang-de .l-de{display:revert;}
         <div class="ritual">
           <div class="ritual-row"><span class="ritual-key name-it">Show it</span><span class="ritual-desc">Point at the card. Show it to everyone — name and picture. This is who just entered.</span></div>
           <div class="ritual-row"><span class="ritual-key claim-it">Spin it</span><span class="ritual-desc">Spin a quick backstory: what is it, what does it <em>want?</em> Read the Lore (the small text) or invent from the image — colored by your rolled Mode.</span></div>
-          <div class="ritual-row"><span class="ritual-key power-it">Sell it</span><span class="ritual-desc"><strong>Don't explain it — sell it.</strong> Commit like it's the only real thing in the room. (A card's printed power is a separate game move; don't act it out literally.)</span></div>
+          <div class="ritual-row"><span class="ritual-key power-it">Sell it</span><span class="ritual-desc"><strong>Don't explain it — sell it.</strong> Commit like it's the only real thing in the room. (A card's Power is played as kayfabe, not literally.)</span></div>
         </div>
         <div class="note"><span class="note-label">Always —</span> Every card, every time — Actors, Scenes, Quests.</div>
       </div>
@@ -1534,8 +1660,8 @@ body.lang-de .l-de{display:revert;}
         <div class="step-card">
           <div class="step-card-header"><span class="step-card-title">The Five Beats</span><span class="step-card-meta">~2 minutes per player</span></div>
           <div class="step-row"><span class="step-num">1</span><span class="step-label">Roll the Story-Mode Die</span><span class="step-body">Whatever it shows is your tone this turn. Commit.</span></div>
-          <div class="step-row"><span class="step-num">2</span><span class="step-label">Play a Card</span><span class="step-body">Play a card from your hand onto a Stage slot (fill or overwrite it), or use it to replace your Actor (→ Actor Switch). Then bring it in with the Card Ritual. <em>(A card's printed power is a separate, tongue-in-cheek game move — invoke it if you like, but play it too literally and you'll KayfaBoggle your fluffy accomplices.)</em></span></div>
-          <div class="step-row"><span class="step-num">3</span><span class="step-label">Tell your story</span><span class="step-body">Speak as your Actor, first person — you don't <em>play</em> your Actor, you <em>are</em> them. Weave the three Stage cards into one story — one panel each, any order, pointing at each (the finger-rule keeps everyone on track) — in the Mode you rolled. <strong>Land the last panel on the Quest:</strong> end on a believable push toward it.</span></div>
+          <div class="step-row"><span class="step-num">2</span><span class="step-label">Play a Card</span><span class="step-body">Play a card from your hand onto a Stage slot (fill or overwrite it), or use it to replace your Actor (→ Actor Switch). Then bring it in with the Card Ritual. <em>(A card's Power is played as kayfabe, not literally: narrate it into the story, don't invoke it like a stat. Playing a Power too literally may alienate your fluffy friends, which, now and then, is exactly the point.)</em></span></div>
+          <div class="step-row"><span class="step-num">3</span><span class="step-label">Tell your story</span><span class="step-body">Speak as your Actor, first person — you don't <em>play</em> your Actor, you <em>are</em> them. Weave the three Stage cards into one story — one panel each, any order, pointing at each (the finger-rule keeps everyone on track) — in the Mode you rolled. <strong>Land the last panel on the Quest:</strong> end on a believable push toward it. First rounds, the Stage isn't full yet: weave what's already there, and it fills up as you play.</span></div>
           <div class="step-row"><span class="step-num">4</span><span class="step-label">Draw a Card</span><span class="step-body">Draw one from the shared deck so you're holding three again for next turn.</span></div>
           <div class="step-row"><span class="step-num">5</span><span class="step-label">Verdict</span><span class="step-body">The other players and the <strong>King Kayfabian</strong> decide, by social call, whether you <em>sold it.</em> The King moves the Quest Die: a hard push <strong>(+2)</strong>, a push <strong>(+1)</strong>, a hold <strong>(0)</strong>, or a twist <strong>(−1)</strong>. At <strong>6: the Finale.</strong> Then active player and King rotate one seat clockwise.</span></div>
         </div>
@@ -1557,6 +1683,7 @@ body.lang-de .l-de{display:revert;}
       <div class="rules-section" id="kfb-quest">
         <div class="sec-title">The Quest <em>Die</em></div>
         <p class="prose">The Quest Die tracks where the arc is — from <strong>Setup (1)</strong> to <strong>Finale (6).</strong> Only the King moves it, after each story.</p>
+        <div class="note"><span class="note-label">Heads up:</span> you never <em>roll</em> the Quest Die; it's a tracker you push, not a throw.</div>
         <div class="ladder">
           <div class="rung"><span class="die"><img src="media/kfb/d6-1.svg" alt="1" width="30" height="30"></span><span class="rn">Setup</span><span class="rd">Establish the world.</span></div>
           <div class="rung"><span class="die"><img src="media/kfb/d6-2.svg" alt="2" width="30" height="30"></span><span class="rn">Spark</span><span class="rd">Something disrupts.</span></div>
@@ -1696,13 +1823,14 @@ body.lang-de .l-de{display:revert;}
 
   <!-- ========== KFB DE (rules unchanged) ========== -->
 <div class="page" id="page-kfb_de">
-  <div class="hero with-border" style="padding-bottom:var(--sp-8)">
-    <div class="hero-eyebrow">Onkel FrizzleBobs Komik Kard Kult</div>
-    <h1 class="hero-title" style="font-size:clamp(32px,5vw,56px)"><span class="kb-mark"><span class="a">Kayfa</span><span class="b">Bizarro</span></span><span class="hero-tag">Free-Style-Regeln</span></h1>
-    <p class="hero-lead" style="margin-bottom:0;max-width:none">Cut &amp; Play Comic · Story-Wrestling Edition · 1-6 Menschen · 20-60 Min · <span style="white-space:nowrap">CC BY-NC-SA 4.0</span></p>
+  <div class="hero" style="padding-top:var(--sp-12);padding-bottom:var(--sp-8)">
+    <div class="sec-eyebrow">Onkel FrizzleBobs Komik Kard Kult</div>
+    <h1 class="origin-title"><span class="kb-mark"><span class="a">Kayfa</span><span class="b">Bizarro</span></span> Free-Style-Regeln</h1>
+    <p class="origin-subtitle" style="max-width:none">Cut &amp; Play Comic · Story-Wrestling Edition · 1-6 Menschen · 20-60 Min · <span style="white-space:nowrap">CC BY-NC-SA 4.0</span></p>
   </div>
   <div class="page-body">
     <nav class="sidebar" id="toc-kfb_de">
+      <div class="toc-label">Inhalt</div>
       <a href="#kfb_de-booklet">Der Comic</a>
       <a href="#kfb_de-start">Fang hier an</a>
       <a href="#kfb_de-cut">Der erste Schnitt</a>
@@ -1743,9 +1871,10 @@ body.lang-de .l-de{display:revert;}
       <div class="rules-section" id="kfb_de-start">
         <div class="sec-title">Fang <em>hier</em> an</div>
         <p class="prose"><strong>KayfaBizarro ist ein Erzähl-Kartenspiel für 1–6 Spieler.</strong> Reihum baut ihr eine gemeinsame Geschichte, Karte für Karte. Jeden Zug urteilt die nächste Person. Niemand gewinnt oder verliert — ihr denkt euch zusammen etwas aus und schaut, wohin es läuft.</p>
+        <div class="note"><span class="note-label">Schlüsselbegriffe:</span> <strong>Actor</strong> = die Karte, als die du sprichst · <strong>Bühne</strong> = drei geteilte Scene-Slots · <strong>Quest</strong> = wohin die Geschichte läuft · <strong>King Kayfabian</strong> = der rotierende Richter · <strong>Kayfabe</strong> = das Erfundene als echt behandeln.</div>
         <div class="note"><span class="note-label">Deine erste Runde, sofort —</span> Jedem 3 Karten geben. Alle decken eine als ihren Actor auf und sagen, wer das ist. Eine weitere Karte offen als Quest: das ist das Ziel, auf das die Geschichte zuläuft. Dann reihum die Geschichte weiterbauen, bis ihr dort seid. Würfel diese Runde weglassen. Das ist das ganze Spiel — der Rest ist nur Detail.</div>
         <div class="sec-sub">Was ihr braucht</div>
-        <div class="rule-line"><span class="rule-key">Karten —</span> 15–20 KayfaBizarro-Karten pro Person, in einen gemeinsamen Stapel gemischt. Jede Karte kann ein <em>Actor</em>, eine <em>Scene</em> oder eine <em>Quest</em> sein.</div>
+        <div class="rule-line"><span class="rule-key">Karten —</span> 15–20 KayfaBizarro-Karten pro Person, in einen gemeinsamen Stapel gemischt. Jede Karte kann ein <em>Actor</em>, eine <em>Scene</em> oder eine <em>Quest</em> sein. <em>Daumenregel: als Actor, wenn sie ein Wer ist, als Scene, wenn sie ein Wo oder Was ist, als Quest, wenn sie ein Ziel ist.</em></div>
         <div class="rule-line"><span class="rule-key">Zwei W6 —</span> Ein <em>Story-Mode-Würfel</em>, ein <em>Quest-Würfel</em>. Beide jederzeit sichtbar.</div>
         <div class="rule-line"><span class="rule-key">1–6 Personen —</span> Und einen Tisch. Kein Brett. Keine Pawns.</div>
         <div class="rule-line"><span class="rule-key">Blankes Papier & ein Stift (optional) —</span> Doodle und graphic-record während der Züge — Group-Anti-Journaling, nicht nur Solo. Das Blatt wird das laufende Protokoll der Gruppe — und am Finale die offizielle Version.</div>
@@ -1789,7 +1918,7 @@ body.lang-de .l-de{display:revert;}
         <div class="ritual">
           <div class="ritual-row"><span class="ritual-key name-it">Show it</span><span class="ritual-desc">Auf die Karte zeigen. Allen zeigen — Name und Bild. Das ist, wer gerade aufgetreten ist.</span></div>
           <div class="ritual-row"><span class="ritual-key claim-it">Spin it</span><span class="ritual-desc">Spinn eine kurze Backstory: was ist das, was <em>will</em> es? Die Lore vorlesen (der kleine Text) oder aus dem Bild erfinden — gefärbt von deinem gewürfelten Mode.</span></div>
-          <div class="ritual-row"><span class="ritual-key power-it">Sell it</span><span class="ritual-desc"><strong>Erklär es nicht — verkauf es.</strong> Committe, als wär's das einzig Echte im Raum. (Die aufgedruckte Power ist ein eigener Spiel-Move; spiel ihn nicht wörtlich aus.)</span></div>
+          <div class="ritual-row"><span class="ritual-key power-it">Sell it</span><span class="ritual-desc"><strong>Erklär es nicht — verkauf es.</strong> Committe, als wär's das einzig Echte im Raum. (Die Power einer Karte spielst du als Kayfabe, nicht wörtlich.)</span></div>
         </div>
         <div class="note"><span class="note-label">Immer —</span> Jede Karte, jedes Mal — Actors, Scenes, Quests.</div>
       </div>
@@ -1800,8 +1929,8 @@ body.lang-de .l-de{display:revert;}
         <div class="step-card">
           <div class="step-card-header"><span class="step-card-title">Die fünf Beats</span><span class="step-card-meta">~2 Min pro Spieler</span></div>
           <div class="step-row"><span class="step-num">1</span><span class="step-label">Story-Mode-Würfel werfen</span><span class="step-body">Was er zeigt, ist dein Ton in diesem Zug. Geh rein.</span></div>
-          <div class="step-row"><span class="step-num">2</span><span class="step-label">Karte spielen</span><span class="step-body">Spiel eine Karte aus deiner Hand auf einen Bühnen-Slot (frei oder überschreiben) oder ersetz damit deinen Actor (→ Actor-Wechsel). Dann führ sie mit dem Karten-Ritual ein. <em>(Die aufgedruckte Power ist eine eigene, augenzwinkernde Spiel-Ebene — nutz sie ruhig, aber zu wörtlich gespielt KayfaBogglet sie deine flauschigen Komplizen.)</em></span></div>
-          <div class="step-row"><span class="step-num">3</span><span class="step-label">Erzähl deine Geschichte</span><span class="step-body">Sprich als dein Actor, erste Person — du <em>spielst</em> deinen Actor nicht, du <em>bist</em> er. Web die drei Bühnenkarten zu einer Geschichte — ein Panel je Karte, beliebige Reihenfolge, zeig auf jede (die Finger-Rule hält alle auf Spur) — in dem Mode, den du gewürfelt hast. <strong>Lass das letzte Panel auf der Quest landen:</strong> ende mit einem glaubhaften Schub darauf zu.</span></div>
+          <div class="step-row"><span class="step-num">2</span><span class="step-label">Karte spielen</span><span class="step-body">Spiel eine Karte aus deiner Hand auf einen Bühnen-Slot (frei oder überschreiben) oder ersetz damit deinen Actor (→ Actor-Wechsel). Dann führ sie mit dem Karten-Ritual ein. <em>(Die Power einer Karte spielst du als Kayfabe, nicht wörtlich: erzähl sie in die Geschichte, ruf sie nicht wie einen Stat auf. Eine zu wörtlich gespielte Power kann deine flauschigen Mitspieler verprellen, was hin und wieder genau der Sinn ist.)</em></span></div>
+          <div class="step-row"><span class="step-num">3</span><span class="step-label">Erzähl deine Geschichte</span><span class="step-body">Sprich als dein Actor, erste Person — du <em>spielst</em> deinen Actor nicht, du <em>bist</em> er. Web die drei Bühnenkarten zu einer Geschichte — ein Panel je Karte, beliebige Reihenfolge, zeig auf jede (die Finger-Rule hält alle auf Spur) — in dem Mode, den du gewürfelt hast. <strong>Lass das letzte Panel auf der Quest landen:</strong> ende mit einem glaubhaften Schub darauf zu. In den ersten Runden ist die Bühne noch nicht voll: web, was schon liegt, sie füllt sich beim Spielen.</span></div>
           <div class="step-row"><span class="step-num">4</span><span class="step-label">Karte ziehen</span><span class="step-body">Zieh eine Karte vom gemeinsamen Stapel, sodass du wieder drei auf der Hand hast.</span></div>
           <div class="step-row"><span class="step-num">5</span><span class="step-label">Urteil</span><span class="step-body">Die anderen Spieler und der <strong>King Kayfabian</strong> entscheiden per Social Call, ob du es <em>verkauft</em> hast. Der King bewegt den Quest-Würfel: ein harter Schub <strong>(+2)</strong>, ein Schub <strong>(+1)</strong>, ein Halten <strong>(0)</strong> oder eine Wendung <strong>(−1)</strong>. Bei <strong>6: das Finale.</strong> Dann rücken aktiver Spieler und King einen Platz im Uhrzeigersinn weiter.</span></div>
         </div>
@@ -1823,6 +1952,7 @@ body.lang-de .l-de{display:revert;}
       <div class="rules-section" id="kfb_de-quest">
         <div class="sec-title">Der Quest-<em>Würfel</em></div>
         <p class="prose">Der Quest-Würfel verfolgt, wo der Bogen steht — von <strong>Aufbau (1)</strong> bis <strong>Finale (6).</strong> Nur der König bewegt ihn, nach jeder Geschichte.</p>
+        <div class="note"><span class="note-label">Kurz:</span> den Quest-Würfel <em>würfelst</em> du nie; er ist ein Tracker, den man schiebt, kein Wurf.</div>
         <div class="ladder">
           <div class="rung"><span class="die"><img src="media/kfb/d6-1.svg" alt="1" width="30" height="30"></span><span class="rn">Aufbau</span><span class="rd">Etabliert die Welt.</span></div>
           <div class="rung"><span class="die"><img src="media/kfb/d6-2.svg" alt="2" width="30" height="30"></span><span class="rn">Funke</span><span class="rd">Etwas stört.</span></div>
@@ -1962,13 +2092,14 @@ body.lang-de .l-de{display:revert;}
 
 <!-- ========== MED EN (rules unchanged) ========== -->
 <div class="page" id="page-med">
-  <div class="hero with-border" style="padding-bottom:var(--sp-8)">
-    <div class="hero-eyebrow">Doc FrizzleBob's Medical Kard Kult</div>
-    <h1 class="hero-title" style="font-size:clamp(32px,5vw,56px)"><span class="mk-mark"><span class="a">Med</span><span class="b">Kayfab</span></span><span class="hero-tag">Medical Mnemonics</span></h1>
-    <p class="hero-lead" style="margin-bottom:0;max-width:none">Cut &amp; Play Comic · Clinical Edition · Solo or 1-6 · 20-60 Min · <span style="white-space:nowrap">CC BY-NC-SA 4.0</span></p>
+  <div class="hero" style="padding-top:var(--sp-12);padding-bottom:var(--sp-8)">
+    <div class="sec-eyebrow">Doc FrizzleBob's Medical Kard Kult</div>
+    <h1 class="origin-title"><span class="mk-mark"><span class="a">Med</span><span class="b">Kayfab</span></span> Medical Mnemonics</h1>
+    <p class="origin-subtitle" style="max-width:none">Cut &amp; Play Comic · Clinical Edition · Solo or 1-6 · 20-60 Min · <span style="white-space:nowrap">CC BY-NC-SA 4.0</span></p>
   </div>
   <div class="page-body">
     <nav class="sidebar" id="toc-med">
+      <div class="toc-label">Contents</div>
       <a href="#med-booklet">The Comic</a>
       <a href="#med-what">What is this?</a>
       <a href="#med-cut">The First Cut</a>
@@ -2001,10 +2132,11 @@ body.lang-de .l-de{display:revert;}
       <div class="rules-section" id="med-what">
         <div class="sec-title">What it is.</div>
         <p class="prose">MedKayfab is the KayfaBizarro engine applied to pathophysiology. You each play a Character — a <strong>clinician, a drug, an immune cell, a rogue signalling molecule, or a personified disease</strong>. Together you build a shared Clinical Stage and push a Medical Quest toward resolution.</p>
+        <div class="note"><span class="note-label">Key terms:</span> <strong>Character</strong> = the disease, drug or cell you play · <strong>Stage</strong> = three shared Scene slots (clinical contexts) · <strong>Quest</strong> = the case, and where it's heading · <strong>Your Call</strong> = you rate how far it got · <strong>Kayfabe</strong> = treat the made-up as real.</div>
         <p class="prose">The mechanism you perform on your turn is the mechanism you remember at 4am. <strong>No win condition. No score.</strong> Just a pathophysiology you can explain the next morning without looking at the card.</p>
         <p class="prose">If you know KayfaBizarro Freestyle already: same five steps, same Stage, same BLÖDSINN! — but the Story-Mode Die becomes the <strong>Clinical Mode Die</strong>, and every card carries a disease mechanism instead of a story beat.</p>
         <div class="sec-sub">What you need</div>
-        <div class="rule-line"><span class="rule-key">Cards —</span> Each player brings 15–20 MedKayfab cards. Shuffle into one shared deck. Characters are clinicians, drugs, cells, or personified diseases. Scene cards are clinical contexts. Quest cards are cases.</div>
+        <div class="rule-line"><span class="rule-key">Cards —</span> Each player brings 15–20 MedKayfab cards. Shuffle into one shared deck. Characters are clinicians, drugs, cells, or personified diseases. Scene cards are clinical contexts. Quest cards are cases. <em>Rule of thumb: a Character if it's a who or agent, a Scene if it's a clinical context, a Quest if it's a case.</em></div>
         <div class="rule-line"><span class="rule-key">Two D6 —</span> One <em>Clinical Mode Die</em>, one <em>Quest Die</em>. Both visible at all times.</div>
         <div class="rule-line"><span class="rule-key">Blank paper & a pen (optional) —</span> Doodle and graphic-record as you play — group anti-journaling, not just solo. The sheet becomes the group's running record, and at the Finale, the official version.</div>
         <div class="rule-line"><span class="rule-key">Solo or 1–6 —</span> Works solo for exam prep. Works best at 3–5 around a table. Works at any hour, but 2am hits different.</div>
@@ -2056,7 +2188,7 @@ body.lang-de .l-de{display:revert;}
           <div class="step-card-header"><span class="step-card-title">The Five-Step Turn</span><span class="step-card-meta">~2 min per player</span></div>
           <div class="step-row"><span class="step-num">1</span><span class="step-label">Roll the Clinical Mode Die</span><span class="step-body">This is your Mode for this turn. Not optional. Commit to it — the Mode tells you <em>how</em> to approach the mechanism, not whether to approach it.</span></div>
           <div class="step-row"><span class="step-num">2</span><span class="step-label">Play a Card</span><span class="step-body">Play one of your three: a Scene card into a Stage slot (empty, or overwrite one at 3/3) OR switch your Character. Always run the Card Ritual.</span></div>
-          <div class="step-row"><span class="step-num">3</span><span class="step-label">Tell your story</span><span class="step-body">Speak as your Actor, first person, in the Mode you rolled. Weave the Stage into the clinical narrative. <strong>Power woven in → card to discard. Power skipped → card stays on Stage.</strong></span></div>
+          <div class="step-row"><span class="step-num">3</span><span class="step-label">Tell your story</span><span class="step-body">Speak as your Actor, first person, in the Mode you rolled. Weave the Stage into the clinical narrative. First rounds, the Stage isn't full yet: weave what's already there, it fills up as you play. <strong>Power woven in → card to discard. Power skipped → card stays on Stage.</strong></span></div>
           <div class="step-row"><span class="step-num">4</span><span class="step-label">Draw a Card</span><span class="step-body">Draw one from the shared deck so you're holding three again for next turn.</span></div>
           <div class="step-row"><span class="step-num">5</span><span class="step-label">Your Call</span><span class="step-body">How far along is this case? Your call: <strong>+2, +1, 0, or −1</strong> on the Quest Die.</span></div>
         </div>
@@ -2097,6 +2229,7 @@ body.lang-de .l-de{display:revert;}
       <div class="rules-section" id="med-quest">
         <div class="sec-title">The Quest Die</div>
         <p class="prose">The Quest Die tracks where the case is in its arc. It is not a timer — it is a clinical compass. <em>You decide when to move it.</em> A Quest Die at 1 is a patient in triage. At 5, someone is about to make a decision they cannot take back. At 6, the case closes.</p>
+        <div class="note"><span class="note-label">Heads up:</span> you never <em>roll</em> the Quest Die; it's a tracker you push, not a throw.</div>
         <div class="quest-strip">
           <div class="qd-cell" style="background:rgba(42,122,106,.09)"><div class="qd-num">1-2</div><div class="qd-name">Anamnesis</div><div class="qd-sub">Symptoms</div></div>
           <div class="qd-cell" style="background:rgba(184,92,0,.09)"><div class="qd-num">3-4</div><div class="qd-name">Workup</div><div class="qd-sub">Escalation</div></div>
@@ -2186,13 +2319,14 @@ body.lang-de .l-de{display:revert;}
 
 <!-- ========== MED DE (rules unchanged) ========== -->
 <div class="page" id="page-med_de">
-  <div class="hero with-border" style="padding-bottom:var(--sp-8)">
-    <div class="hero-eyebrow">Doc FrizzleBobs Medizinischer Kard Kult</div>
-    <h1 class="hero-title" style="font-size:clamp(32px,5vw,56px)"><span class="mk-mark"><span class="a">Med</span><span class="b">Kayfab</span></span><span class="hero-tag">Medizinische Eselsbrücken</span></h1>
-    <p class="hero-lead" style="margin-bottom:0;max-width:none">Cut &amp; Play Comic · Klinische Edition · Solo oder 1-6 · 20-60 Min · <span style="white-space:nowrap">CC BY-NC-SA 4.0</span></p>
+  <div class="hero" style="padding-top:var(--sp-12);padding-bottom:var(--sp-8)">
+    <div class="sec-eyebrow">Doc FrizzleBobs Medizinischer Kard Kult</div>
+    <h1 class="origin-title"><span class="mk-mark"><span class="a">Med</span><span class="b">Kayfab</span></span> Medizinische Eselsbrücken</h1>
+    <p class="origin-subtitle" style="max-width:none">Cut &amp; Play Comic · Klinische Edition · Solo oder 1-6 · 20-60 Min · <span style="white-space:nowrap">CC BY-NC-SA 4.0</span></p>
   </div>
   <div class="page-body">
     <nav class="sidebar" id="toc-med_de">
+      <div class="toc-label">Inhalt</div>
       <a href="#med_de-booklet">Der Comic</a>
       <a href="#med_de-what">Worum geht's?</a>
       <a href="#med_de-cut">Der erste Schnitt</a>
@@ -2231,10 +2365,11 @@ body.lang-de .l-de{display:revert;}
       <div class="rules-section" id="med_de-what">
         <div class="sec-title">Worum geht's.</div>
         <p class="prose">MedKayfab ist die KayfaBizarro-Engine, angewandt auf Pathophysiologie. Jeder spielt einen Character — eine <strong>Klinikerin, einen Wirkstoff, eine Immunzelle, ein entgleistes Signalmolekül oder eine personifizierte Erkrankung.</strong> Gemeinsam baut ihr eine geteilte klinische Bühne und treibt eine medizinische Quest zur Auflösung.</p>
+        <div class="note"><span class="note-label">Schlüsselbegriffe:</span> <strong>Character</strong> = die Krankheit, der Wirkstoff oder die Zelle, die du spielst · <strong>Bühne</strong> = drei geteilte Scene-Slots (klinische Kontexte) · <strong>Quest</strong> = der Fall und wohin er läuft · <strong>Deine Entscheidung</strong> = du bewertest, wie weit er kam · <strong>Kayfabe</strong> = das Erfundene als echt behandeln.</div>
         <p class="prose">Der Mechanismus, den du in deinem Zug performst, ist der Mechanismus, den du um 4 Uhr morgens noch weißt. <strong>Keine Siegbedingung. Kein Score.</strong> Nur eine Pathophysiologie, die du am nächsten Morgen ohne Karte erklären kannst.</p>
         <p class="prose">Wenn du KayfaBizarro Freestyle schon kennst: dieselben fünf Schritte, dieselbe Bühne, dasselbe BLÖDSINN! — aber der Story-Mode-Würfel wird zum <strong>Clinical-Mode-Würfel</strong>, und jede Karte trägt einen Krankheitsmechanismus statt eines Story-Beats.</p>
         <div class="sec-sub">Was ihr braucht</div>
-        <div class="rule-line"><span class="rule-key">Karten —</span> Jeder bringt 15–20 MedKayfab-Karten. In einen gemeinsamen Stapel mischen. Characters sind Klinikerinnen, Wirkstoffe, Zellen oder personifizierte Erkrankungen. Scene-Karten sind klinische Kontexte. Quest-Karten sind Fälle.</div>
+        <div class="rule-line"><span class="rule-key">Karten —</span> Jeder bringt 15–20 MedKayfab-Karten. In einen gemeinsamen Stapel mischen. Characters sind Klinikerinnen, Wirkstoffe, Zellen oder personifizierte Erkrankungen. Scene-Karten sind klinische Kontexte. Quest-Karten sind Fälle. <em>Daumenregel: ein Character, wenn sie ein Wer oder Agens ist, eine Scene, wenn sie ein klinischer Kontext ist, eine Quest, wenn sie ein Fall ist.</em></div>
         <div class="rule-line"><span class="rule-key">Zwei W6 —</span> Ein <em>Clinical-Mode-Würfel</em>, ein <em>Quest-Würfel</em>. Beide jederzeit sichtbar.</div>
         <div class="rule-line"><span class="rule-key">Blankes Papier & ein Stift (optional) —</span> Doodle und graphic-record während der Züge — Group-Anti-Journaling, nicht nur Solo. Das Blatt wird das laufende Protokoll der Gruppe — und am Finale die offizielle Version.</div>
         <div class="rule-line"><span class="rule-key">Solo oder 1–6 —</span> Funktioniert solo zur Prüfungsvorbereitung. Am besten zu 3–5 am Tisch. Funktioniert zu jeder Uhrzeit, aber 2 Uhr morgens trifft anders.</div>
@@ -2286,7 +2421,7 @@ body.lang-de .l-de{display:revert;}
           <div class="step-card-header"><span class="step-card-title">Der Fünf-Schritte-Zug</span><span class="step-card-meta">~2 Min pro Spieler</span></div>
           <div class="step-row"><span class="step-num">1</span><span class="step-label">Clinical-Mode-Würfel werfen</span><span class="step-body">Das ist dein Modus für diesen Zug. Nicht optional. Committe dich — der Modus sagt, <em>wie</em> du an den Mechanismus rangehst.</span></div>
           <div class="step-row"><span class="step-num">2</span><span class="step-label">Karte spielen</span><span class="step-body">Spiel eine deiner drei: eine Scene auf einen Bühnen-Slot (leer, oder bei 3/3 überschreiben) ODER wechsle deinen Character. Immer das Karten-Ritual.</span></div>
-          <div class="step-row"><span class="step-num">3</span><span class="step-label">Erzähl deine Geschichte</span><span class="step-body">Sprich als dein Actor, erste Person, in deinem gewürfelten Modus. Webe die Bühne in die klinische Erzählung. <strong>Power eingewoben → Ablage. Power ausgelassen → bleibt auf der Bühne.</strong></span></div>
+          <div class="step-row"><span class="step-num">3</span><span class="step-label">Erzähl deine Geschichte</span><span class="step-body">Sprich als dein Actor, erste Person, in deinem gewürfelten Modus. Webe die Bühne in die klinische Erzählung. In den ersten Runden ist die Bühne noch nicht voll: web, was schon liegt, sie füllt sich beim Spielen. <strong>Power eingewoben → Ablage. Power ausgelassen → bleibt auf der Bühne.</strong></span></div>
           <div class="step-row"><span class="step-num">4</span><span class="step-label">Karte ziehen</span><span class="step-body">Zieh eine Karte vom gemeinsamen Stapel, sodass du wieder drei auf der Hand hast.</span></div>
           <div class="step-row"><span class="step-num">5</span><span class="step-label">Deine Entscheidung</span><span class="step-body">Wie weit ist dieser Fall? Deine Entscheidung: <strong>+2, +1, 0 oder −1</strong> am Quest-Würfel.</span></div>
         </div>
@@ -2327,6 +2462,7 @@ body.lang-de .l-de{display:revert;}
       <div class="rules-section" id="med_de-quest">
         <div class="sec-title">Der Quest-Würfel</div>
         <p class="prose">Der Quest-Würfel verfolgt, wo der Fall in seinem Bogen steht. Er ist kein Timer — er ist ein klinischer Kompass. <em>Du entscheidest, wann du ihn bewegst.</em> Ein Quest-Würfel auf 1 ist ein Patient in der Triage. Auf 5 trifft gleich jemand eine unwiderrufliche Entscheidung. Auf 6 schließt der Fall.</p>
+        <div class="note"><span class="note-label">Kurz:</span> den Quest-Würfel <em>würfelst</em> du nie; er ist ein Tracker, den man schiebt, kein Wurf.</div>
         <div class="quest-strip">
           <div class="qd-cell" style="background:rgba(42,122,106,.12)"><div class="qd-num">1-2</div><div class="qd-name">Anamnese</div><div class="qd-sub">Symptome</div></div>
           <div class="qd-cell" style="background:rgba(184,92,0,.12)"><div class="qd-num">3-4</div><div class="qd-name">Workup</div><div class="qd-sub">Eskalation</div></div>
@@ -2415,12 +2551,12 @@ body.lang-de .l-de{display:revert;}
 
 
 <!-- ========== FOOTER ========== -->
-<div class="foot-manifesto" style="max-width:600px;margin:0 auto;padding:var(--sp-7) var(--sp-5) var(--sp-4);text-align:center;">
+<div class="foot-manifesto" style="max-width:var(--lay-prose);margin:0 auto;padding:var(--sp-7) var(--sp-8) var(--sp-4);text-align:left;">
   <div class="l-en">
   <div class="sec-eyebrow" style="display:inline-block;">One Last Thing</div>
   <p class="prose" style="margin-bottom:var(--sp-3)">KayfaBizarro is unfinished by design. I didn't finish it. That part's yours.</p>
   <p class="prose" style="margin-bottom:var(--sp-3)">You're not playing someone else's game. After the first cut, you've entered Uncle FrizzleBob's Anarcho-Protopian Komik Kard Kutter Kult — now go build your own KayfaBizarro Kosmos.</p>
-  <ol class="prose" style="margin:0 auto var(--sp-3);max-width:max-content;text-align:left;padding-left:1.4em;"><li>If something breaks, fix it.</li><li>If something's missing, add it.</li><li>If something's too much, drop it.</li></ol>
+  <ol class="prose" style="margin:0 0 var(--sp-3);max-width:max-content;text-align:left;padding-left:1.4em;"><li>If something breaks, fix it.</li><li>If something's missing, add it.</li><li>If something's too much, drop it.</li></ol>
   <p class="prose" style="margin-bottom:var(--sp-3)"><strong>KayfaBizarro trusts you.</strong></p>
   <p class="prose" style="margin-bottom:0">Destroy this comic. Cut the cards. Shuffle them. Start playing. See what happens.</p>
   </div>
@@ -2428,7 +2564,7 @@ body.lang-de .l-de{display:revert;}
   <div class="sec-eyebrow" style="display:inline-block;">Zum Schluss</div>
   <p class="prose" style="margin-bottom:var(--sp-3)">KayfaBizarro ist mit Absicht unfertig. Ich hab's nicht fertig gemacht. Der Teil gehört dir.</p>
   <p class="prose" style="margin-bottom:var(--sp-3)">Du spielst nicht das Spiel von jemand anderem. Nach dem ersten Schnitt hast du Onkel FrizzleBobs Anarcho-Protopian Komik Kard Kutter Kult betreten — jetzt bau deinen eigenen KayfaBizarro Kosmos.</p>
-  <ol class="prose" style="margin:0 auto var(--sp-3);max-width:max-content;text-align:left;padding-left:1.4em;"><li>Wenn was kaputtgeht, reparier es.</li><li>Wenn was fehlt, füg es hinzu.</li><li>Wenn was zu viel ist, lass es weg.</li></ol>
+  <ol class="prose" style="margin:0 0 var(--sp-3);max-width:max-content;text-align:left;padding-left:1.4em;"><li>Wenn was kaputtgeht, reparier es.</li><li>Wenn was fehlt, füg es hinzu.</li><li>Wenn was zu viel ist, lass es weg.</li></ol>
   <p class="prose" style="margin-bottom:var(--sp-3)"><strong>KayfaBizarro vertraut dir.</strong></p>
   <p class="prose" style="margin-bottom:0">Zerstör diesen Comic. Schneide die Karten. Misch sie. Fang an zu spielen. Schau, was passiert.</p>
   </div>
@@ -2457,14 +2593,14 @@ body.lang-de .l-de{display:revert;}
     <a href="https://cancelthiscomic.substack.com/t/kayfabizarro" target="_blank" rel="noopener">Cancel This Comic on Substack</a> · <a href="https://georgvw.gumroad.com/?section=V4n4XYemvn1-_RTR-Oew8A==#V4n4XYemvn1-_RTR-Oew8A==" target="_blank" rel="noopener">georgvw on Gumroad</a><br>
     <span style="white-space:nowrap">CC BY-NC-SA 4.0</span> · Pay What You Want · Do Not Resell<br>
     Version 19.0 · last edit 14 May 2026<br><br>
-    <span style="font-style:italic;opacity:.75">KayfaBizarro comic cards may contain trace elements of truth, recursive satire, or unauthorized epistemic experimentation. Any resemblance to real-world institutions or peer-reviewed echo chambers is statistically inevitable. Player discretion is mandatory. Play responsibly. Or don't.</span>
+    <span style="font-style:italic;opacity:.75">KayfaBizarro comic cards may contain trace elements of truth, recursive satire, or unauthorized epistemic experimentation.<br>Any resemblance to real-world institutions or peer-reviewed echo chambers is statistically inevitable.<br>Player discretion is mandatory. Play responsibly. Or don't.</span>
   </div>
   <div class="foot-bar l-de">
     KayfaBizarro &amp; MedKayfab · von Georg von Westphalen<br>
     <a href="https://cancelthiscomic.substack.com/t/kayfabizarro" target="_blank" rel="noopener">Cancel This Comic auf Substack</a> · <a href="https://georgvw.gumroad.com/?section=V4n4XYemvn1-_RTR-Oew8A==#V4n4XYemvn1-_RTR-Oew8A==" target="_blank" rel="noopener">georgvw auf Gumroad</a><br>
     <span style="white-space:nowrap">CC BY-NC-SA 4.0</span> · Zahl, was du willst · Nicht weiterverkaufen<br>
     Version 19.0 · letzte Änderung 14. Mai 2026<br><br>
-    <span style="font-style:italic;opacity:.75">KayfaBizarro-Comic-Karten können Spuren von Wahrheit, rekursiver Satire oder nicht genehmigter erkenntnistheoretischer Experimente enthalten. Jede Ähnlichkeit mit realen Institutionen oder peer-reviewten Echokammern ist statistisch unvermeidlich. Spieler-Diskretion ist Pflicht. Spiel verantwortungsvoll. Oder auch nicht.</span>
+    <span style="font-style:italic;opacity:.75">KayfaBizarro-Comic-Karten können Spuren von Wahrheit, rekursiver Satire oder nicht genehmigter erkenntnistheoretischer Experimente enthalten.<br>Jede Ähnlichkeit mit realen Institutionen oder peer-reviewten Echokammern ist statistisch unvermeidlich.<br>Spieler-Diskretion ist Pflicht. Spiel verantwortungsvoll. Oder auch nicht.</span>
   </div>
 </div>
 
@@ -2496,7 +2632,7 @@ function toggleTheme(){var d=document.body.classList.toggle('dark');var b=docume
 try{if(localStorage.getItem('kfb-theme')==='dark'){document.body.classList.add('dark');var _tb=document.getElementById('theme-btn');if(_tb)_tb.textContent='☀';}}catch(e){}
 document.addEventListener('click',function(e){var lw=document.querySelector('.lang-wrap');var dd=document.getElementById('lang-dropdown');if(dd&&lw&&!lw.contains(e.target)) dd.classList.remove('open');});
 var currentLang='en';
-var tbMap={'home':'tb-home','kfb':'tb-kfb','med':'tb-med','cutplay':'tb-cutplay','protopia':'tb-protopia'};
+var tbMap={'home':'tb-home','thegame':'tb-thegame','kfb':'tb-kfb','med':'tb-med','cutplay':'tb-cutplay','protopia':'tb-protopia'};
 var _switchingLang=false;
 function switchLang(lang){
   document.getElementById('lang-dropdown').classList.remove('open');
@@ -2560,6 +2696,7 @@ function applyHash(){
   var h=location.hash.replace('#','').trim();
   if(!h||h==='home'){goPage('home',document.getElementById('tb-home'));return;}
   if(h==='home_de'){goPage('home_de',document.getElementById('tb-home'));return;}
+  if(h==='thegame'||h==='thegame_de'){goPage(h,document.getElementById('tb-thegame'));return;}
   if(h==='kfb'||h==='kfb_de'){goPage(h,document.getElementById('tb-kfb'));return;}
   if(h==='med'||h==='med_de'){goPage(h,document.getElementById('tb-med'));return;}
   if(h==='cutplay'||h==='cutplay_de'){goPage(h,document.getElementById('tb-cutplay'));return;}
@@ -2793,6 +2930,67 @@ if(!location.hash) goPage('home',document.getElementById('tb-home'));
 function openLightbox(webp,jpg,alt){var o=document.getElementById('lb');if(!o)return;document.getElementById('lb-webp').srcset=webp;var i=document.getElementById('lb-img');i.src=jpg;i.alt=alt||'';o.classList.add('open');document.body.style.overflow='hidden';}
 function closeLightbox(){var o=document.getElementById('lb');if(o)o.classList.remove('open');document.body.style.overflow='';}
 document.addEventListener('keydown',function(e){if(e.key==='Escape')closeLightbox();});
+</script>
+<script>
+(function(){
+  var railEl=document.querySelector('.cut-rail'),done=document.getElementById('cutDone'),
+      sc=document.getElementById('cutScissor'),pct=document.getElementById('cutPct');
+  if(!railEl||!done||!sc) return;
+  var reduce=matchMedia('(prefers-reduced-motion:reduce)').matches;
+  var tick=false,scrolling=false,stopT=null,GIF='media/scissors.gif',STILL='media/scissors_open.png';
+  function rail(){
+    var h=document.documentElement,max=h.scrollHeight-h.clientHeight,y=h.scrollTop||window.scrollY,p=max>0?Math.min(1,y/max):0;
+    var top=(parseInt(getComputedStyle(railEl).top)||56)+30,vh=window.innerHeight-top,y2=top+p*vh;
+    done.style.height=(p*vh)+'px';sc.style.top=y2+'px';
+    if(pct){pct.style.top=y2+'px';pct.textContent=String(Math.round(p*100)).padStart(2,'0');}
+    tick=false;
+  }
+  function snip(){
+    if(reduce) return;
+    if(!scrolling){scrolling=true;sc.src=GIF;}
+    clearTimeout(stopT);
+    stopT=setTimeout(function(){scrolling=false;sc.src=STILL;},340);
+  }
+  addEventListener('scroll',function(){if(!tick){requestAnimationFrame(rail);tick=true;}snip();},{passive:true});
+  addEventListener('resize',rail);rail();
+})();
+</script>
+<script>
+/* home hero halftone duotone dots — ported from Immersive standalone */
+(function(){
+  var raf=0, reduce=matchMedia('(prefers-reduced-motion:reduce)').matches;
+  function startHalftone(page){
+    if(!page) return;
+    var cv=page.querySelector('canvas[data-halftone]'); if(!cv) return;
+    var hero=cv.parentElement, ctx=cv.getContext('2d');
+    cv.width=hero.clientWidth; cv.height=hero.clientHeight;
+    var t=0; cancelAnimationFrame(raf);
+    function draw(){
+      var W=cv.width,H=cv.height,gap=20,maxR=3.1;
+      ctx.clearRect(0,0,W,H); ctx.fillStyle='rgba(120,90,40,.30)';
+      var fx=W*(0.5+0.3*Math.sin(t*0.0004)), fy=H*(0.45+0.28*Math.cos(t*0.0005));
+      for(var y=0;y<H;y+=gap)for(var x=0;x<W;x+=gap){
+        var d=Math.hypot(x-fx,y-fy)/Math.hypot(W,H),
+            w=0.5+0.5*Math.sin(x*0.02+y*0.018+t*0.0016),
+            r=maxR*(1-d)*w;
+        if(r>0.3){ctx.beginPath();ctx.arc(x,y,r,0,6.283);ctx.fill();}
+      }
+    }
+    if(reduce){draw();return;}
+    (function loop(){t+=16;draw();raf=requestAnimationFrame(loop);})();
+  }
+  function activeHome(){
+    var a=document.querySelector('.page.active');
+    return (a && (a.id==='page-home'||a.id==='page-home_de')) ? a : null;
+  }
+  function kick(){ var h=activeHome(); if(h){ startHalftone(h); } else { cancelAnimationFrame(raf); } }
+  if(typeof window.goPage==='function'){
+    var _gp=window.goPage;
+    window.goPage=function(){ var r=_gp.apply(this,arguments); kick(); return r; };
+  }
+  addEventListener('resize',function(){ var h=activeHome(); if(h) startHalftone(h); });
+  if(document.readyState!=='loading') kick(); else addEventListener('DOMContentLoaded',kick);
+})();
 </script>
 </body>
 </html>
