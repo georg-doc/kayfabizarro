@@ -906,6 +906,10 @@ body::before{opacity:.4;}
 
 
 
+/* language-switch chrome (shared footer + nav) */
+.l-de{display:none;}
+body.lang-de .l-en{display:none;}
+body.lang-de .l-de{display:revert;}
 </style>
 </head>
 <body>
@@ -927,12 +931,12 @@ body::before{opacity:.4;}
     <span class="tb-name kb-mark"><span class="a">Kayfa</span><span class="b">Bizarro</span></span>
   </a>
   <nav class="tb-nav">
-    <button class="tb-nav-btn active" id="tb-home" onclick="goPage('home',this)">The Game</button>
+    <button class="tb-nav-btn active" id="tb-home" onclick="goPage('home',this)"><span class="l-en">The Game</span><span class="l-de">Das Spiel</span></button>
     <button class="tb-nav-btn" id="tb-kfb" onclick="goPage('kfb',this)">KayfaBizarro</button>
     <button class="tb-nav-btn" id="tb-med" onclick="goPage('med',this)">MedKayfab</button>
     <button class="tb-nav-btn" id="tb-cutplay" onclick="goPage('cutplay',this)">Cut &amp; Play</button>
     <button class="tb-nav-btn" id="tb-protopia" onclick="goPage('protopia',this)">Protopia</button>
-    <a class="tb-nav-btn tb-nav-ext" href="https://georgvw.gumroad.com/?section=V4n4XYemvn1-_RTR-Oew8A==#V4n4XYemvn1-_RTR-Oew8A==" target="_blank" rel="noopener">Free Decks</a>
+    <a class="tb-nav-btn tb-nav-ext" href="https://georgvw.gumroad.com/?section=V4n4XYemvn1-_RTR-Oew8A==#V4n4XYemvn1-_RTR-Oew8A==" target="_blank" rel="noopener"><span class="l-en">Free Decks</span><span class="l-de">Gratis-Decks</span></a>
     <a class="tb-nav-btn tb-nav-ext" href="https://cancelthiscomic.substack.com/t/kayfabizarro" target="_blank" rel="noopener">Blog</a>
   </nav>
   <div class="tb-right">
@@ -2412,22 +2416,33 @@ body::before{opacity:.4;}
 
 <!-- ========== FOOTER ========== -->
 <div class="foot-manifesto" style="max-width:600px;margin:0 auto;padding:var(--sp-7) var(--sp-5) var(--sp-4);text-align:center;">
+  <div class="l-en">
   <div class="sec-eyebrow" style="display:inline-block;">One Last Thing</div>
   <p class="prose" style="margin-bottom:var(--sp-3)">KayfaBizarro is unfinished by design. I didn't finish it. That part's yours.</p>
   <p class="prose" style="margin-bottom:var(--sp-3)">You're not playing someone else's game. After the first cut, you've entered Uncle FrizzleBob's Anarcho-Protopian Komik Kard Kutter Kult — now go build your own KayfaBizarro Kosmos.</p>
-  <p class="prose" style="margin-bottom:var(--sp-3)">1. If something breaks, fix it. &nbsp;&middot;&nbsp; 2. If something's missing, add it. &nbsp;&middot;&nbsp; 3. If something's too much, drop it.</p>
+  <ol class="prose" style="margin:0 auto var(--sp-3);max-width:max-content;text-align:left;padding-left:1.4em;"><li>If something breaks, fix it.</li><li>If something's missing, add it.</li><li>If something's too much, drop it.</li></ol>
   <p class="prose" style="margin-bottom:var(--sp-3)"><strong>KayfaBizarro trusts you.</strong></p>
   <p class="prose" style="margin-bottom:0">Destroy this comic. Cut the cards. Shuffle them. Start playing. See what happens.</p>
+  </div>
+  <div class="l-de">
+  <div class="sec-eyebrow" style="display:inline-block;">Zum Schluss</div>
+  <p class="prose" style="margin-bottom:var(--sp-3)">KayfaBizarro ist mit Absicht unfertig. Ich hab's nicht fertig gemacht. Der Teil gehört dir.</p>
+  <p class="prose" style="margin-bottom:var(--sp-3)">Du spielst nicht das Spiel von jemand anderem. Nach dem ersten Schnitt hast du Onkel FrizzleBobs Anarcho-Protopian Komik Kard Kutter Kult betreten — jetzt bau deinen eigenen KayfaBizarro Kosmos.</p>
+  <ol class="prose" style="margin:0 auto var(--sp-3);max-width:max-content;text-align:left;padding-left:1.4em;"><li>Wenn was kaputtgeht, reparier es.</li><li>Wenn was fehlt, füg es hinzu.</li><li>Wenn was zu viel ist, lass es weg.</li></ol>
+  <p class="prose" style="margin-bottom:var(--sp-3)"><strong>KayfaBizarro vertraut dir.</strong></p>
+  <p class="prose" style="margin-bottom:0">Zerstör diesen Comic. Schneide die Karten. Misch sie. Fang an zu spielen. Schau, was passiert.</p>
+  </div>
 </div>
 
 <!-- FOOTER VIDEO -->
 <div class="foot-video-wrap">
-  <div class="sec-eyebrow" style="color:var(--paper);opacity:.65;text-align:center;margin-bottom:var(--sp-4)">Watch the original</div>
+  <div class="sec-eyebrow l-en" style="color:var(--paper);opacity:.65;text-align:center;margin-bottom:var(--sp-4)">Watch the original</div>
+  <div class="sec-eyebrow l-de" style="color:var(--paper);opacity:.65;text-align:center;margin-bottom:var(--sp-4)">Schau dir das Original an</div>
   <div class="foot-video-poster" id="foot-video" onclick="playLpVideo('foot-video','O5LSnJ1WMt8')">
     <img src="https://img.youtube.com/vi/O5LSnJ1WMt8/hqdefault.jpg" alt="KayfaBizarro - the original video" style="width:100%;height:100%;object-fit:cover;display:block;" onerror="this.style.display='none'">
     <div class="lp-video-overlay">
       <div class="lp-play-btn"><svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="32" cy="32" r="32" fill="rgba(0,0,0,0.55)"/><polygon points="26,20 50,32 26,44" fill="white"/></svg></div>
-      <div class="lp-video-label">KayfaBizarro — the original</div>
+      <div class="lp-video-label l-en">KayfaBizarro — the original</div><div class="lp-video-label l-de">KayfaBizarro — das Original</div>
     </div>
   </div>
 </div>
@@ -2435,14 +2450,21 @@ body::before{opacity:.4;}
 <div class="hub-foot" style="border-top:none;">
   <div class="foot-display">
     <div class="foot-big">Stay <a class="swipe foot-fluffy" href="https://kayfabizarro.pages.dev/" rel="noopener">Fluffy!</a></div>
-    <div class="foot-sig"><em>Uncle FrizzleBob</em></div>
+    <div class="foot-sig"><em class="l-en">Uncle FrizzleBob</em><em class="l-de">Onkel FrizzleBob</em></div>
   </div>
-  <div class="foot-bar">
+  <div class="foot-bar l-en">
     KayfaBizarro &amp; MedKayfab · by Georg von Westphalen<br>
     <a href="https://cancelthiscomic.substack.com/t/kayfabizarro" target="_blank" rel="noopener">Cancel This Comic on Substack</a> · <a href="https://georgvw.gumroad.com/?section=V4n4XYemvn1-_RTR-Oew8A==#V4n4XYemvn1-_RTR-Oew8A==" target="_blank" rel="noopener">georgvw on Gumroad</a><br>
     <span style="white-space:nowrap">CC BY-NC-SA 4.0</span> · Pay What You Want · Do Not Resell<br>
     Version 19.0 · last edit 14 May 2026<br><br>
     <span style="font-style:italic;opacity:.75">KayfaBizarro comic cards may contain trace elements of truth, recursive satire, or unauthorized epistemic experimentation. Any resemblance to real-world institutions or peer-reviewed echo chambers is statistically inevitable. Player discretion is mandatory. Play responsibly. Or don't.</span>
+  </div>
+  <div class="foot-bar l-de">
+    KayfaBizarro &amp; MedKayfab · von Georg von Westphalen<br>
+    <a href="https://cancelthiscomic.substack.com/t/kayfabizarro" target="_blank" rel="noopener">Cancel This Comic auf Substack</a> · <a href="https://georgvw.gumroad.com/?section=V4n4XYemvn1-_RTR-Oew8A==#V4n4XYemvn1-_RTR-Oew8A==" target="_blank" rel="noopener">georgvw auf Gumroad</a><br>
+    <span style="white-space:nowrap">CC BY-NC-SA 4.0</span> · Zahl, was du willst · Nicht weiterverkaufen<br>
+    Version 19.0 · letzte Änderung 14. Mai 2026<br><br>
+    <span style="font-style:italic;opacity:.75">KayfaBizarro-Comic-Karten können Spuren von Wahrheit, rekursiver Satire oder nicht genehmigter erkenntnistheoretischer Experimente enthalten. Jede Ähnlichkeit mit realen Institutionen oder peer-reviewten Echokammern ist statistisch unvermeidlich. Spieler-Diskretion ist Pflicht. Spiel verantwortungsvoll. Oder auch nicht.</span>
   </div>
 </div>
 
@@ -2509,6 +2531,7 @@ function goPage(id,btn){
   var isMed=id==='med'||id==='med_de';
   document.body.classList.toggle('med',isMed);
   document.getElementById('html-root').lang=id.endsWith('_de')?'de':'en';
+  document.body.classList.toggle('lang-de', id.endsWith('_de'));
   if(!_switchingLang){
     currentLang=id.endsWith('_de')?'de':'en';
     document.getElementById('lang-flag').textContent=currentLang==='de'?'🇩🇪':'🇬🇧';
