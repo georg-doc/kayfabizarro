@@ -1,12 +1,12 @@
 
-<!-- KFB Hub · canonical: RULES & HUB/index.html · rules content v3 · last edit 2026-06-29 (incl. object-acting + confetti-reframe fixes) -->
+<!-- KFB Hub · canonical: RULES & HUB/index.html · rules content v3 · last edit 2026-07-03 (CR1–CR6 rule-canon + dark-mode/ToC fixes) -->
 
 <!DOCTYPE html>
 <html lang="en" id="html-root">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Kayfabizarro - Reality is negotiable.</title>
+<title>KayfaBizarro — Reality is negotiable.</title>
 <meta name="description" content="KayfaBizarro: free print, cut and play comics. Print a deck, cut it into cards, and improvise a wild story with friends. Social story-wrestling for one to six players, pay what you want.">
 <meta property="og:title" content="KayfaBizarro Social Story-Wrestling">
 <meta property="og:description" content="Free cut and play comics. Print, cut, and improvise a wild story with friends. One to six players, pay what you want.">
@@ -76,6 +76,10 @@ body.dark{
   --paper:#19150f;--paper-2:#221d15;--paper-3:#2b251c;--paper-card:#211c15;
   --border:#48402e;--border-2:#5f5339;
   --ink:#ece1c0;--ink-2:#cdc1a1;--ink-3:#9a8c70;--ink-4:#6e6450;
+  /* A1: lighten dark-invisible tokens — gold, quest ladder, mode solids */
+  --gold:#c9a94a;
+  --q-1:#d98a6f;--q-2:#d1704f;--q-3:#c85838;--q-4:#c2472a;--q-5:#bb3a22;--q-6:#cf4e30;
+  --m-1:#5a86a0;--m-2:#8aa456;--m-3:#d4a838;--m-4:#d1793e;--m-5:#8768a0;--m-6:#b45a86;
 }
 body.med.dark{
   --paper:#0f161c;--paper-2:#172029;--paper-3:#202b34;--paper-card:#141d24;
@@ -116,7 +120,7 @@ mark{background:var(--mark);color:var(--ink);padding:0 2px;border-radius:2px;}
 .lang-flag{font-size:13px;line-height:1;}
 .lang-dropdown{display:none;position:absolute;top:calc(100% + 6px);right:0;background:var(--paper-card);border:1px solid var(--border-2);border-radius:var(--r-2);overflow:hidden;min-width:120px;box-shadow:0 8px 22px rgba(0,0,0,.18);z-index:500;}
 .lang-dropdown.open{display:block;}
-.lang-opt{display:flex;align-items:center;gap:var(--sp-2);padding:9px 14px;font-family:var(--ff-ui);font-size:var(--fs-sm);font-weight:500;color:var(--ink-2);cursor:pointer;border-bottom:1px solid var(--border);transition:background var(--dur-fast),color var(--dur-fast);}
+.lang-opt{display:flex;align-items:center;gap:var(--sp-2);padding:9px 14px;font-family:var(--ff-ui);font-size:var(--fs-sm);font-weight:500;color:var(--ink-2);cursor:pointer;width:100%;text-align:left;background:transparent;border:0;border-bottom:1px solid var(--border);-webkit-appearance:none;appearance:none;transition:background var(--dur-fast),color var(--dur-fast);}
 .lang-opt:last-child{border-bottom:none;}
 .lang-opt:hover{background:var(--paper-3);color:var(--ink);}
 .lang-opt.active{color:var(--accent);font-weight:700;}
@@ -130,7 +134,7 @@ mark{background:var(--mark);color:var(--ink);padding:0 2px;border-radius:2px;}
 .hero-eyebrow{font-family:var(--ff-mono);font-size:var(--fs-xs);font-weight:500;letter-spacing:var(--ls-label);text-transform:uppercase;color:var(--accent);margin-bottom:var(--sp-4);}
 .hero-title{font-family:var(--ff-display);font-weight:800;font-size:clamp(40px,6vw,var(--fs-4xl));line-height:var(--lh-tight);letter-spacing:var(--ls-disp);color:var(--ink);margin-bottom:var(--sp-4);max-width:820px;}
 .hero-title em{font-style:normal;color:var(--accent);}
-.hero-title .hero-tag{display:block;font-size:.48em;margin-top:.42em;color:var(--ink);letter-spacing:.01em;line-height:1.05;}
+.hero-title .hero-tag{display:block;font-family:var(--ff-body);font-size:.48em;margin-top:.42em;color:var(--ink);letter-spacing:.01em;line-height:1.05;}
 .hero-subline{font-family:var(--ff-body);font-style:italic;font-size:var(--fs-lg);line-height:var(--lh-snug);color:var(--ink-3);margin-bottom:var(--sp-6);max-width:var(--lay-prose);}
 .hero-lead{font-family:var(--ff-body);font-size:var(--fs-md);line-height:var(--lh-prose);color:var(--ink-2);max-width:var(--lay-prose);margin-bottom:var(--sp-6);}
 .hero-lead strong{color:var(--ink);}
@@ -141,12 +145,12 @@ mark{background:var(--mark);color:var(--ink);padding:0 2px;border-radius:2px;}
 .you-block .yv{color:var(--ink);}
 .you-block .yrow{padding:4px 0;}
 
-.hero-tag{font-family:var(--ff-body);font-size:var(--fs-md);line-height:var(--lh-prose);color:var(--ink-2);max-width:var(--lay-prose);margin-bottom:var(--sp-6);}
-.hero-tag strong{color:var(--ink);}
+.hero-claim{font-family:var(--ff-body);font-size:var(--fs-md);line-height:var(--lh-prose);color:var(--ink-2);max-width:var(--lay-prose);margin-bottom:var(--sp-6);}
+.hero-claim strong{color:var(--ink);}
 
 /* Chips - pills not buttons */
 .hero-chips{display:flex;flex-wrap:wrap;gap:var(--sp-2);margin-bottom:var(--sp-6);}
-.chip{font-family:var(--ff-mono);font-size:10px;font-weight:500;color:var(--ink-4);padding:3px 10px;border:1px solid var(--border);border-radius:20px;background:var(--paper-2);letter-spacing:0.04em;text-transform:uppercase;}
+.chip{font-family:var(--ff-mono);font-size:var(--fs-xs);font-weight:500;color:var(--ink-4);padding:3px 10px;border:1px solid var(--border);border-radius:20px;background:var(--paper-2);letter-spacing:0.04em;text-transform:uppercase;}
 
 .hero-ctas{display:flex;flex-wrap:wrap;gap:var(--sp-3);}
 .cta-dashed{font-family:var(--ff-display);font-weight:700;font-size:var(--fs-sm);letter-spacing:var(--ls-stamp);text-transform:uppercase;color:var(--accent);padding:9px 18px;border:1.5px dashed var(--accent);border-radius:var(--r-1);background:transparent;cursor:pointer;transition:background var(--dur-fast);text-decoration:none;display:inline-block;}
@@ -195,7 +199,7 @@ body.med .cta-dashed{color:var(--accent);border-color:var(--accent);}
 .btn-ghost:hover{border-color:var(--ink);color:var(--ink);}
 @media(max-width:720px){.sidebar{display:none;}.main{padding:0 var(--sp-5);}}
 
-.main{flex:1;min-width:0;padding:var(--sp-8) var(--sp-8) 0 var(--sp-10);}
+.main{flex:1;min-width:0;padding:var(--sp-8) var(--sp-8) 0 var(--sp-8);}
 
 /* SEARCH */
 .search-wrap{position:relative;margin:0 0 var(--sp-8);max-width:var(--lay-prose);}
@@ -366,6 +370,12 @@ body.med .do{background:#d4ebe6;border-left-color:var(--med-accent);}
 body.med .ritual-key.name-it{color:#0b6b6b;}
 body.med .ritual-key.claim-it{color:#1f3147;}
 body.med .ritual-key.power-it{color:#8b4040;}
+body.dark .ritual-key.name-it{color:#d9b24a;}
+body.dark .ritual-key.claim-it{color:#c9bfa6;}
+body.dark .ritual-key.power-it{color:#d16a52;}
+body.med.dark .ritual-key.name-it{color:#4fb0a6;}
+body.med.dark .ritual-key.claim-it{color:#9fb2c4;}
+body.med.dark .ritual-key.power-it{color:#d07a6a;}
 
 .mode-num.m1{color:#a33828;}
 .mode-num.m2{color:#a07a10;}
@@ -482,7 +492,7 @@ body::before{
   content:"";position:fixed;inset:0;z-index:1;pointer-events:none;mix-blend-mode:multiply;opacity:.5;
   background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch' seed='7'/%3E%3CfeColorMatrix values='0 0 0 0 0.55 0 0 0 0 0.45 0 0 0 0 0.30 0 0 0 0.18 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
   background-size:340px 340px;}
-.topbar,.page,.foot-video-wrap,.hub-foot,.lang-dropdown{position:relative;z-index:2;}
+.topbar,.page,.foot-manifesto,.foot-video-wrap,.hub-foot,.lang-dropdown{position:relative;z-index:2;}
 
 body{font-size:15px;line-height:1.7;}
 
@@ -685,8 +695,10 @@ mark,::selection{background:var(--mark);}
 body.a11y .swipe,html[data-theme="a11y"] .swipe{transform:none;}
 .bigq{font-family:var(--ff-display);font-size:var(--fs-lg);color:var(--accent);line-height:var(--lh-snug);max-width:var(--lay-prose);margin:var(--sp-6) 0;}
 .sec-sub{margin:var(--sp-10) 0 var(--sp-4);max-width:var(--lay-prose);scroll-margin-top:90px;}
-.essay-toc{display:none;transition:opacity var(--dur-fast);}
-.essay-toc.toc-off{opacity:0;pointer-events:none;}
+.essay-toc{display:none;transition:opacity .6s cubic-bezier(0.4,0,0.2,1);}
+.sidebar{transition:opacity .6s cubic-bezier(0.4,0,0.2,1);}
+.essay-toc.toc-off,.sidebar.toc-off{opacity:0;pointer-events:none;}
+.foot-manifesto>div{max-width:var(--lay-prose);}
 .essay-toc .toc-label,.sidebar .toc-label{font-family:var(--ff-ui);font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-4);margin-bottom:10px;}
 .essay-toc a{display:block;padding:7px 0;color:var(--ink-3);text-decoration:none;border-bottom:1px dotted var(--border);font-family:var(--ff-ui);font-size:12px;line-height:1.3;letter-spacing:.01em;transition:color var(--dur-fast);}
 .essay-toc a:hover{color:var(--ink);}
@@ -746,7 +758,7 @@ body{padding-top:var(--lay-topbar);}
   --tbl-term-bg:var(--paper-2);
   --tbl-gap:var(--sp-5);
 }
-body.dark{ --tbl-divider-c:rgba(236,225,192,.15); }
+body.dark{ --tbl-divider-c:rgba(236,225,192,.15); --tbl-head-bg:var(--paper-3); --tbl-term-bg:var(--paper-3); --tbl-border:1.4px solid var(--border-2); }
 
 /* ── 1 · the shell — identical for every container ── */
 .ritual,.steps,.step-card,.modes-grid,.socials-table,.gloss-table,
@@ -848,6 +860,8 @@ body.dark{ --tbl-divider-c:rgba(236,225,192,.15); }
 /* the two #home rule-buttons carry their EDITION colour in any theme, so they
    read as a visual handshake with the KFB(red)/MedKayfab(teal) teaser boxes below */
 .hero-ctas button.cta-solid[onclick*="home-origin"]{background:var(--kfb-accent)!important;border-color:var(--ink)!important;color:#f6efd9!important;}
+.hero-ctas button.cta-solid[onclick*="'kfb'"]{background:var(--kfb-accent)!important;border-color:var(--ink)!important;color:#f6efd9!important;}
+.hero-ctas button.cta-solid[onclick*="'kfb'"]:hover{filter:brightness(.93);}
 .hero-ctas button.cta-solid[onclick*="'med'"]{background:#2f7a72!important;border-color:var(--ink)!important;color:#f6efd9!important;}
 .hero-ctas button.cta-solid[onclick*="'med'"]:hover{background:#28645d!important;}
 /* tone the paper-grain down so dense table rows stop reading as faint banding
@@ -884,7 +898,7 @@ body::before{opacity:.4;}
 
 /* ── 15 · typography polish — prevent widows/orphans (no lone last word
    like “accomplices.”) on body copy; balance display headlines. ── */
-.prose,.hero-lead,.hero-tag,.hero-subline,.origin-subtitle,.vc-desc,.vc-best,
+.prose,.hero-lead,.hero-claim,.hero-subline,.origin-subtitle,.vc-desc,.vc-best,
 .gloss-def,.soc-def,.blockquote,.note,.rd,.step-body,.ritual-desc,.mode-desc{text-wrap:pretty;}
 .hero-title,.sec-title,.origin-title,.vc-title,.sec-sub,.bigq,.origin-h,.foot-big{text-wrap:balance;}
 
@@ -893,9 +907,9 @@ body::before{opacity:.4;}
 :root{ --fs-xs:13px; --fs-sm:14px; }
 
 /* How-it-works tiles — faint background matching each tile's own accent */
-[style*="dotted #c8911f"]{background:rgba(200,145,31,.09);}
-[style*="dotted #b85636"]{background:rgba(184,86,54,.09);}
-[style*="dotted #5d6b78"]{background:rgba(93,107,120,.09);}
+.hw-t1{background:rgba(200,145,31,.09);}
+.hw-t2{background:rgba(184,86,54,.09);}
+.hw-t3{background:rgba(93,107,120,.09);}
 
 /* footer — smaller sign-off; make the legal line + disclaimer readable again
    (was --ink-4 at opacity .75 → near-invisible) */
@@ -918,6 +932,8 @@ body.lang-de :is(.tb-nav-btn,.tb-wordmark)[data-tip-de]::after{content:attr(data
 .tb-wordmark[data-tip-en]::after{left:0;transform:translateX(0) rotate(-1deg);}
 .tb-wordmark[data-tip-en]::before{left:45px;top:calc(100% + 6px);}
 @media(hover:hover) and (min-width:901px){.tb-nav{overflow:visible;}}
+@media(max-width:720px){.tb-nav{-webkit-mask-image:linear-gradient(to right,#000 80%,transparent 98%);mask-image:linear-gradient(to right,#000 80%,transparent 98%);}
+.tb-nav.at-end{-webkit-mask-image:none;mask-image:none;}}
 @media(hover:hover){:is(.tb-nav-btn,.tb-wordmark)[data-tip-en]:hover::after,:is(.tb-nav-btn,.tb-wordmark)[data-tip-en]:hover::before{opacity:1;transition-delay:.35s;}}
 
 /* cut rail — scroll = the cut (left-margin marginalia, desktop) */
@@ -966,14 +982,14 @@ body.lang-de :is(.tb-nav-btn,.tb-wordmark)[data-tip-de]::after{content:attr(data
   <div class="tb-right">
     <button class="theme-btn" id="theme-btn" onclick="toggleTheme()" aria-label="Toggle dark mode" title="Light / Dark">☾</button>
     <div class="lang-wrap">
-      <button class="lang-btn" id="lang-btn" onclick="toggleLangMenu(event)" aria-label="Language">
+      <button class="lang-btn" id="lang-btn" onclick="toggleLangMenu(event)" aria-label="Language" aria-haspopup="listbox" aria-expanded="false">
         <span class="lang-flag" id="lang-flag">🇬🇧</span>
         <span id="lang-label">EN</span>
         <span style="font-size:9px;opacity:.5" id="lang-arrow">▼</span>
       </button>
       <div class="lang-dropdown" id="lang-dropdown">
-        <div class="lang-opt active" id="lang-en" onclick="switchLang('en')"><span class="lang-flag">🇬🇧</span> English</div>
-        <div class="lang-opt" id="lang-de" onclick="switchLang('de')"><span class="lang-flag">🇩🇪</span> Deutsch</div>
+        <button type="button" class="lang-opt active" id="lang-en" onclick="switchLang('en')"><span class="lang-flag">🇬🇧</span> English</button>
+        <button type="button" class="lang-opt" id="lang-de" onclick="switchLang('de')"><span class="lang-flag">🇩🇪</span> Deutsch</button>
       </div>
     </div>
   </div>
@@ -999,7 +1015,7 @@ body.lang-de :is(.tb-nav-btn,.tb-wordmark)[data-tip-de]::after{content:attr(data
       <div class="yrow"><span class="yk">You get:</span> <span class="yv">No exit.</span></div>
     </div>
 
-    <p class="hero-tag"><strong>Cognitive dissonance as a social resonance space.</strong> Play the truth your way - with <strong>plausible deniability</strong>.</p>
+    <p class="hero-claim"><strong>Cognitive dissonance as a social resonance space.</strong> Play the truth your way - with <strong>plausible deniability</strong>.</p>
 
     <div class="hero-chips">
       <span class="chip">1-6 players</span>
@@ -1030,7 +1046,7 @@ body.lang-de :is(.tb-nav-btn,.tb-wordmark)[data-tip-de]::after{content:attr(data
     <a class="variant-card" href="#kfb" onclick="goPage('kfb',document.getElementById('tb-kfb'));return false;">
       <div class="vc-badge">Cut &amp; Play Comic · Story-Wrestling Edition</div>
       <div class="vc-title"><span class="kb-mark"><span class="a">Kayfa</span><span class="b">Bizarro</span></span> Freestyle</div>
-      <p class="vc-desc">You move one die. It shows you how close the story is to breaking. <strong>Six modes from <em>Tragic</em> to <em>Forbidden</em></strong> — the die rolls, you commit. Cards enter the <strong>Stage</strong> through <em>Show it. Spin it. Sell it.</em> When someone calls <em>BLÖDSINN!</em>, the room stops and you all decide. <strong>Nobody leaves having lost. Everyone leaves slightly different.</strong> Including the things said that couldn't have been said over dinner.</p>
+      <p class="vc-desc">Two dice: one you roll for your <strong>tone</strong> — six modes from <em>Tragic</em> to <em>Forbidden</em>, commit. The other the <strong>next player</strong> moves, tracking how close the story is to breaking. Cards enter the <strong>Stage</strong> through <em>Show it. Spin it. Sell it.</em> When someone calls <em>BLÖDSINN!</em>, the King calls it, no debate. <strong>Nobody leaves having lost. Everyone leaves slightly different.</strong> Including the things said that couldn't have been said over dinner.</p>
       <p class="vc-best"><strong>Best for:</strong> families tired of polite games, therapists who hate worksheets, writers stuck in their own voice. <strong>1-6 humans.</strong></p>
       <span class="vc-cta">Read the Free Style Rules</span>
     </a>
@@ -1051,9 +1067,9 @@ body.lang-de :is(.tb-nav-btn,.tb-wordmark)[data-tip-de]::after{content:attr(data
       <p class="origin-subtitle">You need: a few friends, scissors, two dice, snacks. That's it. Print the comic and cut the pages into cards together — busy hands, easy talk. (Pro move: glue them onto cardboard, ideally stolen from work — the deck survives high-octane stories and wild party nights.) Shuffle into one pile, then take turns: a character, a rolled mood, a line of story out loud. Somewhere around minute ten everyone forgets to be polite — and that's when it gets good.</p>
     </div>
     <div style="display:flex;gap:16px;flex-wrap:wrap;justify-content:center;margin:24px 0">
-      <div style="flex:1;min-width:180px;border:1.5px dotted #c8911f;border-radius:0;padding:14px 16px"><div style="font-weight:700;color:#c8911f">1. Download &amp; print</div><div>Grab a deck, pay what you want.</div></div>
-      <div style="flex:1;min-width:180px;border:1.5px dotted #b85636;border-radius:0;padding:14px 16px"><div style="font-weight:700;color:#b85636">2. Cut &amp; shuffle</div><div>Scissors turn the page into a deck of cards.</div></div>
-      <div style="flex:1;min-width:180px;border:1.5px dotted #5d6b78;border-radius:0;padding:14px 16px"><div style="font-weight:700;color:#5d6b78">3. Play &amp; pass it on</div><div>One to six friends, twenty minutes, one shared comic.</div></div>
+      <div class="hw-t1" style="flex:1;min-width:180px;border:1.5px dotted #c8911f;border-radius:0;padding:14px 16px"><div style="font-weight:700;color:#c8911f">1. Download &amp; print</div><div>Grab a deck, pay what you want.</div></div>
+      <div class="hw-t2" style="flex:1;min-width:180px;border:1.5px dotted #b85636;border-radius:0;padding:14px 16px"><div style="font-weight:700;color:#b85636">2. Cut &amp; shuffle</div><div>Scissors turn the page into a deck of cards.</div></div>
+      <div class="hw-t3" style="flex:1;min-width:180px;border:1.5px dotted #5d6b78;border-radius:0;padding:14px 16px"><div style="font-weight:700;color:#5d6b78">3. Play &amp; pass it on</div><div>One to six friends, twenty minutes, one shared comic.</div></div>
     </div>
     <p style="font-family:var(--ff-display);font-weight:800;font-size:clamp(20px,2.7vw,30px);line-height:1.25;letter-spacing:var(--ls-tight);color:var(--ink);text-align:center;margin:0 0 var(--sp-4)">You don't just play cards or tell boring stories.<br>You <span class="swipe">suplex</span> consensus reality till it taps out.</p>
     <p class="prose" style="text-align:center"><strong>Best played with people who do not quite agree with you.</strong> So bring a few, bring scissors, and pass it on. The rabbit will handle the rest.</p>
@@ -1089,7 +1105,7 @@ body.lang-de :is(.tb-nav-btn,.tb-wordmark)[data-tip-de]::after{content:attr(data
       <div class="yrow"><span class="yk">Du kriegst:</span> <span class="yv">Kein Ausgang.</span></div>
     </div>
 
-    <p class="hero-tag"><strong>Kognitive Dissonanz als sozialer Resonanzraum.</strong> Spiel die Wahrheit nach deinen Regeln - mit <strong>glaubhafter Abstreitbarkeit</strong>.</p>
+    <p class="hero-claim"><strong>Kognitive Dissonanz als sozialer Resonanzraum.</strong> Spiel die Wahrheit nach deinen Regeln - mit <strong>glaubhafter Abstreitbarkeit</strong>.</p>
 
     <div class="hero-chips">
       <span class="chip">1-6 Spieler</span>
@@ -1120,7 +1136,7 @@ body.lang-de :is(.tb-nav-btn,.tb-wordmark)[data-tip-de]::after{content:attr(data
     <a class="variant-card" href="#kfb_de" onclick="goPage('kfb_de',document.getElementById('tb-kfb'));return false;">
       <div class="vc-badge">Cut &amp; Play Comic · Story-Wrestling Edition</div>
       <div class="vc-title"><span class="kb-mark"><span class="a">Kayfa</span><span class="b">Bizarro</span></span> Freestyle</div>
-      <p class="vc-desc">Du bewegst einen Würfel. Er zeigt dir, wie nah die Geschichte am Reißen ist. <strong>Sechs Modi von <em>Tragisch</em> bis <em>Verboten</em></strong> — gewürfelt, committed. Karten kommen über die <strong>Bühne</strong> per <em>Show it. Spin it. Sell it.</em> Wer <em>BLÖDSINN!</em> ruft, hält das Spiel an — und ihr entscheidet gemeinsam. <strong>Niemand verliert. Alle gehen leicht verändert.</strong> Einschließlich der Dinge, die beim Abendessen nicht hingekriegt worden wären.</p>
+      <p class="vc-desc">Zwei Würfel: einen würfelst du für deinen <strong>Ton</strong> — sechs Modi von <em>Tragisch</em> bis <em>Verboten</em>, committen. Den anderen bewegt die <strong>nächste Person</strong>; er zeigt, wie nah die Geschichte am Reißen ist. Karten kommen über die <strong>Bühne</strong> per <em>Show it. Spin it. Sell it.</em> Wer <em>BLÖDSINN!</em> ruft: der King entscheidet, keine Debatte. <strong>Niemand verliert. Alle gehen leicht verändert.</strong> Einschließlich der Dinge, die beim Abendessen nicht hingekriegt worden wären.</p>
       <p class="vc-best"><strong>Geeignet für:</strong> Familien, die mit höflichen Spielen durch sind, Therapeut*innen mit Allergie gegen Arbeitsblätter, Autor*innen die in ihrer eigenen Stimme festsitzen. <strong>1-6 Menschen am Tisch.</strong></p>
       <span class="vc-cta">Lies die Free-Style-Regeln</span>
     </a>
@@ -1141,9 +1157,9 @@ body.lang-de :is(.tb-nav-btn,.tb-wordmark)[data-tip-de]::after{content:attr(data
       <p class="origin-subtitle">Du brauchst: ein paar Freunde, eine Schere, zwei Würfel, Snacks. Mehr nicht. Druck den Comic und schneidet die Seiten gemeinsam in Karten — beschäftigte Hände, lockeres Reden. (Pro-Move: kleb sie auf Pappe, am besten aus dem Büro geklaut — so übersteht das Deck High-Octane-Stories und wilde Partynächte.) Misch alles zu einem Stapel, dann reihum: eine Figur, ein gewürfelter Modus, eine Zeile Story laut. Irgendwann um Minute zehn vergisst jede:r, höflich zu sein — und dann wird's gut.</p>
     </div>
     <div style="display:flex;gap:16px;flex-wrap:wrap;justify-content:center;margin:24px 0">
-      <div style="flex:1;min-width:180px;border:1.5px dotted #c8911f;border-radius:0;padding:14px 16px"><div style="font-weight:700;color:#c8911f">1. Herunterladen &amp; drucken</div><div>Deck schnappen, zahl was du willst.</div></div>
-      <div style="flex:1;min-width:180px;border:1.5px dotted #b85636;border-radius:0;padding:14px 16px"><div style="font-weight:700;color:#b85636">2. Schneiden &amp; mischen</div><div>Die Schere macht aus der Seite ein Kartendeck.</div></div>
-      <div style="flex:1;min-width:180px;border:1.5px dotted #5d6b78;border-radius:0;padding:14px 16px"><div style="font-weight:700;color:#5d6b78">3. Spielen &amp; weitergeben</div><div>Eine bis sechs Personen, zwanzig Minuten, ein gemeinsamer Comic.</div></div>
+      <div class="hw-t1" style="flex:1;min-width:180px;border:1.5px dotted #c8911f;border-radius:0;padding:14px 16px"><div style="font-weight:700;color:#c8911f">1. Herunterladen &amp; drucken</div><div>Deck schnappen, zahl was du willst.</div></div>
+      <div class="hw-t2" style="flex:1;min-width:180px;border:1.5px dotted #b85636;border-radius:0;padding:14px 16px"><div style="font-weight:700;color:#b85636">2. Schneiden &amp; mischen</div><div>Die Schere macht aus der Seite ein Kartendeck.</div></div>
+      <div class="hw-t3" style="flex:1;min-width:180px;border:1.5px dotted #5d6b78;border-radius:0;padding:14px 16px"><div style="font-weight:700;color:#5d6b78">3. Spielen &amp; weitergeben</div><div>Eine bis sechs Personen, zwanzig Minuten, ein gemeinsamer Comic.</div></div>
     </div>
     <p style="font-family:var(--ff-display);font-weight:800;font-size:clamp(20px,2.7vw,30px);line-height:1.25;letter-spacing:var(--ls-tight);color:var(--ink);text-align:center;margin:0 0 var(--sp-4)">You don't just play cards or tell boring stories.<br>You <span class="swipe">suplex</span> consensus reality till it taps out.</p>
     <p class="prose" style="text-align:center"><strong>Am besten mit Leuten, die nicht ganz deiner Meinung sind.</strong> Also bring ein paar mit, bring eine Schere, und gib es weiter. Den Rest macht der Hase.</p>
@@ -1169,12 +1185,16 @@ body.lang-de :is(.tb-nav-btn,.tb-wordmark)[data-tip-de]::after{content:attr(data
       <p class="origin-subtitle">Not a game you play. A game you use.</p>
     </div>
     <p class="prose">You cut a comic into a deck. Good. That was the hard part, and it was also the first move. The game already started; nobody told you. Here's the rest.</p>
-    <p class="prose"><strong>It's one story you build together, out loud, a card at a time.</strong> One to six of you, twenty minutes, no board, nobody wins. Each turn you roll a mood, throw a card into the ring, and sell whatever it is like it's the realest thing in the room. The others buy it, or they yell <strong>BL&Ouml;DSINN!</strong> and the whole thing lurches somewhere nobody planned. <span class="hl">That lurch is the good part.</span></p>
+    <p class="prose"><strong>It's one story you build together, out loud, a card at a time.</strong> One to six of you, twenty minutes, no board, nobody wins. Each turn you roll a mood, throw a card into the ring, and sell whatever it is like it's the realest thing in the room. The others buy it, or they yell <strong>BL&Ouml;DSINN!</strong> and the King calls it, no debate. <span class="hl">Nobody planned any of this, and that's the good part.</span></p>
     <p class="prose"><strong>Nobody owns the truth here.</strong> There's a referee, King Kayfabian, but the crown moves every turn, and it only steps in when you genuinely can't agree. The rest is you, two dice, and the nerve to commit. If a story lands, it lands. If it face-plants, we all saw it, and that's a story too.</p>
     <p class="prose"><strong>Here's the trick nobody warns you about:</strong> because everyone agreed <em>out loud</em> that this is staged, you can finally mean it. Put a card down, let the card take the risk, say the weird, tender, true thing, and blame the rabbit. Five people walk in with five different worlds; for one evening you build a single one and carry it home.</p>
     <p class="bigq">Nobody wins. Nobody loses. Everyone goes home a little rearranged.</p>
     <p class="prose"><strong>Roll a mood. Sell a lie. Keep the story.</strong> Stay fluffy.</p>
-    <p class="origin-subtitle" style="margin-top:var(--sp-6,24px);font-size:var(--fs-sm,14px)"><em>Rules? &rarr; KayfaBizarro or MedKayfab. All free, all optional, like everything I do. &mdash; Uncle FrizzleBob</em></p>
+    <p class="origin-subtitle" style="margin-top:var(--sp-6,24px);font-size:var(--fs-sm,14px)"><em>All free, all optional, like everything I do. &mdash; Uncle FrizzleBob</em></p>
+    <div class="hero-ctas" style="margin-top:var(--sp-5,20px)">
+      <button class="cta-solid" onclick="goPage('kfb',document.getElementById('tb-kfb'))">KayfaBizarro Rules</button>
+      <button class="cta-solid" onclick="goPage('med',document.getElementById('tb-med'))">MedKayfab Rules</button>
+    </div>
   </div>
 </div>
 
@@ -1187,12 +1207,16 @@ body.lang-de :is(.tb-nav-btn,.tb-wordmark)[data-tip-de]::after{content:attr(data
       <p class="origin-subtitle">Kein Spiel, das man spielt. Ein Spiel, das man benutzt.</p>
     </div>
     <p class="prose">Du hast einen Comic in ein Deck zerschnitten. Gut. Das war der schwere Teil, und zugleich der erste Zug. Das Spiel hat l&auml;ngst angefangen, dir hat's nur keiner gesagt. Hier ist der Rest.</p>
-    <p class="prose"><strong>Ihr baut eine Geschichte zusammen, laut, Karte f&uuml;r Karte.</strong> Ein bis sechs Leute, zwanzig Minuten, kein Brett, keiner gewinnt. Reihum w&uuml;rfelst du eine Stimmung, wirfst eine Karte in den Ring und verkaufst sie, als w&auml;r sie das Realste im Raum. Die anderen kaufen's dir ab, oder sie rufen <strong>BL&Ouml;DSINN!</strong> und das Ganze kippt irgendwohin, wo keiner hinwollte. <span class="hl">Dieses Kippen ist der gute Teil.</span></p>
+    <p class="prose"><strong>Ihr baut eine Geschichte zusammen, laut, Karte f&uuml;r Karte.</strong> Ein bis sechs Leute, zwanzig Minuten, kein Brett, keiner gewinnt. Reihum w&uuml;rfelst du eine Stimmung, wirfst eine Karte in den Ring und verkaufst sie, als w&auml;r sie das Realste im Raum. Die anderen kaufen's dir ab, oder sie rufen <strong>BL&Ouml;DSINN!</strong> und der King entscheidet, keine Debatte. <span class="hl">Keiner hat das hier geplant, und genau das ist der gute Teil.</span></p>
     <p class="prose"><strong>Niemandem geh&ouml;rt hier die Wahrheit.</strong> Es gibt einen Schiedsrichter, King Kayfabian, aber die Krone wandert jeden Zug weiter und greift nur ein, wenn ihr euch echt nicht einig werdet. Der Rest bist du, zwei W&uuml;rfel und der Mut, dich festzulegen. L&auml;uft eine Geschichte, l&auml;uft sie. F&auml;llt sie auf die Nase, haben's alle gesehen, und das ist auch eine Geschichte.</p>
     <p class="prose"><strong>Und hier der Trick, vor dem dich keiner warnt:</strong> weil alle <em>laut</em> zugestimmt haben, dass das hier gestellt ist, kannst du es endlich ernst meinen. Leg eine Karte hin, lass die Karte das Risiko tragen, sag das schr&auml;ge, z&auml;rtliche, wahre Ding, und schieb's auf den Hasen. F&uuml;nf Leute kommen mit f&uuml;nf verschiedenen Welten rein; f&uuml;r einen Abend baut ihr eine gemeinsame und nehmt sie mit nach Hause.</p>
     <p class="bigq">Keiner gewinnt. Keiner verliert. Alle gehen ein bisschen umgebaut nach Hause.</p>
     <p class="prose"><strong>W&uuml;rfel eine Stimmung. Verkauf eine L&uuml;ge. Behalt die Geschichte.</strong> Stay fluffy.</p>
-    <p class="origin-subtitle" style="margin-top:var(--sp-6,24px);font-size:var(--fs-sm,14px)"><em>Regeln? &rarr; KayfaBizarro oder MedKayfab. Alles gratis, alles freiwillig, wie alles, was ich mache. &mdash; Onkel FrizzleBob</em></p>
+    <p class="origin-subtitle" style="margin-top:var(--sp-6,24px);font-size:var(--fs-sm,14px)"><em>Alles gratis, alles freiwillig, wie alles, was ich mache. &mdash; Onkel FrizzleBob</em></p>
+    <div class="hero-ctas" style="margin-top:var(--sp-5,20px)">
+      <button class="cta-solid" onclick="goPage('kfb',document.getElementById('tb-kfb'))">KayfaBizarro-Regeln</button>
+      <button class="cta-solid" onclick="goPage('med',document.getElementById('tb-med'))">MedKayfab-Regeln</button>
+    </div>
   </div>
 </div>
 
@@ -1636,7 +1660,7 @@ body.lang-de :is(.tb-nav-btn,.tb-wordmark)[data-tip-de]::after{content:attr(data
         <p class="prose">Deal the cards, pick your Actors, reveal the Quest — then the first player goes.</p>
         <div class="steps">
           <div class="step-row-plain"><span class="step-num">1</span><span class="step-label">Deal</span><span class="step-body">Give 3 secret cards to each player. Two minutes total.</span></div>
-          <div class="step-row-plain"><span class="step-num">2</span><span class="step-label">Actors</span><span class="step-body">Each player picks 1 card, reveals it face-up, and runs the Card Ritual (<em>Show it · Spin it · Sell it</em>). This card is your Actor.</span></div>
+          <div class="step-row-plain"><span class="step-num">2</span><span class="step-label">Actors</span><span class="step-body">Each player picks 1 card, reveals it face-up, and runs the Card Ritual (<em>Show it · Spin it · Sell it</em>). This card is your Actor — then draw 1 back, so everyone holds a hand of 3.</span></div>
           <div class="step-row-plain"><span class="step-num">3</span><span class="step-label">Quest</span><span class="step-body">The <strong>fluffiest player</strong> (you know who) draws a Quest card and runs the Card Ritual — and frames the die: what reaching <strong>6</strong> looks like, what sliding to <strong>1</strong> looks like. Set the Quest Die to <strong>1</strong>.</span></div>
           <div class="step-row-plain"><span class="step-num">4</span><span class="step-label">Stage</span><span class="step-body">The Stage starts empty. Three Scene slots, all open.</span></div>
           <div class="step-row-plain"><span class="step-num">5</span><span class="step-label">Go</span><span class="step-body">They take the first turn.</span></div>
@@ -1699,7 +1723,7 @@ body.lang-de :is(.tb-nav-btn,.tb-wordmark)[data-tip-de]::after{content:attr(data
           <div class="vrow"><span class="vv">0</span><span class="vl">Hold</span><span class="vd">Linger here. Build character, not plot.</span></div>
           <div class="vrow"><span class="vv">−1</span><span class="vl">Twist</span><span class="vd">Reframe what just happened.</span></div>
         </div>
-        <div class="note"><span class="note-label">Note —</span> Drop <strong>below 1</strong> and the Quest fails: no Finale, no loot — <em>the collapse is the story.</em> Reach <strong>6</strong> and the next player's turn is the Finale.</div>
+        <div class="note"><span class="note-label">Note —</span> Drop <strong>below 1</strong> and the Quest fails: no Finale, no loot — <em>the collapse is the story.</em> (Yes, even a first-round twist can end it: rare, but fair.) Reach <strong>6</strong> and the next player's turn is the Finale.</div>
       </div>
 
       <div class="rules-section" id="kfb-modes">
@@ -1744,9 +1768,9 @@ body.lang-de :is(.tb-nav-btn,.tb-wordmark)[data-tip-de]::after{content:attr(data
           <div class="soc-row"><div class="soc-term bingo"><span style="color:var(--ink)">Kayfa</span>BINGO!</div><div class="soc-def">That landed. Pure praise. Active player draws an extra card.</div></div>
           <div class="soc-row"><div class="soc-term boggle"><span style="color:var(--ink)">Kayfa</span>BOGGLE?</div><div class="soc-def">I'm lost. One concrete question. Active player answers in 1–2 sentences, in character.</div></div>
           <div class="soc-row"><div class="soc-term bongo"><span style="color:var(--ink)">Kayfa</span>BONGO!</div><div class="soc-def">A player narrated their Power as a mechanic ("blocks 70%", "+2 damage"). Anyone calls it. Active player restates as story, not transaction.</div></div>
-          <div class="soc-row"><div class="soc-term blodsinn">BLÖDSINN!</div><div class="soc-def">Rule broken: out of character, Scene forgotten, Mode ignored. The King rules. No debate. <strong>If upheld: turn voided — no Quest Die move.</strong></div></div>
+          <div class="soc-row"><div class="soc-term blodsinn">BLÖDSINN!</div><div class="soc-def">Rule broken: out of character, Scene forgotten, Mode ignored. The King rules. No debate. <strong>If upheld: no Quest-Die move — the story stays, you just don't advance.</strong></div></div>
         </div>
-        <div class="note"><span class="note-label">Timing —</span> Right after the story, any player can call. The King (already next up) rules — <em>BLÖDSINN!</em> upheld → turn voided; otherwise +2, +1, 0, or −1 — then takes their turn.</div>
+        <div class="note"><span class="note-label">Timing —</span> Right after the story, any player can call. The King (already next up) rules — <em>BLÖDSINN!</em> upheld → no Quest-Die move; otherwise +2, +1, 0, or −1 — then takes their turn.</div>
       </div>
 
       <div class="rules-section" id="kfb-powers">
@@ -1771,6 +1795,7 @@ body.lang-de :is(.tb-nav-btn,.tb-wordmark)[data-tip-de]::after{content:attr(data
         <div class="rule-line"><span class="rule-key">A · Journal —</span> One card a round, one honest line linking <em>Actor → Stage → Quest.</em> Safe and evasive: +1. Honest and pointed: −1.</div>
         <div class="rule-line"><span class="rule-key">B · Reasoning —</span> Focus under pressure. Each card carries a modifier or a value to solve; you may only narrate once you've met its condition.</div>
         <div class="rule-line"><span class="rule-key">C · Solo Adventure —</span> Decision trees and risk. Each Quest offers 2–3 actions; roll <strong>2×D6</strong> against a bar you set (easy 5+, risky 7+, dangerous 9+).</div>
+          <div class="rule-line"><span class="rule-key">D · Sandbox —</span> Career, conflict, relationship rehearsal. Actor is a real role, Stage your real constraints, Quest the goal. One rule: <em>no ideal outcomes.</em> Every action costs something.</div>
       </div>
 
       <div class="rules-section" id="kfb-decks">
@@ -1786,6 +1811,7 @@ body.lang-de :is(.tb-nav-btn,.tb-wordmark)[data-tip-de]::after{content:attr(data
           <div class="gloss-row"><div class="gloss-term">Kayfabe</div><div class="gloss-def">The iron agreement to treat everything staged, invented, and improvised at the table as absolute, unshakable reality. Bring a card into play and you defend its existence — vehemently, no ironic distance.</div></div>
           <div class="gloss-row"><div class="gloss-term">Bizarro</div><div class="gloss-def">The literary genre of the absurd and grotesque — rooted in Weird Tales, surrealism, and the pulps. Your licence to build a deliberately strange mirror-world that defies the laws of nature but obeys its own merciless rules at the table.</div></div>
           <div class="gloss-row"><div class="gloss-term">Kayfabulation</div><div class="gloss-def">Kayfabe + confabulation. The bizarre shared reality that emerges from the Quest and your stories, and the loot you keep.</div></div>
+          <div class="gloss-row"><div class="gloss-term">BLÖDSINN!</div><div class="gloss-def">The game's loudest call — someone broke character, forgot the Scene, or ignored the Mode. Anyone yells it; the King rules, no debate. Upheld: the Quest Die doesn't move that turn.</div></div>
           <div class="gloss-row"><div class="gloss-term">King Kayfabian</div><div class="gloss-def">The rotating judge — the next player. Weighs each story, moves the Quest Die, has the final say. Everyone is King once per round.</div></div>
           <div class="gloss-row"><div class="gloss-term">Actor</div><div class="gloss-def">The card you embody this turn — your perspective in the story. Swap it any turn via an Actor Switch.</div></div>
           <div class="gloss-row"><div class="gloss-term">Quest Die</div><div class="gloss-def">A story compass from Setup (1) to Finale (6). Only the King moves it.</div></div>
@@ -1905,7 +1931,7 @@ body.lang-de :is(.tb-nav-btn,.tb-wordmark)[data-tip-de]::after{content:attr(data
         <p class="prose">Karten austeilen, Actors wählen, Quest aufdecken — dann macht die erste Person den Auftakt.</p>
         <div class="steps">
           <div class="step-row-plain"><span class="step-num">1</span><span class="step-label">Austeilen</span><span class="step-body">Jedem 3 Karten geheim geben. Zwei Minuten insgesamt.</span></div>
-          <div class="step-row-plain"><span class="step-num">2</span><span class="step-label">Actors</span><span class="step-body">Jeder zieht 1 Karte, deckt sie offen auf und macht das Karten-Ritual (<em>Show it · Spin it · Sell it</em>). Diese Karte ist dein Actor.</span></div>
+          <div class="step-row-plain"><span class="step-num">2</span><span class="step-label">Actors</span><span class="step-body">Jeder zieht 1 Karte, deckt sie offen auf und macht das Karten-Ritual (<em>Show it · Spin it · Sell it</em>). Diese Karte ist dein Actor — dann zieh 1 nach, sodass alle 3 Karten auf der Hand halten.</span></div>
           <div class="step-row-plain"><span class="step-num">3</span><span class="step-label">Quest</span><span class="step-body">Die <strong>flauschigste Person</strong> (du weißt, wer) zieht eine Quest-Karte und macht das Karten-Ritual — und rahmt den Würfel: was die <strong>6</strong> bedeutet, was die <strong>1</strong> bedeutet. Quest-Würfel auf <strong>1</strong>.</span></div>
           <div class="step-row-plain"><span class="step-num">4</span><span class="step-label">Bühne</span><span class="step-body">Die Bühne startet leer. Drei Scene-Slots, alle offen.</span></div>
           <div class="step-row-plain"><span class="step-num">5</span><span class="step-label">Los!</span><span class="step-body">Sie macht den ersten Zug.</span></div>
@@ -1968,7 +1994,7 @@ body.lang-de :is(.tb-nav-btn,.tb-wordmark)[data-tip-de]::after{content:attr(data
           <div class="vrow"><span class="vv">0</span><span class="vl">Halten</span><span class="vd">Verweile hier. Bau Figur auf, nicht Plot.</span></div>
           <div class="vrow"><span class="vv">−1</span><span class="vl">Wendung</span><span class="vd">Rahme neu, was gerade passiert ist.</span></div>
         </div>
-        <div class="note"><span class="note-label">Hinweis —</span> Fällt er <strong>unter 1</strong>, scheitert die Quest: kein Finale, keine Beute — <em>der Zusammenbruch ist die Geschichte.</em> Erreicht er <strong>6</strong>, ist der Zug der nächsten Person das Finale.</div>
+        <div class="note"><span class="note-label">Hinweis —</span> Fällt er <strong>unter 1</strong>, scheitert die Quest: kein Finale, keine Beute — <em>der Zusammenbruch ist die Geschichte.</em> (Ja, schon ein Twist in Runde 1 kann's beenden: selten, aber fair.) Erreicht er <strong>6</strong>, ist der Zug der nächsten Person das Finale.</div>
       </div>
 
       <div class="rules-section" id="kfb_de-modes">
@@ -2013,9 +2039,9 @@ body.lang-de :is(.tb-nav-btn,.tb-wordmark)[data-tip-de]::after{content:attr(data
           <div class="soc-row"><div class="soc-term bingo"><span style="color:var(--ink)">Kayfa</span>BINGO!</div><div class="soc-def">Das hat gesessen. Reines Lob. Der aktive Spieler zieht eine Extra-Karte.</div></div>
           <div class="soc-row"><div class="soc-term boggle"><span style="color:var(--ink)">Kayfa</span>BOGGLE?</div><div class="soc-def">Ich bin raus. Eine konkrete Frage. Der aktive Spieler antwortet in 1–2 Sätzen, in character.</div></div>
           <div class="soc-row"><div class="soc-term bongo"><span style="color:var(--ink)">Kayfa</span>BONGO!</div><div class="soc-def">Jemand hat seine Power als Mechanik erzählt ("blockt 70%", "+2 Schaden"). Jeder kann es rufen. Der aktive Spieler formuliert es als Story um, nicht als Transaktion.</div></div>
-          <div class="soc-row"><div class="soc-term blodsinn">BLÖDSINN!</div><div class="soc-def">Regel gebrochen: out of character, Scene vergessen, Modus ignoriert. Der König entscheidet. Keine Debatte. <strong>Wenn bestätigt: Zug annulliert — keine Quest-Würfel-Bewegung.</strong></div></div>
+          <div class="soc-row"><div class="soc-term blodsinn">BLÖDSINN!</div><div class="soc-def">Regel gebrochen: out of character, Scene vergessen, Modus ignoriert. Der König entscheidet. Keine Debatte. <strong>Wenn bestätigt: keine Quest-Würfel-Bewegung — die Story bleibt liegen, ihr rückt nur nicht vor.</strong></div></div>
         </div>
-        <div class="note"><span class="note-label">Timing —</span> Direkt nach dem Erzählen kann jeder einen Call machen. Der König (schon die nächste Person) urteilt — <em>BLÖDSINN!</em> bestätigt → Zug annulliert; sonst +2, +1, 0 oder −1 — und ist dann selbst dran.</div>
+        <div class="note"><span class="note-label">Timing —</span> Direkt nach dem Erzählen kann jeder einen Call machen. Der König (schon die nächste Person) urteilt — <em>BLÖDSINN!</em> bestätigt → keine Quest-Würfel-Bewegung; sonst +2, +1, 0 oder −1 — und ist dann selbst dran.</div>
       </div>
 
       <div class="rules-section" id="kfb_de-powers">
@@ -2040,6 +2066,7 @@ body.lang-de :is(.tb-nav-btn,.tb-wordmark)[data-tip-de]::after{content:attr(data
         <div class="rule-line"><span class="rule-key">A · Journal —</span> Eine Karte pro Runde, eine ehrliche Zeile, die <em>Actor → Bühne → Quest</em> verbindet. Sicher und ausweichend: +1. Ehrlich und treffend: −1.</div>
         <div class="rule-line"><span class="rule-key">B · Reasoning —</span> Fokus unter Druck. Jede Karte trägt einen Modifikator oder einen zu lösenden Wert; du darfst erst erzählen, wenn du die Bedingung erfüllt hast.</div>
         <div class="rule-line"><span class="rule-key">C · Solo-Adventure —</span> Entscheidungsbäume und Risiko. Jede Quest bietet 2–3 Aktionen; würfle <strong>2×W6</strong> gegen eine Schwelle, die du setzt (leicht 5+, riskant 7+, gefährlich 9+).</div>
+        <div class="rule-line"><span class="rule-key">D · Sandbox —</span> Probebühne für Karriere, Konflikt, Beziehung. Der Actor ist eine echte Rolle, die Bühne deine echten Zwänge, die Quest das Ziel. Eine Regel: <em>keine idealen Ausgänge.</em> Jede Handlung kostet etwas.</div>
       </div>
 
       <div class="rules-section" id="kfb_de-decks">
@@ -2055,6 +2082,7 @@ body.lang-de :is(.tb-nav-btn,.tb-wordmark)[data-tip-de]::after{content:attr(data
           <div class="gloss-row"><div class="gloss-term">Kayfabe</div><div class="gloss-def">Die eiserne Übereinkunft, das Inszenierte, Erfundene und Improvisierte am Tisch als absolute, unumstößliche Realität zu behandeln. Wer eine Karte ins Spiel bringt, verteidigt deren Existenz — vehement, ohne ironische Distanz.</div></div>
           <div class="gloss-row"><div class="gloss-term">Bizarro</div><div class="gloss-def">Das literarische Genre des Absurden und Grotesken — verwurzelt in Weird Tales, Surrealismus und den Pulp-Magazinen. Die Erlaubnis, eine absichtlich seltsame Spiegelwelt zu erschaffen, die den Naturgesetzen trotzt, aber am Tisch ihren eigenen, unerbittlichen Regeln folgt.</div></div>
           <div class="gloss-row"><div class="gloss-term">Kayfabulation</div><div class="gloss-def">Kayfabe + Fabulieren. Die bizarre gemeinsame Realität, die aus der Quest und euren Geschichten entsteht, euer Erfahrungsschatz aus dem Spiel.</div></div>
+          <div class="gloss-row"><div class="gloss-term">BLÖDSINN!</div><div class="gloss-def">Der lauteste Ruf des Spiels — jemand fiel aus der Rolle, vergaß die Szene oder ignorierte den Modus. Jede:r ruft ihn; der King entscheidet, keine Debatte. Bestätigt: Der Quest-Würfel bewegt sich diese Runde nicht.</div></div>
           <div class="gloss-row"><div class="gloss-term">King Kayfabian</div><div class="gloss-def">Der rotierende Richter — die nächste Person. Wägt jede Geschichte, bewegt den Quest-Würfel, hat das letzte Wort. Jeder ist einmal pro Runde König.</div></div>
           <div class="gloss-row"><div class="gloss-term">Actor</div><div class="gloss-def">Die Karte, die du diesen Zug verkörperst — deine Perspektive in der Geschichte. Per Actor-Wechsel jederzeit tauschbar.</div></div>
           <div class="gloss-row"><div class="gloss-term">Quest-Würfel</div><div class="gloss-def">Ein Story-Kompass von Aufbau (1) bis Finale (6). Nur der König bewegt ihn.</div></div>
@@ -2551,7 +2579,7 @@ body.lang-de :is(.tb-nav-btn,.tb-wordmark)[data-tip-de]::after{content:attr(data
 
 
 <!-- ========== FOOTER ========== -->
-<div class="foot-manifesto" style="max-width:var(--lay-prose);margin:0 auto;padding:var(--sp-7) var(--sp-8) var(--sp-4);text-align:left;">
+<div class="foot-manifesto" style="max-width:var(--lay-max);margin:0 auto;padding:var(--sp-7) var(--sp-8) var(--sp-4);text-align:left;">
   <div class="l-en">
   <div class="sec-eyebrow" style="display:inline-block;">One Last Thing</div>
   <p class="prose" style="margin-bottom:var(--sp-3)">KayfaBizarro is unfinished by design. I didn't finish it. That part's yours.</p>
@@ -2592,14 +2620,14 @@ body.lang-de :is(.tb-nav-btn,.tb-wordmark)[data-tip-de]::after{content:attr(data
     KayfaBizarro &amp; MedKayfab · by Georg von Westphalen<br>
     <a href="https://cancelthiscomic.substack.com/t/kayfabizarro" target="_blank" rel="noopener">Cancel This Comic on Substack</a> · <a href="https://georgvw.gumroad.com/?section=V4n4XYemvn1-_RTR-Oew8A==#V4n4XYemvn1-_RTR-Oew8A==" target="_blank" rel="noopener">georgvw on Gumroad</a><br>
     <span style="white-space:nowrap">CC BY-NC-SA 4.0</span> · Pay What You Want · Do Not Resell<br>
-    Version 19.0 · last edit 14 May 2026<br><br>
+    Version 19.0 · last edit 3 July 2026<br><br>
     <span style="font-style:italic;opacity:.75">KayfaBizarro comic cards may contain trace elements of truth, recursive satire, or unauthorized epistemic experimentation.<br>Any resemblance to real-world institutions or peer-reviewed echo chambers is statistically inevitable.<br>Player discretion is mandatory. Play responsibly. Or don't.</span>
   </div>
   <div class="foot-bar l-de">
     KayfaBizarro &amp; MedKayfab · von Georg von Westphalen<br>
     <a href="https://cancelthiscomic.substack.com/t/kayfabizarro" target="_blank" rel="noopener">Cancel This Comic auf Substack</a> · <a href="https://georgvw.gumroad.com/?section=V4n4XYemvn1-_RTR-Oew8A==#V4n4XYemvn1-_RTR-Oew8A==" target="_blank" rel="noopener">georgvw auf Gumroad</a><br>
     <span style="white-space:nowrap">CC BY-NC-SA 4.0</span> · Zahl, was du willst · Nicht weiterverkaufen<br>
-    Version 19.0 · letzte Änderung 14. Mai 2026<br><br>
+    Version 19.0 · letzte Änderung 3. Juli 2026<br><br>
     <span style="font-style:italic;opacity:.75">KayfaBizarro-Comic-Karten können Spuren von Wahrheit, rekursiver Satire oder nicht genehmigter erkenntnistheoretischer Experimente enthalten.<br>Jede Ähnlichkeit mit realen Institutionen oder peer-reviewten Echokammern ist statistisch unvermeidlich.<br>Spieler-Diskretion ist Pflicht. Spiel verantwortungsvoll. Oder auch nicht.</span>
   </div>
 </div>
@@ -2627,10 +2655,10 @@ const PDF_SRC={
 };
 
 /* LANG */
-function toggleLangMenu(e){e.stopPropagation();var dd=document.getElementById('lang-dropdown');dd.classList.toggle('open');}
+function toggleLangMenu(e){e.stopPropagation();var dd=document.getElementById('lang-dropdown');var open=dd.classList.toggle('open');var b=document.getElementById('lang-btn');if(b)b.setAttribute('aria-expanded',open?'true':'false');}
 function toggleTheme(){var d=document.body.classList.toggle('dark');var b=document.getElementById('theme-btn');if(b)b.textContent=d?'☀':'☾';try{localStorage.setItem('kfb-theme',d?'dark':'light');}catch(e){}}
 try{if(localStorage.getItem('kfb-theme')==='dark'){document.body.classList.add('dark');var _tb=document.getElementById('theme-btn');if(_tb)_tb.textContent='☀';}}catch(e){}
-document.addEventListener('click',function(e){var lw=document.querySelector('.lang-wrap');var dd=document.getElementById('lang-dropdown');if(dd&&lw&&!lw.contains(e.target)) dd.classList.remove('open');});
+document.addEventListener('click',function(e){var lw=document.querySelector('.lang-wrap');var dd=document.getElementById('lang-dropdown');if(dd&&lw&&!lw.contains(e.target)){dd.classList.remove('open');var lb=document.getElementById('lang-btn');if(lb)lb.setAttribute('aria-expanded','false');}});
 var currentLang='en';
 var tbMap={'home':'tb-home','thegame':'tb-thegame','kfb':'tb-kfb','med':'tb-med','cutplay':'tb-cutplay','protopia':'tb-protopia'};
 var _switchingLang=false;
@@ -2677,15 +2705,25 @@ function goPage(id,btn){
   }
   try{location.hash=id;}catch(e){}
   if(['kfb','med','kfb_de','med_de','home','home_de'].includes(id)) setupToc(id);
-  // Auto-load rule-book PDF when tab opens
+  // Lazy-load rule-book PDFs: only when each block scrolls into view (U3)
   var pdfMap={kfb:['kfb_book','kfb'],kfb_de:['kfb_book_de','kfb_de'],med:['med_book','med'],med_de:['med_book_de','med_de']};
   if(pdfMap[id]){
-    setTimeout(function(){
+    var doLoad=function(pdfMode){
       ensureWorker();
+      if(pdfIframe[pdfMode]) pdfFrame(pdfMode);
+      else if(!pdfReady[pdfMode]) loadPdf(pdfMode);
+      else renderPdf(pdfMode);
+    };
+    setTimeout(function(){
       pdfMap[id].forEach(function(pdfMode){
-        if(pdfIframe[pdfMode]) pdfFrame(pdfMode);
-        else if(!pdfReady[pdfMode]) loadPdf(pdfMode);
-        else renderPdf(pdfMode);
+        var cv=document.getElementById(pdfMode+'-pdf-canvas');
+        if(!cv){ doLoad(pdfMode); return; }
+        if('IntersectionObserver' in window){
+          var io=new IntersectionObserver(function(entries,obs){
+            entries.forEach(function(en){ if(en.isIntersecting){ doLoad(pdfMode); obs.disconnect(); } });
+          },{rootMargin:'300px 0px'});
+          io.observe(cv);
+        } else { doLoad(pdfMode); }
       });
     },100);
   }
@@ -2914,7 +2952,7 @@ if(!location.hash) goPage('home',document.getElementById('tb-home'));
     if(ends.length){
       var fo=new IntersectionObserver(function(es){
         es.forEach(function(e){ if(e.isIntersecting) inview.add(e.target); else inview.delete(e.target); });
-        document.querySelectorAll('.essay-toc').forEach(function(n){n.classList.toggle('toc-off', inview.size>0);});
+        document.querySelectorAll('.essay-toc,.sidebar').forEach(function(n){n.classList.toggle('toc-off', inview.size>0);});
       },{rootMargin:'0px 0px -5% 0px'});
       ends.forEach(function(el){fo.observe(el);});
     }
@@ -2990,6 +3028,16 @@ document.addEventListener('keydown',function(e){if(e.key==='Escape')closeLightbo
   }
   addEventListener('resize',function(){ var h=activeHome(); if(h) startHalftone(h); });
   if(document.readyState!=='loading') kick(); else addEventListener('DOMContentLoaded',kick);
+})();
+</script>
+<script>
+/* U2 · mobile nav overflow hint — drop the right-edge fade once scrolled to the end */
+(function(){
+  var nav=document.querySelector('.tb-nav'); if(!nav) return;
+  function upd(){ var end = nav.scrollLeft + nav.clientWidth >= nav.scrollWidth - 4;
+    nav.classList.toggle('at-end', end || nav.scrollWidth <= nav.clientWidth + 2); }
+  nav.addEventListener('scroll', upd, {passive:true});
+  addEventListener('resize', upd); upd();
 })();
 </script>
 </body>
