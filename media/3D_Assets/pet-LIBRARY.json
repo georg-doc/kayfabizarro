@@ -1,7 +1,9 @@
 {
   "$schema": "kfb.pet-library/1",
-  "version": "0.2.0",
-  "notes": "KANONISCH. Diese Datei wird PER URL geholt (Feld 'canonical'), nicht als Datei herumgereicht. Jede lokale Kopie ist ein Snapshot und NICHT autoritativ - im Zweifel die URL fetchen. Der Pet-Editor SCHREIBT sie, die Apps LESEN sie. WER SCHREIBT, ZAEHLT 'version' HOCH - sonst ist die Datei nicht unterscheidbar (Lehre 15.07.2026: 10 Kopien, alle 0.1.0, 3 verschiedene Inhalte). Pets NIE hardcoden (Farbe/Augen) - immer aus diesem Contract treiben.",
+  "version": "0.4.1",
+  "canonical": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/pet-LIBRARY.json",
+  "updated": "2026-07-16",
+  "notes": "KANONISCH. Diese Datei wird PER URL geholt (Feld canonical), nicht als Datei herumgereicht. Wer schreibt, zaehlt version hoch und setzt updated. canonical und updated NIE beim Export verlieren. Der Pet-Editor schreibt, die Apps lesen. Pets nie hardcoden.",
   "glbBase": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/GLB_cube-pets/",
   "skinBase": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/pets/skins/",
   "promptBase": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/prompts/narrator/",
@@ -69,7 +71,7 @@
       "glossy-googly"
     ],
     "gloss": {
-      "matte-cute": 0.32,
+      "matte-cute": 0.1,
       "glossy-googly": 0.85
     },
     "fx": [
@@ -147,35 +149,18 @@
     },
     "note": "EINE greyscale Detail-Kombo, per Triplanar/Box auf alle 24 Pets, getoent via pet.color, global tauschbar. clay = Default (Aardman-Fingerprint), felt = Preset.",
     "live": {
-      "texture": "Cardboard001",
-      "mod": "ink",
+      "texture": "Paper004",
+      "mod": "none",
       "surf": {
         "texScale": 0.3,
         "tint": 1,
         "relief": 1.2,
-        "knet": 0.012,
-        "ao": 0.32,
-        "rough": 1,
+        "knet": 0,
+        "ao": 0.14,
+        "rough": 0.9,
         "freq": 11,
-        "modScale": 1,
-        "modAmt": 0.24
-      }
-    },
-    "saved": {
-      "clay_02": {
-        "texture": "Clay001",
-        "mod": "ink",
-        "surf": {
-          "texScale": 0.3,
-          "tint": 1,
-          "relief": 1.2,
-          "knet": 0.012,
-          "ao": 0.32,
-          "rough": 1,
-          "freq": 11,
-          "modScale": 1,
-          "modAmt": 0.24
-        }
+        "modScale": 2,
+        "modAmt": 0.55
       }
     }
   },
@@ -187,9 +172,9 @@
   "emotes": [
     {
       "id": "neutral",
-      "lidUpper": 0.13,
-      "lidLower": 0.08,
-      "slant": -0.14,
+      "lidUpper": -0.4,
+      "lidLower": 0,
+      "slant": 0,
       "pupil": "normal",
       "gaze": "front"
     },
@@ -275,14 +260,14 @@
       "glb": "animal-bunny.glb",
       "role": "guide-default",
       "isDefault": true,
-      "color": "#f2c93c",
+      "color": "#d3a244",
       "archetype": "carny-host",
       "narratorPromptRef": "bunny_carny.md",
       "eye": {
         "anchor": {
-          "dx": 0.32,
-          "dy": -0.205,
-          "ring": 0.22,
+          "dx": 0.34,
+          "dy": -0.14,
+          "ring": 0.25,
           "track": 0.1
         },
         "pupilStyle": "matte-cute",
@@ -290,9 +275,8 @@
           "upper": true,
           "lower": true
         },
-        "pupilSize": 0.07,
-        "inset": 0.2,
-        "converge": -0.34
+        "inset": 0.08,
+        "pupilSize": 0.27
       },
       "defaultEmote": "neutral",
       "skin": "default",
@@ -306,7 +290,6 @@
       "name": "The Fox",
       "glb": "animal-fox.glb",
       "archetype": "trickster",
-      "color": "#d9622b",
       "narratorPromptRef": "fox_trickster.md",
       "eye": {
         "anchor": {
@@ -333,7 +316,6 @@
       "name": "The Cat",
       "glb": "animal-cat.glb",
       "archetype": "skeptic",
-      "color": "#3a3a3a",
       "narratorPromptRef": "cat_skeptic.md",
       "eye": {
         "anchor": {
@@ -360,7 +342,6 @@
       "name": "The Penguin",
       "glb": "animal-penguin.glb",
       "archetype": "deadpan",
-      "color": "#2b3440",
       "narratorPromptRef": "penguin_deadpan.md",
       "eye": {
         "anchor": {
@@ -387,7 +368,6 @@
       "name": "The Panda",
       "glb": "animal-panda.glb",
       "archetype": "sage",
-      "color": "#e8e4dc",
       "narratorPromptRef": "panda_sage.md",
       "eye": {
         "anchor": {
@@ -414,7 +394,6 @@
       "name": "The Koala",
       "glb": "animal-koala.glb",
       "archetype": "dreamer",
-      "color": "#8a8f96",
       "narratorPromptRef": "koala_dreamer.md",
       "eye": {
         "anchor": {
@@ -441,7 +420,6 @@
       "name": "The Tiger",
       "glb": "animal-tiger.glb",
       "archetype": "brawler",
-      "color": "#e08a2b",
       "narratorPromptRef": "tiger_brawler.md",
       "eye": {
         "anchor": {
@@ -462,8 +440,363 @@
         "claySurface": 0.6,
         "jitter": 0.5
       }
+    },
+    {
+      "id": "lion",
+      "name": "The Lion",
+      "glb": "animal-lion.glb",
+      "eye": {
+        "anchor": {
+          "dx": 0.345,
+          "dy": -0.1,
+          "ring": 0.3,
+          "track": 0.1
+        },
+        "pupilStyle": "matte-cute",
+        "lids": {
+          "upper": true,
+          "lower": true
+        }
+      },
+      "defaultEmote": "neutral",
+      "skin": "default"
+    },
+    {
+      "id": "deer",
+      "name": "The Deer",
+      "glb": "animal-deer.glb",
+      "eye": {
+        "anchor": {
+          "dx": 0.345,
+          "dy": -0.1,
+          "ring": 0.3,
+          "track": 0.1
+        },
+        "pupilStyle": "matte-cute",
+        "lids": {
+          "upper": true,
+          "lower": true
+        }
+      },
+      "defaultEmote": "neutral",
+      "skin": "default"
+    },
+    {
+      "id": "monkey",
+      "name": "The Monkey",
+      "glb": "animal-monkey.glb",
+      "eye": {
+        "anchor": {
+          "dx": 0.345,
+          "dy": -0.1,
+          "ring": 0.3,
+          "track": 0.1
+        },
+        "pupilStyle": "matte-cute",
+        "lids": {
+          "upper": true,
+          "lower": true
+        }
+      },
+      "defaultEmote": "neutral",
+      "skin": "default"
+    },
+    {
+      "id": "pig",
+      "name": "The Pig",
+      "glb": "animal-pig.glb",
+      "eye": {
+        "anchor": {
+          "dx": 0.345,
+          "dy": -0.1,
+          "ring": 0.3,
+          "track": 0.1
+        },
+        "pupilStyle": "matte-cute",
+        "lids": {
+          "upper": true,
+          "lower": true
+        }
+      },
+      "defaultEmote": "neutral",
+      "skin": "default"
+    },
+    {
+      "id": "hog",
+      "name": "The Hog",
+      "glb": "animal-hog.glb",
+      "eye": {
+        "anchor": {
+          "dx": 0.345,
+          "dy": -0.1,
+          "ring": 0.3,
+          "track": 0.1
+        },
+        "pupilStyle": "matte-cute",
+        "lids": {
+          "upper": true,
+          "lower": true
+        }
+      },
+      "defaultEmote": "neutral",
+      "skin": "default"
+    },
+    {
+      "id": "cow",
+      "name": "The Cow",
+      "glb": "animal-cow.glb",
+      "eye": {
+        "anchor": {
+          "dx": 0.345,
+          "dy": -0.1,
+          "ring": 0.3,
+          "track": 0.1
+        },
+        "pupilStyle": "matte-cute",
+        "lids": {
+          "upper": true,
+          "lower": true
+        }
+      },
+      "defaultEmote": "neutral",
+      "skin": "default"
+    },
+    {
+      "id": "polar",
+      "name": "The Polar",
+      "glb": "animal-polar.glb",
+      "eye": {
+        "anchor": {
+          "dx": 0.345,
+          "dy": -0.1,
+          "ring": 0.3,
+          "track": 0.1
+        },
+        "pupilStyle": "matte-cute",
+        "lids": {
+          "upper": true,
+          "lower": true
+        }
+      },
+      "defaultEmote": "neutral",
+      "skin": "default"
+    },
+    {
+      "id": "beaver",
+      "name": "The Beaver",
+      "glb": "animal-beaver.glb",
+      "eye": {
+        "anchor": {
+          "dx": 0.345,
+          "dy": -0.1,
+          "ring": 0.3,
+          "track": 0.1
+        },
+        "pupilStyle": "matte-cute",
+        "lids": {
+          "upper": true,
+          "lower": true
+        }
+      },
+      "defaultEmote": "neutral",
+      "skin": "default"
+    },
+    {
+      "id": "giraffe",
+      "name": "The Giraffe",
+      "glb": "animal-giraffe.glb",
+      "eye": {
+        "anchor": {
+          "dx": 0.345,
+          "dy": -0.1,
+          "ring": 0.3,
+          "track": 0.1
+        },
+        "pupilStyle": "matte-cute",
+        "lids": {
+          "upper": true,
+          "lower": true
+        }
+      },
+      "defaultEmote": "neutral",
+      "skin": "default"
+    },
+    {
+      "id": "chick",
+      "name": "The Chick",
+      "glb": "animal-chick.glb",
+      "eye": {
+        "anchor": {
+          "dx": 0.345,
+          "dy": -0.1,
+          "ring": 0.3,
+          "track": 0.1
+        },
+        "pupilStyle": "matte-cute",
+        "lids": {
+          "upper": true,
+          "lower": true
+        }
+      },
+      "defaultEmote": "neutral",
+      "skin": "default"
+    },
+    {
+      "id": "fish",
+      "name": "The Fish",
+      "glb": "animal-fish.glb",
+      "eye": {
+        "anchor": {
+          "dx": 0.345,
+          "dy": -0.1,
+          "ring": 0.3,
+          "track": 0.1
+        },
+        "pupilStyle": "matte-cute",
+        "lids": {
+          "upper": true,
+          "lower": true
+        }
+      },
+      "defaultEmote": "neutral",
+      "skin": "default"
+    },
+    {
+      "id": "parrot",
+      "name": "The Parrot",
+      "glb": "animal-parrot.glb",
+      "eye": {
+        "anchor": {
+          "dx": 0.345,
+          "dy": -0.1,
+          "ring": 0.3,
+          "track": 0.1
+        },
+        "pupilStyle": "matte-cute",
+        "lids": {
+          "upper": true,
+          "lower": true
+        }
+      },
+      "defaultEmote": "neutral",
+      "skin": "default"
+    },
+    {
+      "id": "bee",
+      "name": "The Bee",
+      "glb": "animal-bee.glb",
+      "eye": {
+        "anchor": {
+          "dx": 0.345,
+          "dy": -0.1,
+          "ring": 0.3,
+          "track": 0.1
+        },
+        "pupilStyle": "matte-cute",
+        "lids": {
+          "upper": true,
+          "lower": true
+        }
+      },
+      "defaultEmote": "neutral",
+      "skin": "default"
+    },
+    {
+      "id": "crab",
+      "name": "The Crab",
+      "glb": "animal-crab.glb",
+      "eye": {
+        "anchor": {
+          "dx": 0.345,
+          "dy": -0.1,
+          "ring": 0.3,
+          "track": 0.1
+        },
+        "pupilStyle": "matte-cute",
+        "lids": {
+          "upper": true,
+          "lower": true
+        }
+      },
+      "defaultEmote": "neutral",
+      "skin": "default"
+    },
+    {
+      "id": "caterpillar",
+      "name": "The Caterpillar",
+      "glb": "animal-caterpillar.glb",
+      "eye": {
+        "anchor": {
+          "dx": 0.345,
+          "dy": -0.1,
+          "ring": 0.3,
+          "track": 0.1
+        },
+        "pupilStyle": "matte-cute",
+        "lids": {
+          "upper": true,
+          "lower": true
+        }
+      },
+      "defaultEmote": "neutral",
+      "skin": "default"
+    },
+    {
+      "id": "elephant",
+      "name": "The Elephant",
+      "glb": "animal-elephant.glb",
+      "eye": {
+        "anchor": {
+          "dx": 0.345,
+          "dy": -0.1,
+          "ring": 0.3,
+          "track": 0.1
+        },
+        "pupilStyle": "matte-cute",
+        "lids": {
+          "upper": true,
+          "lower": true
+        }
+      },
+      "defaultEmote": "neutral",
+      "skin": "default"
+    },
+    {
+      "id": "dog",
+      "name": "The Dog",
+      "glb": "animal-dog.glb",
+      "eye": {
+        "anchor": {
+          "dx": 0.345,
+          "dy": -0.1,
+          "ring": 0.3,
+          "track": 0.1
+        },
+        "pupilStyle": "matte-cute",
+        "lids": {
+          "upper": true,
+          "lower": true
+        }
+      },
+      "defaultEmote": "neutral",
+      "skin": "default"
     }
   ],
-  "canonical": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/pet-LIBRARY.json",
-  "updated": "2026-07-15"
+  "face": {
+    "note": "Kenneys Gesicht ist GEOMETRIE im body-Mesh, keine Textur. Die colormap ist ein reiner Palette-Atlas aus Farbstreifen, sie enthaelt kein gemaltes Gesicht. hideEyes im Editor v4 warf nur die Textur weg, die Schalen blieben stehen und zeigten sich weiter ueber die Schattierung. Vermessen von Cowork am 2026-07-16.",
+    "stripEyes": true,
+    "eyeShell": {
+      "rule": "Im body-Mesh: getrennte Schalen (connected components). Genommen wird das Paar mit zPlane, minTris und gespiegelten X-Bereichen. Ergibt bei allen 24 Pets exakt 2 Schalen.",
+      "zPlane": 0.635,
+      "zTolerance": 0.002,
+      "minTris": 25,
+      "symmetricPair": true,
+      "verified": "24 von 24 Pets, 2026-07-16, Dreiecke je Auge 25 bis 57",
+      "doNotMatch": "Nasenloecher von cow, hog, pig liegen bei Z=0.835 mit je 2 Dreiecken. Mittige Schalen (Mund, Nase) spannen X ueber Null und sind kein Paar. Beide fallen durch minTris bzw. symmetricPair."
+    },
+    "stripSnout": {
+      "note": "KEINE Regel moeglich. Dieselbe Suche, die den Mund des bunny findet, findet die Maehne des lion (124 Dreiecke), den Schnabel von chick und penguin (32), den Ruessel des elephant (38), die Schnauze von dog (46), hog und koala (44). cow, crab und pig haben gar keine mittige Front-Schale. Deshalb: pro Pet von Hand, Liste leer = nichts wird geloescht.",
+      "perPet": {}
+    }
+  }
 }

@@ -1,0 +1,22 @@
+{
+  "$schema": "kfb.motion-library/1",
+  "version": "1.1.0",
+  "canonical": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/motion-LIBRARY.json",
+  "updated": "2026-07-16",
+  "note": "KFB Pet Motion Library — Contract. Apps lesen das per URL und geben motions an new PetMotion(ch,{params, rig}). Getunt in der KFB Pet Motion Editor v1. Prime Directive: jede Motion ist Interpunktion, settlet in Ruhe. KANONISCH, per URL holen (Feld canonical), nicht als Datei herumreichen. Wer schreibt, zaehlt version hoch und setzt updated.",
+  "global": { "squashStretch": 1.0 },
+  "front": { "x": 0, "z": 1.1 },
+  "back": { "x": 0, "z": -1.3 },
+  "motions": {
+    "idle":       { "breathe": 0.03, "period": 2.8, "sway": 0.010 },
+    "hop":        { "height": 0.30, "dur": 0.66, "anticip": 0.16, "squash": 0.72, "stretch": 1.26, "land": 0.68, "rebound": 1.10 },
+    "powerJump":  { "height": 1.05, "dur": 1.24, "anticip": 0.26, "squash": 0.58, "stretch": 1.44, "hang": 0.16, "land": 0.52, "rebound": 1.18 },
+    "locomotion": { "hops": 3, "height": 0.24, "hopDur": 0.46, "anticip": 0.12, "squash": 0.76, "stretch": 1.20, "land": 0.72 },
+    "loading":    { "height": 0.16, "period": 0.54, "squash": 0.78, "stretch": 1.16 },
+    "transition": { "anticip": 0.30, "out": 0.44, "rise": 0.85, "shrink": 0.06, "spin": 0.7, "hold": 0.06, "in": 0.5 },
+    "turn":       { "dur": 0.5, "overshoot": 0.18, "squash": 0.86 },
+    "celebrate":  { "hops": 3, "height": 0.28, "dur": 1.7, "squash": 0.70, "stretch": 1.24 },
+    "reactPos":   { "height": 0.22, "dur": 0.52, "squash": 0.82, "stretch": 1.22 },
+    "reactNeg":   { "dur": 0.55, "squash": 0.50, "sink": 0.10 }
+  }
+}
