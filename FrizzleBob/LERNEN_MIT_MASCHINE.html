@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>Das Werkzeug ist gemietet</title>
+<link href="https://fonts.googleapis.com/css2?family=Irish+Grover&family=Special+Elite&display=swap" rel="stylesheet">
+<style>
+  :root{--paper:#f3ead3;--card:#f7f0da;--ink:#1f1a14;--ink2:#3a342a;--ink3:#6f6450;
+        --rot:#8f3a5f;--gruen:#5e6f33;--blau:#3e6a83;--amber:#b75f23;}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--paper);color:var(--ink);font-family:'Special Elite',monospace;
+       line-height:1.6;padding:28px 20px 80px}
+  .wrap{max-width:960px;margin:0 auto}
+  h1{font-family:'Irish Grover',cursive;font-size:38px;margin:0;line-height:1.18;letter-spacing:.5px}
+  .mark{background:var(--rot);color:var(--paper);padding:1px 13px 3px;display:inline-block;
+        transform:rotate(-1.2deg);box-shadow:3px 3px 0 rgba(31,26,20,.35)}
+  .sub{color:var(--ink3);font-size:13px;margin:22px 0 34px;padding-left:3px;letter-spacing:.04em}
+  h2{font-size:17px;margin:40px 0 10px;border-bottom:2px solid var(--ink);padding-bottom:5px}
+  p{font-size:14px;margin:9px 0}
+  .lead{font-size:16px;border-left:6px solid var(--ink);padding-left:14px;margin:16px 0}
+  b{color:var(--rot)}
+  .box{background:var(--card);border:2px solid var(--ink);padding:14px 17px;margin:12px 0}
+  .box h3{margin:0 0 7px;font-size:15px;font-family:'Irish Grover',cursive}
+  .box p{font-size:13px}
+  .two{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:12px}
+  @media(max-width:720px){.two{grid-template-columns:1fr}}
+  table{border-collapse:collapse;width:100%;margin:12px 0;font-size:13px}
+  th,td{border:1px solid var(--ink3);padding:7px 9px;text-align:left;vertical-align:top}
+  th{background:var(--ink);color:var(--paper);font-weight:normal;font-size:11.5px;letter-spacing:.08em}
+  .q{font-style:italic;color:var(--ink2)}
+  button{font-family:'Special Elite',monospace;font-size:12px;background:var(--card);color:var(--ink);
+         border:2px solid var(--ink);padding:7px 14px;cursor:pointer;box-shadow:3px 3px 0 var(--ink2);margin:10px 8px 0 0}
+  button:active{transform:translate(3px,3px);box-shadow:none}
+  button.on{background:var(--ink);color:var(--paper)}
+  .ev{background:var(--card);border:2px solid var(--ink);border-left:8px solid var(--rot);padding:10px 13px;margin:7px 0}
+  .ev.win{border-left-color:var(--gruen)}
+  .ev .w{font-size:14px;font-weight:bold}
+  .ev .d{font-size:12.5px;color:var(--ink2);margin-top:4px}
+  .ev .z{font-size:12px;font-style:italic;color:var(--ink3);margin-top:5px}
+  .rule{background:var(--card);border:2px solid var(--ink);padding:11px 14px;margin:8px 0;font-size:13.5px}
+  .rule b{display:block;color:var(--ink);font-size:14.5px;margin-bottom:3px}
+  .warn{background:#f7e8ea;border:2px solid var(--rot);padding:13px 16px;margin:14px 0}
+  .warn h3{color:var(--rot);margin:0 0 6px;font-size:15px;font-family:'Irish Grover',cursive}
+  .warn p{font-size:13px}
+  .foot{margin-top:40px;padding-top:14px;border-top:2px solid var(--ink);font-size:11.5px;color:var(--ink3)}
+  #evc{margin-top:6px}
+  .cnt{font-size:11.5px;color:var(--ink3);margin:6px 0}
+</style>
+</head>
+<body><div class="wrap">
+
+<h1>Das Werkzeug ist gemietet.<br>Der <span class="mark">Blick</span> gehört dir.</h1>
+<div class="sub">Über das Lernen von Technologie, wenn die Technologie schneller altert als der Kurs.</div>
+
+<div class="lead">Eine Siebzehnjährige fängt an der SAE an und guckt sich zur Vorbereitung Blender-Tutorials an. <b>Die Frage ist nicht, ob sie Blender lernen soll. Die Frage ist, was davon in drei Jahren noch ihr gehört.</b></div>
+
+<h2>Die These</h2>
+<p>Ein Tutorial bringt dir <b>das Programm</b> bei. Klicks, Menüs, Shortcuts, den Umgang mit einem bestimmten Interface einer bestimmten Version.</p>
+<p>Das Verständnis für den Gegenstand, also wie 3D-Raum sich verhält, was ein Partikel ist, warum etwas lesbar wird oder nicht, <b>fällt dabei nebenbei ab, spät und zufällig.</b></p>
+<p><b>Und das Programm ist der Teil, der abläuft.</b> Das Interface von morgen kennt niemand. Der Gegenstand bleibt.</p>
+
+<div class="two">
+  <div class="box"><h3>Was gemietet ist</h3>
+    <p>Menüs. Shortcuts. Wo der Knopf liegt. Wie man in dieser Version einen Modifier stapelt. Die Syntax einer Bibliothek in Version 0.160.</p>
+    <p><b>Halbwertszeit: zwei bis drei Jahre.</b> Und mit Connector schon jetzt teilweise delegierbar.</p></div>
+  <div class="box"><h3>Was dir gehört</h3>
+    <p>Dass ein Punkt unter einem Pixel unsichtbar ist. Dass man auf Weiss kein Licht addieren kann. Dass ein flatternder Text unlesbar ist. Dass Bedeutung im Spalt sitzt.</p>
+    <p><b>Halbwertszeit: keine.</b> Das galt vor Blender und gilt danach.</p></div>
+</div>
+
+<h2>Die zwei Kurven</h2>
+<p>Klick die Kurven an.</p>
+<div id="curvebox">
+<svg viewBox="0 0 640 260" width="100%" height="260" role="img" aria-label="Zwei Lernkurven">
+  <line x1="55" y1="215" x2="615" y2="215" stroke="#6f6450" stroke-width="2"/>
+  <line x1="55" y1="30" x2="55" y2="215" stroke="#6f6450" stroke-width="2"/>
+  <text x="335" y="243" font-family="Special Elite, monospace" font-size="12" fill="#6f6450" text-anchor="middle">Zeit</text>
+  <text x="20" y="125" font-family="Special Elite, monospace" font-size="12" fill="#6f6450" transform="rotate(-90 20 125)" text-anchor="middle">Können</text>
+  <path id="c1" d="M55,215 C160,212 230,195 300,150 C370,105 460,55 615,42" fill="none" stroke="#3e6a83" stroke-width="3.5"/>
+  <path id="c2" d="M55,215 C90,120 130,95 200,88 C330,76 470,62 615,50" fill="none" stroke="#8f3a5f" stroke-width="3.5"/>
+  <circle cx="300" cy="150" r="5" fill="#3e6a83"/>
+  <circle cx="200" cy="88" r="5" fill="#8f3a5f"/>
+  <text x="308" y="146" font-family="Special Elite, monospace" font-size="11" fill="#3e6a83">hier kommt das Verstehen</text>
+  <text x="208" y="84" font-family="Special Elite, monospace" font-size="11" fill="#8f3a5f">hier auch</text>
+  <text x="470" y="35" font-family="Special Elite, monospace" font-size="12" fill="#3e6a83">Tutorial</text>
+  <text x="470" y="72" font-family="Special Elite, monospace" font-size="12" fill="#8f3a5f">Ko-Kreation</text>
+</svg>
+</div>
+<button onclick="cv('t')" id="bt" class="on">Tutorial</button>
+<button onclick="cv('k')" id="bk">Ko-Kreation</button>
+<div id="cvt" class="box" style="min-height:86px"></div>
+
+<h2>Der Beleg: diese eine Session</h2>
+<p>Kein Gedankenexperiment. <b>Ein Achterbahn-Prototyp mit WebGPU-Partikeln, Stoffphysik, PDF-Kartenrendering und Sprachausgabe. Rund zwei Tage. Der Auftraggeber kann kein three.js und wird es nie können.</b></p>
+<p>Er kann aber etwas anderes, und das ist der Punkt.</p>
+
+<div class="cnt">Filter:</div>
+<button onclick="ev('all')" id="ea" class="on">alles</button>
+<button onclick="ev('win')" id="ew">was er sah</button>
+<button onclick="ev('err')" id="ee">was die Maschine falsch machte</button>
+<div id="evc"></div>
+
+<h2>Und daraus fällt die Regel</h2>
+<div class="rule"><b>Du bist das Auge. Die Maschine ist die Hand.</b>
+Sie kann alles bauen und nichts beurteilen. Du kannst nichts bauen und alles beurteilen. Das passt genau, aber nur in dieser Richtung.</div>
+<div class="rule"><b>Ihre Sicherheit hat nichts mit ihrer Richtigkeit zu tun.</b>
+Sie klingt gleich überzeugend, wenn sie irrt. Das ist der wichtigste Satz auf dieser Seite, und er ist der einzige, den man nicht üben kann, sondern erfahren muss.</div>
+<div class="rule"><b>Iterier am Bild, nicht an der Beschreibung.</b>
+„Das sieht falsch aus" bringt dich weiter als jede Erklärung. Ein Screenshot schlägt eine Diskussion.</div>
+<div class="rule"><b>„Weiss ich nicht" ist die richtige Antwort.</b>
+Fordere sie ein. Eine Maschine, die nie passt, rät ständig, und du merkst nicht, wann.</div>
+<div class="rule"><b>Bring Wissen mit. Sie hat keins, sie hat Zugriff.</b>
+Sie kennt jede Zeile Code und keinen einzigen Grund. Der Grund bist du.</div>
+
+<h2>Die Warnungen, ohne die das Werbung wäre</h2>
+<div class="warn"><h3>Das Domänenwissen kam von irgendwoher</h3>
+<p>Er weiss, was ein Gutter ist, weil er jahrelang Comics gezeichnet hat. Er weiss, wie Aquarell sich verhält, weil er malt. <b>Er hat den Vorsprung nicht in zwei Tagen bekommen, er hat ihn mitgebracht.</b></p>
+<p>Eine Siebzehnjährige ohne Domänenwissen bekommt eine schnelle Maschine, die Generisches produziert. Sie baut in zwei Tagen etwas, das aussieht wie etwas. <b>Ob es gut ist, kann sie nicht beurteilen, und die Maschine sagt es ihr nicht.</b></p></div>
+<div class="warn"><h3>Prüfen kann nur, wer versteht</h3>
+<p>Die Fehlerliste oben ist echt und sie ist nicht die Ausnahme. <b>Der Modus funktioniert, weil einer prüft.</b> Wer nicht prüfen kann, bekommt eine selbstsichere Maschine ohne Bremse.</p>
+<p><b>Also ist die Untergrenze nicht null.</b> Man muss genug verstehen, um Nein zu sagen. Das ist deutlich weniger als Meisterschaft und deutlich mehr als nichts.</p></div>
+<div class="warn"><h3>Und der Gegenstand geht nicht ohne Berührung</h3>
+<p>Man lernt nicht am Papier, wie 3D-Raum sich anfühlt. <b>Man muss ein Werkzeug anfassen.</b> Nur eben nicht bis zur Meisterschaft, sondern bis zur Urteilsfähigkeit.</p>
+<p>Das Tutorial bringt dir das Werkzeug bei und den Gegenstand nebenbei. <b>Die Ko-Kreation bringt dir den Gegenstand bei und vom Werkzeug genau so viel, wie du zum Entscheiden brauchst.</b> Das ist die ganze Umkehrung.</p></div>
+
+<h2>Zur Aufmerksamkeit, und das ist das stärkste Argument</h2>
+<p>Ein Tutorial <b>konkurriert mit allem anderen auf dem Bildschirm.</b> Du schaust zu. Zuschauen verliert gegen TikTok, jedes Mal, und das ist keine Charakterschwäche, sondern Mathematik.</p>
+<p><b>Ko-Kreation ist Machen. Und dein eigenes Ding steht auf dem Spiel.</b> Es interessiert dich, ob der Hase rund ist, weil es dein Hase ist. Das ist der Unterschied zwischen einer Übung und einem Projekt, und er ist nicht motivierbar, er ist strukturell.</p>
+<div class="box"><h3>Der Beleg dafür ist die Uhrzeit</h3>
+<p>Diese Session lief bis nach Mitternacht, freiwillig, an einem Freitag. <b>Niemand macht hundert Stunden Blender-Tutorials um zwei Uhr nachts.</b></p></div>
+
+<div class="foot">
+Belege aus einer echten Session, 17.07.2026. Die Fehler sind echt, die Zitate wörtlich.<br>
+Wer diese Seite benutzt, um jemandem zu erklären, dass Lernen überflüssig ist, hat sie nicht gelesen.
+</div>
+</div>
+
+<script>
+const CV = {
+ t:{h:'Tutorial', p:'Du lernst zuerst das Programm. Menüs, Shortcuts, wo was liegt. Das Verstehen des Gegenstands kommt spät und beiläufig, meist erst wenn du das erste eigene Ding baust.<br><br><b>Und der vordere Teil der Kurve ist genau der Teil, der abläuft.</b> Du investierst Monate in etwas, das in drei Jahren ein anderes Interface hat.'},
+ k:{h:'Ko-Kreation', p:'Du bist ab Tag eins im Gegenstand, weil du sofort entscheiden musst: ist das rund? liest sich das? stimmt der Ton?<br><br>Das Werkzeug lernst du nur so weit, wie du zum Entscheiden brauchst. <b>Die Kurve steigt früher, aber sie steigt nicht höher.</b> Du wirst kein Meister des Programms. Du wirst urteilsfähig über die Sache.'}
+};
+function cv(k){
+  document.getElementById('bt').classList.toggle('on', k==='t');
+  document.getElementById('bk').classList.toggle('on', k==='k');
+  document.getElementById('c1').setAttribute('stroke-width', k==='t'?'5':'2');
+  document.getElementById('c2').setAttribute('stroke-width', k==='k'?'5':'2');
+  document.getElementById('cvt').innerHTML = `<h3 style="margin:0 0 6px;font-family:'Irish Grover',cursive;font-size:15px">${CV[k].h}</h3><p style="font-size:13px">${CV[k].p}</p>`;
+}
+
+const EV = [
+ {t:'win', w:'„die partikel sind mikromäßig"', d:'Aus einem Screenshot, ohne eine Zeile Code zu lesen. Nachgerechnet: 0.4 CSS-Pixel auf vierzig Weltenheiten. Die Formel steht in Zeile 991.', z:'Er hat eine Zahl geschätzt, die er nicht kannte, und lag richtig.'},
+ {t:'win', w:'„das sieht aus wie ein Mesh"', d:'Es war das Mesh. RollerCoasterGeometry, Zeile 562. Die Partikel, die die Schiene sein sollten, waren subpixelig.', z:'Keine Beschreibung. Eine Diagnose.'},
+ {t:'win', w:'„multiplikativ auf Papier?"', d:'Ein Satz, und er löste ein Problem, an dem zwei Maschinen vorbeigedacht hatten. Multiplikativ IST Aquarell: Pigment schluckt Licht, zwei Lasuren sind dunkler.', z:'Die Maschine kannte den Blend-Modus. Sie kam nicht darauf, dass er die Antwort ist.'},
+ {t:'win', w:'Das Magnetfeld um die Karten', d:'Löst ein Timing-Problem, das die Maschine noch gar nicht benannt hatte, und macht nebenbei den zufälligen Streckenbau möglich.', z:'Die stärkste Idee der Session. Sie kam nicht vom Modell.'},
+ {t:'err', w:'Die Zugbrücke', d:'Die Maschine schrieb ein falsches mentales Modell in das Master-Dokument. Es überlebte drei Ordner-Versionen und wurde gebaut.', z:'„Zugbrücke ist da ein falsches mentales Modell."'},
+ {t:'err', w:'Die schwarze Seite', d:'Er meldete zweimal, die Datei bleibe schwarz. Die Maschine sagte beim dritten Mal: mach sie auf. Der Browser lädt aus einer lokalen Datei keine Module. Das stand im eigenen Gedächtnis der Maschine.', z:'„schwarze seite!!!"'},
+ {t:'err', w:'Die Datei, die es nicht gab', d:'Die Maschine sagte: lad Version 0.4.2 hoch. Sie lag nur im anderen Chat. Er hatte im selben Thread geschrieben, dass der Export noch nicht gezogen ist.', z:'„WO LIEGT DIE!?!??!"'},
+ {t:'err', w:'„Der Vorhang stimmt"', d:'Behauptet aus einem Screenshot und einem Report. Es waren drei Regler mit den richtigen Namen und keine Physik dahinter.', z:'„der Vorhang stimmt ÜBERHAUPT nicht, der wurde übrigens auch nicht umgesetzt."'},
+ {t:'err', w:'Prosa statt Zeilennummern', d:'Die Maschine beschrieb einen Mechanismus, statt die Zeilen zu nennen. Der andere Chat baute die Beschreibung: eine starre Kachel mit Reglern, benannt nach dem Text.', z:'„ICH BIN SOOOO ABGEFUCKT!"'},
+ {t:'err', w:'Der schwache Schlag', d:'Die Maschine baute eine elegante Brücke über einen musiktheoretischen Irrtum und schlug vor, sie in zwei Dokumente zu kopieren. Im Vierertakt ist die Drei der Nebenakzent, nicht der schwache.', z:'Gefangen von einer anderen Instanz: „So entsteht Kanon-Müll: nicht durch Lügen, durch eleganten Kitt."'},
+ {t:'err', w:'Ein Tumblr-Post als Fakt', d:'Die Maschine schrieb „Die Vier ohne Konflikt" als Untertitel in eine Datei, die in seinem Wissenskorpus landete. Die Behauptung stammt aus einem Blogpost von 2012 und ist fachlich umstritten.', z:'Am selben Tag, an dem sie anderen vorhielt, Behauptungen ohne Beleg zu verbreiten.'},
+ {t:'err', w:'„Kein Pet im Bundle"', d:'Behauptet aus einer Suche, die komprimierte Daten nicht lesen konnte. Selbst gefangen, aber gesagt.', z:'Die Maschine prüft Existenz und nie Funktion. Fünfmal an einem Abend.'},
+];
+let ef='all';
+function ev(k){
+  ef=k;
+  ['ea','ew','ee'].forEach((id,i)=>document.getElementById(id).classList.toggle('on', ['all','win','err'][i]===k));
+  const v = EV.filter(e=> k==='all' || e.t===k);
+  document.getElementById('evc').innerHTML = v.map(e=>`
+    <div class="ev ${e.t==='win'?'win':''}">
+      <div class="w">${e.w}</div><div class="d">${e.d}</div><div class="z">${e.z}</div>
+    </div>`).join('') + `<div class="cnt" style="margin-top:10px">
+      <b>${EV.filter(e=>e.t==='win').length} Einsichten, alle von ihm. ${EV.filter(e=>e.t==='err').length} Fehler, alle von der Maschine. Er hat jeden einzelnen gefangen.</b></div>`;
+}
+cv('t'); ev('all');
+</script>
+</body></html>
