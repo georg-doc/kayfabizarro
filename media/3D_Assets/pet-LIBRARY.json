@@ -1,8 +1,8 @@
 {
   "$schema": "kfb.pet-library/1",
-  "version": "0.4.1",
+  "version": "0.4.2",
   "canonical": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/pet-LIBRARY.json",
-  "updated": "2026-07-16",
+  "updated": "2026-07-17",
   "notes": "KANONISCH. Diese Datei wird PER URL geholt (Feld canonical), nicht als Datei herumgereicht. Wer schreibt, zaehlt version hoch und setzt updated. canonical und updated NIE beim Export verlieren. Der Pet-Editor schreibt, die Apps lesen. Pets nie hardcoden.",
   "glbBase": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/GLB_cube-pets/",
   "skinBase": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/pets/skins/",
@@ -160,8 +160,13 @@
         "rough": 0.9,
         "freq": 11,
         "modScale": 2,
-        "modAmt": 0.55
-      }
+        "modAmt": 0.55,
+        "paper": 0.32
+      },
+      "kenneyBase": false,
+      "paperGold": true,
+      "tintMode": "lum",
+      "facet": false
     }
   },
   "ground": {
@@ -797,6 +802,7 @@
     "stripSnout": {
       "note": "KEINE Regel moeglich. Dieselbe Suche, die den Mund des bunny findet, findet die Maehne des lion (124 Dreiecke), den Schnabel von chick und penguin (32), den Ruessel des elephant (38), die Schnauze von dog (46), hog und koala (44). cow, crab und pig haben gar keine mittige Front-Schale. Deshalb: pro Pet von Hand, Liste leer = nichts wird geloescht.",
       "perPet": {}
-    }
+    },
+    "facet": false
   }
 }
