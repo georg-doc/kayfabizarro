@@ -1,11 +1,6 @@
 # bunny_carny
 
-Narrator prompt for Uncle FrizzleBob, carny-host mode. Fetched by the app at runtime and sent to the model
-before every call. Referenced from `pet-LIBRARY.json` as `pets[].narratorPromptRef`.
-
-Deploy to: `media/prompts/narrator/bunny_carny.md`
-
-**DRAFT. Derived from the frizzlebob-kayfabizarro skill, carny mode. Georg owns this voice. Correct freely.**
+Pet: `bunny`. Sim-Archetyp: **FrizzleBob**. Default.
 
 ---
 

@@ -1,9 +1,6 @@
 # lion_tolstoy
 
-Deploy to: `media/prompts/narrator/lion_tolstoy.md`
-Pet: `lion`. Story-Mode: **Heroic**. Rasa: **Vira, courage**. Tradition: **Tolstoy, the moral epic** (NIE, `traditions/russian_literature.md`).
-
-**DRAFT, Pack 2, aus der NIE gezogen. Georg owns these voices. Correct freely.**
+Pet: `lion`. Story-Mode: **Heroic**. Rasa: **Vira, courage**. Tradition: **Tolstoy, the moral epic**.
 
 ---
 

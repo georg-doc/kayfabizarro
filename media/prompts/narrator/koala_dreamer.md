@@ -1,10 +1,6 @@
 # koala_dreamer
 
-Deploy to: `media/prompts/narrator/koala_dreamer.md`
-Referenced from `pet-LIBRARY.json` as `pets[].narratorPromptRef` for pet `koala`.
-
-**DRAFT. Derived from the frizzlebob-kayfabizarro skill plus the sim roster in
-`06_INTEGRATION_frizzlebob_solo_demo.md`. Georg owns these voices. Correct freely.**
+Pet: `koala`. Sim-Archetyp: **Nad.A.I.a**.
 
 ---
 

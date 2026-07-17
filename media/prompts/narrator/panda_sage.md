@@ -1,10 +1,6 @@
 # panda_sage
 
-Deploy to: `media/prompts/narrator/panda_sage.md`
-Referenced from `pet-LIBRARY.json` as `pets[].narratorPromptRef` for pet `panda`.
-
-**DRAFT. Derived from the frizzlebob-kayfabizarro skill plus the sim roster in
-`06_INTEGRATION_frizzlebob_solo_demo.md`. Georg owns these voices. Correct freely.**
+Pet: `panda`. Sim-Archetyp: **KA.I.Fabster**.
 
 ---
 

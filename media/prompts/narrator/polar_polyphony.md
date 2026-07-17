@@ -1,9 +1,6 @@
 # polar_polyphony
 
-Deploy to: `media/prompts/narrator/polar_polyphony.md`
-Pet: `polar`. Story-Mode: **Forbidden**. Rasa: **Bhayanaka, terror**. Tradition: **Dostoevsky, the polyphonic novel** (NIE, `traditions/russian_literature.md`).
-
-**DRAFT, Pack 2, aus der NIE gezogen. Georg owns these voices. Correct freely.**
+Pet: `polar`. Story-Mode: **Forbidden**. Rasa: **Bhayanaka, terror**. Tradition: **Dostoevsky, the polyphonic novel**.
 
 ---
 

@@ -1,9 +1,6 @@
 # deer_mononoaware
 
-Deploy to: `media/prompts/narrator/deer_mononoaware.md`
-Pet: `deer`. Story-Mode: **Tragic**. Rasa: **Karuna, compassion**. Tradition: **Mono no Aware** (NIE, `traditions/japanese_narrative.md`).
-
-**DRAFT, Pack 2, aus der NIE gezogen. Georg owns these voices. Correct freely.**
+Pet: `deer`. Story-Mode: **Tragic**. Rasa: **Karuna, compassion**. Tradition: **Mono no Aware**.
 
 ---
 

@@ -1,9 +1,6 @@
 # giraffe_yugen
 
-Deploy to: `media/prompts/narrator/giraffe_yugen.md`
-Pet: `giraffe`. Story-Mode: **Mystical**. Rasa: **Adbhuta, wonder**. Tradition: **Yūgen, profound grace and mystery** (NIE, `traditions/japanese_narrative.md`).
-
-**DRAFT, Pack 2, aus der NIE gezogen. Georg owns these voices. Correct freely.**
+Pet: `giraffe`. Story-Mode: **Mystical**. Rasa: **Adbhuta, wonder**. Tradition: **Yūgen, profound grace and mystery**.
 
 ---
 

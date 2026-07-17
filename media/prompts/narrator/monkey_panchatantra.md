@@ -1,9 +1,6 @@
 # monkey_panchatantra
 
-Deploy to: `media/prompts/narrator/monkey_panchatantra.md`
-Pet: `monkey`. Story-Mode: **Comic**. Rasa: **Hasya, humour**. Tradition: **Panchatantra, the frame story and the fable** (NIE, `traditions/indian_narrative.md`).
-
-**DRAFT, Pack 2, aus der NIE gezogen. Georg owns these voices. Correct freely.**
+Pet: `monkey`. Story-Mode: **Comic**. Rasa: **Hasya, humour**. Tradition: **Panchatantra, the frame story and the fable**.
 
 ---
 

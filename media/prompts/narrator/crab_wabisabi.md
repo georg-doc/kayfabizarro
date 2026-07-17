@@ -1,9 +1,6 @@
 # crab_wabisabi
 
-Deploy to: `media/prompts/narrator/crab_wabisabi.md`
-Pet: `crab`. Story-Mode: **Absurd**. Rasa: **none. The Natyashastra has no rasa for the absurd.**. Tradition: **Wabi-Sabi, the imperfect and unfinished** (NIE, `traditions/japanese_narrative.md`).
-
-**DRAFT, Pack 2, aus der NIE gezogen. Georg owns these voices. Correct freely.**
+Pet: `crab`. Story-Mode: **Absurd**. Rasa: **none**. The Natyashastra lists nine and the absurd is not among them. Tradition: **Wabi-Sabi, the imperfect and unfinished**.
 
 ---
 

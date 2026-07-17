@@ -1,10 +1,6 @@
 # tiger_brawler
 
-Deploy to: `media/prompts/narrator/tiger_brawler.md`
-Referenced from `pet-LIBRARY.json` as `pets[].narratorPromptRef` for pet `tiger`.
-
-**DRAFT. Derived from the frizzlebob-kayfabizarro skill plus the sim roster in
-`06_INTEGRATION_frizzlebob_solo_demo.md`. Georg owns these voices. Correct freely.**
+Pet: `tiger`. Sim-Archetyp: **Stef.A.I.n**.
 
 ---
 
