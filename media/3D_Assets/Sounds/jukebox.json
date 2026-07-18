@@ -1,0 +1,65 @@
+{
+  "version": "1.0.0",
+  "updated": "2026-07-18",
+  "note": "Ride-Musik-Auswahl. Jeder Track traegt seinen vollen Pfad ab Repo-Wurzel in 'file'; der Loader macht RAW + file. Optionale Felder 'srt' und 'booklet' machen aus einem Track die getaktete Regel-Tour. bpm nur gesetzt, wo bekannt (Van-Metronome-Familie = 104); fehlt es, faellt die Float-Kopplung auf 104 zurueck.",
+  "tracks": [
+    {
+      "id": "van_metronome",
+      "title": "Van Metronome (Instrumental)",
+      "file": "media/3D_Assets/Sounds/Van_Metronome_2026-07-17T163547.mp3",
+      "bpm": 104,
+      "loop": true
+    },
+    {
+      "id": "van_metronome_cover",
+      "title": "KFB Rules (Van Metronome Cover, vocals)",
+      "file": "media/3D_Assets/Sounds/KFB Roller coaster Van_Metronome 02 (cover).mp3",
+      "bpm": 104,
+      "loop": false
+    },
+    {
+      "id": "kfb_metronome_v3",
+      "title": "KFB Metronome v3 (Instrumental)",
+      "file": "media/3D_Assets/Sounds/KFB Metronomes v3.mp3",
+      "bpm": 104,
+      "loop": true
+    },
+    {
+      "id": "kfb_karaoke_metronome_v3",
+      "title": "KFB Karaoke Metronome v3",
+      "file": "media/3D_Assets/Sounds/KFB Karaoke Metronomes v3.mp3",
+      "bpm": 104,
+      "loop": true
+    },
+    {
+      "id": "van_freestyle_v2_1",
+      "title": "KFB Van Freestyle v2-1",
+      "file": "media/3D_Assets/Sounds/KFB_Van_Freestyle_v2-1.mp3",
+      "loop": true
+    },
+    {
+      "id": "van_freestyle_v2_2",
+      "title": "KFB Van Freestyle v2-2",
+      "file": "media/3D_Assets/Sounds/KFB_Van_Freestyle_v2-2.mp3",
+      "loop": true
+    },
+    {
+      "id": "kayfabizarro_02_2",
+      "title": "Kayfabizarro 02.2",
+      "file": "media/3D_Assets/Sounds/Kayfabizarro 02.2.mp3",
+      "loop": false
+    },
+    {
+      "id": "kayfabizarro_02_2_2",
+      "title": "Kayfabizarro 02.2-2",
+      "file": "media/3D_Assets/Sounds/Kayfabizarro 02.2-2.mp3",
+      "loop": false
+    },
+    {
+      "id": "kayfabizarro_06_hook",
+      "title": "Kayfabizarro 06 HOOK song (A+++ Cover)",
+      "file": "media/3D_Assets/Sounds/Kayfabizarro 06 HOOK song - A+++ COVER 4.0.mp3",
+      "loop": false
+    }
+  ]
+}
