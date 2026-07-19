@@ -1,0 +1,865 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Irish+Grover&family=Special+Elite&display=swap" rel="stylesheet">
+<style>
+  html,body{margin:0;height:100%;background:#131210;overflow:hidden;font-family:'Special Elite',monospace;-webkit-font-smoothing:antialiased;}
+  #dc-root,.sc-host{height:100%;}
+  a{color:#b8361f;} a:hover{color:#8a6a16;}
+  input[type=range]{-webkit-appearance:none;appearance:none;height:4px;border-radius:0;background:#c2ad79;outline:none;width:100%;}
+  input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:14px;height:14px;border-radius:0;background:#b8361f;border:2px solid #1f1a14;cursor:pointer;}
+  input[type=range]::-moz-range-thumb{width:14px;height:14px;border-radius:0;background:#b8361f;border:2px solid #1f1a14;cursor:pointer;}
+  .pe-scroll::-webkit-scrollbar{width:8px;height:8px;} .pe-scroll::-webkit-scrollbar-thumb{background:#a89a78;border-radius:0;}
+  ::selection{background:rgba(233,193,74,.5);}
+</style>
+<script type="importmap">
+{
+  "imports": {
+    "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
+    "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/"
+  }
+}
+</script>
+<script type="module">
+  import * as THREE from 'three';
+  import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+  import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
+  import { RoomEnvironment } from 'three/addons/environments/RoomEnvironment.js';
+  window.__PETMO = { THREE, OrbitControls, GLTFLoader, RoomEnvironment };
+  window.dispatchEvent(new Event('petmoready'));
+</script>
+</helmet>
+
+<template id="__bundler_thumbnail"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400"><rect width="400" height="400" fill="#f3ead3"/><rect x="34" y="34" width="332" height="332" fill="#b8361f" transform="rotate(-1.2 200 200)"/><path d="M70 300 Q140 150 200 300 Q260 150 330 300" fill="none" stroke="#f6efd9" stroke-width="10"/><circle cx="200" cy="180" r="46" fill="#f7f0da" stroke="#1f1a14" stroke-width="7"/><circle cx="214" cy="192" r="18" fill="#1f1a14"/></svg></template>
+
+<div style="position:absolute;inset:0;background:radial-gradient(120% 100% at 50% 0%,#2a2723 0%,#131210 72%);">
+
+  <canvas ref="{{ canvasRef }}" style="position:absolute;inset:0;width:100%;height:100%;display:block;"></canvas>
+  <input type="file" accept="application/json,.json" ref="{{ fileRef }}" onChange="{{ onImport }}" style="display:none;">
+
+  <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:12px;pointer-events:none;transition:opacity .5s;z-index:9;opacity:{{ loaderOpacity }};">
+    <div style="font-family:'Irish Grover',cursive;font-size:26px;color:#f6efd9;text-shadow:3px 3px 0 rgba(31,26,20,.6);transform:rotate(-1deg);">Motion-Editor v2 lädt …</div>
+    <div style="font-size:12px;color:#e3d5af;opacity:.75;">Clips · Motions · Mienenspiel · Events · FX</div>
+  </div>
+
+  <div style="position:absolute;top:14px;left:16px;z-index:6;pointer-events:none;display:flex;align-items:center;gap:10px;">
+    <div style="font-family:'Irish Grover',cursive;font-size:24px;transform:rotate(-1deg);">
+      <span style="color:#f6efd9;text-shadow:3px 3px 0 rgba(31,26,20,.6);">Kayfa</span><span style="background:#b8361f;color:#f6efd9;padding:1px 8px 2px;box-shadow:3px 3px 0 rgba(31,26,20,.5);margin-left:3px;">Bizarro</span>
+    </div>
+    <div style="font-family:'Special Elite',monospace;font-size:12px;color:#1f1a14;letter-spacing:1px;background:#f3ead3;border:2px solid #1f1a14;box-shadow:2px 2px 0 rgba(31,26,20,.5);padding:3px 8px;transform:rotate(-.4deg);">MOTION-EDITOR v2 · {{ status }}</div>
+  </div>
+
+  <div style="position:absolute;top:14px;right:16px;z-index:6;display:flex;gap:7px;align-items:center;">
+    <span style="font-size:11px;color:{{ dirtyColor }};background:#1f1a14;border:2px solid #1f1a14;box-shadow:2px 2px 0 rgba(31,26,20,.5);padding:4px 8px;">{{ dirtyLabel }}</span>
+    <sc-for list="{{ ioBtns }}" as="b" hint-placeholder-count="2">
+      <button onClick="{{ b.on }}" title="{{ b.title }}" style="{{ b.style }}">{{ b.icon }}</button>
+    </sc-for>
+    <button onClick="{{ onHud }}" title="Panels" style="font-family:'Special Elite',monospace;background:#f3ead3;color:#3a342a;border:2px solid #1f1a14;box-shadow:3px 3px 0 rgba(31,26,20,.35);border-radius:0;width:34px;height:34px;font-size:14px;cursor:pointer;">{{ hudLabel }}</button>
+  </div>
+
+  <!-- RECHTS: Tuning (Auswahl) + Global -->
+  <div class="pe-scroll" style="display:{{ hudDisplay }};position:absolute;top:62px;right:16px;bottom:{{ rpB }};width:{{ rpW }};overflow-y:auto;background:#f3ead3f2;border:2px solid #1f1a14;box-shadow:3px 3px 0 rgba(31,26,20,.35);border-radius:0;padding:12px 13px 14px;color:#1f1a14;z-index:5;transform:rotate(.25deg);">
+    <div style="font-family:'Irish Grover',cursive;font-size:15px;color:#b8361f;margin-bottom:6px;">Tuning · {{ selLabel }}</div>
+    <div style="display:{{ selHintDisplay }};font-size:10px;opacity:.65;line-height:1.5;margin-bottom:8px;">{{ selHint }}</div>
+    <sc-for list="{{ tuneSliders }}" as="a" hint-placeholder-count="5">
+      <div style="margin-bottom:9px;">
+        <div style="display:flex;justify-content:space-between;font-size:11px;margin-bottom:2px;"><span>{{ a.label }}</span><span style="opacity:.55;">{{ a.val }}</span></div>
+        <input type="range" min="{{ a.min }}" max="{{ a.max }}" step="{{ a.step }}" value="{{ a.value }}" onInput="{{ a.on }}">
+      </div>
+    </sc-for>
+    <button onClick="{{ onReplay }}" style="{{ replayStyle }}">▶ nochmal</button>
+    <div style="font-family:'Irish Grover',cursive;font-size:14px;color:#b8361f;border-top:2px solid #c2ad79;padding-top:9px;margin:12px 0 6px;">Global</div>
+    <div style="margin-bottom:10px;">
+      <div style="font-size:11px;margin-bottom:3px;">Pet (alle 24)</div>
+      <select onChange="{{ onPet }}" value="{{ petId }}" style="width:100%;font-family:'Special Elite',monospace;font-size:11px;background:#f7f0da;color:#1f1a14;border:2px solid #1f1a14;border-radius:0;padding:4px;cursor:pointer;">
+        <sc-for list="{{ petOpts }}" as="p" hint-placeholder-count="3">
+          <option value="{{ p.id }}">{{ p.label }}</option>
+        </sc-for>
+      </select>
+    </div>
+    <div style="margin-bottom:10px;">
+      <div style="display:flex;justify-content:space-between;font-size:11px;margin-bottom:2px;"><span>Abstand</span><span style="opacity:.55;">{{ distVal }}</span></div>
+      <input type="range" min="0" max="1" step="0.01" value="{{ dist }}" onInput="{{ onDist }}">
+      <div style="display:flex;justify-content:space-between;font-size:9px;opacity:.5;margin-top:2px;"><span>Begleiter</span><span>Vehikel</span></div>
+    </div>
+    <div style="margin-bottom:10px;">
+      <div style="display:flex;justify-content:space-between;font-size:11px;margin-bottom:2px;"><span>Squash-Master</span><span style="opacity:.55;">{{ masterVal }}</span></div>
+      <input type="range" min="0" max="2" step="0.05" value="{{ master }}" onInput="{{ onMaster }}">
+    </div>
+    <div style="margin-bottom:10px;">
+      <div style="display:flex;justify-content:space-between;font-size:11px;margin-bottom:2px;"><span>Glättung (Anti-Flacker)</span><span style="opacity:.55;">{{ smoothVal }}</span></div>
+      <input type="range" min="0.02" max="0.2" step="0.005" value="{{ smooth }}" onInput="{{ onSmooth }}">
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:5px;">
+      <button onClick="{{ onEye }}" style="{{ eyeStyle }}">{{ eyeLabel }}</button>
+      <button onClick="{{ onFx }}" style="{{ fxStyle }}">{{ fxLabel }}</button>
+      <button onClick="{{ onGrid }}" style="{{ gridStyle }}">{{ gridLabel }}</button>
+      <button onClick="{{ onReset }}" style="{{ resetStyle }}">↺ Reset</button>
+    </div>
+    <div style="font-size:9px;opacity:.55;line-height:1.5;margin-top:10px;">Maus über der Bühne = FrizzleBob folgt dem Cursor mit dem Blick (löst sich nach 2,4 s). Sekundär-Federn (Ohren/Tail) unter Motions → Sekundär tunen.</div>
+  </div>
+
+  <!-- UNTEN: DAW-Pad-Bar -->
+  <div class="pe-scroll" style="display:{{ hudDisplay }};position:absolute;left:16px;right:16px;bottom:14px;z-index:5;background:#f3ead3f2;border:2px solid #1f1a14;box-shadow:3px 3px 0 rgba(31,26,20,.35);border-radius:0;padding:10px 12px 12px;color:#1f1a14;overflow-x:auto;transform:rotate(-.15deg);">
+    <div style="display:flex;gap:18px;align-items:flex-start;">
+      <sc-for list="{{ padGroups }}" as="gr" hint-placeholder-count="5">
+        <div style="flex:0 0 auto;">
+          <div style="font-family:'Irish Grover',cursive;font-size:13px;color:{{ gr.color }};margin-bottom:5px;white-space:nowrap;">{{ gr.label }}</div>
+          <div style="display:grid;grid-template-columns:{{ gr.cols }};gap:5px;">
+            <sc-for list="{{ gr.pads }}" as="p" hint-placeholder-count="8">
+              <button onClick="{{ p.on }}" title="{{ p.title }}" style="{{ p.style }}">{{ p.label }}</button>
+            </sc-for>
+          </div>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:&quot;100%&quot;,&quot;height&quot;:&quot;100%&quot;},&quot;master&quot;:{&quot;editor&quot;:&quot;range&quot;,&quot;default&quot;:1,&quot;min&quot;:0,&quot;max&quot;:2,&quot;step&quot;:0.05,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Motion&quot;},&quot;dist&quot;:{&quot;editor&quot;:&quot;range&quot;,&quot;default&quot;:0.15,&quot;min&quot;:0,&quot;max&quot;:1,&quot;step&quot;:0.01,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Bühne&quot;},&quot;eyeReact&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Motion&quot;},&quot;fxOn&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Motion&quot;},&quot;showGrid&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Bühne&quot;}}">
+const LIB_URL = './pet-motion.v2.js';
+const FACE_URL = './pet-face.v1.js';
+const FX_URL = './pet-fx.v1.js';
+const MOUTH_URL = './pet-mouth.v1.js';
+// Textur-Parität mit dem Pet-Editor (2026-07-19): dieselben Triplanar-Quellen aus material.live.
+const TEXBASE = 'https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/Textures/';
+const FUR_URL = TEXBASE + 'fur/fluffy_fur_01.jpg';
+const MODS = [['none', '—', 'none', null], ['fingerprint', 'Fingerabdrücke', 'relief', 'decals/fingerprint_alpha.png'], ['coffee', 'Kaffeerand', 'grunge', 'decals/coffee_ring_alpha.png'], ['ink', 'Tinten-Klecks', 'grunge', 'decals/ink_splat_alpha.png'], ['scratch', 'Kratzer', 'grunge', 'decals/scratches_alpha.png'], ['tape', 'Klebeband', 'lighten', 'decals/tape_alpha.png']];
+const MODOF = (id) => MODS.find((m) => m[0] === id) || MODS[0];
+const MOT_URL_V2 = './motion-LIBRARY.v2.json';
+const MOT_URL_V1 = './motion-LIBRARY.json';
+const MOT_CANON = 'https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/motion-LIBRARY.json';
+const PET_URL = './PET_EDITOR/pet-LIBRARY.json';
+const PET_CANON = 'https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/pet-LIBRARY.json';
+const SESSION_KEY = 'kfb-motion-library-v2';
+const bumpMot = (v) => { const m = /^(\d+)\.(\d+)\.(\d+)$/.exec(String(v || '')); return (m && m[1] >= 2) ? (m[1] + '.' + m[2] + '.' + (parseInt(m[3], 10) + 1)) : '2.0.0'; };
+const MOTIONS = [
+  ['idle', 'Idle-Breathe', 'loop'],
+  ['hop', 'Hop', 'shot'],
+  ['powerJump', 'Power-Jump', 'shot'],
+  ['locomotion', 'Hüpf→Ziel', 'shot'],
+  ['loading', 'Lade-Loop', 'loop'],
+  ['transition', 'Raum-Wechsel', 'shot'],
+  ['turn', 'Turn 180°', 'shot'],
+  ['celebrate', 'Celebrate', 'shot'],
+  ['reactPos', 'Pos !', 'shot'],
+  ['reactNeg', 'Neg ?!', 'shot'],
+  ['secondary', 'Sekundär', 'tune'],
+];
+const FACES = ['neutral', 'happy', 'angry', 'sad', 'surprised', 'thinking'];
+const HINTS = {
+  event: 'Game-Event: Gesicht reagiert VOR dem Körper, FX interpunktieren. Intensität skaliert mit dem Squash-Master.',
+  combo: 'Baukasten: Anticipation → Aktion → Recover. „Zufalls-Combo" würfelt aus den Bausteinen — nur auf Anforderung, nie von allein.',
+  clip: 'Kenney-GLB-Clip (baked). Läuft UNTER der prozeduralen Squash-Schicht; Klick = an/aus.',
+  face: 'Mienenspiel: der Zielpunkt wandert und zittert, er springt nie. Drift = Eigenleben zwischen neutral↔thinking.',
+  talk: 'Talking ohne Lip-Sync: Visem-Shuffle im Silbentakt (offene Formen häufig, M/F/W-oo als Closer, Mikro-Pausen). Ruhe-Mund folgt dem Emote. PNGs: FrizzelBob-Mouth_01 (GitHub raw).',
+  secondary: 'Follow-Through-Federn auf benannten GLB-Teilen (Ohren/Tail/Geweih). Keine Teile gefunden → Konsole prüfen.',
+};
+
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = {
+      status: 'lädt …', ready: false, hud: true,
+      sel: { kind: 'motion', id: 'hop' },
+      params: null, clipsP: null, faceP: null,
+      master: this.props.master != null ? this.props.master : 1,
+      smooth: this.props.smooth != null ? this.props.smooth : 0.07,
+      eyeReact: this.props.eyeReact != null ? this.props.eyeReact : true,
+      fxOn: this.props.fxOn != null ? this.props.fxOn : true,
+      grid: this.props.showGrid != null ? this.props.showGrid : true,
+      dist: this.props.dist != null ? this.props.dist : 0.15,
+      petId: 'bunny', talkOn: false, compact: false,
+      driftOn: true, idleOn: true, loadingOn: false, activeClip: null, dirty: false,
+    };
+    this.modelCache = new Map();
+    this.disposed = false;
+    this.canvasRef = (el) => { if (el) this._canvas = el; };
+    this.fileRef = (el) => { this._file = el; };
+  }
+
+  componentDidMount() {
+    if (window.__PETMO) this.init();
+    else window.addEventListener('petmoready', () => this.init(), { once: true });
+    this._onResize = () => this.resize();
+    window.addEventListener('resize', this._onResize);
+  }
+  componentWillUnmount() {
+    this.disposed = true;
+    if (this._raf) cancelAnimationFrame(this._raf);
+    window.removeEventListener('resize', this._onResize);
+    if (this.rig) this.rig.dispose();
+    if (this.face) this.face.dispose();
+    if (this.mouth) this.mouth.dispose();
+  }
+
+  // ---- Clay-Triplanar-Look (portiert aus Pet-Editor v8/v9, 2026-07-19). Damit sieht das Pet im
+  // Motion-Editor exakt aus wie im Aussehen-Editor: object-space Triplanar-Textur + Papier-Relief +
+  // paperGold-Tönung, alles aus material.live. Das ist das geteilte makeMat, das Pet Studio erbt. ----
+  _white() {
+    if (this._whiteTex) return this._whiteTex;
+    const THREE = this.THREE;
+    const t = new THREE.DataTexture(new Uint8Array([255, 255, 255, 255]), 1, 1, THREE.RGBAFormat);
+    t.needsUpdate = true; this._whiteTex = t; return t;
+  }
+  loadTex(url) {
+    this._texCache = this._texCache || new Map();
+    if (this._texCache.has(url)) return this._texCache.get(url);
+    const THREE = this.THREE;
+    const pr = new Promise((res, rej) => this._texLoader.load(url, (t) => {
+      t.wrapS = t.wrapT = THREE.RepeatWrapping; t.colorSpace = THREE.NoColorSpace; t.anisotropy = 4;
+      try { this.renderer.initTexture(t); } catch (e) {}
+      res(t);
+    }, undefined, rej));
+    this._texCache.set(url, pr);
+    return pr;
+  }
+  _modKind() {
+    const m = MODOF(this._live.mod); const k = m[2];
+    if (!this._modTex || k === 'none') return 0;
+    return k === 'relief' ? 1 : (k === 'grunge' ? 2 : 3);
+  }
+  makeMat(o = {}) {
+    const THREE = this.THREE;
+    const col = new THREE.Color(o.color != null ? o.color : 0xffffff);
+    const L = this._live || {};
+    if (!L.on) return new THREE.MeshStandardMaterial({ color: col, map: o.map || null, metalness: 0, roughness: o.roughness != null ? o.roughness : 0.82, envMapIntensity: 0.85 });
+    const sf = L.surf || {};
+    const lidFlatten = o.lid && L.texture === 'fur_fluffy';
+    const useTex = L.texture && L.texture !== 'proc' && !!this._tex && !lidFlatten;
+    const keepMap = L.kenneyBase || L.paperGold || !useTex;
+    const mat = new THREE.MeshStandardMaterial({ color: col, map: keepMap ? (o.map || null) : null, metalness: 0, roughness: o.roughness != null ? o.roughness : (sf.rough != null ? sf.rough : 0.9), envMapIntensity: 1.0, flatShading: false });
+    this._surfShader(mat, useTex, o.detailScale, o.plain, o.lid);
+    return mat;
+  }
+  _surfShader(mat, useTex, dScale, plain, lid) {
+    const THREE = this.THREE, L = this._live || {}, sf = L.surf || {};
+    const ds = dScale || 1;
+    mat.userData.dScale = ds;
+    const tex = useTex ? this._tex : this._white();
+    const modK = this._modKind();
+    mat.userData.isClay = true;
+    let look = (plain || lid) ? 0 : (L.paperGold ? 2 : (L.kenneyBase ? 1 : 0));
+    let hasColor = (!plain && !lid && this._petColorHex != null) ? 1 : 0;
+    const pck = 'kfclay' + (this._pckN = (this._pckN || 0) + 1);
+    mat.customProgramCacheKey = () => pck;
+    mat.onBeforeCompile = (sh) => {
+      Object.assign(sh.uniforms, {
+        uFreq: { value: sf.freq != null ? sf.freq : 11 }, uKnet: { value: sf.knet != null ? sf.knet : 0 }, uAO: { value: sf.ao != null ? sf.ao : 0.26 },
+        uTexScale: { value: (sf.texScale != null ? sf.texScale : 0.9) * ds }, uTint: { value: sf.tint != null ? sf.tint : 0.85 }, uRelief: { value: sf.relief != null ? sf.relief : 0.8 },
+        uModScale: { value: sf.modScale != null ? sf.modScale : 2 }, uModAmt: { value: sf.modAmt != null ? sf.modAmt : 0.55 },
+        uHasTex: { value: useTex ? 1 : 0 }, uTex: { value: tex },
+        uHasNrm: { value: (useTex && this._nrm) ? 1 : 0 }, uNrm: { value: (useTex && this._nrm) ? this._nrm : this._white() },
+        uModKind: { value: modK }, uMod: { value: this._modTex || this._white() },
+        uLook: { value: look }, uTintMode: { value: L.tintMode === 'lerp' ? 1 : 0 },
+        uHasColor: { value: hasColor }, uPaper: { value: sf.paper != null ? sf.paper : 0.32 }, uLidM: { value: lid ? 1 : 0 },
+      });
+      sh.vertexShader = sh.vertexShader
+        .replace('#include <common>', '#include <common>\nvarying vec3 vObjP;\nvarying vec3 vObjN;\nvarying mat3 vNMat;')
+        .replace('#include <beginnormal_vertex>', '#include <beginnormal_vertex>\n  vObjN = objectNormal;')
+        .replace('#include <begin_vertex>', '#include <begin_vertex>\n  vObjP = transformed;\n  vNMat = normalMatrix;');
+      sh.fragmentShader = sh.fragmentShader
+        .replace('#include <common>', '#include <common>\n'
+          + 'varying vec3 vObjP; varying vec3 vObjN; varying mat3 vNMat;\n'
+          + 'uniform float uFreq,uKnet,uAO,uTexScale,uTint,uRelief,uModScale,uModAmt,uHasTex,uHasNrm,uModKind,uLook,uTintMode,uHasColor,uPaper,uLidM;\n'
+          + 'uniform sampler2D uTex,uMod,uNrm;\n'
+          + 'float kfH(vec3 p){ p=fract(p*0.3183099+0.1); p*=17.0; return fract(p.x*p.y*p.z*(p.x+p.y+p.z)); }\n'
+          + 'float kfN(vec3 x){ vec3 i=floor(x),f=fract(x); f=f*f*(3.0-2.0*f);\n'
+          + '  return mix(mix(mix(kfH(i+vec3(0,0,0)),kfH(i+vec3(1,0,0)),f.x),mix(kfH(i+vec3(0,1,0)),kfH(i+vec3(1,1,0)),f.x),f.y),\n'
+          + '             mix(mix(kfH(i+vec3(0,0,1)),kfH(i+vec3(1,0,1)),f.x),mix(kfH(i+vec3(0,1,1)),kfH(i+vec3(1,1,1)),f.x),f.y),f.z); }\n'
+          + 'vec3 kfW(vec3 n){ vec3 w=pow(abs(normalize(n)),vec3(2.0)); return w/max(w.x+w.y+w.z,1e-4); }\n'
+          + 'vec4 kfTri(sampler2D t,vec3 p,vec3 w){ return texture2D(t,p.yz)*w.x+texture2D(t,p.xz)*w.y+texture2D(t,p.xy)*w.z; }\n'
+          + 'float kfMod(vec3 p,vec3 w){ vec4 c=kfTri(uMod,p*uModScale,w); return (c.a<0.999)?c.a:(1.0-dot(c.rgb,vec3(0.3333))); }\n'
+          + 'float kfHeight(vec3 p){ vec3 w=kfW(vObjN); float h=uKnet*(kfN(p*uFreq)*0.8+kfN(p*uFreq*2.0)*0.2);\n'
+          + '  if(uModKind>0.5 && uModKind<1.5) h+=uModAmt*0.4*kfMod(p,w); return h; }')
+        .replace('#include <normal_fragment_maps>', '#include <normal_fragment_maps>\n'
+          + '{ vec3 p=vObjP; float e=0.15/uFreq;\n'
+          + '  vec3 g=vec3(kfHeight(p+vec3(e,0.,0.))-kfHeight(p-vec3(e,0.,0.)), kfHeight(p+vec3(0.,e,0.))-kfHeight(p-vec3(0.,e,0.)), kfHeight(p+vec3(0.,0.,e))-kfHeight(p-vec3(0.,0.,e)))/(2.0*e);\n'
+          + '  vec3 gn=normalize(vObjN); g-=gn*dot(g,gn); vec3 nObj=normalize(gn-g);\n'
+          + '  if(uHasNrm>0.5){ vec3 w=kfW(gn);\n'
+          + '    vec3 tx=texture2D(uNrm,p.zy*uTexScale).xyz*2.0-1.0;\n'
+          + '    vec3 ty=texture2D(uNrm,p.xz*uTexScale).xyz*2.0-1.0;\n'
+          + '    vec3 tz=texture2D(uNrm,p.xy*uTexScale).xyz*2.0-1.0;\n'
+          + '    tx.xy*=uRelief; ty.xy*=uRelief; tz.xy*=uRelief;\n'
+          + '    tx=vec3(tx.xy+nObj.zy, abs(tx.z)*nObj.x);\n'
+          + '    ty=vec3(ty.xy+nObj.xz, abs(ty.z)*nObj.y);\n'
+          + '    tz=vec3(tz.xy+nObj.xy, abs(tz.z)*nObj.z);\n'
+          + '    nObj=normalize(tx.zyx*w.x + ty.xzy*w.y + tz.xyz*w.z); }\n'
+          + '  normal=normalize(vNMat*nObj); }')
+        .replace('#include <map_fragment>', '#ifdef USE_MAP\n'
+          + '  vec4 kfMap=texture2D(map,vMapUv);\n'
+          + '  if(uLook<1.5) diffuseColor*=kfMap;\n'
+          + '#endif')
+        .replace('#include <color_fragment>', '#include <color_fragment>\n'
+          + '{ vec3 p=vObjP; vec3 w=kfW(vObjN);\n'
+          + '  float lp=1.0; vec3 tex=vec3(1.0);\n'
+          + '  if(uHasTex>0.5){ tex=pow(kfTri(uTex,p*uTexScale,w).rgb,vec3(2.2)); lp=dot(tex,vec3(0.299,0.587,0.114)); }\n'
+          + '  if(uLook>1.5){\n'
+          + '    vec3 cm=vec3(1.0);\n'
+          + '    #ifdef USE_MAP\n      cm=texture2D(map,vMapUv).rgb;\n    #endif\n'
+          + '    vec3 baseC=cm*mix(1.0, lp*1.7, uPaper);\n'
+          + '    vec3 yellow=diffuseColor.rgb;\n'
+          + '    float t=uTint*uHasColor;\n'
+          + '    vec3 tinted;\n'
+          + '    if(uTintMode<0.5){\n'
+          + '      float lum=dot(baseC,vec3(0.299,0.587,0.114));\n'
+          + '      float yl=max(dot(yellow,vec3(0.299,0.587,0.114)),1e-3);\n'
+          + '      tinted=mix(baseC, (yellow/yl)*lum, t);\n'
+          + '    } else { tinted=mix(baseC, yellow, t); }\n'
+          + '    diffuseColor.rgb=tinted;\n'
+          + '  } else if(uLook>0.5){\n'
+          + '    if(uHasTex>0.5) diffuseColor.rgb*=mix(vec3(1.0),vec3(lp*1.9),uTint);\n'
+          + '  } else if(uHasTex>0.5){\n'
+          + '    if(uLidM>0.5){ diffuseColor.rgb*=mix(1.0, lp*1.25, uTint); }\n'
+          + '    else { vec3 recol=diffuseColor.rgb*lp*1.9; diffuseColor.rgb=mix(tex, recol, uTint); }\n'
+          + '  }\n'
+          + '  float ao=kfN(p*uFreq*0.5); diffuseColor.rgb*=mix(1.0-uAO,1.0,smoothstep(0.2,0.72,ao));\n'
+          + '  if(uModKind>1.5){ float md=kfMod(p,w);\n'
+          + '    if(uModKind<2.5) diffuseColor.rgb*=mix(1.0,1.0-0.85*uModAmt,md);\n'
+          + '    else diffuseColor.rgb=mix(diffuseColor.rgb, vec3(0.90,0.86,0.72), md*uModAmt); } }');
+      mat.userData.shader = sh;
+    };
+    mat.needsUpdate = true;
+    return mat;
+  }
+  async loadGLTF(url) {
+    if (this.modelCache.has(url)) return this.modelCache.get(url);
+    const g = await this.gltf.loadAsync(url);
+    this.modelCache.set(url, g);
+    return g;
+  }
+  _paintBody(baseHex) {
+    if (!this.ch || !this.ch.inner) return;
+    const facet = !!(this._petLib && this._petLib.face && this._petLib.face.facet);
+    this.ch.inner.traverse((n) => {
+      if (!n.isMesh || n.userData.petOverlay) return;
+      if (facet && n.geometry && !n.userData._sm) { n.geometry.computeVertexNormals(); n.userData._sm = true; }
+      n.material = this.makeMat({ color: baseHex });
+      n.castShadow = true; n.receiveShadow = false; n.frustumCulled = false;
+    });
+  }
+  matTex() {
+    const THREE = this.THREE;
+    const c = document.createElement('canvas'); c.width = c.height = 256;
+    const g = c.getContext('2d');
+    g.fillStyle = '#e3d5af'; g.fillRect(0, 0, 256, 256);
+    g.strokeStyle = 'rgba(31,26,20,.13)'; g.lineWidth = 1;
+    for (let i = 0; i <= 256; i += 32) { g.beginPath(); g.moveTo(i, 0); g.lineTo(i, 256); g.moveTo(0, i); g.lineTo(256, i); g.stroke(); }
+    g.strokeStyle = 'rgba(31,26,20,.28)'; g.lineWidth = 2;
+    g.strokeRect(1, 1, 254, 254);
+    const t = new THREE.CanvasTexture(c); t.wrapS = t.wrapT = THREE.RepeatWrapping; t.repeat.set(6, 6); t.colorSpace = THREE.SRGBColorSpace;
+    return t;
+  }
+  bgTex() {
+    const THREE = this.THREE, c = document.createElement('canvas'); c.width = 16; c.height = 256;
+    const g = c.getContext('2d'); const grd = g.createLinearGradient(0, 0, 0, 256);
+    grd.addColorStop(0, '#3a3630'); grd.addColorStop(0.6, '#242019'); grd.addColorStop(1, '#141210');
+    g.fillStyle = grd; g.fillRect(0, 0, 16, 256);
+    const t = new THREE.CanvasTexture(c); t.colorSpace = THREE.SRGBColorSpace; return t;
+  }
+
+  async init() {
+    if (this.scene) return;
+    const H = window.__PETMO, THREE = this.THREE = H.THREE;
+    const renderer = this.renderer = new THREE.WebGLRenderer({ canvas: this._canvas, antialias: true, preserveDrawingBuffer: true });
+    renderer.setPixelRatio(Math.min(2, window.devicePixelRatio));
+    renderer.outputColorSpace = THREE.SRGBColorSpace;
+    renderer.toneMapping = THREE.ACESFilmicToneMapping; renderer.toneMappingExposure = 1.0;
+    renderer.shadowMap.enabled = true; renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+    const scene = this.scene = new THREE.Scene();
+    scene.background = this.bgTex();
+    const cam = this.cam = new THREE.PerspectiveCamera(38, 1, 0.05, 100);
+    cam.position.set(0.5, 1.15, 3.7);
+    const controls = this.controls = new H.OrbitControls(cam, this._canvas);
+    controls.enableDamping = true; controls.dampingFactor = 0.08;
+    controls.maxPolarAngle = Math.PI * 0.92;
+    controls.minDistance = 1.2; controls.maxDistance = 9;
+    controls.target.set(0, 0.55, 0.2);
+    this.gltf = new H.GLTFLoader();
+    this._texLoader = new THREE.TextureLoader(); this._texLoader.setCrossOrigin('anonymous');
+    this._live = { on: false };   // wird in _applyContractLook aus material.live gefüllt
+    const pmrem = new THREE.PMREMGenerator(renderer);
+    scene.environment = pmrem.fromScene(new H.RoomEnvironment(), 0.04).texture;
+    scene.add(new THREE.AmbientLight(0xffffff, 0.45));
+    scene.add(new THREE.HemisphereLight(0xdfeaff, 0x6b5a44, 0.5));
+    const sun = new THREE.DirectionalLight(0xffe6b0, 1.5);
+    sun.position.set(2.4, 4.2, 2.2);
+    sun.castShadow = true; sun.shadow.mapSize.set(2048, 2048);
+    sun.shadow.bias = -0.0005; sun.shadow.radius = 10;
+    Object.assign(sun.shadow.camera, { left: -4, right: 4, top: 4, bottom: -4, near: 0.5, far: 16 });
+    sun.shadow.camera.updateProjectionMatrix();
+    sun.target.position.set(0, 0.3, 0.2); scene.add(sun); scene.add(sun.target);
+    const fill = new THREE.DirectionalLight(0xdfeaff, 0.5); fill.position.set(-2.6, 2.2, 1.6); scene.add(fill);
+    const rimL = new THREE.DirectionalLight(0xf6efd9, 0.5); rimL.position.set(-1.8, 1.6, -2.8); scene.add(rimL);
+    this.floor = new THREE.Group(); scene.add(this.floor);
+    const mat = new THREE.Mesh(new THREE.PlaneGeometry(7, 7), new THREE.MeshStandardMaterial({ map: this.matTex(), roughness: 0.95, metalness: 0 }));
+    mat.rotation.x = -Math.PI / 2; mat.position.y = 0.001; mat.receiveShadow = true; this.floor.add(mat);
+    const edge = new THREE.Mesh(new THREE.BoxGeometry(2.2, 0.02, 0.045), new THREE.MeshStandardMaterial({ color: 0x1f1a14, roughness: 0.9 }));
+    edge.position.set(0, 0.012, 1.1); this.floor.add(edge);
+    const ring = new THREE.Mesh(new THREE.TorusGeometry(0.24, 0.02, 10, 32), new THREE.MeshStandardMaterial({ color: 0xb8361f, roughness: 0.8 }));
+    ring.rotation.x = -Math.PI / 2; ring.position.set(0, 0.012, 1.1); this.floor.add(ring);
+    this.floor.visible = this.state.grid;
+    this.resize();
+    this.clock = new THREE.Clock();
+    this.animate();
+
+    // Module (cache-gebustet — Modul-Edits sonst stale)
+    const bust = (u) => new URL(u, location.href).href + '?v=' + Date.now();
+    this._MOT = await import(bust(LIB_URL));
+    this._FaceMod = await import(bust(FACE_URL));
+    this._FxMod = await import(bust(FX_URL));
+    this._MouthMod = await import(bust(MOUTH_URL));
+
+    // Contract: Session (v2) > motion-LIBRARY.v2.json > motion-LIBRARY.json (v1, nur motions)
+    let contract = null;
+    try { const saved = localStorage.getItem(SESSION_KEY); if (saved) contract = JSON.parse(saved); } catch (e) {}
+    if (!contract) { try { const r = await fetch(new URL(MOT_URL_V2, location.href).href); if (r.ok) contract = await r.json(); } catch (e) {} }
+    if (!contract) { try { const r = await fetch(new URL(MOT_URL_V1, location.href).href); if (r.ok) contract = await r.json(); } catch (e) {} }
+    this._contract = contract || {};
+    const params = JSON.parse(JSON.stringify(Object.assign({}, this._MOT.MOTION_DEFAULTS, (contract && contract.motions) || {})));
+    if (!params.secondary) params.secondary = JSON.parse(JSON.stringify(this._MOT.MOTION_DEFAULTS.secondary));
+    const clipsP = JSON.parse(JSON.stringify(Object.assign({}, this._MOT.CLIP_DEFAULTS, (contract && contract.clips) || {})));
+    const fd = this._FaceMod.FACE_DEFAULTS;
+    const faceP = {
+      drift: Object.assign({}, fd.drift, (contract && contract.face && contract.face.drift) || {}),
+      react: Object.assign({}, fd.react, (contract && contract.face && contract.face.react) || {}),
+      mouth: Object.assign({}, this._MouthMod.MOUTH_DEFAULTS, (contract && contract.face && contract.face.mouth) || {}),
+    };
+    this._P = { params, clipsP, faceP };   // synchroner Zugriff fuer loadPet (setState ist async)
+    this.setState({ params, clipsP, faceP });
+
+    // Pet-Contract (Aussehen) — wie v1.1: Working-Copy > kanonische URL > Modul-Defaults
+    this._petLib = null;
+    try { const r = await fetch(new URL(PET_URL, location.href).href); if (r.ok) this._petLib = await r.json(); } catch (e) {}
+    if (!this._petLib) { try { const r = await fetch(PET_CANON, { cache: 'no-store' }); if (r.ok) this._petLib = await r.json(); } catch (e) {} }
+
+    const _abs = (rel) => new URL(rel, location.href).href;
+    this._CharMod = await import(_abs('./pet-library.v6.js'));
+    this._RigMod = await import(_abs('./pet-eye-rig.v5.js'));   // Rig-v5-Hub (2026-07-19): eine Rig-Version für beide Benches (Merge-Vorbereitung Pet Studio)
+    this.ch = new this._CharMod.Character({ THREE, loadGltf: (u) => this.loadGLTF(u), makeMat: (o) => this.makeMat(o), receiveShadow: false });
+    this.ch.group.scale.setScalar(1.6);
+    scene.add(this.ch.group);
+    try {
+      const lib = this._petLib || {};
+      const def = ((lib.pets || []).find((p) => p.isDefault) || {}).id || 'bunny';
+      this.fx = new this._FxMod.PetFX(THREE, scene);
+      this.fx.enabled = this.state.fxOn;
+      const pet = await this.loadPet(def);
+      this.applyDist(this.state.dist);
+      // Cursor-Blick: x negiert (Pet schaut zur Kamera — siehe InfiniteJourney-Falle)
+      this._canvas.addEventListener('pointermove', (e) => {
+        if (!this.face) return;
+        const r = this._canvas.getBoundingClientRect();
+        const nx = ((e.clientX - r.left) / r.width) * 2 - 1;
+        const ny = -(((e.clientY - r.top) / r.height) * 2 - 1);
+        this.face.setCursor(-nx, ny * 0.8);
+      });
+      this.setLoopState();
+      this.setState({ petId: def, status: '✓ ' + (pet.name || pet.id) + ' bereit', ready: true });
+    } catch (e) { this.setState({ status: 'Fehler: ' + e.message }); }
+  }
+
+  // Contract-Look (2026-07-19, Bug-Fix): der Aussehen-Contract traegt material.live (Pet-Editor).
+  // paperGold (Pfad 2) wird hier OHNE den v8-Shader angenaehert: die Toenung (Colormap-Luminanz ×
+  // pet.color, live.surf.tint) wird EINMAL pro Pet CPU-seitig in die Colormap gebacken. Papier-
+  // Relief/Triplanar fehlt bewusst (kommt mit dem Studio) — Farbe/Character stimmen ueberein.
+  async _applyContractLook(pet, baseHex) {
+    const lib = this._petLib || {};
+    const live = (lib.material && lib.material.live) || null;
+    const facet = !!(lib.face && lib.face.facet);
+    this._petColorHex = baseHex;
+    // material.live -> derselbe Clay-Triplanar-Look wie im Pet-Editor. Kein material.live = flach.
+    this._live = live ? { on: true, texture: live.texture || 'proc', mod: live.mod || 'none', surf: live.surf || {}, kenneyBase: !!live.kenneyBase, paperGold: live.paperGold !== false, tintMode: live.tintMode || 'lum' } : { on: false };
+    // Textur/Normal/Mod aus dem Contract laden (einmal, gecacht)
+    this._tex = null; this._nrm = null; this._modTex = null;
+    if (this._live.on && this._live.texture && this._live.texture !== 'proc') {
+      try { this._tex = await this.loadTex(this._live.texture === 'fur_fluffy' ? FUR_URL : (TEXBASE + this._live.texture + '/' + this._live.texture + '_diffuse.jpg')); } catch (e) { this._tex = null; }
+      if (this._live.texture !== 'fur_fluffy') { try { this._nrm = await this.loadTex(TEXBASE + this._live.texture + '/' + this._live.texture + '_normal.jpg'); } catch (e) { this._nrm = null; } }
+    }
+    if (this._live.on && this._live.mod && this._live.mod !== 'none') { const mm = MODOF(this._live.mod); try { this._modTex = await this.loadTex(TEXBASE + mm[3]); } catch (e) { this._modTex = null; } }
+    this.ch.inner.traverse((n) => {
+      if (!n.isMesh || n.userData.petOverlay) return;
+      if (facet && n.geometry && !n.userData._sm) { n.geometry.computeVertexNormals(); n.userData._sm = true; }
+      if (n.userData._glbMap === undefined) n.userData._glbMap = (n.material && n.material.map) || null;
+      const map = n.userData._glbMap;   // paperGold/kenneyBase behalten die Colormap; recolor nutzt sie via Shader
+      n.material = this.makeMat({ map, color: (baseHex != null ? baseHex : 0xffffff) });
+      n.castShadow = true; n.receiveShadow = false; n.frustumCulled = false;
+    });
+    // deterministisch kompilieren -> onBeforeCompile bindet die Custom-Uniforms sofort (sonst gold/flach)
+    if (this.renderer && this.scene && this.cam) this.renderer.compile(this.scene, this.cam);
+  }
+
+  // Pet laden/wechseln: Character neu laden, Rig neu bauen, Face/Mouth/Motion umhaengen.
+  // color im Contract = Uebersteuerung (flach umgefaerbt); ohne color = native Kenney-Colormap
+  // (die gemalten Augen-Schalen sind via face.stripEyes ohnehin geloescht).
+  async loadPet(id) {
+    const lib = this._petLib || {};
+    const P = this._P || { faceP: this.state.faceP, params: this.state.params, clipsP: this.state.clipsP };
+    const pet = (lib.pets || []).find((p) => p.id === id) || { id, eye: {} };
+    const er = lib.eyeRig || {};
+    const eye = pet.eye || {};
+    const baseHex = pet.color ? parseInt(pet.color.replace('#', ''), 16) : null;
+    if (this.rig) { this.rig.dispose(); this.rig = null; }
+    await this.ch.load('animals', id, { mods: ['emotes'], face: lib.face });
+    await this._applyContractLook(pet, baseHex);
+    this.ch.group.position.set(0, 0, 0);
+    this.ch.setHome();
+    const ps = eye.pupilStyle || 'matte-cute';
+    this.rig = new this._RigMod.EyeRig(this.ch, {
+      baseColor: baseHex != null ? baseHex : 0xbfa77a, pupilStyle: ps, anchor: eye.anchor,
+      blink: er.blink,
+      pupilSize: eye.pupilSize != null ? eye.pupilSize : (er.pupilSize != null ? er.pupilSize : 0.4),
+      inset: eye.inset != null ? eye.inset : (er.inset != null ? er.inset : 0),
+      lidFit: eye.lidFit != null ? eye.lidFit : (er.lidFit != null ? er.lidFit : 0.9),
+      gloss: (er.gloss && er.gloss[ps] != null) ? er.gloss[ps] : 0.85,
+      converge: eye.converge != null ? eye.converge : (er.converge != null ? er.converge : 0),
+    });
+    this.rig.build();
+    // v5 bringt einen eigenen Life-Layer (wandern+zittern) mit, Default AN — hier trägt das
+    // Mienenspiel (pet-face.v1.js) den Drift. Doppeltes Leben = Zappeln, also Rig-Life AUS.
+    // Kinetik (setKinetics) bleibt ungenutzt/0 — der Trigger-Bus spielt Körper+Gesicht selbst.
+    if (this.rig.setLife) this.rig.setLife({ on: false });
+    if (!this.face) {
+      this.face = new this._FaceMod.PetFace(this.rig, { params: { drift: P.faceP.drift, react: P.faceP.react, emotes: (this._contract && this._contract.face && this._contract.face.emotes) || undefined } });
+      this.face.setDrift(this.state.driftOn);
+    } else { this.face.rig = this.rig; this.rig.setGazeFollow(true); }
+    if (!this.mouth) this.mouth = new this._MouthMod.PetMouth(this.ch, { params: P.faceP.mouth });
+    // Platzierung ist AUSSEHEN: pet.mouth (Pet-Editor v9) > lib.mouth > Motion-Contract-Fallback
+    Object.assign(this.mouth.p, (lib.mouth || {}), (pet.mouth || {}));
+    this.mouth.build();
+    this.mouth.talk(this.state.talkOn);
+    this.face.onSet = (n) => { if (this.mouth) this.mouth.setRest(n); };
+    if (!this.motion) {
+      this.motion = new this._MOT.PetMotion(this.ch, {
+        rig: this.rig, face: this.face, fx: this.fx,
+        eyeReact: this.state.eyeReact,
+        params: P.params, clipParams: P.clipsP,
+        squashStretch: this.state.master, smoothTime: this.state.smooth,
+        front: (this._contract && this._contract.front) || { x: 0, z: 1.1 },
+        back: (this._contract && this._contract.back) || { x: 0, z: -1.3 },
+      });
+    } else { this.motion.rig = this.rig; this.motion._prevY = null; this.motion._activeClip = null; }
+    this.motion.initParts();
+    return pet;
+  }
+
+  // Abstands-Regler (Sprint): 0 = Mitmoderator unten links, blickt den Spieler an · 1 = Vehikel draussen
+  applyDist(t) {
+    const ch = this.ch;
+    if (!ch || !ch.loaded || !this.THREE) return;
+    const g = ch.group;
+    const px = -0.75 * (1 - t), pz = 2.0 - 4.5 * t;
+    g.position.set(px, 0, pz);
+    const yaw0 = Math.atan2(this.cam.position.x - px, this.cam.position.z - pz);
+    const tt = t * t * (3 - 2 * t);
+    g.rotation.y = yaw0 * (1 - tt) + Math.PI * tt;
+    ch.setHome();
+    if (this.motion) { this.motion._prevY = null; }
+    const T = this.THREE;
+    const pt = new T.Vector3(px, 0.75, pz), def = new T.Vector3(0, 0.55, 0.2);
+    this.controls.target.lerpVectors(pt, def, Math.min(1, t * 1.8));
+  }
+
+  setLoopState() {
+    if (!this.motion) return;
+    if (this.state.loadingOn) this.motion.loop('loading', true);
+    else if (this.state.idleOn) this.motion.loop('idle', true);
+    else this.motion.stopLoops();
+  }
+  async runEx(fn) {
+    if (!this.motion || this._running) return;
+    this._running = true;
+    this.motion.stopLoops();
+    try { await fn(); } catch (e) {}
+    this._running = false;
+    this.setLoopState();
+  }
+  runMotion(name) {
+    return this.runEx(async () => {
+      const m = this.motion;
+      if (name === 'hop') await m.hop();
+      else if (name === 'powerJump') await m.powerJump();
+      else if (name === 'locomotion') await m.locomotion();
+      else if (name === 'transition') await m.roomTransition();
+      else if (name === 'turn') await m.turn180();
+      else if (name === 'celebrate') await m.celebrate();
+      else if (name === 'reactPos') await m.react('positive');
+      else if (name === 'reactNeg') await m.react('negative');
+    });
+  }
+
+  h = {
+    onPet: (e) => {
+      const id = e.target.value;
+      if (this._running || !this.ch) return;
+      this._running = true;
+      this.setState({ petId: id, activeClip: null, status: 'lädt ' + id + ' …' });
+      (async () => {
+        try {
+          const pet = await this.loadPet(id);
+          this.applyDist(this.state.dist);
+          this.setLoopState();
+          this.setState({ status: '✓ ' + (pet.name || pet.id) + ' bereit' });
+        } catch (err) { this.setState({ status: 'Fehler: ' + err.message }); }
+        this._running = false;
+      })();
+    },
+    padTalk: () => this.setState((s) => ({ talkOn: !s.talkOn, sel: { kind: 'face', id: 'talk' } }), () => { if (this.mouth) this.mouth.talk(this.state.talkOn); }),
+    tuneMouth: (key, e) => {
+      const v = parseFloat(e.target.value);
+      const faceP = { ...this.state.faceP, mouth: { ...this.state.faceP.mouth, [key]: v } };
+      this.setState({ faceP, dirty: true }, () => { if (this.mouth) this.mouth.setParams({ [key]: v }); if (this._P) this._P.faceP = faceP; });
+    },
+    padMotion: (name, kind) => {
+      if (kind === 'loop') {
+        if (name === 'idle') this.setState((s) => ({ idleOn: !s.idleOn, sel: { kind: 'motion', id: name } }), () => this.setLoopState());
+        else this.setState((s) => ({ loadingOn: !s.loadingOn, sel: { kind: 'motion', id: name } }), () => this.setLoopState());
+        return;
+      }
+      this.setState({ sel: { kind: 'motion', id: name } });
+      if (kind === 'shot') this.runMotion(name);
+    },
+    padClip: (id, loop) => {
+      this.setState({ sel: { kind: 'clip', id } });
+      if (!this.motion) return;
+      if (this.state.activeClip === id) { this.motion.stopClip(); this.setState({ activeClip: null }); }
+      else { this.motion.playClip(id, { loop, speed: (this.state.clipsP[id] || {}).speed }); this.setState({ activeClip: id }); }
+    },
+    padFace: (id) => {
+      this.setState({ sel: { kind: 'face', id } });
+      if (this.face) this.face.set(id, { hold: 3 });
+    },
+    padPop: () => { this.setState({ sel: { kind: 'face', id: 'pop' } }); if (this.face) this.face.eyePop(0.6); },
+    padDrift: () => this.setState((s) => ({ driftOn: !s.driftOn, sel: { kind: 'face', id: 'drift' } }), () => { if (this.face) this.face.setDrift(this.state.driftOn); }),
+    padEvent: (id) => { this.setState({ sel: { kind: 'event', id } }); this.runEx(() => this.motion.trigger(id)); },
+    padCombo: (id) => { this.setState({ sel: { kind: 'combo', id } }); this.runEx(() => this.motion.combo(id)); },
+    tune: (key, e) => {
+      const v = parseFloat(e.target.value);
+      const id = this.state.sel.id;
+      const params = { ...this.state.params, [id]: { ...this.state.params[id], [key]: v } };
+      this.setState({ params, dirty: true }, () => { if (this.motion) this.motion.setParams({ [id]: params[id] }); });
+    },
+    tuneClip: (e) => {
+      const v = parseFloat(e.target.value);
+      const id = this.state.sel.id;
+      const clipsP = { ...this.state.clipsP, [id]: { ...this.state.clipsP[id], speed: v } };
+      this.setState({ clipsP, dirty: true }, () => {
+        if (!this.motion) return;
+        this.motion.setClipParams({ [id]: clipsP[id] });
+        if (this.state.activeClip === id) { const cl = (this._MOT.CLIPS.find((c) => c[0] === id) || []); this.motion.playClip(id, { loop: cl[2], speed: v }); }
+      });
+    },
+    tuneFace: (grp, key, e) => {
+      const v = parseFloat(e.target.value);
+      const faceP = { ...this.state.faceP, [grp]: { ...this.state.faceP[grp], [key]: v } };
+      this.setState({ faceP, dirty: true }, () => { if (this.face) this.face.setParams({ [grp]: { [key]: v } }); });
+    },
+    replay: () => {
+      const s = this.state.sel;
+      if (s.kind === 'motion') { const kind = (MOTIONS.find((m) => m[0] === s.id) || [])[2]; if (kind === 'loop') this.h.padMotion(s.id, 'loop'); else if (kind === 'shot') this.runMotion(s.id); }
+      else if (s.kind === 'clip') { const cl = (this._MOT.CLIPS.find((c) => c[0] === s.id) || []); if (this.motion) { this.motion.playClip(s.id, { loop: cl[2], speed: (this.state.clipsP[s.id] || {}).speed }); this.setState({ activeClip: s.id }); } }
+      else if (s.kind === 'face') { if (s.id === 'pop') this.h.padPop(); else if (s.id === 'talk') this.h.padTalk(); else if (s.id !== 'drift' && this.face) this.face.set(s.id, { hold: 3 }); }
+      else if (s.kind === 'event') this.runEx(() => this.motion.trigger(s.id));
+      else if (s.kind === 'combo') this.runEx(() => this.motion.combo(s.id));
+    },
+    dist: (e) => { const v = parseFloat(e.target.value); this.setState({ dist: v }, () => this.applyDist(v)); },
+    master: (e) => { const v = parseFloat(e.target.value); this.setState({ master: v, dirty: true }, () => { if (this.motion) this.motion.setMaster(v); }); },
+    smooth: (e) => { const v = parseFloat(e.target.value); this.setState({ smooth: v, dirty: true }, () => { if (this.motion) this.motion.setSmooth(v); }); },
+    eye: () => this.setState((s) => ({ eyeReact: !s.eyeReact }), () => { if (this.motion) this.motion.setEyeReact(this.state.eyeReact); }),
+    fx: () => this.setState((s) => ({ fxOn: !s.fxOn }), () => { if (this.fx) { this.fx.enabled = this.state.fxOn; if (!this.state.fxOn) this.fx.clear(); } }),
+    grid: () => this.setState((s) => ({ grid: !s.grid }), () => { if (this.floor) this.floor.visible = this.state.grid; }),
+    reset: () => { if (this.motion) { this.motion.reset(); this.applyDist(this.state.dist); this.setLoopState(); } },
+    hud: () => this.setState((s) => ({ hud: !s.hud })),
+    export: () => {
+      const s = this.state;
+      const out = {
+        $schema: 'kfb.motion-library/2',
+        version: bumpMot((this._contract && this._contract.version) || '1.2.0'),
+        canonical: (this._contract && this._contract.canonical) || MOT_CANON,
+        updated: new Date().toISOString().slice(0, 10),
+        global: { squashStretch: s.master, smoothTime: s.smooth },
+        front: (this._contract && this._contract.front) || { x: 0, z: 1.1 },
+        back: (this._contract && this._contract.back) || { x: 0, z: -1.3 },
+        motions: s.params,
+        clips: s.clipsP,
+        face: { emotes: this._FaceMod.FACE_DEFAULTS.emotes, drift: s.faceP.drift, react: s.faceP.react, mouth: Object.assign({ src: 'FrizzelBob-Mouth_01 (GitHub raw)' }, s.faceP.mouth), note: 'blink kommt aus pet-LIBRARY.json (eyeRig.blink) — nicht doppeln' },
+        triggers: this._MOT.TRIGGER_INFO,
+      };
+      this._contract = out;
+      const blob = new Blob([JSON.stringify(out, null, 2)], { type: 'application/json' });
+      const a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = 'motion-LIBRARY.json'; a.click();
+      setTimeout(() => URL.revokeObjectURL(a.href), 2000);
+      try { localStorage.setItem(SESSION_KEY, JSON.stringify(out)); } catch (e) {}
+      this.setState({ dirty: false, status: '✓ exportiert — commit-fertig' });
+    },
+    import: () => { if (this._file) this._file.click(); },
+    onImport: (e) => {
+      const f = e.target.files && e.target.files[0]; if (!f) return;
+      const rd = new FileReader();
+      rd.onload = () => {
+        try {
+          const c = JSON.parse(rd.result);
+          if (!c.motions) throw new Error('kein motions-Block');
+          this._contract = c;
+          const params = JSON.parse(JSON.stringify(Object.assign({}, this._MOT.MOTION_DEFAULTS, c.motions)));
+          const clipsP = JSON.parse(JSON.stringify(Object.assign({}, this._MOT.CLIP_DEFAULTS, c.clips || {})));
+          const fd = this._FaceMod.FACE_DEFAULTS;
+          const faceP = {
+            drift: Object.assign({}, fd.drift, (c.face && c.face.drift) || {}),
+            react: Object.assign({}, fd.react, (c.face && c.face.react) || {}),
+            mouth: Object.assign({}, this._MouthMod.MOUTH_DEFAULTS, (c.face && c.face.mouth) || {}),
+          };
+          this._P = { params, clipsP, faceP };
+          const master = (c.global && c.global.squashStretch != null) ? c.global.squashStretch : this.state.master;
+          this.setState({ params, clipsP, faceP, master, dirty: true, status: '✓ importiert: ' + f.name }, () => {
+            if (this.motion) { this.motion.setParams(params); this.motion.setClipParams(clipsP); this.motion.setMaster(master); }
+            if (this.face) this.face.setParams({ drift: faceP.drift, react: faceP.react, emotes: (c.face && c.face.emotes) || undefined });
+            if (this.mouth) { this.mouth.setParams(faceP.mouth); }
+          });
+        } catch (err) { this.setState({ status: 'Import-Fehler: ' + err.message }); }
+      };
+      rd.readAsText(f); e.target.value = '';
+    },
+  };
+
+  resize() {
+    if (!this.renderer || !this._canvas) return;
+    const w = this._canvas.clientWidth || window.innerWidth, h = this._canvas.clientHeight || window.innerHeight;
+    this.renderer.setSize(w, h, false);
+    this.cam.aspect = w / h; this.cam.updateProjectionMatrix();
+    const compact = w < 920;   // Chat-Preview: kompakte Panels
+    if (compact !== this.state.compact) this.setState({ compact });
+  }
+  animate() {
+    if (this.disposed) return;
+    this._raf = requestAnimationFrame(() => this.animate());
+    const dt = Math.min(0.05, this.clock ? this.clock.getDelta() : 0.016);
+    this.controls.update();
+    if (this.ch) this.ch.update(dt);
+    if (this.motion) this.motion.update(dt);   // NACH ch.update …
+    if (this.face) this.face.update(dt);        // … dann Mienenspiel …
+    if (this.mouth) this.mouth.update(dt);      // … Mund (Talk-Shuffle) …
+    if (this.rig) this.rig.update(dt);          // … VOR rig.update (Augen-Kompensation)
+    if (this.fx) this.fx.update(dt);
+    this.renderer.render(this.scene, this.cam);
+  }
+
+  pad(label, on, opts = {}) {
+    const c = opts.color || '#1f1a14';
+    const active = !!opts.active, seld = !!opts.seld;
+    const fs = this.state.compact ? '9.5px' : '10.5px', pd = this.state.compact ? '6px 3px' : '7px 4px';
+    return {
+      label, on, title: opts.title || '',
+      style: "font-family:'Special Elite',monospace;font-size:" + fs + ";padding:" + pd + ";border:2px solid #1f1a14;border-radius:0;cursor:pointer;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;" +
+        (active ? ('background:' + c + ';color:#f6efd9;') : 'background:#f7f0da;color:#3a342a;') +
+        (seld ? 'box-shadow:inset 0 -3px 0 #e9c14a;' : ''),
+    };
+  }
+  btn(active, extra) {
+    return "font-family:'Special Elite',monospace;font-size:10.5px;padding:6px 4px;border:2px solid #1f1a14;border-radius:0;cursor:pointer;" +
+      (active ? 'background:#1f1a14;color:#f6efd9;' : 'background:#f7f0da;color:#3a342a;') + (extra || '');
+  }
+  ioBtn(icon, title, on, accent) {
+    return { icon, title, on, style: "font-family:'Special Elite',monospace;border:2px solid #1f1a14;box-shadow:3px 3px 0 rgba(31,26,20,.35);border-radius:0;width:34px;height:34px;font-size:15px;cursor:pointer;" + (accent ? 'background:#b8361f;color:#f6efd9;' : 'background:#f3ead3;color:#3a342a;') };
+  }
+
+  renderVals() {
+    const s = this.state;
+    const M = this._MOT || {};
+    const sel = s.sel;
+    const isSel = (kind, id) => sel.kind === kind && sel.id === id;
+    // Pad-Gruppen (DAW-Bar)
+    const clipPads = (M.CLIPS || []).map(([id, l, loop]) => this.pad(l, () => this.h.padClip(id, loop), { color: '#2f7a72', active: s.activeClip === id, seld: isSel('clip', id), title: loop ? 'Loop' : 'One-Shot' }));
+    const motionPads = MOTIONS.map(([id, l, kind]) => this.pad((kind === 'loop' ? ((id === 'idle' ? s.idleOn : s.loadingOn) ? '◉ ' : '○ ') : '') + l, () => this.h.padMotion(id, kind), { color: '#1f1a14', active: kind === 'loop' ? (id === 'idle' ? s.idleOn : s.loadingOn) : isSel('motion', id), seld: isSel('motion', id), title: kind === 'tune' ? 'nur Tuning (läuft immer mit)' : '' }));
+    const facePads = FACES.map((id) => this.pad(id, () => this.h.padFace(id), { color: '#8a6a16', active: isSel('face', id), seld: isSel('face', id) }));
+    facePads.push(this.pad('Pop!', () => this.h.padPop(), { color: '#8a6a16', active: isSel('face', 'pop'), seld: isSel('face', 'pop'), title: 'Augen ploppen auf + bouncen zurück' }));
+    facePads.push(this.pad((s.driftOn ? '◉ ' : '○ ') + 'Drift', () => this.h.padDrift(), { color: '#8a6a16', active: s.driftOn, seld: isSel('face', 'drift'), title: 'Mienenspiel-Eigenleben: wandern + zittern' }));
+    facePads.push(this.pad((s.talkOn ? '◉ ' : '○ ') + 'Talk', () => this.h.padTalk(), { color: '#8a6a16', active: s.talkOn, seld: isSel('face', 'talk'), title: 'Visem-Shuffle: liest sich als Sprechen, kein Lip-Sync' }));
+    const eventPads = (M.EVENTS || []).map(([id, l, hint]) => this.pad(l, () => this.h.padEvent(id), { color: '#b8361f', active: isSel('event', id), seld: isSel('event', id), title: hint }));
+    const comboPads = (M.COMBOS || []).map(([id, l]) => this.pad(l, () => this.h.padCombo(id), { color: '#4f6029', active: isSel('combo', id), seld: isSel('combo', id) }));
+    const W = (n) => 'repeat(' + n + ',' + (s.compact ? 70 : 84) + 'px)';
+    const padGroups = [
+      { label: 'GLB-Clips', color: '#2f7a72', cols: W(4), pads: clipPads },
+      { label: 'Motions', color: '#b8361f', cols: 'repeat(4,' + (s.compact ? 78 : 92) + 'px)', pads: motionPads },
+      { label: 'Gesicht', color: '#8a6a16', cols: 'repeat(5,' + (s.compact ? 70 : 80) + 'px)', pads: facePads },
+      { label: 'Events', color: '#b8361f', cols: W(3), pads: eventPads },
+      { label: 'Combos', color: '#4f6029', cols: 'repeat(2,' + (s.compact ? 88 : 104) + 'px)', pads: comboPads },
+    ];
+    const lib = this._petLib || {};
+    const all = (lib.assetNotes && lib.assetNotes.petsAll24) || (lib.pets || []).map((p) => p.id);
+    const petOpts = (all && all.length ? all : ['bunny']).map((id) => { const p = (lib.pets || []).find((x) => x.id === id); return { id, label: p && p.name ? id + ' — ' + p.name : id }; });
+    // Tuning-Slider je Auswahl
+    let tuneSliders = [], selLabel = sel.id, selHint = '';
+    if (sel.kind === 'motion') {
+      const meta = (M.PARAM_META && M.PARAM_META[sel.id]) || [];
+      const pv = (s.params && s.params[sel.id]) || {};
+      selLabel = (MOTIONS.find((m) => m[0] === sel.id) || [])[1] || sel.id;
+      if (sel.id === 'secondary') selHint = HINTS.secondary;
+      tuneSliders = meta.map(([k, label, min, max, step]) => ({ label, min, max, step, value: pv[k] != null ? pv[k] : 0, val: (pv[k] != null ? pv[k] : 0).toFixed(step < 0.1 ? 2 : (step < 1 ? 1 : 0)), on: (e) => this.h.tune(k, e) }));
+    } else if (sel.kind === 'clip') {
+      const pv = (s.clipsP && s.clipsP[sel.id]) || { speed: 1 };
+      selLabel = ((M.CLIPS || []).find((c) => c[0] === sel.id) || [])[1] || sel.id;
+      selHint = HINTS.clip;
+      tuneSliders = [{ label: 'Tempo ×', min: 0.3, max: 2.5, step: 0.05, value: pv.speed, val: pv.speed.toFixed(2), on: (e) => this.h.tuneClip(e) }];
+    } else if (sel.kind === 'face') {
+      selLabel = 'Gesicht · ' + sel.id;
+      if (sel.id === 'talk') {
+        selHint = HINTS.talk;
+        const meta = (this._MouthMod && this._MouthMod.MOUTH_META) || [];
+        const mp = (s.faceP && s.faceP.mouth) || {};
+        tuneSliders = meta.map(([k, label, min, max, step]) => ({ label, min, max, step, value: mp[k] != null ? mp[k] : 0, val: (mp[k] != null ? mp[k] : 0).toFixed(2), on: (e) => this.h.tuneMouth(k, e) }));
+      } else {
+        selHint = HINTS.face;
+        const meta = (this._FaceMod && this._FaceMod.FACE_META) || [];
+        tuneSliders = meta.map(([g, k, label, min, max, step]) => {
+          const v = (s.faceP && s.faceP[g] && s.faceP[g][k] != null) ? s.faceP[g][k] : 0;
+          return { label, min, max, step, value: v, val: v.toFixed(step < 0.1 ? 3 : 2), on: (e) => this.h.tuneFace(g, k, e) };
+        });
+      }
+    } else if (sel.kind === 'event') {
+      selLabel = 'Event · ' + (((M.EVENTS || []).find((c) => c[0] === sel.id) || [])[1] || sel.id);
+      selHint = HINTS.event;
+    } else if (sel.kind === 'combo') {
+      selLabel = 'Combo · ' + (((M.COMBOS || []).find((c) => c[0] === sel.id) || [])[1] || sel.id);
+      selHint = HINTS.combo;
+    }
+    return {
+      canvasRef: this.canvasRef, fileRef: this.fileRef,
+      loaderOpacity: s.ready ? 0 : 1, status: s.status,
+      hudDisplay: s.hud ? 'block' : 'none',
+      hudLabel: s.hud ? '⊟' : '⊞', onHud: this.h.hud,
+      dirtyLabel: s.dirty ? '● ungespeichert' : '○ synchron', dirtyColor: s.dirty ? '#e9c14a' : '#a89a78',
+      ioBtns: [
+        this.ioBtn('↑', 'motion-LIBRARY.json importieren (v1 oder v2)', this.h.import),
+        this.ioBtn('↓', 'motion-LIBRARY.json exportieren (Schema v2, + Session)', this.h.export, true),
+      ],
+      onImport: this.h.onImport,
+      padGroups,
+      petOpts, petId: s.petId, onPet: this.h.onPet,
+      rpW: s.compact ? '186px' : '238px', rpB: s.compact ? '168px' : '206px',
+      selLabel, selHint, selHintDisplay: selHint ? 'block' : 'none',
+      tuneSliders,
+      onReplay: this.h.replay, replayStyle: this.btn(false, 'width:100%;margin-top:2px;'),
+      dist: s.dist, distVal: s.dist.toFixed(2), onDist: this.h.dist,
+      master: s.master, masterVal: s.master.toFixed(2), onMaster: this.h.master,
+      smooth: s.smooth, smoothVal: s.smooth.toFixed(3), onSmooth: this.h.smooth,
+      onEye: this.h.eye, eyeStyle: this.btn(s.eyeReact), eyeLabel: s.eyeReact ? '◉ Blick' : '○ Blick',
+      onFx: this.h.fx, fxStyle: this.btn(s.fxOn), fxLabel: s.fxOn ? '◉ FX' : '○ FX',
+      onGrid: this.h.grid, gridStyle: this.btn(s.grid), gridLabel: s.grid ? '◉ Matte' : '○ Matte',
+      onReset: this.h.reset, resetStyle: this.btn(false),
+    };
+  }
+}
+</script>
+</body>
+</html>
