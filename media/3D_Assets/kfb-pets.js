@@ -208,7 +208,16 @@ export async function makePet(lib, id, opts = {}) {
     receiveShadow: opts.receiveShadow
   });
 
-  await ch.load('animals', cfg.id, { tint: cfg.color, recolor: cfg.color });
+  // WICHTIG: die Bibliothek rechnet mit ZAHLEN, nicht mit Farbtexten.
+  // Ihr _recolorMap() macht Bit-Verschiebungen; ein '#d3a244' wird dabei zu 0,0,0,
+  // und dann faerbt sie jeden farbigen Bildpunkt der Textur schwarz. Genau das war
+  // das schwarze Bunny im Studio v2 (20.07.). Einmal umwandeln, ueberall benutzen.
+  const colorHex = new THREE.Color(cfg.color).getHex();
+
+  // mods OHNE 'googly': die Bibliothek haengt sonst ihre eigenen FLACHEN Scheiben-Augen an
+  // (MODS.googly, CircleGeometry). Die gehoeren zu 2D-Figuren wie dem Hampelmann, NIE an ein
+  // Cube-Pet. Cube-Pets bekommen ausschliesslich den EyeRig: echte Kugeln mit Lidern.
+  await ch.load('animals', cfg.id, { tint: colorHex, recolor: colorHex, mods: ['emotes'] });
 
   // --- Augen: NIE selbst bauen, immer der Rig ---------------------------------
   let rig = null;
@@ -233,6 +242,10 @@ export async function makePet(lib, id, opts = {}) {
       fx: (Array.isArray(eye.fx) ? eye.fx[0] : eye.fx) || 'none',
       kinetics: (cfg.actor && cfg.actor.kinetik) || undefined
     });
+    // OHNE diesen Aufruf erzeugt der Rig KEINE Geometrie. Er laeuft dann leer mit, und
+    // sichtbar bleiben die flachen Bibliotheks-Augen. Genau das war der Fehler am 20.07.
+    rig.build();
+    if (!rig.eyes) console.warn('[kfb-pets] EyeRig hat keine Augen gebaut — Pet zeigt keine Augen.');
   }
 
   // --- Bewegung ---------------------------------------------------------------
