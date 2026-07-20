@@ -10,19 +10,19 @@
 
 export const MOUTH_BASE = 'https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/Textures/FrizzelBob-Mouth_01/';
 export const MOUTH_FILES = {
-  smile:   'FrizzleBobMouth_01_0000s_0000_Smile.png',
-  neutral: 'FrizzleBobMouth_01_0000s_0001_Neutral.png',
-  m:       'FrizzleBobMouth_01_0000s_0002_M.png',
-  d:       'FrizzleBobMouth_01_0000s_0003_D.png',
-  s:       'FrizzleBobMouth_01_0000s_0004_S.png',
-  ee:      'FrizzleBobMouth_01_0000s_0005_Ee.png',
-  uh:      'FrizzleBobMouth_01_0000s_0006_Uh.png',
-  ah:      'FrizzleBobMouth_01_0000s_0007_Ah.png',
-  oh:      'FrizzleBobMouth_01_0000s_0008_Oh.png',
-  r:       'FrizzleBobMouth_01_0000s_0009_R.png',
-  f:       'FrizzleBobMouth_01_0000s_0010_F.png',
-  woo:     'FrizzleBobMouth_01_0000s_0011_W-oo.png',
-  l:       'FrizzleBobMouth_01_0000s_0012_L.png',
+  smile:   'FrizzleBobMouth_01_0000s_0001s_0000_Smile.png',
+  neutral: 'FrizzleBobMouth_01_0000s_0001s_0001_Neutral.png',
+  m:       'FrizzleBobMouth_01_0000s_0001s_0002_M.png',
+  d:       'FrizzleBobMouth_01_0000s_0001s_0003_D.png',
+  s:       'FrizzleBobMouth_01_0000s_0001s_0004_S.png',
+  ee:      'FrizzleBobMouth_01_0000s_0001s_0005_Ee.png',
+  uh:      'FrizzleBobMouth_01_0000s_0001s_0006_Uh.png',
+  ah:      'FrizzleBobMouth_01_0000s_0001s_0007_Ah.png',
+  oh:      'FrizzleBobMouth_01_0000s_0001s_0008_Oh.png',
+  r:       'FrizzleBobMouth_01_0000s_0001s_0009_R.png',
+  f:       'FrizzleBobMouth_01_0000s_0001s_0010_F.png',
+  woo:     'FrizzleBobMouth_01_0000s_0001s_0011_W-oo.png',
+  l:       'FrizzleBobMouth_01_0000s_0001s_0012_L.png',
 };
 const TALK_POOL = ['ah', 'ee', 'oh', 'uh', 'd', 's', 'l', 'r'];   // offen = haeufig
 const CLOSERS = ['m', 'f', 'woo'];                                 // Konsonanten-Momente
