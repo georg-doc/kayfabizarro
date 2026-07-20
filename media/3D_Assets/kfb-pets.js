@@ -32,6 +32,8 @@ import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 import { Character } from 'https://cdn.jsdelivr.net/gh/georg-doc/kayfabizarro@main/media/3D_Assets/build/pet-library.v6.js';
 import { EyeRig } from 'https://cdn.jsdelivr.net/gh/georg-doc/kayfabizarro@main/media/3D_Assets/build/pet-eye-rig.v5.js';
 import { PetMotion } from 'https://cdn.jsdelivr.net/gh/georg-doc/kayfabizarro@main/media/3D_Assets/build/pet-motion.v2.js';
+import { PetFace } from 'https://cdn.jsdelivr.net/gh/georg-doc/kayfabizarro@main/media/3D_Assets/build/pet-face.v1.js';
+import { PetMouth } from 'https://cdn.jsdelivr.net/gh/georg-doc/kayfabizarro@main/media/3D_Assets/build/pet-mouth.v1.js';
 
 export const VERSION = 1;
 
@@ -221,7 +223,12 @@ export async function makePet(lib, id, opts = {}) {
   // mods OHNE 'googly': die Bibliothek haengt sonst ihre eigenen FLACHEN Scheiben-Augen an
   // (MODS.googly, CircleGeometry). Die gehoeren zu 2D-Figuren wie dem Hampelmann, NIE an ein
   // Cube-Pet. Cube-Pets bekommen ausschliesslich den EyeRig: echte Kugeln mit Lidern.
-  await ch.load('animals', cfg.id, { tint: colorHex, recolor: colorHex, mods: ['emotes'] });
+  // NUR recolor, KEIN tint. Die Bibliothek laedt FrizzleBob kanonisch mit
+  // { recolor: 0xf2c93c } und ohne tint (ARCHETYPES). recolor faerbt SELEKTIV die farbigen
+  // Bildpunkte der Colormap; neutrale bleiben stehen, dadurch behaelt das Pet seine Zeichnung.
+  // tint multipliziert zusaetzlich das ganze Material und drueckt die Zeichnung platt.
+  // Beides zusammen ergab den einfarbigen Karamell-Hasen ohne Textur (20.07.).
+  await ch.load('animals', cfg.id, { recolor: colorHex, mods: ['emotes'] });
 
   // --- Augen: NIE selbst bauen, immer der Rig ---------------------------------
   let rig = null;
@@ -252,10 +259,35 @@ export async function makePet(lib, id, opts = {}) {
     if (!rig.eyes) console.warn('[kfb-pets] EyeRig hat keine Augen gebaut — Pet zeigt keine Augen.');
   }
 
+  // --- Mienenspiel: treibt den Rig UND haengt den Ruhe-Mund an das Emote ---------
+  // Jedes Modul dokumentiert seinen eigenen Vertrag im Dateikopf. PetFace verlangt
+  // update(dt) NACH PetMotion und VOR rig.update(dt). Daran haelt sich api.update().
+  let face = null;
+  if (rig) {
+    const f = cfg.face || {};
+    face = new PetFace(rig, { params: { emotes: f.emotes, drift: f.drift, react: f.react } });
+  }
+
+  // --- Mund: 12 Visem-Bilder als flache Ebene auf dem Koerper --------------------
+  // Ohne build() gibt es keinen Mund. Genau das fehlte am 20.07., FrizzleBob war mundlos.
+  let mouth = null;
+  if (opts.mouth !== false) {
+    const mp = (cfg.face && cfg.face.mouth) || {};
+    mouth = new PetMouth(ch, { params: {
+      size: mp.size, dy: mp.dy, sx: mp.sx, rot: mp.rot, bend: mp.bend,
+      rate: mp.rate, restMap: mp.restMap
+    } });
+    mouth.build();
+    if (!mouth.mesh) console.warn('[kfb-pets] PetMouth hat keinen Mund gebaut.');
+    // Der Ruhe-Mund folgt dem Gesichtsausdruck (Hook aus pet-face.v1.js).
+    if (face) face.onSet = (n) => mouth.setRest(n);
+  }
+
   // --- Bewegung ---------------------------------------------------------------
   const m = cfg.motion || {};
   const motion = new PetMotion(ch, {
     rig,
+    face,
     params: m.motions,
     clipParams: m.clips,
     squashStretch: m.global && m.global.squashStretch,
@@ -270,16 +302,22 @@ export async function makePet(lib, id, opts = {}) {
     object3D: ch.group,
     character: ch,
     rig,
+    face,
+    mouth,
     motion,
 
-    /** Emote setzen. Der Vertrag liefert gaze immer als [x,y]. */
-    setEmote(name) {
+    /** Emote setzen. Geht ueber PetFace, damit der Ruhe-Mund mitwandert. */
+    setEmote(name, o) {
       const e = (cfg.face && cfg.face.emotes && cfg.face.emotes[name]) || null;
       if (!e) { console.warn('[kfb-pets] unbekanntes Emote:', name); return api; }
-      if (rig) rig.emote = { lidUpper: e.lidUpper, lidLower: e.lidLower, slant: e.slant,
-                             pupil: e.pupil || 'normal', gaze: e.gaze };
+      if (face) face.set(name, o || {});
+      else if (rig) rig.emote = { lidUpper: e.lidUpper, lidLower: e.lidLower, slant: e.slant,
+                                  pupil: e.pupil || 'normal', gaze: e.gaze };
       return api;
     },
+
+    /** Sprechen an/aus (Visem-Wechsel im Silbentakt, kein echter Lippen-Sync). */
+    talk(on) { if (mouth && mouth.talk) mouth.talk(on !== false); return api; },
 
     /** Bewegung starten. Name aus motion.motions oder motion.clips. */
     setMotion(name, o) {
@@ -288,14 +326,23 @@ export async function makePet(lib, id, opts = {}) {
       return api;
     },
 
+    /**
+     * Reihenfolge ist NICHT beliebig. pet-face.v1.js schreibt sie im Dateikopf vor:
+     * Bewegung zuerst, dann das Mienenspiel, dann der Augen-Rig. Wer sie vertauscht,
+     * bekommt ein Gesicht, das einen Frame hinterherhinkt.
+     */
     update(dt) {
       if (ch.update) ch.update(dt);
-      if (rig) rig.update(dt);
       if (motion && motion.update) motion.update(dt);
+      if (face && face.update) face.update(dt);
+      if (rig) rig.update(dt);
+      if (mouth && mouth.update) mouth.update(dt);
       return api;
     },
 
     dispose() {
+      if (mouth && mouth.dispose) mouth.dispose();
+      if (face && face.dispose) face.dispose();
       if (rig && rig.dispose) rig.dispose();
       if (motion && motion.dispose) motion.dispose();
       if (ch.dispose) ch.dispose();

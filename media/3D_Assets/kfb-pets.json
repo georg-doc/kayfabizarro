@@ -1,8 +1,8 @@
 {
   "$schema": "kfb.pets/1",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "canonical": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kfb-pets.json",
-  "updated": "2026-07-20",
+  "updated": "2026-07-21",
   "note": "EINE Datei fuer Aussehen, Bewegung, Stimme und Einbau. Wird PER URL geholt (Feld canonical). Ladereihenfolge in jeder Zone: canonical -> lokale Kopie -> vollstaendiger Inline-Fallback. Lokale Kopien sind Spiegel, nie Quellen.",
   "sources": {
     "pet-LIBRARY.json": "0.4.3",
@@ -539,7 +539,7 @@
       "glb": "animal-bunny.glb",
       "role": "guide-default",
       "isDefault": true,
-      "color": "#d3a244",
+      "color": "#f2c93c",
       "archetype": "carny-host",
       "narratorPromptRef": "bunny_carny.md",
       "eye": {
