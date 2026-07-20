@@ -20,14 +20,18 @@
  * VERSION 1 · 2026-07-20
  */
 
-// Die drei Pet-Module werden ueber ihre volle Adresse geladen, nicht ueber Nachbardateien.
-// Grund: so ist es egal, in welchem Ordner diese Datei liegt. Ein Verschieben kann sie nicht
-// mehr zerreissen, und keine Zone muss die Geschwister mitkopieren.
+// MODUL-IMPORTE LAUFEN UEBER jsdelivr, NICHT UEBER DIE GITHUB-ROHADRESSE.
+// Gemessen am 20.07.: raw.githubusercontent.com liefert text/plain, und Browser weigern sich,
+// so etwas als ES-Modul auszufuehren -> schwarzer Bildschirm. jsdelivr liefert
+// application/javascript aus demselben Repo, damit laeuft es.
+//
+// UNTERSCHIED MERKEN: DATEN (kfb-pets.json, die GLBs, Texturen) werden per fetch geholt,
+// da ist die Rohadresse voellig in Ordnung. Nur ECHTE MODUL-IMPORTE brauchen jsdelivr.
 import * as THREE_NS from 'three';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
-import { Character } from 'https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/build/pet-library.v6.js';
-import { EyeRig } from 'https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/build/pet-eye-rig.v5.js';
-import { PetMotion } from 'https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/build/pet-motion.v2.js';
+import { Character } from 'https://cdn.jsdelivr.net/gh/georg-doc/kayfabizarro@main/media/3D_Assets/build/pet-library.v6.js';
+import { EyeRig } from 'https://cdn.jsdelivr.net/gh/georg-doc/kayfabizarro@main/media/3D_Assets/build/pet-eye-rig.v5.js';
+import { PetMotion } from 'https://cdn.jsdelivr.net/gh/georg-doc/kayfabizarro@main/media/3D_Assets/build/pet-motion.v2.js';
 
 export const VERSION = 1;
 
