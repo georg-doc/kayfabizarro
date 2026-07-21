@@ -1,6 +1,6 @@
 {
   "$schema": "kfb.pets/1",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "canonical": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kfb-pets.json",
   "updated": "2026-07-21",
   "note": "EINE Datei fuer Aussehen, Bewegung, Stimme und Einbau. Wird PER URL geholt (Feld canonical). Ladereihenfolge in jeder Zone: canonical -> lokale Kopie -> vollstaendiger Inline-Fallback. Lokale Kopien sind Spiegel, nie Quellen.",
@@ -289,7 +289,8 @@
         "sad": "m",
         "surprised": "oh",
         "thinking": "woo"
-      }
+      },
+      "_note": "Globaler Rueckfall. Pro Pet gewinnt pets[].mouth aus dem v9-Export."
     },
     "geometrie": {
       "note": "Kenneys Gesicht ist GEOMETRIE im body-Mesh, keine Textur. Die colormap ist ein reiner Palette-Atlas aus Farbstreifen, sie enthaelt kein gemaltes Gesicht. hideEyes im Editor v4 warf nur die Textur weg, die Schalen blieben stehen und zeigten sich weiter ueber die Schattierung. Vermessen von Cowork am 2026-07-16.",
@@ -539,7 +540,7 @@
       "glb": "animal-bunny.glb",
       "role": "guide-default",
       "isDefault": true,
-      "color": "#f2c93c",
+      "color": "#d3a244",
       "archetype": "carny-host",
       "narratorPromptRef": "bunny_carny.md",
       "eye": {
@@ -566,6 +567,14 @@
       "tuning": {
         "claySurface": 0.6,
         "jitter": 0.6
+      },
+      "mouth": {
+        "size": 0.44,
+        "dy": -0.69,
+        "sx": 1.54,
+        "rot": 0,
+        "bend": 0,
+        "src": "FrizzelBob-Mouth_01 (GitHub raw)"
       }
     },
     {
