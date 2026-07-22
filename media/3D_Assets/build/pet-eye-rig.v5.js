@@ -37,6 +37,7 @@ export class EyeRig {
     this.baseColor = opts.baseColor != null ? opts.baseColor : 0xf2c93c;
     this.lidSampler = opts.lidSampler || null;
     this.fx = opts.fx || 'none';
+    this.lashes = opts.lashes || null;   // Wimpern: {length,density} pro Pet (Overlay auf der oberen Lidschale)
     this.emote = { lidUpper: 0, lidLower: 0, slant: 0, pupil: 'normal', gaze: 'front' };
     this._lid = { u: 0.12, l: 0.06 };                                   // v4-Feld, ungenutzt (Kompat)
     this._rest = { u: 0.12, l: 0.06 };
@@ -109,6 +110,8 @@ export class EyeRig {
       const up = new THREE.Mesh(upGeo, matL);
       const lo = new THREE.Mesh(loGeo, matL);
       lids.add(up); lids.add(lo);
+      const lashCol = this._lidColor(fit.uv).multiplyScalar(0.5).getHex();   // dunkler Base-Color-Ton des Pets (wie die Lider, noch dunkler)
+      this._addLashes(up, R, lashCol);
       e.add(sc); e.add(puPivot); e.add(lids);
       e.traverse((m) => { if (m.isMesh) { m.userData.petOverlay = true; m.raycast = () => {}; m.castShadow = false; m.frustumCulled = false; } });
       e.position.set(ex, ey, fit.z - R * (0.24 + this.inset * 1.15));
@@ -125,6 +128,32 @@ export class EyeRig {
     this._max = U * A.track;
   }
 
+  // Wimpern: dunkle Kegel entlang der vorderen Oberlid-Kante, radial nach aussen + nach oben gekippt.
+  // Kind des Oberlid-Mesh -> folgt Blink/Oeffnen. length/density aus dem Contract (pro Pet).
+  _addLashes(up, R, colorHex) {
+    const lash = this.lashes; if (!lash) return;
+    const n = Math.max(0, Math.round(lash.density || 0)), len = lash.length || 0, w = lash.width != null ? lash.width : 1;
+    if (n < 1 || len <= 0) return;
+    const T = this.THREE;
+    const grp = new T.Group();
+    const mat = new T.MeshBasicMaterial({ color: (colorHex != null ? colorHex : 0x160f0b), toneMapped: false });
+    const rimPhi = Math.PI * 0.55, half = Math.PI * 0.40, L = R * len * 0.9, rad = R * 1.02, br = R * 0.06 * Math.max(0.15, w);
+    for (let i = 0; i < n; i++) {
+      const th = n === 1 ? 0 : (-half + 2 * half * (i / (n - 1)));
+      const sinP = Math.sin(rimPhi), cosP = Math.cos(rimPhi);
+      const px = rad * sinP * Math.sin(th), py = rad * cosP, pz = rad * sinP * Math.cos(th);
+      const geo = new T.ConeGeometry(br, L, 6); geo.translate(0, L / 2, 0);
+      const m = new T.Mesh(geo, mat);
+      m.position.set(px, py, pz);
+      const outward = new T.Vector3(px, py, pz).normalize();
+      const dir = outward.clone().lerp(new T.Vector3(0, 1, 0), 0.55).normalize();
+      m.quaternion.setFromUnitVectors(new T.Vector3(0, 1, 0), dir);
+      grp.add(m);
+    }
+    grp.traverse((x) => { if (x.isMesh) { x.userData.petOverlay = true; x.raycast = () => {}; x.castShadow = false; x.frustumCulled = false; } });
+    up.add(grp);
+  }
+  setLashes(patch) { this.lashes = Object.assign({ length: 0, density: 6, width: 1 }, this.lashes || {}, patch || {}); this.build(); }
   setAnchor(patch) { Object.assign(this.anchor, patch || {}); this.build(); }
   setEye(patch) {
     const p = patch || {}; Object.assign(this, p);

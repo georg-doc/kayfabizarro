@@ -1,9 +1,9 @@
 {
   "$schema": "kfb.pets/1",
-  "version": "1.0.0",
+  "version": "1.2.2",
   "canonical": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kfb-pets.json",
-  "updated": "2026-07-20",
-  "note": "EINE Datei fuer Aussehen, Bewegung, Stimme und Einbau. Wird PER URL geholt (Feld canonical). Ladereihenfolge in jeder Zone: canonical -> lokale Kopie -> vollstaendiger Inline-Fallback. Lokale Kopien sind Spiegel, nie Quellen.",
+  "updated": "2026-07-22",
+  "note": "EINE Datei fuer Aussehen, Bewegung, Stimme und Einbau. Wird PER URL geholt (Feld canonical). Ladereihenfolge in jeder Zone: canonical -> lokale Kopie -> vollstaendiger Inline-Fallback. Lokale Kopien sind Spiegel, nie Quellen. | 1.2.2 WS0: Default-Bunny mouth.set zurueck auf male (female war Test-Rest); female reversibel in _female.",
   "sources": {
     "pet-LIBRARY.json": "0.4.3",
     "motion-LIBRARY.v2.json": "2.0.0",
@@ -266,7 +266,7 @@
     "drift": {
       "speed": 0.09,
       "tremor": 0.045,
-      "tremorHz": 5.0,
+      "tremorHz": 5,
       "pair": [
         "neutral",
         "thinking"
@@ -289,7 +289,8 @@
         "sad": "m",
         "surprised": "oh",
         "thinking": "woo"
-      }
+      },
+      "_note": "Globaler Rueckfall. Pro Pet gewinnt pets[].mouth aus dem v9-Export."
     },
     "geometrie": {
       "note": "Kenneys Gesicht ist GEOMETRIE im body-Mesh, keine Textur. Die colormap ist ein reiner Palette-Atlas aus Farbstreifen, sie enthaelt kein gemaltes Gesicht. hideEyes im Editor v4 warf nur die Textur weg, die Schalen blieben stehen und zeigten sich weiter ueber die Schattierung. Vermessen von Cowork am 2026-07-16.",
@@ -319,10 +320,10 @@
       "slant": 0
     },
     "leben": {
-      "life": 1.0,
+      "life": 1,
       "wander": 0.09,
       "tremor": 0.045,
-      "tremorHz": 5.0
+      "tremorHz": 5
     },
     "kinetik": {
       "_todo": "Beschleunigung, Kurve, Fallen, Fahrt-Schleife: Regler da, Felder fehlen. Vor Sprint B setzen."
@@ -416,8 +417,8 @@
       }
     },
     "secondary": {
-      "amp": 1.0,
-      "freq": 7.0,
+      "amp": 1,
+      "freq": 7,
       "damp": 7.5
     },
     "clips": {
@@ -519,11 +520,27 @@
   },
   "voice": {
     "_reiter": "Voice",
+    "_note": "Alles Hoerbare: Blase (wie es aussieht beim Sprechen) + Stimme (wie es klingt). Stimmen sind NICHT portabel -> Wunsch speichern, nie eine konkrete Stimme/voiceURI. Studio-Vorschlag VOICE_CONTRACT_PROPOSAL_v1, mit zwei WS0-Korrekturen (siehe unten).",
     "narratorPromptBase": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/prompts/narrator/",
-    "quelle": null,
-    "modus": null,
-    "sync": null,
-    "_todo": "Song-Quelle, Lippen-Sync-Modus, Synchronisation hatten bisher keinen Ort. Setzen, wenn das Studio sie verdrahtet."
+    "bubble": {
+      "gap": 46,
+      "pad": 9,
+      "line": 2,
+      "paperTint": 0.5,
+      "fontSize": 15
+    },
+    "speech": {
+      "pitch": 0,
+      "rate": 1,
+      "category": null
+    },
+    "sound": null,
+    "_ws0_korrekturen": [
+      "narratorPromptRef bleibt PER PET (pets[].narratorPromptRef existiert schon) - NICHT global doppeln. Global nur narratorPromptBase.",
+      "speech.category default = null: leer bedeutet 'aus archetype ableiten' (carny-host->carny, deadpan->deadpan, sage->sage). Verhindert doppelte Pflege. Ein Pet kann per pets[].voice.speech.category ueberschreiben."
+    ],
+    "_override": "pets[].voice sticht voice (global), wie ueberall.",
+    "_reconciliation": "v1.2.0 loest zwei Linien auf: WS0 (1.0.2->1.1.0) und Studio (1.0.2->1.0.3). Beide fuegten den Voice-Block. Uebernommen: Studios getunter bubble.pad=9. Beibehalten: speech.category=null (aus archetype ableiten, WS0-Korrektur) statt Studios explizitem 'carny' - fuer bunny identisch, spart Doppelpflege. Ab hier ist DIESE Datei die eine Wahrheit; Studio fetcht canonical."
   },
   "perform": {
     "_reiter": "Perform",
@@ -559,13 +576,30 @@
           "form": "googly",
           "gloss": 0.1,
           "_war": "matte-cute"
-        }
+        },
+        "pupilStyle": "matte-cute"
       },
       "defaultEmote": "neutral",
       "skin": "default",
       "tuning": {
         "claySurface": 0.6,
         "jitter": 0.6
+      },
+      "mouth": {
+        "size": 0.44,
+        "dy": -0.69,
+        "sx": 1.54,
+        "rot": 0,
+        "bend": 0,
+        "src": "FrizzelBob-Mouth_01 (GitHub raw)",
+        "dx": 0,
+        "set": "male",
+        "_female": {
+          "size": 0.4,
+          "dy": -0.73,
+          "sx": 1.54,
+          "dx": -0.04
+        }
       }
     },
     {

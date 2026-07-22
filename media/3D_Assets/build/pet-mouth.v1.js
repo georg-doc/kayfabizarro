@@ -24,16 +24,40 @@ export const MOUTH_FILES = {
   woo:     'FrizzleBobMouth_01_0000s_0001s_0011_W-oo.png',
   l:       'FrizzleBobMouth_01_0000s_0001s_0012_L.png',
 };
+export const FEMALE_MOUTH_BASE = 'https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/Textures/FrizzleBob-FemaleMouth_01/';
+export const FEMALE_MOUTH_FILES = {   // anderer Ordner/Prefix/Mittelsegment + vertauschte Indizes bei R/Oh (Brief 2026-07-22)
+  smile:   'FrizzleFemaleMouth_01_0000s_0000s_0000_Smile.png',
+  neutral: 'FrizzleFemaleMouth_01_0000s_0000s_0001_Neutral.png',
+  m:       'FrizzleFemaleMouth_01_0000s_0000s_0002_M.png',
+  d:       'FrizzleFemaleMouth_01_0000s_0000s_0003_D.png',
+  s:       'FrizzleFemaleMouth_01_0000s_0000s_0004_S.png',
+  ee:      'FrizzleFemaleMouth_01_0000s_0000s_0005_Ee.png',
+  uh:      'FrizzleFemaleMouth_01_0000s_0000s_0006_Uh.png',
+  ah:      'FrizzleFemaleMouth_01_0000s_0000s_0007_Ah.png',
+  r:       'FrizzleFemaleMouth_01_0000s_0000s_0008_R.png',
+  oh:      'FrizzleFemaleMouth_01_0000s_0000s_0009_Oh.png',
+  woo:     'FrizzleFemaleMouth_01_0000s_0000s_0010_W-oo.png',
+  f:       'FrizzleFemaleMouth_01_0000s_0000s_0011_F.png',
+  l:       'FrizzleFemaleMouth_01_0000s_0000s_0012_L.png',
+};
+// Set-Registry: male = bisheriger Look (MOUTH_BASE/MOUTH_FILES bleiben als Alias fuer die Flug-Engine).
+export const MOUTH_SETS = {
+  male:   { base: MOUTH_BASE, files: MOUTH_FILES },
+  female: { base: FEMALE_MOUTH_BASE, files: FEMALE_MOUTH_FILES },
+};
 const TALK_POOL = ['ah', 'ee', 'oh', 'uh', 'd', 's', 'l', 'r'];   // offen = haeufig
 const CLOSERS = ['m', 'f', 'woo'];                                 // Konsonanten-Momente
 export const MOUTH_DEFAULTS = {
   size: 0.44,        // relativ zu U (halbe Body-Hoehe)
   dy: -0.52,         // Anker unter der Body-Mitte (U-Einheiten); Bunny: unter die Schnauze
   sx: 1,             // Breite-Faktor (quer ziehen, v9-Wunsch "größer/breiter")
+  dx: 0,             // seitlicher Versatz (U-Einheiten) — z.B. female leicht links
+  tilt: 0,           // Neigung ° um die OBERE Kante (Mund folgt der abwaerts gewoelbten Koerperform)
   rot: 0,            // Kippung ° (schiefer Mund = Charakter; animierbar)
   bend: 0,           // Bogen −1..1: + = Mundwinkel hoch (Smile-Kurve), − = runter
   rate: 1,           // Sprech-Tempo (1 = ~8-11 Visem-Wechsel/s)
   restMap: { neutral: 'neutral', happy: 'smile', angry: 's', sad: 'm', surprised: 'oh', thinking: 'woo' },
+  set: 'male',        // Mund-Set (male | female); female = eigener Ordner/Prefix, gleiche 13 Keys
 };
 export const MOUTH_META = [   // [key,label,min,max,step] — Bench-Slider
   ['size', 'Mund-Größe', 0.15, 0.9, 0.01],
@@ -48,6 +72,9 @@ export class PetMouth {
     this.ch = ch; this.THREE = ch.THREE;
     this.p = Object.assign({}, MOUTH_DEFAULTS, opts.params || {});
     this.p.restMap = Object.assign({}, MOUTH_DEFAULTS.restMap, (opts.params && opts.params.restMap) || {});
+    const setId = opts.set || (opts.params && opts.params.set) || 'male';
+    this._setId = MOUTH_SETS[setId] ? setId : 'male';
+    this._base = MOUTH_SETS[this._setId].base; this._files = MOUTH_SETS[this._setId].files;
     this.tex = {}; this.cur = 'neutral'; this.rest = 'neutral';
     this.enabled = true;
     this._talk = false; this._t = 0; this._next = 0; this._pop = 1;
@@ -59,7 +86,7 @@ export class PetMouth {
     if (this.tex[name]) return this.tex[name];
     const T = this.THREE;
     if (!this._loader) { this._loader = new T.TextureLoader(); this._loader.setCrossOrigin('anonymous'); }
-    const t = this._loader.load(MOUTH_BASE + MOUTH_FILES[name], (tx) => {
+    const t = this._loader.load(this._base + this._files[name], (tx) => {
       tx.colorSpace = T.SRGBColorSpace;
       if (name === 'neutral' && tx.image && tx.image.height) { this._asp = tx.image.width / tx.image.height; this._applyScale(); }
     });
@@ -70,7 +97,7 @@ export class PetMouth {
   build() {
     const T = this.THREE;
     this.dispose();
-    const mat = new T.MeshBasicMaterial({ map: this._loadTex('neutral'), transparent: true, depthWrite: false, toneMapped: false });
+    const mat = new T.MeshBasicMaterial({ map: this._loadTex('neutral'), transparent: true, depthWrite: false, depthTest: false, toneMapped: false });
     this.mesh = new T.Mesh(new T.PlaneGeometry(1, 1, 12, 3), mat);   // Segmente fuer den Bogen (Mundwinkel)
     this._basePos = this.mesh.geometry.attributes.position.clone();
     this._lastBend = 0;
@@ -79,7 +106,7 @@ export class PetMouth {
     this.mesh.renderOrder = 3;
     this.mesh.castShadow = false; this.mesh.frustumCulled = false;
     // alle Viseme warm laden (kleine PNGs) — kein weisses Aufblitzen beim ersten Talk
-    for (const k in MOUTH_FILES) this._loadTex(k);
+    for (const k in this._files) this._loadTex(k);
     this.refit();
   }
   // Surface-Fit wie EyeRig: geometrie-lokale BBox (pose-invariant), Raycast von vorn
@@ -95,7 +122,7 @@ export class PetMouth {
     const sz = bb.getSize(new T.Vector3());
     const lc = bb.getCenter(new T.Vector3());
     const U = this._U = sz.y / 2;
-    const mx = lc.x, my = lc.y + U * this.p.dy;
+    const mx = lc.x + U * (this.p.dx || 0), my = lc.y + U * this.p.dy;
     const ray = new T.Raycaster(); ray.layers.enableAll();
     body.updateMatrixWorld(true);
     const oW = body.localToWorld(new T.Vector3(mx, my, U * 3.5));
@@ -104,18 +131,37 @@ export class PetMouth {
     const hit = ray.intersectObject(body, false)[0];
     const z = hit ? body.worldToLocal(hit.point.clone()).z : lc.z + U * 0.7;
     if (this.mesh.parent !== body) body.add(this.mesh);
-    this.mesh.position.set(mx, my, z + U * 0.055);   // knapp VOR der Flaeche (kein Z-Fight; Schnauze darf davor liegen)
+    this.mesh.position.set(mx, my, z + U * 0.03);   // knapp VOR der Flaeche (kein Z-Fight; naeher = weniger Ueberstand am Rand)
     this._baseS = U * this.p.size;
     this._applyScale();
+    // Neigung um die OBERE Kante: der Fuss kippt nach hinten in den Koerper -> folgt der abwaerts gewoelbten Flaeche
+    const ta = (this.p.tilt || 0) * Math.PI / 180;
+    if (ta) { const h = this._baseS; this.mesh.position.y += (h / 2) * (1 - Math.cos(ta)); this.mesh.position.z -= (h / 2) * Math.sin(ta); }
+    this.mesh.rotation.x = ta;
   }
   _applyScale() { if (this.mesh) this.mesh.scale.set(this._baseS * this._asp * this._pop * (this.p.sx || 1), this._baseS * this._pop, 1); }
   setParams(p) {
     Object.assign(this.p, p || {});
-    if (p && ('size' in p || 'dy' in p)) this.refit();
+    if (p && 'set' in p) this.setSet(p.set);
+    if (p && ('size' in p || 'dy' in p || 'dx' in p || 'tilt' in p)) this.refit();
     if (p && 'sx' in p) this._applyScale();
   }
+  // Laufzeit-Wechsel male<->female: Cache leeren, Set umstellen, Texturen neu warm laden, aktuelles Visem neu setzen.
+  setSet(id) {
+    id = MOUTH_SETS[id] ? id : 'male';
+    if (id === this._setId) return;
+    this._setId = id; this._base = MOUTH_SETS[id].base; this._files = MOUTH_SETS[id].files;
+    for (const k in this.tex) { const t = this.tex[k]; if (t && t.dispose) t.dispose(); }
+    this.tex = {};
+    if (this.mesh) {
+      const cur = (this.cur && this._files[this.cur]) ? this.cur : 'neutral';
+      this.mesh.material.map = this._loadTex(cur); this.mesh.material.needsUpdate = true; this.cur = cur;
+      for (const k in this._files) this._loadTex(k);
+    }
+  }
+  get set() { return this._setId; }
   setTex(name) {
-    if (!this.mesh || !MOUTH_FILES[name]) return;
+    if (!this.mesh || !this._files[name]) return;
     this.mesh.material.map = this._loadTex(name);
     this.mesh.material.needsUpdate = true;
     if (name !== this.cur) this._pop = 1.12;   // Snap-Pop bei jedem Wechsel
@@ -140,7 +186,7 @@ export class PetMouth {
   // Temporaerer Ausdrucks-Override (fuer Combos/FX): express({bend:0.8, rot:-8}, 1.2)
   // — faehrt weich hin und nach hold s weich auf die pet-Defaults zurueck.
   express(p, hold = 0.8) { this._ex = { p: p || {}, t: hold }; }
-  update(dt) {
+  update(dt, cam) {
     if (!this.mesh) return;
     this.mesh.visible = this.enabled;
     if (this._talk && this.enabled) {
@@ -166,6 +212,18 @@ export class PetMouth {
     this._cr += (tr - this._cr) * Math.min(1, dt * 10);
     this._applyBend(this._cb);
     this.mesh.rotation.z = this._cr * Math.PI / 180;
+    // View-Facing-Fade: der flache Mund blendet aus, sobald seine Frontnormale von der Kamera wegdreht
+    // -> kein Ueberstand ueber die Body-Silhouette an schraegen Winkeln (kein "Floaten" vor dem Modell).
+    if (cam && this.enabled) {
+      const T = this.THREE;
+      this.mesh.updateWorldMatrix(true, false);
+      const n = new T.Vector3(0, 0, 1).transformDirection(this.mesh.matrixWorld).normalize();
+      const wp = new T.Vector3().setFromMatrixPosition(this.mesh.matrixWorld);
+      const vd = new T.Vector3().subVectors(cam.position, wp).normalize();
+      const a = Math.max(0, Math.min(1, (n.dot(vd) - 0.12) / 0.33));
+      this.mesh.material.opacity = a;
+      this.mesh.visible = a > 0.02;
+    }
   }
   dispose() {
     if (this.mesh && this.mesh.parent) this.mesh.parent.remove(this.mesh);
