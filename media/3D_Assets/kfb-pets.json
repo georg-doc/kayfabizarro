@@ -1,9 +1,9 @@
 {
   "$schema": "kfb.pets/1",
-  "version": "1.2.0",
+  "version": "1.2.3",
   "canonical": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kfb-pets.json",
   "updated": "2026-07-22",
-  "note": "EINE Datei fuer Aussehen, Bewegung, Stimme und Einbau. Wird PER URL geholt (Feld canonical). Ladereihenfolge in jeder Zone: canonical -> lokale Kopie -> vollstaendiger Inline-Fallback. Lokale Kopien sind Spiegel, nie Quellen.",
+  "note": "EINE Datei fuer Aussehen, Bewegung, Stimme und Einbau. Wird PER URL geholt (Feld canonical). Ladereihenfolge in jeder Zone: canonical -> lokale Kopie -> vollstaendiger Inline-Fallback. Lokale Kopien sind Spiegel, nie Quellen. | 1.2.2 WS0: Default-Bunny mouth.set zurueck auf male (female war Test-Rest); female reversibel in _female.",
   "sources": {
     "pet-LIBRARY.json": "0.4.3",
     "motion-LIBRARY.v2.json": "2.0.0",
@@ -266,7 +266,7 @@
     "drift": {
       "speed": 0.09,
       "tremor": 0.045,
-      "tremorHz": 5.0,
+      "tremorHz": 5,
       "pair": [
         "neutral",
         "thinking"
@@ -320,10 +320,10 @@
       "slant": 0
     },
     "leben": {
-      "life": 1.0,
+      "life": 1,
       "wander": 0.09,
       "tremor": 0.045,
-      "tremorHz": 5.0
+      "tremorHz": 5
     },
     "kinetik": {
       "_todo": "Beschleunigung, Kurve, Fallen, Fahrt-Schleife: Regler da, Felder fehlen. Vor Sprint B setzen."
@@ -417,8 +417,8 @@
       }
     },
     "secondary": {
-      "amp": 1.0,
-      "freq": 7.0,
+      "amp": 1,
+      "freq": 7,
       "damp": 7.5
     },
     "clips": {
@@ -576,7 +576,8 @@
           "form": "googly",
           "gloss": 0.1,
           "_war": "matte-cute"
-        }
+        },
+        "pupilStyle": "matte-cute"
       },
       "defaultEmote": "neutral",
       "skin": "default",
@@ -590,7 +591,15 @@
         "sx": 1.54,
         "rot": 0,
         "bend": 0,
-        "src": "FrizzelBob-Mouth_01 (GitHub raw)"
+        "src": "FrizzelBob-Mouth_01 (GitHub raw)",
+        "dx": 0,
+        "set": "male",
+        "_female": {
+          "size": 0.4,
+          "dy": -0.73,
+          "sx": 1.54,
+          "dx": -0.04
+        }
       }
     },
     {
