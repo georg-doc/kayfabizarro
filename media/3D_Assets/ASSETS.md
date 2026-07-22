@@ -1,6 +1,21 @@
-# ASSETS — 3D-Props für den KFB-Tisch (optimiert)
+# ASSETS — KFB-DNA-Wissen für 3D-Props (KEINE Bestandsliste)
 
-**Stand 2026-07-10.** CC0/CC-BY-GLBs (Poly-Pizza-Herkunft), Texturen gestrippt + gepruned → web-ready. **Roh** in `3D Assets/`, **optimiert** in `3D Assets/optimized/` (die hier nutzen). Alle GLB, direkt per `GLTFLoader` ladbar.
+> **⚠️ Diese Datei ist NICHT die Wahrheit über den Bestand. Sie ist eine Behauptung.**
+> **Was wirklich im Repo liegt, sagt der Live-Tree** — der Asset-Browser liest ihn bei jedem
+> Öffnen (`3D Assets/CATALOG/asset-browser.html`, grünes Häkchen = geprüft im Repo).
+> **Prüfen mit Cache-Buster:** `raw.githubusercontent.com/.../<pfad>?v=x` — ohne `?v=` liefert der
+> CDN-Cache bis zu 5 Minuten alte 404. Ein Manifest ist eine Behauptung, der Live-Abruf der Beweis.
+>
+> Die Prop-Tabelle unten ist **historisch (Stand 2026-07-10)** und beschreibt nur die frühen
+> Poly-Pizza-Tischrequisiten — sie kennt die später hochgeladenen Kenney-Kits (nature, holiday,
+> pirate, city …) NICHT. Für „was ist da" nie diese Datei lesen, immer den Browser/Tree.
+
+**Was hier bleibt und gilt: die KFB-DNA-Pipeline und die Lizenz-Regeln** (unten). Die sind zeitlos,
+egal welches Modell.
+
+---
+
+**Historischer Stand 2026-07-10.** CC0/CC-BY-GLBs (Poly-Pizza-Herkunft), Texturen gestrippt + gepruned → web-ready. **Roh** in `3D Assets/`, **optimiert** in `3D Assets/optimized/`. Alle GLB, direkt per `GLTFLoader` ladbar.
 
 ## Cel-Reskin-Pipeline (WICHTIG — nicht roh nutzen)
 
