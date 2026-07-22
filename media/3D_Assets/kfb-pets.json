@@ -1,8 +1,8 @@
 {
   "$schema": "kfb.pets/1",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "canonical": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kfb-pets.json",
-  "updated": "2026-07-21",
+  "updated": "2026-07-22",
   "note": "EINE Datei fuer Aussehen, Bewegung, Stimme und Einbau. Wird PER URL geholt (Feld canonical). Ladereihenfolge in jeder Zone: canonical -> lokale Kopie -> vollstaendiger Inline-Fallback. Lokale Kopien sind Spiegel, nie Quellen.",
   "sources": {
     "pet-LIBRARY.json": "0.4.3",
@@ -524,7 +524,7 @@
     "narratorPromptBase": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/prompts/narrator/",
     "bubble": {
       "gap": 46,
-      "pad": 14,
+      "pad": 9,
       "line": 2,
       "paperTint": 0.5,
       "fontSize": 15
@@ -539,7 +539,8 @@
       "narratorPromptRef bleibt PER PET (pets[].narratorPromptRef existiert schon) - NICHT global doppeln. Global nur narratorPromptBase.",
       "speech.category default = null: leer bedeutet 'aus archetype ableiten' (carny-host->carny, deadpan->deadpan, sage->sage). Verhindert doppelte Pflege. Ein Pet kann per pets[].voice.speech.category ueberschreiben."
     ],
-    "_override": "pets[].voice sticht voice (global), wie ueberall."
+    "_override": "pets[].voice sticht voice (global), wie ueberall.",
+    "_reconciliation": "v1.2.0 loest zwei Linien auf: WS0 (1.0.2->1.1.0) und Studio (1.0.2->1.0.3). Beide fuegten den Voice-Block. Uebernommen: Studios getunter bubble.pad=9. Beibehalten: speech.category=null (aus archetype ableiten, WS0-Korrektur) statt Studios explizitem 'carny' - fuer bunny identisch, spart Doppelpflege. Ab hier ist DIESE Datei die eine Wahrheit; Studio fetcht canonical."
   },
   "perform": {
     "_reiter": "Perform",
