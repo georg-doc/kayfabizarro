@@ -145,6 +145,7 @@ export function resolvePet(lib, id, session = {}) {
     face.pupil = deepMerge(face.pupil || {}, e.eye.pupil || {});
   }
   if (e.face) face = deepMerge(face, e.face);
+  if (e.mouth) face.mouth = deepMerge(face.mouth || {}, e.mouth);   // Per-Pet-Mund erbt (vorher stumm verworfen -> globaler Fallback dy -0.52 griff)
   face = deepMerge(face, session.face || {});
 
   return {
