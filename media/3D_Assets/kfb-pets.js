@@ -322,8 +322,12 @@ export async function makePet(lib, id, opts = {}) {
 
     /** Bewegung starten. Name aus motion.motions oder motion.clips. */
     setMotion(name, o) {
-      if (motion && typeof motion.play === 'function') motion.play(name, o);
-      else if (motion && typeof motion.start === 'function') motion.start(name, o);
+      // PetMotion v2 hat kein play/start. idle/loading laufen als Loop (Idle-Atmung!),
+      // benannte Aktionen (hop, celebrate, turn180, react, ...) als Methode, sonst Loop-Fallback.
+      if (!motion) return api;
+      if (name === 'idle' || name === 'loading') motion.loop(name, true);
+      else if (typeof motion[name] === 'function') motion[name](o);
+      else if (typeof motion.loop === 'function') motion.loop(name, true);
       return api;
     },
 
@@ -374,3 +378,7 @@ export function glbUrl(lib, id) {
 }
 
 export default { VERSION, loadPets, makePet, resolvePet, petEntry, petIds, petList, glbUrl };
+
+// Bequemer Re-Export der State-Bundles (attend/greet/notice/…): ein Import reicht.
+// ACHTUNG: macht pet-bundles.v1.js zur harten Nachbardatei — immer zusammen mit kfb-pets.js pushen.
+export { PetBundles } from './pet-bundles.v1.js';

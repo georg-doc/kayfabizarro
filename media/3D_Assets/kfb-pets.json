@@ -1,6 +1,6 @@
 {
   "$schema": "kfb.pets/1",
-  "version": "1.2.3",
+  "version": "1.2.4",
   "canonical": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kfb-pets.json",
   "updated": "2026-07-22",
   "note": "EINE Datei fuer Aussehen, Bewegung, Stimme und Einbau. Wird PER URL geholt (Feld canonical). Ladereihenfolge in jeder Zone: canonical -> lokale Kopie -> vollstaendiger Inline-Fallback. Lokale Kopien sind Spiegel, nie Quellen. | 1.2.2 WS0: Default-Bunny mouth.set zurueck auf male (female war Test-Rest); female reversibel in _female.",
@@ -548,6 +548,26 @@
     "zuordnung": null,
     "aufnahme": null,
     "_regel": "Aufnahmen bleiben in perform.aufnahme. Ein benannter Schritt schreibt sie nach motion.clips. Nie direkt."
+  },
+  "behavior": {
+    "_reiter": "Behavior / Bundles",
+    "_note": "Namen + Kurzbeschreibung, kein Code (analog TRIGGER_INFO). Referenz-Implementierung: pet-bundles.v1.js. 'attend' ist der EINZIGE Dauerzustand, alles andere ist Interpunktion und settlet dorthin zurueck; 'sleep' gewinnt gegen alles.",
+    "bundles": {
+      "attend": "Dauerzustand: lebendig stehen (Ausdrucks-Drift, Blinzeln, Cursor-Blick).",
+      "greet": "Begruessung: happy + Augen-Pop + Huepfer.",
+      "notice": "etwas bemerken (doubleTake).",
+      "agree": "zustimmen (positive Reaktion).",
+      "disagree": "ablehnen (negative Reaktion).",
+      "celebrate": "feiern (tada).",
+      "startle": "erschrecken (drop).",
+      "shiver": "froesteln/zittern.",
+      "think": "nachdenken: thinking-Ausdruck + loading-Loop.",
+      "thinkStop": "Nachdenken beenden.",
+      "sleep": "schlafen (gewinnt gegen alles).",
+      "wake": "aufwachen (Freuden-Huepfer).",
+      "talk": "sprechen an/aus.",
+      "byMood": "Sentiment-Kuerzel: positive->celebrate, negative->disagree, neutral->notice."
+    }
   },
   "pets": [
     {
