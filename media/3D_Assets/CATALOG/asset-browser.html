@@ -471,6 +471,7 @@ body[data-density="compact"] .grid{grid-template-columns:repeat(auto-fill,minmax
       </div>`;
     drawer.dataset.path=path;drawer.classList.add("on");scrim.classList.add("on");
     drawer.querySelector(".dclose").onclick=closeDrawer;
+    if(gitState(a)==='github' && window.KFB3D){ try{ window.KFB3D.show(drawer.querySelector(".dthumb"), RAW+ghPathOf(a)); }catch(e){} }
     drawer.querySelector("#copyPath").onclick=()=>{navigator.clipboard&&navigator.clipboard.writeText(a.path);const b=drawer.querySelector("#copyPath");b.textContent="Copied";setTimeout(()=>b.textContent="Copy",1200);};
     drawer.querySelectorAll(".rate-row .stars").forEach((sw,idx)=>{
       const dim=["ease","kfb","med"][idx];
@@ -496,6 +497,42 @@ body[data-density="compact"] .grid{grid-template-columns:repeat(auto-fill,minmax
   document.getElementById("brandsub").textContent="Crit-Engine · "+DATA.length+" assets";
   render(true);
 })();
+</script>
+<!-- Echte 3D-GLB-Vorschau (lädt das Modell von GitHub via ghPathOf) -->
+<script type="importmap">
+{ "imports": { "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js", "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/" } }
+</script>
+<script type="module">
+import * as THREE from 'three';
+import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
+let R, scene, cam, cur=null, raf=null, drag=false, px=0, py=0, idle=0;
+const loader = new GLTFLoader();
+function init(){
+  R = new THREE.WebGLRenderer({ antialias:true, alpha:true });
+  R.setPixelRatio(Math.min(devicePixelRatio,2));
+  R.domElement.style.cssText='width:100%;height:220px;display:block;cursor:grab;border-radius:8px';
+  scene = new THREE.Scene();
+  cam = new THREE.PerspectiveCamera(40,1,0.01,2000);
+  scene.add(new THREE.HemisphereLight(0xffffff,0x8a7f66,1.1));
+  const d = new THREE.DirectionalLight(0xffffff,1.4); d.position.set(3,6,4); scene.add(d);
+  scene.add(new THREE.AmbientLight(0xffffff,0.4));
+  R.domElement.addEventListener('pointerdown',e=>{drag=true;px=e.clientX;py=e.clientY;idle=0;});
+  addEventListener('pointerup',()=>drag=false);
+  addEventListener('pointermove',e=>{ if(!drag||!cur)return; cur.rotation.y+=(e.clientX-px)*0.01; cur.rotation.x+=(e.clientY-py)*0.01; px=e.clientX;py=e.clientY;idle=0; });
+}
+function frame(obj){ const b=new THREE.Box3().setFromObject(obj),s=new THREE.Vector3(),c=new THREE.Vector3(); b.getSize(s); b.getCenter(c); obj.position.sub(c); const r=Math.max(s.x,s.y,s.z)||1; cam.position.set(0,r*0.35,r*2.3); cam.lookAt(0,0,0); }
+window.KFB3D = { show(container,url){
+  if(!container) return;
+  if(!R) init();
+  container.innerHTML=''; container.style.position='relative'; container.appendChild(R.domElement);
+  const w=container.clientWidth||300; R.setSize(w,220,false); cam.aspect=w/220; cam.updateProjectionMatrix();
+  if(cur){ scene.remove(cur); cur=null; }
+  const note=document.createElement('div'); note.textContent='lädt 3D …';
+  note.style.cssText='position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:#8a7d5f;font-size:12px;pointer-events:none';
+  container.appendChild(note);
+  loader.load(url, g=>{ note.remove(); cur=g.scene; frame(cur); scene.add(cur); }, undefined, ()=>{ note.textContent='3D nicht ladbar'; });
+  if(!raf){ const loop=()=>{ raf=requestAnimationFrame(loop); idle+=0.016; if(cur&&idle>1.5)cur.rotation.y+=0.005; if(R)R.render(scene,cam); }; loop(); }
+}};
 </script>
 </body>
 </html>
