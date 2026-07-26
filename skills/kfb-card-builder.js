@@ -37,6 +37,7 @@
 
 import { INK_PRESETS, contour, pathOf, drawInk, maskGrow, measureInk, INK_COLOR }
   from './kfb-ink-canon.js';
+import { CARD_AR, CARD_AR_FROM, fitCell, coverLoss } from './kfb-card-format.js';
 
 const RAW_INDEX = 'https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/kfb/index.json';
 const PDFJS = 'https://cdn.jsdelivr.net/npm/pdfjs-dist@4.7.76/build/pdf.min.mjs';
@@ -51,7 +52,10 @@ export function createCardBuilder(opts = {}) {
 
   const P = Object.assign({
     preset: 'card',        // Tusche-Preset aus kfb-ink-canon.js
-    aspect: 1.79,          // Breite/Höhe des Blatts (Kanon, Landscape)
+    // S62 · Das Blattformat kommt aus EINER Stelle (`kfb-card-format.js`) — vorher stand die Zahl
+    // hier, in `academy-deck.js` und in `sky-cards.js`, mit Kommentaren, die mahnten, sie gleich zu
+    // halten. Überschreiben darf man sie weiterhin (Sonderformate), aber der Default ist der Kanon.
+    aspect: CARD_AR,       // Breite/Höhe des Blatts (Sollformat, Landscape)
     // Auflösungen. Die Linie braucht mehr Pixel als die Silhouette — genau dafür
     // ist die Kontur normalisiert. Maske klein zu halten spart spürbar Speicher.
     sheetRes: 1024, maskRes: 512, decalRes: 1536, pdfRes: 1500,
@@ -65,12 +69,16 @@ export function createCardBuilder(opts = {}) {
     indexUrl: RAW_INDEX,
     localIndex: null,      // optionale URL eines lokalen Fallback-Manifests
     decalLift: 0.02,       // Weltabstand des Decal-Quads bei Breite 11 — skaliert mit
-    artFit: 'cover',       // 'cover' = Zellbild füllt das Blatt · 'contain' = Letterbox
+    // S62 · **`fit` ist der Kanon**: die gemessene Zelle liegt mittig im Sollformat, der Fehlbetrag
+    // wird cremefarbener Rand innerhalb der Tuschekante. `cover` bleibt für Sonderfälle, ist aber
+    // NICHT mehr Default — es schnitt bei `forget_utopia` 18 % der Zellhöhe weg, genau dort stehen
+    // Titel und LORE-Zeile. Ein Format, das den Inhalt kostet, ist kein Format.
+    artFit: 'fit',         // 'fit' = Zelle mittig ins Sollformat · 'cover' = füllt, schneidet
     doubleSide: true,
   }, opts.params || {});
 
   // ---------------------------------------------------------------- Registry & PDF
-  let registry = null, pmap = null, pool = null, pdfjs = null, cellAspect = null;
+  let registry = null, pmap = null, pool = null, pdfjs = null, cellAspect = null, lastFit = null;
   const deckCache = new Map(), docs = new Map(), pages = new Map(), artCache = new Map();
   let busy = false; const queue = [];
 
@@ -156,10 +164,16 @@ export function createCardBuilder(opts = {}) {
   // **Die Zahlen gehören ins Manifest, nicht in den Code** — `index.json` ist die Wahrheit über
   // Deck-Geometrie. Bis `deck.cardGrid` dort steht, bleibt der Default die ganze Seite: derselbe
   // (falsche) Stand wie heute in Travel, aber wenigstens an EINER Stelle und benannt.
+  // S61 (v11) · **Sechs Zahlen, nicht vier.** Gemessen am 26.7. mit `tools/cardgrid-pick.html`:
+  // zwischen den Zellen liegt bei jedem Deck etwas anderes — Illustration bei `forget_utopia`
+  // (gapX 0,160!), eine Schnittlinie bei `ignore_dystopia`, fast nichts bei `embrace_protopia`.
+  // Ein Raster ohne Zwischenraum nimmt darum den Nachbarn mit ins Bild. `gapX`/`gapY` sind
+  // Bruchteile der SEITE; Zelle = (w − gapX) / 2.
   function gridOf(rd) {
     const g = (rd && rd.cardGrid) || P.cardGrid;
-    return g ? { x: g.x || 0, y: g.y || 0, w: g.w != null ? g.w : 1, h: g.h != null ? g.h : 1 }
-             : { x: 0, y: 0, w: 1, h: 1 };
+    return g ? { x: g.x || 0, y: g.y || 0, w: g.w != null ? g.w : 1, h: g.h != null ? g.h : 1,
+                 gapX: g.gapX || 0, gapY: g.gapY || 0 }
+             : { x: 0, y: 0, w: 1, h: 1, gapX: 0, gapY: 0 };
   }
   async function cropCard(card) {
     const ck = card.packId + '#' + card.n;
@@ -173,9 +187,11 @@ export function createCardBuilder(opts = {}) {
     const pg = await renderPage(fileUrl(rd.pdf), pageNum, P.pdfRes);
     const G = gridOf(rd);
     const gx = pg.width * G.x, gy = pg.height * G.y;
-    const cw = Math.floor(pg.width * G.w / P.gridCols), chh = Math.floor(pg.height * G.h / P.gridRows);
+    const cw = Math.floor(pg.width * (G.w - G.gapX) / P.gridCols);
+    const chh = Math.floor(pg.height * (G.h - G.gapY) / P.gridRows);
     cellAspect = cw / chh;
-    const sx = gx + (qi % P.gridCols) * cw, sy = gy + Math.floor(qi / P.gridCols) * chh;
+    const sx = gx + (qi % P.gridCols) * (cw + pg.width * G.gapX);
+    const sy = gy + Math.floor(qi / P.gridCols) * (chh + pg.height * G.gapY);
     const cv = document.createElement('canvas'); cv.width = cw; cv.height = chh;
     cv.getContext('2d').drawImage(pg, sx, sy, cw, chh, 0, 0, cw, chh);
     artCache.set(ck, cv);
@@ -280,8 +296,9 @@ export function createCardBuilder(opts = {}) {
     return tex(c);
   }
 
-  // Artwork-Blatt: der PDF-Quadrant, auf die Silhouette geclippt. `cover` füllt das
-  // Blatt (der Regelfall — die Zelle hat dasselbe Format), `contain` legt Ränder in Creme.
+  // Artwork-Blatt: der PDF-Quadrant auf der Silhouette. **S62 · `fit` ist der Kanon** — die gemessene
+  // Zelle liegt MITTIG im Sollformat, der Fehlbetrag wird Papier (Creme) innerhalb der Tuschekante.
+  // `cover` füllt und schneidet dafür; das ist der alte, verlustbehaftete Weg (Sonderfälle).
   function artSheetTexture(crop, seed) {
     const W = P.sheetRes, H = Math.round(W / P.aspect);
     const c = document.createElement('canvas'); c.width = W; c.height = H;
@@ -289,11 +306,16 @@ export function createCardBuilder(opts = {}) {
     g.imageSmoothingEnabled = true; g.imageSmoothingQuality = 'high';
     g.save(); pathOf(g, contour(P.preset, seed, W, H)); g.clip();
     g.fillStyle = CREAM; g.fillRect(0, 0, W, H);
-    const s = P.artFit === 'contain'
-      ? Math.min(W / crop.width, H / crop.height)
-      : Math.max(W / crop.width, H / crop.height);
-    const dw = crop.width * s, dh = crop.height * s;
-    g.drawImage(crop, (W - dw) / 2, (H - dh) / 2, dw, dh);
+    if (P.artFit === 'cover') {
+      const s = Math.max(W / crop.width, H / crop.height);
+      const dw = crop.width * s, dh = crop.height * s;
+      g.drawImage(crop, (W - dw) / 2, (H - dh) / 2, dw, dh);
+      lastFit = null;
+    } else {
+      const f = fitCell(crop.width, crop.height, W, H);
+      g.drawImage(crop, f.x, f.y, f.w, f.h);
+      lastFit = f;
+    }
     g.restore();
     return tex(c);
   }
@@ -377,6 +399,24 @@ export function createCardBuilder(opts = {}) {
     loadRegistry, loadDeck, pool: buildPool,
     get decks() { return (registry && registry.decks) || []; },
     get cellAspect() { return cellAspect; },
+    // S62 · Abnahme des Sollformats. Sagt für die letzte eingelegte Zelle, wie viel Papierrand
+    // entstanden ist — und was `cover` an derselben Zelle GEKOSTET hätte. Beides in einem Blick,
+    // sonst ist „Ränder statt Verlust" eine Behauptung.
+    formatReport() {
+      const cw = lastFit ? lastFit.w / lastFit.scale : null;
+      const ch = lastFit ? lastFit.h / lastFit.scale : null;
+      const loss = cw ? coverLoss(cw, ch, P.aspect) : null;
+      return {
+        sollformat: P.aspect,
+        anker: CARD_AR_FROM.anker,
+        fit: P.artFit,
+        zelle: cellAspect ? +(1 / cellAspect).toFixed(3) : null,   // cellAspect ist H/W
+        randX: lastFit ? +(lastFit.randX * 100).toFixed(2) : null, // % Blattbreite, je Seite
+        randY: lastFit ? +(lastFit.randY * 100).toFixed(2) : null, // % Blatthöhe, oben wie unten
+        verlustJetzt: 0,
+        verlustMitCover: loss ? +((loss.hoehe || loss.breite) * 100).toFixed(2) : null,
+      };
+    },
     get pending() { return queue.length + (busy ? 1 : 0); },
     clearQueue() { queue.length = 0; },
     // ---- Bauen

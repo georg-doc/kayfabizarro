@@ -3,8 +3,9 @@
 **Zweck:** Wer eine KFB-Cut-&-Play-Karte in 3D bauen oder eine PDF-Karte schneiden will, liest **dieses
 Dokument + die Ink-SSOT** und muss **nichts nachfragen**. Fork/reuse die Referenz-Module — baue nichts nach.
 
-**GitHub-Ziel (Kanon):** `skills/` — dieses Doc + `SSOT_Card_Ink_Outline_v2.md` + die zwei Module
-`kfb-card-builder.js` und `kfb-ink-canon.js`. Zusammen sind das „Karten & Outlines, komplett".
+**GitHub-Ziel (Kanon):** `skills/` — dieses Doc + `SSOT_Card_Ink_Outline_v2.md` + die drei Module
+`kfb-card-builder.js`, `kfb-ink-canon.js` und `kfb-card-format.js` (Sollformat). Zusammen „Karten &
+Outlines, komplett".
 
 ---
 
@@ -51,17 +52,41 @@ Das gehört der Szene.
 - **Quadrant** = `(cardNumber − 1) % 4` → Reihenfolge **TL · TR · BL · BR** (`cardMapping`).
 
 ## 4 · `cardGrid` — der Crop-Vertrag (das Herz)
-`deck.cardGrid = { x, y, w, h }` in **0..1** = wo das 2×2-Raster auf der Seite **beginnt** und wie **groß**
-es ist. `null` = ganze Seite (v11-Default, **falsch** für eingerückte Raster). Der CardBuilder liest
-`deck.cardGrid` bereits; die Zahlen stehen **nur in `index.json`**, nie in JS.
+`deck.cardGrid = { x, y, w, h, gapX, gapY }` in **0..1**. `x,y,w,h` = **Außenrahmen** des 2×2 (Beginn +
+Größe); **`gapX,gapY`** = der **Zwischenraum ZWISCHEN den Zellen** (Default 0 → altes Verhalten). `null`
+= ganze Seite (**falsch** für eingerückte Raster). Zahlen **nur in `index.json`**, nie in JS.
 
-**Gemessene Werte (Exhibition, 2026-07-26, Messweg + Beweisbilder: `CARDGRID_MESSUNG_2026-07-26.md`):**
+**Warum `gap` (Abgleich v11, 2026-07-26):** zwischen den zwei Kartenspalten liegt oft Fremdinhalt — bei
+`forget_utopia` die **BLÖDSINN-Illustrationsspalte** (~0,135 = ein Fünftel des Kartenbilds). Ein Raster
+ohne Zwischenraum nimmt den halben Nachbarn mit. Der Außenrahmen (gemessen von der Coworker-Seite) +
+der Zwischenraum (gemessen von der Design-Seite) ergeben zusammen den richtigen Crop. Formel:
+```js
+cw = pg.width  * (w - gapX)/gridCols;   chh = pg.height * (h - gapY)/gridRows;
+sx = x*W + col*(cw + gapX*W);           sy = y*H + row*(chh + gapY*H);
+```
+(v11 `card-registry.js` + `kfb-card-builder.js` bauen das bereits; additiv, `gap`=0 = altes Verhalten.)
+
+**Gemessene + abgeglichene Werte (Exhibition, Beweis: `CARDGRID_MESSUNG_2026-07-26.md` + `…cardGrid_abgleich.md`):**
 
 | Deck | `cardGrid` | Kopfband? |
 |---|---|---|
-| `forget_utopia`   | `{ "x":0.050, "y":0.037, "w":0.899, "h":0.947 }` | nein |
-| `ignore_dystopia` | `{ "x":0.060, "y":0.117, "w":0.879, "h":0.833 }` | **ja** |
-| `embrace_protopia`| `{ "x":0.048, "y":0.093, "w":0.903, "h":0.822 }` | ja (dünner) |
+| `forget_utopia`   | `{ "x":0.050, "y":0.037, "w":0.899, "h":0.947, "gapX":0.135, "gapY":0.010 }` | nein |
+| `ignore_dystopia` | `{ "x":0.060, "y":0.117, "w":0.879, "h":0.823, "gapX":0.090, "gapY":0.010 }` | **ja** |
+| `embrace_protopia`| `{ "x":0.048, "y":0.093, "w":0.903, "h":0.822, "gapX":0.022, "gapY":0.020 }` | ja (dünner) |
+
+> Korrektur ggü. meiner Erstmessung: `ignore_dystopia` `h` **0,833 → 0,823** (sonst nimmt die untere
+> Zeile die Krakenreihe am Seitenfuß mit). Bestätigt: Naht ≈ 0,51·H (die 0,466 ist tot).
+
+**Gelöst in v2 (2026-07-26):**
+- **Ein Sollformat für alle Karten** — Georgs Entscheidung: ausschneidbare Karten müssen gleich groß sein.
+  `CARD_AR` liegt jetzt in einem eigenen Modul **`kfb-card-format.js`** (Anker = `ignore_dystopia` 1,740).
+  Die Zahl stand vorher 3× im Projekt (card-builder · academy-deck · sky-cards) → **eine Zahl, ein Ort.**
+- **`artFit:'fit'`** statt `'cover'`: die unterschiedlich hohe Zelle wird **mittig ins Sollformat** gelegt
+  (cremefarbener Rand innerhalb der Tuschekante), statt ~18 % von Titel/LORE abzuschneiden. `coverLoss`
+  protokolliert, was `cover` gekostet hätte. Der genaue Crop ist damit nicht mehr umsonst.
+
+**Noch offen:** un-gemessene Decks `sonic_slaughterhouse`, `epistemic_sabotage` — je 20 s mit
+`tools/cardgrid-pick.html` (zwei Rechtecke ziehen). Bis dahin Fallback (§ unten).
 
 **Edge cases (dokumentiert, damit Fallbacks sauber gebaut werden können):**
 - **Blind-Viertel-Crop ist falsch:** das Raster ist eingerückt (x≈0,05, w≈0,90), nicht die volle Breite.
