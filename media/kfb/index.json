@@ -6,12 +6,23 @@
     "gridCols": 2,
     "gridRows": 2,
     "cellsPerPage": 4,
-    "quadrantOrder": ["TL", "TR", "BL", "BR"],
+    "quadrantOrder": [
+      "TL",
+      "TR",
+      "BL",
+      "BR"
+    ],
     "page": "coverOffset + 1 + floor((cardNumber-1)/4)",
     "quadrant": "(cardNumber-1) % 4",
     "note": "coverOffset=1 => Seite 1 = Cover, Karten ab Seite 2. v4 schneidet ohne weissen Gutter (m=0), Ink-Edge bleibt."
   },
-  "keyMap": { "n": "cardNumber", "t": "cardName", "p": "power", "l": "lore", "g": "grade" },
+  "keyMap": {
+    "n": "cardNumber",
+    "t": "cardName",
+    "p": "power",
+    "l": "lore",
+    "g": "grade"
+  },
   "decks": [
     {
       "packId": "forget_utopia",
@@ -57,6 +68,83 @@
       "verifyHosted": true,
       "pdf": "Sonic_Slaughterhouse_MUSIC_INDUSTRY - ADD web.pdf",
       "data": "Sonic_Slaughterhouse_MUSIC_INDUSTRY_-_ADD_web.pdf.json"
+    },
+    {
+      "packId": "epistemic_sabotage",
+      "title": "Epistemic Sabotage",
+      "role": null,
+      "gameMode": "KFB",
+      "cardCount": 60,
+      "pages": 16,
+      "coverOffset": 1,
+      "pdf": "Epistemic_Sabotage_LET_AI_READ_YOUR_COMIC_v1 - ADD web.pdf",
+      "data": "Epistemic_Sabotage_LET_AI_READ_YOUR_COMIC_v1_-_ADD_web.pdf.json"
+    },
+    {
+      "packId": "mind_traps",
+      "title": "Mind Traps",
+      "role": null,
+      "gameMode": "KFB",
+      "cardCount": 56,
+      "pages": 15,
+      "coverOffset": 1,
+      "pdf": "Kayfabizarro_Mind_Traps - ADD web.pdf",
+      "data": "Kayfabizarro_Mind_Traps_-_ADD_web.pdf.json"
+    },
+    {
+      "packId": "protopia_web",
+      "title": "Protopia (Web)",
+      "role": null,
+      "gameMode": "KFB",
+      "cardCount": 56,
+      "pages": 15,
+      "coverOffset": 1,
+      "pdf": "Kayfabizarro_Protopia_WEB_v1 ID.pdf",
+      "data": "Kayfabizarro_Protopia_WEB_v1_ID.pdf.json"
+    },
+    {
+      "packId": "reality_redrawn",
+      "title": "Reality Redrawn",
+      "role": null,
+      "gameMode": "KFB",
+      "cardCount": 60,
+      "pages": 16,
+      "coverOffset": 1,
+      "pdf": "Kayfabizarro_Reality_Redrawn_WEB_v1 ID.pdf",
+      "data": "Kayfabizarro_Reality_Redrawn_WEB_v1_ID.pdf.json"
+    },
+    {
+      "packId": "shadow_politics",
+      "title": "Shadow Politics",
+      "role": null,
+      "gameMode": "KFB",
+      "cardCount": 48,
+      "pages": 13,
+      "coverOffset": 1,
+      "pdf": "Kayfabizarro_ShadowPolitics_WEB_v1 ID.pdf",
+      "data": "Kayfabizarro_ShadowPolitics_WEB_v1_ID.pdf.json"
+    },
+    {
+      "packId": "what_work_was_for",
+      "title": "What Work Was For",
+      "role": null,
+      "gameMode": "KFB",
+      "cardCount": 56,
+      "pages": 15,
+      "coverOffset": 1,
+      "pdf": "Kayfabizarro_What_Work_Was_For_Vol_1_WEB_v1 ID.pdf",
+      "data": "Kayfabizarro_What_Work_Was_For_Vol_1_WEB_v1_ID.pdf.json"
+    },
+    {
+      "packId": "museum_of_modern_mess",
+      "title": "Museum of Modern Mess",
+      "role": null,
+      "gameMode": "KFB",
+      "cardCount": 60,
+      "pages": 16,
+      "coverOffset": 1,
+      "pdf": "Museum_of_Modern_Mess - ADD web crop01-13.pdf",
+      "data": "Museum_of_Modern_Mess_-_ADD_web.pdf.json"
     }
   ],
   "sets": [
@@ -64,14 +152,33 @@
       "setId": "three_futures",
       "title": "Three Futures (Exhibition trio)",
       "note": "Forget / Ignore / Embrace auf geteilter 14-Positionen-Spine — kuratiertes Promo/Onboarding-Set.",
-      "decks": ["forget_utopia", "ignore_dystopia", "embrace_protopia"]
+      "decks": [
+        "forget_utopia",
+        "ignore_dystopia",
+        "embrace_protopia"
+      ]
     }
   ],
   "rules": [
-    { "title": "KFB Freestyle Rules", "pdf": "KAYFABIZARRO_FREESTYLE_RULES.pdf" },
-    { "title": "Anti-Rules Booklet (A4-quer v4)", "pdf": "KayfaBizarro - The Anti-Rules-Booklet - A4-quer print v4.pdf" },
-    { "title": "Freestyle Comic Booklet", "pdf": "Kayfabizarro_Freestyle_ComicBooklet_WEB_v1.pdf" },
-    { "title": "Quick-Rules OnePager DE v6", "pdf": "KayfaBizarro Quick-Rules OnePager DE v6.pdf" },
-    { "title": "Quick-Rules OnePager EN v6", "pdf": "KayfaBizarro Quick-Rules OnePager EN v6.pdf" }
+    {
+      "title": "KFB Freestyle Rules",
+      "pdf": "KAYFABIZARRO_FREESTYLE_RULES.pdf"
+    },
+    {
+      "title": "Anti-Rules Booklet (A4-quer v4)",
+      "pdf": "KayfaBizarro - The Anti-Rules-Booklet - A4-quer print v4.pdf"
+    },
+    {
+      "title": "Freestyle Comic Booklet",
+      "pdf": "Kayfabizarro_Freestyle_ComicBooklet_WEB_v1.pdf"
+    },
+    {
+      "title": "Quick-Rules OnePager DE v6",
+      "pdf": "KayfaBizarro Quick-Rules OnePager DE v6.pdf"
+    },
+    {
+      "title": "Quick-Rules OnePager EN v6",
+      "pdf": "KayfaBizarro Quick-Rules OnePager EN v6.pdf"
+    }
   ]
 }
