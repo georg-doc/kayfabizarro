@@ -1,0 +1,577 @@
+{
+  "sourceFile": "MedKayfab_Pharmacology_02 - ADD web.pdf",
+  "deckTitle": "MedKayfab: Pharmacology Wrestling",
+  "deckType": "Medical education card game",
+  "bundleSuggestion": "TBD",
+  "pageCount": 15,
+  "analysisVersion": 1.0,
+  "generatedAt": "2026-06-20T13:15:00",
+  "savedAt": "2026-06-20T13:15:00",
+  "extractionTool": "cowork_task_v3",
+  "RAF": false,
+  "gradingMode": "educational",
+  "deckFunction": [
+    "education",
+    "narrative"
+  ],
+  "seriesId": "medkayfab",
+  "cards": [
+    {
+      "cardNumber": 1,
+      "cardName": "Roxy Receptor",
+      "grade": 2,
+      "power": "Kd (Dissociation Constant) — Receptor Theory",
+      "lore": null,
+      "gradeReason": "Affinity concept dressed as a wrestler; role clear but needs context to perform.",
+      "artworkPrompt": "Style: FrizzleBob cartoon. Subject: Raccoon pharmacist holding receptor key. Mood: Cunning scientific."
+    },
+    {
+      "cardNumber": 2,
+      "cardName": "Georgie GPCR",
+      "grade": 3,
+      "power": "34% of all approved targets — G-Protein Coupled Receptors",
+      "lore": null,
+      "gradeReason": "Stat badge dominates; invites memorising a number, not embodying a character.",
+      "artworkPrompt": "Style: FrizzleBob cartoon. Subject: Transformer serpent with seven transmembrane coils. Mood: All-powerful bureaucratic."
+    },
+    {
+      "cardNumber": 3,
+      "cardName": "Kinny Kinase",
+      "grade": 2,
+      "power": "1 Transmembrane Domain — Transducer / Kinase",
+      "lore": null,
+      "gradeReason": "Giraffe cascade image is fun; performer needs biochem frame to fully embody.",
+      "artworkPrompt": "Style: FrizzleBob cartoon. Subject: Giraffe handing signal down a chain. Mood: Relay-race urgent."
+    },
+    {
+      "cardNumber": 4,
+      "cardName": "Nicky Nuclear",
+      "grade": 3,
+      "power": "Hours to Days (Onset) — Nuclear Receptor",
+      "lore": null,
+      "gradeReason": "Onset stat as the main hook; genomic-slow is a concept, not a performance invitation.",
+      "artworkPrompt": "Style: FrizzleBob cartoon. Subject: Sloth drifting into cell nucleus. Mood: Inevitable glacial."
+    },
+    {
+      "cardNumber": 5,
+      "cardName": "Iggy Ion Channel",
+      "grade": 2,
+      "power": "Milliseconds (Speed) — Ligand-Gated Ion Channels",
+      "lore": null,
+      "gradeReason": "Speed badge is vivid; the fast-gate role is graspable but needs the ion context.",
+      "artworkPrompt": "Style: FrizzleBob cartoon. Subject: Electric eel bursting through gate. Mood: Lightning-fast reflex."
+    },
+    {
+      "cardNumber": 6,
+      "cardName": "Volta the Voltage-Gated",
+      "grade": 2,
+      "power": "pH 7.4 (150+ Local Anesthetics) — Active Potential Targets",
+      "lore": null,
+      "gradeReason": "Use-dependent blockade concept is punchy; pH stat grounds the role well.",
+      "artworkPrompt": "Style: FrizzleBob cartoon. Subject: Electric eel wearing a pH meter crown. Mood: Controlled menacing."
+    },
+    {
+      "cardNumber": 7,
+      "cardName": "Beta the Beta-Arrestin",
+      "grade": 3,
+      "power": "100% Desensitization — Desensitization & Tolerance",
+      "lore": null,
+      "gradeReason": "Phosphorylation mechanism — mechanistic description, no clear role to embody.",
+      "artworkPrompt": "Style: FrizzleBob cartoon. Subject: Crab clamping shut a glowing receptor. Mood: Exhausted shutdown."
+    },
+    {
+      "cardNumber": 8,
+      "cardName": "Second the Messenger",
+      "grade": 2,
+      "power": "cAMP, IP3/DAG, Ca2+ — PDE (The Degraders)",
+      "lore": null,
+      "gradeReason": "Signal amplifier role is vivid; acronym list leans G3 but cascade energy saves it.",
+      "artworkPrompt": "Style: FrizzleBob cartoon. Subject: Messenger rabbit amplifying tiny signal into explosion. Mood: Cascade frenzy."
+    },
+    {
+      "cardNumber": 9,
+      "cardName": "Allo the Allosteric",
+      "grade": 2,
+      "power": "The Stop/Go Switch: Allosteric modulators bind to a different site than the agonist, changing the shape and effect of the receptor",
+      "lore": null,
+      "gradeReason": "Padlock-and-key image is great; but modulator-not-agonist concept needs framing.",
+      "artworkPrompt": "Style: FrizzleBob cartoon. Subject: Chameleon twisting a lock sideways. Mood: Sneaky indirect control."
+    },
+    {
+      "cardNumber": 10,
+      "cardName": "Dose the Dose-Response",
+      "grade": 3,
+      "power": "EC50 (Potency) vs Emax (Efficacy) — Emax Preserved",
+      "lore": null,
+      "gradeReason": "Curve-comparison card; explains a graph, does not invite anyone to BE anything.",
+      "artworkPrompt": "Style: FrizzleBob cartoon. Subject: Snake coiling into a sigmoid curve. Mood: Clinical inevitability."
+    },
+    {
+      "cardNumber": 11,
+      "cardName": "Abby Absorption",
+      "grade": 3,
+      "power": "Bioavailability — F = [AUCoral / AUCiv]",
+      "lore": null,
+      "gradeReason": "Formula-led card; bioavailability fraction is a number, not a character to perform.",
+      "artworkPrompt": "Style: FrizzleBob cartoon. Subject: Salmon leaping through a flask waterfall. Mood: Determined uphill."
+    },
+    {
+      "cardNumber": 12,
+      "cardName": "First Pass Frank",
+      "grade": 1,
+      "power": "The Gatekeeper: Drug absorbed from gut passes through portal vein to liver BEFORE reaching systemic circulation",
+      "lore": null,
+      "gradeReason": "Gatekeeper role is immediately playable — bouncer at the liver door.",
+      "artworkPrompt": "Style: FrizzleBob cartoon. Subject: Bouncer bear blocking portal vein doorway. Mood: Impassive gatekeeping."
+    },
+    {
+      "cardNumber": 13,
+      "cardName": "Vera",
+      "grade": 2,
+      "power": "Tissue Sink: High Vd means the drug hides in fat/muscle, making plasma levels a lie",
+      "lore": "Amiodarone is so famously tissue-bound that dialysis cannot remove it in an overdose",
+      "gradeReason": "Tissue-hider persona is clear; amiodarone lore is gold but needs the Vd frame.",
+      "artworkPrompt": "Style: FrizzleBob cartoon. Subject: Pufferfish stuffing drugs into fat tissue. Mood: Smugly hidden."
+    },
+    {
+      "cardNumber": 14,
+      "cardName": "Protein Priya",
+      "grade": 2,
+      "power": "The Reserve: Bound drug is inactive, cannot cross membranes, and cannot be excreted",
+      "lore": "In liver disease, the free fraction of highly bound drugs skyrockets, causing toxicity at normal levels",
+      "gradeReason": "Reserve keeper role is solid; liver disease lore adds real clinical bite.",
+      "artworkPrompt": "Style: FrizzleBob cartoon. Subject: Kangaroo hoarding pills in her pouch. Mood: Protectively inactive."
+    },
+    {
+      "cardNumber": 15,
+      "cardName": "Hal the Half-Life",
+      "grade": 2,
+      "power": "The Decay: Time to eliminate half the drug. Depends on both Clearance and Volume of Distribution",
+      "lore": "It takes 5 half-lives to reach steady state, regardless of dosing frequency",
+      "gradeReason": "Decay persona works; 5x t½ rule is beautifully quotable, saves this from G3.",
+      "artworkPrompt": "Style: FrizzleBob cartoon. Subject: Axolotl melting in half under a countdown clock. Mood: Elegiac steady."
+    },
+    {
+      "cardNumber": 16,
+      "cardName": "Zero the Zero-Order",
+      "grade": 1,
+      "power": "Enzyme Saturation: Eliminates fixed AMOUNT per unit time, regardless of concentration",
+      "lore": "Phenytoin and alcohol follow zero-order kinetics. A small dose increase can cause a catastrophic spike",
+      "gradeReason": "HUMBUG! chaos king — non-linear menace is immediately playable at the table.",
+      "artworkPrompt": "Style: FrizzleBob cartoon. Subject: Sloth on treadmill while bottles pile up behind. Mood: Catastrophically calm."
+    },
+    {
+      "cardNumber": 17,
+      "cardName": "Clara Clearance",
+      "grade": 2,
+      "power": "The Washout: The volume of blood cleared of drug per unit time",
+      "lore": "Drugs with high renal clearance require strict dose reduction in renal failure to prevent toxic accumulation",
+      "gradeReason": "Beaver-dam clearance metaphor lands; eGFR <30 Metformin stat is clinically sharp.",
+      "artworkPrompt": "Style: FrizzleBob cartoon. Subject: Beaver flushing drug molecules through kidney dam. Mood: Vigilant purging."
+    },
+    {
+      "cardNumber": 18,
+      "cardName": "Cyp the CYP450 Chief",
+      "grade": 1,
+      "power": "The Microenzyme: The superfamily of enzymes that decides the fate of your drugs",
+      "lore": "CYP2C9 metabolises warfarin; CYP2D6 metabolises codeine; CYP3A4 metabolises half of everything",
+      "gradeReason": "Chief of the liver underworld — fateful, immediate, fully embodiable persona.",
+      "artworkPrompt": "Style: FrizzleBob cartoon. Subject: Cockroach crime boss in liver factory. Mood: Omnipotent casually powerful."
+    },
+    {
+      "cardNumber": 19,
+      "cardName": "Indie the Inducer",
+      "grade": 1,
+      "power": "Gene Upregulation: Forces the liver to build more enzymes, destroying substrate drugs faster",
+      "lore": "Rifampicin + OCP = unintended pregnancy. Takes days to weeks to start and stop",
+      "gradeReason": "The saboteur who burns drugs before they work — vivid, immediate, table-ready energy.",
+      "artworkPrompt": "Style: FrizzleBob cartoon. Subject: Squirrel setting drug conveyor belt on fire. Mood: Enthusiastic destruction."
+    },
+    {
+      "cardNumber": 20,
+      "cardName": "Inhi the Inhibitor",
+      "grade": 1,
+      "power": "The Blockade: Competes for the CYP active site, causing substrate drug levels to spike dangerously",
+      "lore": "Statin + CYP3A4 inhibitors = massive rhabdomyolysis risk. Effect is immediate upon dosing",
+      "gradeReason": "Immediate-effect blocker with lethal consequences — rhabdo lore makes this unforgettable.",
+      "artworkPrompt": "Style: FrizzleBob cartoon. Subject: Badger jamming its body into enzyme doorway. Mood: Ruthlessly blocking."
+    },
+    {
+      "cardNumber": 21,
+      "cardName": "Poly the Polymorphism",
+      "grade": 3,
+      "power": "Pharmacogenomics — ~7% Poor Metabolizers",
+      "lore": null,
+      "gradeReason": "263 variants stat-dump; interesting concept but no clear role to perform at the table.",
+      "artworkPrompt": "Style: FrizzleBob cartoon. Subject: Chameleon DNA helix in different colors. Mood: Unpredictably genetic."
+    },
+    {
+      "cardNumber": 22,
+      "cardName": "Thera the Monitor",
+      "grade": 2,
+      "power": "Timing Is Everything: Only used for drugs where the gap between toxic and therapeutic is dangerously small",
+      "lore": "Trough timing is most accurate. Vancomycin, lithium and digoxin — without monitoring, you are guessing",
+      "gradeReason": "Owl-with-magnifying-glass persona is sharp; Narrow TI Only is a clear role signal.",
+      "artworkPrompt": "Style: FrizzleBob cartoon. Subject: Owl nurse watching drug level graph on tightrope. Mood: Hyper-vigilant."
+    },
+    {
+      "cardNumber": 23,
+      "cardName": "Sym the Sympathetic",
+      "grade": 1,
+      "power": "The Adrenaline Surge: High heart rate, constricts smooth muscle and dilates bronchioles. The fist pump of the autonomic system",
+      "lore": "a1 constricts vessels, b1 fires the heart, b2 opens the lungs",
+      "gradeReason": "Fight! Fight! Fight! — you know exactly what energy to bring the moment you read it.",
+      "artworkPrompt": "Style: FrizzleBob cartoon. Subject: Flaming cheetah throwing punches with adrenaline fists. Mood: Pure adrenalized fury."
+    },
+    {
+      "cardNumber": 24,
+      "cardName": "Para the Parasympathetic",
+      "grade": 1,
+      "power": "The Sloth: Slows heart rate, contracts smooth muscle, stimulates glandular secretion",
+      "lore": "M1 is CNS/cognitive, M2 slows the heart, M3 opens the glands and gut",
+      "gradeReason": "Rest & Digest sloth persona — instantly, bodily playable. No explanation needed.",
+      "artworkPrompt": "Style: FrizzleBob cartoon. Subject: Sloth digesting in a hammock with slow heartbeat monitor. Mood: Profoundly calm."
+    },
+    {
+      "cardNumber": 25,
+      "cardName": "Nicky NMJ",
+      "grade": 2,
+      "power": "The Muscle Deity: ACh releases from motor nerve, binds NM nicotinic receptors. Without NMJ, you cannot breathe",
+      "lore": "Botulinum blocks SNARE. Levetiracetam binds SV2A. Disrupting the NMJ has catastrophic effects",
+      "gradeReason": "Cannot-breathe consequence is visceral; SV2A/SNARE targets are compelling but obscure.",
+      "artworkPrompt": "Style: FrizzleBob cartoon. Subject: Frog conductor sparking neuromuscular junction. Mood: Electrically urgent."
+    },
+    {
+      "cardNumber": 26,
+      "cardName": "Alpha Annie",
+      "grade": 2,
+      "power": "Alpha-Adrenoceptor Drugs — First-Dose Hypotension",
+      "lore": null,
+      "gradeReason": "First-dose hypotension warning is clinically vivid; a1/a2 split gives clear performer options.",
+      "artworkPrompt": "Style: FrizzleBob cartoon. Subject: Dog fainting dramatically on first pill. Mood: Sudden floor-bound surprise."
+    },
+    {
+      "cardNumber": 27,
+      "cardName": "Beta Barry",
+      "grade": 1,
+      "power": "The Cardiotamer: Blocks b1 in the heart. Reduces HR, contractility, conduction. Anti-hypertensive, anti-arrhythmic, anti-anginal",
+      "lore": "Non-selective b-blockers mask hypoglycaemia. Metoprolol and bisoprolol are b1-selective and safer in asthma",
+      "gradeReason": "Stop-sign bear with clear role — cardiotamer is immediately performable, hypoglycaemia lore is sharp.",
+      "artworkPrompt": "Style: FrizzleBob cartoon. Subject: Bear holding a stop sign in front of a racing heart. Mood: Firm steady control."
+    },
+    {
+      "cardNumber": 28,
+      "cardName": "Musky the Antagonist",
+      "grade": 2,
+      "power": "Antimuscarinic — Tertiary vs Quaternary",
+      "lore": "Tertiary crosses BBB — cognitive effects. Quaternary (ipratropium) stays in the periphery",
+      "gradeReason": "Two-tier character concept is memorable; BBB-crossing distinction is clinically useful.",
+      "artworkPrompt": "Style: FrizzleBob cartoon. Subject: Camel split as two halves — one in brain, one in lung. Mood: Divided purposeful."
+    },
+    {
+      "cardNumber": 29,
+      "cardName": "Cate the Catecholamine",
+      "grade": 1,
+      "power": "The Emergency Switch: b-agonist receptor position for cardiac resuscitation, septic shock. Adrenaline, noradrenaline, dopamine",
+      "lore": "At low dose, dopamine dilates renal arteries. At high dose, it is pure a1 vasoconstriction. Dose is everything",
+      "gradeReason": "Emergency Switch is immediately embodiable — dose-determines-character drama is table gold.",
+      "artworkPrompt": "Style: FrizzleBob cartoon. Subject: Octopus ECG paddles in ICU chaos. Mood: Code-blue urgency."
+    },
+    {
+      "cardNumber": 30,
+      "cardName": "Anti the Anticholinesterase",
+      "grade": 2,
+      "power": "The Multiplier: Blocks ACh breakdown, amplifying cholinergic signal. Used in myasthenia gravis, Alzheimers, reversal of NMJ blockade",
+      "lore": "Organophosphates do this irreversibly. SLUDGE: Salivation, Lacrimation, Urination, Defecation, GI distress, Emesis",
+      "gradeReason": "SLUDGE acronym is quotable and performative; amplifier role is clear.",
+      "artworkPrompt": "Style: FrizzleBob cartoon. Subject: Trash bin overflowing with ACh molecules. Mood: Uncontrolled excess."
+    },
+    {
+      "cardNumber": 31,
+      "cardName": "Cholinergic Crisis",
+      "grade": 1,
+      "power": "Too Much Drug — Miosis (Key Sign)",
+      "lore": null,
+      "gradeReason": "Crisis mode is immediately embodiable — SLUDGE chaos performance starts on reading.",
+      "artworkPrompt": "Style: FrizzleBob cartoon. Subject: Ram with pinpoint pupils drowning in secretions. Mood: Overwhelming flood."
+    },
+    {
+      "cardNumber": 32,
+      "cardName": "Myasthenic Crisis",
+      "grade": 1,
+      "power": "The Signal Failure: Inadequate NMJ activation. Clinical emergency requiring ICU admission and ventilatory support",
+      "lore": null,
+      "gradeReason": "Worsening Weakness is immediately playable — sagging, failing, opposite energy to Cholinergic.",
+      "artworkPrompt": "Style: FrizzleBob cartoon. Subject: Ram collapsing under its own weight. Mood: Worsening silent emergency."
+    },
+    {
+      "cardNumber": 33,
+      "cardName": "Tole the Tolerance",
+      "grade": 1,
+      "power": "The Countermeasure: The body adapts via enzyme induction, receptor downregulation, altered transporter expression",
+      "lore": null,
+      "gradeReason": "Chameleon adapting — immediately embodiable character who neutralises every move.",
+      "artworkPrompt": "Style: FrizzleBob cartoon. Subject: Chameleon turning the same colour as a pill bottle. Mood: Adaptive indifferent."
+    },
+    {
+      "cardNumber": 34,
+      "cardName": "Anton Antagonist",
+      "grade": 2,
+      "power": "Competitive antagonists can be overcome by adding more agonist. Non-competitive antagonists cannot — they drop the Emax",
+      "lore": null,
+      "gradeReason": "Shift Right vs Drop Down metaphor is excellent; competitive/non split is a clear wrestling move.",
+      "artworkPrompt": "Style: FrizzleBob cartoon. Subject: Donkey pushing a dose-response curve sideways. Mood: Implacably resistant."
+    },
+    {
+      "cardNumber": 35,
+      "cardName": "Suzy Synergy",
+      "grade": 2,
+      "power": "Drug Combinations — 1 + 1 = 3",
+      "lore": null,
+      "gradeReason": "Synergy formula is catchy; drug-combination partner role works at the table.",
+      "artworkPrompt": "Style: FrizzleBob cartoon. Subject: Beaver and squirrel fusing into supersized creature. Mood: Multiplicative joy."
+    },
+    {
+      "cardNumber": 36,
+      "cardName": "Thera Therapeutic Index",
+      "grade": 2,
+      "power": "The Safety Margin: TI = TD50 / ED50. Narrow TI = warfarin, digoxin, lithium, aminoglycosides",
+      "lore": "Lithium has a TI barely above 1. Toxic above 1.5mmol/L. The safety margin is tissue-thin",
+      "gradeReason": "Tissue-thin safety margin is visceral; lithium lore is a great clinical hook.",
+      "artworkPrompt": "Style: FrizzleBob cartoon. Subject: Mouse balancing between two cliffs labelled toxic and therapeutic. Mood: Precarious."
+    },
+    {
+      "cardNumber": 37,
+      "cardName": "Indo Induction",
+      "grade": 2,
+      "power": "The Consciousness Threshold: Lower MAC = more potent inhalational agent. Requires synergists like N2O and opioids to reduce MAC",
+      "lore": null,
+      "gradeReason": "MAC as wrestling stat is clever; inhalational agents persona works but needs context.",
+      "artworkPrompt": "Style: FrizzleBob cartoon. Subject: Owl anaesthetist with gas mask above unconscious patient. Mood: Precise controlled sleep."
+    },
+    {
+      "cardNumber": 38,
+      "cardName": "Prot the Prodrug",
+      "grade": 2,
+      "power": "Sleeper Agent: Codeine needs CYP2D6 to become morphine. Clopidogrel needs CYP2C19 to become its active thiol",
+      "lore": "CYP2D6 poor metabolizers get no analgesia from codeine. Ultra-rapid metabolizers risk respiratory arrest. BOTH are dangerous",
+      "gradeReason": "Sleeper Agent persona is evocative; poor metabolizer/ultra-rapid split is genuinely alarming lore.",
+      "artworkPrompt": "Style: FrizzleBob cartoon. Subject: Butterfly emerging from grey pill cocoon into active drug. Mood: Latent dangerous."
+    },
+    {
+      "cardNumber": 39,
+      "cardName": "Entero the Enterohepatic",
+      "grade": 3,
+      "power": "The Infinite Loop: Drug excreted in bile, reaches the intestine, gets reactivated by gut bacteria, reabsorbed. Extends drug half-life",
+      "lore": "Ethinylestradiol cycles through enterohepatic circulation. Gut flora disruption (antibiotics) can reduce OCP levels",
+      "gradeReason": "Infinite loop is a concept diagram, not a performable invitation — G3 despite vivid OCP lore.",
+      "artworkPrompt": "Style: FrizzleBob cartoon. Subject: Drug molecule on infinite loop waterslide through gut and liver. Mood: Endlessly cycling."
+    },
+    {
+      "cardNumber": 40,
+      "cardName": "Preg the Pregnancy Risk",
+      "grade": 2,
+      "power": "The Dual Patient: Drug crosses placenta via simple diffusion. Small, lipophilic, non-ionised drugs cross best. Risk depends on timing",
+      "lore": "Valproate causes neural tube defects. ACE inhibitors in trimester 2/3 cause renal dysgenesis. Warfarin causes fetal warfarin syndrome",
+      "gradeReason": "Dual-patient frame is compelling; teratogen lore is sobering and memorable.",
+      "artworkPrompt": "Style: FrizzleBob cartoon. Subject: Kangaroo joey inside pouch with tiny danger sign. Mood: Protective yet alarmed."
+    },
+    {
+      "cardNumber": 41,
+      "cardName": "NSAID Neil",
+      "grade": 2,
+      "power": "COX Inhibition — 7-10 Days (Aspirin)",
+      "lore": null,
+      "gradeReason": "Irreversible COX-blocker persona is clear; GI-bleed risk makes Neil a double-edged character.",
+      "artworkPrompt": "Style: FrizzleBob cartoon. Subject: Beaver blocking COX enzyme with wrench, stomach smouldering. Mood: Reliably risky."
+    },
+    {
+      "cardNumber": 42,
+      "cardName": "Proton Petra",
+      "grade": 2,
+      "power": "PPI — ~18 Hours (Pump Regen)",
+      "lore": "Once inactivated, the pump cannot regenerate for ~18 hours. Take before first meal",
+      "gradeReason": "18-hour pump regen is a vivid stat; pre-meal timing instruction is immediately useful.",
+      "artworkPrompt": "Style: FrizzleBob cartoon. Subject: Snake coiled around a proton pump valve, sealing it shut. Mood: Irreversibly sealed."
+    },
+    {
+      "cardNumber": 43,
+      "cardName": "Warry Warfarin",
+      "grade": 2,
+      "power": "Anticoagulation — INR 2.0-3.0 (Goal)",
+      "lore": "Warfarin is metabolised by CYP2C9. S-warfarin is 3-4x more potent than R-warfarin. INR 2-3 for AF, DVT",
+      "gradeReason": "INR tightrope is a vivid performance frame; S/R warfarin potency split is genuinely surprising lore.",
+      "artworkPrompt": "Style: FrizzleBob cartoon. Subject: Hedgehog walking vitamin K tightrope with INR meter. Mood: Nervously calibrated."
+    },
+    {
+      "cardNumber": 44,
+      "cardName": "Diuretic Danny",
+      "grade": 2,
+      "power": "Renal Clearance — 25% Filtered Na+ (Loop)",
+      "lore": null,
+      "gradeReason": "Elephant flushing sodium is a clear image; loop/thiazide split gives performer options.",
+      "artworkPrompt": "Style: FrizzleBob cartoon. Subject: Elephant spraying sodium out of nephron tube. Mood: Forceful liquid clearance."
+    },
+    {
+      "cardNumber": 45,
+      "cardName": "Statin Steve",
+      "grade": 2,
+      "power": "HMG-CoA Reductase — >50% LDL Reduction",
+      "lore": "Rosuvastatin is generally CYP3A4-spared (reducing interactions). Rhabdomyolysis risk increases with CYP inhibitors",
+      "gradeReason": "Hepatic saboteur persona is fun; rhabdo lore gives teeth to a boring lipid card.",
+      "artworkPrompt": "Style: FrizzleBob cartoon. Subject: Beaver sabotaging cholesterol factory assembly line. Mood: Methodical destruction."
+    },
+    {
+      "cardNumber": 46,
+      "cardName": "Ozio the Opioid",
+      "grade": 2,
+      "power": "Analgesic — 10mg IV = 30mg Oral",
+      "lore": "Buprenorphine is a partial agonist — if you give to a heroin addict, it triggers withdrawal. 10mg IV morphine = 30mg oral",
+      "gradeReason": "Equianalgesic ratio is table-useful; buprenorphine withdrawal-trigger lore is genuinely dramatic.",
+      "artworkPrompt": "Style: FrizzleBob cartoon. Subject: Sloth on drip with floating mu-receptor crown. Mood: Blissfully dangerous."
+    },
+    {
+      "cardNumber": 47,
+      "cardName": "Antibio the Antibiotic",
+      "grade": 2,
+      "power": "Selective Toxicity — 8 Distinct Mechanisms / PK/PD Targets",
+      "lore": null,
+      "gradeReason": "Selective toxicity concept is vivid; 8-mechanism badge skews descriptive but character is clear.",
+      "artworkPrompt": "Style: FrizzleBob cartoon. Subject: Octopus attacking bacterial cell with eight different weapons. Mood: Precisely targeted chaos."
+    },
+    {
+      "cardNumber": 48,
+      "cardName": "Time Kill Terry",
+      "grade": 2,
+      "power": "Static vs Cidal — 2 MIC vs MBC",
+      "lore": null,
+      "gradeReason": "Static-vs-cidal split is a clear binary persona; turtle vs bactericidal rabbit is memorable.",
+      "artworkPrompt": "Style: FrizzleBob cartoon. Subject: Tortoise holding a static flag vs rabbit with kill sign. Mood: Decisive clinical choice."
+    },
+    {
+      "cardNumber": 49,
+      "cardName": "Resi the Resistance",
+      "grade": 2,
+      "power": "ESbL Hydrolysate Gate — Bacterial Evasion",
+      "lore": null,
+      "gradeReason": "Bacterial escape artist persona is clear; ESBL/efflux/target-modification triad is solid.",
+      "artworkPrompt": "Style: FrizzleBob cartoon. Subject: Bacteria soldier in armour deflecting antibiotic arrows. Mood: Entrenched defiant."
+    },
+    {
+      "cardNumber": 50,
+      "cardName": "Anti-Viral Vera",
+      "grade": 2,
+      "power": "Viral Targets — Selective Activation (TK)",
+      "lore": null,
+      "gradeReason": "Viral-TK-activation concept is elegant; chameleon artwork signals selectivity well.",
+      "artworkPrompt": "Style: FrizzleBob cartoon. Subject: Chameleon activating only inside infected cell. Mood: Precisely selective."
+    },
+    {
+      "cardNumber": 51,
+      "cardName": "Azole Aziz",
+      "grade": 2,
+      "power": "AntiFungals — CYP51 (Demethylase)",
+      "lore": "Azoles are potent CYP3A4 inhibitors in humans. Fluconazole + warfarin = massive INR spike. Use with caution",
+      "gradeReason": "Fluconazole-warfarin INR spike lore is a table-stopping moment; CYP51 hook is specific.",
+      "artworkPrompt": "Style: FrizzleBob cartoon. Subject: Mole digging into fungal cell wall with CYP51 pickaxe. Mood: Targeted demolition."
+    },
+    {
+      "cardNumber": 52,
+      "cardName": "Chemo Clara",
+      "grade": 2,
+      "power": "Cytotoxics — S-Phase Specificity",
+      "lore": null,
+      "gradeReason": "S-phase replication killer is a clear role; bone marrow toxicity shadow gives clinical gravitas.",
+      "artworkPrompt": "Style: FrizzleBob cartoon. Subject: Rhinoceros charging into cancer cell DNA replication fork. Mood: Collateral necessary."
+    },
+    {
+      "cardNumber": 53,
+      "cardName": "Polypharmacy",
+      "grade": 3,
+      "power": "Cascade Prescribing: Drug causes side effect, treated by drug...",
+      "lore": "5+ drugs in the elderly causes cognitive decline, and GI bleeds. Depression...",
+      "gradeReason": "Accumulation concept is important but the card describes a problem rather than inviting a role.",
+      "artworkPrompt": "Style: FrizzleBob cartoon. Subject: Raccoon buried under avalanche of pill bottles. Mood: Overwhelmed helpless."
+    },
+    {
+      "cardNumber": 54,
+      "cardName": "Herb the Herbal",
+      "grade": 3,
+      "power": "The Underfoot Guest: St John's Wort and herb-drug interactions",
+      "lore": "St John's Wort induces CYP3A4. Grapefruit irreversibly inhibits it",
+      "gradeReason": "Grapefruit-inhibits lore is famous and great; but the card is a warning notice, not a persona.",
+      "artworkPrompt": "Style: FrizzleBob cartoon. Subject: Hedgehog with grapefruit and herb bundle blocking CYP. Mood: Innocently destructive."
+    }
+  ],
+  "cardCount": 54,
+  "gradeDistribution": {
+    "G1": 10,
+    "G2": 36,
+    "G3": 8
+  },
+  "overallScore": 8,
+  "verdict": "Uncle FrizzleBob delivers Pharmacology Vol 02 with the same loveable cast of mnemonic animals, enzymes, and lab-coat chaos-merchants that made MedKayfab famous. Stars of the show: Cyp the CYP450 Chief, Indie the Inducer, and Inhi the Inhibitor — a criminal trio that owns every pharmacology exam. Weak spots are the curve-and-formula cards (Dose the Dose-Response, Abby Absorption, Poly the Polymorphism) that explain rather than invite, dragging G1 below the 35% target. The END OF THE LINE finale page with its Clinical Toxidrome Final Quest is a genuine table moment and a beautiful payoff. Table-ready: Yes.",
+  "blurb": "For medical students who want pharmacology to stop reading like a textbook and start feeling like a wrestling card game. 54 mnemonic characters land the mechanism and the memory cue in one punch.",
+  "viralScore": 7,
+  "qa": {
+    "readability": 9,
+    "artworkConsistency": 9,
+    "overall": 8
+  },
+  "coverQA": {
+    "coverVisual": "5 — FrizzleBob in full chaos-scientist mode, flaming clipboard, gremlin mice, total energy",
+    "coverTitle": "5 — MedKayfab: Pharmacology Wrestling lands the concept in four words",
+    "coverVibeMatch": "5 — satirical medical learning energy is pitch-perfect throughout",
+    "coverOriginality": "4 — same FrizzleBob formula as series but executed with conviction",
+    "coverViral": "4 — strong within medical student community; limited outside it",
+    "coverScore": 4.6,
+    "coverNote": "One of the stronger MedKayfab covers — the lab-coat FrizzleBob with flaming clipboard is a series icon. Stay Fluffy! and Diagnosis?! annotations add irreverence without undermining the medical credibility. Georg von Westphalen byline is cleanly placed top-right."
+  },
+  "coverScore": 4.6,
+  "fontArtifactCount": 0,
+  "notes": "14 card pages (2x2 grid) = 56 card slots; page 15 is a special END OF THE LINE finale page with 2 embedded cards (Polypharmacy + Herb the Herbal) plus a full-page FrizzleBob owl illustration and a Clinical Toxidrome Final Quest scenario. Total confirmed cards: 54. KayfaBINGO! stamps visible on cards in pages 2-3 as game mechanic overlay. All artwork is consistent FrizzleBob animal-character style. Text appears as baked vector fonts — pdftotext returned empty. No RAF dice boxes visible. This is Vol 02 of the MedKayfab Pharmacology series.",
+  "topCards": [
+    "Cyp the CYP450 Chief",
+    "Indie the Inducer",
+    "Zero the Zero-Order"
+  ],
+  "worstCards": [
+    "Beta the Beta-Arrestin",
+    "Poly the Polymorphism"
+  ],
+  "todos": {
+    "urgent": [
+      "Upgrade Dose the Dose-Response and Abby Absorption to give each a named embodiable role beyond the formula"
+    ],
+    "quickWins": [
+      "Add a SLUDGE cheat sheet as an insert card for Cholinergic vs Myasthenic Crisis",
+      "Make Georgie GPCR's 34% stat a power move not just a badge"
+    ],
+    "niceToHave": [
+      "Consider a Pharmacology Vol 02 BINGO standalone card for the KayfaBINGO mechanic",
+      "Polypharmacy card could become more performative with a Cascade King role"
+    ]
+  },
+  "hashtags": [
+    "#MedKayfab",
+    "#Pharmacology",
+    "#Kayfabizarro",
+    "#MedicalEducation",
+    "#NarrativeLearning",
+    "#CardGame",
+    "#FrizzleBob"
+  ],
+  "genre": "medical",
+  "bundle": "EDUCATION",
+  "exhibitions": [
+    "classroom",
+    "conference"
+  ],
+  "channels": [
+    "Gumroad",
+    "TikTok",
+    "Instagram"
+  ],
+  "marketingText": "MedKayfab: PHARMACOKINETICS – What the Body Does to the Drug (Medical Mnemonics Cut & Play Comic)\n\n54 illustrated medical mnemonic cards to master first-pass metabolism and the CYP450 enzymes, the inducers and inhibitors that quietly rewrite a dose, and the zero-order kinetics that turn a steady habit into a slow overdose.\n\nYou learned the drug. Did anyone teach you what the body does to it after a patient swallows it?\n\nHere is the gap that ends up on an incident report. You can know every agent on the formulary cold and still poison a patient, because the dose that was safe on Monday becomes a toxic level on Thursday the moment a colleague adds an antibiotic that jams the enzyme clearing it. Pharmacokinetics is the half of pharmacology nobody can see on the prescription: how fast the liver chews a drug up, how the kidney lets it go, and why the same milligram that helps one patient stacks up in the next until it stops their heart. It stays invisible right up to the point it is the only thing that matters.\n\nMedKayfab Pharmacokinetics puts the body's drug-handling machinery in the ring, where the enzymes, the kinetics, and the interactions decide who walks out. You learn metabolism by watching it turn on a patient, not by reciting a clearance table you will have forgotten by the ward round.\n\nYOU'LL GET\n- 54 illustrated MedKayfab cards (15pp, 4 cards/page)\n- Full MedKayfab Freestyle rules (including the Quest Die and the Clinical Toxidrome final scenario)\n- S-Tier characters like Cyp the CYP450 Chief, Indie the Inducer, and Zero the Zero-Order\n- Free lifetime updates as the interaction tables and guidelines shift\n- CC BY-NC-SA 4.0 licence, print, share, and adapt freely\n- PDF optimized for home printing (A4 / Letter)\n\nWhat's in the deck\nThis is the metabolism-and-kinetics half of the MedKayfab Pharmacology series, the companion to the named-drug roster in The Synaptic Arsenal. You will meet Cyp the CYP450 Chief, the liver enzyme boss who sets the speed limit on how fast a drug leaves the body and whose mood decides whether a standard dose is therapy or overdose. Indie the Inducer spends days quietly building more of those enzymes, so a dose that worked last week barely registers this week, and a transplant drug or a contraceptive fails without a single new symptom to warn you. Zero the Zero-Order runs at a fixed ceiling: past it, every extra milligram piles up instead of clearing, the kinetics hiding behind ethanol, phenytoin, and the overdose that arrives in slow motion. The deck closes on Polypharmacy and Herb the Herbal in a Clinical Toxidrome finale, where every interaction you skipped comes back to collect.\n\nHow it works\nEvery card is a cognitive anchor built for the moment you need it under pressure. You get the Character (the mnemonic), the Visual (the scene), the Stat Block (the half-life, the route, the interaction risk), the Lore (the clinical story), and the Quest (the prescribing challenge). The Mechanism Flash mode is unforgiving with kinetics: if you cannot say in one sentence why this drug and that drug should never share a chart, the patient on the Stage finds out for you.\n\nHonest cognitive load\nThis is a mid-to-high intensity deck for medical and pharmacy students learning ADME and drug interactions, and for anyone re-sitting pharmacology for the boards. It assumes you already know a few drugs by name, which is exactly why it pairs best with Essential Pharmacology: The Synaptic Arsenal for the roster, with Internal Medicine for the polypharmacy patient who is on nine of them at once, and with Laboratory Medicine for the levels you will be chasing.\n\nABOUT MEDKAYFAB\nMedKayfab is a narrative medical learning card game, 50 decks covering the full medical curriculum. Every card encodes a clinical mechanism as a character with a personality, a story, and a reasoning challenge. Built by a physician. Assembled with AI tools. Manually revised. Honest about its limitations. Free to use, share, and adapt under CC BY-NC-SA 4.0.\n\nPAY WHAT YOU WANT\nThis deck is Pay What You Want, including free.\nIf you find it useful: a fair price is €5. If you're a student on a budget: enter €0. No questions asked. If you want to support more decks: anything above fair price is appreciated.\nCC BY-NC-SA 4.0, share freely, attribute honestly, never resell.\n\nDISCLAIMER\nMedKayfab is a learning companion, not a clinical reference. Content was created by a physician and reviewed to the best of our knowledge, but medicine evolves, guidelines change, and some mechanisms in here will be simplified or wrong. Always verify against current primary sources and clinical guidelines before applying anything to patient care, and never make a dosing or interaction decision from a card. The Blödsinn! is the vehicle. The science is serious.\n\nStay fluffy. — Doc FrizzleBob",
+  "marketingEdition": "MED"
+}

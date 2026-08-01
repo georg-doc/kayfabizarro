@@ -1,0 +1,600 @@
+{
+  "sourceFile": "MedKayfab_Nephrology - ADD web.pdf",
+  "deckTitle": "Nephrology Edition — MedKayfab",
+  "deckType": "Medical Education Card Deck",
+  "bundleSuggestion": "TBD",
+  "pageCount": 15,
+  "analysisVersion": 1.0,
+  "generatedAt": "2026-06-20T00:35:38",
+  "savedAt": "2026-06-20T00:35:38",
+  "extractionTool": "cowork_task_v3",
+  "RAF": false,
+  "gradingMode": "educational",
+  "deckFunction": [
+    "education",
+    "clinical_reasoning"
+  ],
+  "seriesId": "medkayfab",
+  "cards": [
+    {
+      "cardNumber": 1,
+      "cardName": "Nephro the Nephron",
+      "grade": 2,
+      "power": "Segmental Vulnerability — Cortex houses glomeruli/PCT/DCT; Medulla houses loops/collecting ducts",
+      "lore": "Every segment has its own specific transport machinery and its own unique clinical vulnerabilities.",
+      "gradeReason": "Clear anatomical host but segment map is context not invitation.",
+      "artworkPrompt": "Style: Ink cartoon. Subject: Cheerful kidney nephron mascot on rollercoaster. Mood: Energetic-educational."
+    },
+    {
+      "cardNumber": 2,
+      "cardName": "GFR Gary",
+      "grade": 2,
+      "power": "Filtration Math — Net Filtration Pressure is 1–10 mmHg",
+      "lore": "Creatinine rises late. It will not elevate until ~50% of GFR is permanently lost.",
+      "gradeReason": "GFR as character is fun; Starling forces need table context to land.",
+      "artworkPrompt": "Style: Ink cartoon. Subject: Stressed pressure gauge character juggling hydrostatic and oncotic forces. Mood: Tense-comic."
+    },
+    {
+      "cardNumber": 3,
+      "cardName": "Filtration Barry",
+      "grade": 2,
+      "power": "Charge & Size Repulsion — Defends against albumin leak",
+      "lore": "Loss of heparan sulfate from the GBM causes selective albumin leak before structural size-barrier failure.",
+      "gradeReason": "Bouncer archetype is clear but biochemical barrier needs teaching context.",
+      "artworkPrompt": "Style: Ink cartoon. Subject: Bouncer podocyte blocking albumin at glomerular gate. Mood: Stern-protective."
+    },
+    {
+      "cardNumber": 4,
+      "cardName": "Auto the Autoregulation",
+      "grade": 2,
+      "power": "Pressure Defense — Tubuloglomerular feedback manages NaCl delivery.",
+      "lore": "ACE inhibitors dilate the efferent arteriole; NSAIDs constrict the afferent. Together, they drop GFR.",
+      "gradeReason": "Feedback mechanism as character works; NSAID/ACEi combo is the killer lore.",
+      "artworkPrompt": "Style: Ink cartoon. Subject: Arteriole robot auto-adjusting flow valves under pressure. Mood: Vigilant-mechanical."
+    },
+    {
+      "cardNumber": 5,
+      "cardName": "Tubulo the PCT",
+      "grade": 2,
+      "power": "Fanconi Drop — Generalized PCT dysfunction",
+      "lore": "Fanconi causes glucosuria with normal blood glucose, alongside aminoaciduria and phosphaturia.",
+      "gradeReason": "Bulk reabsorber role is clear; Fanconi lore is the memory hook.",
+      "artworkPrompt": "Style: Ink cartoon. Subject: Bulldozer reabsorbing glucose and amino acid cargo in a tunnel. Mood: Industrious."
+    },
+    {
+      "cardNumber": 6,
+      "cardName": "Henley the Loop",
+      "grade": 2,
+      "power": "Medullary Concentrating Engine",
+      "lore": "Loop diuretics block NKCC2, completely abolishing the medullary gradient and causing massive diuresis.",
+      "gradeReason": "Countercurrent clever but concentration gradient needs spatial context.",
+      "artworkPrompt": "Style: Ink cartoon. Subject: Looping water slide concentrating urine at the bottom. Mood: Dynamic-mechanical."
+    },
+    {
+      "cardNumber": 7,
+      "cardName": "Disco the DCT",
+      "grade": 1,
+      "power": "Thiazide Shift — Blocks NCC",
+      "lore": "Thiazides block NCC, causing volume depletion which triggers hypercalcaemia and hypocalciuria.",
+      "gradeReason": "Disco DJ fine-tuner is immediately performative; you know exactly who to be.",
+      "artworkPrompt": "Style: Ink cartoon. Subject: Funky DCT DJ mixing calcium and sodium at turntables. Mood: Groovy-clinical."
+    },
+    {
+      "cardNumber": 8,
+      "cardName": "Collect the Collecting Duct",
+      "grade": 2,
+      "power": "Hormonal Final Say",
+      "lore": "Liddle syndrome features an ENaC gain-of-function mutation that phenocopies aldosterone excess, but only responds to amiloride.",
+      "gradeReason": "Hormonal commander role works; ENaC lore is high-yield but dense.",
+      "artworkPrompt": "Style: Ink cartoon. Subject: Aldosterone general commanding ENaC soldiers in a collecting duct bunker. Mood: Authoritative."
+    },
+    {
+      "cardNumber": 9,
+      "cardName": "\"Nephrotic Ned\"",
+      "grade": 1,
+      "power": "Oncotic Collapse — Loss of plasma oncotic pressure.",
+      "lore": "Loss of urinary anticoagulants makes this a hypercoagulable state. Membranous nephropathy carries the highest renal vein thrombotic risk.",
+      "gradeReason": "Swollen, leaking Ned is instantly embody-able; clot risk lore is grade-A shock.",
+      "artworkPrompt": "Style: Ink cartoon. Subject: Puffy oedematous character leaking protein into puddles. Mood: Pathetic-dramatic."
+    },
+    {
+      "cardNumber": 10,
+      "cardName": "\"Nephritic Neil\"",
+      "grade": 1,
+      "power": "Inflammatory Blockade — Reduced GFR, oliguria, hypertension.",
+      "lore": "Red cell casts are formed in the tubules and are strictly pathognomonic of glomerular bleeding.",
+      "gradeReason": "Angry inflamed contrast to Ned is immediately vivid; cast pathognomonic is knockout lore.",
+      "artworkPrompt": "Style: Ink cartoon. Subject: Furious inflamed kidney with red cell casts in urine stream. Mood: Aggressive-red."
+    },
+    {
+      "cardNumber": 11,
+      "cardName": "\"IgA Ivan\"",
+      "grade": 2,
+      "power": "Mesangial Deposition Strike",
+      "lore": "Haematuria occurs concurrently (synpharyngitic, 1-2 days) with the URTI, distinguishing it from post-streptococcal GN.",
+      "gradeReason": "IgA character is contextually sound; synpharyngitic timing lore is the distinguishing hook.",
+      "artworkPrompt": "Style: Ink cartoon. Subject: IgA soldier dropping antibody bombs on mesangium during throat infection. Mood: Coincident-military."
+    },
+    {
+      "cardNumber": 12,
+      "cardName": "\"Membranous Mary\"",
+      "grade": 2,
+      "power": "Spike & Dome Subepithelial Thickening",
+      "lore": "Secondary causes account for 20%. You must screen for occult solid tumour malignancy in all adults over 50.",
+      "gradeReason": "Spiky membrane character works visually; cancer screen over-50 lore is the table moment.",
+      "artworkPrompt": "Style: Ink cartoon. Subject: Spiky membrane villainess with hidden tumour aura. Mood: Menacing-clinical."
+    },
+    {
+      "cardNumber": 13,
+      "cardName": "\"Minimal Chang\"",
+      "grade": 2,
+      "power": "T-Cell Permeability Factor",
+      "lore": "Dramatic, selective albuminuria with essentially normal light microscopy. Highly responsive to steroids.",
+      "gradeReason": "Enigma hook is good; almost-invisible-on-biopsy concept needs demonstration not just description.",
+      "artworkPrompt": "Style: Ink cartoon. Subject: Near-invisible podocyte ghost causing massive protein leak. Mood: Mysterious-minimalist."
+    },
+    {
+      "cardNumber": 14,
+      "cardName": "\"FSGS Frankie\"",
+      "grade": 2,
+      "power": "Podocyte Collapse — Loss is irreversible",
+      "lore": "Recurrence after renal transplantation in primary FSGS strongly indicates a circulating permeability factor (like suPAR).",
+      "gradeReason": "Scarred irreversible villain is effective; suPAR recurrence in transplant is high-yield hook.",
+      "artworkPrompt": "Style: Ink cartoon. Subject: Scarred scarecrow podocyte collapsing over sclerotic glomerulus. Mood: Grim-irreversible."
+    },
+    {
+      "cardNumber": 15,
+      "cardName": "\"Lupus Nephritis Lucie\"",
+      "grade": 2,
+      "power": "Immune Complex Mine — 'Wire loop' subendothelial deposits",
+      "lore": "The 'Full House' immunofluorescence pattern is virtually diagnostic of lupus nephritis.",
+      "gradeReason": "Wire-loop + Full House is punchy clinical shorthand; ISN/RPS classification is dry backdrop.",
+      "artworkPrompt": "Style: Ink cartoon. Subject: Immune complex warrior leaving wire-loop landmines in glomerulus. Mood: Multi-target chaos."
+    },
+    {
+      "cardNumber": 16,
+      "cardName": "\"ANCA Vasculitis Vince\"",
+      "grade": 1,
+      "power": "Endothelial Arson — Crescent formation without immune deposits",
+      "lore": "Presents as a pulmonary-renal syndrome; rapidly progressive GN combined with alveolar haemorrhage.",
+      "gradeReason": "Endothelial Arson is the best power name in the deck — immediate, performative, unforgettable.",
+      "artworkPrompt": "Style: Ink cartoon. Subject: Arsonist ANCA neutrophil torching endothelium with crescent flames. Mood: Apocalyptic-rapid."
+    },
+    {
+      "cardNumber": 17,
+      "cardName": "\"Post-Strep Percy\"",
+      "grade": 2,
+      "power": "Alternative Pathway Consumption",
+      "lore": "C3 is low but C4 is normal, revealing isolated alternative complement pathway activation.",
+      "gradeReason": "Latent aftermath character works; C3-low/C4-normal complement split is the clinical hook.",
+      "artworkPrompt": "Style: Ink cartoon. Subject: Strep aftermath ghost haunting kidney weeks after throat infection. Mood: Delayed-sinister."
+    },
+    {
+      "cardNumber": 18,
+      "cardName": "\"Alport the Hereditary\"",
+      "grade": 2,
+      "power": "Basement Membrane Lamellation",
+      "lore": "Type IV collagen mutations cause progressive GBM splitting, leading to nephritis and sensorineural deafness.",
+      "gradeReason": "Hereditary collagen villain is effective; deafness + kidney linkage is memorable cross-system lore.",
+      "artworkPrompt": "Style: Ink cartoon. Subject: Aged collagen knight with splitting GBM armor and hearing aids. Mood: Hereditary-tragic."
+    },
+    {
+      "cardNumber": 19,
+      "cardName": "\"Acid-Base Alice\"",
+      "grade": 1,
+      "power": "Respiratory & Renal Compensation",
+      "lore": "Winter's Formula: Expected pCO₂ = 1.5 × HCO₃ + 8 ± 2. Use it to check if respiratory compensation is appropriate.",
+      "gradeReason": "Alice in Wonderland pH framework is irresistibly playful; Winter's Formula is the clinical gift.",
+      "artworkPrompt": "Style: Ink cartoon. Subject: Alice character falling through pH buffers with HCO3 mushrooms. Mood: Whimsical-precise."
+    },
+    {
+      "cardNumber": 20,
+      "cardName": "\"Anion Gap Andy\"",
+      "grade": 2,
+      "power": "MUDPILES Protocol — Methanol, Uraemia, DKA, Propylene Glycol, Isoniazid, Lactic Acid, Ethylene Glycol, Salicylates",
+      "lore": "Metformin causes Type B lactic acidosis (without tissue hypoxia), driving a pure high anion gap metabolic acidosis.",
+      "gradeReason": "MUDPILES detective is memorable; Metformin Type B lore is the high-stakes clinical twist.",
+      "artworkPrompt": "Style: Ink cartoon. Subject: Detective magnifying unmeasured anion in crime scene beaker. Mood: Investigative-toxic."
+    },
+    {
+      "cardNumber": 21,
+      "cardName": "Normal AG Norma",
+      "grade": 2,
+      "power": "Bicarbonate Wasting / H+ Retention",
+      "lore": "Type 1 distal RTA fails to secrete H+, meaning the urine can never be acidified below pH 5.5 despite systemic acidosis.",
+      "gradeReason": "Hyperchloraemic anchor works; urine pH floor lore is the exam-killer clincher.",
+      "artworkPrompt": "Style: Ink cartoon. Subject: Normal anion gap accountant losing bicarbonate from leaky briefcase. Mood: Mundane-frustrating."
+    },
+    {
+      "cardNumber": 22,
+      "cardName": "Metabolic Alkalosis Maggie",
+      "grade": 2,
+      "power": "The Maintenance Lock",
+      "lore": "The kidney can excrete any HCO3 load, unless locked into maintenance by hypovolaemia or hypokalaemia.",
+      "gradeReason": "Maintenance lock is a solid mechanism metaphor; generation vs maintenance framing needs teaching context.",
+      "artworkPrompt": "Style: Ink cartoon. Subject: Maggie locked in alkalotic cage with hypovolaemia key around her neck. Mood: Trapped-instructive."
+    },
+    {
+      "cardNumber": 23,
+      "cardName": "Potassium Perry",
+      "grade": 1,
+      "power": "Cardiac Membrane Destabilization",
+      "lore": "In hyperkalaemic arrest, give Calcium Gluconate first. It does not lower K+; it stabilizes the myocardium to prevent VF.",
+      "gradeReason": "The Widowmaker subtitle is the best 2-word summary in the deck — instant embodiment of danger.",
+      "artworkPrompt": "Style: Ink cartoon. Subject: K+ villain electrocuting heart monitor with widowmaker lightning bolt. Mood: Lethal-dramatic."
+    },
+    {
+      "cardNumber": 24,
+      "cardName": "Sodium Stella",
+      "grade": 2,
+      "power": "Tonicity Shift",
+      "lore": "Correct hyponatraemia slowly (<10 mmol/L per 24h). Rapid correction floods the adapted brain, causing cerebral oedema.",
+      "gradeReason": "Sodium Stella as volume-osmolality anchor works; ODS lore is terrifying and memorable.",
+      "artworkPrompt": "Style: Ink cartoon. Subject: Sodium star carefully dripping into brain with correction speed warning. Mood: Careful-catastrophic."
+    },
+    {
+      "cardNumber": 25,
+      "cardName": "Magnesium Magda",
+      "grade": 2,
+      "power": "The Refractory Block",
+      "lore": "Hypomagnesaemia impairs ROMK function. Hypokalaemia will be completely refractory to K+ replacement until Mg is fixed.",
+      "gradeReason": "Forgotten electrolyte persona is charming; ROMK refractory block is the high-yield hidden mechanism.",
+      "artworkPrompt": "Style: Ink cartoon. Subject: Overlooked Magda unlocking potassium repletion door with magnesium key. Mood: Underestimated-crucial."
+    },
+    {
+      "cardNumber": 26,
+      "cardName": "Phosphate Phil",
+      "grade": 2,
+      "power": "Cellular Energy Depletion",
+      "lore": "Refeeding syndrome drives phosphate intracellularly, causing severe ATP depletion, haemolysis, and respiratory failure.",
+      "gradeReason": "Refeeding syndrome lore is alarm-level clinical — the FGF-23 axis framing needs more context.",
+      "artworkPrompt": "Style: Ink cartoon. Subject: Phosphate batteries draining intracellularly during refeeding disaster. Mood: Energy-crisis urgent."
+    },
+    {
+      "cardNumber": 27,
+      "cardName": "RTA Rita",
+      "grade": 3,
+      "power": "The Acid Trap Matrix",
+      "lore": "Type 4 RTA (hyporeninaemic aldosteronism) is the only RTA characterized by high serum potassium.",
+      "gradeReason": "Classification matrix is a study outline, not a character. Rita needs a persona, not a table.",
+      "artworkPrompt": "Style: Ink cartoon. Subject: Rita trapped in 3-column acid-base classification chart. Mood: Bureaucratic-frustrated."
+    },
+    {
+      "cardNumber": 28,
+      "cardName": "Uric Acid Ulric",
+      "grade": 2,
+      "power": "Inflammasome Trigger — MSU crystals activate macrophages",
+      "lore": "Never initiate allopurinol (urate-lowering therapy) during an acute gout attack; it mobilises stores and worsens the flare.",
+      "gradeReason": "Spiky crystal villain is vivid; allopurinol-during-attack lore is a prescribing trap that sticks.",
+      "artworkPrompt": "Style: Ink cartoon. Subject: Spiky urate crystal villain igniting macrophage inflammasome bonfire. Mood: Incendiary-painful."
+    },
+    {
+      "cardNumber": 29,
+      "cardName": "AKI the Acute",
+      "grade": 2,
+      "power": "The Staging Triad — Creatinine rise, or urine output drop",
+      "lore": "Pre-renal AKI presents with urine Na < 20 and a concentrated urine osmolality > 500 mOsm/kg.",
+      "gradeReason": "AKI as sudden-onset character works; staging triad keeps it clinical rather than narrative.",
+      "artworkPrompt": "Style: Ink cartoon. Subject: Sudden kidney crisis character pulling emergency lever with creatinine alarm. Mood: Urgent-staged."
+    },
+    {
+      "cardNumber": 30,
+      "cardName": "ATN the Tubule Destroyer",
+      "grade": 1,
+      "power": "Intraluminal Obstruction",
+      "lore": "Rhabdomyolysis causes haem-pigment ATN; it requires aggressive IV isotonic saline to prevent tubular obstruction.",
+      "gradeReason": "Tubule Destroyer says everything you need to know — pure villain energy, immediate performance.",
+      "artworkPrompt": "Style: Ink cartoon. Subject: Muddy brown bulldozer destroying tubular epithelium with haem-pigment casts. Mood: Destructive-dark."
+    },
+    {
+      "cardNumber": 31,
+      "cardName": "AIN the Interstitial",
+      "grade": 2,
+      "power": "T-Cell Infiltration & Tubulitis",
+      "lore": "PPI-associated AIN often lacks the classic fever/rash and presents insidiously as unexplained CKD.",
+      "gradeReason": "Allergic kidney persona is solid; PPI-as-silent-culprit lore is genuinely surprising.",
+      "artworkPrompt": "Style: Ink cartoon. Subject: T-cell allergy mob quietly infiltrating kidney tubules under radar. Mood: Insidious-inflammatory."
+    },
+    {
+      "cardNumber": 32,
+      "cardName": "Hepatorenal Hugo",
+      "grade": 2,
+      "power": "Maximal Renal Vasoconstriction",
+      "lore": "Kidneys from HRS patients function perfectly if transplanted. The failure is entirely haemodynamic, driven by cirrhosis.",
+      "gradeReason": "Functional failure archetype is clear; perfect-kidney-in-wrong-body lore is philosophically memorable.",
+      "artworkPrompt": "Style: Ink cartoon. Subject: Healthy kidney trapped in failing cirrhotic ecosystem, strangled by vasoconstriction. Mood: Tragic-functional."
+    },
+    {
+      "cardNumber": 33,
+      "cardName": "CKD the Chronic",
+      "grade": 2,
+      "power": "Systemic Dominoes",
+      "lore": "Cardiovascular disease is the leading cause of death in CKD. Most patients die of heart disease before reaching dialysis.",
+      "gradeReason": "Slow systemic decay persona is vivid; heart-before-dialysis death lore reframes the whole condition.",
+      "artworkPrompt": "Style: Ink cartoon. Subject: Slow-moving CKD boulder knocking over cardiovascular, bone, anaemia dominoes. Mood: Inexorable-systemic."
+    },
+    {
+      "cardNumber": 34,
+      "cardName": "Dialysis Danny",
+      "grade": 2,
+      "power": "Diffusion & Ultrafiltration",
+      "lore": "Arteriovenous fistulas (AVF) are preferred over central lines because they carry the lowest risk of infection and thrombosis.",
+      "gradeReason": "Dialysis patient/machine character is accessible; AVF preference is the clinical practice hook.",
+      "artworkPrompt": "Style: Ink cartoon. Subject: Dialysis machine hero filtering blood via AVF fistula arm connection. Mood: Life-sustaining-technical."
+    },
+    {
+      "cardNumber": 35,
+      "cardName": "Peritoneal Pearl",
+      "grade": 2,
+      "power": "Osmotic Pull — Glucose drives ultrafiltration",
+      "lore": "Peritoneal dialysis preserves residual renal function much better than intermittent haemodialysis.",
+      "gradeReason": "Home-based gentle alternative persona is warm; residual function preservation lore is the key distinction.",
+      "artworkPrompt": "Style: Ink cartoon. Subject: Gentle octopus peritoneum absorbing glucose-driven fluid at home. Mood: Gentle-domestic."
+    },
+    {
+      "cardNumber": 36,
+      "cardName": "Transplant Tina",
+      "grade": 2,
+      "power": "Triple Therapy Defense",
+      "lore": "Calcineurin inhibitor nephropathy (fibrosis/atrophy) remains the leading cause of late graft loss, ironically worsened by CNI nephrotoxicity.",
+      "gradeReason": "Immunosuppression hero is clear; CNI killing the graft it saves is beautifully ironic high-yield lore.",
+      "artworkPrompt": "Style: Ink cartoon. Subject: Transplant hero armored in triple immunosuppression shield, secretly poisoned by it. Mood: Ironic-vigilant."
+    },
+    {
+      "cardNumber": 37,
+      "cardName": "ADPKD Ada",
+      "grade": 2,
+      "power": "Cystic Renin Drive — Early severe hypertension",
+      "lore": "You must screen for intracranial aneurysms if there is a family history. It's the leading cause of early death before ESRD.",
+      "gradeReason": "Polycystic bubbling character is visually vivid; intracranial aneurysm screen is the life-saving clinical act.",
+      "artworkPrompt": "Style: Ink cartoon. Subject: Bubbly cystic kidney character with aneurysm bomb ticking in head. Mood: Hereditary-dangerous."
+    },
+    {
+      "cardNumber": 38,
+      "cardName": "Renovascular Rex",
+      "grade": 1,
+      "power": "Ischaemic Panic — Maximal RAAS activation",
+      "lore": "ACE inhibitors cause acute kidney injury in bilateral RAS by removing the efferent constriction keeping the GFR alive.",
+      "gradeReason": "Flash pulmonary oedema + Ischaemic Panic makes Rex an immediate emergency performance.",
+      "artworkPrompt": "Style: Ink cartoon. Subject: Bilateral renal artery stenosis monster triggering RAAS panic alarms. Mood: Emergency-hypertensive."
+    },
+    {
+      "cardNumber": 39,
+      "cardName": "Nephrolithiasis Nick",
+      "grade": 2,
+      "power": "Supersaturation Crystallization",
+      "lore": "Never restrict dietary calcium for calcium stones; doing so increases free gut oxalate absorption, worsening the stones.",
+      "gradeReason": "Spiky stone thrower character is vivid; calcium-restriction-makes-it-worse is a classic prescribing trap.",
+      "artworkPrompt": "Style: Ink cartoon. Subject: Spiky calcium oxalate crystal Nick blocking ureter with satisfied grin. Mood: Painful-counterintuitive."
+    },
+    {
+      "cardNumber": 40,
+      "cardName": "Proteinuria Petra",
+      "grade": 2,
+      "power": "The Dipstick Limit",
+      "lore": "Standard urine dipsticks only detect albumin. They will read negative for the overflow tubular Bence Jones proteins in myeloma.",
+      "gradeReason": "Distress signal persona works; dipstick myeloma miss is the killer clinical trap lore.",
+      "artworkPrompt": "Style: Ink cartoon. Subject: Petra alarm flashing protein distress signal over missed Bence Jones proteins. Mood: Diagnostic-danger."
+    },
+    {
+      "cardNumber": 41,
+      "cardName": "ACEi Amy",
+      "grade": 2,
+      "power": "Intraglomerular Decompression",
+      "lore": "Dual RAAS blockade (ACEi + ARB) provides no additional renal benefit but massively increases the risk of AKI and hyperkalaemia.",
+      "gradeReason": "Nephroprotector superhero role is clear; dual-RAAS harm is the evidence-based twist that sticks.",
+      "artworkPrompt": "Style: Ink cartoon. Subject: ACE inhibitor superhero deflating glomerular pressure with safety shield. Mood: Protective-clinical."
+    },
+    {
+      "cardNumber": 42,
+      "cardName": "Diuretics Dmitri",
+      "grade": 2,
+      "power": "Sequential Nephron Blockade",
+      "lore": "Severe nephrotic patients need IV loop diuretics because massive gut wall oedema prevents oral drug absorption.",
+      "gradeReason": "Volume enforcer is solid; gut oedema blocking oral absorption is practical bedside lore.",
+      "artworkPrompt": "Style: Ink cartoon. Subject: Diuretics enforcer blocking nephron channels in sequence with volume meter. Mood: Controlled-forceful."
+    },
+    {
+      "cardNumber": 43,
+      "cardName": "Erythropoietin Ernie",
+      "grade": 2,
+      "power": "Hypoxia Sensor & Red Cell Proliferation",
+      "lore": "Pushing Hb targets higher than 120 g/L in CKD increases the risk of stroke without providing any mortality benefit.",
+      "gradeReason": "EPO stimulator character is functional; higher-Hb-causes-stroke is a counterintuitive trial outcome.",
+      "artworkPrompt": "Style: Ink cartoon. Subject: Ernie pumping red cells while stroke warning flashes at 120 g/L threshold. Mood: Enthusiastic-cautionary."
+    },
+    {
+      "cardNumber": 44,
+      "cardName": "Phosphate Binder Percy",
+      "grade": 2,
+      "power": "Intestinal Chelation",
+      "lore": "Binders must be taken exactly with meals. Calcium-based binders risk worsening vascular calcification in severe CKD.",
+      "gradeReason": "Gut defender is solid; meal-timing + calcium-vascular-calcification is the practical prescribing trap.",
+      "artworkPrompt": "Style: Ink cartoon. Subject: Percy binding phosphate guests at meal-time door with calcium warning sign. Mood: Vigilant-dietary."
+    },
+    {
+      "cardNumber": 45,
+      "cardName": "Calcimimetics Carla",
+      "grade": 2,
+      "power": "Allosteric Modulation",
+      "lore": "Preferred for secondary hyperparathyroidism in dialysis because it lowers PTH without raising calcium, unlike active vitamin D.",
+      "gradeReason": "CaSR trickster is clever; PTH-without-calcium-raise distinction is the dialysis-specific hook.",
+      "artworkPrompt": "Style: Ink cartoon. Subject: Carla magician tricking calcium receptor into lowering PTH without raising calcium. Mood: Allosteric-clever."
+    },
+    {
+      "cardNumber": 46,
+      "cardName": "Contrast Nephropathy Connie",
+      "grade": 2,
+      "power": "Medullary Ischaemia + Direct Toxicity",
+      "lore": "Metformin is not nephrotoxic itself, but must be held 48 hours prior to contrast to prevent fatal lactic acidosis if AKI occurs.",
+      "gradeReason": "Iodinated destruction character is functional; Metformin-not-nephrotoxic clarification is the confounding lore.",
+      "artworkPrompt": "Style: Ink cartoon. Subject: Contrast agent bomb dropping on renal medulla with Metformin warning sign. Mood: Iatrogenic-tense."
+    },
+    {
+      "cardNumber": 47,
+      "cardName": "TMA Tamara",
+      "grade": 1,
+      "power": "Microvascular Shearing & Platelet Consumption",
+      "lore": "Antibiotics are absolutely contraindicated in STEC-HUS; killing the bacteria triggers a massive release of Shiga toxin.",
+      "gradeReason": "Microvascular shearing is viscerally performative; antibiotic-contraindication lore is a life-or-death trap.",
+      "artworkPrompt": "Style: Ink cartoon. Subject: Tamara shredding microvasculature with platelet confetti, antibiotic crossed out in red. Mood: Violent-counterintuitive."
+    },
+    {
+      "cardNumber": 48,
+      "cardName": "Myeloma Kidney Mick",
+      "grade": 2,
+      "power": "Tubular Overload & Obstruction",
+      "lore": "Myeloma cast nephropathy causes severe AKI, which must be distinguished from AL amyloidosis which causes nephrotic syndrome.",
+      "gradeReason": "Cast obstruction villain is clear; AKI-vs-amyloid-nephrotic distinction is the myeloma nephrology fork.",
+      "artworkPrompt": "Style: Ink cartoon. Subject: Mick casting polychrome fractured debris blocks into tubular highway. Mood: Obstructive-malignant."
+    },
+    {
+      "cardNumber": 49,
+      "cardName": "Sickle Cell Renal Sydney",
+      "grade": 2,
+      "power": "Papillary Sloughing & Necrosis",
+      "lore": "The extreme 1200 mOsm/kg hypoxic environment of the renal medulla causes RBC sickling and damage even in sickle cell trait.",
+      "gradeReason": "Medullary hypoxia character is contextually sound; trait-not-just-disease insight is the clinical extension.",
+      "artworkPrompt": "Style: Ink cartoon. Subject: Sickle RBC sickling in hypoxic medullary environment with papilla crumbling. Mood: Hypoxic-tragic."
+    },
+    {
+      "cardNumber": 50,
+      "cardName": "Lupus Anticoagulant Lena",
+      "grade": 1,
+      "power": "In-Vitro Paradox / In-Vivo Thrombosis",
+      "lore": "'Lupus Anticoagulant' is a misnomer: It prolongs the APTT in laboratory tests but causes catastrophic micro-thrombosis clinically.",
+      "gradeReason": "The APTT Paradox is immediately performative — you play the deceiver who anticoagulates in the lab and clots in the body.",
+      "artworkPrompt": "Style: Ink cartoon. Subject: Lena appearing anticoagulant on paper while causing clots in vivo. Mood: Paradox-deceptive."
+    },
+    {
+      "cardNumber": 51,
+      "cardName": "Kidney Biopsy Betty",
+      "grade": 2,
+      "power": "Tri-Partite Processing",
+      "lore": "Every core must be processed for Light Microscopy, Immunofluorescence, and Electron Microscopy simultaneously to diagnose glomerular disease.",
+      "gradeReason": "Diagnostic technician persona is clear; tri-partite simultaneous processing rule is practical and memorable.",
+      "artworkPrompt": "Style: Ink cartoon. Subject: Betty splitting biopsy core three ways into LM, IF, EM channels. Mood: Precise-methodical."
+    },
+    {
+      "cardNumber": 52,
+      "cardName": "Urinalysis Ursula",
+      "grade": 2,
+      "power": "Non-Invasive Diagnostics",
+      "lore": "Broad waxy casts indicate advanced CKD; the tubules have dilated to compensate for mass nephron dropout, creating wide, slow-flowing casts.",
+      "gradeReason": "Nephrologist's window metaphor is effective; waxy cast biology explains the finding mechanistically.",
+      "artworkPrompt": "Style: Ink cartoon. Subject: Ursula gazing through urine crystal ball revealing cast diagnostics. Mood: Oracular-diagnostic."
+    },
+    {
+      "cardNumber": 53,
+      "cardName": "Electrolyte Emergencies Eddie",
+      "grade": 2,
+      "power": "Cardiac Hierarchy Protocol",
+      "lore": "Correct hyponatraemia slowly (max 8-10 mmol/L/24h). Fast correction destroys the brain via osmotic demyelination syndrome.",
+      "gradeReason": "Emergency manager persona is clear; ODS brain-destruction lore is the fear-based motivator.",
+      "artworkPrompt": "Style: Ink cartoon. Subject: Eddie at electrolyte emergency control panel with cardiac and sodium alarms. Mood: Crisis-priority."
+    },
+    {
+      "cardNumber": 54,
+      "cardName": "RAAS Pharmacology Renata",
+      "grade": 2,
+      "power": "Pleiotropic Protection",
+      "lore": "Finerenone is a non-steroidal MRA preferred in diabetic CKD; it reduces fibrosis independently of its haemodynamic effects.",
+      "gradeReason": "Blockade ladder architect is functional; Finerenone pleiotropic-beyond-haemodynamics is genuinely new clinical knowledge.",
+      "artworkPrompt": "Style: Ink cartoon. Subject: Renata building RAAS blockade pyramid with Finerenone crown stone. Mood: Architectural-protective."
+    },
+    {
+      "cardNumber": 55,
+      "cardName": "The Nephrology Attending",
+      "grade": 3,
+      "power": "Mechanistic Justification",
+      "lore": "Map every clinical diagnosis to its cellular mechanism. Justify every treatment decision with an underlying physiological principle. No approximations.",
+      "gradeReason": "Synthesis meta-card describes a method, not a character. Needs a persona to become performative.",
+      "artworkPrompt": "Style: Ink cartoon. Subject: Attending physician mapping diagnosis-to-mechanism on whiteboard with no shortcuts. Mood: Rigorous-demanding."
+    },
+    {
+      "cardNumber": 56,
+      "cardName": "FrizzleBob's Golden Rule",
+      "grade": 1,
+      "power": "Narrative Memory",
+      "lore": "You remember the stories, not the lists. If you understand the machine, the pathology becomes inevitable. Stay fluffy!",
+      "gradeReason": "The deck's entire philosophy in one card — FrizzleBob's manifesto is instantly, completely performative.",
+      "artworkPrompt": "Style: Ink cartoon. Subject: FrizzleBob rabbit tossing textbooks, holding story scroll with Stay Fluffy banner. Mood: Manifesto-joyful."
+    }
+  ],
+  "cardCount": 56,
+  "gradeDistribution": {
+    "G1": 11,
+    "G2": 43,
+    "G3": 2
+  },
+  "overallScore": 8,
+  "verdict": "MedKayfab Nephrology hits the kidney from every angle — 56 characters who collectively OWN the discipline. FrizzleBob's Golden Rule lands the finale like a manifesto. The G2-heavy distribution confirms this is 'competent teaching machine' territory: clear, functional, rarely boring. Potassium Perry's Widowmaker and ANCA Vince's Endothelial Arson show what the ceiling looks like. RTA Rita and The Nephrology Attending need a persona, not a syllabus entry. Table-ready: YES.",
+  "blurb": "For medical students who think the kidney is just a filter — 56 MedKayfab characters will prove it's the most politically charged organ in the body. Stay fluffy.",
+  "viralScore": 7,
+  "qa": {
+    "readability": 8,
+    "artworkConsistency": 8,
+    "overall": 8
+  },
+  "coverQA": {
+    "coverVisual": "5 — FrizzleBob rabbit wielding paintbrush over stacked nephrology textbooks, product parody boxes (RENALEX, KINEZOID, DIALYSOL), mad doctor, bacteria characters — dense and energetic",
+    "coverTitle": "4 — MedKayfab: Nephrology Edition is clear, branded, and memorable with good subtitle",
+    "coverVibeMatch": "5 — perfectly captures medical-education-meets-unhinged-cartoon tone of the series",
+    "coverOriginality": "5 — nothing else in medical education looks like this",
+    "coverViral": "4 — 'corporate slide-monkeys' manifesto text is quotable; FrizzleBob imagery is series-recognizable",
+    "coverScore": 4.6,
+    "coverNote": "Best cover in the MedKayfab range. The product parody boxes (RENALEX, KINEZOID, DIALYSOL) add a pharmaceutical satire layer that works perfectly. 'Stay fluffy!' on the cover sets the tone before card 1."
+  },
+  "coverScore": 4.6,
+  "fontArtifactCount": 4,
+  "notes": "15 pages: 1 cover + 14 card pages, 4 cards per page = 56 cards total. RAF boxes not present. 'ADD' suffix in filename suggests an addendum or print-version variant, but content is a complete 56-card standalone deck. Card numbers clearly visible on each card (1–56). Font artifacts: ~4 instances of decorative headers with potentially ambiguous characters (noted Card 27 lore: 'hyporeninaemic aldosteronism' best read — small font). KayfaBONGO!, HUMBUG!, KayfaBIZARRO!, KayfaBOGGLE! interstitial elements add energy between spreads.",
+  "topCards": [
+    "FrizzleBob's Golden Rule",
+    "Potassium Perry",
+    "ANCA Vasculitis Vince"
+  ],
+  "worstCards": [
+    "RTA Rita",
+    "The Nephrology Attending"
+  ],
+  "todos": {
+    "urgent": [
+      "RTA Rita (27): give her a character persona beyond 'classification matrix' — she's currently a study table not a player",
+      "The Nephrology Attending (55): needs a character hook, currently describes the method not embodies it"
+    ],
+    "quickWins": [
+      "Minimal Chang: lean harder into the minimalism joke — 'I'm right here, you just can't see me' as a power",
+      "Normal AG Norma: 'Normal is the most dangerous word in medicine' as an explicit motto"
+    ],
+    "niceToHave": [
+      "More KayfaBONGO!/HUMBUG! interstitial diversity — currently 4 variants, could add 2 more",
+      "Cover QR code to FrizzleBob Nephrology intro video"
+    ]
+  },
+  "hashtags": [
+    "#MedKayfab",
+    "#Nephrology",
+    "#MedEd",
+    "#KayfabBingo",
+    "#MedicalEducation",
+    "#Kayfabizarro",
+    "#KidneyDisease",
+    "#MedStudents",
+    "#ClinicalReasoning"
+  ],
+  "genre": "medical",
+  "bundle": "EDUCATION",
+  "exhibitions": [
+    "classroom",
+    "conference",
+    "online"
+  ],
+  "channels": [
+    "Gumroad",
+    "TikTok",
+    "Instagram",
+    "YouTube"
+  ],
+  "marketingText": "MedKayfab: NEPHROLOGY – The Body's Quiet Government (Medical Mnemonics Cut & Play Comic)\n\n56 illustrated medical mnemonic cards to master electrolyte and acid-base balance, the glomerular diseases, and acute and chronic kidney failure.\n\nThe potassium comes back at 7.2 and the ECG is already widening, the T waves peaked, the rhythm getting slow and ugly. The kidney that was supposed to bleed that potassium off into the urine stopped negotiating hours ago, and nobody noticed, because the kidney never screams. It just quietly stops governing, and then the heart sends the invoice.\n\nYou were taught the kidney is a filter. It is the most politically charged organ in the body. It sets your blood pressure, rations your salt and water, holds the line on acid and base, signs off on new red cells, and decides how much calcium your bones are allowed to keep. Nephrology is hard because you are not learning one organ, you are learning the cabinet that runs every other one. MedKayfab Nephrology translates that quiet government of the nephron into a narrative wrestling match. You stop reciting the tubule diagram and start performing what each segment is actually trying to control, and what breaks downstream when it loses the argument.\n\nYOU'LL GET\n- 56 illustrated MedKayfab cards (14pp, 4 cards/page)\n- Full MedKayfab Freestyle rules (Quest Die mechanics)\n- S-Tier characters like Potassium-Perry and ANCA-Vasculitis-Vince\n- FrizzleBob's Golden Rule, the synthesis card that ties volume, electrolytes, and acid-base back into one decision at the bedside\n- Free lifetime updates as guidelines evolve\n- CC BY-NC-SA 4.0 licence\n- PDF optimized for home printing (A4 / Letter)\n\nWhat's in the deck\nTwo characters carry the roster. Potassium-Perry is the electrolyte the failing kidney can no longer excrete, the one that climbs in silence and stops the heart before it bothers to cause a symptom, which is why he owns every renal emergency in the deck. ANCA-Vasculitis-Vince is the autoantibody that turns on the small vessels of the glomerulus and shreds filtration in days, the face of rapidly progressive glomerulonephritis and the reason a creatinine that doubles in a week is never something you sit on. Over them sits FrizzleBob's Golden Rule, the throughline card that refuses to let you treat a number in isolation and forces every move back through volume, potassium, and pH at once. The deck is sequenced the way the kidney actually fails you on the ward: filtration and homeostasis first, then the glomerular diseases, then the electrolyte and acid-base disorders, then acute and chronic failure, and finally dialysis and the transplant.\n\nHow it works\nEvery card is a cognitive anchor: the Character (the mnemonic), the Visual (the scene), the Stat Block (the numbers and red flags), the Lore (the clinical story), and the Quest (the reasoning challenge). The Mechanism Flash mode is the test. Say in one sentence, without looking, why this electrolyte or this antibody kills and what you reach for first, or the patient on the Stage tips into the rhythm you were trying to prevent.\n\nHonest cognitive load\nThis is a core systems deck, dense by design, built for preclinical students wiring up renal physiology and for clinical-years students and junior residents on internal medicine and nephrology rotations. It rewards a bit of physiology before you start, because half of nephrology is just homeostasis under fire. It pairs naturally with Physiology for the regulatory groundwork upstream, with Internal Medicine for the multimorbid cases where the kidney is one of three organs failing at once, and with Emergency Medicine for the hyperkalemia and acute kidney injury crises that arrive without an appointment.\n\nABOUT MEDKAYFAB\nMedKayfab is a narrative medical learning card game, 50 decks covering the full medical curriculum. Every card encodes a clinical mechanism as a character with a personality, a story, and a reasoning challenge. Built by a physician. Assembled with AI tools. Manually revised. Honest about its limitations. Free to use, share, and adapt under CC BY-NC-SA 4.0.\n\nPAY WHAT YOU WANT\nThis deck is Pay What You Want, including free. If you find it useful, a fair price is €5. Student on a budget? Enter €0, no questions asked. Want to support more decks? Anything above fair price is appreciated. Share freely, attribute honestly, never resell.\n\nDISCLAIMER\nMedKayfab is a learning companion, not a clinical reference. Content was created by a physician and reviewed to the best of our knowledge, but medicine evolves, guidelines change, and some mechanisms in here will be simplified or wrong. Always verify against current primary sources and clinical guidelines before applying anything to patient care. The Blödsinn! is the vehicle. The science is serious.\n\nStay fluffy. — Doc FrizzleBob",
+  "marketingEdition": "MED"
+}

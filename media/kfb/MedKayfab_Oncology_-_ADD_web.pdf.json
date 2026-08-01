@@ -1,0 +1,639 @@
+{
+ "sourceFile": "MedKayfab_Oncology - ADD web.pdf",
+ "deckTitle": "MedKayfab: Oncology Wrestling! — The Hall of Malignant Mirrors",
+ "deckType": "Medical education wrestling cards",
+ "bundleSuggestion": "TBD",
+ "pageCount": 16,
+ "analysisVersion": 1.0,
+ "generatedAt": "2026-06-20T00:00:00",
+ "savedAt": "2026-06-20T00:00:00",
+ "extractionTool": "cowork_task_v3",
+ "RAF": false,
+ "gradingMode": "educational",
+ "deckFunction": [
+  "educational",
+  "performative"
+ ],
+ "seriesId": "medkayfab",
+ "cards": [
+  {
+   "cardNumber": 1,
+   "cardName": "GORDON THE GORILLA (Self-Sufficiency)",
+   "grade": 2,
+   "power": "The Infinite Ego. Gordon screams at himself to grow, ignoring the body's \"Stop\" signals.",
+   "lore": "Mutations in EGFR or RAS keep the growth signal floored even when the key is out of the ignition. (Autocrine Loop / ERBB2 (HER2))",
+   "gradeReason": "Gorilla yelling at himself is vivid but the autocrine mechanism needs context to embody.",
+   "artworkPrompt": "Giant gorilla screaming into megaphone at himself. Style: comic card. Subject: self-stimulating cell signaling. Mood: manic."
+  },
+  {
+   "cardNumber": 2,
+   "cardName": "THE P53 POLICE BULLDOG (Tumor Suppressor)",
+   "grade": 1,
+   "power": "The Broken Badge. Normally stops the cycle or hits \"Self-Destruct\". When the badge breaks, anything goes.",
+   "lore": "\"The Guardian of the Genome.\" If P53 is down, the cell ignores the damage and keeps wrestling. (Li-Fraumeni Syndrome/Mutation)",
+   "gradeReason": "Broken badge cop who can't stop anyone — immediately performable chaos role.",
+   "artworkPrompt": "Bulldog cop with snapped badge letting chaos erupt behind him. Style: gritty wrestling card. Subject: failed tumor suppressor. Mood: catastrophic."
+  },
+  {
+   "cardNumber": 3,
+   "cardName": "ANGIOGENESIS ANNIE (The Road Builder)",
+   "grade": 2,
+   "power": "Illegal Infrastructure. Annie builds new blood vessels to bring snacks (O2/Glucose) to the tumor core.",
+   "lore": "Tumors can't grow past 2mm without Annie. Bevacizumab is the bulldozer that tears her roads down. (VEGF / Bevacizumab (The Roadblock))",
+   "gradeReason": "Snacks for the tumor is fun but building vessels requires oncology context to fully perform.",
+   "artworkPrompt": "Lioness construction worker welding blood vessel roads into tumor. Style: vivid card art. Subject: tumor angiogenesis. Mood: industrious chaos."
+  },
+  {
+   "cardNumber": 4,
+   "cardName": "TELOMERASE TERRY (The Eternal Wrestler)",
+   "grade": 1,
+   "power": "Immortal Ends. Terry puts caps back on his shoelaces (Chromosomes) so they never fray.",
+   "lore": "Normal cells have a Hayflick Limit. Terry ignores it. He doesn't age; he just grows. (TERT Promoter Mutations)",
+   "gradeReason": "Shoelaces = telomeres is a perfect analogy — you can perform immortality immediately.",
+   "artworkPrompt": "Turtle wrestler re-lacing infinite shoelaces mid-match. Style: wrestling card. Subject: telomere extension. Mood: eternally smug."
+  },
+  {
+   "cardNumber": 5,
+   "cardName": "METASTASIS MAX (The Wanderer)",
+   "grade": 1,
+   "power": "Basement Membrane Breach. Max dissolves the ropes and leaves the ring to invade the pit area.",
+   "lore": "EMT (Epithelial-Mesenchymal Transition). Max loses his anchors (Cadherins) and enters the bloodstream highway. (E-Cadherin / Snail & Twist)",
+   "gradeReason": "Leaving the ring to invade the crowd — wrestling metaphor maps perfectly onto metastasis.",
+   "artworkPrompt": "Cloaked figure cutting ring ropes and escaping into the audience. Style: dark wrestling card. Subject: metastatic escape. Mood: menacing."
+  },
+  {
+   "cardNumber": 6,
+   "cardName": "Rb THE GATEKEEPER (The G1/S Referee)",
+   "grade": 2,
+   "power": "The Open Gate. If phosphorylated, he lets the cell cycle start. If mutated, the gate is always open.",
+   "lore": "Master regulator of the G1 to S phase transition. (Retinoblastoma)",
+   "gradeReason": "Gatekeeper with a broken gate is clear but you need to know what's flooding through.",
+   "artworkPrompt": "Rhinoceros referee holding open a floodgate as cells stampede through. Style: wrestling card. Subject: cell cycle checkpoint failure. Mood: overwhelmed."
+  },
+  {
+   "cardNumber": 7,
+   "cardName": "BCL-2 BOB (The Anti-Death Shield)",
+   "grade": 1,
+   "power": "Apoptosis Block. He prevents the mitochondria from releasing the \"Apoptosis Grenade.\"",
+   "lore": "Overexpressed in Follicular Lymphoma. Cells that should die are kept artificially alive. (Overexpressed in t(14;18))",
+   "gradeReason": "Deflecting a death grenade is pure performance — you know exactly what to embody.",
+   "artworkPrompt": "Armadillo in shield armor deflecting grenades from a mitochondria bomb. Style: pop art card. Subject: apoptosis block. Mood: invincible."
+  },
+  {
+   "cardNumber": 8,
+   "cardName": "WARBURG WALLY (The Glycolysis Junkie)",
+   "grade": 2,
+   "power": "Aerobic Fermentation. Even with plenty of oxygen, Wally insists on fermenting his sugar.",
+   "lore": "This massive, inefficient glucose appetite makes tumors glow on PET scans. (High FDG Uptake (PET Scan))",
+   "gradeReason": "Insisting on fermenting when you don't have to is odd behavior needing biochemical context.",
+   "artworkPrompt": "Sloth fermenting sugar barrels surrounded by oxygen tanks he ignores. Style: surreal card. Subject: Warburg effect. Mood: stubbornly inefficient."
+  },
+  {
+   "cardNumber": 9,
+   "cardName": "PD-L1 PETER (The Invisibility Cloak)",
+   "grade": 1,
+   "power": "The \"Self\" Mask. Peter wears a mask that tells T-Cell Bouncers \"I belong here.\"",
+   "lore": "Checkpoint inhibitors rip this mask off so the immune system can attack. (Immune Checkpoint Target)",
+   "gradeReason": "Wearing a mask to fool T-cell bouncers — immediately playable as a sneaky infiltrator.",
+   "artworkPrompt": "Chameleon in disguise waving ID at nightclub T-cell bouncers. Style: sleek card art. Subject: immune evasion. Mood: coolly deceptive."
+  },
+  {
+   "cardNumber": 10,
+   "cardName": "RAS THE ROGUE (The Broken Switch)",
+   "grade": 1,
+   "power": "Unstoppable Relay. Once flipped to 'ON' by a growth factor, he stays there forever.",
+   "lore": "A major downstream signaling protein. If it can't turn off, the cell divides endlessly. (Permanent 'ON' State)",
+   "gradeReason": "Broken switch stuck ON — you can run this character as unstoppable momentum right now.",
+   "artworkPrompt": "Hyena with a jammed light switch permanently ON, sprinting endlessly. Style: kinetic wrestling card. Subject: constitutive RAS signaling. Mood: frenetic."
+  },
+  {
+   "cardNumber": 11,
+   "cardName": "MYC THE MEGAPHONE (The Amplifier)",
+   "grade": 2,
+   "power": "Deafening Roar. MYC amplifies every single growth signal into a catastrophic shockwave.",
+   "lore": "A transcription factor overdrive, famously driving Burkitt Lymphoma. (t(8;19) on card — likely should be t(8;14))",
+   "gradeReason": "Megaphone turning whispers into shockwaves is good but catastrophic amplification needs mechanism context.",
+   "artworkPrompt": "Baboon screaming into giant megaphone while cells explode outward. Style: kinetic card. Subject: MYC transcription overdrive. Mood: deafening."
+  },
+  {
+   "cardNumber": 12,
+   "cardName": "BRCA BRENDA (The DNA Repairwoman)",
+   "grade": 2,
+   "power": "Untied Mayhem. When Brenda is on strike (mutation), double-strand breaks go unfixed.",
+   "lore": "High risk for breast and ovarian cancer mayhem. (Double Strand Break Repair Failure)",
+   "gradeReason": "Repairwoman on strike is great framing — but DNA break consequences need cancer context to land.",
+   "artworkPrompt": "Female bird repairwoman holding picket sign while DNA strands snap apart. Style: dramatic card. Subject: BRCA mutation. Mood: defiant neglect."
+  },
+  {
+   "cardNumber": 13,
+   "cardName": "APC THE TRASH COMPACTOR",
+   "grade": 2,
+   "power": "Compactor Failure. Usually degrades Beta-Catenin. Without APC, it builds up.",
+   "lore": "Familial Adenomatous Polyposis (FAP) forces the colon to grow 1000s of polyps. (FAP / Beta-Catenin Buildup)",
+   "gradeReason": "Broken trash compactor causing buildup is logical but Beta-Catenin needs naming to perform.",
+   "artworkPrompt": "Wild boar compactor machine broken, garbage piling to ceiling. Style: industrial card. Subject: APC pathway failure. Mood: overwhelmed."
+  },
+  {
+   "cardNumber": 14,
+   "cardName": "VHL THE SNORKEL",
+   "grade": 1,
+   "power": "Phantom Suffocation. Normally detects oxygen. If mutated, the cell thinks it's suffocating.",
+   "lore": "The hypoxic panic summons Angiogenesis Annie to build massive vessels. (Renal Cell Ca)",
+   "gradeReason": "Snorkel that falsely cries drowning on dry land — vivid paradox, instantly performable panic.",
+   "artworkPrompt": "Elephant in snorkel mask gasping in air, screaming it's drowning on dry land. Style: absurdist card. Subject: VHL oxygen sensor failure. Mood: phantom panic."
+  },
+  {
+   "cardNumber": 15,
+   "cardName": "NF-1 THE BRAKEMAN",
+   "grade": 2,
+   "power": "The Snapped Reins. He normally keeps RAS in check.",
+   "lore": "Without her, nerves grow uncontrollably into tumors. (Neurofibromatosis Type 1) — pronoun inconsistency noted",
+   "gradeReason": "Brakeman with snapped reins is a good image but you need to know what's speeding away.",
+   "artworkPrompt": "Horse-drawn carriage with snapped reins careening off-road into tumors. Style: western card. Subject: NF1-RAS regulation failure. Mood: runaway."
+  },
+  {
+   "cardNumber": 16,
+   "cardName": "ALL-IN ALICE (Acute Lymphoblastic Leukemia)",
+   "grade": 1,
+   "power": "The Schoolyard Takeover. Alice fills the marrow with 'Blasts' until there's no room for normal blood.",
+   "lore": "Most common childhood cancer. Hides in the 'Sanctuaries' (CNS and Testes). (TdT+ / Child < 15yo / t(12;21) Good / t(9;22) Bad)",
+   "gradeReason": "Schoolyard Takeover with marrow as playground — instantly performable childhood bully archetype.",
+   "artworkPrompt": "Little girl in wrestling gear filling playground with blasts, no room for others. Style: vivid card. Subject: ALL marrow takeover. Mood: overwhelming."
+  },
+  {
+   "cardNumber": 17,
+   "cardName": "AML ARCHIE (Acute Myeloid Leukemia)",
+   "grade": 2,
+   "power": "The Needle Strike. Archie's Auer Rods trigger DIC.",
+   "lore": "APL is a bleeding emergency. Treat with ATRA (Vitamin A) to force blasts to grow up. (Auer Rods / MPO+ / t(15;17) APL)",
+   "gradeReason": "Needle Strike and Auer Rods are memorable but DIC consequence requires hematology context.",
+   "artworkPrompt": "Hedgehog warrior stabbing with needle auer rods, bleeding chaos everywhere. Style: gritty card. Subject: AML/APL emergency. Mood: hemorrhagic."
+  },
+  {
+   "cardNumber": 18,
+   "cardName": "CLL LARRY (Chronic Lymphocytic Leukemia)",
+   "grade": 1,
+   "power": "The Fragile Crowd. Larry lives forever but is easily crushed during a blood smear.",
+   "lore": "Elderly patients. \"Wait and Watch.\" Can transform into aggressive large B-cell lymphoma. (Smudge Cells CD5+)",
+   "gradeReason": "Immortal but crushed by a glass slide — the smudge cell paradox is immediately performable.",
+   "artworkPrompt": "Ancient gentleman surrounded by crowd that crumbles when touched by glass slide. Style: gentle card. Subject: CLL smudge cells. Mood: fragile eternity."
+  },
+  {
+   "cardNumber": 19,
+   "cardName": "CML CHARLIE (Chronic Myeloid Leukemia)",
+   "grade": 2,
+   "power": "The Tyrosine Rocket. Charlie is powered by a constitutively active fuse.",
+   "lore": "Treat with Imatinib (The Fuse-Cutter). High basophils, low LAP score. (Philadelphia Chromosome / t(9;22) / BCR-ABL)",
+   "gradeReason": "Rocket with stuck fuse is good but 'constitutively active' is jargon that slows the read.",
+   "artworkPrompt": "Cheetah on rocket with permanently lit fuse, BCR-ABL switch jammed ON. Style: explosive card. Subject: BCR-ABL kinase. Mood: unstoppable velocity."
+  },
+  {
+   "cardNumber": 20,
+   "cardName": "BURKITT'S BARRY (The Starry Night)",
+   "grade": 2,
+   "power": "Jawbreaker Blast. Extremely fast doubling time driven by MYC.",
+   "lore": "\"Starry Sky\" histology is caused by macrophages eating the massive debris field of dying cells. (t(8;14) / c-myc / EBV)",
+   "gradeReason": "Starry Sky histology is gorgeous but the doubling-time performance needs oncology framing.",
+   "artworkPrompt": "Pelican exploding jaw-first into star-field sky of dying cells. Style: cosmic card. Subject: Burkitt lymphoma starry sky. Mood: explosive speed."
+  },
+  {
+   "cardNumber": 21,
+   "cardName": "HODGKIN'S HARRY",
+   "grade": 2,
+   "power": "The Reactive Mob. He's a lonely malignant B-cell hiding in a massive crowd of reactive inflammation.",
+   "lore": "The tumor is mostly healthy cells; the Reed-Sternberg cells are rare giants. (Reed-Sternberg \"Owl Eyes\" / CD15+ / CD30+)",
+   "gradeReason": "Hiding in the crowd is conceptually elegant but Reed-Sternberg detail needs histology context.",
+   "artworkPrompt": "Tiny owl-eyed giant hiding among vast normal crowd, owl eyes glowing. Style: eerie card. Subject: Hodgkin lymphoma. Mood: hidden menace."
+  },
+  {
+   "cardNumber": 22,
+   "cardName": "FOLLICULAR FIONA",
+   "grade": 2,
+   "power": "Painless Fluctuation. Her nodes wax and wane over months without symptoms.",
+   "lore": "Driven entirely by the BCL-2 Anti-Death Shield. Hard to cure, very slow-moving. (t(14;18) / BCL-2 Overloader)",
+   "gradeReason": "Waxing and waning painlessly describes behavior well but the performance invitation is passive.",
+   "artworkPrompt": "Peacock whose feathers expand and shrink rhythmically in slow motion. Style: elegant card. Subject: follicular lymphoma. Mood: deceptively serene."
+  },
+  {
+   "cardNumber": 23,
+   "cardName": "MANTLE CELL MANNY",
+   "grade": 2,
+   "power": "Cell Cycle Smash. A very aggressive bouncer that overdrives the G1/S transition.",
+   "lore": "Poor prognosis, older males. Highly aggressive non-Hodgkin lymphoma. (t(11;14) / Cyclin D1 driver)",
+   "gradeReason": "Aggressive bouncer is wrestling-fit but the G1/S mechanism needs framing to perform.",
+   "artworkPrompt": "Rhinoceros nightclub bouncer kicking the cell cycle door off its hinges. Style: aggressive card. Subject: Mantle cell lymphoma. Mood: brutal."
+  },
+  {
+   "cardNumber": 24,
+   "cardName": "MARGINAL ZONE MIKE",
+   "grade": 1,
+   "power": "The Inflammatory Squatter. Mike only sets up shop where chronic inflammation has been burning for years.",
+   "lore": "Eradicating the H. pylori infection can sometimes cure the gastric MALToma entirely. (MALToma / Associated with Chronic Inflammation)",
+   "gradeReason": "Squatter who only moves into fire-damaged buildings — immediately evocative and role-playable.",
+   "artworkPrompt": "Squirrel moving furniture into a burning inflamed stomach-shaped building. Style: grimy card. Subject: MALToma. Mood: opportunistic."
+  },
+  {
+   "cardNumber": 25,
+   "cardName": "MULTIPLE MYELOMA MONTY (The Bone-Cracker)",
+   "grade": 2,
+   "power": "Osteolytic Sabotage. Dissolves the skeleton.",
+   "lore": "\"CRAB\": Calcium up, Renal failure, Anemia, Bone lesions. Light chains in urine. (M-Spike (IgG/IgA) / CRAB Symptoms)",
+   "gradeReason": "CRAB mnemonic is iconic but power text is a stub — 'Dissolves the skeleton' needs more.",
+   "artworkPrompt": "Hyena dissolving bone scaffolding while CRAB acronym letters rain down. Style: destructive card. Subject: multiple myeloma. Mood: relentless erosion."
+  },
+  {
+   "cardNumber": 26,
+   "cardName": "WALDENSTROM WALLY",
+   "grade": 2,
+   "power": "The Giant Antibody. Makes the blood thick like sludge.",
+   "lore": "Causes visual and bleeding issues. Crucially: No bone lesions! (IgM M-Spike / Hyperviscosity)",
+   "gradeReason": "Blood-thick-like-sludge is vivid but 'No bone lesions' is a negative rule, not an invitation.",
+   "artworkPrompt": "Sloth stirring vat of thick sludge-blood, skeleton untouched beside it. Style: viscous card. Subject: Waldenstrom hyperviscosity. Mood: slow suffocation."
+  },
+  {
+   "cardNumber": 27,
+   "cardName": "POLYCYTHEMIA PAUL",
+   "grade": 2,
+   "power": "Erythroid Overload. Paul makes far too many red blood cells.",
+   "lore": "Classic presentation: Pruritus (severe itching) after a hot shower. (JAK2 Mutation)",
+   "gradeReason": "Itching after a shower is a great mnemonic hook but overproduction mechanism is descriptive.",
+   "artworkPrompt": "Lobster overflowing red cells from factory, scratching furiously in shower. Style: vivid card. Subject: polycythemia vera. Mood: bloated urgency."
+  },
+  {
+   "cardNumber": 28,
+   "cardName": "ESSENTIAL TOBY (Thrombocythemia)",
+   "grade": 1,
+   "power": "The Clot-Bleed Paradox. Toby makes so many defective platelets you bleed and clot at the same time.",
+   "lore": "A disorder of megakaryocytes. Diagnosis of exclusion. (JAK2 / Massive Platelet Counts)",
+   "gradeReason": "Bleeding and clotting simultaneously is a perfect paradox — you can embody this contradiction instantly.",
+   "artworkPrompt": "Spider spinning bandages while simultaneously cutting them. Style: paradox card. Subject: essential thrombocythemia. Mood: chaotic self-contradiction."
+  },
+  {
+   "cardNumber": 29,
+   "cardName": "MYELOFIBROSIS MAX",
+   "grade": 2,
+   "power": "Fibrotic Eviction. Max replaces the marrow factory with useless scar tissue.",
+   "lore": "'Teardrop' RBCs happen because they have to squeeze out of the fibrotic marrow. (Teardrop RBCs / Bone Marrow turns to stone)",
+   "gradeReason": "Eviction from marrow is comprehensible but teardrop RBCs need visual context to become performance.",
+   "artworkPrompt": "Snail converting bone marrow factory into stone rubble, teardrop cells squeezing out. Style: industrial decay card. Subject: myelofibrosis. Mood: slow ruin."
+  },
+  {
+   "cardNumber": 30,
+   "cardName": "HAIRY CELL HARRY",
+   "grade": 2,
+   "power": "The Velvet Web. Harry gets tangled in the marrow and spleen.",
+   "lore": "Causes a 'dry tap' on marrow aspiration. Highly responsive to Cladribine. (TRAP Positive / Splenomegaly)",
+   "gradeReason": "Velvet web is atmospheric but the dry-tap clinical implication requires pathology knowledge.",
+   "artworkPrompt": "Spider tangled in its own velvet web inside a spleen. Style: moody card. Subject: hairy cell leukemia. Mood: trapped."
+  },
+  {
+   "cardNumber": 31,
+   "cardName": "SMALL-CELL SAM (The Neuroendocrine Ninja)",
+   "grade": 2,
+   "power": "Hormonal Sabotage. Sam spells that make too much water (SIADH) or look like a moon-face (Cushing).",
+   "lore": "Very aggressive, too small for surgery, but Sam hates Chemo/Radiation. (Central Lung / ACTH / ADH / Lambert-Eaton)",
+   "gradeReason": "Moon-face and SIADH are memorable but 'spells' phrasing reads awkward.",
+   "artworkPrompt": "Tiny ninja in lung launching hormonal grenades: moon face, water balloons. Style: stealth card. Subject: small cell lung cancer. Mood: covert mayhem."
+  },
+  {
+   "cardNumber": 32,
+   "cardName": "RENAL CELL REX (The Polycythemia King)",
+   "grade": 1,
+   "power": "The EPO Overdose. Rex makes too much Erythropoietin, turning blood into sludge.",
+   "lore": "Loves the renal vein. If he reaches the IVC, he climbs to the heart like a malignant ladder. (VHL Mutation / Clear Cell / t(3;?))",
+   "gradeReason": "'Climbs to the heart like a malignant ladder' — visceral, dramatic, immediately performable.",
+   "artworkPrompt": "Lion king climbing renal vein ladder into heart, blood sludge trail below. Style: dramatic card. Subject: renal cell carcinoma spread. Mood: relentless ascent."
+  },
+  {
+   "cardNumber": 33,
+   "cardName": "PANCREATIC PETE (The Silent Assassin)",
+   "grade": 2,
+   "power": "Trousseau's Sign. Pete makes blood clot in random places (Migratory Thrombophlebitis).",
+   "lore": "Usually found too late. If Pete is in the head of the pancreas, look for the 'Double Duct' sign. (CA 19-9 / Courvoisier's Law (Painless Jaundice))",
+   "gradeReason": "Silent assassin with random clots is striking but Trousseau's Sign needs clinical naming context.",
+   "artworkPrompt": "Shadowy figure in cloak placing random blood clots on unsuspecting victims. Style: noir card. Subject: pancreatic cancer clotting. Mood: sinister silence."
+  },
+  {
+   "cardNumber": 34,
+   "cardName": "SQUAMOUS SID",
+   "grade": 2,
+   "power": "Calcium Crush. Sid secretes fake Parathyroid Hormone, leaching calcium.",
+   "lore": "Causes severe Hypercalcemia (Stones, Moans, Groans). (PTH-P producer / Central lung cancer)",
+   "gradeReason": "Stones, Moans, Groans is legendary mnemonic but 'fake PTH' secretion needs biochemical setup.",
+   "artworkPrompt": "Bulldog in hard hat secreting calcium clouds from lung, kidney stones raining. Style: toxic card. Subject: squamous cell lung cancer. Mood: hypercalcemic chaos."
+  },
+  {
+   "cardNumber": 35,
+   "cardName": "ADENO ADDIE",
+   "grade": 3,
+   "power": "Glandular Architecture. Addie builds mucin-producing factories in the periphery.",
+   "lore": "The most common lung cancer in non-smokers. (Peripheral lung cancer / Non-smokers)",
+   "gradeReason": "Describes histology without giving you a role to perform — textbook entry, not wrestling card.",
+   "artworkPrompt": "Poodle building mucin factories in peripheral lung edges among non-smoker suburbia. Style: suburban card. Subject: adenocarcinoma. Mood: quiet danger."
+  },
+  {
+   "cardNumber": 36,
+   "cardName": "COLON CAL (The Apple-Core)",
+   "grade": 1,
+   "power": "The Stricture Choke. Left-sided lesions obstruct and cause 'pencil stools'.",
+   "lore": "Right-sided lesions bleed silently, causing iron-deficiency anemia. (Left-sided (Obstruction) vs. Right-sided (Bleeding))",
+   "gradeReason": "Apple-Core Stricture Choke with pencil stools is visceral, visual, and instantly performable.",
+   "artworkPrompt": "Apple-core shaped worm strangling colon, pencil-thin debris on left side. Style: grotesque card. Subject: colon cancer. Mood: slow strangulation."
+  },
+  {
+   "cardNumber": 37,
+   "cardName": "HEPATOCELLULAR HERB",
+   "grade": 2,
+   "power": "The Scar-Dweller. Herb sets up shop in livers destroyed by chronic Hep B/C or alcohol.",
+   "lore": "Skyrockets AFP. A fatal monster ambush; Spreads haematogenously. Loves hepatic vein. (Alpha-Fetoprotein (AFP) / Hepatitis B/C)",
+   "gradeReason": "Scar-dweller squatting in scarred liver is evocative but hepatic vein detail needs clinical framing.",
+   "artworkPrompt": "Monster nesting in scarred cirrhotic liver, AFP flag planted at hepatic vein. Style: horror card. Subject: hepatocellular carcinoma. Mood: ambush."
+  },
+  {
+   "cardNumber": 38,
+   "cardName": "GLIOBLASTOMA GUS (The Butterfly Glioma)",
+   "grade": 1,
+   "power": "Corpus Crossing. Gus ignores the brain's midline barrier, spreading wings of necrosis.",
+   "lore": "Histology shows cells lining up (palisading) around dead tissue. (Crosses Corpus Callosum / Pseudopalisading necrosis)",
+   "gradeReason": "Spreading wings of necrosis across the brain midline — stunning, dramatic, immediately performable.",
+   "artworkPrompt": "Death's-head moth spreading necrosis wings across corpus callosum in brain. Style: gothic card. Subject: GBM butterfly spread. Mood: spectacular destruction."
+  },
+  {
+   "cardNumber": 39,
+   "cardName": "TERATOMA TERRY (The 'Monster' Tumor)",
+   "grade": 1,
+   "power": "The Flesh Lottery. Terry spontaneously grows any tissue in the body.",
+   "lore": "If it's immature: it's malignant; if mature: generally benign (except in males). (3 Germ Layers)",
+   "gradeReason": "Flesh Lottery is immediately wild — you can perform 'I might grow teeth or hair anywhere.'",
+   "artworkPrompt": "Monster tumor sprouting teeth, hair, and eyes from lottery ticket. Style: body-horror card. Subject: teratoma. Mood: grotesque surprise."
+  },
+  {
+   "cardNumber": 40,
+   "cardName": "SEMINOMA SAM",
+   "grade": 2,
+   "power": "The Clear Clone. Sam builds uniform sheets of perfect fried-egg cells.",
+   "lore": "Excellent prognosis because Sam is highly susceptible to radiation. (Fried-egg cells / beta-ALP / Radiosensitive)",
+   "gradeReason": "Fried-egg cells is a great mnemonic but sheets of uniform clones is histology, not a wrestle move.",
+   "artworkPrompt": "Chicken in suit laying perfect fried-egg cells, radiation beam obliterating them. Style: cheerful card. Subject: seminoma. Mood: radiosensitive."
+  },
+  {
+   "cardNumber": 41,
+   "cardName": "CHORIOCARCINOMA CORY",
+   "grade": 1,
+   "power": "The Blood Cannon. Cory fires 'cannonball metastases' straight into the pulmonary blood stream.",
+   "lore": "Highly aggressive malignancy of trophoblastic tissue. (up B-HCG / Haematogenous Spread)",
+   "gradeReason": "Cannonball metastases into the lungs — explosive, dramatic, immediately performable firing motion.",
+   "artworkPrompt": "Kangaroo firing cannonballs labeled mets directly into pulmonary bloodstream. Style: explosive card. Subject: choriocarcinoma hematogenous spread. Mood: rapid fire."
+  },
+  {
+   "cardNumber": 42,
+   "cardName": "BRCA BRENDA'S OVARIAN COUSIN",
+   "grade": 2,
+   "power": "The Silent Swell. She fills the abdomen with ascites before anyone notices.",
+   "lore": "Psammoma bodies are laminated, calcified concretions seen on histology. (CA-125 / Serous Cystadenocarcinoma)",
+   "gradeReason": "Silent Swell filling the abdomen is strong imagery but psammoma bodies are for pathologists.",
+   "artworkPrompt": "Peacock silently flooding abdomen with fluid ascites before anyone notices. Style: silent card. Subject: ovarian cancer. Mood: invisible devastation."
+  },
+  {
+   "cardNumber": 43,
+   "cardName": "PHEOCHROMOCYTOMA PHIL (The 10% Tumor)",
+   "grade": 1,
+   "power": "The Catecholamine Storm. Phil dumps adrenaline, maxing out blood pressure.",
+   "lore": "The classic presentation: Pain, Perspiration, Palpitations, Pallor... (The 5 P's / Catecholamines)",
+   "gradeReason": "Catecholamine Storm with 5 P's panic — immediately playable as a terrified adrenaline overloader.",
+   "artworkPrompt": "Blowfish exploding adrenaline storm, sweating and palpitating at maximum pressure. Style: panic card. Subject: pheochromocytoma. Mood: adrenergic overdrive."
+  },
+  {
+   "cardNumber": 44,
+   "cardName": "GASTRIC GARY",
+   "grade": 2,
+   "power": "The Lymphatic Telegraph. Gary signals his presence in the stomach by enlarging distant, specific lymph nodes.",
+   "lore": "A supraclavicular node is a massive red flag for abdominal malignancy. (Virchow's Node / Sister Mary Joseph sign)",
+   "gradeReason": "Lymphatic Telegraph is clever but the distant node trick needs clinical anatomy context to perform.",
+   "artworkPrompt": "Vulture in stomach sending telegraph signal to supraclavicular lymph node outpost. Style: conspiratorial card. Subject: gastric cancer spread. Mood: covert signaling."
+  },
+  {
+   "cardNumber": 45,
+   "cardName": "MELANOMA MEL (The Evolving Leopard)",
+   "grade": 3,
+   "power": "The Deep Dive.",
+   "lore": "Asymmetry, Border, Color, Diameter, Evolving. (Bridges Solid to Pharma). (ABCDE / Breslow Depth)",
+   "gradeReason": "Power text is a stub. ABCDE listed passively with no role to play — textbook, not wrestling.",
+   "artworkPrompt": "Leopard evolving its spots in ABCDE patterns, depth ruler measuring skin layers. Style: clinical card. Subject: melanoma diagnosis. Mood: subtly mutating."
+  },
+  {
+   "cardNumber": 46,
+   "cardName": "CISPLATIN SID (The Platinum Hammer)",
+   "grade": 2,
+   "power": "DNA Cross-Linker. Sid hammers the DNA strands together so they can't unzip for replication.",
+   "lore": "He breaks the kidneys and makes you deaf. Give Amifostine to shield the kidneys. (Nephrotoxicity / Ototoxicity)",
+   "gradeReason": "Hammering DNA strands together is viscerally clear but cross-linker jargon slows the performance.",
+   "artworkPrompt": "Platinum hammer welding DNA strands together while kidneys crack and ears ring. Style: heavy metal card. Subject: cisplatin toxicity. Mood: devastating precision."
+  },
+  {
+   "cardNumber": 47,
+   "cardName": "DOXORUBICIN DOT (The Red Devil)",
+   "grade": 1,
+   "power": "The Heart-Breaker. Dot is beautiful but she creates free radicals that eat the heart muscle.",
+   "lore": "Use Dexrazoxane (The Shield) to prevent Dot from trashing the pump. (Cardiotoxicity / Dilated Cardiomyopathy)",
+   "gradeReason": "Beautiful Red Devil who eats hearts — a romantic villain persona you can embody immediately.",
+   "artworkPrompt": "Elegant red devil ant generating sparks that consume a heart muscle. Style: seductive horror card. Subject: doxorubicin cardiotoxicity. Mood: beautiful destruction."
+  },
+  {
+   "cardNumber": 48,
+   "cardName": "VINCRISTINE VINNY (The Nerve-Stripper)",
+   "grade": 2,
+   "power": "Spindle Sabotage. Vinny stops cell division at M-phase by freezing the pipes.",
+   "lore": "Side effect: 'Foot drop' and 'Glove-and-stocking' numbness. Don't let Vinny touch the CNS (Fatal if intrathecal). (Peripheral Neuropathy / Microtubule Inhibitor)",
+   "gradeReason": "Nerve-Stripper with frozen pipes is good but the fatal intrathecal danger needs more emphasis.",
+   "artworkPrompt": "Centipede freezing microtubule pipes, glove-and-stocking numbness spreading upward. Style: neuropathy card. Subject: vincristine toxicity. Mood: creeping paralysis."
+  },
+  {
+   "cardNumber": 49,
+   "cardName": "CYCLOPHOSPHAMIDE CY (The Bladder-Burner)",
+   "grade": 2,
+   "power": "The Alkylating Agent. Cy cross-links DNA but leaves a toxic trash called Acrolein in the bladder.",
+   "lore": "Always deploy Mesna to neutralize the Acrolein trash before the bladder starts bleeding. (Hemorrhagic Cystitis / Acrolein)",
+   "gradeReason": "Bladder-Burner leaving toxic trash is memorable — clinical Mesna rule makes this practically useful.",
+   "artworkPrompt": "Skunk cross-linking DNA while dumping acrolein trash in bladder corridor. Style: chemical card. Subject: cyclophosphamide cystitis. Mood: toxic aftermath."
+  },
+  {
+   "cardNumber": 50,
+   "cardName": "METHOTREXATE MATT (The Folate Thief)",
+   "grade": 2,
+   "power": "Synthesis Starvation. Matt steals the active folate needed to print new DNA.",
+   "lore": "Rescue the normal cells with Leucovorin (folinic acid bypass). (Inhibits Dihydrofolate Reductase)",
+   "gradeReason": "Folate Thief starving the DNA printer is clear — Leucovorin rescue is an essential clinical pearl.",
+   "artworkPrompt": "Crow stealing folate molecules from DNA printer, Leucovorin rescue team arriving. Style: heist card. Subject: methotrexate mechanism. Mood: synthesis breakdown."
+  },
+  {
+   "cardNumber": 51,
+   "cardName": "5-FU FRED (The Pyrimidine Pirate)",
+   "grade": 2,
+   "power": "The Fake Nucleotide. Fred jams the DNA printer permanently.",
+   "lore": "Classic side effect is Hand-foot syndrome. (Inhibits Thymidylate Synthase)",
+   "gradeReason": "Fake nucleotide jamming the printer is simple and clear — hand-foot lore is clinically sticky.",
+   "artworkPrompt": "Pirate inserting counterfeit pyrimidine into DNA printer, hands and feet blistering. Style: piracy card. Subject: 5-FU mechanism. Mood: irreversible sabotage."
+  },
+  {
+   "cardNumber": 52,
+   "cardName": "IMATINIB IZZY",
+   "grade": 2,
+   "power": "Targeted Neutralization. Izzy shuts down the specific mutant tyrosine kinase.",
+   "lore": "Targeted therapy for CML. Turned a fatal disease into a manageable one. (The BCR-ABL Fuse-Cutter)",
+   "gradeReason": "Fuse-Cutter title is the best image here but 'targeted neutralization' undersells this revolution.",
+   "artworkPrompt": "Precise robot cutting BCR-ABL fuse with surgical scissors, CML fire extinguished. Style: precision card. Subject: imatinib targeted therapy. Mood: controlled triumph."
+  },
+  {
+   "cardNumber": 53,
+   "cardName": "TRASTUZUMAB TRICIA (Herceptin)",
+   "grade": 2,
+   "power": "Receptor Blockade. Tricia physically blocks the overexpressed HER2 growth receptors.",
+   "lore": "Watch her: she's cardiotoxic too! (The HER2 Neutralizer)",
+   "gradeReason": "HER2 blocker is clear but the lore is criminally short — cardiotoxicity deserves more than one sentence.",
+   "artworkPrompt": "Swan blocking HER2 megaphone receptors with wings while heart cracks behind her. Style: elegant card. Subject: trastuzumab cardiotoxicity. Mood: targeted but dangerous."
+  },
+  {
+   "cardNumber": 54,
+   "cardName": "PEMBROLIZUMAB PENNY (The Checkpoint Sniper)",
+   "grade": 1,
+   "power": "The Cloak Ripper. Penny rips the \"Invisibility Cloak\" off so the T-cells can attack.",
+   "lore": "Unleashes the immune system, but can cause severe autoimmune toxicities. (PD-1 Inhibitor)",
+   "gradeReason": "Checkpoint Sniper ripping the Invisibility Cloak — you can perform this unmasking immediately.",
+   "artworkPrompt": "Sniper eagle tearing invisibility cloak off tumor cells, T-cell army charging. Style: action card. Subject: pembrolizumab checkpoint. Mood: unmasked attack."
+  },
+  {
+   "cardNumber": 55,
+   "cardName": "RITUXIMAB RICHIE (The CD20 Eraser)",
+   "grade": 2,
+   "power": "The B-Cell Eraser. Richie targets the CD20 antigen, marking every B-cell for destruction.",
+   "lore": "Watch for PML (JC virus reactivation) due to profound immunosuppression. (Wipes out the B-cell population)",
+   "gradeReason": "B-Cell Eraser is clear and targeted — PML risk is the critical clinical safety pearl.",
+   "artworkPrompt": "Raccoon with giant eraser wiping out B-cell population, JC virus lurking in shadow. Style: clean card. Subject: rituximab immunosuppression. Mood: thorough elimination."
+  },
+  {
+   "cardNumber": 56,
+   "cardName": "BLEOMYCIN BEN (The Lung Scar-er)",
+   "grade": 2,
+   "power": "Oxidative Shredding. Ben generates free radicals that shatter DNA into pieces.",
+   "lore": "Causes devastating, irreversible pulmonary fibrosis. (Pulmonary Fibrosis)",
+   "gradeReason": "Lung Scar-er is a great name but oxidative shredding is jargon before the image lands.",
+   "artworkPrompt": "Dragon shredding DNA with oxidative fire, leaving lung scar tissue behind. Style: fibrotic card. Subject: bleomycin pulmonary toxicity. Mood: irreversible burning."
+  },
+  {
+   "cardNumber": 57,
+   "cardName": "TAMOXIFEN TAMMY (The Estrogen Switch)",
+   "grade": 1,
+   "power": "The Tissue Toggle. Tammy blocks estrogen in the breast, but acts like super-estrogen in the bone and uterus.",
+   "lore": "Risk of endometrial cancer! (Antagonist (Breast) / Agonist (Bone/Uterus))",
+   "gradeReason": "Works opposite ways in different tissues — the toggle paradox is immediately performable and memorable.",
+   "artworkPrompt": "Flamingo blocking breast estrogen door while opening uterus-estrogen vault simultaneously. Style: toggle card. Subject: tamoxifen SERM effect. Mood: paradoxical."
+  },
+  {
+   "cardNumber": 58,
+   "cardName": "ANASTROZOLE ANA (The Aromatase Stopper)",
+   "grade": 2,
+   "power": "The Peripheral Drought. Ana stops aromatase from making estrogen outside the ovaries.",
+   "lore": "Only works in post-menopausal women. (Blocks peripheral estrogen production)",
+   "gradeReason": "Peripheral Drought is a nice image but post-menopausal specificity is key context to perform.",
+   "artworkPrompt": "Woodpecker blocking peripheral aromatase factories, estrogen rivers drying up. Style: drought card. Subject: aromatase inhibition. Mood: desolate precision."
+  },
+  {
+   "cardNumber": 59,
+   "cardName": "ETOPOSIDE ED (The Topo-II Tangler)",
+   "grade": 2,
+   "power": "The Untwist Snap. Ed makes the DNA strands get stuck when they try to untwist.",
+   "lore": "The tension builds until the DNA completely shatters. (DNA supercoiling blocker)",
+   "gradeReason": "DNA strands stuck mid-untwist is a clear physical metaphor — the snap payoff is satisfying.",
+   "artworkPrompt": "Snake coiling around DNA helix preventing untwisting, strands finally shattering. Style: tense card. Subject: etoposide topo-II inhibition. Mood: coiled destruction."
+  },
+  {
+   "cardNumber": 60,
+   "cardName": "THE ONCOLOGY ATTENDING (Master Synthesis)",
+   "grade": 1,
+   "power": "The Final Word.",
+   "lore": "\"Stage it, grade it, name the mutation, and don't kill the patient with the chemo. Stay fluffy — and always double-check the labs.\" (Stage > Grade)",
+   "gradeReason": "FrizzleBob closing the deck in character — meta-boss role you can embody immediately at any table.",
+   "artworkPrompt": "Rabbit doctor in white coat with checklist: Stage, Grade, Mutation, Chemo. Style: authoritative card. Subject: oncology synthesis. Mood: commanding wisdom."
+  }
+ ],
+ "cardCount": 60,
+ "gradeDistribution": {
+  "G1": 21,
+  "G2": 37,
+  "G3": 2
+ },
+ "overallScore": 8,
+ "verdict": "60 cards that wrestle oncology into your brain stem — tumor suppressors, blood disorders, pharma agents, and immunotherapy all in character and gunning for performance. BCL-2 Bob deflecting apoptosis grenades, PD-L1 Peter hiding behind his immune mask, and The Oncology Attending closing the show with Stay Fluffy: this deck knows exactly what it's doing. Two real problems: Melanoma Mel's power text is a stub — 'The Deep Dive' with zero follow-through — and Adeno Addie describes glandular architecture when she should be building it. Minor naming collision between Warburg Wally (card 8) and Waldenstrom Wally (card 26) risks student confusion. Also: MYC card labels t(8;19) — should be t(8;14). Table-ready? Yes — with three quick fixes.",
+ "blurb": "60 personified cancer characters from BCL-2 Bob's apoptosis grenade to Pembrolizumab Penny's cloak-ripping sniper attack. For med students who want the mechanism and the wrestling match.",
+ "viralScore": 7,
+ "qa": {
+  "readability": 8,
+  "artworkConsistency": 9,
+  "overall": 8
+ },
+ "coverQA": {
+  "coverVisual": "4 — FrizzleBob in lab coat with paintbrush and card fan, strong brand presence",
+  "coverTitle": "4 — 'MedKayfab: Oncology Wrestling!' is punchy and unmistakable",
+  "coverVibeMatch": "5 — 'BLOEDSINN! Stay fluffy!' and the rabbit MC perfectly match the deck's voice",
+  "coverOriginality": "3 — FrizzleBob-plus-domain formula is consistent with the series but not surprising",
+  "coverViral": "3 — Fun but doesn't punch through to TikTok-ready visual hook",
+  "coverScore": 3.8,
+  "coverNote": "Strong series identity, immediately legible as MedKayfab. 'The Hall of Malignant Mirrors' subtitle is the deck's best line and should be bigger on the cover. The rabbit-with-paintbrush-and-cards composition works but won't stop a scroll."
+ },
+ "coverScore": 3.8,
+ "fontArtifactCount": 0,
+ "notes": "Image-based PDF (no text layer). 16 pages: 1 cover + 15 card pages x 4 = 60 cards. 11 named rounds covering molecular oncology, hematology, lymphoma, solid tumors, and chemo pharmacology. ERRORS NOTED: MYC card lists t(8;19) — should be t(8;14). NF-1 Brakeman uses pronoun 'her' inconsistently with male character. Dual Wally naming: Warburg Wally (card 8) vs Waldenstrom Wally (card 26) — could confuse students.",
+ "topCards": [
+  "PEMBROLIZUMAB PENNY (The Checkpoint Sniper)",
+  "BCL-2 BOB (The Anti-Death Shield)",
+  "GLIOBLASTOMA GUS (The Butterfly Glioma)",
+  "THE P53 POLICE BULLDOG (Tumor Suppressor)",
+  "THE ONCOLOGY ATTENDING (Master Synthesis)"
+ ],
+ "worstCards": [
+  "MELANOMA MEL (The Evolving Leopard)",
+  "ADENO ADDIE"
+ ],
+ "todos": {
+  "urgent": [
+   "Fix Melanoma Mel power text — 'The Deep Dive' is a stub, needs a full sentence",
+   "Correct MYC card translocation: t(8;19) to t(8;14)",
+   "Disambiguate dual Wally naming: Warburg Wally (card 8) vs Waldenstrom Wally (card 26)"
+  ],
+  "quickWins": [
+   "Expand Adeno Addie power text with an invitational action verb, not just architecture description",
+   "Fix NF-1 Brakeman pronoun: 'Without her' to 'Without him'",
+   "Expand Trastuzumab Tricia lore — one sentence on cardiotoxicity is not enough"
+  ],
+  "niceToHave": [
+   "Consider splitting 11-round structure into two decks (molecular + clinical) for easier table use",
+   "Add Pancreatic Pete's double-duct sign to power text for more clinical punch",
+   "Add RAF dice boxes if deck is used in live play"
+  ]
+ },
+ "hashtags": [
+  "#MedKayfab",
+  "#OncologyWrestling",
+  "#Kayfabizarro",
+  "#MedicalEducation",
+  "#CancerBiology",
+  "#PharmacologyFun",
+  "#FrizzleBob",
+  "#MedStudents"
+ ],
+ "genre": "medical",
+ "bundle": "EDUCATION",
+ "exhibitions": [
+  "classroom",
+  "workshop"
+ ],
+ "channels": [
+  "Gumroad",
+  "TikTok",
+  "Substack",
+  "Instagram"
+ ],
+ "marketingText": "MedKayfab: ONCOLOGY – The Hall of Malignant Mirrors (Medical Mnemonics Cut & Play Comic)\n\n60 illustrated medical mnemonic cards to master the hallmarks of cancer, the driver mutations behind them, and the targeted drugs built to switch each one off.\n\nCancer is not a monster that breaks in from outside. It is one of your own cells that quietly stopped obeying the rules: it kept the growth signal floored, disabled its own self-destruct, built private supply roads for oxygen, and learned to hide from the immune system. Every tumour is the same short list of broken rules, performed in a different order. Learn the list once and the entire field stops being a thousand facts and becomes a handful of moves.\n\nMedKayfab Oncology turns that list of broken rules into a roster of wrestlers, each hallmark, mutation, and drug wearing a face and a motive. You stop reciting the hallmarks of cancer and start watching them grapple for control of the cell.\n\nYOU'LL GET\n- 60 illustrated MedKayfab cards (16pp, 4 cards/page)\n- Full MedKayfab Freestyle rules (including the Quest Die mechanics)\n- S-Tier characters like Pembrolizumab Penny, BCL-2 Bob, and the P53 Police Bulldog\n- Free lifetime updates as the targeted-therapy landscape shifts\n- CC BY-NC-SA 4.0 licence, print, share, and adapt freely\n- PDF optimized for home printing (A4 / Letter)\n\nWhat's in the deck\nThis deck personifies the molecular logic of malignancy across eleven rounds, from the first broken signal to the drug that finally answers it. You will meet BCL-2 Bob, the anti-death shield who clamps the mitochondria shut so cells that should die keep wrestling instead, and Pembrolizumab Penny, the checkpoint sniper who rips the invisibility cloak off the tumour so the T-cells can finally see it. Glioblastoma Gus crosses the brain's midline and spreads wings of necrosis where no tumour should reach, while the P53 Police Bulldog stands at the cell cycle with a snapped badge, the genome's guardian who can no longer stop anyone. The roster runs from molecular oncology through lymphoma and solid tumours all the way to the chemotherapy that fights back.\n\nHow it works\nEvery card is a cognitive anchor built for high-stress retrieval. You have the Character (the mnemonic), the Visual (the scene), the Stat Block (the marker, the mutation, the staging), the Lore (the clinical story), and the Quest (the reasoning challenge). The Mechanism Flash mode is where it bites: if you cannot explain how the cell broke that one rule in a single sentence without looking, the case on the Stage gets away from you.\n\nHonest cognitive load\nThis is dense, mechanism-first material, best suited to medical students moving from preclinical pathology into the clinical years and to residents in oncology and internal medicine who want the why under the protocol. It pairs naturally with Hematology for the leukaemia and lymphoma overlap that BCL-2 Bob lives in, with Pathology for the cell-death and metastasis machinery, and with Essential Pharmacology for the drug cards that take the villains down.\n\nABOUT MEDKAYFAB\nMedKayfab is a narrative medical learning card game, 50 decks covering the full medical curriculum. Every card encodes a clinical mechanism as a character with a personality, a story, and a reasoning challenge. Built by a physician. Assembled with AI tools. Manually revised. Honest about its limitations. Free to use, share, and adapt under CC BY-NC-SA 4.0.\n\nPAY WHAT YOU WANT\nThis deck is Pay What You Want, including free.\nIf you find it useful: a fair price is €5. If you're a student on a budget: enter €0. No questions asked. If you want to support more decks: anything above fair price is appreciated.\nCC BY-NC-SA 4.0, share freely, attribute honestly, never resell.\n\nDISCLAIMER\nMedKayfab is a learning companion, not a clinical reference. Content was created by a physician and reviewed to the best of our knowledge, but medicine evolves, guidelines change, and some mechanisms in here will be simplified or wrong. Always verify against current primary sources and clinical guidelines before applying anything to patient care. The Blödsinn! is the vehicle. The science is serious.\n\nStay fluffy. — Doc FrizzleBob",
+ "marketingEdition": "MED"
+}

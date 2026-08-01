@@ -1,0 +1,594 @@
+{
+  "sourceFile": "MedKayfab_Pediatrics - ADD web.pdf",
+  "deckTitle": "Pediatrics: The Growing Gauntlet",
+  "deckType": "Medical Education Card Deck",
+  "bundleSuggestion": "TBD",
+  "pageCount": 15,
+  "analysisVersion": 1.0,
+  "generatedAt": "2026-06-20T03:10:00",
+  "savedAt": "2026-06-20T03:35:00",
+  "extractionTool": "cowork_task_v3",
+  "RAF": false,
+  "gradingMode": "educational",
+  "deckFunction": [
+    "educational"
+  ],
+  "seriesId": "medkayfab",
+  "cards": [
+    {
+      "cardNumber": 1,
+      "cardName": "Apgar-the-Scribe (The First Score)",
+      "grade": 2,
+      "power": "The Welcome-Check: Judges the Newborn Knight at 1 and 5 minutes for Resuscitation-Rescue.",
+      "lore": "Score <7 is a call for backup. Reports only on the Transition-Triumph from the womb.",
+      "gradeReason": "Clear role and timing, but score thresholds need context to activate urgency.",
+      "artworkPrompt": "Style: FrizzleBob cartoon. Subject: owl scribe scoring newborn wrestler. Mood: tense precision."
+    },
+    {
+      "cardNumber": 2,
+      "cardName": "Surfactant-the-Slippery (RDS)",
+      "grade": 2,
+      "power": "The Anti-Collapse: Reduces tension in Alveolar-Arenas, keeping them open.",
+      "lore": "Without it, lungs turn to Stiff Stone (Hyaline Membrane). Give Steroid Stella to mom.",
+      "gradeReason": "Anti-Collapse is vivid; works at table but RDS backstory needs framing.",
+      "artworkPrompt": "Style: FrizzleBob cartoon. Subject: slippery frog spraying alveoli open. Mood: breathless urgency."
+    },
+    {
+      "cardNumber": 3,
+      "cardName": "Bilirubin-the-Yellow (Jaundice)",
+      "grade": 1,
+      "power": "The Skin-Stainer: Liver Factory is too slow or Red-Cell-Inventory breaks too fast.",
+      "lore": "Yellow-Mist crosses the blood-brain barrier into the Basal-Ganglia-Bunker (Kernicterus). Blue light fixes it.",
+      "gradeReason": "Yellow-Mist crossing into the Bunker is an immediate image — blue light fix is a perfect punchline.",
+      "artworkPrompt": "Style: FrizzleBob cartoon. Subject: glowing yellow baby under blue UV lamp. Mood: toxic and cured."
+    },
+    {
+      "cardNumber": 4,
+      "cardName": "Duct-the-Diverter (PDA)",
+      "grade": 2,
+      "power": "The Fetal-Shortcut: Bypasses lungs in the womb, must Snap-Shut after the first breath.",
+      "lore": "Use Indo-Lock to close, or Prostin-Plug to keep open for Cyano-Secrets.",
+      "gradeReason": "Fetal shortcut is clear; Indo vs. Prostin logic requires clinical context to perform.",
+      "artworkPrompt": "Style: FrizzleBob cartoon. Subject: pipe-diverter badger blocking lung bypass valve. Mood: mechanical urgency."
+    },
+    {
+      "cardNumber": 5,
+      "cardName": "VSD-the-Vortex (Ventricular Septal Defect)",
+      "grade": 2,
+      "power": "The Wall-Leak: Oxygenated blood spills back into the Lung-Pump.",
+      "lore": "Most common defect. Pressure rises until the Shunt-Flips to Eisenmenger-the-End-Game.",
+      "gradeReason": "Wall-Leak lands; Eisenmenger endgame adds stakes. Needs cardiac anatomy as scaffold.",
+      "artworkPrompt": "Style: FrizzleBob cartoon. Subject: vortex tearing hole in heart wall. Mood: relentless leakage."
+    },
+    {
+      "cardNumber": 6,
+      "cardName": "Tetralogy-the-Tet (Cyanotic Heart)",
+      "grade": 1,
+      "power": "The Blue-Spell: Crying makes them turn blue as blood bypasses lungs.",
+      "lore": "The Squat-Move increases systemic resistance, forcing blood back to lungs.",
+      "gradeReason": "Crying-goes-blue plus the instinctive squat-fix is unforgettable — no explanation needed.",
+      "artworkPrompt": "Style: FrizzleBob cartoon. Subject: blue toddler wrestler squatting for oxygen. Mood: dramatic and instinctive."
+    },
+    {
+      "cardNumber": 7,
+      "cardName": "Coarct-the-Kink (Aortic Coarctation)",
+      "grade": 2,
+      "power": "The Pressure-Split: Narrowing in the Main-Highway stops flow to Lower-Limb-Lands.",
+      "lore": "Turner-the-Kink association. Heart pumps like a maniac to get past the Kink.",
+      "gradeReason": "Pressure split is immediate; Turner association and maniac pump add good clinical hooks.",
+      "artworkPrompt": "Style: FrizzleBob cartoon. Subject: giraffe with kinked aorta highway. Mood: strained pumping."
+    },
+    {
+      "cardNumber": 8,
+      "cardName": "TGA-the-Switch (Transposition)",
+      "grade": 1,
+      "power": "The Parallel-Paradox: Lungs and body are in two separate circles.",
+      "lore": "Lethal without a Mixing-Hole. A Keep-It-Open Emergency for Duct-the-Diverter.",
+      "gradeReason": "Two-circles-no-mixing is the most terrifying concept in CHD — immediate, mortal, unforgettable.",
+      "artworkPrompt": "Style: FrizzleBob cartoon. Subject: infinity loop with separated lung and body circuits. Mood: lethal paradox."
+    },
+    {
+      "cardNumber": 9,
+      "cardName": "RSV-the-Wheezer (Bronchiolitis)",
+      "grade": 2,
+      "power": "The Mucus-Plugger: Inflames tunnels, making every breath a struggle.",
+      "lore": "Not a Pneumonia, a tunnel blockage. Suction and hydration only.",
+      "gradeReason": "Mucus-Plugger is vivid; the treatment rule (suction only, no antibiotics) is the real punch.",
+      "artworkPrompt": "Style: FrizzleBob cartoon. Subject: green mucus monster plugging bronchiole tunnels. Mood: suffocating winter."
+    },
+    {
+      "cardNumber": 10,
+      "cardName": "Croup-the-Barker (Laryngotracheobronchitis)",
+      "grade": 2,
+      "power": "The Subglottic-Squeeze: Narrows the pipe below Vocal-Vibrators (Stridor-Whistle).",
+      "lore": "Loves cold night air. Dexamethasone-Dot (Steroids) to calm the squeeze.",
+      "gradeReason": "Barking seal name does the heavy lifting; cold night air trigger is clinically crisp.",
+      "artworkPrompt": "Style: FrizzleBob cartoon. Subject: barking dog wrestler at midnight, steeple-shaped throat. Mood: strident alarm."
+    },
+    {
+      "cardNumber": 11,
+      "cardName": "Pertussis-the-Whoop (Whooping Cough)",
+      "grade": 2,
+      "power": "The Machine-Gun-Cough: Violent fits ending in a gasping, high-pitched whoop.",
+      "lore": "Bordetella paralyzes the Cilia-Cleaners. Looking worse in place.",
+      "gradeReason": "Machine-Gun-Cough is onomatopoeic gold; Bordetella-cilia mechanism needs one more word to sing.",
+      "artworkPrompt": "Style: FrizzleBob cartoon. Subject: hyena wrestler coughing machine-gun bursts. Mood: relentless and gasping."
+    },
+    {
+      "cardNumber": 12,
+      "cardName": "Kawasaki-the-King (Vasculitis)",
+      "grade": 1,
+      "power": "The Heart-Conquer: Coronary Inflames Heart-Pipes into Aneurysm-Balloons.",
+      "lore": "Needs Aspirin-the-Shield. IVIG-the-Shield. The ONE time we give kids aspirin!",
+      "gradeReason": "CRASH acronym + the forbidden-aspirin reversal is a teaching moment that plays instantly at every table.",
+      "artworkPrompt": "Style: FrizzleBob cartoon. Subject: lion king with coronary balloon aneurysms crown. Mood: regal and dangerous."
+    },
+    {
+      "cardNumber": 13,
+      "cardName": "Pyloric-the-Projector (Stenosis)",
+      "grade": 1,
+      "power": "The Muscle-Wall: Overgrown muscle blocks all Milk-Traffic.",
+      "lore": "Causes Hypochloremic Alkalosis. Fix Salt-and-Acid-Stats before the Blade-Brigade cuts the muscle.",
+      "gradeReason": "Projectile vomiting + palpable olive = instant clinical picture; the metabolic fix before surgery is the right lesson.",
+      "artworkPrompt": "Style: FrizzleBob cartoon. Subject: raccoon wrestler projecting milk across the ring. Mood: hungry and relentless."
+    },
+    {
+      "cardNumber": 14,
+      "cardName": "Intussuscept-the-Telescope",
+      "grade": 1,
+      "power": "The Slide-In: Bowel telescopes, cutting off Blood-Supply-Road.",
+      "lore": "Sudden screaming pain. The Air-Enema-Push blows the telescope back out.",
+      "gradeReason": "Screaming baby + currant jelly + air enema fix is a three-beat clinical story that locks in.",
+      "artworkPrompt": "Style: FrizzleBob cartoon. Subject: telescope-bowel snake sliding into itself. Mood: sudden screaming emergency."
+    },
+    {
+      "cardNumber": 15,
+      "cardName": "Hirschsprung-the-Static (Megacolon)",
+      "grade": 2,
+      "power": "The Nerve-Gap: Missing Neural-Drivers, stays static and never squeezes.",
+      "lore": "Everything upstream swells into a Mega-Colon.",
+      "gradeReason": "Nerve-Gap is mechanically clear; Mega-Colon upstream swelling is vivid but lore is thin.",
+      "artworkPrompt": "Style: FrizzleBob cartoon. Subject: ring-tailed lemur inflating into megacolon balloon. Mood: frozen and swelling."
+    },
+    {
+      "cardNumber": 16,
+      "cardName": "Meckel-the-Mimic (Diverticulum)",
+      "grade": 2,
+      "power": "The Hidden-Bleeder: Leftover pouch with Stomach-Acid-Cells burns the bowel.",
+      "lore": "Diagnosed by Meckel-Scan (Technecium-99m) to find the acid cells.",
+      "gradeReason": "Hidden-Bleeder with acid-burning pouch is vivid; Rule of 2s (stat block) carries the mnemonic weight.",
+      "artworkPrompt": "Style: FrizzleBob cartoon. Subject: kangaroo pouch hiding acid vial, painless bleeding trail. Mood: sneaky and burning."
+    },
+    {
+      "cardNumber": 17,
+      "cardName": "Milestone-Molly (The Tracker)",
+      "grade": 2,
+      "power": "The Growth-Gage: Tracks the Skill-Inventory.",
+      "lore": "Loss of a milestone is a Red-Flag-Emergency (Regression-Riot).",
+      "gradeReason": "Regression-Riot is a sharp lore beat; the tracker role is clear but not yet performative.",
+      "artworkPrompt": "Style: FrizzleBob cartoon. Subject: gazelle leaping milestone stones with timer. Mood: developmental momentum."
+    },
+    {
+      "cardNumber": 18,
+      "cardName": "Autism-the-Alchemist",
+      "grade": 2,
+      "power": "The Different-Frequency: Processes the world through a unique filter, missing Social-Signal-Pings.",
+      "lore": "Early intervention is the Transmuter via Speech-Scripts and Social-Scripts.",
+      "gradeReason": "Different-Frequency is respectful and accurate; lacks a dramatic hook to become G1.",
+      "artworkPrompt": "Style: FrizzleBob cartoon. Subject: owl alchemist processing signals on unique frequency. Mood: focused and different."
+    },
+    {
+      "cardNumber": 19,
+      "cardName": "ADHD-the-Impulse (Alex)",
+      "grade": 2,
+      "power": "The Squirrel-Chase: A hundred drones buzzing in the ring block focus.",
+      "lore": "Low Dopamine-Dust. Stimulant-Steve helps turn the drones off.",
+      "gradeReason": "Squirrel-Chase is the best meme in the neurodevelopment section; Stimulant-Steve is a clean fix.",
+      "artworkPrompt": "Style: FrizzleBob cartoon. Subject: squirrel wrestler chasing a hundred drones at once. Mood: chaotic kinetic."
+    },
+    {
+      "cardNumber": 20,
+      "cardName": "Failure-the-Thrive (FTT)",
+      "grade": 2,
+      "power": "The Energy-Drain: Not getting enough Fuel-Tokens or burning them too fast.",
+      "lore": "Organic vs Non-organic. The Growth-Chart is the first witness.",
+      "gradeReason": "Energy-Drain is clean; Growth-Chart-as-witness is the key clinical move.",
+      "artworkPrompt": "Style: FrizzleBob cartoon. Subject: tiny baby falling through percentile lines. Mood: worried and diminishing."
+    },
+    {
+      "cardNumber": 21,
+      "cardName": "Febrile-the-Flash (Seizure)",
+      "grade": 1,
+      "power": "The Temperature-Short: Rapid heat rise causes a brain Glitch.",
+      "lore": "Benign but scary. Just a System-Reset, does not damage the brain.",
+      "gradeReason": "System-Reset is the reassurance every panicking parent and student needs — immediate relief, no setup required.",
+      "artworkPrompt": "Style: FrizzleBob cartoon. Subject: dalmatian wrestler short-circuiting from fever thermometer. Mood: terrifying but benign."
+    },
+    {
+      "cardNumber": 22,
+      "cardName": "Epiglottis-Emma (The Choke-Point)",
+      "grade": 1,
+      "power": "The Airway-Slam-Door: High-priority assassin shuts the respiratory runway in seconds.",
+      "lore": "Keep the kid calm! Agitation triggers Final-Closure. Prep the Tube-Tango.",
+      "gradeReason": "Airway-Slam-Door with Final-Closure if you agitate — pure high-stakes theater with immediate behavioral instruction.",
+      "artworkPrompt": "Style: FrizzleBob cartoon. Subject: mantis slamming a door on a throat-airway. Mood: seconds-to-disaster."
+    },
+    {
+      "cardNumber": 23,
+      "cardName": "Meningitis-the-Menace (Neonatal)",
+      "grade": 1,
+      "power": "The Brain-Shield-Riot: Attacks the Meninges-Armor.",
+      "lore": "Neonates don't get Stiff-Necks, they get Limp-Bodies and High-Pitched-Screams.",
+      "gradeReason": "The counterintuitive lore (limp not stiff) is the exact trap clinicians fall into — plays the trick immediately.",
+      "artworkPrompt": "Style: FrizzleBob cartoon. Subject: skull monster attacking limp newborn meninges. Mood: eerie and counterintuitive."
+    },
+    {
+      "cardNumber": 24,
+      "cardName": "SIDS-the-Silent (Sudden Infant Death)",
+      "grade": 1,
+      "power": "The Quiet-Fade: Sudden, unexplained end to the match.",
+      "lore": "Prevented by Safe-Sleep Spells: No blankets, back-sleeping, smoke-free.",
+      "gradeReason": "Quiet-Fade is haunting and exact; Safe-Sleep Spells makes prevention immediately actionable.",
+      "artworkPrompt": "Style: FrizzleBob cartoon. Subject: baby sleeping on back in bare crib, ghost outline fading. Mood: solemn prevention."
+    },
+    {
+      "cardNumber": 25,
+      "cardName": "Pancreas-Factory (The Cryster)",
+      "grade": 2,
+      "power": "The Insulin-Strike: Factory destroyed in a Self-Attack-Revolt.",
+      "lore": "High sugar = DKA-Acidosis-Abyss. Needs Insu-the-Key forever.",
+      "gradeReason": "Self-Attack-Revolt lands for Type 1 DM; DKA-Abyss is vivid. Slightly front-loaded with acronyms.",
+      "artworkPrompt": "Style: FrizzleBob cartoon. Subject: raccoon pancreas factory burning from autoimmune riot. Mood: metabolic emergency."
+    },
+    {
+      "cardNumber": 26,
+      "cardName": "Beaver-the-Wolk (Salt-Savers)",
+      "grade": 3,
+      "power": "The Hormone-Shortcut: Cannot make salt/sugar hormones, defaults to androgens.",
+      "lore": "Electrolyte emergency. Without salt-saving wrestler collapses.",
+      "gradeReason": "21-hydroxylase CAH is a complex stat block; the performance cue is buried in the collapse threat.",
+      "artworkPrompt": "Style: FrizzleBob cartoon. Subject: salt-hoarding beaver wrestler collapsing without electrolytes. Mood: electrolyte crisis."
+    },
+    {
+      "cardNumber": 27,
+      "cardName": "Friendly-the-Retrivor (Wrestler)",
+      "grade": 2,
+      "power": "The Extra-Blueprint: Extra Chromosome-21 changes the Physiological-Rulebook.",
+      "lore": "High risk for Heart-Leaks and Gut-Blocks. Maximize potential with Support-Squads.",
+      "gradeReason": "Warm name and Extra-Blueprint are respectful and effective; Support-Squads is the action cue.",
+      "artworkPrompt": "Style: FrizzleBob cartoon. Subject: golden retriever with trisomy blueprint and support team. Mood: warm and capable."
+    },
+    {
+      "cardNumber": 28,
+      "cardName": "Sloth-the-Sludge (Bio Wrestler)",
+      "grade": 2,
+      "power": "The Sticky-Sludge: Broken Salt-Pumps turn secretions into glue.",
+      "lore": "Causes Chronic-Pneumonia and Fatty-Stool-Stew. Needs Chest-Physio-Pounding.",
+      "gradeReason": "Sticky-Sludge is the best possible name for CF; Chest-Physio-Pounding is a clean action cue.",
+      "artworkPrompt": "Style: FrizzleBob cartoon. Subject: sloth wrestler clogged with glue-secretions, physio team pounding chest. Mood: thick and chronic."
+    },
+    {
+      "cardNumber": 29,
+      "cardName": "Nursemaid-Nancy (Radial Head Subluxation)",
+      "grade": 1,
+      "power": "The Annular-Tear: Ligament caught inside elbow-gear after a Sudden-Lift.",
+      "lore": "The Supination-Flexion-Flip pops it out, curing the wrestler instantly.",
+      "gradeReason": "Instant cure from one maneuver — this card plays itself. Table delivers a click.",
+      "artworkPrompt": "Style: FrizzleBob cartoon. Subject: monkey arm popping back into elbow with single flip. Mood: satisfying instant fix."
+    },
+    {
+      "cardNumber": 30,
+      "cardName": "SCFE-Scottie (Slipped Capital Femoral Epiphysis)",
+      "grade": 1,
+      "power": "The Sliding-Hip-Ball: Hip-ball slides off the Growth-Plate-Ramp.",
+      "lore": "Knee pain is often referred hip pain. Surgical emergency to prevent Hip-Death.",
+      "gradeReason": "Ice-cream-off-cone visual plus the knee-pain trap is the best diagnostic trick in the deck.",
+      "artworkPrompt": "Style: FrizzleBob cartoon. Subject: rhino wrestler hip-ball sliding off growth plate like ice cream cone. Mood: sliding emergency."
+    },
+    {
+      "cardNumber": 31,
+      "cardName": "Atopic-Alice (Eczema)",
+      "grade": 2,
+      "power": "The Leaky-Skin-Wall: Skin-armor holes let moisture out and invaders in.",
+      "lore": "Part of the Atopic-Triad. Needs heavy Moisture-Maintenance.",
+      "gradeReason": "Leaky-Skin-Wall is mechanistically perfect; Atopic-Triad needs the other two cards to fully land.",
+      "artworkPrompt": "Style: FrizzleBob cartoon. Subject: armadillo with cracked skin armor leaking moisture. Mood: itchy and vulnerable."
+    },
+    {
+      "cardNumber": 32,
+      "cardName": "Measles-the-Miser (Rubeola)",
+      "grade": 1,
+      "power": "The Total-Body-Exanthem: Starts with red eyes, covers body in Sandpaper-Rash.",
+      "lore": "The Immune-Amnesia virus. Wipes out Memory-B-Cells.",
+      "gradeReason": "Immune-Amnesia is conceptually devastating and immediately understood — the wipeout framing is a perfect card.",
+      "artworkPrompt": "Style: FrizzleBob cartoon. Subject: measles miser wiping out B-cell memory archive. Mood: infectious and erasing."
+    },
+    {
+      "cardNumber": 33,
+      "cardName": "Tanner-the-Stage (Puberty)",
+      "grade": 2,
+      "power": "The Metamorphosis: Tracks the Hormonal-Upgrade to adult form.",
+      "lore": "Precocious Pete starts early. Delayed-Dave stays behind.",
+      "gradeReason": "Pete and Dave are great character anchors; Metamorphosis is the action but lacks dramatic hook.",
+      "artworkPrompt": "Style: FrizzleBob cartoon. Subject: chameleon wrestler transforming through five Tanner stages. Mood: developmental and unstoppable."
+    },
+    {
+      "cardNumber": 34,
+      "cardName": "Scolio-the-S-Curve",
+      "grade": 2,
+      "power": "The Spine-Twist: Turns straight Skeletal-Pillar into a snake.",
+      "lore": "Mostly idiopathic. Severe curves squash the Lung-Balloons.",
+      "gradeReason": "Spine-to-snake visual is sharp; Lung-Balloon squashing raises the stakes. Adams bend test buried in stat.",
+      "artworkPrompt": "Style: FrizzleBob cartoon. Subject: snake spine wrestler bending into S-curve. Mood: idiopathic and compressive."
+    },
+    {
+      "cardNumber": 35,
+      "cardName": "Anorexia-Annie (Eating Disorder)",
+      "grade": 2,
+      "power": "The Mirror-Lie: Sees a giant despite being skin and bones.",
+      "lore": "Danger: Refeeding-Ryan-the-Relapse. Eating too fast crashes electrolytes and the heart.",
+      "gradeReason": "Mirror-Lie is psychologically precise; Refeeding-Ryan is a serious hook but lore delivery is flat.",
+      "artworkPrompt": "Style: FrizzleBob cartoon. Subject: gaunt figure seeing giant in mirror, electrolyte warning label. Mood: fragile and dangerous."
+    },
+    {
+      "cardNumber": 36,
+      "cardName": "Suicidal-the-Shadow (Adolescent Mental Health)",
+      "grade": 1,
+      "power": "The Silent-Saboteur: Whispers that the match isn't worth finishing.",
+      "lore": "Always ask Safety-Questions. Look for Bullying-Brawlers and Isolation-Iggles.",
+      "gradeReason": "Whispering the match isn't worth finishing is exact and human — says the unsayable directly.",
+      "artworkPrompt": "Style: FrizzleBob cartoon. Subject: dark shadow whispering to teen wrestler in isolation. Mood: somber and urgent."
+    },
+    {
+      "cardNumber": 37,
+      "cardName": "Weight-the-Dose (Calculation)",
+      "grade": 3,
+      "power": "The Precision-Calculator: No standard dose. Everything tailored to Mass.",
+      "lore": "A 10-fold error is a Lethal-Glitch. Always double-check the Decimal-Point.",
+      "gradeReason": "Necessarily technical — Lethal-Glitch and Decimal-Point are the best dramatic spins possible on a dry card.",
+      "artworkPrompt": "Style: FrizzleBob cartoon. Subject: elephant and mouse on scale, pharmacist sweating over decimal. Mood: precise and high-stakes."
+    },
+    {
+      "cardNumber": 38,
+      "cardName": "Palivizumab-the-Shield (RSV Prevention)",
+      "grade": 3,
+      "power": "The Fusion-Blocker: Stops RSV from entering Lung-Cell-Castles.",
+      "lore": "Not a vaccine, a Passive-Defense. Given monthly during RSV-Season.",
+      "gradeReason": "Passive-Defense distinction is the core lesson; the card describes more than it invites.",
+      "artworkPrompt": "Style: FrizzleBob cartoon. Subject: turtle shield blocking RSV spike proteins monthly. Mood: passive and seasonal."
+    },
+    {
+      "cardNumber": 39,
+      "cardName": "Steroid-Stella (Antenatal)",
+      "grade": 2,
+      "power": "The Lung-Accelerator: Speeds up the Surfactant-Factory.",
+      "lore": "A 48-hour Turbo-Boost to prep the Preemie-Wrestler for air.",
+      "gradeReason": "48-hour Turbo-Boost is a vivid intervention window — urgent, timed, specific. Companion to Surfactant card.",
+      "artworkPrompt": "Style: FrizzleBob cartoon. Subject: cheetah doctor injecting lung-boost into pregnant wrestler. Mood: racing the clock."
+    },
+    {
+      "cardNumber": 40,
+      "cardName": "Acetamino-the-Fever-Cooler",
+      "grade": 1,
+      "power": "The Heat-Sink: Turns down the Brain-Thermostat during the Flash-Fever.",
+      "lore": "NO ASPIRIN FOR KIDS! Triggers Reye-the-Liver-and-Brain-Smasher.",
+      "gradeReason": "ALL-CAPS forbidden rule is the loudest moment in the deck — absolute prohibition plays as immediate action.",
+      "artworkPrompt": "Style: FrizzleBob cartoon. Subject: penguin fire extinguisher dousing fever brain, NO ASPIRIN sign. Mood: absolute prohibition."
+    },
+    {
+      "cardNumber": 41,
+      "cardName": "The MMR-Trio (Live Vaccine)",
+      "grade": 2,
+      "power": "The Training-Sim: Provides a practice match against three classic assassins.",
+      "lore": "Live attenuated. NOT for Immune-Depleted or pregnant wrestlers.",
+      "gradeReason": "Training-Sim is the right frame; the immune-depleted prohibition adds clinical precision.",
+      "artworkPrompt": "Style: FrizzleBob cartoon. Subject: three training dummies labeled Measles, Mumps, Rubella in practice ring. Mood: controlled rehearsal."
+    },
+    {
+      "cardNumber": 42,
+      "cardName": "DTaP-the-Triple-Threat",
+      "grade": 3,
+      "power": "The Toxin-Shield: Blocks Strangley-Diphteria, Lockjaw-Tetanus, and Whooping-Pertussis.",
+      "lore": "Needs boosters every 10 years to keep Defense-Towers standing.",
+      "gradeReason": "Three nicknames in one power line reads as list, not invitation. Defense-Towers need reinforcing.",
+      "artworkPrompt": "Style: FrizzleBob cartoon. Subject: triple-horned knight blocking three assassins. Mood: preventive and tower-strong."
+    },
+    {
+      "cardNumber": 43,
+      "cardName": "Polio-the-Paralyzer (IPV)",
+      "grade": 2,
+      "power": "The Nerve-Shield: Protects Motor-Neurons from being hijacked.",
+      "lore": "We use IPV (Dead) to avoid the rare Vaccine-Induced-Paralysis of the old live version.",
+      "gradeReason": "Nerve-hijack is vivid; the IPV-vs-OPV distinction is the key lesson, neatly delivered.",
+      "artworkPrompt": "Style: FrizzleBob cartoon. Subject: iron-lung fossil with modern inactivated shield blocking polio. Mood: historic eradication."
+    },
+    {
+      "cardNumber": 44,
+      "cardName": "Hib-the-B-Shield",
+      "grade": 3,
+      "power": "The Brain-and-Throat-Guard: Eliminates Emma-Epiglottis and Meningitis-Menace.",
+      "lore": "Conjugate vaccine teaches cells to read the Bacteria's Sugar-Code.",
+      "gradeReason": "Sugar-Code is a clever framing for conjugate vaccines but still lands as explanation, not embodiment.",
+      "artworkPrompt": "Style: FrizzleBob cartoon. Subject: badger shield reading bacterial sugar-code. Mood: immunological decryption."
+    },
+    {
+      "cardNumber": 45,
+      "cardName": "ALL-the-Acute-Lymphoblastic",
+      "grade": 2,
+      "power": "The Marrow-Invasion: Blast-Punks stop production of Inventory and Platelet-Puge.",
+      "lore": "Highly curable but needs years of Chemo-Combat. Look for bone ache and bleeding spots.",
+      "gradeReason": "Marrow-Invasion with Blast-Punks is effective; curable-but-long message is the right emotional counterweight.",
+      "artworkPrompt": "Style: FrizzleBob cartoon. Subject: blast punk army overrunning bone marrow castle. Mood: invaded but beatable."
+    },
+    {
+      "cardNumber": 46,
+      "cardName": "Wilms-the-Kidney-Wrestler",
+      "grade": 1,
+      "power": "The Flank-Fist: Massive tumor inside the Kidney-Filter.",
+      "lore": "Do Not Palpate! Rough palpation keeps it spreading Seed-Tumors into the belly.",
+      "gradeReason": "DO NOT PALPATE is the most actionable prohibition since NO ASPIRIN — immediate, physical, no setup needed.",
+      "artworkPrompt": "Style: FrizzleBob cartoon. Subject: rhinoceros with DO NOT TOUCH sign over left flank tumor. Mood: massive and forbidden."
+    },
+    {
+      "cardNumber": 47,
+      "cardName": "Neuro-the-Crosser (Neuroblastoma)",
+      "grade": 3,
+      "power": "The Midnight-Mass: Irregular tumor spreading everywhere from the basement.",
+      "lore": "Associated with Dancing-Eyes-Dancing-Feet (Opsoclonus-Myoclonus).",
+      "gradeReason": "Dancing-Eyes-Dancing-Feet is genuinely memorable but requires the pathology scaffold to fire.",
+      "artworkPrompt": "Style: FrizzleBob cartoon. Subject: scorpion tumor crossing midline from adrenal basement. Mood: creeping and irregular."
+    },
+    {
+      "cardNumber": 48,
+      "cardName": "Retino-the-White-Reflex (Retinoblastoma)",
+      "grade": 1,
+      "power": "The Eye-Shadow: Tumor on the Retinal-Film-Strip blocks the red reflex.",
+      "lore": "Often genetic. The Cat's-Eye-Glow in a photo is the ultimate Diagnostic-Red-Flag.",
+      "gradeReason": "Cat's-Eye photo trick is a visual diagnosis anyone can act on — snap a flash photo, see white glow, diagnose.",
+      "artworkPrompt": "Style: FrizzleBob cartoon. Subject: cat's white eye glowing in flash photo. Mood: silent and photogenic danger."
+    },
+    {
+      "cardNumber": 49,
+      "cardName": "The Growth-Chart-Oracle",
+      "grade": 3,
+      "power": "The Pattern-Predictor: Tells if the wrestler is falling behind or growing too fast.",
+      "lore": "The Trend is everything. One point is a dot; two points are a story.",
+      "gradeReason": "One-dot-vs-story lore is a genuinely good aphorism; the Oracle itself is a tool card, not a performance cue.",
+      "artworkPrompt": "Style: FrizzleBob cartoon. Subject: giraffe measuring baby against star-chart oracle. Mood: oracular and long-view."
+    },
+    {
+      "cardNumber": 50,
+      "cardName": "The Red-Reflex Sentry",
+      "grade": 3,
+      "power": "The Vision-Guardian: Checks if light can reach the back of the eye.",
+      "lore": "If the reflex is white (Leukocoria) or absent, the Retinal-Vision is blocked.",
+      "gradeReason": "Vision-Guardian role is clear; lore is more definition than invitation. Works best paired with Retino card.",
+      "artworkPrompt": "Style: FrizzleBob cartoon. Subject: owl sentry shining ophthalmoscope in dark room. Mood: vigilant and precise."
+    },
+    {
+      "cardNumber": 51,
+      "cardName": "The Sweat-Test Detective",
+      "grade": 1,
+      "power": "The Salt-Seeker: Hunts for chloride.",
+      "lore": "If the sweat is Salty-as-the-Sea, the Cystic-Clog is the culprit.",
+      "gradeReason": "Salty-as-the-Sea is a sensory mnemonic — you can almost taste the diagnosis. Best lore line in the deck.",
+      "artworkPrompt": "Style: FrizzleBob cartoon. Subject: bloodhound detective licking salty sweat patch for diagnosis. Mood: olfactory detective work."
+    },
+    {
+      "cardNumber": 52,
+      "cardName": "The Steeple-and-Thumb Signs",
+      "grade": 1,
+      "power": "The Airway-Map: Immediate visual triage of the airway.",
+      "lore": "Steeple = Croup-Chris (Safe-ish). Thumb = Epiglottis-Emma (Danger!).",
+      "gradeReason": "Cross-referencing named deck characters on an X-ray card is the most elegant teaching trick in pediatrics.",
+      "artworkPrompt": "Style: FrizzleBob cartoon. Subject: X-ray side-by-side steeple and thumbprint airway. Mood: diagnostic split-second."
+    },
+    {
+      "cardNumber": 53,
+      "cardName": "The Pediatric Attending (Doc FrizzleBob)",
+      "grade": 1,
+      "power": "The Future-Shield: The ultimate defender of the growing gauntlet.",
+      "lore": "Are milestones met? Is the airway safe? Check the sugar, check the chart, and don't forget the vaccine! Stay fluffy!",
+      "gradeReason": "Boss card synthesizes the deck's entire ethos in four questions — checklist and battle cry rolled into one.",
+      "artworkPrompt": "Style: FrizzleBob cartoon. Subject: FrizzleBob in white coat holding stethoscope and growth chart. Mood: protective and fluffy."
+    },
+    {
+      "cardNumber": 54,
+      "cardName": "Synthesis Quest 1: The Blue Squeeze",
+      "grade": 1,
+      "power": null,
+      "lore": "A 4-month-old wrestler with a known VSD-Leak suddenly turns blue while crying. He starts to squat. QUEST: Identify the Cyanotic-Secret and explain why the Squat-Move helps his oxygen.",
+      "gradeReason": "Clinical case cards are the deck's secret weapon — immediately put you in the room, no preamble.",
+      "artworkPrompt": "Style: FrizzleBob cartoon. Subject: blue toddler squatting instinctively. Mood: Tet-spell emergency."
+    },
+    {
+      "cardNumber": 55,
+      "cardName": "Synthesis Quest 2: The Projectile-Olive",
+      "grade": 1,
+      "power": null,
+      "lore": "A 4-week-old wrestler is throwing milk across the room (Projectile) after meals. He is hungry but getting smaller. You feel a small Olive in his belly. QUEST: Name the Exit-Blocker and the Metabolic-Glitches he causes.",
+      "gradeReason": "The flying-milk scenario lands immediately — every student can visualize the room. Olive palpation is tactile.",
+      "artworkPrompt": "Style: FrizzleBob cartoon. Subject: projectile-vomiting baby, olive-shaped pylorus palpation. Mood: hungry and urgent."
+    },
+    {
+      "cardNumber": 56,
+      "cardName": "Synthesis Quest 3: The Currant-Jelly-Telescope",
+      "grade": 1,
+      "power": null,
+      "lore": "A 9-month-old wrestler has sudden fits of screaming and drawing his legs up. His stool looks like Red-Currant-Jelly. QUEST: Identify the Slide-In and the first move to Blow-the-Telescope-Back.",
+      "gradeReason": "Currant-jelly stool plus screaming is visceral and unforgettable — the question inverts it cleanly into action.",
+      "artworkPrompt": "Style: FrizzleBob cartoon. Subject: screaming baby with currant-jelly stool, air enema push. Mood: sudden and urgent."
+    }
+  ],
+  "cardCount": 56,
+  "gradeDistribution": {
+    "G1": 20,
+    "G2": 25,
+    "G3": 11
+  },
+  "overallScore": 9,
+  "verdict": "Pediatrics: The Growing Gauntlet is MedKayfab firing on all cylinders — 52 named wrestlers plus three Synthesis Quest scenarios that make the whole corpus clinically testable in one page. The naming game is relentless: SCFE-Scottie's ice-cream-off-the-cone visual and Kawasaki-the-King's ONE-TIME aspirin reversal are instant memory anchors that survive exam season. Epiglottis-Emma is the deck's drama queen and earns every bit of it. The Synthesis page is the hidden gem: three clinical cases snap everything together and demand you apply, not just recall. Weakness: the calculation and passive-immunity cards (Weight-the-Dose, Palivizumab) are workhorses, not wrestlers. Table-ready: YES.",
+  "blurb": "For every med student who blanked on why a toddler squats when blue — 56 cards that make pediatrics playable, memorable, and impossible to forget.",
+  "viralScore": 8,
+  "qa": {
+    "readability": 9,
+    "artworkConsistency": 9,
+    "overall": 9
+  },
+  "coverQA": {
+    "coverVisual": "4 — FrizzleBob in white coat with pediatric creatures; warm, welcoming, on-brand",
+    "coverTitle": "5 — Growing Gauntlet is evocative, specific, and perfectly balanced between playful and serious",
+    "coverVibeMatch": "5 — 'Protecting the future, one percentile at a time' is the deck's soul in one line",
+    "coverOriginality": "4 — MedKayfab template but executed with extra warmth for the pediatric register",
+    "coverViral": "4 — tagline is highly shareable; FrizzleBob as pediatrician is the right casting",
+    "coverScore": 4.4,
+    "coverNote": "Best cover in the MedKayfab series so far. The tagline alone belongs in a swipe file. FrizzleBob as Doc with the Blödsinn / Call Doc Frizzle sidebars set the emotional register perfectly — protective, chaotic, loving."
+  },
+  "coverScore": 4.4,
+  "fontArtifactCount": 2,
+  "notes": "Two minor font-artifact readings noted: Pertussis #11 lore ('Looking worse in place' — decorative font unclear at this phrase); ALL #45 power ('Platelet-Puge' likely 'Platelet-Purge'). Synthesis Quest page (p.15) is a standout structural innovation — 3 clinical case scenarios function as integration cards, bridging deck content to case-based reasoning. All 56 elements legible at 200dpi render. No RAF dice boxes present. Series: MedKayfab.",
+  "topCards": [
+    "Kawasaki-the-King (Vasculitis)",
+    "SCFE-Scottie (Slipped Capital Femoral Epiphysis)",
+    "Epiglottis-Emma (The Choke-Point)"
+  ],
+  "worstCards": [
+    "Weight-the-Dose (Calculation)",
+    "Palivizumab-the-Shield (RSV Prevention)"
+  ],
+  "todos": {
+    "urgent": [],
+    "quickWins": [
+      "Clarify Pertussis-the-Whoop lore line at 'Looking worse in place' — font artifact unclear",
+      "Fix ALL #45 'Platelet-Puge' typo to 'Platelet-Purge' in next source revision"
+    ],
+    "niceToHave": [
+      "Consider splitting Beaver-the-Wolk (CAH) into two cards — 21-OH mechanism and clinical collapse — to reduce stat overload",
+      "Add Synthesis Quest 4: Epiglottis-Emma vs. Croup-the-Barker differential case"
+    ]
+  },
+  "hashtags": [
+    "#MedKayfab",
+    "#Pediatrics",
+    "#MedStudent",
+    "#Kayfabizarro",
+    "#FrizzleBob",
+    "#Peds",
+    "#MedEd",
+    "#USMLE"
+  ],
+  "genre": "medical",
+  "bundle": "EDUCATION",
+  "exhibitions": [
+    "classroom",
+    "conference"
+  ],
+  "channels": [
+    "Gumroad",
+    "TikTok",
+    "Instagram",
+    "YouTube"
+  ],
+  "marketingText": "MedKayfab: PEDIATRICS – The Growing Gauntlet (Medical Mnemonics Cut & Play Comic)\n\n56 illustrated medical mnemonic cards to master the airway that closes in seconds, the heart defect that turns a crying toddler blue, and the cancers and emergencies that hide behind a child who still looks fine.\n\nA child is not a small adult, and the day you forget that is the day a child pays for it. Here is the trap pediatrics sets: kids compensate beautifully. The heart rate climbs, the body shunts the blood, the numbers hold the line, and the patient sits there pink and playing right up to the second the reserve runs out. There is no slow slide. There is a plateau, and then a cliff. The whole discipline is learning to read the tells before the cliff, because once a child crashes there is very little runway left to pull them back.\n\nMedKayfab Pediatrics translates the recognition game of the growing body into a narrative wrestling match, where every red flag is a character with a tell. Stop memorizing milestones and danger signs as two separate lists. Start reading the child as one signal.\n\nYOU'LL GET\n- 56 illustrated MedKayfab cards (15pp, 4 cards/page)\n- Full MedKayfab Freestyle rules (Quest Die mechanics), plus a Synthesis Quest page that folds three clinical cases back into the deck\n- S-Tier characters like Kawasaki-the-King, SCFE-Scottie, and Epiglottis-Emma\n- Free lifetime updates as guidelines evolve\n- CC BY-NC-SA 4.0 licence\n- PDF optimized for home printing (A4 / Letter)\n\nWhat's in the deck\nYou meet the deceivers and the assassins. Epiglottis-Emma is the choke-point who slams the airway shut in seconds, and the rule she teaches runs against instinct: keep the child calm, because agitation is what triggers the final closure. Kawasaki-the-King inflames the coronary pipes into aneurysm-balloons and is the one time in the whole curriculum you reach for aspirin in a child. SCFE-Scottie is the quiet one, the slipped hip that walks in complaining about the knee, so the lesson is to chase the referred pain before the joint dies. Tetralogy-the-Tet is the toddler who turns blue when crying and squats to force blood back through the lungs. Each face carries one mechanism you are not allowed to miss.\n\nHow it works\nEvery card is a cognitive anchor: the Character (the mnemonic), the Visual (the scene), the Stat Block (the thresholds and doses), the Lore (the clinical story), and the Quest (the challenge). The Mechanism Flash mode is the test: explain the move in one sentence without looking, or the child on the Stage does not make it. Then the Synthesis Quest pulls three cases together, so you stop reciting cards and start reasoning across them the way a real shift forces you to.\n\nHonest cognitive load\nThis is a recognition-heavy core deck for medical students on their paediatrics rotation and junior doctors who cover children on call. It rewards pattern memory over calculation, so it lands early and keeps paying off. It pairs naturally with Emergency Medicine for the airway and the crashing child, with Neonatal Medicine for the first days of life, and with Obstetrics & Gynaecology for the handoff from the delivery room to the nursery.\n\nABOUT MEDKAYFAB\nMedKayfab is a narrative medical learning card game, 50 decks covering the full medical curriculum. Every card encodes a clinical mechanism as a character with a personality, a story, and a reasoning challenge. Built by a physician. Assembled with AI tools. Manually revised. Honest about its limitations. Free to use, share, and adapt under CC BY-NC-SA 4.0.\n\nPAY WHAT YOU WANT\nThis deck is Pay What You Want, including free. If you find it useful, a fair price is €5. Student on a budget? Enter €0, no questions asked. Want to support more decks? Anything above fair price is appreciated. Share freely, attribute honestly, never resell.\n\nDISCLAIMER\nMedKayfab is a learning companion, not a clinical reference. Content was created by a physician and reviewed to the best of our knowledge, but medicine evolves, guidelines change, and some mechanisms in here will be simplified or wrong. Always verify against current primary sources and clinical guidelines before applying anything to patient care. The Blödsinn! is the vehicle. The science is serious.\n\nStay fluffy. — Doc FrizzleBob",
+  "marketingEdition": "MED"
+}

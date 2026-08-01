@@ -1,0 +1,595 @@
+{
+  "sourceFile": "MedKayfab_Neurology - ADD web.pdf",
+  "deckTitle": "Neurology Edition",
+  "deckType": "Medical neurology education",
+  "bundleSuggestion": "TBD",
+  "pageCount": 15,
+  "analysisVersion": 1.0,
+  "generatedAt": "2026-06-20T00:00:00",
+  "savedAt": "2026-06-20T00:00:00",
+  "extractionTool": "cowork_task_v3",
+  "RAF": false,
+  "gradingMode": "educational",
+  "deckFunction": [
+    "education",
+    "roleplay"
+  ],
+  "seriesId": "medkayfab",
+  "cards": [
+    {
+      "cardNumber": 1,
+      "cardName": "The Plumber's Cousin",
+      "grade": 1,
+      "power": "Total Shutdown. Contralateral hemiplegia, homonymous hemianopia, AND higher cortical dysfunction (dysphasia/neglect).",
+      "lore": "High mortality, severe disability. Proximal MCA or ICA occlusion.",
+      "gradeReason": "3/3 Deficits stat + character name = instant TACI mnemonic lock.",
+      "artworkPrompt": "Cartoon beaver in hard hat fighting exploding pipe. Style: comic watercolor. Subject: TACI plumber chaos. Mood: catastrophic."
+    },
+    {
+      "cardNumber": 2,
+      "cardName": "Manny MCA",
+      "grade": 1,
+      "power": "Dominant Disconnect. Contralateral hemiplegia + hemisensory loss. If dominant: Aphasia. Non-dominant: Neglect.",
+      "lore": "The most common stroke territory. Follows the motor homunculus.",
+      "gradeReason": "Arm > Leg stat cleanly separates from ACA; dominant/non-dominant split is immediately performable.",
+      "artworkPrompt": "Purple octopus conducting orchestra with trumpet, sheet music scattered. Style: comic ink. Subject: cerebral conductor. Mood: commanding."
+    },
+    {
+      "cardNumber": 3,
+      "cardName": "Annie ACA",
+      "grade": 1,
+      "power": "Frontal Filter Failure. Contralateral leg weakness + sensory loss. Urinary incontinence + personality change (abulia).",
+      "lore": "Hits medial frontal/parietal cortex. The filter is gone.",
+      "gradeReason": "Leg > Arm and abulia are immediate clinical embodiments; 'filter is gone' is unforgettable.",
+      "artworkPrompt": "Kangaroo with boxing gloves near No Entry sign, urinary puddle. Style: cartoon color. Subject: frontal lobe failure. Mood: uninhibited."
+    },
+    {
+      "cardNumber": 4,
+      "cardName": "Vic Vertebral",
+      "grade": 1,
+      "power": "Cross-Wiring. Produces crossed signs: ipsilateral cranial nerve palsy with contralateral long tract signs.",
+      "lore": "Dizziness, Diplopia, Dysarthria, Dysphagia, Drop attacks. Highly dangerous to misdiagnose in the ED.",
+      "gradeReason": "The 5 Ds stat + crossed signs = immediate posterior circulation clinical alarm.",
+      "artworkPrompt": "Dizzy owl with spiral eyes chasing mouse. Style: warm cartoon. Subject: posterior circulation misdirection. Mood: disoriented danger."
+    },
+    {
+      "cardNumber": 5,
+      "cardName": "Larry Lacune",
+      "grade": 1,
+      "power": "Pure Precision. Pure motor OR pure sensory stroke. NO cortical signs (no aphasia, neglect, or hemianopia).",
+      "lore": "Caused by lipohyalinosis of deep perforators. Strongly linked to hypertension and diabetes.",
+      "gradeReason": "< 15mm + zero cortical signs = pure clinical precision; contrast with cortical strokes is instantly graded.",
+      "artworkPrompt": "Woodpecker drilling tiny precise hole in tree. Style: nature cartoon. Subject: lacunar precision. Mood: focused, small-scale."
+    },
+    {
+      "cardNumber": 6,
+      "cardName": "Wally Wallenberg",
+      "grade": 1,
+      "power": "Crossed Pain. Ipsilateral face pain/temp loss + contralateral body pain/temp loss. Ipsilateral ataxia and Horner's.",
+      "lore": "PICA occlusion. Touch and proprioception are completely spared!",
+      "gradeReason": "Touch Spared stat + crossed pain = the paradox that makes Wallenberg unforgettable at the bedside.",
+      "artworkPrompt": "Fox half-frozen in ice, one side warm orange one side cold blue. Style: dramatic split-palette. Subject: dissociated sensation. Mood: eerie contrast."
+    },
+    {
+      "cardNumber": 7,
+      "cardName": "Benny Basilar",
+      "grade": 1,
+      "power": "The Lock-In. Quadriplegia, anarthria, but consciousness and vertical gaze are fully intact.",
+      "lore": "A devastating natural history. One of the few syndromes where thrombectomy is attempted well beyond 6 hours.",
+      "gradeReason": "Lock-In is the most visceral neuro concept; > 6h Window stat is a lifesaving clinical override.",
+      "artworkPrompt": "Giant tortoise locked inside cracked shell, eyes alert and upward. Style: dark cartoon. Subject: basilar locked-in syndrome. Mood: devastating stillness."
+    },
+    {
+      "cardNumber": 8,
+      "cardName": "Otto Occipital",
+      "grade": 1,
+      "power": "Alexia Without Agraphia. Contralateral homonymous hemianopia. Can write, but cannot read (if dominant).",
+      "lore": "Macular vision is spared due to dual blood supply (MCA collaterals at the occipital pole).",
+      "gradeReason": "Alexia Without Agraphia is neurology's strangest dissociation; Macular Sparing stat is equally striking.",
+      "artworkPrompt": "Chameleon writing in open book but shielding eyes from text. Style: botanical illustration. Subject: PCA alexia dissociation. Mood: paradoxical."
+    },
+    {
+      "cardNumber": 9,
+      "cardName": "Tia the Transient",
+      "grade": 1,
+      "power": "The Warning Shot. Focal ischemia resolving within 24h (most <60m). High ABCD2 score mandates same-day review.",
+      "lore": "Requires urgent dual antiplatelet therapy for high-risk patients. Do not ignore.",
+      "gradeReason": "Warning Shot framing + ABCD2 stat = immediate triage trigger; 'Do not ignore' closes like a hammer.",
+      "artworkPrompt": "Raccoon sprinting past camera flash, motion blur. Style: action cartoon. Subject: TIA warning shot. Mood: urgent fleeting."
+    },
+    {
+      "cardNumber": 10,
+      "cardName": "Sam the SAH",
+      "grade": 1,
+      "power": "Thunderclap. Worst headache of life, maximum severity at onset. Due to ruptured berry aneurysm.",
+      "lore": "Ottawa SAH Rule: If CT is negative after 6h, mandatory LP for xanthochromia. Vasospasm risk days 4-14.",
+      "gradeReason": "Thunderclap is THE descriptor; Ottawa SAH Rule + vasospasm window = two lifesaving clinical pearls.",
+      "artworkPrompt": "Ram charging through storm clouds with lightning. Style: dramatic ink wash. Subject: subarachnoid thunderclap. Mood: explosive maximum intensity."
+    },
+    {
+      "cardNumber": 11,
+      "cardName": "The Penumbra Princess",
+      "grade": 1,
+      "power": "Salvage Operation. The target of all acute stroke therapy. Brain tissue that is ischemic but not yet dead.",
+      "lore": "IV alteplase eligible within 4.5 hours. Thrombectomy extends to 24h with favorable perfusion imaging.",
+      "gradeReason": "Salvage Operation reframes the entire stroke response; 4.5h Window stat anchors the clinical decision.",
+      "artworkPrompt": "Glowing axolotl emerging from rubble into forest light. Style: lush fantasy. Subject: penumbra rescuable tissue. Mood: hope amid destruction."
+    },
+    {
+      "cardNumber": 12,
+      "cardName": "Hank the Hemorrhage",
+      "grade": 1,
+      "power": "Absolute Contraindication. Sudden focal deficit + headache, vomiting, reduced consciousness. NO tPA.",
+      "lore": "Hypertensive small vessel (basal ganglia) vs. Amyloid angiopathy (lobar). Reverse anticoagulation instantly.",
+      "gradeReason": "Absolute Contraindication as power + SBP < 140 in 1h stat = the anti-tPA checkpoint no student forgets.",
+      "artworkPrompt": "Rhino smashing through brick wall, red-eyed. Style: action comic. Subject: intracerebral haemorrhage emergency. Mood: unstoppable force."
+    },
+    {
+      "cardNumber": 13,
+      "cardName": "The NIHSS Inspector",
+      "grade": 2,
+      "power": "Predictive Threshold. Score >= 6 suggests large vessel occlusion. Score < 4 is minor stroke.",
+      "lore": "A dynamic, serial scoring tool. Essential for predicting the need for thrombectomy.",
+      "gradeReason": "Tool card more than performative invite; badger inspector is fun but role is 'score the patient' not embody a syndrome.",
+      "artworkPrompt": "Badger in white coat ticking checklist, graph behind. Style: clinical cartoon. Subject: NIHSS scoring tool. Mood: methodical assessment."
+    },
+    {
+      "cardNumber": 14,
+      "cardName": "Cissy Circle of Willis",
+      "grade": 2,
+      "power": "The Redundancy Ring. Connects anterior/posterior circulations via communicating arteries (ACoA, PCoA).",
+      "lore": "ACcA is the most common site of berry aneurysms. Most humans have an incomplete circle, limiting collateral flow.",
+      "gradeReason": "Anatomy reference card; ~20% Complete stat is a great hook but embodiment is limited.",
+      "artworkPrompt": "Spider web shaped like brain vasculature with berry aneurysm caught in center. Style: nature illustration. Subject: circle of Willis anatomy. Mood: delicate fragile."
+    },
+    {
+      "cardNumber": 15,
+      "cardName": "Frank the Thrombolysis Window",
+      "grade": 1,
+      "power": "Time is Brain. Call EMS -> CT Head -> Ischemic & <4.5h = IV alteplase. If LVO = thrombectomy up to 24h.",
+      "lore": "Do NOT lower BP in acute ischemic stroke unless >220/120 or thrombolysis given.",
+      "gradeReason": "1.9M Neurons/Min stat is the most visceral time-pressure number in medicine; the algorithm is the protocol.",
+      "artworkPrompt": "Rabbit with stopwatch running through hourglass maze. Style: panic cartoon. Subject: time-critical thrombolysis. Mood: racing urgency."
+    },
+    {
+      "cardNumber": 16,
+      "cardName": "The Stroke Prevention Squad",
+      "grade": 2,
+      "power": "The Secondary Shield. Antiplatelet (non-cardioembolic) vs. Anticoagulant DOAC (cardioembolic AF).",
+      "lore": "High-intensity statin for ALL ischemic strokes regardless of baseline LDL. Carotid endarterectomy for symptomatic stenosis >50%.",
+      "gradeReason": "Policy card; Target < 130/80 stat is clear but armadillo squad is more catalogue than clinical performance.",
+      "artworkPrompt": "Armadillos carrying Statin shield and DOAC lance in formation. Style: military cartoon. Subject: secondary prevention squad. Mood: organized defense."
+    },
+    {
+      "cardNumber": 17,
+      "cardName": "Dopa the Dopamine",
+      "grade": 1,
+      "power": "The Quad-Core Modulator. Nigrostriatal (movement), Mesolimbic (reward), Mesocortical (motivation), Tuberoinfundibular (prolactin).",
+      "lore": "Block D2 for psychosis, but you will worsen movement and raise prolactin simultaneously.",
+      "gradeReason": "4 Pathways stat + the antipsychotic tradeoff lore = the core clinical pharmacology conflict in one card.",
+      "artworkPrompt": "Monkey juggling four glowing orbs: brain, trophy, milk, gears. Style: psychedelic cartoon. Subject: dopamine pathway modulator. Mood: chaotic balance."
+    },
+    {
+      "cardNumber": 18,
+      "cardName": "Perry Parkinson",
+      "grade": 1,
+      "power": "The Lewy Body Eraser. Resting tremor (4-6 Hz), lead-pipe rigidity, and mandatory bradykinesia.",
+      "lore": "Loss of substantia nigra pars compacta. Hyposmia and REM sleep behavior disorder predate motor signs by YEARS.",
+      "gradeReason": "80% Loss stat is unforgettable; pre-motor signs by YEARS is the most clinically important pearl in the deck.",
+      "artworkPrompt": "Rusted sloth in gear-trap costume with trembling arms. Style: steampunk cartoon. Subject: Parkinson's disease. Mood: grinding deceleration."
+    },
+    {
+      "cardNumber": 19,
+      "cardName": "Levo the Levodopa",
+      "grade": 1,
+      "power": "The Trojan Precursor. Crosses BBB, decarboxylates to dopamine. Carbidopa stops peripheral conversion, saving the stomach.",
+      "lore": "Long-term use causes wearing-off, on-off fluctuations, and pulsatile-induced dyskinesias.",
+      "gradeReason": "BBB crossing + carbidopa rationale + long-term complications = full pharmacology lifecycle in one card.",
+      "artworkPrompt": "Chameleon with Carbidopa shield crossing blood-brain barrier checkpoint. Style: spy cartoon. Subject: levodopa CNS entry. Mood: clever infiltration."
+    },
+    {
+      "cardNumber": 20,
+      "cardName": "Agatha Acetylcholine",
+      "grade": 1,
+      "power": "The Dual Empress. NMJ/autonomic transmitter (periphery) + memory transmitter from Nucleus basalis of Meynert (CNS).",
+      "lore": "Anticholinergic block: Mad as a hatter, dry as a bone, hot as a hare, red as a beet, blind as a bat.",
+      "gradeReason": "Best lore text in the deck. Five-rhyme toxidrome mnemonic is a clinical pearl that sticks forever.",
+      "artworkPrompt": "Crowned bee commanding PNS and CNS hives simultaneously with electricity. Style: regal cartoon. Subject: acetylcholine dual role. Mood: imperial."
+    },
+    {
+      "cardNumber": 21,
+      "cardName": "Alex Alzheimer",
+      "grade": 1,
+      "power": "The Slow Eraser. Episodic memory loss first -> language/visuospatial -> global decline.",
+      "lore": "Cholinesterase inhibitors (donepezil) increase tone but do not halt progression. Anti-amyloids are the new frontier.",
+      "gradeReason": "The cascade of decline is the clinical story; Amyloid + Tau stat anchors the pathophysiology.",
+      "artworkPrompt": "Moth eating tapestry seahorse-pattern, memory fading at edges. Style: surreal watercolor. Subject: Alzheimer's progressive erasure. Mood: melancholy unraveling."
+    },
+    {
+      "cardNumber": 22,
+      "cardName": "Gabby GABA",
+      "grade": 1,
+      "power": "The Brain's Brake. Opens ligand-gated chloride channels to hyperpolarize the neuron.",
+      "lore": "Benzodiazepines increase opening frequency. Barbiturates increase duration (and can kill in overdose by acting as direct agonists).",
+      "gradeReason": "Chloride Influx stat + frequency vs duration distinction = the most tested benzo/barb pharmacology in one line.",
+      "artworkPrompt": "Bear pressing brain's brake pedal surrounded by fire and sleep Zzz. Style: split warm-cool cartoon. Subject: GABA inhibitory brake. Mood: forceful calm."
+    },
+    {
+      "cardNumber": 23,
+      "cardName": "Greta Glutamate",
+      "grade": 1,
+      "power": "The Excitotoxic Accelerator. Fast excitatory transmission via NMDA/AMPA. NMDA requires coincidence detection.",
+      "lore": "In ischemia, massive glutamate release causes unchecked calcium influx and cell death (excitotoxicity).",
+      "gradeReason": "Mg2+ Block Removed stat + excitotoxicity in ischemia = the mechanism connecting stroke to neuronal death.",
+      "artworkPrompt": "Cheetah on fire accelerating past neurons with calcium sparks. Style: explosive cartoon. Subject: glutamate excitotoxicity. Mood: uncontrolled acceleration."
+    },
+    {
+      "cardNumber": 24,
+      "cardName": "Serotonin Sally",
+      "grade": 1,
+      "power": "The Raphe Projector. Regulates mood, sleep, appetite. Blocked by SSRIs.",
+      "lore": "Serotonin Syndrome = Mental status change + Autonomic instability + Neuromuscular clonus/hyperreflexia (differentiates from NMS rigidity).",
+      "gradeReason": "3-Part Triad stat + clonus vs NMS rigidity = the differential that saves lives in acute toxidrome presentations.",
+      "artworkPrompt": "Manic bird spinning in music notes, moon and emoji faces around it. Style: bright cartoon. Subject: serotonin projector. Mood: chaotic euphoric."
+    },
+    {
+      "cardNumber": 25,
+      "cardName": "Norbert Norepinephrine",
+      "grade": 2,
+      "power": "The Sympathetic Driver. Arousal, attention, stress. SNRIs block both serotonin and norepinephrine reuptake.",
+      "lore": "SNRIs (venlafaxine/duloxete) are highly effective for both depression AND neuropathic pain via descending pain pathways.",
+      "gradeReason": "SERT + NET stat is clear; neuropathic pain lore is the clinical pearl but card reads more mechanism than performance.",
+      "artworkPrompt": "Meerkat sentinel on rock in desert with neural gear cables. Style: steampunk landscape. Subject: norepinephrine vigilance driver. Mood: alert arousal."
+    },
+    {
+      "cardNumber": 26,
+      "cardName": "Histo the Histamine",
+      "grade": 2,
+      "power": "The Wakefulness Switch. H1 drives arousal in CNS. Loss of orexin activation causes narcolepsy.",
+      "lore": "First-generation antihistamines cross the BBB causing profound sedation. Second-generation do not.",
+      "gradeReason": "Narcolepsy via orexin link is the hidden clinical gem; 2 Receptor Targets stat is somewhat dry.",
+      "artworkPrompt": "Rooster crowing surrounded by sleeping animals and brain in background. Style: farmyard cartoon. Subject: histamine wakefulness switch. Mood: alerting contrast."
+    },
+    {
+      "cardNumber": 27,
+      "cardName": "Opie Opioid",
+      "grade": 1,
+      "power": "The Endogenous Suppressor. Mu receptor activation gives analgesia, euphoria, miosis, and respiratory depression.",
+      "lore": "Overdose triad = miosis, resp depression, reduced consciousness. Reverse with Naloxone (redose required for fentanyl).",
+      "gradeReason": "Triad of Overdose stat + Naloxone redose for fentanyl = the complete emergency bedside protocol.",
+      "artworkPrompt": "Purple elephant drowning in pill bottles, pinpoint pupils. Style: psychedelic dark cartoon. Subject: opioid overdose triad. Mood: euphoric danger."
+    },
+    {
+      "cardNumber": 28,
+      "cardName": "Endo the Endocannabinoid",
+      "grade": 2,
+      "power": "The Backwards Messenger. Released postsynaptically, travels backwards to inhibit presynaptic neurotransmitter release via CB1.",
+      "lore": "A unique retrograde signaling mechanism. Epidiolex (CBD) approved for severe childhood epilepsies.",
+      "gradeReason": "Retrograde concept is elegant and surprising; Epidiolex clinical use is the practical anchor.",
+      "artworkPrompt": "Glowing crab swimming backwards among synaptic bubbles. Style: bioluminescent cartoon. Subject: retrograde endocannabinoid. Mood: paradoxical backwards flow."
+    },
+    {
+      "cardNumber": 29,
+      "cardName": "Addie Adenosine",
+      "grade": 2,
+      "power": "The Sleep Accumulator. Builds up during wakefulness to apply brakes. Caffeine is a non-selective antagonist.",
+      "lore": "Exogenous IV bolus briefly blocks AV node conduction—used therapeutically to terminate SVT.",
+      "gradeReason": "SVT termination lore is the clinical pearl hiding behind a mechanism card; A1/A2A stat is more pharmacology than performance.",
+      "artworkPrompt": "Coffee cup boxing sleep-pressure snails. Style: comic lightning. Subject: adenosine sleep accumulator. Mood: caffeinated battle."
+    },
+    {
+      "cardNumber": 30,
+      "cardName": "Nicky Nitric Oxide",
+      "grade": 1,
+      "power": "The Receptorless Gas. Synthesized on demand. Diffuses freely across membranes to activate cGMP directly.",
+      "lore": "The primary vascular vasodilator. Sildenafil blocks phosphodiesterase, potentiating this pathway. Toxic in stroke.",
+      "gradeReason": "0 Receptors stat is the most startling hook in the neuropharmacology section; Sildenafil lore is instantly memorable.",
+      "artworkPrompt": "Ghost diffusing through brick wall as NO molecules. Style: ethereal cartoon. Subject: gaseous receptor-free transmitter. Mood: intangible unstoppable."
+    },
+    {
+      "cardNumber": 31,
+      "cardName": "Eddie Epilepsy",
+      "grade": 2,
+      "power": "The ILAE Classifier. Focal (aware/impaired) vs. Generalized.",
+      "lore": "A single seizure is NOT epilepsy unless there is a high recurrence risk (e.g., epileptiform EEG or structural lesion).",
+      "gradeReason": "Classification card; >= 2 Unprovoked stat is precise but the card defines rather than invites clinical action.",
+      "artworkPrompt": "Electric snake with ILAE badge separating focal and generalized lightning bolts. Style: dramatic watercolor. Subject: epilepsy classification. Mood: charged division."
+    },
+    {
+      "cardNumber": 32,
+      "cardName": "Abby Absence",
+      "grade": 1,
+      "power": "The Brief Interrupter. 5-30 second staring spells, dozens of times daily. Abrupt onset/offset, NO post-ictal confusion.",
+      "lore": "Driven by T-type calcium channels. Ethosuximide is first-line over valproate for girls (avoids teratogenicity).",
+      "gradeReason": "3 Hz Spike & Wave stat + ethosuximide-for-girls clinical decision = two high-yield pearls in one card.",
+      "artworkPrompt": "Fawn staring blankly mid-step in sunlit forest while squirrels look confused. Style: gentle cartoon. Subject: absence staring spell. Mood: sudden suspended."
+    },
+    {
+      "cardNumber": 33,
+      "cardName": "Tonic Tom",
+      "grade": 1,
+      "power": "The Grand Mal. Tonic phase (sustained contraction, apnea) -> Clonic phase (rhythmic jerking).",
+      "lore": "Always followed by post-ictal confusion/fatigue. Distinguish from syncope by prolonged post-ictal state.",
+      "gradeReason": "2 Phases stat + post-ictal vs syncope differentiator = the GTCS clinical decision point, delivered clearly.",
+      "artworkPrompt": "Two-panel gorilla: blue tonic freezing then grey clonic shaking. Style: split action comic. Subject: GTCS two phases. Mood: explosive then exhausted."
+    },
+    {
+      "cardNumber": 34,
+      "cardName": "Stan Status",
+      "grade": 1,
+      "power": "The Time-Critical Emergency. >5 min continuous, or 2+ seizures without recovery in between.",
+      "lore": "5-10m: IV Lorazepam. >20m: Levetiracetam/Valproate IV. Prolonged seizures internalize GABA receptors, becoming refractory.",
+      "gradeReason": "> 5 Minutes stat + GABA receptor internalization explains why it becomes refractory — best mechanistic lore in seizure section.",
+      "artworkPrompt": "Melting clock overlaid with seizure waveform, red alarms. Style: surreal emergency. Subject: status epilepticus time emergency. Mood: deteriorating urgency."
+    },
+    {
+      "cardNumber": 35,
+      "cardName": "Valerie Valproate",
+      "grade": 1,
+      "power": "The Broad-Spectrum Weapon. Blocks Nax, blocks T-type Ca2+, enhances GABA. Works for local, generalized, bipolar, migraine.",
+      "lore": "Severe neural tube defects. Absolutely avoid in women of childbearing potential unless NO alternative exists.",
+      "gradeReason": "0% in Pregnancy stat is the most arresting number in the drug section; 'NO alternative exists' is a clinical decision rule.",
+      "artworkPrompt": "Rhino in hazmat suit labeled TERATOGENIC holding broad-spectrum shield. Style: warning-poster cartoon. Subject: valproate pregnancy absolute contraindication. Mood: powerful dangerous."
+    },
+    {
+      "cardNumber": 36,
+      "cardName": "Liam Levetiracetam",
+      "grade": 2,
+      "power": "The Modern Workhorse. Binds SV2A modulating neurotransmitter release. Minimal drug interactions.",
+      "lore": "The preferred broad-spectrum agent in women of childbearing age. Counsel patients on mood disturbance/irritability.",
+      "gradeReason": "SV2A Target is slightly abstract; 'Keppra Rage' visible in artwork is the most memorable fact but not in card text.",
+      "artworkPrompt": "Greyhound racing with Keppra Rage label, sparks flying. Style: speed cartoon. Subject: levetiracetam modern workhorse. Mood: fast effective temperamental."
+    },
+    {
+      "cardNumber": 37,
+      "cardName": "Lammy Lamotrigine",
+      "grade": 1,
+      "power": "The Slow Titrator. Blocks voltage-gated sodium channels. Must be titrated extremely slowly to avoid Stevens-Johnson Syndrome.",
+      "lore": "Valproate DOUBLES Lamotrigine levels. Carbamazepine halves them. Adjust dose carefully.",
+      "gradeReason": "2x Level w/ Valproate stat + SJS warning = drug interaction that trips up prescribers forever.",
+      "artworkPrompt": "Tortoise with SJS warning rash crawling extremely slowly. Style: cautionary cartoon. Subject: lamotrigine slow titration. Mood: deliberate fragile."
+    },
+    {
+      "cardNumber": 38,
+      "cardName": "Carla Carbamazepine",
+      "grade": 1,
+      "power": "The Auto-Inducer. First-line focal epilepsy and trigeminal neuralgia. Induces its own metabolism.",
+      "lore": "Devastating drug-drug interactions. Mandatory HLA-B*1502 screening for SJS risk in East Asian ancestry.",
+      "gradeReason": "CYP3A4 Inducer + auto-induction + HLA screening = three clinical pearls in one card; HLA-B*1502 saves lives.",
+      "artworkPrompt": "Caterpillar eating its own enzyme pill bottles labeled Warfarin OCP. Style: pharmacology cartoon. Subject: carbamazepine enzyme auto-induction. Mood: self-consuming danger."
+    },
+    {
+      "cardNumber": 39,
+      "cardName": "Manny Meningitis",
+      "grade": 1,
+      "power": "The Ceftriaxone Race. Fever, neck stiffness, photophobia. Kernig's + Brudzinski's positive.",
+      "lore": "Give IV Ceftriaxone immediately. Do NOT delay antibiotics for CT or LP. Add dexamethasone for pneumococcal.",
+      "gradeReason": "The Ceftriaxone Race framing makes treatment immediacy visceral; do NOT delay for CT or LP is the most important rule.",
+      "artworkPrompt": "Spiky porcupine exploding with fire, Ceftriaxone syringe nearby. Style: emergency cartoon. Subject: bacterial meningitis race against time. Mood: explosive urgency."
+    },
+    {
+      "cardNumber": 40,
+      "cardName": "Herbie Herpes Encephalitis",
+      "grade": 1,
+      "power": "The Temporal Invader. Fever, headache, severe behavioral change, olfactory hallucinations.",
+      "lore": "T2/FLAIR hyperintensity in temporal lobes. Start IV Aciclovir empirically BEFORE PCR results return. Delay is fatal.",
+      "gradeReason": "'Delay is fatal' is the strongest three-word lore in the deck; empirical aciclovir before PCR is the exact clinical behavior to embody.",
+      "artworkPrompt": "Bat vampire inside glowing purple brain with question marks and smoke. Style: horror cartoon. Subject: HSE temporal lobe invasion. Mood: ominous behavioral change."
+    },
+    {
+      "cardNumber": 41,
+      "cardName": "Guillain the Ascending",
+      "grade": 1,
+      "power": "The Post-Infectious Climb. Acute immune polyneuropathy. Ascending areflexic weakness.",
+      "lore": "Albuminocytological dissociation in CSF. Monitor FVC closely; intubate early. Steroids DO NOT WORK; use IVIg or Plasma Exchange.",
+      "gradeReason": "FVC < 15-20 ml/kg stat is the critical intervention threshold; steroids DO NOT WORK is a clinical trap card.",
+      "artworkPrompt": "Frog freezing upward in ice block, lungs visible inside. Style: scientific cartoon. Subject: GBS ascending paralysis. Mood: slowly frozen."
+    },
+    {
+      "cardNumber": 42,
+      "cardName": "The Antibody Attacker",
+      "grade": 1,
+      "power": "The Fatigable Drop. Autoantibodies destroy postsynaptic nicotinic receptors. Fatigable weakness (worse with repetition).",
+      "lore": "Myasthenic crisis = bulbar/respiratory failure. Differentiate from cholinergic crisis via Tensilon test. Treat with Pyridostigmine.",
+      "gradeReason": "Fatigable weakness + Tensilon test differential = two clinical performances that define MG at the bedside.",
+      "artworkPrompt": "Wasps attacking muscle fibers with pins, fatigue bar depleting. Style: attack cartoon. Subject: myasthenia gravis antibody attack. Mood: relentless fatigable."
+    },
+    {
+      "cardNumber": 43,
+      "cardName": "Migs the Migraine",
+      "grade": 2,
+      "power": "Cortical Spreading Depression. Unilateral, throbbing, nausea, photophobia. 30% have aura.",
+      "lore": "Triptans (5-HT agonists) cause vasoconstriction—absolutely contraindicated in hemiplegic or brainstem aura migraines.",
+      "gradeReason": "4-72 Hours stat is solid; triptan contraindication is the pearl but CSD mechanism name is slightly academic as the power.",
+      "artworkPrompt": "Electrified brain with lightning throbbing unilaterally, wave crossing cortex. Style: vivid pain cartoon. Subject: migraine cortical spreading depression. Mood: pulsing agony."
+    },
+    {
+      "cardNumber": 44,
+      "cardName": "Hugh Hydrocephalus",
+      "grade": 1,
+      "power": "The Fluid Trap. Obstructive (aqueduct stenosis) vs. Communicating (impaired reabsorption).",
+      "lore": "NPH Triad: Gait apraxia, urinary incontinence, dementia. LP drainage test predicts shunt response.",
+      "gradeReason": "Hakim's Triad stat + two-type distinction + LP drainage test = NPH clinical pathway complete.",
+      "artworkPrompt": "Pufferfish trapped in fishbowl overflowing with fluid. Style: aquarium cartoon. Subject: hydrocephalus fluid trap. Mood: trapped pressured."
+    },
+    {
+      "cardNumber": 45,
+      "cardName": "Ida Intracranial Pressure",
+      "grade": 1,
+      "power": "Cushing's Reflex. Hypertension + bradycardia + irregular respiration = pre-herniation.",
+      "lore": "Head 30 deg up, mannitol. Hyperventilation is strictly temporary (causes vasoconstriction to buy time). Steroids ONLY for tumor/abscess.",
+      "gradeReason": "Cushing's Reflex triad is the emergency alarm; 'strictly temporary' for hyperventilation prevents a lethal trap.",
+      "artworkPrompt": "Kettle with eyeball popping, pressure gauges red, steam pipes bursting. Style: steampunk emergency. Subject: raised ICP Cushing's reflex. Mood: imminent catastrophe."
+    },
+    {
+      "cardNumber": 46,
+      "cardName": "Terry TBI",
+      "grade": 1,
+      "power": "The Secondary Preventer. Primary impact is done; your job is stopping secondary ischemia/hypoxia.",
+      "lore": "Cerebral Perfusion Pressure (CPP) = MAP - ICP. Hypotension starves the brain; hypertension worsens edema.",
+      "gradeReason": "CPP 60-70 mmHg stat + the formula + secondary injury framing = the entire TBI management philosophy.",
+      "artworkPrompt": "Ram in football helmet at chalkboard with CPP=MAP-ICP formula and scales. Style: academic cartoon. Subject: TBI secondary prevention. Mood: calculated vigilance."
+    },
+    {
+      "cardNumber": 47,
+      "cardName": "Molly MS",
+      "grade": 1,
+      "power": "Dissemination in Time & Space. T-cell autoimmune demyelination. Optic neuritis, INO, Lhermitte's phenomenon.",
+      "lore": "Uhthoff's phenomenon: Heat worsens symptoms due to conduction failure in already demyelinated axons.",
+      "gradeReason": "85% RRMS stat + Uhthoff's explanation = the clinical pearl that links MRI to summer sauna avoidance.",
+      "artworkPrompt": "Woodpecker with sparking wires and exposed axons in tangled nest. Style: mixed steampunk-nature. Subject: MS demyelination. Mood: short-circuiting."
+    },
+    {
+      "cardNumber": 48,
+      "cardName": "Hugo Huntington",
+      "grade": 2,
+      "power": "The Autosomal Expander. Trinucleotide repeat expansion. Anticipation: worsens in successive generations.",
+      "lore": "Caudate nucleus degeneration disinhibits the motor pathway -> chorea, cognitive decline, psychiatric features.",
+      "gradeReason": "CAG Repeat > 36 stat + anticipation is intellectually rich but describes pathophysiology more than inviting performance.",
+      "artworkPrompt": "Puppet strings attached to wooden doll with fraying brain gears. Style: dark puppet cartoon. Subject: Huntington's disease motor disinhibition. Mood: uncontrolled movement."
+    },
+    {
+      "cardNumber": 49,
+      "cardName": "Alan ALS",
+      "grade": 1,
+      "power": "The Dual Tract Destroyer. Attacks corticospinal tract AND anterior horn cells.",
+      "lore": "Co-existence of UMN and LMN signs in the same territory is the clinical hallmark. Riluzole extends survival modestly.",
+      "gradeReason": "UMN + LMN stat + clinical hallmark in lore = the diagnostic criteria delivered as clinical performance.",
+      "artworkPrompt": "Bear struck by double lightning UMN and LMN simultaneously, arms raised. Style: dramatic cartoon. Subject: ALS dual tract destruction. Mood: devastating dual attack."
+    },
+    {
+      "cardNumber": 50,
+      "cardName": "Nora Neuropathy",
+      "grade": 2,
+      "power": "The Pattern Mapper. Length-dependent (stocking-glove), mononeuritis multiplex, or radiculopathy.",
+      "lore": "Nerve conduction distinguishes Demyelinating (slow velocity) vs. Axonal (reduced amplitude). Diabetes is the commonest cause.",
+      "gradeReason": "2 NCS Patterns stat is clinical but the card maps patterns rather than inviting immediate bedside embodiment.",
+      "artworkPrompt": "Giraffe with stocking-glove bandages at legs, NCS waveforms above. Style: clinical illustration. Subject: peripheral neuropathy pattern mapping. Mood: diagnostic systematic."
+    },
+    {
+      "cardNumber": 51,
+      "cardName": "Ronnie Raised Prolactin",
+      "grade": 1,
+      "power": "The Chiasm Compressor. Most common pituitary tumor. Causes galactorrhea, amenorrhea, and visual field loss.",
+      "lore": "Compresses the crossing nasal fibers of the optic chiasm, causing loss of peripheral vision on both sides.",
+      "gradeReason": "Bitemporal Hemianopia stat + chiasm anatomy = the clinical-anatomical connection that makes prolactinoma unforgettable.",
+      "artworkPrompt": "Pink crown-wearing pituitary tumor squeezing optic chiasm X, vision dartboards blackened at edges. Style: anatomy cartoon. Subject: prolactinoma chiasm compression. Mood: centrally blind."
+    },
+    {
+      "cardNumber": 52,
+      "cardName": "Bella Bell's Palsy",
+      "grade": 1,
+      "power": "The LMN VII Flattening. Unilateral LMN facial palsy. Affects the ENTIRE face, distinguishing it from an UMN stroke.",
+      "lore": "UMN (stroke) spares the forehead due to bilateral cortical innervation. Give prednisolone <72h. Tape the eye shut!",
+      "gradeReason": "NNT ~10 stat + forehead-sparing UMN vs LMN distinction = the most practically important facial examination pearl.",
+      "artworkPrompt": "Sad one-sided drooping cat face with taped shut eye, prednisolone pill nearby. Style: gentle cartoon. Subject: Bell's palsy LMN VII. Mood: lopsided concerned."
+    },
+    {
+      "cardNumber": 53,
+      "cardName": "Terry Trigeminal",
+      "grade": 1,
+      "power": "The Vascular Compressor. Lancinating, electric-shock pain in V2/V3 distribution triggered by light touch.",
+      "lore": "Caused by vascular compression of the nerve root. Carbamazepine is highly effective first-line.",
+      "gradeReason": "STAT: YOU! + NNT ~3 = the card that makes you feel the pain and immediately name the treatment.",
+      "artworkPrompt": "Wolf howling with electric sparks at jaw, raccoon-doctor nearby with carbamazepine pen. Style: action cartoon. Subject: trigeminal neuralgia electric pain. Mood: lancinating shock."
+    },
+    {
+      "cardNumber": 54,
+      "cardName": "Ida IIH",
+      "grade": 2,
+      "power": "The Pseudotumor. Raised ICP without a mass. Daily headache, pulsatile tinnitus, visual obscurations.",
+      "lore": "Untreated leads to blindness. Weight loss is the definitive treatment; Acetazolamide reduces CSF secretion.",
+      "gradeReason": "Opening Pressure > 25 stat is sharp; 'weight loss is the definitive treatment' is the pearl but card is slightly descriptive.",
+      "artworkPrompt": "Owl with pressure gauge helmet and swirling vision spots. Style: mechanical cartoon. Subject: idiopathic intracranial hypertension. Mood: pressured confusion."
+    },
+    {
+      "cardNumber": 55,
+      "cardName": "The Neurology Attending",
+      "grade": 1,
+      "power": "Master Synthesis. A 70yo with aphasia/arm weakness. A 25yo with ascending areflexia. A 45yo with visual loss and headache.",
+      "lore": "Localize the lesion. Name the syndrome. Select the treatment. Map every decision. There is no hiding on the ward.",
+      "gradeReason": "3 Simultaneous Patients stat + 'There is no hiding on the ward' = culminating performance card that earns its closer slot.",
+      "artworkPrompt": "Multi-armed owl doctor holding three clipboards, white coat, stethoscope, electric energy. Style: commanding cartoon. Subject: neurology attending synthesis. Mood: authoritative total awareness."
+    },
+    {
+      "cardNumber": 56,
+      "cardName": "Uncle FrizzleBob's Blank Sketch Card",
+      "grade": 2,
+      "power": "Draw Your Own. The ultimate Kayfabizzaro challenge.",
+      "lore": "The mechanics are real. The lore is real. Only the animals are fake. Draw your next patient. Stay fluffy!",
+      "gradeReason": "Charming DIY meta-card; invites creativity but is a template not a performance. Classic FrizzleBob sign-off.",
+      "artworkPrompt": "Blank white frame with construction-bee workers and pencil at bottom. Style: minimalist cartoon. Subject: DIY card template. Mood: open invitation."
+    }
+  ],
+  "cardCount": 56,
+  "gradeDistribution": {
+    "G1": 42,
+    "G2": 14,
+    "G3": 0
+  },
+  "overallScore": 9,
+  "verdict": "The Neurology Edition is MedKayfab at its most complete — 56 cards from stroke territory to neuropharmacology to dementia genetics with almost no filler. Agatha Acetylcholine's five-rhyme mnemonic and Valerie Valproate's '0% in Pregnancy' stat are two of the best teaching moments in the entire series. The multi-header visual style (BIZARRO, BOGGLE, EMERGENCY, NEURO) adds character but needs a one-line decoder for new players. 'Delay is fatal' on Herbie Herpes Encephalitis is the strongest three-word lore in the deck. Table-ready: Yes.",
+  "blurb": "For medical students and junior doctors who need to own neurology before the ward does. 56 cards from thunderclap headache to the Lock-In — nobody forgets these.",
+  "viralScore": 8,
+  "qa": {
+    "readability": 9,
+    "artworkConsistency": 8,
+    "overall": 9
+  },
+  "coverQA": {
+    "coverVisual": "5 — FrizzleBob rabbit painting an MRI brain, angry microbes flanking, anatomy sketches as wallpaper. Rich and thematic.",
+    "coverTitle": "5 — MedKayfab: Neurology Edition is clear, branded, and tells you exactly what you are getting.",
+    "coverVibeMatch": "5 — chaos + medical precision + cartoon energy = precisely calibrated to this deck's content.",
+    "coverOriginality": "4 — Strong MedKayfab series template execution; novel within series but follows established format.",
+    "coverViral": "4 — FrizzleBob painting an MRI is shareworthy; slightly busy but key elements read well at thumbnail size.",
+    "coverScore": 4.6,
+    "coverNote": "Best MedKayfab cover in the series — the rabbit-painting-MRI image is genuinely arresting. 'Stay fluffy!' and 'BLÖDSINN!' add FrizzleBob voice. Microbe flanking is a nice nod to the series visual language."
+  },
+  "coverScore": 4.6,
+  "fontArtifactCount": 0,
+  "notes": "Multi-header style across card pages: KayfaBIZARRO (pages 6, 8, 11), KayfaBOGGLE (page 9), KayfaEMERGENCY (page 10), KayfaNEURO (pages 12, 14). This variation is intentional and adds energy but may need onboarding for first-time players. Page 4 uses blood-spatter red background for hemorrhagic stroke cards — strong design choice. STAT Block format varies slightly between pages (some use 'STAT Block:' prefix, others use inline corner stat label); consistent with MedKayfab series norms. RAF dice boxes not present. No font artifacts detected.",
+  "topCards": [
+    "Agatha Acetylcholine",
+    "Valerie Valproate",
+    "Herbie Herpes Encephalitis"
+  ],
+  "worstCards": [
+    "Uncle FrizzleBob's Blank Sketch Card",
+    "The NIHSS Inspector"
+  ],
+  "todos": {
+    "urgent": [],
+    "quickWins": [
+      "Add one-line decoder for multi-header system (BIZARRO/BOGGLE/EMERGENCY/NEURO) to rules or back-of-deck",
+      "Make Keppra Rage explicit in Liam Levetiracetam lore text — it's visible in artwork but absent from card"
+    ],
+    "niceToHave": [
+      "Blank Sketch Card could include 3-step guide (Localise / Name / Draw) to make DIY more structured",
+      "Otto Occipital card could note dominant vs non-dominant distinction more explicitly"
+    ]
+  },
+  "hashtags": [
+    "#MedKayfab",
+    "#Neurology",
+    "#MedStudents",
+    "#Kayfabizarro",
+    "#NeurologyEducation",
+    "#MedTwitter",
+    "#USMLE",
+    "#MedEd"
+  ],
+  "genre": "education",
+  "bundle": "EDUCATION",
+  "exhibitions": [
+    "classroom",
+    "workshop"
+  ],
+  "channels": [
+    "Gumroad",
+    "Substack",
+    "TikTok",
+    "Instagram"
+  ],
+  "marketingText": "MedKayfab: NEUROLOGY – Own It Before the Ward Does (Medical Mnemonics Cut & Play Comic)\n\n56 illustrated medical mnemonic cards to master the stroke window, the seizure that will not stop, and the headache that is either nothing or a bleed.\n\nA young woman says it is the worst headache of her life and it arrived in a single second, like a switch flipping. Her neurological exam is clean. Send her home with the migraine label and you will be right four times out of five. The fifth is a subarachnoid bleed that will be catastrophic by morning. Neurology is the specialty where a normal-looking patient and a five-minute decision sit between you and a permanent deficit.\n\nMedKayfab Neurology turns that bedside gamble into a narrative wrestling match, where every stroke, seizure, and infection is a character with a fixed motive, a tell, and a clock. You learn the disease by its face, then you learn to move before the window closes.\n\nYOU'LL GET\n- 56 illustrated MedKayfab cards (14pp, 4 cards/page)\n- Full MedKayfab Freestyle rules (Quest Die mechanics)\n- S-Tier characters like Agatha Acetylcholine, Valerie Valproate, and Herbie Herpes Encephalitis\n- Free lifetime updates as guidelines evolve\n- CC BY-NC-SA 4.0 licence, print, share, and adapt freely\n- PDF optimized for home printing (A4 / Letter)\n\nWhat's in the deck\nThis deck personifies the part of medicine where the diagnosis lives in the pattern and the treatment lives on a timer. You will meet Agatha Acetylcholine, the messenger at the neuromuscular junction whose signal fades the harder the muscle works, so the eyelids droop by evening and the double vision comes and goes. Valerie Valproate is the broad-spectrum peacekeeper who can quiet almost any kind of seizure storm, carrying one absolute red line she will not cross. And Herbie Herpes Encephalitis is the fever-and-confusion intruder chewing through the temporal lobe while the scan is still loading, the reason you start treatment on suspicion instead of proof. From the thunderclap headache to the Lock-In, the deck covers the deficits you cannot afford to misread.\n\nHow it works\nEvery card is a cognitive anchor built for high-stress retrieval. You have the Character (the mnemonic), the Visual (the scene), the Stat Block (the red-flag signs, the timing, the first move), the Lore (the clinical story), and the Quest (the challenge at the bedside). The Mechanism Flash mode is unforgiving in neurology: if you cannot name the lesion and the next step in one sentence without looking, the \"patient\" on the Stage loses the tissue you were trying to save.\n\nHonest cognitive load\nThis is a high-yield core deck for medical students heading into their neurology rotation and junior doctors who get called to the first stroke, the first seizure, and the first confused-and-febrile patient. It pairs naturally with Neuroanatomy for the wiring under every deficit, Pharmacology for the drug family Valerie belongs to, and Emergency Medicine for the clock that runs through all of it.\n\nABOUT MEDKAYFAB\nMedKayfab is a narrative medical learning card game, 50 decks covering the full medical curriculum. Every card encodes a clinical mechanism as a character with a personality, a story, and a reasoning challenge. Built by a physician. Assembled with AI tools. Manually revised. Honest about its limitations. Free to use, share, and adapt under CC BY-NC-SA 4.0.\n\nPAY WHAT YOU WANT\nThis deck is Pay What You Want, including free. If you find it useful, a fair price is €5. If you are a student on a budget, enter €0, no questions asked. If you want to support more decks, anything above fair price is appreciated. CC BY-NC-SA 4.0, share freely, attribute honestly, never resell.\n\nDISCLAIMER\nMedKayfab is a learning companion, not a clinical reference. Content was created by a physician and reviewed to the best of our knowledge, but medicine evolves, guidelines change, and some mechanisms in here will be simplified or wrong. Always verify against current primary sources and clinical guidelines before applying anything to patient care. The Blödsinn! is the vehicle. The science is serious.\n\nStay fluffy. — Doc FrizzleBob",
+  "marketingEdition": "MED"
+}
