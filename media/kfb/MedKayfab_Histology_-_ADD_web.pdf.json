@@ -1,0 +1,598 @@
+{
+  "sourceFile": "MedKayfab_Histology - ADD web.pdf",
+  "deckTitle": "MedKayfab: Histology & Microanatomy Edition",
+  "deckType": "Medical education card deck",
+  "bundleSuggestion": "TBD",
+  "pageCount": 15,
+  "analysisVersion": 1.0,
+  "generatedAt": "2026-06-19T00:00:00",
+  "savedAt": "2026-06-19T00:00:00",
+  "extractionTool": "cowork_task_v3",
+  "RAF": false,
+  "gradingMode": "educational",
+  "deckFunction": [
+    "educational",
+    "medical_reference"
+  ],
+  "seriesId": "medkayfab_megapack",
+  "cards": [
+    {
+      "cardNumber": 1,
+      "cardName": "Epi the Epithelium",
+      "grade": 2,
+      "power": "Barrier Seal. Blocks all non-lymphocyte tokens from crossing the board.",
+      "lore": "Basement membrane is Type IV collagen + laminin. Split it like a cheap rug, and you get Alport syndrome.",
+      "gradeReason": "Broad classification umbrella card — border guard role clear but less visceral than specific cell types.",
+      "artworkPrompt": "Armadillo curled at tissue boundary blocking invasion. Style: sketchbook ink, watercolour. Subject: barrier epithelium. Mood: fortress."
+    },
+    {
+      "cardNumber": 2,
+      "cardName": "Brush Border Barney",
+      "grade": 1,
+      "power": "Hyper-Absorb. Tap to digest and draw 3 nutrient cards.",
+      "lore": "Gluten wrecks Barney's hair (Villous atrophy = Coeliac disease). No hair, no absorption.",
+      "gradeReason": "Giraffe microvilli + GLUT2 glucose diagram — you know exactly what you are and what you do.",
+      "artworkPrompt": "Giraffe-like enterocyte with tall microvilli hair absorbing glucose. Style: comic sketchbook. Subject: brush border. Mood: frantic absorption."
+    },
+    {
+      "cardNumber": 3,
+      "cardName": "Clara the Ciliated",
+      "grade": 1,
+      "power": "Mucociliary Escalator. Move 1 pathogen token to the Pharynx discard pile every turn.",
+      "lore": "Kartagener's syndrome = defective dynein arms. Immotile cilia mean chronic sinusitis and 50% chance of situs inversus.",
+      "gradeReason": "Caterpillar-cilia beating at 1000/min escalating pathogens — perfectly embodied escalator role.",
+      "artworkPrompt": "Caterpillar-cilia sweeping bacteria toward throat exit. Style: ink wash, vivid green. Subject: ciliated epithelium. Mood: relentless momentum."
+    },
+    {
+      "cardNumber": 4,
+      "cardName": "Squamous Sue",
+      "grade": 1,
+      "power": "Keratin Armor. Sacrifice top layer to negate mechanical or chemical damage.",
+      "lore": "Pemphigus vulgaris attacks the spines (desmoglein-3) in the stratum spinosum, causing suprabasal blisters.",
+      "gradeReason": "Snake shedding dead layers as armor — sacrifice-to-protect mechanic is immediately understood.",
+      "artworkPrompt": "Armoured serpent shedding scaled dead layers as shield. Style: dense crosshatch ink. Subject: stratified squamous epithelium. Mood: stoic sacrifice."
+    },
+    {
+      "cardNumber": 5,
+      "cardName": "Urothelial Ulrich",
+      "grade": 1,
+      "power": "Shape-Shift. Change form to nullify chemical burns from urine tokens.",
+      "lore": "Umbrella cells use uroplakin to stop urea back-diffusion. Visible haematuria? Look out for urothelial carcinoma.",
+      "gradeReason": "Puffer fish inflating/deflating captures transitional epithelium shape-shift — no explanation required.",
+      "artworkPrompt": "Puffer fish morphing between flat and rounded in urine stream. Style: ink and purple watercolour. Subject: urothelium. Mood: defensive flex."
+    },
+    {
+      "cardNumber": 6,
+      "cardName": "Gland Greta",
+      "grade": 2,
+      "power": "Exocrine Eruption. Deal heavy enzymatic damage to food tokens.",
+      "lore": "Parotid is purely serous (dark). Sublingual is predominantly mucous (pale). Sjögren's kills the acini.",
+      "gradeReason": "Octopus spraying enzyme — role clear, but serous/mucous distinction adds a contextual layer not immediately playable.",
+      "artworkPrompt": "Octopus exocrine gland squirting amylase and lipase at a food token. Style: watercolour tentacles. Subject: exocrine gland. Mood: explosive digestion."
+    },
+    {
+      "cardNumber": 7,
+      "cardName": "Goblet the Glycoprotein",
+      "grade": 1,
+      "power": "Mucin Blast. Create a 2-layer protective gel field.",
+      "lore": "Goblet cells in the oesophagus? That's Barrett's intestinal metaplasia. Risk of adenocarcinoma goes up.",
+      "gradeReason": "Pelican-goblet shape firing mucin gel — art and function align perfectly.",
+      "artworkPrompt": "Pelican-shaped goblet cell launching thick mucin shield. Style: ink and green wash. Subject: goblet cell. Mood: gooey protection."
+    },
+    {
+      "cardNumber": 8,
+      "cardName": "Type II Pneumocyte Pete",
+      "grade": 1,
+      "power": "Surfactant Synthesis. Reduce alveolar surface tension to 0. Prevent collapse.",
+      "lore": "Premmies lack Pete's surfactant, causing Respiratory Distress Syndrome. Antenatal steroids speed up Pete's maturation.",
+      "gradeReason": "Spider-baby inside a bubble preventing collapse — surfactant-as-inflation mechanic clicks immediately.",
+      "artworkPrompt": "Spider-like type II pneumocyte secreting surfactant to keep alveolar bubble open. Style: delicate ink. Subject: alveolar cell. Mood: life-saving tension."
+    },
+    {
+      "cardNumber": 9,
+      "cardName": "Mesothelial Mia",
+      "grade": 1,
+      "power": "Frictionless Glide. Nullify organ Friction.",
+      "lore": "Asbestos fibres pierce her, causing 20-50 year latency Mesothelioma.",
+      "gradeReason": "Manta ray gliding between organs — frictionless lining role requires zero explanation.",
+      "artworkPrompt": "Manta ray slipping frictionlessly between two organs. Style: fluid ink wash. Subject: mesothelium. Mood: silent glide, latent menace."
+    },
+    {
+      "cardNumber": 10,
+      "cardName": "Endothelial Eddie",
+      "grade": 1,
+      "power": "Gatekeeper. Control leukocyte rolling and vascular tone (NO).",
+      "lore": "Liver sinusoids lack a basement membrane and have large fenestrae for free exchange.",
+      "gradeReason": "Flatfish bouncer controlling blood traffic — gatekeeper role reads immediately.",
+      "artworkPrompt": "Flatfish bouncer opening and closing blood vessel gate for leukocytes. Style: cross-section ink. Subject: vascular endothelium. Mood: traffic control authority."
+    },
+    {
+      "cardNumber": 11,
+      "cardName": "Collagen Carl",
+      "grade": 1,
+      "power": "Tensile Strength. Grant indestructible structural scaffolding.",
+      "lore": "Glycine is every 3rd position. No Vitamin C = poor prolyl hydroxylation = Scurvy (unstable collagen, bleeding).",
+      "gradeReason": "Triple-helix snake as scaffold with scurvy stakes — 30% total protein, clear structural backbone identity.",
+      "artworkPrompt": "Triple-helix serpent as construction scaffolding holding tissue together. Style: dense ink crosshatch. Subject: collagen fibrils. Mood: foundational strength."
+    },
+    {
+      "cardNumber": 12,
+      "cardName": "Fibro the Fibroblast",
+      "grade": 2,
+      "power": "Matrix Remodel. Transform into Myofibroblast to contract wounds.",
+      "lore": "Alpha-1-antitrypsin deficiency allows neutrophil elastase to eat Fibro's elastin, causing emphysema.",
+      "gradeReason": "Monkey spinning ECM web — myofibroblast transformation is a key detail requiring biochemical context.",
+      "artworkPrompt": "Monkey weaving extracellular matrix web, transforming into muscular form to contract wound. Style: ink and pink wash. Subject: fibroblast. Mood: remodelling urgency."
+    },
+    {
+      "cardNumber": 13,
+      "cardName": "Macro the Macrophage",
+      "grade": 1,
+      "power": "Tissue Adaptation. Gain specific abilities based on organ zone.",
+      "lore": "Heart failure causes pulmonary alveolar macrophages to eat leaked RBCs to become haemosiderin-laden heart failure cells.",
+      "gradeReason": "Chameleon macrophage changing identity per organ — adaptation role is the core playable fantasy.",
+      "artworkPrompt": "Chameleon macrophage changing colour to match liver, lung, brain environments. Style: vivid comic ink. Subject: tissue macrophage. Mood: shapeshifting prowess."
+    },
+    {
+      "cardNumber": 14,
+      "cardName": "Mast Cell Mona",
+      "grade": 1,
+      "power": "Degranulation. Instantly inflict massive vasodilation and bronchospasm.",
+      "lore": "Leukotrienes cause more sustained asthma and bronchospasm than histamine.",
+      "gradeReason": "Puffer fish with IgE triggers exploding granules — degranulation as instant-action bomb is viscerally clear.",
+      "artworkPrompt": "Puffer fish mast cell erupting granules on IgE trigger, causing bronchospasm. Style: explosive ink splash. Subject: mast cell. Mood: allergic detonation."
+    },
+    {
+      "cardNumber": 15,
+      "cardName": "Adipose Ada",
+      "grade": 2,
+      "power": "Thermogenesis / Satiety. Generate heat or suppress appetite.",
+      "lore": "Brown fat uses UCP1 to uncouple electron transport, making heat instead of ATP.",
+      "gradeReason": "Sleepy bear adipocytes — power splits between two functions (heat and satiety), slightly diluting single role identity.",
+      "artworkPrompt": "Bear-like adipose cell radiating warmth while signalling satiety. Style: soft watercolour ink. Subject: adipose tissue. Mood: warm hibernation energy."
+    },
+    {
+      "cardNumber": 16,
+      "cardName": "Cartilage Carla",
+      "grade": 2,
+      "power": "Compressive Resistance. Absorb massive mechanical loads.",
+      "lore": "Chondrocytes have NO blood vessels; they heal terribly. Loss of Carla in joints = Osteoarthritis eburnation.",
+      "gradeReason": "Turtle in gel pool absorbing load — 'avascular diffusion only' stat needs context to appreciate the healing consequence.",
+      "artworkPrompt": "Turtle submerged in gel matrix absorbing joint compression load. Style: ink and blue-green wash. Subject: cartilage. Mood: stoic bloodless endurance."
+    },
+    {
+      "cardNumber": 17,
+      "cardName": "Bone Barry",
+      "grade": 2,
+      "power": "Remodel. Couple osteoclast destruction with osteoblast creation.",
+      "lore": "Paget's disease shows chaotic mosaic cement lines and giant abnormal osteoclasts.",
+      "gradeReason": "Crab-osteoclast remodelling bone — the coupled osteoblast counterpart is implied not shown, requiring anatomical memory.",
+      "artworkPrompt": "Crab osteoclast breaking bone while osteoblast lays new matrix beside it. Style: textured ink. Subject: bone remodelling unit. Mood: balanced demolition and construction."
+    },
+    {
+      "cardNumber": 18,
+      "cardName": "Elastic Ellie",
+      "grade": 1,
+      "power": "Recoil. Return stretched tissue to resting state instantly.",
+      "lore": "Marfan syndrome = FBN1 (fibrillin) mutation. Poor scaffold leads to aortic root dissection and lens subluxation.",
+      "gradeReason": "Frog stretching and snapping back — elastic recoil identity is the entire card and it lands perfectly.",
+      "artworkPrompt": "Frog made of elastic fibres stretched to maximum, snapping back to rest. Style: energetic ink lines. Subject: elastic fibres. Mood: spring tension and release."
+    },
+    {
+      "cardNumber": 19,
+      "cardName": "Sarco the Sarcomere",
+      "grade": 2,
+      "power": "Cross-Bridge Cycle. Consume 1 ATP to deal massive mechanical force.",
+      "lore": "No ATP after death = myosin can't detach from actin = Rigor mortis.",
+      "gradeReason": "Wrestling sarcomere cross-bridge — rigor mortis lore is knockout but ATP hydrolysis mechanic needs structural memory.",
+      "artworkPrompt": "Wrestlers (actin and myosin) locked in cross-bridge consuming ATP token. Style: wrestling arena ink. Subject: sarcomere. Mood: mechanical inevitability."
+    },
+    {
+      "cardNumber": 20,
+      "cardName": "Cardiac Carla",
+      "grade": 1,
+      "power": "Functional Syncytium. Share electrical action potentials instantly.",
+      "lore": "Connexin-43 gap junctions allow the heart to beat as one. Ischaemia breaks them, causing arrhythmias.",
+      "gradeReason": "Ant colony cardiac muscle all firing in electrical unison — syncytium as hive mind is immediately playable.",
+      "artworkPrompt": "Ant colony cardiac cells linked by gap junctions, firing electrical pulse as one unit. Style: dense cross-section ink. Subject: cardiac muscle. Mood: coordinated power."
+    },
+    {
+      "cardNumber": 21,
+      "cardName": "Smooth Sophia",
+      "grade": 2,
+      "power": "Sustained Tone. Maintain contraction using non-shivery energy.",
+      "lore": "Hirschsprung disease = absent ganglion cells in distal colon, meaning Sophia can't relax. Result: Megacolon.",
+      "gradeReason": "Smooth worm in sustained tone — 'non-shivery energy' stat is odd phrasing; Hirschsprung lore is excellent but the mechanic needs setup.",
+      "artworkPrompt": "Smooth worm-muscle holding sustained contraction around hollow tube. Style: sinuous ink lines. Subject: smooth muscle. Mood: quiet unstoppable tension."
+    },
+    {
+      "cardNumber": 22,
+      "cardName": "Neuron Ned",
+      "grade": 1,
+      "power": "Action Potential. Transmit signals with absolute spatial precision.",
+      "lore": "Tetanus and Rabies use retrograde transport (dynein) to hijack the axon and ride back to the CNS.",
+      "gradeReason": "Owl-neuron firing at 400m/s — retrograde viral hijacking is one of the most chilling lore hooks in the deck.",
+      "artworkPrompt": "Owl perched on branching axon firing electrical signal while Rabies virus rides dynein backward. Style: dramatic ink. Subject: neuron. Mood: precision and menace."
+    },
+    {
+      "cardNumber": 23,
+      "cardName": "Oligodendro the Myelinator",
+      "grade": 1,
+      "power": "Saltatory Conduction. Increase nerve conduction velocity by 10x.",
+      "lore": "Multiple Sclerosis is a T/B-cell attack on CNS myelin, slowing conduction and leaving glial scars.",
+      "gradeReason": "Octopus wrapping 40 axons simultaneously — the 10x speed multiplier and MS demyelination make this a complete narrative.",
+      "artworkPrompt": "Octopus wrapping myelin around 40 axons, signal jumping between nodes of Ranvier. Style: tight ink tentacles. Subject: oligodendrocyte. Mood: efficient acceleration."
+    },
+    {
+      "cardNumber": 24,
+      "cardName": "Astro the Astrocyte",
+      "grade": 1,
+      "power": "Tripartite Support. Maintain the BBB and clear neurotransmitters.",
+      "lore": "Hepatic encephalopathy causes Astro to absorb glutamine, raising intracranial pressure.",
+      "gradeReason": "Bouncer-astrocyte at the BBB VIP entrance — 100,000 contacts, tripartite synapse role lands clean.",
+      "artworkPrompt": "Star-shaped astrocyte bouncer sealing blood-brain barrier while sweeping excess glutamate. Style: ink with galaxy wash. Subject: astrocyte. Mood: cosmic maintenance."
+    },
+    {
+      "cardNumber": 25,
+      "cardName": "Synapse Sid",
+      "grade": 1,
+      "power": "Neurotransmission. Convert electrical signal to chemical payload.",
+      "lore": "Botulinum toxin cleaves SNARE proteins. No spine = no ACh release = flaccid paralysis.",
+      "gradeReason": "Baseball mitt synapse catching neurotransmitter — botulinum SNARE lore is perfectly concise horror.",
+      "artworkPrompt": "Baseball mitt synaptic cleft catching vesicle payload, Botox scissors cutting SNARE in background. Style: kinetic ink. Subject: chemical synapse. Mood: chemical handoff."
+    },
+    {
+      "cardNumber": 26,
+      "cardName": "Peripheral Nerve Percy",
+      "grade": 2,
+      "power": "The Blood-Nerve Barrier. Perineurium seals the microenvironment.",
+      "lore": "Local anesthetics block the myelinated Aδ (sharp pain) before the unmyelinated C fibers (dull pain).",
+      "gradeReason": "Cable-bundle nerve art — local anesthetic blocking order (sharp before dull) is clinically key but requires pharmacology context.",
+      "artworkPrompt": "Cross-section of nerve bundle as coloured cables, local anaesthetic molecules blocking A-delta fibres first. Style: technical ink diagram. Subject: peripheral nerve. Mood: precision blocking."
+    },
+    {
+      "cardNumber": 27,
+      "cardName": "Hepatic Lobule Hank",
+      "grade": 2,
+      "power": "First-Pass Metabolism. Filter and detoxify all portal blood.",
+      "lore": "Zone 1 (periportal) is the lowest O2 and highest CYP450. Paracetamol overdose and ischaemia kill Zone 3 first.",
+      "gradeReason": "Honeycomb lobule with zone gradients — first-pass filter role is clear but zone vulnerability requires hepatic anatomy knowledge.",
+      "artworkPrompt": "Honeycomb liver lobule with portal triad at centre, paracetamol destroying Zone 3 cells. Style: radiating ink. Subject: liver lobule. Mood: toxic gradient drama."
+    },
+    {
+      "cardNumber": 28,
+      "cardName": "Renal Corpuscle Rita",
+      "grade": 1,
+      "power": "Ultra-Filtration. Separate plasma from blood cells and large proteins.",
+      "lore": "Podocyte foot process effacement (visible only on EM) destroys the barrier, causing massive proteinuria (Minimal Change Disease).",
+      "gradeReason": "Octopus glomerulus squeezing plasma through — 180 litres/day, podocyte foot process lore makes the stakes visceral.",
+      "artworkPrompt": "Octopus-glomerulus squeezing plasma through podocyte slits into Bowman's capsule. Style: fluid ink. Subject: renal corpuscle. Mood: high-pressure filtration."
+    },
+    {
+      "cardNumber": 29,
+      "cardName": "Spleen Stella",
+      "grade": 2,
+      "power": "Senescent Clearance. Destroy aged/rigid RBCs and mount T-independent responses.",
+      "lore": "Asplenic patients cannot remove Howell-Jolly bodies from RBCs and are vulnerable to encapsulated bacteria.",
+      "gradeReason": "Detective-spleen pulling old RBCs — Howell-Jolly consequence is clear, but T-independent response adds immunology layer.",
+      "artworkPrompt": "Detective spleen pulling rigid ageing red blood cell from sinusoid. Style: noir ink splash. Subject: splenic microanatomy. Mood: quality control authority."
+    },
+    {
+      "cardNumber": 30,
+      "cardName": "Lymph Node Lenny",
+      "grade": 1,
+      "power": "Affinity Maturation. Evolve high-affinity antibodies over months.",
+      "lore": "Follicular lymphoma overexpresses BCL2, making B-cells immortal even when they fail the arena test.",
+      "gradeReason": "Military trial arena evolving antibody champions — BCL2 immortality loophole makes the stakes immediate.",
+      "artworkPrompt": "Gladiator arena inside lymph node, B-cells competing to evolve highest antibody affinity. Style: arena ink. Subject: germinal centre. Mood: evolution under pressure."
+    },
+    {
+      "cardNumber": 31,
+      "cardName": "Thymus Thomas",
+      "grade": 2,
+      "power": "Central Tolerance. Prevent autoimmune disease via negative selection.",
+      "lore": "DiGeorge syndrome causes autoimmunity/ectodermal dysplasia (APS-1). Autoreactive T-cells graduate that shouldn't.",
+      "gradeReason": "Drill sergeant selecting T-cells — >95% apoptosis rate is stunning but negative selection concept requires immunology framing.",
+      "artworkPrompt": "Military drill sergeant thymus expelling autoreactive T-cell recruits while elite survivors march past. Style: military ink. Subject: thymic selection. Mood: brutal elimination."
+    },
+    {
+      "cardNumber": 32,
+      "cardName": "Bone Marrow Betty",
+      "grade": 1,
+      "power": "Haematopoiesis. Spawn infinite blood cell tokens.",
+      "lore": "Follicular lymphoma infiltrates the marrow in a paratrabecular pattern, clinging to the bone edges.",
+      "gradeReason": "Factory floor spawning 200 billion RBCs/day — the production scale is immediately awe-inspiring and playable.",
+      "artworkPrompt": "Factory inside bone marrow mass-producing red cells, lymphoma cells creeping along trabecular edges. Style: industrial ink. Subject: bone marrow. Mood: relentless output."
+    },
+    {
+      "cardNumber": 33,
+      "cardName": "Pancreatic Island Izzy",
+      "grade": 2,
+      "power": "Endocrine Counter-Regulation. Balance blood glucose via portal paracrine signalling.",
+      "lore": "Type 1 Diabetes = targeted T-cell strike on the central Beta islets; the Alpha wolves get a bad rep but lose regulation.",
+      "gradeReason": "Island ecosystem alpha/beta wolf balance — elegant metaphor but paracrine signalling requires endocrinology context to fully land.",
+      "artworkPrompt": "Tropical island with alpha wolf and beta wolf characters managing glucose tide. Style: ecosystem ink watercolour. Subject: islets of Langerhans. Mood: delicate endocrine balance."
+    },
+    {
+      "cardNumber": 34,
+      "cardName": "Alveoli Alice",
+      "grade": 1,
+      "power": "Gas Exchange. Swap O2 and CO2 across the thinnest barrier in biology.",
+      "lore": "Fibroblastic foci and honeycombing (destroyed bubbles) are the hallmark of Usual Interstitial Pneumonia (UIP).",
+      "gradeReason": "Bubble cluster doing O2/CO2 swap across 0.2μm — 'thinnest barrier in biology' is the perfect superlative hook.",
+      "artworkPrompt": "Delicate soap-bubble alveolus swapping oxygen and CO2 molecules across gossamer membrane. Style: light ink. Subject: alveolar wall. Mood: breathtaking fragility."
+    },
+    {
+      "cardNumber": 35,
+      "cardName": "Glomerular GBM Greta",
+      "grade": 2,
+      "power": "Charge & Size Barrier. Repel anionic albumin.",
+      "lore": "Alport syndrome = failed switch to α3α4α5. The net splinters into a basket-weave, causing nephritis and deafness.",
+      "gradeReason": "Net fisherman repelling albumin — basket-weave Alport consequence is vivid, but α3α4α5 collagen IV stat is highly technical.",
+      "artworkPrompt": "Glomerular net fisherman blocking albumin by charge, Alport basket-weave net unravelling in background. Style: fishing ink. Subject: GBM. Mood: molecular sieve precision."
+    },
+    {
+      "cardNumber": 36,
+      "cardName": "Gut Wall Ginny",
+      "grade": 2,
+      "power": "Peristaltic Digestion. Move and absorb nutrients sequentially.",
+      "lore": "Destruction of gastric parietal cells (fried-egg appearance) halts Intrinsic Factor, leading to Pernicious Anaemia.",
+      "gradeReason": "Spiral gut cross-section moving food — 4-distinct-layers architecture requires histological orientation to fully appreciate.",
+      "artworkPrompt": "Cross-section spiral of gut wall with four layers, peristaltic wave pushing bolus forward. Style: anatomical ink. Subject: GI wall microanatomy. Mood: relentless peristalsis."
+    },
+    {
+      "cardNumber": 37,
+      "cardName": "Testes Terry",
+      "grade": 1,
+      "power": "Immunoprivilege. Shield meiotic antigens from autoimmune attack.",
+      "lore": "Breach the Sertoli tight junctions, and the immune system will attack the sperm (autoimmune orchitis).",
+      "gradeReason": "Sertoli fortress wall guarding meiotic secrets — immunoprivilege as 'fortress of forbidden antigens' is an immediate role.",
+      "artworkPrompt": "Sertoli cell walls forming fortress around sperm undergoing meiosis, immune soldier blocked outside. Style: fortress ink. Subject: testicular microstructure. Mood: guarded sanctuary."
+    },
+    {
+      "cardNumber": 38,
+      "cardName": "Ovary Olivia",
+      "grade": 1,
+      "power": "Follicular Recruitment. Burn primordial follicles to generate one Graafian champion.",
+      "lore": "PCOS: Follicles arrest in development due to excess androgens and no FSH surge, causing polycystic morphology.",
+      "gradeReason": "Follicle-army eliminated in monthly recruitment tournament — burning reserves to crown one champion is a perfect tournament mechanic.",
+      "artworkPrompt": "Ovary tournament arena eliminating follicles to crown one Graafian champion, PCOS follicles frozen in stands. Style: tournament ink. Subject: ovarian follicle. Mood: biological selection spectacle."
+    },
+    {
+      "cardNumber": 39,
+      "cardName": "Skin Microstructure Stella",
+      "grade": 2,
+      "power": "Stratified Defence. Absorb UV radiation and mechanical shear.",
+      "lore": "Bullous pemphigoid: Antibodies against BP180. The epidermis cleanly detaches from the dermis (subepidermal blister).",
+      "gradeReason": "Forest-tree layered skin architecture — UV + mechanical defence role is clear, but BP180 hemidesmosome stat requires histology vocabulary.",
+      "artworkPrompt": "Tree-layered skin cross-section absorbing UV arrows, basement membrane roots attacked by pemphigoid antibodies. Style: ecological ink. Subject: skin layers. Mood: defensive stratification."
+    },
+    {
+      "cardNumber": 40,
+      "cardName": "Blood Film Boris",
+      "grade": 1,
+      "power": "Diagnostic Snapshot. Reveal the entire haematological state in one look.",
+      "lore": "Schistocytes = Microangiopathic Haemolytic Anaemia (TTP/HUS/DIC). A medical emergency.",
+      "gradeReason": "Blood film projectionist revealing the full story in one frame — medical emergency stakes make this immediately high-impact.",
+      "artworkPrompt": "Cinema projector casting blood smear onto screen, schistocytes glowing as medical emergency signal. Style: film noir ink. Subject: peripheral blood film. Mood: dramatic diagnostic reveal."
+    },
+    {
+      "cardNumber": 41,
+      "cardName": "Congo Red Connie",
+      "grade": 1,
+      "power": "Fibrillary Accumulation. Slowly chokes organs with indestructible protein.",
+      "lore": "AL amyloid = light chains (myeloma). AA amyloid = acute phase 5A (chronic inflammation like RA/IBD).",
+      "gradeReason": "Origami geometric amyloid deposits choking organs — beta-sheet indestructibility and slow accumulation are immediately ominous.",
+      "artworkPrompt": "Geometric origami amyloid deposits slowly filling organ space, glowing apple-green under Congo Red. Style: geometric ink. Subject: amyloid. Mood: insidious crystalline accumulation."
+    },
+    {
+      "cardNumber": 42,
+      "cardName": "Granuloma Greta",
+      "grade": 1,
+      "power": "Containment. Wall off indigestible threats.",
+      "lore": "TB has caseeous (cheesy) necrosis. Sarcoidosis has naked non-caseating granulomas and causes hypercalcaemia via 1α-hydroxylase.",
+      "gradeReason": "Castle wall granuloma containing the undigestible — TB cheesy vs Sarcoid naked distinction is one of the best lore pairs in the deck.",
+      "artworkPrompt": "Castle wall granuloma surrounding TB bacteria with cheesy core, naked Sarcoidosis granuloma outside. Style: fortress ink. Subject: granuloma. Mood: desperate containment."
+    },
+    {
+      "cardNumber": 43,
+      "cardName": "Necrosis Navigator Ned",
+      "grade": 3,
+      "power": "Cell Death Autopsy. Reveal the exact mechanism of tissue destruction.",
+      "lore": "Brain infarcts liquefy due to high lipolytic content. Heart infarcts coagulate, leaving ghost cells.",
+      "gradeReason": "Grim reaper navigating death types — 'reveal the mechanism' is more of an observer role than an embodiable one.",
+      "artworkPrompt": "Grim reaper navigating liquefactive brain necrosis vs coagulative heart necrosis landscape. Style: dark ink contrast. Subject: patterns of necrosis. Mood: anatomical death tour."
+    },
+    {
+      "cardNumber": 44,
+      "cardName": "Stain Stanley",
+      "grade": 3,
+      "power": "Chemical Revelation. Reveal the hidden tissue components.",
+      "lore": "H&E can't see everything. Want to see if that is fibrosis? Congo Red (Sirius Red) will paint the fibrous collagen bright blue.",
+      "gradeReason": "Reference toolkit card — pure decoder utility, not a performative role. Useful but doesn't invite embodiment.",
+      "artworkPrompt": "Mad scientist applying coloured stains to tissue slide revealing hidden fibres. Style: vibrant lab ink. Subject: special stains toolkit. Mood: chemical detective work."
+    },
+    {
+      "cardNumber": 45,
+      "cardName": "Immunohistochemistry Ivan",
+      "grade": 1,
+      "power": "Lineage Identification. Force tumors to reveal their cell of origin.",
+      "lore": "Carcinoma = Cytokeratin. Melanoma = S100. Lymphoma = CD20. CD45+.",
+      "gradeReason": "Sniper revealing tumour identity with DAB brown marker — 'force reveal' mechanic is immediately dramatic.",
+      "artworkPrompt": "IHC sniper marking cancer cells brown with DAB antibody rounds, CD20 target highlighted. Style: precision ink. Subject: immunohistochemistry. Mood: cellular unmasking."
+    },
+    {
+      "cardNumber": 46,
+      "cardName": "Electron Microscopy Eli",
+      "grade": 1,
+      "power": "Ultrastructural Vision. Diagnose diseases hidden below the light microscope barrier.",
+      "lore": "Fabry disease shows lamellated zebra bodies. Membranous nephropathy shows subepithelial spike and dome deposits.",
+      "gradeReason": "EM scientist seeing past the visible limit — zebra bodies and spike-and-dome deposits deliver genuine wonder.",
+      "artworkPrompt": "EM scientist peering into cellular ultrastructure, zebra body patterns and spike-dome deposits glowing. Style: ultra-fine ink. Subject: transmission EM. Mood: resolution breakthrough."
+    },
+    {
+      "cardNumber": 47,
+      "cardName": "Frozen Section Freda",
+      "grade": 2,
+      "power": "Intraoperative Guidance. After the course of surgery while the patient is asleep.",
+      "lore": "Used for sentinel lymph node or surgical margin checks. Leaves ice crystal artifacts, but speed saves lives.",
+      "gradeReason": "Deli counter frozen section — life-saving speed is clear, but 'alter the course of surgery' requires operative context to land fully.",
+      "artworkPrompt": "Surgeon receiving frozen section result from deli-style machine mid-operation, ice crystals forming on slide. Style: clinical ink. Subject: intraoperative frozen section. Mood: urgent intraoperative decision."
+    },
+    {
+      "cardNumber": 48,
+      "cardName": "Molecular Pathology Molly",
+      "grade": 1,
+      "power": "Genetic Profiling. Match the tumour's driver mutation to the targeted therapy.",
+      "lore": "Microsatellite instability (MSI-H) in colorectal cancer predicts a massive response to pembrolizumab immunotherapy.",
+      "gradeReason": "DNA profiler matching mutation to therapy — MSI-H pembrolizumab outcome is one of oncology's great success stories.",
+      "artworkPrompt": "Molecular pathologist matching DNA barcode to targeted drug keyhole. Style: data-lab ink. Subject: molecular pathology. Mood: precision oncology match."
+    },
+    {
+      "cardNumber": 49,
+      "cardName": "Apoptosis Andy",
+      "grade": 1,
+      "power": "Programmed Death. Eliminate cells cleanly via intrinsic/extrinsic pathways.",
+      "lore": "BAX/BAK cause death (cytochrome c release). BCL-2 prevents it. Venetoclax blocks BCL-2, forcing cancer to die.",
+      "gradeReason": "Cat neatly bagging garbage — clean death as skilled service work is the perfect metaphor. Venetoclax lore closes the therapeutic circle.",
+      "artworkPrompt": "Cat carefully bagging shrunken apoptotic cells, Venetoclax molecule blocking BCL-2 in background. Style: domestic ink. Subject: apoptosis. Mood: tidy programmed execution."
+    },
+    {
+      "cardNumber": 50,
+      "cardName": "Tumour Architecture Tina",
+      "grade": 1,
+      "power": "Prognostic Grading. Predict aggressive behavior based on loss of normal structure.",
+      "lore": "Breast uses Nottingham (tubules/pleomorphism/mitoses). Prostate uses Gleason (gland architecture).",
+      "gradeReason": "Grade 1 house vs Grade 3 monster — architectural degradation as a visible spectrum is one of the deck's best visual metaphors.",
+      "artworkPrompt": "Grade 1 neat house and Grade 3 chaotic monster side by side as tumour grade spectrum. Style: architectural ink contrast. Subject: tumour grading. Mood: prognostic revelation."
+    },
+    {
+      "cardNumber": 51,
+      "cardName": "Tumour Invasion Ivy",
+      "grade": 1,
+      "power": "Invasion. Breach the capsule to unlock distant colonisation.",
+      "lore": "Desmoplastic stroma (hard collagen) forms around invasive breast cancer. Lymphovascular invasion drastically upgrades prognosis.",
+      "gradeReason": "Ivy punching through basement membrane into bloodstream — EMT as invasion unlock mechanic is viscerally immediate.",
+      "artworkPrompt": "Cancer cell shedding E-cadherin to breach basement membrane and enter lymphatic channel. Style: invasion ink. Subject: EMT and metastasis. Mood: metastatic breakout."
+    },
+    {
+      "cardNumber": 52,
+      "cardName": "Thyroid Histology Theo",
+      "grade": 2,
+      "power": "Hormone Storage. Store months of iodine outside the cell.",
+      "lore": "Follicular adenoma and carcinoma look identical on FNA cytology; you MUST excise the capsule to check for invasion.",
+      "gradeReason": "Colloid hippo storing hormone outside the cell — extracellular storage is unusual biology but FNA-vs-excision lore requires surgical pathology context.",
+      "artworkPrompt": "Thyroid follicle hippo storing colloid iodine externally, surgeon examining capsule for invasion beneath. Style: anatomical ink. Subject: thyroid microanatomy. Mood: deceptive benign exterior."
+    },
+    {
+      "cardNumber": 53,
+      "cardName": "Breast Histology Bella",
+      "grade": 1,
+      "power": "Myoepithelial Check. Determine benign vs. invasive status.",
+      "lore": "Invasive carcinoma LACKS the myoepithelial layer (p63/SMA negative). Lobular carcinoma files in single lines because it lost E-cadherin.",
+      "gradeReason": "TDLU comet-trail art with myoepithelial presence-or-absence as binary verdict — p63/SMA absence as invasion tell is a clinician's reflex.",
+      "artworkPrompt": "TDLU lobular unit with myoepithelial layer glowing, invasive carcinoma cells slipping through single file without it. Style: anatomical ink. Subject: breast microanatomy. Mood: diagnostic binary."
+    },
+    {
+      "cardNumber": 54,
+      "cardName": "Prostate Histology Pete",
+      "grade": 2,
+      "power": "Architectural Scoring. Dictate treatment intensity via primary + secondary patterns.",
+      "lore": "Gleason 3+4=7 is Grade Group 2 (good). Gleason 4+3=7 is Grade Group 3 (worse). Cribriform (sieve-like) pattern is an automatic Grade 4.",
+      "gradeReason": "Gleason grading judge — 3+4 vs 4+3 same sum different outcome is a key clinical nuance requiring the scoring system as prior knowledge.",
+      "artworkPrompt": "Judge scoring prostate gland architecture, cribriform sieve pattern marked automatic Grade 4. Style: courtroom ink. Subject: prostate microanatomy. Mood: architectural verdict."
+    },
+    {
+      "cardNumber": 55,
+      "cardName": "The Histopathology Attending",
+      "grade": 2,
+      "power": "Board Exam. Force the player to integrate all previous knowledge.",
+      "lore": "Case 1: Lobular Breast Ca. Case 2: Bladder Ca metastatic to node. Case 3: Lupus Nephritis (Full House IF). Integrate or perish!",
+      "gradeReason": "Owl attending synthesising all cases — meta-integrator role is inspiring but requires completion of the entire deck as prerequisite.",
+      "artworkPrompt": "Wise owl pathologist integrating three case files into one diagnosis on a whiteboard. Style: academic ink. Subject: integrated histopathology reasoning. Mood: ultimate synthesis challenge."
+    },
+    {
+      "cardNumber": 56,
+      "cardName": "Uncle FrizzleBob's Wildcard",
+      "grade": 3,
+      "power": "Cheat Sheet. When in doubt, apply stain.",
+      "lore": "Red is for Collagen (Masson) or Amyloid (Congo). Brown is for IHC. Pink is H&E. Welcome to the Klub, you beautiful degenerate!",
+      "gradeReason": "Pure IHC + stains reference table — indispensable utility card, but it's a cheat sheet not a role. The FrizzleBob outro is a warm send-off.",
+      "artworkPrompt": "FrizzleBob holding stain colour reference chart surrounded by H&E pink, DAB brown, Congo red sections. Style: reference poster ink. Subject: stain synthesis matrix. Mood: celebratory degenerate warmth."
+    }
+  ],
+  "cardCount": 56,
+  "gradeDistribution": {
+    "G1": 33,
+    "G2": 20,
+    "G3": 3
+  },
+  "overallScore": 9,
+  "verdict": "The Histology MegaPack is MedKayfab firing on all cylinders — 56 tissue characters with tight embodiment, memorable lore hooks, and zero filler. Brush Border Barney's Coeliac hair-loss and Neuron Ned's Rabies retrograde hijack are the strongest single-lore lines in the MedKayfab corpus so far. The deck's only drag is three utility-reference cards (Stain Stanley, Necrosis Ned, FrizzleBob's Wildcard) that describe tools rather than invite performance — a minor weight against an otherwise outstanding run. Coverage is comprehensive: epithelia through molecular pathology, a complete histology curriculum in card form. Table-ready: YES.",
+  "blurb": "All 56 tissue types as playable characters — from Brush Border Barney losing his villi to Coeliac disease to Apoptosis Andy's tidy cat-bag cleanup. The histology deck medical students actually want to study from.",
+  "viralScore": 8,
+  "qa": {
+    "readability": 8,
+    "artworkConsistency": 9,
+    "overall": 8
+  },
+  "coverQA": {
+    "coverVisual": "5 — FrizzleBob at a lab workbench surrounded by microscopes, DNA helices, anatomical drawings, and STERILE label — high-energy science chaos.",
+    "coverTitle": "4 — MedKayfab: Histology & Microanatomy Edition is clear, specific, and part of the established series brand.",
+    "coverVibeMatch": "5 — chaotic lab energy perfectly matches the card content universe.",
+    "coverOriginality": "4 — strong execution of the established MedKayfab formula; consistent with series.",
+    "coverViral": "4 — medical students would share this immediately; the rabbit-scientist persona is the series mascot.",
+    "coverScore": 4.4,
+    "coverNote": "One of the stronger MedKayfab covers — the workbench-as-anatomy-lab sets up the histology theme immediately. Anatomical drawings on the walls behind FrizzleBob are a nice meta-touch. The STERILE label adds dry comedy."
+  },
+  "coverScore": 4.4,
+  "fontArtifactCount": 0,
+  "notes": "Standard MedKayfab 15-page format: 1 cover + 14 card pages x 4 cards = 56 cards. Sketchbook-journal aesthetic with watercolour splashes and bright neon highlight strips (yellow/pink/green). No RAF dice boxes. Card 56 (Uncle FrizzleBob's Wildcard) serves as a synthesis stain/IHC reference table — a fitting finale for the deck. All power and lore text rendered in clean sans-serif with decorative headers; no font artifact rendering issues detected. PDF created March 31 2026.",
+  "topCards": [
+    "Neuron Ned",
+    "Brush Border Barney",
+    "Apoptosis Andy",
+    "Lymph Node Lenny",
+    "Tumour Architecture Tina"
+  ],
+  "worstCards": [
+    "Stain Stanley",
+    "Necrosis Navigator Ned",
+    "Uncle FrizzleBob's Wildcard"
+  ],
+  "todos": {
+    "urgent": [],
+    "quickWins": [
+      "Consider splitting Adipose Ada's power into two distinct cards (thermogenesis vs satiety) — both deserve full card real estate."
+    ],
+    "niceToHave": [
+      "Promote Stain Stanley from reference to performative by giving him an explicit 'reveal hidden enemy' role — he is almost there."
+    ]
+  },
+  "hashtags": [
+    "#MedKayfab",
+    "#Histology",
+    "#Microanatomy",
+    "#MedicalEducation",
+    "#Kayfabizarro",
+    "#PathologyCards",
+    "#FrizzleBob",
+    "#MedStudent",
+    "#HistologyCards"
+  ],
+  "genre": "education",
+  "bundle": "EDUCATION",
+  "exhibitions": [
+    "classroom",
+    "workshop",
+    "conference"
+  ],
+  "channels": [
+    "Gumroad",
+    "TikTok",
+    "Instagram",
+    "Substack"
+  ],
+  "marketingText": "MedKayfab: HISTOLOGY & MICROANATOMY – Read the Slide, Name the Disease (Medical Mnemonics Cut & Play Comic)\n\n56 illustrated medical mnemonic cards to master the four basic tissues, the epithelial specializations that absorb and protect, and the cellular architecture that separates a normal slide from a cancer diagnosis.\n\nEvery disease you will ever diagnose begins one cell wide. Long before a scan lights up or a symptom shows its face, the tissue has already changed under the lens, and histology is the only level where you can still watch it happen. The trouble is that a stained slide is the easiest thing in medicine to forget: a field of pink and purple you stared at for one semester, filed away as a caption, and lost the week after the exam, because a micrograph with a label pinned to it is not a reason to remember anything.\n\nMedKayfab Histology turns the slide into a wrestling roster. Every tissue, every cell type, and every way a tissue can betray itself shows up as a character you learn to recognize on sight. Brush Border Barney is the small intestine lining that does the body's absorbing, until coeliac disease shears his villi flat and the nutrients wash straight through. Apoptosis Andy is the clean, programmed death that folds a spent cell into a tidy package and carries it off without ever waking the immune system, the quiet opposite of the messy necrotic brawl next door. Tumour Architecture Tina is the exact moment order breaks: the neat, polarized arrangement of a healthy tissue dissolving into the crowded, lawless pile-up that a pathologist reads as malignant.\n\nYOU'LL GET\n- 56 illustrated MedKayfab cards (15pp, 4 cards/page)\n- Full MedKayfab Freestyle rules (Quest Die mechanics)\n- A synthesis finale card that doubles as a staining and immunohistochemistry reference table, so the last card in the deck is also a cheat sheet you keep\n- S-Tier characters like Brush Border Barney, Apoptosis Andy, and Tumour Architecture Tina\n- Free lifetime updates as the deck is revised\n- CC BY-NC-SA 4.0 licence, print, share, and adapt freely\n- PDF optimized for home printing (A4 / Letter)\n\nWhat's in the deck\nThis is the Tissue layer of medicine, the scale every later specialty quietly stands on. Neuron Ned is excitable tissue made visible, the cell whose long processes and Nissl substance explain why nervous tissue heals so poorly once it tears. Lymph Node Lenny is the immune system's filtering station, his architecture organized into zones, so that a node which loses its tidy follicles and goes uniformly grey is a node telling you something has moved in. Brush Border Barney shows absorption as anatomy you can lose, and Tumour Architecture Tina shows malignancy as architecture you can read, the two ends of the same lesson: in histology, the structure is the diagnosis.\n\nHow it works\nEvery card is a cognitive anchor. You have the Character (the mnemonic), the Visual (the field under the lens), the Stat Block (the stain, the markers, the giveaway feature), the Lore (what the tissue does and how it fails), and the Quest (the reasoning challenge to play). The Mechanism Flash mode is the test that bites: name what this tissue does and the one change that marks disease, in a single sentence without looking, or the \"patient\" on the Stage gets read wrong under the microscope.\n\nHonest cognitive load\nThis is a foundational, mid-load deck, broad rather than deep, and it sits underneath almost everything clinical. It works for preclinical students meeting the slides for the first time and for anyone heading into pathology who wants the normal picture welded into memory before the abnormal one makes sense. It pairs naturally with the Pathology deck, where these same cells turn malignant and inflamed, with Gross Anatomy for the structures these tissues build, and with Immunology for the lymphoid architecture Lenny is guarding. Those pairings are sensible picks rather than a fixed bundle.\n\nABOUT MEDKAYFAB\nMedKayfab is a narrative medical learning card game, 50 decks covering the full medical curriculum. Every card encodes a clinical mechanism as a character with a personality, a story, and a reasoning challenge. Built by a physician. Assembled with AI tools. Manually revised. Honest about its limitations. Free to use, share, and adapt under CC BY-NC-SA 4.0.\n\nPAY WHAT YOU WANT\nThis deck is Pay What You Want, including free. Fair price 5 euro. Student on a budget? Enter 0. Want to support more decks? Anything above fair price is appreciated. Share freely, attribute honestly, never resell.\n\nDISCLAIMER\nMedKayfab is a learning companion, not a clinical reference. Content was created by a physician and reviewed to the best of our knowledge, but medicine evolves, guidelines change, and some mechanisms in here will be simplified or wrong. Always verify against current primary sources and clinical guidelines before applying anything to patient care. The Bloedsinn! is the vehicle. The science is serious.\n\nStay fluffy. — Doc FrizzleBob",
+  "marketingEdition": "MED"
+}
