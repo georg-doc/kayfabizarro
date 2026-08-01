@@ -1,0 +1,576 @@
+{
+  "sourceFile": "Anti-Rules_Toolkit - ADD web.pdf",
+  "deckTitle": "The Anti-Rules Manifesto",
+  "deckType": "Meta-rules deck",
+  "bundleSuggestion": "ART_CREATIVITY",
+  "pageCount": 16,
+  "analysisVersion": "1.0",
+  "generatedAt": "2026-04-29T00:00:00Z",
+  "cards": [
+    {
+      "num": 1,
+      "name": "The Rules Lawyer",
+      "power": "Objection! Play this card to demand a player cite a non-existent rule. If they hesitate, their action fails.",
+      "lore": "Dry leader. Busy.",
+      "grade": 1,
+      "gradeReason": "Perfect villain opener—everyone hates this bird immediately.",
+      "artworkPrompt": "Style: legal satire comic. Subject: vulture with scrolls and gavel. Mood: bureaucratic menace."
+    },
+    {
+      "num": 2,
+      "name": "The Optimizer",
+      "power": "Efficiency Protocol: You may reroll a die, but your story narration must be devoid of fun or flavor.",
+      "lore": "Nothing breaks faster than trying to weaponize ambiguity.",
+      "grade": 1,
+      "gradeReason": "Robot min-max goblin—clean joke, strong mechanic, instant table laugh.",
+      "artworkPrompt": "Style: steampunk comic. Subject: brass robot measuring fun. Mood: sterile precision."
+    },
+    {
+      "num": 3,
+      "name": "The Nervous Beginner",
+      "power": "Panic Check: Ask “Is this right?” If anyone answers “Yes,” discard this card and ignore the consequence.",
+      "lore": "Confusing clarity with safety.",
+      "grade": 2,
+      "gradeReason": "Great social card, though softer than the brutal anti-rule anchors.",
+      "artworkPrompt": "Style: anxious comic. Subject: deer holding rulebook. Mood: uncertain panic."
+    },
+    {
+      "num": 4,
+      "name": "The Authority Figure",
+      "power": "The Meta: Cancel a move that is “too fun” on the grounds that it isn’t optimal.",
+      "lore": "Authority sneaks back in wearing a helpful voice.",
+      "grade": 1,
+      "gradeReason": "Finger-pointing tyranny—sharp satire and universally playable.",
+      "artworkPrompt": "Style: symbolic comic. Subject: giant pointing hand. Mood: fake helpful control."
+    },
+    {
+      "num": 5,
+      "name": "The Panic",
+      "power": "Internal Scream: If a die rolls off the table, you must freeze until someone tells you it's okay.",
+      "lore": "For those who freeze when meaning is not externally validated.",
+      "grade": 2,
+      "gradeReason": "Extremely relatable panic energy; funny and table-true.",
+      "artworkPrompt": "Style: surreal comic. Subject: terrified eyes close-up. Mood: catastrophic uncertainty."
+    },
+    {
+      "num": 6,
+      "name": "The Crutch",
+      "power": "Dependency: You cannot take an Action unless another player gives you permission first.",
+      "lore": "Stabilize play when certainty becomes a crutch.",
+      "grade": 2,
+      "gradeReason": "Strong support joke, but less explosive than Panic or Silence.",
+      "artworkPrompt": "Style: absurd comic. Subject: wooden crutches stacked. Mood: dependency."
+    },
+    {
+      "num": 7,
+      "name": "The Sweat",
+      "power": "Slippery Dice: Reroll any 6. You cannot handle success without questioning it.",
+      "lore": "Others start sweating. This booklet is for them.",
+      "grade": 2,
+      "gradeReason": "Bucket anxiety as a mechanic—solid and funny filler.",
+      "artworkPrompt": "Style: anxious cartoon. Subject: sweating bucket face. Mood: stress comedy."
+    },
+    {
+      "num": 8,
+      "name": "The Silence",
+      "power": "The Void: Play when the table stalls. Silence counts as a valid turn.",
+      "lore": "A controlled void. A moment where players stop asking.",
+      "grade": 1,
+      "gradeReason": "Elegant anti-action card—simple, weird, and very Kayfabizarro.",
+      "artworkPrompt": "Style: minimalist satire. Subject: zipper mouth close-up. Mood: controlled emptiness."
+    },
+    {
+      "num": 9,
+      "name": "The Lost Winner",
+      "power": "Forfeit: Give this card to anyone discussing “Victory Points.” They lose their next turn.",
+      "lore": "Whoever asks how to win has already lost.",
+      "grade": 1,
+      "gradeReason": "Trophy shame is one of the cleanest jokes in the deck.",
+      "artworkPrompt": "Style: absurd comic. Subject: crying trophy cup. Mood: pathetic triumph."
+    },
+    {
+      "num": 10,
+      "name": "The Nonsense State",
+      "power": "Valid Move: Play to justify an action that defies logic but feels right.",
+      "lore": "Blödsinn is not a mistake. It is a state.",
+      "grade": 1,
+      "gradeReason": "This is basically the thesis statement—must-have cornerstone card.",
+      "artworkPrompt": "Style: surreal comic. Subject: frog through brick wall. Mood: glorious absurdity."
+    },
+    {
+      "num": 11,
+      "name": "The Effective Move",
+      "power": "Pragmatism: Ignore a rule if the result creates a better story.",
+      "lore": "Nobody is right. Some things are effective.",
+      "grade": 1,
+      "gradeReason": "Strong philosophy card with perfect freestyle utility.",
+      "artworkPrompt": "Style: kinetic comic. Subject: absurd machine chain reaction. Mood: useful chaos."
+    },
+    {
+      "num": 12,
+      "name": "The Amnesia",
+      "power": "Reset: Ignore the precedent set by the previous turn. We start fresh.",
+      "lore": "The game remembers nothing. The players do.",
+      "grade": 1,
+      "gradeReason": "Brain-in-jar reset button is brutal and excellent for table disruption.",
+      "artworkPrompt": "Style: surreal satire. Subject: brain beside memory jar. Mood: deliberate forgetting."
+    },
+    {
+      "num": 13,
+      "name": "Esq's Tears",
+      "power": "Argument Ender: Play to instantly win a meta-argument about rules interpretation.",
+      "lore": "Cry harder, Esq.",
+      "grade": 2,
+      "gradeReason": "Mean little pressure-release card—short, cruel, effective.",
+      "artworkPrompt": "Style: absurd satire. Subject: giant crying tissue fountain. Mood: dramatic overreaction."
+    },
+    {
+      "num": 14,
+      "name": "The Correct Nonsense",
+      "power": "Reality Check: If the table laughs, your roll succeeds automatically.",
+      "lore": "If it makes no sense, it may be correct.",
+      "grade": 1,
+      "gradeReason": "Banana math philosophy—pure Anti-Rules distilled into one perfect joke.",
+      "artworkPrompt": "Style: surreal comic. Subject: chalkboard banana equation. Mood: irrational certainty."
+    },
+    {
+      "num": 15,
+      "name": "The Pressure Valve",
+      "power": "Venting: Stop the game. Everyone takes a deep breath. No game state changes.",
+      "lore": "They exist to interrupt pure panic.",
+      "grade": 2,
+      "gradeReason": "Great pacing tool—less flashy, but socially excellent at the table.",
+      "artworkPrompt": "Style: industrial comic. Subject: steaming pipe valve. Mood: release and reset."
+    },
+    {
+      "num": 16,
+      "name": "The Less Rules",
+      "power": "Simplification: Remove one constraint from the current Scene.",
+      "lore": "If you need more rules, you may use fewer.",
+      "grade": 1,
+      "gradeReason": "Strong paradox card and perfect manifesto energy.",
+      "artworkPrompt": "Style: office satire. Subject: paper shredder eating instructions. Mood: liberating destruction."
+    },
+    {
+      "num": 17,
+      "name": "The Red Pen",
+      "power": "Edit: Physically cross out one word on a Stage Card. It is now forever removed.",
+      "lore": "Hand-written rule lists and crossed-out instructions.",
+      "grade": 1,
+      "gradeReason": "Physical sabotage mechanic—absolutely evil and wonderfully memorable.",
+      "artworkPrompt": "Style: brutal comic. Subject: red pen stabbing paper. Mood: irreversible correction."
+    },
+    {
+      "num": 18,
+      "name": "The 'Final' Draft",
+      "power": "Revision: Change the Quest Goal immediately after the dice are rolled.",
+      "lore": "Documents labeled “FINAL” and immediately contradicted.",
+      "grade": 1,
+      "gradeReason": "Perfect workplace lie converted into gameplay poison.",
+      "artworkPrompt": "Style: office satire. Subject: fake final document stack. Mood: bureaucratic betrayal."
+    },
+    {
+      "num": 19,
+      "name": "The Fake Stamp",
+      "power": "Validation: Play to approve a move that the “Rules Lawyer” rejected.",
+      "lore": "Fake approval stamps.",
+      "grade": 2,
+      "gradeReason": "Simple counter-card, but the APPROVED BY NOBODY stamp is hilarious.",
+      "artworkPrompt": "Style: stamp satire. Subject: giant fake approval stamp. Mood: illegitimate authority."
+    },
+    {
+      "num": 20,
+      "name": "The Disclaimer",
+      "power": "Loophole: Avoid a consequence by claiming you read the fine print.",
+      "lore": "Pseudo-legal disclaimers.",
+      "grade": 2,
+      "gradeReason": "Reliable support trick with strong anti-corporate flavor.",
+      "artworkPrompt": "Style: legal parody. Subject: magnifying glass over tiny print. Mood: slippery legality."
+    },
+    {
+      "num": 21,
+      "name": "The Table",
+      "power": "Declaration: Read the Anti-Rule aloud. No discussion allowed.",
+      "lore": "As a Table Declaration.",
+      "grade": 1,
+      "gradeReason": "Wonderful meta-card—the battlefield itself becomes the mechanic.",
+      "artworkPrompt": "Style: surreal comic. Subject: walking wooden table. Mood: sacred authority."
+    },
+    {
+      "num": 22,
+      "name": "The Controlled Void",
+      "power": "Absence: Remove a card from the Stage. Replace it with nothing. Narrate the gap.",
+      "lore": "A deliberate absence of authority.",
+      "grade": 1,
+      "gradeReason": "Black-hole theater—clean concept and incredible roleplay fuel.",
+      "artworkPrompt": "Style: abstract comic. Subject: velvet-rope black void. Mood: elegant emptiness."
+    },
+    {
+      "num": 23,
+      "name": "The Shared Attention",
+      "power": "Focus: If everyone looks at you, +1 to your roll.",
+      "lore": "Re-anchor play in shared attention instead of correctness.",
+      "grade": 2,
+      "gradeReason": "Smart social mechanic—less explosive, but excellent table glue.",
+      "artworkPrompt": "Style: symbolic comic. Subject: floating eyes watching spider. Mood: collective focus."
+    },
+    {
+      "num": 24,
+      "name": "The Safety Rail",
+      "power": "Risk: Ask “Safer from what?” If nobody answers, take a token.",
+      "lore": "If a rule makes you feel safer, ask yourself: Safer from what?",
+      "grade": 1,
+      "gradeReason": "Sharp philosophical knife hidden inside a railing joke.",
+      "artworkPrompt": "Style: conceptual comic. Subject: broken cliff railing. Mood: dangerous clarity."
+    },
+    {
+      "num": 25,
+      "name": "Nervous Laughter",
+      "power": "Tension Break: Play when someone laughs nervously. You both draw a card.",
+      "lore": "Someone laughs nervously. This indicates correct operation.",
+      "grade": 2,
+      "gradeReason": "Hyena panic feedback loop—great social signal card and very funny.",
+      "artworkPrompt": "Style: anxious comic. Subject: sweating hyena in suit. Mood: nervous release."
+    },
+    {
+      "num": 26,
+      "name": "Bad Design",
+      "power": "Critique: Claim this is “Bad Design,” reroll your die.",
+      "lore": "Someone claims this is bad design.",
+      "grade": 2,
+      "gradeReason": "Kettle-wheel absurdity works, though it shines more as a support jab.",
+      "artworkPrompt": "Style: absurd satire. Subject: broken wheel and kettle. Mood: smug criticism."
+    },
+    {
+      "num": 27,
+      "name": "The Stall",
+      "power": "Intervention: Play when the table stalls. The Anti-Rule stands in the room like a smell.",
+      "lore": "When the table stalls… invoke an Anti-Rule.",
+      "grade": 1,
+      "gradeReason": "Beautiful passive-aggressive design—simple and cruelly useful.",
+      "artworkPrompt": "Style: minimalist comic. Subject: old rotary phone waiting. Mood: awkward pause."
+    },
+    {
+      "num": 28,
+      "name": "The Rage Quit",
+      "power": "Stop: Any player may play this to stop trying to win. They are now telling stories.",
+      "lore": "Someone stops trying to win.",
+      "grade": 1,
+      "gradeReason": "This is secretly the whole philosophy of the deck—excellent closer for failure modes.",
+      "artworkPrompt": "Style: chaotic comic. Subject: flipped board game table. Mood: liberated collapse."
+    },
+    {
+      "num": 29,
+      "name": "The Compliance Aid",
+      "power": "Restriction: Force a player to use simple words only.",
+      "lore": "A compliance aid for people who hate improvisation.",
+      "grade": 2,
+      "gradeReason": "Straitjacket joke lands fast, though mechanically narrower.",
+      "artworkPrompt": "Style: dark satire. Subject: straitjacket with smile pin. Mood: constrained politeness."
+    },
+    {
+      "num": 30,
+      "name": "The Safety Blanket",
+      "power": "Comfort: Protect an Actor from a “Blödsinn” check.",
+      "lore": "For players who need rules to feel safe.",
+      "grade": 2,
+      "gradeReason": "Blanket shield is cute and functional, but not a headline card.",
+      "artworkPrompt": "Style: soft absurd comic. Subject: folded blanket shield. Mood: defensive comfort."
+    },
+    {
+      "num": 31,
+      "name": "The Ironic Poster",
+      "power": "Vibes: Play this card. It does nothing. If it bothers someone, you gain a token.",
+      "lore": "These feelings are ironic.",
+      "grade": 1,
+      "gradeReason": "Cat nuke poster is flawless anti-seriousness design.",
+      "artworkPrompt": "Style: meme comic. Subject: cat explosion poster. Mood: ironic detachment."
+    },
+    {
+      "num": 32,
+      "name": "The Slide Deck",
+      "power": "Presentation: Stand up and explain your move like a CEO. If they buy it, it works.",
+      "lore": "Belong in marketing, slides, posters, and onboarding jokes.",
+      "grade": 1,
+      "gradeReason": "Corporate improv weapon—players will absolutely abuse this.",
+      "artworkPrompt": "Style: office satire. Subject: burning projector presentation. Mood: performative confidence."
+    },
+    {
+      "num": 33,
+      "name": "Hidden Power",
+      "power": "Reveal: Point at the player who is actually leading the table. They must skip a turn.",
+      "lore": "Expose hidden power dynamics at the table.",
+      "grade": 1,
+      "gradeReason": "Puppet-master accusation card is mean, elegant, and socially explosive.",
+      "artworkPrompt": "Style: symbolic comic. Subject: marionette cross strings. Mood: exposed control."
+    },
+    {
+      "num": 34,
+      "name": "The Illusion",
+      "power": "Doubt: Challenge a “correct” move. There is no correct move.",
+      "lore": "Remove the illusion of a “correct” move.",
+      "grade": 1,
+      "gradeReason": "Pipe labeled rule is perfect visual philosophy—core deck identity.",
+      "artworkPrompt": "Style: surreal comic. Subject: smoking pipe labeled rule. Mood: philosophical doubt."
+    },
+    {
+      "num": 35,
+      "name": "The Blame",
+      "power": "Deflect: Shift the consequence of a bad roll to the Game Designer.",
+      "lore": "Look for someone to blame.",
+      "grade": 2,
+      "gradeReason": "Finger-pointing always works; simple and reliably funny.",
+      "artworkPrompt": "Style: accusatory comic. Subject: giant pointing finger. Mood: shameless deflection."
+    },
+    {
+      "num": 36,
+      "name": "The Interpretation",
+      "power": "Define: You decide what another player's card “really” means.",
+      "lore": "Look for the correct interpretation.",
+      "grade": 1,
+      "gradeReason": "Interpretive tyranny is glorious—strong control and perfect satire.",
+      "artworkPrompt": "Style: chaotic comic. Subject: shadow beast around car. Mood: interpretive madness."
+    },
+    {
+      "num": 37,
+      "name": "The Pot Plant",
+      "power": "Witness: Do nothing. Just observe. Your silence is a valid move.",
+      "lore": "Plants in pots. Silent visual gags.",
+      "grade": 2,
+      "gradeReason": "Weirdly powerful passive card—excellent table comedy through total refusal.",
+      "artworkPrompt": "Style: surreal comic. Subject: potted plant with eyes. Mood: suspicious observation."
+    },
+    {
+      "num": 38,
+      "name": "The Bureaucrat",
+      "power": "Paperwork: Demand a player mime filling out a form before rolling.",
+      "lore": "Philosophers, clerks, editors. Bureaucrats.",
+      "grade": 1,
+      "gradeReason": "Filing cabinet villain is brutally funny and instantly disruptive.",
+      "artworkPrompt": "Style: office satire. Subject: filing cabinet wrapped in tape. Mood: administrative oppression."
+    },
+    {
+      "num": 39,
+      "name": "The Alien Tourist",
+      "power": "Snapshot: Remember the current board state. You may revert to it later.",
+      "lore": "Bizarre aliens. Surreal creatures.",
+      "grade": 2,
+      "gradeReason": "Memory-snapshot mechanic is clever, though less sharp than Bureaucrat.",
+      "artworkPrompt": "Style: whimsical comic. Subject: alien tourist with camera. Mood: detached curiosity."
+    },
+    {
+      "num": 40,
+      "name": "Uncle FrizzleBob",
+      "power": "Anarchy: Destroy this card (rip it up). Rewrite one rule for the rest of the game.",
+      "lore": "Analog-first DIY cut&play artist.",
+      "grade": 1,
+      "gradeReason": "Signature mascot chaos card—absolute table legend material.",
+      "artworkPrompt": "Style: mascot comic. Subject: wild rabbit with scissors. Mood: joyful sabotage."
+    },
+    {
+      "num": 41,
+      "name": "The Judge's Wig",
+      "power": "Roleplay: Wear it (mime). You are in charge until you laugh.",
+      "lore": "Allow law-and-order players to stay.",
+      "grade": 2,
+      "gradeReason": "Costume authority is hilarious and strong for social domination.",
+      "artworkPrompt": "Style: costume satire. Subject: oversized judge wig. Mood: fake authority."
+    },
+    {
+      "num": 42,
+      "name": "The Police Badge",
+      "power": "Policing: If you catch someone optimizing, you get a token.",
+      "lore": "Default to policing or rule-lawyering.",
+      "grade": 2,
+      "gradeReason": "Sheriff of Nothing badge is a perfect petty-control joke.",
+      "artworkPrompt": "Style: parody comic. Subject: fake sheriff badge. Mood: officious nonsense."
+    },
+    {
+      "num": 43,
+      "name": "The Lab Coat",
+      "power": "Explanation: Explain the “Science” of your move to gain a bonus.",
+      "lore": "The table is encouraged to let them try.",
+      "grade": 1,
+      "gradeReason": "Fake expertise as a mechanic—excellent improv fuel and universally usable.",
+      "artworkPrompt": "Style: academic satire. Subject: stained lab coat. Mood: fraudulent expertise."
+    },
+    {
+      "num": 44,
+      "name": "The Dunce Cap",
+      "power": "Humility: Wear it if you ask for a rule clarification. It protects you from judgment.",
+      "lore": "Make rule anxiety visible without punishing it.",
+      "grade": 2,
+      "gradeReason": "Surprisingly kind design hidden inside a humiliation prop.",
+      "artworkPrompt": "Style: playful comic. Subject: dunce cap on pedestal. Mood: gentle embarrassment."
+    },
+    {
+      "num": 45,
+      "name": "The Dead Author",
+      "power": "Interpretation: The rules mean whatever the group decides they mean tonight.",
+      "lore": "They look for the designer's intent.",
+      "grade": 1,
+      "gradeReason": "Gravestone philosophy card—core manifesto material and table-shaping.",
+      "artworkPrompt": "Style: gothic comic. Subject: gravestone with pen. Mood: liberated authorship."
+    },
+    {
+      "num": 46,
+      "name": "The Ambiguity",
+      "power": "Obscure: Play on another card. That card's text is now open to interpretation.",
+      "lore": "Most games collapse under ambiguity.",
+      "grade": 1,
+      "gradeReason": "Fog-card is evil and elegant—wonderful controlled chaos tool.",
+      "artworkPrompt": "Style: misty comic. Subject: blurred rulebook in fog. Mood: uncertain meaning."
+    },
+    {
+      "num": 47,
+      "name": "The Social Contract",
+      "power": "Betrayal: Break a promise made in a previous turn for narrative effect.",
+      "lore": "Determine responsibility.",
+      "grade": 2,
+      "gradeReason": "Strong philosophy piece, though more subtle than the heavy hitters.",
+      "artworkPrompt": "Style: symbolic comic. Subject: handshake contract. Mood: fragile trust."
+    },
+    {
+      "num": 48,
+      "name": "The Emergency Handle",
+      "power": "Reset: Pull to end the Scene immediately if it gets boring.",
+      "lore": "Leave the emergency handle named “Please tell me the correct move” unused.",
+      "grade": 1,
+      "gradeReason": "Emergency brake for boredom—perfect and brutally practical.",
+      "artworkPrompt": "Style: dramatic comic. Subject: red emergency handle. Mood: instant interruption."
+    },
+    {
+      "num": 49,
+      "name": "The Mood Swing",
+      "power": "Shift: Force an Actor to change their MOOD to “anxious.”",
+      "lore": "MOOD: The emotional state driving your Actor.",
+      "grade": 2,
+      "gradeReason": "Theater-mask mood control is funny and useful, but more support than spotlight.",
+      "artworkPrompt": "Style: stage comic. Subject: comedy tragedy masks. Mood: emotional manipulation."
+    },
+    {
+      "num": 50,
+      "name": "The Skill Issue",
+      "power": "Incompetence: An Actor forgets their SKILL for this scene.",
+      "lore": "SKILL: The trained ability your Actor relies on.",
+      "grade": 1,
+      "gradeReason": "Phrase alone wins—this card will be quoted constantly at the table.",
+      "artworkPrompt": "Style: meta comic. Subject: sword and papers flying. Mood: humiliating failure."
+    },
+    {
+      "num": 51,
+      "name": "The Skill Issue",
+      "power": "Incompetence: An Actor forgets their SKILL for this scene.",
+      "lore": "SKILL: The trained ability your Actor relies on.",
+      "grade": 1,
+      "gradeReason": "Duplicate on purpose and still hilarious—nobody escapes skill issue twice.",
+      "artworkPrompt": "Style: slapstick comic. Subject: actor losing control of props. Mood: repeated incompetence."
+    },
+    {
+      "num": 52,
+      "name": "The Collapsed Quest",
+      "power": "Tip: Instantly change the Quest Goal by 1/2.",
+      "lore": "If the tips, Quest collapses.",
+      "grade": 2,
+      "gradeReason": "Dice tower collapse is strong physical comedy and good structural chaos.",
+      "artworkPrompt": "Style: absurd comic. Subject: collapsing dice tower. Mood: unstable objective."
+    },
+    {
+      "num": 53,
+      "name": "The Story Breaker",
+      "power": "Disconnect: Interrupt a story connection that feels forced.",
+      "lore": "Tell a story connecting Mood → Stage → Quest.",
+      "grade": 1,
+      "gradeReason": "Scissors cutting film is elegant meta-sabotage and excellent freestyle tech.",
+      "artworkPrompt": "Style: cinematic comic. Subject: scissors cutting film strip. Mood: narrative disruption."
+    },
+    {
+      "num": 54,
+      "name": "Stay Fluffy",
+      "power": "Game Over: End the game if everyone at the table feels “fluffy” (relaxed/confused).",
+      "lore": "Stay Fluffy.",
+      "grade": 1,
+      "gradeReason": "Bunny end-condition is iconic and perfectly captures the whole anti-rules spirit.",
+      "artworkPrompt": "Style: mascot comic. Subject: fluffy rabbit glowing. Mood: peaceful absurdity."
+    },
+    {
+      "num": 55,
+      "name": "Kayfabingo!",
+      "power": "Victory: Win the game instantly if you shout “BINGO!” for no reason.",
+      "lore": "Kayfabingo!",
+      "grade": 1,
+      "gradeReason": "Ridiculous bingo finisher—pure FrizzleBob energy and table legend material.",
+      "artworkPrompt": "Style: chaotic comic. Subject: bizarre bingo card celebration. Mood: sudden triumph."
+    },
+    {
+      "num": 56,
+      "name": "The Strange Alertness",
+      "power": "Awareness: +1 to rolls if you are visibly uncomfortable.",
+      "lore": "Uncomfortable, irritated, or strangely alert.",
+      "grade": 2,
+      "gradeReason": "Eye paranoia card is weirdly strong and fits the deck’s social weirdness.",
+      "artworkPrompt": "Style: surreal comic. Subject: giant observing eye. Mood: hyper-awareness."
+    },
+    {
+      "num": 57,
+      "name": "The End",
+      "power": "Consensus: The group decides when it is done. No winner.",
+      "lore": "When the group feels done.",
+      "grade": 1,
+      "gradeReason": "The cleanest final statement possible—perfect philosophical closer.",
+      "artworkPrompt": "Style: vintage comic. Subject: spiral end card. Mood: satisfied conclusion.\n\n## QA"
+    }
+  ],
+  "qa": {
+    "readability": 9,
+    "artworkConsistency": 9,
+    "satiricalImpact": 10,
+    "freestyleCompatibility": 10,
+    "overall": 10,
+    "verdict": "This deck is dangerous because it teaches players that the rules were never real to begin with. The strongest cards—The Nonsense State, The Correct Nonsense, Stay Fluffy—don’t just work mechanically, they infect the table philosophy itself. It’s funny, hostile, and secretly a design manifesto wearing clown shoes. Table-ready? Absolutely yes. Just don’t hand it to anyone who still asks who won."
+  },
+  "topCards": [
+    "The Nonsense State",
+    "The Correct Nonsense",
+    "Stay Fluffy"
+  ],
+  "worstCards": [
+    "The Crutch",
+    "The Safety Blanket"
+  ],
+  "todos": {
+    "urgent": [
+      "Clarify duplicate “Skill Issue” labeling if intentional for publication formatting"
+    ],
+    "quickWins": [
+      "Standardize shorter lore lines so minimalist cards feel intentionally minimal",
+      "Slightly sharpen The Crutch and Safety Blanket for stronger table impact"
+    ],
+    "niceToHave": [
+      "Add tiny icon consistency check across costume and failure-mode pages"
+    ]
+  },
+  "hashtags": [
+    "#AntiRules",
+    "#Blödsinn",
+    "#Kayfabizarro",
+    "#FreestyleChaos",
+    "#StayFluffy"
+  ],
+  "viralScore": 10,
+  "notes": "Page 1 and final print page are framing/manifesto pages; core gameplay cards begin on page 2 and conclude with The Final Exam. One intentional duplicate card title (The Skill Issue) appears in Kayfabizarro Specials and should be preserved unless publication formatting wants explicit distinction. Extremely strong system identity and one of the clearest meta-design decks in the project.",
+  "savedAt": "2026-04-29T21:41:06Z",
+  "extractionTool": "chatgpt_v6",
+  "deckFunction": [
+    "improv"
+  ],
+  "gradingMode": "performative",
+  "bundleSuggestionLegacy": "ART_CREATIVITY",
+  "bundle": "art_creativity",
+  "genre": [
+    "meta",
+    "art"
+  ],
+  "exhibitions": [],
+  "channels": []
+}
