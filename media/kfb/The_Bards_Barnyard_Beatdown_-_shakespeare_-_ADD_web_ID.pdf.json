@@ -1,0 +1,602 @@
+{
+  "sourceFile": "The_Bards_Barnyard_Beatdown - shakespeare - ADD web ID.pdf",
+  "deckTitle": "The Bard's Barnyard Beatdown",
+  "deckType": "Shakespeare literary wrestling satire",
+  "bundleSuggestion": "TBD",
+  "pageCount": 19,
+  "analysisVersion": 1.0,
+  "generatedAt": "2026-05-28T05:53:48",
+  "savedAt": "2026-05-28T06:10:00",
+  "extractionTool": "cowork_task_v3",
+  "RAF": true,
+  "gradingMode": "satirical",
+  "deckFunction": [
+    "character-roleplay",
+    "literary-satire",
+    "multi-play-anthology"
+  ],
+  "seriesId": "komik_kard_kult_klub",
+  "cardCount": 56,
+  "gradeDistribution": {
+    "G1": 35,
+    "G2": 18,
+    "G3": 3
+  },
+  "overallScore": 9,
+  "viralScore": 9,
+  "coverScore": 4.8,
+  "fontArtifactCount": 0,
+  "genre": "satire",
+  "bundle": "COMEDY",
+  "exhibitions": [
+    "classroom",
+    "workshop",
+    "improv",
+    "conference"
+  ],
+  "channels": [
+    "Gumroad",
+    "TikTok",
+    "Instagram",
+    "YouTube"
+  ],
+  "hashtags": [
+    "#BardsBarnyard",
+    "#Kayfabizarro",
+    "#KomikKardKult",
+    "#ShakespeareWrestling",
+    "#BarnyardBeatdown",
+    "#MuchAdo",
+    "#RomeoAndJuliet",
+    "#MidsummerNightsDream"
+  ],
+  "topCards": [
+    "The Constable",
+    "The Joker",
+    "The Dancing Star"
+  ],
+  "worstCards": [
+    "The Moon",
+    "The Changeling Boy",
+    "The Weeping Stag"
+  ],
+  "verdict": "Four plays, fifty-six animals, zero respect for the Elizabethan stage — this deck is the Shakespeare anthology we deserved. The CONSTABLE's 'you cannot fail a roll, you can only succeed at the wrong task' is a career-defining card mechanic, and THE JOKER's death curse on all players when killed is Mercutio's revenge made into a game state. The DANCING STAR's win condition — resolve the game as a draw if both players are smiling — is the best rule in the corpus. Structural weakness: The Bastard's name banner is dark-on-dark at print scale, and the Much Ado section lacks the section headers the other three plays get. Table-ready: YES.",
+  "blurb": "Four Shakespeare plays reborn as barnyard animal wrestling cards. From Dogberry's glorious incompetence to Mercutio's plague-on-both-houses death curse, every mechanic earns its quote. English teachers and comedy nerds, this is your deck.",
+  "qa": {
+    "readability": 8,
+    "artworkConsistency": 9,
+    "overall": 9
+  },
+  "coverQA": {
+    "coverVisual": "4 — FrizzleBob brandishing the First Folio; dramatic, character-forward, immediately funny.",
+    "coverTitle": "5 — 'Bard's Barnyard Beatdown' is a contender for best title in the corpus. Triple alliteration, total absurdism.",
+    "coverVibeMatch": "5 — Wrestling meets Shakespeare via barnyard animals. Cover communicates the whole premise in one image.",
+    "coverOriginality": "5 — Nobody has made this deck. Every design choice is a first.",
+    "coverViral": "5 — Title alone gets shared. Drama teachers will clip this and not know why.",
+    "coverScore": 4.8,
+    "coverNote": "Look, Shakespeare is rolling in his grave, but he's grinning. The FIRST FOLIO prop, the SHARP! badge, the complete dismissal of human audiences — this cover does the job in one glance. Glue it to a cereal box and mail it to your drama teacher."
+  },
+  "notes": "Deck covers 4 plays in distinct visual sections: As You Like It (pp.2-4, cream/forest palette), A Midsummer Night's Dream (pp.5-7, purple/psychedelic palette), Much Ado About Nothing (pp.8-10, sepia/document palette), Romeo & Juliet (pp.11-13, dark/blood palette). Location cards (p.14) and Prop Dept. cards (p.15) serve as environment/utility layer. Page 16: DIY dice + token sheet (Villain/Poppet/Rat/Corcomb/Beast/Fool die faces). Page 17: 4-rule 'How to Brawl' sheet. Page 18: Card backs (KAYFABS pattern). Page 19: Epilogue. Card 27 (The Bastard/Don John): name banner dark-on-dark — name not legible even at 8x render; identified by lore 'I am a plain-dealing villain' (Much Ado I.3) and Rumor-token power. Much Ado section (pp.8-10) has no visible section header unlike the other three plays. No font artifacts.",
+  "todos": {
+    "urgent": [
+      "Card 27 (The Bastard/Don John): dark-on-dark name banner is unreadable at print scale — add cream banner matching other cards."
+    ],
+    "quickWins": [
+      "Add 'Much Ado About Nothing' section header to pages 8-10 — the play is unannounced unlike the other three.",
+      "Upgrade The Weeping Stag and The Changeling Boy powers to be performative rather than punitive."
+    ],
+    "niceToHave": [
+      "Add 'Vol. 1 of Komik Kard Kult' series label to cover to signal future volumes.",
+      "The Moon card ('WANING') is purely mechanical — needs a performance hook.",
+      "Location cards could integrate 'Here be Monsters' decorative text as optional lore."
+    ]
+  },
+  "cards": [
+    {
+      "cardNumber": 1,
+      "cardName": "The Rib-Breaker",
+      "grade": 1,
+      "power": "THE FALL: Flip a coin. If heads, opponent loses 3 Ribs (HP).",
+      "lore": "He that escapes not without some shaky limb shall acquit him well.",
+      "gradeReason": "Wrestler who breaks ribs with a coin flip. Name + mechanic = instant embodiment.",
+      "artworkPrompt": "Style: vintage wrestling poster. Subject: bear in Victorian wrestling stance. Mood: gleeful brutality."
+    },
+    {
+      "cardNumber": 2,
+      "cardName": "The Youngest Brother",
+      "grade": 1,
+      "power": "SPIRIT OF MY FATHER: Gain +1 Attack for every turn you have been losing.",
+      "lore": "The spirit of my father begins to mutiny against this servitude.",
+      "gradeReason": "Underdog who gets stronger through suffering. Immediate underdog performance arc.",
+      "artworkPrompt": "Style: storybook illustration. Subject: lion cub with boxing gloves looking defiant. Mood: determined hope."
+    },
+    {
+      "cardNumber": 3,
+      "cardName": "The Tyrant Brother",
+      "grade": 1,
+      "power": "KINDLE THE BOY: Force target to attack the strongest enemy, not you.",
+      "lore": "I had as lief thou didst break his neck as his finger.",
+      "gradeReason": "Scheming villain who misdirects attacks. You know this character on sight.",
+      "artworkPrompt": "Style: Elizabethan villain portrait. Subject: doberman in aristocratic ruff. Mood: aristocratic malice."
+    },
+    {
+      "cardNumber": 4,
+      "cardName": "The Old Servant",
+      "grade": 2,
+      "power": "THRIFTY HIRE: Sacrifice this card to fully heal another character.",
+      "lore": "I have lost my teeth in your service.",
+      "gradeReason": "Loyal sacrifice mechanic is clear but purely functional — support card, not a performer.",
+      "artworkPrompt": "Style: sepia pastoral. Subject: elderly horse in apron carrying a bundle. Mood: weary devotion."
+    },
+    {
+      "cardNumber": 5,
+      "cardName": "The Exile",
+      "grade": 1,
+      "power": "SWEET ADVERSITY: Draw two cards whenever you take damage from the environment.",
+      "lore": "This our life finds tongues in trees and books in running brooks.",
+      "gradeReason": "Power IS the Arden philosophy: suffering yields wisdom. Mechanic and character are identical.",
+      "artworkPrompt": "Style: Romantic landscape. Subject: fox in ragged nobleman's coat at campfire. Mood: philosophical serenity."
+    },
+    {
+      "cardNumber": 6,
+      "cardName": "The Melancholy Sad-Sack",
+      "grade": 1,
+      "power": "SUCK MELANCHOLY: Drain 1 Action Point from opponent to restore your own Ego.",
+      "lore": "I can suck melancholy out of a song as a weasel sucks eggs.",
+      "gradeReason": "Jacques as mechanic: his misery literally drains others. Immediately and perfectly embodied.",
+      "artworkPrompt": "Style: Dutch Golden Age portrait. Subject: basset hound in philosopher's robes weeping elegantly. Mood: theatrical despair."
+    },
+    {
+      "cardNumber": 7,
+      "cardName": "The Weeping Stag",
+      "grade": 3,
+      "power": "VELVET FRIENDS: If you are losing, your allies abandon you (Discard an ally).",
+      "lore": "Sweep on, you fat and greasy citizens.",
+      "gradeReason": "The stag is an object wept over, not a role to play. Punitive mechanic discourages performance.",
+      "artworkPrompt": "Style: nature painting. Subject: wounded stag standing alone in a forest stream. Mood: tragic isolation."
+    },
+    {
+      "cardNumber": 8,
+      "cardName": "The Motley Fool",
+      "grade": 1,
+      "power": "THE WHETSTONE: Confuse enemy; they must speak in rhymes or lose a turn.",
+      "lore": "The more pity that fools may not speak wisely what wise men do foolishly.",
+      "gradeReason": "Forcing rhymes at table is the most performative mechanic in the deck. Pure Touchstone energy.",
+      "artworkPrompt": "Style: commedia dell'arte. Subject: capuchin monkey in jester's motley with pocket watch. Mood: anarchic intelligence."
+    },
+    {
+      "cardNumber": 9,
+      "cardName": "Ganymede",
+      "grade": 1,
+      "power": "COUNTERFEIT MAN: Switch your Strength and Wit stats at will.",
+      "lore": "We'll have a swashing and a martial outside.",
+      "gradeReason": "Stat-switching as gender-swap performance is the Rosalind disguise made mechanical. Brilliant.",
+      "artworkPrompt": "Style: Elizabethan portrait. Subject: doe in doublet and hose with spear. Mood: roguish confidence."
+    },
+    {
+      "cardNumber": 10,
+      "cardName": "Aliena",
+      "grade": 2,
+      "power": "TRAVELER'S CONTENT: If Ganymede is in play, damage is shared between them.",
+      "lore": "I cannot go no further.",
+      "gradeReason": "Dependency on Ganymede card makes this purely contextual — needs the companion on the table.",
+      "artworkPrompt": "Style: pastoral watercolour. Subject: sheep with a travel satchel and tired eyes. Mood: loyal exhaustion."
+    },
+    {
+      "cardNumber": 11,
+      "cardName": "The Shepherd",
+      "grade": 2,
+      "power": "TRUE LABORER: Earn 1 gold token per turn.",
+      "lore": "I am a true laborer: I earn that I eat, get that I wear.",
+      "gradeReason": "Economy card. Honest archetype but purely mechanical — honest work, boring card.",
+      "artworkPrompt": "Style: rustic woodcut. Subject: ram with a shepherd's crook in a meadow. Mood: steadfast simplicity."
+    },
+    {
+      "cardNumber": 12,
+      "cardName": "The God of Marriage",
+      "grade": 1,
+      "power": "BARRED CONFUSION: End the game immediately; the player with the most pairs wins.",
+      "lore": "I must make conclusion of these most strange events.",
+      "gradeReason": "God who ends games via forced resolution — Hymen's deus ex machina as actual mechanics.",
+      "artworkPrompt": "Style: baroque ceiling fresco. Subject: owl in flowing robes holding torch aloft. Mood: divine absurdity."
+    },
+    {
+      "cardNumber": 13,
+      "cardName": "The Fairy King",
+      "grade": 1,
+      "power": "ILL MET BY MOONLIGHT: Force two opponents to swap active cards.",
+      "lore": "I am invisible; and I will overhear their conference.",
+      "gradeReason": "Oberon's interference mechanic. Invisible and disruptive — you know this vibe immediately.",
+      "artworkPrompt": "Style: dark fantasy illustration. Subject: black cat with crown of thorns and moonlit wings. Mood: imperious mystery."
+    },
+    {
+      "cardNumber": 14,
+      "cardName": "The Fairy Queen",
+      "grade": 2,
+      "power": "FANCY'S THRALL: You cannot attack any character designated as 'Beautiful' this turn.",
+      "lore": "Methought I was enamour'd of an ass.",
+      "gradeReason": "Powerful thematic concept but 'Beautiful' designation must exist first — setup-dependent G2.",
+      "artworkPrompt": "Style: Art Nouveau. Subject: white cat draped in flowers asleep in a bower. Mood: enchanted languor."
+    },
+    {
+      "cardNumber": 15,
+      "cardName": "The Hobgoblin",
+      "grade": 1,
+      "power": "LORD WHAT FOOLS: Randomize all targets for the next attack.",
+      "lore": "I'll put a girdle round about the earth in forty minutes.",
+      "gradeReason": "Chaos agent who scrambles targets — Puck made mechanical. Immediately mischievous.",
+      "artworkPrompt": "Style: psychedelic folk art. Subject: chameleon in a jester cap mid-leap. Mood: anarchic glee."
+    },
+    {
+      "cardNumber": 16,
+      "cardName": "The Changeling Boy",
+      "grade": 3,
+      "power": "JEALOUSY: Cause a dispute; enemy loses 1 turn arguing over custody.",
+      "lore": "She never had so sweet a changeling.",
+      "gradeReason": "The boy is a MacGuffin, not a role. Nothing to embody — you ARE the dispute, not a character.",
+      "artworkPrompt": "Style: fairy tale illustration. Subject: elephant calf with a flower crown looking confused. Mood: innocent obliviousness."
+    },
+    {
+      "cardNumber": 17,
+      "cardName": "The Ass-Head",
+      "grade": 1,
+      "power": "TRANSLATED: +5 Confidence, -10 Intelligence. Immune to insults.",
+      "lore": "I see their knavery: this is to make an ass of me.",
+      "gradeReason": "+Confidence -Intelligence IS Bottom's character. Stat transformation as identity. Instant embodiment.",
+      "artworkPrompt": "Style: slapstick cartoon. Subject: donkey head on a man's working-class body. Mood: oblivious delight."
+    },
+    {
+      "cardNumber": 18,
+      "cardName": "The Carpenter",
+      "grade": 1,
+      "power": "PROLOGUE: Read the flavor text aloud; if you stumble, lose 1 HP.",
+      "lore": "He hath played on his prologue like a child on a recorder.",
+      "gradeReason": "Forces actual performance at the table. Most meta-theatrical mechanic in the deck.",
+      "artworkPrompt": "Style: guild illustration. Subject: beaver in doublet holding rolled parchment nervously. Mood: anxious theatricality."
+    },
+    {
+      "cardNumber": 19,
+      "cardName": "The Lion",
+      "grade": 1,
+      "power": "GENTLE ROAR: Intimidate check; if failed, reveal you are not a lion and deal 0 damage.",
+      "lore": "I am no such thing: I am a man as other men are.",
+      "gradeReason": "You ARE the lion failing to be a lion. The mechanic is the joke is the character. Perfect.",
+      "artworkPrompt": "Style: theatrical poster. Subject: hamster in a shaggy lion mane looking apologetic. Mood: comic cowardice."
+    },
+    {
+      "cardNumber": 20,
+      "cardName": "The Wall",
+      "grade": 2,
+      "power": "VILE WALL: Blocks all attacks, but allows whispering (passing cards) through the chink.",
+      "lore": "Through Wall's chink, poor souls, they are content to whisper.",
+      "gradeReason": "Clever dual mechanic but it's a Wall — structural element, not a performative character.",
+      "artworkPrompt": "Style: architectural sketch. Subject: pig dressed as a stone wall with a gap between its hands. Mood: stoic absurdity."
+    },
+    {
+      "cardNumber": 21,
+      "cardName": "The Tall One",
+      "grade": 2,
+      "power": "SPANIEL'S FAWN: The more you attack her, the more she buffs you.",
+      "lore": "Use me but as your spaniel, spurn me, strike me.",
+      "gradeReason": "Helena's masochism as mechanic — clever but the joke requires explanation to land.",
+      "artworkPrompt": "Style: Regency portrait. Subject: tall spaniel in maiden's dress looking upward hopefully. Mood: unrequited yearning."
+    },
+    {
+      "cardNumber": 22,
+      "cardName": "The Short One",
+      "grade": 1,
+      "power": "VIXEN: Bonus damage against taller opponents.",
+      "lore": "Though she be but little, she is fierce.",
+      "gradeReason": "One word, one mechanic, one character. Shortest fiercest card in the deck.",
+      "artworkPrompt": "Style: action manga. Subject: small tabby cat mid-leap with claws extended. Mood: fierce compact fury."
+    },
+    {
+      "cardNumber": 23,
+      "cardName": "The Purple Flower",
+      "grade": 1,
+      "power": "CUPID'S FLOWER: Attach to any card; that card must defend the next card played, regardless of team.",
+      "lore": "The juice of it on sleeping eye-lids said.",
+      "gradeReason": "Love potion that corrupts team allegiance. Mechanic IS the flower's power. Table chaos guaranteed.",
+      "artworkPrompt": "Style: botanical illustration gone wrong. Subject: glowing purple pansy with a human face. Mood: dreamy menace."
+    },
+    {
+      "cardNumber": 24,
+      "cardName": "The Moon",
+      "grade": 3,
+      "power": "WANING: All moon effects end at the end of the turn.",
+      "lore": "This dog, my dog.",
+      "gradeReason": "Rules clarification card disguised as a character. 'The Moon' is Starveling with a lantern but this is just a timer reset.",
+      "artworkPrompt": "Style: folk illustration. Subject: old dog holding a paper lantern in moonlight. Mood: weary pageantry."
+    },
+    {
+      "cardNumber": 25,
+      "cardName": "The Bachelor",
+      "grade": 1,
+      "power": "PAPER BULLETS: Deal damage based on the number of words in your insult.",
+      "lore": "I will live a bachelor.",
+      "gradeReason": "Insult-as-damage is Benedick's character made mechanic. More words = more hurt. Immediately performative.",
+      "artworkPrompt": "Style: Restoration comedy. Subject: shaggy dog surrounded by crumpled love letters. Mood: gleeful romantic refusal."
+    },
+    {
+      "cardNumber": 26,
+      "cardName": "The Lady Tongue",
+      "grade": 1,
+      "power": "KILL HIM WITH WIT: Opponent must discard a card or suffer 'Burn' damage.",
+      "lore": "I had rather hear my dog bark at a crow than a man swear he loves me.",
+      "gradeReason": "Wit as weapon that forces choices — Beatrice's entire character distilled into one mechanic.",
+      "artworkPrompt": "Style: Elizabethan portrait. Subject: hawk in elegant dress with a quill pen drawn. Mood: sharp-tongued authority."
+    },
+    {
+      "cardNumber": 27,
+      "cardName": "The Bastard",
+      "grade": 1,
+      "power": "CANKER IN A HEDGE: Create a 'Rumor' token that prevents two characters from teaming up.",
+      "lore": "I am a plain-dealing villain.",
+      "gradeReason": "Splitting alliances with rumors IS Don John's entire playbook. Villain role needs zero context.",
+      "artworkPrompt": "Style: noir illustration. Subject: black rat in nobleman's doublet with red glowing eyes. Mood: cold scheming malice."
+    },
+    {
+      "cardNumber": 28,
+      "cardName": "The Drunkard",
+      "grade": 1,
+      "power": "TALE OF A VILE ENCOUNTER: Fabricate evidence; Swap a player's hand with the discard pile.",
+      "lore": "I have drunk to-day.",
+      "gradeReason": "Borachio confessing drunk while swapping hands = the entire Much Ado plot as a card action.",
+      "artworkPrompt": "Style: tavern genre scene. Subject: weasel slumped against a barrel spilling a goblet. Mood: sloppy villainy."
+    },
+    {
+      "cardNumber": 29,
+      "cardName": "The Constable",
+      "grade": 1,
+      "power": "WRITTEN DOWN ASS: You cannot fail a roll, you can only succeed at the wrong task.",
+      "lore": "O that I had been writ down an ass!",
+      "gradeReason": "The greatest malapropism mechanic ever designed. Dogberry as a game engine. Table-breaking G1.",
+      "artworkPrompt": "Style: police procedural meets Elizabethan. Subject: bulldog in constable's uniform with a rubber REJECTED stamp. Mood: magnificently incompetent."
+    },
+    {
+      "cardNumber": 30,
+      "cardName": "The Headborough",
+      "grade": 2,
+      "power": "GOOD OLD MAN: Support Dogberry; adds +1 confusion to the board.",
+      "lore": "A good old man, sir; he will be talking.",
+      "gradeReason": "Pure sidekick card — only matters if The Constable is already in play. Context-dependent.",
+      "artworkPrompt": "Style: character study. Subject: elderly chihuahua in watchman's coat nodding along. Mood: oblivious agreement."
+    },
+    {
+      "cardNumber": 31,
+      "cardName": "The Slandered Bride",
+      "grade": 2,
+      "power": "DIE TO LIVE: Remove from play for 1 round; return fully healed.",
+      "lore": "One Hero died defiled, but I do live.",
+      "gradeReason": "Fake death mechanic is smart but Hero is more victim than performer — reactive not active.",
+      "artworkPrompt": "Style: Pre-Raphaelite. Subject: swan in wedding veil lying across a tomb. Mood: tragic purity."
+    },
+    {
+      "cardNumber": 32,
+      "cardName": "The Friar's Plan",
+      "grade": 2,
+      "power": "STRANGE COURSE: Convert 'Slander' damage into 'Guilt' damage on the attacker.",
+      "lore": "Let her awhile be secretly kept in.",
+      "gradeReason": "Counter-mechanic turning slander back on attacker — clever but entirely mechanical, not embodied.",
+      "artworkPrompt": "Style: illuminated manuscript. Subject: tortoise in friar's habit consulting a scroll. Mood: cautious conspiracy."
+    },
+    {
+      "cardNumber": 33,
+      "cardName": "The Masked Ladies",
+      "grade": 1,
+      "power": "WHICH IS WHICH?: Opponent attacks a random target (could be themselves).",
+      "lore": "I am your husband, if you like of me.",
+      "gradeReason": "Masquerade chaos forcing misdirected attacks is the ball scene made mechanical. Immediate.",
+      "artworkPrompt": "Style: Venetian carnival. Subject: three geese in identical masks and gowns. Mood: elegant confusion."
+    },
+    {
+      "cardNumber": 34,
+      "cardName": "The Penitent",
+      "grade": 2,
+      "power": "HANG AN EPITAPH: Lose a turn to mourn; gain +2 attack next turn.",
+      "lore": "Done to death by slanderous tongues.",
+      "gradeReason": "Penance trade-off is clear but Claudio needs full Much Ado context to resonate properly.",
+      "artworkPrompt": "Style: Renaissance tomb sculpture. Subject: lion kneeling at a gravestone holding a scroll. Mood: formal remorse."
+    },
+    {
+      "cardNumber": 35,
+      "cardName": "The Challenge",
+      "grade": 1,
+      "power": "WIT CRACKED: Benedick challenges Claudio; loser discards their weapon.",
+      "lore": "You are a villain; I jest not.",
+      "gradeReason": "Forcing disarmament through a named challenge is the pivot scene of Much Ado. Immediate drama.",
+      "artworkPrompt": "Style: dueling manual. Subject: white glove on stone floor with two crossed swords. Mood: tense formality."
+    },
+    {
+      "cardNumber": 36,
+      "cardName": "The Dancing Star",
+      "grade": 1,
+      "power": "MERRY WAR: Resolve the game with a draw if both players are smiling.",
+      "lore": "There was a star danced, and under that was I born.",
+      "gradeReason": "You WIN by making your opponent smile. Most Beatrice mechanic possible. Best win condition in the deck.",
+      "artworkPrompt": "Style: Art Deco poster. Subject: eagle in ball gown mid-spin under a star-filled sky. Mood: irresistible joy."
+    },
+    {
+      "cardNumber": 37,
+      "cardName": "The Prince of Cats",
+      "grade": 1,
+      "power": "FIRE-EYED FURY: First Strike. If attacked, deal damage back instantly.",
+      "lore": "Peace? I hate the word, as I hate hell, all Montagues, and thee.",
+      "gradeReason": "First Strike panther who hates peace. You know this cat before you finish reading the name.",
+      "artworkPrompt": "Style: ink wash. Subject: black panther in Elizabethan doublet with rapier drawn. Mood: aristocratic fury."
+    },
+    {
+      "cardNumber": 38,
+      "cardName": "The Joker",
+      "grade": 1,
+      "power": "PLAGUE ON BOTH HOUSES: When killed, inflict permanent damage on ALL players.",
+      "lore": "Ask for me to-morrow, and you shall find me a grave man.",
+      "gradeReason": "Death curse on everyone when killed. Mercutio's dying lines as a nuclear deterrent. Legendary.",
+      "artworkPrompt": "Style: tarot card. Subject: spotted hyena in jester's suit stabbed but laughing. Mood: defiant dying."
+    },
+    {
+      "cardNumber": 39,
+      "cardName": "The Peacemaker",
+      "grade": 2,
+      "power": "PART FOOLS: Cancel combat for one turn.",
+      "lore": "Put up your swords; you know not what you do.",
+      "gradeReason": "Combat cancellation is clear but structural — pausing violence has no performance hook of its own.",
+      "artworkPrompt": "Style: mediator scene. Subject: golden retriever in armour stepping between two fighters. Mood: weary authority."
+    },
+    {
+      "cardNumber": 40,
+      "cardName": "The Thumb-Biter",
+      "grade": 1,
+      "power": "CIVIL BRAWL: Provoke an enemy; they MUST attack you next turn.",
+      "lore": "Do you bite your thumb at us, sir?",
+      "gradeReason": "Forces a fight by provoking — the play's opening scene as an attack card. Immediately performative.",
+      "artworkPrompt": "Style: street scene illustration. Subject: rat biting its own thumb at someone with a grin. Mood: gleeful provocation."
+    },
+    {
+      "cardNumber": 41,
+      "cardName": "The Lover",
+      "grade": 1,
+      "power": "FORTUNE'S FOOL: High risk roll: Either double damage or kill self.",
+      "lore": "O, I am fortune's fool!",
+      "gradeReason": "Double-or-die roll is Romeo exactly — impulsive, dramatic, catastrophic. Pure G1.",
+      "artworkPrompt": "Style: Romantic painting. Subject: otter in velvet doublet clutching heart dramatically. Mood: operatic despair."
+    },
+    {
+      "cardNumber": 42,
+      "cardName": "The Saint",
+      "grade": 1,
+      "power": "TOO RASH, TOO SUDDEN: Accelerate the game timer by 2 rounds.",
+      "lore": "It is too rash, too unadvised, too sudden.",
+      "gradeReason": "Juliet's warning as a timer accelerator — rushing the game to its end IS her tragedy made mechanic.",
+      "artworkPrompt": "Style: stained glass. Subject: robin in white dress with halo on a stone balcony. Mood: doomed beauty."
+    },
+    {
+      "cardNumber": 43,
+      "cardName": "The Nurse",
+      "grade": 2,
+      "power": "ANCIENT DAMNATION: Delay delivery of a message/item by 1 turn.",
+      "lore": "Lord, how my head aches!",
+      "gradeReason": "Message delay is mechanically accurate to the Nurse's fatal role — but not a performance invitation.",
+      "artworkPrompt": "Style: Victorian domestic scene. Subject: goose in nurse's uniform waddling with a sealed letter. Mood: oblivious delay."
+    },
+    {
+      "cardNumber": 44,
+      "cardName": "The Rope Ladder",
+      "grade": 2,
+      "power": "HIGH TOP-GALLANT: Sneak into the enemy base (deployment zone) without fighting.",
+      "lore": "I am the drudge and toil in your delight.",
+      "gradeReason": "Infiltration prop card — tactically useful but it's furniture, not a character to embody.",
+      "artworkPrompt": "Style: heist illustration. Subject: coiled rope ladder hanging from a stone wall at night. Mood: clandestine necessity."
+    },
+    {
+      "cardNumber": 45,
+      "cardName": "The Apothecary",
+      "grade": 1,
+      "power": "40 DUCATS: Buy 'Instant Death' poison for 40 gold (or all your HP).",
+      "lore": "My poverty, but not my will, consents.",
+      "gradeReason": "Moral transaction — you pay everything for the kill, just like Romeo. Immediate and thematic.",
+      "artworkPrompt": "Style: alchemical engraving. Subject: rat in dusty apothecary with skull-labelled bottles. Mood: reluctant complicity."
+    },
+    {
+      "cardNumber": 46,
+      "cardName": "The Sleeping Potion",
+      "grade": 1,
+      "power": "COLD AND DROWSY: Appear dead for 2 turns (immune to damage), then wake up.",
+      "lore": "No warmth, no breath, shall testify thou livest.",
+      "gradeReason": "Fake death for 2 turns IS the potion's function. Mechanic and object are identical. Perfect prop card.",
+      "artworkPrompt": "Style: alchemical illustration. Subject: blue glowing potion bottle with sleep symbols. Mood: deceptive stillness."
+    },
+    {
+      "cardNumber": 47,
+      "cardName": "The Happy Dagger",
+      "grade": 1,
+      "power": "SHEATH: Self-sacrifice to end the game on your own terms.",
+      "lore": "This is thy sheath; there rust, and let me die.",
+      "gradeReason": "Noble self-termination on your own terms. Juliet's choice made a power. Devastating G1.",
+      "artworkPrompt": "Style: memento mori. Subject: ornate dagger with a serene carved face on the hilt. Mood: tender finality."
+    },
+    {
+      "cardNumber": 48,
+      "cardName": "The Golden Statues",
+      "grade": 1,
+      "power": "GLOOMING PEACE: The game ends. Nobody wins. Everyone feels sad.",
+      "lore": "Poor sacrifices of our enmity!",
+      "gradeReason": "The ultimate meta-card: ends the game with collective tragedy. Pyrrhic peace as a game state.",
+      "artworkPrompt": "Style: golden memorial. Subject: two gilded cat statues facing each other on plinths. Mood: magnificent grief."
+    },
+    {
+      "cardNumber": 49,
+      "cardName": "The Forest of Arden",
+      "grade": 2,
+      "power": "NO CLOCK: Time limits removed. Wrestling moves do double damage.",
+      "lore": null,
+      "gradeReason": "Environmental modifier removing time pressure — structurally useful but nothing to embody.",
+      "artworkPrompt": "Style: illustrated map. Subject: dense forest with paths marked and lion sigils in corners. Mood: timeless wildness."
+    },
+    {
+      "cardNumber": 50,
+      "cardName": "The Wood near Athens",
+      "grade": 2,
+      "power": "DREAM LOGIC: At start of turn, swap hands with player to your left.",
+      "lore": null,
+      "gradeReason": "Hand-swapping chaos is thematic but purely mechanical — location without character hook.",
+      "artworkPrompt": "Style: enchanted map. Subject: glowing forest with fairy lights and mushroom circles. Mood: delirious unreality."
+    },
+    {
+      "cardNumber": 51,
+      "cardName": "Leonato's Orchard",
+      "grade": 1,
+      "power": "EAVESDROPPING: Look at top card of opponent's deck before they draw.",
+      "lore": null,
+      "gradeReason": "Spying on opponent's next card IS the overhearing plot of Much Ado. Location as active performance.",
+      "artworkPrompt": "Style: garden maze illustration. Subject: walled orchard with marked hiding alcoves. Mood: conspiratorial intimacy."
+    },
+    {
+      "cardNumber": 52,
+      "cardName": "The Capulet Tomb",
+      "grade": 2,
+      "power": "ROTTEN LUCK: All healing effects are reversed (healing deals damage).",
+      "lore": null,
+      "gradeReason": "Healing-reversal location is thematically perfect but mechanical — environmental hazard, not a character.",
+      "artworkPrompt": "Style: Gothic illustration. Subject: stone crypt with candles and carved skull above entrance. Mood: cursed finality."
+    },
+    {
+      "cardNumber": 53,
+      "cardName": "Bloody Handkerchief",
+      "grade": 2,
+      "power": "PROOF OF VALOR: Gain +2 Charisma.",
+      "lore": null,
+      "gradeReason": "Simple Charisma boost prop. The naming is evocative but the effect doesn't invite performance.",
+      "artworkPrompt": "Style: heraldic still life. Subject: white handkerchief stained red against dark background. Mood: dramatic evidence."
+    },
+    {
+      "cardNumber": 54,
+      "cardName": "The Lanthorn",
+      "grade": 2,
+      "power": "MOONSHINE: Reveal invisible units (or Fairies).",
+      "lore": null,
+      "gradeReason": "Mechanical reveal card — useful in context but purely structural.",
+      "artworkPrompt": "Style: prop room sketch. Subject: brass lantern with a moth inside glowing softly. Mood: theatrical illumination."
+    },
+    {
+      "cardNumber": 55,
+      "cardName": "The Mask",
+      "grade": 1,
+      "power": "MISTAKEN IDENTITY: Redirect a targeted attack to an adjacent card.",
+      "lore": null,
+      "gradeReason": "Wearing a mask to misdirect attacks IS the masquerade. Prop that performs its own function.",
+      "artworkPrompt": "Style: Venetian still life. Subject: ornate mask on a velvet cushion with ribbons. Mood: beautiful deception."
+    },
+    {
+      "cardNumber": 56,
+      "cardName": "Vial of Poison",
+      "grade": 1,
+      "power": "DRINK ME: Game Over for that card.",
+      "lore": null,
+      "gradeReason": "'DRINK ME' is an invitation. The shortest, most irreversible decision in the deck.",
+      "artworkPrompt": "Style: apothecary label. Subject: small brown bottle with skull and crossbones, cork sealed with red wax. Mood: terrible temptation."
+    }
+  ],
+  "marketingText": "Kayfabizarro: THE BARD'S BARNYARD BEATDOWN – Four Shakespeare Plays Reborn as a Barnyard Brawl (Free Cut & Play Comic Card Game)\n\nShakespeare with the velvet stripped off and the livestock left in: four plays dragged into the mud, where the animals do the scheming, the lying, and the dying.\n\nThe Globe was a cockpit before it was a curriculum. Groundlings paid a penny to stand in the rain, heckle the actors, and roar at the gut-punch jokes your edition now prints as tiny footnotes. Shakespeare wrote for that crowd, not for the exam board, and somewhere between the penny seats and the annotated paperback the plays got taxidermied. This deck pulls the stuffing out and puts the animal back in.\n\nFour plays, one barnyard, and a table that decides who survives the third act. That is Social Story Wrestling doing to Shakespeare exactly what a penny audience always did: you pick up a card, perform the bit out loud in character, and the room rules whether your scene holds or gets booked back behind the curtain. 56 cut-and-play cards across As You Like It, A Midsummer Night's Dream, Much Ado About Nothing, and Romeo & Juliet, every mechanic earning its quote.\n\nWHAT'S INSIDE?\n- The Barnyard Beatdown Core Deck: 56 High-Res \"Print, Cut & Play\" Cards, featuring The Constable (rule on a crime using every wrong word, and dare the table to overturn the verdict), The Dancing Star (win any exchange of insults, then deny you ever cared who started it), and The Joker (turn one earnest scene into chaos and stroll off before anyone can pin the blame).\n- The Freestyle Rules: the complete Anti-Rulebook. No complicated math, just storytelling, dice-driven chaos, and a cut-out Brawl Die where Villain, Poppet, Rat, Coxcomb, Beast, and Fool decide which way your scene tips.\n- The Four-Play Anthology Engine: each play is its own visual ring, from the forest greens of Arden to the blood-dark streets of Verona, plus a Location layer and a Prop Department that hand any animal in any scene the one object that ruins everyone's plan.\n\nTHE \"LIVING DECK\" PASS (Free Updates)\nBy grabbing this deck, you aren't just buying a static PDF. You are joining the Komik Kard Kult Klub. Every future play we drag into the barnyard, every expansion in this cycle, lands in your hands as a FREE update.\n\nWHY \"PAY WHAT YOU WANT\"?\nEvery classroom that teaches you to fear Shakespeare is teaching you to skip the best fight on the syllabus. I make these so the plays stay funny, dangerous, and yours. Are you broke? Enter \"0\" and take it. Print it, cut it, run the match at your own table. Want to support the craft? Every dollar goes straight into the next deck and the next batch of cards.\n\nChoose your reality. Become an Epistemic Outlaw.\n\"The play was never the homework. The play was always the brawl.\"\nStay fluffy. — Uncle FrizzleBob",
+  "marketingEdition": "KFB"
+}
