@@ -6,8 +6,9 @@ graph applying TRS, computes a world-space AABB. No vertex data loaded.
 import os, json, struct, math, sys
 import numpy as np
 
-ROOT = "/sessions/gracious-upbeat-bohr/mnt/3D TableDiorama KFB/3D Assets"
-OUT  = "/sessions/gracious-upbeat-bohr/mnt/3D TableDiorama KFB/3D Assets/CATALOG"
+_HERE = os.path.dirname(os.path.abspath(__file__))
+ROOT = os.path.dirname(_HERE)   # CATALOG/ liegt im Asset-Root; portabel statt Hardcode
+OUT  = _HERE
 GITHUB_BASE = "https://github.com/georg-doc/kayfabizarro/tree/main/media/3D_Assets"
 
 os.makedirs(OUT, exist_ok=True)
@@ -243,3 +244,30 @@ with open(os.path.join(OUT, "INDEX.md"), "w") as f:
 
 print("assets:", len(records), "packs:", len(by_pack), "errors:", len(errors))
 if errors[:5]: print("sample errors:", errors[:5])
+
+# ---------- audio (NEU 2026-08-04) ----------
+import collections
+AUDIO_EXT = {".ogg", ".wav", ".mp3"}
+audio_folders = {}
+for base in ("Audio", "Sounds"):
+    aroot = os.path.join(ROOT, base)
+    if not os.path.isdir(aroot):
+        continue
+    for dp, dns, fns in os.walk(aroot):
+        auds = [f for f in fns if os.path.splitext(f)[1].lower() in AUDIO_EXT]
+        if not auds:
+            continue
+        rel = os.path.relpath(dp, ROOT)
+        fmt = collections.Counter(os.path.splitext(f)[1].lower().lstrip(".") for f in auds)
+        audio_folders[rel] = {"count": len(auds), "formats": dict(fmt), "files": sorted(auds)}
+audio_cat = {
+    "generated": "auto",
+    "root": "media/3D_Assets (GitHub) / '3D ASSETS' (local)",
+    "total_files": sum(v["count"] for v in audio_folders.values()),
+    "total_folders": len(audio_folders),
+    "note": "Audio-Index. sfx.json + jukebox.json (in Audio/) sind die Engine-Manifeste fuer travel-audio.js.",
+    "folders": audio_folders,
+}
+with open(os.path.join(OUT, "audio-catalog.json"), "w") as f:
+    json.dump(audio_cat, f, indent=1, ensure_ascii=False)
+print("audio files:", audio_cat["total_files"], "folders:", audio_cat["total_folders"])
