@@ -54,7 +54,10 @@ textarea{width:100%;height:88px;font-family:ui-monospace,monospace;font-size:10.
   </div>
 
   <div class="grp"><h2>Referenz-Overlay</h2>
-    <label class="filebtn">Tiny-Swords-Vorlage laden
+    <select id="refPick" style="width:100%;font-size:12px;padding:5px;border:1px solid var(--border);border-radius:5px;background:var(--paper);margin-bottom:6px">
+      <option value="-1">— Tiny-Swords-Unit aus GitHub —</option>
+    </select>
+    <label class="filebtn">…oder eigene Vorlage laden
       <input type="file" id="rin" accept="image/*"></label>
     <label>anzeigen <input type="checkbox" id="refOn" class="chk"></label>
     <label>Deckkraft <input type="range" id="refOp" min="0" max="100" value="45"></label>
@@ -65,6 +68,14 @@ textarea{width:100%;height:88px;font-family:ui-monospace,monospace;font-size:10.
     <p class="sel" id="selinfo">keine</p>
     <p class="hint">Pfeile = verschieben · + / − = skalieren · Entf = leeren · F = Füße auf Linie</p>
     <button onclick="snapAll()">Alle Füße snappen</button>
+  </div>
+
+  <div class="grp"><h2>Animations-Vorschau</h2>
+    <canvas id="pv" width="192" height="192" style="width:150px;height:150px;image-rendering:pixelated;background:repeating-conic-gradient(#e9e1d2 0 25%,#f3ede1 0 50%) 0 0/16px 16px;border:1px solid var(--border);border-radius:5px;display:block;margin:0 auto 6px"></canvas>
+    <label>Zeile (State) <input type="number" id="pvRow" value="0" min="0"></label>
+    <label>fps <input type="number" id="pvFps" value="10" min="1" max="30"></label>
+    <button id="pvbtn" onclick="pvToggle()" style="width:100%">▶ Loop abspielen</button>
+    <p class="hint">Spielt die belegten Frames dieser Zeile im Kreis — so siehst du, ob z.B. der Fackelschwung sauber läuft.</p>
   </div>
 
   <div class="grp"><h2>Export</h2>
@@ -179,6 +190,36 @@ function genCatalog(){cfg();const name=$('sheetName').value,path=$('repoPath').v
   const entry={name,type:'spritesheet',path:path+'/'+name+'_'+S.cell+'.png',raw,
     uploaded:$('uploaded').checked,contract:contract()};
   $('cat').value=JSON.stringify(entry,null,2);$('status').textContent='Katalog-Snippet erzeugt — in 2d-catalog.json / sprite-catalog einfügen.';}
+
+// ---- Referenz aus GitHub (Tiny Swords Units) ----
+const UNITS=[
+ {n:'Goblin · Torch (7×5)',c:7,r:5,u:'Goblins/Troops/Torch/Red/Torch_Red.png'},
+ {n:'Goblin · TNT (7×3)',c:7,r:3,u:'Goblins/Troops/TNT/Red/TNT_Red.png'},
+ {n:'Goblin · Barrel (4×4)',c:4,r:4,u:'Goblins/Troops/Barrel/Red/Barrel_Red.png'},
+ {n:'Knight · Warrior (6×8)',c:6,r:8,u:'Knights/Troops/Warrior/Red/Warrior_Red.png'},
+ {n:'Knight · Archer (8×7)',c:8,r:7,u:'Knights/Troops/Archer/Red/Archer_Red.png'},
+ {n:'Knight · Pawn (6×6)',c:6,r:6,u:'Knights/Troops/Pawn/Red/Pawn_Red.png'},
+];
+UNITS.forEach((un,i)=>{const o=document.createElement('option');o.value=i;o.textContent=un.n;$('refPick').appendChild(o);});
+function refURL(u){return encodeURI('https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/2D_Assets/Tiny Swords (Update 010)/Factions/'+u);}
+$('refPick').onchange=e=>{const i=+e.target.value;if(i<0)return;const un=UNITS[i];
+  const im=new Image();im.crossOrigin='anonymous';
+  im.onload=()=>{S.ref=im;$('refOn').checked=true;$('cols').value=un.c;$('rows').value=un.r;rebuild();$('status').textContent='Referenz: '+un.n+' — Raster auf '+un.c+'×'+un.r+' gesetzt.';};
+  im.onerror=()=>{$('status').textContent='⚠ '+un.n+' nicht ladbar — liegt es schon im Repo (media/2D_Assets/)?';};
+  im.src=refURL(un.u);};
+
+// ---- Animations-Vorschau ----
+const pv=$('pv'),pvx=pv.getContext('2d');let pvPlay=false,pvFrame=0,pvLast=0;
+function pvFrames(){const out=[],r=+$('pvRow').value;for(let c=0;c<S.cols;c++){const f=S.cells[r*S.cols+c];if(f)out.push(f);}return out;}
+function drawPV(){pv.width=S.cell;pv.height=S.cell;pvx.clearRect(0,0,S.cell,S.cell);
+  pvx.strokeStyle='rgba(210,70,50,.35)';pvx.beginPath();pvx.moveTo(0,S.baseY+.5);pvx.lineTo(S.cell,S.baseY+.5);pvx.stroke();
+  const fr=pvFrames();if(!fr.length)return;const f=fr[pvFrame%fr.length];
+  const w=f.w*f.scale,h=f.h*f.scale;pvx.drawImage(f.canvas,S.cell/2-w/2+f.dx,S.baseY+f.dy-h,w,h);}
+function pvStep(t){if(!pvPlay)return;const fps=+$('pvFps').value||10;
+  if(t-pvLast>1000/fps){pvLast=t;const fr=pvFrames();if(fr.length)pvFrame=(pvFrame+1)%fr.length;drawPV();}
+  requestAnimationFrame(pvStep);}
+function pvToggle(){pvPlay=!pvPlay;$('pvbtn').textContent=pvPlay?'⏸ Pause':'▶ Loop abspielen';if(pvPlay){pvLast=0;requestAnimationFrame(pvStep);}}
+$('pvRow').onchange=()=>{pvFrame=0;drawPV();};
 
 $('zoom').oninput=render;$('refOn').onchange=render;$('refOp').oninput=render;
 ['matchH','whiteKey','baseY','targetH'].forEach(id=>$(id).onchange=render);
