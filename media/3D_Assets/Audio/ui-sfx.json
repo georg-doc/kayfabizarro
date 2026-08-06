@@ -1,0 +1,40 @@
+{
+  "_note": "Overworld-UI-SFX-Manifest fuer travel-audio.js (sfx('ui.event')). EINE Familie: kenney_interface-sounds (CC0), tonal getrennt von den In-World-Foley-Sounds. Pfade relativ zu media/3D_Assets/. Gain bewusst UNTER den World-SFX. Lulls sind Absicht.",
+  "_set": "media/3D_Assets/Audio/kenney_interface-sounds/",
+  "_rules": {
+    "debounce_ms": 80,
+    "rate_jitter": 0.06,
+    "cap_polyphony": 4,
+    "sits_under_world": true
+  },
+  "sfx": {
+    "ui.click":         { "file": "media/3D_Assets/Audio/kenney_interface-sounds/click_001.ogg",        "gain": 0.6,  "rate": 1 },
+    "ui.slot.resource": { "file": "media/3D_Assets/Audio/kenney_interface-sounds/click_002.ogg",        "gain": 0.6,  "rate": 1, "rateJitter": 0.06 },
+    "ui.slot.signature":{ "file": "media/3D_Assets/Audio/kenney_interface-sounds/confirmation_003.ogg", "gain": 0.72, "rate": 1 },
+    "ui.tab":           { "file": "media/3D_Assets/Audio/kenney_interface-sounds/click_003.ogg",        "gain": 0.5,  "rate": 1 },
+    "ui.toggle":        { "file": "media/3D_Assets/Audio/kenney_interface-sounds/click_004.ogg",        "gain": 0.55, "rate": 1 },
+    "ui.select":        { "file": "media/3D_Assets/Audio/kenney_interface-sounds/confirmation_002.ogg", "gain": 0.6,  "rate": 1 },
+    "ui.confirm":       { "file": "media/3D_Assets/Audio/kenney_interface-sounds/confirmation_001.ogg", "gain": 0.7,  "rate": 1 },
+    "ui.back":          { "file": "media/3D_Assets/Audio/kenney_interface-sounds/back_001.ogg",         "gain": 0.55, "rate": 1 },
+    "ui.window.open":   { "file": "media/3D_Assets/Audio/kenney_interface-sounds/open_001.ogg",         "gain": 0.6,  "rate": 1 },
+    "ui.window.close":  { "file": "media/3D_Assets/Audio/kenney_interface-sounds/close_001.ogg",        "gain": 0.55, "rate": 1 },
+    "ui.diary.open":    { "file": "media/3D_Assets/Audio/kenney_interface-sounds/open_002.ogg",         "gain": 0.6,  "rate": 1 },
+    "ui.almanac.pagein":{ "file": "media/3D_Assets/Audio/kenney_interface-sounds/drop_002.ogg",         "gain": 0.6,  "rate": 1 },
+    "ui.error":         { "file": "media/3D_Assets/Audio/kenney_interface-sounds/error_002.ogg",        "gain": 0.55, "rate": 1 },
+    "ui.map.open":      { "file": "media/3D_Assets/Audio/kenney_interface-sounds/maximize_001.ogg",     "gain": 0.55, "rate": 1 },
+    "ui.map.close":     { "file": "media/3D_Assets/Audio/kenney_interface-sounds/minimize_001.ogg",     "gain": 0.5,  "rate": 1 },
+    "ui.gear":          { "file": "media/3D_Assets/Audio/kenney_interface-sounds/click_005.ogg",        "gain": 0.5,  "rate": 1 }
+  },
+  "_lulls_silent_by_default": [
+    "ui.hover  (jeder Hover — optional sehr leiser rollover @ gain 0.25, default AUS)",
+    "ui.chat.type / ui.chat.send  (kein Chirpen beim Tippen)",
+    "movement / continuous  (kein Schritt-Klick im Menue)",
+    "idle / ambient",
+    "wiederholtes identisches Event < debounce_ms  (nicht maschinengewehren)"
+  ],
+  "_belongs_to_world_not_ui": {
+    "reveal.dissolve": "Karten-/Lootbox-Reveal = Portal-/Cloth-Sound aus sky-cards, NICHT die UI-Familie",
+    "card / coin / hit / land / step / jump / gutterFall": "bereits in sfx.json (World-Foley)",
+    "win / levelup": "media/3D_Assets/Audio/kenney_music-jingles/ — sparsam, nie pro Klick"
+  }
+}
