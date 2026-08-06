@@ -1,310 +1,545 @@
 {
- "generated": "2026-08-05",
- "root": "media/2D_Assets (GitHub) / '2D + Pixel Assets' (local)",
+ "generated": "2026-08-06",
+ "root": "media/2D_Assets",
  "github_base": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/2D_Assets/",
- "total_files": 730,
- "total_packs": 4,
- "note": "2D-Index. Bild-Pfade = github_base + folder + '/' + file. .aseprite/.ds_store/.zip ausgeschlossen (nicht web).",
+ "total_files": 1654,
+ "total_packs": 14,
+ "note": "2D-Index. Bild-Pfad = github_base + folder + '/' + file.",
  "packs": {
-  "Tiny Swords (Update 010)": {
-   "count": 197,
+  "KFB Knight": {
+   "count": 39,
    "folders": {
-    "Tiny Swords (Update 010)/UI/Buttons": [
-     "Button_Blue.png",
-     "Button_Blue_3Slides.png",
-     "Button_Blue_3Slides_Pressed.png",
-     "Button_Blue_9Slides.png",
-     "Button_Blue_9Slides_Pressed.png",
-     "Button_Blue_Pressed.png",
-     "Button_Disable.png",
-     "Button_Disable_3Slides.png",
-     "Button_Disable_9Slides.png",
-     "Button_Hover.png",
-     "Button_Hover_3Slides.png",
-     "Button_Hover_9Slides.png",
-     "Button_Red.png",
-     "Button_Red_3Slides.png",
-     "Button_Red_3Slides_Pressed.png",
-     "Button_Red_9Slides.png",
-     "Button_Red_9Slides_Pressed.png",
-     "Button_Red_Pressed.png"
+    "KFB Knight": [
+     "knight.png"
     ],
-    "Tiny Swords (Update 010)/UI/Ribbons": [
-     "Ribbon_Blue_3Slides.png",
-     "Ribbon_Blue_Connection_Down.png",
-     "Ribbon_Blue_Connection_Down_Pressed.png",
-     "Ribbon_Blue_Connection_Left.png",
-     "Ribbon_Blue_Connection_Left_Pressed.png",
-     "Ribbon_Blue_Connection_Right.png",
-     "Ribbon_Blue_Connection_Right_Pressed.png",
-     "Ribbon_Blue_Connection_Up.png",
-     "Ribbon_Blue_Connection_Up_Pressed.png",
-     "Ribbon_Red_3Slides.png",
-     "Ribbon_Red_Connection_Down.png",
-     "Ribbon_Red_Connection_Down_Pressed.png",
-     "Ribbon_Red_Connection_Left.png",
-     "Ribbon_Red_Connection_Left_Pressed.png",
-     "Ribbon_Red_Connection_Right.png",
-     "Ribbon_Red_Connection_Right_Pressed.png",
-     "Ribbon_Red_Connection_Up.png",
-     "Ribbon_Red_Connection_Up_Pressed.png",
-     "Ribbon_Yellow_3Slides.png",
-     "Ribbon_Yellow_Connection_Down.png",
-     "Ribbon_Yellow_Connection_Down_Pressed.png",
-     "Ribbon_Yellow_Connection_Left.png",
-     "Ribbon_Yellow_Connection_Left_Pressed.png",
-     "Ribbon_Yellow_Connection_Right.png",
-     "Ribbon_Yellow_Connection_Right_Pressed.png",
-     "Ribbon_Yellow_Connection_Up.png",
-     "Ribbon_Yellow_Connection_Up_Pressed.png"
+    "KFB Knight/Climb": [
+     "climb1.png",
+     "climb2.png",
+     "climb3.png",
+     "climb4.png"
     ],
-    "Tiny Swords (Update 010)/UI/Banners": [
-     "Banner_Connection_Down.png",
-     "Banner_Connection_Left.png",
-     "Banner_Connection_Right.png",
-     "Banner_Connection_Up.png",
-     "Banner_Horizontal.png",
-     "Banner_Vertical.png",
-     "Carved_3Slides.png",
-     "Carved_9Slides.png",
-     "Carved_Regular.png"
+    "KFB Knight/Attack": [
+     "attack0.png",
+     "attack1.png",
+     "attack2.png",
+     "attack4.png"
     ],
-    "Tiny Swords (Update 010)/UI/Icons": [
-     "Disable_01.png",
-     "Disable_02.png",
-     "Disable_03.png",
-     "Disable_04.png",
-     "Disable_05.png",
-     "Disable_06.png",
-     "Disable_07.png",
-     "Disable_08.png",
-     "Disable_09.png",
-     "Disable_10.png",
-     "Pressed_01.png",
-     "Pressed_02.png",
-     "Pressed_03.png",
-     "Pressed_04.png",
-     "Pressed_05.png",
-     "Pressed_06.png",
-     "Pressed_07.png",
-     "Pressed_08.png",
-     "Pressed_09.png",
-     "Pressed_10.png",
-     "Regular_01.png",
-     "Regular_02.png",
-     "Regular_03.png",
-     "Regular_04.png",
-     "Regular_05.png",
-     "Regular_06.png",
-     "Regular_07.png",
-     "Regular_08.png",
-     "Regular_09.png",
-     "Regular_10.png"
+    "KFB Knight/Death": [
+     "death1.png",
+     "death10.png",
+     "death2.png",
+     "death3.png",
+     "death4.png",
+     "death5.png",
+     "death6.png",
+     "death7.png",
+     "death8.png",
+     "death9.png"
     ],
-    "Tiny Swords (Update 010)/UI/Pointers": [
-     "01.png",
-     "02.png",
-     "03.png",
-     "04.png",
-     "05.png",
-     "06.png"
+    "KFB Knight/Attack_Extra": [
+     "attack_extra1.png",
+     "attack_extra2.png",
+     "attack_extra3.png",
+     "attack_extra4.png",
+     "attack_extra5.png",
+     "attack_extra6.png",
+     "attack_extra7.png",
+     "attack_extra8.png"
     ],
-    "Tiny Swords (Update 010)/Resources/Trees": [
-     "Tree.png"
+    "KFB Knight/High_Jump": [
+     "high_jump1.png",
+     "high_jump10.png",
+     "high_jump11.png",
+     "high_jump12.png",
+     "high_jump2.png",
+     "high_jump3.png",
+     "high_jump4.png",
+     "high_jump5.png",
+     "high_jump6.png",
+     "high_jump7.png",
+     "high_jump8.png",
+     "high_jump9.png"
+    ]
+   }
+  },
+  "KFB Mage": {
+   "count": 116,
+   "folders": {
+    "KFB Mage": [
+     "mage.png"
     ],
-    "Tiny Swords (Update 010)/Resources/Sheep": [
-     "HappySheep_All.png",
-     "HappySheep_Bouncing.png",
-     "HappySheep_Idle.png"
+    "KFB Mage/Idle": [
+     "idle1.png",
+     "idle10.png",
+     "idle11.png",
+     "idle12.png",
+     "idle13.png",
+     "idle14.png",
+     "idle2.png",
+     "idle3.png",
+     "idle4.png",
+     "idle5.png",
+     "idle6.png",
+     "idle7.png",
+     "idle8.png",
+     "idle9.png"
     ],
-    "Tiny Swords (Update 010)/Resources/Resources": [
-     "G_Idle.png",
-     "G_Idle_(NoShadow).png",
-     "G_Spawn.png",
-     "M_Idle.png",
-     "M_Idle_(NoShadow).png",
-     "M_Spawn.png",
-     "W_Idle.png",
-     "W_Idle_(NoShadow).png",
-     "W_Spawn.png"
+    "KFB Mage/Climb": [
+     "climb1.png",
+     "climb2.png",
+     "climb3.png",
+     "climb4.png"
     ],
-    "Tiny Swords (Update 010)/Resources/Gold Mine": [
-     "GoldMine_Active.png",
-     "GoldMine_Destroyed.png",
-     "GoldMine_Inactive.png"
+    "KFB Mage/Attack": [
+     "attack1.png",
+     "attack2.png",
+     "attack3.png",
+     "attack4.png",
+     "attack5.png",
+     "attack6.png",
+     "attack7.png"
     ],
-    "Tiny Swords (Update 010)/Deco": [
-     "01.png",
-     "02.png",
-     "03.png",
-     "04.png",
-     "05.png",
-     "06.png",
-     "07.png",
-     "08.png",
-     "09.png",
-     "10.png",
-     "11.png",
-     "12.png",
-     "13.png",
-     "14.png",
-     "15.png",
-     "16.png",
-     "17.png",
-     "18.png"
+    "KFB Mage/Walk": [
+     "walk1.png",
+     "walk2.png",
+     "walk3.png",
+     "walk4.png",
+     "walk5.png",
+     "walk6.png"
     ],
-    "Tiny Swords (Update 010)/Terrain/Water": [
-     "Water.png"
+    "KFB Mage/Death": [
+     "death1.png",
+     "death10.png",
+     "death2.png",
+     "death3.png",
+     "death4.png",
+     "death5.png",
+     "death6.png",
+     "death7.png",
+     "death8.png",
+     "death9.png"
     ],
-    "Tiny Swords (Update 010)/Terrain/Water/Rocks": [
-     "Rocks_01.png",
-     "Rocks_02.png",
-     "Rocks_03.png",
-     "Rocks_04.png"
+    "KFB Mage/Fire_Extra": [
+     "fire_extra1.png",
+     "fire_extra2.png",
+     "fire_extra3.png",
+     "fire_extra4.png",
+     "fire_extra5.png",
+     "fire_extra6.png",
+     "fire_extra7.png",
+     "fire_extra8.png",
+     "fire_extra9.png"
     ],
-    "Tiny Swords (Update 010)/Terrain/Water/Foam": [
-     "Foam.png"
+    "KFB Mage/Jump": [
+     "jump1.png",
+     "jump2.png",
+     "jump3.png",
+     "jump4.png",
+     "jump5.png",
+     "jump6.png",
+     "jump7.png"
     ],
-    "Tiny Swords (Update 010)/Terrain/Ground": [
-     "Shadows.png",
-     "Tilemap_Elevation.png",
-     "Tilemap_Flat.png"
+    "KFB Mage/Hurt": [
+     "hurt1.png",
+     "hurt2.png",
+     "hurt3.png",
+     "hurt4.png"
     ],
-    "Tiny Swords (Update 010)/Terrain/Bridge": [
-     "Bridge_All.png"
+    "KFB Mage/Push": [
+     "push1.png",
+     "push2.png",
+     "push3.png",
+     "push4.png"
     ],
-    "Tiny Swords (Update 010)/Factions/Goblins/Buildings/Wood_Tower": [
-     "Wood_Tower_Blue.png",
-     "Wood_Tower_Destroyed.png",
-     "Wood_Tower_InConstruction.png",
-     "Wood_Tower_Purple.png",
-     "Wood_Tower_Red.png",
-     "Wood_Tower_Yellow.png"
+    "KFB Mage/Fire": [
+     "fire1.png",
+     "fire2.png",
+     "fire3.png",
+     "fire4.png",
+     "fire5.png",
+     "fire6.png",
+     "fire7.png",
+     "fire8.png",
+     "fire9.png"
     ],
-    "Tiny Swords (Update 010)/Factions/Goblins/Buildings/Wood_House": [
-     "Goblin_House.png",
-     "Goblin_House_Destroyed.png"
+    "KFB Mage/Run_Attack": [
+     "run_attack1.png",
+     "run_attack2.png",
+     "run_attack3.png",
+     "run_attack4.png",
+     "run_attack5.png",
+     "run_attack6.png",
+     "run_attack7.png",
+     "run_attack8.png"
     ],
-    "Tiny Swords (Update 010)/Factions/Goblins/Troops/Barrel/Blue": [
-     "Barrel_Blue.png"
+    "KFB Mage/Attack_Extra": [
+     "attack_extra0.png",
+     "attack_extra1.png",
+     "attack_extra2.png",
+     "attack_extra3.png",
+     "attack_extra4.png",
+     "attack_extra5.png",
+     "attack_extra6.png"
     ],
-    "Tiny Swords (Update 010)/Factions/Goblins/Troops/Barrel/Red": [
-     "Barrel_Red.png"
+    "KFB Mage/Walk_Attack": [
+     "walk_attack1.png",
+     "walk_attack2.png",
+     "walk_attack3.png",
+     "walk_attack4.png",
+     "walk_attack5.png",
+     "walk_attack6.png"
     ],
-    "Tiny Swords (Update 010)/Factions/Goblins/Troops/Barrel/Purple": [
-     "Barrel_Purple.png"
+    "KFB Mage/Run": [
+     "run1.png",
+     "run2.png",
+     "run3.png",
+     "run4.png",
+     "run5.png",
+     "run6.png",
+     "run7.png",
+     "run8.png"
     ],
-    "Tiny Swords (Update 010)/Factions/Goblins/Troops/Barrel/Yellow": [
-     "Barrel_Yellow.png"
+    "KFB Mage/High_Jump": [
+     "high_jump1.png",
+     "high_jump10.png",
+     "high_jump11.png",
+     "high_jump12.png",
+     "high_jump2.png",
+     "high_jump3.png",
+     "high_jump4.png",
+     "high_jump5.png",
+     "high_jump6.png",
+     "high_jump7.png",
+     "high_jump8.png",
+     "high_jump9.png"
+    ]
+   }
+  },
+  "KFB Rogue": {
+   "count": 105,
+   "folders": {
+    "KFB Rogue": [
+     "rogue.png"
     ],
-    "Tiny Swords (Update 010)/Factions/Goblins/Troops/Torch/Blue": [
-     "Torch_Blue.png"
+    "KFB Rogue/Idle": [
+     "idle1.png",
+     "idle10.png",
+     "idle12.png",
+     "idle13.png",
+     "idle14.png",
+     "idle15.png",
+     "idle16.png",
+     "idle17.png",
+     "idle18.png",
+     "idle2.png",
+     "idle3.png",
+     "idle4.png",
+     "idle5.png",
+     "idle6.png",
+     "idle7.png",
+     "idle8.png",
+     "idle9.png"
     ],
-    "Tiny Swords (Update 010)/Factions/Goblins/Troops/Torch/Red": [
-     "Torch_Red.png"
+    "KFB Rogue/Climb": [
+     "climb1.png",
+     "climb2.png",
+     "climb3.png",
+     "climb4.png"
     ],
-    "Tiny Swords (Update 010)/Factions/Goblins/Troops/Torch/Purple": [
-     "Torch_Purple.png"
+    "KFB Rogue/Attack": [
+     "Attack1.png",
+     "Attack2.png",
+     "Attack3.png",
+     "Attack4.png",
+     "Attack5.png",
+     "Attack6.png",
+     "Attack7.png"
     ],
-    "Tiny Swords (Update 010)/Factions/Goblins/Troops/Torch/Yellow": [
-     "Torch_Yellow.png"
+    "KFB Rogue/Walk": [
+     "walk1.png",
+     "walk2.png",
+     "walk3.png",
+     "walk4.png",
+     "walk5.png",
+     "walk6.png"
     ],
-    "Tiny Swords (Update 010)/Factions/Goblins/Troops/TNT/Dynamite": [
-     "Dynamite.png"
+    "KFB Rogue/Death": [
+     "death1.png",
+     "death10.png",
+     "death2.png",
+     "death3.png",
+     "death4.png",
+     "death5.png",
+     "death6.png",
+     "death7.png",
+     "death8.png",
+     "death9.png"
     ],
-    "Tiny Swords (Update 010)/Factions/Goblins/Troops/TNT/Blue": [
-     "TNT_Blue.png"
+    "KFB Rogue/Jump": [
+     "jump1.png",
+     "jump2.png",
+     "jump3.png",
+     "jump4.png",
+     "jump5.png",
+     "jump6.png",
+     "jump7.png"
     ],
-    "Tiny Swords (Update 010)/Factions/Goblins/Troops/TNT/Red": [
-     "TNT_Red.png"
+    "KFB Rogue/Hurt": [
+     "hurt1.png",
+     "hurt2.png",
+     "hurt3.png",
+     "hurt4.png"
     ],
-    "Tiny Swords (Update 010)/Factions/Goblins/Troops/TNT/Purple": [
-     "TNT_Purple.png"
+    "KFB Rogue/Push": [
+     "push1.png",
+     "push2.png",
+     "push3.png",
+     "push4.png"
     ],
-    "Tiny Swords (Update 010)/Factions/Goblins/Troops/TNT/Yellow": [
-     "TNT_Yellow.png"
+    "KFB Rogue/Run_Attack": [
+     "run_attack1.png",
+     "run_attack2.png",
+     "run_attack3.png",
+     "run_attack4.png",
+     "run_attack5.png",
+     "run_attack6.png",
+     "run_attack7.png",
+     "run_attack8.png"
     ],
-    "Tiny Swords (Update 010)/Factions/Knights/Buildings/Tower": [
-     "Tower_Blue.png",
-     "Tower_Construction.png",
-     "Tower_Destroyed.png",
-     "Tower_Purple.png",
-     "Tower_Red.png",
-     "Tower_Yellow.png"
+    "KFB Rogue/Attack_Extra": [
+     "attack_extra1.png",
+     "attack_extra10.png",
+     "attack_extra11.png",
+     "attack_extra2.png",
+     "attack_extra3.png",
+     "attack_extra4.png",
+     "attack_extra5.png",
+     "attack_extra6.png",
+     "attack_extra7.png",
+     "attack_extra8.png",
+     "attack_extra9.png"
     ],
-    "Tiny Swords (Update 010)/Factions/Knights/Buildings/House": [
-     "House_Blue.png",
-     "House_Construction.png",
-     "House_Destroyed.png",
-     "House_Purple.png",
-     "House_Red.png",
-     "House_Yellow.png"
+    "KFB Rogue/Walk_Attack": [
+     "walk_attack1.png",
+     "walk_attack2.png",
+     "walk_attack3.png",
+     "walk_attack4.png",
+     "walk_attack5.png",
+     "walk_attack6.png"
     ],
-    "Tiny Swords (Update 010)/Factions/Knights/Buildings/Castle": [
-     "Castle_Blue.png",
-     "Castle_Construction.png",
-     "Castle_Destroyed.png",
-     "Castle_Purple.png",
-     "Castle_Red.png",
-     "Castle_Yellow.png"
+    "KFB Rogue/Run": [
+     "run1.png",
+     "run2.png",
+     "run3.png",
+     "run4.png",
+     "run5.png",
+     "run6.png",
+     "run7.png",
+     "run8.png"
     ],
-    "Tiny Swords (Update 010)/Factions/Knights/Troops/Dead": [
-     "Dead.png"
+    "KFB Rogue/High_Jump": [
+     "high_jump1.png",
+     "high_jump10.png",
+     "high_jump11.png",
+     "high_jump12.png",
+     "high_jump2.png",
+     "high_jump3.png",
+     "high_jump4.png",
+     "high_jump5.png",
+     "high_jump6.png",
+     "high_jump7.png",
+     "high_jump8.png",
+     "high_jump9.png"
+    ]
+   }
+  },
+  "Tiny Swords (Enemy Pack)": {
+   "count": 123,
+   "folders": {
+    "Tiny Swords (Enemy Pack)/Enemy Avatars": [
+     "Bomb Fish.png",
+     "Enemy Avatars_01.png",
+     "Enemy Avatars_06.png",
+     "Enemy Avatars_07.png",
+     "Enemy Avatars_08.png",
+     "Enemy Avatars_09.png",
+     "Enemy Avatars_10.png",
+     "Enemy Avatars_11.png",
+     "Enemy Avatars_12.png",
+     "Enemy Avatars_13.png",
+     "Enemy Avatars_14.png",
+     "Enemy Avatars_15.png",
+     "Enemy Avatars_16.png",
+     "Harpoon Shark.png",
+     "Hex Shaman.png",
+     "Paddle Shark.png",
+     "Spear Goblin.png",
+     "Torch Goblin.png"
     ],
-    "Tiny Swords (Update 010)/Factions/Knights/Troops/Archer/Blue": [
-     "Archer_Blue.png"
+    "Tiny Swords (Enemy Pack)/Enemy Pack/Caveborn/Turtle": [
+     "Turtle_Attack.png",
+     "Turtle_Guard_In.png",
+     "Turtle_Guard_Out.png",
+     "Turtle_Idle.png",
+     "Turtle_Walk.png"
     ],
-    "Tiny Swords (Update 010)/Factions/Knights/Troops/Archer/Arrow": [
-     "Arrow.png"
+    "Tiny Swords (Enemy Pack)/Enemy Pack/Caveborn/Bear": [
+     "Bear_Attack.png",
+     "Bear_Idle.png",
+     "Bear_Run.png"
     ],
-    "Tiny Swords (Update 010)/Factions/Knights/Troops/Archer/Red": [
-     "Archer_Red.png"
+    "Tiny Swords (Enemy Pack)/Enemy Pack/Caveborn/Cave": [
+     "Cave_Idle.png"
     ],
-    "Tiny Swords (Update 010)/Factions/Knights/Troops/Archer/Archer + Bow": [
-     "Archer_Blue_(NoArms).png",
-     "Archer_Bow_Blue.png",
-     "Archer_Bow_Purple.png",
-     "Archer_Bow_Red.png",
-     "Archer_Bow_Yellow.png",
-     "Archer_Purple_(NoArms).png",
-     "Archer_Red_(NoArms).png",
-     "Archer_Yellow_(NoArms).png"
+    "Tiny Swords (Enemy Pack)/Enemy Pack/Caveborn/Lizard": [
+     "Lizard_Attack.png",
+     "Lizard_Hit.png",
+     "Lizard_Idle.png",
+     "Lizard_Run.png"
     ],
-    "Tiny Swords (Update 010)/Factions/Knights/Troops/Archer/Purple": [
-     "Archer_Purlple.png"
+    "Tiny Swords (Enemy Pack)/Enemy Pack/Caveborn/Spider": [
+     "Spider_Attack.png",
+     "Spider_Idle.png",
+     "Spider_Run.png"
     ],
-    "Tiny Swords (Update 010)/Factions/Knights/Troops/Archer/Yellow": [
-     "Archer_Yellow.png"
+    "Tiny Swords (Enemy Pack)/Enemy Pack/Caveborn/Snake": [
+     "Snake_Attack.png",
+     "Snake_Idle.png",
+     "Snake_Run.png"
     ],
-    "Tiny Swords (Update 010)/Factions/Knights/Troops/Pawn/Blue": [
-     "Pawn_Blue.png"
+    "Tiny Swords (Enemy Pack)/Enemy Pack/Gnoll": [
+     "Gnoll_Bone.png",
+     "Gnoll_Hit.png",
+     "Gnoll_Idle.png",
+     "Gnoll_Throw.png",
+     "Gnoll_Walk.png"
     ],
-    "Tiny Swords (Update 010)/Factions/Knights/Troops/Pawn/Red": [
-     "Pawn_Red.png"
+    "Tiny Swords (Enemy Pack)/Enemy Pack/Root Troll": [
+     "Bones_01.png",
+     "Bones_02.png",
+     "Bones_03.png",
+     "Dead Tree.png",
+     "Skull Spike_01.png",
+     "Skull Spike_02.png"
     ],
-    "Tiny Swords (Update 010)/Factions/Knights/Troops/Pawn/Purple": [
-     "Pawn_Purple.png"
+    "Tiny Swords (Enemy Pack)/Enemy Pack/Pirate Fish/Seahorse Boat": [
+     "Seahorse Boat_Bomb Fish.png",
+     "Seahorse Boat_Harpoon Shark.png",
+     "Seahorse Boat_Idle.png",
+     "Seahorse Boat_Paddle Shark.png"
     ],
-    "Tiny Swords (Update 010)/Factions/Knights/Troops/Pawn/Yellow": [
-     "Pawn_Yellow.png"
+    "Tiny Swords (Enemy Pack)/Enemy Pack/Pirate Fish/Bomb": [
+     "Bomb_FuseLit.png",
+     "Bomb_Idle.png",
+     "Bomb_Spinning.png"
     ],
-    "Tiny Swords (Update 010)/Factions/Knights/Troops/Warrior/Blue": [
-     "Warrior_Blue.png"
+    "Tiny Swords (Enemy Pack)/Enemy Pack/Pirate Fish/Boat": [
+     "Boat_Idle.png"
     ],
-    "Tiny Swords (Update 010)/Factions/Knights/Troops/Warrior/Red": [
-     "Warrior_Red.png"
+    "Tiny Swords (Enemy Pack)/Enemy Pack/Pirate Fish/Bomb Fish": [
+     "Bomb Fish_Idle.png",
+     "Bomb Fish_Run.png",
+     "Bomb Fish_Shoot.png"
     ],
-    "Tiny Swords (Update 010)/Factions/Knights/Troops/Warrior/Purple": [
-     "Warrior_Purple.png"
+    "Tiny Swords (Enemy Pack)/Enemy Pack/Pirate Fish/Fish Hut": [
+     "Fish Hut.png"
     ],
-    "Tiny Swords (Update 010)/Factions/Knights/Troops/Warrior/Yellow": [
-     "Warrior_Yellow.png"
+    "Tiny Swords (Enemy Pack)/Enemy Pack/Pirate Fish/Paddle Shark": [
+     "Paddle Shark_Attack.png",
+     "Paddle Shark_Idle.png",
+     "Paddle Shark_Row.png",
+     "Paddle Shark_Run.png"
     ],
-    "Tiny Swords (Update 010)/Effects/Fire": [
-     "Fire.png"
+    "Tiny Swords (Enemy Pack)/Enemy Pack/Pirate Fish/Cannon": [
+     "Cannon_Ball.png",
+     "Cannon_Down.png",
+     "Cannon_DownRight.png",
+     "Cannon_Right.png",
+     "Cannon_Up.png",
+     "Cannon_UpRight.png"
     ],
-    "Tiny Swords (Update 010)/Effects/Explosion": [
-     "Explosions.png"
+    "Tiny Swords (Enemy Pack)/Enemy Pack/Pirate Fish/Pirate Tower": [
+     "Pirate Tower_Ground.png",
+     "Pirate Tower_Water.png"
+    ],
+    "Tiny Swords (Enemy Pack)/Enemy Pack/Pirate Fish/Harpoon Shark": [
+     "Harpoon Shark_Idle.png",
+     "Harpoon Shark_Run.png",
+     "Harpoon Shark_Throw.png",
+     "Harpoon.png"
+    ],
+    "Tiny Swords (Enemy Pack)/Enemy Pack/Troll": [
+     "Troll_Attack.png",
+     "Troll_ClubPart1.png",
+     "Troll_ClubPart2.png",
+     "Troll_Dead.png",
+     "Troll_Idle.png",
+     "Troll_Recovery.png",
+     "Troll_Walk.png",
+     "Troll_Windup.png"
+    ],
+    "Tiny Swords (Enemy Pack)/Enemy Pack/Goblin Raiders/Torch Goblin": [
+     "Torch Goblin_Attack.png",
+     "Torch Goblin_Idle.png",
+     "Torch Goblin_Run.png"
+    ],
+    "Tiny Swords (Enemy Pack)/Enemy Pack/Goblin Raiders/Pig": [
+     "Pig_Idle.png",
+     "Pig_Run.png"
+    ],
+    "Tiny Swords (Enemy Pack)/Enemy Pack/Goblin Raiders/Wooden Fence": [
+     "Wooden Fence_64x64 tile.png"
+    ],
+    "Tiny Swords (Enemy Pack)/Enemy Pack/Goblin Raiders/Pig Rider Spear Goblin": [
+     "Pig Rider_Attack.png",
+     "Pig Rider_Idle.png",
+     "Pig Rider_Run.png"
+    ],
+    "Tiny Swords (Enemy Pack)/Enemy Pack/Goblin Raiders/Hex Shaman": [
+     "Hex Shaman_Attack.png",
+     "Hex Shaman_Explosion Spell.png",
+     "Hex Shaman_Explosion.png",
+     "Hex Shaman_Idle.png",
+     "Hex Shaman_Projectile.png",
+     "Hex Shaman_Run.png",
+     "Hex Shaman_Transformation Spell.png"
+    ],
+    "Tiny Swords (Enemy Pack)/Enemy Pack/Goblin Raiders/Spear Goblin": [
+     "Spear Goblin_Attack Fast.png",
+     "Spear Goblin_Attack Strong.png",
+     "Spear Goblin_Idle.png",
+     "Spear Goblin_Run.png"
+    ],
+    "Tiny Swords (Enemy Pack)/Enemy Pack/Goblin Raiders/Goblin Hut": [
+     "Goblin Hut.png"
+    ],
+    "Tiny Swords (Enemy Pack)/Enemy Pack/Enemies/Skull": [
+     "Skull_Attack.png",
+     "Skull_Guard.png",
+     "Skull_Idle.png",
+     "Skull_Run.png"
+    ],
+    "Tiny Swords (Enemy Pack)/Enemy Pack/Enemies/Panda": [
+     "Panda_Attack.png",
+     "Panda_Guard.png",
+     "Panda_Idle.png",
+     "Panda_Run.png"
+    ],
+    "Tiny Swords (Enemy Pack)/Enemy Pack/Enemies/Minotaur": [
+     "Minotaur_Attack.png",
+     "Minotaur_Guard.png",
+     "Minotaur_Idle.png",
+     "Minotaur_Walk.png"
+    ],
+    "Tiny Swords (Enemy Pack)/Enemy Pack/Enemies/Gnome": [
+     "Gnome_Attack.png",
+     "Gnome_Idle.png",
+     "Gnome_Run.png"
+    ],
+    "Tiny Swords (Enemy Pack)/Enemy Pack/Enemies/Thief": [
+     "Thief_Attack.png",
+     "Thief_Idle.png",
+     "Thief_Run.png"
     ]
    }
   },
@@ -835,198 +1070,1073 @@
     ]
    }
   },
-  "Tiny Swords (Enemy Pack)": {
-   "count": 18,
+  "Tiny Swords (Update 010)": {
+   "count": 197,
    "folders": {
-    "Tiny Swords (Enemy Pack)/Enemy Pack/Enemies/Skull": [
-     "Skull_Attack.png",
-     "Skull_Guard.png",
-     "Skull_Idle.png",
-     "Skull_Run.png"
+    "Tiny Swords (Update 010)/UI/Buttons": [
+     "Button_Blue.png",
+     "Button_Blue_3Slides.png",
+     "Button_Blue_3Slides_Pressed.png",
+     "Button_Blue_9Slides.png",
+     "Button_Blue_9Slides_Pressed.png",
+     "Button_Blue_Pressed.png",
+     "Button_Disable.png",
+     "Button_Disable_3Slides.png",
+     "Button_Disable_9Slides.png",
+     "Button_Hover.png",
+     "Button_Hover_3Slides.png",
+     "Button_Hover_9Slides.png",
+     "Button_Red.png",
+     "Button_Red_3Slides.png",
+     "Button_Red_3Slides_Pressed.png",
+     "Button_Red_9Slides.png",
+     "Button_Red_9Slides_Pressed.png",
+     "Button_Red_Pressed.png"
     ],
-    "Tiny Swords (Enemy Pack)/Enemy Pack/Enemies/Panda": [
-     "Panda_Attack.png",
-     "Panda_Guard.png",
-     "Panda_Idle.png",
-     "Panda_Run.png"
+    "Tiny Swords (Update 010)/UI/Ribbons": [
+     "Ribbon_Blue_3Slides.png",
+     "Ribbon_Blue_Connection_Down.png",
+     "Ribbon_Blue_Connection_Down_Pressed.png",
+     "Ribbon_Blue_Connection_Left.png",
+     "Ribbon_Blue_Connection_Left_Pressed.png",
+     "Ribbon_Blue_Connection_Right.png",
+     "Ribbon_Blue_Connection_Right_Pressed.png",
+     "Ribbon_Blue_Connection_Up.png",
+     "Ribbon_Blue_Connection_Up_Pressed.png",
+     "Ribbon_Red_3Slides.png",
+     "Ribbon_Red_Connection_Down.png",
+     "Ribbon_Red_Connection_Down_Pressed.png",
+     "Ribbon_Red_Connection_Left.png",
+     "Ribbon_Red_Connection_Left_Pressed.png",
+     "Ribbon_Red_Connection_Right.png",
+     "Ribbon_Red_Connection_Right_Pressed.png",
+     "Ribbon_Red_Connection_Up.png",
+     "Ribbon_Red_Connection_Up_Pressed.png",
+     "Ribbon_Yellow_3Slides.png",
+     "Ribbon_Yellow_Connection_Down.png",
+     "Ribbon_Yellow_Connection_Down_Pressed.png",
+     "Ribbon_Yellow_Connection_Left.png",
+     "Ribbon_Yellow_Connection_Left_Pressed.png",
+     "Ribbon_Yellow_Connection_Right.png",
+     "Ribbon_Yellow_Connection_Right_Pressed.png",
+     "Ribbon_Yellow_Connection_Up.png",
+     "Ribbon_Yellow_Connection_Up_Pressed.png"
     ],
-    "Tiny Swords (Enemy Pack)/Enemy Pack/Enemies/Minotaur": [
-     "Minotaur_Attack.png",
-     "Minotaur_Guard.png",
-     "Minotaur_Idle.png",
-     "Minotaur_Walk.png"
+    "Tiny Swords (Update 010)/UI/Banners": [
+     "Banner_Connection_Down.png",
+     "Banner_Connection_Left.png",
+     "Banner_Connection_Right.png",
+     "Banner_Connection_Up.png",
+     "Banner_Horizontal.png",
+     "Banner_Vertical.png",
+     "Carved_3Slides.png",
+     "Carved_9Slides.png",
+     "Carved_Regular.png"
     ],
-    "Tiny Swords (Enemy Pack)/Enemy Pack/Enemies/Gnome": [
-     "Gnome_Attack.png",
-     "Gnome_Idle.png",
-     "Gnome_Run.png"
+    "Tiny Swords (Update 010)/UI/Icons": [
+     "Disable_01.png",
+     "Disable_02.png",
+     "Disable_03.png",
+     "Disable_04.png",
+     "Disable_05.png",
+     "Disable_06.png",
+     "Disable_07.png",
+     "Disable_08.png",
+     "Disable_09.png",
+     "Disable_10.png",
+     "Pressed_01.png",
+     "Pressed_02.png",
+     "Pressed_03.png",
+     "Pressed_04.png",
+     "Pressed_05.png",
+     "Pressed_06.png",
+     "Pressed_07.png",
+     "Pressed_08.png",
+     "Pressed_09.png",
+     "Pressed_10.png",
+     "Regular_01.png",
+     "Regular_02.png",
+     "Regular_03.png",
+     "Regular_04.png",
+     "Regular_05.png",
+     "Regular_06.png",
+     "Regular_07.png",
+     "Regular_08.png",
+     "Regular_09.png",
+     "Regular_10.png"
     ],
-    "Tiny Swords (Enemy Pack)/Enemy Pack/Enemies/Thief": [
-     "Thief_Attack.png",
-     "Thief_Idle.png",
-     "Thief_Run.png"
+    "Tiny Swords (Update 010)/UI/Pointers": [
+     "01.png",
+     "02.png",
+     "03.png",
+     "04.png",
+     "05.png",
+     "06.png"
+    ],
+    "Tiny Swords (Update 010)/Resources/Trees": [
+     "Tree.png"
+    ],
+    "Tiny Swords (Update 010)/Resources/Sheep": [
+     "HappySheep_All.png",
+     "HappySheep_Bouncing.png",
+     "HappySheep_Idle.png"
+    ],
+    "Tiny Swords (Update 010)/Resources/Resources": [
+     "G_Idle.png",
+     "G_Idle_(NoShadow).png",
+     "G_Spawn.png",
+     "M_Idle.png",
+     "M_Idle_(NoShadow).png",
+     "M_Spawn.png",
+     "W_Idle.png",
+     "W_Idle_(NoShadow).png",
+     "W_Spawn.png"
+    ],
+    "Tiny Swords (Update 010)/Resources/Gold Mine": [
+     "GoldMine_Active.png",
+     "GoldMine_Destroyed.png",
+     "GoldMine_Inactive.png"
+    ],
+    "Tiny Swords (Update 010)/Deco": [
+     "01.png",
+     "02.png",
+     "03.png",
+     "04.png",
+     "05.png",
+     "06.png",
+     "07.png",
+     "08.png",
+     "09.png",
+     "10.png",
+     "11.png",
+     "12.png",
+     "13.png",
+     "14.png",
+     "15.png",
+     "16.png",
+     "17.png",
+     "18.png"
+    ],
+    "Tiny Swords (Update 010)/Terrain/Water": [
+     "Water.png"
+    ],
+    "Tiny Swords (Update 010)/Terrain/Water/Rocks": [
+     "Rocks_01.png",
+     "Rocks_02.png",
+     "Rocks_03.png",
+     "Rocks_04.png"
+    ],
+    "Tiny Swords (Update 010)/Terrain/Water/Foam": [
+     "Foam.png"
+    ],
+    "Tiny Swords (Update 010)/Terrain/Ground": [
+     "Shadows.png",
+     "Tilemap_Elevation.png",
+     "Tilemap_Flat.png"
+    ],
+    "Tiny Swords (Update 010)/Terrain/Bridge": [
+     "Bridge_All.png"
+    ],
+    "Tiny Swords (Update 010)/Factions/Goblins/Buildings/Wood_Tower": [
+     "Wood_Tower_Blue.png",
+     "Wood_Tower_Destroyed.png",
+     "Wood_Tower_InConstruction.png",
+     "Wood_Tower_Purple.png",
+     "Wood_Tower_Red.png",
+     "Wood_Tower_Yellow.png"
+    ],
+    "Tiny Swords (Update 010)/Factions/Goblins/Buildings/Wood_House": [
+     "Goblin_House.png",
+     "Goblin_House_Destroyed.png"
+    ],
+    "Tiny Swords (Update 010)/Factions/Goblins/Troops/Barrel/Blue": [
+     "Barrel_Blue.png"
+    ],
+    "Tiny Swords (Update 010)/Factions/Goblins/Troops/Barrel/Red": [
+     "Barrel_Red.png"
+    ],
+    "Tiny Swords (Update 010)/Factions/Goblins/Troops/Barrel/Purple": [
+     "Barrel_Purple.png"
+    ],
+    "Tiny Swords (Update 010)/Factions/Goblins/Troops/Barrel/Yellow": [
+     "Barrel_Yellow.png"
+    ],
+    "Tiny Swords (Update 010)/Factions/Goblins/Troops/Torch/Blue": [
+     "Torch_Blue.png"
+    ],
+    "Tiny Swords (Update 010)/Factions/Goblins/Troops/Torch/Red": [
+     "Torch_Red.png"
+    ],
+    "Tiny Swords (Update 010)/Factions/Goblins/Troops/Torch/Purple": [
+     "Torch_Purple.png"
+    ],
+    "Tiny Swords (Update 010)/Factions/Goblins/Troops/Torch/Yellow": [
+     "Torch_Yellow.png"
+    ],
+    "Tiny Swords (Update 010)/Factions/Goblins/Troops/TNT/Dynamite": [
+     "Dynamite.png"
+    ],
+    "Tiny Swords (Update 010)/Factions/Goblins/Troops/TNT/Blue": [
+     "TNT_Blue.png"
+    ],
+    "Tiny Swords (Update 010)/Factions/Goblins/Troops/TNT/Red": [
+     "TNT_Red.png"
+    ],
+    "Tiny Swords (Update 010)/Factions/Goblins/Troops/TNT/Purple": [
+     "TNT_Purple.png"
+    ],
+    "Tiny Swords (Update 010)/Factions/Goblins/Troops/TNT/Yellow": [
+     "TNT_Yellow.png"
+    ],
+    "Tiny Swords (Update 010)/Factions/Knights/Buildings/Tower": [
+     "Tower_Blue.png",
+     "Tower_Construction.png",
+     "Tower_Destroyed.png",
+     "Tower_Purple.png",
+     "Tower_Red.png",
+     "Tower_Yellow.png"
+    ],
+    "Tiny Swords (Update 010)/Factions/Knights/Buildings/House": [
+     "House_Blue.png",
+     "House_Construction.png",
+     "House_Destroyed.png",
+     "House_Purple.png",
+     "House_Red.png",
+     "House_Yellow.png"
+    ],
+    "Tiny Swords (Update 010)/Factions/Knights/Buildings/Castle": [
+     "Castle_Blue.png",
+     "Castle_Construction.png",
+     "Castle_Destroyed.png",
+     "Castle_Purple.png",
+     "Castle_Red.png",
+     "Castle_Yellow.png"
+    ],
+    "Tiny Swords (Update 010)/Factions/Knights/Troops/Dead": [
+     "Dead.png"
+    ],
+    "Tiny Swords (Update 010)/Factions/Knights/Troops/Archer/Blue": [
+     "Archer_Blue.png"
+    ],
+    "Tiny Swords (Update 010)/Factions/Knights/Troops/Archer/Arrow": [
+     "Arrow.png"
+    ],
+    "Tiny Swords (Update 010)/Factions/Knights/Troops/Archer/Red": [
+     "Archer_Red.png"
+    ],
+    "Tiny Swords (Update 010)/Factions/Knights/Troops/Archer/Archer + Bow": [
+     "Archer_Blue_(NoArms).png",
+     "Archer_Bow_Blue.png",
+     "Archer_Bow_Purple.png",
+     "Archer_Bow_Red.png",
+     "Archer_Bow_Yellow.png",
+     "Archer_Purple_(NoArms).png",
+     "Archer_Red_(NoArms).png",
+     "Archer_Yellow_(NoArms).png"
+    ],
+    "Tiny Swords (Update 010)/Factions/Knights/Troops/Archer/Purple": [
+     "Archer_Purlple.png"
+    ],
+    "Tiny Swords (Update 010)/Factions/Knights/Troops/Archer/Yellow": [
+     "Archer_Yellow.png"
+    ],
+    "Tiny Swords (Update 010)/Factions/Knights/Troops/Pawn/Blue": [
+     "Pawn_Blue.png"
+    ],
+    "Tiny Swords (Update 010)/Factions/Knights/Troops/Pawn/Red": [
+     "Pawn_Red.png"
+    ],
+    "Tiny Swords (Update 010)/Factions/Knights/Troops/Pawn/Purple": [
+     "Pawn_Purple.png"
+    ],
+    "Tiny Swords (Update 010)/Factions/Knights/Troops/Pawn/Yellow": [
+     "Pawn_Yellow.png"
+    ],
+    "Tiny Swords (Update 010)/Factions/Knights/Troops/Warrior/Blue": [
+     "Warrior_Blue.png"
+    ],
+    "Tiny Swords (Update 010)/Factions/Knights/Troops/Warrior/Red": [
+     "Warrior_Red.png"
+    ],
+    "Tiny Swords (Update 010)/Factions/Knights/Troops/Warrior/Purple": [
+     "Warrior_Purple.png"
+    ],
+    "Tiny Swords (Update 010)/Factions/Knights/Troops/Warrior/Yellow": [
+     "Warrior_Yellow.png"
+    ],
+    "Tiny Swords (Update 010)/Effects/Fire": [
+     "Fire.png"
+    ],
+    "Tiny Swords (Update 010)/Effects/Explosion": [
+     "Explosions.png"
     ]
    }
   },
-  "factory": {
-   "count": 105,
+  "free-cartoon-smoke-effects-asset-pack": {
+   "count": 74,
    "folders": {
-    "factory/Caveborn/Turtle": [
-     "Turtle_Attack.png",
-     "Turtle_Guard_In.png",
-     "Turtle_Guard_Out.png",
-     "Turtle_Idle.png",
-     "Turtle_Walk.png"
+    "free-cartoon-smoke-effects-asset-pack/Smoke/PNG": [
+     "Smoke_Frame_01.png",
+     "Smoke_Frame_02.png",
+     "Smoke_Frame_03.png",
+     "Smoke_Frame_04.png",
+     "Smoke_Frame_05.png",
+     "Smoke_Frame_06.png",
+     "Smoke_Frame_07.png",
+     "Smoke_Frame_08.png",
+     "Smoke_Frame_09.png",
+     "Smoke_Frame_10.png"
     ],
-    "factory/Caveborn/Bear": [
-     "Bear_Attack.png",
-     "Bear_Idle.png",
-     "Bear_Run.png"
+    "free-cartoon-smoke-effects-asset-pack/Smoke Explosion/PNG": [
+     "Smoke Explosion_Frame_01.png",
+     "Smoke Explosion_Frame_02.png",
+     "Smoke Explosion_Frame_03.png",
+     "Smoke Explosion_Frame_04.png",
+     "Smoke Explosion_Frame_05.png",
+     "Smoke Explosion_Frame_06.png",
+     "Smoke Explosion_Frame_07.png",
+     "Smoke Explosion_Frame_08.png",
+     "Smoke Explosion_Frame_09.png",
+     "Smoke Explosion_Frame_10.png",
+     "Smoke Explosion_Frame_11.png",
+     "Smoke Explosion_Frame_12.png",
+     "Smoke Explosion_Frame_13.png",
+     "Smoke Explosion_Frame_14.png",
+     "Smoke Explosion_Frame_15.png",
+     "Smoke Explosion_Frame_16.png"
     ],
-    "factory/Caveborn/Cave": [
-     "Cave_Idle.png"
+    "free-cartoon-smoke-effects-asset-pack/Smoke Spell/PNG": [
+     "Smoke Spell_Frame_01.png",
+     "Smoke Spell_Frame_02.png",
+     "Smoke Spell_Frame_03.png",
+     "Smoke Spell_Frame_04.png",
+     "Smoke Spell_Frame_05.png",
+     "Smoke Spell_Frame_06.png",
+     "Smoke Spell_Frame_07.png",
+     "Smoke Spell_Frame_08.png",
+     "Smoke Spell_Frame_09.png",
+     "Smoke Spell_Frame_10.png"
     ],
-    "factory/Caveborn/Lizard": [
-     "Lizard_Attack.png",
-     "Lizard_Hit.png",
-     "Lizard_Idle.png",
-     "Lizard_Run.png"
+    "free-cartoon-smoke-effects-asset-pack/Smoke Blow/PNG": [
+     "Smoke Blow_Frame_01.png",
+     "Smoke Blow_Frame_02.png",
+     "Smoke Blow_Frame_03.png",
+     "Smoke Blow_Frame_04.png",
+     "Smoke Blow_Frame_05.png",
+     "Smoke Blow_Frame_06.png",
+     "Smoke Blow_Frame_07.png",
+     "Smoke Blow_Frame_08.png",
+     "Smoke Blow_Frame_09.png",
+     "Smoke Blow_Frame_10.png",
+     "Smoke Blow_Frame_11.png",
+     "Smoke Blow_Frame_12.png"
     ],
-    "factory/Caveborn/Spider": [
-     "Spider_Attack.png",
-     "Spider_Idle.png",
-     "Spider_Run.png"
+    "free-cartoon-smoke-effects-asset-pack/Chemical Smoke/PNG": [
+     "Chemical Smoke_Frame_01.png",
+     "Chemical Smoke_Frame_02.png",
+     "Chemical Smoke_Frame_03.png",
+     "Chemical Smoke_Frame_04.png",
+     "Chemical Smoke_Frame_05.png",
+     "Chemical Smoke_Frame_06.png",
+     "Chemical Smoke_Frame_07.png",
+     "Chemical Smoke_Frame_08.png"
     ],
-    "factory/Caveborn/Snake": [
-     "Snake_Attack.png",
-     "Snake_Idle.png",
-     "Snake_Run.png"
+    "free-cartoon-smoke-effects-asset-pack/Icons/PNG": [
+     "Icons_Chemical Smoke.png",
+     "Icons_Poisonous Smoke.png",
+     "Icons_Smoke Blow.png",
+     "Icons_Smoke Explosion.png",
+     "Icons_Smoke Spell.png",
+     "Icons_Smoke.png"
     ],
-    "factory/Gnoll": [
-     "Gnoll_Bone.png",
-     "Gnoll_Hit.png",
-     "Gnoll_Idle.png",
-     "Gnoll_Throw.png",
-     "Gnoll_Walk.png"
+    "free-cartoon-smoke-effects-asset-pack/Poisonous Smoke/PNG": [
+     "Posionous Smoke_Frame_01.png",
+     "Posionous Smoke_Frame_02.png",
+     "Posionous Smoke_Frame_03.png",
+     "Posionous Smoke_Frame_04.png",
+     "Posionous Smoke_Frame_05.png",
+     "Posionous Smoke_Frame_06.png",
+     "Posionous Smoke_Frame_07.png",
+     "Posionous Smoke_Frame_08.png",
+     "Posionous Smoke_Frame_09.png",
+     "Posionous Smoke_Frame_10.png",
+     "Posionous Smoke_Frame_11.png",
+     "Posionous Smoke_Frame_12.png"
+    ]
+   }
+  },
+  "free-medieval-bandit-4-direction-character-pack": {
+   "count": 72,
+   "folders": {
+    "free-medieval-bandit-4-direction-character-pack/Robber/PNG/Spritesheets": [
+     "Back - Attacking.png",
+     "Back - Hurt.png",
+     "Back - Idle.png",
+     "Back - Running.png",
+     "Back - Walking.png",
+     "Dying.png",
+     "Front - Attacking.png",
+     "Front - Hurt.png",
+     "Front - Idle Blinking.png",
+     "Front - Idle.png",
+     "Front - Running.png",
+     "Front - Walking.png",
+     "Left - Attacking.png",
+     "Left - Hurt.png",
+     "Left - Idle Blinking.png",
+     "Left - Idle.png",
+     "Left - Running.png",
+     "Left - Walking.png",
+     "Right - Attacking.png",
+     "Right - Hurt.png",
+     "Right - Idle Blinking.png",
+     "Right - Idle.png",
+     "Right - Running.png",
+     "Right - Walking.png"
     ],
-    "factory/Root Troll": [
-     "Bones_01.png",
-     "Bones_02.png",
-     "Bones_03.png",
-     "Dead Tree.png",
-     "Skull Spike_01.png",
-     "Skull Spike_02.png"
+    "free-medieval-bandit-4-direction-character-pack/Assassin/PNG/Spritesheets": [
+     "Back - Attacking.png",
+     "Back - Hurt.png",
+     "Back - Idle.png",
+     "Back - Running.png",
+     "Back - Walking.png",
+     "Dying.png",
+     "Front - Attacking.png",
+     "Front - Hurt.png",
+     "Front - Idle Blinking.png",
+     "Front - Idle.png",
+     "Front - Running.png",
+     "Front - Walking.png",
+     "Left - Attacking.png",
+     "Left - Hurt.png",
+     "Left - Idle Blinking.png",
+     "Left - Idle.png",
+     "Left - Running.png",
+     "Left - Walking.png",
+     "Right - Attacking.png",
+     "Right - Hurt.png",
+     "Right - Idle Blinking.png",
+     "Right - Idle.png",
+     "Right - Running.png",
+     "Right - Walking.png"
     ],
-    "factory/Pirate Fish/Seahorse Boat": [
-     "Seahorse Boat_Bomb Fish.png",
-     "Seahorse Boat_Harpoon Shark.png",
-     "Seahorse Boat_Idle.png",
-     "Seahorse Boat_Paddle Shark.png"
+    "free-medieval-bandit-4-direction-character-pack/Thug/PNG/Spritesheets": [
+     "Back - Attacking.png",
+     "Back - Hurt.png",
+     "Back - Idle.png",
+     "Back - Running.png",
+     "Back - Walking.png",
+     "Dying.png",
+     "Front - Attacking.png",
+     "Front - Hurt.png",
+     "Front - Idle Blinking.png",
+     "Front - Idle.png",
+     "Front - Running.png",
+     "Front - Walking.png",
+     "Left - Attacking.png",
+     "Left - Hurt.png",
+     "Left - Idle Blinking.png",
+     "Left - Idle.png",
+     "Left - Running.png",
+     "Left - Walking.png",
+     "Right - Attacking.png",
+     "Right - Hurt.png",
+     "Right - Idle Blinking.png",
+     "Right - Idle.png",
+     "Right - Running.png",
+     "Right - Walking.png"
+    ]
+   }
+  },
+  "free-pixel-art-tiny-hero-sprites": {
+   "count": 52,
+   "folders": {
+    "free-pixel-art-tiny-hero-sprites": [
+     "COUPON.png"
     ],
-    "factory/Pirate Fish/Bomb": [
-     "Bomb_FuseLit.png",
-     "Bomb_Idle.png",
-     "Bomb_Spinning.png"
+    "free-pixel-art-tiny-hero-sprites/1 Pink_Monster": [
+     "Double_Jump_Dust_5.png",
+     "Pink_Monster.png",
+     "Pink_Monster_Attack1_4.png",
+     "Pink_Monster_Attack2_6.png",
+     "Pink_Monster_Climb_4.png",
+     "Pink_Monster_Death_8.png",
+     "Pink_Monster_Hurt_4.png",
+     "Pink_Monster_Idle_4.png",
+     "Pink_Monster_Jump_8.png",
+     "Pink_Monster_Push_6.png",
+     "Pink_Monster_Run_6.png",
+     "Pink_Monster_Throw_4.png",
+     "Pink_Monster_Walk+Attack_6.png",
+     "Pink_Monster_Walk_6.png",
+     "Rock1.png",
+     "Rock2.png",
+     "Walk_Run_Push_Dust_6.png"
     ],
-    "factory/Pirate Fish/Boat": [
-     "Boat_Idle.png"
+    "free-pixel-art-tiny-hero-sprites/2 Owlet_Monster": [
+     "Double_Jump_Dust_5.png",
+     "Owlet_Monster.png",
+     "Owlet_Monster_Attack1_4.png",
+     "Owlet_Monster_Attack2_6.png",
+     "Owlet_Monster_Climb_4.png",
+     "Owlet_Monster_Death_8.png",
+     "Owlet_Monster_Hurt_4.png",
+     "Owlet_Monster_Idle_4.png",
+     "Owlet_Monster_Jump_8.png",
+     "Owlet_Monster_Push_6.png",
+     "Owlet_Monster_Run_6.png",
+     "Owlet_Monster_Throw_4.png",
+     "Owlet_Monster_Walk+Attack_6.png",
+     "Owlet_Monster_Walk_6.png",
+     "Rock1.png",
+     "Rock2.png",
+     "Walk_Run_Push_Dust_6.png"
     ],
-    "factory/Pirate Fish/Bomb Fish": [
-     "Bomb Fish_Idle.png",
-     "Bomb Fish_Run.png",
-     "Bomb Fish_Shoot.png"
+    "free-pixel-art-tiny-hero-sprites/3 Dude_Monster": [
+     "Double_Jump_Dust_5.png",
+     "Dude_Monster.png",
+     "Dude_Monster_Attack1_4.png",
+     "Dude_Monster_Attack2_6.png",
+     "Dude_Monster_Climb_4.png",
+     "Dude_Monster_Death_8.png",
+     "Dude_Monster_Hurt_4.png",
+     "Dude_Monster_Idle_4.png",
+     "Dude_Monster_Jump_8.png",
+     "Dude_Monster_Push_6.png",
+     "Dude_Monster_Run_6.png",
+     "Dude_Monster_Throw_4.png",
+     "Dude_Monster_Walk+Attack_6.png",
+     "Dude_Monster_Walk_6.png",
+     "Rock1.png",
+     "Rock2.png",
+     "Walk_Run_Push_Dust_6.png"
+    ]
+   }
+  },
+  "free-poison-swamp-game-tileset-and-environment-pack": {
+   "count": 93,
+   "folders": {
+    "free-poison-swamp-game-tileset-and-environment-pack/PNG": [
+     "Top-Down Poisonous Swamp_Ground 01.png",
+     "Top-Down Poisonous Swamp_Ground 02.png",
+     "Top-Down Poisonous Swamp_Ground 03.png",
+     "Top-Down Poisonous Swamp_Ground 04.png",
+     "Top-Down Poisonous Swamp_Ground 05.png",
+     "Top-Down Poisonous Swamp_Ground 06.png",
+     "Top-Down Poisonous Swamp_Ground 07.png",
+     "Top-Down Poisonous Swamp_Ground 08.png",
+     "Top-Down Poisonous Swamp_Ground 09.png",
+     "Top-Down Poisonous Swamp_Ground 10.png",
+     "Top-Down Poisonous Swamp_Ground 11.png",
+     "Top-Down Poisonous Swamp_Ground 12.png",
+     "Top-Down Poisonous Swamp_Ground 13.png",
+     "Top-Down Poisonous Swamp_Ground 14.png",
+     "Top-Down Poisonous Swamp_Ground 15.png",
+     "Top-Down Poisonous Swamp_Ground 16.png",
+     "Top-Down Poisonous Swamp_Ground 17.png",
+     "Top-Down Poisonous Swamp_Ground 18.png",
+     "Top-Down Poisonous Swamp_Ground 19.png",
+     "Top-Down Poisonous Swamp_Ground 20.png",
+     "Top-Down Poisonous Swamp_Ground 21.png",
+     "Top-Down Poisonous Swamp_Ground 22.png",
+     "Top-Down Poisonous Swamp_Ground 23.png",
+     "Top-Down Poisonous Swamp_Ground 24.png",
+     "Top-Down Poisonous Swamp_Ground 25.png",
+     "Top-Down Poisonous Swamp_Ground 26.png",
+     "Top-Down Poisonous Swamp_Ground 27.png",
+     "Top-Down Poisonous Swamp_Ground 28.png",
+     "Top-Down Poisonous Swamp_Ground 29.png",
+     "Top-Down Poisonous Swamp_Ground 30.png",
+     "Top-Down Poisonous Swamp_Ground 31.png",
+     "Top-Down Poisonous Swamp_Ground 32.png",
+     "Top-Down Poisonous Swamp_Ground 33.png",
+     "Top-Down Poisonous Swamp_Ground 34.png",
+     "Top-Down Poisonous Swamp_Ground 35.png",
+     "Top-Down Poisonous Swamp_Ground 36.png",
+     "Top-Down Poisonous Swamp_Ground 37.png",
+     "Top-Down Poisonous Swamp_Ground 38.png",
+     "Top-Down Poisonous Swamp_Ground 39.png",
+     "Top-Down Poisonous Swamp_Ground 40.png",
+     "Top-Down Poisonous Swamp_Ground 41.png",
+     "Top-Down Poisonous Swamp_Ground 42.png",
+     "Top-Down Poisonous Swamp_Ground 43.png",
+     "Top-Down Poisonous Swamp_Ground 44.png",
+     "Top-Down Poisonous Swamp_Ground 45.png",
+     "Top-Down Poisonous Swamp_Ground 46.png",
+     "Top-Down Poisonous Swamp_Ground 47.png",
+     "Top-Down Poisonous Swamp_Ground 48.png",
+     "Top-Down Poisonous Swamp_Ground 49.png",
+     "Top-Down Poisonous Swamp_Ground 50.png",
+     "Top-Down Poisonous Swamp_Ground 51.png",
+     "Top-Down Poisonous Swamp_Ground 52.png",
+     "Top-Down Poisonous Swamp_Ground 53.png",
+     "Top-Down Poisonous Swamp_Ground 54.png",
+     "Top-Down Poisonous Swamp_Ground 55.png",
+     "Top-Down Poisonous Swamp_Ground 56.png",
+     "Top-Down Poisonous Swamp_Prop - Animal Skeleton.png",
+     "Top-Down Poisonous Swamp_Prop - Boulder 1.png",
+     "Top-Down Poisonous Swamp_Prop - Boulder 2.png",
+     "Top-Down Poisonous Swamp_Prop - Boulder 3.png",
+     "Top-Down Poisonous Swamp_Prop - Broken Boat.png",
+     "Top-Down Poisonous Swamp_Prop - Bushes 1.png",
+     "Top-Down Poisonous Swamp_Prop - Bushes 2.png",
+     "Top-Down Poisonous Swamp_Prop - Bushes 3.png",
+     "Top-Down Poisonous Swamp_Prop - Cave Enterance.png",
+     "Top-Down Poisonous Swamp_Prop - Danger Sign.png",
+     "Top-Down Poisonous Swamp_Prop - Flag.png",
+     "Top-Down Poisonous Swamp_Prop - House.png",
+     "Top-Down Poisonous Swamp_Prop - Lantern.png",
+     "Top-Down Poisonous Swamp_Prop - Leaf on the Water 1.png",
+     "Top-Down Poisonous Swamp_Prop - Leaf on the Water 2.png",
+     "Top-Down Poisonous Swamp_Prop - Leaf on the Water 3.png",
+     "Top-Down Poisonous Swamp_Prop - Rafflesia.png",
+     "Top-Down Poisonous Swamp_Prop - Rock 1.png",
+     "Top-Down Poisonous Swamp_Prop - Rock 2.png",
+     "Top-Down Poisonous Swamp_Prop - Rock 3.png",
+     "Top-Down Poisonous Swamp_Prop - Rock 4.png",
+     "Top-Down Poisonous Swamp_Prop - Rock 5.png",
+     "Top-Down Poisonous Swamp_Prop - Shrub Swamp 1.png",
+     "Top-Down Poisonous Swamp_Prop - Shrub Swamp 2.png",
+     "Top-Down Poisonous Swamp_Prop - Shrub Swamp 3.png",
+     "Top-Down Poisonous Swamp_Prop - Sticks 1.png",
+     "Top-Down Poisonous Swamp_Prop - Sticks 2.png",
+     "Top-Down Poisonous Swamp_Prop - Sticks 3.png",
+     "Top-Down Poisonous Swamp_Prop - Sticks 4.png",
+     "Top-Down Poisonous Swamp_Prop - Sticks 5.png",
+     "Top-Down Poisonous Swamp_Prop - Tree Tower Short.png",
+     "Top-Down Poisonous Swamp_Prop - Tree Tower Tall.png",
+     "Top-Down Poisonous Swamp_Prop - Water Plant 1.png",
+     "Top-Down Poisonous Swamp_Prop - Water Plant 2.png",
+     "Top-Down Poisonous Swamp_Prop - Water Plant 3.png",
+     "Top-Down Poisonous Swamp_Prop - Wooden Floor Horizontal.png",
+     "Top-Down Poisonous Swamp_Prop - Wooden Floor Vertical.png"
+    ]
+   }
+  },
+  "free-rpg-monster-sprites-pixel-art": {
+   "count": 154,
+   "folders": {
+    "free-rpg-monster-sprites-pixel-art/vol2/medusa": [
+     "Attack1.png",
+     "Attack2.png",
+     "Attack3.png",
+     "Attack4.png",
+     "Attack5.png",
+     "Attack6.png",
+     "Death1.png",
+     "Death2.png",
+     "Death3.png",
+     "Death4.png",
+     "Death5.png",
+     "Death6.png",
+     "Hurt1.png",
+     "Hurt2.png",
+     "Idle1.png",
+     "Idle2.png",
+     "Idle3.png",
+     "Stone1.png",
+     "Stone2.png",
+     "Stone3.png",
+     "Stone4.png",
+     "Stone5.png",
+     "Stone6.png",
+     "Stone7.png",
+     "Stone8.png",
+     "Walk1.png",
+     "Walk2.png",
+     "Walk3.png",
+     "Walk4.png"
     ],
-    "factory/Pirate Fish/Fish Hut": [
-     "Fish Hut.png"
+    "free-rpg-monster-sprites-pixel-art/vol2/lizard": [
+     "Attack1.png",
+     "Attack2.png",
+     "Attack3.png",
+     "Attack4.png",
+     "Attack5.png",
+     "Death1.png",
+     "Death2.png",
+     "Death3.png",
+     "Death4.png",
+     "Death5.png",
+     "Death6.png",
+     "Hurt1.png",
+     "Hurt2.png",
+     "Idle1.png",
+     "Idle2.png",
+     "Idle3.png",
+     "Walk1.png",
+     "Walk2.png",
+     "Walk3.png",
+     "Walk4.png",
+     "Walk5.png",
+     "Walk6.png"
     ],
-    "factory/Pirate Fish/Paddle Shark": [
-     "Paddle Shark_Attack.png",
-     "Paddle Shark_Idle.png",
-     "Paddle Shark_Row.png",
-     "Paddle Shark_Run.png"
+    "free-rpg-monster-sprites-pixel-art/vol2/dragon": [
+     "Attack1.png",
+     "Attack2.png",
+     "Attack3.png",
+     "Attack4.png",
+     "Death1.png",
+     "Death2.png",
+     "Death3.png",
+     "Death4.png",
+     "Death5.png",
+     "Fire_Attack1.png",
+     "Fire_Attack2.png",
+     "Fire_Attack3.png",
+     "Fire_Attack4.png",
+     "Fire_Attack5.png",
+     "Fire_Attack6.png",
+     "Hurt1.png",
+     "Hurt2.png",
+     "Idle1.png",
+     "Idle2.png",
+     "Idle3.png",
+     "Walk1.png",
+     "Walk2.png",
+     "Walk3.png",
+     "Walk4.png",
+     "Walk5.png"
     ],
-    "factory/Pirate Fish/Cannon": [
-     "Cannon_Ball.png",
-     "Cannon_Down.png",
-     "Cannon_DownRight.png",
-     "Cannon_Right.png",
-     "Cannon_Up.png",
-     "Cannon_UpRight.png"
+    "free-rpg-monster-sprites-pixel-art/vol1/jinn_animation": [
+     "Attack1.png",
+     "Attack2.png",
+     "Attack3.png",
+     "Attack4.png",
+     "Death1.png",
+     "Death2.png",
+     "Death3.png",
+     "Death4.png",
+     "Death5.png",
+     "Death6.png",
+     "Flight1.png",
+     "Flight2.png",
+     "Flight3.png",
+     "Flight4.png",
+     "Hurt1.png",
+     "Hurt2.png",
+     "Idle1.png",
+     "Idle2.png",
+     "Idle3.png",
+     "Magic_Attack1.png",
+     "Magic_Attack10.png",
+     "Magic_Attack11.png",
+     "Magic_Attack2.png",
+     "Magic_Attack22.png",
+     "Magic_Attack23.png",
+     "Magic_Attack3.png",
+     "Magic_Attack4.png",
+     "Magic_Attack5.png",
+     "Magic_Attack6.png",
+     "Magic_Attack7.png",
+     "Magic_Attack8.png",
+     "Magic_Attack9.png"
     ],
-    "factory/Pirate Fish/Pirate Tower": [
-     "Pirate Tower_Ground.png",
-     "Pirate Tower_Water.png"
+    "free-rpg-monster-sprites-pixel-art/vol1/small_dragon": [
+     "Attack1.png",
+     "Attack2.png",
+     "Attack3.png",
+     "Death1.png",
+     "Death2.png",
+     "Death3.png",
+     "Death4.png",
+     "Fire_Attack1.png",
+     "Fire_Attack2.png",
+     "Fire_Attack3.png",
+     "Fire_Attack4.png",
+     "Fire_Attack5.png",
+     "Fire_Attack6.png",
+     "Fire_Attack7.png",
+     "Fire_Attack8.png",
+     "Fire_Attack9.png",
+     "Hurt1.png",
+     "Hurt2.png",
+     "Idle1.png",
+     "Idle2.png",
+     "Idle3.png",
+     "Walk1.png",
+     "Walk2.png",
+     "Walk3.png",
+     "Walk4.png"
     ],
-    "factory/Pirate Fish/Harpoon Shark": [
-     "Harpoon Shark_Idle.png",
-     "Harpoon Shark_Run.png",
-     "Harpoon Shark_Throw.png",
-     "Harpoon.png"
+    "free-rpg-monster-sprites-pixel-art/vol1/demon": [
+     "Attack1.png",
+     "Attack2.png",
+     "Attack3.png",
+     "Attack4.png",
+     "Death1.png",
+     "Death2.png",
+     "Death3.png",
+     "Death4.png",
+     "Death5.png",
+     "Death6.png",
+     "Hurt1.png",
+     "Hurt2.png",
+     "Idle1.png",
+     "Idle2.png",
+     "Idle3.png",
+     "Walk1.png",
+     "Walk2.png",
+     "Walk3.png",
+     "Walk4.png",
+     "Walk5.png",
+     "Walk6.png"
+    ]
+   }
+  },
+  "free-simple-summer-top-down-vector-tileset": {
+   "count": 89,
+   "folders": {
+    "free-simple-summer-top-down-vector-tileset/PNG": [
+     "Top-Down Simple Summer_Ground 01.png",
+     "Top-Down Simple Summer_Ground 02.png",
+     "Top-Down Simple Summer_Ground 03.png",
+     "Top-Down Simple Summer_Ground 04.png",
+     "Top-Down Simple Summer_Ground 05.png",
+     "Top-Down Simple Summer_Ground 06.png",
+     "Top-Down Simple Summer_Ground 07.png",
+     "Top-Down Simple Summer_Ground 08.png",
+     "Top-Down Simple Summer_Ground 09.png",
+     "Top-Down Simple Summer_Ground 10.png",
+     "Top-Down Simple Summer_Ground 11.png",
+     "Top-Down Simple Summer_Ground 12.png",
+     "Top-Down Simple Summer_Ground 13.png",
+     "Top-Down Simple Summer_Ground 14.png",
+     "Top-Down Simple Summer_Ground 15.png",
+     "Top-Down Simple Summer_Ground 16.png",
+     "Top-Down Simple Summer_Ground 17.png",
+     "Top-Down Simple Summer_Ground 18.png",
+     "Top-Down Simple Summer_Ground 19.png",
+     "Top-Down Simple Summer_Ground 20.png",
+     "Top-Down Simple Summer_Ground 21.png",
+     "Top-Down Simple Summer_Ground 22.png",
+     "Top-Down Simple Summer_Ground 23.png",
+     "Top-Down Simple Summer_Ground 24.png",
+     "Top-Down Simple Summer_Ground 25.png",
+     "Top-Down Simple Summer_Ground 26.png",
+     "Top-Down Simple Summer_Ground 27.png",
+     "Top-Down Simple Summer_Ground 28.png",
+     "Top-Down Simple Summer_Ground 29.png",
+     "Top-Down Simple Summer_Ground 30.png",
+     "Top-Down Simple Summer_Ground 31.png",
+     "Top-Down Simple Summer_Ground 32.png",
+     "Top-Down Simple Summer_Ground 33.png",
+     "Top-Down Simple Summer_Ground 34.png",
+     "Top-Down Simple Summer_Ground 35.png",
+     "Top-Down Simple Summer_Ground 36.png",
+     "Top-Down Simple Summer_Ground 37.png",
+     "Top-Down Simple Summer_Ground 38.png",
+     "Top-Down Simple Summer_Ground 39.png",
+     "Top-Down Simple Summer_Ground 40.png",
+     "Top-Down Simple Summer_Ground 41.png",
+     "Top-Down Simple Summer_Ground 42.png",
+     "Top-Down Simple Summer_Ground 43.png",
+     "Top-Down Simple Summer_Ground 44.png",
+     "Top-Down Simple Summer_Ground 45.png",
+     "Top-Down Simple Summer_Ground 46.png",
+     "Top-Down Simple Summer_Ground 47.png",
+     "Top-Down Simple Summer_Ground 48.png",
+     "Top-Down Simple Summer_Ground 49.png",
+     "Top-Down Simple Summer_Ground 50.png",
+     "Top-Down Simple Summer_Ground 51.png",
+     "Top-Down Simple Summer_Ground 52.png",
+     "Top-Down Simple Summer_Ground 53.png",
+     "Top-Down Simple Summer_Ground 54.png",
+     "Top-Down Simple Summer_Ground 55.png",
+     "Top-Down Simple Summer_Ground 56.png",
+     "Top-Down Simple Summer_Prop - Blue Banner.png",
+     "Top-Down Simple Summer_Prop - Bushes Large.png",
+     "Top-Down Simple Summer_Prop - Bushes Medium.png",
+     "Top-Down Simple Summer_Prop - Bushes Small.png",
+     "Top-Down Simple Summer_Prop - Campfire.png",
+     "Top-Down Simple Summer_Prop - Castle Round.png",
+     "Top-Down Simple Summer_Prop - Castle Square.png",
+     "Top-Down Simple Summer_Prop - Flag.png",
+     "Top-Down Simple Summer_Prop - House.png",
+     "Top-Down Simple Summer_Prop - Magic Stone Tower.png",
+     "Top-Down Simple Summer_Prop - Red Banner.png",
+     "Top-Down Simple Summer_Prop - Rock 01.png",
+     "Top-Down Simple Summer_Prop - Rock 02.png",
+     "Top-Down Simple Summer_Prop - Rock 03.png",
+     "Top-Down Simple Summer_Prop - Rock 04.png",
+     "Top-Down Simple Summer_Prop - Rock 05.png",
+     "Top-Down Simple Summer_Prop - Tent.png",
+     "Top-Down Simple Summer_Prop - Treasure Chest.png",
+     "Top-Down Simple Summer_Prop - Tree Medium.png",
+     "Top-Down Simple Summer_Prop - Tree Small.png",
+     "Top-Down Simple Summer_Prop - Tree Stump Short.png",
+     "Top-Down Simple Summer_Prop - Tree Stump Tall.png",
+     "Top-Down Simple Summer_Prop - Watchtower Short.png",
+     "Top-Down Simple Summer_Prop - Watchtower Tall.png",
+     "Top-Down Simple Summer_Prop - Well.png",
+     "Top-Down Simple Summer_Prop - Windmill.png",
+     "Top-Down Simple Summer_Prop - Wooden Barrel.png",
+     "Top-Down Simple Summer_Prop - Wooden Bridge Horizontal.png",
+     "Top-Down Simple Summer_Prop - Wooden Bridge Vertical.png",
+     "Top-Down Simple Summer_Prop - Wooden Cart.png",
+     "Top-Down Simple Summer_Prop - Wooden Fence Horizontal.png",
+     "Top-Down Simple Summer_Prop - Wooden Fence Vertical.png",
+     "Top-Down Simple Summer_prop - Tree Large.png"
+    ]
+   }
+  },
+  "free-top-down-goblin-character-sprite": {
+   "count": 72,
+   "folders": {
+    "free-top-down-goblin-character-sprite/Female Goblin/PNG/Spritesheets": [
+     "Back - Attacking.png",
+     "Back - Hurt.png",
+     "Back - Idle.png",
+     "Back - Running.png",
+     "Back - Walking.png",
+     "Dying.png",
+     "Front - Attacking.png",
+     "Front - Hurt.png",
+     "Front - Idle blinking.png",
+     "Front - Idle.png",
+     "Front - Running.png",
+     "Front - Walking.png",
+     "Left - Attacking.png",
+     "Left - Hurt.png",
+     "Left - Idle Blinking.png",
+     "Left - Idle.png",
+     "Left - Running.png",
+     "Left - Walking.png",
+     "Right - Attacking.png",
+     "Right - Hurt.png",
+     "Right - Idle Blinking.png",
+     "Right - Idle.png",
+     "Right - Running.png",
+     "Right - Walking.png"
     ],
-    "factory/Enemy Avatars": [
-     "Bomb Fish.png",
-     "Enemy Avatars_01.png",
-     "Enemy Avatars_06.png",
-     "Enemy Avatars_07.png",
-     "Enemy Avatars_08.png",
-     "Enemy Avatars_09.png",
-     "Enemy Avatars_10.png",
-     "Enemy Avatars_11.png",
-     "Enemy Avatars_12.png",
-     "Enemy Avatars_13.png",
-     "Enemy Avatars_14.png",
-     "Enemy Avatars_15.png",
-     "Enemy Avatars_16.png",
-     "Harpoon Shark.png",
-     "Hex Shaman.png",
-     "Paddle Shark.png",
-     "Spear Goblin.png",
-     "Torch Goblin.png"
+    "free-top-down-goblin-character-sprite/Male Goblin/PNG/Spritesheets": [
+     "Back - Attacking.png",
+     "Back - Hurt.png",
+     "Back - Idle.png",
+     "Back - Running.png",
+     "Back - Walking.png",
+     "Dying.png",
+     "Front - Attacking.png",
+     "Front - Hurt.png",
+     "Front - Idle Blinking.png",
+     "Front - Idle.png",
+     "Front - Running.png",
+     "Front - Walking.png",
+     "Left - Attacking.png",
+     "Left - Hurt.png",
+     "Left - Idle Blinking.png",
+     "Left - Idle.png",
+     "Left - Running.png",
+     "Left - Walking.png",
+     "Right - Attacking.png",
+     "Right - Hurt.png",
+     "Right - Idle Blinking.png",
+     "Right - Idle.png",
+     "Right - Running.png",
+     "Right - Walking.png"
     ],
-    "factory/Troll": [
-     "Troll_Attack.png",
-     "Troll_ClubPart1.png",
-     "Troll_ClubPart2.png",
-     "Troll_Dead.png",
-     "Troll_Idle.png",
-     "Troll_Recovery.png",
-     "Troll_Walk.png",
-     "Troll_Windup.png"
+    "free-top-down-goblin-character-sprite/Chief Goblin/PNG/Spritesheets": [
+     "Back - Attacking.png",
+     "Back - Hurt.png",
+     "Back - Idle.png",
+     "Back - Running.png",
+     "Back - Walking.png",
+     "Dying.png",
+     "Front - Attacking.png",
+     "Front - Hurt.png",
+     "Front - Idle Blinking.png",
+     "Front - Idle.png",
+     "Front - Running.png",
+     "Front - Walking.png",
+     "Left - Attacking.png",
+     "Left - Hurt.png",
+     "Left - Idle Blinking.png",
+     "Left - Idle.png",
+     "Left - Running.png",
+     "Left - Walking.png",
+     "Right - Attacking.png",
+     "Right - Hurt.png",
+     "Right - Idle Blinking.png",
+     "Right - Idle.png",
+     "Right - Running.png",
+     "Right - Walking.png"
+    ]
+   }
+  },
+  "free-water-and-fire-magic-sprite-vector-pack": {
+   "count": 58,
+   "folders": {
+    "free-water-and-fire-magic-sprite-vector-pack/Water Ball/PNG": [
+     "Water Ball_Frame_01.png",
+     "Water Ball_Frame_02.png",
+     "Water Ball_Frame_03.png",
+     "Water Ball_Frame_04.png",
+     "Water Ball_Frame_05.png",
+     "Water Ball_Frame_06.png",
+     "Water Ball_Frame_07.png",
+     "Water Ball_Frame_08.png",
+     "Water Ball_Frame_09.png",
+     "Water Ball_Frame_10.png",
+     "Water Ball_Frame_11.png",
+     "Water Ball_Frame_12.png"
     ],
-    "factory/Goblin Raiders/Torch Goblin": [
-     "Torch Goblin_Attack.png",
-     "Torch Goblin_Idle.png",
-     "Torch Goblin_Run.png"
+    "free-water-and-fire-magic-sprite-vector-pack/Icons/PNG": [
+     "Icons_Fire Arrow.png",
+     "Icons_Fire Ball.png",
+     "Icons_Fire Spell.png",
+     "Icons_Water Arrow.png",
+     "Icons_Water Ball.png",
+     "Icons_Water Spell.png"
     ],
-    "factory/Goblin Raiders/Pig": [
-     "Pig_Idle.png",
-     "Pig_Run.png"
+    "free-water-and-fire-magic-sprite-vector-pack/Water Spell/PNG": [
+     "Water Spell_Frame_01.png",
+     "Water Spell_Frame_02.png",
+     "Water Spell_Frame_03.png",
+     "Water Spell_Frame_04.png",
+     "Water Spell_Frame_05.png",
+     "Water Spell_Frame_06.png",
+     "Water Spell_Frame_07.png",
+     "Water Spell_Frame_08.png"
     ],
-    "factory/Goblin Raiders/Wooden Fence": [
-     "Wooden Fence_64x64 tile.png"
+    "free-water-and-fire-magic-sprite-vector-pack/Water Arrow/PNG": [
+     "Water Arrow_Frame_01.png",
+     "Water Arrow_Frame_02.png",
+     "Water Arrow_Frame_03.png",
+     "Water Arrow_Frame_04.png",
+     "Water Arrow_Frame_05.png",
+     "Water Arrow_Frame_06.png",
+     "Water Arrow_Frame_07.png",
+     "Water Arrow_Frame_08.png"
     ],
-    "factory/Goblin Raiders/Pig Rider Spear Goblin": [
-     "Pig Rider_Attack.png",
-     "Pig Rider_Idle.png",
-     "Pig Rider_Run.png"
+    "free-water-and-fire-magic-sprite-vector-pack/Fire Ball/PNG": [
+     "Fire Ball_Frame_01.png",
+     "Fire Ball_Frame_02.png",
+     "Fire Ball_Frame_03.png",
+     "Fire Ball_Frame_04.png",
+     "Fire Ball_Frame_05.png",
+     "Fire Ball_Frame_06.png",
+     "Fire Ball_Frame_07.png",
+     "Fire Ball_Frame_08.png"
     ],
-    "factory/Goblin Raiders/Hex Shaman": [
-     "Hex Shaman_Attack.png",
-     "Hex Shaman_Explosion Spell.png",
-     "Hex Shaman_Explosion.png",
-     "Hex Shaman_Idle.png",
-     "Hex Shaman_Projectile.png",
-     "Hex Shaman_Run.png",
-     "Hex Shaman_Transformation Spell.png"
+    "free-water-and-fire-magic-sprite-vector-pack/Fire Spell/PNG": [
+     "Fire Spell_Frame_01.png",
+     "Fire Spell_Frame_02.png",
+     "Fire Spell_Frame_03.png",
+     "Fire Spell_Frame_04.png",
+     "Fire Spell_Frame_05.png",
+     "Fire Spell_Frame_06.png",
+     "Fire Spell_Frame_07.png",
+     "Fire Spell_Frame_08.png"
     ],
-    "factory/Goblin Raiders/Spear Goblin": [
-     "Spear Goblin_Attack Fast.png",
-     "Spear Goblin_Attack Strong.png",
-     "Spear Goblin_Idle.png",
-     "Spear Goblin_Run.png"
-    ],
-    "factory/Goblin Raiders/Goblin Hut": [
-     "Goblin Hut.png"
+    "free-water-and-fire-magic-sprite-vector-pack/Fire Arrow/PNG": [
+     "Fire Arrow_Frame_01.png",
+     "Fire Arrow_Frame_02.png",
+     "Fire Arrow_Frame_03.png",
+     "Fire Arrow_Frame_04.png",
+     "Fire Arrow_Frame_05.png",
+     "Fire Arrow_Frame_06.png",
+     "Fire Arrow_Frame_07.png",
+     "Fire Arrow_Frame_08.png"
     ]
    }
   }
