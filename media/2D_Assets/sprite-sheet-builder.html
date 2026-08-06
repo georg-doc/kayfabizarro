@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>KFB · Sprite-Sheet Builder</title>
+<style>
+:root{--paper:#f3ede1;--card:#faf7f2;--ink:#221c14;--ink3:#7a6f5c;--ink4:#a89a80;--rust:#b5502e;--border:#d8cdb8;--r:7px}
+*{box-sizing:border-box}
+body{margin:0;font-family:'Segoe UI',system-ui,sans-serif;color:var(--ink);background:var(--paper);display:flex;height:100vh;overflow:hidden}
+.side{width:290px;flex:none;background:var(--card);border-right:2px solid var(--ink);padding:12px 13px;overflow-y:auto}
+.main{flex:1;display:flex;flex-direction:column;overflow:hidden}
+.bar{display:flex;gap:8px;align-items:center;padding:8px 12px;background:var(--card);border-bottom:2px solid var(--ink);flex-wrap:wrap}
+.stagewrap{flex:1;overflow:auto;display:grid;place-items:center;background:repeating-conic-gradient(#e9e1d2 0 25%,#f3ede1 0 50%) 0 0/28px 28px;padding:20px}
+canvas#stage{background:transparent;box-shadow:0 2px 12px rgba(0,0,0,.15);image-rendering:pixelated}
+h1{font-size:15px;margin:0 0 2px}.sub{font-size:11px;color:var(--ink4);margin:0 0 12px}
+.grp{border:1px solid var(--border);border-radius:var(--r);padding:9px;margin-bottom:10px}
+.grp h2{font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink4);margin:0 0 7px}
+label{font-size:12px;display:flex;justify-content:space-between;align-items:center;gap:8px;margin:5px 0}
+input[type=number]{width:64px;font-size:12px;padding:3px 5px;border:1px solid var(--border);border-radius:5px;background:var(--paper)}
+input[type=text]{width:100%;font-size:12px;padding:5px;border:1px solid var(--border);border-radius:5px;background:var(--paper)}
+input[type=range]{width:120px}
+button{font-size:12px;font-weight:600;padding:7px 10px;border:1px solid var(--ink);border-radius:6px;background:var(--paper);cursor:pointer}
+button.pri{background:var(--ink);color:var(--card)}
+button:hover{border-color:var(--rust)}
+.filebtn{display:block;text-align:center;border:1px dashed var(--rust);color:var(--rust);border-radius:6px;padding:9px;cursor:pointer;font-weight:600;font-size:12px}
+.filebtn input{display:none}
+.hint{font-size:11px;color:var(--ink3);line-height:1.4}
+textarea{width:100%;height:88px;font-family:ui-monospace,monospace;font-size:10.5px;border:1px solid var(--border);border-radius:5px;background:var(--paper);padding:6px}
+.sel{font-size:12px;color:var(--rust);font-weight:600}
+.chk{accent-color:var(--rust)}
+</style>
+</head>
+<body>
+<aside class="side">
+  <h1>KFB Sprite-Sheet Builder</h1>
+  <p class="sub">Frames einpassen → Export → GitHub</p>
+
+  <div class="grp"><h2>Raster</h2>
+    <label>Spalten <input type="number" id="cols" value="7" min="1"></label>
+    <label>Zeilen <input type="number" id="rows" value="5" min="1"></label>
+    <label>Zelle (px) <input type="number" id="cell" value="192" min="16"></label>
+    <label>Fußlinie y <input type="number" id="baseY" value="170"></label>
+    <label>Ziel-Höhe <input type="number" id="targetH" value="112"></label>
+    <label>Höhe angleichen <input type="checkbox" id="matchH" class="chk" checked></label>
+    <label>Weiß freistellen <input type="checkbox" id="whiteKey" class="chk" checked></label>
+    <button onclick="rebuild()">Raster neu</button>
+  </div>
+
+  <div class="grp"><h2>Frames importieren</h2>
+    <label class="filebtn">+ Bilder wählen (füllen ab Auswahl)
+      <input type="file" id="fin" accept="image/*" multiple></label>
+    <p class="hint">Reihenfolge = Füll-Reihenfolge. Zelle anklicken zum Auswählen/Nachjustieren.</p>
+  </div>
+
+  <div class="grp"><h2>Referenz-Overlay</h2>
+    <label class="filebtn">Tiny-Swords-Vorlage laden
+      <input type="file" id="rin" accept="image/*"></label>
+    <label>anzeigen <input type="checkbox" id="refOn" class="chk"></label>
+    <label>Deckkraft <input type="range" id="refOp" min="0" max="100" value="45"></label>
+    <p class="hint">z.B. der fackelschwingende Goblin / Bogenschütze — zum Einpassen der Pose.</p>
+  </div>
+
+  <div class="grp"><h2>Ausgewählte Zelle</h2>
+    <p class="sel" id="selinfo">keine</p>
+    <p class="hint">Pfeile = verschieben · + / − = skalieren · Entf = leeren · F = Füße auf Linie</p>
+    <button onclick="snapAll()">Alle Füße snappen</button>
+  </div>
+
+  <div class="grp"><h2>Export</h2>
+    <button class="pri" onclick="exportPNG()">Sheet PNG</button>
+    <button onclick="exportJSON()">Contract JSON</button>
+  </div>
+
+  <div class="grp"><h2>Katalog / GitHub</h2>
+    <label style="display:block">Name<input type="text" id="sheetName" value="FrizzleBob_SpriteSheet"></label>
+    <label style="display:block;margin-top:6px">Repo-Pfad<input type="text" id="repoPath" value="FrizzleBob/FrizzleBob Avatar/"></label>
+    <button onclick="genCatalog()" style="margin-top:7px">Katalog-Snippet</button>
+    <label style="margin-top:6px">☐ auf GitHub hochgeladen <input type="checkbox" id="uploaded" class="chk"></label>
+    <textarea id="cat" placeholder="Katalog-Eintrag erscheint hier…"></textarea>
+  </div>
+</aside>
+
+<div class="main">
+  <div class="bar">
+    <span class="hint" id="status">Bereit.</span>
+    <span style="flex:1"></span>
+    <label class="hint">Zoom <input type="range" id="zoom" min="1" max="4" step="0.5" value="2"></label>
+  </div>
+  <div class="stagewrap"><canvas id="stage"></canvas></div>
+</div>
+
+<script>
+const S={cols:7,rows:5,cell:192,baseY:170,targetH:112,matchH:true,whiteKey:true,zoom:2,
+        cells:[],ref:null,refOn:false,refOp:.45,sel:-1};
+const cv=document.getElementById('stage'),cx=cv.getContext('2d');
+const $=id=>document.getElementById(id);
+
+function cfg(){S.cols=+$('cols').value;S.rows=+$('rows').value;S.cell=+$('cell').value;
+  S.baseY=+$('baseY').value;S.targetH=+$('targetH').value;S.matchH=$('matchH').checked;
+  S.whiteKey=$('whiteKey').checked;S.zoom=+$('zoom').value;S.refOn=$('refOn').checked;S.refOp=$('refOp').value/100;}
+function rebuild(){cfg();S.cells=Array(S.cols*S.rows).fill(null);S.sel=-1;render();$('status').textContent='Raster '+S.cols+'×'+S.rows+' neu.';}
+
+// ---- Bildverarbeitung ----
+function keyWhite(c){const t=c.getContext('2d'),d=t.getImageData(0,0,c.width,c.height),p=d.data;
+  for(let i=0;i<p.length;i+=4){if(p[i]>238&&p[i+1]>238&&p[i+2]>238)p[i+3]=0;}t.putImageData(d,0,0);}
+function bbox(c){const t=c.getContext('2d'),d=t.getImageData(0,0,c.width,c.height).data;
+  let x0=c.width,y0=c.height,x1=0,y1=0,f=false;
+  for(let y=0;y<c.height;y++)for(let x=0;x<c.width;x++){if(d[(y*c.width+x)*4+3]>16){f=true;
+    if(x<x0)x0=x;if(x>x1)x1=x;if(y<y0)y0=y;if(y>y1)y1=y;}}
+  return f?{x:x0,y:y0,w:x1-x0+1,h:y1-y0+1}:null;}
+function processFrame(img){
+  const t=document.createElement('canvas');t.width=img.width;t.height=img.height;
+  t.getContext('2d').drawImage(img,0,0);
+  if(S.whiteKey)keyWhite(t);
+  const b=bbox(t);if(!b)return null;
+  const c=document.createElement('canvas');c.width=b.w;c.height=b.h;
+  c.getContext('2d').drawImage(t,b.x,b.y,b.w,b.h,0,0,b.w,b.h);
+  return{canvas:c,w:b.w,h:b.h,dx:0,dy:0,scale:S.matchH?S.targetH/b.h:1};}
+
+// ---- Render ----
+function render(){cfg();const z=S.zoom,W=S.cols*S.cell,H=S.rows*S.cell;
+  cv.width=W*z;cv.height=H*z;cx.setTransform(z,0,0,z,0,0);cx.clearRect(0,0,W,H);
+  if(S.ref&&S.refOn){cx.globalAlpha=S.refOp;cx.drawImage(S.ref,0,0,W,H);cx.globalAlpha=1;}
+  for(let r=0;r<S.rows;r++)for(let c=0;c<S.cols;c++){const i=r*S.cols+c,ox=c*S.cell,oy=r*S.cell;
+    cx.strokeStyle='rgba(120,120,120,.5)';cx.lineWidth=1;cx.strokeRect(ox+.5,oy+.5,S.cell-1,S.cell-1);
+    cx.strokeStyle='rgba(90,150,220,.5)';cx.beginPath();cx.moveTo(ox+S.cell/2,oy);cx.lineTo(ox+S.cell/2,oy+S.cell);cx.stroke();
+    cx.strokeStyle='rgba(210,70,50,.7)';cx.beginPath();cx.moveTo(ox,oy+S.baseY);cx.lineTo(ox+S.cell,oy+S.baseY);cx.stroke();
+    if(i===S.sel){cx.strokeStyle='var(--rust)';cx.fillStyle='rgba(181,80,46,.10)';cx.fillRect(ox,oy,S.cell,S.cell);}
+    const f=S.cells[i];if(!f)continue;
+    const w=f.w*f.scale,h=f.h*f.scale,cxp=ox+S.cell/2+f.dx,footY=oy+S.baseY+f.dy;
+    cx.drawImage(f.canvas,cxp-w/2,footY-h,w,h);}
+}
+
+// ---- Import ----
+function loadImg(file){return new Promise(res=>{const u=URL.createObjectURL(file),im=new Image();
+  im.onload=()=>{URL.revokeObjectURL(u);res(im);};im.src=u;});}
+$('fin').onchange=async e=>{cfg();let i=Math.max(0,S.sel);const files=[...e.target.files];
+  for(const file of files){while(i<S.cells.length&&S.cells[i])i++;if(i>=S.cells.length)break;
+    const im=await loadImg(file);S.cells[i]=processFrame(im);i++;}
+  $('status').textContent=files.length+' Frames importiert.';render();e.target.value='';};
+$('rin').onchange=async e=>{if(!e.target.files[0])return;S.ref=await loadImg(e.target.files[0]);
+  $('refOn').checked=true;$('status').textContent='Referenz geladen.';render();};
+
+// ---- Interaktion ----
+cv.onclick=e=>{cfg();const rect=cv.getBoundingClientRect(),sx=cv.width/rect.width;
+  const x=(e.clientX-rect.left)*sx/S.zoom,y=(e.clientY-rect.top)*sx/S.zoom;
+  const c=Math.floor(x/S.cell),r=Math.floor(y/S.cell);
+  S.sel=(c>=0&&c<S.cols&&r>=0&&r<S.rows)?r*S.cols+c:-1;
+  $('selinfo').textContent=S.sel<0?'keine':('Zelle '+(S.sel%S.cols)+','+Math.floor(S.sel/S.cols)+(S.cells[S.sel]?' · belegt':' · leer'));
+  render();};
+document.addEventListener('keydown',e=>{if(S.sel<0)return;const f=S.cells[S.sel];
+  const k=e.key;let used=true;
+  if(k==='Delete'||k==='Backspace'){S.cells[S.sel]=null;}
+  else if(!f){used=false;}
+  else if(k==='ArrowLeft')f.dx--;else if(k==='ArrowRight')f.dx++;
+  else if(k==='ArrowUp')f.dy--;else if(k==='ArrowDown')f.dy++;
+  else if(k==='+'||k==='=')f.scale*=1.03;else if(k==='-')f.scale/=1.03;
+  else if(k==='f'||k==='F')f.dy=0;else used=false;
+  if(used){e.preventDefault();render();}});
+function snapAll(){for(const f of S.cells)if(f)f.dy=0;render();$('status').textContent='Füße gesnappt (dy=0).';}
+
+// ---- Export ----
+function composite(){cfg();const W=S.cols*S.cell,H=S.rows*S.cell,o=document.createElement('canvas');
+  o.width=W;o.height=H;const g=o.getContext('2d');
+  for(let r=0;r<S.rows;r++)for(let c=0;c<S.cols;c++){const f=S.cells[r*S.cols+c];if(!f)continue;
+    const w=f.w*f.scale,h=f.h*f.scale,cxp=c*S.cell+S.cell/2+f.dx,footY=r*S.cell+S.baseY+f.dy;
+    g.drawImage(f.canvas,cxp-w/2,footY-h,w,h);}return o;}
+function dl(blob,name){const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download=name;a.click();}
+function exportPNG(){composite().toBlob(b=>{dl(b,$('sheetName').value+'_'+S.cell+'.png');$('status').textContent='PNG exportiert.';});}
+function contract(){cfg();const per=[];for(let r=0;r<S.rows;r++){let n=0;for(let c=0;c<S.cols;c++)if(S.cells[r*S.cols+c])n++;per.push(n);}
+  return{sheet:$('sheetName').value+'_'+S.cell+'.png',frameW:S.cell,frameH:S.cell,cols:S.cols,rows:S.rows,fps:10,
+    anchor:{x:Math.round(S.cell/2),y:S.baseY},framesPerRow:per,
+    states:{idle:0,walk:1,attack_wind:2,attack_hit:3,attack_recover:4}};}
+function exportJSON(){const b=new Blob([JSON.stringify(contract(),null,2)],{type:'application/json'});
+  dl(b,$('sheetName').value+'.contract.json');$('status').textContent='Contract exportiert.';}
+function genCatalog(){cfg();const name=$('sheetName').value,path=$('repoPath').value.replace(/\/+$/,'');
+  const raw='https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/'+path+'/'+name+'_'+S.cell+'.png';
+  const entry={name,type:'spritesheet',path:path+'/'+name+'_'+S.cell+'.png',raw,
+    uploaded:$('uploaded').checked,contract:contract()};
+  $('cat').value=JSON.stringify(entry,null,2);$('status').textContent='Katalog-Snippet erzeugt — in 2d-catalog.json / sprite-catalog einfügen.';}
+
+$('zoom').oninput=render;$('refOn').onchange=render;$('refOp').oninput=render;
+['matchH','whiteKey','baseY','targetH'].forEach(id=>$(id).onchange=render);
+rebuild();
+</script>
+</body>
+</html>
