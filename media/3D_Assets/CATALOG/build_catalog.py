@@ -271,3 +271,31 @@ audio_cat = {
 with open(os.path.join(OUT, "audio-catalog.json"), "w") as f:
     json.dump(audio_cat, f, indent=1, ensure_ascii=False)
 print("audio files:", audio_cat["total_files"], "folders:", audio_cat["total_folders"])
+
+# ---------- 2D (NEU 2026-08-05) ----------
+IMG_EXT = {".png", ".jpg", ".jpeg", ".webp", ".svg"}
+d2root = os.path.join(ROOT, "2D + Pixel Assets")
+packs2 = {}
+if os.path.isdir(d2root):
+    for dp, dns, fns in os.walk(d2root):
+        dns[:] = [d for d in dns if not d.startswith(".")]
+        imgs = [f for f in fns if os.path.splitext(f)[1].lower() in IMG_EXT]
+        if not imgs:
+            continue
+        rel = os.path.relpath(dp, d2root).replace(os.sep, "/")
+        pk = rel.split("/")[0]
+        packs2.setdefault(pk, {"count": 0, "folders": {}})
+        packs2[pk]["count"] += len(imgs)
+        packs2[pk]["folders"][rel] = sorted(imgs)
+cat2 = {
+    "generated": "auto",
+    "root": "media/2D_Assets (GitHub) / '2D + Pixel Assets' (local)",
+    "github_base": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/2D_Assets/",
+    "total_files": sum(p["count"] for p in packs2.values()),
+    "total_packs": len(packs2),
+    "note": "2D-Index. Bild-Pfad = github_base + folder + '/' + file. .aseprite/.ds_store/.zip ausgeschlossen.",
+    "packs": packs2,
+}
+with open(os.path.join(OUT, "2d-catalog.json"), "w") as f:
+    json.dump(cat2, f, indent=1, ensure_ascii=False)
+print("2d files:", cat2["total_files"], "packs:", cat2["total_packs"])
