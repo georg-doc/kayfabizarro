@@ -148,7 +148,16 @@ function processFrame(img){
   const b=bbox(t);if(!b)return null;
   const c=document.createElement('canvas');c.width=b.w;c.height=b.h;
   c.getContext('2d').drawImage(t,b.x,b.y,b.w,b.h,0,0,b.w,b.h);
-  return{canvas:c,w:b.w,h:b.h,dx:0,dy:0,scale:1};}  // Skala wird einheitlich beim Import gesetzt
+  return{canvas:c,w:b.w,h:b.h};}
+// Alle Zellen aus ihrem ROHBILD mit den AKTUELLEN Einstellungen neu verarbeiten (live)
+function reprocessAll(){cfg();let bs=null;
+  for(const cell of S.cells){if(!cell||!cell.raw)continue;
+    const f=processFrame(cell.raw);
+    if(!f){cell.canvas=null;continue;}
+    if(bs===null)bs=S.matchH?(S.targetH/f.h):1;
+    cell.canvas=f.canvas;cell.w=f.w;cell.h=f.h;cell.scale=bs;
+    if(cell.dx==null)cell.dx=0;if(cell.dy==null)cell.dy=0;}
+  S.importScale=bs;render();}
 
 // ---- Render ----
 function render(){cfg();const z=S.zoom,W=S.cols*S.cell,H=S.rows*S.cell;
@@ -159,7 +168,7 @@ function render(){cfg();const z=S.zoom,W=S.cols*S.cell,H=S.rows*S.cell;
     cx.strokeStyle='rgba(90,150,220,.5)';cx.beginPath();cx.moveTo(ox+S.cell/2,oy);cx.lineTo(ox+S.cell/2,oy+S.cell);cx.stroke();
     cx.strokeStyle='rgba(210,70,50,.7)';cx.beginPath();cx.moveTo(ox,oy+S.baseY);cx.lineTo(ox+S.cell,oy+S.baseY);cx.stroke();
     if(i===S.sel){cx.strokeStyle='var(--rust)';cx.fillStyle='rgba(181,80,46,.10)';cx.fillRect(ox,oy,S.cell,S.cell);}
-    const f=S.cells[i];if(!f)continue;
+    const f=S.cells[i];if(!f||!f.canvas)continue;
     const w=f.w*f.scale*S.gscale,h=f.h*f.scale*S.gscale,cxp=ox+S.cell/2+f.dx,footY=oy+S.baseY+f.dy;
     cx.drawImage(f.canvas,cxp-w/2,footY-h,w,h);}
 }
@@ -167,26 +176,20 @@ function render(){cfg();const z=S.zoom,W=S.cols*S.cell,H=S.rows*S.cell;
 // ---- Import ----
 function loadImg(file){return new Promise(res=>{const u=URL.createObjectURL(file),im=new Image();
   im.onload=()=>{URL.revokeObjectURL(u);res(im);};im.src=u;});}
-$('fin').onchange=async e=>{cfg();let i=Math.max(0,S.sel);const files=[...e.target.files];let bs=null;
+$('fin').onchange=async e=>{cfg();let i=Math.max(0,S.sel);const files=[...e.target.files];
   for(const file of files){while(i<S.cells.length&&S.cells[i])i++;if(i>=S.cells.length)break;
-    const im=await loadImg(file);const f=processFrame(im);if(!f)continue;
-    if(bs===null)bs=S.matchH?(S.targetH/f.h):1;   // EINE Skala aus dem 1. Frame fuer alle -> Koerpergroesse bleibt konstant
-    f.scale=bs;S.cells[i]=f;i++;}
-  if(bs!==null)S.importScale=bs;
-  $('status').textContent=files.length+' Frames importiert (Skala '+(bs?bs.toFixed(2):1)+'). Größe-Regler oben feinjustiert alle.';render();e.target.value='';};
+    const im=await loadImg(file);S.cells[i]={raw:im,dx:0,dy:0};i++;}   // nur ROHBILD merken
+  reprocessAll();$('status').textContent=files.length+' Frames importiert.';e.target.value='';};
 $('sin').onchange=async e=>{const file=e.target.files[0];if(!file)return;cfg();
   const im=await loadImg(file);let C=S.cols,R=S.rows;
   if(im.width%192===0&&im.height%192===0){C=im.width/192;R=im.height/192;$('cols').value=C;$('rows').value=R;}
   cfg();S.cells=Array(C*R).fill(null);S.importScale=null;S.sel=-1;
-  const cw=im.width/C,ch=im.height/R;let bs=null;
+  const cw=im.width/C,ch=im.height/R;
   for(let r=0;r<R;r++)for(let c=0;c<C;c++){
     const tmp=document.createElement('canvas');tmp.width=cw;tmp.height=ch;
     tmp.getContext('2d').drawImage(im,c*cw,r*ch,cw,ch,0,0,cw,ch);
-    const f=processFrame(tmp);if(!f)continue;
-    if(bs===null)bs=S.matchH?(S.targetH/f.h):1;
-    f.scale=bs;S.cells[r*C+c]=f;}
-  if(bs!==null)S.importScale=bs;
-  $('status').textContent='Sheet zerschnitten: '+C+'×'+R+' Zellen (Skala '+(bs?bs.toFixed(2):1)+').';render();e.target.value='';};
+    S.cells[r*C+c]={raw:tmp,dx:0,dy:0};}   // ROHBILD je Zelle merken
+  reprocessAll();$('status').textContent='Sheet zerschnitten: '+C+'×'+R+' Zellen.';e.target.value='';};
 $('rin').onchange=async e=>{if(!e.target.files[0])return;S.ref=await loadImg(e.target.files[0]);
   $('refOn').checked=true;$('status').textContent='Referenz geladen.';render();};
 
@@ -211,7 +214,7 @@ function snapAll(){for(const f of S.cells)if(f)f.dy=0;render();$('status').textC
 // ---- Export ----
 function composite(){cfg();const W=S.cols*S.cell,H=S.rows*S.cell,o=document.createElement('canvas');
   o.width=W;o.height=H;const g=o.getContext('2d');
-  for(let r=0;r<S.rows;r++)for(let c=0;c<S.cols;c++){const f=S.cells[r*S.cols+c];if(!f)continue;
+  for(let r=0;r<S.rows;r++)for(let c=0;c<S.cols;c++){const f=S.cells[r*S.cols+c];if(!f||!f.canvas)continue;
     const w=f.w*f.scale*S.gscale,h=f.h*f.scale*S.gscale,cxp=c*S.cell+S.cell/2+f.dx,footY=r*S.cell+S.baseY+f.dy;
     g.drawImage(f.canvas,cxp-w/2,footY-h,w,h);}return o;}
 function dl(blob,name){const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download=name;a.click();}
@@ -247,7 +250,7 @@ $('refPick').onchange=e=>{const i=+e.target.value;if(i<0)return;const un=UNITS[i
 
 // ---- Animations-Vorschau ----
 const pv=$('pv'),pvx=pv.getContext('2d');let pvPlay=false,pvFrame=0,pvLast=0;
-function pvFrames(){const out=[],r=+$('pvRow').value;for(let c=0;c<S.cols;c++){const f=S.cells[r*S.cols+c];if(f)out.push(f);}return out;}
+function pvFrames(){const out=[],r=+$('pvRow').value;for(let c=0;c<S.cols;c++){const f=S.cells[r*S.cols+c];if(f&&f.canvas)out.push(f);}return out;}
 function drawPV(){pv.width=S.cell;pv.height=S.cell;pvx.clearRect(0,0,S.cell,S.cell);
   pvx.strokeStyle='rgba(210,70,50,.35)';pvx.beginPath();pvx.moveTo(0,S.baseY+.5);pvx.lineTo(S.cell,S.baseY+.5);pvx.stroke();
   const fr=pvFrames();if(!fr.length)return;const f=fr[pvFrame%fr.length];
@@ -259,7 +262,8 @@ function pvToggle(){pvPlay=!pvPlay;$('pvbtn').textContent=pvPlay?'⏸ Pause':'�
 $('pvRow').onchange=()=>{pvFrame=0;drawPV();};
 
 $('zoom').oninput=render;$('gscale').oninput=render;$('refOn').onchange=render;$('refOp').oninput=render;
-['matchH','whiteKey','baseY','targetH'].forEach(id=>$(id).onchange=render);
+$('baseY').onchange=render;
+['whiteKey','matchH','targetH','shadow'].forEach(id=>$(id).onchange=reprocessAll);  // live neu verarbeiten
 rebuild();
 </script>
 </body>
