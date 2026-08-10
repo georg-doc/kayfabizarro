@@ -1,0 +1,24 @@
+{
+  "version": "prop-sheets-1",
+  "note": "Ein Blatt plus eine Zeile ist ein neues Biom. Gewicht loest Georgs Kuerbisproblem an der Quelle: Wegweiser 1, Grasbuschel 40. Zellen werden gemessen, nicht aus dieser Datei gelesen.",
+  "sheets": [
+    {
+      "id": "sheet-02",
+      "file": "sheet-02.png",
+      "made": "ChatGPT, 7.8.2026, zweite Fassung ohne eingebrannten Schatten",
+      "block": 4,
+      "levels": 6,
+      "key": { "hi": 250, "lo": 232 },
+      "grid": { "alphaMin": 24, "minBand": 8, "mergeGap": 14 },
+      "trim": { "alphaMin": 24, "body": false },
+      "rows": [
+        { "name": "Baum",     "weight": 14, "hTiles": 2.30, "tall": 1.00, "biomes": ["grass"], "place": "grove" },
+        { "name": "Busch",    "weight": 34, "hTiles": 1.00, "tall": 0.50, "biomes": ["grass"] },
+        { "name": "Blueher",  "weight": 40, "hTiles": 0.62, "tall": 0.25, "biomes": ["grass", "sand"] },
+        { "name": "Stein",    "weight": 18, "hTiles": 0.85, "tall": 0.35, "biomes": ["grass", "sand"] },
+        { "name": "Tuempel",  "weight": 3,  "hTiles": 1.50, "tall": 0.20, "biomes": ["grass"] },
+        { "name": "Totholz",  "weight": 22, "hTiles": 0.80, "tall": 0.30, "biomes": ["grass", "sand"] }
+      ]
+    }
+  ]
+}
