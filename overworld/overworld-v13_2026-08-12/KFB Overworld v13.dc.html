@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+<template id="__bundler_thumbnail">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="#47aba9"/><g fill="#e8d38a" font-family="Georgia,serif" font-weight="700" text-anchor="middle"><text x="50" y="58" font-size="30">KFB</text><text x="50" y="72" font-size="7.5" letter-spacing="1.6" fill="#0e3d3c">OVERWORLD</text></g></svg>
+</template>
+</head>
+<body>
+<x-dc>
+<helmet>
+<!-- v13 · 2026-08-12 · Fork von `KFB Overworld v12.dc.html` (Stand §4v, water-v2.0 · Glitzern aus ·
+     Statblatt-Rücknahme (93) · Journey-Schema 2.4.0). Der Runner ist beim Fork NICHT angefasst;
+     v12 bleibt Vergleichsmaßstab (SUPERSEDED, nicht löschen). Die 39 Skriptpfade zeigen auf
+     `./overworld-v13/`; die Module lösen ihre Nachbarn über die EIGENE Adresse auf, deshalb
+     wandert `icons-rpg/` mit dem Ordner und keine Modulzeile ändert sich.
+     Offen in Georgs Reihenfolge (unverändert aus v12): Ink-Outline als System · Gummiband greift
+     zu früh (vor dem Bauen messen) · Linienstärken · Sprechblasen mit Level · sieben Einheiten
+     ohne Porträt · Referenzen für Cartoon-Wasser (Georg recherchiert).
+
+     ── Erbe aus v12 ──────────────────────────────────────────────────────────────────────────
+     v12 · 2026-08-12 · Fork von `KFB Overworld v11.dc.html` (Stand §4u). Der Runner ist beim
+     Fork NICHT angefasst; v11 bleibt als Vergleichsmaßstab stehen (SUPERSEDED, nicht löschen).
+     Offene Slices in Georgs Reihenfolge: Wasser KISS · Ink-Outline als System · Gummiband ·
+     Linienstärken · Sprechblasen mit Level · sieben Einheiten ohne Porträt.
+
+     ── Erbe aus v11 ──────────────────────────────────────────────────────────────────────────
+     v11 · 2026-08-11 · Fork von `KFB Overworld v10.dc.html` (WS0-Stand mit den drei Reparaturen:
+     anim-clock 1.2 MIN_SLIP 7 · mob-ai Lauf-Hysterese 34/16 · Rücksprung auf Bild 0 raus).
+     Neu in v11: `reach.js` — eine Reichweite für Held und Gegner (Block C1) und ein Nachlauf
+     nach dem Schlag (Block C2). Beides in overworld-game-v10.js und mob-ai.js verdrahtet.
+
+     RE-HOME WS0 · 2026-08-09 · Quelle: WS1-Export `overworld-v10-S5_2026-08-09`.
+     EINZIGE Änderung gegenüber dem Export: die 39 Skriptpfade zeigen auf `./overworld-v12/`
+     statt `./overworld/`, weil in WS0 unter `overworld/` noch die eingefrorene v8/v9-B-Linie
+     liegt (KFB Overworld v8/v9-B.dc.html laden von dort und müssen bitgleich bleiben).
+     Der Runner selbst ist NICHT angefasst. -->
+
+<style>
+/* v10-S3b · Blasenschrift »PottyMouth BB« (Blambot, von Georg gekauft — Live-Lizenz noch offen,
+   intern zum Ansehen). Fällt sie aus, zeichnet mob-ai.js in Monospace weiter.
+   v12-P1: die Schrift liegt im Repo und läuft über den CDN-Kanal (`kayfabizarro.pages.dev`), nicht
+   mehr aus `overworld-v12/fonts/`. Eine @font-face-Regel kann `OW_SRC` nicht fragen — CSS läuft vor
+   dem ersten Skript —, deshalb steht die Adresse hier ausgeschrieben. `?src=raw` schaltet die
+   übrigen Kanäle um, die Schrift bleibt auf dem CDN; das ist der Preis dafür, dass sie sofort da
+   ist statt nach dem ersten Skript. */
+@font-face{font-family:"PottyMouth BB";src:url("https://kayfabizarro.pages.dev/overworld/overworld/fonts/pottymouthbb_reg.otf") format("opentype");font-display:swap}
+html,body{margin:0;height:100%;overflow:hidden;background:#47aba9}
+a{color:#0e3d3c}a:hover{color:#000}
+</style>
+<script src="./overworld-v13/asset-source.js"></script>
+<script src="./overworld-v13/units-catalog.js"></script>
+<!-- v11-H1: EINE Wahrheit über Name und Titel (ident-v1, V10-S20). Das Rail zeigt beides neben dem
+     Avatar; ohne diese Datei müsste es sich einen Namen ausdenken, und das wäre die zweite Wahrheit. -->
+<script src="./overworld-v13/identity.js"></script>
+<script src="./overworld-v13/unit-loader.js"></script>
+<script src="./overworld-v13/hero-frames.js"></script>
+<script src="./overworld-v13/kayfabe-abilities.js"></script>
+<script src="./overworld-v13/audio-2d.js"></script>
+<script src="./overworld-v13/journey.js"></script>
+<script src="./overworld-v13/narrator-2d.js"></script>
+<script src="./overworld-v13/factions.js"></script>
+<script src="./overworld-v13/cartoon-motion-2d.js"></script>
+<script src="./overworld-v13/shadow-2d.js"></script>
+<script src="./overworld-v13/card-ink-2d.js"></script>
+<script src="./overworld-v13/card-backs.js"></script>
+<script src="./overworld-v13/card-art-2d.js"></script>
+<script src="./overworld-v13/reveal-2d.js"></script>
+<script src="./overworld-v13/cursors-2d.js"></script>
+<script src="./overworld-v13/anim-clock.js"></script>
+<script src="./overworld-v13/reach.js"></script>
+<script src="./overworld-v13/game-feel.js"></script>
+<!-- v11-U2: Flugkörper (Archer · Hex Shaman · Gnoll · Bomb Fish · Harpoon Shark). Steht NACH
+     unit-loader (es misst Blätter mit dessen Werkzeug) und VOR mob-ai + Runner (beide feuern). -->
+<script src="./overworld-v13/shots.js"></script>
+<script src="./overworld-v13/dungeon-2d.js"></script>
+<script src="./overworld-v13/chatter-phrases.js"></script>
+<script src="./overworld-v13/chatter-2d.js"></script>
+<script src="./overworld-v13/rss-2d.js"></script>
+<!-- v13-C1/C2: das Layout-Modul steht VOR dem Träger — `bubble-ts.js` liest es in `setzen()`.
+     Erst umbrechen, dann Kontur; wer die Reihenfolge tauscht, bekommt eine Blase, in die Text
+     gelegt wird, und damit die leere Riesenblase zurück. -->
+<script src="./overworld-v13/bubble-layout.js"></script>
+<script src="./overworld-v13/bubble-ts.js"></script>
+<script src="./overworld-v13/zone-story.js"></script>
+<script src="./overworld-v13/mob-ai.js"></script>
+<script src="./overworld-v13/bench.js"></script>
+<script src="./overworld-v13/spot-probe.js"></script>
+<script src="./overworld-v13/relief.js"></script>
+<script src="./overworld-v13/ground-paint.js"></script>
+<script src="./overworld-v13/ground-band.js"></script>
+<script src="./overworld-v13/skyshade-2d.js"></script>
+<script src="./overworld-v13/gutter-2d.js"></script>
+<script src="./overworld-v13/prop-sheet.js"></script>
+<script src="./overworld-v13/contact-shadow.js"></script>
+<script src="./overworld-v13/puddles.js"></script>
+<script src="./overworld-v13/rubber-coast.js"></script>
+<!-- v12-W1: Wasser KISS — eine Streufarbe je Fluid-Körper, Glitzern aus der NEIGUNG (nicht aus der
+     Höhe), Schelf am Ufer aus derselben Farbe, RMS-Neigung als geführte Zahl (`OW_WATER.probe()`).
+     Steht VOR terrain-paint.js — das ist sein einziger Leser, und es gatet auf `window.OW_WATER`. -->
+<script src="./overworld-v13/water-kiss.js"></script>
+<script src="./overworld-v13/terrain-paint.js"></script>
+<script src="./overworld-v13/hud-skin.js"></script>
+<!-- v11-H1: `kfb-paper-atlas.js` ist RAUS, `ui-kit-ts.js` ersetzt es. Die letzte Stelle, die den
+     Atlas noch brauchte, war das Zahnrad in hud-v7.js — die holt ihre Adresse jetzt aus OW_UIKIT.
+     Damit gibt es EINE Wahrheit über die Tiny-Swords-Blätter statt zwei. -->
+<script src="./overworld-v13/ui-kit-ts.js"></script>
+<script src="./overworld-v13/hud-v7.js"></script>
+
+<script src="./overworld-v13/roster-sheet.js"></script>
+
+<!-- ── v11-H1 · Die rechte Spalte ist ein Kartenspiel ────────────────────────────────────────────
+     `card-rail-v9b.js` aus `KFB Overworld v10 HUD.dc.html` — die kompakte Statleiste (Fluff als
+     Kopfleiste, ein Blatt wie jedes andere), der Almanach-Stapel unten rechts (fächert bei
+     Zeigerkontakt nach OBEN) und der Quest-Log unter der Insel (fächert nach UNTEN).
+     Es steht NACH dem v7-HUD: es setzt seine Blätter an dessen Plätze und blendet v7s eigenes
+     Möbel aus (`.v7-hero`, `.v7-nav .side`). Wer die Reihenfolge tauscht, verliert das Rail.
+     Die Symbole liegen daneben in `overworld-v11/icons-rpg/` — das Modul leitet den Ordner aus
+     seiner EIGENEN Adresse ab, deshalb muss der Unterordner mitwandern. -->
+<script src="./overworld-v13/card-rail-v9b.js"></script>
+</helmet>
+<x-import component-from-global-scope="overworld-game" loot="{{lootStyle}}" from="./overworld-v13/overworld-game-v10.js" seed="{{seed}}" hero="{{heroUnit}}" hero-color="{{heroColor}}" zoom="{{zoom}}" town-color="{{townColor}}" world-size="{{worldSize}}" zones="{{zones}}" sound="{{sound}}" layout="{{layout}}" ground="{{ground}}" life="{{life}}" terrain="{{terrain}}" shade="{{shade}}" fluid="{{fluid}}" water-form="{{waterForm}}" waber="{{waber}}" waber-props="{{waberProps}}" coast-ink="{{coastInk}}" relief-tex="{{reliefTex}}" relief="{{relief}}" hud-skin="{{hudSkin}}" prop-sheet="{{propSheet}}" prop-grid="{{propGrid}}" shadow="{{shadow}}" puddles="{{puddles}}" render-scale="{{renderScale}}" bubble-font="{{bubbleFont}}" chatter="{{chatter}}" style="position:fixed;inset:0" hint-size="100%,100%"></x-import>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;bubbleFont&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;default&quot;:&quot;potty&quot;,&quot;options&quot;:[&quot;potty&quot;,&quot;mono&quot;],&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Talk&quot;},&quot;chatter&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;default&quot;:&quot;on&quot;,&quot;options&quot;:[&quot;on&quot;,&quot;off&quot;],&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Talk&quot;},&quot;renderScale&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;default&quot;:&quot;1&quot;,&quot;options&quot;:[&quot;1&quot;,&quot;0.75&quot;,&quot;0.5&quot;],&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Ground&quot;},&quot;puddles&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;default&quot;:&quot;on&quot;,&quot;options&quot;:[&quot;on&quot;,&quot;off&quot;],&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Props&quot;},&quot;shadow&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;default&quot;:&quot;contact&quot;,&quot;options&quot;:[&quot;contact&quot;,&quot;ellipse&quot;,&quot;off&quot;],&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Props&quot;},&quot;propSheet&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;default&quot;:&quot;mix&quot;,&quot;options&quot;:[&quot;mix&quot;,&quot;sheet&quot;,&quot;tiny&quot;],&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Props&quot;},&quot;propGrid&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;default&quot;:&quot;smooth&quot;,&quot;options&quot;:[&quot;smooth&quot;,&quot;pixel&quot;,&quot;both&quot;],&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Props&quot;},&quot;terrain&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;default&quot;:&quot;paint&quot;,&quot;options&quot;:[&quot;paint&quot;,&quot;band&quot;,&quot;tiles&quot;],&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Ground&quot;},&quot;shade&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;default&quot;:&quot;off&quot;,&quot;options&quot;:[&quot;on&quot;,&quot;stark&quot;,&quot;off&quot;],&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Ground&quot;},&quot;fluid&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;default&quot;:&quot;wasser&quot;,&quot;options&quot;:[&quot;wasser&quot;,&quot;bubblegum&quot;,&quot;oel&quot;,&quot;saeure&quot;],&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Ground&quot;},&quot;waber&quot;:{&quot;editor&quot;:&quot;range&quot;,&quot;default&quot;:4.5,&quot;min&quot;:0,&quot;max&quot;:10,&quot;step&quot;:0.5,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Ground&quot;},&quot;waberProps&quot;:{&quot;editor&quot;:&quot;range&quot;,&quot;default&quot;:0.45,&quot;min&quot;:0,&quot;max&quot;:1,&quot;step&quot;:0.05,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Ground&quot;},&quot;coastInk&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;default&quot;:&quot;feather&quot;,&quot;options&quot;:[&quot;feather&quot;,&quot;hard&quot;,&quot;off&quot;],&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Ground&quot;},&quot;relief&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;default&quot;:&quot;bevel&quot;,&quot;options&quot;:[&quot;bevel&quot;,&quot;off&quot;],&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Ground&quot;},&quot;reliefTex&quot;:{&quot;editor&quot;:&quot;range&quot;,&quot;default&quot;:0.55,&quot;min&quot;:0,&quot;max&quot;:1,&quot;step&quot;:0.05,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Ground&quot;},&quot;hudSkin&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;default&quot;:&quot;v7&quot;,&quot;options&quot;:[&quot;v7&quot;,&quot;v6&quot;],&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;HUD&quot;},&quot;ground&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Ground&quot;},&quot;life&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;default&quot;:&quot;subtle&quot;,&quot;options&quot;:[&quot;off&quot;,&quot;subtle&quot;,&quot;full&quot;],&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Ground&quot;},&quot;seed&quot;:{&quot;editor&quot;:&quot;int&quot;,&quot;default&quot;:7,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;World&quot;},&quot;worldSize&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;default&quot;:&quot;large&quot;,&quot;options&quot;:[&quot;small&quot;,&quot;medium&quot;,&quot;large&quot;,&quot;huge&quot;],&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;World&quot;},&quot;layout&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;default&quot;:&quot;utopia&quot;,&quot;options&quot;:[&quot;utopia&quot;,&quot;noise&quot;],&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;World&quot;},&quot;zones&quot;:{&quot;editor&quot;:&quot;range&quot;,&quot;default&quot;:6,&quot;min&quot;:2,&quot;max&quot;:12,&quot;step&quot;:1,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;World&quot;},&quot;townColor&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;default&quot;:&quot;Blue&quot;,&quot;options&quot;:[&quot;Blue&quot;,&quot;Red&quot;,&quot;Yellow&quot;,&quot;Purple&quot;],&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;World&quot;},&quot;heroUnit&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;default&quot;:&quot;random&quot;,&quot;options&quot;:[&quot;random&quot;,&quot;warrior&quot;,&quot;archer&quot;,&quot;pawn&quot;,&quot;frizzlebob&quot;,&quot;rogue&quot;,&quot;knight&quot;,&quot;mage&quot;,&quot;torch_goblin_ep&quot;,&quot;spear_goblin&quot;,&quot;hex_shaman&quot;,&quot;pig_rider&quot;,&quot;pig&quot;,&quot;bear&quot;,&quot;lizard&quot;,&quot;snake&quot;,&quot;spider&quot;,&quot;turtle&quot;,&quot;gnoll&quot;,&quot;gnome&quot;,&quot;panda&quot;,&quot;skull&quot;,&quot;thief&quot;,&quot;bomb_fish&quot;,&quot;harpoon_shark&quot;,&quot;paddle_shark&quot;,&quot;minotaur&quot;,&quot;troll&quot;,&quot;sheep&quot;],&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Hero&quot;},&quot;heroColor&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;default&quot;:&quot;Blue&quot;,&quot;options&quot;:[&quot;Blue&quot;,&quot;Red&quot;,&quot;Yellow&quot;,&quot;Purple&quot;],&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Hero&quot;},&quot;zoom&quot;:{&quot;editor&quot;:&quot;range&quot;,&quot;default&quot;:1,&quot;min&quot;:0.5,&quot;max&quot;:1.4,&quot;step&quot;:0.05,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;World&quot;},&quot;sound&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;World&quot;},&quot;lootStyle&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;default&quot;:&quot;pen&quot;,&quot;options&quot;:[&quot;pen&quot;,&quot;chest&quot;],&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;World&quot;},&quot;waterForm&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;default&quot;:&quot;aus&quot;,&quot;options&quot;:[&quot;aus&quot;,&quot;kleckse&quot;,&quot;striche&quot;,&quot;schlieren&quot;],&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Ground&quot;}}">
+class Component extends DCLogic {
+  renderVals(){
+    return {
+      seed: this.props.seed ?? 7,
+      heroUnit: this.props.heroUnit ?? 'random',
+      heroColor: this.props.heroColor ?? 'Blue',
+      zoom: this.props.zoom ?? 1,
+      townColor: this.props.townColor ?? 'Blue',
+      worldSize: this.props.worldSize ?? 'large',
+      zones: this.props.zones ?? 6,
+      sound: (this.props.sound ?? true) ? 'true' : 'false',
+      layout: this.props.layout ?? 'utopia',
+      lootStyle: this.props.lootStyle ?? 'pen',
+      ground: (this.props.ground ?? true) ? 'true' : 'false',
+      life: this.props.life ?? 'subtle',
+      terrain: this.props.terrain ?? 'paint',
+      shade: this.props.shade ?? 'off',
+      fluid: this.props.fluid ?? 'wasser',
+      waterForm: this.props.waterForm ?? 'aus',
+      waber: String(this.props.waber ?? 4.5),
+      waberProps: String(this.props.waberProps ?? 0.45),
+      coastInk: this.props.coastInk ?? 'feather',
+      relief: this.props.relief ?? 'bevel',
+      reliefTex: String(this.props.reliefTex ?? 0.55),
+      hudSkin: this.props.hudSkin ?? 'v7',
+      propSheet: this.props.propSheet ?? 'mix',
+      propGrid: this.props.propGrid ?? 'smooth',
+      shadow: this.props.shadow ?? 'contact',
+      puddles: this.props.puddles ?? 'on',
+      renderScale: String(this.props.renderScale ?? 1),
+      bubbleFont: this.props.bubbleFont ?? 'potty',
+      /* Georg, 12.8.: **Chat aus.** Die Umgebungs-Plauderei ist damit stumm, nicht ausgebaut —
+         der Weg zurück ist dieser eine Wert (Tweaks: `chatter`). */
+      chatter: this.props.chatter ?? 'off',
+    };
+  }
+}
+</script>
+</body>
+</html>
