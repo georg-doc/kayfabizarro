@@ -1,0 +1,48 @@
+{
+  "modus": "viertel",
+  "_note": "S90a (2026-07-28) · Der Ausschnitt IST das Seitenviertel. Georgs Vorgabe wörtlich: 'ganz stumpf ein Raster, wo ich einfach immer zweimal mit sich schneide'. Vorher standen hier sechs gemessene Zahlen pro Deck (x/y/w/h/gapX/gapY) und die daraus fallenden Zellverhältnisse widersprachen sich (1,462 / 1,740 / 1,969) — Karten eines Spiels können nicht drei Formen haben. Das Viertel löst den Widerspruch nicht durch eine Entscheidung, sondern durch Geometrie: die PDF-Seite ist bei allen Decks 1,79, also hat JEDES Viertel 1,79, also sind alle Karten gleich groß. modus 'raster' = Rückweg auf den alten Stand, die alten Zahlen stehen unten unter 'legacy'.",
+  "_warum_quer_nichts": "Nachgerechnet an den drei abgenommenen Rastern: sie sitzen quer MITTIG auf der Seite. Linker gegen rechter Rand — forget_utopia 0,050/0,051 · ignore_dystopia 0,060/0,061 · embrace_protopia 0,048/0,049, Abweichung ≤ 0,001. Die Mittellinie der Seite IST die Schnittlinie. Bei forget_utopia läuft sie mitten durch die Illustrationsspalte (BLÖDSINN!, die Kraken) — genau deshalb las sich deren Zelle als 1,462: der halbe Spaltenanteil war ihr abgezogen worden, obwohl er zur Karte gehört. Mit der halben Spalte dazu ist die Zelle 334,9 × 194,7 pt = 1,72, also B. Quer braucht es deshalb KEINE Zahl.",
+  "_warum_hochkant_eine": "Hochkant sitzt das Raster tiefer als die Seitenmitte, weil oben das Kopfband steht (bei ignore_dystopia 'THE QUIET INVOICE'). Gemessen als Rand oben/unten: A 0,037/0,016 · B 0,117/0,060 · C 0,093/0,085. Nur die OBERE Zeile braucht deshalb einen Versatz — für die untere Zeile ist das stumpfe Viertel bei allen vier vermessenen Decks schon ausreichend (Unterkante der unteren Zelle liegt bei A 0,984 · B 0,940 · C 0,915 · E 0,955, jeweils innerhalb der unteren Seitenhälfte). Eine Zahl pro Deck, nicht sechs.",
+  "_format": {
+    "modus": "'viertel' (Standard) oder 'raster' (Rückweg: die alten sechs Zahlen aus legacy)",
+    "yShift": "Bruchteil der Seitenhöhe, um den das Fenster der OBEREN Zeile nach unten rutscht. 0 = stumpfes Seitenviertel. Untere Zeile immer 0.",
+    "_regel": "Fenster = halbe Seitenbreite × halbe Seitenhöhe, quer auf die Seitenhälften, hochkant nur so weit nach innen geschoben, wie es braucht, damit die Karte ganz drin liegt. Der Überschuss fällt damit an den AUSSEN liegenden Seitenrand — obere Zeile nach oben, untere nach unten — also auf Seite, nicht auf die Nachbarkarte.",
+    "_herleitung": "yShift = max(0, Unterkante der oberen Zelle − 0,5) + 0,004 Sicherheit, gedeckelt auf die Oberkante der unteren Zelle. Die Unterkanten kommen aus den gemessenen Rastern (legacy) — von den sechs alten Zahlen bleibt also nur der hochkante Anteil übrig, und genau der war der belegte (Schnittmarken bei B). Die vier quer liegenden Zahlen, an denen der Widerspruch hing, sind weg."
+  },
+  "grids": {
+    "forget_utopia": {
+      "yShift": 0.010,
+      "herleitung": "Unterkante obere Zelle 0,5055 → Mindestversatz 0,0055 + 0,004. Fenster 0,010…0,510, Oberkante der unteren Zelle 0,5155 — kein Anschnitt der Nachbarkarte.",
+      "kopfband": false
+    },
+    "ignore_dystopia": {
+      "yShift": 0.028,
+      "herleitung": "Unterkante obere Zelle 0,5235 → 0,0235 + 0,004. Fenster 0,028…0,528, Nachbarkarte ab 0,5335. Das Deck mit dem Kopfband: 0,084 Seitenhöhe Kopfband liegen dadurch im Bild der oberen Karten — Seite, nicht Fremdkarte, und nichts von der Karte fehlt (das war der Anschnitt bei Karte 45).",
+      "kopfband": true,
+      "anker": "Das einzige Deck mit belegten Schnittmarken (gestrichelt bei 0,455 und 0,545 quer) — sie bestätigen die Seitenmitte als Schnittlinie."
+    },
+    "embrace_protopia": {
+      "yShift": 0.004,
+      "herleitung": "Unterkante obere Zelle 0,494 — das stumpfe Viertel (0…0,5) reicht schon. Die 0,004 sind reine Sicherheit gegen Ablese- und Rundungsfehler.",
+      "kopfband": true
+    },
+    "epistemic_sabotage": {
+      "yShift": 0.032,
+      "herleitung": "Unterkante obere Zelle 0,5275 → 0,0275 + 0,004. Aus dem geschätzten Raster hergeleitet, nicht abgenommen — aber der Fehler kann jetzt nur noch Seitenrand kosten, keine Kartenfläche.",
+      "kopfband": true
+    },
+    "sonic_slaughterhouse": {
+      "yShift": 0,
+      "herleitung": "Nie gemessen — und braucht es nicht mehr: 0 = stumpfes Seitenviertel, der Standardfall. Steht damit erstmals mit einem brauchbaren Ausschnitt da (vorher cardGrid null = ganze Seite). Wenn die obere Zeile dort ein Kopfband hat, zeigt sich das als Anschnitt unten an der oberen Karte; dann yShift nachziehen, EINE Zahl."
+    }
+  },
+  "legacy": {
+    "_note": "Der Stand bis S83c — sechs Zahlen pro Deck. Nur noch aktiv mit modus 'raster' (Rückweg) oder cardReg.setCropModus('raster') zur Laufzeit. Fundorte und Abnahmen stehen im Changelog zu S61/S62/S83.",
+    "forget_utopia":    { "cardGrid": { "x": 0.050, "y": 0.037, "w": 0.899, "h": 0.947, "gapX": 0.135, "gapY": 0.010 }, "zellePt": [284.6, 194.7], "verhaeltnis": 1.462 },
+    "ignore_dystopia":  { "cardGrid": { "x": 0.060, "y": 0.117, "w": 0.879, "h": 0.823, "gapX": 0.090, "gapY": 0.010 }, "zellePt": [294.0, 168.9], "verhaeltnis": 1.740 },
+    "embrace_protopia": { "cardGrid": { "x": 0.048, "y": 0.093, "w": 0.903, "h": 0.822, "gapX": 0.022, "gapY": 0.020 }, "zellePt": [328.2, 166.7], "verhaeltnis": 1.969 },
+    "epistemic_sabotage": { "cardGrid": { "x": 0.088, "y": 0.155, "w": 0.827, "h": 0.800, "gapX": 0.065, "gapY": 0.055 }, "zellePt": [283.9, 154.8], "verhaeltnis": 1.834, "status": "geschätzt" },
+    "sonic_slaughterhouse": { "cardGrid": null, "status": "nicht gemessen" }
+  },
+  "_offen": "Das Sollformat bleibt CARD_AR = 1,74 (cardbuilder/kfb-card-format.js, Anker: gemessene Zelle von ignore_dystopia). Das Seitenviertel ist 1,79 — der Ausschnitt wird also um 2,9 % in der Höhe aufgezogen, bevor er aufs Blatt kommt (S83-Pfad, unverändert, kein Verlust). Wenn das Viertel bleibt, ist 1,79 das ehrlichere Sollformat — es IST das Seitenviertel, und genau diese Zahl stand vor S62 im Builder. Das ist Georgs Entscheidung, nicht meine: sie hängt an der physischen Kartengröße und zieht Tuschekontur und Himmelskarten mit."
+}
