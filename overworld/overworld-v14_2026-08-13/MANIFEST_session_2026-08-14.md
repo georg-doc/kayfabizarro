@@ -14,6 +14,7 @@ Schweres eingebettet; Props laden zur Laufzeit per RAW über `asset-repo.json`.
 |---|---|---|
 | `KFB Overworld v14.dc.html` | eine Skriptzeile: `input-truth.js` zuletzt geladen | AKTIV |
 | `overworld-v14/hud-v7.js` | **C1** · Hintergrund-Schließer in `mkWin()` entfernt (X + Esc bleiben) | geändert |
+| `overworld-v14/card-rail-v9b.js` | **C2a** · `const ACCT_ZEILE = false` deklariert — benutzt in Zeile 2134, nie definiert; brach den Rail-Einbau ab | geändert |
 | `overworld-v14/input-truth.js` | **neu** · Meßgerät für Eingabe-Herkunft, Umschalt+I, ändert kein Verhalten | AKTIV (Werkzeug) |
 | `export/overworld-v14_2026-08-13/KFB-Overworld-v14-standalone.html` | **neu** · 846 kB, eine Datei, für GitHub und den Firefox-Test | AKTIV |
 
@@ -54,6 +55,14 @@ Keine Löschung ohne ausdrückliche Freigabe, jeder Schritt einzeln.
 `hud-v7.js` · `card-rail-v9b.js` · `ui-kit-ts.js` · `win-owner.js` · `game-feel.js` · `bench.js`.
 
 ## Pfad-Hygiene
+
+**C2a — der Fehler, den nur der Export zeigt.** `ACCT_ZEILE` war in `card-rail-v9b.js:2134` als
+Bedingung im Einsatz und im CSS-Kommentar erwähnt, aber **nirgends deklariert**. Die Chat-Vorschau
+hat die Ausnahme still verschluckt, der Standalone-Export meldet sie (`ReferenceError`) — und mit ihr
+brach der komplette Rail-Einbau ab. Der Defekt war die ganze Zeit da. Gegengeprüft im geladenen
+Export: `.r9stat` vorhanden, `.v7-win` 6, `.acct` **0** (die POP-account-Zeile bleibt weg, §4j),
+32 Mobs. **Merksatz für die Clean-Run-Liste: der Standalone-Export ist die strengere Prüfung, nicht
+die bequemere Kopie — er läuft ohne die Fehlertoleranz der Vorschau.**
 
 Geprüft: kein neuer relativer Asset-Pfad in dieser Sitzung. `input-truth.js` lädt nichts, zeichnet
 nichts, holt nichts — es hat keine Assets. Der bekannte Rand bleibt notiert: Props laufen über

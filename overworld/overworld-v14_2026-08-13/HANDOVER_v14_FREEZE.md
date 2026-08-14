@@ -66,6 +66,23 @@ Zwei Gründe, beide im Code als Kommentar hinterlassen:
 **Bewußt nicht angefaßt** (dort ist Wegklicken beabsichtigt, Entscheidung offen):
 `bubble-ts.js:570` (Sprechblase) · `reveal-2d.js:137` (Aufdeck-Overlay).
 
+### C2a · `ACCT_ZEILE` — ein Defekt, den nur der Export sichtbar macht
+
+Georgs Befund am fertigen Standalone: `Uncaught ReferenceError: ACCT_ZEILE is not defined`.
+
+`card-rail-v9b.js:2134` prüfte `if (ACCT_ZEILE)`, der CSS-Kommentar in Zeile 993 erwähnte den
+Schalter — **deklariert war er nie.** Die Chat-Vorschau hat die Ausnahme still verschluckt; der
+Export meldet sie, und mit ihr brach der **komplette Rail-Einbau** ab. Der Defekt war die ganze Zeit
+da und wäre in jeder ausgelieferten Fassung aufgetreten.
+
+Behoben an der Wurzel: `const ACCT_ZEILE = false;` am Modulkopf, mit Begründung — `false`, weil die
+POP-account-Zeile im ausgefahrenen Blatt laut Abnahme (§4j) wegbleibt. Gegengeprüft im geladenen
+Export: `.r9stat` da, `.v7-win` 6, `.acct` **0**, 32 Mobs.
+
+**Regel daraus:** der Standalone-Export ist die **strengere** Prüfung, nicht die bequemere Kopie —
+er läuft ohne die Fehlertoleranz der Vorschau. Jeder Stand, der nach GitHub geht, wird einmal als
+Standalone geöffnet und die Konsole gelesen. Das gehört in die Clean-Run-Liste.
+
 ### C2 · Messung
 
 Chrome-Grundlinie steht in `MESSUNG_v14_2026-08-14.md`. Zwei Sätze daraus:
