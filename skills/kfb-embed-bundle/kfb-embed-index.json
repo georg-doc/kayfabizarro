@@ -1,0 +1,137 @@
+{
+  "schema": "kfb-embed-index/v1",
+  "version": "v1",
+  "updated": "2026-08-14",
+  "count": 11,
+  "rules": [
+    "Module via jsdelivr (cdn.jsdelivr.net/gh/...), NIE raw (raw=text/plain → Modul verweigert).",
+    "Bytes (json/glb/png) via pages.dev oder raw. Listen via GitHub-Tree-API (cachen, 60/h).",
+    "Verifizieren per FÄHIGKEIT, nicht per Version im Dateinamen (z.B. drawInk.length>=8).",
+    "F7b: HTTP 200 ≠ JavaScript — Cloudflares Fallback liefert text/html; nach Deploy Import-Pfad öffnen, echtes JS erwarten.",
+    "three GENAU 0.160, ein Build. crossOrigin='anonymous' an Canvas-Bildern. scale=1 für Pixel-Sprites.",
+    "Keine zweite Wahrheit: lokale Kopie = Cache/Fallback, kanonische URL gewinnt, darf sie nicht überleben."
+  ],
+  "capabilities": [
+    {
+      "id": "ink-outline",
+      "name": "KFB Ink Outline (Kanon K5)",
+      "gives": "die KFB-Tuschekante für Karten UND Interfaces (BAND-Familie, §10 Licht, ein Strich, taper)",
+      "canonicalUrl": "https://kayfabizarro.pages.dev/skills/kfb-ink-canon.js",
+      "urlKind": "module (pages.dev)",
+      "capabilityTest": "typeof drawInk==='function' && drawInk.length>=8",
+      "fullDoc": "EMBED_KFB_CardBuilder_Ink_FULL.md · 03_INK_OUTLINE_KANON_v2.md (Baukasten)",
+      "home": "on-github (Modul) · doc lokal",
+      "notes": "mods (bend/torn) als spätere benannte Styles. Nie 'bent'/'torn' raten."
+    },
+    {
+      "id": "cardbuilder",
+      "name": "CardBuilder + Card-Format",
+      "gives": "eine ganze KFB-Karte: Registry→PDF→Crop→Blatt→Ink→Decal→THREE.Group; CARD_AR=1.74",
+      "canonicalUrl": "cdn.jsdelivr.net/gh/georg-doc/kayfabizarro@main/media/… (kfb-card-builder.js, kfb-card-format.js)",
+      "urlKind": "module (jsdelivr)",
+      "capabilityTest": "CARD_AR===1.74 && typeof buildCard==='function'",
+      "fullDoc": "EMBED_KFB_CardBuilder_Ink_FULL.md",
+      "home": "doc lokal (push-Kandidat)",
+      "notes": "Text-zuerst, ein PDF-Render zur Zeit, RAW/pages.dev-first→lokaler Fallback→Textkarte."
+    },
+    {
+      "id": "cube-pet",
+      "name": "Cube-Pet (Rig)",
+      "gives": "fertiger KFB-Cube-Pet: Kugelaugen, Lider, Mienenspiel, Viseme-Mund, Bewegung, Sprechblase, Puppet-Drive",
+      "canonicalUrl": "cdn.jsdelivr.net/gh/georg-doc/kayfabizarro@main/media/3D_Assets/kfb-pets.js",
+      "urlKind": "module (jsdelivr) · Vertrag kfb-pets.json via fetch",
+      "capabilityTest": "typeof makePet==='function' && typeof loadPets==='function'",
+      "fullDoc": "EMBED_CUBE_PET_FULL_v2.2.md",
+      "home": "on-github (skills/)",
+      "notes": "three GENAU 0.160, ein Build. Nie mods:['googly'] an Cube-Pet."
+    },
+    {
+      "id": "cartoon-motion",
+      "name": "Cartoon Motion (Grammatik)",
+      "gives": "Bewegungs-Juice: Volumen 1/√Sy, Kaskade Augen→Körper, Anticipation, Bézier/SLERP, Feder-Dämpfer",
+      "canonicalUrl": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/refs/heads/main/skills/cartoon-motion_v1.md",
+      "urlKind": "doc (raw ok — lesen, kein Import)",
+      "capabilityTest": "—",
+      "fullDoc": "cartoon-motion_v1.md",
+      "home": "on-github (skills/)",
+      "notes": "Design-Canvas lädt keine Skills → Formeln explizit mitgeben."
+    },
+    {
+      "id": "cartoon-deformer",
+      "name": "Cartoon Deformer",
+      "gives": "Voxel-/Karten-Deformer (Squash/Bend an Geometrie)",
+      "canonicalUrl": "TBD — lokal: KFB Voxel + Assets Worldbuilding + Cartoon Deformer + Zone Registry v3",
+      "urlKind": "module (local)",
+      "capabilityTest": "—",
+      "fullDoc": "(im Ordner v3)",
+      "home": "lokal (push-Kandidat)",
+      "notes": "Modul-Name + kanonische URL beim Push festlegen."
+    },
+    {
+      "id": "asset-repo",
+      "name": "Asset-Repo 2D/3D",
+      "gives": "alle Assets: TreasureHunters, Pirate_Bomb, Tiny Swords, GLB-Pet-Kits, Texturen",
+      "canonicalUrl": "https://github.com/georg-doc/kayfabizarro/tree/main/media",
+      "urlKind": "data (Tree-API = Wahrheit)",
+      "capabilityTest": "Tree-API listet den Ordner (kein gebackener Katalog)",
+      "fullDoc": "01_ASSETS_UND_URLS.md (Baukasten) · A1_INDEX_tiny-swords-assets.md",
+      "home": "on-github",
+      "notes": "Bytes via pages.dev/raw · Endung einzeln verifizieren · crossOrigin='anonymous'."
+    },
+    {
+      "id": "audio-sfx",
+      "name": "Audio / SFX + Jukebox",
+      "gives": "Sound: Welt/Voice-Manifest getrennt vom UI-Manifest; Jukebox-Komponente",
+      "canonicalUrl": "sfx.json (audio-2d.js, Welt/Voice) · ui-sfx.json (hud-v7.js, UI)",
+      "urlKind": "data (zwei Manifeste, by design)",
+      "capabilityTest": "zwei getrennte Manifeste — nie zusammenlegen",
+      "fullDoc": "(KFB UI embed v1.md · WS0_coworker/sfx.json)",
+      "home": "ui-sfx.json on-github · sfx.json Kanon · Jukebox lokal",
+      "notes": "Sounds per URL laden, 2-MB-Budget, nie einbetten."
+    },
+    {
+      "id": "tiny-swords",
+      "name": "Tiny Swords Baukasten (UI + Tiles)",
+      "gives": "UI-Baukasten (9/3-Slice, Bars) + Sprite/Tile-Laden; misst Blätter selbst; 29 Fallen",
+      "canonicalUrl": "lokal: KFB Baukasten v1/onboarding-tinyswords_2026-08-14",
+      "urlKind": "bundle (local)",
+      "capabilityTest": "ui-kit misst Slices per Alpha-Scan (rastet auf 64)",
+      "fullDoc": "02_UI_BAUKASTEN_TS.md · 06_FALLEN (29) · ui-kit-ts.js · asset-source.js · ui-slices.json",
+      "home": "lokal (push-Kandidat)",
+      "notes": "scale=1 (Originalgröße), nie Vorschaubild dehnen, ein UI-Set nicht mischen."
+    },
+    {
+      "id": "narrator-voice",
+      "name": "Narrator / Voice / Chatter",
+      "gives": "Erzähler-Stimmen + Chatter: FrizzleBob-Masken, NIE-Werkzeuge, Prompt-Stufen",
+      "canonicalUrl": "narrator-prompts.js · frizzlebob-voice.js + Doc",
+      "urlKind": "module + doc",
+      "capabilityTest": "—",
+      "fullDoc": "KFB_ChatGPT_VoiceEngine_NIE+FrizzleBob.md · frizzlebob-kayfabizarro (skill)",
+      "home": "teils on-github (skill)",
+      "notes": "Stilfilter über Substanz — kein Erklärbär; Konflikt invariant."
+    },
+    {
+      "id": "sprechblasen",
+      "name": "Sprechblasen-System",
+      "gives": "Blasen-Grammatik (Luftballon-an-Schnur): KFB-Ink, keine runden Ecken, getaperter Pfeil, Trägheit",
+      "canonicalUrl": "lokal: HANDOVER_Sprechblasen-System_ausPetStudioV4",
+      "urlKind": "doc (local)",
+      "capabilityTest": "—",
+      "fullDoc": "HANDOVER_Sprechblasen-System_ausPetStudioV4_fuerWS1.md",
+      "home": "lokal (push-Kandidat)",
+      "notes": "DOM/SVG-Overlay, eigener Ink, nicht Card-Feather."
+    },
+    {
+      "id": "session-skills",
+      "name": "Session-Skills (Housekeeping/Cut/Vault)",
+      "gives": "Übergaben + schlanker Export + Dossiers",
+      "canonicalUrl": "https://github.com/georg-doc/kayfabizarro/tree/main/skills",
+      "urlKind": "skills",
+      "capabilityTest": "—",
+      "fullDoc": "session-export_v1.md · session-cut · vault",
+      "home": "on-github (skills/)",
+      "notes": "kein Gesamt-Zip; Manifest+Veto; Status-Vokabular; 2-MB-Budget."
+    }
+  ]
+}
