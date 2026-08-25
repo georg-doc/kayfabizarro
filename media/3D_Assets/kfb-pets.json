@@ -1,6 +1,6 @@
 {
   "$schema": "kfb.pets/1",
-  "version": "1.2.7",
+  "version": "1.2.8",
   "canonical": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kfb-pets.json",
   "updated": "2026-08-25",
   "note": "WIEDERHERSTELLUNG 25.8. (WS1): 1.2.6 trug drei Pets ohne ihren Mund-Block (pig/beaver/bee 40->14 bzw. 37->14 Blattfelder) und drei mit zurueckgesetzter Augen-Ankerlage (penguin/monkey/hog), bei HOEHERER Versionsnummer. Ursache: der Contract-Export des Studios v4 baut aus this.contract + nur BERUEHRTEN Pets - wer in dieser Sitzung nicht angefasst wurde, fiel heraus. 1.2.7 = 1.2.6 mit Georgs 1.2.5 darueber gemischt, Felder werden nie entfernt. voice.speech.category zurueck auf null (1.2.6 hatte dort \"deadpan\" - ein Pet-Archetyp im GLOBALEN Block). | EINE Datei fuer Aussehen, Bewegung, Stimme und Einbau. Wird PER URL geholt (Feld canonical). Ladereihenfolge in jeder Zone: canonical -> lokale Kopie -> vollstaendiger Inline-Fallback. Lokale Kopien sind Spiegel, nie Quellen. | 1.2.2 WS0: Default-Bunny mouth.set zurueck auf male (female war Test-Rest); female reversibel in _female.",
@@ -309,7 +309,23 @@
         "perPet": {}
       },
       "facet": false
-    }
+    },
+    "note": "Kenneys Gesicht ist GEOMETRIE im body-Mesh, keine Textur. Die colormap ist ein reiner Palette-Atlas aus Farbstreifen, sie enthaelt kein gemaltes Gesicht. hideEyes im Editor v4 warf nur die Textur weg, die Schalen blieben stehen und zeigten sich weiter ueber die Schattierung. Vermessen von Cowork am 2026-07-16.",
+    "stripEyes": true,
+    "eyeShell": {
+      "rule": "Im body-Mesh: getrennte Schalen (connected components). Genommen wird das Paar mit zPlane, minTris und gespiegelten X-Bereichen. Ergibt bei allen 24 Pets exakt 2 Schalen.",
+      "zPlane": 0.635,
+      "zTolerance": 0.002,
+      "minTris": 25,
+      "symmetricPair": true,
+      "verified": "24 von 24 Pets, 2026-07-16, Dreiecke je Auge 25 bis 57",
+      "doNotMatch": "Nasenloecher von cow, hog, pig liegen bei Z=0.835 mit je 2 Dreiecken. Mittige Schalen (Mund, Nase) spannen X ueber Null und sind kein Paar. Beide fallen durch minTris bzw. symmetricPair."
+    },
+    "stripSnout": {
+      "note": "KEINE Regel moeglich. Dieselbe Suche, die den Mund des bunny findet, findet die Maehne des lion (124 Dreiecke), den Schnabel von chick und penguin (32), den Ruessel des elephant (38), die Schnauze von dog (46), hog und koala (44). cow, crab und pig haben gar keine mittige Front-Schale. Deshalb: pro Pet von Hand, Liste leer = nichts wird geloescht.",
+      "perPet": {}
+    },
+    "facet": false
   },
   "actor": {
     "_reiter": "Actor",
@@ -620,6 +636,119 @@
           "sx": 1.54,
           "dx": -0.04
         }
+      },
+      "body": {
+        "cubeH": 0.7475,
+        "radius": 0.287,
+        "totalH": 0.8207,
+        "facePitch": 0,
+        "faceDir": [
+          0.0014,
+          0,
+          1
+        ],
+        "measured": {
+          "by": "KFB Pet Studio v5 · met-v1.0",
+          "at": "2026-08-25",
+          "bodyMesh": "body",
+          "byName": true,
+          "span": 0.5739,
+          "spanWarn": 0.768
+        }
+      }
+    },
+    {
+      "id": "penguin",
+      "name": "The Penguin",
+      "glb": "animal-penguin.glb",
+      "archetype": "deadpan",
+      "narratorPromptRef": "penguin_deadpan.md",
+      "eye": {
+        "anchor": {
+          "dx": 0.36,
+          "dy": 0.11,
+          "ring": 0.245,
+          "track": 0.1
+        },
+        "lids": {
+          "upper": true,
+          "lower": true
+        },
+        "pupil": {
+          "form": "googly",
+          "gloss": 0.1,
+          "_war": "matte-cute"
+        },
+        "lashes": {
+          "length": 0.58,
+          "density": 6,
+          "width": 1.75
+        },
+        "pupilSize": 0.52
+      },
+      "defaultEmote": "neutral",
+      "skin": "default",
+      "tuning": {
+        "claySurface": 0.6,
+        "jitter": 0.5
+      },
+      "mouth": {
+        "size": 0.78,
+        "dy": -0.64,
+        "sx": 1.1,
+        "dx": 0,
+        "tilt": 0,
+        "rot": 0,
+        "bend": 0,
+        "set": "red",
+        "lift": 0.04,
+        "wrap": 1,
+        "onTop": false,
+        "visemeMap": {
+          "closed": "m",
+          "open": "ah",
+          "wide": "ee",
+          "round": "oh",
+          "smile": "smile"
+        },
+        "src": "FrizzelBob-Mouth_01 (GitHub raw)",
+        "_male": {
+          "size": 0.44,
+          "dy": -0.52,
+          "sx": 1,
+          "dx": 0
+        },
+        "_red": {
+          "size": 0.74,
+          "dy": -0.64,
+          "sx": 1,
+          "dx": 0
+        },
+        "_female": {
+          "size": 0.62,
+          "dy": -0.66,
+          "sx": 1.1,
+          "dx": 0
+        }
+      },
+      "body": {
+        "cubeH": 0.5371,
+        "radius": 0.41,
+        "totalH": 0.5986,
+        "facePitch": 0,
+        "faceDir": [
+          0,
+          0,
+          1
+        ],
+        "measured": {
+          "by": "KFB Pet Studio v5 · met-v1.0",
+          "at": "2026-08-25",
+          "bodyMesh": "body",
+          "byName": true,
+          "span": 0.82,
+          "spanWarn": 1.527
+        }
       }
     },
     {
@@ -680,81 +809,6 @@
       "tuning": {
         "claySurface": 0.6,
         "jitter": 0.5
-      }
-    },
-    {
-      "id": "penguin",
-      "name": "The Penguin",
-      "glb": "animal-penguin.glb",
-      "archetype": "deadpan",
-      "narratorPromptRef": "penguin_deadpan.md",
-      "eye": {
-        "anchor": {
-          "dx": 0.36,
-          "dy": 0.11,
-          "ring": 0.3,
-          "track": 0.1
-        },
-        "lids": {
-          "upper": true,
-          "lower": true
-        },
-        "pupil": {
-          "form": "googly",
-          "gloss": 0.1,
-          "_war": "matte-cute"
-        },
-        "lashes": {
-          "length": 0.58,
-          "density": 6,
-          "width": 1.75
-        },
-        "pupilSize": 0.52
-      },
-      "defaultEmote": "neutral",
-      "skin": "default",
-      "tuning": {
-        "claySurface": 0.6,
-        "jitter": 0.5
-      },
-      "mouth": {
-        "size": 0.8,
-        "dy": -0.64,
-        "sx": 1,
-        "dx": 0,
-        "tilt": 0,
-        "rot": 0,
-        "bend": 0,
-        "set": "red",
-        "lift": 0.04,
-        "wrap": 1,
-        "onTop": false,
-        "visemeMap": {
-          "closed": "m",
-          "open": "ah",
-          "wide": "ee",
-          "round": "oh",
-          "smile": "smile"
-        },
-        "src": "FrizzelBob-Mouth_01 (GitHub raw)",
-        "_male": {
-          "size": 0.44,
-          "dy": -0.52,
-          "sx": 1,
-          "dx": 0
-        },
-        "_red": {
-          "size": 0.74,
-          "dy": -0.64,
-          "sx": 1,
-          "dx": 0
-        },
-        "_female": {
-          "size": 0.62,
-          "dy": -0.66,
-          "sx": 1.1,
-          "dx": 0
-        }
       }
     },
     {
@@ -1374,5 +1428,212 @@
       "Takt: 104 BPM, ein Takt = 4 Schlaege = 2.3077 s, omega = 2.72 rad/s (Radiant pro Sekunde, nicht Hertz)."
     ],
     "roundtrip": "laden -> ohne Aenderung exportieren -> Diff muss leer sein. version zaehlt bei jedem Export hoch."
+  },
+  "eyeRig": {
+    "anchorDefault": {
+      "dx": 0.345,
+      "dy": -0.1,
+      "ring": 0.3,
+      "track": 0.1
+    },
+    "pupilSize": 0.4,
+    "inset": 0,
+    "lidFit": 0.9,
+    "converge": 0,
+    "lids": {
+      "upper": true,
+      "lower": true
+    },
+    "eyelidColor": "base-darkened",
+    "pupilStyles": [
+      "matte-cute",
+      "glossy-googly"
+    ],
+    "gloss": {
+      "matte-cute": 0.1,
+      "glossy-googly": 0.85
+    },
+    "fx": [
+      "none",
+      "spiral",
+      "heart"
+    ],
+    "blink": {
+      "minGap": 2.5,
+      "maxGap": 6.5,
+      "dur": 0.12
+    },
+    "recolorDefault": "#f2c93c",
+    "note": "KORR v2 (Feedback FEEDBACK_v1_to_v2.md): glossy-googly = GROESSERE + GLAENZENDE Pupillen (NICHT herausstehende Kugeln ueber den Lidern!) via pupilSize + gloss, gleiche Geometrie. pupilSize = Default-Pupillengroesse (Slider). inset = Augen tiefer in den Koerper (Slider). lidFit = wie eng die Lider die Eyeballs umschliessen (kleiner Sicherheitsabstand ok; Pupille MUSS innerhalb bleiben = KEIN Clipping). eyelidColor = abgedunkelte Base-Color des Pets. track = Pupillen-Blickwanderung (in v1 unklar/unsichtbar -> klar labeln oder streichen)."
+  },
+  "mouth": {
+    "src": "FrizzelBob-Mouth_01 (GitHub raw)"
+  },
+  "material": {
+    "default": "clay",
+    "presets": {
+      "clay": {
+        "base": "tint",
+        "detail": "fingerprint",
+        "projection": "triplanar",
+        "detailStrength": 0.2,
+        "roughness": 0.85,
+        "ao": true,
+        "jitter": true
+      },
+      "felt": {
+        "base": "tint",
+        "detail": "fabric-worn",
+        "projection": "triplanar",
+        "detailStrength": 0.3,
+        "roughness": 0.95,
+        "ao": true,
+        "jitter": true
+      },
+      "cel": {
+        "base": "tint",
+        "shading": "toon-bands"
+      },
+      "kenney": {
+        "base": "glb-embedded"
+      }
+    },
+    "detailMaps": {
+      "fingerprint": {
+        "default": "fp002",
+        "base": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/Textures/fingerprints_01/",
+        "use": "NormalGL als Bump (+ optional Roughness). Triplanar/Box, detailStrength ~0.1-0.2, Tiling 1-2x.",
+        "options": {
+          "fp002": {
+            "normal": "Fingerprints002_1K-JPG_NormalGL.jpg",
+            "roughness": "Fingerprints002_1K-JPG_Roughness.jpg",
+            "note": "dicht/gleichmaessig geknetet - bester Clay-Default"
+          },
+          "fp009": {
+            "normal": "Fingerprints009_1K-JPG_NormalGL.jpg",
+            "roughness": "Fingerprints009_1K-JPG_Roughness.jpg",
+            "note": "klare Ridges, verstreut - Alternative, weniger tilen"
+          },
+          "fp005": {
+            "normal": "Fingerprints005_1K-JPG_NormalGL.jpg",
+            "roughness": "Fingerprints005_1K-JPG_Roughness.jpg",
+            "note": "sehr subtil/kratzig - eher Worn/Grime-Overlay"
+          }
+        },
+        "status": "Ordner hochgeladen als Textures/fingerprints_01/ (2026-07-14). Dateinamen = die gestagten (Fingerprints0NN_1K-JPG_NormalGL/Roughness.jpg). Hard-Verify via GitHub-UI/Chrome noch offen (web_fetch kann JPG nicht sicher pruefen); falls Files beim Upload umbenannt wurden, hier anpassen."
+      },
+      "fabric-worn": "TBD"
+    },
+    "outline": {
+      "mode": "v6-inverted-hull",
+      "default": false,
+      "note": "3D-Outline aus KFB Table v6 (_shaderHull: Abwaerts-Extrusion + Kontakt-Band-Licht-Logik fuer Dicke) als TOGGLE ueber ALLE Presets. Default aus (Master §4, Claymation ohne Outline)."
+    },
+    "note": "EINE greyscale Detail-Kombo, per Triplanar/Box auf alle 24 Pets, getoent via pet.color, global tauschbar. clay = Default (Aardman-Fingerprint), felt = Preset.",
+    "live": {
+      "texture": "Paper004",
+      "mod": "none",
+      "surf": {
+        "texScale": 0.3,
+        "tint": 1,
+        "relief": 1.2,
+        "knet": 0,
+        "ao": 0.14,
+        "rough": 0.9,
+        "freq": 11,
+        "modScale": 2,
+        "modAmt": 0.55,
+        "paper": 0.32
+      },
+      "kenneyBase": false,
+      "paperGold": true,
+      "tintMode": "lum",
+      "facet": false
+    }
+  },
+  "meta": {
+    "contract": "1.3.0",
+    "updated": "2026-08-25",
+    "source": "KFB Pet Studio v5",
+    "label": "full",
+    "count": 24,
+    "ids": [
+      "bunny",
+      "penguin",
+      "fox",
+      "cat",
+      "panda",
+      "koala",
+      "tiger",
+      "lion",
+      "deer",
+      "monkey",
+      "pig",
+      "hog",
+      "cow",
+      "polar",
+      "beaver",
+      "giraffe",
+      "chick",
+      "fish",
+      "parrot",
+      "bee",
+      "crab",
+      "caterpillar",
+      "elephant",
+      "dog"
+    ],
+    "petVersions": {
+      "bunny": 2,
+      "penguin": 2,
+      "fox": 1,
+      "cat": 1,
+      "panda": 1,
+      "koala": 1,
+      "tiger": 1,
+      "lion": 1,
+      "deer": 1,
+      "monkey": 1,
+      "pig": 1,
+      "hog": 1,
+      "cow": 1,
+      "polar": 1,
+      "beaver": 1,
+      "giraffe": 1,
+      "chick": 1,
+      "fish": 1,
+      "parrot": 1,
+      "bee": 1,
+      "crab": 1,
+      "caterpillar": 1,
+      "elephant": 1,
+      "dog": 1
+    },
+    "leafCounts": {
+      "bunny": 49,
+      "penguin": 64,
+      "fox": 18,
+      "cat": 18,
+      "panda": 18,
+      "koala": 18,
+      "tiger": 18,
+      "lion": 14,
+      "deer": 14,
+      "monkey": 14,
+      "pig": 40,
+      "hog": 14,
+      "cow": 14,
+      "polar": 14,
+      "beaver": 40,
+      "giraffe": 14,
+      "chick": 14,
+      "fish": 14,
+      "parrot": 14,
+      "bee": 37,
+      "crab": 14,
+      "caterpillar": 14,
+      "elephant": 14,
+      "dog": 14
+    }
   }
 }
