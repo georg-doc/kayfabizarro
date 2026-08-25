@@ -1,9 +1,9 @@
 {
   "$schema": "kfb.pets/1",
-  "version": "1.2.4",
+  "version": "1.2.7",
   "canonical": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kfb-pets.json",
-  "updated": "2026-07-22",
-  "note": "EINE Datei fuer Aussehen, Bewegung, Stimme und Einbau. Wird PER URL geholt (Feld canonical). Ladereihenfolge in jeder Zone: canonical -> lokale Kopie -> vollstaendiger Inline-Fallback. Lokale Kopien sind Spiegel, nie Quellen. | 1.2.2 WS0: Default-Bunny mouth.set zurueck auf male (female war Test-Rest); female reversibel in _female.",
+  "updated": "2026-08-25",
+  "note": "WIEDERHERSTELLUNG 25.8. (WS1): 1.2.6 trug drei Pets ohne ihren Mund-Block (pig/beaver/bee 40->14 bzw. 37->14 Blattfelder) und drei mit zurueckgesetzter Augen-Ankerlage (penguin/monkey/hog), bei HOEHERER Versionsnummer. Ursache: der Contract-Export des Studios v4 baut aus this.contract + nur BERUEHRTEN Pets - wer in dieser Sitzung nicht angefasst wurde, fiel heraus. 1.2.7 = 1.2.6 mit Georgs 1.2.5 darueber gemischt, Felder werden nie entfernt. voice.speech.category zurueck auf null (1.2.6 hatte dort \"deadpan\" - ein Pet-Archetyp im GLOBALEN Block). | EINE Datei fuer Aussehen, Bewegung, Stimme und Einbau. Wird PER URL geholt (Feld canonical). Ladereihenfolge in jeder Zone: canonical -> lokale Kopie -> vollstaendiger Inline-Fallback. Lokale Kopien sind Spiegel, nie Quellen. | 1.2.2 WS0: Default-Bunny mouth.set zurueck auf male (female war Test-Rest); female reversibel in _female.",
   "sources": {
     "pet-LIBRARY.json": "0.4.3",
     "motion-LIBRARY.v2.json": "2.0.0",
@@ -690,8 +690,8 @@
       "narratorPromptRef": "penguin_deadpan.md",
       "eye": {
         "anchor": {
-          "dx": 0.345,
-          "dy": 0.06,
+          "dx": 0.36,
+          "dy": 0.11,
           "ring": 0.3,
           "track": 0.1
         },
@@ -703,13 +703,58 @@
           "form": "googly",
           "gloss": 0.1,
           "_war": "matte-cute"
-        }
+        },
+        "lashes": {
+          "length": 0.58,
+          "density": 6,
+          "width": 1.75
+        },
+        "pupilSize": 0.52
       },
       "defaultEmote": "neutral",
       "skin": "default",
       "tuning": {
         "claySurface": 0.6,
         "jitter": 0.5
+      },
+      "mouth": {
+        "size": 0.8,
+        "dy": -0.64,
+        "sx": 1,
+        "dx": 0,
+        "tilt": 0,
+        "rot": 0,
+        "bend": 0,
+        "set": "red",
+        "lift": 0.04,
+        "wrap": 1,
+        "onTop": false,
+        "visemeMap": {
+          "closed": "m",
+          "open": "ah",
+          "wide": "ee",
+          "round": "oh",
+          "smile": "smile"
+        },
+        "src": "FrizzelBob-Mouth_01 (GitHub raw)",
+        "_male": {
+          "size": 0.44,
+          "dy": -0.52,
+          "sx": 1,
+          "dx": 0
+        },
+        "_red": {
+          "size": 0.74,
+          "dy": -0.64,
+          "sx": 1,
+          "dx": 0
+        },
+        "_female": {
+          "size": 0.62,
+          "dy": -0.66,
+          "sx": 1.1,
+          "dx": 0
+        }
       }
     },
     {
@@ -857,7 +902,7 @@
       "eye": {
         "anchor": {
           "dx": 0.345,
-          "dy": -0.1,
+          "dy": 0.03,
           "ring": 0.3,
           "track": 0.1
         },
@@ -880,9 +925,9 @@
       "glb": "animal-pig.glb",
       "eye": {
         "anchor": {
-          "dx": 0.345,
-          "dy": -0.1,
-          "ring": 0.3,
+          "dx": 0.415,
+          "dy": 0.11,
+          "ring": 0.235,
           "track": 0.1
         },
         "lids": {
@@ -893,10 +938,44 @@
           "form": "googly",
           "gloss": 0.1,
           "_war": "matte-cute"
+        },
+        "pupilStyle": "glossy-googly",
+        "pupilSize": 0.51,
+        "lashes": {
+          "length": 0.44,
+          "density": 6,
+          "width": 3
         }
       },
       "defaultEmote": "neutral",
-      "skin": "default"
+      "skin": "default",
+      "mouth": {
+        "size": 0.65,
+        "dy": -0.56,
+        "sx": 1,
+        "dx": 0,
+        "tilt": 0,
+        "rot": 0,
+        "bend": 0,
+        "set": "female",
+        "lift": 0.042,
+        "wrap": 1,
+        "onTop": false,
+        "visemeMap": {
+          "closed": "m",
+          "open": "ah",
+          "wide": "ee",
+          "round": "oh",
+          "smile": "smile"
+        },
+        "src": "FrizzelBob-Mouth_01 (GitHub raw)",
+        "_male": {
+          "size": 0.44,
+          "dy": -0.52,
+          "sx": 1,
+          "dx": 0
+        }
+      }
     },
     {
       "id": "hog",
@@ -904,8 +983,8 @@
       "glb": "animal-hog.glb",
       "eye": {
         "anchor": {
-          "dx": 0.345,
-          "dy": -0.1,
+          "dx": 0.4,
+          "dy": 0.265,
           "ring": 0.3,
           "track": 0.1
         },
@@ -976,9 +1055,9 @@
       "glb": "animal-beaver.glb",
       "eye": {
         "anchor": {
-          "dx": 0.345,
-          "dy": -0.1,
-          "ring": 0.3,
+          "dx": 0.445,
+          "dy": 0.225,
+          "ring": 0.25,
           "track": 0.1
         },
         "lids": {
@@ -989,10 +1068,44 @@
           "form": "googly",
           "gloss": 0.1,
           "_war": "matte-cute"
-        }
+        },
+        "pupilSize": 0.25
       },
       "defaultEmote": "neutral",
-      "skin": "default"
+      "skin": "default",
+      "mouth": {
+        "size": 0.57,
+        "dy": -0.7,
+        "sx": 1,
+        "dx": 0,
+        "tilt": 0,
+        "rot": 0,
+        "bend": 0,
+        "set": "male",
+        "lift": 0.03,
+        "wrap": 1,
+        "onTop": false,
+        "visemeMap": {
+          "closed": "m",
+          "open": "ah",
+          "wide": "ee",
+          "round": "oh",
+          "smile": "smile"
+        },
+        "src": "FrizzelBob-Mouth_01 (GitHub raw)",
+        "_male": {
+          "size": 0.44,
+          "dy": -0.52,
+          "sx": 1,
+          "dx": 0
+        },
+        "_female": {
+          "size": 0.4,
+          "dy": -0.73,
+          "sx": 1,
+          "dx": 0
+        }
+      }
     },
     {
       "id": "giraffe",
@@ -1097,7 +1210,7 @@
       "eye": {
         "anchor": {
           "dx": 0.345,
-          "dy": -0.1,
+          "dy": 0.045,
           "ring": 0.3,
           "track": 0.1
         },
@@ -1109,10 +1222,39 @@
           "form": "googly",
           "gloss": 0.1,
           "_war": "matte-cute"
-        }
+        },
+        "pupilSize": 0.32,
+        "pupilStyle": "glossy-googly"
       },
       "defaultEmote": "neutral",
-      "skin": "default"
+      "skin": "default",
+      "mouth": {
+        "size": 0.68,
+        "dy": -0.66,
+        "sx": 1,
+        "dx": 0,
+        "tilt": 0,
+        "rot": 0,
+        "bend": 0,
+        "set": "red",
+        "lift": 0.044,
+        "wrap": 1,
+        "onTop": false,
+        "visemeMap": {
+          "closed": "m",
+          "open": "ah",
+          "wide": "ee",
+          "round": "oh",
+          "smile": "smile"
+        },
+        "src": "FrizzelBob-Mouth_01 (GitHub raw)",
+        "_male": {
+          "size": 0.44,
+          "dy": -0.52,
+          "sx": 1,
+          "dx": 0
+        }
+      }
     },
     {
       "id": "crab",
