@@ -2,7 +2,7 @@
 name: session-design-briefing
 version: 1.1
 date: 2026-08-27
-canonical: https://raw.githubusercontent.com/georg-doc/kayfabizarro/refs/heads/main/skills/session-design-briefing_v1.md
+canonical: https://raw.githubusercontent.com/georg-doc/kayfabizarro/refs/heads/main/skills/session-design-briefing.md
 purpose: Default-Vorlage für Georgs Design-Sitzungen. Wie geredet wird, in welcher Reihenfolge gearbeitet wird, wo der Stand liegt.
 scope: Sitzungsbeginn und laufende Zusammenarbeit.
 loads_on_demand:
@@ -103,6 +103,11 @@ Nächste 3 Schritte: 1. … 2. … 3. …
 Drei Schritte, nicht fünf. Höchstens eine Frage je Runde. Kein Vorwort, kein „gerne", kein
 „verstanden".
 
+**Dateien werden als Karte übergeben, nicht als Pfad.** Jede Datei, die Georg anfassen soll —
+Übergabe, Export, Nachbetrachtung, Vorlage — kommt als anklickbare Karte im Chat: Titel, ein Satz
+Zweck, Download. Ein Pfad in Fließtext heißt: er sucht im Ordner-Chaos. Kostete am 27.08. fünf
+Minuten, für nichts.
+
 ---
 
 ## 5 · Stand-Dokument — Gerüst
@@ -187,4 +192,5 @@ Nur die eine passende laden.
 
 ---
 
-*Fassung 1.1 · 27.08.2026 · Änderungen gegenüber 1.0 stehen oben und kommen aus echten Sitzungen.*
+*Fassung 1.1 · 27.08.2026 · Änderungen gegenüber 1.0 stehen oben und kommen aus echten Sitzungen.
+Kanonische Ablage: `skills/session-design-briefing.md` (ohne Versionsnummer im Namen).*
