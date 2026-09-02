@@ -1,0 +1,1765 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Irish+Grover&family=Shantell+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+  <style>
+    html,body{margin:0;padding:0;height:100%;overflow:hidden}
+    body{background:#1c6c78;color:#4a3418;font-family:'Shantell Sans',system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+    a{color:#6b3f12;text-decoration:none}
+    a:hover{color:#4a2c0c}
+    ::selection{background:rgba(255,217,138,.35);color:#2a1c0c}
+    @keyframes nvBob{0%,100%{transform:translateY(0)}50%{transform:translateY(-4px)}}
+    @keyframes nvGlow{0%,100%{opacity:.55}50%{opacity:1}}
+    @keyframes nvIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+                *{scrollbar-width:thin;scrollbar-color:#8a6a3c rgba(90,66,30,.35)}
+    div::-webkit-scrollbar{width:12px;height:12px}
+    div::-webkit-scrollbar-track{background:rgba(90,66,30,.35);border:2px solid #241708;border-radius:0}
+    div::-webkit-scrollbar-thumb{background:linear-gradient(#c8a878,#9a7846);border:2px solid #241708;border-radius:0;box-shadow:inset 0 2px 0 rgba(255,255,255,.35),inset 0 -2px 0 rgba(0,0,0,.25)}
+    div::-webkit-scrollbar-thumb:hover{background:linear-gradient(#dcc094,#a8854e)}
+    div::-webkit-scrollbar-corner{background:transparent}
+    input[type=range]{-webkit-appearance:none;appearance:none;height:14px;background:linear-gradient(rgba(60,42,22,.9),rgba(92,68,38,.9));border:2px solid #241708;box-shadow:inset 0 2px 0 rgba(0,0,0,.4);outline:none;border-radius:0}
+    input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:16px;height:22px;background:linear-gradient(#e8c37a,#b8863c);border:2px solid #241708;border-radius:0;cursor:pointer;box-shadow:inset 0 2px 0 rgba(255,255,255,.4)}
+  </style>
+</helmet>
+<div ref="{{ stage }}" style="position:relative; height:100vh; overflow:hidden; background:#1c6c78; font-family:'Shantell Sans',system-ui,sans-serif; color:#4a3418;">
+
+  <canvas ref="{{ cv }}" style="position:absolute; inset:0; width:100%; height:100%; image-rendering:pixelated; cursor:grab;"></canvas>
+
+  <sc-if value="{{ loading }}" hint-placeholder-val="{{ true }}">
+    <div style="position:absolute; inset:0; display:grid; place-items:center; background:#14424a; z-index:20;">
+      <div style="text-align:center; padding:14px 22px; background:rgba(20,25,19,.88); border:1px solid rgba(240,226,196,.16); border-radius:6px; box-shadow:0 8px 22px rgba(0,0,0,.4); color:#f2ead8;">
+        <div style="font-size:17px;">Nexus Castle</div>
+        <div style="margin-top:4px; font-size:12px; color:#a9b09c;">{{ loadLabel }}</div>
+      </div>
+    </div>
+  </sc-if>
+
+  <div style="position:absolute; top:10px; left:10px; right:186px; display:flex; align-items:stretch; gap:7px; z-index:6; min-width:0;">
+    <div style="flex:none; padding:7px 13px 8px; background:rgba(20,25,19,.9); border:1px solid rgba(240,226,196,.18); border-radius:6px;">
+      <div style="font-weight:700; font-size:14px; line-height:1.15; letter-spacing:.2px; color:#f6efdc;">Nexus Castle</div>
+      <div style="font-size:11px; line-height:1.2; color:#a9b09c;">Your Living Knowledge World</div>
+    </div>
+    <div style="flex:0 1 auto; min-width:0; display:flex; align-items:center; padding:0 11px; background:rgba(20,25,19,.9); border:1px solid rgba(240,226,196,.18); border-radius:6px; font-size:11px; color:#a9b09c; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; font-variant-numeric:tabular-nums;">{{ statLine }}</div>
+    <sc-if value="{{ resShow }}" hint-placeholder-val="{{ false }}">
+      <div style="flex:none; display:flex; align-items:center; gap:12px; padding:0 12px; background:rgba(20,25,19,.9); border:1px solid rgba(240,226,196,.18); border-radius:6px; color:#f2ead8; font-size:12.5px; font-variant-numeric:tabular-nums; animation:nvIn .18s ease-out;">
+        <span title="raw artefacts" style="display:flex; align-items:center; gap:4px;"><img src="https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/2D_Assets/Tiny%20Swords%20(Free%20Pack)/UI%20Elements/UI%20Elements/Icons/Icon_02.png" alt="" style="width:32px; height:32px; display:block; image-rendering:pixelated;" />{{ resWood }}</span>
+        <span title="token budget" style="display:flex; align-items:center; gap:4px;"><img src="https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/2D_Assets/Tiny%20Swords%20(Free%20Pack)/UI%20Elements/UI%20Elements/Icons/Icon_03.png" alt="" style="width:32px; height:32px; display:block; image-rendering:pixelated;" />{{ resGold }}</span>
+        <span title="harvested sources" style="display:flex; align-items:center; gap:4px;"><img src="https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/2D_Assets/Tiny%20Swords%20(Free%20Pack)/UI%20Elements/UI%20Elements/Icons/Icon_04.png" alt="" style="width:32px; height:32px; display:block; image-rendering:pixelated;" />{{ resMeat }}</span>
+      </div>
+    </sc-if>
+  </div>
+
+  <sc-if value="{{ showUI }}" hint-placeholder-val="{{ true }}">
+  <div style="position:absolute; top:10px; right:10px; display:flex; gap:6px; z-index:7;">
+    <button onClick="{{ openLog }}" title="Artefact log" style="width:38px; height:38px; display:flex; align-items:center; justify-content:center; padding:0; border:1px solid rgba(240,226,196,.2); border-radius:6px; background:rgba(16,20,15,.86); cursor:pointer;" style-hover="background:rgba(240,226,196,.16); border-color:rgba(240,226,196,.44)"><img src="https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/2D_Assets/Tiny%20Swords%20(Free%20Pack)/UI%20Elements/UI%20Elements/Icons/Icon_11.png" alt="" style="width:32px; height:32px; display:block; image-rendering:pixelated;" /></button>
+    <button onClick="{{ openSettings }}" title="Settings" style="width:38px; height:38px; display:flex; align-items:center; justify-content:center; padding:0; border:1px solid rgba(240,226,196,.2); border-radius:6px; background:rgba(16,20,15,.86); cursor:pointer;" style-hover="background:rgba(240,226,196,.16); border-color:rgba(240,226,196,.44)"><img src="https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/2D_Assets/Tiny%20Swords%20(Free%20Pack)/UI%20Elements/UI%20Elements/Icons/Icon_10.png" alt="" style="width:32px; height:32px; display:block; image-rendering:pixelated;" /></button>
+    <button onClick="{{ toggleMin }}" title="Hide UI (Tab)" style="width:38px; height:38px; display:flex; align-items:center; justify-content:center; padding:0; border:1px solid rgba(240,226,196,.2); border-radius:6px; background:rgba(16,20,15,.86); cursor:pointer;" style-hover="background:rgba(240,226,196,.16); border-color:rgba(240,226,196,.44)"><img src="https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/2D_Assets/Tiny%20Swords%20(Free%20Pack)/UI%20Elements/UI%20Elements/Icons/Icon_09.png" alt="" style="width:32px; height:32px; display:block; image-rendering:pixelated;" /></button>
+  </div>
+
+  <div style="position:absolute; top:56px; right:10px; display:flex; flex-direction:column; align-items:flex-end; gap:6px; z-index:7;">
+    <button onClick="{{ toggleAlarm }}" title="{{ lampLabel }}" style="display:flex; align-items:center; gap:4px; padding:6px 8px; border:1px solid rgba(240,226,196,.18); border-radius:6px; background:rgba(16,20,15,.86); cursor:pointer;" style-hover="background:rgba(240,226,196,.16); border-color:rgba(240,226,196,.44)">
+      <span style="width:6px; height:6px; border-radius:50%; background:{{ lampRed }}; box-shadow:{{ lampGlow }};"></span>
+      <span style="width:6px; height:6px; border-radius:50%; background:{{ lampAmber }};"></span>
+      <span style="width:6px; height:6px; border-radius:50%; background:{{ lampGreen }};"></span>
+    </button>
+  </div>
+
+  <div style="position:absolute; top:100px; right:10px; width:min(300px,calc(100vw - 20px)); max-height:calc(100% - 156px); display:flex; flex-direction:column; gap:8px; z-index:6; pointer-events:none;">
+    <sc-if value="{{ alarmCard }}" hint-placeholder-val="{{ true }}">
+      <div style="flex:none; pointer-events:auto; box-sizing:border-box; padding:9px 11px 11px; border-left:3px solid #e0705e; background:rgba(20,25,19,.88); border:1px solid rgba(240,226,196,.16); border-radius:6px; box-shadow:0 8px 22px rgba(0,0,0,.4); color:#f2ead8; animation:nvIn .18s ease-out;">
+        <div style="display:flex; align-items:baseline; gap:7px; margin-bottom:5px;">
+          <span style="font-size:12.5px; letter-spacing:.4px; color:#e0705e;">Approval</span>
+          <span style="flex:1;"></span>
+          <span style="font-size:10.5px; color:#a9b09c;">crit {{ alarm.crit }}</span>
+          <button onClick="{{ closeAlarm }}" style="padding:2px 6px; border:1px solid rgba(240,226,196,.2); border-radius:4px; background:rgba(16,20,15,.86); color:#f2ead8; font-family:inherit; font-size:11px; cursor:pointer;" style-hover="background:rgba(240,226,196,.16)">&times;</button>
+        </div>
+        <div style="font-weight:600; font-size:12.5px; line-height:1.35;">{{ alarm.text }}</div>
+        <div style="font-size:11px; color:#a9b09c; margin:3px 0 9px;">{{ alarm.meta }}</div>
+        <div style="display:flex; gap:7px;">
+          <button onClick="{{ approve }}" style="flex:1; padding:5px 10px; border:1px solid rgba(240,226,196,.2); border-radius:4px; background:rgba(16,20,15,.86); color:#f2ead8; font-family:inherit; font-size:11.5px; font-weight:600; line-height:1.1; cursor:pointer; white-space:nowrap; border-color:rgba(127,191,106,.5); color:#c8e8ba;" style-hover="background:rgba(127,191,106,.2)">Approve</button>
+          <button onClick="{{ deny }}" style="flex:1; padding:5px 10px; border:1px solid rgba(240,226,196,.2); border-radius:4px; background:rgba(16,20,15,.86); color:#f2ead8; font-family:inherit; font-size:11.5px; font-weight:600; line-height:1.1; cursor:pointer; white-space:nowrap; border-color:rgba(224,112,94,.5); color:#f2c4ba;" style-hover="background:rgba(224,112,94,.2)">Deny</button>
+        </div>
+      </div>
+    </sc-if>
+
+    <sc-if value="{{ consoleOpen }}" hint-placeholder-val="{{ false }}">
+      <div style="flex:1 1 auto; min-height:0; pointer-events:auto; box-sizing:border-box; display:flex; flex-direction:column; background:rgba(20,25,19,.88); border:1px solid rgba(240,226,196,.16); border-radius:6px; box-shadow:0 8px 22px rgba(0,0,0,.4); color:#f2ead8;">
+        <div style="flex:none; display:flex; align-items:center; gap:4px; padding:7px 8px 6px; border-bottom:1px solid rgba(240,226,196,.12);">
+          <button onClick="{{ openLog }}" style="padding:5px 10px; border:1px solid rgba(240,226,196,.2); border-radius:4px; background:rgba(16,20,15,.86); color:#f2ead8; font-family:inherit; font-size:11.5px; font-weight:600; line-height:1.1; cursor:pointer; white-space:nowrap; background:{{ logTabBg }};" style-hover="background:rgba(240,226,196,.16); border-color:rgba(240,226,196,.4)">Log</button>
+          <button onClick="{{ openSettings }}" style="padding:5px 10px; border:1px solid rgba(240,226,196,.2); border-radius:4px; background:rgba(16,20,15,.86); color:#f2ead8; font-family:inherit; font-size:11.5px; font-weight:600; line-height:1.1; cursor:pointer; white-space:nowrap; background:{{ setTabBg }};" style-hover="background:rgba(240,226,196,.16); border-color:rgba(240,226,196,.4)">Settings</button>
+          <span style="flex:1;"></span>
+          <span style="font-size:10.5px; color:#a9b09c;">{{ feedCount }}</span>
+          <button onClick="{{ closeConsole }}" style="padding:5px 10px; border:1px solid rgba(240,226,196,.2); border-radius:4px; background:rgba(16,20,15,.86); color:#f2ead8; font-family:inherit; font-size:11.5px; font-weight:600; line-height:1.1; cursor:pointer; white-space:nowrap; padding:4px 8px;" style-hover="background:rgba(240,226,196,.16); border-color:rgba(240,226,196,.4)">&times;</button>
+        </div>
+
+        <sc-if value="{{ chronik }}" hint-placeholder-val="{{ true }}">
+          <div style="flex:1; min-height:0; overflow-y:auto; display:flex; flex-direction:column; gap:1px; padding:4px;">
+            <sc-for list="{{ feed }}" as="f" hint-placeholder-count="6">
+              <button onClick="{{ f.jump }}" style="display:block; width:100%; text-align:left; padding:6px 7px; border:0; border-left:2px solid {{ f.dot }}; border-radius:0 3px 3px 0; background:rgba(240,226,196,.04); cursor:pointer; font-family:inherit; color:#f2ead8;" style-hover="background:rgba(240,226,196,.12)">
+                <span style="display:flex; align-items:baseline; gap:6px;">
+                  <span style="font-weight:600; font-size:11.5px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; min-width:0;">{{ f.agent }}</span>
+                  <span style="font-size:10.5px; color:{{ f.actColor }}; white-space:nowrap;">{{ f.act }}</span>
+                  <span style="flex:1;"></span>
+                  <span style="font-size:10px; color:#8b9182; white-space:nowrap;">{{ f.time }}</span>
+                </span>
+                <span style="display:block; margin-top:2px; font-size:11px; line-height:1.35; color:#cfd4c4;">{{ f.text }}</span>
+                <span style="display:flex; align-items:center; gap:6px; margin-top:4px;">
+                  <span style="font-size:9.5px; letter-spacing:.4px; text-transform:uppercase; color:#8b9182;">{{ f.cat }}</span>
+                  <span style="flex:1; height:2px; background:rgba(240,226,196,.14); overflow:hidden;"><span style="display:block; height:2px; width:{{ f.critW }}; background:{{ f.critColor }};"></span></span>
+                  <span style="font-size:10px; color:{{ f.critColor }};">{{ f.crit }}</span>
+                </span>
+              </button>
+            </sc-for>
+          </div>
+        </sc-if>
+
+        <sc-if value="{{ council }}" hint-placeholder-val="{{ false }}">
+          <div style="flex:1; min-height:0; overflow-y:auto; padding:10px;">
+            <div style="font-size:10.5px; letter-spacing:.5px; text-transform:uppercase; color:#8b9182; margin-bottom:5px;">Event source</div>
+            <div style="display:flex; gap:5px; margin-bottom:14px;">
+              <button onClick="{{ pickNexus }}" style="flex:1; padding:5px 10px; border:1px solid rgba(240,226,196,.2); border-radius:4px; background:rgba(16,20,15,.86); color:#f2ead8; font-family:inherit; font-size:11.5px; font-weight:600; line-height:1.1; cursor:pointer; white-space:nowrap; background:{{ srcNexusBg }};" style-hover="background:rgba(240,226,196,.16); border-color:rgba(240,226,196,.4)">Artefacts</button>
+              <button onClick="{{ pickRss }}" style="flex:1; padding:5px 10px; border:1px solid rgba(240,226,196,.2); border-radius:4px; background:rgba(16,20,15,.86); color:#f2ead8; font-family:inherit; font-size:11.5px; font-weight:600; line-height:1.1; cursor:pointer; white-space:nowrap; background:{{ srcRssBg }};" style-hover="background:rgba(240,226,196,.16); border-color:rgba(240,226,196,.4)">RSS/LLM</button>
+              <button onClick="{{ pickScene }}" style="flex:1; padding:5px 10px; border:1px solid rgba(240,226,196,.2); border-radius:4px; background:rgba(16,20,15,.86); color:#f2ead8; font-family:inherit; font-size:11.5px; font-weight:600; line-height:1.1; cursor:pointer; white-space:nowrap; background:{{ srcSceneBg }};" style-hover="background:rgba(240,226,196,.16); border-color:rgba(240,226,196,.4)">Scenario</button>
+            </div>
+
+            <div style="display:flex; align-items:baseline; gap:8px; margin-bottom:3px;">
+              <span style="font-size:11px; color:#a9b09c;">Human &harr; Autonomy</span>
+              <span style="flex:1;"></span>
+              <span style="font-size:11.5px; font-weight:700; color:{{ autoColor }};">{{ autonomyLabel }}</span>
+            </div>
+            <input type="range" min="0" max="100" step="1" value="{{ autonomy }}" onInput="{{ onAutonomy }}" style="width:100%; margin:0 0 14px;">
+
+            <div style="display:flex; align-items:baseline; gap:8px; margin-bottom:3px;">
+              <span style="font-size:11px; color:#a9b09c;">Event pace</span>
+              <span style="flex:1;"></span>
+              <span style="font-size:11.5px; font-weight:700;">{{ tempoLabel }}</span>
+            </div>
+            <input type="range" min="0.25" max="4" step="0.25" value="{{ tempo }}" onInput="{{ onTempo }}" style="width:100%; margin:0 0 14px;">
+
+            <div style="display:flex; align-items:center; gap:8px; margin-bottom:3px;">
+              <span style="font-size:11px; color:#a9b09c;">Time of day</span>
+              <span style="flex:1;"></span>
+              <button onClick="{{ toggleClock }}" style="padding:5px 10px; border:1px solid rgba(240,226,196,.2); border-radius:4px; background:rgba(16,20,15,.86); color:#f2ead8; font-family:inherit; font-size:11.5px; font-weight:600; line-height:1.1; cursor:pointer; white-space:nowrap; padding:3px 8px;" style-hover="background:rgba(240,226,196,.16); border-color:rgba(240,226,196,.4)">{{ clockLabel }}</button>
+            </div>
+            <input type="range" min="0" max="23.9" step="0.1" value="{{ todValue }}" onInput="{{ onTod }}" style="width:100%; margin:0 0 14px;">
+
+            <div style="display:flex; align-items:center; gap:7px; margin-bottom:12px;">
+              <span style="font-size:11px; color:#a9b09c;">Party</span>
+              <button onClick="{{ fewer }}" style="padding:5px 10px; border:1px solid rgba(240,226,196,.2); border-radius:4px; background:rgba(16,20,15,.86); color:#f2ead8; font-family:inherit; font-size:11.5px; font-weight:600; line-height:1.1; cursor:pointer; white-space:nowrap; padding:3px 9px;" style-hover="background:rgba(240,226,196,.16); border-color:rgba(240,226,196,.4)">&minus;</button>
+              <span style="font-size:12px; font-weight:700; min-width:16px; text-align:center;">{{ count }}</span>
+              <button onClick="{{ more }}" style="padding:5px 10px; border:1px solid rgba(240,226,196,.2); border-radius:4px; background:rgba(16,20,15,.86); color:#f2ead8; font-family:inherit; font-size:11.5px; font-weight:600; line-height:1.1; cursor:pointer; white-space:nowrap; padding:3px 9px;" style-hover="background:rgba(240,226,196,.16); border-color:rgba(240,226,196,.4)">+</button>
+            </div>
+
+            <div style="display:flex; align-items:center; gap:7px;">
+              <span style="font-size:11px; color:#a9b09c; min-width:0; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; flex:1;">{{ trackLabel }}</span>
+              <button onClick="{{ toggleMusic }}" style="padding:5px 10px; border:1px solid rgba(240,226,196,.2); border-radius:4px; background:rgba(16,20,15,.86); color:#f2ead8; font-family:inherit; font-size:11.5px; font-weight:600; line-height:1.1; cursor:pointer; white-space:nowrap;" style-hover="background:rgba(240,226,196,.16); border-color:rgba(240,226,196,.4)">{{ playLabel }}</button>
+              <button onClick="{{ nextTrack }}" style="padding:5px 10px; border:1px solid rgba(240,226,196,.2); border-radius:4px; background:rgba(16,20,15,.86); color:#f2ead8; font-family:inherit; font-size:11.5px; font-weight:600; line-height:1.1; cursor:pointer; white-space:nowrap;" style-hover="background:rgba(240,226,196,.16); border-color:rgba(240,226,196,.4)">Skip</button>
+              <button onClick="{{ toggleSound }}" style="padding:5px 10px; border:1px solid rgba(240,226,196,.2); border-radius:4px; background:rgba(16,20,15,.86); color:#f2ead8; font-family:inherit; font-size:11.5px; font-weight:600; line-height:1.1; cursor:pointer; white-space:nowrap;" style-hover="background:rgba(240,226,196,.16); border-color:rgba(240,226,196,.4)">{{ soundLabel }}</button>
+            </div>
+          </div>
+        </sc-if>
+      </div>
+    </sc-if>
+  </div>
+
+  <sc-if value="{{ selB }}" hint-placeholder-val="{{ false }}">
+    <div style="position:absolute; left:10px; bottom:48px; width:min(250px,calc(100vw - 20px)); box-sizing:border-box; padding:9px 11px 11px; background:rgba(20,25,19,.88); border:1px solid rgba(240,226,196,.16); border-radius:6px; box-shadow:0 8px 22px rgba(0,0,0,.4); color:#f2ead8; z-index:5; animation:nvIn .18s ease-out;">
+      <div style="display:flex; align-items:baseline; gap:8px; margin-bottom:6px;">
+        <span style="font-size:14px;">{{ selB.label }}</span>
+        <span style="flex:1;"></span>
+        <button onClick="{{ clearB }}" style="padding:5px 10px; border:1px solid rgba(240,226,196,.2); border-radius:4px; background:rgba(16,20,15,.86); color:#f2ead8; font-family:inherit; font-size:11.5px; font-weight:600; line-height:1.1; cursor:pointer; white-space:nowrap; padding:3px 7px;" style-hover="background:rgba(240,226,196,.16); border-color:rgba(240,226,196,.4)">&times;</button>
+      </div>
+      <div style="display:grid; grid-template-columns:auto 1fr; gap:3px 10px; font-size:11px; color:#cfd4c4;">
+        <span style="color:#8b9182;">Role</span><span>{{ selB.sub }}</span>
+        <span style="color:#8b9182;">Activity</span><span>{{ selB.act }}</span>
+        <span style="color:#8b9182;">Present</span><span>{{ selB.here }}</span>
+        <span style="color:#8b9182;">Artefacts</span><span>{{ selB.arte }}</span>
+      </div>
+    </div>
+  </sc-if>
+
+  <sc-if value="{{ sel }}" hint-placeholder-val="{{ false }}">
+    <div style="position:absolute; left:10px; bottom:48px; width:min(250px,calc(100vw - 20px)); box-sizing:border-box; padding:9px 11px 11px; background:rgba(20,25,19,.88); border:1px solid rgba(240,226,196,.16); border-radius:6px; box-shadow:0 8px 22px rgba(0,0,0,.4); color:#f2ead8; z-index:5; animation:nvIn .18s ease-out;">
+      <div style="display:flex; align-items:center; gap:8px; margin-bottom:7px;">
+        <span style="flex:none; width:34px; height:34px; background-image:url({{ sel.sheet }}); background-size:{{ sel.bgSize }}; background-position:{{ sel.bgPos }}; background-repeat:no-repeat; image-rendering:pixelated;"></span>
+        <span style="min-width:0;">
+          <span style="display:block; font-size:14px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">{{ sel.name }}</span>
+          <span style="display:block; font-size:10.5px; color:#8b9182;">{{ sel.meta }}</span>
+        </span>
+        <span style="flex:1;"></span>
+        <button onClick="{{ clearSel }}" style="padding:5px 10px; border:1px solid rgba(240,226,196,.2); border-radius:4px; background:rgba(16,20,15,.86); color:#f2ead8; font-family:inherit; font-size:11.5px; font-weight:600; line-height:1.1; cursor:pointer; white-space:nowrap; padding:3px 7px;" style-hover="background:rgba(240,226,196,.16); border-color:rgba(240,226,196,.4)">&times;</button>
+      </div>
+      <div style="display:grid; grid-template-columns:auto 1fr; gap:3px 10px; font-size:11px; color:#cfd4c4;">
+        <span style="color:#8b9182;">Place</span><span>{{ sel.place }}</span>
+        <span style="color:#8b9182;">Status</span><span>{{ sel.status }}</span>
+        <span style="color:#8b9182;">Artefacts</span><span>{{ sel.arte }}</span>
+        <span style="color:#8b9182;">Last</span><span>{{ sel.last }}</span>
+      </div>
+    </div>
+  </sc-if>
+  </sc-if>
+
+  <div style="position:absolute; right:10px; bottom:10px; display:flex; align-items:center; gap:5px; z-index:6;">
+    <sc-if value="{{ minified }}" hint-placeholder-val="{{ false }}">
+      <button onClick="{{ toggleMin }}" title="Show UI (Tab)" style="width:38px; height:38px; display:flex; align-items:center; justify-content:center; padding:0; border:1px solid rgba(240,226,196,.2); border-radius:6px; background:rgba(16,20,15,.86); cursor:pointer;" style-hover="background:rgba(240,226,196,.16); border-color:rgba(240,226,196,.44)"><img src="https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/2D_Assets/Tiny%20Swords%20(Free%20Pack)/UI%20Elements/UI%20Elements/Icons/Icon_07.png" alt="" style="width:32px; height:32px; display:block; image-rendering:pixelated;" /></button>
+    </sc-if>
+    <button onClick="{{ zoomOut }}" style="padding:5px 10px; border:1px solid rgba(240,226,196,.2); border-radius:4px; background:rgba(16,20,15,.86); color:#f2ead8; font-family:inherit; font-size:11.5px; font-weight:600; line-height:1.1; cursor:pointer; white-space:nowrap; padding:4px 9px;" style-hover="background:rgba(240,226,196,.16); border-color:rgba(240,226,196,.4)">&minus;</button>
+    <button onClick="{{ zoomIn }}" style="padding:5px 10px; border:1px solid rgba(240,226,196,.2); border-radius:4px; background:rgba(16,20,15,.86); color:#f2ead8; font-family:inherit; font-size:11.5px; font-weight:600; line-height:1.1; cursor:pointer; white-space:nowrap; padding:4px 9px;" style-hover="background:rgba(240,226,196,.16); border-color:rgba(240,226,196,.4)">+</button>
+    <button onClick="{{ recenter }}" title="Focus village" style="width:38px; height:38px; display:flex; align-items:center; justify-content:center; padding:0; border:1px solid rgba(240,226,196,.2); border-radius:6px; background:rgba(16,20,15,.86); cursor:pointer;" style-hover="background:rgba(240,226,196,.16); border-color:rgba(240,226,196,.44)"><svg width="26" height="26" viewBox="0 0 24 24" style="fill:none; stroke-linecap:round; stroke-linejoin:round"><g style="stroke:#141a10; stroke-width:6.4"><circle cx="12" cy="12" r="6"/><path d="M12 2.4v3M12 18.6v3M2.4 12h3M18.6 12h3"/></g><g style="stroke:#f2ead8; stroke-width:3.2"><circle cx="12" cy="12" r="6"/><path d="M12 2.4v3M12 18.6v3M2.4 12h3M18.6 12h3"/></g><circle cx="12" cy="12" r="2.1" style="fill:#f2ead8; stroke:none"/></svg></button>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{
+  &quot;agentCount&quot;: { &quot;editor&quot;: &quot;int&quot;, &quot;default&quot;: 7, &quot;min&quot;: 3, &quot;max&quot;: 24, &quot;tsType&quot;: &quot;number&quot;, &quot;section&quot;: &quot;Dorf&quot; },
+  &quot;source&quot;: { &quot;editor&quot;: &quot;enum&quot;, &quot;options&quot;: [&quot;mock&quot;, &quot;rss&quot;, &quot;szenario&quot;], &quot;default&quot;: &quot;mock&quot;, &quot;tsType&quot;: &quot;string&quot;, &quot;section&quot;: &quot;Datenquelle&quot; },
+  &quot;autonomy&quot;: { &quot;editor&quot;: &quot;range&quot;, &quot;default&quot;: 35, &quot;min&quot;: 0, &quot;max&quot;: 100, &quot;step&quot;: 1, &quot;unit&quot;: &quot;%&quot;, &quot;tsType&quot;: &quot;number&quot;, &quot;section&quot;: &quot;Datenquelle&quot; },
+  &quot;tempo&quot;: { &quot;editor&quot;: &quot;range&quot;, &quot;default&quot;: 1, &quot;min&quot;: 0.25, &quot;max&quot;: 4, &quot;step&quot;: 0.25, &quot;unit&quot;: &quot;×&quot;, &quot;tsType&quot;: &quot;number&quot;, &quot;section&quot;: &quot;Datenquelle&quot; },
+  &quot;autoClock&quot;: { &quot;editor&quot;: &quot;boolean&quot;, &quot;default&quot;: true, &quot;tsType&quot;: &quot;boolean&quot;, &quot;section&quot;: &quot;Dorf&quot; },
+  &quot;nightMode&quot;: { &quot;editor&quot;: &quot;boolean&quot;, &quot;default&quot;: false, &quot;tsType&quot;: &quot;boolean&quot;, &quot;section&quot;: &quot;Dorf&quot; },
+  &quot;chronikOpen&quot;: { &quot;editor&quot;: &quot;boolean&quot;, &quot;default&quot;: false, &quot;tsType&quot;: &quot;boolean&quot;, &quot;section&quot;: &quot;Dorf&quot; }
+}">
+class Component extends DCLogic {
+  TS = 'https://raw.githubusercontent.com/georg-doc/lietz-nexus/main/client/public/assets/themes/tiny-swords-cc0/';
+  KFB = 'https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/';
+  UI = 'https://raw.githubusercontent.com/georg-doc/lietz-nexus/main/client/public/assets/themes/tiny-swords-cc0/UI/';
+
+  PACKS = {
+    ts:   'https://raw.githubusercontent.com/georg-doc/lietz-nexus/main/client/public/assets/themes/tiny-swords-cc0/',
+    free: 'https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/2D_Assets/Tiny%20Swords%20(Free%20Pack)/'
+  };
+  /** BAUKASTEN — jedes Blatt mit Pack, Pfad, Frame-Raster, Rolle.
+   *  autotile4x4 = Blob-Satz (Spalte/Zeile 3 = "single"), autotile3x3 = Shadow/Foam,
+   *  strip = eine Reihe Frames, single = ein Bild, tile = eine Kachel.
+   *  Ein spaeterer Editor kann diese Tabelle direkt auflisten. */
+  ATLAS = {
+    ground: { pack:'ts',   path:'Terrain/Ground/Tilemap_Flat.png', frame:[64,64], role:'autotile4x4', blocks:{ grass:0, sand:5 } },
+    shadow: { pack:'ts',   path:'Terrain/Ground/Shadows.png',      frame:[64,64], role:'autotile3x3' },
+    water:  { pack:'ts',   path:'Terrain/Water/Water.png',         frame:[64,64], role:'tile' },
+    foam:   { pack:'ts',   path:'Terrain/Water/Foam/Foam.png',     frame:[64,64], role:'autotile3x3', frames:8, fps:7 },
+    trees:  { pack:'ts',   path:'Resources/Trees/Tree.png',        frame:[192,192], role:'strip', frames:4 },
+    fire:   { pack:'free', path:'Particle%20FX/Fire_03.png',       frame:[64,64],  role:'strip', frames:12, fps:14 },
+    smoke:  { pack:'free', path:'Particle%20FX/Dust_02.png',       frame:[64,64],  role:'strip', frames:10, fps:11 },
+    boom:   { pack:'free', path:'Particle%20FX/Explosion_02.png',  frame:[192,192], role:'strip', frames:10, fps:16 },
+    splash: { pack:'free', path:'Particle%20FX/Water%20Splash.png',frame:[192,192], role:'strip', frames:9,  fps:12 },
+    wrock:  { pack:'free', path:'Terrain/Decorations/Rocks%20in%20the%20Water/Water%20Rocks_02.png', frame:[64,64], role:'strip', frames:16, fps:8 },
+    duck:   { pack:'free', path:'Terrain/Decorations/Rubber%20Duck/Rubber%20duck.png', frame:[32,32], role:'strip', frames:3, fps:4 },
+    cloudA: { pack:'free', path:'Terrain/Decorations/Clouds/Clouds_03.png', role:'single' },
+    cloudB: { pack:'free', path:'Terrain/Decorations/Clouds/Clouds_05.png', role:'single' },
+    cloudC: { pack:'free', path:'Terrain/Decorations/Clouds/Clouds_07.png', role:'single' },
+    /* Ressourcen (Free Pack, gemessen): Wood/Meat 64, Gold/Gold Stones 128, Sheep 128er-Strip. */
+    wood:   { pack:'free', path:'Terrain/Resources/Wood/Wood%20Resource/Wood%20Resource.png', role:'single' },
+    gold:   { pack:'free', path:'Terrain/Resources/Gold/Gold%20Resource/Gold_Resource.png', role:'single' },
+    meat:   { pack:'free', path:'Terrain/Resources/Meat/Meat%20Resource/Meat%20Resource.png', role:'single' },
+    vein:   { pack:'free', path:'Terrain/Resources/Gold/Gold%20Stones/Gold%20Stone%205.png', role:'single' },
+    veinS:  { pack:'free', path:'Terrain/Resources/Gold/Gold%20Stones/Gold%20Stone%203.png', role:'single' },
+    sheep:  { pack:'free', path:'Terrain/Resources/Meat/Sheep/Sheep_Idle.png', frame:[128,128], role:'strip', frames:6, fps:6 }
+  };
+  /** Nexus-Metaphern: Holz = rohe Artefakte, Gold = Token-Budget, Fleisch = geerntete Datenquellen. */
+  RES = {
+    wood: { label: 'raw artefacts', icon: 'Icon_02' },
+    gold: { label: 'token budget',  icon: 'Icon_03' },
+    meat: { label: 'harvested sources', icon: 'Icon_04' }
+  };
+
+  /** Default 1 = jedes Tiny-Swords-Blatt wird in Originalgröße und Original-Relation gezeichnet
+   *  (Units 192, Lancer 320, Sheep/Gold 128, Wood/Meat 64, Gebäude = Blatthöhe).
+   *  Cartoon-Deformer, POI-Zoom und Größenklassen kommen später als eigene Ebene darüber. */
+  SCALE = 1;
+  /** Blattunterkante über dem Fusspunkt — gleich für JEDES Blatt, damit 192er und 320er auf
+   *  derselben Bodenlinie stehen. Kopfhöhe für Overlays (Namen, Blasen, Marken, Zeiger) ist
+   *  ebenfalls fix: TS-Frames sind grösstenteils Rand, die Figur darin ist immer gleich hoch. */
+  FOOT = 23;
+  HEAD = 130;
+  /** Weil die Blätter 1:1 gross sind, wird der Grundriss gestreckt: Autoren-Koordinaten × K.
+   *  Die Insel wächst entsprechend mit, damit nichts über die Küste hängt. */
+  LAYOUT_K = 1.6;
+  T = 64;              // Kachelgröße laut Tilemap-Guide
+  COLS = 48; ROWS = 34;
+  W = 3072; H = 2176;
+
+  /** Zwei Blatt-Modelle: `grid` = ein Sheet mit Zeilen/Spalten (Update 010),
+   *  `strip` = getrennte Run-/Idle-Reihen (Free Pack). Alle Maße gemessen, nicht geraten. */
+  UNITS = {
+    warrior: { cols: 6, rows: 8, run: [6, 7, 8, 9, 10, 11] },
+    archer:  { cols: 8, rows: 7, run: [8, 9, 10, 11, 12, 13] },
+    pawn:    { cols: 6, rows: 6, run: [6, 7, 8, 9, 10, 11] },
+    lancer:  { strip: true, F: 320, runN: 6, idleN: 12, dir: 'Lancer', run: 'Lancer_Run', idle: 'Lancer_Idle' },
+    monk:    { strip: true, F: 192, runN: 4, idleN: 6,  dir: 'Monk',   run: 'Run',        idle: 'Idle' }
+  };
+  COLORS = ['blue', 'red', 'yellow', 'purple'];
+  /** Kader: jede Kombination Einheit+Farbe genau einmal, damit kein Held doppelt aussieht.
+   *  Lancer/Monk kommen aus dem Free Pack (Blätter gemessen: Lancer 320 px, Monk 192 px);
+   *  rotes Lancer-Blatt fehlt im Pack, deshalb Lancer nur blau/gelb/purpur. */
+  ROSTER = [
+    ['warrior', 'blue'], ['archer', 'red'], ['pawn', 'yellow'], ['lancer', 'purple'],
+    ['monk', 'blue'], ['pawn', 'red'], ['warrior', 'yellow'], ['archer', 'purple'],
+    ['lancer', 'blue'], ['warrior', 'red'], ['monk', 'yellow'], ['pawn', 'purple'],
+    ['archer', 'blue'], ['lancer', 'yellow'], ['monk', 'purple'], ['warrior', 'purple']
+  ];
+
+  PLAZA = { x: 960, y: 780 };
+
+  BUILDINGS = [
+    // R1: Tueren werden berechnet (eine Zellreihe unter dem Sockel), nicht von Hand gesetzt.
+    { id: 'bibliothek', act: 'read',    label: 'Library', sub: 'Repository · Docs',    img: 'Library', x: 450,  y: 620,  h: 210, needs: 'meat' },
+    { id: 'burg',       act: 'analyze', label: 'Castle', sub: 'AI assessment',         img: 'Castle',  x: 1340, y: 430,  h: 240, needs: 'gold' },
+    { id: 'schmiede',   act: 'write',   label: 'Forge', sub: 'Commits · PRs',        img: 'Forge',   x: 1500, y: 760,  h: 205, needs: 'wood' },
+    { id: 'arena',      act: 'command', label: 'Arena', sub: 'Deploys · CI',         img: 'Arena',   x: 1296, y: 1060, h: 200, needs: 'gold' },
+    { id: 'wachturm',   act: 'alert',   label: 'Watchtower', sub: 'Alerts · approval',     img: 'Tower',   x: 560,  y: 1060, h: 225, needs: 'meat' },
+    { id: 'taverne',    act: 'idle',    label: 'Tavern', sub: 'Party zone · Jukebox', img: 'Tavern',  x: 960,  y: 500,  h: 215, needs: 'wood' },
+    /* 7. Gebäude aus dem Free-Pack-Blatt (House3, gemessen 128×192): offener Stand = Eingang
+       für rohe Artefakte. Eigene Quelle, deshalb `src` statt `img`. */
+    { id: 'depot',      act: 'ingest',  label: 'Depot', sub: 'Raw artefacts · Ingest',
+      src: 'https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/2D_Assets/Tiny%20Swords%20(Free%20Pack)/Buildings/Blue%20Buildings/House3.png',
+      x: 780, y: 900, h: 176, needs: 'wood' }
+  ];
+
+  WP = [
+    { x: 960, y: 1230 }, { x: 960, y: 1040 }, { x: 960, y: 780 }, { x: 960, y: 640 },
+    { x: 700, y: 780 }, { x: 1220, y: 780 }, { x: 700, y: 560 }, { x: 1220, y: 560 },
+    { x: 700, y: 1040 }, { x: 1220, y: 1040 }
+  ];
+  /** Reines Netz (0..9). Die Stichwege zu den Tueren entstehen in componentDidMount (R2). */
+  EDGES = [[0,1],[1,2],[2,3],[2,4],[2,5],[1,8],[1,9],[3,6],[3,7],[4,6],[4,8],[5,7],[5,9]];
+  MAIN = new Set(['0-1', '1-2', '2-3']);
+
+  ACT = {
+    read:    { chip: 'reads',    color: '#7fd8ff' },
+    write:   { chip: 'forges',   color: '#8ef0a8' },
+    command: { chip: 'commands', color: '#c3b6ff' },
+    analyze: { chip: 'assesses', color: '#ffd98a' },
+    alert:   { chip: 'ALERT',    color: '#ff9b86' },
+    idle:    { chip: 'rests',    color: '#e3cda3' },
+    ingest:  { chip: 'stores',   color: '#d8c08c' }
+  };
+
+  POOL = {
+    nexus: {
+      names: ['Orchestrator', 'Code Smith', 'Deploy Warden', 'Audit Scout', 'Ticket Bailiff', 'Slack Herald', 'Repo Warden', 'Cost Bailiff', 'Release Runner', 'Doc Scribe', 'Lint Squire', 'Test Knight'],
+      items: [
+        { a: 'read',    c: 'Repository', t: 'reads src/agents/registry.ts', k: [.05, .3] },
+        { a: 'read',    c: 'Docs',       t: 'searches Notion "Nexus – 5 Aug"', k: [.05, .25] },
+        { a: 'read',    c: 'Ticket',     t: 'opens JIRA NX-482 "polling flaky"', k: [.15, .45] },
+        { a: 'write',   c: 'Repository', t: 'commit feat(feed): criticality badge', k: [.1, .4] },
+        { a: 'write',   c: 'Repository', t: 'PR #217 → main, 4 files changed', k: [.25, .6] },
+        { a: 'write',   c: 'Docs',       t: 'writes skill library entry "polling"', k: [.05, .3] },
+        { a: 'command', c: 'Deploy',     t: 'bun test — 214 passed', k: [.1, .35] },
+        { a: 'command', c: 'Deploy',     t: 'deploy staging eu-central-1', k: [.3, .65] },
+        { a: 'command', c: 'Deploy',     t: 'deploy PROD eu-central-1, Migration 0043', k: [.78, .96] },
+        { a: 'command', c: 'Connection', t: 'rotates GitHub app token', k: [.55, .9] },
+        { a: 'analyze', c: 'Assessment',  t: 'assesses artefact cluster "auth"', k: [.2, .55] },
+        { a: 'analyze', c: 'Assessment',  t: 'correlates slack thread with deploy failure', k: [.4, .8] },
+        { a: 'analyze', c: 'Cost',     t: 'token budget 78% spent this sprint', k: [.35, .7] },
+        { a: 'read',    c: 'Slack',      t: 'reads #incident-eu, 34 new messages', k: [.2, .6] },
+        { a: 'write',   c: 'Slack',      t: 'posts status change to #nexus-ops', k: [.1, .35] },
+        { a: 'command', c: 'Connection', t: 'polls external source: 12 new artefacts', k: [.05, .3] },
+        { a: 'analyze', c: 'Security', t: 'secret scan: candidate in .env.example', k: [.72, .95] },
+        { a: 'command', c: 'Deploy',     t: 'rollback release-2026.8.3 prepared', k: [.7, .93] }
+      ]
+    },
+    rss: {
+      names: ['Scout', 'arXiv Scout', 'Reddit Listener', 'HN Runner', 'Paper Squire', 'Trend Bailiff', 'Source Warden'],
+      items: [
+        { a: 'read',    c: 'arXiv',  t: 'fetches arXiv:2608.11234 "Sparse Agent Memory"', k: [.05, .3] },
+        { a: 'read',    c: 'Reddit', t: 'r/LocalLLaMA — 1.2k upvotes, new quant', k: [.05, .25] },
+        { a: 'read',    c: 'RSS',    t: 'polls 6 feeds, 41 new entries', k: [.05, .2] },
+        { a: 'analyze', c: 'LLM',    t: 'clusters 41 entries → 5 topics', k: [.15, .45] },
+        { a: 'analyze', c: 'LLM',    t: 'rates relevance for the Nexus roadmap', k: [.25, .6] },
+        { a: 'write',   c: 'Digest', t: 'writes daily digest, 7 paragraphs', k: [.1, .35] },
+        { a: 'write',   c: 'Digest', t: 'files skill note "retrieval ranking"', k: [.1, .3] },
+        { a: 'command', c: 'RSS',    t: 're-fetch feed, 429 rate limit', k: [.4, .7] },
+        { a: 'analyze', c: 'LLM',    t: 'hallucination suspected in summary', k: [.75, .95] },
+        { a: 'read',    c: 'HN',     t: 'reads comment thread "agent ops"', k: [.05, .25] },
+        { a: 'command', c: 'RSS',    t: 'source unreachable: paperswithcode', k: [.5, .8] }
+      ]
+    },
+    scene: {
+      names: ['Orchestrator', 'Code Smith', 'Deploy Warden', 'Audit Scout', 'Ticket Bailiff', 'Slack Herald', 'Repo Warden'],
+      script: [
+        { n: 'Ticket Bailiff',  a: 'read',    c: 'Ticket',     t: 'NX-501 escalated: checkout returns 502', k: .3 },
+        { n: 'Audit Scout', a: 'read',    c: 'Slack',      t: 'reads #incident-eu, 18 messages', k: .35 },
+        { n: 'Orchestrator', a: 'analyze', c: 'Assessment',  t: 'correlates 502 with deploy 2026.8.3', k: .55 },
+        { n: 'Repo Warden', a: 'read',    c: 'Repository', t: 'reads services/checkout/gateway.ts', k: .2 },
+        { n: 'Code Smith', a: 'write',   c: 'Repository', t: 'commit fix(checkout): Timeout 30s → 5s', k: .4 },
+        { n: 'Code Smith', a: 'command', c: 'Deploy',     t: 'bun test — 214 passed', k: .2 },
+        { n: 'Orchestrator', a: 'analyze', c: 'Assessment',  t: 'fix plausible, blast radius: payments', k: .6 },
+        { n: 'Deploy Warden',  a: 'command', c: 'Deploy',     t: 'request hotfix PROD eu-central-1', k: .88 },
+        { n: 'Slack Herald', a: 'write',   c: 'Slack',      t: 'posts status change to #nexus-ops', k: .15 },
+        { n: 'Audit Scout', a: 'analyze', c: 'Security', t: 'audit trail written, 3 approvals', k: .3 },
+        { n: 'Ticket Bailiff',  a: 'write',   c: 'Ticket',     t: 'NX-501 closed, MTTR 21 min', k: .1 }
+      ]
+    }
+  };
+
+  TRACKS = [
+    { t: 'Van Metronome', f: 'media/3D_Assets/Sounds/Van_Metronome_2026-07-17T163547.mp3' },
+    { t: 'Shepards Coaster', f: 'media/3D_Assets/Sounds/KFB_Shepards_Coaster-SONG-Bob_01_A.mp3' },
+    { t: 'Metronome v3', f: 'media/3D_Assets/Sounds/KFB Metronomes v3.mp3' },
+    { t: 'Van Freestyle', f: 'media/3D_Assets/Sounds/KFB_Van_Freestyle_v2-1.mp3' },
+    { t: 'Doorways 01 Nexus rug', f: 'media/3D_Assets/Sounds/Doorways%2001%20Nexus%20rug.mp3' },
+    { t: 'Doorways 01 Nexus van', f: 'media/3D_Assets/Sounds/Doorways%2001%20Nexus%20van.mp3' }
+  ];
+  SFX = { click: ['click_001.ogg', .6], select: ['confirmation_002.ogg', .6], confirm: ['confirmation_001.ogg', .7], back: ['back_001.ogg', .55], error: ['error_002.ogg', .55], toggle: ['click_004.ogg', .5] };
+
+  state = {
+    loading: true, loadLabel: '0 %', partyOpen: true, src: 'nexus', autonomy: 35, tempo: 1, autoClock: true, clockSpeed: 0.22, clock: '10:30 · Day', sound: false, hover: null, selB: null,
+    zoom: 1, count: 7, feed: [], agents: [], alarm: null, selId: null, playing: false, track: 0,
+    chronik: false, council: false, min: false, alarmOpen: false
+  };
+
+  feed = []; agents = []; img = {}; alarm = null; t = 0; el = {}; fxs = []; clouds = []; water = []; deco = [];
+
+  componentDidMount() {
+    const p = this.props || {};
+    this.setState({
+      src: p.source === 'rss' ? 'rss' : p.source === 'szenario' ? 'scene' : 'nexus',
+      autonomy: p.autonomy ?? 35, tempo: p.tempo ?? 1, autoClock: p.autoClock !== false,
+      count: p.agentCount ?? 7, chronik: !!p.chronikOpen
+    });
+    this.fxs = [];
+    this.tod = p.nightMode ? 22 : 10.5;   // Stunde 0..24
+    this.smokeT = 0; this.splashT = 0; this.fireT = 0;
+    this.cam = { x: this.PLAZA.x, y: this.PLAZA.y - 30 };
+    this.camTo = null; this.evTimer = 1.2; this.sceneIdx = 0;
+    // Wasserrand: Welt um 4 Kacheln je Seite groesser, Inhalt entsprechend verschoben,
+    // damit die Insel nirgends an den Weltrand stoesst (Guide: Wasser ist Ebene 0).
+    // Grundriss streckt sich mit den 1:1-Blättern (einmal pro Instanz).
+    if (!this._spread) {
+      this._spread = true;
+      const K = this.LAYOUT_K;
+      this.WP = this.WP.map(w => ({ x: Math.round(w.x * K), y: Math.round(w.y * K) }));
+      this.BUILDINGS.forEach(b => { b.x = Math.round(b.x * K); b.y = Math.round(b.y * K); });
+      this.PLAZA = { x: Math.round(this.PLAZA.x * K), y: Math.round(this.PLAZA.y * K) };
+    }
+    const MARGIN = 4 * 64;
+    this.W += MARGIN * 2; this.H += MARGIN * 2;
+    this.COLS += 8; this.ROWS += 8;
+    this.WP = this.WP.map(w => ({ x: w.x + MARGIN, y: w.y + MARGIN }));
+    this.BUILDINGS.forEach(b => { b.x += MARGIN; b.y += MARGIN; });
+    this.PLAZA = { x: this.PLAZA.x + MARGIN, y: this.PLAZA.y + MARGIN };
+    this.cam = { x: this.PLAZA.x, y: this.PLAZA.y - 30 };
+    const snap = v => Math.round((v - 32) / 64) * 64 + 32;
+    this.WP = this.WP.map(w => ({ x: snap(w.x), y: snap(w.y) }));
+    this.PLAZA = { x: snap(this.PLAZA.x), y: snap(this.PLAZA.y) };
+    // Türen und Stichwege entstehen erst, wenn die Blätter gemessen sind (siehe layoutDoors).
+    this.computeClaims();
+    this.buildAdj();
+    this.loadAssets();
+    this.uiTimer = setInterval(() => this.syncUI(), 260);
+    window.addEventListener('resize', this.onResize = () => this.fit());
+    window.addEventListener('keydown', this.onKey = e => {
+      if (e.key === 'Tab') { e.preventDefault(); this.setState({ min: !this.state.min }); this.sfx('toggle'); }
+      if (e.key === 'Escape') this.setState({ chronik: false, council: false, sel: null, selB: null });
+    });
+  }
+
+  componentWillUnmount() {
+    cancelAnimationFrame(this.raf);
+    clearInterval(this.uiTimer);
+    window.removeEventListener('resize', this.onResize);
+    if (this.music) { this.music.pause(); this.music = null; }
+    if (this.el.cv) { this.el.cv.removeEventListener('mousedown', this.onDown); this.el.cv.removeEventListener('wheel', this.onWheel); this.el.cv.removeEventListener('mousemove', this.onHover); }
+    window.removeEventListener('mousemove', this.onMove);
+    window.removeEventListener('mouseup', this.onUp);
+  }
+
+  /* ---------------- Assets ---------------- */
+
+  load(key, url) {
+    return new Promise(res => {
+      const im = new Image();
+      im.crossOrigin = 'anonymous';
+      im.onload = () => { this.img[key] = im; this.done++; this.setState({ loadLabel: 'loading village … ' + Math.round(this.done / this.total * 100) + ' %' }); res(); };
+      im.onerror = () => { this.done++; res(); };
+      im.src = url;
+    });
+  }
+
+  buildAdj() {
+    this.adj = new Map();
+    for (const [a, b] of this.EDGES) {
+      if (!this.adj.has(a)) this.adj.set(a, []);
+      if (!this.adj.has(b)) this.adj.set(b, []);
+      this.adj.get(a).push(b); this.adj.get(b).push(a);
+    }
+  }
+
+  /** R1 + R2 — läuft NACH dem Messen, sonst liegt die Tür bei hohen Blättern unter dem Dach.
+   *  Tür = eine Zellreihe unter der Sockelunterkante (`y + 0.45h`), genau eine je Gebäude;
+   *  dazu ein Anfahrtspunkt darunter und eine Kante zum nächsten Netzpunkt. */
+  layoutDoors() {
+    const snap = v => Math.round((v - 32) / 64) * 64 + 32;
+    this.BUILDINGS.forEach(b => { b.door = { x: snap(b.x), y: snap(b.y + b.h * .45 + 64) }; });
+    if (this._stubsDone) return;
+    this._stubsDone = true;
+    const net = this.WP.length;
+    for (const b of this.BUILDINGS) {
+      const dI = this.WP.push({ x: b.door.x, y: b.door.y }) - 1;
+      const aI = this.WP.push({ x: b.door.x, y: snap(b.door.y + 96) }) - 1;
+      let best = 0, bd = Infinity;
+      for (let i = 0; i < net; i++) {
+        const d = Math.hypot(this.WP[i].x - this.WP[aI].x, this.WP[i].y - this.WP[aI].y);
+        if (d < bd) { bd = d; best = i; }
+      }
+      this.EDGES.push([aI, dI], [best, aI]);
+      b.wp = dI;
+    }
+    this.buildAdj();
+  }
+
+  /** R3 · Anspruchsflaechen aus der aktuellen Sockelhoehe; Schnitte sind ein Befund. */
+  computeClaims() {
+    this.BUILDINGS.forEach(b => {
+      const w = b.w || b.h * .84;                 // echte Blattbreite, sobald gemessen
+      b.claim = { x0: b.x - w / 2, x1: b.x + w / 2, y0: b.y - b.h * .55, y1: b.y + b.h * .45 + 96 };
+    });
+    this._foot = null;
+    for (let i = 0; i < this.BUILDINGS.length; i++) for (let j = i + 1; j < this.BUILDINGS.length; j++) {
+      const A = this.BUILDINGS[i].claim, B = this.BUILDINGS[j].claim;
+      if (A.x0 < B.x1 && B.x0 < A.x1 && A.y0 < B.y1 && B.y0 < A.y1)
+        console.warn('[R3] Claim-Schnitt:', this.BUILDINGS[i].id, 'x', this.BUILDINGS[j].id);
+    }
+  }
+
+  /** Inhaltsbox von Frame 0 messen (Alpha-Scan): TS-Frames sind grösstenteils Rand, und der Rand
+   *  ist je Blatt anders. Daraus kommen Fusslinie (`footPad`) und Kopfhöhe (`bodyH`) —
+   *  eine globale Konstante kann das nicht leisten (Lancer 122 px Rand, Warrior 56). */
+  scanSheet(im, F) {
+    const cv = document.createElement('canvas');
+    cv.width = F; cv.height = F;
+    const g = cv.getContext('2d');
+    g.drawImage(im, 0, 0, F, F, 0, 0, F, F);
+    const d = g.getImageData(0, 0, F, F).data;
+    let top = -1, bot = -1;
+    for (let y = 0; y < F; y++) for (let x = 0; x < F; x++) {
+      if (d[(y * F + x) * 4 + 3] > 8) { if (top < 0) top = y; bot = y; break; }
+    }
+    if (bot < 0) return { footPad: 0, bodyH: F };
+    return { footPad: F - 1 - bot, bodyH: bot - top };
+  }
+
+  measureUnits() {
+    for (const u of Object.keys(this.UNITS)) {
+      const spec = this.UNITS[u], F = spec.strip ? spec.F : 192;
+      const im = spec.strip ? this.img['i_' + u + '_blue'] : this.img['h_' + u + '_blue'];
+      if (im) Object.assign(spec, this.scanSheet(im, F));
+    }
+    this.pawnPad = this.img.p_empty ? this.scanSheet(this.img.p_empty, 192) : { footPad: 57, bodyH: 74 };
+  }
+
+  /** Native Blattgroesse eines ATLAS-Schluessels (Frame-Hoehe, sonst Bildhoehe). */
+  natH(key) {
+    const a = this.ATLAS[key], im = this.img[key];
+    if (!im) return 64;
+    return a && a.frame ? a.frame[1] : im.naturalHeight;
+  }
+
+  cap(s) { return s[0].toUpperCase() + s.slice(1); }
+
+  /** Free-Pack-Einheit: Run- und Idle-Blatt liegen getrennt im Farbordner. */
+  stripUrl(unit, color, which) {
+    const spec = this.UNITS[unit];
+    return this.PACKS.free + 'Units/' + this.cap(color) + '%20Units/' + spec.dir + '/' + spec[which] + '.png';
+  }
+
+  sheetUrl(unit, color) {
+    const cap = s => s[0].toUpperCase() + s.slice(1);
+    const U = cap(unit), C = cap(color);
+    const file = (unit === 'archer' && color === 'purple') ? 'Archer_Purlple' : U + '_' + C;
+    return this.TS + 'Factions/Knights/Troops/' + U + '/' + C + '/' + file + '.png';
+  }
+
+  async loadAssets() {
+    const jobs = [];
+    this.done = 0;
+    for (const b of this.BUILDINGS) jobs.push(['b_' + b.id, b.src || this.TS + 'BuildingsCustom/' + b.img + '.png']);
+    // Träger-Pawn (blau, Ambience): leer + drei Lasten, alle Blätter 1152×192 = 6 Frames.
+    jobs.push(['p_empty', this.PACKS.free + 'Units/Blue%20Units/Pawn/Pawn_Run.png']);
+    for (const r of ['Wood', 'Gold', 'Meat']) jobs.push(['p_' + r.toLowerCase(), this.PACKS.free + 'Units/Blue%20Units/Pawn/Pawn_Run%20' + r + '.png']);
+    for (const [k, a] of Object.entries(this.ATLAS)) jobs.push([k, this.PACKS[a.pack] + a.path]);
+    jobs.push(['pointer', this.UI + 'Pointers/01.png']);
+    jobs.push(['ribbonRed', this.UI + 'Ribbons/Ribbon_Red_3Slides.png']);
+    for (let i = 1; i <= 12; i++) jobs.push(['d' + i, this.TS + 'Deco/' + String(i).padStart(2, '0') + '.png']);
+    for (const u of Object.keys(this.UNITS)) for (const c of this.COLORS) {
+      const spec = this.UNITS[u];
+      if (!spec.strip) { jobs.push(['h_' + u + '_' + c, this.sheetUrl(u, c)]); continue; }
+      if (u === 'lancer' && c === 'red') continue;             // Blatt fehlt im Free Pack
+      jobs.push(['h_' + u + '_' + c, this.stripUrl(u, c, 'run')]);
+      jobs.push(['i_' + u + '_' + c, this.stripUrl(u, c, 'idle')]);
+    }
+    this.total = jobs.length;
+    await Promise.all(jobs.map(j => this.load(j[0], j[1])));
+    try { await document.fonts.ready; } catch (e) { /* Fonts optional */ }
+    // Blätter messen statt schätzen (F2): die Sockelhöhe ist die echte Blatthöhe.
+    for (const b of this.BUILDINGS) {
+      const im = this.img['b_' + b.id];
+      if (im) { b.h = im.naturalHeight * this.SCALE; b.w = im.naturalWidth * this.SCALE; }
+    }
+    this.measureUnits();
+    this.layoutDoors();
+    this.computeClaims();
+    this.buildWorld();
+    this.spawnAgents(this.state.count);
+    this.setState({ loading: false });
+    this.bindCanvas(); this.fit();
+    this.last = performance.now();
+    this.raf = requestAnimationFrame(ts => this.tick(ts));
+  }
+
+  /* ---------------- Welt: Tiles nach Tilemap-Guide ---------------- */
+
+  rngF(seed) { let s = seed; return () => { s |= 0; s = (s + 0x6D2B79F5) | 0; let t = Math.imul(s ^ (s >>> 15), 1 | s); t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t; return ((t ^ (t >>> 14)) >>> 0) / 4294967296; }; }
+
+  segDist(px, py, ax, ay, bx, by) {
+    const dx = bx - ax, dy = by - ay, l2 = dx * dx + dy * dy;
+    if (l2 === 0) return Math.hypot(px - ax, py - ay);
+    let t = ((px - ax) * dx + (py - ay) * dy) / l2;
+    t = Math.max(0, Math.min(1, t));
+    return Math.hypot(px - (ax + t * dx), py - (ay + t * dy));
+  }
+
+  segs() {
+    return this.EDGES.map(([a, b]) => ({
+      a: this.WP[a], b: this.WP[b],
+      main: this.MAIN.has(Math.min(a, b) + '-' + Math.max(a, b))
+    }));
+  }
+
+  /** 4-Bit-Blob-Autotile: liefert Spalte/Zeile im 4×4-Block. */
+  tileIdx(m, c, r) {
+    const at = (cc, rr) => (m[rr] && m[rr][cc]) ? 1 : 0;
+    const n = at(c, r - 1), s = at(c, r + 1), w = at(c - 1, r), e = at(c + 1, r);
+    const col = (w && e) ? 1 : (!w && e) ? 0 : (w && !e) ? 2 : 3;
+    const row = (n && s) ? 1 : (!n && s) ? 0 : (n && !s) ? 2 : 3;
+    return [col, row];
+  }
+  /** 4er-Index auf einen 3x3-Satz (Shadow, Foam) abbilden. */
+  to3(i) { return i === 0 ? 0 : i === 2 ? 2 : 1; }
+
+  /** Frame aus einem Strip zeichnen; x,y = Fusspunkt-Mitte (anchor 'center' zentriert). */
+  blit(g, key, i, x, y, h, anchor) {
+    const a = this.ATLAS[key], im = this.img[key];
+    if (!a || !im) return;
+    const fw = a.frame ? a.frame[0] : im.naturalWidth, fh = a.frame ? a.frame[1] : im.naturalHeight;
+    if (!h) h = fh * this.SCALE;                 // Default: Blatt in Originalgroesse
+    const w = h * (fw / fh);
+    g.drawImage(im, Math.max(0, i | 0) * fw, 0, fw, fh, x - w / 2, y - h * (anchor === 'center' ? .5 : 1), w, h);
+  }
+  /** Laufender Frame-Index; loop:false klemmt am letzten Frame. */
+  frameOf(key, t, loop) {
+    const a = this.ATLAS[key], n = a.frames || 1, i = Math.floor(t * (a.fps || 10));
+    return loop === false ? Math.min(n - 1, i) : i % n;
+  }
+  fxLife(type) { const a = this.ATLAS[type]; return (a.frames || 1) / (a.fps || 10); }
+  /** Vierter Parameter wird ignoriert: FX laufen in Blattgroesse (1:1), nicht skaliert. */
+  spawnFx(type, x, y) { this.fxs.push({ type, x, y, h: this.natH(type) * this.SCALE, t: 0 }); }
+
+  /** Fussabdruck je Gebaeude: Ellipse an der Basis. Haeuser sind fest — Helden laufen nicht durch. */
+  footprints() {
+    if (this._foot) return this._foot;
+    // Aus der GEMESSENEN Breite und der Sockellinie — Höhe ist kein Ersatz für Breite (Bug #51).
+    this._foot = this.BUILDINGS.map(b => {
+      const w = b.w || b.h * .84;
+      return { x: b.x, y: b.y + b.h * .45 - 26, rx: w * .34, ry: w * .12 };
+    });
+    return this._foot;
+  }
+  /** > 1 = frei, <= 1 = im Haus. Gibt zusaetzlich die Normale fuer den Abprall zurueck. */
+  blockedBy(x, y) {
+    for (const p of this.footprints()) {
+      const nx = (x - p.x) / p.rx, ny = (y - p.y) / p.ry;
+      if (nx * nx + ny * ny < 1) return { nx: nx / (Math.hypot(nx, ny) || 1), ny: ny / (Math.hypot(nx, ny) || 1) };
+    }
+    return null;
+  }
+
+  buildWorld() {
+    const T = this.T, C = this.COLS, R = this.ROWS;
+    const rnd = this.rngF(1337);
+    // Insel-Maske (konvex, damit der 4×4-Autotile-Satz genügt)
+    const icx = C / 2 - .5, icy = R / 2 - .5, irx = C / 2 - 4.5, iry = R / 2 - 4.5;
+    const land = [];
+    for (let r = 0; r < R; r++) {
+      land[r] = [];
+      for (let c = 0; c < C; c++) {
+        const dx = (c - icx) / irx, dy = (r - icy) / iry;
+        land[r][c] = dx * dx + dy * dy < 1;
+      }
+    }
+    // Sand-Maske = Wege + Dorfplatz, auf das Kachelraster gerastert
+    const sand = [];
+    const sg = this.segs();
+    for (let r = 0; r < R; r++) {
+      sand[r] = [];
+      for (let c = 0; c < C; c++) {
+        const px = c * T + T / 2, py = r * T + T / 2;
+        let on = Math.hypot(px - this.PLAZA.x, (py - this.PLAZA.y) * 1.3) < 120 * this.LAYOUT_K;
+        if (!on) for (const s of sg) {
+          const hw = s.main ? 38 : 30;
+          if (this.segDist(px, py, s.a.x, s.a.y, s.b.x, s.b.y) < hw) { on = true; break; }
+        }
+        sand[r][c] = on && land[r][c];
+      }
+    }
+    this.land = land;
+    this.sandM = sand;
+    this.landInv = land.map(row => row.map(v => !v));
+
+    const cv = document.createElement('canvas');
+    cv.width = this.W; cv.height = this.H;
+    const g = cv.getContext('2d');
+    g.imageSmoothingEnabled = false;
+
+    // Flat Ground (grüner 4×4-Block, Spalten 0–3)
+    const gr = this.img.ground;
+    if (gr) for (let r = 0; r < R; r++) for (let c = 0; c < C; c++) {
+      if (!land[r][c]) continue;
+      const [tc, tr] = this.tileIdx(land, c, r);
+      g.drawImage(gr, tc * T, tr * T, T, T, c * T, r * T, T, T);
+    }
+    // Sand-Block (Spalten 5–8) für Wege und Platz
+    if (gr) for (let r = 0; r < R; r++) for (let c = 0; c < C; c++) {
+      if (!sand[r][c]) continue;
+      const [tc, tr] = this.tileIdx(sand, c, r);
+      g.drawImage(gr, (5 + tc) * T, tr * T, T, T, c * T, r * T, T, T);
+    }
+
+    // Kein gemalter Brunnen — der Platz bleibt Terrain (TS-Packs haben kein Top-down-Rondell).
+
+    // Grasbüschel & Blumen (nur auf Gras, nie auf Sand)
+    const freeAt = (x, y) => {
+      const c = Math.floor(x / T), r = Math.floor(y / T);
+      if (!(land[r] && land[r][c]) || (sand[r] && sand[r][c])) return false;
+      // R3: Deko liegt ausserhalb der Anspruchsflaechen, nicht in einem Radius um die Mitte.
+      return this.BUILDINGS.every(b => x < b.claim.x0 - 12 || x > b.claim.x1 + 12 || y < b.claim.y0 - 12 || y > b.claim.y1 + 12);
+    };
+    for (let i = 0; i < 1000; i++) {
+      const x = rnd() * this.W, y = rnd() * this.H;
+      if (!freeAt(x, y)) continue;
+      g.strokeStyle = ['#2d5e22', '#1b4a15', '#3f7f30'][Math.floor(rnd() * 3)];
+      g.lineWidth = 1.6;
+      for (let b = 0; b < 3; b++) {
+        const bx = x + (rnd() - .5) * 9;
+        g.beginPath(); g.moveTo(bx, y); g.lineTo(bx + (rnd() - .5) * 6, y - (5 + rnd() * 8)); g.stroke();
+      }
+    }
+    for (let i = 0; i < 200; i++) {
+      const x = rnd() * this.W, y = rnd() * this.H;
+      if (!freeAt(x, y)) continue;
+      const col = ['#cc3333', '#ddcc33', '#4466cc', '#eeeedd', '#dd6699', '#ff8844'][Math.floor(rnd() * 6)];
+      for (let j = 0; j < 4; j++) {
+        const fx = x + (rnd() - .5) * 18, fy = y + (rnd() - .5) * 14;
+        g.strokeStyle = 'rgba(42,106,26,.7)'; g.lineWidth = 1.4;
+        g.beginPath(); g.moveTo(fx, fy + 2); g.lineTo(fx, fy + 7); g.stroke();
+        g.fillStyle = col; g.beginPath(); g.arc(fx, fy, 2.4, 0, 6.3); g.fill();
+      }
+    }
+    this.bg = cv;
+
+    // Schaum-Kacheln (animiert) an allen Wasserfeldern, die Land berühren
+    // Water Foam ist EIN 192-px-Stempel (3x3 Kacheln), mittig auf jede Land-Randkachel
+    // gesetzt; die Überlappungen bilden den durchgehenden Schaumkranz (Pixel-Frog-Guide).
+    this.foamCells = [];
+    for (let r = 0; r < R; r++) for (let c = 0; c < C; c++) {
+      if (!land[r][c]) continue;
+      let shore = false;
+      for (const [dc, dr] of [[0,-1],[0,1],[-1,0],[1,0],[-1,-1],[1,-1],[-1,1],[1,1]]) {
+        if (!(land[r + dr] && land[r + dr][c + dc])) { shore = true; break; }
+      }
+      if (shore) this.foamCells.push([c, r]);
+    }
+
+    // Wasser-Requisiten: Felsen und (absurderweise) eine Quietscheente
+    this.water = [];
+    for (let i = 0; i < 26; i++) {
+      const c = Math.floor(rnd() * C), r = Math.floor(rnd() * R);
+      if (land[r] && land[r][c]) continue;
+      let nearLand = false;
+      for (const [dc2, dr2] of [[0,-1],[0,1],[-1,0],[1,0]]) if (land[r + dr2] && land[r + dr2][c + dc2]) nearLand = true;
+      if (nearLand) continue;
+      this.water.push({ kind: i % 7 === 3 ? 'duck' : 'wrock', x: c * T + 32, y: r * T + 32, ph: rnd() * 4 });
+    }
+    // Wolken
+    this.clouds = [];
+    for (let i = 0; i < 7; i++) this.clouds.push({
+      key: ['cloudA', 'cloudB', 'cloudC'][i % 3],
+      x: rnd() * (this.W + 600) - 300, y: rnd() * this.H,
+      s: 260 + rnd() * 340, v: 5 + rnd() * 13, a: .9 + rnd() * .1
+    });
+
+    // Requisiten (Bäume, Büsche, Steine) — pro Frame tiefensortiert
+    this.deco = [];
+    const near = (x, y, list, d) => list.some(p => Math.hypot(p.x - x, p.y - y) < d);
+    const trees = [];
+    for (let i = 0; i < 1600; i++) {
+      const x = 40 + rnd() * (this.W - 80), y = 60 + rnd() * (this.H - 90);
+      const c = Math.floor(x / T), r = Math.floor(y / T);
+      if (!(land[r] && land[r][c]) || (sand[r] && sand[r][c])) continue;
+      // Nie am Ufer: alle acht Nachbarn muessen Land sein, sonst steht der Baum im Wasser
+      let inland = true;
+      for (const [ddc, ddr] of [[0,-1],[0,1],[-1,0],[1,0],[-1,-1],[1,-1],[-1,1],[1,1]]) {
+        if (!(land[r + ddr] && land[r + ddr][c + ddc])) { inland = false; break; }
+      }
+      if (!inland) continue;
+      const dx = (c - icx) / irx, dy = (r - icy) / iry;
+      if (dx * dx + dy * dy < 0.55) continue;                 // Dorfmitte bleibt frei
+      if (!this.BUILDINGS.every(b => x < b.claim.x0 - 70 || x > b.claim.x1 + 70 || y < b.claim.y0 - 70 || y > b.claim.y1 + 70)) continue;
+      if (near(x, y, trees, 120)) continue;
+      trees.push({ x, y });
+      this.deco.push({ kind: 'tree', x, y, f: Math.floor(rnd() * 4) });
+    }
+    for (let i = 0; i < 420; i++) {
+      const x = 40 + rnd() * (this.W - 80), y = 60 + rnd() * (this.H - 90);
+      if (!freeAt(x, y) || near(x, y, this.deco, 70)) continue;
+      const kind = rnd() < .6 ? 'bush' : 'rock';
+      const k = kind === 'bush' ? 1 + Math.floor(rnd() * 4) : 9 + Math.floor(rnd() * 4);
+      this.deco.push({ kind, x, y, key: 'd' + k, s: 0.8 + rnd() * 0.5 });
+    }
+    this.initResources();
+  }
+
+  /* ---------------- Ressourcen: Holz = Artefakte, Gold = Token, Fleisch = Datenquellen ----------------
+     Modell: Abbau-Orte sind Stempel auf dem Raster, Träger sind Punkte mit Fuss (wie Units),
+     der Vorrat vor dem Haus ist eine Reihe 64-px-Sprites — nichts davon wird gemalt. */
+
+  /** Gras, kein Sand, nicht am Ufer, ausserhalb aller Claims (R3). */
+  freeSpot(x, y) {
+    const T = this.T, c = Math.floor(x / T), r = Math.floor(y / T);
+    if (!(this.land[r] && this.land[r][c])) return false;
+    if (this.sandM[r] && this.sandM[r][c]) return false;
+    for (const [dc, dr] of [[0,-1],[0,1],[-1,0],[1,0]]) if (!(this.land[r + dr] && this.land[r + dr][c + dc])) return false;
+    return this.BUILDINGS.every(b => x < b.claim.x0 - 60 || x > b.claim.x1 + 60 || y < b.claim.y0 - 60 || y > b.claim.y1 + 60);
+  }
+
+  initResources() {
+    const rnd = this.rngF(4711);
+    this.nodes = [];
+    // Holz: drei weit auseinander liegende Bäume werden Schlagplätze.
+    const trees = this.deco.filter(d => d.kind === 'tree');
+    for (const t of trees) {
+      if (this.nodes.length >= 3) break;
+      if (this.nodes.every(n => Math.hypot(n.x - t.x, n.y - t.y) > 430)) this.nodes.push({ res: 'wood', x: t.x, y: t.y + 34 });
+    }
+    // Gold: zwei Adern als 128-px-Stempel auf freiem Gras.
+    let tries = 0;
+    while (this.nodes.filter(n => n.res === 'gold').length < 2 && tries++ < 900) {
+      const x = 240 + rnd() * (this.W - 480), y = 240 + rnd() * (this.H - 480);
+      if (!this.freeSpot(x, y) || this.nodes.some(n => Math.hypot(n.x - x, n.y - y) < 300)) continue;
+      this.nodes.push({ res: 'gold', x, y, vein: rnd() < .5 ? 'vein' : 'veinS' });
+    }
+    // Datenquellen: eine Schafweide; zwei Schafe sind Ernteplätze.
+    this.sheep = []; tries = 0;
+    while (this.sheep.length < 6 && tries++ < 900) {
+      const x = 240 + rnd() * (this.W - 480), y = 240 + rnd() * (this.H - 480);
+      if (!this.freeSpot(x, y)) continue;
+      if (this.sheep.length && this.sheep.every(s => Math.hypot(s.x - x, s.y - y) > 260)) continue;   // eine Weide, nicht verstreut
+      if (this.sheep.some(s => Math.hypot(s.x - x, s.y - y) < 84)) continue;
+      this.sheep.push({ x, y, ph: rnd() * 6, flip: rnd() < .5 });
+    }
+    for (const s of this.sheep.slice(0, 2)) this.nodes.push({ res: 'meat', x: s.x + 42, y: s.y + 18 });
+
+    for (const b of this.BUILDINGS) b.stock = 0;
+    this.res = { wood: 0, gold: 0, meat: 0 };
+    this.resAt = -99; this.goldT = 8;
+    this.carriers = [];
+    for (let i = 0; i < 4; i++) this.spawnCarrier(i);
+  }
+
+  spawnCarrier(i) {
+    const res = ['wood', 'meat', 'gold', 'wood'][i % 4];
+    const pool = this.nodes.filter(n => n.res === res);
+    const node = pool[i % Math.max(1, pool.length)] || this.nodes[0];
+    if (!node) return;
+    const c = { res, node, x: node.x, y: node.y + 26, path: [], pi: 0, load: 0, wait: .4 + i * .5, ph: rnd0(), flip: false, to: 'node', moving: false };
+    this.carriers.push(c);
+    this.toNode(c);
+    function rnd0() { return Math.random() * 6; }
+  }
+
+  toNode(c) {
+    const n = this.pickOne(this.nodes.filter(x => x.res === c.res)) || c.node;
+    if (!n) return;
+    c.node = n; c.load = 0; c.to = 'node'; c.pi = 0;
+    c.path = this.route({ x: c.x, y: c.y }, { x: n.x + (Math.random() - .5) * 44, y: n.y + 24 });
+  }
+
+  toHouse(c) {
+    const want = this.BUILDINGS.filter(b => b.needs === c.res);
+    const b = this.pickOne(want.filter(x => x.stock < 5)) || this.pickOne(want);
+    if (!b) { this.toNode(c); return; }
+    c.load = 1; c.to = 'house'; c.house = b; c.pi = 0;
+    c.path = this.route({ x: c.x, y: c.y }, { x: b.door.x + (Math.random() - .5) * 74, y: b.door.y + 30 });
+  }
+
+  updCarriers(dt) {
+    for (const c of this.carriers) {
+      if (c.wait > 0) { c.wait -= dt * this.state.tempo; c.moving = false; continue; }
+      if (c.pi >= c.path.length) {
+        if (c.to === 'node') { c.wait = 1.2; this.spawnFx('smoke', c.x, c.y + 6, 46); this.toHouse(c); }
+        else {
+          if (c.house) { c.house.stock = Math.min(5, c.house.stock + 1); this.res[c.res]++; this.resAt = this.t; }
+          c.wait = .8; this.toNode(c);
+        }
+        continue;
+      }
+      const p = c.path[c.pi];
+      const dx = p.x - c.x, dy = p.y - c.y, d = Math.hypot(dx, dy);
+      if (d < 6) { c.pi++; continue; }
+      const sp = 68 * (.85 + (this.state.tempo - 1) * .1);
+      const nx = c.x + dx / d * sp * dt, ny = c.y + dy / d * sp * dt;
+      if (this.blockedBy(nx, ny)) { c.pi = c.path.length; continue; }   // Sockel ist massiv: Etappe beenden, neu zielen
+      c.x = nx; c.y = ny; c.moving = true;
+      c.flip = dx < -1 ? true : dx > 1 ? false : c.flip;
+    }
+    // Token-Budget wird verbraucht: die Burg zieht Gold aus ihrem Vorrat.
+    if ((this.goldT -= dt * this.state.tempo) <= 0) {
+      this.goldT = 6 + Math.random() * 5;
+      const b = this.BUILDINGS.find(x => x.id === 'burg');
+      if (b && b.stock > 0) {
+        b.stock--; this.res.gold = Math.max(0, this.res.gold - 1); this.resAt = this.t;
+        this.spawnFx('smoke', b.x + 18, b.y + 46, 46);
+      }
+    }
+  }
+
+  drawCarrier(g, c) {
+    const im = this.img[c.load ? 'p_' + c.res : 'p_empty']; if (!im) return;
+    const F = 192, disp = F * this.SCALE;        // Pawn-Blatt 1:1
+    const i = Math.floor(this.t * (c.moving ? 10 : 5) + c.ph) % 6;
+    const pad = (this.pawnPad ? this.pawnPad.footPad : 57) * this.SCALE;
+    g.save(); g.translate(c.x, c.y + pad - disp / 2);
+    if (c.flip) g.scale(-1, 1);
+    g.drawImage(im, i * F, 0, F, F, -disp / 2, -disp / 2, disp, disp);
+    g.restore();
+  }
+
+  drawSheep(g, s) {
+    const im = this.img.sheep; if (!im) return;
+    const F = 128, h = F * this.SCALE, i = Math.floor(this.t * 6 + s.ph) % 6;
+    g.save(); g.translate(s.x, s.y - h * .55);
+    if (s.flip) g.scale(-1, 1);
+    g.drawImage(im, i * F, 0, F, F, -h / 2, -h / 2, h, h);
+    g.restore();
+  }
+
+  /** Vorrat vor dem Haus: eine Reihe Sprites in der Türzone, gestempelt, nicht gemalt. */
+  drawStock(g, b) {
+    if (!b.stock) return;
+    for (let i = 0; i < b.stock; i++) {
+      // Anker ist die SOCKELLINIE, nicht die Tür: bei Häusern mit `lift` liegt die Tür eine
+      // Höhenstufe tiefer, der Vorrat stünde sonst an der Klippenwand (Bug #52).
+      const x = b.x - 78 + (i % 3) * 30, y = b.y + b.h * .45 + 20 + Math.floor(i / 3) * 22;
+      this.blit(g, b.needs, 0, x, y, 0, 'center');   // 1:1 aus dem Blatt
+    }
+  }
+
+  /* ---------------- Helden & Ereignisse ---------------- */
+
+  bfs(a, b) {
+    if (a === b) return [a];
+    const seen = new Set([a]), q = [[a]];
+    while (q.length) {
+      const path = q.shift(), cur = path[path.length - 1];
+      for (const n of this.adj.get(cur) || []) {
+        if (n === b) return [...path, n];
+        if (!seen.has(n)) { seen.add(n); q.push([...path, n]); }
+      }
+    }
+    return [a, b];
+  }
+
+  nearestWp(p) {
+    let best = 0, bd = 1e9;
+    this.WP.forEach((w, i) => { const d = Math.hypot(w.x - p.x, w.y - p.y); if (d < bd) { bd = d; best = i; } });
+    return best;
+  }
+
+  route(from, to) {
+    const path = this.bfs(this.nearestWp(from), this.nearestWp(to)).map(i => this.WP[i]);
+    // Erster Wegpunkt darf nicht rueckwaerts fuehren: nur behalten, wenn er dem Ziel naeher ist.
+    const dTo = Math.hypot(to.x - from.x, to.y - from.y);
+    while (path.length > 1 && Math.hypot(to.x - path[0].x, to.y - path[0].y) > dTo) path.shift();
+    // Kollineare Zwischenpunkte fallen weg -> weniger Zickzack.
+    const out = [];
+    for (const p of path) {
+      const n = out.length;
+      if (n >= 2) {
+        const a = out[n - 2], b = out[n - 1];
+        const cross = (b.x - a.x) * (p.y - a.y) - (b.y - a.y) * (p.x - a.x);
+        if (Math.abs(cross) < 900) { out[n - 1] = p; continue; }
+      }
+      out.push(p);
+    }
+    out.push(to);
+    return out;
+  }
+
+  spawnAgents(n) {
+    const names = this.POOL[this.state.src === 'scene' ? 'scene' : this.state.src].names;
+    const units = Object.keys(this.UNITS);
+    const keep = this.agents.slice(0, n);
+    for (let i = keep.length; i < n; i++) {
+      const ang = (i / Math.max(4, n)) * 6.283;
+      const slot = this.ROSTER[i % this.ROSTER.length];
+      const x = this.PLAZA.x + Math.cos(ang) * 150, y = this.PLAZA.y + 40 + Math.sin(ang) * 95;
+      keep.push({
+        id: 'a' + i + '-' + Math.random().toString(36).slice(2, 6),
+        name: names[i % names.length], unit: slot[0], color: slot[1],
+        x, y, path: [], pi: 0, act: 'idle', place: 'taverne', status: 'idle',
+        work: 1 + Math.random() * 3, artefacts: 0, critSum: 0, last: 'waiting for artefacts', flip: false, ph: Math.random() * 6, moving: false
+      });
+    }
+    this.agents = keep;
+    if (this.state.selId && !keep.some(a => a.id === this.state.selId)) this.setState({ selId: null });
+  }
+
+  pickOne(arr) { return arr[Math.floor(Math.random() * arr.length)]; }
+
+  sendTo(ag, b, spread) {
+    let target = { x: b.door.x + (Math.random() - .5) * spread, y: b.door.y + 10 + Math.random() * 26 };
+    for (let g = 0; g < 8 && this.blockedBy(target.x, target.y); g++) target = { x: b.door.x + (Math.random() - .5) * spread, y: b.door.y + 24 + Math.random() * 30 };
+    ag.path = this.route({ x: ag.x, y: ag.y }, target);
+    ag.pi = 0;
+  }
+
+  emit() {
+    const src = this.state.src;
+    let ag, item, crit;
+    if (src === 'scene') {
+      const sc = this.POOL.scene.script;
+      const step = sc[this.sceneIdx % sc.length]; this.sceneIdx++;
+      ag = this.agents.find(a => a.name === step.n) || this.pickOne(this.agents);
+      item = step; crit = step.k;
+    } else {
+      const pool = this.POOL[src];
+      ag = this.pickOne(this.agents.filter(a => a.status !== 'waiting')) || this.pickOne(this.agents);
+      item = this.pickOne(pool.items);
+      crit = item.k[0] + Math.random() * (item.k[1] - item.k[0]);
+    }
+    if (!ag) return;
+
+    const autonomous = this.state.autonomy >= 70;
+    const critical = crit >= 0.75 && !this.alarm;
+    const act = critical && !autonomous ? 'alert' : item.a;
+    const b = this.BUILDINGS.find(x => x.act === act) || this.BUILDINGS[5];
+
+    ag.act = act; ag.place = b.id;
+    ag.status = critical && !autonomous ? 'waiting' : 'active';
+    ag.work = 1.8 + Math.random() * 2.6;
+    ag.artefacts++; ag.critSum += crit; ag.last = item.t;
+    this.sendTo(ag, b, b.id === 'taverne' ? 220 : 130);
+
+    const e = {
+      id: 'e' + this.feed.length + '-' + Math.random().toString(36).slice(2, 6),
+      agentId: ag.id, agent: ag.name, color: this.dot(ag.color),
+      act: this.ACT[item.a].chip, actKey: item.a, text: item.t, cat: item.c, crit, ts: Date.now(), badge: null
+    };
+    if (critical && autonomous) { e.badge = 'auto-approved'; e.badgeKind = 'auto'; }
+    if (critical && !autonomous) {
+      e.badge = 'approval needed'; e.badgeKind = 'wait';
+      this.alarm = { entryId: e.id, agentId: ag.id, agent: ag.name, text: item.t, cat: item.c, crit };
+      this.sfx('error');
+      // Karte oeffnet NICHT von selbst — die Ampel springt auf rot, der Rest bleibt ruhig.
+    }
+    this.feed.unshift(e);
+    if (this.feed.length > 120) this.feed.length = 120;
+  }
+
+  resolve(kind) {
+    if (!this.alarm) return;
+    const a = this.alarm;
+    const e = this.feed.find(f => f.id === a.entryId);
+    if (e) { e.badge = kind === 'ok' ? 'approved' : 'denied'; e.badgeKind = kind === 'ok' ? 'ok' : 'no'; }
+    const ag = this.agents.find(x => x.id === a.agentId);
+    if (ag) {
+      const b = this.BUILDINGS.find(x => x.act === (kind === 'ok' ? 'command' : 'idle'));
+      ag.status = 'active'; ag.act = kind === 'ok' ? 'command' : 'idle'; ag.place = b.id; ag.work = 2.6;
+      this.sendTo(ag, b, 150);
+    }
+    this.feed.unshift({
+      id: 'r' + Math.random().toString(36).slice(2, 7), agentId: a.agentId, agent: a.agent,
+      color: this.dot(ag ? ag.color : 'blue'), act: this.ACT.alert.chip, actKey: 'alert',
+      text: (kind === 'ok' ? 'approved: ' : 'denied: ') + a.text,
+      cat: 'Approval', crit: a.crit, ts: Date.now(),
+      badge: kind === 'ok' ? 'human decided' : 'stopped', badgeKind: kind === 'ok' ? 'ok' : 'no'
+    });
+    const tw = this.BUILDINGS.find(x => x.act === 'alert');
+    if (kind === 'no') {
+      this.spawnFx('boom', tw.x, tw.y - tw.h * .25, 200);
+      for (let i = 0; i < 5; i++) this.spawnFx('smoke', tw.x + (Math.random() - .5) * 130, tw.y - tw.h * .4, 80);
+    } else {
+      for (let i = 0; i < 3; i++) this.spawnFx('smoke', tw.x + (Math.random() - .5) * 90, tw.y - tw.h * .45, 70);
+    }
+    this.alarm = null;
+    this.sfx(kind === 'ok' ? 'confirm' : 'back');
+    this.syncUI();
+  }
+
+  /* ---------------- Loop ---------------- */
+
+  tick(ts) {
+    const dt = Math.min(.05, (ts - this.last) / 1000) || 0;
+    this.last = ts; this.t += dt;
+
+    this.evTimer -= dt * this.state.tempo;
+    if (this.evTimer <= 0) { this.emit(); this.evTimer = .7 + Math.random() * 1.5; }
+
+    for (const a of this.agents) {
+      if (a.bT > 0) {
+        a.bT -= dt;
+        const k = Math.max(0, a.bT / .46);
+        const push = 150 * k;
+        a.x += a.bx * push * dt; a.y += a.by * push * dt;
+        a.hop = Math.sin((1 - k) * Math.PI) * 16;
+        a.squash = 1 - Math.sin((1 - k) * Math.PI) * .18;
+        a.flip = a.bx < 0;
+        if (a.bT <= 0) {
+          a.hop = 0; a.squash = 1;
+          const t = a.bTarget;
+          if (t) { a.path = this.route({ x: a.x, y: a.y }, t); a.pi = 0; }
+          a.bTarget = null;
+        }
+        continue;
+      }
+      if (a.pi < a.path.length) {
+        const p = a.path[a.pi];
+        const dx = p.x - a.x, dy = p.y - a.y, d = Math.hypot(dx, dy);
+        if (d < 6) { a.pi++; }
+        else {
+          const sp = (a.status === 'waiting' ? 128 : 104) * (.85 + (this.state.tempo - 1) * .1);
+          const nx = a.x + dx / d * sp * dt, ny = a.y + dy / d * sp * dt;
+          const hit = this.blockedBy(nx, ny);
+          if (hit) {
+            // Cartoon-Abprall: zurueckfedern, kleiner Hopser, Staubwolke, dann neu routen
+            a.bT = .46; a.bx = hit.nx; a.by = hit.ny;
+            a.bTarget = a.path[a.path.length - 1];
+            a.path = []; a.pi = 0; a.moving = false;
+            this.spawnFx('smoke', nx, ny + 6, 54);   // Bug #39: 'dust' gibt es im ATLAS nicht
+            this.sfx('back');
+          } else {
+            a.x = nx; a.y = ny;
+            a.moving = true; a.flip = dx < -1 ? true : dx > 1 ? false : a.flip;
+          }
+        }
+      } else {
+        a.moving = false;
+        if (a.status !== 'waiting') {
+          a.work -= dt * this.state.tempo;
+          if (a.work <= 0 && a.place !== 'taverne') {
+            const b = this.BUILDINGS[5];
+            a.act = 'idle'; a.place = 'taverne'; a.status = 'idle'; a.work = 3;
+            this.sendTo(a, b, 260);
+          }
+        }
+      }
+    }
+
+    // Gespräche in der Party-Zone: Paare bilden, einander zuwenden
+    for (const a of this.agents) {
+      a.talkCd = Math.max(0, (a.talkCd || 0) - dt);
+      if (a.talkT > 0) { a.talkT -= dt; if (a.talkT <= 0 || a.moving) { a.talkTo = null; a.talkCd = 10 + Math.random() * 10; } }
+    }
+    if ((this.pairT = (this.pairT || 0) - dt) <= 0) {
+      this.pairT = 1.5;
+      let pairs = this.agents.filter(a => a.talkTo).length / 2;
+      const free = this.agents.filter(a => !a.moving && a.status !== 'waiting' && !a.talkTo && a.talkCd <= 0);
+      for (let i = 0; i < free.length && pairs < 2; i++) for (let j = i + 1; j < free.length && pairs < 2; j++) {
+        const p = free[i], q = free[j];
+        if (p.talkTo || q.talkTo) continue;
+        if (Math.hypot(p.x - q.x, p.y - q.y) < 90 && Math.random() < .5) {
+          const dur = 3 + Math.random() * 3;
+          p.talkTo = q; q.talkTo = p; p.talkT = dur; q.talkT = dur;
+          p.speaker = true; q.speaker = false;
+          pairs++;
+        }
+      }
+    }
+    for (const a of this.agents) if (a.talkTo && !a.moving) a.flip = a.talkTo.x < a.x;
+
+    if (this.camTo) {
+      this.cam.x += (this.camTo.x - this.cam.x) * Math.min(1, dt * 4.5);
+      this.cam.y += (this.camTo.y - this.cam.y) * Math.min(1, dt * 4.5);
+      if (Math.hypot(this.camTo.x - this.cam.x, this.camTo.y - this.cam.y) < 3) this.camTo = null;
+    }
+    // Tageszeit
+    if (this.state.autoClock) { this.tod = (this.tod + dt * this.state.clockSpeed) % 24; }
+    // Wolken
+    for (const c of this.clouds) { c.x += c.v * dt; if (c.x > this.W + 340) c.x = -340; }
+    if (this.carriers) this.updCarriers(dt);
+    // FX altern
+    for (const x of this.fxs) x.t += dt;
+    this.fxs = this.fxs.filter(x => x.t < this.fxLife(x.type));
+    // Schmiede raucht, Ufer spritzt, Wachturm brennt beim Alarm
+    const forge = this.BUILDINGS.find(b => b.id === 'schmiede');
+    if ((this.smokeT -= dt) <= 0) { this.smokeT = 1.1 + Math.random(); this.spawnFx('smoke', forge.x + 8 + (Math.random() - .5) * 22, forge.y - 96, 58); }
+    if ((this.splashT -= dt) <= 0) {
+      this.splashT = 1.8 + Math.random() * 2.4;
+      const cell = this.foamCells[Math.floor(Math.random() * this.foamCells.length)];
+      if (cell) this.spawnFx('splash', cell[0] * this.T + 32 + (Math.random() - .5) * 90, cell[1] * this.T + 32 + (Math.random() - .5) * 90, 96);
+    }
+    if (this.alarm) {
+      const tw = this.BUILDINGS.find(b => b.act === 'alert');
+      if ((this.fireT -= dt) <= 0) {
+        this.fireT = .22;
+        this.spawnFx('fire', tw.x + (Math.random() - .5) * 74, tw.y - tw.h * .3 + (Math.random() - .5) * 40, 58 + Math.random() * 26);
+        if (Math.random() < .5) this.spawnFx('smoke', tw.x + (Math.random() - .5) * 90, tw.y - tw.h * .5, 66);
+      }
+    }
+
+    this.render();
+    this.raf = requestAnimationFrame(t => this.tick(t));
+  }
+
+  /** Zoomleiter statt freiem Faktor: 1 ist der Default (Pixel 1:1), 0.5/2 sind ganzzahlig. */
+  ZOOMS = [.5, .75, 1, 1.5, 2, 3];
+  zoomStep(dir) {
+    let i = this.ZOOMS.indexOf(this.state.zoom);
+    if (i < 0) i = this.ZOOMS.reduce((best, z, k) => Math.abs(z - this.state.zoom) < Math.abs(this.ZOOMS[best] - this.state.zoom) ? k : best, 2);
+    const j = Math.max(0, Math.min(this.ZOOMS.length - 1, i + dir));
+    this.setState({ zoom: this.ZOOMS[j] });
+    this.sfx('click');
+  }
+
+  fit() {
+    const c = this.el.cv, host = this.el.stage;
+    if (!c || !host) return;
+    const dpr = Math.min(2, window.devicePixelRatio || 1);
+    this.cw = host.clientWidth; this.ch = host.clientHeight;
+    c.width = Math.max(1, Math.round(this.cw * dpr));
+    c.height = Math.max(1, Math.round(this.ch * dpr));
+    this.dpr = dpr;
+  }
+
+  render() {
+    const c = this.el.cv; if (!c) return;
+    if (!this.cw) this.fit();
+    const g = c.getContext('2d'), z = this.state.zoom, T = this.T;
+    const vw = this.cw / z / 2, vh = this.ch / z / 2;
+    this.cam.x = Math.max(Math.min(vw, this.W / 2), Math.min(this.cam.x, this.W - Math.min(vw, this.W / 2)));
+    this.cam.y = Math.max(Math.min(vh, this.H / 2), Math.min(this.cam.y, this.H - Math.min(vh, this.H / 2)));
+
+    g.setTransform(this.dpr, 0, 0, this.dpr, 0, 0);
+    g.imageSmoothingEnabled = false;
+    g.fillStyle = '#1c6c78'; g.fillRect(0, 0, this.cw, this.ch);
+    g.save();
+    g.translate(this.cw / 2, this.ch / 2 + 74); g.scale(z, z); g.translate(-this.cam.x, -this.cam.y);
+
+    // Wasser
+    const wt = this.img.water;
+    if (wt) {
+      if (!this.waterPat) this.waterPat = g.createPattern(wt, 'repeat');
+      g.fillStyle = this.waterPat || '#1c6c78';
+      g.fillRect(0, 0, this.W, this.H);
+    }
+    // Schaum (8 Frames à 3×3 Kacheln)
+    const fm = this.img.foam;
+    if (fm && this.foamCells) {
+      const fr = Math.floor(this.t * 7) % 8;
+      for (const [cc, rr] of this.foamCells) {
+        g.drawImage(fm, fr * 192, 0, 192, 192, cc * T - T, rr * T - T, 192, 192);
+      }
+    }
+    if (this.bg) g.drawImage(this.bg, 0, 0);
+
+    // Tiefensortierung nach Fuß-Y
+    const items = [];
+    for (const w of this.water) {
+      const key = w.kind, h = key === 'duck' ? 34 : 62;
+      this.blit(g, key, this.frameOf(key, this.t + w.ph), w.x, w.y + (key === 'duck' ? Math.sin(this.t * 2 + w.ph) * 2 : 0), h, 'center');
+    }
+    for (const p of this.deco) items.push({ y: p.y, d: () => this.drawProp(g, p) });
+    for (const x of this.fxs) items.push({ y: x.y + 40, d: () => this.blit(g, x.type, this.frameOf(x.type, x.t, false), x.x, x.y, x.h, 'center') });
+    for (const n of this.nodes || []) if (n.res === 'gold') items.push({ y: n.y, d: () => this.blit(g, n.vein, 0, n.x, n.y, 0, 'center') });
+    for (const s of this.sheep || []) items.push({ y: s.y, d: () => this.drawSheep(g, s) });
+    for (const b of this.BUILDINGS) items.push({ y: b.y + b.h * .45, d: () => { this.drawBuilding(g, b); this.drawStock(g, b); } });
+    for (const c of this.carriers || []) items.push({ y: c.y, d: () => this.drawCarrier(g, c) });
+    for (const a of this.agents) items.push({ y: a.y, d: () => this.drawHero(g, a) });
+    items.sort((p, q) => p.y - q.y);
+    // Absicht: nur ein leiser Punkt am Ziel. Gezeichnete Laufwege sind raus —
+    // sie sprangen bei jeder Neuberechnung und dominierten das Bild (v3.9).
+    for (const a of this.agents) {
+      if (!a.path || a.pi >= a.path.length) continue;
+      const t = a.path[a.path.length - 1];
+      g.save();
+      g.globalAlpha = .3; g.fillStyle = this.ACT[a.act].color;
+      g.beginPath(); g.arc(t.x, t.y, 4, 0, 6.3); g.fill();
+      g.globalAlpha = .5; g.lineWidth = 1.2; g.strokeStyle = 'rgba(18,26,14,.7)';
+      g.beginPath(); g.arc(t.x, t.y, 4, 0, 6.3); g.stroke();
+      g.restore();
+    }
+    for (const it of items) it.d();
+    const hb = this.hoverKey, sb = this.state.selB;
+    for (const b of this.BUILDINGS) if (b.id === hb || b.id === sb) this.drawSign(g, b);
+
+    // Wolkenschatten-freie Wolkenschicht über der Welt
+    for (const c of this.clouds) {
+      const im = this.img[c.key]; if (!im) continue;
+      g.save(); g.globalAlpha = c.a;
+      g.drawImage(im, c.x - c.s / 2, c.y - c.s * .22, c.s, c.s * (im.naturalHeight / im.naturalWidth));
+      g.restore();
+    }
+    // Tageszeit: Tint + warme Fenster
+    const sky = this.skyOf(this.tod);
+    if (sky.a > .01) {
+      g.fillStyle = 'rgba(' + sky.c + ',' + sky.a + ')';
+      g.fillRect(0, 0, this.W, this.H);
+    }
+    if (sky.glow > .01) {
+      g.save(); g.globalCompositeOperation = 'lighter';
+      for (const b of this.BUILDINGS) {
+        const rad = g.createRadialGradient(b.x, b.y + 20, 10, b.x, b.y + 20, 250);
+        rad.addColorStop(0, 'rgba(255,196,120,' + sky.glow + ')');
+        rad.addColorStop(1, 'rgba(255,196,120,0)');
+        g.fillStyle = rad; g.beginPath(); g.arc(b.x, b.y + 20, 250, 0, 6.3); g.fill();
+      }
+      g.restore();
+    }
+    g.restore();
+  }
+
+  SKY = [
+    { h: 0,  c: '14,22,58', a: .56, glow: .32 },
+    { h: 5,  c: '40,34,72',  a: .44, glow: .26 },
+    { h: 7,  c: '120,72,40', a: .22, glow: .12 },
+    { h: 10, c: '0,0,0',     a: 0,   glow: 0 },
+    { h: 17, c: '0,0,0',     a: 0,   glow: 0 },
+    { h: 19, c: '150,70,30', a: .26, glow: .16 },
+    { h: 21, c: '40,34,80',  a: .44, glow: .28 },
+    { h: 24, c: '14,22,58',  a: .56, glow: .32 }
+  ];
+  skyOf(h) {
+    const K = this.SKY;
+    let i = 0; while (i < K.length - 2 && K[i + 1].h <= h) i++;
+    const a = K[i], b = K[i + 1], t = Math.max(0, Math.min(1, (h - a.h) / (b.h - a.h || 1)));
+    const mix = (x, y) => x.split(',').map((v, k) => Math.round(+v + (+y.split(',')[k] - +v) * t)).join(',');
+    return { c: a.a === 0 && b.a === 0 ? '0,0,0' : mix(a.a ? a.c : b.c, b.a ? b.c : a.c), a: a.a + (b.a - a.a) * t, glow: a.glow + (b.glow - a.glow) * t };
+  }
+  clockLabel() {
+    const h = Math.floor(this.tod), m = Math.floor((this.tod - h) * 60);
+    const phase = this.tod < 6 ? 'Night' : this.tod < 9 ? 'Morning' : this.tod < 17 ? 'Day' : this.tod < 20 ? 'Evening' : 'Night';
+    return String(h).padStart(2, '0') + ':' + String(m).padStart(2, '0') + ' · ' + phase;
+  }
+
+  roundRect(g, x, y, w, h, r) {
+    g.beginPath();
+    g.moveTo(x + r, y); g.arcTo(x + w, y, x + w, y + h, r); g.arcTo(x + w, y + h, x, y + h, r);
+    g.arcTo(x, y + h, x, y, r); g.arcTo(x, y, x + w, y, r); g.closePath();
+  }
+
+  drawProp(g, p) {
+    if (p.kind === 'tree') {
+      const im = this.img.trees; if (!im) return;
+      const s = 192 * this.SCALE;                 // Baumblatt 1:1, keine Zufallsgroesse
+      g.drawImage(im, p.f * 192, 0, 192, 192, p.x - s / 2, p.y - s * .82, s, s);
+      return;
+    }
+    const im = this.img[p.key]; if (!im) return;
+    const w = im.naturalWidth * this.SCALE, h = im.naturalHeight * this.SCALE;
+    g.drawImage(im, p.x - w / 2, p.y - h * .7, w, h);
+  }
+
+  drawBuilding(g, b) {
+    const im = this.img['b_' + b.id];
+    if (!im) return;
+    const h = im.naturalHeight * this.SCALE, w = im.naturalWidth * this.SCALE;
+    // Kein gemalter Schatten mehr: eine weiche Ellipse ist im Top-down-Pixelset immer falsch
+    // (wie Unit-Schatten und Brunnen). Lieber gar keinen als einen gemalten.
+    g.drawImage(im, Math.round(b.x - w / 2), Math.round(b.y - h * .55), Math.round(w), Math.round(h));
+    // Alarm wird nicht im Dorf beschriftet — die Ampel im HUD ist die einzige Anzeige.
+  }
+
+  drawSign(g, b) {
+    const alarmed = this.alarm && b.act === 'alert';
+    g.font = '700 20px "Shantell Sans", cursive';
+    const w1 = g.measureText(b.label).width;
+    g.font = '400 14px "Shantell Sans", cursive';
+    const w2 = g.measureText(b.sub).width;
+    const pw = Math.max(w1, w2) + 32, ph = 52;
+    const px = b.x - pw / 2, py = b.y + b.h * .42 + 10;
+    g.fillStyle = '#6b4e2e';
+    g.fillRect(px + 14, py + ph - 4, 5, 14); g.fillRect(px + pw - 19, py + ph - 4, 5, 14);
+    g.fillStyle = alarmed ? '#8a4a3a' : '#8b7a5a';
+    g.fillRect(px, py, pw, ph);
+    g.fillStyle = 'rgba(255,255,255,.14)'; g.fillRect(px, py, pw, 5);
+    g.strokeStyle = '#3a2a18'; g.lineWidth = 3; g.strokeRect(px, py, pw, ph);
+    g.textAlign = 'center';
+    g.fillStyle = '#fff3cf'; g.font = '700 20px "Shantell Sans", cursive';
+    g.fillText(b.label, b.x, py + 24);
+    g.fillStyle = alarmed ? '#ffd9cf' : '#e3cda3'; g.font = '400 14px "Shantell Sans", cursive';
+    g.fillText(b.sub, b.x, py + 42);
+    g.textAlign = 'left';
+  }
+
+  drawHero(g, a) {
+    const spec = this.UNITS[a.unit];
+    const strip = !!spec.strip;
+    const sheet = strip ? this.img[(a.moving ? 'h_' : 'i_') + a.unit + '_' + a.color] : this.img['h_' + a.unit + '_' + a.color];
+    const F = strip ? spec.F : 192, disp = F * this.SCALE;
+    let col, row;
+    if (strip) {
+      const n = a.moving ? spec.runN : spec.idleN;
+      col = Math.floor(this.t * (a.moving ? 11 : 7) + a.ph) % n; row = 0;
+    } else {
+      const i = Math.floor(this.t * (a.moving ? 11 : 7) + a.ph) % 6;
+      const idx = a.moving ? spec.run[i] : i;
+      col = idx % spec.cols; row = Math.floor(idx / spec.cols);
+    }
+    const sel = this.state.selId === a.id;
+    // Gemessene Werte statt globaler Konstanten: Füsse auf a.y, Kopf bei a.y − bodyH.
+    const footPad = (spec.footPad || 56) * this.SCALE, bodyH = (spec.bodyH || 90) * this.SCALE;
+    const headY = a.y - bodyH - (a.hop || 0);
+
+
+
+    if (sheet) {
+      g.save(); g.translate(a.x, a.y + footPad - disp / 2 - (a.hop || 0));
+      if (a.squash && a.squash !== 1) g.scale(2 - a.squash, a.squash);
+      if (a.flip) g.scale(-1, 1);
+      g.drawImage(sheet, col * F, row * F, F, F, -disp / 2, -disp / 2, disp, disp);
+      g.restore();
+    }
+    if (a.status === 'waiting') {
+      const p = .5 + .5 * Math.sin(this.t * 5);
+      const by = headY - 16 - p * 4;
+      g.save();
+      g.fillStyle = 'rgba(18,24,16,.92)'; g.strokeStyle = '#f6efdc'; g.lineWidth = 3;
+      g.beginPath(); g.roundRect(a.x - 11, by - 15, 22, 30, 6); g.fill(); g.stroke();
+      g.beginPath(); g.moveTo(a.x - 6, by + 14); g.lineTo(a.x, by + 22); g.lineTo(a.x + 6, by + 14); g.closePath();
+      g.fillStyle = 'rgba(18,24,16,.92)'; g.fill();
+      g.fillStyle = '#f9736 2'.replace(' ', ''); g.font = '700 20px Shantell Sans, system-ui';
+      g.textAlign = 'center'; g.textBaseline = 'middle';
+      g.fillText('!', a.x, by);
+      g.restore();
+    }
+    if (sel) {
+      const pt = this.img.pointer;
+      const bob = Math.sin(this.t * 4) * 5;
+      if (pt) {
+        const pw = pt.naturalWidth * this.SCALE, phh = pt.naturalHeight * this.SCALE;
+        g.drawImage(pt, a.x - pw / 2, headY - 26 - phh + bob, pw, phh);
+      }
+    }
+
+    if (a.talkTo && !a.moving && a.speaker) {
+      const away = a.x >= a.talkTo.x ? 1 : -1;
+      const bx = a.x + away * 30, by = headY - 8;
+      const ph = Math.floor(this.t * 2 + a.ph) % 3;
+      g.fillStyle = 'rgba(232,214,170,.95)'; g.strokeStyle = 'rgba(36,23,8,.9)'; g.lineWidth = 2;
+      this.roundRect(g, bx - 20, by - 14, 40, 24, 6); g.fill(); g.stroke();
+      g.fillStyle = '#4a3418';
+      for (let i = 0; i <= ph; i++) { g.beginPath(); g.arc(bx - 9 + i * 9, by - 2, 2.4, 0, 6.3); g.fill(); }
+    }
+    const showName = sel || a.status === 'waiting' || a.moving || a.place !== 'taverne';
+    if (!showName) return;
+    const ac = this.ACT[a.act];
+    g.textAlign = 'center';
+    g.font = '700 17px "Shantell Sans", cursive';
+    g.lineWidth = 5; g.strokeStyle = 'rgba(20,14,6,.9)';
+    const ty = headY - 20;
+    g.strokeText(a.name, a.x, ty);
+    g.fillStyle = '#fff3cf'; g.fillText(a.name, a.x, ty);
+    g.font = '600 14px "Shantell Sans", cursive';
+    g.lineWidth = 4; g.strokeStyle = 'rgba(20,14,6,.9)';
+    g.strokeText(ac.chip, a.x, ty + 18);
+    g.fillStyle = ac.color; g.fillText(ac.chip, a.x, ty + 18);
+    g.textAlign = 'left';
+  }
+
+  /* ---------------- Eingabe ---------------- */
+
+  bindCanvas() {
+    const c = this.el.cv; if (!c) return;
+    this.onDown = e => { this.drag = { x: e.clientX, y: e.clientY, cx: this.cam.x, cy: this.cam.y, moved: 0 }; this.camTo = null; c.style.cursor = 'grabbing'; };
+    this.onMove = e => {
+      if (!this.drag) return;
+      const dx = e.clientX - this.drag.x, dy = e.clientY - this.drag.y;
+      this.drag.moved = Math.max(this.drag.moved, Math.hypot(dx, dy));
+      this.cam.x = this.drag.cx - dx / this.state.zoom;
+      this.cam.y = this.drag.cy - dy / this.state.zoom;
+    };
+    this.onUp = e => { if (!this.drag) return; const m = this.drag.moved; this.drag = null; c.style.cursor = 'grab'; if (m < 4) this.hit(e); };
+    this.onWheel = e => {
+      e.preventDefault();
+      if (this._wT && performance.now() - this._wT < 150) return;
+      this._wT = performance.now();
+      this.zoomStep(e.deltaY < 0 ? 1 : -1);
+    };
+    this.onHover = e => {
+      if (this.drag) return;
+      const p = this.worldAt(e);
+      const b = this.buildingAt(p.x, p.y);
+      const key = b ? b.id : null;
+      if (key !== this.hoverKey || b) {
+        this.hoverKey = key;
+        this.setState({ hover: b ? { label: b.label, sub: b.sub, act: this.ACT[b.act].chip, x: e.clientX, y: e.clientY } : null });
+      }
+      c.style.cursor = b ? 'pointer' : 'grab';
+    };
+    c.addEventListener('mousemove', this.onHover);
+    c.addEventListener('mousedown', this.onDown);
+    c.addEventListener('wheel', this.onWheel, { passive: false });
+    window.addEventListener('mousemove', this.onMove);
+    window.addEventListener('mouseup', this.onUp);
+  }
+
+  worldAt(e) {
+    const c = this.el.cv, r = c.getBoundingClientRect(), z = this.state.zoom;
+    return { x: (e.clientX - r.left - this.cw / 2) / z + this.cam.x, y: (e.clientY - r.top - this.ch / 2 - 74) / z + this.cam.y };
+  }
+  buildingAt(wx, wy) {
+    for (const b of this.BUILDINGS) {
+      const im = this.img['b_' + b.id]; if (!im) continue;
+      const w = im.naturalWidth / im.naturalHeight * b.h;
+      if (wx > b.x - w / 2 && wx < b.x + w / 2 && wy > b.y - b.h * .55 && wy < b.y + b.h * .45) return b;
+    }
+    return null;
+  }
+  hit(e) {
+    const c = this.el.cv, r = c.getBoundingClientRect(), z = this.state.zoom;
+    const wx = (e.clientX - r.left - this.cw / 2) / z + this.cam.x;
+    const wy = (e.clientY - r.top - this.ch / 2 - 74) / z + this.cam.y;
+    let best = null, bd = 1e9;
+    for (const a of this.agents) { const d = Math.hypot(a.x - wx, a.y - wy - 44); if (d < bd) { bd = d; best = a; } }
+    if (best && bd < 66) { this.setState({ selId: best.id, selB: null }); this.sfx('select'); return; }
+    const b = this.buildingAt(wx, wy);
+    if (b) { this.setState({ selB: b.id, selId: null }); this.sfx('select'); return; }
+    this.setState({ selId: null, selB: null });
+  }
+
+  /* ---------------- Ton ---------------- */
+
+  sfx(name) {
+    if (!this.state.sound) return;
+    const s = this.SFX[name]; if (!s) return;
+    try { const a = new Audio(this.KFB + 'media/3D_Assets/Audio/kenney_interface-sounds/' + s[0]); a.volume = s[1] * .7; a.play().catch(() => {}); } catch (err) {}
+  }
+
+  playTrack(i) {
+    const tr = this.TRACKS[i % this.TRACKS.length];
+    if (this.music) { this.music.pause(); this.music = null; }
+    const a = new Audio(this.KFB + tr.f.split('/').map(encodeURIComponent).join('/'));
+    a.loop = true; a.volume = .3;
+    a.play().then(() => this.setState({ playing: true })).catch(() => this.setState({ playing: false }));
+    this.music = a;
+  }
+
+  /* ---------------- UI ---------------- */
+
+  syncUI() {
+    this.setState({
+      feed: this.feed.slice(0, 34).map(f => ({ ...f })),
+      agents: this.agents.map(a => ({ ...a })),
+      alarm: this.alarm ? { ...this.alarm } : null,
+      clock: this.clockLabel()
+    });
+  }
+
+  dot(c) { return { blue: '#6ab4f8', red: '#f97362', yellow: '#f6b74a', purple: '#a78bfa' }[c] || '#c9ae84'; }
+
+  avatar(a) {
+    const spec = this.UNITS[a.unit], F = 66;     // 66 = 192-px-Blatt auf 34-px-Kachel beschnitten
+    if (spec.strip) {
+      const f = Math.round(spec.F * (F / 192)), off = Math.round((f - 34) / 2);
+      return {
+        sheet: this.stripUrl(a.unit, a.color, 'idle'),
+        bgSize: (f * spec.idleN) + 'px ' + f + 'px',
+        bgPos: '-' + off + 'px -' + Math.max(0, off - 4) + 'px'
+      };
+    }
+    return { sheet: this.sheetUrl(a.unit, a.color), bgSize: (spec.cols * F) + 'px ' + (spec.rows * F) + 'px', bgPos: '-9px -7px' };
+  }
+
+  statusLabel(a) {
+    if (a.status === 'waiting') return 'awaiting approval';
+    if (a.moving) return 'walking';
+    if (a.status === 'active') return 'on duty';
+    return 'resting';
+  }
+
+  critColor(c) { return c >= .75 ? '#b4331f' : c >= .5 ? '#a06a10' : '#2f7a3a'; }
+  ACT_DARK = { read: '#1d6a8c', write: '#2f7a3a', command: '#4a3a9a', analyze: '#a06a10', alert: '#b4331f', idle: '#6b4a20' };
+
+  renderVals() {
+    const s = this.state;
+    const btn = on => this.UI + (on ? 'Buttons/Button_Blue_3Slides_Pressed.png' : 'Buttons/Button_Blue_3Slides.png');
+    const fmt = ts => new Date(ts).toLocaleTimeString('de-DE', { hour: '2-digit', minute: '2-digit' });
+    const auto = s.autonomy >= 70;
+    const selAg = this.agents.find(a => a.id === s.selId);
+    const bMap = {}; for (const b of this.BUILDINGS) bMap[b.id] = b;
+    const badge = k => ({
+      auto: { bg: 'rgba(126,116,196,.35)', fg: '#2b2560' },
+      wait: { bg: 'rgba(196,72,52,.42)', fg: '#4a1008' },
+      ok:   { bg: 'rgba(88,168,104,.4)', fg: '#1d4a26' },
+      no:   { bg: 'rgba(120,96,60,.4)', fg: '#4a3418' }
+    }[k] || { bg: 'rgba(120,96,60,.35)', fg: '#4a3418' });
+    const busy = this.agents.filter(a => a.status === 'active').length;
+
+    return {
+      loading: s.loading, loadLabel: s.loadLabel,
+      statLine: this.agents.length + ' heroes · ' + busy + ' on duty · ' + this.feed.length + ' artefacts · ' + s.clock,
+      // Ressourcen-Leiste blendet nur bei Änderung ein (3.8 s), danach ist der Kopf wieder ruhig.
+      resShow: !s.loading && !!this.res && (this.t - this.resAt) < 3.8,
+      resWood: this.res ? this.res.wood : 0,
+      resGold: this.res ? this.res.gold : 0,
+      resMeat: this.res ? this.res.meat : 0,
+      clock: s.clock,
+      cycleTime: () => {
+        const stops = [7.5, 12, 19, 22.5];
+        const next = stops.find(h => h > this.tod + .01);
+        this.tod = next === undefined ? stops[0] : next;
+        this.setState({ autoClock: false, clock: this.clockLabel() }); this.sfx('toggle');
+      },
+      clockLabel: s.autoClock ? 'clock on' : 'clock off',
+      toggleClock: () => { this.setState({ autoClock: !s.autoClock }); this.sfx('toggle'); },
+      todValue: Math.round(this.tod * 10) / 10,
+      onTod: e => { this.tod = +e.target.value; this.setState({ autoClock: false, clock: this.clockLabel() }); },
+      clockSpeed: s.clockSpeed,
+      onClockSpeed: e => this.setState({ clockSpeed: +e.target.value }),
+
+      hover: s.hover ? { label: s.hover.label, sub: s.hover.sub, act: s.hover.act, pos: 'left:' + (s.hover.x + 16) + 'px; top:' + (s.hover.y + 14) + 'px' } : null,
+
+      selB: (() => {
+        if (!s.selB) return null;
+        const b = this.BUILDINGS.find(x => x.id === s.selB); if (!b) return null;
+        const mine = this.feed.filter(e => e.actKey === b.act);
+        const crit = mine.length ? mine.reduce((a, e) => a + e.crit, 0) / mine.length : 0;
+        const here = this.agents.filter(a => a.place === b.id).map(a => a.name);
+        return {
+          label: b.label, sub: b.sub, act: this.ACT[b.act].chip,
+          count: String(mine.length),
+          critAvg: crit.toFixed(2), critColor: this.critColor(crit),
+          here: here.length ? here.join(', ') : 'nobody',
+          arte: mine.length + ' · crit ' + crit.toFixed(2),
+          last: mine.length ? mine[0].text : 'no artefact yet'
+        };
+      })(),
+      clearB: () => this.setState({ selB: null }),
+      council: s.council,
+      toggleCouncil: () => { this.setState({ council: !s.council }); this.sfx('click'); },
+      chronik: s.chronik,
+      chronikLabel: s.chronik ? 'Close log' : 'Log',
+      partyOpen: s.partyOpen,
+      partyLabel: s.partyOpen ? 'Party ' + this.agents.length : 'Party ' + this.agents.length + ' \u25b8',
+      togglePartyBar: () => { this.setState({ partyOpen: !s.partyOpen }); this.sfx('click'); },
+      toggleChronik: () => { this.setState({ chronik: !s.chronik }); this.sfx('click'); },
+
+      srcImg0: btn(s.src === 'nexus'), srcImg1: btn(s.src === 'rss'), srcImg2: btn(s.src === 'scene'),
+      pickNexus: () => { this.setState({ src: 'nexus' }); this.sfx('toggle'); },
+      pickRss: () => { this.setState({ src: 'rss' }); this.sfx('toggle'); },
+      pickScene: () => { this.sceneIdx = 0; this.setState({ src: 'scene' }); this.sfx('toggle'); },
+
+      autonomy: s.autonomy,
+      autonomyLabel: auto ? 'free hand' : s.autonomy + '%',
+      autoColor: auto ? '#4a3a9a' : '#a06a10',
+      onAutonomy: e => this.setState({ autonomy: +e.target.value }),
+      tempo: s.tempo, tempoLabel: s.tempo + '×',
+      onTempo: e => this.setState({ tempo: +e.target.value }),
+      count: s.count,
+      more: () => { const n = Math.min(24, s.count + 1); this.setState({ count: n }); this.spawnAgents(n); this.sfx('click'); },
+      fewer: () => { const n = Math.max(3, s.count - 1); this.setState({ count: n }); this.spawnAgents(n); this.sfx('click'); },
+      soundLabel: s.sound ? 'Sound on' : 'Sound off',
+      soundImg: btn(s.sound),
+      toggleSound: () => this.setState({ sound: !s.sound }),
+
+      zoom: s.zoom, zoomLabel: s.zoom.toFixed(2) + '×',
+      zoomIn: () => this.zoomStep(1),
+      zoomOut: () => this.zoomStep(-1),
+      recenter: () => { this.camTo = { x: this.PLAZA.x, y: this.PLAZA.y - 20 }; this.sfx('click'); },
+
+      feedCount: this.feed.length + ' entries',
+      feed: s.feed.map(f => {
+        const bs = badge(f.badgeKind);
+        return {
+          ...f, time: fmt(f.ts), dot: f.color,
+          actColor: this.ACT_DARK[f.actKey] || this.ACT_DARK.idle,
+          crit: f.crit.toFixed(2), critW: Math.round(f.crit * 100) + '%', critColor: this.critColor(f.crit),
+          border: f.badgeKind === 'wait' ? '#a8331c' : 'rgba(96,66,30,.45)',
+          bg: f.badgeKind === 'wait' ? 'rgba(214,132,110,.4)' : 'rgba(158,124,76,.28)',
+          badgeBg: bs.bg, badgeFg: bs.fg,
+          jump: () => {
+            const ag = this.agents.find(a => a.id === f.agentId);
+            if (!ag) return;
+            this.camTo = { x: ag.x, y: ag.y - 30 };
+            this.setState({ selId: ag.id }); this.sfx('select');
+          }
+        };
+      }),
+
+      alarm: s.alarm ? { text: s.alarm.text, meta: s.alarm.agent + ' · ' + s.alarm.cat + ' · dial ' + s.autonomy + '%', crit: s.alarm.crit.toFixed(2) } : null,
+      approve: () => this.resolve('ok'),
+      deny: () => this.resolve('no'),
+
+      agents: s.agents.map(a => {
+        const av = this.avatar(a), on = a.id === s.selId;
+        return {
+          short: a.name.split('-')[0], sheet: av.sheet, bgSize: av.bgSize, bgPos: av.bgPos,
+          statusColor: a.status === 'waiting' ? '#b4331f' : a.status === 'active' ? '#2f7a3a' : '#8b7a5a',
+          border: on ? '#8a4a10' : 'rgba(96,66,30,.45)',
+          bg: on ? 'rgba(214,176,104,.55)' : 'rgba(158,124,76,.28)',
+          pick: () => { this.setState({ selId: a.id }); this.camTo = { x: a.x, y: a.y - 30 }; this.sfx('select'); }
+        };
+      }),
+
+      sel: selAg ? (() => {
+        const av = this.avatar(selAg), b = bMap[selAg.place] || bMap.taverne;
+        const crit = selAg.artefacts ? selAg.critSum / selAg.artefacts : 0;
+        return {
+          name: selAg.name, sheet: av.sheet, bgSize: av.bgSize, bgPos: av.bgPos,
+          meta: selAg.unit + ' · ' + (s.src === 'rss' ? 'RSS/LLM' : s.src === 'scene' ? 'Scenario' : 'Artefacts'),
+          place: b.label, status: this.statusLabel(selAg),
+          statusColor: selAg.status === 'waiting' ? '#b4331f' : selAg.status === 'active' ? '#2f7a3a' : '#6b4a20',
+          artefacts: String(selAg.artefacts), arte: selAg.artefacts + ' · crit ' + crit.toFixed(2), critAvg: crit.toFixed(2), critColor: this.critColor(crit),
+          last: selAg.last
+        };
+      })() : null,
+      clearSel: () => this.setState({ selId: null }),
+
+      playLabel: s.playing ? 'Pause' : 'Jukebox',
+      trackShort: this.TRACKS[s.track % this.TRACKS.length].t,
+      toggleMusic: () => {
+        if (this.music && s.playing) { this.music.pause(); this.setState({ playing: false }); return; }
+        if (this.music) { this.music.play().then(() => this.setState({ playing: true })).catch(() => {}); return; }
+        this.playTrack(s.track);
+      },
+      nextTrack: () => { const n = (s.track + 1) % this.TRACKS.length; this.setState({ track: n }); this.playTrack(n); },
+
+      showUI: !s.min,
+      minified: s.min,
+      toggleMin: () => { this.setState({ min: !s.min }); this.sfx('toggle'); },
+      consoleOpen: s.chronik || s.council,
+      openLog: () => { this.setState({ chronik: true, council: false, min: false }); this.sfx('click'); },
+      openSettings: () => { this.setState({ council: true, chronik: false, min: false }); this.sfx('click'); },
+      closeConsole: () => { this.setState({ chronik: false, council: false }); this.sfx('back'); },
+      logTabBg: s.chronik ? 'rgba(240,226,196,.18)' : 'rgba(240,226,196,.06)',
+      setTabBg: s.council ? 'rgba(240,226,196,.18)' : 'rgba(240,226,196,.06)',
+      srcNexusBg: s.src === 'nexus' ? 'rgba(240,226,196,.18)' : 'rgba(240,226,196,.06)',
+      srcRssBg: s.src === 'rss' ? 'rgba(240,226,196,.18)' : 'rgba(240,226,196,.06)',
+      srcSceneBg: s.src === 'scene' ? 'rgba(240,226,196,.18)' : 'rgba(240,226,196,.06)',
+      alarmCard: s.alarm && s.alarmOpen ? { text: s.alarm.text, meta: s.alarm.agent + ' · ' + s.alarm.cat + ' · dial ' + s.autonomy + '%', crit: s.alarm.crit.toFixed(2) } : null,
+      toggleAlarm: () => { this.setState({ alarmOpen: !s.alarmOpen, min: false }); this.sfx('click'); },
+      closeAlarm: () => { this.setState({ alarmOpen: false }); this.sfx('back'); },
+      lampRed: s.alarm ? '#f2705c' : 'rgba(224,112,94,.18)',
+      lampAmber: (!s.alarm && s.autonomy >= 60) ? '#e8b552' : 'rgba(232,181,82,.18)',
+      lampGreen: (!s.alarm && s.autonomy < 60) ? '#7fbf6a' : 'rgba(127,191,106,.18)',
+      lampGlow: s.alarm ? '0 0 8px rgba(242,112,92,.9)' : 'none',
+      lampLabel: s.alarm ? 'Approval' : 'Clear',
+      lampBg: s.alarm ? 'rgba(120,40,32,.9)' : 'rgba(16,20,15,.86)',
+      trackLabel: this.TRACKS[s.track % this.TRACKS.length].t,
+
+      stage: el => { if (el) this.el.stage = el; },
+      cv: el => { if (el) this.el.cv = el; }
+    };
+  }
+}
+</script>
+</body>
+</html>
