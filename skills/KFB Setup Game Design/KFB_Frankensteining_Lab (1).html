@@ -1,0 +1,1931 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>KFB Frankensteining Lab</title>
+<style>
+  /* Hell als Standard, weil das ein Lesedokument ist. Dunkel per Umschalter. */
+  :root{
+    --bg:#faf7f0; --panel:#ffffff; --panel2:#f2ede3; --line:#d9d3c6;
+    --fg:#1b1f27; --dim:#4e5765;
+    --gold:#8a6416; --teal:#1f7a6c; --accent:#9E2A20;
+    --ok:#1f7a3a; --warn:#8a6416; --bad:#a8322a;
+    --codebg:rgba(31,122,108,.10);
+  }
+  html[data-theme="dark"]{
+    --bg:#14161c; --panel:#1c2029; --panel2:#232833; --line:#3a4252;
+    --fg:#ece6da; --dim:#b6bfcc;
+    --gold:#e0b453; --teal:#8fdccf; --accent:#e0837a;
+    --ok:#7fe08f; --warn:#f0c674; --bad:#f08a80;
+    --codebg:rgba(143,220,207,.14);
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;background:var(--bg);color:var(--fg);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+    font-size:16.5px;line-height:1.68;}
+  code{font-family:ui-monospace,Menlo,monospace;font-size:14px;background:var(--codebg);
+    color:var(--teal);padding:1px 5px;border-radius:4px;}
+  pre{background:var(--panel2);border:1px solid var(--line);border-radius:9px;padding:14px 16px;
+    overflow-x:auto;font-family:ui-monospace,Menlo,monospace;font-size:13.5px;line-height:1.6;
+    color:var(--fg);}
+  a{color:var(--gold);}
+  header{position:sticky;top:0;z-index:10;background:var(--bg);
+    border-bottom:1px solid var(--line);padding:13px 22px;
+    display:flex;justify-content:space-between;align-items:center;gap:14px;}
+  header b{font-size:17px;font-weight:800;}
+  header small{display:block;color:var(--dim);font-size:12px;font-family:ui-monospace,monospace;
+    letter-spacing:.04em;margin-top:3px;}
+  #themeBtn{border:1px solid var(--line);background:var(--panel);color:var(--fg);
+    border-radius:8px;padding:7px 13px;font-size:13px;cursor:pointer;white-space:nowrap;
+    font-family:ui-monospace,monospace;}
+  .wrap{max-width:940px;margin:0 auto;padding:22px 22px 90px;}
+  h2{font-size:20px;margin:36px 0 10px;border-left:4px solid var(--gold);padding-left:12px;}
+  h3{font-size:16px;margin:24px 0 6px;color:var(--gold);}
+  p{max-width:74ch;} .lead{color:var(--dim);max-width:74ch;}
+  .me{border-left:4px solid var(--teal);padding:4px 0 4px 14px;margin:14px 0;}
+  .me b{color:var(--teal);}
+  table{border-collapse:collapse;width:100%;margin:12px 0;font-size:15px;}
+  th,td{text-align:left;padding:9px 10px;border-bottom:1px solid var(--line);vertical-align:top;}
+  th{color:var(--dim);font-size:12.5px;text-transform:uppercase;letter-spacing:.4px;font-weight:700;}
+  tr:nth-child(even) td{background:var(--panel);}
+  ul{padding-left:20px;} li{margin-bottom:7px;max-width:72ch;}
+  ol{padding-left:24px;} ol li{margin-bottom:9px;}
+  .ok{color:var(--ok);font-weight:600;} .warn{color:var(--warn);font-weight:600;} .bad{color:var(--bad);font-weight:600;}
+  .status{display:inline-block;font-size:12px;font-family:ui-monospace,monospace;padding:2px 9px;
+    border-radius:999px;border:1px solid var(--line);color:var(--dim);}
+  .status.ok{border-color:var(--ok);color:var(--ok);}
+  .status.bad{border-color:var(--bad);color:var(--bad);}
+  .status.warn{border-color:var(--warn);color:var(--warn);}
+  footer{margin-top:40px;padding-top:16px;border-top:1px solid var(--line);color:var(--dim);font-size:13.5px;}
+  @media print{ header{position:static;} #themeBtn{display:none;} }
+</style>
+</head>
+<body>
+
+<header>
+  <div><b>KFB Frankensteining Lab</b>
+  <small>To boldly Frankenstein what no one has dared to think together</small></div>
+  <button id="themeBtn">dunkel</button>
+</header>
+
+<div class="wrap">
+
+<h2>00 · Übergabe</h2>
+
+<table>
+  <tr><td style="width:170px"><b>Zuletzt passiert</b></td><td>27.08.2026 · Living-Document-Form hergestellt. Dann zwei inhaltliche Sprünge: <b>der Story-Mode wird vom Erzählmodus zum Weltparameter</b> und zum <b>Overton-Rahmen</b>, und die <b>Diskurs-Ebene ist durchkonstruiert</b> vom Triplet über das Dropdown als Gutter und McClouds sechs Übergänge bis zum Debatten-Dreisatz und Fluff-o-lect. Der Begriff <b>fraktal ist endgültig gebunden</b>, denn derselbe Sechser läuft vom Würfel über die Verbinder bis zur Welt.</td></tr>
+  <tr><td><b>Als Nächstes</b></td><td><b>Torus-Welt an Design.</b> POC läuft, Handover liegt, alle Konstanten sind gemessen. Nächster Schritt dort ist der echte Flugmodus an der Flächennormale.<br>
+  <b>Diskurs-MVP in einem eigenen Chat.</b> Der Dialogteil ist durchkonstruiert und braucht jetzt Prompts. Mitgeben: dieses Lab, das Bubble-Handover mit den drei Formatzeichen, die Karten-JSON-Struktur, und <code>media/prompts/</code> aus dem Repo. <b>Achtung: die Skill ist Autor-Kanon, die Repo-Dateien sind Laufzeit-Kopien vom 04.08. Bei Konflikt gilt die Skill.</b><br>
+  Parallel: <b>Modulkette</b>, kleinstes lohnendes Stück ist ein Gimmick, ein Treffer, ein Ring-Out. <b>Das ist ein Beleg, kein Modul</b> (L-72).<br>
+  <b>Alles in Teil A ist Add-On, Szenario oder Inversion. Nichts davon ist Core Rule</b> (L-17).</td></tr>
+  <tr><td><b>So wird gearbeitet</b></td><td>
+    Additiv, nichts überschreiben. Zurückgenommenes bleibt stehen und wird begründet.<br>
+    <b>Lab heißt Lab:</b> hier wird nicht kanon-geprüft. Kanon kommt, wenn ein Modul wirklich gebaut wird.<br>
+    Teil A ist Haltung, Teil B sind geprüfte Fundstücke aus fremden Projekten.<br>
+    Jede Setzung bekommt eine Kennung in <b>04</b>, jeder echte Fehler ein Post Mortem mit Regel in <b>07</b>.<br>
+    Harte Schreibregeln: keine Bindestriche als Satzzeichen, echte Umlaute, Kausalität über also und aber.
+  </td></tr>
+</table>
+
+<h2>01 · North Star</h2>
+
+<p>Fremde Arbeit wird geprüft, gemessen und zusammengedacht, bis daraus etwas entsteht, das es so
+noch nicht gibt. Das Lab ist der Ort, an dem das <b>ohne Kanon-Prüfung</b> passieren darf, denn eine
+Idee, die vor dem ersten Versuch mit Ökonomie-Einwänden erschlagen wird, ist ein Tor mit besseren
+Manieren.</p>
+
+<p>Jeder Fund bekommt einen Befund und eine Verwerfungsliste. Was übernommen wird, wird begründet,
+was nicht übernommen wird, ebenfalls. <b>Der Prüfstein ist nicht, ob etwas sauber ist, sondern ob es
+etwas kann, das vorher niemand zusammengedacht hat.</b></p>
+
+<h2>Wie dieses Dokument zu lesen ist</h2>
+
+<p class="lead">Dieses Living Doc wird an frische Chats und andere Modelle weitergegeben. Es setzt
+<b>keinen Vorkontext</b> voraus. <b>Teil A</b> ist die Haltung, aus der heraus hier gearbeitet wird,
+<b>Teil B</b> sind geprüfte Fundstücke aus fremden Projekten mit Befund und Verwerfungsliste.</p>
+
+<p class="me"><b>Lab heißt Lab.</b> Hier wird nicht kanon-geprüft. Wer eine Idee mit
+Ökonomie-Einwänden erschlägt, bevor sie einmal ausprobiert wurde, baut ein Tor und nennt es
+Sorgfalt. Der Kanon kommt später und nur, wenn ein Modul wirklich gebaut wird.</p>
+
+<h2>Teil A · Haltung und Mechanik</h2>
+
+<h3>Die zwei Sätze</h3>
+<p style="font-size:18px;line-height:1.5"><b>Kognitive Dissonanz ist der Resonanzraum von KFB.<br>
+Cube-Pet-Appeal ist die Tür hinein.</b></p>
+
+<p class="me"><b>Beide Sätze gelten nur zusammen.</b> Dissonanz allein ist ein Vortrag und stößt ab.
+Appeal allein ist Zeitvertreib. Erst zusammen entsteht der Moment, um den es geht.</p>
+
+<blockquote style="border-left:4px solid var(--gold);padding:6px 0 6px 16px;margin:16px 0;font-size:17px;line-height:1.6">
+I hate the comic. I hate what the pet just said.<br>
+But it looks cute and fun.<br>
+<b>Click.</b> Wait, what did I just release?<br><br>
+<b>Welcome to KFB. Stay fluffy.</b>
+</blockquote>
+
+<p>Die Reihenfolge ist der Mechanismus: <b>Ablehnung, Anziehung, Verwicklung.</b> Nach dem Klick kann
+niemand mehr behaupten, nur zugesehen zu haben.</p>
+
+<p class="me"><b>Warum der Appeal nicht Zierde ist, sondern Statik:</b> nach McClouds ikonischer
+Abstraktion ist ein einfaches Gesicht ein <b>Gefäss</b>, in das man sich hineinversetzt, während ein
+detaillierter Hintergrund einen <b>woanders hin</b> versetzt. Man wird zur Figur und schaut zugleich
+auf eine fremde Welt. Die Cube-Pets sind deshalb die Einstiegsluke, und weil man drin sitzt, wird die
+Dissonanz nicht betrachtet, sondern <b>bewohnt</b>.</p>
+
+<h3>Zusammendenken, in beiden Bedeutungen</h3>
+<p>Der Untertitel meint zweierlei, und bei KFB ist das nicht zufällig dasselbe Wort.</p>
+<ul>
+  <li><b>Dinge zusammendenken</b>, die nicht zueinander gehören. Das ist die Methode dieses Dokuments.</li>
+  <li><b>Mit anderen zusammen denken</b>, mit Freunden und, noch besser, mit Gegnern.</li>
+</ul>
+<p class="me"><b>Und das ist mechanisch belegbar, nicht bloß ein Bild.</b> Im Wrestling brauchen zwei
+Gegner einander, damit die Nummer funktioniert, also ist die Feindschaft die Bedingung der
+Zusammenarbeit. Bei KFB ist das der Aufbau: <b>die drei Scenes gehören allen</b>, nur der Actor-Start
+ist eigen. Man baut also an derselben Geschichte, während man gegeneinander spielt. Und <b>der König
+rotiert</b>, also wird jeder kurz Autorität und dann wieder Antragsteller. Wer gerade beurteilt, wird
+gleich beurteilt. <b>Das ist Social Story-Wrestling, nicht als Anspruch, sondern als Sitzordnung.</b></p>
+
+<h3>Die kafkaeske Rechnung</h3>
+<p><b>Der Klick hat Folgen, und er hat eine Rechnung. Sie ist nur nicht in Geld, sondern in
+Zumutung.</b></p>
+<ul>
+  <li>Man zahlt nicht, man wird <b>schuldig gesprochen</b>. Die Auflage ist absurd genug, dass sie nur erfüllt werden kann, indem man mitspielt.</li>
+  <li><b>Der Gläubiger rotiert.</b> King Kayfabian ist beim nächsten Zug jemand anders, vielleicht man selbst. Die Schuld bleibt, die Instanz wechselt. Absurder als jedes feste Gericht, und mechanisch schon vorhanden.</li>
+  <li><b>Die Auflage verlangt Zensur.</b> Man muss ausgerechnet die eigenen Lieblingskarten schwärzen und das Gegenteil beweisen, etwa in einem Minigolf-Kniffel. Damit wird der Spieler zum <b>Vollstrecker gegen die eigene Sammlung</b>, also in genau die Position, in die Officer Doppeldenk sich selbst manövriert.</li>
+  <li><b>Es ist lustig, weil es wahr und völlig falsch zugleich ist</b>, und zwar gleichzeitig.</li>
+</ul>
+<p class="me"><b>Korrektur zur Vorsicht:</b> Der Verfasser wollte diese Rechnung zunächst wegtrennen,
+also Folgen ja, Rechnung nein. Das war falsch und hätte die Pointe entfernt. Eine Zumutung ohne
+Instanz ist der Kern, nicht der Randfall. <b>Was Kayfabe bleiben muss, ist die Ökonomie</b>, also
+Geld. Die Zumutung darf real sein.</p>
+
+<h3>It's fun to fail</h3>
+<p>Gilt für KFB als Ton und für die medizinische Anwendung als <b>Methode</b>.</p>
+<ul>
+  <li><b>Didaktisch belegt:</b> wer erst rät und dann korrigiert wird, behält den Stoff besser als jemand, dem er vorher sauber erklärt wurde. Der Fehler ist nicht der Umweg zum Wissen, sondern <b>der Haken, an dem es hängen bleibt</b>.</li>
+  <li><b>Und es sitzt an einer wunden Stelle:</b> Medizin ist ein Fach, in dem Fehler bestraft werden und irgendwann bestraft werden müssen. Genau deshalb braucht es einen Ort, an dem sie es <b>nicht</b> sind. Ein Fehlversuch, der lustig ist, ist der Übungsraum, den die Prüfung nicht sein kann.</li>
+  <li><b>Deckt sich mit dem vorhandenen Kanon:</b> fail fast, fail forward, fail for a better plan, dazu additive Changelogs, in denen Fehlschläge dokumentiert statt gelöscht werden. Dieselbe Regel, einmal für Bauende und einmal für Lernende.</li>
+</ul>
+<p class="me"><b>Die Bedingung, ohne die es kippt:</b> es trägt nur, solange klar ist, dass
+<b>niemand bewertet wird</b>. Sobald ein Punktestand nach Leistungsmessung aussieht, ist es doch wieder
+Prüfung. <b>Die absurd hohen Pop-Scores sind genau der Schutz davor</b>, denn eine Zahl, die
+offensichtlich Unsinn ist, kann niemand als Note lesen.</p>
+
+<h3>Die Wäscheleine als Mechanik</h3>
+<p>Nasse Fehlschläge hängen zum Trocknen an einer Gummi-Wäscheleine, gespannt zwischen den Seiten
+eines Pop-up-Buchs, das innen größer ist als außen.</p>
+<table>
+  <tr><th>Was es tut</th><th>Warum es zählt</th></tr>
+  <tr><td><b>Ein Replay hat eine Wartezeit</b>, und die Wartezeit ist selbst die Nummer</td><td>Das genaue Gegenteil des sofortigen Neustarts, den alle einbauen. Der Pausenclown als Mechanik</td></tr>
+  <tr><td><b>Fehler werden aufgehängt, nicht abgezogen</b></td><td>Der Unterschied zwischen Strafe und Wiedervorlage. Der Fehlschlag hängt sichtbar herum, statt weggeräumt zu werden</td></tr>
+  <tr><td><b>Der Abstand zwischen zwei Klammern ist das Wiederholungsintervall</b></td><td>Räumliche Wiederholung statt Terminliste. Für verteiltes Lernen ist das <b>keine Übertragung, sondern derselbe Gegenstand</b></td></tr>
+  <tr><td><b>Die Leine ist elastisch</b></td><td>Also zugleich Katapult, Saite und Intervall. Dieselbe Schnur trägt Klo-Karaoke und den Karten-Spender</td></tr>
+</table>
+
+<h3>Dieselbe Topologie, viermal</h3>
+<p class="me">Beim Mitschreiben aufgefallen und nicht geplant: <b>Klopapierrolle mit Abreißlevel,
+Wäscheleine als Schlaufe, gefaltete Pop-up-Seite und Torus tragen dieselbe Topologie.</b> Endlos und
+trotzdem endlich. Vier Objekte, von denen keines dafür erfunden wurde. Wo so etwas ohne Absicht
+auftritt, lohnt es sich, nicht dagegen zu bauen.</p>
+
+<h3>Die Modulkette: Sackgassen als Türen</h3>
+<p>Ein Labyrinth-Quest <b>ohne Lösung und ohne Ausgang</b>. Der fehlende Ausgang ist die Pointe, die
+Sackgassen sind der Inhalt.</p>
+<p class="me"><b>Die Umdeutung ist der ganze Trick:</b> in jedem anderen Spiel ist eine Sackgasse ein
+Fehler des Levels oder eine Strafe. Hier wird sie zur <b>Tür</b>. Wer hineinläuft, hat nicht verloren,
+sondern etwas gefunden. Damit ist das Labyrinth kein Gate mehr, obwohl es aussieht wie eins, und zwar
+ohne dass eine Regel gelockert werden müsste. Die Struktur bleibt streng, die Bedeutung ist gedreht.</p>
+<pre>Sackgasse
+  -> Schwarzes Shader-Loch materialisiert im Boden
+  -> saugt Spieler, Würfel, Karten, Pets
+  -> Pausenclown-Wartezimmer
+  -> Landung auf dem Cover eines unpassenden Decks
+  -> Cartoon-Trampolin
+  -> Spinball auf einem Sci-Fi-Deck
+  -> Flug durch die Credits
+  -> Würfel-Scroller durch weitere Decks
+  -> Auftauchen in einer fremden Sackgasse eines anderen Torus</pre>
+<ul>
+  <li><b>Jedes Glied wechselt die Tonart</b>, keines erklärt das nächste. Varieté statt Progression.</li>
+  <li><b>Das unpassende Deck ist der schärfste Teil</b>, weil die Willkür sichtbar gemacht statt versteckt wird. Und die Coverseite ist ein guter Landeplatz, denn sie kostet nur rund 230 KB und ist eine echte Karte, kein Zwischenbildschirm.</li>
+  <li><b>Die Credits liegen auf der Strecke</b>, also passiert man sie zwangsläufig und wird trotzdem nicht aufgehalten.</li>
+  <li><b>Die Kette endet nicht, sie schließt sich.</b> Damit ist die Struktur selbst ein Torus, nicht nur die Karte.</li>
+</ul>
+
+<h3>Module für Lulls und Surprise</h3>
+<p class="me"><b>Ein Gimmick ist gerade dann komisch, wenn es nichts bedeutet.</b> Der RPG-Spoof lebt
+davon, dass die Zufallstabelle absurd ist und ernst gespielt wird. Ein Gimmick, das brav aus
+<code>grade</code> und <code>genre</code> folgt, wäre berechenbar. <b>Die Welt als Spielzeug heißt,
+dass man hineingreift und etwas passiert</b>, nicht dass eine Zuordnungstabelle konsistent bleibt.</p>
+<ul>
+  <li><b>Skelett aus der Karte</b>, animiert, vom selben Autor wie die Cube-Pets, also stilistisch passend von Haus aus. Erster Eintrag.</li>
+  <li><b>Ring-Out statt Trefferpunkten.</b> Verlieren heißt, den Bereich zu verlassen. Braucht keine Zahl und liest sich sofort, also die räumliche Antwort auf das Verbot von Zahlenwerten im Bild.</li>
+  <li><b>Physical Kayfabe:</b> die Physik sagt, was passiert ist, die Cartoon-Schicht sagt, wie es sich anfühlte, und die Pets kommentieren, statt zu steuern.</li>
+  <li>Weiteres nach Lust: schwarze Löcher, Tentakel, Portale, Bühnenneigung, Arena-Erschütterung.</li>
+</ul>
+
+<h3>Der Story-Mode als Weltparameter</h3>
+
+<p>Bisher sagt der Story-Mode-Würfel, <b>wie erzählt wird</b>. Der Sprung ist, ihn sagen zu lassen,
+<b>wie die Welt gerade beschaffen ist</b>: Farbe, Skydome, Terrain, Ton, Gutter-Formung, und damit
+auch, wie Objekte antworten.</p>
+
+<p class="me"><b>Damit multipliziert sich der Raum über Kreuz statt zu addieren.</b> Pilz mal Passant
+war schon Kombinatorik. <b>Pilz mal Passant mal Modus</b> ist eine andere Größenordnung, denn derselbe
+Handgriff ergibt tragisch etwas anderes als absurd.</p>
+
+<h4>Die Abnahme, die entscheidet, ob es echt ist</h4>
+<p class="bad"><b>Ein Modus zählt erst, wenn sich mindestens eine Interaktion mechanisch anders
+verhält, nicht nur anders aussieht.</b></p>
+<p>Wenn im tragischen Modus dasselbe passiert wie im komischen, nur mit anderer Farbe, ist es ein
+Filter. Wenn der Pilz anders <b>antwortet</b>, ist es Welt.</p>
+
+<h4>Warum es kanonisch sauber bleibt</h4>
+<p class="me">Der Modus wird <b>gewürfelt, nicht gewählt</b>. Also ist er autorisierte Vorgabe und
+nicht Spielerlaune, und die Kombination bleibt Prozedur. Das ist die Entscheidungsregel, angewandt auf
+Weltparameter. Und weil er je Zug neu fällt, ist er <b>keine Einstellung, sondern eine Lage, die
+vorübergeht</b>.</p>
+
+<h4>Der Weltzustand als kurzer Vektor</h4>
+<pre>Welt = Deck · Seed · Modus · Beat
+
+Deck   -> Palette, Motive, ganze Karten als Orte, Gutter-Typ
+Seed   -> Gelände, Streuung, Labyrinth
+Modus  -> Licht, Ton, Physik, Antwortverhalten der Objekte
+Beat   -> Stand im Quest-Arc</pre>
+<p>Vier Größen, daraus fällt eine Welt, die niemand von Hand entworfen hat. Und sie bleibt
+reproduzierbar, solange nichts anderes hineinregiert.</p>
+
+<h4>Der Sechser bindet das Fraktale endgültig</h4>
+<p class="me">Sechs Story-Modes, sechs Quest-Beats, sechs Zonen, sechs Substufen je Kubus, sechs
+Sitze. <b>Derselbe Sechser vom Würfel bis zur Welt.</b> Damit ist der Begriff fraktal gebunden und
+nicht mehr dekorativ, was vorher ein offener Punkt war.</p>
+
+<h4>Zwei Grenzen</h4>
+<ul>
+  <li><b>Wenige Kopplungen, die deutlich sprechen</b>, statt vieler, die sich überlagern. Wer alles mit allem koppelt, bekommt Rauschen statt Reichtum, und niemand erkennt mehr den eigenen Anteil.</li>
+  <li><b>Nicht alle Achsen gleichzeitig verstellen.</b> Kippen Farbe, Ton, Physik, Terrain und Semantik zusammen, wirkt es wie ein Themenwechsel statt wie eine Stimmung. Zwei bis drei Achsen je Modus reichen, und <b>welche es sind, ist selbst schon Charakterisierung</b>: verboten dreht an der Physik, mystisch am Licht.</li>
+</ul>
+
+<h3>Die Journey als Erfahrungskarte</h3>
+
+<p>Die Debatten der Pets sind Teil der Journey. Was in welchem Modus erlebt wurde, wird mitgeführt.
+<b>Das braucht kein neues System</b>, denn die Journey speichert ohnehin Ereignis plus Kontext und
+verweist auf Karten statt sie zu kopieren. Der Modus ist einfach ein weiteres Kontextfeld.</p>
+
+<pre>{ "type": "interaction",
+  "cardRef": { "packId": "...", "cardNumber": 14 },
+  "context": { "zone": "...", "mode": "tragisch", "result": "..." } }</pre>
+
+<h4>Der Modus wird zur Koordinate der Erfahrung</h4>
+<p class="me">Dieselbe Karte kann in sechs Modi besucht werden, und jeder Besuch ist ein eigener
+Eintrag. Daraus entsteht eine <b>Abdeckungskarte</b>: welche Karte wurde in welchem Modus erlebt.
+<b>Das ist Wiederspielwert ohne Grind</b>, denn es geht um Perspektive und nicht um Ansammlung. Nicht
+„komm wieder, es gibt Neues", sondern <b>„dasselbe ist von hier aus anders"</b>.</p>
+
+<h4>Perspektivwechsel als Zug, nicht als Lehre</h4>
+<p>Wer eine Haltung aus dem Ring gekippt hat, könnte sie später in einem anderen Modus wieder
+vorgesetzt bekommen. Damit wird sichtbar, dass es Perspektiven sind.</p>
+<p class="bad"><b>Genau hier liegt die Kippgefahr.</b> „Lass mich dir die andere Seite zeigen" ist die
+belehrende Bewegung, die KFB sonst vermeidet. Das ist wörtlich der Zug von Officer Doppeldenk.</p>
+<p class="me"><b>Die Rettung liegt im eigenen Ritual: der Moduswechsel ist das Argument, er braucht
+keinen Kommentar.</b> Dieselbe Behauptung tragisch statt komisch gespielt <b>ist</b> der
+Perspektivwechsel, aufgeführt statt erklärt. Also: <b>das System darf wiedervorlegen, es darf nicht
+belehren.</b> Kein „bedenke auch", sondern einfach die Nummer noch einmal, in anderer Tonart.</p>
+
+<h4>Persönliches Kayfabe, vergleichbar statt geteilt</h4>
+<p>Ist die Journey exportierbar, können zwei Leute ihre Wege durch dasselbe Deck vergleichen. <b>Das
+ist kein Mehrspieler</b>, sondern etwas anderes: gemeinsamer Untergrund, getrennte Erfahrung,
+nachträglicher Vergleich.</p>
+<p class="me">Wie zwei Menschen, die dasselbe Buch gelesen haben. Und der Vergleich ist selbst schon
+ein Social Call, also braucht er keine neue Mechanik. <b>Gleiche Karten, gleiche Regeln,
+unterschiedliche Wirklichkeit</b>, und genau das ist die These des Spiels, nur als Datenstand.</p>
+
+<h4 style="color:var(--bad)">Die Setzung, ohne die es umkippt</h4>
+<p class="bad"><b>Wer Haltungen mitschreibt, um passende Gegenpositionen auszuspielen, betreibt
+Profilbildung.</b> In einem Projekt, das genau das satirisiert, ist das nicht ein Nebenrisiko, sondern
+die Sache selbst. Ein System, das dich einschätzt und dir daraufhin Inhalte serviert, <b>ist</b>
+Officer Doppeldenks Stellenbeschreibung.</p>
+<p class="me"><b>Der Ausweg ist nicht Verzicht, sondern Diegese.</b> Das Profil bleibt lokal, es bleibt
+einsehbar, es bleibt löschbar. <b>Und es gehört im Spiel jemandem: Doppeldenk führt eine Akte über
+dich, und du darfst sie lesen.</b> Damit wird aus einer verborgenen Mechanik eine Figur mit einem
+Aktenschrank, die Überwachung wird sichtbar statt wirksam, und der Spieler kann sie ansehen, statt ihr
+ausgesetzt zu sein. <b>Das ist Kayfabe im eigentlichen Sinn: alle wissen es, und genau deshalb
+funktioniert es.</b></p>
+
+<h3>Das Triplet: wo der Streit wirklich liegt</h3>
+
+<p>Grundmuster für Behauptungen im Ring, drei Felder:</p>
+<pre>FrizzleBob : [Freiheit]         [ist letztendlich]    [die größte Tugend]
+Koala-Pet  : [Tugendwächter]    [fordern seit langem] [Fluff-Verbotszonen]</pre>
+
+<p class="me"><b>Die mittlere Spalte ist die tragende, und sie ist nicht widerlegbar.</b>
+„Ist letztendlich" behauptet eine Letztbegründung, „fordern seit langem" behauptet Dauer und damit
+stillschweigend Autorität. <b>Der Streit findet nicht bei den Substantiven statt, sondern in der
+Mitte, wo niemand hinschaut.</b> Das ist epistemische Sabotage im Wortsinn, und die Mechanik legt sie
+genau dorthin, wo man sie im echten Diskurs auch findet.</p>
+
+<p class="me"><b>Und der zweite Sprecher baut aus dem Material des ersten.</b> „Tugend" wird
+„Tugendwächter". Das ist keine Erwiderung, sondern eine <b>Übernahme</b>. So funktioniert
+Diskursvereinnahmung tatsächlich: man widerspricht nicht, man nimmt das Wort und setzt es anders ein.
+Wer das Wort besetzt, hat die Runde, ohne argumentiert zu haben.</p>
+
+<h4>Warum das viel spart</h4>
+<ul>
+  <li><b>Die mittlere Spalte ist themenunabhängig.</b> Etwa dreissig Wendungen decken jedes Thema ab: „ist letztendlich", „fordern seit langem", „gilt inzwischen als", „hat sich gezeigt, dass". Eine kleine autorisierte Liste.</li>
+  <li>Die Substantive kommen aus den Karten, die Forderung ergibt sich. <b>Ein Großteil der Sätze ist damit ohne Modell erzeugbar.</b></li>
+  <li>Es ist das Kartenritual auf Satzebene: <b>Show it ist das Wort, Spin it ist die Mitte, Sell it ist die Forderung.</b> Dieselbe Grammatik, eine Ebene kleiner.</li>
+</ul>
+
+<h3>Das Dropdown ist der Gutter</h3>
+
+<p>Der Spieler verbindet Actor und drei Scenes zur Quest. <b>Zwischen je zwei Karten steht eine
+Auswahl aus sechs Verbindern.</b> Vier Gelenke, vier Wahlen, eine Kette.</p>
+
+<p class="me"><b>Das ist Closure als Spielzug, nicht als Theorie darunter.</b> Das Dropdown sitzt
+zwischen zwei Karten, so wie der Zwischenraum zwischen zwei Panels, und tut dasselbe: die Lücke
+schließen. Der Spieler <b>beschreibt</b> die Verbindung nicht, er <b>wählt</b> sie. Damit ist sie
+sichtbar, vergleichbar und bewertbar.</p>
+
+<h4>Was daran gelöst ist</h4>
+<table>
+  <tr><th>Problem</th><th>Lösung</th></tr>
+  <tr><td><b>Das leere Blatt.</b> „Verbinde diese drei Karten" ist eine Schreibaufgabe und schüchtert ein</td><td>„Wähle aus sechs" ist ein Zug. Kuratierter Pool statt freier Erfindung, Entscheidung bleibt beim Spieler. Dieselbe Korrektur wie beim Calvinball-Ausrufen</td></tr>
+  <tr><td><b>Kritik ohne Adresse.</b> „Deine Geschichte war schwach" ist kein Argument</td><td><b>Die Bruchstelle bekommt eine Adresse.</b> Weil der Verbinder ausgesprochen ist, kann der Tisch auf <b>das eine Gelenk</b> zeigen, das nicht trägt. BLÖDSINN wird dadurch überhaupt erst diskutierbar</td></tr>
+  <tr><td><b>Digital und analog auseinander</b></td><td><b>Sechs ist nicht beliebig, sechs ist der Würfel.</b> Am Bildschirm ein Dropdown, am Tisch ein W6 gegen eine gedruckte Sechserliste. Wer will, wählt, wer will, würfelt</td></tr>
+  <tr><td><b>Laufende Modellkosten</b></td><td>Vier Gelenke mal sechs Verbinder sind fast <b>1300 Ketten je Kartenfolge, ohne Modell</b>. Das LLM erfindet die Verbindung nicht, es erzählt die gewählte Kette aus. <b>Simulation zuerst, Deutung danach</b></td></tr>
+</table>
+
+<h4>Der Pool ist die Balance, und der Modus wechselt ihn</h4>
+<p class="me"><b>Welche sechs zur Wahl stehen, entscheidet, welche Geschichten möglich sind.</b> Lauter
+kausale Verbinder ergeben ordentliche Erzählungen, ein Non Sequitur darunter ergibt Absurdität.
+<b>Damit hat der Story-Mode eine mechanisch echte Wirkung</b> und ist kein Filter, also erfüllt er die
+Abnahme aus L-19.</p>
+
+<h3>McClouds sechs Übergänge als Verbindertypen</h3>
+
+<table>
+  <tr><th>#</th><th>Übergang</th><th>Was passiert</th><th>Closure-Aufwand</th></tr>
+  <tr><td>1</td><td><b>Moment zu Moment</b></td><td>eine Handlung in Einzelmomente zerlegt, kaum Veränderung</td><td>sehr gering</td></tr>
+  <tr><td>2</td><td><b>Handlung zu Handlung</b></td><td>ein Subjekt, zwei getrennte Handlungen. Das Arbeitspferd</td><td>gering</td></tr>
+  <tr><td>3</td><td><b>Subjekt zu Subjekt</b></td><td>anderer Gegenstand, dieselbe Szene oder Idee</td><td>mittel</td></tr>
+  <tr><td>4</td><td><b>Szene zu Szene</b></td><td>Sprung in Zeit oder Ort</td><td>hoch</td></tr>
+  <tr><td>5</td><td><b>Aspekt zu Aspekt</b></td><td>der Blick wandert über Ort und Stimmung, <b>die Zeit läuft nicht weiter</b></td><td>eigene Art, atmosphärisch</td></tr>
+  <tr><td>6</td><td><b>Non Sequitur</b></td><td>kein erkennbarer Zusammenhang</td><td>maximal, oder unmöglich</td></tr>
+</table>
+
+<h4>Vier Ableitungen</h4>
+<ul>
+  <li><b>Der Closure-Aufwand ist eine Einsatzachse ohne Zahlen.</b> Moment zu Moment riskiert nichts und langweilt den König, Non Sequitur triumphiert oder stürzt ab. <b>Der Spieler wählt damit seine eigene Angreifbarkeit:</b> bei einem zahmen Verbinder wäre BLÖDSINN unfair, bei Non Sequitur hat der Tisch jedes Recht.</li>
+  <li><b>Der Gutter ist der Ort der Zensur, und das ist keine Metapher.</b> Was nicht gezeigt wird, wurde herausgeschnitten. Szene zu Szene ist der Schnitt, der verbirgt, was dazwischen lag. In einem Spiel über Zensur liegt der Zensurakt also strukturell im Übergang, nicht im Panel. <b>Der Modus verboten hat damit sein Zuhause.</b></li>
+  <li><b>Die Modi gewichten den Pool.</b> Tragisch nimmt Handlung zu Handlung und Szene zu Szene, also Unausweichlichkeit. Komisch lebt von Subjekt zu Subjekt, denn der Schnitt auf jemand anderen <b>ist</b> die Pointe. Mystisch ist Aspekt zu Aspekt, wo die Zeit stehenbleibt. Absurd ist Non Sequitur.</li>
+  <li><b>Die Bewegungsarten des Spiels sind selbst Übergangstypen.</b> Durch eine Zone laufen und schauen, ohne dass die Handlung fortschreitet, <b>ist</b> Aspekt zu Aspekt, nur räumlich. Der Flug zwischen zwei Zonen ist Szene zu Szene. Sprites bei zwanzig Bildern je Sekunde sind Moment zu Moment. <b>Dieselbe Skala von der Animationsphase bis zum Weltensprung.</b></li>
+</ul>
+<p class="me"><b>Und eine Achse kommt gratis dazu.</b> Die Gutter sind bereits <b>semantisch</b>
+typisiert, also Ölfluss oder Geldstrom je Deck. McClouds Sechs ist die <b>strukturelle</b>
+Typisierung. Zwei unabhängige Achsen: welche Art Verbindung, und welcher Stoff darin fließt. Ein
+Geldstrom als Non Sequitur ist etwas anderes als ein Geldstrom als Handlung zu Handlung.</p>
+<p class="me">Nebenbei bekommt der Rick-Roll-Maze seinen Namen: eine Sackgasse, die in ein
+Wartezimmer fällt, ist ein <b>Non Sequitur auf Weltebene</b>.</p>
+
+<h3>Der Debatten-Dreisatz: die Karte als Fundstück</h3>
+
+<p class="bad"><b>Ohne Rahmen wären die Triplets nur ein Satzgenerator</b>, und das mündet in
+kryptisches Geschwurbel, das für den Spieler nichts bedeutet.</p>
+
+<p><b>Was die Szene rettet, ist der Nichtwissen-Anfang.</b> Die Pets wissen zuerst nicht, was da
+liegt. Ist das ein Comic. Ist das eine Spielkarte. Ist das eine Behauptung. Das ist die
+Comic-Bewegung selbst, denn ein Gegenstand wird gezeigt, bevor er gedeutet wird, und es holt den
+Spieler ab, weil die Pets dieselbe Frage haben wie er.</p>
+
+<table>
+  <tr><th>Beat</th><th>Was passiert</th><th>Woher das Material kommt</th></tr>
+  <tr><td><b>Show it</b></td><td>Die Karte wird aufgedeckt und <b>beschrieben</b>. Was ist zu sehen, was behauptet sie. Noch keine Meinung</td><td><code>cardName</code> und <b><code>artworkPrompt</code></b>, der Stil, Motiv und Stimmung im Klartext trägt. <b>Deshalb wird es nicht abstrakt</b></td></tr>
+  <tr><td><b>Spin it</b></td><td>Persönliche Meinung, Perspektive, Empörung, Begeisterung. <b>Emotional gefärbt, nicht vorgelesen.</b> Hier greifen die Triplets</td><td>Register aus den Narrator-Prompts plus Triplet-Pool. <code>lore</code> und <code>power</code> als Quellmaterial, <b>nie als Dialog</b></td></tr>
+  <tr><td><b>Sell it</b></td><td>Ein <b>Closure-Angebot</b>: was die Karte bedeutet, wie sie zu spielen wäre, was sie im Kontext der vorherigen Karten heißt</td><td>Verbindertyp plus bisherige Kette</td></tr>
+</table>
+
+<h4>Vier Punkte, die daran hängen</h4>
+<ul>
+  <li><b>Ungleiche Kenntnis ist der Motor.</b> FrizzleBob weiß mehr und früher, die anderen holen auf. Wissen alle gleich viel, entsteht ein Chor. Mit Gefälle entsteht ein Gespräch. <b>Und das ist zugleich die Gedächtnissimulation</b>: Wissen ist ungleich verteilt und breitet sich aus.</li>
+  <li><b>Der Konflikt ist eingebaut, er braucht keine Mechanik.</b> Im Spin geraten die Register aneinander: Jahrmarkt gegen Skepsis gegen Vergänglichkeit. Dieselbe Karte, drei Haltungen, Reibung aus den Prompts statt aus einem Streitthema.</li>
+  <li><b>Sell it ist ein Angebot, kein Ergebnis.</b> Der Spieler darf ablehnen. Strukturell dasselbe wie das Dropdown, nur gesprochen statt gewählt. <b>Der Gutter liegt in beiden Fällen beim Spieler.</b></li>
+  <li><b>Wegschießen ist die Ablehnungsgeste</b>, und sie zerstört nichts: es kommt ein anderes Pet und eine andere Karte, also geht das Ritual weiter statt zu enden. Kein Fehlschlag, kein Wiederholen, <b>eine andere Nummer</b>.</li>
+</ul>
+<p class="me"><b>Und das ist zugleich das Onboarding.</b> Ein neuer Spieler lernt in einer Runde, was
+eine Karte ist, dass sie eine Behauptung trägt, dass es Perspektiven gibt und dass er widersprechen
+darf. Niemand erklärt ihm Regeln, er sieht sie einmal vorgeführt. <b>Die satirische Fassung eines
+Tutorials, und die einzige, die zum Kanon passt.</b></p>
+<p class="me"><b>Der Ablauf braucht kein Modell, um zu funktionieren.</b> Show it aus
+<code>artworkPrompt</code>, Spin it aus Register plus Pool, Sell it aus einem Verbindertyp. Das
+Modell macht es besser, aber der Ablauf steht auch ohne. <b>Damit ist es ein MVP und keine Wette.</b></p>
+
+<h3>Fluff-o-lect</h3>
+
+<p><b>Das tragende Wort wird durch Fluff ersetzt.</b> „Ich habe etwas verflufft." Die Bedeutung kommt
+aus dem Kontext, das Wort selbst trägt nichts.</p>
+
+<p class="me"><b>Das ist Closure auf Wortebene.</b> Bei den Schlümpfen füllt der Leser die Bedeutung
+aus dem Zusammenhang. Genau die Gutter-Mechanik, eine Größenordnung kleiner. <b>Also kein Gag,
+sondern dieselbe Regel im Vokabular.</b></p>
+
+<h4>Die Hundepfeifen-Symmetrie</h4>
+<p>Eine Hundepfeife funktioniert, weil die Zielgruppe die Botschaft hört und alle anderen etwas
+Harmloses. <b>Die Abstreitbarkeit ist der ganze Mechanismus.</b></p>
+<p class="me">Fehlt das tragende Wort, wird diese Abstreitbarkeit <b>strukturell und sichtbar</b>: der
+Satz lässt sich nicht festnageln, jeder projiziert seine Lesart hinein, und niemand kann beweisen,
+welche gemeint war. <b>Jeder findet seine Pfeife und weiß nicht, ob sie echt oder satirisch gepfiffen
+wurde. Und umgekehrt genauso.</b></p>
+<p class="me"><b>Der Unterschied zur echten Hundepfeife ist, dass diese sich zu erkennen gibt.</b>
+Eine echte verbirgt, dass gepfiffen wird. Fluff-o-lect kündigt es an, denn alle sehen, dass das Wort
+fehlt, und es fehlt für alle gleich. <b>Vorführung statt Tarnung</b>, also derselbe Zug wie Kayfabe:
+alle wissen es, und genau deshalb wirkt es.</p>
+
+<h4>Was es nebenbei löst</h4>
+<ul>
+  <li><b>Die Immunisierung gegen Vereinnahmung.</b> Ein übererfüllter Slogan mit Fluff darin ist <b>unzitierbar</b>, denn wer ihn zitiert, zitiert eine Lücke. Das löst das Problem <b>innerhalb der Form</b> statt durch eine Beigabe. Siehe Post Mortem zur Absicherung.</li>
+  <li><b>Zwei Stellen, an denen der Streit nicht liegt, wo man ihn sucht.</b> Die Verbindungsphrase ist unwiderlegbar, das Schlüsselwort ist ersetzt. Beide themenunabhängig, beide kleine autorisierte Listen, beide ohne Modell.</li>
+  <li><b>Ein Regler.</b> Je mehr Fluff, desto mehr Projektionsarbeit. Eine Bloom-Achse ohne neue Mechanik.</li>
+</ul>
+<p class="warn"><b>Stand:</b> Fluff-o-lect ist <b>nicht im Repo</b> und nicht in der Skill belegt.
+Vorhanden ist nur das Vokabular drumherum, also Stay fluffy, What the FLUFF, und Fluff als Währung
+neben Pop. <b>Dies ist die Erstfassung der Setzung.</b></p>
+
+<h3>Der Overton-Rahmen</h3>
+
+<p>Der Story-Mode verschiebt nicht nur, wie eine Szene aussieht, sondern <b>in welchem Register
+überhaupt gestritten werden kann</b>. Im komischen darf man zuspitzen, im tragischen nicht. Im
+absurden darf man die Prämisse verlassen, im heroischen nicht. <b>Ein Rahmen der Sagbarkeit.</b></p>
+
+<p class="me">Das ist das <b>Overton-Fenster</b>. Chomskys Fassung ist die schärfere, denn sie sagt,
+wie der Korridor entsteht: <b>nicht durch Verbote, sondern durch lebhafte Debatte innerhalb enger
+Grenzen.</b> Die Lebhaftigkeit erzeugt den Eindruck von Freiheit, während der Rahmen unbesprochen
+bleibt.</p>
+
+<p class="me"><b>Sechsmal derselbe Streit in sechs Rahmen zeigt nicht, dass Positionen beliebig
+sind.</b> Er zeigt, dass der Korridor beweglich ist, und das ist etwas anderes. Man erlebt die
+Verschiebung, statt über sie belehrt zu werden. <b>Und die Journey speichert Modus und Ergebnis
+ohnehin: sechs Einträge zum selben Thema sind der Befund, und niemand muss ihn aussprechen.</b></p>
+
+<h4>Über-Affirmation</h4>
+<p><b>Zustimmen und zu Ende denken</b> statt zu widersprechen. „Protect our democracy", „Trust the
+experts", „Follow the science", jeweils bis zum Ende gedacht.</p>
+<p class="me"><b>Der Zug, dem man nicht widersprechen kann, ohne die Position preiszugeben.</b> Wer
+widerspricht, wird zur Gegenseite und bekommt sein Etikett. Wer zustimmt und weiterdenkt, kann nicht
+abgewehrt werden, ohne dass die Verteidigung erklären müsste, warum der Satz nur bis hierhin gilt.
+<b>Und genau dort liegt der Rahmen.</b> Es ist die Bewegung, die Doppeldenk sein Leben lang macht:
+formal recht haben und dabei die Sache verlieren.</p>
+<p class="me"><b>Mechanisch ist sie bereits eingebaut</b>, ohne dass jemand sie dafür erfunden hätte:
+das Übererfüllungs-Prinzip. Und der Modus, der sie aufführt, ist nicht der komische, sondern <b>das
+Verbotene</b>, denn dort wird zu Ende gedacht, was sonst abgebrochen wird.</p>
+<p class="bad"><b>Keine Absicherung durch Beigabe.</b> Die Karten erscheinen zersplittert und
+zufällig, es gibt kein letztes Panel, das die Botschaft nachreicht, und niemand weiß, wo jemand
+aufhört. <b>Wer die Auflösung mitliefert, hat den Resonanzraum wieder zugemacht.</b> Der Schutz liegt
+in der Form: kurz, Koan-artig, mit Fluff, aus dem Maul einer Cartoonfigur. Wer zwei Zeilen davon
+zitiert, zitiert sich selbst ins Lächerliche.</p>
+
+<h3>Der Spiralpfad: Verteilung und Strecke in einem</h3>
+
+<p>Ein <b>Torusknoten</b>, also <code>u = p·t</code> und <code>v = q·t</code> mit teilerfremden p und
+q. Alle Kombinationen wurden durchsucht, Gütemaß war der Abstand beliebiger Flächenpunkte zum Pfad.</p>
+
+<table>
+  <tr><th>Ergebnis (6,5)</th><th>Wert</th></tr>
+  <tr><td>Pfadlänge</td><td>518,6</td></tr>
+  <tr><td>Größter Abstand eines Flächenpunkts zum Pfad</td><td><b>2,62</b></td></tr>
+  <tr><td>Mittlerer Abstand</td><td>1,25</td></tr>
+  <tr><td>Kartenabstand entlang des Pfades</td><td>9,26, also gut zwei Kartenbreiten</td></tr>
+  <tr><td>Kleinster Kurvenradius</td><td>11,2 bei Röhrenradius 5,2, also weit genug zum Fliegen</td></tr>
+  <tr><td>Flugdauer bei 14 Einheiten je Sekunde</td><td>37 s je Runde, 0,7 s je Karte</td></tr>
+</table>
+
+<p class="me"><b>Der Pfad ersetzt das Reihenraster.</b> Ein Raster wäre ebenfalls gleichmäßig, aber
+nicht befliegbar. Der Knoten ist beides zugleich, denn die Karten liegen an ihm. <b>Verteilung und
+Strecke sind dieselbe Struktur.</b></p>
+
+<p class="me"><b>Zwei Nebeneffekte, die nicht geplant waren.</b> Mit q gleich fünf geht der Pfad
+<b>fünfmal je Runde durch das Loch</b>, also kippt die Flächennormale fünfmal. Das Innen-Aussen-Erlebnis
+wird damit ein Rhythmus statt eines Sonderfalls. Und die schärfste Kurve liegt <b>zwischen</b> außen
+und innen, nicht ganz innen.</p>
+
+<h4>Ausrichtung: drei getrennte Streuachsen</h4>
+<table>
+  <tr><th>Achse</th><th>Umfang</th><th>Warum</th></tr>
+  <tr><td>Versatz längs</td><td>klein</td><td>löst die Perlenkette auf</td></tr>
+  <tr><td>Versatz quer</td><td>etwa halbe Kartenbreite</td><td>Karten liegen neben dem Pfad, nicht darauf</td></tr>
+  <tr><td>Drehung um die Normale</td><td>±25 Grad</td><td>wirkt hingefallen statt gelegt</td></tr>
+  <tr><td><b>Aufstellung zur Anflugrichtung</b></td><td><b>20 bis 40 Grad</b></td><td><b>die wichtigste.</b> Flach liegend sieht man im Tiefflug nur einen Streifen</td></tr>
+</table>
+<p class="me"><b>Der Sweet Spot:</b> genug aufgestellt, um im Vorbeiflug erkannt zu werden, nicht so
+weit, dass es gestellt aussieht. <b>Gelesen wird trotzdem frontal</b>, denn auf verzerrtem Gelände ist
+eine Karte nicht wirklich lesbar. Das ist keine Schwäche, sondern die Arbeitsteilung.</p>
+
+<h3>Der Torus als Flugstreckengeometrie</h3>
+<p class="me"><b>Das ist der bessere Grund für den Torus als die Weltkugel.</b> Auf einer Sphäre ist
+die Horizontkrümmung in jede Richtung gleich, also fliegt man immer dasselbe. Ein Torus hat <b>drei
+verschiedene Runden</b>: außen herum ein weiter Bogen, innen durch das Loch eine enge Kurve mit
+umgekipptem Boden, quer über die Röhre eine dritte. <b>Die Geometrie ist damit selbst schon
+Streckenführung</b>, ohne dass jemand eine Strecke baut.</p>
+
+<h4>Weitere Weltformen</h4>
+<p>Flachwelt, Hohlwelt, Kuppel und Torus sind <b>vier verschiedene Behauptungen darüber, wie die Welt
+beschaffen ist.</b></p>
+<p class="me"><b>Bekommt ein Verschwörungs-Deck eine Flachwelt, ist die Behauptung nicht erwähnt,
+sondern begehbar.</b> Man widerlegt sie nicht, man fliegt darüber und stößt an den Rand. Das ist
+Über-Affirmation als Geometrie, und sie braucht keinen Kommentar.</p>
+<p>Technisch billig, weil die Bausteine gleich bleiben: eine Parametrisierung von Fläche nach Punkt,
+eine Normale, ein periodisches Rauschen, dieselben Kartenplätze. Nur die Formel wechselt. <b>Die Form
+wird damit ein viertes Feld im Weltcode:</b> Deck, Seed, Modus, Form.</p>
+<p class="bad"><b>Vorbehalt:</b> Flachwelt und Kuppel haben einen <b>Rand</b>, der Torus nicht. Ein
+Rand braucht eine Antwort, also eine Kante zum Abstürzen oder eine Wand. Beides ist eine Aussage.</p>
+
+<h3>Anflug statt Ladebalken</h3>
+<p class="me"><b>Ein Ladebalken ist Wartezeit, die man erträgt. Eine Anflugsequenz ist die Ankunft in
+der Welt</b>, und dass dabei geladen wird, merkt niemand. Derselbe Zug wie die Credits auf der
+Flugstrecke: der Moment hat ohnehin einen Zweck, also braucht er keine Entschuldigung.</p>
+<p>Rechnerisch trägt es. Welt und Palette stehen nach der ersten Seite, und der Anflug deckt drei bis
+vier weitere Seiten ab, also zwölf bis sechzehn Karten im Vorrat.</p>
+<p><b>Und der Startbildschirm zeigt die rotierende Welt als Vorschau des Seeds</b>, nicht als
+Dekoration. Wer ein Deck wählt, sieht seine Welt drehen, bevor er startet. Daneben das Pet-Rad als
+zweite Achse.</p>
+
+<h3>Sammeln im Flug</h3>
+<p>Schwebende Karten auf Flughöhe, die sich zur Kamera drehen und damit lesbar sind, anders als die
+liegenden im Gelände. Dazu Würfel als zweite Sorte Ziel.</p>
+<table>
+  <tr><th>Element</th><th>Wirkung</th></tr>
+  <tr><td><b>Karte im Durchflug</b></td><td>wandert in den Fächer unten, dazu ein Tempo-Schub</td></tr>
+  <tr><td><b>Würfel im Durchflug</b></td><td>die getroffenen Augen zählen als <b>Pop</b>. Drei Farben: rot ungünstig, gelb visuell, grün günstig, dazu je sechs Augen</td></tr>
+  <tr><td><b>Fächer unten rechts</b></td><td>zeigt gesammelte Karten, Antippen öffnet später den Betrachter zum Durchblättern</td></tr>
+  <tr><td><b>Pop-Anzeige unten links</b></td><td>drehbarer Würfel in Pet-Grundfarbe, daneben die verformt animierte Zahl in Irish Grover</td></tr>
+</table>
+
+<h4 style="color:var(--bad)">Der Zählkonflikt, und er löst sich</h4>
+<p class="bad"><b>Karten dürfen nicht gezählt werden</b>, denn sie sind Beweisstücke und keine Powers.
+Ein Kartenzähler wäre genau der Verstoß.</p>
+<p class="me"><b>Die Auflösung liegt in der Darstellung: der Fächer zeigt Karten, keine Zahl.</b> Man
+sieht den Stapel wachsen. Gezählt wird nur <b>Pop</b>, und Pop ist erklärtermaßen Unsinn, damit
+niemand es als Leistung liest (L-05). <b>Fordert Doppeldenk trotzdem einen Kartenzähler, ist das seine
+Nummer und nicht unsere Mechanik.</b></p>
+
+<h3>Ladelehre: Vorhang, Aufwärmen, Vorrat</h3>
+
+<p>Aus <code>xenova/infinite-block-illusion</code> (MIT) stammt der Satz, der die Lücke schließt:
+Assets werden vorab geladen, und dann wird <b>jede Shader-Pipeline aufgewärmt, bevor der Startvorhang
+aufgeht</b>.</p>
+
+<p class="me"><b>Das ist der Fachname für den Anflug.</b> Der erste Frame nach einem Materialwechsel
+ruckelt in WebGL fast immer, weil der Shader erst dort übersetzt wird. Wer das Aufwärmen hinter eine
+Anflugsequenz legt, sieht es nie. <b>Der Anflug ist also nicht nur Ladefenster für Texturen, sondern
+für Shader</b>, und Letzteres ist der Teil, den man sonst als Ruckler beim ersten Kartenwechsel
+wiedersieht.</p>
+
+<pre>Deck und Seed gewählt
+  -> Welt erzeugt, steht nach der ersten Seite
+  -> Karten kommen seitenweise nach
+  -> Shader aller Materialien werden aufgewärmt
+  -> Vorhang geht auf, Anflug beginnt
+  -> erste zwei bis drei Karten werden sichtbar</pre>
+
+<h4>Beide three-Wege, weil der Renderpfad eine Registry-Entscheidung ist</h4>
+<table>
+  <tr><th></th><th>WebGL, Kanon heute</th><th>WebGPU, wie in der Quelle</th></tr>
+  <tr><td><b>Version</b></td><td>three 0.160, ein Build</td><td>deutlich neuer, <code>three/webgpu</code></td></tr>
+  <tr><td><b>Aufwärmen</b></td><td><code>renderer.compileAsync(scene, camera)</code> je Material, oder ein Bild lang unsichtbar rendern</td><td><code>renderer.init()</code> plus dieselbe Vorkompilierung, die Pipelines sind dort ausdrücklich Teil des Modells</td></tr>
+  <tr><td><b>Mobil</b></td><td class="ok">überall</td><td class="warn">ungleich, Safari erst spät</td></tr>
+  <tr><td><b>Aufwand</b></td><td>keiner, läuft</td><td>Registry-Änderung, neuer Build, zweiter Renderpfad</td></tr>
+  <tr><td><b>Gewinn</b></td><td></td><td>Compute, bessere Instanzierung, moderne Materialien</td></tr>
+</table>
+<p class="me"><b>Empfehlung: WebGL behalten, das Aufwärmen aber sofort einbauen.</b> Es kostet in beiden
+Wegen dasselbe und wirkt schon heute. WebGPU wäre eine eigene Entscheidung mit eigenem Anlass, und der
+Qualitätsboden verlangt mobil benutzbar.</p>
+
+<h3>Regler deklarieren statt bauen</h3>
+
+<p>Die Quelle erzeugt <b>82 Regler aus einer Deklaration</b>, nicht von Hand. Kamera 8, Ton 10,
+Licht 18, Material 11, Schatten 7, Höhlung 10, Verdeckung 10, Bloom 3, Linse 5.</p>
+
+<p class="me"><b>Das ist die Lücke im Modulvertrag.</b> Dort stehen Fähigkeiten, aber keine
+<b>Parameter</b>. In dieser Sitzung wurde dreimal eine Bedienleiste von Hand gebaut, für Collage,
+Torus und Umgebungstests. Ein Modul, das seine Regler deklariert, bekäme die Oberfläche vom Wirt
+geschenkt. Dieselbe Grenze wie beim Rest: <b>das Modul erklärt, der Wirt liefert.</b></p>
+
+<p class="me"><b>Und ein kleines Detail mit großer Wirkung:</b> das Öffnen der Leiste verschiebt oder
+skaliert die Bühne dort <b>nicht</b>. Das ist die eigene Messregel als Oberflächenverhalten, denn eine
+Messung, deren Standpunkt sich beim Öffnen der Regler verschiebt, ist keine Messung.</p>
+
+<h4>Was nicht übernommen wird</h4>
+<ul>
+  <li><b>Die dreissig Szenen.</b> Marmor, Kupfer, Obsidian, also fotorealistische PBR-Materialien. Das genaue Gegenteil von Tusche und Papier. <b>Technik ja, Aussehen nein.</b></li>
+  <li><b>Die Regleranzahl.</b> 82 ist für ein Vorführstück richtig und für ein Spiel falsch. Das <b>Schema</b> ist der Gewinn, nicht die Menge.</li>
+</ul>
+
+<p class="me"><b>Nebenbei die fünfte Figur derselben Topologie:</b> eine rollende Würfelschleife, die
+nie endet und nie sichtbar wiederholt. Nach Torus, Klopapierrolle, Wäscheleine und gefalteter
+Pop-up-Seite wieder endlos und trotzdem endlich, und wieder ohne dass es dafür erfunden wurde.</p>
+
+<h3>Auffindbarkeit: 130 Seiten liegen schon da</h3>
+
+<p><b>Was in einem Canvas gerendert wird, kann kein Crawler und kein KI-System lesen.</b> Für
+Overworld, Torus und Collage gilt das vollständig.</p>
+
+<p class="me"><b>Aber das ist nicht das Problem, denn das Canvas ist nicht das Produkt.</b> Die Decks
+sind es, und die sind PDFs. Das Canvas ist die Spielwiese davor.</p>
+
+<h4>Der Fund: die Registry ist bereits die Datengrundlage</h4>
+<p>In <code>index.json</code> stehen je Deck bereits <b>Titel, Blurb, Verdict, Gesamtnote, Hashtags,
+Genre, Kartenzahl und der PDF-Pfad</b>. Daraus lässt sich im Bauschritt <b>je Deck eine echte
+HTML-Seite erzeugen</b>.</p>
+
+<pre>index.json (130 Decks)
+  -> Bauschritt auf Cloudflare Pages
+  -> 130 statische Deck-Seiten
+       Titel, Beschreibung, Cover, Note, Hashtags
+       Link zum PDF, Link zur Welt
+  -> sitemap.xml aus derselben Schleife</pre>
+
+<ul>
+  <li><b>Niemand muss dafür etwas schreiben.</b> Es ist eine Schleife über vorhandene Daten.</li>
+  <li><b>130 auffindbare Seiten statt eines Canvas</b>, und dieselbe Registry speist weiterhin die 3D-Welten.</li>
+  <li>Das Cover liegt ohnehin als erste PDF-Seite vor, also gibt es auch ein Vorschaubild ohne Zusatzarbeit.</li>
+  <li>Der Weltcode <code>packId#seed</code> wäre der natürliche Link von der Seite in die Welt.</li>
+</ul>
+
+<h4>Die Schichtregel</h4>
+<p class="me"><b>Die lesbare Schicht muss funktionieren, auch wenn die 3D-Schicht gar nicht lädt.</b>
+Kein WebGL, kein Problem: die Deck-Seite steht trotzdem, mit Cover statt Canvas. Das gehört zum
+Qualitätsboden ohne Ansage, so wie sichtbarer Tastaturfokus und <code>prefers-reduced-motion</code>.</p>
+
+<h4>Zwei Fehler aus der Quelle, die zutreffen</h4>
+<ul>
+  <li><b>Mobil separat prüfen, nachdem die 3D-Szene wirklich geladen ist</b>, nicht nur das HTML drumherum. Eine Seite kann die üblichen Mobilprüfungen bestehen und trotzdem auf einer mittleren Mobil-GPU einbrechen.</li>
+  <li><b>Inhalt nicht ausschließlich im Modell.</b> Was nur in der 3D-Szene steht, existiert für alles außerhalb nicht.</li>
+</ul>
+
+<h4>llms.txt</h4>
+<p class="me">Passt hier auch inhaltlich: ein Projekt über Diskurs, KI und Zitierbarkeit hinterlegt
+eine Datei, die KI-Systemen erklärt, was hier liegt. <b>Nützlich und zugleich die Ironie tragend.</b>
+Die Quelle sagt selbst korrekt dazu, dass es ein Experiment obendrauf ist und kein Ersatz für
+Grundlagen.</p>
+
+<h4>Herkunft und Herleitung</h4>
+<p><b>Quelle:</b> <code>glbkit-tools/awesome-3d-ai-seo-geo</code>, <b>CC0</b>, rund 1500 Zeilen
+Sammlung.</p>
+<p><b>Anlass:</b> die Frage, ob eine Ressourcenliste zu 3D und Auffindbarkeit etwas bringt.</p>
+<p><b>Herleitung:</b> Die Linklisten sind für uns wenig wert. Der tragende Satz ist der über das
+Canvas, das niemand lesen kann. Daraus folgte aber nicht der übliche Schluss, das Canvas lesbar zu
+machen, sondern die Einsicht, <b>dass das Produkt gar nicht im Canvas liegt</b>. Und daraus wiederum,
+dass die Registry bereits alles enthält, was 130 Seiten brauchen.</p>
+<p class="bad"><b>Ehrlich zur Quelle:</b> sie ist CC0 und nützlich, aber es ist eine Liste von
+<code>glbkit.com</code> mit Abzeichen, die durchgehend auf die eigene Seite verlinken, plus einem
+Abschnitt über die eigenen Angebote. Also nützlich <b>und</b> Trichter. Und <b>GEO ist überwiegend
+eine Marketing-Prägung</b>, was der Text an einer Stelle selbst einräumt, indem er sagt, generative
+Suche hänge an denselben Grundlagen wie klassische. <b>Grundlagen nehmen, Begriffsneuheiten
+ignorieren.</b></p>
+
+<h3>Endlos kippende Karte statt rollender Würfel</h3>
+
+<p class="bad"><b>Geometrie zuerst:</b> ein Würfel hat quadratische Flächen, eine Karte ist 16:9. Eine
+Karte auf einer Würfelfläche ist entweder beschnitten oder hat Ränder.</p>
+
+<p class="me"><b>Also keine Würfel, sondern eine Platte im Kartenformat, die kippt.</b> Das ist sogar
+besser, denn ein flacher Quader kippt abwechselnd lang und kurz, also entsteht von selbst ein
+<b>Rhythmus statt eines gleichmäßigen Takts</b>. Und es ist die Karte, die purzelt, nicht ein Behälter
+mit einer Karte darauf.</p>
+
+<h4>Die Fugenbreite ist der Closure-Aufwand</h4>
+<p>Zwischen den Platten leuchten Fugen. Bei uns ist die Fuge zwischen zwei Panels der <b>Gutter</b>.
+Die Karte rollt also über Panels, und <b>jede Lücke, die sie überquert, ist eine Closure</b>.</p>
+<table>
+  <tr><th>Übergang</th><th>Lücke</th></tr>
+  <tr><td>Moment zu Moment</td><td>Haarriss</td></tr>
+  <tr><td>Handlung zu Handlung</td><td>ein Schritt</td></tr>
+  <tr><td>Szene zu Szene</td><td>ein Satz</td></tr>
+  <tr><td><b>Non Sequitur</b></td><td><b>ein Abgrund</b></td></tr>
+</table>
+<p class="me"><b>Damit wird die Einsatzachse aus L-30 eine Sprungweite.</b> Wer den weiten Sprung
+nimmt, riskiert etwas. Wer immer den Haarriss nimmt, kommt sicher an und langweilt. Und <b>die Fuge,
+in die man fällt, ist der Drain mit Adresse</b>, genau wie beim Torus.</p>
+
+<h4>Der Quest-Würfel ist das Level</h4>
+<p class="me">Eine kippende Platte zeigt nach jedem Kippen eine andere Seite. Sechs Seiten, sechs
+Beats. <b>Der rollende Körper ist der Quest-Würfel, der durch die Welt rollt</b>, und die Oberseite
+sagt, wo man steht, von Aufbau bis Finale. An Kreuzungen wählt man die Richtung, und die Richtung
+entscheidet, welche Seite oben landet. <b>Man wählt nicht aus einem Menü, sondern durch Lenken.</b></p>
+
+<h4>Der endlose Kartenscroller</h4>
+<p>Die Platte kippt vorwärts, und bei jedem Kippen kommt die nächste Karte des Decks nach oben. Im
+Moment des Aufkommens liegt sie flach zur Kamera. Antippen sammelt ein, verpasst rollt weiter.</p>
+<p class="bad"><b>Ehrlich zur Grenze:</b> wirklich lesbar ist sie in dieser Sekunde nicht. Es gilt
+dieselbe Arbeitsteilung wie überall: <b>Antippen hält an und öffnet die Karte flach.</b> Der Roller
+ist das Blättern, nicht das Lesen.</p>
+
+<h4>FrizzleBob als Antrieb, nicht als Beifahrer</h4>
+<p class="me">Er läuft oben auf der kippenden Platte wie auf einem Baumstamm und hält sie damit in
+Bewegung. <b>Bleibt er stehen, steht alles.</b> Damit ist die endlose Bewegung diegetisch statt
+vorgegeben. Die Arme greifen vorbeifliegende Karten und stopfen sie in den Fächer, und das ist
+zugleich das Bild für <b>Spin it</b>, denn er dreht die Sache buchstäblich weiter.</p>
+
+<p><b>Zwei Vorbehalte:</b> endlos heißt kein Fortschritt, und das ist erlaubt, aber es braucht einen
+<b>Grund weiterzumachen</b>. Der Kartenfächer ist dieser Grund, nicht eine Punktzahl. Und WebGPU
+braucht das nicht, kippende Platten laufen in WebGL, also ist die Registry-Frage hier nicht berührt.</p>
+
+<h3>Die Reglerfläche als Angriffspunkt für Modus, Seed und Biom</h3>
+
+<p class="me"><b>Der entscheidende Perspektivwechsel: die 82 Regler der Vorlage sind die
+Handbedienung dessen, was bei uns automatisch laufen soll.</b> Dort dreht ein Mensch, bei uns drehen
+<b>Modus, Seed und Biom</b>. Die Reglerfläche ist damit nicht die Oberfläche, sondern der
+Angriffspunkt.</p>
+
+<p>Und das gibt L-19 endlich eine Adresse. Bisher hiess es, ein Modus zähle erst, wenn sich etwas
+mechanisch ändert. Jetzt lässt sich sagen <b>welche</b> Parameter er anfasst.</p>
+
+<h4>Wer schreibt was</h4>
+<table>
+  <tr><th>Schicht</th><th>Rolle</th><th>Beispiel</th></tr>
+  <tr><td><b>Deck</b></td><td><b>setzt die Basis</b></td><td>Palette, aus den Karten abgetastet</td></tr>
+  <tr><td><b>Seed</b></td><td>setzt Struktur</td><td>Gelände, Streuung, Muster</td></tr>
+  <tr><td><b>Modus</b></td><td><b>transformiert</b></td><td>Ton, Licht, Schatten, Antwortverhalten</td></tr>
+  <tr><td><b>Biom</b></td><td><b>transformiert örtlich</b></td><td>innerhalb einer Welt, aus Höhe und Lage berechnet</td></tr>
+</table>
+
+<p class="me"><b>Die Regel, die Konflikte von vornherein ausschließt: eine Schicht setzt oder
+transformiert, nie beides.</b> Die Basis wird gesetzt, alles darüber transformiert nur. Dann kann
+niemand um dieselbe Farbe streiten, denn Modus und Biom verschieben Sättigung, Helligkeit und Ton,
+statt eine Farbe zu bestimmen. <b>Die Reihenfolge erzeugt damit keine Widersprüche mehr.</b></p>
+
+<h4>Und die Teilmenge gehört zum Modus</h4>
+<p class="bad"><b>Ein Modus darf nur eine deklarierte Teilmenge anfassen.</b> Dürfte er alle 82,
+entstünde Rauschen und die Welt wäre nicht mehr reproduzierbar.</p>
+<p class="me">Damit wird L-20 konkret: zwei bis drei Achsen je Modus, und <b>welche es sind, ist selbst
+schon Charakterisierung</b>. Verboten dreht an Schatten und Linse, also hart und verzerrt. Mystisch
+dreht an Licht und Bloom. Tragisch dreht an Ton und Kamera.</p>
+
+<h4>Biom aus dem, was schon gerechnet wird</h4>
+<p>Auf dem Torus liegen Höhe und Lage bereits vor. <b>Biom gleich Funktion aus Höhe, v-Band und
+Seed</b>, und es verschiebt innerhalb der Deck-Palette. Kein neues System, nur eine weitere Ableitung
+aus vorhandenen Größen.</p>
+
+<p class="warn"><b>Nicht übernehmen: die Reglerliste selbst.</b> Höhlung, Verdeckung und Bloom
+gehören zu fotorealistischen Materialien, unsere Ebene ist Tusche und Papier. <b>Das Muster ist der
+Gewinn, nicht die Liste.</b> Der KFB-Satz wäre deutlich kleiner und anders geschnitten.</p>
+
+<h3>FrizzleBob-Rig: was im GLB wirklich drin ist</h3>
+
+<p>Basis ist <code>Rabbit by Quaternius</code>, im Repo unter <code>media/3D_Assets/KFB/</code>.
+<b>Gemessen, nicht angenommen:</b> Kopf und JSON-Teil der GLB-Datei ausgelesen.</p>
+
+<table>
+  <tr><th>Prüfpunkt</th><th>Ergebnis</th></tr>
+  <tr><td>Animationen</td><td class="ok"><b>30</b>, zusammen 25,8 s</td></tr>
+  <tr><td>Umfang</td><td class="ok"><b>0,61 MB</b>, 2282 Dreiecke, 2481 Vertices</td></tr>
+  <tr><td>Materialien</td><td class="ok"><b>eines</b>, ein Atlas, eine Textur. Also ein Draw Call je Figur</td></tr>
+  <tr><td>Skelett</td><td><b>58 Gelenke</b>, erzeugt mit FBX2glTF 0.9.7</td></tr>
+  <tr><td>Skins und Meshes</td><td class="warn"><b>je zwei</b>, beide mit 58 Gelenken. Vermutlich Körper plus Zubehör, gehört einmal angesehen</td></tr>
+</table>
+
+<h4>Der Fund: es gibt eine Trage-Reihe</h4>
+<p class="me"><code>Idle_Holding</code>, <code>Walk_Holding</code>, <code>Run_Holding</code>. <b>Damit
+hat FrizzleBob dieselbe Struktur wie Captain Clown Nose und der Big Guy</b>, nämlich zwei vollständige
+Sätze, mit und ohne Gegenstand. <b>Eine Karte in der Hand ist kein Kunstgriff, sondern eingebaut.</b>
+Greift er eine Karte, wechselt er in die Holding-Reihe, und das ist sichtbar, ohne dass eine Anzeige
+es sagen müsste. <code>Sword</code> liefert die Wurfbewegung dazu.</p>
+
+<h4>Verb-Zuordnung</h4>
+<table>
+  <tr><th>Gruppe</th><th>Animationen</th><th>Wofür</th></tr>
+  <tr><td><b>Kern</b></td><td>Idle, Walk, Run, Jump, Jump_Idle, Jump_Land, HitReact, Death, Duck, Punch</td><td>vollständig, nichts fehlt</td></tr>
+  <tr><td><b>Tragen</b></td><td>Idle_Holding, Walk_Holding, Run_Holding, Sword</td><td>Karte halten, tragen, werfen</td></tr>
+  <tr><td><b>Werkbank</b></td><td>Assembly, Chop, Pan, je Start, Loop und Ende</td><td>Maker Space und Presse. <b>Die Dreiteilung heißt: beliebig lange dabeibleiben</b> statt feste Länge abspielen</td></tr>
+  <tr><td><b>Sitzen</b></td><td>Sitting_Start, _Idle (3,3 s), _Eating, _End</td><td>längste Schleife, gut für Wartezimmer und Pausen</td></tr>
+  <tr><td><b>Debatte</b></td><td><b>Yes, No</b>, Wave</td><td>Zustimmen und Ablehnen sind genau die zwei Züge, die eine Pet-Debatte sichtbar machen, <b>ohne dass jemand sprechen muss</b></td></tr>
+</table>
+
+<h4>Zwei Fallen beim Einbinden</h4>
+<ul>
+  <li class="bad"><b>Vierfaches Namenspräfix.</b> Jede Animation heißt <code>CharacterArmature|CharacterArmature|CharacterArmature|Idle</code>. <b>Beim Laden am letzten senkrechten Strich abschneiden</b>, sonst steht das in jeder Zuordnungstabelle und in jedem Manifest.</li>
+  <li class="warn"><b>Zwei Skins und zwei Meshes.</b> Beide mit 58 Gelenken. Wer nur eines animiert, bewegt die halbe Figur.</li>
+</ul>
+
+<p class="me"><b>Fürs endlose Kippen:</b> <code>Walk</code> ist der Antrieb, und die Holding-Reihe ist
+der Fächer-Zustand. FrizzleBob läuft oben auf der Platte und trägt sichtbar, was er gesammelt hat.</p>
+
+<h3>Cartoon-Physik ohne Determinismus zu verlieren</h3>
+
+<p class="bad"><b>Der scheinbare Widerspruch:</b> eine simulierte Platte ergibt bei gleichem Seed nicht
+dieselbe Sitzung. Damit fielen Storymap-Wiedergabe und der Weltcode aus Deck und Seed. Cartoon-Physik
+will aber genau das Übertriebene, Federnde, Nachschwingende.</p>
+
+<h4>Die Auflösung: zwei Transformationen, nicht eine</h4>
+<pre>logische Transformation      sichtbare Transformation
+  deterministisch              Cartoon
+  rastet auf das Gitter        federt, quetscht, schwingt nach
+  entscheidet, was gilt        entscheidet, wie es aussieht
+        |                              |
+        +--------- liest -------------->
+                   schreibt NIE zurueck</pre>
+
+<p class="me"><b>Die logische Platte rastet, die sichtbare überschwingt.</b> Wer beides in einer
+Transformation führt, verliert die Reproduzierbarkeit an dem Tag, an dem jemand den Überschwung
+verstärkt. <b>Das ist dieselbe Invariante wie überall: Zierschichten lesen den Zustand, sie schreiben
+ihn nie</b>, nur diesmal auf eine Transformation angewandt.</p>
+
+<h4>Der kinematische Actor sendet Beats</h4>
+<p>Ein Kippen ist nicht „drehe 90 Grad", sondern eine Folge von <b>deterministischen Zeitpunkten</b>,
+auf die sich die Cartoon-Schicht setzt:</p>
+<pre>anticipation -> launch -> apex -> impact -> settle</pre>
+<ul>
+  <li>Die Zeitpunkte kommen aus der logischen Schicht, also gleicher Seed gleiche Beats.</li>
+  <li>Squash bei <code>impact</code>, Nachschwingen bei <code>settle</code>, Staub bei <code>impact</code>, Bildschirmwackeln bei starkem Aufkommen. <b>Alles darf wild sein, weil nichts zurückwirkt.</b></li>
+  <li>Dasselbe Muster wie die Ereignis-auf-Methode-Tabelle beim Flipper. <b>Ein Verfahren, zwei Module.</b></li>
+</ul>
+<p class="me"><b>Und damit gilt weiterhin L-09:</b> die Physik sagt, was passiert ist, die
+Cartoon-Schicht sagt, wie es sich anfühlte. <b>Cartoon-Physik darf übertreiben, was geschehen ist, sie
+darf nicht entscheiden, was geschieht.</b></p>
+
+<h3>Drei Zustände statt zwei</h3>
+<pre>TRAVEL    Platte kippt, Karte kommt, Karte ist erkennbar
+   |
+ARRIVAL   Platte landet, Karte liegt kurz sichtbar, FrizzleBob reagiert
+   |
+READ      Antippen, Platte haelt an, Karte richtet sich zur Leseposition</pre>
+<p class="me"><b>Der mittlere Zustand fehlte.</b> Dort entscheidet der Spieler, und dort reagiert die
+Figur. Ohne ihn gibt es nur Bewegung und Unterbrechung, mit ihm gibt es einen Moment.</p>
+<p class="me"><b>Und daraus folgt die richtige Einordnung des Ganzen: der Kipper ist kein Scroller,
+sondern ein physischer Comicstreifen, der sich unter FrizzleBob weiterblättert.</b> Ein Scroller ist
+eine Darstellung, ein Streifen ist ein Gegenstand. Damit ist die kurze Sichtbarkeit kein Mangel: <b>der
+Kipper ist die Navigationsebene, nicht die Leseebene.</b></p>
+
+<h3>Zustand wird verkörpert, nicht angezeigt</h3>
+<p class="me">Die Holding-Reihe sagt „Karte ausgewählt", ohne dass eine Anzeige es sagt. <b>Das gilt
+weit über dieses Modul hinaus</b>, denn es ist dieselbe Bewegung wie Ring-Out statt Trefferpunkten und
+wie der Fächer statt einer Zahl. Wo eine Figur einen Zustand zeigen kann, braucht es kein Element
+dafür.</p>
+
+<h3>Card Physical Object: beobachtet, noch nicht abstrahiert</h3>
+<p>Dieselbe Karte taucht auf als Spielobjekt im Ring, als Lesefeld im Kipper, als räumliches Artefakt
+im Infinite Canvas und als Perspektivobjekt im Modus-Wechsel.</p>
+<p class="bad"><b>Aber: es gibt genau einen gebauten Fall und drei entworfene.</b> Eine Abstraktion aus
+einem Fall ist geraten.</p>
+<p class="me"><b>Also als Muster notieren und die Abstraktion ziehen, wenn zwei davon laufen.</b> Sonst
+entsteht eine Schnittstelle für Anforderungen, die noch niemand kennt, und die ist teurer als gar
+keine.</p>
+
+<h3>Deck-Palette mit benannten Rollen</h3>
+<pre>deck palette
+├── sky         Himmel und Nebelfarbe
+├── ground      Gelaende
+├── panel       Flaeche, auf der Karten liegen
+├── gutter      die Fuge
+├── fog         Tiefenabfall
+├── accent      Hervorhebung
+└── interaction was anfassbar ist</pre>
+<p class="me">Besser als eine dominante Farbe für alles. <b>Ein Deckwechsel wird damit ein
+Weltwechsel</b> statt eines Farbwechsels, und die Rollen sind über Module hinweg gleich.</p>
+
+<h3>Vermerk: Modus D, FrizzleBob Panic</h3>
+<p>Die Platte kippt selbständig weiter, aber manchmal geht etwas schief: zu große Fuge, blockierte
+Karte, Gleichgewicht verloren, falsche Richtung. Der Spieler muss eingreifen.</p>
+<p class="warn"><b>Nicht jetzt bauen.</b> Notiert, weil es dem sonst passiven Endlosmodus eine
+minimale Handlungsschicht gäbe, ohne ihn zu einem Spiel zu machen.</p>
+
+<h3>Kartenzuschnitt: geviertelt oder gemessen</h3>
+
+<p class="bad"><b>Korrektur einer früheren Setzung.</b> Der Satz „nicht blind vierteln" war zu
+allgemein. Er stimmt für den Kartenbetrachter und ist für alles andere falsch.</p>
+
+<h4>Gemessen an drei echten Decks</h4>
+<table>
+  <tr><th>Verfahren</th><th>Befund</th></tr>
+  <tr><td><b>Automatische Rahmenerkennung</b></td><td class="bad"><b>Fällt durch.</b> Bei <code>forget_utopia</code> sauber 590×340 über alle vier Quadranten. Bei <code>ignore_dystopia</code> aber 619×186, 491×308, 526×278, 648×285, also Seitenverhältnisse von 1,59 bis 3,33 auf derselben Seite. Sie findet dunkle Bildstellen statt Rahmen</td></tr>
+  <tr><td><b><code>cardGrid</code> messen</b></td><td class="warn">Trifft die Karte, aber je Deck verschieden, <b>nicht in <code>index.json</code></b>, und dort schon dreimal falsch gewesen. Für 130 Decks eine Pflegelast ohne Ende. Ergibt Seitenverhältnis <b>1,46</b></td></tr>
+  <tr><td><b>Blind vierteln</b></td><td class="ok">Fällt nie aus, braucht keine Deck-Daten. Ergibt 776×433, also <b>Seitenverhältnis 1,79 und damit praktisch exakt 16:9</b></td></tr>
+</table>
+
+<p class="me"><b>Das Argument, das ich übersehen hatte: blind geviertelt ist 16:9.</b> Für eine Platte
+im Kartenformat oder eine Ausschnittfläche ist das nicht nur akzeptabel, sondern <b>richtig</b>, denn
+es passt ohne Balken. Mit <code>cardGrid</code> müsste man rahmen oder verzerren.</p>
+
+<p class="me"><b>Und was blind zusätzlich mitnimmt, ist kein Müll:</b> die BLÖDSINN-Spalte, die
+Kritzeleien, die Pflanzen am Rand. Das ist KFB-Material und für Gelände und Collage sogar erwünscht.</p>
+
+<h4>Die Regel lautet also nach Zweck, nicht nach Qualität</h4>
+<table>
+  <tr><th>Zweck</th><th>Verfahren</th></tr>
+  <tr><td><b>Gelände, Collage, Kipper, Vorbeiflug</b></td><td><b>blind vierteln</b></td></tr>
+  <tr><td>Eine einzelne Karte sauber lesen</td><td><code>cardGrid</code>, nur wo gemessen vorliegt</td></tr>
+</table>
+
+<h3>QR als Brücke zwischen Tisch und Welt</h3>
+
+<p>Aus <code>AlbertAZ1992/every-qrcode</code> (MIT): eine Kennung erzeugt <b>deterministisch</b> eine
+3D-Welt, und die Welt <b>verwandelt sich in ihren eigenen QR-Code</b>, der zurückführt.</p>
+
+<p class="me"><b>Das Verfahren habt ihr bereits, nur mit anderer Kennung.</b> Dort ist es eine URL,
+hier wäre es der Weltcode <code>packId#seed</code>. Gleiche Kennung, gleiche Welt, das ist L-21.</p>
+
+<h4>Der Fund: das schließt die transmediale Lücke</h4>
+<p class="me">Auf einer gedruckten Karte oder einem Deck-Cover steht ein QR-Code, der den Weltcode
+trägt. <b>Abscannen heißt, in genau dieser Welt zu landen.</b> Damit ist die Brücke zwischen dem
+Spiel am Tisch und der digitalen Welt gebaut, und sie kostet fast nichts, weil der Weltcode schon
+existiert.</p>
+
+<h4>Und die Verwandlung ist mechanisch billig</h4>
+<p class="me"><b>Ein QR-Code ist ein Raster aus schwarzen Quadraten. Eine Voxelwelt ist ein Raster aus
+Würfeln.</b> Die Verwandlung ist also keine Neuberechnung, sondern eine Umordnung derselben Körper.
+Bei Karten-Platten hieße das: die Karten fallen ins Muster und werden zum Code. <b>Ein Bild, das
+zugleich ein Mechanismus ist</b>, und damit näher am Kanon als jede Dekoration.</p>
+
+<h4>Das Rückfallmuster ist vorbildlich</h4>
+<p class="me">Kein WebGPU, also ein <b>statischer SVG-QR-Code, der weiterhin scannt</b>. Die
+abgespeckte Fassung verliert das Spektakel und behält die Funktion. <b>Das ist L-49 richtig
+ausgeführt</b>, und ein Muster für die ganze 3D-Schicht: was übrig bleibt, wenn nichts läuft, muss
+noch immer etwas können.</p>
+
+<h4>Was nicht übernommen wird</h4>
+<ul>
+  <li><b>Die Pakete.</b> pnpm-Monorepo, Node 22 bis 25, TypeScript 7, React plus Web Component. Ein QR-Code selbst zu erzeugen ist trivial, das Neue ist die Verwandlung.</li>
+  <li><b>Tree und Terrain als Modelle.</b> Generisch. Bei uns wäre es der Torus oder die Kartencollage.</li>
+  <li><b>WebGPU als Voraussetzung</b>, siehe L-45.</li>
+</ul>
+
+<h3>Weltableitung aus Deck-Daten</h3>
+
+<p style="border:2px solid var(--warn);border-radius:9px;padding:11px 14px;background:rgba(224,179,83,.10)">
+<b>Statusvermerk: eine mögliche Option, kein Kanon.</b> Nichts hiervon ist entschieden. Die Zahlen sind
+gemessen, die Zuordnung ist ein Vorschlag.</p>
+
+<h4>Zwei Befunde, die die Ausgangsannahme korrigieren</h4>
+
+<p class="bad"><b>Es gibt keine Shop-URL in der Registry.</b> Vorhanden sind nur <code>packId</code>,
+<code>title</code>, <code>role</code>, <code>gameMode</code>, <code>cardCount</code>,
+<code>pages</code>, <code>coverOffset</code>, <code>pdf</code>, <code>data</code>. Eine Verkaufsadresse
+müsste erst nachgetragen werden.</p>
+
+<p class="me"><b>Und sie taugt nicht als Seed, höchstens als Alias.</b> Eine Shop-Adresse kann sich
+ändern oder wegfallen, und dann verschwindet die Welt eines Decks. <b><code>packId</code> ist die
+stabile Kennung</b>, die es längst gibt. Der Weltcode bleibt also <code>packId#seed</code>, und ein QR
+trägt eine Adresse, die darauf zeigt. <b>Kaufweg und Weltkennung bleiben getrennt.</b></p>
+
+<p class="me"><b>Was aus der Idee ohne Abstriche trägt:</b> jedes Deck hat ohne Zutun eine kanonische
+Welt. <code>forget_utopia</code> allein erzeugt die Standardwelt, <code>forget_utopia#a3f9</code> eine
+Variante. <b>130 Welten ohne eine einzige Einstellung.</b></p>
+
+<h4>Was in den Karten-JSONs wirklich steht</h4>
+<p>Je Karte: <code>cardNumber</code>, <code>cardName</code>, <code>grade</code>, <code>power</code>,
+<code>lore</code>, <code>gradeReason</code>, <code>artworkPrompt</code>.
+Der Prompt hat feste Struktur mit <b>Style, Subject, Mood</b>.
+Je Deck zusätzlich <code>deckType</code>, <code>gradeDistribution</code>, <code>overallScore</code>,
+<code>viralScore</code>, <code>verdict</code>, <code>blurb</code>.</p>
+
+<table>
+  <tr><th>Gemessen an drei Decks</th><th>Befund</th></tr>
+  <tr><td><b>Mood</b></td><td class="bad"><b>Als Kategorie unbrauchbar.</b> 104 verschiedene bei 111 Nennungen, also fast durchweg einmalig: „precarious", „hollow", „bureaucratic menace", „gleeful impermanence"</td></tr>
+  <tr><td><b>Style</b></td><td class="ok"><b>Die verlässlichste Größe.</b> Bei zwei Decks über alle 56 Karten identisch: <code>watercolor cartoon</code> und <code>watercolor ink sketch, aged paper</code>. Beim dritten gemischt. <b>Direkte Materialangabe ohne Interpretation</b></td></tr>
+  <tr><td><b><code>gradeDistribution</code></b></td><td class="ok"><b>Schon ausgerechnet und scharf verschieden.</b> <code>ignore_dystopia</code> hat 48 von 56 auf G1, <code>forget_utopia</code> 25 zu 25 zu 6. <b>Ein Härtegrad</b></td></tr>
+  <tr><td><b><code>deckType</code></b></td><td>je Deck ein Satz, etwa „Utopian Manipulation Deconstruction" gegen „Protopian action-invitation deck". Grob, aber trennscharf</td></tr>
+</table>
+
+<h4>Vorgeschlagene Arbeitsteilung</h4>
+<table>
+  <tr><th>Größe</th><th>Woher</th><th>Wofür</th></tr>
+  <tr><td><code>packId</code> plus Seed</td><td>Registry</td><td>Geometrie, Gelände, Streuung, Pfad</td></tr>
+  <tr><td><b>Style</b> aus dem Prompt</td><td>Karten-JSON</td><td>Materialcharakter der Welt</td></tr>
+  <tr><td><b><code>gradeDistribution</code></b></td><td>Deck-JSON</td><td>Härte, Relief, Kontrast</td></tr>
+  <tr><td>Palette</td><td>Kartenbild, abgetastet</td><td>Farbbasis</td></tr>
+  <tr><td><b>Mood</b></td><td>Karten-JSON</td><td><b>örtlich je Karte, nicht global</b></td></tr>
+</table>
+
+<p class="me"><b>Der letzte Punkt ist der interessanteste: Stimmung ist keine Welteigenschaft, sondern
+eine Ortseigenschaft.</b> Die Karte färbt ihre eigene Umgebung, statt das ganze Biom zu bestimmen.
+Damit wird das Gelände um jede Karte herum ein wenig anders, und das ist genau der Grad an Varianz,
+den man will. <b>Und es passt zur Setzung, dass eine Schicht setzt oder transformiert:</b> das Deck
+setzt die Basis, die einzelne Karte transformiert örtlich.</p>
+
+<p class="warn"><b>Offen und nicht entschieden:</b> ob die Stile überhaupt auf Materialparameter
+abbildbar sind, ob <code>gradeDistribution</code> auf Relief oder auf Kontrast gehört, und ob die
+Shop-Adresse je in die Registry kommt.</p>
+
+<h3>Reproduzierbare Vorführung je Modul</h3>
+
+<p class="me"><b>Die Regel lautet nicht „mach Bildschirmfotos", sondern: jedes Modul braucht einen
+reproduzierbaren Weg vorzuführen, was es behauptet.</b> Kein Agent und kein Mensch darf „funktioniert"
+sagen, ohne etwas Beobachtbares zu erzeugen. <b>Die Form folgt der Behauptung.</b></p>
+
+<table>
+  <tr><th>Was behauptet wird</th><th>Wie es vorgeführt wird</th></tr>
+  <tr><td><b>Sichtbares</b>, also Gelände, Karten, Blasen, Figuren</td><td>Bildschirmfoto an <b>festgelegter Kamera und Tageszeit</b>, plus Protokoll</td></tr>
+  <tr><td><b>Ton</b></td><td>Showcase löst die Geräusche in einer kontrollierten Szene aus, Nachweis über Laufzeitprotokoll, Zustand und erzeugte Audio-Ereignisse</td></tr>
+  <tr><td><b>Geometrie und Gelände</b></td><td><b>Beides.</b> Ein Totalausfall ist im Bild sofort zu sehen, feine Fehler nicht. Also Bild <b>und</b> Messwerte</td></tr>
+  <tr><td><b>Daten und Logik</b></td><td>Zusicherungen und Zahlen. Ein Bild beweist hier nichts</td></tr>
+  <tr><td><b>Lesbarkeit</b></td><td>Blindlese-Test bei 24 Pixeln durch eine Instanz ohne Auftragskenntnis</td></tr>
+</table>
+
+<h4>Bild und Zahl zusammen, nicht statt</h4>
+<p class="me"><b>Belegt an dieser Sitzung, in beide Richtungen.</b></p>
+<ul>
+  <li><b>Die falsche Höhennormierung wäre im Bild fast unsichtbar geblieben.</b> Das Gelände hätte flach gewirkt, und niemand hätte gewusst, dass es falsch ist. Das brauchte die Messung über vier Seeds: ±0,25 statt der behaupteten ±1.</li>
+  <li><b>Ein leerer Bildschirm ist in keiner Zahl zu sehen.</b> Nahtabweichung 1,2·10⁻¹⁵, Slots exakt 56, Pfadlänge 518,6, und trotzdem lief der Collage-POC nicht. Und die drei Sprite-Bündel zeigten leere Kästen, obwohl jeder Pfad per HEAD-Anfrage bestätigt war.</li>
+</ul>
+<p class="me"><b>In dieser Sitzung wurde nichts von dem, was gebaut wurde, vom Verfasser selbst
+gesehen.</b> Geprüft wurden Syntax, DOM-Kennungen, Mathematik und Pfade. <b>Jede visuelle Prüfung kam
+vom Menschen als Bildschirmfoto</b>, und genau die visuellen Fälle waren die teuersten.</p>
+
+<h4>Showcase je Modul</h4>
+<p>Damit die Vorführung überhaupt möglich ist, braucht jedes Modul eine <b>eigene Ansicht</b>, die nur
+dieses Modul in einer aussagekräftigen Szene zeigt. Ohne Showcase gibt es keine Prüfschleife, denn man
+kann nichts einzeln beurteilen.</p>
+
+<h3>Das Messwerkzeug ist Teil des Standpunkts</h3>
+
+<p class="bad"><b>Aus einem Abbruch gelernt: Playwright mit Chromium 141 nutzen.</b> Nicht „ein
+Headless-Browser", sondern diese Fassung.</p>
+
+<h4>Warum das keine Kleinigkeit ist</h4>
+<p class="me">Eine Prüfschleife, die Bildschirmfotos macht, ist nur so gut wie der Browser, in dem sie
+läuft. <b>Ein Headless-Browser ohne GPU rendert weich, trifft Farben nicht und liefert
+Bildratenwerte, die mit der Wirklichkeit nichts zu tun haben.</b> Dann urteilt der Kritiker über ein
+Bild, das es auf keinem Gerät gibt, und alle Noten sind Rauschen.</p>
+
+<p class="me"><b>Damit gehört die Browserfassung zum festen Standpunkt.</b> Die eigene Regel lautet:
+eine Messung ohne festen Standpunkt ist keine Messung. Ich hatte den Standpunkt als Kamera,
+Auflösung und Szene verstanden. <b>Die Fassung des Messgeräts gehört ebenfalls dazu</b>, und sie ist
+die Stelle, an der es still schiefgeht.</p>
+
+<h4>Und es verlängert die Kalibrierungsregel</h4>
+<p class="me">Aus <code>anyCreature</code> stammt der Satz, dass man Lineale kalibriert, bevor man
+ihnen glaubt: eine Vorlage bauen, die bestehen muss, und zwei, die blockiert werden müssen.
+<b>Dasselbe gilt für das Screenshot-Werkzeug selbst.</b> Bevor es urteilt, muss es an einer Szene
+bewiesen haben, dass es überhaupt sieht, was ein echtes Gerät sieht.</p>
+
+<h4>Was daraus für eine Prüfschleife folgt</h4>
+<ul>
+  <li><b>Fassung festschreiben</b>, nicht „aktuell". Playwright plus <b>Chromium 141</b>, und die Nummer steht im Dokument.</li>
+  <li><b>Vor der ersten Messung eine Kalibrierszene</b> aufnehmen, bei der bekannt ist, wie sie aussehen muss. Weicht sie ab, ist das Werkzeug falsch und nicht das Ergebnis.</li>
+  <li><b>Im Protokoll die Browserfassung mitschreiben</b>, neben Konsolenfehlern, Bildrate und Draw Calls. Sonst lassen sich zwei Läufe nicht vergleichen.</li>
+  <li><b>Ohne funktionierendes Messwerkzeug keine Runde starten.</b> Sonst baut die Schleife gegen ein Bild, das niemand je sehen wird.</li>
+</ul>
+
+<p class="warn"><b>Offen:</b> warum genau 141 trägt und ältere Fassungen nicht, ist hier nicht
+geprüft. Plausibel ist die WebGL-Unterstützung im kopflosen Betrieb, aber das ist eine Vermutung. <b>Die
+Nummer gilt als Erfahrungswert aus einem Abbruch, nicht als erklärte Ursache.</b></p>
+
+<h3>Calvinball als Add-On, nicht als Grundregel</h3>
+
+<p style="border:2px solid var(--warn);border-radius:9px;padding:11px 14px;background:rgba(224,179,83,.10)">
+<b>Statusvermerk:</b> Alles in diesem Abschnitt sind <b>Add-On-Regeln, Szenarien und Inversionen</b>
+für KFB und MED. <b>Keine Core Rules.</b> Sie gelten in ausgewiesenen Modi, nicht im Grundspiel, und
+sie ändern nichts an Zug, Rollen oder Verdict.</p>
+
+<p>Calvinball aus Calvin und Hobbes hat <b>genau eine feste Regel: keine Regel darf zweimal benutzt
+werden.</b> Alles andere wird während des Spiels erfunden. Wer eine Regel ausruft, hat sie damit
+gesetzt, und der andere muss mitspielen.</p>
+
+<p class="me"><b>Das ist die schärfere Fassung von „Regeln sind Buffets".</b> Ein Buffet
+<b>erlaubt</b>, sich zu bedienen. Calvinball <b>verbietet</b>, dasselbe noch einmal zu nehmen. Das ist
+keine Lockerung, sondern eine sehr strenge Regel, die nur in eine ungewöhnliche Richtung streng ist.
+Genau darum kippt es nicht in Beliebigkeit, obwohl alles erlaubt ist.</p>
+
+<h4>Was daran schon bei KFB liegt</h4>
+<table>
+  <tr><th>Bei Calvinball</th><th>Bei KFB</th></tr>
+  <tr><td><b>Masken und Verkleidung</b> machen das Ausrufen erst möglich</td><td>Kayfabe. Alle wissen, dass es erfunden ist, und spielen es trotzdem ernst</td></tr>
+  <tr><td><b>Punktestände sind Unsinn</b>, etwa „Q bis zwölf"</td><td><b>L-05</b>: Punktestände müssen offensichtlich Unsinn sein. Bei Watterson ein Witz, hier der Schutz gegen den Prüfungston. Dieselbe Wirkung, dreissig Jahre früher</td></tr>
+  <tr><td>Keine Vorbereitung, kein Spielfeld, kein Ziel</td><td>Buffet statt Gesetz, PULL statt GATE</td></tr>
+</table>
+
+<h4>Was KFB noch nicht hat: das Ausrufen als Spielzug</h4>
+<p>Bei KFB spielt jemand eine Karte und erzählt. Bei Calvinball <b>erklärt jemand eine Regel, und der
+andere muss sie hinnehmen</b>. Als Add-On gedacht:</p>
+<ul>
+  <li><b>Einmal je Runde</b> darf ein Spieler eine Regel ausrufen.</li>
+  <li>Sie gilt <b>nur für diese Runde</b> und ist danach <b>verbraucht</b>. Niemand darf sie wiederholen, auch nicht in späteren Partien derselben Sitzung.</li>
+  <li><b>Der König gibt die Regel nicht, er hält sie aus.</b> Damit bleibt die Autorität da, wo sie hingehört, und wird trotzdem zugemutet.</li>
+  <li>Verbraucht heißt verbraucht: das erzwingt Neuheit, statt sie nur zu erlauben.</li>
+</ul>
+
+<h4>Der Unterschied, der es zum Modus macht und nicht zur Grundregel</h4>
+<p class="bad"><b>Calvinball ist antisozial.</b> Es gibt kein Publikum, und Calvin gewinnt durch
+Auslegung.</p>
+<p class="me"><b>Social Story-Wrestling ist auf Publikum gebaut.</b> Der Tisch bewertet, die Social
+Calls sind das Publikum, und der König rotiert. Ein Spiel, in dem der Auslegungsstärkste gewinnt,
+hätte genau diese Instanz ausgeschaltet. <b>Deshalb wäre Calvinball der Modus mit dem größten Bloom,
+nicht die Grundeinstellung.</b> Sonst gewinnt der Lauteste.</p>
+
+<h4>Vorgeschlagene Kennzeichnung im Regelwerk</h4>
+<table>
+  <tr><th>Ebene</th><th>Was dort steht</th></tr>
+  <tr><td><b>Core Rules</b></td><td>Zug, Rollen, Verdict, Social Calls. <b>Unberührt.</b></td></tr>
+  <tr><td><b>Add-On-Regeln</b></td><td>Einzelne Zusätze, die eine Partie verändern, etwa das Ausrufen einmal je Runde</td></tr>
+  <tr><td><b>Szenarien</b></td><td>Ganze Aufbauten mit eigenem Ziel, etwa das Labyrinth ohne Ausgang</td></tr>
+  <tr><td><b>Inversionen</b></td><td>Regeln, die eine Core Rule <b>umkehren</b> statt sie zu ergänzen. Calvinball-Modus gehört hierher, weil er die Autorität des Königs umdreht</td></tr>
+</table>
+<p class="me"><b>Warum die Trennung mehr ist als Ordnung:</b> eine Inversion ist nur lustig, wenn die
+Regel, die sie umkehrt, vorher gilt. Wer alles zur Grundregel macht, hat nichts mehr zum Umkehren.
+<b>Das Grundspiel muss langweilig genug bleiben, damit die Inversionen wirken.</b></p>
+
+<h2>Teil B · Fundstücke und Befunde</h2>
+
+<p class="lead">Fremde Projekte, geprüft und gemessen. Jeder Eintrag hat einen Befund und sagt, was
+<b>nicht</b> übernommen wird. Nichts davon ist Kanon.</p>
+
+<h2>1 · Der Reframe, und er entscheidet alles</h2>
+
+<p class="me"><b>Es sind zwei verschiedene Projekte, die sich nur einen Renderer teilen.</b> Wer sie
+als eines behandelt, baut ein Ding, das für beide Zwecke halb passt.</p>
+
+<table>
+  <tr><th></th><th>A · KFB Sim-Sidequest</th><th>B · Agent-Visualisierung</th></tr>
+  <tr><td><b>Zweck</b></td><td>Unterhaltung, Kanon, ChatterBox-Prüfstand</td><td>Werkzeug für Stefan, Automata und Nexus</td></tr>
+  <tr><td><b>Datenquelle</b></td><td>erfunden, aus Karten und Kanon</td><td><b>echte</b> Vorgänge, also laufende Agenten</td></tr>
+  <tr><td><b>Braucht LLM</b></td><td>ja, für Dialog</td><td><b>nein</b></td></tr>
+  <tr><td><b>Braucht Simulation</b></td><td>ja, Tagesablauf und Begegnungen</td><td><b>nein</b>, die Wirklichkeit liefert den Ablauf</td></tr>
+  <tr><td><b>Kunde</b></td><td>keiner, Spielerei</td><td><b>es gibt einen</b></td></tr>
+</table>
+
+<p class="me"><b>Und daraus folgt die Bauregel:</b> ein Renderer, zwei Datenquellen. Das ist dieselbe
+Invariante wie im Voxel-Briefing, nur gespiegelt: dort ein Zustand mit mehreren Fenstern, hier ein
+Fenster mit mehreren Zuständen. Beide Male gilt, dass die Darstellung nichts über die Herkunft der
+Daten wissen darf.</p>
+
+<pre>Datenquelle A (Sim)        Datenquelle B (echte Agenten)
+      |                            |
+      +------------+---------------+
+                   |
+            eine Nahtstelle
+        { akteure, orte, ereignisse }
+                   |
+          Overworld-Renderer
+     (Biome, Sprites, Blasen, Karten)</pre>
+
+<h2>2 · Die drei Repos, geprüft</h2>
+
+<h3>ai-town <span class="status ok">MIT</span></h3>
+<table>
+  <tr><td><b>Was</b></td><td>virtuelle Stadt, in der KI-Figuren leben, plaudern und Beziehungen aufbauen. Nach dem Paper zu generativen Agenten</td></tr>
+  <tr><td><b>Stack</b></td><td><b>Convex</b> als Spiel-Engine, Datenbank und Vektorsuche · Ollama oder Cloud-LLM · optional Clerk für Anmeldung · Replicate für Musik</td></tr>
+  <tr><td><b>Stärke</b></td><td>das Verhaltensmodell: Ziele, Erinnerung, Begegnung, Gespräch, Beziehung</td></tr>
+  <tr><td><b>Problem für uns</b></td><td class="bad"><b>Ein Backend mit Datenbank und Vektorsuche.</b> Das widerspricht solo-first, Standalone-HTML und statischem Hosting auf Cloudflare Pages</td></tr>
+</table>
+<p class="me"><b>ai-town löst das Problem, das ihr nicht habt.</b> Die schwere Arbeit dort ist, dass
+Agenten überhaupt etwas zu bereden finden und sich erinnern. Bei euch haben sie längst etwas zu
+bereden, nämlich die Karten, und die Erinnerung ist die Storymap. Was ai-town mitbringt, ist der
+Unterbau, den ihr bewusst nicht wollt. <b>Konzept übernehmen, Code nicht.</b></p>
+
+<h3>Agent-Quest <span class="status ok">MIT</span></h3>
+<table>
+  <tr><td><b>Was</b></td><td>Kontrollpult für laufende Claude-Code- und Codex-Sitzungen, gezeichnet als Fantasy-Dorf. Jede Sitzung ist ein Held</td></tr>
+  <tr><td><b>Stack</b></td><td>Bun ab 1.1, Phaser, React, eigener Server, TypeScript mit Bauschritt. <b>Keine Datenbank, kein LLM</b></td></tr>
+  <tr><td><b>Datenquelle</b></td><td>liest lokale Verzeichnisse, also alle <code>~/.claude*</code> und <code>~/.codex</code></td></tr>
+  <tr><td><b>Extras</b></td><td>eingebauter Kachel-Editor, Wetter, Aktivitätsstrom, Detailleiste</td></tr>
+</table>
+<p class="me"><b>Das ist die eigentlich relevante Vorlage, und die Kernidee ist ein Satz: der Ort ist
+das Verb.</b> Lesen schickt den Helden in die Bibliothek, Schreiben in die Schmiede, Befehle in die
+Arena. Man erkennt am Blick, was läuft, ohne ein Wort zu lesen. Das ist ohne Umweg eure eigene
+diegetische Navigation, also das Interface ist die Welt.</p>
+<p class="me"><b>Und es beweist, dass für Anwendungsfall B kein Simulator nötig ist.</b> Kein LLM,
+keine Datenbank, nur eine Zuordnung von Vorgang auf Ort. Das ist um Größenordnungen kleiner als
+ai-town und verkaufbar.</p>
+
+<h3>goblin_town <span class="status bad">CC BY-NC 4.0</span></h3>
+<table>
+  <tr><td><b>Was</b></td><td>begehbares Portfolio als Pixel-Nachtstadt. Häuser öffnen auf Projekte, Notizen, Kritzeleien</td></tr>
+  <tr><td><b>Stack</b></td><td>Astro plus <b>eigene Canvas-Engine in reinem TypeScript, kein Spiel-Framework</b> · Cloudflare Pages und Workers · Firebase für Kommentare</td></tr>
+  <tr><td><b>Lizenz</b></td><td class="bad"><b>CC BY-NC 4.0, also keine kommerzielle Nutzung.</b> Pay What You Want ist kommerziell, also ist der Code für euch gesperrt. Nur als Anschauung</td></tr>
+</table>
+<p class="me"><b>Trotzdem der interessanteste Stack-Beleg:</b> eigene Canvas-Engine ohne Framework,
+auf Cloudflare Pages, öffentlich erreichbar. Genau euer Weg, nur von jemand anderem bewiesen. Und die
+Idee, dass ein Haus auf einen Inhalt öffnet, ist dieselbe wie Agent-Quests Ort-als-Verb, nur für
+Inhalte statt Vorgänge. Für den KFB-Hub ist das die nähere Verwandtschaft.</p>
+
+<h2>3 · Was übernommen wird und was nicht</h2>
+<table>
+  <tr><th>Quelle</th><th>Übernehmen</th><th>Nicht übernehmen</th></tr>
+  <tr><td>ai-town</td><td>Verhaltensmodell: Ziel, Weg, Begegnung, Gespräch, Erinnerung. Die Beobachtung, dass Gespräche interessant werden, wenn Figuren <b>verschiedene</b> Ziele haben</td><td>Convex, Vektorsuche, Anmeldung, Musikgenerierung, der ganze Serverunterbau</td></tr>
+  <tr><td>Agent-Quest</td><td><b>Ort ist das Verb.</b> Dazu die handwerkliche Haltung: Testdateien, datierte Entwurfsdokumente, ehrliche Tabelle mit „noch nicht geprüft"</td><td>Phaser, React, Bun, eigener Server. Ihr habt bereits eine Canvas-Engine</td></tr>
+  <tr><td>goblin_town</td><td>nur die Bestätigung des Stacks und die Idee Haus-öffnet-Inhalt</td><td><b>alles Codehafte</b>, Lizenz verbietet es</td></tr>
+</table>
+
+<h2>4 · Was ihr schon habt, und das ist der Punkt</h2>
+<p>Die Overworld liefert bereits fast alles, was so eine Simulation braucht:</p>
+<ul>
+  <li><b>Biome und Karte</b>, sechs Zonen, Kachelpipeline, Naht-Verfahren</li>
+  <li><b>Elf Mob-Typen</b> mit Wegfindung und Kampfgefühl</li>
+  <li><b>Sprechblasen</b> in Arbeit, samt Emanata-Katalog und Layoutmodell</li>
+  <li><b>Karten im Terrain</b>, also einen Gesprächsgegenstand, den fremde Simulationen erst erfinden müssten</li>
+  <li><b>Storymap</b> als Zustand, also die Erinnerungsschicht</li>
+  <li><b>Journey und Historian</b>, also Ereignis und Deutung, das Vier-Schichten-Modell</li>
+  <li><b>Rohrpost</b> ist bereits Kanon als Transportschicht. Nachrichten zwischen Hubs sind also keine neue Erfindung</li>
+  <li><b>Sprite-Bestand</b>: Tiny Swords, Pirate Bomb, Kings and Pigs, Treasure Hunters, alles CC0</li>
+</ul>
+<p class="me"><b>Was fehlt, ist erstaunlich wenig:</b> Figuren, die miteinander reden statt nur zum
+Spieler, ein einfacher Tagesablauf, und ein sichtbarer Informationsfluss. Das sind drei Ergänzungen
+an einem vorhandenen Ding, kein neues Projekt.</p>
+
+<h2>5 · Vorschlag zum Aufsetzen</h2>
+
+<p class="me"><b>Reihenfolge ist hier wichtiger als Umfang</b>, denn ein Prüfstand für ein
+unfertiges System ist kein Prüfstand. Mehrsprecher-Dialog ist der <b>schwerere</b> Fall für Blasen,
+nicht der leichtere. Also erst v13 fertig, dann das hier als zweiter Abnehmer.</p>
+
+<h3>Stufe 0 · Voraussetzung</h3>
+<p>v13 ChatterBox abgenommen. Blasen, Emanata, Ablage. Ohne das prüft man zwei unfertige Dinge gegeneinander.</p>
+
+<h3>Stufe 1 · Die Nahtstelle, klein</h3>
+<pre>type Akteur   = { id, sprite, ort, ziel?, zustand }
+type Ort      = { id, position, verb }        // "Bibliothek" -> "liest"
+type Ereignis = { akteur, art, gegenstand?, ziel? }</pre>
+<p>Mehr nicht. Beide Datenquellen füllen dieselben drei Formen. Der Renderer kennt nur diese.</p>
+
+<h3>Stufe 2 · Anwendungsfall B zuerst</h3>
+<p class="me"><b>Gegen die Intuition, aber richtig:</b> die Agent-Visualisierung zuerst, nicht die
+Spielerei. Sie braucht kein LLM, keine Simulation und keinen Dialog, also ist sie die kleinere
+Aufgabe. Sie hat einen Kunden, also erzeugt sie Rückmeldung. Und sie beweist die Nahtstelle mit
+echten Daten, bevor erfundene Daten sie weichspülen.</p>
+<ul>
+  <li>Eine Datei oder ein Endpunkt liefert, welcher Agent gerade was tut.</li>
+  <li>Zuordnung Vorgang auf Ort, also Ort ist das Verb.</li>
+  <li>Figuren laufen dorthin. Fertig. <b>Kein Text nötig</b>, das ist die Pointe.</li>
+  <li>Erst danach Emanata über den Köpfen für Zustände wie wartet, blockiert, fertig.</li>
+</ul>
+
+<h3>Stufe 3 · Informationsfluss sichtbar machen</h3>
+<p>Der Teil, der es für Stefan wertvoll macht und der über ein hübsches Dorf hinausgeht.</p>
+<ul>
+  <li><b>Rohrpost als Bote:</b> eine kleine Figur trägt eine Nachricht von A nach B. Übergabe von Agent zu Agent wird ein sichtbarer Weg.</li>
+  <li>Der <b>Big Guy</b> aus Pirate Bomb hat dafür die fertige Trage-Zustandsmaschine: aufheben, halten, tragen, werfen.</li>
+  <li><b>Captain Clown Nose</b> geht weiter, denn dort hat der Gegenstand eigene Zustände: liegt, fliegt, steckt. Eine Nachricht, die unterwegs liegen bleibt, wird damit sichtbar.</li>
+  <li>Wartende Übergaben stapeln sich als liegende Gegenstände. <b>Ein Engpass sieht dann wie ein Engpass aus</b>, ohne Diagramm.</li>
+</ul>
+
+<h3>Stufe 4 · Anwendungsfall A, die KFB-Sim</h3>
+<ul>
+  <li>Dieselbe Nahtstelle, andere Quelle. Figuren bekommen Ziele und Tagesabläufe.</li>
+  <li><b>Gesprächsgegenstand sind die Karten.</b> Zwei Figuren treffen sich, eine hat eine Karte, sie reden darüber.</li>
+  <li>Das ist zugleich der Mehrsprecher-Prüfstand für ChatterBox: zwei Blasen gleichzeitig, Ausweichen, Lesereihenfolge.</li>
+  <li>Der Spieler kann eingreifen, aber muss nicht. Zurücklehnen ist ein erlaubter Modus.</li>
+</ul>
+
+<h2>6 · Risiken, benannt</h2>
+<table>
+  <tr><th>Risiko</th><th>Gegenmittel</th></tr>
+  <tr><td><b>Drittes Projekt neben Overworld und Travel.</b> Aufmerksamkeit ist die knappste Ressource</td><td>Nicht als Projekt führen, sondern als zweiten Abnehmer des Overworld-Renderers</td></tr>
+  <tr><td><b>Prüfstand vor Fertigstellung.</b> Mehrsprecher ist der schwerere Blasenfall</td><td>Stufe 0 ist Bedingung, nicht Empfehlung</td></tr>
+  <tr><td><b>Backend durch die Hintertür.</b> ai-town bringt Convex mit, und einmal drin bleibt es</td><td>Konzept übernehmen, Code nicht. Wenn je ein Server nötig wird, als eigene Kanon-Entscheidung</td></tr>
+  <tr><td class="bad"><b>Sitzungsinhalte auf dem Bildschirm.</b> Agent-Quest liest lokale Verzeichnisse. Bei einer Vorführung sieht der Raum, woran gearbeitet wurde</td><td>Für Demos einen Anonymisierungsschalter, oder von vornherein nur Vorgangsarten anzeigen und keine Inhalte</td></tr>
+  <tr><td><b>Stilbruch im Sprite-Bestand.</b> Zwei Größenfamilien, Faktor zwei</td><td>Eine Familie festlegen, siehe Asset-Paket</td></tr>
+  <tr><td><b>goblin_town-Code</b> ist nicht kommerziell nutzbar</td><td>Nur ansehen, nichts übernehmen</td></tr>
+</table>
+
+<h2>7 · Warum das für Stefan taugt</h2>
+<p class="me">Der Verkaufsgrund ist nicht, dass es hübsch ist. Er ist, dass <b>ein Blick genügt</b>.
+Ein Balkendiagramm über Agentenlaufzeiten muss gelesen werden. Ein Dorf, in dem sich vor einem Haus
+Boten stauen, muss man nur sehen. Das ist derselbe Grund, aus dem der wachsende Zellenturm im
+KFB-Kanon funktioniert: eine Menge, die als Skyline lesbar wird, braucht keine Zahl daneben.</p>
+<p>Und es passt zu einer Werkzeugkiste für Desktop- und Web-Automatisierung, weil dort viele kleine
+Vorgänge parallel laufen und man gerade nicht weiß, welcher hängt.</p>
+
+<h2>8 · Polyfork als Asset-Pool</h2>
+
+<p class="lead">Nicht ein Modell, sondern eine Bezugsquelle. Geprüft am Beispiel
+<code>rooted-gantry-arm</code>.</p>
+
+<h3>Was daran technisch zählt</h3>
+<table>
+  <tr><th>Eigenschaft</th><th>Bedeutung für uns</th></tr>
+  <tr><td><b>Ein Material, Vertex-Farben, keine Texturen</b>, im ganzen Katalog identisch</td><td class="ok">Eine ganze Szene lässt sich über <code>mergeAssets</code> auf <b>einen Draw Call</b> zusammenfassen, ohne Textur-Atlas. Genau der Hebel, um den es beim Voxel-Rendering geht, denn nicht Vertices tun weh, sondern Draw Calls</td></tr>
+  <tr><td><b>Vertex-Farben plus <code>colorway</code>-Parameter</b></td><td class="ok">Umfärben ist trivial. Der Stilbruch, der bei Fremdmodellen sonst fest ist, wird hier verhandelbar</td></tr>
+  <tr><td><b>Benannte Rigg-Teile</b> mit Drehpunkt an Scharnier und Achse</td><td class="ok">Eine Zeile bewegt ein Teil. Beim Kranarm: Drehkranz, zwei Ausleger, Handgelenk, zwei Greifer</td></tr>
+  <tr><td><b><code>walk.mjs</code></b> löst die Gelenke inverskinematisch und hält die deklarierten Bewegungsgrenzen ein</td><td class="ok">Zielsteuerung ohne eigene Kinematik</td></tr>
+  <tr><td><b>ES-Modul gibt eine fertige <code>THREE.Group</code> zurück</b>, kein Loader, nicht asynchron</td><td class="ok">Passt zu einem Build mit three 0.160, und es entfällt eine Ladeschicht</td></tr>
+  <tr><td>Echter Maßstab in Metern, Ursprung am Boden</td><td>Muss einmal gegen das Voxelraster gerechnet werden</td></tr>
+  <tr><td>2 549 Dreiecke, GLB 277 KB</td><td>schlank genug für viele Instanzen</td></tr>
+</table>
+
+<h3>Der eigentliche Fund: das Steampunk-Farm-Kit</h3>
+<p class="me">Der Kranarm gehört zu einem Kit mit <b>47 passenden Teilen, einer Palette und einem
+Maßstab</b>. Das ist ohne Umweg der Maker Space, wie er beschrieben wurde: Gutenberg trifft Steampunk
+trifft Zine-DIY als Mesh-Mashup. Der Unterschied zu zusammengesuchten CC0-Stücken ist, dass die Teile
+hier bereits zueinander passen, und genau das wäre sonst die eigentliche Arbeit gewesen.</p>
+
+<h3>Der Greifarm als Kartenaufdecker</h3>
+<ul>
+  <li>Ein Arm, der eine Karte vom Stapel nimmt und hochhält, ist <b>„Show it" als Maschine</b>, also der erste Schritt des Kartenrituals als Gerät statt als Geste.</li>
+  <li>Er lässt sich mit dem Kartenbetrachter koppeln: der Arm deckt auf, der Betrachter zeigt gross.</li>
+  <li>Und er verbindet sich mit der Presse im Maker Space, die Karten druckt. Aufdecken und Drucken sind dann zwei Geräte derselben Werkstatt.</li>
+  <li>Für den Agent-Sidequest ist derselbe Arm die <b>Rohrpost als Gerät</b>: eine <b>abnehmbare Kiste</b> ist bereits Teil des Modells, also nimmt der Arm eine Nachricht auf und setzt sie woanders ab. Eine hängende Übergabe wird zu einer Kiste, die stehenbleibt.</li>
+</ul>
+
+<h3>Lizenz, präzise</h3>
+<p>Kommerziell frei für Spiele, Apps und Kundenarbeit, keine Namensnennung. Zwei Grenzen:
+<b>kein Weiterverkauf der Rohdaten</b> und <b>kein kommerzieller Asset-Generator daraus</b>.</p>
+<table>
+  <tr><th>Vorhaben</th><th>Einschätzung</th></tr>
+  <tr><td>Modelle im eigenen Spiel verwenden, auch bei Pay What You Want</td><td class="ok">gedeckt, das ist ausdrücklich erlaubt</td></tr>
+  <tr><td><b>Sprites daraus backen und im eigenen Spiel verwenden</b></td><td class="warn">wahrscheinlich gedeckt, denn es ist eine abgeleitete Verwendung im Produkt und kein Weiterverkauf. <b>Aber Auslegungssache.</b> Ein Ein-Personen-Anbieter beantwortet so eine Frage schnell, also einmal fragen statt raten</td></tr>
+  <tr><td>Gebackene Sprites als Asset-Paket verteilen</td><td class="bad">nicht gedeckt, das ist Weiterverkauf der Rohdaten in anderer Form</td></tr>
+  <tr><td>Nutzer-Export einer Szene samt Modellen</td><td class="bad">nicht gedeckt. Betrifft einen künftigen Zonen-Builder, <b>nicht</b> die jetzige Pipeline, die Karten als JSON und PDF exportiert</td></tr>
+  <tr><td>Pixelbäcker als öffentliches Werkzeug mit Polyfork-Quellen</td><td class="bad">das wäre ein Asset-Generator, also ausgeschlossen</td></tr>
+</table>
+<p class="me"><b>Praktisch heißt das:</b> im Produkt benutzen ja, als Asset weitergeben nein. Die
+Grenze verläuft nicht beim Backen, sondern beim Verteilen. Und weil die Pixelbäckerei ohnehin ein
+eigenes Werkzeug ist, sollte sie ihre Quellen aus CC0 ziehen, damit die Frage gar nicht erst
+entsteht.</p>
+
+<h3>Einbindungs-Muster, aus einem Beispiel gelernt</h3>
+<pre>&lt;script type="importmap"&gt;
+{ "imports": { "three": "https://unpkg.com/three@0.180.0/build/three.module.js",
+               "three/addons/": "https://unpkg.com/three@0.180.0/examples/jsm/" } }
+&lt;/script&gt;
+&lt;script type="module"&gt;
+import * as THREE from 'three';
+import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+import { createAsset } from 'https://polyfork.dev/cdn/toy-rocket-e51241.mjs';
+
+// Weite Ebene bei 5000: Terrain-Blöcke sind 64 bis 256 m breit,
+// ein 100-m-Sichtkegel schneidet sie an.
+const camera = new THREE.PerspectiveCamera(45, innerWidth/innerHeight, 0.1, 5000);
+...
+scene.add(createAsset());
+&lt;/script&gt;</pre>
+
+<table>
+  <tr><th>Beobachtung</th><th>Bedeutung</th></tr>
+  <tr><td><b>Es gibt Terrain-Blöcke von 64 bis 256 Metern Kantenlänge</b>, und die Bemerkung im Beispiel warnt ausdrücklich davor, dass eine Sichtweite von 100 m sie anschneidet</td><td class="ok">Der Katalog liefert also nicht nur Requisiten, sondern <b>Gelände in Hub-Größe</b>. Für die Travel-Welt relevanter als der Kranarm. Und die weite Ebene muss dann auf mehrere tausend gesetzt werden, sonst verschwinden Teile ohne erkennbaren Grund</td></tr>
+  <tr><td><b>Der Import zeigt zur Laufzeit auf <code>polyfork.dev/cdn/...</code></b></td><td class="bad">Für eine Vorführung bequem, für die Produktion nicht. Das widerspricht der eigenen Pfad-Hygiene, nach der Assets im eigenen Repo liegen. <b>Herunterladen und selbst ausliefern</b>, sonst hängt das Spiel an einer fremden Auslieferung</td></tr>
+  <tr><td><b>Lichtstärken von 1,2 und 2,0</b> und kein gesetzter Farbraum</td><td class="warn">Beides deutet auf three ab r155, wo die Lichteinheiten umgestellt wurden, und auf r152, wo der Ausgabe-Farbraum standardmäßig auf sRGB wechselte. Bei 0.160 stimmt das. <b>Wer dieselben Werte in einen älteren Prototypen kopiert, bekommt eine viel zu dunkle Szene</b>, ohne Fehlermeldung. Dieselbe Familie von Fallen wie beim Farbraum</td></tr>
+  <tr><td>Beispiel benutzt <b>0.180</b>, Kanon ist <b>0.160</b></td><td>Die Peer-Angabe deckt beides ab, also unproblematisch. Aber beim Übernehmen von Beispielcode die Version nicht mitschleppen</td></tr>
+  <tr><td><code>renderer.setAnimationLoop</code> statt <code>requestAnimationFrame</code></td><td>das neuere Muster, notwendig für XR. Nebenbei mitnehmen</td></tr>
+  <tr><td>Hintergrund im Beispiel ist <code>#f3ecdc</code></td><td>ein warmer Papierton, zufällig nah an der KFB-Palette</td></tr>
+</table>
+
+<h3>Kosten, nüchtern</h3>
+<p>Hundert einmalig gegen zehn im Monat. Bei einem Projekt über Jahre ist einmalig günstiger,
+<b>falls</b> es überhaupt benutzt wird. Der Sitzplatzzähler daneben ist Verknappungsrhetorik, und
+ausgerechnet in diesem Projekt sollte das kein Entscheidungsgrund sein. Die Frage lautet, ob das
+Steampunk-Farm-Kit den Maker Space trägt.</p>
+<p><b>Vor dem Kauf beachten:</b> was im Editor sichtbar ist, ist eine reduzierte Vorschau, die vollen
+Dateien schaltet erst der Kauf frei. Und es ist ein Ein-Personen-Projekt, allerdings gehört
+Heruntergeladenes dauerhaft, anders als bei einer laufenden Schnittstelle.</p>
+
+<h2>9 · Zwei Ebenen: flache Welten im 3D-Raum</h2>
+
+<p><b>Der Gedanke:</b> Three.js und der 3D-Raum sind der <b>Behälter</b>, und die 2D-Welten werden
+darin als <b>flache Scheiben</b> gerendert, also als Ebenen mit einer Canvas-Textur. Karten wären
+dann in beiden Schichten nutzbar, und Top-Down wie Seitenansicht liessen sich im selben Raum
+kombinieren.</p>
+
+<h3>Warum das kanonisch trägt</h3>
+<p class="me"><b>Eine Card Zone ist bereits ein 16:9-Panel.</b> Ein Panel im Raum ist eine Scheibe.
+Ein 3D-Raum voller flacher Panels mit Zwischenraum ist damit wörtlich das, was schon im Kanon steht:
+Pop-up-Buch, Gutter, Infinite Canvas. Das ist keine neue Metapher, sondern die vorhandene, nur
+räumlich ausgeführt.</p>
+<p class="me"><b>Und es löst den Ansichtsbruch seitwärts.</b> Seitenansicht-Sprites in einer
+Draufsicht-Welt sind ein Fehler. Dieselben Sprites auf einer <b>flachen Scheibe</b> sind Papiertheater,
+also Absicht. Aus dem Stilproblem wird eine Stilaussage, und zwar ohne dass irgendetwas nachgezeichnet
+werden müsste.</p>
+
+<h3>Technisch</h3>
+<ul>
+  <li><b>CanvasTexture auf einer Plane.</b> Das Verfahren ist bereits im Einsatz, es wird nur größer gedacht.</li>
+  <li>Die 2D-Overworld bleibt <b>2D-Canvas mit ihren 45 Modulen</b>. Der 3D-Raum <b>zeigt</b> sie nur, er übernimmt sie nicht. Damit bleibt es ein Renderer pro Welt, kein Umbau.</li>
+  <li>Polyfork-Modelle stehen dann <b>zwischen</b> den Scheiben, nicht darin. Kranarm, Presse, Requisiten als räumliche Geräte an einer flachen Welt.</li>
+</ul>
+
+<h3>Die harte Grenze, und sie ist wichtig</h3>
+<p class="bad"><b>Pixel-Art auf einer geneigten Ebene wird matschig.</b> Sobald die Scheibe schräg
+steht, wird die Textur neu abgetastet, und die harten Kanten, für die wir 0,0 % weichen Saum gemessen
+haben, verschwinden. Pixelgenau ist nur frontal und bei ganzzahliger Skalierung.</p>
+<p class="me"><b>Daraus folgt die Aufteilung, und sie ist dieselbe wie beim Reader:</b> der 3D-Raum
+ist zum <b>Anordnen, Betrachten und Wählen</b>, gespielt wird <b>frontal</b>. Eine Scheibe, die
+gerade dran ist, dreht sich in die Kamera und wird 1:1 dargestellt. Ferne Scheiben dürfen schräg
+stehen und matschig sein, denn dort liest niemand.</p>
+
+<h3>Weitere Grenzen, benannt</h3>
+<ul>
+  <li><b>Texturgröße.</b> Mobil liegt die Obergrenze oft bei 4096. Eine große Overworld-Leinwand kann darüber liegen, dann muss gekachelt werden.</li>
+  <li><b>Aktualisierungskosten.</b> Eine laufende 2D-Welt jedes Bild als Textur hochzuladen ist teuer. Statische Scheiben sind billig, lebende teuer. Also nur die aktive Scheibe live, der Rest eingefroren.</li>
+  <li><b>Klick-Durchleitung.</b> Ein Klick in den 3D-Raum muss über Raycast und UV auf ein Canvas-Pixel abgebildet werden. Machbar, aber ein eigenes Stück Arbeit.</li>
+  <li><b>Beleuchtung.</b> Die 2D-Welt bringt ihr eigenes Licht mit. Sie darf nicht zusätzlich vom 3D-Licht beschienen werden, sonst kippt die Helligkeit. Also unbeleuchtetes Material für die Scheiben.</li>
+</ul>
+
+<h3>Was das freischaltet</h3>
+<ul>
+  <li><b>Der Hub wird begehbar</b>, ohne dass die 2D-Welten umgebaut werden. Jede Welt ist eine Scheibe im Raum.</li>
+  <li><b>Karten funktionieren in beiden Schichten:</b> als Textur auf einer Scheibe und als Objekt im Raum, das ein Arm aufheben kann.</li>
+  <li><b>Top-Down und Seitenansicht nebeneinander</b> werden möglich, weil sie zwei verschieden ausgerichtete Scheiben sind statt eines Widerspruchs.</li>
+  <li><b>Der Übergang wird ein Ereignis:</b> die Kamera fährt an eine Scheibe heran, sie richtet sich aus, und man ist drin. Das ist derselbe Zug wie der Karaoke-Zoom.</li>
+</ul>
+
+<h2>10 · Ludo Wala als Vorbild</h2>
+
+<p class="lead"><code>ludowala.app</code>, 3D-Ludo im Browser. Auf den ersten Blick weit weg von KFB,
+auf den zweiten die beste laufende Bestätigung mehrerer Prinzipien, die hier bisher nur als Haltung
+stehen.</p>
+
+<h3>Kayfabe, mechanisch sauber getrennt</h3>
+<p>Es gibt dort ein <b>Regal mit elf Wurfgeschossen</b>: Rakete, Drache, Hammer, Granate,
+Gewehrsalve, Bogen, Messer, Schwert, Ballon, Wachhund, Flammenwerfer. Und der entscheidende Satz
+dazu lautet sinngemäss: die Figuren fliegen in die Luft und landen wieder auf <b>genau den Feldern,
+auf die der Würfel sie gestellt hat</b>. Das Spiel bleibt fair, der Tisch bleibt es nicht.</p>
+<p class="me"><b>Das ist Kayfabe als Bauprinzip, in Produktion bewiesen.</b> Maximales Spektakel auf
+einem unangetasteten Regelskelett. Genau die Grenze, um die hier mehrfach gerungen wurde, etwa bei
+Loot Boxes, Raritäten und den Trefferpunkten für den Boss-Layer. Ludo Wala zeigt, dass die Trennung
+nicht nur haltbar ist, sondern das Spiel <b>lustiger</b> macht statt ärmer. Die Show darf alles, die
+Rechnung nichts.</p>
+<p>Und der Nachschub ist an das Spiel gekoppelt, nicht an Geld: jede Eroberung füllt das Regal wieder
+auf. Spektakel verdient man durch Spielen.</p>
+
+<h3>Hausregeln als Funktion</h3>
+<p>Vier optionale Regeln, die der Tisch <b>vor dem ersten Wurf</b> vereinbart, drei davon
+standardmässig aus. Was der Tisch setzt, gilt für alle am Tisch.</p>
+<p class="me"><b>Das ist „Regeln sind Buffets, keine Gesetze" als Bedienelement.</b> Bisher ist das
+bei uns eine Haltung, die sich in Zurückhaltung ausdrückt, also in dem, was wir <b>nicht</b>
+erzwingen. Hier ist es eine sichtbare Liste vor dem Spiel. Das ist die stärkere Form, weil sie das
+Prinzip zeigt statt es nur einzuhalten.</p>
+
+<h3>Mehrspieler ohne Spielserver</h3>
+<p>Züge laufen über <b>direkte WebRTC-Verbindungen</b> zwischen den Geräten. Ein winziger Vermittler
+stellt die Spieler einmal vor und tritt dann zur Seite. Kein Spielserver dazwischen.</p>
+<p class="me"><b>Und der Grund, warum das überhaupt geht, steht zwei Absätze weiter: die Engine ist
+deterministisch, jedes Gerät rechnet dasselbe Brett.</b> Damit hat die Determinismus-Invariante einen
+zweiten Zweck, den ich bisher nicht benannt hatte. Sie ist nicht nur die Voraussetzung für
+Storymap-Wiedergabe, sondern auch <b>die Voraussetzung für Mehrspieler ohne Backend</b>. Wer
+deterministisch baut, hält sich diese Tür offen, ohne sie jetzt zu öffnen.</p>
+<p>Dazu die Ausfallbehandlung: ein Platz läuft im Autopilot weiter, wenn jemand die Verbindung
+verliert. Das ist unser Leanback-Modus, nur als Netzfunktion.</p>
+
+<h3>Ton aus dem Nichts</h3>
+<p>Fast jedes Geräusch wird zur Laufzeit mit WebAudio erzeugt, damit nichts auf einen Download
+wartet. <b>Genau drei</b> Töne sind echte Aufnahmen: Würfel, Hund, Flammenwerfer.</p>
+<p class="me"><b>Das ist die Ausnahmeregel, die uns fehlte.</b> Wir haben „prozedural statt Assets"
+als Prinzip, aber keine Regel dafür, wann eine Aufnahme doch berechtigt ist. Hier lautet die Antwort:
+nur wo Synthese hörbar scheitert. Drei Ausnahmen bei einem ganzen Spiel ist ein gutes Verhältnis.</p>
+
+<h3>Kamera nach Gerätehaltung</h3>
+<p>Breitbild bekommt den Blick über den Tisch, ein hochkant gehaltenes Telefon schaut senkrecht nach
+unten. Die Drehung des Geräts ändert also die Einstellung.</p>
+<p class="me">Für unseren Qualitätsboden brauchbar: mobil ist nicht dieselbe Ansicht in klein,
+sondern eine andere Ansicht. Das ist mehr als ein reaktionsfähiges Layout.</p>
+
+<h3>Die Positionierung</h3>
+<p>Eine Vergleichstabelle gegen die üblichen Ludo-Apps: keine Werbung, kein Münzladen, kein Echtgeld,
+kein Konto offline, keine Werbeprofile. Dazu der Satz, die meisten Ludo-Apps seien Werbetafeln mit
+einem Brett daran.</p>
+<p class="me">Dieselbe Haltung wie KFB, nur ausgesprochen. Anti-FOMO als Verkaufsargument statt als
+stille Enthaltsamkeit.</p>
+
+<h3>Ein ehrlicher Vorbehalt, und er ist lehrreich</h3>
+<p class="bad">Die Seite behauptet an einer Stelle, Münzen und Edelsteine seien <b>auf keinem Weg
+kaufbar</b>, „nicht mit Karte, nicht mit einem Tippen, niemals". Im FAQ weiter unten steht dann, man
+könne ein Paket kaufen, um die Wartezeit zu überspringen.</p>
+<p class="me"><b>Das ist genau die Falle, die KFB vermeiden muss.</b> Ein Versprechen in der
+Überschrift, das das Kleingedruckte zurücknimmt. Bei einem Projekt, dessen Kern Anti-FOMO und
+Pay What You Want ist, würde ein solcher Widerspruch mehr kosten als der ganze Rest einbringt. Also:
+das Prinzip übernehmen, die Formulierung nicht. Lieber sagen, was stimmt, als was gut klingt.</p>
+
+<h3>Was übernommen wird</h3>
+<table>
+  <tr><th>Übernehmen</th><th>Nicht übernehmen</th></tr>
+  <tr><td><b>Spektakel ohne Regelwirkung</b> als ausdrückliche Bauregel</td><td>Münzen und Edelsteine als Währung</td></tr>
+  <tr><td><b>Hausregeln als sichtbare Liste</b> vor dem Spiel</td><td>Tägliche Belohnungsleiter, das ist Bindungsmechanik</td></tr>
+  <tr><td><b>Determinismus auch als Mehrspieler-Tür</b>, nicht nur für Wiedergabe</td><td>Freundescodes und Geschenke, solange es keinen Mehrspieler gibt</td></tr>
+  <tr><td><b>Ton prozedural, Aufnahme nur wo Synthese scheitert</b></td><td>Einsatz von Münzen auf ein Spiel</td></tr>
+  <tr><td><b>Kamera nach Gerätehaltung</b>, nicht nur nach Fenstergröße</td><td>die widersprüchliche Werbeformulierung</td></tr>
+  <tr><td><b>Autopilot bei Verbindungsverlust</b>, verwandt mit dem Leanback-Modus</td><td></td></tr>
+</table>
+
+<h2>10a · Kartencollage als Gelände</h2>
+
+<p class="lead">Landschaft, die selbst aus Karten besteht: Ausschnitte im Anschnitt, gerissene Kanten,
+gestaffelte Ebenen. Terry-Gilliam-Logik statt Textur-Tapete.</p>
+
+<h3>Der Befund, der es billig macht</h3>
+<p class="me"><b>Die PDF-Seite ist bereits der Textur-Atlas.</b> Eine Seite ist ein einziges JPEG mit
+1553 mal 866 und enthält vier Karten. Vier Ausschnitte teilen sich also <b>eine</b> Textur, und die
+UV-Rechtecke dafür stehen schon in <code>index.json</code> als <code>cardGrid</code>. Niemand muss
+einen Atlas bauen, er existiert. Ein ganzes Deck sind fünfzehn Texturen zu je rund 200 KB. Damit ist
+eine komplette Kartenlandschaft leichter als ein einziges 3D-Modell.</p>
+
+<h3>Vier Bausteine</h3>
+<table>
+  <tr><th>Baustein</th><th>Warum</th></tr>
+  <tr><td><b>Reisskanten statt Rechtecke</b>, also Alphamasken mit gerissener Kante. Acht bis zwölf gemeinsame Masken, zufällig zugeteilt und gespiegelt</td><td><b>Der wichtigste Schritt.</b> Rechteckige Bilder auf Flächen sehen aus wie aufgeklebte Fotos. Erst die gerissene Kante macht Collage daraus. Billigster Schritt mit der größten Wirkung, und ohne ihn wird es nie Gilliam</td></tr>
+  <tr><td><b>Ausschnitte statt ganzer Karten</b>, ein Felsvorsprung ist ein Zwanzigstel eines Motivs, gross gezogen</td><td>Erst der Anschnitt macht Landschaft daraus statt Galerie</td></tr>
+  <tr><td><b>Gekipptes statt vollem Billboarding</b>: Drehung nur um die Hochachse, nie kippend</td><td>Gilliams Figuren drehen sich <b>nicht</b> zum Betrachter, sie bleiben flach, und genau das ist der Reiz. In 3D verschwindet eine flache Fläche aber von der Seite. Der Kompromiss lässt sie aufrecht wie Pappaufsteller stehen, erhält den Horizont, und <b>volles Billboarding würde die Parallaxe zerstören</b></td></tr>
+  <tr><td><b>Auf Geometrie: je Fläche ein Ausschnitt</b></td><td>Bei der Voxelwelt der natürliche Fall, weil Würfelflächen achsparallel sind, also keine Projektion nötig. Verträgt sich sogar gut mit Greedy Meshing: eine verschmolzene Wand aus zehn Würfeln nimmt einen <b>größeren</b> Ausschnitt. Für unregelmässiges Gelände wäre triplanare Projektion die Alternative, die schmiert aber an steilen Flächen</td></tr>
+</table>
+
+<h3>Tiefe und Erzeugung</h3>
+<ul>
+  <li><b>Die Staffelung ergibt sich aus der Perspektive von selbst.</b> Die Frage ist nur, was die Tiefe zuweist. <b>Nicht würfeln</b>, sondern die Daten nehmen: <code>grade</code> auf Tiefenband, oder Rolle und Genre. Wieder die Regel, dass Bedeutung aus dem Autorisierten kommt und Varianz aus der Prozedur.</li>
+  <li><b>Palette aus den Karten selbst abtasten</b>, fünf dominante Farben je Karte, daraus die Farbe des umgebenden Geländes. Dann harmoniert jede Landschaft automatisch mit ihrem Deck, ohne Kunstrichtung je Deck. <b>Ein kühles Deck baut ein kühles Tal.</b></li>
+</ul>
+
+<h3>Gewicht, konkret</h3>
+<p>Ein Deck sind fünfzehn Seitentexturen. Werden die Ausschnitte <b>nach Quellseite gruppiert</b>, sind
+das fünfzehn InstancedMeshes, also <b>fünfzehn Draw Calls für eine ganze Landschaft</b>, ohne eigenen
+Shader.</p>
+
+<h3>Zwei Ehrlichkeiten</h3>
+<ul>
+  <li><b>Die Quelle ist rund 150 dpi.</b> Ein Ausschnitt auf einer großen Fläche zeigt das. Nicht bekämpfen, sondern setzen: grobe Körnung ist Collage-Sprache, solange sie gewollt aussieht und nicht wie ein Fehler. Lieber bewusst grob als heimlich unscharf.</li>
+  <li class="bad"><b>Wenn alles aus Karten besteht, sticht keine Karte mehr heraus</b>, und die Card Zones verlieren ihre Bedeutung. Deshalb eine Hierarchie, dieselbe Logik wie bei den gerundeten Würfeln: <b>Ausschnitte bauen die Landschaft, ganze aufrechte Karten markieren die Orte. Was ganz ist, bedeutet etwas.</b></li>
+</ul>
+
+<h2>10b · Torus-Welten</h2>
+
+<p class="lead">Ein Labyrinth auf einer Torusfläche als Weltkugel, begehbar, befliegbar, bespielbar.
+Ein Deck gleich ein Realm.</p>
+
+<h3>Warum der Torus richtig ist und nicht nur hübsch</h3>
+<p class="me"><b>Er ist die einzige Fläche, auf der ein flaches rechteckiges Gitter in beide
+Richtungen nahtlos schließt</b>, ohne Pol, ohne Verzerrung, ohne Rand. Eine Kugel hat Pole und einen
+Äquator, also bevorzugte Orte. <b>Ein Torus ist wörtlich eine Comicseite, deren Ränder verklebt
+sind</b>, links an rechts und oben an unten. McClouds Infinite Canvas ist unbegrenzt, ein Torus ist
+unbegrenzt <b>und endlich</b>: man läuft ewig und stößt nie an eine Kante, aber die Welt hat eine
+feste Größe. Genau das braucht ein Infinite Canvas als Spielwelt, und eine Ebene liefert es nicht.</p>
+
+<h3>Das Gefälle, das geschenkt kommt</h3>
+<p class="me">Auf einem Torus ist der <b>innere Ring kürzer als der äußere</b>. Das ist keine Deko,
+das ist Geometrie: <b>innen eng, außen weit</b>, ohne dass jemand es baut. Damit bekommt die
+Kanon-Achse eine neue Form. Bisher hieß sie unten gleich Kaninchenbau, oben gleich protopische
+Treppe. Auf dem Torus heißt sie <b>innen gleich enger, außen gleich freier</b>. Ein
+Labyrinth-Gefängnis gehört dann selbstverständlich nach innen, wo die Gänge sich drängen.</p>
+
+<h3>Die vier Verben</h3>
+<table>
+  <tr><th>Verb</th><th>Verhältnis zur Wand</th></tr>
+  <tr><td><b>Gehen</b></td><td>gehorcht dem Labyrinth. Die Wand ist eine Wand</td></tr>
+  <tr><td><b>Gleiten</b></td><td>Schwung in den Gängen. Hier wird das Labyrinth zum Flippertisch</td></tr>
+  <tr><td><b>Fliegen</b></td><td>ignoriert die Wand. <b>Das ist mehr als Fortbewegung</b>, siehe unten</td></tr>
+  <tr><td><b>Flippern</b></td><td>Wände werden Bumper, Sackgassen werden Taschen</td></tr>
+</table>
+<p class="me"><b>Fliegen ist der Akt der Closure.</b> Der Kanon sagt bereits, dass Closure im Flug
+zwischen den Zonen passiert und dass der Graben der physische Gutter ist. Auf dem Torus wird das
+geometrisch: <b>die Labyrinthwand ist der Gutter, und wer darüber fliegt, steht zwischen den
+Panels</b>. Fliegen ist damit nicht Bequemlichkeit, sondern Lesen.</p>
+
+<h3>Kanon-Prüfung: ein Labyrinth darf kein Tor sein</h3>
+<p class="bad"><b>Ein Labyrinth ist eine Sperrstruktur, und die Regel lautet Buffets statt Gesetze,
+also PULL statt GATE.</b> Wer aufgehalten wird, steht vor einem Tor.</p>
+<p class="me"><b>Es löst sich mit dem, was ohnehin gilt: Gehen gehorcht, Fliegen nicht.</b> Damit ist
+das Labyrinth kein Schloss, sondern eine Form, die dem Gehen Bedeutung gibt, während der Weg nach
+oben immer offen bleibt. <b>Das muss ausdrücklich gesetzt werden</b>, sonst baut jemand ein Tor und
+merkt es nicht.</p>
+
+<h3>Kein Drain auf einem Torus</h3>
+<p>Es gibt kein Unten. Die drei Gutter-Ereignisse Übertretung, Dive und Drain sind Kanon, aber
+<b>der Drain müsste hier gesetzt werden</b>, also ein Ort statt einer Folge der Schwerkraft.</p>
+<p class="me">Mechanisch reizvoll, weil der Verlust dann <b>eine Adresse hat</b>. Ein Loch im Ring,
+das man kennt und meidet, statt einer Kante, an der man abrutscht.</p>
+
+<h3>Weltcode: Deck plus Seed</h3>
+<pre>Welt = packId + Seed
+
+packId  ->  Palette, Motive, ganze Karten als Orte, Gutter-Typ
+Seed    ->  Labyrinth, Zellenschnitt, Streuung, Bandzuweisung
+
+Beispiel:  forget_utopia#a3f9</pre>
+<ul>
+  <li><b>Ein ganzer Planet in einer kurzen Zeichenkette</b>, teilbar wie eine Storymap.</li>
+  <li>Kostet keinen Speicher, weil ein Gitterlabyrinth mit geseedetem Zufall vollständig reproduzierbar ist. Gleicher Code, gleicher Planet, auf jedem Gerät.</li>
+  <li><b>130 Decks wären 130 Realms</b>, ohne dass etwas Neues erfunden wird. Die Palettenabtastung aus dem Collage-POC läuft bereits.</li>
+</ul>
+<p class="me">Das Vorbild hat ebenfalls einen Weltcode, dort ist er aber eine <b>Kennung</b>. Bei uns
+wäre er eine <b>Aussage</b>, denn er nennt das Deck. Das ist die eigene Entscheidungsregel auf
+Weltgenerierung angewandt: Bedeutung aus dem Autorisierten, Varianz aus der Prozedur.</p>
+
+<h3>Wo die Karten hingehören</h3>
+<p>Unverändert die Hierarchie aus dem Collage-Handover: <b>Ausschnitte bauen das Gelände, ganze
+Karten markieren die Orte.</b> Also tragen die Labyrinthwände Kartencollage, und an den Kreuzungen
+stehen ganze Karten aufrecht.</p>
+
+<h3>Die Normale kippt im Loch</h3>
+<p class="me">Auf einer Kugel ist Fliegen langweilig, denn oben ist immer weg vom Mittelpunkt. Auf
+einem Torus ist oben die Flächennormale, und die zeigt außen nach außen, <b>innen im Loch aber zum
+Ring hin</b>. Wer durch das Loch fliegt, dreht sein Verhältnis zum Boden um. Damit wird der
+Durchflug ein <b>Ereignis</b> statt einer Abkürzung, und das Innen-Aussen-Gefälle wird körperlich.</p>
+
+<h3>Ahnenreihe, genau</h3>
+<table>
+  <tr><th>Bezug</th><th>Was daran trägt</th></tr>
+  <tr><td><b>Herriman, Krazy Kat</b></td><td><b>Der stärkste Beleg.</b> In Coconino County wechselt die Landschaft zwischen zwei Panels derselben Szene, ohne Erklärung. Ein Labyrinth, dessen Wände sich neu erzeugen, ist genau das, nur prozedural</td></tr>
+  <tr><td><b>Sterrett, Polly and Her Pals</b></td><td>Das Panel wird selbst zur Architektur. Auf einem Torus <b>ist</b> die Panelgeometrie die Weltgeometrie, also fällt der Unterschied weg</td></tr>
+  <tr><td><b>Franquin</b></td><td>Der Labyrinth-Gefängnisplanet. Passt ohne Zwang nach innen, wo die Geometrie ohnehin enger wird</td></tr>
+  <tr><td><b>McCloud</b></td><td>Infinite Canvas, Gutter, Closure. Der Torus macht alle drei geometrisch</td></tr>
+  <tr><td><b>Eisner</b></td><td>Die Seite als Architektur statt als Behälter</td></tr>
+</table>
+
+<h3>Drei ehrliche Probleme</h3>
+<ul>
+  <li><b>Orientierung.</b> Auf einem Torus verliert man sich, es gibt kein Oben und keinen Horizont. Das Loch ist der einzige starke Anker, also muss es <b>immer sichtbar bleiben</b>, und Regionen brauchen deutlich verschiedene Färbung.</li>
+  <li><b>Auflösung.</b> Die Vorlage zeigt Labyrinthe mit hunderten Zellen. Karten brauchen Platz. Das Gitter muss also viel gröber sein, oder Karten liegen in ausgeschnittenen Kammern.</li>
+  <li><b>Lesbarkeit.</b> Eine Karte auf gekrümmter Fläche schräg im Raum liest man nicht. Dieselbe Grenze wie bei den flachen Scheiben: im Raum wird angeordnet, gelesen wird frontal.</li>
+</ul>
+
+<h3>Mehrspieler, zweiter unabhängiger Hinweis</h3>
+<p class="me">Das Globus-Vorbild löst Mehrspieler mit Server und Datenbank. Ludo Wala löst dasselbe
+mit WebRTC und deterministischer Engine, <b>ohne Spielserver</b>. Da das Labyrinth geseedet ist und die
+Storymap der Zustand, zeigen jetzt <b>zwei unabhängige Belege</b> in dieselbe Richtung: wer
+deterministisch baut, bekommt Mehrspieler ohne Backend geschenkt, falls er ihn je will.</p>
+
+<h3>Herkunft und Herleitung</h3>
+<table>
+  <tr><th>Quelle</th><th>Lizenz</th><th>Rolle</th></tr>
+  <tr><td><code>ctx-o1/toroidal-maze</code></td><td class="bad"><b>keine Lizenz</b>, also Vollschutz</td><td>Anlass und Anschauung. <b>Kein Code.</b> Nennt aber Jamis Bucks Artikel zur Darstellung eines toroidalen Gitters als Quelle, <b>und das Verfahren ist frei</b></td></tr>
+  <tr><td><code>dannylimanseta/tinyskies</code>, intern GlobeFly</td><td class="bad"><b>keine Lizenz</b></td><td>Beweist die Schleife: um eine Kugel fliegen, Welt einrichten, Weltcode teilen, gemeinsam fliegen</td></tr>
+</table>
+<p><b>Anlass:</b> die Frage, ob sich ein Infinite-Canvas-Kartenspiel auf einer geschlossenen Fläche
+statt auf einer Ebene bauen lässt.</p>
+<p><b>Herleitung:</b> Zuerst schien der Torus nur eine hübsche Form. Beim Nachdenken über die
+Topologie stellte sich heraus, dass er die <b>einzige</b> Fläche ist, die ein rechteckiges Gitter
+nahtlos in beide Richtungen schließt, also genau die Eigenschaft, die eine Comicseite mit verklebten
+Rändern hätte. Daraus folgte das Innen-Aussen-Gefälle als geschenkte Achse, und daraus wiederum,
+dass der Drain gesetzt werden muss statt zu fallen. Die Verbindung von Fliegen und Closure kam nicht
+aus den Quellen, sondern aus dem eigenen Kanon.</p>
+<p><b>Verworfen:</b> Server und Datenbank aus dem Globus-Vorbild, weil die eigene Kette an Browser und
+URL hängt. Ausserdem die feine Labyrinthauflösung der Vorlage, weil Karten Platz brauchen.</p>
+<p class="bad"><b>Zur Lizenzfrage:</b> eine öffentliche Einladung zur Nutzung in einem Forenbeitrag
+kann eine Rechteeinräumung sein, ist aber schwach: der Umfang ist unklar, der Beitrag kann gelöscht
+werden, und Pay What You Want ist kommerziell. <b>Die saubere Lösung ist, um eine
+<code>LICENSE</code>-Datei zu bitten.</b> Bis dahin den Beitrag archivieren, das ist besser als nichts
+und schlechter als eine Lizenz.</p>
+
+<h2>04 · Entscheidungsprotokoll</h2>
+
+<p class="lead">Festlegungen dieser Sitzung. <b>Titel als Aussage, nicht als Thema.</b> Wer den Titel
+liest, kennt die Entscheidung. Was hier steht, wird nicht neu verhandelt.</p>
+
+<table>
+  <tr><th>Kennung</th><th>Entscheidung</th><th>Status</th><th>Begründung</th></tr>
+
+  <tr><td><b>L-01</b></td><td><b>Im Lab wird nicht kanon-geprüft</b></td><td>Fest</td><td>Eine Idee, die vor dem ersten Versuch mit Ökonomie-Einwänden erschlagen wird, ist ein Tor mit besseren Manieren. Kanon kommt, wenn gebaut wird</td></tr>
+
+  <tr><td><b>L-02</b></td><td><b>Dissonanz und Appeal gelten nur zusammen</b></td><td>Fest</td><td>Dissonanz allein ist ein Vortrag und stößt ab, Appeal allein ist Zeitvertreib. Erst zusammen entsteht der Klick</td></tr>
+
+  <tr><td><b>L-03</b></td><td><b>Der Klick hat Folgen und eine Rechnung</b></td><td>Fest</td><td>Die Zumutung ist die Pointe, nicht der Randfall. <b>Kayfabe bleiben muss die Ökonomie</b>, also Geld. Ersetzt L-03-alt, siehe Nachtrag</td></tr>
+
+  <tr><td><b>L-03-alt</b></td><td><s>Folgen ja, Rechnung nein</s></td><td>Nachtrag</td><td>War die vorsichtige Fassung und hat den Witz entfernt. Eine Zumutung ohne Instanz ist der Kern</td></tr>
+
+  <tr><td><b>L-04</b></td><td><b>Scheitern wird aufgehängt, nicht abgezogen</b></td><td>Fest</td><td>Unterschied zwischen Strafe und Wiedervorlage. Der Abstand zwischen zwei Klammern ist zugleich das Wiederholungsintervall</td></tr>
+
+  <tr><td><b>L-05</b></td><td><b>Punktestände müssen offensichtlich Unsinn sein</b></td><td>Fest</td><td>Sobald ein Wert nach Leistungsmessung aussieht, kippt der Ton in Prüfung. Absurd hohe Pop-Scores sind der Schutz, nicht die Zierde</td></tr>
+
+  <tr><td><b>L-06</b></td><td><b>Sackgassen sind Türen, nicht Strafen</b></td><td>Fest</td><td>Dreht die Bedeutung, ohne die Struktur zu lockern. Das Labyrinth bleibt streng und ist trotzdem kein Gate</td></tr>
+
+  <tr><td><b>L-07</b></td><td><b>Gimmicks dürfen nichts bedeuten</b></td><td>Fest</td><td>Ein Gimmick, das brav aus <code>grade</code> und <code>genre</code> folgt, ist berechenbar. Der RPG-Spoof lebt davon, dass die Tabelle absurd ist und ernst gespielt wird</td></tr>
+
+  <tr><td><b>L-08</b></td><td><b>Ring-Out ersetzt Trefferpunkte</b></td><td>Fest</td><td>Räumliche Antwort auf das Verbot von Zahlenwerten im Bild. Verlieren heißt, den Bereich zu verlassen, und das liest sich sofort</td></tr>
+
+  <tr><td><b>L-09</b></td><td><b>Physik sagt was, Cartoon sagt wie, Pets kommentieren</b></td><td>Fest</td><td>Dieselbe Dreiteilung wie Kampf, Karte und Chatter. Verhindert den „alles ist LLM"-Effekt</td></tr>
+
+  <tr><td><b>L-10</b></td><td><b>Gehen gehorcht dem Labyrinth, Fliegen nicht</b></td><td>Fest</td><td>Macht aus einer Sperrstruktur eine Form. Die Wand ist der Gutter, Fliegen ist Closure, also PULL statt GATE</td></tr>
+
+  <tr><td><b>L-11</b></td><td><b>Der Weltcode ist Deck plus Seed</b></td><td>Fest</td><td><code>forget_utopia#a3f9</code>. Bedeutung aus dem Autorisierten, Varianz aus der Prozedur. Beim Vorbild ist der Weltcode eine Kennung, hier eine Aussage</td></tr>
+
+  <tr><td><b>L-12</b></td><td><b>Ausschnitte bauen das Gelände, ganze Karten markieren die Orte</b></td><td>Fest</td><td>Ohne diese Hierarchie sticht keine Karte mehr heraus, wenn alles aus Karten besteht</td></tr>
+
+  <tr><td><b>L-13</b></td><td><b>Im Raum wird angeordnet, gelesen wird frontal</b></td><td>Fest</td><td>Pixel-Art auf geneigter Fläche wird durch Neuabtastung matschig. Gilt für flache Scheiben, für den Torus und für die Bühnenneigung gleichermassen</td></tr>
+
+  <tr><td><b>L-14</b></td><td><b>Ein Modul erklärt, was es braucht, ein Wirt liefert genau das</b></td><td>Fest</td><td>Was nicht erklärt wurde, ist nicht da. Damit werden Annahmen zu Fehlern statt zu Überraschungen</td></tr>
+
+  <tr><td><b>L-15</b></td><td><b>Jedes Dokument bekommt Herkunft und Herleitung</b></td><td>Fest</td><td>Quelle, Anlass, Herleitung, Verworfenes. Gilt auch dann, wenn kein Code übernommen wird, damit der Kontext rekonstruierbar bleibt</td></tr>
+
+  <tr><td><b>L-16</b></td><td><b>Ohne Lizenz gilt Vollschutz</b></td><td>Fest</td><td>Betrifft <code>toroidal-maze</code> und <code>tinyskies</code>. Eine Einladung im Forum ist eine schwache Rechteeinräumung. Um eine <code>LICENSE</code>-Datei bitten, bis dahin den Beitrag archivieren</td></tr>
+
+  <tr><td><b>L-18</b></td><td><b>Der Story-Mode ist ein Weltparameter, nicht nur eine Erzählanweisung</b></td><td>Fest</td><td>Er steuert Licht, Ton, Physik und das Antwortverhalten der Objekte. Der Raum multipliziert sich dadurch über Kreuz statt zu addieren</td></tr>
+
+  <tr><td><b>L-19</b></td><td><b>Ein Modus zählt erst, wenn eine Interaktion sich mechanisch anders verhält</b></td><td>Fest</td><td>Nur andere Farbe ist ein Filter. Nur eine andere Antwort ist Welt. Das ist die Abnahme</td></tr>
+
+  <tr><td><b>L-20</b></td><td><b>Nicht alle Achsen gleichzeitig verstellen</b></td><td>Fest</td><td>Kippen Farbe, Ton, Physik, Terrain und Semantik zusammen, wirkt es wie ein Themenwechsel statt wie eine Stimmung. Zwei bis drei je Modus, und welche es sind, ist selbst schon Charakterisierung</td></tr>
+
+  <tr><td><b>L-21</b></td><td><b>Der Weltzustand ist ein Vektor aus Deck, Seed, Modus und Beat</b></td><td>Fest</td><td>Vier Größen, daraus fällt eine Welt, die niemand von Hand entworfen hat, und sie bleibt reproduzierbar</td></tr>
+
+  <tr><td><b>L-22</b></td><td><b>Der Moduswechsel ist das Argument, er braucht keinen Kommentar</b></td><td>Fest</td><td>Dieselbe Behauptung in anderer Tonart gespielt <b>ist</b> der Perspektivwechsel. Das System darf wiedervorlegen, es darf nicht belehren. Belehren ist Doppeldenks Zug</td></tr>
+
+  <tr><td><b>L-23</b></td><td><b>Profilbildung wird diegetisch, lokal und einsehbar</b></td><td>Fest</td><td>Wer Haltungen mitschreibt, um Gegenpositionen auszuspielen, betreibt genau das, was hier satirisiert wird. <b>Doppeldenk führt eine Akte, und der Spieler darf sie lesen.</b> Überwachung wird sichtbar statt wirksam</td></tr>
+
+  <tr><td><b>L-24</b></td><td><b>Verborgene Regeln brauchen eine Spur</b></td><td>Fest</td><td>Ein ignoriert wirkender erster Klick darf folgenlos aussehen, aber minimal etwas ändern. Ohne Spur ist eine Regel nicht verborgen, sondern unsichtbar</td></tr>
+
+  <tr><td><b>L-25</b></td><td><b>Regeln werden entdeckt, nicht ausgerufen</b></td><td>Fest</td><td>Objekte bieten Interaktion an, die Welt antwortet, auch auf Zweckentfremdung. Ersetzt das Ausrufen aus dem Calvinball-Vorbild, siehe Post Mortem zur Gruppengröße</td></tr>
+
+  <tr><td><b>L-26</b></td><td><b>Der Streit liegt in der mittleren Spalte</b></td><td>Fest</td><td>„Ist letztendlich", „fordern seit langem": Verbindungsphrasen sind nicht widerlegbar und tragen die Behauptung. Themenunabhängig, also kleine autorisierte Liste, kein Modell nötig</td></tr>
+
+  <tr><td><b>L-27</b></td><td><b>Das Dropdown ist der Gutter</b></td><td>Fest</td><td>Closure wird vom Untergrund zum Spielzug. Der Spieler wählt die Verbindung, statt sie zu schreiben. Das beseitigt das leere Blatt und gibt der Kritik eine Adresse</td></tr>
+
+  <tr><td><b>L-28</b></td><td><b>Sechs Verbinder je Gelenk, weil sechs der Würfel ist</b></td><td>Fest</td><td>Am Bildschirm Dropdown, am Tisch W6 gegen eine gedruckte Liste. Digital und analog bleiben dasselbe Spiel. Vier Gelenke mal sechs sind rund 1300 Ketten <b>ohne Modell</b></td></tr>
+
+  <tr><td><b>L-29</b></td><td><b>Der Modus wechselt den Verbinder-Pool</b></td><td>Fest</td><td>Tragisch bietet Unausweichlichkeit, komisch bietet Subjektwechsel, absurd bietet Non Sequitur. Damit erfüllt der Modus die Abnahme aus L-19, denn er wirkt mechanisch und nicht optisch</td></tr>
+
+  <tr><td><b>L-30</b></td><td><b>Der Closure-Aufwand ist die Einsatzachse</b></td><td>Fest</td><td>Der Spieler wählt seine eigene Angreifbarkeit. Bei einem zahmen Verbinder wäre BLÖDSINN unfair, bei Non Sequitur hat der Tisch jedes Recht. Einsatz ohne Zahlen</td></tr>
+
+  <tr><td><b>L-31</b></td><td><b>Die Debatte läuft als Show it, Spin it, Sell it</b></td><td>Fest</td><td>Beschreiben, färben, anbieten. Show it aus <code>artworkPrompt</code>, damit es nicht abstrakt wird. Sell it ist ein Angebot, kein Ergebnis</td></tr>
+
+  <tr><td><b>L-32</b></td><td><b>Ungleiche Kenntnis ist der Motor der Debatte</b></td><td>Fest</td><td>Wissen alle gleich viel, entsteht ein Chor. Mit Gefälle entsteht ein Gespräch, und das ist zugleich die Gedächtnissimulation</td></tr>
+
+  <tr><td><b>L-33</b></td><td><b>Fluff-o-lect ist Closure auf Wortebene</b></td><td>Fest</td><td>Das tragende Wort fehlt, die Bedeutung kommt aus dem Kontext. Macht Abstreitbarkeit sichtbar statt sie zu nutzen: <b>Vorführung statt Tarnung</b>. Und es macht übererfüllte Sätze unzitierbar</td></tr>
+
+  <tr><td><b>L-34</b></td><td><b>Der Modus ist der Overton-Rahmen</b></td><td>Fest</td><td>Er bestimmt, was sagbar ist, nicht nur wie es aussieht. Sechs Rahmen zeigen, dass der Korridor beweglich ist, nicht dass Positionen beliebig sind</td></tr>
+
+  <tr><td><b>L-35</b></td><td><b>Keine Absicherung durch Beigabe</b></td><td>Fest</td><td>Karten erscheinen zersplittert, es gibt kein letztes Panel und niemand weiß, wo jemand aufhört. Der Schutz liegt in der Form: kurz, Koan-artig, mit Fluff. <b>Wer die Auflösung mitliefert, macht den Resonanzraum zu</b></td></tr>
+
+  <tr><td><b>L-36</b></td><td><b>Verteilung und Flugstrecke sind dieselbe Struktur</b></td><td>Fest</td><td>Ein Torusknoten (6,5) verteilt 56 Karten gleichmäßig <b>und</b> ist befliegbar. Ein Reihenraster wäre nur das Erste</td></tr>
+
+  <tr><td><b>L-37</b></td><td><b>Karten werden zur Anflugrichtung aufgestellt, 20 bis 40 Grad</b></td><td>Fest</td><td>Flach liegend sieht man im Tiefflug nur einen Streifen. Teilweise aufgestellt wirkt hingefallen statt gestellt</td></tr>
+
+  <tr><td><b>L-38</b></td><td><b>Der Anflug ist das Ladefenster</b></td><td>Fest</td><td>Ein Ladebalken ist Wartezeit, eine Anflugsequenz ist Ankunft. Welt steht nach der ersten Seite, der Anflug deckt drei bis vier weitere ab</td></tr>
+
+  <tr><td><b>L-39</b></td><td><b>Die Weltform ist das vierte Feld im Weltcode</b></td><td>Fest</td><td>Deck, Seed, Modus, Form. Eine Flachwelt für ein Verschwörungs-Deck macht die Behauptung begehbar statt erwähnt</td></tr>
+
+  <tr><td><b>L-40</b></td><td><b>Der Fächer zeigt Karten, gezählt wird nur Pop</b></td><td>Fest</td><td>Karten sind Beweisstücke und dürfen nicht gezählt werden. Der wachsende Stapel ersetzt die Zahl. Pop ist erklärtermaßen Unsinn</td></tr>
+
+  <tr><td><b>L-41</b></td><td><b>Eine Setzung wandert ins Living Document, nicht nur in den Cut</b></td><td>Fest</td><td>Ein Session-Cut ist ein <b>Zeitraum</b>, ein Living Document ist ein <b>Gegenstand</b>. Wer nur in den Cut schreibt, hat archiviert und nicht abgelegt. Belegt: eine Entscheidung fiel dreimal, weil sie nirgends stand</td></tr>
+
+  <tr><td><b>L-42</b></td><td><b>Kratzer werden erzeugt, Flecken werden gestempelt</b></td><td>Fest</td><td>Ein Decal ist ein Stempel und hat einen Rand. Gebrauchsspuren brauchen Richtung aus der Form, dicht an Kanten, spärlich in der Fläche, je Bauteil geseedet. Kaffeerand und Klebeband dagegen sind Stempel</td></tr>
+
+  <tr><td><b>L-43</b></td><td><b>Abnahme prüft in zwei Größenordnungen</b></td><td>Fest</td><td>Manche Fehler sieht man nur groß, manche nur klein. Ein Decal-Rechteck fällt auf einem 35-Pixel-Würfel nie auf, eine unlesbare Silhouette dagegen nur dort. <b>Fläche groß und flach ansehen, bevor sie auf ein Bauteil kommt</b></td></tr>
+
+  <tr><td><b>L-44</b></td><td><b>Shader werden vor dem Vorhang aufgewärmt</b></td><td>Fest</td><td>Der erste Frame nach einem Materialwechsel ruckelt, weil der Shader erst dort übersetzt wird. Der Anflug ist das Fenster dafür. <code>compileAsync</code> in WebGL, <code>init</code> plus Vorkompilierung in WebGPU</td></tr>
+
+  <tr><td><b>L-45</b></td><td><b>Der Renderpfad bleibt WebGL, bis es einen eigenen Anlass gibt</b></td><td>Fest</td><td>WebGPU verlangt neueren Build und einen zweiten Pfad, und die Unterstützung auf Telefonen ist ungleich. Der Qualitätsboden verlangt mobil benutzbar. <b>Beide Wege werden künftig skizziert, entschieden wird einer</b></td></tr>
+
+  <tr><td><b>L-46</b></td><td><b>Module deklarieren ihre Regler, der Wirt baut die Oberfläche</b></td><td>Fest</td><td>Schema statt Handarbeit. In einer Sitzung wurde dreimal dieselbe Leiste gebaut. Ergänzt den Modulvertrag um <code>params</code></td></tr>
+
+  <tr><td><b>L-47</b></td><td><b>Das Öffnen der Bedienleiste verschiebt die Bühne nicht</b></td><td>Fest</td><td>Sonst wandert der Standpunkt, und eine Messung ohne festen Standpunkt ist keine Messung. Die Leiste liegt über der Bühne, sie verdrängt sie nicht</td></tr>
+
+  <tr><td><b>L-48</b></td><td><b>Aus der Registry werden 130 Deck-Seiten erzeugt</b></td><td>Fest</td><td>Titel, Blurb, Verdict, Note, Hashtags und PDF-Pfad stehen bereits in <code>index.json</code>. Eine Schleife im Bauschritt, kein neuer Text. Damit ist das Produkt auffindbar, auch wenn das Canvas es nie sein wird</td></tr>
+
+  <tr><td><b>L-49</b></td><td><b>Die lesbare Schicht funktioniert ohne die 3D-Schicht</b></td><td>Fest</td><td>Kein WebGL, kein Problem: die Deck-Seite steht trotzdem, mit Cover statt Canvas. Gehört zum Qualitätsboden ohne Ansage</td></tr>
+
+  <tr><td><b>L-50</b></td><td><b>Kippende Platte im Kartenformat statt Würfel</b></td><td>Fest</td><td>Ein Würfel ist quadratisch, eine Karte 16:9. Der flache Quader kippt abwechselnd lang und kurz, also entsteht ein Rhythmus statt eines Takts</td></tr>
+
+  <tr><td><b>L-51</b></td><td><b>Die Fugenbreite ist der Closure-Aufwand</b></td><td>Fest</td><td>Haarriss bis Abgrund entspricht Moment zu Moment bis Non Sequitur. Die Einsatzachse aus L-30 wird eine Sprungweite, und die Fuge, in die man fällt, ist der Drain mit Adresse</td></tr>
+
+  <tr><td><b>L-52</b></td><td><b>Modus, Seed und Biom schreiben in dieselbe Parameterfläche</b></td><td>Fest</td><td>Was in der Vorlage ein Mensch von Hand dreht, drehen bei uns die Weltparameter. Gibt L-19 eine Adresse: man kann sagen, <b>welche</b> Parameter ein Modus anfasst</td></tr>
+
+  <tr><td><b>L-53</b></td><td><b>Eine Schicht setzt oder transformiert, nie beides</b></td><td>Fest</td><td>Das Deck setzt die Basis, Modus und Biom transformieren nur. Damit erzeugt die Reihenfolge keine Widersprüche, und niemand streitet um dieselbe Farbe</td></tr>
+
+  <tr><td><b>L-54</b></td><td><b>Ein Modus fasst nur eine deklarierte Teilmenge an</b></td><td>Fest</td><td>Sonst Rauschen und keine Reproduzierbarkeit. Macht L-20 konkret: verboten dreht an Schatten und Linse, mystisch an Licht und Bloom, tragisch an Ton und Kamera</td></tr>
+
+  <tr><td><b>L-55</b></td><td><b>Der FrizzleBob-Rig hat eine Trage-Reihe</b></td><td>Fest</td><td><code>Idle_Holding</code>, <code>Walk_Holding</code>, <code>Run_Holding</code>, <code>Sword</code>. Dieselbe Struktur wie Captain Clown Nose und Big Guy. Karte in der Hand ist eingebaut, nicht gebastelt</td></tr>
+
+  <tr><td><b>L-56</b></td><td><b>Animationsnamen am letzten senkrechten Strich abschneiden</b></td><td>Fest</td><td>Der Rig trägt ein vierfaches Präfix aus FBX2glTF. Ungekürzt steht es in jeder Zuordnungstabelle und in jedem Manifest</td></tr>
+
+  <tr><td><b>L-57</b></td><td><b>Zwei Transformationen: logisch rastet, sichtbar federt</b></td><td>Fest</td><td>Die sichtbare liest die logische und <b>schreibt nie zurück</b>. Damit bleibt Cartoon-Physik beliebig übertrieben, ohne die Reproduzierbarkeit zu kosten. Dieselbe Invariante wie bei Zierschichten, nur auf eine Transformation angewandt</td></tr>
+
+  <tr><td><b>L-58</b></td><td><b>Der kinematische Actor sendet Beats, die Cartoon-Schicht spielt darauf</b></td><td>Fest</td><td><code>anticipation, launch, apex, impact, settle</code>. Zeitpunkte deterministisch, Reaktion frei. Dasselbe Muster wie die Ereignistabelle beim Flipper</td></tr>
+
+  <tr><td><b>L-59</b></td><td><b>Zustand wird verkörpert, nicht angezeigt</b></td><td>Fest</td><td>Die Holding-Reihe sagt „ausgewählt", ohne Anzeige. Dieselbe Bewegung wie Ring-Out statt Trefferpunkten und Fächer statt Zahl. <b>Gilt über den Kipper hinaus</b></td></tr>
+
+  <tr><td><b>L-60</b></td><td><b>Travel, Arrival, Read sind drei Zustände, nicht zwei</b></td><td>Fest</td><td>Der mittlere fehlte. Dort entscheidet der Spieler und reagiert die Figur. Und daraus folgt: <b>der Kipper ist die Navigationsebene, nicht die Leseebene</b></td></tr>
+
+  <tr><td><b>L-61</b></td><td><b>Die Pipeline heißt PDF, nicht JPEG</b></td><td>Fest</td><td>PDF, PDF.js, Seitenleinwand, Kartenzuschnitt, Textur. „Eine Seite ist ein JPEG" war eine Beobachtung an einem Deck, keine Eigenschaft der Schnittstelle. <b>Genau so wurden schon zweimal Korpus-Eigenheiten zu falschen Annahmen</b></td></tr>
+
+  <tr><td><b>L-62</b></td><td><b>Keine Abstraktion vor zwei laufenden Fällen</b></td><td>Fest</td><td>Card Physical Object ist ein beobachtetes Muster mit einem gebauten und drei entworfenen Fällen. Eine Abstraktion aus einem Fall ist geraten und teurer als gar keine</td></tr>
+
+  <tr><td><b>L-63</b></td><td><b>Zuschnitt nach Zweck: Gelände blind vierteln, Betrachter nach <code>cardGrid</code></b></td><td>Fest, <b>ersetzt L-63-alt</b></td><td>Blind ergibt 16:9 und fällt nie aus, und die mitgenommene Zierfläche ist KFB-Material. Automatische Rahmenerkennung wurde geprüft und fällt durch</td></tr>
+
+  <tr><td><b>L-63-alt</b></td><td><s>Nicht blind vierteln</s></td><td>Nachtrag</td><td>War zu allgemein. Stimmt für den Betrachter, ist für Gelände und Collage falsch</td></tr>
+
+  <tr><td><b>L-64</b></td><td><b>Der Weltcode wird als QR gedruckt</b></td><td>Fest</td><td><code>packId#seed</code> auf Karte oder Cover. Abscannen landet in genau dieser Welt. <b>Schließt die Lücke zwischen Tisch und Digitalem</b>, und kostet fast nichts, weil der Weltcode existiert</td></tr>
+
+  <tr><td><b>L-65</b></td><td><b>Was übrig bleibt, wenn nichts läuft, muss noch etwas können</b></td><td>Fest</td><td>Vorbild: kein WebGPU, also ein statischer QR, der weiterhin scannt. Funktion bleibt, Spektakel fällt. Schärft L-49 für die ganze 3D-Schicht</td></tr>
+
+  <tr><td><b>L-66</b></td><td><b>Playwright mit Chromium 141, Fassung festgeschrieben</b></td><td>Fest</td><td>Aus einem Abbruch gelernt. Ein Headless-Browser ohne GPU rendert weich und liefert falsche Bildraten, dann urteilt der Kritiker über ein Bild, das es auf keinem Gerät gibt</td></tr>
+
+  <tr><td><b>L-67</b></td><td><b>Die Fassung des Messgeräts gehört zum festen Standpunkt</b></td><td>Fest</td><td>Standpunkt ist nicht nur Kamera, Auflösung und Szene. <b>Browserfassung ins Protokoll</b>, sonst sind zwei Läufe nicht vergleichbar</td></tr>
+
+  <tr><td><b>L-68</b></td><td><b>Vor der ersten Messung eine Kalibrierszene</b></td><td>Fest</td><td>Eine Szene, bei der bekannt ist, wie sie aussehen muss. Weicht sie ab, ist das Werkzeug falsch und nicht das Ergebnis. Verlängert die Kalibrierungsregel auf das Screenshot-Werkzeug</td></tr>
+
+  <tr><td><b>L-69</b></td><td><b>Jedes Modul braucht eine reproduzierbare Vorführung</b></td><td>Fest</td><td>Nicht „mach Bildschirmfotos", sondern: niemand sagt „funktioniert", ohne etwas Beobachtbares zu erzeugen. <b>Die Form folgt der Behauptung</b>, also Bild für Sichtbares, Protokoll und Zustand für Ton, beides für Geometrie</td></tr>
+
+  <tr><td><b>L-70</b></td><td><b>Bild und Zahl zusammen, nicht statt</b></td><td>Fest</td><td>Belegt in beide Richtungen: die falsche Normierung war im Bild unsichtbar, der leere Bildschirm in den Zahlen. <b>Keins von beiden allein reicht</b></td></tr>
+
+  <tr><td><b>L-71</b></td><td><b>Jedes Modul hat eine Showcase-Ansicht</b></td><td>Fest</td><td>Ohne eine Ansicht, die nur dieses Modul zeigt, gibt es keine Prüfschleife, denn man kann nichts einzeln beurteilen</td></tr>
+
+  <tr><td><b>L-72</b></td><td><b>Ein Beleg darf klein sein, ein Modul nicht</b></td><td>Fest</td><td>Ein Beleg liefert einen Befund und wird danach weggeworfen, also ist enger Schnitt richtig. Ein Modul soll mit anderen zusammenspielen, also braucht es <b>zuerst einen Vertrag</b> und wird zu zweit geprüft. <b>Die Verwechslung dieser beiden hat über zwölf Artefakte erzeugt, die nicht komponieren</b></td></tr>
+
+  <tr><td><b>L-73</b></td><td><b>Rollen klein, Umfang nicht</b></td><td>Fest</td><td>Zwei getrennte Achsen. Wenige Rollen genügen, aber der Vertrag steht vor dem Code und <b>zwei Module beweisen ihn, eines nicht</b></td></tr>
+
+  <tr><td><b>L-17</b></td><td><b>Vier Ebenen: Core Rules, Add-On, Szenario, Inversion</b></td><td>Fest</td><td>Eine Inversion ist nur lustig, wenn die Regel, die sie umkehrt, vorher gilt. <b>Das Grundspiel muss langweilig genug bleiben, damit die Inversionen wirken.</b> Alles im Lab ist Add-On, Szenario oder Inversion, nie Core</td></tr>
+</table>
+
+<h2>07 · Post Mortems</h2>
+
+<p class="lead">Jeder Eintrag ist ein Fehler, der schon bezahlt wurde. <b>Der Wert liegt in der Regel,
+nicht im Fehler.</b></p>
+
+<table>
+  <tr><th>Was gebrochen war</th><th>Ursache</th><th>Regel</th></tr>
+
+  <tr><td><b>Falscher Datenbefund behauptet</b><br>Es hieß, <code>cardNumber</code> sei keine Position auf dem Bogen, und die Registry-Formel sei falsch. Sie stimmt</td><td>Die eigene gerenderte Messung wurde beim Zusammenfassen falsch gelesen. Die Bilder zeigten die Übereinstimmung, der Text behauptete das Gegenteil</td><td><b>Einen Befund nie aus dem Gedächtnis zusammenfassen.</b> Zwischen Messung und Aussage gehört ein zweiter Blick auf die Messung selbst</td></tr>
+
+  <tr><td><b>POC lief gar nicht an</b><br>Der Kartencollage-Prototyp zeigte nichts, die Statuszeile stand auf dem Anfangstext</td><td>Zwei Sperren gleichzeitig: die Deck-Quelle war blockiert <b>und</b> die Bibliothek kam von einer gesperrten Herkunft. Die zweite kam zuerst und verhinderte alles</td><td><b>Vor dem Bauen die Umgebung messen, nicht annehmen.</b> Ein Fähigkeitstest kostet fünf Minuten und spart einen halben Tag</td></tr>
+
+  <tr><td><b>Drei Bündel zeigen leere Kästen</b><br>Die Sprite-Bündel laden alle Bilder von einer Herkunft, die der Betrachter sperrt</td><td>Es wurde angenommen, dass funktioniert, was im Repo erreichbar ist. Erreichbarkeit im Werkzeug ist nicht Erreichbarkeit im Zielbetrachter</td><td><b>Jede externe Herkunft im Zielbetrachter prüfen, nicht im Bauwerkzeug.</b> Und eine Rückfallkette einbauen, statt eine Quelle fest zu verdrahten</td></tr>
+
+  <tr><td><b>Idee mit Ökonomie erschlagen</b><br>Gegen ein gekauftes, passendes, lustiges Skelett wurde mit Kanon und Pflegeaufwand argumentiert</td><td>Lab-Modus wurde wie Kanon-Modus behandelt. Der Einwand war formal richtig und verfehlte die Sache, also genau der Zug, den Officer Doppeldenk macht</td><td><b>Im Lab zuerst fragen, ob es Spass macht, und erst danach, ob es skaliert.</b> Knappheitsargumente nur dort, wo etwas knapp ist</td></tr>
+
+  <tr><td><b>These für vollständig gehalten</b><br>Dissonanz als Resonanzraum wurde bestätigt, ohne dass der Appeal als zweite Hälfte erkannt wurde</td><td>Die eingängigere Hälfte wurde für die ganze Aussage genommen</td><td><b>Bei einer Setzung prüfen, ob sie ohne ihr Gegenstück funktioniert.</b> Tut sie es nicht, gehört das Gegenstück in denselben Satz</td></tr>
+
+  <tr><td><b>Regel notiert, nicht angewandt</b><br>Am selben Tag wurde die Herkunft-und-Herleitung-Disziplin gemerkt und ein Dokument ohne Register gebaut</td><td>Eine Regel wurde als Merkposten behandelt statt als sofort geltende Vorgabe</td><td><b>Eine neu gesetzte Regel gilt ab dem nächsten Artefakt, nicht ab dem nächsten Projekt.</b> Rückwirkend nachziehen, was im selben Lauf entstanden ist</td></tr>
+
+  <tr><td><b>Zwei-Personen-Mechanik auf einen Tisch übertragen</b><br>Calvinballs Ausrufen von Regeln wurde als Add-On vorgeschlagen, ohne die Gruppengröße zu prüfen</td><td>Calvinball funktioniert zwischen zwei Leuten, die einander vollständig vertrauen. Am Tisch mit vier oder fünf wird aus dem Ausrufen ein Machtkampf, und der Selbstbewussteste gewinnt</td><td><b>Bei jeder übernommenen Mechanik zuerst fragen, für wie viele Leute sie gebaut war.</b> Und ob sie Vertrauen voraussetzt, das eine fremde Runde nicht hat</td></tr>
+
+  <tr><td><b>Überraschung mit Neuheit verwechselt</b><br>Es hieß, was einmal überrascht habe, überrasche kein zweites Mal, also müsse die Welt weiter Neues nachliefern</td><td>Wiederholung wurde als Gegner der Überraschung gelesen. Tatsächlich ist sie oft ihr Träger: der dritte Klick offenbart, dass mitgezählt wurde</td><td><b>Die Welt zählt mit, und wer das merkt, hat gewonnen.</b> Nicht ständig Neues nachliefern, sondern Muster verbergen, die sich erst durch Wiederholung zeigen</td></tr>
+
+  <tr><td><b>Dreimal in die Absicherung zurückgefallen</b><br>Erst Ernstfall daneben stellen, dann Ausgewogenheitsauflage, dann Rahmen für das Register verlangt</td><td>Ein pädagogisches Raster wurde auf ein Spiel angewandt, dessen These lautet, dass Dissonanz der Resonanzraum ist. Wer die Auflösung mitliefert, macht den Raum zu</td><td><b>Bei satirischem Material nicht fragen, ob es missverstanden werden kann, sondern ob die Form es unzitierbar macht.</b> Der Schutz liegt in Kürze und Fluff, nicht in Beigabe</td></tr>
+
+  <tr><td><b>Herkunft mit Technik verwechselt</b><br>Nach einem gescheiterten Importmap-Ladeweg wurde geschlossen, ES-Module gingen nicht, und daraufhin der veraltete klassische Build in zwei Dateien eingebaut</td><td>Blockiert war <b>unpkg</b>, nicht das Modulsystem. cdnjs liefert <code>three.module.min.js</code> sehr wohl. Die falsche Ursache wurde zur Regel erhoben</td><td><b>Scheitert ein Ladeweg, zuerst trennen: war die Herkunft gesperrt oder das Verfahren untauglich?</b> Erst danach eine Regel ableiten</td></tr>
+
+  <tr><td><b>Konstante behauptet statt gemessen</b><br>Das Höhenrauschen wurde über die Anzahl der Wellen normiert, mit dem Kommentar „ungefähr minus eins bis eins". Tatsächlich waren es ±0,25, also praktisch kein Relief</td><td>Eine plausible Normierung wurde nicht nachgerechnet, und der Kommentar bestätigte die Annahme statt sie zu prüfen</td><td><b>Jede Konstante, die einen Wertebereich behauptet, einmal über mehrere Seeds messen.</b> Ein Kommentar ist kein Beleg</td></tr>
+
+  <tr><td><b>Dieselbe Entscheidung dreimal gefällt</b><br>Eine Setzung zu Gebrauchsspuren wurde in drei Sitzungen erneut verhandelt, weil sie in keinem Dokument stand</td><td>Sie wurde nur im jeweiligen Session-Cut protokolliert. Ein Cut hält fest, was war, aber niemand liest ihn beim Weiterarbeiten</td><td><b>Am Sitzungsende jede Setzung ins Entscheidungsprotokoll des zuständigen Living Documents übertragen.</b> Der Cut ist die Kopie, nicht der Ort</td></tr>
+
+  <tr><td><b>Fehler zu klein geprüft</b><br>Ein aufgestempeltes Rechteck blieb unentdeckt, weil nur am 35-Pixel-Würfel geprüft wurde</td><td>Die Prüfgröße war kleiner als der Fehler. Bei dieser Größe ist ein Decal-Rand unsichtbar</td><td><b>Erzeugte Flächen groß und flach ansehen, bevor sie auf ein Bauteil kommen.</b> Und zusätzlich klein, denn Lesbarkeit scheitert umgekehrt</td></tr>
+
+  <tr><td><b>Zwei Dinge in einen Topf geworfen</b><br>Kratzer und Flecken wurden mit demselben Verfahren behandelt</td><td>Beide heißen umgangssprachlich Gebrauchsspur, verhalten sich aber gegensätzlich: das eine folgt der Form, das andere liegt auf</td><td><b>Bei einem Sammelbegriff prüfen, ob die Teile dasselbe Verfahren brauchen.</b> Tun sie es nicht, sind es zwei Sachen mit einem Namen</td></tr>
+
+  <tr><td><b>Regel aufgestellt, ohne die Alternative zu prüfen</b><br>„Nicht blind vierteln" wurde als allgemeine Regel gesetzt, weil der Zuschnitt Nachbarinhalt mitnimmt</td><td>Geprüft wurde nur, <b>ob</b> etwas mitkommt, nicht ob es für den Zweck schadet. Der Test zeigte danach: blind ergibt 16:9, gemessen 1,46, und die Zierfläche ist erwünschtes Material</td><td><b>Bevor eine Regel allgemein gilt, den Zweck benennen, für den sie gilt.</b> Und die verworfene Alternative einmal am echten Fall ansehen</td></tr>
+
+  <tr><td><b>Nichts selbst angesehen, was gebaut wurde</b><br>Fünf lauffähige Artefakte entstanden, keines wurde vom Verfasser gerendert gesehen. Geprüft wurden nur Syntax, Kennungen, Mathematik und Pfade</td><td>Es wurde angenommen, dass korrekte Bausteine ein korrektes Ergebnis ergeben. Der leere Collage-POC und die leeren Sprite-Kästen widerlegen das</td><td><b>Wer etwas Sichtbares baut, muss es sichtbar prüfen.</b> Rechnen ersetzt Ansehen nicht, und Ansehen ersetzt Rechnen nicht</td></tr>
+
+  <tr><td><b>Beleg und Modul verwechselt</b><br>Über zwölf saubere Einzelbeweise entstanden, von denen keiner mit einem anderen zusammenpasst</td><td>Jedes Stück wurde klein und <b>ohne Vertrag</b> gebaut, also nebeneinander statt gegeneinander. Enger Schnitt war die Notlösung für den fehlenden Vertrag und wurde für die Lösung gehalten</td><td><b>Vor dem Bauen fragen: ist das ein Beleg oder ein Modul?</b> Ein Beleg darf klein sein und wird weggeworfen. Ein Modul braucht zuerst einen Vertrag</td></tr>
+
+  <tr><td><b>Prüfschleife nach dem Bau gebaut</b><br>Der Collage-POC wurde gebaut, lief nicht, wurde per Bildschirmfoto geprüft, <b>und erst danach</b> entstand der Umgebungstest</td><td>Die Reihenfolge war umgekehrt. Hätte der Test am Anfang gestanden, wären zwei Runden weggefallen. Dasselbe bei der Höhennormierung: erst behauptet, nach Rückfrage gemessen</td><td><b>Die Prüfschleife wird vor dem Gegenstand gebaut, nicht danach.</b> Und die Fassung des Messgeräts gehört mit festgeschrieben</td></tr>
+
+  <tr><td><b>Dunkles Dokument war unlesbar</b><br>Graue Kleinschrift auf dunklem Grund, 10,5 px</td><td>Die Palette eines Werkzeugs wurde auf ein Lesedokument übertragen. Klein und blass zugleich</td><td><b>Kontraste messen statt schätzen, und Lesedokumente hell voreinstellen.</b> Werkzeuge dürfen dunkel sein, Text nicht</td></tr>
+</table>
+
+<h2>10 · Dokumentenregister</h2>
+
+<p class="lead"><b>Ein Dokument ohne Registereintrag existiert nicht.</b> Stand dieser Sitzung.</p>
+
+<table>
+  <tr><th>Kennung</th><th>Dokument</th><th>Status</th><th>Zweck</th></tr>
+  <tr><td>LAB</td><td><code>KFB_Frankensteining_Lab.html</code></td><td>aktuell</td><td>dieses Dokument. Haltung plus geprüfte Fundstücke</td></tr>
+  <tr><td>OW</td><td><code>kfb_overworld_living_doc.html</code></td><td>aktiv</td><td>Overworld-Slices: Emanata, Blasenformen, Layoutmodell, Fixtures, Asset-Stand</td></tr>
+  <tr><td>BUB</td><td><code>HANDOVER_Bubbles_Design.md</code></td><td>aktuell</td><td>eigenständiges Handover für den v13-Bubble-Slice</td></tr>
+  <tr><td>COL</td><td><code>HANDOVER_Kartencollage_Design.md</code> + <code>kfb_card_collage_poc_v2.html</code></td><td>aktuell</td><td>Kartencollage als Gelände, Handover plus lauffähiger POC</td></tr>
+  <tr><td>TOR</td><td><code>HANDOVER_Torus_Welt_Design.md</code> + <code>kfb_torus_world_poc.html</code></td><td>aktuell</td><td>Torus als Weltkörper, Spiralpfad, Karten im Gelände. Alle Konstanten mit Herleitung</td></tr>
+  <tr><td>AST</td><td><code>KFB_Asset_Paket_WS0.md</code> + <code>KFB_2D_Assets_Index.md</code></td><td>aktuell</td><td>Asset-Entscheidungen, Produktion, Abnahme inklusive Blindlese-Test</td></tr>
+  <tr><td>SPR</td><td><code>kfb_piratebomb_bundle_v3.html</code> · <code>kfb_kingsandpigs_bundle.html</code> · <code>kfb_treasurehunters_bundle.html</code></td><td>aktiv</td><td>lebende Sprite-Vorschauen. <b>Laufen nicht im Artefakt-Betrachter</b>, siehe Post Mortem</td></tr>
+  <tr><td>MOD</td><td><code>Vorschlag_Modulvertrag.md</code></td><td>aktuell</td><td>Modulvertrag, themen-agnostisch, mit Herkunft und Herleitung</td></tr>
+  <tr><td>BOSS</td><td><code>POC_Briefing_Boss_Modell.md</code></td><td>aktuell</td><td>begrenzter Versuch mit Abbruchkriterien</td></tr>
+  <tr><td>VIEW</td><td><code>KFB_MED_Deck_Viewer_Design_Brief_v5.md</code></td><td>aktuell</td><td>Deck-Viewer, produktgerahmt. v1 bis v4 superseded</td></tr>
+  <tr><td>TECH</td><td><code>KFB_Tech_Briefing_v2.md</code></td><td>aktuell</td><td>Voxel und Architektur, mit Geltungsbereich-Kasten</td></tr>
+  <tr><td>ENV</td><td><code>kfb_umgebungstest.html</code> · <code>2</code> · <code>3</code></td><td>aktiv</td><td>Fähigkeitstests des Zielbetrachters. <b>Vor jedem Artefakt mit externen Quellen laufen lassen.</b> Ergebnis: nur cdnjs, aber dort auch <code>three.module.min.js</code>, keine Addons</td></tr>
+</table>
+
+<h2>11 · Offene Entscheidungen</h2>
+<ol>
+  <li><b>Stufe 0 bestätigen:</b> v13 vor allem anderen.</li>
+  <li><b>Anwendungsfall B zuerst</b>, oder doch A? Meine Empfehlung ist B, siehe Stufe 2.</li>
+  <li><b>Welche Datenquelle</b> für B. Dateien wie bei Agent-Quest, oder ein Endpunkt aus Stefans Werkzeug?</li>
+  <li><b>Wie viel Inhalt darf sichtbar sein</b>, siehe Risiko Sitzungsinhalte.</li>
+  <li><b>Sprite-Familie</b> für die Sim festlegen.</li>
+  <li><b>Eigener Fork oder Modus im Overworld?</b> Ich rate zu Modus, damit es einen Renderer bleibt.</li>
+  <li><b>Wird das ein Produkt für Stefan</b> oder eine Demo, die eine Richtung zeigt? Davon hängt der Aufwand ab, nicht die Idee.</li>
+  <li><b>Polyfork kaufen</b>, ja oder nein. Massstab: trägt das Steampunk-Farm-Kit den Maker Space?</li>
+  <li><b>Sprite-Backen aus Polyfork</b> bei Polyfork nachfragen, statt es auszulegen (Abschnitt 8).</li>
+  <li><b>Flache Scheiben im 3D-Raum</b> als Hub-Ansatz bestätigen oder verwerfen (Abschnitt 9). Falls ja, ist die erste Prüfung eine einzelne Scheibe mit der laufenden Overworld darauf, frontal und 1:1.</li>
+  <li><b>Greifarm als Kartenaufdecker</b> ausprobieren, gekoppelt an den Kartenbetrachter.</li>
+  <li><b>Hausregeln als sichtbare Liste</b> vor dem Spiel einführen (Abschnitt 10). Macht „Regeln sind Buffets" zur Funktion statt zur Haltung.</li>
+  <li><b>Determinismus als Mehrspieler-Tür</b> mitdenken, auch wenn Mehrspieler nicht ansteht. Kostet jetzt nichts, später viel.</li>
+  <li><b>Ausnahmeregel für Tonaufnahmen</b> festschreiben: prozedural, ausser wo Synthese hörbar scheitert.</li>
+</ol>
+
+<h2>12 · Quellen</h2>
+<table>
+  <tr><th>Repo</th><th>Lizenz</th><th>Stand</th></tr>
+  <tr><td><code>a16z-infra/ai-town</code></td><td class="ok">MIT</td><td>Convex, Ollama oder Cloud-LLM, optional Clerk, Replicate</td></tr>
+  <tr><td><code>FulAppiOS/Agent-Quest</code></td><td class="ok">MIT, 2026</td><td>Bun ab 1.1, Phaser, React, eigener Server, liest <code>~/.claude*</code> und <code>~/.codex</code></td></tr>
+  <tr><td><code>g0GobliN/goblin_town</code></td><td class="bad">CC BY-NC 4.0</td><td>Astro, eigene Canvas-Engine, Cloudflare Pages und Workers, Firebase. <b>Kommerziell gesperrt</b></td></tr>
+  <tr><td><code>ludowala.app</code></td><td class="warn">fremdes Produkt, kein Code</td><td>3D-Ludo im Browser. WebRTC ohne Spielserver, deterministische Engine, WebAudio-Synthese, elf Wurfgeschosse ohne Regelwirkung, Hausregeln als Funktion. <b>Vorbild, keine Quelle</b></td></tr>
+  <tr><td><code>polyfork.dev</code></td><td class="warn">kommerziell frei, kein Weiterverkauf, kein Asset-Generator</td><td>Ein Material mit Vertex-Farben im ganzen Katalog, ein Draw Call über <code>mergeAssets</code>, benannte Rigg-Teile, ES-Modul ohne Loader. Kit <b>Steampunk Farm</b> mit 47 Teilen. Preis 100 einmalig oder 10 im Monat</td></tr>
+</table>
+
+<footer>
+Living Doc Agent-Simulation · additiv, nichts überschrieben · Layer Zero.
+</footer>
+</div>
+<script>
+(function(){
+  "use strict";
+  var b=document.getElementById("themeBtn");
+  function set(mode){
+    document.documentElement.setAttribute("data-theme", mode);
+    b.textContent = mode==="dark" ? "hell" : "dunkel";
+  }
+  // Systemvorgabe respektieren, sonst hell
+  set(window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+  b.addEventListener("click", function(){
+    set(document.documentElement.getAttribute("data-theme")==="dark" ? "light" : "dark");
+  });
+})();
+</script>
+</body>
+</html>
