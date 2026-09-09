@@ -1,0 +1,7 @@
+{
+  "version": "1.0.0",
+  "note": "Lokaler Fallback fuer die Ride-Jukebox. Kanonisch = Repo media/3D_Assets/Sounds/jukebox.json (RAW-first). 'file' = voller Pfad ab Repo-Wurzel; Loader macht RAW + file.",
+  "tracks": [
+    { "id": "van_metronome", "title": "Van Metronome (Instrumental)", "file": "media/3D_Assets/Sounds/Van_Metronome_2026-07-17T163547.mp3", "bpm": 104, "loop": true }
+  ]
+}
