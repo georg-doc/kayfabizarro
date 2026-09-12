@@ -182,5 +182,39 @@ class LibrarianToolsTests(unittest.TestCase):
             self.tools.get_asset("missing")
 
 
+class RealRegistryLibrarianToolsSmoke(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls):
+        cls.tools = LibrarianTools(repo_root=HERE.parents[1])
+
+    def test_real_registry_search_rig_and_consumer_handoff(self):
+        rigged = self.tools.search_assets(
+            "4GTN",
+            filters={"kind": "model-3d", "rigged": "yes"},
+            limit=5,
+        )
+        target_path = "media/3D_Assets/KayKit_Mystery_Series6/7 - January 2026 - 4GTN/4GTN.glb"
+        target = next((asset for asset in rigged["assets"] if asset["path"] == target_path), None)
+        self.assertIsNotNone(target)
+        rig = self.tools.get_rig_facts(target["assetId"])
+        self.assertEqual(rig["rigFacts"]["jointCount"], 23)
+        structural = self.tools.find_same_skeleton(target["assetId"], limit=5)
+        self.assertEqual(structural["compatibilityDecision"], "not-made")
+
+        animated = self.tools.search_assets(
+            "Alien",
+            filters={"kind": "model-3d", "animated": "yes"},
+            consumer_id="combat-arena",
+            limit=20,
+        )
+        alien_path = "media/3D_Assets/MonsterPack_Quaternius/Big/glTF/Alien.gltf"
+        alien = next((asset for asset in animated["assets"] if asset["path"] == alien_path), None)
+        self.assertIsNotNone(alien)
+        handoff = self.tools.export_handoff("combat-arena", [alien["assetId"]])
+        self.assertEqual(handoff["selectionStatus"], "candidate-only")
+        self.assertEqual(handoff["suitabilityDecision"], "owned-by-receiving-consumer")
+        self.assertTrue(handoff["assets"][0]["consumerKindAllowed"])
+
+
 if __name__ == "__main__":
     unittest.main()
