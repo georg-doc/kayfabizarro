@@ -1,0 +1,22 @@
+import { assert } from './asset-librarian-v1.2-env.mjs';
+import { waitFor } from './asset-librarian-v1.2-cdp.mjs';
+
+export async function resetSelection(cdp){await cdp.evaluate(`(()=>{const b=document.getElementById('clearSelection');if(b&&!b.disabled)b.click();return true;})()`);await waitFor(cdp,`document.getElementById('selectionCount')?.textContent === '0 selected'`,'selection cleared');}
+export async function setFilters(cdp,{query='',kind='',pack='',collection='',format='',dependency='',problem='',rigged='',animated='',clip='',joint=''}){
+  const values={searchInput:query,kindFilter:kind,packFilter:pack,collectionFilter:collection,formatFilter:format,dependencyFilter:dependency,problemFilter:problem,rigFilter:rigged,animatedFilter:animated,clipFilter:clip,jointFilter:joint};
+  await cdp.evaluate(`(()=>{const values=${JSON.stringify(values)};for(const[id,v]of Object.entries(values)){const el=document.getElementById(id);if(!el)throw new Error('missing '+id);el.value=v;}document.getElementById('searchButton').click();return true;})()`);
+  await waitFor(cdp,`!document.body.classList.contains('loading')`,`search ${query||'(filters)'}`);
+}
+export function hasResultExpr(assetId){return `(()=>[...document.querySelectorAll('.result-card')].some(c=>c.dataset.assetId===${JSON.stringify(assetId)}))()`;}
+export async function openResult(cdp,assetId,preview=true){
+  await waitFor(cdp,hasResultExpr(assetId),`result ${assetId}`);
+  await cdp.evaluate(`(()=>{const c=[...document.querySelectorAll('.result-card')].find(c=>c.dataset.assetId===${JSON.stringify(assetId)});c.querySelector('.result-open').click();return true;})()`);
+  await waitFor(cdp,`document.getElementById('detailPath')?.textContent === ${JSON.stringify(assetId)}`,`detail ${assetId}`);
+  if(preview)await waitFor(cdp,`(()=>{const t=document.getElementById('previewStatus')?.textContent||'';return t&&t!=='Idle'&&t!=='Loading…';})()`,`preview ${assetId}`,90000);
+  return cdp.evaluate(`({path:document.getElementById('detailPath').textContent,badges:document.getElementById('detailBadges').innerText,pinned:document.getElementById('openRaw').href,latest:document.getElementById('openLatestRaw').href,dependencies:document.getElementById('dependencyFacts').innerText,rig:document.getElementById('rigFacts').innerText,preview:document.getElementById('previewStatus').textContent})`);
+}
+export async function selectResult(cdp,assetId){await waitFor(cdp,hasResultExpr(assetId),`select result ${assetId}`);await cdp.evaluate(`(()=>{const c=[...document.querySelectorAll('.result-card')].find(c=>c.dataset.assetId===${JSON.stringify(assetId)});const x=c.querySelector('.result-select');if(!x.checked)x.click();return x.checked;})()`);}
+export async function setConsumer(cdp,consumerId){const r=await cdp.evaluate(`(()=>{const s=document.getElementById('consumerSelect');s.value=${JSON.stringify(consumerId)};s.dispatchEvent(new Event('change',{bubbles:true}));return{value:s.value,boundary:document.getElementById('consumerBoundary').innerText};})()`);assert(r.value===consumerId,`consumer unavailable: ${consumerId}`);assert(r.boundary.trim().length>10,`consumer boundary missing: ${consumerId}`);}
+export async function handoff(cdp){return cdp.evaluate(`window.KFBAssetLibrarianV12.buildHandoff()`);}
+export function assertHandoff(h,consumer,paths){assert(h.schema==='kfb.asset-handoff.v1','handoff schema');assert(h.selectionStatus==='candidate-only','handoff selectionStatus');assert(h.suitabilityDecision==='owned-by-receiving-consumer','handoff owner boundary');assert(h.consumer.consumerId===consumer,`handoff consumer ${consumer}`);const got=new Set(h.assets.map((a)=>a.path));for(const p of paths)assert(got.has(p),`handoff missing ${p}`);}
+export async function canvasProbe(cdp){const r=await cdp.evaluate(`new Promise(resolve=>requestAnimationFrame(()=>requestAnimationFrame(()=>{const c=document.getElementById('previewCanvas');const gl=c?.getContext('webgl2')||c?.getContext('webgl');if(!gl)return resolve({ok:false});const w=gl.drawingBufferWidth,h=gl.drawingBufferHeight,sw=Math.min(96,w),sh=Math.min(96,h),pix=new Uint8Array(sw*sh*4);gl.readPixels(Math.max(0,(w-sw)>>1),Math.max(0,(h-sh)>>1),sw,sh,gl.RGBA,gl.UNSIGNED_BYTE,pix);let n=0;for(let i=0;i<pix.length;i+=4)if(pix[i]||pix[i+1]||pix[i+2]||pix[i+3])n++;resolve({ok:true,w,h,n,error:gl.getError(),version:String(gl.getParameter(gl.VERSION)||'')});})))`);assert(r.ok&&r.w>0&&r.h>0&&r.error===0&&r.n>0,`WebGL canvas empty/error: ${JSON.stringify(r)}`);return r;}
