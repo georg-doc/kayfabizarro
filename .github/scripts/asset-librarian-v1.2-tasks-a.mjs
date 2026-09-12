@@ -11,8 +11,14 @@ export async function runTasksA(cdp,result){
   const dims=await waitFor(cdp,`(()=>{const i=document.getElementById('imagePreviewImg');return i?.naturalWidth>0?[i.naturalWidth,i.naturalHeight]:null;})()`,'orc texture dimensions');
   result.tasks.T1.texture={...tex,dimensions:dims};await screenshot(cdp,'t1-orc-raider');
 
-  await resetSelection(cdp);await setFilters(cdp,{query:'Rover',kind:'model-3d'});await openResult(cdp,A.rover);await selectResult(cdp,A.rover);await setConsumer(cdp,'stunt-car-race');
-  const h2=await handoff(cdp);assertHandoff(h2,'stunt-car-race',[A.rover]);result.tasks.T2={asset:A.rover,handoffAssets:h2.assets.map(a=>a.path)};await screenshot(cdp,'t2-rover-round');
+  await resetSelection(cdp);
+  await cdp.evaluate(`document.getElementById('galleryViewButton').click();true`);
+  await setFilters(cdp,{query:'Rover',kind:'model-3d'});
+  const galleryThumb=await waitFor(cdp,`(()=>{const card=[...document.querySelectorAll('.result-card')].find(c=>c.dataset.assetId===${JSON.stringify(A.rover)});const img=card?.querySelector('.result-thumb img');return img?.src?.startsWith('data:image/')?img.src.length:0;})()`,'Rover_Round gallery 3D thumbnail',90000);
+  assert(galleryThumb>1000,`T2 Rover gallery thumbnail not rendered: ${galleryThumb}`);
+  await screenshot(cdp,'t2-rover-gallery');
+  await openResult(cdp,A.rover);await selectResult(cdp,A.rover);await setConsumer(cdp,'stunt-car-race');
+  const h2=await handoff(cdp);assertHandoff(h2,'stunt-car-race',[A.rover]);result.tasks.T2={asset:A.rover,gallery3DThumbnail:true,handoffAssets:h2.assets.map(a=>a.path)};await screenshot(cdp,'t2-rover-round');
 
   await resetSelection(cdp);await setFilters(cdp,{query:'Rig_Medium',kind:'model-3d',rigged:'yes',animated:'yes'});
   const mediumCount=await cdp.evaluate(`document.querySelectorAll('.result-card').length`);assert(mediumCount>=3,`T3 expected >=3 Rig_Medium results, got ${mediumCount}`);
