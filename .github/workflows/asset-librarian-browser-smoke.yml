@@ -7,6 +7,7 @@ on:
       - "tools/asset_registry/consumer_profiles.json"
       - "registry/assets/v1/**"
       - ".github/scripts/asset-librarian-browser-smoke.mjs"
+      - ".github/scripts/asset-librarian-v1.2-*.mjs"
       - ".github/workflows/asset-librarian-browser-smoke.yml"
   push:
     branches:
@@ -16,6 +17,7 @@ on:
       - "tools/asset_registry/consumer_profiles.json"
       - "registry/assets/v1/**"
       - ".github/scripts/asset-librarian-browser-smoke.mjs"
+      - ".github/scripts/asset-librarian-v1.2-*.mjs"
       - ".github/workflows/asset-librarian-browser-smoke.yml"
   workflow_dispatch:
 
@@ -29,7 +31,7 @@ concurrency:
 jobs:
   browser-smoke:
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    timeout-minutes: 15
     steps:
       - name: Checkout repository
         uses: actions/checkout@v7
@@ -42,8 +44,11 @@ jobs:
           python3 --version
           command -v google-chrome-stable || command -v google-chrome || command -v chromium || command -v chromium-browser
 
-      - name: Run real browser / WebGL smoke
+      - name: Run v1 browser / WebGL regression smoke
         run: node .github/scripts/asset-librarian-browser-smoke.mjs
+
+      - name: Run v1.2 WSA six-task acceptance
+        run: node .github/scripts/asset-librarian-v1.2-acceptance.mjs
 
       - name: Upload browser evidence
         if: always()
