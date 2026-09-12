@@ -8,5 +8,7 @@
   "excludePrefixes": [
     "media/3D_Assets/CATALOG/"
   ],
+  "packOverrides": "tools/asset_registry/overrides/packs.json",
+  "dependencyOverrides": "tools/asset_registry/overrides/dependencies.json",
   "output": "registry/assets/v1"
 }
