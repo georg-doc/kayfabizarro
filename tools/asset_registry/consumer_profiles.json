@@ -65,6 +65,26 @@
       ],
       "ownerBoundary": "The Librarian never inserts or replaces a Combat Arena roster entry. Existing Combat Arena owners remain authoritative."
     },
+    "stunt-car-race": {
+      "displayName": "KFB Stunt Car Race",
+      "selectionStatus": "candidate-only",
+      "allowedKinds": ["model-3d", "audio", "image-2d"],
+      "ownerContracts": ["georg-doc/KFB-Stunt-Car-Race (implementation SSOT)"],
+      "usefulFacts": [
+        "source.rawPinned",
+        "packId",
+        "collectionPath",
+        "dependencyStatus",
+        "relations.dependencies",
+        "rigFacts"
+      ],
+      "requiredDownstreamValidation": [
+        "consumer-specific scale/orientation check",
+        "drivability/collision check when used in a playable slice",
+        "visual fit in the receiving race/garage/hub module"
+      ],
+      "ownerBoundary": "kayfabizarro remains the canonical asset source; the receiving KFB-Stunt-Car-Race module owns implementation and tested gameplay use."
+    },
     "generic-runtime": {
       "displayName": "Generic Runtime Consumer",
       "selectionStatus": "candidate-only",
