@@ -19,7 +19,7 @@
 - [x] registry validator PASS
 - [x] rigfacts validator PASS
 - [x] consumer handoff smoke PASS
-- [ ] aggregate integration PR CI PASS
+- [x] aggregate integration PR #8 CI PASS
 
 ## Required after merge
 
