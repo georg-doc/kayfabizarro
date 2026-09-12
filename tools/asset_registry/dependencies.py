@@ -12,6 +12,7 @@ from collections import defaultdict
 from pathlib import Path, PurePosixPath
 from urllib.parse import unquote, urlparse
 
+SUPPORTED_PARSE = {"gltf", "glb", "obj"}
 UNRESOLVED_FORMATS = {"fbx", "blend", "dae", "3ds"}
 MTL_MAP_DIRECTIVES = {
     "map_ka": "ambient",
@@ -125,7 +126,8 @@ def _mtl_texture_refs(text: str) -> list[dict]:
             tokens = [rest]
         if not tokens:
             continue
-        refs.append({"role": role, "uri": tokens[-1], "reference": f"mtl:{line_no}:{parts[0]}"})
+        uri = tokens[-1]
+        refs.append({"role": role, "uri": uri, "reference": f"mtl:{line_no}:{parts[0]}"})
     return refs
 
 
@@ -154,12 +156,26 @@ def _problem(problem_type: str, asset_path: str, *, target: str | None = None, d
     }
 
 
-def _resolve_ref(*, asset_path: str, pack_root: str, model_parent: str, ref: dict, tracked_paths: set[str], case_map: dict[str, list[str]]) -> tuple[dict, list[dict]]:
+def _resolve_ref(
+    *,
+    asset_path: str,
+    pack_root: str,
+    model_parent: str,
+    ref: dict,
+    tracked_paths: set[str],
+    case_map: dict[str, list[str]],
+) -> tuple[dict, list[dict]]:
     problems: list[dict] = []
     uri = ref["uri"]
-    dep = {"role": ref["role"], "uri": uri, "reference": ref.get("reference"), "provenance": "file-explicit"}
+    dep = {
+        "role": ref["role"],
+        "uri": uri,
+        "reference": ref.get("reference"),
+        "provenance": "file-explicit",
+    }
     if ref.get("remote"):
         dep.update({"status": "remote", "exists": None})
+        problems.append(_problem("REMOTE_REFERENCE_UNVERIFIED", asset_path, target=uri))
         return dep, problems
 
     resolved = _normalize_repo_path(model_parent, uri)
@@ -197,7 +213,14 @@ def _load_override(asset_path: str, overrides: dict) -> dict | None:
     return value
 
 
-def resolve_model_dependencies(repo_root: Path, record: dict, *, tracked_paths: set[str], case_map: dict[str, list[str]], overrides: dict | None = None) -> tuple[dict, list[dict]]:
+def resolve_model_dependencies(
+    repo_root: Path,
+    record: dict,
+    *,
+    tracked_paths: set[str],
+    case_map: dict[str, list[str]],
+    overrides: dict | None = None,
+) -> tuple[dict, list[dict]]:
     rec = dict(record)
     rec["relations"] = dict(record.get("relations", {}))
     asset_path = rec["path"]
@@ -215,7 +238,14 @@ def resolve_model_dependencies(repo_root: Path, record: dict, *, tracked_paths: 
             if not uri:
                 continue
             ref["uri"] = uri
-            dep, ps = _resolve_ref(asset_path=asset_path, pack_root=pack_root, model_parent=str(PurePosixPath(asset_path).parent), ref=ref, tracked_paths=tracked_paths, case_map=case_map)
+            dep, ps = _resolve_ref(
+                asset_path=asset_path,
+                pack_root=pack_root,
+                model_parent=str(PurePosixPath(asset_path).parent),
+                ref=ref,
+                tracked_paths=tracked_paths,
+                case_map=case_map,
+            )
             dep["provenance"] = "reviewed-override"
             deps.append(dep)
             problems.extend(ps)
@@ -235,7 +265,14 @@ def resolve_model_dependencies(repo_root: Path, record: dict, *, tracked_paths: 
                 doc = read_glb_json(full.read_bytes())
                 refs, embedded = _gltf_refs(doc, is_glb=True)
             for ref in refs:
-                dep, ps = _resolve_ref(asset_path=asset_path, pack_root=pack_root, model_parent=str(PurePosixPath(asset_path).parent), ref=ref, tracked_paths=tracked_paths, case_map=case_map)
+                dep, ps = _resolve_ref(
+                    asset_path=asset_path,
+                    pack_root=pack_root,
+                    model_parent=str(PurePosixPath(asset_path).parent),
+                    ref=ref,
+                    tracked_paths=tracked_paths,
+                    case_map=case_map,
+                )
                 deps.append(dep)
                 problems.extend(ps)
         except Exception as exc:
@@ -250,14 +287,28 @@ def resolve_model_dependencies(repo_root: Path, record: dict, *, tracked_paths: 
             parent = str(PurePosixPath(asset_path).parent)
             for lib in _obj_mtllibs(obj_text):
                 mtl_ref = {"role": "material", "uri": lib, "reference": "obj:mtllib"}
-                dep, ps = _resolve_ref(asset_path=asset_path, pack_root=pack_root, model_parent=parent, ref=mtl_ref, tracked_paths=tracked_paths, case_map=case_map)
+                dep, ps = _resolve_ref(
+                    asset_path=asset_path,
+                    pack_root=pack_root,
+                    model_parent=parent,
+                    ref=mtl_ref,
+                    tracked_paths=tracked_paths,
+                    case_map=case_map,
+                )
                 deps.append(dep)
                 problems.extend(ps)
                 mtl_path = dep.get("resolvedPath") or dep.get("path")
                 if dep.get("exists") and mtl_path:
                     mtl_full = repo_root / mtl_path
                     for tex_ref in _mtl_texture_refs(mtl_full.read_text(encoding="utf-8", errors="replace")):
-                        tdep, tps = _resolve_ref(asset_path=asset_path, pack_root=pack_root, model_parent=str(PurePosixPath(mtl_path).parent), ref=tex_ref, tracked_paths=tracked_paths, case_map=case_map)
+                        tdep, tps = _resolve_ref(
+                            asset_path=asset_path,
+                            pack_root=pack_root,
+                            model_parent=str(PurePosixPath(mtl_path).parent),
+                            ref=tex_ref,
+                            tracked_paths=tracked_paths,
+                            case_map=case_map,
+                        )
                         tdep["via"] = mtl_path
                         deps.append(tdep)
                         problems.extend(tps)
@@ -276,6 +327,8 @@ def resolve_model_dependencies(repo_root: Path, record: dict, *, tracked_paths: 
     rec["relations"]["dependencies"] = deps
     if any(dep.get("exists") is False for dep in deps if dep.get("status") != "remote"):
         status = "missing"
+    elif any(dep.get("status") == "remote" for dep in deps):
+        status = "unresolved"
     elif deps:
         status = "complete"
     elif embedded:
@@ -286,7 +339,13 @@ def resolve_model_dependencies(repo_root: Path, record: dict, *, tracked_paths: 
     return rec, problems
 
 
-def resolve_all_models(repo_root: Path, records: list[dict], *, tracked_paths: set[str], overrides: dict | None = None) -> tuple[list[dict], list[dict]]:
+def resolve_all_models(
+    repo_root: Path,
+    records: list[dict],
+    *,
+    tracked_paths: set[str],
+    overrides: dict | None = None,
+) -> tuple[list[dict], list[dict]]:
     case_map: dict[str, list[str]] = defaultdict(list)
     for path in sorted(tracked_paths):
         case_map[path.casefold()].append(path)
@@ -295,7 +354,13 @@ def resolve_all_models(repo_root: Path, records: list[dict], *, tracked_paths: s
     problems: list[dict] = []
     for rec in records:
         if rec["kind"] == "model-3d":
-            out, ps = resolve_model_dependencies(repo_root, rec, tracked_paths=tracked_paths, case_map=case_map, overrides=overrides)
+            out, ps = resolve_model_dependencies(
+                repo_root,
+                rec,
+                tracked_paths=tracked_paths,
+                case_map=case_map,
+                overrides=overrides,
+            )
             enriched.append(out)
             problems.extend(ps)
         else:
@@ -305,18 +370,19 @@ def resolve_all_models(repo_root: Path, records: list[dict], *, tracked_paths: s
 
 
 def duplicate_name_problems(records: list[dict]) -> list[dict]:
-    groups: dict[tuple[str, str, str, str], list[str]] = defaultdict(list)
+    groups: dict[tuple[str, str, str, str, str], list[str]] = defaultdict(list)
     for rec in records:
-        key = (rec.get("packId", ""), rec["kind"], rec["format"], rec["name"].casefold())
+        key = (rec.get("packId", ""), rec.get("collectionPath", ""), rec["kind"], rec["format"], rec["name"].casefold())
         groups[key].append(rec["path"])
     problems: list[dict] = []
-    for (pack_id, kind, fmt, name), paths in sorted(groups.items()):
+    for (pack_id, collection, kind, fmt, name), paths in sorted(groups.items()):
         if len(paths) < 2:
             continue
         problems.append({
-            "problemId": f"DUPLICATE_NAME:{pack_id}:{kind}:{fmt}:{name}",
+            "problemId": f"DUPLICATE_NAME:{pack_id}:{collection}:{kind}:{fmt}:{name}",
             "type": "DUPLICATE_NAME",
             "packId": pack_id,
+            "collectionPath": collection or None,
             "kind": kind,
             "format": fmt,
             "name": name,
