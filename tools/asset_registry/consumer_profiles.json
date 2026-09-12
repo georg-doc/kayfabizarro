@@ -1,0 +1,77 @@
+{
+  "schema": "kfb.asset-consumers.v1",
+  "profiles": {
+    "animation-lab": {
+      "displayName": "Animation Lab",
+      "selectionStatus": "candidate-only",
+      "allowedKinds": ["model-3d"],
+      "usefulFacts": [
+        "rigFacts.hasSkin",
+        "rigFacts.jointCount",
+        "rigFacts.jointNames",
+        "rigFacts.animationCount",
+        "rigFacts.animationClips",
+        "rigFacts.skeletonSignatures"
+      ],
+      "requiredDownstreamValidation": [
+        "visual playback",
+        "pose/orientation",
+        "retarget compatibility when applicable"
+      ],
+      "ownerBoundary": "The Asset Librarian may recommend candidates but does not declare animation compatibility."
+    },
+    "frankenstein-studio": {
+      "displayName": "Frankenstein Studio",
+      "selectionStatus": "candidate-only",
+      "allowedKinds": ["model-3d"],
+      "ownerContracts": ["skills/kfb-frankensteining_v1.md"],
+      "usefulFacts": [
+        "source.rawPinned",
+        "packId",
+        "collectionPath",
+        "dependencyStatus",
+        "relations.dependencies",
+        "rigFacts"
+      ],
+      "requiredDownstreamValidation": [
+        "at least three donor candidates per part",
+        "parts/donor lab measurement",
+        "island count and island bounds",
+        "mounting frame and axis",
+        "visual review before acceptance"
+      ],
+      "ownerBoundary": "Registry facts replace the old manual library search only. Donor quality, island measurements and fit remain owned by the Frankensteining workflow."
+    },
+    "combat-arena": {
+      "displayName": "Combat Arena",
+      "selectionStatus": "candidate-only",
+      "allowedKinds": ["model-3d", "audio", "image-2d"],
+      "ownerContracts": [
+        "KFB Combat Arena/combat-arena-v2/mobs.v2.js",
+        "KFB Combat Arena/HOUSEKEEPING.md"
+      ],
+      "usefulFacts": [
+        "source.rawPinned",
+        "dependencyStatus",
+        "rigFacts.animationClips",
+        "rigFacts.skeletonSignatures"
+      ],
+      "requiredDownstreamValidation": [
+        "existing roster/consumer owner decision",
+        "measured body dimensions where gameplay depends on them",
+        "clip mapping and locomotion measurement",
+        "gaze/orientation measurement",
+        "arena-specific gameplay test"
+      ],
+      "ownerBoundary": "The Librarian never inserts or replaces a Combat Arena roster entry. Existing Combat Arena owners remain authoritative."
+    },
+    "generic-runtime": {
+      "displayName": "Generic Runtime Consumer",
+      "selectionStatus": "candidate-only",
+      "allowedKinds": ["model-3d", "image-2d", "audio"],
+      "usefulFacts": ["source.rawPinned", "dependencyStatus", "rigFacts"],
+      "requiredDownstreamValidation": ["consumer-specific integration test"],
+      "ownerBoundary": "The receiving module owns final suitability and integration."
+    }
+  }
+}
