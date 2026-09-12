@@ -341,11 +341,15 @@
     "shard": "packs/foods-assets-small.json"
   },
   {
-    "assetCount": 76,
+    "assetCount": 78,
     "collections": [
       {
         "assetCount": 49,
         "path": "CartoonVehiclesPack1.1"
+      },
+      {
+        "assetCount": 2,
+        "path": "KFB Truck"
       },
       {
         "assetCount": 4,
@@ -363,13 +367,13 @@
     "dependencyStatus": {
       "complete": 4,
       "embedded": 14,
-      "unresolved": 33
+      "unresolved": 35
     },
     "displayName": "Frankensteining",
     "formats": {
-      "blend": 4,
+      "blend": 5,
       "dae": 9,
-      "fbx": 20,
+      "fbx": 21,
       "glb": 14,
       "obj": 4,
       "png": 9,
@@ -377,7 +381,7 @@
     },
     "kinds": {
       "image-2d": 25,
-      "model-3d": 51
+      "model-3d": 53
     },
     "packId": "frankensteining",
     "provenance": "generated-structural",

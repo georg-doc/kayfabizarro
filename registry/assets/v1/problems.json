@@ -2,8 +2,8 @@
   "counts": {
     "DUPLICATE_NAME": 641,
     "MISSING_REFERENCED_FILE": 382,
-    "UNRESOLVED_FBX_DEPENDENCY": 239,
-    "UNRESOLVED_MODEL_DEPENDENCY": 73
+    "UNRESOLVED_FBX_DEPENDENCY": 240,
+    "UNRESOLVED_MODEL_DEPENDENCY": 74
   },
   "problems": [
     {
@@ -12088,6 +12088,12 @@
       "type": "UNRESOLVED_FBX_DEPENDENCY"
     },
     {
+      "assetPath": "media/3D_Assets/Frankensteining/KFB Truck/KFB TRUCK WaterBowser.fbx",
+      "detail": "dependency parsing not implemented for .fbx",
+      "problemId": "UNRESOLVED_FBX_DEPENDENCY:media/3D_Assets/Frankensteining/KFB Truck/KFB TRUCK WaterBowser.fbx:dependency parsing not implemented for .fbx",
+      "type": "UNRESOLVED_FBX_DEPENDENCY"
+    },
+    {
       "assetPath": "media/3D_Assets/Frankensteining/TANKS FBX/Tank.fbx",
       "detail": "dependency parsing not implemented for .fbx",
       "problemId": "UNRESOLVED_FBX_DEPENDENCY:media/3D_Assets/Frankensteining/TANKS FBX/Tank.fbx:dependency parsing not implemented for .fbx",
@@ -13486,6 +13492,12 @@
       "type": "UNRESOLVED_MODEL_DEPENDENCY"
     },
     {
+      "assetPath": "media/3D_Assets/Frankensteining/KFB Truck/KFB TRUCK WaterBowser.blend",
+      "detail": "dependency parsing not implemented for .blend",
+      "problemId": "UNRESOLVED_MODEL_DEPENDENCY:media/3D_Assets/Frankensteining/KFB Truck/KFB TRUCK WaterBowser.blend:dependency parsing not implemented for .blend",
+      "type": "UNRESOLVED_MODEL_DEPENDENCY"
+    },
+    {
       "assetPath": "media/3D_Assets/Frankensteining/TANKS Blends/Tank.blend",
       "detail": "dependency parsing not implemented for .blend",
       "problemId": "UNRESOLVED_MODEL_DEPENDENCY:media/3D_Assets/Frankensteining/TANKS Blends/Tank.blend:dependency parsing not implemented for .blend",
@@ -13859,5 +13871,5 @@
     }
   ],
   "schema": "kfb.asset-registry.problems.v1",
-  "sourceCommit": "11d7df978c63b9e375707bd8d9431b4c8358cda8"
+  "sourceCommit": "0b48cd2a924ec1b51547485f4b30b348b3bf1243"
 }
