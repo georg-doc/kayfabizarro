@@ -1,0 +1,70 @@
+{
+  "schema": "kfb.asset-librarian.wsa-handover.v1",
+  "date": "2026-09-12",
+  "status": "implementation-candidate",
+  "sourceRepo": "georg-doc/kayfabizarro",
+  "sourceMainBaseline": "133d9451c81d3e50bd38f5f8de752b1834192739",
+  "integrationBranch": "asset-librarian/integration-v1-2026-09-12",
+  "implementationConsumers": {
+    "kfbStuntCarRace": {
+      "repo": "georg-doc/KFB-Stunt-Car-Race",
+      "role": "implementation-ssot"
+    }
+  },
+  "developmentPullRequests": [
+    {"number": 2, "slice": "AR1 flat inventory", "status": "draft-history"},
+    {"number": 3, "slice": "AR2 packs dependencies", "status": "draft-history"},
+    {"number": 4, "slice": "AR3 deck adapter", "status": "draft-history"},
+    {"number": 5, "slice": "AR4 github action", "status": "draft-history"},
+    {"number": 6, "slice": "AR5 consumer handoff rig facts", "status": "draft-history"},
+    {"number": 7, "slice": "asset librarian browser", "status": "draft-history"}
+  ],
+  "tested": {
+    "testsPassing": 23,
+    "testsTotal": 23,
+    "nodeSyntaxCheck": "pass",
+    "registryValidator": "pass",
+    "rigFactsValidator": "pass",
+    "consumerHandoffSmoke": "pass",
+    "assets": 12767,
+    "packs": 99,
+    "decks": 4,
+    "byKind": {
+      "audio": 1683,
+      "image-2d": 6442,
+      "model-3d": 4642
+    },
+    "dependencyStatus": {
+      "complete": 2603,
+      "embedded": 1353,
+      "missing": 374,
+      "unresolved": 312
+    },
+    "rigFacts": {
+      "modelCount": 4642,
+      "parseOk": 4215,
+      "riggedModelCount": 372,
+      "animatedModelCount": 415,
+      "notApplicable": 115,
+      "unresolved": 312,
+      "parseErrors": 0
+    }
+  },
+  "openGates": [
+    "merge consolidated integration PR to kayfabizarro/main",
+    "verify real main push creates bot/asset-registry-update PR",
+    "review and merge generated registry PR",
+    "run visual WebGL/browser smoke for embedded GLB, external GLTF, animation playback and handoff download",
+    "only then consider LLM/MCP app integration"
+  ],
+  "ownerRules": [
+    "repository state overrides chat recollection",
+    "registry is generated read layer, not asset SSOT",
+    "media/kfb/kfb-index.json remains deck owner",
+    "skills/kfb-frankensteining_v1.md remains Frankensteining owner",
+    "Combat Arena existing roster/runtime owners remain authoritative",
+    "georg-doc/KFB-Stunt-Car-Race remains Stunt Car Race implementation SSOT",
+    "all Librarian consumer exports are candidate-only"
+  ],
+  "nextAction": "review and merge consolidated integration PR, then validate main-to-bot-registry workflow before visual browser acceptance"
+}
