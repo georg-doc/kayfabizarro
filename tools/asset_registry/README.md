@@ -1,10 +1,10 @@
-# KFB Asset Registry · AR1–AR4
+# KFB Asset Registry · AR1–AR5
 
-**Status:** IMPLEMENTATION CANDIDATE · deterministic Registry + reviewable GitHub automation  
+**Status:** IMPLEMENTATION CANDIDATE · deterministic Registry + reviewable automation + neutral consumer handoff  
 **Owner:** deterministic repo indexer + `Refresh KFB Asset Registry` GitHub Action  
 **Asset source of truth:** tracked files in `georg-doc/kayfabizarro`  
 **Deck owner:** existing `media/kfb/kfb-index.json` (`kfb-deck-registry/v2`)  
-**Not an owner:** chat memory, the historical `media/3D_Assets/CATALOG/`, manually exported library JSON files, or the generated registry itself.
+**Not an owner:** chat memory, the historical `media/3D_Assets/CATALOG/`, manually exported library JSON files, generated registry output, or KFB Asset Librarian recommendations.
 
 ## AR1 · flat inventory
 
@@ -45,7 +45,49 @@ AR4 makes the Registry operational:
 - generated changes go to workflow-owned branch `bot/asset-registry-update` and a reviewable PR;
 - the workflow never writes generated Registry output directly to `main`.
 
-The push trigger covers relevant `media/2D_Assets/**`, `media/3D_Assets/**`, `media/kfb/**` and indexer changes. `media/3D_Assets/CATALOG/**` and generated `registry/assets/v1/**` changes do not recursively trigger refreshes.
+## AR5 · KFB Asset Librarian consumer handoff
+
+AR5 keeps the Registry generic and makes it useful to multiple receiving tools instead of hard-wiring it to Animation Lab.
+
+### Rig facts sidecar
+
+`rigfacts.py` creates `rigfacts.jsonl` plus `rigfacts-summary.json` from GLTF/GLB file structure. It records only mechanically defensible facts:
+
+- skins and joint counts;
+- explicit joint names;
+- skinned-mesh-node count;
+- animation clip names/channel counts/target paths;
+- structural skeleton signatures based on joint names + joint-local parent topology.
+
+A matching skeleton signature is **structural evidence only**. It is not a retargeting or gameplay compatibility guarantee.
+
+### Query + handoff
+
+`query.py` can search/filter by name/path/pack/format/dependency status and, when the rig sidecar is present, by skin, animation clip, joint or skeleton signature.
+
+Consumer profiles in `consumer_profiles.json` currently cover:
+
+- `animation-lab`
+- `frankenstein-studio`
+- `combat-arena`
+- `generic-runtime`
+
+Every exported `kfb.asset-handoff.v1` has `selectionStatus: candidate-only`. The receiving consumer remains owner of suitability and integration.
+
+### Owner boundaries
+
+- **Frankenstein Studio:** `skills/kfb-frankensteining_v1.md` remains authoritative. Librarian search replaces the old manual asset-library lookup; donor quality, island measurements, mounting frame and visual acceptance stay downstream.
+- **Combat Arena:** the existing Combat Arena modules remain authoritative. Librarian results are candidates only; roster decisions, measured body dimensions, clip/locomotion mapping, gaze/orientation and gameplay testing remain downstream.
+- **Animation Lab:** rig facts help shortlist models, but playback/pose/retarget checks remain downstream.
+- Future consumers can add a small profile without changing Registry ownership.
+
+The intended contract is therefore:
+
+```text
+Git/file fact -> Registry / rig sidecar -> Librarian candidate -> receiving consumer validation
+```
+
+No stage silently promotes a recommendation to an implementation decision.
 
 ## Run locally
 
@@ -53,6 +95,17 @@ The push trigger covers relevant `media/2D_Assets/**`, `media/3D_Assets/**`, `me
 python3 -m unittest discover -s tools/asset_registry/tests -v
 python3 tools/asset_registry/build.py
 python3 tools/asset_registry/validate.py
+python3 tools/asset_registry/rigfacts.py build
+python3 tools/asset_registry/rigfacts.py validate
+```
+
+Example queries:
+
+```bash
+python3 tools/asset_registry/query.py knight --kind model-3d --rigged yes
+python3 tools/asset_registry/query.py --kind model-3d --animated yes --clip walk --consumer animation-lab
+python3 tools/asset_registry/query.py booster --consumer frankenstein-studio --handoff
+python3 tools/asset_registry/query.py --pack monster-cute-cubes --consumer combat-arena --handoff
 ```
 
 ## Generated outputs
@@ -64,6 +117,8 @@ registry/assets/v1/
 ├── catalog.jsonl
 ├── problems.json
 ├── delta.json
+├── rigfacts.jsonl
+├── rigfacts-summary.json
 ├── kinds/
 │   ├── model-3d.json
 │   ├── image-2d.json
@@ -78,7 +133,7 @@ registry/assets/v1/
 
 ## Provenance / ownership rule
 
-Mechanical facts come from Git/file structure. Explicit model references come from the file itself. Deck grouping comes from the existing deck manifest. Reviewed exceptions live in small override files. No Registry stage silently promotes inferred gameplay meaning, rig compatibility, donor suitability or license claims to repo-exact fact.
+Mechanical facts come from Git/file structure. Explicit model references come from the file itself. Deck grouping comes from the existing deck manifest. Rig facts come from GLTF/GLB structure. Reviewed exceptions live in small override files. No Registry stage silently promotes inferred gameplay meaning, rig compatibility, donor suitability or license claims to repo-exact fact.
 
 ## Calibration baseline · 2026-09-12
 
@@ -90,6 +145,6 @@ The current real Farmers control `.../gltf/lettuce.gltf` explicitly references `
 
 The repository must permit GitHub Actions' `GITHUB_TOKEN` to create/update pull requests. If repository policy disables that permission, build/test/validation still run but the final PR creation step will fail visibly rather than falling back to a silent direct write.
 
-## Next consumer
+## UI boundary
 
-After AR4, the Registry is ready to serve **KFB Asset Librarian v1**: search/filter, 3D previews, RAW URL copy, metadata, exports and later an LLM assistant. Those consumers read the Registry; they do not become asset SSOT.
+AR5 is the consumer handoff/API slice. A browser UI, Three.js preview and LLM chat are consumers built on top of these files/tools; they are not additional Registry owners.
