@@ -1,0 +1,49 @@
+{
+  "assetCount": 1,
+  "assets": [
+    {
+      "assetId": "media/3D_Assets/GLB_mini_arena/character-soldier.glb",
+      "dependencyStatus": "embedded",
+      "folder": "media/3D_Assets/GLB_mini_arena",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "character-soldier",
+      "packId": "glb-mini-arena",
+      "packRoot": "media/3D_Assets/GLB_mini_arena",
+      "path": "media/3D_Assets/GLB_mini_arena/character-soldier.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": []
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 132732,
+      "source": {
+        "blobSha": "0901d6c5f0aadfa7ce25dc6fdc3b2fcba3c30e4f",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/GLB_mini_arena/character-soldier.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/GLB_mini_arena/character-soldier.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    }
+  ],
+  "collections": [],
+  "dependencyStatus": {
+    "embedded": 1
+  },
+  "displayName": "GLB_mini_arena",
+  "formats": {
+    "glb": 1
+  },
+  "kinds": {
+    "model-3d": 1
+  },
+  "packId": "glb-mini-arena",
+  "provenance": "generated-structural",
+  "root": "media/3D_Assets/GLB_mini_arena",
+  "schema": "kfb.asset-pack.v1",
+  "shard": "packs/glb-mini-arena.json"
+}

@@ -1,0 +1,2793 @@
+{
+  "assetCount": 73,
+  "assets": [
+    {
+      "assetId": "media/3D_Assets/GLB_pirate/Textures/colormap.png",
+      "collectionPath": "Textures",
+      "folder": "media/3D_Assets/GLB_pirate/Textures",
+      "format": "png",
+      "hints": {
+        "textureCandidate": true,
+        "textureCandidateProvenance": "generated-structural"
+      },
+      "kind": "image-2d",
+      "name": "colormap",
+      "packId": "glb-pirate",
+      "packRoot": "media/3D_Assets/GLB_pirate",
+      "path": "media/3D_Assets/GLB_pirate/Textures/colormap.png",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 10061,
+      "source": {
+        "blobSha": "c8ecd47d84c9d959047fc770ce39c1a5a6aef78d",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/GLB_pirate/Textures/colormap.png",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/GLB_pirate/Textures/colormap.png",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/GLB_pirate/barrel.glb",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/GLB_pirate",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "barrel",
+      "packId": "glb-pirate",
+      "packRoot": "media/3D_Assets/GLB_pirate",
+      "path": "media/3D_Assets/GLB_pirate/barrel.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/GLB_pirate/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 14092,
+      "source": {
+        "blobSha": "edfb62555d14e18eda3dfa98d2494763cd3d76b3",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/GLB_pirate/barrel.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/GLB_pirate/barrel.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/GLB_pirate/boat-row-large.glb",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/GLB_pirate",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "boat-row-large",
+      "packId": "glb-pirate",
+      "packRoot": "media/3D_Assets/GLB_pirate",
+      "path": "media/3D_Assets/GLB_pirate/boat-row-large.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/GLB_pirate/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 15972,
+      "source": {
+        "blobSha": "f724c02fc5ea034b8e7b150d8fe261d730fb8eba",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/GLB_pirate/boat-row-large.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/GLB_pirate/boat-row-large.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/GLB_pirate/boat-row-small.glb",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/GLB_pirate",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "boat-row-small",
+      "packId": "glb-pirate",
+      "packRoot": "media/3D_Assets/GLB_pirate",
+      "path": "media/3D_Assets/GLB_pirate/boat-row-small.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/GLB_pirate/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 17616,
+      "source": {
+        "blobSha": "7ed0a8b977d135e8ae41c23b1cfdbc169604e5fb",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/GLB_pirate/boat-row-small.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/GLB_pirate/boat-row-small.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/GLB_pirate/bottle-large.glb",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/GLB_pirate",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "bottle-large",
+      "packId": "glb-pirate",
+      "packRoot": "media/3D_Assets/GLB_pirate",
+      "path": "media/3D_Assets/GLB_pirate/bottle-large.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/GLB_pirate/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 12232,
+      "source": {
+        "blobSha": "04b74e3974b2565cd13fee46f238c7ebf6d9f773",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/GLB_pirate/bottle-large.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/GLB_pirate/bottle-large.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/GLB_pirate/bottle.glb",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/GLB_pirate",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "bottle",
+      "packId": "glb-pirate",
+      "packRoot": "media/3D_Assets/GLB_pirate",
+      "path": "media/3D_Assets/GLB_pirate/bottle.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/GLB_pirate/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 13796,
+      "source": {
+        "blobSha": "f637a826a602f586254a053a7784e0d9947d7fca",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/GLB_pirate/bottle.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/GLB_pirate/bottle.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/GLB_pirate/cannon-ball.glb",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/GLB_pirate",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "cannon-ball",
+      "packId": "glb-pirate",
+      "packRoot": "media/3D_Assets/GLB_pirate",
+      "path": "media/3D_Assets/GLB_pirate/cannon-ball.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/GLB_pirate/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 7192,
+      "source": {
+        "blobSha": "0386575cd10bd74d18df6d591194d1afb200c43f",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/GLB_pirate/cannon-ball.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/GLB_pirate/cannon-ball.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/GLB_pirate/cannon-mobile.glb",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/GLB_pirate",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "cannon-mobile",
+      "packId": "glb-pirate",
+      "packRoot": "media/3D_Assets/GLB_pirate",
+      "path": "media/3D_Assets/GLB_pirate/cannon-mobile.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/GLB_pirate/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 43824,
+      "source": {
+        "blobSha": "f7d49028ed02a307f3c646a542aee1a5e6dd891d",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/GLB_pirate/cannon-mobile.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/GLB_pirate/cannon-mobile.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/GLB_pirate/cannon.glb",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/GLB_pirate",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "cannon",
+      "packId": "glb-pirate",
+      "packRoot": "media/3D_Assets/GLB_pirate",
+      "path": "media/3D_Assets/GLB_pirate/cannon.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/GLB_pirate/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 24024,
+      "source": {
+        "blobSha": "49511657a015009f5d40cfa4a7e154fed872f504",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/GLB_pirate/cannon.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/GLB_pirate/cannon.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/GLB_pirate/castle-door.glb",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/GLB_pirate",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "castle-door",
+      "packId": "glb-pirate",
+      "packRoot": "media/3D_Assets/GLB_pirate",
+      "path": "media/3D_Assets/GLB_pirate/castle-door.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/GLB_pirate/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 37648,
+      "source": {
+        "blobSha": "cf5b3f582504ea77821845d36a67260fbd6e751d",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/GLB_pirate/castle-door.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/GLB_pirate/castle-door.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/GLB_pirate/castle-gate.glb",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/GLB_pirate",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "castle-gate",
+      "packId": "glb-pirate",
+      "packRoot": "media/3D_Assets/GLB_pirate",
+      "path": "media/3D_Assets/GLB_pirate/castle-gate.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/GLB_pirate/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 67440,
+      "source": {
+        "blobSha": "17e75cd67cc232a2a5b50caf67366c58bc3a9585",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/GLB_pirate/castle-gate.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/GLB_pirate/castle-gate.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/GLB_pirate/castle-wall.glb",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/GLB_pirate",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "castle-wall",
+      "packId": "glb-pirate",
+      "packRoot": "media/3D_Assets/GLB_pirate",
+      "path": "media/3D_Assets/GLB_pirate/castle-wall.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/GLB_pirate/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 30504,
+      "source": {
+        "blobSha": "d350a5cefda660a4c8607d754b711498f90e5bc7",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/GLB_pirate/castle-wall.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/GLB_pirate/castle-wall.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/GLB_pirate/castle-window.glb",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/GLB_pirate",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "castle-window",
+      "packId": "glb-pirate",
+      "packRoot": "media/3D_Assets/GLB_pirate",
+      "path": "media/3D_Assets/GLB_pirate/castle-window.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/GLB_pirate/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 28668,
+      "source": {
+        "blobSha": "8d03804d149df92ab5a34400c6b24406474e8dfe",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/GLB_pirate/castle-window.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/GLB_pirate/castle-window.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/GLB_pirate/chest.glb",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/GLB_pirate",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "chest",
+      "packId": "glb-pirate",
+      "packRoot": "media/3D_Assets/GLB_pirate",
+      "path": "media/3D_Assets/GLB_pirate/chest.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/GLB_pirate/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 25240,
+      "source": {
+        "blobSha": "3c743603d1294bc16fda37c07e65af67abcef621",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/GLB_pirate/chest.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/GLB_pirate/chest.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/GLB_pirate/crate-bottles.glb",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/GLB_pirate",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "crate-bottles",
+      "packId": "glb-pirate",
+      "packRoot": "media/3D_Assets/GLB_pirate",
+      "path": "media/3D_Assets/GLB_pirate/crate-bottles.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/GLB_pirate/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 58588,
+      "source": {
+        "blobSha": "c008741c8ad09e3ffd6efe73a293ea56e64ff7e2",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/GLB_pirate/crate-bottles.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/GLB_pirate/crate-bottles.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/GLB_pirate/crate.glb",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/GLB_pirate",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "crate",
+      "packId": "glb-pirate",
+      "packRoot": "media/3D_Assets/GLB_pirate",
+      "path": "media/3D_Assets/GLB_pirate/crate.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/GLB_pirate/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 9232,
+      "source": {
+        "blobSha": "64ac2d87e23af0c4d124f407f15819729f9b6858",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/GLB_pirate/crate.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/GLB_pirate/crate.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/GLB_pirate/flag-high-pennant.glb",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/GLB_pirate",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "flag-high-pennant",
+      "packId": "glb-pirate",
+      "packRoot": "media/3D_Assets/GLB_pirate",
+      "path": "media/3D_Assets/GLB_pirate/flag-high-pennant.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/GLB_pirate/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 13656,
+      "source": {
+        "blobSha": "661efded9a1aa4c1b37c42738e12c3f0d630877a",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/GLB_pirate/flag-high-pennant.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/GLB_pirate/flag-high-pennant.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/GLB_pirate/flag-high.glb",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/GLB_pirate",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "flag-high",
+      "packId": "glb-pirate",
+      "packRoot": "media/3D_Assets/GLB_pirate",
+      "path": "media/3D_Assets/GLB_pirate/flag-high.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/GLB_pirate/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 15196,
+      "source": {
+        "blobSha": "58073bbe5f6a8297eda935227ed30041555f4ae0",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/GLB_pirate/flag-high.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/GLB_pirate/flag-high.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/GLB_pirate/flag-pennant.glb",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/GLB_pirate",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "flag-pennant",
+      "packId": "glb-pirate",
+      "packRoot": "media/3D_Assets/GLB_pirate",
+      "path": "media/3D_Assets/GLB_pirate/flag-pennant.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/GLB_pirate/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 13640,
+      "source": {
+        "blobSha": "ecb82c807d715ba3c9f44be9ec8345bcce7ffe82",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/GLB_pirate/flag-pennant.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/GLB_pirate/flag-pennant.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/GLB_pirate/flag-pirate-high-pennant.glb",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/GLB_pirate",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "flag-pirate-high-pennant",
+      "packId": "glb-pirate",
+      "packRoot": "media/3D_Assets/GLB_pirate",
+      "path": "media/3D_Assets/GLB_pirate/flag-pirate-high-pennant.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/GLB_pirate/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 13676,
+      "source": {
+        "blobSha": "adb21e0434472cab65756e6448afd65b5f7165cf",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/GLB_pirate/flag-pirate-high-pennant.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/GLB_pirate/flag-pirate-high-pennant.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/GLB_pirate/flag-pirate-high.glb",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/GLB_pirate",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "flag-pirate-high",
+      "packId": "glb-pirate",
+      "packRoot": "media/3D_Assets/GLB_pirate",
+      "path": "media/3D_Assets/GLB_pirate/flag-pirate-high.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/GLB_pirate/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 15220,
+      "source": {
+        "blobSha": "d6b5067b4bca5a1fa44073a70955a1b7f6ee17d2",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/GLB_pirate/flag-pirate-high.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/GLB_pirate/flag-pirate-high.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/GLB_pirate/flag-pirate-pennant.glb",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/GLB_pirate",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "flag-pirate-pennant",
+      "packId": "glb-pirate",
+      "packRoot": "media/3D_Assets/GLB_pirate",
+      "path": "media/3D_Assets/GLB_pirate/flag-pirate-pennant.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/GLB_pirate/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 13660,
+      "source": {
+        "blobSha": "fbc18effae66efd3ee1751c86fbeed3a7960f140",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/GLB_pirate/flag-pirate-pennant.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/GLB_pirate/flag-pirate-pennant.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/GLB_pirate/flag-pirate.glb",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/GLB_pirate",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "flag-pirate",
+      "packId": "glb-pirate",
+      "packRoot": "media/3D_Assets/GLB_pirate",
+      "path": "media/3D_Assets/GLB_pirate/flag-pirate.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/GLB_pirate/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 15204,
+      "source": {
+        "blobSha": "874965e91b0fcb6a7db4e3943b751d7139d86c32",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/GLB_pirate/flag-pirate.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/GLB_pirate/flag-pirate.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/GLB_pirate/flag.glb",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/GLB_pirate",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "flag",
+      "packId": "glb-pirate",
+      "packRoot": "media/3D_Assets/GLB_pirate",
+      "path": "media/3D_Assets/GLB_pirate/flag.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/GLB_pirate/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 15184,
+      "source": {
+        "blobSha": "8d4baf11582e15c806fa2b2becf9a29a0c277774",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/GLB_pirate/flag.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/GLB_pirate/flag.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/GLB_pirate/grass-patch.glb",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/GLB_pirate",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "grass-patch",
+      "packId": "glb-pirate",
+      "packRoot": "media/3D_Assets/GLB_pirate",
+      "path": "media/3D_Assets/GLB_pirate/grass-patch.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/GLB_pirate/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 38640,
+      "source": {
+        "blobSha": "76fb03dc7748ecf7f87fc2c9077c5b6f732f324d",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/GLB_pirate/grass-patch.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/GLB_pirate/grass-patch.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/GLB_pirate/grass-plant.glb",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/GLB_pirate",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "grass-plant",
+      "packId": "glb-pirate",
+      "packRoot": "media/3D_Assets/GLB_pirate",
+      "path": "media/3D_Assets/GLB_pirate/grass-plant.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/GLB_pirate/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 14400,
+      "source": {
+        "blobSha": "499b067745115168158b2ca55642911ef485054b",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/GLB_pirate/grass-plant.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/GLB_pirate/grass-plant.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/GLB_pirate/grass.glb",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/GLB_pirate",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "grass",
+      "packId": "glb-pirate",
+      "packRoot": "media/3D_Assets/GLB_pirate",
+      "path": "media/3D_Assets/GLB_pirate/grass.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/GLB_pirate/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 8964,
+      "source": {
+        "blobSha": "5ad62201e30f05bf71e39c2e9b299bd24120ee42",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/GLB_pirate/grass.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/GLB_pirate/grass.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/GLB_pirate/hole.glb",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/GLB_pirate",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "hole",
+      "packId": "glb-pirate",
+      "packRoot": "media/3D_Assets/GLB_pirate",
+      "path": "media/3D_Assets/GLB_pirate/hole.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/GLB_pirate/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 28168,
+      "source": {
+        "blobSha": "62dc0e694dc247b7814f632e951668f13429bab6",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/GLB_pirate/hole.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/GLB_pirate/hole.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/GLB_pirate/mast-ropes.glb",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/GLB_pirate",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "mast-ropes",
+      "packId": "glb-pirate",
+      "packRoot": "media/3D_Assets/GLB_pirate",
+      "path": "media/3D_Assets/GLB_pirate/mast-ropes.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/GLB_pirate/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 36156,
+      "source": {
+        "blobSha": "b64e8d139a4803d8a1fe0711e6ae44aa8204421f",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/GLB_pirate/mast-ropes.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/GLB_pirate/mast-ropes.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/GLB_pirate/mast.glb",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/GLB_pirate",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "mast",
+      "packId": "glb-pirate",
+      "packRoot": "media/3D_Assets/GLB_pirate",
+      "path": "media/3D_Assets/GLB_pirate/mast.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/GLB_pirate/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 30816,
+      "source": {
+        "blobSha": "ddff097312baa09bc7f93ca1450712109c8de31c",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/GLB_pirate/mast.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/GLB_pirate/mast.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/GLB_pirate/palm-bend.glb",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/GLB_pirate",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "palm-bend",
+      "packId": "glb-pirate",
+      "packRoot": "media/3D_Assets/GLB_pirate",
+      "path": "media/3D_Assets/GLB_pirate/palm-bend.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/GLB_pirate/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 36528,
+      "source": {
+        "blobSha": "fcd315c1f9fab1f668748f90999cc80348e3d81e",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/GLB_pirate/palm-bend.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/GLB_pirate/palm-bend.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/GLB_pirate/palm-detailed-bend.glb",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/GLB_pirate",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "palm-detailed-bend",
+      "packId": "glb-pirate",
+      "packRoot": "media/3D_Assets/GLB_pirate",
+      "path": "media/3D_Assets/GLB_pirate/palm-detailed-bend.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/GLB_pirate/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 52012,
+      "source": {
+        "blobSha": "8628e392fb4fc367a4c9b45ebf8e4aa0f9cfeb81",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/GLB_pirate/palm-detailed-bend.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/GLB_pirate/palm-detailed-bend.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/GLB_pirate/palm-detailed-straight.glb",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/GLB_pirate",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "palm-detailed-straight",
+      "packId": "glb-pirate",
+      "packRoot": "media/3D_Assets/GLB_pirate",
+      "path": "media/3D_Assets/GLB_pirate/palm-detailed-straight.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/GLB_pirate/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 51916,
+      "source": {
+        "blobSha": "b5d7463565cec1c981080bcfd0aa6174a251b4ae",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/GLB_pirate/palm-detailed-straight.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/GLB_pirate/palm-detailed-straight.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/GLB_pirate/palm-straight.glb",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/GLB_pirate",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "palm-straight",
+      "packId": "glb-pirate",
+      "packRoot": "media/3D_Assets/GLB_pirate",
+      "path": "media/3D_Assets/GLB_pirate/palm-straight.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/GLB_pirate/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 36524,
+      "source": {
+        "blobSha": "6163e825f12126db0abf24fab5d589396ae95a9a",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/GLB_pirate/palm-straight.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/GLB_pirate/palm-straight.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/GLB_pirate/patch-grass-foliage.glb",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/GLB_pirate",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "patch-grass-foliage",
+      "packId": "glb-pirate",
+      "packRoot": "media/3D_Assets/GLB_pirate",
+      "path": "media/3D_Assets/GLB_pirate/patch-grass-foliage.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/GLB_pirate/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 30716,
+      "source": {
+        "blobSha": "26896940097e3c61c80101bf4a6d1481549b8a16",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/GLB_pirate/patch-grass-foliage.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/GLB_pirate/patch-grass-foliage.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/GLB_pirate/patch-grass.glb",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/GLB_pirate",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "patch-grass",
+      "packId": "glb-pirate",
+      "packRoot": "media/3D_Assets/GLB_pirate",
+      "path": "media/3D_Assets/GLB_pirate/patch-grass.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/GLB_pirate/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 8416,
+      "source": {
+        "blobSha": "763facd498b7514779b18693e5b81c1a38eb779e",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/GLB_pirate/patch-grass.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/GLB_pirate/patch-grass.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/GLB_pirate/patch-sand-foliage.glb",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/GLB_pirate",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "patch-sand-foliage",
+      "packId": "glb-pirate",
+      "packRoot": "media/3D_Assets/GLB_pirate",
+      "path": "media/3D_Assets/GLB_pirate/patch-sand-foliage.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/GLB_pirate/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 63008,
+      "source": {
+        "blobSha": "c84dca3af70dea59fc767d6da55d9d658ba313a2",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/GLB_pirate/patch-sand-foliage.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/GLB_pirate/patch-sand-foliage.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/GLB_pirate/patch-sand.glb",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/GLB_pirate",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "patch-sand",
+      "packId": "glb-pirate",
+      "packRoot": "media/3D_Assets/GLB_pirate",
+      "path": "media/3D_Assets/GLB_pirate/patch-sand.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/GLB_pirate/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 10212,
+      "source": {
+        "blobSha": "f8854ddec1f057f6efbf59f10ca543ed8af1f74b",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/GLB_pirate/patch-sand.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/GLB_pirate/patch-sand.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/GLB_pirate/platform-planks.glb",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/GLB_pirate",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "platform-planks",
+      "packId": "glb-pirate",
+      "packRoot": "media/3D_Assets/GLB_pirate",
+      "path": "media/3D_Assets/GLB_pirate/platform-planks.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/GLB_pirate/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 6524,
+      "source": {
+        "blobSha": "5f34503926d2313190a57d9abf0152c68726ac28",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/GLB_pirate/platform-planks.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/GLB_pirate/platform-planks.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/GLB_pirate/platform.glb",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/GLB_pirate",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "platform",
+      "packId": "glb-pirate",
+      "packRoot": "media/3D_Assets/GLB_pirate",
+      "path": "media/3D_Assets/GLB_pirate/platform.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/GLB_pirate/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 7668,
+      "source": {
+        "blobSha": "ffd9a8c017a73937242c8d28eaa80ded78b09f4f",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/GLB_pirate/platform.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/GLB_pirate/platform.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/GLB_pirate/rocks-a.glb",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/GLB_pirate",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "rocks-a",
+      "packId": "glb-pirate",
+      "packRoot": "media/3D_Assets/GLB_pirate",
+      "path": "media/3D_Assets/GLB_pirate/rocks-a.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/GLB_pirate/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 27644,
+      "source": {
+        "blobSha": "22e754388783fa4e30d91c019316f63da3a85020",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/GLB_pirate/rocks-a.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/GLB_pirate/rocks-a.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/GLB_pirate/rocks-b.glb",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/GLB_pirate",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "rocks-b",
+      "packId": "glb-pirate",
+      "packRoot": "media/3D_Assets/GLB_pirate",
+      "path": "media/3D_Assets/GLB_pirate/rocks-b.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/GLB_pirate/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 31316,
+      "source": {
+        "blobSha": "6c9df86745b2dfccd2c16c29281a582fae0f36ce",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/GLB_pirate/rocks-b.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/GLB_pirate/rocks-b.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/GLB_pirate/rocks-c.glb",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/GLB_pirate",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "rocks-c",
+      "packId": "glb-pirate",
+      "packRoot": "media/3D_Assets/GLB_pirate",
+      "path": "media/3D_Assets/GLB_pirate/rocks-c.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/GLB_pirate/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 24572,
+      "source": {
+        "blobSha": "c1b93ce7626bac8de105390f8ba0f6f0ad204139",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/GLB_pirate/rocks-c.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/GLB_pirate/rocks-c.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/GLB_pirate/rocks-sand-a.glb",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/GLB_pirate",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "rocks-sand-a",
+      "packId": "glb-pirate",
+      "packRoot": "media/3D_Assets/GLB_pirate",
+      "path": "media/3D_Assets/GLB_pirate/rocks-sand-a.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/GLB_pirate/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 57052,
+      "source": {
+        "blobSha": "b2b2070f3716a187c8d5b5eea9cdc35ce83b7373",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/GLB_pirate/rocks-sand-a.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/GLB_pirate/rocks-sand-a.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/GLB_pirate/rocks-sand-b.glb",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/GLB_pirate",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "rocks-sand-b",
+      "packId": "glb-pirate",
+      "packRoot": "media/3D_Assets/GLB_pirate",
+      "path": "media/3D_Assets/GLB_pirate/rocks-sand-b.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/GLB_pirate/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 53404,
+      "source": {
+        "blobSha": "1e86fa4f9753d49d937188678be213add56af085",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/GLB_pirate/rocks-sand-b.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/GLB_pirate/rocks-sand-b.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/GLB_pirate/rocks-sand-c.glb",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/GLB_pirate",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "rocks-sand-c",
+      "packId": "glb-pirate",
+      "packRoot": "media/3D_Assets/GLB_pirate",
+      "path": "media/3D_Assets/GLB_pirate/rocks-sand-c.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/GLB_pirate/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 46624,
+      "source": {
+        "blobSha": "f3fb621ce2463b6dbb3f24fd3cef93ad506d8b38",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/GLB_pirate/rocks-sand-c.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/GLB_pirate/rocks-sand-c.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/GLB_pirate/ship-ghost.glb",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/GLB_pirate",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "ship-ghost",
+      "packId": "glb-pirate",
+      "packRoot": "media/3D_Assets/GLB_pirate",
+      "path": "media/3D_Assets/GLB_pirate/ship-ghost.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/GLB_pirate/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 155692,
+      "source": {
+        "blobSha": "ff6219fd96aaa92670dbf821868589dbc4a8209d",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/GLB_pirate/ship-ghost.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/GLB_pirate/ship-ghost.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/GLB_pirate/ship-large.glb",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/GLB_pirate",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "ship-large",
+      "packId": "glb-pirate",
+      "packRoot": "media/3D_Assets/GLB_pirate",
+      "path": "media/3D_Assets/GLB_pirate/ship-large.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/GLB_pirate/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 155792,
+      "source": {
+        "blobSha": "59dffdeeb16e5a7972336ff11eb7d70bc6360e86",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/GLB_pirate/ship-large.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/GLB_pirate/ship-large.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/GLB_pirate/ship-medium.glb",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/GLB_pirate",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "ship-medium",
+      "packId": "glb-pirate",
+      "packRoot": "media/3D_Assets/GLB_pirate",
+      "path": "media/3D_Assets/GLB_pirate/ship-medium.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/GLB_pirate/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 144944,
+      "source": {
+        "blobSha": "092e30a2cde4e170797e037b549b5a7afcb9063c",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/GLB_pirate/ship-medium.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/GLB_pirate/ship-medium.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/GLB_pirate/ship-pirate-large.glb",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/GLB_pirate",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "ship-pirate-large",
+      "packId": "glb-pirate",
+      "packRoot": "media/3D_Assets/GLB_pirate",
+      "path": "media/3D_Assets/GLB_pirate/ship-pirate-large.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/GLB_pirate/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 177216,
+      "source": {
+        "blobSha": "d4100582438c4866eaf108d7487531942dfed584",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/GLB_pirate/ship-pirate-large.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/GLB_pirate/ship-pirate-large.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/GLB_pirate/ship-pirate-medium.glb",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/GLB_pirate",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "ship-pirate-medium",
+      "packId": "glb-pirate",
+      "packRoot": "media/3D_Assets/GLB_pirate",
+      "path": "media/3D_Assets/GLB_pirate/ship-pirate-medium.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/GLB_pirate/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 166388,
+      "source": {
+        "blobSha": "70076340ef907634946c06618dd2fc00d34d8eae",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/GLB_pirate/ship-pirate-medium.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/GLB_pirate/ship-pirate-medium.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/GLB_pirate/ship-pirate-small.glb",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/GLB_pirate",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "ship-pirate-small",
+      "packId": "glb-pirate",
+      "packRoot": "media/3D_Assets/GLB_pirate",
+      "path": "media/3D_Assets/GLB_pirate/ship-pirate-small.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/GLB_pirate/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 131464,
+      "source": {
+        "blobSha": "45fa3cbd3d7068c16e6caf105a6317d7cc61d4e8",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/GLB_pirate/ship-pirate-small.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/GLB_pirate/ship-pirate-small.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/GLB_pirate/ship-small.glb",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/GLB_pirate",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "ship-small",
+      "packId": "glb-pirate",
+      "packRoot": "media/3D_Assets/GLB_pirate",
+      "path": "media/3D_Assets/GLB_pirate/ship-small.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/GLB_pirate/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 116440,
+      "source": {
+        "blobSha": "788cca62a965cba18e1ec5e00a04749ee4c7b9c3",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/GLB_pirate/ship-small.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/GLB_pirate/ship-small.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/GLB_pirate/ship-wreck.glb",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/GLB_pirate",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "ship-wreck",
+      "packId": "glb-pirate",
+      "packRoot": "media/3D_Assets/GLB_pirate",
+      "path": "media/3D_Assets/GLB_pirate/ship-wreck.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/GLB_pirate/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 223676,
+      "source": {
+        "blobSha": "45f422abdb982419d0a1cc0e66410c3e4078dc9e",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/GLB_pirate/ship-wreck.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/GLB_pirate/ship-wreck.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/GLB_pirate/structure-fence-sides.glb",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/GLB_pirate",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "structure-fence-sides",
+      "packId": "glb-pirate",
+      "packRoot": "media/3D_Assets/GLB_pirate",
+      "path": "media/3D_Assets/GLB_pirate/structure-fence-sides.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/GLB_pirate/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 44480,
+      "source": {
+        "blobSha": "d8fbd28cf5a3fce077b146758b252f4c8e840829",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/GLB_pirate/structure-fence-sides.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/GLB_pirate/structure-fence-sides.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/GLB_pirate/structure-fence.glb",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/GLB_pirate",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "structure-fence",
+      "packId": "glb-pirate",
+      "packRoot": "media/3D_Assets/GLB_pirate",
+      "path": "media/3D_Assets/GLB_pirate/structure-fence.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/GLB_pirate/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 35752,
+      "source": {
+        "blobSha": "96dae7f7801e36827e650efce9458f3d81319f14",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/GLB_pirate/structure-fence.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/GLB_pirate/structure-fence.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/GLB_pirate/structure-platform-dock-small.glb",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/GLB_pirate",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "structure-platform-dock-small",
+      "packId": "glb-pirate",
+      "packRoot": "media/3D_Assets/GLB_pirate",
+      "path": "media/3D_Assets/GLB_pirate/structure-platform-dock-small.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/GLB_pirate/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 32156,
+      "source": {
+        "blobSha": "83ccd242ec140c8a9860c0265dfca202e74eeaca",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/GLB_pirate/structure-platform-dock-small.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/GLB_pirate/structure-platform-dock-small.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/GLB_pirate/structure-platform-dock.glb",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/GLB_pirate",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "structure-platform-dock",
+      "packId": "glb-pirate",
+      "packRoot": "media/3D_Assets/GLB_pirate",
+      "path": "media/3D_Assets/GLB_pirate/structure-platform-dock.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/GLB_pirate/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 33336,
+      "source": {
+        "blobSha": "75893fe86debcec34b268889a5d10e61ba5f1f59",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/GLB_pirate/structure-platform-dock.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/GLB_pirate/structure-platform-dock.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/GLB_pirate/structure-platform-small.glb",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/GLB_pirate",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "structure-platform-small",
+      "packId": "glb-pirate",
+      "packRoot": "media/3D_Assets/GLB_pirate",
+      "path": "media/3D_Assets/GLB_pirate/structure-platform-small.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/GLB_pirate/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 23068,
+      "source": {
+        "blobSha": "e648d17ff2e1ff10a23966638867423e147d03ee",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/GLB_pirate/structure-platform-small.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/GLB_pirate/structure-platform-small.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/GLB_pirate/structure-platform.glb",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/GLB_pirate",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "structure-platform",
+      "packId": "glb-pirate",
+      "packRoot": "media/3D_Assets/GLB_pirate",
+      "path": "media/3D_Assets/GLB_pirate/structure-platform.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/GLB_pirate/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 24248,
+      "source": {
+        "blobSha": "fd3729d3691701561843fec0093ca413a19a7104",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/GLB_pirate/structure-platform.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/GLB_pirate/structure-platform.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/GLB_pirate/structure-roof.glb",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/GLB_pirate",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "structure-roof",
+      "packId": "glb-pirate",
+      "packRoot": "media/3D_Assets/GLB_pirate",
+      "path": "media/3D_Assets/GLB_pirate/structure-roof.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/GLB_pirate/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 34480,
+      "source": {
+        "blobSha": "05ae845bd4bd934b48862849f21b3811b5c9bea3",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/GLB_pirate/structure-roof.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/GLB_pirate/structure-roof.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/GLB_pirate/structure.glb",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/GLB_pirate",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "structure",
+      "packId": "glb-pirate",
+      "packRoot": "media/3D_Assets/GLB_pirate",
+      "path": "media/3D_Assets/GLB_pirate/structure.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/GLB_pirate/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 27988,
+      "source": {
+        "blobSha": "727b0afed56f0055b86a79efd1fe79afd0250e46",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/GLB_pirate/structure.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/GLB_pirate/structure.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/GLB_pirate/tool-paddle.glb",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/GLB_pirate",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "tool-paddle",
+      "packId": "glb-pirate",
+      "packRoot": "media/3D_Assets/GLB_pirate",
+      "path": "media/3D_Assets/GLB_pirate/tool-paddle.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/GLB_pirate/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 6864,
+      "source": {
+        "blobSha": "2cffeb6698f5481355d9d81c727a7c40cdcb2b20",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/GLB_pirate/tool-paddle.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/GLB_pirate/tool-paddle.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/GLB_pirate/tool-shovel.glb",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/GLB_pirate",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "tool-shovel",
+      "packId": "glb-pirate",
+      "packRoot": "media/3D_Assets/GLB_pirate",
+      "path": "media/3D_Assets/GLB_pirate/tool-shovel.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/GLB_pirate/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 16144,
+      "source": {
+        "blobSha": "0d7a27c31ef45c402e166a094f5f440d38714bf3",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/GLB_pirate/tool-shovel.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/GLB_pirate/tool-shovel.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/GLB_pirate/tower-base-door.glb",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/GLB_pirate",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "tower-base-door",
+      "packId": "glb-pirate",
+      "packRoot": "media/3D_Assets/GLB_pirate",
+      "path": "media/3D_Assets/GLB_pirate/tower-base-door.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/GLB_pirate/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 12592,
+      "source": {
+        "blobSha": "59d21d7e25787a67d9907d734b1e596e59138f68",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/GLB_pirate/tower-base-door.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/GLB_pirate/tower-base-door.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/GLB_pirate/tower-base.glb",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/GLB_pirate",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "tower-base",
+      "packId": "glb-pirate",
+      "packRoot": "media/3D_Assets/GLB_pirate",
+      "path": "media/3D_Assets/GLB_pirate/tower-base.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/GLB_pirate/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 5772,
+      "source": {
+        "blobSha": "e92c5c52cf477a982ad3c2b416c7b1038dc350bf",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/GLB_pirate/tower-base.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/GLB_pirate/tower-base.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/GLB_pirate/tower-complete-large.glb",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/GLB_pirate",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "tower-complete-large",
+      "packId": "glb-pirate",
+      "packRoot": "media/3D_Assets/GLB_pirate",
+      "path": "media/3D_Assets/GLB_pirate/tower-complete-large.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/GLB_pirate/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 54660,
+      "source": {
+        "blobSha": "91375ce8fb988c1e5abc2a1b411e67762a1f94c1",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/GLB_pirate/tower-complete-large.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/GLB_pirate/tower-complete-large.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/GLB_pirate/tower-complete-small.glb",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/GLB_pirate",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "tower-complete-small",
+      "packId": "glb-pirate",
+      "packRoot": "media/3D_Assets/GLB_pirate",
+      "path": "media/3D_Assets/GLB_pirate/tower-complete-small.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/GLB_pirate/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 58412,
+      "source": {
+        "blobSha": "c0c4bcb4695862f31321f61afc8bc2bdfc30ba11",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/GLB_pirate/tower-complete-small.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/GLB_pirate/tower-complete-small.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/GLB_pirate/tower-middle-windows.glb",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/GLB_pirate",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "tower-middle-windows",
+      "packId": "glb-pirate",
+      "packRoot": "media/3D_Assets/GLB_pirate",
+      "path": "media/3D_Assets/GLB_pirate/tower-middle-windows.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/GLB_pirate/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 23188,
+      "source": {
+        "blobSha": "c4cf2a4e8a001a17314d2e6e208317f15495a72b",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/GLB_pirate/tower-middle-windows.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/GLB_pirate/tower-middle-windows.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/GLB_pirate/tower-middle.glb",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/GLB_pirate",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "tower-middle",
+      "packId": "glb-pirate",
+      "packRoot": "media/3D_Assets/GLB_pirate",
+      "path": "media/3D_Assets/GLB_pirate/tower-middle.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/GLB_pirate/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 21112,
+      "source": {
+        "blobSha": "cc78664962e193130105cc94314ef9f464a173d2",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/GLB_pirate/tower-middle.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/GLB_pirate/tower-middle.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/GLB_pirate/tower-roof.glb",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/GLB_pirate",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "tower-roof",
+      "packId": "glb-pirate",
+      "packRoot": "media/3D_Assets/GLB_pirate",
+      "path": "media/3D_Assets/GLB_pirate/tower-roof.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/GLB_pirate/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 11772,
+      "source": {
+        "blobSha": "8caebfcc0fe0826c87ae15495ee0750011dc027e",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/GLB_pirate/tower-roof.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/GLB_pirate/tower-roof.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/GLB_pirate/tower-top.glb",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/GLB_pirate",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "tower-top",
+      "packId": "glb-pirate",
+      "packRoot": "media/3D_Assets/GLB_pirate",
+      "path": "media/3D_Assets/GLB_pirate/tower-top.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/GLB_pirate/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 29484,
+      "source": {
+        "blobSha": "3617202cc64b078cc39236d96482a9d6693d16c6",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/GLB_pirate/tower-top.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/GLB_pirate/tower-top.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/GLB_pirate/tower-watch.glb",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/GLB_pirate",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "tower-watch",
+      "packId": "glb-pirate",
+      "packRoot": "media/3D_Assets/GLB_pirate",
+      "path": "media/3D_Assets/GLB_pirate/tower-watch.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/GLB_pirate/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 21672,
+      "source": {
+        "blobSha": "e271613ecbc8f25c1f369b137823b83bf6cdee4a",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/GLB_pirate/tower-watch.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/GLB_pirate/tower-watch.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    }
+  ],
+  "collections": [
+    {
+      "assetCount": 1,
+      "path": "Textures"
+    }
+  ],
+  "dependencyStatus": {
+    "complete": 72
+  },
+  "displayName": "GLB_pirate",
+  "formats": {
+    "glb": 72,
+    "png": 1
+  },
+  "kinds": {
+    "image-2d": 1,
+    "model-3d": 72
+  },
+  "packId": "glb-pirate",
+  "provenance": "generated-structural",
+  "root": "media/3D_Assets/GLB_pirate",
+  "schema": "kfb.asset-pack.v1",
+  "shard": "packs/glb-pirate.json"
+}

@@ -1,0 +1,2461 @@
+{
+  "assetCount": 63,
+  "assets": [
+    {
+      "assetId": "media/3D_Assets/KayKit_Adventurers_2.0_FREE/Animations/gltf/Rig_Medium/Rig_Medium_General.glb",
+      "collectionPath": "Animations",
+      "dependencyStatus": "embedded",
+      "folder": "media/3D_Assets/KayKit_Adventurers_2.0_FREE/Animations/gltf/Rig_Medium",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "Rig_Medium_General",
+      "packId": "kaykit-adventurers-2-0-free",
+      "packRoot": "media/3D_Assets/KayKit_Adventurers_2.0_FREE",
+      "path": "media/3D_Assets/KayKit_Adventurers_2.0_FREE/Animations/gltf/Rig_Medium/Rig_Medium_General.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": []
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 828240,
+      "source": {
+        "blobSha": "5d16cb6815fc8371705147188813f851c10ba26a",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/KayKit_Adventurers_2.0_FREE/Animations/gltf/Rig_Medium/Rig_Medium_General.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/KayKit_Adventurers_2.0_FREE/Animations/gltf/Rig_Medium/Rig_Medium_General.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/KayKit_Adventurers_2.0_FREE/Animations/gltf/Rig_Medium/Rig_Medium_MovementBasic.glb",
+      "collectionPath": "Animations",
+      "dependencyStatus": "embedded",
+      "folder": "media/3D_Assets/KayKit_Adventurers_2.0_FREE/Animations/gltf/Rig_Medium",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "Rig_Medium_MovementBasic",
+      "packId": "kaykit-adventurers-2-0-free",
+      "packRoot": "media/3D_Assets/KayKit_Adventurers_2.0_FREE",
+      "path": "media/3D_Assets/KayKit_Adventurers_2.0_FREE/Animations/gltf/Rig_Medium/Rig_Medium_MovementBasic.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": []
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 689624,
+      "source": {
+        "blobSha": "98e965e886ec539e80f8984a77a29b0c1c02e5e5",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/KayKit_Adventurers_2.0_FREE/Animations/gltf/Rig_Medium/Rig_Medium_MovementBasic.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/KayKit_Adventurers_2.0_FREE/Animations/gltf/Rig_Medium/Rig_Medium_MovementBasic.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/KayKit_Adventurers_2.0_FREE/Assets/gltf/arrow_bow.gltf",
+      "collectionPath": "Assets",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/KayKit_Adventurers_2.0_FREE/Assets/gltf",
+      "format": "gltf",
+      "kind": "model-3d",
+      "name": "arrow_bow",
+      "packId": "kaykit-adventurers-2-0-free",
+      "packRoot": "media/3D_Assets/KayKit_Adventurers_2.0_FREE",
+      "path": "media/3D_Assets/KayKit_Adventurers_2.0_FREE/Assets/gltf/arrow_bow.gltf",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_Adventurers_2.0_FREE/Assets/gltf/arrow_bow.bin",
+            "provenance": "file-explicit",
+            "reference": "buffers[0].uri",
+            "role": "buffer",
+            "status": "ok",
+            "uri": "arrow_bow.bin"
+          },
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_Adventurers_2.0_FREE/Assets/gltf/ranger_texture.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "ranger_texture.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 3055,
+      "source": {
+        "blobSha": "4dd52ae6636e43258f7055a8c8f819af32436e30",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/KayKit_Adventurers_2.0_FREE/Assets/gltf/arrow_bow.gltf",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/KayKit_Adventurers_2.0_FREE/Assets/gltf/arrow_bow.gltf",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/KayKit_Adventurers_2.0_FREE/Assets/gltf/arrow_bow_bundle.gltf",
+      "collectionPath": "Assets",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/KayKit_Adventurers_2.0_FREE/Assets/gltf",
+      "format": "gltf",
+      "kind": "model-3d",
+      "name": "arrow_bow_bundle",
+      "packId": "kaykit-adventurers-2-0-free",
+      "packRoot": "media/3D_Assets/KayKit_Adventurers_2.0_FREE",
+      "path": "media/3D_Assets/KayKit_Adventurers_2.0_FREE/Assets/gltf/arrow_bow_bundle.gltf",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_Adventurers_2.0_FREE/Assets/gltf/arrow_bow_bundle.bin",
+            "provenance": "file-explicit",
+            "reference": "buffers[0].uri",
+            "role": "buffer",
+            "status": "ok",
+            "uri": "arrow_bow_bundle.bin"
+          },
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_Adventurers_2.0_FREE/Assets/gltf/ranger_texture.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "ranger_texture.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 3084,
+      "source": {
+        "blobSha": "42fe201aa3b0bc30e80ee82f1c47f1d8c8398846",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/KayKit_Adventurers_2.0_FREE/Assets/gltf/arrow_bow_bundle.gltf",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/KayKit_Adventurers_2.0_FREE/Assets/gltf/arrow_bow_bundle.gltf",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/KayKit_Adventurers_2.0_FREE/Assets/gltf/arrow_crossbow.gltf",
+      "collectionPath": "Assets",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/KayKit_Adventurers_2.0_FREE/Assets/gltf",
+      "format": "gltf",
+      "kind": "model-3d",
+      "name": "arrow_crossbow",
+      "packId": "kaykit-adventurers-2-0-free",
+      "packRoot": "media/3D_Assets/KayKit_Adventurers_2.0_FREE",
+      "path": "media/3D_Assets/KayKit_Adventurers_2.0_FREE/Assets/gltf/arrow_crossbow.gltf",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_Adventurers_2.0_FREE/Assets/gltf/arrow_crossbow.bin",
+            "provenance": "file-explicit",
+            "reference": "buffers[0].uri",
+            "role": "buffer",
+            "status": "ok",
+            "uri": "arrow_crossbow.bin"
+          },
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_Adventurers_2.0_FREE/Assets/gltf/rogue_texture.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "rogue_texture.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 3071,
+      "source": {
+        "blobSha": "8c8c87f29607e71aed7aec258aa4c6cf42d24390",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/KayKit_Adventurers_2.0_FREE/Assets/gltf/arrow_crossbow.gltf",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/KayKit_Adventurers_2.0_FREE/Assets/gltf/arrow_crossbow.gltf",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/KayKit_Adventurers_2.0_FREE/Assets/gltf/arrow_crossbow_bundle.gltf",
+      "collectionPath": "Assets",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/KayKit_Adventurers_2.0_FREE/Assets/gltf",
+      "format": "gltf",
+      "kind": "model-3d",
+      "name": "arrow_crossbow_bundle",
+      "packId": "kaykit-adventurers-2-0-free",
+      "packRoot": "media/3D_Assets/KayKit_Adventurers_2.0_FREE",
+      "path": "media/3D_Assets/KayKit_Adventurers_2.0_FREE/Assets/gltf/arrow_crossbow_bundle.gltf",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_Adventurers_2.0_FREE/Assets/gltf/arrow_crossbow_bundle.bin",
+            "provenance": "file-explicit",
+            "reference": "buffers[0].uri",
+            "role": "buffer",
+            "status": "ok",
+            "uri": "arrow_crossbow_bundle.bin"
+          },
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_Adventurers_2.0_FREE/Assets/gltf/rogue_texture.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "rogue_texture.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 3097,
+      "source": {
+        "blobSha": "694633cc2cc7c5076020dadada2ac6af64279a01",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/KayKit_Adventurers_2.0_FREE/Assets/gltf/arrow_crossbow_bundle.gltf",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/KayKit_Adventurers_2.0_FREE/Assets/gltf/arrow_crossbow_bundle.gltf",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/KayKit_Adventurers_2.0_FREE/Assets/gltf/axe_1handed.gltf",
+      "collectionPath": "Assets",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/KayKit_Adventurers_2.0_FREE/Assets/gltf",
+      "format": "gltf",
+      "kind": "model-3d",
+      "name": "axe_1handed",
+      "packId": "kaykit-adventurers-2-0-free",
+      "packRoot": "media/3D_Assets/KayKit_Adventurers_2.0_FREE",
+      "path": "media/3D_Assets/KayKit_Adventurers_2.0_FREE/Assets/gltf/axe_1handed.gltf",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_Adventurers_2.0_FREE/Assets/gltf/axe_1handed.bin",
+            "provenance": "file-explicit",
+            "reference": "buffers[0].uri",
+            "role": "buffer",
+            "status": "ok",
+            "uri": "axe_1handed.bin"
+          },
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_Adventurers_2.0_FREE/Assets/gltf/barbarian_texture.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "barbarian_texture.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 3080,
+      "source": {
+        "blobSha": "8ae1d6ebb4da537024e958c347a3f845db311fc9",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/KayKit_Adventurers_2.0_FREE/Assets/gltf/axe_1handed.gltf",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/KayKit_Adventurers_2.0_FREE/Assets/gltf/axe_1handed.gltf",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/KayKit_Adventurers_2.0_FREE/Assets/gltf/axe_2handed.gltf",
+      "collectionPath": "Assets",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/KayKit_Adventurers_2.0_FREE/Assets/gltf",
+      "format": "gltf",
+      "kind": "model-3d",
+      "name": "axe_2handed",
+      "packId": "kaykit-adventurers-2-0-free",
+      "packRoot": "media/3D_Assets/KayKit_Adventurers_2.0_FREE",
+      "path": "media/3D_Assets/KayKit_Adventurers_2.0_FREE/Assets/gltf/axe_2handed.gltf",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_Adventurers_2.0_FREE/Assets/gltf/axe_2handed.bin",
+            "provenance": "file-explicit",
+            "reference": "buffers[0].uri",
+            "role": "buffer",
+            "status": "ok",
+            "uri": "axe_2handed.bin"
+          },
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_Adventurers_2.0_FREE/Assets/gltf/barbarian_texture.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "barbarian_texture.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 3078,
+      "source": {
+        "blobSha": "b726b6ceeab72f560295dd3c9fbb90bc4ffb4bdd",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/KayKit_Adventurers_2.0_FREE/Assets/gltf/axe_2handed.gltf",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/KayKit_Adventurers_2.0_FREE/Assets/gltf/axe_2handed.gltf",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/KayKit_Adventurers_2.0_FREE/Assets/gltf/barbarian_texture.png",
+      "collectionPath": "Assets",
+      "folder": "media/3D_Assets/KayKit_Adventurers_2.0_FREE/Assets/gltf",
+      "format": "png",
+      "hints": {
+        "textureCandidate": false,
+        "textureCandidateProvenance": "generated-structural"
+      },
+      "kind": "image-2d",
+      "name": "barbarian_texture",
+      "packId": "kaykit-adventurers-2-0-free",
+      "packRoot": "media/3D_Assets/KayKit_Adventurers_2.0_FREE",
+      "path": "media/3D_Assets/KayKit_Adventurers_2.0_FREE/Assets/gltf/barbarian_texture.png",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 14424,
+      "source": {
+        "blobSha": "871a6599759d1367a8d0e50fdbb5d3a4daca0de9",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/KayKit_Adventurers_2.0_FREE/Assets/gltf/barbarian_texture.png",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/KayKit_Adventurers_2.0_FREE/Assets/gltf/barbarian_texture.png",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/KayKit_Adventurers_2.0_FREE/Assets/gltf/bow.gltf",
+      "collectionPath": "Assets",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/KayKit_Adventurers_2.0_FREE/Assets/gltf",
+      "format": "gltf",
+      "kind": "model-3d",
+      "name": "bow",
+      "packId": "kaykit-adventurers-2-0-free",
+      "packRoot": "media/3D_Assets/KayKit_Adventurers_2.0_FREE",
+      "path": "media/3D_Assets/KayKit_Adventurers_2.0_FREE/Assets/gltf/bow.gltf",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_Adventurers_2.0_FREE/Assets/gltf/bow.bin",
+            "provenance": "file-explicit",
+            "reference": "buffers[0].uri",
+            "role": "buffer",
+            "status": "ok",
+            "uri": "bow.bin"
+          },
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_Adventurers_2.0_FREE/Assets/gltf/ranger_texture.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "ranger_texture.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 3048,
+      "source": {
+        "blobSha": "50404ed543e852c67c4738369ad0a1a27121475c",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/KayKit_Adventurers_2.0_FREE/Assets/gltf/bow.gltf",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/KayKit_Adventurers_2.0_FREE/Assets/gltf/bow.gltf",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/KayKit_Adventurers_2.0_FREE/Assets/gltf/bow_withString.gltf",
+      "collectionPath": "Assets",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/KayKit_Adventurers_2.0_FREE/Assets/gltf",
+      "format": "gltf",
+      "kind": "model-3d",
+      "name": "bow_withString",
+      "packId": "kaykit-adventurers-2-0-free",
+      "packRoot": "media/3D_Assets/KayKit_Adventurers_2.0_FREE",
+      "path": "media/3D_Assets/KayKit_Adventurers_2.0_FREE/Assets/gltf/bow_withString.gltf",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_Adventurers_2.0_FREE/Assets/gltf/bow_withString.bin",
+            "provenance": "file-explicit",
+            "reference": "buffers[0].uri",
+            "role": "buffer",
+            "status": "ok",
+            "uri": "bow_withString.bin"
+          },
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_Adventurers_2.0_FREE/Assets/gltf/ranger_texture.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "ranger_texture.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 4326,
+      "source": {
+        "blobSha": "0e3afa85553a8a88f0d7dbe9d6052a9a0f6f09d5",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/KayKit_Adventurers_2.0_FREE/Assets/gltf/bow_withString.gltf",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/KayKit_Adventurers_2.0_FREE/Assets/gltf/bow_withString.gltf",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/KayKit_Adventurers_2.0_FREE/Assets/gltf/crossbow_1handed.gltf",
+      "collectionPath": "Assets",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/KayKit_Adventurers_2.0_FREE/Assets/gltf",
+      "format": "gltf",
+      "kind": "model-3d",
+      "name": "crossbow_1handed",
+      "packId": "kaykit-adventurers-2-0-free",
+      "packRoot": "media/3D_Assets/KayKit_Adventurers_2.0_FREE",
+      "path": "media/3D_Assets/KayKit_Adventurers_2.0_FREE/Assets/gltf/crossbow_1handed.gltf",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_Adventurers_2.0_FREE/Assets/gltf/crossbow_1handed.bin",
+            "provenance": "file-explicit",
+            "reference": "buffers[0].uri",
+            "role": "buffer",
+            "status": "ok",
+            "uri": "crossbow_1handed.bin"
+          },
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_Adventurers_2.0_FREE/Assets/gltf/rogue_texture.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "rogue_texture.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 3083,
+      "source": {
+        "blobSha": "4e0a15466787a07104fcecb85003051f0bf23863",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/KayKit_Adventurers_2.0_FREE/Assets/gltf/crossbow_1handed.gltf",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/KayKit_Adventurers_2.0_FREE/Assets/gltf/crossbow_1handed.gltf",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/KayKit_Adventurers_2.0_FREE/Assets/gltf/crossbow_2handed.gltf",
+      "collectionPath": "Assets",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/KayKit_Adventurers_2.0_FREE/Assets/gltf",
+      "format": "gltf",
+      "kind": "model-3d",
+      "name": "crossbow_2handed",
+      "packId": "kaykit-adventurers-2-0-free",
+      "packRoot": "media/3D_Assets/KayKit_Adventurers_2.0_FREE",
+      "path": "media/3D_Assets/KayKit_Adventurers_2.0_FREE/Assets/gltf/crossbow_2handed.gltf",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_Adventurers_2.0_FREE/Assets/gltf/crossbow_2handed.bin",
+            "provenance": "file-explicit",
+            "reference": "buffers[0].uri",
+            "role": "buffer",
+            "status": "ok",
+            "uri": "crossbow_2handed.bin"
+          },
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_Adventurers_2.0_FREE/Assets/gltf/rogue_texture.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "rogue_texture.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 3083,
+      "source": {
+        "blobSha": "babe74ef9813e40e911c3bdb8cd965ccd48fadd6",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/KayKit_Adventurers_2.0_FREE/Assets/gltf/crossbow_2handed.gltf",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/KayKit_Adventurers_2.0_FREE/Assets/gltf/crossbow_2handed.gltf",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/KayKit_Adventurers_2.0_FREE/Assets/gltf/dagger.gltf",
+      "collectionPath": "Assets",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/KayKit_Adventurers_2.0_FREE/Assets/gltf",
+      "format": "gltf",
+      "kind": "model-3d",
+      "name": "dagger",
+      "packId": "kaykit-adventurers-2-0-free",
+      "packRoot": "media/3D_Assets/KayKit_Adventurers_2.0_FREE",
+      "path": "media/3D_Assets/KayKit_Adventurers_2.0_FREE/Assets/gltf/dagger.gltf",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_Adventurers_2.0_FREE/Assets/gltf/dagger.bin",
+            "provenance": "file-explicit",
+            "reference": "buffers[0].uri",
+            "role": "buffer",
+            "status": "ok",
+            "uri": "dagger.bin"
+          },
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_Adventurers_2.0_FREE/Assets/gltf/rogue_texture.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "rogue_texture.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 3051,
+      "source": {
+        "blobSha": "049e6e8b199f4a2f810c82385884936d11603f3b",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/KayKit_Adventurers_2.0_FREE/Assets/gltf/dagger.gltf",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/KayKit_Adventurers_2.0_FREE/Assets/gltf/dagger.gltf",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/KayKit_Adventurers_2.0_FREE/Assets/gltf/knight_texture.png",
+      "collectionPath": "Assets",
+      "folder": "media/3D_Assets/KayKit_Adventurers_2.0_FREE/Assets/gltf",
+      "format": "png",
+      "hints": {
+        "textureCandidate": false,
+        "textureCandidateProvenance": "generated-structural"
+      },
+      "kind": "image-2d",
+      "name": "knight_texture",
+      "packId": "kaykit-adventurers-2-0-free",
+      "packRoot": "media/3D_Assets/KayKit_Adventurers_2.0_FREE",
+      "path": "media/3D_Assets/KayKit_Adventurers_2.0_FREE/Assets/gltf/knight_texture.png",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 12914,
+      "source": {
+        "blobSha": "a75dfe492fec4c3f9bfd18a381c2838d9eea00e8",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/KayKit_Adventurers_2.0_FREE/Assets/gltf/knight_texture.png",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/KayKit_Adventurers_2.0_FREE/Assets/gltf/knight_texture.png",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/KayKit_Adventurers_2.0_FREE/Assets/gltf/mage_texture.png",
+      "collectionPath": "Assets",
+      "folder": "media/3D_Assets/KayKit_Adventurers_2.0_FREE/Assets/gltf",
+      "format": "png",
+      "hints": {
+        "textureCandidate": false,
+        "textureCandidateProvenance": "generated-structural"
+      },
+      "kind": "image-2d",
+      "name": "mage_texture",
+      "packId": "kaykit-adventurers-2-0-free",
+      "packRoot": "media/3D_Assets/KayKit_Adventurers_2.0_FREE",
+      "path": "media/3D_Assets/KayKit_Adventurers_2.0_FREE/Assets/gltf/mage_texture.png",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 14740,
+      "source": {
+        "blobSha": "3c1b0dbb0856c36aff8e3e8836ab335c6ff7354d",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/KayKit_Adventurers_2.0_FREE/Assets/gltf/mage_texture.png",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/KayKit_Adventurers_2.0_FREE/Assets/gltf/mage_texture.png",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/KayKit_Adventurers_2.0_FREE/Assets/gltf/mug_empty.gltf",
+      "collectionPath": "Assets",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/KayKit_Adventurers_2.0_FREE/Assets/gltf",
+      "format": "gltf",
+      "kind": "model-3d",
+      "name": "mug_empty",
+      "packId": "kaykit-adventurers-2-0-free",
+      "packRoot": "media/3D_Assets/KayKit_Adventurers_2.0_FREE",
+      "path": "media/3D_Assets/KayKit_Adventurers_2.0_FREE/Assets/gltf/mug_empty.gltf",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_Adventurers_2.0_FREE/Assets/gltf/barbarian_texture.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "barbarian_texture.png"
+          },
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_Adventurers_2.0_FREE/Assets/gltf/mug_empty.bin",
+            "provenance": "file-explicit",
+            "reference": "buffers[0].uri",
+            "role": "buffer",
+            "status": "ok",
+            "uri": "mug_empty.bin"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 3075,
+      "source": {
+        "blobSha": "f1fbd792c1602cd33fbaf8a3e96b371b157d7f72",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/KayKit_Adventurers_2.0_FREE/Assets/gltf/mug_empty.gltf",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/KayKit_Adventurers_2.0_FREE/Assets/gltf/mug_empty.gltf",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/KayKit_Adventurers_2.0_FREE/Assets/gltf/mug_full.gltf",
+      "collectionPath": "Assets",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/KayKit_Adventurers_2.0_FREE/Assets/gltf",
+      "format": "gltf",
+      "kind": "model-3d",
+      "name": "mug_full",
+      "packId": "kaykit-adventurers-2-0-free",
+      "packRoot": "media/3D_Assets/KayKit_Adventurers_2.0_FREE",
+      "path": "media/3D_Assets/KayKit_Adventurers_2.0_FREE/Assets/gltf/mug_full.gltf",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_Adventurers_2.0_FREE/Assets/gltf/barbarian_texture.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "barbarian_texture.png"
+          },
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_Adventurers_2.0_FREE/Assets/gltf/mug_full.bin",
+            "provenance": "file-explicit",
+            "reference": "buffers[0].uri",
+            "role": "buffer",
+            "status": "ok",
+            "uri": "mug_full.bin"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 3072,
+      "source": {
+        "blobSha": "e270192d9723e9f0f69d1d61325cf89b11a7a4fc",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/KayKit_Adventurers_2.0_FREE/Assets/gltf/mug_full.gltf",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/KayKit_Adventurers_2.0_FREE/Assets/gltf/mug_full.gltf",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/KayKit_Adventurers_2.0_FREE/Assets/gltf/quiver.gltf",
+      "collectionPath": "Assets",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/KayKit_Adventurers_2.0_FREE/Assets/gltf",
+      "format": "gltf",
+      "kind": "model-3d",
+      "name": "quiver",
+      "packId": "kaykit-adventurers-2-0-free",
+      "packRoot": "media/3D_Assets/KayKit_Adventurers_2.0_FREE",
+      "path": "media/3D_Assets/KayKit_Adventurers_2.0_FREE/Assets/gltf/quiver.gltf",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_Adventurers_2.0_FREE/Assets/gltf/quiver.bin",
+            "provenance": "file-explicit",
+            "reference": "buffers[0].uri",
+            "role": "buffer",
+            "status": "ok",
+            "uri": "quiver.bin"
+          },
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_Adventurers_2.0_FREE/Assets/gltf/rogue_texture.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "rogue_texture.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 3053,
+      "source": {
+        "blobSha": "1bedcd40137a471fd7f7c33793203a70b5d19614",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/KayKit_Adventurers_2.0_FREE/Assets/gltf/quiver.gltf",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/KayKit_Adventurers_2.0_FREE/Assets/gltf/quiver.gltf",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/KayKit_Adventurers_2.0_FREE/Assets/gltf/ranger_texture.png",
+      "collectionPath": "Assets",
+      "folder": "media/3D_Assets/KayKit_Adventurers_2.0_FREE/Assets/gltf",
+      "format": "png",
+      "hints": {
+        "textureCandidate": false,
+        "textureCandidateProvenance": "generated-structural"
+      },
+      "kind": "image-2d",
+      "name": "ranger_texture",
+      "packId": "kaykit-adventurers-2-0-free",
+      "packRoot": "media/3D_Assets/KayKit_Adventurers_2.0_FREE",
+      "path": "media/3D_Assets/KayKit_Adventurers_2.0_FREE/Assets/gltf/ranger_texture.png",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 13248,
+      "source": {
+        "blobSha": "17458d889de97785146265d3bf0d2566cf2f4bd8",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/KayKit_Adventurers_2.0_FREE/Assets/gltf/ranger_texture.png",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/KayKit_Adventurers_2.0_FREE/Assets/gltf/ranger_texture.png",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/KayKit_Adventurers_2.0_FREE/Assets/gltf/rogue_texture.png",
+      "collectionPath": "Assets",
+      "folder": "media/3D_Assets/KayKit_Adventurers_2.0_FREE/Assets/gltf",
+      "format": "png",
+      "hints": {
+        "textureCandidate": false,
+        "textureCandidateProvenance": "generated-structural"
+      },
+      "kind": "image-2d",
+      "name": "rogue_texture",
+      "packId": "kaykit-adventurers-2-0-free",
+      "packRoot": "media/3D_Assets/KayKit_Adventurers_2.0_FREE",
+      "path": "media/3D_Assets/KayKit_Adventurers_2.0_FREE/Assets/gltf/rogue_texture.png",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 15026,
+      "source": {
+        "blobSha": "4b04827ce382cc7c5dbe2f52bdc8d25dc522c3ef",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/KayKit_Adventurers_2.0_FREE/Assets/gltf/rogue_texture.png",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/KayKit_Adventurers_2.0_FREE/Assets/gltf/rogue_texture.png",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/KayKit_Adventurers_2.0_FREE/Assets/gltf/shield_badge.gltf",
+      "collectionPath": "Assets",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/KayKit_Adventurers_2.0_FREE/Assets/gltf",
+      "format": "gltf",
+      "kind": "model-3d",
+      "name": "shield_badge",
+      "packId": "kaykit-adventurers-2-0-free",
+      "packRoot": "media/3D_Assets/KayKit_Adventurers_2.0_FREE",
+      "path": "media/3D_Assets/KayKit_Adventurers_2.0_FREE/Assets/gltf/shield_badge.gltf",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_Adventurers_2.0_FREE/Assets/gltf/knight_texture.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "knight_texture.png"
+          },
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_Adventurers_2.0_FREE/Assets/gltf/shield_badge.bin",
+            "provenance": "file-explicit",
+            "reference": "buffers[0].uri",
+            "role": "buffer",
+            "status": "ok",
+            "uri": "shield_badge.bin"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 3072,
+      "source": {
+        "blobSha": "15694a5b032283e6634c31f45c388d06cdcb0c5b",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/KayKit_Adventurers_2.0_FREE/Assets/gltf/shield_badge.gltf",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/KayKit_Adventurers_2.0_FREE/Assets/gltf/shield_badge.gltf",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/KayKit_Adventurers_2.0_FREE/Assets/gltf/shield_badge_color.gltf",
+      "collectionPath": "Assets",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/KayKit_Adventurers_2.0_FREE/Assets/gltf",
+      "format": "gltf",
+      "kind": "model-3d",
+      "name": "shield_badge_color",
+      "packId": "kaykit-adventurers-2-0-free",
+      "packRoot": "media/3D_Assets/KayKit_Adventurers_2.0_FREE",
+      "path": "media/3D_Assets/KayKit_Adventurers_2.0_FREE/Assets/gltf/shield_badge_color.gltf",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_Adventurers_2.0_FREE/Assets/gltf/knight_texture.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "knight_texture.png"
+          },
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_Adventurers_2.0_FREE/Assets/gltf/shield_badge_color.bin",
+            "provenance": "file-explicit",
+            "reference": "buffers[0].uri",
+            "role": "buffer",
+            "status": "ok",
+            "uri": "shield_badge_color.bin"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 3090,
+      "source": {
+        "blobSha": "2153caf8b2182d0b80cc7a7be385e30da7044121",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/KayKit_Adventurers_2.0_FREE/Assets/gltf/shield_badge_color.gltf",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/KayKit_Adventurers_2.0_FREE/Assets/gltf/shield_badge_color.gltf",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/KayKit_Adventurers_2.0_FREE/Assets/gltf/shield_round.gltf",
+      "collectionPath": "Assets",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/KayKit_Adventurers_2.0_FREE/Assets/gltf",
+      "format": "gltf",
+      "kind": "model-3d",
+      "name": "shield_round",
+      "packId": "kaykit-adventurers-2-0-free",
+      "packRoot": "media/3D_Assets/KayKit_Adventurers_2.0_FREE",
+      "path": "media/3D_Assets/KayKit_Adventurers_2.0_FREE/Assets/gltf/shield_round.gltf",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_Adventurers_2.0_FREE/Assets/gltf/knight_texture.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "knight_texture.png"
+          },
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_Adventurers_2.0_FREE/Assets/gltf/shield_round.bin",
+            "provenance": "file-explicit",
+            "reference": "buffers[0].uri",
+            "role": "buffer",
+            "status": "ok",
+            "uri": "shield_round.bin"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 3075,
+      "source": {
+        "blobSha": "a01f98bec26d1c0f4d7618ee564fd00292c93f1f",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/KayKit_Adventurers_2.0_FREE/Assets/gltf/shield_round.gltf",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/KayKit_Adventurers_2.0_FREE/Assets/gltf/shield_round.gltf",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/KayKit_Adventurers_2.0_FREE/Assets/gltf/shield_round_barbarian.gltf",
+      "collectionPath": "Assets",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/KayKit_Adventurers_2.0_FREE/Assets/gltf",
+      "format": "gltf",
+      "kind": "model-3d",
+      "name": "shield_round_barbarian",
+      "packId": "kaykit-adventurers-2-0-free",
+      "packRoot": "media/3D_Assets/KayKit_Adventurers_2.0_FREE",
+      "path": "media/3D_Assets/KayKit_Adventurers_2.0_FREE/Assets/gltf/shield_round_barbarian.gltf",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_Adventurers_2.0_FREE/Assets/gltf/barbarian_texture.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "barbarian_texture.png"
+          },
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_Adventurers_2.0_FREE/Assets/gltf/shield_round_barbarian.bin",
+            "provenance": "file-explicit",
+            "reference": "buffers[0].uri",
+            "role": "buffer",
+            "status": "ok",
+            "uri": "shield_round_barbarian.bin"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 3114,
+      "source": {
+        "blobSha": "277be6adac946ee61035ad81dd9b569cf521a3f7",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/KayKit_Adventurers_2.0_FREE/Assets/gltf/shield_round_barbarian.gltf",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/KayKit_Adventurers_2.0_FREE/Assets/gltf/shield_round_barbarian.gltf",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/KayKit_Adventurers_2.0_FREE/Assets/gltf/shield_round_color.gltf",
+      "collectionPath": "Assets",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/KayKit_Adventurers_2.0_FREE/Assets/gltf",
+      "format": "gltf",
+      "kind": "model-3d",
+      "name": "shield_round_color",
+      "packId": "kaykit-adventurers-2-0-free",
+      "packRoot": "media/3D_Assets/KayKit_Adventurers_2.0_FREE",
+      "path": "media/3D_Assets/KayKit_Adventurers_2.0_FREE/Assets/gltf/shield_round_color.gltf",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_Adventurers_2.0_FREE/Assets/gltf/knight_texture.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "knight_texture.png"
+          },
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_Adventurers_2.0_FREE/Assets/gltf/shield_round_color.bin",
+            "provenance": "file-explicit",
+            "reference": "buffers[0].uri",
+            "role": "buffer",
+            "status": "ok",
+            "uri": "shield_round_color.bin"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 3093,
+      "source": {
+        "blobSha": "5173a9620ae2e2bb9b2093d6a852724844883253",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/KayKit_Adventurers_2.0_FREE/Assets/gltf/shield_round_color.gltf",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/KayKit_Adventurers_2.0_FREE/Assets/gltf/shield_round_color.gltf",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/KayKit_Adventurers_2.0_FREE/Assets/gltf/shield_spikes.gltf",
+      "collectionPath": "Assets",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/KayKit_Adventurers_2.0_FREE/Assets/gltf",
+      "format": "gltf",
+      "kind": "model-3d",
+      "name": "shield_spikes",
+      "packId": "kaykit-adventurers-2-0-free",
+      "packRoot": "media/3D_Assets/KayKit_Adventurers_2.0_FREE",
+      "path": "media/3D_Assets/KayKit_Adventurers_2.0_FREE/Assets/gltf/shield_spikes.gltf",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_Adventurers_2.0_FREE/Assets/gltf/knight_texture.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "knight_texture.png"
+          },
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_Adventurers_2.0_FREE/Assets/gltf/shield_spikes.bin",
+            "provenance": "file-explicit",
+            "reference": "buffers[0].uri",
+            "role": "buffer",
+            "status": "ok",
+            "uri": "shield_spikes.bin"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 3076,
+      "source": {
+        "blobSha": "ea128db8f5fc5cc8a24027162ae2f4dee7f6e31b",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/KayKit_Adventurers_2.0_FREE/Assets/gltf/shield_spikes.gltf",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/KayKit_Adventurers_2.0_FREE/Assets/gltf/shield_spikes.gltf",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/KayKit_Adventurers_2.0_FREE/Assets/gltf/shield_spikes_color.gltf",
+      "collectionPath": "Assets",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/KayKit_Adventurers_2.0_FREE/Assets/gltf",
+      "format": "gltf",
+      "kind": "model-3d",
+      "name": "shield_spikes_color",
+      "packId": "kaykit-adventurers-2-0-free",
+      "packRoot": "media/3D_Assets/KayKit_Adventurers_2.0_FREE",
+      "path": "media/3D_Assets/KayKit_Adventurers_2.0_FREE/Assets/gltf/shield_spikes_color.gltf",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_Adventurers_2.0_FREE/Assets/gltf/knight_texture.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "knight_texture.png"
+          },
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_Adventurers_2.0_FREE/Assets/gltf/shield_spikes_color.bin",
+            "provenance": "file-explicit",
+            "reference": "buffers[0].uri",
+            "role": "buffer",
+            "status": "ok",
+            "uri": "shield_spikes_color.bin"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 3094,
+      "source": {
+        "blobSha": "36e00261e5b6aa85312b60c864d5b0d5da1306fb",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/KayKit_Adventurers_2.0_FREE/Assets/gltf/shield_spikes_color.gltf",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/KayKit_Adventurers_2.0_FREE/Assets/gltf/shield_spikes_color.gltf",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/KayKit_Adventurers_2.0_FREE/Assets/gltf/shield_square.gltf",
+      "collectionPath": "Assets",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/KayKit_Adventurers_2.0_FREE/Assets/gltf",
+      "format": "gltf",
+      "kind": "model-3d",
+      "name": "shield_square",
+      "packId": "kaykit-adventurers-2-0-free",
+      "packRoot": "media/3D_Assets/KayKit_Adventurers_2.0_FREE",
+      "path": "media/3D_Assets/KayKit_Adventurers_2.0_FREE/Assets/gltf/shield_square.gltf",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_Adventurers_2.0_FREE/Assets/gltf/knight_texture.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "knight_texture.png"
+          },
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_Adventurers_2.0_FREE/Assets/gltf/shield_square.bin",
+            "provenance": "file-explicit",
+            "reference": "buffers[0].uri",
+            "role": "buffer",
+            "status": "ok",
+            "uri": "shield_square.bin"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 3074,
+      "source": {
+        "blobSha": "d1e8d9e2380f5152728a26f96d31316a9c5a93cc",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/KayKit_Adventurers_2.0_FREE/Assets/gltf/shield_square.gltf",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/KayKit_Adventurers_2.0_FREE/Assets/gltf/shield_square.gltf",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/KayKit_Adventurers_2.0_FREE/Assets/gltf/shield_square_color.gltf",
+      "collectionPath": "Assets",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/KayKit_Adventurers_2.0_FREE/Assets/gltf",
+      "format": "gltf",
+      "kind": "model-3d",
+      "name": "shield_square_color",
+      "packId": "kaykit-adventurers-2-0-free",
+      "packRoot": "media/3D_Assets/KayKit_Adventurers_2.0_FREE",
+      "path": "media/3D_Assets/KayKit_Adventurers_2.0_FREE/Assets/gltf/shield_square_color.gltf",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_Adventurers_2.0_FREE/Assets/gltf/knight_texture.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "knight_texture.png"
+          },
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_Adventurers_2.0_FREE/Assets/gltf/shield_square_color.bin",
+            "provenance": "file-explicit",
+            "reference": "buffers[0].uri",
+            "role": "buffer",
+            "status": "ok",
+            "uri": "shield_square_color.bin"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 3092,
+      "source": {
+        "blobSha": "16b15d6244170417b2999322b09f6723bafb2652",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/KayKit_Adventurers_2.0_FREE/Assets/gltf/shield_square_color.gltf",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/KayKit_Adventurers_2.0_FREE/Assets/gltf/shield_square_color.gltf",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/KayKit_Adventurers_2.0_FREE/Assets/gltf/smokebomb.gltf",
+      "collectionPath": "Assets",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/KayKit_Adventurers_2.0_FREE/Assets/gltf",
+      "format": "gltf",
+      "kind": "model-3d",
+      "name": "smokebomb",
+      "packId": "kaykit-adventurers-2-0-free",
+      "packRoot": "media/3D_Assets/KayKit_Adventurers_2.0_FREE",
+      "path": "media/3D_Assets/KayKit_Adventurers_2.0_FREE/Assets/gltf/smokebomb.gltf",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_Adventurers_2.0_FREE/Assets/gltf/rogue_texture.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "rogue_texture.png"
+          },
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_Adventurers_2.0_FREE/Assets/gltf/smokebomb.bin",
+            "provenance": "file-explicit",
+            "reference": "buffers[0].uri",
+            "role": "buffer",
+            "status": "ok",
+            "uri": "smokebomb.bin"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 3062,
+      "source": {
+        "blobSha": "1fee7ed3a0948ba14645345a4ff0518c5fd30e77",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/KayKit_Adventurers_2.0_FREE/Assets/gltf/smokebomb.gltf",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/KayKit_Adventurers_2.0_FREE/Assets/gltf/smokebomb.gltf",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/KayKit_Adventurers_2.0_FREE/Assets/gltf/spellbook_closed.gltf",
+      "collectionPath": "Assets",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/KayKit_Adventurers_2.0_FREE/Assets/gltf",
+      "format": "gltf",
+      "kind": "model-3d",
+      "name": "spellbook_closed",
+      "packId": "kaykit-adventurers-2-0-free",
+      "packRoot": "media/3D_Assets/KayKit_Adventurers_2.0_FREE",
+      "path": "media/3D_Assets/KayKit_Adventurers_2.0_FREE/Assets/gltf/spellbook_closed.gltf",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_Adventurers_2.0_FREE/Assets/gltf/mage_texture.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "mage_texture.png"
+          },
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_Adventurers_2.0_FREE/Assets/gltf/spellbook_closed.bin",
+            "provenance": "file-explicit",
+            "reference": "buffers[0].uri",
+            "role": "buffer",
+            "status": "ok",
+            "uri": "spellbook_closed.bin"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 3081,
+      "source": {
+        "blobSha": "7c0aaa0ec28894d80bb96c40925234c9605b7c57",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/KayKit_Adventurers_2.0_FREE/Assets/gltf/spellbook_closed.gltf",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/KayKit_Adventurers_2.0_FREE/Assets/gltf/spellbook_closed.gltf",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/KayKit_Adventurers_2.0_FREE/Assets/gltf/spellbook_open.gltf",
+      "collectionPath": "Assets",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/KayKit_Adventurers_2.0_FREE/Assets/gltf",
+      "format": "gltf",
+      "kind": "model-3d",
+      "name": "spellbook_open",
+      "packId": "kaykit-adventurers-2-0-free",
+      "packRoot": "media/3D_Assets/KayKit_Adventurers_2.0_FREE",
+      "path": "media/3D_Assets/KayKit_Adventurers_2.0_FREE/Assets/gltf/spellbook_open.gltf",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_Adventurers_2.0_FREE/Assets/gltf/mage_texture.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "mage_texture.png"
+          },
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_Adventurers_2.0_FREE/Assets/gltf/spellbook_open.bin",
+            "provenance": "file-explicit",
+            "reference": "buffers[0].uri",
+            "role": "buffer",
+            "status": "ok",
+            "uri": "spellbook_open.bin"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 3072,
+      "source": {
+        "blobSha": "e6a4a50134b803451f67f876177c69818eaa3245",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/KayKit_Adventurers_2.0_FREE/Assets/gltf/spellbook_open.gltf",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/KayKit_Adventurers_2.0_FREE/Assets/gltf/spellbook_open.gltf",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/KayKit_Adventurers_2.0_FREE/Assets/gltf/staff.gltf",
+      "collectionPath": "Assets",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/KayKit_Adventurers_2.0_FREE/Assets/gltf",
+      "format": "gltf",
+      "kind": "model-3d",
+      "name": "staff",
+      "packId": "kaykit-adventurers-2-0-free",
+      "packRoot": "media/3D_Assets/KayKit_Adventurers_2.0_FREE",
+      "path": "media/3D_Assets/KayKit_Adventurers_2.0_FREE/Assets/gltf/staff.gltf",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_Adventurers_2.0_FREE/Assets/gltf/mage_texture.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "mage_texture.png"
+          },
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_Adventurers_2.0_FREE/Assets/gltf/staff.bin",
+            "provenance": "file-explicit",
+            "reference": "buffers[0].uri",
+            "role": "buffer",
+            "status": "ok",
+            "uri": "staff.bin"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 3046,
+      "source": {
+        "blobSha": "0d2ffdf19a85d4c29baee182de25f70fc75c467f",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/KayKit_Adventurers_2.0_FREE/Assets/gltf/staff.gltf",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/KayKit_Adventurers_2.0_FREE/Assets/gltf/staff.gltf",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/KayKit_Adventurers_2.0_FREE/Assets/gltf/sword_1handed.gltf",
+      "collectionPath": "Assets",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/KayKit_Adventurers_2.0_FREE/Assets/gltf",
+      "format": "gltf",
+      "kind": "model-3d",
+      "name": "sword_1handed",
+      "packId": "kaykit-adventurers-2-0-free",
+      "packRoot": "media/3D_Assets/KayKit_Adventurers_2.0_FREE",
+      "path": "media/3D_Assets/KayKit_Adventurers_2.0_FREE/Assets/gltf/sword_1handed.gltf",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_Adventurers_2.0_FREE/Assets/gltf/knight_texture.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "knight_texture.png"
+          },
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_Adventurers_2.0_FREE/Assets/gltf/sword_1handed.bin",
+            "provenance": "file-explicit",
+            "reference": "buffers[0].uri",
+            "role": "buffer",
+            "status": "ok",
+            "uri": "sword_1handed.bin"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 3075,
+      "source": {
+        "blobSha": "6207f85db407ee6db2f788810564320f9ee234d5",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/KayKit_Adventurers_2.0_FREE/Assets/gltf/sword_1handed.gltf",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/KayKit_Adventurers_2.0_FREE/Assets/gltf/sword_1handed.gltf",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/KayKit_Adventurers_2.0_FREE/Assets/gltf/sword_2handed.gltf",
+      "collectionPath": "Assets",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/KayKit_Adventurers_2.0_FREE/Assets/gltf",
+      "format": "gltf",
+      "kind": "model-3d",
+      "name": "sword_2handed",
+      "packId": "kaykit-adventurers-2-0-free",
+      "packRoot": "media/3D_Assets/KayKit_Adventurers_2.0_FREE",
+      "path": "media/3D_Assets/KayKit_Adventurers_2.0_FREE/Assets/gltf/sword_2handed.gltf",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_Adventurers_2.0_FREE/Assets/gltf/knight_texture.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "knight_texture.png"
+          },
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_Adventurers_2.0_FREE/Assets/gltf/sword_2handed.bin",
+            "provenance": "file-explicit",
+            "reference": "buffers[0].uri",
+            "role": "buffer",
+            "status": "ok",
+            "uri": "sword_2handed.bin"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 3076,
+      "source": {
+        "blobSha": "30796b1f7ac5ad2ddc7d972e651a3427f8bd6515",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/KayKit_Adventurers_2.0_FREE/Assets/gltf/sword_2handed.gltf",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/KayKit_Adventurers_2.0_FREE/Assets/gltf/sword_2handed.gltf",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/KayKit_Adventurers_2.0_FREE/Assets/gltf/sword_2handed_color.gltf",
+      "collectionPath": "Assets",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/KayKit_Adventurers_2.0_FREE/Assets/gltf",
+      "format": "gltf",
+      "kind": "model-3d",
+      "name": "sword_2handed_color",
+      "packId": "kaykit-adventurers-2-0-free",
+      "packRoot": "media/3D_Assets/KayKit_Adventurers_2.0_FREE",
+      "path": "media/3D_Assets/KayKit_Adventurers_2.0_FREE/Assets/gltf/sword_2handed_color.gltf",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_Adventurers_2.0_FREE/Assets/gltf/knight_texture.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "knight_texture.png"
+          },
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_Adventurers_2.0_FREE/Assets/gltf/sword_2handed_color.bin",
+            "provenance": "file-explicit",
+            "reference": "buffers[0].uri",
+            "role": "buffer",
+            "status": "ok",
+            "uri": "sword_2handed_color.bin"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 3094,
+      "source": {
+        "blobSha": "35d7499b8d078986cdfa2c2a3634ca2c1d944983",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/KayKit_Adventurers_2.0_FREE/Assets/gltf/sword_2handed_color.gltf",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/KayKit_Adventurers_2.0_FREE/Assets/gltf/sword_2handed_color.gltf",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/KayKit_Adventurers_2.0_FREE/Assets/gltf/wand.gltf",
+      "collectionPath": "Assets",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/KayKit_Adventurers_2.0_FREE/Assets/gltf",
+      "format": "gltf",
+      "kind": "model-3d",
+      "name": "wand",
+      "packId": "kaykit-adventurers-2-0-free",
+      "packRoot": "media/3D_Assets/KayKit_Adventurers_2.0_FREE",
+      "path": "media/3D_Assets/KayKit_Adventurers_2.0_FREE/Assets/gltf/wand.gltf",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_Adventurers_2.0_FREE/Assets/gltf/mage_texture.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "mage_texture.png"
+          },
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_Adventurers_2.0_FREE/Assets/gltf/wand.bin",
+            "provenance": "file-explicit",
+            "reference": "buffers[0].uri",
+            "role": "buffer",
+            "status": "ok",
+            "uri": "wand.bin"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 3042,
+      "source": {
+        "blobSha": "0721b4d001f656bca98313ecc7c736c3bf626440",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/KayKit_Adventurers_2.0_FREE/Assets/gltf/wand.gltf",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/KayKit_Adventurers_2.0_FREE/Assets/gltf/wand.gltf",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/KayKit_Adventurers_2.0_FREE/Characters/gltf/Barbarian.glb",
+      "collectionPath": "Characters",
+      "dependencyStatus": "embedded",
+      "folder": "media/3D_Assets/KayKit_Adventurers_2.0_FREE/Characters/gltf",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "Barbarian",
+      "packId": "kaykit-adventurers-2-0-free",
+      "packRoot": "media/3D_Assets/KayKit_Adventurers_2.0_FREE",
+      "path": "media/3D_Assets/KayKit_Adventurers_2.0_FREE/Characters/gltf/Barbarian.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": []
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 386648,
+      "source": {
+        "blobSha": "d06efc99d5fe8541a31affdd0a25d0c519980c89",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/KayKit_Adventurers_2.0_FREE/Characters/gltf/Barbarian.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/KayKit_Adventurers_2.0_FREE/Characters/gltf/Barbarian.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/KayKit_Adventurers_2.0_FREE/Characters/gltf/Knight.glb",
+      "collectionPath": "Characters",
+      "dependencyStatus": "embedded",
+      "folder": "media/3D_Assets/KayKit_Adventurers_2.0_FREE/Characters/gltf",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "Knight",
+      "packId": "kaykit-adventurers-2-0-free",
+      "packRoot": "media/3D_Assets/KayKit_Adventurers_2.0_FREE",
+      "path": "media/3D_Assets/KayKit_Adventurers_2.0_FREE/Characters/gltf/Knight.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": []
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 341688,
+      "source": {
+        "blobSha": "793ac234dcc0509222b073a314d2ab5f18551797",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/KayKit_Adventurers_2.0_FREE/Characters/gltf/Knight.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/KayKit_Adventurers_2.0_FREE/Characters/gltf/Knight.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/KayKit_Adventurers_2.0_FREE/Characters/gltf/Mage.glb",
+      "collectionPath": "Characters",
+      "dependencyStatus": "embedded",
+      "folder": "media/3D_Assets/KayKit_Adventurers_2.0_FREE/Characters/gltf",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "Mage",
+      "packId": "kaykit-adventurers-2-0-free",
+      "packRoot": "media/3D_Assets/KayKit_Adventurers_2.0_FREE",
+      "path": "media/3D_Assets/KayKit_Adventurers_2.0_FREE/Characters/gltf/Mage.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": []
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 352472,
+      "source": {
+        "blobSha": "66eac745c7d4360e463bf4c4e5e117e4c0c58b1e",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/KayKit_Adventurers_2.0_FREE/Characters/gltf/Mage.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/KayKit_Adventurers_2.0_FREE/Characters/gltf/Mage.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/KayKit_Adventurers_2.0_FREE/Characters/gltf/Ranger.glb",
+      "collectionPath": "Characters",
+      "dependencyStatus": "embedded",
+      "folder": "media/3D_Assets/KayKit_Adventurers_2.0_FREE/Characters/gltf",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "Ranger",
+      "packId": "kaykit-adventurers-2-0-free",
+      "packRoot": "media/3D_Assets/KayKit_Adventurers_2.0_FREE",
+      "path": "media/3D_Assets/KayKit_Adventurers_2.0_FREE/Characters/gltf/Ranger.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": []
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 484712,
+      "source": {
+        "blobSha": "8edaf04430036130c3a7fcb6767049aac3c3f3a7",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/KayKit_Adventurers_2.0_FREE/Characters/gltf/Ranger.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/KayKit_Adventurers_2.0_FREE/Characters/gltf/Ranger.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/KayKit_Adventurers_2.0_FREE/Characters/gltf/Rogue.glb",
+      "collectionPath": "Characters",
+      "dependencyStatus": "embedded",
+      "folder": "media/3D_Assets/KayKit_Adventurers_2.0_FREE/Characters/gltf",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "Rogue",
+      "packId": "kaykit-adventurers-2-0-free",
+      "packRoot": "media/3D_Assets/KayKit_Adventurers_2.0_FREE",
+      "path": "media/3D_Assets/KayKit_Adventurers_2.0_FREE/Characters/gltf/Rogue.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": []
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 409188,
+      "source": {
+        "blobSha": "6f28b937ec57b06815240fbf4106c58e76a74c0c",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/KayKit_Adventurers_2.0_FREE/Characters/gltf/Rogue.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/KayKit_Adventurers_2.0_FREE/Characters/gltf/Rogue.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/KayKit_Adventurers_2.0_FREE/Characters/gltf/Rogue_Hooded.glb",
+      "collectionPath": "Characters",
+      "dependencyStatus": "embedded",
+      "folder": "media/3D_Assets/KayKit_Adventurers_2.0_FREE/Characters/gltf",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "Rogue_Hooded",
+      "packId": "kaykit-adventurers-2-0-free",
+      "packRoot": "media/3D_Assets/KayKit_Adventurers_2.0_FREE",
+      "path": "media/3D_Assets/KayKit_Adventurers_2.0_FREE/Characters/gltf/Rogue_Hooded.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": []
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 381432,
+      "source": {
+        "blobSha": "7063f6cbca7fd2445c9b804a9f157c11c0e7b0f2",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/KayKit_Adventurers_2.0_FREE/Characters/gltf/Rogue_Hooded.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/KayKit_Adventurers_2.0_FREE/Characters/gltf/Rogue_Hooded.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/KayKit_Adventurers_2.0_FREE/Characters/gltf/barbarian_texture.png",
+      "collectionPath": "Characters",
+      "folder": "media/3D_Assets/KayKit_Adventurers_2.0_FREE/Characters/gltf",
+      "format": "png",
+      "hints": {
+        "textureCandidate": false,
+        "textureCandidateProvenance": "generated-structural"
+      },
+      "kind": "image-2d",
+      "name": "barbarian_texture",
+      "packId": "kaykit-adventurers-2-0-free",
+      "packRoot": "media/3D_Assets/KayKit_Adventurers_2.0_FREE",
+      "path": "media/3D_Assets/KayKit_Adventurers_2.0_FREE/Characters/gltf/barbarian_texture.png",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 14424,
+      "source": {
+        "blobSha": "871a6599759d1367a8d0e50fdbb5d3a4daca0de9",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/KayKit_Adventurers_2.0_FREE/Characters/gltf/barbarian_texture.png",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/KayKit_Adventurers_2.0_FREE/Characters/gltf/barbarian_texture.png",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/KayKit_Adventurers_2.0_FREE/Characters/gltf/knight_texture.png",
+      "collectionPath": "Characters",
+      "folder": "media/3D_Assets/KayKit_Adventurers_2.0_FREE/Characters/gltf",
+      "format": "png",
+      "hints": {
+        "textureCandidate": false,
+        "textureCandidateProvenance": "generated-structural"
+      },
+      "kind": "image-2d",
+      "name": "knight_texture",
+      "packId": "kaykit-adventurers-2-0-free",
+      "packRoot": "media/3D_Assets/KayKit_Adventurers_2.0_FREE",
+      "path": "media/3D_Assets/KayKit_Adventurers_2.0_FREE/Characters/gltf/knight_texture.png",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 12914,
+      "source": {
+        "blobSha": "a75dfe492fec4c3f9bfd18a381c2838d9eea00e8",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/KayKit_Adventurers_2.0_FREE/Characters/gltf/knight_texture.png",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/KayKit_Adventurers_2.0_FREE/Characters/gltf/knight_texture.png",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/KayKit_Adventurers_2.0_FREE/Characters/gltf/mage_texture.png",
+      "collectionPath": "Characters",
+      "folder": "media/3D_Assets/KayKit_Adventurers_2.0_FREE/Characters/gltf",
+      "format": "png",
+      "hints": {
+        "textureCandidate": false,
+        "textureCandidateProvenance": "generated-structural"
+      },
+      "kind": "image-2d",
+      "name": "mage_texture",
+      "packId": "kaykit-adventurers-2-0-free",
+      "packRoot": "media/3D_Assets/KayKit_Adventurers_2.0_FREE",
+      "path": "media/3D_Assets/KayKit_Adventurers_2.0_FREE/Characters/gltf/mage_texture.png",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 14740,
+      "source": {
+        "blobSha": "3c1b0dbb0856c36aff8e3e8836ab335c6ff7354d",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/KayKit_Adventurers_2.0_FREE/Characters/gltf/mage_texture.png",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/KayKit_Adventurers_2.0_FREE/Characters/gltf/mage_texture.png",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/KayKit_Adventurers_2.0_FREE/Characters/gltf/ranger_texture.png",
+      "collectionPath": "Characters",
+      "folder": "media/3D_Assets/KayKit_Adventurers_2.0_FREE/Characters/gltf",
+      "format": "png",
+      "hints": {
+        "textureCandidate": false,
+        "textureCandidateProvenance": "generated-structural"
+      },
+      "kind": "image-2d",
+      "name": "ranger_texture",
+      "packId": "kaykit-adventurers-2-0-free",
+      "packRoot": "media/3D_Assets/KayKit_Adventurers_2.0_FREE",
+      "path": "media/3D_Assets/KayKit_Adventurers_2.0_FREE/Characters/gltf/ranger_texture.png",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 13248,
+      "source": {
+        "blobSha": "17458d889de97785146265d3bf0d2566cf2f4bd8",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/KayKit_Adventurers_2.0_FREE/Characters/gltf/ranger_texture.png",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/KayKit_Adventurers_2.0_FREE/Characters/gltf/ranger_texture.png",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/KayKit_Adventurers_2.0_FREE/Characters/gltf/rogue_texture.png",
+      "collectionPath": "Characters",
+      "folder": "media/3D_Assets/KayKit_Adventurers_2.0_FREE/Characters/gltf",
+      "format": "png",
+      "hints": {
+        "textureCandidate": false,
+        "textureCandidateProvenance": "generated-structural"
+      },
+      "kind": "image-2d",
+      "name": "rogue_texture",
+      "packId": "kaykit-adventurers-2-0-free",
+      "packRoot": "media/3D_Assets/KayKit_Adventurers_2.0_FREE",
+      "path": "media/3D_Assets/KayKit_Adventurers_2.0_FREE/Characters/gltf/rogue_texture.png",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 15026,
+      "source": {
+        "blobSha": "4b04827ce382cc7c5dbe2f52bdc8d25dc522c3ef",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/KayKit_Adventurers_2.0_FREE/Characters/gltf/rogue_texture.png",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/KayKit_Adventurers_2.0_FREE/Characters/gltf/rogue_texture.png",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/KayKit_Adventurers_2.0_FREE/Samples/barbarian.png",
+      "collectionPath": "Samples",
+      "folder": "media/3D_Assets/KayKit_Adventurers_2.0_FREE/Samples",
+      "format": "png",
+      "hints": {
+        "textureCandidate": false,
+        "textureCandidateProvenance": "generated-structural"
+      },
+      "kind": "image-2d",
+      "name": "barbarian",
+      "packId": "kaykit-adventurers-2-0-free",
+      "packRoot": "media/3D_Assets/KayKit_Adventurers_2.0_FREE",
+      "path": "media/3D_Assets/KayKit_Adventurers_2.0_FREE/Samples/barbarian.png",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 634755,
+      "source": {
+        "blobSha": "840dcf1c2c05bc79d78d71cfcdbb129ca6a2e2bd",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/KayKit_Adventurers_2.0_FREE/Samples/barbarian.png",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/KayKit_Adventurers_2.0_FREE/Samples/barbarian.png",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/KayKit_Adventurers_2.0_FREE/Samples/barbarian_Large.png",
+      "collectionPath": "Samples",
+      "folder": "media/3D_Assets/KayKit_Adventurers_2.0_FREE/Samples",
+      "format": "png",
+      "hints": {
+        "textureCandidate": false,
+        "textureCandidateProvenance": "generated-structural"
+      },
+      "kind": "image-2d",
+      "name": "barbarian_Large",
+      "packId": "kaykit-adventurers-2-0-free",
+      "packRoot": "media/3D_Assets/KayKit_Adventurers_2.0_FREE",
+      "path": "media/3D_Assets/KayKit_Adventurers_2.0_FREE/Samples/barbarian_Large.png",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 948636,
+      "source": {
+        "blobSha": "39aa6cbceb5106a489bf449fabe5c59c4b0216ca",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/KayKit_Adventurers_2.0_FREE/Samples/barbarian_Large.png",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/KayKit_Adventurers_2.0_FREE/Samples/barbarian_Large.png",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/KayKit_Adventurers_2.0_FREE/Samples/druid.png",
+      "collectionPath": "Samples",
+      "folder": "media/3D_Assets/KayKit_Adventurers_2.0_FREE/Samples",
+      "format": "png",
+      "hints": {
+        "textureCandidate": false,
+        "textureCandidateProvenance": "generated-structural"
+      },
+      "kind": "image-2d",
+      "name": "druid",
+      "packId": "kaykit-adventurers-2-0-free",
+      "packRoot": "media/3D_Assets/KayKit_Adventurers_2.0_FREE",
+      "path": "media/3D_Assets/KayKit_Adventurers_2.0_FREE/Samples/druid.png",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 742457,
+      "source": {
+        "blobSha": "9dafb317fa0f556a0bc2adbd70cdf89d0cb991ef",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/KayKit_Adventurers_2.0_FREE/Samples/druid.png",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/KayKit_Adventurers_2.0_FREE/Samples/druid.png",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/KayKit_Adventurers_2.0_FREE/Samples/engineer.png",
+      "collectionPath": "Samples",
+      "folder": "media/3D_Assets/KayKit_Adventurers_2.0_FREE/Samples",
+      "format": "png",
+      "hints": {
+        "textureCandidate": false,
+        "textureCandidateProvenance": "generated-structural"
+      },
+      "kind": "image-2d",
+      "name": "engineer",
+      "packId": "kaykit-adventurers-2-0-free",
+      "packRoot": "media/3D_Assets/KayKit_Adventurers_2.0_FREE",
+      "path": "media/3D_Assets/KayKit_Adventurers_2.0_FREE/Samples/engineer.png",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 798817,
+      "source": {
+        "blobSha": "4e3f7ac575ec9627bdf175f6fd19cf7915a0458b",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/KayKit_Adventurers_2.0_FREE/Samples/engineer.png",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/KayKit_Adventurers_2.0_FREE/Samples/engineer.png",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/KayKit_Adventurers_2.0_FREE/Samples/knight.png",
+      "collectionPath": "Samples",
+      "folder": "media/3D_Assets/KayKit_Adventurers_2.0_FREE/Samples",
+      "format": "png",
+      "hints": {
+        "textureCandidate": false,
+        "textureCandidateProvenance": "generated-structural"
+      },
+      "kind": "image-2d",
+      "name": "knight",
+      "packId": "kaykit-adventurers-2-0-free",
+      "packRoot": "media/3D_Assets/KayKit_Adventurers_2.0_FREE",
+      "path": "media/3D_Assets/KayKit_Adventurers_2.0_FREE/Samples/knight.png",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 806330,
+      "source": {
+        "blobSha": "c152496503da6fa7140f46f788805e82e91c8c31",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/KayKit_Adventurers_2.0_FREE/Samples/knight.png",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/KayKit_Adventurers_2.0_FREE/Samples/knight.png",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/KayKit_Adventurers_2.0_FREE/Samples/mage.png",
+      "collectionPath": "Samples",
+      "folder": "media/3D_Assets/KayKit_Adventurers_2.0_FREE/Samples",
+      "format": "png",
+      "hints": {
+        "textureCandidate": false,
+        "textureCandidateProvenance": "generated-structural"
+      },
+      "kind": "image-2d",
+      "name": "mage",
+      "packId": "kaykit-adventurers-2-0-free",
+      "packRoot": "media/3D_Assets/KayKit_Adventurers_2.0_FREE",
+      "path": "media/3D_Assets/KayKit_Adventurers_2.0_FREE/Samples/mage.png",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 626427,
+      "source": {
+        "blobSha": "ad1c5dbd60d3cc7cb7c3256a867bcf009fe1a293",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/KayKit_Adventurers_2.0_FREE/Samples/mage.png",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/KayKit_Adventurers_2.0_FREE/Samples/mage.png",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/KayKit_Adventurers_2.0_FREE/Samples/ranger.png",
+      "collectionPath": "Samples",
+      "folder": "media/3D_Assets/KayKit_Adventurers_2.0_FREE/Samples",
+      "format": "png",
+      "hints": {
+        "textureCandidate": false,
+        "textureCandidateProvenance": "generated-structural"
+      },
+      "kind": "image-2d",
+      "name": "ranger",
+      "packId": "kaykit-adventurers-2-0-free",
+      "packRoot": "media/3D_Assets/KayKit_Adventurers_2.0_FREE",
+      "path": "media/3D_Assets/KayKit_Adventurers_2.0_FREE/Samples/ranger.png",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 1377076,
+      "source": {
+        "blobSha": "60e96895f172601a3eca52bd4d0dc457ce726436",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/KayKit_Adventurers_2.0_FREE/Samples/ranger.png",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/KayKit_Adventurers_2.0_FREE/Samples/ranger.png",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/KayKit_Adventurers_2.0_FREE/Samples/rogue.png",
+      "collectionPath": "Samples",
+      "folder": "media/3D_Assets/KayKit_Adventurers_2.0_FREE/Samples",
+      "format": "png",
+      "hints": {
+        "textureCandidate": false,
+        "textureCandidateProvenance": "generated-structural"
+      },
+      "kind": "image-2d",
+      "name": "rogue",
+      "packId": "kaykit-adventurers-2-0-free",
+      "packRoot": "media/3D_Assets/KayKit_Adventurers_2.0_FREE",
+      "path": "media/3D_Assets/KayKit_Adventurers_2.0_FREE/Samples/rogue.png",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 627469,
+      "source": {
+        "blobSha": "39598f10c501edfb2737c56ac813874cd98669b0",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/KayKit_Adventurers_2.0_FREE/Samples/rogue.png",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/KayKit_Adventurers_2.0_FREE/Samples/rogue.png",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/KayKit_Adventurers_2.0_FREE/Textures/barbarian_texture.png",
+      "collectionPath": "Textures",
+      "folder": "media/3D_Assets/KayKit_Adventurers_2.0_FREE/Textures",
+      "format": "png",
+      "hints": {
+        "textureCandidate": true,
+        "textureCandidateProvenance": "generated-structural"
+      },
+      "kind": "image-2d",
+      "name": "barbarian_texture",
+      "packId": "kaykit-adventurers-2-0-free",
+      "packRoot": "media/3D_Assets/KayKit_Adventurers_2.0_FREE",
+      "path": "media/3D_Assets/KayKit_Adventurers_2.0_FREE/Textures/barbarian_texture.png",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 14424,
+      "source": {
+        "blobSha": "871a6599759d1367a8d0e50fdbb5d3a4daca0de9",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/KayKit_Adventurers_2.0_FREE/Textures/barbarian_texture.png",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/KayKit_Adventurers_2.0_FREE/Textures/barbarian_texture.png",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/KayKit_Adventurers_2.0_FREE/Textures/knight_texture.png",
+      "collectionPath": "Textures",
+      "folder": "media/3D_Assets/KayKit_Adventurers_2.0_FREE/Textures",
+      "format": "png",
+      "hints": {
+        "textureCandidate": true,
+        "textureCandidateProvenance": "generated-structural"
+      },
+      "kind": "image-2d",
+      "name": "knight_texture",
+      "packId": "kaykit-adventurers-2-0-free",
+      "packRoot": "media/3D_Assets/KayKit_Adventurers_2.0_FREE",
+      "path": "media/3D_Assets/KayKit_Adventurers_2.0_FREE/Textures/knight_texture.png",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 12914,
+      "source": {
+        "blobSha": "a75dfe492fec4c3f9bfd18a381c2838d9eea00e8",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/KayKit_Adventurers_2.0_FREE/Textures/knight_texture.png",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/KayKit_Adventurers_2.0_FREE/Textures/knight_texture.png",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/KayKit_Adventurers_2.0_FREE/Textures/mage_texture.png",
+      "collectionPath": "Textures",
+      "folder": "media/3D_Assets/KayKit_Adventurers_2.0_FREE/Textures",
+      "format": "png",
+      "hints": {
+        "textureCandidate": true,
+        "textureCandidateProvenance": "generated-structural"
+      },
+      "kind": "image-2d",
+      "name": "mage_texture",
+      "packId": "kaykit-adventurers-2-0-free",
+      "packRoot": "media/3D_Assets/KayKit_Adventurers_2.0_FREE",
+      "path": "media/3D_Assets/KayKit_Adventurers_2.0_FREE/Textures/mage_texture.png",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 14740,
+      "source": {
+        "blobSha": "3c1b0dbb0856c36aff8e3e8836ab335c6ff7354d",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/KayKit_Adventurers_2.0_FREE/Textures/mage_texture.png",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/KayKit_Adventurers_2.0_FREE/Textures/mage_texture.png",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/KayKit_Adventurers_2.0_FREE/Textures/ranger_texture.png",
+      "collectionPath": "Textures",
+      "folder": "media/3D_Assets/KayKit_Adventurers_2.0_FREE/Textures",
+      "format": "png",
+      "hints": {
+        "textureCandidate": true,
+        "textureCandidateProvenance": "generated-structural"
+      },
+      "kind": "image-2d",
+      "name": "ranger_texture",
+      "packId": "kaykit-adventurers-2-0-free",
+      "packRoot": "media/3D_Assets/KayKit_Adventurers_2.0_FREE",
+      "path": "media/3D_Assets/KayKit_Adventurers_2.0_FREE/Textures/ranger_texture.png",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 13248,
+      "source": {
+        "blobSha": "17458d889de97785146265d3bf0d2566cf2f4bd8",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/KayKit_Adventurers_2.0_FREE/Textures/ranger_texture.png",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/KayKit_Adventurers_2.0_FREE/Textures/ranger_texture.png",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/KayKit_Adventurers_2.0_FREE/Textures/rogue_texture.png",
+      "collectionPath": "Textures",
+      "folder": "media/3D_Assets/KayKit_Adventurers_2.0_FREE/Textures",
+      "format": "png",
+      "hints": {
+        "textureCandidate": true,
+        "textureCandidateProvenance": "generated-structural"
+      },
+      "kind": "image-2d",
+      "name": "rogue_texture",
+      "packId": "kaykit-adventurers-2-0-free",
+      "packRoot": "media/3D_Assets/KayKit_Adventurers_2.0_FREE",
+      "path": "media/3D_Assets/KayKit_Adventurers_2.0_FREE/Textures/rogue_texture.png",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 15026,
+      "source": {
+        "blobSha": "4b04827ce382cc7c5dbe2f52bdc8d25dc522c3ef",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/KayKit_Adventurers_2.0_FREE/Textures/rogue_texture.png",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/KayKit_Adventurers_2.0_FREE/Textures/rogue_texture.png",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/KayKit_Adventurers_2.0_FREE/contents.png",
+      "folder": "media/3D_Assets/KayKit_Adventurers_2.0_FREE",
+      "format": "png",
+      "hints": {
+        "textureCandidate": false,
+        "textureCandidateProvenance": "generated-structural"
+      },
+      "kind": "image-2d",
+      "name": "contents",
+      "packId": "kaykit-adventurers-2-0-free",
+      "packRoot": "media/3D_Assets/KayKit_Adventurers_2.0_FREE",
+      "path": "media/3D_Assets/KayKit_Adventurers_2.0_FREE/contents.png",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 1540165,
+      "source": {
+        "blobSha": "1042de06431be5a0b588cbf4b54626a7fbeb1ab5",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/KayKit_Adventurers_2.0_FREE/contents.png",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/KayKit_Adventurers_2.0_FREE/contents.png",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    }
+  ],
+  "collections": [
+    {
+      "assetCount": 2,
+      "path": "Animations"
+    },
+    {
+      "assetCount": 36,
+      "path": "Assets"
+    },
+    {
+      "assetCount": 11,
+      "path": "Characters"
+    },
+    {
+      "assetCount": 8,
+      "path": "Samples"
+    },
+    {
+      "assetCount": 5,
+      "path": "Textures"
+    }
+  ],
+  "dependencyStatus": {
+    "complete": 31,
+    "embedded": 8
+  },
+  "displayName": "KayKit_Adventurers_2.0_FREE",
+  "formats": {
+    "glb": 8,
+    "gltf": 31,
+    "png": 24
+  },
+  "kinds": {
+    "image-2d": 24,
+    "model-3d": 39
+  },
+  "packId": "kaykit-adventurers-2-0-free",
+  "provenance": "generated-structural",
+  "root": "media/3D_Assets/KayKit_Adventurers_2.0_FREE",
+  "schema": "kfb.asset-pack.v1",
+  "shard": "packs/kaykit-adventurers-2-0-free.json"
+}

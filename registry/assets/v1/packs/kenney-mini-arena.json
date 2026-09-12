@@ -1,0 +1,971 @@
+{
+  "assetCount": 25,
+  "assets": [
+    {
+      "assetId": "media/3D_Assets/kenney_mini-arena/Models/GLB format/Textures/colormap.png",
+      "collectionPath": "Models",
+      "folder": "media/3D_Assets/kenney_mini-arena/Models/GLB format/Textures",
+      "format": "png",
+      "hints": {
+        "textureCandidate": true,
+        "textureCandidateProvenance": "generated-structural"
+      },
+      "kind": "image-2d",
+      "name": "colormap",
+      "packId": "kenney-mini-arena",
+      "packRoot": "media/3D_Assets/kenney_mini-arena",
+      "path": "media/3D_Assets/kenney_mini-arena/Models/GLB format/Textures/colormap.png",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 9106,
+      "source": {
+        "blobSha": "06a680f5a758d89bf49b0bc3e94783413e734cc6",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_mini-arena/Models/GLB%20format/Textures/colormap.png",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/kenney_mini-arena/Models/GLB%20format/Textures/colormap.png",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/kenney_mini-arena/Models/GLB format/banner.glb",
+      "collectionPath": "Models",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/kenney_mini-arena/Models/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "banner",
+      "packId": "kenney-mini-arena",
+      "packRoot": "media/3D_Assets/kenney_mini-arena",
+      "path": "media/3D_Assets/kenney_mini-arena/Models/GLB format/banner.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/kenney_mini-arena/Models/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 22124,
+      "source": {
+        "blobSha": "91a90784bb2dc3ff2fae0d471800fd5468ed4e52",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_mini-arena/Models/GLB%20format/banner.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/kenney_mini-arena/Models/GLB%20format/banner.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/kenney_mini-arena/Models/GLB format/block.glb",
+      "collectionPath": "Models",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/kenney_mini-arena/Models/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "block",
+      "packId": "kenney-mini-arena",
+      "packRoot": "media/3D_Assets/kenney_mini-arena",
+      "path": "media/3D_Assets/kenney_mini-arena/Models/GLB format/block.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/kenney_mini-arena/Models/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 2820,
+      "source": {
+        "blobSha": "d8ecdb33e5b01271c3bbec18dc86a06ee9b06c82",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_mini-arena/Models/GLB%20format/block.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/kenney_mini-arena/Models/GLB%20format/block.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/kenney_mini-arena/Models/GLB format/border-corner.glb",
+      "collectionPath": "Models",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/kenney_mini-arena/Models/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "border-corner",
+      "packId": "kenney-mini-arena",
+      "packRoot": "media/3D_Assets/kenney_mini-arena",
+      "path": "media/3D_Assets/kenney_mini-arena/Models/GLB format/border-corner.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/kenney_mini-arena/Models/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 11144,
+      "source": {
+        "blobSha": "a37cc919303eba4156a61b3b382ebaeb27240497",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_mini-arena/Models/GLB%20format/border-corner.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/kenney_mini-arena/Models/GLB%20format/border-corner.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/kenney_mini-arena/Models/GLB format/border-straight.glb",
+      "collectionPath": "Models",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/kenney_mini-arena/Models/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "border-straight",
+      "packId": "kenney-mini-arena",
+      "packRoot": "media/3D_Assets/kenney_mini-arena",
+      "path": "media/3D_Assets/kenney_mini-arena/Models/GLB format/border-straight.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/kenney_mini-arena/Models/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 6540,
+      "source": {
+        "blobSha": "12fb2178c30f43dabc03fb51105cfb2d559e1b32",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_mini-arena/Models/GLB%20format/border-straight.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/kenney_mini-arena/Models/GLB%20format/border-straight.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/kenney_mini-arena/Models/GLB format/bricks.glb",
+      "collectionPath": "Models",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/kenney_mini-arena/Models/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "bricks",
+      "packId": "kenney-mini-arena",
+      "packRoot": "media/3D_Assets/kenney_mini-arena",
+      "path": "media/3D_Assets/kenney_mini-arena/Models/GLB format/bricks.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/kenney_mini-arena/Models/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 13208,
+      "source": {
+        "blobSha": "97cd99f578716a72ca956dcb6d42336d48b2ce68",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_mini-arena/Models/GLB%20format/bricks.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/kenney_mini-arena/Models/GLB%20format/bricks.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/kenney_mini-arena/Models/GLB format/character-soldier.glb",
+      "collectionPath": "Models",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/kenney_mini-arena/Models/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "character-soldier",
+      "packId": "kenney-mini-arena",
+      "packRoot": "media/3D_Assets/kenney_mini-arena",
+      "path": "media/3D_Assets/kenney_mini-arena/Models/GLB format/character-soldier.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/kenney_mini-arena/Models/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 178520,
+      "source": {
+        "blobSha": "22a647ce3fa0a2f70145ee1a8ee2df4fca071ea2",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_mini-arena/Models/GLB%20format/character-soldier.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/kenney_mini-arena/Models/GLB%20format/character-soldier.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/kenney_mini-arena/Models/GLB format/column-damaged.glb",
+      "collectionPath": "Models",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/kenney_mini-arena/Models/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "column-damaged",
+      "packId": "kenney-mini-arena",
+      "packRoot": "media/3D_Assets/kenney_mini-arena",
+      "path": "media/3D_Assets/kenney_mini-arena/Models/GLB format/column-damaged.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/kenney_mini-arena/Models/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 14328,
+      "source": {
+        "blobSha": "c0c65f6f97978833602eb86bcee2b1376f20d481",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_mini-arena/Models/GLB%20format/column-damaged.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/kenney_mini-arena/Models/GLB%20format/column-damaged.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/kenney_mini-arena/Models/GLB format/column.glb",
+      "collectionPath": "Models",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/kenney_mini-arena/Models/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "column",
+      "packId": "kenney-mini-arena",
+      "packRoot": "media/3D_Assets/kenney_mini-arena",
+      "path": "media/3D_Assets/kenney_mini-arena/Models/GLB format/column.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/kenney_mini-arena/Models/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 17156,
+      "source": {
+        "blobSha": "1a880e3fd22e2ce209f6176601a38fbd91405d2b",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_mini-arena/Models/GLB%20format/column.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/kenney_mini-arena/Models/GLB%20format/column.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/kenney_mini-arena/Models/GLB format/floor-detail.glb",
+      "collectionPath": "Models",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/kenney_mini-arena/Models/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "floor-detail",
+      "packId": "kenney-mini-arena",
+      "packRoot": "media/3D_Assets/kenney_mini-arena",
+      "path": "media/3D_Assets/kenney_mini-arena/Models/GLB format/floor-detail.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/kenney_mini-arena/Models/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 6484,
+      "source": {
+        "blobSha": "a82d1f6defd09db87a8762fedc6f90e4d16f71ef",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_mini-arena/Models/GLB%20format/floor-detail.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/kenney_mini-arena/Models/GLB%20format/floor-detail.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/kenney_mini-arena/Models/GLB format/floor.glb",
+      "collectionPath": "Models",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/kenney_mini-arena/Models/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "floor",
+      "packId": "kenney-mini-arena",
+      "packRoot": "media/3D_Assets/kenney_mini-arena",
+      "path": "media/3D_Assets/kenney_mini-arena/Models/GLB format/floor.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/kenney_mini-arena/Models/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 1784,
+      "source": {
+        "blobSha": "5a5ce57e0028ffcf4f78199e53b41099e1eb0129",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_mini-arena/Models/GLB%20format/floor.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/kenney_mini-arena/Models/GLB%20format/floor.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/kenney_mini-arena/Models/GLB format/stairs-corner-inner.glb",
+      "collectionPath": "Models",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/kenney_mini-arena/Models/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "stairs-corner-inner",
+      "packId": "kenney-mini-arena",
+      "packRoot": "media/3D_Assets/kenney_mini-arena",
+      "path": "media/3D_Assets/kenney_mini-arena/Models/GLB format/stairs-corner-inner.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/kenney_mini-arena/Models/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 7600,
+      "source": {
+        "blobSha": "f118d6c4f8f8d16efc698ebb10c920dfa8e0291e",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_mini-arena/Models/GLB%20format/stairs-corner-inner.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/kenney_mini-arena/Models/GLB%20format/stairs-corner-inner.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/kenney_mini-arena/Models/GLB format/stairs-corner.glb",
+      "collectionPath": "Models",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/kenney_mini-arena/Models/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "stairs-corner",
+      "packId": "kenney-mini-arena",
+      "packRoot": "media/3D_Assets/kenney_mini-arena",
+      "path": "media/3D_Assets/kenney_mini-arena/Models/GLB format/stairs-corner.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/kenney_mini-arena/Models/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 8772,
+      "source": {
+        "blobSha": "71d8c082f734af918d0023d0a7f4301301af4062",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_mini-arena/Models/GLB%20format/stairs-corner.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/kenney_mini-arena/Models/GLB%20format/stairs-corner.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/kenney_mini-arena/Models/GLB format/stairs.glb",
+      "collectionPath": "Models",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/kenney_mini-arena/Models/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "stairs",
+      "packId": "kenney-mini-arena",
+      "packRoot": "media/3D_Assets/kenney_mini-arena",
+      "path": "media/3D_Assets/kenney_mini-arena/Models/GLB format/stairs.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/kenney_mini-arena/Models/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 5260,
+      "source": {
+        "blobSha": "2556a9314adca08b6d67b64899a2be8c73730805",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_mini-arena/Models/GLB%20format/stairs.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/kenney_mini-arena/Models/GLB%20format/stairs.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/kenney_mini-arena/Models/GLB format/statue.glb",
+      "collectionPath": "Models",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/kenney_mini-arena/Models/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "statue",
+      "packId": "kenney-mini-arena",
+      "packRoot": "media/3D_Assets/kenney_mini-arena",
+      "path": "media/3D_Assets/kenney_mini-arena/Models/GLB format/statue.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/kenney_mini-arena/Models/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 51032,
+      "source": {
+        "blobSha": "b47d735deb13d6993cd6516aa8573372d9a5dda1",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_mini-arena/Models/GLB%20format/statue.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/kenney_mini-arena/Models/GLB%20format/statue.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/kenney_mini-arena/Models/GLB format/tree.glb",
+      "collectionPath": "Models",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/kenney_mini-arena/Models/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "tree",
+      "packId": "kenney-mini-arena",
+      "packRoot": "media/3D_Assets/kenney_mini-arena",
+      "path": "media/3D_Assets/kenney_mini-arena/Models/GLB format/tree.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/kenney_mini-arena/Models/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 34180,
+      "source": {
+        "blobSha": "46d3affbab3fd573638703305e3cfbc925d07185",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_mini-arena/Models/GLB%20format/tree.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/kenney_mini-arena/Models/GLB%20format/tree.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/kenney_mini-arena/Models/GLB format/trophy.glb",
+      "collectionPath": "Models",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/kenney_mini-arena/Models/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "trophy",
+      "packId": "kenney-mini-arena",
+      "packRoot": "media/3D_Assets/kenney_mini-arena",
+      "path": "media/3D_Assets/kenney_mini-arena/Models/GLB format/trophy.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/kenney_mini-arena/Models/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 23768,
+      "source": {
+        "blobSha": "ca2335087cc0919f2a1a6cdeeafbaf1611c988ad",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_mini-arena/Models/GLB%20format/trophy.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/kenney_mini-arena/Models/GLB%20format/trophy.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/kenney_mini-arena/Models/GLB format/wall-corner.glb",
+      "collectionPath": "Models",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/kenney_mini-arena/Models/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "wall-corner",
+      "packId": "kenney-mini-arena",
+      "packRoot": "media/3D_Assets/kenney_mini-arena",
+      "path": "media/3D_Assets/kenney_mini-arena/Models/GLB format/wall-corner.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/kenney_mini-arena/Models/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 22496,
+      "source": {
+        "blobSha": "48ec635355d1e6f2156958c9eea2c7f946b30359",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_mini-arena/Models/GLB%20format/wall-corner.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/kenney_mini-arena/Models/GLB%20format/wall-corner.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/kenney_mini-arena/Models/GLB format/wall-gate.glb",
+      "collectionPath": "Models",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/kenney_mini-arena/Models/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "wall-gate",
+      "packId": "kenney-mini-arena",
+      "packRoot": "media/3D_Assets/kenney_mini-arena",
+      "path": "media/3D_Assets/kenney_mini-arena/Models/GLB format/wall-gate.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/kenney_mini-arena/Models/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 31080,
+      "source": {
+        "blobSha": "50c38d3c1c419ab0e70b5656c83099c3970acd95",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_mini-arena/Models/GLB%20format/wall-gate.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/kenney_mini-arena/Models/GLB%20format/wall-gate.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/kenney_mini-arena/Models/GLB format/wall.glb",
+      "collectionPath": "Models",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/kenney_mini-arena/Models/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "wall",
+      "packId": "kenney-mini-arena",
+      "packRoot": "media/3D_Assets/kenney_mini-arena",
+      "path": "media/3D_Assets/kenney_mini-arena/Models/GLB format/wall.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/kenney_mini-arena/Models/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 16020,
+      "source": {
+        "blobSha": "9dfd848e8b1edcaad3b95d6b47c955ab5d43e66c",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_mini-arena/Models/GLB%20format/wall.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/kenney_mini-arena/Models/GLB%20format/wall.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/kenney_mini-arena/Models/GLB format/weapon-rack.glb",
+      "collectionPath": "Models",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/kenney_mini-arena/Models/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "weapon-rack",
+      "packId": "kenney-mini-arena",
+      "packRoot": "media/3D_Assets/kenney_mini-arena",
+      "path": "media/3D_Assets/kenney_mini-arena/Models/GLB format/weapon-rack.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/kenney_mini-arena/Models/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 20072,
+      "source": {
+        "blobSha": "e1af5e621c6819afb4953a47e764e8a9115a187b",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_mini-arena/Models/GLB%20format/weapon-rack.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/kenney_mini-arena/Models/GLB%20format/weapon-rack.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/kenney_mini-arena/Models/GLB format/weapon-spear.glb",
+      "collectionPath": "Models",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/kenney_mini-arena/Models/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "weapon-spear",
+      "packId": "kenney-mini-arena",
+      "packRoot": "media/3D_Assets/kenney_mini-arena",
+      "path": "media/3D_Assets/kenney_mini-arena/Models/GLB format/weapon-spear.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/kenney_mini-arena/Models/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 7168,
+      "source": {
+        "blobSha": "9a4b4c18acc21174f7064267d2b7098786d5ca51",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_mini-arena/Models/GLB%20format/weapon-spear.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/kenney_mini-arena/Models/GLB%20format/weapon-spear.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/kenney_mini-arena/Models/GLB format/weapon-sword.glb",
+      "collectionPath": "Models",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/kenney_mini-arena/Models/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "weapon-sword",
+      "packId": "kenney-mini-arena",
+      "packRoot": "media/3D_Assets/kenney_mini-arena",
+      "path": "media/3D_Assets/kenney_mini-arena/Models/GLB format/weapon-sword.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/kenney_mini-arena/Models/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 9360,
+      "source": {
+        "blobSha": "0825a24fec6ab815d4225bccbdaab15c1d792f55",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_mini-arena/Models/GLB%20format/weapon-sword.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/kenney_mini-arena/Models/GLB%20format/weapon-sword.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/kenney_mini-arena/Preview.png",
+      "folder": "media/3D_Assets/kenney_mini-arena",
+      "format": "png",
+      "hints": {
+        "textureCandidate": false,
+        "textureCandidateProvenance": "generated-structural"
+      },
+      "kind": "image-2d",
+      "name": "Preview",
+      "packId": "kenney-mini-arena",
+      "packRoot": "media/3D_Assets/kenney_mini-arena",
+      "path": "media/3D_Assets/kenney_mini-arena/Preview.png",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 79951,
+      "source": {
+        "blobSha": "e33744d8009417942c1cc5a36897372f3ce67251",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_mini-arena/Preview.png",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/kenney_mini-arena/Preview.png",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/kenney_mini-arena/Sample.png",
+      "folder": "media/3D_Assets/kenney_mini-arena",
+      "format": "png",
+      "hints": {
+        "textureCandidate": false,
+        "textureCandidateProvenance": "generated-structural"
+      },
+      "kind": "image-2d",
+      "name": "Sample",
+      "packId": "kenney-mini-arena",
+      "packRoot": "media/3D_Assets/kenney_mini-arena",
+      "path": "media/3D_Assets/kenney_mini-arena/Sample.png",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 95595,
+      "source": {
+        "blobSha": "b3f6380ec794f2d3155ac7b5eb4308b6e2ea22f0",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_mini-arena/Sample.png",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/kenney_mini-arena/Sample.png",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    }
+  ],
+  "collections": [
+    {
+      "assetCount": 23,
+      "path": "Models"
+    }
+  ],
+  "dependencyStatus": {
+    "complete": 22
+  },
+  "displayName": "kenney_mini-arena",
+  "formats": {
+    "glb": 22,
+    "png": 3
+  },
+  "kinds": {
+    "image-2d": 3,
+    "model-3d": 22
+  },
+  "packId": "kenney-mini-arena",
+  "provenance": "generated-structural",
+  "root": "media/3D_Assets/kenney_mini-arena",
+  "schema": "kfb.asset-pack.v1",
+  "shard": "packs/kenney-mini-arena.json"
+}

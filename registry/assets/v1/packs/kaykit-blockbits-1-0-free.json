@@ -1,0 +1,2066 @@
+{
+  "assetCount": 44,
+  "assets": [
+    {
+      "assetId": "media/3D_Assets/KayKit_BlockBits_1.0_FREE/Assets/gltf/block_bits_texture.png",
+      "collectionPath": "Assets",
+      "folder": "media/3D_Assets/KayKit_BlockBits_1.0_FREE/Assets/gltf",
+      "format": "png",
+      "hints": {
+        "textureCandidate": false,
+        "textureCandidateProvenance": "generated-structural"
+      },
+      "kind": "image-2d",
+      "name": "block_bits_texture",
+      "packId": "kaykit-blockbits-1-0-free",
+      "packRoot": "media/3D_Assets/KayKit_BlockBits_1.0_FREE",
+      "path": "media/3D_Assets/KayKit_BlockBits_1.0_FREE/Assets/gltf/block_bits_texture.png",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 31211,
+      "source": {
+        "blobSha": "afcae6c2986a6914142b6561e4bbc2f26e72d3b1",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/KayKit_BlockBits_1.0_FREE/Assets/gltf/block_bits_texture.png",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/KayKit_BlockBits_1.0_FREE/Assets/gltf/block_bits_texture.png",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/KayKit_BlockBits_1.0_FREE/Assets/gltf/bricks_A.gltf",
+      "collectionPath": "Assets",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/KayKit_BlockBits_1.0_FREE/Assets/gltf",
+      "format": "gltf",
+      "kind": "model-3d",
+      "name": "bricks_A",
+      "packId": "kaykit-blockbits-1-0-free",
+      "packRoot": "media/3D_Assets/KayKit_BlockBits_1.0_FREE",
+      "path": "media/3D_Assets/KayKit_BlockBits_1.0_FREE/Assets/gltf/bricks_A.gltf",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_BlockBits_1.0_FREE/Assets/gltf/block_bits_texture.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "block_bits_texture.png"
+          },
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_BlockBits_1.0_FREE/Assets/gltf/bricks_A.bin",
+            "provenance": "file-explicit",
+            "reference": "buffers[0].uri",
+            "role": "buffer",
+            "status": "ok",
+            "uri": "bricks_A.bin"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 2949,
+      "source": {
+        "blobSha": "02643ad86bcde8657c75e92f867bbf88eeca0403",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/KayKit_BlockBits_1.0_FREE/Assets/gltf/bricks_A.gltf",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/KayKit_BlockBits_1.0_FREE/Assets/gltf/bricks_A.gltf",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/KayKit_BlockBits_1.0_FREE/Assets/gltf/bricks_B.gltf",
+      "collectionPath": "Assets",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/KayKit_BlockBits_1.0_FREE/Assets/gltf",
+      "format": "gltf",
+      "kind": "model-3d",
+      "name": "bricks_B",
+      "packId": "kaykit-blockbits-1-0-free",
+      "packRoot": "media/3D_Assets/KayKit_BlockBits_1.0_FREE",
+      "path": "media/3D_Assets/KayKit_BlockBits_1.0_FREE/Assets/gltf/bricks_B.gltf",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_BlockBits_1.0_FREE/Assets/gltf/block_bits_texture.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "block_bits_texture.png"
+          },
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_BlockBits_1.0_FREE/Assets/gltf/bricks_B.bin",
+            "provenance": "file-explicit",
+            "reference": "buffers[0].uri",
+            "role": "buffer",
+            "status": "ok",
+            "uri": "bricks_B.bin"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 2949,
+      "source": {
+        "blobSha": "1f1ed2f1af848c47a9576c9fd32c5b17f8522b4c",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/KayKit_BlockBits_1.0_FREE/Assets/gltf/bricks_B.gltf",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/KayKit_BlockBits_1.0_FREE/Assets/gltf/bricks_B.gltf",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/KayKit_BlockBits_1.0_FREE/Assets/gltf/colored_block_blue.gltf",
+      "collectionPath": "Assets",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/KayKit_BlockBits_1.0_FREE/Assets/gltf",
+      "format": "gltf",
+      "kind": "model-3d",
+      "name": "colored_block_blue",
+      "packId": "kaykit-blockbits-1-0-free",
+      "packRoot": "media/3D_Assets/KayKit_BlockBits_1.0_FREE",
+      "path": "media/3D_Assets/KayKit_BlockBits_1.0_FREE/Assets/gltf/colored_block_blue.gltf",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_BlockBits_1.0_FREE/Assets/gltf/block_bits_texture.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "block_bits_texture.png"
+          },
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_BlockBits_1.0_FREE/Assets/gltf/colored_block_blue.bin",
+            "provenance": "file-explicit",
+            "reference": "buffers[0].uri",
+            "role": "buffer",
+            "status": "ok",
+            "uri": "colored_block_blue.bin"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 2967,
+      "source": {
+        "blobSha": "7a216802cfb07a9e1090fcd1a2937d38145d01da",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/KayKit_BlockBits_1.0_FREE/Assets/gltf/colored_block_blue.gltf",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/KayKit_BlockBits_1.0_FREE/Assets/gltf/colored_block_blue.gltf",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/KayKit_BlockBits_1.0_FREE/Assets/gltf/colored_block_green.gltf",
+      "collectionPath": "Assets",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/KayKit_BlockBits_1.0_FREE/Assets/gltf",
+      "format": "gltf",
+      "kind": "model-3d",
+      "name": "colored_block_green",
+      "packId": "kaykit-blockbits-1-0-free",
+      "packRoot": "media/3D_Assets/KayKit_BlockBits_1.0_FREE",
+      "path": "media/3D_Assets/KayKit_BlockBits_1.0_FREE/Assets/gltf/colored_block_green.gltf",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_BlockBits_1.0_FREE/Assets/gltf/block_bits_texture.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "block_bits_texture.png"
+          },
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_BlockBits_1.0_FREE/Assets/gltf/colored_block_green.bin",
+            "provenance": "file-explicit",
+            "reference": "buffers[0].uri",
+            "role": "buffer",
+            "status": "ok",
+            "uri": "colored_block_green.bin"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 2970,
+      "source": {
+        "blobSha": "ff6e3963ef7bbafc7240e0df9e379a400ff2414b",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/KayKit_BlockBits_1.0_FREE/Assets/gltf/colored_block_green.gltf",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/KayKit_BlockBits_1.0_FREE/Assets/gltf/colored_block_green.gltf",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/KayKit_BlockBits_1.0_FREE/Assets/gltf/colored_block_red.gltf",
+      "collectionPath": "Assets",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/KayKit_BlockBits_1.0_FREE/Assets/gltf",
+      "format": "gltf",
+      "kind": "model-3d",
+      "name": "colored_block_red",
+      "packId": "kaykit-blockbits-1-0-free",
+      "packRoot": "media/3D_Assets/KayKit_BlockBits_1.0_FREE",
+      "path": "media/3D_Assets/KayKit_BlockBits_1.0_FREE/Assets/gltf/colored_block_red.gltf",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_BlockBits_1.0_FREE/Assets/gltf/block_bits_texture.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "block_bits_texture.png"
+          },
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_BlockBits_1.0_FREE/Assets/gltf/colored_block_red.bin",
+            "provenance": "file-explicit",
+            "reference": "buffers[0].uri",
+            "role": "buffer",
+            "status": "ok",
+            "uri": "colored_block_red.bin"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 2964,
+      "source": {
+        "blobSha": "b7d89c6386a5e3a40b828381e9786926b29fad57",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/KayKit_BlockBits_1.0_FREE/Assets/gltf/colored_block_red.gltf",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/KayKit_BlockBits_1.0_FREE/Assets/gltf/colored_block_red.gltf",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/KayKit_BlockBits_1.0_FREE/Assets/gltf/colored_block_yellow.gltf",
+      "collectionPath": "Assets",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/KayKit_BlockBits_1.0_FREE/Assets/gltf",
+      "format": "gltf",
+      "kind": "model-3d",
+      "name": "colored_block_yellow",
+      "packId": "kaykit-blockbits-1-0-free",
+      "packRoot": "media/3D_Assets/KayKit_BlockBits_1.0_FREE",
+      "path": "media/3D_Assets/KayKit_BlockBits_1.0_FREE/Assets/gltf/colored_block_yellow.gltf",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_BlockBits_1.0_FREE/Assets/gltf/block_bits_texture.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "block_bits_texture.png"
+          },
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_BlockBits_1.0_FREE/Assets/gltf/colored_block_yellow.bin",
+            "provenance": "file-explicit",
+            "reference": "buffers[0].uri",
+            "role": "buffer",
+            "status": "ok",
+            "uri": "colored_block_yellow.bin"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 2973,
+      "source": {
+        "blobSha": "cb512cc579856650c375e6f643deeb566f1582f3",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/KayKit_BlockBits_1.0_FREE/Assets/gltf/colored_block_yellow.gltf",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/KayKit_BlockBits_1.0_FREE/Assets/gltf/colored_block_yellow.gltf",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/KayKit_BlockBits_1.0_FREE/Assets/gltf/decorative_block_blue.gltf",
+      "collectionPath": "Assets",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/KayKit_BlockBits_1.0_FREE/Assets/gltf",
+      "format": "gltf",
+      "kind": "model-3d",
+      "name": "decorative_block_blue",
+      "packId": "kaykit-blockbits-1-0-free",
+      "packRoot": "media/3D_Assets/KayKit_BlockBits_1.0_FREE",
+      "path": "media/3D_Assets/KayKit_BlockBits_1.0_FREE/Assets/gltf/decorative_block_blue.gltf",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_BlockBits_1.0_FREE/Assets/gltf/block_bits_texture.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "block_bits_texture.png"
+          },
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_BlockBits_1.0_FREE/Assets/gltf/decorative_block_blue.bin",
+            "provenance": "file-explicit",
+            "reference": "buffers[0].uri",
+            "role": "buffer",
+            "status": "ok",
+            "uri": "decorative_block_blue.bin"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 2993,
+      "source": {
+        "blobSha": "4166e72892653692d39d75886a74f99d4d981f24",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/KayKit_BlockBits_1.0_FREE/Assets/gltf/decorative_block_blue.gltf",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/KayKit_BlockBits_1.0_FREE/Assets/gltf/decorative_block_blue.gltf",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/KayKit_BlockBits_1.0_FREE/Assets/gltf/decorative_block_green.gltf",
+      "collectionPath": "Assets",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/KayKit_BlockBits_1.0_FREE/Assets/gltf",
+      "format": "gltf",
+      "kind": "model-3d",
+      "name": "decorative_block_green",
+      "packId": "kaykit-blockbits-1-0-free",
+      "packRoot": "media/3D_Assets/KayKit_BlockBits_1.0_FREE",
+      "path": "media/3D_Assets/KayKit_BlockBits_1.0_FREE/Assets/gltf/decorative_block_green.gltf",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_BlockBits_1.0_FREE/Assets/gltf/block_bits_texture.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "block_bits_texture.png"
+          },
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_BlockBits_1.0_FREE/Assets/gltf/decorative_block_green.bin",
+            "provenance": "file-explicit",
+            "reference": "buffers[0].uri",
+            "role": "buffer",
+            "status": "ok",
+            "uri": "decorative_block_green.bin"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 2996,
+      "source": {
+        "blobSha": "610045c9cb9d5ad2effc1a2c0cb66675a47b3d48",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/KayKit_BlockBits_1.0_FREE/Assets/gltf/decorative_block_green.gltf",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/KayKit_BlockBits_1.0_FREE/Assets/gltf/decorative_block_green.gltf",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/KayKit_BlockBits_1.0_FREE/Assets/gltf/decorative_block_red.gltf",
+      "collectionPath": "Assets",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/KayKit_BlockBits_1.0_FREE/Assets/gltf",
+      "format": "gltf",
+      "kind": "model-3d",
+      "name": "decorative_block_red",
+      "packId": "kaykit-blockbits-1-0-free",
+      "packRoot": "media/3D_Assets/KayKit_BlockBits_1.0_FREE",
+      "path": "media/3D_Assets/KayKit_BlockBits_1.0_FREE/Assets/gltf/decorative_block_red.gltf",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_BlockBits_1.0_FREE/Assets/gltf/block_bits_texture.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "block_bits_texture.png"
+          },
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_BlockBits_1.0_FREE/Assets/gltf/decorative_block_red.bin",
+            "provenance": "file-explicit",
+            "reference": "buffers[0].uri",
+            "role": "buffer",
+            "status": "ok",
+            "uri": "decorative_block_red.bin"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 2990,
+      "source": {
+        "blobSha": "d8aae45a4897a677ef3f2e27c6ec697762e14308",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/KayKit_BlockBits_1.0_FREE/Assets/gltf/decorative_block_red.gltf",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/KayKit_BlockBits_1.0_FREE/Assets/gltf/decorative_block_red.gltf",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/KayKit_BlockBits_1.0_FREE/Assets/gltf/decorative_block_yellow.gltf",
+      "collectionPath": "Assets",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/KayKit_BlockBits_1.0_FREE/Assets/gltf",
+      "format": "gltf",
+      "kind": "model-3d",
+      "name": "decorative_block_yellow",
+      "packId": "kaykit-blockbits-1-0-free",
+      "packRoot": "media/3D_Assets/KayKit_BlockBits_1.0_FREE",
+      "path": "media/3D_Assets/KayKit_BlockBits_1.0_FREE/Assets/gltf/decorative_block_yellow.gltf",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_BlockBits_1.0_FREE/Assets/gltf/block_bits_texture.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "block_bits_texture.png"
+          },
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_BlockBits_1.0_FREE/Assets/gltf/decorative_block_yellow.bin",
+            "provenance": "file-explicit",
+            "reference": "buffers[0].uri",
+            "role": "buffer",
+            "status": "ok",
+            "uri": "decorative_block_yellow.bin"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 2999,
+      "source": {
+        "blobSha": "c67bfe7bdd4d8be5172d9d808807c4434d018e9b",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/KayKit_BlockBits_1.0_FREE/Assets/gltf/decorative_block_yellow.gltf",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/KayKit_BlockBits_1.0_FREE/Assets/gltf/decorative_block_yellow.gltf",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/KayKit_BlockBits_1.0_FREE/Assets/gltf/dirt.gltf",
+      "collectionPath": "Assets",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/KayKit_BlockBits_1.0_FREE/Assets/gltf",
+      "format": "gltf",
+      "kind": "model-3d",
+      "name": "dirt",
+      "packId": "kaykit-blockbits-1-0-free",
+      "packRoot": "media/3D_Assets/KayKit_BlockBits_1.0_FREE",
+      "path": "media/3D_Assets/KayKit_BlockBits_1.0_FREE/Assets/gltf/dirt.gltf",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_BlockBits_1.0_FREE/Assets/gltf/block_bits_texture.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "block_bits_texture.png"
+          },
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_BlockBits_1.0_FREE/Assets/gltf/dirt.bin",
+            "provenance": "file-explicit",
+            "reference": "buffers[0].uri",
+            "role": "buffer",
+            "status": "ok",
+            "uri": "dirt.bin"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 3040,
+      "source": {
+        "blobSha": "d59583e5d46731a990f6e5e78569f06809176652",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/KayKit_BlockBits_1.0_FREE/Assets/gltf/dirt.gltf",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/KayKit_BlockBits_1.0_FREE/Assets/gltf/dirt.gltf",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/KayKit_BlockBits_1.0_FREE/Assets/gltf/dirt_with_grass.gltf",
+      "collectionPath": "Assets",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/KayKit_BlockBits_1.0_FREE/Assets/gltf",
+      "format": "gltf",
+      "kind": "model-3d",
+      "name": "dirt_with_grass",
+      "packId": "kaykit-blockbits-1-0-free",
+      "packRoot": "media/3D_Assets/KayKit_BlockBits_1.0_FREE",
+      "path": "media/3D_Assets/KayKit_BlockBits_1.0_FREE/Assets/gltf/dirt_with_grass.gltf",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_BlockBits_1.0_FREE/Assets/gltf/block_bits_texture.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "block_bits_texture.png"
+          },
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_BlockBits_1.0_FREE/Assets/gltf/dirt_with_grass.bin",
+            "provenance": "file-explicit",
+            "reference": "buffers[0].uri",
+            "role": "buffer",
+            "status": "ok",
+            "uri": "dirt_with_grass.bin"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 3058,
+      "source": {
+        "blobSha": "956abacf7691175ea7aed583e895d8eee240719d",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/KayKit_BlockBits_1.0_FREE/Assets/gltf/dirt_with_grass.gltf",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/KayKit_BlockBits_1.0_FREE/Assets/gltf/dirt_with_grass.gltf",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/KayKit_BlockBits_1.0_FREE/Assets/gltf/dirt_with_snow.gltf",
+      "collectionPath": "Assets",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/KayKit_BlockBits_1.0_FREE/Assets/gltf",
+      "format": "gltf",
+      "kind": "model-3d",
+      "name": "dirt_with_snow",
+      "packId": "kaykit-blockbits-1-0-free",
+      "packRoot": "media/3D_Assets/KayKit_BlockBits_1.0_FREE",
+      "path": "media/3D_Assets/KayKit_BlockBits_1.0_FREE/Assets/gltf/dirt_with_snow.gltf",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_BlockBits_1.0_FREE/Assets/gltf/block_bits_texture.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "block_bits_texture.png"
+          },
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_BlockBits_1.0_FREE/Assets/gltf/dirt_with_snow.bin",
+            "provenance": "file-explicit",
+            "reference": "buffers[0].uri",
+            "role": "buffer",
+            "status": "ok",
+            "uri": "dirt_with_snow.bin"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 3056,
+      "source": {
+        "blobSha": "d91ac0307233ba92c600c559c0358fc90c42130e",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/KayKit_BlockBits_1.0_FREE/Assets/gltf/dirt_with_snow.gltf",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/KayKit_BlockBits_1.0_FREE/Assets/gltf/dirt_with_snow.gltf",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/KayKit_BlockBits_1.0_FREE/Assets/gltf/glass.gltf",
+      "collectionPath": "Assets",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/KayKit_BlockBits_1.0_FREE/Assets/gltf",
+      "format": "gltf",
+      "kind": "model-3d",
+      "name": "glass",
+      "packId": "kaykit-blockbits-1-0-free",
+      "packRoot": "media/3D_Assets/KayKit_BlockBits_1.0_FREE",
+      "path": "media/3D_Assets/KayKit_BlockBits_1.0_FREE/Assets/gltf/glass.gltf",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_BlockBits_1.0_FREE/Assets/gltf/block_bits_texture.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "block_bits_texture.png"
+          },
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_BlockBits_1.0_FREE/Assets/gltf/glass.bin",
+            "provenance": "file-explicit",
+            "reference": "buffers[0].uri",
+            "role": "buffer",
+            "status": "ok",
+            "uri": "glass.bin"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 3124,
+      "source": {
+        "blobSha": "0be8dda516d05e706c31ca7ffd2a6117ce0edcac",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/KayKit_BlockBits_1.0_FREE/Assets/gltf/glass.gltf",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/KayKit_BlockBits_1.0_FREE/Assets/gltf/glass.gltf",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/KayKit_BlockBits_1.0_FREE/Assets/gltf/grass.gltf",
+      "collectionPath": "Assets",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/KayKit_BlockBits_1.0_FREE/Assets/gltf",
+      "format": "gltf",
+      "kind": "model-3d",
+      "name": "grass",
+      "packId": "kaykit-blockbits-1-0-free",
+      "packRoot": "media/3D_Assets/KayKit_BlockBits_1.0_FREE",
+      "path": "media/3D_Assets/KayKit_BlockBits_1.0_FREE/Assets/gltf/grass.gltf",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_BlockBits_1.0_FREE/Assets/gltf/block_bits_texture.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "block_bits_texture.png"
+          },
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_BlockBits_1.0_FREE/Assets/gltf/grass.bin",
+            "provenance": "file-explicit",
+            "reference": "buffers[0].uri",
+            "role": "buffer",
+            "status": "ok",
+            "uri": "grass.bin"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 3004,
+      "source": {
+        "blobSha": "cc156f866e30f88e5b79f837332bde0c0022e575",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/KayKit_BlockBits_1.0_FREE/Assets/gltf/grass.gltf",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/KayKit_BlockBits_1.0_FREE/Assets/gltf/grass.gltf",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/KayKit_BlockBits_1.0_FREE/Assets/gltf/grass_with_snow.gltf",
+      "collectionPath": "Assets",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/KayKit_BlockBits_1.0_FREE/Assets/gltf",
+      "format": "gltf",
+      "kind": "model-3d",
+      "name": "grass_with_snow",
+      "packId": "kaykit-blockbits-1-0-free",
+      "packRoot": "media/3D_Assets/KayKit_BlockBits_1.0_FREE",
+      "path": "media/3D_Assets/KayKit_BlockBits_1.0_FREE/Assets/gltf/grass_with_snow.gltf",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_BlockBits_1.0_FREE/Assets/gltf/block_bits_texture.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "block_bits_texture.png"
+          },
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_BlockBits_1.0_FREE/Assets/gltf/grass_with_snow.bin",
+            "provenance": "file-explicit",
+            "reference": "buffers[0].uri",
+            "role": "buffer",
+            "status": "ok",
+            "uri": "grass_with_snow.bin"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 3035,
+      "source": {
+        "blobSha": "4de3af0e636609f6b6970f502ba802d09c5f183f",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/KayKit_BlockBits_1.0_FREE/Assets/gltf/grass_with_snow.gltf",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/KayKit_BlockBits_1.0_FREE/Assets/gltf/grass_with_snow.gltf",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/KayKit_BlockBits_1.0_FREE/Assets/gltf/gravel.gltf",
+      "collectionPath": "Assets",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/KayKit_BlockBits_1.0_FREE/Assets/gltf",
+      "format": "gltf",
+      "kind": "model-3d",
+      "name": "gravel",
+      "packId": "kaykit-blockbits-1-0-free",
+      "packRoot": "media/3D_Assets/KayKit_BlockBits_1.0_FREE",
+      "path": "media/3D_Assets/KayKit_BlockBits_1.0_FREE/Assets/gltf/gravel.gltf",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_BlockBits_1.0_FREE/Assets/gltf/block_bits_texture.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "block_bits_texture.png"
+          },
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_BlockBits_1.0_FREE/Assets/gltf/gravel.bin",
+            "provenance": "file-explicit",
+            "reference": "buffers[0].uri",
+            "role": "buffer",
+            "status": "ok",
+            "uri": "gravel.bin"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 3046,
+      "source": {
+        "blobSha": "9c327fdc2ff4874848686595bd816a5ce6f0567b",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/KayKit_BlockBits_1.0_FREE/Assets/gltf/gravel.gltf",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/KayKit_BlockBits_1.0_FREE/Assets/gltf/gravel.gltf",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/KayKit_BlockBits_1.0_FREE/Assets/gltf/gravel_with_grass.gltf",
+      "collectionPath": "Assets",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/KayKit_BlockBits_1.0_FREE/Assets/gltf",
+      "format": "gltf",
+      "kind": "model-3d",
+      "name": "gravel_with_grass",
+      "packId": "kaykit-blockbits-1-0-free",
+      "packRoot": "media/3D_Assets/KayKit_BlockBits_1.0_FREE",
+      "path": "media/3D_Assets/KayKit_BlockBits_1.0_FREE/Assets/gltf/gravel_with_grass.gltf",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_BlockBits_1.0_FREE/Assets/gltf/block_bits_texture.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "block_bits_texture.png"
+          },
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_BlockBits_1.0_FREE/Assets/gltf/gravel_with_grass.bin",
+            "provenance": "file-explicit",
+            "reference": "buffers[0].uri",
+            "role": "buffer",
+            "status": "ok",
+            "uri": "gravel_with_grass.bin"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 3064,
+      "source": {
+        "blobSha": "fa64774567275fb33fc48ab029aeed5ce706d721",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/KayKit_BlockBits_1.0_FREE/Assets/gltf/gravel_with_grass.gltf",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/KayKit_BlockBits_1.0_FREE/Assets/gltf/gravel_with_grass.gltf",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/KayKit_BlockBits_1.0_FREE/Assets/gltf/gravel_with_snow.gltf",
+      "collectionPath": "Assets",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/KayKit_BlockBits_1.0_FREE/Assets/gltf",
+      "format": "gltf",
+      "kind": "model-3d",
+      "name": "gravel_with_snow",
+      "packId": "kaykit-blockbits-1-0-free",
+      "packRoot": "media/3D_Assets/KayKit_BlockBits_1.0_FREE",
+      "path": "media/3D_Assets/KayKit_BlockBits_1.0_FREE/Assets/gltf/gravel_with_snow.gltf",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_BlockBits_1.0_FREE/Assets/gltf/block_bits_texture.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "block_bits_texture.png"
+          },
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_BlockBits_1.0_FREE/Assets/gltf/gravel_with_snow.bin",
+            "provenance": "file-explicit",
+            "reference": "buffers[0].uri",
+            "role": "buffer",
+            "status": "ok",
+            "uri": "gravel_with_snow.bin"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 3062,
+      "source": {
+        "blobSha": "0cfded107f4c04f6e356a2de3afe78dd31f520e7",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/KayKit_BlockBits_1.0_FREE/Assets/gltf/gravel_with_snow.gltf",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/KayKit_BlockBits_1.0_FREE/Assets/gltf/gravel_with_snow.gltf",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/KayKit_BlockBits_1.0_FREE/Assets/gltf/lava.gltf",
+      "collectionPath": "Assets",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/KayKit_BlockBits_1.0_FREE/Assets/gltf",
+      "format": "gltf",
+      "kind": "model-3d",
+      "name": "lava",
+      "packId": "kaykit-blockbits-1-0-free",
+      "packRoot": "media/3D_Assets/KayKit_BlockBits_1.0_FREE",
+      "path": "media/3D_Assets/KayKit_BlockBits_1.0_FREE/Assets/gltf/lava.gltf",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_BlockBits_1.0_FREE/Assets/gltf/block_bits_texture.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "block_bits_texture.png"
+          },
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_BlockBits_1.0_FREE/Assets/gltf/lava.bin",
+            "provenance": "file-explicit",
+            "reference": "buffers[0].uri",
+            "role": "buffer",
+            "status": "ok",
+            "uri": "lava.bin"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 3041,
+      "source": {
+        "blobSha": "b581830736c8bccaad260ca944f8f6527786c1d4",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/KayKit_BlockBits_1.0_FREE/Assets/gltf/lava.gltf",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/KayKit_BlockBits_1.0_FREE/Assets/gltf/lava.gltf",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/KayKit_BlockBits_1.0_FREE/Assets/gltf/metal.gltf",
+      "collectionPath": "Assets",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/KayKit_BlockBits_1.0_FREE/Assets/gltf",
+      "format": "gltf",
+      "kind": "model-3d",
+      "name": "metal",
+      "packId": "kaykit-blockbits-1-0-free",
+      "packRoot": "media/3D_Assets/KayKit_BlockBits_1.0_FREE",
+      "path": "media/3D_Assets/KayKit_BlockBits_1.0_FREE/Assets/gltf/metal.gltf",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_BlockBits_1.0_FREE/Assets/gltf/block_bits_texture.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "block_bits_texture.png"
+          },
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_BlockBits_1.0_FREE/Assets/gltf/metal.bin",
+            "provenance": "file-explicit",
+            "reference": "buffers[0].uri",
+            "role": "buffer",
+            "status": "ok",
+            "uri": "metal.bin"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 2940,
+      "source": {
+        "blobSha": "88d645fa2c1f3e44818fbf7c5c3d8dda39779d14",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/KayKit_BlockBits_1.0_FREE/Assets/gltf/metal.gltf",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/KayKit_BlockBits_1.0_FREE/Assets/gltf/metal.gltf",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/KayKit_BlockBits_1.0_FREE/Assets/gltf/prototype.gltf",
+      "collectionPath": "Assets",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/KayKit_BlockBits_1.0_FREE/Assets/gltf",
+      "format": "gltf",
+      "kind": "model-3d",
+      "name": "prototype",
+      "packId": "kaykit-blockbits-1-0-free",
+      "packRoot": "media/3D_Assets/KayKit_BlockBits_1.0_FREE",
+      "path": "media/3D_Assets/KayKit_BlockBits_1.0_FREE/Assets/gltf/prototype.gltf",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_BlockBits_1.0_FREE/Assets/gltf/block_bits_texture.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "block_bits_texture.png"
+          },
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_BlockBits_1.0_FREE/Assets/gltf/prototype.bin",
+            "provenance": "file-explicit",
+            "reference": "buffers[0].uri",
+            "role": "buffer",
+            "status": "ok",
+            "uri": "prototype.bin"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 2945,
+      "source": {
+        "blobSha": "57ceb8a898b3861b8a962f085e70101155fd1fc2",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/KayKit_BlockBits_1.0_FREE/Assets/gltf/prototype.gltf",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/KayKit_BlockBits_1.0_FREE/Assets/gltf/prototype.gltf",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/KayKit_BlockBits_1.0_FREE/Assets/gltf/sand_A.gltf",
+      "collectionPath": "Assets",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/KayKit_BlockBits_1.0_FREE/Assets/gltf",
+      "format": "gltf",
+      "kind": "model-3d",
+      "name": "sand_A",
+      "packId": "kaykit-blockbits-1-0-free",
+      "packRoot": "media/3D_Assets/KayKit_BlockBits_1.0_FREE",
+      "path": "media/3D_Assets/KayKit_BlockBits_1.0_FREE/Assets/gltf/sand_A.gltf",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_BlockBits_1.0_FREE/Assets/gltf/block_bits_texture.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "block_bits_texture.png"
+          },
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_BlockBits_1.0_FREE/Assets/gltf/sand_A.bin",
+            "provenance": "file-explicit",
+            "reference": "buffers[0].uri",
+            "role": "buffer",
+            "status": "ok",
+            "uri": "sand_A.bin"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 3046,
+      "source": {
+        "blobSha": "e146ec225d07f053c3757bb4496ee11a9aa4023f",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/KayKit_BlockBits_1.0_FREE/Assets/gltf/sand_A.gltf",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/KayKit_BlockBits_1.0_FREE/Assets/gltf/sand_A.gltf",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/KayKit_BlockBits_1.0_FREE/Assets/gltf/sand_B.gltf",
+      "collectionPath": "Assets",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/KayKit_BlockBits_1.0_FREE/Assets/gltf",
+      "format": "gltf",
+      "kind": "model-3d",
+      "name": "sand_B",
+      "packId": "kaykit-blockbits-1-0-free",
+      "packRoot": "media/3D_Assets/KayKit_BlockBits_1.0_FREE",
+      "path": "media/3D_Assets/KayKit_BlockBits_1.0_FREE/Assets/gltf/sand_B.gltf",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_BlockBits_1.0_FREE/Assets/gltf/block_bits_texture.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "block_bits_texture.png"
+          },
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_BlockBits_1.0_FREE/Assets/gltf/sand_B.bin",
+            "provenance": "file-explicit",
+            "reference": "buffers[0].uri",
+            "role": "buffer",
+            "status": "ok",
+            "uri": "sand_B.bin"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 3010,
+      "source": {
+        "blobSha": "fa6b251245c1778b0893a839103177317f11b8c3",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/KayKit_BlockBits_1.0_FREE/Assets/gltf/sand_B.gltf",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/KayKit_BlockBits_1.0_FREE/Assets/gltf/sand_B.gltf",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/KayKit_BlockBits_1.0_FREE/Assets/gltf/sand_with_grass.gltf",
+      "collectionPath": "Assets",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/KayKit_BlockBits_1.0_FREE/Assets/gltf",
+      "format": "gltf",
+      "kind": "model-3d",
+      "name": "sand_with_grass",
+      "packId": "kaykit-blockbits-1-0-free",
+      "packRoot": "media/3D_Assets/KayKit_BlockBits_1.0_FREE",
+      "path": "media/3D_Assets/KayKit_BlockBits_1.0_FREE/Assets/gltf/sand_with_grass.gltf",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_BlockBits_1.0_FREE/Assets/gltf/block_bits_texture.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "block_bits_texture.png"
+          },
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_BlockBits_1.0_FREE/Assets/gltf/sand_with_grass.bin",
+            "provenance": "file-explicit",
+            "reference": "buffers[0].uri",
+            "role": "buffer",
+            "status": "ok",
+            "uri": "sand_with_grass.bin"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 3058,
+      "source": {
+        "blobSha": "6be1e23dec8b8a96082def2335ddfd18611b002b",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/KayKit_BlockBits_1.0_FREE/Assets/gltf/sand_with_grass.gltf",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/KayKit_BlockBits_1.0_FREE/Assets/gltf/sand_with_grass.gltf",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/KayKit_BlockBits_1.0_FREE/Assets/gltf/sand_with_snow.gltf",
+      "collectionPath": "Assets",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/KayKit_BlockBits_1.0_FREE/Assets/gltf",
+      "format": "gltf",
+      "kind": "model-3d",
+      "name": "sand_with_snow",
+      "packId": "kaykit-blockbits-1-0-free",
+      "packRoot": "media/3D_Assets/KayKit_BlockBits_1.0_FREE",
+      "path": "media/3D_Assets/KayKit_BlockBits_1.0_FREE/Assets/gltf/sand_with_snow.gltf",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_BlockBits_1.0_FREE/Assets/gltf/block_bits_texture.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "block_bits_texture.png"
+          },
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_BlockBits_1.0_FREE/Assets/gltf/sand_with_snow.bin",
+            "provenance": "file-explicit",
+            "reference": "buffers[0].uri",
+            "role": "buffer",
+            "status": "ok",
+            "uri": "sand_with_snow.bin"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 3056,
+      "source": {
+        "blobSha": "29c615b2affec0a16f440e5ecab281741f177e22",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/KayKit_BlockBits_1.0_FREE/Assets/gltf/sand_with_snow.gltf",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/KayKit_BlockBits_1.0_FREE/Assets/gltf/sand_with_snow.gltf",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/KayKit_BlockBits_1.0_FREE/Assets/gltf/snow.gltf",
+      "collectionPath": "Assets",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/KayKit_BlockBits_1.0_FREE/Assets/gltf",
+      "format": "gltf",
+      "kind": "model-3d",
+      "name": "snow",
+      "packId": "kaykit-blockbits-1-0-free",
+      "packRoot": "media/3D_Assets/KayKit_BlockBits_1.0_FREE",
+      "path": "media/3D_Assets/KayKit_BlockBits_1.0_FREE/Assets/gltf/snow.gltf",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_BlockBits_1.0_FREE/Assets/gltf/block_bits_texture.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "block_bits_texture.png"
+          },
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_BlockBits_1.0_FREE/Assets/gltf/snow.bin",
+            "provenance": "file-explicit",
+            "reference": "buffers[0].uri",
+            "role": "buffer",
+            "status": "ok",
+            "uri": "snow.bin"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 2925,
+      "source": {
+        "blobSha": "6439ae00533f7f0fc733108d5d77f014ae5cc4a9",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/KayKit_BlockBits_1.0_FREE/Assets/gltf/snow.gltf",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/KayKit_BlockBits_1.0_FREE/Assets/gltf/snow.gltf",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/KayKit_BlockBits_1.0_FREE/Assets/gltf/stone.gltf",
+      "collectionPath": "Assets",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/KayKit_BlockBits_1.0_FREE/Assets/gltf",
+      "format": "gltf",
+      "kind": "model-3d",
+      "name": "stone",
+      "packId": "kaykit-blockbits-1-0-free",
+      "packRoot": "media/3D_Assets/KayKit_BlockBits_1.0_FREE",
+      "path": "media/3D_Assets/KayKit_BlockBits_1.0_FREE/Assets/gltf/stone.gltf",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_BlockBits_1.0_FREE/Assets/gltf/block_bits_texture.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "block_bits_texture.png"
+          },
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_BlockBits_1.0_FREE/Assets/gltf/stone.bin",
+            "provenance": "file-explicit",
+            "reference": "buffers[0].uri",
+            "role": "buffer",
+            "status": "ok",
+            "uri": "stone.bin"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 3045,
+      "source": {
+        "blobSha": "58d6a2daf83f70cd0930bb13bf899425d9b442de",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/KayKit_BlockBits_1.0_FREE/Assets/gltf/stone.gltf",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/KayKit_BlockBits_1.0_FREE/Assets/gltf/stone.gltf",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/KayKit_BlockBits_1.0_FREE/Assets/gltf/stone_dark.gltf",
+      "collectionPath": "Assets",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/KayKit_BlockBits_1.0_FREE/Assets/gltf",
+      "format": "gltf",
+      "kind": "model-3d",
+      "name": "stone_dark",
+      "packId": "kaykit-blockbits-1-0-free",
+      "packRoot": "media/3D_Assets/KayKit_BlockBits_1.0_FREE",
+      "path": "media/3D_Assets/KayKit_BlockBits_1.0_FREE/Assets/gltf/stone_dark.gltf",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_BlockBits_1.0_FREE/Assets/gltf/block_bits_texture.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "block_bits_texture.png"
+          },
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_BlockBits_1.0_FREE/Assets/gltf/stone_dark.bin",
+            "provenance": "file-explicit",
+            "reference": "buffers[0].uri",
+            "role": "buffer",
+            "status": "ok",
+            "uri": "stone_dark.bin"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 3061,
+      "source": {
+        "blobSha": "b2f62ac9aac7b736b4c701eb6a46804147b6dd57",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/KayKit_BlockBits_1.0_FREE/Assets/gltf/stone_dark.gltf",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/KayKit_BlockBits_1.0_FREE/Assets/gltf/stone_dark.gltf",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/KayKit_BlockBits_1.0_FREE/Assets/gltf/stone_with_copper.gltf",
+      "collectionPath": "Assets",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/KayKit_BlockBits_1.0_FREE/Assets/gltf",
+      "format": "gltf",
+      "kind": "model-3d",
+      "name": "stone_with_copper",
+      "packId": "kaykit-blockbits-1-0-free",
+      "packRoot": "media/3D_Assets/KayKit_BlockBits_1.0_FREE",
+      "path": "media/3D_Assets/KayKit_BlockBits_1.0_FREE/Assets/gltf/stone_with_copper.gltf",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_BlockBits_1.0_FREE/Assets/gltf/block_bits_texture.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "block_bits_texture.png"
+          },
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_BlockBits_1.0_FREE/Assets/gltf/stone_with_copper.bin",
+            "provenance": "file-explicit",
+            "reference": "buffers[0].uri",
+            "role": "buffer",
+            "status": "ok",
+            "uri": "stone_with_copper.bin"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 3081,
+      "source": {
+        "blobSha": "9c348fe51e749aee3e868250a14ff0f7c0e79ff5",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/KayKit_BlockBits_1.0_FREE/Assets/gltf/stone_with_copper.gltf",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/KayKit_BlockBits_1.0_FREE/Assets/gltf/stone_with_copper.gltf",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/KayKit_BlockBits_1.0_FREE/Assets/gltf/stone_with_gold.gltf",
+      "collectionPath": "Assets",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/KayKit_BlockBits_1.0_FREE/Assets/gltf",
+      "format": "gltf",
+      "kind": "model-3d",
+      "name": "stone_with_gold",
+      "packId": "kaykit-blockbits-1-0-free",
+      "packRoot": "media/3D_Assets/KayKit_BlockBits_1.0_FREE",
+      "path": "media/3D_Assets/KayKit_BlockBits_1.0_FREE/Assets/gltf/stone_with_gold.gltf",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_BlockBits_1.0_FREE/Assets/gltf/block_bits_texture.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "block_bits_texture.png"
+          },
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_BlockBits_1.0_FREE/Assets/gltf/stone_with_gold.bin",
+            "provenance": "file-explicit",
+            "reference": "buffers[0].uri",
+            "role": "buffer",
+            "status": "ok",
+            "uri": "stone_with_gold.bin"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 3075,
+      "source": {
+        "blobSha": "949351aa99526a02c1a8404e6c83b2432d076e70",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/KayKit_BlockBits_1.0_FREE/Assets/gltf/stone_with_gold.gltf",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/KayKit_BlockBits_1.0_FREE/Assets/gltf/stone_with_gold.gltf",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/KayKit_BlockBits_1.0_FREE/Assets/gltf/stone_with_silver.gltf",
+      "collectionPath": "Assets",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/KayKit_BlockBits_1.0_FREE/Assets/gltf",
+      "format": "gltf",
+      "kind": "model-3d",
+      "name": "stone_with_silver",
+      "packId": "kaykit-blockbits-1-0-free",
+      "packRoot": "media/3D_Assets/KayKit_BlockBits_1.0_FREE",
+      "path": "media/3D_Assets/KayKit_BlockBits_1.0_FREE/Assets/gltf/stone_with_silver.gltf",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_BlockBits_1.0_FREE/Assets/gltf/block_bits_texture.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "block_bits_texture.png"
+          },
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_BlockBits_1.0_FREE/Assets/gltf/stone_with_silver.bin",
+            "provenance": "file-explicit",
+            "reference": "buffers[0].uri",
+            "role": "buffer",
+            "status": "ok",
+            "uri": "stone_with_silver.bin"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 3081,
+      "source": {
+        "blobSha": "d0f893f13a3c1faee789c0a3752f80f68d547c44",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/KayKit_BlockBits_1.0_FREE/Assets/gltf/stone_with_silver.gltf",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/KayKit_BlockBits_1.0_FREE/Assets/gltf/stone_with_silver.gltf",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/KayKit_BlockBits_1.0_FREE/Assets/gltf/striped_block_blue.gltf",
+      "collectionPath": "Assets",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/KayKit_BlockBits_1.0_FREE/Assets/gltf",
+      "format": "gltf",
+      "kind": "model-3d",
+      "name": "striped_block_blue",
+      "packId": "kaykit-blockbits-1-0-free",
+      "packRoot": "media/3D_Assets/KayKit_BlockBits_1.0_FREE",
+      "path": "media/3D_Assets/KayKit_BlockBits_1.0_FREE/Assets/gltf/striped_block_blue.gltf",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_BlockBits_1.0_FREE/Assets/gltf/block_bits_texture.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "block_bits_texture.png"
+          },
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_BlockBits_1.0_FREE/Assets/gltf/striped_block_blue.bin",
+            "provenance": "file-explicit",
+            "reference": "buffers[0].uri",
+            "role": "buffer",
+            "status": "ok",
+            "uri": "striped_block_blue.bin"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 2971,
+      "source": {
+        "blobSha": "21be154039a2d9bf8cc55c27d2160d99b6c44c48",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/KayKit_BlockBits_1.0_FREE/Assets/gltf/striped_block_blue.gltf",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/KayKit_BlockBits_1.0_FREE/Assets/gltf/striped_block_blue.gltf",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/KayKit_BlockBits_1.0_FREE/Assets/gltf/striped_block_green.gltf",
+      "collectionPath": "Assets",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/KayKit_BlockBits_1.0_FREE/Assets/gltf",
+      "format": "gltf",
+      "kind": "model-3d",
+      "name": "striped_block_green",
+      "packId": "kaykit-blockbits-1-0-free",
+      "packRoot": "media/3D_Assets/KayKit_BlockBits_1.0_FREE",
+      "path": "media/3D_Assets/KayKit_BlockBits_1.0_FREE/Assets/gltf/striped_block_green.gltf",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_BlockBits_1.0_FREE/Assets/gltf/block_bits_texture.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "block_bits_texture.png"
+          },
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_BlockBits_1.0_FREE/Assets/gltf/striped_block_green.bin",
+            "provenance": "file-explicit",
+            "reference": "buffers[0].uri",
+            "role": "buffer",
+            "status": "ok",
+            "uri": "striped_block_green.bin"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 2974,
+      "source": {
+        "blobSha": "ead519a4f4e01e29ef2579ea2a0594059589ca72",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/KayKit_BlockBits_1.0_FREE/Assets/gltf/striped_block_green.gltf",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/KayKit_BlockBits_1.0_FREE/Assets/gltf/striped_block_green.gltf",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/KayKit_BlockBits_1.0_FREE/Assets/gltf/striped_block_red.gltf",
+      "collectionPath": "Assets",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/KayKit_BlockBits_1.0_FREE/Assets/gltf",
+      "format": "gltf",
+      "kind": "model-3d",
+      "name": "striped_block_red",
+      "packId": "kaykit-blockbits-1-0-free",
+      "packRoot": "media/3D_Assets/KayKit_BlockBits_1.0_FREE",
+      "path": "media/3D_Assets/KayKit_BlockBits_1.0_FREE/Assets/gltf/striped_block_red.gltf",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_BlockBits_1.0_FREE/Assets/gltf/block_bits_texture.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "block_bits_texture.png"
+          },
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_BlockBits_1.0_FREE/Assets/gltf/striped_block_red.bin",
+            "provenance": "file-explicit",
+            "reference": "buffers[0].uri",
+            "role": "buffer",
+            "status": "ok",
+            "uri": "striped_block_red.bin"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 2968,
+      "source": {
+        "blobSha": "61d8aef2d69968857ec74270cdb0e850f0ff3224",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/KayKit_BlockBits_1.0_FREE/Assets/gltf/striped_block_red.gltf",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/KayKit_BlockBits_1.0_FREE/Assets/gltf/striped_block_red.gltf",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/KayKit_BlockBits_1.0_FREE/Assets/gltf/striped_block_yellow.gltf",
+      "collectionPath": "Assets",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/KayKit_BlockBits_1.0_FREE/Assets/gltf",
+      "format": "gltf",
+      "kind": "model-3d",
+      "name": "striped_block_yellow",
+      "packId": "kaykit-blockbits-1-0-free",
+      "packRoot": "media/3D_Assets/KayKit_BlockBits_1.0_FREE",
+      "path": "media/3D_Assets/KayKit_BlockBits_1.0_FREE/Assets/gltf/striped_block_yellow.gltf",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_BlockBits_1.0_FREE/Assets/gltf/block_bits_texture.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "block_bits_texture.png"
+          },
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_BlockBits_1.0_FREE/Assets/gltf/striped_block_yellow.bin",
+            "provenance": "file-explicit",
+            "reference": "buffers[0].uri",
+            "role": "buffer",
+            "status": "ok",
+            "uri": "striped_block_yellow.bin"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 2977,
+      "source": {
+        "blobSha": "08ed6247cd50a93cb09774c80e7b76788a05daa7",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/KayKit_BlockBits_1.0_FREE/Assets/gltf/striped_block_yellow.gltf",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/KayKit_BlockBits_1.0_FREE/Assets/gltf/striped_block_yellow.gltf",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/KayKit_BlockBits_1.0_FREE/Assets/gltf/tree.gltf",
+      "collectionPath": "Assets",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/KayKit_BlockBits_1.0_FREE/Assets/gltf",
+      "format": "gltf",
+      "kind": "model-3d",
+      "name": "tree",
+      "packId": "kaykit-blockbits-1-0-free",
+      "packRoot": "media/3D_Assets/KayKit_BlockBits_1.0_FREE",
+      "path": "media/3D_Assets/KayKit_BlockBits_1.0_FREE/Assets/gltf/tree.gltf",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_BlockBits_1.0_FREE/Assets/gltf/block_bits_texture.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "block_bits_texture.png"
+          },
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_BlockBits_1.0_FREE/Assets/gltf/tree.bin",
+            "provenance": "file-explicit",
+            "reference": "buffers[0].uri",
+            "role": "buffer",
+            "status": "ok",
+            "uri": "tree.bin"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 3001,
+      "source": {
+        "blobSha": "2187d57a652523636d57e3def6a28eb8362fc36d",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/KayKit_BlockBits_1.0_FREE/Assets/gltf/tree.gltf",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/KayKit_BlockBits_1.0_FREE/Assets/gltf/tree.gltf",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/KayKit_BlockBits_1.0_FREE/Assets/gltf/tree_with_snow.gltf",
+      "collectionPath": "Assets",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/KayKit_BlockBits_1.0_FREE/Assets/gltf",
+      "format": "gltf",
+      "kind": "model-3d",
+      "name": "tree_with_snow",
+      "packId": "kaykit-blockbits-1-0-free",
+      "packRoot": "media/3D_Assets/KayKit_BlockBits_1.0_FREE",
+      "path": "media/3D_Assets/KayKit_BlockBits_1.0_FREE/Assets/gltf/tree_with_snow.gltf",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_BlockBits_1.0_FREE/Assets/gltf/block_bits_texture.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "block_bits_texture.png"
+          },
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_BlockBits_1.0_FREE/Assets/gltf/tree_with_snow.bin",
+            "provenance": "file-explicit",
+            "reference": "buffers[0].uri",
+            "role": "buffer",
+            "status": "ok",
+            "uri": "tree_with_snow.bin"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 3032,
+      "source": {
+        "blobSha": "f66f194fc3d212e8e40cbd0618c05471a01c0a1e",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/KayKit_BlockBits_1.0_FREE/Assets/gltf/tree_with_snow.gltf",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/KayKit_BlockBits_1.0_FREE/Assets/gltf/tree_with_snow.gltf",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/KayKit_BlockBits_1.0_FREE/Assets/gltf/water.gltf",
+      "collectionPath": "Assets",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/KayKit_BlockBits_1.0_FREE/Assets/gltf",
+      "format": "gltf",
+      "kind": "model-3d",
+      "name": "water",
+      "packId": "kaykit-blockbits-1-0-free",
+      "packRoot": "media/3D_Assets/KayKit_BlockBits_1.0_FREE",
+      "path": "media/3D_Assets/KayKit_BlockBits_1.0_FREE/Assets/gltf/water.gltf",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_BlockBits_1.0_FREE/Assets/gltf/block_bits_texture.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "block_bits_texture.png"
+          },
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_BlockBits_1.0_FREE/Assets/gltf/water.bin",
+            "provenance": "file-explicit",
+            "reference": "buffers[0].uri",
+            "role": "buffer",
+            "status": "ok",
+            "uri": "water.bin"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 2954,
+      "source": {
+        "blobSha": "21d82256a76a900a80c55424c7e6fc13fe4a2e68",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/KayKit_BlockBits_1.0_FREE/Assets/gltf/water.gltf",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/KayKit_BlockBits_1.0_FREE/Assets/gltf/water.gltf",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/KayKit_BlockBits_1.0_FREE/Assets/gltf/wood.gltf",
+      "collectionPath": "Assets",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/KayKit_BlockBits_1.0_FREE/Assets/gltf",
+      "format": "gltf",
+      "kind": "model-3d",
+      "name": "wood",
+      "packId": "kaykit-blockbits-1-0-free",
+      "packRoot": "media/3D_Assets/KayKit_BlockBits_1.0_FREE",
+      "path": "media/3D_Assets/KayKit_BlockBits_1.0_FREE/Assets/gltf/wood.gltf",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_BlockBits_1.0_FREE/Assets/gltf/block_bits_texture.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "block_bits_texture.png"
+          },
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_BlockBits_1.0_FREE/Assets/gltf/wood.bin",
+            "provenance": "file-explicit",
+            "reference": "buffers[0].uri",
+            "role": "buffer",
+            "status": "ok",
+            "uri": "wood.bin"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 3026,
+      "source": {
+        "blobSha": "1cfe138c5891ef06489fe1fa6784af843f7a193d",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/KayKit_BlockBits_1.0_FREE/Assets/gltf/wood.gltf",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/KayKit_BlockBits_1.0_FREE/Assets/gltf/wood.gltf",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/KayKit_BlockBits_1.0_FREE/Textures/block_bits_texture.png",
+      "collectionPath": "Textures",
+      "folder": "media/3D_Assets/KayKit_BlockBits_1.0_FREE/Textures",
+      "format": "png",
+      "hints": {
+        "textureCandidate": true,
+        "textureCandidateProvenance": "generated-structural"
+      },
+      "kind": "image-2d",
+      "name": "block_bits_texture",
+      "packId": "kaykit-blockbits-1-0-free",
+      "packRoot": "media/3D_Assets/KayKit_BlockBits_1.0_FREE",
+      "path": "media/3D_Assets/KayKit_BlockBits_1.0_FREE/Textures/block_bits_texture.png",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 31211,
+      "source": {
+        "blobSha": "afcae6c2986a6914142b6561e4bbc2f26e72d3b1",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/KayKit_BlockBits_1.0_FREE/Textures/block_bits_texture.png",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/KayKit_BlockBits_1.0_FREE/Textures/block_bits_texture.png",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/KayKit_BlockBits_1.0_FREE/contents.png",
+      "folder": "media/3D_Assets/KayKit_BlockBits_1.0_FREE",
+      "format": "png",
+      "hints": {
+        "textureCandidate": false,
+        "textureCandidateProvenance": "generated-structural"
+      },
+      "kind": "image-2d",
+      "name": "contents",
+      "packId": "kaykit-blockbits-1-0-free",
+      "packRoot": "media/3D_Assets/KayKit_BlockBits_1.0_FREE",
+      "path": "media/3D_Assets/KayKit_BlockBits_1.0_FREE/contents.png",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 936833,
+      "source": {
+        "blobSha": "c8807790e3d741a01346402d0ba14eb3b445898e",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/KayKit_BlockBits_1.0_FREE/contents.png",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/KayKit_BlockBits_1.0_FREE/contents.png",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/KayKit_BlockBits_1.0_FREE/sample.png",
+      "folder": "media/3D_Assets/KayKit_BlockBits_1.0_FREE",
+      "format": "png",
+      "hints": {
+        "textureCandidate": false,
+        "textureCandidateProvenance": "generated-structural"
+      },
+      "kind": "image-2d",
+      "name": "sample",
+      "packId": "kaykit-blockbits-1-0-free",
+      "packRoot": "media/3D_Assets/KayKit_BlockBits_1.0_FREE",
+      "path": "media/3D_Assets/KayKit_BlockBits_1.0_FREE/sample.png",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 874866,
+      "source": {
+        "blobSha": "969901565f73dec3d6e6802cbf18241751f68bdd",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/KayKit_BlockBits_1.0_FREE/sample.png",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/KayKit_BlockBits_1.0_FREE/sample.png",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    }
+  ],
+  "collections": [
+    {
+      "assetCount": 41,
+      "path": "Assets"
+    },
+    {
+      "assetCount": 1,
+      "path": "Textures"
+    }
+  ],
+  "dependencyStatus": {
+    "complete": 40
+  },
+  "displayName": "KayKit_BlockBits_1.0_FREE",
+  "formats": {
+    "gltf": 40,
+    "png": 4
+  },
+  "kinds": {
+    "image-2d": 4,
+    "model-3d": 40
+  },
+  "packId": "kaykit-blockbits-1-0-free",
+  "provenance": "generated-structural",
+  "root": "media/3D_Assets/KayKit_BlockBits_1.0_FREE",
+  "schema": "kfb.asset-pack.v1",
+  "shard": "packs/kaykit-blockbits-1-0-free.json"
+}

@@ -1,0 +1,969 @@
+{
+  "assetCount": 25,
+  "assets": [
+    {
+      "assetId": "media/3D_Assets/GLB_cube-pets/Textures/colormap.png",
+      "collectionPath": "Textures",
+      "folder": "media/3D_Assets/GLB_cube-pets/Textures",
+      "format": "png",
+      "hints": {
+        "textureCandidate": true,
+        "textureCandidateProvenance": "generated-structural"
+      },
+      "kind": "image-2d",
+      "name": "colormap",
+      "packId": "glb-cube-pets",
+      "packRoot": "media/3D_Assets/GLB_cube-pets",
+      "path": "media/3D_Assets/GLB_cube-pets/Textures/colormap.png",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 10915,
+      "source": {
+        "blobSha": "cb9f831ac40f47e1474b09d5f202de422dc6ccbf",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/GLB_cube-pets/Textures/colormap.png",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/GLB_cube-pets/Textures/colormap.png",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/GLB_cube-pets/animal-beaver.glb",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/GLB_cube-pets",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "animal-beaver",
+      "packId": "glb-cube-pets",
+      "packRoot": "media/3D_Assets/GLB_cube-pets",
+      "path": "media/3D_Assets/GLB_cube-pets/animal-beaver.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/GLB_cube-pets/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 149728,
+      "source": {
+        "blobSha": "2b0e7ae9795bbb7445d128ba36663122f3706011",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/GLB_cube-pets/animal-beaver.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/GLB_cube-pets/animal-beaver.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/GLB_cube-pets/animal-bee.glb",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/GLB_cube-pets",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "animal-bee",
+      "packId": "glb-cube-pets",
+      "packRoot": "media/3D_Assets/GLB_cube-pets",
+      "path": "media/3D_Assets/GLB_cube-pets/animal-bee.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/GLB_cube-pets/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 164356,
+      "source": {
+        "blobSha": "688780065df7e94665c96e5c12276f199d03567f",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/GLB_cube-pets/animal-bee.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/GLB_cube-pets/animal-bee.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/GLB_cube-pets/animal-bunny.glb",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/GLB_cube-pets",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "animal-bunny",
+      "packId": "glb-cube-pets",
+      "packRoot": "media/3D_Assets/GLB_cube-pets",
+      "path": "media/3D_Assets/GLB_cube-pets/animal-bunny.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/GLB_cube-pets/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 131568,
+      "source": {
+        "blobSha": "e0cc86cb2963b08ddaa7eca094d1ad2b17a670ef",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/GLB_cube-pets/animal-bunny.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/GLB_cube-pets/animal-bunny.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/GLB_cube-pets/animal-cat.glb",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/GLB_cube-pets",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "animal-cat",
+      "packId": "glb-cube-pets",
+      "packRoot": "media/3D_Assets/GLB_cube-pets",
+      "path": "media/3D_Assets/GLB_cube-pets/animal-cat.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/GLB_cube-pets/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 165164,
+      "source": {
+        "blobSha": "91f9b1bccbe0aa4c4c563b298def62b4f8054dcc",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/GLB_cube-pets/animal-cat.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/GLB_cube-pets/animal-cat.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/GLB_cube-pets/animal-caterpillar.glb",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/GLB_cube-pets",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "animal-caterpillar",
+      "packId": "glb-cube-pets",
+      "packRoot": "media/3D_Assets/GLB_cube-pets",
+      "path": "media/3D_Assets/GLB_cube-pets/animal-caterpillar.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/GLB_cube-pets/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 130968,
+      "source": {
+        "blobSha": "75fccbdbabd275da1a4e3584814e3f2140bf259f",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/GLB_cube-pets/animal-caterpillar.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/GLB_cube-pets/animal-caterpillar.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/GLB_cube-pets/animal-chick.glb",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/GLB_cube-pets",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "animal-chick",
+      "packId": "glb-cube-pets",
+      "packRoot": "media/3D_Assets/GLB_cube-pets",
+      "path": "media/3D_Assets/GLB_cube-pets/animal-chick.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/GLB_cube-pets/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 125424,
+      "source": {
+        "blobSha": "15ca45fbc2eb59a1b61bffd78ef518423fc6c838",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/GLB_cube-pets/animal-chick.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/GLB_cube-pets/animal-chick.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/GLB_cube-pets/animal-cow.glb",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/GLB_cube-pets",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "animal-cow",
+      "packId": "glb-cube-pets",
+      "packRoot": "media/3D_Assets/GLB_cube-pets",
+      "path": "media/3D_Assets/GLB_cube-pets/animal-cow.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/GLB_cube-pets/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 128084,
+      "source": {
+        "blobSha": "42c73ebd05aecf72a209be91eb21410e79b5824d",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/GLB_cube-pets/animal-cow.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/GLB_cube-pets/animal-cow.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/GLB_cube-pets/animal-crab.glb",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/GLB_cube-pets",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "animal-crab",
+      "packId": "glb-cube-pets",
+      "packRoot": "media/3D_Assets/GLB_cube-pets",
+      "path": "media/3D_Assets/GLB_cube-pets/animal-crab.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/GLB_cube-pets/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 150768,
+      "source": {
+        "blobSha": "719e24966504a60a93eb32b582144c8b1a8d4076",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/GLB_cube-pets/animal-crab.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/GLB_cube-pets/animal-crab.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/GLB_cube-pets/animal-deer.glb",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/GLB_cube-pets",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "animal-deer",
+      "packId": "glb-cube-pets",
+      "packRoot": "media/3D_Assets/GLB_cube-pets",
+      "path": "media/3D_Assets/GLB_cube-pets/animal-deer.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/GLB_cube-pets/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 150400,
+      "source": {
+        "blobSha": "e06485dc52a7fc0aff532d0c9066cd13c36ecf9b",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/GLB_cube-pets/animal-deer.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/GLB_cube-pets/animal-deer.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/GLB_cube-pets/animal-dog.glb",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/GLB_cube-pets",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "animal-dog",
+      "packId": "glb-cube-pets",
+      "packRoot": "media/3D_Assets/GLB_cube-pets",
+      "path": "media/3D_Assets/GLB_cube-pets/animal-dog.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/GLB_cube-pets/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 119544,
+      "source": {
+        "blobSha": "61d4728b475498f38fd6232f7ff8d43f78c2934b",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/GLB_cube-pets/animal-dog.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/GLB_cube-pets/animal-dog.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/GLB_cube-pets/animal-elephant.glb",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/GLB_cube-pets",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "animal-elephant",
+      "packId": "glb-cube-pets",
+      "packRoot": "media/3D_Assets/GLB_cube-pets",
+      "path": "media/3D_Assets/GLB_cube-pets/animal-elephant.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/GLB_cube-pets/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 148892,
+      "source": {
+        "blobSha": "19e27278610ed24d0fa89cd3f2dbbaab4683c3d2",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/GLB_cube-pets/animal-elephant.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/GLB_cube-pets/animal-elephant.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/GLB_cube-pets/animal-fish.glb",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/GLB_cube-pets",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "animal-fish",
+      "packId": "glb-cube-pets",
+      "packRoot": "media/3D_Assets/GLB_cube-pets",
+      "path": "media/3D_Assets/GLB_cube-pets/animal-fish.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/GLB_cube-pets/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 91584,
+      "source": {
+        "blobSha": "3886ea2f489e137c712ec9a3a6a1afbcc48d523a",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/GLB_cube-pets/animal-fish.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/GLB_cube-pets/animal-fish.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/GLB_cube-pets/animal-fox.glb",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/GLB_cube-pets",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "animal-fox",
+      "packId": "glb-cube-pets",
+      "packRoot": "media/3D_Assets/GLB_cube-pets",
+      "path": "media/3D_Assets/GLB_cube-pets/animal-fox.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/GLB_cube-pets/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 141880,
+      "source": {
+        "blobSha": "f9fd9a4def3ecf33c6d065e544265f2b40259237",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/GLB_cube-pets/animal-fox.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/GLB_cube-pets/animal-fox.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/GLB_cube-pets/animal-giraffe.glb",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/GLB_cube-pets",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "animal-giraffe",
+      "packId": "glb-cube-pets",
+      "packRoot": "media/3D_Assets/GLB_cube-pets",
+      "path": "media/3D_Assets/GLB_cube-pets/animal-giraffe.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/GLB_cube-pets/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 132676,
+      "source": {
+        "blobSha": "48c620f63cb2d07ed9ee1e4533b792d8d9c0d3c7",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/GLB_cube-pets/animal-giraffe.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/GLB_cube-pets/animal-giraffe.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/GLB_cube-pets/animal-hog.glb",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/GLB_cube-pets",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "animal-hog",
+      "packId": "glb-cube-pets",
+      "packRoot": "media/3D_Assets/GLB_cube-pets",
+      "path": "media/3D_Assets/GLB_cube-pets/animal-hog.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/GLB_cube-pets/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 141596,
+      "source": {
+        "blobSha": "eb32b907b8b116c681737290fcfb513d7d7c56b0",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/GLB_cube-pets/animal-hog.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/GLB_cube-pets/animal-hog.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/GLB_cube-pets/animal-koala.glb",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/GLB_cube-pets",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "animal-koala",
+      "packId": "glb-cube-pets",
+      "packRoot": "media/3D_Assets/GLB_cube-pets",
+      "path": "media/3D_Assets/GLB_cube-pets/animal-koala.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/GLB_cube-pets/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 131008,
+      "source": {
+        "blobSha": "cb3c0c2564e2debddac239f9efc43c75e3cb546e",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/GLB_cube-pets/animal-koala.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/GLB_cube-pets/animal-koala.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/GLB_cube-pets/animal-lion.glb",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/GLB_cube-pets",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "animal-lion",
+      "packId": "glb-cube-pets",
+      "packRoot": "media/3D_Assets/GLB_cube-pets",
+      "path": "media/3D_Assets/GLB_cube-pets/animal-lion.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/GLB_cube-pets/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 172936,
+      "source": {
+        "blobSha": "63bec9cd5c6b3c2b2c0409541b3c1e3fa6e48816",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/GLB_cube-pets/animal-lion.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/GLB_cube-pets/animal-lion.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/GLB_cube-pets/animal-monkey.glb",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/GLB_cube-pets",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "animal-monkey",
+      "packId": "glb-cube-pets",
+      "packRoot": "media/3D_Assets/GLB_cube-pets",
+      "path": "media/3D_Assets/GLB_cube-pets/animal-monkey.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/GLB_cube-pets/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 174944,
+      "source": {
+        "blobSha": "4b2c58f6df6ceb024686cf7c9560411f4da9b667",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/GLB_cube-pets/animal-monkey.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/GLB_cube-pets/animal-monkey.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/GLB_cube-pets/animal-panda.glb",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/GLB_cube-pets",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "animal-panda",
+      "packId": "glb-cube-pets",
+      "packRoot": "media/3D_Assets/GLB_cube-pets",
+      "path": "media/3D_Assets/GLB_cube-pets/animal-panda.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/GLB_cube-pets/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 133624,
+      "source": {
+        "blobSha": "886d29b35f40a43aa196ea6e09aa59cb7e1be5e6",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/GLB_cube-pets/animal-panda.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/GLB_cube-pets/animal-panda.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/GLB_cube-pets/animal-parrot.glb",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/GLB_cube-pets",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "animal-parrot",
+      "packId": "glb-cube-pets",
+      "packRoot": "media/3D_Assets/GLB_cube-pets",
+      "path": "media/3D_Assets/GLB_cube-pets/animal-parrot.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/GLB_cube-pets/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 154124,
+      "source": {
+        "blobSha": "cd57c8ca4ad6deb8e3e2ceb85ce4a45da3d30557",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/GLB_cube-pets/animal-parrot.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/GLB_cube-pets/animal-parrot.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/GLB_cube-pets/animal-penguin.glb",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/GLB_cube-pets",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "animal-penguin",
+      "packId": "glb-cube-pets",
+      "packRoot": "media/3D_Assets/GLB_cube-pets",
+      "path": "media/3D_Assets/GLB_cube-pets/animal-penguin.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/GLB_cube-pets/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 130396,
+      "source": {
+        "blobSha": "65071fb973cac6efa246750caa4d4abb5c51deed",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/GLB_cube-pets/animal-penguin.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/GLB_cube-pets/animal-penguin.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/GLB_cube-pets/animal-pig.glb",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/GLB_cube-pets",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "animal-pig",
+      "packId": "glb-cube-pets",
+      "packRoot": "media/3D_Assets/GLB_cube-pets",
+      "path": "media/3D_Assets/GLB_cube-pets/animal-pig.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/GLB_cube-pets/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 127032,
+      "source": {
+        "blobSha": "1de002da3db5beba3f281f646a9593a220af7aa0",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/GLB_cube-pets/animal-pig.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/GLB_cube-pets/animal-pig.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/GLB_cube-pets/animal-polar.glb",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/GLB_cube-pets",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "animal-polar",
+      "packId": "glb-cube-pets",
+      "packRoot": "media/3D_Assets/GLB_cube-pets",
+      "path": "media/3D_Assets/GLB_cube-pets/animal-polar.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/GLB_cube-pets/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 98964,
+      "source": {
+        "blobSha": "9a4701957a42326fd959c4db769b711bb2941d07",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/GLB_cube-pets/animal-polar.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/GLB_cube-pets/animal-polar.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/GLB_cube-pets/animal-tiger.glb",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/GLB_cube-pets",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "animal-tiger",
+      "packId": "glb-cube-pets",
+      "packRoot": "media/3D_Assets/GLB_cube-pets",
+      "path": "media/3D_Assets/GLB_cube-pets/animal-tiger.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/GLB_cube-pets/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 172348,
+      "source": {
+        "blobSha": "0eb82d3581700f34cec94af3429118bfe7dea9e9",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/GLB_cube-pets/animal-tiger.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/GLB_cube-pets/animal-tiger.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    }
+  ],
+  "collections": [
+    {
+      "assetCount": 1,
+      "path": "Textures"
+    }
+  ],
+  "dependencyStatus": {
+    "complete": 24
+  },
+  "displayName": "GLB_cube-pets",
+  "formats": {
+    "glb": 24,
+    "png": 1
+  },
+  "kinds": {
+    "image-2d": 1,
+    "model-3d": 24
+  },
+  "packId": "glb-cube-pets",
+  "provenance": "generated-structural",
+  "root": "media/3D_Assets/GLB_cube-pets",
+  "schema": "kfb.asset-pack.v1",
+  "shard": "packs/glb-cube-pets.json"
+}

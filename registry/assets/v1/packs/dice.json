@@ -1,0 +1,216 @@
+{
+  "assetCount": 6,
+  "assets": [
+    {
+      "assetId": "media/3D_Assets/Dice/Formats/dice.3ds",
+      "collectionPath": "Formats",
+      "dependencyStatus": "unresolved",
+      "folder": "media/3D_Assets/Dice/Formats",
+      "format": "3ds",
+      "kind": "model-3d",
+      "name": "dice",
+      "packId": "dice",
+      "packRoot": "media/3D_Assets/Dice",
+      "path": "media/3D_Assets/Dice/Formats/dice.3ds",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": []
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 651551,
+      "source": {
+        "blobSha": "7e093d9e43138b67bc3fe042c2132af289e3ec08",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/Dice/Formats/dice.3ds",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/Dice/Formats/dice.3ds",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/Dice/Formats/dice.dae",
+      "collectionPath": "Formats",
+      "dependencyStatus": "unresolved",
+      "folder": "media/3D_Assets/Dice/Formats",
+      "format": "dae",
+      "kind": "model-3d",
+      "name": "dice",
+      "packId": "dice",
+      "packRoot": "media/3D_Assets/Dice",
+      "path": "media/3D_Assets/Dice/Formats/dice.dae",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": []
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 33613,
+      "source": {
+        "blobSha": "e5098cd4a9206fc407e828b162b4667be0955332",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/Dice/Formats/dice.dae",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/Dice/Formats/dice.dae",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/Dice/Formats/dice.fbx",
+      "collectionPath": "Formats",
+      "dependencyStatus": "unresolved",
+      "folder": "media/3D_Assets/Dice/Formats",
+      "format": "fbx",
+      "kind": "model-3d",
+      "name": "dice",
+      "packId": "dice",
+      "packRoot": "media/3D_Assets/Dice",
+      "path": "media/3D_Assets/Dice/Formats/dice.fbx",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": []
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 2771004,
+      "source": {
+        "blobSha": "08f29e6cfe263f7f1cdc43dbbc81bbb5fc1ec0b0",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/Dice/Formats/dice.fbx",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/Dice/Formats/dice.fbx",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/Dice/Formats/dice.obj",
+      "collectionPath": "Formats",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/Dice/Formats",
+      "format": "obj",
+      "kind": "model-3d",
+      "name": "dice",
+      "packId": "dice",
+      "packRoot": "media/3D_Assets/Dice",
+      "path": "media/3D_Assets/Dice/Formats/dice.obj",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/Dice/Formats/dice.mtl",
+            "provenance": "file-explicit",
+            "reference": "obj:mtllib",
+            "role": "material",
+            "status": "ok",
+            "uri": "dice.mtl"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 1889007,
+      "source": {
+        "blobSha": "1d7c6b6824f1d19cd3784c1ef7d41d898248a499",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/Dice/Formats/dice.obj",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/Dice/Formats/dice.obj",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/Dice/Preview.png",
+      "folder": "media/3D_Assets/Dice",
+      "format": "png",
+      "hints": {
+        "textureCandidate": false,
+        "textureCandidateProvenance": "generated-structural"
+      },
+      "kind": "image-2d",
+      "name": "Preview",
+      "packId": "dice",
+      "packRoot": "media/3D_Assets/Dice",
+      "path": "media/3D_Assets/Dice/Preview.png",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 792435,
+      "source": {
+        "blobSha": "a20663fe0fac61b8943be6913e0498f0afe89814",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/Dice/Preview.png",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/Dice/Preview.png",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/Dice/dice_ugur_lowpoly.glb",
+      "dependencyStatus": "embedded",
+      "folder": "media/3D_Assets/Dice",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "dice_ugur_lowpoly",
+      "packId": "dice",
+      "packRoot": "media/3D_Assets/Dice",
+      "path": "media/3D_Assets/Dice/dice_ugur_lowpoly.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": []
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 100880,
+      "source": {
+        "blobSha": "537dcbcce6485714be8906e2dd60ebddd348b88b",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/Dice/dice_ugur_lowpoly.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/Dice/dice_ugur_lowpoly.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    }
+  ],
+  "collections": [
+    {
+      "assetCount": 4,
+      "path": "Formats"
+    }
+  ],
+  "dependencyStatus": {
+    "complete": 1,
+    "embedded": 1,
+    "unresolved": 3
+  },
+  "displayName": "Dice",
+  "formats": {
+    "3ds": 1,
+    "dae": 1,
+    "fbx": 1,
+    "glb": 1,
+    "obj": 1,
+    "png": 1
+  },
+  "kinds": {
+    "image-2d": 1,
+    "model-3d": 5
+  },
+  "packId": "dice",
+  "provenance": "generated-structural",
+  "root": "media/3D_Assets/Dice",
+  "schema": "kfb.asset-pack.v1",
+  "shard": "packs/dice.json"
+}

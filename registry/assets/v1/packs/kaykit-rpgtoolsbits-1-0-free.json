@@ -1,0 +1,2680 @@
+{
+  "assetCount": 58,
+  "assets": [
+    {
+      "assetId": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/anvil.gltf",
+      "collectionPath": "Assets",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf",
+      "format": "gltf",
+      "kind": "model-3d",
+      "name": "anvil",
+      "packId": "kaykit-rpgtoolsbits-1-0-free",
+      "packRoot": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE",
+      "path": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/anvil.gltf",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/anvil.bin",
+            "provenance": "file-explicit",
+            "reference": "buffers[0].uri",
+            "role": "buffer",
+            "status": "ok",
+            "uri": "anvil.bin"
+          },
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/tools_bits_texture.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "tools_bits_texture.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 2977,
+      "source": {
+        "blobSha": "c7b012f1bf67d0d89539b5d5002b589275615d1a",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/anvil.gltf",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/anvil.gltf",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/axe.gltf",
+      "collectionPath": "Assets",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf",
+      "format": "gltf",
+      "kind": "model-3d",
+      "name": "axe",
+      "packId": "kaykit-rpgtoolsbits-1-0-free",
+      "packRoot": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE",
+      "path": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/axe.gltf",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/axe.bin",
+            "provenance": "file-explicit",
+            "reference": "buffers[0].uri",
+            "role": "buffer",
+            "status": "ok",
+            "uri": "axe.bin"
+          },
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/tools_bits_texture.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "tools_bits_texture.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 3023,
+      "source": {
+        "blobSha": "f3d0277285d02e15b8bed571573557fff6a81bd7",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/axe.gltf",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/axe.gltf",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/blueprint.gltf",
+      "collectionPath": "Assets",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf",
+      "format": "gltf",
+      "kind": "model-3d",
+      "name": "blueprint",
+      "packId": "kaykit-rpgtoolsbits-1-0-free",
+      "packRoot": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE",
+      "path": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/blueprint.gltf",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/blueprint.bin",
+            "provenance": "file-explicit",
+            "reference": "buffers[0].uri",
+            "role": "buffer",
+            "status": "ok",
+            "uri": "blueprint.bin"
+          },
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/tools_bits_blueprint.png",
+            "provenance": "file-explicit",
+            "reference": "images[1].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "tools_bits_blueprint.png"
+          },
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/tools_bits_texture.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "tools_bits_texture.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 5230,
+      "source": {
+        "blobSha": "c2ed249e80986d0f5f6155743e07a3c6d0f88775",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/blueprint.gltf",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/blueprint.gltf",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/blueprint_stacked.gltf",
+      "collectionPath": "Assets",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf",
+      "format": "gltf",
+      "kind": "model-3d",
+      "name": "blueprint_stacked",
+      "packId": "kaykit-rpgtoolsbits-1-0-free",
+      "packRoot": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE",
+      "path": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/blueprint_stacked.gltf",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/blueprint_stacked.bin",
+            "provenance": "file-explicit",
+            "reference": "buffers[0].uri",
+            "role": "buffer",
+            "status": "ok",
+            "uri": "blueprint_stacked.bin"
+          },
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/tools_bits_blueprint.png",
+            "provenance": "file-explicit",
+            "reference": "images[1].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "tools_bits_blueprint.png"
+          },
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/tools_bits_texture.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "tools_bits_texture.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 5264,
+      "source": {
+        "blobSha": "e57368d5c8f7eb408c7b0614d9fc54f8f0c30c5d",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/blueprint_stacked.gltf",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/blueprint_stacked.gltf",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/bucket_metal.gltf",
+      "collectionPath": "Assets",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf",
+      "format": "gltf",
+      "kind": "model-3d",
+      "name": "bucket_metal",
+      "packId": "kaykit-rpgtoolsbits-1-0-free",
+      "packRoot": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE",
+      "path": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/bucket_metal.gltf",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/bucket_metal.bin",
+            "provenance": "file-explicit",
+            "reference": "buffers[0].uri",
+            "role": "buffer",
+            "status": "ok",
+            "uri": "bucket_metal.bin"
+          },
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/tools_bits_texture.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "tools_bits_texture.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 5118,
+      "source": {
+        "blobSha": "93b0b0758f075526261c80464cb7d35cfb15daa4",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/bucket_metal.gltf",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/bucket_metal.gltf",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/chisel.gltf",
+      "collectionPath": "Assets",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf",
+      "format": "gltf",
+      "kind": "model-3d",
+      "name": "chisel",
+      "packId": "kaykit-rpgtoolsbits-1-0-free",
+      "packRoot": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE",
+      "path": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/chisel.gltf",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/chisel.bin",
+            "provenance": "file-explicit",
+            "reference": "buffers[0].uri",
+            "role": "buffer",
+            "status": "ok",
+            "uri": "chisel.bin"
+          },
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/tools_bits_texture.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "tools_bits_texture.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 3028,
+      "source": {
+        "blobSha": "e8647d7fea0e6c4f3778a621737ef0cb3d59da9a",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/chisel.gltf",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/chisel.gltf",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/compass_base.gltf",
+      "collectionPath": "Assets",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf",
+      "format": "gltf",
+      "kind": "model-3d",
+      "name": "compass_base",
+      "packId": "kaykit-rpgtoolsbits-1-0-free",
+      "packRoot": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE",
+      "path": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/compass_base.gltf",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/compass_base.bin",
+            "provenance": "file-explicit",
+            "reference": "buffers[0].uri",
+            "role": "buffer",
+            "status": "ok",
+            "uri": "compass_base.bin"
+          },
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/tools_bits_texture.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "tools_bits_texture.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 9357,
+      "source": {
+        "blobSha": "aae3a305e2b3f0bdf3539f0a4e75f3d4694625f9",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/compass_base.gltf",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/compass_base.gltf",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/drafting_compass.gltf",
+      "collectionPath": "Assets",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf",
+      "format": "gltf",
+      "kind": "model-3d",
+      "name": "drafting_compass",
+      "packId": "kaykit-rpgtoolsbits-1-0-free",
+      "packRoot": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE",
+      "path": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/drafting_compass.gltf",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/drafting_compass.bin",
+            "provenance": "file-explicit",
+            "reference": "buffers[0].uri",
+            "role": "buffer",
+            "status": "ok",
+            "uri": "drafting_compass.bin"
+          },
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/tools_bits_texture.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "tools_bits_texture.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 9322,
+      "source": {
+        "blobSha": "2786dc237a70c0fd363ed7de193f6e4bb3c246ee",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/drafting_compass.gltf",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/drafting_compass.gltf",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/file.gltf",
+      "collectionPath": "Assets",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf",
+      "format": "gltf",
+      "kind": "model-3d",
+      "name": "file",
+      "packId": "kaykit-rpgtoolsbits-1-0-free",
+      "packRoot": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE",
+      "path": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/file.gltf",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/file.bin",
+            "provenance": "file-explicit",
+            "reference": "buffers[0].uri",
+            "role": "buffer",
+            "status": "ok",
+            "uri": "file.bin"
+          },
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/tools_bits_texture.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "tools_bits_texture.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 3023,
+      "source": {
+        "blobSha": "4e94d43757f251a5b125153700d656923e4d56f6",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/file.gltf",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/file.gltf",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/grindstone.gltf",
+      "collectionPath": "Assets",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf",
+      "format": "gltf",
+      "kind": "model-3d",
+      "name": "grindstone",
+      "packId": "kaykit-rpgtoolsbits-1-0-free",
+      "packRoot": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE",
+      "path": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/grindstone.gltf",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/grindstone.bin",
+            "provenance": "file-explicit",
+            "reference": "buffers[0].uri",
+            "role": "buffer",
+            "status": "ok",
+            "uri": "grindstone.bin"
+          },
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/tools_bits_texture.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "tools_bits_texture.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 5071,
+      "source": {
+        "blobSha": "743c6f857776b3b379e9cb48807b207f2c7c33a6",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/grindstone.gltf",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/grindstone.gltf",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/hammer.gltf",
+      "collectionPath": "Assets",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf",
+      "format": "gltf",
+      "kind": "model-3d",
+      "name": "hammer",
+      "packId": "kaykit-rpgtoolsbits-1-0-free",
+      "packRoot": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE",
+      "path": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/hammer.gltf",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/hammer.bin",
+            "provenance": "file-explicit",
+            "reference": "buffers[0].uri",
+            "role": "buffer",
+            "status": "ok",
+            "uri": "hammer.bin"
+          },
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/tools_bits_texture.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "tools_bits_texture.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 3029,
+      "source": {
+        "blobSha": "49479694d07d925e2a0dcf44395cce54aa7b348e",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/hammer.gltf",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/hammer.gltf",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/handdrill.gltf",
+      "collectionPath": "Assets",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf",
+      "format": "gltf",
+      "kind": "model-3d",
+      "name": "handdrill",
+      "packId": "kaykit-rpgtoolsbits-1-0-free",
+      "packRoot": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE",
+      "path": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/handdrill.gltf",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/handdrill.bin",
+            "provenance": "file-explicit",
+            "reference": "buffers[0].uri",
+            "role": "buffer",
+            "status": "ok",
+            "uri": "handdrill.bin"
+          },
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/tools_bits_texture.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "tools_bits_texture.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 3038,
+      "source": {
+        "blobSha": "4c9be40f9f45e97092dd240a1bcce5c59b183f5f",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/handdrill.gltf",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/handdrill.gltf",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/handplane.gltf",
+      "collectionPath": "Assets",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf",
+      "format": "gltf",
+      "kind": "model-3d",
+      "name": "handplane",
+      "packId": "kaykit-rpgtoolsbits-1-0-free",
+      "packRoot": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE",
+      "path": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/handplane.gltf",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/handplane.bin",
+            "provenance": "file-explicit",
+            "reference": "buffers[0].uri",
+            "role": "buffer",
+            "status": "ok",
+            "uri": "handplane.bin"
+          },
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/tools_bits_texture.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "tools_bits_texture.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 3040,
+      "source": {
+        "blobSha": "e4c2886a04b3ae65e7ee43772ca8feab8c7d09d3",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/handplane.gltf",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/handplane.gltf",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/journal_closed.gltf",
+      "collectionPath": "Assets",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf",
+      "format": "gltf",
+      "kind": "model-3d",
+      "name": "journal_closed",
+      "packId": "kaykit-rpgtoolsbits-1-0-free",
+      "packRoot": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE",
+      "path": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/journal_closed.gltf",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/journal_closed.bin",
+            "provenance": "file-explicit",
+            "reference": "buffers[0].uri",
+            "role": "buffer",
+            "status": "ok",
+            "uri": "journal_closed.bin"
+          },
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/tools_bits_texture.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "tools_bits_texture.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 3057,
+      "source": {
+        "blobSha": "204088668f200d1d1fd2d61225f506cc6ac5108c",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/journal_closed.gltf",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/journal_closed.gltf",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/journal_open.gltf",
+      "collectionPath": "Assets",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf",
+      "format": "gltf",
+      "kind": "model-3d",
+      "name": "journal_open",
+      "packId": "kaykit-rpgtoolsbits-1-0-free",
+      "packRoot": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE",
+      "path": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/journal_open.gltf",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/journal_open.bin",
+            "provenance": "file-explicit",
+            "reference": "buffers[0].uri",
+            "role": "buffer",
+            "status": "ok",
+            "uri": "journal_open.bin"
+          },
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/tools_bits_texture.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "tools_bits_texture.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 3049,
+      "source": {
+        "blobSha": "2bc8935f2a0d9f881953da6886fdf36e13c3522c",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/journal_open.gltf",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/journal_open.gltf",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/knife.gltf",
+      "collectionPath": "Assets",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf",
+      "format": "gltf",
+      "kind": "model-3d",
+      "name": "knife",
+      "packId": "kaykit-rpgtoolsbits-1-0-free",
+      "packRoot": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE",
+      "path": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/knife.gltf",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/knife.bin",
+            "provenance": "file-explicit",
+            "reference": "buffers[0].uri",
+            "role": "buffer",
+            "status": "ok",
+            "uri": "knife.bin"
+          },
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/tools_bits_texture.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "tools_bits_texture.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 3023,
+      "source": {
+        "blobSha": "d40753cf75f8b4df638130960ed9be92d27bc8fc",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/knife.gltf",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/knife.gltf",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/lantern.gltf",
+      "collectionPath": "Assets",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf",
+      "format": "gltf",
+      "kind": "model-3d",
+      "name": "lantern",
+      "packId": "kaykit-rpgtoolsbits-1-0-free",
+      "packRoot": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE",
+      "path": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/lantern.gltf",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/lantern.bin",
+            "provenance": "file-explicit",
+            "reference": "buffers[0].uri",
+            "role": "buffer",
+            "status": "ok",
+            "uri": "lantern.bin"
+          },
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/tools_bits_texture.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "tools_bits_texture.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 7255,
+      "source": {
+        "blobSha": "b5122dfc77f9486acc7c22639c99446c4959ebb0",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/lantern.gltf",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/lantern.gltf",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/magnifying_glass.gltf",
+      "collectionPath": "Assets",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf",
+      "format": "gltf",
+      "kind": "model-3d",
+      "name": "magnifying_glass",
+      "packId": "kaykit-rpgtoolsbits-1-0-free",
+      "packRoot": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE",
+      "path": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/magnifying_glass.gltf",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/magnifying_glass.bin",
+            "provenance": "file-explicit",
+            "reference": "buffers[0].uri",
+            "role": "buffer",
+            "status": "ok",
+            "uri": "magnifying_glass.bin"
+          },
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/tools_bits_texture.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "tools_bits_texture.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 5194,
+      "source": {
+        "blobSha": "4bd7b4fd16a81ae61d851c842de8ffd777ad4e82",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/magnifying_glass.gltf",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/magnifying_glass.gltf",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/mallet.gltf",
+      "collectionPath": "Assets",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf",
+      "format": "gltf",
+      "kind": "model-3d",
+      "name": "mallet",
+      "packId": "kaykit-rpgtoolsbits-1-0-free",
+      "packRoot": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE",
+      "path": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/mallet.gltf",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/mallet.bin",
+            "provenance": "file-explicit",
+            "reference": "buffers[0].uri",
+            "role": "buffer",
+            "status": "ok",
+            "uri": "mallet.bin"
+          },
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/tools_bits_texture.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "tools_bits_texture.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 3029,
+      "source": {
+        "blobSha": "6d50a7e2a187cd17f1689045ad99336339fc1361",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/mallet.gltf",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/mallet.gltf",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/map.gltf",
+      "collectionPath": "Assets",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf",
+      "format": "gltf",
+      "kind": "model-3d",
+      "name": "map",
+      "packId": "kaykit-rpgtoolsbits-1-0-free",
+      "packRoot": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE",
+      "path": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/map.gltf",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/map.bin",
+            "provenance": "file-explicit",
+            "reference": "buffers[0].uri",
+            "role": "buffer",
+            "status": "ok",
+            "uri": "map.bin"
+          },
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/tools_bits_map.png",
+            "provenance": "file-explicit",
+            "reference": "images[1].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "tools_bits_map.png"
+          },
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/tools_bits_texture.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "tools_bits_texture.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 5222,
+      "source": {
+        "blobSha": "6ef4311fe7ce7c23a689563bd272eec9ce392bb5",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/map.gltf",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/map.gltf",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/map_empty.gltf",
+      "collectionPath": "Assets",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf",
+      "format": "gltf",
+      "kind": "model-3d",
+      "name": "map_empty",
+      "packId": "kaykit-rpgtoolsbits-1-0-free",
+      "packRoot": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE",
+      "path": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/map_empty.gltf",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/map_empty.bin",
+            "provenance": "file-explicit",
+            "reference": "buffers[0].uri",
+            "role": "buffer",
+            "status": "ok",
+            "uri": "map_empty.bin"
+          },
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/tools_bits_map_empty.png",
+            "provenance": "file-explicit",
+            "reference": "images[1].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "tools_bits_map_empty.png"
+          },
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/tools_bits_texture.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "tools_bits_texture.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 5258,
+      "source": {
+        "blobSha": "bcc500004ddd0d3a11c26ad5d5f5e865caf919eb",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/map_empty.gltf",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/map_empty.gltf",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/map_rolled.gltf",
+      "collectionPath": "Assets",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf",
+      "format": "gltf",
+      "kind": "model-3d",
+      "name": "map_rolled",
+      "packId": "kaykit-rpgtoolsbits-1-0-free",
+      "packRoot": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE",
+      "path": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/map_rolled.gltf",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/map_rolled.bin",
+            "provenance": "file-explicit",
+            "reference": "buffers[0].uri",
+            "role": "buffer",
+            "status": "ok",
+            "uri": "map_rolled.bin"
+          },
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/tools_bits_texture.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "tools_bits_texture.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 3040,
+      "source": {
+        "blobSha": "a7da7ab4728b72bf97cc0194bc4e503b9992eb6b",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/map_rolled.gltf",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/map_rolled.gltf",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/nail.gltf",
+      "collectionPath": "Assets",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf",
+      "format": "gltf",
+      "kind": "model-3d",
+      "name": "nail",
+      "packId": "kaykit-rpgtoolsbits-1-0-free",
+      "packRoot": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE",
+      "path": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/nail.gltf",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/nail.bin",
+            "provenance": "file-explicit",
+            "reference": "buffers[0].uri",
+            "role": "buffer",
+            "status": "ok",
+            "uri": "nail.bin"
+          },
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/tools_bits_texture.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "tools_bits_texture.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 3015,
+      "source": {
+        "blobSha": "988dad8bc0c287de5525081f82036fc085a0c269",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/nail.gltf",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/nail.gltf",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/pencil_A_long.gltf",
+      "collectionPath": "Assets",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf",
+      "format": "gltf",
+      "kind": "model-3d",
+      "name": "pencil_A_long",
+      "packId": "kaykit-rpgtoolsbits-1-0-free",
+      "packRoot": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE",
+      "path": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/pencil_A_long.gltf",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/pencil_A_long.bin",
+            "provenance": "file-explicit",
+            "reference": "buffers[0].uri",
+            "role": "buffer",
+            "status": "ok",
+            "uri": "pencil_A_long.bin"
+          },
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/tools_bits_texture.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "tools_bits_texture.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 3045,
+      "source": {
+        "blobSha": "0b634a084bbbf6459b26292d11da8a0d39396549",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/pencil_A_long.gltf",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/pencil_A_long.gltf",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/pencil_A_short.gltf",
+      "collectionPath": "Assets",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf",
+      "format": "gltf",
+      "kind": "model-3d",
+      "name": "pencil_A_short",
+      "packId": "kaykit-rpgtoolsbits-1-0-free",
+      "packRoot": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE",
+      "path": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/pencil_A_short.gltf",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/pencil_A_short.bin",
+            "provenance": "file-explicit",
+            "reference": "buffers[0].uri",
+            "role": "buffer",
+            "status": "ok",
+            "uri": "pencil_A_short.bin"
+          },
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/tools_bits_texture.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "tools_bits_texture.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 3049,
+      "source": {
+        "blobSha": "ddd37ab5a0abfdf20eb4f747a7e78c0d36b796cb",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/pencil_A_short.gltf",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/pencil_A_short.gltf",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/pencil_B_long.gltf",
+      "collectionPath": "Assets",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf",
+      "format": "gltf",
+      "kind": "model-3d",
+      "name": "pencil_B_long",
+      "packId": "kaykit-rpgtoolsbits-1-0-free",
+      "packRoot": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE",
+      "path": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/pencil_B_long.gltf",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/pencil_B_long.bin",
+            "provenance": "file-explicit",
+            "reference": "buffers[0].uri",
+            "role": "buffer",
+            "status": "ok",
+            "uri": "pencil_B_long.bin"
+          },
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/tools_bits_texture.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "tools_bits_texture.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 3051,
+      "source": {
+        "blobSha": "d8e2b2ab3c7de3199ab04b3d3f141b2316445b47",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/pencil_B_long.gltf",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/pencil_B_long.gltf",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/pencil_B_short.gltf",
+      "collectionPath": "Assets",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf",
+      "format": "gltf",
+      "kind": "model-3d",
+      "name": "pencil_B_short",
+      "packId": "kaykit-rpgtoolsbits-1-0-free",
+      "packRoot": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE",
+      "path": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/pencil_B_short.gltf",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/pencil_B_short.bin",
+            "provenance": "file-explicit",
+            "reference": "buffers[0].uri",
+            "role": "buffer",
+            "status": "ok",
+            "uri": "pencil_B_short.bin"
+          },
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/tools_bits_texture.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "tools_bits_texture.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 3054,
+      "source": {
+        "blobSha": "894df7034c960ae96ac855ef4829e763fc28c7be",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/pencil_B_short.gltf",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/pencil_B_short.gltf",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/pickaxe.gltf",
+      "collectionPath": "Assets",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf",
+      "format": "gltf",
+      "kind": "model-3d",
+      "name": "pickaxe",
+      "packId": "kaykit-rpgtoolsbits-1-0-free",
+      "packRoot": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE",
+      "path": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/pickaxe.gltf",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/pickaxe.bin",
+            "provenance": "file-explicit",
+            "reference": "buffers[0].uri",
+            "role": "buffer",
+            "status": "ok",
+            "uri": "pickaxe.bin"
+          },
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/tools_bits_texture.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "tools_bits_texture.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 3032,
+      "source": {
+        "blobSha": "1235e35980247001c123e77d0315d97bf1dc6cdd",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/pickaxe.gltf",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/pickaxe.gltf",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/rope_bundle_A.gltf",
+      "collectionPath": "Assets",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf",
+      "format": "gltf",
+      "kind": "model-3d",
+      "name": "rope_bundle_A",
+      "packId": "kaykit-rpgtoolsbits-1-0-free",
+      "packRoot": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE",
+      "path": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/rope_bundle_A.gltf",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/rope_bundle_A.bin",
+            "provenance": "file-explicit",
+            "reference": "buffers[0].uri",
+            "role": "buffer",
+            "status": "ok",
+            "uri": "rope_bundle_A.bin"
+          },
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/tools_bits_texture.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "tools_bits_texture.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 3050,
+      "source": {
+        "blobSha": "12c877e44925c001dcb7ff1757e828d8241d1411",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/rope_bundle_A.gltf",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/rope_bundle_A.gltf",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/rope_bundle_B.gltf",
+      "collectionPath": "Assets",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf",
+      "format": "gltf",
+      "kind": "model-3d",
+      "name": "rope_bundle_B",
+      "packId": "kaykit-rpgtoolsbits-1-0-free",
+      "packRoot": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE",
+      "path": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/rope_bundle_B.gltf",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/rope_bundle_B.bin",
+            "provenance": "file-explicit",
+            "reference": "buffers[0].uri",
+            "role": "buffer",
+            "status": "ok",
+            "uri": "rope_bundle_B.bin"
+          },
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/tools_bits_texture.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "tools_bits_texture.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 3049,
+      "source": {
+        "blobSha": "2faa81270dafd75944a7d9e9f8b37994f5122b91",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/rope_bundle_B.gltf",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/rope_bundle_B.gltf",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/saw.gltf",
+      "collectionPath": "Assets",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf",
+      "format": "gltf",
+      "kind": "model-3d",
+      "name": "saw",
+      "packId": "kaykit-rpgtoolsbits-1-0-free",
+      "packRoot": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE",
+      "path": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/saw.gltf",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/saw.bin",
+            "provenance": "file-explicit",
+            "reference": "buffers[0].uri",
+            "role": "buffer",
+            "status": "ok",
+            "uri": "saw.bin"
+          },
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/tools_bits_texture.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "tools_bits_texture.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 3020,
+      "source": {
+        "blobSha": "446a6a3c90ac15456f7ad2b181497518ce03a9d6",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/saw.gltf",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/saw.gltf",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/scissors.gltf",
+      "collectionPath": "Assets",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf",
+      "format": "gltf",
+      "kind": "model-3d",
+      "name": "scissors",
+      "packId": "kaykit-rpgtoolsbits-1-0-free",
+      "packRoot": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE",
+      "path": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/scissors.gltf",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/scissors.bin",
+            "provenance": "file-explicit",
+            "reference": "buffers[0].uri",
+            "role": "buffer",
+            "status": "ok",
+            "uri": "scissors.bin"
+          },
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/tools_bits_texture.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "tools_bits_texture.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 5122,
+      "source": {
+        "blobSha": "adc0d5f0dcf6880e7ec03a978a058cd801d369a9",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/scissors.gltf",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/scissors.gltf",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/screw_A.gltf",
+      "collectionPath": "Assets",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf",
+      "format": "gltf",
+      "kind": "model-3d",
+      "name": "screw_A",
+      "packId": "kaykit-rpgtoolsbits-1-0-free",
+      "packRoot": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE",
+      "path": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/screw_A.gltf",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/screw_A.bin",
+            "provenance": "file-explicit",
+            "reference": "buffers[0].uri",
+            "role": "buffer",
+            "status": "ok",
+            "uri": "screw_A.bin"
+          },
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/tools_bits_texture.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "tools_bits_texture.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 3033,
+      "source": {
+        "blobSha": "74065f3090e45249b03c7b82a77b6637c90ae3d2",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/screw_A.gltf",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/screw_A.gltf",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/screw_B.gltf",
+      "collectionPath": "Assets",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf",
+      "format": "gltf",
+      "kind": "model-3d",
+      "name": "screw_B",
+      "packId": "kaykit-rpgtoolsbits-1-0-free",
+      "packRoot": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE",
+      "path": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/screw_B.gltf",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/screw_B.bin",
+            "provenance": "file-explicit",
+            "reference": "buffers[0].uri",
+            "role": "buffer",
+            "status": "ok",
+            "uri": "screw_B.bin"
+          },
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/tools_bits_texture.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "tools_bits_texture.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 3032,
+      "source": {
+        "blobSha": "c152d19735bc9e4ecbe4614a464cf000f902816a",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/screw_B.gltf",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/screw_B.gltf",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/screwdriver_A_long.gltf",
+      "collectionPath": "Assets",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf",
+      "format": "gltf",
+      "kind": "model-3d",
+      "name": "screwdriver_A_long",
+      "packId": "kaykit-rpgtoolsbits-1-0-free",
+      "packRoot": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE",
+      "path": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/screwdriver_A_long.gltf",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/screwdriver_A_long.bin",
+            "provenance": "file-explicit",
+            "reference": "buffers[0].uri",
+            "role": "buffer",
+            "status": "ok",
+            "uri": "screwdriver_A_long.bin"
+          },
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/tools_bits_texture.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "tools_bits_texture.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 3064,
+      "source": {
+        "blobSha": "3d8caf9232566583b771d6ec151fd5218570e1f1",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/screwdriver_A_long.gltf",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/screwdriver_A_long.gltf",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/screwdriver_A_long_color.gltf",
+      "collectionPath": "Assets",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf",
+      "format": "gltf",
+      "kind": "model-3d",
+      "name": "screwdriver_A_long_color",
+      "packId": "kaykit-rpgtoolsbits-1-0-free",
+      "packRoot": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE",
+      "path": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/screwdriver_A_long_color.gltf",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/screwdriver_A_long_color.bin",
+            "provenance": "file-explicit",
+            "reference": "buffers[0].uri",
+            "role": "buffer",
+            "status": "ok",
+            "uri": "screwdriver_A_long_color.bin"
+          },
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/tools_bits_texture.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "tools_bits_texture.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 3082,
+      "source": {
+        "blobSha": "de6b248258ae4a47296fdcfb1a065b1bbc7db777",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/screwdriver_A_long_color.gltf",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/screwdriver_A_long_color.gltf",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/screwdriver_A_short.gltf",
+      "collectionPath": "Assets",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf",
+      "format": "gltf",
+      "kind": "model-3d",
+      "name": "screwdriver_A_short",
+      "packId": "kaykit-rpgtoolsbits-1-0-free",
+      "packRoot": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE",
+      "path": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/screwdriver_A_short.gltf",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/screwdriver_A_short.bin",
+            "provenance": "file-explicit",
+            "reference": "buffers[0].uri",
+            "role": "buffer",
+            "status": "ok",
+            "uri": "screwdriver_A_short.bin"
+          },
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/tools_bits_texture.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "tools_bits_texture.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 3067,
+      "source": {
+        "blobSha": "01839895d6fb3fb1c5967a514149886f3199915a",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/screwdriver_A_short.gltf",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/screwdriver_A_short.gltf",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/screwdriver_A_short_color.gltf",
+      "collectionPath": "Assets",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf",
+      "format": "gltf",
+      "kind": "model-3d",
+      "name": "screwdriver_A_short_color",
+      "packId": "kaykit-rpgtoolsbits-1-0-free",
+      "packRoot": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE",
+      "path": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/screwdriver_A_short_color.gltf",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/screwdriver_A_short_color.bin",
+            "provenance": "file-explicit",
+            "reference": "buffers[0].uri",
+            "role": "buffer",
+            "status": "ok",
+            "uri": "screwdriver_A_short_color.bin"
+          },
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/tools_bits_texture.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "tools_bits_texture.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 3085,
+      "source": {
+        "blobSha": "a5421f6ee1c074b2520b81e5e4aa0a6db221f6a6",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/screwdriver_A_short_color.gltf",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/screwdriver_A_short_color.gltf",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/screwdriver_B_long.gltf",
+      "collectionPath": "Assets",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf",
+      "format": "gltf",
+      "kind": "model-3d",
+      "name": "screwdriver_B_long",
+      "packId": "kaykit-rpgtoolsbits-1-0-free",
+      "packRoot": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE",
+      "path": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/screwdriver_B_long.gltf",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/screwdriver_B_long.bin",
+            "provenance": "file-explicit",
+            "reference": "buffers[0].uri",
+            "role": "buffer",
+            "status": "ok",
+            "uri": "screwdriver_B_long.bin"
+          },
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/tools_bits_texture.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "tools_bits_texture.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 3065,
+      "source": {
+        "blobSha": "67d3a5e86d54b8a9d14e1b0ac5511a264622fa76",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/screwdriver_B_long.gltf",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/screwdriver_B_long.gltf",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/screwdriver_B_long_color.gltf",
+      "collectionPath": "Assets",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf",
+      "format": "gltf",
+      "kind": "model-3d",
+      "name": "screwdriver_B_long_color",
+      "packId": "kaykit-rpgtoolsbits-1-0-free",
+      "packRoot": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE",
+      "path": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/screwdriver_B_long_color.gltf",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/screwdriver_B_long_color.bin",
+            "provenance": "file-explicit",
+            "reference": "buffers[0].uri",
+            "role": "buffer",
+            "status": "ok",
+            "uri": "screwdriver_B_long_color.bin"
+          },
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/tools_bits_texture.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "tools_bits_texture.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 3083,
+      "source": {
+        "blobSha": "ac152a1e6755e21acc53dd3935aaa35ae7812b7b",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/screwdriver_B_long_color.gltf",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/screwdriver_B_long_color.gltf",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/screwdriver_B_short.gltf",
+      "collectionPath": "Assets",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf",
+      "format": "gltf",
+      "kind": "model-3d",
+      "name": "screwdriver_B_short",
+      "packId": "kaykit-rpgtoolsbits-1-0-free",
+      "packRoot": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE",
+      "path": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/screwdriver_B_short.gltf",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/screwdriver_B_short.bin",
+            "provenance": "file-explicit",
+            "reference": "buffers[0].uri",
+            "role": "buffer",
+            "status": "ok",
+            "uri": "screwdriver_B_short.bin"
+          },
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/tools_bits_texture.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "tools_bits_texture.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 3068,
+      "source": {
+        "blobSha": "b73b12f7bc3d8caf8a116ecb94ad5ffad9f01a19",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/screwdriver_B_short.gltf",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/screwdriver_B_short.gltf",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/screwdriver_B_short_color.gltf",
+      "collectionPath": "Assets",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf",
+      "format": "gltf",
+      "kind": "model-3d",
+      "name": "screwdriver_B_short_color",
+      "packId": "kaykit-rpgtoolsbits-1-0-free",
+      "packRoot": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE",
+      "path": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/screwdriver_B_short_color.gltf",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/screwdriver_B_short_color.bin",
+            "provenance": "file-explicit",
+            "reference": "buffers[0].uri",
+            "role": "buffer",
+            "status": "ok",
+            "uri": "screwdriver_B_short_color.bin"
+          },
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/tools_bits_texture.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "tools_bits_texture.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 3086,
+      "source": {
+        "blobSha": "2a41a2ab65fbb74b7821fcc97f37097bdfbafcec",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/screwdriver_B_short_color.gltf",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/screwdriver_B_short_color.gltf",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/shovel.gltf",
+      "collectionPath": "Assets",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf",
+      "format": "gltf",
+      "kind": "model-3d",
+      "name": "shovel",
+      "packId": "kaykit-rpgtoolsbits-1-0-free",
+      "packRoot": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE",
+      "path": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/shovel.gltf",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/shovel.bin",
+            "provenance": "file-explicit",
+            "reference": "buffers[0].uri",
+            "role": "buffer",
+            "status": "ok",
+            "uri": "shovel.bin"
+          },
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/tools_bits_texture.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "tools_bits_texture.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 3030,
+      "source": {
+        "blobSha": "4760833728c719bbf121fcdfb899fe8cb525856c",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/shovel.gltf",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/shovel.gltf",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/tongs.gltf",
+      "collectionPath": "Assets",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf",
+      "format": "gltf",
+      "kind": "model-3d",
+      "name": "tongs",
+      "packId": "kaykit-rpgtoolsbits-1-0-free",
+      "packRoot": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE",
+      "path": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/tongs.gltf",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/tongs.bin",
+            "provenance": "file-explicit",
+            "reference": "buffers[0].uri",
+            "role": "buffer",
+            "status": "ok",
+            "uri": "tongs.bin"
+          },
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/tools_bits_texture.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "tools_bits_texture.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 4982,
+      "source": {
+        "blobSha": "1f0be315ca92a65bbf24cc5e4d3929125ee5c5af",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/tongs.gltf",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/tongs.gltf",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/tools_bits_blueprint.png",
+      "collectionPath": "Assets",
+      "folder": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf",
+      "format": "png",
+      "hints": {
+        "textureCandidate": false,
+        "textureCandidateProvenance": "generated-structural"
+      },
+      "kind": "image-2d",
+      "name": "tools_bits_blueprint",
+      "packId": "kaykit-rpgtoolsbits-1-0-free",
+      "packRoot": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE",
+      "path": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/tools_bits_blueprint.png",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 39613,
+      "source": {
+        "blobSha": "5f397fa49ac146f232b8e279afe57b5284125d6a",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/tools_bits_blueprint.png",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/tools_bits_blueprint.png",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/tools_bits_map.png",
+      "collectionPath": "Assets",
+      "folder": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf",
+      "format": "png",
+      "hints": {
+        "textureCandidate": false,
+        "textureCandidateProvenance": "generated-structural"
+      },
+      "kind": "image-2d",
+      "name": "tools_bits_map",
+      "packId": "kaykit-rpgtoolsbits-1-0-free",
+      "packRoot": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE",
+      "path": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/tools_bits_map.png",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 39727,
+      "source": {
+        "blobSha": "59500ed13a8d2e8c2cd5eceee83a22cb66add5ec",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/tools_bits_map.png",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/tools_bits_map.png",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/tools_bits_map_empty.png",
+      "collectionPath": "Assets",
+      "folder": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf",
+      "format": "png",
+      "hints": {
+        "textureCandidate": false,
+        "textureCandidateProvenance": "generated-structural"
+      },
+      "kind": "image-2d",
+      "name": "tools_bits_map_empty",
+      "packId": "kaykit-rpgtoolsbits-1-0-free",
+      "packRoot": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE",
+      "path": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/tools_bits_map_empty.png",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 2387,
+      "source": {
+        "blobSha": "489268e929cddf0d446418a58fdd609671d58d48",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/tools_bits_map_empty.png",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/tools_bits_map_empty.png",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/tools_bits_texture.png",
+      "collectionPath": "Assets",
+      "folder": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf",
+      "format": "png",
+      "hints": {
+        "textureCandidate": false,
+        "textureCandidateProvenance": "generated-structural"
+      },
+      "kind": "image-2d",
+      "name": "tools_bits_texture",
+      "packId": "kaykit-rpgtoolsbits-1-0-free",
+      "packRoot": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE",
+      "path": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/tools_bits_texture.png",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 28269,
+      "source": {
+        "blobSha": "58cf2b3fa0eabf381a66f8f1c99b8313317f4007",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/tools_bits_texture.png",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/tools_bits_texture.png",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/torch.gltf",
+      "collectionPath": "Assets",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf",
+      "format": "gltf",
+      "kind": "model-3d",
+      "name": "torch",
+      "packId": "kaykit-rpgtoolsbits-1-0-free",
+      "packRoot": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE",
+      "path": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/torch.gltf",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/tools_bits_texture.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "tools_bits_texture.png"
+          },
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/torch.bin",
+            "provenance": "file-explicit",
+            "reference": "buffers[0].uri",
+            "role": "buffer",
+            "status": "ok",
+            "uri": "torch.bin"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 3028,
+      "source": {
+        "blobSha": "1ce63ae7015771959b961c070c5d1d781db8e7ab",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/torch.gltf",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/torch.gltf",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/torch_burnt.gltf",
+      "collectionPath": "Assets",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf",
+      "format": "gltf",
+      "kind": "model-3d",
+      "name": "torch_burnt",
+      "packId": "kaykit-rpgtoolsbits-1-0-free",
+      "packRoot": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE",
+      "path": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/torch_burnt.gltf",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/tools_bits_texture.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "tools_bits_texture.png"
+          },
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/torch_burnt.bin",
+            "provenance": "file-explicit",
+            "reference": "buffers[0].uri",
+            "role": "buffer",
+            "status": "ok",
+            "uri": "torch_burnt.bin"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 3046,
+      "source": {
+        "blobSha": "78484511439d9ac9051b080027147e44ec3c2952",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/torch_burnt.gltf",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/torch_burnt.gltf",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/trowel.gltf",
+      "collectionPath": "Assets",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf",
+      "format": "gltf",
+      "kind": "model-3d",
+      "name": "trowel",
+      "packId": "kaykit-rpgtoolsbits-1-0-free",
+      "packRoot": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE",
+      "path": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/trowel.gltf",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/tools_bits_texture.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "tools_bits_texture.png"
+          },
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/trowel.bin",
+            "provenance": "file-explicit",
+            "reference": "buffers[0].uri",
+            "role": "buffer",
+            "status": "ok",
+            "uri": "trowel.bin"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 3025,
+      "source": {
+        "blobSha": "b39904f7019c4f4e54e1535a69ef86762b8f084e",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/trowel.gltf",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/trowel.gltf",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/wrench_A.gltf",
+      "collectionPath": "Assets",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf",
+      "format": "gltf",
+      "kind": "model-3d",
+      "name": "wrench_A",
+      "packId": "kaykit-rpgtoolsbits-1-0-free",
+      "packRoot": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE",
+      "path": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/wrench_A.gltf",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/tools_bits_texture.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "tools_bits_texture.png"
+          },
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/wrench_A.bin",
+            "provenance": "file-explicit",
+            "reference": "buffers[0].uri",
+            "role": "buffer",
+            "status": "ok",
+            "uri": "wrench_A.bin"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 3035,
+      "source": {
+        "blobSha": "0eb2f8b7f651fd1935d2be6560f7011abfff6f90",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/wrench_A.gltf",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/wrench_A.gltf",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/wrench_B.gltf",
+      "collectionPath": "Assets",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf",
+      "format": "gltf",
+      "kind": "model-3d",
+      "name": "wrench_B",
+      "packId": "kaykit-rpgtoolsbits-1-0-free",
+      "packRoot": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE",
+      "path": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/wrench_B.gltf",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/tools_bits_texture.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "tools_bits_texture.png"
+          },
+          {
+            "exists": true,
+            "path": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/wrench_B.bin",
+            "provenance": "file-explicit",
+            "reference": "buffers[0].uri",
+            "role": "buffer",
+            "status": "ok",
+            "uri": "wrench_B.bin"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 3034,
+      "source": {
+        "blobSha": "24c8b2165892eaa60b235642c4ffe653fee3a73e",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/wrench_B.gltf",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/wrench_B.gltf",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Textures/tools_bits_blueprint.png",
+      "collectionPath": "Textures",
+      "folder": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Textures",
+      "format": "png",
+      "hints": {
+        "textureCandidate": true,
+        "textureCandidateProvenance": "generated-structural"
+      },
+      "kind": "image-2d",
+      "name": "tools_bits_blueprint",
+      "packId": "kaykit-rpgtoolsbits-1-0-free",
+      "packRoot": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE",
+      "path": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Textures/tools_bits_blueprint.png",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 39613,
+      "source": {
+        "blobSha": "5f397fa49ac146f232b8e279afe57b5284125d6a",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Textures/tools_bits_blueprint.png",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Textures/tools_bits_blueprint.png",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Textures/tools_bits_map.png",
+      "collectionPath": "Textures",
+      "folder": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Textures",
+      "format": "png",
+      "hints": {
+        "textureCandidate": true,
+        "textureCandidateProvenance": "generated-structural"
+      },
+      "kind": "image-2d",
+      "name": "tools_bits_map",
+      "packId": "kaykit-rpgtoolsbits-1-0-free",
+      "packRoot": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE",
+      "path": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Textures/tools_bits_map.png",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 39727,
+      "source": {
+        "blobSha": "59500ed13a8d2e8c2cd5eceee83a22cb66add5ec",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Textures/tools_bits_map.png",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Textures/tools_bits_map.png",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Textures/tools_bits_map_empty.png",
+      "collectionPath": "Textures",
+      "folder": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Textures",
+      "format": "png",
+      "hints": {
+        "textureCandidate": true,
+        "textureCandidateProvenance": "generated-structural"
+      },
+      "kind": "image-2d",
+      "name": "tools_bits_map_empty",
+      "packId": "kaykit-rpgtoolsbits-1-0-free",
+      "packRoot": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE",
+      "path": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Textures/tools_bits_map_empty.png",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 2387,
+      "source": {
+        "blobSha": "489268e929cddf0d446418a58fdd609671d58d48",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Textures/tools_bits_map_empty.png",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Textures/tools_bits_map_empty.png",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Textures/tools_bits_texture.png",
+      "collectionPath": "Textures",
+      "folder": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Textures",
+      "format": "png",
+      "hints": {
+        "textureCandidate": true,
+        "textureCandidateProvenance": "generated-structural"
+      },
+      "kind": "image-2d",
+      "name": "tools_bits_texture",
+      "packId": "kaykit-rpgtoolsbits-1-0-free",
+      "packRoot": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE",
+      "path": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Textures/tools_bits_texture.png",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 28269,
+      "source": {
+        "blobSha": "58cf2b3fa0eabf381a66f8f1c99b8313317f4007",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Textures/tools_bits_texture.png",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Textures/tools_bits_texture.png",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/contents.png",
+      "folder": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE",
+      "format": "png",
+      "hints": {
+        "textureCandidate": false,
+        "textureCandidateProvenance": "generated-structural"
+      },
+      "kind": "image-2d",
+      "name": "contents",
+      "packId": "kaykit-rpgtoolsbits-1-0-free",
+      "packRoot": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE",
+      "path": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/contents.png",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 569800,
+      "source": {
+        "blobSha": "f757dffcb2a58fd7169c9cb90005d9f09564d68b",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/contents.png",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/contents.png",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    }
+  ],
+  "collections": [
+    {
+      "assetCount": 53,
+      "path": "Assets"
+    },
+    {
+      "assetCount": 4,
+      "path": "Textures"
+    }
+  ],
+  "dependencyStatus": {
+    "complete": 49
+  },
+  "displayName": "KayKit_RPGToolsBits_1.0_FREE",
+  "formats": {
+    "gltf": 49,
+    "png": 9
+  },
+  "kinds": {
+    "image-2d": 9,
+    "model-3d": 49
+  },
+  "packId": "kaykit-rpgtoolsbits-1-0-free",
+  "provenance": "generated-structural",
+  "root": "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE",
+  "schema": "kfb.asset-pack.v1",
+  "shard": "packs/kaykit-rpgtoolsbits-1-0-free.json"
+}

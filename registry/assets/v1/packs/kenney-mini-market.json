@@ -1,0 +1,1007 @@
+{
+  "assetCount": 27,
+  "assets": [
+    {
+      "assetId": "media/3D_Assets/kenney_mini-market/Models/GLB format/Textures/colormap.png",
+      "collectionPath": "Models",
+      "folder": "media/3D_Assets/kenney_mini-market/Models/GLB format/Textures",
+      "format": "png",
+      "hints": {
+        "textureCandidate": true,
+        "textureCandidateProvenance": "generated-structural"
+      },
+      "kind": "image-2d",
+      "name": "colormap",
+      "packId": "kenney-mini-market",
+      "packRoot": "media/3D_Assets/kenney_mini-market",
+      "path": "media/3D_Assets/kenney_mini-market/Models/GLB format/Textures/colormap.png",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 8706,
+      "source": {
+        "blobSha": "166a545e0e6fda582acc5b6475643acba1288bd7",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_mini-market/Models/GLB%20format/Textures/colormap.png",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/kenney_mini-market/Models/GLB%20format/Textures/colormap.png",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/kenney_mini-market/Models/GLB format/bottle-return.glb",
+      "collectionPath": "Models",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/kenney_mini-market/Models/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "bottle-return",
+      "packId": "kenney-mini-market",
+      "packRoot": "media/3D_Assets/kenney_mini-market",
+      "path": "media/3D_Assets/kenney_mini-market/Models/GLB format/bottle-return.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/kenney_mini-market/Models/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 31012,
+      "source": {
+        "blobSha": "66f6a4ac349a843a8207998963de9122bf51b3f0",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_mini-market/Models/GLB%20format/bottle-return.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/kenney_mini-market/Models/GLB%20format/bottle-return.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/kenney_mini-market/Models/GLB format/cash-register.glb",
+      "collectionPath": "Models",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/kenney_mini-market/Models/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "cash-register",
+      "packId": "kenney-mini-market",
+      "packRoot": "media/3D_Assets/kenney_mini-market",
+      "path": "media/3D_Assets/kenney_mini-market/Models/GLB format/cash-register.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/kenney_mini-market/Models/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 20332,
+      "source": {
+        "blobSha": "364c8d7cfa85cff42d90a1e8359ca2deb072b942",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_mini-market/Models/GLB%20format/cash-register.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/kenney_mini-market/Models/GLB%20format/cash-register.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/kenney_mini-market/Models/GLB format/character-employee.glb",
+      "collectionPath": "Models",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/kenney_mini-market/Models/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "character-employee",
+      "packId": "kenney-mini-market",
+      "packRoot": "media/3D_Assets/kenney_mini-market",
+      "path": "media/3D_Assets/kenney_mini-market/Models/GLB format/character-employee.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/kenney_mini-market/Models/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 215836,
+      "source": {
+        "blobSha": "790ad07f9c1c873cce8f61244c375e59a531d227",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_mini-market/Models/GLB%20format/character-employee.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/kenney_mini-market/Models/GLB%20format/character-employee.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/kenney_mini-market/Models/GLB format/column.glb",
+      "collectionPath": "Models",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/kenney_mini-market/Models/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "column",
+      "packId": "kenney-mini-market",
+      "packRoot": "media/3D_Assets/kenney_mini-market",
+      "path": "media/3D_Assets/kenney_mini-market/Models/GLB format/column.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/kenney_mini-market/Models/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 19004,
+      "source": {
+        "blobSha": "c51670d549488f39d57dbbb1b2ca2389c21a091c",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_mini-market/Models/GLB%20format/column.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/kenney_mini-market/Models/GLB%20format/column.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/kenney_mini-market/Models/GLB format/display-bread.glb",
+      "collectionPath": "Models",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/kenney_mini-market/Models/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "display-bread",
+      "packId": "kenney-mini-market",
+      "packRoot": "media/3D_Assets/kenney_mini-market",
+      "path": "media/3D_Assets/kenney_mini-market/Models/GLB format/display-bread.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/kenney_mini-market/Models/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 36640,
+      "source": {
+        "blobSha": "b3a58c60290b56d7be59b85a14222d9d016ea8c4",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_mini-market/Models/GLB%20format/display-bread.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/kenney_mini-market/Models/GLB%20format/display-bread.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/kenney_mini-market/Models/GLB format/display-fruit.glb",
+      "collectionPath": "Models",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/kenney_mini-market/Models/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "display-fruit",
+      "packId": "kenney-mini-market",
+      "packRoot": "media/3D_Assets/kenney_mini-market",
+      "path": "media/3D_Assets/kenney_mini-market/Models/GLB format/display-fruit.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/kenney_mini-market/Models/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 62976,
+      "source": {
+        "blobSha": "13f4f7f2543c47b17670b9442e891fefb01ff824",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_mini-market/Models/GLB%20format/display-fruit.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/kenney_mini-market/Models/GLB%20format/display-fruit.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/kenney_mini-market/Models/GLB format/fence-door-rotate.glb",
+      "collectionPath": "Models",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/kenney_mini-market/Models/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "fence-door-rotate",
+      "packId": "kenney-mini-market",
+      "packRoot": "media/3D_Assets/kenney_mini-market",
+      "path": "media/3D_Assets/kenney_mini-market/Models/GLB format/fence-door-rotate.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/kenney_mini-market/Models/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 36148,
+      "source": {
+        "blobSha": "f7eedb7ac406af30b0fb886b8fb04e9081fee78e",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_mini-market/Models/GLB%20format/fence-door-rotate.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/kenney_mini-market/Models/GLB%20format/fence-door-rotate.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/kenney_mini-market/Models/GLB format/fence.glb",
+      "collectionPath": "Models",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/kenney_mini-market/Models/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "fence",
+      "packId": "kenney-mini-market",
+      "packRoot": "media/3D_Assets/kenney_mini-market",
+      "path": "media/3D_Assets/kenney_mini-market/Models/GLB format/fence.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/kenney_mini-market/Models/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 8468,
+      "source": {
+        "blobSha": "5ee20de971bd883d352a47caf813505770db730a",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_mini-market/Models/GLB%20format/fence.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/kenney_mini-market/Models/GLB%20format/fence.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/kenney_mini-market/Models/GLB format/floor.glb",
+      "collectionPath": "Models",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/kenney_mini-market/Models/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "floor",
+      "packId": "kenney-mini-market",
+      "packRoot": "media/3D_Assets/kenney_mini-market",
+      "path": "media/3D_Assets/kenney_mini-market/Models/GLB format/floor.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/kenney_mini-market/Models/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 3928,
+      "source": {
+        "blobSha": "cc081d1e40757496616b6c51d4e541e2a4a030f4",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_mini-market/Models/GLB%20format/floor.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/kenney_mini-market/Models/GLB%20format/floor.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/kenney_mini-market/Models/GLB format/freezer.glb",
+      "collectionPath": "Models",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/kenney_mini-market/Models/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "freezer",
+      "packId": "kenney-mini-market",
+      "packRoot": "media/3D_Assets/kenney_mini-market",
+      "path": "media/3D_Assets/kenney_mini-market/Models/GLB format/freezer.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/kenney_mini-market/Models/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 16956,
+      "source": {
+        "blobSha": "f86e07d08dce67935b46ef33172c58c8762ffd86",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_mini-market/Models/GLB%20format/freezer.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/kenney_mini-market/Models/GLB%20format/freezer.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/kenney_mini-market/Models/GLB format/freezers-standing.glb",
+      "collectionPath": "Models",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/kenney_mini-market/Models/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "freezers-standing",
+      "packId": "kenney-mini-market",
+      "packRoot": "media/3D_Assets/kenney_mini-market",
+      "path": "media/3D_Assets/kenney_mini-market/Models/GLB format/freezers-standing.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/kenney_mini-market/Models/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 15340,
+      "source": {
+        "blobSha": "de8a0b54056dbff5d4137904e16d92db50007f83",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_mini-market/Models/GLB%20format/freezers-standing.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/kenney_mini-market/Models/GLB%20format/freezers-standing.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/kenney_mini-market/Models/GLB format/shelf-bags.glb",
+      "collectionPath": "Models",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/kenney_mini-market/Models/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "shelf-bags",
+      "packId": "kenney-mini-market",
+      "packRoot": "media/3D_Assets/kenney_mini-market",
+      "path": "media/3D_Assets/kenney_mini-market/Models/GLB format/shelf-bags.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/kenney_mini-market/Models/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 78444,
+      "source": {
+        "blobSha": "394fba6757a2da251942a1ade72c697e26899d49",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_mini-market/Models/GLB%20format/shelf-bags.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/kenney_mini-market/Models/GLB%20format/shelf-bags.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/kenney_mini-market/Models/GLB format/shelf-boxes.glb",
+      "collectionPath": "Models",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/kenney_mini-market/Models/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "shelf-boxes",
+      "packId": "kenney-mini-market",
+      "packRoot": "media/3D_Assets/kenney_mini-market",
+      "path": "media/3D_Assets/kenney_mini-market/Models/GLB format/shelf-boxes.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/kenney_mini-market/Models/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 56780,
+      "source": {
+        "blobSha": "e558685a7e4f309a1069d1a7ebdd4512e7b0afc0",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_mini-market/Models/GLB%20format/shelf-boxes.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/kenney_mini-market/Models/GLB%20format/shelf-boxes.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/kenney_mini-market/Models/GLB format/shelf-end.glb",
+      "collectionPath": "Models",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/kenney_mini-market/Models/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "shelf-end",
+      "packId": "kenney-mini-market",
+      "packRoot": "media/3D_Assets/kenney_mini-market",
+      "path": "media/3D_Assets/kenney_mini-market/Models/GLB format/shelf-end.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/kenney_mini-market/Models/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 44560,
+      "source": {
+        "blobSha": "304ba31a9ea7d1d5372d30b0b398bbf32d3169b0",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_mini-market/Models/GLB%20format/shelf-end.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/kenney_mini-market/Models/GLB%20format/shelf-end.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/kenney_mini-market/Models/GLB format/shopping-basket.glb",
+      "collectionPath": "Models",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/kenney_mini-market/Models/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "shopping-basket",
+      "packId": "kenney-mini-market",
+      "packRoot": "media/3D_Assets/kenney_mini-market",
+      "path": "media/3D_Assets/kenney_mini-market/Models/GLB format/shopping-basket.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/kenney_mini-market/Models/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 25864,
+      "source": {
+        "blobSha": "6e05cde6cfae11387ef02df9ad56e1b32771e333",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_mini-market/Models/GLB%20format/shopping-basket.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/kenney_mini-market/Models/GLB%20format/shopping-basket.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/kenney_mini-market/Models/GLB format/shopping-cart.glb",
+      "collectionPath": "Models",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/kenney_mini-market/Models/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "shopping-cart",
+      "packId": "kenney-mini-market",
+      "packRoot": "media/3D_Assets/kenney_mini-market",
+      "path": "media/3D_Assets/kenney_mini-market/Models/GLB format/shopping-cart.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/kenney_mini-market/Models/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 34832,
+      "source": {
+        "blobSha": "2755b26f65c6dc169482716b3bcd917f8a7525c9",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_mini-market/Models/GLB%20format/shopping-cart.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/kenney_mini-market/Models/GLB%20format/shopping-cart.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/kenney_mini-market/Models/GLB format/wall-corner.glb",
+      "collectionPath": "Models",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/kenney_mini-market/Models/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "wall-corner",
+      "packId": "kenney-mini-market",
+      "packRoot": "media/3D_Assets/kenney_mini-market",
+      "path": "media/3D_Assets/kenney_mini-market/Models/GLB format/wall-corner.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/kenney_mini-market/Models/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 7420,
+      "source": {
+        "blobSha": "0fdf48390bef3d303eb6432297cbe679af445a83",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_mini-market/Models/GLB%20format/wall-corner.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/kenney_mini-market/Models/GLB%20format/wall-corner.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/kenney_mini-market/Models/GLB format/wall-door-rotate.glb",
+      "collectionPath": "Models",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/kenney_mini-market/Models/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "wall-door-rotate",
+      "packId": "kenney-mini-market",
+      "packRoot": "media/3D_Assets/kenney_mini-market",
+      "path": "media/3D_Assets/kenney_mini-market/Models/GLB format/wall-door-rotate.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/kenney_mini-market/Models/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 38492,
+      "source": {
+        "blobSha": "746126e5f1545367c7ea53633ac0d8c0aae762ba",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_mini-market/Models/GLB%20format/wall-door-rotate.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/kenney_mini-market/Models/GLB%20format/wall-door-rotate.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/kenney_mini-market/Models/GLB format/wall-window.glb",
+      "collectionPath": "Models",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/kenney_mini-market/Models/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "wall-window",
+      "packId": "kenney-mini-market",
+      "packRoot": "media/3D_Assets/kenney_mini-market",
+      "path": "media/3D_Assets/kenney_mini-market/Models/GLB format/wall-window.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/kenney_mini-market/Models/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 15628,
+      "source": {
+        "blobSha": "d5985143d4ba4a50574aad8bf732f4dd2c41c256",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_mini-market/Models/GLB%20format/wall-window.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/kenney_mini-market/Models/GLB%20format/wall-window.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/kenney_mini-market/Models/GLB format/wall.glb",
+      "collectionPath": "Models",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/kenney_mini-market/Models/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "wall",
+      "packId": "kenney-mini-market",
+      "packRoot": "media/3D_Assets/kenney_mini-market",
+      "path": "media/3D_Assets/kenney_mini-market/Models/GLB format/wall.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/kenney_mini-market/Models/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 4352,
+      "source": {
+        "blobSha": "9c0a5faaac9832c6fc916fb7443716d1004141b2",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_mini-market/Models/GLB%20format/wall.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/kenney_mini-market/Models/GLB%20format/wall.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/kenney_mini-market/Models/Textures/variation-a.png",
+      "collectionPath": "Models",
+      "folder": "media/3D_Assets/kenney_mini-market/Models/Textures",
+      "format": "png",
+      "hints": {
+        "textureCandidate": true,
+        "textureCandidateProvenance": "generated-structural"
+      },
+      "kind": "image-2d",
+      "name": "variation-a",
+      "packId": "kenney-mini-market",
+      "packRoot": "media/3D_Assets/kenney_mini-market",
+      "path": "media/3D_Assets/kenney_mini-market/Models/Textures/variation-a.png",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 8656,
+      "source": {
+        "blobSha": "c4d7dcfa8e7da30c9378b0816b541e311e32a949",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_mini-market/Models/Textures/variation-a.png",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/kenney_mini-market/Models/Textures/variation-a.png",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/kenney_mini-market/Models/Textures/variation-b.png",
+      "collectionPath": "Models",
+      "folder": "media/3D_Assets/kenney_mini-market/Models/Textures",
+      "format": "png",
+      "hints": {
+        "textureCandidate": true,
+        "textureCandidateProvenance": "generated-structural"
+      },
+      "kind": "image-2d",
+      "name": "variation-b",
+      "packId": "kenney-mini-market",
+      "packRoot": "media/3D_Assets/kenney_mini-market",
+      "path": "media/3D_Assets/kenney_mini-market/Models/Textures/variation-b.png",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 8704,
+      "source": {
+        "blobSha": "1ab5bd61ecd0f8c252af303b26d393165fadbc40",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_mini-market/Models/Textures/variation-b.png",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/kenney_mini-market/Models/Textures/variation-b.png",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/kenney_mini-market/Preview (Variation A).png",
+      "folder": "media/3D_Assets/kenney_mini-market",
+      "format": "png",
+      "hints": {
+        "textureCandidate": false,
+        "textureCandidateProvenance": "generated-structural"
+      },
+      "kind": "image-2d",
+      "name": "Preview (Variation A)",
+      "packId": "kenney-mini-market",
+      "packRoot": "media/3D_Assets/kenney_mini-market",
+      "path": "media/3D_Assets/kenney_mini-market/Preview (Variation A).png",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 102905,
+      "source": {
+        "blobSha": "9f1db3c0f427ccaa4877f5001cf4bf48e5db2566",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_mini-market/Preview%20%28Variation%20A%29.png",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/kenney_mini-market/Preview%20%28Variation%20A%29.png",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/kenney_mini-market/Preview (Variation B).png",
+      "folder": "media/3D_Assets/kenney_mini-market",
+      "format": "png",
+      "hints": {
+        "textureCandidate": false,
+        "textureCandidateProvenance": "generated-structural"
+      },
+      "kind": "image-2d",
+      "name": "Preview (Variation B)",
+      "packId": "kenney-mini-market",
+      "packRoot": "media/3D_Assets/kenney_mini-market",
+      "path": "media/3D_Assets/kenney_mini-market/Preview (Variation B).png",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 101897,
+      "source": {
+        "blobSha": "d3843c1f071721c023044ad45895c4204642ba5f",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_mini-market/Preview%20%28Variation%20B%29.png",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/kenney_mini-market/Preview%20%28Variation%20B%29.png",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/kenney_mini-market/Preview.png",
+      "folder": "media/3D_Assets/kenney_mini-market",
+      "format": "png",
+      "hints": {
+        "textureCandidate": false,
+        "textureCandidateProvenance": "generated-structural"
+      },
+      "kind": "image-2d",
+      "name": "Preview",
+      "packId": "kenney-mini-market",
+      "packRoot": "media/3D_Assets/kenney_mini-market",
+      "path": "media/3D_Assets/kenney_mini-market/Preview.png",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 99231,
+      "source": {
+        "blobSha": "f2fc79960d6b66ef4578b80ba6fa983ffc944ab3",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_mini-market/Preview.png",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/kenney_mini-market/Preview.png",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/kenney_mini-market/Sample.png",
+      "folder": "media/3D_Assets/kenney_mini-market",
+      "format": "png",
+      "hints": {
+        "textureCandidate": false,
+        "textureCandidateProvenance": "generated-structural"
+      },
+      "kind": "image-2d",
+      "name": "Sample",
+      "packId": "kenney-mini-market",
+      "packRoot": "media/3D_Assets/kenney_mini-market",
+      "path": "media/3D_Assets/kenney_mini-market/Sample.png",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 113281,
+      "source": {
+        "blobSha": "64db5b73de8db5ec2ae3605085637533b6cd3a09",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_mini-market/Sample.png",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/kenney_mini-market/Sample.png",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    }
+  ],
+  "collections": [
+    {
+      "assetCount": 23,
+      "path": "Models"
+    }
+  ],
+  "dependencyStatus": {
+    "complete": 20
+  },
+  "displayName": "kenney_mini-market",
+  "formats": {
+    "glb": 20,
+    "png": 7
+  },
+  "kinds": {
+    "image-2d": 7,
+    "model-3d": 20
+  },
+  "packId": "kenney-mini-market",
+  "provenance": "generated-structural",
+  "root": "media/3D_Assets/kenney_mini-market",
+  "schema": "kfb.asset-pack.v1",
+  "shard": "packs/kenney-mini-market.json"
+}
