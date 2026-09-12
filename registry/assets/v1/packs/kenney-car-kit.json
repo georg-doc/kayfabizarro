@@ -1,0 +1,2035 @@
+{
+  "assetCount": 52,
+  "assets": [
+    {
+      "assetId": "media/3D_Assets/kenney_car-kit/Models/GLB format/Textures/colormap.png",
+      "collectionPath": "Models",
+      "folder": "media/3D_Assets/kenney_car-kit/Models/GLB format/Textures",
+      "format": "png",
+      "hints": {
+        "textureCandidate": true,
+        "textureCandidateProvenance": "generated-structural"
+      },
+      "kind": "image-2d",
+      "name": "colormap",
+      "packId": "kenney-car-kit",
+      "packRoot": "media/3D_Assets/kenney_car-kit",
+      "path": "media/3D_Assets/kenney_car-kit/Models/GLB format/Textures/colormap.png",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 12371,
+      "source": {
+        "blobSha": "5c4b1857dafd7abd1ca9836285f1bd589f75ccb0",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_car-kit/Models/GLB%20format/Textures/colormap.png",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/kenney_car-kit/Models/GLB%20format/Textures/colormap.png",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/kenney_car-kit/Models/GLB format/ambulance.glb",
+      "collectionPath": "Models",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/kenney_car-kit/Models/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "ambulance",
+      "packId": "kenney-car-kit",
+      "packRoot": "media/3D_Assets/kenney_car-kit",
+      "path": "media/3D_Assets/kenney_car-kit/Models/GLB format/ambulance.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/kenney_car-kit/Models/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 233612,
+      "source": {
+        "blobSha": "1d011a7daf7c66808d35e61b216ec48527b1fbeb",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_car-kit/Models/GLB%20format/ambulance.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/kenney_car-kit/Models/GLB%20format/ambulance.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/kenney_car-kit/Models/GLB format/box.glb",
+      "collectionPath": "Models",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/kenney_car-kit/Models/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "box",
+      "packId": "kenney-car-kit",
+      "packRoot": "media/3D_Assets/kenney_car-kit",
+      "path": "media/3D_Assets/kenney_car-kit/Models/GLB format/box.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/kenney_car-kit/Models/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 14108,
+      "source": {
+        "blobSha": "d6e41094752cba137d1ebbe090a211d8dcf28a5f",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_car-kit/Models/GLB%20format/box.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/kenney_car-kit/Models/GLB%20format/box.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/kenney_car-kit/Models/GLB format/cone-flat.glb",
+      "collectionPath": "Models",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/kenney_car-kit/Models/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "cone-flat",
+      "packId": "kenney-car-kit",
+      "packRoot": "media/3D_Assets/kenney_car-kit",
+      "path": "media/3D_Assets/kenney_car-kit/Models/GLB format/cone-flat.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/kenney_car-kit/Models/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 16712,
+      "source": {
+        "blobSha": "a6c5ac6975acd8f539137897c5427708f546335f",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_car-kit/Models/GLB%20format/cone-flat.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/kenney_car-kit/Models/GLB%20format/cone-flat.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/kenney_car-kit/Models/GLB format/cone.glb",
+      "collectionPath": "Models",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/kenney_car-kit/Models/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "cone",
+      "packId": "kenney-car-kit",
+      "packRoot": "media/3D_Assets/kenney_car-kit",
+      "path": "media/3D_Assets/kenney_car-kit/Models/GLB format/cone.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/kenney_car-kit/Models/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 16696,
+      "source": {
+        "blobSha": "26a86e929268950773f734bbbd186001195c8c64",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_car-kit/Models/GLB%20format/cone.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/kenney_car-kit/Models/GLB%20format/cone.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/kenney_car-kit/Models/GLB format/debris-bolt.glb",
+      "collectionPath": "Models",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/kenney_car-kit/Models/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "debris-bolt",
+      "packId": "kenney-car-kit",
+      "packRoot": "media/3D_Assets/kenney_car-kit",
+      "path": "media/3D_Assets/kenney_car-kit/Models/GLB format/debris-bolt.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/kenney_car-kit/Models/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 4768,
+      "source": {
+        "blobSha": "f96506922d16866b0f889e339c3cc7cf545367cf",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_car-kit/Models/GLB%20format/debris-bolt.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/kenney_car-kit/Models/GLB%20format/debris-bolt.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/kenney_car-kit/Models/GLB format/debris-bumper.glb",
+      "collectionPath": "Models",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/kenney_car-kit/Models/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "debris-bumper",
+      "packId": "kenney-car-kit",
+      "packRoot": "media/3D_Assets/kenney_car-kit",
+      "path": "media/3D_Assets/kenney_car-kit/Models/GLB format/debris-bumper.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/kenney_car-kit/Models/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 11312,
+      "source": {
+        "blobSha": "0fc70f29b45db13d8df1e87db2074c5200f40c61",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_car-kit/Models/GLB%20format/debris-bumper.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/kenney_car-kit/Models/GLB%20format/debris-bumper.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/kenney_car-kit/Models/GLB format/debris-door-window.glb",
+      "collectionPath": "Models",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/kenney_car-kit/Models/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "debris-door-window",
+      "packId": "kenney-car-kit",
+      "packRoot": "media/3D_Assets/kenney_car-kit",
+      "path": "media/3D_Assets/kenney_car-kit/Models/GLB format/debris-door-window.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/kenney_car-kit/Models/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 7576,
+      "source": {
+        "blobSha": "aa9a473efc85ac831a8d6138c509e3634de09054",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_car-kit/Models/GLB%20format/debris-door-window.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/kenney_car-kit/Models/GLB%20format/debris-door-window.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/kenney_car-kit/Models/GLB format/debris-door.glb",
+      "collectionPath": "Models",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/kenney_car-kit/Models/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "debris-door",
+      "packId": "kenney-car-kit",
+      "packRoot": "media/3D_Assets/kenney_car-kit",
+      "path": "media/3D_Assets/kenney_car-kit/Models/GLB format/debris-door.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/kenney_car-kit/Models/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 7052,
+      "source": {
+        "blobSha": "d8885347be817db266ee973d9e91af3981dce477",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_car-kit/Models/GLB%20format/debris-door.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/kenney_car-kit/Models/GLB%20format/debris-door.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/kenney_car-kit/Models/GLB format/debris-drivetrain-axle.glb",
+      "collectionPath": "Models",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/kenney_car-kit/Models/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "debris-drivetrain-axle",
+      "packId": "kenney-car-kit",
+      "packRoot": "media/3D_Assets/kenney_car-kit",
+      "path": "media/3D_Assets/kenney_car-kit/Models/GLB format/debris-drivetrain-axle.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/kenney_car-kit/Models/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 18740,
+      "source": {
+        "blobSha": "b92f96ddc5c59b2dbe7ce1ce49c589a1f6fced36",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_car-kit/Models/GLB%20format/debris-drivetrain-axle.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/kenney_car-kit/Models/GLB%20format/debris-drivetrain-axle.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/kenney_car-kit/Models/GLB format/debris-drivetrain.glb",
+      "collectionPath": "Models",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/kenney_car-kit/Models/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "debris-drivetrain",
+      "packId": "kenney-car-kit",
+      "packRoot": "media/3D_Assets/kenney_car-kit",
+      "path": "media/3D_Assets/kenney_car-kit/Models/GLB format/debris-drivetrain.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/kenney_car-kit/Models/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 36896,
+      "source": {
+        "blobSha": "521f532f65a507cbb0f6cdac8eeb629584f7cc1b",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_car-kit/Models/GLB%20format/debris-drivetrain.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/kenney_car-kit/Models/GLB%20format/debris-drivetrain.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/kenney_car-kit/Models/GLB format/debris-nut.glb",
+      "collectionPath": "Models",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/kenney_car-kit/Models/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "debris-nut",
+      "packId": "kenney-car-kit",
+      "packRoot": "media/3D_Assets/kenney_car-kit",
+      "path": "media/3D_Assets/kenney_car-kit/Models/GLB format/debris-nut.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/kenney_car-kit/Models/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 4744,
+      "source": {
+        "blobSha": "61380510be752b467abf9026cdee88317ea6c0e4",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_car-kit/Models/GLB%20format/debris-nut.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/kenney_car-kit/Models/GLB%20format/debris-nut.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/kenney_car-kit/Models/GLB format/debris-plate-a.glb",
+      "collectionPath": "Models",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/kenney_car-kit/Models/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "debris-plate-a",
+      "packId": "kenney-car-kit",
+      "packRoot": "media/3D_Assets/kenney_car-kit",
+      "path": "media/3D_Assets/kenney_car-kit/Models/GLB format/debris-plate-a.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/kenney_car-kit/Models/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 5048,
+      "source": {
+        "blobSha": "0e914d0a06fd12110cb015e53623189843b85150",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_car-kit/Models/GLB%20format/debris-plate-a.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/kenney_car-kit/Models/GLB%20format/debris-plate-a.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/kenney_car-kit/Models/GLB format/debris-plate-b.glb",
+      "collectionPath": "Models",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/kenney_car-kit/Models/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "debris-plate-b",
+      "packId": "kenney-car-kit",
+      "packRoot": "media/3D_Assets/kenney_car-kit",
+      "path": "media/3D_Assets/kenney_car-kit/Models/GLB format/debris-plate-b.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/kenney_car-kit/Models/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 5380,
+      "source": {
+        "blobSha": "b4254160c48be5ff0ec62af0169909f793d8adc9",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_car-kit/Models/GLB%20format/debris-plate-b.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/kenney_car-kit/Models/GLB%20format/debris-plate-b.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/kenney_car-kit/Models/GLB format/debris-plate-small-a.glb",
+      "collectionPath": "Models",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/kenney_car-kit/Models/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "debris-plate-small-a",
+      "packId": "kenney-car-kit",
+      "packRoot": "media/3D_Assets/kenney_car-kit",
+      "path": "media/3D_Assets/kenney_car-kit/Models/GLB format/debris-plate-small-a.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/kenney_car-kit/Models/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 4224,
+      "source": {
+        "blobSha": "bceda4e31959e127f44383b3074e68653113944c",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_car-kit/Models/GLB%20format/debris-plate-small-a.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/kenney_car-kit/Models/GLB%20format/debris-plate-small-a.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/kenney_car-kit/Models/GLB format/debris-plate-small-b.glb",
+      "collectionPath": "Models",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/kenney_car-kit/Models/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "debris-plate-small-b",
+      "packId": "kenney-car-kit",
+      "packRoot": "media/3D_Assets/kenney_car-kit",
+      "path": "media/3D_Assets/kenney_car-kit/Models/GLB format/debris-plate-small-b.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/kenney_car-kit/Models/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 5392,
+      "source": {
+        "blobSha": "5ddc6704bd981d6e40b578819c42c90239f073cc",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_car-kit/Models/GLB%20format/debris-plate-small-b.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/kenney_car-kit/Models/GLB%20format/debris-plate-small-b.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/kenney_car-kit/Models/GLB format/debris-spoiler-a.glb",
+      "collectionPath": "Models",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/kenney_car-kit/Models/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "debris-spoiler-a",
+      "packId": "kenney-car-kit",
+      "packRoot": "media/3D_Assets/kenney_car-kit",
+      "path": "media/3D_Assets/kenney_car-kit/Models/GLB format/debris-spoiler-a.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/kenney_car-kit/Models/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 5616,
+      "source": {
+        "blobSha": "ff799f9ea513dbac53a657c8dd8dd39bea136399",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_car-kit/Models/GLB%20format/debris-spoiler-a.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/kenney_car-kit/Models/GLB%20format/debris-spoiler-a.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/kenney_car-kit/Models/GLB format/debris-spoiler-b.glb",
+      "collectionPath": "Models",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/kenney_car-kit/Models/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "debris-spoiler-b",
+      "packId": "kenney-car-kit",
+      "packRoot": "media/3D_Assets/kenney_car-kit",
+      "path": "media/3D_Assets/kenney_car-kit/Models/GLB format/debris-spoiler-b.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/kenney_car-kit/Models/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 8596,
+      "source": {
+        "blobSha": "bbf8709f77374edaf89f9890b595bd8fafcbb9cb",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_car-kit/Models/GLB%20format/debris-spoiler-b.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/kenney_car-kit/Models/GLB%20format/debris-spoiler-b.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/kenney_car-kit/Models/GLB format/debris-tire.glb",
+      "collectionPath": "Models",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/kenney_car-kit/Models/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "debris-tire",
+      "packId": "kenney-car-kit",
+      "packRoot": "media/3D_Assets/kenney_car-kit",
+      "path": "media/3D_Assets/kenney_car-kit/Models/GLB format/debris-tire.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/kenney_car-kit/Models/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 26548,
+      "source": {
+        "blobSha": "e6b9ce16f22d5a5c5b59191567e63781596d133f",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_car-kit/Models/GLB%20format/debris-tire.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/kenney_car-kit/Models/GLB%20format/debris-tire.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/kenney_car-kit/Models/GLB format/delivery-flat.glb",
+      "collectionPath": "Models",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/kenney_car-kit/Models/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "delivery-flat",
+      "packId": "kenney-car-kit",
+      "packRoot": "media/3D_Assets/kenney_car-kit",
+      "path": "media/3D_Assets/kenney_car-kit/Models/GLB format/delivery-flat.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/kenney_car-kit/Models/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 214456,
+      "source": {
+        "blobSha": "05f8c907ef0770e9c0e737d0d0e9e0e913a8dee5",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_car-kit/Models/GLB%20format/delivery-flat.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/kenney_car-kit/Models/GLB%20format/delivery-flat.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/kenney_car-kit/Models/GLB format/delivery.glb",
+      "collectionPath": "Models",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/kenney_car-kit/Models/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "delivery",
+      "packId": "kenney-car-kit",
+      "packRoot": "media/3D_Assets/kenney_car-kit",
+      "path": "media/3D_Assets/kenney_car-kit/Models/GLB format/delivery.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/kenney_car-kit/Models/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 240264,
+      "source": {
+        "blobSha": "cda0403646891f88e60ee50c87ef0db373ba2d2c",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_car-kit/Models/GLB%20format/delivery.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/kenney_car-kit/Models/GLB%20format/delivery.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/kenney_car-kit/Models/GLB format/firetruck.glb",
+      "collectionPath": "Models",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/kenney_car-kit/Models/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "firetruck",
+      "packId": "kenney-car-kit",
+      "packRoot": "media/3D_Assets/kenney_car-kit",
+      "path": "media/3D_Assets/kenney_car-kit/Models/GLB format/firetruck.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/kenney_car-kit/Models/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 232448,
+      "source": {
+        "blobSha": "c59263d71420e0c3955cbab6f51e3bb3eb6e97ce",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_car-kit/Models/GLB%20format/firetruck.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/kenney_car-kit/Models/GLB%20format/firetruck.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/kenney_car-kit/Models/GLB format/garbage-truck.glb",
+      "collectionPath": "Models",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/kenney_car-kit/Models/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "garbage-truck",
+      "packId": "kenney-car-kit",
+      "packRoot": "media/3D_Assets/kenney_car-kit",
+      "path": "media/3D_Assets/kenney_car-kit/Models/GLB format/garbage-truck.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/kenney_car-kit/Models/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 268224,
+      "source": {
+        "blobSha": "ea224168312070a51cc7d65e610e31bad5d3fae1",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_car-kit/Models/GLB%20format/garbage-truck.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/kenney_car-kit/Models/GLB%20format/garbage-truck.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/kenney_car-kit/Models/GLB format/hatchback-sports.glb",
+      "collectionPath": "Models",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/kenney_car-kit/Models/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "hatchback-sports",
+      "packId": "kenney-car-kit",
+      "packRoot": "media/3D_Assets/kenney_car-kit",
+      "path": "media/3D_Assets/kenney_car-kit/Models/GLB format/hatchback-sports.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/kenney_car-kit/Models/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 197804,
+      "source": {
+        "blobSha": "964c4db4004b62468ea19fdc75cb6ae19a4fc6ad",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_car-kit/Models/GLB%20format/hatchback-sports.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/kenney_car-kit/Models/GLB%20format/hatchback-sports.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/kenney_car-kit/Models/GLB format/kart-oobi.glb",
+      "collectionPath": "Models",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/kenney_car-kit/Models/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "kart-oobi",
+      "packId": "kenney-car-kit",
+      "packRoot": "media/3D_Assets/kenney_car-kit",
+      "path": "media/3D_Assets/kenney_car-kit/Models/GLB format/kart-oobi.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/kenney_car-kit/Models/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 251516,
+      "source": {
+        "blobSha": "a6dc521c946ebf82d15a4766583e6f560028e6f4",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_car-kit/Models/GLB%20format/kart-oobi.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/kenney_car-kit/Models/GLB%20format/kart-oobi.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/kenney_car-kit/Models/GLB format/kart-oodi.glb",
+      "collectionPath": "Models",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/kenney_car-kit/Models/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "kart-oodi",
+      "packId": "kenney-car-kit",
+      "packRoot": "media/3D_Assets/kenney_car-kit",
+      "path": "media/3D_Assets/kenney_car-kit/Models/GLB format/kart-oodi.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/kenney_car-kit/Models/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 230984,
+      "source": {
+        "blobSha": "49899240936edc11188cb3f48750056168fa69b8",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_car-kit/Models/GLB%20format/kart-oodi.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/kenney_car-kit/Models/GLB%20format/kart-oodi.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/kenney_car-kit/Models/GLB format/kart-ooli.glb",
+      "collectionPath": "Models",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/kenney_car-kit/Models/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "kart-ooli",
+      "packId": "kenney-car-kit",
+      "packRoot": "media/3D_Assets/kenney_car-kit",
+      "path": "media/3D_Assets/kenney_car-kit/Models/GLB format/kart-ooli.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/kenney_car-kit/Models/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 233380,
+      "source": {
+        "blobSha": "ff4483d6301501ffdfee3e04d8ee30ed02b8aedb",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_car-kit/Models/GLB%20format/kart-ooli.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/kenney_car-kit/Models/GLB%20format/kart-ooli.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/kenney_car-kit/Models/GLB format/kart-oopi.glb",
+      "collectionPath": "Models",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/kenney_car-kit/Models/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "kart-oopi",
+      "packId": "kenney-car-kit",
+      "packRoot": "media/3D_Assets/kenney_car-kit",
+      "path": "media/3D_Assets/kenney_car-kit/Models/GLB format/kart-oopi.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/kenney_car-kit/Models/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 236196,
+      "source": {
+        "blobSha": "f85f11d55487f5ca654aa1562364422590310bfd",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_car-kit/Models/GLB%20format/kart-oopi.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/kenney_car-kit/Models/GLB%20format/kart-oopi.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/kenney_car-kit/Models/GLB format/kart-oozi.glb",
+      "collectionPath": "Models",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/kenney_car-kit/Models/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "kart-oozi",
+      "packId": "kenney-car-kit",
+      "packRoot": "media/3D_Assets/kenney_car-kit",
+      "path": "media/3D_Assets/kenney_car-kit/Models/GLB format/kart-oozi.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/kenney_car-kit/Models/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 240776,
+      "source": {
+        "blobSha": "db95bdba99c5971088996b4f30c7596973e1bc1d",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_car-kit/Models/GLB%20format/kart-oozi.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/kenney_car-kit/Models/GLB%20format/kart-oozi.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/kenney_car-kit/Models/GLB format/police.glb",
+      "collectionPath": "Models",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/kenney_car-kit/Models/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "police",
+      "packId": "kenney-car-kit",
+      "packRoot": "media/3D_Assets/kenney_car-kit",
+      "path": "media/3D_Assets/kenney_car-kit/Models/GLB format/police.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/kenney_car-kit/Models/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 195336,
+      "source": {
+        "blobSha": "412968087c5af5e75f603382ef423b09fd7a56d5",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_car-kit/Models/GLB%20format/police.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/kenney_car-kit/Models/GLB%20format/police.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/kenney_car-kit/Models/GLB format/race-future.glb",
+      "collectionPath": "Models",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/kenney_car-kit/Models/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "race-future",
+      "packId": "kenney-car-kit",
+      "packRoot": "media/3D_Assets/kenney_car-kit",
+      "path": "media/3D_Assets/kenney_car-kit/Models/GLB format/race-future.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/kenney_car-kit/Models/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 173164,
+      "source": {
+        "blobSha": "e087c48f568af466f5ce49d2b74ec88cffa0893d",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_car-kit/Models/GLB%20format/race-future.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/kenney_car-kit/Models/GLB%20format/race-future.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/kenney_car-kit/Models/GLB format/race.glb",
+      "collectionPath": "Models",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/kenney_car-kit/Models/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "race",
+      "packId": "kenney-car-kit",
+      "packRoot": "media/3D_Assets/kenney_car-kit",
+      "path": "media/3D_Assets/kenney_car-kit/Models/GLB format/race.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/kenney_car-kit/Models/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 167272,
+      "source": {
+        "blobSha": "69d431579169cf6181a8611883237ad378a1ec0d",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_car-kit/Models/GLB%20format/race.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/kenney_car-kit/Models/GLB%20format/race.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/kenney_car-kit/Models/GLB format/sedan-sports.glb",
+      "collectionPath": "Models",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/kenney_car-kit/Models/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "sedan-sports",
+      "packId": "kenney-car-kit",
+      "packRoot": "media/3D_Assets/kenney_car-kit",
+      "path": "media/3D_Assets/kenney_car-kit/Models/GLB format/sedan-sports.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/kenney_car-kit/Models/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 177676,
+      "source": {
+        "blobSha": "07442cbbcab7ea5967a00922409c9d4d9f359b56",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_car-kit/Models/GLB%20format/sedan-sports.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/kenney_car-kit/Models/GLB%20format/sedan-sports.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/kenney_car-kit/Models/GLB format/sedan.glb",
+      "collectionPath": "Models",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/kenney_car-kit/Models/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "sedan",
+      "packId": "kenney-car-kit",
+      "packRoot": "media/3D_Assets/kenney_car-kit",
+      "path": "media/3D_Assets/kenney_car-kit/Models/GLB format/sedan.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/kenney_car-kit/Models/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 172216,
+      "source": {
+        "blobSha": "6bc9f1e3f9f30e51307c3454ff00cbbbb0d79d49",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_car-kit/Models/GLB%20format/sedan.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/kenney_car-kit/Models/GLB%20format/sedan.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/kenney_car-kit/Models/GLB format/suv-luxury.glb",
+      "collectionPath": "Models",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/kenney_car-kit/Models/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "suv-luxury",
+      "packId": "kenney-car-kit",
+      "packRoot": "media/3D_Assets/kenney_car-kit",
+      "path": "media/3D_Assets/kenney_car-kit/Models/GLB format/suv-luxury.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/kenney_car-kit/Models/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 175908,
+      "source": {
+        "blobSha": "41c513b75970815dcf1a5f0306b8882ea497dbb6",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_car-kit/Models/GLB%20format/suv-luxury.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/kenney_car-kit/Models/GLB%20format/suv-luxury.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/kenney_car-kit/Models/GLB format/suv.glb",
+      "collectionPath": "Models",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/kenney_car-kit/Models/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "suv",
+      "packId": "kenney-car-kit",
+      "packRoot": "media/3D_Assets/kenney_car-kit",
+      "path": "media/3D_Assets/kenney_car-kit/Models/GLB format/suv.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/kenney_car-kit/Models/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 207572,
+      "source": {
+        "blobSha": "35d4e1f98a4f03d3677c7814c69407d3ee473956",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_car-kit/Models/GLB%20format/suv.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/kenney_car-kit/Models/GLB%20format/suv.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/kenney_car-kit/Models/GLB format/taxi.glb",
+      "collectionPath": "Models",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/kenney_car-kit/Models/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "taxi",
+      "packId": "kenney-car-kit",
+      "packRoot": "media/3D_Assets/kenney_car-kit",
+      "path": "media/3D_Assets/kenney_car-kit/Models/GLB format/taxi.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/kenney_car-kit/Models/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 175608,
+      "source": {
+        "blobSha": "509e3ccb8a525a37f5a41eb5ddf6a6adbc1fe216",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_car-kit/Models/GLB%20format/taxi.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/kenney_car-kit/Models/GLB%20format/taxi.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/kenney_car-kit/Models/GLB format/tractor-police.glb",
+      "collectionPath": "Models",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/kenney_car-kit/Models/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "tractor-police",
+      "packId": "kenney-car-kit",
+      "packRoot": "media/3D_Assets/kenney_car-kit",
+      "path": "media/3D_Assets/kenney_car-kit/Models/GLB format/tractor-police.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/kenney_car-kit/Models/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 196308,
+      "source": {
+        "blobSha": "9e0a91714012d5b561a83897913239ed7eee2ad7",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_car-kit/Models/GLB%20format/tractor-police.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/kenney_car-kit/Models/GLB%20format/tractor-police.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/kenney_car-kit/Models/GLB format/tractor-shovel.glb",
+      "collectionPath": "Models",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/kenney_car-kit/Models/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "tractor-shovel",
+      "packId": "kenney-car-kit",
+      "packRoot": "media/3D_Assets/kenney_car-kit",
+      "path": "media/3D_Assets/kenney_car-kit/Models/GLB format/tractor-shovel.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/kenney_car-kit/Models/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 222584,
+      "source": {
+        "blobSha": "628652e0ae132e7aaefc21bcf2b8237ffb9bec91",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_car-kit/Models/GLB%20format/tractor-shovel.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/kenney_car-kit/Models/GLB%20format/tractor-shovel.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/kenney_car-kit/Models/GLB format/tractor.glb",
+      "collectionPath": "Models",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/kenney_car-kit/Models/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "tractor",
+      "packId": "kenney-car-kit",
+      "packRoot": "media/3D_Assets/kenney_car-kit",
+      "path": "media/3D_Assets/kenney_car-kit/Models/GLB format/tractor.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/kenney_car-kit/Models/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 175960,
+      "source": {
+        "blobSha": "b7655cdf7535d7da70005ff1e9f6945aaa44b2d9",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_car-kit/Models/GLB%20format/tractor.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/kenney_car-kit/Models/GLB%20format/tractor.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/kenney_car-kit/Models/GLB format/truck-flat.glb",
+      "collectionPath": "Models",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/kenney_car-kit/Models/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "truck-flat",
+      "packId": "kenney-car-kit",
+      "packRoot": "media/3D_Assets/kenney_car-kit",
+      "path": "media/3D_Assets/kenney_car-kit/Models/GLB format/truck-flat.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/kenney_car-kit/Models/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 207424,
+      "source": {
+        "blobSha": "007802b953d4e5a4f9cb00699f81254724e43f8f",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_car-kit/Models/GLB%20format/truck-flat.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/kenney_car-kit/Models/GLB%20format/truck-flat.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/kenney_car-kit/Models/GLB format/truck.glb",
+      "collectionPath": "Models",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/kenney_car-kit/Models/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "truck",
+      "packId": "kenney-car-kit",
+      "packRoot": "media/3D_Assets/kenney_car-kit",
+      "path": "media/3D_Assets/kenney_car-kit/Models/GLB format/truck.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/kenney_car-kit/Models/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 176360,
+      "source": {
+        "blobSha": "c0be5b33cfdc3d7b0c3192b745324394403f13a0",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_car-kit/Models/GLB%20format/truck.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/kenney_car-kit/Models/GLB%20format/truck.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/kenney_car-kit/Models/GLB format/van.glb",
+      "collectionPath": "Models",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/kenney_car-kit/Models/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "van",
+      "packId": "kenney-car-kit",
+      "packRoot": "media/3D_Assets/kenney_car-kit",
+      "path": "media/3D_Assets/kenney_car-kit/Models/GLB format/van.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/kenney_car-kit/Models/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 175664,
+      "source": {
+        "blobSha": "e6f663586b8c6f946a8c1b0378c181db6b8193bc",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_car-kit/Models/GLB%20format/van.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/kenney_car-kit/Models/GLB%20format/van.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/kenney_car-kit/Models/GLB format/wheel-dark.glb",
+      "collectionPath": "Models",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/kenney_car-kit/Models/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "wheel-dark",
+      "packId": "kenney-car-kit",
+      "packRoot": "media/3D_Assets/kenney_car-kit",
+      "path": "media/3D_Assets/kenney_car-kit/Models/GLB format/wheel-dark.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/kenney_car-kit/Models/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 29116,
+      "source": {
+        "blobSha": "8440b5ded06e8d3539990c89e8374e02ff018445",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_car-kit/Models/GLB%20format/wheel-dark.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/kenney_car-kit/Models/GLB%20format/wheel-dark.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/kenney_car-kit/Models/GLB format/wheel-default.glb",
+      "collectionPath": "Models",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/kenney_car-kit/Models/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "wheel-default",
+      "packId": "kenney-car-kit",
+      "packRoot": "media/3D_Assets/kenney_car-kit",
+      "path": "media/3D_Assets/kenney_car-kit/Models/GLB format/wheel-default.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/kenney_car-kit/Models/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 26820,
+      "source": {
+        "blobSha": "f709488f68954151d1d231cdfbf7bb06f0155f9e",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_car-kit/Models/GLB%20format/wheel-default.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/kenney_car-kit/Models/GLB%20format/wheel-default.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/kenney_car-kit/Models/GLB format/wheel-racing.glb",
+      "collectionPath": "Models",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/kenney_car-kit/Models/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "wheel-racing",
+      "packId": "kenney-car-kit",
+      "packRoot": "media/3D_Assets/kenney_car-kit",
+      "path": "media/3D_Assets/kenney_car-kit/Models/GLB format/wheel-racing.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/kenney_car-kit/Models/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 29120,
+      "source": {
+        "blobSha": "7a3d5888c78d0509d043f6ea336ffe5b8dbf6a25",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_car-kit/Models/GLB%20format/wheel-racing.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/kenney_car-kit/Models/GLB%20format/wheel-racing.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/kenney_car-kit/Models/GLB format/wheel-tractor-back.glb",
+      "collectionPath": "Models",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/kenney_car-kit/Models/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "wheel-tractor-back",
+      "packId": "kenney-car-kit",
+      "packRoot": "media/3D_Assets/kenney_car-kit",
+      "path": "media/3D_Assets/kenney_car-kit/Models/GLB format/wheel-tractor-back.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/kenney_car-kit/Models/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 36628,
+      "source": {
+        "blobSha": "d6cfc72d5378825373139b61ab563854644ab2b8",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_car-kit/Models/GLB%20format/wheel-tractor-back.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/kenney_car-kit/Models/GLB%20format/wheel-tractor-back.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/kenney_car-kit/Models/GLB format/wheel-tractor-dark-back.glb",
+      "collectionPath": "Models",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/kenney_car-kit/Models/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "wheel-tractor-dark-back",
+      "packId": "kenney-car-kit",
+      "packRoot": "media/3D_Assets/kenney_car-kit",
+      "path": "media/3D_Assets/kenney_car-kit/Models/GLB format/wheel-tractor-dark-back.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/kenney_car-kit/Models/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 36644,
+      "source": {
+        "blobSha": "c20555b09166ec7d0b70cc0385918d8a6ad68277",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_car-kit/Models/GLB%20format/wheel-tractor-dark-back.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/kenney_car-kit/Models/GLB%20format/wheel-tractor-dark-back.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/kenney_car-kit/Models/GLB format/wheel-tractor-dark-front.glb",
+      "collectionPath": "Models",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/kenney_car-kit/Models/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "wheel-tractor-dark-front",
+      "packId": "kenney-car-kit",
+      "packRoot": "media/3D_Assets/kenney_car-kit",
+      "path": "media/3D_Assets/kenney_car-kit/Models/GLB format/wheel-tractor-dark-front.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/kenney_car-kit/Models/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 29156,
+      "source": {
+        "blobSha": "5a82a0510a2943e2fb517779345b6142f2a6e076",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_car-kit/Models/GLB%20format/wheel-tractor-dark-front.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/kenney_car-kit/Models/GLB%20format/wheel-tractor-dark-front.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/kenney_car-kit/Models/GLB format/wheel-tractor-front.glb",
+      "collectionPath": "Models",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/kenney_car-kit/Models/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "wheel-tractor-front",
+      "packId": "kenney-car-kit",
+      "packRoot": "media/3D_Assets/kenney_car-kit",
+      "path": "media/3D_Assets/kenney_car-kit/Models/GLB format/wheel-tractor-front.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/kenney_car-kit/Models/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 29140,
+      "source": {
+        "blobSha": "7560165f4d88c9fa7532de007be6c2b502cc4ba7",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_car-kit/Models/GLB%20format/wheel-tractor-front.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/kenney_car-kit/Models/GLB%20format/wheel-tractor-front.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/kenney_car-kit/Models/GLB format/wheel-truck.glb",
+      "collectionPath": "Models",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/kenney_car-kit/Models/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "wheel-truck",
+      "packId": "kenney-car-kit",
+      "packRoot": "media/3D_Assets/kenney_car-kit",
+      "path": "media/3D_Assets/kenney_car-kit/Models/GLB format/wheel-truck.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/kenney_car-kit/Models/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 34304,
+      "source": {
+        "blobSha": "a54e742b33316d0824494cb5b761a735385bdce2",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_car-kit/Models/GLB%20format/wheel-truck.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/kenney_car-kit/Models/GLB%20format/wheel-truck.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/kenney_car-kit/Preview.png",
+      "folder": "media/3D_Assets/kenney_car-kit",
+      "format": "png",
+      "hints": {
+        "textureCandidate": false,
+        "textureCandidateProvenance": "generated-structural"
+      },
+      "kind": "image-2d",
+      "name": "Preview",
+      "packId": "kenney-car-kit",
+      "packRoot": "media/3D_Assets/kenney_car-kit",
+      "path": "media/3D_Assets/kenney_car-kit/Preview.png",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 161651,
+      "source": {
+        "blobSha": "3bbfb972432a5f8b34155cf285b8b7f8c71bdf92",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_car-kit/Preview.png",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/kenney_car-kit/Preview.png",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    }
+  ],
+  "collections": [
+    {
+      "assetCount": 51,
+      "path": "Models"
+    }
+  ],
+  "dependencyStatus": {
+    "complete": 50
+  },
+  "displayName": "kenney_car-kit",
+  "formats": {
+    "glb": 50,
+    "png": 2
+  },
+  "kinds": {
+    "image-2d": 2,
+    "model-3d": 50
+  },
+  "packId": "kenney-car-kit",
+  "provenance": "generated-structural",
+  "root": "media/3D_Assets/kenney_car-kit",
+  "schema": "kfb.asset-pack.v1",
+  "shard": "packs/kenney-car-kit.json"
+}

@@ -1,0 +1,1145 @@
+{
+  "assetCount": 30,
+  "assets": [
+    {
+      "assetId": "media/3D_Assets/kenney_mini-dungeon/Models/GLB format/Textures/colormap.png",
+      "collectionPath": "Models",
+      "folder": "media/3D_Assets/kenney_mini-dungeon/Models/GLB format/Textures",
+      "format": "png",
+      "hints": {
+        "textureCandidate": true,
+        "textureCandidateProvenance": "generated-structural"
+      },
+      "kind": "image-2d",
+      "name": "colormap",
+      "packId": "kenney-mini-dungeon",
+      "packRoot": "media/3D_Assets/kenney_mini-dungeon",
+      "path": "media/3D_Assets/kenney_mini-dungeon/Models/GLB format/Textures/colormap.png",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 10626,
+      "source": {
+        "blobSha": "825021e9bdb1ee104b2363e013e363d9f2c7162d",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_mini-dungeon/Models/GLB%20format/Textures/colormap.png",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/kenney_mini-dungeon/Models/GLB%20format/Textures/colormap.png",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/kenney_mini-dungeon/Models/GLB format/banner.glb",
+      "collectionPath": "Models",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/kenney_mini-dungeon/Models/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "banner",
+      "packId": "kenney-mini-dungeon",
+      "packRoot": "media/3D_Assets/kenney_mini-dungeon",
+      "path": "media/3D_Assets/kenney_mini-dungeon/Models/GLB format/banner.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/kenney_mini-dungeon/Models/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 15652,
+      "source": {
+        "blobSha": "864c358ff4151448894f89ef410c9d96300f8a73",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_mini-dungeon/Models/GLB%20format/banner.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/kenney_mini-dungeon/Models/GLB%20format/banner.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/kenney_mini-dungeon/Models/GLB format/barrel.glb",
+      "collectionPath": "Models",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/kenney_mini-dungeon/Models/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "barrel",
+      "packId": "kenney-mini-dungeon",
+      "packRoot": "media/3D_Assets/kenney_mini-dungeon",
+      "path": "media/3D_Assets/kenney_mini-dungeon/Models/GLB format/barrel.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/kenney_mini-dungeon/Models/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 14096,
+      "source": {
+        "blobSha": "5c481cebea07f49425c6a1b4fe31574c5c975812",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_mini-dungeon/Models/GLB%20format/barrel.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/kenney_mini-dungeon/Models/GLB%20format/barrel.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/kenney_mini-dungeon/Models/GLB format/character-human.glb",
+      "collectionPath": "Models",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/kenney_mini-dungeon/Models/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "character-human",
+      "packId": "kenney-mini-dungeon",
+      "packRoot": "media/3D_Assets/kenney_mini-dungeon",
+      "path": "media/3D_Assets/kenney_mini-dungeon/Models/GLB format/character-human.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/kenney_mini-dungeon/Models/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 218072,
+      "source": {
+        "blobSha": "69499b31233c8eb22691b40aaaeb89d6e048b0aa",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_mini-dungeon/Models/GLB%20format/character-human.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/kenney_mini-dungeon/Models/GLB%20format/character-human.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/kenney_mini-dungeon/Models/GLB format/character-orc.glb",
+      "collectionPath": "Models",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/kenney_mini-dungeon/Models/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "character-orc",
+      "packId": "kenney-mini-dungeon",
+      "packRoot": "media/3D_Assets/kenney_mini-dungeon",
+      "path": "media/3D_Assets/kenney_mini-dungeon/Models/GLB format/character-orc.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/kenney_mini-dungeon/Models/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 199616,
+      "source": {
+        "blobSha": "cd59986e46a850e131d32dfc71b9920839c1c73f",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_mini-dungeon/Models/GLB%20format/character-orc.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/kenney_mini-dungeon/Models/GLB%20format/character-orc.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/kenney_mini-dungeon/Models/GLB format/chest.glb",
+      "collectionPath": "Models",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/kenney_mini-dungeon/Models/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "chest",
+      "packId": "kenney-mini-dungeon",
+      "packRoot": "media/3D_Assets/kenney_mini-dungeon",
+      "path": "media/3D_Assets/kenney_mini-dungeon/Models/GLB format/chest.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/kenney_mini-dungeon/Models/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 25148,
+      "source": {
+        "blobSha": "bedf67bf3d1b43aa48305ae6c2a6497ec2bb28ad",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_mini-dungeon/Models/GLB%20format/chest.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/kenney_mini-dungeon/Models/GLB%20format/chest.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/kenney_mini-dungeon/Models/GLB format/coin.glb",
+      "collectionPath": "Models",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/kenney_mini-dungeon/Models/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "coin",
+      "packId": "kenney-mini-dungeon",
+      "packRoot": "media/3D_Assets/kenney_mini-dungeon",
+      "path": "media/3D_Assets/kenney_mini-dungeon/Models/GLB format/coin.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/kenney_mini-dungeon/Models/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 22124,
+      "source": {
+        "blobSha": "d48ee990839ab1bac28ac5b967b5f0447bcf06ce",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_mini-dungeon/Models/GLB%20format/coin.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/kenney_mini-dungeon/Models/GLB%20format/coin.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/kenney_mini-dungeon/Models/GLB format/column.glb",
+      "collectionPath": "Models",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/kenney_mini-dungeon/Models/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "column",
+      "packId": "kenney-mini-dungeon",
+      "packRoot": "media/3D_Assets/kenney_mini-dungeon",
+      "path": "media/3D_Assets/kenney_mini-dungeon/Models/GLB format/column.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/kenney_mini-dungeon/Models/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 7268,
+      "source": {
+        "blobSha": "26e26402b954a27d5a61bebdfa46ff6722ff7cc8",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_mini-dungeon/Models/GLB%20format/column.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/kenney_mini-dungeon/Models/GLB%20format/column.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/kenney_mini-dungeon/Models/GLB format/dirt.glb",
+      "collectionPath": "Models",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/kenney_mini-dungeon/Models/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "dirt",
+      "packId": "kenney-mini-dungeon",
+      "packRoot": "media/3D_Assets/kenney_mini-dungeon",
+      "path": "media/3D_Assets/kenney_mini-dungeon/Models/GLB format/dirt.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/kenney_mini-dungeon/Models/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 2816,
+      "source": {
+        "blobSha": "b5d3dbbb8fef26e49004fa4962cd5976029ce04f",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_mini-dungeon/Models/GLB%20format/dirt.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/kenney_mini-dungeon/Models/GLB%20format/dirt.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/kenney_mini-dungeon/Models/GLB format/floor-detail.glb",
+      "collectionPath": "Models",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/kenney_mini-dungeon/Models/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "floor-detail",
+      "packId": "kenney-mini-dungeon",
+      "packRoot": "media/3D_Assets/kenney_mini-dungeon",
+      "path": "media/3D_Assets/kenney_mini-dungeon/Models/GLB format/floor-detail.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/kenney_mini-dungeon/Models/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 11924,
+      "source": {
+        "blobSha": "e2b65470685acda4f34cba6e1e16ffbe402cfa3a",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_mini-dungeon/Models/GLB%20format/floor-detail.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/kenney_mini-dungeon/Models/GLB%20format/floor-detail.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/kenney_mini-dungeon/Models/GLB format/floor.glb",
+      "collectionPath": "Models",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/kenney_mini-dungeon/Models/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "floor",
+      "packId": "kenney-mini-dungeon",
+      "packRoot": "media/3D_Assets/kenney_mini-dungeon",
+      "path": "media/3D_Assets/kenney_mini-dungeon/Models/GLB format/floor.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/kenney_mini-dungeon/Models/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 1796,
+      "source": {
+        "blobSha": "89be28db7c7cff462d41ea4884c8128a14b899f1",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_mini-dungeon/Models/GLB%20format/floor.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/kenney_mini-dungeon/Models/GLB%20format/floor.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/kenney_mini-dungeon/Models/GLB format/gate.glb",
+      "collectionPath": "Models",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/kenney_mini-dungeon/Models/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "gate",
+      "packId": "kenney-mini-dungeon",
+      "packRoot": "media/3D_Assets/kenney_mini-dungeon",
+      "path": "media/3D_Assets/kenney_mini-dungeon/Models/GLB format/gate.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/kenney_mini-dungeon/Models/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 11592,
+      "source": {
+        "blobSha": "bb33e0b1c342844271a123a8708ef1cf29d0c55f",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_mini-dungeon/Models/GLB%20format/gate.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/kenney_mini-dungeon/Models/GLB%20format/gate.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/kenney_mini-dungeon/Models/GLB format/rocks.glb",
+      "collectionPath": "Models",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/kenney_mini-dungeon/Models/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "rocks",
+      "packId": "kenney-mini-dungeon",
+      "packRoot": "media/3D_Assets/kenney_mini-dungeon",
+      "path": "media/3D_Assets/kenney_mini-dungeon/Models/GLB format/rocks.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/kenney_mini-dungeon/Models/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 18452,
+      "source": {
+        "blobSha": "dd306f659512b863a572797a3434be756a58de10",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_mini-dungeon/Models/GLB%20format/rocks.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/kenney_mini-dungeon/Models/GLB%20format/rocks.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/kenney_mini-dungeon/Models/GLB format/shield-rectangle.glb",
+      "collectionPath": "Models",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/kenney_mini-dungeon/Models/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "shield-rectangle",
+      "packId": "kenney-mini-dungeon",
+      "packRoot": "media/3D_Assets/kenney_mini-dungeon",
+      "path": "media/3D_Assets/kenney_mini-dungeon/Models/GLB format/shield-rectangle.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/kenney_mini-dungeon/Models/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 13196,
+      "source": {
+        "blobSha": "345706340361bbbefa48c57b8f1a115c922265f8",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_mini-dungeon/Models/GLB%20format/shield-rectangle.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/kenney_mini-dungeon/Models/GLB%20format/shield-rectangle.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/kenney_mini-dungeon/Models/GLB format/shield-round.glb",
+      "collectionPath": "Models",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/kenney_mini-dungeon/Models/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "shield-round",
+      "packId": "kenney-mini-dungeon",
+      "packRoot": "media/3D_Assets/kenney_mini-dungeon",
+      "path": "media/3D_Assets/kenney_mini-dungeon/Models/GLB format/shield-round.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/kenney_mini-dungeon/Models/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 15512,
+      "source": {
+        "blobSha": "86b5f6ea325aed51b7a1a57a72f3293446369439",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_mini-dungeon/Models/GLB%20format/shield-round.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/kenney_mini-dungeon/Models/GLB%20format/shield-round.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/kenney_mini-dungeon/Models/GLB format/stairs.glb",
+      "collectionPath": "Models",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/kenney_mini-dungeon/Models/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "stairs",
+      "packId": "kenney-mini-dungeon",
+      "packRoot": "media/3D_Assets/kenney_mini-dungeon",
+      "path": "media/3D_Assets/kenney_mini-dungeon/Models/GLB format/stairs.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/kenney_mini-dungeon/Models/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 11556,
+      "source": {
+        "blobSha": "f127f98c4c9eddb3d5614a24f554d8771ce3e39f",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_mini-dungeon/Models/GLB%20format/stairs.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/kenney_mini-dungeon/Models/GLB%20format/stairs.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/kenney_mini-dungeon/Models/GLB format/stones.glb",
+      "collectionPath": "Models",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/kenney_mini-dungeon/Models/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "stones",
+      "packId": "kenney-mini-dungeon",
+      "packRoot": "media/3D_Assets/kenney_mini-dungeon",
+      "path": "media/3D_Assets/kenney_mini-dungeon/Models/GLB format/stones.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/kenney_mini-dungeon/Models/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 24356,
+      "source": {
+        "blobSha": "dae83b1f1f7afc27b57fe78db33437368deb2715",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_mini-dungeon/Models/GLB%20format/stones.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/kenney_mini-dungeon/Models/GLB%20format/stones.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/kenney_mini-dungeon/Models/GLB format/trap.glb",
+      "collectionPath": "Models",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/kenney_mini-dungeon/Models/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "trap",
+      "packId": "kenney-mini-dungeon",
+      "packRoot": "media/3D_Assets/kenney_mini-dungeon",
+      "path": "media/3D_Assets/kenney_mini-dungeon/Models/GLB format/trap.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/kenney_mini-dungeon/Models/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 18852,
+      "source": {
+        "blobSha": "19b0bf5bc077b5f5216df7456bdafa6e9c505e06",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_mini-dungeon/Models/GLB%20format/trap.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/kenney_mini-dungeon/Models/GLB%20format/trap.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/kenney_mini-dungeon/Models/GLB format/wall-half.glb",
+      "collectionPath": "Models",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/kenney_mini-dungeon/Models/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "wall-half",
+      "packId": "kenney-mini-dungeon",
+      "packRoot": "media/3D_Assets/kenney_mini-dungeon",
+      "path": "media/3D_Assets/kenney_mini-dungeon/Models/GLB format/wall-half.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/kenney_mini-dungeon/Models/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 15824,
+      "source": {
+        "blobSha": "242a69861c3fb8ddb3a519f2f6f8878d9aa72075",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_mini-dungeon/Models/GLB%20format/wall-half.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/kenney_mini-dungeon/Models/GLB%20format/wall-half.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/kenney_mini-dungeon/Models/GLB format/wall-narrow.glb",
+      "collectionPath": "Models",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/kenney_mini-dungeon/Models/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "wall-narrow",
+      "packId": "kenney-mini-dungeon",
+      "packRoot": "media/3D_Assets/kenney_mini-dungeon",
+      "path": "media/3D_Assets/kenney_mini-dungeon/Models/GLB format/wall-narrow.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/kenney_mini-dungeon/Models/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 23248,
+      "source": {
+        "blobSha": "264082bd7dbdd97a524d6d9276163319c3721c79",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_mini-dungeon/Models/GLB%20format/wall-narrow.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/kenney_mini-dungeon/Models/GLB%20format/wall-narrow.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/kenney_mini-dungeon/Models/GLB format/wall-opening.glb",
+      "collectionPath": "Models",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/kenney_mini-dungeon/Models/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "wall-opening",
+      "packId": "kenney-mini-dungeon",
+      "packRoot": "media/3D_Assets/kenney_mini-dungeon",
+      "path": "media/3D_Assets/kenney_mini-dungeon/Models/GLB format/wall-opening.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/kenney_mini-dungeon/Models/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 19220,
+      "source": {
+        "blobSha": "063ebf49e898042fda7bb69313de9c4c46baf50e",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_mini-dungeon/Models/GLB%20format/wall-opening.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/kenney_mini-dungeon/Models/GLB%20format/wall-opening.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/kenney_mini-dungeon/Models/GLB format/wall.glb",
+      "collectionPath": "Models",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/kenney_mini-dungeon/Models/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "wall",
+      "packId": "kenney-mini-dungeon",
+      "packRoot": "media/3D_Assets/kenney_mini-dungeon",
+      "path": "media/3D_Assets/kenney_mini-dungeon/Models/GLB format/wall.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/kenney_mini-dungeon/Models/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 18148,
+      "source": {
+        "blobSha": "711a7471d35269b965313e0965965c819031bff0",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_mini-dungeon/Models/GLB%20format/wall.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/kenney_mini-dungeon/Models/GLB%20format/wall.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/kenney_mini-dungeon/Models/GLB format/weapon-spear.glb",
+      "collectionPath": "Models",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/kenney_mini-dungeon/Models/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "weapon-spear",
+      "packId": "kenney-mini-dungeon",
+      "packRoot": "media/3D_Assets/kenney_mini-dungeon",
+      "path": "media/3D_Assets/kenney_mini-dungeon/Models/GLB format/weapon-spear.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/kenney_mini-dungeon/Models/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 7152,
+      "source": {
+        "blobSha": "e51692ae9aba1f9e0d2d329bacfcda126efe903f",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_mini-dungeon/Models/GLB%20format/weapon-spear.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/kenney_mini-dungeon/Models/GLB%20format/weapon-spear.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/kenney_mini-dungeon/Models/GLB format/weapon-sword.glb",
+      "collectionPath": "Models",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/kenney_mini-dungeon/Models/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "weapon-sword",
+      "packId": "kenney-mini-dungeon",
+      "packRoot": "media/3D_Assets/kenney_mini-dungeon",
+      "path": "media/3D_Assets/kenney_mini-dungeon/Models/GLB format/weapon-sword.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/kenney_mini-dungeon/Models/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 9284,
+      "source": {
+        "blobSha": "9e01ce4b44d8e82dc6ebc926cbede2a67cc65c6e",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_mini-dungeon/Models/GLB%20format/weapon-sword.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/kenney_mini-dungeon/Models/GLB%20format/weapon-sword.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/kenney_mini-dungeon/Models/GLB format/wood-structure.glb",
+      "collectionPath": "Models",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/kenney_mini-dungeon/Models/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "wood-structure",
+      "packId": "kenney-mini-dungeon",
+      "packRoot": "media/3D_Assets/kenney_mini-dungeon",
+      "path": "media/3D_Assets/kenney_mini-dungeon/Models/GLB format/wood-structure.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/kenney_mini-dungeon/Models/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 16344,
+      "source": {
+        "blobSha": "37e23c9f7005c0a4f607aac61e5a8669ec0eb98e",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_mini-dungeon/Models/GLB%20format/wood-structure.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/kenney_mini-dungeon/Models/GLB%20format/wood-structure.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/kenney_mini-dungeon/Models/GLB format/wood-support.glb",
+      "collectionPath": "Models",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/kenney_mini-dungeon/Models/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "wood-support",
+      "packId": "kenney-mini-dungeon",
+      "packRoot": "media/3D_Assets/kenney_mini-dungeon",
+      "path": "media/3D_Assets/kenney_mini-dungeon/Models/GLB format/wood-support.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/kenney_mini-dungeon/Models/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 6424,
+      "source": {
+        "blobSha": "d61360939373fa9b830e5060d344c86d183091bf",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_mini-dungeon/Models/GLB%20format/wood-support.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/kenney_mini-dungeon/Models/GLB%20format/wood-support.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/kenney_mini-dungeon/Models/Textures/variation-a.png",
+      "collectionPath": "Models",
+      "folder": "media/3D_Assets/kenney_mini-dungeon/Models/Textures",
+      "format": "png",
+      "hints": {
+        "textureCandidate": true,
+        "textureCandidateProvenance": "generated-structural"
+      },
+      "kind": "image-2d",
+      "name": "variation-a",
+      "packId": "kenney-mini-dungeon",
+      "packRoot": "media/3D_Assets/kenney_mini-dungeon",
+      "path": "media/3D_Assets/kenney_mini-dungeon/Models/Textures/variation-a.png",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 10485,
+      "source": {
+        "blobSha": "68822d219154148807abc75145de1f995980c240",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_mini-dungeon/Models/Textures/variation-a.png",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/kenney_mini-dungeon/Models/Textures/variation-a.png",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/kenney_mini-dungeon/Preview (Variation A).png",
+      "folder": "media/3D_Assets/kenney_mini-dungeon",
+      "format": "png",
+      "hints": {
+        "textureCandidate": false,
+        "textureCandidateProvenance": "generated-structural"
+      },
+      "kind": "image-2d",
+      "name": "Preview (Variation A)",
+      "packId": "kenney-mini-dungeon",
+      "packRoot": "media/3D_Assets/kenney_mini-dungeon",
+      "path": "media/3D_Assets/kenney_mini-dungeon/Preview (Variation A).png",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 452102,
+      "source": {
+        "blobSha": "b78d99289d92ee6e783fbb329c0bd36b258a6cf2",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_mini-dungeon/Preview%20%28Variation%20A%29.png",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/kenney_mini-dungeon/Preview%20%28Variation%20A%29.png",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/kenney_mini-dungeon/Preview.png",
+      "folder": "media/3D_Assets/kenney_mini-dungeon",
+      "format": "png",
+      "hints": {
+        "textureCandidate": false,
+        "textureCandidateProvenance": "generated-structural"
+      },
+      "kind": "image-2d",
+      "name": "Preview",
+      "packId": "kenney-mini-dungeon",
+      "packRoot": "media/3D_Assets/kenney_mini-dungeon",
+      "path": "media/3D_Assets/kenney_mini-dungeon/Preview.png",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 117177,
+      "source": {
+        "blobSha": "987d12af7130b00c391c00eae9854325aa8706c4",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_mini-dungeon/Preview.png",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/kenney_mini-dungeon/Preview.png",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/kenney_mini-dungeon/Sample.png",
+      "folder": "media/3D_Assets/kenney_mini-dungeon",
+      "format": "png",
+      "hints": {
+        "textureCandidate": false,
+        "textureCandidateProvenance": "generated-structural"
+      },
+      "kind": "image-2d",
+      "name": "Sample",
+      "packId": "kenney-mini-dungeon",
+      "packRoot": "media/3D_Assets/kenney_mini-dungeon",
+      "path": "media/3D_Assets/kenney_mini-dungeon/Sample.png",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 119731,
+      "source": {
+        "blobSha": "c354abc23241bfeb002249ae60cc6d5b00542bf8",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_mini-dungeon/Sample.png",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/kenney_mini-dungeon/Sample.png",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    }
+  ],
+  "collections": [
+    {
+      "assetCount": 27,
+      "path": "Models"
+    }
+  ],
+  "dependencyStatus": {
+    "complete": 25
+  },
+  "displayName": "kenney_mini-dungeon",
+  "formats": {
+    "glb": 25,
+    "png": 5
+  },
+  "kinds": {
+    "image-2d": 5,
+    "model-3d": 25
+  },
+  "packId": "kenney-mini-dungeon",
+  "provenance": "generated-structural",
+  "root": "media/3D_Assets/kenney_mini-dungeon",
+  "schema": "kfb.asset-pack.v1",
+  "shard": "packs/kenney-mini-dungeon.json"
+}

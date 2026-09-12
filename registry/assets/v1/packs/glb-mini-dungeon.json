@@ -1,0 +1,77 @@
+{
+  "assetCount": 2,
+  "assets": [
+    {
+      "assetId": "media/3D_Assets/GLB_mini_dungeon/character-human.glb",
+      "dependencyStatus": "embedded",
+      "folder": "media/3D_Assets/GLB_mini_dungeon",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "character-human",
+      "packId": "glb-mini-dungeon",
+      "packRoot": "media/3D_Assets/GLB_mini_dungeon",
+      "path": "media/3D_Assets/GLB_mini_dungeon/character-human.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": []
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 147280,
+      "source": {
+        "blobSha": "7c87ab7e03464daa0931eb68fce948633cfd8533",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/GLB_mini_dungeon/character-human.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/GLB_mini_dungeon/character-human.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/GLB_mini_dungeon/character-orc.glb",
+      "dependencyStatus": "embedded",
+      "folder": "media/3D_Assets/GLB_mini_dungeon",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "character-orc",
+      "packId": "glb-mini-dungeon",
+      "packRoot": "media/3D_Assets/GLB_mini_dungeon",
+      "path": "media/3D_Assets/GLB_mini_dungeon/character-orc.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": []
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 128880,
+      "source": {
+        "blobSha": "1851e86e1d4fcfc5d3c25a911fc80965e7cfb85c",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/GLB_mini_dungeon/character-orc.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/GLB_mini_dungeon/character-orc.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    }
+  ],
+  "collections": [],
+  "dependencyStatus": {
+    "embedded": 2
+  },
+  "displayName": "GLB_mini_dungeon",
+  "formats": {
+    "glb": 2
+  },
+  "kinds": {
+    "model-3d": 2
+  },
+  "packId": "glb-mini-dungeon",
+  "provenance": "generated-structural",
+  "root": "media/3D_Assets/GLB_mini_dungeon",
+  "schema": "kfb.asset-pack.v1",
+  "shard": "packs/glb-mini-dungeon.json"
+}

@@ -1,0 +1,70 @@
+{
+  "count": 4,
+  "decks": [
+    {
+      "deckId": "embrace_protopia",
+      "groupingStatus": "explicit",
+      "shard": "decks/embrace_protopia.json",
+      "title": "Protopia Sketchbook"
+    },
+    {
+      "deckId": "forget_utopia",
+      "groupingStatus": "explicit",
+      "shard": "decks/forget_utopia.json",
+      "title": "Forget Utopia"
+    },
+    {
+      "deckId": "ignore_dystopia",
+      "groupingStatus": "explicit",
+      "shard": "decks/ignore_dystopia.json",
+      "title": "Anatomy of a Trap"
+    },
+    {
+      "deckId": "sonic_slaughterhouse",
+      "groupingStatus": "explicit",
+      "shard": "decks/sonic_slaughterhouse.json",
+      "title": "Sonic Slaughterhouse — Music Industry"
+    }
+  ],
+  "rules": [
+    {
+      "pdf": "KAYFABIZARRO_FREESTYLE_RULES.pdf",
+      "title": "KFB Freestyle Rules"
+    },
+    {
+      "pdf": "KayfaBizarro - The Anti-Rules-Booklet - A4-quer print v4.pdf",
+      "title": "Anti-Rules Booklet (A4-quer v4)"
+    },
+    {
+      "pdf": "Kayfabizarro_Freestyle_ComicBooklet_WEB_v1.pdf",
+      "title": "Freestyle Comic Booklet"
+    },
+    {
+      "pdf": "KayfaBizarro Quick-Rules OnePager DE v6.pdf",
+      "title": "Quick-Rules OnePager DE v6"
+    },
+    {
+      "pdf": "KayfaBizarro Quick-Rules OnePager EN v6.pdf",
+      "title": "Quick-Rules OnePager EN v6"
+    }
+  ],
+  "schema": "kfb.asset-deck-index.v1",
+  "sets": [
+    {
+      "decks": [
+        "forget_utopia",
+        "ignore_dystopia",
+        "embrace_protopia"
+      ],
+      "note": "Forget / Ignore / Embrace auf geteilter 14-Positionen-Spine — kuratiertes Promo/Onboarding-Set.",
+      "setId": "three_futures",
+      "title": "Three Futures (Exhibition trio)"
+    }
+  ],
+  "sourceCommit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+  "sourceRegistry": {
+    "path": "media/kfb/kfb-index.json",
+    "provenance": "manifest-explicit",
+    "schema": "kfb-deck-registry/v2"
+  }
+}

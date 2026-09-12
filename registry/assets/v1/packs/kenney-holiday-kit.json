@@ -1,0 +1,4086 @@
+{
+  "assetCount": 106,
+  "assets": [
+    {
+      "assetId": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/Textures/colormap.png",
+      "collectionPath": "Models",
+      "folder": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/Textures",
+      "format": "png",
+      "hints": {
+        "textureCandidate": true,
+        "textureCandidateProvenance": "generated-structural"
+      },
+      "kind": "image-2d",
+      "name": "colormap",
+      "packId": "kenney-holiday-kit",
+      "packRoot": "media/3D_Assets/kenney_holiday-kit",
+      "path": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/Textures/colormap.png",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 12777,
+      "source": {
+        "blobSha": "af4140f98f783ea60c75757ba6c7ccf599e8a4de",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_holiday-kit/Models/GLB%20format/Textures/colormap.png",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/kenney_holiday-kit/Models/GLB%20format/Textures/colormap.png",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/bench-short.glb",
+      "collectionPath": "Models",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/kenney_holiday-kit/Models/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "bench-short",
+      "packId": "kenney-holiday-kit",
+      "packRoot": "media/3D_Assets/kenney_holiday-kit",
+      "path": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/bench-short.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 15972,
+      "source": {
+        "blobSha": "d2191a5dac18a46cd47ce6a48f899bcbbd8a5d20",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_holiday-kit/Models/GLB%20format/bench-short.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/kenney_holiday-kit/Models/GLB%20format/bench-short.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/bench.glb",
+      "collectionPath": "Models",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/kenney_holiday-kit/Models/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "bench",
+      "packId": "kenney-holiday-kit",
+      "packRoot": "media/3D_Assets/kenney_holiday-kit",
+      "path": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/bench.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 15956,
+      "source": {
+        "blobSha": "a01c168b051d74fd84c23206400bc90bd9b16efc",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_holiday-kit/Models/GLB%20format/bench.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/kenney_holiday-kit/Models/GLB%20format/bench.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/cabin-corner-bottom.glb",
+      "collectionPath": "Models",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/kenney_holiday-kit/Models/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "cabin-corner-bottom",
+      "packId": "kenney-holiday-kit",
+      "packRoot": "media/3D_Assets/kenney_holiday-kit",
+      "path": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/cabin-corner-bottom.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 5124,
+      "source": {
+        "blobSha": "cf915668ae977b82afa482943ae0603032216e87",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_holiday-kit/Models/GLB%20format/cabin-corner-bottom.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/kenney_holiday-kit/Models/GLB%20format/cabin-corner-bottom.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/cabin-corner-logs.glb",
+      "collectionPath": "Models",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/kenney_holiday-kit/Models/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "cabin-corner-logs",
+      "packId": "kenney-holiday-kit",
+      "packRoot": "media/3D_Assets/kenney_holiday-kit",
+      "path": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/cabin-corner-logs.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 15568,
+      "source": {
+        "blobSha": "2c60fee781d2054ba9c49a97383e3b6a2f69025d",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_holiday-kit/Models/GLB%20format/cabin-corner-logs.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/kenney_holiday-kit/Models/GLB%20format/cabin-corner-logs.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/cabin-corner.glb",
+      "collectionPath": "Models",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/kenney_holiday-kit/Models/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "cabin-corner",
+      "packId": "kenney-holiday-kit",
+      "packRoot": "media/3D_Assets/kenney_holiday-kit",
+      "path": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/cabin-corner.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 2664,
+      "source": {
+        "blobSha": "c64538f626384e39c8da3a81b582eb3a9efd6a7e",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_holiday-kit/Models/GLB%20format/cabin-corner.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/kenney_holiday-kit/Models/GLB%20format/cabin-corner.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/cabin-door-rotate.glb",
+      "collectionPath": "Models",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/kenney_holiday-kit/Models/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "cabin-door-rotate",
+      "packId": "kenney-holiday-kit",
+      "packRoot": "media/3D_Assets/kenney_holiday-kit",
+      "path": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/cabin-door-rotate.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 27264,
+      "source": {
+        "blobSha": "c1fd5f5799a9aa18c7243a7e7ef2de6d1f58fd20",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_holiday-kit/Models/GLB%20format/cabin-door-rotate.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/kenney_holiday-kit/Models/GLB%20format/cabin-door-rotate.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/cabin-doorway-center.glb",
+      "collectionPath": "Models",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/kenney_holiday-kit/Models/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "cabin-doorway-center",
+      "packId": "kenney-holiday-kit",
+      "packRoot": "media/3D_Assets/kenney_holiday-kit",
+      "path": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/cabin-doorway-center.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 4096,
+      "source": {
+        "blobSha": "8c1c2007444c1b66ca17a105341a281c6f4d3e8a",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_holiday-kit/Models/GLB%20format/cabin-doorway-center.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/kenney_holiday-kit/Models/GLB%20format/cabin-doorway-center.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/cabin-doorway-left.glb",
+      "collectionPath": "Models",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/kenney_holiday-kit/Models/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "cabin-doorway-left",
+      "packId": "kenney-holiday-kit",
+      "packRoot": "media/3D_Assets/kenney_holiday-kit",
+      "path": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/cabin-doorway-left.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 10824,
+      "source": {
+        "blobSha": "bad1896597d33810f0771231bf555c5b818c62aa",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_holiday-kit/Models/GLB%20format/cabin-doorway-left.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/kenney_holiday-kit/Models/GLB%20format/cabin-doorway-left.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/cabin-doorway-right.glb",
+      "collectionPath": "Models",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/kenney_holiday-kit/Models/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "cabin-doorway-right",
+      "packId": "kenney-holiday-kit",
+      "packRoot": "media/3D_Assets/kenney_holiday-kit",
+      "path": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/cabin-doorway-right.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 10824,
+      "source": {
+        "blobSha": "6460a6aac7ba3a9edb7b8dbdd961243c80dfafb5",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_holiday-kit/Models/GLB%20format/cabin-doorway-right.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/kenney_holiday-kit/Models/GLB%20format/cabin-doorway-right.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/cabin-doorway.glb",
+      "collectionPath": "Models",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/kenney_holiday-kit/Models/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "cabin-doorway",
+      "packId": "kenney-holiday-kit",
+      "packRoot": "media/3D_Assets/kenney_holiday-kit",
+      "path": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/cabin-doorway.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 18124,
+      "source": {
+        "blobSha": "0175a0b36580132d747520b08ba64cc0c7e90033",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_holiday-kit/Models/GLB%20format/cabin-doorway.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/kenney_holiday-kit/Models/GLB%20format/cabin-doorway.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/cabin-fence.glb",
+      "collectionPath": "Models",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/kenney_holiday-kit/Models/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "cabin-fence",
+      "packId": "kenney-holiday-kit",
+      "packRoot": "media/3D_Assets/kenney_holiday-kit",
+      "path": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/cabin-fence.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 7280,
+      "source": {
+        "blobSha": "5abb9b7601c36fb0ea8440d54475b12555b1be99",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_holiday-kit/Models/GLB%20format/cabin-fence.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/kenney_holiday-kit/Models/GLB%20format/cabin-fence.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/cabin-overhang-door-rotate.glb",
+      "collectionPath": "Models",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/kenney_holiday-kit/Models/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "cabin-overhang-door-rotate",
+      "packId": "kenney-holiday-kit",
+      "packRoot": "media/3D_Assets/kenney_holiday-kit",
+      "path": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/cabin-overhang-door-rotate.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 32448,
+      "source": {
+        "blobSha": "a23eff987cc3e583137d060484c5bb00be527da4",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_holiday-kit/Models/GLB%20format/cabin-overhang-door-rotate.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/kenney_holiday-kit/Models/GLB%20format/cabin-overhang-door-rotate.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/cabin-overhang-doorway.glb",
+      "collectionPath": "Models",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/kenney_holiday-kit/Models/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "cabin-overhang-doorway",
+      "packId": "kenney-holiday-kit",
+      "packRoot": "media/3D_Assets/kenney_holiday-kit",
+      "path": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/cabin-overhang-doorway.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 20000,
+      "source": {
+        "blobSha": "9648e73eb506bf57f0f052ef33a9a929bded781b",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_holiday-kit/Models/GLB%20format/cabin-overhang-doorway.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/kenney_holiday-kit/Models/GLB%20format/cabin-overhang-doorway.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/cabin-roof-chimney.glb",
+      "collectionPath": "Models",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/kenney_holiday-kit/Models/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "cabin-roof-chimney",
+      "packId": "kenney-holiday-kit",
+      "packRoot": "media/3D_Assets/kenney_holiday-kit",
+      "path": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/cabin-roof-chimney.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 11068,
+      "source": {
+        "blobSha": "993a1f69239bebbf96f1da2d194501971b265abd",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_holiday-kit/Models/GLB%20format/cabin-roof-chimney.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/kenney_holiday-kit/Models/GLB%20format/cabin-roof-chimney.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/cabin-roof-corner.glb",
+      "collectionPath": "Models",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/kenney_holiday-kit/Models/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "cabin-roof-corner",
+      "packId": "kenney-holiday-kit",
+      "packRoot": "media/3D_Assets/kenney_holiday-kit",
+      "path": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/cabin-roof-corner.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 11692,
+      "source": {
+        "blobSha": "8f1d5b496581e2e863031760636aad9159e22854",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_holiday-kit/Models/GLB%20format/cabin-roof-corner.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/kenney_holiday-kit/Models/GLB%20format/cabin-roof-corner.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/cabin-roof-dormer.glb",
+      "collectionPath": "Models",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/kenney_holiday-kit/Models/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "cabin-roof-dormer",
+      "packId": "kenney-holiday-kit",
+      "packRoot": "media/3D_Assets/kenney_holiday-kit",
+      "path": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/cabin-roof-dormer.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 12048,
+      "source": {
+        "blobSha": "301afdd5ecf75d83773281ddeba4cb4217bfc47b",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_holiday-kit/Models/GLB%20format/cabin-roof-dormer.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/kenney_holiday-kit/Models/GLB%20format/cabin-roof-dormer.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/cabin-roof-point.glb",
+      "collectionPath": "Models",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/kenney_holiday-kit/Models/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "cabin-roof-point",
+      "packId": "kenney-holiday-kit",
+      "packRoot": "media/3D_Assets/kenney_holiday-kit",
+      "path": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/cabin-roof-point.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 6952,
+      "source": {
+        "blobSha": "1aef9ef557cc43b7f9d983f1c2e62111df3f536c",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_holiday-kit/Models/GLB%20format/cabin-roof-point.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/kenney_holiday-kit/Models/GLB%20format/cabin-roof-point.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/cabin-roof-snow-chimney.glb",
+      "collectionPath": "Models",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/kenney_holiday-kit/Models/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "cabin-roof-snow-chimney",
+      "packId": "kenney-holiday-kit",
+      "packRoot": "media/3D_Assets/kenney_holiday-kit",
+      "path": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/cabin-roof-snow-chimney.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 18780,
+      "source": {
+        "blobSha": "d8565840cfcc637fa901cc8bd7aef2c21e4c8e66",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_holiday-kit/Models/GLB%20format/cabin-roof-snow-chimney.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/kenney_holiday-kit/Models/GLB%20format/cabin-roof-snow-chimney.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/cabin-roof-snow-corner.glb",
+      "collectionPath": "Models",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/kenney_holiday-kit/Models/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "cabin-roof-snow-corner",
+      "packId": "kenney-holiday-kit",
+      "packRoot": "media/3D_Assets/kenney_holiday-kit",
+      "path": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/cabin-roof-snow-corner.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 20652,
+      "source": {
+        "blobSha": "016d6faef546e82f692c487c2639ff53143215d1",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_holiday-kit/Models/GLB%20format/cabin-roof-snow-corner.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/kenney_holiday-kit/Models/GLB%20format/cabin-roof-snow-corner.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/cabin-roof-snow-dormer.glb",
+      "collectionPath": "Models",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/kenney_holiday-kit/Models/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "cabin-roof-snow-dormer",
+      "packId": "kenney-holiday-kit",
+      "packRoot": "media/3D_Assets/kenney_holiday-kit",
+      "path": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/cabin-roof-snow-dormer.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 15932,
+      "source": {
+        "blobSha": "fd99de1b0ffe367031f69218940b1044ebb9716f",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_holiday-kit/Models/GLB%20format/cabin-roof-snow-dormer.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/kenney_holiday-kit/Models/GLB%20format/cabin-roof-snow-dormer.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/cabin-roof-snow-point.glb",
+      "collectionPath": "Models",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/kenney_holiday-kit/Models/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "cabin-roof-snow-point",
+      "packId": "kenney-holiday-kit",
+      "packRoot": "media/3D_Assets/kenney_holiday-kit",
+      "path": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/cabin-roof-snow-point.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 18004,
+      "source": {
+        "blobSha": "0a64b676132bd575ee8e9d84bc7baa1a0c05a65b",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_holiday-kit/Models/GLB%20format/cabin-roof-snow-point.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/kenney_holiday-kit/Models/GLB%20format/cabin-roof-snow-point.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/cabin-roof-snow.glb",
+      "collectionPath": "Models",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/kenney_holiday-kit/Models/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "cabin-roof-snow",
+      "packId": "kenney-holiday-kit",
+      "packRoot": "media/3D_Assets/kenney_holiday-kit",
+      "path": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/cabin-roof-snow.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 12436,
+      "source": {
+        "blobSha": "8970f3b18d0ca64d5c784c66f311f48481691b08",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_holiday-kit/Models/GLB%20format/cabin-roof-snow.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/kenney_holiday-kit/Models/GLB%20format/cabin-roof-snow.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/cabin-roof-top.glb",
+      "collectionPath": "Models",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/kenney_holiday-kit/Models/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "cabin-roof-top",
+      "packId": "kenney-holiday-kit",
+      "packRoot": "media/3D_Assets/kenney_holiday-kit",
+      "path": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/cabin-roof-top.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 2940,
+      "source": {
+        "blobSha": "ed1b89f90d62ff36ef43fc6b9eff909ed95154ab",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_holiday-kit/Models/GLB%20format/cabin-roof-top.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/kenney_holiday-kit/Models/GLB%20format/cabin-roof-top.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/cabin-roof.glb",
+      "collectionPath": "Models",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/kenney_holiday-kit/Models/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "cabin-roof",
+      "packId": "kenney-holiday-kit",
+      "packRoot": "media/3D_Assets/kenney_holiday-kit",
+      "path": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/cabin-roof.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 5248,
+      "source": {
+        "blobSha": "1a81e9453facbbf083ca241dac73465bf64715ab",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_holiday-kit/Models/GLB%20format/cabin-roof.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/kenney_holiday-kit/Models/GLB%20format/cabin-roof.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/cabin-wall-low.glb",
+      "collectionPath": "Models",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/kenney_holiday-kit/Models/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "cabin-wall-low",
+      "packId": "kenney-holiday-kit",
+      "packRoot": "media/3D_Assets/kenney_holiday-kit",
+      "path": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/cabin-wall-low.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 4716,
+      "source": {
+        "blobSha": "0818b731a98397cbe63c77cf6496a73c8d641ea2",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_holiday-kit/Models/GLB%20format/cabin-wall-low.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/kenney_holiday-kit/Models/GLB%20format/cabin-wall-low.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/cabin-wall-roof-center.glb",
+      "collectionPath": "Models",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/kenney_holiday-kit/Models/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "cabin-wall-roof-center",
+      "packId": "kenney-holiday-kit",
+      "packRoot": "media/3D_Assets/kenney_holiday-kit",
+      "path": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/cabin-wall-roof-center.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 8116,
+      "source": {
+        "blobSha": "6c52795b4860c5cde3ee5cf2d43620221eb98e6e",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_holiday-kit/Models/GLB%20format/cabin-wall-roof-center.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/kenney_holiday-kit/Models/GLB%20format/cabin-wall-roof-center.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/cabin-wall-roof.glb",
+      "collectionPath": "Models",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/kenney_holiday-kit/Models/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "cabin-wall-roof",
+      "packId": "kenney-holiday-kit",
+      "packRoot": "media/3D_Assets/kenney_holiday-kit",
+      "path": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/cabin-wall-roof.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 8344,
+      "source": {
+        "blobSha": "a0bca2b9bc455e4ae010e1ea766deaf9bb14d318",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_holiday-kit/Models/GLB%20format/cabin-wall-roof.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/kenney_holiday-kit/Models/GLB%20format/cabin-wall-roof.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/cabin-wall-wreath.glb",
+      "collectionPath": "Models",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/kenney_holiday-kit/Models/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "cabin-wall-wreath",
+      "packId": "kenney-holiday-kit",
+      "packRoot": "media/3D_Assets/kenney_holiday-kit",
+      "path": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/cabin-wall-wreath.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 36420,
+      "source": {
+        "blobSha": "f786c94c8661196c98f0175ee5fd3ee0ed10cc17",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_holiday-kit/Models/GLB%20format/cabin-wall-wreath.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/kenney_holiday-kit/Models/GLB%20format/cabin-wall-wreath.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/cabin-wall.glb",
+      "collectionPath": "Models",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/kenney_holiday-kit/Models/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "cabin-wall",
+      "packId": "kenney-holiday-kit",
+      "packRoot": "media/3D_Assets/kenney_holiday-kit",
+      "path": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/cabin-wall.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 8300,
+      "source": {
+        "blobSha": "5c9113412153528f8544b7f98332c3e55740f9c2",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_holiday-kit/Models/GLB%20format/cabin-wall.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/kenney_holiday-kit/Models/GLB%20format/cabin-wall.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/cabin-window-a.glb",
+      "collectionPath": "Models",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/kenney_holiday-kit/Models/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "cabin-window-a",
+      "packId": "kenney-holiday-kit",
+      "packRoot": "media/3D_Assets/kenney_holiday-kit",
+      "path": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/cabin-window-a.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 21872,
+      "source": {
+        "blobSha": "87e6c9abc3391e3986b53b03a1e4b21f6a240eaa",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_holiday-kit/Models/GLB%20format/cabin-window-a.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/kenney_holiday-kit/Models/GLB%20format/cabin-window-a.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/cabin-window-b.glb",
+      "collectionPath": "Models",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/kenney_holiday-kit/Models/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "cabin-window-b",
+      "packId": "kenney-holiday-kit",
+      "packRoot": "media/3D_Assets/kenney_holiday-kit",
+      "path": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/cabin-window-b.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 19784,
+      "source": {
+        "blobSha": "fedcd53f7f826bbe423f850cbb4a7dfc723c893a",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_holiday-kit/Models/GLB%20format/cabin-window-b.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/kenney_holiday-kit/Models/GLB%20format/cabin-window-b.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/cabin-window-c.glb",
+      "collectionPath": "Models",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/kenney_holiday-kit/Models/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "cabin-window-c",
+      "packId": "kenney-holiday-kit",
+      "packRoot": "media/3D_Assets/kenney_holiday-kit",
+      "path": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/cabin-window-c.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 26024,
+      "source": {
+        "blobSha": "89e5d9a73fc821d007b60b9664731c2d386ca1d8",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_holiday-kit/Models/GLB%20format/cabin-window-c.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/kenney_holiday-kit/Models/GLB%20format/cabin-window-c.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/cabin-window-large.glb",
+      "collectionPath": "Models",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/kenney_holiday-kit/Models/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "cabin-window-large",
+      "packId": "kenney-holiday-kit",
+      "packRoot": "media/3D_Assets/kenney_holiday-kit",
+      "path": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/cabin-window-large.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 18168,
+      "source": {
+        "blobSha": "a57295a66187bdb03dd7d714a2ad270291a60c70",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_holiday-kit/Models/GLB%20format/cabin-window-large.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/kenney_holiday-kit/Models/GLB%20format/cabin-window-large.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/candy-cane-green.glb",
+      "collectionPath": "Models",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/kenney_holiday-kit/Models/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "candy-cane-green",
+      "packId": "kenney-holiday-kit",
+      "packRoot": "media/3D_Assets/kenney_holiday-kit",
+      "path": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/candy-cane-green.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 7996,
+      "source": {
+        "blobSha": "e9c0709e0f48b7a1fddca175bcd26df8290020f6",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_holiday-kit/Models/GLB%20format/candy-cane-green.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/kenney_holiday-kit/Models/GLB%20format/candy-cane-green.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/candy-cane-red.glb",
+      "collectionPath": "Models",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/kenney_holiday-kit/Models/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "candy-cane-red",
+      "packId": "kenney-holiday-kit",
+      "packRoot": "media/3D_Assets/kenney_holiday-kit",
+      "path": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/candy-cane-red.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 7956,
+      "source": {
+        "blobSha": "c36088d40e8eb2f0a813e8f22abd175b9379032b",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_holiday-kit/Models/GLB%20format/candy-cane-red.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/kenney_holiday-kit/Models/GLB%20format/candy-cane-red.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/festivus-pole.glb",
+      "collectionPath": "Models",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/kenney_holiday-kit/Models/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "festivus-pole",
+      "packId": "kenney-holiday-kit",
+      "packRoot": "media/3D_Assets/kenney_holiday-kit",
+      "path": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/festivus-pole.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 7284,
+      "source": {
+        "blobSha": "231f3e26f38312d43ce9737d1c8c1f4b83affe3f",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_holiday-kit/Models/GLB%20format/festivus-pole.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/kenney_holiday-kit/Models/GLB%20format/festivus-pole.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/floor-stone.glb",
+      "collectionPath": "Models",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/kenney_holiday-kit/Models/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "floor-stone",
+      "packId": "kenney-holiday-kit",
+      "packRoot": "media/3D_Assets/kenney_holiday-kit",
+      "path": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/floor-stone.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 6240,
+      "source": {
+        "blobSha": "8d8c8798e42768e33cc055f923b2435a8b30fe84",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_holiday-kit/Models/GLB%20format/floor-stone.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/kenney_holiday-kit/Models/GLB%20format/floor-stone.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/floor-wood-snow.glb",
+      "collectionPath": "Models",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/kenney_holiday-kit/Models/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "floor-wood-snow",
+      "packId": "kenney-holiday-kit",
+      "packRoot": "media/3D_Assets/kenney_holiday-kit",
+      "path": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/floor-wood-snow.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 10668,
+      "source": {
+        "blobSha": "b8f9d60e73743b7c33c3b989f7bdd5d74bae465c",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_holiday-kit/Models/GLB%20format/floor-wood-snow.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/kenney_holiday-kit/Models/GLB%20format/floor-wood-snow.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/floor-wood.glb",
+      "collectionPath": "Models",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/kenney_holiday-kit/Models/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "floor-wood",
+      "packId": "kenney-holiday-kit",
+      "packRoot": "media/3D_Assets/kenney_holiday-kit",
+      "path": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/floor-wood.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 10656,
+      "source": {
+        "blobSha": "06d7f57f074a8b69ac6920a1cf9ca02dcdb04903",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_holiday-kit/Models/GLB%20format/floor-wood.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/kenney_holiday-kit/Models/GLB%20format/floor-wood.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/gingerbread-man.glb",
+      "collectionPath": "Models",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/kenney_holiday-kit/Models/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "gingerbread-man",
+      "packId": "kenney-holiday-kit",
+      "packRoot": "media/3D_Assets/kenney_holiday-kit",
+      "path": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/gingerbread-man.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 13808,
+      "source": {
+        "blobSha": "49214cf06d4158f12a55a4292677211057f538ea",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_holiday-kit/Models/GLB%20format/gingerbread-man.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/kenney_holiday-kit/Models/GLB%20format/gingerbread-man.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/gingerbread-woman.glb",
+      "collectionPath": "Models",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/kenney_holiday-kit/Models/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "gingerbread-woman",
+      "packId": "kenney-holiday-kit",
+      "packRoot": "media/3D_Assets/kenney_holiday-kit",
+      "path": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/gingerbread-woman.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 21572,
+      "source": {
+        "blobSha": "c27e0a850c6c5136908222b9c28efcf9f9059bd3",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_holiday-kit/Models/GLB%20format/gingerbread-woman.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/kenney_holiday-kit/Models/GLB%20format/gingerbread-woman.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/hanukkah-dreidel.glb",
+      "collectionPath": "Models",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/kenney_holiday-kit/Models/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "hanukkah-dreidel",
+      "packId": "kenney-holiday-kit",
+      "packRoot": "media/3D_Assets/kenney_holiday-kit",
+      "path": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/hanukkah-dreidel.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 5760,
+      "source": {
+        "blobSha": "a43ffe1ef2786a60bfde12c2db6b0dacaeb87e04",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_holiday-kit/Models/GLB%20format/hanukkah-dreidel.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/kenney_holiday-kit/Models/GLB%20format/hanukkah-dreidel.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/hanukkah-menorah-candles.glb",
+      "collectionPath": "Models",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/kenney_holiday-kit/Models/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "hanukkah-menorah-candles",
+      "packId": "kenney-holiday-kit",
+      "packRoot": "media/3D_Assets/kenney_holiday-kit",
+      "path": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/hanukkah-menorah-candles.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 87384,
+      "source": {
+        "blobSha": "083d2bcfd519d49b829fd5c95b4fe6a39862aaff",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_holiday-kit/Models/GLB%20format/hanukkah-menorah-candles.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/kenney_holiday-kit/Models/GLB%20format/hanukkah-menorah-candles.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/hanukkah-menorah.glb",
+      "collectionPath": "Models",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/kenney_holiday-kit/Models/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "hanukkah-menorah",
+      "packId": "kenney-holiday-kit",
+      "packRoot": "media/3D_Assets/kenney_holiday-kit",
+      "path": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/hanukkah-menorah.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 45100,
+      "source": {
+        "blobSha": "407942702cb7a92b58f0308c39c036975278edbe",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_holiday-kit/Models/GLB%20format/hanukkah-menorah.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/kenney_holiday-kit/Models/GLB%20format/hanukkah-menorah.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/kwanzaa-kikombe.glb",
+      "collectionPath": "Models",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/kenney_holiday-kit/Models/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "kwanzaa-kikombe",
+      "packId": "kenney-holiday-kit",
+      "packRoot": "media/3D_Assets/kenney_holiday-kit",
+      "path": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/kwanzaa-kikombe.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 17456,
+      "source": {
+        "blobSha": "bd834c05eb574674ab767c346defb4ce4ffc1dbd",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_holiday-kit/Models/GLB%20format/kwanzaa-kikombe.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/kenney_holiday-kit/Models/GLB%20format/kwanzaa-kikombe.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/kwanzaa-kinara-alternative.glb",
+      "collectionPath": "Models",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/kenney_holiday-kit/Models/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "kwanzaa-kinara-alternative",
+      "packId": "kenney-holiday-kit",
+      "packRoot": "media/3D_Assets/kenney_holiday-kit",
+      "path": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/kwanzaa-kinara-alternative.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 72904,
+      "source": {
+        "blobSha": "894af2b9f172bebdf99d28e84e51d7502966b5b3",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_holiday-kit/Models/GLB%20format/kwanzaa-kinara-alternative.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/kenney_holiday-kit/Models/GLB%20format/kwanzaa-kinara-alternative.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/kwanzaa-kinara.glb",
+      "collectionPath": "Models",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/kenney_holiday-kit/Models/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "kwanzaa-kinara",
+      "packId": "kenney-holiday-kit",
+      "packRoot": "media/3D_Assets/kenney_holiday-kit",
+      "path": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/kwanzaa-kinara.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 83272,
+      "source": {
+        "blobSha": "72ff1e879bdf7a4233e05c5aabff7c7bf82530d0",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_holiday-kit/Models/GLB%20format/kwanzaa-kinara.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/kenney_holiday-kit/Models/GLB%20format/kwanzaa-kinara.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/lantern-hanging.glb",
+      "collectionPath": "Models",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/kenney_holiday-kit/Models/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "lantern-hanging",
+      "packId": "kenney-holiday-kit",
+      "packRoot": "media/3D_Assets/kenney_holiday-kit",
+      "path": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/lantern-hanging.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 15952,
+      "source": {
+        "blobSha": "b9993da79eb6f2816fac16f1488d3db950228595",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_holiday-kit/Models/GLB%20format/lantern-hanging.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/kenney_holiday-kit/Models/GLB%20format/lantern-hanging.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/lantern.glb",
+      "collectionPath": "Models",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/kenney_holiday-kit/Models/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "lantern",
+      "packId": "kenney-holiday-kit",
+      "packRoot": "media/3D_Assets/kenney_holiday-kit",
+      "path": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/lantern.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 17636,
+      "source": {
+        "blobSha": "7a19003b7dcb65abd1e112dbf49cd9560cf60b07",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_holiday-kit/Models/GLB%20format/lantern.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/kenney_holiday-kit/Models/GLB%20format/lantern.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/lights-colored.glb",
+      "collectionPath": "Models",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/kenney_holiday-kit/Models/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "lights-colored",
+      "packId": "kenney-holiday-kit",
+      "packRoot": "media/3D_Assets/kenney_holiday-kit",
+      "path": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/lights-colored.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 78172,
+      "source": {
+        "blobSha": "4e97b06857959cb4c02c0ac144d151aca88e9635",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_holiday-kit/Models/GLB%20format/lights-colored.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/kenney_holiday-kit/Models/GLB%20format/lights-colored.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/lights-green.glb",
+      "collectionPath": "Models",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/kenney_holiday-kit/Models/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "lights-green",
+      "packId": "kenney-holiday-kit",
+      "packRoot": "media/3D_Assets/kenney_holiday-kit",
+      "path": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/lights-green.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 78164,
+      "source": {
+        "blobSha": "b4a7e6546bc8be4f7f49ac0dc813667bd570e0ed",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_holiday-kit/Models/GLB%20format/lights-green.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/kenney_holiday-kit/Models/GLB%20format/lights-green.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/lights-red.glb",
+      "collectionPath": "Models",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/kenney_holiday-kit/Models/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "lights-red",
+      "packId": "kenney-holiday-kit",
+      "packRoot": "media/3D_Assets/kenney_holiday-kit",
+      "path": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/lights-red.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 78160,
+      "source": {
+        "blobSha": "e7bdee48d257b939bcba0abd751dbef16f5c681b",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_holiday-kit/Models/GLB%20format/lights-red.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/kenney_holiday-kit/Models/GLB%20format/lights-red.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/nutcracker.glb",
+      "collectionPath": "Models",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/kenney_holiday-kit/Models/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "nutcracker",
+      "packId": "kenney-holiday-kit",
+      "packRoot": "media/3D_Assets/kenney_holiday-kit",
+      "path": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/nutcracker.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 74528,
+      "source": {
+        "blobSha": "68ec2fe42b6df8d3e1bfcfcf187f1cef4a3229ad",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_holiday-kit/Models/GLB%20format/nutcracker.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/kenney_holiday-kit/Models/GLB%20format/nutcracker.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/present-a-cube.glb",
+      "collectionPath": "Models",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/kenney_holiday-kit/Models/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "present-a-cube",
+      "packId": "kenney-holiday-kit",
+      "packRoot": "media/3D_Assets/kenney_holiday-kit",
+      "path": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/present-a-cube.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 18944,
+      "source": {
+        "blobSha": "2b5c34de7b282ebab00591054ef5a1745c54e615",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_holiday-kit/Models/GLB%20format/present-a-cube.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/kenney_holiday-kit/Models/GLB%20format/present-a-cube.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/present-a-rectangle.glb",
+      "collectionPath": "Models",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/kenney_holiday-kit/Models/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "present-a-rectangle",
+      "packId": "kenney-holiday-kit",
+      "packRoot": "media/3D_Assets/kenney_holiday-kit",
+      "path": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/present-a-rectangle.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 18960,
+      "source": {
+        "blobSha": "69dcfce49de3f477100c02700479ef22b8d116db",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_holiday-kit/Models/GLB%20format/present-a-rectangle.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/kenney_holiday-kit/Models/GLB%20format/present-a-rectangle.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/present-a-round.glb",
+      "collectionPath": "Models",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/kenney_holiday-kit/Models/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "present-a-round",
+      "packId": "kenney-holiday-kit",
+      "packRoot": "media/3D_Assets/kenney_holiday-kit",
+      "path": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/present-a-round.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 18960,
+      "source": {
+        "blobSha": "d3fb7bc8a0a8f86afab3e8abcaac4391469fcc2b",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_holiday-kit/Models/GLB%20format/present-a-round.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/kenney_holiday-kit/Models/GLB%20format/present-a-round.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/present-b-cube.glb",
+      "collectionPath": "Models",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/kenney_holiday-kit/Models/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "present-b-cube",
+      "packId": "kenney-holiday-kit",
+      "packRoot": "media/3D_Assets/kenney_holiday-kit",
+      "path": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/present-b-cube.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 21248,
+      "source": {
+        "blobSha": "a690eae3d0fa961c697c87ca92a1677ca45b2312",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_holiday-kit/Models/GLB%20format/present-b-cube.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/kenney_holiday-kit/Models/GLB%20format/present-b-cube.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/present-b-rectangle.glb",
+      "collectionPath": "Models",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/kenney_holiday-kit/Models/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "present-b-rectangle",
+      "packId": "kenney-holiday-kit",
+      "packRoot": "media/3D_Assets/kenney_holiday-kit",
+      "path": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/present-b-rectangle.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 21264,
+      "source": {
+        "blobSha": "6d38de2c847f955da411aa85354387a0a81f3c78",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_holiday-kit/Models/GLB%20format/present-b-rectangle.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/kenney_holiday-kit/Models/GLB%20format/present-b-rectangle.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/present-b-round.glb",
+      "collectionPath": "Models",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/kenney_holiday-kit/Models/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "present-b-round",
+      "packId": "kenney-holiday-kit",
+      "packRoot": "media/3D_Assets/kenney_holiday-kit",
+      "path": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/present-b-round.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 21268,
+      "source": {
+        "blobSha": "35e633b1ecded1be43bb269049556afa5bf84feb",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_holiday-kit/Models/GLB%20format/present-b-round.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/kenney_holiday-kit/Models/GLB%20format/present-b-round.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/reindeer.glb",
+      "collectionPath": "Models",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/kenney_holiday-kit/Models/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "reindeer",
+      "packId": "kenney-holiday-kit",
+      "packRoot": "media/3D_Assets/kenney_holiday-kit",
+      "path": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/reindeer.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 83656,
+      "source": {
+        "blobSha": "1a620f4db91d084fa03211454efb49a968422e5d",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_holiday-kit/Models/GLB%20format/reindeer.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/kenney_holiday-kit/Models/GLB%20format/reindeer.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/rocks-large.glb",
+      "collectionPath": "Models",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/kenney_holiday-kit/Models/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "rocks-large",
+      "packId": "kenney-holiday-kit",
+      "packRoot": "media/3D_Assets/kenney_holiday-kit",
+      "path": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/rocks-large.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 70008,
+      "source": {
+        "blobSha": "577ecac0a239d3fc71cf2b214bd7c5d0ae242dca",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_holiday-kit/Models/GLB%20format/rocks-large.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/kenney_holiday-kit/Models/GLB%20format/rocks-large.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/rocks-medium.glb",
+      "collectionPath": "Models",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/kenney_holiday-kit/Models/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "rocks-medium",
+      "packId": "kenney-holiday-kit",
+      "packRoot": "media/3D_Assets/kenney_holiday-kit",
+      "path": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/rocks-medium.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 34624,
+      "source": {
+        "blobSha": "866f84ed9132219d1934264a9aff63bf9b646a06",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_holiday-kit/Models/GLB%20format/rocks-medium.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/kenney_holiday-kit/Models/GLB%20format/rocks-medium.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/rocks-small.glb",
+      "collectionPath": "Models",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/kenney_holiday-kit/Models/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "rocks-small",
+      "packId": "kenney-holiday-kit",
+      "packRoot": "media/3D_Assets/kenney_holiday-kit",
+      "path": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/rocks-small.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 34608,
+      "source": {
+        "blobSha": "856691226c768d90bc4c1dc49705bc07338a0193",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_holiday-kit/Models/GLB%20format/rocks-small.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/kenney_holiday-kit/Models/GLB%20format/rocks-small.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/sled-long.glb",
+      "collectionPath": "Models",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/kenney_holiday-kit/Models/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "sled-long",
+      "packId": "kenney-holiday-kit",
+      "packRoot": "media/3D_Assets/kenney_holiday-kit",
+      "path": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/sled-long.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 21156,
+      "source": {
+        "blobSha": "9be88f5958c553965213c122007495486130575a",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_holiday-kit/Models/GLB%20format/sled-long.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/kenney_holiday-kit/Models/GLB%20format/sled-long.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/sled.glb",
+      "collectionPath": "Models",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/kenney_holiday-kit/Models/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "sled",
+      "packId": "kenney-holiday-kit",
+      "packRoot": "media/3D_Assets/kenney_holiday-kit",
+      "path": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/sled.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 23088,
+      "source": {
+        "blobSha": "521c80420929b0b6c3b2b0b8a6ab00d6e8e68807",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_holiday-kit/Models/GLB%20format/sled.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/kenney_holiday-kit/Models/GLB%20format/sled.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/snow-bunker.glb",
+      "collectionPath": "Models",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/kenney_holiday-kit/Models/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "snow-bunker",
+      "packId": "kenney-holiday-kit",
+      "packRoot": "media/3D_Assets/kenney_holiday-kit",
+      "path": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/snow-bunker.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 26504,
+      "source": {
+        "blobSha": "2dc9183b0f6f6154057eb09efe53b8069c83a7e6",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_holiday-kit/Models/GLB%20format/snow-bunker.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/kenney_holiday-kit/Models/GLB%20format/snow-bunker.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/snow-flat-large.glb",
+      "collectionPath": "Models",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/kenney_holiday-kit/Models/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "snow-flat-large",
+      "packId": "kenney-holiday-kit",
+      "packRoot": "media/3D_Assets/kenney_holiday-kit",
+      "path": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/snow-flat-large.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 10264,
+      "source": {
+        "blobSha": "1ec84fa88d894e02aa911e109f08266aae634341",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_holiday-kit/Models/GLB%20format/snow-flat-large.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/kenney_holiday-kit/Models/GLB%20format/snow-flat-large.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/snow-flat.glb",
+      "collectionPath": "Models",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/kenney_holiday-kit/Models/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "snow-flat",
+      "packId": "kenney-holiday-kit",
+      "packRoot": "media/3D_Assets/kenney_holiday-kit",
+      "path": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/snow-flat.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 15552,
+      "source": {
+        "blobSha": "1a70d4ee7712e98280493f770556a4fc771f7744",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_holiday-kit/Models/GLB%20format/snow-flat.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/kenney_holiday-kit/Models/GLB%20format/snow-flat.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/snow-pile.glb",
+      "collectionPath": "Models",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/kenney_holiday-kit/Models/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "snow-pile",
+      "packId": "kenney-holiday-kit",
+      "packRoot": "media/3D_Assets/kenney_holiday-kit",
+      "path": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/snow-pile.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 13796,
+      "source": {
+        "blobSha": "e34431894e526058e25f04920686f6539884f311",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_holiday-kit/Models/GLB%20format/snow-pile.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/kenney_holiday-kit/Models/GLB%20format/snow-pile.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/snowflake-a.glb",
+      "collectionPath": "Models",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/kenney_holiday-kit/Models/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "snowflake-a",
+      "packId": "kenney-holiday-kit",
+      "packRoot": "media/3D_Assets/kenney_holiday-kit",
+      "path": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/snowflake-a.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 24204,
+      "source": {
+        "blobSha": "75cd2b4e40796a6469fae0c657eba3f4b141990e",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_holiday-kit/Models/GLB%20format/snowflake-a.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/kenney_holiday-kit/Models/GLB%20format/snowflake-a.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/snowflake-b.glb",
+      "collectionPath": "Models",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/kenney_holiday-kit/Models/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "snowflake-b",
+      "packId": "kenney-holiday-kit",
+      "packRoot": "media/3D_Assets/kenney_holiday-kit",
+      "path": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/snowflake-b.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 18556,
+      "source": {
+        "blobSha": "fa5628c1c8bdcc6290e26789e23232e75f4c13ed",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_holiday-kit/Models/GLB%20format/snowflake-b.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/kenney_holiday-kit/Models/GLB%20format/snowflake-b.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/snowflake-c.glb",
+      "collectionPath": "Models",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/kenney_holiday-kit/Models/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "snowflake-c",
+      "packId": "kenney-holiday-kit",
+      "packRoot": "media/3D_Assets/kenney_holiday-kit",
+      "path": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/snowflake-c.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 14352,
+      "source": {
+        "blobSha": "de644b46e83bcc96f1d79416536345942ac49762",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_holiday-kit/Models/GLB%20format/snowflake-c.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/kenney_holiday-kit/Models/GLB%20format/snowflake-c.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/snowman-hat.glb",
+      "collectionPath": "Models",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/kenney_holiday-kit/Models/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "snowman-hat",
+      "packId": "kenney-holiday-kit",
+      "packRoot": "media/3D_Assets/kenney_holiday-kit",
+      "path": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/snowman-hat.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 56284,
+      "source": {
+        "blobSha": "20604f50a95b39c80091705dc40230ec6fe1ec20",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_holiday-kit/Models/GLB%20format/snowman-hat.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/kenney_holiday-kit/Models/GLB%20format/snowman-hat.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/snowman.glb",
+      "collectionPath": "Models",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/kenney_holiday-kit/Models/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "snowman",
+      "packId": "kenney-holiday-kit",
+      "packRoot": "media/3D_Assets/kenney_holiday-kit",
+      "path": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/snowman.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 46492,
+      "source": {
+        "blobSha": "f0142bfae48c89c94f6621a7b8c8e735517a33d5",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_holiday-kit/Models/GLB%20format/snowman.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/kenney_holiday-kit/Models/GLB%20format/snowman.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/sock-green-cane.glb",
+      "collectionPath": "Models",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/kenney_holiday-kit/Models/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "sock-green-cane",
+      "packId": "kenney-holiday-kit",
+      "packRoot": "media/3D_Assets/kenney_holiday-kit",
+      "path": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/sock-green-cane.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 20824,
+      "source": {
+        "blobSha": "b15b92e47d1e8077e2ecc0db6469504b4533ab9c",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_holiday-kit/Models/GLB%20format/sock-green-cane.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/kenney_holiday-kit/Models/GLB%20format/sock-green-cane.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/sock-green.glb",
+      "collectionPath": "Models",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/kenney_holiday-kit/Models/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "sock-green",
+      "packId": "kenney-holiday-kit",
+      "packRoot": "media/3D_Assets/kenney_holiday-kit",
+      "path": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/sock-green.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 13848,
+      "source": {
+        "blobSha": "589ca3407e1b670a1e9d9e3f442782388e1e6e51",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_holiday-kit/Models/GLB%20format/sock-green.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/kenney_holiday-kit/Models/GLB%20format/sock-green.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/sock-red-cane.glb",
+      "collectionPath": "Models",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/kenney_holiday-kit/Models/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "sock-red-cane",
+      "packId": "kenney-holiday-kit",
+      "packRoot": "media/3D_Assets/kenney_holiday-kit",
+      "path": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/sock-red-cane.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 20916,
+      "source": {
+        "blobSha": "6c90dace085da070984c6ab69996d32ea3f2be67",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_holiday-kit/Models/GLB%20format/sock-red-cane.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/kenney_holiday-kit/Models/GLB%20format/sock-red-cane.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/sock-red.glb",
+      "collectionPath": "Models",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/kenney_holiday-kit/Models/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "sock-red",
+      "packId": "kenney-holiday-kit",
+      "packRoot": "media/3D_Assets/kenney_holiday-kit",
+      "path": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/sock-red.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 13936,
+      "source": {
+        "blobSha": "057e417ed5c1a09cf6a9ce382972eeefba80a630",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_holiday-kit/Models/GLB%20format/sock-red.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/kenney_holiday-kit/Models/GLB%20format/sock-red.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/train-locomotive.glb",
+      "collectionPath": "Models",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/kenney_holiday-kit/Models/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "train-locomotive",
+      "packId": "kenney-holiday-kit",
+      "packRoot": "media/3D_Assets/kenney_holiday-kit",
+      "path": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/train-locomotive.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 71020,
+      "source": {
+        "blobSha": "415b8e807c1feaecb35bece1455e77a30f886f70",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_holiday-kit/Models/GLB%20format/train-locomotive.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/kenney_holiday-kit/Models/GLB%20format/train-locomotive.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/train-tender.glb",
+      "collectionPath": "Models",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/kenney_holiday-kit/Models/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "train-tender",
+      "packId": "kenney-holiday-kit",
+      "packRoot": "media/3D_Assets/kenney_holiday-kit",
+      "path": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/train-tender.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 28492,
+      "source": {
+        "blobSha": "68be589308c99e4401fc04b74bcb1ab4fbd1d94e",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_holiday-kit/Models/GLB%20format/train-tender.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/kenney_holiday-kit/Models/GLB%20format/train-tender.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/train-wagon-flat-short.glb",
+      "collectionPath": "Models",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/kenney_holiday-kit/Models/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "train-wagon-flat-short",
+      "packId": "kenney-holiday-kit",
+      "packRoot": "media/3D_Assets/kenney_holiday-kit",
+      "path": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/train-wagon-flat-short.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 31832,
+      "source": {
+        "blobSha": "70f46320aa9931c6793f724cad70d93cd1c960dd",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_holiday-kit/Models/GLB%20format/train-wagon-flat-short.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/kenney_holiday-kit/Models/GLB%20format/train-wagon-flat-short.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/train-wagon-flat.glb",
+      "collectionPath": "Models",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/kenney_holiday-kit/Models/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "train-wagon-flat",
+      "packId": "kenney-holiday-kit",
+      "packRoot": "media/3D_Assets/kenney_holiday-kit",
+      "path": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/train-wagon-flat.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 56944,
+      "source": {
+        "blobSha": "c532a48c2e8c25aabf7f332614168352a81aa20a",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_holiday-kit/Models/GLB%20format/train-wagon-flat.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/kenney_holiday-kit/Models/GLB%20format/train-wagon-flat.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/train-wagon-logs.glb",
+      "collectionPath": "Models",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/kenney_holiday-kit/Models/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "train-wagon-logs",
+      "packId": "kenney-holiday-kit",
+      "packRoot": "media/3D_Assets/kenney_holiday-kit",
+      "path": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/train-wagon-logs.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 66172,
+      "source": {
+        "blobSha": "68eeb3e6f2f3b4a927ea52fb67e856dd030949f7",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_holiday-kit/Models/GLB%20format/train-wagon-logs.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/kenney_holiday-kit/Models/GLB%20format/train-wagon-logs.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/train-wagon-short.glb",
+      "collectionPath": "Models",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/kenney_holiday-kit/Models/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "train-wagon-short",
+      "packId": "kenney-holiday-kit",
+      "packRoot": "media/3D_Assets/kenney_holiday-kit",
+      "path": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/train-wagon-short.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 45360,
+      "source": {
+        "blobSha": "e49e54114bce555782580452b5d69f49ded2f388",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_holiday-kit/Models/GLB%20format/train-wagon-short.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/kenney_holiday-kit/Models/GLB%20format/train-wagon-short.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/train-wagon.glb",
+      "collectionPath": "Models",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/kenney_holiday-kit/Models/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "train-wagon",
+      "packId": "kenney-holiday-kit",
+      "packRoot": "media/3D_Assets/kenney_holiday-kit",
+      "path": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/train-wagon.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 91076,
+      "source": {
+        "blobSha": "e6e94582d43214834b43efe50548a9d40bffffb5",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_holiday-kit/Models/GLB%20format/train-wagon.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/kenney_holiday-kit/Models/GLB%20format/train-wagon.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/trainset-rail-bend.glb",
+      "collectionPath": "Models",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/kenney_holiday-kit/Models/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "trainset-rail-bend",
+      "packId": "kenney-holiday-kit",
+      "packRoot": "media/3D_Assets/kenney_holiday-kit",
+      "path": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/trainset-rail-bend.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 12672,
+      "source": {
+        "blobSha": "cf98d5ee735a7c5a9ab1c8152803406a230ba341",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_holiday-kit/Models/GLB%20format/trainset-rail-bend.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/kenney_holiday-kit/Models/GLB%20format/trainset-rail-bend.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/trainset-rail-corner.glb",
+      "collectionPath": "Models",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/kenney_holiday-kit/Models/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "trainset-rail-corner",
+      "packId": "kenney-holiday-kit",
+      "packRoot": "media/3D_Assets/kenney_holiday-kit",
+      "path": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/trainset-rail-corner.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 7852,
+      "source": {
+        "blobSha": "aac35af187999a12b60e9855053c1a3309588ff5",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_holiday-kit/Models/GLB%20format/trainset-rail-corner.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/kenney_holiday-kit/Models/GLB%20format/trainset-rail-corner.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/trainset-rail-detailed-bend.glb",
+      "collectionPath": "Models",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/kenney_holiday-kit/Models/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "trainset-rail-detailed-bend",
+      "packId": "kenney-holiday-kit",
+      "packRoot": "media/3D_Assets/kenney_holiday-kit",
+      "path": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/trainset-rail-detailed-bend.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 19232,
+      "source": {
+        "blobSha": "3599bd60bb13d22843b95b81ce726afe8cf0d0a2",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_holiday-kit/Models/GLB%20format/trainset-rail-detailed-bend.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/kenney_holiday-kit/Models/GLB%20format/trainset-rail-detailed-bend.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/trainset-rail-detailed-corner.glb",
+      "collectionPath": "Models",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/kenney_holiday-kit/Models/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "trainset-rail-detailed-corner",
+      "packId": "kenney-holiday-kit",
+      "packRoot": "media/3D_Assets/kenney_holiday-kit",
+      "path": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/trainset-rail-detailed-corner.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 10300,
+      "source": {
+        "blobSha": "be2aec7ba57b9e05708f72e20bcf42c752a3b886",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_holiday-kit/Models/GLB%20format/trainset-rail-detailed-corner.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/kenney_holiday-kit/Models/GLB%20format/trainset-rail-detailed-corner.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/trainset-rail-detailed-straight.glb",
+      "collectionPath": "Models",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/kenney_holiday-kit/Models/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "trainset-rail-detailed-straight",
+      "packId": "kenney-holiday-kit",
+      "packRoot": "media/3D_Assets/kenney_holiday-kit",
+      "path": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/trainset-rail-detailed-straight.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 7724,
+      "source": {
+        "blobSha": "2d962727d443a08b5d47268984086fb3608a2382",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_holiday-kit/Models/GLB%20format/trainset-rail-detailed-straight.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/kenney_holiday-kit/Models/GLB%20format/trainset-rail-detailed-straight.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/trainset-rail-straight.glb",
+      "collectionPath": "Models",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/kenney_holiday-kit/Models/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "trainset-rail-straight",
+      "packId": "kenney-holiday-kit",
+      "packRoot": "media/3D_Assets/kenney_holiday-kit",
+      "path": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/trainset-rail-straight.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 4120,
+      "source": {
+        "blobSha": "f6e1d5eff7ee0b51cad95c9b533eae16c91ac051",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_holiday-kit/Models/GLB%20format/trainset-rail-straight.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/kenney_holiday-kit/Models/GLB%20format/trainset-rail-straight.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/tree-decorated-snow.glb",
+      "collectionPath": "Models",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/kenney_holiday-kit/Models/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "tree-decorated-snow",
+      "packId": "kenney-holiday-kit",
+      "packRoot": "media/3D_Assets/kenney_holiday-kit",
+      "path": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/tree-decorated-snow.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 85204,
+      "source": {
+        "blobSha": "d2038d6a1c814548ff9c5bd9a64f6101fc1f651e",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_holiday-kit/Models/GLB%20format/tree-decorated-snow.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/kenney_holiday-kit/Models/GLB%20format/tree-decorated-snow.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/tree-decorated.glb",
+      "collectionPath": "Models",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/kenney_holiday-kit/Models/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "tree-decorated",
+      "packId": "kenney-holiday-kit",
+      "packRoot": "media/3D_Assets/kenney_holiday-kit",
+      "path": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/tree-decorated.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 71292,
+      "source": {
+        "blobSha": "bdccea4d87998bc1780ba9c7d917a74235546bde",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_holiday-kit/Models/GLB%20format/tree-decorated.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/kenney_holiday-kit/Models/GLB%20format/tree-decorated.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/tree-snow-a.glb",
+      "collectionPath": "Models",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/kenney_holiday-kit/Models/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "tree-snow-a",
+      "packId": "kenney-holiday-kit",
+      "packRoot": "media/3D_Assets/kenney_holiday-kit",
+      "path": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/tree-snow-a.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 34484,
+      "source": {
+        "blobSha": "068c4cab843286fcd9da9c74cdef91ca31d76dc7",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_holiday-kit/Models/GLB%20format/tree-snow-a.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/kenney_holiday-kit/Models/GLB%20format/tree-snow-a.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/tree-snow-b.glb",
+      "collectionPath": "Models",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/kenney_holiday-kit/Models/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "tree-snow-b",
+      "packId": "kenney-holiday-kit",
+      "packRoot": "media/3D_Assets/kenney_holiday-kit",
+      "path": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/tree-snow-b.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 38296,
+      "source": {
+        "blobSha": "7de4c012886977d3d432d59dd06008d7fc44b44a",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_holiday-kit/Models/GLB%20format/tree-snow-b.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/kenney_holiday-kit/Models/GLB%20format/tree-snow-b.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/tree-snow-c.glb",
+      "collectionPath": "Models",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/kenney_holiday-kit/Models/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "tree-snow-c",
+      "packId": "kenney-holiday-kit",
+      "packRoot": "media/3D_Assets/kenney_holiday-kit",
+      "path": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/tree-snow-c.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 24400,
+      "source": {
+        "blobSha": "518fb407cdeb667ead388a165d6640b3311a372a",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_holiday-kit/Models/GLB%20format/tree-snow-c.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/kenney_holiday-kit/Models/GLB%20format/tree-snow-c.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/tree.glb",
+      "collectionPath": "Models",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/kenney_holiday-kit/Models/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "tree",
+      "packId": "kenney-holiday-kit",
+      "packRoot": "media/3D_Assets/kenney_holiday-kit",
+      "path": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/tree.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 24380,
+      "source": {
+        "blobSha": "5dc399b5818cfa04cc719aafa6e71ca7fad0900f",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_holiday-kit/Models/GLB%20format/tree.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/kenney_holiday-kit/Models/GLB%20format/tree.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/wreath-decorated.glb",
+      "collectionPath": "Models",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/kenney_holiday-kit/Models/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "wreath-decorated",
+      "packId": "kenney-holiday-kit",
+      "packRoot": "media/3D_Assets/kenney_holiday-kit",
+      "path": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/wreath-decorated.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 93416,
+      "source": {
+        "blobSha": "559bf453aa3fce1d4be8f0f757bdb6b02beccf70",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_holiday-kit/Models/GLB%20format/wreath-decorated.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/kenney_holiday-kit/Models/GLB%20format/wreath-decorated.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/wreath.glb",
+      "collectionPath": "Models",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/kenney_holiday-kit/Models/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "wreath",
+      "packId": "kenney-holiday-kit",
+      "packRoot": "media/3D_Assets/kenney_holiday-kit",
+      "path": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/wreath.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/kenney_holiday-kit/Models/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 29656,
+      "source": {
+        "blobSha": "2de650e5deb85d4fe53f34dce65fb40d5a41cc87",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_holiday-kit/Models/GLB%20format/wreath.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/kenney_holiday-kit/Models/GLB%20format/wreath.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/kenney_holiday-kit/Preview (Large).png",
+      "folder": "media/3D_Assets/kenney_holiday-kit",
+      "format": "png",
+      "hints": {
+        "textureCandidate": false,
+        "textureCandidateProvenance": "generated-structural"
+      },
+      "kind": "image-2d",
+      "name": "Preview (Large)",
+      "packId": "kenney-holiday-kit",
+      "packRoot": "media/3D_Assets/kenney_holiday-kit",
+      "path": "media/3D_Assets/kenney_holiday-kit/Preview (Large).png",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 429073,
+      "source": {
+        "blobSha": "97deb6ab6fd9de8715d5014b17d57198110d0415",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_holiday-kit/Preview%20%28Large%29.png",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/kenney_holiday-kit/Preview%20%28Large%29.png",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/kenney_holiday-kit/Preview (Transparent).png",
+      "folder": "media/3D_Assets/kenney_holiday-kit",
+      "format": "png",
+      "hints": {
+        "textureCandidate": false,
+        "textureCandidateProvenance": "generated-structural"
+      },
+      "kind": "image-2d",
+      "name": "Preview (Transparent)",
+      "packId": "kenney-holiday-kit",
+      "packRoot": "media/3D_Assets/kenney_holiday-kit",
+      "path": "media/3D_Assets/kenney_holiday-kit/Preview (Transparent).png",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 214296,
+      "source": {
+        "blobSha": "6555ec5ad5a8f4cdc42e3568fb33cd156f26288b",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_holiday-kit/Preview%20%28Transparent%29.png",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/kenney_holiday-kit/Preview%20%28Transparent%29.png",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/kenney_holiday-kit/Preview.png",
+      "folder": "media/3D_Assets/kenney_holiday-kit",
+      "format": "png",
+      "hints": {
+        "textureCandidate": false,
+        "textureCandidateProvenance": "generated-structural"
+      },
+      "kind": "image-2d",
+      "name": "Preview",
+      "packId": "kenney-holiday-kit",
+      "packRoot": "media/3D_Assets/kenney_holiday-kit",
+      "path": "media/3D_Assets/kenney_holiday-kit/Preview.png",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 135291,
+      "source": {
+        "blobSha": "6207642077a392a264d37a86af51b039e1ac29ba",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_holiday-kit/Preview.png",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/kenney_holiday-kit/Preview.png",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/kenney_holiday-kit/Sample (Large Transparent).png",
+      "folder": "media/3D_Assets/kenney_holiday-kit",
+      "format": "png",
+      "hints": {
+        "textureCandidate": false,
+        "textureCandidateProvenance": "generated-structural"
+      },
+      "kind": "image-2d",
+      "name": "Sample (Large Transparent)",
+      "packId": "kenney-holiday-kit",
+      "packRoot": "media/3D_Assets/kenney_holiday-kit",
+      "path": "media/3D_Assets/kenney_holiday-kit/Sample (Large Transparent).png",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 241830,
+      "source": {
+        "blobSha": "3e186b27bc497ad69a4c73b5aad0e2d960408430",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_holiday-kit/Sample%20%28Large%20Transparent%29.png",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/kenney_holiday-kit/Sample%20%28Large%20Transparent%29.png",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/kenney_holiday-kit/Sample (Large).png",
+      "folder": "media/3D_Assets/kenney_holiday-kit",
+      "format": "png",
+      "hints": {
+        "textureCandidate": false,
+        "textureCandidateProvenance": "generated-structural"
+      },
+      "kind": "image-2d",
+      "name": "Sample (Large)",
+      "packId": "kenney-holiday-kit",
+      "packRoot": "media/3D_Assets/kenney_holiday-kit",
+      "path": "media/3D_Assets/kenney_holiday-kit/Sample (Large).png",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 364598,
+      "source": {
+        "blobSha": "819f2ee3346d650fc6fb2bcc1dafa7d32e60bca7",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_holiday-kit/Sample%20%28Large%29.png",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/kenney_holiday-kit/Sample%20%28Large%29.png",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/kenney_holiday-kit/Sample.png",
+      "folder": "media/3D_Assets/kenney_holiday-kit",
+      "format": "png",
+      "hints": {
+        "textureCandidate": false,
+        "textureCandidateProvenance": "generated-structural"
+      },
+      "kind": "image-2d",
+      "name": "Sample",
+      "packId": "kenney-holiday-kit",
+      "packRoot": "media/3D_Assets/kenney_holiday-kit",
+      "path": "media/3D_Assets/kenney_holiday-kit/Sample.png",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 115294,
+      "source": {
+        "blobSha": "af0f23967324ee0904d416555512fc7c3c2c8c24",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_holiday-kit/Sample.png",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/kenney_holiday-kit/Sample.png",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    }
+  ],
+  "collections": [
+    {
+      "assetCount": 100,
+      "path": "Models"
+    }
+  ],
+  "dependencyStatus": {
+    "complete": 99
+  },
+  "displayName": "kenney_holiday-kit",
+  "formats": {
+    "glb": 99,
+    "png": 7
+  },
+  "kinds": {
+    "image-2d": 7,
+    "model-3d": 99
+  },
+  "packId": "kenney-holiday-kit",
+  "provenance": "generated-structural",
+  "root": "media/3D_Assets/kenney_holiday-kit",
+  "schema": "kfb.asset-pack.v1",
+  "shard": "packs/kenney-holiday-kit.json"
+}

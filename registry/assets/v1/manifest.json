@@ -1,0 +1,60 @@
+{
+  "catalog": "catalog.jsonl",
+  "counts": {
+    "byKind": {
+      "audio": 1683,
+      "image-2d": 6442,
+      "model-3d": 4642
+    },
+    "byRoot": {
+      "media/2D_Assets": 5132,
+      "media/3D_Assets": 7635
+    },
+    "decks": 4,
+    "dependencies": {
+      "complete": 2603,
+      "embedded": 1353,
+      "missing": 374,
+      "unresolved": 312
+    },
+    "packs": 99,
+    "problems": {
+      "DUPLICATE_NAME": 641,
+      "MISSING_REFERENCED_FILE": 382,
+      "UNRESOLVED_FBX_DEPENDENCY": 239,
+      "UNRESOLVED_MODEL_DEPENDENCY": 73
+    },
+    "textureCandidates": 552,
+    "total": 12767
+  },
+  "determinism": "same commit + same config + same override files => byte-identical output",
+  "excludePrefixes": [
+    "media/3D_Assets/CATALOG/"
+  ],
+  "generator": "tools/asset_registry/build.py",
+  "overrides": {
+    "dependencies": "tools/asset_registry/overrides/dependencies.json",
+    "packs": "tools/asset_registry/overrides/packs.json"
+  },
+  "owners": {
+    "deckRegistry": "media/kfb/kfb-index.json"
+  },
+  "roots": [
+    "media/2D_Assets",
+    "media/3D_Assets"
+  ],
+  "schema": "kfb.asset-registry.v1",
+  "scope": "AR1 inventory + AR2 structural packs/dependencies + AR3 explicit decks + AR4 deterministic delta; no gameplay roles, license inference, rig compatibility or inferred deck grouping",
+  "shards": {
+    "audio": "kinds/audio.json",
+    "decks": "decks/index.json",
+    "delta": "delta.json",
+    "image-2d": "kinds/image-2d.json",
+    "model-3d": "kinds/model-3d.json",
+    "packs": "packs/index.json",
+    "problems": "problems.json"
+  },
+  "sourceCommit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+  "sourceCommitTime": "2026-09-12T17:41:10+02:00",
+  "sourceRepo": "georg-doc/kayfabizarro"
+}

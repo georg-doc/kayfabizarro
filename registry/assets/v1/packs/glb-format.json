@@ -1,0 +1,3158 @@
+{
+  "assetCount": 86,
+  "assets": [
+    {
+      "assetId": "media/3D_Assets/GLB format/Textures/colormap.png",
+      "collectionPath": "Textures",
+      "folder": "media/3D_Assets/GLB format/Textures",
+      "format": "png",
+      "hints": {
+        "textureCandidate": true,
+        "textureCandidateProvenance": "generated-structural"
+      },
+      "kind": "image-2d",
+      "name": "colormap",
+      "packId": "glb-format",
+      "packRoot": "media/3D_Assets/GLB format",
+      "path": "media/3D_Assets/GLB format/Textures/colormap.png",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 10831,
+      "source": {
+        "blobSha": "d92d4bf772f1f72bacd6ce59e237f468f12186c3",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/GLB%20format/Textures/colormap.png",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/GLB%20format/Textures/colormap.png",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/GLB format/books.glb",
+      "dependencyStatus": "embedded",
+      "folder": "media/3D_Assets/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "books",
+      "packId": "glb-format",
+      "packRoot": "media/3D_Assets/GLB format",
+      "path": "media/3D_Assets/GLB format/books.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": []
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 6864,
+      "source": {
+        "blobSha": "615aaa9632cf1b262c257f2cb7c208a6f199ab84",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/GLB%20format/books.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/GLB%20format/books.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/GLB format/bridge.glb",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "bridge",
+      "packId": "glb-format",
+      "packRoot": "media/3D_Assets/GLB format",
+      "path": "media/3D_Assets/GLB format/bridge.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 36344,
+      "source": {
+        "blobSha": "3822818dc57e631e1867d22d359cb2e217afe8a3",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/GLB%20format/bridge.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/GLB%20format/bridge.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/GLB format/building-archery.glb",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "building-archery",
+      "packId": "glb-format",
+      "packRoot": "media/3D_Assets/GLB format",
+      "path": "media/3D_Assets/GLB format/building-archery.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 58632,
+      "source": {
+        "blobSha": "1495cde75ec75660aefa3df16fb30194494833f4",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/GLB%20format/building-archery.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/GLB%20format/building-archery.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/GLB format/building-cabin.glb",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "building-cabin",
+      "packId": "glb-format",
+      "packRoot": "media/3D_Assets/GLB format",
+      "path": "media/3D_Assets/GLB format/building-cabin.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 43816,
+      "source": {
+        "blobSha": "76b37b5af4d71d43571ce637dd690514a99ca31c",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/GLB%20format/building-cabin.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/GLB%20format/building-cabin.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/GLB format/building-castle.glb",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "building-castle",
+      "packId": "glb-format",
+      "packRoot": "media/3D_Assets/GLB format",
+      "path": "media/3D_Assets/GLB format/building-castle.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 88592,
+      "source": {
+        "blobSha": "495a1e0e6914d97381f9d6a31b856e60f6e1224c",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/GLB%20format/building-castle.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/GLB%20format/building-castle.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/GLB format/building-dock.glb",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "building-dock",
+      "packId": "glb-format",
+      "packRoot": "media/3D_Assets/GLB format",
+      "path": "media/3D_Assets/GLB format/building-dock.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 28980,
+      "source": {
+        "blobSha": "3bf8a3f67bdb30aaaf841172d76f48adce68f0c2",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/GLB%20format/building-dock.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/GLB%20format/building-dock.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/GLB format/building-farm.glb",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "building-farm",
+      "packId": "glb-format",
+      "packRoot": "media/3D_Assets/GLB format",
+      "path": "media/3D_Assets/GLB format/building-farm.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 18928,
+      "source": {
+        "blobSha": "561c9d76c4cdc117eb902197fee2764e410ce672",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/GLB%20format/building-farm.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/GLB%20format/building-farm.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/GLB format/building-house.glb",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "building-house",
+      "packId": "glb-format",
+      "packRoot": "media/3D_Assets/GLB format",
+      "path": "media/3D_Assets/GLB format/building-house.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 35452,
+      "source": {
+        "blobSha": "b823ed0e2e39cb869621786cb28b5e3c06f6a660",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/GLB%20format/building-house.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/GLB%20format/building-house.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/GLB format/building-market.glb",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "building-market",
+      "packId": "glb-format",
+      "packRoot": "media/3D_Assets/GLB format",
+      "path": "media/3D_Assets/GLB format/building-market.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 52276,
+      "source": {
+        "blobSha": "62e1d770802081f34d38b742c229714264b60cd5",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/GLB%20format/building-market.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/GLB%20format/building-market.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/GLB format/building-mill.glb",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "building-mill",
+      "packId": "glb-format",
+      "packRoot": "media/3D_Assets/GLB format",
+      "path": "media/3D_Assets/GLB format/building-mill.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 48284,
+      "source": {
+        "blobSha": "2ca71d4c18dde4849e20927132ab6e56ce56f92e",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/GLB%20format/building-mill.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/GLB%20format/building-mill.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/GLB format/building-mine.glb",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "building-mine",
+      "packId": "glb-format",
+      "packRoot": "media/3D_Assets/GLB format",
+      "path": "media/3D_Assets/GLB format/building-mine.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 32812,
+      "source": {
+        "blobSha": "6d04846d655b11137aa0ef956d84d9c90698ceb4",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/GLB%20format/building-mine.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/GLB%20format/building-mine.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/GLB format/building-port.glb",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "building-port",
+      "packId": "glb-format",
+      "packRoot": "media/3D_Assets/GLB format",
+      "path": "media/3D_Assets/GLB format/building-port.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 38128,
+      "source": {
+        "blobSha": "a25dc9878d39cf009439d3d8b22f775e16b9b42e",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/GLB%20format/building-port.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/GLB%20format/building-port.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/GLB format/building-sheep.glb",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "building-sheep",
+      "packId": "glb-format",
+      "packRoot": "media/3D_Assets/GLB format",
+      "path": "media/3D_Assets/GLB format/building-sheep.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 71656,
+      "source": {
+        "blobSha": "83e5e5f541e913da410d21e9018ebf444b8f7b6c",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/GLB%20format/building-sheep.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/GLB%20format/building-sheep.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/GLB format/building-smelter.glb",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "building-smelter",
+      "packId": "glb-format",
+      "packRoot": "media/3D_Assets/GLB format",
+      "path": "media/3D_Assets/GLB format/building-smelter.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 42872,
+      "source": {
+        "blobSha": "962ea9471f4399ddaaebfb08d7de7988236e63ad",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/GLB%20format/building-smelter.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/GLB%20format/building-smelter.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/GLB format/building-tower.glb",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "building-tower",
+      "packId": "glb-format",
+      "packRoot": "media/3D_Assets/GLB format",
+      "path": "media/3D_Assets/GLB format/building-tower.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 50916,
+      "source": {
+        "blobSha": "1a76e832be036943969d2c721cb6b39f2b6629d9",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/GLB%20format/building-tower.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/GLB%20format/building-tower.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/GLB format/building-village.glb",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "building-village",
+      "packId": "glb-format",
+      "packRoot": "media/3D_Assets/GLB format",
+      "path": "media/3D_Assets/GLB format/building-village.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 40412,
+      "source": {
+        "blobSha": "6e843a4f5ab729fe7222077dea4a2513d62203e6",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/GLB%20format/building-village.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/GLB%20format/building-village.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/GLB format/building-wall.glb",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "building-wall",
+      "packId": "glb-format",
+      "packRoot": "media/3D_Assets/GLB format",
+      "path": "media/3D_Assets/GLB format/building-wall.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 64584,
+      "source": {
+        "blobSha": "6973aa30432c744f773c720fdbbf72666090734c",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/GLB%20format/building-wall.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/GLB%20format/building-wall.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/GLB format/building-walls.glb",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "building-walls",
+      "packId": "glb-format",
+      "packRoot": "media/3D_Assets/GLB format",
+      "path": "media/3D_Assets/GLB format/building-walls.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 108708,
+      "source": {
+        "blobSha": "5977213d0a7616c7c7cf03dc6996aee9cd373ba4",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/GLB%20format/building-walls.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/GLB%20format/building-walls.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/GLB format/building-watermill.glb",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "building-watermill",
+      "packId": "glb-format",
+      "packRoot": "media/3D_Assets/GLB format",
+      "path": "media/3D_Assets/GLB format/building-watermill.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 55712,
+      "source": {
+        "blobSha": "a162eef20b85bdc984e117f6f0773735112f23c6",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/GLB%20format/building-watermill.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/GLB%20format/building-watermill.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/GLB format/building-wizard-tower.glb",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "building-wizard-tower",
+      "packId": "glb-format",
+      "packRoot": "media/3D_Assets/GLB format",
+      "path": "media/3D_Assets/GLB format/building-wizard-tower.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 88908,
+      "source": {
+        "blobSha": "6acc63a523698b4a6b98d970a71c79fd0b426f84",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/GLB%20format/building-wizard-tower.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/GLB%20format/building-wizard-tower.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/GLB format/computerKeyboard.glb",
+      "dependencyStatus": "embedded",
+      "folder": "media/3D_Assets/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "computerKeyboard",
+      "packId": "glb-format",
+      "packRoot": "media/3D_Assets/GLB format",
+      "path": "media/3D_Assets/GLB format/computerKeyboard.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": []
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 3476,
+      "source": {
+        "blobSha": "77e5b4fc0d2d4c748173068f8ec325497f3c9011",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/GLB%20format/computerKeyboard.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/GLB%20format/computerKeyboard.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/GLB format/computerMouse.glb",
+      "dependencyStatus": "embedded",
+      "folder": "media/3D_Assets/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "computerMouse",
+      "packId": "glb-format",
+      "packRoot": "media/3D_Assets/GLB format",
+      "path": "media/3D_Assets/GLB format/computerMouse.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": []
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 5868,
+      "source": {
+        "blobSha": "333b20fad5121354f165ca7f77b6f2e777691bbb",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/GLB%20format/computerMouse.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/GLB%20format/computerMouse.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/GLB format/computerScreen.glb",
+      "dependencyStatus": "embedded",
+      "folder": "media/3D_Assets/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "computerScreen",
+      "packId": "glb-format",
+      "packRoot": "media/3D_Assets/GLB format",
+      "path": "media/3D_Assets/GLB format/computerScreen.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": []
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 6404,
+      "source": {
+        "blobSha": "c509093d35ee40bb6791dde9ad8e9de4bc3348dd",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/GLB%20format/computerScreen.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/GLB%20format/computerScreen.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/GLB format/desk.glb",
+      "dependencyStatus": "embedded",
+      "folder": "media/3D_Assets/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "desk",
+      "packId": "glb-format",
+      "packRoot": "media/3D_Assets/GLB format",
+      "path": "media/3D_Assets/GLB format/desk.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": []
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 15048,
+      "source": {
+        "blobSha": "8ca187070cd666239ab1d93dda2e98105f7de776",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/GLB%20format/desk.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/GLB%20format/desk.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/GLB format/deskCorner.glb",
+      "dependencyStatus": "embedded",
+      "folder": "media/3D_Assets/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "deskCorner",
+      "packId": "glb-format",
+      "packRoot": "media/3D_Assets/GLB format",
+      "path": "media/3D_Assets/GLB format/deskCorner.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": []
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 17984,
+      "source": {
+        "blobSha": "98fb683035e8508aac7f79504bfbf71be328ea3b",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/GLB%20format/deskCorner.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/GLB%20format/deskCorner.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/GLB format/dirt-lumber.glb",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "dirt-lumber",
+      "packId": "glb-format",
+      "packRoot": "media/3D_Assets/GLB format",
+      "path": "media/3D_Assets/GLB format/dirt-lumber.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 34920,
+      "source": {
+        "blobSha": "0b466143abc15b23b26bfc24075b406f809cecda",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/GLB%20format/dirt-lumber.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/GLB%20format/dirt-lumber.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/GLB format/dirt.glb",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "dirt",
+      "packId": "glb-format",
+      "packRoot": "media/3D_Assets/GLB format",
+      "path": "media/3D_Assets/GLB format/dirt.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 3464,
+      "source": {
+        "blobSha": "40fa4bc6e3cfa9baa1c9a775122f727f8344ce74",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/GLB%20format/dirt.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/GLB%20format/dirt.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/GLB format/doorway.glb",
+      "dependencyStatus": "embedded",
+      "folder": "media/3D_Assets/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "doorway",
+      "packId": "glb-format",
+      "packRoot": "media/3D_Assets/GLB format",
+      "path": "media/3D_Assets/GLB format/doorway.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": []
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 14532,
+      "source": {
+        "blobSha": "16ae8b84ad818153e2bf37257531e137fc6ef55a",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/GLB%20format/doorway.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/GLB%20format/doorway.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/GLB format/doorwayFront.glb",
+      "dependencyStatus": "embedded",
+      "folder": "media/3D_Assets/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "doorwayFront",
+      "packId": "glb-format",
+      "packRoot": "media/3D_Assets/GLB format",
+      "path": "media/3D_Assets/GLB format/doorwayFront.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": []
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 13016,
+      "source": {
+        "blobSha": "3cddbff68df597aa34c2ce91b1e5d01119af758c",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/GLB%20format/doorwayFront.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/GLB%20format/doorwayFront.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/GLB format/doorwayOpen.glb",
+      "dependencyStatus": "embedded",
+      "folder": "media/3D_Assets/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "doorwayOpen",
+      "packId": "glb-format",
+      "packRoot": "media/3D_Assets/GLB format",
+      "path": "media/3D_Assets/GLB format/doorwayOpen.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": []
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 3256,
+      "source": {
+        "blobSha": "4e787d1972d84cf3f59825d194c0ba439f5bee65",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/GLB%20format/doorwayOpen.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/GLB%20format/doorwayOpen.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/GLB format/floorCorner.glb",
+      "dependencyStatus": "embedded",
+      "folder": "media/3D_Assets/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "floorCorner",
+      "packId": "glb-format",
+      "packRoot": "media/3D_Assets/GLB format",
+      "path": "media/3D_Assets/GLB format/floorCorner.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": []
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 2524,
+      "source": {
+        "blobSha": "ad0a3406cc747dfc46cbdf989a79956964837dda",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/GLB%20format/floorCorner.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/GLB%20format/floorCorner.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/GLB format/floorCornerRound.glb",
+      "dependencyStatus": "embedded",
+      "folder": "media/3D_Assets/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "floorCornerRound",
+      "packId": "glb-format",
+      "packRoot": "media/3D_Assets/GLB format",
+      "path": "media/3D_Assets/GLB format/floorCornerRound.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": []
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 5168,
+      "source": {
+        "blobSha": "7b017233b57a25688d70fcf2cc8f980570fbd05a",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/GLB%20format/floorCornerRound.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/GLB%20format/floorCornerRound.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/GLB format/floorFull.glb",
+      "dependencyStatus": "embedded",
+      "folder": "media/3D_Assets/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "floorFull",
+      "packId": "glb-format",
+      "packRoot": "media/3D_Assets/GLB format",
+      "path": "media/3D_Assets/GLB format/floorFull.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": []
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 2260,
+      "source": {
+        "blobSha": "3861276342492222b1019aea63ed50e6e52e83b3",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/GLB%20format/floorFull.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/GLB%20format/floorFull.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/GLB format/floorHalf.glb",
+      "dependencyStatus": "embedded",
+      "folder": "media/3D_Assets/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "floorHalf",
+      "packId": "glb-format",
+      "packRoot": "media/3D_Assets/GLB format",
+      "path": "media/3D_Assets/GLB format/floorHalf.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": []
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 2264,
+      "source": {
+        "blobSha": "60e377a5e1a64b26cb2e35d9b284985b81051ad3",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/GLB%20format/floorHalf.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/GLB%20format/floorHalf.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/GLB format/grass-forest.glb",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "grass-forest",
+      "packId": "glb-format",
+      "packRoot": "media/3D_Assets/GLB format",
+      "path": "media/3D_Assets/GLB format/grass-forest.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 45748,
+      "source": {
+        "blobSha": "66d726f174e3b58043ca1d939a4b5a6d9b83e29b",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/GLB%20format/grass-forest.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/GLB%20format/grass-forest.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/GLB format/grass-hill.glb",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "grass-hill",
+      "packId": "glb-format",
+      "packRoot": "media/3D_Assets/GLB format",
+      "path": "media/3D_Assets/GLB format/grass-hill.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 34204,
+      "source": {
+        "blobSha": "1ac899a6c46f59231abcef99497769b08f59eb20",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/GLB%20format/grass-hill.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/GLB%20format/grass-hill.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/GLB format/grass.glb",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "grass",
+      "packId": "glb-format",
+      "packRoot": "media/3D_Assets/GLB format",
+      "path": "media/3D_Assets/GLB format/grass.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 4680,
+      "source": {
+        "blobSha": "6e8f1cc7d9e1151f002150e0b46a264aec387cc3",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/GLB%20format/grass.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/GLB%20format/grass.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/GLB format/path-corner-sharp.glb",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "path-corner-sharp",
+      "packId": "glb-format",
+      "packRoot": "media/3D_Assets/GLB format",
+      "path": "media/3D_Assets/GLB format/path-corner-sharp.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 5556,
+      "source": {
+        "blobSha": "667371434609037a0205b0ef184f6c5963a352cc",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/GLB%20format/path-corner-sharp.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/GLB%20format/path-corner-sharp.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/GLB format/path-corner.glb",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "path-corner",
+      "packId": "glb-format",
+      "packRoot": "media/3D_Assets/GLB format",
+      "path": "media/3D_Assets/GLB format/path-corner.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 5288,
+      "source": {
+        "blobSha": "810f5553c82cfdf439623058226b4b6d8532bb05",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/GLB%20format/path-corner.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/GLB%20format/path-corner.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/GLB format/path-crossing.glb",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "path-crossing",
+      "packId": "glb-format",
+      "packRoot": "media/3D_Assets/GLB format",
+      "path": "media/3D_Assets/GLB format/path-crossing.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 9736,
+      "source": {
+        "blobSha": "9b30759568f17c13e5ed76429b15c12d7d06a4e1",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/GLB%20format/path-crossing.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/GLB%20format/path-crossing.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/GLB format/path-end.glb",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "path-end",
+      "packId": "glb-format",
+      "packRoot": "media/3D_Assets/GLB format",
+      "path": "media/3D_Assets/GLB format/path-end.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 3788,
+      "source": {
+        "blobSha": "5dd864d76b3bdc8810dc4516566cfd5083b9644f",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/GLB%20format/path-end.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/GLB%20format/path-end.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/GLB format/path-intersectionA.glb",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "path-intersectionA",
+      "packId": "glb-format",
+      "packRoot": "media/3D_Assets/GLB format",
+      "path": "media/3D_Assets/GLB format/path-intersectionA.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 6304,
+      "source": {
+        "blobSha": "8e388145735fc0150f2c1d587420bf75d8d0c950",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/GLB%20format/path-intersectionA.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/GLB%20format/path-intersectionA.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/GLB format/path-intersectionB.glb",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "path-intersectionB",
+      "packId": "glb-format",
+      "packRoot": "media/3D_Assets/GLB format",
+      "path": "media/3D_Assets/GLB format/path-intersectionB.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 6212,
+      "source": {
+        "blobSha": "991d6c12d26b3986cf632b436cf3d0345918077f",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/GLB%20format/path-intersectionB.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/GLB%20format/path-intersectionB.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/GLB format/path-intersectionC.glb",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "path-intersectionC",
+      "packId": "glb-format",
+      "packRoot": "media/3D_Assets/GLB format",
+      "path": "media/3D_Assets/GLB format/path-intersectionC.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 6212,
+      "source": {
+        "blobSha": "b1364cfa32c4a9328a6123bc56f3d3b8ba581675",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/GLB%20format/path-intersectionC.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/GLB%20format/path-intersectionC.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/GLB format/path-intersectionD.glb",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "path-intersectionD",
+      "packId": "glb-format",
+      "packRoot": "media/3D_Assets/GLB format",
+      "path": "media/3D_Assets/GLB format/path-intersectionD.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 7460,
+      "source": {
+        "blobSha": "a80b7bf67775a301e92a28d4e210994773310c38",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/GLB%20format/path-intersectionD.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/GLB%20format/path-intersectionD.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/GLB format/path-intersectionE.glb",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "path-intersectionE",
+      "packId": "glb-format",
+      "packRoot": "media/3D_Assets/GLB format",
+      "path": "media/3D_Assets/GLB format/path-intersectionE.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 7460,
+      "source": {
+        "blobSha": "7daf9e246b08060abf20367535a184eb6b1faa8b",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/GLB%20format/path-intersectionE.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/GLB%20format/path-intersectionE.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/GLB format/path-intersectionF.glb",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "path-intersectionF",
+      "packId": "glb-format",
+      "packRoot": "media/3D_Assets/GLB format",
+      "path": "media/3D_Assets/GLB format/path-intersectionF.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 6848,
+      "source": {
+        "blobSha": "380758970214a7eb2b188f7fbaca18ae215bbb2d",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/GLB%20format/path-intersectionF.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/GLB%20format/path-intersectionF.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/GLB format/path-intersectionG.glb",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "path-intersectionG",
+      "packId": "glb-format",
+      "packRoot": "media/3D_Assets/GLB format",
+      "path": "media/3D_Assets/GLB format/path-intersectionG.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 8756,
+      "source": {
+        "blobSha": "945cc6488a68a8be0410d92d41bfd71b5a0e0544",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/GLB%20format/path-intersectionG.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/GLB%20format/path-intersectionG.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/GLB format/path-intersectionH.glb",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "path-intersectionH",
+      "packId": "glb-format",
+      "packRoot": "media/3D_Assets/GLB format",
+      "path": "media/3D_Assets/GLB format/path-intersectionH.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 7260,
+      "source": {
+        "blobSha": "7a91a2e5ee949fa2a54723c086c47ed653a2895a",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/GLB%20format/path-intersectionH.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/GLB%20format/path-intersectionH.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/GLB format/path-square-end.glb",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "path-square-end",
+      "packId": "glb-format",
+      "packRoot": "media/3D_Assets/GLB format",
+      "path": "media/3D_Assets/GLB format/path-square-end.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 5076,
+      "source": {
+        "blobSha": "d7f3a78ea2573c98b8b71469845e6f89c7d9e2f9",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/GLB%20format/path-square-end.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/GLB%20format/path-square-end.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/GLB format/path-square.glb",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "path-square",
+      "packId": "glb-format",
+      "packRoot": "media/3D_Assets/GLB format",
+      "path": "media/3D_Assets/GLB format/path-square.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 6260,
+      "source": {
+        "blobSha": "b21a673a70ade1e34623d3ddbcd0412f9ec14436",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/GLB%20format/path-square.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/GLB%20format/path-square.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/GLB format/path-start.glb",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "path-start",
+      "packId": "glb-format",
+      "packRoot": "media/3D_Assets/GLB format",
+      "path": "media/3D_Assets/GLB format/path-start.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 4696,
+      "source": {
+        "blobSha": "374284a62dacf999c2ae0ac1459f1b8a54b94246",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/GLB%20format/path-start.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/GLB%20format/path-start.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/GLB format/path-straight.glb",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "path-straight",
+      "packId": "glb-format",
+      "packRoot": "media/3D_Assets/GLB format",
+      "path": "media/3D_Assets/GLB format/path-straight.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 4752,
+      "source": {
+        "blobSha": "76470cc3f5ee059388a05aedef1431e7e286304f",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/GLB%20format/path-straight.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/GLB%20format/path-straight.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/GLB format/river-corner-sharp.glb",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "river-corner-sharp",
+      "packId": "glb-format",
+      "packRoot": "media/3D_Assets/GLB format",
+      "path": "media/3D_Assets/GLB format/river-corner-sharp.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 12204,
+      "source": {
+        "blobSha": "0535d2b97c2d088fcd6994369c11a20213bf616d",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/GLB%20format/river-corner-sharp.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/GLB%20format/river-corner-sharp.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/GLB format/river-corner.glb",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "river-corner",
+      "packId": "glb-format",
+      "packRoot": "media/3D_Assets/GLB format",
+      "path": "media/3D_Assets/GLB format/river-corner.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 12216,
+      "source": {
+        "blobSha": "78f434864f0ba0c6ab6c96af3a6642e9d573086a",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/GLB%20format/river-corner.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/GLB%20format/river-corner.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/GLB format/river-crossing.glb",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "river-crossing",
+      "packId": "glb-format",
+      "packRoot": "media/3D_Assets/GLB format",
+      "path": "media/3D_Assets/GLB format/river-crossing.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 21368,
+      "source": {
+        "blobSha": "b72e2b81b9addee4056bae17dc2ff2bbbfd9a12c",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/GLB%20format/river-crossing.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/GLB%20format/river-crossing.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/GLB format/river-end.glb",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "river-end",
+      "packId": "glb-format",
+      "packRoot": "media/3D_Assets/GLB format",
+      "path": "media/3D_Assets/GLB format/river-end.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 8952,
+      "source": {
+        "blobSha": "ccab82e0bd4581da43c6c808398f671e152a1440",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/GLB%20format/river-end.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/GLB%20format/river-end.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/GLB format/river-intersectionA.glb",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "river-intersectionA",
+      "packId": "glb-format",
+      "packRoot": "media/3D_Assets/GLB format",
+      "path": "media/3D_Assets/GLB format/river-intersectionA.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 14084,
+      "source": {
+        "blobSha": "fc9aa084d79545fa681a31ce7fa715460704e01d",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/GLB%20format/river-intersectionA.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/GLB%20format/river-intersectionA.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/GLB format/river-intersectionB.glb",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "river-intersectionB",
+      "packId": "glb-format",
+      "packRoot": "media/3D_Assets/GLB format",
+      "path": "media/3D_Assets/GLB format/river-intersectionB.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 19524,
+      "source": {
+        "blobSha": "864d6fb447eb3cb4aeb2bfef7841a51ab901e622",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/GLB%20format/river-intersectionB.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/GLB%20format/river-intersectionB.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/GLB format/river-intersectionC.glb",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "river-intersectionC",
+      "packId": "glb-format",
+      "packRoot": "media/3D_Assets/GLB format",
+      "path": "media/3D_Assets/GLB format/river-intersectionC.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 14108,
+      "source": {
+        "blobSha": "893dc6766f31d802804c7f28f6ceadf966eb5c18",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/GLB%20format/river-intersectionC.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/GLB%20format/river-intersectionC.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/GLB format/river-intersectionD.glb",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "river-intersectionD",
+      "packId": "glb-format",
+      "packRoot": "media/3D_Assets/GLB format",
+      "path": "media/3D_Assets/GLB format/river-intersectionD.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 17376,
+      "source": {
+        "blobSha": "4bf093893eaa6060df49ea64b93ac444f6cbad45",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/GLB%20format/river-intersectionD.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/GLB%20format/river-intersectionD.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/GLB format/river-intersectionE.glb",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "river-intersectionE",
+      "packId": "glb-format",
+      "packRoot": "media/3D_Assets/GLB format",
+      "path": "media/3D_Assets/GLB format/river-intersectionE.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 17256,
+      "source": {
+        "blobSha": "6b34df151696100ad9952d05a2d6f7458f2bda62",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/GLB%20format/river-intersectionE.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/GLB%20format/river-intersectionE.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/GLB format/river-intersectionF.glb",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "river-intersectionF",
+      "packId": "glb-format",
+      "packRoot": "media/3D_Assets/GLB format",
+      "path": "media/3D_Assets/GLB format/river-intersectionF.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 16056,
+      "source": {
+        "blobSha": "23ade9dfb7448c7f977c9b55a742b1ce039aceaa",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/GLB%20format/river-intersectionF.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/GLB%20format/river-intersectionF.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/GLB format/river-intersectionG.glb",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "river-intersectionG",
+      "packId": "glb-format",
+      "packRoot": "media/3D_Assets/GLB format",
+      "path": "media/3D_Assets/GLB format/river-intersectionG.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 19740,
+      "source": {
+        "blobSha": "2c379b531505e85cc8b27669572c32a83d98aeb1",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/GLB%20format/river-intersectionG.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/GLB%20format/river-intersectionG.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/GLB format/river-intersectionH.glb",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "river-intersectionH",
+      "packId": "glb-format",
+      "packRoot": "media/3D_Assets/GLB format",
+      "path": "media/3D_Assets/GLB format/river-intersectionH.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 16640,
+      "source": {
+        "blobSha": "95f47924442c7f6e620d4fbd29476c4315d4ee36",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/GLB%20format/river-intersectionH.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/GLB%20format/river-intersectionH.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/GLB format/river-start.glb",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "river-start",
+      "packId": "glb-format",
+      "packRoot": "media/3D_Assets/GLB format",
+      "path": "media/3D_Assets/GLB format/river-start.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 10268,
+      "source": {
+        "blobSha": "75201cfefe89937e27958378f063093c2f08b96c",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/GLB%20format/river-start.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/GLB%20format/river-start.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/GLB format/river-straight.glb",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "river-straight",
+      "packId": "glb-format",
+      "packRoot": "media/3D_Assets/GLB format",
+      "path": "media/3D_Assets/GLB format/river-straight.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 11168,
+      "source": {
+        "blobSha": "fc8f8f70a3ab03fc4f18d7cb21096f25f4eb546e",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/GLB%20format/river-straight.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/GLB%20format/river-straight.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/GLB format/sand-desert.glb",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "sand-desert",
+      "packId": "glb-format",
+      "packRoot": "media/3D_Assets/GLB format",
+      "path": "media/3D_Assets/GLB format/sand-desert.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 25496,
+      "source": {
+        "blobSha": "db27baf8c8595ed1062c5f58a53b7cff1289c8e9",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/GLB%20format/sand-desert.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/GLB%20format/sand-desert.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/GLB format/sand-rocks.glb",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "sand-rocks",
+      "packId": "glb-format",
+      "packRoot": "media/3D_Assets/GLB format",
+      "path": "media/3D_Assets/GLB format/sand-rocks.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 9684,
+      "source": {
+        "blobSha": "2b492f127fc09bb82a22e00cf272d1577f315357",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/GLB%20format/sand-rocks.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/GLB%20format/sand-rocks.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/GLB format/sand.glb",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "sand",
+      "packId": "glb-format",
+      "packRoot": "media/3D_Assets/GLB format",
+      "path": "media/3D_Assets/GLB format/sand.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 4656,
+      "source": {
+        "blobSha": "fcace52b34d445df9b1ccf6a744f1d98eff578ab",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/GLB%20format/sand.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/GLB%20format/sand.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/GLB format/stone-hill.glb",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "stone-hill",
+      "packId": "glb-format",
+      "packRoot": "media/3D_Assets/GLB format",
+      "path": "media/3D_Assets/GLB format/stone-hill.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 13412,
+      "source": {
+        "blobSha": "8034e4fc951eff3d2e23736ce15cef2c005a2b09",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/GLB%20format/stone-hill.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/GLB%20format/stone-hill.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/GLB format/stone-mountain.glb",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "stone-mountain",
+      "packId": "glb-format",
+      "packRoot": "media/3D_Assets/GLB format",
+      "path": "media/3D_Assets/GLB format/stone-mountain.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 20904,
+      "source": {
+        "blobSha": "121632ba35e0f351c66270423f0c5f7c1b0971b5",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/GLB%20format/stone-mountain.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/GLB%20format/stone-mountain.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/GLB format/stone-rocks.glb",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "stone-rocks",
+      "packId": "glb-format",
+      "packRoot": "media/3D_Assets/GLB format",
+      "path": "media/3D_Assets/GLB format/stone-rocks.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 24700,
+      "source": {
+        "blobSha": "8ab862ae8431c4d9f753bcf41d85dd850f4f6228",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/GLB%20format/stone-rocks.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/GLB%20format/stone-rocks.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/GLB format/stone.glb",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "stone",
+      "packId": "glb-format",
+      "packRoot": "media/3D_Assets/GLB format",
+      "path": "media/3D_Assets/GLB format/stone.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 4656,
+      "source": {
+        "blobSha": "2c199c76ffdc5c0643bf2619f43089b34ee8792a",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/GLB%20format/stone.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/GLB%20format/stone.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/GLB format/unit-house.glb",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "unit-house",
+      "packId": "glb-format",
+      "packRoot": "media/3D_Assets/GLB format",
+      "path": "media/3D_Assets/GLB format/unit-house.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 8804,
+      "source": {
+        "blobSha": "057d4a785cb965f01b6c6986b19bdcb6c6b17b31",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/GLB%20format/unit-house.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/GLB%20format/unit-house.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/GLB format/unit-mansion.glb",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "unit-mansion",
+      "packId": "glb-format",
+      "packRoot": "media/3D_Assets/GLB format",
+      "path": "media/3D_Assets/GLB format/unit-mansion.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 13112,
+      "source": {
+        "blobSha": "21976342b7c875eb14f94447a5b71c494fbcd463",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/GLB%20format/unit-mansion.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/GLB%20format/unit-mansion.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/GLB format/unit-mill.glb",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "unit-mill",
+      "packId": "glb-format",
+      "packRoot": "media/3D_Assets/GLB format",
+      "path": "media/3D_Assets/GLB format/unit-mill.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 23016,
+      "source": {
+        "blobSha": "1a1e8c266edd32ab5a6a104e43069336d7fad9c0",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/GLB%20format/unit-mill.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/GLB%20format/unit-mill.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/GLB format/unit-ship-large.glb",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "unit-ship-large",
+      "packId": "glb-format",
+      "packRoot": "media/3D_Assets/GLB format",
+      "path": "media/3D_Assets/GLB format/unit-ship-large.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 17536,
+      "source": {
+        "blobSha": "3508ef04f20331a92d67cb388c441d4450e167cf",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/GLB%20format/unit-ship-large.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/GLB%20format/unit-ship-large.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/GLB format/unit-ship.glb",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "unit-ship",
+      "packId": "glb-format",
+      "packRoot": "media/3D_Assets/GLB format",
+      "path": "media/3D_Assets/GLB format/unit-ship.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 13268,
+      "source": {
+        "blobSha": "8177ff02c8b3e01343d40008ec6fba957323b48b",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/GLB%20format/unit-ship.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/GLB%20format/unit-ship.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/GLB format/unit-tower.glb",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "unit-tower",
+      "packId": "glb-format",
+      "packRoot": "media/3D_Assets/GLB format",
+      "path": "media/3D_Assets/GLB format/unit-tower.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 21276,
+      "source": {
+        "blobSha": "228b582bbfd9373d2eba2601a9d1a46401b28ae2",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/GLB%20format/unit-tower.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/GLB%20format/unit-tower.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/GLB format/unit-tree.glb",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "unit-tree",
+      "packId": "glb-format",
+      "packRoot": "media/3D_Assets/GLB format",
+      "path": "media/3D_Assets/GLB format/unit-tree.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 6800,
+      "source": {
+        "blobSha": "ff8ec31218c17cc2bb4e9d000dd37eb983596b39",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/GLB%20format/unit-tree.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/GLB%20format/unit-tree.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/GLB format/unit-wall-tower.glb",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "unit-wall-tower",
+      "packId": "glb-format",
+      "packRoot": "media/3D_Assets/GLB format",
+      "path": "media/3D_Assets/GLB format/unit-wall-tower.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 16024,
+      "source": {
+        "blobSha": "f5d55fa2162e6128b84ac8c607b123b61689fa4f",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/GLB%20format/unit-wall-tower.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/GLB%20format/unit-wall-tower.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/GLB format/water-island.glb",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "water-island",
+      "packId": "glb-format",
+      "packRoot": "media/3D_Assets/GLB format",
+      "path": "media/3D_Assets/GLB format/water-island.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 9800,
+      "source": {
+        "blobSha": "2dee2598067c3d6acd63152dd444444f05dbf77c",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/GLB%20format/water-island.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/GLB%20format/water-island.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/GLB format/water-rocks.glb",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "water-rocks",
+      "packId": "glb-format",
+      "packRoot": "media/3D_Assets/GLB format",
+      "path": "media/3D_Assets/GLB format/water-rocks.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 17256,
+      "source": {
+        "blobSha": "a0a4dfafa336ba28da122f6294d3168cc737e102",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/GLB%20format/water-rocks.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/GLB%20format/water-rocks.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/GLB format/water.glb",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/GLB format",
+      "format": "glb",
+      "kind": "model-3d",
+      "name": "water",
+      "packId": "glb-format",
+      "packRoot": "media/3D_Assets/GLB format",
+      "path": "media/3D_Assets/GLB format/water.glb",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/GLB format/Textures/colormap.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "Textures/colormap.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 3468,
+      "source": {
+        "blobSha": "fe12ea71b19cce4881f0d2a9a72deb618e334f70",
+        "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/GLB%20format/water.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/media/3D_Assets/GLB%20format/water.glb",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    }
+  ],
+  "collections": [
+    {
+      "assetCount": 1,
+      "path": "Textures"
+    }
+  ],
+  "dependencyStatus": {
+    "complete": 72,
+    "embedded": 13
+  },
+  "displayName": "GLB format",
+  "formats": {
+    "glb": 85,
+    "png": 1
+  },
+  "kinds": {
+    "image-2d": 1,
+    "model-3d": 85
+  },
+  "packId": "glb-format",
+  "provenance": "generated-structural",
+  "root": "media/3D_Assets/GLB format",
+  "schema": "kfb.asset-pack.v1",
+  "shard": "packs/glb-format.json"
+}
