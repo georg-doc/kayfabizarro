@@ -17,256 +17,151 @@
 <body>
   <main class="app-shell">
     <header class="topbar">
-      <div>
-        <div class="eyebrow">KFB · repo-truth asset browser · no LLM required</div>
-        <h1>KFB Asset Librarian <span>v1.2 Core</span></h1>
+      <div class="brand-block">
+        <div class="eyebrow">KFB · repo-truth asset browser</div>
+        <h1>KFB Asset Librarian <span>v1.2</span></h1>
       </div>
-      <div class="status-stack" aria-live="polite">
-        <span id="registryStatus" class="pill">Registry loading…</span>
-        <span id="sourceCommit" class="commit"></span>
+      <div class="top-actions">
+        <div class="status-stack" aria-live="polite">
+          <span id="registryStatus" class="pill">Registry loading…</span>
+          <span id="sourceCommit" class="commit"></span>
+        </div>
+        <button id="selectionButton" class="selection-button" type="button" aria-controls="selectionTray" aria-expanded="false">
+          Selection <span id="selectionCount" class="selection-count">0 selected</span>
+        </button>
       </div>
     </header>
 
-    <section class="metrics" id="metrics" aria-label="Registry summary"></section>
-
-    <section class="workspace">
-      <aside class="filters panel">
-        <div class="section-head compact">
-          <div>
-            <div class="eyebrow">library home</div>
-            <h2>Find assets</h2>
-          </div>
-          <button id="resetButton" class="quiet small-button" type="button">Reset</button>
+    <section class="search-shell panel" aria-label="Asset search">
+      <div class="search-row">
+        <input id="searchInput" class="global-search" type="search" placeholder="Search assets — Orc Raider, rover, bath, driver…" autocomplete="off" aria-label="Global search">
+        <select id="kindFilter" class="kind-filter" aria-label="Kind">
+          <option value="">All assets</option>
+          <option value="model-3d">3D</option>
+          <option value="image-2d">Images</option>
+          <option value="audio">Audio</option>
+        </select>
+        <button id="searchButton" class="primary" type="button">Search</button>
+        <button id="filtersToggle" class="quiet" type="button" aria-expanded="false" aria-controls="advancedFilters">More filters</button>
+        <div class="view-toggle" aria-label="Result view">
+          <button id="galleryViewButton" class="quiet" type="button">Gallery</button>
+          <button id="listViewButton" class="quiet" type="button">List</button>
         </div>
+      </div>
 
-        <label>
-          Global search
-          <input id="searchInput" type="search" placeholder="Orc Raider, rover, bath, jet…" autocomplete="off">
-        </label>
-
+      <div id="advancedFilters" class="advanced-filters" hidden>
         <div class="filter-grid">
-          <label>
-            Kind
-            <select id="kindFilter">
-              <option value="">All</option>
-              <option value="model-3d">3D model</option>
-              <option value="image-2d">2D / image</option>
-              <option value="audio">Audio</option>
-            </select>
-          </label>
-          <label>
-            Pack
-            <select id="packFilter"><option value="">All packs</option></select>
-          </label>
-          <label>
-            Collection
-            <select id="collectionFilter"><option value="">All collections</option></select>
-          </label>
-          <label>
-            Format
-            <select id="formatFilter"><option value="">All formats</option></select>
-          </label>
-          <label>
-            Dependencies
-            <select id="dependencyFilter">
-              <option value="">Any</option>
-              <option value="complete">Complete</option>
-              <option value="embedded">Embedded</option>
-              <option value="missing">Missing</option>
-              <option value="unresolved">Unresolved</option>
-            </select>
-          </label>
-          <label>
-            Review queue
-            <select id="problemFilter">
-              <option value="">Any status</option>
-              <option value="any">Has review item</option>
-              <option value="DUPLICATE_NAME">Duplicate name</option>
-              <option value="MISSING_REFERENCED_FILE">Missing referenced file</option>
-              <option value="UNRESOLVED_FBX_DEPENDENCY">Unresolved FBX</option>
-              <option value="UNRESOLVED_MODEL_DEPENDENCY">Unresolved model</option>
-            </select>
-          </label>
-          <label>
-            Rig
-            <select id="rigFilter">
-              <option value="">Any</option>
-              <option value="yes">Rigged</option>
-              <option value="no">Not rigged</option>
-              <option value="unknown">Unknown</option>
-            </select>
-          </label>
-          <label>
-            Animation
-            <select id="animatedFilter">
-              <option value="">Any</option>
-              <option value="yes">Has animation</option>
-              <option value="no">No animation</option>
-              <option value="unknown">Unknown</option>
-            </select>
-          </label>
+          <label>Pack<select id="packFilter"><option value="">All packs</option></select></label>
+          <label>Collection<select id="collectionFilter"><option value="">All collections</option></select></label>
+          <label>Format<select id="formatFilter"><option value="">All formats</option></select></label>
+          <label>Dependencies<select id="dependencyFilter"><option value="">Any</option><option value="complete">Complete</option><option value="embedded">Embedded</option><option value="missing">Missing</option><option value="unresolved">Unresolved</option></select></label>
+          <label>Review queue<select id="problemFilter"><option value="">Any status</option><option value="any">Has review item</option><option value="DUPLICATE_NAME">Duplicate name</option><option value="MISSING_REFERENCED_FILE">Missing referenced file</option><option value="UNRESOLVED_FBX_DEPENDENCY">Unresolved FBX</option><option value="UNRESOLVED_MODEL_DEPENDENCY">Unresolved model</option></select></label>
+          <label>Rig<select id="rigFilter"><option value="">Any</option><option value="yes">Rigged</option><option value="no">Not rigged</option><option value="unknown">Unknown</option></select></label>
+          <label>Animation<select id="animatedFilter"><option value="">Any</option><option value="yes">Has animation</option><option value="no">No animation</option><option value="unknown">Unknown</option></select></label>
+          <label>Clip contains<input id="clipFilter" type="text" placeholder="walk, idle, attack…"></label>
+          <label>Joint contains<input id="jointFilter" type="text" placeholder="hip, hand, head…"></label>
         </div>
-
-        <label>
-          Clip contains
-          <input id="clipFilter" type="text" placeholder="walk, idle, attack…">
-        </label>
-        <label>
-          Joint contains
-          <input id="jointFilter" type="text" placeholder="hip, hand, head…">
-        </label>
-
-        <button id="searchButton" class="primary wide" type="button">Search registry</button>
-        <p class="small-note">The catalog stays lazy: it loads only when you search. Rig facts and review items load only when needed.</p>
-
-        <div class="local-tools">
-          <strong>Session</strong>
-          <span id="sessionNote" class="small-note">Selection tray is stored locally in this browser only.</span>
+        <div class="filter-footer">
+          <span class="small-note">Catalog, rig facts and review data stay lazy and load only when needed.</span>
+          <button id="resetButton" class="quiet" type="button">Reset filters</button>
         </div>
-      </aside>
+      </div>
+    </section>
 
-      <section class="results panel">
-        <div class="section-head">
-          <div>
-            <div class="eyebrow">results</div>
-            <h2>Registry matches</h2>
-            <p id="resultMeta">Enter a query or choose filters.</p>
+    <section id="metrics" class="metrics" aria-label="Registry summary"></section>
+
+    <section class="results panel">
+      <div class="results-head">
+        <div>
+          <div class="eyebrow">registry matches</div>
+          <p id="resultMeta">Enter a query or choose filters.</p>
+        </div>
+      </div>
+      <div id="resultList" class="result-list gallery-view" aria-live="polite"></div>
+    </section>
+
+    <aside class="drawer detail-drawer" id="detailPanel" aria-label="Asset detail" aria-hidden="true">
+      <div class="drawer-head">
+        <div>
+          <div id="detailKind" class="eyebrow"></div>
+          <h2 id="detailName">Asset detail</h2>
+        </div>
+        <div class="drawer-actions">
+          <button id="toggleSelection" class="quiet" type="button">Add</button>
+          <button id="detailClose" class="icon-button" type="button" aria-label="Close asset detail">×</button>
+        </div>
+      </div>
+
+      <div class="empty-state" id="emptyDetail">
+        <strong>Select an asset</strong>
+        <span>Preview and source facts appear here.</span>
+      </div>
+
+      <div id="detailContent" hidden>
+        <div id="detailBadges" class="badges detail-badges"></div>
+
+        <div id="previewWrap" class="preview-wrap" hidden>
+          <div class="preview-toolbar">
+            <strong id="previewTitle">Preview</strong>
+            <span id="previewStatus">Idle</span>
           </div>
-          <div class="view-toggle" aria-label="Result view">
-            <button id="listViewButton" class="quiet active" type="button">List</button>
-            <button id="galleryViewButton" class="quiet" type="button">Cards</button>
+          <div id="threeControls" class="preview-controls" hidden>
+            <button id="resetCamera" class="quiet small-button" type="button">Reset</button>
+            <button id="fitCamera" class="quiet small-button" type="button">Fit</button>
+            <label class="inline-check"><input id="wireframeToggle" type="checkbox"> Wireframe</label>
+            <label class="inline-check"><input id="autoplayToggle" type="checkbox" checked> Autoplay</label>
+            <label class="clip-control">Clip <select id="clipSelect"><option value="">No clips</option></select></label>
           </div>
-        </div>
-        <div id="resultList" class="result-list list-view" aria-live="polite"></div>
-      </section>
-
-      <aside class="detail panel" id="detailPanel">
-        <div class="empty-state" id="emptyDetail">
-          <strong>Select an asset</strong>
-          <span>Exact identity, provenance, dependencies and preview appear here.</span>
+          <canvas id="previewCanvas" hidden></canvas>
+          <div id="imagePreview" class="image-preview" hidden><img id="imagePreviewImg" alt="Selected asset preview"><div id="imageMeta" class="preview-meta"></div></div>
+          <div id="audioPreview" class="audio-preview" hidden><audio id="audioPlayer" controls preload="metadata"></audio><div id="audioMeta" class="preview-meta"></div></div>
+          <div id="dataPreview" class="data-preview" hidden>Metadata-only preview for this format.</div>
         </div>
 
-        <div id="detailContent" hidden>
-          <div class="section-head">
-            <div>
-              <div id="detailKind" class="eyebrow"></div>
-              <h2 id="detailName"></h2>
-            </div>
-            <button id="toggleSelection" class="quiet" type="button">Add</button>
-          </div>
-          <div id="detailBadges" class="badges"></div>
+        <div class="quick-actions">
+          <button id="copyRaw" class="primary" type="button">Copy pinned RAW</button>
+          <a id="openRaw" class="button-link quiet" target="_blank" rel="noreferrer">Pinned RAW</a>
+          <button id="technicalToggle" class="quiet" type="button" aria-expanded="false" aria-controls="technicalDetails">Technical details</button>
+        </div>
+
+        <div id="technicalDetails" class="technical-details" aria-hidden="true">
           <code id="detailPath" class="path-block"></code>
-
-          <section class="fact-section identity-section">
-            <h3>Identity</h3>
-            <div id="identityFacts" class="fact-grid"></div>
-          </section>
-
           <div class="detail-actions">
             <button id="copyPath" class="quiet" type="button">Copy path</button>
             <button id="copyAssetId" class="quiet" type="button">Copy asset ID</button>
-            <button id="copyRaw" class="primary" type="button">Copy pinned RAW</button>
-            <a id="openRaw" class="button-link quiet" target="_blank" rel="noreferrer">Pinned RAW</a>
             <a id="openLatestRaw" class="button-link quiet" target="_blank" rel="noreferrer">Latest RAW</a>
           </div>
-
-          <div id="previewWrap" class="preview-wrap" hidden>
-            <div class="preview-toolbar">
-              <strong id="previewTitle">Preview</strong>
-              <span id="previewStatus">Idle</span>
-            </div>
-
-            <div id="threeControls" class="preview-controls" hidden>
-              <button id="resetCamera" class="quiet small-button" type="button">Reset camera</button>
-              <button id="fitCamera" class="quiet small-button" type="button">Fit</button>
-              <label class="inline-check"><input id="wireframeToggle" type="checkbox"> Wireframe</label>
-              <label class="inline-check"><input id="autoplayToggle" type="checkbox" checked> Autoplay</label>
-              <label class="clip-control">Clip <select id="clipSelect"><option value="">No clips</option></select></label>
-            </div>
-            <canvas id="previewCanvas" hidden></canvas>
-
-            <div id="imagePreview" class="image-preview" hidden>
-              <img id="imagePreviewImg" alt="Selected asset preview">
-              <div id="imageMeta" class="preview-meta"></div>
-            </div>
-
-            <div id="audioPreview" class="audio-preview" hidden>
-              <audio id="audioPlayer" controls preload="metadata"></audio>
-              <div id="audioMeta" class="preview-meta"></div>
-            </div>
-
-            <div id="dataPreview" class="data-preview" hidden>
-              Metadata-only preview for this format in v1.2.
-            </div>
-          </div>
-
-          <section class="fact-section" id="rigSection">
-            <h3>Rig / animation facts</h3>
-            <div id="rigFacts" class="fact-grid"></div>
-            <div id="rigWarnings" class="warning-box" hidden></div>
-          </section>
-
-          <section class="fact-section">
-            <h3>Dependencies</h3>
-            <div id="dependencyFacts"></div>
-          </section>
-
-          <section class="fact-section">
-            <h3>Provenance</h3>
-            <div id="provenanceFacts" class="fact-grid"></div>
-          </section>
-
-          <section class="fact-section">
-            <h3>Review items</h3>
-            <div id="problemFacts"></div>
-          </section>
-        </div>
-      </aside>
-    </section>
-
-    <section id="selectionTray" class="tray panel">
-      <div class="section-head">
-        <div>
-          <div class="eyebrow">persistent local selection</div>
-          <h2>Selection tray</h2>
-        </div>
-        <div class="tray-actions-top">
-          <span id="selectionCount" class="pill">0 selected</span>
-          <button id="clearSelection" class="quiet" type="button" disabled>Clear</button>
+          <section class="fact-section identity-section"><h3>Identity</h3><div id="identityFacts" class="fact-grid"></div></section>
+          <section class="fact-section" id="rigSection"><h3>Rig / animation</h3><div id="rigFacts" class="fact-grid"></div><div id="rigWarnings" class="warning-box" hidden></div></section>
+          <section class="fact-section"><h3>Dependencies</h3><div id="dependencyFacts"></div></section>
+          <section class="fact-section"><h3>Provenance</h3><div id="provenanceFacts" class="fact-grid"></div></section>
+          <section class="fact-section"><h3>Review</h3><div id="problemFacts"></div></section>
         </div>
       </div>
+    </aside>
 
+    <aside id="selectionTray" class="drawer selection-drawer" aria-label="Selection tray" aria-hidden="true">
+      <div class="drawer-head">
+        <div><div class="eyebrow">local candidate set</div><h2>Selection</h2></div>
+        <button id="selectionClose" class="icon-button" type="button" aria-label="Close selection tray">×</button>
+      </div>
+      <div class="selection-summary"><span id="selectionDrawerCount" class="pill">0 selected</span><button id="clearSelection" class="quiet" type="button" disabled>Clear</button></div>
       <div id="trayItems" class="tray-items"><span class="small-note">No assets selected.</span></div>
-
-      <div class="handoff-grid">
-        <label>
-          Send to consumer
-          <select id="consumerSelect"></select>
-        </label>
+      <div class="handoff-stack">
+        <label>Send to consumer<select id="consumerSelect"></select></label>
         <div id="consumerBoundary" class="consumer-boundary"></div>
-        <div class="handoff-actions">
-          <button id="copyHandoff" class="primary" type="button" disabled>Copy handoff JSON</button>
-          <button id="downloadHandoff" class="quiet" type="button" disabled>Download handoff JSON</button>
-        </div>
+        <div class="handoff-actions"><button id="copyHandoff" class="primary" type="button" disabled>Copy handoff JSON</button><button id="downloadHandoff" class="quiet" type="button" disabled>Download handoff JSON</button></div>
       </div>
-    </section>
+    </aside>
 
-    <section class="ai-note panel">
-      <strong>AI Assistant · optional / unavailable in v1.2 Core</strong>
-      <span>This site is intentionally complete without an API key, chat backend or model call.</span>
-    </section>
+    <button id="drawerBackdrop" class="drawer-backdrop" type="button" aria-label="Close open panel" hidden></button>
 
-    <footer>
-      Registry facts are source facts. Search results and handoffs remain <strong>candidate-only</strong>; receiving consumers own validation and implementation.
-    </footer>
+    <footer>Registry facts are source facts. Search results and handoffs remain <strong>candidate-only</strong>; receiving consumers own validation and implementation.</footer>
   </main>
 
   <template id="resultTemplate">
     <article class="result-card">
-      <label class="select-box" title="Select for handoff">
-        <input type="checkbox" class="result-select">
-        <span></span>
-      </label>
+      <label class="select-box" title="Select for handoff"><input type="checkbox" class="result-select"><span></span></label>
       <button class="result-open" type="button">
         <div class="result-thumb" aria-hidden="true"><span class="thumb-label"></span></div>
         <div class="result-copy">

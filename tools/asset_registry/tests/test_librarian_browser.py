@@ -8,7 +8,11 @@ LIB = ROOT / "tools/asset_registry/librarian"
 
 class LibrarianBrowserContractTests(unittest.TestCase):
     def test_required_browser_files_exist(self):
-        for name in ("index.html", "styles.css", "app.js", "state.js", "registry.js", "search.js", "render.js", "selection.js", "preview.js", "preview3d.js", "README.md", "SOURCE_PATHS.md", "SITE_QA.md", "RETURN.md", "BUILD_MANIFEST.json", "CHANGELOG.md"):
+        for name in (
+            "index.html", "styles.css", "app.js", "state.js", "registry.js", "search.js",
+            "render.js", "selection.js", "preview.js", "preview3d.js", "thumb3d.js",
+            "README.md", "SOURCE_PATHS.md", "SITE_QA.md", "RETURN.md", "BUILD_MANIFEST.json", "CHANGELOG.md",
+        ):
             self.assertTrue((LIB / name).is_file(), name)
 
     def test_html_exposes_v12_daily_tool_controls(self):
@@ -16,19 +20,21 @@ class LibrarianBrowserContractTests(unittest.TestCase):
         for control_id in (
             "searchInput", "kindFilter", "packFilter", "collectionFilter", "formatFilter",
             "dependencyFilter", "problemFilter", "rigFilter", "animatedFilter", "clipFilter",
-            "jointFilter", "listViewButton", "galleryViewButton", "resultList",
+            "jointFilter", "filtersToggle", "listViewButton", "galleryViewButton", "resultList",
             "copyPath", "copyAssetId", "copyRaw", "openRaw", "openLatestRaw",
             "previewCanvas", "imagePreview", "audioPlayer", "resetCamera", "fitCamera",
             "wireframeToggle", "autoplayToggle", "clipSelect", "problemFacts",
-            "selectionTray", "trayItems", "consumerSelect", "copyHandoff", "downloadHandoff",
+            "selectionButton", "selectionTray", "selectionClose", "selectionDrawerCount",
+            "trayItems", "consumerSelect", "copyHandoff", "downloadHandoff",
+            "detailPanel", "detailClose", "technicalToggle", "technicalDetails",
         ):
             self.assertIn(f'id="{control_id}"', html, control_id)
-        self.assertIn("AI Assistant · optional / unavailable in v1.2 Core", html)
         self.assertNotIn('id="librarianQuestion"', html)
         self.assertNotIn('id="copyLibrarianPacket"', html)
 
     def test_browser_reuses_canonical_registry_and_is_read_only(self):
-        js = "\n".join((LIB / name).read_text(encoding="utf-8") for name in ("app.js", "state.js", "registry.js", "search.js", "render.js", "selection.js", "preview.js", "preview3d.js"))
+        names = ("app.js", "state.js", "registry.js", "search.js", "render.js", "selection.js", "preview.js", "preview3d.js", "thumb3d.js")
+        js = "\n".join((LIB / name).read_text(encoding="utf-8") for name in names)
         self.assertIn("../../../registry/assets/v1", js)
         self.assertIn("../consumer_profiles.json", js)
         self.assertIn("catalog.jsonl", js)
@@ -45,14 +51,27 @@ class LibrarianBrowserContractTests(unittest.TestCase):
         self.assertNotIn("DELETE", js)
 
     def test_preview_support_is_format_specific_and_lazy(self):
-        js = "\n".join((LIB / name).read_text(encoding="utf-8") for name in ("app.js", "state.js", "registry.js", "search.js", "render.js", "selection.js", "preview.js", "preview3d.js"))
+        names = ("app.js", "state.js", "registry.js", "search.js", "render.js", "selection.js", "preview.js", "preview3d.js", "thumb3d.js")
+        js = "\n".join((LIB / name).read_text(encoding="utf-8") for name in names)
         self.assertIn("render3D", js)
         self.assertIn("renderImage", js)
         self.assertIn("renderAudio", js)
+        self.assertIn("attach3DThumbnail", js)
+        self.assertIn("IntersectionObserver", js)
         self.assertIn("preload=\"metadata\"", (LIB / "index.html").read_text(encoding="utf-8"))
         self.assertIn("img.loading = 'lazy'", js)
         self.assertIn("ensureRigFacts", js)
         self.assertIn("ensureProblems", js)
+
+    def test_usability_pass_hides_clutter_behind_drawers(self):
+        html = (LIB / "index.html").read_text(encoding="utf-8")
+        css = (LIB / "styles.css").read_text(encoding="utf-8")
+        self.assertIn('class="drawer detail-drawer"', html)
+        self.assertIn('class="drawer selection-drawer"', html)
+        self.assertIn('id="advancedFilters"', html)
+        self.assertIn('id="technicalDetails"', html)
+        self.assertIn(".drawer.open", css)
+        self.assertNotIn("position:sticky;bottom:0", css.replace(" ", ""))
 
     def test_expected_consumers_remain_profile_driven_candidate_only(self):
         profiles = json.loads((ROOT / "tools/asset_registry/consumer_profiles.json").read_text(encoding="utf-8"))["profiles"]
@@ -62,7 +81,8 @@ class LibrarianBrowserContractTests(unittest.TestCase):
             self.assertEqual(profiles[consumer_id]["selectionStatus"], "candidate-only")
 
     def test_static_core_has_no_llm_or_api_key_dependency(self):
-        text = "\n".join((LIB / name).read_text(encoding="utf-8", errors="ignore") for name in ("index.html", "app.js", "state.js", "registry.js", "search.js", "render.js", "selection.js", "preview.js", "preview3d.js", "styles.css")).lower()
+        names = ("index.html", "app.js", "state.js", "registry.js", "search.js", "render.js", "selection.js", "preview.js", "preview3d.js", "thumb3d.js", "styles.css")
+        text = "\n".join((LIB / name).read_text(encoding="utf-8", errors="ignore") for name in names).lower()
         for forbidden in ("api.openai.com", "authorization: bearer", "sk-proj-", "openai_api_key", "anthropic_api_key", "claude"):
             self.assertNotIn(forbidden, text)
         self.assertNotIn("kfb.asset-librarian-request.v1", text)
