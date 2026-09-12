@@ -1,10 +1,14 @@
 #!/usr/bin/env python3
-"""Deterministic AR1+AR2+AR3 KFB Asset Registry builder.
+"""Deterministic AR1+AR2+AR3+AR4 KFB Asset Registry builder.
 
 AR1 records exact Git inventory facts for loadable assets.
 AR2 adds deterministic structural packs and explicit model dependency resolution.
 AR3 projects the existing media/kfb/kfb-index.json deck contract into small shards.
-Semantic gameplay roles, licenses, donor suitability, and inferred deck groupings remain out of scope.
+AR4 adds stale-output cleanup and a deterministic delta against the previous
+canonical registry committed in Git HEAD.
+
+Semantic gameplay roles, licenses, donor suitability, rig compatibility, and
+inferred deck groupings remain out of scope.
 
 Same commit + same config + same override files => byte-identical output.
 """
@@ -12,6 +16,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import shutil
 import subprocess
 import sys
 from collections import Counter, defaultdict
@@ -24,6 +29,7 @@ if str(HERE) not in sys.path:
     sys.path.insert(0, str(HERE))
 
 from decks import build_decks
+from delta import build_delta, read_previous_registry
 from dependencies import duplicate_name_problems, resolve_all_models
 from packs import assign_packs
 
@@ -39,20 +45,49 @@ KIND_BY_EXTENSION = {
     **{ext: "audio" for ext in AUDIO_EXTS},
 }
 
+GENERATED_FILES = {
+    "manifest.json",
+    "summary.md",
+    "catalog.jsonl",
+    "problems.json",
+    "delta.json",
+}
+GENERATED_DIRS = {"kinds", "packs", "decks"}
+
 
 def _git(repo_root: Path, *args: str) -> str:
-    proc = subprocess.run(["git", *args], cwd=repo_root, check=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
+    proc = subprocess.run(
+        ["git", *args],
+        cwd=repo_root,
+        check=True,
+        stdout=subprocess.PIPE,
+        stderr=subprocess.PIPE,
+        text=True,
+    )
     return proc.stdout.strip()
 
 
 def _git_bytes(repo_root: Path, *args: str) -> bytes:
-    proc = subprocess.run(["git", *args], cwd=repo_root, check=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+    proc = subprocess.run(
+        ["git", *args],
+        cwd=repo_root,
+        check=True,
+        stdout=subprocess.PIPE,
+        stderr=subprocess.PIPE,
+    )
     return proc.stdout
 
 
 def find_repo_root(start: Path | None = None) -> Path:
     start = (start or Path.cwd()).resolve()
-    out = subprocess.run(["git", "rev-parse", "--show-toplevel"], cwd=start, check=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True).stdout.strip()
+    out = subprocess.run(
+        ["git", "rev-parse", "--show-toplevel"],
+        cwd=start,
+        check=True,
+        stdout=subprocess.PIPE,
+        stderr=subprocess.PIPE,
+        text=True,
+    ).stdout.strip()
     return Path(out)
 
 
@@ -116,12 +151,14 @@ def git_tree_entries(repo_root: Path, roots: list[str]) -> list[dict]:
         size_text = size_b.decode("ascii").strip()
         if size_text == "-":
             continue
-        entries.append({
-            "mode": mode,
-            "blobSha": sha_b.decode("ascii"),
-            "sizeBytes": int(size_text),
-            "path": path_bytes.decode("utf-8", errors="strict"),
-        })
+        entries.append(
+            {
+                "mode": mode,
+                "blobSha": sha_b.decode("ascii"),
+                "sizeBytes": int(size_text),
+                "path": path_bytes.decode("utf-8", errors="strict"),
+            }
+        )
     entries.sort(key=lambda item: item["path"])
     return entries
 
@@ -161,7 +198,23 @@ def make_record(entry: dict, *, repo: str, commit: str, roots: list[str]) -> dic
 
 def _write_json(path: Path, value: object) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
-    path.write_text(json.dumps(value, ensure_ascii=False, indent=2, sort_keys=True) + "\n", encoding="utf-8")
+    path.write_text(
+        json.dumps(value, ensure_ascii=False, indent=2, sort_keys=True) + "\n",
+        encoding="utf-8",
+    )
+
+
+def _prepare_output_dir(out_dir: Path) -> None:
+    """Remove only generated outputs; preserve README and any future hand-owned files."""
+    out_dir.mkdir(parents=True, exist_ok=True)
+    for name in GENERATED_FILES:
+        path = out_dir / name
+        if path.exists():
+            path.unlink()
+    for name in GENERATED_DIRS:
+        path = out_dir / name
+        if path.exists():
+            shutil.rmtree(path)
 
 
 def _pack_outputs(out_dir: Path, packs: dict[str, dict], records: list[dict]) -> None:
@@ -199,13 +252,19 @@ def build_registry(repo_root: Path, config: dict, out_dir: Path | None = None) -
     repo = config["sourceRepo"]
     roots = list(config["roots"])
     exclude_prefixes = list(config.get("excludePrefixes", []))
-    out_dir = out_dir or (repo_root / config["output"])
+    output_rel = config["output"]
+    out_dir = out_dir or (repo_root / output_rel)
 
     commit = _git(repo_root, "rev-parse", "HEAD")
     commit_time = _git(repo_root, "show", "-s", "--format=%cI", "HEAD")
+    previous = read_previous_registry(repo_root, output_rel)
 
     tree_entries = git_tree_entries(repo_root, roots)
-    tracked_paths = {entry["path"] for entry in tree_entries if not is_excluded(entry["path"], exclude_prefixes)}
+    tracked_paths = {
+        entry["path"]
+        for entry in tree_entries
+        if not is_excluded(entry["path"], exclude_prefixes)
+    }
     records: list[dict] = []
     for entry in tree_entries:
         path = entry["path"]
@@ -249,15 +308,32 @@ def build_registry(repo_root: Path, config: dict, out_dir: Path | None = None) -
         )
 
     problems = dependency_problems + duplicate_name_problems(records) + deck_problems
-    problems.sort(key=lambda p: (p["type"], p.get("assetPath", "") or "", p.get("problemId", "")))
+    problems.sort(
+        key=lambda p: (
+            p["type"],
+            p.get("assetPath", "") or "",
+            p.get("problemId", ""),
+        )
+    )
+
+    delta = build_delta(
+        previous=previous,
+        current_records=records,
+        current_problems=problems,
+        to_commit=commit,
+    )
 
     by_kind: dict[str, list[dict]] = defaultdict(list)
     for rec in records:
         by_kind[rec["kind"]].append(rec)
     counts = Counter(rec["kind"] for rec in records)
     root_counts = Counter(rec["root"] for rec in records)
-    texture_candidates = sum(1 for rec in records if rec.get("hints", {}).get("textureCandidate") is True)
-    dependency_counts = Counter(rec.get("dependencyStatus") for rec in records if rec["kind"] == "model-3d")
+    texture_candidates = sum(
+        1 for rec in records if rec.get("hints", {}).get("textureCandidate") is True
+    )
+    dependency_counts = Counter(
+        rec.get("dependencyStatus") for rec in records if rec["kind"] == "model-3d"
+    )
     problem_counts = Counter(p["type"] for p in problems)
 
     shard_paths = {
@@ -277,9 +353,7 @@ def build_registry(repo_root: Path, config: dict, out_dir: Path | None = None) -
             "packs": config.get("packOverrides"),
             "dependencies": config.get("dependencyOverrides"),
         },
-        "owners": {
-            "deckRegistry": deck_registry,
-        },
+        "owners": {"deckRegistry": deck_registry},
         "counts": {
             "total": len(records),
             "byKind": {kind: counts.get(kind, 0) for kind in sorted(shard_paths)},
@@ -287,7 +361,10 @@ def build_registry(repo_root: Path, config: dict, out_dir: Path | None = None) -
             "packs": len(packs),
             "decks": len(decks),
             "textureCandidates": texture_candidates,
-            "dependencies": {status: dependency_counts.get(status, 0) for status in ("complete", "embedded", "missing", "unresolved")},
+            "dependencies": {
+                status: dependency_counts.get(status, 0)
+                for status in ("complete", "embedded", "missing", "unresolved")
+            },
             "problems": dict(sorted(problem_counts.items())),
         },
         "shards": {
@@ -295,30 +372,43 @@ def build_registry(repo_root: Path, config: dict, out_dir: Path | None = None) -
             "packs": "packs/index.json",
             "decks": "decks/index.json",
             "problems": "problems.json",
+            "delta": "delta.json",
         },
         "catalog": "catalog.jsonl",
         "determinism": "same commit + same config + same override files => byte-identical output",
-        "scope": "AR1 flat inventory + AR2 structural packs/dependencies + AR3 explicit deck adapter; no gameplay roles, license inference or inferred deck grouping",
+        "scope": "AR1 inventory + AR2 structural packs/dependencies + AR3 explicit decks + AR4 deterministic delta; no gameplay roles, license inference, rig compatibility or inferred deck grouping",
     }
 
-    out_dir.mkdir(parents=True, exist_ok=True)
+    _prepare_output_dir(out_dir)
     _write_json(out_dir / "manifest.json", manifest)
     with (out_dir / "catalog.jsonl").open("w", encoding="utf-8", newline="\n") as fh:
         for rec in records:
-            fh.write(json.dumps(rec, ensure_ascii=False, sort_keys=True, separators=(",", ":")) + "\n")
+            fh.write(
+                json.dumps(
+                    rec,
+                    ensure_ascii=False,
+                    sort_keys=True,
+                    separators=(",", ":"),
+                )
+                + "\n"
+            )
     for kind, rel in shard_paths.items():
         _write_json(out_dir / rel, by_kind.get(kind, []))
     _pack_outputs(out_dir, packs, records)
     _deck_outputs(out_dir, decks, deck_index)
-    _write_json(out_dir / "problems.json", {
-        "schema": "kfb.asset-registry.problems.v1",
-        "sourceCommit": commit,
-        "counts": dict(sorted(problem_counts.items())),
-        "problems": problems,
-    })
+    _write_json(
+        out_dir / "problems.json",
+        {
+            "schema": "kfb.asset-registry.problems.v1",
+            "sourceCommit": commit,
+            "counts": dict(sorted(problem_counts.items())),
+            "problems": problems,
+        },
+    )
+    _write_json(out_dir / "delta.json", delta)
 
     summary = [
-        "# KFB Asset Registry v1 · AR1 + AR2 + AR3",
+        "# KFB Asset Registry v1 · AR1 + AR2 + AR3 + AR4",
         "",
         f"Source commit: `{commit}`",
         "",
@@ -332,24 +422,53 @@ def build_registry(repo_root: Path, config: dict, out_dir: Path | None = None) -
     summary.extend(["", "## Model dependency status", "", "| Status | Count |", "|---|---:|"])
     for status in ("complete", "embedded", "missing", "unresolved"):
         summary.append(f"| `{status}` | {dependency_counts.get(status, 0)} |")
-    summary.extend([
-        "",
-        f"Explicit decks: **{len(decks)}** from `{deck_registry}`.",
-        "",
-        f"Problems: **{len(problems)}**. See `problems.json`.",
-        "",
-        "Pack grouping is structural; dependency claims come only from explicit model/material references or reviewed overrides. Deck grouping comes only from the existing explicit deck registry.",
-        "",
-    ])
-    (out_dir / "summary.md").write_text("\n".join(summary), encoding="utf-8", newline="\n")
+    summary.extend(
+        [
+            "",
+            f"Explicit decks: **{len(decks)}** from `{deck_registry}`.",
+            "",
+            f"Problems: **{len(problems)}**. See `problems.json`.",
+            "",
+            "## Delta from previous canonical registry",
+            "",
+            f"From: `{delta.get('fromCommit')}` · To: `{delta.get('toCommit')}`",
+            "",
+        ]
+    )
+    for key, value in delta["counts"].items():
+        summary.append(f"- `{key}`: **{value}**")
+    summary.extend(
+        [
+            "",
+            "Pack grouping is structural; dependency claims come only from explicit model/material references or reviewed overrides. Deck grouping comes only from the existing explicit deck registry.",
+            "",
+        ]
+    )
+    (out_dir / "summary.md").write_text(
+        "\n".join(summary),
+        encoding="utf-8",
+        newline="\n",
+    )
     return manifest
 
 
 def parse_args() -> argparse.Namespace:
-    parser = argparse.ArgumentParser(description="Build deterministic KFB Asset Registry AR1+AR2+AR3")
-    parser.add_argument("--repo-root", help="Git checkout root; defaults to git rev-parse --show-toplevel")
-    parser.add_argument("--config", default="tools/asset_registry/config.json", help="Config path relative to repo root")
-    parser.add_argument("--out", help="Override output directory relative to repo root")
+    parser = argparse.ArgumentParser(
+        description="Build deterministic KFB Asset Registry AR1+AR2+AR3+AR4"
+    )
+    parser.add_argument(
+        "--repo-root",
+        help="Git checkout root; defaults to git rev-parse --show-toplevel",
+    )
+    parser.add_argument(
+        "--config",
+        default="tools/asset_registry/config.json",
+        help="Config path relative to repo root",
+    )
+    parser.add_argument(
+        "--out",
+        help="Override output directory relative to repo root",
+    )
     return parser.parse_args()
 
 
