@@ -1,0 +1,54 @@
+name: KFB Asset Librarian Browser Smoke
+
+on:
+  pull_request:
+    paths:
+      - "tools/asset_registry/librarian/**"
+      - "tools/asset_registry/consumer_profiles.json"
+      - "registry/assets/v1/**"
+      - ".github/scripts/asset-librarian-browser-smoke.mjs"
+      - ".github/workflows/asset-librarian-browser-smoke.yml"
+  push:
+    branches:
+      - main
+    paths:
+      - "tools/asset_registry/librarian/**"
+      - "tools/asset_registry/consumer_profiles.json"
+      - "registry/assets/v1/**"
+      - ".github/scripts/asset-librarian-browser-smoke.mjs"
+      - ".github/workflows/asset-librarian-browser-smoke.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: kfb-asset-librarian-browser-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  browser-smoke:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v7
+        with:
+          fetch-depth: 1
+
+      - name: Show runtime
+        run: |
+          node --version
+          python3 --version
+          command -v google-chrome-stable || command -v google-chrome || command -v chromium || command -v chromium-browser
+
+      - name: Run real browser / WebGL smoke
+        run: node .github/scripts/asset-librarian-browser-smoke.mjs
+
+      - name: Upload browser evidence
+        if: always()
+        uses: actions/upload-artifact@v6
+        with:
+          name: kfb-asset-librarian-browser-smoke
+          path: artifacts/asset-librarian-smoke/
+          if-no-files-found: warn
