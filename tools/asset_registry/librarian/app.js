@@ -477,10 +477,15 @@ async function renderPreview(record) {
     const box = new THREE.Box3().setFromObject(previewRoot);
     const sphere = box.getBoundingSphere(new THREE.Sphere());
     const radius = Math.max(sphere.radius, 0.01);
+    const vFov = THREE.MathUtils.degToRad(camera.fov);
+    const hFov = 2 * Math.atan(Math.tan(vFov / 2) * Math.max(camera.aspect, 0.01));
+    const fitFov = Math.max(0.01, Math.min(vFov, hFov));
+    const distance = (radius / Math.sin(fitFov / 2)) * 1.18;
+    const viewDir = new THREE.Vector3(1, 0.65, 1).normalize();
     controls.target.copy(sphere.center);
-    camera.near = Math.max(radius / 100, 0.001);
-    camera.far = Math.max(radius * 100, 100);
-    camera.position.copy(sphere.center).add(new THREE.Vector3(radius * 1.8, radius * 1.25, radius * 1.8));
+    camera.near = Math.max(radius / 100, distance - radius * 3, 0.001);
+    camera.far = Math.max(distance + radius * 10, 100);
+    camera.position.copy(sphere.center).add(viewDir.multiplyScalar(distance));
     camera.updateProjectionMatrix();
     controls.update();
     if (gltf.animations?.length) {
