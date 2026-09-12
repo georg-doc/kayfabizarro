@@ -62,6 +62,23 @@ jobs:
       - name: Validate rig facts sidecar
         run: python3 tools/asset_registry/rigfacts.py validate
 
+      - name: Smoke-test Librarian query and consumer handoff
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 tools/asset_registry/query.py --kind model-3d --rigged yes --limit 1
+          python3 tools/asset_registry/query.py --kind model-3d --animated yes --consumer combat-arena --limit 1 --handoff > /tmp/kfb-handoff.json
+          python3 - <<'PY'
+          import json
+          data = json.load(open('/tmp/kfb-handoff.json', encoding='utf-8'))
+          assert data['schema'] == 'kfb.asset-handoff.v1'
+          assert data['selectionStatus'] == 'candidate-only'
+          assert data['suitabilityDecision'] == 'owned-by-receiving-consumer'
+          assert data['consumer']['consumerId'] == 'combat-arena'
+          assert len(data['assets']) == 1
+          print(data['assets'][0]['path'])
+          PY
+
       - name: Detect generated registry diff
         id: registry_diff
         if: github.event_name != 'pull_request'
