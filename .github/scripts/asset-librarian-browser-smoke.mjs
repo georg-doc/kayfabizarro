@@ -258,7 +258,7 @@ async function run() {
     await cdp.evaluate(`document.getElementById('toggleSelection').click(); true`);
     await waitForEval(cdp, `document.getElementById('selectionCount').textContent === '1 selected'`, 'selection count');
 
-    for (const consumer of ['combat-arena', 'frankenstein-studio', 'kfb-stunt-car-race', 'animation-lab']) {
+    for (const consumer of ['combat-arena', 'frankenstein-studio', 'stunt-car-race', 'animation-lab']) {
       const value = await cdp.evaluate(`(() => {
         const select = document.getElementById('consumerSelect');
         select.value = ${JSON.stringify(consumer)};
@@ -282,7 +282,7 @@ async function run() {
         externalGltf: { path: ASSETS.externalGltf, previewStatus: external.status, canvas: externalCanvas },
         animated: { path: ASSETS.animated, previewStatus: animated.status, canvas: animatedCanvas },
       },
-      handoffProfilesChecked: ['combat-arena', 'frankenstein-studio', 'kfb-stunt-car-race', 'animation-lab'],
+      handoffProfilesChecked: ['combat-arena', 'frankenstein-studio', 'stunt-car-race', 'animation-lab'],
       consoleErrors: cdp.consoleErrors,
       runtimeExceptions: cdp.exceptions,
       result: 'PASS',
