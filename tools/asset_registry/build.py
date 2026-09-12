@@ -1,9 +1,10 @@
 #!/usr/bin/env python3
-"""Deterministic AR1+AR2 KFB Asset Registry builder.
+"""Deterministic AR1+AR2+AR3 KFB Asset Registry builder.
 
 AR1 records exact Git inventory facts for loadable assets.
 AR2 adds deterministic structural packs and explicit model dependency resolution.
-Semantic gameplay roles, licenses, donor suitability, and deck semantics remain out of scope.
+AR3 projects the existing media/kfb/kfb-index.json deck contract into small shards.
+Semantic gameplay roles, licenses, donor suitability, and inferred deck groupings remain out of scope.
 
 Same commit + same config + same override files => byte-identical output.
 """
@@ -22,6 +23,7 @@ HERE = Path(__file__).resolve().parent
 if str(HERE) not in sys.path:
     sys.path.insert(0, str(HERE))
 
+from decks import build_decks
 from dependencies import duplicate_name_problems, resolve_all_models
 from packs import assign_packs
 
@@ -99,7 +101,7 @@ def raw_url(repo: str, ref: str, path: str) -> str:
 
 
 def git_tree_entries(repo_root: Path, roots: list[str]) -> list[dict]:
-    """Read all tracked blobs under roots; non-asset files are retained for dependency existence checks."""
+    """Read all tracked blobs under roots; non-asset files are retained for existence checks."""
     payload = _git_bytes(repo_root, "ls-tree", "-r", "-l", "-z", "HEAD", "--", *roots)
     entries: list[dict] = []
     for raw in payload.split(b"\0"):
@@ -187,6 +189,12 @@ def _pack_outputs(out_dir: Path, packs: dict[str, dict], records: list[dict]) ->
     _write_json(out_dir / "packs" / "index.json", index)
 
 
+def _deck_outputs(out_dir: Path, decks: list[dict], index: dict) -> None:
+    _write_json(out_dir / "decks" / "index.json", index)
+    for deck in decks:
+        _write_json(out_dir / "decks" / f"{deck['deckId']}.json", deck)
+
+
 def build_registry(repo_root: Path, config: dict, out_dir: Path | None = None) -> dict:
     repo = config["sourceRepo"]
     roots = list(config["roots"])
@@ -215,8 +223,33 @@ def build_registry(repo_root: Path, config: dict, out_dir: Path | None = None) -
         tracked_paths=tracked_paths,
         overrides=dependency_overrides,
     )
-    problems = dependency_problems + duplicate_name_problems(records)
-    problems.sort(key=lambda p: (p["type"], p.get("assetPath", ""), p.get("problemId", "")))
+
+    decks: list[dict] = []
+    deck_index: dict = {
+        "schema": "kfb.asset-deck-index.v1",
+        "sourceCommit": commit,
+        "count": 0,
+        "decks": [],
+        "sets": [],
+        "rules": [],
+    }
+    deck_problems: list[dict] = []
+    deck_registry = config.get("deckRegistry")
+    deck_root = config.get("deckRoot")
+    if deck_registry and deck_root:
+        deck_tree_entries = git_tree_entries(repo_root, [deck_root])
+        deck_tracked_paths = {entry["path"] for entry in deck_tree_entries}
+        decks, deck_index, deck_problems = build_decks(
+            repo_root,
+            registry_path=deck_registry,
+            deck_root=deck_root,
+            tracked_paths=deck_tracked_paths,
+            repo=repo,
+            commit=commit,
+        )
+
+    problems = dependency_problems + duplicate_name_problems(records) + deck_problems
+    problems.sort(key=lambda p: (p["type"], p.get("assetPath", "") or "", p.get("problemId", "")))
 
     by_kind: dict[str, list[dict]] = defaultdict(list)
     for rec in records:
@@ -244,19 +277,28 @@ def build_registry(repo_root: Path, config: dict, out_dir: Path | None = None) -
             "packs": config.get("packOverrides"),
             "dependencies": config.get("dependencyOverrides"),
         },
+        "owners": {
+            "deckRegistry": deck_registry,
+        },
         "counts": {
             "total": len(records),
             "byKind": {kind: counts.get(kind, 0) for kind in sorted(shard_paths)},
             "byRoot": {root: root_counts.get(root, 0) for root in roots},
             "packs": len(packs),
+            "decks": len(decks),
             "textureCandidates": texture_candidates,
             "dependencies": {status: dependency_counts.get(status, 0) for status in ("complete", "embedded", "missing", "unresolved")},
             "problems": dict(sorted(problem_counts.items())),
         },
-        "shards": {**shard_paths, "packs": "packs/index.json", "problems": "problems.json"},
+        "shards": {
+            **shard_paths,
+            "packs": "packs/index.json",
+            "decks": "decks/index.json",
+            "problems": "problems.json",
+        },
         "catalog": "catalog.jsonl",
         "determinism": "same commit + same config + same override files => byte-identical output",
-        "scope": "AR1 flat inventory + AR2 structural packs and explicit model dependencies; no gameplay roles, license inference or deck semantics",
+        "scope": "AR1 flat inventory + AR2 structural packs/dependencies + AR3 explicit deck adapter; no gameplay roles, license inference or inferred deck grouping",
     }
 
     out_dir.mkdir(parents=True, exist_ok=True)
@@ -267,6 +309,7 @@ def build_registry(repo_root: Path, config: dict, out_dir: Path | None = None) -
     for kind, rel in shard_paths.items():
         _write_json(out_dir / rel, by_kind.get(kind, []))
     _pack_outputs(out_dir, packs, records)
+    _deck_outputs(out_dir, decks, deck_index)
     _write_json(out_dir / "problems.json", {
         "schema": "kfb.asset-registry.problems.v1",
         "sourceCommit": commit,
@@ -275,11 +318,11 @@ def build_registry(repo_root: Path, config: dict, out_dir: Path | None = None) -
     })
 
     summary = [
-        "# KFB Asset Registry v1 · AR1 + AR2",
+        "# KFB Asset Registry v1 · AR1 + AR2 + AR3",
         "",
         f"Source commit: `{commit}`",
         "",
-        f"Total indexed assets: **{len(records)}** · packs: **{len(packs)}**",
+        f"Total indexed assets: **{len(records)}** · packs: **{len(packs)}** · explicit decks: **{len(decks)}**",
         "",
         "| Kind | Count |",
         "|---|---:|",
@@ -289,13 +332,21 @@ def build_registry(repo_root: Path, config: dict, out_dir: Path | None = None) -
     summary.extend(["", "## Model dependency status", "", "| Status | Count |", "|---|---:|"])
     for status in ("complete", "embedded", "missing", "unresolved"):
         summary.append(f"| `{status}` | {dependency_counts.get(status, 0)} |")
-    summary.extend(["", f"Problems: **{len(problems)}**. See `problems.json`.", "", "Pack grouping is structural; dependency claims come only from explicit model/material references or reviewed overrides.", ""])
+    summary.extend([
+        "",
+        f"Explicit decks: **{len(decks)}** from `{deck_registry}`.",
+        "",
+        f"Problems: **{len(problems)}**. See `problems.json`.",
+        "",
+        "Pack grouping is structural; dependency claims come only from explicit model/material references or reviewed overrides. Deck grouping comes only from the existing explicit deck registry.",
+        "",
+    ])
     (out_dir / "summary.md").write_text("\n".join(summary), encoding="utf-8", newline="\n")
     return manifest
 
 
 def parse_args() -> argparse.Namespace:
-    parser = argparse.ArgumentParser(description="Build deterministic KFB Asset Registry AR1+AR2")
+    parser = argparse.ArgumentParser(description="Build deterministic KFB Asset Registry AR1+AR2+AR3")
     parser.add_argument("--repo-root", help="Git checkout root; defaults to git rev-parse --show-toplevel")
     parser.add_argument("--config", default="tools/asset_registry/config.json", help="Config path relative to repo root")
     parser.add_argument("--out", help="Override output directory relative to repo root")
