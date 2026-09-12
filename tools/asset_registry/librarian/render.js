@@ -165,7 +165,7 @@ export async function showDetail(id) {
   $('detailBadges').replaceChildren();
   if (record.packId) $('detailBadges').append(badge(record.packId));
   if (record.collectionPath) $('detailBadges').append(badge(record.collectionPath));
-  const dep = depBadge(record); if (dep) $('detailBadges').append(dep);
+  if (record.dependencyStatus) $('detailBadges').append(badge(record.dependencyStatus, ['missing', 'unresolved'].includes(record.dependencyStatus) ? 'warn' : 'ok'));
 
   $('openRaw').href = record.source?.rawPinned || '#';
   $('openLatestRaw').href = record.source?.rawLatest || '#';
