@@ -1,0 +1,131 @@
+name: Refresh KFB Asset Registry
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "media/2D_Assets/**"
+      - "media/3D_Assets/**"
+      - "media/kfb/**"
+      - "tools/asset_registry/**"
+      - ".github/workflows/asset-registry.yml"
+      - "!media/3D_Assets/CATALOG/**"
+      - "!registry/assets/v1/**"
+  pull_request:
+    paths:
+      - "media/2D_Assets/**"
+      - "media/3D_Assets/**"
+      - "media/kfb/**"
+      - "tools/asset_registry/**"
+      - ".github/workflows/asset-registry.yml"
+      - "!media/3D_Assets/CATALOG/**"
+      - "!registry/assets/v1/**"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: kfb-asset-registry-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build-validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Run Asset Registry tests
+        run: python3 -m unittest discover -s tools/asset_registry/tests -v
+
+      - name: Build canonical registry
+        run: python3 tools/asset_registry/build.py
+
+      - name: Validate canonical registry
+        run: python3 tools/asset_registry/validate.py
+
+      - name: Detect generated registry diff
+        id: registry_diff
+        if: github.event_name != 'pull_request'
+        shell: bash
+        run: |
+          if [[ -n "$(git status --porcelain -- registry/assets/v1)" ]]; then
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Update reviewable bot PR
+        if: >-
+          github.event_name != 'pull_request' &&
+          github.ref == 'refs/heads/main' &&
+          steps.registry_diff.outputs.changed == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          BOT_BRANCH: bot/asset-registry-update
+          SOURCE_SHA: ${{ github.sha }}
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          tmpdir="$(mktemp -d)"
+          mkdir -p "$tmpdir/registry/assets"
+          cp -a registry/assets/v1 "$tmpdir/registry/assets/v1"
+
+          git reset --hard HEAD
+          git clean -fd -- registry/assets/v1
+          git switch -C "$BOT_BRANCH"
+
+          rm -rf registry/assets/v1
+          mkdir -p registry/assets
+          cp -a "$tmpdir/registry/assets/v1" registry/assets/v1
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add registry/assets/v1
+          git commit -m "chore: refresh KFB Asset Registry"
+          git push --force origin "HEAD:$BOT_BRANCH"
+
+          body_file="$(mktemp)"
+          cat > "$body_file" <<EOF
+          ## KFB Asset Registry refresh
+
+          Generated deterministically from source commit \`$SOURCE_SHA\` by the **Refresh KFB Asset Registry** workflow.
+
+          Review the generated changes, especially:
+
+          - \`registry/assets/v1/delta.json\`
+          - \`registry/assets/v1/problems.json\`
+          - \`registry/assets/v1/summary.md\`
+
+          This workflow-owned branch never writes generated registry output directly to \`main\`.
+          EOF
+
+          pr_number="$(gh pr list \
+            --head "$BOT_BRANCH" \
+            --base main \
+            --state open \
+            --json number \
+            --jq '.[0].number // empty')"
+
+          if [[ -z "$pr_number" ]]; then
+            gh pr create \
+              --head "$BOT_BRANCH" \
+              --base main \
+              --title "chore: refresh KFB Asset Registry" \
+              --body-file "$body_file"
+          else
+            gh pr edit "$pr_number" \
+              --title "chore: refresh KFB Asset Registry" \
+              --body-file "$body_file"
+          fi
