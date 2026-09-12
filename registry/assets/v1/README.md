@@ -2,7 +2,16 @@
 
 This directory is the output target of `tools/asset_registry/build.py`.
 
-**Status on this branch:** AR1 generator implemented; generated catalog files are intentionally not hand-authored.
-The first real repo build must create `manifest.json`, `catalog.jsonl`, `summary.md` and `kinds/*.json` from the checked-out commit.
+**Status on the AR2 branch:** AR1 flat inventory plus AR2 structural packs/dependency resolver are implemented; generated catalog files are intentionally not hand-authored.
 
-Do not edit generated records manually. Later curated exceptions belong in an explicit override layer, not here.
+A real repo build creates:
+
+- `manifest.json`
+- `catalog.jsonl`
+- `summary.md`
+- `problems.json`
+- `kinds/*.json`
+- `packs/index.json`
+- `packs/<pack-id>.json`
+
+Do not edit generated records manually. Curated exceptions live under `tools/asset_registry/overrides/` with explicit provenance.
