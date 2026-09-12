@@ -70,6 +70,7 @@ Consumer profiles in `consumer_profiles.json` currently cover:
 - `animation-lab`
 - `frankenstein-studio`
 - `combat-arena`
+- `stunt-car-race`
 - `generic-runtime`
 
 Every exported `kfb.asset-handoff.v1` has `selectionStatus: candidate-only`. The receiving consumer remains owner of suitability and integration.
@@ -78,6 +79,7 @@ Every exported `kfb.asset-handoff.v1` has `selectionStatus: candidate-only`. The
 
 - **Frankenstein Studio:** `skills/kfb-frankensteining_v1.md` remains authoritative. Librarian search replaces the old manual asset-library lookup; donor quality, island measurements, mounting frame and visual acceptance stay downstream.
 - **Combat Arena:** the existing Combat Arena modules remain authoritative. Librarian results are candidates only; roster decisions, measured body dimensions, clip/locomotion mapping, gaze/orientation and gameplay testing remain downstream.
+- **KFB Stunt Car Race:** `georg-doc/KFB-Stunt-Car-Race` remains implementation SSOT. `kayfabizarro` remains asset source/discovery; the receiving race, stunt, garage/hub or vehicle module owns integration and tested gameplay use.
 - **Animation Lab:** rig facts help shortlist models, but playback/pose/retarget checks remain downstream.
 - Future consumers can add a small profile without changing Registry ownership.
 
@@ -105,7 +107,8 @@ Example queries:
 python3 tools/asset_registry/query.py knight --kind model-3d --rigged yes
 python3 tools/asset_registry/query.py --kind model-3d --animated yes --clip walk --consumer animation-lab
 python3 tools/asset_registry/query.py booster --consumer frankenstein-studio --handoff
-python3 tools/asset_registry/query.py --pack monster-cute-cubes --consumer combat-arena --handoff
+python3 tools/asset_registry/query.py monster --consumer combat-arena --handoff
+python3 tools/asset_registry/query.py ramp --consumer stunt-car-race --handoff
 ```
 
 ## Generated outputs
@@ -130,6 +133,33 @@ registry/assets/v1/
     ├── index.json
     └── <deck-id>.json
 ```
+
+## Tested result · real GitHub Actions · 2026-09-12
+
+AR5 passed the full repository workflow on GitHub Actions:
+
+- **18 / 18 tests passing**;
+- canonical Registry validator: **OK**;
+- rig sidecar validator: **OK**;
+- Librarian query + `combat-arena` candidate handoff smoke test: **OK**.
+
+Current real inventory remains 12,767 assets: 6,442 images, 4,642 models and 1,683 audio files across 99 structural packs plus four explicit decks.
+
+Rig sidecar across all 4,642 models:
+
+- 4,215 GLTF/GLB models parsed successfully;
+- 372 models contain skins/rigs;
+- 415 models contain animation channels;
+- 115 OBJ models are explicitly `not-applicable` for rig parsing;
+- 312 other model formats remain explicitly `unresolved`;
+- **0 rig parse errors**.
+
+The real smoke test found, among others:
+
+- rigged query result: `media/3D_Assets/KayKit_Mystery_Series6/7 - January 2026 - 4GTN/4GTN.glb` (`skin=true`, 23 joints);
+- animated `combat-arena` handoff candidate: `media/3D_Assets/MonsterPack_Quaternius/Big/glTF/Alien.gltf`.
+
+The second item is deliberately a **candidate-only** result, not a claim that the Alien is already Combat Arena compatible.
 
 ## Provenance / ownership rule
 
