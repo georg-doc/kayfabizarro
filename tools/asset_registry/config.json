@@ -1,0 +1,12 @@
+{
+  "schema": "kfb.asset-registry.config.v1",
+  "sourceRepo": "georg-doc/kayfabizarro",
+  "roots": [
+    "media/2D_Assets",
+    "media/3D_Assets"
+  ],
+  "excludePrefixes": [
+    "media/3D_Assets/CATALOG/"
+  ],
+  "output": "registry/assets/v1"
+}
