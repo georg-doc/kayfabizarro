@@ -132,6 +132,67 @@ Benchmark `dannylimanseta/tinyskies` against current Travel for:
 
 Planned KFB extension: deck/JSON-seeded coherent world moods for the 56 cards + cover. Global deck mood should drive a harmonized palette/family, while local biome fields drive spatial variation, props and later NPC/enemy preferences. Mood and biome remain separate axes.
 
+## Future connected-world concepts
+
+### KFB Infinite Canvas / Museum · portal-entered instances
+
+Status: `PRODUCT CONCEPT / FUTURE`, not current implementation scope.
+
+Core idea: the Travel/Overworld terrain may contain portals, holes, doors or other spatial entry points that lead into separate game/content instances. The instance owns its own internal runtime; the outer world only owns the entry/return transition and does not absorb the inner runtime's responsibilities.
+
+Planned instance families include:
+
+#### Combat Arena instance
+
+A terrain portal/door/hole may enter the existing Combat Arena as a separate instance.
+
+Possible vertical/world structure inside the Arena:
+
+- level elevator / platformer progression;
+- paternoster-style vertical circulation;
+- spindle / rotating central structure;
+- skydome gallery as a layered or vertical exhibition/combat space.
+
+Combat Arena remains its own implementation SSOT and combat/runtime owner. Travel/Overworld only provides the gateway and return seam.
+
+#### KFB Museum / Infinite Canvas instance
+
+The museum organizes KFB content as rooms and levels, especially decks/cards, while preserving the idea that semantic/content relations can become spatial transitions.
+
+Planned spatial grammar:
+
+- one deck may map to one room/level cluster;
+- cube/dice logic may organize rooms fractally;
+- a page/room may expose four walls;
+- each wall may present a 2×2 card arrangement, yielding four cards per wall/page surface;
+- card selection may transition into a dedicated 3D Card Viewer room;
+- the Card Viewer should reuse/adapt the existing 3D rotation/view logic from Georg's earlier `KFB Time Capsule` work rather than rebuilding equivalent interaction from scratch;
+- `KFB Time Capsule` is currently a donor reference by product name only; exact source/path/revision must be located and pinned before reuse is claimed.
+
+The Museum should be treated as a KFB-specific Infinite Canvas rather than a conventional gallery: decks, cards, rooms, cube/fractal nesting and portals are one navigable structure.
+
+#### Museum game mode / night state
+
+A later game-state variant may allow Combat enemies to appear inside the Museum at night.
+
+This must remain an explicit mode/encounter layer rather than silently turning the Museum runtime into Combat Arena. Shared enemies may be reused from Combat, but enemy AI/combat semantics stay with their established owners/contracts.
+
+Potential split:
+
+- daytime / explore mode: museum, decks, card viewing, discovery;
+- nighttime / game mode: selected Combat enemies enter the Museum instance;
+- transitions preserve Museum content/navigation ownership and reuse Combat-owned enemy/combat behavior through a defined adapter rather than duplication.
+
+#### Portal / instance contract direction
+
+Future implementation should prefer a small generic gateway contract instead of merging runtimes:
+
+`outer world gateway → instance load/enter → instance-local runtime → return/exit → outer world resume`
+
+Likely shared data: instance ID, entry transform, return transform, seed/world/deck context, selected card/deck context and explicit handoff payload. Movement, combat, cards, camera and scene ownership remain singular inside each active instance.
+
+First proof should be one small vertical slice, not a generic metaverse layer: one terrain portal into one existing instance, clean return, preserved state.
+
 ## Booted / parked consumers
 
 ### DocCheck Wissens-Pilli / Interactive Microlearning
@@ -197,3 +258,6 @@ The public Travel-mirror inbox is no longer the planned long-term shared inbox. 
 
 ### 2026-09-13 · CLASSIFICATION
 DocCheck Wissens-Pilli / Interactive Microlearning remains an `UNVERIFIED` project intake. Its target path and source package are known; implementation/runtime promotion remains pending.
+
+### 2026-09-13 · PRODUCT CONCEPT
+Add KFB Infinite Canvas / Museum as a future portal-entered instance family: terrain gateways may enter Combat Arena or a fractal deck/card museum. Museum concept includes cube/dice nesting, 4-wall pages with 2×2 card layouts, a reusable 3D Card Viewer based on the existing `KFB Time Capsule` interaction once its exact source is pinned, and a later nighttime mode where Combat enemies can appear through a defined reuse seam rather than duplicated combat ownership.
