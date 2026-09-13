@@ -1,0 +1,131 @@
+{
+  "schema": "kfb.chat-registry/0.1",
+  "updated": "2026-09-13",
+  "owner": "Georg / KFB",
+  "router": "skills/chat/START_HERE.md",
+  "livingMasterplan": "skills/chat/LIVING_MASTERPLAN.md",
+  "recoveryPath": "skills/chat/RECOVERY_PATH.md",
+  "syncProtocol": "skills/chat/SYNC_PROTOCOL.md",
+  "inboxProtocol": "skills/chat/INBOX_PROTOCOL.md",
+  "privateInboxTarget": "georg-doc/KFB-Production-Inbox",
+  "privateInboxStatus": "PROVISIONING",
+  "legacyPublicIntake": "travel/wip/travel_globe_wsa/_inbox/",
+  "statusVocabulary": [
+    "CURRENT_CANON",
+    "CURRENT_TOOL",
+    "CURRENT_REFERENCE",
+    "CURRENT_PROJECT_SSOT",
+    "LEGACY_REFERENCE",
+    "SUPERSEDED",
+    "ARCHIVED_HISTORY",
+    "UNVERIFIED",
+    "EXPERIMENTAL"
+  ],
+  "entries": [
+    {
+      "id": "session-design-briefing",
+      "kind": "skill",
+      "status": "CURRENT_REFERENCE",
+      "version": "1.2",
+      "path": "skills/session-design-briefing.md",
+      "loadWhen": ["design session", "production planning", "evidence discipline"]
+    },
+    {
+      "id": "kfb-cartoon-animation",
+      "kind": "skill",
+      "status": "CURRENT_REFERENCE",
+      "version": "2.0",
+      "declaredStatus": "canonical-draft",
+      "path": "skills/kfb-cartoon-animation_v2.md",
+      "loadWhen": ["animation", "procedural acting", "cartoon motion", "VFX choreography", "camera choreography"],
+      "consumers": ["animation-lab", "frankenstein-studio", "travel-globe", "stunt-car-race", "combat-arena", "wissens-pilli"]
+    },
+    {
+      "id": "production-inbox",
+      "kind": "coordination",
+      "status": "UNVERIFIED",
+      "repository": "georg-doc/KFB-Production-Inbox",
+      "visibility": "private",
+      "provisioning": true,
+      "bootstrap": "skills/chat/INBOX_REPO_BOOTSTRAP.md",
+      "protocol": "skills/chat/INBOX_PROTOCOL.md",
+      "activeRoot": "_inbox/",
+      "archiveRoot": "_inbox/archiv/",
+      "note": "Target shared production inbox. Becomes active after Georg creates the empty private repository and the bootstrap is applied. Inbox packages never become implementation SSOTs by location alone."
+    },
+    {
+      "id": "kfb-design-bootstrap-v02",
+      "kind": "bootstrap",
+      "status": "LEGACY_REFERENCE",
+      "path": "skills/KFB Setup Game Design/KFB Design-Bootstrap_v02/",
+      "routingSuccessor": "skills/chat/START_HERE.md",
+      "retainConcepts": ["reuse-before-rebuild", "host-contract", "evidence-before-claim", "human-visible-acceptance", "additive-history"],
+      "doNotUseAsCurrentSSOTFor": ["asset inventory", "project status", "module ownership", "current tool versions"]
+    },
+    {
+      "id": "kfb-pet-studio-v12",
+      "kind": "tool-history",
+      "status": "LEGACY_REFERENCE",
+      "path": "skills/KFB PetStudio/KFB Pet Studio v12 (WS0)/",
+      "currentSuccessor": "frankenstein-studio-v16"
+    },
+    {
+      "id": "frankenstein-studio-v16",
+      "kind": "tool",
+      "status": "CURRENT_TOOL",
+      "path": "skills/KFB PetStudio/KFB FrankenStein Studio 16/KFB-v16/",
+      "standalone": "skills/KFB PetStudio/KFB FrankenStein Studio 16/KFB-v16/KFB-FrankenStein-Studio-v16-STANDALONE.html",
+      "toolNode": "skills/chat/tool-nodes/frankenstein-studio.md",
+      "owns": ["actor graft", "look", "material zones", "head/face zones", "pose measurement", "card-rider measurement/export", "weapon attachment/mod presentation measurement"],
+      "doesNotOwn": ["Travel flight physics", "game world movement", "projectile logic", "damage", "runtime combat aim", "consumer-specific world facing"]
+    },
+    {
+      "id": "asset-librarian",
+      "kind": "tool",
+      "status": "CURRENT_TOOL",
+      "path": "tools/asset_registry/librarian/",
+      "live": "https://asset-librarian-v1-2-site-co.kayfabizarro.pages.dev/tools/asset_registry/librarian/",
+      "toolNode": "skills/chat/tool-nodes/asset-librarian.md"
+    },
+    {
+      "id": "travel-globe",
+      "kind": "project",
+      "status": "CURRENT_PROJECT_SSOT",
+      "repository": "georg-doc/KFB-Travel-Globe",
+      "toolNode": "skills/chat/tool-nodes/travel-globe.md",
+      "publicWip": "https://kayfabizarro.pages.dev/travel/wip/travel_globe_wsa/"
+    },
+    {
+      "id": "combat-arena",
+      "kind": "project",
+      "status": "CURRENT_PROJECT_SSOT",
+      "repository": "georg-doc/KFB-Combat-Arena",
+      "toolNode": "skills/chat/tool-nodes/combat-arena.md",
+      "consumer": "skills/chat/consumers/combat-web-chat.md"
+    },
+    {
+      "id": "wissens-pilli",
+      "kind": "project",
+      "status": "UNVERIFIED",
+      "plannedPath": "micro-learning/wissens-pilli/",
+      "currentPublicStaging": "travel/wip/travel_globe_wsa/_inbox/DC MicroLearning WS1/",
+      "plannedPrivateIntake": "georg-doc/KFB-Production-Inbox/_inbox/DC MicroLearning WS1/",
+      "migrationPending": true,
+      "toolNode": "skills/chat/tool-nodes/wissens-pilli.md",
+      "currentInputs": [
+        "BRIEFING_STUDIO_Wissens-Pilli_Preparation_v0.1.md",
+        "CONCEPT_Wissens-Pilli_WS0_SceneAssembly_v0.1.md",
+        "DocCheck_Interactive_Microlearning_Living_Doc_v0.9.md"
+      ],
+      "note": "Intake/source package is present and the intended target path exists as a placeholder, but the implementation SSOT/runtime has not yet been promoted and pinned. Migrate the package to the private production inbox after that repository is provisioned."
+    },
+    {
+      "id": "animation-lab",
+      "kind": "tool",
+      "status": "UNVERIFIED",
+      "toolNode": "skills/chat/tool-nodes/animation-lab.md",
+      "loadWith": ["skills/kfb-cartoon-animation_v2.md"],
+      "note": "Current implementation SSOT/site must be pinned before this node may be promoted to CURRENT_TOOL. FrankenStein Studio decides actor/look/static pose; Animation Lab plays/audits clips and animation behavior."
+    }
+  ]
+}
