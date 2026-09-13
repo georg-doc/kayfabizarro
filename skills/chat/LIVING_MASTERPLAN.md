@@ -193,6 +193,77 @@ Likely shared data: instance ID, entry transform, return transform, seed/world/d
 
 First proof should be one small vertical slice, not a generic metaverse layer: one terrain portal into one existing instance, clean return, preserved state.
 
+### Backlog donor · KFB Comic Card Deck Viewer v4
+
+Status: `CURRENT DONOR / FUTURE EMBED-MODULE CANDIDATE`; not yet a shared runtime module.
+
+Source:
+
+`georg-doc/kayfabizarro/KFB Comic Card Deck Viewer v4 (WS0)/`
+
+Verified capabilities from current docs/history:
+
+- embeddable + standalone deck/PDF viewer for KFB/MedKayfab 2×2 card-page decks;
+- Reader, Gallery, Stack, Coverflow and v4 Full View;
+- deterministic/arithmetic page-to-card layout rather than CV inference;
+- current deck corpus and metadata pipeline are already separated from the viewer presentation;
+- v4 retains a standalone export path while pdf.js/deck corpus remain network-loaded;
+- older v1 branch exposes `KayfabizarroViewer.mount(el, opts)` and headless `.loadDeck(opts)` as an existing module/API donor.
+
+Planned reuse:
+
+- **Travel:** deck/card viewer as an overlay, portal-room or museum/content instance reached from world cards/portals;
+- **Combat:** inspect/review collected cards, deck rewards or gallery content without rebuilding a second card reader;
+- **Museum:** use the existing 2×2 page semantics and viewer logic as content/presentation donor, while the 3D museum owns spatial room/wall placement;
+- **DocCheck:** adapt presentation/design tokens and content source to DocCheck/MedKayfab while preserving the viewer's proven page/card parsing and interaction contracts.
+
+Important boundary: the mature v3/v4 viewer is primarily CSS/Canvas/pdf.js, not a Three.js room. Reuse its deck parsing, views, interaction and module seams instead of trying to turn the existing viewer itself into the museum's 3D scene. 3D room ownership remains with the consuming instance.
+
+Before promotion to a shared module: pin the exact reusable branch/API, verify browser embedding in Travel and Combat hosts, and separate KFB/MedKayfab design skin from viewer core where that seam is real rather than inferred.
+
+### Backlog donor · 3D Conspiracy Iceberg Explorer
+
+Status: `UNVERIFIED PROJECT / STRONG 3D DONOR`; future KFB Conspiracy Deck instance candidate.
+
+Source:
+
+`georg-doc/kayfabizarro/travel/3D Conspiracy Iceberg Explorer/`
+
+Verified donor capabilities from its current documentation:
+
+- Three.js 3D iceberg world with seven depth tiers and 159 content entries;
+- content clustering/categories/status/absurdity plus a curated 28-stop tour;
+- underwater depth atmosphere, bubbles/marine snow, fog and camera light;
+- deterministic node picking, viewport culling and label decluttering;
+- view-agnostic scene contract around `goToAnchor`, anchors and interaction state;
+- standalone build, schema/docs and a dedicated `AtmoEngine` whose sound changes with depth;
+- recursive related/ghost/rabbit-hole content model already exists as a navigation donor.
+
+Planned KFB reuse:
+
+- treat a Conspiracy Deck or clustered conspiracy corpus as an explorable **iceberg instance** entered through a terrain portal/hole rather than flattening it into the main Travel runtime;
+- preserve the existing cluster/tier/depth metaphor as the main spatial grammar;
+- allow Travel to supply the entry/return seam and world/deck context while the Iceberg instance owns its own scene/camera/navigation while active;
+- later introduce an actual submarine/underwater vehicle as an instance-local presentation/locomotion mode rather than embedding submarine physics into the outer Travel owner by accident;
+- reuse the depth/atmo concept for a stronger descent loop, but re-audit rendering/Three.js assumptions before any production import because this donor currently documents Three.js r128 and Claude/DC-specific runtime history rather than current Travel's runtime contract.
+
+### Animation Lab backlog · Swim / underwater locomotion
+
+The Iceberg/submarine direction creates a concrete multi-consumer need for an Animation Lab swim family.
+
+Future animation scope should cover KayKit-compatible characters/rigs through reusable motion profiles, for example:
+
+- swim idle / tread;
+- forward swim;
+- dive / rise;
+- turn / bank underwater;
+- brace / grab / cockpit/submarine variant;
+- optional buoyant follow-through for ears, coat, held prop etc.
+
+This belongs to Animation Lab / `kfb-cartoon-animation` motion ownership, not to the Iceberg scene code. Start from actual available KayKit clip/rig data and current actor profiles; do not assume one skeleton/clip set covers every character until verified.
+
+A good first proof would be one current rigged KayKit character swimming convincingly inside the Iceberg instance, then generalize only after the clip/rig seam is proven.
+
 ## Booted / parked consumers
 
 ### DocCheck Wissens-Pilli / Interactive Microlearning
@@ -261,3 +332,9 @@ DocCheck Wissens-Pilli / Interactive Microlearning remains an `UNVERIFIED` proje
 
 ### 2026-09-13 · PRODUCT CONCEPT
 Add KFB Infinite Canvas / Museum as a future portal-entered instance family: terrain gateways may enter Combat Arena or a fractal deck/card museum. Museum concept includes cube/dice nesting, 4-wall pages with 2×2 card layouts, a reusable 3D Card Viewer based on the existing `KFB Time Capsule` interaction once its exact source is pinned, and a later nighttime mode where Combat enemies can appear through a defined reuse seam rather than duplicated combat ownership.
+
+### 2026-09-13 · DONOR / BACKLOG
+Register `KFB Comic Card Deck Viewer v4 (WS0)` as a future shared card/deck presentation donor for Travel, Combat and the Museum, with a separate DocCheck/MedKayfab design adaptation path. Reuse parsing/view/module contracts; do not confuse the existing CSS/Canvas/pdf.js viewer with the 3D room owner.
+
+### 2026-09-13 · DONOR / BACKLOG
+Register `travel/3D Conspiracy Iceberg Explorer` as a strong future 3D donor for a portal-entered KFB Conspiracy Deck iceberg instance. Preserve its tier/cluster/depth/atmo/navigation ideas, but re-audit its older Three.js/DC runtime before integration. Add submarine exploration as a future instance-local mode and a corresponding reusable KayKit swim-motion family to the Animation Lab backlog.
