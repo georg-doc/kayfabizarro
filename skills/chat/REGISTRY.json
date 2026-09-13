@@ -6,6 +6,8 @@
   "livingMasterplan": "skills/chat/LIVING_MASTERPLAN.md",
   "recoveryPath": "skills/chat/RECOVERY_PATH.md",
   "syncProtocol": "skills/chat/SYNC_PROTOCOL.md",
+  "inboxProtocol": "skills/chat/INBOX_PROTOCOL.md",
+  "sharedIntake": "travel/wip/travel_globe_wsa/_inbox/",
   "statusVocabulary": [
     "CURRENT_CANON",
     "CURRENT_TOOL",
@@ -34,7 +36,7 @@
       "declaredStatus": "canonical-draft",
       "path": "skills/kfb-cartoon-animation_v2.md",
       "loadWhen": ["animation", "procedural acting", "cartoon motion", "VFX choreography", "camera choreography"],
-      "consumers": ["animation-lab", "frankenstein-studio", "travel-globe", "stunt-car-race", "combat-arena"]
+      "consumers": ["animation-lab", "frankenstein-studio", "travel-globe", "stunt-car-race", "combat-arena", "wissens-pilli"]
     },
     {
       "id": "kfb-design-bootstrap-v02",
@@ -85,6 +87,20 @@
       "repository": "georg-doc/KFB-Combat-Arena",
       "toolNode": "skills/chat/tool-nodes/combat-arena.md",
       "consumer": "skills/chat/consumers/combat-web-chat.md"
+    },
+    {
+      "id": "wissens-pilli",
+      "kind": "project",
+      "status": "UNVERIFIED",
+      "plannedPath": "micro-learning/wissens-pilli/",
+      "intake": "travel/wip/travel_globe_wsa/_inbox/DC MicroLearning WS1/",
+      "toolNode": "skills/chat/tool-nodes/wissens-pilli.md",
+      "currentInputs": [
+        "BRIEFING_STUDIO_Wissens-Pilli_Preparation_v0.1.md",
+        "CONCEPT_Wissens-Pilli_WS0_SceneAssembly_v0.1.md",
+        "DocCheck_Interactive_Microlearning_Living_Doc_v0.9.md"
+      ],
+      "note": "Intake/source package is present and the intended target path exists as a placeholder, but the implementation SSOT/runtime has not yet been promoted and pinned."
     },
     {
       "id": "animation-lab",
