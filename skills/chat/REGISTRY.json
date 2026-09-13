@@ -4,6 +4,9 @@
   "owner": "Georg / KFB",
   "router": "skills/chat/START_HERE.md",
   "livingMasterplan": "skills/chat/LIVING_MASTERPLAN.md",
+  "masterplanAddenda": [
+    "skills/chat/masterplan/ACTOR_PLATFORM_V17_WIP_2026-09-13.md"
+  ],
   "recoveryPath": "skills/chat/RECOVERY_PATH.md",
   "syncProtocol": "skills/chat/SYNC_PROTOCOL.md",
   "inboxProtocol": "skills/chat/INBOX_PROTOCOL.md",
@@ -78,6 +81,14 @@
       "toolNode": "skills/chat/tool-nodes/frankenstein-studio.md",
       "owns": ["actor graft", "look", "material zones", "head/face zones", "pose measurement", "card-rider measurement/export", "weapon attachment/mod presentation measurement"],
       "doesNotOwn": ["Travel flight physics", "game world movement", "projectile logic", "damage", "runtime combat aim", "consumer-specific world facing"]
+    },
+    {
+      "id": "frankenstein-studio-v17-wip",
+      "kind": "tool-candidate",
+      "status": "UNVERIFIED",
+      "masterplan": "skills/chat/masterplan/ACTOR_PLATFORM_V17_WIP_2026-09-13.md",
+      "deliveryBrief": "skills/chat/backlog/CLAUDE_DESIGN_V17_ACTOR_PLATFORM_DELIVERABLES_2026-09-13.md",
+      "note": "WIP successor direction only. Do not promote over v16 until source revision, actor/profile exports, talk/viseme behavior, browser evidence, round-trip safety and Georg visual acceptance are pinned."
     },
     {
       "id": "asset-librarian",
