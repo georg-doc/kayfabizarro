@@ -184,7 +184,7 @@ def build(out_dir: Path) -> dict:
         module_records.append(record)
         resources.append(record)
 
-    motions = []
+    motion_map = {}
     actor_motion_counts = Counter()
     for actor in actor_overrides:
         prefix = actor.get("motionPathPrefix")
@@ -196,25 +196,34 @@ def build(out_dir: Path) -> dict:
             facts = rig_by_id.get(asset["assetId"], {})
             for index, clip in enumerate(facts.get("animationClips", [])):
                 name = clip.get("name") or f"Clip {index + 1}"
-                motion = {
-                    "resourceId": f"motion:{asset['assetId']}#{index:03d}",
-                    "kind": "motion",
-                    "motionType": "embedded-clip",
-                    "displayName": name,
-                    "clipName": name,
-                    "status": "AVAILABLE",
-                    "provider": "KayKit",
-                    "rig": "Medium",
-                    "actorRefs": [actor["actorId"]],
-                    "sourceAssetId": asset["assetId"],
-                    "packId": asset.get("packId"),
-                    "animationSet": asset.get("name"),
-                    "source": asset.get("source"),
-                    "provenance": "asset-rigfacts-explicit",
-                }
-                motions.append(motion)
-                actor_motion_counts[actor["actorId"]] += 1
-                resources.append(motion)
+                resource_id = f"motion:{asset['assetId']}#{index:03d}"
+                motion = motion_map.get(resource_id)
+                if motion is None:
+                    motion = {
+                        "resourceId": resource_id,
+                        "kind": "motion",
+                        "motionType": "embedded-clip",
+                        "displayName": name,
+                        "clipName": name,
+                        "status": "AVAILABLE",
+                        "provider": "KayKit",
+                        "rig": "Medium",
+                        "actorRefs": [],
+                        "sourceAssetId": asset["assetId"],
+                        "packId": asset.get("packId"),
+                        "animationSet": asset.get("name"),
+                        "source": asset.get("source"),
+                        "provenance": "asset-rigfacts-explicit",
+                    }
+                    motion_map[resource_id] = motion
+                if actor["actorId"] not in motion["actorRefs"]:
+                    motion["actorRefs"].append(actor["actorId"])
+                    actor_motion_counts[actor["actorId"]] += 1
+
+    motions = list(motion_map.values())
+    for motion in motions:
+        motion["actorRefs"].sort()
+        resources.append(motion)
 
     fx_records = [row for row in module_records if row["kind"] == "fx"]
     for config in configs:
