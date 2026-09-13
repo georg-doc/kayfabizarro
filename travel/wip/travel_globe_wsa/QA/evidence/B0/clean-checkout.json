@@ -1,0 +1,25 @@
+{
+  "context": "macOS Node.js 24.19.0, fresh local Git clone; no browser",
+  "sourceCommit": "0fc5cf5c6a534c0a19dee3869db29dbdbf372a1b",
+  "buildId": "travel-b0-f02ee4850d5fe013",
+  "cleanClone": true,
+  "repeatBuildIdentical": true,
+  "independentCheckoutIdentical": true,
+  "results": [
+    {
+      "task": "tests",
+      "exitCode": 0,
+      "stdout": "\u2714 R0 movement input releases after focus loss, including missing keyup (0.906667ms)\n\u2714 R0 hidden document releases held flight input (0.152667ms)\n\u2714 R0 hover and fire are consumed once; key repeat does not retrigger (0.142792ms)\n\u2714 R0 disable clears movement and fresh input works after enabling (0.932084ms)\n\u2139 tests 4\n\u2139 suites 0\n\u2139 pass 4\n\u2139 fail 0\n\u2139 cancelled 0\n\u2139 skipped 0\n\u2139 todo 0\n\u2139 duration_ms 55.165292\n"
+    },
+    {
+      "task": "build",
+      "exitCode": 0,
+      "stdout": "{\"buildId\":\"travel-b0-f02ee4850d5fe013\",\"files\":140,\"sourceCommit\":\"0fc5cf5c6a534c0a19dee3869db29dbdbf372a1b\",\"dirty\":false}\n"
+    },
+    {
+      "task": "verify",
+      "exitCode": 0,
+      "stdout": "{\n  \"result\": \"PASS\",\n  \"runtimeFiles\": 108,\n  \"literalEsmClosure\": 87,\n  \"remoteModuleSpecifiers\": 9,\n  \"missing\": 0,\n  \"syntax\": \"PASS\",\n  \"json\": \"PASS\",\n  \"buildId\": \"travel-b0-f02ee4850d5fe013\",\n  \"scope\": \"Static source/build checks; computed paths and gameplay require browser evidence.\"\n}\n"
+    }
+  ]
+}
