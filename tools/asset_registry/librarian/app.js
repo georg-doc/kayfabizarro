@@ -4,21 +4,25 @@ import { searchRegistry } from './search.js';
 import { setResultView, renderResults, showDetail, closeDetail } from './render.js';
 import { updateSelectionUI, renderConsumerBoundary, buildHandoff, copyText, downloadJSON } from './selection.js';
 import { fitCamera, setWireframe, playClip, animationState } from './preview.js';
+import { initProductionResources } from './resources-ui.js';
+
+let productionUi;
 
 function closeSelection() {
   $('selectionTray').classList.remove('open');
   $('selectionTray').setAttribute('aria-hidden', 'true');
   $('selectionButton').setAttribute('aria-expanded', 'false');
-  if (!$('detailPanel').classList.contains('open')) $('drawerBackdrop').hidden = true;
+  if (!$('detailPanel').classList.contains('open') && !$('resourceDetailPanel').classList.contains('open')) $('drawerBackdrop').hidden = true;
 }
 function openSelection() {
   closeDetail();
+  productionUi?.closeResourceDetail();
   $('selectionTray').classList.add('open');
   $('selectionTray').setAttribute('aria-hidden', 'false');
   $('selectionButton').setAttribute('aria-expanded', 'true');
   $('drawerBackdrop').hidden = false;
 }
-function closePanels() { closeDetail(); closeSelection(); $('drawerBackdrop').hidden = true; }
+function closePanels() { closeDetail(); closeSelection(); productionUi?.closeResourceDetail(); $('drawerBackdrop').hidden = true; }
 
 export async function runSearch() {
   const result = await searchRegistry();
@@ -48,6 +52,18 @@ function toggleTechnical() {
   $('technicalToggle').textContent = open ? 'Hide technical details' : 'Technical details';
 }
 
+async function openAssetFromResource(assetId, clipName = null) {
+  await productionUi.activateProductionTab('assets');
+  await showDetail(assetId);
+  if (!clipName) return;
+  const select = $('clipSelect');
+  const match = [...select.options].find((node) => node.textContent === clipName);
+  if (!match || match.value === '') return;
+  select.value = match.value;
+  $('autoplayToggle').checked = true;
+  playClip(Number(match.value));
+}
+
 async function bootstrap() {
   try {
     setBusy(true, 'Loading manifest…');
@@ -64,8 +80,11 @@ async function bootstrap() {
   }
 }
 
+productionUi = initProductionResources({ showAsset: openAssetFromResource });
+
 $('searchButton').onclick = () => runSearch().catch(showError);
 $('searchInput').onkeydown = (event) => { if (event.key === 'Enter') runSearch().catch(showError); };
+$('kaykitPreset').onclick = () => { $('searchInput').value = 'KayKit'; $('kindFilter').value = ''; setResultView('gallery'); runSearch().catch(showError); };
 $('resetButton').onclick = resetFilters;
 $('filtersToggle').onclick = toggleFilters;
 $('listViewButton').onclick = () => setResultView('list');
@@ -92,5 +111,7 @@ $('clipSelect').onchange = (event) => { if (event.target.value === '') return; $
 document.addEventListener('kfb-open-asset', (event) => showDetail(event.detail).catch(showError));
 document.addEventListener('keydown', (event) => { if (event.key === 'Escape') closePanels(); });
 
-window.KFBAssetLibrarianV12 = { version:'1.2', runSearch, showDetail, buildHandoff, ensureCatalog, ensureRigFacts, ensureProblems, getState:() => ({ selectedAssetIds:[...state.selected].sort(), activeAssetId:state.active, viewMode:state.viewMode, sourceCommit:state.manifest?.sourceCommit || null }) };
+const publicApi = { version:'1.3', runSearch, showDetail, buildHandoff, activateProductionTab: productionUi.activateProductionTab, ensureCatalog, ensureRigFacts, ensureProblems, getState:() => ({ selectedAssetIds:[...state.selected].sort(), activeAssetId:state.active, viewMode:state.viewMode, sourceCommit:state.manifest?.sourceCommit || null }) };
+window.KFBAssetLibrarianV12 = publicApi;
+window.KFBAssetLibrarianV13 = publicApi;
 updateSelectionUI(); bootstrap();
