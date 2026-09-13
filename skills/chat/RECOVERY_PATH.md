@@ -17,7 +17,8 @@ Do not ask Georg to reconstruct project history from memory when GitHub contains
 4. Open the named project/tool node.
 5. Open the actual implementation SSOT and verify current default-branch HEAD, current open PRs and branches relevant to the task.
 6. Read the project's current start/re-entry docs and current Return before heavy history. Typical order: `WSA_START.md` → project `MASTERPLAN.md`/contract → current `qa/.../RETURN.md` or `_handover/.../START_HERE.md`.
-7. Compare chat briefing claims against GitHub. GitHub wins on implementation state; unresolved product intent is reported rather than guessed.
+7. If the current node/handover names a shared intake job, read only that folder from the private `georg-doc/KFB-Production-Inbox/_inbox/<job-or-project>/`. If the private repo is still `PROVISIONING`, use the explicitly named legacy staging source instead.
+8. Compare chat briefing claims against GitHub. GitHub wins on implementation state; unresolved product intent is reported rather than guessed.
 
 ## Evidence discipline during recovery
 
@@ -25,11 +26,12 @@ Separate:
 
 - last known chat statement;
 - repository implementation state;
+- inbox/input state;
 - tested result;
 - public deployment state;
 - Georg acceptance.
 
-Do not promote one to another.
+Do not promote one to another. Inbox packages are never implementation truth merely because they are present.
 
 ## What to do if documents disagree
 
@@ -54,6 +56,14 @@ Do not promote one to another.
 - Read `WSA_START.md`, `ChatGPT_web/START_HERE.md`, the relevant `_handover/` and current Return/Inbox result.
 - Local Combat instructions supplement the central SOP; they do not replace it.
 
+## Inbox quick recovery
+
+- Target shared mailbox: `georg-doc/KFB-Production-Inbox`.
+- Active work: `_inbox/<job-or-project>/`.
+- Processed history: `_inbox/archiv/<job-or-project>/`.
+- Read only the job folder named by Georg/current routing docs.
+- The receiving project/tool SSOT remains authoritative after handoff.
+
 ## Minimum handoff a dying chat should leave
 
 If possible before stopping, persist:
@@ -65,7 +75,7 @@ If possible before stopping, persist:
 - next accepted slice/gate;
 - any required user approval still outstanding.
 
-Place this in the project's Return/Handover, not only in chat prose.
+Place this in the project's Return/Handover, not only in chat prose. For intake-only jobs, leave the coordination Return inside that job folder and point to the receiving SSOT/PR when available.
 
 ## Recovery success criterion
 
