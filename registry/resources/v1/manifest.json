@@ -1,0 +1,36 @@
+{
+  "assetRegistrySourceCommit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+  "counts": {
+    "actors": 3,
+    "byKind": {
+      "actor": 3,
+      "actor-config": 2,
+      "composition": 1,
+      "composition-module": 1,
+      "fx": 6,
+      "module-reference": 5,
+      "motion": 139,
+      "motion-contract": 1,
+      "rig-config": 1,
+      "rig-module": 5,
+      "vehicle-rig": 3
+    },
+    "byStatus": {
+      "AVAILABLE": 140,
+      "DOCUMENTED_REFERENCE": 14,
+      "WIP": 3,
+      "WIP_CONFIG": 10
+    },
+    "compositions": 1,
+    "configs": 6,
+    "fx": 6,
+    "motions": 139,
+    "resources": 167
+  },
+  "moduleIndex": "tools/KFB-ToolBox/docs/MODULES.json",
+  "ownerRule": "Discovery/index only. Existing tool, actor, rig, animation, FX and consumer owners remain authoritative.",
+  "schema": "kfb.resource-registry.v1",
+  "sourceCommit": "8025ea173ce11b94f9729259e7c76f5d18adb856",
+  "sourceRepo": "georg-doc/kayfabizarro",
+  "toolboxManifest": "tools/KFB-ToolBox/TOOLBOX_MANIFEST.json"
+}
