@@ -39,6 +39,16 @@ Claude Design and dedicated KFB tool sites may author, measure, preview and expo
 
 GitHub is the shared state and handoff bus. Chats do not depend on direct chat-to-chat communication.
 
+### Shared intake
+
+Cross-project briefing/source packages may temporarily enter through the shared inbox documented in `INBOX_PROTOCOL.md`.
+
+Current intake path:
+
+`travel/wip/travel_globe_wsa/_inbox/`
+
+Despite the path, this inbox does not belong to Travel semantically and does not confer ownership. It is staging only. Because `georg-doc/kayfabizarro` is public, no confidential/restricted material belongs there.
+
 ## Current priorities
 
 ### P1 · Travel MVP1 Bath Flight
@@ -112,7 +122,25 @@ Benchmark `dannylimanseta/tinyskies` against current Travel for:
 
 Planned KFB extension: deck/JSON-seeded coherent world moods for the 56 cards + cover. Global deck mood should drive a harmonized palette/family, while local biome fields drive spatial variation, props and later NPC/enemy preferences. Mood and biome remain separate axes.
 
-### P6 · Combat / Stunt
+## Booted / parked consumers
+
+### DocCheck Wissens-Pilli / Interactive Microlearning
+
+Status: `UNVERIFIED` project intake. Not an active Travel slice.
+
+Current intended destination:
+
+`georg-doc/kayfabizarro/micro-learning/wissens-pilli/`
+
+Current intake:
+
+`travel/wip/travel_globe_wsa/_inbox/DC MicroLearning WS1/`
+
+The source package establishes a reusable DocCheck medical microlearning direction and a Studio-preparation slice for CapsuleCarl. FrankenStein Studio prepares/exports the actor; the learner runtime owns cards/scene/interaction; Animation Lab is a later motion consumer. No FrizzleBob measurements may be copied into CapsuleCarl merely because the actor vocabulary is shared.
+
+Before implementation starts, promote the project only after its actual runtime/SSOT/start/return contract is created and pinned. See `skills/chat/tool-nodes/wissens-pilli.md`.
+
+### Combat / Stunt
 
 Combat Arena and Stunt Race remain independent implementation SSOTs and consumers of the shared router/skills. They are not merged into Travel. Re-activate only with an explicit slice.
 
@@ -122,9 +150,10 @@ Combat Arena and Stunt Race remain independent implementation SSOTs and consumer
 - Never silently replace an owner or contract.
 - Reuse measured donors before rebuilding.
 - Tool sites and project repos reference canonical skills; do not duplicate skill bodies.
-- Visible look/feel/timing requires Georg acceptance.
+- Visible look/feel/timing requires Georg acceptance when the project/slice contract requires that human gate.
 - Changelogs and living history are additive; corrections supersede rather than erase.
 - Legacy under `skills/` is evidence/history unless the registry marks it current.
+- Inbox packages are input/staging; they never become implementation truth by location alone.
 
 ## Recovery
 
@@ -144,3 +173,9 @@ A durable Living Masterplan and explicit Recovery Path are required so loss of a
 
 ### 2026-09-13 · DECISION
 Combat Web and other consumer chats synchronize through GitHub state, not copied prompt bundles or direct chat-to-chat assumptions.
+
+### 2026-09-13 · DECISION
+A shared intake/staging inbox is supported for cross-project coordination packages. Inbox location never implies project ownership or SSOT status.
+
+### 2026-09-13 · CLASSIFICATION
+DocCheck Wissens-Pilli / Interactive Microlearning enters the boot as an `UNVERIFIED` project intake. Its target path and source package are known; implementation/runtime promotion remains pending.
