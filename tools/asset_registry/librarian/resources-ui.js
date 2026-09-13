@@ -1,5 +1,9 @@
 const RESOURCE_BASE = '../../../registry/resources/v1';
 const $ = (id) => document.getElementById(id);
+const resourceStyle = document.createElement('link');
+resourceStyle.rel = 'stylesheet';
+resourceStyle.href = './resources.css';
+document.head.append(resourceStyle);
 
 const cache = { manifest:null, actors:null, configs:null, motions:null, fx:null };
 let currentTab = 'assets';
@@ -16,7 +20,6 @@ async function jsonl(url) {
   if (!response.ok) throw new Error(`${response.status} ${response.statusText}: ${url}`);
   return (await response.text()).split(/\r?\n/).filter(Boolean).map((line) => JSON.parse(line));
 }
-
 async function ensureManifest() { if (!cache.manifest) cache.manifest = await json(`${RESOURCE_BASE}/manifest.json`); return cache.manifest; }
 async function ensureActors() { if (!cache.actors) cache.actors = await jsonl(`${RESOURCE_BASE}/actors.jsonl`); return cache.actors; }
 async function ensureRows(tab) {
@@ -27,11 +30,9 @@ async function ensureRows(tab) {
   if (tab === 'fx') { if (!cache.fx) cache.fx = await jsonl(`${RESOURCE_BASE}/fx.jsonl`); return cache.fx; }
   return [];
 }
-
 function badge(text, cls='') { const span=document.createElement('span'); span.className=`badge ${cls}`.trim(); span.textContent=text; return span; }
 function option(value,text) { const node=document.createElement('option'); node.value=value; node.textContent=text; return node; }
 function statusClass(status) { return ['AVAILABLE','CONFIGURED'].includes(status) ? 'ok' : ['WIP','WIP_CONFIG','DOCUMENTED_REFERENCE'].includes(status) ? 'warn' : ''; }
-
 function closeResourceDetail() {
   $('resourceDetailPanel').classList.remove('open');
   $('resourceDetailPanel').setAttribute('aria-hidden','true');
@@ -42,7 +43,6 @@ function openResourceDetail() {
   $('selectionTray').classList.remove('open'); $('selectionTray').setAttribute('aria-hidden','true');
   $('resourceDetailPanel').classList.add('open'); $('resourceDetailPanel').setAttribute('aria-hidden','false'); $('drawerBackdrop').hidden=false;
 }
-
 function resourceSummary(row) {
   if (row.kind === 'actor') { const asset=row.assets?.[0]; return `${row.actorKind || 'actor'} · ${row.motionCount || 0} linked motions${asset ? ` · ${asset.format || 'asset'} body` : ''}`; }
   if (row.kind === 'motion') return `${row.motionType || 'motion'}${row.animationSet ? ` · ${row.animationSet}` : ''}${row.trigger ? ` · trigger ${row.trigger}` : ''}`;
@@ -51,7 +51,6 @@ function resourceSummary(row) {
 }
 function actionButton(label, handler, primary=true) { const button=document.createElement('button'); button.type='button'; button.className=primary?'primary':'quiet'; button.textContent=label; button.onclick=handler; return button; }
 function linkButton(label, href) { const a=document.createElement('a'); a.className='button-link quiet'; a.textContent=label; a.href=href; a.target='_blank'; a.rel='noreferrer'; return a; }
-
 async function showResource(row) {
   openResourceDetail();
   $('resourceDetailKind').textContent=row.kind;
@@ -62,7 +61,6 @@ async function showResource(row) {
   $('resourceDetailBadges').replaceChildren(...badgeNodes);
   $('resourceDetailJson').textContent=JSON.stringify(row,null,2);
   const actions=$('resourcePrimaryAction'); actions.replaceChildren();
-
   if (row.kind === 'actor' && row.assets?.[0]?.exists && showAssetCallback) actions.append(actionButton('Open body asset',()=>showAssetCallback(row.assets[0].assetId)));
   if (row.kind === 'motion' && row.motionType === 'embedded-clip' && row.sourceAssetId && showAssetCallback) {
     actions.append(actionButton(`Preview source clip · ${row.clipName || 'clip'}`,()=>showAssetCallback(row.sourceAssetId,row.clipName)));
@@ -75,7 +73,6 @@ async function showResource(row) {
   }
   const raw=row.source?.rawPinned || row.source?.rawLatest; if (raw) actions.append(linkButton('Open source',raw));
 }
-
 function matchesScope(row, actor) {
   if (!actor) return true;
   if (row.scopeRef === actor) return true;
@@ -105,7 +102,6 @@ async function fillActorFilter() {
   const actors=await ensureActors(), select=$('resourceActorFilter'), previous=select.value;
   select.replaceChildren(option('','All actors / scopes'),option('kfb-pets','KFB Pets · custom motion/FX scope'),...actors.map((a)=>option(a.actorId,a.displayName || a.actorId))); select.value=previous;
 }
-
 export async function activateProductionTab(tab) {
   currentTab=tab;
   document.querySelectorAll('[data-library-tab]').forEach((button)=>button.classList.toggle('active',button.dataset.libraryTab===tab));
@@ -115,7 +111,6 @@ export async function activateProductionTab(tab) {
     const manifest=await ensureManifest(); $('resourceRevision').textContent=manifest.resourceRegistryRevision || 'R0'; await fillActorFilter(); currentRows=await ensureRows(tab); $('resourceEyebrow').textContent=tab; renderResources();
   } catch (error) { $('resourceMeta').textContent=`Resource Registry unavailable: ${error.message}`; $('resourceMeta').classList.add('error'); }
 }
-
 export function initProductionResources({ showAsset }) {
   showAssetCallback=showAsset;
   document.querySelectorAll('[data-library-tab]').forEach((button)=>button.onclick=()=>activateProductionTab(button.dataset.libraryTab));
