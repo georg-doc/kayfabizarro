@@ -41,13 +41,23 @@ GitHub is the shared state and handoff bus. Chats do not depend on direct chat-t
 
 ### Shared intake
 
-Cross-project briefing/source packages may temporarily enter through the shared inbox documented in `INBOX_PROTOCOL.md`.
+Cross-project coordination packages use the private production inbox defined in `INBOX_PROTOCOL.md` and `INBOX_REPO_BOOTSTRAP.md`.
 
-Current intake path:
+Target repository:
 
-`travel/wip/travel_globe_wsa/_inbox/`
+`georg-doc/KFB-Production-Inbox` — private, currently `PROVISIONING` until Georg creates the empty repo once.
 
-Despite the path, this inbox does not belong to Travel semantically and does not confer ownership. It is staging only. Because `georg-doc/kayfabizarro` is public, no confidential/restricted material belongs there.
+Structure:
+
+`_inbox/<job-or-project>/...`
+
+Processed packages move to:
+
+`_inbox/archiv/<job-or-project>/...`
+
+Each active job/project has one self-contained folder containing its briefing/docs/sources/manifests/returns. Inbox location never grants runtime ownership or SSOT status.
+
+The older public path `georg-doc/kayfabizarro/travel/wip/travel_globe_wsa/_inbox/` is historical staging only and should not receive new non-public coordination packages.
 
 ## Current priorities
 
@@ -132,9 +142,13 @@ Current intended destination:
 
 `georg-doc/kayfabizarro/micro-learning/wissens-pilli/`
 
-Current intake:
+Current source package is still in historical public staging:
 
 `travel/wip/travel_globe_wsa/_inbox/DC MicroLearning WS1/`
+
+After `georg-doc/KFB-Production-Inbox` exists, migrate that complete job folder to:
+
+`_inbox/DC MicroLearning WS1/`
 
 The source package establishes a reusable DocCheck medical microlearning direction and a Studio-preparation slice for CapsuleCarl. FrankenStein Studio prepares/exports the actor; the learner runtime owns cards/scene/interaction; Animation Lab is a later motion consumer. No FrizzleBob measurements may be copied into CapsuleCarl merely because the actor vocabulary is shared.
 
@@ -154,6 +168,7 @@ Combat Arena and Stunt Race remain independent implementation SSOTs and consumer
 - Changelogs and living history are additive; corrections supersede rather than erase.
 - Legacy under `skills/` is evidence/history unless the registry marks it current.
 - Inbox packages are input/staging; they never become implementation truth by location alone.
+- Every inbox job/project uses one self-contained folder; processed folders move to `_inbox/archiv/` with destination/return evidence preserved.
 
 ## Recovery
 
@@ -175,7 +190,10 @@ A durable Living Masterplan and explicit Recovery Path are required so loss of a
 Combat Web and other consumer chats synchronize through GitHub state, not copied prompt bundles or direct chat-to-chat assumptions.
 
 ### 2026-09-13 · DECISION
-A shared intake/staging inbox is supported for cross-project coordination packages. Inbox location never implies project ownership or SSOT status.
+Cross-project intake moves to a dedicated private repo, `georg-doc/KFB-Production-Inbox`, once provisioned. One folder per job/project; completed packages move to `_inbox/archiv/` rather than being deleted.
+
+### 2026-09-13 · SUPERSEDES
+The public Travel-mirror inbox is no longer the planned long-term shared inbox. Existing packages there remain provenance/history until verified migration.
 
 ### 2026-09-13 · CLASSIFICATION
-DocCheck Wissens-Pilli / Interactive Microlearning enters the boot as an `UNVERIFIED` project intake. Its target path and source package are known; implementation/runtime promotion remains pending.
+DocCheck Wissens-Pilli / Interactive Microlearning remains an `UNVERIFIED` project intake. Its target path and source package are known; implementation/runtime promotion remains pending.
