@@ -1,83 +1,61 @@
-# KFB Asset Librarian v1 · Browser Slice
+# KFB Asset Librarian v1.2 Core
 
-**Status:** IMPLEMENTATION CANDIDATE  
-**Consumes:** generated `registry/assets/v1/**` + `tools/asset_registry/consumer_profiles.json`  
-**Does not own:** assets, decks, donor acceptance, Combat Arena roster membership, Stunt Car Race implementation or rig compatibility.
+**Status:** implementation candidate for the WSA six-task acceptance gate  
+**Mode:** static, read-only, no LLM/API key required  
+**Asset / Registry SSOT:** `georg-doc/kayfabizarro`
 
-## Vertical slice
+v1.2 turns the already browser-tested v1 Registry consumer into a daily-use production site. It deliberately does **not** create a new index, duplicate Registry truth, call an LLM, or write back to assets/Registry.
 
-This browser deliberately stays small:
+## Start
 
-1. load Registry manifest + pack/rig summary;
-2. load `catalog.jsonl` only when search starts;
-3. load `rigfacts.jsonl` only when a rig/animation query or model detail needs it;
-4. search/filter assets;
-5. inspect exact path, dependency status and rig facts;
-6. preview GLB/GLTF from the commit-pinned RAW URL with Three.js;
-7. select one or more assets;
-8. export/copy `kfb.asset-handoff.v1` to a receiving consumer;
-9. prepare a compact read-only Librarian request packet for a later LLM/MCP connector.
-
-The UI never turns a candidate into an implementation decision.
-
-## Consumers
-
-The dropdown is generated from `../consumer_profiles.json`, currently:
-
-- Animation Lab
-- Frankenstein Studio
-- Combat Arena
-- KFB Stunt Car Race
-- Generic Runtime
-
-Each handoff carries the consumer's owner boundary and required downstream validation.
-
-## Run locally
-
-From repository root:
+Serve the repository root over HTTP, not `file://`:
 
 ```bash
-python3 tools/asset_registry/build.py
-python3 tools/asset_registry/validate.py
-python3 tools/asset_registry/rigfacts.py build
-python3 tools/asset_registry/rigfacts.py validate
 python3 -m http.server 8000
 ```
 
-Then open:
+Open:
 
-```text
-http://localhost:8000/tools/asset_registry/librarian/
-```
+`http://localhost:8000/tools/asset_registry/librarian/`
 
-Do not open `index.html` via `file://`; browser fetch/CORS behavior requires HTTP.
+## Daily workflow
 
-## Preview
+1. Search/filter the canonical Registry.
+2. Switch between compact list and visual cards.
+3. Inspect exact path, asset ID, source commit/blob, pinned/latest RAW, dependencies, rig facts and review items.
+4. Preview GLB/GLTF, images/textures or audio.
+5. Add candidates to the persistent local Selection Tray.
+6. Choose a consumer profile.
+7. Copy/download `kfb.asset-handoff.v1`.
 
-The browser imports Three.js + GLTFLoader + OrbitControls from jsDelivr. Preview is enabled only for `.glb` and `.gltf`. It loads `source.rawPinned`, fits the camera to the loaded scene and plays the first embedded animation clip when present.
+All selections remain `candidate-only`. The receiving consumer owns final suitability and implementation.
 
-Preview success is presentation/runtime evidence only. It does not prove collision, scale, donor quality, skeleton compatibility or gameplay fit.
+## v1.2 additions
 
-## Ask Librarian bridge
+- collection filter
+- Registry problem/review-queue filter
+- list + cards result modes
+- cheap image thumbnails; no grid of 3D canvases
+- exact identity/provenance block
+- dependency navigation
+- skeleton signatures + structural-evidence warning
+- 3D camera fit/reset, wireframe, autoplay and clip selector
+- image dimensions + checkerboard preview
+- audio controls + duration/volume, no autoplay
+- persistent local Selection Tray (`localStorage`)
+- no interactive LLM UI in Core
 
-The `Ask Librarian` panel is intentionally **not a fake LLM**. It copies a compact `kfb.asset-librarian-request.v1` packet containing:
+## Acceptance gate
 
-- user question;
-- current filters;
-- selected asset IDs;
-- target consumer;
-- source commit;
-- intended read-only tool surface.
+`.github/scripts/asset-librarian-v1.2-acceptance.mjs` runs the six real WSA tasks:
 
-A later OpenAI Apps SDK / MCP or standalone API connector can consume that packet and call the deterministic Registry tools. No API key or write capability is stored in this static browser.
+1. Orc Raider + texture
+2. Rover Round → Stunt Car Race
+3. Rig Medium characters → Animation Lab
+4. CapsuleCarl + CharacterTemplate → Frankenstein Studio
+5. Bath + Space Ranger Jetpack → Frankenstein Studio
+6. Audio preview → Generic Runtime
 
-## Test boundary
+The browser gate also checks the review queue, no console/runtime errors, and local selection persistence.
 
-Automated CI can verify:
-
-- Registry + rig sidecar build/validation;
-- Python query/handoff behavior;
-- JS syntax;
-- presence of required browser contract paths/IDs.
-
-Automated CI in this slice does **not** prove WebGL rendering or visual quality. Those require an actual browser/render smoke pass and remain a separate tested-result gate.
+See `SITE_QA.md` and `RETURN.md` for the review result.
