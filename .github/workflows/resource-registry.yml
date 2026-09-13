@@ -1,0 +1,38 @@
+name: KFB Production Resource Registry R0
+
+on:
+  pull_request:
+    paths:
+      - 'tools/resource_registry/**'
+      - 'tools/KFB-ToolBox/**'
+      - 'registry/assets/v1/**'
+      - '.github/workflows/resource-registry.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build-test:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          fetch-depth: 1
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.12'
+      - name: Build Resource Registry
+        run: python3 tools/resource_registry/build.py build --out artifacts/resources/v1
+      - name: Validate Resource Registry
+        run: python3 tools/resource_registry/build.py validate --out artifacts/resources/v1
+      - name: Run R0 tests
+        run: python3 -m unittest tools/resource_registry/test_resource_registry.py -v
+      - name: Smoke query
+        run: |
+          python3 tools/resource_registry/query.py --registry artifacts/resources/v1 --motions frizzlebob-driver-graft --limit 3
+          python3 tools/resource_registry/query.py --registry artifacts/resources/v1 --compose frizzlebob-driver-graft > artifacts/composition-plan.json
+      - uses: actions/upload-artifact@v6
+        with:
+          name: kfb-resource-registry-r0
+          path: artifacts/
