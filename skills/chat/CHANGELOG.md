@@ -48,3 +48,15 @@ FrankenStein Studio v16 node expanded with verified weapon attachment/mod presen
 
 ### DECISION
 Do not refactor Travel `cardrider.v1` into a generic shared rider-placement schema during an active consumer slice. Preserve the measured current contract; extract a generic additive successor only after real multi-consumer use proves the need.
+
+### DECISION
+Add `INBOX_PROTOCOL.md` for shared cross-project intake packages. The current staging path is `travel/wip/travel_globe_wsa/_inbox/`; its Travel location does not confer Travel ownership and inbox content is never automatically an SSOT.
+
+### SAFETY / PUBLICATION
+`georg-doc/kayfabizarro` is public. Shared inbox material must therefore be safe for public publication; confidential DocCheck/customer/patient/person-identifiable or otherwise restricted material must use an appropriate private channel/repository.
+
+### UNVERIFIED PROJECT INTAKE
+DocCheck Wissens-Pilli / Interactive Microlearning registered as a project intake. Intended destination: `micro-learning/wissens-pilli/`. Current source package: `travel/wip/travel_globe_wsa/_inbox/DC MicroLearning WS1/`. The target path exists only as a placeholder and is not yet promoted to a complete implementation SSOT/runtime.
+
+### OWNER BOUNDARY
+For Wissens-Pilli, current intake assigns CapsuleCarl actor preparation to FrankenStein Studio; the learner runtime owns cards/scene/interaction, while Animation Lab is a later motion consumer. Shared actor vocabulary does not authorize copying FrizzleBob measurements into CapsuleCarl.
