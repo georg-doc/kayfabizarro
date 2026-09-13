@@ -3,6 +3,9 @@
   "updated": "2026-09-13",
   "owner": "Georg / KFB",
   "router": "skills/chat/START_HERE.md",
+  "livingMasterplan": "skills/chat/LIVING_MASTERPLAN.md",
+  "recoveryPath": "skills/chat/RECOVERY_PATH.md",
+  "syncProtocol": "skills/chat/SYNC_PROTOCOL.md",
   "statusVocabulary": [
     "CURRENT_CANON",
     "CURRENT_TOOL",
@@ -31,7 +34,7 @@
       "declaredStatus": "canonical-draft",
       "path": "skills/kfb-cartoon-animation_v2.md",
       "loadWhen": ["animation", "procedural acting", "cartoon motion", "VFX choreography", "camera choreography"],
-      "consumers": ["animation-lab", "frankenstein-studio", "travel-globe", "stunt-car-race"]
+      "consumers": ["animation-lab", "frankenstein-studio", "travel-globe", "stunt-car-race", "combat-arena"]
     },
     {
       "id": "kfb-design-bootstrap-v02",
@@ -56,8 +59,8 @@
       "path": "skills/KFB PetStudio/KFB FrankenStein Studio 16/KFB-v16/",
       "standalone": "skills/KFB PetStudio/KFB FrankenStein Studio 16/KFB-v16/KFB-FrankenStein-Studio-v16-STANDALONE.html",
       "toolNode": "skills/chat/tool-nodes/frankenstein-studio.md",
-      "owns": ["actor graft", "look", "material zones", "head/face zones", "pose measurement", "card-rider measurement/export"],
-      "doesNotOwn": ["Travel flight physics", "game world movement"]
+      "owns": ["actor graft", "look", "material zones", "head/face zones", "pose measurement", "card-rider measurement/export", "weapon attachment/mod presentation measurement"],
+      "doesNotOwn": ["Travel flight physics", "game world movement", "projectile logic", "damage", "runtime combat aim", "consumer-specific world facing"]
     },
     {
       "id": "asset-librarian",
@@ -74,6 +77,14 @@
       "repository": "georg-doc/KFB-Travel-Globe",
       "toolNode": "skills/chat/tool-nodes/travel-globe.md",
       "publicWip": "https://kayfabizarro.pages.dev/travel/wip/travel_globe_wsa/"
+    },
+    {
+      "id": "combat-arena",
+      "kind": "project",
+      "status": "CURRENT_PROJECT_SSOT",
+      "repository": "georg-doc/KFB-Combat-Arena",
+      "toolNode": "skills/chat/tool-nodes/combat-arena.md",
+      "consumer": "skills/chat/consumers/combat-web-chat.md"
     },
     {
       "id": "animation-lab",
