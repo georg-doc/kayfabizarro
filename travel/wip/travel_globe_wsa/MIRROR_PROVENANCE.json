@@ -1,0 +1,15 @@
+{
+  "schema": "kfb.travel.publication-mirror.v1",
+  "implementationSSOT": "georg-doc/KFB-Travel-Globe",
+  "travelCommit": "140a140303684b44fbc9bc6a4451fbc3d92ac157",
+  "buildId": "travel-b0-c22ebda643efbf0e",
+  "identity": "build/identity.json",
+  "runtimeTreeSha256": "81f9d32af0863c74662f8c1b1b4ffdb5a079400fd86e1a3b5c21a7cfbc47c1d1",
+  "mirrorRepository": "georg-doc/kayfabizarro",
+  "mirrorPath": "travel/wip/travel_globe_wsa",
+  "mirrorCommit": "704f6ac067ef6500f3211304fd6bfb3cb76ba4a8",
+  "payloadGitTree": "909dd82c73e790de0f758350d68ed453215f3fef",
+  "distFileCount": 147,
+  "publicURL": "https://kayfabizarro.pages.dev/travel/wip/travel_globe_wsa/",
+  "policy": "Generated publication mirror only. Edit implementation in Travel, rebuild and verify before mirroring. mirrorCommit identifies the exact payload commit; this receipt follows it to avoid self-referential commit hashing. HTTP verification and browser QA are recorded separately in the Travel B0 return."
+}
