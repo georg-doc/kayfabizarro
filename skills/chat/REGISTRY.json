@@ -1,0 +1,87 @@
+{
+  "schema": "kfb.chat-registry/0.1",
+  "updated": "2026-09-13",
+  "owner": "Georg / KFB",
+  "router": "skills/chat/START_HERE.md",
+  "statusVocabulary": [
+    "CURRENT_CANON",
+    "CURRENT_TOOL",
+    "CURRENT_REFERENCE",
+    "CURRENT_PROJECT_SSOT",
+    "LEGACY_REFERENCE",
+    "SUPERSEDED",
+    "ARCHIVED_HISTORY",
+    "UNVERIFIED",
+    "EXPERIMENTAL"
+  ],
+  "entries": [
+    {
+      "id": "session-design-briefing",
+      "kind": "skill",
+      "status": "CURRENT_REFERENCE",
+      "version": "1.2",
+      "path": "skills/session-design-briefing.md",
+      "loadWhen": ["design session", "production planning", "evidence discipline"]
+    },
+    {
+      "id": "kfb-cartoon-animation",
+      "kind": "skill",
+      "status": "CURRENT_REFERENCE",
+      "version": "2.0",
+      "declaredStatus": "canonical-draft",
+      "path": "skills/kfb-cartoon-animation_v2.md",
+      "loadWhen": ["animation", "procedural acting", "cartoon motion", "VFX choreography", "camera choreography"],
+      "consumers": ["animation-lab", "frankenstein-studio", "travel-globe", "stunt-car-race"]
+    },
+    {
+      "id": "kfb-design-bootstrap-v02",
+      "kind": "bootstrap",
+      "status": "LEGACY_REFERENCE",
+      "path": "skills/KFB Setup Game Design/KFB Design-Bootstrap_v02/",
+      "routingSuccessor": "skills/chat/START_HERE.md",
+      "retainConcepts": ["reuse-before-rebuild", "host-contract", "evidence-before-claim", "human-visible-acceptance", "additive-history"],
+      "doNotUseAsCurrentSSOTFor": ["asset inventory", "project status", "module ownership", "current tool versions"]
+    },
+    {
+      "id": "kfb-pet-studio-v12",
+      "kind": "tool-history",
+      "status": "LEGACY_REFERENCE",
+      "path": "skills/KFB PetStudio/KFB Pet Studio v12 (WS0)/",
+      "currentSuccessor": "frankenstein-studio-v16"
+    },
+    {
+      "id": "frankenstein-studio-v16",
+      "kind": "tool",
+      "status": "CURRENT_TOOL",
+      "path": "skills/KFB PetStudio/KFB FrankenStein Studio 16/KFB-v16/",
+      "standalone": "skills/KFB PetStudio/KFB FrankenStein Studio 16/KFB-v16/KFB-FrankenStein-Studio-v16-STANDALONE.html",
+      "toolNode": "skills/chat/tool-nodes/frankenstein-studio.md",
+      "owns": ["actor graft", "look", "material zones", "head/face zones", "pose measurement", "card-rider measurement/export"],
+      "doesNotOwn": ["Travel flight physics", "game world movement"]
+    },
+    {
+      "id": "asset-librarian",
+      "kind": "tool",
+      "status": "CURRENT_TOOL",
+      "path": "tools/asset_registry/librarian/",
+      "live": "https://asset-librarian-v1-2-site-co.kayfabizarro.pages.dev/tools/asset_registry/librarian/",
+      "toolNode": "skills/chat/tool-nodes/asset-librarian.md"
+    },
+    {
+      "id": "travel-globe",
+      "kind": "project",
+      "status": "CURRENT_PROJECT_SSOT",
+      "repository": "georg-doc/KFB-Travel-Globe",
+      "toolNode": "skills/chat/tool-nodes/travel-globe.md",
+      "publicWip": "https://kayfabizarro.pages.dev/travel/wip/travel_globe_wsa/"
+    },
+    {
+      "id": "animation-lab",
+      "kind": "tool",
+      "status": "UNVERIFIED",
+      "toolNode": "skills/chat/tool-nodes/animation-lab.md",
+      "loadWith": ["skills/kfb-cartoon-animation_v2.md"],
+      "note": "Current implementation SSOT/site must be pinned before this node may be promoted to CURRENT_TOOL. FrankenStein Studio decides actor/look/static pose; Animation Lab plays/audits clips and animation behavior."
+    }
+  ]
+}
