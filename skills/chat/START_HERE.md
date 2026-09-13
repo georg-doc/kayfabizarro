@@ -30,6 +30,8 @@ If this is a replacement/fresh chat after context loss, use `RECOVERY_PATH.md` r
 - A browser PASS is not Georg's visual/freeplay acceptance.
 - Legacy files remain useful evidence but are not current merely because they exist.
 - Inbox files are inputs, not SSOTs, until a receiving owner accepts/pins them.
+- The planned shared inbox is the private `georg-doc/KFB-Production-Inbox`; the old public Travel-mirror inbox is historical staging only.
+- One inbox folder per job/project; processed packages move to `_inbox/archiv/` with return/destination evidence preserved.
 - Do not read giant housekeeping/history files front to back at startup. Search them only for a concrete question.
 - Do not copy canonical skills into this folder. Reference them from the registry.
 - Chats synchronize through GitHub state; do not assume direct chat-to-chat messaging or shared hidden context.
@@ -44,6 +46,7 @@ If this is a replacement/fresh chat after context loss, use `RECOVERY_PATH.md` r
 - `RECOVERY_PATH.md` — deterministic recovery after chat/context failure
 - `SYNC_PROTOCOL.md` — shared GitHub-based chat/agent synchronization
 - `INBOX_PROTOCOL.md` — shared cross-project intake/staging rules
+- `INBOX_REPO_BOOTSTRAP.md` — one-time structure for the private production inbox
 - `PRODUCTION_SOP.md` — provider-neutral production method
 - `EVIDENCE_AND_STATUS.md` — claim / proof vocabulary
 - `CHANGELOG.md` — additive history of this router
