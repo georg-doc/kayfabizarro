@@ -39,3 +39,11 @@ Do not turn this into a second technical lead or implementation repo. Travel, Co
 ## Session discipline
 
 Follow `skills/session-design-briefing.md` for design sessions. Keep the living document additive. When exporting a session, use `skills/session-export_v1.md`: manifest first, then only the session-created/changed files after Georg's approval.
+
+## 2026-09-14 · Additional routing: fractal canvas, narrators and play
+
+Georg's cross-module direction is recorded in [Infinite Canvas, Erzähler und neue Spielrichtungen](../masterplan/FRACTAL_CANVAS_NARRATORS_AND_PLAY_2026-09-14.md). Read it when discussing fractal world/meaning relationships, Triplet-NPC voices, D6 colors, UFO/pill aliens or cardboard mini-game actors.
+
+[CANON_HOME_MAP.json](../meta/CANON_HOME_MAP.json) distinguishes located sources from unresolved authoring homes. It is a routing map, not a replacement canon. The exact Game Sim/FrizzleCrits source chain and the historical D6-dimension-color mapping still require source pins. Do not create new ones from memory.
+
+These inputs do not replace the Town J-log or turn the ideation session into a runtime build. Preserve the distinction between the explicit user direction and the addendum's implementation proposals.

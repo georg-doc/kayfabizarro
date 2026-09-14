@@ -95,3 +95,17 @@ Every active inbox job/project gets one self-contained folder under `_inbox/<job
 
 ### DECISION
 After a package is processed and its accepted result is pinned in the receiving SSOT, move the whole package to `_inbox/archiv/<job-or-project>/` with final destination/return pointers. Archive replaces deletion as the normal cleanup path.
+
+## 2026-09-14 · Canon-home and fractal-design follow-up
+
+### IMPLEMENTATION / INDEX ONLY
+Add `meta/CANON_HOME_MAP.json`. Known narrator sources are pinned at the inspected revision; Layer Zero, Global Intent, Infinite Comic, Almanac authoring homes and the exact Game Sim/FrizzleCrits chain remain explicitly unresolved. No canonical source is moved or rewritten.
+
+### DECISION / MASTERPLAN ADDENDUM
+Record Georg's Infinite Canvas of the Tenth Art direction with McCloud, Blair, Warburg, Gabriel/Sinnfelder and Heim/D6/color references. Fractal thinking, satirical emergence and player closure apply across modules, not only to a future Museum. Exact historical dimension/color mapping is not invented.
+
+### SOURCE LOCATED / BACKLOG
+Register the located Quaternius Planet/Plant sources and KayKit playerstand bases in the addendum. Record future Sky/UFO-pill-alien and cardboard-public-figure mini-game directions. No runtime build, global NPC replacement, new Pop owner or expansion of Bath MVP1.
+
+### ROUTING
+Town onboarding and central Registry now route to the Home Map and `masterplan/FRACTAL_CANVAS_NARRATORS_AND_PLAY_2026-09-14.md`. Add the previously created meta-narration addendum to the masterplanAddenda list. Existing entries, owners and Town J-decisions are preserved.

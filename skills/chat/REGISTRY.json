@@ -4,9 +4,12 @@
   "owner": "Georg / KFB",
   "router": "skills/chat/START_HERE.md",
   "livingMasterplan": "skills/chat/LIVING_MASTERPLAN.md",
+  "canonHomeMap": "skills/chat/meta/CANON_HOME_MAP.json",
   "masterplanAddenda": [
     "skills/chat/masterplan/ACTOR_PLATFORM_V17_WIP_2026-09-13.md",
-    "skills/chat/masterplan/KFB_META_TOWN_ADDENDUM_2026-09-14.md"
+    "skills/chat/masterplan/KFB_META_TOWN_ADDENDUM_2026-09-14.md",
+    "skills/chat/masterplan/KFB_META_NARRATION_ADDENDUM_2026-09-14.md",
+    "skills/chat/masterplan/FRACTAL_CANVAS_NARRATORS_AND_PLAY_2026-09-14.md"
   ],
   "recoveryPath": "skills/chat/RECOVERY_PATH.md",
   "syncProtocol": "skills/chat/SYNC_PROTOCOL.md",
@@ -160,6 +163,23 @@
       "toolNode": "skills/chat/tool-nodes/animation-lab.md",
       "loadWith": ["skills/kfb-cartoon-animation_v2.md"],
       "note": "Current implementation SSOT/site must be pinned before this node may be promoted to CURRENT_TOOL. FrankenStein Studio decides actor/look/static pose; Animation Lab plays/audits clips and animation behavior."
+    },
+    {
+      "id": "canon-home-map",
+      "kind": "meta-index",
+      "status": "CURRENT_REFERENCE",
+      "path": "skills/chat/meta/CANON_HOME_MAP.json",
+      "notSSOT": true,
+      "loadWhen": ["canon consolidation", "narrator reuse", "FrizzleCrits", "Hunky and Dory", "D6 dimension colors"],
+      "note": "Located runtime sources and unresolved authoring homes are distinct. No source migration or promotion is performed by this map."
+    },
+    {
+      "id": "fractal-canvas-narrators-and-play",
+      "kind": "masterplan-addendum",
+      "status": "CURRENT_REFERENCE",
+      "path": "skills/chat/masterplan/FRACTAL_CANVAS_NARRATORS_AND_PLAY_2026-09-14.md",
+      "loadWhen": ["Infinite Canvas of the Tenth Art", "fractal design", "satirical emergence", "player closure", "Triplet NPC", "UFO aliens", "cardboard mini games"],
+      "note": "Records explicit user direction separately from proposed implementation and future slices. No runtime or Town J-decision promotion."
     }
   ]
 }
