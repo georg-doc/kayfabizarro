@@ -1,5 +1,6 @@
 import * as THREE from 'three';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
+import { visibleMeshBounds, framePerspectiveCamera } from './framing3d.js';
 
 const cache = new Map();
 const queue = [];
@@ -37,15 +38,15 @@ async function renderThumb(record) {
     const gltf = await new GLTFLoader().loadAsync(record.source?.rawPinned || record.source?.rawLatest);
     root = gltf.scene;
     scene.add(root);
-    const sphere = new THREE.Box3().setFromObject(root).getBoundingSphere(new THREE.Sphere());
-    const radius = Math.max(sphere.radius, 0.01);
-    const fov = THREE.MathUtils.degToRad(camera.fov);
-    const distance = (radius / Math.sin(fov / 2)) * 1.2;
-    camera.position.copy(sphere.center).add(new THREE.Vector3(1, 0.58, 1).normalize().multiplyScalar(distance));
-    camera.near = Math.max(radius / 100, 0.001);
-    camera.far = Math.max(distance + radius * 10, 100);
-    camera.lookAt(sphere.center);
-    camera.updateProjectionMatrix();
+    const bounds = visibleMeshBounds(root);
+    framePerspectiveCamera(camera, bounds, {
+      padding: 1.18,
+      headroom: 0.16,
+      footroom: 0.06,
+      side: 0.07,
+      depth: 0.07,
+      direction: new THREE.Vector3(1, 0.38, 1),
+    });
     renderer.render(scene, camera);
     return canvas.toDataURL('image/jpeg', 0.84);
   } finally {
