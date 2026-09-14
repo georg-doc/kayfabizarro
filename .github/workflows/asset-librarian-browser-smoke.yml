@@ -3,6 +3,7 @@ name: KFB Asset Librarian Browser Smoke
 on:
   pull_request:
     paths:
+      - "asset-librarian/**"
       - "tools/asset_registry/librarian/**"
       - "tools/asset_registry/tests/**"
       - "tools/asset_registry/consumer_profiles.json"
@@ -11,11 +12,13 @@ on:
       - ".github/scripts/asset-librarian-browser-smoke.mjs"
       - ".github/scripts/asset-librarian-v1.3-resources-smoke.mjs"
       - ".github/scripts/asset-librarian-v1.4-live-rigs-smoke.mjs"
+      - ".github/scripts/asset-librarian-v1.5-animation-framing-smoke.mjs"
       - ".github/workflows/asset-librarian-browser-smoke.yml"
   push:
     branches:
       - main
     paths:
+      - "asset-librarian/**"
       - "tools/asset_registry/librarian/**"
       - "tools/asset_registry/tests/**"
       - "tools/asset_registry/consumer_profiles.json"
@@ -24,6 +27,7 @@ on:
       - ".github/scripts/asset-librarian-browser-smoke.mjs"
       - ".github/scripts/asset-librarian-v1.3-resources-smoke.mjs"
       - ".github/scripts/asset-librarian-v1.4-live-rigs-smoke.mjs"
+      - ".github/scripts/asset-librarian-v1.5-animation-framing-smoke.mjs"
       - ".github/workflows/asset-librarian-browser-smoke.yml"
   workflow_dispatch:
 
@@ -37,7 +41,7 @@ concurrency:
 jobs:
   browser-smoke:
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 18
     steps:
       - name: Checkout repository
         uses: actions/checkout@v7
@@ -55,8 +59,11 @@ jobs:
           node --check tools/asset_registry/librarian/app.js
           node --check tools/asset_registry/librarian/resources-ui.js
           node --check tools/asset_registry/librarian/rig-preview.js
+          node --check tools/asset_registry/librarian/animation-sources.js
+          node --check tools/asset_registry/librarian/framing3d.js
           node --check .github/scripts/asset-librarian-v1.3-resources-smoke.mjs
           node --check .github/scripts/asset-librarian-v1.4-live-rigs-smoke.mjs
+          node --check .github/scripts/asset-librarian-v1.5-animation-framing-smoke.mjs
 
       - name: Run existing Asset Librarian / WebGL regression smoke
         run: node .github/scripts/asset-librarian-browser-smoke.mjs
@@ -66,6 +73,9 @@ jobs:
 
       - name: Run v1.4 live-registry and rig-preview smoke
         run: node .github/scripts/asset-librarian-v1.4-live-rigs-smoke.mjs
+
+      - name: Run v1.5 animation-discovery framing and permanent-URL smoke
+        run: node .github/scripts/asset-librarian-v1.5-animation-framing-smoke.mjs
 
       - name: Upload browser evidence
         if: always()
