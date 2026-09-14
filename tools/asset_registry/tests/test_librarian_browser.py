@@ -11,11 +11,11 @@ class LibrarianBrowserContractTests(unittest.TestCase):
         for name in (
             "index.html", "styles.css", "resources.css", "app.js", "state.js", "registry.js",
             "search.js", "render.js", "selection.js", "preview.js", "preview3d.js",
-            "thumb3d.js", "resources-ui.js", "README.md",
+            "thumb3d.js", "resources-ui.js", "rig-preview.js", "README.md",
         ):
             self.assertTrue((LIB / name).is_file(), name)
 
-    def test_html_exposes_v13_daily_and_resource_controls(self):
+    def test_html_exposes_v14_daily_resource_and_live_controls(self):
         html = (LIB / "index.html").read_text(encoding="utf-8")
         for control_id in (
             "searchInput", "kindFilter", "packFilter", "collectionFilter", "formatFilter",
@@ -24,18 +24,20 @@ class LibrarianBrowserContractTests(unittest.TestCase):
             "previewCanvas", "selectionButton", "selectionTray", "consumerSelect", "copyHandoff",
             "productionTabs", "assetWorkspace", "resourceWorkspace", "resourceSearch",
             "resourceActorFilter", "resourceStatusFilter", "resourceList", "resourceDetailPanel",
-            "kaykitPreset",
+            "resourcePreviewWrap", "resourcePreviewCanvas", "resourcePreviewStatus",
+            "registryModeSelect", "kaykitPreset",
         ):
             self.assertIn(f'id="{control_id}"', html, control_id)
         for tab in ("assets", "actors", "rigs", "motions", "fx"):
             self.assertIn(f'data-library-tab="{tab}"', html)
 
-    def test_browser_reuses_both_generated_registries_read_only(self):
+    def test_browser_reuses_generated_registries_read_only(self):
         js = "\n".join((LIB / name).read_text(encoding="utf-8") for name in (
             "app.js", "state.js", "registry.js", "search.js", "render.js", "selection.js",
-            "preview.js", "preview3d.js", "thumb3d.js", "resources-ui.js",
+            "preview.js", "preview3d.js", "thumb3d.js", "resources-ui.js", "rig-preview.js",
         ))
         self.assertIn("../../../registry/assets/v1", js)
+        self.assertIn("bot/asset-registry-update/registry/assets/v1", js)
         self.assertIn("../../../registry/resources/v1", js)
         self.assertIn("../consumer_profiles.json", js)
         self.assertIn("catalog.jsonl", js)
@@ -48,6 +50,14 @@ class LibrarianBrowserContractTests(unittest.TestCase):
         self.assertIn("GLTFLoader", js)
         for forbidden in ("fetch('/api", "POST", "PUT", "DELETE", "api.openai.com", "authorization: bearer", "sk-proj-"):
             self.assertNotIn(forbidden, js)
+
+    def test_rig_preview_uses_existing_owner_readers_and_keeps_vehicle_boundary(self):
+        js = (LIB / "rig-preview.js").read_text(encoding="utf-8")
+        self.assertIn("mountCarl", js)
+        self.assertIn("mountGraft", js)
+        self.assertIn("kfb-rigs-embed-v3", js)
+        self.assertIn("partial composition", js)
+        self.assertIn("cut/base/cockpit fabrication", js)
 
     def test_motion_preview_and_owner_runtime_boundary_are_explicit(self):
         js = (LIB / "resources-ui.js").read_text(encoding="utf-8")
@@ -64,11 +74,12 @@ class LibrarianBrowserContractTests(unittest.TestCase):
         for consumer_id in expected:
             self.assertEqual(profiles[consumer_id]["selectionStatus"], "candidate-only")
 
-    def test_v13_keeps_v12_runtime_alias_for_regression_smoke(self):
+    def test_v14_keeps_runtime_aliases_for_regression_smoke(self):
         js = (LIB / "app.js").read_text(encoding="utf-8")
         self.assertIn("window.KFBAssetLibrarianV12", js)
         self.assertIn("window.KFBAssetLibrarianV13", js)
-        self.assertIn("version:'1.3'", js)
+        self.assertIn("window.KFBAssetLibrarianV14", js)
+        self.assertIn("version:'1.4'", js)
 
 
 if __name__ == "__main__":
