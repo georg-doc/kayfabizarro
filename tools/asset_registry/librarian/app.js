@@ -78,7 +78,7 @@ async function loadRegistry(mode = state.registryMode, { rerun = false, allowFal
     if (token !== registryLoadToken) return;
     state.manifest = manifest; state.packs = packs; state.profiles = profileDoc.profiles || {}; state.rigSummary = rigSummary;
     $('registryStatus').classList.remove('error');
-    $('registryStatus').textContent = `${state.registryMode.toUpperCase()} · Registry ready`;
+    $('registryStatus').textContent = 'Registry ready';
     $('sourceCommit').textContent = formatSourceLine(manifest);
     $('packFilter').replaceChildren(option('', 'All packs'), ...packs.map((pack) => option(pack.packId, pack.packId)));
     $('consumerSelect').replaceChildren(...Object.entries(state.profiles).map(([id, profile]) => option(id, profile.displayName || id)));
@@ -90,8 +90,8 @@ async function loadRegistry(mode = state.registryMode, { rerun = false, allowFal
       setRegistryMode('canonical');
       $('registryModeSelect').value = 'canonical';
       await loadRegistry('canonical', { rerun, allowFallback:false });
-      $('registryStatus').textContent = 'CANONICAL · live unavailable';
-      $('registryStatus').classList.add('error');
+      $('registryStatus').textContent = 'Registry ready';
+      $('sourceCommit').textContent = `CANONICAL · live unavailable · ${$('sourceCommit').textContent.replace(/^CANONICAL · /,'')}`;
       return;
     }
     document.body.classList.remove('loading'); $('registryStatus').textContent = 'Registry unavailable'; $('registryStatus').classList.add('error'); $('resultMeta').textContent = `Registry unavailable: ${error.message}`;
