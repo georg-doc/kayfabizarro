@@ -109,3 +109,23 @@ Register the located Quaternius Planet/Plant sources and KayKit playerstand base
 
 ### ROUTING
 Town onboarding and central Registry now route to the Home Map and `masterplan/FRACTAL_CANVAS_NARRATORS_AND_PLAY_2026-09-14.md`. Add the previously created meta-narration addendum to the masterplanAddenda list. Existing entries, owners and Town J-decisions are preserved.
+
+## 2026-09-14 · ChatterBox and Tourbus source review
+
+### CURRENT_REFERENCE / MASTERPLAN ADDENDUM
+Add `masterplan/CHATTERBOX_TOURBUS_REUSE_2026-09-14.md` and `meta/CHATTERBOX_TOURBUS_SOURCE_INDEX_2026-09-14.json`. Review 17 uploads against pinned GitHub counterparts: seven exact blob matches, eight differing counterparts, two unresolved. This is an analysis/index, not a full attachment archive or replacement ChatterBox master.
+
+### REUSE / NO RUNTIME PROMOTION
+Record existing phrase, behavior, bubble, identity, Caption/Afterglow and NIE-hook seams. Locate later v13 bubble sources and v14 freeze package. Do not overwrite these with older v10 uploads or treat historical LÄUFT as current consumer acceptance.
+
+### TESTED RESULT
+Seven uploaded JS files pass syntax checks. Read-only Node probes reproduce a legacy Card-priority inversion, verify its positive control and additive title retention. The same problematic expression is read in the pinned v10 Repo counterpart. Evidence lives under `masterplan/evidence/chatterbox-tourbus-2026-09-14/`; no browser, audio, 3D or consumer-integration PASS.
+
+### DECISION / SUPERSEDES MODEL SELECTION ONLY
+Georg selects WaterBowser in `media/3D_Assets/Frankensteining/KFB Truck/` as Tourbus. Earlier Armored Truck remains historical donor. Do not transfer its geometry, mounts, material assumptions or licence. FBX/BLEND file metadata verified; conversion/material-zone production explicitly not requested now and not performed.
+
+### IDEATION
+Append Town §11: parked Tourbus as encounter/media place; collected rejoinder as future montage material; old CCTV/livery preserved as Museum memory. These scene treatments remain PROPOSAL. Existing J-decisions and runtime owners remain unchanged.
+
+### CORRECTION / SUPERSEDES PREVIOUS AMBIGUITY
+Georg explicitly corrected the earlier Skydome request to planets. Planet versus plant ambiguity in the previous addendum is resolved in favor of Quaternius planets; existing plant assets do not become part of that request.

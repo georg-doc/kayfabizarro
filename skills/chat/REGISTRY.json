@@ -9,7 +9,8 @@
     "skills/chat/masterplan/ACTOR_PLATFORM_V17_WIP_2026-09-13.md",
     "skills/chat/masterplan/KFB_META_TOWN_ADDENDUM_2026-09-14.md",
     "skills/chat/masterplan/KFB_META_NARRATION_ADDENDUM_2026-09-14.md",
-    "skills/chat/masterplan/FRACTAL_CANVAS_NARRATORS_AND_PLAY_2026-09-14.md"
+    "skills/chat/masterplan/FRACTAL_CANVAS_NARRATORS_AND_PLAY_2026-09-14.md",
+    "skills/chat/masterplan/CHATTERBOX_TOURBUS_REUSE_2026-09-14.md"
   ],
   "recoveryPath": "skills/chat/RECOVERY_PATH.md",
   "syncProtocol": "skills/chat/SYNC_PROTOCOL.md",
@@ -180,6 +181,16 @@
       "path": "skills/chat/masterplan/FRACTAL_CANVAS_NARRATORS_AND_PLAY_2026-09-14.md",
       "loadWhen": ["Infinite Canvas of the Tenth Art", "fractal design", "satirical emergence", "player closure", "Triplet NPC", "UFO aliens", "cardboard mini games"],
       "note": "Records explicit user direction separately from proposed implementation and future slices. No runtime or Town J-decision promotion."
+    },
+    {
+      "id": "chatterbox-tourbus-reuse",
+      "kind": "masterplan-addendum",
+      "status": "CURRENT_REFERENCE",
+      "path": "skills/chat/masterplan/CHATTERBOX_TOURBUS_REUSE_2026-09-14.md",
+      "sourceIndex": "skills/chat/meta/CHATTERBOX_TOURBUS_SOURCE_INDEX_2026-09-14.json",
+      "ideation": "skills/chat/town/LIVING_KFB_TOWN.md#11--zulauf-14092026--chatterbox-und-tourbus",
+      "loadWhen": ["ChatterBox", "NPC or mob chatter", "NIE adapter", "Tourbus", "WaterBowser", "Triplet livery", "CCTV memory", "FBX without Blender"],
+      "note": "Source-version audit, read-only probes and integration proposals. WaterBowser is Georg's new model selection; no conversion, runtime promotion, owner change or replacement ChatterBox master. Prefer verified newer donor versions over uploaded v10 snapshots."
     }
   ]
 }

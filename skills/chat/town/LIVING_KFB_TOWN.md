@@ -302,3 +302,59 @@ den Stilbruch genauso.
 
 *Ende. KFB Town steht auf der Schneidematte, der König sitzt im Turm, und die Häuser öffnen erst,
 wenn sie tragen.*
+
+---
+
+## 11 · Zulauf 14.09.2026 · ChatterBox und Tourbus
+
+**Status:** Quellenabgleich plus PROPOSAL für die folgenden Town-Szenen. Georgs Wahl des WaterBowser als Tourbus ist DECISION. Keine neue J-Kennung, kein Ersatz für J-08/J-13/J-14/J-15 und kein Produktionsstart.
+
+**Quelle und technische Einordnung:** [ChatterBox/Tourbus-Masterplan-Addendum](../masterplan/CHATTERBOX_TOURBUS_REUSE_2026-09-14.md) mit [Quellenindex](../meta/CHATTERBOX_TOURBUS_SOURCE_INDEX_2026-09-14.json). Die 17 Anhänge enthalten historische Implementierung, Aufträge und Korrekturen. Sie sind nicht gemeinsam ein aktueller Spielstand. Der alte Overworld-Masterplan übernimmt keine Town-Leitung.
+
+### 11.1 · Das vorhandene Sprechen weiterverwenden
+
+ChatterBox hat bereits Fraktionsstimmen, kurze Antworten, Tätigkeitsgedanken, Sprecherbudgets, bedienbare Blasen und persönliche Rufreaktionen. Die sieben hochgeladenen JS-Dateien sind aber keine fertige 3D-Town-Integration. Im Repo liegen spätere Blasenfassungen, also prüfen wir vor einer Adaption deren Aufrufer und nicht nur die Versionsüberschrift.
+
+Für Town bedeutet das: Der Bewohner bemerkt eine konkrete Handlung oder eine ausgestellte Karte. Seine Haltung verändert die Antwort, nicht die Quelle. Der Spieler darf zuhören, eine verfügbare Entgegnung wählen oder weitergehen. **Ein austauschbarer kurzer Satz ist kein Dialogbaum.** Ein neuer Sprecher bekommt kein Recht auf dauernde Untertitel. Ruhe bleibt ein gültiger Zustand.
+
+NPC, Mob und Enemy sind keine drei unabhängigen Sprachsysteme. Aber dieselbe Sprechfähigkeit macht niemanden automatisch zum Feind. Towns Grundhaltung bleibt, Kampf und Rufregeln gehören dem jeweiligen Spielkontext. Die historischen Overworld-Schwellen werden nicht ungefragt auf die Bewohner gesetzt.
+
+### 11.2 · PROPOSAL: Der Bus hält am Rand der Schneidematte
+
+Der Tourbus parkt neben der Werkstatt. FrizzleBob bleibt derselbe Driver-Graft wie auf seinen anderen Fahrzeugen. Eine am Bus bestätigte Karte oder Textmontage ist groß genug, dass ein vorbeikommender Bewohner kurz innehält. Er antwortet aus seiner eigenen Haltung darauf und geht weiter.
+
+Der Spieler kann die Erwiderung nach J-14 behalten und später verwenden. **Die Buswand ist damit Anlass für eine Begegnung und eine sichtbare eigene Auswahl**, nicht ein automatisch ausgewertetes Persönlichkeitsprofil. Nur ein tatsächlich gezeigter oder bestätigter Inhalt kann die Erinnerung speisen.
+
+Alternative: Im Fahrzustand zeigt der Bus nur Zielmotiv oder Deck-Cover; die Textmontage wird erst beim Parken lesbar. Das vermeidet Lesezwang während der Fahrt. Welche Fläche WaterBowser dafür trägt, ist noch zu vermessen.
+
+### 11.3 · PROPOSAL: Eine gehörte Entgegnung fährt weiter
+
+Der Spieler hört eine Erwiderung in Town und setzt sie später zwischen zwei Karten einer eigenen Folge. Am Bus kann daraus ein neuer dreiteiliger Text oder ein Card-Cut-up werden. Der Tourbus-Anhang v2 erlaubt bewusst gestaltete Verbindungen zwischen Satzrollen und SHOW IT / SPIN IT / SELL IT.
+
+**Actor/POV → SHOW IT → SPIN IT → SELL IT → Quest/Endpanel mit Social Calls und Spieler-Closure** bleibt als ganzer Bogen erhalten. SELL IT verschwindet nicht zugunsten eines CALL IT. Nicht jede zufällige Reklamezeile ist ein gespielter Bogen und nicht jede Montage verdient POP.
+
+Die verwandte Operation kann im Satz, an drei Busfenstern, auf drei Karten, zwischen Museumsräumen und in der Rückschau erscheinen. Das ist der fraktale Zusammenhang. Der Spieler stellt die Beziehung her; der NPC liefert kein abschließendes Deutungsprotokoll.
+
+### 11.4 · PROPOSAL: Die alte Beschriftung bleibt im Museum
+
+Später hängt ein früher CCTV-Moment des Busses im Museum. Inzwischen trägt der Bus eine andere Beschriftung, aber die Aufnahme bleibt unverändert. Eine zweite Figur erinnert sich an die alte Version. Der Spieler sieht beide Fassungen und kann den Widerspruch stehen lassen, neu montieren oder kommentieren.
+
+Ein Replay löst keine zweite Belohnung aus. Eine neu gespielte Szene kann nach ihrer eigenen benannten Regel ein neues Ergebnis haben. **Vergangenheit, Neuinszenierung und gegenwärtige Auswahl sind unterschiedliche Dinge.** Das nutzt die bestehende Journey-/Almanac-Richtung statt eines zweiten NPC-Gedächtnisses.
+
+### 11.5 · Weitere Ideen behalten, nicht still beschließen
+
+Sprechende Snacks mit niedriger Priorität, ein endliches Wiseguy-Duell, ein Erzähler als Datumsgerät und die MM/DD/YYYY-Walzen bleiben historische Ideen im verlinkten Addendum. Für Town sind sie Vorschläge, keine fertigen Attraktionen. Speaker's Corner, Abyss, Karaoke und Disco bleiben offene Hooks.
+
+**WaterBowser-Auswahl:** `media/3D_Assets/Frankensteining/KFB Truck/` enthält FBX und Blender-Datei. Dieser Truck ersetzt den Armored Truck als jetzige Modellwahl. Er ist noch nicht als Tourbus gebaut. Alte Maße, Heckflächen oder Lizenzangaben des anderen Modells werden nicht übertragen. Georg verlangt in dieser Runde keine Konvertierung und keine Materialzonen-Produktion.
+
+**Offen:** Welche Livery bleibt im Ruhezustand sichtbar? Wann und wie wird eine gehörte Entgegnung dem Spieler tatsächlich angeboten? Welcher bestehende ChatterBox-/Blasenstand wird für den Consumer gepinnt? Die genauen Reward-Ausgänge und Call-Beträge aus dem Tourbus-v2-Entwurf sind noch nicht festgelegt.
+
+### 11.6 · Additiver Changelog
+
+14.09.2026 · OBSERVED: Quellstand und bereits gebaute ChatterBox-Teile mit dem Masterplan-Abgleich verlinkt. Ein Card-Seed-Prioritätsfehler wurde isoliert am alten Upload reproduziert; keine Runtime geändert.
+
+14.09.2026 · DECISION: Georg wählt WaterBowser als Tourbus. Kein automatischer Umbau- oder Integrationstest.
+
+14.09.2026 · PROPOSAL: Drei Town-Situationen ergänzt: Haltestelle als Begegnungsort, mitgenommene Entgegnung als neues Spielmaterial, frühere Busbeschriftung als Museumserinnerung. J-01 bis J-15 bleiben unverändert.
+
+14.09.2026 · CORRECTION: Für den vorherigen Travel-Skydome-Eintrag meint Georg ausdrücklich Quaternius-**Planeten**, nicht Pflanzen. Die frühere Lesartenfrage ist erledigt.
