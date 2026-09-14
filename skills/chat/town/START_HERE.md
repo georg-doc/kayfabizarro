@@ -14,8 +14,9 @@ Read in this order:
 2. `references/README.md` — reference index and evidence rules.
 3. `references/KFB_META_NARRATION_SAMMLUNG_WS0_2026-09-14.md` — high-resolution WS0/Lab concept extraction; `SOURCE FACT` for the Lab, `PROPOSAL` for Town.
 4. `../meta/KFB_META_COMPENDIUM_v1.md` — cross-module meta index, not canon by itself.
-5. `../LIVING_MASTERPLAN.md` and relevant addenda only when cross-project sequencing matters.
-6. Current project/tool SSOTs only when a concrete Town idea touches implementation.
+5. `../masterplan/KFB_META_NARRATION_ADDENDUM_2026-09-14.md` — lead assessment and masterplan routing for the Lab collection.
+6. `../LIVING_MASTERPLAN.md` and other relevant addenda only when cross-project sequencing matters.
+7. Current project/tool SSOTs only when a concrete Town idea touches implementation.
 
 ## Mandate
 
