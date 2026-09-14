@@ -1,61 +1,63 @@
-# KFB Asset Librarian v1.2 Core
+# KFB Asset Librarian v1.5
 
-**Status:** implementation candidate for the WSA six-task acceptance gate  
 **Mode:** static, read-only, no LLM/API key required  
-**Asset / Registry SSOT:** `georg-doc/kayfabizarro`
+**Asset / Registry SSOT:** `georg-doc/kayfabizarro`  
+**Permanent production URL:** `https://kayfabizarro.pages.dev/asset-librarian/`
 
-v1.2 turns the already browser-tested v1 Registry consumer into a daily-use production site. It deliberately does **not** create a new index, duplicate Registry truth, call an LLM, or write back to assets/Registry.
+The Librarian is a browser consumer of the generated Asset Registry and Production Resource Registry. It does **not** create a competing asset index or write back to assets, rigs, actors, motions or consumer runtimes.
 
-## Start
+## Registry modes
 
-Serve the repository root over HTTP, not `file://`:
+- **Live** — default. Reads the validated generated Asset Registry from `bot/asset-registry-update`. New uploads become searchable after the Registry workflow refreshes the bot branch; no Librarian redeploy is required.
+- **Canonical** — reads the reviewed Registry committed to `main`.
 
-```bash
-python3 -m http.server 8000
-```
-
-Open:
-
-`http://localhost:8000/tools/asset_registry/librarian/`
+The selected mode and Registry source commit are visible in the header.
 
 ## Daily workflow
 
-1. Search/filter the canonical Registry.
-2. Switch between compact list and visual cards.
-3. Inspect exact path, asset ID, source commit/blob, pinned/latest RAW, dependencies, rig facts and review items.
-4. Preview GLB/GLTF, images/textures or audio.
-5. Add candidates to the persistent local Selection Tray.
-6. Choose a consumer profile.
-7. Copy/download `kfb.asset-handoff.v1`.
+1. Search/filter assets or use `Actors · Rigs · Motions · FX`.
+2. Inspect visual previews and source facts.
+3. Add asset candidates to the local Selection drawer.
+4. Choose a consumer profile and export `kfb.asset-handoff.v1`.
+5. Receiving consumers validate final suitability and implementation.
 
-All selections remain `candidate-only`. The receiving consumer owns final suitability and implementation.
+All handoffs remain `candidate-only`.
 
-## v1.2 additions
+## 3D previews
 
-- collection filter
-- Registry problem/review-queue filter
-- list + cards result modes
-- cheap image thumbnails; no grid of 3D canvases
-- exact identity/provenance block
-- dependency navigation
-- skeleton signatures + structural-evidence warning
-- 3D camera fit/reset, wireframe, autoplay and clip selector
-- image dimensions + checkerboard preview
-- audio controls + duration/volume, no autoplay
-- persistent local Selection Tray (`localStorage`)
-- no interactive LLM UI in Core
+GLB/GLTF Gallery thumbnails and detail previews use the same visible-mesh camera framing. v1.5 ignores non-renderable scene-graph nodes for framing and adds explicit headroom/footroom/side padding to reduce off-center or cropped previews.
 
-## Acceptance gate
+## Animation discovery
 
-`.github/scripts/asset-librarian-v1.2-acceptance.mjs` runs the six real WSA tasks:
+`No embedded clips` means only that the selected character GLB contains no animations itself.
 
-1. Orc Raider + texture
-2. Rover Round → Stunt Car Race
-3. Rig Medium characters → Animation Lab
-4. CapsuleCarl + CharacterTemplate → Frankenstein Studio
-5. Bath + Space Ranger Jetpack → Frankenstein Studio
-6. Audio preview → Generic Runtime
+For rigged models with a measured skeleton signature the detail pane separately discovers:
 
-The browser gate also checks the review queue, no console/runtime errors, and local selection persistence.
+- **Local character animation packs** — animation GLBs shipped inside the same character collection.
+- **KayKit shared animation library** — for KayKit characters, exact skeleton-signature matches in `KayKit_Character_Animations_1.1`.
+- **Same-skeleton candidates** — structural candidates outside those two groups.
 
-See `SITE_QA.md` and `RETURN.md` for the review result.
+This is particularly important for Mystery Series characters such as GothGirl: the character GLB may contain zero embedded clips while local Rig_Medium packs and the shared KayKit Rig_Medium library remain available.
+
+**Animation Lab v2 owner boundary:** the Librarian exposes the sources and measured overlap. Animation Lab v2 owns actual playback on the selected character, attachments and final compatibility validation. Skeleton-signature equality is structural evidence, not a generic retarget guarantee.
+
+## Production resources
+
+The Production Resource Registry feeds:
+
+- Actors
+- Rigs/configs
+- Motions
+- FX
+
+CapsuleCarl and FrizzleBob Driver Graft previews use their existing ToolBox owner readers (`mountCarl()` / `mountGraft()`). Vehicle-rig previews remain explicitly partial until a standalone ToolBox owner adapter exists.
+
+## Historical gates retained
+
+The browser CI keeps the earlier tested paths as regressions:
+
+- v1 WebGL asset preview
+- v1.2 six-task WSA acceptance
+- v1.3 Production Resources
+- v1.4 Live Registry + owner-rig previews
+- v1.5 animation discovery + preview framing + permanent URL
