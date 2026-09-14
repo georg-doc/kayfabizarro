@@ -6,6 +6,7 @@ style.href = './animation-sources.css';
 document.head.append(style);
 
 const KAYKIT_SHARED_PACK = 'kaykit-character-animations-1-1';
+const RIG_FAMILY_RE = /^Rig_(Small|Medium|Large)$/i;
 
 function intersects(a = [], b = []) {
   const right = new Set(b);
@@ -13,6 +14,12 @@ function intersects(a = [], b = []) {
 }
 function isKayKit(record) {
   return String(record?.packId || '').startsWith('kaykit-') || String(record?.path || '').includes('/KayKit_') || String(record?.path || '').includes('KayKit_');
+}
+function kayKitRigFamily(record) {
+  const names = (record?.rigFacts?.skins || []).map((skin) => String(skin?.name || '')).filter(Boolean);
+  const exact = names.find((name) => RIG_FAMILY_RE.test(name));
+  if (exact) return exact.match(RIG_FAMILY_RE)?.[0] || exact;
+  return null;
 }
 function clipNames(source) {
   const rig = state.rigById?.get(source.assetId) || source.rigFacts;
@@ -79,27 +86,50 @@ function sourceGroup(title, sources, onInspect, note = '') {
   return { section, clips };
 }
 
+function animationSourceCandidate(source, record) {
+  return source.assetId !== record.assetId && source.kind === 'model-3d' && ['glb', 'gltf'].includes(source.format);
+}
+
 export function discoverAnimationSources(record) {
   const rig = record?.rigFacts;
   const signatures = rig?.skeletonSignatures || [];
-  if (!rig?.hasSkin || !signatures.length || !state.catalog || !state.rigById) {
-    return { local: [], shared: [], structural: [], localClips: [], sharedClips: [], structuralClips: [] };
-  }
-  const candidates = state.catalog.filter((source) => {
-    if (source.assetId === record.assetId || source.kind !== 'model-3d' || !['glb', 'gltf'].includes(source.format)) return false;
-    const facts = state.rigById.get(source.assetId);
-    return (facts?.animationCount || 0) > 0 && intersects(signatures, facts?.skeletonSignatures || []);
-  });
+  const empty = { rigFamily:null, local:[], shared:[], structural:[], localClips:[], sharedClips:[], structuralClips:[] };
+  if (!rig?.hasSkin || !state.catalog || !state.rigById) return empty;
+
+  const rigFamily = isKayKit(record) ? kayKitRigFamily(record) : null;
   const local = [], shared = [], structural = [];
-  for (const source of candidates) {
-    const sameCollection = source.packId === record.packId && source.collectionPath === record.collectionPath;
-    if (sameCollection && /\/Animations\//i.test(source.path)) local.push(source);
-    else if (isKayKit(record) && (source.packId === KAYKIT_SHARED_PACK || /KayKit_Character_Animations/i.test(source.path))) shared.push(source);
-    else structural.push(source);
+  const claimed = new Set();
+
+  // KayKit publishes character-specific animation packs and a shared library by explicit rig family.
+  // This is stronger evidence than requiring standalone animation GLBs to repeat the character skin signature.
+  if (rigFamily) {
+    const familyPath = `/Animations/gltf/${rigFamily}/`;
+    for (const source of state.catalog) {
+      if (!animationSourceCandidate(source, record)) continue;
+      const path = String(source.path || '');
+      const sameCollection = source.packId === record.packId && source.collectionPath === record.collectionPath;
+      if (sameCollection && path.includes(familyPath)) {
+        local.push(source); claimed.add(source.assetId); continue;
+      }
+      if ((source.packId === KAYKIT_SHARED_PACK || /KayKit_Character_Animations/i.test(path)) && path.includes(familyPath)) {
+        shared.push(source); claimed.add(source.assetId);
+      }
+    }
   }
+
+  // Generic fallback remains exact skeleton-signature evidence only. It is not a compatibility decision.
+  if (signatures.length) {
+    for (const source of state.catalog) {
+      if (claimed.has(source.assetId) || !animationSourceCandidate(source, record)) continue;
+      const facts = state.rigById.get(source.assetId);
+      if ((facts?.animationCount || 0) > 0 && intersects(signatures, facts?.skeletonSignatures || [])) structural.push(source);
+    }
+  }
+
   const sort = (rows) => rows.sort((a, b) => String(a.path).localeCompare(String(b.path)));
   sort(local); sort(shared); sort(structural);
   return {
+    rigFamily,
     local, shared, structural,
     localClips: uniqueClips(local), sharedClips: uniqueClips(shared), structuralClips: uniqueClips(structural),
   };
@@ -107,7 +137,7 @@ export function discoverAnimationSources(record) {
 
 export function renderAnimationSources(record, onInspect) {
   const box = $('animationSources');
-  if (!box) return { local: [], shared: [], structural: [], localClips: [], sharedClips: [], structuralClips: [] };
+  if (!box) return { rigFamily:null, local:[], shared:[], structural:[], localClips:[], sharedClips:[], structuralClips:[] };
   box.replaceChildren();
   const data = discoverAnimationSources(record);
   const embedded = record.rigFacts?.animationCount || 0;
@@ -122,20 +152,20 @@ export function renderAnimationSources(record, onInspect) {
   const strong = document.createElement('strong');
   strong.textContent = 'Available motion library';
   const embeddedLabel = document.createElement('span');
-  embeddedLabel.textContent = `${embedded} embedded clips in character file`;
+  embeddedLabel.textContent = `${embedded} embedded clips in character file${data.rigFamily ? ` · ${data.rigFamily}` : ''}`;
   title.append(strong, embeddedLabel);
   box.append(title);
 
   if (data.local.length) {
-    const local = sourceGroup('Local character animation packs', data.local, onInspect, 'Animation files shipped inside this character collection.');
+    const local = sourceGroup('Local character animation packs', data.local, onInspect, `Animation files shipped inside this character collection for explicit KayKit rig family ${data.rigFamily}.`);
     box.append(local.section);
   }
   if (data.shared.length) {
-    const shared = sourceGroup('KayKit shared animation library', data.shared, onInspect, 'Exact skeleton-signature match to the shared KayKit rig library. Animation Lab v2 owns playback, attachments and final compatibility validation.');
+    const shared = sourceGroup('KayKit shared animation library', data.shared, onInspect, `Shared KayKit sources for explicit rig family ${data.rigFamily}. Animation Lab v2 owns playback, attachments and final compatibility validation.`);
     box.append(shared.section);
   }
   if (data.structural.length) {
-    const structural = sourceGroup('Same-skeleton candidates', data.structural, onInspect, 'Structural signature match only; not a compatibility guarantee.');
+    const structural = sourceGroup('Same-skeleton candidates', data.structural, onInspect, 'Exact skeleton-signature match only; structural evidence, not a compatibility guarantee.');
     box.append(structural.section);
   }
   return data;
