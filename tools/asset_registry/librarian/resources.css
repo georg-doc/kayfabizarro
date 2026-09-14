@@ -75,7 +75,14 @@
   font-size: 10px;
   line-height: 1.45;
 }
-.resource-detail-drawer { width: min(560px,calc(100vw - 28px)); }
+.resource-detail-drawer { width: min(620px,calc(100vw - 28px)); }
+.resource-preview-wrap { margin: 12px 0; }
+#resourcePreviewCanvas {
+  display: block;
+  width: 100%;
+  height: 390px;
+  background: #e7e1d4;
+}
 .resource-primary-action {
   display: flex;
   flex-wrap: wrap;
@@ -114,4 +121,5 @@
 }
 @media (max-width: 560px) {
   .resource-list { grid-template-columns: 1fr; }
+  #resourcePreviewCanvas { height: 330px; }
 }
