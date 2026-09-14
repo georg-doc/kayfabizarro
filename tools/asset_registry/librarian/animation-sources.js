@@ -1,5 +1,10 @@
 import { $, state } from './state.js';
 
+const style = document.createElement('link');
+style.rel = 'stylesheet';
+style.href = './animation-sources.css';
+document.head.append(style);
+
 const KAYKIT_SHARED_PACK = 'kaykit-character-animations-1-1';
 
 function intersects(a = [], b = []) {
