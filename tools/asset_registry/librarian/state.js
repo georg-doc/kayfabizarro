@@ -40,6 +40,6 @@ export function formatDuration(seconds){if(!Number.isFinite(seconds))return'dura
 export function setBusy(busy,text=''){
   document.body.classList.toggle('loading',busy);
   if(text)$('registryStatus').textContent=text;
-  else if(state.manifest)$('registryStatus').textContent=`${state.registryMode.toUpperCase()} · Registry ready`;
+  else if(state.manifest)$('registryStatus').textContent='Registry ready';
 }
 export function showError(error){$('resultMeta').textContent=error.message;$('resultMeta').classList.add('error');document.body.classList.remove('loading');}
