@@ -10,6 +10,7 @@ on:
       - "registry/resources/v1/**"
       - ".github/scripts/asset-librarian-browser-smoke.mjs"
       - ".github/scripts/asset-librarian-v1.3-resources-smoke.mjs"
+      - ".github/scripts/asset-librarian-v1.4-live-rigs-smoke.mjs"
       - ".github/workflows/asset-librarian-browser-smoke.yml"
   push:
     branches:
@@ -22,6 +23,7 @@ on:
       - "registry/resources/v1/**"
       - ".github/scripts/asset-librarian-browser-smoke.mjs"
       - ".github/scripts/asset-librarian-v1.3-resources-smoke.mjs"
+      - ".github/scripts/asset-librarian-v1.4-live-rigs-smoke.mjs"
       - ".github/workflows/asset-librarian-browser-smoke.yml"
   workflow_dispatch:
 
@@ -35,7 +37,7 @@ concurrency:
 jobs:
   browser-smoke:
     runs-on: ubuntu-latest
-    timeout-minutes: 12
+    timeout-minutes: 15
     steps:
       - name: Checkout repository
         uses: actions/checkout@v7
@@ -48,17 +50,22 @@ jobs:
           python3 --version
           command -v google-chrome-stable || command -v google-chrome || command -v chromium || command -v chromium-browser
 
-      - name: Check v1.3 module and smoke syntax
+      - name: Check browser modules and smoke syntax
         run: |
           node --check tools/asset_registry/librarian/app.js
           node --check tools/asset_registry/librarian/resources-ui.js
+          node --check tools/asset_registry/librarian/rig-preview.js
           node --check .github/scripts/asset-librarian-v1.3-resources-smoke.mjs
+          node --check .github/scripts/asset-librarian-v1.4-live-rigs-smoke.mjs
 
       - name: Run existing Asset Librarian / WebGL regression smoke
         run: node .github/scripts/asset-librarian-browser-smoke.mjs
 
       - name: Run v1.3 production-resource smoke
         run: node .github/scripts/asset-librarian-v1.3-resources-smoke.mjs
+
+      - name: Run v1.4 live-registry and rig-preview smoke
+        run: node .github/scripts/asset-librarian-v1.4-live-rigs-smoke.mjs
 
       - name: Upload browser evidence
         if: always()

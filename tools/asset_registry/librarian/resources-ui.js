@@ -1,3 +1,5 @@
+import { previewRigResource, clearRigPreview, canPreviewRig } from './rig-preview.js';
+
 const RESOURCE_BASE = '../../../registry/resources/v1';
 const $ = (id) => document.getElementById(id);
 const resourceStyle = document.createElement('link');
@@ -34,6 +36,7 @@ function badge(text, cls='') { const span=document.createElement('span'); span.c
 function option(value,text) { const node=document.createElement('option'); node.value=value; node.textContent=text; return node; }
 function statusClass(status) { return ['AVAILABLE','CONFIGURED'].includes(status) ? 'ok' : ['WIP','WIP_CONFIG','DOCUMENTED_REFERENCE'].includes(status) ? 'warn' : ''; }
 function closeResourceDetail() {
+  clearRigPreview();
   $('resourceDetailPanel').classList.remove('open');
   $('resourceDetailPanel').setAttribute('aria-hidden','true');
   if (!$('detailPanel').classList.contains('open') && !$('selectionTray').classList.contains('open')) $('drawerBackdrop').hidden=true;
@@ -58,8 +61,10 @@ async function showResource(row) {
   $('resourceDetailSummary').textContent=resourceSummary(row);
   const badgeNodes=[badge(row.status || 'UNKNOWN',statusClass(row.status)), ...(row.actorRefs || []).map((id)=>badge(id))];
   if (row.scopeRef) badgeNodes.push(badge(row.scopeRef));
+  if (currentTab === 'rigs' && canPreviewRig(row)) badgeNodes.push(badge(row.schema === 'kfb.carl.rig/6' || row.schema === 'kfb.pets/1' ? 'owner preview' : 'partial preview', row.schema === 'kfb.carl.rig/6' || row.schema === 'kfb.pets/1' ? 'ok' : 'warn'));
   $('resourceDetailBadges').replaceChildren(...badgeNodes);
   $('resourceDetailJson').textContent=JSON.stringify(row,null,2);
+  if (currentTab === 'rigs') await previewRigResource(row); else clearRigPreview();
   const actions=$('resourcePrimaryAction'); actions.replaceChildren();
   if (row.kind === 'actor' && row.assets?.[0]?.exists && showAssetCallback) actions.append(actionButton('Open body asset',()=>showAssetCallback(row.assets[0].assetId)));
   if (row.kind === 'motion' && row.motionType === 'embedded-clip' && row.sourceAssetId && showAssetCallback) {
@@ -94,6 +99,7 @@ function renderResources() {
     const f=tpl.content.cloneNode(true); f.querySelector('.resource-title').textContent=row.displayName || row.resourceId; f.querySelector('.resource-kind').textContent=row.kind;
     f.querySelector('.resource-card-meta').textContent=resourceSummary(row); const badges=f.querySelector('.resource-badges'); badges.append(badge(row.status || 'UNKNOWN',statusClass(row.status)));
     if (row.provider) badges.append(badge(row.provider)); if (row.rig) badges.append(badge(`Rig ${row.rig}`)); if (row.executionStatus) badges.append(badge('owner runtime'));
+    if (currentTab === 'rigs' && canPreviewRig(row)) badges.append(badge(row.schema === 'kfb.carl.rig/6' || row.schema === 'kfb.pets/1' ? '3D owner preview' : '3D partial preview', row.schema === 'kfb.carl.rig/6' || row.schema === 'kfb.pets/1' ? 'ok' : 'warn'));
     f.querySelector('.resource-open').onclick=()=>showResource(row); list.append(f);
   }
   $('resourceMeta').textContent=`${rows.length.toLocaleString()} shown · ${currentRows.length.toLocaleString()} ${currentTab}`;

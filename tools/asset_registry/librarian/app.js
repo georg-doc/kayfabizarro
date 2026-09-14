@@ -1,4 +1,4 @@
-import { REGISTRY_BASE, PROFILES_URL, $, state, fetchJSON, option, setBusy, showError, persistSelection } from './state.js';
+import { LIVE_REGISTRY_BASE, PROFILES_URL, $, state, fetchJSON, option, setBusy, showError, persistSelection, registryBase, setRegistryMode } from './state.js';
 import { ensureCatalog, ensureRigFacts, ensureProblems, renderMetrics } from './registry.js';
 import { searchRegistry } from './search.js';
 import { setResultView, renderResults, showDetail, closeDetail } from './render.js';
@@ -7,6 +7,7 @@ import { fitCamera, setWireframe, playClip, animationState } from './preview.js'
 import { initProductionResources } from './resources-ui.js';
 
 let productionUi;
+let registryLoadToken = 0;
 
 function closeSelection() {
   $('selectionTray').classList.remove('open');
@@ -51,6 +52,61 @@ function toggleTechnical() {
   $('technicalToggle').setAttribute('aria-expanded', open ? 'true' : 'false');
   $('technicalToggle').textContent = open ? 'Hide technical details' : 'Technical details';
 }
+function hasSearchIntent() {
+  return ['searchInput','kindFilter','packFilter','collectionFilter','formatFilter','dependencyFilter','problemFilter','rigFilter','animatedFilter','clipFilter','jointFilter'].some((id) => String($(id).value || '').trim());
+}
+function formatSourceLine(manifest) {
+  const commit = String(manifest?.sourceCommit || '').slice(0, 12) || 'unknown';
+  const count = Number(manifest?.counts?.total || 0).toLocaleString();
+  const when = manifest?.sourceCommitTime ? ` · ${manifest.sourceCommitTime}` : '';
+  return `${state.registryMode.toUpperCase()} · ${commit} · ${count} assets${when}`;
+}
+
+async function loadRegistry(mode = state.registryMode, { rerun = false, allowFallback = true } = {}) {
+  const token = ++registryLoadToken;
+  setRegistryMode(mode);
+  $('registryModeSelect').value = state.registryMode;
+  closeDetail();
+  state.lastResults = [];
+  $('resultList').replaceChildren();
+  setBusy(true, `Loading ${state.registryMode} registry…`);
+  try {
+    const base = registryBase();
+    const [manifest, packs, profileDoc, rigSummary] = await Promise.all([
+      fetchJSON(`${base}/manifest.json`), fetchJSON(`${base}/packs/index.json`), fetchJSON(PROFILES_URL), fetchJSON(`${base}/rigfacts-summary.json`, true),
+    ]);
+    if (token !== registryLoadToken) return;
+    state.manifest = manifest; state.packs = packs; state.profiles = profileDoc.profiles || {}; state.rigSummary = rigSummary;
+    $('registryStatus').classList.remove('error');
+    $('registryStatus').textContent = 'Registry ready';
+    $('sourceCommit').textContent = formatSourceLine(manifest);
+    $('packFilter').replaceChildren(option('', 'All packs'), ...packs.map((pack) => option(pack.packId, pack.packId)));
+    $('consumerSelect').replaceChildren(...Object.entries(state.profiles).map(([id, profile]) => option(id, profile.displayName || id)));
+    renderMetrics(); renderConsumerBoundary(); setResultView(state.viewMode); updateSelectionUI(); setBusy(false);
+    if (rerun && hasSearchIntent()) await runSearch();
+    else $('resultMeta').textContent = state.registryMode === 'live' ? 'Live Registry ready. New generated asset uploads appear here without a site redeploy.' : 'Canonical Registry ready.';
+  } catch (error) {
+    if (state.registryMode === 'live' && allowFallback) {
+      setRegistryMode('canonical');
+      $('registryModeSelect').value = 'canonical';
+      await loadRegistry('canonical', { rerun, allowFallback:false });
+      $('registryStatus').textContent = 'Registry ready';
+      $('sourceCommit').textContent = `CANONICAL · live unavailable · ${$('sourceCommit').textContent.replace(/^CANONICAL · /,'')}`;
+      return;
+    }
+    document.body.classList.remove('loading'); $('registryStatus').textContent = 'Registry unavailable'; $('registryStatus').classList.add('error'); $('resultMeta').textContent = `Registry unavailable: ${error.message}`;
+  }
+}
+
+async function pollLiveRegistry() {
+  if (state.registryMode !== 'live') return;
+  try {
+    const manifest = await fetchJSON(`${LIVE_REGISTRY_BASE}/manifest.json`, true);
+    if (!manifest?.sourceCommit || manifest.sourceCommit === state.manifest?.sourceCommit) return;
+    const rerun = hasSearchIntent();
+    await loadRegistry('live', { rerun, allowFallback:false });
+  } catch { /* polling is best-effort; explicit mode switch still reports failures */ }
+}
 
 async function openAssetFromResource(assetId, clipName = null) {
   await productionUi.activateProductionTab('assets');
@@ -64,21 +120,7 @@ async function openAssetFromResource(assetId, clipName = null) {
   playClip(Number(match.value));
 }
 
-async function bootstrap() {
-  try {
-    setBusy(true, 'Loading manifest…');
-    const [manifest, packs, profileDoc, rigSummary] = await Promise.all([
-      fetchJSON(`${REGISTRY_BASE}/manifest.json`), fetchJSON(`${REGISTRY_BASE}/packs/index.json`), fetchJSON(PROFILES_URL), fetchJSON(`${REGISTRY_BASE}/rigfacts-summary.json`, true),
-    ]);
-    state.manifest = manifest; state.packs = packs; state.profiles = profileDoc.profiles || {}; state.rigSummary = rigSummary;
-    $('sourceCommit').textContent = manifest.sourceCommit || '';
-    $('packFilter').replaceChildren(option('', 'All packs'), ...packs.map((pack) => option(pack.packId, pack.packId)));
-    $('consumerSelect').replaceChildren(...Object.entries(state.profiles).map(([id, profile]) => option(id, profile.displayName || id)));
-    renderMetrics(); renderConsumerBoundary(); setResultView(state.viewMode); updateSelectionUI(); setBusy(false);
-  } catch (error) {
-    document.body.classList.remove('loading'); $('registryStatus').textContent = 'Registry unavailable'; $('registryStatus').classList.add('error'); $('resultMeta').textContent = `Registry unavailable: ${error.message}`;
-  }
-}
+async function bootstrap() { await loadRegistry(state.registryMode, { allowFallback:true }); }
 
 productionUi = initProductionResources({ showAsset: openAssetFromResource });
 
@@ -89,6 +131,7 @@ $('resetButton').onclick = resetFilters;
 $('filtersToggle').onclick = toggleFilters;
 $('listViewButton').onclick = () => setResultView('list');
 $('galleryViewButton').onclick = () => setResultView('gallery');
+$('registryModeSelect').onchange = (event) => loadRegistry(event.target.value, { rerun:true, allowFallback:true }).catch(showError);
 $('selectionButton').onclick = openSelection;
 $('selectionClose').onclick = closeSelection;
 $('detailClose').onclick = closeDetail;
@@ -111,7 +154,9 @@ $('clipSelect').onchange = (event) => { if (event.target.value === '') return; $
 document.addEventListener('kfb-open-asset', (event) => showDetail(event.detail).catch(showError));
 document.addEventListener('keydown', (event) => { if (event.key === 'Escape') closePanels(); });
 
-const publicApi = { version:'1.3', runSearch, showDetail, buildHandoff, activateProductionTab: productionUi.activateProductionTab, ensureCatalog, ensureRigFacts, ensureProblems, getState:() => ({ selectedAssetIds:[...state.selected].sort(), activeAssetId:state.active, viewMode:state.viewMode, sourceCommit:state.manifest?.sourceCommit || null }) };
+const publicApi = { version:'1.4', runSearch, showDetail, buildHandoff, activateProductionTab: productionUi.activateProductionTab, setRegistryMode:(mode)=>loadRegistry(mode,{rerun:true}), ensureCatalog, ensureRigFacts, ensureProblems, getState:() => ({ selectedAssetIds:[...state.selected].sort(), activeAssetId:state.active, viewMode:state.viewMode, registryMode:state.registryMode, sourceCommit:state.manifest?.sourceCommit || null }) };
 window.KFBAssetLibrarianV12 = publicApi;
 window.KFBAssetLibrarianV13 = publicApi;
+window.KFBAssetLibrarianV14 = publicApi;
 updateSelectionUI(); bootstrap();
+setInterval(pollLiveRegistry, 90_000);
