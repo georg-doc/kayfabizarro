@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>KFB Asset Librarian v1.3</title>
+  <title>KFB Asset Librarian v1.4</title>
   <link rel="stylesheet" href="./styles.css">
   <script type="importmap">
     {
@@ -19,9 +19,13 @@
     <header class="topbar">
       <div class="brand-block">
         <div class="eyebrow">KFB · repo-truth production librarian</div>
-        <h1>KFB Asset Librarian <span>v1.3</span></h1>
+        <h1>KFB Asset Librarian <span>v1.4</span></h1>
       </div>
       <div class="top-actions">
+        <label class="registry-mode-control" title="Live reads the generated bot registry. Canonical reads reviewed registry files from main.">
+          <span>Registry</span>
+          <select id="registryModeSelect" aria-label="Registry source"><option value="live">Live</option><option value="canonical">Canonical</option></select>
+        </label>
         <div class="status-stack" aria-live="polite">
           <span id="registryStatus" class="pill">Registry loading…</span>
           <span id="sourceCommit" class="commit"></span>
@@ -43,7 +47,7 @@
     <div id="assetWorkspace">
       <section id="assetSearchShell" class="search-shell panel" aria-label="Asset search">
         <div class="search-row">
-          <input id="searchInput" class="global-search" type="search" placeholder="Search assets — Orc Raider, rover, bath, driver…" autocomplete="off" aria-label="Global search">
+          <input id="searchInput" class="global-search" type="search" placeholder="Search assets — Orc Raider, rover, GothGirl, Tourbus…" autocomplete="off" aria-label="Global search">
           <select id="kindFilter" class="kind-filter" aria-label="Kind">
             <option value="">All assets</option>
             <option value="model-3d">3D</option>
@@ -150,6 +154,11 @@
       </div>
       <div id="resourceDetailBadges" class="badges detail-badges"></div>
       <p id="resourceDetailSummary" class="resource-summary"></p>
+      <div id="resourcePreviewWrap" class="preview-wrap resource-preview-wrap" hidden>
+        <div class="preview-toolbar"><strong id="resourcePreviewTitle">Rig preview</strong><span id="resourcePreviewStatus">Idle</span></div>
+        <canvas id="resourcePreviewCanvas"></canvas>
+        <div id="resourcePreviewNote" class="preview-meta"></div>
+      </div>
       <div id="resourcePrimaryAction" class="resource-primary-action"></div>
       <details class="resource-tech"><summary>Evidence & technical facts</summary><pre id="resourceDetailJson"></pre></details>
     </aside>
@@ -162,7 +171,7 @@
     </aside>
 
     <button id="drawerBackdrop" class="drawer-backdrop" type="button" aria-label="Close open panel" hidden></button>
-    <footer>Registry facts are source facts. Assets, resources and composition plans remain <strong>candidate-only</strong>; receiving owners validate runtime use.</footer>
+    <footer>Registry facts are source facts. <strong>Live</strong> reads the generated bot Registry; <strong>Canonical</strong> reads reviewed Registry files from main. Assets, resources and composition plans remain <strong>candidate-only</strong>; receiving owners validate runtime use.</footer>
   </main>
 
   <template id="resultTemplate">
