@@ -1,11 +1,12 @@
 {
   "schema": "kfb.chat-registry/0.1",
-  "updated": "2026-09-13",
+  "updated": "2026-09-14",
   "owner": "Georg / KFB",
   "router": "skills/chat/START_HERE.md",
   "livingMasterplan": "skills/chat/LIVING_MASTERPLAN.md",
   "masterplanAddenda": [
-    "skills/chat/masterplan/ACTOR_PLATFORM_V17_WIP_2026-09-13.md"
+    "skills/chat/masterplan/ACTOR_PLATFORM_V17_WIP_2026-09-13.md",
+    "skills/chat/masterplan/KFB_META_TOWN_ADDENDUM_2026-09-14.md"
   ],
   "recoveryPath": "skills/chat/RECOVERY_PATH.md",
   "syncProtocol": "skills/chat/SYNC_PROTOCOL.md",
@@ -32,6 +33,28 @@
       "version": "1.2",
       "path": "skills/session-design-briefing.md",
       "loadWhen": ["design session", "production planning", "evidence discipline"]
+    },
+    {
+      "id": "kfb-meta-compendium-v1",
+      "kind": "meta-index",
+      "status": "CURRENT_REFERENCE",
+      "version": "1",
+      "path": "skills/chat/meta/KFB_META_COMPENDIUM_v1.md",
+      "masterplanAddendum": "skills/chat/masterplan/KFB_META_TOWN_ADDENDUM_2026-09-14.md",
+      "loadWhen": ["meta narrative", "cross-module ideation", "canon routing", "KFB Town", "module relationships"],
+      "notSSOT": true,
+      "note": "Index/routing reference from WS0. It points toward existing homes and drift risks; it does not override project/tool SSOTs, current GitHub state or canonical source documents. Version/status/count claims inside are snapshots unless independently verified."
+    },
+    {
+      "id": "kfb-town",
+      "kind": "living-concept",
+      "status": "CURRENT_REFERENCE",
+      "path": "skills/chat/town/LIVING_KFB_TOWN.md",
+      "startHere": "skills/chat/town/START_HERE.md",
+      "masterplanAddendum": "skills/chat/masterplan/KFB_META_TOWN_ADDENDUM_2026-09-14.md",
+      "owns": ["Town-specific J-decisions", "Town meta-narrative/world-design living state"],
+      "doesNotOwn": ["Travel runtime", "Combat runtime", "ToolBox actor authoring", "Museum runtime", "global ChatterBox/Journey architecture"],
+      "note": "Current hub concept and ideation home. Not yet an implementation project or runtime SSOT."
     },
     {
       "id": "kfb-cartoon-animation",
