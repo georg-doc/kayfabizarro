@@ -25,7 +25,7 @@ async function run(){
   mkdirSync(OUT,{recursive:true});
   const exe=browserExe();assert(exe,'No Chrome');
   const server=spawn('python3',['-m','http.server','8767','--bind','127.0.0.1'],{cwd:ROOT,stdio:'ignore'});
-  const browser=spawn(exe,['--headless=new','--no-sandbox','--disable-dev-shm-usage','--enable-webgl','--ignore-gpu-blocklist','--use-angle=swiftshader','--enable-unsafe-swiftshader','--remote-debugging-port=9225','--user-data-dir=/tmp/kfb-v14','--window-size=1700,1250','about:blank'],{stdio:['ignore','ignore','pipe']});
+  const browser=spawn(exe,['--headless=new','--no-sandbox','--disable-dev-shm-usage','--enable-webgl','--ignore-gpu-blocklist','--use-angle=swiftshader','--enable-unsafe-swiftshader','--remote-debugging-port=9225','--user-data-dir=/tmp/kfb-v14-'+process.pid,'--window-size=1700,1250','about:blank'],{stdio:['ignore','ignore','pipe']});
   let stderr='';browser.stderr.on('data',c=>stderr+=c.toString());const result={schema:'kfb.asset-librarian-v1.4-live-rigs-smoke.v1',checks:{},result:'FAIL'};
   try{
     await poll(async()=>{try{return (await fetch(`${BASE}index.html`)).ok;}catch{return false;}},'server');
@@ -34,7 +34,7 @@ async function run(){
     await ev(cdp,`document.getElementById('registryStatus')?.textContent==='Registry ready'`,'registry ready');
 
     const mode=await cdp.eval(`document.getElementById('registryModeSelect').value`);assert(mode==='live',`expected live default, got ${mode}`);
-    const line=await cdp.eval(`document.getElementById('sourceCommit').textContent`);assert(String(line).startsWith('LIVE · '),`live source line missing: ${line}`);assert(String(line).includes('12,860')||String(line).includes('12860'),`fresh live count missing: ${line}`);result.checks.liveRegistry=line;
+    const line=await cdp.eval(`document.getElementById('sourceCommit').textContent`);assert(String(line).startsWith('LIVE · '),`live source line missing: ${line}`);const liveCount=Number((String(line).match(/([\d,]+) assets/)?.[1]||'0').replace(/,/g,''));assert(liveCount>=12860,`live Registry unexpectedly regressed below 12,860 assets: ${line}`);result.checks.liveRegistry=line;
 
     await cdp.eval(`(()=>{document.getElementById('searchInput').value='KFB_Tourbus_WaterBowser';return window.KFBAssetLibrarianV14.runSearch();})()`);
     const tourbus=await ev(cdp,`(()=>{const t=document.getElementById('resultList').innerText;return t.includes('KFB_Tourbus_WaterBowser')?t:false;})()`,'live Tourbus search');assert(String(tourbus).includes('KFB_Tourbus_WaterBowser'),'Tourbus missing from live Registry');result.checks.tourbus=true;

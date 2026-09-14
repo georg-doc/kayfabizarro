@@ -154,9 +154,10 @@ $('clipSelect').onchange = (event) => { if (event.target.value === '') return; $
 document.addEventListener('kfb-open-asset', (event) => showDetail(event.detail).catch(showError));
 document.addEventListener('keydown', (event) => { if (event.key === 'Escape') closePanels(); });
 
-const publicApi = { version:'1.4', runSearch, showDetail, buildHandoff, activateProductionTab: productionUi.activateProductionTab, setRegistryMode:(mode)=>loadRegistry(mode,{rerun:true}), ensureCatalog, ensureRigFacts, ensureProblems, getState:() => ({ selectedAssetIds:[...state.selected].sort(), activeAssetId:state.active, viewMode:state.viewMode, registryMode:state.registryMode, sourceCommit:state.manifest?.sourceCommit || null }) };
+const publicApi = { version:'1.5', runSearch, showDetail, buildHandoff, activateProductionTab: productionUi.activateProductionTab, setRegistryMode:(mode)=>loadRegistry(mode,{rerun:true}), ensureCatalog, ensureRigFacts, ensureProblems, getState:() => ({ selectedAssetIds:[...state.selected].sort(), activeAssetId:state.active, viewMode:state.viewMode, registryMode:state.registryMode, sourceCommit:state.manifest?.sourceCommit || null }) };
 window.KFBAssetLibrarianV12 = publicApi;
 window.KFBAssetLibrarianV13 = publicApi;
 window.KFBAssetLibrarianV14 = publicApi;
+window.KFBAssetLibrarianV15 = publicApi;
 updateSelectionUI(); bootstrap();
 setInterval(pollLiveRegistry, 90_000);

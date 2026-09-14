@@ -3,7 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>KFB Asset Librarian v1.4</title>
+  <title>KFB Asset Librarian v1.5</title>
+  <link rel="canonical" href="https://kayfabizarro.pages.dev/asset-librarian/">
   <link rel="stylesheet" href="./styles.css">
   <script type="importmap">
     {
@@ -19,7 +20,7 @@
     <header class="topbar">
       <div class="brand-block">
         <div class="eyebrow">KFB · repo-truth production librarian</div>
-        <h1>KFB Asset Librarian <span>v1.4</span></h1>
+        <h1>KFB Asset Librarian <span>v1.5</span></h1>
       </div>
       <div class="top-actions">
         <label class="registry-mode-control" title="Live reads the generated bot registry. Canonical reads reviewed registry files from main.">
@@ -71,7 +72,7 @@
             <label>Dependencies<select id="dependencyFilter"><option value="">Any</option><option value="complete">Complete</option><option value="embedded">Embedded</option><option value="missing">Missing</option><option value="unresolved">Unresolved</option></select></label>
             <label>Review queue<select id="problemFilter"><option value="">Any status</option><option value="any">Has review item</option><option value="DUPLICATE_NAME">Duplicate name</option><option value="MISSING_REFERENCED_FILE">Missing referenced file</option><option value="UNRESOLVED_FBX_DEPENDENCY">Unresolved FBX</option><option value="UNRESOLVED_MODEL_DEPENDENCY">Unresolved model</option></select></label>
             <label>Rig<select id="rigFilter"><option value="">Any</option><option value="yes">Rigged</option><option value="no">Not rigged</option><option value="unknown">Unknown</option></select></label>
-            <label>Animation<select id="animatedFilter"><option value="">Any</option><option value="yes">Has animation</option><option value="no">No animation</option><option value="unknown">Unknown</option></select></label>
+            <label>Animation<select id="animatedFilter"><option value="">Any</option><option value="yes">Has embedded animation</option><option value="no">No embedded animation</option><option value="unknown">Unknown</option></select></label>
             <label>Clip contains<input id="clipFilter" type="text" placeholder="walk, idle, attack…"></label>
             <label>Joint contains<input id="jointFilter" type="text" placeholder="hip, hand, head…"></label>
           </div>
@@ -127,7 +128,7 @@
           <div id="threeControls" class="preview-controls" hidden>
             <button id="resetCamera" class="quiet small-button" type="button">Reset</button><button id="fitCamera" class="quiet small-button" type="button">Fit</button>
             <label class="inline-check"><input id="wireframeToggle" type="checkbox"> Wireframe</label><label class="inline-check"><input id="autoplayToggle" type="checkbox" checked> Autoplay</label>
-            <label class="clip-control">Clip <select id="clipSelect"><option value="">No clips</option></select></label>
+            <label class="clip-control">Embedded clip <select id="clipSelect"><option value="">No embedded clips</option></select></label>
           </div>
           <canvas id="previewCanvas" hidden></canvas>
           <div id="imagePreview" class="image-preview" hidden><img id="imagePreviewImg" alt="Selected asset preview"><div id="imageMeta" class="preview-meta"></div></div>
@@ -139,7 +140,7 @@
           <code id="detailPath" class="path-block"></code>
           <div class="detail-actions"><button id="copyPath" class="quiet" type="button">Copy path</button><button id="copyAssetId" class="quiet" type="button">Copy asset ID</button><a id="openLatestRaw" class="button-link quiet" target="_blank" rel="noreferrer">Latest RAW</a></div>
           <section class="fact-section identity-section"><h3>Identity</h3><div id="identityFacts" class="fact-grid"></div></section>
-          <section class="fact-section" id="rigSection"><h3>Rig / animation</h3><div id="rigFacts" class="fact-grid"></div><div id="rigWarnings" class="warning-box" hidden></div></section>
+          <section class="fact-section" id="rigSection"><h3>Rig / animation</h3><div id="rigFacts" class="fact-grid"></div><div id="rigWarnings" class="warning-box" hidden></div><div id="animationSources" class="animation-sources" hidden></div></section>
           <section class="fact-section"><h3>Dependencies</h3><div id="dependencyFacts"></div></section>
           <section class="fact-section"><h3>Provenance</h3><div id="provenanceFacts" class="fact-grid"></div></section>
           <section class="fact-section"><h3>Review</h3><div id="problemFacts"></div></section>
@@ -171,7 +172,7 @@
     </aside>
 
     <button id="drawerBackdrop" class="drawer-backdrop" type="button" aria-label="Close open panel" hidden></button>
-    <footer>Registry facts are source facts. <strong>Live</strong> reads the generated bot Registry; <strong>Canonical</strong> reads reviewed Registry files from main. Assets, resources and composition plans remain <strong>candidate-only</strong>; receiving owners validate runtime use.</footer>
+    <footer>Registry facts are source facts. <strong>Live</strong> reads the generated bot Registry; <strong>Canonical</strong> reads reviewed Registry files from main. Assets, resources and composition plans remain <strong>candidate-only</strong>; receiving owners validate runtime use. · <a href="/asset-librarian/">Permanent URL</a></footer>
   </main>
 
   <template id="resultTemplate">
