@@ -74,3 +74,7 @@ If this is a replacement/fresh chat after context loss, use `RECOVERY_PATH.md` r
 - Animation Lab — `UNVERIFIED` until current implementation SSOT/site is pinned
 
 When a task says only “start KFB production”, begin here. When a task names a project or tool, this file routes you to its actual SSOT rather than becoming one itself.
+
+## 2026-09-15 · ToolBox reentry and Town birthday input
+
+Read [the scoped masterplan addendum](masterplan/TOOLBOX_UX_TOWN_BIRTHDAY_2026-09-15.md) for the two separate ToolBox results A/B, WS0's source corrections, efficient handoff practice, birthday character selection and the Makerspace cinema direction. It routes to existing owners and preserves the distinction between a workspace report, a user direction and a tested consumer result. It does not promote tools or start a Town implementation.

@@ -47,3 +47,7 @@ Georg's cross-module direction is recorded in [Infinite Canvas, Erzähler und ne
 [CANON_HOME_MAP.json](../meta/CANON_HOME_MAP.json) distinguishes located sources from unresolved authoring homes. It is a routing map, not a replacement canon. The exact Game Sim/FrizzleCrits source chain and the historical D6-dimension-color mapping still require source pins. Do not create new ones from memory.
 
 These inputs do not replace the Town J-log or turn the ideation session into a runtime build. Preserve the distinction between the explicit user direction and the addendum's implementation proposals.
+
+## 2026-09-15 · Birthday entry and Makerspace cinema
+
+[New input and donor comparison](../masterplan/TOOLBOX_UX_TOWN_BIRTHDAY_2026-09-15.md), sections 3–4: RollerCoaster character-selection donor, FrizzleBob plus the birthday-character direction, a short reveal for Elisa's 18th birthday, and a Makerspace outdoor/drive-in cinema. Historical selector provenance is located; the user-named v13 source and Academy embed still need exact pins. Keep these inputs additive and distinguish user direction from proposed staging. No new J-identifiers, terrain decision, runtime owner or multiplayer commitment is created here. Do not overwrite a newer Town session with the older checked-in living document.
