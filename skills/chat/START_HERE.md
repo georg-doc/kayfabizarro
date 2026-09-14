@@ -1,7 +1,7 @@
 # KFB Chat Production Router
 
 Status: CURRENT ROUTER v0.1
-Date: 2026-09-13
+Date: 2026-09-14
 Owner: Georg / KFB
 
 This folder is the current LLM production routing layer for ChatGPT/Astra and Claude Design.
@@ -18,17 +18,21 @@ It does not replace project SSOTs, current tools, or canonical skills. It tells 
 7. Apply the provider adapter only after the provider-neutral SOP.
 8. Record decisions and results additively.
 
+For meta-narrative/cross-module ideation, especially KFB Town, use the registry entries for `kfb-meta-compendium-v1` and `kfb-town`. The Meta Compendium is an index, not a canon/implementation SSOT; Town has its own living document under `town/`.
+
 If this is a replacement/fresh chat after context loss, use `RECOVERY_PATH.md` rather than asking Georg for a transcript reconstruction.
 
 ## Hard rules
 
 - GitHub state beats chat recollection when they conflict.
 - Reuse before rebuild. Read the donor before adapting it.
+- Reuse-before-rebuild applies to concepts too: do not invent a second hub/dialogue/presenter/card-navigation/memory grammar before checking its named home.
 - Never silently replace an owner, contract, or SSOT.
 - A donor PASS is not an integration PASS.
 - A numerical PASS is not a browser PASS.
 - A browser PASS is not Georg's visual/freeplay acceptance.
 - Legacy files remain useful evidence but are not current merely because they exist.
+- Meta indexes may contain stale version/status/count snapshots; verify operational claims in the current project/tool SSOT.
 - Inbox files are inputs, not SSOTs, until a receiving owner accepts/pins them.
 - The planned shared inbox is the private `georg-doc/KFB-Production-Inbox`; the old public Travel-mirror inbox is historical staging only.
 - One inbox folder per job/project; processed packages move to `_inbox/archiv/` with return/destination evidence preserved.
@@ -43,6 +47,9 @@ If this is a replacement/fresh chat after context loss, use `RECOVERY_PATH.md` r
 ## Core docs
 
 - `LIVING_MASTERPLAN.md` — durable cross-project lead plan and sequence
+- `masterplan/` — scoped masterplan addenda, referenced from `REGISTRY.json`
+- `meta/KFB_META_COMPENDIUM_v1.md` — cross-module meta index; routing/reference only
+- `town/START_HERE.md` + `town/LIVING_KFB_TOWN.md` — current KFB Town ideation home
 - `RECOVERY_PATH.md` — deterministic recovery after chat/context failure
 - `SYNC_PROTOCOL.md` — shared GitHub-based chat/agent synchronization
 - `INBOX_PROTOCOL.md` — shared cross-project intake/staging rules
@@ -62,6 +69,7 @@ If this is a replacement/fresh chat after context loss, use `RECOVERY_PATH.md` r
 - FrankenStein Studio v16
 - Travel Globe
 - Combat Arena
+- KFB Town — current living concept/reference, not a runtime project
 - Wissens-Pilli / DocCheck Interactive Microlearning — `UNVERIFIED` intake until implementation SSOT/runtime is explicitly pinned
 - Animation Lab — `UNVERIFIED` until current implementation SSOT/site is pinned
 
