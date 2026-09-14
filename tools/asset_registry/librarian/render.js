@@ -3,6 +3,7 @@ import { ensureCatalog, ensureRigFacts, ensureProblems } from './registry.js';
 import { renderPreview } from './preview.js';
 import { toggleSelected } from './selection.js';
 import { attach3DThumbnail } from './thumb3d.js';
+import { renderAnimationSources } from './animation-sources.js';
 
 const depBadge = (record) => {
   const status = record.dependencyStatus;
@@ -10,7 +11,7 @@ const depBadge = (record) => {
   return badge(status, 'warn');
 };
 const rigBadge = (record) => record.rigFacts?.hasSkin ? badge(`rig ${record.rigFacts.jointCount || 0}j`, 'ok') : null;
-const animationBadge = (record) => (record.rigFacts?.animationCount || 0) > 0 ? badge(`${record.rigFacts.animationCount} clips`, 'ok') : null;
+const animationBadge = (record) => (record.rigFacts?.animationCount || 0) > 0 ? badge(`${record.rigFacts.animationCount} embedded clips`, 'ok') : null;
 const reviewBadge = (record) => {
   const count = (state.problemsByAsset.get(record.assetId) || []).length;
   return count ? badge(`${count} review`, 'problem') : null;
@@ -126,13 +127,13 @@ function renderRig(record) {
     fact(rig.parseStatus, 'parse status'),
     fact(rig.hasSkin, 'has skin'),
     fact(rig.jointCount || 0, 'joints'),
-    fact(rig.animationCount || 0, 'animations'),
-    fact((rig.animationClips || []).map((clip) => clip.name).filter(Boolean).join(', ') || 'none', 'clips'),
+    fact(rig.animationCount || 0, 'embedded animations'),
+    fact((rig.animationClips || []).map((clip) => clip.name).filter(Boolean).join(', ') || 'none', 'embedded clips'),
     fact((rig.skeletonSignatures || []).join(', ') || 'none', 'skeleton signature'),
   );
   if (rig.hasSkin || rig.skeletonSignatures?.length) {
     warning.hidden = false;
-    warning.textContent = 'Skeleton signature is structural evidence only; not a retarget/gameplay compatibility guarantee.';
+    warning.textContent = 'Skeleton signature is structural evidence only; not a retarget/gameplay compatibility guarantee. External/local motion libraries are listed separately below.';
   }
 }
 
@@ -194,6 +195,9 @@ export async function showDetail(id) {
   const anim = animationBadge(record); if (anim) $('detailBadges').append(anim);
   const review = reviewBadge(record); if (review) $('detailBadges').append(review);
   renderRig(record);
+  const motionSources = renderAnimationSources(record, (assetId) => showDetail(assetId).catch(showError));
+  if (motionSources.localClips.length) $('detailBadges').append(badge(`${motionSources.localClips.length} local motions`, 'ok'));
+  if (motionSources.sharedClips.length) $('detailBadges').append(badge(`${motionSources.sharedClips.length} shared motions`, 'ok'));
   renderDependencies(record);
   renderProblems(record);
   const source = record.source || {};
