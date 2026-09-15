@@ -4,6 +4,10 @@ Status: CURRENT RECOVERY POINTER. Kein Runtime-SSOT. Ein frischer Lead-Chat lies
 
 **Human bookmark:** `https://kayfabizarro.pages.dev/kfb-hub/` — searchable navigator across the links below; never a replacement SSOT.
 
+**Current execution order:** `skills/chat/recovery/CURRENT_PRIORITY_BOARD_2026-09-15.md` — P0 Birthday actor handoff → Astra startscreen → QA/freeplay; P1 juice/ToolBox-B; P2 Town terrain + look/audio calibration.
+
+**Current direct handoffs:** ToolBox/Design `tools/KFB-ToolBox/_handover/BIRTHDAY_STARTSCREEN_2026-09-15/START_HERE.md`; Travel/Astra `georg-doc/KFB-Travel-Globe/_handover/BIRTHDAY_STARTSCREEN_ASTRA_2026-09-15/START_HERE.md`.
+
 ## Warum diese Karte existiert
 
 Der Lead-Chat verbindet zurzeit Town, Travel, ToolBox, Asset Librarian und Stunt/Race-Donors. Bei Chat-Abbruch soll Georg keinen Transkript-Dump rekonstruieren müssen.
