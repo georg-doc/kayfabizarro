@@ -58,10 +58,10 @@ export function assetTypeLabel(type) { return ASSET_TYPES.find(([id]) => id === 
 const FORMAT_PRIORITY = new Map([['glb',0],['gltf',1],['obj',2],['fbx',3],['dae',4],['3ds',5],['blend',6]]);
 export function logicalAssetKey(record) {
   if (record?.kind !== 'model-3d') return record?.assetId || '';
-  const pack=String(record.packId||'');
-  const collection=String(record.collectionPath||'');
-  const name=String(record.name||'').replace(/\.(glb|gltf|obj|fbx|blend|dae|3ds)$/i,'').toLowerCase();
-  return `${pack}|${collection}|${name}`;
+  const normalized=String(record.path||record.assetId||'').toLowerCase()
+    .replace(/\.(glb|gltf|obj|fbx|blend|dae|3ds)$/i,'')
+    .replace(/\/(glb|gltf|obj|fbx|blend|dae|3ds)\//ig,'/@format/');
+  return `${record.packId||''}|${normalized}`;
 }
 export function representationPriority(record) {
   return FORMAT_PRIORITY.has(record?.format) ? FORMAT_PRIORITY.get(record.format) : 20;
