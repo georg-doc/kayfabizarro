@@ -1,313 +1,294 @@
 # KFB Asset Librarian · Visual Scene Atlas Preflight · Visual Review Queue
 
 **Date:** 2026-09-16  
-**Status:** `PROPOSAL / EXECUTION QUEUE`  
+**Status:** `GOVERNING QUEUE + SEPARATE WORLD_NOW OVERLAY`  
 **Branch:** `chat/kaykit-visual-scene-atlas-preflight-2026-09-16`
 
-## 0. Purpose
+## 0. Governing rule
 
-Turn the existing KayKit Reference Atlas into a compact queue of **visual reconstruction jobs** for Claude Design.
+The existing preflight `LIVING_STATUS.md` owns the canonical visual-review order. Preserve it exactly.
 
-This queue does not repeat the 2026-09-15 inventory. It asks a different question:
+`WORLD_NOW_FAST_LANE.md` may surface production-relevant jobs earlier **without rewriting the canonical queue**.
 
-> What exact composition, placement, camera, material, lighting, FX, prop, character and motion relationships can be extracted from each high-value reference and expressed as a reusable Scene Recipe?
+This file therefore has two independent tracks:
+
+1. **Canonical KayKit Visual Review Queue** — stable order for the Reference Lab.
+2. **WORLD NOW Fast Lane** — an explicit production overlay that can be activated by Georg/Lead when current scene work needs it.
+
+Do not silently convert Fast Lane order into the canonical queue.
 
 ## 1. Review contract
 
 Every job must return separate fields for:
 
-1. `SOURCE FACT`
-2. `OBSERVED DEMO`
-3. `INFERENCE`
-4. `PROPOSAL`
-5. `UNRESOLVED`
+- `SOURCE FACT`
+- `OBSERVED DEMO`
+- `INFERENCE`
+- `PROPOSAL`
+- `TESTED RESULT` only when referencing an actual prior KFB test
+- `UNRESOLVED`
 
 And, where applicable:
 
-6. exact source asset candidate(s)
-7. source-path confidence
-8. placement/transform confidence
-9. consumer relevance
-10. evidence limits
+- exact source candidate(s);
+- source-path confidence;
+- placement/transform confidence;
+- camera/material/light/FX evidence;
+- consumer relevance;
+- evidence limits.
 
-A demo showing A with B means only:
+A demo showing A with B does not prove generic KFB compatibility.
 
-`OBSERVED DEMO: A and B are visibly used together in this source reference.`
+## 2. Canonical KayKit Visual Review Queue — preserve exactly
 
-It does **not** mean:
+### 1. Ultra Turbo Hero Man · weapon / grip / pose
 
-`TESTED RESULT: A and B are generically compatible in KFB runtime.`
+Reference:
 
-## 2. Priority model
+`Weapons- DEMO - BLASTER - GRIP - POSE August2026_UltraHeroTurboMan.gif`
 
-Priority is based on **current KFB production value**, not on completeness of the archive.
+Known source facts:
 
-- `P0` — directly useful for Birthday / Town / Orbit 7 / Stunt world-building now
-- `P1` — high-value modular scene grammar or performance relation
-- `P2` — useful secondary character/performance evidence
-- `P3` — opaque/generic reference archaeology; only after stronger anchors
+- semantic Series 7, Aug 2026;
+- physical source family currently under historical `KayKit_Mystery_Series6/UltraTurboHeroMan/` parent;
+- same-collection blaster + sword source assets exist;
+- reference filename says `UltraHeroTurboMan`, source tree says `UltraTurboHeroMan`; preserve the discrepancy.
 
-## 3. P0 · WORLD NOW
+Visual target:
 
-### VR-001 · Birthday / Cozy Party Scene
-
-**Priority:** P0  
-**Reference basis:** existing `BIRTHDAY_STARTER_BUNDLE_REVIEW_2026-09-15.md`, Birthday/Elisa mockups where explicitly referenced by consumer work, KayKit world/prop sources  
-**Consumers:** Town / Performance / ToolBox candidate discovery
-
-Extract:
-
-- smallest convincing cozy living-room / birthday-party scene vocabulary;
-- furniture / table / seating / decor / sign / crate / cart / lamp / backdrop candidates;
-- foreground / midground / background staging;
-- character-safe open performance area;
-- camera angle and readable silhouette zones;
-- practical lighting/glow candidates;
-- which source assets are exact matches vs nearest-family reuse.
-
-Do not:
-
-- invent a KayKit demo that does not exist;
-- silently replace the Birthday starter-bundle contract;
-- expand into a full interior architecture system.
-
-**Expected output:** `VISUAL_JOB_PACKETS/VR-001_BIRTHDAY_COZY_PARTY.md` + one `SCENE_RECIPE` candidate.
-
----
-
-### VR-002 · Orbit 7 / Seaside / Town-Road Composition
-
-**Priority:** P0  
-**Reference basis:** existing Orbit/Town/Stunt scene work + KayKit City Builder / Forest Nature / Medieval Hexagon / Space Base / road-ground reference families  
-**Consumers:** Town / Travel / Stunt Race
-
-Extract:
-
-- road-to-ground transitions;
-- town edge / streetscape rhythm;
-- beach/water/coast edge treatment where references support it;
-- building setback, prop density and negative-space rules;
-- tree/rock integration with built environment;
-- camera/readability rules for moving player/vehicle;
-- what can be built from owned assets now versus reference-only gaps.
-
-**Expected output:** `VISUAL_JOB_PACKETS/VR-002_ORBIT7_SEASIDE_TOWN_ROAD.md` + one or more scene-layout recipes.
-
----
-
-### VR-003 · Block Bits Multi-Composition Sample
-
-**Priority:** P0  
-**Primary reference:** `Block_Bits_Sample - VOXEL PYRAMID + STAGE + WRESTLING RING FLOOR + BOXEL BLITZ.png`  
-**Secondary:** `Block_Bits_Overview.png`  
-**Source:** `KayKit_BlockBits_1.0_FREE`  
-**Consumers:** Stunt Race / Town / Combat / ToolBox
-
-Extract separately for each visible motif:
-
-- exact visible piece families;
-- repetition/grid/stack rules;
-- relative scale;
-- floor/edge/corner logic;
-- stage/ring/pyramid topology;
-- color usage;
-- camera/view;
-- whether motifs mix non-BlockBits assets.
-
-Filename descriptors `VOXEL PYRAMID`, `STAGE`, `WRESTLING RING FLOOR`, `BOXEL BLITZ` are source notes, not automatic visual findings.
-
-**Expected output:** one packet with 1–4 sub-recipes, depending on what is actually visible.
-
----
-
-### VR-004 · City Builder Streetscape
-
-**Priority:** P0  
-**Primary reference:** `Overview_Extra.png` already identified by prior Atlas as KayKit City Builder Bits v1.0  
-**Source state:** owned archive / prior Atlas mapping  
-**Consumers:** Town / Travel / Stunt Race
-
-Extract:
-
-- building/road/sidewalk/prop relationships;
-- modular block size cues;
-- corner/intersection grammar if visible;
-- street furniture/sign placement;
-- density and spacing;
-- camera presentation versus actual reusable composition.
-
-**Expected output:** City Builder scene grammar packet and source-match candidates.
-
----
-
-### VR-005 · Resource Bits Scene Use
-
-**Priority:** P0  
-**References:** `Resource_Bits_Overview.png`, `Resource_Bits_Sample_Extra.png`  
-**Source state:** archive present; Registry blind spot already documented  
-**Consumers:** Town / Travel / Stunt Race
-
-Extract:
-
-- visible resource families;
-- grouping and spacing;
-- extraction/worksite/environment relationships;
-- terrain/ground context;
-- color/material variants;
-- exact source mapping only where evidence exists.
-
-**Stop condition:** do not unpack/index the archive as part of this job. If scene value is high, return a separate Registry-owner proposal.
-
----
-
-## 4. P1 · MODULAR / PROP / PERFORMANCE
-
-### VR-101 · BoardGame Bits Spatial Grammar
-
-**References:** BoardGame overview/sample/extra/artboard  
-**Source:** owned/indexed; prior Registry snapshot records 35 missing model dependencies
-
-Questions:
-
-- physical board / tile / card / token / die relations;
-- marker/badge/card-holder staging;
-- reusable world-space UI or tabletop grammar;
-- color/team/state language;
-- which visible objects are affected by source dependency gaps.
-
-Do not conflate design intent with source readiness.
-
----
-
-### VR-102 · RPG Tools Workstation / Prop Grammar
-
-**References:** RPG Tools overview/sample  
-**Source:** owned/indexed; source pack structurally strong
-
-Questions:
-
-- handheld vs placed objects;
-- workstation clusters;
-- anvil/workbench/blueprint/tool associations;
-- scale and orientation;
-- prop-on-character relations if actually demonstrated.
-
----
-
-### VR-103 · Holiday / Gingerbread / Glow Scene
-
-**References:** Holiday sample + extra + saved release page  
-**Source state:** prior Atlas says core free pack missing from repo; EXTRA ownership unresolved
-
-Questions:
-
-- modular gingerbread construction;
-- platforming/house assembly logic;
-- decor clusters;
-- emissive `holiday_glow` use;
-- lighting contrast;
-- which useful scene ideas are reference-only because source assets are absent.
-
----
-
-### VR-104 · Goth Girl Performance Set
-
-**Reference:** `GothGirl.gif`  
-**Source:** source-mapped Series 7 semantic character under historical parent; microphone / mic stand / speaker / stool siblings known
-
-Questions:
-
-- actions actually shown;
-- microphone / stand / stool / speaker use if visible;
-- standing/seated alignment;
-- stage/camera framing;
-- prop transforms/hand relation;
-- lighting/material staging;
-- what is demo evidence versus prior Librarian bind/playback test.
-
-Prior `Death_A` 69/69 bind/playback remains a separate narrow `TESTED RESULT` only.
-
----
-
-### VR-105 · Ultra Turbo Hero Man · Blaster / Grip / Pose
-
-**Reference:** `Weapons- DEMO - BLASTER - GRIP - POSE August2026_UltraHeroTurboMan.gif`  
-**Source:** character family + `UltraTurboHeroMan_Blaster` source sibling confirmed
-
-Questions:
-
-- exact hand/grip;
-- blaster orientation/pivot;
-- one- vs two-hand involvement;
+- exact demonstrated grip;
+- hand involvement;
+- weapon pivot/orientation;
 - pose/aim direction;
-- idle/action transition if visible;
-- source-name discrepancy `UltraHeroTurboMan` in reference filename versus `UltraTurboHeroMan` in source tree.
+- action transition if visible;
+- camera/staging.
 
-**Rule:** preserve discrepancy explicitly; do not normalize silently.
+### 2. Goth Girl · demo/reference
 
----
+Reference:
 
-## 5. P2 · CHARACTER / PERFORMANCE SECOND WAVE
+`GothGirl.gif`
 
-### VR-201 · Cleric
+Known source facts:
 
-Reference: `September2025_Cleric.gif`
+- semantic Series 7, Sep 2026;
+- physical source family under historical parent;
+- Rig_Medium source family;
+- same-collection Microphone, Mic Stand, Speaker, Stool;
+- prior Librarian/Birthday binding evidence exists and must stay narrowly scoped.
 
-Extract equipment, pose, action loop, FX/light cues, camera.
+Visual target:
 
-### VR-202 · Marksman
+- staging/contact/scale/pose/performance composition;
+- actual use of signature props if visible;
+- seated/standing alignment;
+- camera/look.
 
-Reference: `April2026_Marksman.gif`
+Do not re-prove generic binding/compatibility.
 
-Extract ranged weapon grip, aim, recoil/pose, stance, camera.
+### 3. Demon Lord · demo/reference
 
-### VR-203 · Magical Girl
+Reference:
 
-Reference: `May2026_MagicalGirl.gif`
+`July2026_DemonLord.gif`
 
-Extract FX, glow/material, action loop, performance staging.
+Known source facts:
 
-### VR-204 · Farmers
+- semantic Series 7, Jul 2026;
+- physical source family under historical parent;
+- Rig_Large source fact from governing preflight;
+- sibling DemonHeart + SummoningCircle source assets.
 
-Reference: `June2026_Farmers.gif`
+Visual target:
 
-Extract multi-character staging, tool use, work loop, spacing.
+- actual scene staging;
+- pose/action vocabulary;
+- prop/FX relation if visible;
+- scale/camera/material cues.
 
-### VR-205 · Lorekeeper
+### 4. Orc Brute
 
-References: `LOREKEEPER SET 1.gif`, Lorekeeper promo/content images
+Reference:
 
-Extract character/set/prop relations and authored presentation.
+`August2025_OrcBrute.gif`
 
-### VR-206 · Orc Brute / Monstrosity / Plant Warrior / Hoarder / Avian Swordsman / Demon Lord
+Target:
 
-Review as separate subjobs only after P0/P1. Focus on nonstandard bodies, props, action vocabulary and FX; do not turn this into universal rig compatibility work.
+- body/rig presentation;
+- movement/performance;
+- props/contact if visible;
+- scale/camera.
 
-## 6. P3 · REFERENCE ARCHAEOLOGY
+### 5. Lorekeeper
 
-### VR-301 · Generic promo sequence
+References:
 
-`promo.png`, `promo (1).png` … `promo (11).png`
+- `LOREKEEPER SET 1.gif`
+- `lorekeeper - demo - contents (3).png`
+- `lorekeeper promo (4).png`
 
-Only identify when a visual/source-page/source-artwork match is strong.
+Target:
 
-### VR-302 · Generic contents sequence
+- character/set/prop relations;
+- authored presentation;
+- source asset mapping.
 
-`contents.png`, `contents_alt.png`, `contents (1).png` … `contents (11).png`
+### 6. Remaining Series 6 monthly demos in chronological order
 
-Same rule: no sequence-order mapping.
+Preserve chronological semantic order from the existing Atlas:
 
-### VR-303 · Opaque hash/screenshots/Discord bucket
+- Sep 2025 Cleric
+- Oct 2025 Monstrosity
+- Nov 2025 Plant Warrior
+- Dec 2025 Toy Soldier — source exists; demo availability must be checked, not assumed
+- Jan 2026 4GTN / 4GTN_Forgotten — source exists; demo availability must be checked
+- Feb 2026 Hoarder
+- Mar 2026 Avian Swordsman
+- Apr 2026 Marksman
+- May 2026 Magical Girl
+- Jun 2026 Farmers
 
-Review only where a high-value unknown remains after named sources are exhausted.
+Missing demo file does not mean missing asset.
 
-## 7. Per-job return template
+### 7. Block Bits annotated/sample references
 
-Each visual agent return should contain:
+References:
+
+- `Block_Bits_Overview.png`
+- `Block_Bits_Sample - VOXEL PYRAMID + STAGE + WRESTLING RING FLOOR + BOXEL BLITZ.png`
+
+Target:
+
+- distinct authored motifs;
+- modular repetition/grid/stack rules;
+- source-object mapping;
+- relative scale/camera.
+
+### 8. Board Game Bits overview/sample family
+
+References:
+
+- `BoardGame_Bits_Overview.png`
+- `BoardGame_Bits_Overview_Extra.png`
+- `BoardGame_Bits_Sample.png`
+- `Boardgame_Artboard 1.png`
+
+Target:
+
+- board/token/card/die spatial grammar;
+- reusable tabletop/world-space presentation;
+- source-health issues kept separate from design intent.
+
+### 9. Resource Bits overview/sample family
+
+References:
+
+- `Resource_Bits_Overview.png`
+- `Resource_Bits_Sample_Extra.png`
+
+Target:
+
+- resource cluster grammar;
+- environment/worksite relation;
+- archive/indexing gap preserved.
+
+### 10. Holiday overview/sample family
+
+References:
+
+- `Holiday_Bits_Sample.png`
+- `Holiday_Bits_Sample_Extra.png`
+- saved Holiday release page
+
+Target:
+
+- gingerbread/platforming composition;
+- seasonal decor;
+- `holiday_glow` source/material relation;
+- source ownership gap preserved.
+
+### 11. Remaining monthly-character references
+
+Any monthly characters outside the semantic Series 6 pass are reviewed after the above anchors, while preserving source-series/date evidence.
+
+### 12. Cryptic host-named images last
+
+Includes:
+
+- generic `promo*.png`;
+- generic `contents*.png`;
+- opaque hash-like PNG/JPGs;
+- Discord captures;
+- generic screenshots.
+
+Rule: identify only through direct visual/source-page/source-artwork corroboration. Never map by sequence order alone.
+
+## 3. WORLD NOW Fast Lane — separate overlay, not queue replacement
+
+These jobs are already prepared because current production can benefit from them. They may be executed early only when Georg/Lead explicitly activates WORLD NOW or a receiving consumer asks for them.
+
+### WN-001 · Birthday / Cozy Party
+
+Packet:
+
+`VISUAL_JOB_PACKETS/VR-001_BIRTHDAY_COZY_PARTY.md`
+
+Purpose:
+
+smallest convincing authored Birthday scene around the existing tested hero setup.
+
+### WN-002 · Orbit 7 / Seaside / Town-Road
+
+Packet:
+
+`VISUAL_JOB_PACKETS/VR-002_ORBIT7_SEASIDE_TOWN_ROAD.md`
+
+Purpose:
+
+built-world / road / dressing grammar on top of the existing Travel/TinySkies world substrate.
+
+### WN-003 · Block Bits
+
+Packet:
+
+`VISUAL_JOB_PACKETS/VR-003_BLOCK_BITS_MULTI_COMPOSITION.md`
+
+This job is also canonical queue item 7. Fast Lane may surface it earlier without changing its canonical position.
+
+### WN-004 · City Builder
+
+Packet:
+
+`VISUAL_JOB_PACKETS/VR-004_CITY_BUILDER_STREETSCAPE.md`
+
+Purpose:
+
+streetscape grammar for Town/Travel/Stunt.
+
+### WN-005 · Resource Bits
+
+Packet:
+
+`VISUAL_JOB_PACKETS/VR-005_RESOURCE_BITS_SCENE_USE.md`
+
+This job is also canonical queue item 9. Fast Lane may surface it earlier without changing its canonical position.
+
+## 4. Canonical job-packet naming
+
+For canonical queue items 1–3, use explicit `CQ` packets:
+
+- `CQ-001_ULTRA_TURBO_HERO_MAN_WEAPON_GRIP_POSE.md`
+- `CQ-002_GOTH_GIRL_DEMO.md`
+- `CQ-003_DEMON_LORD_DEMO.md`
+
+WORLD NOW packets retain their current `VR-00x` names as prepared fast-lane jobs.
+
+## 5. Generic return template
 
 ```text
 JOB ID:
 SOURCE CAPTURE(S):
+INSPECTION STATE:
 SOURCE STATUS:
 
 SOURCE FACT:
@@ -320,55 +301,54 @@ INFERENCE:
 - ...
 
 SOURCE-ASSET MATCHES:
-- asset/path — confidence — evidence
+- asset/path — exact/family/unresolved — confidence — evidence
 
 COMPOSITION:
-- ground/tile/road/building/props
+- environment / props / character
 - relative placement
 - scale relations
 - camera
 - lighting/material/glow/FX
-- character/prop/motion relation
+- character/prop/motion relations
 
 PROPOSED KFB USE:
-- consumer
+- receiving consumer
 - smallest useful slice
+
+TESTED RESULT REFERENCES:
+- only prior tests, with exact scope
 
 UNRESOLVED:
 - ...
-
-DO NOT PROMOTE:
-- unsupported compatibility/runtime claims
 ```
 
-## 8. Execution order
+## 6. Stop conditions
 
-Current recommended order:
-
-1. `VR-001` Birthday / Cozy Party
-2. `VR-002` Orbit 7 / Seaside / Town-Road
-3. `VR-003` Block Bits
-4. `VR-004` City Builder
-5. `VR-005` Resource Bits
-6. `VR-101` BoardGame Bits
-7. `VR-102` RPG Tools
-8. `VR-103` Holiday
-9. `VR-104` Goth Girl
-10. `VR-105` Ultra Turbo Hero Man
-11. P2 character wave
-12. P3 archaeology only if still valuable
-
-## 9. Stop conditions
-
-Pause a job and return `UNRESOLVED` instead of guessing when:
+Pause and return `UNRESOLVED` rather than guessing when:
 
 - pixels/frames cannot actually be inspected;
 - source identity is ambiguous;
-- exact asset mapping would require unsupported filename similarity;
+- exact source mapping would require guessed filenames;
 - compatibility would require measurement/runtime testing;
-- a job starts drifting into ToolBox implementation;
-- the same information already exists in the 2026-09-15 Atlas and no reconstruction delta is being added.
+- the job drifts into ToolBox/consumer implementation;
+- source/ownership work already exists in the Sep-15 Atlas and no visual reconstruction delta is being added.
 
-## 10. Next checkpoint
+## 7. Execution decision rule
 
-Create `WORLD_NOW_FAST_LANE.md` tying `VR-001`–`VR-005` to the existing Birthday starter evidence, current owned pack coverage, and concrete scene-recipe outputs.
+### Default Reference Lab run
+
+Start with canonical queue item 1: Ultra Turbo Hero Man.
+
+### Explicit WORLD NOW run
+
+If Georg/Lead says to prioritize current world production, start with the requested WN packet without modifying the canonical queue.
+
+### Batch rule
+
+Do not silently switch tracks. Every return must state:
+
+`TRACK: CANONICAL` or `TRACK: WORLD_NOW`.
+
+## 8. Next prep action
+
+Prepare canonical packets CQ-001 through CQ-003 so Claude Design can start either the default Reference Lab queue or the separate WORLD NOW fast lane without further provenance research.
