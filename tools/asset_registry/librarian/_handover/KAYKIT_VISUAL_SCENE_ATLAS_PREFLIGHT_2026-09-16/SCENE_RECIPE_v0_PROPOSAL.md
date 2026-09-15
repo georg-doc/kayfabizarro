@@ -1,36 +1,41 @@
 # KFB Asset Librarian · Visual Scene Atlas Preflight · SCENE_RECIPE v0 Proposal
 
 **Date:** 2026-09-16  
-**Status:** `PROPOSAL ONLY / VISUAL-EVIDENCE SIDECAR / NOT A RUNTIME CONTRACT`  
+**Status:** `PROPOSAL ONLY / VISUAL-PREFLIGHT PROFILE / NOT A RUNTIME CONTRACT`  
 **Branch:** `chat/kaykit-visual-scene-atlas-preflight-2026-09-16`
 
-## 0. Non-ownership rule
+## 0. Governing rule
 
-This document proposes a **visual reconstruction return shape** for Claude Design. It is not a new Registry schema, not a ToolBox schema, and not a consumer runtime/world schema.
+The pre-existing preflight `LIVING_STATUS.md` already names **`kfb.scene-recipe.v0` as a PROPOSAL** and requires the first 3–5 Claude Design jobs to prove or modify it before any v1 contract is declared.
 
-Project history references consumer-side world-recipe work, including a Stunt-Race `WORLD_RECIPE.v0`. A canonical current copy was not resolved in the present connector lookup, so this proposal deliberately avoids taking runtime/world ownership.
+This file therefore **does not create a competing `visual-scene-recipe` schema**. It proposes a visual-preflight profile for the existing `kfb.scene-recipe.v0` concept.
 
-If a receiving consumer already has a world/scene recipe contract, **adapt these evidence fields into that owner**. Do not replace or fork the consumer contract silently.
-
-Working name in this preflight:
-
-`kfb.visual-scene-recipe.v0-proposal`
-
-The `visual-` prefix is intentional: this object records reconstruction evidence and candidate composition, not runtime truth.
+If a receiving consumer already has its own world/scene contract, adapt the accepted evidence into that owner. Do not replace or fork the consumer contract silently.
 
 ## 1. Purpose
 
-A visual agent should be able to inspect an official/demo/reference capture and return enough structured information that a later consumer can:
+A visual agent should inspect an official/demo/reference capture and return enough structured evidence that a later consumer can:
 
 1. understand what was actually demonstrated;
-2. find the matching owned source assets where possible;
-3. reconstruct a small candidate scene without reopening the full asset library;
-4. know which placements are measured/observed versus inferred;
-5. know exactly what remains untested.
+2. find matching owned source assets where possible;
+3. reconstruct a compact candidate scene without reopening the full asset library;
+4. distinguish observed placement from inferred placement;
+5. know what remains untested.
 
-## 2. Required status discipline
+Maturity remains governed by the existing preflight:
 
-Each claim must carry one of:
+- L0 reference indexed
+- L1 visual annotation
+- L2 asset-matched
+- L3 static reconstruction
+- L4 reusable scene recipe
+- L5 consumer-tested
+
+Only the receiving consumer may promote to L5.
+
+## 2. Required evidence states
+
+Every claim must carry one of:
 
 - `SOURCE_FACT`
 - `OBSERVED_DEMO`
@@ -39,15 +44,17 @@ Each claim must carry one of:
 - `TESTED_RESULT`
 - `UNRESOLVED`
 
-`TESTED_RESULT` is allowed only when the recipe points to an already documented KFB test with scope. Claude Design visual reconstruction itself normally produces `OBSERVED_DEMO`, `INFERENCE`, and `PROPOSAL`, not runtime test results.
+`TESTED_RESULT` is allowed only when referencing an actual prior KFB test with scope. Visual reconstruction normally produces `OBSERVED_DEMO`, `INFERENCE`, and `PROPOSAL`, not runtime test results.
 
-## 3. Proposed top-level shape
+## 3. Proposed v0 visual-preflight profile
 
 ```json
 {
-  "schema": "kfb.visual-scene-recipe.v0-proposal",
-  "recipeId": "VR-003:block-bits:stage",
+  "schema": "kfb.scene-recipe.v0",
+  "profile": "visual-preflight",
+  "recipeId": "CQ-001:ultra-turbo-hero-man:blaster-pose",
   "status": "candidate-only",
+  "maturity": "L1",
   "sourceCaptures": [],
   "consumerTargets": [],
   "sceneIntent": {},
@@ -64,19 +71,20 @@ Each claim must carry one of:
 }
 ```
 
-This is an authoring/research sidecar. No field becomes authoritative merely because it exists in the object.
+This is a research/authoring return shape while v0 is being proven. No field becomes authoritative merely because it exists.
 
 ## 4. `sourceCaptures`
 
-Required for traceability.
+Required for provenance.
 
 ```json
 {
-  "sourceId": "block-bits-sample",
-  "path": "_inbox/KayKit_PACKS_References_Scenes_Demos/Block_Bits_Sample ... .png",
-  "sourceKind": "official-demo-image | promo | gif | mockup | saved-page | screenshot",
+  "sourceId": "ultra-hero-blaster-demo",
+  "path": "_inbox/KayKit_PACKS_References_Scenes_Demos/Weapons- DEMO - BLASTER - GRIP - POSE August2026_UltraHeroTurboMan.gif",
+  "sourceKind": "official-demo-gif",
   "rightsHandling": "reference-only",
   "inspectionState": "frame-reviewed | image-reviewed | metadata-only",
+  "frameOrTime": null,
   "notes": []
 }
 ```
@@ -84,29 +92,29 @@ Required for traceability.
 Rules:
 
 - never upgrade `metadata-only` into `OBSERVED_DEMO`;
-- keep reference paths, not copied paid media;
-- for GIF/video, allow explicit frame/time anchors where available.
+- keep heavy/reference media at its source location;
+- use explicit frame/time anchors when the medium supports them.
 
 ## 5. `sceneIntent`
 
-Describes why the recipe exists.
+Describes why the recipe exists, not runtime behavior.
 
 ```json
 {
-  "label": "Birthday cozy party P0",
+  "label": "source-authored weapon/grip/pose reconstruction",
   "status": "PROPOSAL",
-  "smallestUsefulSlice": "two active heroes + compact party focal zone + depth dressing",
+  "smallestUsefulSlice": "actor + visible prop + demonstrated pose + source camera",
   "nonGoals": [
-    "full interior architecture system",
-    "new animation owner",
-    "automatic prop compatibility"
+    "generic weapon compatibility",
+    "automatic attachment",
+    "runtime combat implementation"
   ]
 }
 ```
 
 ## 6. `environment`
 
-Functional scene roles, not Registry taxonomy.
+Functional visual roles may be recorded as a sidecar without becoming Registry taxonomy.
 
 ```json
 {
@@ -121,7 +129,7 @@ Functional scene roles, not Registry taxonomy.
 }
 ```
 
-Possible role labels:
+Useful role labels include:
 
 - `ground_base`
 - `road_straight`
@@ -140,37 +148,37 @@ Possible role labels:
 - `resource_landmark`
 - `background_mass`
 
-These labels exist only inside the visual recipe unless a receiving owner explicitly adopts/matches them.
+A receiving owner must explicitly adopt/map any of these labels before they become product semantics.
 
 ## 7. `assets`
 
-Each selected or candidate object gets its own evidence record.
+Each selected/candidate source object gets its own evidence record.
 
 ```json
 {
-  "assetRole": "performance_prop",
-  "displayName": "GothGirl Microphone",
-  "sourcePath": "media/3D_Assets/KayKit_Mystery_Series6/GothGirl/assets/gltf/GothGirl_Microphone.gltf",
+  "assetRole": "weapon_prop",
+  "displayName": "UltraTurboHeroMan Blaster",
+  "sourcePath": "media/3D_Assets/KayKit_Mystery_Series6/UltraTurboHeroMan/assets/gltf/UltraTurboHeroMan_Blaster.gltf",
   "sourceMatch": "exact | family-only | unresolved",
   "sourceMatchConfidence": "high | medium | low",
   "availability": "OWNED | REFERENCE_ONLY | MISSING | UNKNOWN",
   "evidence": [
-    {"status": "SOURCE_FACT", "claim": "same authored GothGirl collection"}
+    {"status": "SOURCE_FACT", "claim": "same authored source family"}
   ],
-  "required": false
+  "required": true
 }
 ```
 
 Rules:
 
 - `sourcePath` may be null;
-- never invent a filename/path from visual appearance;
-- `same authored collection` is not attachment compatibility;
-- archive-only source gets pack/family information, not fake per-model assets.
+- never invent a path from appearance;
+- `same_collection` is not attachment compatibility;
+- archive-only source gets family/pack info, not fake per-model records.
 
 ## 8. `relations`
 
-This is the most important anti-guess layer.
+Relations record what is seen/inferred, not what runtime guarantees.
 
 ```json
 {
@@ -188,46 +196,35 @@ This is the most important anti-guess layer.
 }
 ```
 
-### Important distinction
+`held_by` as `OBSERVED_DEMO` means only that a prop is visibly held in the reference. It does not establish KFB anchor/pivot/retarget/attachment compatibility.
 
-`held_by` as `OBSERVED_DEMO` means the reference visibly shows a held relation.
+## 9. Placement / transform evidence
 
-It does not mean:
-
-- correct KFB anchor exists;
-- the pivot is correct;
-- retargeting works;
-- the asset can be attached without calibration.
-
-Those remain receiving-owner tests.
-
-## 9. Placement / transform representation
-
-Prefer **relative** reconstruction evidence over false precision.
-
-Example:
+Prefer relative/normalized reconstruction evidence over false precision.
 
 ```json
 {
-  "relativeTo": "hero_zone_center",
-  "position": {"x": 0.35, "y": 0.0, "z": -0.20},
-  "units": "normalized-scene-width",
-  "status": "INFERENCE",
+  "relativeTo": "actor_root_visual",
+  "position": {"x": 0.12, "y": 0.48, "z": 0.0},
+  "units": "normalized-frame",
+  "status": "OBSERVED_DEMO",
   "confidence": "medium"
 }
 ```
 
-For visually measured pixel/frame relations, the recipe may additionally store:
+For proposed 3D reconstruction values, keep evidence separate:
 
 ```json
 {
-  "screenAnchor": {"x": 0.62, "y": 0.73},
-  "screenUnits": "normalized-frame",
-  "status": "OBSERVED_DEMO"
+  "relativeTo": "actor_root",
+  "position": {"x": null, "y": null, "z": null},
+  "units": "consumer-world",
+  "status": "UNRESOLVED",
+  "confidence": "low"
 }
 ```
 
-Do not manufacture world-meter coordinates from a single perspective image.
+Do not derive world meters from one perspective image unless a calibrated reconstruction actually supports it.
 
 ## 10. Scale relations
 
@@ -235,16 +232,16 @@ Prefer ratios:
 
 ```json
 {
-  "a": "stool",
-  "b": "gothgirl",
+  "a": "prop",
+  "b": "actor",
   "relation": "height_ratio",
-  "value": 0.42,
+  "value": 0.25,
   "status": "INFERENCE",
   "confidence": "medium"
 }
 ```
 
-If not measurable with confidence, use `UNRESOLVED` rather than a plausible-looking number.
+If not reliably measurable, use `UNRESOLVED`.
 
 ## 11. Camera
 
@@ -262,48 +259,51 @@ If not measurable with confidence, use `UNRESOLVED` rather than a plausible-look
 }
 ```
 
-Exact camera numbers should only be returned when actually measured/reconstructed.
+Exact camera numbers belong only in a measured reconstruction.
 
 ## 12. Lighting
 
 ```json
 {
-  "status": "OBSERVED_DEMO",
-  "keyDirection": "front-left",
-  "fill": "soft ambient",
-  "contrast": "low",
+  "keyDirection": "front-left | back-right | unknown",
+  "fill": "soft ambient | hard | unknown",
+  "contrast": "low | medium | high | unknown",
   "timeOfDay": "day | night | indoor | stylized | unknown",
+  "status": "OBSERVED_DEMO | INFERENCE | SOURCE_FACT | UNRESOLVED",
+  "confidence": "high | medium | low",
   "notes": []
 }
 ```
 
-A source-page statement such as Kay's day/night/indoor lighting work is `SOURCE_FACT`; it is not an observation about a specific screenshot unless the screenshot itself is reviewed.
+Source-page lighting notes are `SOURCE_FACT`; they are not observations about a specific capture unless the capture is inspected.
 
 ## 13. Materials / glow / FX
+
+Keep three layers separate:
+
+1. source/material fact;
+2. effect actually observed;
+3. proposed KFB treatment.
+
+Example:
 
 ```json
 {
   "target": "holiday-light-prop",
   "effect": "emissive/glow",
   "sourceMaterial": "holiday_glow",
-  "status": "SOURCE_FACT",
+  "sourceStatus": "SOURCE_FACT",
   "observedInCapture": false,
   "kfbTreatment": null
 }
 ```
-
-Keep three separate layers:
-
-1. material/source fact;
-2. visual effect actually observed;
-3. proposed KFB rendering treatment.
 
 ## 14. Characters / motion / props
 
 ```json
 {
   "actor": "GothGirl",
-  "sourcePath": "...",
+  "sourcePath": "media/3D_Assets/KayKit_Mystery_Series6/GothGirl/...",
   "rigFamily": {
     "value": "Rig_Medium",
     "status": "SOURCE_FACT"
@@ -318,21 +318,11 @@ Keep three separate layers:
 }
 ```
 
-If a known KFB test exists, reference it separately:
-
-```json
-{
-  "testedEvidenceRef": "GothGirl Death_A 69/69 Librarian preview",
-  "scope": "Asset Librarian preview only",
-  "status": "TESTED_RESULT"
-}
-```
-
-Never generalize the test to unrelated clips/consumers.
+Prior tested evidence may be referenced separately with exact scope, e.g. the GothGirl Librarian preview result. Never generalize it to unrelated clips/consumers.
 
 ## 15. `evidenceSummary`
 
-Each recipe must end with a compact count/summary:
+Every recipe should end with a compact evidence balance:
 
 ```json
 {
@@ -346,47 +336,45 @@ Each recipe must end with a compact count/summary:
 }
 ```
 
-This makes it obvious whether a recipe is mostly observation or mostly proposal.
-
 ## 16. `unresolved`
 
-Explicitly preserve blockers:
+Preserve blockers explicitly.
 
 ```json
 [
   {
-    "question": "Which exact City Builder road model matches the visible straight section?",
-    "ownerNeeded": "Asset/Registry source exposure",
+    "question": "What exact local blaster transform reproduces the source grip?",
+    "ownerNeeded": "ToolBox / receiving consumer measurement",
     "blocking": false
   }
 ]
 ```
 
-## 17. `reconstructionChecklist`
+## 17. Reconstruction checklist
 
-A recipe should finish with a short visual verification sequence, e.g.:
+At L2–L3, a visual agent may:
 
 1. load only listed source candidates;
 2. reproduce coarse composition;
-3. compare silhouette/spacing against source capture;
+3. compare silhouette/spacing with the source;
 4. tune relative scale;
 5. tune camera;
-6. add light/material/FX only where evidence exists;
-7. capture comparison screenshot;
-8. label mismatches;
-9. return unresolved rather than hiding them.
+6. add material/light/FX only where evidence exists;
+7. capture comparison evidence;
+8. list residual mismatches;
+9. leave unsupported behavior unresolved.
 
-This is a visual reconstruction checklist, not a runtime acceptance test.
+This is visual reconstruction evidence, not L5 runtime acceptance.
 
-## 18. Example · minimal Block Bits sub-recipe
-
-Illustrative structure only; values are intentionally unresolved until visual review.
+## 18. Minimal example
 
 ```json
 {
-  "schema": "kfb.visual-scene-recipe.v0-proposal",
-  "recipeId": "VR-003:block-bits:stage",
+  "schema": "kfb.scene-recipe.v0",
+  "profile": "visual-preflight",
+  "recipeId": "VR-003:block-bits:motif-A",
   "status": "candidate-only",
+  "maturity": "L0",
   "sourceCaptures": [
     {
       "path": "Block_Bits_Sample - VOXEL PYRAMID + STAGE + WRESTLING RING FLOOR + BOXEL BLITZ.png",
@@ -394,7 +382,7 @@ Illustrative structure only; values are intentionally unresolved until visual re
     }
   ],
   "sceneIntent": {
-    "label": "source-authored stage motif",
+    "label": "source-authored motif awaiting visual review",
     "status": "PROPOSAL"
   },
   "assets": [],
@@ -402,34 +390,39 @@ Illustrative structure only; values are intentionally unresolved until visual re
   "camera": {"status": "UNRESOLVED"},
   "lighting": {"status": "UNRESOLVED"},
   "unresolved": [
-    {"question": "Which visible motif is the stage?"},
+    {"question": "Which visible motif is represented?"},
     {"question": "Which exact Block Bits models are used?"}
   ]
 }
 ```
 
-The example demonstrates the rule: a descriptive filename is not enough to populate visual geometry facts.
+The example intentionally remains L0 because a descriptive filename is not visual evidence.
 
-## 19. Consumer handoff rule
+## 19. Promotion rule
 
-When a recipe is accepted as useful, the receiving owner may:
+The first 3–5 Claude Design jobs must test whether this v0 shape is sufficient.
 
-- translate roles into its existing scene/world contract;
-- resolve exact runtime transforms;
-- run collision/animation/attachment tests;
-- accept/reject source candidates.
+Allowed outcomes:
 
-The visual recipe stays as provenance/evidence. It should not become the runtime source of truth unless the consumer explicitly adopts it through its own decision process.
+- keep v0 as-is;
+- add/remove fields based on actual reconstruction needs;
+- adapt into a pre-existing receiving-owner contract;
+- reject parts that proved unnecessary.
+
+Not allowed yet:
+
+- declare `kfb.scene-recipe.v1` from desk design alone;
+- promote any recipe to L5 without receiving-consumer testing;
+- make this preflight file the runtime SSOT by default.
 
 ## 20. Exit criterion
 
-This proposal is ready for Claude Design use when:
+The v0 proposal is ready for trial because:
 
-- `SOURCE_ASSET_MATCH_MATRIX.md` is available;
-- the first `VISUAL_JOB_PACKETS` cite this template;
-- `CLAUDE_DESIGN_START_HERE.md` explicitly states the owner boundary;
-- no receiving runtime contract is silently replaced.
+- corpus index exists;
+- source-match matrix exists;
+- bounded visual jobs exist;
+- canonical and WORLD NOW tracks are separated;
+- owner boundaries are explicit.
 
-## 21. Next checkpoint
-
-Create the first bounded `VISUAL_JOB_PACKETS/` for Birthday, Orbit 7, Block Bits, City Builder/Resource, then character/prop jobs.
+Next evidence must come from actual Claude Design visual jobs, not additional schema speculation.
