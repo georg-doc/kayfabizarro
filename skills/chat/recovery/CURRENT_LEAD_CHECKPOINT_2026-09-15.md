@@ -6,7 +6,7 @@ Status: CURRENT RECOVERY POINTER. Kein Runtime-SSOT. Ein frischer Lead-Chat lies
 
 ## Warum diese Karte existiert
 
-Der Lead-Chat verbindet zurzeit Town, Travel, ToolBox und Asset Librarian. Bei Chat-Abbruch soll Georg keinen Transkript-Dump rekonstruieren müssen.
+Der Lead-Chat verbindet zurzeit Town, Travel, ToolBox, Asset Librarian und Stunt/Race-Donors. Bei Chat-Abbruch soll Georg keinen Transkript-Dump rekonstruieren müssen.
 
 ## Aktuelle Arbeitslinien
 
@@ -36,7 +36,21 @@ Vor diesem Dokumentationscommit lag Main bei `3f6e8dcc5d00ff642488f7e5e1c76cd6ad
 
 Input-Paket: `tools/KFB-ToolBox/_inbox/KFB FrankenStein ToolBox (WS0).zip`.
 
-Weiterhin zwei getrennte Ergebnisse: A = vollständiger kaltstartfähiger Quellstand und echtes Delta; B = ein gemeinsamer workfloworientierter UI-Pilot auf denselben Modulen. ToolBox-/Town-Ideen nicht als Zusatzscope in A hineinziehen.
+**WS0 SOURCE REPORT, 15.09.2026:** lokaler Jobordner `_inbox/WS0_2026-09-15/`; 113 entpackte Einträge; 101/101 Paket-Prüfsummen PASS; Modulschluss laut WS0 87 Dateien / 7 Einstiege / 0 unauflösbare lokale Modulreferenzen außer externen Schriftverweisen; 30/31 Embed-Dateien bytegleich, `carlrig-mount.v1.js` erwartete v3.1-Abweichung; Kaltstart 7/7. WS0 bewertet Daten erhalten = PASS, Parameter angewandt = TEILWEISE, sichtbar gleich = TEILWEISE und nennt `T1_SOURCE_CLOSURE_DELIVERED`. Diese Detailtests wurden vom Lead-Chat nicht selbst reproduziert.
+
+**Unabhängig hier geklärt:** der GitHub-Commit, der das Original-ZIP hinzufügte, ist `a3adb84692fd381fafe75d294f9e14d5b6f12c4d` (`Add files via upload`). Der ausführliche lokale WS0-Jobordner war bei dieser Prüfung noch nicht unter `tools/KFB-ToolBox/_inbox/` auf `main` sichtbar; vor Chat-Abbruch daher Return/Delta/QA dauerhaft pushen.
+
+Weiterhin zwei getrennte Ergebnisse: A = vollständiger kaltstartfähiger Quellstand und echtes Delta; B = ein gemeinsamer workfloworientierter UI-Pilot auf denselben Modulen. Vor B die noch teilweise Feld-/Sichtabdeckung mit einer positiven Feldmatrix schließen oder ausdrücklich als offene Abweichung klassifizieren. ToolBox-/Town-Ideen nicht als Zusatzscope in A hineinziehen.
+
+UI-Schriften bleiben readability-first: Roboto/System-Sans für ToolBox-Bedienung; keine Schriftdateien in Übergabepakete. Artwork-Schriften bleiben getrennte, optional externe Art-Assets.
+
+### Stunt / Vehicles · Low-effort presentation
+
+Implementation SSOT bleibt `georg-doc/KFB-Stunt-Car-Race`. Neue User-Direction ist dort in `_handover/VEHICLE_DRIVERLESS_PRESENTATION_DIRECTION_2026-09-15.md` gesichert.
+
+Ordinary cartoon vehicles dürfen ohne sichtbaren seated Driver / Cockpit / Tricycle-Graft fahrbar sein. Der ausgewählte Character gilt während des Fahrens narrativ als im Vehicle; Town kann bei Bedarf einen kurzen Enter/Exit-Übergang zeigen. Der bestehende Driver-Graft bleibt optionaler authored presentation layer für besondere Fahrzeuge und wird nicht gelöscht.
+
+Die Race-Physik, Kamera und Progress-Owner bleiben unverändert. Visual acting darf auf einem Präsentations-Child aufsetzen, aber Collider/Physik nicht still verschieben. Ziel ist, den vorhandenen Cartoon-Vehicle-Pool schnell nutzbar zu machen und KayKit-/andere Characters nicht vom ToolBox-Cockpitbau abhängig zu machen.
 
 ### Travel / Town Terrain
 
@@ -48,4 +62,4 @@ Danach beziehungsweise parallel als kleine Vergleichsszene: `WORLD_COLOR_LIGHTIN
 
 ## Recovery-Satz für einen frischen Lead-Chat
 
-> Lies `skills/chat/RECOVERY_PATH.md`, dann `skills/chat/recovery/CURRENT_LEAD_CHECKPOINT_2026-09-15.md`. Verifiziere den aktuellen `georg-doc/kayfabizarro`-Main-HEAD und die jeweils genannten Projekt-SSOTs. Für Town danach `skills/chat/town/START_HERE.md` + Session Card + das dort verlinkte Public Delta; §§12–13 im Living sind der historische r016-Checkpoint. Für Travel-Look-Fragen den World-Color-/Lighting-TBD lesen. Für Asset Librarian den Postmortem lesen. Keine bereits gemergten v1.6/v1.7-Funktionen neu bauen und keine Owner still ersetzen.
+> Lies `skills/chat/RECOVERY_PATH.md`, dann `skills/chat/recovery/CURRENT_LEAD_CHECKPOINT_2026-09-15.md`. Verifiziere den aktuellen `georg-doc/kayfabizarro`-Main-HEAD und die jeweils genannten Projekt-SSOTs. Für Town danach `skills/chat/town/START_HERE.md` + Session Card + das dort verlinkte Public Delta; §§12–13 im Living sind der historische r016-Checkpoint. Für Travel-Look-Fragen den World-Color-/Lighting-TBD lesen. Für Asset Librarian den Postmortem lesen. Für Stunt-Vehicles den driverless-presentation Handoff im Stunt-SSOT lesen. Keine bereits gemergten Funktionen neu bauen und keine Owner still ersetzen.
