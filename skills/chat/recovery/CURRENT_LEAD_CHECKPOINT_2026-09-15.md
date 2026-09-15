@@ -18,19 +18,26 @@ Dann `SESSION_CARD.md` lesen. Der aktuelle öffentliche Cursor ist S001 r022 plu
 
 Post-r022 TBD: `skills/chat/masterplan/WORLD_COLOR_LIGHTING_COHESION_TBD_2026-09-15.md` — gemeinsame World Lighting / Color Response über Asset-Familien; Town konsumiert später den Travel-Look-Contract, Color Grading zuletzt.
 
-### Geburtstags-Opener
+Post-r022 Archetypen-/Birthday-Zulauf: `skills/chat/town/references/TOWN_POST_R022_ARCHETYPES_BIRTHDAY_RADIO_2026-09-15.md`. FrizzleBob ist primär Herald/Guide, nicht festgeschriebener Trickster; Offica Doppeldenk ist bürokratische Threshold-Guardian-Richtung; Trickster/Shadow bleiben bewegliche bzw. relationale Funktionen; Revelation-Sonnenbrille ist Proposal, kein gebauter Shader/Item-Pfad.
+
+### Geburtstags-Opener und Birthday Radio
 
 Mittwoch muss nicht die ganze Town fertig sein. Kleinster sinnvoller vorzeigbarer Stand: vorhandenen RollerCoaster/Pet-Select-Donor weiterverwenden, FrizzleBob plus den tatsächlich gewählten Geburtstags-Character zeigen, Wortmarke + `Happy Birthday Elisa`, Character-Auswahl und wenige sichtbar passende Animationszustände. Town-Silhouette/3D-Raum kann Kulisse sein; vollständiges Terrain ist keine Voraussetzung.
 
 Animation nicht nach Menge auswählen. Für den Opener reichen Rollen wie Idle, Hover/Focus, Click/Select/Celebrate und Rückkehr in einen ruhigen Zustand. KayKit-Motions am echten Rig prüfen; FrizzleBob bleibt sein eigener Actor-/Animation-Consumer und wird nicht durch behauptete KayKit-Kompatibilität ersetzt.
 
+**Birthday Radio asset implementation:** sechs VOLE/Tom-Kincaid MP3s liegen unter `media/3D_Assets/Audio/Music/Birthday Radio - VOLE CC0/`, Import-Commit `c2d6cf2b0c64a5a090bb96cb4b826c875dd52786`. D6: Jazz Trio · Church Organ · Reggae · Drum’n’Bass · 8-bit · Death Metal. `MANIFEST.json` hält Source-URLs, Bytegrößen und SHA-256. One-shot Import Run `34929626545` war SUCCESS; der temporäre Import-Workflow wurde danach entfernt. Radio-/D6-UI und audio-reactive Speaker/Letters sind **noch nicht** als Runtime gebaut.
+
 ### Asset Librarian
 
 Permanent URL: `https://kayfabizarro.pages.dev/asset-librarian/`.
 
+Fresh-chat onboarding: `tools/asset_registry/librarian/ONBOARDING_FRESH_CHAT_2026-09-15.md`.  
 Postmortem: `tools/asset_registry/librarian/POSTMORTEM_CHAT_BREAK_2026-09-15.md`.
 
-Vor diesem Dokumentationscommit lag Main bei `3f6e8dcc5d00ff642488f7e5e1c76cd6ad052f84`: v1.7 Browse/Filter-Pass gemergt; Browser-Smoke Run `34919321337` SUCCESS. Town Workbench v1.6 und On-character KayKit Motion Preview sind Teil der grünen Regression. Dokumentation/Manifest/Return hinken hinter v1.7 her und müssen vor neuer breiter Featurearbeit versöhnt werden.
+Der geborgene Implementationsstand vor dem Postmortem liegt bei `3f6e8dcc5d00ff642488f7e5e1c76cd6ad052f84`: v1.7 Browse/Filter-Pass gemergt; Browser-Smoke Run `34919321337` SUCCESS. Town Workbench v1.6 und On-character KayKit Motion Preview sind Teil der grünen Regression. Dokumentation/Manifest/Return hinken hinter v1.7 her und müssen vor neuer breiter Featurearbeit versöhnt werden.
+
+Der frische Librarian-Chat soll danach prüfen, ob Registry → Live die sechs neuen Birthday-Radio-Dateien bereits indiziert hat. Nicht hardcoden, nur um sie sichtbar zu machen.
 
 ### ToolBox
 
@@ -62,4 +69,4 @@ Danach beziehungsweise parallel als kleine Vergleichsszene: `WORLD_COLOR_LIGHTIN
 
 ## Recovery-Satz für einen frischen Lead-Chat
 
-> Lies `skills/chat/RECOVERY_PATH.md`, dann `skills/chat/recovery/CURRENT_LEAD_CHECKPOINT_2026-09-15.md`. Verifiziere den aktuellen `georg-doc/kayfabizarro`-Main-HEAD und die jeweils genannten Projekt-SSOTs. Für Town danach `skills/chat/town/START_HERE.md` + Session Card + das dort verlinkte Public Delta; §§12–13 im Living sind der historische r016-Checkpoint. Für Travel-Look-Fragen den World-Color-/Lighting-TBD lesen. Für Asset Librarian den Postmortem lesen. Für Stunt-Vehicles den driverless-presentation Handoff im Stunt-SSOT lesen. Keine bereits gemergten Funktionen neu bauen und keine Owner still ersetzen.
+> Lies `skills/chat/RECOVERY_PATH.md`, dann `skills/chat/recovery/CURRENT_LEAD_CHECKPOINT_2026-09-15.md`. Verifiziere den aktuellen `georg-doc/kayfabizarro`-Main-HEAD und die jeweils genannten Projekt-SSOTs. Für Town danach `skills/chat/town/START_HERE.md` + Session Card + die dort verlinkten Public-/post-r022-Deltas; §§12–13 im Living sind der historische r016-Checkpoint. Für Travel-Look-Fragen den World-Color-/Lighting-TBD lesen. Für Asset Librarian `ONBOARDING_FRESH_CHAT_2026-09-15.md` + Postmortem lesen. Für Stunt-Vehicles den driverless-presentation Handoff im Stunt-SSOT lesen. Keine bereits gemergten Funktionen neu bauen und keine Owner still ersetzen.
