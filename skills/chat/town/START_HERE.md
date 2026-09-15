@@ -11,7 +11,7 @@ This folder is the durable home for the current KFB Town ideation thread. It is 
 Read in this order:
 
 1. `LIVING_KFB_TOWN.md` — the one additive Town living document and its J-decisions.
-2. `SESSION_CARD.md` — current public cursor; if newer than the Living sections named below, follow its linked public delta.
+2. `SESSION_CARD.md` — current public cursor; if newer than the Living sections named below, follow its linked public delta and explicitly named post-cut inputs.
 3. `references/README.md` — reference index and evidence rules.
 4. `references/KFB_META_NARRATION_SAMMLUNG_WS0_2026-09-14.md` — high-resolution WS0/Lab concept extraction; `SOURCE FACT` for the Lab, `PROPOSAL` for Town.
 5. `../meta/KFB_META_COMPENDIUM_v1.md` — cross-module meta index, not canon by itself.
@@ -29,7 +29,7 @@ Do not turn this into a second technical lead or implementation repo. Travel, Co
 
 - Town is currently a hub concept, not a built runtime.
 - `LIVING_KFB_TOWN.md` owns Town-specific decisions; the current Session Card may temporarily route to an explicitly accepted public delta when the full local Living has not been mechanically merged yet.
-- Reference files beside it preserve derivation and alternatives; they do not become Town decisions merely by being present. A Session Card must explicitly identify any accepted continuation.
+- Reference files beside it preserve derivation and alternatives; they do not become Town decisions merely by being present. A Session Card must explicitly identify any accepted continuation or later additive input.
 - Keep source namespaces intact: `L-nn` remains a Frankensteining-Lab reference; new Town decisions use the Town decision log only after Georg adopts them.
 - The Meta Compendium routes across modules but is not canon by itself.
 - Old version labels, asset counts and project statuses in meta documents are snapshots; verify current state in the named project/tool SSOT before acting.
@@ -69,4 +69,10 @@ Current high-level direction: natural Travel terrain replaces the cutting mat fo
 
 Read [WORLD_COLOR_LIGHTING_COHESION_TBD_2026-09-15.md](../masterplan/WORLD_COLOR_LIGHTING_COHESION_TBD_2026-09-15.md) when planning Travel/Town look cohesion. It records Georg's current direction that KayKit, Kenney, Quaternius, KFB rigs, vehicles and VFX should share one World Lighting / Color Response, with small calibrated asset-family corrections, named mood presets and local lights. Town consumes the eventual Travel look contract. Color grading is intentionally deferred until material/light response itself is coherent.
 
-Travel, ToolBox/Animation Lab, Asset Librarian, ChatterBox/Journey/Almanac, Stunt and Combat keep their existing owners. The GitHub delta and the lighting TBD are readable handoffs, not automatic acceptance or implementation.
+### Post-r022 input · Archetypes, Revelation, Birthday Radio
+
+Read [TOWN_POST_R022_ARCHETYPES_BIRTHDAY_RADIO_2026-09-15.md](references/TOWN_POST_R022_ARCHETYPES_BIRTHDAY_RADIO_2026-09-15.md) for the later additive direction: FrizzleBob primarily Herald/Guide; Trickster and Shadow remain movable/relational functions; Offica Doppeldenk is the bureaucratic Threshold-Guardian direction; a “They Live”-style pair of glasses is a possible Revelation artifact; and the six VOLE/Tom-Kincaid Birthday Radio tracks are mapped to D6 faces.
+
+The six audio binaries plus per-file provenance manifest are now in `media/3D_Assets/Audio/Music/Birthday Radio - VOLE CC0/`. Their presence is an asset/source result, **not** a claim that a Birthday Radio runtime, Town audio owner or D6 interaction has already been built.
+
+Travel, ToolBox/Animation Lab, Asset Librarian, ChatterBox/Journey/Almanac, Stunt and Combat keep their existing owners. The GitHub delta and the post-cut handoffs are readable inputs, not automatic acceptance or implementation.
