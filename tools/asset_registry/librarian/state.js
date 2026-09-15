@@ -5,6 +5,7 @@ export const RESULT_LIMIT = 120;
 export const STORAGE_SELECTION = 'kfb.asset-librarian.v1.2.selection';
 export const STORAGE_VIEW = 'kfb.asset-librarian.v1.2.view';
 export const STORAGE_REGISTRY_MODE = 'kfb.asset-librarian.v1.4.registry-mode';
+export const STORAGE_BROWSE_MODE = 'kfb.asset-librarian.v1.7.browse-mode';
 export const $ = (id) => document.getElementById(id);
 
 function storedSelection() {
@@ -12,19 +13,23 @@ function storedSelection() {
   catch { return []; }
 }
 function storedRegistryMode() { return localStorage.getItem(STORAGE_REGISTRY_MODE) === 'canonical' ? 'canonical' : 'live'; }
+function storedBrowseMode() { return localStorage.getItem(STORAGE_BROWSE_MODE) === 'all' ? 'all' : 'primary'; }
 export const state = {
   manifest:null, packs:[], profiles:{}, rigSummary:null, catalog:null, catalogById:null, rigById:null,
   problems:null, problemsByAsset:new Map(), selected:new Set(storedSelection()), active:null, lastResults:[],
   viewMode: localStorage.getItem(STORAGE_VIEW) === 'list' ? 'list' : 'gallery',
   registryMode: storedRegistryMode(),
+  browseMode: storedBrowseMode(),
+  resultVisibleLimit: RESULT_LIMIT,
   registryBase: null,
 };
 state.registryBase = state.registryMode === 'live' ? LIVE_REGISTRY_BASE : CANONICAL_REGISTRY_BASE;
 export function persistSelection(){localStorage.setItem(STORAGE_SELECTION,JSON.stringify([...state.selected].sort()));}
 export function registryBase(){return state.registryBase || CANONICAL_REGISTRY_BASE;}
+export function setBrowseMode(mode){state.browseMode=mode==='all'?'all':'primary';localStorage.setItem(STORAGE_BROWSE_MODE,state.browseMode);}
 export function resetRegistryCaches(){
   state.manifest=null; state.packs=[]; state.rigSummary=null; state.catalog=null; state.catalogById=null; state.rigById=null;
-  state.problems=null; state.problemsByAsset=new Map(); state.active=null; state.lastResults=[];
+  state.problems=null; state.problemsByAsset=new Map(); state.active=null; state.lastResults=[]; state.resultVisibleLimit=RESULT_LIMIT;
 }
 export function setRegistryMode(mode){
   const next=mode === 'canonical' ? 'canonical' : 'live';
