@@ -65,4 +65,8 @@ Current high-level direction: natural Travel terrain replaces the cutting mat fo
 
 **Speech attention:** one NPC bubble is normal, two simultaneous bubbles are the soft maximum in the player's current view, a third only a named exception. Billboards, Jumbotron, road signs and other MediaSurfaces are a separate landscape/broadcast layer and do not consume the NPC bubble budget unless they open an actual NPC/chat bubble.
 
-Travel, ToolBox/Animation Lab, Asset Librarian, ChatterBox/Journey/Almanac, Stunt and Combat keep their existing owners. The GitHub delta is a readable handoff, not automatic acceptance or implementation.
+### Post-r022 TBD · World Color & Lighting Cohesion
+
+Read [WORLD_COLOR_LIGHTING_COHESION_TBD_2026-09-15.md](../masterplan/WORLD_COLOR_LIGHTING_COHESION_TBD_2026-09-15.md) when planning Travel/Town look cohesion. It records Georg's current direction that KayKit, Kenney, Quaternius, KFB rigs, vehicles and VFX should share one World Lighting / Color Response, with small calibrated asset-family corrections, named mood presets and local lights. Town consumes the eventual Travel look contract. Color grading is intentionally deferred until material/light response itself is coherent.
+
+Travel, ToolBox/Animation Lab, Asset Librarian, ChatterBox/Journey/Almanac, Stunt and Combat keep their existing owners. The GitHub delta and the lighting TBD are readable handoffs, not automatic acceptance or implementation.
