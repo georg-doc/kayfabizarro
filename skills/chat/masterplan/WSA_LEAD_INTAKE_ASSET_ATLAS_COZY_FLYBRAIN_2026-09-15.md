@@ -35,6 +35,10 @@ Merged via PR #27:
 
 `tools/KFB-ToolBox/_handover/ELISA_PRIORITY_STAGE_BUILDER_2026-09-15/RESEARCH_COZY_LOOK_ITHAPPY_FLYBRAIN_2026-09-15.md`
 
+Licence-specific companion:
+
+`tools/KFB-ToolBox/_handover/ELISA_PRIORITY_STAGE_BUILDER_2026-09-15/ITHAPPY_LICENSE_GUARD_2026-09-15.md`
+
 Key integration points:
 
 - `cozy-lit` is a PROPOSAL for an additive material/light/post presentation preset on existing geometry, not a replacement for the existing KFB background/Duo-Tone shader owner.
@@ -64,7 +68,7 @@ Reconcile ITHappy into the Actor/ToolBox planning as:
 - no generic retarget/frankensteining compatibility claim before measurement;
 - purchased asset content must not be fed into generative-AI systems under the current standard licence.
 
-Cartoon deformation, rigging, part recombination and Frankensteining are technically compatible with the paid licence as modifications for KFB Products, subject to the licence guard documented in the source research and current official ITHappy terms. Do not expose redistributable raw/modified asset files to end users without separate licence review.
+Cartoon deformation, rigging, part recombination and Frankensteining are technically compatible with the paid licence as modifications for KFB Products, subject to `ITHAPPY_LICENSE_GUARD_2026-09-15.md` and current official ITHappy terms. Do not expose redistributable raw/modified asset files to end users without separate licence review.
 
 ### C · KFB experiments / FrizzleLab
 
