@@ -1,5 +1,5 @@
-import { LIVE_REGISTRY_BASE, PROFILES_URL, $, state, fetchJSON, option, setBusy, showError, persistSelection, registryBase, setRegistryMode } from './state.js';
-import { ensureCatalog, ensureRigFacts, ensureProblems, renderMetrics } from './registry.js';
+import { LIVE_REGISTRY_BASE, PROFILES_URL, RESULT_LIMIT, $, state, fetchJSON, option, setBusy, showError, persistSelection, registryBase, setRegistryMode, setBrowseMode } from './state.js';
+import { ensureCatalog, ensureRigFacts, ensureProblems, renderMetrics, refreshMultiFilterSummaries } from './registry.js';
 import { searchRegistry } from './search.js';
 import { setResultView, renderResults, showDetail, closeDetail } from './render.js';
 import { updateSelectionUI, renderConsumerBoundary, buildHandoff, copyText, downloadJSON } from './selection.js';
@@ -25,25 +25,38 @@ function openSelection() {
 }
 function closePanels() { closeDetail(); closeSelection(); productionUi?.closeResourceDetail(); $('drawerBackdrop').hidden = true; }
 
-export async function runSearch() {
+function updateSearchMeta(result) {
+  const shown=result.rows.length, total=result.total, raw=result.rawTotal;
+  const mode=state.browseMode==='primary'?'primary matches':'matches';
+  $('resultMeta').classList.remove('error');
+  $('resultMeta').textContent = `${shown.toLocaleString()} shown · ${total.toLocaleString()} ${mode}${raw!==total?` · ${raw.toLocaleString()} raw matches`:''}`;
+  const remaining=Math.max(0,total-shown);
+  $('loadMoreButton').hidden=remaining===0;
+  $('loadMoreButton').textContent=remaining?`Show ${Math.min(RESULT_LIMIT,remaining).toLocaleString()} more`:'Show more';
+}
+export async function runSearch({ resetLimit=true } = {}) {
+  if (resetLimit) state.resultVisibleLimit=RESULT_LIMIT;
   const result = await searchRegistry();
   state.lastResults = result.rows;
   renderResults(result.rows);
-  $('resultMeta').classList.remove('error');
-  $('resultMeta').textContent = `${result.rows.length.toLocaleString()} shown · ${result.total.toLocaleString()} matches`;
+  updateSearchMeta(result);
   return result;
 }
+function clearMultiChecks(id){for(const input of $(id)?.querySelectorAll('input[type="checkbox"]')||[])input.checked=false;}
 function resetFilters() {
-  for (const id of ['searchInput','kindFilter','packFilter','collectionFilter','formatFilter','dependencyFilter','problemFilter','rigFilter','animatedFilter','clipFilter','jointFilter']) $(id).value = '';
-  state.lastResults = [];
-  $('resultList').replaceChildren();
+  for (const id of ['searchInput','kindFilter','packFilter','collectionFilter','dependencyFilter','problemFilter','rigFilter','animatedFilter','clipFilter','jointFilter']) if($(id))$(id).value = '';
+  clearMultiChecks('typeFilterOptions'); clearMultiChecks('formatFilterOptions');
+  setBrowseMode('primary'); $('browseModeFilter').value='primary'; refreshMultiFilterSummaries();
+  state.resultVisibleLimit=RESULT_LIMIT; state.lastResults = [];
+  $('resultList').replaceChildren(); $('loadMoreButton').hidden=true;
   $('resultMeta').textContent = 'Enter a query or choose filters.';
 }
-function toggleFilters() {
+async function toggleFilters() {
   const hidden = !$('advancedFilters').hidden;
   $('advancedFilters').hidden = hidden;
   $('filtersToggle').setAttribute('aria-expanded', hidden ? 'false' : 'true');
   $('filtersToggle').textContent = hidden ? 'More filters' : 'Hide filters';
+  if (!hidden) await ensureCatalog();
 }
 function toggleTechnical() {
   const open = !$('technicalDetails').classList.contains('open');
@@ -52,8 +65,10 @@ function toggleTechnical() {
   $('technicalToggle').setAttribute('aria-expanded', open ? 'true' : 'false');
   $('technicalToggle').textContent = open ? 'Hide technical details' : 'Technical details';
 }
+function hasMultiSelection(id){return Boolean($(id)?.querySelector('input[type="checkbox"]:checked'));}
 function hasSearchIntent() {
-  return ['searchInput','kindFilter','packFilter','collectionFilter','formatFilter','dependencyFilter','problemFilter','rigFilter','animatedFilter','clipFilter','jointFilter'].some((id) => String($(id).value || '').trim());
+  const base=['searchInput','kindFilter','packFilter','collectionFilter','dependencyFilter','problemFilter','rigFilter','animatedFilter','clipFilter','jointFilter'].some((id) => String($(id)?.value || '').trim());
+  return base || hasMultiSelection('typeFilterOptions') || hasMultiSelection('formatFilterOptions') || state.browseMode==='all';
 }
 function formatSourceLine(manifest) {
   const commit = String(manifest?.sourceCommit || '').slice(0, 12) || 'unknown';
@@ -66,9 +81,10 @@ async function loadRegistry(mode = state.registryMode, { rerun = false, allowFal
   const token = ++registryLoadToken;
   setRegistryMode(mode);
   $('registryModeSelect').value = state.registryMode;
+  $('browseModeFilter').value = state.browseMode;
   closeDetail();
   state.lastResults = [];
-  $('resultList').replaceChildren();
+  $('resultList').replaceChildren(); $('loadMoreButton').hidden=true;
   setBusy(true, `Loading ${state.registryMode} registry…`);
   try {
     const base = registryBase();
@@ -120,15 +136,19 @@ async function openAssetFromResource(assetId, clipName = null) {
   playClip(Number(match.value));
 }
 
-async function bootstrap() { await loadRegistry(state.registryMode, { allowFallback:true }); }
+async function bootstrap() { $('browseModeFilter').value=state.browseMode; refreshMultiFilterSummaries(); await loadRegistry(state.registryMode, { allowFallback:true }); }
 
 productionUi = initProductionResources({ showAsset: openAssetFromResource });
 
 $('searchButton').onclick = () => runSearch().catch(showError);
 $('searchInput').onkeydown = (event) => { if (event.key === 'Enter') runSearch().catch(showError); };
-$('kaykitPreset').onclick = () => { $('searchInput').value = 'KayKit'; $('kindFilter').value = ''; setResultView('gallery'); runSearch().catch(showError); };
+$('kaykitPreset').onclick = () => { $('searchInput').value = 'KayKit'; $('kindFilter').value = ''; setBrowseMode('primary'); $('browseModeFilter').value='primary'; setResultView('gallery'); runSearch().catch(showError); };
+$('browseModeFilter').onchange = (event) => { setBrowseMode(event.target.value); if(hasSearchIntent())runSearch().catch(showError); };
+$('loadMoreButton').onclick = () => { state.resultVisibleLimit += RESULT_LIMIT; runSearch({resetLimit:false}).catch(showError); };
 $('resetButton').onclick = resetFilters;
-$('filtersToggle').onclick = toggleFilters;
+$('filtersToggle').onclick = () => toggleFilters().catch(showError);
+$('typeFilterOptions').onchange = refreshMultiFilterSummaries;
+$('formatFilterOptions').onchange = refreshMultiFilterSummaries;
 $('listViewButton').onclick = () => setResultView('list');
 $('galleryViewButton').onclick = () => setResultView('gallery');
 $('registryModeSelect').onchange = (event) => loadRegistry(event.target.value, { rerun:true, allowFallback:true }).catch(showError);
@@ -154,10 +174,11 @@ $('clipSelect').onchange = (event) => { if (event.target.value === '') return; $
 document.addEventListener('kfb-open-asset', (event) => showDetail(event.detail).catch(showError));
 document.addEventListener('keydown', (event) => { if (event.key === 'Escape') closePanels(); });
 
-const publicApi = { version:'1.5', runSearch, showDetail, buildHandoff, activateProductionTab: productionUi.activateProductionTab, setRegistryMode:(mode)=>loadRegistry(mode,{rerun:true}), ensureCatalog, ensureRigFacts, ensureProblems, getState:() => ({ selectedAssetIds:[...state.selected].sort(), activeAssetId:state.active, viewMode:state.viewMode, registryMode:state.registryMode, sourceCommit:state.manifest?.sourceCommit || null }) };
+const publicApi = { version:'1.5', runSearch, showDetail, buildHandoff, activateProductionTab: productionUi.activateProductionTab, setRegistryMode:(mode)=>loadRegistry(mode,{rerun:true}), ensureCatalog, ensureRigFacts, ensureProblems, getState:() => ({ selectedAssetIds:[...state.selected].sort(), activeAssetId:state.active, viewMode:state.viewMode, registryMode:state.registryMode, browseMode:state.browseMode, resultVisibleLimit:state.resultVisibleLimit, sourceCommit:state.manifest?.sourceCommit || null }) };
 window.KFBAssetLibrarianV12 = publicApi;
 window.KFBAssetLibrarianV13 = publicApi;
 window.KFBAssetLibrarianV14 = publicApi;
 window.KFBAssetLibrarianV15 = publicApi;
+window.KFBAssetLibrarianV17 = { ...publicApi, version:'1.7', loadMore:()=>{state.resultVisibleLimit+=RESULT_LIMIT;return runSearch({resetLimit:false});} };
 updateSelectionUI(); bootstrap();
 setInterval(pollLiveRegistry, 90_000);
