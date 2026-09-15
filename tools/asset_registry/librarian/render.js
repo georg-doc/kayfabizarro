@@ -4,6 +4,9 @@ import { renderPreview } from './preview.js';
 import { toggleSelected } from './selection.js';
 import { attach3DThumbnail } from './thumb3d.js';
 import { renderAnimationSources } from './animation-sources.js';
+import { configureMotionPreview, clearMotionPreview } from './motion-preview.js';
+import { renderRelatedAssets } from './related-assets.js';
+import './town-workbench.js';
 
 const depBadge = (record) => {
   const status = record.dependencyStatus;
@@ -159,6 +162,8 @@ export async function showDetail(id) {
   $('emptyDetail').hidden = true;
   $('detailContent').hidden = false;
   state.active = id;
+  clearMotionPreview();
+  if ($('relatedAssets')) { $('relatedAssets').hidden=true; $('relatedAssets').replaceChildren(); }
 
   $('detailKind').textContent = `${record.kind} · ${record.format}`;
   $('detailName').textContent = record.name;
@@ -196,8 +201,11 @@ export async function showDetail(id) {
   const review = reviewBadge(record); if (review) $('detailBadges').append(review);
   renderRig(record);
   const motionSources = renderAnimationSources(record, (assetId) => showDetail(assetId).catch(showError));
+  const previewMotionCount = configureMotionPreview(record, motionSources);
   if (motionSources.localClips.length) $('detailBadges').append(badge(`${motionSources.localClips.length} local motions`, 'ok'));
   if (motionSources.sharedClips.length) $('detailBadges').append(badge(`${motionSources.sharedClips.length} shared motions`, 'ok'));
+  if (previewMotionCount) $('detailBadges').append(badge(`${previewMotionCount} previewable motions`, 'ok'));
+  renderRelatedAssets(record, (assetId) => showDetail(assetId).catch(showError));
   renderDependencies(record);
   renderProblems(record);
   const source = record.source || {};
