@@ -33,7 +33,8 @@ async function run(){
     const townCounts=await cdp.eval(`({world:document.querySelectorAll('#townEnvironmentList .town-card').length,characters:document.querySelectorAll('#townCharacterList .town-card').length,worldMeta:document.getElementById('townEnvironmentMeta').textContent,characterMeta:document.getElementById('townCharacterMeta').textContent})`);
     assert(townCounts.world>0,`no Town world candidates: ${JSON.stringify(townCounts)}`);assert(townCounts.characters>0,`no Town characters: ${JSON.stringify(townCounts)}`);
     assert(await cdp.eval(`[...document.querySelectorAll('#townEnvironmentList .town-card')].some(c=>c.querySelector('.town-meta')?.textContent.includes('kaykit-forest-nature-pack-1-0-free')||c.querySelector('.town-meta')?.textContent.includes('kenney-nature-kit'))`),'Forest/Nature first-choice assets missing');
-    await ev(cdp,`[...document.querySelectorAll('#townCharacterList .town-card')].some(c=>c.dataset.assetId===${JSON.stringify(GOTH)})`,'GothGirl in Town characters');
+    await cdp.eval(`(()=>{for(let i=0;i<6&&!([...document.querySelectorAll('#townCharacterList .town-card')].some(c=>c.dataset.assetId===${JSON.stringify(GOTH)}));i+=1)document.getElementById('townMore-character')?.click();return true;})()`);
+    await ev(cdp,`[...document.querySelectorAll('#townCharacterList .town-card')].some(c=>c.dataset.assetId===${JSON.stringify(GOTH)})`,'GothGirl in Town characters',30000);
     await cdp.eval(`(()=>{const c=[...document.querySelectorAll('#townCharacterList .town-card')].find(c=>c.dataset.assetId===${JSON.stringify(GOTH)});c.querySelector('.town-card-actions button').click();return true;})()`);
     await ev(cdp,`[...document.querySelectorAll('#townPropList .town-card')].some(c=>c.dataset.assetId===${JSON.stringify(MIC)})`,'GothGirl collection props');
     result.checks.townWorkbench={...townCounts,gothGirl:true,gothGirlMicrophone:true};
