@@ -139,6 +139,10 @@ async function openAssetFromResource(assetId, clipName = null) {
 async function bootstrap() { $('browseModeFilter').value=state.browseMode; refreshMultiFilterSummaries(); await loadRegistry(state.registryMode, { allowFallback:true }); }
 
 productionUi = initProductionResources({ showAsset: openAssetFromResource });
+// Town v1.6 remains a compatibility module and may set its historical visible version during module init.
+// v1.7 is the current shell version after all dependency initializers have run.
+document.title='KFB Asset Librarian v1.7';
+const visibleVersion=document.querySelector('h1 span'); if(visibleVersion)visibleVersion.textContent='v1.7';
 
 $('searchButton').onclick = () => runSearch().catch(showError);
 $('searchInput').onkeydown = (event) => { if (event.key === 'Enter') runSearch().catch(showError); };
