@@ -1,121 +1,162 @@
-# KFB · Current Priority Board · 15.09.2026
+# KFB · Current Priority Board · 15.09.2026 late
 
-**Status:** CURRENT PERSONAL / LEAD PRIORITY VIEW. Kein Projekt-SSOT und keine automatische Implementation. GitHub-/Projekt-SSOTs schlagen diese Reihenfolge, wenn ein echter Blocker oder Owner-Konflikt auftaucht.
+**Status:** CURRENT PERSONAL / LEAD PRIORITY VIEW. Kein Runtime-SSOT. Projekt-SSOTs und aktuelle Execution Contracts schlagen ältere Chat-/Board-Stände.
 
 ## Ziel
 
-Bis Mittwoch reicht ein **guter Birthday Character Select**. Die begehbare Town darf danach Richtung Wochenende wachsen. Deshalb werden Infrastruktur- und Worldbuilding-Aufgaben nur vorgezogen, wenn sie den Birthday-Slice direkt freischalten.
+Elisas Geburtstag ist **16.09.2026**. Jetzt zählt ein kohärenter, spielbarer, visuell starker Birthday-World-Slice — keine weitere Planungsschicht und kein Versuch, vorher die ganze Town oder den ganzen Stage-Editor fertigzustellen.
 
-## P0 · Jetzt / Birthday-Pfad
+## P0 · NOW · Direct Astra Birthday build
 
-### P0.1 · Actor-/Motion-Handoff schließen
+### P0.0 · Actor-/Motion-Handoff
 
-Owner: Design / ToolBox / Animation Lab.
+**DONE / TESTED INPUT.**
 
-- neues `KFB ToolBox.zip` lesen, nicht A neu bauen;
-- `FIELD_COVERAGE.md` als aktuellen Beleg nutzen;
-- FrizzleBob consumer-ready referenzieren;
-- Novacyy/GothGirl: Idle · Focus/Hover · Select/Celebrate · Rest casten und am echten Rig binden;
-- genau einen Dance/Groove als P1-Kandidaten benennen;
-- Hihi für Mittwoch nur Existing Contract + `Coming Soon`;
-- EyeRig Speaker darf P1 bleiben.
+Der ToolBox Birthday Return liefert die getesteten Actor-/Motion-Eingänge. Nicht neu bauen.
 
-Handoff: `tools/KFB-ToolBox/_handover/BIRTHDAY_STARTSCREEN_2026-09-15/START_HERE.md`.
+Source:
 
-### P0.2 · Astra Birthday Startscreen bauen
+`tools/KFB-ToolBox/_handover/BIRTHDAY_STARTSCREEN_2026-09-15/RETURN_BIRTHDAY_CONSUMER.md`
 
-Owner: Travel / Astra.
+### P0.1 · Astra replacement build
 
-Required P0:
+**Owner:** `georg-doc/KFB-Travel-Globe` / Astra  
+**Current execution contract:**
 
-- eigener nicht-destruktiver WIP-Pfad;
-- Curtain/18/Enter als einfacher stabiler Threshold;
-- Travel-Sunset + Water/Beach + Town-Silhouette;
-- FrizzleBob + Novacyy aktiv, Hihi inaktiv;
-- Idle → Focus → Select/Celebrate → Rest sichtbar;
-- `Happy 18th Birthday, Elisa!`;
-- ein Birthday-Radio-Track nach Nutzergeste;
+`_handover/BIRTHDAY_STARTSCREEN_ASTRA_2026-09-15/ASTRA_EXECUTION_CURRENT_2026-09-15.md`
+
+**PR #8 bleibt REJECTED / UNMERGED.** Astra startet auf einem frischen nicht-destruktiven Birthday-Branch vom aktuellen Travel `main`.
+
+Hard P0 identity:
+
+- Travel/TinySkies world substrate, nicht generischer Sunset-Backdrop;
+- echtes Terrain + Coast/Water/Beach-Lesen;
+- Travel Evening sky/light/atmosphere owner;
+- echter coastal lighthouse + Glow/Beam;
+- animierte räumliche Clouds;
+- world-space Rainbow;
+- aged 3D Theatre Curtain / Proscenium als wiederverwendbarer Core-Asset-Candidate;
+- Curtain states: rest · wind · impact · sideways open · open-rest · close · reset;
+- WebGPU cloth donor **plus echter non-WebGPU fallback**;
+- Uncle FrizzleBob + GothGirl-source Birthday actor + Hihi räumlich IN DER WELT;
+- getestete Idle → Focus → Select/Celebrate → Rest-Beats;
+- sichtbarer Birthday Radio D6 mit allen sechs Tracks über Travel Audio;
+- drei asymmetrische Disco Balls;
+- physische farbige 3D-Letter/Newton-Installation `Happy Eighteenth Birthday Elisa!`;
+- ein begrenztes Fireworks/Celebration Event;
 - Desktop + Mobile Landscape;
-- Browser QA + veröffentlichte URL.
+- separate WIP-Publikation;
+- kein Auto-Merge vor Georg Freeplay.
 
-Brief: `georg-doc/KFB-Travel-Globe/_handover/BIRTHDAY_STARTSCREEN_ASTRA_2026-09-15/START_HERE.md`.
+### P0.2 · Astra-interne Gates
 
-### P0.3 · Browser-QA und Georg Freeplay
+Astra darf die Gates in einem Run abarbeiten; kein neuer Lead-/Planungs-Chat dazwischen.
 
-Erst nach funktionalem P0:
+`A0 preflight → A1 WORLD STANDING → A2 CURTAIN/FIRST 3–5s → A3 CHARACTER LIFE/INTERACTION → A4 SOUND/CELEBRATION → A5 RESPONSIVE/PUBLISH`
+
+Ein fehlgeschlagenes Gate wird repariert, bevor Astra weitergeht. Automated PASS ist niemals Georg-Acceptance.
+
+### P0.3 · Georg Freeplay
+
+Nach veröffentlichter Ersatz-WIP:
 
 - Desktop 1440×900;
 - Mobile Landscape ~844×390;
-- Enter/reveal;
-- beide aktiven Figuren;
-- Hihi disabled;
-- kein Audio-Doppelstart;
-- keine doppelten Mixer/Actors;
+- first-click/reveal;
+- Curtain feel;
+- world/coast/water/light;
+- alle drei Character-Präsentationen;
+- D6 sechs Tracks;
+- Interaktion / Restzustände;
+- keine Audio-/Mixer-/Actor-Duplikate;
 - Reload;
-- Screenshots + URL;
-- danach Georgs visueller/freeplay Pass.
+- visuelles Gesamturteil.
 
-### P0.4 · Librarian Recovery klein schließen, nicht ausweiten
+Erst danach Merge-/Release-Entscheidung.
 
-Owner: neuer Asset-Librarian-Chat.
+## Aktuelle Quellen, die nicht wieder erfunden werden
 
-- v1.7 Docs/Manifest/Return nachziehen;
-- permanente Cloudflare-URL prüfen;
-- prüfen, ob Birthday Radio über Registry → Live auftaucht;
-- keine neue große Taxonomie-Runde.
+### World
 
-Das ist nützlich, aber **kein Blocker** für Astra: der Birthday-Audio-Pfad ist direkt im Repo gepinnt.
+- Travel ist Terrain/Sky/Light/Water/Audio Owner.
+- TinySkies gameplay branch bleibt gepinnt auf `2659a5cc987d7e4a4c5aa7e79c86a1626ad75df6`; Audit 15.09.: keine neueren Default-Branch-World-Commits.
+- TinySkies `TerrainSurface.ts`, `SkyPresets.ts` und `Globe.createLighthouses()` sind die upstream world donors.
 
-## P1 · Juice, sobald P0 grün ist
+### Visual reference
 
-- alle sechs Birthday-Tracks als D6 Radio;
-- Touch-Swipe/Flip + sichtbare 1–6 Position;
-- EyeRig Speaker, falls sauber konsumierbar;
-- audio-reactive Speaker-/Letter-Bewegung über bestehenden Travel-Analyser;
-- drei Disco Balls;
-- ein geprüfter Default Dance/Groove;
-- ein kontrolliertes Firework Event;
-- stabilere/physischere KFB-Typography;
-- wenige world-as-toy Interaktionen mit authored reset/rest pose.
+Current Georg input:
 
-P1 darf P0 nicht wieder destabilisieren.
+`tools/KFB-ToolBox/_inbox/KFB Elisa B-Day Reference+Mockups/`
 
-## P2 · Wochenende / Town wächst aus dem Birthday-Slice
+- Georg mockup = Event-/Composition-Reference innerhalb der Travel-Welt;
+- Gemini mockup/colour sheet = secondary LookDev/local accents;
+- screenshots = source/reference evidence;
+- Curtain reference WebP = aged velvet/proscenium visual target.
 
-- Town Terrain Startzone: Plateau/Königshügel/Showstage/Fluss-Mündung/Pirateninsel;
-- erster Workbench-Candidate-Handoff für Environment/Characters/Props;
-- World Color & Lighting Calibration Stage;
-- World Audio Calibration Stage: Golden Hour Town → später Graveyard Night / Ring Performance;
-- lokale Ambience-/diegetische Audiozonen erst nach P0;
-- Makerspace/Kino;
-- Fahr-/Fahrschulzone mit City-Kit Roads;
-- Driverless cartoon vehicles als Default-Consumer;
-- Almanac Birthday provenance hook nach Save-Owner-Lektüre;
-- Birthday Hero Frame/Postcard;
-- breitere Dance-Auswahl.
+### Three.js technical donors
+
+Current audited pin:
+
+`mrdoob/three.js@8f24439631c052231f9661b81633e7ab514f25a5`
+
+- `webgl_volume_cloud.html` → volumetric cloud technique; KFB adds calm spatial animation/adaptation;
+- `webgpu_compute_cloth.html` → cloth donor; current source still WebGPU-only in practice, therefore fallback mandatory.
+
+### Birthday audio
+
+Six CC0 Birthday Radio MP3s already exist with provenance manifest. No new audio engine.
+
+## Explicit creative freedom
+
+Astra soll nicht stumpf einen Screenshot nachbauen. Innerhalb der harten Owner-/Source-/Coverage-Regeln darf und soll Astra optimieren:
+
+- Terrain seed / coastline silhouette;
+- camera/lens/reveal staging;
+- clearing shape;
+- prop clustering / negative space;
+- asymmetry / cartoon deformation;
+- cloud placement and motion;
+- curtain folds/wear/damage/proscenium detail;
+- local Birthday accent colours;
+- fireworks choreography;
+- disco/D6 response;
+- bounded microinteractions.
+
+Bessere 3D-Lösungen dürfen vom Mockup abweichen, solange dessen Intention und der stärkere Travel/TinySkies-World-Contract erhalten bleiben.
+
+## Deferred · not a Birthday blocker
+
+### Fable / Stage / Terraformer editor track
+
+Der vorherige Fable-G0-/Stage-Builder-Pfad bleibt als spätere Authoring-/Editor-Linie erhalten, blockiert aber **nicht** den direkten Astra Birthday build am 15./16.09.
+
+Nach Birthday-Freeplay kann der akzeptierte World/Scene-Stand zurück in Stage/ToolBox als Authoring Target fließen.
+
+### Narrative Scene Layer donor
+
+`dannylimanseta/narrative-scene-layer@082b5a43…` ist ein späterer Architektur-/Presentation-Donor für:
+
+- scene / presentation / theme split;
+- sticky poses/stances;
+- explicit entrances;
+- presentation variants.
+
+Kein neuer Narrative-Engine-Scope im Birthday build.
 
 ## Parallel / nicht blockierend
 
-- Suno: vorhandene sechs Biome-/Instrumental-Prompts wiederfinden und Render erzeugen;
-- ElevenLabs: kleines Triplet-Calibrationsset, keine Town-Abhängigkeit;
-- ToolBox Ergebnis B weiter prüfen: responsive Drawer/Fenstergrößen, unabhängiger Embed-Roundtrip, danach Oberfläche auf weitere Labs übertragen;
-- `mountGraft` Reporting-Lücken aus `FIELD_COVERAGE.md` bleiben WS0-Nacharbeit, kein Birthday-Blocker.
-
-## Aktuelle Belege, die nicht noch einmal erfunden werden müssen
-
-- Birthday Radio: sechs CC0-MP3s liegen bereits im Repo mit Provenienzmanifest.
-- Travel Audio: gemeinsamer Graph, Analyser/Beat, Ducking und Browser-TTS existieren bereits.
-- TinySkies Lighthouse: exakte Upstream-Implementation ist gepinnt.
-- ToolBox A: 7/7 Coldstarts und Feldabdeckung liegen als WS0/WSA-Evidence vor; sichtbare Gleichheit zur lebenden Authoring-Sitzung bleibt getrennt.
-- ToolBox B: `KFB ToolBox Pilot v1` existiert als Pilot; gemessen sind u. a. gemeinsamer Workflow, 0/248 Bedienelemente <24 px, 21 Zonen, Graft/Carl-Mount und keine zweite Materialcache-/Mixer-Logik im beschriebenen Pilotweg. Responsive Prüfgrößen und unabhängiger Embed-Roundtrip bleiben offen.
+- Asset Librarian: Docs/Manifest/Return versöhnen; keine Taxonomie-Großrunde.
+- ToolBox: Brows/Colorpicker/Surf/Material-Surface correctness separat; kein Birthday-Blocker.
+- Suno/ElevenLabs/Town-Expansion nur, wenn sie den Birthday build nicht verzögern.
 
 ## Nicht jetzt
 
-- volle Town;
-- vollständige Soundscape-Engine;
-- neues Lighting-System;
-- universelle Prop-Physics;
+- vollständige Town;
+- universeller Stage Editor;
+- universelles Full-Body IK;
 - vollständige Dance Library;
-- echte Multiplayer-Watchparty;
+- neues Lighting-System;
+- neue Soundscape-Engine;
+- Multiplayer-Watchparty;
 - Plato Dungeon;
-- LLM-Abhängigkeit im Birthday-Slice.
+- Card/PDF Viewer auf dem Curtain — **nur zukünftigen `setSurfaceContent`-Seam reservieren**.
