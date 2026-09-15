@@ -15,7 +15,7 @@ Liefere dem Birthday-Startscreen **wenige klar benannte, consumer-ready Actor-/M
 ## 2 · Zuerst lesen
 
 1. `tools/KFB-ToolBox/START_HERE.md`
-2. `tools/KFB-ToolBox/_inbox/KFB_TOOLBOX_ZIP_INTAKE_2026-09-15.md`
+2. `tools/KFB-ToolBox/_inbox/archiv/TOOLBOX_INTAKE_2026-09-15/KFB_TOOLBOX_ZIP_INTAKE_2026-09-15.md` — archivierte Intake-History; nur bei Source-/ZIP-Fragen nötig.
 3. `tools/KFB-ToolBox/_inbox/WS0_2026-09-15/START_HERE.md` — sobald als lesbare Datei verfügbar; sonst aus `KFB ToolBox.zip` lesen.
 4. `FIELD_COVERAGE.md` + `RETURN_WSA.md` aus demselben WS0-Paket.
 5. `unpacked/B_OBERFLAECHE/BERICHT_UI_PILOT_v1.md` und `KRITIK_UX_CARL_WEG_v1.md` nur für Ergebnis B.

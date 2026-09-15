@@ -16,7 +16,7 @@ Gemessenes Intake:
 - 19 Dateien / ca. 613 kB unkomprimiert
 - Inhalt ist ein **Birthday-Consumer-Return** mit Casting-QA, Profil, Changelog und Return-Dokumenten; kein Ersatz des A-Quellstands.
 
-Intake: `tools/KFB-ToolBox/_inbox/KFB_TOOLBOX_1_INTAKE_2026-09-15.md`.
+Intake (archivierte History): `tools/KFB-ToolBox/_inbox/archiv/TOOLBOX_INTAKE_2026-09-15/KFB_TOOLBOX_1_INTAKE_2026-09-15.md`.
 
 ### FrizzleBob Profil-Entwurf
 
