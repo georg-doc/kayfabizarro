@@ -2,6 +2,8 @@
 
 Status: CURRENT RECOVERY POINTER. Kein Runtime-SSOT. Ein frischer Lead-Chat liest zuerst `skills/chat/RECOVERY_PATH.md` und überprüft danach den jeweils aktuellen GitHub-Stand.
 
+**Human bookmark:** `https://kayfabizarro.pages.dev/kfb-hub/` — searchable navigator across the links below; never a replacement SSOT.
+
 ## Warum diese Karte existiert
 
 Der Lead-Chat verbindet zurzeit Town, Travel, ToolBox und Asset Librarian. Bei Chat-Abbruch soll Georg keinen Transkript-Dump rekonstruieren müssen.
