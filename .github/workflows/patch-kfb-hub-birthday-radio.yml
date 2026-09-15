@@ -1,0 +1,62 @@
+name: One-shot patch KFB Hub birthday radio
+
+on:
+  push:
+    paths:
+      - '.github/workflows/patch-kfb-hub-birthday-radio.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  patch-hub:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Patch current hub links and tasks
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          from pathlib import Path
+          p=Path('kfb-hub/index.html')
+          s=p.read_text(encoding='utf-8')
+
+          old="{id:'birthday-audio-pin',title:'Pin the six public-domain birthday tracks',lane:'Birthday radio',priority:'P0',desc:'Add the six already-found recordings with per-file provenance/public-domain basis. Do not treat “birthday song” as sufficient rights evidence.',url:D+'media',tags:['audio','birthday','public domain','radio']},"
+          new="{id:'birthday-audio-integrate',title:'Integrate the imported six-track D6 Birthday Radio',lane:'Birthday radio',priority:'P1',desc:'The six VOLE/Tom-Kincaid CC0 MP3s plus per-file manifest are already on main. Wire the D6 1–6 selection into the Birthday opener after user gesture; do not redo rights/source research.',url:D+'media/3D_Assets/Audio/Music/Birthday%20Radio%20-%20VOLE%20CC0',tags:['audio','birthday','cc0','radio','d6']},"
+          if old not in s: raise SystemExit('birthday audio todo anchor missing')
+          s=s.replace(old,new,1)
+
+          anchor="{section:'Live tools & workbenches',title:'Asset Librarian chat-break postmortem',badge:'RECOVERY',kind:'recovery',url:G+'tools/asset_registry/librarian/POSTMORTEM_CHAT_BREAK_2026-09-15.md',desc:'Recovered v1.6/v1.7 state, test evidence and documentation drift after the aborted chat.',tags:['asset','postmortem','v1.7','recovery']},"
+          extra=anchor+"\n{section:'Live tools & workbenches',title:'Asset Librarian · Fresh Chat Onboarding',badge:'START',kind:'recovery',url:G+'tools/asset_registry/librarian/ONBOARDING_FRESH_CHAT_2026-09-15.md',desc:'Current re-entry for a new Librarian chat: recover v1.7, reconcile docs/deploy evidence, then take one concrete Town/Birthday slice.',tags:['asset','librarian','recovery','onboarding','v1.7']},"
+          if "Asset Librarian · Fresh Chat Onboarding" not in s:
+              if anchor not in s: raise SystemExit('librarian postmortem anchor missing')
+              s=s.replace(anchor,extra,1)
+
+          town_anchor="{section:'KFB Town & meta',title:'Town Session Card',badge:'CURRENT',kind:'town',url:G+'skills/chat/town/SESSION_CARD.md',desc:'Compact current Town state: show stage, Workbench, Travel handoff and open seams.',tags:['town','session','current']},"
+          town_extra=town_anchor+"\n{section:'KFB Town & meta',title:'World Color & Lighting Cohesion · TBD',badge:'TBD',kind:'town',url:G+'skills/chat/masterplan/WORLD_COLOR_LIGHTING_COHESION_TBD_2026-09-15.md',desc:'Travel-owned look-cohesion handoff: shared world light/color response, small asset calibration, mood presets, color grading last.',tags:['town','travel','lighting','color','mood']},\n{section:'KFB Town & meta',title:'Post-r022 Archetypes + Birthday Radio',badge:'ADDENDUM',kind:'town',url:G+'skills/chat/town/references/TOWN_POST_R022_ARCHETYPES_BIRTHDAY_RADIO_2026-09-15.md',desc:'FrizzleBob as Herald/Guide, Offica direction, Revelation-artifact proposal and the six-track D6 Birthday Radio source mapping.',tags:['town','archetype','frizzlebob','birthday','radio','d6']},"
+          if "Post-r022 Archetypes + Birthday Radio" not in s:
+              if town_anchor not in s: raise SystemExit('town session anchor missing')
+              s=s.replace(town_anchor,town_extra,1)
+
+          p.write_text(s,encoding='utf-8')
+          PY
+
+          grep -q 'Asset Librarian · Fresh Chat Onboarding' kfb-hub/index.html
+          grep -q 'Post-r022 Archetypes + Birthday Radio' kfb-hub/index.html
+          grep -q 'Integrate the imported six-track D6 Birthday Radio' kfb-hub/index.html
+
+      - name: Commit patch and remove one-shot workflow
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'KFB Hub Update Bot'
+          git config user.email 'actions@users.noreply.github.com'
+          git rm .github/workflows/patch-kfb-hub-birthday-radio.yml
+          git add kfb-hub/index.html
+          git commit -m 'feat(hub): link Librarian recovery and imported Birthday Radio'
+          git pull --rebase origin main
+          git push origin HEAD:main
