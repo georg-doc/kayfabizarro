@@ -1,0 +1,81 @@
+name: One-shot inspect KFB ToolBox ZIP
+
+on:
+  push:
+    paths:
+      - '.github/workflows/inspect-kfb-toolbox-zip.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  inspect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Compare new ToolBox ZIP against prior WS0 ZIP
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          import hashlib, pathlib, zipfile, json, re
+          root=pathlib.Path('.')
+          old=root/'tools/KFB-ToolBox/_inbox/KFB FrankenStein ToolBox (WS0).zip'
+          new=root/'tools/KFB-ToolBox/_inbox/KFB ToolBox.zip'
+          out=root/'tools/KFB-ToolBox/_inbox/KFB_TOOLBOX_ZIP_INTAKE_2026-09-15.md'
+          def sha(p):
+              h=hashlib.sha256()
+              with p.open('rb') as f:
+                  for b in iter(lambda:f.read(1024*1024),b''): h.update(b)
+              return h.hexdigest()
+          def info(p):
+              with zipfile.ZipFile(p) as z:
+                  rows={i.filename:i for i in z.infolist() if not i.is_dir()}
+              return rows
+          a=info(old); b=info(new)
+          added=sorted(set(b)-set(a)); removed=sorted(set(a)-set(b)); shared=sorted(set(a)&set(b))
+          changed=[p for p in shared if (a[p].CRC,a[p].file_size)!=(b[p].CRC,b[p].file_size)]
+          same=[p for p in shared if p not in changed]
+          top=sorted({p.split('/')[0] for p in b if p})
+          docs=[p for p in sorted(b) if re.search(r'(^|/)(README|START_HERE|RETURN|CHANGELOG|MANIFEST|CLAUDE|ONBOARD|DELTA|BRIEFING|B_OBERFLAECHE)',p,re.I) or p.lower().endswith(('.md','.json','.html'))]
+          def block(xs,limit=80):
+              show=xs[:limit]
+              s='\n'.join(f'- `{x}`' for x in show) if show else '- none'
+              if len(xs)>limit:s+=f'\n- … +{len(xs)-limit} more'
+              return s
+          lines=[
+          '# KFB ToolBox ZIP intake · 2026-09-15','',
+          '**Status:** SOURCE INTAKE / ZIP COMPARISON. Not ToolBox acceptance, not UI acceptance.','',
+          '## Source files','',
+          f'- Prior checked WS0 ZIP: `{old.as_posix()}` · {old.stat().st_size} B · sha256 `{sha(old)}`',
+          f'- New ZIP: `{new.as_posix()}` · {new.stat().st_size} B · sha256 `{sha(new)}`',
+          '', '## Structural comparison','',
+          f'- old files: **{len(a)}**', f'- new files: **{len(b)}**',
+          f'- shared paths: **{len(shared)}**', f'- byte/CRC-stable shared paths: **{len(same)}**',
+          f'- changed shared paths: **{len(changed)}**', f'- added paths: **{len(added)}**', f'- removed paths: **{len(removed)}**',
+          f'- new ZIP uncompressed file bytes: **{sum(i.file_size for i in b.values())}**',
+          '', '### New ZIP top-level entries','', block(top,100),
+          '', '### Added paths vs prior WS0','', block(added),
+          '', '### Changed shared paths vs prior WS0','', block(changed),
+          '', '### Removed paths vs prior WS0','', block(removed),
+          '', '## Likely onboarding / UI / return documents in new ZIP','', block(docs,120),
+          '', '## Interpretation boundary','',
+          'This report proves only ZIP inventory/delta by path, CRC and file size. It does not prove that changed modules are semantically correct, cold-startable, browser-correct or visually accepted. The previously established A/B split remains: A source closure is not silently replaced by this archive; B/UI work must be read from its own onboarding/return and tested separately.',
+          '' ]
+          out.write_text('\n'.join(lines),encoding='utf-8')
+          print(out.read_text(encoding='utf-8'))
+          PY
+      - name: Commit intake report and remove one-shot workflow
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'KFB Intake Bot'
+          git config user.email 'actions@users.noreply.github.com'
+          git rm .github/workflows/inspect-kfb-toolbox-zip.yml
+          git add tools/KFB-ToolBox/_inbox/KFB_TOOLBOX_ZIP_INTAKE_2026-09-15.md
+          git commit -m 'docs(toolbox): inventory new ToolBox ZIP intake'
+          git pull --rebase origin main
+          git push origin HEAD:main
