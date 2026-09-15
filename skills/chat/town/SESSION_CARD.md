@@ -1,33 +1,33 @@
-# Session Card · KFB Town · S001 r016
+# Session Card · KFB Town · S001 r022
 
-**Stand:** 15.09.2026. **Art:** Öffentlicher Wiedereinstieg, abgeleitet aus dem einen Town-Living. Kein Runtime-Release.
+**Stand:** 15.09.2026. **Art:** aktueller öffentlicher Wiedereinstieg. Kein Runtime-Release.
 
 ## Zuerst lesen
 
-[Living Document](LIVING_KFB_TOWN.md), **§13** für die neue Showbühne, **§12** für die erstmals hier zusammengeführten S001-Richtungen. Die ursprünglichen J-Entscheidungen und der Tourbus-Zulauf bleiben unverändert. [Quellen und Grenzen](references/TOWN_S001_R016_SOURCES.md).
+1. `LIVING_KFB_TOWN.md` für die additive Town-Herkunft bis r016.
+2. `references/TOWN_S001_R017_R022_PUBLIC_DELTA.md` für den freigegebenen Projektstand r017–r022.
+3. `artifacts/TOWN_R022_DESIGN_PROBE.html` für die aktuelle visuelle Arbeitsprobe.
 
-## Aktueller Gedanke
+Der lokale Session Cut enthält den vollständigen fortgeschriebenen Living-Stand. Dieser öffentliche GitHub-Einstieg vermeidet private Geschenk-/Sitzungsdaten und ersetzt keine Consumer-SSOTs.
 
-Nahe dem Königsturm entsteht als Designrichtung eine gemeinsame querformatige Showbühne: Speakers Corner, Kartenbesprechung, Podcast, Kino, Konzert, tanzender Voxelboden und mögliche Wrestling-/Boxel-Blitz-Auftritte. Leinwand dahinter, offen angeordnete Zuschauerplätze; endgültige Ring-/Stufen-/Polsterform offen. King Kayfabian schaut vom Turm aus zu, Black Knight bleibt Leibgarde.
+## Aktueller Kern
 
-Actor Card ist vorhanden; mit drei Scene Cards kann der Spieler eine von drei angebotenen King-Quests erzählen. Vollständiger Bogen bleibt Actor/POV → SHOW IT → SPIN IT → SELL IT → Quest/Endpanel, Social Calls und Spieler-Closure. Keine neuen Questtexte oder POP-Beträge festgelegt.
+KFB Town liegt auf natürlichem Travel-Terrain, nicht auf einer Schneidematte. Paladin ist die aktuelle Besetzung für King Kayfabian. Signature Characters bekommen eigene Heimstätten; Farm, Graveyard, Maker Space, Archive, Showbühne, City-Ausbau, Area 51 und spätere Orbit-/Mondanschlüsse sind als unterschiedliche, miteinander verbundene Orte beschrieben.
 
-Therefore/But nur als innere Dynamik, nicht als Pflichtvokabular im NPC-Prompt. Monolog und Absurdentheater dürfen in einer bewusst aufgesuchten Performance vorkommen. Motivdaten unterstützen den Bildbezug; ein Image-Prompt ist nicht automatisch eine verifizierte Bildbeschreibung.
+Cards sind zugleich Deck-Appetizer, Beweisstücke und persönliche Erinnerungsknoten im Fractal Almanac. Zustellung, Stunt, Flug, Kampf und Fund bleiben Provenienz-Ereignisse derselben unveränderten Card. Hero Moments werden aus Lean Memory/Replay-Daten rekonstruiert, nicht als Dauerfilm gespeichert.
 
-## Parallelanschlüsse
+## Showbühne und Boxel-Ring
 
-**Town Workbench:** Georg berichtet World Scenery, Characters, Motions und Scene Tray für gemeinsame Candidate Handoffs. Neuer Build/Export hier noch nicht geprüft. Keine zweite Registry bauen.
+Nahe Turm/Marktplatz ist eine gemeinsame Bühne für Speakers Corner, Kayfabulation, Kino, Konzert, Wrestling und Melee vorgesehen. Boxel Blitz ist Donor für eine kinetische Würfelfläche; BlockBits/Terrain-Voxel sind Kandidaten für ruhigere Bauformen. Vier Eck-Bumper, elastische Tubes, optionales Energy-Field und ein Jumbotron bilden die aktuelle Ring-Skizze. Keine Combat- oder Physik-Abnahme.
 
-**Travel Globe:** etwas geglättete Landfläche, Platzierungen, Regenbogen, Sky-Shader, Aurora und Wetter als gewünschter Spenderweg. Genaue Revision und Zusammenspiel mit der weiterhin gesetzten Schneidematte offen. Gezeichnetes Gelände, Bodenauskunft und Kollision dürfen nicht auseinanderlaufen.
+## Speech Budget
 
-**Animation Lab:** Tanz-/Gitarren-/Schaukampfstrang beibehalten; Bühnenrede, Zuhören, Hinweisen und Auf-/Abtritt ergänzen. Bestehende Owner/Verträge bleiben.
+Eine aktive NPC-Blase ist Normalfall, zwei gleichzeitig weiche Obergrenze. Eine dritte nur als benannte Ausnahme. Das entspricht dem vorhandenen ChatterBox-Wahrnehmungsprinzip. Billboards, Jumbotron und Wegweiser zählen nicht als Sprechblasen, solange sie Media-/Scenery-Flächen bleiben. Öffnet ein Billboard eine echte Chat-/NPC-Blase, zählt diese normal.
 
-## Nicht verlieren
+## Nach dem Cut
 
-Figuren mit ihren Props zuerst; KayKit Forest/Nature verbindlich; nächste Gebäudesichtung ohne Hex-Teile. Cube-Pets gleichrangig. Signaturdecks und eigene Karten, Fluffolekt, tatsächlich begründete Erinnerung, bis zu sechs Homebase-Props, sozialer POP ohne Zustimmungszwang und später spielbare Buddies bleiben Richtung. Private Spielstände und Geschenkplanung sind nicht Teil dieses öffentlichen Updates.
+Boxel-Blitz-Donor auf wiederverwendbare Surface-/Bumper-/Federteile reduzieren; Almanac/Journey-Provenienz gegen den aktuellen Save-Vertrag prüfen; Candidate Handoff aus Town Workbench plus Travel-Terrain zusammenführen. Erst dann echte 3D-Ring-Stellprobe.
 
-## Status und nächste Handlung
+## Owner-Grenzen
 
-D36–D40 sind Autorenrichtungen/Freigabe; P22–P24 sind Vorschläge. Keine neue 3D-Szene, kein Agenten-/Audio-/Browser-/Rig-PASS. Die lokale Stellprobe r011 ist ein früher experimenteller, vom Nutzer als hilfreich beschriebener Arbeitsweg, nicht der in diesem Commit publizierte Spielstand.
-
-Nächster Anschluss: Candidate Handoff aus der Town Workbench mit dem Terrain-/Sky-Angebot aus Travel zusammen ansehen und daran Bühne, Turm, Figuren und Maßstab entscheiden. Consumer-Rückmeldung im jeweiligen SSOT, nicht durch Kopieren des ganzen Chats. GitHub-Lektüre ersetzt keine bestätigte Annahme.
+Town bleibt Design-/Meta-Referenz. Travel, Stunt, Combat, ToolBox/Animation Lab, ChatterBox/Journey und Asset Librarian behalten ihre Owner/SSOTs. GitHub-Sync ist Übergabe, keine automatische Annahme oder Implementation.
