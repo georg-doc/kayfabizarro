@@ -5,6 +5,8 @@ Updated: 2026-09-15
 
 Use this when a ChatGPT/Astra/Claude production chat ends, loses context, becomes blocked, or must be replaced.
 
+**Human bookmark / navigator:** `https://kayfabizarro.pages.dev/kfb-hub/` — convenient entry page only. It links to the sources below and never replaces their authority.
+
 ## Recovery rule
 
 Do not ask Georg to reconstruct project history from memory when GitHub contains the state.
