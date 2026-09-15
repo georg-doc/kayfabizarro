@@ -1,7 +1,7 @@
 # KFB Chat Production · Recovery Path
 
 Status: CURRENT RECOVERY CONTRACT
-Updated: 2026-09-13
+Updated: 2026-09-15
 
 Use this when a ChatGPT/Astra/Claude production chat ends, loses context, becomes blocked, or must be replaced.
 
@@ -13,12 +13,13 @@ Do not ask Georg to reconstruct project history from memory when GitHub contains
 
 1. Read `skills/chat/START_HERE.md`.
 2. Read `skills/chat/REGISTRY.json`.
-3. Read `skills/chat/LIVING_MASTERPLAN.md` only for cross-project sequencing and current lead decisions.
-4. Open the named project/tool node.
-5. Open the actual implementation SSOT and verify current default-branch HEAD, current open PRs and branches relevant to the task.
-6. Read the project's current start/re-entry docs and current Return before heavy history. Typical order: `WSA_START.md` → project `MASTERPLAN.md`/contract → current `qa/.../RETURN.md` or `_handover/.../START_HERE.md`.
-7. If the current node/handover names a shared intake job, read only that folder from the private `georg-doc/KFB-Production-Inbox/_inbox/<job-or-project>/`. If the private repo is still `PROVISIONING`, use the explicitly named legacy staging source instead.
-8. Compare chat briefing claims against GitHub. GitHub wins on implementation state; unresolved product intent is reported rather than guessed.
+3. If recovering the current cross-project lead conversation, read `skills/chat/recovery/CURRENT_LEAD_CHECKPOINT_2026-09-15.md`.
+4. Read `skills/chat/LIVING_MASTERPLAN.md` only for cross-project sequencing and current lead decisions.
+5. Open the named project or tool node.
+6. Open the actual implementation SSOT and verify current default-branch HEAD, current open PRs and branches relevant to the task.
+7. Read the project's current start/re-entry docs and current Return before heavy history. Typical order: `WSA_START.md` → project `MASTERPLAN.md`/contract → current `qa/.../RETURN.md` or `_handover/.../START_HERE.md`.
+8. If the current node/handover names a shared intake job, read only that folder from the private `georg-doc/KFB-Production-Inbox/_inbox/<job-or-project>/`. If the private repo is still `PROVISIONING`, use the explicitly named legacy staging source instead.
+9. Compare chat briefing claims against GitHub. GitHub wins on implementation state; unresolved product intent is reported rather than guessed.
 
 ## Evidence discipline during recovery
 
@@ -40,6 +41,27 @@ Do not promote one to another. Inbox packages are never implementation truth mer
 3. Prefer the newest explicit DECISION for product/owner intent when it is clearly scoped.
 4. Keep the contradiction `UNRESOLVED` when neither source legitimately supersedes the other.
 5. Do not silently reconcile by inventing a third interpretation.
+
+## Current lead quick recovery
+
+- Bookmark: `skills/chat/recovery/CURRENT_LEAD_CHECKPOINT_2026-09-15.md`.
+- It points to Town, Asset Librarian, ToolBox and Travel without replacing any project SSOT.
+- Always verify current repo HEAD after opening it; the dated checkpoint is a cursor, not a frozen implementation truth.
+
+## KFB Town quick recovery
+
+- `skills/chat/town/START_HERE.md`
+- then `skills/chat/town/SESSION_CARD.md`
+- then §§12–13 of `skills/chat/town/LIVING_KFB_TOWN.md`
+- Town remains design/living state; implementation owners remain in their own repos/tools.
+
+## Asset Librarian quick recovery
+
+- Permanent product URL: `https://kayfabizarro.pages.dev/asset-librarian/`
+- Tool source: `tools/asset_registry/librarian/`
+- Current chat-break review: `tools/asset_registry/librarian/POSTMORTEM_CHAT_BREAK_2026-09-15.md`
+- Do not infer current version from README/RETURN alone; verify `main`, current code version and browser workflow evidence.
+- Asset types / Town categories are browsing and workbench heuristics, not automatic Registry semantics.
 
 ## Travel quick recovery
 
