@@ -51,3 +51,13 @@ These inputs do not replace the Town J-log or turn the ideation session into a r
 ## 2026-09-15 · Birthday entry and Makerspace cinema
 
 [New input and donor comparison](../masterplan/TOOLBOX_UX_TOWN_BIRTHDAY_2026-09-15.md), sections 3–4: RollerCoaster character-selection donor, FrizzleBob plus the birthday-character direction, a short reveal for Elisa's 18th birthday, and a Makerspace outdoor/drive-in cinema. Historical selector provenance is located; the user-named v13 source and Academy embed still need exact pins. Keep these inputs additive and distinguish user direction from proposed staging. No new J-identifiers, terrain decision, runtime owner or multiplayer commitment is created here. Do not overwrite a newer Town session with the older checked-in living document.
+
+## 2026-09-15 · S001 r016 · Aktueller kurzer Wiedereinstieg
+
+Für die Fortsetzung zuerst [SESSION_CARD.md](SESSION_CARD.md), danach **§12–13 in [LIVING_KFB_TOWN.md](LIVING_KFB_TOWN.md)** lesen. Die ältere Startfolge oben bleibt Herkunft; weitere Module nur bei konkretem Bedarf laden.
+
+§12 enthält die öffentliche Projektion der S001-Entwicklung bis r015. §13 enthält die neue gemeinsame Speakers-Corner-/Wrestling-/Kino-/Konzertbühne nahe dem Turm, King-Quest-Aufführung, Therefore/But-Korrektur sowie die Anschlussfragen für Town Workbench und Travel Globe. Quellenstatus: [r016-Notizen](references/TOWN_S001_R016_SOURCES.md).
+
+**Keine Therefore/But-Sprachpflicht.** Kausale beziehungsweise plausibel erscheinende Dynamik ist der Designgedanke, keine Wortschablone. Neuer spielerseitiger Inhalt bleibt Englisch. Cube-Pets und Fluffolekt nicht umbenennen. KayKit Forest/Nature bleibt Naturquelle; kein erneuter Hex-Aufbau aus dem historischen Grundriss.
+
+Travel, ToolBox/Animation Lab, Asset Librarian und ChatterBox/Quest/Journey lesen das begrenzte Delta in §13.7 und dokumentieren ihre Annahme im jeweiligen bestehenden SSOT. Keine neue technische Leitung, keine globale Schemaänderung und keine automatische Nachricht an andere Chats. Dieser Eintrag veröffentlicht Dokumentation, keine neue Town-Laufzeit.

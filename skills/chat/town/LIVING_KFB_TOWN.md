@@ -358,3 +358,157 @@ Sprechende Snacks mit niedriger Priorität, ein endliches Wiseguy-Duell, ein Erz
 14.09.2026 · PROPOSAL: Drei Town-Situationen ergänzt: Haltestelle als Begegnungsort, mitgenommene Entgegnung als neues Spielmaterial, frühere Busbeschriftung als Museumserinnerung. J-01 bis J-15 bleiben unverändert.
 
 14.09.2026 · CORRECTION: Für den vorherigen Travel-Skydome-Eintrag meint Georg ausdrücklich Quaternius-**Planeten**, nicht Pflanzen. Die frühere Lesartenfrage ist erledigt.
+
+---
+
+## 12 · Öffentlicher S001-Abgleich bis r015 · 15.09.2026
+
+**Status:** Freigegebener projektbezogener Dokumentationsabgleich aus dem Town-Ideenchat. Kein Runtime-Release. Der vorhandene Text einschließlich J-01 bis J-15 und §11 bleibt unverändert erhalten. Diese Ergänzung macht den aktuelleren gestalterischen Stand für andere KFB-Chats lesbar. Persönliche Geschenkplanung, private Sitzungsdaten und nicht veröffentlichte Character-Master werden nicht kopiert.
+
+Die Kennungen `TOWN-S001-...` stammen aus dem fortlaufenden Sitzungsdokument. Die folgende Auswahl ist dessen öffentliche Projektion, kein zweiter unabhängig zu pflegender Masterplan. `DECISION` bezeichnet Georgs Richtung, nicht ihre Implementation. Vorschläge und zurückgewiesene Versuche werden nicht durch den GitHub-Push automatisch freigegeben.
+
+### 12.1 · Ton, Sprache, Triplets und Decks
+
+**DECISION / D02–D09, D15, D26, D28, D32:** Gespräch und interne Dokumentation deutsch; neuer spielerseitiger Text, UI und Marketing englisch. Etablierte Eigennamen und vorhandene Quellpfade bleiben erhalten. Cube-Pets heißt Cube wie Würfel; Q-Pets/Q-Pads sind Diktatdrift, keine weitere Figurenfamilie. ChatterBox, KayKit, Kenney, GothGirl und Fluffolekt/Fluff-o-lect nicht durch ähnlich klingende neue Namen ersetzen.
+
+Jeder NPC hat ein Lieblings-, Signatur- oder Catchphrase-Deck beziehungsweise eine individuelle Auswahl innerhalb eines Clusters. Vier vom Autor genannte Science-Fiction-Volumes à 56 Karten können als gemeinsames Mega-Deck gedacht werden. Die 224 sind eine Ableitung dieser Angabe, keine neue Inventur. Persönliche Auswahl, Cluster und aktueller Kartensatz sind verschieden. Eigene Spielerkarten und Moshpit-Mismatches sind erwünscht; ein Signaturdeck ist keine Zulassungsschranke.
+
+Jeder der drei Triplet-Teile trägt Bedeutung. Ein nacktes `[was]` ist als eigener Mittelteil zu dünn. Mehr Gewicht bedeutet nicht bloß mehr Wörter. Monkey-Island-Auswahl und sammelbare Entgegnungen bleiben erhalten. Fluffolekt nutzt die Situation als Bedeutungsträger, nicht als Ausrede für drei unverständliche Fragmente. Weltmotiv, Sprache und eventuelle Spielressource sind getrennt.
+
+Chill & fun bezeichnet die soziale Grundhaltung, nicht einen niedrigen satirischen Anspruch. Keine generischen KI-Gags, beliebigen X-mit-Y-Kombinationen, Object-Acting-Füller oder Motivationskoans. Freundschaft erlaubt erhebliche Meinungsunterschiede. Konflikt entsteht aus konkreten Absichten, Interessen und Deutungen; nicht jede Äußerung verlangt einen automatischen Widerspruch.
+
+**REJECTED / R01–R03:** Der harmlose Pferdehof-/Lineal-Sketch, austauschbare Wortspielobjekte und Motivationssätze sowie die Junji-Ito-Quizprobe wurden zurückgewiesen. Nicht als freigegebenen Content wiederverwenden. Die ursprüngliche J-12-Spielmaterial-Idee wird durch die Ablehnung des späteren Sketches nicht rückwirkend gelöscht. Szenen entstehen künftig aus tatsächlichen Figuren, Props und Handlungen statt aus vorangestellten Rätseltexten.
+
+### 12.2 · Bewohnerensembles und Weltgestaltung
+
+**DECISION / D19–D25, D30–D31:** Figuren mit ihren packeigenen Requisiten und Tätigkeitsräumen zuerst stellen. Architektur ergänzt diese Ensembles. Zusammenleben überwiegend im Freien; größere Dungeon-, Combat- oder Rollercoaster-Räume können über erkennbare Eingänge instanziert werden. Keine neue Houses-first-Produktionspflicht aus der alten §00-Zeile ableiten.
+
+Zentraler Turm: King Kayfabian, im aktuellen Szenario feste Rolle bei noch offener Modellbesetzung. Black Knight ist seine Leibgarde, nicht der König. Clown bevorzugt auf eigenem Zirkuspodium am Markt. Absichtlich schlechte Witze wären dessen Darstellerrolle, nicht das allgemeine KFB-Schreibniveau.
+
+**Keine Hex-Assetteile für die nächste Stellprobe. KayKit Forest/Nature ist verbindliche Naturquelle.** Kenney Pirate ist nächster Gebäudevergleich; vorhandene vollständige Türme und Holzplattformen sind Kandidaten, keine Inselpflicht. Suburban und Factory als weitere Kontraste prüfen; Fantasy Town später gezielt zu Baugruppen zusammensetzen. Größen, Türen, Kontaktflächen und Materialien am echten Ensemble unter demselben Licht vergleichen. Keine pauschale Rig- oder Größenkompatibilität aus dem gleichen Low-Poly-Look behaupten.
+
+Maker Space: Roboter, Ladeplätze, Werkzeug-/Bastelarbeit. Archiv: Lorekeeper, reale Requisiten und KFB Cards. Partyplatz: GothGirl, Musikrequisiten und möglicher Animatronic-Gitarrist. Marktplatz: Schenken, Tauschen, Clown, Schach, Auftritte. Bank und Cube-Pet-Park sind weitere Ideen. Der Graveyard ist eine normale bewohnte Nachbarschaft, kein dauernd feindliches Gebiet. Die sechs Nachbarschaften sind eine Arbeitsordnung, kein neues gleich großes Hex-Raster. Historisch lagen andere sechs Bereiche vor; deren Academy, Werkstatt, offene Bibliothek, Friedhof/Parkplatz, Arena/Theater und Carnival bleiben Herkunft, nicht aktuelle Baupflicht.
+
+Cube-Pets sind gleichrangige Bewohner und besuchen auch andere Viertel. Tätigkeiten, Wahrnehmung, Ziele und soziale Begegnungen sollen Eigenleben erzeugen. Kollision ersetzt weder Absicht noch Navigation. Ein bestehender 2D-Verhaltensspender ist kein bereits passender 3D-Town-Controller.
+
+### 12.3 · Musik, Stimme und körperliche Auftritte
+
+**DECISION / D10–D13:** Alle Bewohner lieben Musik. Sichtbare Quellen wie Boombox, Radio und Jukebox gehören zum Ort. Kleine Signaturrepertoires aus Grundgroove und Varianten; gemeinsame Musikzeit, aber nicht identische Dauerbewegung. Drone und Ruhe brauchen keinen erzwungenen Beat. Animation Lab/ToolBox bleiben zuständig.
+
+**PROPOSAL / P04–P05, P13:** Rig_Medium und Rig_Large getrennt prüfen. Bestehende Mocap-Angebote sind Bewegungsspender, keine getesteten KayKit-Clips. Gitarrenspiel benötigt eine stabile Instrument-/Griffhaltung plus Anschlag und passenden Körpergroove. Werkzeugarbeit, Tragen und Übergaben aus tatsächlich vorhandenen Clips ableiten. Demon Lord/Black Knight und später Medium/Large können einen vollständigen Schaukampf zeigen. Das belegt noch kein spielbares Melee-System.
+
+Ein ElevenLabs-Pool kann Fragmentaufnahmen mit ausgewählten vollständigen Takes verbinden. Textrevision, Stimmprofil und konkrete Aufnahme bleiben getrennt referenzierbar. Text und Ton stammen aus derselben gewählten Äußerung. Musik steuert nicht versehentlich den Sprechmund. Stimmen, Clips und Tanzdaten wurden in diesem Ideenchat noch nicht produziert.
+
+### 12.4 · Kartenkino, Spielzeugorte und Medien
+
+**IDEA / I08, I12–I15:** Die Leinwand zeigt im Grundzustand einen ruhigen Loop verfügbarer KFB Cards; Film, zulässiger Plattform-Embed und Academy-Demo sind andere bewusst gewählte Nutzungen. Anzeigen ist nicht Besitz und nicht automatisch Figurenwissen. Ein laufendes Gespräch behält seinen Kartenbezug beim Bildwechsel.
+
+Der gefundene Academy-Render-to-Texture-Spender ist eine konkrete Quelle für eigene interaktive Demos, keine Zusage für beliebige fremde Webseiten als Material. Projektor, Filmfläche und Zuschauer werden räumlich zusammengedacht. Der Medienort wird in §13 zur gemeinsamen Showbühne weiterentwickelt, nicht ersatzlos gestrichen.
+
+Ein Kartenhaus beim Archiv kann windschiefe Architektur und freiwillige Sprungwege verbinden. Archivzugang ist keine Platformer-Prüfung. Bumper, gelenkte Landungen und elastische Reaktionen sind ein späterer Anschluss an vorhandenes Stunt-Feeling, kein neuer Physikfork je Prop.
+
+Domino-Parcours mit sichtbar unterschiedlichen Punkten: Umwerfen gehört zum Spiel. Drei Bewohner, möglicherweise mit einem Large-Character, bauen wirklich am Gegenstand wieder auf. Keine Arbeitsloops vor einem unabhängig teleportierenden Reset. Der Parcourszustand kann zurückgesetzt werden, ohne die Begegnung zu vergessen. Figurenbesetzung, Größen und Physik sind offen.
+
+Schachplatz: kuratierte belegte Partien als PGN-Replay mit korrekten Brettzuständen und Cartoon-Präsentation. Zwei KFB-Offiziere können die Seiten vertreten, ohne die historischen Spieler zu verkörpern. Exaktes Schachset und Partiensammlung noch nicht vollständig gepinnt. Kein vorgetäuschter autonomer Schachspieler.
+
+### 12.5 · Persönlichkeit, Figurenwissen und Lean Memory
+
+**DECISION / D27–D29, D32–D34:** Identität, bestätigte Backstory, visuelle Darstellung, aktueller Auftritt und Sitzungserinnerung bleiben unterscheidbar. Hunky/Dory und ihre Fluff-Harvest-Vorgeschichte behalten ihren eigenen Authoring-Owner; kein Kopieren unbestätigter privater Master. Die Home Map dokumentiert offene Quellenadressen. Ein benannter Charakter wird nicht zur austauschbaren FrizzleBob-Maske.
+
+Zwei leichte Figurenperspektiven sind eine mögliche Erprobung. Unbekannt sind zunächst neue Nachbarn und nicht erlebte Situationen, nicht die eigene Sprache, Aufgabe oder bestätigte Vorgeschichte. Kein allwissender gemeinsamer Wissenssack. Beobachtung, fremde Behauptung, eigene Deutung und gesichertes Ereignis bleiben unterscheidbar. Image-/Visual-Prompts können Beobachtungsgrundlage sein, sind aber nicht automatisch eine verifizierte Beschreibung des fertigen Bildes.
+
+Lean Memory knüpft an Journey an: relevante tatsächlich erlebte/gehörte Ereignisse, beteiligte und wissende Figuren, offene Zusagen, ausgewählte Entgegnungen und konkrete Sprach-Takes. Ein Lab-Test erzeugt keine Spielererinnerung. Wiederholter Import und Replay erzeugen keine neuen Geschenke oder Rewards. Keine neue globale NPC-Datenbank als Vorbedingung für den Weltbau.
+
+### 12.6 · Eigener Platz, spielbare Buddies und sozialer POP
+
+**DECISION / D33–D35:** Ein Spieler kann einen kleinen Außenplatz mit bis zu sechs platzierten Props einrichten. Zwei oder drei reichen; kein Vollständigkeitsdruck. Herkunft der Geschenke und Anordnung sollen im bestehenden Sessionimport/-export mitreisen. Vollständiger Hausbau bleibt weit im Backlog. Spielergebundener Platz über Characterwechsel hinweg ist der aktuelle Vorschlag, noch kein globaler Save-Vertrag.
+
+Langfristig sind grundsätzlich alle NPCs als spielbare Rollen gedacht, etwa nach gemeinsamen Erlebnissen oder Buddy-Quests. Actor Card, freigeschaltete Rolle und tatsächliche Steuerung sind verschiedene Zustände. NPC übernehmen oder seine Form als Avatar nutzen sind zwei Varianten; nicht unbemerkt verdoppeln. Bestehende Deck-/Skin-Freischaltungen werden nicht überschrieben.
+
+Sozialer POP bleibt die bestehende Währung. Helfen, Aufführen und eine gute Kayfabulation dürfen stärker gewichtet werden als reine Coin-/Enemy-Schleifen. Konkrete Beträge bleiben offen. Ausgeben von POP beendet keine Freundschaft. Zustimmung ist keine Voraussetzung für einen wertvollen Beitrag. Der Runtime-Owner bestätigt Ergebnisse; ein LLM schreibt sich für seinen eigenen Satz keinen POP gut.
+
+### 12.7 · Belegstand und offene Übergaben
+
+Die lokale `KFB_TOWN_CASTING_STAGE_r011.html` existiert als experimentelle Stellprobe. Georg hat die einfache 3D-Ansicht als hilfreichen Arbeitsweg bestätigt. Das ist eine Nutzer-Rückmeldung, kein neuer technischer Volltest durch diesen Chat. Aktuelle Bühne, autonome NPCs, Voice-Pool, Dance-Library und Homebase-Save sind damit nicht als fertig behauptet. In diesem Dokumentations-Push wird keine alte HTML-Datei als neue Town-Laufzeit veröffentlicht.
+
+NIE gezielt verwenden. Ein früher gefundener KB-Index v9.6 nennt 220 aktive Markdown-Dateien; dies ist Quellenangabe, keine neue Inventur und keine Behauptung, alle seien hier im Repo gepinnt. Konfliktstruktur, Charakterpsychologie und Dialoghandwerk sind Spender. Der bestehende NIE-Adapter ist ein dokumentierter Hook, nicht gebaute Town-Integration. Die aktuelle Präzisierung zur South-Park-Logik in §13.1 ist vorrangig für neue Town-Inhalte.
+
+---
+
+## 13 · S001 r016 · Gemeinsame Showbühne beim Turm
+
+**Datum:** 15.09.2026. **Status:** Autorenrichtungen plus ausdrücklich benannte Ausarbeitungsvorschläge. **Auftrag:** aktuellen projektbezogenen Stand additiv auf GitHub sichern, damit Travel-Globe-Planung und andere Owner ihn lesen können. Keine neue Produktionsleitung, kein Runtime-Umbau und keine pauschale Promotion der Vorschläge.
+
+### 13.1 · TOWN-S001-D36 · DECISION / CORRECTION · South-Park-Logik ohne Sprachschablone
+
+Georg meint die Verbindung auch absurder Ideen durch nachvollziehbare Folgen, Hindernisse, Absichten und Verschiebungen. **Therefore/But ist dafür eine Denk- und Prüfhilfe, keine Pflichtphrase im NPC-Prompt.** Die Wörter weder schematisch einstreuen noch durch erzwungenes „also/aber“ ersetzen. Georgs Erfahrung: Die lexikalische Schablone klang werbeartig.
+
+Präzisiert P19 aus r015 sowie ältere Vorgaben, die Kausalität mit bestimmten Wörtern gleichsetzten. Historische Quellen bleiben unverändert. Kein neuer Begriff „Faustpark“ aus dem Audio-Transkript. Konflikt darf im Verhalten, in der Auswahl oder im Bildanschluss liegen. Absurdentheater, Wiederholung, Ausweichen und längere Rede bleiben möglich; die Beziehung zum Gegenstand und zum Gegenüber muss nicht durch einen Schlusskommentar aufgelöst werden.
+
+### 13.2 · TOWN-S001-D37 · DECISION / DESIGN DIRECTION · Eine Bühne, mehrere Aufführungen
+
+Speakers Corner, Kartenbesprechung, Podcast, Kino, Konzert, Tanzfläche, Kayfabulation und mögliche Wrestling-/Boxel-Blitz-Auftritte sollen einen gemeinsamen Ort nahe dem Turm bilden. Nicht für jeden Gebrauch einen eigenen Saal bauen. King Kayfabian schaut von seinem Turm aus zu; Black Knight bleibt Leibgarde. Die Stadt bleibt Stadt, keine Rückkehr zum Jahrmarkt als Gesamtrahmung.
+
+**Georgs Bühnenidee:** querformatiger Wrestling-Ring, dahinter die Leinwand, Zuschauerflächen wie bei einem offenen Amphitheater. Der Boden kann gepolstert/gesteppt wirken, aus einer vorhandenen Federbett-/Daunen-/Gummizellen-Anmutung entwickelt, mit der bereits verwendeten Kayfabizarro-Wortmarke vom Driver-Graft. Voxel-/Boxel-Flächen können musikalisch auf und ab bouncen. Kenney-Platformer-Teile sind Kandidaten für Podest und Publikumsstufen.
+
+**Offen:** konkrete Ring-Props, Textur- und Wortmarkenpfade, endgültige Stufen-/Ringgeometrie, Bildschirmhöhe, Verhältnis von Polsteroberfläche und bewegten Würfeln. Keine Ersatzwortmarke zeichnen und keinen vollständigen Ringbestand behaupten. Karten behalten ihr eigenes belegtes Seitenverhältnis; „ungefähr 16:9“ beschreibt die Bühnenidee und ersetzt keine Card-Formatquelle.
+
+### 13.3 · TOWN-S001-P22 · PROPOSAL · Räumlicher und zeitlicher Gebrauch
+
+Eine niedrige offene Vorderseite lädt zum Betreten ein. Dahinter liegt die Bildfläche; seitliche Stufen und einige Stand-/Sitzplätze bilden das Publikum, dahinter bleibt Raum für das frühere Autokino. Der Turm ist von Bühne und Zuschauerraum aus sichtbar. Seile, Redepodeste oder Instrumente können je Auftritt ergänzt beziehungsweise beiseitegenommen werden. Keine feste Bestuhlungspflicht und kein Gebäudeinneres als Voraussetzung.
+
+Im Alltag läuft der Karten-Loop. Gelegentlich nutzen zwei anwesende interessierte Bewohner die Podeste für einzelne Monologe, abwechselnde Deutungen oder ein Gespräch zur ausgewählten Karte. Sie müssen nicht sofort ein Streitduell spielen. Zuhören, später dazukommen und Weitergehen bleiben möglich. Längere Bühnenbeiträge sind eine bewusst aufgesuchte Aufführung, kein Freibrief für Dauerblasen in der ganzen Stadt. J-08 bleibt historisch erhalten und wird für dieses Bühnenszenario ausdrücklich erweitert, nicht heimlich gelöscht.
+
+Eine begonnene Kartenbesprechung bindet ihren Gegenstand für die Szene. **Vorschlag:** Der aktive Inhalt bekommt vorübergehend die Leinwand, während der allgemeine Karten-Loop pausiert und danach zurückkehrt. Konzert, Film, NPC-Monolog und Spielerauftritt starten nicht gleichzeitig gegeneinander. Das ist eine minimale Auftrittskoordination, kein Anlass für eine neue Show-Engine.
+
+Für die erste bewegte Bodenprobe wären gepolstert wirkende Würfeloberseiten einfacher als eine durchgehend simulierte Steppdecke. Die durchgehende weiche Fläche bleibt Alternative. Bei Rede/Kartenlesen kann der Boden ruhen, bei Musik reagieren. Rein visuelle Verformung und tatsächlich tragende bewegliche Plattformen unterscheiden: physisch bewegter Boden muss Actor-Fußkontakt mitführen. Ein Visualizer darf nicht heimlich Schläge, Sprünge oder Rewards auslösen.
+
+### 13.4 · TOWN-S001-D38 · DECISION / GAMEPLAY INTENT · King-Quest auf derselben Bühne
+
+Georgs aktuelle Richtung: Die Actor Card ist bereits vorhanden. **Sobald drei Scene Cards gesammelt sind, kann der Spieler eine von drei durch King Kayfabian angebotenen Quests als Kayfabulation erzählen.** Die konkreten drei Quests werden aus dem zuständigen bestehenden Questbestand übernommen, nicht hier neu erfunden.
+
+Die Actor Card kann einen Character als Pappbild im Plastikaufsteller zeigen und zugleich über den bestehenden Card Viewer als Querformatkarte auftreten. Die Scene Cards werden auf dem Ring nacheinander aufgerichtet; FrizzleBob, ein NPC oder der Spieler in einer Karaoke-artigen Darbietung kann den jeweiligen Beat erzählen. Manuelles Sprechen ist möglich, aber Mikrofon oder automatische Spracherkennung werden dadurch nicht zur Zugangspflicht.
+
+Der bestehende vollständige Bogen bleibt: **Actor/POV → Card A / SHOW IT → Card B / SPIN IT → Card C / SELL IT → Quest/Endpanel mit Social Calls und Spieler-Closure.** Satztriplet und Performancebogen bleiben benennbar und dürfen bewusst kombiniert werden. SELL IT nicht durch CALL IT ersetzen. Bühnenfolge, drei angebotene Quests, ein gewählter Endpunkt und drei gesammelte Scene Cards sind verschiedene Rollen, keine neuen synonymen Dreierbegriffe.
+
+Quellenstatus: Der Tourbus-/Triplet-Anhang v2 stützt den vollständigen Bogen. Die konkrete Verfügbarkeitsschwelle und drei Questangebote sind hier Georgs aktuelle Anforderung, kein behaupteter Test eines heutigen Overworld-Runners. Keine neue POP-Tabelle. Freie NPC-Kommentare sind keine automatisch absolvierte King-Quest. Replay und Clipaufnahme schreiben keine zweite Ergebnisbuchung.
+
+### 13.5 · TOWN-S001-P23 · PROPOSAL · Bildbezug, Reaction und aufnehmbare Performance
+
+Karten können über vorhandene `artworkPrompt`-/Visual-Prompt-Daten eine Bildbeschreibung an die Figuren liefern. Dafür sichtbares Motiv, Kartentext, Spielwissen und Interpretation unterscheiden. Ein Entwurfsprompt kann vom fertigen Bild abweichen; bei Widerspruch gilt das tatsächlich gezeigte Bild beziehungsweise eine dafür geprüfte Beschreibung. Keine angeblich gesehenen Details ergänzen, nur weil sie im Prompt denkbar wären. Kein allgemeines Verbot der Motivreferenz: gerade die sichtbaren Einzelheiten sollen Besprechungen tragen.
+
+Zwei Cube-Pets oder andere Bewohner können mit wenig Kenntnis gemeinsam ergründen, was eine Karte zeigt und behauptet. Sie sind nicht allwissend und müssen nicht dieselbe Lesart teilen. Der Eindruck des Sehens entsteht durch passenden Bildbezug, Blick und Zeigegeste, nicht durch das Vorlesen interner JSON-Feldnamen.
+
+Reaction-Situationen zu Videos sind eine eigene Variante. Video-ID oder URL allein liefert keine Beobachtung des laufenden Inhalts. Für kuratierte Darbietungen können geprüftes Material, Transkript oder zeitbezogene Cues die Reaktionen tragen; kein zufälliges Lachen als Nachweis von Videoverständnis.
+
+Kuratierten Dialog einmal auswählen und als Aufführung mit Karten-, Text-, Stimmen-, Timing- und Kamera-Bezug sichern. Daraus später einen Clip aufnehmen, statt beim Export den Text erneut zu generieren. `canvas.captureStream()`/`MediaRecorder` sind mögliche technische Spender, keine hier getestete Exportfunktion. Audio und DOM-Sprechblasen sind bei einer Canvas-Aufnahme nicht automatisch dabei. Fremde Embeds und geschützte Medien sind keine zugesicherte frei erfassbare Textur. Replay, Neuinszenierung und wirklich aufgezeichnetes Video bleiben getrennt.
+
+### 13.6 · TOWN-S001-D39 · DECISION / COORDINATION DIRECTION · Workbench und Travel-Bühne
+
+Georg berichtet eine parallel entstehende Town Workbench beim Asset Librarian mit **World Scenery, Characters, Motions und Scene Tray**. Environment, Characters und Props sollen dort gemeinsam als **Candidate Handoff** ausgewählt werden können. Diesen Arbeitsweg anschließen, keine zweite konkurrierende Asset-Auswahl oder Registry im Town-Chat aufbauen. Der neue Build und sein genaues Exportschema wurden hier noch nicht geprüft.
+
+Travel Globe wird parallel als Weltbühnen-Spender vorbereitet: eine für Platzierungen etwas geglättete Landfläche, Regenbogen im Hintergrund, vorhandene Sky-Shader, Aurora und Wetter mitnehmen. Das ist das gewünschte Ziel, keine Behauptung bereits erfolgter Integration. Die frühere Schneidematte bleibt als bestehende Gestaltungssetzung erhalten. Wie sie als Unterlage, Material oder bewusst sichtbare Rahmung mit dieser Landfläche koexistiert, ist offen; nicht still durch eine generische Landschaft ersetzen.
+
+**PROPOSAL:** nur die für Bühne und Nachbarschaften nötigen Stand-/Laufzonen beruhigen, nicht die gesamte Landform einebnen. Gezeichnetes Gelände, Bodenauskunft und Kollision müssen denselben angepassten Stand benutzen. Props, Figuren und Bühne gehören in denselben vermessenen Maßstab. Kein zweites Sky-/Wetter-System neben dem übernommenen Travel-Stand.
+
+### 13.7 · TOWN-S001-P24 · PROPOSAL / CONSUMER DELTA · Parallel weiterarbeiten
+
+| Bestehender Bereich | Jetzt lesbare Anforderung | Was er zurückmelden sollte |
+|---|---|---|
+| Travel Globe | Platzierbare Landfläche, Turm-/Bühnenbezug, Regenbogen, Sky/Aurora/Wetter; erhaltene Boden- und Darstellungsverträge | Geeigneter Source-Pin, Integrationsort, tatsächlich übernommene Teile und offene Boden-/Kamera-/Wetterfragen |
+| Asset Librarian / Town Workbench | Ensemble aus World Scenery, Characters, Motions, Scene Tray; Ring-/Plattform-/Textur-/Logo-Kandidaten | Exakter Candidate Handoff mit vorhandenen Asset- und Abhängigkeitsreferenzen; Auswahl ist noch keine Rig-/Runtime-Abnahme |
+| Animation Lab / ToolBox | Reden, Zuhören, Blick aufs Motiv, Zeigen, Bühnenauf-/abtritt; Tänze, Gitarrenhaltung und Schaukämpfe aus r012 weiterführen | Tatsächliche Clips/Rezepte, Rig-Familien, Kontakte, Unterbrechung und Rückkehr in Idle |
+| ChatterBox / NIE / Character-Authoring | Figurenbezogene Bild-/Textgrundlage, Monologe und Zweiergespräche; keine Therefore/But-Sprachpflicht | Kleiner kuratierter Inhalt mit Wissensgrenzen und vorhandenen Profil-/Quellverweisen |
+| Quest / POP / Journey / Viewer | Actor + drei Scene Cards + gewählte King-Quest, bestehender Bogen, bestätigte Auswertung und gespeicherte Performance | Bestehende Consumer-Nähte wiederverwenden; keine zweite Kartengalerie, Reward- oder Memory-Quelle |
+
+Diese Tabelle delegiert keine technische Leitung und bestätigt keine Annahme eines Auftrags. Town beschreibt den Bedarf; jeder Owner dokumentiert Annahme, Implementation und Tests im eigenen SSOT. Die bestehenden Synchronisationsregeln gelten unverändert. Ein anderer Chat muss diesen Stand lesen; dieser Push ist keine automatische Nachricht an ihn.
+
+### 13.8 · TOWN-S001-D40 · DECISION / PUBLICATION SCOPE · GitHub-Persistenz
+
+Georg beauftragt jetzt ausdrücklich die gemeinsame GitHub-Sicherung. Der öffentliche Umfang umfasst dieses additive Town-Update, einen kurzen aktuellen Einstieg/Cursor und Quellen-/Übergabehinweise. Private Geschenke, persönliche Homebases/Erinnerungen, Schlüssel, ungeprüfte Character-Master und große Asset-/Repo-Dumps bleiben draußen. Frühere Quell- und J-Einträge nicht überschreiben. Keine Änderung am Travel-, Combat-, Stunt-, ToolBox- oder Registry-Code.
+
+### 13.9 · Offene Punkte und Changelog
+
+**OPEN / TOWN-S001-O16:** Ring-/Polster-/Wortmarken-Kandidaten aus der Town Workbench; genaue Travel-Terrain-/Sky-Revision und Bezug zur Schneidematte; geprüfte Bildbeschreibungen der ersten Karten; heutiger Quest-/Viewer-Consumer; kuratierte erste Zweierperformance; bewegter Bühnenboden und späterer Clip-Export. Keine neu erfundenen Koordinaten, Quests, Logo-Dateien oder Agenten-APIs.
+
+**15.09.2026 · S001 r016:** Öffentliche Projektion der S001-Richtungen bis r015 ergänzt; neue D36–D40/P22–P24 aufgenommen. Hauptänderung: gemeinsame Speakers-Corner-/Ring-/Kino-/Konzertbühne nahe dem Turm. Therefore/But als Sprachpflicht ausdrücklich zurückgenommen. Workbench- und Travel-Zusammenarbeit eingeordnet. Alter Town-Text einschließlich Tourbus-Zulauf unverändert. Dokumentation ist kein Build-/Browser-/Audio-/Rig-PASS.
