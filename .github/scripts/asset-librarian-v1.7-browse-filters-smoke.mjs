@@ -53,7 +53,7 @@ async function run(){
     await cdp.eval(`(()=>{document.getElementById('browseModeFilter').value='primary';document.getElementById('browseModeFilter').dispatchEvent(new Event('change',{bubbles:true}));return true;})()`);
     await ev(cdp,`document.getElementById('resultMeta').textContent.includes('0 primary matches')`,'primary mode settled');
     await cdp.eval(`(()=>{document.getElementById('searchInput').value='Driver';return window.KFBAssetLibrarianV17.runSearch();})()`);
-    const driver=await ev(cdp,`(()=>{const ids=[...document.querySelectorAll('#resultList .result-card')].map(c=>c.dataset.assetId);const glb=ids.filter(id=>/\/Driver\.glb$/i.test(id));const fbx=ids.filter(id=>/\/Driver\.fbx$/i.test(id));return glb.length&&fbx.length===0?{glb:glb.length,fbx:fbx.length}:false;})()`,'primary Driver representation',120000);result.checks.primaryRepresentation=driver;
+    const driver=await ev(cdp,`(()=>{const ids=[...document.querySelectorAll('#resultList .result-card')].map(c=>c.dataset.assetId||'');const glb=ids.filter(id=>id.endsWith('/Driver.glb'));const fbx=ids.filter(id=>id.endsWith('/Driver.fbx'));return glb.length&&fbx.length===0?{glb:glb.length,fbx:fbx.length}:false;})()`,'primary Driver representation',120000);result.checks.primaryRepresentation=driver;
     await screenshot(cdp,'01-kaykit-primary-browse-filters');
 
     result.consoleErrors=cdp.errors;result.runtimeExceptions=cdp.exceptions;assert(!cdp.errors.length,`console: ${cdp.errors.join(' | ')}`);assert(!cdp.exceptions.length,`exceptions: ${cdp.exceptions.join(' | ')}`);result.browser=version.Browser;result.result='PASS';writeFileSync(path.join(OUT,'result.json'),JSON.stringify(result,null,2)+'\n');console.log(JSON.stringify(result,null,2));cdp.ws.close();
