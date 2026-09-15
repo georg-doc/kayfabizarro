@@ -62,15 +62,20 @@ export function representationPriority(record) {
   return FORMAT_PRIORITY.has(record?.format) ? FORMAT_PRIORITY.get(record.format) : 20;
 }
 export function primaryRepresentations(records, { includeAnimationSources=false } = {}) {
-  const kept=[];
-  const models=new Map();
+  const bestModel=new Map();
   for (const record of records) {
     if (!includeAnimationSources && isAnimationSource(record)) continue;
-    if (record.kind !== 'model-3d' || !RENDERABLE_FORMATS.has(record.format)) { kept.push(record); continue; }
-    const key=logicalAssetKey(record);
-    const previous=models.get(key);
-    if (!previous || representationPriority(record) < representationPriority(previous)) models.set(key,record);
+    if (record.kind !== 'model-3d' || !RENDERABLE_FORMATS.has(record.format)) continue;
+    const key=logicalAssetKey(record), previous=bestModel.get(key);
+    if (!previous || representationPriority(record) < representationPriority(previous)) bestModel.set(key,record);
   }
-  kept.push(...models.values());
-  return kept;
+  const emitted=new Set(), output=[];
+  for (const record of records) {
+    if (!includeAnimationSources && isAnimationSource(record)) continue;
+    if (record.kind !== 'model-3d' || !RENDERABLE_FORMATS.has(record.format)) { output.push(record); continue; }
+    const key=logicalAssetKey(record), chosen=bestModel.get(key);
+    if (record !== chosen || emitted.has(key)) continue;
+    emitted.add(key); output.push(record);
+  }
+  return output;
 }
