@@ -6,6 +6,7 @@ import { attach3DThumbnail } from './thumb3d.js';
 import { renderAnimationSources } from './animation-sources.js';
 import { configureMotionPreview, clearMotionPreview } from './motion-preview.js';
 import { renderRelatedAssets } from './related-assets.js';
+import { classifyAsset, assetTypeLabel } from './asset-types.js';
 import './town-workbench.js';
 
 const depBadge = (record) => {
@@ -15,6 +16,7 @@ const depBadge = (record) => {
 };
 const rigBadge = (record) => record.rigFacts?.hasSkin ? badge(`rig ${record.rigFacts.jointCount || 0}j`, 'ok') : null;
 const animationBadge = (record) => (record.rigFacts?.animationCount || 0) > 0 ? badge(`${record.rigFacts.animationCount} embedded clips`, 'ok') : null;
+const typeBadge = (record) => { const node=badge(assetTypeLabel(record.assetType || classifyAsset(record)),'type-badge'); node.title='Workbench type · browsing heuristic, not Registry truth'; return node; };
 const reviewBadge = (record) => {
   const count = (state.problemsByAsset.get(record.assetId) || []).length;
   return count ? badge(`${count} review`, 'problem') : null;
@@ -68,12 +70,13 @@ export function renderResults(records) {
     const checkbox = fragment.querySelector('.result-select');
     const badges = fragment.querySelector('.result-badges');
     card.dataset.assetId = record.assetId;
+    card.dataset.assetType = record.assetType || classifyAsset(record);
     fragment.querySelector('.result-title').textContent = record.name;
     fragment.querySelector('.result-subtitle').textContent = record.packId || record.collectionPath || 'unpacked';
     fragment.querySelector('.result-path').textContent = record.path;
     fragment.querySelector('.result-meta-line').textContent = `${record.collectionPath || '—'} · ${formatBytes(record.sizeBytes)}`;
     thumb(record, fragment.querySelector('.result-thumb'));
-    badges.append(badge(record.format));
+    badges.append(typeBadge(record), badge(record.format));
     for (const node of [rigBadge(record), animationBadge(record), depBadge(record), reviewBadge(record)]) if (node) badges.append(node);
     checkbox.checked = state.selected.has(record.assetId);
     checkbox.onchange = () => toggleSelected(record.assetId, checkbox.checked);
@@ -165,10 +168,11 @@ export async function showDetail(id) {
   clearMotionPreview();
   if ($('relatedAssets')) { $('relatedAssets').hidden=true; $('relatedAssets').replaceChildren(); }
 
+  record.assetType=record.assetType || classifyAsset(record);
   $('detailKind').textContent = `${record.kind} · ${record.format}`;
   $('detailName').textContent = record.name;
   $('detailPath').textContent = record.path;
-  $('detailBadges').replaceChildren();
+  $('detailBadges').replaceChildren(typeBadge(record));
   if (record.packId) $('detailBadges').append(badge(record.packId));
   if (record.collectionPath) $('detailBadges').append(badge(record.collectionPath));
   if (record.dependencyStatus) $('detailBadges').append(badge(record.dependencyStatus, ['missing', 'unresolved'].includes(record.dependencyStatus) ? 'warn' : 'ok'));
@@ -184,6 +188,7 @@ export async function showDetail(id) {
   $('identityFacts').replaceChildren(
     fact(record.assetId, 'asset ID'),
     fact(record.kind, 'kind'),
+    fact(assetTypeLabel(record.assetType), 'workbench type (heuristic)'),
     fact(record.format, 'format'),
     fact(formatBytes(record.sizeBytes), 'size'),
     fact(record.packId || 'unknown', 'pack'),
@@ -194,6 +199,7 @@ export async function showDetail(id) {
   if (record.kind === 'model-3d') {
     await ensureRigFacts();
     record.rigFacts = state.rigById.get(id) || record.rigFacts;
+    record.assetType=classifyAsset(record);
   }
   await ensureProblems();
   const rig = rigBadge(record); if (rig) $('detailBadges').append(rig);
