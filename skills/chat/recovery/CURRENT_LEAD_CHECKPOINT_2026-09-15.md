@@ -14,7 +14,9 @@ Der Lead-Chat verbindet zurzeit Town, Travel, ToolBox und Asset Librarian. Bei C
 
 Einstieg: `skills/chat/town/START_HERE.md`.
 
-Dann `SESSION_CARD.md` und §§12–13 von `LIVING_KFB_TOWN.md` lesen. Aktuelle Richtung: Character-first Siedlung, gemeinsame Showbühne beim Turm, Makerspace/Kino, Town Workbench als Candidate-Handoff und Travel als Terrain-/Sky-Spender. Bestehende Owner bleiben unverändert.
+Dann `SESSION_CARD.md` lesen. Der aktuelle öffentliche Cursor ist S001 r022 plus das dort verlinkte `references/TOWN_S001_R017_R022_PUBLIC_DELTA.md`; §§12–13 von `LIVING_KFB_TOWN.md` sind der historische r016-Checkpoint. Aktuelle Richtung: natürliche Travel-Landschaft, Character-first Siedlung, gemeinsame Showbühne beim Turm, Makerspace/Kino, Town Workbench als Candidate-Handoff und Travel als Terrain-/Sky-Spender. Bestehende Owner bleiben unverändert.
+
+Post-r022 TBD: `skills/chat/masterplan/WORLD_COLOR_LIGHTING_COHESION_TBD_2026-09-15.md` — gemeinsame World Lighting / Color Response über Asset-Familien; Town konsumiert später den Travel-Look-Contract, Color Grading zuletzt.
 
 ### Geburtstags-Opener
 
@@ -42,6 +44,8 @@ Implementation SSOT bleibt `georg-doc/KFB-Travel-Globe`. Town liefert Gestaltung
 
 Erster Terrain-Showcase darf Plateau, Königshügel, gemeinsame Bühne, Siedlungsfläche, Fluss/Mündung und sichtbare Pirateninsel vorsehen; konkrete Geometrie folgt erst nach aktuellem Town-Candidate-Handoff und Travel-Quellenprüfung.
 
+Danach beziehungsweise parallel als kleine Vergleichsszene: `WORLD_COLOR_LIGHTING_COHESION_TBD_2026-09-15.md`. Vorgeschlagen ist eine KFB Look Calibration Stage mit fünf bis acht repräsentativen Assets in Day, Golden Hour und Graveyard Night. Erst Material-/Lichtantwort messen; globales Color Grading/LUT erst am Ende erwägen.
+
 ## Recovery-Satz für einen frischen Lead-Chat
 
-> Lies `skills/chat/RECOVERY_PATH.md`, dann `skills/chat/recovery/CURRENT_LEAD_CHECKPOINT_2026-09-15.md`. Verifiziere den aktuellen `georg-doc/kayfabizarro`-Main-HEAD und die jeweils genannten Projekt-SSOTs. Für Town danach `skills/chat/town/START_HERE.md` + Session Card + §§12–13. Für Asset Librarian den Postmortem lesen. Keine bereits gemergten v1.6/v1.7-Funktionen neu bauen und keine Owner still ersetzen.
+> Lies `skills/chat/RECOVERY_PATH.md`, dann `skills/chat/recovery/CURRENT_LEAD_CHECKPOINT_2026-09-15.md`. Verifiziere den aktuellen `georg-doc/kayfabizarro`-Main-HEAD und die jeweils genannten Projekt-SSOTs. Für Town danach `skills/chat/town/START_HERE.md` + Session Card + das dort verlinkte Public Delta; §§12–13 im Living sind der historische r016-Checkpoint. Für Travel-Look-Fragen den World-Color-/Lighting-TBD lesen. Für Asset Librarian den Postmortem lesen. Keine bereits gemergten v1.6/v1.7-Funktionen neu bauen und keine Owner still ersetzen.
