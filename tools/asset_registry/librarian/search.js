@@ -7,9 +7,11 @@ function checkedValues(id) {
   return host ? [...host.querySelectorAll('input[type="checkbox"]:checked')].map((input)=>input.value) : [];
 }
 export function readFilters() {
+  const multiFormats=checkedValues('formatFilterOptions');
+  const legacyFormat=String($('formatFilter')?.value||'').trim();
   return {
     query: $('searchInput').value.trim(), kind: $('kindFilter').value, pack: $('packFilter').value,
-    collection: $('collectionFilter').value, formats: checkedValues('formatFilterOptions'), types: checkedValues('typeFilterOptions'),
+    collection: $('collectionFilter').value, formats: multiFormats.length?multiFormats:(legacyFormat?[legacyFormat]:[]), types: checkedValues('typeFilterOptions'),
     dependencyStatus: $('dependencyFilter').value, problemType: $('problemFilter').value,
     rigged: $('rigFilter').value, animated: $('animatedFilter').value,
     clip: $('clipFilter').value.trim(), joint: $('jointFilter').value.trim(), browseMode: state.browseMode,
