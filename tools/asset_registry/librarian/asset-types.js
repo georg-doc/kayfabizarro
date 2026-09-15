@@ -1,3 +1,8 @@
+const browseStyle=document.createElement('link');
+browseStyle.rel='stylesheet';
+browseStyle.href='./browse-filters.css';
+document.head.append(browseStyle);
+
 export const ASSET_TYPES = [
   ['character','Character'],
   ['weapon','Weapon'],
