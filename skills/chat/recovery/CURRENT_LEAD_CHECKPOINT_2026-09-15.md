@@ -1,76 +1,172 @@
-# KFB Lead · Current Recovery Checkpoint · 15.09.2026
+# KFB Lead · Current Recovery Checkpoint · 15.09.2026 late
 
-Status: CURRENT RECOVERY POINTER. Kein Runtime-SSOT. Ein frischer Lead-Chat liest zuerst `skills/chat/RECOVERY_PATH.md` und überprüft danach den jeweils aktuellen GitHub-Stand.
+**Status:** CURRENT RECOVERY POINTER. Kein Runtime-SSOT. Ein frischer Lead-Chat liest zuerst `skills/chat/RECOVERY_PATH.md`, dann diese Datei, und überprüft danach die jeweils aktuellen Projekt-SSOTs.
 
-**Human bookmark:** `https://kayfabizarro.pages.dev/kfb-hub/` — searchable navigator across the links below; never a replacement SSOT.
+**Human bookmark:** `https://kayfabizarro.pages.dev/kfb-hub/` — Navigator, kein SSOT.
 
-**Current execution order:** `skills/chat/recovery/CURRENT_PRIORITY_BOARD_2026-09-15.md` — P0 Birthday actor handoff → Astra startscreen → QA/freeplay; P1 juice/ToolBox-B; P2 Town terrain + look/audio calibration.
+## Current execution order
 
-**Current direct handoffs:** ToolBox/Design `tools/KFB-ToolBox/_handover/BIRTHDAY_STARTSCREEN_2026-09-15/START_HERE.md`; Travel/Astra `georg-doc/KFB-Travel-Globe/_handover/BIRTHDAY_STARTSCREEN_ASTRA_2026-09-15/START_HERE.md`.
+**NOW:** direkter Astra Birthday replacement build im Travel-SSOT.
 
-## Warum diese Karte existiert
+1. Actor-/Motion-Handoff ist **DONE / TESTED INPUT**.
+2. Astra arbeitet den aktuellen Birthday Contract A0–A5 ab.
+3. separate WIP veröffentlichen.
+4. Georg Freeplay / visual acceptance.
+5. erst danach Merge-/Release-Entscheidung und spätere Stage/Town-Ausweitung.
 
-Der Lead-Chat verbindet zurzeit Town, Travel, ToolBox, Asset Librarian und Stunt/Race-Donors. Bei Chat-Abbruch soll Georg keinen Transkript-Dump rekonstruieren müssen.
+**Current Astra contract:**
 
-## Aktuelle Arbeitslinien
+`georg-doc/KFB-Travel-Globe/_handover/BIRTHDAY_STARTSCREEN_ASTRA_2026-09-15/ASTRA_EXECUTION_CURRENT_2026-09-15.md`
 
-### KFB Town
+**Current Astra pointer:**
 
-Einstieg: `skills/chat/town/START_HERE.md`.
+`georg-doc/KFB-Travel-Globe/_handover/BIRTHDAY_STARTSCREEN_ASTRA_2026-09-15/RUN_NEXT_2026-09-15.md`
 
-Dann `SESSION_CARD.md` lesen. Der aktuelle öffentliche Cursor ist S001 r022 plus das dort verlinkte `references/TOWN_S001_R017_R022_PUBLIC_DELTA.md`; §§12–13 von `LIVING_KFB_TOWN.md` sind der historische r016-Checkpoint. Aktuelle Richtung: natürliche Travel-Landschaft, Character-first Siedlung, gemeinsame Showbühne beim Turm, Makerspace/Kino, Town Workbench als Candidate-Handoff und Travel als Terrain-/Sky-Spender. Bestehende Owner bleiben unverändert.
+**Rejected old implementation:** Travel PR #8 bleibt unmerged und ist kein Layout-/Visual-Donor.
 
-Post-r022 TBD: `skills/chat/masterplan/WORLD_COLOR_LIGHTING_COHESION_TBD_2026-09-15.md` — gemeinsame World Lighting / Color Response über Asset-Familien; Town konsumiert später den Travel-Look-Contract, Color Grading zuletzt.
+## Critical correction to older recovery state
 
-Post-r022 Archetypen-/Birthday-Zulauf: `skills/chat/town/references/TOWN_POST_R022_ARCHETYPES_BIRTHDAY_RADIO_2026-09-15.md`. FrizzleBob ist primär Herald/Guide, nicht festgeschriebener Trickster; Offica Doppeldenk ist bürokratische Threshold-Guardian-Richtung; Trickster/Shadow bleiben bewegliche bzw. relationale Funktionen; Revelation-Sonnenbrille ist Proposal, kein gebauter Shader/Item-Pfad.
+Older versions of this checkpoint/board routed execution through:
 
-### Geburtstags-Opener und Birthday Radio
+`Birthday actor handoff → old Astra startscreen → QA`
 
-Mittwoch muss nicht die ganze Town fertig sein. Kleinster sinnvoller vorzeigbarer Stand: vorhandenen RollerCoaster/Pet-Select-Donor weiterverwenden, FrizzleBob plus den tatsächlich gewählten Geburtstags-Character zeigen, Wortmarke + `Happy Birthday Elisa`, Character-Auswahl und wenige sichtbar passende Animationszustände. Town-Silhouette/3D-Raum kann Kulisse sein; vollständiges Terrain ist keine Voraussetzung.
+and an intermediate recovery phase later routed through `Fable G0 before Astra`.
 
-Animation nicht nach Menge auswählen. Für den Opener reichen Rollen wie Idle, Hover/Focus, Click/Select/Celebrate und Rückkehr in einen ruhigen Zustand. KayKit-Motions am echten Rig prüfen; FrizzleBob bleibt sein eigener Actor-/Animation-Consumer und wird nicht durch behauptete KayKit-Kompatibilität ersetzt.
+**Both are superseded for the immediate 15./16.09 Birthday execution.**
 
-**Birthday Radio asset implementation:** sechs VOLE/Tom-Kincaid MP3s liegen unter `media/3D_Assets/Audio/Music/Birthday Radio - VOLE CC0/`, Import-Commit `c2d6cf2b0c64a5a090bb96cb4b826c875dd52786`. D6: Jazz Trio · Church Organ · Reggae · Drum’n’Bass · 8-bit · Death Metal. `MANIFEST.json` hält Source-URLs, Bytegrößen und SHA-256. One-shot Import Run `34929626545` war SUCCESS; der temporäre Import-Workflow wurde danach entfernt. Radio-/D6-UI und audio-reactive Speaker/Letters sind **noch nicht** als Runtime gebaut.
+The direct Astra path is now sufficiently constrained by repaired source precedence, the new Georg reference/mockup package, Travel/TinySkies owner rules, internal hard gates and explicit evidence requirements.
 
-### Asset Librarian
+The Fable/Stage route remains valuable as the later reusable authoring/editor track, but it is **not a Birthday blocker tonight**.
+
+## Birthday world · current non-negotiable substrate
+
+Travel remains owner of terrain, coast/water integration, sky/time-of-day, world light, camera and audio.
+
+TinySkies upstream pin remains:
+
+`dannylimanseta/tinyskies@2659a5cc987d7e4a4c5aa7e79c86a1626ad75df6`
+
+Audit 15.09.2026: no newer commits on the default gameplay branch relevant to the world substrate.
+
+Current Birthday world must visibly consume the Travel/TinySkies direction:
+
+- shaped/rolling Travel terrain;
+- actual terrain/water coastline + beach/coastal reading;
+- Travel evening/sundowner sky/light/atmosphere;
+- integrated coastal lighthouse + lantern/glow/animated beam;
+- animated spatial clouds;
+- world-space rainbow;
+- Birthday clearing integrated into the same world;
+- no second terrain/sky/light owner.
+
+## Current Georg visual/reference package
+
+GitHub/Dropbox mirror:
+
+`tools/KFB-ToolBox/_inbox/KFB Elisa B-Day Reference+Mockups/`
+
+Current GitHub intake includes the new Curtain reference at commit `d5a4d7885f72b503cf4d9cf3fe3c052a42c7db4b`.
+
+Use hierarchy:
+
+- Georg `mockup elisa b-day 01.png` = primary Birthday event/composition reference **inside** the Travel world;
+- Gemini mockup = secondary interpretation;
+- colour sheet = local accent/material/mood input, not world-light owner;
+- screenshots = supporting Travel/TinySkies/KayKit/world references;
+- `CURATIN-THREE-js - old-stage-red-curtains-...webp` = primary aged Curtain/Proscenium visual reference;
+- inbox JSONs = source/config evidence only.
+
+Original setup drawing is unavailable and is no longer awaited.
+
+## Three.js current technical donors
+
+Audited current `dev` pin:
+
+`mrdoob/three.js@8f24439631c052231f9661b81633e7ab514f25a5`
+
+- `examples/webgl_volume_cloud.html` → volumetric cloud technique; KFB adaptation requires calm visible world-space animation.
+- `examples/webgpu_compute_cloth.html` → high-fidelity curtain cloth donor.
+
+Important source fact: the Cloth example still says `TODO: Fix example with WebGL backend` and throws if WebGPU is unavailable. Therefore the KFB Curtain consumer requires a deterministic non-WebGPU fallback behind the same API.
+
+## Theatre Curtain · current decision
+
+The aged red Curtain / Proscenium is a **reusable Core Game Asset candidate**, Birthday-tested first.
+
+Required behavioural vocabulary:
+
+`closed-rest · closed-wind · impact · opening · open-rest · closing · reset`
+
+Required visual reading:
+
+- aged dark-red velvet;
+- weight/folds;
+- wear/fading/damage;
+- rail/rings/attachment logic;
+- worn old-stage/proscenium wood/stone/ornament direction;
+- real 3D scene lighting/shadows;
+- no flat background / falling blind.
+
+Reserve a future generic surface-content seam so KFB Card/PDF render textures can later use the module. Do **not** build a PDF/Card viewer in the Birthday slice.
+
+## Birthday identity inventory
+
+Before polish the world must visibly account for:
+
+- Uncle FrizzleBob;
+- GothGirl-source Birthday actor using current player-facing decision;
+- Hihi Love-Hope as finished/readable KFB Cube-Pet presentation;
+- D6 Birthday Radio + all six tracks through Travel Audio;
+- three asymmetrical disco balls;
+- physical coloured `Happy Eighteenth Birthday Elisa!` 3D letter/Newton installation;
+- lighthouse;
+- animated clouds;
+- rainbow;
+- aged 3D curtain/proscenium;
+- one bounded fireworks/celebration event;
+- tested actor state path `Idle → Focus → Select/Celebrate → Rest`.
+
+Astra may optimize scale, position, choreography, deformation, terrain seed, camera, cloud grouping, curtain wear and local accent colour. It may not optimize required identity out of existence.
+
+## Actor/motion input
+
+Tested input:
+
+`tools/KFB-ToolBox/_handover/BIRTHDAY_STARTSCREEN_2026-09-15/RETURN_BIRTHDAY_CONSUMER.md`
+
+Do not rebuild the actor handoff and do not infer animation compatibility from filenames.
+
+## Asset Librarian
 
 Permanent URL: `https://kayfabizarro.pages.dev/asset-librarian/`.
 
-Fresh-chat onboarding: `tools/asset_registry/librarian/ONBOARDING_FRESH_CHAT_2026-09-15.md`.  
-Postmortem: `tools/asset_registry/librarian/POSTMORTEM_CHAT_BREAK_2026-09-15.md`.
+Current Librarian cleanup remains useful but is not an Astra Birthday blocker. Registry discovery does not replace receiving-consumer suitability/compatibility ownership.
 
-Der geborgene Implementationsstand vor dem Postmortem liegt bei `3f6e8dcc5d00ff642488f7e5e1c76cd6ad052f84`: v1.7 Browse/Filter-Pass gemergt; Browser-Smoke Run `34919321337` SUCCESS. Town Workbench v1.6 und On-character KayKit Motion Preview sind Teil der grünen Regression. Dokumentation/Manifest/Return hinken hinter v1.7 her und müssen vor neuer breiter Featurearbeit versöhnt werden.
+## ToolBox / Stage
 
-Der frische Librarian-Chat soll danach prüfen, ob Registry → Live die sechs neuen Birthday-Radio-Dateien bereits indiziert hat. Nicht hardcoden, nur um sie sichtbar zu machen.
+ToolBox correctness issues such as brows, colorpicker, Surf and material-surface authoring remain separate work.
 
-### ToolBox
+The Fable/Stage/Terraformer execution brief remains a later authoring/editor track. After Birthday acceptance, the accepted world/scene/curtain results can become targets/donors for Stage rather than being rediscovered.
 
-Input-Paket: `tools/KFB-ToolBox/_inbox/KFB FrankenStein ToolBox (WS0).zip`.
+## Narrative Scene Layer · later donor
 
-**WS0 SOURCE REPORT, 15.09.2026:** lokaler Jobordner `_inbox/WS0_2026-09-15/`; 113 entpackte Einträge; 101/101 Paket-Prüfsummen PASS; Modulschluss laut WS0 87 Dateien / 7 Einstiege / 0 unauflösbare lokale Modulreferenzen außer externen Schriftverweisen; 30/31 Embed-Dateien bytegleich, `carlrig-mount.v1.js` erwartete v3.1-Abweichung; Kaltstart 7/7. WS0 bewertet Daten erhalten = PASS, Parameter angewandt = TEILWEISE, sichtbar gleich = TEILWEISE und nennt `T1_SOURCE_CLOSURE_DELIVERED`. Diese Detailtests wurden vom Lead-Chat nicht selbst reproduziert.
+Audited upstream:
 
-**Unabhängig hier geklärt:** der GitHub-Commit, der das Original-ZIP hinzufügte, ist `a3adb84692fd381fafe75d294f9e14d5b6f12c4d` (`Add files via upload`). Der ausführliche lokale WS0-Jobordner war bei dieser Prüfung noch nicht unter `tools/KFB-ToolBox/_inbox/` auf `main` sichtbar; vor Chat-Abbruch daher Return/Delta/QA dauerhaft pushen.
+`dannylimanseta/narrative-scene-layer@082b5a43e0d7bba4264491c3fe5d0710a6224664`
 
-Weiterhin zwei getrennte Ergebnisse: A = vollständiger kaltstartfähiger Quellstand und echtes Delta; B = ein gemeinsamer workfloworientierter UI-Pilot auf denselben Modulen. Vor B die noch teilweise Feld-/Sichtabdeckung mit einer positiven Feldmatrix schließen oder ausdrücklich als offene Abweichung klassifizieren. ToolBox-/Town-Ideen nicht als Zusatzscope in A hineinziehen.
+Relevant later principles:
 
-UI-Schriften bleiben readability-first: Roboto/System-Sans für ToolBox-Bedienung; keine Schriftdateien in Übergabepakete. Artwork-Schriften bleiben getrennte, optional externe Art-Assets.
+- scene / presentation / theme separation;
+- persistent poses as stances;
+- explicit entrances;
+- materially different presentation variants over the same scene.
 
-### Stunt / Vehicles · Low-effort presentation
+Not Birthday runtime scope.
 
-Implementation SSOT bleibt `georg-doc/KFB-Stunt-Car-Race`. Neue User-Direction ist dort in `_handover/VEHICLE_DRIVERLESS_PRESENTATION_DIRECTION_2026-09-15.md` gesichert.
+## Stunt / Vehicles
 
-Ordinary cartoon vehicles dürfen ohne sichtbaren seated Driver / Cockpit / Tricycle-Graft fahrbar sein. Der ausgewählte Character gilt während des Fahrens narrativ als im Vehicle; Town kann bei Bedarf einen kurzen Enter/Exit-Übergang zeigen. Der bestehende Driver-Graft bleibt optionaler authored presentation layer für besondere Fahrzeuge und wird nicht gelöscht.
+Implementation SSOT remains `georg-doc/KFB-Stunt-Car-Race`. Driverless-presentation direction remains valid and unrelated to the current Birthday blocker.
 
-Die Race-Physik, Kamera und Progress-Owner bleiben unverändert. Visual acting darf auf einem Präsentations-Child aufsetzen, aber Collider/Physik nicht still verschieben. Ziel ist, den vorhandenen Cartoon-Vehicle-Pool schnell nutzbar zu machen und KayKit-/andere Characters nicht vom ToolBox-Cockpitbau abhängig zu machen.
+## Recovery sentence for a fresh Lead chat
 
-### Travel / Town Terrain
-
-Implementation SSOT bleibt `georg-doc/KFB-Travel-Globe`. Town liefert Gestaltung/Candidates, Travel besitzt Welt/Terrain/Sky/Movement. Für die geplante Startzone bestehende Travel-/TinySkies-Küsten-, Boden-, Sky-, Day/Night-, Aurora-/Wetter-Bausteine zuerst wiederverwenden. Kein zweiter Terrain-/Sky-Owner.
-
-Erster Terrain-Showcase darf Plateau, Königshügel, gemeinsame Bühne, Siedlungsfläche, Fluss/Mündung und sichtbare Pirateninsel vorsehen; konkrete Geometrie folgt erst nach aktuellem Town-Candidate-Handoff und Travel-Quellenprüfung.
-
-Danach beziehungsweise parallel als kleine Vergleichsszene: `WORLD_COLOR_LIGHTING_COHESION_TBD_2026-09-15.md`. Vorgeschlagen ist eine KFB Look Calibration Stage mit fünf bis acht repräsentativen Assets in Day, Golden Hour und Graveyard Night. Erst Material-/Lichtantwort messen; globales Color Grading/LUT erst am Ende erwägen.
-
-## Recovery-Satz für einen frischen Lead-Chat
-
-> Lies `skills/chat/RECOVERY_PATH.md`, dann `skills/chat/recovery/CURRENT_LEAD_CHECKPOINT_2026-09-15.md`. Verifiziere den aktuellen `georg-doc/kayfabizarro`-Main-HEAD und die jeweils genannten Projekt-SSOTs. Für Town danach `skills/chat/town/START_HERE.md` + Session Card + die dort verlinkten Public-/post-r022-Deltas; §§12–13 im Living sind der historische r016-Checkpoint. Für Travel-Look-Fragen den World-Color-/Lighting-TBD lesen. Für Asset Librarian `ONBOARDING_FRESH_CHAT_2026-09-15.md` + Postmortem lesen. Für Stunt-Vehicles den driverless-presentation Handoff im Stunt-SSOT lesen. Keine bereits gemergten Funktionen neu bauen und keine Owner still ersetzen.
+> Read `skills/chat/RECOVERY_PATH.md`, then `skills/chat/recovery/CURRENT_LEAD_CHECKPOINT_2026-09-15.md`, then verify current GitHub heads. For the immediate Birthday execution, follow `georg-doc/KFB-Travel-Globe/_handover/BIRTHDAY_STARTSCREEN_ASTRA_2026-09-15/ASTRA_EXECUTION_CURRENT_2026-09-15.md`. Keep Travel PR #8 unmerged, do not restart the old Fable-first gate or another briefing swarm, and do not rebuild the tested actor handoff. Travel/TinySkies owns the world substrate; Georg's new reference/mockup folder directs Birthday staging inside it. Astra works A0–A5, publishes a separate WIP, and stops for Georg freeplay. Preserve all existing owners and never treat automated PASS as Georg acceptance.
