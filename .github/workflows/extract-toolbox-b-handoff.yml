@@ -32,9 +32,9 @@ jobs:
             'tools/KFB-ToolBox/_inbox/WS0_2026-09-15/unpacked/B_OBERFLAECHE/KRITIK_UX_CARL_WEG_v1.md' \
             'tools/KFB-ToolBox/_inbox/WS0_2026-09-15/unpacked/B_OBERFLAECHE/KFB ToolBox Pilot v1.dc.html'
           do
+            mkdir -p "$(dirname "$p")"
             unzip -p "$ZIP" "$p" > "$p.tmp"
             test -s "$p.tmp"
-            mkdir -p "$(dirname "$p")"
             mv "$p.tmp" "$p"
           done
       - name: Commit extracted handoff and remove one-shot workflow
