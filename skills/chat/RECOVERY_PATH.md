@@ -83,11 +83,14 @@ Do not promote one to another. Inbox packages are never implementation truth mer
 
 ## Briefing-quality guard
 
-Before authoring a substantial redesign/rework brief for another model, read:
+Before authoring a substantial redesign/rework/game-slice brief for another model, read both incident reports:
 
-`skills/chat/recovery/POSTMORTEM_BRIEFING_DRIFT_TOOLBOX_UI_2026-09-15.md`
+- `skills/chat/recovery/POSTMORTEM_BRIEFING_DRIFT_TOOLBOX_UI_2026-09-15.md`
+- `skills/chat/recovery/POSTMORTEM_BIRTHDAY_BRIEFING_FAILURE_2026-09-15.md`
 
-The incident established a reusable rule: **source hierarchy + full inventory + negative clamps before implementation prompt**.
+The incidents established reusable rules:
+
+**Coverage before compression. Identity before convenience. Sequence before feature lists. External red-team before expensive implementation where practical.**
 
 In particular, do not let:
 
@@ -96,9 +99,37 @@ In particular, do not let:
 - a journey map replace the feature inventory;
 - a favourite subset replace a full collection/roster;
 - responsive/split-screen requirements become late QA only;
-- omitted features become silent de-scope.
+- omitted features become silent de-scope;
+- identity-bearing world/interaction/audio elements be pushed to P1 solely to make P0 smaller;
+- technical owner constraints overshadow the visible/interactive product outcome;
+- named quality ideas such as `Living UI` or `micro-interactions` remain unbound to actual states/timing/evidence;
+- automated PASS or a large green PR be treated as Georg acceptance.
 
-If the functional source, visual source, complete feature/population inventory or owner boundaries are not clear, issue an inventory/critique task first rather than an implementation brief.
+For visual/game slices, a complete brief must explicitly answer four separate questions:
+
+1. **WORLD** — what must visibly exist together?
+2. **SEQUENCE** — what happens from cold load through the primary loop?
+3. **LIFE** — what moves/lives even without input?
+4. **FEEDBACK** — what does every important input immediately do, including loading/failure/retry?
+
+Before expensive implementation, ask independent critics where supported:
+
+- **Literal Executor Simulator:** what would a cold competent executor actually build from this brief, and what could it omit?
+- **Intent/Coverage Auditor:** which explicit decisions are absent, weakened or accidentally deferred?
+- **Experience Director:** is the end-to-end sequence complete?
+- **Production Designer/Set Auditor:** is the full required world/prop inventory protected?
+- **Interaction/Failure Auditor:** are hover/press/loading/success/failure/touch states operationalized?
+- **Technical Contract Auditor:** are owners/sources correct without displacing the product goal?
+
+Then use a separate Synthesizer to return ranked defects, exact repairs, a revised brief and — when requested — an improved reusable template. The Builder must not be its own only critic.
+
+Mandatory preflight question:
+
+> Given only this brief, what identity-bearing part of Georg's intended product could a competent literal executor legally omit and still claim success?
+
+If the answer is non-empty, the brief is not ready.
+
+If the functional source, visual source, complete feature/population/set inventory, experience sequence, interaction states or owner boundaries are not clear, issue an inventory/critique/red-team task first rather than an implementation brief.
 
 ## Minimum handoff a dying chat should leave
 
