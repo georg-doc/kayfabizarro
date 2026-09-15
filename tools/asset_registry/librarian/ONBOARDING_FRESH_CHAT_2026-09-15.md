@@ -57,7 +57,7 @@ Then verify the permanent Cloudflare product URL against the current main build 
 
 ## Current Town consumer context
 
-Town's public cursor is `skills/chat/town/SESSION_CARD.md` S001 r022 plus the accepted `references/TOWN_S001_R017_R022_PUBLIC_DELTA.md`.
+Town's public cursor is `skills/chat/town/SESSION_CARD.md` S001 r022 plus the accepted `references/TOWN_S001_R017_R022_PUBLIC_DELTA.md` and explicitly named post-r022 inputs.
 
 Useful current needs include:
 
@@ -67,17 +67,21 @@ Useful current needs include:
 - motion audition/casting for concrete roles;
 - showstage / ring / city / nature / vehicle candidates as needed by a named scene;
 - Birthday Character Select work, including GothGirl/KayKit motion casting;
-- later D6 Birthday Radio audio discovery after the audio files enter the generated Registry.
+- D6 Birthday Radio audio discovery now that the source package is on `main`.
 
 Do **not** respond to this by inventing a larger semantic taxonomy. Use the existing search, Type/Format browse heuristics, pack/path facts and Town candidate handoff first. Add a new workbench filter/lane only when a concrete task cannot be served cleanly by the current surface.
 
-## New Birthday Radio source package
+## Birthday Radio source package · IMPLEMENTATION
 
-The lead chat is importing six CC0/Public-Domain recordings from VOLE.wtf / Tom Kincaid into:
+The six selected VOLE.wtf / Tom Kincaid recordings were imported successfully to `main` in commit:
+
+`c2d6cf2b0c64a5a090bb96cb4b826c875dd52786` · `assets: import VOLE CC0 birthday radio`
+
+Repository path:
 
 `media/3D_Assets/Audio/Music/Birthday Radio - VOLE CC0/`
 
-Planned D6 mapping:
+D6 mapping:
 
 1. Jazz Trio
 2. Church Organ
@@ -86,7 +90,11 @@ Planned D6 mapping:
 5. 8-bit
 6. Death Metal
 
-The source page states the audio recordings are CC0/public domain and were made by Tom Kincaid. The asset package carries a per-file `MANIFEST.json` with source URLs and hashes. Registry → Live should discover new repo assets through the existing Registry refresh path; do not hardcode these six files into Librarian source code merely to make them appear.
+The package contains the six MP3 files plus `README.md` and `MANIFEST.json`. The manifest records source URLs, byte sizes and SHA-256 hashes. The source page states the recordings are CC0/public domain and identifies Tom Kincaid as the audio creator.
+
+**TESTED RESULT:** the one-shot GitHub Actions import run `34929626545` completed successfully and the resulting files were confirmed present in the repository. The temporary importer has been removed after the successful import.
+
+**NOT YET TESTED:** whether the generated Registry → Live path has already indexed all six new audio files. The fresh Librarian chat should check that before adding any hardcoded UI. Do not hardcode the six files merely to make them appear.
 
 ## Ownership boundaries
 
@@ -128,4 +136,4 @@ Return one concise report with:
 
 ## Start prompt for a new chat
 
-> Read `tools/asset_registry/librarian/ONBOARDING_FRESH_CHAT_2026-09-15.md` and its linked postmortem/recovery docs. Verify current `main` before acting. Do not rebuild v1.6/v1.7. First reconcile README, CHANGELOG, BUILD_MANIFEST and RETURN with the already-merged v1.7 source/test state and separately verify the permanent Cloudflare URL. Preserve Registry and consumer ownership. After that, continue only with one concrete Town/Birthday production need; do not start another broad taxonomy pass.
+> Read `tools/asset_registry/librarian/ONBOARDING_FRESH_CHAT_2026-09-15.md` and its linked postmortem/recovery docs. Verify current `main` before acting. Do not rebuild v1.6/v1.7. First reconcile README, CHANGELOG, BUILD_MANIFEST and RETURN with the already-merged v1.7 source/test state and separately verify the permanent Cloudflare URL. Then verify whether the six imported Birthday Radio tracks are present through Registry → Live; do not hardcode them into Librarian source merely to make them appear. Preserve Registry and consumer ownership. After that, continue only with one concrete Town/Birthday production need; do not start another broad taxonomy pass.
