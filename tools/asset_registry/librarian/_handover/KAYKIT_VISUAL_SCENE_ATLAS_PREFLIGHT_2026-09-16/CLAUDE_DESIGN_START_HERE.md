@@ -7,23 +7,25 @@
 
 ## 1. Mission
 
-Convert a small set of high-value visual references into **provenance-backed scene recipes** that later KFB consumers can test.
+Convert bounded KayKit/reference captures into **provenance-backed visual annotations and scene recipes** that later KFB consumers can test.
 
-You are not being asked to inventory KayKit from scratch. That work already exists.
+The inventory, ownership and pack/source research already exists. Do not rebuild it.
 
-You are being asked to answer:
+Your job is to answer:
 
-> What is visibly composed here, which owned source assets likely/exactly correspond to it, how are they arranged, and what remains unresolved?
+> What is visibly composed here, which owned source assets exactly or probably correspond to it, how are they arranged, and what remains unresolved?
 
 ## 2. Read only these files first
 
 In this folder:
 
-1. `REFERENCE_CORPUS_INDEX.md`
-2. `VISUAL_REVIEW_QUEUE.md`
-3. `WORLD_NOW_FAST_LANE.md`
+1. `LIVING_STATUS.md`
+2. `REFERENCE_CORPUS_INDEX.md`
+3. `VISUAL_REVIEW_QUEUE.md`
 4. `SOURCE_ASSET_MATCH_MATRIX.md`
 5. `SCENE_RECIPE_v0_PROPOSAL.md`
+
+Read `WORLD_NOW_FAST_LANE.md` only when executing the explicit WORLD NOW track.
 
 Then open **only the job packet you are executing** under:
 
@@ -33,7 +35,7 @@ Do not crawl the whole repository before starting.
 
 ## 3. Canonical Atlas foundation
 
-If a job needs existing KayKit source/ownership/context, use:
+For existing KayKit source/ownership/context, use:
 
 `tools/asset_registry/librarian/_handover/KAYKIT_REFERENCE_ATLAS_2026-09-15/`
 
@@ -48,36 +50,68 @@ That directory already owns:
 
 Do not create a second Atlas owner.
 
-## 4. First execution sequence
+## 4. Two tracks — never conflate them
 
-Run these **in order** unless Georg explicitly reprioritizes:
+### Track A · CANONICAL Reference Lab
 
-### Job 1
+This is the default visual-review order owned by the governing preflight.
 
-`VISUAL_JOB_PACKETS/VR-001_BIRTHDAY_COZY_PARTY.md`
+Start with:
 
-Goal: smallest convincing Birthday/cozy-party scene recipe around the existing tested hero setup.
+1. `VISUAL_JOB_PACKETS/CQ-001_ULTRA_TURBO_HERO_MAN_WEAPON_GRIP_POSE.md`
+2. `VISUAL_JOB_PACKETS/CQ-002_GOTH_GIRL_DEMO.md`
+3. `VISUAL_JOB_PACKETS/CQ-003_DEMON_LORD_DEMO.md`
 
-### Job 2
+Then continue the exact canonical queue in `VISUAL_REVIEW_QUEUE.md`.
 
-`VISUAL_JOB_PACKETS/VR-002_ORBIT7_SEASIDE_TOWN_ROAD.md`
+Every return must say:
 
-Goal: three compact composition recipes — town edge, road/streetscape, seaside edge — while preserving Travel/TinySkies ownership of terrain/water/sky/light.
+`TRACK: CANONICAL`
 
-### Job 3
+### Track B · WORLD NOW Fast Lane
 
-`VISUAL_JOB_PACKETS/VR-003_BLOCK_BITS_MULTI_COMPOSITION.md`
+This is a separate production overlay. It does **not** reorder the canonical queue.
 
-Goal: reconstruct the actual distinct motifs in the authored Block Bits sample.
+Use only when Georg/Lead explicitly asks for current world-production support.
 
-### Jobs 4–5 after the first three returns are stable
+Prepared packets:
 
+- `VR-001_BIRTHDAY_COZY_PARTY.md`
+- `VR-002_ORBIT7_SEASIDE_TOWN_ROAD.md`
+- `VR-003_BLOCK_BITS_MULTI_COMPOSITION.md`
 - `VR-004_CITY_BUILDER_STREETSCAPE.md`
 - `VR-005_RESOURCE_BITS_SCENE_USE.md`
 
-Do not open the P1/P2 character sweep before the first three jobs have produced useful recipe returns unless specifically asked.
+Every return must say:
 
-## 5. Evidence discipline — hard
+`TRACK: WORLD_NOW`
+
+Do not silently switch between tracks.
+
+## 5. Scene Recipe status
+
+Use:
+
+`kfb.scene-recipe.v0`
+
+with:
+
+`profile: visual-preflight`
+
+This remains a **PROPOSAL**. The first 3–5 visual jobs are expected to prove, modify or simplify it.
+
+Maturity:
+
+- L0 reference indexed
+- L1 visual annotation
+- L2 asset-matched
+- L3 static reconstruction
+- L4 reusable scene recipe
+- L5 consumer-tested
+
+Only the receiving consumer may promote to L5.
+
+## 6. Evidence discipline — hard
 
 Every claim must be clearly one of:
 
@@ -88,38 +122,32 @@ Every claim must be clearly one of:
 - `TESTED RESULT`
 - `UNRESOLVED`
 
-### Critical examples
+### Good
 
-Good:
+`OBSERVED DEMO: the blaster is visibly held in the right hand in frame/time X.`
 
-`OBSERVED DEMO: the blaster is visibly held in the right hand in this frame.`
+`INFERENCE: the contact point appears near the rear grip, but the exact local attachment transform is not recoverable from this view.`
 
-Good:
-
-`INFERENCE: the prop pivot appears near the grip center, but exact local transform is not recoverable from this view.`
-
-Bad:
+### Bad
 
 `The blaster is compatible with this rig.`
 
 A source demo does not prove KFB runtime compatibility.
 
-## 6. What you may infer visually
+## 7. What you may infer visually
 
 You may estimate and label as `INFERENCE`:
 
 - relative position;
 - normalized scale ratios;
 - camera class;
-- likely symmetry/repetition;
+- symmetry/repetition;
 - visual depth order;
-- likely grouping/cluster logic.
+- grouping/cluster logic.
 
-Use confidence levels.
+Use confidence levels. Prefer normalized relationships to fake world-space precision.
 
-Prefer normalized relationships to false world-space precision.
-
-## 7. What you must not infer
+## 8. What you must not infer
 
 Do not invent:
 
@@ -135,7 +163,7 @@ Do not invent:
 
 Return `UNRESOLVED` instead.
 
-## 8. Source matching
+## 9. Source matching
 
 Use `SOURCE_ASSET_MATCH_MATRIX.md` first.
 
@@ -147,9 +175,9 @@ Return one of:
 
 If an exact asset is not already known and cannot be proven, do not guess its path.
 
-For archive-only families such as Resource Bits / City Builder / Medieval Hexagon, family-level mapping is acceptable.
+Archive-only families may remain family-level.
 
-## 9. Existing owners you must preserve
+## 10. Existing owners you must preserve
 
 - Asset files + generated Registry → source/file truth
 - Asset Librarian → read-only discovery/preview/candidate handoff
@@ -160,108 +188,122 @@ For archive-only families such as Resource Bits / City Builder / Medieval Hexago
 
 Do not silently replace any of them.
 
-## 10. Birthday-specific non-negotiable
+## 11. Canonical Job 1 non-negotiable
 
-Do not recast/rebuild the already-tested P0 hero behavior.
+For CQ-001, inspect the GIF itself. The filename already supplies `BLASTER · GRIP · POSE`; your task is to establish what those words correspond to **visually**.
 
-Existing Birthday evidence already covers the narrow hero actor/motion state. Your job is **visual scene reconstruction and candidate staging**.
+Preserve the literal naming discrepancy:
 
-Do not let optional microphone/stool/stage ideas block the stable P0 scene.
+- reference: `UltraHeroTurboMan`
+- source tree: `UltraTurboHeroMan`
 
-## 11. Orbit 7-specific non-negotiable
+Do not normalize it silently.
 
-Do not replace Travel/TinySkies terrain, water, sky, lighting or coastal-world logic with KayKit tiles.
+## 12. Goth Girl non-negotiable
 
-KayKit is a source of:
+Do not spend CQ-002 re-proving the existing narrow binding evidence.
 
-- built environment;
-- modular scene grammar;
-- props;
-- signs;
-- nature dressing;
-- reference compositions.
+Analyze what remains visually unresolved:
 
-The KFB world substrate remains owned elsewhere.
+- actual action sequence;
+- microphone/mic-stand/speaker/stool use if visible;
+- contact/seating;
+- scale;
+- camera/staging;
+- look/material/light.
 
-## 12. Required return format for every job
+## 13. Demon Lord non-negotiable
 
-At minimum return:
+DemonHeart and SummoningCircle are source siblings, not automatically demonstrated props. Confirm their visual presence before creating `OBSERVED_DEMO` relations.
 
-### A. Markdown analysis
+## 14. WORLD NOW non-negotiables
+
+If Track B is explicitly activated:
+
+### Birthday
+
+Do not recast/rebuild the already-tested P0 hero behavior. Reconstruct scene staging only.
+
+### Orbit 7 / seaside
+
+Do not replace Travel/TinySkies terrain, water, sky, lighting or coastal-world logic with KayKit tiles. KayKit supplies built-environment/dressing/reference grammar.
+
+## 15. Required return format for every job
+
+### A. Markdown
 
 `<JOB_ID>_RETURN.md`
 
 with:
 
-- source captures inspected;
+- `TRACK`;
+- source captures actually inspected;
+- inspection state;
 - `SOURCE FACT`;
 - `OBSERVED DEMO`;
 - `INFERENCE`;
 - exact/family/unresolved source matches;
-- composition grammar;
+- composition;
 - camera;
 - lighting/material/glow/FX;
 - KFB `PROPOSAL`;
+- referenced `TESTED RESULT` only where relevant;
 - `UNRESOLVED`;
 - confidence.
 
 ### B. Recipe JSON
 
-One or more:
+`<JOB_ID>.scene-recipe-v0.json`
 
-`*.visual-scene-recipe.json`
-
-following `SCENE_RECIPE_v0_PROPOSAL.md`.
+using `kfb.scene-recipe.v0`, `profile: visual-preflight`.
 
 ### C. Source-match delta
 
 `<JOB_ID>_SOURCE_MATCH_DELTA.md`
 
-Only add mappings that the visual job actually strengthens.
+Only add mappings strengthened by the actual visual job.
 
-## 13. Visual comparison loop
+## 16. Reconstruction loop
 
-Where your environment supports reconstruction/rendering:
+Where the environment supports visual reconstruction/rendering:
 
-1. inspect the reference directly;
-2. segment composition;
-3. build a coarse reconstruction from supplied candidates;
-4. compare silhouette and spacing;
-5. tune relative scale;
+1. inspect the source directly;
+2. segment composition/action;
+3. load only supplied candidates;
+4. reproduce coarse silhouette/placement;
+5. compare spacing/scale;
 6. tune camera;
 7. add material/light/FX last;
-8. capture a comparison image;
+8. capture comparison evidence;
 9. list residual mismatches.
 
-A successful visual reconstruction is still not a consumer runtime acceptance test.
+A successful visual reconstruction is still not L5 consumer acceptance.
 
-## 14. Paid/reference media handling
+## 17. Paid/reference handling
 
 Use reference media for inspection. Do not republish paid/Patreon reference masters into public repo outputs.
 
-Return metadata, observations, mappings and small permitted evidence only.
+Return metadata, observations, mappings and permitted evidence only.
 
-## 15. Stop conditions
+## 18. Stop conditions
 
-Stop the current job and return a blocker instead of improvising when:
+Stop and return a blocker rather than improvising when:
 
 - pixels/frames cannot be inspected;
 - source identity is ambiguous;
 - source access requires a new owner action;
+- a required existing contract cannot be found;
 - the job drifts into runtime implementation;
-- you would need to invent compatibility;
-- a required existing contract cannot be found.
+- you would need to invent compatibility.
 
-## 16. First response expected from Claude Design
+## 19. First response expected from Claude Design
 
-Do not begin with a new planning essay.
+Default Track A:
 
-For `VR-001`:
-
-1. state which exact visual files you could inspect;
-2. identify any access blocker immediately;
-3. perform the visual extraction;
+1. open `CQ-001_ULTRA_TURBO_HERO_MAN_WEAPON_GRIP_POSE.md`;
+2. state whether the GIF frames can actually be inspected;
+3. if yes, perform the frame-level extraction;
 4. return the three required artifacts;
-5. keep unresolved items explicit.
+5. stop for review before CQ-002 unless Georg explicitly requests a batch.
 
-Then stop for review before opening Job 2, unless Georg explicitly asks for a batch run.
+If Georg explicitly activates WORLD NOW, open the requested WN packet instead and state `TRACK: WORLD_NOW` in the return.
