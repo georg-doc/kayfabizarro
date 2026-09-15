@@ -1,12 +1,18 @@
-import { RESULT_LIMIT, $, state } from './state.js';
+import { $, state } from './state.js';
 import { ensureCatalog, ensureRigFacts, ensureProblems } from './registry.js';
+import { classifyAsset, primaryRepresentations, representationPriority } from './asset-types.js';
 
+function checkedValues(id) {
+  const host=$(id);
+  return host ? [...host.querySelectorAll('input[type="checkbox"]:checked')].map((input)=>input.value) : [];
+}
 export function readFilters() {
   return {
     query: $('searchInput').value.trim(), kind: $('kindFilter').value, pack: $('packFilter').value,
-    collection: $('collectionFilter').value, format: $('formatFilter').value, dependencyStatus: $('dependencyFilter').value,
-    problemType: $('problemFilter').value, rigged: $('rigFilter').value, animated: $('animatedFilter').value,
-    clip: $('clipFilter').value.trim(), joint: $('jointFilter').value.trim(),
+    collection: $('collectionFilter').value, formats: checkedValues('formatFilterOptions'), types: checkedValues('typeFilterOptions'),
+    dependencyStatus: $('dependencyFilter').value, problemType: $('problemFilter').value,
+    rigged: $('rigFilter').value, animated: $('animatedFilter').value,
+    clip: $('clipFilter').value.trim(), joint: $('jointFilter').value.trim(), browseMode: state.browseMode,
   };
 }
 function rank(record, query) {
@@ -20,13 +26,10 @@ function rank(record, query) {
   return null;
 }
 function formatPriority(record) {
-  if (record.kind === 'model-3d' && ['glb', 'gltf'].includes(record.format)) return 0;
-  if (record.kind === 'image-2d') return 1;
-  if (record.kind === 'audio') return 2;
-  if (record.format === 'obj') return 3;
-  if (record.format === 'fbx') return 4;
-  if (record.format === 'blend') return 5;
-  return 6;
+  if (record.kind === 'model-3d') return representationPriority(record);
+  if (record.kind === 'image-2d') return 10;
+  if (record.kind === 'audio') return 11;
+  return 12;
 }
 function tri(value, wanted) {
   if (!wanted) return true;
@@ -34,10 +37,12 @@ function tri(value, wanted) {
   if (wanted === 'no') return value === false;
   return value !== true && value !== false;
 }
-export function applyFilters(records, filters) {
+export function applyFilters(records, filters, visibleLimit=state.resultVisibleLimit) {
   const scored = [];
   for (const record of records) {
-    if (filters.kind && record.kind !== filters.kind || filters.pack && record.packId !== filters.pack || filters.collection && record.collectionPath !== filters.collection || filters.format && record.format !== filters.format || filters.dependencyStatus && record.dependencyStatus !== filters.dependencyStatus) continue;
+    if (filters.kind && record.kind !== filters.kind || filters.pack && record.packId !== filters.pack || filters.collection && record.collectionPath !== filters.collection || filters.formats.length && !filters.formats.includes(record.format) || filters.dependencyStatus && record.dependencyStatus !== filters.dependencyStatus) continue;
+    const type=classifyAsset(record); record.assetType=type;
+    if (filters.types.length && !filters.types.includes(type)) continue;
     if (filters.problemType) {
       const rows = state.problemsByAsset.get(record.assetId) || [];
       if (filters.problemType === 'any' ? !rows.length : !rows.some((problem) => problem.type === filters.problemType)) continue;
@@ -52,12 +57,15 @@ export function applyFilters(records, filters) {
     scored.push([textRank, formatPriority(record), record]);
   }
   scored.sort((a, b) => a[0] - b[0] || a[1] - b[1] || String(a[2].name).localeCompare(String(b[2].name)) || a[2].path.localeCompare(b[2].path));
-  return { total: scored.length, rows: scored.slice(0, RESULT_LIMIT).map((entry) => entry[2]) };
+  const rawRows=scored.map((entry)=>entry[2]);
+  const includeAnimationSources=filters.types.includes('animation-source');
+  const displayRows=filters.browseMode==='all' ? rawRows : primaryRepresentations(rawRows,{includeAnimationSources});
+  return { rawTotal:rawRows.length, total:displayRows.length, rows:displayRows.slice(0,visibleLimit), allRows:displayRows };
 }
 export async function searchRegistry() {
   const filters = readFilters();
   const catalog = await ensureCatalog();
-  if (filters.rigged || filters.animated || filters.clip || filters.joint) await ensureRigFacts();
+  if (filters.rigged || filters.animated || filters.clip || filters.joint || filters.types.length) await ensureRigFacts();
   if (filters.problemType) await ensureProblems();
-  return applyFilters(catalog, filters);
+  return applyFilters(catalog, filters, state.resultVisibleLimit);
 }
