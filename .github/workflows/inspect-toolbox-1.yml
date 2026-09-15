@@ -1,0 +1,59 @@
+name: One-shot inspect ToolBox(1)
+
+on:
+  push:
+    paths:
+      - '.github/workflows/inspect-toolbox-1.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  inspect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Inventory ToolBox(1)
+        shell: bash
+        run: |
+          set -euo pipefail
+          ZIP='tools/KFB-ToolBox/_inbox/KFB ToolBox(1).zip'
+          OUT='tools/KFB-ToolBox/_inbox/KFB_TOOLBOX_1_INTAKE_2026-09-15.md'
+          TMP="$(mktemp -d)"
+          unzip -q "$ZIP" -d "$TMP/new"
+          COUNT=$(find "$TMP/new" -type f | wc -l | tr -d ' ')
+          BYTES=$(find "$TMP/new" -type f -printf '%s\n' | awk '{s+=$1}END{print s+0}')
+          SHA=$(sha256sum "$ZIP" | awk '{print $1}')
+          {
+            echo '# KFB ToolBox(1) ZIP intake · 2026-09-15'
+            echo
+            echo '**Status:** SOURCE INTAKE / DELTA INVENTORY. Not acceptance.'
+            echo
+            echo "- zip: \`$ZIP\`"
+            echo "- bytes: $(stat -c %s "$ZIP")"
+            echo "- sha256: \`$SHA\`"
+            echo "- files: **$COUNT**"
+            echo "- uncompressed file bytes: **$BYTES**"
+            echo
+            echo '## Paths'
+            echo
+            find "$TMP/new" -type f | sed "s#^$TMP/new/##" | sort | sed 's#^#- `#;s#$#`#'
+            echo
+            echo '## Likely entry / handoff / report files'
+            echo
+            find "$TMP/new" -type f \( -iname '*START*' -o -iname '*RETURN*' -o -iname '*README*' -o -iname '*REPORT*' -o -iname '*BERICHT*' -o -iname '*HANDOFF*' -o -iname '*CHANGELOG*' -o -iname '*FIELD*' -o -iname '*UX*' \) | sed "s#^$TMP/new/##" | sort | sed 's#^#- `#;s#$#`#'
+          } > "$OUT"
+      - name: Commit report and remove workflow
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'KFB Intake Bot'
+          git config user.email 'actions@users.noreply.github.com'
+          git rm .github/workflows/inspect-toolbox-1.yml
+          git add tools/KFB-ToolBox/_inbox/KFB_TOOLBOX_1_INTAKE_2026-09-15.md
+          git commit -m 'docs(toolbox): inventory ToolBox(1) delta intake'
+          git pull --rebase origin main
+          git push origin HEAD:main
