@@ -6,6 +6,8 @@
 **Consumer:** Travel/Astra Birthday Startscreen.  
 **Grundsatz:** vorhandene Owner und Contracts bleiben unverändert.
 
+**LATEST CORRECTION:** vor weiterer Arbeit `POST_RETURN_CORRECTIONS_2026-09-15.md` und `RETURN_BIRTHDAY_CONSUMER.md` lesen. Player-facing: **Uncle FrizzleBob** · **Little Miss Messy** (`GothGirl` source) · **Hihi Love-Hope**. Der aktuelle FrizzleBob-Export ist Candidate / not final.
+
 ## 1 · Auftrag in einem Satz
 
 Liefere dem Birthday-Startscreen **wenige klar benannte, consumer-ready Actor-/Motion-/Prop-Eingaben** aus dem bereits gesicherten ToolBox-Quellstand, ohne Ergebnis A neu zu bauen und ohne die Travel-Szene selbst zu implementieren.
@@ -61,9 +63,9 @@ Erforderlich:
 
 Kein neues Cockpit/Driver-Rig für diese Szene. Keine Travel-Bewegungslogik in ToolBox.
 
-### 4.2 Novacyy / GothGirl
+### 4.2 Little Miss Messy / source asset GothGirl
 
-`GothGirl` ist der Asset-/Librarian-Name; `Novacyy` ist die Birthday-Player-Identität. Datei nicht umbenennen, wenn das Asset dadurch seine Registry-Identität verliert.
+`GothGirl` bleibt Asset-/Librarian-Name; **Little Miss Messy** ist die aktuelle player-facing Rolle. Datei nicht umbenennen, wenn das Asset dadurch seine Registry-Identität verliert.
 
 Erforderlich:
 
@@ -79,7 +81,7 @@ Erforderlich:
 
 Die Asset-Librarian-Motion-Preview ist Discovery-/Preview-Beleg. Animation Lab bleibt Owner der finalen Kompatibilitätsannahme.
 
-### 4.3 Hihi
+### 4.3 Hihi Love-Hope
 
 Für Mittwoch nur **inactive / Coming Soon**.
 
@@ -124,12 +126,12 @@ Ein kompakter Return genügt:
 | Item | exact source/config | consumer API/path | tested evidence | status |
 |---|---|---|---|---|
 | FrizzleBob | … | … | … | PASS/PARTIAL/OPEN |
-| Novacyy/GothGirl | … | … | … | PASS/PARTIAL/OPEN |
+| Little Miss Messy / GothGirl source | … | … | … | PASS/PARTIAL/OPEN |
 | Idle | … | … | binding … | … |
 | Focus | … | … | binding … | … |
 | Select/Celebrate | … | … | binding … | … |
 | Dance P1 | … | … | binding … | … |
-| Hihi inactive | … | … | … | … |
+| Hihi Love-Hope inactive | … | … | … | … |
 | EyeRig Speaker P1 | … | … | … | … |
 
 Zusätzlich:
@@ -140,7 +142,7 @@ Zusätzlich:
 
 ## 8 · Startprompt für den frischen Design/ToolBox-Chat
 
-> Lies `tools/KFB-ToolBox/_handover/BIRTHDAY_STARTSCREEN_2026-09-15/START_HERE.md`. Prüfe den aktuellen GitHub-Stand und die neue Inbox-Lieferung `KFB ToolBox.zip`. Ergebnis A nicht neu bauen: lies `FIELD_COVERAGE.md` und `RETURN_WSA.md` und schließe nur echte offene Beleglücken. Für den Birthday-Consumer liefere dann FrizzleBob sowie Novacyy/GothGirl mit einem kleinen, real geprüften State-Casting (Idle, Focus/Hover, Select/Celebrate, Rest; Dance nur als P1) und Hihi als inaktiven Existing-Contract-Slot. ToolBox baut nicht die Travel-Szene. Ergebnis B/UI-Pilot bleibt separat und darf den Birthday-Slice nicht blockieren. Routineablage und Git-Sync selbstständig bündeln.
+> Lies `tools/KFB-ToolBox/_handover/BIRTHDAY_STARTSCREEN_2026-09-15/START_HERE.md`. Prüfe den aktuellen GitHub-Stand und die neue Inbox-Lieferung `KFB ToolBox.zip`. Ergebnis A nicht neu bauen: lies `FIELD_COVERAGE.md` und `RETURN_WSA.md` und schließe nur echte offene Beleglücken. Für den Birthday-Consumer liefere dann Uncle FrizzleBob sowie Little Miss Messy / source asset GothGirl mit einem kleinen, real geprüften State-Casting (Idle, Focus/Hover, Select/Celebrate, Rest; Dance nur als P1) und Hihi Love-Hope als inaktiven Existing-Contract-Slot. ToolBox baut nicht die Travel-Szene. Ergebnis B/UI-Pilot bleibt separat und darf den Birthday-Slice nicht blockieren. Routineablage und Git-Sync selbstständig bündeln.
 
 ## 9 · Status
 
