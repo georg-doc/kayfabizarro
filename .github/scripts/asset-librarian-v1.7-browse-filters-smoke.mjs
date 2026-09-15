@@ -28,7 +28,6 @@ async function run(){
 
     await cdp.eval(`document.getElementById('kaykitPreset').click()`);
     const page1=await ev(cdp,`(()=>{const n=document.querySelectorAll('#resultList .result-card').length;const t=document.getElementById('resultMeta').textContent;return n===120&&t.includes('primary matches')?{n,t}:false;})()`,'KayKit first page',120000);
-    assert(!document?.foo,'');
     const moreVisible=await cdp.eval(`!document.getElementById('loadMoreButton').hidden`);assert(moreVisible,'Load more should be visible for KayKit');
     await cdp.eval(`document.getElementById('loadMoreButton').click()`);
     const page2=await ev(cdp,`(()=>{const n=document.querySelectorAll('#resultList .result-card').length;return n>120?n:false;})()`,'KayKit second page',120000);
