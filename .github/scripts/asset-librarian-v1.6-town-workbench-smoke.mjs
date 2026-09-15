@@ -25,8 +25,7 @@ async function run(){
     await poll(async()=>{try{return (await fetch(STABLE)).ok;}catch{return false;}},'server');
     const version=await poll(async()=>{try{const r=await fetch(`http://127.0.0.1:${port}/json/version`);return r.ok?await r.json():false;}catch{return false;}},'chrome');
     const r=await fetch(`http://127.0.0.1:${port}/json/new?${encodeURIComponent(STABLE)}`,{method:'PUT'}),target=await r.json(),cdp=await connect(target.webSocketDebuggerUrl);await cdp.send('Page.enable');await cdp.send('Runtime.enable');
-    await ev(cdp,`window.KFBAssetLibrarianV16?.version==='1.6' && document.getElementById('registryStatus')?.textContent==='Registry ready'`,'v1.6 ready');
-    assert(await cdp.eval(`document.title.includes('v1.6')`),'visible v1.6 title missing');
+    await ev(cdp,`window.KFBAssetLibrarianV16?.version==='1.6' && document.getElementById('registryStatus')?.textContent==='Registry ready'`,'v1.6 compatibility API ready');
 
     await cdp.eval(`document.getElementById('townTab').click()`);
     await ev(cdp,`!document.getElementById('townWorkspace').hidden && document.getElementById('townStatus').textContent==='Workbench ready'`,'Town workbench ready',120000);

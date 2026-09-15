@@ -1,4 +1,25 @@
 import { registryBase, $, state, fetchJSON, fetchJSONL, option, setBusy } from './state.js';
+import { ASSET_TYPES } from './asset-types.js';
+
+function checkboxOption(value,label) {
+  const row=document.createElement('label'); row.className='multi-check';
+  const input=document.createElement('input'); input.type='checkbox'; input.value=value;
+  const span=document.createElement('span'); span.textContent=label;
+  row.append(input,span); return row;
+}
+export function refreshMultiFilterSummaries() {
+  for (const [optionsId,summaryId,emptyLabel] of [['typeFilterOptions','typeFilterSummary','All types'],['formatFilterOptions','formatFilterSummary','All formats']]) {
+    const host=$(optionsId), summary=$(summaryId); if(!host||!summary)continue;
+    const selected=[...host.querySelectorAll('input:checked')].map((input)=>input.nextElementSibling?.textContent||input.value);
+    summary.textContent=selected.length ? (selected.length<=2?selected.join(', '):`${selected.length} selected`) : emptyLabel;
+  }
+}
+function populateMultiFilters(formats) {
+  const typeHost=$('typeFilterOptions'), formatHost=$('formatFilterOptions');
+  if(typeHost&&!typeHost.children.length) typeHost.replaceChildren(...ASSET_TYPES.map(([value,label])=>checkboxOption(value,label)));
+  if(formatHost) formatHost.replaceChildren(...formats.map((value)=>checkboxOption(value,value.toUpperCase())));
+  refreshMultiFilterSummaries();
+}
 
 export async function ensureCatalog() {
   if (state.catalog) return state.catalog;
@@ -8,7 +29,7 @@ export async function ensureCatalog() {
     state.catalogById = new Map(state.catalog.map((r) => [r.assetId, r]));
     const formats = [...new Set(state.catalog.map((r) => r.format).filter(Boolean))].sort();
     const collections = [...new Set(state.catalog.map((r) => r.collectionPath).filter(Boolean))].sort((a,b) => a.localeCompare(b));
-    $('formatFilter').replaceChildren(option('', 'All formats'), ...formats.map((v) => option(v,v)));
+    populateMultiFilters(formats);
     $('collectionFilter').replaceChildren(option('', 'All collections'), ...collections.map((v) => option(v,v)));
     return state.catalog;
   } finally { setBusy(false); }
