@@ -50,13 +50,6 @@ Do not promote one to another. Inbox packages are never implementation truth mer
 - It points to Town, Asset Librarian, ToolBox and Travel without replacing any project SSOT.
 - Always verify current repo HEAD after opening it; the dated checkpoint is a cursor, not a frozen implementation truth.
 
-## KFB Town quick recovery
-
-- `skills/chat/town/START_HERE.md`
-- then `skills/chat/town/SESSION_CARD.md`
-- then §§12–13 of `skills/chat/town/LIVING_KFB_TOWN.md`
-- Town remains design/living state; implementation owners remain in their own repos/tools.
-
 ## Asset Librarian quick recovery
 
 - Permanent product URL: `https://kayfabizarro.pages.dev/asset-librarian/`
@@ -87,6 +80,25 @@ Do not promote one to another. Inbox packages are never implementation truth mer
 - Processed history: `_inbox/archiv/<job-or-project>/`.
 - Read only the job folder named by Georg/current routing docs.
 - The receiving project/tool SSOT remains authoritative after handoff.
+
+## Briefing-quality guard
+
+Before authoring a substantial redesign/rework brief for another model, read:
+
+`skills/chat/recovery/POSTMORTEM_BRIEFING_DRIFT_TOOLBOX_UI_2026-09-15.md`
+
+The incident established a reusable rule: **source hierarchy + full inventory + negative clamps before implementation prompt**.
+
+In particular, do not let:
+
+- a recent prototype become the product model by accident;
+- a QA fixture become the UX model;
+- a journey map replace the feature inventory;
+- a favourite subset replace a full collection/roster;
+- responsive/split-screen requirements become late QA only;
+- omitted features become silent de-scope.
+
+If the functional source, visual source, complete feature/population inventory or owner boundaries are not clear, issue an inventory/critique task first rather than an implementation brief.
 
 ## Minimum handoff a dying chat should leave
 
