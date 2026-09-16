@@ -2,30 +2,30 @@
   "catalog": "catalog.jsonl",
   "counts": {
     "byKind": {
-      "audio": 1683,
-      "image-2d": 6442,
-      "model-3d": 4642
+      "audio": 1689,
+      "image-2d": 6512,
+      "model-3d": 5137
     },
     "byRoot": {
       "media/2D_Assets": 5132,
-      "media/3D_Assets": 7635
+      "media/3D_Assets": 8206
     },
     "decks": 4,
     "dependencies": {
-      "complete": 2603,
-      "embedded": 1353,
-      "missing": 374,
-      "unresolved": 312
+      "complete": 3089,
+      "embedded": 1364,
+      "missing": 339,
+      "unresolved": 345
     },
-    "packs": 99,
+    "packs": 102,
     "problems": {
-      "DUPLICATE_NAME": 641,
-      "MISSING_REFERENCED_FILE": 382,
-      "UNRESOLVED_FBX_DEPENDENCY": 239,
-      "UNRESOLVED_MODEL_DEPENDENCY": 73
+      "DUPLICATE_NAME": 656,
+      "MISSING_REFERENCED_FILE": 339,
+      "UNRESOLVED_FBX_DEPENDENCY": 265,
+      "UNRESOLVED_MODEL_DEPENDENCY": 80
     },
-    "textureCandidates": 552,
-    "total": 12767
+    "textureCandidates": 560,
+    "total": 13338
   },
   "determinism": "same commit + same config + same override files => byte-identical output",
   "excludePrefixes": [
@@ -54,7 +54,7 @@
     "packs": "packs/index.json",
     "problems": "problems.json"
   },
-  "sourceCommit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
-  "sourceCommitTime": "2026-09-12T17:41:10+02:00",
+  "sourceCommit": "34cde3f8f752d481a03c9714f1c3b3a8b2c15c46",
+  "sourceCommitTime": "2026-09-17T01:21:52+02:00",
   "sourceRepo": "georg-doc/kayfabizarro"
 }

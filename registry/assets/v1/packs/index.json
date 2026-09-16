@@ -36,7 +36,7 @@
     "shard": "packs/3d-assets-loose.json"
   },
   {
-    "assetCount": 1662,
+    "assetCount": 1668,
     "collections": [
       {
         "assetCount": 24,
@@ -85,6 +85,10 @@
       {
         "assetCount": 33,
         "path": "Materials"
+      },
+      {
+        "assetCount": 6,
+        "path": "Music"
       },
       {
         "assetCount": 111,
@@ -150,12 +154,12 @@
     "dependencyStatus": {},
     "displayName": "Audio",
     "formats": {
-      "mp3": 10,
+      "mp3": 16,
       "ogg": 765,
       "wav": 887
     },
     "kinds": {
-      "audio": 1662
+      "audio": 1668
     },
     "packId": "audio",
     "provenance": "generated-structural",
@@ -341,11 +345,15 @@
     "shard": "packs/foods-assets-small.json"
   },
   {
-    "assetCount": 76,
+    "assetCount": 79,
     "collections": [
       {
         "assetCount": 49,
         "path": "CartoonVehiclesPack1.1"
+      },
+      {
+        "assetCount": 3,
+        "path": "KFB Truck"
       },
       {
         "assetCount": 4,
@@ -362,22 +370,22 @@
     ],
     "dependencyStatus": {
       "complete": 4,
-      "embedded": 14,
-      "unresolved": 33
+      "embedded": 15,
+      "unresolved": 35
     },
     "displayName": "Frankensteining",
     "formats": {
-      "blend": 4,
+      "blend": 5,
       "dae": 9,
-      "fbx": 20,
-      "glb": 14,
+      "fbx": 21,
+      "glb": 15,
       "obj": 4,
       "png": 9,
       "tif": 16
     },
     "kinds": {
       "image-2d": 25,
-      "model-3d": 51
+      "model-3d": 54
     },
     "packId": "frankensteining",
     "provenance": "generated-structural",
@@ -1064,10 +1072,10 @@
     "shard": "packs/kaykit-blockbits-1-0-free.json"
   },
   {
-    "assetCount": 49,
+    "assetCount": 189,
     "collections": [
       {
-        "assetCount": 47,
+        "assetCount": 187,
         "path": "Assets"
       },
       {
@@ -1076,16 +1084,16 @@
       }
     ],
     "dependencyStatus": {
-      "missing": 35
+      "complete": 162
     },
     "displayName": "KayKit_BoardGameBits_1.0_FREE",
     "formats": {
-      "gltf": 35,
-      "png": 14
+      "gltf": 162,
+      "png": 27
     },
     "kinds": {
-      "image-2d": 14,
-      "model-3d": 35
+      "image-2d": 27,
+      "model-3d": 162
     },
     "packId": "kaykit-boardgamebits-1-0-free",
     "provenance": "generated-structural",
@@ -1120,6 +1128,31 @@
     "provenance": "generated-structural",
     "root": "media/3D_Assets/KayKit_Character_Animations_1.1",
     "shard": "packs/kaykit-character-animations-1-1.json"
+  },
+  {
+    "assetCount": 45,
+    "collections": [
+      {
+        "assetCount": 43,
+        "path": "Assets"
+      }
+    ],
+    "dependencyStatus": {
+      "complete": 41
+    },
+    "displayName": "KayKit_City_Builder_Bits_1.0_FREE",
+    "formats": {
+      "gltf": 41,
+      "png": 4
+    },
+    "kinds": {
+      "image-2d": 4,
+      "model-3d": 41
+    },
+    "packId": "kaykit-city-builder-bits-1-0-free",
+    "provenance": "generated-structural",
+    "root": "media/3D_Assets/KayKit_City_Builder_Bits_1.0_FREE",
+    "shard": "packs/kaykit-city-builder-bits-1-0-free.json"
   },
   {
     "assetCount": 227,
@@ -1239,7 +1272,70 @@
     "shard": "packs/kaykit-halloweenbits.json"
   },
   {
-    "assetCount": 826,
+    "assetCount": 240,
+    "collections": [
+      {
+        "assetCount": 234,
+        "path": "Assets"
+      },
+      {
+        "assetCount": 2,
+        "path": "Samples"
+      },
+      {
+        "assetCount": 1,
+        "path": "Textures"
+      }
+    ],
+    "dependencyStatus": {
+      "complete": 221
+    },
+    "displayName": "KayKit_Medieval_Hexagon_Pack_1.0_FREE",
+    "formats": {
+      "gltf": 221,
+      "jpg": 5,
+      "png": 14
+    },
+    "kinds": {
+      "image-2d": 19,
+      "model-3d": 221
+    },
+    "packId": "kaykit-medieval-hexagon-pack-1-0-free",
+    "provenance": "generated-structural",
+    "root": "media/3D_Assets/KayKit_Medieval_Hexagon_Pack_1.0_FREE",
+    "shard": "packs/kaykit-medieval-hexagon-pack-1-0-free.json"
+  },
+  {
+    "assetCount": 47,
+    "collections": [
+      {
+        "assetCount": 43,
+        "path": "Assets"
+      },
+      {
+        "assetCount": 2,
+        "path": "Textures"
+      }
+    ],
+    "dependencyStatus": {
+      "complete": 41
+    },
+    "displayName": "KayKit_Mixed_Bag_1_FREE",
+    "formats": {
+      "gltf": 41,
+      "png": 6
+    },
+    "kinds": {
+      "image-2d": 6,
+      "model-3d": 41
+    },
+    "packId": "kaykit-mixed-bag-1-free",
+    "provenance": "generated-structural",
+    "root": "media/3D_Assets/KayKit_Mixed_Bag_1_FREE",
+    "shard": "packs/kaykit-mixed-bag-1-free.json"
+  },
+  {
+    "assetCount": 916,
     "collections": [
       {
         "assetCount": 20,
@@ -1408,25 +1504,41 @@
       {
         "assetCount": 2,
         "path": "CharacterTemplate"
+      },
+      {
+        "assetCount": 23,
+        "path": "DemonLord"
+      },
+      {
+        "assetCount": 33,
+        "path": "GothGirl"
+      },
+      {
+        "assetCount": 8,
+        "path": "Santa"
+      },
+      {
+        "assetCount": 26,
+        "path": "UltraTurboHeroMan"
       }
     ],
     "dependencyStatus": {
-      "complete": 242,
-      "embedded": 72,
-      "unresolved": 272
+      "complete": 263,
+      "embedded": 82,
+      "unresolved": 303
     },
     "displayName": "KayKit_Mystery_Series6",
     "formats": {
-      "blend": 55,
-      "fbx": 217,
-      "glb": 72,
-      "gltf": 133,
-      "obj": 109,
-      "png": 240
+      "blend": 61,
+      "fbx": 242,
+      "glb": 82,
+      "gltf": 146,
+      "obj": 117,
+      "png": 268
     },
     "kinds": {
-      "image-2d": 240,
-      "model-3d": 586
+      "image-2d": 268,
+      "model-3d": 648
     },
     "packId": "kaykit-mystery-series6",
     "provenance": "generated-structural",
