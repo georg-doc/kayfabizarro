@@ -2,26 +2,157 @@
   "schema": "kfb-resident-scene.v0",
   "id": "caveman-cave-camp",
   "title": "Caveman · Cave Camp",
-  "status": "IMPLEMENTATION_UNTESTED",
+  "status": "IMPLEMENTATION_STATIC_CHECK_ONLY",
   "sourceCommit": "252449c921d3f8138d68d1faa3f4052e84040dfe",
-  "collectionRoot": "media/3D_Assets/KayKit_Mystery_Series6/8 - February 2025 - Caveman",
-  "actor": {
-    "asset": null,
-    "note": "Character asset path must be pinned after inventory; do not guess."
+  "subtitle": "KayKit Caveman + Forest Nature + Dungeon wood",
+  "camera": {
+    "hero": [8.2, 5.0, 10.5],
+    "front": [0, 3.1, 11],
+    "top": [0, 12.5, 0.01],
+    "target": [0, 1.25, 0]
   },
-  "habitat": [],
-  "props": [
-    {"id":"campfire-base","path":"media/3D_Assets/KayKit_Mystery_Series6/8 - February 2025 - Caveman/assets/gltf/Campfire_Base.gltf","role":"campfire"},
-    {"id":"campfire-logs","path":"media/3D_Assets/KayKit_Mystery_Series6/8 - February 2025 - Caveman/assets/gltf/Campfire_Logs.gltf","role":"campfire"},
-    {"id":"caveman-axe","path":"media/3D_Assets/KayKit_Mystery_Series6/8 - February 2025 - Caveman/assets/gltf/Caveman_Axe.gltf","role":"primitive-tool"},
-    {"id":"caveman-club","path":"media/3D_Assets/KayKit_Mystery_Series6/8 - February 2025 - Caveman/assets/gltf/Caveman_Club.gltf","role":"primitive-tool"},
-    {"id":"caveman-spear","path":"media/3D_Assets/KayKit_Mystery_Series6/8 - February 2025 - Caveman/assets/gltf/Caveman_Spear.gltf","role":"primitive-tool"}
+  "assets": [
+    {
+      "name": "Caveman",
+      "role": "actor",
+      "group": "actor",
+      "path": "media/3D_Assets/KayKit_Mystery_Series6/8 - February 2025 - Caveman/characters/Caveman.glb",
+      "fit": {"height": 2.2},
+      "at": [0, 0, 0.55],
+      "rotationDeg": [0, 180, 0]
+    },
+    {
+      "name": "Rock left",
+      "role": "cave mouth",
+      "group": "habitat",
+      "path": "media/3D_Assets/KayKit_Forest_Nature_Pack_1.0_FREE/Assets/gltf/Rock_2_G_Color1.gltf",
+      "fit": {"height": 4.0},
+      "at": [-2.55, 0, -2.15],
+      "rotationDeg": [0, 20, 0]
+    },
+    {
+      "name": "Rock right",
+      "role": "cave mouth",
+      "group": "habitat",
+      "path": "media/3D_Assets/KayKit_Forest_Nature_Pack_1.0_FREE/Assets/gltf/Rock_2_G_Color1.gltf",
+      "fit": {"height": 3.75},
+      "at": [2.35, 0, -2.15],
+      "rotationDeg": [0, -32, 0]
+    },
+    {
+      "name": "Rock cap",
+      "role": "cave lintel",
+      "group": "habitat",
+      "path": "media/3D_Assets/KayKit_Forest_Nature_Pack_1.0_FREE/Assets/gltf/Rock_1_P_Color1.gltf",
+      "fit": {"max": 4.9},
+      "at": [0, 3.65, -2.18],
+      "rotationDeg": [0, 0, 90],
+      "anchor": "center"
+    },
+    {
+      "name": "Boulder left",
+      "role": "rock scatter",
+      "group": "habitat",
+      "path": "media/3D_Assets/KayKit_Forest_Nature_Pack_1.0_FREE/Assets/gltf/Rock_3_E_Color1.gltf",
+      "fit": {"max": 1.45},
+      "at": [-3.25, 0, -0.35],
+      "rotationDeg": [0, 63, 0]
+    },
+    {
+      "name": "Boulder right",
+      "role": "rock scatter",
+      "group": "habitat",
+      "path": "media/3D_Assets/KayKit_Forest_Nature_Pack_1.0_FREE/Assets/gltf/Rock_3_E_Color1.gltf",
+      "fit": {"max": 1.15},
+      "at": [3.45, 0, -1.2],
+      "rotationDeg": [0, -23, 0]
+    },
+    {
+      "name": "Campfire base",
+      "role": "campfire",
+      "group": "props",
+      "path": "media/3D_Assets/KayKit_Mystery_Series6/8 - February 2025 - Caveman/assets/gltf/Campfire_Base.gltf",
+      "fit": {"max": 1.35},
+      "at": [-1.55, 0, 2.25],
+      "rotationDeg": [0, 17, 0]
+    },
+    {
+      "name": "Campfire logs",
+      "role": "campfire",
+      "group": "props",
+      "path": "media/3D_Assets/KayKit_Mystery_Series6/8 - February 2025 - Caveman/assets/gltf/Campfire_Logs.gltf",
+      "fit": {"max": 1.05},
+      "at": [-1.55, 0.10, 2.25],
+      "rotationDeg": [0, 17, 0]
+    },
+    {
+      "name": "Spear",
+      "role": "primitive tool",
+      "group": "props",
+      "path": "media/3D_Assets/KayKit_Mystery_Series6/8 - February 2025 - Caveman/assets/gltf/Caveman_Spear.gltf",
+      "fit": {"height": 2.05},
+      "at": [1.65, 0, 1.72],
+      "rotationDeg": [0, -14, -10]
+    },
+    {
+      "name": "Axe",
+      "role": "primitive tool",
+      "group": "props",
+      "path": "media/3D_Assets/KayKit_Mystery_Series6/8 - February 2025 - Caveman/assets/gltf/Caveman_Axe.gltf",
+      "fit": {"height": 0.92},
+      "at": [2.18, 0, 1.82],
+      "rotationDeg": [0, 52, 13]
+    },
+    {
+      "name": "Club",
+      "role": "primitive tool",
+      "group": "props",
+      "path": "media/3D_Assets/KayKit_Mystery_Series6/8 - February 2025 - Caveman/assets/gltf/Caveman_Club.gltf",
+      "fit": {"height": 1.32},
+      "at": [2.65, 0, 1.66],
+      "rotationDeg": [0, -37, 7]
+    },
+    {
+      "name": "Wood platform",
+      "role": "wood build",
+      "group": "habitat",
+      "path": "media/3D_Assets/KayKit_Dungeon_Pack_1.1_FREE 2/Assets/gltf/floor_wood_large.gltf",
+      "fit": {"max": 2.8},
+      "at": [3.35, 0.18, 0.25],
+      "rotationDeg": [0, -10, 0]
+    },
+    {
+      "name": "Wood approach",
+      "role": "wood build",
+      "group": "habitat",
+      "path": "media/3D_Assets/KayKit_Dungeon_Pack_1.1_FREE 2/Assets/gltf/stairs_wood.gltf",
+      "fit": {"max": 2.7},
+      "at": [3.25, 0, 1.75],
+      "rotationDeg": [0, -10, 0]
+    },
+    {
+      "name": "Lean-to roof",
+      "role": "wood build",
+      "group": "habitat",
+      "path": "media/3D_Assets/KayKit_Dungeon_Pack_1.1_FREE 2/Assets/gltf/floor_wood_large.gltf",
+      "fit": {"max": 2.65},
+      "at": [3.35, 1.55, -0.45],
+      "rotationDeg": [57, -10, 0],
+      "anchor": "center"
+    }
   ],
-  "open": [
-    "pin exact Caveman character model",
-    "select verified cave/rock habitat models",
-    "select verified primitive wooden structure models",
-    "author transforms only after asset dimensions are checked",
-    "browser and mobile QA"
-  ]
+  "presentationOnly": [
+    "neutral display plinth",
+    "lighting",
+    "fog",
+    "grid",
+    "warm campfire point light"
+  ],
+  "evidence": {
+    "decision": "Shared viewer plus declarative resident scene recipes.",
+    "implementation": "Caveman scene recipe with exact repository asset paths and authored transforms.",
+    "testedResult": "Static JavaScript syntax check only; live external asset render not yet verified.",
+    "publicDeployment": "OPEN",
+    "georgAcceptance": "OPEN"
+  }
 }
