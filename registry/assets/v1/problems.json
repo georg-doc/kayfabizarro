@@ -1,9 +1,9 @@
 {
   "counts": {
-    "DUPLICATE_NAME": 641,
-    "MISSING_REFERENCED_FILE": 382,
-    "UNRESOLVED_FBX_DEPENDENCY": 239,
-    "UNRESOLVED_MODEL_DEPENDENCY": 73
+    "DUPLICATE_NAME": 656,
+    "MISSING_REFERENCED_FILE": 339,
+    "UNRESOLVED_FBX_DEPENDENCY": 265,
+    "UNRESOLVED_MODEL_DEPENDENCY": 80
   },
   "problems": [
     {
@@ -1665,6 +1665,19 @@
       "collectionPath": "Assets",
       "format": "png",
       "kind": "image-2d",
+      "name": "citybits_texture",
+      "packId": "kaykit-city-builder-bits-1-0-free",
+      "paths": [
+        "media/3D_Assets/KayKit_City_Builder_Bits_1.0_FREE/Assets/gltf/citybits_texture.png",
+        "media/3D_Assets/KayKit_City_Builder_Bits_1.0_FREE/Assets/texture/citybits_texture.png"
+      ],
+      "problemId": "DUPLICATE_NAME:kaykit-city-builder-bits-1-0-free:Assets:image-2d:png:citybits_texture",
+      "type": "DUPLICATE_NAME"
+    },
+    {
+      "collectionPath": "Assets",
+      "format": "png",
+      "kind": "image-2d",
       "name": "dungeon_texture",
       "packId": "kaykit-dungeon-pack-1-1-free-2",
       "paths": [
@@ -1685,6 +1698,30 @@
         "media/3D_Assets/KayKit_HalloweenBits/Assets/textures/halloweenbits_texture.png"
       ],
       "problemId": "DUPLICATE_NAME:kaykit-halloweenbits:Assets:image-2d:png:halloweenbits_texture",
+      "type": "DUPLICATE_NAME"
+    },
+    {
+      "collectionPath": "Assets",
+      "format": "png",
+      "kind": "image-2d",
+      "name": "hexagons_medieval",
+      "packId": "kaykit-medieval-hexagon-pack-1-0-free",
+      "paths": [
+        "media/3D_Assets/KayKit_Medieval_Hexagon_Pack_1.0_FREE/Assets/gltf/buildings/blue/hexagons_medieval.png",
+        "media/3D_Assets/KayKit_Medieval_Hexagon_Pack_1.0_FREE/Assets/gltf/buildings/green/hexagons_medieval.png",
+        "media/3D_Assets/KayKit_Medieval_Hexagon_Pack_1.0_FREE/Assets/gltf/buildings/neutral/hexagons_medieval.png",
+        "media/3D_Assets/KayKit_Medieval_Hexagon_Pack_1.0_FREE/Assets/gltf/buildings/red/hexagons_medieval.png",
+        "media/3D_Assets/KayKit_Medieval_Hexagon_Pack_1.0_FREE/Assets/gltf/buildings/yellow/hexagons_medieval.png",
+        "media/3D_Assets/KayKit_Medieval_Hexagon_Pack_1.0_FREE/Assets/gltf/decoration/nature/hexagons_medieval.png",
+        "media/3D_Assets/KayKit_Medieval_Hexagon_Pack_1.0_FREE/Assets/gltf/decoration/props/hexagons_medieval.png",
+        "media/3D_Assets/KayKit_Medieval_Hexagon_Pack_1.0_FREE/Assets/gltf/tiles/base/hexagons_medieval.png",
+        "media/3D_Assets/KayKit_Medieval_Hexagon_Pack_1.0_FREE/Assets/gltf/tiles/coast/hexagons_medieval.png",
+        "media/3D_Assets/KayKit_Medieval_Hexagon_Pack_1.0_FREE/Assets/gltf/tiles/coast/waterless/hexagons_medieval.png",
+        "media/3D_Assets/KayKit_Medieval_Hexagon_Pack_1.0_FREE/Assets/gltf/tiles/rivers/hexagons_medieval.png",
+        "media/3D_Assets/KayKit_Medieval_Hexagon_Pack_1.0_FREE/Assets/gltf/tiles/rivers/waterless/hexagons_medieval.png",
+        "media/3D_Assets/KayKit_Medieval_Hexagon_Pack_1.0_FREE/Assets/gltf/tiles/roads/hexagons_medieval.png"
+      ],
+      "problemId": "DUPLICATE_NAME:kaykit-medieval-hexagon-pack-1-0-free:Assets:image-2d:png:hexagons_medieval",
       "type": "DUPLICATE_NAME"
     },
     {
@@ -3252,6 +3289,183 @@
         "media/3D_Assets/KayKit_Mystery_Series6/CapsuleCarl/fbx/player.fbx"
       ],
       "problemId": "DUPLICATE_NAME:kaykit-mystery-series6:CapsuleCarl:model-3d:fbx:player",
+      "type": "DUPLICATE_NAME"
+    },
+    {
+      "collectionPath": "DemonLord",
+      "format": "png",
+      "kind": "image-2d",
+      "name": "demon_lord_texture",
+      "packId": "kaykit-mystery-series6",
+      "paths": [
+        "media/3D_Assets/KayKit_Mystery_Series6/DemonLord/assets/fbx(unity)/demon_lord_texture.png",
+        "media/3D_Assets/KayKit_Mystery_Series6/DemonLord/assets/fbx/demon_lord_texture.png",
+        "media/3D_Assets/KayKit_Mystery_Series6/DemonLord/assets/gltf/demon_lord_texture.png",
+        "media/3D_Assets/KayKit_Mystery_Series6/DemonLord/assets/obj/demon_lord_texture.png",
+        "media/3D_Assets/KayKit_Mystery_Series6/DemonLord/texture/demon_lord_texture.png"
+      ],
+      "problemId": "DUPLICATE_NAME:kaykit-mystery-series6:DemonLord:image-2d:png:demon_lord_texture",
+      "type": "DUPLICATE_NAME"
+    },
+    {
+      "collectionPath": "DemonLord",
+      "format": "fbx",
+      "kind": "model-3d",
+      "name": "demonheart",
+      "packId": "kaykit-mystery-series6",
+      "paths": [
+        "media/3D_Assets/KayKit_Mystery_Series6/DemonLord/assets/fbx(unity)/DemonHeart.fbx",
+        "media/3D_Assets/KayKit_Mystery_Series6/DemonLord/assets/fbx/DemonHeart.fbx"
+      ],
+      "problemId": "DUPLICATE_NAME:kaykit-mystery-series6:DemonLord:model-3d:fbx:demonheart",
+      "type": "DUPLICATE_NAME"
+    },
+    {
+      "collectionPath": "DemonLord",
+      "format": "fbx",
+      "kind": "model-3d",
+      "name": "summoningcircle",
+      "packId": "kaykit-mystery-series6",
+      "paths": [
+        "media/3D_Assets/KayKit_Mystery_Series6/DemonLord/assets/fbx(unity)/SummoningCircle.fbx",
+        "media/3D_Assets/KayKit_Mystery_Series6/DemonLord/assets/fbx/SummoningCircle.fbx"
+      ],
+      "problemId": "DUPLICATE_NAME:kaykit-mystery-series6:DemonLord:model-3d:fbx:summoningcircle",
+      "type": "DUPLICATE_NAME"
+    },
+    {
+      "collectionPath": "GothGirl",
+      "format": "png",
+      "kind": "image-2d",
+      "name": "gothgirl_texture",
+      "packId": "kaykit-mystery-series6",
+      "paths": [
+        "media/3D_Assets/KayKit_Mystery_Series6/GothGirl/assets/fbx(unity)/gothgirl_texture.png",
+        "media/3D_Assets/KayKit_Mystery_Series6/GothGirl/assets/fbx/gothgirl_texture.png",
+        "media/3D_Assets/KayKit_Mystery_Series6/GothGirl/assets/gltf/gothgirl_texture.png",
+        "media/3D_Assets/KayKit_Mystery_Series6/GothGirl/assets/obj/gothgirl_texture.png",
+        "media/3D_Assets/KayKit_Mystery_Series6/GothGirl/textures/gothgirl_texture.png"
+      ],
+      "problemId": "DUPLICATE_NAME:kaykit-mystery-series6:GothGirl:image-2d:png:gothgirl_texture",
+      "type": "DUPLICATE_NAME"
+    },
+    {
+      "collectionPath": "GothGirl",
+      "format": "fbx",
+      "kind": "model-3d",
+      "name": "gothgirl_microphone",
+      "packId": "kaykit-mystery-series6",
+      "paths": [
+        "media/3D_Assets/KayKit_Mystery_Series6/GothGirl/assets/fbx(unity)/GothGirl_Microphone.fbx",
+        "media/3D_Assets/KayKit_Mystery_Series6/GothGirl/assets/fbx/GothGirl_Microphone.fbx"
+      ],
+      "problemId": "DUPLICATE_NAME:kaykit-mystery-series6:GothGirl:model-3d:fbx:gothgirl_microphone",
+      "type": "DUPLICATE_NAME"
+    },
+    {
+      "collectionPath": "GothGirl",
+      "format": "fbx",
+      "kind": "model-3d",
+      "name": "gothgirl_micstand",
+      "packId": "kaykit-mystery-series6",
+      "paths": [
+        "media/3D_Assets/KayKit_Mystery_Series6/GothGirl/assets/fbx(unity)/GothGirl_MicStand.fbx",
+        "media/3D_Assets/KayKit_Mystery_Series6/GothGirl/assets/fbx/GothGirl_MicStand.fbx"
+      ],
+      "problemId": "DUPLICATE_NAME:kaykit-mystery-series6:GothGirl:model-3d:fbx:gothgirl_micstand",
+      "type": "DUPLICATE_NAME"
+    },
+    {
+      "collectionPath": "GothGirl",
+      "format": "fbx",
+      "kind": "model-3d",
+      "name": "gothgirl_speaker",
+      "packId": "kaykit-mystery-series6",
+      "paths": [
+        "media/3D_Assets/KayKit_Mystery_Series6/GothGirl/assets/fbx(unity)/GothGirl_Speaker.fbx",
+        "media/3D_Assets/KayKit_Mystery_Series6/GothGirl/assets/fbx/GothGirl_Speaker.fbx"
+      ],
+      "problemId": "DUPLICATE_NAME:kaykit-mystery-series6:GothGirl:model-3d:fbx:gothgirl_speaker",
+      "type": "DUPLICATE_NAME"
+    },
+    {
+      "collectionPath": "GothGirl",
+      "format": "fbx",
+      "kind": "model-3d",
+      "name": "gothgirl_stool",
+      "packId": "kaykit-mystery-series6",
+      "paths": [
+        "media/3D_Assets/KayKit_Mystery_Series6/GothGirl/assets/fbx(unity)/GothGirl_Stool.fbx",
+        "media/3D_Assets/KayKit_Mystery_Series6/GothGirl/assets/fbx/GothGirl_Stool.fbx"
+      ],
+      "problemId": "DUPLICATE_NAME:kaykit-mystery-series6:GothGirl:model-3d:fbx:gothgirl_stool",
+      "type": "DUPLICATE_NAME"
+    },
+    {
+      "collectionPath": "Santa",
+      "format": "png",
+      "kind": "image-2d",
+      "name": "santa_texture",
+      "packId": "kaykit-mystery-series6",
+      "paths": [
+        "media/3D_Assets/KayKit_Mystery_Series6/Santa/assets/gltf/santa_texture.png",
+        "media/3D_Assets/KayKit_Mystery_Series6/Santa/textures/santa_texture.png"
+      ],
+      "problemId": "DUPLICATE_NAME:kaykit-mystery-series6:Santa:image-2d:png:santa_texture",
+      "type": "DUPLICATE_NAME"
+    },
+    {
+      "collectionPath": "UltraTurboHeroMan",
+      "format": "png",
+      "kind": "image-2d",
+      "name": "ultraturboheroman_texture_a",
+      "packId": "kaykit-mystery-series6",
+      "paths": [
+        "media/3D_Assets/KayKit_Mystery_Series6/UltraTurboHeroMan/assets/obj/ultraturboheroman_texture_A.png",
+        "media/3D_Assets/KayKit_Mystery_Series6/UltraTurboHeroMan/textures/ultraturboheroman_texture_A.png"
+      ],
+      "problemId": "DUPLICATE_NAME:kaykit-mystery-series6:UltraTurboHeroMan:image-2d:png:ultraturboheroman_texture_a",
+      "type": "DUPLICATE_NAME"
+    },
+    {
+      "collectionPath": "UltraTurboHeroMan",
+      "format": "png",
+      "kind": "image-2d",
+      "name": "ultraturboheroman_texture_a_png",
+      "packId": "kaykit-mystery-series6",
+      "paths": [
+        "media/3D_Assets/KayKit_Mystery_Series6/UltraTurboHeroMan/assets/fbx(unity)/ultraturboheroman_texture_A_png.png",
+        "media/3D_Assets/KayKit_Mystery_Series6/UltraTurboHeroMan/assets/fbx/ultraturboheroman_texture_A_png.png",
+        "media/3D_Assets/KayKit_Mystery_Series6/UltraTurboHeroMan/assets/gltf/ultraturboheroman_texture_A_png.png",
+        "media/3D_Assets/KayKit_Mystery_Series6/UltraTurboHeroMan/assets/obj/ultraturboheroman_texture_A_png.png"
+      ],
+      "problemId": "DUPLICATE_NAME:kaykit-mystery-series6:UltraTurboHeroMan:image-2d:png:ultraturboheroman_texture_a_png",
+      "type": "DUPLICATE_NAME"
+    },
+    {
+      "collectionPath": "UltraTurboHeroMan",
+      "format": "fbx",
+      "kind": "model-3d",
+      "name": "ultraturboheroman_blaster",
+      "packId": "kaykit-mystery-series6",
+      "paths": [
+        "media/3D_Assets/KayKit_Mystery_Series6/UltraTurboHeroMan/assets/fbx(unity)/UltraTurboHeroMan_Blaster.fbx",
+        "media/3D_Assets/KayKit_Mystery_Series6/UltraTurboHeroMan/assets/fbx/UltraTurboHeroMan_Blaster.fbx"
+      ],
+      "problemId": "DUPLICATE_NAME:kaykit-mystery-series6:UltraTurboHeroMan:model-3d:fbx:ultraturboheroman_blaster",
+      "type": "DUPLICATE_NAME"
+    },
+    {
+      "collectionPath": "UltraTurboHeroMan",
+      "format": "fbx",
+      "kind": "model-3d",
+      "name": "ultraturboheroman_sword",
+      "packId": "kaykit-mystery-series6",
+      "paths": [
+        "media/3D_Assets/KayKit_Mystery_Series6/UltraTurboHeroMan/assets/fbx(unity)/UltraTurboHeroMan_Sword.fbx",
+        "media/3D_Assets/KayKit_Mystery_Series6/UltraTurboHeroMan/assets/fbx/UltraTurboHeroMan_Sword.fbx"
+      ],
+      "problemId": "DUPLICATE_NAME:kaykit-mystery-series6:UltraTurboHeroMan:model-3d:fbx:ultraturboheroman_sword",
       "type": "DUPLICATE_NAME"
     },
     {
@@ -9694,264 +9908,6 @@
       "type": "DUPLICATE_NAME"
     },
     {
-      "assetPath": "media/3D_Assets/KayKit_BoardGameBits_1.0_FREE/Assets/gltf/playerstand.gltf",
-      "problemId": "MISSING_REFERENCED_FILE:media/3D_Assets/KayKit_BoardGameBits_1.0_FREE/Assets/gltf/playerstand.gltf:media/3D_Assets/KayKit_BoardGameBits_1.0_FREE/Assets/gltf/boardgame_bits_texture.png",
-      "target": "media/3D_Assets/KayKit_BoardGameBits_1.0_FREE/Assets/gltf/boardgame_bits_texture.png",
-      "type": "MISSING_REFERENCED_FILE"
-    },
-    {
-      "assetPath": "media/3D_Assets/KayKit_BoardGameBits_1.0_FREE/Assets/gltf/playerstand_blue.gltf",
-      "problemId": "MISSING_REFERENCED_FILE:media/3D_Assets/KayKit_BoardGameBits_1.0_FREE/Assets/gltf/playerstand_blue.gltf:media/3D_Assets/KayKit_BoardGameBits_1.0_FREE/Assets/gltf/boardgame_bits_texture.png",
-      "target": "media/3D_Assets/KayKit_BoardGameBits_1.0_FREE/Assets/gltf/boardgame_bits_texture.png",
-      "type": "MISSING_REFERENCED_FILE"
-    },
-    {
-      "assetPath": "media/3D_Assets/KayKit_BoardGameBits_1.0_FREE/Assets/gltf/playerstand_green.gltf",
-      "problemId": "MISSING_REFERENCED_FILE:media/3D_Assets/KayKit_BoardGameBits_1.0_FREE/Assets/gltf/playerstand_green.gltf:media/3D_Assets/KayKit_BoardGameBits_1.0_FREE/Assets/gltf/boardgame_bits_texture.png",
-      "target": "media/3D_Assets/KayKit_BoardGameBits_1.0_FREE/Assets/gltf/boardgame_bits_texture.png",
-      "type": "MISSING_REFERENCED_FILE"
-    },
-    {
-      "assetPath": "media/3D_Assets/KayKit_BoardGameBits_1.0_FREE/Assets/gltf/playerstand_purple.gltf",
-      "problemId": "MISSING_REFERENCED_FILE:media/3D_Assets/KayKit_BoardGameBits_1.0_FREE/Assets/gltf/playerstand_purple.gltf:media/3D_Assets/KayKit_BoardGameBits_1.0_FREE/Assets/gltf/boardgame_bits_texture.png",
-      "target": "media/3D_Assets/KayKit_BoardGameBits_1.0_FREE/Assets/gltf/boardgame_bits_texture.png",
-      "type": "MISSING_REFERENCED_FILE"
-    },
-    {
-      "assetPath": "media/3D_Assets/KayKit_BoardGameBits_1.0_FREE/Assets/gltf/playerstand_red.gltf",
-      "problemId": "MISSING_REFERENCED_FILE:media/3D_Assets/KayKit_BoardGameBits_1.0_FREE/Assets/gltf/playerstand_red.gltf:media/3D_Assets/KayKit_BoardGameBits_1.0_FREE/Assets/gltf/boardgame_bits_texture.png",
-      "target": "media/3D_Assets/KayKit_BoardGameBits_1.0_FREE/Assets/gltf/boardgame_bits_texture.png",
-      "type": "MISSING_REFERENCED_FILE"
-    },
-    {
-      "assetPath": "media/3D_Assets/KayKit_BoardGameBits_1.0_FREE/Assets/gltf/playerstand_yellow.gltf",
-      "problemId": "MISSING_REFERENCED_FILE:media/3D_Assets/KayKit_BoardGameBits_1.0_FREE/Assets/gltf/playerstand_yellow.gltf:media/3D_Assets/KayKit_BoardGameBits_1.0_FREE/Assets/gltf/boardgame_bits_texture.png",
-      "target": "media/3D_Assets/KayKit_BoardGameBits_1.0_FREE/Assets/gltf/boardgame_bits_texture.png",
-      "type": "MISSING_REFERENCED_FILE"
-    },
-    {
-      "assetPath": "media/3D_Assets/KayKit_BoardGameBits_1.0_FREE/Assets/gltf/tile_barbarian_blue.gltf",
-      "problemId": "MISSING_REFERENCED_FILE:media/3D_Assets/KayKit_BoardGameBits_1.0_FREE/Assets/gltf/tile_barbarian_blue.gltf:media/3D_Assets/KayKit_BoardGameBits_1.0_FREE/Assets/gltf/Blue_Barbarian_Badge.png",
-      "target": "media/3D_Assets/KayKit_BoardGameBits_1.0_FREE/Assets/gltf/Blue_Barbarian_Badge.png",
-      "type": "MISSING_REFERENCED_FILE"
-    },
-    {
-      "assetPath": "media/3D_Assets/KayKit_BoardGameBits_1.0_FREE/Assets/gltf/tile_barbarian_blue.gltf",
-      "problemId": "MISSING_REFERENCED_FILE:media/3D_Assets/KayKit_BoardGameBits_1.0_FREE/Assets/gltf/tile_barbarian_blue.gltf:media/3D_Assets/KayKit_BoardGameBits_1.0_FREE/Assets/gltf/boardgame_bits_texture.png",
-      "target": "media/3D_Assets/KayKit_BoardGameBits_1.0_FREE/Assets/gltf/boardgame_bits_texture.png",
-      "type": "MISSING_REFERENCED_FILE"
-    },
-    {
-      "assetPath": "media/3D_Assets/KayKit_BoardGameBits_1.0_FREE/Assets/gltf/tile_barbarian_green.gltf",
-      "problemId": "MISSING_REFERENCED_FILE:media/3D_Assets/KayKit_BoardGameBits_1.0_FREE/Assets/gltf/tile_barbarian_green.gltf:media/3D_Assets/KayKit_BoardGameBits_1.0_FREE/Assets/gltf/Green_Barbarian_Badge.png",
-      "target": "media/3D_Assets/KayKit_BoardGameBits_1.0_FREE/Assets/gltf/Green_Barbarian_Badge.png",
-      "type": "MISSING_REFERENCED_FILE"
-    },
-    {
-      "assetPath": "media/3D_Assets/KayKit_BoardGameBits_1.0_FREE/Assets/gltf/tile_barbarian_green.gltf",
-      "problemId": "MISSING_REFERENCED_FILE:media/3D_Assets/KayKit_BoardGameBits_1.0_FREE/Assets/gltf/tile_barbarian_green.gltf:media/3D_Assets/KayKit_BoardGameBits_1.0_FREE/Assets/gltf/boardgame_bits_texture.png",
-      "target": "media/3D_Assets/KayKit_BoardGameBits_1.0_FREE/Assets/gltf/boardgame_bits_texture.png",
-      "type": "MISSING_REFERENCED_FILE"
-    },
-    {
-      "assetPath": "media/3D_Assets/KayKit_BoardGameBits_1.0_FREE/Assets/gltf/tile_barbarian_red.gltf",
-      "problemId": "MISSING_REFERENCED_FILE:media/3D_Assets/KayKit_BoardGameBits_1.0_FREE/Assets/gltf/tile_barbarian_red.gltf:media/3D_Assets/KayKit_BoardGameBits_1.0_FREE/Assets/gltf/boardgame_bits_texture.png",
-      "target": "media/3D_Assets/KayKit_BoardGameBits_1.0_FREE/Assets/gltf/boardgame_bits_texture.png",
-      "type": "MISSING_REFERENCED_FILE"
-    },
-    {
-      "assetPath": "media/3D_Assets/KayKit_BoardGameBits_1.0_FREE/Assets/gltf/tile_barbarian_yellow.gltf",
-      "problemId": "MISSING_REFERENCED_FILE:media/3D_Assets/KayKit_BoardGameBits_1.0_FREE/Assets/gltf/tile_barbarian_yellow.gltf:media/3D_Assets/KayKit_BoardGameBits_1.0_FREE/Assets/gltf/boardgame_bits_texture.png",
-      "target": "media/3D_Assets/KayKit_BoardGameBits_1.0_FREE/Assets/gltf/boardgame_bits_texture.png",
-      "type": "MISSING_REFERENCED_FILE"
-    },
-    {
-      "assetPath": "media/3D_Assets/KayKit_BoardGameBits_1.0_FREE/Assets/gltf/tile_blue.gltf",
-      "problemId": "MISSING_REFERENCED_FILE:media/3D_Assets/KayKit_BoardGameBits_1.0_FREE/Assets/gltf/tile_blue.gltf:media/3D_Assets/KayKit_BoardGameBits_1.0_FREE/Assets/gltf/boardgame_bits_texture.png",
-      "target": "media/3D_Assets/KayKit_BoardGameBits_1.0_FREE/Assets/gltf/boardgame_bits_texture.png",
-      "type": "MISSING_REFERENCED_FILE"
-    },
-    {
-      "assetPath": "media/3D_Assets/KayKit_BoardGameBits_1.0_FREE/Assets/gltf/tile_green.gltf",
-      "problemId": "MISSING_REFERENCED_FILE:media/3D_Assets/KayKit_BoardGameBits_1.0_FREE/Assets/gltf/tile_green.gltf:media/3D_Assets/KayKit_BoardGameBits_1.0_FREE/Assets/gltf/boardgame_bits_texture.png",
-      "target": "media/3D_Assets/KayKit_BoardGameBits_1.0_FREE/Assets/gltf/boardgame_bits_texture.png",
-      "type": "MISSING_REFERENCED_FILE"
-    },
-    {
-      "assetPath": "media/3D_Assets/KayKit_BoardGameBits_1.0_FREE/Assets/gltf/tile_knight_blue.gltf",
-      "problemId": "MISSING_REFERENCED_FILE:media/3D_Assets/KayKit_BoardGameBits_1.0_FREE/Assets/gltf/tile_knight_blue.gltf:media/3D_Assets/KayKit_BoardGameBits_1.0_FREE/Assets/gltf/Blue_Knight_Badge.png",
-      "target": "media/3D_Assets/KayKit_BoardGameBits_1.0_FREE/Assets/gltf/Blue_Knight_Badge.png",
-      "type": "MISSING_REFERENCED_FILE"
-    },
-    {
-      "assetPath": "media/3D_Assets/KayKit_BoardGameBits_1.0_FREE/Assets/gltf/tile_knight_blue.gltf",
-      "problemId": "MISSING_REFERENCED_FILE:media/3D_Assets/KayKit_BoardGameBits_1.0_FREE/Assets/gltf/tile_knight_blue.gltf:media/3D_Assets/KayKit_BoardGameBits_1.0_FREE/Assets/gltf/boardgame_bits_texture.png",
-      "target": "media/3D_Assets/KayKit_BoardGameBits_1.0_FREE/Assets/gltf/boardgame_bits_texture.png",
-      "type": "MISSING_REFERENCED_FILE"
-    },
-    {
-      "assetPath": "media/3D_Assets/KayKit_BoardGameBits_1.0_FREE/Assets/gltf/tile_knight_green.gltf",
-      "problemId": "MISSING_REFERENCED_FILE:media/3D_Assets/KayKit_BoardGameBits_1.0_FREE/Assets/gltf/tile_knight_green.gltf:media/3D_Assets/KayKit_BoardGameBits_1.0_FREE/Assets/gltf/Green_Knight_Badge.png",
-      "target": "media/3D_Assets/KayKit_BoardGameBits_1.0_FREE/Assets/gltf/Green_Knight_Badge.png",
-      "type": "MISSING_REFERENCED_FILE"
-    },
-    {
-      "assetPath": "media/3D_Assets/KayKit_BoardGameBits_1.0_FREE/Assets/gltf/tile_knight_green.gltf",
-      "problemId": "MISSING_REFERENCED_FILE:media/3D_Assets/KayKit_BoardGameBits_1.0_FREE/Assets/gltf/tile_knight_green.gltf:media/3D_Assets/KayKit_BoardGameBits_1.0_FREE/Assets/gltf/boardgame_bits_texture.png",
-      "target": "media/3D_Assets/KayKit_BoardGameBits_1.0_FREE/Assets/gltf/boardgame_bits_texture.png",
-      "type": "MISSING_REFERENCED_FILE"
-    },
-    {
-      "assetPath": "media/3D_Assets/KayKit_BoardGameBits_1.0_FREE/Assets/gltf/tile_knight_red.gltf",
-      "problemId": "MISSING_REFERENCED_FILE:media/3D_Assets/KayKit_BoardGameBits_1.0_FREE/Assets/gltf/tile_knight_red.gltf:media/3D_Assets/KayKit_BoardGameBits_1.0_FREE/Assets/gltf/boardgame_bits_texture.png",
-      "target": "media/3D_Assets/KayKit_BoardGameBits_1.0_FREE/Assets/gltf/boardgame_bits_texture.png",
-      "type": "MISSING_REFERENCED_FILE"
-    },
-    {
-      "assetPath": "media/3D_Assets/KayKit_BoardGameBits_1.0_FREE/Assets/gltf/tile_knight_yellow.gltf",
-      "problemId": "MISSING_REFERENCED_FILE:media/3D_Assets/KayKit_BoardGameBits_1.0_FREE/Assets/gltf/tile_knight_yellow.gltf:media/3D_Assets/KayKit_BoardGameBits_1.0_FREE/Assets/gltf/boardgame_bits_texture.png",
-      "target": "media/3D_Assets/KayKit_BoardGameBits_1.0_FREE/Assets/gltf/boardgame_bits_texture.png",
-      "type": "MISSING_REFERENCED_FILE"
-    },
-    {
-      "assetPath": "media/3D_Assets/KayKit_BoardGameBits_1.0_FREE/Assets/gltf/tile_mage_blue.gltf",
-      "problemId": "MISSING_REFERENCED_FILE:media/3D_Assets/KayKit_BoardGameBits_1.0_FREE/Assets/gltf/tile_mage_blue.gltf:media/3D_Assets/KayKit_BoardGameBits_1.0_FREE/Assets/gltf/Blue_Mage_Badge.png",
-      "target": "media/3D_Assets/KayKit_BoardGameBits_1.0_FREE/Assets/gltf/Blue_Mage_Badge.png",
-      "type": "MISSING_REFERENCED_FILE"
-    },
-    {
-      "assetPath": "media/3D_Assets/KayKit_BoardGameBits_1.0_FREE/Assets/gltf/tile_mage_blue.gltf",
-      "problemId": "MISSING_REFERENCED_FILE:media/3D_Assets/KayKit_BoardGameBits_1.0_FREE/Assets/gltf/tile_mage_blue.gltf:media/3D_Assets/KayKit_BoardGameBits_1.0_FREE/Assets/gltf/boardgame_bits_texture.png",
-      "target": "media/3D_Assets/KayKit_BoardGameBits_1.0_FREE/Assets/gltf/boardgame_bits_texture.png",
-      "type": "MISSING_REFERENCED_FILE"
-    },
-    {
-      "assetPath": "media/3D_Assets/KayKit_BoardGameBits_1.0_FREE/Assets/gltf/tile_mage_green.gltf",
-      "problemId": "MISSING_REFERENCED_FILE:media/3D_Assets/KayKit_BoardGameBits_1.0_FREE/Assets/gltf/tile_mage_green.gltf:media/3D_Assets/KayKit_BoardGameBits_1.0_FREE/Assets/gltf/Green_Mage_Badge.png",
-      "target": "media/3D_Assets/KayKit_BoardGameBits_1.0_FREE/Assets/gltf/Green_Mage_Badge.png",
-      "type": "MISSING_REFERENCED_FILE"
-    },
-    {
-      "assetPath": "media/3D_Assets/KayKit_BoardGameBits_1.0_FREE/Assets/gltf/tile_mage_green.gltf",
-      "problemId": "MISSING_REFERENCED_FILE:media/3D_Assets/KayKit_BoardGameBits_1.0_FREE/Assets/gltf/tile_mage_green.gltf:media/3D_Assets/KayKit_BoardGameBits_1.0_FREE/Assets/gltf/boardgame_bits_texture.png",
-      "target": "media/3D_Assets/KayKit_BoardGameBits_1.0_FREE/Assets/gltf/boardgame_bits_texture.png",
-      "type": "MISSING_REFERENCED_FILE"
-    },
-    {
-      "assetPath": "media/3D_Assets/KayKit_BoardGameBits_1.0_FREE/Assets/gltf/tile_mage_red.gltf",
-      "problemId": "MISSING_REFERENCED_FILE:media/3D_Assets/KayKit_BoardGameBits_1.0_FREE/Assets/gltf/tile_mage_red.gltf:media/3D_Assets/KayKit_BoardGameBits_1.0_FREE/Assets/gltf/boardgame_bits_texture.png",
-      "target": "media/3D_Assets/KayKit_BoardGameBits_1.0_FREE/Assets/gltf/boardgame_bits_texture.png",
-      "type": "MISSING_REFERENCED_FILE"
-    },
-    {
-      "assetPath": "media/3D_Assets/KayKit_BoardGameBits_1.0_FREE/Assets/gltf/tile_mage_yellow.gltf",
-      "problemId": "MISSING_REFERENCED_FILE:media/3D_Assets/KayKit_BoardGameBits_1.0_FREE/Assets/gltf/tile_mage_yellow.gltf:media/3D_Assets/KayKit_BoardGameBits_1.0_FREE/Assets/gltf/boardgame_bits_texture.png",
-      "target": "media/3D_Assets/KayKit_BoardGameBits_1.0_FREE/Assets/gltf/boardgame_bits_texture.png",
-      "type": "MISSING_REFERENCED_FILE"
-    },
-    {
-      "assetPath": "media/3D_Assets/KayKit_BoardGameBits_1.0_FREE/Assets/gltf/tile_purple.gltf",
-      "problemId": "MISSING_REFERENCED_FILE:media/3D_Assets/KayKit_BoardGameBits_1.0_FREE/Assets/gltf/tile_purple.gltf:media/3D_Assets/KayKit_BoardGameBits_1.0_FREE/Assets/gltf/boardgame_bits_texture.png",
-      "target": "media/3D_Assets/KayKit_BoardGameBits_1.0_FREE/Assets/gltf/boardgame_bits_texture.png",
-      "type": "MISSING_REFERENCED_FILE"
-    },
-    {
-      "assetPath": "media/3D_Assets/KayKit_BoardGameBits_1.0_FREE/Assets/gltf/tile_red.gltf",
-      "problemId": "MISSING_REFERENCED_FILE:media/3D_Assets/KayKit_BoardGameBits_1.0_FREE/Assets/gltf/tile_red.gltf:media/3D_Assets/KayKit_BoardGameBits_1.0_FREE/Assets/gltf/boardgame_bits_texture.png",
-      "target": "media/3D_Assets/KayKit_BoardGameBits_1.0_FREE/Assets/gltf/boardgame_bits_texture.png",
-      "type": "MISSING_REFERENCED_FILE"
-    },
-    {
-      "assetPath": "media/3D_Assets/KayKit_BoardGameBits_1.0_FREE/Assets/gltf/tile_rogue_blue.gltf",
-      "problemId": "MISSING_REFERENCED_FILE:media/3D_Assets/KayKit_BoardGameBits_1.0_FREE/Assets/gltf/tile_rogue_blue.gltf:media/3D_Assets/KayKit_BoardGameBits_1.0_FREE/Assets/gltf/Blue_Rogue_Badge.png",
-      "target": "media/3D_Assets/KayKit_BoardGameBits_1.0_FREE/Assets/gltf/Blue_Rogue_Badge.png",
-      "type": "MISSING_REFERENCED_FILE"
-    },
-    {
-      "assetPath": "media/3D_Assets/KayKit_BoardGameBits_1.0_FREE/Assets/gltf/tile_rogue_blue.gltf",
-      "problemId": "MISSING_REFERENCED_FILE:media/3D_Assets/KayKit_BoardGameBits_1.0_FREE/Assets/gltf/tile_rogue_blue.gltf:media/3D_Assets/KayKit_BoardGameBits_1.0_FREE/Assets/gltf/boardgame_bits_texture.png",
-      "target": "media/3D_Assets/KayKit_BoardGameBits_1.0_FREE/Assets/gltf/boardgame_bits_texture.png",
-      "type": "MISSING_REFERENCED_FILE"
-    },
-    {
-      "assetPath": "media/3D_Assets/KayKit_BoardGameBits_1.0_FREE/Assets/gltf/tile_rogue_green.gltf",
-      "problemId": "MISSING_REFERENCED_FILE:media/3D_Assets/KayKit_BoardGameBits_1.0_FREE/Assets/gltf/tile_rogue_green.gltf:media/3D_Assets/KayKit_BoardGameBits_1.0_FREE/Assets/gltf/Green_Rogue_Badge.png",
-      "target": "media/3D_Assets/KayKit_BoardGameBits_1.0_FREE/Assets/gltf/Green_Rogue_Badge.png",
-      "type": "MISSING_REFERENCED_FILE"
-    },
-    {
-      "assetPath": "media/3D_Assets/KayKit_BoardGameBits_1.0_FREE/Assets/gltf/tile_rogue_green.gltf",
-      "problemId": "MISSING_REFERENCED_FILE:media/3D_Assets/KayKit_BoardGameBits_1.0_FREE/Assets/gltf/tile_rogue_green.gltf:media/3D_Assets/KayKit_BoardGameBits_1.0_FREE/Assets/gltf/boardgame_bits_texture.png",
-      "target": "media/3D_Assets/KayKit_BoardGameBits_1.0_FREE/Assets/gltf/boardgame_bits_texture.png",
-      "type": "MISSING_REFERENCED_FILE"
-    },
-    {
-      "assetPath": "media/3D_Assets/KayKit_BoardGameBits_1.0_FREE/Assets/gltf/tile_rogue_red.gltf",
-      "problemId": "MISSING_REFERENCED_FILE:media/3D_Assets/KayKit_BoardGameBits_1.0_FREE/Assets/gltf/tile_rogue_red.gltf:media/3D_Assets/KayKit_BoardGameBits_1.0_FREE/Assets/gltf/boardgame_bits_texture.png",
-      "target": "media/3D_Assets/KayKit_BoardGameBits_1.0_FREE/Assets/gltf/boardgame_bits_texture.png",
-      "type": "MISSING_REFERENCED_FILE"
-    },
-    {
-      "assetPath": "media/3D_Assets/KayKit_BoardGameBits_1.0_FREE/Assets/gltf/tile_rogue_yellow.gltf",
-      "problemId": "MISSING_REFERENCED_FILE:media/3D_Assets/KayKit_BoardGameBits_1.0_FREE/Assets/gltf/tile_rogue_yellow.gltf:media/3D_Assets/KayKit_BoardGameBits_1.0_FREE/Assets/gltf/boardgame_bits_texture.png",
-      "target": "media/3D_Assets/KayKit_BoardGameBits_1.0_FREE/Assets/gltf/boardgame_bits_texture.png",
-      "type": "MISSING_REFERENCED_FILE"
-    },
-    {
-      "assetPath": "media/3D_Assets/KayKit_BoardGameBits_1.0_FREE/Assets/gltf/tile_skeleton_brute.gltf",
-      "problemId": "MISSING_REFERENCED_FILE:media/3D_Assets/KayKit_BoardGameBits_1.0_FREE/Assets/gltf/tile_skeleton_brute.gltf:media/3D_Assets/KayKit_BoardGameBits_1.0_FREE/Assets/gltf/boardgame_bits_texture.png",
-      "target": "media/3D_Assets/KayKit_BoardGameBits_1.0_FREE/Assets/gltf/boardgame_bits_texture.png",
-      "type": "MISSING_REFERENCED_FILE"
-    },
-    {
-      "assetPath": "media/3D_Assets/KayKit_BoardGameBits_1.0_FREE/Assets/gltf/tile_skeleton_mage.gltf",
-      "problemId": "MISSING_REFERENCED_FILE:media/3D_Assets/KayKit_BoardGameBits_1.0_FREE/Assets/gltf/tile_skeleton_mage.gltf:media/3D_Assets/KayKit_BoardGameBits_1.0_FREE/Assets/gltf/boardgame_bits_texture.png",
-      "target": "media/3D_Assets/KayKit_BoardGameBits_1.0_FREE/Assets/gltf/boardgame_bits_texture.png",
-      "type": "MISSING_REFERENCED_FILE"
-    },
-    {
-      "assetPath": "media/3D_Assets/KayKit_BoardGameBits_1.0_FREE/Assets/gltf/tile_skeleton_minion.gltf",
-      "problemId": "MISSING_REFERENCED_FILE:media/3D_Assets/KayKit_BoardGameBits_1.0_FREE/Assets/gltf/tile_skeleton_minion.gltf:media/3D_Assets/KayKit_BoardGameBits_1.0_FREE/Assets/gltf/boardgame_bits_texture.png",
-      "target": "media/3D_Assets/KayKit_BoardGameBits_1.0_FREE/Assets/gltf/boardgame_bits_texture.png",
-      "type": "MISSING_REFERENCED_FILE"
-    },
-    {
-      "assetPath": "media/3D_Assets/KayKit_BoardGameBits_1.0_FREE/Assets/gltf/tile_skeleton_rogue.gltf",
-      "problemId": "MISSING_REFERENCED_FILE:media/3D_Assets/KayKit_BoardGameBits_1.0_FREE/Assets/gltf/tile_skeleton_rogue.gltf:media/3D_Assets/KayKit_BoardGameBits_1.0_FREE/Assets/gltf/boardgame_bits_texture.png",
-      "target": "media/3D_Assets/KayKit_BoardGameBits_1.0_FREE/Assets/gltf/boardgame_bits_texture.png",
-      "type": "MISSING_REFERENCED_FILE"
-    },
-    {
-      "assetPath": "media/3D_Assets/KayKit_BoardGameBits_1.0_FREE/Assets/gltf/tile_yellow.gltf",
-      "problemId": "MISSING_REFERENCED_FILE:media/3D_Assets/KayKit_BoardGameBits_1.0_FREE/Assets/gltf/tile_yellow.gltf:media/3D_Assets/KayKit_BoardGameBits_1.0_FREE/Assets/gltf/boardgame_bits_texture.png",
-      "target": "media/3D_Assets/KayKit_BoardGameBits_1.0_FREE/Assets/gltf/boardgame_bits_texture.png",
-      "type": "MISSING_REFERENCED_FILE"
-    },
-    {
-      "assetPath": "media/3D_Assets/KayKit_BoardGameBits_1.0_FREE/Assets/gltf/token_blue.gltf",
-      "problemId": "MISSING_REFERENCED_FILE:media/3D_Assets/KayKit_BoardGameBits_1.0_FREE/Assets/gltf/token_blue.gltf:media/3D_Assets/KayKit_BoardGameBits_1.0_FREE/Assets/gltf/boardgame_bits_texture.png",
-      "target": "media/3D_Assets/KayKit_BoardGameBits_1.0_FREE/Assets/gltf/boardgame_bits_texture.png",
-      "type": "MISSING_REFERENCED_FILE"
-    },
-    {
-      "assetPath": "media/3D_Assets/KayKit_BoardGameBits_1.0_FREE/Assets/gltf/token_green.gltf",
-      "problemId": "MISSING_REFERENCED_FILE:media/3D_Assets/KayKit_BoardGameBits_1.0_FREE/Assets/gltf/token_green.gltf:media/3D_Assets/KayKit_BoardGameBits_1.0_FREE/Assets/gltf/boardgame_bits_texture.png",
-      "target": "media/3D_Assets/KayKit_BoardGameBits_1.0_FREE/Assets/gltf/boardgame_bits_texture.png",
-      "type": "MISSING_REFERENCED_FILE"
-    },
-    {
-      "assetPath": "media/3D_Assets/KayKit_BoardGameBits_1.0_FREE/Assets/gltf/token_red.gltf",
-      "problemId": "MISSING_REFERENCED_FILE:media/3D_Assets/KayKit_BoardGameBits_1.0_FREE/Assets/gltf/token_red.gltf:media/3D_Assets/KayKit_BoardGameBits_1.0_FREE/Assets/gltf/boardgame_bits_texture.png",
-      "target": "media/3D_Assets/KayKit_BoardGameBits_1.0_FREE/Assets/gltf/boardgame_bits_texture.png",
-      "type": "MISSING_REFERENCED_FILE"
-    },
-    {
-      "assetPath": "media/3D_Assets/KayKit_BoardGameBits_1.0_FREE/Assets/gltf/token_yellow.gltf",
-      "problemId": "MISSING_REFERENCED_FILE:media/3D_Assets/KayKit_BoardGameBits_1.0_FREE/Assets/gltf/token_yellow.gltf:media/3D_Assets/KayKit_BoardGameBits_1.0_FREE/Assets/gltf/boardgame_bits_texture.png",
-      "target": "media/3D_Assets/KayKit_BoardGameBits_1.0_FREE/Assets/gltf/boardgame_bits_texture.png",
-      "type": "MISSING_REFERENCED_FILE"
-    },
-    {
       "assetPath": "media/3D_Assets/KayKit_HalloweenBits/Assets/gltf/gravemarker_A.gltf",
       "problemId": "MISSING_REFERENCED_FILE:media/3D_Assets/KayKit_HalloweenBits/Assets/gltf/gravemarker_A.gltf:media/3D_Assets/KayKit_HalloweenBits/Assets/gltf/gravemarker_A.bin",
       "target": "media/3D_Assets/KayKit_HalloweenBits/Assets/gltf/gravemarker_A.bin",
@@ -12088,6 +12044,12 @@
       "type": "UNRESOLVED_FBX_DEPENDENCY"
     },
     {
+      "assetPath": "media/3D_Assets/Frankensteining/KFB Truck/KFB TRUCK WaterBowser.fbx",
+      "detail": "dependency parsing not implemented for .fbx",
+      "problemId": "UNRESOLVED_FBX_DEPENDENCY:media/3D_Assets/Frankensteining/KFB Truck/KFB TRUCK WaterBowser.fbx:dependency parsing not implemented for .fbx",
+      "type": "UNRESOLVED_FBX_DEPENDENCY"
+    },
+    {
       "assetPath": "media/3D_Assets/Frankensteining/TANKS FBX/Tank.fbx",
       "detail": "dependency parsing not implemented for .fbx",
       "problemId": "UNRESOLVED_FBX_DEPENDENCY:media/3D_Assets/Frankensteining/TANKS FBX/Tank.fbx:dependency parsing not implemented for .fbx",
@@ -13420,6 +13382,156 @@
       "type": "UNRESOLVED_FBX_DEPENDENCY"
     },
     {
+      "assetPath": "media/3D_Assets/KayKit_Mystery_Series6/DemonLord/Animations/fbx/Rig_Large/Rig_Large_General.fbx",
+      "detail": "dependency parsing not implemented for .fbx",
+      "problemId": "UNRESOLVED_FBX_DEPENDENCY:media/3D_Assets/KayKit_Mystery_Series6/DemonLord/Animations/fbx/Rig_Large/Rig_Large_General.fbx:dependency parsing not implemented for .fbx",
+      "type": "UNRESOLVED_FBX_DEPENDENCY"
+    },
+    {
+      "assetPath": "media/3D_Assets/KayKit_Mystery_Series6/DemonLord/Animations/fbx/Rig_Large/Rig_Large_MovementBasic.fbx",
+      "detail": "dependency parsing not implemented for .fbx",
+      "problemId": "UNRESOLVED_FBX_DEPENDENCY:media/3D_Assets/KayKit_Mystery_Series6/DemonLord/Animations/fbx/Rig_Large/Rig_Large_MovementBasic.fbx:dependency parsing not implemented for .fbx",
+      "type": "UNRESOLVED_FBX_DEPENDENCY"
+    },
+    {
+      "assetPath": "media/3D_Assets/KayKit_Mystery_Series6/DemonLord/assets/fbx(unity)/DemonHeart.fbx",
+      "detail": "dependency parsing not implemented for .fbx",
+      "problemId": "UNRESOLVED_FBX_DEPENDENCY:media/3D_Assets/KayKit_Mystery_Series6/DemonLord/assets/fbx(unity)/DemonHeart.fbx:dependency parsing not implemented for .fbx",
+      "type": "UNRESOLVED_FBX_DEPENDENCY"
+    },
+    {
+      "assetPath": "media/3D_Assets/KayKit_Mystery_Series6/DemonLord/assets/fbx(unity)/SummoningCircle.fbx",
+      "detail": "dependency parsing not implemented for .fbx",
+      "problemId": "UNRESOLVED_FBX_DEPENDENCY:media/3D_Assets/KayKit_Mystery_Series6/DemonLord/assets/fbx(unity)/SummoningCircle.fbx:dependency parsing not implemented for .fbx",
+      "type": "UNRESOLVED_FBX_DEPENDENCY"
+    },
+    {
+      "assetPath": "media/3D_Assets/KayKit_Mystery_Series6/DemonLord/assets/fbx/DemonHeart.fbx",
+      "detail": "dependency parsing not implemented for .fbx",
+      "problemId": "UNRESOLVED_FBX_DEPENDENCY:media/3D_Assets/KayKit_Mystery_Series6/DemonLord/assets/fbx/DemonHeart.fbx:dependency parsing not implemented for .fbx",
+      "type": "UNRESOLVED_FBX_DEPENDENCY"
+    },
+    {
+      "assetPath": "media/3D_Assets/KayKit_Mystery_Series6/DemonLord/assets/fbx/SummoningCircle.fbx",
+      "detail": "dependency parsing not implemented for .fbx",
+      "problemId": "UNRESOLVED_FBX_DEPENDENCY:media/3D_Assets/KayKit_Mystery_Series6/DemonLord/assets/fbx/SummoningCircle.fbx:dependency parsing not implemented for .fbx",
+      "type": "UNRESOLVED_FBX_DEPENDENCY"
+    },
+    {
+      "assetPath": "media/3D_Assets/KayKit_Mystery_Series6/DemonLord/characters/DemonLord.fbx",
+      "detail": "dependency parsing not implemented for .fbx",
+      "problemId": "UNRESOLVED_FBX_DEPENDENCY:media/3D_Assets/KayKit_Mystery_Series6/DemonLord/characters/DemonLord.fbx:dependency parsing not implemented for .fbx",
+      "type": "UNRESOLVED_FBX_DEPENDENCY"
+    },
+    {
+      "assetPath": "media/3D_Assets/KayKit_Mystery_Series6/GothGirl/Animations/fbx/Rig_Medium/Rig_Medium_General.fbx",
+      "detail": "dependency parsing not implemented for .fbx",
+      "problemId": "UNRESOLVED_FBX_DEPENDENCY:media/3D_Assets/KayKit_Mystery_Series6/GothGirl/Animations/fbx/Rig_Medium/Rig_Medium_General.fbx:dependency parsing not implemented for .fbx",
+      "type": "UNRESOLVED_FBX_DEPENDENCY"
+    },
+    {
+      "assetPath": "media/3D_Assets/KayKit_Mystery_Series6/GothGirl/Animations/fbx/Rig_Medium/Rig_Medium_MovementBasic.fbx",
+      "detail": "dependency parsing not implemented for .fbx",
+      "problemId": "UNRESOLVED_FBX_DEPENDENCY:media/3D_Assets/KayKit_Mystery_Series6/GothGirl/Animations/fbx/Rig_Medium/Rig_Medium_MovementBasic.fbx:dependency parsing not implemented for .fbx",
+      "type": "UNRESOLVED_FBX_DEPENDENCY"
+    },
+    {
+      "assetPath": "media/3D_Assets/KayKit_Mystery_Series6/GothGirl/assets/fbx(unity)/GothGirl_MicStand.fbx",
+      "detail": "dependency parsing not implemented for .fbx",
+      "problemId": "UNRESOLVED_FBX_DEPENDENCY:media/3D_Assets/KayKit_Mystery_Series6/GothGirl/assets/fbx(unity)/GothGirl_MicStand.fbx:dependency parsing not implemented for .fbx",
+      "type": "UNRESOLVED_FBX_DEPENDENCY"
+    },
+    {
+      "assetPath": "media/3D_Assets/KayKit_Mystery_Series6/GothGirl/assets/fbx(unity)/GothGirl_Microphone.fbx",
+      "detail": "dependency parsing not implemented for .fbx",
+      "problemId": "UNRESOLVED_FBX_DEPENDENCY:media/3D_Assets/KayKit_Mystery_Series6/GothGirl/assets/fbx(unity)/GothGirl_Microphone.fbx:dependency parsing not implemented for .fbx",
+      "type": "UNRESOLVED_FBX_DEPENDENCY"
+    },
+    {
+      "assetPath": "media/3D_Assets/KayKit_Mystery_Series6/GothGirl/assets/fbx(unity)/GothGirl_Speaker.fbx",
+      "detail": "dependency parsing not implemented for .fbx",
+      "problemId": "UNRESOLVED_FBX_DEPENDENCY:media/3D_Assets/KayKit_Mystery_Series6/GothGirl/assets/fbx(unity)/GothGirl_Speaker.fbx:dependency parsing not implemented for .fbx",
+      "type": "UNRESOLVED_FBX_DEPENDENCY"
+    },
+    {
+      "assetPath": "media/3D_Assets/KayKit_Mystery_Series6/GothGirl/assets/fbx(unity)/GothGirl_Stool.fbx",
+      "detail": "dependency parsing not implemented for .fbx",
+      "problemId": "UNRESOLVED_FBX_DEPENDENCY:media/3D_Assets/KayKit_Mystery_Series6/GothGirl/assets/fbx(unity)/GothGirl_Stool.fbx:dependency parsing not implemented for .fbx",
+      "type": "UNRESOLVED_FBX_DEPENDENCY"
+    },
+    {
+      "assetPath": "media/3D_Assets/KayKit_Mystery_Series6/GothGirl/assets/fbx/GothGirl_MicStand.fbx",
+      "detail": "dependency parsing not implemented for .fbx",
+      "problemId": "UNRESOLVED_FBX_DEPENDENCY:media/3D_Assets/KayKit_Mystery_Series6/GothGirl/assets/fbx/GothGirl_MicStand.fbx:dependency parsing not implemented for .fbx",
+      "type": "UNRESOLVED_FBX_DEPENDENCY"
+    },
+    {
+      "assetPath": "media/3D_Assets/KayKit_Mystery_Series6/GothGirl/assets/fbx/GothGirl_Microphone.fbx",
+      "detail": "dependency parsing not implemented for .fbx",
+      "problemId": "UNRESOLVED_FBX_DEPENDENCY:media/3D_Assets/KayKit_Mystery_Series6/GothGirl/assets/fbx/GothGirl_Microphone.fbx:dependency parsing not implemented for .fbx",
+      "type": "UNRESOLVED_FBX_DEPENDENCY"
+    },
+    {
+      "assetPath": "media/3D_Assets/KayKit_Mystery_Series6/GothGirl/assets/fbx/GothGirl_Speaker.fbx",
+      "detail": "dependency parsing not implemented for .fbx",
+      "problemId": "UNRESOLVED_FBX_DEPENDENCY:media/3D_Assets/KayKit_Mystery_Series6/GothGirl/assets/fbx/GothGirl_Speaker.fbx:dependency parsing not implemented for .fbx",
+      "type": "UNRESOLVED_FBX_DEPENDENCY"
+    },
+    {
+      "assetPath": "media/3D_Assets/KayKit_Mystery_Series6/GothGirl/assets/fbx/GothGirl_Stool.fbx",
+      "detail": "dependency parsing not implemented for .fbx",
+      "problemId": "UNRESOLVED_FBX_DEPENDENCY:media/3D_Assets/KayKit_Mystery_Series6/GothGirl/assets/fbx/GothGirl_Stool.fbx:dependency parsing not implemented for .fbx",
+      "type": "UNRESOLVED_FBX_DEPENDENCY"
+    },
+    {
+      "assetPath": "media/3D_Assets/KayKit_Mystery_Series6/GothGirl/characters/GothGirl.fbx",
+      "detail": "dependency parsing not implemented for .fbx",
+      "problemId": "UNRESOLVED_FBX_DEPENDENCY:media/3D_Assets/KayKit_Mystery_Series6/GothGirl/characters/GothGirl.fbx:dependency parsing not implemented for .fbx",
+      "type": "UNRESOLVED_FBX_DEPENDENCY"
+    },
+    {
+      "assetPath": "media/3D_Assets/KayKit_Mystery_Series6/UltraTurboHeroMan/Animations/fbx/Rig_Medium/Rig_Medium_General.fbx",
+      "detail": "dependency parsing not implemented for .fbx",
+      "problemId": "UNRESOLVED_FBX_DEPENDENCY:media/3D_Assets/KayKit_Mystery_Series6/UltraTurboHeroMan/Animations/fbx/Rig_Medium/Rig_Medium_General.fbx:dependency parsing not implemented for .fbx",
+      "type": "UNRESOLVED_FBX_DEPENDENCY"
+    },
+    {
+      "assetPath": "media/3D_Assets/KayKit_Mystery_Series6/UltraTurboHeroMan/Animations/fbx/Rig_Medium/Rig_Medium_MovementBasic.fbx",
+      "detail": "dependency parsing not implemented for .fbx",
+      "problemId": "UNRESOLVED_FBX_DEPENDENCY:media/3D_Assets/KayKit_Mystery_Series6/UltraTurboHeroMan/Animations/fbx/Rig_Medium/Rig_Medium_MovementBasic.fbx:dependency parsing not implemented for .fbx",
+      "type": "UNRESOLVED_FBX_DEPENDENCY"
+    },
+    {
+      "assetPath": "media/3D_Assets/KayKit_Mystery_Series6/UltraTurboHeroMan/assets/fbx(unity)/UltraTurboHeroMan_Blaster.fbx",
+      "detail": "dependency parsing not implemented for .fbx",
+      "problemId": "UNRESOLVED_FBX_DEPENDENCY:media/3D_Assets/KayKit_Mystery_Series6/UltraTurboHeroMan/assets/fbx(unity)/UltraTurboHeroMan_Blaster.fbx:dependency parsing not implemented for .fbx",
+      "type": "UNRESOLVED_FBX_DEPENDENCY"
+    },
+    {
+      "assetPath": "media/3D_Assets/KayKit_Mystery_Series6/UltraTurboHeroMan/assets/fbx(unity)/UltraTurboHeroMan_Sword.fbx",
+      "detail": "dependency parsing not implemented for .fbx",
+      "problemId": "UNRESOLVED_FBX_DEPENDENCY:media/3D_Assets/KayKit_Mystery_Series6/UltraTurboHeroMan/assets/fbx(unity)/UltraTurboHeroMan_Sword.fbx:dependency parsing not implemented for .fbx",
+      "type": "UNRESOLVED_FBX_DEPENDENCY"
+    },
+    {
+      "assetPath": "media/3D_Assets/KayKit_Mystery_Series6/UltraTurboHeroMan/assets/fbx/UltraTurboHeroMan_Blaster.fbx",
+      "detail": "dependency parsing not implemented for .fbx",
+      "problemId": "UNRESOLVED_FBX_DEPENDENCY:media/3D_Assets/KayKit_Mystery_Series6/UltraTurboHeroMan/assets/fbx/UltraTurboHeroMan_Blaster.fbx:dependency parsing not implemented for .fbx",
+      "type": "UNRESOLVED_FBX_DEPENDENCY"
+    },
+    {
+      "assetPath": "media/3D_Assets/KayKit_Mystery_Series6/UltraTurboHeroMan/assets/fbx/UltraTurboHeroMan_Sword.fbx",
+      "detail": "dependency parsing not implemented for .fbx",
+      "problemId": "UNRESOLVED_FBX_DEPENDENCY:media/3D_Assets/KayKit_Mystery_Series6/UltraTurboHeroMan/assets/fbx/UltraTurboHeroMan_Sword.fbx:dependency parsing not implemented for .fbx",
+      "type": "UNRESOLVED_FBX_DEPENDENCY"
+    },
+    {
+      "assetPath": "media/3D_Assets/KayKit_Mystery_Series6/UltraTurboHeroMan/characters/UltraTurboHeroMan.fbx",
+      "detail": "dependency parsing not implemented for .fbx",
+      "problemId": "UNRESOLVED_FBX_DEPENDENCY:media/3D_Assets/KayKit_Mystery_Series6/UltraTurboHeroMan/characters/UltraTurboHeroMan.fbx:dependency parsing not implemented for .fbx",
+      "type": "UNRESOLVED_FBX_DEPENDENCY"
+    },
+    {
       "assetPath": "media/3D_Assets/Dice/Formats/dice.3ds",
       "detail": "dependency parsing not implemented for .3ds",
       "problemId": "UNRESOLVED_MODEL_DEPENDENCY:media/3D_Assets/Dice/Formats/dice.3ds:dependency parsing not implemented for .3ds",
@@ -13483,6 +13595,12 @@
       "assetPath": "media/3D_Assets/Frankensteining/CartoonVehiclesPack1.1/truck.dae",
       "detail": "dependency parsing not implemented for .dae",
       "problemId": "UNRESOLVED_MODEL_DEPENDENCY:media/3D_Assets/Frankensteining/CartoonVehiclesPack1.1/truck.dae:dependency parsing not implemented for .dae",
+      "type": "UNRESOLVED_MODEL_DEPENDENCY"
+    },
+    {
+      "assetPath": "media/3D_Assets/Frankensteining/KFB Truck/KFB TRUCK WaterBowser.blend",
+      "detail": "dependency parsing not implemented for .blend",
+      "problemId": "UNRESOLVED_MODEL_DEPENDENCY:media/3D_Assets/Frankensteining/KFB Truck/KFB TRUCK WaterBowser.blend:dependency parsing not implemented for .blend",
       "type": "UNRESOLVED_MODEL_DEPENDENCY"
     },
     {
@@ -13852,6 +13970,42 @@
       "type": "UNRESOLVED_MODEL_DEPENDENCY"
     },
     {
+      "assetPath": "media/3D_Assets/KayKit_Mystery_Series6/DemonLord/SOURCE/DemonLord_Assets_Source.blend",
+      "detail": "dependency parsing not implemented for .blend",
+      "problemId": "UNRESOLVED_MODEL_DEPENDENCY:media/3D_Assets/KayKit_Mystery_Series6/DemonLord/SOURCE/DemonLord_Assets_Source.blend:dependency parsing not implemented for .blend",
+      "type": "UNRESOLVED_MODEL_DEPENDENCY"
+    },
+    {
+      "assetPath": "media/3D_Assets/KayKit_Mystery_Series6/DemonLord/SOURCE/DemonLord_Source.blend",
+      "detail": "dependency parsing not implemented for .blend",
+      "problemId": "UNRESOLVED_MODEL_DEPENDENCY:media/3D_Assets/KayKit_Mystery_Series6/DemonLord/SOURCE/DemonLord_Source.blend:dependency parsing not implemented for .blend",
+      "type": "UNRESOLVED_MODEL_DEPENDENCY"
+    },
+    {
+      "assetPath": "media/3D_Assets/KayKit_Mystery_Series6/GothGirl/SOURCE/GothGirl_Assets_Source.blend",
+      "detail": "dependency parsing not implemented for .blend",
+      "problemId": "UNRESOLVED_MODEL_DEPENDENCY:media/3D_Assets/KayKit_Mystery_Series6/GothGirl/SOURCE/GothGirl_Assets_Source.blend:dependency parsing not implemented for .blend",
+      "type": "UNRESOLVED_MODEL_DEPENDENCY"
+    },
+    {
+      "assetPath": "media/3D_Assets/KayKit_Mystery_Series6/GothGirl/SOURCE/GothGirl_Source.blend",
+      "detail": "dependency parsing not implemented for .blend",
+      "problemId": "UNRESOLVED_MODEL_DEPENDENCY:media/3D_Assets/KayKit_Mystery_Series6/GothGirl/SOURCE/GothGirl_Source.blend:dependency parsing not implemented for .blend",
+      "type": "UNRESOLVED_MODEL_DEPENDENCY"
+    },
+    {
+      "assetPath": "media/3D_Assets/KayKit_Mystery_Series6/UltraTurboHeroMan/SOURCE/UltraTurboHeroMan_Assets_Source.blend",
+      "detail": "dependency parsing not implemented for .blend",
+      "problemId": "UNRESOLVED_MODEL_DEPENDENCY:media/3D_Assets/KayKit_Mystery_Series6/UltraTurboHeroMan/SOURCE/UltraTurboHeroMan_Assets_Source.blend:dependency parsing not implemented for .blend",
+      "type": "UNRESOLVED_MODEL_DEPENDENCY"
+    },
+    {
+      "assetPath": "media/3D_Assets/KayKit_Mystery_Series6/UltraTurboHeroMan/SOURCE/UltraTurboHeroMan_Source.blend",
+      "detail": "dependency parsing not implemented for .blend",
+      "problemId": "UNRESOLVED_MODEL_DEPENDENCY:media/3D_Assets/KayKit_Mystery_Series6/UltraTurboHeroMan/SOURCE/UltraTurboHeroMan_Source.blend:dependency parsing not implemented for .blend",
+      "type": "UNRESOLVED_MODEL_DEPENDENCY"
+    },
+    {
       "assetPath": "media/3D_Assets/Textures/Metal022_1K-JPG/Metal022_1K-JPG.blend",
       "detail": "dependency parsing not implemented for .blend",
       "problemId": "UNRESOLVED_MODEL_DEPENDENCY:media/3D_Assets/Textures/Metal022_1K-JPG/Metal022_1K-JPG.blend:dependency parsing not implemented for .blend",
@@ -13859,5 +14013,5 @@
     }
   ],
   "schema": "kfb.asset-registry.problems.v1",
-  "sourceCommit": "11d7df978c63b9e375707bd8d9431b4c8358cda8"
+  "sourceCommit": "34cde3f8f752d481a03c9714f1c3b3a8b2c15c46"
 }
