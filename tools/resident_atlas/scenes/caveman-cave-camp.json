@@ -1,0 +1,27 @@
+{
+  "schema": "kfb-resident-scene.v0",
+  "id": "caveman-cave-camp",
+  "title": "Caveman · Cave Camp",
+  "status": "IMPLEMENTATION_UNTESTED",
+  "sourceCommit": "252449c921d3f8138d68d1faa3f4052e84040dfe",
+  "collectionRoot": "media/3D_Assets/KayKit_Mystery_Series6/8 - February 2025 - Caveman",
+  "actor": {
+    "asset": null,
+    "note": "Character asset path must be pinned after inventory; do not guess."
+  },
+  "habitat": [],
+  "props": [
+    {"id":"campfire-base","path":"media/3D_Assets/KayKit_Mystery_Series6/8 - February 2025 - Caveman/assets/gltf/Campfire_Base.gltf","role":"campfire"},
+    {"id":"campfire-logs","path":"media/3D_Assets/KayKit_Mystery_Series6/8 - February 2025 - Caveman/assets/gltf/Campfire_Logs.gltf","role":"campfire"},
+    {"id":"caveman-axe","path":"media/3D_Assets/KayKit_Mystery_Series6/8 - February 2025 - Caveman/assets/gltf/Caveman_Axe.gltf","role":"primitive-tool"},
+    {"id":"caveman-club","path":"media/3D_Assets/KayKit_Mystery_Series6/8 - February 2025 - Caveman/assets/gltf/Caveman_Club.gltf","role":"primitive-tool"},
+    {"id":"caveman-spear","path":"media/3D_Assets/KayKit_Mystery_Series6/8 - February 2025 - Caveman/assets/gltf/Caveman_Spear.gltf","role":"primitive-tool"}
+  ],
+  "open": [
+    "pin exact Caveman character model",
+    "select verified cave/rock habitat models",
+    "select verified primitive wooden structure models",
+    "author transforms only after asset dimensions are checked",
+    "browser and mobile QA"
+  ]
+}
