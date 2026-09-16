@@ -15,6 +15,18 @@ Every claim must remain explicitly one of:
 
 `SOURCE FACT / OBSERVED DEMO / INFERENCE / PROPOSAL / TESTED RESULT / UNRESOLVED`
 
+## Access bridge — read before resuming CQ-001
+
+Claude Design has already produced a correct `UNRESOLVED / ACCESS BLOCKER`: repository import skipped the primary CQ-001 GIF because it is >5 MiB, and the used import surface did not expose `.gif`, `.gltf` or `.glb` as importable types.
+
+Read:
+
+- [DESIGN ACCESS BRIDGE](https://github.com/georg-doc/kayfabizarro/blob/chat/kaykit-visual-scene-atlas-preflight-2026-09-16/tools/asset_registry/librarian/_handover/KAYKIT_VISUAL_SCENE_ATLAS_PREFLIGHT_2026-09-16/DESIGN_ACCESS_BRIDGE_2026-09-16.md)
+
+**Execution decision:** provide the original CQ-001–003 GIFs as direct chat attachments. Execute CQ-001 only first. `.glb/.gltf` import is not required for L1/L2 visual annotation + asset matching; defer true 3D reconstruction to a 3D-capable owner if Design still cannot ingest those formats later.
+
+If direct GIF attachment also fails, use a bounded private PNG frame packet. Never substitute filename interpretation for missing frames.
+
 ## Read first
 
 Pinned preflight package:
@@ -149,6 +161,6 @@ and keep `OBSERVED DEMO` separate from `INFERENCE` and `TESTED RESULT`.
 
 ## Execution rule
 
-Start with **CQ-001 only**. Confirm that the GIF can actually be inspected frame-by-frame. If accessible, complete the three CQ-001 return artifacts and stop for review before CQ-002, unless Georg explicitly requests a batch.
+Start with **CQ-001 only**. The original GIF should now be supplied as a direct attachment. If accessible, complete the three CQ-001 return artifacts and stop for review before CQ-002, unless Georg explicitly requests a batch.
 
-If visual access fails, return the access blocker precisely; do not substitute filename interpretation for visual inspection.
+If direct visual access still fails, return the access blocker precisely and request the reduced private PNG frame packet. Do not substitute filename interpretation or the contents sheet for the missing animation evidence.
