@@ -8,46 +8,56 @@ Read first:
 2. verify the current GitHub head of the project/tool actually being worked on
 3. use `skills/chat/REGISTRY.json` to route to that project's own SSOT/recovery file
 
+## 18.09.2026 · WSA lead continuation after chat loss
+
+Georg explicitly continues the interrupted WSA lead conversation in the former Race Environment production chat. This continues the existing WSA role, not a second lead or a transfer of another module's ownership. WS0 / Claude Design remains principal producer under the existing contracts.
+
+Current receiving checkpoint:
+
+`georg-doc/KFB-Stunt-Car-Race/_handover/WSA_LEAD_RECOVERY_2026-09-18.md`
+
+Race `RECOVERY.md` and the receiving checkpoint distinguish actual source, reported donor state, automated evidence, deployment and Georg's acceptance. Audio/Environment approvals do not automatically restart the archived production I1→I2 path or merge PR #1. Other lanes below remain routed to their own SSOTs.
+
+The previous Stunt v0.6/A0-pending cursor is superseded by the concrete v0.8 acceptance and v0.9 rejection. Its original wording is retained in Git history at `kayfabizarro@2a08d04d49d21a87bc0054036168a50fd9eee8a0` in this same file; it must not be replayed as a new gate.
+
 ## Current execution cursors
 
-### Stunt Car Race · Track Lab lane
+### Stunt Car Race · Track Lab and parallel donors
 
 Human recovery page:
 `https://kayfabizarro.pages.dev/kfb-hub/stunt-race.html`
 
-Public Track Lab:
-`https://kayfabizarro.pages.dev/kfb-hub/stunt-race/track-lab/`
-
 Project SSOT:
 `georg-doc/KFB-Stunt-Car-Race`
 
-Project recovery:
-`RECOVERY.md`
+Current project recovery:
+`RECOVERY.md` → `_handover/WSA_LEAD_RECOVERY_2026-09-18.md`
 
-Current experimental lane:
-`ChatGPT_web/track-lab/`
+Accepted experimental host:
+`ChatGPT_web/track-lab/site/feel-lab-v08.mjs`
 
-Current gate, 2026-09-17:
-- Georg manually accepted the standalone true-WebGL Track Lab v0.5 **direction** after freeplay, reporting cleaner behavior and more immediate play/fun than the prior Stunt Race approach.
-- T1/T2 v0.6 remains the frozen feel candidate; it is **not being retuned for A0**.
-- World/Atlas A0 alignment is accepted. Current proof is `Flow Loop v0.6 → A0 RecipeEnvelope → thin Race Adapter → same Track Core / same Race-owned feel → Human Freeplay → Race-specific L5`.
-- Canonical Flow Loop recipe revision is `2026-09-17.t1t2.a0.2`; shared recipe contains geometry/Surface/Connector/slot semantics only.
-- Acceleration, steering, grip/lateral response, Rubber Rail behavior, recovery, Guided Driving and camera remain Race-local.
-- The thin adapter explicitly rejects `flow` / `flowTuning` if they appear in the shared A0 recipe.
-- Current public recipe mirror has the same Git blob SHA as the canonical private recipe: `de9b372b90af0ff0cd2723c2fc2dac2771fd7648`.
-- T3 transported-frame work is retained as an `EXPERIMENTAL GEOMETRY SPIKE`, but is parked as a gate until the T1/T2 A0 human freeplay passes.
-- KayKit City Builder cars are Track Lab fixtures/candidates; Rover 01 production-shell preference is not silently replaced.
-- `DEMO AUTO` remains inspection help only; stunt guidance remains `free → capture → commit → release → recover`.
-- Future rig/composite vehicles + inertial FrizzleBob driver + wind-reactive ears remain an explicit presentation constraint, OUT OF SCOPE for the current gate and non-destructive to physics ownership.
+- **v0.8 feel/controls/width: HUMAN ACCEPTED.** Q/E drift, re-grip, Shift boost, Space jump proxy and forgiving rails remain the accepted baseline.
+- **Race A0: L5 recorded**, recipe `2026-09-17.t1t2.a0.2`; evidence `ChatGPT_web/track-lab/A0_RACE_L5_EVIDENCE_2026-09-17.md`. This is Race-consumer evidence, not World/Travel/Combat acceptance or promotion into production `race/`.
+- **v0.9 topology: BROWSER REJECTED.** Preserve failed history; do not patch it or keep asking for a v0.9 acceptance. Switch/split/merge, pit lane and bridge/overpass must be separate concepts.
+- **Environment A/B: IMPLEMENTED + PUBLIC DEPLOYMENT + AUTOMATED BROWSER EVIDENCE.** Georg's visual acceptance remains PENDING.
+- **Audio A1 (18.09.): REPORTED STANDALONE IMPLEMENTED/TESTED, NOT YET PROMOTED TO GITHUB.** Use the original Audio-chat artifact. Its source/test files were not independently available in the WSA recovery; no invented live URL and no human listening claim.
+- **Vehicle Deformer/VFX:** brief/addendum prepared; implementation Return remains pending in this cursor, so no approval is requested yet.
+- **v0.10 topology:** existing next Track-lane assignment, not an implemented candidate. On resumption: top-down/isometric blockout → human topology check → attach accepted v0.8 feel → browser driving gate. It does not block isolated Audio/Environment reviews.
 
-Shared cross-project handoff seam:
+Environment live:
+`https://kayfabizarro.pages.dev/kfb-hub/stunt-race/track-environment-lab/?world=facility&seed=KFB-1842`
+
+Environment return:
+`ChatGPT_web/track-environment-lab/RETURN.md`
+
+Implementation `97e03d8eb5e635db8bfac2f769c6a24be776bcde`; deployment mirror `kayfabizarro@633f2e7f37d98fb877b95c50fb8c83793c55318b`; asset pin `ce1d201217f40abfc8850eb8e7d6ea7ab9d07f39`. Evidence: 84/84 combined static/browser checks and 28/28 live-URL checks. Mobile touch was browser-simulated, not physical-device QA. These are historical runs re-read during recovery, not newly performed gameplay tests.
+
+**Next Race content gate:** Georg listens to Audio A1 before integration polish: demo → music solo / several seeds → music off / drift / re-grip / boost → jump / landing / rail → Hover/Car/Board. Return `accept / tune / reject` with concrete impressions. Environment A/B visual review is independently available. Securing an exact received source before approval is allowed as candidate intake; it does not imply promotion or integration.
+
+Shared seam remains:
 `skills/chat/masterplan/KFB_ASSEMBLY_CONTRACT_A0_2026-09-17.md`
 
-Recovery order:
-`KFB-Stunt-Car-Race/RECOVERY.md` → `ChatGPT_web/track-lab/WIP_STATUS.json` → `A0_CONSUMER_PROOF_RETURN_2026-09-17.md` → `FLOW_LOOP_RECIPE_A0.json` → actual current `race/` contracts before integration.
-
-Next gate:
-Georg freeplays **Flow Loop · A0 → Race Adapter**. If feel is preserved, Race records its own L5 for that recipe revision, freezes T1/T2 feel and then resumes T3 as the next accepted geometry gate. Only after T3: one true vertical loop + safe bypass.
+Race retains movement/contact/route/camera/progress. Audio and Environment read Race state. No new shared physics or speculative A0 fields. Actual pit/stall/bridge/switch anchors remain missing until accepted Race topology supplies them. Rover 01 production-shell preference is not silently replaced by Track-Lab vehicle fixtures. The separate production baseline remains `race/BASELINE.json` → `wsa-slice-04-705673590b93`; its old Stop-before-I2 remains scoped to that path.
 
 ### ToolBox lane
 
@@ -194,7 +204,7 @@ DocCheck visual convention:
 ## Existing owner discipline
 
 - project/tool SSOTs beat this checkpoint
-- Stunt Race remains its own implementation SSOT; Track Lab is an experimental accepted lane until integrated through project contracts
+- Stunt Race remains its own implementation SSOT; accepted Track Lab and tested donors are not silently promoted into production `race/`
 - Assembly A0 is handoff semantics only, not a new runtime owner
 - Travel remains world/runtime SSOT; `/world/` remains a candidate-authoring POC, not a second runtime owner
 - ToolBox/Studio contracts are not silently replaced
@@ -203,4 +213,4 @@ DocCheck visual convention:
 
 ## Recovery sentence
 
-> Start from the current project SSOT, not chat history. For Travel/World work, open the Hub Travel recovery page, verify current `KFB-Travel-Globe/main`, run the `ground=8` human gate, and keep Atlas preview/authoring separate from Travel runtime ownership. Atlas source is present under the ToolBox inbox; PR #48 promoted candidate routes `/resident-atlas-s6/` and `/world-atlas/` without replacing the original intake or `/resident-atlas/`. ToolBox Stage-First v1 source is now also received as reviewed transport intake; promote only through the ToolBox owner repo and do not reactivate Birthday work. For Stunt Race, open the Hub Stunt recovery page or read `RECOVERY.md` → `WIP_STATUS.json` → `A0_CONSUMER_PROOF_RETURN_2026-09-17.md`; the current gate is human freeplay of the A0 Flow Loop before T3 is promoted. For SimBlood, open the Hub recovery page or read `START_HERE.md` → `RECOVERY.md` → `MASTERPLAN.md` → `WIP_STATUS.json` → latest Living Addendum → `RETURN.md`; current P0 is exact WBC review followed by normal RBC/platelet proof, with the Frank management viewer refreshed only from those source documents.
+> Start from the current project SSOT, not chat history. WSA lead continuation is recorded in `KFB-Stunt-Car-Race/_handover/WSA_LEAD_RECOVERY_2026-09-18.md`. For Stunt Race: v0.8 feel accepted, Race A0 L5 recorded, v0.9 topology rejected, Environment A/B visual acceptance pending and Audio A1 listening/source transfer pending; do not repeat the superseded v0.6/A0 gate or rebuild missing Audio source from prose. For Travel/World: verify current `KFB-Travel-Globe/main`, run the `ground=8` human gate, and keep Atlas authoring separate from Travel runtime ownership. Atlas PR #48 promoted `/resident-atlas-s6/` and `/world-atlas/` without replacing their intake or `/resident-atlas/`. ToolBox Stage-First v1 is a reviewed source intake; promote only through its owner repo, without reactivating Birthday. For SimBlood: read its own `START_HERE.md` → `RECOVERY.md` → `MASTERPLAN.md` → `WIP_STATUS.json` → latest Living Addendum → `RETURN.md`; WBC review precedes normal RBC/platelet proof. Cross-project task order remains in the current priority board; no receiving project changes owner because this checkpoint exists.
