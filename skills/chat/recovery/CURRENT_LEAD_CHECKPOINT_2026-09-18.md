@@ -54,11 +54,17 @@ Georg freeplays **Flow Loop · A0 → Race Adapter**. If feel is preserved, Race
 **Current intake/promotion brief:**
 `tools/KFB-ToolBox/_handover/STAGE_FIRST_V1_INTAKE_2026-09-18/START_HERE.md`
 
-Complete Stage-First v1 source has now been received as a transport intake under:
+Complete Stage-First v1 export package is now in the ToolBox owner repo:
+
+`tools/KFB-ToolBox/_inbox/KFB ToolBox v1-1.zip`
+· blob `5943ee108609a7916bf231fec59848ef4c58f965`
+· upload `eabc87255ee3da6283f9d438390454d70e9d2e55`.
+
+Georg identifies it as the same Stage-First export whose readable expanded mirror is under:
 
 `georg-doc/KFB-Stunt-Car-Race/_inbox/KFB ToolBox v1/KFB-ToolBox/_handover/EXPORT_STAGE_FIRST_V1_2026-09-17/KFB_ToolBox_Stage-First_v1/`
 
-The Stunt Race inbox is not ToolBox ownership. Promotion target remains `georg-doc/kayfabizarro/tools/KFB-ToolBox/`.
+The connector cannot independently unpack the ZIP, so exact binary identity is not claimed. Stunt Race remains mirror/transport only; ToolBox ownership remains `georg-doc/kayfabizarro/tools/KFB-ToolBox/`.
 
 The export is strong enough for promotion work: 132-file editable source tree, honest `EXPORT_PARTIAL` status, boot/Stage/roster/selected-actor checks passed, but Pose/Motion/Voice/Stage roundtrips and split-screen remain largely `NOT_TESTED`.
 
