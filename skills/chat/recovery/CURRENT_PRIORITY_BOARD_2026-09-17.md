@@ -40,7 +40,7 @@ Rules:
 - original inbox exports remain unchanged;
 - existing assets always come from GitHub when available;
 - no duplicate model store;
-- branch-`main` asset URLs remain an explicit pinning task, not silently accepted as immutable provenance;
+- promoted runtime asset URLs are pinned to GitHub revision `8948a06b75cb18c970599afb29b6a772315fad0e`; the unchanged inbox exports retain their historical `main` references as provenance;
 - preview/site success is not Travel or Animation L5.
 
 ## P1 · First Travel Atlas consumer slice
