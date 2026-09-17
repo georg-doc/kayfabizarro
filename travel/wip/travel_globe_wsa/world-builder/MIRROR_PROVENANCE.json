@@ -1,16 +1,20 @@
 {
   "schema": "kfb.travel-public-mirror.v1",
   "sourceRepository": "georg-doc/KFB-Travel-Globe",
-  "sourceCommit": "e0d2bb2d1d2f45e4837e49cd6587512e91b2d9bc",
+  "sourceCommit": "d1e2488bb5e6decb407557c781eaec088f4963fe",
   "sourcePath": "site/world-builder/",
   "mirrorPath": "travel/wip/travel_globe_wsa/world-builder/",
   "status": "PUBLIC WIP MIRROR · HUMAN BROWSER ACCEPTANCE PENDING",
-  "staticEvidence": "PR #16 · 25/25 tests PASS · build PASS · verify PASS · 108 frozen B0 runtime files unchanged",
+  "staticEvidence": "PR #17 · 28/28 tests PASS · build PASS · verify PASS · 108 frozen B0 runtime files unchanged",
   "notes": [
     "Public mirror only; Travel implementation repo remains SSOT.",
     "Ground hardening suppresses Flight pointer-look, flight-only particles/shadow and petFill/env/tint.",
-    "Player scale and facing are explicit persistent World Recipe calibration, not source asset edits.",
-    "Ground controls reuse the established Travel mapping: W/S move, A/D turn, Q/E strafe; diagonal movement is clamped.",
+    "Ground controls reuse the established Travel mapping: W/S move, A/D turn, Q/E strafe; Shift adds run and Space adds jump.",
+    "Movement Lab compares ActionFigure/Rig_Medium, Monstrosity/Rig_Large and Legacy Orc Warband with runtime compatibility measurement.",
+    "Animation Root/Hips translation is stripped so wb0-ground-controller remains the sole world movement owner.",
+    "Legacy Warband direct animation compatibility is never assumed; the UI explicitly reports and falls back to the actual animated Legacy donor when necessary.",
+    "Player scale and facing remain explicit persistent World Recipe calibration, not source asset edits.",
+    "Parallel /world/ POC files are not owned or modified by this mirror slice.",
     "No canonical Travel contract promotion before Georg browser acceptance."
   ]
 }
