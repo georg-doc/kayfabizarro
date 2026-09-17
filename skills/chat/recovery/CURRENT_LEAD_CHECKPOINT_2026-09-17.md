@@ -93,10 +93,16 @@ Human recovery page:
 `https://kayfabizarro.pages.dev/kfb-hub/sim-blood.html`
 
 Current POC:
-`https://kayfabizarro.pages.dev/kfb-hub/sim-blood-poc/index.html`
+`https://kayfabizarro.pages.dev/kfb-hub/sim-blood-poc/`
+
+Management viewer:
+`https://kayfabizarro.pages.dev/kfb-hub/sim-blood-management/`
 
 Current project SSOT:
 `https://github.com/georg-doc/doccheck/tree/main/sim-blood`
+
+Masterplan:
+`https://github.com/georg-doc/doccheck/blob/main/sim-blood/MASTERPLAN.md`
 
 Recovery:
 `https://github.com/georg-doc/doccheck/blob/main/sim-blood/RECOVERY.md`
@@ -118,20 +124,15 @@ Workflow Engine
 ```
 
 Current SimBlood WIPs:
-- **P0 Field Composer / interaction** — current field is live; latest patch fixes reported high-magnification cursor-anchor drift by using one canvas coordinate basis for wheel/pinch zoom; Georg re-review pending
-- **P0 Cell Asset Injection** — first three Acevedo/PBC segmented-neutrophil candidates are now wired through the image-backed asset seam with procedural fallback; only one candidate visually inspected so far; all remain unpromoted
-- **P0 Reference/assets** — Wave 1 complete for POC guidance; production rights/validation remain open
-- **P1 CytoDiff** — `CONDITIONAL_GO` R&D benchmark; must not delay the real-cell comparison
-- **P1 Tele-Hematology** — workflow/use-case concept ready; later consumer of typed field truth
+- **P0 WBC visual lane** — real/open WBC injection direction accepted by Georg as convincing enough to continue; exact 3×3 candidate review and local normalization remain pending.
+- **P0 RBC/platelet proof** — new next lane. Target normal RBC `8–12` variants and platelets `6–8` variants before broad pathology expansion.
+- **Asset rule** — source-edge-adjacent cells are allowed only if the full biological contour exists; truncated candidates become `EDGE_CLIPPED_REJECT`; missing production morphology is not generatively fabricated.
+- **P1 Management brief** — Frank viewer prepared; it is a derived projection from WIP/Return/Changelog/Masterplan and must be refreshed immediately before presentation.
+- **P1 CytoDiff** — `CONDITIONAL_GO` R&D benchmark; must not delay real-cell/RBC proof.
+- **P1 Tele-Hematology** — workflow/use-case concept ready; later consumer of typed field truth.
 
-Current interaction correction commit:
-`893c529fdf14c3925be208a7ae4e4a3c234692cf`
-
-Current cell candidate set:
-`sim-blood/assets/runtime-pool/neutrophil-candidates.v0.2.json`
-
-Rights basis for injected PBC candidates:
-Acevedo et al. 2020 Mendeley dataset · `CC BY 4.0`; raw GitHub image paths are temporary delivery mirrors only, not the license authority.
+Current sequence:
+`WBC review → accepted WBC localization → normal RBC proof → platelet proof → Normal/IDA/TMA calibration → first workflow mode`.
 
 DocCheck visual convention:
 `#cc0033` as a restrained UI accent only; never tint microscopy imagery.
@@ -148,4 +149,4 @@ DocCheck visual convention:
 
 ## Recovery sentence
 
-> Start from the current project SSOT, not chat history. For Travel/World work, open the Hub Travel recovery page, verify current `KFB-Travel-Globe/main`, then choose the productive `/world-builder/` runtime lane or the candidate-only `/world/` authoring lane without mixing their ownership. For Stunt Race, open the Hub Stunt recovery page or read `RECOVERY.md` → `WIP_STATUS.json` → `A0_CONSUMER_PROOF_RETURN_2026-09-17.md`; the current gate is human freeplay of the A0 Flow Loop before T3 is promoted. For SimBlood, open the Hub recovery page or read `START_HERE.md` → `RECOVERY.md` → `WIP_STATUS.json` → Living Addendum → `RETURN.md`. Continue only the named active WIP and leave Living/Change/Return/WIP state resumable on GitHub.
+> Start from the current project SSOT, not chat history. For Travel/World work, open the Hub Travel recovery page, verify current `KFB-Travel-Globe/main`, then choose the productive `/world-builder/` runtime lane or the candidate-only `/world/` authoring lane without mixing their ownership. For Stunt Race, open the Hub Stunt recovery page or read `RECOVERY.md` → `WIP_STATUS.json` → `A0_CONSUMER_PROOF_RETURN_2026-09-17.md`; the current gate is human freeplay of the A0 Flow Loop before T3 is promoted. For SimBlood, open the Hub recovery page or read `START_HERE.md` → `RECOVERY.md` → `MASTERPLAN.md` → `WIP_STATUS.json` → latest Living Addendum → `RETURN.md`; current P0 is exact WBC review followed by normal RBC/platelet proof, with the Frank management viewer refreshed only from those source documents.
