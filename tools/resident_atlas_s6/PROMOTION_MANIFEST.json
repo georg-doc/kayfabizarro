@@ -1,0 +1,41 @@
+{
+  "schema": "kfb.atlas-promotion/0.1",
+  "project": "KFB_Resident_Atlas_S6",
+  "status": "IMPLEMENTATION_CANDIDATE_BROWSER_QA_PENDING",
+  "sourceIntake": {
+    "path": "tools/KFB-ToolBox/_inbox/KayKit Resident Atlas/",
+    "tree": "9eec956e9c8b3dc9f22ce50f5248e1ad33d10adc"
+  },
+  "promotionPath": "tools/resident_atlas_s6/",
+  "stableRoute": "/resident-atlas-s6/",
+  "sourceCopyRule": "All imported source/data files reused identical Git blobs before explicit promotion deltas.",
+  "assetPolicy": {
+    "repo": "georg-doc/kayfabizarro",
+    "root": "media/3D_Assets/",
+    "pin": "8948a06b75cb18c970599afb29b6a772315fad0e"
+  },
+  "runtimeDeltas": [
+    {
+      "path": "data/cast.js",
+      "change": "Mixed Bag MB_COMMIT main -> fixed GitHub revision",
+      "pin": "8948a06b75cb18c970599afb29b6a772315fad0e"
+    },
+    {
+      "path": "tools/measure.html",
+      "change": "RAW asset base main -> fixed GitHub revision",
+      "pin": "8948a06b75cb18c970599afb29b6a772315fad0e"
+    },
+    {
+      "path": "index.html",
+      "change": "stable local entry redirect"
+    }
+  ],
+  "sourceOriginalChanged": false,
+  "consumerL5": false,
+  "knownOpen": [
+    "full Studio-patch import absent",
+    "full browser-state import/export absent",
+    "mobile/public browser QA pending",
+    "Travel and animation compatibility remain consumer-owned"
+  ]
+}

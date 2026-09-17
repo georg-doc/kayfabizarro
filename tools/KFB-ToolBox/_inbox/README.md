@@ -8,7 +8,7 @@ Dieses Repo ist öffentlich. Private Koordination gehört in die private Product
 
 Bearbeitete Jobs erst nach angenommenem Ergebnis und aktualisierten Ziel-/Return-Pointern vollständig nach `archiv/<job-id>/` verschieben. Nicht den bestehenden Source-Export einsammeln oder ungefragt umräumen. ToolBox-Eingang ist niemals automatisch der Implementation-Owner des Consumers.
 
-## Aktueller Arbeitscursor · 2026-09-16
+## Aktueller Arbeitscursor · 2026-09-17
 
 ### FrankenStein Studio v18 · Birthday Actor Handoff
 
@@ -28,10 +28,20 @@ Bearbeitete Jobs erst nach angenommenem Ergebnis und aktualisierten Ziel-/Return
 
 Diese Dateien bleiben zur Provenienz unverändert liegen. **Nicht** aus `(6)`, `(7)` oder `v18` eine Revisionsreihenfolge ableiten; der CURRENT-Pin oben entscheidet.
 
+### Atlas Intake · REVIEWED
+
+- `KayKit Resident Atlas/` — vollständiger `KFB_Resident_Atlas_S6`-Export; 21 Residents + Ensemble, datengetriebene Vignetten/Signature-Props, GitHub-first Assetpfade. Originalexport bleibt Intake/Provenienz.
+- `KayKit Environment Atlas/KFB_World_Atlas_v1_EXPORT_2026-09-17/` — vollständiger `KayKit Atlas Preflight Access` / `KFB Kit Lab`-Export; 15 Seiten mit Road, Forest, Hex S11/S12, Dungeon Model S13 und `Dungeon_Generator_S13_2`.
+- Intake-Review: `../_handover/ATLAS_INTAKE_2026-09-17/START_HERE.md`.
+- Site-Promotion: Branch `atlas/site-promotion-recovery-2026-09-17`; candidate routes `/resident-atlas-s6/` und `/world-atlas/`.
+- Asset-Regel: existiert ein benötigtes Asset in GitHub, bleibt GitHub die Quelle. Keine zweite Modellablage in Atlas/ToolBox anlegen.
+- Offene Promotion-Lücke: einige Runtime-Assetpfade der Exporte verwenden noch `main`; feste Revisionspins gehören in eine spätere promoted revision, nicht in den unveränderten Intake.
+- REVIEWED bedeutet Source/Struktur geprüft; keine Travel-, Animation- oder Consumer-L5-Abnahme.
+
 ### Weitere aktive Eingänge
 
 - `KFB World Design · Setup Pass.dc.html` — aktueller reconciled World-/Fable-Setup-Stand.
-- `KFB Asset Librarian · Visual Scene Atlas Preflight.md` — aktiver Vorbereitungsauftrag für den Visual Scene Atlas.
+- `KFB Asset Librarian · Visual Scene Atlas Preflight.md` — Herkunft/Preflight; der konkrete Resident-/Environment-Atlas-Source ist inzwischen zusätzlich eingetroffen.
 - `KFB Elisa B-Day Reference+Mockups/` — aktive Birthday-Kompositions-/Referenzquellen.
 - `ACCEPTANCE_COMPLETENESS_ADDENDUM_2026-09-15.md` — weiterhin Proposal/Acceptance-Referenz; nicht archiviert.
 

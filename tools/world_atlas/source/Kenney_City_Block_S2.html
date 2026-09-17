@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>KFB Kit Lab · S2 · Kenney City · Straßenraster</title>
+<script type="importmap">
+{"imports":{
+ "three":"https://unpkg.com/three@0.184.0/build/three.module.js",
+ "three/addons/controls/OrbitControls.js":"https://unpkg.com/three@0.184.0/examples/jsm/controls/OrbitControls.js",
+ "three/addons/loaders/GLTFLoader.js":"https://unpkg.com/three@0.184.0/examples/jsm/loaders/GLTFLoader.js"
+}}
+</script>
+<style>
+  *{box-sizing:border-box}
+  body{margin:0;background:#0f1418;color:#e6ecf0;font:13px/1.5 ui-sans-serif,system-ui,-apple-system,"Helvetica Neue",sans-serif}
+  a{color:#7fd1c4}a:hover{color:#a8e6da}
+  #app{display:grid;grid-template-columns:minmax(0,1fr) 340px;grid-template-rows:auto minmax(0,1fr);height:100vh}
+  header{grid-column:1/-1;display:flex;align-items:center;gap:14px;padding:10px 16px;border-bottom:1px solid #222c33;background:#131b20}
+  h1{font-size:14px;margin:0;font-weight:650}
+  .tag{font:11px/1 ui-monospace,monospace;padding:4px 7px;border:1px solid #2f3d45;border-radius:4px;color:#7fd1c4}
+  .bar{margin-left:auto;display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+  button,select{font:12px/1 inherit;padding:7px 10px;background:#1b262c;color:#e6ecf0;border:1px solid #2f3d45;border-radius:5px;cursor:pointer}
+  button:hover{background:#243238}
+  button[aria-pressed="true"]{background:#2f7d6d;border-color:#46a892}
+  #stage{position:relative;min-width:0;min-height:0}
+  canvas{display:block;width:100%;height:100%}
+  #hud{position:absolute;left:12px;bottom:12px;font:11px/1.6 ui-monospace,monospace;color:#bcd2da;background:#0f1418cc;border:1px solid #2f3d4580;padding:8px 10px;border-radius:6px;max-width:60%}
+  #pick{position:absolute;right:12px;top:12px;font:11px/1.6 ui-monospace,monospace;color:#d9f2ec;background:#0f1418e6;border:1px solid #2f3d45;padding:8px 10px;border-radius:6px;display:none}
+  aside{border-left:1px solid #222c33;background:#111a1f;overflow:auto;padding:14px;position:relative}
+  #app.collapsed{grid-template-columns:minmax(0,1fr) 0}
+  #app.collapsed aside{display:none}
+  #side{position:absolute;right:12px;bottom:12px;z-index:5}
+  aside h2{font-size:11px;letter-spacing:.09em;text-transform:uppercase;color:#7e939c;margin:18px 0 8px}
+  aside h2:first-child{margin-top:0}
+  .kv{display:flex;justify-content:space-between;gap:10px;padding:3px 0;border-bottom:1px solid #1d272d;font:11px/1.5 ui-monospace,monospace}
+  .kv span:last-child{color:#d6e6ec;text-align:right}
+  .note{font-size:12px;color:#8fa4ad}
+  table{width:100%;table-layout:fixed;border-collapse:collapse;font:11px/1.5 ui-monospace,monospace}
+  th,td{text-align:left;padding:3px 4px;border-bottom:1px solid #1d272d}
+  th{color:#7e939c;font-weight:500}
+  th:first-child,td:first-child{max-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+  th:not(:first-child),td:not(:first-child){width:46px;text-align:right;color:#d6e6ec}
+  .warn{border:1px solid #6b5a2a;background:#231d10;color:#e3d3a5;padding:8px 10px;border-radius:5px;font-size:12px}
+</style>
+</head>
+<body>
+<div id="app">
+  <header>
+    <h1>KFB Kit Lab · Sprint 2</h1>
+    <span class="tag">Kenney City Kit · roads + commercial + suburban · glb · CC0</span>
+    <span class="tag" id="count">…</span>
+    <div class="bar">
+      <button id="mScene" aria-pressed="true">Szene</button>
+      <button id="mPal" aria-pressed="false">Palette</button>
+      <select id="palPack" title="Pack für die Palette">
+        <option value="roads">roads</option>
+        <option value="city_com">commercial</option>
+        <option value="city_sub">suburban</option>
+      </select>
+      <button id="vTop">Draufsicht</button>
+      <button id="vGrid" aria-pressed="false">Raster</button>
+      <button id="exp">Recipe JSON</button>
+    </div>
+  </header>
+  <div id="stage">
+    <canvas id="c"></canvas>
+    <div id="pick"></div>
+    <div id="hud">lade…</div>
+    <button id="side" title="Seitenleiste ein-/ausblenden">Leiste ausblenden</button>
+  </div>
+  <aside>
+    <h2>Raster · gemessen</h2>
+    <div id="gridfacts"></div>
+    <p class="note">Modulmaß kommt aus der Bounding-Box von <code>road-straight</code>. Alle Platzierungen im Recipe sind Modulkoordinaten [i,j] — sie skalieren automatisch mit.</p>
+    <h2>Lücke im Bestand</h2>
+    <div class="warn" id="gap"></div>
+    <h2>Bauteile in der Ansicht</h2>
+    <table><thead><tr><th>Teil</th><th>x</th><th>y</th><th>z</th></tr></thead><tbody id="sizes"></tbody></table>
+    <h2>Herkunft</h2>
+    <div class="kv"><span>repo</span><span>georg-doc/kayfabizarro</span></div>
+    <div class="kv"><span>quelle</span><span>raw @ main</span></div>
+    <div class="kv"><span>lizenz</span><span>CC0 · Kenney</span></div>
+  </aside>
+</div>
+
+<script type="module">
+import * as THREE from 'three';
+import { buildScene, makeViewer, measure, measured, instance, auditGround, snapToSurface } from './lib/kit-lab.js';
+import { scene as recipe, PALETTES } from './scenes/city-block.js';
+
+const hud = document.getElementById('hud');
+const pickBox = document.getElementById('pick');
+const V = makeViewer(document.getElementById('c'), { background: 0x9fb8c8, fov: 30, mood: 'day' });
+document.getElementById('gap').textContent = recipe.gap;
+
+const f2 = (v) => (Math.abs(v - Math.round(v)) < 0.005 ? String(Math.round(v)) : v.toFixed(2));
+const ref = await measure('roads', 'road-straight');
+const M = ref.size[0];
+
+let current = null;
+function swap(node) {
+  if (current) { V.scene.remove(current); }
+  current = node; V.scene.add(node);
+  window.__lab = { V, current };
+}
+
+const sceneRoot = await buildScene(recipe.placements, (d, n) => { hud.textContent = `lade ${d}/${n}`; }, { module: M });
+swap(sceneRoot);
+const snap = snapToSurface(sceneRoot);
+const ground = auditGround(sceneRoot, { tolerance: 0.02 });
+setTop(false);
+
+const shadowPlane = new THREE.Mesh(new THREE.PlaneGeometry(400, 400), new THREE.ShadowMaterial({ opacity: 0.28 }));
+shadowPlane.rotation.x = -Math.PI / 2; shadowPlane.position.y = -0.02; shadowPlane.receiveShadow = true;
+V.scene.add(shadowPlane);
+
+let palettes = {};
+async function palette(pack) {
+  if (palettes[pack]) return palettes[pack];
+  const names = PALETTES[pack];
+  const g = new THREE.Group();
+  const cols = Math.ceil(Math.sqrt(names.length));
+  let i = 0;
+  for (const name of names) {
+    try {
+      const node = await instance(pack, name);
+      const m = measured.get(pack + '/' + name);
+      node.position.set((i % cols) * M * 1.6, 0, Math.floor(i / cols) * M * 1.6);
+      node.userData.part = { pack, name, size: m.size };
+      g.add(node);
+    } catch (e) { console.warn('skip', name, e.message); }
+    hud.textContent = `Palette ${pack} · ${++i}/${names.length}`;
+  }
+  palettes[pack] = g;
+  return g;
+}
+
+function setTop(top) {
+  V.frame(current, top ? [0, 1, 0.0001] : [1, 0.62, 1], 1.05);
+}
+function stats(node) {
+  const parts = new Set();
+  node.traverse((o) => { if (o.userData.recipe) parts.add(o.userData.recipe.a); if (o.userData.part) parts.add(o.userData.part.pack + ':' + o.userData.part.name); });
+  return parts.size;
+}
+function refreshPanel(label, n) {
+  document.getElementById('count').textContent = label;
+  const rows = [...measured.values()].sort((a, b) => a.name.localeCompare(b.name));
+  document.getElementById('sizes').innerHTML = rows.map((r) =>
+    `<tr><td title="${r.pack}:${r.name}">${r.name}</td><td>${f2(r.size[0])}</td><td>${f2(r.size[1])}</td><td>${f2(r.size[2])}</td></tr>`).join('');
+  const box = new THREE.Box3().setFromObject(current); const s = box.getSize(new THREE.Vector3());
+  document.getElementById('gridfacts').innerHTML = [
+    ['Modul (road-straight)', `${f2(M)} × ${f2(ref.size[2])}`],
+    ['Fahrbahndicke', f2(ref.size[1])],
+    ['Raster der Szene', `${recipe.grid.w} × ${recipe.grid.h} Module`],
+    ['Weltmaß Ansicht', `${f2(s.x)} × ${f2(s.z)}`],
+    ['verschiedene Bauteile', String(n)],
+    ['auf Fläche eingerastet', `${snap.moved.length} · max ${f2(snap.worst)}`],
+    ['Bodenkontakt', `${ground.checked - ground.bad.length}/${ground.checked}`],
+    ['ohne Fläche darunter', String(ground.unverified.length)]
+  ].map(([k, v]) => `<div class="kv"><span>${k}</span><span>${v}</span></div>`).join('');
+}
+refreshPanel(`${recipe.placements.length} Platzierungen`, stats(sceneRoot));
+hud.textContent = `Szene · ${recipe.placements.length} Platzierungen · Modul ${f2(M)} · Raster ${recipe.grid.w}×${recipe.grid.h}`;
+
+const bScene = document.getElementById('mScene'), bPal = document.getElementById('mPal');
+bScene.onclick = () => { swap(sceneRoot); setTop(false); bScene.setAttribute('aria-pressed', 'true'); bPal.setAttribute('aria-pressed', 'false'); refreshPanel(`${recipe.placements.length} Platzierungen`, stats(sceneRoot)); hud.textContent = `Szene · Modul ${f2(M)}`; };
+bPal.onclick = async () => {
+  bScene.setAttribute('aria-pressed', 'false'); bPal.setAttribute('aria-pressed', 'true');
+  const pack = document.getElementById('palPack').value;
+  swap(await palette(pack)); setTop(true);
+  refreshPanel(`${PALETTES[pack].length} Teile`, PALETTES[pack].length);
+  hud.textContent = `Palette ${pack} · ${PALETTES[pack].length} Teile · Abstand 1,6 × Modul · Teil anklicken für Maße`;
+};
+document.getElementById('palPack').onchange = () => { bPal.onclick(); };
+document.getElementById('side').onclick = (e) => {
+  const app = document.getElementById('app');
+  const off = app.classList.toggle('collapsed');
+  e.currentTarget.textContent = off ? 'Leiste einblenden' : 'Leiste ausblenden';
+  requestAnimationFrame(() => V.resize());
+};
+document.getElementById('vTop').onclick = (e) => { const on = e.currentTarget.getAttribute('aria-pressed') !== 'true'; setTop(on); e.currentTarget.setAttribute('aria-pressed', String(on)); };
+document.getElementById('vGrid').onclick = (e) => { V.grid.visible = !V.grid.visible; e.currentTarget.setAttribute('aria-pressed', String(V.grid.visible)); };
+document.getElementById('exp').onclick = () => {
+  const blob = new Blob([JSON.stringify({ ...recipe, module: M, measured: [...measured.values()] }, null, 2)], { type: 'application/json' });
+  const a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = recipe.id + '.scene-recipe.json'; a.click();
+};
+
+// click-to-identify
+const ray = new THREE.Raycaster(); const ndc = new THREE.Vector2();
+document.getElementById('c').addEventListener('pointerdown', (e) => {
+  const r = e.currentTarget.getBoundingClientRect();
+  ndc.set(((e.clientX - r.left) / r.width) * 2 - 1, -((e.clientY - r.top) / r.height) * 2 + 1);
+  ray.setFromCamera(ndc, V.camera);
+  const hit = ray.intersectObject(current, true)[0];
+  if (!hit) { pickBox.style.display = 'none'; return; }
+  let o = hit.object, info = null;
+  while (o && !info) { info = o.userData.part || (o.userData.recipe ? { name: o.userData.recipe.a, size: measured.get(o.userData.recipe.a.replace(':', '/'))?.size } : null); o = o.parent; }
+  if (!info) { pickBox.style.display = 'none'; return; }
+  pickBox.style.display = 'block';
+  pickBox.textContent = `${info.pack ? info.pack + ':' : ''}${info.name}` + (info.size ? `  ·  ${info.size.map(f2).join(' × ')}` : '');
+});
+</script>
+</body>
+</html>
