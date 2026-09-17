@@ -118,7 +118,7 @@ Owner boundaries stay separate.
 
 Donor:
 
-`KayKit_Dungeon_Generator_S13_2.html` + `dungeon-grid.js`.
+`KayKit_Dungeon_Generator_S13_2.html` + `dungeon-grid.js` + `dungeon-light.js`.
 
 First proof only:
 
