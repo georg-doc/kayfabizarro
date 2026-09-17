@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
   <meta name="color-scheme" content="light dark">
   <title>SimBlood · Field Composer POC</title>
-  <link rel="stylesheet" href="./styles.css">
+  <link rel="stylesheet" href="./styles.css?v=20260917c">
 </head>
 <body>
   <main class="app-shell">
@@ -53,6 +53,15 @@
           <input id="focus" type="range" min="0" max="6" value="0" step="0.1">
         </section>
 
+        <section class="control-card">
+          <div class="label-row"><span>WBC-Darstellung</span><strong>POC A/B</strong></div>
+          <div class="segmented asset-mode" role="group" aria-label="WBC-Darstellung">
+            <button type="button" data-wbc-mode="real" class="active">Reale Kandidaten</button>
+            <button type="button" data-wbc-mode="procedural">Prozedural</button>
+          </div>
+          <div class="microcopy">Neutrophile, Lymphozyten und Monozyten nutzen je drei austauschbare reale Kandidaten. Bei Ladefehlern bleibt der prozedurale Fallback aktiv.</div>
+        </section>
+
         <section class="control-card compact-grid">
           <button type="button" id="resetView">Ansicht zurücksetzen</button>
           <button type="button" id="newSeed">Neue Probe</button>
@@ -71,13 +80,13 @@
 
         <section class="note">
           <strong>POC, kein validierter Befund.</strong>
-          <span>RBC/WBC/Thrombozyten sind getrennte, typisierte Objekte. Erste Neutrophilen können als reale offene POC-Kandidaten über den Asset-Seam geladen werden; alle Kandidaten bleiben austauschbar und unpromoted.</span>
+          <span>RBC/WBC/Thrombozyten sind getrennte, typisierte Objekte. Reale WBC-Kandidaten stammen aus dem offenen PBC-Datensatz, bleiben aber medizinisch unpromoted und werden nur als austauschbare POC-Donors verwendet.</span>
         </section>
       </aside>
     </section>
   </main>
 
   <noscript><div class="noscript">SimBlood benötigt JavaScript für den interaktiven POC.</div></noscript>
-  <script src="./app.js"></script>
+  <script src="./app.v2.js?v=20260917c"></script>
 </body>
 </html>
