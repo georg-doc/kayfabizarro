@@ -2,6 +2,25 @@
 
 Never rewrite prior entries to make history look cleaner. Add a correction/successor entry instead.
 
+## 2026-09-17 · W007 · IMPLEMENTATION POC
+
+Added `route-lab.html` + `route-lab.js` as a separate spline-authoring UX proof.
+
+Current Route Lab capabilities:
+
+- start/cancel/finish one ROAD candidate;
+- click neutral authoring ground to add control points;
+- select and move individual control points with Three.js `TransformControls`;
+- visual centerline preview through the authored points;
+- undo point / delete selected point / clear all;
+- top view and frame-road inspection;
+- local save/reload;
+- copy/download candidate spline JSON.
+
+Hard boundary: this is **not** productive road geometry. It stores explicit `poc-local` ROAD control points only. Terrain projection, spherical anchoring, width/profile compilation, banking, road mesh, AI/navigation and productive persistence remain Travel/WB0-owned.
+
+Browser acceptance is still PENDING.
+
 ## 2026-09-17 · W006 · IMPLEMENTATION POC
 
 Added `composer.html` + `composer.js` as a direct-manipulation authoring UX proof.
