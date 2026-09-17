@@ -1,7 +1,7 @@
 # KFB Chat Production · Recovery Path
 
 Status: CURRENT RECOVERY CONTRACT
-Updated: 2026-09-15
+Updated: 2026-09-17
 
 Use this when a ChatGPT/Astra/Claude production chat ends, loses context, becomes blocked, or must be replaced.
 
@@ -15,7 +15,7 @@ Do not ask Georg to reconstruct project history from memory when GitHub contains
 
 1. Read `skills/chat/START_HERE.md`.
 2. Read `skills/chat/REGISTRY.json`.
-3. If recovering the current cross-project lead conversation, read `skills/chat/recovery/CURRENT_LEAD_CHECKPOINT_2026-09-15.md`.
+3. If recovering the current cross-project lead conversation, read `skills/chat/recovery/CURRENT_LEAD_CHECKPOINT_2026-09-17.md`.
 4. Read `skills/chat/LIVING_MASTERPLAN.md` only for cross-project sequencing and current lead decisions.
 5. Open the named project or tool node.
 6. Open the actual implementation SSOT and verify current default-branch HEAD, current open PRs and branches relevant to the task.
@@ -46,9 +46,21 @@ Do not promote one to another. Inbox packages are never implementation truth mer
 
 ## Current lead quick recovery
 
-- Bookmark: `skills/chat/recovery/CURRENT_LEAD_CHECKPOINT_2026-09-15.md`.
-- It points to Town, Asset Librarian, ToolBox and Travel without replacing any project SSOT.
+- Bookmark: `skills/chat/recovery/CURRENT_LEAD_CHECKPOINT_2026-09-17.md`.
+- It points to active project/tool lanes without replacing any project SSOT.
 - Always verify current repo HEAD after opening it; the dated checkpoint is a cursor, not a frozen implementation truth.
+
+## Stunt Car Race / Track Lab quick recovery
+
+- Project SSOT: `georg-doc/KFB-Stunt-Car-Race`
+- Project recovery: `RECOVERY.md`
+- Current experimental lane: `ChatGPT_web/track-lab/`
+- Living sprint plan: `ChatGPT_web/track-lab/LIVING_MASTERPLAN.md`
+- Machine-readable state: `ChatGPT_web/track-lab/WIP_STATUS.json`
+- v0.5 durable reconstruction snapshot: `ChatGPT_web/track-lab/V05_SOURCE_SNAPSHOT.md`
+- The exact v0.5 playable standalone remains a ChatGPT artifact at the 2026-09-17 checkpoint; the similarly named repo HTML is a recovery landing page, not test evidence.
+- Georg accepted the **direction** after manual browser freeplay. This does not yet promote Track Lab over the production `race/` runtime or its movement/camera/progress owners.
+- Next gate: productionize Flow Loop/core + forgiving controls/contact, then arbitrary-3D transported route frames, then one true vertical loop with safe bypass and `free → capture → commit → release → recover`.
 
 ## Asset Librarian quick recovery
 
