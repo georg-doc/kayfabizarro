@@ -71,7 +71,7 @@ const P = 'media/3D_Assets/KayKit_Mystery_Series6/';
    Asset-Commit eingecheckt worden — die beiden E-Gitarren laufen deshalb auf commit: 'main'.
    Das ist die einzige unpinned Quelle im ganzen Cast und im Recipe als OPEN ausgewiesen. */
 const MB = 'media/3D_Assets/KayKit_Mixed_Bag_1_FREE/Assets/gltf/';
-const MB_COMMIT = 'main';
+const MB_COMMIT = '8948a06b75cb18c970599afb29b6a772315fad0e';
 const T = P + '6 - December 2025 - Toy Soldier/';
 const FA = P + '12 - June 2026 - Farmers/';
 const CV = P + '8 - February 2025 - Caveman/';
