@@ -25,7 +25,11 @@ Read:
 
 `tools/KFB-ToolBox/_handover/STAGE_FIRST_V1_INTAKE_2026-09-18/START_HERE.md`
 
-Transport source:
+Owner-repo export package:
+
+`tools/KFB-ToolBox/_inbox/KFB ToolBox v1-1.zip`
+
+Readable expanded mirror:
 
 `georg-doc/KFB-Stunt-Car-Race/_inbox/KFB ToolBox v1/KFB-ToolBox/_handover/EXPORT_STAGE_FIRST_V1_2026-09-17/KFB_ToolBox_Stage-First_v1/`
 
