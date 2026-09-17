@@ -15,9 +15,9 @@ Important naming boundary:
 - code self-name: `KFB Kit Lab`
 - `KFB_World_Atlas_v1` remains a briefing/integration target, not a claim that Castle/Mine/Landmark presets already exist.
 
-Asset rule: existing 3D assets are loaded from `georg-doc/kayfabizarro/media/3D_Assets/`; no duplicate model store.
+Asset rule: existing 3D assets are loaded from `georg-doc/kayfabizarro/media/3D_Assets/`; no duplicate model store. Promotion pin: `8948a06b75cb18c970599afb29b6a772315fad0e` for the normal runtime asset base.
 
 Known open:
-- promoted source still contains branch-`main` runtime asset URLs from the original export; pinning to a fixed GitHub revision is a separate non-destructive promotion delta;
+- promoted runtime code now pins the central asset base and S10 GitHub dependencies to `8948a06b75cb18c970599afb29b6a772315fad0e`; the inbox export remains unchanged and documents the historical branch-`main` state;
 - recipe import, actor wall collision, floor locomotion and Travel integration are not implemented;
 - no Consumer L5 is claimed.
