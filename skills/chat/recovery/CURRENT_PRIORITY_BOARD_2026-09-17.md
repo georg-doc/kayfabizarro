@@ -19,18 +19,16 @@ Human checks:
 
 Do not turn this into another movement-polish loop if the gate carries.
 
-## P0 · Atlas site promotion
+## P0 · Atlas public browser QA
 
 Source intake is present and reviewed:
 
 - `tools/KFB-ToolBox/_inbox/KayKit Resident Atlas/`
 - `tools/KFB-ToolBox/_inbox/KayKit Environment Atlas/KFB_World_Atlas_v1_EXPORT_2026-09-17/`
 
-Promotion branch:
+Promotion result:
 
-`atlas/site-promotion-recovery-2026-09-17`
-
-Candidate routes after merge/deploy:
+PR #48 merged at `5c85b09db6406f3be889aa783542670020e6a62a`; PR Resource Registry check PASS. Candidate routes:
 
 - `/resident-atlas-s6/`
 - `/world-atlas/`
@@ -45,9 +43,9 @@ Rules:
 
 ## P1 · First Travel Atlas consumer slice
 
-After Ground gate + Atlas browser QA:
+After Ground gate + Atlas browser QA. Execution brief: `georg-doc/KFB-Travel-Globe/_handover/WORLD_BUILDER_GOD_MODE_2026-09-17/ATLAS_PILOT_01_LOREKEEPER_HEX_THRESHOLD_2026-09-17.md`.
 
-one resident ensemble + one environment/landmark/path composition in the real Travel Ground world.
+selected Pilot 01 in the real Travel Ground world: **Lorekeeper + Tome/lectern + Staff + seven-cell Hex threshold + Travel-owned ROAD approach**.
 
 Compare the same composition as:
 

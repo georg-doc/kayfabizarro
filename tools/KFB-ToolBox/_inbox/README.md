@@ -33,9 +33,9 @@ Diese Dateien bleiben zur Provenienz unverändert liegen. **Nicht** aus `(6)`, `
 - `KayKit Resident Atlas/` — vollständiger `KFB_Resident_Atlas_S6`-Export; 21 Residents + Ensemble, datengetriebene Vignetten/Signature-Props, GitHub-first Assetpfade. Originalexport bleibt Intake/Provenienz.
 - `KayKit Environment Atlas/KFB_World_Atlas_v1_EXPORT_2026-09-17/` — vollständiger `KayKit Atlas Preflight Access` / `KFB Kit Lab`-Export; 15 Seiten mit Road, Forest, Hex S11/S12, Dungeon Model S13 und `Dungeon_Generator_S13_2`.
 - Intake-Review: `../_handover/ATLAS_INTAKE_2026-09-17/START_HERE.md`.
-- Site-Promotion: Branch `atlas/site-promotion-recovery-2026-09-17`; candidate routes `/resident-atlas-s6/` und `/world-atlas/`.
+- Site-Promotion: PR #48 merged at `5c85b09db6406f3be889aa783542670020e6a62a`; candidate routes `/resident-atlas-s6/` und `/world-atlas/`; public browser QA remains separate.
 - Asset-Regel: existiert ein benötigtes Asset in GitHub, bleibt GitHub die Quelle. Keine zweite Modellablage in Atlas/ToolBox anlegen.
-- Offene Promotion-Lücke: einige Runtime-Assetpfade der Exporte verwenden noch `main`; feste Revisionspins gehören in eine spätere promoted revision, nicht in den unveränderten Intake.
+- Promotion-Pins: promoted runtime copies use fixed GitHub revision `8948a06b75cb18c970599afb29b6a772315fad0e` for the normal World asset base, S10 GitHub dependencies and Resident Mixed Bag/measurement paths; the unchanged Intake retains its historical `main` references.
 - REVIEWED bedeutet Source/Struktur geprüft; keine Travel-, Animation- oder Consumer-L5-Abnahme.
 
 ### Weitere aktive Eingänge

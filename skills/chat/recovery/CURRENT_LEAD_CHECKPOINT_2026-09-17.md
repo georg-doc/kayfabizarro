@@ -63,8 +63,8 @@ Atlas intake now exists as concrete source, not only preflight:
 - `tools/KFB-ToolBox/_inbox/KayKit Environment Atlas/KFB_World_Atlas_v1_EXPORT_2026-09-17/` — Kit Lab with Hex/Road/Forest and `KayKit_Dungeon_Generator_S13_2`;
 - reviewed intake checkpoint: `tools/KFB-ToolBox/_handover/ATLAS_INTAKE_2026-09-17/START_HERE.md`.
 
-Site-promotion branch: `atlas/site-promotion-recovery-2026-09-17`.
-Candidate stable routes after merge/deploy:
+Site promotion: PR #48 merged at `5c85b09db6406f3be889aa783542670020e6a62a` after a green Resource Registry PR check.
+Stable candidate routes (publication/browser QA remains separate):
 
 - `/resident-atlas-s6/`
 - `/world-atlas/`
@@ -105,9 +105,9 @@ Parallel `/world/` rule:
 - Always verify current Travel `main`; the `/world/` chat may have advanced the repo beyond the last Movement Lab merge without replacing it.
 
 Atlas / World authoring update:
-- Resident S6 and Environment/Kit Lab exports are SOURCE RECEIVED / REVIEWED INTAKE.
+- Resident S6 and Environment/Kit Lab exports are SOURCE RECEIVED / REVIEWED INTAKE; PR #48 has promoted additive candidate sites on `kayfabizarro/main`.
 - Hex grammar and Dungeon S13.2 are concrete authoring/geometry donors; they are not yet Travel terrain or interior-runtime owners.
-- World/Travel next Atlas step after site QA is one narrow begehbarer Ort: one resident ensemble + one environment/landmark/path composition, with visible-hex / terrain-seated / no-visible-base variants compared in the real Travel Ground world.
+- World/Travel next Atlas step after site QA and the current Ground gate is Pilot 01: source-backed Lorekeeper + Tome/lectern + Staff, one minimal Hex threshold and a Travel-owned ROAD approach, comparing visible / terrain-seated / no-visible-base variants at one world anchor.
 - Dungeon integration remains later: Recipe import, actor wall collision, floor/level locomotion and Travel consumer evidence are not implemented in the donor.
 
 Birthday/Fable history:
@@ -175,4 +175,4 @@ DocCheck visual convention:
 
 ## Recovery sentence
 
-> Start from the current project SSOT, not chat history. For Travel/World work, open the Hub Travel recovery page, verify current `KFB-Travel-Globe/main`, run the `ground=8` human gate, and keep Atlas preview/authoring separate from Travel runtime ownership. Atlas source is now present under the ToolBox inbox; candidate routes are `/resident-atlas-s6/` and `/world-atlas/` after promotion. For Stunt Race, open the Hub Stunt recovery page or read `RECOVERY.md` → `WIP_STATUS.json` → `A0_CONSUMER_PROOF_RETURN_2026-09-17.md`; the current gate is human freeplay of the A0 Flow Loop before T3 is promoted. For SimBlood, open the Hub recovery page or read `START_HERE.md` → `RECOVERY.md` → `MASTERPLAN.md` → `WIP_STATUS.json` → latest Living Addendum → `RETURN.md`; current P0 is exact WBC review followed by normal RBC/platelet proof, with the Frank management viewer refreshed only from those source documents.
+> Start from the current project SSOT, not chat history. For Travel/World work, open the Hub Travel recovery page, verify current `KFB-Travel-Globe/main`, run the `ground=8` human gate, and keep Atlas preview/authoring separate from Travel runtime ownership. Atlas source is present under the ToolBox inbox; PR #48 promoted candidate routes `/resident-atlas-s6/` and `/world-atlas/` without replacing the original intake or `/resident-atlas/`. For Stunt Race, open the Hub Stunt recovery page or read `RECOVERY.md` → `WIP_STATUS.json` → `A0_CONSUMER_PROOF_RETURN_2026-09-17.md`; the current gate is human freeplay of the A0 Flow Loop before T3 is promoted. For SimBlood, open the Hub recovery page or read `START_HERE.md` → `RECOVERY.md` → `MASTERPLAN.md` → `WIP_STATUS.json` → latest Living Addendum → `RETURN.md`; current P0 is exact WBC review followed by normal RBC/platelet proof, with the Frank management viewer refreshed only from those source documents.
