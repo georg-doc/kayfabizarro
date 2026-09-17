@@ -1,3 +1,5 @@
+> **2026-09-18 STATUS OVERRIDE:** This Birthday Startscreen / Travel handoff is **FAIL / OUTDATED / ARCHIVED HISTORY** and must not be executed. Retain it only for provenance and generic donor facts. Current Travel work follows the Ground=8 recovery and Atlas Pilot 01; current ToolBox work follows Stage-First v1 intake/promotion.
+
 # KFB Town · Post-r022 · Birthday Startscreen / Travel Handoff
 
 **Date:** 2026-09-15  
