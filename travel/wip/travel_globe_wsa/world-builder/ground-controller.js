@@ -1,16 +1,19 @@
 // WB0 spherical Ground controller.
-// Donor behavior: kayfabizarro/travel/travel-v16/terrain-v16/walk-controller.js.
-// The donor is planar, so WB0 keeps its WASD/turn/ground-contact intent but maps motion to the
-// Globe tangent frame and reads the accepted baked mesh through boden-lesung.js.
+// Donor behavior: kayfabizarro/travel/travel-v16/terrain-v16/walk-controller.js + travel-poc.js.
+// Preserve the established KFB Ground mapping instead of inventing another scheme:
+// W/S = forward/back, A/D = turn walker, Q/E = strafe left/right.
+// The donor is planar, so WB0 maps that intent to the Globe tangent frame and reads the accepted
+// baked mesh through boden-lesung.js.
 
 import { createBodenLesung } from '../globe-v13/boden-lesung.js';
 
 export function createGroundController({ THREE, camera, globe, renderer, bodyHeight = 0.022 }) {
   const Y = new THREE.Vector3(0, 1, 0);
+  const X = new THREE.Vector3(1, 0, 0);
   const keys = new Set();
   const dir = new THREE.Vector3(0, 1, 0);
   const up = new THREE.Vector3(), east = new THREE.Vector3(), north = new THREE.Vector3();
-  const forward = new THREE.Vector3(), right = new THREE.Vector3();
+  const forward = new THREE.Vector3(), right = new THREE.Vector3(), moveTangent = new THREE.Vector3();
   const desiredCam = new THREE.Vector3(), desiredLook = new THREE.Vector3();
   const playerPos = new THREE.Vector3(), lookAt = new THREE.Vector3();
   const basis = new THREE.Matrix4(), q = new THREE.Quaternion();
@@ -34,13 +37,14 @@ export function createGroundController({ THREE, camera, globe, renderer, bodyHei
   let heading = 0;
   let moving = false;
   let speed = 0;
+  let inputTurn = 0, inputThrottle = 0, inputStrafe = 0;
   let playerRoot = null;
   let snappedCamera = false;
 
   function basisAt(n) {
     up.copy(n).normalize();
     east.crossVectors(Y, up);
-    if (east.lengthSq() < 1e-8) east.crossVectors(new THREE.Vector3(1, 0, 0), up);
+    if (east.lengthSq() < 1e-8) east.crossVectors(X, up);
     east.normalize();
     north.crossVectors(up, east).normalize();
     forward.copy(north).multiplyScalar(Math.cos(heading)).addScaledVector(east, Math.sin(heading)).normalize();
@@ -89,18 +93,33 @@ export function createGroundController({ THREE, camera, globe, renderer, bodyHei
 
   function update(dt) {
     if (!enabled) return;
-    const turn = (keys.has('KeyD') ? 1 : 0) - (keys.has('KeyA') ? 1 : 0);
+
+    // Same Ground controls already used by Travel v16:
+    // W/S move, A/D turn, Q/E strafe. A is positive turn, E is positive/right strafe.
+    const turn = (keys.has('KeyA') ? 1 : 0) - (keys.has('KeyD') ? 1 : 0);
     const throttle = (keys.has('KeyW') ? 1 : 0) - (keys.has('KeyS') ? params.backMul : 0);
+    const strafe = (keys.has('KeyE') ? 1 : 0) - (keys.has('KeyQ') ? 1 : 0);
+    inputTurn = turn; inputThrottle = throttle; inputStrafe = strafe;
+
     heading += turn * params.turnRate * dt;
     basisAt(dir);
+
+    // Build one tangent movement vector. Clamp the combined input so diagonals are not faster.
+    const rawMagnitude = Math.hypot(strafe, throttle);
+    const moveMagnitude = Math.min(1, rawMagnitude);
+    moveTangent.set(0, 0, 0).addScaledVector(forward, throttle).addScaledVector(right, strafe);
+    if (rawMagnitude > 1e-8) moveTangent.multiplyScalar(1 / rawMagnitude);
+
     const r = radiusAt(dir);
-    const distance = throttle * params.speed * dt;
-    if (Math.abs(distance) > 1e-8) {
+    const distance = moveMagnitude * params.speed * dt;
+    if (distance > 1e-8) {
+      // Great-circle step in the selected local tangent direction. The actor keeps its heading while
+      // strafing; Q/E move sideways instead of secretly becoming another turn input.
       const angle = distance / Math.max(0.001, r);
       const c = Math.cos(angle), s = Math.sin(angle);
-      dir.multiplyScalar(c).addScaledVector(forward, s).normalize();
+      dir.multiplyScalar(c).addScaledVector(moveTangent, s).normalize();
       moving = true;
-      speed = Math.abs(distance) / Math.max(dt, 1e-4);
+      speed = distance / Math.max(dt, 1e-4);
     } else {
       moving = false;
       speed = 0;
@@ -137,13 +156,16 @@ export function createGroundController({ THREE, camera, globe, renderer, bodyHei
 
   function onKeyDown(e) {
     if (!enabled) return;
-    if (['KeyW', 'KeyA', 'KeyS', 'KeyD'].includes(e.code)) {
+    if (['KeyW', 'KeyA', 'KeyS', 'KeyD', 'KeyQ', 'KeyE'].includes(e.code)) {
       keys.add(e.code);
       e.preventDefault();
     }
   }
   function onKeyUp(e) { keys.delete(e.code); }
-  function clearKeys() { keys.clear(); }
+  function clearKeys() {
+    keys.clear();
+    inputTurn = 0; inputThrottle = 0; inputStrafe = 0;
+  }
   function onWheel(e) {
     if (!enabled) return;
     params.cameraDistance = THREE.MathUtils.clamp(params.cameraDistance + Math.sign(e.deltaY) * bodyHeight * 0.7,
@@ -170,7 +192,8 @@ export function createGroundController({ THREE, camera, globe, renderer, bodyHei
     get state() {
       return {
         direction: dir.clone(), heading, moving, speed,
-        position: playerPos.clone(), forward: forward.clone(), bodyHeight,
+        input: { turn: inputTurn, throttle: inputThrottle, strafe: inputStrafe },
+        position: playerPos.clone(), forward: forward.clone(), right: right.clone(), bodyHeight,
       };
     },
     dispose() {
