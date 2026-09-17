@@ -16,7 +16,7 @@
 <section class="hero">
 <div class="eyebrow">DocCheck · Project Recovery</div>
 <h1>SimBlood</h1>
-<p class="lede">Recovery navigator for the current SimBlood work. This page is not the SSOT: GitHub project files win whenever anything here becomes stale.</p>
+<p class="lede">Recovery navigator for the current SimBlood work. GitHub project files remain authoritative whenever this page becomes stale.</p>
 <div class="actions">
 <a class="button primary" href="./sim-blood-poc/index.html" target="_blank" rel="noreferrer">Open current POC</a>
 <a class="button" href="https://github.com/georg-doc/doccheck/blob/main/sim-blood/RECOVERY.md" target="_blank" rel="noreferrer">Recovery</a>
@@ -28,10 +28,11 @@
 <section class="section">
 <h2>Current WIPs</h2>
 <div class="grid">
-<article class="card"><span class="badge">P0 · Re-review</span><h3>Field Composer + Interaction</h3><p>Typed deterministic field with continuous wheel/pinch zoom, in-place labels and the latest cursor-anchor correction. User re-review is the current interaction gate.</p><a href="./sim-blood-poc/index.html" target="_blank" rel="noreferrer">Open POC ↗</a><a href="https://github.com/georg-doc/doccheck/tree/main/sim-blood/app/field-composer-poc" target="_blank" rel="noreferrer">SSOT ↗</a></article>
-<article class="card"><span class="badge">P0 · Spike</span><h3>Real WBC Asset Injection</h3><p>First three Acevedo/PBC segmented-neutrophil candidates are wired through the CellAssetRegistry seam with procedural fallback. Candidate assets remain unpromoted.</p><a href="https://github.com/georg-doc/doccheck/blob/main/sim-blood/assets/runtime-pool/neutrophil-candidates.v0.2.json" target="_blank" rel="noreferrer">Candidates ↗</a><a href="https://github.com/georg-doc/doccheck/blob/main/sim-blood/docs/CELL_ASSET_INJECTION.md" target="_blank" rel="noreferrer">Contract ↗</a></article>
-<article class="card"><span class="badge">P0 · Reference</span><h3>Reference / Asset Path</h3><p>Wave 1 is sufficient for POC guidance. Production rights and medical validation remain separate gates.</p><a href="https://github.com/georg-doc/doccheck/blob/main/sim-blood/assets/reference-board/MVP0_REFERENCE_SET_v0.2.md" target="_blank" rel="noreferrer">Open reference set ↗</a></article>
-<article class="card"><span class="badge">P1 · R&D</span><h3>CytoDiff Audit</h3><p>WBC-specific domain benchmark. Current status: CONDITIONAL_GO; it must not delay the real-cell comparison.</p><a href="https://github.com/georg-doc/doccheck/blob/main/sim-blood/docs/CYTODIFF_PHASE0_AUDIT.md" target="_blank" rel="noreferrer">Open audit ↗</a></article>
+<article class="card"><span class="badge">P0 · Browser Gate</span><h3>Field Composer + Microscope</h3><p>Typed deterministic field with continuous cursor/pinch zoom, exact viewport clamp, in-place labels and current Normal/IDA/TMA technical recipes. Latest interaction gate is browser confirmation of stable high-magnification anchoring.</p><a href="./sim-blood-poc/index.html" target="_blank" rel="noreferrer">Open POC ↗</a><a href="https://github.com/georg-doc/doccheck/tree/main/sim-blood/app/field-composer-poc" target="_blank" rel="noreferrer">SSOT ↗</a></article>
+<article class="card"><span class="badge">P0 · WBC v0.2</span><h3>Real WBC A/B Tranche</h3><p>Three candidate variants each for segmented neutrophil, mature lymphocyte and monocyte now run through the image-backed seam with deterministic selection and procedural fallback. The POC includes a same-seed Real ↔ Procedural comparison.</p><a href="https://github.com/georg-doc/doccheck/blob/main/sim-blood/assets/runtime-pool/cell-assets.poc.json" target="_blank" rel="noreferrer">Registry ↗</a><a href="https://github.com/georg-doc/doccheck/blob/main/sim-blood/docs/LIVING_ADDENDUM_2026-09-17_WBC_TRANCHE_V02.md" target="_blank" rel="noreferrer">Living Addendum ↗</a></article>
+<article class="card"><span class="badge">Human Evidence</span><h3>First Real Neutrophil</h3><p><code>pbc-neut-101007</code> was visible in Georg's deployed browser and the visual direction was positive enough to continue. v0.2 reduces the oversized/pasted-crop read with tighter scale and stronger edge feathering. This remains POC evidence, not medical promotion.</p><a href="https://github.com/georg-doc/doccheck/blob/main/sim-blood/assets/runtime-pool/neutrophil-candidates.v0.2.json" target="_blank" rel="noreferrer">Evidence record ↗</a></article>
+<article class="card"><span class="badge">P0 · Reference</span><h3>Reference / Asset Path</h3><p>Wave 1 is sufficient for POC guidance. Production rights, exact local provenance, morphology review, alpha/crop QA and calibrated scale remain separate gates.</p><a href="https://github.com/georg-doc/doccheck/blob/main/sim-blood/assets/reference-board/MVP0_REFERENCE_SET_v0.2.md" target="_blank" rel="noreferrer">Open reference set ↗</a></article>
+<article class="card"><span class="badge">P1 · R&D</span><h3>CytoDiff Audit</h3><p>WBC-specific domain benchmark. Current status: CONDITIONAL_GO; it must not delay the real-cell comparison and local asset normalization path.</p><a href="https://github.com/georg-doc/doccheck/blob/main/sim-blood/docs/CYTODIFF_PHASE0_AUDIT.md" target="_blank" rel="noreferrer">Open audit ↗</a></article>
 <article class="card"><span class="badge">P1 · Concept</span><h3>Tele-Hematology Cases</h3><p>Explore, Cell-ID, Differential and remote-smear-review scenarios using the same typed field truth.</p><a href="https://github.com/georg-doc/doccheck/blob/main/sim-blood/docs/TELEHEMATOLOGY_USE_CASES.md" target="_blank" rel="noreferrer">Open use cases ↗</a></article>
 </div>
 </section>
@@ -41,7 +42,7 @@
 </section>
 <section class="section">
 <h2>Current gate</h2>
-<p class="rule">Re-check cursor/pinch zoom stability, then compare the first image-backed neutrophils with the procedural fallback in the same seeded field. Do not broaden the asset pipeline unless the visual gain is clear.</p>
+<p class="rule">Review the 3×3 real WBC tranche in the browser, switch the same seed between <strong>Reale Kandidaten</strong> and <strong>Prozedural</strong>, and confirm cursor-anchored wheel zoom. If the real lane clearly wins, stop adding remote candidates and localize only the accepted assets with attribution, checksums, alpha/crop normalization and scale QA.</p>
 </section>
 <footer class="footer">Updated 2026-09-17 · DocCheck accent <code>#cc0033</code> is UI-only; microscopy imagery stays neutral.</footer>
 </main>
