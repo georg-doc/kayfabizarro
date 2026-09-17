@@ -4,7 +4,8 @@
 // W/S = forward/back, A/D = visible left/right turn, Q/E = strafe left/right,
 // Shift = run, Space = Ground-only jump, RMB drag = free camera, wheel = smooth zoom.
 // The donor is planar, so WB0 maps that intent to the Globe tangent frame and reads the accepted
-// baked mesh through boden-lesung.js.
+// baked mesh through boden-lesung.js. Additive support surfaces may RAISE the standing radius,
+// but terrain remains the base height truth and this module remains the only Ground movement writer.
 
 import { createBodenLesung } from '../globe-v13/boden-lesung.js';
 
@@ -60,6 +61,15 @@ export function createGroundController({ THREE, camera, globe, renderer, bodyHei
   let playerRoot = null;
   let snappedCamera = false;
   let presentationUpdater = null;
+  let supportResolver = null;
+  let currentSupport = {
+    radius: 5,
+    terrainRadius: 5,
+    delta: 0,
+    source: 'terrain',
+    kind: 'terrain',
+    id: 'terrain',
+  };
 
   // Camera orbit is presentation only. Heading remains owned by keyboard/controller input.
   let cameraYaw = 0;
@@ -85,13 +95,68 @@ export function createGroundController({ THREE, camera, globe, renderer, bodyHei
     right.crossVectors(up, forward).normalize();
   }
 
-  function radiusAt(n) {
+  function terrainRadiusAt(n) {
     return groundReader.radiusAt(n.clone().normalize()) || 5;
+  }
+
+  function resolveSupport(n) {
+    const direction = n.clone().normalize();
+    const terrain = terrainRadiusAt(direction);
+    if (typeof supportResolver !== 'function') {
+      return {
+        radius: terrain,
+        terrainRadius: terrain,
+        delta: 0,
+        source: 'terrain',
+        kind: 'terrain',
+        id: 'terrain',
+      };
+    }
+    try {
+      const candidate = supportResolver(direction, terrain);
+      if (Number.isFinite(candidate)) {
+        const radius = Math.max(terrain, candidate);
+        return {
+          radius,
+          terrainRadius: terrain,
+          delta: radius - terrain,
+          source: radius > terrain + 1e-6 ? 'support' : 'terrain',
+          kind: radius > terrain + 1e-6 ? 'support' : 'terrain',
+          id: radius > terrain + 1e-6 ? 'support' : 'terrain',
+        };
+      }
+      if (candidate && Number.isFinite(candidate.radius)) {
+        const radius = Math.max(terrain, candidate.radius);
+        return {
+          radius,
+          terrainRadius: terrain,
+          delta: radius - terrain,
+          source: candidate.source || candidate.id || (radius > terrain + 1e-6 ? 'support' : 'terrain'),
+          kind: candidate.kind || (radius > terrain + 1e-6 ? 'support' : 'terrain'),
+          id: candidate.id || candidate.source || (radius > terrain + 1e-6 ? 'support' : 'terrain'),
+        };
+      }
+    } catch (error) {
+      console.warn('[wb0 ground] support resolver failed; using terrain', error);
+    }
+    return {
+      radius: terrain,
+      terrainRadius: terrain,
+      delta: 0,
+      source: 'terrain',
+      kind: 'terrain',
+      id: 'terrain',
+    };
+  }
+
+  function supportRadiusAt(n) {
+    return resolveSupport(n).radius;
   }
 
   function syncPlayer() {
     basisAt(dir);
-    playerPos.copy(dir).multiplyScalar(radiusAt(dir) + params.footLift + jumpOffset);
+    currentSupport = resolveSupport(dir);
+    playerPos.copy(dir).multiplyScalar(currentSupport.radius + params.footLift + jumpOffset);
     if (playerRoot) {
       playerRoot.position.copy(playerPos);
       basis.makeBasis(right, up, forward);
@@ -142,6 +207,7 @@ export function createGroundController({ THREE, camera, globe, renderer, bodyHei
       onGround, jumping: !onGround, jumpOffset, verticalVelocity,
       input: { turn: inputTurn, throttle: inputThrottle, strafe: inputStrafe },
       position: playerPos.clone(), forward: forward.clone(), right: right.clone(), bodyHeight,
+      support: { ...currentSupport },
       camera: {
         yaw: cameraYaw,
         pitch: cameraPitch,
@@ -178,7 +244,9 @@ export function createGroundController({ THREE, camera, globe, renderer, bodyHei
     moveTangent.set(0, 0, 0).addScaledVector(forward, throttle).addScaledVector(right, strafe);
     if (rawMagnitude > 1e-8) moveTangent.multiplyScalar(1 / rawMagnitude);
 
-    const r = radiusAt(dir);
+    // Angular travel still uses the baked terrain radius. Support surfaces change where feet stand,
+    // not the ownership of the sphere/terrain coordinate system.
+    const r = terrainRadiusAt(dir);
     const locomotionSpeed = params.speed * (running ? params.runMul : 1);
     const distance = moveMagnitude * locomotionSpeed * dt;
     if (distance > 1e-8) {
@@ -243,10 +311,11 @@ export function createGroundController({ THREE, camera, globe, renderer, bodyHei
 
   function toFlightPose() {
     qSurface.setFromUnitVectors(Y, dir);
+    const support = resolveSupport(dir);
     return {
       qPosition: qSurface.clone(),
       heading,
-      altitude: Math.max(0, radiusAt(dir) - 5) + bodyHeight * 0.35 + jumpOffset,
+      altitude: Math.max(0, support.radius - 5) + bodyHeight * 0.35 + jumpOffset,
     };
   }
 
@@ -361,7 +430,13 @@ export function createGroundController({ THREE, camera, globe, renderer, bodyHei
     resetCameraOrbit,
     setSurfaceDirection,
     toFlightPose,
-    radiusAt,
+    // Compatibility: existing authoring/snap callers still receive the baked terrain radius.
+    radiusAt: terrainRadiusAt,
+    supportRadiusAt,
+    setSupportResolver(fn) {
+      supportResolver = typeof fn === 'function' ? fn : null;
+      syncPlayer();
+    },
     setPlayerRoot(root) { playerRoot = root || null; syncPlayer(); },
     setPresentationUpdater(fn) { presentationUpdater = typeof fn === 'function' ? fn : null; },
     queueJump() { if (enabled && onGround) jumpQueued = true; },
