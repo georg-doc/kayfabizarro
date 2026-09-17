@@ -39,9 +39,39 @@ productionize the Flow Loop/core and forgiving controls/rubber contact, then add
 
 Continue only from the currently tested/promoted ToolBox source baseline. Do not rebuild working modules from prose. Keep owner boundaries explicit.
 
-### World / Birthday lane
+### Travel / World Builder lane
 
-Rejected Fable visual directions remain history only. Resume from real Travel + Georg references + real assets; visual/freeplay acceptance remains Georg's gate.
+Human recovery page:
+`https://kayfabizarro.pages.dev/kfb-hub/travel-world.html`
+
+Implementation SSOT:
+`georg-doc/KFB-Travel-Globe`
+
+Current public runtime / Ground Movement Lab:
+`https://kayfabizarro.pages.dev/travel/wip/travel_globe_wsa/world-builder/?wb0=1`
+
+GitHub Pages fallback:
+`https://georg-doc.github.io/kayfabizarro/travel/wip/travel_globe_wsa/world-builder/?wb0=1`
+
+Parallel authoring-UX POC:
+`https://kayfabizarro.pages.dev/travel/wip/travel_globe_wsa/world/`
+
+Current runtime evidence, 2026-09-17:
+- WB0 Ground owns spherical movement in Ground mode; Flight remains Travel-owned.
+- Controls: W/S move, A/D turn, Q/E strafe, Shift run, Space jump.
+- Movement comparison is implemented for ActionFigure / Rig_Medium, Monstrosity / Rig_Large and Legacy Orc Warband compatibility with explicit animated-Legacy fallback.
+- Travel PR #17 merged; static CI 28/28 PASS + build PASS + verify PASS.
+- Public movement-lab mirror commit `e0c250147ee67adafbf00a73c91e2d916ee8961e`; GitHub Pages deployment completed successfully.
+- **Human browser/gameplay acceptance remains pending.** Static PASS does not promote animation quality, movement feel or Legacy direct binding.
+
+Parallel `/world/` rule:
+- `/world/` is POC/design donor only: object composer, route lab, resident prefab lab and seed/scatter experiments may move faster there.
+- `/world/` does not own terrain, movement, Registry truth, animation compatibility or productive persistence.
+- Candidate output flows `/world/ POC → Candidate World Recipe → Travel validation → optional promotion`.
+- Always verify current Travel `main`; the `/world/` chat may have advanced the repo beyond the last Movement Lab merge without replacing it.
+
+Birthday/Fable history:
+Rejected Birthday/Fable visual directions remain archived history only. They do not define the current World Builder path.
 
 ### DocCheck · SimBlood lane
 
@@ -86,11 +116,11 @@ DocCheck visual convention:
 
 - project/tool SSOTs beat this checkpoint
 - Stunt Race remains its own implementation SSOT; Track Lab is an experimental accepted lane until integrated through project contracts
-- Travel remains world/runtime SSOT
+- Travel remains world/runtime SSOT; `/world/` remains a candidate-authoring POC, not a second runtime owner
 - ToolBox/Studio contracts are not silently replaced
 - Asset Librarian remains discovery/provenance, not compatibility owner
 - SimBlood owns its own morphology/field/microscope/workflow contracts under `georg-doc/doccheck/sim-blood/`
 
 ## Recovery sentence
 
-> Start from the current project SSOT, not chat history. For Stunt Race, read `RECOVERY.md` → Track Lab `LIVING_MASTERPLAN.md` → `WIP_STATUS.json` and preserve production owners; for SimBlood, open the Hub recovery page or read `START_HERE.md` → `RECOVERY.md` → `WIP_STATUS.json` → `RETURN.md`. Continue only the named active WIP and leave Living/Change/Return/WIP state resumable on GitHub.
+> Start from the current project SSOT, not chat history. For Travel/World work, open the Hub Travel recovery page, verify current `KFB-Travel-Globe/main`, then choose the productive `/world-builder/` runtime lane or the candidate-only `/world/` authoring lane without mixing their ownership. For Stunt Race, read `RECOVERY.md` → Track Lab `LIVING_MASTERPLAN.md` → `WIP_STATUS.json`; for SimBlood, open the Hub recovery page or read `START_HERE.md` → `RECOVERY.md` → `WIP_STATUS.json` → `RETURN.md`. Continue only the named active WIP and leave Living/Change/Return/WIP state resumable on GitHub.

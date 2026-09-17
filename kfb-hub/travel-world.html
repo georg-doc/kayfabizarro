@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>KFB Hub · Travel / World Builder Recovery</title>
+<style>
+:root{--bg:#f4f5f7;--panel:#fff;--ink:#17191d;--muted:#6d737d;--line:#dfe3e8;--accent:#5d4cff;--ok:#0e8f73;--warn:#b87300}
+@media(prefers-color-scheme:dark){:root{--bg:#111318;--panel:#191c23;--ink:#f5f6f8;--muted:#9ca3af;--line:#2b3039;--accent:#9b90ff;--ok:#69d7bd;--warn:#f0b34f}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.5 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}.shell{width:min(980px,calc(100% - 28px));margin:auto;padding:28px 0 54px}h1{font-size:clamp(28px,5vw,48px);line-height:1;margin:.25em 0}.eyebrow{font-size:11px;text-transform:uppercase;letter-spacing:.12em;font-weight:800;color:var(--ok)}.lede{color:var(--muted);max-width:760px}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:22px}.card{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:18px}.card h2{font-size:17px;margin:0 0 7px}.card p,.note{color:var(--muted)}.badge{display:inline-block;font-size:10px;font-weight:900;letter-spacing:.08em;padding:4px 7px;border:1px solid var(--line);border-radius:999px;margin-bottom:8px}.live{color:var(--ok)}.wip{color:var(--warn)}.actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}a.button{display:inline-block;text-decoration:none;border:1px solid var(--line);border-radius:9px;padding:8px 10px;font-size:13px;font-weight:800;color:var(--ink)}a.primary{background:var(--accent);border-color:var(--accent);color:#fff}.status{margin-top:18px;background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:18px}.status ul{margin:.6em 0;padding-left:1.2em}.status code{font-size:12px}.footer{margin-top:18px;color:var(--muted);font-size:12px}@media(max-width:720px){.grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<main class="shell">
+<div class="eyebrow">KFB Production Hub · Recovery</div>
+<h1>Travel / World Builder</h1>
+<p class="lede">Human recovery page for the current KFB Travel world-authoring work. This page is navigation only. <strong>Implementation truth remains <code>georg-doc/KFB-Travel-Globe</code>.</strong></p>
+
+<div class="grid">
+<section class="card">
+<span class="badge live">RUNTIME WIP</span>
+<h2>WB0 · Ground Movement Lab</h2>
+<p>Productive Travel runtime proof with Ground/Flight switching, persistent World Recipe authoring and the current three-family movement comparison: ActionFigure / Medium, Monstrosity / Large, Legacy Warband compatibility probe.</p>
+<div class="actions">
+<a class="button primary" href="https://kayfabizarro.pages.dev/travel/wip/travel_globe_wsa/world-builder/?wb0=1">Open Movement Lab</a>
+<a class="button" href="https://georg-doc.github.io/kayfabizarro/travel/wip/travel_globe_wsa/world-builder/?wb0=1">GitHub Pages fallback</a>
+</div>
+</section>
+
+<section class="card">
+<span class="badge wip">POC / DONOR</span>
+<h2>/world/ · Authoring UX Lab</h2>
+<p>Parallel fast POC lane for object placement, route authoring, resident prefabs and seed/scatter UX. It may propose candidate recipes, but it does not own runtime movement, terrain or productive persistence.</p>
+<div class="actions">
+<a class="button primary" href="https://kayfabizarro.pages.dev/travel/wip/travel_globe_wsa/world/">Open World POC</a>
+<a class="button" href="https://georg-doc.github.io/kayfabizarro/travel/wip/travel_globe_wsa/world/">GitHub Pages fallback</a>
+</div>
+</section>
+
+<section class="card">
+<span class="badge">SSOT</span>
+<h2>Travel implementation repository</h2>
+<p>Always verify current <code>main</code> before writing. GitHub state overrides this recovery page and chat recollection.</p>
+<div class="actions"><a class="button primary" href="https://github.com/georg-doc/KFB-Travel-Globe">Open SSOT</a></div>
+</section>
+
+<section class="card">
+<span class="badge">HANDOVER</span>
+<h2>Movement comparison record</h2>
+<p>Requested three-family Ground comparison, exact source assets, owner boundary, Shift-run / Space-jump and human browser gate.</p>
+<div class="actions"><a class="button" href="https://github.com/georg-doc/KFB-Travel-Globe/blob/main/_handover/WORLD_BUILDER_GOD_MODE_2026-09-17/MOVEMENT_CHARACTER_LAB_2026-09-17.md">Open handover</a></div>
+</section>
+</div>
+
+<section class="status">
+<div class="eyebrow">Current evidence · 2026-09-17</div>
+<ul>
+<li><strong>IMPLEMENTATION:</strong> Movement Lab merged through Travel PR #17; ActionFigure / Rig_Medium, Monstrosity / Rig_Large and Legacy compatibility/fallback are implemented.</li>
+<li><strong>TESTED RESULT · static only:</strong> 28/28 tests PASS, build PASS, verify PASS; frozen B0 runtime files preserved.</li>
+<li><strong>PUBLIC MIRROR:</strong> movement-lab mirror commit <code>e0c250147ee67adafbf00a73c91e2d916ee8961e</code>; GitHub Pages deployment completed successfully.</li>
+<li><strong>HUMAN GATE:</strong> browser/gameplay acceptance is still pending. Do not call animation quality, movement feel or Legacy direct binding accepted until Georg tests it.</li>
+<li><strong>PARALLEL /world/:</strong> POC/design donor only. Current Travel <code>main</code> may be ahead of the Movement Lab merge because the World chat continues additively; that does not replace runtime ownership.</li>
+</ul>
+<p class="note"><strong>Recovery order:</strong> current Travel <code>main</code> → this Hub page → WB0 Movement Lab handover for runtime movement → <code>/world/README.md</code> and <code>CHANGELOG.md</code> only when resuming authoring-UX experiments.</p>
+</section>
+
+<div class="footer"><a href="./">← KFB Production Hub</a> · Navigator only · project SSOT wins on conflict.</div>
+</main>
+</body>
+</html>

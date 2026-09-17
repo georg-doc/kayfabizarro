@@ -72,10 +72,16 @@ Do not promote one to another. Inbox packages are never implementation truth mer
 
 ## Travel quick recovery
 
+- Human recovery page: `https://kayfabizarro.pages.dev/kfb-hub/travel-world.html`
+- Runtime / Ground Movement Lab: `https://kayfabizarro.pages.dev/travel/wip/travel_globe_wsa/world-builder/?wb0=1`
+- GitHub Pages fallback: `https://georg-doc.github.io/kayfabizarro/travel/wip/travel_globe_wsa/world-builder/?wb0=1`
+- Parallel authoring POC: `https://kayfabizarro.pages.dev/travel/wip/travel_globe_wsa/world/`
 - Router: `skills/chat/START_HERE.md`
 - Lead plan: `skills/chat/LIVING_MASTERPLAN.md`
 - Project SSOT: `georg-doc/KFB-Travel-Globe`
-- Read `WSA_START.md`, `MASTERPLAN.md`, `travel/CONTRACT.md`, current `qa/.../RETURN.md`, current PR.
+- Read current `main`, then the relevant `_handover/WORLD_BUILDER_GOD_MODE_2026-09-17/` file for runtime work or `site/world/README.md` + `CHANGELOG.md` for the POC lane.
+- `/world-builder/` is the productive Travel runtime proof. `/world/` is candidate authoring UX only and must not become a second terrain, movement or persistence owner.
+- Current Movement Lab evidence: Travel PR #17 merged; static CI 28/28 PASS + build/verify PASS; ActionFigure/Medium, Monstrosity/Large and Legacy compatibility/fallback are implemented; human browser/gameplay acceptance remains pending.
 - B0 acceptance and later MVP status must be re-read from current repo, not assumed from this file.
 
 ## Combat quick recovery
