@@ -2,9 +2,8 @@ import * as THREE from 'three';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 
 // Character/animation comparison lab for WB0 Ground.
-// Asset facts are pinned separately from the older WB0 palette because KayKit Legacy was added later.
 // The Ground controller remains the sole movement writer; this module owns only the visible player
-// body + AnimationMixer presentation.
+// body + AnimationMixer presentation. Root/Hips translation is measured for cadence and then stripped.
 const CHARACTER_PIN = '10a7fdce6b3a1ae22504ade71b7dbec5f25e0ff0';
 const RAW_ROOT = `https://raw.githubusercontent.com/georg-doc/kayfabizarro/${CHARACTER_PIN}/`;
 const ROOT_MOTION_NODE = /^(root|hips)$/i;
@@ -65,7 +64,12 @@ function normalizeHeight(object, targetHeight) {
   const after = visibleSize(object);
   object.position.y -= after.box.min.y;
   object.updateMatrixWorld(true);
-  return { nativeHeight, worldHeight: visibleSize(object).size.y, targetHeight };
+  return {
+    nativeHeight,
+    worldHeight: visibleSize(object).size.y,
+    targetHeight,
+    worldScale: object.scale.x,
+  };
 }
 
 function worldLambert(root) {
@@ -114,6 +118,22 @@ function compatibility(root, clip) {
   return { total, matched, ratio: total ? matched / total : 0 };
 }
 
+function rootPlanarTravel(clip) {
+  let travel = 0;
+  for (const track of clip.tracks || []) {
+    const parsed = trackInfo(track);
+    if (!parsed || parsed.propertyName !== 'position' || !ROOT_MOTION_NODE.test(parsed.nodeName)) continue;
+    const values = track.values;
+    const stride = typeof track.getValueSize === 'function' ? track.getValueSize() : 3;
+    if (!values || stride !== 3 || values.length < 6) continue;
+    const x0 = values[0], z0 = values[2];
+    for (let i = 0; i < values.length; i += 3) {
+      travel = Math.max(travel, Math.hypot(values[i] - x0, values[i + 2] - z0));
+    }
+  }
+  return travel;
+}
+
 function controllerOwnedClip(root, clip) {
   // Keep animation rotations/poses, but never let an animation translate Root/Hips. World movement,
   // strafing and jump translation belong to wb0-ground-controller.
@@ -128,17 +148,22 @@ function controllerOwnedClip(root, clip) {
   return new THREE.AnimationClip(clip.name, clip.duration, tracks, clip.blendMode);
 }
 
-function makeEntry(root, clip, set) {
+function makeEntry(root, clip, set, worldScale = 1) {
   const compat = compatibility(root, clip);
   if (compat.matched < 3 || compat.ratio < 0.55) return null;
   const cleaned = controllerOwnedClip(root, clip);
   if (!cleaned.tracks.length) return null;
+  const rootTravelSource = rootPlanarTravel(clip);
+  const rootTravelWorld = rootTravelSource * Math.abs(worldScale || 1);
   return {
     key: `${set}::${clip.name}`,
     name: clip.name,
     set,
     clip: cleaned,
     compatibility: compat,
+    rootTravelSource,
+    rootTravelWorld,
+    rootSpeedWorld: clip.duration > 1e-6 ? rootTravelWorld / clip.duration : 0,
   };
 }
 
@@ -168,7 +193,6 @@ function ensureVisualRoot(playerRoot) {
   if (visual) return visual;
   visual = new THREE.Group();
   visual.name = 'WB0 Player Visual';
-  // Preserve the baseline Hiker as a child until the first comparison profile is ready.
   const old = [...playerRoot.children];
   for (const child of old) { playerRoot.remove(child); visual.add(child); }
   playerRoot.add(visual);
@@ -186,12 +210,12 @@ function createUi() {
       <button data-profile="monstrosity">Monstrosity</button>
       <button data-profile="legacyWarband">Legacy Warband</button>
     </div>
-    <div class="wb0-move-controls">W/S move · A/D turn · Q/E strafe · Shift run · Space jump</div>
+    <div class="wb0-move-controls">W/S move · A/D turn · Q/E strafe · Shift run · Space jump · RMB look · Wheel zoom</div>
     <div class="wb0-move-row"><button data-auto class="active">AUTO</button><select data-clip><option>loading clips…</option></select><button data-replay>Replay</button></div>
     <div class="wb0-move-status" data-move-status>Preparing character lab…</div>`;
   const style = document.createElement('style');
   style.textContent = `
-    .wb0-movement-lab{position:absolute;left:14px;top:58px;z-index:125;width:min(410px,calc(100vw - 28px));pointer-events:auto;background:rgba(10,16,28,.88);backdrop-filter:blur(9px);border:1px solid rgba(244,234,215,.22);border-radius:9px;padding:9px;color:#f4ead7;box-shadow:0 8px 28px rgba(0,0,0,.24);font-family:"Baloo 2",system-ui,sans-serif}
+    .wb0-movement-lab{position:absolute;left:14px;top:58px;z-index:125;width:min(430px,calc(100vw - 28px));pointer-events:auto;background:rgba(10,16,28,.88);backdrop-filter:blur(9px);border:1px solid rgba(244,234,215,.22);border-radius:9px;padding:9px;color:#f4ead7;box-shadow:0 8px 28px rgba(0,0,0,.24);font-family:"Baloo 2",system-ui,sans-serif}
     .wb0-move-title{font:700 10px/1.2 "Special Elite",monospace;letter-spacing:.08em;color:#d8b25b;margin-bottom:6px}.wb0-move-buttons,.wb0-move-row{display:flex;gap:5px;flex-wrap:wrap}.wb0-movement-lab button,.wb0-movement-lab select{border:1px solid rgba(244,234,215,.28);background:#263448;color:#f4ead7;border-radius:5px;padding:5px 7px;font:700 10px/1 "Baloo 2",sans-serif}.wb0-movement-lab button{cursor:pointer}.wb0-movement-lab button.active{background:#c76b42;border-color:#e6a47e}.wb0-move-controls{font:10px/1.35 monospace;opacity:.78;margin:6px 0}.wb0-move-row select{flex:1 1 170px;min-width:0}.wb0-move-status{font:10px/1.35 monospace;opacity:.88;margin-top:6px;white-space:pre-wrap}
     @media(max-width:760px){.wb0-movement-lab{top:58px;width:calc(100% - 28px)}}`;
   document.head.appendChild(style);
@@ -220,6 +244,7 @@ async function main() {
   let currentKey = null;
   let auto = true;
   let manualKey = null;
+  let cadenceScale = 1;
 
   const bodyHeight = Number(wb0.report && wb0.report().bodyHeight) || 0.022;
 
@@ -234,12 +259,12 @@ async function main() {
       const path = `media/3D_Assets/KayKit_Character_Animations_1.1/Animations/gltf/${def.rig}/${def.rig}_${set}.glb`;
       const source = await loader.loadAsync(raw(path));
       for (const clip of source.animations || []) {
-        const entry = makeEntry(body, clip, set);
+        const entry = makeEntry(body, clip, set, measure.worldScale);
         if (entry) entries.push(entry);
       }
     }
     for (const clip of bodyGltf.animations || []) {
-      const entry = makeEntry(body, clip, 'Body');
+      const entry = makeEntry(body, clip, 'Body', measure.worldScale);
       if (entry && !entries.some((e) => e.key === entry.key)) entries.push(entry);
     }
     if (!entries.length) throw new Error(`${def.label}: no compatible animation tracks found`);
@@ -255,9 +280,10 @@ async function main() {
     const warband = warbandGltf.scene;
     warband.name = 'Legacy Orc A · direct compatibility probe';
     const legacy = await loader.loadAsync(raw(def.animation));
+    const warbandMeasure = normalizeHeight(warband, bodyHeight);
     const direct = [];
     for (const clip of legacy.animations || []) {
-      const entry = makeEntry(warband, clip, 'Legacy1.2');
+      const entry = makeEntry(warband, clip, 'Legacy1.2', warbandMeasure.worldScale);
       if (entry) direct.push(entry);
     }
     const directAuto = autoMap(direct);
@@ -265,24 +291,20 @@ async function main() {
 
     if (directUsable) {
       worldLambert(warband);
-      const measure = normalizeHeight(warband, bodyHeight);
       return {
         def, model: warband, mixer: new THREE.AnimationMixer(warband), entries: direct,
-        auto: directAuto, measure, fallback: false,
+        auto: directAuto, measure: warbandMeasure, fallback: false,
         status: `Warband direct binding PASS · ${direct.length}/${(legacy.animations || []).length} compatible clips`,
       };
     }
 
-    // The Warband GLTF is an early multipart character and may not expose the same animated node
-    // names. Do not pretend it is rig-compatible: fall back to the actual legacy animated donor so
-    // Georg can still judge the old movement language.
     const donorModel = legacy.scene;
     donorModel.name = 'Legacy 1.2 · embedded animated fallback';
     worldLambert(donorModel);
     const measure = normalizeHeight(donorModel, bodyHeight);
     const entries = [];
     for (const clip of legacy.animations || []) {
-      const entry = makeEntry(donorModel, clip, 'Legacy1.2');
+      const entry = makeEntry(donorModel, clip, 'Legacy1.2', measure.worldScale);
       if (entry) entries.push(entry);
     }
     if (!entries.length) throw new Error('Legacy 1.2 animated donor contains no bindable clips');
@@ -329,6 +351,7 @@ async function main() {
     const action = active.mixer.clipAction(entry.clip, active.model);
     action.enabled = true;
     action.reset();
+    action.setEffectiveTimeScale(1);
     action.clampWhenFinished = !!oneShot;
     action.setLoop(oneShot ? THREE.LoopOnce : THREE.LoopRepeat, oneShot ? 1 : Infinity);
     action.fadeIn(0.12).play();
@@ -346,15 +369,42 @@ async function main() {
     return active.auto.idle || active.entries[0];
   }
 
+  function cadenceFor(entry, state) {
+    if (!entry || !auto) return 1;
+    if (!state.onGround) {
+      const p = wb0.ground.params;
+      const airTime = p.gravity > 1e-8 ? (2 * p.jumpSpeed / p.gravity) : entry.clip.duration;
+      return THREE.MathUtils.clamp(entry.clip.duration / Math.max(0.1, airTime), 0.6, 1.8);
+    }
+    if (!state.moving) return 1;
+
+    // Preferred calibration: the source clip's own Root/Hips planar travel, measured BEFORE that
+    // translation is stripped. Fallback is explicit only for clips with no usable root travel.
+    const fallbackCycleDistance = bodyHeight * (state.running ? 1.05 : 0.62);
+    const cycleDistance = entry.rootTravelWorld > bodyHeight * 0.08
+      ? entry.rootTravelWorld : fallbackCycleDistance;
+    const sourceWorldSpeed = cycleDistance / Math.max(0.05, entry.clip.duration);
+    return THREE.MathUtils.clamp(state.speed / Math.max(bodyHeight * 0.05, sourceWorldSpeed), 0.5, 2.2);
+  }
+
   function updatePresentation(dt, state) {
     if (!active) return;
-    active.mixer.update(dt);
+    let entry = active.entries.find((item) => item.key === currentKey) || null;
     if (auto) {
-      const entry = autoEntry(state);
+      entry = autoEntry(state);
       playEntry(entry, { oneShot: !state.onGround && entry === active.auto.jump });
+      cadenceScale = cadenceFor(entry, state);
+      if (currentAction) currentAction.setEffectiveTimeScale(cadenceScale);
+    } else {
+      cadenceScale = 1;
+      if (currentAction) currentAction.setEffectiveTimeScale(1);
     }
-    const activeEntry = active.entries.find((entry) => entry.key === currentKey);
-    ui.status.textContent = `${active.def.label}\n${active.status}\nstate ${state.onGround ? (state.moving ? (state.running ? 'RUN' : 'WALK') : 'IDLE') : 'JUMP'} · clip ${activeEntry ? activeEntry.name : '—'}${active.fallback ? '\nLEGACY: Warband mesh was not directly rig-compatible; showing the actual animated legacy donor.' : ''}`;
+    active.mixer.update(dt);
+
+    const activeEntry = active.entries.find((item) => item.key === currentKey);
+    const stride = activeEntry && activeEntry.rootTravelWorld > bodyHeight * 0.08
+      ? `root ${(activeEntry.rootTravelWorld / bodyHeight).toFixed(2)} body` : 'fallback stride';
+    ui.status.textContent = `${active.def.label}\n${active.status}\nstate ${state.onGround ? (state.moving ? (state.running ? 'RUN' : 'WALK') : 'IDLE') : 'JUMP'} · clip ${activeEntry ? activeEntry.name : '—'} · cadence ${cadenceScale.toFixed(2)}× · ${stride}${active.fallback ? '\nLEGACY: Warband mesh was not directly rig-compatible; showing the actual animated legacy donor.' : ''}`;
   }
 
   async function activate(id, persist = true) {
@@ -364,7 +414,7 @@ async function main() {
     clearGroup(visualRoot);
     visualRoot.add(runtime.model);
     active = runtime;
-    currentAction = null; currentKey = null; manualKey = null; auto = true;
+    currentAction = null; currentKey = null; manualKey = null; auto = true; cadenceScale = 1;
     fillClipMenu(runtime);
     ui.auto.classList.add('active');
     ui.profileButtons.forEach((button) => button.classList.toggle('active', button.dataset.profile === id));
@@ -380,7 +430,8 @@ async function main() {
   });
   ui.auto.onclick = () => {
     auto = true; manualKey = null; ui.auto.classList.add('active');
-    const entry = autoEntry(wb0.ground.state); playEntry(entry, { force: true, oneShot: !wb0.ground.state.onGround && entry === active?.auto.jump });
+    const entry = autoEntry(wb0.ground.state);
+    playEntry(entry, { force: true, oneShot: !wb0.ground.state.onGround && entry === active?.auto.jump });
   };
   ui.clip.onchange = () => {
     if (!active) return;
@@ -406,7 +457,9 @@ async function main() {
         rig: active.def.rig,
         clips: active.entries.length,
         fallback: active.fallback,
+        cadenceScale,
         auto: Object.fromEntries(Object.entries(active.auto).map(([k, v]) => [k, v && v.name])),
+        rootTravelWorld: Object.fromEntries(Object.entries(active.auto).map(([k, v]) => [k, v && v.rootTravelWorld || 0])),
       } : { profile: null };
     },
   };

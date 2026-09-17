@@ -21,10 +21,10 @@
 <section class="card">
 <span class="badge live">RUNTIME WIP</span>
 <h2>WB0 · Ground Movement Lab</h2>
-<p>Productive Travel runtime proof with Ground/Flight switching, persistent World Recipe authoring and the current three-family movement comparison: ActionFigure / Medium, Monstrosity / Large, Legacy Warband compatibility probe.</p>
+<p>Productive Travel runtime proof with Ground/Flight switching and the three-family movement comparison. Current Ground candidate adds corrected A/D turn direction, RMB free-look, softer wheel zoom, Ground-only Space jump and measured animation cadence.</p>
 <div class="actions">
-<a class="button primary" href="https://kayfabizarro.pages.dev/travel/wip/travel_globe_wsa/world-builder/?wb0=1">Open Movement Lab</a>
-<a class="button" href="https://georg-doc.github.io/kayfabizarro/travel/wip/travel_globe_wsa/world-builder/?wb0=1">GitHub Pages fallback</a>
+<a class="button primary" href="https://kayfabizarro.pages.dev/travel/wip/travel_globe_wsa/world-builder/?wb0=1&amp;ground=2">Open Movement Lab</a>
+<a class="button" href="https://georg-doc.github.io/kayfabizarro/travel/wip/travel_globe_wsa/world-builder/?wb0=1&amp;ground=2">GitHub Pages fallback</a>
 </div>
 </section>
 
@@ -47,22 +47,22 @@
 
 <section class="card">
 <span class="badge">HANDOVER</span>
-<h2>Movement comparison record</h2>
-<p>Requested three-family Ground comparison, exact source assets, owner boundary, Shift-run / Space-jump and human browser gate.</p>
-<div class="actions"><a class="button" href="https://github.com/georg-doc/KFB-Travel-Globe/blob/main/_handover/WORLD_BUILDER_GOD_MODE_2026-09-17/MOVEMENT_CHARACTER_LAB_2026-09-17.md">Open handover</a></div>
+<h2>Ground controls / camera / cadence</h2>
+<p>Current browser finding, implemented controls hardening, static evidence and the exact next human browser gate.</p>
+<div class="actions"><a class="button" href="https://github.com/georg-doc/KFB-Travel-Globe/blob/main/_handover/WORLD_BUILDER_GOD_MODE_2026-09-17/GROUND_CONTROLS_CAMERA_CADENCE_2026-09-17.md">Open current handover</a></div>
 </section>
 </div>
 
 <section class="status">
 <div class="eyebrow">Current evidence · 2026-09-17</div>
 <ul>
-<li><strong>IMPLEMENTATION:</strong> Movement Lab merged through Travel PR #17; ActionFigure / Rig_Medium, Monstrosity / Rig_Large and Legacy compatibility/fallback are implemented.</li>
-<li><strong>TESTED RESULT · static only:</strong> 28/28 tests PASS, build PASS, verify PASS; frozen B0 runtime files preserved.</li>
-<li><strong>PUBLIC MIRROR:</strong> movement-lab mirror commit <code>e0c250147ee67adafbf00a73c91e2d916ee8961e</code>; GitHub Pages deployment completed successfully.</li>
-<li><strong>HUMAN GATE:</strong> browser/gameplay acceptance is still pending. Do not call animation quality, movement feel or Legacy direct binding accepted until Georg tests it.</li>
-<li><strong>PARALLEL /world/:</strong> POC/design donor only. Current Travel <code>main</code> may be ahead of the Movement Lab merge because the World chat continues additively; that does not replace runtime ownership.</li>
+<li><strong>HUMAN FINDING:</strong> Movement Lab direction is useful enough to continue; previous Ground build had reversed turn direction, over-sensitive zoom, no free-look, Space leaking into Flight shoot, and imperfect stride/travel sync.</li>
+<li><strong>IMPLEMENTATION:</strong> Travel PR #18 merged at <code>4290f72b98f6013e75af9e3a5b8717d55b53ee0b</code>. Ground A/D sign corrected; RMB drag free-look; LMB reserved; smooth wheel zoom; Space captured as Ground-only jump; animation cadence measures source Root/Hips travel before stripping it.</li>
+<li><strong>TESTED RESULT · static only:</strong> 31/31 tests PASS, build PASS, verify PASS; 108 frozen B0 runtime files preserved; build <code>travel-b0-6cfbce5a98f62d21</code>.</li>
+<li><strong>HUMAN GATE:</strong> re-test A/D, Space without paintball, RMB look, wheel sensitivity, then walk/run/jump cadence on ActionFigure, Monstrosity and Legacy. Do not promote these controls to accepted until that browser test.</li>
+<li><strong>PARALLEL /world/:</strong> POC/design donor only. It remains untouched by the Ground controls slice and does not replace runtime ownership.</li>
 </ul>
-<p class="note"><strong>Recovery order:</strong> current Travel <code>main</code> → this Hub page → WB0 Movement Lab handover for runtime movement → <code>/world/README.md</code> and <code>CHANGELOG.md</code> only when resuming authoring-UX experiments.</p>
+<p class="note"><strong>Recovery order:</strong> current Travel <code>main</code> → this Hub page → Ground controls/cadence handover for runtime movement → <code>/world/README.md</code> and <code>CHANGELOG.md</code> only when resuming authoring-UX experiments.</p>
 </section>
 
 <div class="footer"><a href="./">← KFB Production Hub</a> · Navigator only · project SSOT wins on conflict.</div>
