@@ -3,11 +3,16 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<meta http-equiv="refresh" content="0;url=./sim-blood-poc/index.html">
-<title>SimBlood · POC Redirect</title>
-<style>body{font-family:Roboto,Inter,system-ui,sans-serif;margin:0;padding:32px;background:#f5f6f8;color:#17191d}a{color:#cc0033;font-weight:700}</style>
+<title>SimBlood · POC</title>
+<meta http-equiv="refresh" content="0;url=./sim-blood-poc/">
+<script>
+  const target = new URL('./sim-blood-poc/', location.href);
+  target.search = location.search;
+  target.hash = location.hash;
+  location.replace(target.href);
+</script>
 </head>
 <body>
-<p>SimBlood POC wird geöffnet. Falls die Weiterleitung nicht funktioniert: <a href="./sim-blood-poc/index.html">direkt zum POC</a>.</p>
+<p><a href="./sim-blood-poc/">SimBlood Field Composer POC öffnen</a></p>
 </body>
 </html>
