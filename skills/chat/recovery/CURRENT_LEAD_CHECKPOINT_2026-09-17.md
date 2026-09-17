@@ -51,7 +51,27 @@ Georg freeplays **Flow Loop · A0 → Race Adapter**. If feel is preserved, Race
 
 ### ToolBox lane
 
-Continue only from the currently tested/promoted ToolBox source baseline. Do not rebuild working modules from prose. Keep owner boundaries explicit.
+Technical baseline remains the reviewed WS0 source tree under `tools/KFB-ToolBox/_inbox/WS0_2026-09-15/`; the current v18 Studio donor remains a promotion input, not an automatic contract rewrite.
+
+Current product direction remains the minimal Stage-First shell:
+
+`Actor · Face · Pose · Motion · Voice · Stage`
+
+Atlas intake now exists as concrete source, not only preflight:
+
+- `tools/KFB-ToolBox/_inbox/KayKit Resident Atlas/` — Resident Atlas S6, 21 Residents + Ensemble;
+- `tools/KFB-ToolBox/_inbox/KayKit Environment Atlas/KFB_World_Atlas_v1_EXPORT_2026-09-17/` — Kit Lab with Hex/Road/Forest and `KayKit_Dungeon_Generator_S13_2`;
+- reviewed intake checkpoint: `tools/KFB-ToolBox/_handover/ATLAS_INTAKE_2026-09-17/START_HERE.md`.
+
+Site-promotion branch: `atlas/site-promotion-recovery-2026-09-17`.
+Candidate stable routes after merge/deploy:
+
+- `/resident-atlas-s6/`
+- `/world-atlas/`
+
+The existing `/resident-atlas/` route is preserved and is not silently replaced. Existing 3D assets stay GitHub-first under `media/3D_Assets/`; promoted copies must not create a second model store.
+
+Continue only from verified source state. Do not rebuild working modules from prose or treat Atlas preview evidence as Travel/Animation L5.
 
 ### Travel / World Builder lane
 
@@ -62,27 +82,33 @@ Implementation SSOT:
 `georg-doc/KFB-Travel-Globe`
 
 Current public runtime / Ground Movement Lab:
-`https://kayfabizarro.pages.dev/travel/wip/travel_globe_wsa/world-builder/?wb0=1`
+`https://kayfabizarro.pages.dev/travel/wip/travel_globe_wsa/world-builder/?wb0=1&ground=8`
 
 GitHub Pages fallback:
-`https://georg-doc.github.io/kayfabizarro/travel/wip/travel_globe_wsa/world-builder/?wb0=1`
+`https://georg-doc.github.io/kayfabizarro/travel/wip/travel_globe_wsa/world-builder/?wb0=1&ground=8`
 
 Parallel authoring-UX POC:
 `https://kayfabizarro.pages.dev/travel/wip/travel_globe_wsa/world/`
 
 Current runtime evidence, 2026-09-17:
-- WB0 Ground owns spherical movement in Ground mode; Flight remains Travel-owned.
-- Controls: W/S move, A/D turn, Q/E strafe, Shift run, Space jump.
-- Movement comparison is implemented for ActionFigure / Rig_Medium, Monstrosity / Rig_Large and Legacy Orc Warband compatibility with explicit animated-Legacy fallback.
-- Travel PR #17 merged; static CI 28/28 PASS + build PASS + verify PASS.
-- Public movement-lab mirror commit `e0c250147ee67adafbf00a73c91e2d916ee8961e`; GitHub Pages deployment completed successfully.
-- **Human browser/gameplay acceptance remains pending.** Static PASS does not promote animation quality, movement feel or Legacy direct binding.
+- WB0 Ground remains the Ground movement owner; Flight remains Travel-owned.
+- Free Ground exploration has positive human evidence; the terrain/card support portion has a scoped HUMAN PASS only.
+- Travel PR #24 merged at `43b8b35581d6d8ffa7d5f85f5e1493a73f0be5ae`; post-merge evidence checkpoint `3cd0c938394f67160736b8af445ef10307bb16dd`.
+- Static result recorded for that slice: 61/61 tests PASS, build PASS, verify PASS, syntax/JSON PASS, 108 frozen B0 runtime files unchanged; build `travel-b0-71749a52118a9b0f`.
+- Remaining human gate: Fernando forward, Mech W→Space while holding W→LAND, Monstrosity Walk/Shift+Run cadence, LMB-drag orbit with click preservation, RMB look, and no regression to card support.
+- A successful static build does not grant blanket A0 L5 or animation quality acceptance.
 
 Parallel `/world/` rule:
 - `/world/` is POC/design donor only: object composer, route lab, resident prefab lab and seed/scatter experiments may move faster there.
 - `/world/` does not own terrain, movement, Registry truth, animation compatibility or productive persistence.
 - Candidate output flows `/world/ POC → Candidate World Recipe → Travel validation → optional promotion`.
 - Always verify current Travel `main`; the `/world/` chat may have advanced the repo beyond the last Movement Lab merge without replacing it.
+
+Atlas / World authoring update:
+- Resident S6 and Environment/Kit Lab exports are SOURCE RECEIVED / REVIEWED INTAKE.
+- Hex grammar and Dungeon S13.2 are concrete authoring/geometry donors; they are not yet Travel terrain or interior-runtime owners.
+- World/Travel next Atlas step after site QA is one narrow begehbarer Ort: one resident ensemble + one environment/landmark/path composition, with visible-hex / terrain-seated / no-visible-base variants compared in the real Travel Ground world.
+- Dungeon integration remains later: Recipe import, actor wall collision, floor/level locomotion and Travel consumer evidence are not implemented in the donor.
 
 Birthday/Fable history:
 Rejected Birthday/Fable visual directions remain archived history only. They do not define the current World Builder path.
@@ -149,4 +175,4 @@ DocCheck visual convention:
 
 ## Recovery sentence
 
-> Start from the current project SSOT, not chat history. For Travel/World work, open the Hub Travel recovery page, verify current `KFB-Travel-Globe/main`, then choose the productive `/world-builder/` runtime lane or the candidate-only `/world/` authoring lane without mixing their ownership. For Stunt Race, open the Hub Stunt recovery page or read `RECOVERY.md` → `WIP_STATUS.json` → `A0_CONSUMER_PROOF_RETURN_2026-09-17.md`; the current gate is human freeplay of the A0 Flow Loop before T3 is promoted. For SimBlood, open the Hub recovery page or read `START_HERE.md` → `RECOVERY.md` → `MASTERPLAN.md` → `WIP_STATUS.json` → latest Living Addendum → `RETURN.md`; current P0 is exact WBC review followed by normal RBC/platelet proof, with the Frank management viewer refreshed only from those source documents.
+> Start from the current project SSOT, not chat history. For Travel/World work, open the Hub Travel recovery page, verify current `KFB-Travel-Globe/main`, run the `ground=8` human gate, and keep Atlas preview/authoring separate from Travel runtime ownership. Atlas source is now present under the ToolBox inbox; candidate routes are `/resident-atlas-s6/` and `/world-atlas/` after promotion. For Stunt Race, open the Hub Stunt recovery page or read `RECOVERY.md` → `WIP_STATUS.json` → `A0_CONSUMER_PROOF_RETURN_2026-09-17.md`; the current gate is human freeplay of the A0 Flow Loop before T3 is promoted. For SimBlood, open the Hub recovery page or read `START_HERE.md` → `RECOVERY.md` → `MASTERPLAN.md` → `WIP_STATUS.json` → latest Living Addendum → `RETURN.md`; current P0 is exact WBC review followed by normal RBC/platelet proof, with the Frank management viewer refreshed only from those source documents.
