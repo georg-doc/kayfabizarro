@@ -2,6 +2,27 @@
 
 **Status:** CURRENT EXECUTION BOARD · GitHub/project SSOTs override this summary.
 
+## WSA continuation · personal reviews versus production work
+
+Georg continues the interrupted WSA lead chat in the former Race Environment chat. Current receiving checkpoint:
+
+`georg-doc/KFB-Stunt-Car-Race/_handover/WSA_LEAD_RECOVERY_2026-09-18.md`
+
+The Hub's personal review list is not a claim that the following donors are integrated or accepted. It is separate from the production sequence below.
+
+| Review | Current evidence / boundary | Next human or QA action |
+|---|---|---|
+| Race Audio A1 · 18.09. | Standalone implementation/tests reported in the Audio chat; source and original test reports not independently available in this recovery; not promoted to GitHub | Georg listens first: drive demo → music solo / seeds → contact / boost / impacts → vehicle profiles; accept / tune / reject |
+| Race Environment A/B | Source and public deployment present; 84/84 combined checks, 28/28 live-URL checks; simulated mobile touch, not physical-device QA | Georg compares A/B at the same seed; visual acceptance PENDING |
+| SimBlood physician asset review | Existing Hub review pointer; details remain owned by `georg-doc/doccheck/sim-blood` | Current morphology shortlist review; not approved by this recovery |
+| Travel Ground 8 | Existing scoped ground evidence; remaining checks below | Complete the named human gate without restarting all movement work |
+| Resident / World Atlas | Candidate source promotion present | Browser/product QA; not automatic Travel/Animation L5 |
+
+Environment review:
+`https://kayfabizarro.pages.dev/kfb-hub/stunt-race/track-environment-lab/?world=facility&seed=KFB-1842`
+
+Audio has no verified live URL in this recovery. Securing an unchanged received source is candidate intake, not sonic acceptance or integration. Do not rebuild Audio A1 from the last chat summary. v0.8 remains accepted; v0.9 remains rejected; v0.10 topology blockout remains a separate prepared Track-lane task, not a newly implemented candidate.
+
 ## P0 · Travel Ground gate
 
 Use:
@@ -97,7 +118,7 @@ Owner boundaries stay separate.
 
 Donor:
 
-`KayKit_Dungeon_Generator_S13_2.html` + `dungeon-grid.js` + `dungeon-light.js`.
+`KayKit_Dungeon_Generator_S13_2.html` + `dungeon-grid.js`.
 
 First proof only:
 
