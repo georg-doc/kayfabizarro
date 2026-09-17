@@ -1,6 +1,6 @@
 {
   "schema": "kfb.chat-registry/0.1",
-  "updated": "2026-09-14",
+  "updated": "2026-09-17",
   "owner": "Georg / KFB",
   "router": "skills/chat/START_HERE.md",
   "livingMasterplan": "skills/chat/LIVING_MASTERPLAN.md",
@@ -156,6 +156,20 @@
         "DocCheck_Interactive_Microlearning_Living_Doc_v0.9.md"
       ],
       "note": "Intake/source package is present and the intended target path exists as a placeholder, but the implementation SSOT/runtime has not yet been promoted and pinned. Migrate the package to the private production inbox after that repository is provisioned."
+    },
+    {
+      "id": "sim-blood",
+      "kind": "project",
+      "status": "CURRENT_PROJECT_SSOT",
+      "repository": "georg-doc/doccheck",
+      "path": "sim-blood/",
+      "startHere": "https://github.com/georg-doc/doccheck/blob/main/sim-blood/START_HERE.md",
+      "recovery": "https://github.com/georg-doc/doccheck/blob/main/sim-blood/RECOVERY.md",
+      "wipStatus": "https://github.com/georg-doc/doccheck/blob/main/sim-blood/WIP_STATUS.json",
+      "living": "https://github.com/georg-doc/doccheck/blob/main/sim-blood/LIVING_SIMBLOOD.md",
+      "accent": "#cc0033",
+      "activeWips": ["field-composer-poc", "reference-assets", "cytodiff-audit", "telehematology-use-cases"],
+      "note": "DocCheck SimBlood SSOT. Typed cell pools + deterministic Field Composer + Microscope Engine + Workflow Engine. Documentation/recovery updates are maintained directly on main unless a risky implementation slice explicitly needs a branch."
     },
     {
       "id": "animation-lab",
