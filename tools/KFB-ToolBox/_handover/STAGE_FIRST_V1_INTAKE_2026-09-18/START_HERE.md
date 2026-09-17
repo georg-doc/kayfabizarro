@@ -38,6 +38,20 @@ Export facts from its own manifest:
 - export reports a successful cold start from the export tree;
 - export status is deliberately `EXPORT_PARTIAL`, not a release.
 
+### Additional binary mirror in the owner repo
+
+A later manual upload now also exists at:
+
+`tools/KFB-ToolBox/_inbox/KFB ToolBox v1-1.zip`
+
+Git blob: `5943ee108609a7916bf231fec59848ef4c58f965`  
+Size: `1,801,302` bytes  
+Upload commit: `eabc87255ee3da6283f9d438390454d70e9d2e55`
+
+Classification: `RECEIVED BINARY MIRROR / CONTENT IDENTITY NOT YET VERIFIED`.
+
+The GitHub connector cannot inspect ZIP contents as UTF-8 source. Do **not** infer semantic recency from the filename suffix `v1-1` and do not let this binary upload replace the readable Stage-First export until file identity/parity is actually established.
+
 This intake does not convert exporter-reported tests into Georg acceptance.
 
 ---
