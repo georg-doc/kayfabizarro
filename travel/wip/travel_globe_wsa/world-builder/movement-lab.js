@@ -1,6 +1,8 @@
 import * as THREE from 'three';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 import { buildFrizzleBeeMovementDonor, F1_DONOR_REV } from './mech-bee-profile.js';
+import { buildRawFlamingoMovementRuntime, RAW_FLAMINGO_PATH } from './raw-mech-profile.js';
+import { buildLegacyWarbandMovementRuntime } from './legacy-warband-profile.js';
 
 // Character/animation comparison lab for WB0 Ground.
 // Ground remains the sole world-position writer. This module owns only visible character selection,
@@ -24,13 +26,18 @@ const PROFILES = Object.freeze({
     animationSets: ['General', 'MovementBasic', 'MovementAdvanced'],
   },
   legacyWarband: {
-    id: 'legacyWarband', label: 'Legacy · Orc Warband', rig: 'Legacy_1.2',
+    id: 'legacyWarband', label: 'Legacy · Orc Warband', rig: 'Legacy_1.2', kind: 'legacyWarband',
     body: 'media/3D_Assets/KayKit Legacy/Orc Warband - legacy/characters/gltf/character_orcA.gltf',
     animation: 'media/3D_Assets/KayKit Legacy/KayKit Character Animations 1.2 - legacy/Animations/gltf/KayKit_AnimatedCharacter_v1.2.glb',
   },
   frizzleBeeMech: {
-    id: 'frizzleBeeMech', label: 'FrizzleBob · Bee Mech', rig: 'Quaternius_Bee_Mech_F1S5', kind: 'mech',
+    id: 'frizzleBeeMech', label: 'FrizzleBob · Bee Mech', rig: 'Quaternius_Bee_Mech_F1S5', kind: 'mechComposite',
     donor: 'KFB-Stunt-Car-Race · Frankenstein F1-S5 · frizzle_mech_bee',
+  },
+  flamingoMech: {
+    id: 'flamingoMech', label: 'Fernando · Raw Mech', rig: 'Quaternius_Flamingo_Raw', kind: 'rawMech',
+    body: RAW_FLAMINGO_PATH,
+    donor: 'Quaternius Space Kit · raw control model',
   },
 });
 
@@ -218,13 +225,14 @@ function createUi() {
     <div class="wb0-move-title">GROUND MOVEMENT LAB</div>
     <div class="wb0-move-buttons">
       <button data-profile="actionFigure">ActionFigure</button><button data-profile="monstrosity">Monstrosity</button>
-      <button data-profile="legacyWarband">Legacy Warband</button><button data-profile="frizzleBeeMech">FrizzleBee Mech</button>
+      <button data-profile="legacyWarband">Legacy Orc</button><button data-profile="frizzleBeeMech">FrizzleBee Mech</button>
+      <button data-profile="flamingoMech">Fernando Raw Mech</button>
     </div>
     <div class="wb0-move-controls">W/S move · A/D turn · Q/E strafe · Shift run · Space jump · RMB look · Wheel zoom</div>
     <div class="wb0-move-row"><button data-auto class="active">AUTO</button><select data-clip><option>loading clips…</option></select><button data-replay>Replay</button></div>
     <div class="wb0-move-status" data-move-status>Preparing character lab…</div>`;
   const style = document.createElement('style');
-  style.textContent = `.wb0-movement-lab{position:absolute;left:14px;top:58px;z-index:125;width:min(455px,calc(100vw - 28px));pointer-events:auto;background:rgba(10,16,28,.88);backdrop-filter:blur(9px);border:1px solid rgba(244,234,215,.22);border-radius:9px;padding:9px;color:#f4ead7;box-shadow:0 8px 28px rgba(0,0,0,.24);font-family:"Baloo 2",system-ui,sans-serif}.wb0-move-title{font:700 10px/1.2 "Special Elite",monospace;letter-spacing:.08em;color:#d8b25b;margin-bottom:6px}.wb0-move-buttons,.wb0-move-row{display:flex;gap:5px;flex-wrap:wrap}.wb0-movement-lab button,.wb0-movement-lab select{border:1px solid rgba(244,234,215,.28);background:#263448;color:#f4ead7;border-radius:5px;padding:5px 7px;font:700 10px/1 "Baloo 2",sans-serif}.wb0-movement-lab button{cursor:pointer}.wb0-movement-lab button.active{background:#c76b42;border-color:#e6a47e}.wb0-move-controls{font:10px/1.35 monospace;opacity:.78;margin:6px 0}.wb0-move-row select{flex:1 1 170px;min-width:0}.wb0-move-status{font:10px/1.35 monospace;opacity:.88;margin-top:6px;white-space:pre-wrap}@media(max-width:760px){.wb0-movement-lab{top:58px;width:calc(100% - 28px)}}`;
+  style.textContent = `.wb0-movement-lab{position:absolute;left:14px;top:58px;z-index:125;width:min(520px,calc(100vw - 28px));pointer-events:auto;background:rgba(10,16,28,.88);backdrop-filter:blur(9px);border:1px solid rgba(244,234,215,.22);border-radius:9px;padding:9px;color:#f4ead7;box-shadow:0 8px 28px rgba(0,0,0,.24);font-family:"Baloo 2",system-ui,sans-serif}.wb0-move-title{font:700 10px/1.2 "Special Elite",monospace;letter-spacing:.08em;color:#d8b25b;margin-bottom:6px}.wb0-move-buttons,.wb0-move-row{display:flex;gap:5px;flex-wrap:wrap}.wb0-movement-lab button,.wb0-movement-lab select{border:1px solid rgba(244,234,215,.28);background:#263448;color:#f4ead7;border-radius:5px;padding:5px 7px;font:700 10px/1 "Baloo 2",sans-serif}.wb0-movement-lab button{cursor:pointer}.wb0-movement-lab button.active{background:#c76b42;border-color:#e6a47e}.wb0-move-controls{font:10px/1.35 monospace;opacity:.78;margin:6px 0}.wb0-move-row select{flex:1 1 170px;min-width:0}.wb0-move-status{font:10px/1.35 monospace;opacity:.88;margin-top:6px;white-space:pre-wrap}@media(max-width:760px){.wb0-movement-lab{top:58px;width:calc(100% - 28px)}}`;
   document.head.appendChild(style); host.appendChild(wrap);
   return { wrap, profileButtons: [...wrap.querySelectorAll('[data-profile]')], auto: wrap.querySelector('[data-auto]'), clip: wrap.querySelector('[data-clip]'), replay: wrap.querySelector('[data-replay]'), status: wrap.querySelector('[data-move-status]') };
 }
@@ -258,20 +266,9 @@ async function main() {
   }
 
   async function loadLegacy(def) {
-    const warbandGltf = await loader.loadAsync(raw(def.body)), warband = warbandGltf.scene;
-    warband.name = 'Legacy Orc A · direct compatibility probe';
-    const legacy = await loader.loadAsync(raw(def.animation)), warbandMeasure = normalizeHeight(warband, bodyHeight), direct = [];
-    for (const clip of legacy.animations || []) { const entry = makeEntry(warband, clip, 'Legacy1.2', warbandMeasure.worldScale); if (entry) direct.push(entry); }
-    const directAuto = autoMap(direct), directUsable = direct.length > 0 && directAuto.walk && directAuto.run && directAuto.jump;
-    if (directUsable) {
-      worldLambert(warband);
-      return { def, model: warband, actionRoot: warband, mixer: new THREE.AnimationMixer(warband), entries: direct, auto: directAuto, measure: warbandMeasure, fallback: false, speedMul: 1, locomotionHeight: bodyHeight, status: `Warband direct binding PASS · ${direct.length}/${(legacy.animations || []).length} compatible clips` };
-    }
-    const donorModel = legacy.scene; donorModel.name = 'Legacy 1.2 · embedded animated fallback'; worldLambert(donorModel);
-    const measure = normalizeHeight(donorModel, bodyHeight), entries = [];
-    for (const clip of legacy.animations || []) { const entry = makeEntry(donorModel, clip, 'Legacy1.2', measure.worldScale); if (entry) entries.push(entry); }
-    if (!entries.length) throw new Error('Legacy 1.2 animated donor contains no bindable clips');
-    return { def, model: donorModel, actionRoot: donorModel, mixer: new THREE.AnimationMixer(donorModel), entries, auto: autoMap(entries), measure, fallback: true, speedMul: 1, locomotionHeight: bodyHeight, status: `Warband direct binding ${direct.length}/${(legacy.animations || []).length} → animated Legacy donor fallback · ${entries.length} clips` };
+    return buildLegacyWarbandMovementRuntime({
+      THREE, loader, raw, def, bodyHeight, worldLambert, normalizeHeight, makeEntry, autoMap,
+    });
   }
 
   async function loadMech(def) {
@@ -282,14 +279,24 @@ async function main() {
     const map = autoMap(entries);
     if (!map.idle || !map.walk || !map.run || !map.jump) throw new Error(`FrizzleBob Bee Mech missing locomotion clips: ${['idle','walk','run','jump'].filter((k) => !map[k]).join(', ')}`);
     const geometricSpeedMul = donor.targetHeight / bodyHeight;
-    return { def, model: donor.model, actionRoot: donor.animationRoot, mixer: new THREE.AnimationMixer(donor.animationRoot), entries, auto: map, measure: { targetHeight: donor.targetHeight, worldHeight: donor.targetHeight, worldScale: donor.animationScale }, fallback: false, speedMul: Math.max(donor.speedMul, geometricSpeedMul), locomotionHeight: donor.targetHeight, donorReport: donor.report, status: `F1-S5 donor · ${entries.length} embedded Bee clips · move ${Math.max(donor.speedMul, geometricSpeedMul).toFixed(2)}× · shell/driver/cockpit composition still under browser review` };
+    return { def, model: donor.model, actionRoot: donor.animationRoot, mixer: new THREE.AnimationMixer(donor.animationRoot), entries, auto: map, measure: { targetHeight: donor.targetHeight, worldHeight: donor.targetHeight, worldScale: donor.animationScale }, fallback: false, speedMul: Math.max(donor.speedMul, geometricSpeedMul), locomotionHeight: donor.targetHeight, donorReport: donor.report, status: `F1-S5 donor · ${entries.length} embedded Bee clips · move ${Math.max(donor.speedMul, geometricSpeedMul).toFixed(2)}× · composition still browser-rejected` };
+  }
+
+  async function loadRawMech(def) {
+    return buildRawFlamingoMovementRuntime({
+      THREE, loader, raw, def, bodyHeight, worldLambert, normalizeHeight, makeEntry, autoMap,
+    });
   }
 
   async function loadProfile(id) {
     if (cache.has(id)) return cache.get(id);
     const def = PROFILES[id]; if (!def) throw new Error(`Unknown movement profile: ${id}`);
     ui.status.textContent = `Loading ${def.label}…`;
-    const runtime = def.kind === 'mech' ? await loadMech(def) : def.rig === 'Legacy_1.2' ? await loadLegacy(def) : await loadModern(def);
+    let runtime = null;
+    if (def.kind === 'mechComposite') runtime = await loadMech(def);
+    else if (def.kind === 'rawMech') runtime = await loadRawMech(def);
+    else if (def.kind === 'legacyWarband') runtime = await loadLegacy(def);
+    else runtime = await loadModern(def);
     cache.set(id, runtime); return runtime;
   }
 
@@ -303,7 +310,8 @@ async function main() {
     currentAction = null; currentKey = null;
   }
   function playEntry(entry, { oneShot = false, force = false } = {}) {
-    if (!active || !entry || (!force && currentKey === entry.key)) return;
+    if (!active || !entry) return;
+    if (!force && currentKey === entry.key && currentAction && currentAction.isRunning()) return;
     const previous = currentAction, action = active.mixer.clipAction(entry.clip, active.actionRoot || active.model);
     action.enabled = true; action.reset(); action.setEffectiveTimeScale(1); action.clampWhenFinished = !!oneShot;
     action.setLoop(oneShot ? THREE.LoopOnce : THREE.LoopRepeat, oneShot ? 1 : Infinity); action.fadeIn(0.10).play();
@@ -326,7 +334,7 @@ async function main() {
     if (!entry || !auto) return 1;
     if (!state.onGround) {
       const p = wb0.ground.params, airTime = p.gravity > 1e-8 ? (2 * p.jumpSpeed / p.gravity) : entry.clip.duration;
-      return THREE.MathUtils.clamp(entry.clip.duration / Math.max(0.1, airTime), 0.6, 1.8);
+      return THREE.MathUtils.clamp(entry.clip.duration / Math.max(0.1, airTime), 0.20, 3.0);
     }
     if (!state.moving) return 1;
     const strideUnit = active?.locomotionHeight || bodyHeight;
@@ -334,7 +342,7 @@ async function main() {
     const cycleDistance = entry.rootTravelWorld > strideUnit * 0.08 ? entry.rootTravelWorld : fallbackCycleDistance;
     const measuredCycleDistance = entry.footCycleWorld > strideUnit * 0.08 ? entry.footCycleWorld : cycleDistance;
     const sourceWorldSpeed = measuredCycleDistance / Math.max(0.05, entry.clip.duration);
-    return THREE.MathUtils.clamp(state.speed / Math.max(strideUnit * 0.05, sourceWorldSpeed), 0.42, 2.6);
+    return THREE.MathUtils.clamp(state.speed / Math.max(strideUnit * 0.05, sourceWorldSpeed), 0.35, 3.2);
   }
 
   function updatePresentation(dt, state) {
@@ -362,7 +370,11 @@ async function main() {
         if (!wasOnGround) {
           const land = active.auto.jumpLand;
           if (land) {
-            jumpPhase = 'LAND'; landingUntil = now + Math.min(0.55, Math.max(0.12, land.clip.duration));
+            jumpPhase = 'LAND';
+            const landWindow = state.moving
+              ? Math.min(0.16, Math.max(0.08, land.clip.duration * 0.30))
+              : Math.min(0.42, Math.max(0.12, land.clip.duration));
+            landingUntil = now + landWindow;
             entry = land; playEntry(land, { oneShot: true, force: true }); cadenceScale = 1;
           } else { landingUntil = 0; jumpPhase = 'GROUND'; }
         }
@@ -379,8 +391,10 @@ async function main() {
     if (activeEntry?.footCycleWorld > strideUnit * 0.08) stride = `feet ${(activeEntry.footCycleWorld / strideUnit).toFixed(2)} body`;
     else if (activeEntry?.rootTravelWorld > strideUnit * 0.08) stride = `root ${(activeEntry.rootTravelWorld / strideUnit).toFixed(2)} body`;
     const speedTag = active.speedMul && Math.abs(active.speedMul - 1) > 0.01 ? ` · move ${active.speedMul.toFixed(2)}×` : '';
-    const legacyNote = active.fallback ? '\nLEGACY: Warband mesh was not directly rig-compatible; showing the actual animated legacy donor.' : '';
-    const jumpNote = !state.onGround && !(active.auto.jumpStart && active.auto.jumpAir) ? ' · full-jump donor clip' : '';
+    const legacyNote = active.legacyVisibleOrc
+      ? `\nLEGACY: Orc A remains visible · ${active.fallback ? 'some clips use bounded donor-timing proxy' : 'semantic donor retarget'}`
+      : '';
+    const jumpNote = !state.onGround && !(active.auto.jumpStart && active.auto.jumpAir) ? ' · full-jump synced to airtime' : '';
     ui.status.textContent = `${active.def.label}\n${active.status}\nstate ${jumpPhase === 'GROUND' ? (state.moving ? (state.running ? 'RUN' : 'WALK') : 'IDLE') : jumpPhase} · clip ${activeEntry ? activeEntry.name : '—'} · cadence ${cadenceScale.toFixed(2)}× · ${stride}${speedTag}${jumpNote}${legacyNote}`;
   }
 
@@ -410,6 +424,7 @@ async function main() {
     report() {
       return active ? {
         profile: active.def.id, rig: active.def.rig, clips: active.entries.length, fallback: active.fallback,
+        legacyVisibleOrc: !!active.legacyVisibleOrc,
         cadenceScale, speedMul: active.speedMul || 1, jumpPhase, donorReport: active.donorReport || null,
         auto: Object.fromEntries(Object.entries(active.auto).map(([k, v]) => [k, v && v.name])),
         rootTravelWorld: Object.fromEntries(Object.entries(active.auto).map(([k, v]) => [k, v && v.rootTravelWorld || 0])),
