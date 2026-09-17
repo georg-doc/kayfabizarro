@@ -1,4 +1,6 @@
-# KFB CRISIS CHECKPOINT · 2026-09-16
+# SUPERSEDED · KFB CRISIS CHECKPOINT · 2026-09-16
+
+> **Archived history.** Current recovery: [CURRENT_LEAD_CHECKPOINT_2026-09-18.md](CURRENT_LEAD_CHECKPOINT_2026-09-18.md). Georg's 2026-09-18 decision supersedes the Birthday sections below: the **entire Birthday execution slice is FAIL / OUTDATED / ARCHIVED HISTORY**. Preserve the material only for provenance and reusable donor mechanisms.
 
 **Status:** CURRENT PROJECT CHECKPOINT · no new runtime implementation · no owner replacement.
 
