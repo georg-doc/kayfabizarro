@@ -142,6 +142,17 @@
       "consumer": "skills/chat/consumers/combat-web-chat.md"
     },
     {
+      "id": "stunt-car-race",
+      "kind": "project",
+      "status": "CURRENT_PROJECT_SSOT",
+      "repository": "georg-doc/KFB-Stunt-Car-Race",
+      "recovery": "https://github.com/georg-doc/KFB-Stunt-Car-Race/blob/main/RECOVERY.md",
+      "livingTrackLab": "https://github.com/georg-doc/KFB-Stunt-Car-Race/blob/main/ChatGPT_web/track-lab/LIVING_MASTERPLAN.md",
+      "wipStatus": "https://github.com/georg-doc/KFB-Stunt-Car-Race/blob/main/ChatGPT_web/track-lab/WIP_STATUS.json",
+      "experimentalLane": "ChatGPT_web/track-lab/",
+      "note": "Project SSOT. On 2026-09-17 Georg accepted the true-WebGL Track Lab direction after manual v0.5 freeplay. The Track Lab is an experimental accepted development lane, not yet a replacement for the production race runtime or its movement/camera/progress owners."
+    },
+    {
       "id": "wissens-pilli",
       "kind": "project",
       "status": "UNVERIFIED",
