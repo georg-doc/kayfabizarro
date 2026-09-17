@@ -20,6 +20,9 @@ Rejected Fable visual directions remain history only. Resume from real Travel + 
 
 ### DocCheck · SimBlood lane
 
+Human recovery page:
+`https://kayfabizarro.pages.dev/kfb-hub/sim-blood.html`
+
 Current project SSOT:
 `https://github.com/georg-doc/doccheck/tree/main/sim-blood`
 
@@ -61,4 +64,4 @@ DocCheck visual convention:
 
 ## Recovery sentence
 
-> Start from the current project SSOT, not chat history. For SimBlood, read `START_HERE.md` → `RECOVERY.md` → `WIP_STATUS.json` → `RETURN.md`; then continue only the named active WIP and leave Living/Change/Return/WIP state resumable on `main`.
+> Start from the current project SSOT, not chat history. For SimBlood, open the Hub recovery page or read `START_HERE.md` → `RECOVERY.md` → `WIP_STATUS.json` → `RETURN.md`; then continue only the named active WIP and leave Living/Change/Return/WIP state resumable on `main`.
