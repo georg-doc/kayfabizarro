@@ -10,7 +10,7 @@ Human-facing navigator for the wider KFB production scope. It is deliberately **
 - Asset Librarian and ToolBox links;
 - KFB Town current start/session/living documents;
 - Travel, Combat and Stunt implementation repositories and public previews where available;
-- DocCheck project recovery through the central Registry/current lead checkpoint, including SimBlood;
+- DocCheck project recovery through the central Registry/current lead checkpoint, including SimBlood and Doc Animation;
 - central production skills and protocols;
 - search and simple category filters;
 - a small **Next actions** board for Georg's current working list.
@@ -62,6 +62,28 @@ Current WIPs:
 
 DocCheck project surfaces use `#cc0033` as a restrained accent color. This is a UI convention, not a medical-image tint.
 
+### DocCheck · Doc Animation
+
+Human recovery page:
+`https://kayfabizarro.pages.dev/kfb-hub/doc-animation.html`
+
+Current SSOT:
+`https://github.com/georg-doc/doccheck/tree/main/doc-animation`
+
+Current first module:
+`https://github.com/georg-doc/doccheck/tree/main/doc-animation/eumel`
+
+Clean vector sheet:
+`https://github.com/georg-doc/doccheck/blob/main/doc-animation/eumel/assets/EUMEL_PARTS_CLEAN_VECTOR.svg`
+
+Rig-guide sheet:
+`https://github.com/georg-doc/doccheck/blob/main/doc-animation/eumel/assets/EUMEL_PARTS_RIG_GUIDE_VECTOR.svg`
+
+Measurements / evidence boundary:
+`https://github.com/georg-doc/doccheck/blob/main/doc-animation/eumel/data/measurements.json`
+
+The Hub does not become animation truth. Source geometry, derived hidden completion, rig constraints and the additive changelog remain under the DocCheck repository.
+
 ## Next actions contract
 
 The To-do board is a personal convenience layer, not project truth. Task definitions live inside the static page; checkmarks are stored only in the current browser via `localStorage` and never modify GitHub, project status, owner contracts or consumer runtimes.
@@ -79,4 +101,4 @@ The To-do board is a personal convenience layer, not project truth. Task definit
 
 The page is intentionally dependency-free and self-contained in `index.html`. Update links, labels and current task definitions only when they remain useful for daily work. Avoid turning it into a second registry, issue tracker or project dashboard with independently maintained truth.
 
-For project-specific recovery pages such as Travel/World Builder and SimBlood, the Hub should route to the project recovery/current-state files rather than duplicate implementation truth.
+For project-specific recovery pages such as Travel/World Builder, SimBlood and Doc Animation, the Hub should route to the project recovery/current-state files rather than duplicate implementation truth.
