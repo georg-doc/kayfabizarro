@@ -1,5 +1,7 @@
 # KFB ToolBox v1 · Start here
 
+> **CURRENT OVERRIDE · 2026-09-18:** Lies zuerst [`_handover/STAGE_FIRST_V1_INTAKE_2026-09-18/START_HERE.md`](_handover/STAGE_FIRST_V1_INTAKE_2026-09-18/START_HERE.md). Der vollständige Stage-First-v1-Export ist eingetroffen und als Intake geprüft. Die ältere A/B-/Birthday-Routinglogik unten bleibt Herkunft/History, nicht aktueller Ausführungsauftrag. **Birthday 2026 = FAIL / OUTDATED / ARCHIVED HISTORY.**
+
 Status: DECISION / EXECUTION BRIEF · 2026-09-14
 Koordination: Georg. ToolBox-Arbeitsbereich: `georg-doc/kayfabizarro/tools/KFB-ToolBox/`.
 
@@ -22,6 +24,10 @@ Das Paket enthält drei Standalone-HTMLs, fünf Dokumente und sechs Config-JSONs
 ## Status nicht vermischen
 
 Studio v17 und Rigging v1 sind vom Autor als aktive Werkzeuge geliefert; Lab v2 ist WIP. Eine aktuelle ToolBox-Site, Cross-Tool-Roundtrip, Lab-Graft-Default und finales FrizzleBob-Profil sind hier noch nicht abgenommen. Der zentrale Registry-Status wird erst nach expliziter, belegter Promotion angepasst.
+
+## CURRENT NEXT · Stage-First v1
+
+Aktueller Produktkern: `Actor · Face · Pose · Motion · Voice · Stage` mit dominanter Stage und einer persistenten Navigationsebene. Nächster zusammenhängender Schritt ist **Source-Promotion → GitHub-Asset-Pins → Browser-Candidate → Actor→Face→Pose→Motion→Voice→Stage→Save/Reload/Import Gate**. Kein Redesign und keine Birthday-Reaktivierung.
 
 ## Sofort weiter, nicht neu planen
 

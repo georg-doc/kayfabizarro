@@ -15,7 +15,7 @@ Do not ask Georg to reconstruct project history from memory when GitHub contains
 
 1. Read `skills/chat/START_HERE.md`.
 2. Read `skills/chat/REGISTRY.json`.
-3. If recovering the current cross-project lead conversation, read `skills/chat/recovery/CURRENT_LEAD_CHECKPOINT_2026-09-17.md`.
+3. If recovering the current cross-project lead conversation, read `skills/chat/recovery/CURRENT_LEAD_CHECKPOINT_2026-09-18.md`.
 4. Read `skills/chat/LIVING_MASTERPLAN.md` only for cross-project sequencing and current lead decisions.
 5. Open the named project or tool node.
 6. Open the actual implementation SSOT and verify current default-branch HEAD, current open PRs and branches relevant to the task.
@@ -46,7 +46,7 @@ Do not promote one to another. Inbox packages are never implementation truth mer
 
 ## Current lead quick recovery
 
-- Bookmark: `skills/chat/recovery/CURRENT_LEAD_CHECKPOINT_2026-09-17.md`.
+- Bookmark: `skills/chat/recovery/CURRENT_LEAD_CHECKPOINT_2026-09-18.md`.
 - It points to active project/tool lanes without replacing any project SSOT.
 - Always verify current repo HEAD after opening it; the dated checkpoint is a cursor, not a frozen implementation truth.
 

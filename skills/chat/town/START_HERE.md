@@ -1,3 +1,5 @@
+> **2026-09-18 CURRENT OVERRIDE:** The Birthday 2026 execution slice is **FAIL / OUTDATED / ARCHIVED HISTORY**. Birthday selector/startscreen/Travel handoff work below is not current Town execution. Generic donors such as Pet-Select provenance, Makerspace cinema, archetype notes or imported audio may be reused only after current-owner verification. Town's durable non-Birthday design references remain available.
+
 # KFB Town · Start here
 
 Status: CURRENT REFERENCE / META-NARRATIVE DESIGN

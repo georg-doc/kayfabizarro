@@ -4,7 +4,7 @@ This dated pointer is archived history and is no longer CURRENT.
 
 Current pointer:
 
-[**Open current recovery checkpoint · 17.09.2026**](CURRENT_LEAD_CHECKPOINT_2026-09-17.md)
+[**Open current recovery checkpoint · 17.09.2026**](CURRENT_LEAD_CHECKPOINT_2026-09-18.md)
 
 DocCheck · SimBlood direct recovery:
 

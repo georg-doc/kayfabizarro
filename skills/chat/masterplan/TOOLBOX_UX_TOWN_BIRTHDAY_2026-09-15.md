@@ -1,3 +1,5 @@
+> **2026-09-18 STATUS OVERRIDE:** Birthday-specific execution in this addendum is **FAIL / OUTDATED / ARCHIVED HISTORY**. Do not use sections 3 or Birthday execution language as current scope. ToolBox UX observations and Makerspace/cinema ideas may remain reference/donor material only after current-owner verification. Current ToolBox brief: `tools/KFB-ToolBox/_handover/STAGE_FIRST_V1_INTAKE_2026-09-18/START_HERE.md`.
+
 # ToolBox UX · Wiedereinstieg, Geburtstagsauftakt und Town-Kino
 
 Stand: 15.09.2026. Kommentiertes Masterplan-Addendum, kein neuer Runtime- oder Town-SSOT.

@@ -1,7 +1,9 @@
-# KFB ToolBox / Design · Birthday Startscreen · Consumer Handoff
+# ARCHIVED FAIL · KFB ToolBox / Design · Birthday Startscreen · Consumer Handoff
+
+> **Status override · 2026-09-18:** The complete Birthday execution slice is **FAIL / OUTDATED / ARCHIVED HISTORY** by Georg decision. Do not execute this handoff. Current ToolBox work starts at [Stage-First v1 Intake + Promotion](../STAGE_FIRST_V1_INTAKE_2026-09-18/START_HERE.md). Content below is retained only for provenance, measured actor/eye-source evidence and generic donor mechanisms.
 
 **Datum:** 15.09.2026  
-**Status:** CURRENT INPUT / DESIGN + TOOLBOX HANDOFF. Kein Runtime-Release, keine Travel-Implementation.  
+**Historical status at the time:** INPUT / DESIGN + TOOLBOX HANDOFF. **Current status:** ARCHIVED FAIL / not executable.  
 **Empfänger:** frischer Claude-Design-/ToolBox-Chat.  
 **Consumer:** Travel/Astra Birthday Startscreen.  
 **Grundsatz:** vorhandene Owner und Contracts bleiben unverändert.
