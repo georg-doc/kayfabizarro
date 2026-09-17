@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>KFB Kit Lab · S3 · Streckengenerator</title>
+<script type="importmap">
+{"imports":{
+ "three":"https://unpkg.com/three@0.184.0/build/three.module.js",
+ "three/addons/controls/OrbitControls.js":"https://unpkg.com/three@0.184.0/examples/jsm/controls/OrbitControls.js",
+ "three/addons/loaders/GLTFLoader.js":"https://unpkg.com/three@0.184.0/examples/jsm/loaders/GLTFLoader.js"
+}}
+</script>
+<style>
+  *{box-sizing:border-box}
+  body{margin:0;background:#12140f;color:#eceee6;font:13px/1.5 ui-sans-serif,system-ui,-apple-system,"Helvetica Neue",sans-serif}
+  a{color:#c9d67a}a:hover{color:#dde68f}
+  #app{display:grid;grid-template-columns:minmax(0,1fr) 340px;grid-template-rows:auto minmax(0,1fr);height:100vh}
+  #app.collapsed{grid-template-columns:minmax(0,1fr) 0}
+  #app.collapsed aside{display:none}
+  header{grid-column:1/-1;display:flex;align-items:center;gap:12px;padding:10px 16px;border-bottom:1px solid #2a2d22;background:#181b13;flex-wrap:wrap}
+  h1{font-size:14px;margin:0;font-weight:650}
+  .tag{font:11px/1 ui-monospace,monospace;padding:4px 7px;border:1px solid #3a3f2d;border-radius:4px;color:#c9d67a}
+  .bar{margin-left:auto;display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+  button,select,input[type=text]{font:12px/1 inherit;padding:7px 10px;background:#20241a;color:#eceee6;border:1px solid #3a3f2d;border-radius:5px}
+  button,select{cursor:pointer}
+  button:hover{background:#2a2f21}
+  button[aria-pressed="true"]{background:#6d7d2f;border-color:#95a846;color:#151709}
+  #seq{width:min(46vw,520px);font:12px/1.4 ui-monospace,monospace}
+  #stage{position:relative;min-width:0;min-height:0}
+  canvas{display:block;width:100%;height:100%}
+  #hud{position:absolute;left:12px;bottom:12px;font:11px/1.6 ui-monospace,monospace;color:#d2d8bf;background:#12140fcc;border:1px solid #3a3f2d80;padding:8px 10px;border-radius:6px;max-width:64%}
+  #closure{position:absolute;left:12px;top:12px;font:11px/1.6 ui-monospace,monospace;padding:8px 10px;border-radius:6px;border:1px solid}
+  .ok{background:#1b2412e6;border-color:#4d7a2e;color:#cfe9b4}
+  .bad{background:#2a1a12e6;border-color:#8a4f2a;color:#f0cdb4}
+  #side{position:absolute;right:12px;bottom:12px;z-index:5}
+  aside{border-left:1px solid #2a2d22;background:#15180f;overflow:auto;padding:14px}
+  aside h2{font-size:11px;letter-spacing:.09em;text-transform:uppercase;color:#8d9477;margin:18px 0 8px}
+  aside h2:first-child{margin-top:0}
+  .kv{display:flex;justify-content:space-between;gap:10px;padding:3px 0;border-bottom:1px solid #23271b;font:11px/1.5 ui-monospace,monospace}
+  .kv span:last-child{color:#e2e8cd;text-align:right}
+  .note{font-size:12px;color:#959c80}
+  table{width:100%;table-layout:fixed;border-collapse:collapse;font:11px/1.5 ui-monospace,monospace}
+  th,td{text-align:left;padding:3px 4px;border-bottom:1px solid #23271b}
+  th{color:#8d9477;font-weight:500}
+  th:first-child,td:first-child{max-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+  th:not(:first-child),td:not(:first-child){width:44px;text-align:right;color:#e2e8cd}
+  .chips{display:flex;flex-wrap:wrap;gap:5px}
+  .chip{font:11px/1 ui-monospace,monospace;padding:5px 7px;border:1px solid #3a3f2d;border-radius:4px;background:#20241a;cursor:pointer}
+  .chip:hover{background:#2f351f}
+</style>
+</head>
+<body>
+<div id="app">
+  <header>
+    <h1>KFB Kit Lab · Sprint 3</h1>
+    <span class="tag">Kenney Racing Kit · glb · CC0</span>
+    <input id="seq" type="text" spellcheck="false">
+    <button id="build">Bauen</button>
+    <div class="bar">
+      <select id="preset"></select>
+      <button id="vTop">Draufsicht</button>
+      <button id="vGrid" aria-pressed="false">Raster</button>
+      <button id="dress" aria-pressed="false">Dressing</button>
+      <button id="exp">Recipe JSON</button>
+    </div>
+  </header>
+  <div id="stage">
+    <canvas id="c"></canvas>
+    <div id="closure" class="ok">…</div>
+    <div id="hud">lade Teile…</div>
+    <button id="side">Leiste ausblenden</button>
+  </div>
+  <aside>
+    <h2>Kette · gemessen</h2>
+    <div id="facts"></div>
+    <p class="note">Jede Strecke ist eine <b>Tokenfolge</b>, keine Koordinatenliste. Der Generator setzt Position und Drehung aus der gemessenen Bounding-Box des jeweiligen Teils — Teil tauschen ändert die Strecke, nicht den Code.</p>
+    <h2>Tokens</h2>
+    <div class="chips" id="tokens"></div>
+    <p class="note">Token anklicken hängt es an die Folge an.</p>
+    <h2>Teile · Maße</h2>
+    <table><thead><tr><th>Teil</th><th>x</th><th>y</th><th>z</th></tr></thead><tbody id="sizes"></tbody></table>
+    <h2>Herkunft</h2>
+    <div class="kv"><span>repo</span><span>georg-doc/kayfabizarro</span></div>
+    <div class="kv"><span>pack</span><span>kenney_racing-kit</span></div>
+    <div class="kv"><span>lizenz</span><span>CC0 · Kenney</span></div>
+  </aside>
+</div>
+
+<script type="module">
+import * as THREE from 'three';
+import { buildScene, makeViewer, measure, measured } from './lib/kit-lab.js';
+import { chain, TOKENS, PRESETS } from './lib/track-chain.js';
+
+const hud = document.getElementById('hud');
+const V = makeViewer(document.getElementById('c'), { background: 0x8fa5b5, fov: 28, mood: 'day' });
+const f2 = (v) => (Math.abs(v - Math.round(v)) < 0.005 ? String(Math.round(v)) : v.toFixed(2));
+
+/* load every part the token table can use, once */
+const refs = [...new Set(Object.values(TOKENS).map((t) => t.a))];
+let done = 0;
+for (const ref of refs) {
+  const [pack, name] = ref.split(':');
+  try { await measure(pack, name); } catch (e) { console.warn('skip', ref, e.message); }
+  hud.textContent = `lade Teile ${++done}/${refs.length}`;
+}
+const sizes = (ref) => measured.get(ref.replace(':', '/'))?.size;
+const recOf = (ref) => measured.get(ref.replace(':', '/'));
+const MODULE = sizes('racing:roadStraight')[0];
+
+const DRESS = ['racing:barrierRed', 'racing:barrierWhite', 'racing:grandStand', 'racing:flagCheckers', 'racing:pylon', 'racing:treeLarge', 'racing:treeSmall'];
+for (const ref of DRESS) { const [p, n] = ref.split(':'); try { await measure(p, n); } catch (e) { /* optional */ } }
+
+let root = null, lastResult = null, dressed = false;
+
+function dressing(result) {
+  /* barriers + a grandstand along the outside of every straight, pylons in the corners */
+  const out = [];
+  const bw = sizes('racing:barrierRed')?.[0] || MODULE;
+  result.placements.forEach((pl, i) => {
+    const tok = TOKENS[pl.token];
+    if (!tok) return;
+    const h = pl.hdg;
+    const rx = Math.cos((h * Math.PI) / 180), rz = Math.sin((h * Math.PI) / 180);
+    if (tok.kind === 'straight') {
+      const off = MODULE * 0.62;
+      out.push({ a: i % 3 === 0 ? 'racing:barrierRed' : 'racing:barrierWhite', p: [pl.p[0] + rx * off, 0, pl.p[2] + rz * off], r: pl.r });
+      out.push({ a: i % 3 === 1 ? 'racing:barrierRed' : 'racing:barrierWhite', p: [pl.p[0] - rx * off, 0, pl.p[2] - rz * off], r: pl.r + 180 });
+      if (i % 6 === 2) out.push({ a: 'racing:grandStand', p: [pl.p[0] - rx * MODULE * 1.4, 0, pl.p[2] - rz * MODULE * 1.4], r: pl.r + 180 });
+      if (i % 5 === 0) out.push({ a: 'racing:treeSmall', p: [pl.p[0] + rx * MODULE * 1.5, 0, pl.p[2] + rz * MODULE * 1.5], r: pl.r });
+    } else {
+      out.push({ a: 'racing:pylon', p: [pl.p[0] + rx * MODULE * 0.5, 0, pl.p[2] + rz * MODULE * 0.5], r: pl.r });
+      out.push({ a: 'racing:treeLarge', p: [pl.p[0] - rx * MODULE * 1.2, 0, pl.p[2] - rz * MODULE * 1.2], r: pl.r });
+    }
+  });
+  return out;
+}
+
+async function build(seq) {
+  const tokens = seq.trim().split(/\s+/).filter(Boolean).map((t) => t.toUpperCase());
+  const result = chain(tokens, recOf, MODULE);
+  lastResult = result;
+  const list = dressed ? [...result.placements, ...dressing(result)] : result.placements;
+  const node = await buildScene(list, null, {});
+  if (root) V.scene.remove(root);
+  root = node; V.scene.add(root);
+  V.frame(root, [0.4, 0.9, 1], 1.08);
+
+  const gap = result.closure.gap, he = result.closure.headingError;
+  const closed = gap < MODULE * 0.35 && (he === 0 || he === 360);
+  const box = document.getElementById('closure');
+  box.className = closed ? 'ok' : 'bad';
+  box.textContent = closed
+    ? `Kette geschlossen · Lücke ${f2(gap)} · Richtungsfehler ${f2(he)}°`
+    : `offen · Lücke ${f2(gap)} (${f2(gap / MODULE)} Module) · Richtungsfehler ${f2(he)}°`;
+
+  const straights = result.log.filter((l) => l.len).length;
+  const corners = result.log.filter((l) => l.footprint).length;
+  document.getElementById('facts').innerHTML = [
+    ['Modul (roadStraight)', `${f2(MODULE)} × ${f2(sizes('racing:roadStraight')[2])}`],
+    ['Teile in der Kette', String(result.placements.length)],
+    ['Geraden / Kurven', `${straights} / ${corners}`],
+    ['Kurven-Footprints', [...new Set(result.log.filter((l) => l.footprint).map((l) => l.footprint + '×' + l.footprint))].join(', ') || '–'],
+    ['Streckenlänge', f2(result.log.reduce((s, l) => s + (l.len || 0), 0)) + ' Einheiten'],
+    ['Endrichtung', f2(result.end.h % 360) + '°'],
+    ['Dressing', dressed ? `${list.length - result.placements.length} Teile` : 'aus'],
+    ['Spurbreite', f2(MODULE)]
+  ].map(([k, v]) => `<div class="kv"><span>${k}</span><span>${v}</span></div>`).join('');
+
+  const rows = [...measured.values()].sort((a, b) => a.name.localeCompare(b.name));
+  document.getElementById('sizes').innerHTML = rows.map((r) =>
+    `<tr><td title="${r.pack}:${r.name}">${r.name}</td><td>${f2(r.size[0])}</td><td>${f2(r.size[1])}</td><td>${f2(r.size[2])}</td></tr>`).join('');
+  hud.textContent = `${tokens.length} Tokens · ${result.placements.length} Streckenteile · Modul ${f2(MODULE)}`;
+  if (result.log.some((l) => l.error)) hud.textContent += ' · Fehler: ' + result.log.filter((l) => l.error).map((l) => l.key).join(',');
+}
+
+const shadow = new THREE.Mesh(new THREE.PlaneGeometry(600, 600), new THREE.ShadowMaterial({ opacity: 0.26 }));
+shadow.rotation.x = -Math.PI / 2; shadow.position.y = -0.02; shadow.receiveShadow = true;
+V.scene.add(shadow);
+
+const presetSel = document.getElementById('preset');
+presetSel.replaceChildren(...Object.keys(PRESETS).map((k) => { const o = document.createElement('option'); o.value = k; o.textContent = k; return o; }));
+document.getElementById('seq').value = PRESETS['Oval'];
+presetSel.onchange = () => { document.getElementById('seq').value = PRESETS[presetSel.value]; build(PRESETS[presetSel.value]); };
+document.getElementById('build').onclick = () => build(document.getElementById('seq').value);
+document.getElementById('seq').addEventListener('keydown', (e) => { if (e.key === 'Enter') build(e.currentTarget.value); });
+document.getElementById('tokens').replaceChildren(...Object.entries(TOKENS).map(([k, t]) => {
+  const b = document.createElement('button'); b.className = 'chip'; b.textContent = k; b.title = t.label + ' · ' + t.a;
+  b.onclick = () => { const f = document.getElementById('seq'); f.value = (f.value.trim() + ' ' + k).trim(); build(f.value); };
+  return b;
+}));
+document.getElementById('vTop').onclick = (e) => {
+  const on = e.currentTarget.getAttribute('aria-pressed') !== 'true';
+  V.frame(root, on ? [0, 1, 0.0001] : [0.4, 0.9, 1], 1.08);
+  e.currentTarget.setAttribute('aria-pressed', String(on));
+};
+document.getElementById('vGrid').onclick = (e) => { V.grid.visible = !V.grid.visible; e.currentTarget.setAttribute('aria-pressed', String(V.grid.visible)); };
+document.getElementById('dress').onclick = (e) => { dressed = !dressed; e.currentTarget.setAttribute('aria-pressed', String(dressed)); build(document.getElementById('seq').value); };
+document.getElementById('side').onclick = (e) => {
+  const off = document.getElementById('app').classList.toggle('collapsed');
+  e.currentTarget.textContent = off ? 'Leiste einblenden' : 'Leiste ausblenden';
+  requestAnimationFrame(() => V.resize());
+};
+document.getElementById('exp').onclick = () => {
+  const doc = {
+    id: 'CQ-S3_KENNEY_RACING_TRACK_CHAIN',
+    sequence: document.getElementById('seq').value.trim(),
+    module: MODULE,
+    closure: lastResult?.closure,
+    provenance: { repo: 'georg-doc/kayfabizarro', packRoot: 'media/3D_Assets/kenney_racing-kit/Models/GLTF format', format: 'glb', license: 'CC0 · Kenney' },
+    placements: lastResult?.placements, measured: [...measured.values()]
+  };
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(new Blob([JSON.stringify(doc, null, 2)], { type: 'application/json' }));
+  a.download = doc.id + '.scene-recipe.json'; a.click();
+};
+
+await build(PRESETS['Oval']);
+window.__lab = { V, build, get root() { return root; }, MODULE, sizes, measured };
+</script>
+</body>
+</html>

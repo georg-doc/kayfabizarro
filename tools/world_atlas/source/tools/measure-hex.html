@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Measure · KayKit Medieval Hexagon Pack</title>
+<script type="importmap">
+{"imports":{
+ "three":"https://unpkg.com/three@0.184.0/build/three.module.js",
+ "three/addons/loaders/GLTFLoader.js":"https://unpkg.com/three@0.184.0/examples/jsm/loaders/GLTFLoader.js",
+ "three/addons/controls/OrbitControls.js":"https://unpkg.com/three@0.184.0/examples/jsm/controls/OrbitControls.js"
+}}
+</script>
+<style>body{background:#111;color:#ccc;font:12px monospace;padding:10px;white-space:pre-wrap}</style>
+</head>
+<body>
+<div id="out">measuring…</div>
+<script type="module">
+import * as THREE from 'three';
+import { measure, loadAsset } from '../lib/kit-lab.js';
+
+const TARGETS = [
+  ['hex_base', 'hex_grass'], ['hex_base', 'hex_water'],
+  ['hex_roads', 'hex_road_A'], ['hex_roads', 'hex_road_M'],
+  ['hex_river', 'hex_river_A'], ['hex_coast', 'hex_coast_A'],
+  ['hex_coastw', 'hex_coast_A_waterless'], ['hex_riverw', 'hex_river_A_waterless'],
+  ['hex_bld_b', 'building_castle_blue'], ['hex_bld_b', 'building_home_A_blue'],
+  ['hex_bld_b', 'building_tower_A_blue'], ['hex_bld_b', 'building_windmill_blue'],
+  ['hex_bld_b', 'building_watermill_blue'], ['hex_bld_b', 'building_market_blue'],
+  ['hex_bld_b', 'building_church_blue'], ['hex_bld_b', 'building_well_blue'],
+  ['hex_nature', 'tree_single_A'], ['hex_nature', 'rock_single_A'],
+  ['hex_nature', 'hills_A'], ['hex_nature', 'mountain_A'],
+  ['hex_props', 'barrel'], ['hex_props', 'tent'], ['hex_props', 'target']
+];
+
+const out = {};
+for (const [pack, name] of TARGETS) {
+  try { out[name] = await measure(pack, name); }
+  catch (e) { out[name] = { error: e.message }; }
+}
+/* hex orientation: read the top-face vertex ring of hex_grass to see whether the flat side or the
+   point faces +X (flat-top vs pointy-top decides the axial->world formula) */
+const grass = await loadAsset('hex_base', 'hex_grass');
+const pts = [];
+grass.updateMatrixWorld(true);
+const v = new THREE.Vector3();
+let top = -Infinity;
+grass.traverse((o) => { if (o.isMesh) { const p = o.geometry.attributes.position; for (let i = 0; i < p.count; i++) { v.fromBufferAttribute(p, i).applyMatrix4(o.matrixWorld); if (v.y > top) top = v.y; pts.push([v.x, v.y, v.z]); } } });
+const ring = pts.filter((p) => Math.abs(p[1] - top) < 1e-3).map((p) => [+p[0].toFixed(3), +p[2].toFixed(3)]);
+const uniq = [...new Set(ring.map((p) => p.join(',')))].map((s) => s.split(',').map(Number));
+const angles = uniq.map(([x, z]) => +(Math.atan2(z, x) * 180 / Math.PI).toFixed(1)).sort((a, b) => a - b);
+const radii = uniq.map(([x, z]) => +Math.hypot(x, z).toFixed(3));
+window.RESULT = { measured: out, hexTop: +top.toFixed(3), ringPoints: uniq, ringAngles: angles, ringRadii: radii };
+document.getElementById('out').textContent = JSON.stringify(window.RESULT, null, 1);
+</script>
+</body>
+</html>

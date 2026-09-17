@@ -1,0 +1,389 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>KFB Town Resident Atlas · S5 · Bewohner, Requisiten, Habitat</title>
+<script type="importmap">
+{"imports":{
+ "three":"https://unpkg.com/three@0.184.0/build/three.module.js",
+ "three/addons/controls/OrbitControls.js":"https://unpkg.com/three@0.184.0/examples/jsm/controls/OrbitControls.js",
+ "three/addons/loaders/GLTFLoader.js":"https://unpkg.com/three@0.184.0/examples/jsm/loaders/GLTFLoader.js",
+ "three/addons/utils/SkeletonUtils.js":"https://unpkg.com/three@0.184.0/examples/jsm/utils/SkeletonUtils.js"
+}}
+</script>
+<style>
+  *{box-sizing:border-box}
+  body{margin:0;background:#14130f;color:#f0ece2;font:13px/1.5 ui-sans-serif,system-ui,-apple-system,"Helvetica Neue",sans-serif}
+  a{color:#e8c84a}a:hover{color:#f3dd82}
+  #app{display:grid;grid-template-columns:minmax(0,1fr) 360px;grid-template-rows:auto minmax(0,1fr);height:100vh}
+  #app.collapsed{grid-template-columns:minmax(0,1fr) 0}
+  #app.collapsed aside{display:none}
+  header{grid-column:1/-1;display:flex;align-items:center;gap:10px;padding:10px 16px;border-bottom:1px solid #2c2a20;background:#1b1a13;flex-wrap:wrap}
+  h1{font-size:14px;margin:0;font-weight:650;white-space:nowrap}
+  .tag{font:11px/1 ui-monospace,monospace;padding:4px 7px;border:1px solid #403d2c;border-radius:4px;color:#e8c84a}
+  .tag.cand{color:#f0b37e;border-color:#6b4b2a}
+  .bar{margin-left:auto;display:flex;gap:7px;align-items:center;flex-wrap:wrap}
+  button,select{font:12px/1 inherit;padding:7px 10px;background:#24221a;color:#f0ece2;border:1px solid #403d2c;border-radius:5px;cursor:pointer}
+  button:hover{background:#2f2c21}
+  button[aria-pressed="true"]{background:#c9a227;border-color:#e8c84a;color:#1a1710}
+  label.sl{display:flex;align-items:center;gap:6px;font:11px/1 ui-monospace,monospace;color:#b4ab8e}
+  input[type=range]{width:96px;accent-color:#e8c84a}
+  #stage{position:relative;min-width:0;min-height:0}
+  canvas{display:block;width:100%;height:100%}
+  #refimg{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;pointer-events:none;opacity:0}
+  #hud{position:absolute;left:12px;bottom:12px;font:11px/1.6 ui-monospace,monospace;color:#ded7c2;background:#14130fcc;border:1px solid #403d2c80;padding:8px 10px;border-radius:6px;max-width:62%}
+  #qa{position:absolute;left:12px;top:12px;font:11px/1.6 ui-monospace,monospace;padding:8px 10px;border-radius:6px;border:1px solid;max-width:54%}
+  .ok{background:#182412e6;border-color:#4d7a2e;color:#cfe9b4}
+  .bad{background:#2a1a12e6;border-color:#a2603a;color:#f5d3b8}
+  #pick{position:absolute;right:12px;top:12px;font:11px/1.6 ui-monospace,monospace;color:#f3ecd8;background:#14130fee;border:1px solid #403d2c;padding:8px 10px;border-radius:6px;display:none;max-width:44%}
+  #pick b{color:#e8c84a;font-weight:600}
+  #side{position:absolute;right:12px;bottom:12px;z-index:5}
+  aside{border-left:1px solid #2c2a20;background:#171610;overflow:auto;padding:14px}
+  aside h2{font-size:11px;letter-spacing:.09em;text-transform:uppercase;color:#9c9377;margin:18px 0 8px}
+  aside h2:first-child{margin-top:0}
+  .kv{display:flex;justify-content:space-between;gap:10px;padding:3px 0;border-bottom:1px solid #26241b;font:11px/1.5 ui-monospace,monospace}
+  .kv span:last-child{color:#eee7d2;text-align:right;word-break:break-word}
+  .note{font-size:12px;color:#a49b80}
+  .note li{margin-bottom:5px}
+  ul{margin:6px 0;padding-left:16px}
+  .warn{border:1px solid #6b5a2a;background:#241f10;color:#ecd9a7;padding:8px 10px;border-radius:5px;font-size:12px}
+  .warn ul{padding-left:15px;margin:4px 0 0}
+  table{width:100%;table-layout:fixed;border-collapse:collapse;font:11px/1.5 ui-monospace,monospace}
+  th,td{text-align:left;padding:3px 4px;border-bottom:1px solid #26241b;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+  th{color:#9c9377;font-weight:500}
+  td.n,th.n{width:42px;text-align:right;color:#eee7d2}
+  .slot{display:flex;gap:8px;padding:5px 0;border-bottom:1px solid #26241b;font:11px/1.45 ui-monospace,monospace}
+  .slot i{color:#e8c84a;font-style:normal;width:14px;flex:none}
+  .slot div{min-width:0}
+  .slot small{display:block;color:#8e866c;word-break:break-all}
+  .extra i{color:#6d6650}
+</style>
+</head>
+<body>
+<div id="app">
+  <header>
+    <h1>KFB Resident Atlas · S5</h1>
+    <select id="who"></select>
+    <span class="tag cand">candidate-only</span>
+    <span class="tag" id="cnt">…</span>
+    <div class="bar">
+      <button id="vKey" aria-pressed="true">Key Art</button>
+      <button id="vTop">Draufsicht</button>
+      <button id="vGrid">Raster</button>
+      <button id="vBox">Maße</button>
+      <button id="lAct" aria-pressed="true">Aktor</button>
+      <button id="lProp" aria-pressed="true">Requisiten</button>
+      <button id="lHab" aria-pressed="true">Habitat</button>
+      <button id="lOpt" aria-pressed="false">Optional</button>
+      <select id="clip"><option value="">Motion · keine</option></select>
+      <button id="mood">Golden Hour</button>
+      <label class="sl">Referenz <input id="opa" type="range" min="0" max="100" value="0"></label>
+      <button id="exp">Recipe JSON</button>
+    </div>
+  </header>
+  <div id="stage">
+    <canvas id="c"></canvas>
+    <img id="refimg" alt="Referenzbild">
+    <div id="qa" class="ok">lade…</div>
+    <div id="pick"></div>
+    <div id="hud">lade…</div>
+    <button id="side">Leiste ausblenden</button>
+  </div>
+  <aside>
+    <h2 id="rName">Resident</h2>
+    <div id="meta"></div>
+    <h2>Aktor · Quelle &amp; Rig</h2>
+    <div id="actor"></div>
+    <h2>Signatur-Slots</h2>
+    <div id="slots"></div>
+    <h2>Gemessen · Laufzeit</h2>
+    <div id="bounds"></div>
+    <h2>Maße je Asset</h2>
+    <table><thead><tr><th>Asset</th><th class="n">x</th><th class="n">y</th><th class="n">z</th></tr></thead><tbody id="sizes"></tbody></table>
+    <h2>OPEN · QA</h2>
+    <div class="warn" id="open"></div>
+    <h2>Notizen</h2>
+    <div class="note"><ul id="notes"></ul></div>
+    <h2>Herkunft</h2>
+    <div id="prov"></div>
+  </aside>
+</div>
+
+<script type="module">
+import * as THREE from 'three';
+import { buildVignette, arrange, makeViewer, picker, measured, loadClips, bindReport, PIN, REPO } from './lib/atlas.js';
+import { RESIDENTS, ENSEMBLE, SOURCES, SLOTS } from './data/cast.js';
+
+const $ = (id) => document.getElementById(id);
+const f2 = (v) => (Math.abs(v - Math.round(v)) < 0.005 ? String(Math.round(v)) : v.toFixed(2));
+const hud = $('hud');
+const V = makeViewer($('c'), { fov: 28, mood: 'day' });
+
+const who = $('who');
+for (const r of RESIDENTS) who.add(new Option(r.display, r.residentId));
+who.add(new Option('— Ensemble · Welle 1 —', '__ensemble'));
+
+const built = new Map();
+let cur = null;      // {recipe, v} or {ensemble:true, root}
+let curRoot = null;
+let baseBg = V.scene.background.clone();
+
+async function build(recipe) {
+  if (built.has(recipe.residentId)) return built.get(recipe.residentId);
+  const v = await buildVignette(recipe, (d, n, id) => { hud.textContent = `${recipe.name} · lade ${d}/${n} · ${id}`; });
+  v.recipe = recipe;
+  built.set(recipe.residentId, v);
+  return v;
+}
+
+function clearStage() {
+  if (curRoot) V.scene.remove(curRoot);
+  for (const m of V.mixers) V.mixers.delete(m);
+  V.select(null); V.showBounds(null);
+  $('pick').style.display = 'none';
+}
+
+/* ---------- panel ---------- */
+function facts(v) {
+  const r = v.recipe;
+  $('rName').textContent = r.name;
+  $('meta').innerHTML = row([
+    ['Status', r.status], ['Town-Rolle', r.townRole], ['Habitat', r.habitatIntent],
+    ['Aktivität', r.activity], ['Pack', r.pack], ['Beziehungen', (r.relationships || []).join(' · ') || '–']
+  ]);
+  const af = measured.get(r.actor.a);
+  $('actor').innerHTML = row([
+    ['Asset', r.actor.a.replace('media/3D_Assets/', '')],
+    ['Commit', PIN.assets.slice(0, 12)],
+    ['Rig', r.actor.rigFamily + (af ? ` · ${af.joints.length} Joints` : '')],
+    ['Skin', af ? (af.skin ? 'ja' : 'nein') : '–'],
+    ['Clips im GLB', af ? String(af.clips.length) : '–'],
+    ['handslot', af ? af.joints.filter((j) => j.startsWith('handslot')).join(', ') || 'keine' : '–'],
+    ['Textur-Variante', r.actor.texture || '–'],
+    ['Pose', v.mixer ? `${v.mixer.clip} · ${v.mixer.report.bound}/${v.mixer.report.total} Tracks` : 'keine gebunden']
+  ]);
+  const props = [...(r.habitat || []), ...(r.signatureProps || [])];
+  $('slots').innerHTML = props.map((p) => `
+    <div class="slot${p.slot ? '' : ' extra'}"><i>${p.slot || '·'}</i><div>
+      ${p.role}${p.slot ? ` <span style="color:#8e866c">· ${SLOTS[p.slot]}</span>` : ''}
+      <small>${p.a.replace('media/3D_Assets/KayKit_Mystery_Series6/', '')}</small>
+      ${p.scaleNote ? `<small style="color:#c39a55">s=${p.s} · ${p.scaleNote}</small>` : ''}
+      ${p.hand ? `<small style="color:#6fd1ff">→ ${p.hand.bone}</small>` : ''}
+      ${p.optional ? '<small style="color:#c39a55">aus · Abweichung von der Promo, per „Optional“ zuschaltbar</small>' : ''}
+    </div></div>`).join('');
+  const ab = v.actorBounds;
+  $('bounds').innerHTML = row([
+    ['Aktor-Höhe (Rest-Pose)', ab ? f2(ab.height) : '–'],
+    ['Kopf-Bone (posiert)', v.headY != null ? f2(v.headY) : '–'],
+    ['Aktor-Grundfläche', ab ? `${f2(ab.footprint[0])} × ${f2(ab.footprint[1])}` : '–'],
+    ['Bodenkontakt', ab ? f2(ab.contact) : '–'],
+    ['Vignette', `${f2(v.bounds.size[0])} × ${f2(v.bounds.size[1])} × ${f2(v.bounds.size[2])}`],
+    ['Objekte', String(v.nodes.size)]
+  ]);
+  const used = props.concat([r.actor]).map((p) => measured.get(p.a)).filter(Boolean);
+  const uniq = [...new Map(used.map((m) => [m.path, m])).values()].sort((a, b) => a.name.localeCompare(b.name));
+  $('sizes').innerHTML = uniq.map((m) => `<tr><td title="${m.path}">${m.name}</td><td class="n">${f2(m.size[0])}</td><td class="n">${f2(m.size[1])}</td><td class="n">${f2(m.size[2])}</td></tr>`).join('');
+  const open = v.open;
+  $('open').innerHTML = open.length ? `<ul>${open.map((o) => `<li>${o}</li>`).join('')}</ul>` : 'Keine offenen Punkte auf dieser Seite.';
+  $('notes').innerHTML = [...(r.notes || []), ...v.notes].map((n) => `<li>${n}</li>`).join('');
+  $('prov').innerHTML = row([
+    ['repo', REPO], ['assets @', PIN.assets.slice(0, 12)], ['anims @', PIN.anims.slice(0, 12)],
+    ['Handoff', 'kfb.asset-handoff.v1'], ['Lizenz', 'CC0 · Kay Lousberg'],
+    ['Librarian', `<a href="${SOURCES.librarian}" target="_blank" rel="noreferrer">Quelle öffnen</a>`]
+  ]);
+}
+const row = (rows) => rows.map(([k, val]) => `<div class="kv"><span>${k}</span><span>${val}</span></div>`).join('');
+
+/* ---------- QA banner ---------- */
+function qa(v) {
+  const el = $('qa');
+  const fails = v.open.filter((o) => /lädt nicht|nicht gefunden/.test(o));
+  const bad = fails.length > 0;
+  el.className = bad ? 'bad' : 'ok';
+  el.textContent = bad
+    ? `${fails.length} Asset-/Bone-Fehler — siehe OPEN`
+    : `${v.nodes.size} Objekte geladen · alle Pfade auflösbar · ${v.open.length} OPEN-Punkte dokumentiert`;
+}
+
+/* ---------- motion audition ---------- */
+async function fillClips(v) {
+  const sel = $('clip');
+  sel.innerHTML = '<option value="">Motion · keine</option>';
+  if (!v || !v.recipe) return;
+  const actor = v.nodes.get(v.recipe.actor.id);
+  if (!actor) return;
+  const clips = (v.mixer && v.mixer.clips) || await loadClips(v.recipe.actor.rig || 'Rig_Medium');
+  v.clipList = clips;
+  for (const c of clips) {
+    const rep = bindReport(actor, c.clip);
+    if (!rep.bound) continue;
+    sel.add(new Option(`${c.name} · ${c.set} · ${rep.bound}/${rep.total}`, c.name));
+  }
+  sel.onchange = () => {
+    const pick = clips.find((c) => c.name === sel.value);
+    for (const m of V.mixers) V.mixers.delete(m);
+    if (v.mixer) { v.mixer.mixer.stopAllAction(); }
+    if (!pick) {
+      if (v.mixer) {
+        v.mixer.action.reset().play();
+        if (v.recipe.actor.poseFreeze === false) V.mixers.add(v.mixer.mixer);
+        else { v.mixer.mixer.update(v.recipe.actor.poseTime ?? 0); v.mixer.action.paused = true; }
+      }
+      hud.textContent = `${v.recipe.name} · Pose zurückgesetzt`;
+      return;
+    }
+    const mixer = new THREE.AnimationMixer(actor);
+    mixer.clipAction(pick.clip).play();
+    V.mixers.add(mixer);
+    const rep = bindReport(actor, pick.clip);
+    hud.textContent = `Motion "${pick.name}" (${pick.set}) · ${rep.bound}/${rep.total} Tracks gebunden · Vorschau-Evidenz, keine Retarget-Freigabe`;
+  };
+}
+
+/* ---------- show ---------- */
+async function show(id) {
+  clearStage();
+  if (id === '__ensemble') {
+    const vs = [];
+    for (const rid of ENSEMBLE.members) vs.push(await build(RESIDENTS.find((r) => r.residentId === rid)));
+    const { stage, marks, width } = arrange(vs, ENSEMBLE.gap);
+    curRoot = stage; V.scene.add(stage);
+    cur = { ensemble: true, members: vs };
+    V.frame(stage, [0.2, 0.3, 1], 1.1);
+    $('cnt').textContent = `${vs.reduce((a, v) => a + v.nodes.size, 0)} Objekte · ${vs.length} Residents`;
+    hud.textContent = `Ensemble Welle 1 · Breite ${f2(width)} · keine Höhen-Normalisierung`;
+    $('refimg').style.display = 'none';
+    $('rName').textContent = 'Ensemble · Welle 1';
+    $('meta').innerHTML = row([['Status', 'candidate-only'], ['Mitglieder', marks.map((m) => m.id).join(', ')], ['Abstand', f2(ENSEMBLE.gap)], ['Bodenebene', 'geteilt · y=0']]);
+    $('actor').innerHTML = row(vs.map((v) => [v.recipe.name, `Höhe ${f2(v.actorBounds.height)} · ${f2(v.bounds.size[0])} breit`]));
+    $('slots').innerHTML = vs.map((v) => `<div class="slot"><i>·</i><div>${v.recipe.name}<small>${v.nodes.size} Objekte · ${v.open.length} OPEN</small></div></div>`).join('');
+    const hs = vs.map((v) => v.actorBounds.height);
+    $('bounds').innerHTML = row([
+      ['Aktor-Höhen', hs.map(f2).join(' / ')],
+      ['Höhen-Spanne', f2(Math.max(...hs) - Math.min(...hs))],
+      ['Ensemble-Breite', f2(width)],
+      ['Objekte', String(vs.reduce((a, v) => a + v.nodes.size, 0))]
+    ]);
+    const all = [...measured.values()].sort((a, b) => a.name.localeCompare(b.name));
+    $('sizes').innerHTML = all.map((m) => `<tr><td title="${m.path}">${m.name}</td><td class="n">${f2(m.size[0])}</td><td class="n">${f2(m.size[1])}</td><td class="n">${f2(m.size[2])}</td></tr>`).join('');
+    $('open').innerHTML = `<ul>${vs.flatMap((v) => v.open.map((o) => `<li>${v.recipe.name}: ${o}</li>`)).join('') || '<li>keine</li>'}</ul>`;
+    $('notes').innerHTML = '<li>Ensemble stellt die Vignetten unverändert nebeneinander — Maßstabs- und Look-Unterschiede bleiben sichtbar (Briefing §8/§9).</li>';
+    $('prov').innerHTML = row([['repo', REPO], ['assets @', PIN.assets.slice(0, 12)], ['Lizenz', 'CC0 · Kay Lousberg']]);
+    $('qa').className = 'ok';
+    $('qa').textContent = `Ensemble geladen · ${vs.length} Vignetten auf geteilter Bodenebene`;
+    fillClips(null);
+    return;
+  }
+  const recipe = RESIDENTS.find((r) => r.residentId === id);
+  const v = await build(recipe);
+  curRoot = v.root; V.scene.add(v.root);
+  cur = v;
+  if (v.mixer && !v.mixer.action.paused) V.mixers.add(v.mixer.mixer);
+  V.frame(v.root, recipe.keyArt.dir, recipe.keyArt.pad);
+  $('cnt').textContent = `${v.nodes.size} Objekte`;
+  const img = $('refimg');
+  img.style.display = '';
+  img.src = recipe.reference.src;
+  img.alt = recipe.reference.label;
+  hud.textContent = `${recipe.name} · Key Art · Objekt anklicken für Pfad und Rolle`;
+  facts(v); qa(v); fillClips(v);
+  applyLayers();
+}
+
+/* ---------- views & layers ---------- */
+const press = (b, on) => b.setAttribute('aria-pressed', String(on));
+function view(dir, pad, btn) {
+  if (!curRoot) return;
+  V.frame(curRoot, dir, pad);
+  press($('vKey'), btn === 'key'); press($('vTop'), btn === 'top');
+}
+$('vKey').onclick = () => { const r = cur && cur.recipe; view(r ? r.keyArt.dir : [0.2, 0.3, 1], r ? r.keyArt.pad : 1.1, 'key'); };
+$('vTop').onclick = () => view([0, 1, 0.0001], 1.1, 'top');
+$('vGrid').onclick = (e) => { V.grid.visible = !V.grid.visible; press(e.currentTarget, V.grid.visible); };
+$('vBox').onclick = (e) => {
+  const on = e.currentTarget.getAttribute('aria-pressed') !== 'true';
+  V.showBounds(on ? curRoot : null); press(e.currentTarget, on);
+};
+function applyLayers() {
+  if (!cur || cur.ensemble) return;
+  const on = {
+    actor: $('lAct').getAttribute('aria-pressed') === 'true',
+    prop: $('lProp').getAttribute('aria-pressed') === 'true',
+    hab: $('lHab').getAttribute('aria-pressed') === 'true',
+    opt: $('lOpt').getAttribute('aria-pressed') === 'true'
+  };
+  for (const [id, node] of cur.nodes) {
+    const e = node.userData.entry;
+    const isActor = id === cur.recipe.actor.id;
+    const isHab = (cur.recipe.habitat || []).some((h) => h.id === id);
+    node.visible = isActor ? on.actor : isHab ? on.hab : on.prop;
+    if (e && e.optional) node.visible = node.visible && on.opt;
+  }
+}
+for (const btn of ['lAct', 'lProp', 'lHab', 'lOpt']) {
+  $(btn).onclick = (e) => { press(e.currentTarget, e.currentTarget.getAttribute('aria-pressed') !== 'true'); applyLayers(); };
+}
+let moodName = 'day';
+$('mood').onclick = (e) => {
+  moodName = moodName === 'day' ? 'golden' : 'day';
+  V.mood(moodName); baseBg = V.scene.background.clone();
+  e.currentTarget.textContent = moodName === 'day' ? 'Golden Hour' : 'Tageslicht';
+  press(e.currentTarget, moodName === 'golden');
+  $('opa').oninput({ target: $('opa') });
+};
+$('opa').oninput = (e) => {
+  const val = e.target.value / 100;
+  $('refimg').style.opacity = val;
+  const promo = cur && cur.recipe && cur.recipe.reference.promoBackground;
+  V.scene.background = (val > 0.02 && promo) ? new THREE.Color(promo) : baseBg;
+};
+$('side').onclick = (e) => {
+  const off = $('app').classList.toggle('collapsed');
+  e.currentTarget.textContent = off ? 'Leiste einblenden' : 'Leiste ausblenden';
+  requestAnimationFrame(() => V.resize());
+};
+$('exp').onclick = () => {
+  const mk = (v) => ({
+    status: 'candidate-only', residentId: v.recipe.residentId, sourceRepo: REPO, sourceCommit: PIN.assets,
+    animationSource: { shard: SOURCES.animShard, commit: PIN.anims },
+    actor: { assetPath: v.recipe.actor.a, role: 'resident', rigFamily: v.recipe.actor.rigFamily, pose: v.mixer ? { clip: v.mixer.clip, set: v.mixer.set, source: v.mixer.source, trackBinding: v.mixer.report } : null },
+    habitat: (v.recipe.habitat || []).map((h) => ({ assetPath: h.a, role: h.role })),
+    signatureProps: (v.recipe.signatureProps || []).filter((p) => p.slot).map((p) => ({ assetPath: p.a, role: p.role, slot: p.slot })),
+    promoExtras: (v.recipe.signatureProps || []).filter((p) => !p.slot).map((p) => p.a),
+    placements: Object.fromEntries([...v.nodes].map(([id, n]) => [id, { position: n.position.toArray().map((x) => +x.toFixed(4)), rotation: [0, +THREE.MathUtils.radToDeg(n.rotation.y).toFixed(2), 0], scale: [n.scale.x, n.scale.y, n.scale.z], attachedTo: n.userData.attachedTo || null }])),
+    measured: Object.fromEntries([...v.nodes].map(([id, n]) => [id, measured.get(n.userData.entry.a) ? { size: measured.get(n.userData.entry.a).size.map((x) => +x.toFixed(4)) } : null])),
+    actorBounds: v.actorBounds,
+    bounds: v.bounds,
+    notes: [...(v.recipe.notes || []), ...v.notes],
+    open: v.open
+  });
+  const doc = cur && cur.ensemble
+    ? { status: 'candidate-only', ensembleId: ENSEMBLE.id, sourceRepo: REPO, sourceCommit: PIN.assets, gap: ENSEMBLE.gap, residents: cur.members.map(mk) }
+    : mk(cur);
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(new Blob([JSON.stringify(doc, null, 2)], { type: 'application/json' }));
+  a.download = (cur && cur.ensemble ? ENSEMBLE.id : cur.recipe.residentId) + '.atlas-recipe.json';
+  a.click();
+};
+
+picker($('c'), V, () => curRoot, (hit) => {
+  const el = $('pick');
+  if (!hit) { el.style.display = 'none'; return; }
+  const e = hit.entry, m = hit.facts;
+  el.style.display = 'block';
+  el.innerHTML = [
+    `<b>${e.id}</b> · ${e.role}${e.slot ? ` · Slot ${e.slot}` : ''}`,
+    m ? `Maße ${m.size.map(f2).join(' × ')}` : '',
+    hit.attachedTo ? `gesteckt an ${hit.attachedTo}` : '',
+    e.scaleNote ? `s=${e.s} (Vorschau-Korrektur)` : '',
+    `<span style="color:#8e866c">${e.a}</span>`
+  ].filter(Boolean).join('<br>');
+});
+
+who.onchange = () => show(who.value);
+await show(RESIDENTS[0].residentId);
+window.__atlas = { V, built, cur: () => cur, measured };
+</script>
+</body>
+</html>
