@@ -29,6 +29,9 @@ The current recovery path is:
 
 ### DocCheck · SimBlood
 
+Human recovery page:
+`https://kayfabizarro.pages.dev/kfb-hub/sim-blood.html`
+
 Current SSOT:
 `https://github.com/georg-doc/doccheck/tree/main/sim-blood`
 
