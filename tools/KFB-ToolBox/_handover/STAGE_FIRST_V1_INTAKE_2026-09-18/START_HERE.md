@@ -2,12 +2,25 @@
 
 **Status:** SOURCE RECEIVED / REVIEWED INTAKE · OWNER-REPO PROMOTION PENDING  
 **ToolBox owner repo:** `georg-doc/kayfabizarro`  
-**Transport / intake source:** `georg-doc/KFB-Stunt-Car-Race`  
-**Important:** the Stunt Race inbox is a transport location only. It does **not** become ToolBox implementation ownership.
+**Owner-repo package:** `georg-doc/kayfabizarro/tools/KFB-ToolBox/_inbox/KFB ToolBox v1-1.zip`  
+**Readable expanded mirror:** `georg-doc/KFB-Stunt-Car-Race`  
+**Important:** the Stunt Race inbox is only the readable expanded mirror. It does **not** become ToolBox implementation ownership.
 
 ## 0 · Exact source
 
-Uploaded export:
+### Owner-repo export package
+
+`tools/KFB-ToolBox/_inbox/KFB ToolBox v1-1.zip`
+
+Git blob: `5943ee108609a7916bf231fec59848ef4c58f965`  
+Compressed size: `1,801,302` bytes  
+Upload commit: `eabc87255ee3da6283f9d438390454d70e9d2e55`
+
+Georg identifies this ZIP as the Stage-First-v1 export described below. The GitHub connector cannot unpack binary ZIP content itself, so exact byte-for-byte ZIP→expanded-tree identity is not independently asserted here.
+
+### Readable expanded export mirror
+
+For code/document inspection, use:
 
 ```text
 georg-doc/KFB-Stunt-Car-Race
@@ -31,26 +44,18 @@ Entry:
 Export facts from its own manifest:
 
 - 132 files;
-- ~4.52 MB;
+- 4,524,631 B ≈ 4.32 MiB uncompressed payload;
 - no build step; source is the browser application;
 - complete editable source tree is present;
 - product shell: `Actor · Face · Pose · Motion · Voice · Stage`;
 - export reports a successful cold start from the export tree;
 - export status is deliberately `EXPORT_PARTIAL`, not a release.
 
-### Additional binary mirror in the owner repo
+Classification:
 
-A later manual upload now also exists at:
+`OWNER-REPO EXPORT PACKAGE RECEIVED · USER-IDENTIFIED SAME EXPORT · BINARY CONTENT NOT INDEPENDENTLY UNPACKED`
 
-`tools/KFB-ToolBox/_inbox/KFB ToolBox v1-1.zip`
-
-Git blob: `5943ee108609a7916bf231fec59848ef4c58f965`  
-Size: `1,801,302` bytes  
-Upload commit: `eabc87255ee3da6283f9d438390454d70e9d2e55`
-
-Classification: `RECEIVED BINARY MIRROR / CONTENT IDENTITY NOT YET VERIFIED`.
-
-The GitHub connector cannot inspect ZIP contents as UTF-8 source. Do **not** infer semantic recency from the filename suffix `v1-1` and do not let this binary upload replace the readable Stage-First export until file identity/parity is actually established.
+Do **not** infer semantic version order from the filename suffix `v1-1`; the explicit intake pin above decides.
 
 This intake does not convert exporter-reported tests into Georg acceptance.
 
@@ -248,7 +253,7 @@ Do not overwrite:
 - Resident Atlas / World Atlas;
 - existing contracts.
 
-The Stunt Race intake source remains unchanged as transport provenance.
+The owner-repo ZIP remains the package provenance. The Stunt Race expanded tree remains the readable inspection mirror and must not gain ToolBox ownership.
 
 ---
 
@@ -406,7 +411,11 @@ Promote into the ToolBox owner repo, close the GitHub asset references, then run
 >
 > **ToolBox implementation owner remains:** `georg-doc/kayfabizarro/tools/KFB-ToolBox/`.
 >
-> Der neue complete export liegt als Transport-Intake hier:
+> Das eigentliche Exportpaket liegt im ToolBox-Owner-Repo:
+>
+> `georg-doc/kayfabizarro/tools/KFB-ToolBox/_inbox/KFB ToolBox v1-1.zip`
+>
+> Der lesbare entpackte Mirror für Code-/Dokuprüfung liegt hier:
 >
 > `georg-doc/KFB-Stunt-Car-Race/_inbox/KFB ToolBox v1/KFB-ToolBox/_handover/EXPORT_STAGE_FIRST_V1_2026-09-17/KFB_ToolBox_Stage-First_v1/`
 >
@@ -451,4 +460,4 @@ Promote into the ToolBox owner repo, close the GitHub asset references, then run
 
 ## Additive history
 
-2026-09-18 · Complete Stage-First v1 export located in the Stunt Race inbox and reviewed as a transport intake. Current GitHub review corrected two stale export assumptions: the audio manifest and FrizzleBob_Yellow source both already exist in `georg-doc/kayfabizarro`. Georg classified the full Birthday slice as FAIL / OUTDATED / ARCHIVED HISTORY. No ToolBox runtime promotion is claimed by this intake document.
+2026-09-18 · Complete Stage-First v1 export package received in the ToolBox owner repo; readable expanded mirror located in the Stunt Race inbox and reviewed for code/document intake. Current GitHub review corrected two stale export assumptions: the audio manifest and FrizzleBob_Yellow source both already exist in `georg-doc/kayfabizarro`. Georg classified the full Birthday slice as FAIL / OUTDATED / ARCHIVED HISTORY. No ToolBox runtime promotion is claimed by this intake document.
