@@ -2,6 +2,30 @@
 
 Never rewrite prior entries to make history look cleaner. Add a correction/successor entry instead.
 
+## 2026-09-17 · W008 · IMPLEMENTATION POC
+
+Added `prefab-lab.html` + `prefab-lab.js` as the first direct Resident Atlas → World authoring bridge.
+
+Current Prefab Lab capabilities:
+
+- load a declarative `kfb-resident-scene.v1` from pasted JSON or URL;
+- one-click load the current `Caveman · Cave Camp` Resident Atlas scene;
+- resolve exact resident assets from the scene's pinned `sourceCommit`;
+- honor the Atlas scene's `fit.height` / `fit.max`, placement and rotation hints for the POC preview;
+- assemble all scene parts under one movable prefab root;
+- Move / Rotate / Scale the full resident ensemble with Three.js `TransformControls`;
+- ungroup while preserving world transforms, then select/edit individual child assets;
+- regroup loose children while preserving their current world placement;
+- Hero / Top / Frame views using Atlas camera hints where present;
+- local save/reload of source scene + candidate recipe;
+- copy/download a `kfb.world-recipe.v0-poc` candidate with a `residentPrefabs` extension containing source-scene provenance, root transform and child transforms.
+
+Hard boundary: the Prefab Lab is still a neutral `poc-local` authoring surface. It consumes Resident Atlas source recipes but does not become Resident Atlas truth, Travel terrain/runtime truth, Animation-Lab compatibility truth or a productive save owner. Travel decides whether/how the candidate prefab maps to spherical anchors and productive `kfb.world-recipe.v0` state.
+
+Browser acceptance is still PENDING.
+
+Context refresh while adding W008: current productive WB0 Ground evidence in Travel includes persistent player scale/facing calibration and the established W/S move, A/D turn, Q/E strafe mapping; latest reported static validation is 25/25 tests + build/verify PASS, human browser acceptance still pending.
+
 ## 2026-09-17 · W007 · IMPLEMENTATION POC
 
 Added `route-lab.html` + `route-lab.js` as a separate spline-authoring UX proof.
@@ -59,7 +83,7 @@ Accepted the WSA role split:
 - `/world/` / this chat: fast visual authoring/UX POC and design donor;
 - Travel WB0: productive Globe runtime, terrain, locomotion, persistence, owner contracts and promotion;
 - Asset Librarian: read-only source/search/bundle input;
-- Resident Atlas: future grouped resident/prefab candidate input;
+- Resident Atlas: grouped resident/prefab candidate input;
 - historical Voxel/Worldbuilder lines: donors, not new SSOTs.
 
 ## 2026-09-17 · W003 · WORKFLOW
