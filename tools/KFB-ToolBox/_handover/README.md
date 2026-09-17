@@ -8,6 +8,8 @@ Bei Ablösung neuen Auftrag anlegen und alten mit einem additiven Nachfolgerhinw
 
 ## Aktuelle ergänzende Übergaben
 
+- [Stage-First v1 · Intake + Promotion](STAGE_FIRST_V1_INTAKE_2026-09-18/START_HERE.md) — **CURRENT TOOLBOX INTAKE**. Vollständiger Export liegt transportbedingt im Stunt-Race-Inbox; ToolBox-Owner bleibt dieses Repo. GitHub-Asset-Gaps korrigiert, Birthday explizit archiviert, Promotion-/Browser-Gate definiert.
+
 - [Atlas Intake · Resident S6 + Environment / Kit Lab](ATLAS_INTAKE_2026-09-17/START_HERE.md) — REVIEWED INTAKE der neuen Resident-/Environment-Exporte; Originale bleiben im Inbox-Pfad, GitHub-first Assetregel und Promotion-Reihenfolge dokumentiert. Keine Travel-/Consumer-Abnahme.
 - [KFB ToolBox Stage-First v1 · Complete Export Briefing](KFB_TOOLBOX_STAGE_FIRST_V1_EXPORT_2026-09-17.md) — vollständiger No-Terminal-Export aus Claude Design. **Kein Ersatz** des aktuellen ToolBox-Implementierungsauftrags und keine automatische Promotion. Vorhandene Assets müssen, wenn auf GitHub verfügbar, über ihre exakte GitHub-Quelle/Revision aufgelöst werden; neue noch nicht auf GitHub vorhandene Assets werden separat zur GitHub-Einordnung übergeben.
 - [Minimal Stage-First UI/UX Reset](UI_RESET_MINIMAL_STAGE_FIRST_2026-09-15/START_HERE.md) — aktuelle Designrichtung.
