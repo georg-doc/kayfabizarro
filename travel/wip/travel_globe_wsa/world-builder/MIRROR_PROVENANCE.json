@@ -1,20 +1,19 @@
 {
-  "schema":"kfb.travel-public-mirror.v1",
-  "sourceRepository":"georg-doc/KFB-Travel-Globe",
-  "sourceCommit":"5e9102a6a7e4275da117f5c9478e175a036e74db",
-  "sourcePath":"site/world-builder/",
-  "mirrorPath":"travel/wip/travel_globe_wsa/world-builder/",
-  "status":"PUBLIC WIP MIRROR · HUMAN BROWSER ACCEPTANCE PENDING",
-  "staticEvidence":"PR #23 · 55/55 tests PASS · build PASS · verify PASS · 108 frozen B0 runtime files unchanged · build travel-b0-fda79d769db123a1",
-  "notes":[
-    "Travel consumes central KFB Assembly Contract A0 Surface semantics through a thin read-only consumer adapter; A0 is not a runtime/physics owner.",
-    "Only explicit support/walkable roles enter Travel Ground support; drivable/stunt alone does not silently become walkable.",
-    "Cards, ROAD, Ramp, BlockBits and structure proof route through one live A0 RecipeEnvelope into the existing Travel-owned highest-valid-support resolver.",
-    "Highest geometry still wins; A0 priority is only a near-height tie-breaker.",
-    "Bridge semantics are supported without inventing a placeholder bridge.",
-    "window.__wb0.assemblyA0 exposes the consumer seam for future Atlas/ToolBox recipes.",
-    "Race keeps vehicle/contact/feel physics local and uses A0 only for real recipe semantics; no fabricated AssetRefs or premature stunt fields.",
-    "Parallel /world/ POC files are untouched.",
-    "No Travel L5 before human browser acceptance."
+  "schema": "kfb.travel-public-mirror.v1",
+  "sourceRepository": "georg-doc/KFB-Travel-Globe",
+  "sourceCommit": "3cd0c938394f67160736b8af445ef10307bb16dd",
+  "sourcePath": "site/world-builder/",
+  "mirrorPath": "travel/wip/travel_globe_wsa/world-builder/",
+  "status": "PUBLIC WIP MIRROR · HUMAN BROWSER ACCEPTANCE PENDING",
+  "staticEvidence": "PR #24 · 61/61 tests PASS · build PASS · verify PASS · syntax/JSON PASS · 108 frozen B0 runtime files unchanged · build travel-b0-71749a52118a9b0f",
+  "notes": [
+    "Free Ground exploration and terrain-card contact received positive human browser evidence; card-ground is treated as a human PASS for that portion only, not blanket A0 L5.",
+    "Fernando Raw Mech now uses browser-corrected source forward; the rejected inherited 180-degree presentation correction is removed.",
+    "Mech moving landing is briefly planted while movement input remains held so the landing pose does not translate across terrain before Walk/Run resumes.",
+    "LMB short click remains reserved for future interaction; LMB drag after a 6px threshold reuses the existing Ground orbit camera path. RMB remains the existing look path.",
+    "Monstrosity keeps the real Rig_Large animation sources; Ground translation/run multiplier is bounded from the measured runtime cadenceScale instead of swapping guessed clips.",
+    "Ground controller remains sole Ground world-position writer; Movement Lab remains animation/cadence owner.",
+    "Support Surface, A0, Flight and World ownership are unchanged; /world/ POC is untouched.",
+    "No Travel L5 for these new movement/camera changes before human browser acceptance."
   ]
 }
