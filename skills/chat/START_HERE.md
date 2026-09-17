@@ -1,7 +1,7 @@
 # KFB Chat Production Router
 
-Status: CURRENT ROUTER v0.1
-Date: 2026-09-14
+Status: CURRENT ROUTER v0.2
+Date: 2026-09-17
 Owner: Georg / KFB
 
 This folder is the current LLM production routing layer for ChatGPT/Astra and Claude Design.
@@ -71,10 +71,17 @@ If this is a replacement/fresh chat after context loss, use `RECOVERY_PATH.md` r
 - Combat Arena
 - KFB Town — current living concept/reference, not a runtime project
 - Wissens-Pilli / DocCheck Interactive Microlearning — `UNVERIFIED` intake until implementation SSOT/runtime is explicitly pinned
+- **SimBlood / DocCheck — `CURRENT_PROJECT_SSOT` at `georg-doc/doccheck/sim-blood/`; recovery in `RECOVERY.md`, current WIPs in `WIP_STATUS.json`**
 - Animation Lab — `UNVERIFIED` until current implementation SSOT/site is pinned
+
+DocCheck UI convention for project surfaces: use `#cc0033` as a restrained accent for controls/links/active states; do not tint medical imagery.
 
 When a task says only “start KFB production”, begin here. When a task names a project or tool, this file routes you to its actual SSOT rather than becoming one itself.
 
 ## 2026-09-15 · ToolBox reentry and Town birthday input
 
 Read [the scoped masterplan addendum](masterplan/TOOLBOX_UX_TOWN_BIRTHDAY_2026-09-15.md) for the two separate ToolBox results A/B, WS0's source corrections, efficient handoff practice, birthday character selection and the Makerspace cinema direction. It routes to existing owners and preserves the distinction between a workspace report, a user direction and a tested consumer result. It does not promote tools or start a Town implementation.
+
+## 2026-09-17 · DocCheck SimBlood recovery node
+
+SimBlood is now a first-class project node with its own external SSOT in `georg-doc/doccheck/sim-blood/`. The KFB Hub/router only points to its `START_HERE`, `RECOVERY`, `WIP_STATUS`, Living and Return files; it does not duplicate SimBlood project truth.
