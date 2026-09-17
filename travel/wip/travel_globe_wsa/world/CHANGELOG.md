@@ -2,6 +2,42 @@
 
 Never rewrite prior entries to make history look cleaner. Add a correction/successor entry instead.
 
+## 2026-09-17 · W010 · IMPLEMENTATION POC
+
+Added `seed-lab.html` + `seed-lab.js` as the first bounded deterministic candidate-generation UX proof.
+
+Current Seed Lab scope is deliberately only **zone scatter**:
+
+- one base seed generates six deterministic candidate seeds/layouts;
+- six previews are visible together for human comparison;
+- parameters: count, cluster strength, low-frequency field scale and edge falloff;
+- candidate selection is separate from explicit **Pin selected**;
+- the pinned output stores `seed + parameters + preview hash/stats` only;
+- generated point lists are preview data and are intentionally not persisted;
+- local save/reload and copy/download candidate JSON are available.
+
+The generator is independently written for KFB. SP13KTRA remains an observation-only donor; no upstream source, constants, seed tables, music tables or procedural implementations are copied.
+
+Hard boundary: Seed Lab does not own Travel terrain, biome truth, productive scatter placement, asset-family mapping or productive persistence. Travel validates any later promotion.
+
+Browser acceptance is still PENDING.
+
+## 2026-09-17 · W009 · BUGFIX POC
+
+Georg's real Chrome test of `prefab-lab.html` exposed an initial-load crash:
+
+`Cannot read properties of null (reading 'position')`
+
+Root cause: the empty-state `refreshAll()` serialized a grouped prefab before a `prefabRoot` existed, so `vec(prefabRoot)` dereferenced `null`.
+
+Fix in `prefab-lab.js`:
+
+- `vec()` now returns `null` for absent objects;
+- grouped root serialization checks `prefabRoot` before calling `vec()`;
+- `groundPrefab()` and restore selection paths also guard absent roots.
+
+This is an IMPLEMENTATION fix. Human browser retest of the Caveman prefab load/group/ungroup flow is still PENDING.
+
 ## 2026-09-17 · W008 · IMPLEMENTATION POC
 
 Added `prefab-lab.html` + `prefab-lab.js` as the first direct Resident Atlas → World authoring bridge.
