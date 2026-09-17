@@ -1,7 +1,7 @@
 {
   "schema": "kfb.stunt-race.flow-runtime/0.1",
-  "revision": "2026-09-17.v06-freeze.1",
-  "status": "RACE_LOCAL_T1_T2_FEEL_CANDIDATE",
+  "revision": "2026-09-17.v061-repair.1",
+  "status": "RACE_LOCAL_T1_T2_REPAIR_CANDIDATE",
   "owner": "georg-doc/KFB-Stunt-Car-Race",
   "sourceHumanReference": "KFB Track Lab v0.5 accepted direction",
   "flow": {
@@ -12,6 +12,7 @@
     "maxForward": 41,
     "maxReverse": 9,
     "steerBase": 13.8,
+    "steerInputSign": -1,
     "lateralDamping": 3.05,
     "centrifugalGain": 0.085,
     "proxyHalfWidth": 1.08,
@@ -23,6 +24,14 @@
     "bounceSpeed": 0.085,
     "retention": 0.985,
     "cooldown": 0.2
+  },
+  "presentation": {
+    "groundingMode": "ANTI_GRAV_FLOW_PROXY",
+    "hoverHeight": 0.14,
+    "realtimeShadows": false,
+    "hoverWake": true,
+    "speedLines": true,
+    "note": "Presentation framing only. No shared A0 physics and no production tire-contact claim."
   },
   "presentationHooks": {
     "status": "OUT_OF_SCOPE_T1_T2",
@@ -37,5 +46,5 @@
     ],
     "intent": "Preserve future Vehicle Visual Root -> KFB rig/composite -> Driver Actor -> secondary motion seam without changing vehicle contact physics."
   },
-  "notes": "Deployment mirror of Race-owned runtime tuning for the public A0 consumer proof. Source authority remains georg-doc/KFB-Stunt-Car-Race."
+  "notes": "Deployment mirror of the Race-owned v0.6.1 repair config. Source authority remains georg-doc/KFB-Stunt-Car-Race."
 }
