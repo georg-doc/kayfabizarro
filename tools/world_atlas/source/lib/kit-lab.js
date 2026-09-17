@@ -7,7 +7,7 @@ import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 
 THREE.Cache.enabled = true;
 
-const RAW = 'https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/';
+const RAW = 'https://raw.githubusercontent.com/georg-doc/kayfabizarro/8948a06b75cb18c970599afb29b6a772315fad0e/media/3D_Assets/';
 export const PACKS = {
   dungeon:   { base: RAW + 'KayKit_Dungeon_Pack_1.1_FREE%202/Assets/gltf/', ext: '.gltf' },
   boardgame: { base: RAW + 'KayKit_BoardGameBits_1.0_FREE/Assets/gltf/', ext: '.gltf' },
