@@ -1,7 +1,8 @@
 // WB0 spherical Ground controller.
 // Donor behavior: kayfabizarro/travel/travel-v16/terrain-v16/walk-controller.js + travel-poc.js.
-// Preserve the established KFB Ground mapping instead of inventing another scheme:
-// W/S = forward/back, A/D = turn walker, Q/E = strafe left/right, Shift = run, Space = jump.
+// Ground browser semantics after human test:
+// W/S = forward/back, A/D = visible left/right turn, Q/E = strafe left/right,
+// Shift = run, Space = Ground-only jump, RMB drag = free camera, wheel = smooth zoom.
 // The donor is planar, so WB0 maps that intent to the Globe tangent frame and reads the accepted
 // baked mesh through boden-lesung.js.
 
@@ -14,6 +15,7 @@ export function createGroundController({ THREE, camera, globe, renderer, bodyHei
   const dir = new THREE.Vector3(0, 1, 0);
   const up = new THREE.Vector3(), east = new THREE.Vector3(), north = new THREE.Vector3();
   const forward = new THREE.Vector3(), right = new THREE.Vector3(), moveTangent = new THREE.Vector3();
+  const cameraForward = new THREE.Vector3();
   const desiredCam = new THREE.Vector3(), desiredLook = new THREE.Vector3();
   const playerPos = new THREE.Vector3(), lookAt = new THREE.Vector3();
   const basis = new THREE.Matrix4(), q = new THREE.Quaternion();
@@ -34,6 +36,14 @@ export function createGroundController({ THREE, camera, globe, renderer, bodyHei
     cameraLookHeight: bodyHeight * 1.15,
     cameraLookAhead: bodyHeight * 1.6,
     cameraSmooth: 14,
+    cameraYawSensitivity: 0.0028,
+    cameraPitchSensitivity: 0.0022,
+    cameraPitchMin: -0.35,
+    cameraPitchMax: 0.55,
+    // Continuous wheel/trackpad zoom. Previous sign-only 0.7 body-height jumps were too sensitive.
+    cameraZoomSensitivity: 0.00045,
+    cameraDistanceMin: bodyHeight * 3.5,
+    cameraDistanceMax: bodyHeight * 14,
     fov: 42,
   };
 
@@ -50,6 +60,20 @@ export function createGroundController({ THREE, camera, globe, renderer, bodyHei
   let playerRoot = null;
   let snappedCamera = false;
   let presentationUpdater = null;
+
+  // Camera orbit is presentation only. Heading remains owned by keyboard/controller input.
+  let cameraYaw = 0;
+  let cameraPitch = 0;
+  let cameraDragging = false;
+  let cameraPointerId = null;
+  let pointerX = 0, pointerY = 0;
+  let cameraDragPixels = 0;
+
+  function wrapPi(a) {
+    while (a > Math.PI) a -= Math.PI * 2;
+    while (a < -Math.PI) a += Math.PI * 2;
+    return a;
+  }
 
   function basisAt(n) {
     up.copy(n).normalize();
@@ -78,12 +102,23 @@ export function createGroundController({ THREE, camera, globe, renderer, bodyHei
 
   function syncCamera(dt, snap = false) {
     basisAt(dir);
+
+    // Camera yaw is relative to actor heading. Positive mouse-X looks to the actor's right while
+    // leaving the actor itself untouched. Pitch orbits above/below the default chase angle.
+    cameraForward.copy(forward).multiplyScalar(Math.cos(cameraYaw))
+      .addScaledVector(right, Math.sin(cameraYaw)).normalize();
+    const orbitRadius = Math.hypot(params.cameraDistance, params.cameraHeight);
+    const baseElevation = Math.atan2(params.cameraHeight, Math.max(1e-6, params.cameraDistance));
+    const elevation = THREE.MathUtils.clamp(baseElevation + cameraPitch, 0.12, 1.10);
+    const horizontalDistance = orbitRadius * Math.cos(elevation);
+    const verticalDistance = orbitRadius * Math.sin(elevation);
+
     desiredCam.copy(playerPos)
-      .addScaledVector(forward, -params.cameraDistance)
-      .addScaledVector(up, params.cameraHeight);
+      .addScaledVector(cameraForward, -horizontalDistance)
+      .addScaledVector(up, verticalDistance);
     desiredLook.copy(playerPos)
       .addScaledVector(up, params.cameraLookHeight)
-      .addScaledVector(forward, params.cameraLookAhead);
+      .addScaledVector(cameraForward, params.cameraLookAhead);
     if (snap || !snappedCamera) {
       camera.position.copy(desiredCam);
       lookAt.copy(desiredLook);
@@ -107,15 +142,22 @@ export function createGroundController({ THREE, camera, globe, renderer, bodyHei
       onGround, jumping: !onGround, jumpOffset, verticalVelocity,
       input: { turn: inputTurn, throttle: inputThrottle, strafe: inputStrafe },
       position: playerPos.clone(), forward: forward.clone(), right: right.clone(), bodyHeight,
+      camera: {
+        yaw: cameraYaw,
+        pitch: cameraPitch,
+        distance: params.cameraDistance,
+        dragging: cameraDragging,
+        dragPixels: cameraDragPixels,
+      },
     };
   }
 
   function update(dt) {
     if (!enabled) return;
 
-    // Same Ground controls already used by Travel v16, extended with its documented sprint intent:
-    // W/S move, A/D turn, Q/E strafe, Shift run. Space is one-shot jump input.
-    const turn = (keys.has('KeyA') ? 1 : 0) - (keys.has('KeyD') ? 1 : 0);
+    // Human browser correction: the old planar +/− sign produced visually reversed Ground turns
+    // on the Globe tangent frame. D is therefore positive and A negative here; Flight is untouched.
+    const turn = (keys.has('KeyD') ? 1 : 0) - (keys.has('KeyA') ? 1 : 0);
     const throttle = (keys.has('KeyW') ? 1 : 0) - (keys.has('KeyS') ? params.backMul : 0);
     const strafe = (keys.has('KeyE') ? 1 : 0) - (keys.has('KeyQ') ? 1 : 0);
     running = keys.has('ShiftLeft') || keys.has('ShiftRight');
@@ -140,8 +182,6 @@ export function createGroundController({ THREE, camera, globe, renderer, bodyHei
     const locomotionSpeed = params.speed * (running ? params.runMul : 1);
     const distance = moveMagnitude * locomotionSpeed * dt;
     if (distance > 1e-8) {
-      // Great-circle step in the selected local tangent direction. The actor keeps its heading while
-      // strafing; Q/E move sideways instead of secretly becoming another turn input.
       const angle = distance / Math.max(0.001, r);
       const c = Math.cos(angle), s = Math.sin(angle);
       dir.multiplyScalar(c).addScaledVector(moveTangent, s).normalize();
@@ -170,6 +210,12 @@ export function createGroundController({ THREE, camera, globe, renderer, bodyHei
     if (presentationUpdater) presentationUpdater(dt, stateSnapshot());
   }
 
+  function resetCameraOrbit() {
+    cameraYaw = 0;
+    cameraPitch = 0;
+    snappedCamera = false;
+  }
+
   function resetFromFlight(carpet) {
     const p = carpet.worldPos();
     if (p && p.lengthSq() > 1e-8) dir.copy(p).normalize();
@@ -178,7 +224,7 @@ export function createGroundController({ THREE, camera, globe, renderer, bodyHei
     jumpOffset = 0;
     verticalVelocity = 0;
     jumpQueued = false;
-    snappedCamera = false;
+    resetCameraOrbit();
     syncPlayer();
     syncCamera(1 / 60, true);
   }
@@ -190,7 +236,7 @@ export function createGroundController({ THREE, camera, globe, renderer, bodyHei
     jumpOffset = 0;
     verticalVelocity = 0;
     jumpQueued = false;
-    snappedCamera = false;
+    resetCameraOrbit();
     syncPlayer();
     syncCamera(1 / 60, true);
   }
@@ -204,57 +250,137 @@ export function createGroundController({ THREE, camera, globe, renderer, bodyHei
     };
   }
 
+  const heldCodes = ['KeyW', 'KeyA', 'KeyS', 'KeyD', 'KeyQ', 'KeyE', 'ShiftLeft', 'ShiftRight'];
+  function claimGroundKey(e) {
+    e.preventDefault();
+    // Capture-phase ownership prevents the older Flight Space/paintball listener from seeing a
+    // Ground jump and also keeps the flight key-set clean while Ground owns locomotion.
+    e.stopImmediatePropagation();
+  }
   function onKeyDown(e) {
     if (!enabled) return;
-    const held = ['KeyW', 'KeyA', 'KeyS', 'KeyD', 'KeyQ', 'KeyE', 'ShiftLeft', 'ShiftRight'];
-    if (held.includes(e.code)) {
+    if (heldCodes.includes(e.code)) {
       keys.add(e.code);
-      e.preventDefault();
+      claimGroundKey(e);
       return;
     }
     if (e.code === 'Space') {
       if (!e.repeat) jumpQueued = true;
-      e.preventDefault();
+      claimGroundKey(e);
     }
   }
-  function onKeyUp(e) { keys.delete(e.code); }
+  function onKeyUp(e) {
+    if (!enabled) return;
+    if (heldCodes.includes(e.code)) {
+      keys.delete(e.code);
+      claimGroundKey(e);
+      return;
+    }
+    if (e.code === 'Space') claimGroundKey(e);
+  }
   function clearKeys() {
     keys.clear();
     jumpQueued = false;
     inputTurn = 0; inputThrottle = 0; inputStrafe = 0;
     running = false;
   }
-  function onWheel(e) {
-    if (!enabled) return;
-    params.cameraDistance = THREE.MathUtils.clamp(params.cameraDistance + Math.sign(e.deltaY) * bodyHeight * 0.7,
-      bodyHeight * 3.5, bodyHeight * 14);
+
+  function endCameraDrag(e = null) {
+    if (!cameraDragging) return;
+    if (e && cameraPointerId != null && e.pointerId !== cameraPointerId) return;
+    try {
+      if (cameraPointerId != null && renderer.domElement.hasPointerCapture(cameraPointerId)) {
+        renderer.domElement.releasePointerCapture(cameraPointerId);
+      }
+    } catch (_) {}
+    cameraDragging = false;
+    cameraPointerId = null;
   }
 
-  addEventListener('keydown', onKeyDown, { passive: false });
-  addEventListener('keyup', onKeyUp);
+  function onPointerDown(e) {
+    if (!enabled || e.button !== 2) return;
+    cameraDragging = true;
+    cameraPointerId = e.pointerId;
+    pointerX = e.clientX; pointerY = e.clientY;
+    cameraDragPixels = 0;
+    try { renderer.domElement.setPointerCapture(e.pointerId); } catch (_) {}
+    e.preventDefault();
+    e.stopImmediatePropagation();
+  }
+  function onPointerMove(e) {
+    if (!enabled || !cameraDragging || e.pointerId !== cameraPointerId) return;
+    const dx = e.clientX - pointerX;
+    const dy = e.clientY - pointerY;
+    pointerX = e.clientX; pointerY = e.clientY;
+    cameraDragPixels += Math.hypot(dx, dy);
+    cameraYaw = wrapPi(cameraYaw + dx * params.cameraYawSensitivity);
+    cameraPitch = THREE.MathUtils.clamp(cameraPitch + dy * params.cameraPitchSensitivity,
+      params.cameraPitchMin, params.cameraPitchMax);
+    snappedCamera = false;
+    e.preventDefault();
+    e.stopImmediatePropagation();
+  }
+  function onPointerUp(e) {
+    if (!enabled || e.button !== 2) return;
+    endCameraDrag(e);
+    e.preventDefault();
+    e.stopImmediatePropagation();
+  }
+  function onContextMenu(e) {
+    if (!enabled) return;
+    e.preventDefault();
+  }
+  function onWheel(e) {
+    if (!enabled) return;
+    const delta = THREE.MathUtils.clamp(e.deltaY, -120, 120);
+    const ratio = Math.exp(delta * params.cameraZoomSensitivity);
+    params.cameraDistance = THREE.MathUtils.clamp(params.cameraDistance * ratio,
+      params.cameraDistanceMin, params.cameraDistanceMax);
+    snappedCamera = false;
+    e.preventDefault();
+    e.stopImmediatePropagation();
+  }
+
+  // Ground claims its keys in capture phase so Space cannot leak into Flight paintball/specialAction.
+  addEventListener('keydown', onKeyDown, { passive: false, capture: true });
+  addEventListener('keyup', onKeyUp, { passive: false, capture: true });
   addEventListener('blur', clearKeys);
-  document.addEventListener('visibilitychange', () => { if (document.hidden) clearKeys(); });
-  renderer.domElement.addEventListener('wheel', onWheel, { passive: true });
+  document.addEventListener('visibilitychange', () => { if (document.hidden) { clearKeys(); endCameraDrag(); } });
+  renderer.domElement.addEventListener('pointerdown', onPointerDown, { passive: false, capture: true });
+  renderer.domElement.addEventListener('pointermove', onPointerMove, { passive: false, capture: true });
+  renderer.domElement.addEventListener('pointerup', onPointerUp, { passive: false, capture: true });
+  renderer.domElement.addEventListener('pointercancel', endCameraDrag, { passive: true, capture: true });
+  renderer.domElement.addEventListener('contextmenu', onContextMenu, { passive: false });
+  renderer.domElement.addEventListener('wheel', onWheel, { passive: false, capture: true });
 
   return {
     name: 'wb0-ground-controller',
     params,
     update,
     resetFromFlight,
+    resetCameraOrbit,
     setSurfaceDirection,
     toFlightPose,
     radiusAt,
     setPlayerRoot(root) { playerRoot = root || null; syncPlayer(); },
     setPresentationUpdater(fn) { presentationUpdater = typeof fn === 'function' ? fn : null; },
     queueJump() { if (enabled && onGround) jumpQueued = true; },
-    setEnabled(on) { enabled = !!on; if (!enabled) clearKeys(); },
+    setEnabled(on) {
+      enabled = !!on;
+      if (!enabled) { clearKeys(); endCameraDrag(); }
+    },
     get enabled() { return enabled; },
     get state() { return stateSnapshot(); },
     dispose() {
-      removeEventListener('keydown', onKeyDown);
-      removeEventListener('keyup', onKeyUp);
+      removeEventListener('keydown', onKeyDown, true);
+      removeEventListener('keyup', onKeyUp, true);
       removeEventListener('blur', clearKeys);
-      renderer.domElement.removeEventListener('wheel', onWheel);
+      renderer.domElement.removeEventListener('pointerdown', onPointerDown, true);
+      renderer.domElement.removeEventListener('pointermove', onPointerMove, true);
+      renderer.domElement.removeEventListener('pointerup', onPointerUp, true);
+      renderer.domElement.removeEventListener('pointercancel', endCameraDrag, true);
+      renderer.domElement.removeEventListener('contextmenu', onContextMenu);
+      renderer.domElement.removeEventListener('wheel', onWheel, true);
     },
   };
 }
