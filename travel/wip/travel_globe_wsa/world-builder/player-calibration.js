@@ -1,8 +1,9 @@
 // WB0 player calibration seam.
 // Keeps recurring character scale/facing corrections explicit and persistent instead of hard-coding
 // another guessed constant into source assets. The Ground player remains owned by WB0; this module
-// only applies non-destructive presentation calibration to the mounted player root/model.
+// only applies non-destructive presentation calibration to the stable player root / visual wrapper.
 
+// Kept for backward compatibility with recipes already saved by the first calibration slice.
 const FAMILY_KEY = 'kaykit-rig-medium-player';
 const DEFAULTS = Object.freeze({ scale: 1, yawDeg: 0 });
 
@@ -10,8 +11,11 @@ function waitForWb0(timeoutMs = 15000) {
   return new Promise((resolve, reject) => {
     const t0 = performance.now();
     const tick = () => {
-      if (window.__wb0 && window.__globe && window.__globe.scene) return resolve(window.__wb0);
-      if (performance.now() - t0 > timeoutMs) return reject(new Error('WB0 calibration timed out waiting for runtime'));
+      const scene = window.__globe && window.__globe.scene;
+      const root = scene && scene.getObjectByName('WB0 Ground Player');
+      const visual = root && root.getObjectByName('WB0 Player Visual');
+      if (window.__wb0 && scene && root && visual) return resolve({ wb0: window.__wb0, root, visual });
+      if (performance.now() - t0 > timeoutMs) return reject(new Error('WB0 calibration timed out waiting for stable player visual root'));
       setTimeout(tick, 40);
     };
     tick();
@@ -42,12 +46,8 @@ function makeSection(panel) {
 }
 
 async function main() {
-  const wb0 = await waitForWb0();
-  const scene = window.__globe.scene;
-  const root = scene.getObjectByName('WB0 Ground Player');
-  if (!root) throw new Error('WB0 Ground Player root not found');
-  const model = root.children && root.children[0];
-  if (!model) throw new Error('WB0 Ground Player model not found');
+  const ready = await waitForWb0();
+  const wb0 = ready.wb0, root = ready.root, visual = ready.visual;
 
   wb0.recipe.calibrationFamilies ||= {};
   const saved = wb0.recipe.calibrationFamilies[FAMILY_KEY] || {};
@@ -68,14 +68,16 @@ async function main() {
     calibration.scale = clamp(finite(calibration.scale, 1), 0.25, 1.5);
     calibration.yawDeg = clamp(finite(calibration.yawDeg, 0), -180, 180);
 
+    // Scale belongs to the locomotion root. Facing correction belongs to the stable visual wrapper,
+    // so swapping ActionFigure/Monstrosity/Legacy never loses the accepted correction.
     root.scale.setScalar(calibration.scale);
-    model.rotation.y = calibration.yawDeg * Math.PI / 180;
+    visual.rotation.y = calibration.yawDeg * Math.PI / 180;
     root.updateMatrixWorld(true);
 
     wb0.recipe.calibrationFamilies[FAMILY_KEY] = {
       scale: calibration.scale,
       yawDeg: calibration.yawDeg,
-      target: 'WB0 Ground Player visual root/model',
+      target: 'WB0 Ground Player root + WB0 Player Visual wrapper',
       sourceAssetMutation: false,
     };
     scaleRange.value = String(calibration.scale);
@@ -101,13 +103,13 @@ async function main() {
   };
 
   apply();
-  window.__wb0.playerCalibration = {
+  wb0.playerCalibration = {
     family: FAMILY_KEY,
     get value() { return { ...calibration }; },
     set(scale, yawDeg) { calibration.scale = scale; calibration.yawDeg = yawDeg; apply({ persist: true }); },
     reset() { calibration.scale = 1; calibration.yawDeg = 0; apply({ persist: true }); },
   };
-  console.info('[wb0] player calibration mounted', window.__wb0.playerCalibration.value);
+  console.info('[wb0] player calibration mounted', wb0.playerCalibration.value);
 }
 
 main().catch((error) => console.warn('[wb0 calibration]', error));
