@@ -1,0 +1,170 @@
+name: One-shot unpack KayKit packs 2026-09-18
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - ".github/workflows/unpack-kaykit-packs-2026-09-18.yml"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: kfb-unpack-kaykit-packs-2026-09-18
+  cancel-in-progress: false
+
+jobs:
+  unpack:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v7
+        with:
+          fetch-depth: 2
+
+      - name: Verify and unpack four KayKit ZIPs
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          from __future__ import annotations
+          import json, os, shutil, stat, subprocess, tempfile, zipfile
+          from pathlib import Path, PurePosixPath
+
+          root = Path.cwd()
+          specs = [
+              {
+                  "zip": "media/3D_Assets/KayKit Medieval Builder Pack 1.0.zip",
+                  "blob": "7e98c37f22e0fad1a36f5d888caf6f5ad3ab574c",
+                  "target": "media/3D_Assets/KayKit Medieval Builder Pack 1.0",
+              },
+              {
+                  "zip": "media/3D_Assets/KayKit_Furniture_Bits_1.0_FREE.zip",
+                  "blob": "1c5b95feb01d64e4f84458b75c95290a9ab0a68b",
+                  "target": "media/3D_Assets/KayKit_Furniture_Bits_1.0_FREE",
+              },
+              {
+                  "zip": "media/3D_Assets/KayKit_Restaurant_Bits_1.0_FREE.zip",
+                  "blob": "e8b446d1f309b8f8040dcbcc50f51a7bffcb923c",
+                  "target": "media/3D_Assets/KayKit_Restaurant_Bits_1.0_FREE",
+              },
+              {
+                  "zip": "media/3D_Assets/KayKit_Space_Base_Bits_1.0_FREE.zip",
+                  "blob": "ee91bbef38a9af6c99d96a7e54eb92f20945eb3b",
+                  "target": "media/3D_Assets/KayKit_Space_Base_Bits_1.0_FREE",
+              },
+          ]
+
+          junk_names = {".DS_Store", "Thumbs.db"}
+          def meaningful(p: Path) -> bool:
+              return p.name not in junk_names and "__MACOSX" not in p.parts
+
+          report = {
+              "schema": "kfb.asset-pack-unpack/1",
+              "date": "2026-09-18",
+              "source": "four manually uploaded KayKit ZIPs",
+              "policy": "additive; ZIPs preserved; existing target directories are a hard failure",
+              "packs": [],
+          }
+
+          for spec in specs:
+              zpath = root / spec["zip"]
+              target = root / spec["target"]
+              if not zpath.is_file():
+                  raise SystemExit(f"MISSING ZIP: {spec['zip']}")
+              actual_blob = subprocess.check_output(["git", "hash-object", str(zpath)], text=True).strip()
+              if actual_blob != spec["blob"]:
+                  raise SystemExit(f"BLOB MISMATCH {spec['zip']}: {actual_blob} != {spec['blob']}")
+              if target.exists():
+                  raise SystemExit(f"TARGET ALREADY EXISTS: {spec['target']}")
+
+              with tempfile.TemporaryDirectory(prefix="kfb-kaykit-") as td:
+                  tmp = Path(td)
+                  with zipfile.ZipFile(zpath) as zf:
+                      infos = [i for i in zf.infolist() if not i.is_dir()]
+                      if not infos:
+                          raise SystemExit(f"EMPTY ZIP: {spec['zip']}")
+                      for info in infos:
+                          p = PurePosixPath(info.filename)
+                          if p.is_absolute() or ".." in p.parts:
+                              raise SystemExit(f"UNSAFE PATH in {spec['zip']}: {info.filename}")
+                          unix_mode = (info.external_attr >> 16) & 0xFFFF
+                          if stat.S_ISLNK(unix_mode):
+                              raise SystemExit(f"SYMLINK NOT ALLOWED in {spec['zip']}: {info.filename}")
+                      zf.extractall(tmp)
+
+                  # Strip known junk before determining the meaningful pack root.
+                  for p in sorted(tmp.rglob("*"), reverse=True):
+                      if p.name in junk_names or "__MACOSX" in p.parts:
+                          if p.is_dir():
+                              shutil.rmtree(p, ignore_errors=True)
+                          else:
+                              p.unlink(missing_ok=True)
+
+                  desired_root = tmp / Path(spec["target"]).name
+                  if desired_root.is_dir():
+                      source = desired_root
+                  else:
+                      top = [p for p in tmp.iterdir() if meaningful(p)]
+                      dirs = [p for p in top if p.is_dir()]
+                      files = [p for p in top if p.is_file()]
+                      if len(dirs) == 1 and not files:
+                          source = dirs[0]
+                      else:
+                          # Some KayKit archives are rootless and contain Assets/ or Models/ directly.
+                          names = {p.name for p in top}
+                          if "Assets" in names or "Models" in names:
+                              source = tmp
+                          else:
+                              raise SystemExit(
+                                  f"AMBIGUOUS ZIP ROOT {spec['zip']}: {sorted(names)}"
+                              )
+
+                  shutil.copytree(source, target)
+
+              files = [p for p in target.rglob("*") if p.is_file()]
+              if not files:
+                  raise SystemExit(f"NO FILES EXTRACTED: {spec['target']}")
+              suffix_counts = {}
+              for p in files:
+                  suffix = p.suffix.lower() or "<none>"
+                  suffix_counts[suffix] = suffix_counts.get(suffix, 0) + 1
+              report["packs"].append({
+                  "zipPath": spec["zip"],
+                  "zipBlobSha": actual_blob,
+                  "targetPath": spec["target"],
+                  "fileCount": len(files),
+                  "bytes": sum(p.stat().st_size for p in files),
+                  "formats": dict(sorted(suffix_counts.items())),
+                  "licensePresent": any(p.name.lower().startswith("license") for p in files),
+              })
+
+          manifest = root / "media/3D_Assets/KAYKIT_PACK_UNPACK_2026-09-18.json"
+          manifest.write_text(json.dumps(report, indent=2) + "\n", encoding="utf-8")
+          print(json.dumps(report, indent=2))
+          PY
+
+      - name: Sanity check extracted model payload
+        shell: bash
+        run: |
+          set -euo pipefail
+          for d in             "media/3D_Assets/KayKit Medieval Builder Pack 1.0"             "media/3D_Assets/KayKit_Furniture_Bits_1.0_FREE"             "media/3D_Assets/KayKit_Restaurant_Bits_1.0_FREE"             "media/3D_Assets/KayKit_Space_Base_Bits_1.0_FREE"
+          do
+            test -d "$d"
+            count="$(find "$d" -type f \( -iname '*.glb' -o -iname '*.gltf' -o -iname '*.fbx' -o -iname '*.obj' \) | wc -l)"
+            echo "$d model files: $count"
+            test "$count" -gt 0
+          done
+
+      - name: Commit extracted packs
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add             "media/3D_Assets/KayKit Medieval Builder Pack 1.0"             "media/3D_Assets/KayKit_Furniture_Bits_1.0_FREE"             "media/3D_Assets/KayKit_Restaurant_Bits_1.0_FREE"             "media/3D_Assets/KayKit_Space_Base_Bits_1.0_FREE"             "media/3D_Assets/KAYKIT_PACK_UNPACK_2026-09-18.json"
+          git diff --cached --stat
+          git commit -m "assets: unpack four KayKit source packs"
+          git pull --rebase origin main
+          git push origin HEAD:main
