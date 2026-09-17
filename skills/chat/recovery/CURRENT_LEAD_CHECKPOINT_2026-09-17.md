@@ -25,18 +25,22 @@ Current experimental lane:
 `ChatGPT_web/track-lab/`
 
 Current decision, 2026-09-17:
-- Georg manually tested the standalone true-WebGL Track Lab through v0.5 and wants this direction pursued.
-- Human qualitative result: cleaner and more immediately fun than the prior Stunt Race approach even in raw form.
-- This promotes the **direction / next development lane**, not the Track Lab as a replacement production runtime.
+- Georg manually accepted the standalone true-WebGL Track Lab v0.5 **direction** after freeplay, reporting cleaner behavior and more immediate play/fun than the prior Stunt Race approach.
+- T1/T2 v0.6 is now implemented as a standalone candidate: explicit Flow Loop recipe/Track Core, A0 Surface/Connectors, deterministic hash, coast/brake/reverse and testable forgiving rail contact.
+- Static/deterministic evidence passes; **v0.6 human freeplay acceptance is still pending**.
 - Existing movement/contact, camera, progress and WSA integration ownership remain in force.
-- KayKit City Builder cars are accepted Track Lab fixtures/candidates; the previously documented Rover 01 production-shell preference is not silently replaced.
-- `DEMO AUTO` is inspection help only; stunt guidance remains the zonal `free → capture → commit → release → recover` contract.
+- KayKit City Builder cars are Track Lab fixtures/candidates; Rover 01 production-shell preference is not silently replaced.
+- `DEMO AUTO` remains inspection help only; stunt guidance remains `free → capture → commit → release → recover`.
+- Future rig/composite vehicles + inertial FrizzleBob driver + wind-reactive ears are an explicit presentation constraint, but OUT OF SCOPE for T1/T2 and non-destructive to physics ownership.
+
+Shared cross-project handoff seam:
+`skills/chat/masterplan/KFB_ASSEMBLY_CONTRACT_A0_2026-09-17.md`
 
 Recovery order:
-`KFB-Stunt-Car-Race/RECOVERY.md` → `ChatGPT_web/track-lab/LIVING_MASTERPLAN.md` → `WIP_STATUS.json` → `V05_SOURCE_SNAPSHOT.md` → actual current `race/` contracts before integration.
+`KFB-Stunt-Car-Race/RECOVERY.md` → `ChatGPT_web/track-lab/WIP_STATUS.json` → `T1_T2_RETURN_2026-09-17.md` → `FLOW_LOOP_RECIPE_A0.json` → actual current `race/` contracts before integration.
 
 Next gate:
-productionize the Flow Loop/core and forgiving controls/rubber contact, then add arbitrary-3D transported route frames; the first spectacular gameplay expansion is exactly one real vertical loop with safe bypass.
+Georg freeplays v0.6. If feel is preserved, freeze T1/T2 and move to T3 arbitrary-3D transported route frames. Only after T3: one true vertical loop + safe bypass.
 
 ### ToolBox lane
 
@@ -129,6 +133,7 @@ DocCheck visual convention:
 
 - project/tool SSOTs beat this checkpoint
 - Stunt Race remains its own implementation SSOT; Track Lab is an experimental accepted lane until integrated through project contracts
+- Assembly A0 is handoff semantics only, not a new runtime owner
 - Travel remains world/runtime SSOT; `/world/` remains a candidate-authoring POC, not a second runtime owner
 - ToolBox/Studio contracts are not silently replaced
 - Asset Librarian remains discovery/provenance, not compatibility owner
@@ -136,4 +141,4 @@ DocCheck visual convention:
 
 ## Recovery sentence
 
-> Start from the current project SSOT, not chat history. For Travel/World work, open the Hub Travel recovery page, verify current `KFB-Travel-Globe/main`, then choose the productive `/world-builder/` runtime lane or the candidate-only `/world/` authoring lane without mixing their ownership. For Stunt Race, open the Hub Stunt recovery page or read `RECOVERY.md` → Track Lab `LIVING_MASTERPLAN.md` → `WIP_STATUS.json`; for SimBlood, open the Hub recovery page or read `START_HERE.md` → `RECOVERY.md` → `WIP_STATUS.json` → Living Addendum → `RETURN.md`. Continue only the named active WIP and leave Living/Change/Return/WIP state resumable on GitHub.
+> Start from the current project SSOT, not chat history. For Travel/World work, open the Hub Travel recovery page, verify current `KFB-Travel-Globe/main`, then choose the productive `/world-builder/` runtime lane or the candidate-only `/world/` authoring lane without mixing their ownership. For Stunt Race, open the Hub Stunt recovery page or read `RECOVERY.md` → `WIP_STATUS.json` → `T1_T2_RETURN_2026-09-17.md`; for SimBlood, open the Hub recovery page or read `START_HERE.md` → `RECOVERY.md` → `WIP_STATUS.json` → Living Addendum → `RETURN.md`. Continue only the named active WIP and leave Living/Change/Return/WIP state resumable on GitHub.
