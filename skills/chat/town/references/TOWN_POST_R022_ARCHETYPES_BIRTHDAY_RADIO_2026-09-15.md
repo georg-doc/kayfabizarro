@@ -1,3 +1,5 @@
+> **2026-09-18 STATUS OVERRIDE:** Sections 1–3 (archetype/revelation concepts) remain reference. The Birthday-Radio execution framing is **ARCHIVED HISTORY** because the full Birthday 2026 slice failed and is no longer current. Existing audio files remain valid repository assets/provenance; they are not a current production priority by virtue of this document.
+
 # KFB Town · Post-r022 input · Archetypes, revelation artifact and Birthday Radio
 
 **Date:** 2026-09-15  
