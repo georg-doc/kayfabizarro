@@ -17,6 +17,18 @@
       <div class="status" id="status">NORMAL · seed 42</div>
     </header>
 
+    <section class="presetbar" aria-label="Technische POC-Präparate">
+      <div class="preset-copy">
+        <strong>Technischer Präparat-Switch</strong>
+        <span>Visualisiert nur die Recipe-/Composer-Logik. Noch keine medizinisch validierten Presets.</span>
+      </div>
+      <div class="preset-buttons" id="presetButtons">
+        <button type="button" data-preset="normal" class="active">Normal</button>
+        <button type="button" data-preset="iron_deficiency">Eisenmangel · POC</button>
+        <button type="button" data-preset="tma">TMA · POC</button>
+      </div>
+    </section>
+
     <section class="workspace">
       <div class="scope-wrap">
         <div class="scope" id="scope" aria-label="Simulierter peripherer Blutausstrich">
@@ -24,7 +36,7 @@
           <div class="scope-glass" aria-hidden="true"></div>
           <div class="debug-label" id="debugLabel" hidden></div>
         </div>
-        <p class="hint">Ziehen zum Verschieben · Zelle anklicken für Ground Truth</p>
+        <p class="hint">Ziehen zum Verschieben · WBC/Thrombozyt anklicken für Ground Truth</p>
       </div>
 
       <aside class="controls" aria-label="Mikroskop-Steuerung">
@@ -52,14 +64,20 @@
           <div><span>PLT</span><strong id="pltCount">—</strong></div>
         </section>
 
+        <section class="control-card legend" id="legend">
+          <strong>Aktuelles Recipe</strong>
+          <div id="recipeSummary">Normaler technischer Basis-Preset.</div>
+        </section>
+
         <section class="note">
-          <strong>POC, nicht validierter Befund.</strong>
-          <span>RBC/WBC/Thrombozyten sind getrennte, typisierte Objekte. Morphologie-Assets sind noch austauschbar.</span>
+          <strong>POC, kein validierter Befund.</strong>
+          <span>RBC/WBC/Thrombozyten sind getrennte, typisierte Objekte. Pathologieformen und Leukozyten sind aktuell technische Visual-Donors und bleiben austauschbar.</span>
         </section>
       </aside>
     </section>
   </main>
 
+  <noscript><div class="noscript">SimBlood benötigt JavaScript für den interaktiven POC.</div></noscript>
   <script src="./app.js"></script>
 </body>
 </html>
