@@ -1,7 +1,7 @@
 # KFB Asset Librarian · Fresh Chat Onboarding
 
 **Date:** 2026-09-15  
-**Status:** CURRENT REENTRY / RECOVERY BRIEF. Not a new Registry or consumer SSOT.  
+**Status:** RECOVERY BRIEF · consumer examples updated 2026-09-18. Not a new Registry or consumer SSOT.  
 **Permanent product URL:** https://kayfabizarro.pages.dev/asset-librarian/
 
 ## One sentence
@@ -66,8 +66,8 @@ Useful current needs include:
 - same-collection props;
 - motion audition/casting for concrete roles;
 - showstage / ring / city / nature / vehicle candidates as needed by a named scene;
-- Birthday Character Select work, including GothGirl/KayKit motion casting;
-- D6 Birthday Radio audio discovery now that the source package is on `main`.
+- Resident/World Atlas and Stage-First ToolBox candidate discovery when a named consumer needs exact source refs;
+- Travel Atlas Pilot 01 source support when the receiving owner requests it.
 
 Do **not** respond to this by inventing a larger semantic taxonomy. Use the existing search, Type/Format browse heuristics, pack/path facts and Town candidate handoff first. Add a new workbench filter/lane only when a concrete task cannot be served cleanly by the current surface.
 
@@ -131,8 +131,8 @@ Return one concise report with:
 2. reconciled visible version and docs;
 3. browser smoke evidence actually checked;
 4. permanent Cloudflare URL result actually checked;
-5. whether the six Birthday Radio assets are visible through Registry → Live yet;
-6. one proposed next Librarian slice tied to the current Town/Birthday workflow.
+5. whether current Registry → Live indexing is healthy for recently added assets;
+6. one proposed next Librarian slice tied to a named current consumer (ToolBox Stage-First, Atlas or Travel), not the archived Birthday slice.
 
 ## Start prompt for a new chat
 
