@@ -10,7 +10,10 @@ export async function buildRawFlamingoMovementRuntime({
   const gltf = await loader.loadAsync(raw(def.body || RAW_FLAMINGO_PATH));
   const model = gltf.scene;
   model.name = 'Fernando · Flamingo · raw Quaternius control';
-  model.rotation.y = Math.PI;
+  // HUMAN BROWSER CORRECTION 17.09.2026:
+  // the previous inherited +180° donor correction made Fernando face backwards in WB0 Ground.
+  // Keep the source orientation here; this is presentation-only and does not touch Ground heading.
+  model.rotation.y = 0;
   worldLambert(model);
 
   const targetHeight = bodyHeight * 3.6;
@@ -44,8 +47,10 @@ export async function buildRawFlamingoMovementRuntime({
       clips: (gltf.animations || []).map((clip) => clip.name),
       targetHeight,
       speedMul,
+      forwardCorrectionDeg: 0,
+      forwardEvidence: 'HUMAN BROWSER CORRECTION · previous 180° correction was backwards in WB0',
       composition: 'RAW CONTROL · no cockpit · no FrizzleBob',
     },
-    status: `RAW Quaternius control · ${entries.length} embedded clips · move ${speedMul.toFixed(2)}× · no cockpit / no FrizzleBob`,
+    status: `RAW Quaternius control · ${entries.length} embedded clips · move ${speedMul.toFixed(2)}× · source forward · no cockpit / no FrizzleBob`,
   };
 }
