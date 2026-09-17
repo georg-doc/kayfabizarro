@@ -1,9 +1,9 @@
 {
   "counts": {
-    "DUPLICATE_NAME": 656,
+    "DUPLICATE_NAME": 659,
     "MISSING_REFERENCED_FILE": 339,
-    "UNRESOLVED_FBX_DEPENDENCY": 265,
-    "UNRESOLVED_MODEL_DEPENDENCY": 80
+    "UNRESOLVED_FBX_DEPENDENCY": 305,
+    "UNRESOLVED_MODEL_DEPENDENCY": 89
   },
   "problems": [
     {
@@ -1685,6 +1685,19 @@
         "media/3D_Assets/KayKit_Dungeon_Pack_1.1_FREE 2/Assets/textures/dungeon_texture.png"
       ],
       "problemId": "DUPLICATE_NAME:kaykit-dungeon-pack-1-1-free-2:Assets:image-2d:png:dungeon_texture",
+      "type": "DUPLICATE_NAME"
+    },
+    {
+      "collectionPath": "Assets",
+      "format": "png",
+      "kind": "image-2d",
+      "name": "furniturebits_texture",
+      "packId": "kaykit-furniture-bits-1-0-free",
+      "paths": [
+        "media/3D_Assets/KayKit_Furniture_Bits_1.0_FREE/Assets/gltf/furniturebits_texture.png",
+        "media/3D_Assets/KayKit_Furniture_Bits_1.0_FREE/Assets/texture/furniturebits_texture.png"
+      ],
+      "problemId": "DUPLICATE_NAME:kaykit-furniture-bits-1-0-free:Assets:image-2d:png:furniturebits_texture",
       "type": "DUPLICATE_NAME"
     },
     {
@@ -3466,6 +3479,32 @@
         "media/3D_Assets/KayKit_Mystery_Series6/UltraTurboHeroMan/assets/fbx/UltraTurboHeroMan_Sword.fbx"
       ],
       "problemId": "DUPLICATE_NAME:kaykit-mystery-series6:UltraTurboHeroMan:model-3d:fbx:ultraturboheroman_sword",
+      "type": "DUPLICATE_NAME"
+    },
+    {
+      "collectionPath": "Assets",
+      "format": "png",
+      "kind": "image-2d",
+      "name": "restaurantbits_texture",
+      "packId": "kaykit-restaurant-bits-1-0-free",
+      "paths": [
+        "media/3D_Assets/KayKit_Restaurant_Bits_1.0_FREE/Assets/gltf/restaurantbits_texture.png",
+        "media/3D_Assets/KayKit_Restaurant_Bits_1.0_FREE/Assets/textures/restaurantbits_texture.png"
+      ],
+      "problemId": "DUPLICATE_NAME:kaykit-restaurant-bits-1-0-free:Assets:image-2d:png:restaurantbits_texture",
+      "type": "DUPLICATE_NAME"
+    },
+    {
+      "collectionPath": "Assets",
+      "format": "png",
+      "kind": "image-2d",
+      "name": "spacebits_texture",
+      "packId": "kaykit-space-base-bits-1-0-free",
+      "paths": [
+        "media/3D_Assets/KayKit_Space_Base_Bits_1.0_FREE/Assets/gltf/spacebits_texture.png",
+        "media/3D_Assets/KayKit_Space_Base_Bits_1.0_FREE/Assets/textures/spacebits_texture.png"
+      ],
+      "problemId": "DUPLICATE_NAME:kaykit-space-base-bits-1-0-free:Assets:image-2d:png:spacebits_texture",
       "type": "DUPLICATE_NAME"
     },
     {
@@ -12080,6 +12119,246 @@
       "type": "UNRESOLVED_FBX_DEPENDENCY"
     },
     {
+      "assetPath": "media/3D_Assets/KayKit Legacy/KayKit Character Animations 1.2 - legacy/Animations/fbx/KayKit Animated Character_v1.2.fbx",
+      "detail": "dependency parsing not implemented for .fbx",
+      "problemId": "UNRESOLVED_FBX_DEPENDENCY:media/3D_Assets/KayKit Legacy/KayKit Character Animations 1.2 - legacy/Animations/fbx/KayKit Animated Character_v1.2.fbx:dependency parsing not implemented for .fbx",
+      "type": "UNRESOLVED_FBX_DEPENDENCY"
+    },
+    {
+      "assetPath": "media/3D_Assets/KayKit Legacy/KayKit Character Animations 1.2 - legacy/Animations/fbx/Single Animations/Attack(1h).fbx",
+      "detail": "dependency parsing not implemented for .fbx",
+      "problemId": "UNRESOLVED_FBX_DEPENDENCY:media/3D_Assets/KayKit Legacy/KayKit Character Animations 1.2 - legacy/Animations/fbx/Single Animations/Attack(1h).fbx:dependency parsing not implemented for .fbx",
+      "type": "UNRESOLVED_FBX_DEPENDENCY"
+    },
+    {
+      "assetPath": "media/3D_Assets/KayKit Legacy/KayKit Character Animations 1.2 - legacy/Animations/fbx/Single Animations/AttackCombo.fbx",
+      "detail": "dependency parsing not implemented for .fbx",
+      "problemId": "UNRESOLVED_FBX_DEPENDENCY:media/3D_Assets/KayKit Legacy/KayKit Character Animations 1.2 - legacy/Animations/fbx/Single Animations/AttackCombo.fbx:dependency parsing not implemented for .fbx",
+      "type": "UNRESOLVED_FBX_DEPENDENCY"
+    },
+    {
+      "assetPath": "media/3D_Assets/KayKit Legacy/KayKit Character Animations 1.2 - legacy/Animations/fbx/Single Animations/AttackSpinning.fbx",
+      "detail": "dependency parsing not implemented for .fbx",
+      "problemId": "UNRESOLVED_FBX_DEPENDENCY:media/3D_Assets/KayKit Legacy/KayKit Character Animations 1.2 - legacy/Animations/fbx/Single Animations/AttackSpinning.fbx:dependency parsing not implemented for .fbx",
+      "type": "UNRESOLVED_FBX_DEPENDENCY"
+    },
+    {
+      "assetPath": "media/3D_Assets/KayKit Legacy/KayKit Character Animations 1.2 - legacy/Animations/fbx/Single Animations/Basepose.fbx",
+      "detail": "dependency parsing not implemented for .fbx",
+      "problemId": "UNRESOLVED_FBX_DEPENDENCY:media/3D_Assets/KayKit Legacy/KayKit Character Animations 1.2 - legacy/Animations/fbx/Single Animations/Basepose.fbx:dependency parsing not implemented for .fbx",
+      "type": "UNRESOLVED_FBX_DEPENDENCY"
+    },
+    {
+      "assetPath": "media/3D_Assets/KayKit Legacy/KayKit Character Animations 1.2 - legacy/Animations/fbx/Single Animations/Block.fbx",
+      "detail": "dependency parsing not implemented for .fbx",
+      "problemId": "UNRESOLVED_FBX_DEPENDENCY:media/3D_Assets/KayKit Legacy/KayKit Character Animations 1.2 - legacy/Animations/fbx/Single Animations/Block.fbx:dependency parsing not implemented for .fbx",
+      "type": "UNRESOLVED_FBX_DEPENDENCY"
+    },
+    {
+      "assetPath": "media/3D_Assets/KayKit Legacy/KayKit Character Animations 1.2 - legacy/Animations/fbx/Single Animations/Cheer.fbx",
+      "detail": "dependency parsing not implemented for .fbx",
+      "problemId": "UNRESOLVED_FBX_DEPENDENCY:media/3D_Assets/KayKit Legacy/KayKit Character Animations 1.2 - legacy/Animations/fbx/Single Animations/Cheer.fbx:dependency parsing not implemented for .fbx",
+      "type": "UNRESOLVED_FBX_DEPENDENCY"
+    },
+    {
+      "assetPath": "media/3D_Assets/KayKit Legacy/KayKit Character Animations 1.2 - legacy/Animations/fbx/Single Animations/Climbing.fbx",
+      "detail": "dependency parsing not implemented for .fbx",
+      "problemId": "UNRESOLVED_FBX_DEPENDENCY:media/3D_Assets/KayKit Legacy/KayKit Character Animations 1.2 - legacy/Animations/fbx/Single Animations/Climbing.fbx:dependency parsing not implemented for .fbx",
+      "type": "UNRESOLVED_FBX_DEPENDENCY"
+    },
+    {
+      "assetPath": "media/3D_Assets/KayKit Legacy/KayKit Character Animations 1.2 - legacy/Animations/fbx/Single Animations/Dance.fbx",
+      "detail": "dependency parsing not implemented for .fbx",
+      "problemId": "UNRESOLVED_FBX_DEPENDENCY:media/3D_Assets/KayKit Legacy/KayKit Character Animations 1.2 - legacy/Animations/fbx/Single Animations/Dance.fbx:dependency parsing not implemented for .fbx",
+      "type": "UNRESOLVED_FBX_DEPENDENCY"
+    },
+    {
+      "assetPath": "media/3D_Assets/KayKit Legacy/KayKit Character Animations 1.2 - legacy/Animations/fbx/Single Animations/DashBack.fbx",
+      "detail": "dependency parsing not implemented for .fbx",
+      "problemId": "UNRESOLVED_FBX_DEPENDENCY:media/3D_Assets/KayKit Legacy/KayKit Character Animations 1.2 - legacy/Animations/fbx/Single Animations/DashBack.fbx:dependency parsing not implemented for .fbx",
+      "type": "UNRESOLVED_FBX_DEPENDENCY"
+    },
+    {
+      "assetPath": "media/3D_Assets/KayKit Legacy/KayKit Character Animations 1.2 - legacy/Animations/fbx/Single Animations/DashFront.fbx",
+      "detail": "dependency parsing not implemented for .fbx",
+      "problemId": "UNRESOLVED_FBX_DEPENDENCY:media/3D_Assets/KayKit Legacy/KayKit Character Animations 1.2 - legacy/Animations/fbx/Single Animations/DashFront.fbx:dependency parsing not implemented for .fbx",
+      "type": "UNRESOLVED_FBX_DEPENDENCY"
+    },
+    {
+      "assetPath": "media/3D_Assets/KayKit Legacy/KayKit Character Animations 1.2 - legacy/Animations/fbx/Single Animations/DashLeft.fbx",
+      "detail": "dependency parsing not implemented for .fbx",
+      "problemId": "UNRESOLVED_FBX_DEPENDENCY:media/3D_Assets/KayKit Legacy/KayKit Character Animations 1.2 - legacy/Animations/fbx/Single Animations/DashLeft.fbx:dependency parsing not implemented for .fbx",
+      "type": "UNRESOLVED_FBX_DEPENDENCY"
+    },
+    {
+      "assetPath": "media/3D_Assets/KayKit Legacy/KayKit Character Animations 1.2 - legacy/Animations/fbx/Single Animations/DashRight.fbx",
+      "detail": "dependency parsing not implemented for .fbx",
+      "problemId": "UNRESOLVED_FBX_DEPENDENCY:media/3D_Assets/KayKit Legacy/KayKit Character Animations 1.2 - legacy/Animations/fbx/Single Animations/DashRight.fbx:dependency parsing not implemented for .fbx",
+      "type": "UNRESOLVED_FBX_DEPENDENCY"
+    },
+    {
+      "assetPath": "media/3D_Assets/KayKit Legacy/KayKit Character Animations 1.2 - legacy/Animations/fbx/Single Animations/Defeat.fbx",
+      "detail": "dependency parsing not implemented for .fbx",
+      "problemId": "UNRESOLVED_FBX_DEPENDENCY:media/3D_Assets/KayKit Legacy/KayKit Character Animations 1.2 - legacy/Animations/fbx/Single Animations/Defeat.fbx:dependency parsing not implemented for .fbx",
+      "type": "UNRESOLVED_FBX_DEPENDENCY"
+    },
+    {
+      "assetPath": "media/3D_Assets/KayKit Legacy/KayKit Character Animations 1.2 - legacy/Animations/fbx/Single Animations/HeavyAttack.fbx",
+      "detail": "dependency parsing not implemented for .fbx",
+      "problemId": "UNRESOLVED_FBX_DEPENDENCY:media/3D_Assets/KayKit Legacy/KayKit Character Animations 1.2 - legacy/Animations/fbx/Single Animations/HeavyAttack.fbx:dependency parsing not implemented for .fbx",
+      "type": "UNRESOLVED_FBX_DEPENDENCY"
+    },
+    {
+      "assetPath": "media/3D_Assets/KayKit Legacy/KayKit Character Animations 1.2 - legacy/Animations/fbx/Single Animations/Hop.fbx",
+      "detail": "dependency parsing not implemented for .fbx",
+      "problemId": "UNRESOLVED_FBX_DEPENDENCY:media/3D_Assets/KayKit Legacy/KayKit Character Animations 1.2 - legacy/Animations/fbx/Single Animations/Hop.fbx:dependency parsing not implemented for .fbx",
+      "type": "UNRESOLVED_FBX_DEPENDENCY"
+    },
+    {
+      "assetPath": "media/3D_Assets/KayKit Legacy/KayKit Character Animations 1.2 - legacy/Animations/fbx/Single Animations/Idle.fbx",
+      "detail": "dependency parsing not implemented for .fbx",
+      "problemId": "UNRESOLVED_FBX_DEPENDENCY:media/3D_Assets/KayKit Legacy/KayKit Character Animations 1.2 - legacy/Animations/fbx/Single Animations/Idle.fbx:dependency parsing not implemented for .fbx",
+      "type": "UNRESOLVED_FBX_DEPENDENCY"
+    },
+    {
+      "assetPath": "media/3D_Assets/KayKit Legacy/KayKit Character Animations 1.2 - legacy/Animations/fbx/Single Animations/Interact.fbx",
+      "detail": "dependency parsing not implemented for .fbx",
+      "problemId": "UNRESOLVED_FBX_DEPENDENCY:media/3D_Assets/KayKit Legacy/KayKit Character Animations 1.2 - legacy/Animations/fbx/Single Animations/Interact.fbx:dependency parsing not implemented for .fbx",
+      "type": "UNRESOLVED_FBX_DEPENDENCY"
+    },
+    {
+      "assetPath": "media/3D_Assets/KayKit Legacy/KayKit Character Animations 1.2 - legacy/Animations/fbx/Single Animations/Jump.fbx",
+      "detail": "dependency parsing not implemented for .fbx",
+      "problemId": "UNRESOLVED_FBX_DEPENDENCY:media/3D_Assets/KayKit Legacy/KayKit Character Animations 1.2 - legacy/Animations/fbx/Single Animations/Jump.fbx:dependency parsing not implemented for .fbx",
+      "type": "UNRESOLVED_FBX_DEPENDENCY"
+    },
+    {
+      "assetPath": "media/3D_Assets/KayKit Legacy/KayKit Character Animations 1.2 - legacy/Animations/fbx/Single Animations/LayingDownIdle.fbx",
+      "detail": "dependency parsing not implemented for .fbx",
+      "problemId": "UNRESOLVED_FBX_DEPENDENCY:media/3D_Assets/KayKit Legacy/KayKit Character Animations 1.2 - legacy/Animations/fbx/Single Animations/LayingDownIdle.fbx:dependency parsing not implemented for .fbx",
+      "type": "UNRESOLVED_FBX_DEPENDENCY"
+    },
+    {
+      "assetPath": "media/3D_Assets/KayKit Legacy/KayKit Character Animations 1.2 - legacy/Animations/fbx/Single Animations/PickUp.fbx",
+      "detail": "dependency parsing not implemented for .fbx",
+      "problemId": "UNRESOLVED_FBX_DEPENDENCY:media/3D_Assets/KayKit Legacy/KayKit Character Animations 1.2 - legacy/Animations/fbx/Single Animations/PickUp.fbx:dependency parsing not implemented for .fbx",
+      "type": "UNRESOLVED_FBX_DEPENDENCY"
+    },
+    {
+      "assetPath": "media/3D_Assets/KayKit Legacy/KayKit Character Animations 1.2 - legacy/Animations/fbx/Single Animations/Roll.fbx",
+      "detail": "dependency parsing not implemented for .fbx",
+      "problemId": "UNRESOLVED_FBX_DEPENDENCY:media/3D_Assets/KayKit Legacy/KayKit Character Animations 1.2 - legacy/Animations/fbx/Single Animations/Roll.fbx:dependency parsing not implemented for .fbx",
+      "type": "UNRESOLVED_FBX_DEPENDENCY"
+    },
+    {
+      "assetPath": "media/3D_Assets/KayKit Legacy/KayKit Character Animations 1.2 - legacy/Animations/fbx/Single Animations/Run.fbx",
+      "detail": "dependency parsing not implemented for .fbx",
+      "problemId": "UNRESOLVED_FBX_DEPENDENCY:media/3D_Assets/KayKit Legacy/KayKit Character Animations 1.2 - legacy/Animations/fbx/Single Animations/Run.fbx:dependency parsing not implemented for .fbx",
+      "type": "UNRESOLVED_FBX_DEPENDENCY"
+    },
+    {
+      "assetPath": "media/3D_Assets/KayKit Legacy/KayKit Character Animations 1.2 - legacy/Animations/fbx/Single Animations/Shoot(1h).fbx",
+      "detail": "dependency parsing not implemented for .fbx",
+      "problemId": "UNRESOLVED_FBX_DEPENDENCY:media/3D_Assets/KayKit Legacy/KayKit Character Animations 1.2 - legacy/Animations/fbx/Single Animations/Shoot(1h).fbx:dependency parsing not implemented for .fbx",
+      "type": "UNRESOLVED_FBX_DEPENDENCY"
+    },
+    {
+      "assetPath": "media/3D_Assets/KayKit Legacy/KayKit Character Animations 1.2 - legacy/Animations/fbx/Single Animations/Shoot(2h).fbx",
+      "detail": "dependency parsing not implemented for .fbx",
+      "problemId": "UNRESOLVED_FBX_DEPENDENCY:media/3D_Assets/KayKit Legacy/KayKit Character Animations 1.2 - legacy/Animations/fbx/Single Animations/Shoot(2h).fbx:dependency parsing not implemented for .fbx",
+      "type": "UNRESOLVED_FBX_DEPENDENCY"
+    },
+    {
+      "assetPath": "media/3D_Assets/KayKit Legacy/KayKit Character Animations 1.2 - legacy/Animations/fbx/Single Animations/Shoot(2h)Bow.fbx",
+      "detail": "dependency parsing not implemented for .fbx",
+      "problemId": "UNRESOLVED_FBX_DEPENDENCY:media/3D_Assets/KayKit Legacy/KayKit Character Animations 1.2 - legacy/Animations/fbx/Single Animations/Shoot(2h)Bow.fbx:dependency parsing not implemented for .fbx",
+      "type": "UNRESOLVED_FBX_DEPENDENCY"
+    },
+    {
+      "assetPath": "media/3D_Assets/KayKit Legacy/KayKit Character Animations 1.2 - legacy/Animations/fbx/Single Animations/Shooting(1h).fbx",
+      "detail": "dependency parsing not implemented for .fbx",
+      "problemId": "UNRESOLVED_FBX_DEPENDENCY:media/3D_Assets/KayKit Legacy/KayKit Character Animations 1.2 - legacy/Animations/fbx/Single Animations/Shooting(1h).fbx:dependency parsing not implemented for .fbx",
+      "type": "UNRESOLVED_FBX_DEPENDENCY"
+    },
+    {
+      "assetPath": "media/3D_Assets/KayKit Legacy/KayKit Character Animations 1.2 - legacy/Animations/fbx/Single Animations/Shooting(2h).fbx",
+      "detail": "dependency parsing not implemented for .fbx",
+      "problemId": "UNRESOLVED_FBX_DEPENDENCY:media/3D_Assets/KayKit Legacy/KayKit Character Animations 1.2 - legacy/Animations/fbx/Single Animations/Shooting(2h).fbx:dependency parsing not implemented for .fbx",
+      "type": "UNRESOLVED_FBX_DEPENDENCY"
+    },
+    {
+      "assetPath": "media/3D_Assets/KayKit Legacy/KayKit Character Animations 1.2 - legacy/Animations/fbx/Single Animations/Throw.fbx",
+      "detail": "dependency parsing not implemented for .fbx",
+      "problemId": "UNRESOLVED_FBX_DEPENDENCY:media/3D_Assets/KayKit Legacy/KayKit Character Animations 1.2 - legacy/Animations/fbx/Single Animations/Throw.fbx:dependency parsing not implemented for .fbx",
+      "type": "UNRESOLVED_FBX_DEPENDENCY"
+    },
+    {
+      "assetPath": "media/3D_Assets/KayKit Legacy/KayKit Character Animations 1.2 - legacy/Animations/fbx/Single Animations/Walk.fbx",
+      "detail": "dependency parsing not implemented for .fbx",
+      "problemId": "UNRESOLVED_FBX_DEPENDENCY:media/3D_Assets/KayKit Legacy/KayKit Character Animations 1.2 - legacy/Animations/fbx/Single Animations/Walk.fbx:dependency parsing not implemented for .fbx",
+      "type": "UNRESOLVED_FBX_DEPENDENCY"
+    },
+    {
+      "assetPath": "media/3D_Assets/KayKit Legacy/KayKit Character Animations 1.2 - legacy/Animations/fbx/Single Animations/Wave.fbx",
+      "detail": "dependency parsing not implemented for .fbx",
+      "problemId": "UNRESOLVED_FBX_DEPENDENCY:media/3D_Assets/KayKit Legacy/KayKit Character Animations 1.2 - legacy/Animations/fbx/Single Animations/Wave.fbx:dependency parsing not implemented for .fbx",
+      "type": "UNRESOLVED_FBX_DEPENDENCY"
+    },
+    {
+      "assetPath": "media/3D_Assets/KayKit Legacy/KayKit Character Animations 1.2 - legacy/Models/fbx/Case.fbx",
+      "detail": "dependency parsing not implemented for .fbx",
+      "problemId": "UNRESOLVED_FBX_DEPENDENCY:media/3D_Assets/KayKit Legacy/KayKit Character Animations 1.2 - legacy/Models/fbx/Case.fbx:dependency parsing not implemented for .fbx",
+      "type": "UNRESOLVED_FBX_DEPENDENCY"
+    },
+    {
+      "assetPath": "media/3D_Assets/KayKit Legacy/KayKit Character Animations 1.2 - legacy/Models/fbx/Pencil.fbx",
+      "detail": "dependency parsing not implemented for .fbx",
+      "problemId": "UNRESOLVED_FBX_DEPENDENCY:media/3D_Assets/KayKit Legacy/KayKit Character Animations 1.2 - legacy/Models/fbx/Pencil.fbx:dependency parsing not implemented for .fbx",
+      "type": "UNRESOLVED_FBX_DEPENDENCY"
+    },
+    {
+      "assetPath": "media/3D_Assets/KayKit Legacy/KayKit Character Animations 1.2 - legacy/Models/fbx/PrototypePete.fbx",
+      "detail": "dependency parsing not implemented for .fbx",
+      "problemId": "UNRESOLVED_FBX_DEPENDENCY:media/3D_Assets/KayKit Legacy/KayKit Character Animations 1.2 - legacy/Models/fbx/PrototypePete.fbx:dependency parsing not implemented for .fbx",
+      "type": "UNRESOLVED_FBX_DEPENDENCY"
+    },
+    {
+      "assetPath": "media/3D_Assets/KayKit Legacy/Orc Warband - legacy/characters/fbx/character_orcA.fbx",
+      "detail": "dependency parsing not implemented for .fbx",
+      "problemId": "UNRESOLVED_FBX_DEPENDENCY:media/3D_Assets/KayKit Legacy/Orc Warband - legacy/characters/fbx/character_orcA.fbx:dependency parsing not implemented for .fbx",
+      "type": "UNRESOLVED_FBX_DEPENDENCY"
+    },
+    {
+      "assetPath": "media/3D_Assets/KayKit Legacy/Orc Warband - legacy/characters/fbx/character_orcB.fbx",
+      "detail": "dependency parsing not implemented for .fbx",
+      "problemId": "UNRESOLVED_FBX_DEPENDENCY:media/3D_Assets/KayKit Legacy/Orc Warband - legacy/characters/fbx/character_orcB.fbx:dependency parsing not implemented for .fbx",
+      "type": "UNRESOLVED_FBX_DEPENDENCY"
+    },
+    {
+      "assetPath": "media/3D_Assets/KayKit Legacy/Orc Warband - legacy/props/fbx/orc_banner.fbx",
+      "detail": "dependency parsing not implemented for .fbx",
+      "problemId": "UNRESOLVED_FBX_DEPENDENCY:media/3D_Assets/KayKit Legacy/Orc Warband - legacy/props/fbx/orc_banner.fbx:dependency parsing not implemented for .fbx",
+      "type": "UNRESOLVED_FBX_DEPENDENCY"
+    },
+    {
+      "assetPath": "media/3D_Assets/KayKit Legacy/Orc Warband - legacy/props/fbx/orc_hammerAxe.fbx",
+      "detail": "dependency parsing not implemented for .fbx",
+      "problemId": "UNRESOLVED_FBX_DEPENDENCY:media/3D_Assets/KayKit Legacy/Orc Warband - legacy/props/fbx/orc_hammerAxe.fbx:dependency parsing not implemented for .fbx",
+      "type": "UNRESOLVED_FBX_DEPENDENCY"
+    },
+    {
+      "assetPath": "media/3D_Assets/KayKit Legacy/Orc Warband - legacy/props/fbx/orc_shield.fbx",
+      "detail": "dependency parsing not implemented for .fbx",
+      "problemId": "UNRESOLVED_FBX_DEPENDENCY:media/3D_Assets/KayKit Legacy/Orc Warband - legacy/props/fbx/orc_shield.fbx:dependency parsing not implemented for .fbx",
+      "type": "UNRESOLVED_FBX_DEPENDENCY"
+    },
+    {
+      "assetPath": "media/3D_Assets/KayKit Legacy/Orc Warband - legacy/props/fbx/orc_sword.fbx",
+      "detail": "dependency parsing not implemented for .fbx",
+      "problemId": "UNRESOLVED_FBX_DEPENDENCY:media/3D_Assets/KayKit Legacy/Orc Warband - legacy/props/fbx/orc_sword.fbx:dependency parsing not implemented for .fbx",
+      "type": "UNRESOLVED_FBX_DEPENDENCY"
+    },
+    {
       "assetPath": "media/3D_Assets/KayKit_Mystery_Series6/1 - July 2023 - Orc Raider/assets/fbx/Orc_Axe.fbx",
       "detail": "dependency parsing not implemented for .fbx",
       "problemId": "UNRESOLVED_FBX_DEPENDENCY:media/3D_Assets/KayKit_Mystery_Series6/1 - July 2023 - Orc Raider/assets/fbx/Orc_Axe.fbx:dependency parsing not implemented for .fbx",
@@ -13640,6 +13919,60 @@
       "type": "UNRESOLVED_MODEL_DEPENDENCY"
     },
     {
+      "assetPath": "media/3D_Assets/KayKit Legacy/KayKit Character Animations 1.2 - legacy/Models/dae/Case.dae",
+      "detail": "dependency parsing not implemented for .dae",
+      "problemId": "UNRESOLVED_MODEL_DEPENDENCY:media/3D_Assets/KayKit Legacy/KayKit Character Animations 1.2 - legacy/Models/dae/Case.dae:dependency parsing not implemented for .dae",
+      "type": "UNRESOLVED_MODEL_DEPENDENCY"
+    },
+    {
+      "assetPath": "media/3D_Assets/KayKit Legacy/KayKit Character Animations 1.2 - legacy/Models/dae/Pencil.dae",
+      "detail": "dependency parsing not implemented for .dae",
+      "problemId": "UNRESOLVED_MODEL_DEPENDENCY:media/3D_Assets/KayKit Legacy/KayKit Character Animations 1.2 - legacy/Models/dae/Pencil.dae:dependency parsing not implemented for .dae",
+      "type": "UNRESOLVED_MODEL_DEPENDENCY"
+    },
+    {
+      "assetPath": "media/3D_Assets/KayKit Legacy/KayKit Character Animations 1.2 - legacy/Models/dae/PrototypePete.dae",
+      "detail": "dependency parsing not implemented for .dae",
+      "problemId": "UNRESOLVED_MODEL_DEPENDENCY:media/3D_Assets/KayKit Legacy/KayKit Character Animations 1.2 - legacy/Models/dae/PrototypePete.dae:dependency parsing not implemented for .dae",
+      "type": "UNRESOLVED_MODEL_DEPENDENCY"
+    },
+    {
+      "assetPath": "media/3D_Assets/KayKit Legacy/Orc Warband - legacy/characters/dae/character_orcA.dae",
+      "detail": "dependency parsing not implemented for .dae",
+      "problemId": "UNRESOLVED_MODEL_DEPENDENCY:media/3D_Assets/KayKit Legacy/Orc Warband - legacy/characters/dae/character_orcA.dae:dependency parsing not implemented for .dae",
+      "type": "UNRESOLVED_MODEL_DEPENDENCY"
+    },
+    {
+      "assetPath": "media/3D_Assets/KayKit Legacy/Orc Warband - legacy/characters/dae/character_orcB.dae",
+      "detail": "dependency parsing not implemented for .dae",
+      "problemId": "UNRESOLVED_MODEL_DEPENDENCY:media/3D_Assets/KayKit Legacy/Orc Warband - legacy/characters/dae/character_orcB.dae:dependency parsing not implemented for .dae",
+      "type": "UNRESOLVED_MODEL_DEPENDENCY"
+    },
+    {
+      "assetPath": "media/3D_Assets/KayKit Legacy/Orc Warband - legacy/props/dae/orc_banner.dae",
+      "detail": "dependency parsing not implemented for .dae",
+      "problemId": "UNRESOLVED_MODEL_DEPENDENCY:media/3D_Assets/KayKit Legacy/Orc Warband - legacy/props/dae/orc_banner.dae:dependency parsing not implemented for .dae",
+      "type": "UNRESOLVED_MODEL_DEPENDENCY"
+    },
+    {
+      "assetPath": "media/3D_Assets/KayKit Legacy/Orc Warband - legacy/props/dae/orc_hammerAxe.dae",
+      "detail": "dependency parsing not implemented for .dae",
+      "problemId": "UNRESOLVED_MODEL_DEPENDENCY:media/3D_Assets/KayKit Legacy/Orc Warband - legacy/props/dae/orc_hammerAxe.dae:dependency parsing not implemented for .dae",
+      "type": "UNRESOLVED_MODEL_DEPENDENCY"
+    },
+    {
+      "assetPath": "media/3D_Assets/KayKit Legacy/Orc Warband - legacy/props/dae/orc_shield.dae",
+      "detail": "dependency parsing not implemented for .dae",
+      "problemId": "UNRESOLVED_MODEL_DEPENDENCY:media/3D_Assets/KayKit Legacy/Orc Warband - legacy/props/dae/orc_shield.dae:dependency parsing not implemented for .dae",
+      "type": "UNRESOLVED_MODEL_DEPENDENCY"
+    },
+    {
+      "assetPath": "media/3D_Assets/KayKit Legacy/Orc Warband - legacy/props/dae/orc_sword.dae",
+      "detail": "dependency parsing not implemented for .dae",
+      "problemId": "UNRESOLVED_MODEL_DEPENDENCY:media/3D_Assets/KayKit Legacy/Orc Warband - legacy/props/dae/orc_sword.dae:dependency parsing not implemented for .dae",
+      "type": "UNRESOLVED_MODEL_DEPENDENCY"
+    },
+    {
       "assetPath": "media/3D_Assets/KayKit_Mystery_Series6/1 - July 2023 - Orc Raider/SOURCE/Orc_Assets_Source.blend",
       "detail": "dependency parsing not implemented for .blend",
       "problemId": "UNRESOLVED_MODEL_DEPENDENCY:media/3D_Assets/KayKit_Mystery_Series6/1 - July 2023 - Orc Raider/SOURCE/Orc_Assets_Source.blend:dependency parsing not implemented for .blend",
@@ -14013,5 +14346,5 @@
     }
   ],
   "schema": "kfb.asset-registry.problems.v1",
-  "sourceCommit": "34cde3f8f752d481a03c9714f1c3b3a8b2c15c46"
+  "sourceCommit": "88b2a79395a9629f511db1534d1ac99b4334681a"
 }
