@@ -27,6 +27,25 @@ The current recovery path is:
 4. route through `skills/chat/REGISTRY.json` to the actual project SSOT;
 5. inside the project, read its own recovery/current-WIP files.
 
+### KFB Travel / World Builder
+
+Human recovery page:
+`https://kayfabizarro.pages.dev/kfb-hub/travel-world.html`
+
+Current implementation SSOT:
+`https://github.com/georg-doc/KFB-Travel-Globe`
+
+Runtime / Ground Movement Lab:
+`https://kayfabizarro.pages.dev/travel/wip/travel_globe_wsa/world-builder/?wb0=1`
+
+GitHub Pages fallback:
+`https://georg-doc.github.io/kayfabizarro/travel/wip/travel_globe_wsa/world-builder/?wb0=1`
+
+Parallel authoring-UX POC:
+`https://kayfabizarro.pages.dev/travel/wip/travel_globe_wsa/world/`
+
+Recovery distinction is hard: `/world-builder/` is the productive Travel runtime proof; `/world/` is a candidate-authoring POC / donor and does not become a second runtime SSOT.
+
 ### DocCheck · SimBlood
 
 Human recovery page:
@@ -60,4 +79,4 @@ The To-do board is a personal convenience layer, not project truth. Task definit
 
 The page is intentionally dependency-free and self-contained in `index.html`. Update links, labels and current task definitions only when they remain useful for daily work. Avoid turning it into a second registry, issue tracker or project dashboard with independently maintained truth.
 
-For DocCheck projects, the Hub should route to the project recovery file and current WIP manifest rather than duplicating those details in the page itself.
+For project-specific recovery pages such as Travel/World Builder and SimBlood, the Hub should route to the project recovery/current-state files rather than duplicate implementation truth.
