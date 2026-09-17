@@ -305,10 +305,24 @@ Purpose:
 - prove route/track recipe wrapping without making Assembly A0 the track generator;
 - Surface semantics;
 - entry/exit Connectors;
-- scenery/stunt anchor seams;
+- scenery/stunt anchor seams when they exist in a real accepted use case;
 - independent Stunt runtime ownership.
 
 The two pilots are intentionally unrelated enough to expose whether A0 is genuinely generic or merely renamed scene data.
+
+### Current Pilot-B restraint · T1/T2 v0.6
+
+For the current Race proof, only semantics that already exist in the Flow Loop belong in the shared recipe:
+
+- the `RecipeEnvelope`;
+- the generated road `Surface` with roles such as `support / drivable / road`;
+- the existing entry/exit connector geometry;
+- spawn/placement slots only where actually needed;
+- deterministic Track-DNA / geometry parameters required to reproduce the same route.
+
+Do **not** invent `stunt` / `landing` surface roles, stunt approach/capture/release connectors or AssetRefs for generated geometry merely to populate A0. Those seams enter A0 only when a real T4 stunt or concrete asset requires them.
+
+Race-local feel/contact tuning — acceleration, steering, grip/drift, rubber-rail soft field/bounce/cooldown, recovery and guided driving — is not Track Recipe data merely because it influences the same play experience. Those values remain Race adapter/runtime configuration even when the track recipe is shared.
 
 ---
 
@@ -421,17 +435,46 @@ No owner moves because this document exists.
 
 ---
 
-# 10 · Next implementation action
+# 10 · Current consumer proofs
 
-A0 itself should remain a document/validator-level seam while the two consumer proofs proceed.
+## Travel/WB0
+
+Travel now has a thin A0 Surface consumer adapter in its implementation SSOT. Current cards, ROAD meshes, ramp, BlockBits and structure proof are expressed through A0-style Surface semantics before entering the existing Travel-owned highest-valid-support resolver.
+
+Important boundary: `surface.priority` is only a near-height tie-breaker in Travel. It never allows a lower surface to beat a geometrically higher valid support. This is Travel adapter behavior, not A0 physics.
+
+Travel-specific geometry lookup forms remain adapter-local and are not promoted into A0 merely because the proof uses them.
+
+## Stunt Race
+
+Race accepts the same central A0 contract for T1/T2 v0.6 with a thin Race adapter. The target proof is:
+
+```text
+Flow Loop v0.6
+→ central A0 RecipeEnvelope
+→ thin Race Adapter
+→ same Track Core / same gameplay
+→ Human Freeplay
+→ Race-specific L5 evidence
+```
+
+The T1/T2 feel candidate is frozen while this seam is proven. No feel tuning should occur merely to make A0 fit.
+
+The existing T3 Parallel-Transport-Frame work remains an isolated geometry spike and does not replace the T1/T2 gate. T4 stunt semantics are deferred until a real accepted stunt exists.
+
+---
+
+# 11 · Next implementation action
+
+A0 itself should remain a document/validator-level seam while the consumer proofs proceed.
 
 Parallel next work:
 
-- **Stunt T1/T2:** preserve the accepted Flow Loop / chill rail feel while exposing AssetRef, Surface and Connector seams in the Track Core candidate.
-- **World next terrain gate:** use the same Surface semantics when implementing the highest-valid-support query for terrain/cards/roads/ramps/bridges.
+- **Stunt T1/T2:** preserve the accepted Flow Loop / chill rail feel while proving RecipeEnvelope + current real Surface/Connector data through the Race adapter. No invented fields and no relocation of Race-local physics/feel tuning.
+- **World:** continue human browser testing of the existing highest-valid-support implementation through the new A0 Surface adapter for terrain/cards/roads/ramps/bridges/decks.
 - **Atlas:** shape the first Lorekeeper reusable recipe using AssetRef + TransformSlot + RecipeEnvelope rather than inventing a parallel handoff format.
 
-Only after those three paths expose real missing fields should A0 grow.
+Only after those paths expose a real missing field should A0 grow.
 
 ---
 
@@ -444,3 +487,7 @@ Establish a very small shared KFB Assembly Contract so Georg no longer has to ma
 ## 2026-09-17 · DECISION
 
 Future KFB racing presentation must permit rig/composite vehicles and independently deformable/secondary-motion drivers such as FrizzleBob with inertia-reactive body motion and wind-reactive ears, while preserving the vehicle/contact runtime as the sole physics owner. This is an outlook constraint, not T1/T2 scope.
+
+## 2026-09-17 · CROSS-PROJECT ALIGNMENT
+
+Travel and Race both accept A0 as a shared Recipe/Data seam while retaining independent runtime ownership. Travel proves A0 Surface semantics through its highest-valid-support adapter. Race freezes T1/T2 v0.6 feel while proving the Flow Loop RecipeEnvelope through a thin Race adapter. Generated geometry does not require fabricated AssetRefs; stunt/landing semantics are deferred until a real T4 use case exists.
