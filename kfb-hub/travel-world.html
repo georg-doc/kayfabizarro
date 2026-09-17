@@ -15,16 +15,16 @@
 <main class="shell">
 <div class="eyebrow">KFB Production Hub · Recovery</div>
 <h1>Travel / World Builder</h1>
-<p class="lede">Human recovery page for the current KFB Travel world-authoring work. This page is navigation only. <strong>Implementation truth remains <code>georg-doc/KFB-Travel-Globe</code>.</strong></p>
+<p class="lede">Human recovery page for the current KFB Travel world-authoring and movement work. This page is navigation only. <strong>Implementation truth remains <code>georg-doc/KFB-Travel-Globe</code>.</strong></p>
 
 <div class="grid">
 <section class="card">
 <span class="badge live">RUNTIME WIP</span>
-<h2>WB0 · Ground Movement Lab</h2>
-<p>Productive Travel runtime proof with Ground/Flight switching and the three-family movement comparison. Current Ground candidate adds corrected A/D turn direction, RMB free-look, softer wheel zoom, Ground-only Space jump and measured animation cadence.</p>
+<h2>WB0 · Four-Type Ground Movement Lab</h2>
+<p>Productive Travel runtime proof with Ground/Flight switching. Compare ActionFigure / Medium, Monstrosity / Large, Legacy Warband and the new FrizzleBob / Barbara Bee Mech donor. Ground keeps one movement owner and measured animation cadence.</p>
 <div class="actions">
-<a class="button primary" href="https://kayfabizarro.pages.dev/travel/wip/travel_globe_wsa/world-builder/?wb0=1&amp;ground=2">Open Movement Lab</a>
-<a class="button" href="https://georg-doc.github.io/kayfabizarro/travel/wip/travel_globe_wsa/world-builder/?wb0=1&amp;ground=2">GitHub Pages fallback</a>
+<a class="button primary" href="https://kayfabizarro.pages.dev/travel/wip/travel_globe_wsa/world-builder/?wb0=1&amp;ground=3">Open Movement Lab</a>
+<a class="button" href="https://georg-doc.github.io/kayfabizarro/travel/wip/travel_globe_wsa/world-builder/?wb0=1&amp;ground=3">GitHub Pages fallback</a>
 </div>
 </section>
 
@@ -39,6 +39,20 @@
 </section>
 
 <section class="card">
+<span class="badge">RECOVERY</span>
+<h2>Current chat sanity checkpoint</h2>
+<p>Exact current owner boundaries, Ground control state, recovered Stunt/Combat donors, Bee Movement decision and the next gates after the previous chat timeout.</p>
+<div class="actions"><a class="button primary" href="https://github.com/georg-doc/KFB-Travel-Globe/blob/main/_handover/WORLD_BUILDER_GOD_MODE_2026-09-17/CHAT_SANITY_CHECK_2026-09-17.md">Open sanity checkpoint</a></div>
+</section>
+
+<section class="card">
+<span class="badge">HANDOVER</span>
+<h2>FrizzleBob · Bee Mech Movement</h2>
+<p>Fourth Movement-Lab type derived from the existing Stunt Race Frankenstein F1-S5 Barbara Bee recipe. Contains exact donor provenance, explicit compromises, static evidence and the browser gate.</p>
+<div class="actions"><a class="button" href="https://github.com/georg-doc/KFB-Travel-Globe/blob/main/_handover/WORLD_BUILDER_GOD_MODE_2026-09-17/MECH_BEE_MOVEMENT_2026-09-17.md">Open Mech handover</a></div>
+</section>
+
+<section class="card">
 <span class="badge">SSOT</span>
 <h2>Travel implementation repository</h2>
 <p>Always verify current <code>main</code> before writing. GitHub state overrides this recovery page and chat recollection.</p>
@@ -46,23 +60,28 @@
 </section>
 
 <section class="card">
-<span class="badge">HANDOVER</span>
-<h2>Ground controls / camera / cadence</h2>
-<p>Current browser finding, implemented controls hardening, static evidence and the exact next human browser gate.</p>
-<div class="actions"><a class="button" href="https://github.com/georg-doc/KFB-Travel-Globe/blob/main/_handover/WORLD_BUILDER_GOD_MODE_2026-09-17/GROUND_CONTROLS_CAMERA_CADENCE_2026-09-17.md">Open current handover</a></div>
+<span class="badge">DONORS</span>
+<h2>Combat + vehicle sources</h2>
+<p>Combat Arena is the preferred input/action donor for later Ground combat; Stunt Car Race Frankenstein F1-S5 is the existing FrizzleBob-Mech geometry/vehicle donor. Neither runtime currently owns WB0 movement.</p>
+<div class="actions">
+<a class="button" href="https://github.com/georg-doc/KFB-Combat-Arena">Combat Arena</a>
+<a class="button" href="https://github.com/georg-doc/KFB-Stunt-Car-Race/blob/main/_handover/SPRINTS_2026-09-10/F2_VEHICLE_REVIEW/source/frankenstein/HANDOVER_WSA.md">F1-S5 Mech donor</a>
+</div>
 </section>
 </div>
 
 <section class="status">
 <div class="eyebrow">Current evidence · 2026-09-17</div>
 <ul>
-<li><strong>HUMAN FINDING:</strong> Movement Lab direction is useful enough to continue; previous Ground build had reversed turn direction, over-sensitive zoom, no free-look, Space leaking into Flight shoot, and imperfect stride/travel sync.</li>
-<li><strong>IMPLEMENTATION:</strong> Travel PR #18 merged at <code>4290f72b98f6013e75af9e3a5b8717d55b53ee0b</code>. Ground A/D sign corrected; RMB drag free-look; LMB reserved; smooth wheel zoom; Space captured as Ground-only jump; animation cadence measures source Root/Hips travel before stripping it.</li>
-<li><strong>TESTED RESULT · static only:</strong> 31/31 tests PASS, build PASS, verify PASS; 108 frozen B0 runtime files preserved; build <code>travel-b0-6cfbce5a98f62d21</code>.</li>
-<li><strong>HUMAN GATE:</strong> re-test A/D, Space without paintball, RMB look, wheel sensitivity, then walk/run/jump cadence on ActionFigure, Monstrosity and Legacy. Do not promote these controls to accepted until that browser test.</li>
-<li><strong>PARALLEL /world/:</strong> POC/design donor only. It remains untouched by the Ground controls slice and does not replace runtime ownership.</li>
+<li><strong>HUMAN FINDING:</strong> the Ground Movement-Lab direction is useful enough to continue. The latest controls pass corrected visible A/D turn, added RMB free-look, softened wheel zoom, isolated Ground Space jump and synchronized walk/run cadence to measured source movement.</li>
+<li><strong>IMPLEMENTATION:</strong> Travel PR #19 merged at <code>f74de664c40bba7635a6dc29ffd9ccd84a3e8c5e</code>. Movement Lab now adds <strong>FrizzleBob · Bee Mech</strong> using Barbara Bee's embedded locomotion clips plus an F1-S5-derived FrizzleBob/cockpit composite.</li>
+<li><strong>TESTED RESULT · static only:</strong> 36/36 tests PASS, build PASS, verify PASS; 108 frozen B0 runtime files preserved; build <code>travel-b0-a41afe4c7a85161b</code>.</li>
+<li><strong>OWNER BOUNDARY:</strong> the Bee profile imports no Stunt Rapier physics or vehicle controller. <code>wb0-ground-controller</code> remains the sole Ground world-position writer.</li>
+<li><strong>HUMAN GATE:</strong> test Bee scale, facing, W/Shift+W cadence and speed, Q/E, A/D, Space jump and cockpit/FrizzleBob composition. Do not call the Mech movement accepted before this browser pass.</li>
+<li><strong>NEXT AFTER BEE PASS:</strong> narrow Combat-Arena-derived action seam, then a Mech-specific Ground↔Flight transition candidate. Double-Space is currently a proposal only, not implemented.</li>
+<li><strong>PARALLEL /world/:</strong> POC/design donor only. It remains untouched and does not replace runtime ownership.</li>
 </ul>
-<p class="note"><strong>Recovery order:</strong> current Travel <code>main</code> → this Hub page → Ground controls/cadence handover for runtime movement → <code>/world/README.md</code> and <code>CHANGELOG.md</code> only when resuming authoring-UX experiments.</p>
+<p class="note"><strong>Recovery order:</strong> current Travel <code>main</code> → sanity checkpoint → Bee Mech handover → Ground controls/cadence handover → Stunt/Combat donor docs only when implementing their next explicit gate.</p>
 </section>
 
 <div class="footer"><a href="./">← KFB Production Hub</a> · Navigator only · project SSOT wins on conflict.</div>
