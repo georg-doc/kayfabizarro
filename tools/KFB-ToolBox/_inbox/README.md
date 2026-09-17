@@ -14,7 +14,16 @@ Current brief:
 
 `../_handover/STAGE_FIRST_V1_INTAKE_2026-09-18/START_HERE.md`
 
-Readable complete export source is currently pinned through the Stunt-Race transport intake:
+Owner-repo export package:
+
+- `KFB ToolBox v1-1.zip`
+- blob `5943ee108609a7916bf231fec59848ef4c58f965`
+- compressed size `1,801,302` B
+- upload commit `eabc87255ee3da6283f9d438390454d70e9d2e55`
+- Georg identifies it as the Stage-First-v1 export;
+- connector cannot independently unpack the ZIP, so exact ZIP→expanded-tree byte identity is not claimed.
+
+Readable expanded mirror for code/document review:
 
 ```text
 georg-doc/KFB-Stunt-Car-Race
@@ -24,15 +33,6 @@ KFB_ToolBox_Stage-First_v1/
 ```
 
 ToolBox implementation ownership remains **here** under `georg-doc/kayfabizarro/tools/KFB-ToolBox/`.
-
-Additional owner-repo binary upload:
-
-- `KFB ToolBox v1-1.zip`
-- blob `5943ee108609a7916bf231fec59848ef4c58f965`
-- size `1,801,302` B
-- upload commit `eabc87255ee3da6283f9d438390454d70e9d2e55`
-- status: **RECEIVED BINARY MIRROR / CONTENT IDENTITY NOT YET VERIFIED**
-- do not infer version order from `v1-1`.
 
 Current product direction:
 
