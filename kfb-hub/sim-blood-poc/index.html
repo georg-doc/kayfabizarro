@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="color-scheme" content="light dark">
+  <title>SimBlood · Field Composer POC</title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <main class="app-shell">
+    <header class="topbar">
+      <div>
+        <div class="eyebrow">DocCheck · SimBlood</div>
+        <h1>Field Composer POC</h1>
+      </div>
+      <div class="status" id="status">NORMAL · seed 42</div>
+    </header>
+
+    <section class="workspace">
+      <div class="scope-wrap">
+        <div class="scope" id="scope" aria-label="Simulierter peripherer Blutausstrich">
+          <canvas id="smearCanvas"></canvas>
+          <div class="scope-glass" aria-hidden="true"></div>
+          <div class="debug-label" id="debugLabel" hidden></div>
+        </div>
+        <p class="hint">Ziehen zum Verschieben · Zelle anklicken für Ground Truth</p>
+      </div>
+
+      <aside class="controls" aria-label="Mikroskop-Steuerung">
+        <section class="control-card">
+          <div class="label-row"><span>Objektiv</span><strong id="objectiveLabel">100×</strong></div>
+          <div class="segmented" role="group" aria-label="Objektiv">
+            <button type="button" data-objective="40">40×</button>
+            <button type="button" data-objective="100" class="active">100×</button>
+          </div>
+        </section>
+
+        <section class="control-card">
+          <div class="label-row"><label for="focus">Fokus</label><strong id="focusLabel">0.0</strong></div>
+          <input id="focus" type="range" min="0" max="6" value="0" step="0.1">
+        </section>
+
+        <section class="control-card compact-grid">
+          <button type="button" id="resetView">Ansicht zurücksetzen</button>
+          <button type="button" id="newSeed">Neue Probe</button>
+        </section>
+
+        <section class="control-card facts">
+          <div><span>RBC</span><strong id="rbcCount">—</strong></div>
+          <div><span>WBC</span><strong id="wbcCount">—</strong></div>
+          <div><span>PLT</span><strong id="pltCount">—</strong></div>
+        </section>
+
+        <section class="note">
+          <strong>POC, nicht validierter Befund.</strong>
+          <span>RBC/WBC/Thrombozyten sind getrennte, typisierte Objekte. Morphologie-Assets sind noch austauschbar.</span>
+        </section>
+      </aside>
+    </section>
+  </main>
+
+  <script src="./app.js"></script>
+</body>
+</html>
