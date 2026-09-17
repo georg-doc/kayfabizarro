@@ -1,7 +1,7 @@
 // WB0 spherical Ground controller.
 // Donor behavior: kayfabizarro/travel/travel-v16/terrain-v16/walk-controller.js + travel-poc.js.
 // Preserve the established KFB Ground mapping instead of inventing another scheme:
-// W/S = forward/back, A/D = turn walker, Q/E = strafe left/right.
+// W/S = forward/back, A/D = turn walker, Q/E = strafe left/right, Shift = run, Space = jump.
 // The donor is planar, so WB0 maps that intent to the Globe tangent frame and reads the accepted
 // baked mesh through boden-lesung.js.
 
@@ -22,8 +22,12 @@ export function createGroundController({ THREE, camera, globe, renderer, bodyHei
 
   const params = {
     speed: bodyHeight * 1.15,
+    runMul: 1.75,
     backMul: 0.55,
     turnRate: 2.35,
+    // Cartoon-ish but bounded jump: about one body-height apex and ~0.9 s airborne.
+    jumpSpeed: bodyHeight * 4.5,
+    gravity: bodyHeight * 10.0,
     footLift: bodyHeight * 0.018,
     cameraDistance: bodyHeight * 7.0,
     cameraHeight: bodyHeight * 4.1,
@@ -36,10 +40,16 @@ export function createGroundController({ THREE, camera, globe, renderer, bodyHei
   let enabled = false;
   let heading = 0;
   let moving = false;
+  let running = false;
   let speed = 0;
   let inputTurn = 0, inputThrottle = 0, inputStrafe = 0;
+  let onGround = true;
+  let jumpOffset = 0;
+  let verticalVelocity = 0;
+  let jumpQueued = false;
   let playerRoot = null;
   let snappedCamera = false;
+  let presentationUpdater = null;
 
   function basisAt(n) {
     up.copy(n).normalize();
@@ -57,7 +67,7 @@ export function createGroundController({ THREE, camera, globe, renderer, bodyHei
 
   function syncPlayer() {
     basisAt(dir);
-    playerPos.copy(dir).multiplyScalar(radiusAt(dir) + params.footLift);
+    playerPos.copy(dir).multiplyScalar(radiusAt(dir) + params.footLift + jumpOffset);
     if (playerRoot) {
       playerRoot.position.copy(playerPos);
       basis.makeBasis(right, up, forward);
@@ -91,15 +101,31 @@ export function createGroundController({ THREE, camera, globe, renderer, bodyHei
     camera.lookAt(lookAt);
   }
 
+  function stateSnapshot() {
+    return {
+      direction: dir.clone(), heading, moving, running, speed,
+      onGround, jumping: !onGround, jumpOffset, verticalVelocity,
+      input: { turn: inputTurn, throttle: inputThrottle, strafe: inputStrafe },
+      position: playerPos.clone(), forward: forward.clone(), right: right.clone(), bodyHeight,
+    };
+  }
+
   function update(dt) {
     if (!enabled) return;
 
-    // Same Ground controls already used by Travel v16:
-    // W/S move, A/D turn, Q/E strafe. A is positive turn, E is positive/right strafe.
+    // Same Ground controls already used by Travel v16, extended with its documented sprint intent:
+    // W/S move, A/D turn, Q/E strafe, Shift run. Space is one-shot jump input.
     const turn = (keys.has('KeyA') ? 1 : 0) - (keys.has('KeyD') ? 1 : 0);
     const throttle = (keys.has('KeyW') ? 1 : 0) - (keys.has('KeyS') ? params.backMul : 0);
     const strafe = (keys.has('KeyE') ? 1 : 0) - (keys.has('KeyQ') ? 1 : 0);
+    running = keys.has('ShiftLeft') || keys.has('ShiftRight');
     inputTurn = turn; inputThrottle = throttle; inputStrafe = strafe;
+
+    if (jumpQueued && onGround) {
+      verticalVelocity = params.jumpSpeed;
+      onGround = false;
+    }
+    jumpQueued = false;
 
     heading += turn * params.turnRate * dt;
     basisAt(dir);
@@ -111,7 +137,8 @@ export function createGroundController({ THREE, camera, globe, renderer, bodyHei
     if (rawMagnitude > 1e-8) moveTangent.multiplyScalar(1 / rawMagnitude);
 
     const r = radiusAt(dir);
-    const distance = moveMagnitude * params.speed * dt;
+    const locomotionSpeed = params.speed * (running ? params.runMul : 1);
+    const distance = moveMagnitude * locomotionSpeed * dt;
     if (distance > 1e-8) {
       // Great-circle step in the selected local tangent direction. The actor keeps its heading while
       // strafing; Q/E move sideways instead of secretly becoming another turn input.
@@ -124,14 +151,33 @@ export function createGroundController({ THREE, camera, globe, renderer, bodyHei
       moving = false;
       speed = 0;
     }
+
+    if (!onGround) {
+      verticalVelocity -= params.gravity * dt;
+      jumpOffset += verticalVelocity * dt;
+      if (jumpOffset <= 0 && verticalVelocity <= 0) {
+        jumpOffset = 0;
+        verticalVelocity = 0;
+        onGround = true;
+      }
+    } else {
+      jumpOffset = 0;
+      verticalVelocity = 0;
+    }
+
     syncPlayer();
     syncCamera(dt);
+    if (presentationUpdater) presentationUpdater(dt, stateSnapshot());
   }
 
   function resetFromFlight(carpet) {
     const p = carpet.worldPos();
     if (p && p.lengthSq() > 1e-8) dir.copy(p).normalize();
     heading = Number(carpet.state && carpet.state.heading || 0);
+    onGround = true;
+    jumpOffset = 0;
+    verticalVelocity = 0;
+    jumpQueued = false;
     snappedCamera = false;
     syncPlayer();
     syncCamera(1 / 60, true);
@@ -140,6 +186,10 @@ export function createGroundController({ THREE, camera, globe, renderer, bodyHei
   function setSurfaceDirection(n, hdg = heading) {
     dir.copy(n).normalize();
     heading = hdg;
+    onGround = true;
+    jumpOffset = 0;
+    verticalVelocity = 0;
+    jumpQueued = false;
     snappedCamera = false;
     syncPlayer();
     syncCamera(1 / 60, true);
@@ -150,21 +200,29 @@ export function createGroundController({ THREE, camera, globe, renderer, bodyHei
     return {
       qPosition: qSurface.clone(),
       heading,
-      altitude: Math.max(0, radiusAt(dir) - 5) + bodyHeight * 0.35,
+      altitude: Math.max(0, radiusAt(dir) - 5) + bodyHeight * 0.35 + jumpOffset,
     };
   }
 
   function onKeyDown(e) {
     if (!enabled) return;
-    if (['KeyW', 'KeyA', 'KeyS', 'KeyD', 'KeyQ', 'KeyE'].includes(e.code)) {
+    const held = ['KeyW', 'KeyA', 'KeyS', 'KeyD', 'KeyQ', 'KeyE', 'ShiftLeft', 'ShiftRight'];
+    if (held.includes(e.code)) {
       keys.add(e.code);
+      e.preventDefault();
+      return;
+    }
+    if (e.code === 'Space') {
+      if (!e.repeat) jumpQueued = true;
       e.preventDefault();
     }
   }
   function onKeyUp(e) { keys.delete(e.code); }
   function clearKeys() {
     keys.clear();
+    jumpQueued = false;
     inputTurn = 0; inputThrottle = 0; inputStrafe = 0;
+    running = false;
   }
   function onWheel(e) {
     if (!enabled) return;
@@ -187,15 +245,11 @@ export function createGroundController({ THREE, camera, globe, renderer, bodyHei
     toFlightPose,
     radiusAt,
     setPlayerRoot(root) { playerRoot = root || null; syncPlayer(); },
+    setPresentationUpdater(fn) { presentationUpdater = typeof fn === 'function' ? fn : null; },
+    queueJump() { if (enabled && onGround) jumpQueued = true; },
     setEnabled(on) { enabled = !!on; if (!enabled) clearKeys(); },
     get enabled() { return enabled; },
-    get state() {
-      return {
-        direction: dir.clone(), heading, moving, speed,
-        input: { turn: inputTurn, throttle: inputThrottle, strafe: inputStrafe },
-        position: playerPos.clone(), forward: forward.clone(), right: right.clone(), bodyHeight,
-      };
-    },
+    get state() { return stateSnapshot(); },
     dispose() {
       removeEventListener('keydown', onKeyDown);
       removeEventListener('keyup', onKeyUp);
