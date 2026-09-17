@@ -1,0 +1,89 @@
+import * as THREE from 'three';
+import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+import { TransformControls } from 'three/addons/controls/TransformControls.js';
+import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
+import * as SkeletonUtils from 'three/addons/utils/SkeletonUtils.js';
+
+const view=document.querySelector('#view'), recipeEl=document.querySelector('#recipe'),
+  statusEl=document.querySelector('#status'), selectionEl=document.querySelector('#selection'),
+  childrenEl=document.querySelector('#children'), sceneJsonEl=document.querySelector('#sceneJson'),
+  sceneUrlEl=document.querySelector('#sceneUrl');
+const STORAGE_KEY='kfb.world-prefab-lab.poc.v0';
+const loader=new GLTFLoader();
+const scene=new THREE.Scene();scene.background=new THREE.Color(0x11151c);scene.fog=new THREE.FogExp2(0x11151c,.008);
+const camera=new THREE.PerspectiveCamera(46,1,.05,500);camera.position.set(10,7,13);
+const renderer=new THREE.WebGLRenderer({antialias:true});renderer.outputColorSpace=THREE.SRGBColorSpace;renderer.shadowMap.enabled=true;renderer.shadowMap.type=THREE.PCFSoftShadowMap;view.prepend(renderer.domElement);
+const orbit=new OrbitControls(camera,renderer.domElement);orbit.enableDamping=true;orbit.target.set(0,1,0);orbit.maxPolarAngle=Math.PI*.495;
+scene.add(new THREE.HemisphereLight(0xe9f1ff,0x3b2f28,2));
+const key=new THREE.DirectionalLight(0xffd4a8,3);key.position.set(-8,14,9);key.castShadow=true;scene.add(key);
+const ground=new THREE.Mesh(new THREE.PlaneGeometry(80,80),new THREE.MeshStandardMaterial({color:0x2a3037,roughness:1}));ground.rotation.x=-Math.PI/2;ground.receiveShadow=true;scene.add(ground);
+const grid=new THREE.GridHelper(80,80,0x647080,0x39414b);grid.position.y=.003;scene.add(grid);
+
+let sceneDef=null,prefabRoot=null,grouped=true,selected=null,helper=null,groundSnap=true;
+const looseChildren=[];
+const transform=new TransformControls(camera,renderer.domElement);transform.setMode('translate');transform.setSize(.75);
+transform.addEventListener('dragging-changed',e=>orbit.enabled=!e.value);
+transform.addEventListener('mouseUp',()=>{if(selected&&groundSnap&&transform.getMode()==='translate')snapSelection();refreshAll()});
+transform.addEventListener('objectChange',()=>{helper?.update();refreshSelection()});scene.add(transform);
+
+function resize(){const r=view.getBoundingClientRect();renderer.setSize(r.width,r.height,false);camera.aspect=Math.max(.1,r.width/Math.max(1,r.height));camera.updateProjectionMatrix()}
+addEventListener('resize',resize);resize();(function loop(){requestAnimationFrame(loop);orbit.update();renderer.render(scene,camera)})();
+
+const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const rad=d=>(Number(d)||0)*Math.PI/180;
+const enc=p=>String(p||'').split('/').map(encodeURIComponent).join('/');
+function rawUrl(path,def=sceneDef){const ref=def?.sourceCommit||'main';return `https://raw.githubusercontent.com/georg-doc/kayfabizarro/${ref}/${enc(path)}`}
+function clearWorld(){select(null);if(prefabRoot)scene.remove(prefabRoot);prefabRoot=null;for(const c of looseChildren)scene.remove(c);looseChildren.length=0;grouped=true;sceneDef=null;childrenEl.innerHTML='';refreshAll()}
+function fitModel(root,fit={}){
+ root.updateMatrixWorld(true);let box=new THREE.Box3().setFromObject(root),size=box.getSize(new THREE.Vector3()),s=1;
+ if(Number.isFinite(fit.height)&&size.y>1e-8)s=fit.height/size.y;
+ else if(Number.isFinite(fit.max)){const m=Math.max(size.x,size.y,size.z);if(m>1e-8)s=fit.max/m}
+ root.scale.multiplyScalar(s);root.updateMatrixWorld(true);box=new THREE.Box3().setFromObject(root);root.position.y-=box.min.y;root.updateMatrixWorld(true);return s;
+}
+async function makeChild(a){
+ const url=rawUrl(a.path);const gltf=await loader.loadAsync(url);const model=SkeletonUtils.clone(gltf.scene);
+ model.traverse(n=>{if(n.isMesh){n.castShadow=true;n.receiveShadow=true}});
+ const wrap=new THREE.Group();wrap.name=a.name||a.role||'resident-part';wrap.userData.kfbPrefabChild={name:a.name||wrap.name,role:a.role||null,group:a.group||null,path:a.path,sourceCommit:sceneDef?.sourceCommit||null,fit:a.fit||{},candidateOnly:true};
+ wrap.add(model);fitModel(model,a.fit||{});const at=a.at||[0,0,0],rot=a.rotationDeg||[0,0,0];wrap.position.set(...at);wrap.rotation.set(rad(rot[0]),rad(rot[1]),rad(rot[2]));return wrap;
+}
+async function loadDefinition(def,restoreRecipe=null){
+ if(!def||def.schema!=='kfb-resident-scene.v1')throw new Error('Expected kfb-resident-scene.v1');
+ clearWorld();sceneDef=def;prefabRoot=new THREE.Group();prefabRoot.name=def.title||def.id||'resident-prefab';prefabRoot.userData.kfbPrefab={id:def.id||'resident-prefab',title:def.title||def.id||'Resident prefab',sourceCommit:def.sourceCommit||null,sourceSceneSchema:def.schema};scene.add(prefabRoot);
+ statusEl.textContent=`Loading 0/${def.assets?.length||0}…`;let loaded=0;
+ for(const a of def.assets||[]){const child=await makeChild(a);prefabRoot.add(child);loaded++;statusEl.textContent=`Loading ${loaded}/${def.assets.length}…`}
+ groundPrefab(prefabRoot);grouped=true;select(prefabRoot);if(restoreRecipe)applyRestore(restoreRecipe);else setHeroView();refreshAll();
+}
+function groundPrefab(root){root.updateMatrixWorld(true);const box=new THREE.Box3().setFromObject(root);if(Number.isFinite(box.min.y)){root.position.y-=box.min.y;root.updateMatrixWorld(true)}}
+function select(obj){selected=obj;transform.detach();if(helper){scene.remove(helper);helper.dispose?.();helper=null}if(obj){transform.attach(obj);helper=new THREE.BoxHelper(obj,0x9b8cff);scene.add(helper)}refreshSelection()}
+function snapSelection(){if(!selected)return;if(grouped&&selected===prefabRoot)groundPrefab(prefabRoot);else{selected.updateMatrixWorld(true);const box=new THREE.Box3().setFromObject(selected);if(Number.isFinite(box.min.y))selected.position.y-=box.min.y}helper?.update()}
+function refreshSelection(){if(!selected){selectionEl.textContent='Nothing selected.';return}selected.updateMatrixWorld(true);const box=new THREE.Box3().setFromObject(selected),size=box.getSize(new THREE.Vector3()),d=selected.userData.kfbPrefabChild||selected.userData.kfbPrefab||{};selectionEl.innerHTML=`<b>${esc(d.name||d.title||selected.name)}</b><br>${d.role?`role ${esc(d.role)}<br>`:''}size ${size.x.toFixed(3)} × ${size.y.toFixed(3)} × ${size.z.toFixed(3)}<br>pos ${selected.position.toArray().map(v=>v.toFixed(3)).join(', ')}<br>scale ${selected.scale.toArray().map(v=>v.toFixed(3)).join(', ')}`}
+function childRows(){const arr=grouped?(prefabRoot?.children||[]):looseChildren;childrenEl.innerHTML=arr.map((c,i)=>{const d=c.userData.kfbPrefabChild||{};return `<div class="item"><b>${i+1}. ${esc(d.name||c.name)}</b><small>${esc(d.role||'')} · ${esc(d.group||'')}</small><code>${esc(d.path||'')}</code>${grouped?'':`<button data-child="${i}">Select</button>`}</div>`}).join('');childrenEl.querySelectorAll('[data-child]').forEach(b=>b.onclick=()=>select(looseChildren[Number(b.dataset.child)]))}
+function ungroup(){if(!prefabRoot||!grouped)return;select(null);prefabRoot.updateMatrixWorld(true);const kids=[...prefabRoot.children];for(const child of kids){scene.attach(child);looseChildren.push(child)}scene.remove(prefabRoot);grouped=false;select(looseChildren[0]||null);refreshAll()}
+function regroup(){if(grouped||!sceneDef)return;select(null);const root=new THREE.Group();root.name=sceneDef.title||sceneDef.id;root.userData.kfbPrefab={id:sceneDef.id,title:sceneDef.title,sourceCommit:sceneDef.sourceCommit,sourceSceneSchema:sceneDef.schema};scene.add(root);for(const child of [...looseChildren])root.attach(child);looseChildren.length=0;prefabRoot=root;grouped=true;select(prefabRoot);refreshAll()}
+function vec(o){return {position:o.position.toArray(),rotation:[o.rotation.x,o.rotation.y,o.rotation.z],scale:o.scale.toArray()}}
+function serialize(){const source={schema:sceneDef?.schema||null,id:sceneDef?.id||null,title:sceneDef?.title||null,sourceCommit:sceneDef?.sourceCommit||null,scenePath:sceneDef?.id?`tools/resident_atlas/scenes/${sceneDef.id}.json`:null};const kids=grouped?(prefabRoot?.children||[]):looseChildren;return {schema:'kfb.world-recipe.v0-poc',status:'candidate-only',purpose:'Resident prefab UX donor; Travel validation required',coordinateSpace:'poc-local',ownerBoundary:{runtimeSSOT:'georg-doc/KFB-Travel-Globe',residentSource:'georg-doc/kayfabizarro/tools/resident_atlas',terrainMovementSave:'NOT OWNED HERE'},extensions:{residentPrefabs:[{id:sceneDef?.id||'prefab-poc',sourceScene:source,grouped,root:grouped?vec(prefabRoot):null,children:kids.map(c=>({name:c.userData.kfbPrefabChild?.name||c.name,role:c.userData.kfbPrefabChild?.role||null,group:c.userData.kfbPrefabChild?.group||null,assetPath:c.userData.kfbPrefabChild?.path||null,sourceCommit:c.userData.kfbPrefabChild?.sourceCommit||null,transform:vec(c),transformSpace:grouped?'prefab-local':'poc-local'}))}]},updated:new Date().toISOString()}}
+function refreshRecipe(){recipeEl.textContent=JSON.stringify(serialize(),null,2)}
+function refreshStatus(){if(!sceneDef){statusEl.textContent='No prefab loaded.';return}const n=(grouped?prefabRoot?.children.length:looseChildren.length)||0;statusEl.innerHTML=`<b>${esc(sceneDef.title||sceneDef.id)}</b><br>${n} parts · ${grouped?'GROUPED prefab':'UNGROUPED children'}<br><code>${esc(sceneDef.sourceCommit||'un-pinned')}</code>`}
+function refreshAll(){childRows();refreshSelection();refreshStatus();refreshRecipe()}
+function setHeroView(){const p=sceneDef?.camera?.hero||[10,7,13],t=sceneDef?.camera?.target||[0,1,0];camera.position.set(...p);orbit.target.set(...t);orbit.update()}
+function setTopView(){const p=sceneDef?.camera?.top||[0,14,.01],t=sceneDef?.camera?.target||[0,0,0];camera.position.set(...p);orbit.target.set(...t);orbit.update()}
+function framePrefab(){const list=grouped&&prefabRoot?[prefabRoot]:looseChildren;if(!list.length)return;const box=new THREE.Box3();list.forEach(o=>box.expandByObject(o));const center=box.getCenter(new THREE.Vector3()),len=box.getSize(new THREE.Vector3()).length(),dir=new THREE.Vector3(1,.7,1).normalize();camera.position.copy(center).add(dir.multiplyScalar(Math.max(4,len*1.25)));orbit.target.copy(center);orbit.update()}
+function resetRoot(){if(grouped&&prefabRoot){prefabRoot.position.set(0,0,0);prefabRoot.rotation.set(0,0,0);prefabRoot.scale.set(1,1,1);groundPrefab(prefabRoot);select(prefabRoot);refreshAll()}}
+function applyRestore(r){const p=r?.extensions?.residentPrefabs?.[0];if(!p)return;if(p.root&&grouped){prefabRoot.position.fromArray(p.root.position||[0,0,0]);prefabRoot.rotation.set(...(p.root.rotation||[0,0,0]));prefabRoot.scale.fromArray(p.root.scale||[1,1,1])}const kids=prefabRoot?.children||[];for(let i=0;i<Math.min(kids.length,p.children?.length||0);i++){const t=p.children[i].transform||{};kids[i].position.fromArray(t.position||kids[i].position.toArray());kids[i].rotation.set(...(t.rotation||[0,0,0]));kids[i].scale.fromArray(t.scale||[1,1,1])}if(p.grouped===false){ungroup();for(let i=0;i<Math.min(looseChildren.length,p.children?.length||0);i++){const t=p.children[i].transform||{};looseChildren[i].position.fromArray(t.position||looseChildren[i].position.toArray());looseChildren[i].rotation.set(...(t.rotation||[0,0,0]));looseChildren[i].scale.fromArray(t.scale||[1,1,1])}}refreshAll()}
+async function loadUrl(url){const r=await fetch(url,{cache:'no-store'});if(!r.ok)throw new Error(`Scene fetch ${r.status}`);const def=await r.json();sceneJsonEl.value=JSON.stringify(def,null,2);await loadDefinition(def)}
+function showError(err){console.error(err);alert(`Prefab POC error: ${err.message||err}`)}
+
+const ray=new THREE.Raycaster(),pointer=new THREE.Vector2();
+renderer.domElement.addEventListener('pointerdown',e=>{if(transform.dragging)return;const r=renderer.domElement.getBoundingClientRect();pointer.x=((e.clientX-r.left)/r.width)*2-1;pointer.y=-((e.clientY-r.top)/r.height)*2+1;ray.setFromCamera(pointer,camera);const targets=grouped?(prefabRoot?[prefabRoot]:[]):looseChildren;const hits=ray.intersectObjects(targets,true);if(!hits.length){select(grouped?prefabRoot:null);return}if(grouped){select(prefabRoot);return}let o=hits[0].object;while(o&&!o.userData?.kfbPrefabChild)o=o.parent;select(o||null)});
+addEventListener('keydown',e=>{if(['INPUT','TEXTAREA'].includes(document.activeElement?.tagName))return;if(e.key.toLowerCase()==='w')transform.setMode('translate');if(e.key.toLowerCase()==='e')transform.setMode('rotate');if(e.key.toLowerCase()==='r')transform.setMode('scale');if((e.key==='Delete'||e.key==='Backspace')&&!grouped&&selected){const i=looseChildren.indexOf(selected);if(i>=0)looseChildren.splice(i,1);scene.remove(selected);select(null);refreshAll()}document.querySelectorAll('[data-mode]').forEach(b=>b.classList.toggle('active',b.dataset.mode===transform.getMode()))});
+document.querySelectorAll('[data-mode]').forEach(b=>b.onclick=()=>{transform.setMode(b.dataset.mode);document.querySelectorAll('[data-mode]').forEach(x=>x.classList.toggle('active',x===b))});
+document.querySelector('#snap').onclick=e=>{groundSnap=!groundSnap;e.currentTarget.classList.toggle('active',groundSnap);if(selected&&groundSnap){snapSelection();refreshAll()}};
+document.querySelector('#loadCaveman').onclick=()=>loadUrl('https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/tools/resident_atlas/scenes/caveman-cave-camp.json').catch(showError);
+document.querySelector('#fetchScene').onclick=()=>loadUrl(sceneUrlEl.value.trim()).catch(showError);
+document.querySelector('#parseScene').onclick=()=>{try{loadDefinition(JSON.parse(sceneJsonEl.value)).catch(showError)}catch(e){showError(e)}};
+document.querySelector('#ungroup').onclick=ungroup;document.querySelector('#regroup').onclick=regroup;document.querySelector('#frame').onclick=framePrefab;document.querySelector('#hero').onclick=setHeroView;document.querySelector('#top').onclick=setTopView;document.querySelector('#resetRoot').onclick=resetRoot;
+document.querySelector('#save').onclick=()=>{if(!sceneDef)return;localStorage.setItem(STORAGE_KEY,JSON.stringify({scene:sceneDef,recipe:serialize()}))};
+document.querySelector('#load').onclick=()=>{const raw=localStorage.getItem(STORAGE_KEY);if(!raw)return alert('No local prefab POC saved.');try{const s=JSON.parse(raw);sceneJsonEl.value=JSON.stringify(s.scene,null,2);loadDefinition(s.scene,s.recipe).catch(showError)}catch(e){showError(e)}};
+document.querySelector('#copy').onclick=async()=>navigator.clipboard.writeText(JSON.stringify(serialize(),null,2));
+document.querySelector('#download').onclick=()=>{const blob=new Blob([JSON.stringify(serialize(),null,2)],{type:'application/json'}),a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='kfb-resident-prefab-poc.json';a.click();setTimeout(()=>URL.revokeObjectURL(a.href),1000)};
+refreshAll();
