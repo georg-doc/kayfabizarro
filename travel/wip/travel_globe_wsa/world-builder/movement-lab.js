@@ -1,5 +1,6 @@
 import * as THREE from 'three';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
+import { buildFrizzleBeeMovementDonor, F1_DONOR_REV } from './mech-bee-profile.js';
 
 // Character/animation comparison lab for WB0 Ground.
 // The Ground controller remains the sole movement writer; this module owns only the visible player
@@ -29,6 +30,13 @@ const PROFILES = Object.freeze({
     rig: 'Legacy_1.2',
     body: 'media/3D_Assets/KayKit Legacy/Orc Warband - legacy/characters/gltf/character_orcA.gltf',
     animation: 'media/3D_Assets/KayKit Legacy/KayKit Character Animations 1.2 - legacy/Animations/gltf/KayKit_AnimatedCharacter_v1.2.glb',
+  },
+  frizzleBeeMech: {
+    id: 'frizzleBeeMech',
+    label: 'FrizzleBob · Bee Mech',
+    rig: 'Quaternius_Bee_Mech_F1S5',
+    kind: 'mech',
+    donor: 'KFB-Stunt-Car-Race · Frankenstein F1-S5 · frizzle_mech_bee',
   },
 });
 
@@ -135,8 +143,6 @@ function rootPlanarTravel(clip) {
 }
 
 function controllerOwnedClip(root, clip) {
-  // Keep animation rotations/poses, but never let an animation translate Root/Hips. World movement,
-  // strafing and jump translation belong to wb0-ground-controller.
   const names = nodeNames(root);
   const tracks = [];
   for (const source of clip.tracks || []) {
@@ -209,13 +215,14 @@ function createUi() {
       <button data-profile="actionFigure">ActionFigure</button>
       <button data-profile="monstrosity">Monstrosity</button>
       <button data-profile="legacyWarband">Legacy Warband</button>
+      <button data-profile="frizzleBeeMech">FrizzleBee Mech</button>
     </div>
     <div class="wb0-move-controls">W/S move · A/D turn · Q/E strafe · Shift run · Space jump · RMB look · Wheel zoom</div>
     <div class="wb0-move-row"><button data-auto class="active">AUTO</button><select data-clip><option>loading clips…</option></select><button data-replay>Replay</button></div>
     <div class="wb0-move-status" data-move-status>Preparing character lab…</div>`;
   const style = document.createElement('style');
   style.textContent = `
-    .wb0-movement-lab{position:absolute;left:14px;top:58px;z-index:125;width:min(430px,calc(100vw - 28px));pointer-events:auto;background:rgba(10,16,28,.88);backdrop-filter:blur(9px);border:1px solid rgba(244,234,215,.22);border-radius:9px;padding:9px;color:#f4ead7;box-shadow:0 8px 28px rgba(0,0,0,.24);font-family:"Baloo 2",system-ui,sans-serif}
+    .wb0-movement-lab{position:absolute;left:14px;top:58px;z-index:125;width:min(455px,calc(100vw - 28px));pointer-events:auto;background:rgba(10,16,28,.88);backdrop-filter:blur(9px);border:1px solid rgba(244,234,215,.22);border-radius:9px;padding:9px;color:#f4ead7;box-shadow:0 8px 28px rgba(0,0,0,.24);font-family:"Baloo 2",system-ui,sans-serif}
     .wb0-move-title{font:700 10px/1.2 "Special Elite",monospace;letter-spacing:.08em;color:#d8b25b;margin-bottom:6px}.wb0-move-buttons,.wb0-move-row{display:flex;gap:5px;flex-wrap:wrap}.wb0-movement-lab button,.wb0-movement-lab select{border:1px solid rgba(244,234,215,.28);background:#263448;color:#f4ead7;border-radius:5px;padding:5px 7px;font:700 10px/1 "Baloo 2",sans-serif}.wb0-movement-lab button{cursor:pointer}.wb0-movement-lab button.active{background:#c76b42;border-color:#e6a47e}.wb0-move-controls{font:10px/1.35 monospace;opacity:.78;margin:6px 0}.wb0-move-row select{flex:1 1 170px;min-width:0}.wb0-move-status{font:10px/1.35 monospace;opacity:.88;margin-top:6px;white-space:pre-wrap}
     @media(max-width:760px){.wb0-movement-lab{top:58px;width:calc(100% - 28px)}}`;
   document.head.appendChild(style);
@@ -247,6 +254,7 @@ async function main() {
   let cadenceScale = 1;
 
   const bodyHeight = Number(wb0.report && wb0.report().bodyHeight) || 0.022;
+  const baseGroundSpeed = wb0.ground.params.speed;
 
   async function loadModern(def) {
     const bodyGltf = await loader.loadAsync(raw(def.body));
@@ -269,8 +277,8 @@ async function main() {
     }
     if (!entries.length) throw new Error(`${def.label}: no compatible animation tracks found`);
     return {
-      def, model: body, mixer: new THREE.AnimationMixer(body), entries,
-      auto: autoMap(entries), measure, fallback: false,
+      def, model: body, actionRoot: body, mixer: new THREE.AnimationMixer(body), entries,
+      auto: autoMap(entries), measure, fallback: false, speedMul: 1, locomotionHeight: bodyHeight,
       status: `${entries.length} compatible clips · ${def.rig} · source pin ${CHARACTER_PIN.slice(0, 8)}`,
     };
   }
@@ -292,8 +300,8 @@ async function main() {
     if (directUsable) {
       worldLambert(warband);
       return {
-        def, model: warband, mixer: new THREE.AnimationMixer(warband), entries: direct,
-        auto: directAuto, measure: warbandMeasure, fallback: false,
+        def, model: warband, actionRoot: warband, mixer: new THREE.AnimationMixer(warband), entries: direct,
+        auto: directAuto, measure: warbandMeasure, fallback: false, speedMul: 1, locomotionHeight: bodyHeight,
         status: `Warband direct binding PASS · ${direct.length}/${(legacy.animations || []).length} compatible clips`,
       };
     }
@@ -309,9 +317,38 @@ async function main() {
     }
     if (!entries.length) throw new Error('Legacy 1.2 animated donor contains no bindable clips');
     return {
-      def, model: donorModel, mixer: new THREE.AnimationMixer(donorModel), entries,
-      auto: autoMap(entries), measure, fallback: true,
+      def, model: donorModel, actionRoot: donorModel, mixer: new THREE.AnimationMixer(donorModel), entries,
+      auto: autoMap(entries), measure, fallback: true, speedMul: 1, locomotionHeight: bodyHeight,
       status: `Warband direct binding ${direct.length}/${(legacy.animations || []).length} → animated Legacy donor fallback · ${entries.length} clips`,
+    };
+  }
+
+  async function loadMech(def) {
+    const donor = await buildFrizzleBeeMovementDonor({ loader, bodyHeight });
+    worldLambert(donor.model);
+    const entries = [];
+    for (const clip of donor.animations) {
+      const entry = makeEntry(donor.animationRoot, clip, 'QuaterniusBee', donor.animationScale);
+      if (entry) entries.push(entry);
+    }
+    if (!entries.length) throw new Error('FrizzleBob Bee Mech: no compatible embedded movement clips found');
+    const auto = autoMap(entries);
+    if (!auto.idle || !auto.walk || !auto.run || !auto.jump) {
+      throw new Error(`FrizzleBob Bee Mech missing locomotion clips: ${['idle','walk','run','jump'].filter((k) => !auto[k]).join(', ')}`);
+    }
+    return {
+      def,
+      model: donor.model,
+      actionRoot: donor.animationRoot,
+      mixer: new THREE.AnimationMixer(donor.animationRoot),
+      entries,
+      auto,
+      measure: { targetHeight: donor.targetHeight, worldHeight: donor.targetHeight, worldScale: donor.animationScale },
+      fallback: false,
+      speedMul: donor.speedMul,
+      locomotionHeight: donor.targetHeight,
+      donorReport: donor.report,
+      status: `F1-S5 donor · ${entries.length} embedded Bee clips · speed ${donor.speedMul.toFixed(2)}× · shell/driver/cockpit composite`,
     };
   }
 
@@ -320,7 +357,9 @@ async function main() {
     const def = PROFILES[id];
     if (!def) throw new Error(`Unknown movement profile: ${id}`);
     ui.status.textContent = `Loading ${def.label}…`;
-    const runtime = def.rig === 'Legacy_1.2' ? await loadLegacy(def) : await loadModern(def);
+    const runtime = def.kind === 'mech' ? await loadMech(def)
+      : def.rig === 'Legacy_1.2' ? await loadLegacy(def)
+      : await loadModern(def);
     cache.set(id, runtime);
     return runtime;
   }
@@ -348,7 +387,7 @@ async function main() {
     if (!active || !entry) return;
     if (!force && currentKey === entry.key) return;
     const previous = currentAction;
-    const action = active.mixer.clipAction(entry.clip, active.model);
+    const action = active.mixer.clipAction(entry.clip, active.actionRoot || active.model);
     action.enabled = true;
     action.reset();
     action.setEffectiveTimeScale(1);
@@ -377,14 +416,11 @@ async function main() {
       return THREE.MathUtils.clamp(entry.clip.duration / Math.max(0.1, airTime), 0.6, 1.8);
     }
     if (!state.moving) return 1;
-
-    // Preferred calibration: the source clip's own Root/Hips planar travel, measured BEFORE that
-    // translation is stripped. Fallback is explicit only for clips with no usable root travel.
-    const fallbackCycleDistance = bodyHeight * (state.running ? 1.05 : 0.62);
-    const cycleDistance = entry.rootTravelWorld > bodyHeight * 0.08
-      ? entry.rootTravelWorld : fallbackCycleDistance;
+    const strideUnit = active?.locomotionHeight || bodyHeight;
+    const fallbackCycleDistance = strideUnit * (state.running ? 1.05 : 0.62);
+    const cycleDistance = entry.rootTravelWorld > strideUnit * 0.08 ? entry.rootTravelWorld : fallbackCycleDistance;
     const sourceWorldSpeed = cycleDistance / Math.max(0.05, entry.clip.duration);
-    return THREE.MathUtils.clamp(state.speed / Math.max(bodyHeight * 0.05, sourceWorldSpeed), 0.5, 2.2);
+    return THREE.MathUtils.clamp(state.speed / Math.max(strideUnit * 0.05, sourceWorldSpeed), 0.5, 2.2);
   }
 
   function updatePresentation(dt, state) {
@@ -400,11 +436,12 @@ async function main() {
       if (currentAction) currentAction.setEffectiveTimeScale(1);
     }
     active.mixer.update(dt);
-
     const activeEntry = active.entries.find((item) => item.key === currentKey);
-    const stride = activeEntry && activeEntry.rootTravelWorld > bodyHeight * 0.08
-      ? `root ${(activeEntry.rootTravelWorld / bodyHeight).toFixed(2)} body` : 'fallback stride';
-    ui.status.textContent = `${active.def.label}\n${active.status}\nstate ${state.onGround ? (state.moving ? (state.running ? 'RUN' : 'WALK') : 'IDLE') : 'JUMP'} · clip ${activeEntry ? activeEntry.name : '—'} · cadence ${cadenceScale.toFixed(2)}× · ${stride}${active.fallback ? '\nLEGACY: Warband mesh was not directly rig-compatible; showing the actual animated legacy donor.' : ''}`;
+    const strideUnit = active.locomotionHeight || bodyHeight;
+    const stride = activeEntry && activeEntry.rootTravelWorld > strideUnit * 0.08
+      ? `root ${(activeEntry.rootTravelWorld / strideUnit).toFixed(2)} body` : 'fallback stride';
+    const speedTag = active.speedMul && Math.abs(active.speedMul - 1) > 0.01 ? ` · move ${active.speedMul.toFixed(2)}×` : '';
+    ui.status.textContent = `${active.def.label}\n${active.status}\nstate ${state.onGround ? (state.moving ? (state.running ? 'RUN' : 'WALK') : 'IDLE') : 'JUMP'} · clip ${activeEntry ? activeEntry.name : '—'} · cadence ${cadenceScale.toFixed(2)}× · ${stride}${speedTag}${active.fallback ? '\nLEGACY: Warband mesh was not directly rig-compatible; showing the actual animated legacy donor.' : ''}`;
   }
 
   async function activate(id, persist = true) {
@@ -414,6 +451,7 @@ async function main() {
     clearGroup(visualRoot);
     visualRoot.add(runtime.model);
     active = runtime;
+    wb0.ground.params.speed = baseGroundSpeed * (runtime.speedMul || 1);
     currentAction = null; currentKey = null; manualKey = null; auto = true; cadenceScale = 1;
     fillClipMenu(runtime);
     ui.auto.classList.add('active');
@@ -430,8 +468,7 @@ async function main() {
   });
   ui.auto.onclick = () => {
     auto = true; manualKey = null; ui.auto.classList.add('active');
-    const entry = autoEntry(wb0.ground.state);
-    playEntry(entry, { force: true, oneShot: !wb0.ground.state.onGround && entry === active?.auto.jump });
+    const entry = autoEntry(wb0.ground.state); playEntry(entry, { force: true, oneShot: !wb0.ground.state.onGround && entry === active?.auto.jump });
   };
   ui.clip.onchange = () => {
     if (!active) return;
@@ -448,6 +485,7 @@ async function main() {
   wb0.movementLab = {
     profiles: PROFILES,
     assetPin: CHARACTER_PIN,
+    mechDonorPin: F1_DONOR_REV,
     get activeProfile() { return active && active.def.id; },
     get auto() { return auto; },
     activate,
@@ -458,6 +496,8 @@ async function main() {
         clips: active.entries.length,
         fallback: active.fallback,
         cadenceScale,
+        speedMul: active.speedMul || 1,
+        donorReport: active.donorReport || null,
         auto: Object.fromEntries(Object.entries(active.auto).map(([k, v]) => [k, v && v.name])),
         rootTravelWorld: Object.fromEntries(Object.entries(active.auto).map(([k, v]) => [k, v && v.rootTravelWorld || 0])),
       } : { profile: null };
