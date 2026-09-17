@@ -1,23 +1,22 @@
 {
   "schema": "kfb.travel-public-mirror.v1",
   "sourceRepository": "georg-doc/KFB-Travel-Globe",
-  "sourceCommit": "180b4c2f22f71dc138882bf57492c3afea42e276",
+  "sourceCommit": "5e9102a6a7e4275da117f5c9478e175a036e74db",
   "sourcePath": "site/world-builder/",
   "mirrorPath": "travel/wip/travel_globe_wsa/world-builder/",
   "status": "PUBLIC WIP MIRROR · HUMAN BROWSER ACCEPTANCE PENDING",
-  "staticEvidence": "PR #22 · 53/53 tests PASS · build PASS · verify PASS · 108 frozen B0 runtime files unchanged · build travel-b0-4df2c7a23af63ef6",
+  "staticEvidence": "PR #23 · 55/55 tests PASS · build PASS · verify PASS · 108 frozen B0 runtime files unchanged · build travel-b0-fda79d769db123a1",
   "notes": [
     "Public mirror only; Travel implementation repo remains SSOT.",
-    "Ground browser strafe now follows the human-corrected visible mapping Q=left and E=right; Flight controls are unchanged.",
-    "Ground chase/free-look camera is clamped radially above the baked terrain from boden-lesung so camera interpolation cannot cut through a hill and expose sky through the one-sided globe mesh.",
-    "The Support Surface seam from PR #21 remains the player-feet/contact owner above baked terrain; ground.radiusAt() remains terrain-only for authoring and World Recipe anchors.",
-    "Movement Lab now exposes five comparison profiles: ActionFigure, Monstrosity, Legacy Orc Warband, FrizzleBob/Bee composite and Fernando Raw Mech.",
-    "Fernando Raw Mech uses the original Quaternius Mech_FernandoTheFlamingo.gltf with embedded locomotion clips and intentionally has no cockpit, FrizzleBob or Stunt physics.",
-    "Legacy Warband keeps the actual Orc A visible. It attempts semantic relative retargeting from Legacy 1.2 clips and uses a bounded donor-timing proxy only when needed; the yellow animation test figure is no longer a visible fallback.",
-    "Full-jump clips are synchronized to actual Ground ballistic airtime; a finished one-shot cannot leave a frozen pose blocking locomotion, and moving landings return to Walk/Run after a short landing beat.",
-    "Bee/FrizzleBob composite remains browser-rejected for composition; Fernando is an additional control specimen, not a silent replacement.",
+    "Travel now consumes central KFB Assembly Contract A0 Surface semantics through a thin read-only consumer adapter; A0 is not a runtime or physics owner.",
+    "Only A0 surfaces with explicit support or walkable roles enter Travel Ground support. Drivable/stunt alone does not silently become walkable.",
+    "Terrain cards, ROAD meshes, Stunt Ramp, BlockBits and the current structure proof are expressed through one live A0 RecipeEnvelope before entering the existing Travel-owned Support Surface resolver.",
+    "Highest geometrically valid support remains Travel behavior. A0 priority is only a near-height tie-breaker and cannot make a lower surface beat a higher one.",
+    "Bridge semantics are supported by the adapter but no placeholder bridge is invented before a real World/Atlas bridge exists.",
+    "window.__wb0.assemblyA0 exposes applyRecipe/removeRecipe/sync/liveRecipe/report for future Atlas/ToolBox consumer input.",
+    "Race alignment is deliberately separate: Race keeps vehicle/contact/feel physics local and uses A0 only for real recipe semantics; no fabricated AssetRefs or stunt/landing fields are required for T1/T2.",
+    "Ground rig hardening from PR #22 remains active: Q=left/E=right, terrain-safe camera, five comparison rigs, Legacy Orc visible, Mech jump/landing fixes.",
     "Parallel /world/ POC files are not owned or modified by this mirror slice.",
-    "Combat, exact Frankenstein recipe promotion and automatic Ground↔Flight remain later gates.",
-    "No canonical Travel contract promotion before Georg browser acceptance."
+    "No Travel L5 evidence until Georg browser acceptance."
   ]
 }
