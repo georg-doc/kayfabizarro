@@ -2,6 +2,47 @@
 
 Never rewrite prior entries to make history look cleaner. Add a correction/successor entry instead.
 
+## 2026-09-17 · W006 · IMPLEMENTATION POC
+
+Added `composer.html` + `composer.js` as a direct-manipulation authoring UX proof.
+
+Current POC capabilities:
+
+- paste/import Librarian-style candidate JSON or a direct GLB/GLTF URL;
+- load real repository assets rather than placeholder primitives;
+- click-place them on a neutral authoring pad;
+- select and edit with Three.js `TransformControls`;
+- Move / Rotate / Scale;
+- local ground snap;
+- duplicate / delete / frame selection;
+- measured current object bounds in the inspector;
+- local save/reload through browser storage;
+- copy/download a `kfb.world-recipe.v0-poc` candidate recipe.
+
+Hard boundary: the authoring pad uses explicit `poc-local` coordinates and is **not** Travel terrain. The exported recipe is `candidate-only`; productive spherical anchoring, terrain conformance, movement and save/promotion remain Travel-owned.
+
+Browser acceptance is still PENDING.
+
+## 2026-09-17 · W005 · DECISION
+
+Clarified `/world/` as **POC / Design Lab**, not a second World Builder runtime.
+
+Required handoff path:
+
+`/world/ POC → Candidate World Recipe → Travel validation → optional promotion`
+
+The POC may experiment with placement, transform UX, snapping, prefabs, BlockBits, spline authoring UX, seed/variant browsing and recipe generation. It may not invent competing terrain, locomotion, Asset Registry, animation-compatibility or productive save truth.
+
+## 2026-09-17 · W004 · PARALLELIZATION
+
+Accepted the WSA role split:
+
+- `/world/` / this chat: fast visual authoring/UX POC and design donor;
+- Travel WB0: productive Globe runtime, terrain, locomotion, persistence, owner contracts and promotion;
+- Asset Librarian: read-only source/search/bundle input;
+- Resident Atlas: future grouped resident/prefab candidate input;
+- historical Voxel/Worldbuilder lines: donors, not new SSOTs.
+
 ## 2026-09-17 · W003 · WORKFLOW
 
 Created a durable `/world/` planning surface so fresh chats can recover the active World Builder direction from one public URL instead of receiving pasted mega-briefings. The page remains a navigator; Travel GitHub/project SSOT wins on conflict.
