@@ -46,10 +46,13 @@ Workflow Engine
 ```
 
 Current SimBlood WIPs:
-- **P0 Field Composer POC** — procedural normal RBCs + isolated typed WBCs + platelets + stable seeded field
+- **P0 Field Composer POC** — IMPLEMENTED; normal typed RBC/WBC/platelet field with pan, 40×/100×, focus and cell truth; browser/freeplay acceptance pending
 - **P0 Reference/assets** — Wave 1 complete for POC guidance; production rights/validation remain open
 - **P1 CytoDiff** — `CONDITIONAL_GO` R&D benchmark; must not delay MVP0
 - **P1 Tele-Hematology** — workflow/use-case concept ready; later consumer of typed field truth
+
+Current Field Composer entry:
+`https://github.com/georg-doc/doccheck/tree/main/sim-blood/app/field-composer-poc`
 
 DocCheck visual convention:
 `#cc0033` as a restrained UI accent only; never tint microscopy imagery.
