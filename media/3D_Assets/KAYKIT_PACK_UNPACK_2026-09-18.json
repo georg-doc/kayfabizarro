@@ -1,0 +1,67 @@
+{
+  "schema": "kfb.asset-pack-unpack/1",
+  "date": "2026-09-18",
+  "source": "four manually uploaded KayKit ZIPs",
+  "policy": "additive; ZIPs preserved; existing target directories are a hard failure",
+  "packs": [
+    {
+      "zipPath": "media/3D_Assets/KayKit Medieval Builder Pack 1.0.zip",
+      "zipBlobSha": "7e98c37f22e0fad1a36f5d888caf6f5ad3ab574c",
+      "targetPath": "media/3D_Assets/KayKit Medieval Builder Pack 1.0",
+      "fileCount": 236,
+      "bytes": 8908566,
+      "formats": {
+        ".glb": 226,
+        ".png": 7,
+        ".txt": 1,
+        ".url": 2
+      },
+      "licensePresent": true
+    },
+    {
+      "zipPath": "media/3D_Assets/KayKit_Furniture_Bits_1.0_FREE.zip",
+      "zipBlobSha": "1c5b95feb01d64e4f84458b75c95290a9ab0a68b",
+      "targetPath": "media/3D_Assets/KayKit_Furniture_Bits_1.0_FREE",
+      "fileCount": 113,
+      "bytes": 2588894,
+      "formats": {
+        ".bin": 53,
+        ".gltf": 53,
+        ".png": 4,
+        ".txt": 1,
+        ".url": 2
+      },
+      "licensePresent": true
+    },
+    {
+      "zipPath": "media/3D_Assets/KayKit_Restaurant_Bits_1.0_FREE.zip",
+      "zipBlobSha": "e8b446d1f309b8f8040dcbcc50f51a7bffcb923c",
+      "targetPath": "media/3D_Assets/KayKit_Restaurant_Bits_1.0_FREE",
+      "fileCount": 295,
+      "bytes": 5965548,
+      "formats": {
+        ".bin": 144,
+        ".gltf": 144,
+        ".png": 4,
+        ".txt": 1,
+        ".url": 2
+      },
+      "licensePresent": true
+    },
+    {
+      "zipPath": "media/3D_Assets/KayKit_Space_Base_Bits_1.0_FREE.zip",
+      "zipBlobSha": "ee91bbef38a9af6c99d96a7e54eb92f20945eb3b",
+      "targetPath": "media/3D_Assets/KayKit_Space_Base_Bits_1.0_FREE",
+      "fileCount": 121,
+      "bytes": 4120472,
+      "formats": {
+        ".bin": 57,
+        ".gltf": 57,
+        ".png": 4,
+        ".txt": 1,
+        ".url": 2
+      },
+      "licensePresent": true
+    }
+  ]
+}
