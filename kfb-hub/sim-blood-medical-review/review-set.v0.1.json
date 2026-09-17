@@ -2,8 +2,8 @@
   "schema": "doccheck.simblood.medical-review-set/0.1",
   "updated": "2026-09-18",
   "setId": "core-wbc-shortlist-v0.1",
-  "status": "POC_MEDICAL_REVIEW_READY",
-  "purpose": "Physician morphology review of a pre-QC shortlist. Provenance is intentionally hidden in the UI until review is complete.",
+  "status": "WORKFLOW_UI_PROOF_ONLY_AWAITING_TRUE_ALPHA_CUTOUTS",
+  "purpose": "Physician-review UI proof only. Current images are source tiles/crops; final medical review requires original source + segmentation/mask + transparent cutout + optional in-field preview.",
   "decisionStates": [
     "CANONICAL_ANCHOR",
     "ACCEPTED_VARIANT",
@@ -97,5 +97,8 @@
     "rightsAuthority": "https://data.mendeley.com/datasets/snkd93bnjr/1",
     "license": "CC BY 4.0",
     "deliveryMirror": "official-Auralin/Blood-Cell-Classification"
-  }
+  },
+  "productionReadyForPhysicianSignoff": false,
+  "blocker": "TRUE_CELL_EXTRACTION_REQUIRED",
+  "extractionContract": "docs/TRUE_CELL_EXTRACTION_STRATEGY.md"
 }
