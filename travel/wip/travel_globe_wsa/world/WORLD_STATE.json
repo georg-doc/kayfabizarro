@@ -1,0 +1,121 @@
+{
+  "schema": "kfb.travel-world-workbench/0.1",
+  "status": "CURRENT WORKING NAVIGATOR / NOT RUNTIME SSOT",
+  "updated": "2026-09-17",
+  "implementationSSOT": "georg-doc/KFB-Travel-Globe",
+  "documentedFrom": "f2d6c36bcffe555fc062c3a98f039d407c200d82",
+  "publicSite": "https://kayfabizarro.pages.dev/travel/wip/travel_globe_wsa/world/",
+  "runtimeSite": "https://kayfabizarro.pages.dev/travel/wip/travel_globe_wsa/world-builder/",
+  "hubSite": "https://kayfabizarro.pages.dev/kfb-hub/",
+  "currentSlice": {
+    "id": "WB0",
+    "title": "Live World Builder / God Mode proof",
+    "status": "IMPLEMENTATION WIP · STATIC PASS · HUMAN BROWSER PENDING",
+    "implementationMerge": "b1b5065449f84fbf76112bd0e61790c6c9a54441",
+    "staticEvidence": "PR #13 · 21/21 tests PASS · build PASS · verify PASS · 108 frozen B0 runtime files unchanged",
+    "georgAcceptance": "PENDING"
+  },
+  "governingDecisions": [
+    "Travel/TinySkies remains the macro world and renderer owner.",
+    "World Builder edits the same running world; it is not a detached editor scene.",
+    "Authoring and locomotion are separate axes: PLAY|BUILD|GOD versus GROUND|FLIGHT|DRIVE.",
+    "BlockBits/Voxel is a local construction and terraforming tool, not the replacement world aesthetic.",
+    "PLAY and BUILD consume the same persistent World Recipe.",
+    "Asset Registry/Librarian remains read-only source/discovery owner; Builder consumes candidate bundles.",
+    "Source assets are never silently edited; scale/look corrections live as explicit calibration overrides.",
+    "No Town content expansion until the WB0 human-browser gate passes."
+  ],
+  "authoringModes": [
+    {"name":"PLAY","role":"Experience the authored world."},
+    {"name":"BUILD","role":"Place/edit actors, buildings, props, resident bundles and splines."},
+    {"name":"GOD","role":"Local construction/terraform seams such as BlockBits; broader terrain editing later."}
+  ],
+  "locomotionModes": [
+    {"name":"GROUND","role":"Spherical walking owner; candidate contract delta until browser proof passes."},
+    {"name":"FLIGHT","role":"Existing carpet.js Travel owner."},
+    {"name":"DRIVE","role":"Deferred vehicle owner/adapter."}
+  ],
+  "layers": [
+    {"name":"Terrain","now":"Organic Travel globe, water, atmosphere, weather, day/night.","later":"Local authored terrain operations and bounded voxel patches."},
+    {"name":"Objects","now":"Actors, buildings, props, vegetation, landmarks; transform + Surface Snap + calibration.","later":"Resident Atlas prefabs and richer placement recipes."},
+    {"name":"Splines","now":"One terrain-aware ROAD proof.","later":"PATH, RACING_TRACK, RAIL, FENCE, RIVER."},
+    {"name":"Portals / Instances","now":"Persist seam/target form only.","later":"Academy, Arena, Pirate Island, Moon, Hollow World, floating surreal sets."}
+  ],
+  "currentGate": [
+    {"id":"g0","label":"GROUND + PLAY: W/A/S/D, stable Ground camera, no Flight speedlines/post behavior","status":"PENDING HUMAN BROWSER"},
+    {"id":"g1","label":"Player scale, facing and lighting are credible in-browser","status":"PENDING HUMAN BROWSER"},
+    {"id":"g2","label":"BUILD: place Caveman + Mine + 3 props; Move/Rotate/Scale + Surface Snap","status":"PENDING HUMAN BROWSER"},
+    {"id":"g3","label":"GOD: place real BlockBits and one ramp","status":"PENDING HUMAN BROWSER"},
+    {"id":"g4","label":"Draw one short terrain-aware ROAD","status":"PENDING HUMAN BROWSER"},
+    {"id":"g5","label":"Save → Reload restores identical authored state","status":"PENDING HUMAN BROWSER"},
+    {"id":"g6","label":"PLAY → walk to authored set","status":"PENDING HUMAN BROWSER"},
+    {"id":"g7","label":"FLIGHT → BUILD without losing authored state","status":"PENDING HUMAN BROWSER"}
+  ],
+  "statusBreakdown": [
+    {"kind":"DECISION","text":"World Builder is the active production direction after the rejected Town v3 / failed indirect scene-composition line."},
+    {"kind":"IMPLEMENTATION","text":"WB0 exists additively under site/world-builder/ with mode bridge, spherical Ground controller, TransformControls, Surface Snap, World Recipe persistence, candidate JSON import, one ROAD, BlockBits and ramp placement."},
+    {"kind":"TESTED RESULT","text":"Static CI only: 21/21 tests, syntax check, build and verify pass. This is not browser/gameplay acceptance."},
+    {"kind":"PUBLIC MIRROR","text":"World Builder runtime is mirrored at /travel/wip/travel_globe_wsa/world-builder/."},
+    {"kind":"GEORG ACCEPTANCE","text":"PENDING for the human browser authoring loop."},
+    {"kind":"OPEN","text":"Ground presentation, scale/facing/lighting, full save/reload loop and mode switching require Georg's browser pass before expansion."}
+  ],
+  "reuse": [
+    {"capability":"Macro world / renderer / terrain / water / atmosphere","owner":"Travel Globe","use":"KEEP"},
+    {"capability":"Flight movement","owner":"carpet.js","use":"FLIGHT only"},
+    {"capability":"Ground movement","owner":"WB0 spherical controller adapted from existing walk donor","use":"CANDIDATE CONTRACT DELTA"},
+    {"capability":"Asset discovery","owner":"Asset Registry + Asset Librarian","use":"READ-ONLY candidate input"},
+    {"capability":"Resident ensembles","owner":"Town / Resident Atlas direction","use":"future prefab/candidate input"},
+    {"capability":"Voxel construction","owner":"BlockBits + historical voxel donors","use":"LOCAL TOOL, not macro-world replacement"},
+    {"capability":"World lighting/audio","owner":"Travel","use":"KEEP; Builder stores explicit local calibration only"},
+    {"capability":"Runtime suitability / animation attachments","owner":"receiving runtime / ToolBox / Animation Lab","use":"DO NOT CLAIM FROM LIBRARIAN PREVIEW"}
+  ],
+  "cleanRoomDonor": {
+    "name": "SP13KTRA",
+    "source": "https://github.com/KilledByAPixel/SP13KTRA",
+    "license": "All rights reserved. Observation-only donor. Do not copy, port, modify or derive code/assets/data tables without permission.",
+    "observations": [
+      "Compact authored route skeleton → derive dense road geometry, banking, hills, racing line, cues and gameplay markings.",
+      "Route metadata is a reference, not a cage: vehicles still simulate in world coordinates.",
+      "Correlated spatial fields create districts/ridges better than per-object random noise.",
+      "A zone can use one dominant shape language/palette plus limited secondary variation.",
+      "Procedural SFX/ambience can be a coherent glue layer while hero music remains authored/Suno-based.",
+      "Seeded music/world candidates become useful when paired with a human seed browser/curation step.",
+      "Bake/compile stable world results once; rebuild only affected authoring state when the recipe changes.",
+      "Canonical assets provide identity; procedural geometry can provide connective tissue."
+    ],
+    "forbidden": [
+      "No copied source code or algorithms line-for-line.",
+      "No copied constants, circuit data, seed tables, music parameter tables or shape implementations.",
+      "No claim that SP13KTRA code is a permissible implementation donor.",
+      "Independent KFB implementations must be written from KFB requirements and our own contracts."
+    ]
+  },
+  "worldRecipe": {
+    "status": "PROPOSAL → WB0 implementation evidence; not yet canonical contract",
+    "source": "_handover/WORLD_BUILDER_GOD_MODE_2026-09-17/WORLD_RECIPE_v0_PROPOSAL.json",
+    "stores": ["base world settings","zones","object/actor instances","explicit calibration overrides","resident/prefab references","spline paths","local voxel chunks","portal/instance seams","stable spherical surface anchors"]
+  },
+  "nextAfterGate": [
+    "Repair only browser-observed WB0 failures.",
+    "If WB0 passes, promote only the proven owner/contract deltas.",
+    "Then add one real resident ensemble through Librarian/Resident Atlas rather than regenerating whole scenes.",
+    "Expand spline grammar from ROAD only after the first terrain-aware road is accepted.",
+    "Add procedural world/audio helpers as independent KFB implementations, with clean-room notes for copyrighted observation donors."
+  ],
+  "links": [
+    {"label":"Open live WB0 runtime","url":"https://kayfabizarro.pages.dev/travel/wip/travel_globe_wsa/world-builder/","kind":"runtime"},
+    {"label":"Travel public WIP root","url":"https://kayfabizarro.pages.dev/travel/wip/travel_globe_wsa/","kind":"runtime"},
+    {"label":"Asset Librarian","url":"https://kayfabizarro.pages.dev/tools/asset_registry/librarian/","kind":"tool"},
+    {"label":"KFB Production Hub","url":"https://kayfabizarro.pages.dev/kfb-hub/","kind":"hub"},
+    {"label":"Travel implementation repo","url":"https://github.com/georg-doc/KFB-Travel-Globe","kind":"ssot"},
+    {"label":"WB0 implementation brief","url":"https://github.com/georg-doc/KFB-Travel-Globe/blob/main/_handover/WORLD_BUILDER_GOD_MODE_2026-09-17/START_HERE.md","kind":"source"},
+    {"label":"WB0 execution log","url":"https://github.com/georg-doc/KFB-Travel-Globe/blob/main/_handover/WORLD_BUILDER_GOD_MODE_2026-09-17/EXECUTION_LOG.md","kind":"source"},
+    {"label":"Travel owner contract","url":"https://github.com/georg-doc/KFB-Travel-Globe/blob/main/travel/CONTRACT.md","kind":"source"},
+    {"label":"World Recipe proposal","url":"https://github.com/georg-doc/KFB-Travel-Globe/blob/main/_handover/WORLD_BUILDER_GOD_MODE_2026-09-17/WORLD_RECIPE_v0_PROPOSAL.json","kind":"source"}
+  ],
+  "changelog": [
+    {"date":"2026-09-17","id":"W001","type":"IMPLEMENTATION NOTE","text":"Created the durable World workbench site as a navigator over the existing WB0 implementation; no new runtime owner introduced."},
+    {"date":"2026-09-17","id":"W002","type":"CLEAN-ROOM NOTE","text":"Added SP13KTRA as observation-only donor with explicit all-rights-reserved boundary and independent KFB implementation rules."},
+    {"date":"2026-09-17","id":"W003","type":"WORKFLOW","text":"Fresh chats can start from the public /world/ page instead of receiving pasted mega-briefings; GitHub/project SSOT still wins on conflict."}
+  ]
+}
