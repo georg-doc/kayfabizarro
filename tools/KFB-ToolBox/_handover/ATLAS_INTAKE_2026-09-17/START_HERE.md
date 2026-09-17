@@ -222,7 +222,7 @@ Promote additively; do not replace inbox truth.
 
 - retain existing `tools/resident_atlas/` implementation;
 - introduce S6 as a separately identifiable candidate/revision first;
-- pin the remaining `main` asset reference(s);
+- **PROMOTION DELTA IMPLEMENTED:** pin the remaining Mixed-Bag runtime reference to `8948a06b75cb18c970599afb29b6a772315fad0e` in the promoted copy;
 - preserve all 21 resident recipes and evidence/open notes;
 - expose a direct browser route through the existing site publication path;
 - browser QA before making S6 the default Resident Atlas experience.
@@ -232,7 +232,7 @@ Promote additively; do not replace inbox truth.
 - create a dedicated `tools/world_atlas/` browser surface rather than nesting the full Lab into Travel;
 - preserve the complete S1–S13.2 source as provenance/history;
 - give the normal landing page focused entry points for **Hex**, **Road/Forest/Terrain kits**, **Dungeon Model**, **Dungeon Generator** and measurements;
-- pin every existing GitHub asset URL used by the promoted runtime;
+- **PROMOTION DELTA IMPLEMENTED:** pin the normal runtime asset base and S10 GitHub dependencies to `8948a06b75cb18c970599afb29b6a772315fad0e` in the promoted copy;
 - do not claim World Atlas feature parity for castle/mine/landmark recipes that are not in this source.
 
 ### P3 · Travel consumer proof
@@ -294,7 +294,7 @@ PR #48 promotes the complete reviewed trees additively to:
 
 Static identity check: six representative source→promotion file pairs have identical Git blob SHAs: Resident S6 HTML, Resident `data/cast.js`, Dungeon Generator S13.2 HTML, `hex-grid.js`, `dungeon-grid.js`, and Environment `EXPORT_MANIFEST.json`.
 
-No Inbox source file was changed. No Travel runtime file was changed. Public browser QA and revision pinning of remaining branch-`main` runtime asset URLs are still pending.
+No Inbox source file was changed. No Travel runtime file was changed. Public browser QA is still pending. The promoted runtime copies now pin the normal GitHub asset bases and S10/Mixed-Bag runtime references to `8948a06b75cb18c970599afb29b6a772315fad0e`; the original inbox exports remain unchanged.
 
 ## Additive history
 
