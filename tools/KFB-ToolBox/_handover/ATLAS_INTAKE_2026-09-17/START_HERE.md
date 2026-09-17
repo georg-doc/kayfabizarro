@@ -1,6 +1,6 @@
 # KFB ToolBox · Atlas Intake · 2026-09-17
 
-**Status:** REVIEWED INTAKE · SOURCE PRESERVED · PROMOTION NOT YET IMPLEMENTED  
+**Status:** REVIEWED INTAKE · SOURCE PRESERVED · SITE PROMOTION IN REVIEW  
 **Repository:** `georg-doc/kayfabizarro`  
 **Intake checkpoint:** `8948a06b75cb18c970599afb29b6a772315fad0e` (`Add files via upload`)  
 **Scope:** Resident Atlas + Environment / Kit Lab exports now present under `tools/KFB-ToolBox/_inbox/`.
@@ -259,12 +259,13 @@ One deterministic seed, one small generated set, explicit door/stair/support/wal
 | Resident S6 files | **RECEIVED / REVIEWED INTAKE** |
 | Resident source/data | **PRESENT** |
 | Resident GitHub-first assets | **YES**, with one documented `main` exception to pin during promotion |
-| Resident public promoted site | **NOT YET IMPLEMENTED by this intake** |
+| Resident public promoted site | **IMPLEMENTATION CANDIDATE · PR #48 / browser QA pending** |
 | Environment Kit Lab files | **RECEIVED / REVIEWED INTAKE** |
 | Dungeon Generator S13.2 | **SOURCE PRESENT / export-reported project tests preserved** |
 | Hex grammar | **SOURCE PRESENT / L4 donor candidate** |
 | World Atlas landmark presets | **NOT PRESENT in this export** |
 | Environment runtime asset pins | **GitHub paths exist; promoted code still needs fixed revision pins** |
+| Candidate site promotion | **PR #48 · `atlas/site-promotion-recovery-2026-09-17`** |
 | Travel integration | **NOT IMPLEMENTED by this intake** |
 | Consumer L5 | **NONE** |
 | Georg visual/gameplay acceptance | **PENDING** |
@@ -283,6 +284,17 @@ Read in this order:
 6. `../../_inbox/KayKit Environment Atlas/KFB_World_Atlas_v1_EXPORT_2026-09-17/docs/RECIPE_MAPPING_A0.md`;
 7. central `skills/chat/masterplan/KFB_ASSEMBLY_CONTRACT_A0_2026-09-17.md`;
 8. Travel's current `ATLAS_PORTABILITY_SPRINT_2026-09-17.md` before any consumer integration.
+
+## Site promotion return · 2026-09-17
+
+PR #48 promotes the complete reviewed trees additively to:
+
+- `tools/resident_atlas_s6/` with stable alias `/resident-atlas-s6/`;
+- `tools/world_atlas/` with stable alias `/world-atlas/` and a focused launcher.
+
+Static identity check: six representative source→promotion file pairs have identical Git blob SHAs: Resident S6 HTML, Resident `data/cast.js`, Dungeon Generator S13.2 HTML, `hex-grid.js`, `dungeon-grid.js`, and Environment `EXPORT_MANIFEST.json`.
+
+No Inbox source file was changed. No Travel runtime file was changed. Public browser QA and revision pinning of remaining branch-`main` runtime asset URLs are still pending.
 
 ## Additive history
 
