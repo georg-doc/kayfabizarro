@@ -1,5 +1,7 @@
 # Session Card · KFB Town · S001 r022
 
+> **2026-09-18 STATUS OVERRIDE:** This remains a Town design snapshot, but all Birthday-specific execution items are **FAIL / OUTDATED / ARCHIVED HISTORY**. Do not use Birthday Startscreen or Birthday Travel handoff as current work. Non-Birthday Town concepts remain reference until a newer Town session replaces them.
+
 **Stand:** 15.09.2026. **Art:** aktueller öffentlicher Wiedereinstieg. Kein Runtime-Release.
 
 ## Zuerst lesen
@@ -9,8 +11,8 @@
 3. `artifacts/TOWN_R022_DESIGN_PROBE.html` für die aktuelle visuelle Arbeitsprobe.
 4. `../masterplan/WORLD_COLOR_LIGHTING_COHESION_TBD_2026-09-15.md` für den nach r022 angelieferten Travel-Look-/Farbkohärenz-TBD. Er ergänzt den aktuellen Stand, ist keine neue Town-Revision oder Implementationsabnahme.
 5. `references/TOWN_TRAVEL_AUDIO_SOUNDSCAPE_TBD_2026-09-15.md` für den parallelen World-Audio-/Soundscape-Cohesion-TBD.
-6. `references/TOWN_POST_R022_ARCHETYPES_BIRTHDAY_RADIO_2026-09-15.md` für Archetypenkorrektur, Revelation-Artefakt und Birthday Radio.
-7. `references/TOWN_POST_R022_BIRTHDAY_STARTSCREEN_TRAVEL_HANDOFF_2026-09-15.md` für den aktuellen Birthday-Startscreen und den begrenzten Travel/Astra-Handoff.
+6. `references/TOWN_POST_R022_ARCHETYPES_BIRTHDAY_RADIO_2026-09-15.md` nur noch für **Archetypen/Revelation** und historische Audio-Provenienz; Birthday-Radio-Ausführung ist archiviert.
+7. `references/TOWN_POST_R022_BIRTHDAY_STARTSCREEN_TRAVEL_HANDOFF_2026-09-15.md` = **ARCHIVED FAIL / historical handoff**, nicht ausführen.
 
 Der lokale Session Cut enthält den vollständigen fortgeschriebenen Living-Stand. Dieser öffentliche GitHub-Einstieg vermeidet private Sitzungsdaten und ersetzt keine Consumer-SSOTs.
 
