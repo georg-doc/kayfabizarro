@@ -1,14 +1,15 @@
 {
   "schema": "kfb.travel-public-mirror.v1",
   "sourceRepository": "georg-doc/KFB-Travel-Globe",
-  "sourceCommit": "d17169f70a8b0a3c834702ccaf5c6bc53ba2195c",
+  "sourceCommit": "25f7c59830ff70e966662822c7b359729a2ca5f5",
   "sourcePath": "site/world-builder/",
   "mirrorPath": "travel/wip/travel_globe_wsa/world-builder/",
   "status": "PUBLIC WIP MIRROR · HUMAN BROWSER ACCEPTANCE PENDING",
-  "staticEvidence": "PR #14 · 23/23 tests PASS · build PASS · verify PASS · 108 frozen B0 runtime files unchanged",
+  "staticEvidence": "PR #15 · 24/24 tests PASS · build PASS · verify PASS · 108 frozen B0 runtime files unchanged",
   "notes": [
     "Public mirror only; Travel implementation repo remains SSOT.",
     "Ground hardening suppresses Flight pointer-look, flight-only particles/shadow and petFill/env/tint.",
+    "Player scale and facing are now explicit persistent World Recipe calibration, not source asset edits.",
     "No canonical Travel contract promotion before Georg browser acceptance."
   ]
 }
