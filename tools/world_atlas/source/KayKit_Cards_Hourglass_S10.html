@@ -77,7 +77,7 @@
 import * as THREE from 'three';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
-import { createCardBuilder } from 'https://cdn.jsdelivr.net/gh/georg-doc/kayfabizarro@main/skills/kfb-card-builder.js';
+import { createCardBuilder } from 'https://cdn.jsdelivr.net/gh/georg-doc/kayfabizarro@8948a06b75cb18c970599afb29b6a772315fad0e/skills/kfb-card-builder.js';
 
 const hud = document.getElementById('hud');
 const canvas = document.getElementById('c');
@@ -132,7 +132,7 @@ hud.textContent = 'lade Kartenregistry…';
    then returns null for all five. Fix stays at the call site: fetch the deck's own JSON and hand
    cb.make() already-normalised card objects. cropCard() inside the builder only reads
    card.packId + card.n, so the real PDF-crop/ink/Sollformat pipeline runs unchanged from there. */
-const deckRaw = await (await fetch('https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/kfb/AI_Kayfabe_-_ADD_web.pdf.json')).json();
+const deckRaw = await (await fetch('https://raw.githubusercontent.com/georg-doc/kayfabizarro/8948a06b75cb18c970599afb29b6a772315fad0e/media/kfb/AI_Kayfabe_-_ADD_web.pdf.json')).json();
 const deckTitle = "Roko's Basilisk & The AI Kayfabe Takeover";
 function cardOf(n) {
   const raw = (deckRaw.cards || []).find((c) => c.num === n);
@@ -262,7 +262,7 @@ document.getElementById('side').onclick = (e) => {
    Die Sand-Kegel passten nicht zur gemessenen Glasgeometrie — die 40/20/40-Aufteilung war eine
    Annahme, keine Messung an der tatsächlichen Innenform. Nur das echte, korrekt geladene Modell
    bleibt stehen, ohne erfundenen Sand. */
-const RAW = 'https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/KayKit_BoardGameBits_1.0_FREE/Assets/gltf/hourglass.gltf';
+const RAW = 'https://raw.githubusercontent.com/georg-doc/kayfabizarro/8948a06b75cb18c970599afb29b6a772315fad0e/media/3D_Assets/KayKit_BoardGameBits_1.0_FREE/Assets/gltf/hourglass.gltf';
 const gltf = await new GLTFLoader().loadAsync(RAW);
 groups.sand.add(gltf.scene);
 
