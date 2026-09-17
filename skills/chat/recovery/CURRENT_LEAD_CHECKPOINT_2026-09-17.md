@@ -81,6 +81,9 @@ Rejected Birthday/Fable visual directions remain archived history only. They do 
 Human recovery page:
 `https://kayfabizarro.pages.dev/kfb-hub/sim-blood.html`
 
+Current POC:
+`https://kayfabizarro.pages.dev/kfb-hub/sim-blood-poc/index.html`
+
 Current project SSOT:
 `https://github.com/georg-doc/doccheck/tree/main/sim-blood`
 
@@ -97,20 +100,27 @@ Morphology Engine
 → typed cell pools + recipes + Field Composer
 
 Microscope Engine
-→ circular viewport + pan + zoom + focus
+→ circular viewport + smooth pan + continuous zoom + focus
 
 Workflow Engine
 → Explore / Compare / Cell ID / Differential / Tele-Hematology Case
 ```
 
 Current SimBlood WIPs:
-- **P0 Field Composer POC** — IMPLEMENTED; normal typed RBC/WBC/platelet field with pan, 40×/100×, focus and cell truth; browser/freeplay acceptance pending
+- **P0 Field Composer / interaction** — current field is live; latest patch fixes reported high-magnification cursor-anchor drift by using one canvas coordinate basis for wheel/pinch zoom; Georg re-review pending
+- **P0 Cell Asset Injection** — first three Acevedo/PBC segmented-neutrophil candidates are now wired through the image-backed asset seam with procedural fallback; only one candidate visually inspected so far; all remain unpromoted
 - **P0 Reference/assets** — Wave 1 complete for POC guidance; production rights/validation remain open
-- **P1 CytoDiff** — `CONDITIONAL_GO` R&D benchmark; must not delay MVP0
+- **P1 CytoDiff** — `CONDITIONAL_GO` R&D benchmark; must not delay the real-cell comparison
 - **P1 Tele-Hematology** — workflow/use-case concept ready; later consumer of typed field truth
 
-Current Field Composer entry:
-`https://github.com/georg-doc/doccheck/tree/main/sim-blood/app/field-composer-poc`
+Current interaction correction commit:
+`893c529fdf14c3925be208a7ae4e4a3c234692cf`
+
+Current cell candidate set:
+`sim-blood/assets/runtime-pool/neutrophil-candidates.v0.2.json`
+
+Rights basis for injected PBC candidates:
+Acevedo et al. 2020 Mendeley dataset · `CC BY 4.0`; raw GitHub image paths are temporary delivery mirrors only, not the license authority.
 
 DocCheck visual convention:
 `#cc0033` as a restrained UI accent only; never tint microscopy imagery.
@@ -126,4 +136,4 @@ DocCheck visual convention:
 
 ## Recovery sentence
 
-> Start from the current project SSOT, not chat history. For Travel/World work, open the Hub Travel recovery page, verify current `KFB-Travel-Globe/main`, then choose the productive `/world-builder/` runtime lane or the candidate-only `/world/` authoring lane without mixing their ownership. For Stunt Race, open the Hub Stunt recovery page or read `RECOVERY.md` → Track Lab `LIVING_MASTERPLAN.md` → `WIP_STATUS.json`; for SimBlood, open the Hub recovery page or read `START_HERE.md` → `RECOVERY.md` → `WIP_STATUS.json` → `RETURN.md`. Continue only the named active WIP and leave Living/Change/Return/WIP state resumable on GitHub.
+> Start from the current project SSOT, not chat history. For Travel/World work, open the Hub Travel recovery page, verify current `KFB-Travel-Globe/main`, then choose the productive `/world-builder/` runtime lane or the candidate-only `/world/` authoring lane without mixing their ownership. For Stunt Race, open the Hub Stunt recovery page or read `RECOVERY.md` → Track Lab `LIVING_MASTERPLAN.md` → `WIP_STATUS.json`; for SimBlood, open the Hub recovery page or read `START_HERE.md` → `RECOVERY.md` → `WIP_STATUS.json` → Living Addendum → `RETURN.md`. Continue only the named active WIP and leave Living/Change/Return/WIP state resumable on GitHub.
