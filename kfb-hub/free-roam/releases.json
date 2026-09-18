@@ -1,0 +1,17 @@
+{
+  "current": "fr-s04-01",
+  "updated": "2026-09-18",
+  "releases": [{
+    "id": "fr-s04-01",
+    "published": true,
+    "title": "Slice 04 · Reverse, steering & baked Travel contact",
+    "status": "Browser-tested candidate · human review open",
+    "path": "./versions/fr-s04-01/",
+    "summary": "Drive one original Kenney kart in a bounded dry area of the actual baked Travel globe. Compare new reverse/brake controls with raw Slice-04 input on the same physics and terrain. Character and wider vehicle comparisons remain in the linked owner apps below.",
+    "evidence": "Source: 9 input tests + 19 Chromium browser checks passed; 81 dry support samples. This is a local contact probe, not completed Walk / Drive / Combat integration. Public-host verification is recorded separately in qa and GitHub Actions.",
+    "sourceRepository": "georg-doc/KFB-Stunt-Car-Race",
+    "sourceCommit": "d98600ef52c9f1fc28bd93bcbbe8f6f177eece37",
+    "sourceRun": 35356984356,
+    "humanAcceptance": "PENDING"
+  }]
+}
