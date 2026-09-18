@@ -4,6 +4,8 @@ Viewer und Messwerkzeug für KayKit-Bewohner-Vignetten. 21 Residents, drei Rig-K
 
 Start: siehe `START_HERE.md`. Übergabe: `docs/RECOVERY.md`.
 
+**Legacy source update · 2026-09-18:** [KayKit Legacy Intake](docs/LEGACY_INTAKE_2026-09-18.md) records newly available Skeleton, Spooktober, Orc Warband and Dungeon 1.0 resident/prop candidates. The existing 21-resident S6 cast is unchanged; new identities remain candidate-only until explicitly authored.
+
 ## Dateien
 
 | Pfad | Inhalt |
