@@ -80,19 +80,20 @@ class MinHeap{
   push(x){this.a.push(x);let i=this.a.length-1;while(i){const p=(i-1)>>1;if(this.a[p].d<=x.d)break;this.a[i]=this.a[p];i=p;}this.a[i]=x;}
   pop(){
     if(!this.a.length)return null;
-    const root=this.a[0],last=this.a.pop();
+    const root=this.a[0];
+    const last=this.a.pop();
     if(this.a.length){
       let i=0;
       while(true){
-        let l=i*2+1,r=l+1,b=i;
-        if(l<this.a.length&&this.a[l].d<this.a[b].d)b=l;
-        if(r<this.a.length&&this.a[r].d<this.a[b].d)b=r;
-        if(b===i)break;
-        this.a[i]=this.a[b];i=b;
+        const l=i*2+1,r=l+1;
+        if(l>=this.a.length)break;
+        let c=l;
+        if(r<this.a.length&&this.a[r].d<this.a[l].d)c=r;
+        if(this.a[c].d>=last.d)break;
+        this.a[i]=this.a[c];
+        i=c;
       }
       this.a[i]=last;
-      // restore upward in case last is smaller than parent
-      while(i){const p=(i-1)>>1;if(this.a[p].d<=this.a[i].d)break;[this.a[p],this.a[i]]=[this.a[i],this.a[p]];i=p;}
     }
     return root;
   }
