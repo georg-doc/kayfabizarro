@@ -1,17 +1,19 @@
 {
   "schema": "kfb.travel-public-mirror.v1",
   "sourceRepository": "georg-doc/KFB-Travel-Globe",
-  "sourceCommit": "3cd0c938394f67160736b8af445ef10307bb16dd",
+  "sourceCommit": "e1450b1d80d69b9992a57686d11e3f5890f97c36",
   "sourcePath": "site/world-builder/",
   "mirrorPath": "travel/wip/travel_globe_wsa/world-builder/",
-  "status": "PUBLIC WIP MIRROR · HUMAN BROWSER ACCEPTANCE PENDING",
+  "status": "PUBLIC WIP MIRROR · RIG SCALE/SPEED FIX CANDIDATE · HUMAN BROWSER ACCEPTANCE PENDING",
   "staticEvidence": "PR #24 · 61/61 tests PASS · build PASS · verify PASS · syntax/JSON PASS · 108 frozen B0 runtime files unchanged · build travel-b0-71749a52118a9b0f",
   "notes": [
+    "User browser regression 18.09.: Ground cards missing in view, locomotion too slow/out-of-sync, and five test-model scales not respecting rig classes. Card visibility is being browser-probed separately; no card fix is claimed by this mirror sync alone.",
+    "Rig scale classes now preserve source-measured proportions: Rig_Medium 1.0×, Rig_Large 1.7716565×, Legacy 1.2 Orc 0.7571559×; existing Bee/Raw Mech target remains 3.6×.",
+    "Movement baseline now scales with locomotionHeight so class-relative body-lengths/s remain coherent; Large hardening cannot collapse the Large rig back to Medium speed.",
     "Free Ground exploration and terrain-card contact received positive human browser evidence; card-ground is treated as a human PASS for that portion only, not blanket A0 L5.",
     "Fernando Raw Mech now uses browser-corrected source forward; the rejected inherited 180-degree presentation correction is removed.",
     "Mech moving landing is briefly planted while movement input remains held so the landing pose does not translate across terrain before Walk/Run resumes.",
     "LMB short click remains reserved for future interaction; LMB drag after a 6px threshold reuses the existing Ground orbit camera path. RMB remains the existing look path.",
-    "Monstrosity keeps the real Rig_Large animation sources; Ground translation/run multiplier is bounded from the measured runtime cadenceScale instead of swapping guessed clips.",
     "Ground controller remains sole Ground world-position writer; Movement Lab remains animation/cadence owner.",
     "Support Surface, A0, Flight and World ownership are unchanged; /world/ POC is untouched.",
     "No Travel L5 for these new movement/camera changes before human browser acceptance."
