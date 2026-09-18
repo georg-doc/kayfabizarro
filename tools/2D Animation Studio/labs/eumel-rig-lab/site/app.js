@@ -245,7 +245,8 @@ function applyPose(P,dt){
   if(state.bindPose==='neutral'){legA.kneeBone.setPose({r:state.bendRight+(P.kneeA.r||0)});legB.kneeBone.setPose({r:state.bendLeft+(P.kneeB.r||0)});}else{legA.kneeBone.reset();legB.kneeBone.reset();}
   headBone.setPose(P.head);stethBone.setPose(P.steth);chestBone.setPose(P.chest);hatBone.setPose(P.hat);
   const gx=state.eyeFollow?state.mx:(P.gaze.x==null?state.gazeX:P.gaze.x),gy=state.eyeFollow?-state.my:(P.gaze.y==null?state.gazeY:P.gaze.y);
-  eyeRig.setGazeFollow(true);eyeRig.pointTo(gx,gy);eyeRig.setKinetics(P.kin||{});eyeRig.setLife({on:state.eyeLife});eyeRig.update(dt);
+  const explicitGaze=state.eyeFollow||Math.abs(gx)>0.001||Math.abs(gy)>0.001;
+  eyeRig.setGazeFollow(explicitGaze);eyeRig.pointTo(gx,gy);eyeRig.setKinetics(P.kin||{});eyeRig.setLife({on:state.eyeLife});eyeRig.update(dt);
 }
 
 let last=performance.now(),t0=last;
