@@ -83,3 +83,23 @@ Die Geometrie und Materialien bleiben gegenüber dem Original unverändert. v0.1
 **VISUAL EVIDENCE / OPEN:** CPU-Vorschauen aus denselben Koordinaten gerendert und angesehen. Browserprobe vor Einstieg durch `ERR_BLOCKED_BY_ADMINISTRATOR` blockiert; kein neuer WebGL-, Interaktions-, Mobile- oder Consumer-PASS. Keine automatische Human-Abnahme aus dem allgemeinen „gerne weiter“ abgeleitet. Dateiexport und Repo-Ablage sind keine City-Integration.
 
 **CURRENT RETURN / WSA:** [Pilot 02 · WSA Lead Return](docs/LANDMARK_PILOT_02_WSA_RETURN_2026-09-18.md). [Messwerte und Grenzen](evidence/2026-09-18-landmark-pilot-02/summary.json). Quellen und Tests bleiben hier; ein separater Quellenzeiger wird im bestehenden Race-`_handover` abgelegt. Kein WSA-Status und keine Runtime-Zuständigkeit werden ersetzt. Verwitterung und Texturen bleiben DEFERRED; nächster Gate ist die sichtbare Beurteilung, danach gezielte Detail-/LOD-Arbeit und echter Dom-OSM-Fit.
+
+
+## 2026-09-18 · 07 · OSM grotesque source audit / Landmark Pilot 03 / Giza voxel study
+
+**USER DIRECTION:** Georg asked to inspect the grotesque/cartoon deformers used by the Hürth + Ehrenfeld OSM terrain slice, test that visual language as a landmark view/mode, push it toward a surreal cubist / rounded cartoon read, and assess stepped voxel / LEGO-like pyramids.
+
+**SOURCE REVIEW:** Current City Lab source confirms that `grotesque` is not just a palette. It combines object-normalized geometry deformation with a separate wide camera treatment. Current City preset: verticalSteps 8, bend .105, lean .09, taper .22, twist 11°, stackSteps 7, stackShift .065. The older shared `kfb-cartoon-deform.js` was also read: one shared bounding frame per multi-mesh prop and a <4-Y-ring fallback are load-bearing rules. Existing `skills/kfb-box-material.js` and the real `media/3D_Assets/KFB/edge3.jpg` donor were verified for later voxel/material work.
+
+**IMPLEMENTATION:** Additive [Pilot 03](landmarks/pilot-03/index.html), leaving Pilots 01/02 and accepted Dom v0.2 untouched.
+- `BASE`
+- `CITY GROTESQUE · exact` — reuses current City `cityCartoonParams/deformPoint` and its grotesque preset; viewer uses the grotesque wide lens.
+- `SOFT CUBIST · rounded` — same normalized grammar plus a reversible mid-body bulge.
+- `GIZA VOXEL STEPS` — existing authored Giza course bounds become square slabs.
+- `GIZA BOXEL` — macro-block study with actual gaps; intentionally LEGO-like massing without toy studs.
+
+**TESTED RESULT — source/numerical only:** 57 exact source-evaluation checks + 3 syntax/reference checks PASS. All six normal landmarks keep triangle count and ground anchor under City Grotesque / Soft Cubist. Giza Voxel Steps = 360 triangles and preserves the full base envelope. Giza Boxel = 15,552 triangles and remains ground anchored. Non-Giza voxel requests fail safe to Base. [Evidence](evidence/2026-09-18-landmark-pilot-03/summary.json).
+
+**OPEN:** No new WebGL/browser/mobile or consumer PASS. No City S2 geometry, landmark manifest, OSM identity, collision, Travel/Race runtime or Registry owner was changed. Coarse solids can still shear instead of curve; vertical subdivision remains a later quality lever. edge3 / KFB box-material integration, studs and weathering stay after the geometry/look gate.
+
+**CURRENT ANALYSIS:** [Deformer modes source analysis](docs/DEFORMER_MODES_ANALYSIS_2026-09-18.md).
