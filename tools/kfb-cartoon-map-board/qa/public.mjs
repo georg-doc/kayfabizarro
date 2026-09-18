@@ -112,7 +112,7 @@ try{
   const snap=await page.evaluate(()=>window.KFBMapBoard?.report?.());
   report.runtime=snap;
   check('runtime build identity',snap?.build===expectedBuild,{actual:snap?.build,expectedBuild});
-  check('country board populated',snap?.countriesLoaded>=30,snap);
+  check('full Europe country board populated',snap?.countriesLoaded===snap?.countriesExpected && snap?.countriesFailed===0,snap);
   check('story anchors populated',snap?.markersLoaded===localStory.stories.length,snap);
   check('map ink capability resolved',/canon v\d+ \+ map BAND adapter/.test(snap?.inkCanonStatus||''),snap?.inkCanonStatus);
   await page.screenshot({path:out+'/hero.png',fullPage:true});
