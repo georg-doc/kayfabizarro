@@ -14,6 +14,20 @@ Named consumer: current Resident Atlas / Travel receiver.
 
 ## Gate B · Vehicle
 
+### Current receiver donor · FR-S04-02
+
+Current donor release: `fr-s04-02` at `/kfb-hub/free-roam/versions/fr-s04-02/`.
+
+Evidence carried only for the receiver architecture:
+- Race source `a7a48a8c6e1589a18134aa619e2be22d79124c32`;
+- merge `63cb97d5e321700e55f7658104b42c9c09d97d70`;
+- real KFB Cloudflare public run `35367513758`: **62/62 PASS**;
+- human feel remains open.
+
+**Do not inherit those 62 checks as Sedan evidence.** FR-S04-02 still runs the original kart. Pilot 01 becomes a Sedan consumer test only after `car_sedan.gltf`, its four wheel nodes and the validated chassis proxy are mounted in this same receiver and the relevant checks are rerun.
+
+
+
 Named consumer: selected Slice-04-derived DRIVE receiver; BOX1 remains feel/presentation reference.
 
 1. Load exact pinned `car_sedan.gltf`.
