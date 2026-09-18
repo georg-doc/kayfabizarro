@@ -1,0 +1,58 @@
+name: OSM City · Ehrenfeld v0 cache
+
+on:
+  push:
+    branches:
+      - osm-city/ehrenfeld-v0-2026-09-18
+    paths:
+      - '.github/workflows/osm-city-ehrenfeld-v0.yml'
+      - 'tools/osm-city-lab/data/ehrenfeld-v0/SOURCE_SPEC.json'
+      - 'tools/osm-city-lab/data/ehrenfeld-v0/query.overpassql'
+      - 'tools/osm-city-lab/scripts/**'
+      - 'tools/osm-city-lab/src/osm/**'
+      - 'tools/osm-city-lab/src/export/**'
+      - 'tools/osm-city-lab/tests/**'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: osm-city-ehrenfeld-v0
+  cancel-in-progress: false
+
+jobs:
+  cache-and-normalize:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: osm-city/ehrenfeld-v0-2026-09-18
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Deterministic fixture test
+        run: node tools/osm-city-lab/tests/check-normalize.mjs
+      - name: Fetch one cached Overpass snapshot
+        run: node tools/osm-city-lab/scripts/fetch-ehrenfeld-v0.mjs
+      - name: Build normalized S0 and S2 export
+        run: node tools/osm-city-lab/scripts/build-ehrenfeld-v0.mjs
+      - name: Verify cached snapshot
+        run: node tools/osm-city-lab/tests/check-snapshot.mjs
+      - name: Commit cached source and derived evidence
+        run: |
+          git config user.name "KFB OSM City Bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add tools/osm-city-lab/data/ehrenfeld-v0/source.overpass.json \
+                  tools/osm-city-lab/data/ehrenfeld-v0/PROVENANCE.json \
+                  tools/osm-city-lab/data/ehrenfeld-v0/normalized.json \
+                  tools/osm-city-lab/scenes/ehrenfeld-v0.json \
+                  tools/osm-city-lab/evidence/ehrenfeld-v0-s0-report.json
+          if git diff --cached --quiet; then
+            echo "No cache delta."
+            exit 0
+          fi
+          git commit -m "OSM City: cache Ehrenfeld v0 source + S0 evidence [osm-city-cache]"
+          git push origin HEAD:osm-city/ehrenfeld-v0-2026-09-18
