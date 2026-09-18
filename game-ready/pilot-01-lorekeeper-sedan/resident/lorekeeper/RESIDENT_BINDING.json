@@ -20,5 +20,13 @@
   "rootMotionPolicy": "PRESENTATION_ONLY_CONSUMER_OWNS_TRANSLATION_AND_HEADING",
   "collisionProxyRef": "INTERACTION_PROXY.json",
   "animationMapRef": "ANIMATION_MAP.json",
-  "rigSocketReportRef": "RIG_SOCKET_REPORT.json"
+  "rigSocketReportRef": "RIG_SOCKET_REPORT.json",
+  "consumerAdapters": {
+    "travelAtlasPilot01": {
+      "adapter": "TRAVEL_ATLAS_PILOT_01_ADAPTER.json",
+      "handoff": "TRAVEL_ATLAS_PILOT_01_HANDOFF.md",
+      "status": "READY_INPUT_DEFERRED_BY_TRAVEL_GROUND_HUMAN_GATE",
+      "travelOwnerHandoff": "georg-doc/KFB-Travel-Globe/_handover/GAME_DEV_STUDIO_LOREKEEPER_PACKAGE_2026-09-18.md"
+    }
+  }
 }
