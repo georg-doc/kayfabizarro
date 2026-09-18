@@ -17,6 +17,14 @@ await fs.writeFile(new URL('../scenes/ehrenfeld-v0.json', import.meta.url), scen
 
 const deterministicA = JSON.stringify(normalizeOverpass(raw, spec, provenance));
 const deterministicB = JSON.stringify(normalizeOverpass(raw, spec, provenance));
+const rawRefs = new Set(raw.elements.filter(e=>e.type&&e.id!=null).map(e=>`${e.type}/${e.id}`));
+const normalizedRefs = [
+  ...normalized.features.roads, ...normalized.features.buildings,
+  ...normalized.features.landuse, ...normalized.features.waterLines
+].map(f=>`${f.osm.type}/${f.osm.id}`);
+const idsPreserved = normalizedRefs.every(ref=>rawRefs.has(ref));
+const withinBbox = normalized.bounds.sizeM.x <= spec.approxSizeM.eastWest + 1 && normalized.bounds.sizeM.z <= spec.approxSizeM.northSouth + 1;
+
 const report = {
   schema:'kfb.osm-city.s0-report.v0',
   id:spec.id,
@@ -28,13 +36,15 @@ const report = {
   diagnostics:normalized.diagnostics,
   gates:{
     sourceCached:true,
-    osmIdsPreserved:true,
+    osmIdsPreserved:idsPreserved,
     localMetreFrame:normalized.frame.units==='metre',
     roads:normalized.features.roads.length>0,
     buildings:normalized.features.buildings.length>0,
-    deterministicReload:deterministicA===deterministicB
+    deterministicReload:deterministicA===deterministicB,
+    geometryClippedToBbox:withinBbox
   }
 };
+if (!Object.values(report.gates).every(Boolean)) throw new Error(`S0 gates failed: ${JSON.stringify(report.gates)}`);
 await fs.mkdir(new URL('../evidence/', import.meta.url), {recursive:true});
 await fs.writeFile(new URL('../evidence/ehrenfeld-v0-s0-report.json', import.meta.url), JSON.stringify(report,null,2)+'\n');
 console.log(JSON.stringify(report,null,2));
