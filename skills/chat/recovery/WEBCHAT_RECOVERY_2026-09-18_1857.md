@@ -101,3 +101,17 @@ For any fresh chat:
 7. on connector timeout, re-fetch before retrying because the write may already have succeeded.
 
 No background work is implied by this checkpoint.
+
+
+## Source-eye cleanup / vehicle extension · addendum
+
+Batch EyeRig brief now additionally records:
+- prefer non-destructive mesh/connected-component removal of original KayKit eyes over recolor;
+- GothGirl precedent: head mesh 12 islands, eye islands 6+7 removed; mouth separately handled with texclean;
+- female outer lash/spike geometry must be classified rather than assumed;
+- selected Mouth/Nose/Brow grafts come only after eye-profile approval;
+- vehicle EyeRig is a later explicit extension using verified headlight/front-face anchors;
+- current Sedan package proves vehicle axes/wheel nodes but **not** named headlight nodes.
+
+Expansion order:
+`Medium → Large → Legacy → selected face grafts → vehicle EyeRig → Living Plants`.
