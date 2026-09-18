@@ -14,6 +14,16 @@ const pointInPoly=(p,poly)=>{
   }
   return inside;
 };
+const pointSegDistance=(p,a,b)=>{
+  const dx=b.x-a.x,dz=b.z-a.z,l2=dx*dx+dz*dz||1;
+  const t=Math.max(0,Math.min(1,((p.x-a.x)*dx+(p.z-a.z)*dz)/l2));
+  return Math.hypot(p.x-(a.x+dx*t),p.z-(a.z+dz*t));
+};
+const pointLineDistance=(p,line)=>{
+  let best=Infinity;
+  for(let i=1;i<line.length;i++)best=Math.min(best,pointSegDistance(p,line[i-1],line[i]));
+  return best;
+};
 
 const results=[];
 for(const id of ids){
@@ -61,10 +71,17 @@ for(const id of ids){
     assert.ok(Array.isArray(byKind.get(kind).safety)&&byKind.get(kind).safety.length>0,id+' safety predicates '+kind);
   }
   assert.ok(byKind.get('drive-intersection').osmNodeId!=null,id+' intersection OSM node');
-  assert.ok(byKind.get('road-terrain-transition').sourceRoadId,id+' road-terrain source road');
+  const terrain=byKind.get('road-terrain-transition');
+  assert.ok(terrain.sourceRoadId,id+' road-terrain source road');
+  const terrainRoad=roads.find(r=>r.sourceId===terrain.sourceRoadId);
+  assert.ok(terrainRoad?.driveable,id+' road-terrain anchor must reference a driveable road');
+  const terrainRoadDistance=pointLineDistance(terrain.local,terrainRoad.centerline);
+  assert.ok(terrainRoadDistance<=0.01,id+' road-terrain anchor must lie on its source road; distance='+terrainRoadDistance);
+  assert.ok(Number.isFinite(terrain.edgeDistanceM)&&terrain.edgeDistanceM>=0,id+' road-terrain edge distance metadata');
+  if(terrain.greenDistanceM!=null)assert.ok(Number.isFinite(terrain.greenDistanceM)&&terrain.greenDistanceM>=0,id+' road-terrain green distance metadata');
 
-  // Candidate does not mean safe, but it must at least avoid an obvious building-footprint placement.
-  for(const kind of ['spawn-foot','park-vehicle','drive-intersection','road-terrain-transition']){
+  // Candidate does not mean receiver-safe, but it must at least avoid an obvious mapped building footprint.
+  for(const kind of required){
     const p=byKind.get(kind).local;
     const containing=buildings.find(b=>pointInPoly({x:p.x,z:p.z},b.footprint));
     assert.equal(containing,undefined,`${id} ${kind} anchor inside building ${containing?.sourceId||''}`);
@@ -85,6 +102,13 @@ for(const id of ids){
     driveableRoads:driveable.length,
     sidewalks:sidewalks.length,
     buildings:buildings.length,
+    roadTerrain:{
+      sourceRoadId:terrain.sourceRoadId,
+      local:terrain.local,
+      edgeDistanceM:terrain.edgeDistanceM,
+      greenDistanceM:terrain.greenDistanceM,
+      sourceRoadDistanceM:+terrainRoadDistance.toFixed(6)
+    },
     anchors:Object.fromEntries(required.map(k=>[k,byKind.get(k).local]))
   });
 }
