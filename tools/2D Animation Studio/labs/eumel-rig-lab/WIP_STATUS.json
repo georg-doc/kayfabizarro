@@ -1,5 +1,5 @@
 {
-  "schema": "kfb.eumel-rig-lab.wip/0.1",
+  "schema": "kfb.eumel-rig-lab.wip/0.2",
   "updated": "2026-09-18",
   "status": "IMPLEMENTATION",
   "source": {
@@ -14,18 +14,37 @@
     "sourcePdfAlias": "IMPLEMENTATION",
     "rigContract": "IMPLEMENTATION",
     "browserSite": "IMPLEMENTATION",
-    "browserRuntimeTest": "PENDING",
+    "browserRuntimeTest": "RETEST_PENDING_AFTER_FIX",
     "sourceVsExtractedVisualPass": "PENDING",
     "georgAcceptance": "PENDING",
     "staticSanity": "PASS",
-    "staticSanityEvidence": "qa/STATIC_SANITY_2026-09-18.md"
+    "staticSanityEvidence": "qa/STATIC_SANITY_2026-09-18.md",
+    "neutralBindPose": "IMPLEMENTATION",
+    "explicitHipBones": "IMPLEMENTATION",
+    "optionalKneeBendProxy": "IMPLEMENTATION",
+    "limbStretchSquash": "IMPLEMENTATION",
+    "sharedEyeRigProtocol": "IMPLEMENTATION",
+    "componentAtlasRootBBoxFix": "IMPLEMENTATION"
   },
   "currentMotions": [
     "neutral",
     "idle",
     "look",
+    "walk",
     "hampelmann",
     "hop"
   ],
-  "nextGate": "Open deployed Rig Lab in a real browser; compare original PDF render against extracted SVG; correct only proven extraction/rig defects; then accept semantic left/right aliases and foreground role."
+  "nextGate": "Georg browser retest: neutral bind stance + walk, hip attachment under large swings, bend/stretch controls, EyeRig gaze/blink/life, and 17/17 visible atlas cards.",
+  "feedback20260918": {
+    "screenshotReview": "HUMAN_FEEDBACK_WITH_DEFECTS",
+    "fixesApplied": [
+      "explicit hip anchors",
+      "neutral leg bind from measured/PCA source geometry",
+      "optional knee proxy",
+      "stretch/squash",
+      "shared EyeRig semantic API",
+      "atlas root-coordinate bbox fitting",
+      "foreground reclassified as hat/headwear"
+    ]
+  }
 }
