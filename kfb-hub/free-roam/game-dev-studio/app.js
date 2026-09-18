@@ -68,6 +68,9 @@ function renderAssets(list){
 async function init(){
   const r=await fetch('/tools/game-dev-studio/catalog.json',{cache:'no-store'});if(!r.ok)throw Error('catalog '+r.status);catalog=await r.json();
   const p=catalog.packages[0];$('packageTitle').textContent=p.title;$('packageSubtitle').textContent=p.subtitle+' · '+p.status;$('manifestLink').href=p.manifest;$('testLink').href=p.consumerPlan;
+  const vehicle=p.receiverHandoff?.donor?'Sedan → '+p.receiverHandoff.donor+': adapter ready, Sedan runtime test open':'Sedan receiver open';
+  const resident=p.residentHandoff?.consumer?'Lorekeeper → '+p.residentHandoff.consumer+': '+p.residentHandoff.status.replaceAll('_',' ').toLowerCase():'Lorekeeper consumer open';
+  $('packageNote').textContent=vehicle+' · '+resident+'. Preview evidence is not consumer or human acceptance.';
   renderAssets(p.assets);await select(p.assets[0]);window.__KFB_GAME_DEV_STUDIO__={catalog,select:id=>select(p.assets.find(a=>a.id===id)),snapshot:()=>({package:p.id,asset:current?.id,showEvidence,evidenceAvailable:!!(current?.colliderSpec&&current?.wheelReport),evidenceObjects:overlay.children.length,catalogRevision:catalog.catalogRevision})};window.__KFB_GAME_DEV_STUDIO_READY__=true;
 }
 $('fit').onclick=()=>model&&fit(model);$('spin').onclick=()=>{controls.autoRotate=!controls.autoRotate;$('spin').textContent=controls.autoRotate?'Stop rotate':'Auto rotate'};$('wire').onclick=()=>{showEvidence=!showEvidence;if(current?.id==='car-sedan')addSedanEvidence(current);$('wire').textContent=showEvidence?'Hide evidence':'Show evidence'};
