@@ -1,0 +1,1438 @@
+{
+  "assetCount": 31,
+  "assets": [
+    {
+      "assetId": "media/3D_Assets/Tiny_Treats_Homely_House_1.0_FREE/Assets/Textures/tiny_treats_texture_1.png",
+      "collectionPath": "Assets",
+      "folder": "media/3D_Assets/Tiny_Treats_Homely_House_1.0_FREE/Assets/Textures",
+      "format": "png",
+      "hints": {
+        "textureCandidate": true,
+        "textureCandidateProvenance": "generated-structural"
+      },
+      "kind": "image-2d",
+      "name": "tiny_treats_texture_1",
+      "packId": "tiny-treats-homely-house-1-0-free",
+      "packRoot": "media/3D_Assets/Tiny_Treats_Homely_House_1.0_FREE",
+      "path": "media/3D_Assets/Tiny_Treats_Homely_House_1.0_FREE/Assets/Textures/tiny_treats_texture_1.png",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 20167,
+      "source": {
+        "blobSha": "2139047fe62b11c6da056f280954354a232fd78e",
+        "commit": "29aac1061bdd73736351cb856fa9f1e322478abc",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/Tiny_Treats_Homely_House_1.0_FREE/Assets/Textures/tiny_treats_texture_1.png",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/29aac1061bdd73736351cb856fa9f1e322478abc/media/3D_Assets/Tiny_Treats_Homely_House_1.0_FREE/Assets/Textures/tiny_treats_texture_1.png",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/Tiny_Treats_Homely_House_1.0_FREE/Assets/gltf/bench_A.gltf",
+      "collectionPath": "Assets",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/Tiny_Treats_Homely_House_1.0_FREE/Assets/gltf",
+      "format": "gltf",
+      "kind": "model-3d",
+      "name": "bench_A",
+      "packId": "tiny-treats-homely-house-1-0-free",
+      "packRoot": "media/3D_Assets/Tiny_Treats_Homely_House_1.0_FREE",
+      "path": "media/3D_Assets/Tiny_Treats_Homely_House_1.0_FREE/Assets/gltf/bench_A.gltf",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/Tiny_Treats_Homely_House_1.0_FREE/Assets/gltf/bench_A.bin",
+            "provenance": "file-explicit",
+            "reference": "buffers[0].uri",
+            "role": "buffer",
+            "status": "ok",
+            "uri": "bench_A.bin"
+          },
+          {
+            "exists": true,
+            "path": "media/3D_Assets/Tiny_Treats_Homely_House_1.0_FREE/Assets/gltf/tiny_treats_texture_1.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "tiny_treats_texture_1.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 3497,
+      "source": {
+        "blobSha": "b4a56f4d04a7be050bfa59a9c4d4cbd8f170e3d0",
+        "commit": "29aac1061bdd73736351cb856fa9f1e322478abc",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/Tiny_Treats_Homely_House_1.0_FREE/Assets/gltf/bench_A.gltf",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/29aac1061bdd73736351cb856fa9f1e322478abc/media/3D_Assets/Tiny_Treats_Homely_House_1.0_FREE/Assets/gltf/bench_A.gltf",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/Tiny_Treats_Homely_House_1.0_FREE/Assets/gltf/bench_B.gltf",
+      "collectionPath": "Assets",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/Tiny_Treats_Homely_House_1.0_FREE/Assets/gltf",
+      "format": "gltf",
+      "kind": "model-3d",
+      "name": "bench_B",
+      "packId": "tiny-treats-homely-house-1-0-free",
+      "packRoot": "media/3D_Assets/Tiny_Treats_Homely_House_1.0_FREE",
+      "path": "media/3D_Assets/Tiny_Treats_Homely_House_1.0_FREE/Assets/gltf/bench_B.gltf",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/Tiny_Treats_Homely_House_1.0_FREE/Assets/gltf/bench_B.bin",
+            "provenance": "file-explicit",
+            "reference": "buffers[0].uri",
+            "role": "buffer",
+            "status": "ok",
+            "uri": "bench_B.bin"
+          },
+          {
+            "exists": true,
+            "path": "media/3D_Assets/Tiny_Treats_Homely_House_1.0_FREE/Assets/gltf/tiny_treats_texture_1.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "tiny_treats_texture_1.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 3527,
+      "source": {
+        "blobSha": "40cc13157f37c59e098b77837b330f1117ac9e7e",
+        "commit": "29aac1061bdd73736351cb856fa9f1e322478abc",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/Tiny_Treats_Homely_House_1.0_FREE/Assets/gltf/bench_B.gltf",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/29aac1061bdd73736351cb856fa9f1e322478abc/media/3D_Assets/Tiny_Treats_Homely_House_1.0_FREE/Assets/gltf/bench_B.gltf",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/Tiny_Treats_Homely_House_1.0_FREE/Assets/gltf/boots.gltf",
+      "collectionPath": "Assets",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/Tiny_Treats_Homely_House_1.0_FREE/Assets/gltf",
+      "format": "gltf",
+      "kind": "model-3d",
+      "name": "boots",
+      "packId": "tiny-treats-homely-house-1-0-free",
+      "packRoot": "media/3D_Assets/Tiny_Treats_Homely_House_1.0_FREE",
+      "path": "media/3D_Assets/Tiny_Treats_Homely_House_1.0_FREE/Assets/gltf/boots.gltf",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/Tiny_Treats_Homely_House_1.0_FREE/Assets/gltf/boots.bin",
+            "provenance": "file-explicit",
+            "reference": "buffers[0].uri",
+            "role": "buffer",
+            "status": "ok",
+            "uri": "boots.bin"
+          },
+          {
+            "exists": true,
+            "path": "media/3D_Assets/Tiny_Treats_Homely_House_1.0_FREE/Assets/gltf/tiny_treats_texture_1.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "tiny_treats_texture_1.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 3526,
+      "source": {
+        "blobSha": "b0cc6317103c844530f67b2160509093d6c5bf32",
+        "commit": "29aac1061bdd73736351cb856fa9f1e322478abc",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/Tiny_Treats_Homely_House_1.0_FREE/Assets/gltf/boots.gltf",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/29aac1061bdd73736351cb856fa9f1e322478abc/media/3D_Assets/Tiny_Treats_Homely_House_1.0_FREE/Assets/gltf/boots.gltf",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/Tiny_Treats_Homely_House_1.0_FREE/Assets/gltf/cobblestones.gltf",
+      "collectionPath": "Assets",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/Tiny_Treats_Homely_House_1.0_FREE/Assets/gltf",
+      "format": "gltf",
+      "kind": "model-3d",
+      "name": "cobblestones",
+      "packId": "tiny-treats-homely-house-1-0-free",
+      "packRoot": "media/3D_Assets/Tiny_Treats_Homely_House_1.0_FREE",
+      "path": "media/3D_Assets/Tiny_Treats_Homely_House_1.0_FREE/Assets/gltf/cobblestones.gltf",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/Tiny_Treats_Homely_House_1.0_FREE/Assets/gltf/cobblestones.bin",
+            "provenance": "file-explicit",
+            "reference": "buffers[0].uri",
+            "role": "buffer",
+            "status": "ok",
+            "uri": "cobblestones.bin"
+          },
+          {
+            "exists": true,
+            "path": "media/3D_Assets/Tiny_Treats_Homely_House_1.0_FREE/Assets/gltf/tiny_treats_texture_1.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "tiny_treats_texture_1.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 3556,
+      "source": {
+        "blobSha": "bfa4efa930fb1884f7f0657a7336bca444df5df0",
+        "commit": "29aac1061bdd73736351cb856fa9f1e322478abc",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/Tiny_Treats_Homely_House_1.0_FREE/Assets/gltf/cobblestones.gltf",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/29aac1061bdd73736351cb856fa9f1e322478abc/media/3D_Assets/Tiny_Treats_Homely_House_1.0_FREE/Assets/gltf/cobblestones.gltf",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/Tiny_Treats_Homely_House_1.0_FREE/Assets/gltf/doormat.gltf",
+      "collectionPath": "Assets",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/Tiny_Treats_Homely_House_1.0_FREE/Assets/gltf",
+      "format": "gltf",
+      "kind": "model-3d",
+      "name": "doormat",
+      "packId": "tiny-treats-homely-house-1-0-free",
+      "packRoot": "media/3D_Assets/Tiny_Treats_Homely_House_1.0_FREE",
+      "path": "media/3D_Assets/Tiny_Treats_Homely_House_1.0_FREE/Assets/gltf/doormat.gltf",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/Tiny_Treats_Homely_House_1.0_FREE/Assets/gltf/doormat.bin",
+            "provenance": "file-explicit",
+            "reference": "buffers[0].uri",
+            "role": "buffer",
+            "status": "ok",
+            "uri": "doormat.bin"
+          },
+          {
+            "exists": true,
+            "path": "media/3D_Assets/Tiny_Treats_Homely_House_1.0_FREE/Assets/gltf/tiny_treats_texture_1.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "tiny_treats_texture_1.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 3547,
+      "source": {
+        "blobSha": "de57bbb6d3830efa17d061cd5cdd0d17ed41401b",
+        "commit": "29aac1061bdd73736351cb856fa9f1e322478abc",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/Tiny_Treats_Homely_House_1.0_FREE/Assets/gltf/doormat.gltf",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/29aac1061bdd73736351cb856fa9f1e322478abc/media/3D_Assets/Tiny_Treats_Homely_House_1.0_FREE/Assets/gltf/doormat.gltf",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/Tiny_Treats_Homely_House_1.0_FREE/Assets/gltf/fence_corner.gltf",
+      "collectionPath": "Assets",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/Tiny_Treats_Homely_House_1.0_FREE/Assets/gltf",
+      "format": "gltf",
+      "kind": "model-3d",
+      "name": "fence_corner",
+      "packId": "tiny-treats-homely-house-1-0-free",
+      "packRoot": "media/3D_Assets/Tiny_Treats_Homely_House_1.0_FREE",
+      "path": "media/3D_Assets/Tiny_Treats_Homely_House_1.0_FREE/Assets/gltf/fence_corner.gltf",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/Tiny_Treats_Homely_House_1.0_FREE/Assets/gltf/fence_corner.bin",
+            "provenance": "file-explicit",
+            "reference": "buffers[0].uri",
+            "role": "buffer",
+            "status": "ok",
+            "uri": "fence_corner.bin"
+          },
+          {
+            "exists": true,
+            "path": "media/3D_Assets/Tiny_Treats_Homely_House_1.0_FREE/Assets/gltf/tiny_treats_texture_1.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "tiny_treats_texture_1.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 3564,
+      "source": {
+        "blobSha": "fbdd1cc5682c18025f9c98250b645d08187470e1",
+        "commit": "29aac1061bdd73736351cb856fa9f1e322478abc",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/Tiny_Treats_Homely_House_1.0_FREE/Assets/gltf/fence_corner.gltf",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/29aac1061bdd73736351cb856fa9f1e322478abc/media/3D_Assets/Tiny_Treats_Homely_House_1.0_FREE/Assets/gltf/fence_corner.gltf",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/Tiny_Treats_Homely_House_1.0_FREE/Assets/gltf/fence_open.gltf",
+      "collectionPath": "Assets",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/Tiny_Treats_Homely_House_1.0_FREE/Assets/gltf",
+      "format": "gltf",
+      "kind": "model-3d",
+      "name": "fence_open",
+      "packId": "tiny-treats-homely-house-1-0-free",
+      "packRoot": "media/3D_Assets/Tiny_Treats_Homely_House_1.0_FREE",
+      "path": "media/3D_Assets/Tiny_Treats_Homely_House_1.0_FREE/Assets/gltf/fence_open.gltf",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/Tiny_Treats_Homely_House_1.0_FREE/Assets/gltf/fence_open.bin",
+            "provenance": "file-explicit",
+            "reference": "buffers[0].uri",
+            "role": "buffer",
+            "status": "ok",
+            "uri": "fence_open.bin"
+          },
+          {
+            "exists": true,
+            "path": "media/3D_Assets/Tiny_Treats_Homely_House_1.0_FREE/Assets/gltf/tiny_treats_texture_1.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "tiny_treats_texture_1.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 3555,
+      "source": {
+        "blobSha": "2c11da0bc9e95edd27616a9a73898ac85734329e",
+        "commit": "29aac1061bdd73736351cb856fa9f1e322478abc",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/Tiny_Treats_Homely_House_1.0_FREE/Assets/gltf/fence_open.gltf",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/29aac1061bdd73736351cb856fa9f1e322478abc/media/3D_Assets/Tiny_Treats_Homely_House_1.0_FREE/Assets/gltf/fence_open.gltf",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/Tiny_Treats_Homely_House_1.0_FREE/Assets/gltf/fence_open_long.gltf",
+      "collectionPath": "Assets",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/Tiny_Treats_Homely_House_1.0_FREE/Assets/gltf",
+      "format": "gltf",
+      "kind": "model-3d",
+      "name": "fence_open_long",
+      "packId": "tiny-treats-homely-house-1-0-free",
+      "packRoot": "media/3D_Assets/Tiny_Treats_Homely_House_1.0_FREE",
+      "path": "media/3D_Assets/Tiny_Treats_Homely_House_1.0_FREE/Assets/gltf/fence_open_long.gltf",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/Tiny_Treats_Homely_House_1.0_FREE/Assets/gltf/fence_open_long.bin",
+            "provenance": "file-explicit",
+            "reference": "buffers[0].uri",
+            "role": "buffer",
+            "status": "ok",
+            "uri": "fence_open_long.bin"
+          },
+          {
+            "exists": true,
+            "path": "media/3D_Assets/Tiny_Treats_Homely_House_1.0_FREE/Assets/gltf/tiny_treats_texture_1.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "tiny_treats_texture_1.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 3570,
+      "source": {
+        "blobSha": "c442686a6731e45ba0d858a698f77a434e59c831",
+        "commit": "29aac1061bdd73736351cb856fa9f1e322478abc",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/Tiny_Treats_Homely_House_1.0_FREE/Assets/gltf/fence_open_long.gltf",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/29aac1061bdd73736351cb856fa9f1e322478abc/media/3D_Assets/Tiny_Treats_Homely_House_1.0_FREE/Assets/gltf/fence_open_long.gltf",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/Tiny_Treats_Homely_House_1.0_FREE/Assets/gltf/fence_open_wide_long.gltf",
+      "collectionPath": "Assets",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/Tiny_Treats_Homely_House_1.0_FREE/Assets/gltf",
+      "format": "gltf",
+      "kind": "model-3d",
+      "name": "fence_open_wide_long",
+      "packId": "tiny-treats-homely-house-1-0-free",
+      "packRoot": "media/3D_Assets/Tiny_Treats_Homely_House_1.0_FREE",
+      "path": "media/3D_Assets/Tiny_Treats_Homely_House_1.0_FREE/Assets/gltf/fence_open_wide_long.gltf",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/Tiny_Treats_Homely_House_1.0_FREE/Assets/gltf/fence_open_wide_long.bin",
+            "provenance": "file-explicit",
+            "reference": "buffers[0].uri",
+            "role": "buffer",
+            "status": "ok",
+            "uri": "fence_open_wide_long.bin"
+          },
+          {
+            "exists": true,
+            "path": "media/3D_Assets/Tiny_Treats_Homely_House_1.0_FREE/Assets/gltf/tiny_treats_texture_1.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "tiny_treats_texture_1.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 3584,
+      "source": {
+        "blobSha": "da17cfcb9c2be0501aa076d1b5cd25a73671c7f7",
+        "commit": "29aac1061bdd73736351cb856fa9f1e322478abc",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/Tiny_Treats_Homely_House_1.0_FREE/Assets/gltf/fence_open_wide_long.gltf",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/29aac1061bdd73736351cb856fa9f1e322478abc/media/3D_Assets/Tiny_Treats_Homely_House_1.0_FREE/Assets/gltf/fence_open_wide_long.gltf",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/Tiny_Treats_Homely_House_1.0_FREE/Assets/gltf/fence_post.gltf",
+      "collectionPath": "Assets",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/Tiny_Treats_Homely_House_1.0_FREE/Assets/gltf",
+      "format": "gltf",
+      "kind": "model-3d",
+      "name": "fence_post",
+      "packId": "tiny-treats-homely-house-1-0-free",
+      "packRoot": "media/3D_Assets/Tiny_Treats_Homely_House_1.0_FREE",
+      "path": "media/3D_Assets/Tiny_Treats_Homely_House_1.0_FREE/Assets/gltf/fence_post.gltf",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/Tiny_Treats_Homely_House_1.0_FREE/Assets/gltf/fence_post.bin",
+            "provenance": "file-explicit",
+            "reference": "buffers[0].uri",
+            "role": "buffer",
+            "status": "ok",
+            "uri": "fence_post.bin"
+          },
+          {
+            "exists": true,
+            "path": "media/3D_Assets/Tiny_Treats_Homely_House_1.0_FREE/Assets/gltf/tiny_treats_texture_1.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "tiny_treats_texture_1.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 3549,
+      "source": {
+        "blobSha": "8faa71f59bcc31dc8ad89c0f73f876d7ca78506e",
+        "commit": "29aac1061bdd73736351cb856fa9f1e322478abc",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/Tiny_Treats_Homely_House_1.0_FREE/Assets/gltf/fence_post.gltf",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/29aac1061bdd73736351cb856fa9f1e322478abc/media/3D_Assets/Tiny_Treats_Homely_House_1.0_FREE/Assets/gltf/fence_post.gltf",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/Tiny_Treats_Homely_House_1.0_FREE/Assets/gltf/fence_rails.gltf",
+      "collectionPath": "Assets",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/Tiny_Treats_Homely_House_1.0_FREE/Assets/gltf",
+      "format": "gltf",
+      "kind": "model-3d",
+      "name": "fence_rails",
+      "packId": "tiny-treats-homely-house-1-0-free",
+      "packRoot": "media/3D_Assets/Tiny_Treats_Homely_House_1.0_FREE",
+      "path": "media/3D_Assets/Tiny_Treats_Homely_House_1.0_FREE/Assets/gltf/fence_rails.gltf",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/Tiny_Treats_Homely_House_1.0_FREE/Assets/gltf/fence_rails.bin",
+            "provenance": "file-explicit",
+            "reference": "buffers[0].uri",
+            "role": "buffer",
+            "status": "ok",
+            "uri": "fence_rails.bin"
+          },
+          {
+            "exists": true,
+            "path": "media/3D_Assets/Tiny_Treats_Homely_House_1.0_FREE/Assets/gltf/tiny_treats_texture_1.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "tiny_treats_texture_1.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 3550,
+      "source": {
+        "blobSha": "97c20090544967e1b938065f7eb36badf0be73e0",
+        "commit": "29aac1061bdd73736351cb856fa9f1e322478abc",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/Tiny_Treats_Homely_House_1.0_FREE/Assets/gltf/fence_rails.gltf",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/29aac1061bdd73736351cb856fa9f1e322478abc/media/3D_Assets/Tiny_Treats_Homely_House_1.0_FREE/Assets/gltf/fence_rails.gltf",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/Tiny_Treats_Homely_House_1.0_FREE/Assets/gltf/fence_rails_long.gltf",
+      "collectionPath": "Assets",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/Tiny_Treats_Homely_House_1.0_FREE/Assets/gltf",
+      "format": "gltf",
+      "kind": "model-3d",
+      "name": "fence_rails_long",
+      "packId": "tiny-treats-homely-house-1-0-free",
+      "packRoot": "media/3D_Assets/Tiny_Treats_Homely_House_1.0_FREE",
+      "path": "media/3D_Assets/Tiny_Treats_Homely_House_1.0_FREE/Assets/gltf/fence_rails_long.gltf",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/Tiny_Treats_Homely_House_1.0_FREE/Assets/gltf/fence_rails_long.bin",
+            "provenance": "file-explicit",
+            "reference": "buffers[0].uri",
+            "role": "buffer",
+            "status": "ok",
+            "uri": "fence_rails_long.bin"
+          },
+          {
+            "exists": true,
+            "path": "media/3D_Assets/Tiny_Treats_Homely_House_1.0_FREE/Assets/gltf/tiny_treats_texture_1.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "tiny_treats_texture_1.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 3564,
+      "source": {
+        "blobSha": "b4c9fdeb1cfc77959e7605ce3e6d7c98a03cd33b",
+        "commit": "29aac1061bdd73736351cb856fa9f1e322478abc",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/Tiny_Treats_Homely_House_1.0_FREE/Assets/gltf/fence_rails_long.gltf",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/29aac1061bdd73736351cb856fa9f1e322478abc/media/3D_Assets/Tiny_Treats_Homely_House_1.0_FREE/Assets/gltf/fence_rails_long.gltf",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/Tiny_Treats_Homely_House_1.0_FREE/Assets/gltf/fence_straight.gltf",
+      "collectionPath": "Assets",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/Tiny_Treats_Homely_House_1.0_FREE/Assets/gltf",
+      "format": "gltf",
+      "kind": "model-3d",
+      "name": "fence_straight",
+      "packId": "tiny-treats-homely-house-1-0-free",
+      "packRoot": "media/3D_Assets/Tiny_Treats_Homely_House_1.0_FREE",
+      "path": "media/3D_Assets/Tiny_Treats_Homely_House_1.0_FREE/Assets/gltf/fence_straight.gltf",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/Tiny_Treats_Homely_House_1.0_FREE/Assets/gltf/fence_straight.bin",
+            "provenance": "file-explicit",
+            "reference": "buffers[0].uri",
+            "role": "buffer",
+            "status": "ok",
+            "uri": "fence_straight.bin"
+          },
+          {
+            "exists": true,
+            "path": "media/3D_Assets/Tiny_Treats_Homely_House_1.0_FREE/Assets/gltf/tiny_treats_texture_1.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "tiny_treats_texture_1.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 3568,
+      "source": {
+        "blobSha": "f0405731a66aa86bda2fda2587bb0946deb808c1",
+        "commit": "29aac1061bdd73736351cb856fa9f1e322478abc",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/Tiny_Treats_Homely_House_1.0_FREE/Assets/gltf/fence_straight.gltf",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/29aac1061bdd73736351cb856fa9f1e322478abc/media/3D_Assets/Tiny_Treats_Homely_House_1.0_FREE/Assets/gltf/fence_straight.gltf",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/Tiny_Treats_Homely_House_1.0_FREE/Assets/gltf/fence_straight_long.gltf",
+      "collectionPath": "Assets",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/Tiny_Treats_Homely_House_1.0_FREE/Assets/gltf",
+      "format": "gltf",
+      "kind": "model-3d",
+      "name": "fence_straight_long",
+      "packId": "tiny-treats-homely-house-1-0-free",
+      "packRoot": "media/3D_Assets/Tiny_Treats_Homely_House_1.0_FREE",
+      "path": "media/3D_Assets/Tiny_Treats_Homely_House_1.0_FREE/Assets/gltf/fence_straight_long.gltf",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/Tiny_Treats_Homely_House_1.0_FREE/Assets/gltf/fence_straight_long.bin",
+            "provenance": "file-explicit",
+            "reference": "buffers[0].uri",
+            "role": "buffer",
+            "status": "ok",
+            "uri": "fence_straight_long.bin"
+          },
+          {
+            "exists": true,
+            "path": "media/3D_Assets/Tiny_Treats_Homely_House_1.0_FREE/Assets/gltf/tiny_treats_texture_1.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "tiny_treats_texture_1.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 3584,
+      "source": {
+        "blobSha": "d47b446d5415c76b1f2a74589b1474aee5f9d2e3",
+        "commit": "29aac1061bdd73736351cb856fa9f1e322478abc",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/Tiny_Treats_Homely_House_1.0_FREE/Assets/gltf/fence_straight_long.gltf",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/29aac1061bdd73736351cb856fa9f1e322478abc/media/3D_Assets/Tiny_Treats_Homely_House_1.0_FREE/Assets/gltf/fence_straight_long.gltf",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/Tiny_Treats_Homely_House_1.0_FREE/Assets/gltf/fence_wide_long.gltf",
+      "collectionPath": "Assets",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/Tiny_Treats_Homely_House_1.0_FREE/Assets/gltf",
+      "format": "gltf",
+      "kind": "model-3d",
+      "name": "fence_wide_long",
+      "packId": "tiny-treats-homely-house-1-0-free",
+      "packRoot": "media/3D_Assets/Tiny_Treats_Homely_House_1.0_FREE",
+      "path": "media/3D_Assets/Tiny_Treats_Homely_House_1.0_FREE/Assets/gltf/fence_wide_long.gltf",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/Tiny_Treats_Homely_House_1.0_FREE/Assets/gltf/fence_wide_long.bin",
+            "provenance": "file-explicit",
+            "reference": "buffers[0].uri",
+            "role": "buffer",
+            "status": "ok",
+            "uri": "fence_wide_long.bin"
+          },
+          {
+            "exists": true,
+            "path": "media/3D_Assets/Tiny_Treats_Homely_House_1.0_FREE/Assets/gltf/tiny_treats_texture_1.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "tiny_treats_texture_1.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 3571,
+      "source": {
+        "blobSha": "2afa867905e0eb619670f9c9329665592652288e",
+        "commit": "29aac1061bdd73736351cb856fa9f1e322478abc",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/Tiny_Treats_Homely_House_1.0_FREE/Assets/gltf/fence_wide_long.gltf",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/29aac1061bdd73736351cb856fa9f1e322478abc/media/3D_Assets/Tiny_Treats_Homely_House_1.0_FREE/Assets/gltf/fence_wide_long.gltf",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/Tiny_Treats_Homely_House_1.0_FREE/Assets/gltf/floor_base.gltf",
+      "collectionPath": "Assets",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/Tiny_Treats_Homely_House_1.0_FREE/Assets/gltf",
+      "format": "gltf",
+      "kind": "model-3d",
+      "name": "floor_base",
+      "packId": "tiny-treats-homely-house-1-0-free",
+      "packRoot": "media/3D_Assets/Tiny_Treats_Homely_House_1.0_FREE",
+      "path": "media/3D_Assets/Tiny_Treats_Homely_House_1.0_FREE/Assets/gltf/floor_base.gltf",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/Tiny_Treats_Homely_House_1.0_FREE/Assets/gltf/floor_base.bin",
+            "provenance": "file-explicit",
+            "reference": "buffers[0].uri",
+            "role": "buffer",
+            "status": "ok",
+            "uri": "floor_base.bin"
+          },
+          {
+            "exists": true,
+            "path": "media/3D_Assets/Tiny_Treats_Homely_House_1.0_FREE/Assets/gltf/tiny_treats_texture_1.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "tiny_treats_texture_1.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 3467,
+      "source": {
+        "blobSha": "1b25768a1de7d74a8efd26e249ced86aceea9c77",
+        "commit": "29aac1061bdd73736351cb856fa9f1e322478abc",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/Tiny_Treats_Homely_House_1.0_FREE/Assets/gltf/floor_base.gltf",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/29aac1061bdd73736351cb856fa9f1e322478abc/media/3D_Assets/Tiny_Treats_Homely_House_1.0_FREE/Assets/gltf/floor_base.gltf",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/Tiny_Treats_Homely_House_1.0_FREE/Assets/gltf/foliage_A.gltf",
+      "collectionPath": "Assets",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/Tiny_Treats_Homely_House_1.0_FREE/Assets/gltf",
+      "format": "gltf",
+      "kind": "model-3d",
+      "name": "foliage_A",
+      "packId": "tiny-treats-homely-house-1-0-free",
+      "packRoot": "media/3D_Assets/Tiny_Treats_Homely_House_1.0_FREE",
+      "path": "media/3D_Assets/Tiny_Treats_Homely_House_1.0_FREE/Assets/gltf/foliage_A.gltf",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/Tiny_Treats_Homely_House_1.0_FREE/Assets/gltf/foliage_A.bin",
+            "provenance": "file-explicit",
+            "reference": "buffers[0].uri",
+            "role": "buffer",
+            "status": "ok",
+            "uri": "foliage_A.bin"
+          },
+          {
+            "exists": true,
+            "path": "media/3D_Assets/Tiny_Treats_Homely_House_1.0_FREE/Assets/gltf/tiny_treats_texture_1.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "tiny_treats_texture_1.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 3552,
+      "source": {
+        "blobSha": "62eb7c2683885a9ff71a9007df52a56894160d8c",
+        "commit": "29aac1061bdd73736351cb856fa9f1e322478abc",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/Tiny_Treats_Homely_House_1.0_FREE/Assets/gltf/foliage_A.gltf",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/29aac1061bdd73736351cb856fa9f1e322478abc/media/3D_Assets/Tiny_Treats_Homely_House_1.0_FREE/Assets/gltf/foliage_A.gltf",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/Tiny_Treats_Homely_House_1.0_FREE/Assets/gltf/foliage_B.gltf",
+      "collectionPath": "Assets",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/Tiny_Treats_Homely_House_1.0_FREE/Assets/gltf",
+      "format": "gltf",
+      "kind": "model-3d",
+      "name": "foliage_B",
+      "packId": "tiny-treats-homely-house-1-0-free",
+      "packRoot": "media/3D_Assets/Tiny_Treats_Homely_House_1.0_FREE",
+      "path": "media/3D_Assets/Tiny_Treats_Homely_House_1.0_FREE/Assets/gltf/foliage_B.gltf",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/Tiny_Treats_Homely_House_1.0_FREE/Assets/gltf/foliage_B.bin",
+            "provenance": "file-explicit",
+            "reference": "buffers[0].uri",
+            "role": "buffer",
+            "status": "ok",
+            "uri": "foliage_B.bin"
+          },
+          {
+            "exists": true,
+            "path": "media/3D_Assets/Tiny_Treats_Homely_House_1.0_FREE/Assets/gltf/tiny_treats_texture_1.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "tiny_treats_texture_1.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 3554,
+      "source": {
+        "blobSha": "cbc628c371328d94ee4d239360bad901c3c1158e",
+        "commit": "29aac1061bdd73736351cb856fa9f1e322478abc",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/Tiny_Treats_Homely_House_1.0_FREE/Assets/gltf/foliage_B.gltf",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/29aac1061bdd73736351cb856fa9f1e322478abc/media/3D_Assets/Tiny_Treats_Homely_House_1.0_FREE/Assets/gltf/foliage_B.gltf",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/Tiny_Treats_Homely_House_1.0_FREE/Assets/gltf/gate_double_left.gltf",
+      "collectionPath": "Assets",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/Tiny_Treats_Homely_House_1.0_FREE/Assets/gltf",
+      "format": "gltf",
+      "kind": "model-3d",
+      "name": "gate_double_left",
+      "packId": "tiny-treats-homely-house-1-0-free",
+      "packRoot": "media/3D_Assets/Tiny_Treats_Homely_House_1.0_FREE",
+      "path": "media/3D_Assets/Tiny_Treats_Homely_House_1.0_FREE/Assets/gltf/gate_double_left.gltf",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/Tiny_Treats_Homely_House_1.0_FREE/Assets/gltf/gate_double_left.bin",
+            "provenance": "file-explicit",
+            "reference": "buffers[0].uri",
+            "role": "buffer",
+            "status": "ok",
+            "uri": "gate_double_left.bin"
+          },
+          {
+            "exists": true,
+            "path": "media/3D_Assets/Tiny_Treats_Homely_House_1.0_FREE/Assets/gltf/tiny_treats_texture_1.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "tiny_treats_texture_1.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 3540,
+      "source": {
+        "blobSha": "cab70ce1b1bccb062dc118938eb218d7110e5b1b",
+        "commit": "29aac1061bdd73736351cb856fa9f1e322478abc",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/Tiny_Treats_Homely_House_1.0_FREE/Assets/gltf/gate_double_left.gltf",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/29aac1061bdd73736351cb856fa9f1e322478abc/media/3D_Assets/Tiny_Treats_Homely_House_1.0_FREE/Assets/gltf/gate_double_left.gltf",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/Tiny_Treats_Homely_House_1.0_FREE/Assets/gltf/gate_double_right.gltf",
+      "collectionPath": "Assets",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/Tiny_Treats_Homely_House_1.0_FREE/Assets/gltf",
+      "format": "gltf",
+      "kind": "model-3d",
+      "name": "gate_double_right",
+      "packId": "tiny-treats-homely-house-1-0-free",
+      "packRoot": "media/3D_Assets/Tiny_Treats_Homely_House_1.0_FREE",
+      "path": "media/3D_Assets/Tiny_Treats_Homely_House_1.0_FREE/Assets/gltf/gate_double_right.gltf",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/Tiny_Treats_Homely_House_1.0_FREE/Assets/gltf/gate_double_right.bin",
+            "provenance": "file-explicit",
+            "reference": "buffers[0].uri",
+            "role": "buffer",
+            "status": "ok",
+            "uri": "gate_double_right.bin"
+          },
+          {
+            "exists": true,
+            "path": "media/3D_Assets/Tiny_Treats_Homely_House_1.0_FREE/Assets/gltf/tiny_treats_texture_1.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "tiny_treats_texture_1.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 3544,
+      "source": {
+        "blobSha": "ffaf64d4cae1bf23388bac41d60de5830b2c5ff7",
+        "commit": "29aac1061bdd73736351cb856fa9f1e322478abc",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/Tiny_Treats_Homely_House_1.0_FREE/Assets/gltf/gate_double_right.gltf",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/29aac1061bdd73736351cb856fa9f1e322478abc/media/3D_Assets/Tiny_Treats_Homely_House_1.0_FREE/Assets/gltf/gate_double_right.gltf",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/Tiny_Treats_Homely_House_1.0_FREE/Assets/gltf/gate_single.gltf",
+      "collectionPath": "Assets",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/Tiny_Treats_Homely_House_1.0_FREE/Assets/gltf",
+      "format": "gltf",
+      "kind": "model-3d",
+      "name": "gate_single",
+      "packId": "tiny-treats-homely-house-1-0-free",
+      "packRoot": "media/3D_Assets/Tiny_Treats_Homely_House_1.0_FREE",
+      "path": "media/3D_Assets/Tiny_Treats_Homely_House_1.0_FREE/Assets/gltf/gate_single.gltf",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/Tiny_Treats_Homely_House_1.0_FREE/Assets/gltf/gate_single.bin",
+            "provenance": "file-explicit",
+            "reference": "buffers[0].uri",
+            "role": "buffer",
+            "status": "ok",
+            "uri": "gate_single.bin"
+          },
+          {
+            "exists": true,
+            "path": "media/3D_Assets/Tiny_Treats_Homely_House_1.0_FREE/Assets/gltf/tiny_treats_texture_1.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "tiny_treats_texture_1.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 3527,
+      "source": {
+        "blobSha": "6da9a3b2928957e92f44e30692710d4158a0ddcc",
+        "commit": "29aac1061bdd73736351cb856fa9f1e322478abc",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/Tiny_Treats_Homely_House_1.0_FREE/Assets/gltf/gate_single.gltf",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/29aac1061bdd73736351cb856fa9f1e322478abc/media/3D_Assets/Tiny_Treats_Homely_House_1.0_FREE/Assets/gltf/gate_single.gltf",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/Tiny_Treats_Homely_House_1.0_FREE/Assets/gltf/house.gltf",
+      "collectionPath": "Assets",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/Tiny_Treats_Homely_House_1.0_FREE/Assets/gltf",
+      "format": "gltf",
+      "kind": "model-3d",
+      "name": "house",
+      "packId": "tiny-treats-homely-house-1-0-free",
+      "packRoot": "media/3D_Assets/Tiny_Treats_Homely_House_1.0_FREE",
+      "path": "media/3D_Assets/Tiny_Treats_Homely_House_1.0_FREE/Assets/gltf/house.gltf",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/Tiny_Treats_Homely_House_1.0_FREE/Assets/gltf/house.bin",
+            "provenance": "file-explicit",
+            "reference": "buffers[0].uri",
+            "role": "buffer",
+            "status": "ok",
+            "uri": "house.bin"
+          },
+          {
+            "exists": true,
+            "path": "media/3D_Assets/Tiny_Treats_Homely_House_1.0_FREE/Assets/gltf/tiny_treats_texture_1.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "tiny_treats_texture_1.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 9710,
+      "source": {
+        "blobSha": "17093756f913fc70c1eadd51d2878930df26df82",
+        "commit": "29aac1061bdd73736351cb856fa9f1e322478abc",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/Tiny_Treats_Homely_House_1.0_FREE/Assets/gltf/house.gltf",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/29aac1061bdd73736351cb856fa9f1e322478abc/media/3D_Assets/Tiny_Treats_Homely_House_1.0_FREE/Assets/gltf/house.gltf",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/Tiny_Treats_Homely_House_1.0_FREE/Assets/gltf/letter.gltf",
+      "collectionPath": "Assets",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/Tiny_Treats_Homely_House_1.0_FREE/Assets/gltf",
+      "format": "gltf",
+      "kind": "model-3d",
+      "name": "letter",
+      "packId": "tiny-treats-homely-house-1-0-free",
+      "packRoot": "media/3D_Assets/Tiny_Treats_Homely_House_1.0_FREE",
+      "path": "media/3D_Assets/Tiny_Treats_Homely_House_1.0_FREE/Assets/gltf/letter.gltf",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/Tiny_Treats_Homely_House_1.0_FREE/Assets/gltf/letter.bin",
+            "provenance": "file-explicit",
+            "reference": "buffers[0].uri",
+            "role": "buffer",
+            "status": "ok",
+            "uri": "letter.bin"
+          },
+          {
+            "exists": true,
+            "path": "media/3D_Assets/Tiny_Treats_Homely_House_1.0_FREE/Assets/gltf/tiny_treats_texture_1.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "tiny_treats_texture_1.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 3543,
+      "source": {
+        "blobSha": "0d78d8af4df228b186ee59a65bb5950934c741f0",
+        "commit": "29aac1061bdd73736351cb856fa9f1e322478abc",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/Tiny_Treats_Homely_House_1.0_FREE/Assets/gltf/letter.gltf",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/29aac1061bdd73736351cb856fa9f1e322478abc/media/3D_Assets/Tiny_Treats_Homely_House_1.0_FREE/Assets/gltf/letter.gltf",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/Tiny_Treats_Homely_House_1.0_FREE/Assets/gltf/mailbox.gltf",
+      "collectionPath": "Assets",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/Tiny_Treats_Homely_House_1.0_FREE/Assets/gltf",
+      "format": "gltf",
+      "kind": "model-3d",
+      "name": "mailbox",
+      "packId": "tiny-treats-homely-house-1-0-free",
+      "packRoot": "media/3D_Assets/Tiny_Treats_Homely_House_1.0_FREE",
+      "path": "media/3D_Assets/Tiny_Treats_Homely_House_1.0_FREE/Assets/gltf/mailbox.gltf",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/Tiny_Treats_Homely_House_1.0_FREE/Assets/gltf/mailbox.bin",
+            "provenance": "file-explicit",
+            "reference": "buffers[0].uri",
+            "role": "buffer",
+            "status": "ok",
+            "uri": "mailbox.bin"
+          },
+          {
+            "exists": true,
+            "path": "media/3D_Assets/Tiny_Treats_Homely_House_1.0_FREE/Assets/gltf/tiny_treats_texture_1.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "tiny_treats_texture_1.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 7667,
+      "source": {
+        "blobSha": "71df1ee352b766d05513d0adf6f2d59f1fc2249e",
+        "commit": "29aac1061bdd73736351cb856fa9f1e322478abc",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/Tiny_Treats_Homely_House_1.0_FREE/Assets/gltf/mailbox.gltf",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/29aac1061bdd73736351cb856fa9f1e322478abc/media/3D_Assets/Tiny_Treats_Homely_House_1.0_FREE/Assets/gltf/mailbox.gltf",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/Tiny_Treats_Homely_House_1.0_FREE/Assets/gltf/package.gltf",
+      "collectionPath": "Assets",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/Tiny_Treats_Homely_House_1.0_FREE/Assets/gltf",
+      "format": "gltf",
+      "kind": "model-3d",
+      "name": "package",
+      "packId": "tiny-treats-homely-house-1-0-free",
+      "packRoot": "media/3D_Assets/Tiny_Treats_Homely_House_1.0_FREE",
+      "path": "media/3D_Assets/Tiny_Treats_Homely_House_1.0_FREE/Assets/gltf/package.gltf",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/Tiny_Treats_Homely_House_1.0_FREE/Assets/gltf/package.bin",
+            "provenance": "file-explicit",
+            "reference": "buffers[0].uri",
+            "role": "buffer",
+            "status": "ok",
+            "uri": "package.bin"
+          },
+          {
+            "exists": true,
+            "path": "media/3D_Assets/Tiny_Treats_Homely_House_1.0_FREE/Assets/gltf/tiny_treats_texture_1.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "tiny_treats_texture_1.png"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 3514,
+      "source": {
+        "blobSha": "cc2585d5ffb23955969be9af7f4acb1ae2ebd262",
+        "commit": "29aac1061bdd73736351cb856fa9f1e322478abc",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/Tiny_Treats_Homely_House_1.0_FREE/Assets/gltf/package.gltf",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/29aac1061bdd73736351cb856fa9f1e322478abc/media/3D_Assets/Tiny_Treats_Homely_House_1.0_FREE/Assets/gltf/package.gltf",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/Tiny_Treats_Homely_House_1.0_FREE/Assets/gltf/tiny_treats_texture_1.png",
+      "collectionPath": "Assets",
+      "folder": "media/3D_Assets/Tiny_Treats_Homely_House_1.0_FREE/Assets/gltf",
+      "format": "png",
+      "hints": {
+        "textureCandidate": false,
+        "textureCandidateProvenance": "generated-structural"
+      },
+      "kind": "image-2d",
+      "name": "tiny_treats_texture_1",
+      "packId": "tiny-treats-homely-house-1-0-free",
+      "packRoot": "media/3D_Assets/Tiny_Treats_Homely_House_1.0_FREE",
+      "path": "media/3D_Assets/Tiny_Treats_Homely_House_1.0_FREE/Assets/gltf/tiny_treats_texture_1.png",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 20167,
+      "source": {
+        "blobSha": "2139047fe62b11c6da056f280954354a232fd78e",
+        "commit": "29aac1061bdd73736351cb856fa9f1e322478abc",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/Tiny_Treats_Homely_House_1.0_FREE/Assets/gltf/tiny_treats_texture_1.png",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/29aac1061bdd73736351cb856fa9f1e322478abc/media/3D_Assets/Tiny_Treats_Homely_House_1.0_FREE/Assets/gltf/tiny_treats_texture_1.png",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/Tiny_Treats_Homely_House_1.0_FREE/Assets/gltf/tree.gltf",
+      "collectionPath": "Assets",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/Tiny_Treats_Homely_House_1.0_FREE/Assets/gltf",
+      "format": "gltf",
+      "kind": "model-3d",
+      "name": "tree",
+      "packId": "tiny-treats-homely-house-1-0-free",
+      "packRoot": "media/3D_Assets/Tiny_Treats_Homely_House_1.0_FREE",
+      "path": "media/3D_Assets/Tiny_Treats_Homely_House_1.0_FREE/Assets/gltf/tree.gltf",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/Tiny_Treats_Homely_House_1.0_FREE/Assets/gltf/tiny_treats_texture_1.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "tiny_treats_texture_1.png"
+          },
+          {
+            "exists": true,
+            "path": "media/3D_Assets/Tiny_Treats_Homely_House_1.0_FREE/Assets/gltf/tree.bin",
+            "provenance": "file-explicit",
+            "reference": "buffers[0].uri",
+            "role": "buffer",
+            "status": "ok",
+            "uri": "tree.bin"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 3532,
+      "source": {
+        "blobSha": "3510cb48aa5df4b712b0d7308373f6f5b9917d41",
+        "commit": "29aac1061bdd73736351cb856fa9f1e322478abc",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/Tiny_Treats_Homely_House_1.0_FREE/Assets/gltf/tree.gltf",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/29aac1061bdd73736351cb856fa9f1e322478abc/media/3D_Assets/Tiny_Treats_Homely_House_1.0_FREE/Assets/gltf/tree.gltf",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/Tiny_Treats_Homely_House_1.0_FREE/Assets/gltf/tree_large.gltf",
+      "collectionPath": "Assets",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/Tiny_Treats_Homely_House_1.0_FREE/Assets/gltf",
+      "format": "gltf",
+      "kind": "model-3d",
+      "name": "tree_large",
+      "packId": "tiny-treats-homely-house-1-0-free",
+      "packRoot": "media/3D_Assets/Tiny_Treats_Homely_House_1.0_FREE",
+      "path": "media/3D_Assets/Tiny_Treats_Homely_House_1.0_FREE/Assets/gltf/tree_large.gltf",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/Tiny_Treats_Homely_House_1.0_FREE/Assets/gltf/tiny_treats_texture_1.png",
+            "provenance": "file-explicit",
+            "reference": "images[0].uri",
+            "role": "image",
+            "status": "ok",
+            "uri": "tiny_treats_texture_1.png"
+          },
+          {
+            "exists": true,
+            "path": "media/3D_Assets/Tiny_Treats_Homely_House_1.0_FREE/Assets/gltf/tree_large.bin",
+            "provenance": "file-explicit",
+            "reference": "buffers[0].uri",
+            "role": "buffer",
+            "status": "ok",
+            "uri": "tree_large.bin"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 3554,
+      "source": {
+        "blobSha": "d9aab6b9f7ce791fdb73f0dbbfd3417cb1f5d85b",
+        "commit": "29aac1061bdd73736351cb856fa9f1e322478abc",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/Tiny_Treats_Homely_House_1.0_FREE/Assets/gltf/tree_large.gltf",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/29aac1061bdd73736351cb856fa9f1e322478abc/media/3D_Assets/Tiny_Treats_Homely_House_1.0_FREE/Assets/gltf/tree_large.gltf",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/Tiny_Treats_Homely_House_1.0_FREE/overview.png",
+      "folder": "media/3D_Assets/Tiny_Treats_Homely_House_1.0_FREE",
+      "format": "png",
+      "hints": {
+        "textureCandidate": false,
+        "textureCandidateProvenance": "generated-structural"
+      },
+      "kind": "image-2d",
+      "name": "overview",
+      "packId": "tiny-treats-homely-house-1-0-free",
+      "packRoot": "media/3D_Assets/Tiny_Treats_Homely_House_1.0_FREE",
+      "path": "media/3D_Assets/Tiny_Treats_Homely_House_1.0_FREE/overview.png",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 777599,
+      "source": {
+        "blobSha": "0217fa903362efe6d9634839eb781d10d82018fa",
+        "commit": "29aac1061bdd73736351cb856fa9f1e322478abc",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/Tiny_Treats_Homely_House_1.0_FREE/overview.png",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/29aac1061bdd73736351cb856fa9f1e322478abc/media/3D_Assets/Tiny_Treats_Homely_House_1.0_FREE/overview.png",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/Tiny_Treats_Homely_House_1.0_FREE/sample.png",
+      "folder": "media/3D_Assets/Tiny_Treats_Homely_House_1.0_FREE",
+      "format": "png",
+      "hints": {
+        "textureCandidate": false,
+        "textureCandidateProvenance": "generated-structural"
+      },
+      "kind": "image-2d",
+      "name": "sample",
+      "packId": "tiny-treats-homely-house-1-0-free",
+      "packRoot": "media/3D_Assets/Tiny_Treats_Homely_House_1.0_FREE",
+      "path": "media/3D_Assets/Tiny_Treats_Homely_House_1.0_FREE/sample.png",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 1104192,
+      "source": {
+        "blobSha": "665f2ef07bd7448d92bdc8e40760dac8d06b2212",
+        "commit": "29aac1061bdd73736351cb856fa9f1e322478abc",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/Tiny_Treats_Homely_House_1.0_FREE/sample.png",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/29aac1061bdd73736351cb856fa9f1e322478abc/media/3D_Assets/Tiny_Treats_Homely_House_1.0_FREE/sample.png",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    }
+  ],
+  "collections": [
+    {
+      "assetCount": 29,
+      "path": "Assets"
+    }
+  ],
+  "dependencyStatus": {
+    "complete": 27
+  },
+  "displayName": "Tiny_Treats_Homely_House_1.0_FREE",
+  "formats": {
+    "gltf": 27,
+    "png": 4
+  },
+  "kinds": {
+    "image-2d": 4,
+    "model-3d": 27
+  },
+  "packId": "tiny-treats-homely-house-1-0-free",
+  "provenance": "generated-structural",
+  "root": "media/3D_Assets/Tiny_Treats_Homely_House_1.0_FREE",
+  "schema": "kfb.asset-pack.v1",
+  "shard": "packs/tiny-treats-homely-house-1-0-free.json"
+}
