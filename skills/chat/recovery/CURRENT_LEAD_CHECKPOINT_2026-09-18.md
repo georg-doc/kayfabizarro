@@ -211,6 +211,25 @@ Current sequence:
 DocCheck visual convention:
 `#cc0033` as a restrained UI accent only; never tint microscopy imagery.
 
+### KFB Game Dev Studio lane
+
+Permanent public target:
+`https://kayfabizarro.pages.dev/kfb-hub/free-roam/game-dev-studio/`
+
+Tool/recovery home:
+`tools/game-dev-studio/`
+
+Package home:
+`game-ready/`
+
+Current state:
+- Pilot 01 = Lorekeeper + Tome/lectern + Staff + exact BOX1 Sedan + minimal event handoff.
+- Package metadata implemented; structural QA partial pass.
+- Binary Sedan chassis proxy remains explicitly BLOCKED until the Game Development Studio producer CLI is available.
+- Consumer tests and Georg acceptance remain open.
+- The public page is package-first and uses pinned source previews; Asset Librarian stays broad discovery/provenance infrastructure and is not the Studio UX shell.
+- After each substantive Studio turn, update `tools/game-dev-studio/RECOVERY.md`, append its `CHANGELOG.md`, and update `catalog.json` only for actual package/source/gate deltas.
+
 ## Existing owner discipline
 
 - project/tool SSOTs beat this checkpoint
