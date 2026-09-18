@@ -72,3 +72,17 @@ Runtime proof remains pending.
 ## 2026-09-18 · Dropbox v18 EyeRig cross-check
 
 Read-only donor audit confirmed the Dropbox FrankenStein Studio v18 session carries `pet-eye-rig.v6.js` text-equivalent to the current GitHub EyeRig-v6 donor after line-ending/trailing-whitespace normalization. The same Dropbox session contains Animation Lab v3, but no GitHub/current-tool promotion is inferred from presence alone.
+
+
+## 2026-09-18 · v0.6 · Cross-render EyeRig proof
+
+- added one renderer-neutral semantic sequence runner;
+- corrected shared look clips to use the public gaze-follow/pointTo seam deterministically;
+- improved the 2D blink fallback so pupils compress with the eye wrapper instead of floating outside a closed eye;
+- built `proofs/cross-render-eye-v1/`;
+- 2D target = source-exact DocCheck Eumel;
+- 3D target = FrizzleBob Driver Graft on real Rig_Medium / 23 joints / ToolBox EyeRig v6;
+- exact shared sequence: `neutral → blink → look_left → look_right → surprised → thinking → neutral`;
+- added optional eyeFrame markers in both renderers;
+- static sanity PASS; browser/playback proof still pending;
+- started the source-first DocCheck Eye/Face Modifier Atlas with current source-resolved parts, KFB logic donors and unresolved richer DocCheck asset categories clearly separated.
