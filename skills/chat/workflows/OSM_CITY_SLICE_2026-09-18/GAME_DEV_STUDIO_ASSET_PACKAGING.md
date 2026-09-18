@@ -213,3 +213,48 @@ If the pilot is structurally useful and consumer-tested, then batch packaging ma
 - accepted 2D/2.5D modules.
 
 Batch output must not erase asset-specific exceptions such as special hand calibration, unusual rigs, missing wheel nodes or nonstandard forward axes.
+
+
+## 10 · Reconstructible experience packages · backlog architecture
+
+The packaging lane may later also produce **reconstructible experience recipes** for camera moves, hero shots, transitions, loading presentation and journey-memory reconstruction.
+
+Canonical guidance lives in:
+
+[**GAME_DEV_STUDIO_ASSET_PACKAGING_LIVING.md**](GAME_DEV_STUDIO_ASSET_PACKAGING_LIVING.md)
+
+Backlog package types include:
+
+- `CameraRecipe` / `HeroShotRecipe` for CCTV-style captures, fly-bys, victory/podium shots and authored camera moves;
+- `TransitionRecipe` for portals, warp/hyperspace, black-hole/floor-drop transitions, dungeon/instance entry and map-room handoffs;
+- `MomentReceipt` as a lean machine-readable milestone record containing pinned refs, minimal dynamic state, seeds, card-acquisition context and consumer/build refs;
+- `JourneyEntry` as the human-facing personal travel diary pointing to authoritative save/checkpoint state;
+- hierarchical `SceneKit` / PackageTree composition, including a proposed Rule-of-Three convention for planets, landmarks, environment props, residents, vehicles and card-bearing scene objects.
+
+Default policy:
+
+> Store deterministic recipes and exact refs rather than heavy prerecorded videos. Optional still/video previews are derived caches, not canonical experience assets.
+
+These packages remain presentation/reconstruction consumers of real gameplay state. They do not become movement, save-game, card-progression, physics, animation, VFX or audio owners.
+
+### Exact replay boundary
+
+Do not promise frame-identical historical replay from metadata alone.
+
+`EXACT_REPLAY` requires enough pinned evidence to recover the historical consumer/build, data/assets, deterministic seeds and minimum dynamic state.
+
+A reconstruction in a newer runtime should be reported as `SEMANTIC_REBUILD` unless equivalence is actually demonstrated.
+
+## 11 · Pilot-scope guardrail
+
+The architecture in §10 **does not expand the first capability pilot**.
+
+Pilot 01 remains:
+
+1. Lorekeeper + Tome/lectern + Staff;
+2. one broad-regression BOX1 Sedan source;
+3. minimal movement/boost/drift/re-grip/jump/landing/impact event handoff;
+4. at least one real derived asset where the plugin supports it;
+5. consumer test before batch expansion.
+
+Camera/transition/journey/package-tree work starts only as a later backlog proof after Pilot 01 is structurally useful.
