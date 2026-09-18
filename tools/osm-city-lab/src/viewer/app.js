@@ -190,6 +190,21 @@ function frame(bounds,mode='oblique'){
   controls.update();
 }
 
+function focusStreetSign(bounds){
+  const c=streetSignController?.candidates?.[0];
+  if(!c){frame(bounds,'street');return;}
+  setCameraBasics();
+  camera.fov=48;
+  const tx=c.tangent?.x||0,tz=c.tangent?.z||1;
+  const nx=-tz,nz=tx;
+  controls.target.set(c.x,1.8,c.z);
+  camera.position.set(c.x-tx*8+nx*3.2,3.4,c.z-tz*8+nz*3.2);
+  camera.near=.15;
+  camera.far=Math.max(300,Math.max(bounds.sizeM.x,bounds.sizeM.z)*2);
+  camera.updateProjectionMatrix();
+  controls.update();
+}
+
 function resize(){
   const r=canvas.getBoundingClientRect();
   renderer.setSize(Math.max(1,r.width),Math.max(1,r.height),false);
@@ -349,9 +364,12 @@ async function load(){
       if(natureController.errors.length)console.warn('[city nature POC] asset load errors',natureController.errors);
     }
 
-    const startView=look==='grotesque'?'grotesque':look==='cartoon'?'cartoon':'oblique';
-    frame(city.bounds,startView);
-    document.querySelectorAll('[data-camera]').forEach(button=>button.onclick=()=>frame(city.bounds,button.dataset.camera));
+    const startView=requestedLabels?'sign':look==='grotesque'?'grotesque':look==='cartoon'?'cartoon':'oblique';
+    if(startView==='sign')focusStreetSign(city.bounds);
+    else frame(city.bounds,startView);
+    document.querySelectorAll('[data-camera]').forEach(button=>{
+      button.onclick=()=>button.dataset.camera==='sign'?focusStreetSign(city.bounds):frame(city.bounds,button.dataset.camera);
+    });
 
     status.textContent=look==='grotesque'
       ?'S1c grotesque massing · wide-angle + cubist ring stagger'
