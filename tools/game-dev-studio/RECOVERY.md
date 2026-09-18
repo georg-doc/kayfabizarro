@@ -97,11 +97,26 @@ Commit: `3286ed5315c837753d1efe93d5580460ee9b8642`.
 
 It requests no runtime patch by itself and preserves FR-S04-02 immutably. It gives the Race/Free-Roam owner exact package refs, numeric-proxy path, real source-wheel binding and Sedan-specific regression gates for the next scheduled candidate.
 
+### Lorekeeper Travel consumer handoff
+
+Package-local mapping:
+
+- `game-ready/pilot-01-lorekeeper-sedan/resident/lorekeeper/TRAVEL_ATLAS_PILOT_01_ADAPTER.json`
+- `game-ready/pilot-01-lorekeeper-sedan/resident/lorekeeper/TRAVEL_ATLAS_PILOT_01_HANDOFF.md`
+
+Additive Travel owner brief:
+
+`georg-doc/KFB-Travel-Globe/_handover/GAME_DEV_STUDIO_LOREKEEPER_PACKAGE_2026-09-18.md`
+
+Commit: `8614282aab2ced43bb5dda9fcf7abadf9768100a`.
+
+**Gate remains binding:** current Travel Ground human review must carry before Lorekeeper runtime import. This is READY input, not a Travel consumer PASS.
+
 ## NEXT
 
 1. keep the verified Cloudflare preview proof green after catalog/UI changes;
 2. produce + inspect + validate `car-sedan-chassis-proxy.glb` when the Game Development Studio CLI is available;
-3. execute Lorekeeper consumer gate;
+3. after the current Travel Ground human gate carries, execute the existing Atlas Pilot 01 with the prepared Lorekeeper package handoff;
 4. execute the Sedan gate only in the Race/Free-Roam owner from the prepared FR-S04-02 handoff;
 5. bind exact existing SFX source refs;
 6. only then decide batch expansion.
