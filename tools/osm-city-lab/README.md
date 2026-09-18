@@ -1,6 +1,6 @@
 # KFB OSM City Lab
 
-Status: **MULTI-SLICE S0 TESTED · SHARED S1 VIEWER IMPLEMENTED · SHARED S2 EXPORT CONTRACT IMPLEMENTED**
+Status: **MULTI-SLICE S0 TESTED · S1b CLEAN/CARTOON BROWSER PASS · S2 EXPORT CONTRACT TESTED**
 
 Browser entry: `tools/osm-city-lab/index.html`
 
@@ -92,7 +92,7 @@ City Lab owns geodata normalization, city geometry, styling and export only.
 
 **S0 TESTED RESULT:** Ehrenfeld + Hürth source/cache/normalization gates are green.
 
-**S1b IMPLEMENTATION:** shared Clean/Cartoon Massing viewer exists, separate roof caps are removed, and road centerlines render as continuous joined strips instead of per-segment quads. Automated browser proof is tracked separately; Georg visual acceptance remains pending.
+**S1b TESTED RESULT:** shared Clean/Cartoon Massing viewer boots in Chromium/WebGL for both cities. Separate roof caps are removed, road centerlines render as continuous joined strips instead of per-segment quads, and the four clean/cartoon cases passed without page/console errors. Georg live visual/zoom acceptance remains pending.
 
 **S2 IMPLEMENTATION:** consumer exports exist. The actual Walk/Drive receiver loops have not yet been run on these OSM scenes.
 
