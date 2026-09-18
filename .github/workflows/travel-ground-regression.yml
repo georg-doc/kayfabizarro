@@ -25,7 +25,7 @@ jobs:
           cat > ground-probe/probe.mjs <<'JS'
           import fs from 'node:fs';import {chromium} from 'playwright';
           const base='https://kayfabizarro.pages.dev/travel/wip/travel_globe_wsa/world-builder/';
-          const url=base+'?wb0=1&ground=8',expected='30b1f5144f27bfa60936ff161a347006f7b26166';
+          const url=base+'?wb0=1&ground=8',expected='da7e9a5a3c4c6125e9314ced838cdfa5ff1f7a43';
           const r={url,date:new Date().toISOString(),expectedTravelCommit:expected,checks:[],errors:[],humanAcceptance:'PENDING'};
           const check=(name,pass,details)=>{r.checks.push({name,pass:!!pass,details});if(!pass)throw Error(name)};
           const pause=ms=>new Promise(resolve=>setTimeout(resolve,ms));
