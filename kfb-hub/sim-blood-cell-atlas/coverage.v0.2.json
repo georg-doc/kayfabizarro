@@ -8,7 +8,7 @@
   "counts": {
     "entities": 80,
     "withReferences": 31,
-    "withReferencePreview": 21,
+    "withReferencePreview": 24,
     "withDatasets": 39,
     "withCurrentAssets": 8,
     "missingAssetEntities": 72
@@ -198,6 +198,11 @@
       "scope": "peripheral_abnormal",
       "parent": null,
       "references": [
+        {
+          "name": "ASH Spherocytes – Hereditary Spherocytosis",
+          "url": "https://imagebank.hematology.org/image/60308/spherocytes--hereditary-spherocytosis",
+          "previewUrl": "https://imagebank.hematology.org/getimagebyid/60308?size=3"
+        },
         {
           "name": "CellaVision Erythrocytes in Peripheral Blood",
           "url": "https://www.cellavision.com/node/1165",
@@ -465,6 +470,11 @@
       "parent": null,
       "references": [
         {
+          "name": "ASH Acanthocytes",
+          "url": "https://imagebank.hematology.org/image/60266/acanthocytes",
+          "previewUrl": "https://imagebank.hematology.org/getimagebyid/60266?size=3"
+        },
+        {
           "name": "CellaVision Erythrocytes in Peripheral Blood",
           "url": "https://www.cellavision.com/node/1165",
           "previewUrl": null
@@ -498,6 +508,11 @@
       "scope": "peripheral_abnormal",
       "parent": null,
       "references": [
+        {
+          "name": "ASH Burr Cells or Echinocytes",
+          "url": "https://imagebank.hematology.org/atlas/60291",
+          "previewUrl": "https://imagebank.hematology.org/getimagebyid/60291?size=3"
+        },
         {
           "name": "CellaVision Erythrocytes in Peripheral Blood",
           "url": "https://www.cellavision.com/node/1165",
