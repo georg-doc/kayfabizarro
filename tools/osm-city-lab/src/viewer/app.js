@@ -2,11 +2,17 @@ import * as THREE from 'three';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 import { materialPalette, pickStable } from '../style/kfb-city-materials.js';
 import { applyCartoonMassing, windowCodesForBuilding } from '../style/cartoon-city.js';
+import { joinedStrip, addJunctionPatches } from './street-surface.js';
+import { createStreetSigns } from './street-signs.js';
+import { createNaturePoc } from './nature-poc.js';
 
 const params=new URLSearchParams(location.search);
 const cityId=(params.get('city')||'ehrenfeld-v0').trim();
 if(!/^[a-z0-9-]+$/.test(cityId)) throw new Error('Invalid city id');
 const requestedLook=(params.get('look')||'').trim().toLowerCase();
+const truthy=v=>['1','on','true','yes'].includes(String(v||'').toLowerCase());
+const requestedLabels=truthy(params.get('labels'));
+const requestedNature=truthy(params.get('nature'));
 
 const canvas=document.querySelector('#view');
 const status=document.querySelector('#status');
@@ -32,15 +38,25 @@ scene.add(sun);
 const root=new THREE.Group();
 scene.add(root);
 
+let streetSignController=null;
+let natureController=null;
+
 const metrics={
   look:null,
-  roadStripMode:'joined-miter',
+  roadStripMode:'joined-miter+osm-node-patches',
   roadMeshes:0,
   sidewalkMeshes:0,
+  pathMeshes:0,
   roadVertices:0,
+  roadJunctionPatches:0,
+  sidewalkJunctionPatches:0,
+  pathJunctionPatches:0,
   buildingMeshes:0,
   roofMeshes:0,
   windowInstances:0,
+  streetSigns:0,
+  natureInstances:0,
+  natureAssets:[],
   zLevels:null
 };
 
@@ -51,88 +67,39 @@ function mat(color,roughness=.88,extra={}){
   });
 }
 
-function cleanLine(points){
-  const out=[];
-  for(const p of points||[]){
-    if(!Number.isFinite(p?.x)||!Number.isFinite(p?.z))continue;
-    const q={x:Number(p.x),z:Number(p.z)};
-    const prev=out[out.length-1];
-    if(!prev||Math.hypot(prev.x-q.x,prev.z-q.z)>.001)out.push(q);
-  }
-  return out;
-}
-
-// Continuous joined strip. The previous implementation emitted one independent rectangle
-// per segment; the wider sidewalk strip could therefore peek through at every bend and
-// shimmer while zooming. This keeps one left/right pair per source point with a clamped miter.
-function joinedStrip(points,width,y,material){
-  const pts=cleanLine(points);
-  if(pts.length<2)return null;
-  const half=Math.max(.02,width/2);
-  const pos=[];
-  const idx=[];
-
-  const dir=(a,b)=>{
-    const dx=b.x-a.x,dz=b.z-a.z,l=Math.hypot(dx,dz)||1;
-    return {x:dx/l,z:dz/l};
-  };
-  const normal=d=>({x:-d.z,z:d.x});
-
-  for(let i=0;i<pts.length;i++){
-    const p=pts[i];
-    const d0=i>0?dir(pts[i-1],p):dir(p,pts[i+1]);
-    const d1=i<pts.length-1?dir(p,pts[i+1]):d0;
-    const n0=normal(d0),n1=normal(d1);
-    let mx=n0.x+n1.x,mz=n0.z+n1.z;
-    let ml=Math.hypot(mx,mz);
-    if(ml<1e-5){mx=n1.x;mz=n1.z;ml=1;}
-    mx/=ml;mz/=ml;
-    const denom=Math.max(.38,Math.abs(mx*n1.x+mz*n1.z));
-    const miter=Math.min(half*1.8,half/denom);
-    pos.push(
-      p.x+mx*miter,y,p.z+mz*miter,
-      p.x-mx*miter,y,p.z-mz*miter
-    );
-  }
-  for(let i=0;i<pts.length-1;i++){
-    const a=i*2,b=a+1,c=a+2,d=a+3;
-    idx.push(a,c,b,b,c,d);
-  }
-  const g=new THREE.BufferGeometry();
-  g.setAttribute('position',new THREE.Float32BufferAttribute(pos,3));
-  g.setIndex(idx);
-  g.computeVertexNormals();
-  const m=new THREE.Mesh(g,material);
-  m.receiveShadow=true;
-  m.userData.vertexCount=pts.length*2;
-  return m;
-}
-
 function polygonShape(poly){
   const s=new THREE.Shape();
   (poly||[]).forEach((p,i)=>i?s.lineTo(p.x,-p.z):s.moveTo(p.x,-p.z));
   return s;
 }
 
-function polygonSurface(poly,y,material){
+function polygonSurface(poly,y,material,renderOrder=0){
   const g=new THREE.ShapeGeometry(polygonShape(poly));
   g.rotateX(-Math.PI/2);
   const m=new THREE.Mesh(g,material);
   m.position.y=y;
   m.receiveShadow=true;
+  m.renderOrder=renderOrder;
   return m;
+}
+
+function lookProfile(style,look){
+  if(look==='clean')return null;
+  const base=style.cartoonMassing||{};
+  const preset=base.presets?.[look]||base.presets?.cartoon||{};
+  return {...preset,windows:base.windows||{}};
 }
 
 function addBuilding(b,palette,style,look,windowBuckets){
   const shape=polygonShape(b.footprint);
-  const cartoonCfg=style.cartoonMassing||{};
-  const steps=look==='cartoon'?Math.max(2,Number(cartoonCfg.verticalSteps||4)):1;
+  const profile=lookProfile(style,look);
+  const steps=profile?Math.max(2,Number(profile.verticalSteps||4)):1;
   const g=new THREE.ExtrudeGeometry(shape,{depth:b.heightM,bevelEnabled:false,steps});
   g.rotateX(-Math.PI/2);
 
   let deformation=null;
-  if(look==='cartoon'){
-    deformation=applyCartoonMassing(g,b.id,cartoonCfg,style.seed||'kfb-city');
+  if(profile){
+    deformation=applyCartoonMassing(g,b.id,profile,style.seed||'kfb-city');
   }else{
     g.computeVertexNormals();
   }
@@ -145,10 +112,8 @@ function addBuilding(b,palette,style,look,windowBuckets){
   root.add(m);
   metrics.buildingMeshes++;
 
-  // KISS massing: the ExtrudeGeometry's own cap IS the roof.
-  // No separate roof boxes/cones are generated here.
-  if(look==='cartoon'&&cartoonCfg.windows?.enabled!==false){
-    const winCfg={...cartoonCfg.windows,materialCount:palette.window.length};
+  if(profile&&profile.windows?.enabled!==false){
+    const winCfg={...profile.windows,materialCount:palette.window.length};
     const codes=windowCodesForBuilding(b,deformation,winCfg,style.seed||'kfb-city');
     for(const w of codes){
       const bucket=windowBuckets[w.materialIndex%windowBuckets.length];
@@ -195,6 +160,7 @@ function frame(bounds,mode='oblique'){
   const span=Math.max(bounds.sizeM.x,bounds.sizeM.z);
   setCameraBasics();
   let targetY=0;
+
   if(mode==='top'){
     camera.position.set(cx,span*1.12,cz+.01);
   }else if(mode==='street'){
@@ -202,14 +168,21 @@ function frame(bounds,mode='oblique'){
     targetY=4;
     camera.position.set(cx-span*.28,7,cz+span*.22);
   }else if(mode==='cartoon'){
-    camera.fov=57;
-    camera.filmOffset=3.8;
-    camera.up.set(.035,.9994,0);
-    targetY=6;
-    camera.position.set(cx+span*.48,span*.24,cz+span*.43);
+    camera.fov=59;
+    camera.filmOffset=4.8;
+    camera.up.set(.04,.9992,0);
+    targetY=7;
+    camera.position.set(cx+span*.46,span*.22,cz+span*.41);
+  }else if(mode==='grotesque'){
+    camera.fov=76;
+    camera.filmOffset=10.5;
+    camera.up.set(.085,.9964,0);
+    targetY=12;
+    camera.position.set(cx+span*.31,span*.12,cz+span*.28);
   }else{
     camera.position.set(cx+span*.62,span*.52,cz+span*.62);
   }
+
   controls.target.set(cx,targetY,cz);
   camera.near=.5;
   camera.far=span*4.5;
@@ -226,15 +199,85 @@ function resize(){
 new ResizeObserver(resize).observe(canvas);
 resize();
 
+function setParam(name,value){
+  const u=new URL(location.href);
+  if(value==null||value===false||value==='')u.searchParams.delete(name);
+  else u.searchParams.set(name,String(value));
+  location.href=u.href;
+}
+
 function bindLookButtons(look){
   document.querySelectorAll('[data-look]').forEach(button=>{
     button.classList.toggle('active',button.dataset.look===look);
-    button.onclick=()=>{
-      const u=new URL(location.href);
-      u.searchParams.set('look',button.dataset.look);
-      location.href=u.href;
-    };
+    button.onclick=()=>setParam('look',button.dataset.look);
   });
+}
+
+function bindFeatureButtons(){
+  const state={labels:requestedLabels,nature:requestedNature};
+  document.querySelectorAll('[data-feature]').forEach(button=>{
+    const key=button.dataset.feature;
+    button.classList.toggle('active',!!state[key]);
+    button.onclick=()=>setParam(key,state[key]?'0':'1');
+  });
+}
+
+function addStreetSurfaces(THREE,city,palette,style){
+  const L=style.layers||{};
+  const lift=Number(L.junctionPatchLift??.004);
+  const driveable=city.features.roads.filter(r=>r.driveable);
+  const paths=city.features.roads.filter(r=>!r.driveable);
+  const sidewalkRoads=driveable.filter(r=>r.sidewalk?.left||r.sidewalk?.right);
+
+  const sidewalkMat=mat(palette.sidewalk,.98,{polygonOffset:true,polygonOffsetFactor:2,polygonOffsetUnits:2});
+  const pathMat=mat(palette.path,.97,{polygonOffset:true,polygonOffsetFactor:1,polygonOffsetUnits:1});
+  const roadMat=mat(palette.road,.96,{polygonOffset:true,polygonOffsetFactor:-2,polygonOffsetUnits:-2});
+
+  for(const r of sidewalkRoads){
+    const sw=joinedStrip(THREE,r.centerline,r.widthM+4.2,metrics.zLevels.sidewalk,sidewalkMat);
+    if(sw){sw.renderOrder=2;root.add(sw);metrics.sidewalkMeshes++;metrics.roadVertices+=sw.userData.vertexCount||0;}
+  }
+
+  for(const r of paths){
+    const path=joinedStrip(THREE,r.centerline,Math.max(.8,r.widthM),metrics.zLevels.path,pathMat);
+    if(path){path.renderOrder=3;root.add(path);metrics.pathMeshes++;metrics.roadVertices+=path.userData.vertexCount||0;}
+  }
+
+  for(const r of driveable){
+    const road=joinedStrip(THREE,r.centerline,r.widthM,metrics.zLevels.road,roadMat);
+    if(road){road.renderOrder=4;root.add(road);metrics.roadMeshes++;metrics.roadVertices+=road.userData.vertexCount||0;}
+  }
+
+  const swSpecs=addJunctionPatches(THREE,root,sidewalkRoads,{
+    y:metrics.zLevels.sidewalk+lift,
+    material:sidewalkMat,
+    widthExtra:2.1,
+    driveableOnly:true,
+    segments:14
+  });
+  metrics.sidewalkJunctionPatches=swSpecs.length;
+
+  const pathSpecs=addJunctionPatches(THREE,root,paths,{
+    y:metrics.zLevels.path+lift,
+    material:pathMat,
+    widthExtra:.12,
+    driveableOnly:false,
+    segments:12
+  });
+  metrics.pathJunctionPatches=pathSpecs.length;
+
+  const roadSpecs=addJunctionPatches(THREE,root,driveable,{
+    y:metrics.zLevels.road+lift,
+    material:roadMat,
+    widthExtra:.08,
+    driveableOnly:true,
+    segments:14
+  });
+  metrics.roadJunctionPatches=roadSpecs.length;
+
+  for(const child of root.children){
+    if(child.userData?.role==='street-junction-patch')child.renderOrder=5;
+  }
 }
 
 async function load(){
@@ -245,10 +288,12 @@ async function load(){
       fetch(`./data/${cityId}/SOURCE_SPEC.json`,{cache:'no-store'}).then(r=>r.ok?r.json():({label:cityId}))
     ]);
 
-    const fallbackLook=style.cartoonMassing?.defaultMode==='clean'?'clean':'cartoon';
-    const look=['clean','cartoon'].includes(requestedLook)?requestedLook:fallbackLook;
+    const allowed=['clean','cartoon','grotesque'];
+    const fallback=allowed.includes(style.cartoonMassing?.defaultMode)?style.cartoonMassing.defaultMode:'cartoon';
+    const look=allowed.includes(requestedLook)?requestedLook:fallback;
     metrics.look=look;
     bindLookButtons(look);
+    bindFeatureButtons();
 
     document.title=`KFB OSM City Lab · ${spec.label||cityId} · ${look}`;
     brand.textContent=`KFB OSM CITY LAB · ${(spec.label||cityId).toUpperCase()}`;
@@ -256,11 +301,12 @@ async function load(){
     const p=materialPalette(style);
     const L=style.layers||{};
     metrics.zLevels={
-      ground:Number(L.groundY??-.12),
-      landuse:Number(L.landuseY??-.075),
-      sidewalk:Number(L.sidewalkY??.012),
-      road:Number(L.roadY??.065),
-      waterLine:Number(L.waterLineY??.04)
+      ground:Number(L.groundY??-.16),
+      landuse:Number(L.landuseY??-.11),
+      sidewalk:Number(L.sidewalkY??-.005),
+      path:Number(L.pathY??.03),
+      road:Number(L.roadY??.095),
+      waterLine:Number(L.waterLineY??.045)
     };
 
     root.add(polygonSurface([
@@ -269,64 +315,83 @@ async function load(){
       {x:city.bounds.max.x+30,z:city.bounds.max.z+30},
       {x:city.bounds.min.x-30,z:city.bounds.max.z+30},
       {x:city.bounds.min.x-30,z:city.bounds.min.z-30}
-    ],metrics.zLevels.ground,mat('#899d79')));
+    ],metrics.zLevels.ground,mat('#899d79'),0));
 
     for(const a of city.features.landuse){
-      if(a.class==='green')root.add(polygonSurface(a.polygon,metrics.zLevels.landuse,mat(p.green)));
-      if(a.class==='water')root.add(polygonSurface(a.polygon,Number(L.waterAreaY??-.065),mat(p.water,.5)));
+      if(a.class==='green')root.add(polygonSurface(a.polygon,metrics.zLevels.landuse,mat(p.green),1));
+      if(a.class==='water')root.add(polygonSurface(a.polygon,Number(L.waterAreaY??-.095),mat(p.water,.5),1));
     }
 
-    const sidewalkMat=mat(p.sidewalk,.96,{polygonOffset:true,polygonOffsetFactor:1,polygonOffsetUnits:1});
-    const roadMat=mat(p.road,.95,{polygonOffset:true,polygonOffsetFactor:-2,polygonOffsetUnits:-2});
-    const footMat=mat(p.sidewalk,.94,{polygonOffset:true,polygonOffsetFactor:-1,polygonOffsetUnits:-1});
-
-    for(const r of city.features.roads){
-      if(r.sidewalk?.left||r.sidewalk?.right){
-        const sw=joinedStrip(r.centerline,r.widthM+4.2,metrics.zLevels.sidewalk,sidewalkMat);
-        if(sw){root.add(sw);metrics.sidewalkMeshes++;metrics.roadVertices+=sw.userData.vertexCount||0;}
-      }
-      const road=joinedStrip(r.centerline,r.widthM,metrics.zLevels.road,r.driveable?roadMat:footMat);
-      if(road){root.add(road);metrics.roadMeshes++;metrics.roadVertices+=road.userData.vertexCount||0;}
-    }
+    addStreetSurfaces(THREE,city,p,style);
 
     for(const w of city.features.waterLines){
-      const line=joinedStrip(w.line,3,metrics.zLevels.waterLine,mat(p.water,.5));
-      if(line)root.add(line);
+      const line=joinedStrip(THREE,w.line,3,metrics.zLevels.waterLine,mat(p.water,.5));
+      if(line){line.renderOrder=3;root.add(line);}
     }
 
     const windowBuckets=Array.from({length:Math.max(1,p.window.length)},()=>[]);
     for(const b of city.features.buildings)addBuilding(b,p,style,look,windowBuckets);
-    if(look==='cartoon')addWindowInstances(windowBuckets,p);
+    if(look!=='clean')addWindowInstances(windowBuckets,p);
 
-    frame(city.bounds,look==='cartoon'?'cartoon':'oblique');
+    if(requestedLabels){
+      streetSignController=createStreetSigns(THREE,city.features.roads,style.streetSigns||{},p.streetSign,style.seed||'kfb-city');
+      root.add(streetSignController.root);
+      metrics.streetSigns=streetSignController.candidates.length;
+    }
+
+    if(requestedNature){
+      status.textContent='Loading KayKit forest POC…';
+      natureController=await createNaturePoc(THREE,city,style.naturePoc||{},style.seed||'kfb-city');
+      root.add(natureController.root);
+      natureController.root.visible=true;
+      metrics.natureInstances=natureController.candidates.length;
+      metrics.natureAssets=[...natureController.loadedAssets];
+      if(natureController.errors.length)console.warn('[city nature POC] asset load errors',natureController.errors);
+    }
+
+    const startView=look==='grotesque'?'grotesque':look==='cartoon'?'cartoon':'oblique';
+    frame(city.bounds,startView);
     document.querySelectorAll('[data-camera]').forEach(button=>button.onclick=()=>frame(city.bounds,button.dataset.camera));
 
-    status.textContent=look==='cartoon'
-      ?'S1b cartoon massing · OSM footprint blocks + controlled skew'
-      :'S1b clean massing · direct OSM footprint extrusion';
-    diag.textContent=`${city.diagnostics.featureCounts.roads} roads · ${city.diagnostics.featureCounts.buildings} buildings · flat extrusion caps · ${metrics.windowInstances} window codes · ${city.bounds.sizeM.x.toFixed(0)} × ${city.bounds.sizeM.z.toFixed(0)} m local`;
+    status.textContent=look==='grotesque'
+      ?'S1c grotesque massing · wide-angle + cubist ring stagger'
+      :look==='cartoon'
+        ?'S1c cartoon massing · stronger controlled skew'
+        :'S1c clean massing · OSM anatomy baseline';
+
+    const features=[
+      requestedLabels?`${metrics.streetSigns} street signs`:null,
+      requestedNature?`${metrics.natureInstances} KayKit trees`:null
+    ].filter(Boolean).join(' · ');
+
+    diag.textContent=`${city.diagnostics.featureCounts.roads} roads · ${city.diagnostics.featureCounts.buildings} buildings · ${metrics.roadJunctionPatches} road junction patches · ${metrics.pathMeshes} paths below roads${features?' · '+features:''} · ${city.bounds.sizeM.x.toFixed(0)} × ${city.bounds.sizeM.z.toFixed(0)} m`;
 
     window.KFBCityLab=Object.freeze({
       report:()=>({
         cityId,look,
+        labels:requestedLabels,
+        nature:requestedNature,
         ...metrics,
         sourceCounts:{...city.diagnostics.featureCounts},
         bounds:city.bounds,
         separateRoofCaps:false,
-        s2GeometryDeformed:false
+        s2GeometryDeformed:false,
+        movementOwner:'none-viewer-only'
       })
     });
   }catch(err){
     brand.textContent=`KFB OSM CITY LAB · ${cityId.toUpperCase()}`;
-    status.textContent='SOURCE CACHE PENDING';
-    diag.textContent=`${err.message}. The GitHub source-cache workflow must complete before the real OSM blockout can render.`;
+    status.textContent='CITY VIEW FAILED';
+    diag.textContent=err.message;
     console.error(err);
   }
 }
 
 await load();
+
 (function loop(){
   requestAnimationFrame(loop);
   controls.update();
+  streetSignController?.update(camera);
   renderer.render(scene,camera);
 })();
