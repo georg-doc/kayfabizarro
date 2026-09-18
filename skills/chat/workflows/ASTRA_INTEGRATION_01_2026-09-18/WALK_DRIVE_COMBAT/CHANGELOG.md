@@ -46,3 +46,10 @@ Bestehende Einträge erhalten. Dieses Protokoll gehört nur zum abgegrenzten Wal
 **PUBLICATION:** kayfabizarro PR #63 publishes immutable `fr-s04-02` and moves the permanent navigator current pointer. Actual Cloudflare proof remains a separate gate and was running when this entry was written.
 
 **NEXT:** human FR-S04-02 handling review first; then defined stunt-ramp slice on the wide fixture. Receiver work stays Walk↔Drive handoff / park / safe exit / restore. No owner replacement and no Astra full-run promotion from source tests alone.
+
+
+## 2026-09-18 · FR-S04-02 actual public PASS
+
+**PUBLIC TESTED RESULT:** kayfabizarro run `35367513758`, attempt 2, job `105675602369`, artifact `10556454159` / SHA-256 `4b5a9ed3e8c4f950b49aeb136160e6e605cac5232c8d035a4c5090d6d69f27a9`: **62/62 checks PASS** on the actual immutable Cloudflare version. Exact delivered bytes plus the S04-01 regression gates were re-proved. Attempt 1 failed only because the new immutable path had not propagated before its wait expired; Pages later succeeded and unchanged QA passed on rerun.
+
+**STATUS:** FR-S04-02 = implemented + source-browser PASS + public-browser PASS + HUMAN FEEL REVIEW OPEN. FR-S04-01 remains preserved rejected history. S04-03 stunt-field work, Walk↔Drive receiver, save/park/exit, City/Combat/audio remain separate later work.

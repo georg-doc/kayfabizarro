@@ -2,18 +2,31 @@
 
 ## CURRENT · FR-S04-02 · 18.09.2026
 
-**IMPLEMENTED IN RACE · SOURCE-BROWSER PASS · PUBLICATION CANDIDATE · HUMAN FEEL REVIEW OPEN**
+**IMPLEMENTED · SOURCE BROWSER PASS · PUBLIC BROWSER PASS · HUMAN FEEL REVIEW OPEN**
 
-Permanent entry: https://kayfabizarro.pages.dev/kfb-hub/free-roam/
+- Permanent entry: https://kayfabizarro.pages.dev/kfb-hub/free-roam/
+- Current immutable version: https://kayfabizarro.pages.dev/kfb-hub/free-roam/versions/fr-s04-02/
+- Preserved rejected predecessor: https://kayfabizarro.pages.dev/kfb-hub/free-roam/versions/fr-s04-01/
 
-Immutable candidate path after deploy: https://kayfabizarro.pages.dev/kfb-hub/free-roam/versions/fr-s04-02/
+Race implementation: PR #6 / merge `63cb97d5e321700e55f7658104b42c9c09d97d70`. Tested source `a7a48a8c6e1589a18134aa619e2be22d79124c32`, source run `35365197941`, artifact `10555832979`: 9 drive-intent tests + **33 source-browser checks PASS**.
 
-Race implementation SSOT: georg-doc/KFB-Stunt-Car-Race. PR #6 merged at `63cb97d5e321700e55f7658104b42c9c09d97d70`. Tested source commit `a7a48a8c6e1589a18134aa619e2be22d79124c32`, Actions run `35365197941`, artifact `10555832979` SHA-256 `bc8eedb71e643cdde43a014501ade168c63a5c52aec7044d37bab7ee118c19b1`.
+Actual public delivery: kayfabizarro run `35367513758`, attempt 2, job `105675602369`, artifact `10556454159`, artifact SHA-256 `4b5a9ed3e8c4f950b49aeb136160e6e605cac5232c8d035a4c5090d6d69f27a9`: **62/62 checks PASS** on the real KFB Cloudflare host. The first attempt ended before WebGL because the immutable path had not propagated yet; Pages then completed successfully and the unchanged proof passed on rerun.
 
-Source test: 9 drive-intent tests and **33 browser/WebGL checks PASS**. Covered corrected A/D semantic and physical signs, actual chassis rotation, hysteretic reverse without neutral chatter, candidate reverse steering, no reverse boost, Ground-compatible Orbit drag convention, >10 speed boost, open radius-48 baked-Travel area with radius-56 recovery envelope and no circular fence, 180-tick continuous curve without stuck/outside recovery, Hop, pause/blur clearing, raw donor comparison and narrow viewport.
+Public coverage includes:
+- exact source identity + actual delivered bytes for all executable mirror files;
+- permanent navigator current pointer and all comparison links;
+- WebGL boot, 652 baked Travel contact triangles, 113 dry probes;
+- radius-48 playable / radius-56 recovery area with zero circular-fence colliders;
+- corrected A/D semantic and physical steering plus real chassis rotation;
+- reverse stays negative after engagement without neutral/reversal chatter;
+- candidate reverse steering assist, bounded reverse speed and no reverse boost;
+- Orbit drag-right uses the Ground-compatible yaw convention;
+- >10 forward boost, continuous 180-tick curve without stuck/outside recovery;
+- Hop, pause/blur input clearing, reset, raw Slice-04 comparison, local up budget, narrow viewport and return to the hub;
+- no script errors.
 
-FR-S04-01 remains immutable at `/versions/fr-s04-01/` but is now explicitly the **human-rejected predecessor** for steering/camera direction, reverse wobble and restrictive circular-boundary behavior. Its historical public-browser evidence is preserved.
+**Human acceptance remains PENDING.** Automated browser evidence does not decide whether steering weight, reverse feel, camera feel, speed, hills or jumps are enjoyable on Georg's machine.
 
-Public-host verification for FR-S04-02 runs separately through `.github/workflows/free-roam-public.yml`; do not convert source-browser PASS into public PASS until that run succeeds. Human feel acceptance remains separate in all cases.
+FR-S04-01 remains immutable historical evidence but is explicitly **human-rejected/superseded** for A/D/camera convention, reverse wobble, trap-prone behavior and circular boundary.
 
-Not implemented by FR-S04-02: Walk↔Drive handoff, parked vehicle/save restore, city traffic, Combat, audio transfer, driver rig or the next defined stunt-ramp slice. Existing BOX1/v0.8 and Travel/Ground owners remain unchanged.
+Not implemented by FR-S04-02: Walk↔Drive handoff, parked vehicle/save restore, city traffic, Combat, audio transfer, driver rig or the next defined stunt-ramp slice. Existing Travel and BOX1 owners remain unchanged.
