@@ -37,3 +37,16 @@ Canonical GitHub Asset
 ```
 
 Do not interpret the presence of a package directory as consumer or human acceptance.
+
+
+## KFB Game Dev Studio preview
+
+Permanent human-facing package lane:
+
+https://kayfabizarro.pages.dev/kfb-hub/free-roam/game-dev-studio/
+
+Catalog/recovery owner:
+
+`tools/game-dev-studio/`
+
+The site reads package/source state; it does not redefine game-ready acceptance.

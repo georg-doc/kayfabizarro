@@ -110,3 +110,18 @@ Browser CI keeps the earlier tested paths as regressions:
 - v1.4 Live Registry + owner-rig previews
 - v1.5 animation discovery + preview framing + permanent URL
 - v1.6 Town Workbench + on-character external KayKit motion playback
+
+
+## Downstream package consumer · KFB Game Dev Studio
+
+Permanent package/review lane:
+
+`https://kayfabizarro.pages.dev/kfb-hub/free-roam/game-dev-studio/`
+
+Source/recovery home:
+
+`tools/game-dev-studio/`
+
+Game Dev Studio may consume exact Registry/Librarian source identity and existing 3D preview mechanisms, but it does **not** turn this Librarian UI into the production-review shell. The Studio is package-first: current package → preview → derived/QA status → consumer handoff.
+
+This keeps the Librarian broad and source-oriented while allowing Georg's production workflow to avoid the filter/drawer-heavy navigation when reviewing a specific package.

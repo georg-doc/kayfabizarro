@@ -40,3 +40,22 @@ Current shared S1 consumers:
 The city entry pages are permanent navigators. They expose tested S0 evidence and city-specific recovery now; they will expose a Drive button only after the existing Travel/Free-Roam receiver has browser evidence on the exact exported city scene. Do not make the navigator a movement owner.
 
 `cities.json` is the publication/status catalog for this lane. It is separate from `releases.json`, which remains the version catalog for immutable Free-Drive runtime candidates.
+
+
+## KFB Game Dev Studio · permanent package lane
+
+**Fixed Cloudflare target:** https://kayfabizarro.pages.dev/kfb-hub/free-roam/game-dev-studio/
+
+Tool/recovery owner:
+
+`tools/game-dev-studio/`
+
+Game-ready package artifacts:
+
+`game-ready/`
+
+The Studio uses Asset Registry/Librarian source facts and pinned GitHub assets, but deliberately does not copy the Librarian's global search/filter/drawer UX. Its public page is package-first and reads `tools/game-dev-studio/catalog.json`.
+
+Current package: `pilot-01-lorekeeper-sedan`.
+
+Deployment/browser status remains separate from source implementation and Georg acceptance.
