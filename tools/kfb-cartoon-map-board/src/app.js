@@ -22,7 +22,7 @@ const KFB_INK_URL = 'https://cdn.jsdelivr.net/gh/georg-doc/kayfabizarro@main/ski
 const KAYKIT_REPO_PATH = '/media/3D_Assets/KayKit_BoardGameBits_1.0_FREE/Assets/gltf/';
 const KAYKIT_RAW_BASE = 'https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/KayKit_BoardGameBits_1.0_FREE/Assets/gltf/';
 const KAYKIT_BASE = location.hostname === 'kayfabizarro.pages.dev' ? KAYKIT_REPO_PATH : KAYKIT_RAW_BASE;
-const KFB_MAP_BUILD = 'p0.2-r5-marker-scale';
+const KFB_MAP_BUILD = 'p0.2-r6-closed-rings';
 
 const CORE_CODES = [
   'IS','IE','GB','PT','ES','FR','BE','NL','LU','DE','DK','NO','SE','FI','CH','AT','IT',
@@ -273,7 +273,7 @@ function withinEuropeCentroid(coords) {
   lon/=n; lat/=n;
   return lon>=EUROPE_BBOX.minLon && lon<=EUROPE_BBOX.maxLon && lat>=EUROPE_BBOX.minLat && lat<=EUROPE_BBOX.maxLat;
 }
-function sampleRing(coords,maxPoints=720) {
+function sampleRing(coords,maxPoints=480) {
   if (coords.length<=maxPoints) return coords;
   const step=Math.ceil(coords.length/maxPoints);
   const sampled=[];
@@ -283,35 +283,15 @@ function sampleRing(coords,maxPoints=720) {
   return sampled;
 }
 function ringToProjected(coords) {
+  // Closed geographic rings are sampled in source order. Treating them as an
+  // open RDP polyline can introduce a false closing chord across long countries.
   const sampled=sampleRing(coords);
-  const a = sampled.map(p=>project(p[0],p[1]));
-  if (a.length>1) {
-    const f=a[0], l=a[a.length-1];
-    if (Math.abs(f.x-l.x)<1e-8 && Math.abs(f.z-l.z)<1e-8) a.pop();
+  const a=sampled.map(p=>project(p[0],p[1]));
+  if(a.length>1){
+    const first=a[0],last=a[a.length-1];
+    if(Math.abs(first.x-last.x)<1e-8 && Math.abs(first.z-last.z)<1e-8) a.pop();
   }
-  return simplifyRDP(a, a.length>520 ? 0.085 : a.length>220 ? 0.055 : 0.035);
-}
-function pointSegDist(p,a,b) {
-  const dx=b.x-a.x, dz=b.z-a.z;
-  if (!dx && !dz) return Math.hypot(p.x-a.x,p.z-a.z);
-  let t=((p.x-a.x)*dx+(p.z-a.z)*dz)/(dx*dx+dz*dz);
-  t=Math.max(0,Math.min(1,t));
-  return Math.hypot(p.x-(a.x+t*dx),p.z-(a.z+t*dz));
-}
-function simplifyRDP(points,eps) {
-  if (points.length<6) return points;
-  let max=0, idx=0;
-  const a=points[0], b=points[points.length-1];
-  for (let i=1;i<points.length-1;i++) {
-    const d=pointSegDist(points[i],a,b);
-    if (d>max) { max=d; idx=i; }
-  }
-  if (max>eps) {
-    const left=simplifyRDP(points.slice(0,idx+1),eps);
-    const right=simplifyRDP(points.slice(idx),eps);
-    return left.slice(0,-1).concat(right);
-  }
-  return [a,b];
+  return a;
 }
 function polygonArea2D(points) {
   let a=0;
