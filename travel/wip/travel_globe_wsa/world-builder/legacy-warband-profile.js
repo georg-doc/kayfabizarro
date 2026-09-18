@@ -69,6 +69,7 @@ function retargetClip(THREE, clip, targetRoot) {
     else if (key === 'body' && parsed.propertyName === 'position') track = bodyPositionTrack(THREE, source, target, target.position.clone());
     if (track) { tracks.push(track); seen.add(token); }
   }
+  // makeEntry deliberately rejects tiny/accidental bindings; require a similarly meaningful set here.
   if (tracks.length < 3) return null;
   return new THREE.AnimationClip(clip.name, clip.duration, tracks, clip.blendMode);
 }
@@ -84,6 +85,8 @@ function proxyClip(THREE, clip, targetRoot) {
   for (let i = 0; i <= N; i++) {
     const t = i / N, phase = t * Math.PI * 2;
     times.push(t * duration);
+    // Legacy proxy jump is one clean arch. It deliberately avoids the previous donor's visible
+    // second platformer-like bounce while preserving the original clip duration/name.
     const bounce = jump ? Math.sin(Math.PI * t) * 0.08 : Math.abs(Math.sin(phase)) * (run ? 0.045 : walk ? 0.026 : 0.008);
     bodyValues.push(bodyRest.x, bodyRest.y + bounce, bodyRest.z);
     if (left) { q.setFromEuler(e.set(amp * Math.sin(phase), 0, 0)).premultiply(left.quaternion); leftValues.push(q.x, q.y, q.z, q.w); }
@@ -98,13 +101,14 @@ function proxyClip(THREE, clip, targetRoot) {
 }
 
 export async function buildLegacyWarbandMovementRuntime({
-  THREE, loader, raw, def, bodyHeight, worldLambert, normalizeHeight, makeEntry, autoMap,
+  THREE, loader, raw, def, bodyHeight, targetHeight = bodyHeight, scaleClass = null,
+  worldLambert, normalizeHeight, makeEntry, autoMap,
 }) {
   const warbandGltf = await loader.loadAsync(raw(def.body));
   const warband = warbandGltf.scene;
   warband.name = 'Legacy Orc A · visible Warband movement target';
   worldLambert(warband);
-  const measure = normalizeHeight(warband, bodyHeight);
+  const measure = normalizeHeight(warband, targetHeight);
 
   const legacy = await loader.loadAsync(raw(def.animation));
   const entries = [];
@@ -133,8 +137,9 @@ export async function buildLegacyWarbandMovementRuntime({
     measure,
     fallback: proxied > 0,
     legacyVisibleOrc: true,
-    speedMul: 1,
-    locomotionHeight: bodyHeight,
+    scaleClass,
+    speedMul: targetHeight / bodyHeight,
+    locomotionHeight: targetHeight,
     status: `VISIBLE Orc A · ${retargeted} semantic donor clips · ${proxied} timing-proxy clips · yellow Legacy test figure disabled`,
     donorReport: {
       donor: 'KayKit Legacy Character Animations 1.2',
@@ -143,6 +148,8 @@ export async function buildLegacyWarbandMovementRuntime({
       retargeted,
       proxied,
       visibleFallback: 'never yellow donor; Orc remains visible',
+      scaleClass: scaleClass?.id || def.scaleClass || null,
+      targetHeight,
     },
   };
 }

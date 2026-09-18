@@ -118,8 +118,8 @@ async function main() {
   const largePolicy = {
     targetWalkCadence: 0.95,
     targetRunCadence: 1.05,
-    minWalkSpeed: bodyHeight * 0.42,
-    maxWalkSpeed: bodyHeight * 0.90,
+    minWalkBodyLengthsPerSecond: 0.85,
+    maxWalkBodyLengthsPerSecond: 1.35,
     minRunMul: 1.35,
     maxRunMul: 2.15,
     tuneEveryMs: 180,
@@ -147,19 +147,12 @@ async function main() {
     profileSpeed = wb0.ground.params.speed;
     profileRunMul = wb0.ground.params.runMul;
 
-    if (profile === 'monstrosity') {
-      // Safe heavy starting point. Runtime cadence measurement then refines it; no clip is swapped.
-      wb0.ground.params.speed = bodyHeight * 0.65;
-      wb0.ground.params.runMul = 1.90;
-      profileSpeed = wb0.ground.params.speed;
-      profileRunMul = wb0.ground.params.runMul;
-    } else {
-      // Movement Lab already set profile-specific speed (including Mech size multiplier). Only restore
-      // the shared run multiplier that Monstrosity may have tuned.
-      wb0.ground.params.runMul = defaultRunMul;
-      profileSpeed = wb0.ground.params.speed;
-      profileRunMul = wb0.ground.params.runMul;
-    }
+    // Movement Lab now owns the scale-class baseline: one body-length means the active rig's
+    // locomotionHeight, not always Rig_Medium's 0.022. Hardening may trim cadence around that
+    // baseline but must never collapse Large/Legacy back to Medium speed.
+    wb0.ground.params.runMul = defaultRunMul;
+    profileSpeed = wb0.ground.params.speed;
+    profileRunMul = wb0.ground.params.runMul;
   }
 
   function tuneLarge(report, state, now) {
@@ -177,9 +170,13 @@ async function main() {
         Math.min(largePolicy.maxRunMul, wb0.ground.params.runMul * ratio));
       profileRunMul = wb0.ground.params.runMul;
     } else {
-      wb0.ground.params.speed = Math.max(largePolicy.minWalkSpeed,
-        Math.min(largePolicy.maxWalkSpeed, wb0.ground.params.speed * ratio));
+      const locomotionHeight = Number(report.locomotionHeight) || bodyHeight;
+      const minWalkSpeed = locomotionHeight * largePolicy.minWalkBodyLengthsPerSecond;
+      const maxWalkSpeed = locomotionHeight * largePolicy.maxWalkBodyLengthsPerSecond;
+      wb0.ground.params.speed = Math.max(minWalkSpeed,
+        Math.min(maxWalkSpeed, wb0.ground.params.speed * ratio));
       profileSpeed = wb0.ground.params.speed;
+      telemetry.largeLocomotionHeight = locomotionHeight;
     }
 
     telemetry.largeCadenceObserved = cadence;

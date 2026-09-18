@@ -16,30 +16,45 @@ const FOOT_EXCLUDE = /target|pole|ik/i;
 
 const PROFILES = Object.freeze({
   actionFigure: {
-    id: 'actionFigure', label: 'ActionFigure · Medium', rig: 'Rig_Medium',
+    id: 'actionFigure', label: 'ActionFigure · Medium', rig: 'Rig_Medium', scaleClass: 'rig-medium',
     body: 'media/3D_Assets/KayKit_Mystery_Series6/6 - December 2023 - Action Figure/character/gltf/ActionFigure.glb',
     animationSets: ['General', 'MovementBasic', 'MovementAdvanced'],
   },
   monstrosity: {
-    id: 'monstrosity', label: 'Monstrosity · Large', rig: 'Rig_Large',
+    id: 'monstrosity', label: 'Monstrosity · Large', rig: 'Rig_Large', scaleClass: 'rig-large',
     body: 'media/3D_Assets/KayKit_Mystery_Series6/4 - October 2025 - Monstrosity/Monstrosity.glb',
     animationSets: ['General', 'MovementBasic', 'MovementAdvanced'],
   },
   legacyWarband: {
-    id: 'legacyWarband', label: 'Legacy · Orc Warband', rig: 'Legacy_1.2', kind: 'legacyWarband',
+    id: 'legacyWarband', label: 'Legacy · Orc Warband', rig: 'Legacy_1.2', kind: 'legacyWarband', scaleClass: 'legacy-1.2',
     body: 'media/3D_Assets/KayKit Legacy/Orc Warband - legacy/characters/gltf/character_orcA.gltf',
     animation: 'media/3D_Assets/KayKit Legacy/KayKit Character Animations 1.2 - legacy/Animations/gltf/KayKit_AnimatedCharacter_v1.2.glb',
   },
   frizzleBeeMech: {
-    id: 'frizzleBeeMech', label: 'FrizzleBob · Bee Mech', rig: 'Quaternius_Bee_Mech_F1S5', kind: 'mechComposite',
+    id: 'frizzleBeeMech', label: 'FrizzleBob · Bee Mech', rig: 'Quaternius_Bee_Mech_F1S5', kind: 'mechComposite', scaleClass: 'kfb-mech-composite',
     donor: 'KFB-Stunt-Car-Race · Frankenstein F1-S5 · frizzle_mech_bee',
   },
   flamingoMech: {
-    id: 'flamingoMech', label: 'Fernando · Raw Mech', rig: 'Quaternius_Flamingo_Raw', kind: 'rawMech',
+    id: 'flamingoMech', label: 'Fernando · Raw Mech', rig: 'Quaternius_Flamingo_Raw', kind: 'rawMech', scaleClass: 'quaternius-mech',
     body: RAW_FLAMINGO_PATH,
     donor: 'Quaternius Space Kit · raw control model',
   },
 });
+
+// Source-bounds audit 18.09.2026 at CHARACTER_PIN. These are class proportions, not arbitrary
+// per-character beauty tuning. Medium is the one-body-height reference used by Ground.
+export const GROUND_SCALE_CLASSES = Object.freeze({
+  'rig-medium': { targetHeightMul: 1.0, nativeHeight: 2.3222826966, reference: 'ActionFigure · Rig_Medium' },
+  'rig-large': { targetHeightMul: 1.7716565125, nativeHeight: 4.1142872632, reference: 'Monstrosity · Rig_Large / Medium native-height ratio' },
+  'legacy-1.2': { targetHeightMul: 0.7571559361, nativeHeight: 1.7583301291, reference: 'Orc Warband · Legacy 1.2 / Medium native-height ratio' },
+  'kfb-mech-composite': { targetHeightMul: 3.6, nativeHeight: null, reference: 'existing F1-S5 Bee Mech donor target' },
+  'quaternius-mech': { targetHeightMul: 3.6, nativeHeight: 3.5512618212, reference: 'existing raw Mech Ground target' },
+});
+function scaleSpec(def, bodyHeight) {
+  const spec = GROUND_SCALE_CLASSES[def.scaleClass];
+  if (!spec) throw new Error(`${def.label}: unknown Ground scale class ${def.scaleClass}`);
+  return { ...spec, id: def.scaleClass, targetHeight: bodyHeight * spec.targetHeightMul };
+}
 
 function raw(path) { return RAW_ROOT + path.split('/').map((p) => encodeURIComponent(p)).join('/'); }
 
@@ -251,7 +266,7 @@ async function main() {
   async function loadModern(def) {
     const bodyGltf = await loader.loadAsync(raw(def.body)), body = bodyGltf.scene;
     body.name = `${def.label} · body`; worldLambert(body);
-    const measure = normalizeHeight(body, bodyHeight), entries = [];
+    const scaleClass = scaleSpec(def, bodyHeight), measure = normalizeHeight(body, scaleClass.targetHeight), entries = [];
     for (const set of def.animationSets) {
       const path = `media/3D_Assets/KayKit_Character_Animations_1.1/Animations/gltf/${def.rig}/${def.rig}_${set}.glb`;
       const source = await loader.loadAsync(raw(path));
@@ -262,12 +277,15 @@ async function main() {
       if (entry && !entries.some((e) => e.key === entry.key)) entries.push(entry);
     }
     if (!entries.length) throw new Error(`${def.label}: no compatible animation tracks found`);
-    return { def, model: body, actionRoot: body, mixer: new THREE.AnimationMixer(body), entries, auto: autoMap(entries), measure, fallback: false, speedMul: 1, locomotionHeight: bodyHeight, status: `${entries.length} compatible clips · ${def.rig} · source pin ${CHARACTER_PIN.slice(0, 8)}` };
+    const speedMul = scaleClass.targetHeight / bodyHeight;
+    return { def, model: body, actionRoot: body, mixer: new THREE.AnimationMixer(body), entries, auto: autoMap(entries), measure, fallback: false, scaleClass, speedMul, locomotionHeight: scaleClass.targetHeight, status: `${entries.length} compatible clips · ${def.rig} · ${scaleClass.id} · ${scaleClass.targetHeightMul.toFixed(2)}× height/speed · source pin ${CHARACTER_PIN.slice(0, 8)}` };
   }
 
   async function loadLegacy(def) {
+    const scaleClass = scaleSpec(def, bodyHeight);
     return buildLegacyWarbandMovementRuntime({
-      THREE, loader, raw, def, bodyHeight, worldLambert, normalizeHeight, makeEntry, autoMap,
+      THREE, loader, raw, def, bodyHeight, targetHeight: scaleClass.targetHeight, scaleClass,
+      worldLambert, normalizeHeight, makeEntry, autoMap,
     });
   }
 
@@ -279,7 +297,8 @@ async function main() {
     const map = autoMap(entries);
     if (!map.idle || !map.walk || !map.run || !map.jump) throw new Error(`FrizzleBob Bee Mech missing locomotion clips: ${['idle','walk','run','jump'].filter((k) => !map[k]).join(', ')}`);
     const geometricSpeedMul = donor.targetHeight / bodyHeight;
-    return { def, model: donor.model, actionRoot: donor.animationRoot, mixer: new THREE.AnimationMixer(donor.animationRoot), entries, auto: map, measure: { targetHeight: donor.targetHeight, worldHeight: donor.targetHeight, worldScale: donor.animationScale }, fallback: false, speedMul: Math.max(donor.speedMul, geometricSpeedMul), locomotionHeight: donor.targetHeight, donorReport: donor.report, status: `F1-S5 donor · ${entries.length} embedded Bee clips · move ${Math.max(donor.speedMul, geometricSpeedMul).toFixed(2)}× · composition still browser-rejected` };
+    const scaleClass = scaleSpec(def, bodyHeight);
+    return { def, model: donor.model, actionRoot: donor.animationRoot, mixer: new THREE.AnimationMixer(donor.animationRoot), entries, auto: map, measure: { targetHeight: donor.targetHeight, worldHeight: donor.targetHeight, worldScale: donor.animationScale }, fallback: false, scaleClass, speedMul: Math.max(donor.speedMul, geometricSpeedMul), locomotionHeight: donor.targetHeight, donorReport: donor.report, status: `F1-S5 donor · ${entries.length} embedded Bee clips · ${scaleClass.id} · move ${Math.max(donor.speedMul, geometricSpeedMul).toFixed(2)}× · composition still browser-rejected` };
   }
 
   async function loadRawMech(def) {
@@ -311,6 +330,8 @@ async function main() {
   }
   function playEntry(entry, { oneShot = false, force = false } = {}) {
     if (!active || !entry) return;
+    // A clamped one-shot is not a live locomotion action. Allow the same clip to restart if it has
+    // actually finished instead of letting Ground continue to translate a frozen pose.
     if (!force && currentKey === entry.key && currentAction && currentAction.isRunning()) return;
     const previous = currentAction, action = active.mixer.clipAction(entry.clip, active.actionRoot || active.model);
     action.enabled = true; action.reset(); action.setEffectiveTimeScale(1); action.clampWhenFinished = !!oneShot;
@@ -334,6 +355,8 @@ async function main() {
     if (!entry || !auto) return 1;
     if (!state.onGround) {
       const p = wb0.ground.params, airTime = p.gravity > 1e-8 ? (2 * p.jumpSpeed / p.gravity) : entry.clip.duration;
+      // Full-jump clips must last the actual ballistic air time. The previous 0.6 lower clamp could
+      // finish a short Mech Jump early and leave a frozen pose gliding through the rest of the arc.
       return THREE.MathUtils.clamp(entry.clip.duration / Math.max(0.1, airTime), 0.20, 3.0);
     }
     if (!state.moving) return 1;
@@ -371,6 +394,8 @@ async function main() {
           const land = active.auto.jumpLand;
           if (land) {
             jumpPhase = 'LAND';
+            // When movement input is already held, a long landing clip reads as gliding over the
+            // terrain. Keep only a short landing beat before walk/run takes over again.
             const landWindow = state.moving
               ? Math.min(0.16, Math.max(0.08, land.clip.duration * 0.30))
               : Math.min(0.42, Math.max(0.12, land.clip.duration));
@@ -425,7 +450,11 @@ async function main() {
       return active ? {
         profile: active.def.id, rig: active.def.rig, clips: active.entries.length, fallback: active.fallback,
         legacyVisibleOrc: !!active.legacyVisibleOrc,
-        cadenceScale, speedMul: active.speedMul || 1, jumpPhase, donorReport: active.donorReport || null,
+        cadenceScale, speedMul: active.speedMul || 1, locomotionHeight: active.locomotionHeight || bodyHeight,
+        scaleClass: active.scaleClass?.id || active.def.scaleClass || null,
+        targetHeight: active.measure?.targetHeight || active.locomotionHeight || bodyHeight,
+        measuredHeight: active.measure?.worldHeight || null,
+        jumpPhase, donorReport: active.donorReport || null,
         auto: Object.fromEntries(Object.entries(active.auto).map(([k, v]) => [k, v && v.name])),
         rootTravelWorld: Object.fromEntries(Object.entries(active.auto).map(([k, v]) => [k, v && v.rootTravelWorld || 0])),
         footCycleWorld: Object.fromEntries(Object.entries(active.auto).map(([k, v]) => [k, v && v.footCycleWorld || 0])),
