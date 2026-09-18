@@ -27,3 +27,16 @@
 - Exact SFX source refs.
 - Slice-04-derived DRIVE receiver consumer test.
 - Human acceptance.
+
+
+## 2026-09-18 · P01-B · current Free Roam receiver pin
+
+### SOURCE / RECEIVER REVIEW
+- Current Free Roam donor is now concretely `fr-s04-02`.
+- Race tested source: `a7a48a8c6e1589a18134aa619e2be22d79124c32`.
+- Race merge: `63cb97d5e321700e55f7658104b42c9c09d97d70`.
+- Actual KFB Cloudflare evidence: run `35367513758`, **62/62 PASS**.
+- Human feel review remains open.
+
+### IMPORTANT LIMIT
+FR-S04-02 uses the original kart. Its PASS proves the donor receiver/control/contact path, not the Pilot-01 Sedan package. Sedan consumer acceptance remains NOT RUN until the exact `car_sedan.gltf` + wheel bindings + validated chassis proxy are mounted and rerun.
