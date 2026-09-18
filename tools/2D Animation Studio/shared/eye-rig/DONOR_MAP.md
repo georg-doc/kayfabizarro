@@ -50,3 +50,16 @@ Required next source-resolution lane:
 5. let 2D and 3D adapters differ only in renderer/asset representation where possible.
 
 This turns the richer DocCheck set into an **Eye/Face Modifier Atlas**, not a one-off Eumel fork.
+
+
+## Dropbox v18 cross-check
+
+Read-only source evidence from:
+
+`/CLAUDE/KFB ToolBox Studio Rig Anim/KFB FrankenStein Studio v18/WSA_2026-09-16_SESSION/`
+
+shows the v18 session carries `pet-eye-rig.v6.js` in `src/petstudio-v9/studio-v12/`.
+
+Its text matches the current GitHub ToolBox EyeRig-v6 donor after normalizing line endings and trailing whitespace.
+
+The same Dropbox session also contains `KFB Animation Lab v3.dc.html`, but this is **not** automatically promoted over the GitHub routing/status. Keep v18/v3 as donor evidence until a dedicated source-promotion pass pins them.
