@@ -41,3 +41,16 @@ For eye/face or cross-render work read:
 - `tools/KFB-ToolBox/docs/2D_ANIMATION_STUDIO_BRIDGE.md`
 
 Do not fork ToolBox EyeRig semantics or migrate 3D actor ownership into this Studio.
+
+
+## Cross-render proof / modifier atlas
+
+Current Phase A proof:
+
+`proofs/cross-render-eye-v1/`
+
+Current modifier inventory scaffold:
+
+`shared/eye-rig/modifier-atlas/`
+
+Static proof sanity is PASS; browser QA remains pending. The modifier atlas must remain source-first and must not invent unresolved DocCheck layer names/assets.
