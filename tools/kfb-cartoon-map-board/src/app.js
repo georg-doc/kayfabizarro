@@ -22,7 +22,7 @@ const KFB_INK_URL = 'https://cdn.jsdelivr.net/gh/georg-doc/kayfabizarro@main/ski
 const KAYKIT_REPO_PATH = '/media/3D_Assets/KayKit_BoardGameBits_1.0_FREE/Assets/gltf/';
 const KAYKIT_RAW_BASE = 'https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/KayKit_BoardGameBits_1.0_FREE/Assets/gltf/';
 const KAYKIT_BASE = location.hostname === 'kayfabizarro.pages.dev' ? KAYKIT_REPO_PATH : KAYKIT_RAW_BASE;
-const KFB_MAP_BUILD = 'p0.2-r6-closed-rings';
+const KFB_MAP_BUILD = 'p0.2-r7-solid-country-tiles';
 
 const CORE_CODES = [
   'IS','IE','GB','PT','ES','FR','BE','NL','LU','DE','DK','NO','SE','FI','CH','AT','IT',
@@ -385,12 +385,10 @@ function addCountryFromGeoJSON(code, name, geojson) {
       if (outer.length<3) continue;
       const area=Math.abs(polygonArea2D(outer));
       if(area<0.004) continue;
-      const holes=(poly.slice(1)||[])
-        .filter(r=>r?.length>3)
-        .map(ringToProjected)
-        .filter(r=>r.length>=3 && Math.abs(polygonArea2D(r))>0.025)
-        .sort((a,b)=>Math.abs(polygonArea2D(b))-Math.abs(polygonArea2D(a)))
-        .slice(0,6);
+      // A board-game country is a solid physical tile. OSM interior rings
+      // (lakes/enclaves/complex relation holes) belong to a later water/detail
+      // presentation layer instead of cutting or inking the coarse Europe piece.
+      const holes=[];
       candidates.push({outer,holes,area});
     }
   }
