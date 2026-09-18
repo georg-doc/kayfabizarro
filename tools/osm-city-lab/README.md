@@ -1,46 +1,71 @@
 # KFB OSM City Lab
 
-Status: **S0 TESTED RESULT · S1 VIEWER IMPLEMENTED · S2 EXPORT CONTRACT IMPLEMENTED**  
-Pilot: **Köln-Ehrenfeld v0**
+Status: **MULTI-SLICE S0 TESTED · SHARED S1 VIEWER IMPLEMENTED · SHARED S2 EXPORT CONTRACT IMPLEMENTED**
 
 Browser entry: `tools/osm-city-lab/index.html`
 
-## Fixed v0 area
+Current datasets:
+
+- `ehrenfeld-v0` — dense urban pilot
+- `huerth-v0` — suburban / road↔terrain pilot
+
+Viewer selection:
+
+```text
+index.html?city=ehrenfeld-v0
+index.html?city=huerth-v0
+```
+
+## Current tested S0 results
+
+### Köln-Ehrenfeld v0
+
+BBox:
 
 `50.94675, 6.91280 → 50.95210, 6.92220`
 
-Approx. **596 m north–south × 659 m east–west**, centred at `50.949425, 6.917500`, around Venloer Straße / Ehrenfeldgürtel / Heliosstraße.
-
-The source is a cached, read-only Overpass vector query. The browser never queries Overpass and no OSM raster tile is used as geometry.
-
-## Current tested S0 result
-
-The committed cache and deterministic rebuild are green in GitHub CI.
+Origin: `50.949425, 6.917500`
 
 - source elements: **11,874**
-- normalized roads: **372**
+- roads: **372**
 - buildings: **1,808**
-- landuse polygons: **22**
+- landuse: **22**
 - normalized bounds: **659.24 × 595.56 m**
-- OSM IDs preserved: **PASS**
-- deterministic reload: **PASS**
-- geometry clipped to the fixed bbox: **PASS**
-- missing referenced nodes: **0**
-- unsupported relations in this snapshot: **0**
+- deterministic reload / ID preservation / bbox clipping: **PASS**
 
-S1 has code and a browser viewer, but no Georg visual acceptance is claimed. S2 has a concrete consumer export/owner contract, but the Walk/Drive receiver loop has not yet been run on this OSM scene.
+### Hürth v0
 
-## Pipeline
+BBox:
+
+`50.862756, 6.872018 → 50.869044, 6.881982`
+
+Origin: `50.865900, 6.877000`
+
+- source elements: **5,640**
+- roads: **164** / driveable road parts **116**
+- buildings: **700**
+- landuse: **22**
+- green polygons: **10**
+- water lines: **2**
+- normalized bounds: **700.05 × 699.976 m**
+- longest source-derived drive corridor candidate: **Am Heideberg · 478.64 m**
+- suburban/intersection/corridor/road-green-edge fixture signals: **PASS**
+- deterministic reload / ID preservation / bbox clipping: **PASS**
+
+The browser never queries Overpass and no OSM raster tile is used as geometry.
+
+## Shared pipeline
 
 ```text
-SOURCE_SPEC + query.overpassql
-→ one CI Overpass refresh
-→ source.overpass.json + PROVENANCE.json
-→ deterministic local ENU/metre normalization + bbox clipping
-→ normalized.json
-→ procedural KFB low-poly viewer
-→ scenes/ehrenfeld-v0.json consumer handoff
+per-city SOURCE_SPEC + query.overpassql
+→ cached Overpass vector response
+→ shared deterministic WGS84→local-metre normalization + bbox clipping
+→ per-city normalized.json
+→ shared procedural KFB low-poly viewer
+→ per-city consumer scene recipe
 ```
+
+Shared scripts accept a city ID; Hürth does not fork the Ehrenfeld architecture.
 
 OSM IDs and source tags survive normalization. Missing widths/heights use explicit deterministic fallback rules; roof/style choices are stable by OSM identity.
 
@@ -54,8 +79,18 @@ City Lab owns geodata normalization, city geometry, styling and export only.
 - Registry/Librarian owns GitHub asset identity/provenance.
 - `img2threejs` and `2D Animation Studio` remain optional later donors.
 
+## Acceptance state
+
+**S0 TESTED RESULT:** Ehrenfeld + Hürth source/cache/normalization gates are green.
+
+**S1 IMPLEMENTATION:** shared low-poly viewer exists. Georg visual acceptance is still pending.
+
+**S2 IMPLEMENTATION:** consumer exports exist. The actual Walk/Drive receiver loops have not yet been run on these OSM scenes.
+
+**PUBLIC DEPLOYMENT:** not claimed.
+
 ## Source / licence
 
-Map data © OpenStreetMap contributors, ODbL 1.0. Exact bbox, query, endpoint, OSM base timestamp and SHA-256 live in `data/ehrenfeld-v0/PROVENANCE.json`.
+Map data © OpenStreetMap contributors, ODbL 1.0. Exact bbox, query, endpoint, OSM base timestamp and SHA-256 live in each dataset’s `PROVENANCE.json`.
 
-See `START_HERE.md`, `docs/`, and `evidence/ehrenfeld-v0-s0-report.json`.
+See `START_HERE.md`, `docs/`, and `evidence/`.
