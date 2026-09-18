@@ -30,3 +30,16 @@ Public coverage includes:
 FR-S04-01 remains immutable historical evidence but is explicitly **human-rejected/superseded** for A/D/camera convention, reverse wobble, trap-prone behavior and circular boundary.
 
 Not implemented by FR-S04-02: Walk↔Drive handoff, parked vehicle/save restore, city traffic, Combat, audio transfer, driver rig or the next defined stunt-ramp slice. Existing Travel and BOX1 owners remain unchanged.
+
+
+## KFB Game Dev Studio
+
+Permanent target:
+
+`https://kayfabizarro.pages.dev/kfb-hub/free-roam/game-dev-studio/`
+
+Source/recovery:
+
+`tools/game-dev-studio/`
+
+Current source state: package-first preview lane implemented for Pilot 01 (Lorekeeper + Sedan). Public browser verification of this new page is **PENDING** and must not be inferred from the GitHub files existing. Package preview is not runtime consumer acceptance.
