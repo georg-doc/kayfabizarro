@@ -76,9 +76,20 @@ The Sedan preview may additionally show the persisted proposed chassis AABB and 
 - Travel → world / mode / persistence;
 - Game Dev Studio → package metadata, explicit derived assets when actually produced, preview/recovery surface.
 
+### Sedan receiver adapter
+
+Current receiver donor is pinned to `fr-s04-02` (62/62 public donor checks PASS). The package now has an explicit source-derived adapter contract:
+
+- `game-ready/pilot-01-lorekeeper-sedan/vehicle/car-sedan/FR_S04_02_RECEIVER_ADAPTER.json`
+- `game-ready/pilot-01-lorekeeper-sedan/vehicle/car-sedan/FR_S04_02_RECEIVER_HANDOFF.md`
+
+Important: FR-S04-02 still uses the original kart. The adapter is implementation-ready metadata, not a Sedan consumer PASS.
+
+The first receiver probe can use the numeric AABB proxy directly with Rapier; the missing binary chassis GLB remains a separate Studio producer-capability gate.
+
 ## NEXT
 
-1. verify fixed Cloudflare page after deployment;
+1. keep the verified Cloudflare preview proof green after catalog/UI changes;
 2. produce + inspect + validate `car-sedan-chassis-proxy.glb` when the Game Development Studio CLI is available;
 3. execute Lorekeeper consumer gate;
 4. execute Sedan Slice-04-derived DRIVE gate;
