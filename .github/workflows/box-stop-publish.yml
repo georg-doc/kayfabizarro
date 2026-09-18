@@ -62,8 +62,6 @@ jobs:
           for p,sha in protected.items():assert git('rev-parse',tree+':'+p)==sha,'Protected assets/source changed'
           subprocess.run(['git','diff','--cached','--check'],check=True)
           subprocess.run(['git','config','user.name','github-actions[bot]'],check=True);subprocess.run(['git','config','user.email','41898282+github-actions[bot]@users.noreply.github.com'],check=True)
-          if git('diff','--cached','--quiet',check=False) != '':
-              pass
           changed=subprocess.run(['git','diff','--cached','--quiet']).returncode!=0
           if changed:
               subprocess.run(['git','commit','-m','deploy(race): mirror tested Box Stop from '+request['sourceCommit']+'; preserve all other apps'],check=True)
