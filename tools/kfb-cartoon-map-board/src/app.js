@@ -573,6 +573,7 @@ function queueCamera(position,target) {
 
 function focusCountry(rec) {
   if (!rec) return;
+  document.querySelectorAll('[data-camera]').forEach(b=>b.classList.remove('active'));
   const x=rec.centroid.x+(rec.targetX||0);
   const z=rec.centroid.z+(rec.targetZ||0);
   const reach=THREE.MathUtils.clamp(Math.sqrt(Math.max(1,rec.totalArea))*2.0,26,62);
@@ -629,6 +630,7 @@ async function addKayKitMarkers() {
       const holder=new THREE.Group();
       const p=project(spec.lon,spec.lat);
       holder.position.set(p.x,PIECE_DEPTH+0.12,p.z);
+      holder.scale.y=1/heightScale;
       holder.add(obj);
 
       const el=document.createElement('div');
@@ -653,6 +655,7 @@ function activateStory(index) {
   if (!markerRecords.length) return;
   storyCursor=((index%markerRecords.length)+markerRecords.length)%markerRecords.length;
   clearStoryActive();
+  document.querySelectorAll('[data-camera]').forEach(b=>b.classList.remove('active'));
   const mark=markerRecords[storyCursor];
   mark.labelEl?.classList.add('active');
   selectCountry(mark.country,{fromStory:true});
@@ -825,6 +828,7 @@ async function boot() {
     loadingTitle.textContent='Placing KayKit story tokens…';
     loadingText.textContent='Loading actual Board Game Bits from the KFB GitHub asset repository.';
     await addKayKitMarkers();
+    storyBtn.disabled=!markerRecords.length;
     updateDiag('P0.2 story focus ready');
     loading.classList.add('hidden');
     setTimeout(()=>loading.style.display='none',450);
