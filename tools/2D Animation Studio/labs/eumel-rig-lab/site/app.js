@@ -96,7 +96,7 @@ function motion(name,t,I){
  if(name==='idle'){
   const b=Math.sin(t*1.15),breath=Math.sin(t*1.15+.5);
   P.root={y:b*1.5*I,x:px*.7,r:Math.sin(t*.55)*.7*I,sx:1-breath*.006*I,sy:1+breath*.012*I};
-  P.head={r:Math.sin(t*.75+.35)*1.9*I+x(px)*0,y:py*.35};
+  P.head={r:Math.sin(t*.75+.35)*1.9*I+px*1.2,y:py*.35};
   P.legA={r:b*1.2*I};P.legB={r:-b*.9*I};
   P.steth={r:Math.sin(t*.9+1)*1.2*I};P.chest={r:Math.sin(t*1.05+1.4)*4*I};
   P.pupilA={x:Math.sin(t*.45)*1.2*I+px*.7,y:Math.cos(t*.38)*.7*I+py*.5};P.pupilB={...P.pupilA,x:P.pupilA.x*.9};
@@ -133,7 +133,6 @@ function motion(name,t,I){
  }
  return P;
 }
-function x(v){return v}
 let t0=performance.now();
 function frame(now){
  const t=(now-t0)/1000*state.speed;if(state.play){const P=motion(state.preset,t,state.intensity);state.pose=P;for(const [k,v] of Object.entries(P))tr(nodes[k],v)}
