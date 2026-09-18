@@ -895,3 +895,28 @@ Not in this Claude slice:
 - full Project Island canon implementation.
 
 This POC should produce **modular movement/animation/camera/platforming evidence** that later feeds the real KFB integration.
+
+
+---
+
+## 24 · Optional later donor · Living Plant scenic actors
+
+The prepared Plant Prop Lab may later supply scenic modules to Project Island:
+
+`skills/chat/workflows/PLANT_PROP_LAB_2026-09-18/START_HERE.md`
+
+Possible uses:
+- giant potted botanical landmarks;
+- alien Quaternius plant compositions;
+- ambient swaying plant props;
+- EyeRig-based “aware” plants that blink/look at the player;
+- plant clusters marking project portals or jump destinations.
+
+This is **not required for the current Platformer POC export**.
+
+If later consumed:
+- use exact GitHub PlantRecipe/package refs;
+- do not fork EyeRig;
+- plant animation remains presentation over Platformer/world state;
+- do not turn every scenic plant into a gameplay character;
+- platform support/collision remains owned by the Platformer/consumer world.
