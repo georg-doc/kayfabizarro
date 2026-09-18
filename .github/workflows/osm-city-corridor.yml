@@ -29,6 +29,8 @@ jobs:
           fetch-depth: 0
           sparse-checkout: |
             tools/osm-city-lab/data/corridors
+            tools/osm-city-lab/data/ehrenfeld-v0/source.overpass.json
+            tools/osm-city-lab/data/huerth-v0/source.overpass.json
             tools/osm-city-lab/scripts/fetch-ehrenfeld-huerth-corridor.mjs
             tools/osm-city-lab/scripts/route-ehrenfeld-huerth.mjs
       - uses: actions/setup-node@v4
