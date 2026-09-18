@@ -258,3 +258,25 @@ Pilot 01 remains:
 5. consumer test before batch expansion.
 
 Camera/transition/journey/package-tree work starts only as a later backlog proof after Pilot 01 is structurally useful.
+
+
+## 12 · Current Pilot 01 implementation
+
+The first concrete package now lives at:
+
+[**game-ready/pilot-01-lorekeeper-sedan/**](../../../../game-ready/pilot-01-lorekeeper-sedan/README.md)
+
+Implementation commit:
+
+`d7fd4c8ed062cfbc304f9c70fc1c3be30f26c6bf`
+
+Current status:
+
+- SOURCE REVIEW — PASS;
+- PACKAGE METADATA — IMPLEMENTED;
+- STATIC / STRUCTURAL QA — PARTIAL PASS;
+- BINARY CHASSIS PROXY — BLOCKED in the current webchat environment because the local Game Development Studio `game-dev` CLI is not exposed;
+- CONSUMER TEST — NOT RUN;
+- HUMAN ACCEPTANCE — PENDING.
+
+The persisted `COLLIDER_PROXY_SPEC.json` derives the wheel-free chassis candidate from the source `car_sedan` body accessor and keeps binary generation/validation as an explicit later producer gate.
