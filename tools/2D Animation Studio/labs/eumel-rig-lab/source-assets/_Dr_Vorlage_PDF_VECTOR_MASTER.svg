@@ -127,9 +127,9 @@
 </g></g>
 </defs>
 <g transform="translate(0 200.701) scale(1 -1)" clip-path="url(#pageClip)">
-  <use href="#base" transform="matrix(1 0 0 -1 65.8992538 100.3503799)"/>
-  <use href="#eyes" transform="matrix(0.9612617 -0.2756375 -0.2756375 -0.9612617 55.6416054 164.7832031)"/>
-  <use href="#pupils" transform="matrix(0.9612617 -0.2756375 -0.2756375 -0.9612617 55.6416054 164.7832031)"/>
-  <use href="#faceForeground" transform="matrix(0.9272031 -0.3745238 -0.3745238 -0.9272031 50.2205124 160.031311)"/>
+  <use id="layer-base" href="#base" transform="matrix(1 0 0 -1 65.8992538 100.3503799)"/>
+  <use id="layer-eyes" href="#eyes" transform="matrix(0.9612617 -0.2756375 -0.2756375 -0.9612617 55.6416054 164.7832031)"/>
+  <use id="layer-pupils" href="#pupils" transform="matrix(0.9612617 -0.2756375 -0.2756375 -0.9612617 55.6416054 164.7832031)"/>
+  <use id="layer-face-foreground" href="#faceForeground" transform="matrix(0.9272031 -0.3745238 -0.3745238 -0.9272031 50.2205124 160.031311)"/>
 </g>
 </svg>
