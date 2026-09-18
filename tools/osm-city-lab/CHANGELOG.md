@@ -18,7 +18,12 @@
 - Added branch browser/WebGL proof for both cities and both looks.
 
 ### TESTED RESULT
-- Pending the first S1b branch browser run at the time of this entry.
+- Branch browser/WebGL run `35385560694`, job `105731534856`: **PASS**.
+- Four cases passed: Ehrenfeld clean/cartoon and Hürth clean/cartoon.
+- Expected source counts remained intact: Ehrenfeld 372 roads / 1,808 buildings; Hürth 164 roads / 700 buildings.
+- Clean mode emitted 0 window codes; Cartoon mode emitted 3,367 in Ehrenfeld and 849 in Hürth.
+- All cases reported 0 separate roof meshes, `joined-miter` road strips, explicit road/sidewalk/landuse vertical separation, undeformed S2 geometry, and no page/console errors.
+- Screenshot artifact `osm-city-massing-proof` (artifact `10564070951`) was visually inspected: the former large floating roof caps are absent and the captured road surfaces no longer show the previous bright segment-junction triangles. Live moving/zoom shimmer remains a Georg browser gate rather than an automated visual claim.
 
 ### PUBLIC DEPLOYMENT
 - Not claimed by this branch.
