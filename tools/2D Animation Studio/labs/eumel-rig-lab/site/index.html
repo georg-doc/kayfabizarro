@@ -11,24 +11,33 @@
   <div>
     <div class="eyebrow">KFB · 2D Animation Studio · DocCheck</div>
     <h1>Eumel Rig Lab</h1>
-    <p>Source-exact Illustrator/PDF vectors + separate rig metadata. No retracing, no normalized outlines.</p>
+    <p>Source-exact Illustrator/PDF vectors + neutral bind pose + explicit 2D bones + shared EyeRig control protocol.</p>
   </div>
   <div class="status">
     <span class="pill source">SOURCE EXACT</span>
-    <span class="pill">RIG PIVOTS DERIVED</span>
+    <span class="pill">NEUTRAL BIND DERIVED</span>
+    <span class="pill">EYE API SHARED</span>
   </div>
 </header>
 
 <main>
 <section class="workspace">
   <aside class="controls card">
-    <div class="section-title"><span>Playback</span><small>v0.1 source-retarget</small></div>
+    <div class="section-title"><span>Playback</span><small>v0.2 bones + EyeRig</small></div>
+
+    <label>Bind pose
+      <select id="bindPose">
+        <option value="neutral" selected>Neutral bind · animation base</option>
+        <option value="source">Original source pose · QA</option>
+      </select>
+    </label>
 
     <label>Motion preset
       <select id="preset">
-        <option value="neutral">Neutral / regression</option>
+        <option value="neutral">Neutral</option>
         <option value="idle">Idle</option>
         <option value="look">Look around</option>
+        <option value="walk">Walk cycle</option>
         <option value="hampelmann" selected>Hampelmann</option>
         <option value="hop">Hop</option>
       </select>
@@ -44,30 +53,61 @@
 
     <div class="checks">
       <label><input id="play" type="checkbox" checked> Play</label>
-      <label><input id="pivots" type="checkbox"> Pivots</label>
+      <label><input id="pivots" type="checkbox"> Bones / pivots</label>
       <label><input id="parallax" type="checkbox"> 2.5D pointer parallax</label>
     </div>
 
     <div class="button-row">
-      <button id="reset">Reset</button>
+      <button id="reset">Reset pose</button>
       <button id="export">Export pose JSON</button>
     </div>
 
     <hr>
 
-    <div class="section-title"><span>Source layers</span><small>exact draw-order groups</small></div>
+    <div class="section-title"><span>Limb deformers</span><small>derived rig only</small></div>
+    <label>Left bend · leg-B <output id="bendLeftOut">0°</output>
+      <input id="bendLeft" type="range" min="-28" max="28" step=".5" value="0">
+    </label>
+    <label>Right bend · leg-A <output id="bendRightOut">0°</output>
+      <input id="bendRight" type="range" min="-28" max="28" step=".5" value="0">
+    </label>
+    <label>Leg stretch <output id="legStretchOut">1.00</output>
+      <input id="legStretch" type="range" min=".78" max="1.25" step=".01" value="1">
+    </label>
+    <label>Leg squash / width <output id="legSquashOut">1.00</output>
+      <input id="legSquash" type="range" min=".78" max="1.25" step=".01" value="1">
+    </label>
+
+    <hr>
+
+    <div class="section-title"><span>Shared EyeRig</span><small>same semantic API as 3D v6</small></div>
+    <label>Gaze X <output id="gazeXOut">0.00</output>
+      <input id="gazeX" type="range" min="-1" max="1" step=".01" value="0">
+    </label>
+    <label>Gaze Y <output id="gazeYOut">0.00</output>
+      <input id="gazeY" type="range" min="-1" max="1" step=".01" value="0">
+    </label>
+    <div class="checks">
+      <label><input id="eyeLife" type="checkbox" checked> Eye life / wander</label>
+      <label><input id="eyeFollow" type="checkbox"> Follow pointer</label>
+    </div>
+    <button id="blinkNow" class="full">Blink now</button>
+
+    <hr>
+
+    <div class="section-title"><span>Source layers</span><small>source IDs unchanged</small></div>
     <div id="layerToggles" class="layer-toggles"></div>
 
     <hr>
 
-    <div class="section-title"><span>Rig readout</span><small>not source geometry</small></div>
+    <div class="section-title"><span>Rig readout</span><small>source vs derived</small></div>
     <pre id="debug"></pre>
   </aside>
 
   <section class="stage-card card">
     <div class="stage-head">
-      <div><div class="eyebrow">Animation stage</div><h2>Source-exact actor</h2></div>
-      <div class="hint">Primary motion → body/root · secondary → head/stethoscope · tertiary → pupils/shadow</div>
+      <div><div class="eyebrow">Animation stage</div><h2>Neutral-bind actor</h2></div>
+      <div class="hint">Source geometry stays immutable. Bones, bind correction, bend, squash/stretch and EyeRig live in wrapper metadata.</div>
     </div>
     <div id="viewport" class="viewport">
       <div id="stageMount" class="stage-mount">Loading source vectors…</div>
@@ -76,7 +116,7 @@
 </section>
 
 <section class="card compare">
-  <div class="section-title"><span>Source vs extracted master</span><small>human QA gate</small></div>
+  <div class="section-title"><span>Source vs extracted master</span><small>visual regression gate</small></div>
   <div class="compare-grid">
     <div>
       <h3>Original AI · PDF-compatible render</h3>
@@ -89,27 +129,30 @@
       <div id="staticMount" class="static-mount">Loading…</div>
     </div>
   </div>
-  <p class="evidence">The PDF alias is byte-identical to the Illustrator source blob. The SVG is rebuilt only from the file's PDF vector instructions. Visual acceptance is still required before promotion.</p>
+  <p class="evidence">The source pose remains available as a QA mode. The neutral bind pose is a reversible animation calibration layer, not a rewrite of the Illustrator paths.</p>
 </section>
 
 <section class="card">
-  <div class="section-title"><span>Component atlas</span><small>same source geometry, isolated</small></div>
+  <div class="section-title"><span>Component atlas</span><small>root-coordinate fitting fixed</small></div>
   <div id="atlas" class="atlas"></div>
 </section>
 
 <section class="card notes">
-  <div class="section-title"><span>Hard constraints</span><small>current rig contract</small></div>
+  <div class="section-title"><span>Rig contract</span><small>current working rules</small></div>
   <ul>
     <li>Eumel has no arms.</li>
-    <li>Do not normalize the distinct source stroke families.</li>
+    <li>Legs use explicit hip bones. Neutral stance is symmetric and vertically normalized before walking/acting.</li>
+    <li>Optional knee bend is a clipped lower-leg proxy; source paths remain unchanged.</li>
+    <li>Stretch/squash acts on limb bone wrappers, not source Bézier geometry.</li>
+    <li>Eye controls mirror the public EyeRig-v6 semantic API: gaze, blink, emote, kinetics, life and <code>eyeFrame()</code>.</li>
+    <li>The large black/white foreground source asset is now classified as headwear/hat from the browser screenshot; it follows the head as a separate accessory layer.</li>
     <li>Forehead mirror stays flat/source-authored; no invented gradient or metallic highlight.</li>
-    <li>Eyes and pupils stay separate. The source already provides this seam.</li>
-    <li>Rig pivots are derived metadata and never modify the source Bézier paths.</li>
-    <li>The foreground source form remains semantically unresolved until visual/native Illustrator confirmation.</li>
   </ul>
 </section>
 </main>
 
+<script src="../../../shared/rig2d/bone2d.v1.js"></script>
+<script src="../../../shared/eye-rig/eye-rig-2d-adapter.v1.js"></script>
 <script src="./app.js"></script>
 </body>
 </html>
