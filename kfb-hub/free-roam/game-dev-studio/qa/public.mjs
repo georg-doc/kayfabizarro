@@ -34,6 +34,7 @@ try{
   check('catalog deployed at current revision',live,{package:remoteCatalog?.packages?.[0]?.id,revision:remoteCatalog?.catalogRevision,expected:localCatalog.catalogRevision});
   check('pilot has four preview assets',remoteCatalog.packages[0].assets.length===4,remoteCatalog.packages[0].assets.map(a=>a.id));
   check('receiver adapter catalogued',remoteCatalog.packages[0].receiverHandoff?.donor==='fr-s04-02'&&/FR_S04_02_RECEIVER_ADAPTER/.test(remoteCatalog.packages[0].receiverHandoff?.adapter||''),remoteCatalog.packages[0].receiverHandoff);
+  check('resident adapter catalogued',remoteCatalog.packages[0].residentHandoff?.consumer==='travel-atlas-pilot-01'&&/TRAVEL_ATLAS_PILOT_01_ADAPTER/.test(remoteCatalog.packages[0].residentHandoff?.adapter||''),remoteCatalog.packages[0].residentHandoff);
 
   browser=await chromium.launch({headless:true,args:['--use-angle=swiftshader','--enable-unsafe-swiftshader']});
   const context=await browser.newContext({viewport:{width:1440,height:960}});
@@ -46,12 +47,15 @@ try{
   check('studio boot',await page.evaluate(()=>!!window.__KFB_GAME_DEV_STUDIO_READY__),await page.evaluate(()=>window.__KFB_GAME_DEV_STUDIO_ERROR__));
   check('four asset controls',await page.locator('.asset').count()===4,await page.locator('.asset').count());
   check('Lorekeeper default preview loaded',(await page.evaluate(()=>window.__KFB_GAME_DEV_STUDIO__.snapshot())).asset==='lorekeeper');
+  check('evidence control hidden for Lorekeeper',await page.locator('#wire').isHidden());
   await page.screenshot({path:out+'/lorekeeper.png',fullPage:true});
 
   await page.evaluate(()=>window.__KFB_GAME_DEV_STUDIO__.select('car-sedan'));
   const snap=await page.evaluate(()=>window.__KFB_GAME_DEV_STUDIO__.snapshot());
   check('Sedan preview selected',snap.asset==='car-sedan',snap);
-  check('Sedan evidence enabled',snap.showEvidence===true,snap);
+  check('Sedan evidence enabled',snap.showEvidence===true&&snap.evidenceAvailable===true,snap);
+  check('evidence control visible for Sedan',!(await page.locator('#wire').isHidden()));
+  check('Sedan evidence objects rendered',snap.evidenceObjects>=5,snap);
   check('pinned source links used',remoteCatalog.packages[0].assets.every(a=>/raw\.githubusercontent\.com\/georg-doc\/kayfabizarro\/[0-9a-f]{40}\//.test(a.previewUrl)));
   await page.screenshot({path:out+'/sedan-evidence.png',fullPage:true});
 
