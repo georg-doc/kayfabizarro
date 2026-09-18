@@ -1,0 +1,64 @@
+{
+  "schema": "kfb.cross-render-eye-proof/0.1",
+  "updated": "2026-09-18",
+  "status": "IMPLEMENTATION_BROWSER_QA_PENDING",
+  "purpose": "Prove one semantic EyeRig sequence can drive the source-exact Eumel SVG adapter and the existing ToolBox EyeRig-v6 on a real Rig_Medium 3D actor.",
+  "sequenceRef": "../../shared/eye-rig/eye-clips.v1.json",
+  "sequence": [
+    "neutral",
+    "blink",
+    "look_left",
+    "look_right",
+    "surprised",
+    "thinking",
+    "neutral"
+  ],
+  "twoD": {
+    "id": "doccheck-eumel-2d",
+    "renderer": "svg2d",
+    "sourceAI": "../../_inbox/doccheck-ad-ai-source/sources/_Dr_Vorlage.ai",
+    "sourceBlobSha": "436143b019f0034c6d2d9183154cf613ff8c701e",
+    "componentSvg": "../../labs/eumel-rig-lab/source-assets/EUMEL_SOURCE_COMPONENTS.svg",
+    "adapter": "../../shared/eye-rig/eye-rig-2d-adapter.v1.js",
+    "updateOwner": "proof RAF calls EyeRig2D.update(dt)",
+    "visualBoundary": "2D blink/lid is still a reversible wrapper fallback until canonical lid assets are resolved."
+  },
+  "threeD": {
+    "id": "frizzlebob-driver-graft",
+    "renderer": "threejs",
+    "rigClass": "Rig_Medium",
+    "jointCount": 23,
+    "skeletonSignature": "13e3163d869592b0a525ca795957a3481dfb967e99f859e5bcc28f125b3e27dd",
+    "actorAsset": "media/3D_Assets/KayKit_Mystery_Series6/2 - August 2023 - Driver/character/gltf/Driver.glb",
+    "actorAssetBlobSha": "1a25cb515a7f0332df3bc2d1909d7383f06b42fc",
+    "actorAssetPin": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+    "mountReader": "tools/KFB-ToolBox/kfb-rigs-embed-v3/frizzlegraft-v1/graft-mount.v1.js",
+    "contract": "tools/KFB-ToolBox/kfb-rigs-embed-v3/contracts/kfb-pet-graft-driver.v4.json",
+    "contractBlobSha": "f202a1c2f1670ab6045176af6621c94041124e76",
+    "eyeRig": "tools/KFB-ToolBox/kfb-rigs-embed-v3/petstudio-v9/studio-v12/pet-eye-rig.v6.js",
+    "eyeRigBlobSha": "853bcf5fb090dd6564fda8bc83d0b4cb527e6b26",
+    "donorRepoPin": "6f099649e4c833ef8d7822a1663f2348c412bd4c",
+    "updateOwner": "proof RAF calls graft.update(dt,camera); it owns EyeRig-v6 update",
+    "statusNote": "This proves the shared protocol on an existing Rig_Medium Graft composition. It is not an EyeRig Batch profile approval for a generic source actor."
+  },
+  "shared": {
+    "protocol": "kfb.eye-rig.protocol/1",
+    "runner": "../../shared/eye-rig/eye-sequence-runner.v1.js",
+    "accessorySeam": "eyeFrame()",
+    "deterministicHarness": [
+      "autonomous eye life disabled",
+      "automatic blink gap raised and current timer parked",
+      "kinetics disabled",
+      "only semantic sequence commands change eye state"
+    ]
+  },
+  "gates": {
+    "staticSanity": "PENDING",
+    "cloudflareRoute": "PENDING",
+    "twoDPlayback": "PENDING",
+    "threeDLoad": "PENDING",
+    "sameSequenceObserved": "PENDING",
+    "eyeFrameMarkersObserved": "PENDING",
+    "georgAcceptance": "PENDING"
+  }
+}
