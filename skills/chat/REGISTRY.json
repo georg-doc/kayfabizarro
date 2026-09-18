@@ -1,6 +1,6 @@
 {
   "schema": "kfb.chat-registry/0.1",
-  "updated": "2026-09-17",
+  "updated": "2026-09-18",
   "owner": "Georg / KFB",
   "router": "skills/chat/START_HERE.md",
   "livingMasterplan": "skills/chat/LIVING_MASTERPLAN.md",
@@ -36,7 +36,11 @@
       "status": "CURRENT_REFERENCE",
       "version": "1.2",
       "path": "skills/session-design-briefing.md",
-      "loadWhen": ["design session", "production planning", "evidence discipline"]
+      "loadWhen": [
+        "design session",
+        "production planning",
+        "evidence discipline"
+      ]
     },
     {
       "id": "kfb-meta-compendium-v1",
@@ -45,7 +49,13 @@
       "version": "1",
       "path": "skills/chat/meta/KFB_META_COMPENDIUM_v1.md",
       "masterplanAddendum": "skills/chat/masterplan/KFB_META_TOWN_ADDENDUM_2026-09-14.md",
-      "loadWhen": ["meta narrative", "cross-module ideation", "canon routing", "KFB Town", "module relationships"],
+      "loadWhen": [
+        "meta narrative",
+        "cross-module ideation",
+        "canon routing",
+        "KFB Town",
+        "module relationships"
+      ],
       "notSSOT": true,
       "note": "Index/routing reference from WS0. It points toward existing homes and drift risks; it does not override project/tool SSOTs, current GitHub state or canonical source documents. Version/status/count claims inside are snapshots unless independently verified."
     },
@@ -56,8 +66,17 @@
       "path": "skills/chat/town/LIVING_KFB_TOWN.md",
       "startHere": "skills/chat/town/START_HERE.md",
       "masterplanAddendum": "skills/chat/masterplan/KFB_META_TOWN_ADDENDUM_2026-09-14.md",
-      "owns": ["Town-specific J-decisions", "Town meta-narrative/world-design living state"],
-      "doesNotOwn": ["Travel runtime", "Combat runtime", "ToolBox actor authoring", "Museum runtime", "global ChatterBox/Journey architecture"],
+      "owns": [
+        "Town-specific J-decisions",
+        "Town meta-narrative/world-design living state"
+      ],
+      "doesNotOwn": [
+        "Travel runtime",
+        "Combat runtime",
+        "ToolBox actor authoring",
+        "Museum runtime",
+        "global ChatterBox/Journey architecture"
+      ],
       "note": "Current hub concept and ideation home. Not yet an implementation project or runtime SSOT."
     },
     {
@@ -67,8 +86,21 @@
       "version": "2.0",
       "declaredStatus": "canonical-draft",
       "path": "skills/kfb-cartoon-animation_v2.md",
-      "loadWhen": ["animation", "procedural acting", "cartoon motion", "VFX choreography", "camera choreography"],
-      "consumers": ["animation-lab", "frankenstein-studio", "travel-globe", "stunt-car-race", "combat-arena", "wissens-pilli"]
+      "loadWhen": [
+        "animation",
+        "procedural acting",
+        "cartoon motion",
+        "VFX choreography",
+        "camera choreography"
+      ],
+      "consumers": [
+        "animation-lab",
+        "frankenstein-studio",
+        "travel-globe",
+        "stunt-car-race",
+        "combat-arena",
+        "wissens-pilli"
+      ]
     },
     {
       "id": "production-inbox",
@@ -89,8 +121,19 @@
       "status": "LEGACY_REFERENCE",
       "path": "skills/KFB Setup Game Design/KFB Design-Bootstrap_v02/",
       "routingSuccessor": "skills/chat/START_HERE.md",
-      "retainConcepts": ["reuse-before-rebuild", "host-contract", "evidence-before-claim", "human-visible-acceptance", "additive-history"],
-      "doNotUseAsCurrentSSOTFor": ["asset inventory", "project status", "module ownership", "current tool versions"]
+      "retainConcepts": [
+        "reuse-before-rebuild",
+        "host-contract",
+        "evidence-before-claim",
+        "human-visible-acceptance",
+        "additive-history"
+      ],
+      "doNotUseAsCurrentSSOTFor": [
+        "asset inventory",
+        "project status",
+        "module ownership",
+        "current tool versions"
+      ]
     },
     {
       "id": "kfb-pet-studio-v12",
@@ -106,8 +149,23 @@
       "path": "skills/KFB PetStudio/KFB FrankenStein Studio 16/KFB-v16/",
       "standalone": "skills/KFB PetStudio/KFB FrankenStein Studio 16/KFB-v16/KFB-FrankenStein-Studio-v16-STANDALONE.html",
       "toolNode": "skills/chat/tool-nodes/frankenstein-studio.md",
-      "owns": ["actor graft", "look", "material zones", "head/face zones", "pose measurement", "card-rider measurement/export", "weapon attachment/mod presentation measurement"],
-      "doesNotOwn": ["Travel flight physics", "game world movement", "projectile logic", "damage", "runtime combat aim", "consumer-specific world facing"]
+      "owns": [
+        "actor graft",
+        "look",
+        "material zones",
+        "head/face zones",
+        "pose measurement",
+        "card-rider measurement/export",
+        "weapon attachment/mod presentation measurement"
+      ],
+      "doesNotOwn": [
+        "Travel flight physics",
+        "game world movement",
+        "projectile logic",
+        "damage",
+        "runtime combat aim",
+        "consumer-specific world facing"
+      ]
     },
     {
       "id": "frankenstein-studio-v17-wip",
@@ -179,15 +237,52 @@
       "wipStatus": "https://github.com/georg-doc/doccheck/blob/main/sim-blood/WIP_STATUS.json",
       "living": "https://github.com/georg-doc/doccheck/blob/main/sim-blood/LIVING_SIMBLOOD.md",
       "accent": "#cc0033",
-      "activeWips": ["field-composer-poc", "reference-assets", "cytodiff-audit", "telehematology-use-cases"],
+      "activeWips": [
+        "field-composer-poc",
+        "reference-assets",
+        "cytodiff-audit",
+        "telehematology-use-cases"
+      ],
       "note": "DocCheck SimBlood SSOT. Typed cell pools + deterministic Field Composer + Microscope Engine + Workflow Engine. Documentation/recovery updates are maintained directly on main unless a risky implementation slice explicitly needs a branch."
+    },
+    {
+      "id": "2d-animation-studio",
+      "kind": "tool",
+      "status": "CURRENT_TOOL",
+      "path": "tools/2D Animation Studio/",
+      "startHere": "tools/2D Animation Studio/START_HERE.md",
+      "recovery": "tools/2D Animation Studio/RECOVERY.md",
+      "wipStatus": "tools/2D Animation Studio/WIP_STATUS.json",
+      "inbox": "tools/2D Animation Studio/_inbox/",
+      "toolNode": "skills/chat/tool-nodes/2d-animation-studio.md",
+      "loadWith": [
+        "skills/kfb-cartoon-animation_v2.md"
+      ],
+      "firstLab": "tools/2D Animation Studio/labs/eumel-rig-lab/",
+      "owns": [
+        "2D/2.5D cutout rig authoring",
+        "part/pivot hierarchy and rig calibration",
+        "cartoon motion playback and clip calibration",
+        "animation-ready module export",
+        "mini-game actor/module handoff"
+      ],
+      "doesNotOwn": [
+        "source artwork identity until accepted intake explicitly promotes it",
+        "FrankenStein Studio 3D actor/look/material ownership",
+        "consumer-specific game rules",
+        "Travel/Combat/Race runtime movement owners"
+      ],
+      "relationshipToAnimationLab": "No supersession is claimed. 2D Animation Studio is the new pinned browser/tool lane for authored 2D/2.5D cutout rigs; the older Animation Lab node remains unresolved until explicitly reconciled.",
+      "note": "Established 2026-09-18. DocCheck Eumel is first lab. Incoming DocCheck AD Illustrator source is tool-local inbox input until accepted; current measured/traced Eumel reconstruction remains provisional donor evidence rather than final artwork SSOT."
     },
     {
       "id": "animation-lab",
       "kind": "tool",
       "status": "UNVERIFIED",
       "toolNode": "skills/chat/tool-nodes/animation-lab.md",
-      "loadWith": ["skills/kfb-cartoon-animation_v2.md"],
+      "loadWith": [
+        "skills/kfb-cartoon-animation_v2.md"
+      ],
       "note": "Current implementation SSOT/site must be pinned before this node may be promoted to CURRENT_TOOL. FrankenStein Studio decides actor/look/static pose; Animation Lab plays/audits clips and animation behavior."
     },
     {
@@ -196,7 +291,13 @@
       "status": "CURRENT_REFERENCE",
       "path": "skills/chat/meta/CANON_HOME_MAP.json",
       "notSSOT": true,
-      "loadWhen": ["canon consolidation", "narrator reuse", "FrizzleCrits", "Hunky and Dory", "D6 dimension colors"],
+      "loadWhen": [
+        "canon consolidation",
+        "narrator reuse",
+        "FrizzleCrits",
+        "Hunky and Dory",
+        "D6 dimension colors"
+      ],
       "note": "Located runtime sources and unresolved authoring homes are distinct. No source migration or promotion is performed by this map."
     },
     {
@@ -204,7 +305,15 @@
       "kind": "masterplan-addendum",
       "status": "CURRENT_REFERENCE",
       "path": "skills/chat/masterplan/FRACTAL_CANVAS_NARRATORS_AND_PLAY_2026-09-14.md",
-      "loadWhen": ["Infinite Canvas of the Tenth Art", "fractal design", "satirical emergence", "player closure", "Triplet NPC", "UFO aliens", "cardboard mini games"],
+      "loadWhen": [
+        "Infinite Canvas of the Tenth Art",
+        "fractal design",
+        "satirical emergence",
+        "player closure",
+        "Triplet NPC",
+        "UFO aliens",
+        "cardboard mini games"
+      ],
       "note": "Records explicit user direction separately from proposed implementation and future slices. No runtime or Town J-decision promotion."
     },
     {
@@ -214,7 +323,16 @@
       "path": "skills/chat/masterplan/CHATTERBOX_TOURBUS_REUSE_2026-09-14.md",
       "sourceIndex": "skills/chat/meta/CHATTERBOX_TOURBUS_SOURCE_INDEX_2026-09-14.json",
       "ideation": "skills/chat/town/LIVING_KFB_TOWN.md#11--zulauf-14092026--chatterbox-und-tourbus",
-      "loadWhen": ["ChatterBox", "NPC or mob chatter", "NIE adapter", "Tourbus", "WaterBowser", "Triplet livery", "CCTV memory", "FBX without Blender"],
+      "loadWhen": [
+        "ChatterBox",
+        "NPC or mob chatter",
+        "NIE adapter",
+        "Tourbus",
+        "WaterBowser",
+        "Triplet livery",
+        "CCTV memory",
+        "FBX without Blender"
+      ],
       "note": "Source-version audit, read-only probes and integration proposals. WaterBowser is Georg's new model selection; no conversion, runtime promotion, owner change or replacement ChatterBox master. Prefer verified newer donor versions over uploaded v10 snapshots."
     }
   ]
