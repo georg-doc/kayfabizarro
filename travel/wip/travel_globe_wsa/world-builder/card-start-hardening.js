@@ -1,3 +1,5 @@
+import { artTexture } from '../globe-v13/sky-cards.js';
+
 // WB0 Ground-only card-start hardening.
 // The accepted B0 Travel runtime stays frozen. This adapter closes one startup regression exposed by
 // Ground: the registry catalog now contains ~130 decks, while the frozen host builds the full mixed
@@ -63,6 +65,25 @@ async function main() {
     tor: g.teppiche?.tor?.() || null,
   };
 
+  // The frozen host pumps terrain-card PDF artwork only inside its Flight sky-update block.
+  // Ground may suppress that presentation path, so text/card-back textures were restored above
+  // while the real PDF fronts still starved. This scheduler owns no card data and no simulation:
+  // it asks the existing terrain-card + motif-desk owners for at most one job every 180 ms.
+  let disposed = false, raf = 0, lastPump = 0, pumpRequests = 0;
+  const pumpGroundArtwork = (now) => {
+    if (disposed) return;
+    if (wb0.ground.enabled && !document.hidden && now - lastPump >= 180) {
+      lastPump = now;
+      try {
+        if (g.teppiche.pumpArt(g.kasse, (crop, seed) => artTexture(g.THREE, crop, seed))) pumpRequests++;
+      } catch (error) {
+        console.warn('[wb0 card-start] Ground artwork pump failed', error);
+      }
+    }
+    raf = requestAnimationFrame(pumpGroundArtwork);
+  };
+  raf = requestAnimationFrame(pumpGroundArtwork);
+
   wb0.cardStartHardening = {
     name: 'wb0-card-start-hardening',
     source: 'additive Ground adapter; frozen B0 Travel owner unchanged',
@@ -70,7 +91,7 @@ async function main() {
     report() {
       const list = existing();
       return {
-        status, pack, cards, fallbackSteps, before,
+        status, pack, cards, fallbackSteps, before, pumpRequests,
         now: {
           count: list.length,
           assigned: list.filter((t) => !!t.karte).length,
@@ -82,6 +103,7 @@ async function main() {
         },
       };
     },
+    dispose() { disposed = true; cancelAnimationFrame(raf); },
   };
   console.info('[wb0 card-start]', wb0.cardStartHardening.report());
 }
