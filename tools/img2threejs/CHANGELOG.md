@@ -35,3 +35,19 @@ Die Geometrie und Materialien bleiben gegenüber dem Original unverändert. v0.1
 **SOURCE CHECK — Dropbox:** Exakte Suche nach `img2threejs` ohne Treffer. Keine Dropbox-Dateien verändert und keine zweite Arbeitsablage angelegt.
 
 **DEFERRED / OPEN:** Erfolgreicher Browserlauf; Referenzvergleich und geometrische Überarbeitung; tatsächlicher GLB-Export; ToolBox-/World-/Race-Roundtrip; öffentliches Deployment; Georgs visuelle Abnahme. Diese offenen Schritte werden nicht durch die Repo-Ablage oder einen Syntax-PASS als erledigt behandelt.
+
+## 2026-09-18 · 04 · Sichtbarer Dachfehler / Low-Poly-Stil erhalten / v0.2
+
+**USER EVIDENCE:** Georgs Screenshot zeigt den laufenden vorherigen Viewer mit herausragenden Dachpyramiden. Meldung: Modell mit den Dreiecken broken; die einfache ursprüngliche Stilrichtung könnte nach Geometriekorrektur für KFB passen. Kein GEORG PASS für die fehlerhafte Geometrie und keine finale Stilabnahme.
+
+**DECISION / Arbeitsrichtung:** Den vorhandenen reduzierten Stil erhalten und die Grundgeometrie reparieren, nicht durch ein detailliertes Modell ersetzen. Beide früheren HTML-Fassungen bleiben unverändert.
+
+**IMPLEMENTATION:** Separater [v0.2-Kandidat](prototypes/koelner-dom/v0.2/index.html), Quell-Commit `3df61d811e2bbb51af80ff8cb38d3a79b627ffe4`: geschlossene Dachprismen, angeschlossenes Kreuzdach, korrigierte Wand-/Dachhöhen, aufliegende kleine Spitzen, Endpunkt-Streben und passend dimensioniertes Fundament. Unbegründete horizontale Stangen entfernt. Hauptturm-Dimensionen, achtseitige Hauptspitzen, Materialien und Licht bleiben erhalten. Bedienfeld außerhalb der Modellfläche; Ansichtsbuttons ergänzt.
+
+**TESTED RESULT — statisch / numerisch:** 53/53 Prüfungen an den echten Dach-Datenfunktionen und der vollständigen Modulsyntax bestanden. Zehn Dachkörper mit zusammen 86 Dreiecken; geschlossene konsistent orientierte Einzelkörper und vier übereinstimmende Dachanschlüsse. [Ergebnis](evidence/2026-09-18-v0.2/geometry-checks.json) · [Prüfbericht](evidence/2026-09-18-v0.2/TEST_REPORT.md).
+
+**SOURCE INVENTORY — keine Browsermessung:** Berechnetes Modell-Indexbudget von 1499 auf 1142 Dreiecke reduziert, ohne Boden/Platz/Kontextwürfel. Der ursprüngliche Entwurf war bereits polygonarm. Vollständige Herleitung im Prüfbericht; daraus folgt kein Performance-PASS.
+
+**UNRESOLVED:** Neue Browser-Umgebungsprobe wurde vor Seiteneinstieg durch `ERR_BLOCKED_BY_ADMINISTRATOR` blockiert. Kein eigener v0.2-WebGL-Frame, kein Mobile-/Interaktions-PASS, keine visuelle oder Consumer-Abnahme. Die erfolgreiche mathematische Dachprüfung wird nicht zum Gesamtmodell-PASS erklärt.
+
+**CURRENT NEXT:** v0.2 öffnen und Ansichten / Dachanschlüsse / Spitzen prüfen. Weitere Details erst nach Beurteilung dieser Grundgeometrie. README und Browser-Einstieg verweisen auf den neuen Kandidaten; v0.1 bleibt Vergleichs-/Fehlerhistorie. Keine Änderungen an fremden Modul-Ownern, zentraler Registry, Deployment oder Race-Implementierung.
