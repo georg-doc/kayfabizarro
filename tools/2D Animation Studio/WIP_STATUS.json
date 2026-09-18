@@ -10,14 +10,22 @@
   "inbox": "_inbox/",
   "currentInputs": {
     "measuredEumelReconstruction": "PROVISIONAL_DONOR",
-    "doccheckAdIllustratorSource": "EXPECTED_INPUT"
+    "doccheckAdIllustratorSource": "PINNED_AND_PDF_VECTOR_AUDITED"
   },
-  "nextGate": "Ingest and audit DocCheck AD Illustrator source; produce canonical part inventory before replacing provisional Eumel geometry.",
+  "nextGate": "Visually compare the extracted SVG master against the Illustrator/PDF render, then split accepted source geometry into canonical reusable parts and retarget the Eumel browser rig.",
   "evidence": {
     "studioBootstrap": "IMPLEMENTATION",
-    "sourceIntake": "NOT_STARTED",
-    "canonicalAssetLibrary": "NOT_STARTED",
+    "sourceIntake": "IMPLEMENTATION",
+    "canonicalAssetLibrary": "IN_PROGRESS",
     "browserRigAfterCanonicalIngest": "NOT_STARTED",
     "georgAcceptance": "PENDING"
+  },
+  "sourceAudit": {
+    "gitBlobSha": "436143b019f0034c6d2d9183154cf613ff8c701e",
+    "byteSize": 581313,
+    "visiblePdfLayer": "Ebene 1",
+    "sourceVectorMaster": "labs/eumel-rig-lab/source-assets/_Dr_Vorlage_PDF_VECTOR_MASTER.svg",
+    "viewer": "labs/eumel-rig-lab/source-assets/index.html",
+    "manifest": "_inbox/doccheck-ad-ai-source/manifests/_Dr_Vorlage_native_structure.json"
   }
 }
