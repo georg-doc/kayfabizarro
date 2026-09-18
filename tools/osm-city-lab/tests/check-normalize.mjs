@@ -14,6 +14,8 @@ assert.equal(a.features.buildings[0].heightM,9.3);
 assert.equal(a.features.buildings[0].id,'way/200');
 assert.equal(a.features.roads[0].id,'way/100');
 assert.ok(Number.isFinite(a.features.roads[0].widthM));
+assert.ok(a.bounds.sizeM.x <= spec.approxSizeM.eastWest + 1);
+assert.ok(a.bounds.sizeM.z <= spec.approxSizeM.northSouth + 1);
 const scene=buildConsumerScene(a);
 assert.equal(scene.schema,'kfb.osm-city.consumer-scene.v0');
 assert.equal(scene.ownerContract.worldHost,'georg-doc/KFB-Travel-Globe');
