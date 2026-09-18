@@ -1,5 +1,37 @@
 # Changelog · additive
 
+## 2026-09-18 · S1b simplified / cartoon massing
+
+### DECISION
+- Preserve one OSM source geometry and compare two viewer modes: `clean` and `cartoon`.
+- Clean mode is the anatomy baseline: OSM footprint → simple extrusion → flat top cap.
+- Cartoon mode reuses the older KFB Cartoon-Verbieger grammar only in a conservative presentation layer: object-normalized, ground-anchored, deterministic per OSM identity.
+- S2 collision/export geometry remains undeformed.
+
+### IMPLEMENTATION
+- Removed all separate roof boxes/cones from the S1 viewer.
+- Added `src/style/cartoon-city.js` with mild deterministic lean/bend/taper/twist for building massing.
+- Added sparse irregular window material-codes; they are intentionally not floor-aligned facade rows.
+- Replaced per-segment road rectangles with a continuous joined-miter strip per centerline.
+- Increased explicit vertical separation between terrain / landuse / sidewalk / road to reduce depth fighting.
+- Added Clean Massing / Cartoon Massing controls and a first Cartoon View camera preset.
+- Added branch browser/WebGL proof for both cities and both looks.
+
+### TESTED RESULT
+- Pending the first S1b branch browser run at the time of this entry.
+
+### PUBLIC DEPLOYMENT
+- Not claimed by this branch.
+
+### GEORG ACCEPTANCE
+- Pending comparison of road shimmer, city anatomy and cartoon intensity.
+
+### OPEN
+- Tune one shared deformation grammar only after visual review; avoid per-building exceptions.
+- Continue City Drive / Travel integration from the unchanged S2 export, not from presentation-deformed building geometry.
+
+---
+
 ## 2026-09-18 · S2 consumer export hardening
 
 ### TESTED RESULT
