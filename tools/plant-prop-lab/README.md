@@ -1,6 +1,6 @@
 # KFB Plant Prop Lab
 
-Status: **PREPARED DONOR / P2 · NO RUNTIME YET**
+Status: **PREPARED DONOR / P2 · SOURCE UNPACKED · NO RUNTIME YET**
 
 Current briefing:
 
@@ -28,3 +28,16 @@ This tool does not own Travel terrain, gameplay movement, Resident identity, Gam
 First external authoring brief:
 
 `skills/chat/workflows/PLANT_PROP_LAB_2026-09-18/FLOATE_DESIGN_BRIEF.md`
+
+
+## Source intake result
+
+Tiny Treats House Plants:
+- original ZIP preserved;
+- 113 GLTF models + 113 BIN sidecars;
+- Registry refresh in review;
+- exact source paths remain canonical.
+
+Game Dev Studio:
+- Living Plant package type is registered as BACKLOG only;
+- no package/catalog promotion until Floate/Plant Prop evidence exists.
