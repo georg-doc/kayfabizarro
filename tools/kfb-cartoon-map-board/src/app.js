@@ -528,4 +528,151 @@ async function addKayKitMarkers() {
           o.receiveShadow=true;
         }
       });
-      let box=new THREE.Box3().
+      let box=new THREE.Box3().setFromObject(obj);
+      const size=box.getSize(new THREE.Vector3());
+      const scale=spec.height/Math.max(0.001,size.y);
+      obj.scale.multiplyScalar(scale);
+      box=new THREE.Box3().setFromObject(obj);
+      obj.position.y-=box.min.y;
+
+      const holder=new THREE.Group();
+      const p=project(spec.lon,spec.lat);
+      holder.position.set(p.x,BOARD_TOP+PIECE_DEPTH+0.12,p.z);
+      holder.add(obj);
+
+      const el=document.createElement('div');
+      el.className='story-label';
+      el.textContent=spec.label;
+      const lab=new CSS2DObject(el);
+      lab.position.set(0,spec.height+0.7,0);
+      holder.add(lab);
+
+      root.add(holder);
+      tokenHolders.push(holder);
+      updateDiag();
+    } catch (err) {
+      console.warn('KayKit marker failed',spec.file,err);
+    }
+  }
+}
+
+async function loadInkCanon() {
+  try {
+    const canon=await import(KFB_INK_URL);
+    const version=canon.INK_CANON_VERSION;
+    if (version>=2 && typeof canon.measureInk==='function') {
+      inkCanonStatus='canon v'+version+' + map BAND adapter';
+      if (canon.INK_COLOR!==undefined) {
+        try { inkColor=new THREE.Color(canon.INK_COLOR); } catch {}
+      }
+    } else {
+      inkCanonStatus='capability mismatch';
+    }
+  } catch (err) {
+    inkCanonStatus='canon unavailable; adapter black';
+    console.warn('KFB Ink Canon import failed',err);
+  }
+}
+
+function setCamera(name) {
+  document.querySelectorAll('[data-camera]').forEach(b=>b.classList.toggle('active',b.dataset.camera===name));
+  const presets={
+    hero:{p:[35,128,155],t:[0,4,-5]},
+    top:{p:[0,225,0.1],t:[0,0,0]},
+    low:{p:[22,54,160],t:[0,7,-8]}
+  };
+  const v=presets[name]||presets.hero;
+  camera.position.fromArray(v.p);
+  controls.target.fromArray(v.t);
+  controls.update();
+}
+document.querySelectorAll('[data-camera]').forEach(b=>b.addEventListener('click',()=>setCamera(b.dataset.camera)));
+document.querySelector('#explodeBtn').addEventListener('click',e=>{
+  exploded=!exploded;
+  e.currentTarget.classList.toggle('active',exploded);
+  e.currentTarget.textContent=exploded?'RECOMBINE':'EXPLODE';
+  applyTargets();
+});
+document.querySelector('#labelsBtn').addEventListener('click',e=>{
+  labelsVisible=!labelsVisible;
+  e.currentTarget.classList.toggle('active',labelsVisible);
+  for (const rec of countries) if (rec.label) rec.label.visible=labelsVisible;
+});
+document.querySelector('#tokensBtn').addEventListener('click',e=>{
+  tokensVisible=!tokensVisible;
+  e.currentTarget.classList.toggle('active',tokensVisible);
+  tokenHolders.forEach(t=>t.visible=tokensVisible);
+});
+document.querySelector('#inkSlider').addEventListener('input',e=>{
+  inkScale=Number(e.target.value);
+  for (const rec of countries) buildCountryInk(rec);
+});
+document.querySelector('#heightSlider').addEventListener('input',e=>{
+  heightScale=Number(e.target.value);
+  for (const rec of countries) rec.group.scale.y=heightScale;
+});
+
+const raycaster=new THREE.Raycaster();
+const pointer=new THREE.Vector2();
+let down=null;
+canvas.addEventListener('pointerdown',e=>{down={x:e.clientX,y:e.clientY};});
+canvas.addEventListener('pointerup',e=>{
+  if (!down || Math.hypot(e.clientX-down.x,e.clientY-down.y)>5) { down=null; return; }
+  down=null;
+  const r=canvas.getBoundingClientRect();
+  pointer.x=((e.clientX-r.left)/r.width)*2-1;
+  pointer.y=-((e.clientY-r.top)/r.height)*2+1;
+  raycaster.setFromCamera(pointer,camera);
+  const hit=raycaster.intersectObjects(pickMeshes,false)[0];
+  selectCountry(hit?.object?.userData?.country || null);
+});
+
+function resize() {
+  const w=stage.clientWidth,h=stage.clientHeight;
+  renderer.setSize(w,h,false);
+  labelRenderer.setSize(w,h);
+  camera.aspect=w/Math.max(1,h);
+  camera.updateProjectionMatrix();
+}
+addEventListener('resize',resize);
+resize();
+
+function animate() {
+  requestAnimationFrame(animate);
+  const dt=Math.min(0.05,clock.getDelta());
+  const k=1-Math.pow(0.0005,dt);
+  for (const rec of countries) {
+    rec.group.position.x=THREE.MathUtils.lerp(rec.group.position.x,rec.targetX||0,k);
+    rec.group.position.z=THREE.MathUtils.lerp(rec.group.position.z,rec.targetZ||0,k);
+    rec.group.position.y=THREE.MathUtils.lerp(rec.group.position.y,rec.targetY||BOARD_TOP+0.06,k);
+  }
+  tokenHolders.forEach((t,i)=>{
+    t.rotation.y+=dt*(0.10+i*0.012);
+  });
+  controls.update();
+  renderer.render(scene,camera);
+  labelRenderer.render(scene,camera);
+}
+animate();
+
+async function boot() {
+  try {
+    await loadInkCanon();
+    updateDiag('boundary catalogue pending');
+    await loadBoundaries();
+    if (!loadedCount) throw new Error('No OSM-derived country boundary loaded.');
+    applyTargets();
+    loadingTitle.textContent='Placing KayKit story tokens…';
+    loadingText.textContent='Loading actual Board Game Bits from the KFB GitHub asset repository.';
+    await addKayKitMarkers();
+    updateDiag('interactive');
+    loading.classList.add('hidden');
+    setTimeout(()=>loading.style.display='none',450);
+  } catch (err) {
+    console.error(err);
+    loadingTitle.textContent='Board boot stopped';
+    loadingText.textContent=String(err?.message||err)+'. Check browser console / CORS and retry.';
+    updateDiag('boot error');
+  }
+}
+boot();
