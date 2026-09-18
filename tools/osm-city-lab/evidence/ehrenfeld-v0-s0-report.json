@@ -1,0 +1,47 @@
+{
+  "schema": "kfb.osm-city.s0-report.v0",
+  "id": "ehrenfeld-v0",
+  "generatedAt": "2026-09-18T15:20:43.497Z",
+  "sourceSha256": "7b017ec065be5e068b179a93e6f339afaec0b3cf3af6b92898ddd968cb02b285",
+  "normalizedSha256": "81f3a512982e92ff4ad747079fbf025d703a12ede52750c750e502a5bfdec784",
+  "deterministic": true,
+  "bounds": {
+    "min": {
+      "x": -1954.55,
+      "z": -1357.575
+    },
+    "max": {
+      "x": 1009.739,
+      "z": 2684.147
+    },
+    "sizeM": {
+      "x": 2964.289,
+      "z": 4041.722
+    }
+  },
+  "diagnostics": {
+    "missingNodes": 0,
+    "openPolygonWays": 0,
+    "unsupportedRelations": 0,
+    "relationRings": 1,
+    "elementCounts": {
+      "nodes": 9675,
+      "ways": 2197,
+      "relations": 1
+    },
+    "featureCounts": {
+      "roads": 366,
+      "buildings": 1808,
+      "landuse": 22,
+      "waterLines": 0
+    }
+  },
+  "gates": {
+    "sourceCached": true,
+    "osmIdsPreserved": true,
+    "localMetreFrame": true,
+    "roads": true,
+    "buildings": true,
+    "deterministicReload": true
+  }
+}
