@@ -8,6 +8,8 @@ Bei Ablösung neuen Auftrag anlegen und alten mit einem additiven Nachfolgerhinw
 
 ## Aktuelle ergänzende Übergaben
 
+- [2D Animation Studio Alignment](2D_ANIMATION_STUDIO_ALIGNMENT_2026-09-18/START_HERE.md) — **CURRENT CROSS-TOOL ALIGNMENT**. EyeRig-v6 bleibt 3D-Donor; 2D Studio nutzt denselben semantischen Steuervertrag über einen SVG-Adapter. Keine Owner-Mischung, kein ToolBox-Redesign.
+
 - [Batch EyeRig Atlas · Rig_Medium → Rig_Large → Legacy](EYE_RIG_BATCH_2026-09-18/START_HERE.md) — **PREPARED TOOLBOX/RIGGING SLICE**. Bestehendes EyeRig v6 + gemessener FaceHost, Atlas-artige Batch-Freigabe, Profile Export/Import, später Consumer-Handoff. Noch keine Runtime.
 
 - [Stage-First v1 · Intake + Promotion](STAGE_FIRST_V1_INTAKE_2026-09-18/START_HERE.md) — **CURRENT TOOLBOX INTAKE**. Vollständiger Export liegt transportbedingt im Stunt-Race-Inbox; ToolBox-Owner bleibt dieses Repo. GitHub-Asset-Gaps korrigiert, Birthday explizit archiviert, Promotion-/Browser-Gate definiert.
