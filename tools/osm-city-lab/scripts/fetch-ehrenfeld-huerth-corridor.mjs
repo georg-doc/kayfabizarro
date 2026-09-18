@@ -62,7 +62,7 @@ for(const result of results)for(const e of result.elements)addElement(map,e);
 
 const localSources=[];
 for(const rel of spec.endpointConnectorSources||[]){
-  const url=new URL('../'+rel.replace(/^data\//,''),import.meta.url);
+  const url=new URL('../'+rel,import.meta.url);
   const text=await fs.readFile(url,'utf8');
   const raw=JSON.parse(text);
   const ways=(raw.elements||[]).filter(e=>e.type==='way'&&e.tags?.highway&&spec.endpointConnectorHighwayClasses.includes(e.tags.highway));
