@@ -87,12 +87,22 @@ Important: FR-S04-02 still uses the original kart. The adapter is implementation
 
 The first receiver probe can use the numeric AABB proxy directly with Rapier; the missing binary chassis GLB remains a separate Studio producer-capability gate.
 
+### Race owner handoff
+
+Additive owner brief created in `georg-doc/KFB-Stunt-Car-Race`:
+
+`_handover/GAME_DEV_STUDIO_SEDAN_PACKAGE_2026-09-18.md`
+
+Commit: `3286ed5315c837753d1efe93d5580460ee9b8642`.
+
+It requests no runtime patch by itself and preserves FR-S04-02 immutably. It gives the Race/Free-Roam owner exact package refs, numeric-proxy path, real source-wheel binding and Sedan-specific regression gates for the next scheduled candidate.
+
 ## NEXT
 
 1. keep the verified Cloudflare preview proof green after catalog/UI changes;
 2. produce + inspect + validate `car-sedan-chassis-proxy.glb` when the Game Development Studio CLI is available;
 3. execute Lorekeeper consumer gate;
-4. execute Sedan Slice-04-derived DRIVE gate;
+4. execute the Sedan gate only in the Race/Free-Roam owner from the prepared FR-S04-02 handoff;
 5. bind exact existing SFX source refs;
 6. only then decide batch expansion.
 
