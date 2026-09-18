@@ -4,6 +4,10 @@ import { chromium } from 'playwright';
 const origin='https://kayfabizarro.pages.dev';
 const route='/tools/kfb-cartoon-map-board/';
 const localStory=JSON.parse(fs.readFileSync('tools/kfb-cartoon-map-board/data/story-demo.v1.json','utf8'));
+const localApp=fs.readFileSync('tools/kfb-cartoon-map-board/src/app.js','utf8');
+const buildMatch=localApp.match(/const KFB_MAP_BUILD = '([^']+)'/);
+if(!buildMatch) throw new Error('KFB_MAP_BUILD missing from local app.js');
+const expectedBuild=buildMatch[1];
 const out='kfb-cartoon-map-board-public-evidence';
 fs.mkdirSync(out,{recursive:true});
 
@@ -11,6 +15,7 @@ const report={
   slice:'P0.2',
   url:origin+route,
   storyVersion:localStory.version,
+  expectedBuild,
   checks:[],
   errors:[],
   failedRequests:[],
@@ -49,6 +54,21 @@ try{
     expectedVersion:localStory.version,
     actualVersion:remoteStory?.version
   });
+
+  let appLive=false;
+  for(let attempt=0;attempt<36;attempt++){
+    try{
+      const r=await fetch(origin+route+'src/app.js?ci='+Date.now(),{
+        cache:'no-store',signal:AbortSignal.timeout(15000)
+      });
+      if(r.ok){
+        const text=await r.text();
+        if(text.includes("const KFB_MAP_BUILD = '"+expectedBuild+"'")){appLive=true;break;}
+      }
+    }catch{}
+    await sleep(10000);
+  }
+  check('exact runtime build deployed',appLive,{expectedBuild,url:origin+route+'src/app.js'});
 
   const html=await fetch(origin+route+'?ci='+Date.now(),{cache:'no-store',signal:AbortSignal.timeout(15000)});
   check('fixed Cloudflare route HTTP',html.ok,{status:html.status,url:origin+route});
@@ -91,6 +111,7 @@ try{
 
   const snap=await page.evaluate(()=>window.KFBMapBoard?.report?.());
   report.runtime=snap;
+  check('runtime build identity',snap?.build===expectedBuild,{actual:snap?.build,expectedBuild});
   check('country board populated',snap?.countriesLoaded>=30,snap);
   check('story anchors populated',snap?.markersLoaded===localStory.stories.length,snap);
   check('map ink capability resolved',/canon v\d+ \+ map BAND adapter/.test(snap?.inkCanonStatus||''),snap?.inkCanonStatus);
@@ -113,7 +134,7 @@ try{
   report.status='FAIL';
   report.failure=String(e.stack||e);
   if(page){
-    try{report.phase=await page.evaluate(()=>window.__KFB_MAP_BOARD_PHASE__||null,{timeout:3000});}catch{}
+    try{report.phase=await page.locator('#stage').getAttribute('data-boot-phase',{timeout:3000});}catch{}
     try{report.diag=await page.locator('#diag').textContent({timeout:3000});}catch{}
     try{report.loadingText=await page.locator('#loadingText').textContent({timeout:3000});}catch{}
     try{await page.screenshot({path:out+'/failure.png',fullPage:true,timeout:5000});}catch{}
