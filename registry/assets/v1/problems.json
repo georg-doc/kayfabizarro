@@ -1,6 +1,6 @@
 {
   "counts": {
-    "DUPLICATE_NAME": 659,
+    "DUPLICATE_NAME": 660,
     "MISSING_REFERENCED_FILE": 339,
     "UNRESOLVED_FBX_DEPENDENCY": 305,
     "UNRESOLVED_MODEL_DEPENDENCY": 89
@@ -7597,6 +7597,19 @@
       "type": "DUPLICATE_NAME"
     },
     {
+      "collectionPath": "Assets",
+      "format": "png",
+      "kind": "image-2d",
+      "name": "tiny_treats_texture_1",
+      "packId": "tiny-treats-house-plants-1-0-free-2",
+      "paths": [
+        "media/3D_Assets/Tiny_Treats_House_Plants_1.0_FREE 2/Assets/Textures/tiny_treats_texture_1.png",
+        "media/3D_Assets/Tiny_Treats_House_Plants_1.0_FREE 2/Assets/gltf/tiny_treats_texture_1.png"
+      ],
+      "problemId": "DUPLICATE_NAME:tiny-treats-house-plants-1-0-free-2:Assets:image-2d:png:tiny_treats_texture_1",
+      "type": "DUPLICATE_NAME"
+    },
+    {
       "collectionPath": "Captain Clown Nose",
       "format": "png",
       "kind": "image-2d",
@@ -14346,5 +14359,5 @@
     }
   ],
   "schema": "kfb.asset-registry.problems.v1",
-  "sourceCommit": "eb48f50489b9e4903ec1e3d2fb1837605ce7d792"
+  "sourceCommit": "f066603fbadd8cdcf3df97486e82cd5897167400"
 }
