@@ -1,0 +1,62 @@
+{
+  "schema": "kfb.eye-rig.protocol/1",
+  "version": "1.0",
+  "purpose": "Renderer-neutral control surface shared by 2D cutout and 3D EyeRig implementations.",
+  "canonical3DDonor": "tools/KFB-ToolBox/kfb-rigs-embed-v3/petstudio-v9/studio-v12/pet-eye-rig.v6.js",
+  "methods": [
+    "eyeFrame()",
+    "setBlink({minGap,maxGap,dur})",
+    "blinkNow()",
+    "setGazeFollow(on)",
+    "pointTo(nx,ny)",
+    "applyEmote({lidUpper,lidLower,slant,pupil,gaze})",
+    "setKinetics({a,c,j,enabled,gain})",
+    "setLife({on,wander,tremor})",
+    "update(dt)"
+  ],
+  "eyeFrame": {
+    "fields": [
+      "left",
+      "right",
+      "radius",
+      "parent",
+      "rig",
+      "gen",
+      "unit"
+    ],
+    "meaning": "Stable public attachment seam for brows, nose, eyewear and future eye-relative accessories."
+  },
+  "channels": {
+    "gaze": {
+      "range": [
+        -1,
+        1
+      ],
+      "axes": "x right, y up"
+    },
+    "blink": {
+      "globalByDefault": true
+    },
+    "lids": {
+      "leftRightAsymmetry": true
+    },
+    "pupil": [
+      "normal",
+      "wide"
+    ],
+    "kinetics": [
+      "a",
+      "c",
+      "j"
+    ],
+    "life": [
+      "wander",
+      "tremor"
+    ]
+  },
+  "rendererAdapters": {
+    "threejs": "Existing EyeRig v6 donor. No duplicate 3D implementation is authorized here.",
+    "svg2d": "shared/eye-rig/eye-rig-2d-adapter.v1.js"
+  },
+  "clipRule": "Shared clips address semantic protocol methods/channels, never renderer geometry directly."
+}
