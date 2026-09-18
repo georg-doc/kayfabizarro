@@ -1,5 +1,15 @@
 # KFB Lead · Current Recovery Checkpoint · 18.09.2026
 
+## Current Race delta · audio accepted / Box Stop · 18.09.2026
+
+Georg accepts Audio A1 sonic direction and authorizes integration; full feature-test coverage is unknown. Original A1 source transfer is still required. Do not repeat the completed blanket listening gate.
+
+The Vehicle Deformer review is now SOURCE RECEIVED / REVIEWED at kayfabizarro@f510a35f027148b7d6238fcb0ffec18848aecd25: `tools/KFB-ToolBox/_inbox/KFB Cartoon Vehicle + Deformer Lab v1/WS1_Vehicles_Review_2026-09-18`, active lab-v7 / deformer v2, 43 candidates and four profiles. The DocCheck UI is rejected; use the Resident/World Atlas interface family. No rider rigs in the first Race comparison.
+
+Proposed next playable loop: Drive → Box Stop → Vehicle / Motion profile → Test Lap → 3D countdown → Drive. Compact kinetic radio/tacho and the existing ten-track Jukebox are the approved product direction, not newly implemented runtime. Facility geometry and Environment dressing must be planned together.
+
+[Authoritative Race decisions / exact sources](https://github.com/georg-doc/KFB-Stunt-Car-Race/blob/main/_handover/BOX_STOP_RADIO_FACILITY_DECISIONS_2026-09-18.md). Older pending statements below are dated recovery history where superseded by this delta. Other project lanes retain their own owners and priorities.
+
 **Status:** CURRENT RECOVERY POINTER · no runtime SSOT.
 
 Read first:
