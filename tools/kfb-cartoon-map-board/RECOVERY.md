@@ -2,6 +2,10 @@
 
 ## Current entry
 
+Current implementation slice: **P0.2 Story Focus**.
+
+Read `docs/STORY_FOCUS_P02.md` after this file.
+
 `tools/kfb-cartoon-map-board/index.html`
 
 Expected public route after Pages deployment:
@@ -39,4 +43,6 @@ This tool is additive. Rollback is confined to `tools/kfb-cartoon-map-board/`; d
 
 ## Resume point
 
-First action in a recovery chat: read this file, `README.md`, `CHANGELOG.md`, then inspect the deployed P0 visually before adding hierarchy/cards/authoring.
+First action in a recovery chat: read this file, `README.md`, `CHANGELOG.md`, `docs/STORY_FOCUS_P02.md`, then inspect the deployed P0.2 visually before adding hierarchy/cards/authoring.
+
+Current next slice after visual QA: **Europe -> country -> region -> city**, handing detailed city ownership back to `osm-city-lab`.
