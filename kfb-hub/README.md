@@ -4,6 +4,9 @@
 
 Human-facing navigator for the wider KFB production scope. It is deliberately **not** a new SSOT.
 
+Candidate playground: `https://kayfabizarro.pages.dev/kfb-hub/stage/`. Stage is publicly testable
+but never implies Live promotion or Georg acceptance.
+
 ## What it contains
 
 - recovery and current lead entry points;

@@ -2,6 +2,22 @@
 
 Alte Einträge bleiben unverändert. Korrekturen als neue CORRECTION/SUPERSEDES-Einträge mit Bezug ergänzen. Aktuelle Momentaufnahme im MASTERPLAN/Return, Geschichte hier.
 
+## 2026-09-19 · Cartoon Vehicle Deformer Lab v2 intake
+
+### SOURCE RECEIVED
+Added Georg's complete 32-file Vehicle Deformer Lab v2 export under `_inbox/` without replacing
+the earlier v1 intake. The package declares 61 ground fixtures, 10 flight candidates and 23
+deterministic sequences.
+
+### TESTED RESULT
+Fourteen JavaScript syntax checks and three JSON parses pass. Local HTTP browser boot passes for
+the Hatchback ground fixture and the Airplane A flight inventory. The flight deformer remains
+explicitly unimplemented; human visual acceptance of the ground sequences is pending.
+
+### ROUTING
+Added a public Stage candidate route plus the bounded Vehicle Lab v3 / TinySkies flight brief.
+No Race or Travel physics ownership moved into ToolBox.
+
 ## 2026-09-14 · T1-Onboarding
 
 ### DECISION
