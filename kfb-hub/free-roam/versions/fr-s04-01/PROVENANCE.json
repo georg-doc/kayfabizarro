@@ -1,0 +1,45 @@
+{
+  "id": "fr-s04-01",
+  "sourceRepository": "georg-doc/KFB-Stunt-Car-Race",
+  "sourceCommit": "d98600ef52c9f1fc28bd93bcbbe8f6f177eece37",
+  "donorPhysicsBlob": "1e5df99cc18d3c3156f84af25a1cf5bcbdfb4fd2",
+  "worldModuleBlob": "fa14b407886175d140c7aece59caa7897e690216",
+  "intentionalDeltas": [
+    "candidate identity",
+    "explicit local fixture/start/road ownership",
+    "receiver safe region",
+    "receiver recovery region",
+    "no legacy region reward in contact probe",
+    "explicit forward boost request",
+    "same-origin immutable Travel JS module packaging; source bytes preserved"
+  ],
+  "packagedTravelModules": {
+    "globe.js": "80ebf8cde3649b2e0963d7d517a77f61421c70e1",
+    "simplex-noise.js": "201631f08df081f5695269923e2c744c88b7a5d7",
+    "terrain-surface.js": "9513347b6e3192dfefbeb3371085b13ac41ebb5d",
+    "globe-biome.js": "db3acf6ae6b7ebbc6cb4a7113a0d0fe782429d74",
+    "rim-light.js": "d39e23ce598b219dae6331e37fc3148b9b5bde80"
+  },
+  "terrainSource": {
+    "repository": "georg-doc/kayfabizarro",
+    "commit": "d7381f87fb0b1c2909b253b7331b9ce547208c57",
+    "path": "travel/wip/travel_globe_wsa/globe-v13/globe.js",
+    "blob": "80ebf8cde3649b2e0963d7d517a77f61421c70e1",
+    "owner": "georg-doc/KFB-Travel-Globe"
+  },
+  "scope": "SOURCE_DERIVED_BOUNDED_CONTACT_PROBE_NOT_TRAVEL_HOST_INTEGRATION",
+  "humanAcceptance": "PENDING",
+  "files": {
+    "world.js": "70395f3c654300cc8d6b132a67b83bbb200a0920203d4ee26ab747f3139f28ce",
+    "index.html": "f664a7a32662fbd1224ce0d74758e3d21f41c74c0d6c685c4ca803a4f672dbaf",
+    "physics.js": "53c7ad6521d800ed3d1fc702149b8c38ca05c36af2159b98fa2e689e0fab5983",
+    "app.mjs": "d0631384d4264a698c9882c543a0445fa3eb887404efcf25183fd1cffc41552b",
+    "drive-intent.mjs": "b0f3ef11dcee5bd0dc802ec1dc2e54eafd3ec149217b93a5d754889703732792",
+    "travel-fixture.mjs": "92d6d9d8e735fe1af9e1bcd1759d2c491aceff9e5589c848f370e8fa8801dfdd",
+    "travel-donor/globe.js": "0b5273f3629421a4b486bab392c160f61b30eb8a1dd871151c562257c63b85a0",
+    "travel-donor/rim-light.js": "bedb0e8ca712baae6423a70905fb52dcdc485e19bc4f3c5b3fa412519999b8b0",
+    "travel-donor/globe-biome.js": "791dcb980d733931affbebc58062124862bc25748293c31cdc57f26b6ec28842",
+    "travel-donor/simplex-noise.js": "e79e5fddfebcf99b1409bcf8bfc7a17167af9617e101c4fad2337d830033b4b7",
+    "travel-donor/terrain-surface.js": "2dbfaac486ff8b5750f89d34bbc925a62c0ddaf460668b4bcaf2da1f417bdb8e"
+  }
+}
