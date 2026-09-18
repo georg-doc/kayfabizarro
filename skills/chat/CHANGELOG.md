@@ -129,3 +129,12 @@ Append Town §11: parked Tourbus as encounter/media place; collected rejoinder a
 
 ### CORRECTION / SUPERSEDES PREVIOUS AMBIGUITY
 Georg explicitly corrected the earlier Skydome request to planets. Planet versus plant ambiguity in the previous addendum is resolved in favor of Quaternius planets; existing plant assets do not become part of that request.
+
+
+## 2026-09-18 · 2D Animation Studio routing
+
+- registered `tools/2D Animation Studio/` as a `CURRENT_TOOL`;
+- first lab: DocCheck Eumel browser cutout rig;
+- loads with `skills/kfb-cartoon-animation_v2.md`;
+- established a scoped tool-local inbox for the incoming DocCheck AD Illustrator source;
+- preserved the evidence boundary: inbox input != accepted SSOT, and no supersession of the older Animation Lab node is claimed yet.
