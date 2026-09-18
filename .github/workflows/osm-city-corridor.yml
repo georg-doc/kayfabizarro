@@ -16,7 +16,7 @@ permissions:
 
 concurrency:
   group: osm-city-ehrenfeld-huerth-corridor
-  cancel-in-progress: false
+  cancel-in-progress: true
 
 jobs:
   discover:
