@@ -1,0 +1,26 @@
+{
+  "schema": "kfb.vehicle-physics-handoff.v0",
+  "vehicleId": "car-sedan",
+  "status": "PROPOSED_RECEIVER_OPEN_CONSUMER_TEST",
+  "visualSourceRef": "source:car-sedan",
+  "receiver": {
+    "owner": "KFB-Stunt-Car-Race Production Race",
+    "candidate": "Slice-04-derived free-drive adapter",
+    "evidence": "skills/chat/workflows/ASTRA_INTEGRATION_01_2026-09-18/WALK_DRIVE_COMBAT_PREFLIGHT.md",
+    "note": "BOX1 track motor is not the free-drive physics owner."
+  },
+  "feelReference": {
+    "owner": "BOX1 / Box Stop",
+    "evidence": "kfb-hub/stunt-race/track-environment-lab/box-stop/evidence/browser.json"
+  },
+  "adapterInputs": [
+    "wheel node positions",
+    "wheel radius/width",
+    "wheelbase",
+    "track",
+    "wheel-free chassis proxy",
+    "source forward/up axes",
+    "visual scale"
+  ],
+  "ownershipRule": "exactly one physical pose/contact writer; deformer/VFX/SFX read gameplay facts only"
+}

@@ -1,0 +1,24 @@
+{
+  "schema": "kfb.game-ready-resident-binding.v0",
+  "residentId": "lorekeeper",
+  "status": "CANDIDATE",
+  "actorSource": "source:lorekeeper",
+  "habitatSource": "source:lorekeeper-tome",
+  "handPropSource": "source:lorekeeper-staff",
+  "rigFamily": "Rig_Medium",
+  "consumerScale": 1,
+  "modelForward": "OPEN_SOURCE_INSPECTION",
+  "modelUp": "+Y_EXPECTED_GLTF_NOT_SEPARATELY_CONSUMER_VERIFIED",
+  "atlasPreviewPlacement": {
+    "positionXZ": [
+      0.75,
+      0
+    ],
+    "yawDeg": -18,
+    "note": "Atlas staging only; not a canonical runtime transform."
+  },
+  "rootMotionPolicy": "PRESENTATION_ONLY_CONSUMER_OWNS_TRANSLATION_AND_HEADING",
+  "collisionProxyRef": "INTERACTION_PROXY.json",
+  "animationMapRef": "ANIMATION_MAP.json",
+  "rigSocketReportRef": "RIG_SOCKET_REPORT.json"
+}

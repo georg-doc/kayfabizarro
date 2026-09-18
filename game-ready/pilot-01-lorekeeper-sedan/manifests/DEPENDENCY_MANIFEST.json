@@ -1,0 +1,53 @@
+{
+  "schema": "kfb.game-asset-dependency-manifest.v0",
+  "packageId": "pilot-01-lorekeeper-sedan",
+  "dependencies": [
+    {
+      "owner": "lorekeeper",
+      "relation": "embedded-glb",
+      "note": "Lorekeeper.glb is canonical and remains remote/reference-only."
+    },
+    {
+      "owner": "lorekeeper-staff",
+      "path": "media/3D_Assets/KayKit_Mystery_Series6/1 - July 2025 - Lorekeeper/gltf/Lorekeeper_Staff.bin",
+      "revision": "891eadf01e218f5fc21387e64cea1fec8332c5b6",
+      "blobSha": "88992cd633a3365e9aa84a2070c970bcb4aceebc",
+      "bytes": 37352
+    },
+    {
+      "owner": "lorekeeper-staff",
+      "path": "media/3D_Assets/KayKit_Mystery_Series6/1 - July 2025 - Lorekeeper/gltf/lorekeeper_texture.png",
+      "revision": "891eadf01e218f5fc21387e64cea1fec8332c5b6",
+      "blobSha": "e64930b239a25f326332d6cd7708c92f330a6790",
+      "bytes": 11867
+    },
+    {
+      "owner": "lorekeeper-tome",
+      "path": "media/3D_Assets/KayKit_Mystery_Series6/1 - July 2025 - Lorekeeper/gltf/Lorekeeper_Tome.bin",
+      "revision": "891eadf01e218f5fc21387e64cea1fec8332c5b6",
+      "blobSha": "3a280ccebf35cca609a2bee14bed0afcd16c1b6e",
+      "bytes": 170424
+    },
+    {
+      "owner": "lorekeeper-tome",
+      "path": "media/3D_Assets/KayKit_Mystery_Series6/1 - July 2025 - Lorekeeper/gltf/lorekeeper_texture.png",
+      "revision": "891eadf01e218f5fc21387e64cea1fec8332c5b6",
+      "blobSha": "e64930b239a25f326332d6cd7708c92f330a6790",
+      "bytes": 11867
+    },
+    {
+      "owner": "car-sedan",
+      "path": "media/3D_Assets/KayKit_City_Builder_Bits_1.0_FREE/Assets/gltf/car_sedan.bin",
+      "revision": "10a7fdce6b3a1ae22504ade71b7dbec5f25e0ff0",
+      "blobSha": "ba412b85495e0a56947635821056eb8c273cf3da",
+      "bytes": 55332
+    },
+    {
+      "owner": "car-sedan",
+      "path": "media/3D_Assets/KayKit_City_Builder_Bits_1.0_FREE/Assets/gltf/citybits_texture.png",
+      "revision": "10a7fdce6b3a1ae22504ade71b7dbec5f25e0ff0",
+      "blobSha": "ffffc8998d30b32bdfa6761f33c87bcdfd0ba07f",
+      "bytes": 19885
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "schema": "kfb.interaction-proxy.v0",
+  "residentId": "lorekeeper",
+  "status": "PROPOSAL_REQUIRES_CONSUMER_MEASUREMENT",
+  "actorCollision": {
+    "shape": "capsule",
+    "dimensions": null,
+    "owner": "receiving consumer",
+    "note": "Do not invent dimensions from Atlas preview staging."
+  },
+  "tomeInteract": {
+    "shape": "box-or-cylinder",
+    "dimensions": null,
+    "sourceRole": "standing lectern / habitat landmark",
+    "note": "Use actual loaded bounds in receiving consumer."
+  },
+  "interactAnchor": {
+    "value": null,
+    "status": "OPEN"
+  },
+  "lookAtAnchor": {
+    "value": null,
+    "status": "OPEN"
+  }
+}
