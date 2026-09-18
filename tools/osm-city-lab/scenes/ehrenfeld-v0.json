@@ -96795,13 +96795,16 @@
       "id": "road-terrain-seam",
       "kind": "road-terrain-transition",
       "local": {
-        "x": 329.392,
+        "x": 329.62,
         "y": 0,
-        "z": -91.279
+        "z": 93.195
       },
       "status": "candidate",
-      "sourceRoadId": "way/1226704076",
+      "sourceRoadId": "way/4919998",
+      "edgeDistanceM": 0,
+      "greenDistanceM": null,
       "safety": [
+        "not inside mapped building footprint",
         "Travel terrain continues beyond city surface",
         "slope/contact within receiver budget"
       ]

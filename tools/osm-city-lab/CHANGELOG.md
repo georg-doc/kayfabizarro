@@ -1,5 +1,29 @@
 # Changelog · additive
 
+## 2026-09-18 · S2 consumer export hardening
+
+### TESTED RESULT
+- Added an explicit consumer-contract gate for both `ehrenfeld-v0` and `huerth-v0`.
+- Both exported scenes regenerate deterministically from their committed normalized OSM datasets.
+- Both scenes provide a local metre frame, driveable road metadata, sidewalk hints, building obstacles and the required foot / park / intersection / road↔terrain candidate anchors.
+- Candidate anchors are checked against mapped building footprints; road↔terrain anchors are additionally verified to lie on their declared driveable source road.
+- Ehrenfeld road↔terrain candidate: `way/4919998`, local bbox edge distance 0 m.
+- Hürth road↔terrain candidate: `way/40306265:0`, local bbox edge distance 0 m and mapped green distance 0 m.
+- Second deterministic CI run after the scene commit reported `No S2 scene delta.`.
+
+### CORRECTION
+- The first hard gate found the original Ehrenfeld `road-terrain-transition` candidate inside building `way/343089597` (Körnerstraße 22).
+- The former heuristic used an outer road midpoint without checking mapped obstacles.
+- The exporter now samples driveable road geometry, rejects mapped building footprints, and scores remaining candidates by local-edge / green proximity while preserving the exact source-road identity.
+
+### STATUS
+- S2 **export contract**: TESTED RESULT.
+- S2 **Travel / Free-Roam runtime integration**: OPEN.
+- S2 **driving / reverse / parking / road↔terrain browser acceptance**: OPEN.
+- No Race/Travel movement or physics runtime was changed by this slice.
+
+---
+
 ## 2026-09-18 · Hürth v0 S0 tested result + shared multi-city pipeline
 
 ### DECISION
