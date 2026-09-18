@@ -1,0 +1,63 @@
+{
+  "schema": "kfb-map-story/v1",
+  "version": "1.0.0",
+  "title": "Europe P0.2 Story Focus Demo",
+  "purpose": "Neutral content-anchor proof for map storytelling. No KFB CardBuilder ownership is claimed here.",
+  "stories": [
+    {
+      "id": "berlin-actor",
+      "label": "BERLIN",
+      "countryCode": "DE",
+      "lon": 13.405,
+      "lat": 52.52,
+      "asset": "meeple_red.gltf",
+      "height": 4.8,
+      "title": "Actor Anchor",
+      "body": "A map node can carry a resident, character, speaker or other actor without changing the geography."
+    },
+    {
+      "id": "paris-card",
+      "label": "PARIS",
+      "countryCode": "FR",
+      "lon": 2.3522,
+      "lat": 48.8566,
+      "asset": "pawn_A_blue.gltf",
+      "height": 4.6,
+      "title": "Card Anchor",
+      "body": "This anchor is reserved for later KFB CardBuilder / PDF-card placement above the map plane."
+    },
+    {
+      "id": "rome-event",
+      "label": "ROME",
+      "countryCode": "IT",
+      "lon": 12.4964,
+      "lat": 41.9028,
+      "asset": "flag_A_yellow.gltf",
+      "height": 5.4,
+      "title": "Event Anchor",
+      "body": "Flags, dates and event beats can be staged as physical board-game objects and focused by the camera."
+    },
+    {
+      "id": "warsaw-evidence",
+      "label": "WARSAW",
+      "countryCode": "PL",
+      "lon": 21.0122,
+      "lat": 52.2297,
+      "asset": "token_green.gltf",
+      "height": 3.4,
+      "title": "Evidence Token",
+      "body": "A compact token can represent an evidence point, source, clue or other contextual marker."
+    },
+    {
+      "id": "london-location",
+      "label": "LONDON",
+      "countryCode": "GB",
+      "lon": -0.1276,
+      "lat": 51.5072,
+      "asset": "building_blue.gltf",
+      "height": 4.7,
+      "title": "Location Prop",
+      "body": "A place can receive a real KayKit prop while the underlying country remains an independently selectable tile."
+    }
+  ]
+}
