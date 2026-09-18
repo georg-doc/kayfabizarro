@@ -134,6 +134,8 @@ Routing evidence target:
 
 `tools/osm-city-lab/evidence/ehrenfeld-huerth-route.json`
 
+**Current corridor status:** `SOURCE BLOCKED · RETRYABLE`. Multiple deterministic public-Overpass runs failed on different chunks while other chunks succeeded; see `tools/osm-city-lab/docs/CORRIDOR_EHRENFELD_HUERTH.md`. No route-evidence JSON currently means no tested route claim.
+
 Militärringstraße is preferred when the real OSM graph supports it; never hand-draw it to satisfy the name.
 
 ## Status discipline
