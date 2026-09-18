@@ -690,3 +690,39 @@ Coverage includes deployed catalog, fixed page HTTP, WebGL Studio boot, four Pil
 Attempt 1 failed only because the new catalog had not propagated to the Cloudflare host within the first polling window. The unchanged proof passed on rerun; no viewer or asset repair was required.
 
 **Boundary:** public preview PASS is not Sedan/Lorekeeper runtime consumer acceptance and not Georg's visual acceptance.
+
+
+---
+
+## 17 · Living Plant / Plant Prop package · BACKLOG DONOR
+
+**Added:** 2026-09-18  
+**Status:** BACKLOG / PACKAGE TYPE REGISTERED · does not expand active Pilot 01.
+
+Source / authoring lane:
+
+`skills/chat/workflows/PLANT_PROP_LAB_2026-09-18/`
+
+Potential package:
+
+```text
+GameReadyPlantPackage
+  canonical pot / plant refs
+  PlantRecipe
+  PotStyleRecipe
+  PropRigRecipe
+  optional LivingProp / EyeRig adapter
+  support / collider proxy
+  VFX / SFX hooks
+  LOD / instancing hints
+  consumer evidence
+```
+
+Important:
+- existing Tiny Treats / Quaternius assets stay canonical GitHub sources;
+- EyeRig v6 stays the shared eye implementation;
+- “living plant” does not automatically become a Resident/Combat character;
+- package may be consumed by Travel, OSM City, Platformer, Dungeon or other named receivers only after their own test;
+- current Lorekeeper + Sedan Pilot 01 remains the active Game Dev Studio capability proof.
+
+This package type is intentionally compatible with Frankensteining: a static PlantRecipe can later gain a transform rig, style recipe, EyeRig adapter and consumer-specific interaction without replacing the canonical source meshes.
