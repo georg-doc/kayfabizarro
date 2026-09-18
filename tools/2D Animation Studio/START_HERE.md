@@ -30,3 +30,14 @@ Use the central status vocabulary literally:
 `PROPOSAL` → `DECISION` → `IMPLEMENTATION` → `TESTED RESULT` → `HUMAN FREEPLAY / GEORG PASS`.
 
 A source file existing in `_inbox/` is not an implementation PASS. A browser animation running is not proof that source proportions/outlines are correct.
+
+
+## ToolBox / shared-rig alignment
+
+For eye/face or cross-render work read:
+
+- `docs/TOOLBOX_INTEGRATION.md`
+- `shared/eye-rig/toolbox-bridge.v1.json`
+- `tools/KFB-ToolBox/docs/2D_ANIMATION_STUDIO_BRIDGE.md`
+
+Do not fork ToolBox EyeRig semantics or migrate 3D actor ownership into this Studio.
