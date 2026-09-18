@@ -1,7 +1,7 @@
 {
   "schema": "kfb.toolbox-onboarding/1",
   "version": "1.0.0",
-  "updated": "2026-09-14",
+  "updated": "2026-09-18",
   "status": "ONBOARDING_IMPLEMENTED_RUNTIME_NOT_TESTED",
   "repository": "georg-doc/kayfabizarro",
   "path": "tools/KFB-ToolBox",
@@ -161,6 +161,19 @@
     "combat": "georg-doc/KFB-Combat-Arena",
     "stuntDonors": "georg-doc/KFB-Stunt-Car-Race/_inbox/",
     "privateIntake": "georg-doc/KFB-Production-Inbox",
-    "privateIntakeVerifiedHere": false
+    "privateIntakeVerifiedHere": false,
+    "twoDAnimationStudio": "tools/2D Animation Studio/",
+    "twoDAnimationStudioBridge": "tools/KFB-ToolBox/docs/2D_ANIMATION_STUDIO_BRIDGE.md",
+    "sharedEyeRigProtocol": "tools/2D Animation Studio/shared/eye-rig/eye-rig-protocol.v1.json",
+    "sharedEyeRigBridge": "tools/2D Animation Studio/shared/eye-rig/toolbox-bridge.v1.json",
+    "eumelRigLab": "tools/2D Animation Studio/labs/eumel-rig-lab/"
+  },
+  "crossRenderer": {
+    "status": "ALIGNMENT_IMPLEMENTED_RUNTIME_PROOF_PENDING",
+    "eyeProtocol": "kfb.eye-rig.protocol/1",
+    "threeDonor": "tools/KFB-ToolBox/kfb-rigs-embed-v3/petstudio-v9/studio-v12/pet-eye-rig.v6.js",
+    "svgAdapter": "tools/2D Animation Studio/shared/eye-rig/eye-rig-2d-adapter.v1.js",
+    "firstProof": "DocCheck Eumel 2D + one approved Rig_Medium actor",
+    "wholeBodyClipInterchangeability": "NOT_CLAIMED"
   }
 }

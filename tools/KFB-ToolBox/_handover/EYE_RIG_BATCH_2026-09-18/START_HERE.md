@@ -6,6 +6,8 @@
 **Proposed source path:** `tools/KFB-ToolBox/eye-rig-batch/`  
 **Proposed public candidate:** `https://kayfabizarro.pages.dev/tools/KFB-ToolBox/eye-rig-batch/`
 
+> **Additive cross-render note:** read [`2D_ALIGNMENT_ADDENDUM.md`](2D_ALIGNMENT_ADDENDUM.md) for the 2D Animation Studio bridge. It does not replace or delay the Medium-first Batch plan.
+
 ## 0 · Product goal
 
 Build a standalone Atlas-style batch-rigging workbench that can mount and calibrate the existing KFB cartoon EyeRig on many KayKit/KFB characters quickly and reproducibly.

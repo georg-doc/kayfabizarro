@@ -25,3 +25,14 @@ Incoming source job:
 ## Boundaries
 
 The Studio does not own consumer gameplay rules or 3D actor/look/material systems. Inbox material is not automatically canonical. The older `animation-lab` registry node is not silently superseded; reconcile explicitly later if Georg wants this Studio to become its formal successor.
+
+
+## ToolBox alignment
+
+Cross-tool bridge:
+
+`tools/KFB-ToolBox/docs/2D_ANIMATION_STUDIO_BRIDGE.md`
+
+ToolBox keeps 3D EyeRig-v6 / FaceHost / FrankenStein ownership. The 2D Studio consumes the same semantic EyeRig control surface through an SVG adapter and owns 2D source geometry / cutout binding.
+
+Shared eye semantics do not imply shared whole-body animation tracks across SVG cutouts and KayKit skeletons.

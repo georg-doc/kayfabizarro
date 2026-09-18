@@ -21,3 +21,20 @@ Lesbarkeit zuerst. Normale Webfont/System-Fallback für UI; kein Special Elite o
 
 ### CLARIFICATION
 `kfb.pets/1` bleibt der Input/Output-Vertrag. Logische Actor-/Role-/Fit-Trennung rechtfertigt keinen stillen Schemawechsel. Alle gelieferten Farb-/Mod-/Rig-Snapshots bleiben WIP bis expliziter Abnahme.
+
+
+## 2026-09-18 · 2D Animation Studio alignment
+
+### DECISION
+ToolBox and 2D Animation Studio keep separate renderer/source ownership but share one semantic EyeRig control surface. EyeRig v6 remains the 3D donor; SVG/2D uses an adapter against the same gaze/blink/emote/kinetics/life vocabulary.
+
+### IMPLEMENTATION · contracts/docs
+- added `docs/2D_ANIMATION_STUDIO_BRIDGE.md`;
+- added a dedicated cross-tool handover;
+- added 2D Studio to the ToolBox owner table;
+- linked the EyeRig Batch lane to the cross-render bridge;
+- registered the 2D Studio/protocol/Eumel paths in `TOOLBOX_MANIFEST.json`;
+- preserved `kfb.eye-profile/0.1-candidate`; renderer binding remains companion candidate metadata.
+
+### OPEN
+Cross-render runtime proof is still pending: DocCheck Eumel 2D + one approved Rig_Medium actor must consume the same semantic eye sequence. No claim of common whole-body clip tracks.

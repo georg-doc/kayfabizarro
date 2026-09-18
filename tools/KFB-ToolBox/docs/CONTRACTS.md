@@ -9,6 +9,7 @@ Status: bestehende Verträge bewahren; die folgenden Integrationsgates gelten f�
 | Studio / gemeinsamer Actor-Bauweg | Graft, Look, Face-/Material-Module, vorhandene Pose-/Exportlogik | Weltbewegung, Damage, Kamera eines Spiels |
 | Rigging-Linie | vorhandene Part-/Anchor-/Carl-Kalibrierung und dokumentierte Übersetzung | alle Vehicle-Funktionen pauschal besitzen; fremde Rigs anhand Carl-Indizes durchsuchen |
 | Animation Lab | Clip-Wahl, Playback, Audit, Acting-Tests auf derselben Actor-Komposition | einen eigenen Kopf, EyeRig, Mund oder Look erfinden |
+| 2D Animation Studio | source-exakte 2D-Assets, Cutout-Bind/Bones, 2D-Deformer, SVG-/Browser-Adapter, 2D-Modul-Export | 3D FaceHost/EyeRig/FrankenStein-Owner ersetzen; Consumer-Runtime besitzen |
 | ToolBox-Hülle | Einstieg, Config-Auswahl, Docs, Versionsanzeige, Veröffentlichung | zweiter Owner der Rig-/Material-/Motion-Werte |
 | Consumer | aktive Runtime, Input, Clock, Bewegung, Kamera, Audio-Timing, Combat/Lernlogik | importierte Daten still als neue globale Defaults speichern |
 
@@ -48,3 +49,20 @@ Talk aus, Audioende, Abbruch und Actorwechsel führen in definierten Restzustand
 Nose/Brow/Mouth/Weapon-Mods müssen sauber an/aus schaltbar und wiederherstellbar sein. Beim Kopieren Materialcaches nicht global verändern. Carl-Parts aus dem verifizierten Spender extrahieren und an Zielanker montieren, nicht am Zielrig nach identischen Inselnummern suchen.
 
 Travel erhält später Actor plus Bath-Fit; Combat Grip/Muzzle/Readiness nach eigenem Vertrag; Podcast erhält denselben FB als Presenter ohne ungewollte Standardwaffe; Wissens-Pilli erhält Carl mit eigenen Face-Maßen. Keine Integration in fremde Repos durch T1.
+
+
+## Cross-render EyeRig alignment
+
+Current bridge: `docs/2D_ANIMATION_STUDIO_BRIDGE.md`.
+
+ToolBox EyeRig v6 remains the 3D implementation donor. 2D Animation Studio implements a renderer adapter against the same semantic control surface; it does not create a competing eye vocabulary.
+
+Shared semantic seam:
+
+`eyeFrame · setBlink · blinkNow · setGazeFollow · pointTo · applyEmote · setKinetics · setLife · update`
+
+The existing ToolBox `kfb.eye-profile/0.1-candidate` remains unchanged. Renderer-specific realization may use companion `kfb.eye-binding/0.1-candidate` metadata. This is a local candidate bridge, not a promoted global schema.
+
+Shared eye clips may address semantic methods/channels. Whole-body clips remain rig-family-specific until separately proven.
+
+The 2D Studio's DocCheck Eye/Face Modifier Atlas may supply source-derived rings/lids/eyewear and 2D placement recipes through `eyeFrame()`. ToolBox may supply 3D attachment logic/accessory donors. Neither side silently takes ownership of the other side's visual source assets.

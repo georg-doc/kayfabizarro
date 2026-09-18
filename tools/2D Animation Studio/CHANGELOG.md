@@ -53,3 +53,17 @@ Additive repairs:
 - documented the richer Eye/Face Modifier Atlas lane for rings/lids/eyewear without inventing unresolved source assets.
 
 Status remains IMPLEMENTATION; browser retest is required.
+
+
+## 2026-09-18 · v0.5 · ToolBox integration alignment
+
+- aligned 2D Studio with ToolBox EyeRig-v6 semantics instead of creating a second eye-control grammar;
+- added a stable ToolBox bridge doc and cross-tool handover;
+- added `shared/eye-rig/toolbox-bridge.v1.json`;
+- kept ToolBox `kfb.eye-profile/0.1-candidate` unchanged;
+- defined companion renderer-binding metadata as the non-breaking bridge;
+- documented `eyeFrame()` as the common 2D/3D accessory seam;
+- kept whole-body cutout clips and skeletal clips rig-family-specific;
+- defined the first cross-render proof as Eumel 2D + one approved Rig_Medium actor using the same semantic eye sequence.
+
+Runtime proof remains pending.
