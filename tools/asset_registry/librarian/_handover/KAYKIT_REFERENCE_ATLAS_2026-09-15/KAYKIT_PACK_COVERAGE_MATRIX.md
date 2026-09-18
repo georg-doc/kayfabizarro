@@ -1,3 +1,5 @@
+> **CURRENT OVERRIDE · 2026-09-18:** The 15 Sep registry baseline and pack-gap lists below are historical snapshots. Canonical Registry now uses source `eb48f50489b9e4903ec1e3d2fb1837605ce7d792` with **14,226 assets · 5,981 3D models · 107 packs**. New structural pack `kaykit-legacy` contains **389 assets** across five collections: Character Animations 1.2 legacy, Dungeon Pack 1.0 legacy, Skeletons 1.0 legacy, Spooktober 1.1 and Orc Warband. Dungeon 1.0 is extracted at `media/3D_Assets/KayKit Legacy/KayKit Dungeon Pack 1.0 2/` with 202 GLTF/GLB models and does not replace Dungeon 1.1. Recent source updates also made Medieval Builder, Furniture Bits, Restaurant Bits and Space Base Bits available as extracted Registry sources. Current GitHub/Registry state overrides any older “missing/archive-only” row below. Resident-specific Legacy candidates are documented in `tools/resident_atlas_s6/docs/LEGACY_INTAKE_2026-09-18.md`.
+
 # KFB Asset Librarian · KayKit Pack Coverage Matrix
 
 **Date:** 2026-09-15  
