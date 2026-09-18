@@ -26,13 +26,14 @@ try{
       const r=await fetch(origin+catalogUrl+'?ci='+Date.now(),{signal:AbortSignal.timeout(15000),cache:'no-store'});
       if(r.ok){
         const j=await r.json();
-        if(j.schema===localCatalog.schema&&j.packages?.[0]?.id===localCatalog.packages?.[0]?.id){live=true;remoteCatalog=j;break}
+        if(j.schema===localCatalog.schema&&j.catalogRevision===localCatalog.catalogRevision&&j.packages?.[0]?.id===localCatalog.packages?.[0]?.id){live=true;remoteCatalog=j;break}
       }
     }catch{}
     await new Promise(r=>setTimeout(r,10000));
   }
-  check('catalog deployed',live,{package:remoteCatalog?.packages?.[0]?.id});
+  check('catalog deployed at current revision',live,{package:remoteCatalog?.packages?.[0]?.id,revision:remoteCatalog?.catalogRevision,expected:localCatalog.catalogRevision});
   check('pilot has four preview assets',remoteCatalog.packages[0].assets.length===4,remoteCatalog.packages[0].assets.map(a=>a.id));
+  check('receiver adapter catalogued',remoteCatalog.packages[0].receiverHandoff?.donor==='fr-s04-02'&&/FR_S04_02_RECEIVER_ADAPTER/.test(remoteCatalog.packages[0].receiverHandoff?.adapter||''),remoteCatalog.packages[0].receiverHandoff);
 
   browser=await chromium.launch({headless:true,args:['--use-angle=swiftshader','--enable-unsafe-swiftshader']});
   const context=await browser.newContext({viewport:{width:1440,height:960}});
