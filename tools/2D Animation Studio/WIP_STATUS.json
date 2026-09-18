@@ -1,0 +1,23 @@
+{
+  "schema": "kfb.2d-animation-studio.wip/0.1",
+  "updated": "2026-09-18",
+  "status": "IMPLEMENTATION",
+  "tool": "2D Animation Studio",
+  "owner": "Georg / KFB",
+  "path": "tools/2D Animation Studio/",
+  "activeLab": "labs/eumel-rig-lab/",
+  "motionSkill": "skills/kfb-cartoon-animation_v2.md",
+  "inbox": "_inbox/",
+  "currentInputs": {
+    "measuredEumelReconstruction": "PROVISIONAL_DONOR",
+    "doccheckAdIllustratorSource": "EXPECTED_INPUT"
+  },
+  "nextGate": "Ingest and audit DocCheck AD Illustrator source; produce canonical part inventory before replacing provisional Eumel geometry.",
+  "evidence": {
+    "studioBootstrap": "IMPLEMENTATION",
+    "sourceIntake": "NOT_STARTED",
+    "canonicalAssetLibrary": "NOT_STARTED",
+    "browserRigAfterCanonicalIngest": "NOT_STARTED",
+    "georgAcceptance": "PENDING"
+  }
+}
