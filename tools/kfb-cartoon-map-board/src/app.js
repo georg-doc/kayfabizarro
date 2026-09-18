@@ -9,8 +9,12 @@ const loading = document.querySelector('#loading');
 const loadingTitle = document.querySelector('#loadingTitle');
 const loadingText = document.querySelector('#loadingText');
 const diag = document.querySelector('#diag');
+const selKicker = document.querySelector('#selKicker');
 const selName = document.querySelector('#selName');
 const selText = document.querySelector('#selText');
+const hoverNote = document.querySelector('#hoverNote');
+const focusBtn = document.querySelector('#focusBtn');
+const storyBtn = document.querySelector('#storyBtn');
 
 const OPENPLANET_API = 'https://download.openplanetdata.com/files?category=boundaries&subcategory=countries&limit=-1';
 const OPENPLANET_BASE = 'https://download.openplanetdata.com';
@@ -46,13 +50,21 @@ let exploded = false;
 let labelsVisible = true;
 let tokensVisible = true;
 let selected = null;
+let hovered = null;
+let storyCursor = -1;
+let storyManifest = null;
+let markerSpecs = [];
 let loadedCount = 0;
 let failedCount = 0;
 let selectedFiles = [];
+let cameraTween = false;
 const countries = [];
 const pickMeshes = [];
 const tokenHolders = [];
+const markerRecords = [];
 const clock = new THREE.Clock();
+const cameraGoalPos = new THREE.Vector3();
+const cameraGoalTarget = new THREE.Vector3();
 
 const renderer = new THREE.WebGLRenderer({ canvas, antialias:true, alpha:false });
 renderer.setPixelRatio(Math.min(devicePixelRatio, 2));
@@ -105,15 +117,32 @@ scene.add(rim);
 const root = new THREE.Group();
 scene.add(root);
 
+const focusRingMat = new THREE.MeshBasicMaterial({
+  color:inkColor, transparent:true, opacity:0.82, depthWrite:false, toneMapped:false
+});
+const focusRing = new THREE.Mesh(
+  new THREE.TorusGeometry(4.2,0.15,6,72),
+  focusRingMat
+);
+focusRing.rotation.x = Math.PI/2;
+focusRing.visible = false;
+
 function makePaperTexture(base = '#d8c6a6', line = '#ffffff') {
   const c = document.createElement('canvas');
   c.width = c.height = 256;
   const x = c.getContext('2d');
+  let paperSeed = hashString(base+'|'+line+'|kfb-paper-v1');
+  const rnd = () => {
+    paperSeed ^= paperSeed << 13;
+    paperSeed ^= paperSeed >>> 17;
+    paperSeed ^= paperSeed << 5;
+    return (paperSeed >>> 0) / 4294967295;
+  };
   x.fillStyle = base;
   x.fillRect(0,0,256,256);
   const im = x.getImageData(0,0,256,256);
   for (let i=0;i<im.data.length;i+=4) {
-    const n = (Math.random() - 0.5) * 15;
+    const n = (rnd() - 0.5) * 15;
     im.data[i] = Math.max(0, Math.min(255, im.data[i] + n));
     im.data[i+1] = Math.max(0, Math.min(255, im.data[i+1] + n));
     im.data[i+2] = Math.max(0, Math.min(255, im.data[i+2] + n));
@@ -124,9 +153,9 @@ function makePaperTexture(base = '#d8c6a6', line = '#ffffff') {
   x.lineWidth = 1;
   for (let i=0;i<90;i++) {
     x.beginPath();
-    const y = Math.random()*256;
+    const y = rnd()*256;
     x.moveTo(-10,y);
-    x.bezierCurveTo(60,y+(Math.random()-.5)*9,180,y+(Math.random()-.5)*9,270,y);
+    x.bezierCurveTo(60,y+(rnd()-.5)*9,180,y+(rnd()-.5)*9,270,y);
     x.stroke();
   }
   const t = new THREE.CanvasTexture(c);
@@ -360,7 +389,7 @@ function addCountryFromGeoJSON(code, name, geojson) {
   const sideMat=new THREE.MeshStandardMaterial({color:sideColor,roughness:1,metalness:0});
 
   const inkMat=new THREE.MeshBasicMaterial({color:inkColor,side:THREE.DoubleSide,depthWrite:false,toneMapped:false});
-  const rec={code,name,group,centroid,totalArea,polygons,topMat,sideMat,inkMat,inkMeshes:[],meshes:[],label:null,seed};
+  const rec={code,name,group,centroid,totalArea,polygons,topMat,sideMat,inkMat,inkMeshes:[],meshes:[],label:null,seed,markers:[]};
 
   for (const poly of polygons) {
     const shape=makeShape(poly.outer,poly.holes);
@@ -474,7 +503,7 @@ function updateDiag(extra='') {
     'countries '+loadedCount+'/'+selectedFiles.length+
     ' · failed '+failedCount+
     ' · ink '+inkCanonStatus+
-    ' · KayKit '+tokenHolders.length+'/5'+
+    ' · KayKit '+tokenHolders.length+'/'+(markerSpecs.length||5)+
     (extra ? ' · '+extra : '');
 }
 
@@ -492,35 +521,94 @@ function applyTargets() {
     rec.targetY=BOARD_TOP+0.06+(selected===rec ? 1.6 : 0)+(exploded ? seeded01(rec.seed,7)*0.55 : 0);
   }
 }
-function selectCountry(rec) {
-  if (selected && selected!==rec) selected.topMat.emissive.setHex(0x000000);
-  selected=rec;
-  if (selected) {
-    selected.topMat.emissive.setHex(0x1d1207);
-    selName.textContent=selected.name+' · '+selected.code;
-    selText.textContent='Independent 3D tile. Click another country, orbit around it, or use EXPLODE to separate the board into geographic pieces.';
-  } else {
-    selName.textContent='Europe · Board View';
-    selText.textContent='Orbit, zoom and click a country. The map is built as individual 3D puzzle pieces with hand-inked border ribbons and real KayKit board-game markers.';
+function updateHighlights() {
+  for (const rec of countries) {
+    if (rec===selected) rec.topMat.emissive.setHex(0x1d1207);
+    else if (rec===hovered) rec.topMat.emissive.setHex(0x0c0b07);
+    else rec.topMat.emissive.setHex(0x000000);
   }
+}
+
+function setFocusRing(rec) {
+  if (focusRing.parent) focusRing.parent.remove(focusRing);
+  if (!rec) {
+    focusRing.visible=false;
+    return;
+  }
+  const scale=THREE.MathUtils.clamp(Math.sqrt(Math.max(1,rec.totalArea))/18,0.72,1.85);
+  focusRing.position.set(rec.centroid.x,PIECE_DEPTH+0.19,rec.centroid.z);
+  focusRing.userData.baseScale=scale;
+  focusRing.scale.setScalar(scale);
+  focusRing.visible=true;
+  rec.group.add(focusRing);
+}
+
+function clearStoryActive() {
+  for (const m of markerRecords) m.labelEl?.classList.remove('active');
+}
+
+function selectCountry(rec,{fromStory=false}={}) {
+  selected=rec;
+  focusBtn.disabled=!selected;
+  if (!fromStory) clearStoryActive();
+  if (selected) {
+    selKicker.textContent='SELECTED COUNTRY TILE';
+    selName.textContent=selected.name+' · '+selected.code;
+    selText.textContent='Independent 3D tile. FOCUS frames it; EXPLODE separates it while attached story markers stay registered to the same geography.';
+  } else {
+    selKicker.textContent='SELECT A COUNTRY TILE';
+    selName.textContent='Europe · Board View';
+    selText.textContent='Orbit, zoom and click a country. The map is built as independent 3D puzzle pieces with hand-inked border ribbons and real KayKit board-game markers.';
+  }
+  setFocusRing(selected);
+  updateHighlights();
   applyTargets();
 }
 
+function queueCamera(position,target) {
+  cameraGoalPos.copy(position);
+  cameraGoalTarget.copy(target);
+  cameraTween=true;
+}
+
+function focusCountry(rec) {
+  if (!rec) return;
+  const x=rec.centroid.x+(rec.targetX||0);
+  const z=rec.centroid.z+(rec.targetZ||0);
+  const reach=THREE.MathUtils.clamp(Math.sqrt(Math.max(1,rec.totalArea))*2.0,26,62);
+  queueCamera(
+    new THREE.Vector3(x+reach*0.58, Math.max(30,reach*0.84), z+reach),
+    new THREE.Vector3(x, BOARD_TOP+4.2, z)
+  );
+}
+
 const gltfLoader=new GLTFLoader();
-const markerSpecs=[
-  {label:'BERLIN',code:'DE',lon:13.405,lat:52.52,file:'meeple_red.gltf',height:4.8},
-  {label:'PARIS',code:'FR',lon:2.3522,lat:48.8566,file:'pawn_A_blue.gltf',height:4.6},
-  {label:'ROME',code:'IT',lon:12.4964,lat:41.9028,file:'flag_A_yellow.gltf',height:5.4},
-  {label:'WARSAW',code:'PL',lon:21.0122,lat:52.2297,file:'token_green.gltf',height:3.4},
-  {label:'LONDON',code:'GB',lon:-0.1276,lat:51.5072,file:'building_blue.gltf',height:4.7}
+const FALLBACK_MARKERS=[
+  {id:'berlin-actor',label:'BERLIN',countryCode:'DE',lon:13.405,lat:52.52,asset:'meeple_red.gltf',height:4.8,title:'Actor Anchor',body:'A map node can carry a resident, character or speaker.'},
+  {id:'paris-card',label:'PARIS',countryCode:'FR',lon:2.3522,lat:48.8566,asset:'pawn_A_blue.gltf',height:4.6,title:'Card Anchor',body:'Reserved for later KFB CardBuilder / PDF-card placement.'},
+  {id:'rome-event',label:'ROME',countryCode:'IT',lon:12.4964,lat:41.9028,asset:'flag_A_yellow.gltf',height:5.4,title:'Event Anchor',body:'Events can be staged as physical board-game objects.'},
+  {id:'warsaw-evidence',label:'WARSAW',countryCode:'PL',lon:21.0122,lat:52.2297,asset:'token_green.gltf',height:3.4,title:'Evidence Token',body:'A compact token can represent a contextual evidence point.'},
+  {id:'london-location',label:'LONDON',countryCode:'GB',lon:-0.1276,lat:51.5072,asset:'building_blue.gltf',height:4.7,title:'Location Prop',body:'A place can receive a real KayKit prop while the map remains editable.'}
 ];
+
+async function loadStoryManifest() {
+  try {
+    storyManifest=await fetchJson('./data/story-demo.v1.json');
+    markerSpecs=(storyManifest.stories||[]).filter(s=>s.asset && s.countryCode);
+    if (!markerSpecs.length) throw new Error('story manifest has no markers');
+  } catch (err) {
+    console.warn('Story manifest fallback',err);
+    markerSpecs=FALLBACK_MARKERS;
+  }
+}
+
 function loadGltf(url) {
   return new Promise((resolve,reject)=>gltfLoader.load(url,resolve,undefined,reject));
 }
 async function addKayKitMarkers() {
   for (const spec of markerSpecs) {
     try {
-      const gltf=await loadGltf(KAYKIT_BASE+spec.file);
+      const gltf=await loadGltf(KAYKIT_BASE+spec.asset);
       const obj=gltf.scene;
       obj.traverse(o=>{
         if (o.isMesh) {
@@ -535,9 +623,12 @@ async function addKayKitMarkers() {
       box=new THREE.Box3().setFromObject(obj);
       obj.position.y-=box.min.y;
 
+      const rec=countries.find(c=>c.code===spec.countryCode);
+      if (!rec) throw new Error('country '+spec.countryCode+' unavailable');
+
       const holder=new THREE.Group();
       const p=project(spec.lon,spec.lat);
-      holder.position.set(p.x,BOARD_TOP+PIECE_DEPTH+0.12,p.z);
+      holder.position.set(p.x,PIECE_DEPTH+0.12,p.z);
       holder.add(obj);
 
       const el=document.createElement('div');
@@ -547,13 +638,33 @@ async function addKayKitMarkers() {
       lab.position.set(0,spec.height+0.7,0);
       holder.add(lab);
 
-      root.add(holder);
+      rec.group.add(holder);
+      rec.markers.push(holder);
       tokenHolders.push(holder);
+      markerRecords.push({spec,holder,labelEl:el,country:rec});
       updateDiag();
     } catch (err) {
-      console.warn('KayKit marker failed',spec.file,err);
+      console.warn('KayKit marker failed',spec.asset,err);
     }
   }
+}
+
+function activateStory(index) {
+  if (!markerRecords.length) return;
+  storyCursor=((index%markerRecords.length)+markerRecords.length)%markerRecords.length;
+  clearStoryActive();
+  const mark=markerRecords[storyCursor];
+  mark.labelEl?.classList.add('active');
+  selectCountry(mark.country,{fromStory:true});
+  selKicker.textContent='STORY FOCUS · '+mark.spec.label;
+  selName.textContent=mark.spec.title || mark.spec.label;
+  selText.textContent=mark.spec.body || 'Data-driven content anchor on the geographic board.';
+  const wp=new THREE.Vector3();
+  mark.holder.getWorldPosition(wp);
+  queueCamera(
+    new THREE.Vector3(wp.x+24, Math.max(27,18+(mark.spec.height||4)*2.2), wp.z+31),
+    new THREE.Vector3(wp.x, BOARD_TOP+PIECE_DEPTH+3.2, wp.z)
+  );
 }
 
 async function loadInkCanon() {
@@ -563,7 +674,10 @@ async function loadInkCanon() {
     if (version>=2 && typeof canon.measureInk==='function') {
       inkCanonStatus='canon v'+version+' + map BAND adapter';
       if (canon.INK_COLOR!==undefined) {
-        try { inkColor=new THREE.Color(canon.INK_COLOR); } catch {}
+        try {
+          inkColor=new THREE.Color(canon.INK_COLOR);
+          focusRingMat.color.copy(inkColor);
+        } catch {}
       }
     } else {
       inkCanonStatus='capability mismatch';
@@ -582,11 +696,12 @@ function setCamera(name) {
     low:{p:[22,54,160],t:[0,7,-8]}
   };
   const v=presets[name]||presets.hero;
-  camera.position.fromArray(v.p);
-  controls.target.fromArray(v.t);
-  controls.update();
+  queueCamera(new THREE.Vector3().fromArray(v.p),new THREE.Vector3().fromArray(v.t));
 }
 document.querySelectorAll('[data-camera]').forEach(b=>b.addEventListener('click',()=>setCamera(b.dataset.camera)));
+focusBtn.addEventListener('click',()=>focusCountry(selected));
+storyBtn.addEventListener('click',()=>activateStory(storyCursor+1));
+controls.addEventListener('start',()=>{cameraTween=false;});
 document.querySelector('#explodeBtn').addEventListener('click',e=>{
   exploded=!exploded;
   e.currentTarget.classList.toggle('active',exploded);
@@ -610,12 +725,41 @@ document.querySelector('#inkSlider').addEventListener('input',e=>{
 document.querySelector('#heightSlider').addEventListener('input',e=>{
   heightScale=Number(e.target.value);
   for (const rec of countries) rec.group.scale.y=heightScale;
+  for (const holder of tokenHolders) holder.scale.y=1/heightScale;
 });
 
 const raycaster=new THREE.Raycaster();
 const pointer=new THREE.Vector2();
 let down=null;
 canvas.addEventListener('pointerdown',e=>{down={x:e.clientX,y:e.clientY};});
+canvas.addEventListener('pointermove',e=>{
+  const r=canvas.getBoundingClientRect();
+  pointer.x=((e.clientX-r.left)/r.width)*2-1;
+  pointer.y=-((e.clientY-r.top)/r.height)*2+1;
+  raycaster.setFromCamera(pointer,camera);
+  const hit=raycaster.intersectObjects(pickMeshes,false)[0];
+  const next=hit?.object?.userData?.country || null;
+  if (next!==hovered) {
+    hovered=next;
+    updateHighlights();
+  }
+  if (hovered) {
+    hoverNote.textContent=hovered.name.toUpperCase();
+    hoverNote.style.display='block';
+    hoverNote.style.left=(e.clientX-r.left+12)+'px';
+    hoverNote.style.top=(e.clientY-r.top+12)+'px';
+    canvas.style.cursor='pointer';
+  } else {
+    hoverNote.style.display='none';
+    canvas.style.cursor='grab';
+  }
+});
+canvas.addEventListener('pointerleave',()=>{
+  hovered=null;
+  hoverNote.style.display='none';
+  canvas.style.cursor='grab';
+  updateHighlights();
+});
 canvas.addEventListener('pointerup',e=>{
   if (!down || Math.hypot(e.clientX-down.x,e.clientY-down.y)>5) { down=null; return; }
   down=null;
@@ -649,6 +793,21 @@ function animate() {
   tokenHolders.forEach((t,i)=>{
     t.rotation.y+=dt*(0.10+i*0.012);
   });
+  if (focusRing.visible) {
+    const base=focusRing.userData.baseScale||1;
+    const pulse=base*(1+Math.sin(clock.elapsedTime*2.4)*0.035);
+    focusRing.scale.setScalar(pulse);
+  }
+  if (cameraTween) {
+    const ck=1-Math.pow(0.0012,dt);
+    camera.position.lerp(cameraGoalPos,ck);
+    controls.target.lerp(cameraGoalTarget,ck);
+    if (camera.position.distanceTo(cameraGoalPos)<0.08 && controls.target.distanceTo(cameraGoalTarget)<0.05) {
+      camera.position.copy(cameraGoalPos);
+      controls.target.copy(cameraGoalTarget);
+      cameraTween=false;
+    }
+  }
   controls.update();
   renderer.render(scene,camera);
   labelRenderer.render(scene,camera);
@@ -662,10 +821,11 @@ async function boot() {
     await loadBoundaries();
     if (!loadedCount) throw new Error('No OSM-derived country boundary loaded.');
     applyTargets();
+    await loadStoryManifest();
     loadingTitle.textContent='Placing KayKit story tokens…';
     loadingText.textContent='Loading actual Board Game Bits from the KFB GitHub asset repository.';
     await addKayKitMarkers();
-    updateDiag('interactive');
+    updateDiag('P0.2 story focus ready');
     loading.classList.add('hidden');
     setTimeout(()=>loading.style.display='none',450);
   } catch (err) {
