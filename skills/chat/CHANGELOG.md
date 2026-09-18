@@ -1,5 +1,16 @@
 # KFB Chat Production Router · additive changelog
 
+## 2026-09-19 · Stage → Live and Vehicle Lab v3
+
+### DECISION
+Add a simple public Stage playground so browser/mobile review no longer requires replacing Live or
+handling GitHub. Stage merge is not Georg acceptance; deliberate promotion moves the Live pointer.
+
+### BRIEFING
+Add the bounded Vehicle Lab v3 brief: C0 is the existing OSM driving baseline; C1 adds the
+presentation-only vehicle deformer and TinySkies/Travel visual grammar, then one measured
+drive-to-flight transition. Runtime physics owners remain unchanged.
+
 History is additive. Earlier statements are not silently rewritten. If a later entry corrects or replaces an earlier one, mark it `SUPERSEDES` and keep both.
 
 ## 2026-09-19
