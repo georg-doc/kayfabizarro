@@ -1,5 +1,7 @@
 # KFB Free Roam · Platformer Hub POC · Claude Design Brief
 
+> **CURRENT RECOVERY OVERRIDE · 2026-09-18:** The first Claude Design Project-Island composition is **STRUCTURAL / VISUAL FAIL** as a kit reconstruction, while viewer/UI/camera code may remain donor material. Before any further Project Island polish, Claude Design must follow [PLATFORMER_KIT_MENTAL_MODEL.md](PLATFORMER_KIT_MENTAL_MODEL.md) and [CLAUDE_DESIGN_RECOVERY_REBRIEF.md](CLAUDE_DESIGN_RECOVERY_REBRIEF.md): **Asset Atlas S0 → source Preview reconstruction S1 → measured platform grammar S2 → movement S3 → actor adapters S4 → Project Island S5**. Audio is frozen/out of scope for this recovery pass.
+
 **Date:** 2026-09-18  
 **Status:** DESIGN / IMPLEMENTATION BRIEF · CLAUDE DESIGN EXPORT ONLY  
 **Target public family:** `https://kayfabizarro.pages.dev/kfb-hub/free-roam/`  
@@ -895,3 +897,28 @@ Not in this Claude slice:
 - full Project Island canon implementation.
 
 This POC should produce **modular movement/animation/camera/platforming evidence** that later feeds the real KFB integration.
+
+
+---
+
+## 24 · Optional later donor · Living Plant scenic actors
+
+The prepared Plant Prop Lab may later supply scenic modules to Project Island:
+
+`skills/chat/workflows/PLANT_PROP_LAB_2026-09-18/START_HERE.md`
+
+Possible uses:
+- giant potted botanical landmarks;
+- alien Quaternius plant compositions;
+- ambient swaying plant props;
+- EyeRig-based “aware” plants that blink/look at the player;
+- plant clusters marking project portals or jump destinations.
+
+This is **not required for the current Platformer POC export**.
+
+If later consumed:
+- use exact GitHub PlantRecipe/package refs;
+- do not fork EyeRig;
+- plant animation remains presentation over Platformer/world state;
+- do not turn every scenic plant into a gameplay character;
+- platform support/collision remains owned by the Platformer/consumer world.

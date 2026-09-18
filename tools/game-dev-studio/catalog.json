@@ -28,14 +28,15 @@
           "id": "lorekeeper",
           "label": "Lorekeeper",
           "kind": "Resident",
-          "role": "Actor · Rig_Medium",
+          "role": "Actor · Rig_Medium · Travel Atlas Pilot 01 input ready",
           "status": "SOURCE REVIEW PASS",
           "format": "glb",
           "revision": "891eadf01e218f5fc21387e64cea1fec8332c5b6",
           "sourcePath": "media/3D_Assets/KayKit_Mystery_Series6/1 - July 2025 - Lorekeeper/Lorekeeper.glb",
           "packagePath": "/game-ready/pilot-01-lorekeeper-sedan/resident/lorekeeper/RESIDENT_BINDING.json",
           "previewUrl": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/891eadf01e218f5fc21387e64cea1fec8332c5b6/media/3D_Assets/KayKit_Mystery_Series6/1%20-%20July%202025%20-%20Lorekeeper/Lorekeeper.glb",
-          "githubUrl": "https://github.com/georg-doc/kayfabizarro/blob/891eadf01e218f5fc21387e64cea1fec8332c5b6/media/3D_Assets/KayKit_Mystery_Series6/1%20-%20July%202025%20-%20Lorekeeper/Lorekeeper.glb"
+          "githubUrl": "https://github.com/georg-doc/kayfabizarro/blob/891eadf01e218f5fc21387e64cea1fec8332c5b6/media/3D_Assets/KayKit_Mystery_Series6/1%20-%20July%202025%20-%20Lorekeeper/Lorekeeper.glb",
+          "consumerAdapter": "/game-ready/pilot-01-lorekeeper-sedan/resident/lorekeeper/TRAVEL_ATLAS_PILOT_01_ADAPTER.json"
         },
         {
           "id": "lorekeeper-tome",
@@ -67,7 +68,7 @@
           "id": "car-sedan",
           "label": "BOX1 Sedan",
           "kind": "Vehicle",
-          "role": "KayKit City Builder · broad regression fixture",
+          "role": "KayKit City Builder · BOX1 regression source · FR-S04-02 adapter specified",
           "status": "PACKAGE METADATA IMPLEMENTED",
           "format": "gltf",
           "revision": "10a7fdce6b3a1ae22504ade71b7dbec5f25e0ff0",
@@ -76,9 +77,32 @@
           "colliderSpec": "/game-ready/pilot-01-lorekeeper-sedan/vehicle/car-sedan/COLLIDER_PROXY_SPEC.json",
           "wheelReport": "/game-ready/pilot-01-lorekeeper-sedan/vehicle/car-sedan/WHEEL_SOCKET_REPORT.json",
           "previewUrl": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/10a7fdce6b3a1ae22504ade71b7dbec5f25e0ff0/media/3D_Assets/KayKit_City_Builder_Bits_1.0_FREE/Assets/gltf/car_sedan.gltf",
-          "githubUrl": "https://github.com/georg-doc/kayfabizarro/blob/10a7fdce6b3a1ae22504ade71b7dbec5f25e0ff0/media/3D_Assets/KayKit_City_Builder_Bits_1.0_FREE/Assets/gltf/car_sedan.gltf"
+          "githubUrl": "https://github.com/georg-doc/kayfabizarro/blob/10a7fdce6b3a1ae22504ade71b7dbec5f25e0ff0/media/3D_Assets/KayKit_City_Builder_Bits_1.0_FREE/Assets/gltf/car_sedan.gltf",
+          "receiverAdapter": "/game-ready/pilot-01-lorekeeper-sedan/vehicle/car-sedan/FR_S04_02_RECEIVER_ADAPTER.json"
         }
-      ]
+      ],
+      "receiverHandoff": {
+        "donor": "fr-s04-02",
+        "status": "DONOR_PUBLIC_PASS_ADAPTER_SPEC_READY_SEDAN_RUN_OPEN",
+        "donorPublicRun": 35367513758,
+        "donorPublicChecks": 62,
+        "adapter": "/game-ready/pilot-01-lorekeeper-sedan/vehicle/car-sedan/FR_S04_02_RECEIVER_ADAPTER.json",
+        "handoff": "/game-ready/pilot-01-lorekeeper-sedan/vehicle/car-sedan/FR_S04_02_RECEIVER_HANDOFF.md",
+        "note": "FR-S04-02 donor PASS uses the original kart; Sedan consumer acceptance is not inherited."
+      },
+      "residentHandoff": {
+        "consumer": "travel-atlas-pilot-01",
+        "status": "READY_INPUT_DEFERRED_BY_TRAVEL_GROUND_HUMAN_GATE",
+        "adapter": "/game-ready/pilot-01-lorekeeper-sedan/resident/lorekeeper/TRAVEL_ATLAS_PILOT_01_ADAPTER.json",
+        "handoff": "/game-ready/pilot-01-lorekeeper-sedan/resident/lorekeeper/TRAVEL_ATLAS_PILOT_01_HANDOFF.md",
+        "ownerHandoff": {
+          "repository": "georg-doc/KFB-Travel-Globe",
+          "path": "_handover/GAME_DEV_STUDIO_LOREKEEPER_PACKAGE_2026-09-18.md",
+          "commit": "8614282aab2ced43bb5dda9fcf7abadf9768100a"
+        },
+        "note": "Use the existing Travel Atlas Pilot 01 only after the current Travel Ground human gate carries."
+      }
     }
-  ]
+  ],
+  "catalogRevision": "gds-2026-09-18-r3"
 }

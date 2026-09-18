@@ -1,0 +1,31 @@
+{
+  "schema": "kfb.eumel-rig-lab.wip/0.1",
+  "updated": "2026-09-18",
+  "status": "IMPLEMENTATION",
+  "source": {
+    "blobSha": "436143b019f0034c6d2d9183154cf613ff8c701e",
+    "ai": "../../_inbox/doccheck-ad-ai-source/sources/_Dr_Vorlage.ai",
+    "componentSvg": "source-assets/EUMEL_SOURCE_COMPONENTS.svg",
+    "componentManifest": "source-assets/EUMEL_SOURCE_COMPONENTS.json",
+    "semanticAliases": "source-assets/EUMEL_SEMANTIC_ALIASES.json"
+  },
+  "implementation": {
+    "sourceSplit": "IMPLEMENTATION",
+    "sourcePdfAlias": "IMPLEMENTATION",
+    "rigContract": "IMPLEMENTATION",
+    "browserSite": "IMPLEMENTATION",
+    "browserRuntimeTest": "PENDING",
+    "sourceVsExtractedVisualPass": "PENDING",
+    "georgAcceptance": "PENDING",
+    "staticSanity": "PASS",
+    "staticSanityEvidence": "qa/STATIC_SANITY_2026-09-18.md"
+  },
+  "currentMotions": [
+    "neutral",
+    "idle",
+    "look",
+    "hampelmann",
+    "hop"
+  ],
+  "nextGate": "Open deployed Rig Lab in a real browser; compare original PDF render against extracted SVG; correct only proven extraction/rig defects; then accept semantic left/right aliases and foreground role."
+}

@@ -1,129 +1,56 @@
-# WS1 · Cartoon Vehicle Deformer · Review-Paket
+# WS1 · Cartoon Vehicle Deformer + Motion Lab · aktueller Review-Stand
 
-Stand 18.09.2026. Fahrzeug-Linie `lab-v7` aus dem KFB Animation Lab.
-Dies ist der schlanke Satz: Code, Doku, zwei Belegbilder. Ohne Asset-Bibliotheken, ohne
-Screenshot-Archiv, ohne 3D-Modelle — die liegen im Repo und werden zur Laufzeit geladen.
+Stand 18.09.2026. Kuratierter Vehicle-Lab-Slice aus dem Komplett-Export
+`KFB Vehicle + Rigging + Animation Lab(3)`.
 
-## Was hier drin ist
+Dieses Paket enthält die aktuelle Werkbank, die aktiven `lab-v7`-Module, die zugehörige
+Dokumentation und ausgewählte Belegbilder. Asset-Bibliotheken, historische Lab-Fassungen und
+Upload-Duplikate werden nicht erneut eingecheckt; ihre kanonischen Quellen liegen bereits im Repo.
+
+## Aktueller Funktionsumfang
+
+- 46 Vehicle-Fixtures: 43 aus dem bisherigen Handoff/Registry-Satz plus drei Space-Base-Fahrzeuge.
+- Cartoon-Deformer mit Telemetrie-Eingang, Springs und getrennten Presentation-Knoten.
+- Schlingern/Fishtail mit Gegenlenkung und nachlaufendem Gegenroll.
+- Rückwärtsfahren, Rückwärtskurve, berechnetes Mehrzug-Wenden und Einparken.
+- Zwei-Rad-Fahrt frei sowie an einer Bande.
+- Fassrolle mit wandernder Drehachse und auf ganze Umdrehungen gerundeter Landung.
+- Drei Fahrweisen: Chill Ride, City Parcours und Freeroam.
+- Profile für leichte Fahrzeuge, Board/Rider, Heavy, Space Hauler, Trailer und Mech-Kandidaten.
+
+## Einstieg
 
 ```
-KFB Cartoon Vehicle Deformer Lab.dc.html   die Werkbank, direkt im Browser öffnen
-support.js                                 Laufzeit (nicht bearbeiten)
-lab-v7/                                    acht Module und Datendateien
-  vehicle-cartoon-deformer.v2.js           der Deformer: Knotenbaum, Springs, Priorität
-  carrig.v1.js                             Vermessen und Riggen, Radsuche
-  fixture-adapters.v2.js                   43 Fahrzeuge, Herkunft je Zeile
-  deformer-profiles.json                   vier Profile (Startwerte, nicht abgenommen)
-  TEST_SEQUENCES.json                      zwölf deterministische Testsequenzen
-  registry-vehicles.v1.js                  Registry-Fahrzeugliste, gepinnte Adressen
-  cardeform.v1.js                          ÜBERHOLT (Shader-Fassung, liegt als Nachweis)
-  fixtures.v1.js                           ÜBERHOLT (Keyframe-Fixtures)
-_ds/                                       DocCheck Design System, nur die zwei benutzten Dateien
-docs/                                      sechs Dokumente, siehe unten
-belege/                                    zwei Aufnahmen
+KFB Cartoon Vehicle Deformer Lab.dc.html   aktuelle Werkbank
+lab-v7/                                    13 Module und Datendateien
+docs/CHANGELOG.md                          vollständige additive Zeitachse
+docs/LIVING_VEHICLES.md                    Entscheidungen, Messwerte und offene Punkte
+docs/PLAN_vehicle_vfx_flightmode.md        nächster VFX-/Flugmodus-Schnitt
+docs/SOURCE_RECEIPT_2026-09-18.md          Herkunft und Importgrenze
+belege/                                    ausgewählte Screenshots
 ```
 
-Die Fahrzeugmodelle werden über gepinnte RAW-Adressen aus `georg-doc/kayfabizarro` geladen
-(Handoff `10a7fdce6b`, Registry `34cde3f8f7`). Das Paket braucht also Netz, aber keine
-Modelldateien.
+Die Werkbank benötigt Netz, weil sie Three.js und die gepinnten Modelle aus
+`georg-doc/kayfabizarro` lädt.
 
-## Was zuerst lesen
+## Geprüfter Importstand
 
-1. **`docs/HANDOVER_WSA_LEAD_2026-09-18.md`** — der Stand in einer Seite: was gebaut ist, welche
-   drei Abhängigkeiten außerhalb liegen, welche zwei Regeln über die Linie hinaus gelten.
-2. **`docs/RETURN_cartoon_vehicle_deformer.md`** — die Rückmeldung nach Briefing-Schema:
-   IMPLEMENTED / STATIC TESTED / BROWSER TESTED / VISUALLY ACCEPTED BY GEORG / OPEN.
-   Der Abschnitt `VISUALLY ACCEPTED BY GEORG` ist leer, und das ist der Punkt.
-3. **`docs/HANDOVER_RACE_2026-09-18.md`** — die Schnittstelle zum Race-Runtime plus sechs Punkte,
-   die beim Race-Chat liegen.
-4. `docs/LIVING_VEHICLES.md` — Begründungen, Entscheidungen V1–V12, alle Befunde.
-   `docs/CHANGELOG.md` — Zeitachse. `docs/HOUSEKEEPING.md` — Status je Datei und Clean Run.
+- Alle `lab-v7/*.js` bestehen die JavaScript-Syntaxprüfung.
+- `TEST_SEQUENCES.json` und `deformer-profiles.json` sind gültiges JSON.
+- Browser-Kaltstart: Hatchback geladen, vier Räder erkannt, keine Browserwarnungen.
+- Rückwärts- und Drei-Zug-Wendemanöver starten und liefern Telemetrie-/Deformer-Signale.
 
-## Clean Run · acht Schritte
+Das ist ein **getesteter Lab-Stand**, noch keine freigegebene globale Fahrphysik. Der jeweilige
+Host besitzt Welt, Kollision, Kamera und Fahrzeuglage; das Lab liefert Rigging, Presentation,
+Manöver-/Motion-Kandidaten und den Telemetrie-Adapter.
 
-`KFB Cartoon Vehicle Deformer Lab.dc.html` öffnen, dann:
+## Vorgeschlagener erster Consumer
 
-1. Fixture-Liste links: 43 Zeilen, jede mit ihrer Herkunft (Handoff oder Registry).
-2. `car_hatchback` wählen. Kopfzeile meldet `4 Räder (node) · r 0,072 · Spur 0,35 · Radstand 0,50`.
-3. `BRAKE` — Nicken −2,45°, Längskompression −1,8 %, Fahrer zieht nach.
-4. `DRIFT LEFT` — Yaw −7,25°, Gegenroll +1,25°, Seitenlast sichtbar reduziert.
-5. `RAIL HOLD` — **ein** Einschlag, dann monotoner Abfall, dann ein Übergang beim Loslassen.
-   Ein zweiter Schlag wäre der alte Fehler (vorher fünf).
-6. `NEUTRAL` — `impact 0,00` über zwei Sekunden, sichtbar ruhig.
-7. `RESET` — alle Springs exakt null.
-8. Fixture wechseln — kein Zustand wandert mit.
+Für den Free-Roam-MVP zuerst genau einen regulären KayKit-Character mit EyeRig und ein
+repräsentatives Fahrzeug in einem OSM-Testgebiet verbinden:
 
-Was auffällig danebenliegt, ist keine Überraschung, sondern steht benannt in `OPEN`:
-der **Go-Kart by Poly** steht schief (nicht achsenparallel autoriert), **Skateboard** und
-**Rollerskate** drehen keine Räder (verschweißtes Einzelnetz), **Space Base Bits** lädt nicht.
+`zu Fuß → einsteigen → fahren → rückwärts/wenden/einparken → aussteigen → Zustand erhalten`.
 
----
-
-# Re-Briefing · was wir von WSA zurückbrauchen
-
-Vier Sachen hängen nicht am Code, sondern an einer Entscheidung. Solange sie offen sind, wäre
-jeder weitere Bauschritt geraten. Bitte je Punkt eine Zeile.
-
-## 1 · Go-Kart by Poly steht schief
-
-Das Modell ist nicht achsenparallel autoriert. Alle sechs achsenparallelen Lagen sind
-durchgemessen, keine richtet es auf. Ein Schalter in der Werkbank kann das nicht heilen.
-
-Möglich sind: **(a)** im Asset gerade drehen (Blender, einmalig), **(b)** eine freie Rotation je
-Fahrzeug im Code erlauben — dann kommt ein Zahlenfeld in die Werkbank, das per Auge eingestellt
-wird, **(c)** das Fahrzeug fallen lassen.
-
-→ *Antwort:*
-
-## 2 · Skateboard und Rollerskate drehen keine Räder
-
-Die Rollen sind Teil eines einzigen verschweißten Netzes. Es gibt nichts, was man drehen könnte,
-ohne das ganze Board zu drehen. Benannte Rollenknoten im Asset würden es lösen.
-
-Möglich sind: **(a)** Knoten im Asset nachziehen, **(b)** beide ohne Radrotation akzeptieren
-(Board-Roll läuft, nur die Rollen stehen still), **(c)** beide fallen lassen.
-
-→ *Antwort:*
-
-## 3 · Space Base Bits ist nicht ladbar
-
-Die drei Fahrzeuge (`spacetruck`, `spacetruck_large`, `spacetruck_trailer`) liegen als glTF mit
-externen `.bin`-Puffern in `KFB-Stunt-Car-Race` und lassen sich im Browser nicht abrufen.
-Abhilfe: je Fahrzeug eine `.glb` (eine Datei, kein Sidecar) in
-`kayfabizarro/media/3D_Assets`. Danach sind sie im Registry indiziert und die Zeile fällt in der
-Werkbank von »fehlt« auf »geladen«.
-
-Möglich sind: **(a)** jemand legt die drei `.glb` ab — wer, **(b)** die Linie bleibt auf »fehlt«
-und die drei Zeilen stehen mit Grund im Tooltip.
-
-→ *Antwort:*
-
-## 4 · KayKit ActionFigure fehlt im Handoff
-
-Briefing-Fixture 3 war »Skateboard + Rider«. Im Handoff-Satz (141 Assets) gibt es kein
-`Rig_Medium` und keine ActionFigure. Nächstliegende gerigte Figuren sind `Astronaut_*`
-(43 Joints) und `Mech_*` (13 Joints) — beide keine ActionFigure. Ersatzweise etwas anderes zu
-nehmen wäre eine stille Abweichung vom Briefing, deshalb steht die Fixture aus.
-
-Möglich sind: **(a)** die ActionFigure in den Handoff nachziehen, **(b)** eine andere Figur
-benennen, die wir nehmen sollen, **(c)** Fixture 3 streichen.
-
-→ *Antwort:*
-
----
-
-## Dazu bitte, wenn es beim Ansehen entsteht
-
-**Welche Zahlen sollen anders sein?** Kein Wert in `deformer-profiles.json` ist abgenommen; alle
-stammen aus dem Briefing. Die Grenzen sind `squash .22 · stretch .16 · twist 10°`. Die Regler
-stehen in der Werkbank — was zu viel oder zu wenig ist, lässt sich dort direkt einstellen und als
-Zahl zurückmelden.
-
-**Welche Sequenz liest falsch?** Die zwölf Sequenzen nennen jede ihren erwarteten Haupt-Read
-(`TEST_SEQUENCES.json`). Eine Sequenz, deren Bewegung nicht das liest, was dort steht, ist ein
-echter Befund — mit dem Namen der Sequenz genügt er.
-
-**Wie geht es weiter?** Die naheliegenden nächsten Schritte, in der Reihenfolge des
-Motion-Skills: erst ein Kontaktbogen über alle zwölf Sequenzen als Abnahmegrundlage, dann die
-Profile abstimmen, dann Ton, Staub, Kamera-Shake und Lautwort — und erst dann der echte
-Race-Runtime statt synthetischer Signale.
+Ehrenfeld oder Hürth kann dabei der Terrain-Consumer sein. Combat bleibt außerhalb dieses ersten
+Slices. Die weiteren Character-/Rig-Klassen werden anschließend über dieselbe Abnahmematrix
+ergänzt, ohne einen zweiten Movement- oder Vehicle-Owner einzuführen.

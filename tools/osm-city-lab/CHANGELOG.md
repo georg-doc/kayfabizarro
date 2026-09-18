@@ -1,5 +1,81 @@
 # Changelog · additive
 
+## 2026-09-18 · S1c roads / grotesque skyline / OSM signs / KayKit nature
+
+### DECISION
+- Keep City Lab movement-free; actual WASD / Walk↔Drive remains Travel + Free Roam owned.
+- Split presentation into `clean | cartoon | grotesque` instead of forcing extreme distortion into the playable default.
+- Preserve OSM road/name/landuse truth and treat signs, trees and landmark overrides as presentation consumers.
+
+### IMPLEMENTATION
+- Driveable roads remain continuous joined strips and now receive presentation-only junction patches at shared OSM node IDs.
+- Non-driveable pale paths render below driveable asphalt, removing the remaining path/road coplanar competition at crossings.
+- Added stronger `cartoon` tuning plus an optional `grotesque` preset with deterministic stacked-ring offsets and wide-angle camera composition.
+- Added `STREET SIGNS` from preserved OSM `name=*` tags plus a `SIGN VIEW` camera.
+- Street-sign placement evaluates both road sides and multiple edge offsets against building footprints; roads without safe sign space are skipped.
+- Added `FOREST POC` using exact GitHub KayKit Forest/Nature Tree_1/2/3 assets, deterministically scattered only on mapped green landuse with road/building clearance.
+- Added empty landmark-override manifest/contract for later GitHub low-poly landmarks such as the Cologne Cathedral.
+- Added Work Lead handoff and a source-derived Ehrenfeld↔Hürth corridor discovery lane.
+
+### TESTED RESULT
+- Latest S1c browser/WebGL run `35389507129`, job `105744305683`: **PASS**.
+- Ehrenfeld: 372 source roads / 1,808 buildings / 183 road-junction patches / 168 lower path meshes / 27 safe OSM street-name signs.
+- Hürth: 164 source roads / 700 buildings / 104 road-junction patches / 48 lower path meshes / 19 safe OSM street-name signs.
+- Hürth Forest POC: 72 source-backed KayKit tree instances loaded from the repository.
+- Clean emits 0 window material-codes; Cartoon/Grotesque preserve the deterministic 3,367 Ehrenfeld / 849 Hürth code set.
+- S2 geometry remains undeformed and viewer movement owner reports `none-viewer-only`.
+- No page/console errors in the tested cases.
+- Evidence artifact `10564934919` (`osm-city-s1c-presentation-proof`).
+
+### PUBLIC DEPLOYMENT
+- Not claimed by this branch. Permanent Cloudflare verification remains a separate post-merge gate.
+
+### GEORG ACCEPTANCE
+- S1b direction was positively received; S1c road shimmer/gap repair, stronger Grotesque intensity, sign readability and forest density remain a live browser/art-direction review.
+
+### OPEN
+- Ehrenfeld↔Hürth source route discovery is independent from S1c and currently **SOURCE BLOCKED · RETRYABLE** by public Overpass availability. Two unchanged small-chunk attempts failed on different chunks after other chunks succeeded; do not infer a route until source evidence exists.
+- Real Walk/Drive remains the existing Free-Roam/Travel receiver task.
+- Landmark models remain optional overrides; base OSM massing must always work without them.
+
+---
+## 2026-09-18 · S1b simplified / cartoon massing
+
+### DECISION
+- Preserve one OSM source geometry and compare two viewer modes: `clean` and `cartoon`.
+- Clean mode is the anatomy baseline: OSM footprint → simple extrusion → flat top cap.
+- Cartoon mode reuses the older KFB Cartoon-Verbieger grammar only in a conservative presentation layer: object-normalized, ground-anchored, deterministic per OSM identity.
+- S2 collision/export geometry remains undeformed.
+
+### IMPLEMENTATION
+- Removed all separate roof boxes/cones from the S1 viewer.
+- Added `src/style/cartoon-city.js` with mild deterministic lean/bend/taper/twist for building massing.
+- Added sparse irregular window material-codes; they are intentionally not floor-aligned facade rows.
+- Replaced per-segment road rectangles with a continuous joined-miter strip per centerline.
+- Increased explicit vertical separation between terrain / landuse / sidewalk / road to reduce depth fighting.
+- Added Clean Massing / Cartoon Massing controls and a first Cartoon View camera preset.
+- Added branch browser/WebGL proof for both cities and both looks.
+
+### TESTED RESULT
+- Branch browser/WebGL run `35385560694`, job `105731534856`: **PASS**.
+- Four cases passed: Ehrenfeld clean/cartoon and Hürth clean/cartoon.
+- Expected source counts remained intact: Ehrenfeld 372 roads / 1,808 buildings; Hürth 164 roads / 700 buildings.
+- Clean mode emitted 0 window codes; Cartoon mode emitted 3,367 in Ehrenfeld and 849 in Hürth.
+- All cases reported 0 separate roof meshes, `joined-miter` road strips, explicit road/sidewalk/landuse vertical separation, undeformed S2 geometry, and no page/console errors.
+- Screenshot artifact `osm-city-massing-proof` (artifact `10564070951`) was visually inspected: the former large floating roof caps are absent and the captured road surfaces no longer show the previous bright segment-junction triangles. Live moving/zoom shimmer remains a Georg browser gate rather than an automated visual claim.
+
+### PUBLIC DEPLOYMENT
+- Not claimed by this branch.
+
+### GEORG ACCEPTANCE
+- Pending comparison of road shimmer, city anatomy and cartoon intensity.
+
+### OPEN
+- Tune one shared deformation grammar only after visual review; avoid per-building exceptions.
+- Continue City Drive / Travel integration from the unchanged S2 export, not from presentation-deformed building geometry.
+
+---
+
 ## 2026-09-18 · S2 consumer export hardening
 
 ### TESTED RESULT

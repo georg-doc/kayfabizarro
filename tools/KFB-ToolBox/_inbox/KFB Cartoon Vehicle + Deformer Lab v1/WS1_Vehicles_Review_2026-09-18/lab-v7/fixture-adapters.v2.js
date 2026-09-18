@@ -57,12 +57,77 @@ export const OPEN_ASSETREFS = [
     searched: 'Knoten-Weg und Insel-Weg an beiden Modellen',
     found: 'Skateboard ist ein verschweisstes Einzelnetz — die Inseltrennung kann die Rollen nicht herausloesen, also 0 Raeder. Rollerskate ist noch nicht gemessen.',
     consequence: 'Board-Roll und Rider-Kette laufen ohne Raeder; ein Radlauf braucht entweder benannte Rollenknoten im Asset oder ein getrenntes Netz.' },
-  { need: 'KayKit Space Base Bits · spacetruck', why: 'ursprünglicher Auftrag vom 17.09.',
-    searched: 'Registry (media/3D_Assets) und Handoff', found: 'in keiner der beiden Quellen; liegt nur in KFB-Stunt-Car-Race und ist von dort im Browser nicht ladbar',
-    consequence: 'als .glb nach kayfabizarro/media/3D_Assets legen, dann erscheint es über das Registry von selbst.' },
+];
+
+/** Erledigt. Steht hier, damit der Weg nachvollziehbar bleibt. */
+export const RESOLVED_ASSETREFS = [
+  { need: 'KayKit Space Base Bits · spacetruck, spacetruck_large, spacetruck_trailer',
+    was: 'lag nur in KFB-Stunt-Car-Race, von dort im Browser nicht abrufbar, und die glTF sind ohne ihre .bin-Sidecars unbrauchbar',
+    now: 'liegt in kayfabizarro unter media/3D_Assets — glTF, .bin und Textur im selben Ordner, im Registry-Pack kaykit-space-base-bits-1-0-free indiziert, Pin eb48f50489b9',
+    checked: '18.09., byteweise auf allen sieben Dateien (drei glTF, drei .bin, eine Textur). Ordneransichten zeigen die glTF weiterhin nicht — das ist die bekannte Falle, keine Abwesenheit.' },
 ];
 
 export const GROUPS = [
+  {
+    "id": "spacebits",
+    "label": "KayKit Space Base Bits",
+    "note": "Der Auftrag vom 17.09. Seit dem Umzug nach kayfabizarro ladbar: glTF, .bin und spacebits_texture.png liegen im selben Ordner, Pin eb48f50489b9. Blickrichtung ist hier NICHT geraten — die Radknoten heissen selbst front und rear, front liegt bei +z.",
+    "profile": "SPACE_HAULER",
+    "rows": [
+      {
+        "id": "spacetruck",
+        "name": "spacetruck",
+        "label": "Spacetruck",
+        "path": "media/3D_Assets/KayKit_Space_Base_Bits_1.0_FREE/Assets/gltf/spacetruck.gltf",
+        "url": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/eb48f50489b9e4903ec1e3d2fb1837605ce7d792/media/3D_Assets/KayKit_Space_Base_Bits_1.0_FREE/Assets/gltf/spacetruck.gltf",
+        "urlLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/KayKit_Space_Base_Bits_1.0_FREE/Assets/gltf/spacetruck.gltf",
+        "pin": "eb48f50489b9e4903ec1e3d2fb1837605ce7d792",
+        "format": "gltf",
+        "bytes": 10917,
+        "dep": "complete",
+        "facing": 1,
+        "orientDefault": 0,
+        "profile": "SPACE_HAULER",
+        "via": "registry",
+        "measured": "gelesen in spacetruck.gltf: 5 Netze, 4 benannte Radknoten (spacetruck_wheel_front_left/right, _rear_left/right). Radradius 0,0877 u, Radbreite 0,0916 u auf x. Spur ±0,1720, Radstand ±0,2136. Karosserie x ±0,2447, y 0,0108…0,4883, z −0,4455…+0,4478. Radmitte y +0,0098, Aufstandsebene also y −0,0779."
+      },
+      {
+        "id": "spacetruck-large",
+        "name": "spacetruck_large",
+        "label": "Spacetruck Large",
+        "path": "media/3D_Assets/KayKit_Space_Base_Bits_1.0_FREE/Assets/gltf/spacetruck_large.gltf",
+        "url": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/eb48f50489b9e4903ec1e3d2fb1837605ce7d792/media/3D_Assets/KayKit_Space_Base_Bits_1.0_FREE/Assets/gltf/spacetruck_large.gltf",
+        "urlLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/KayKit_Space_Base_Bits_1.0_FREE/Assets/gltf/spacetruck_large.gltf",
+        "pin": "eb48f50489b9e4903ec1e3d2fb1837605ce7d792",
+        "format": "gltf",
+        "bytes": 10963,
+        "dep": "complete",
+        "facing": 1,
+        "orientDefault": 0,
+        "profile": "SPACE_HAULER",
+        "via": "registry",
+        "measured": "gelesen in spacetruck_large.gltf: 5 Netze, 4 benannte Radknoten. Radradius 0,1140 u, Radbreite 0,1620 u auf x. Spur ±0,1720, Radstand ±0,2136. Karosserie x ±0,2447, y −0,0107…0,5519, z −0,5718…+0,4559 — der Aufbau steht 0,0579 u nach hinten ueber, Nickachse liegt also nicht in der Mitte. Radmitte y −0,0196, Aufstandsebene y −0,1335."
+      },
+      {
+        "id": "spacetruck-trailer",
+        "name": "spacetruck_trailer",
+        "label": "Spacetruck Trailer",
+        "path": "media/3D_Assets/KayKit_Space_Base_Bits_1.0_FREE/Assets/gltf/spacetruck_trailer.gltf",
+        "url": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/eb48f50489b9e4903ec1e3d2fb1837605ce7d792/media/3D_Assets/KayKit_Space_Base_Bits_1.0_FREE/Assets/gltf/spacetruck_trailer.gltf",
+        "urlLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/KayKit_Space_Base_Bits_1.0_FREE/Assets/gltf/spacetruck_trailer.gltf",
+        "pin": "eb48f50489b9e4903ec1e3d2fb1837605ce7d792",
+        "format": "gltf",
+        "bytes": 10945,
+        "dep": "complete",
+        "facing": 1,
+        "orientDefault": 0,
+        "profile": "TRAILER_TOWED",
+        "via": "registry",
+        "measured": "gelesen in spacetruck_trailer.gltf: 5 Netze, 4 benannte Radknoten. Radradius 0,0877 u, Radbreite 0,0916 u auf x. Spur ±0,1720, Radstand ±0,2636. Karosserie x ±0,2400, y −0,0477…0,1951, z ±0,5000. Radmitte y −0,0554, Aufstandsebene y −0,1431.",
+        "note": "gezogene Einheit — kein Antrieb. Ein Anhaengepunkt ist im Asset nicht autoriert; die vordere Karosseriekante liegt bei z +0,5000. Ob der Nachlauf zum Zugfahrzeug gehoert oder ein eigener Actor ist, ist Georgs Entscheidung."
+      }
+    ]
+  },
   {
     "id": "citybuilder",
     "label": "KayKit City Builder Bits",

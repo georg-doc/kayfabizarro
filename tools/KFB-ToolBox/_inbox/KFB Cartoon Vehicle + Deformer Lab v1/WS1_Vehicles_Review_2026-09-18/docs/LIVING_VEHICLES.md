@@ -40,15 +40,17 @@ Fahrphysik gebaut. Die Naht ist eine Telemetrie-Funktion.
 Landepads, Felsen, Solarpanels, Windturbinen. Gemessen über `github_search_code` im
 gltf-Ordner — die Baumabfrage listet `.gltf` nicht (bekannte Falle, CLAUDE.md).
 
-**B2 · Space Base Bits liegt nicht im Registry und ist im Browser nicht ladbar.** Das Registry
-indiziert `media/2D_Assets` und `media/3D_Assets` von kayfabizarro; das Pack liegt in
-KFB-Stunt-Car-Race. Suche nach `space_base`/`spacebits`/`spacetruck`: null Treffer in 1494
-Dateien. Der RAW-Abruf auf KFB-Stunt-Car-Race scheitert im Browser (gemessen: fetch error auf
-`main`), und eine Kopie im Projekt hilft nicht — die `.bin`-Puffer der glTF lassen sich mit den
-Werkzeugen nicht ablegen. **Abhilfe, die Georg entscheiden muss:** die drei Fahrzeuge als `.glb`
-nach `kayfabizarro/media/3D_Assets` legen. Eine Datei ohne Sidecar, öffentlich abrufbar, danach
-im Registry indiziert — und dann fällt die Zeile in der Werkbank von »fehlt« auf »pinned«.
-Die Zeilen stehen bis dahin mit `available: false`, Grund und Abhilfe im Tooltip.
+**B2 · Space Base Bits war nicht ladbar — seit 18.09. erledigt.** Der Befund vom 17.09. galt für
+den alten Ort: das Pack lag in KFB-Stunt-Car-Race, der RAW-Abruf scheiterte dort, und eine Kopie
+ins Projekt half nicht, weil die `.bin`-Puffer nicht mitkommen. Jetzt liegt das Pack in
+`kayfabizarro/media/3D_Assets/KayKit_Space_Base_Bits_1.0_FREE` und ist im Registry-Pack
+`kaykit-space-base-bits-1-0-free` indiziert. Byteweise geprüft am 18.09.: drei glTF
+(10917/10963/10945 B), drei `.bin` (49524/67708/32656 B), eine Textur (25749 B) — alle im selben
+Ordner, also löst der Loader die relativen `uri` von der RAW-Adresse aus auf, wie bei den City
+Builder Cars. Pin: `eb48f50489b9e4903ec1e3d2fb1837605ce7d792`, aus dem Registry-Pack gelesen.
+Nicht als `.glb` umgebaut — der Umweg war nur nötig, solange das Repo falsch war.
+Zur bekannten Falle: die Ordneransicht zeigt die drei glTF weiterhin nicht. Gefunden wurden sie
+über die Byte-Abfrage auf den Pfad (CLAUDE.md).
 
 **B3 · Die Registry-Fahrzeuge sind die tragfähige Quelle.** 22 Fahrzeuge aus drei Packs, alle
 über die gepinnte RAW-Adresse des Registry-Commits `34cde3f8f752d481a03c9714f1c3b3a8b2c15c46`
@@ -66,6 +68,16 @@ die Werkbank `0 Räder` und sagt, dass nichts erfunden wird.
 Radknoten benennt. Jetzt wird zusätzlich die Form geprüft und **koaxial verschmolzen** (x und z
 innerhalb 60 % des Radradius = eine Nabe). Gegengemessen: `raceCarRed · 4 Räder (node) · r 0,141 ·
 Spur 0,57 · Radstand 0,80`.
+
+**V2a · Die Dicke-Schwelle gilt nach Weg getrennt (18.09., `carrig.v2.js`).** Die Formprüfung
+verlangte überall »Achse mindestens 1,5 × dünner als der Raddurchmesser«. `spacetruck_large`
+fällt damit durch — 0,1620 u Breite gegen 0,2280 u Durchmesser, Verhältnis 1,407. Vier benannte,
+gespiegelte, bodenberührende Radknoten wurden verworfen, weil das Fahrzeug dicke Räder hat.
+Im **Knoten**-Weg genügt jetzt 1,3: der Autor hat die Knoten selbst `wheel_front_left` genannt,
+und die vier bestätigen sich gegenseitig (Spiegelung in x und z, Bodenkontakt, gleicher Radius).
+Im **Insel**-Weg bleibt 1,5, weil dort nur die Form spricht und eine dicke Scheibe auch ein
+Kotflügel sein kann. Ein Würfel liegt bei 1,0 und fällt weiter durch. Nachgemessen: raceCarRed
+bleibt bei 4 Rädern, das Skateboard ehrlich bei 0.
 
 **V3 · Alles wird in EINEN gemessenen Raum gebacken.** y = 0 ist der Radaufstandspunkt (Unterkante
 der Räder, nicht des Fahrzeugs — ein tiefer Frontsplitter hätte sonst den Boden bestimmt), x/z ist
@@ -261,3 +273,108 @@ Kein Bau. Housekeeping und Übergabe:
 
 **Nichts gelöscht.** Die Cleanup-Kandidaten stehen benannt in `HOUSEKEEPING.md` und warten
 auf Freigabe, einzeln.
+
+## Fünfte Runde · 18.09. · drei Motion-Familien
+
+Gebaut, in Georgs Reihenfolge: Schlingern, dann Manöver und Zwei-Rad-Schräglage. Ausführlich mit
+allen Messreihen in `CHANGELOG.md`; hier nur, was für jeden weiteren Bau an dieser Linie gilt.
+
+**V6 · Jede Familie besitzt genau EINE Gruppe, und die Schichtung ist die Reihenfolge der
+Besitzverhältnisse.** Von innen nach außen: Deformer (Pose, `responseRoot` + `shellRoot`) →
+Schlingern (Gier um die Vorderachse) → Zwei-Rad (Kippen um die Aufstandslinie) → Manöver (Weg
+über den Boden). Keine Familie fasst die Gruppe einer anderen an, alle Lenkanteile werden
+addiert statt gesetzt. Das ist der Grund, warum das Fahrzeug an einer Bande entlangFAHREN und
+dabei gekippt stehen kann, ohne dass eine der Bewegungen von der anderen weiß.
+
+**V7 · Ein Manöver erfindet keine Deformation, es erzeugt Signale.** `speed`, `longAccel` und
+`lateral` kommen aus einem kinematischen Einspurmodell auf dem gemessenen Radstand; der Deformer
+verbraucht sie unverändert. `longAccel` wird differenziert, nicht geschrieben — deshalb taucht die
+Nase beim Anfahren im Rückwärtsgang nach vorn, ohne dass das irgendwo eingestellt wäre. Wer eine
+weitere Fahrfigur baut, baut sie als Weg und nicht als Pose.
+
+**V8 · `rig.frame` mischt zwei Bezugssysteme. `contactY` ist VOR dem Einbacken gemessen,
+`height` danach.** Im Rig-Raum liegt der Boden auf genau **0**. Wer `frame.contactY` als Höhe
+einer Drehachse nimmt, dreht um eine Achse unter dem Asphalt — passiert in zwei Familien
+unabhängig, sichtbar nur in der mit dem großen Winkel. Beide korrigiert.
+
+**V9 · Ein gerolltes Rad steht auf seiner Kante.** Der Hebel gegen das Umfallen ist
+(Spurweite + Radbreite)/2, nicht die halbe Spurweite. Aus zwei Schräglagen ergab sich zweimal
+unabhängig dieselbe Radbreite, nachgemessen am Rig bestätigt. Gilt für jede Bewegung um eine
+Aufstandslinie.
+
+**V10 · Beweisgriffe gehören in die Werkbank, nicht in den Kopf.** `window.__cvd` hat jetzt
+`paint()`, `stepMs(ms)`, `ticks()`, `seqState()` und `camState()`. Grund: in einem unsichtbaren
+Rahmen hält der Browser `requestAnimationFrame` an, und drei Prüfrunden gingen auf die Suche nach
+einem Fehler, den es nicht gab. Eine Aufnahme ohne eigenen Bildstempel beweist nichts.
+
+**V11 · Neue Module werden mit Abrufstempel importiert (`?r=N`).** Ein überschriebenes Modul bleibt
+im Zwischenspeicher liegen, und die Seite läuft still mit der alten Fassung — in dieser Runde
+einmal voll hineingelaufen, obwohl die Regel in `CLAUDE.md` steht.
+
+### Neu offen aus dieser Runde
+
+- **Fassrolle** — gebaut, siehe `CHANGELOG.md`. Erledigt.
+- **Türen öffnen · GEMESSEN, Entscheidung offen.** Georgs Frage vom 18.09. Acht Fixtures
+  durchgesehen (car-hatchback, car-police, truck, firetruck, garbage-truck, van, suv, spacetruck):
+  **kein einziges Modell hat einen Türknoten.** Die Kenney- und KayKit-Packs bestehen aus 6–8
+  Knoten, nämlich Karosserie plus vier Räder; kein `door`, `hood`, `trunk`, `window`, `seat`.
+  Die Poly-by-Google-Modelle sind noch weiter weg: ihre Netze heißen `Object003_1 … _6` und sind
+  nach MATERIAL getrennt, nicht nach Bauteil — die Insel-Radsuche findet dort Platten, aber keine
+  Türen. EIN Fund gegen den Trend: `garbage-truck` bringt `arm`, `body` und `trash` als eigene
+  Knoten mit, also einen echten beweglichen Aufbau.
+  Vorschlag ohne Bastelei (Cartoon-Logik, keine neue Geometrie, gilt für alle 46 Fixtures):
+  die **Klappkarosserie** — der ganze Aufbau schwenkt um die gemessene untere Seitenkante der
+  Karosseriehülle nach oben, Räder bleiben stehen. Liest als Cockpit-Haube. Zweite, noch
+  billigere Variante: das Fahrzeug **duckt sich** zur Ausstiegsseite (kann der Deformer schon) und
+  die Figur poppt heraus. Beides braucht Georgs Urteil, welcher Read gewollt ist.
+- **Räder umklappen für Flug-/Drive-Mode · machbar ohne neue Geometrie.** Das Rad-Rig hat je Rad
+  schon drei geschachtelte Gruppen: `steer` (y) → `susp` (y-Versatz) → `spin` (x). Eine Drehung
+  der `steer`-Gruppe um **z** um 90° stellt die Radachse von quer auf senkrecht — die Scheibe
+  liegt dann waagerecht und dreht um die Hochachse, also als Rotor. `susp.position.y` senkt sie
+  unter den Aufbau. Ein Faktor 0–1 fährt Klappwinkel, Fahrhöhe und Schubneigung gemeinsam und
+  gibt den fließenden Übergang. Noch nicht gebaut, noch nicht abgenommen.
+- **VFX-Quelle geprüft.** `media/3D_Assets/FX_Visual` enthält **keine 3D-Effektnetze**, nur 2D:
+  `kenney_smoke-particles/PNG` in fünf Ordnern (Black smoke 25, White puff 25, Explosion 9,
+  Fart 9, Flash 9) als EINZELBILDER — direkt als Billboard-Sprites verwendbar, kein Zuschnitt
+  nötig. `explosions_smoke` liefert dagegen GEPACKTE Spritesheets, deren Bildlagen in einer
+  `.plist` stehen (siehe `explosion_smoke_HowTo_v01.md`); die müssten erst zerlegt werden.
+  Folge: alle Effekte dieser Linie sind kamerazugewandte Billboards, keine Volumen. Für Cartoon
+  ist das richtig, es muss nur vorher gesagt sein.
+- **Kupplungskette** — unsichtbare Kupplung mit Kupplungspunkt vorn und hinten je Fahrzeug, dann
+  Wiederholung der Naht für Ketten beliebiger Länge.
+- **Die Zahlen der neuen Familien sind an EINEM Fahrzeug gemessen** (car_hatchback, Profil
+  CAR_CHILL_LIGHT). Ableitung und Geometrie sind fahrzeugunabhängig, die Abnahme ist es nicht:
+  der Monster-Truck kippt später, das Skateboard hat keine Spurweite, und der Trailer hat keinen
+  Antrieb für einen Gangwechsel.
+- **Die drei Fahrweisen sind gesetzt, nicht gemessen.** Tempo und Standzeit beim Gangwechsel sind
+  der Charakter der Bewegung und gehören Georg, nicht der Ableitung.
+
+**V12 · Ein Vorzeichen, das an zwei Stellen gebraucht wird, wird EINMAL abgeleitet.** Der
+Drehpunkt einer Kippbewegung muss dem VORZEICHEN DES WINKELS folgen, nicht der Absprungseite.
+Derselbe Fehler trat in zwei Familien unabhängig auf und wurde in der zweiten beim ersten Versuch
+nur für eine Drehrichtung behoben.
+
+**V13 · Eine Abnahme an einem Fahrzeug ist keine Abnahme.** Die Fassrolle war an car_hatchback
+sauber und zog an `race` und `vehicle-monster-truck` die Räder unter den Boden — nicht wegen eines
+Vorzeichens, sondern wegen eines VERHÄLTNISSES (breite Spur gegen kleinen Hub). Jede neue Familie
+wird ab jetzt über mindestens sechs Fixtures abgetastet, darunter die Ausreißer nach oben
+(`race`, `truck`) und nach unten (`car-hatchback`, `kart-oobi`).
+
+**V14 · Die Bodenfreiheit ist eine Untergrenze, keine Flugbahn.** Eine gewünschte Wurfhöhe wird
+gegen den je Frame gerechneten nötigen Hub gemaxt, und die Gipfelhöhe hat eine gemessene
+Untergrenze aus dem eigenen Drehradius. Das ist zugleich der richtige Read: ein breites Fahrzeug
+muss höher springen, um sich zu überschlagen.
+
+**V15 · Radmaße werden über ALLE Räder gemessen.** `rig.report.wheelWidth` ist die Breite des
+ersten Rades. `vehicle-drag-racer` hat vorn schmale und hinten breite Räder; die äußerste
+Laufflaechenkante ist `max(|x| + Breite/2)` über alle vier.
+
+**V16 · Eine abgeleitete Zahl wird über ihren BEREICH belegt, nicht an einem Punkt.** Die
+Landestärke der Fassrolle war ein Festwert (16 von 16 Messungen exakt 0,35), obwohl der Kommentar
+eine Ableitung behauptete — Gipfel und Flugzeit standen unabhängig an der Stärke und kürzten sich
+in der Aufsetzgeschwindigkeit weg. Wer eine Größe ableitet, tastet sie über mehrere Stärken ab
+und belegt die SPANNE. Eine Zahl, die immer gleich ist, ist keine Ableitung.
+
+**V17 · Eine Wurfbahn hat eine Schwerkraft, nicht zwei unabhängige Regler.** Gipfel und Flugzeit
+sind dieselbe Größe: Gipfel = g·t²/8. Wird eines von beiden gesetzt, folgt das andere — sonst
+sinkt die wirksame Schwerkraft mit der Stärke und die Aufsetzgeschwindigkeit bleibt flach.

@@ -3,29 +3,29 @@
   "counts": {
     "byKind": {
       "audio": 1689,
-      "image-2d": 6556,
-      "model-3d": 5981
+      "image-2d": 6589,
+      "model-3d": 6304
     },
     "byRoot": {
       "media/2D_Assets": 5132,
-      "media/3D_Assets": 9094
+      "media/3D_Assets": 9450
     },
     "decks": 4,
     "dependencies": {
-      "complete": 3361,
+      "complete": 3684,
       "embedded": 1887,
       "missing": 339,
       "unresolved": 394
     },
-    "packs": 107,
+    "packs": 112,
     "problems": {
-      "DUPLICATE_NAME": 659,
+      "DUPLICATE_NAME": 670,
       "MISSING_REFERENCED_FILE": 339,
       "UNRESOLVED_FBX_DEPENDENCY": 305,
       "UNRESOLVED_MODEL_DEPENDENCY": 89
     },
-    "textureCandidates": 562,
-    "total": 14226
+    "textureCandidates": 573,
+    "total": 14582
   },
   "determinism": "same commit + same config + same override files => byte-identical output",
   "excludePrefixes": [
@@ -54,7 +54,7 @@
     "packs": "packs/index.json",
     "problems": "problems.json"
   },
-  "sourceCommit": "eb48f50489b9e4903ec1e3d2fb1837605ce7d792",
-  "sourceCommitTime": "2026-09-18T03:11:20+02:00",
+  "sourceCommit": "29aac1061bdd73736351cb856fa9f1e322478abc",
+  "sourceCommitTime": "2026-09-18T20:43:15+02:00",
   "sourceRepo": "georg-doc/kayfabizarro"
 }

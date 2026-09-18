@@ -66,14 +66,18 @@ try{
     await page.screenshot({path:out+'/'+city.slug+'-entry.png',fullPage:true});
 
     await page.locator('#viewer a').click();
-    await page.waitForFunction(()=>document.querySelector('#status')?.textContent?.startsWith('S0 cache loaded'),{},{timeout:120000});
+    await page.waitForFunction(()=>typeof window.KFBCityLab?.report==='function',{},{timeout:120000});
+    const viewerReport=await page.evaluate(()=>window.KFBCityLab.report());
     const diag=await page.locator('#diag').textContent();
-    check(city.id+' real S1 browser boot',/roads/.test(diag)&&/buildings/.test(diag),diag);
-    check(city.id+' expected roads visible in diagnostics',diag.includes(String(city.evidence.roads)+' roads'),diag);
-    check(city.id+' expected buildings visible in diagnostics',diag.includes(String(city.evidence.buildings)+' buildings'),diag);
+    check(city.id+' real S1 browser boot',viewerReport?.cityId===city.id&&/roads/.test(diag)&&/buildings/.test(diag),{diag,viewerReport});
+    check(city.id+' expected road count',viewerReport?.sourceCounts?.roads===city.evidence.roads,{expected:city.evidence.roads,actual:viewerReport?.sourceCounts?.roads});
+    check(city.id+' expected building count',viewerReport?.sourceCounts?.buildings===city.evidence.buildings,{expected:city.evidence.buildings,actual:viewerReport?.sourceCounts?.buildings});
+    check(city.id+' no separate roof caps',viewerReport?.separateRoofCaps===false,viewerReport?.separateRoofCaps);
+    check(city.id+' viewer owns no movement',viewerReport?.movementOwner==='none-viewer-only',viewerReport?.movementOwner);
     check(city.id+' no browser errors',errors.length===0,errors);
     await page.screenshot({path:out+'/'+city.slug+'-s1.png'});
     cityReport.diag=diag;
+    cityReport.viewerReport=viewerReport;
     cityReport.sourceSha256=prov.sourceSha256;
     cityReport.browserErrors=errors;
     report.cities.push(cityReport);

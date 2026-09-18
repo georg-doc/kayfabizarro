@@ -1,0 +1,118 @@
+{
+  "schema": "kfb.resident-consumer-adapter.v0",
+  "adapterId": "lorekeeper__travel-atlas-pilot-01",
+  "status": "READY_PACKAGE_HANDOFF_DEFERRED_BY_TRAVEL_GROUND_HUMAN_GATE",
+  "packageId": "pilot-01-lorekeeper-sedan",
+  "residentId": "lorekeeper",
+  "consumer": {
+    "repository": "georg-doc/KFB-Travel-Globe",
+    "currentHead": "6713528274cf8247947dd7149c444ee8996c0efa",
+    "owner": "Travel World / WB0",
+    "executionBrief": "_handover/WORLD_BUILDER_GOD_MODE_2026-09-17/ATLAS_PILOT_01_LOREKEEPER_HEX_THRESHOLD_2026-09-17.md",
+    "executionBriefBlob": "15d29e2846d4e6bd01f46b3961142b6a27388eb7",
+    "gate": "DO_NOT_IMPLEMENT_UNTIL_CURRENT_GROUND_HUMAN_GATE_CARRIES"
+  },
+  "canonicalPackageRefs": {
+    "residentBinding": "RESIDENT_BINDING.json",
+    "rigSocketReport": "RIG_SOCKET_REPORT.json",
+    "animationMap": "ANIMATION_MAP.json",
+    "interactionProxy": "INTERACTION_PROXY.json"
+  },
+  "relativeComposition": {
+    "actor": {
+      "sourceRef": "source:lorekeeper",
+      "localPositionXZ": [
+        0.75,
+        0
+      ],
+      "localYawDeg": -18,
+      "rigFamily": "Rig_Medium",
+      "idleClip": "Idle_A"
+    },
+    "habitat": {
+      "sourceRef": "source:lorekeeper-tome",
+      "role": "standing lectern / habitat",
+      "localPositionXZ": [
+        -0.95,
+        0.15
+      ],
+      "localYawDeg": 24,
+      "handAttachment": false
+    },
+    "staff": {
+      "sourceRef": "source:lorekeeper-staff",
+      "socket": "handslot.r",
+      "scale": 0.65,
+      "sourceAxis": [
+        0,
+        1,
+        0
+      ],
+      "aim": [
+        0.18,
+        0.97,
+        0.12
+      ],
+      "grip": 0.28
+    }
+  },
+  "travelOwned": {
+    "worldAnchor": "stable spherical surface anchor",
+    "localFrame": "tangent frame at Travel anchor",
+    "supportSurface": "Travel/A0 support adapter",
+    "road": "existing Travel ROAD approach",
+    "persistence": "existing World Recipe seam",
+    "movement": "Travel Ground owner",
+    "camera": "Travel current camera owner",
+    "lighting": "Travel current lighting owner",
+    "hexAssets": "Travel/World Atlas consumer selection and placement"
+  },
+  "packageMustNotOwn": [
+    "global/spherical world position",
+    "Ground translation/heading",
+    "Travel camera",
+    "ROAD spline/runtime",
+    "Hex support physics",
+    "World Recipe persistence",
+    "interaction/combat for this gate"
+  ],
+  "variants": [
+    {
+      "id": "VISIBLE_HEX",
+      "packageResidentComposition": "IDENTICAL",
+      "supportPolicy": "visible seven-cell Hex may be registered as explicit Travel walkable support only through existing support seam"
+    },
+    {
+      "id": "SEATED_HEX",
+      "packageResidentComposition": "IDENTICAL",
+      "supportPolicy": "same seven Hex meshes seated radially by consumer transform; no source mesh edit; no claim of terrain deformation"
+    },
+    {
+      "id": "NO_VISIBLE_HEX",
+      "packageResidentComposition": "IDENTICAL",
+      "supportPolicy": "no visible Hex and no invisible Hex support; Travel terrain is authoritative support"
+    }
+  ],
+  "animation": {
+    "required": "Idle_A",
+    "optionalMovementProbe": "Walking_A only if the named consumer actually needs actor locomotion",
+    "rootMotionPolicy": "Travel/consumer owns translation and heading; animation presentation only",
+    "readingAnimation": "NOT_REQUIRED"
+  },
+  "acceptance": [
+    "all package AssetRefs resolve at exact pinned revisions",
+    "same resident recipe revision in all three Travel variants",
+    "actor/lectern/staff relative composition preserved",
+    "staff remains attached to handslot.r with explicit calibration",
+    "World Recipe roundtrip preserves Travel anchor + variant + resident composition + ROAD approach",
+    "approach from ordinary terrain has no vertical pop or phantom support",
+    "NO_VISIBLE_HEX leaves no invisible support",
+    "no movement/camera/Flight regression",
+    "human comparison of all three variants remains separate"
+  ],
+  "open": [
+    "Travel Ground human gate must carry before implementation",
+    "runtime actor forward/up convention still requires actual Travel consumer inspection",
+    "interaction/talk/look-at proxy values remain open and are outside this gate"
+  ]
+}

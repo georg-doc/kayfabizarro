@@ -3,7 +3,8 @@ on:
   push:
     branches: [main]
     paths:
-      - 'tools/game-dev-studio/**'
+      - 'tools/game-dev-studio/catalog.json'
+      - 'tools/game-dev-studio/index.html'
       - 'kfb-hub/free-roam/game-dev-studio/**'
       - '.github/workflows/game-dev-studio-public.yml'
   workflow_dispatch:

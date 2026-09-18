@@ -42,4 +42,4 @@ Source/recovery:
 
 `tools/game-dev-studio/`
 
-Current source state: package-first preview lane implemented for Pilot 01 (Lorekeeper + Sedan). Public browser verification of this new page is **PENDING** and must not be inferred from the GitHub files existing. Package preview is not runtime consumer acceptance.
+Current state: package-first preview lane implemented for Pilot 01 (Lorekeeper + Sedan). **PUBLIC BROWSER PASS** on the actual KFB Cloudflare host: run `35368827693`, attempt 2, job `105680028742`, artifact `10557444939`, 11/11 checks PASS including Studio/WebGL boot, Lorekeeper preview, Sedan preview/evidence overlay, pinned source refs and zero browser errors. Human visual acceptance and runtime consumer acceptance remain separate and PENDING.

@@ -669,3 +669,111 @@ The current webchat environment does not expose the Game Development Studio loca
 **PUBLIC DEPLOYMENT:** source target implemented; actual Cloudflare/browser verification remains a separate gate.
 
 **UNCHANGED:** Pilot 01 binary/consumer/human acceptance gates remain open; the preview surface is not acceptance evidence by itself.
+
+
+### 2026-09-18 · A4 · fixed Game Dev Studio URL public PASS
+
+The permanent package/recovery lane is now verified on the real KFB Cloudflare host:
+
+`https://kayfabizarro.pages.dev/kfb-hub/free-roam/game-dev-studio/`
+
+Public proof:
+
+- GitHub Actions run `35368827693`, attempt 2;
+- job `105680028742`;
+- artifact `10557444939`;
+- artifact SHA-256 `cea1a31ec087aaa697deb7c64b00f078c502735056473ee0cdb02deaa56a24ac`;
+- **11/11 public checks PASS**.
+
+Coverage includes deployed catalog, fixed page HTTP, WebGL Studio boot, four Pilot-01 preview controls, Lorekeeper preview, Sedan preview + package-evidence overlay, pinned source revisions, tool route and zero browser errors.
+
+Attempt 1 failed only because the new catalog had not propagated to the Cloudflare host within the first polling window. The unchanged proof passed on rerun; no viewer or asset repair was required.
+
+**Boundary:** public preview PASS is not Sedan/Lorekeeper runtime consumer acceptance and not Georg's visual acceptance.
+
+
+---
+
+## 17 · Living Plant / Plant Prop package · BACKLOG DONOR
+
+**Added:** 2026-09-18  
+**Status:** BACKLOG / PACKAGE TYPE REGISTERED · does not expand active Pilot 01.
+
+Source / authoring lane:
+
+`skills/chat/workflows/PLANT_PROP_LAB_2026-09-18/`
+
+Potential package:
+
+```text
+GameReadyPlantPackage
+  canonical pot / plant refs
+  PlantRecipe
+  PotStyleRecipe
+  PropRigRecipe
+  optional LivingProp / EyeRig adapter
+  support / collider proxy
+  VFX / SFX hooks
+  LOD / instancing hints
+  consumer evidence
+```
+
+Important:
+- existing Tiny Treats / Quaternius assets stay canonical GitHub sources;
+- EyeRig v6 stays the shared eye implementation;
+- “living plant” does not automatically become a Resident/Combat character;
+- package may be consumed by Travel, OSM City, Platformer, Dungeon or other named receivers only after their own test;
+- current Lorekeeper + Sedan Pilot 01 remains the active Game Dev Studio capability proof.
+
+This package type is intentionally compatible with Frankensteining: a static PlantRecipe can later gain a transform rig, style recipe, EyeRig adapter and consumer-specific interaction without replacing the canonical source meshes.
+
+
+### 2026-09-18 · A5 · FR-S04-02 Sedan receiver adapter
+
+Pilot 01 now pins the current Free Roam donor to `fr-s04-02` and defines a package-local Sedan receiver adapter.
+
+New package files:
+
+- `game-ready/pilot-01-lorekeeper-sedan/vehicle/car-sedan/FR_S04_02_RECEIVER_ADAPTER.json`
+- `game-ready/pilot-01-lorekeeper-sedan/vehicle/car-sedan/FR_S04_02_RECEIVER_HANDOFF.md`
+
+Key boundary:
+
+> FR-S04-02 has 62/62 real public checks, but those checks currently run the original kart. They prove the receiver donor, not the Sedan package.
+
+Source review of FR-S04-02 confirms that its current vehicle geometry is hardcoded as a Rapier cuboid plus four synthetic wheel connections. Pilot 01 already has source-derived numeric Sedan body/wheel geometry, so a first real Sedan receiver probe may consume the numeric proxy directly without waiting for a collider GLB.
+
+This **does not remove** the binary Game Development Studio capability gate. It separates two questions correctly:
+
+1. can the Game Development Studio producer generate/inspect/package an explicit derived binary? — still BLOCKED in this webchat environment;
+2. can the real FR-S04-02 Rapier consumer use the package's numeric proxy + exact wheel nodes? — adapter now specified, runtime test still OPEN.
+
+The adapter explicitly forbids silently inheriting kart mass/inertia, suspension geometry, recovery volume or camera clearance as Sedan facts.
+
+
+---
+
+## Vehicle EyeRig / front-face anchors · BACKLOG PACKAGE EXTENSION
+
+Game-ready vehicle packages may later expose optional expressive face anchors for the shared KFB EyeRig.
+
+Candidate fields:
+
+```text
+vehicleEyeAnchors
+  left
+  right
+  source: named-node | measured-component | manual-approved
+  forward/up axes
+  sourceLightPolicy
+```
+
+Rules:
+- do not invent headlight node names;
+- named source nodes win when verified;
+- otherwise measure symmetric front anchors and require visual approval;
+- original headlight illumination semantics remain separate from visible eye geometry;
+- EyeRig reads vehicle telemetry/Kinetics only and never writes physics.
+
+Canonical implementation brief:
+`tools/KFB-ToolBox/_handover/EYE_RIG_BATCH_2026-09-18/START_HERE.md`, sections 23–24.

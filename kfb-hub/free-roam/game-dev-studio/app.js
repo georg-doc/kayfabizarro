@@ -39,7 +39,8 @@ async function addSedanEvidence(asset){
   try{
     const [c,w]=await Promise.all([fetch(asset.colliderSpec,{cache:'no-store'}).then(r=>r.json()),fetch(asset.wheelReport,{cache:'no-store'}).then(r=>r.json())]);
     const a=c.derivation.sourceAabb,size=new THREE.Vector3(...a.size),center=new THREE.Vector3(...a.center);
-    const box=new THREE.Mesh(new THREE.BoxGeometry(size.x,size.y,size.z),new THREE.MeshBasicMaterial({color:0xf2c96c,wireframe:true,transparent:true,opacity:.75}));
+    const solid=new THREE.BoxGeometry(size.x,size.y,size.z),edges=new THREE.EdgesGeometry(solid);solid.dispose();
+    const box=new THREE.LineSegments(edges,new THREE.LineBasicMaterial({color:0xf2c96c,transparent:true,opacity:.82}));
     box.position.copy(center);overlay.add(box);
     for(const wheel of w.wheels||[]){const p=new THREE.Vector3(...wheel.sourcePosition);const marker=new THREE.Mesh(new THREE.SphereGeometry(.026,14,10),new THREE.MeshBasicMaterial({color:0x8fd8ae}));marker.position.copy(p);overlay.add(marker)}
   }catch(e){console.warn('Evidence overlay unavailable',e)}
@@ -51,6 +52,7 @@ function facts(asset){
 async function select(asset){
   current=asset;document.querySelectorAll('.asset').forEach(b=>b.dataset.active=String(b.dataset.id===asset.id));
   $('kind').textContent=asset.kind;$('title').textContent=asset.label;$('role').textContent=asset.role;facts(asset);
+  const evidenceAvailable=!!(asset.colliderSpec&&asset.wheelReport);$('wire').hidden=!evidenceAvailable;$('wire').textContent=showEvidence?'Hide evidence':'Show evidence';
   $('sourceLink').href=asset.githubUrl;$('packageLink').href=asset.packagePath;$('stageTitle').textContent=asset.label;
   $('stageStatus').textContent='Loading pinned '+asset.format.toUpperCase()+'…';
   if(model){clearGroup(model);model=null}clearOverlay();
@@ -66,7 +68,10 @@ function renderAssets(list){
 async function init(){
   const r=await fetch('/tools/game-dev-studio/catalog.json',{cache:'no-store'});if(!r.ok)throw Error('catalog '+r.status);catalog=await r.json();
   const p=catalog.packages[0];$('packageTitle').textContent=p.title;$('packageSubtitle').textContent=p.subtitle+' · '+p.status;$('manifestLink').href=p.manifest;$('testLink').href=p.consumerPlan;
-  renderAssets(p.assets);await select(p.assets[0]);window.__KFB_GAME_DEV_STUDIO__={catalog,select:id=>select(p.assets.find(a=>a.id===id)),snapshot:()=>({package:p.id,asset:current?.id,showEvidence})};window.__KFB_GAME_DEV_STUDIO_READY__=true;
+  const vehicle=p.receiverHandoff?.donor?'Sedan → '+p.receiverHandoff.donor+': adapter ready, Sedan runtime test open':'Sedan receiver open';
+  const resident=p.residentHandoff?.consumer?'Lorekeeper → '+p.residentHandoff.consumer+': '+p.residentHandoff.status.replaceAll('_',' ').toLowerCase():'Lorekeeper consumer open';
+  $('packageNote').textContent=vehicle+' · '+resident+'. Preview evidence is not consumer or human acceptance.';
+  renderAssets(p.assets);await select(p.assets[0]);window.__KFB_GAME_DEV_STUDIO__={catalog,select:id=>select(p.assets.find(a=>a.id===id)),snapshot:()=>({package:p.id,asset:current?.id,showEvidence,evidenceAvailable:!!(current?.colliderSpec&&current?.wheelReport),evidenceObjects:overlay.children.length,catalogRevision:catalog.catalogRevision})};window.__KFB_GAME_DEV_STUDIO_READY__=true;
 }
 $('fit').onclick=()=>model&&fit(model);$('spin').onclick=()=>{controls.autoRotate=!controls.autoRotate;$('spin').textContent=controls.autoRotate?'Stop rotate':'Auto rotate'};$('wire').onclick=()=>{showEvidence=!showEvidence;if(current?.id==='car-sedan')addSedanEvidence(current);$('wire').textContent=showEvidence?'Hide evidence':'Show evidence'};
 function frame(){resize();controls.update();renderer.render(scene,camera);requestAnimationFrame(frame)}requestAnimationFrame(frame);
