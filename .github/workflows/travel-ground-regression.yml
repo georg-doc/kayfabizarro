@@ -1,7 +1,7 @@
-name: Travel Ground regression probe
+name: Travel Ground regression proof
 on:
   push:
-    branches: ['fix/travel-ground-regression-*']
+    branches: [main]
     paths: ['.github/workflows/travel-ground-regression.yml','travel/wip/travel_globe_wsa/world-builder/**']
   workflow_dispatch:
 permissions:
@@ -18,52 +18,68 @@ jobs:
       - run: |
           npm install --no-save playwright@1.51.1
           npx playwright install --with-deps chromium
-      - name: Inspect actual current KFB Ground runtime
+      - name: Verify actual KFB Ground cards and rig classes
         shell: bash
         run: |
           mkdir -p ground-probe
           cat > ground-probe/probe.mjs <<'JS'
           import fs from 'node:fs';import {chromium} from 'playwright';
-          const url='https://kayfabizarro.pages.dev/travel/wip/travel_globe_wsa/world-builder/?wb0=1&ground=8';
-          const r={url,date:new Date().toISOString(),checks:[],errors:[],humanAcceptance:'PENDING',status:'DIAGNOSTIC'};
-          const browser=await chromium.launch({headless:true,args:['--use-angle=swiftshader','--enable-unsafe-swiftshader']});let page;
+          const base='https://kayfabizarro.pages.dev/travel/wip/travel_globe_wsa/world-builder/';
+          const url=base+'?wb0=1&ground=8',expected='30b1f5144f27bfa60936ff161a347006f7b26166';
+          const r={url,date:new Date().toISOString(),expectedTravelCommit:expected,checks:[],errors:[],humanAcceptance:'PENDING'};
+          const check=(name,pass,details)=>{r.checks.push({name,pass:!!pass,details});if(!pass)throw Error(name)};
+          const pause=ms=>new Promise(resolve=>setTimeout(resolve,ms));
+          let browser,page;
           try{
+            let live=false,marker=null;
+            for(let i=0;i<36;i++){try{const q=await fetch(base+'MIRROR_PROVENANCE.json?ci='+Date.now());if(q.ok){marker=await q.json();if(marker.sourceCommit===expected){live=true;break}}}catch{}await pause(5000)}
+            check('combined Travel mirror is live',live,marker);
+            browser=await chromium.launch({headless:true,args:['--use-angle=swiftshader','--enable-unsafe-swiftshader']});
             const ctx=await browser.newContext({viewport:{width:1440,height:900}});page=await ctx.newPage();
             page.on('pageerror',e=>r.errors.push(String(e)));page.on('console',m=>{if(m.type()==='error')r.errors.push(m.text())});
             await page.goto(url,{waitUntil:'domcontentloaded',timeout:120000});
-            await page.waitForFunction(()=>window.__globe&&window.__wb0?.movementLab&&window.__globe?.teppiche,{},{timeout:120000});
-            await page.waitForTimeout(12000);
+            await page.waitForFunction(()=>window.__globe&&window.__wb0?.movementLab&&window.__globe?.teppiche&&window.__wb0?.cardStartHardening,{},{timeout:120000});
+            await page.waitForFunction(()=>window.__wb0.cardStartHardening?.report?.().now?.textured>0,{},{timeout:20000});
+            // PDF art is progressive. Require at least one real crop, not 56 at startup.
+            await page.waitForFunction(()=>window.__wb0.cardStartHardening?.report?.().now?.artwork>0,{},{timeout:45000});
             r.cards=await page.evaluate(()=>{
               const g=window.__globe,w=window.__wb0,T=g.THREE,root=g.scene.getObjectByName('WB0 Ground Player');
               const list=g.teppiche?.teppiche||[];const player=root?.getWorldPosition(new T.Vector3())||null;
-              let nearest=Infinity,nearestPoint=null,visible=0,textured=0,art=0;
-              for(const t of list){if(t.mesh?.visible!==false&&t.mesh?.parent)visible++;if(t.mat?.map)textured++;if(t.art===true)art++;
-                if(player&&t.n&&Number.isFinite(t.rOben)){const p=t.n.clone().multiplyScalar(t.rOben);const d=p.distanceTo(player);if(d<nearest){nearest=d;nearestPoint=p.toArray();}}}
-              return {count:list.length,groupVisible:g.teppiche?.group?.visible!==false,visible,textured,art,nearest:Number.isFinite(nearest)?nearest:null,nearestPoint,tor:g.teppiche?.tor?.(),deckName:g.deckName,params:{...g.teppiche?.params}};
+              let nearest=Infinity,visible=0,textured=0,art=0,assigned=0;
+              for(const t of list){if(t.mesh?.visible!==false&&t.mesh?.parent)visible++;if(t.karte)assigned++;if(t.mat?.map)textured++;if(t.art===true)art++;
+                if(player&&t.n&&Number.isFinite(t.rOben))nearest=Math.min(nearest,t.n.clone().multiplyScalar(t.rOben).distanceTo(player));}
+              return {count:list.length,visible,assigned,textured,art,nearest:Number.isFinite(nearest)?nearest:null,tor:g.teppiche?.tor?.(),hostDeckName:g.deckName,start:w.cardStartHardening.report()};
             });
+            check('56 terrain cards built and assigned',r.cards.count===56&&r.cards.assigned===56,r.cards);
+            check('terrain cards have immediate text textures',r.cards.textured===56,r.cards);
+            check('real PDF artwork starts progressively',r.cards.art>0,r.cards);
+
             r.profiles={};
-            for(const id of ['actionFigure','monstrosity','legacyWarband','frizzleBeeMech','flamingoMech']){
-              await page.evaluate(async id=>{await window.__wb0.movementLab.activate(id,false)},id);await page.waitForTimeout(800);
+            const expectedClasses={actionFigure:'rig-medium',monstrosity:'rig-large',legacyWarband:'legacy-1.2',frizzleBeeMech:'kfb-mech-composite',flamingoMech:'quaternius-mech'};
+            for(const id of Object.keys(expectedClasses)){
+              await page.evaluate(async id=>{await window.__wb0.movementLab.activate(id,false)},id);await page.waitForTimeout(900);
               r.profiles[id]=await page.evaluate(()=>{
                 const w=window.__wb0,g=window.__globe,T=g.THREE,visual=g.scene.getObjectByName('WB0 Player Visual');
                 const box=visual?new T.Box3().setFromObject(visual):null,size=box?.getSize(new T.Vector3());
-                return {report:w.movementLab.report(),groundSpeed:w.ground.params.speed,runMul:w.ground.params.runMul,visibleHeight:size?.y||null,rootScale:g.scene.getObjectByName('WB0 Ground Player')?.scale?.x||null};
+                return {report:w.movementLab.report(),groundSpeed:w.ground.params.speed,runMul:w.ground.params.runMul,visibleHeight:size?.y||null};
               });
+              check(id+' scale class',r.profiles[id].report.scaleClass===expectedClasses[id],r.profiles[id]);
             }
-            r.ground=await page.evaluate(()=>({state:window.__wb0.ground.state,params:{...window.__wb0.ground.params},support:window.__wb0.supportSurfaces?.report?.()}));
+            const P=r.profiles;
+            check('Large target is larger than Medium',P.monstrosity.report.targetHeight>P.actionFigure.report.targetHeight*1.7,{medium:P.actionFigure.report.targetHeight,large:P.monstrosity.report.targetHeight});
+            check('Legacy target stays below Medium',P.legacyWarband.report.targetHeight<P.actionFigure.report.targetHeight*.8,{medium:P.actionFigure.report.targetHeight,legacy:P.legacyWarband.report.targetHeight});
+            check('class-relative speeds are distinct',P.monstrosity.groundSpeed>P.actionFigure.groundSpeed*1.6&&P.legacyWarband.groundSpeed<P.actionFigure.groundSpeed*.85,{medium:P.actionFigure.groundSpeed,large:P.monstrosity.groundSpeed,legacy:P.legacyWarband.groundSpeed});
+            check('Mech special speeds remain separate',P.frizzleBeeMech.groundSpeed>P.monstrosity.groundSpeed&&P.flamingoMech.groundSpeed>P.monstrosity.groundSpeed,{bee:P.frizzleBeeMech.groundSpeed,flamingo:P.flamingoMech.groundSpeed});
+            check('no browser errors',r.errors.length===0,r.errors);
             await page.screenshot({path:'ground-probe/runtime.png',fullPage:false});
-            r.checks.push({name:'runtime boot',pass:true});
-            r.checks.push({name:'terrain cards built',pass:(r.cards.count||0)>0,details:r.cards});
-            r.checks.push({name:'terrain cards visible',pass:(r.cards.visible||0)>0,details:r.cards.visible});
-            r.checks.push({name:'terrain cards textured',pass:(r.cards.textured||0)>0,details:r.cards.textured});
-            r.status='PASS_WITH_DIAGNOSTICS';
+            r.status='PASS';
           }catch(e){r.status='FAIL';r.failure=String(e.stack||e);if(page)await page.screenshot({path:'ground-probe/fail.png'}).catch(()=>{});process.exitCode=1}
-          finally{await browser.close();fs.writeFileSync('ground-probe/report.json',JSON.stringify(r,null,2));console.log(JSON.stringify(r,null,2));}
+          finally{if(browser)await browser.close();fs.writeFileSync('ground-probe/report.json',JSON.stringify(r,null,2));console.log(JSON.stringify({status:r.status,checks:r.checks.length,failure:r.failure}));}
           JS
           node ground-probe/probe.mjs
       - uses: actions/upload-artifact@v4
         if: always()
         with:
-          name: travel-ground-regression-probe
+          name: travel-ground-regression-proof
           path: ground-probe
           retention-days: 14
