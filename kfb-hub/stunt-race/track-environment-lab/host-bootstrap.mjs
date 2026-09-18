@@ -1,3 +1,4 @@
+import {boxHostFooter} from './box-stop/host-glue.mjs';
 // Loads the exact accepted host, verifies its Git blob, then appends a read-only visual port.
 // Original Race sources are stored BYTE-IDENTICALLY; no step/camera/contact code is patched.
 import * as THREE from 'three';
@@ -26,6 +27,6 @@ export const environmentPort=Object.freeze({
   restore(){originalGround.visible=true;scene.background=initial.background;scene.fog=initial.fog;sun.color.copy(initial.sunColor);sun.position.copy(initial.sunPosition);hemi.color.copy(initial.hemiColor);hemi.groundColor.copy(initial.hemiGround)},
   diagnostics(){return {routeHash:core.hash,s:state.s,speed:state.speed,x:state.x,drawCalls:renderer.info.render.calls,triangles:renderer.info.render.triangles,geometries:renderer.info.memory.geometries,textures:renderer.info.memory.textures,camera:camera.position.toArray(),viewDirection:camera.getWorldDirection(new THREE.Vector3()).toArray(),routeBytes:hash(stable(core.route.map(p=>p.toArray()))),widthBytes:hash(stable(core.route.map((p,i)=>halfWidthAtS(i*core.ds,core.total))))}}
 });`;
-  const objectURL=URL.createObjectURL(new Blob([resolved,footer],{type:'text/javascript'}));
-  try{return (await import(objectURL)).environmentPort}finally{URL.revokeObjectURL(objectURL)}
+  const objectURL=URL.createObjectURL(new Blob([resolved,footer,boxHostFooter],{type:'text/javascript'}));
+  try{const m=await import(objectURL);return Object.freeze({...m.environmentPort,box:m.boxPort})}finally{URL.revokeObjectURL(objectURL)}
 }
