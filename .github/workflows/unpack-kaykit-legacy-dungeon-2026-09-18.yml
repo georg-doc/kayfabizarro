@@ -1,0 +1,166 @@
+name: One-shot unpack KayKit Legacy Dungeon 1.0 2026-09-18
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - ".github/workflows/unpack-kaykit-legacy-dungeon-2026-09-18.yml"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: kfb-unpack-kaykit-legacy-dungeon-2026-09-18
+  cancel-in-progress: false
+
+jobs:
+  unpack:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v7
+        with:
+          fetch-depth: 2
+
+      - name: Verify and unpack legacy Dungeon ZIP
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          from __future__ import annotations
+          import json, shutil, stat, subprocess, tempfile, zipfile
+          from pathlib import Path, PurePosixPath
+
+          root = Path.cwd()
+          zip_rel = "media/3D_Assets/KayKit Legacy/KayKit Dungeon Pack 1.0 2.zip"
+          expected_blob = "345405676365ac5ab5469e76abdfb8b0a9a9511f"
+          target_rel = "media/3D_Assets/KayKit Legacy/KayKit Dungeon Pack 1.0 2"
+
+          zpath = root / zip_rel
+          target = root / target_rel
+          if not zpath.is_file():
+              raise SystemExit(f"MISSING ZIP: {zip_rel}")
+          actual_blob = subprocess.check_output(["git","hash-object",str(zpath)], text=True).strip()
+          if actual_blob != expected_blob:
+              raise SystemExit(f"BLOB MISMATCH: {actual_blob} != {expected_blob}")
+          if target.exists():
+              raise SystemExit(f"TARGET ALREADY EXISTS: {target_rel}")
+
+          junk = {".DS_Store","Thumbs.db"}
+          with tempfile.TemporaryDirectory(prefix="kfb-legacy-dungeon-") as td:
+              tmp = Path(td)
+              with zipfile.ZipFile(zpath) as zf:
+                  infos=[i for i in zf.infolist() if not i.is_dir()]
+                  if not infos:
+                      raise SystemExit("EMPTY ZIP")
+                  for info in infos:
+                      p=PurePosixPath(info.filename)
+                      if p.is_absolute() or ".." in p.parts:
+                          raise SystemExit(f"UNSAFE PATH: {info.filename}")
+                      mode=(info.external_attr >> 16) & 0xFFFF
+                      if stat.S_ISLNK(mode):
+                          raise SystemExit(f"SYMLINK NOT ALLOWED: {info.filename}")
+                  zf.extractall(tmp)
+
+              for p in sorted(tmp.rglob("*"), reverse=True):
+                  if p.name in junk or "__MACOSX" in p.parts:
+                      if p.is_dir(): shutil.rmtree(p, ignore_errors=True)
+                      else: p.unlink(missing_ok=True)
+
+              desired = tmp / Path(target_rel).name
+              if desired.is_dir():
+                  source=desired
+              else:
+                  top=[p for p in tmp.iterdir()]
+                  dirs=[p for p in top if p.is_dir()]
+                  files=[p for p in top if p.is_file()]
+                  if len(dirs)==1 and not files:
+                      source=dirs[0]
+                  else:
+                      names={p.name for p in top}
+                      if "Assets" in names or "Models" in names:
+                          source=tmp
+                      else:
+                          raise SystemExit(f"AMBIGUOUS ZIP ROOT: {sorted(names)}")
+              shutil.copytree(source,target)
+
+          files=[p for p in target.rglob("*") if p.is_file()]
+          model_ext={".glb",".gltf",".fbx",".obj",".dae"}
+          models=[p for p in files if p.suffix.lower() in model_ext]
+          if not models:
+              raise SystemExit("NO MODEL FILES EXTRACTED")
+          ext={}
+          for p in files:
+              e=p.suffix.lower() or "<none>"
+              ext[e]=ext.get(e,0)+1
+
+          legacy_root=root/"media/3D_Assets/KayKit Legacy"
+          known=[
+            "KayKit Character Animations 1.2 - legacy",
+            "KayKit Legacy Character Pack - Skeletons 1.0",
+            "KayKit Spooktober Seasonal Pack 1.1",
+            "Orc Warband - legacy",
+            "KayKit Dungeon Pack 1.0 2",
+          ]
+          packs=[]
+          for name in known:
+              d=legacy_root/name
+              if not d.is_dir(): continue
+              fs=[p for p in d.rglob("*") if p.is_file()]
+              ms=[p for p in fs if p.suffix.lower() in model_ext]
+              packs.append({
+                "name":name,
+                "path":str(d.relative_to(root)),
+                "fileCount":len(fs),
+                "bytes":sum(p.stat().st_size for p in fs),
+                "modelFileCount":len(ms),
+                "gltfGlbCount":sum(1 for p in ms if p.suffix.lower() in {".gltf",".glb"}),
+              })
+
+          report={
+            "schema":"kfb.kaykit-legacy-intake/1",
+            "date":"2026-09-18",
+            "status":"SOURCE_RECEIVED_DUNGEON_UNPACKED_REGISTRY_REFRESH_REQUESTED",
+            "dungeon":{
+              "zipPath":zip_rel,
+              "zipBlobSha":actual_blob,
+              "targetPath":target_rel,
+              "fileCount":len(files),
+              "modelFileCount":len(models),
+              "formats":dict(sorted(ext.items())),
+              "licensePresent":any(p.name.lower().startswith("license") for p in files),
+            },
+            "legacyPacks":packs,
+            "rules":[
+              "Dungeon 1.0 is legacy source and does not replace current Dungeon 1.1.",
+              "Resident Atlas may consume these as candidate assets; animation/rig compatibility remains consumer-owned.",
+              "GitHub paths are source truth; no duplicate Atlas asset store."
+            ]
+          }
+          out=legacy_root/"KAYKIT_LEGACY_INTAKE_2026-09-18.json"
+          out.write_text(json.dumps(report,indent=2)+"\n",encoding="utf-8")
+          print(json.dumps(report,indent=2))
+          PY
+
+      - name: Sanity check extracted payload
+        shell: bash
+        run: |
+          set -euo pipefail
+          d="media/3D_Assets/KayKit Legacy/KayKit Dungeon Pack 1.0 2"
+          test -d "$d"
+          count="$(find "$d" -type f \( -iname '*.glb' -o -iname '*.gltf' -o -iname '*.fbx' -o -iname '*.obj' -o -iname '*.dae' \) | wc -l)"
+          echo "Legacy Dungeon model files: $count"
+          test "$count" -gt 0
+
+      - name: Commit legacy Dungeon + intake manifest
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add             "media/3D_Assets/KayKit Legacy/KayKit Dungeon Pack 1.0 2"             "media/3D_Assets/KayKit Legacy/KAYKIT_LEGACY_INTAKE_2026-09-18.json"
+          git diff --cached --stat
+          git commit -m "assets: unpack KayKit Legacy Dungeon Pack 1.0"
+          git pull --rebase origin main
+          git push origin HEAD:main
