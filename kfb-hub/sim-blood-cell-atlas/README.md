@@ -1,32 +1,69 @@
-# SimBlood · Cell Atlas Progressive Template
+# SimBlood · Cell & Asset Coverage Matrix
 
-Frank's matrix concept rebuilt as a progressive-disclosure UI donor.
+Status: SEARCHABLE/FILTERABLE PRODUCTION TEMPLATE · 2026-09-18
 
-## Principle
+This surface evolves Frank's compact multi-variant cell matrix into a production-oriented progressive-disclosure view.
 
-Collapsed:
-- cell type
-- approximate relative display size
-- current pool status
+## What it shows
 
-Expanded:
-- variants 1–5 / 6–10
-- candidate thumbnails where real POC assets already exist
-- intentionally empty slots for missing asset pools
-- nested review/asset metadata
+For every current Reference-Wave entity:
+- entity name / ID
+- entity kind
+- family
+- P0–P3 priority
+- direct morphology/reference anchors
+- dataset/source lanes
+- currently available assets or POC representations
+- explicit missing target slots
 
-## Scope
+Top-level modes:
+- Cells
+- Morphology
+- Inclusions
+- Field states
+- Findings
+- Conditions
 
-The template reproduces the 21 classes visible in Frank's gallery screenshot and adds Thrombozyten as a SimBlood extension.
+Filters:
+- free text
+- family
+- priority
+- coverage state
+- only entries with missing assets
 
-No missing morphology is invented just to fill the matrix.
+## Visual rule
 
-## Role
+The matrix must never hide production gaps.
 
-This is a UX / production-workflow template for:
-- Cell Atlas
-- Asset QC
-- physician shortlist preparation
-- later learner-facing cell encyclopedia
+A row can therefore be:
+- current asset(s) present
+- reference/source-only
+- completely missing
+- target reached
 
-It is not a medical reference by itself.
+Empty slots stay visible instead of being filled by invented morphology.
+
+## Current data
+
+`coverage.v0.1.json`
+
+Built from:
+- `CELL_TAXONOMY_v0.2.json`
+- `CELL_REFERENCE_ANCHORS_v0.1.json`
+- currently registered POC WBC candidates
+- current procedural RBC/platelet baselines
+- current Normal/IDA/TMA technical recipes
+
+POC/procedural representations count as “present” for coverage visibility but are **not** equivalent to medical or production approval.
+
+## Public mirror
+
+`https://kayfabizarro.pages.dev/kfb-hub/sim-blood-cell-atlas/`
+
+## Next
+
+1. connect Source Registry v0.2 coverage badges
+2. add verified thumbnail/reference previews where rights and hotlinking permit
+3. add approved true-cutout thumbnails after extraction
+4. add medical-review state and canonical-anchor marker
+5. keep this same surface usable for production planning and later learner-facing Atlas mode
