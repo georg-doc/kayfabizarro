@@ -56,3 +56,15 @@ Proof is behavioral/protocol alignment, not pixel matching.
 - move DocCheck visual SSOT into ToolBox;
 - claim whole-body clip interchangeability from eye-protocol success;
 - alter Resident/Travel/Combat defaults during this proof.
+
+
+## Phase A implementation now exists
+
+`tools/2D Animation Studio/proofs/cross-render-eye-v1/`
+
+3D target: FrizzleBob Driver Graft / real Rig_Medium / EyeRig v6.  
+2D target: source-exact DocCheck Eumel.
+
+Static sanity is PASS. Browser runtime/visual proof remains pending.
+
+This Phase A result validates the architecture without waiting for a new generic Medium EyeProfile. The first approved generic Medium profile becomes Phase B and must reuse the same sequence/protocol rather than inventing a new one.

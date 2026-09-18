@@ -43,3 +43,21 @@ Cross-render runtime proof is still pending: DocCheck Eumel 2D + one approved Ri
 ## 2026-09-18 · Dropbox v18 EyeRig cross-check
 
 Read-only donor audit confirmed the Dropbox FrankenStein Studio v18 session carries `pet-eye-rig.v6.js` text-equivalent to the current GitHub EyeRig-v6 donor after line-ending/trailing-whitespace normalization. The same Dropbox session contains Animation Lab v3, but no GitHub/current-tool promotion is inferred from presence alone.
+
+
+## 2026-09-18 · Cross-render EyeRig Phase A proof
+
+### IMPLEMENTATION
+A shared semantic proof is now implemented under `tools/2D Animation Studio/proofs/cross-render-eye-v1/`.
+
+3D proof target is FrizzleBob Driver Graft on the measured Rig_Medium host, reusing the existing public `mountGraft()` + EyeRig-v6 owner rather than mounting a temporary second eye system.
+
+2D proof target is source-exact DocCheck Eumel.
+
+Both consume the same `eye-clips.v1.json` sequence through one semantic runner.
+
+### EVIDENCE
+Static syntax/JSON/source-pin/sequence checks PASS.
+
+### OPEN
+Browser runtime and visual sync remain untested here. This is Phase A protocol proof only; first generic Medium EyeProfile approval remains an EyeRig Batch gate and becomes Phase B.

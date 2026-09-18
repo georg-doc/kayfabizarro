@@ -52,3 +52,16 @@ This proof is downstream of the first useful Medium slice. It must not block the
 ## Accessory seam
 
 Keep `eyeFrame()` public and stable. 2D and 3D glasses/brows/lashes may differ in asset representation but should attach through the same semantic frame where possible.
+
+
+## Protocol proof already prepared
+
+The cross-render **Phase A** proof is implemented at:
+
+`tools/2D Animation Studio/proofs/cross-render-eye-v1/`
+
+It uses the existing FrizzleBob Driver Graft as the 3D Rig_Medium side because that actor already has the real ToolBox EyeRig-v6 owner.
+
+This does **not** satisfy the Batch exit gate for a generic Medium EyeProfile.
+
+Once the Batch Atlas approves its first Medium profile, repeat the same shared semantic sequence there as **Phase B** without changing the protocol vocabulary.

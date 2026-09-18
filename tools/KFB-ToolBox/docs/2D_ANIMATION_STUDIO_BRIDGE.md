@@ -208,3 +208,37 @@ The Dropbox `pet-eye-rig.v6.js` and the current GitHub ToolBox donor at:
 are **text-identical after line-ending + trailing-whitespace normalization**. This is useful source evidence that the v18 Dropbox session still uses the same EyeRig-v6 implementation seam.
 
 This does **not** promote the Dropbox v18 Studio or Animation Lab v3 as current GitHub SSOT. Their presence is donor evidence only until those source trees are intentionally pinned/promoted.
+
+
+## Cross-render proof implementation
+
+Current proof site:
+
+`tools/2D Animation Studio/proofs/cross-render-eye-v1/`
+
+Public candidate:
+
+`https://kayfabizarro.pages.dev/tools/2D%20Animation%20Studio/proofs/cross-render-eye-v1/`
+
+### Phase A · protocol proof now
+
+The first 3D proof actor is **FrizzleBob Driver Graft** because it already satisfies all required infrastructure facts without creating a temporary second 3D eye mount:
+
+- host skeleton: `Rig_Medium`;
+- 23 joints;
+- public `mountGraft()` reader;
+- existing ToolBox EyeRig v6 owner;
+- existing `graft.update(dt,camera)` lifecycle;
+- Driver host asset and skeleton signature already pinned in the resource registry.
+
+The paired 2D actor is source-exact DocCheck Eumel.
+
+Both receive the same semantic sequence from `eye-clips.v1.json` through one renderer-neutral sequence runner.
+
+This is a **protocol proof**, not a Batch EyeProfile approval.
+
+### Phase B · first generic Medium profile later
+
+After the Batch EyeRig Atlas visually approves its first generic Rig_Medium EyeProfile, repeat the same semantic sequence with that actor.
+
+Only Phase B proves that the shared protocol works through the new generic EyeProfile/binding lane as well as the established Graft path.

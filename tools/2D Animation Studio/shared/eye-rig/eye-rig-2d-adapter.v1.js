@@ -1,7 +1,7 @@
 /* KFB EyeRig 2D Adapter v1
    Renderer adapter for the shared kfb.eye-rig.protocol/1 control surface.
    It intentionally mirrors the public EyeRig-v6 calls used by the 3D stack.
-   Source geometry remains owned by the host SVG; this adapter only transforms wrapper nodes. */
+   Source geometry remains owned by the host SVG; this adapter only transforms wrapper nodes.\n   v1.1 proof fallback: pupil wrapper follows vertical blink compression so pupils do not float outside a closed 2D eye. */
 (function(global){
   const clamp=(v,a,b)=>Math.max(a,Math.min(b,v));
   const pick=(v,i)=>Array.isArray(v)?(v[i]!=null?v[i]:(v[0]||0)):(v||0);
@@ -61,7 +61,7 @@
         const lidClose=clamp((Math.max(0,u)+Math.max(0,l))*.45,0,.55);
         const sy=Math.max(.06,1-bl*.92-lidClose);
         this.apply(eyes[i],{sx:1,sy,r:sl*7});
-        this.apply(pup[i],{x:this._p[i].x,y:-this._p[i].y,sx:wide,sy:wide});
+        this.apply(pup[i],{x:this._p[i].x,y:-this._p[i].y,sx:wide,sy:wide*sy});
       }
     }
   }

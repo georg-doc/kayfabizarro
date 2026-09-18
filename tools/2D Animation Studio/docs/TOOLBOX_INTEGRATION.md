@@ -46,3 +46,24 @@ Source geometry is never the shared layer.
 ## Current proof target
 
 Eumel 2D + one ToolBox Rig_Medium actor should consume the same semantic eye sequence before any broader cross-render motion schema is promoted.
+
+
+## Implemented proof
+
+`proofs/cross-render-eye-v1/`
+
+Actors:
+
+- 2D: DocCheck Eumel, source-exact Illustrator/PDF vectors;
+- 3D: FrizzleBob Driver Graft, real `Rig_Medium` host + ToolBox EyeRig v6.
+
+Both are driven by:
+
+- `shared/eye-rig/eye-clips.v1.json`;
+- `shared/eye-rig/eye-sequence-runner.v1.js`.
+
+Exact sequence:
+
+`neutral → blink → look_left → look_right → surprised → thinking → neutral`
+
+Static sanity is PASS; real browser QA remains open.

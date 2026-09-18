@@ -1,9 +1,53 @@
 {
   "schema": "kfb.eye-clips/1",
+  "updated": "2026-09-18",
+  "sequence": [
+    "neutral",
+    "blink",
+    "look_left",
+    "look_right",
+    "surprised",
+    "thinking",
+    "neutral"
+  ],
+  "note": "Renderer-neutral semantic clips. Geometry is owned by each renderer adapter.",
   "clips": {
     "neutral": {
-      "duration": 0.4,
+      "duration": 0.65,
       "commands": [
+        {
+          "at": 0,
+          "method": "setLife",
+          "args": {
+            "on": false,
+            "wander": 0,
+            "tremor": 0
+          }
+        },
+        {
+          "at": 0,
+          "method": "setKinetics",
+          "args": {
+            "a": 0,
+            "c": 0,
+            "j": 0,
+            "enabled": false,
+            "gain": 0
+          }
+        },
+        {
+          "at": 0,
+          "method": "setGazeFollow",
+          "args": true
+        },
+        {
+          "at": 0,
+          "method": "pointTo",
+          "args": [
+            0,
+            0
+          ]
+        },
         {
           "at": 0,
           "method": "applyEmote",
@@ -18,24 +62,37 @@
       ]
     },
     "blink": {
-      "duration": 0.18,
+      "duration": 0.55,
       "commands": [
         {
           "at": 0,
+          "method": "setGazeFollow",
+          "args": true
+        },
+        {
+          "at": 0,
+          "method": "pointTo",
+          "args": [
+            0,
+            0
+          ]
+        },
+        {
+          "at": 0.12,
           "method": "blinkNow"
         }
       ]
     },
     "look_left": {
-      "duration": 0.45,
+      "duration": 0.8,
       "commands": [
         {
           "at": 0,
           "method": "setGazeFollow",
-          "args": false
+          "args": true
         },
         {
-          "at": 0.02,
+          "at": 0.03,
           "method": "pointTo",
           "args": [
             -0.75,
@@ -45,15 +102,15 @@
       ]
     },
     "look_right": {
-      "duration": 0.45,
+      "duration": 0.8,
       "commands": [
         {
           "at": 0,
           "method": "setGazeFollow",
-          "args": false
+          "args": true
         },
         {
-          "at": 0.02,
+          "at": 0.03,
           "method": "pointTo",
           "args": [
             0.75,
@@ -63,8 +120,13 @@
       ]
     },
     "surprised": {
-      "duration": 0.6,
+      "duration": 0.9,
       "commands": [
+        {
+          "at": 0,
+          "method": "setGazeFollow",
+          "args": false
+        },
         {
           "at": 0,
           "method": "applyEmote",
@@ -79,8 +141,13 @@
       ]
     },
     "thinking": {
-      "duration": 0.8,
+      "duration": 1,
       "commands": [
+        {
+          "at": 0,
+          "method": "setGazeFollow",
+          "args": false
+        },
         {
           "at": 0,
           "method": "applyEmote",

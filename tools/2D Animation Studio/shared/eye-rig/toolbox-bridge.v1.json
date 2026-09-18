@@ -43,7 +43,7 @@
   "firstProof": {
     "actors": [
       "doccheck-eumel-2d",
-      "one-approved-rig-medium-3d"
+      "frizzlebob-driver-graft / Rig_Medium"
     ],
     "sequence": [
       "neutral",
@@ -54,7 +54,11 @@
       "thinking",
       "neutral"
     ],
-    "status": "NOT_TESTED"
+    "implementation": "tools/2D Animation Studio/proofs/cross-render-eye-v1/",
+    "staticSanity": "PASS",
+    "browserQA": "PENDING",
+    "phase": "A_PROTOCOL_PROOF",
+    "note": "Uses the established Graft EyeRig-v6 owner. First generic Medium EyeProfile remains Phase B after Batch approval."
   },
   "hardRules": [
     "no duplicate EyeRig owner",
