@@ -641,3 +641,31 @@ HUMAN ACCEPTANCE   PENDING
 The current webchat environment does not expose the Game Development Studio local `game-dev` CLI, so no binary `car-sedan-chassis-proxy.glb` was fabricated or falsely marked as created. The exact derivation input is persisted in `COLLIDER_PROXY_SPEC.json` for the later producer run.
 
 **UNCHANGED:** Pilot scope remains Lorekeeper + Sedan + minimal event handoff. Reconstructible camera/transition/journey architecture remains backlog until this package passes its own gates.
+
+
+### 2026-09-18 · A3 · permanent Game Dev Studio preview/recovery lane
+
+**USER DIRECTION:** expose current/future game-ready assets and package context through a fixed KFB Cloudflare page with previews; keep the lane wired into Free Roam, tools and recovery. The Asset Librarian remains useful infrastructure but its global filter/drawer UX is not the production-review model for this lane.
+
+**IMPLEMENTATION:**
+
+- tool/recovery home: `tools/game-dev-studio/`;
+- package catalog: `tools/game-dev-studio/catalog.json`;
+- permanent public target: `https://kayfabizarro.pages.dev/kfb-hub/free-roam/game-dev-studio/`;
+- Free Roam navigator now exposes **KFB Game Dev Studio**;
+- public UI is package-first and loads initial 3D previews from exact pinned GitHub revisions;
+- initial preview set: Lorekeeper, Tome/lectern, Staff, BOX1 Sedan;
+- Sedan view can visualize persisted wheel-node and proposed chassis-AABB evidence without claiming a generated collider;
+- Librarian README documents Game Dev Studio as a downstream package consumer without making it a new Registry owner.
+
+**TURN MAINTENANCE CONTRACT:**
+
+1. update `tools/game-dev-studio/RECOVERY.md` after substantive work;
+2. append `tools/game-dev-studio/CHANGELOG.md`;
+3. update `catalog.json` only when package/source/preview/gate state changes;
+4. package-local changes remain under `game-ready/<package>/`;
+5. public UI should remain data-driven so ordinary asset/package additions do not require redesign.
+
+**PUBLIC DEPLOYMENT:** source target implemented; actual Cloudflare/browser verification remains a separate gate.
+
+**UNCHANGED:** Pilot 01 binary/consumer/human acceptance gates remain open; the preview surface is not acceptance evidence by itself.
