@@ -34,7 +34,7 @@
 - S1b direction was positively received; S1c road shimmer/gap repair, stronger Grotesque intensity, sign readability and forest density remain a live browser/art-direction review.
 
 ### OPEN
-- Ehrenfeld↔Hürth source route discovery is independent from S1c and currently subject to public Overpass availability.
+- Ehrenfeld↔Hürth source route discovery is independent from S1c and currently **SOURCE BLOCKED · RETRYABLE** by public Overpass availability. Two unchanged small-chunk attempts failed on different chunks after other chunks succeeded; do not infer a route until source evidence exists.
 - Real Walk/Drive remains the existing Free-Roam/Travel receiver task.
 - Landmark models remain optional overrides; base OSM massing must always work without them.
 
