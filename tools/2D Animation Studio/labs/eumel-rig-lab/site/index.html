@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Eumel Rig Lab · 2D Animation Studio</title>
+<link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+<header class="topbar">
+  <div>
+    <div class="eyebrow">KFB · 2D Animation Studio · DocCheck</div>
+    <h1>Eumel Rig Lab</h1>
+    <p>Source-exact Illustrator/PDF vectors + separate rig metadata. No retracing, no normalized outlines.</p>
+  </div>
+  <div class="status">
+    <span class="pill source">SOURCE EXACT</span>
+    <span class="pill">RIG PIVOTS DERIVED</span>
+  </div>
+</header>
+
+<main>
+<section class="workspace">
+  <aside class="controls card">
+    <div class="section-title"><span>Playback</span><small>v0.1 source-retarget</small></div>
+
+    <label>Motion preset
+      <select id="preset">
+        <option value="neutral">Neutral / regression</option>
+        <option value="idle">Idle</option>
+        <option value="look">Look around</option>
+        <option value="hampelmann" selected>Hampelmann</option>
+        <option value="hop">Hop</option>
+      </select>
+    </label>
+
+    <label>Intensity <output id="intensityOut">1.00</output>
+      <input id="intensity" type="range" min="0" max="1.8" step=".01" value="1">
+    </label>
+
+    <label>Speed <output id="speedOut">1.00</output>
+      <input id="speed" type="range" min=".15" max="2" step=".01" value="1">
+    </label>
+
+    <div class="checks">
+      <label><input id="play" type="checkbox" checked> Play</label>
+      <label><input id="pivots" type="checkbox"> Pivots</label>
+      <label><input id="parallax" type="checkbox"> 2.5D pointer parallax</label>
+    </div>
+
+    <div class="button-row">
+      <button id="reset">Reset</button>
+      <button id="export">Export pose JSON</button>
+    </div>
+
+    <hr>
+
+    <div class="section-title"><span>Source layers</span><small>exact draw-order groups</small></div>
+    <div id="layerToggles" class="layer-toggles"></div>
+
+    <hr>
+
+    <div class="section-title"><span>Rig readout</span><small>not source geometry</small></div>
+    <pre id="debug"></pre>
+  </aside>
+
+  <section class="stage-card card">
+    <div class="stage-head">
+      <div><div class="eyebrow">Animation stage</div><h2>Source-exact actor</h2></div>
+      <div class="hint">Primary motion → body/root · secondary → head/stethoscope · tertiary → pupils/shadow</div>
+    </div>
+    <div id="viewport" class="viewport">
+      <div id="stageMount" class="stage-mount">Loading source vectors…</div>
+    </div>
+  </section>
+</section>
+
+<section class="card compare">
+  <div class="section-title"><span>Source vs extracted master</span><small>human QA gate</small></div>
+  <div class="compare-grid">
+    <div>
+      <h3>Original AI · PDF-compatible render</h3>
+      <object class="source-pdf" data="../source-assets/_Dr_Vorlage_SOURCE_RENDER.pdf" type="application/pdf">
+        <a href="../source-assets/_Dr_Vorlage_SOURCE_RENDER.pdf">Open source PDF render</a>
+      </object>
+    </div>
+    <div>
+      <h3>Extracted source-exact SVG</h3>
+      <div id="staticMount" class="static-mount">Loading…</div>
+    </div>
+  </div>
+  <p class="evidence">The PDF alias is byte-identical to the Illustrator source blob. The SVG is rebuilt only from the file's PDF vector instructions. Visual acceptance is still required before promotion.</p>
+</section>
+
+<section class="card">
+  <div class="section-title"><span>Component atlas</span><small>same source geometry, isolated</small></div>
+  <div id="atlas" class="atlas"></div>
+</section>
+
+<section class="card notes">
+  <div class="section-title"><span>Hard constraints</span><small>current rig contract</small></div>
+  <ul>
+    <li>Eumel has no arms.</li>
+    <li>Do not normalize the distinct source stroke families.</li>
+    <li>Forehead mirror stays flat/source-authored; no invented gradient or metallic highlight.</li>
+    <li>Eyes and pupils stay separate. The source already provides this seam.</li>
+    <li>Rig pivots are derived metadata and never modify the source Bézier paths.</li>
+    <li>The foreground source form remains semantically unresolved until visual/native Illustrator confirmation.</li>
+  </ul>
+</section>
+</main>
+
+<script src="./app.js"></script>
+</body>
+</html>
