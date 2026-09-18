@@ -22,7 +22,7 @@ const KFB_INK_URL = 'https://cdn.jsdelivr.net/gh/georg-doc/kayfabizarro@main/ski
 const KAYKIT_REPO_PATH = '/media/3D_Assets/KayKit_BoardGameBits_1.0_FREE/Assets/gltf/';
 const KAYKIT_RAW_BASE = 'https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/KayKit_BoardGameBits_1.0_FREE/Assets/gltf/';
 const KAYKIT_BASE = location.hostname === 'kayfabizarro.pages.dev' ? KAYKIT_REPO_PATH : KAYKIT_RAW_BASE;
-const KFB_MAP_BUILD = 'p0.2-r3-bounded-boot';
+const KFB_MAP_BUILD = 'p0.2-r4-full-europe';
 
 const CORE_CODES = [
   'IS','IE','GB','PT','ES','FR','BE','NL','LU','DE','DK','NO','SE','FI','CH','AT','IT',
@@ -535,7 +535,8 @@ async function loadBoundaries() {
     const code=String(f.entity).toUpperCase();
     try {
       loadingText.textContent='Loading '+code+' · '+(loadedCount+failedCount+1)+' / '+selectedFiles.length;
-      const data=await fetchJson(fileUrl(f),{timeoutMs:10000,retries:1});
+      const timeoutMs=code==='NO' ? 30000 : code==='FI' ? 16000 : 10000;
+      const data=await fetchJson(fileUrl(f),{timeoutMs,retries:1});
       const feature=data.features?.[0];
       const name=f.name || feature?.properties?.name || code;
       const rec=addCountryFromGeoJSON(code,name,data);
