@@ -1,10 +1,18 @@
 {
-  "schema": "kfb-resident-scene.v1",
+  "schema": "kfb-resident-scene.v1.1",
   "id": "caveman-cave-camp",
   "title": "Caveman · Cave Camp",
-  "subtitle": "KayKit Caveman + exact Caveman props + KayKit Forest rocks",
-  "status": "IMPLEMENTATION_UNTESTED_REVISION",
-  "sourceCommit": "252449c921d3f8138d68d1faa3f4052e84040dfe",
+  "subtitle": "KayKit Caveman · Resident Atlas pose · exact Caveman props · KayKit Forest rocks",
+  "status": "IMPLEMENTATION_UNTESTED_POSED_GROUNDED",
+  "assetCommit": "891eadf01e218f5fc21387e64cea1fec8332c5b6",
+  "residentBinding": {
+    "residentId": "caveman",
+    "donorPath": "tools/resident_atlas_s6/data/cast.js",
+    "donorRevision": "b8e22fe0df8556dc3f5168502d1cc22593286093",
+    "rigFamily": "Rig_Medium",
+    "pose": "Melee_Unarmed_Idle",
+    "animationCommit": "aa16a777a970f23d3f11fb3c23dc40718b04fa88"
+  },
   "camera": {
     "hero": [7.8, 4.6, 12.8],
     "front": [0, 3.0, 12.5],
@@ -12,7 +20,25 @@
     "target": [0, 1.15, 0]
   },
   "assets": [
-    {"name":"Caveman","role":"actor","group":"actor","path":"media/3D_Assets/KayKit_Mystery_Series6/8 - February 2025 - Caveman/characters/Caveman.glb","fit":{"height":2.2},"at":[0,0,0.35],"rotationDeg":[0,0,0]},
+    {
+      "name": "Caveman",
+      "role": "actor",
+      "group": "actor",
+      "residentId": "caveman",
+      "rigFamily": "Rig_Medium",
+      "path": "media/3D_Assets/KayKit_Mystery_Series6/8 - February 2025 - Caveman/characters/Caveman.glb",
+      "fit": {"height": 2.2},
+      "at": [0, 0, 0.35],
+      "rotationDeg": [0, 0, 0],
+      "pose": {
+        "clip": "Melee_Unarmed_Idle",
+        "path": "media/3D_Assets/KayKit_Character_Animations_1.1/Animations/gltf/Rig_Medium/Rig_Medium_CombatMelee.glb",
+        "commit": "aa16a777a970f23d3f11fb3c23dc40718b04fa88",
+        "time": 0,
+        "freeze": false
+      },
+      "ground": {"y": 0, "lock": true}
+    },
     {"name":"Rock left","role":"rock shelter","group":"habitat","path":"media/3D_Assets/KayKit_Forest_Nature_Pack_1.0_FREE/Assets/gltf/Rock_2_G_Color1.gltf","fit":{"height":3.4},"at":[-2.65,0,-2.25],"rotationDeg":[0,20,0]},
     {"name":"Rock right","role":"rock shelter","group":"habitat","path":"media/3D_Assets/KayKit_Forest_Nature_Pack_1.0_FREE/Assets/gltf/Rock_2_G_Color1.gltf","fit":{"height":3.2},"at":[2.55,0,-2.35],"rotationDeg":[0,-32,0]},
     {"name":"Rock back","role":"rock shelter","group":"habitat","path":"media/3D_Assets/KayKit_Forest_Nature_Pack_1.0_FREE/Assets/gltf/Rock_1_P_Color1.gltf","fit":{"height":3.1},"at":[0,0,-3.25],"rotationDeg":[0,14,0]},
