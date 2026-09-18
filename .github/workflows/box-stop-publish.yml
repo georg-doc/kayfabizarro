@@ -23,23 +23,31 @@ jobs:
           def git(*args):return subprocess.check_output(['git',*args],text=True).strip()
           request=json.loads(pathlib.Path('kfb-hub/_deploy/BOX1.json').read_text())
           target=pathlib.Path('kfb-hub/stunt-race/track-environment-lab')
-          assert git('rev-parse','HEAD:'+str(target))==request['expectedMirrorTree'],'Concurrent runtime change; no overwrite'
-          assert request['downloadUrl'].startswith('https://') and '.oaiusercontent.com/' in request['downloadUrl'],'Unexpected transport host'
-          with urllib.request.urlopen(request['downloadUrl'],timeout=60) as r:data=r.read()
-          assert hashlib.sha256(data).hexdigest()==request['artifactSha256'],'Artifact identity mismatch'
-          outer=zipfile.ZipFile(io.BytesIO(data));assert set(outer.namelist())=={'site.zip','package.json'},'Not the public-only artifact'
-          pkg=json.loads(outer.read('package.json'));inner=outer.read('site.zip');assert hashlib.sha256(inner).hexdigest()==pkg['zipSha256']
-          z=zipfile.ZipFile(io.BytesIO(inner));manifest=json.loads(z.read('PUBLIC_MANIFEST.json'));deployment=json.loads(z.read('DEPLOYMENT.json'))
-          assert deployment['sourceCommit']==request['sourceCommit']==pkg['sourceCommit'],'Wrong implementation source'
-          assert deployment['implementationSSOT']=='georg-doc/KFB-Stunt-Car-Race'
-          assert set(z.namelist())==set(manifest)|{'PUBLIC_MANIFEST.json','DEPLOYMENT.json'}
+          current_tree=git('rev-parse','HEAD:'+str(target))
           protected={p:git('rev-parse','HEAD:'+p) for p in ['media','tools','travel']}
-          for name in z.namelist():
-              rel=pathlib.PurePosixPath(name);assert not rel.is_absolute() and '..' not in rel.parts and 'tests' not in rel.parts
-              assert rel.parts[0] not in ['race-context','_handover','_tools','_inbox','.github'],'Private project content prohibited'
-              content=z.read(name)
-              if name in manifest:assert hashlib.sha256(content).hexdigest()==manifest[name],name
-              p=target/name;p.parent.mkdir(exist_ok=True,parents=True);p.write_bytes(content)
+          already_mirrored=current_tree==request['expectedMirrorTree'] and request.get('status','').startswith('PUBLIC_MIRROR_IMPLEMENTED')
+          pkg={'sourceCommit':request['sourceCommit'],'runtimeSha256':request.get('runtimeSha256')}
+          manifest={}
+          if not already_mirrored:
+              assert request.get('downloadUrl','').startswith('https://') and '.oaiusercontent.com/' in request['downloadUrl'],'Unexpected transport host'
+              with urllib.request.urlopen(request['downloadUrl'],timeout=60) as r:data=r.read()
+              assert hashlib.sha256(data).hexdigest()==request['artifactSha256'],'Artifact identity mismatch'
+              outer=zipfile.ZipFile(io.BytesIO(data));assert set(outer.namelist())=={'site.zip','package.json'},'Not the public-only artifact'
+              pkg=json.loads(outer.read('package.json'));inner=outer.read('site.zip');assert hashlib.sha256(inner).hexdigest()==pkg['zipSha256']
+              z=zipfile.ZipFile(io.BytesIO(inner));manifest=json.loads(z.read('PUBLIC_MANIFEST.json'));deployment=json.loads(z.read('DEPLOYMENT.json'))
+              assert deployment['sourceCommit']==request['sourceCommit']==pkg['sourceCommit'],'Wrong implementation source'
+              assert deployment['implementationSSOT']=='georg-doc/KFB-Stunt-Car-Race'
+              assert set(z.namelist())==set(manifest)|{'PUBLIC_MANIFEST.json','DEPLOYMENT.json'}
+              for name in z.namelist():
+                  rel=pathlib.PurePosixPath(name);assert not rel.is_absolute() and '..' not in rel.parts and 'tests' not in rel.parts
+                  assert rel.parts[0] not in ['race-context','_handover','_tools','_inbox','.github'],'Private project content prohibited'
+                  content=z.read(name)
+                  if name in manifest:assert hashlib.sha256(content).hexdigest()==manifest[name],name
+                  p=target/name;p.parent.mkdir(exist_ok=True,parents=True);p.write_bytes(content)
+          else:
+              manifest_path=target/'PUBLIC_MANIFEST.json'
+              assert manifest_path.exists(),'Expected mirrored PUBLIC_MANIFEST missing'
+              manifest=json.loads(manifest_path.read_text())
           # Update only the named Race todo; preserve every other project and task.
           p=pathlib.Path('kfb-hub/index.html');s=p.read_text();lines=s.splitlines(keepends=True)
           found=[i for i,l in enumerate(lines) if 'race-box-stop-integration' in l]
@@ -54,9 +62,14 @@ jobs:
           for p,sha in protected.items():assert git('rev-parse',tree+':'+p)==sha,'Protected assets/source changed'
           subprocess.run(['git','diff','--cached','--check'],check=True)
           subprocess.run(['git','config','user.name','github-actions[bot]'],check=True);subprocess.run(['git','config','user.email','41898282+github-actions[bot]@users.noreply.github.com'],check=True)
-          subprocess.run(['git','commit','-m','deploy(race): mirror tested Box Stop from '+request['sourceCommit']+'; preserve all other apps'],check=True)
-          subprocess.run(['git','push','origin','HEAD:main'],check=True)
-          pathlib.Path('deployment-result.json').write_text(json.dumps({'status':'MIRRORED_PUBLIC_URL_NOT_YET_VERIFIED','sourceCommit':request['sourceCommit'],'publicCommit':git('rev-parse','HEAD'),'fileCount':len(manifest),'runtimeSha256':pkg['runtimeSha256']},indent=2))
+          if git('diff','--cached','--quiet',check=False) != '':
+              pass
+          changed=subprocess.run(['git','diff','--cached','--quiet']).returncode!=0
+          if changed:
+              subprocess.run(['git','commit','-m','deploy(race): mirror tested Box Stop from '+request['sourceCommit']+'; preserve all other apps'],check=True)
+              subprocess.run(['git','push','origin','HEAD:main'],check=True)
+          status='MIRROR_ALREADY_VERIFIED_PUBLIC_URL_NOT_YET_VERIFIED' if already_mirrored else 'MIRRORED_PUBLIC_URL_NOT_YET_VERIFIED'
+          pathlib.Path('deployment-result.json').write_text(json.dumps({'status':status,'sourceCommit':request['sourceCommit'],'publicCommit':git('rev-parse','HEAD'),'fileCount':len(manifest),'runtimeSha256':pkg.get('runtimeSha256')},indent=2))
       - uses: actions/upload-artifact@v4
         if: success()
         with:
