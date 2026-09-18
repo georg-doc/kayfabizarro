@@ -48,7 +48,7 @@ export function buildConsumerScene(normalized){
     id:normalized.id,
     frame:normalized.frame,
     source:{
-      normalized:'../data/ehrenfeld-v0/normalized.json',
+      normalized:`../data/${normalized.id}/normalized.json`,
       provenance:normalized.source.provenance,
       attribution:normalized.source.attribution
     },
