@@ -43,29 +43,3 @@ Unabhängiger World-Gegencheck; tatsächlicher Astra-Capability-/Quellen-Preflig
 Datum · Revision · Autorrolle · PROPOSAL / DECISION / SOURCE / IMPLEMENTATION / TESTED RESULT / OPEN / SUPERSEDED.
 
 Quelle/Commit; präzise Änderung; betroffene Dateien/Owner; was ersetzt oder unverändert bleibt; echte Test-/Deploymentnachweise; nächste konkrete Aktion. Review-Abschnitt/PR verlinken. Keine bloße Zahl ohne Befund und Geltungsbereich.
-
----
-
-## 2026-09-18 · r2 · Web-/World-Lead · REVIEW + CONSOLIDATED BRIEF
-
-### SOURCE / SANITY
-
-Erneut gelesene HEADs: kayfabizarro `9493bce02c0e8ca39ca34c741e9a98993422ddad`; Travel `33c731c012c573977cccd4f62723b741f0c1e785`; Race `616c151b3b82c06e1e87694e3b83400746fb843b`; Arena `f6a59ad15b9ffcf3164b0ab013f223962b63f61f`. Travel-World-Recipe/Import/Support, Pilotbrief, Atlas-Struktur-/Staffdaten und Race-v0.10-Geometrie direkt geprüft. Arena-Owner-Map bleibt als historische Quelle bezeichnet. BOX1-Abschlussnachtrag gelesen: 120/120 breit, 29/29 gepinnter Preview, Cloudflare-Marker-FAIL. Kein neuer Browserdurchlauf.
-
-### DECISION / ACCEPTED REVIEW FINDINGS
-
-WR01–WR07 aus WORLD_REVIEW übernommen: wirklicher S6-Consumer statt Assetpalette; explizit verlustfreier/fehleratomarer World-Roundtrip; Tangentenrahmen und Ensemblemaßstab; konkreter Handslot/Clip/Mixer; begrenzte Supportsemantik; v0.10-Korridor-/Stützen-/Gebäudereparatur vor Fahrintegration; URL-/Origin-spezifische Publishnachweise; Arena-Navigation ohne behauptetes Portal. Keine Änderung der Owner, A0, humanen Gates, Roster oder Produktidentität. Frühere Audio-/v0.8-/positive BOX1-Urteile nicht zurückgesetzt.
-
-### IMPLEMENTATION · DOCUMENTATION ONLY
-
-Einziger aktiver Ausführungsauftrag ist EXECUTION_BRIEF.md r2. START_HERE ist aktualisiert; WORLD_REVIEW und dieser Changelog wurden additiv fortgeschrieben. Das r1-Paket ist unter archive/r1 mit denselben Git-Blobs erhalten. SOURCE_BASELINES bleibt der explizit historische r1-Snapshot, WORKSPACE_RECOVERY unverändert. Ein Rechenbeleg zum v0.10-Gegenbeispiel liegt unter evidence/v010-source-geometry-review.json. Kein Runtime-/Asset-/Contract-/Workflow-Patch, keine neue Registry, keine Hub-UI-Neugestaltung, keine neue Ausführung gestartet.
-
-### TESTED RESULT / LIMITS
-
-Git-Blob-Prüfung der erhaltenen Originaltexte WORLD_REVIEW und CHANGELOG lokal bestanden. Lokale analytische Gegenprüfung: beide Stützenmittelpunkte 1.45521375 von der unteren Route bei halber Breite 3.75; Gebäude schneidet Route; zentrale freie Höhe aus Renderer-Dicken 4.60 statt 5. Quellenwerte aus gelesenen Pins übernommen; dies ist **kein** Browser-/Kontakt-/Fahrtest. Die historische Topologie-Smoke-Prüfung war für Freiraumbehauptungen unzureichend, auch in der früheren Web-Lead-Rückgabe.
-
-Live-Abfragen der drei Cloudflare-Zielseiten in dieser Review-Umgebung fehlgeschlagen; aktueller Public-Browserstatus NOT_VERIFIED_HERE. Lokales Raw-GitHub-Netzwerk scheiterte an DNS; kein Schluss auf künftige Astra-Sessionrechte. Keine Testzahlen oder Deployfreigaben erfunden.
-
-### OPEN / READINESS
-
-Briefing: **READY WITH SCOPED CHANGES**, Präzisierungen in r2 konsolidiert. Ausführung: **NOT STARTED**. A1 ohne Originalquelle SOURCE BLOCKED; Pilot nach bestehendem Ground-/Atlas-Gate; Facility-Drive erst nach technischen Reparaturen und menschlichem Topologie-Gate. Ein aktiver Work-Executor beginnt mit echtem Capability-/Quellenpreflight, nicht mit neuen Quellenrekonstruktionen oder einem weiteren Gesamtplan.

@@ -1,107 +1,116 @@
-# KFB Integration 01 · Ausführungsbrief r1
+# KFB Integration 01 · Ausführungsbrief r2
 
-**Status:** PROPOSED EXECUTION SCOPE · nach World-Gegencheck zu konsolidieren.
-**Ziel:** ein zusammenhängender Integrationsrelease vorhandener Werkzeuge und Spiele, nicht acht parallele Neubauten.
+**Status:** ACTIVE CONSOLIDATED BRIEF · WORLD REVIEW COMPLETED / READY WITH SCOPED CHANGES · EXECUTION NOT STARTED.
+**Ersetzt:** r1, unverändert unter `archive/r1/EXECUTION_BRIEF.md`. Ein Auftrag, keine konkurrierenden Ergänzungsaufträge.
+**Ziel:** ein zusammenhängender nutzbarer Integrationsstand bestehender Werkzeuge und Spiele; keine acht Neubauten. WR01–WR07 aus `WORLD_REVIEW.md` sind nachfolgend eingearbeitet. Bestehende humane Gates, Owner und Produktidentitäten bleiben erhalten.
 
-## 1 · Produkt und Quellenhierarchie
+## 1 · Arbeitsraum und alle Lanes
 
-Georg soll mit vorhandenen KFB-Modulen arbeiten und spielen können, ohne zwischen Chats Quellen, Modelle oder Transformkorrekturen zu transportieren. Astra soll diese Module lokal vorliegen haben, testen, verbinden und den genauen Arbeitsstand dauerhaft sichern.
+Astra führt einen lokalen Multi-Repo-Workspace unter bestehender WSA-/Web-Lead-Leitung. Claude Design bleibt Authoring-/LookDev-Produzent. GitHub bleibt dauerhafte Wahrheit. Quelle, Contract und Ergebnis verbleiben beim jeweiligen Owner; ein kleiner Lock referenziert nur gemeinsam geprüfte Revisionen. Kein Monorepo-Umzug, keine neue Registry, Universal-Engine, Physikschicht oder parallele Assetbibliothek. Lokal benötigte Assets/Sidecars sind abgeleitete hashgeprüfte Caches ihrer vorhandenen GitHub-Quellen.
 
-Implementierung kommt aus dem jeweiligen Projekt-SSOT. Funktionale und visuelle Vorlagen bleiben ausdrücklich benannt; der neueste Testviewer ersetzt keine Produktarchitektur. Ein Integrations-Lock referenziert diese Quellen, der Hub zeigt ihren überprüften Zustand. Rohassets bleiben bei `georg-doc/kayfabizarro`; lokale Caches sind abgeleitete, hashgeprüfte Kopien, keine neue Assetbibliothek.
-
-Für Runtime-Fakten gilt aktueller Code mit belegtem Test; für Produktabsicht die jüngste ausdrücklich zutreffende Nutzerentscheidung. Unauflösbare Konflikte werden benannt, nicht durch eine neue dritte Architektur kaschiert.
-
-## 2 · Vollständige Arbeitsabdeckung
-
-Die folgenden Lanes sind Bestandteile des Auftrags. Die Tiefe der Integration wird pro Lane ausgewiesen; eine funktionierende Verlinkung ist keine Runtime-Integration.
-
-| Lane | In Integration 01 sicherzustellen | Nicht still damit gleichsetzen |
+| Lane | Verbindlicher Anteil dieses Laufs | Grenze |
 |---|---|---|
-| BOX1 / Race / Vehicles | Bestehende Site lokal und öffentlich korrekt erreichbar; 43 gelieferte Kandidaten erhalten; vorhandener WS1-v2-Deformer, Auswahl/Shortlist, Test Lap/Countdown, Originalvergleich, Instrumente, ENV A/B. Konkrete Blocker gezielt reparieren. | Vollständige Fahrabnahme aller Modelle, neue individuelle Physik, Fahrer-Rigs. |
-| Audio / Jukebox | Neu eintreffende Original-A1-Quelle übernehmen, Identität und Tests prüfen; in vorhandenes BOX1-Radio integrieren. Bestehende Jukebox/Van Metronome erhalten. | Aus Prosa neu synthetisierte Soundscape, bloß verlinktes Audio-Lab oder zweites dauerhaftes Audio-System. |
-| Worldbuilding / Environment | Travel/WB0 lokal starten; POC und produktives World Recipe trennen. Vorhandene Facility-Topologie und Environment zusammen auf reale Anker abgleichen. | Race-Flow-Loop sei schon Facility, World-POC sei Travel-Terrain, Brückendressing erzeuge Kontakt. |
-| Residents / Animation | Alle vorhandenen Resident-Rezepte zugänglich halten; an einem konkreten Quellrezept gemessene Pose-/Motion-Bindung und Receiving-Consumer nachweisen. | Bibliothekszugehörigkeit sei Kompatibilität; ein bewegter Darsteller beweise alle Rigs/Clips. |
-| Locomotion / Combat Arena | Bestehende Ground-/Flight- und Arena-Starts reproduzieren; bekannte Input-, Root-, Kamera-, Mixer-, Treffer-/Reward-Grenzen dokumentieren und bei echten Übergaben respektieren. Arena im Hub korrekt erreichbar und mit Rückweg. | Arena und Travel seien dadurch eine nahtlose gemeinsame Welt, A2/C1 seien bereits integriert. |
-| ToolBox / Studio / Rigging | Stage-First-Originalquelle im ToolBox-Owner promoten, sofern nicht inzwischen geschehen; kompletten Funktions-/Rosterbestand erhalten; einen realen authoring→export→reload→import-Ablauf prüfen. | Neuaufbau aus Screenshots, Redesign um eine QA-Figur, Ersatz des Actor-/Rig-/Face-/Pose-Owners. |
-| Asset Librarian / Registries | Bestehenden Discovery-/Candidate-Handoff verwenden; konkret benötigte Assets/Packs/Abhängigkeiten auflösen, bekannte Doku-/Deploy-Drift korrigieren. | Neue Registry, neue universelle Taxonomie oder automatische L5-Freigabe. |
-| KFB Hub / Recovery | Bestehenden Hub aktualisieren: geprüfte Einstiege, aussagekräftige Build-/Source-/Statusangaben und offene menschliche Entscheidungen. Ein Link zurück zum Hub ist in den benutzten Pfaden verfügbar. | Neuer Inspector-Hub statt des Produkts, still entfernte DocCheck-/Town-/andere bestehende Einträge. |
+| BOX1 / Race / Vehicles | Bestehende Site und v0.8-Feel erhalten; vollständige gelieferte Kandidatenliste, WS1-v2-Deformer, Auswahl/Shortlist, Originalvergleich, Countdown, Instrumente, ENV A/B reproduzieren und gezielte Fehler beheben. | Keine Fahrer-Rigs; 43 geladene Kandidaten sind nicht 43 individuell fahrgeprüfte Fahrzeuge. |
+| Audio / Jukebox | Original-A1 beim Einstieg neu suchen, pinnen, prüfen und über vorhandenes BOX1-Radio integrieren; zehnteiligen bestehenden Jukebox-Katalog/Van Metronome erhalten. | Kein A1-Nachbau aus Prosa; fehlende Originalquelle blockiert nur diese Naht, lässt aber den Audioauftrag unerledigt. |
+| World / Environment | Travel/WB0 starten; wirklichen Recipe-/Anker-/Persistenzpfad schließen. Facility und Dressing anhand derselben Race-Anker prüfen. | `/world/` ist POC, nicht Travel-Terrain; Flow Loop ist nicht neue Facility. |
+| Residents / Animation | Alle vorhandenen Rezepte zugänglich erhalten; ein konkretes S6-Rezept sichtbar animiert, korrekt montiert und reproduzierbar im Receiving-Consumer beweisen. | Rig-Familienname/Bibliotheksbesitz ist kein Binding- oder Laufzeit-PASS. |
+| ToolBox / Studio / Rigging | Stage-First-Originalquelle additiv beim ToolBox-Owner promoten, sofern noch ausstehend; echten Authoring/Save/Export/Reload/Import-Ablauf liefern. | Kein Screenshot-Nachbau, kein Demoersatz des Rosters, kein stiller Face-/Pose-/Motion-Ownerwechsel. |
+| Locomotion / Arena | Bestehende Travel Ground/Flight-Starts und Arena-Start/Combat/Restart reproduzieren, im Hub erreichbar mit Rückweg. | Navigation ist kein Travel↔Arena-Portal; A2 und C1 nicht in einem Tausch verstecken. |
+| Librarian / Registries | Bestehende Discovery-/Candidate-Handoffs, konkrete Assets/Dependencies und heutige GitHub-Packs nutzen; Doku-/Deploy-Drift bereinigen. | Keine zweite Taxonomie/Registry und kein automatisches L5. |
+| Hub / Recovery | Bestehenden Hub mit tatsächlich getesteten Einstiegen, Quellen, Builds und wenigen offenen Nutzerentscheidungen aktualisieren; alle anderen Projekte erhalten. | Kein Linkdashboard als Ersatz für die Gebrauchspfade; kein globales Grün aus Load-OK. |
 
-## 3 · Ein Integrationslauf mit zwei echten Gebrauchspfaden
+Intake-Zählungen 35 ToolBox-Einträge, 21 Resident-Rezepte plus Ensemble und 43 BOX1-Kandidaten beim Work-Start nachzählen. Vollständigen aktuellen Bestand erhalten, nicht auf Testfiguren reduzieren. Legacy-Packs sind inzwischen GitHub-Quellen und Librarian-Kandidaten; sie erweitern nicht automatisch den S6-Cast oder seine geprüften Animationen.
 
-### Pfad A · Fahrzeug wählen, fahren, hören, wiederfinden
+## 2 · Preflight und vorhandene Gates
+
+`SOURCE_BASELINES.json` ist ein historischer r1-Snapshot. Der ausgeführte World-Review prüfte kayfabizarro `9493bce0`, Travel `33c731c0`, Race `616c151b`, Arena `f6a59ad1`; vollständige Pins im Review. HEAD, relevante offene PRs/Branches, Dirty/Unpushed-Arbeit, Originaleingänge und echte Berechtigungen beim Work-Start erneut auflösen. Travel-Einstieg ist `WSA_START.md`; kein erfundenes Root-RECOVERY.
+
+Ground=8 behält seinen konkreten Human-Gate: Fernando vorwärts; Mech W→Space bei gehaltenem W→LAND; Monstrosity W/Shift+W; LMB-Klick/Orbit; RMB-Look; Card-Ground ohne Regression. Der Pilot-Brief ist noch `RUNTIME IMPLEMENTATION DEFERRED UNTIL GROUND=8 HUMAN GATE`. Keine spätere Freigabe allein aus einer grünen CI ableiten. Bestehende Atlas-Browser-QA nicht als erledigt ausgeben. Travel PR #8 ist offene Birthday-Fehlhistorie, kein Integrationsauftrag; andere offene Drafts nicht beiläufig mergen.
+
+Bis zu erforderlichen Freigaben sind lokale Reproduktion, vorhandene technische Regression und begrenzte Daten-/Portabilitätsvorbereitung auf getrenntem Kandidaten erlaubt. Kein gesperrter Folge-Consumer oder Production-Promotion als akzeptiert ausgeben. Fehlende Freigabe konkret ausweisen, unabhängige Arbeit fortsetzen. Kein allgemeiner neuer Abnahmemarathon.
+
+## 3 · Pfad A: auswählen → fahren → hören → wiederfinden
 
 `Hub → BOX1 → Box Stop → Fahrzeug/Profil → Test Lap → 3/2/1/GO → Fahrt + Environment + Audio → Originalvergleich → Shortlist → Reload → gleiche Auswahl → Hub`.
 
-**WORLD:** dieselbe akzeptierte v0.8-Route mit bestehendem Facility-/Surreal-Dressing; sichtbares Fahrzeug, kompakte Radio-/Tachoinstrumente, klarer Fahrblick. Kein Wechsel zur neuen Topologie ohne deren Freigabe.
+**WORLD/LIFE:** akzeptierte v0.8-Route, vorhandenes Facility-/Surreal-Dressing, originale Fahrzeugquelle, unversperrter Fahrblick. Deformer liest normalisierte Race-Telemetrie; Original und neuer Visual-Response nicht doppeln. Kontakt, Bewegung, Kamera und Fortschritt bleiben Race-owned. Instrumente reagieren begrenzt und beruhigen sich. Keine neuen Fahrer-Skelett-Rigs; source-interne statische Figuren korrekt benennen.
 
-**SEQUENCE:** Ladefeedback sofort; Box Stop nur nach bereitem Host; Auswahl erst nach erfolgreichem Modell-/Profil-Laden übernehmen; Cancel erhält gültige Fahrt; Countdown erst nach Bereitschaft; Fahrinput bis GO gesperrt. Titel-/Modellfehler erhalten letzte gültige Auswahl und bieten Retry.
+**SEQUENCE/FEEDBACK:** sofortiges Ladefeedback; Host bereit vor Box Stop; Auswahl erst nach vollständigem Modell-/Profil-Laden committen. Cancel und Ladefehler erhalten gültige Fahrt; Retry anbieten. Countdown erst bei Bereitschaft, Input bis GO gesperrt. Fokus/Press/Busy/Erfolg/Fehler sichtbar. Keine Geistereingaben nach Modal-/Session-/Fokuswechsel.
 
-**LIFE:** Karosserie-/Radantwort aus echter Race-Telemetrie, keine doppelte alte und neue Visual-Response. Radio/Tacho reagieren begrenzt und beruhigen sich. Kein Dauerwackeln im Stillstand. Keine hinzugefügten Fahrer-Skelett-Rigs; source-interne statische Figuren korrekt benennen.
+**Audio:** Georgs Klangfreigabe gilt. Original-A1 einschließlich Provenance/Tests sichern und prüfen; neue Branch-/Inbox-Eingänge nicht übersehen. Kein Ersatz-A1. Adaptive Score und bestehende Jukebox sind alternative Musikquellen an einem Musikbus, mit einem Audio-Lebenszyklus; kurzzeitiger Crossfade erlaubt, kein Dauer-Doppelplayback. Vehicle/Drift/Re-Grip/Boost/Landing/Rail/Ambience bleiben von Musik unabhängig. Music Off ist nicht Master Mute. Kompaktes bestehendes Radio, kein vollständiger Lab-Mixer in der Fahrt. Play-Nutzergeste, Pause/Visibility/Resume, Fahrzeugwechsel und Node-/Loop-Bereinigung prüfen. Bei fehlender A1-Quelle Jukebox weiter nutzbar liefern; Pfad A nicht als vollständige Audiointegration bezeichnen.
 
-**FEEDBACK:** Knöpfe zeigen Fokus/Press/Busy/Erfolg/Fehler. Radio bleibt klein: Musikquelle, Weiter, Lautstärke/Mix, deutliches Mute; Details eingeklappt. Adaptive Musik und Jukebox sind alternative Musikquellen, nicht dauerhaft übereinander laufende Engines. Vehicle/Contact/Environment-SFX bleiben unabhängig von der Musikquelle. Music Off ist nicht Master Mute. Bei Sessionwechsel/Pause/Visibility gibt es keine doppelten Loops, Geistereingaben oder weiterlaufende alte Audioinstanzen.
+**Publikation:** historisch 120/120 breite BOX1-Checks und 29/29 gepinnte öffentliche Preview-Checks. Der Cloudflare-Marker-Preflight schlug fehl; daraus folgt kein Cloudflare-Gameplay-PASS. Verwendeten Ursprung, Source-Marker und ausgelieferte Bytes frisch prüfen. Preview und Cloudflare teilen LocalStorage nicht automatisch; Shortlist-Export existiert, Import/Migration nicht voraussetzen. Vor Originwechsel Wiederherstellung/Migrationsentscheidung sichern, nie Speicher pauschal löschen.
 
-**Audio-Eingang:** Klangrichtung ist von Georg akzeptiert, Integration autorisiert; vollständige Feature-/Gerätetestabdeckung nicht behaupten. Nach Quellenempfang Originale pinnen und die angegebenen Tests auf tatsächlichen Bytes reproduzieren. Fehlt die Lieferung noch, A1-Lane als SOURCE BLOCKED offenhalten, vorhandene Jukebox erhalten und andere freigegebene Integrationsarbeit fortsetzen. Kein Ersatz-A1 und kein pauschaler neuer Hör-Marathon. Der Gesamt-Audioauftrag bleibt dann unerledigt.
+## 4 · Pfad B: S6-Ensemble → echter Travel-Consumer
 
-### Pfad B · Vorhandene Szene/Actor-Daten authoren und im richtigen Consumer benutzen
+`Hub → Librarian/Atlas → bestehendes Resident-/Prop-Rezept → tatsächlich unterstützte ToolBox/Animation-Nähte → Export → Travel-Zielvalidierung → Platzierung → Save → neuer Boot/Reload → PLAY: sehen und erreichen → Hub`.
 
-`Hub → Librarian/Atlas → exaktes Resident-/Prop-Rezept → vorhandene ToolBox-/Animation-Nähte für tatsächlich unterstützte Änderungen → Save/Export → Receiving-Consumer → im World/Play-Kontext sehen/benutzen → Reload → dieselbe Komposition → Hub`.
+Nicht jeder Export muss durch jede App. Der konkrete erste Consumer bleibt **Lorekeeper + Tome/Lesepult + Staff, sieben echte Hex-Zellen und Travel-eigener ROAD-Ansatz** nach dem bestehenden Ground-Gate. Maßgeblicher Projektbrief: `_handover/WORLD_BUILDER_GOD_MODE_2026-09-17/ATLAS_PILOT_01_LOREKEEPER_HEX_THRESHOLD_2026-09-17.md` im Travel-Repo. Keine Schloss-/Minen-/Dungeon-Ersetzung dieses Fixtures.
 
-Das ist kein Zwang, jeden Export durch jede App zu schleusen. Zuerst das **bestehende Travel Atlas Pilot 01** bedienen: Lorekeeper mit Tome/lectern und Staff, sieben echte Hex-Zellen, Travel-eigener ROAD-Ansatz, Varianten VISIBLE_HEX / SEATED_HEX / NO_VISIBLE_HEX am selben sphärischen Anker. Die Referenzkomposition und die erreichbare Sammlung bleiben erhalten; das eine Fixture reduziert nicht das Produkt auf einen einzigen NPC.
+### Tatsächliche Ausgangslücke: kein fertiger Ensembleimport
 
-**WORLD:** reale Figur, zugehörige Props und Habitat/Schwelle zusammen im Travel-Terrain; keine nur vor das Weltbild geklebte neutrale Bühne. Bezug von lokalen Exportkoordinaten zu sphärischer Welt explizit messen. Maßstab, Forward/Up, Hand-/Prop-Frames und Boden-/Oberflächenbezug müssen nach Reload stimmen.
+Travel `site/world-builder/wb0.js` liest beim UI-Import rekursiv `path`/`ghUrl`/`rawPinned` und ergänzt die Palette. Das instanziiert noch keine S6-Szene, Handslots oder Varianten. `world-recipe.js` besitzt zwar `importRecipeFile`, dieses ist im betrachteten UI nicht der aufgerufene Szenen-Restore. `normalizeRecipe` überschreibt die Schemaangabe; das ist kein Kompatibilitätsvalidator.
 
-**SEQUENCE:** Quelle wählen → echten unterstützten Export/Recipe übernehmen → Zielvalidierung → explizit platzieren → transformieren → speichern → neu laden → im PLAY erreichen. Unsupported fields führen zu sichtbarem Reject/benannter Lücke, nicht stillem Weglassen. Studio-/Animation-Änderungen benutzen deren vorhandene Exportverträge; keine neue Konfiguration nur für den Demoablauf.
+Alte `tools/resident_atlas/scenes/`-Rezepte (`kfb-resident-scene.v1`) und S6 `tools/resident_atlas_s6/data/cast.js` sind verschiedene Produzenten. Der Caveman-Prefab-POC konsumiert ersteres und exportiert eigene `residentPrefabs`-Kandidaten. Er ist kein bereits funktionierender Lorekeeper-/S6-Importer. Beide bestehenden Atlas-Einstiege erhalten; nur die benötigte konkrete Datennaht im zuständigen Consumer schließen, keinen universellen Schema-Konverter entwerfen.
 
-**LIFE:** mindestens ein vorhandener, am konkreten Actor nachweislich bindender Idle-/Motion-Zustand; Start/Stop/Rest und Wechsel ohne doppelten Mixer. Die Bindungs-/Root-Motion-Policy bleibt beim Animation-/Consumer-Owner. Ein Standbild oder ein grüner Binding-Zähler allein erfüllt sichtbare Animation nicht.
+### Roundtrip-Vertrag aus der Quelle schließen
 
-**FEEDBACK:** Preview/Accept/Revert, Loading/Retry und Save/Restore müssen sichtbar und verlustfrei sein. Ein Slot-/Clip-/Assetfehler darf die gültige Welt nicht zerstören. Keine unbekannten rigged Parts heimlich durch generische Props ersetzen.
+Existierender Travel-Speicher: `kfb.world-recipe.wb0.v0`, Schema `kfb.world-recipe.v0`. Instanzen speichern `id`, `assetId`, `source.{url,path,pin}`, `surface.{direction,radialOffset}`, Quaternion, Scale und Calibration. ROAD liegt in `splines`. `syncRecipeInstances()` rekonstruiert Einträge aus einer festen Feldauswahl: zusätzliche Ensemble-/Variant-/Attachment-Daten sind nicht automatisch erhalten. Nach fehlgeschlagenem Restore nicht das erfolgreiche Teilergebnis als ganze Welt erneut speichern und damit fehlende Instanzen verlieren.
 
-**Bestehende Gates:** Ground=8-Human-Gate und Atlas-Browser-QA sowie die aktuelle Travel-Freigabereihenfolge erneut am World-SSOT prüfen. Diese Übergabe hebt sie nicht auf. Bis zur erforderlichen Freigabe darf Astra vorhandene Quellen reproduzieren, Portabilität/Adapter und Roundtrips auf einem separaten Kandidaten vorbereiten, aber keine gesperrte Folgearbeit oder Production-Promotion als akzeptiert ausgeben. Ist das Receiving-Gate blockiert, das Authoring-Ergebnis separat nutzbar liefern und den fehlenden Consumer-Nachweis ausdrücklich offenlassen. Nicht behaupten, Pfad B sei dann vollständig.
+Vor Umsetzung im Travel-Owner die minimale Roundtrip-Erweiterung bzw. vorhandene passende Naht bestimmen. Erhalten müssen bleiben: Quellrezeptidentität/Revision, ursprüngliche relative Komposition, Parent/Handslot und Kalibrierung, stabiler sphärischer Anker, Variante, konkrete Hex-Supportregistrierungen, aufgelöste Motion-/Clipidentität und Travel-ROAD. Unbekannte Pflichtfelder, inkompatible Version oder unaufgelöste Assets sichtbar ablehnen/benennen; nicht still als leere Welt normalisieren.
 
-### Arena im gleichen Arbeitslauf, ohne falsche Verschmelzung
+Staging → Validierung aller benötigten Quellen/Sidecars → explizites Accept → Commit. Cancel, fehlerhafte Datei, fehlendes BIN/Texture/Modell und veralteter asynchroner Load erhalten die letzte gültige Szene **und** deren Save. Atomare Restore-/Revert-Eigenschaft am Gesamtablauf prüfen, nicht aus JSON-Erfolg ableiten.
 
-Arena 5A/A1 aus seinem eigenen SSOT starten und den existierenden Bewegungs-/Combat-/Restartpfad prüfen; vom Hub erreichbar machen, eigenen State/Return sichern. Eine vorhandene gemessene Actor-/Motion-Übergabe nur dann ergänzen, wenn ihr konkreter Contract und ihre bisherige Freigabe vorliegen. A2-Kartenmodultausch und C1-Driver-Graft nicht gemeinsam verstecken; ungeprüfte Muzzle-/Release-/Foot-Policy ist ein BLOCKER für diesen Tausch.
+### Sphärischer Bezug und Größen
 
-Ein Arena-Link ist **NAVIGATION INTEGRATED**, kein Travel↔Arena-Portal und keine übertragene Weltphysik. Eine seamless Szene mit gemeinsamen Save-/Koordinaten-/Transition-Regeln ist spätere explizite Arbeit; bekannte Portal-Verträge nicht aus dem Namen ableiten. Bestehende Arena-Animation/Locomotion bleibt trotzdem Teil des lokalen und Hub-Regressionsnachweises.
+Kein `poc-local`-XYZ als produktive Weltkoordinate speichern. WB0 verwendet `surfaceAnchorFromWorld` / `worldFromSurfaceAnchor`, radiale Normalen und eine Körperhöhe von **0.022 Travel-Einheiten**; dies ist kein Metermaß. Eine gemessene einheitliche Ensemble-Skalierung plus lokaler Tangentenrahmen/Heading überträgt die Quelle; nicht Actor, Stab und Lesepult jeweils auf dieselbe Zielhöhe normalisieren. Parent/Child-Richtung, Up/Forward, Quaternion, Radiusreferenz und Offsets auch nach Reload prüfen. Ein Anchor alleine beweist noch keinen solchen kompletten Import.
 
-## 4 · Facility und Dressing als gemeinsames Design
+### Identität, Leben und Support
 
-Die neue Facility ist keine Rückkehr zu v0.9. Es existiert bereits ein v0.10-Blockout mit MAIN/PIT, separatem SPLIT/MERGE, OVERPASS und unterer Route. Aktuellen Return lesen, keine zweite Topologie daneben erfinden.
+S6-Lorekeeper-Rezept unverändert als Quelle: Actor `[0.75,0]`, Y-Drehung `-18°`; Lesepult `[-0.95,0.15]`, `24°`; Staff `s=0.65` an `handslot.r`, mit vorhandener Ausnahme-Kalibrierung `axis/aim/grip`. Kein Handbuch als Lesepult-Ersatz und keine pauschale Identitätstransformation für den bewusst kalibrierten Stab. `Rig_Medium` / `Idle_A` als Ausgangspunkt, konkrete Clipdatei/Revision/Binding/Root-Motion-Policy beim tatsächlichen Empfänger nachweisen. Ein sichtbarer Idle-/Motion-Ablauf sowie Start/Stop/Rest/Wechsel mit einem Mixer; bloßer Zähler oder Standbild genügt nicht. RegExp-Poseauswahl aus JS nicht blind als verlustfreies JSON ausgeben.
 
-Race definiert befahrbare Flächen, Route, Breite, Höhe, Entry/Exit, Service-/Stall-/Startframes und Support-/Clearance. Environment nutzt dieselben Frames für Boxengebäude, Tribünen, Rhythmik, Terrain und Himmel. Bei Dressing OFF bleiben Route/Kontakt identisch; eine Brückenunterfahrt darf nicht durch Terrain aufgefüllt werden. Beide Environmental Recipes beziehen sich später auf dieselbe freigegebene Facility, nicht auf zwei neu erfundene Kurse.
+Gleicher Anker, gleiche Komposition und gleicher ROAD für `VISIBLE_HEX`, `SEATED_HEX`, `NO_VISIBLE_HEX`. Sieben reale GitHub-Meshes. SEATED ist Instanzversatz, keine Terrainverformung. NO_VISIBLE entfernt/deaktiviert die Supportregistrierung ausdrücklich; ein verborgenes Elternobjekt ist kein ausreichender Nachweis. Travel-eigenen `assembly-a0-surface-adapter.js` / Resolver nutzen, keine zweite Kontaktwelt.
 
-Der befahrbare Facility-Transfer beginnt erst nach der bestehenden menschlichen Topologie-Freigabe. Solange sie fehlt: gemeinsame Anchor-/Clearance-Planung und kontrollierter Datenadapter erlaubt, veröffentlichte BOX1-Fahrt bleibt v0.8. Der spätere hereinfallende Box-Stop-Button konsumiert den echten Pit-Entry und öffnet das vorhandene Overlay. Er erfindet keinen Boxengassenkontakt.
+Der derzeitige Resolver wählt radial die höchste geeignete Oberfläche über Terrain im begrenzten Probevolumen. Er ist **keine** nachgewiesene Stockwerk-/Unterführungsnavigation oder Wandkollision. A0-Metadaten ersetzen keine Erreichbarkeit. Pilot mit flacher Schwelle beweisen; Dungeon und echte Multilevel-/Bridge-Navigation nicht damit als erledigt deklarieren.
 
-Die echte Stuntrampe mit Absprung, Luftphase, Landung und sicherer Umfahrung bleibt explizit erfasste Folgearbeit, nicht durch die Brückenauffahrt oder den vorhandenen Space-Sprung als erledigt markiert.
+**Abnahme je Variante:** alle benötigten Quellen geladen; originale Relative/Attachments erhalten; Source/Variant/Anchor/ROAD über Export/Import/neuen Boot erhalten; im tatsächlichen Travel-Terrain im PLAY zu Fuß erreichbar; keine Phantomplattform oder sichtbarer Sprung; kein Ground/Flight-/Kamera-/Mixer-Regress. Keine neutrale Bühne vor dem Weltbild als Consumer-PASS. Menschliches Urteil wählt gegebenenfalls eine oder mehrere Stilvarianten; nicht vorwegnehmen. Interaction/Combat und Dungeon folgen erst ihren bestehenden späteren Gates.
 
-## 5 · Oberflächen und Populationen erhalten
+## 5 · Facility: vorhandenen Kandidaten korrigieren, keine zweite Strecke
 
-BOX1/Atlas: vorhandene KFB-Atlas-Gestaltung, kein DocCheck-Rot. ToolBox: aktuelle Stage-First-Quelle und deren funktionale/visuelle Hierarchie, kein global erzwungenes BOX1-Dark-Theme. Historische Studio-Regeln zu Paper/Light und späteren Stage-First-Entscheidungen müssen bei Konflikt durch den ToolBox-Owner aufgelöst werden; nicht einfach den neueren Dateinamen gewinnen lassen. DocCheck-Projekte behalten ihre eigene zurückhaltende Akzentkonvention; ihre Bilder werden nicht umgefärbt.
+Die Race-Dateien `ChatGPT_web/track-lab/v010-topology/V010_TOPOLOGY_BLOCKOUT.json` und `app.mjs` enthalten getrennte MAIN/PIT/SPLIT/MERGE/OVERPASS-Begriffe. Ihr alter Static/Browser-Smoke-PASS ist real, aber geometrisch unzureichend:
 
-ToolBox-Funktionen Actor/Face/Pose/Motion/Voice/Stage samt Speech/Bubbles, Resource Picker, Import/Export und vorhandenem Roster bleiben auffindbar. Der Intake nennt 35 ToolBox-Einträge, 21 Resident-Rezepte plus Ensemble, 43 BOX1-Kandidaten; vor Umsetzung aktuell nachzählen. Kein Vier-Figuren-Demoersatz. Rig-/Studio-Spezialfunktionen werden zugänglich gehalten, nicht alle innerhalb dieses Slices neugeschrieben. Such-/Filterzustände dürfen weitere Einträge einklappen, nicht löschen.
+- Stützen bei XZ `[-6,0]` und `[6,0]` liegen nur **1.4552** von der unteren Mittellinie entfernt, innerhalb deren halber Breite **3.75**, selbst mit maximalem Stützenradius **0.9**.
+- Servicegebäude-AABB X `[-15,15]`, Z `[-9,-1]` schneidet den unteren Fahrkorridor; beispielsweise liegt dessen Mittellinienpunkt `[-8,0,-2]` darin.
+- Die beschrifteten 5 Einheiten sind Mittellinienabstand; Deck-/Fahrbahndicken `.46/.34` ergeben am zentralen Kreuzungspunkt nur **4.60** freie Höhe, nicht 5.
 
-Desktop, ca. 832 px Split-Screen und für spielerseitige Bedienung schmaler Touch-Viewport sind erste Zielkontexte. Kein Zusammendrücken dreier Inspector-Spalten. Fahrt/Stage bleibt dominant. Neue UI-/Spieltexte Englisch; Produktionskommunikation Deutsch.
+Quelle, Rechnung und Geltungsbereich in `evidence/v010-source-geometry-review.json`. Kein neuer Browser-/Fahrtest dieses Reviews.
 
-## 6 · Bauweise und Autonomie
+Race korrigiert den **bestehenden** Kandidaten und erweitert seine Geometrieprüfung um reale Korridor-/Gebäude-/Stützen-/Deckvolumen, Übergänge und freie Höhe. World/Environment liefert Ausschlussräume/Placementbefunde, übernimmt weder Race-Route noch Kontakt. Erst korrigierte Topologie visuell vorlegen, bestehende menschliche Freigabe erhalten, dann akzeptiertes v0.8-Fahren anbinden. Kein alter v0.9-Patch, keine neue allgemeine Graphengine, kein A0-Ausbau auf Verdacht.
 
-Astra bestimmt sinnvolle interne Arbeitsschritte innerhalb dieses Zusammenhangs. Kein neuer Genehmigungsdialog für jeden normalen Codefix. Kein autonomes Unteragenten-Schwarmprogramm, keine neue bezahlte Infrastruktur und keine Repo-Migration aus diesem Brief. Ein aktiver Executor mit begrenztem Arbeitsplan; Claude/World liefern abgegrenzte Inputs.
+Der öffentliche BOX1-Flow-Loop bleibt währenddessen unangetastet. Service-/Pit-Entry/Exit-/Stall-/Start-/Bridge-Frames stammen aus Race. Bestehendes Environment an diese geprüften Frames anpassen; Dressing OFF lässt Kontakt/Route unverändert. Unterfahrt nicht mit Terrain auffüllen. Facility/Surreal teilen später dieselbe freigegebene Topologie. Der hereinfallende Box-Stop-Button konsumiert den echten Pit-Entry und öffnet denselben Overlay-Code. Echte Stuntrampe/Absprung/Landung/Bypass bleiben spätere ausdrückliche Arbeit, nicht die Brückenauffahrt.
 
-Verträge zuerst **lesen**, nicht zuerst abstrahieren. A0 bleibt AssetRef / TransformSlot / Surface / Connector / RecipeEnvelope; kein ECS-/Physik-/Universal-Actor-Framework. Gemeinsamen Code erst nach echter Mehrfachnutzung und gleichen Lebenszyklus-/Semantikbedingungen extrahieren. Three-Versionen der Hosts dürfen verschieden bleiben; .160- und .184-Szenen nicht zwanghaft in denselben Objektgraphen laden. Übergreifende Grenzen transportieren unterstützte Daten, keine Renderer-/Mixer-/Controller-Instanzen.
+## 6 · Arena und Animation: konkrete Grenzen
 
-Vorhandene Scripts/Workflows erweitern. Lokale Tests zuerst; GitHub CI als unabhängige Regression. Nicht für jede Datei einen neuen Reparatur-/Publish-Workflow erzeugen. Bei wiederholtem identischem Infrastrukturfehler Ursache eingrenzen, nicht im Minutentakt neue Releases anstoßen. Pro zusammenhängendem geprüften Release ein konsistenter Publish; Source-Commit, Build, Deployment und ausgelieferter Marker getrennt prüfen.
+Arena in eigenem Repo starten, bestehenden Combat-/Restartablauf prüfen und mit Hub-Rückweg führen. Das ist `NAVIGATION INTEGRATED`, kein neues Travel↔Arena-Portal. Referenzen: Arena `WSA_START.md` und `_handover/C0_REENTRY/OWNER_MAP.md`; letzterer ist ein historischer Source-Audit, vor Eingriff aktuelles Wiring prüfen. Player schreibt Root/Bewegung, Host Boden/Input/Kamera, Gunfight Abgang/Hit/Kill, Rewards Loot, Runflow Rundenstatus. Ground/Flight-Umschaltung in Travel `runtime-mode.js` ist kein Cross-App-Portalvertrag. Ein `portals: []`-Array beweist keinen Transition-Lebenszyklus.
 
-## 7 · Was der Abschluss enthalten muss
+Kein C1-Graft oder A2-Kartenmodultausch ohne dessen konkrete Quelle/Freigabe. Muzzle-/Release-/Foot-Policy, Clipentscheidung, Root-Motion, alter Mixer/Face-/Pointer-Tick und Destruktion ausdrücklich auflösen, nicht daneben montieren. Bestehende Actor-/Motion-Übergabe nur bei passendem geprüften Contract ergänzen. Nicht alles neu schreiben, nur weil das zentrale Animation-Node noch UNVERIFIED nennt.
 
-- Ein rekonstruierbarer lokaler Multi-Repo-Workspace mit nachgewiesenen Zugriffsrechten, konkreten Revisionen, Startwegen und Recovery-Test; keine Geheimnisse im Repo.
-- Aktualisierter **bestehender** Hub mit allen Lanes und echten URLs/Versionsständen. Bestehende nicht betroffene Projekte bleiben sichtbar. Kein grüner Gesamtstatus aus einem erfolgreichen Linkcheck.
-- Ausgeführte Pfade A und B einschließlich Consumer-/Save-Nachweis oder präzise benannte noch offene Teilstrecken. Wenigstens ein echter neuer Producer→Consumer-Daten-/Runtime-Nachweis; nur Startlinks und Dokumentation sind kein produktiv abgeschlossener Integrationsslice.
-- Start-/Grundregression für die übrigen vorhandenen Lanes, mit Not-run-/Source-blocked-Kennzeichnung statt Fake-Demos.
-- Ein kleiner Integrations-Lock und eine Release-Zusammenfassung, die auf die bestehenden Registry-IDs und Owner-Returns verweisen. Kein zweiter dauerhaft manuell gepflegter Asset-/Projektkatalog.
-- Source-/Adapterdeltas, originale Returns, Testbefehle, Resultate, Screenshots und kurze reale Ablauf-/Animationscaptures. Relevant: kalter Start, mindestens 20 Navigations-/Mount-Zyklen für Eingabe/Audio/Mixer-Leaks, Quelle fehlt, Import kaputt, Revert, Reload, mobile Bedienung. Falls ein Test nicht sinnvoll ausführbar ist, konkrete Lücke nennen, nicht die Zahl simulieren.
-- Per Repo reviewbare Commits/PRs, Rollbackweg und eine nächste Aktion. Vorhandene Archivierungslimits beachten. Originale unverändert behalten, keine neuen ZIP-Pakete für Georg.
+## 7 · Werkzeuge, UI und Regressionsumfang
 
-## 8 · Erfolg präzise benennen
+Stage-First aus echter Quelle, additiv und rollbackfähig im ToolBox-Owner; originale Inboxen unverändert. Actor/Face/Pose/Motion/Voice/Talk/Bubbles/Stage, Resource Picker mit Preview/Accept/Revert, Props transformieren, Speichern/Reload/Export/Import und vollständiges Roster erhalten. Ein zusammenhängender Authoring-Roundtrip ist erforderlich. Unterstützte Nähte nutzen; fehlende nicht durch eine neue Demo-Konfiguration verdecken.
 
-Je Lane ausweisen: SOURCE LOCATED / LOCAL BOOT TESTED / NAVIGATION INTEGRATED / DATA-ROUNDTRIP TESTED / RUNTIME-CONSUMER TESTED / PUBLIC DEPLOYED / HUMAN ACCEPTED / OPEN. Diese Grade sind Ergebnisfelder, kein neues globales Maturity-System; A0-L5 bleibt pro Consumer.
+BOX1/Atlas behalten KFB-Atlas-Familie, kein DocCheck-Mantel. ToolBox behält seine eigene Stage-First-Hierarchie; kein erzwungenes BOX1-Dark-Theme über alle Apps. Historische Paper/Light- versus spätere Stage-First-Entscheidungen in ihrem Ownerkontext klären. DocCheck-/Town-/andere Hub-Einträge nicht streichen; medizinische Bilder nicht einfärben. Neue UI-/Spieltexte Englisch, Produktionskommunikation Deutsch.
 
-Integration 01 ist erst vollständig, wenn sein bestätigter Umfang sichtbar funktioniert, abgesichert und aus GitHub rekonstruierbar ist. Er darf als nützlicher Teilstand enden, wenn eine echte Quelle oder menschliche Freigabe fehlt; dann lautet der Abschluss **PARTIAL / BLOCKED**, mit geliefertem Nutzen und konkreter Restnaht, niemals pauschal DONE. Das Briefing selbst behauptet keine dieser Ergebnisse.
+Desktop, etwa 832 px Split-Screen und schmaler Touch-Kontext prüfen; Stage/Fahrt dominant, kein zusammengedrückter Dreifachinspektor. Vorhandene Suchfilter dürfen Einträge einklappen, nicht löschen. Die Three-Versionen verschiedener Hosts müssen nicht vereinheitlicht werden: zwischen Apps unterstützte Daten, keine Renderer-/Mixer-/Controllerinstanzen transportieren.
+
+## 8 · Ausführung, Recovery und Abschluss
+
+`WORKSPACE_RECOVERY.md` bleibt verbindlich: echte Work-Sessionrechte/Netzwerk/WebGL/Audiozugriff zuerst testen; lokale Sources selektiv beziehen; keine Secrets veröffentlichen; fremde Dirty/Unpushed-Arbeit schützen; dedizierte reviewbare Branches, keine Force-Pushes oder pauschalen Alt-PR-Merges. Ein aktiver Executor, kein neuer bezahlter Dienst oder Critic-Schwarm. Interne Baufolge autonom; keine Mikrofreigabe für jeden normalen Fix.
+
+Quellen/Tests früh pushen. Vor Sessiongrenze kurzen RUN_STATE und bestehenden Owner-Return aktualisieren. Multi-Repo-Release nicht atomar: je Owner prüfen, dann genau diese getestete Commitmenge im kleinen Integrations-Lock referenzieren. Rollback zur vorherigen getesteten Kombination, nicht fremdes main zurücksetzen. In zweitem sauberem Ordner aus **gepushten** Quellen/Lock starten und Konfiguration wiederherstellen; keine implizite lokale Abhängigkeit. Keine garantierte Dauer-Session oder Hintergrundüberwachung behaupten.
+
+Vorhandene Scripts/CI/Deploywege verwenden, keine Datei-für-Datei-Connector-/Einmal-Workflow-Kette. Nach identischem Infrastrukturfehler Ursache eingrenzen statt neue Deployschleifen. Zusammengehöriger Release einmal konsistent publizieren, Marker/Bytes/tatsächlichen Browser prüfen. Nur öffentliche Appdateien/kuratierte Metadaten; keine privaten Vollquellen, signierten Transport-URLs oder sensitiven Logs.
+
+Abschluss umfasst alle acht Lanes, reale Pfade A/B oder präzise offene Teilstrecken, mindestens einen **echten neuen Producer→Consumer-Nachweis**, Owner-Commits/PRs, Source-/Contract-/Assetpins, Tests/Returns/Screenshots und kurze reale Bewegungs-/Ablaufcaptures, Hub/Backlink und Recovery-Test. Kalter Start, fehlende Quelle, kaputter Import, Revert, Reload sowie mindestens 20 sinnvolle Navigations-/Mount-Zyklen auf Input-/Audio-/Mixer-Leaks prüfen. Nicht ausgeführte Tests bleiben NOT_TESTED; keine simulierten Zahlen oder physische Geräteabnahme aus Chromium-Emulation.
+
+Pro Lane: SOURCE LOCATED / LOCAL BOOT TESTED / NAVIGATION INTEGRATED / DATA-ROUNDTRIP TESTED / RUNTIME-CONSUMER TESTED / PUBLIC DEPLOYED / HUMAN ACCEPTED / OPEN. Diese Felder ersetzen kein A0-Maturity-System. Historical PASS bleibt an seiner Revision/Prüfmethode. Fehlende A1-Quelle, humane Gate oder echter Consumernachweis bedeuten PARTIAL / BLOCKED für den bestätigten Gesamtumfang, niemals pauschal DONE. Briefingreife und erfolgreiche Implementierung sind getrennt.

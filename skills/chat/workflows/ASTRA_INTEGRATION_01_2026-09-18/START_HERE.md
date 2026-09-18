@@ -1,49 +1,38 @@
-# Astra · KFB Integration 01 · Onboarding
+# Astra · KFB Integration 01 · Onboarding r2
 
-**Stand:** 18.09.2026 · r1
-**Status:** ONBOARDING PREPARED · WORLD REVIEW PENDING · EXECUTION NOT STARTED
-**Auftraggeber:** Georg. **Koordinationsort:** bestehender KFB-Produktionsrouter `skills/chat/`.
+**Stand:** 18.09.2026 · r2 · **WORLD REVIEW COMPLETED / READY WITH SCOPED CHANGES**.
+**Einziger aktiver Ausführungsauftrag:** [EXECUTION_BRIEF.md](EXECUTION_BRIEF.md), r2.
+**Ausführung:** NOT STARTED. Briefingreife ist keine Runtime-, Geräte-, Deployment- oder menschliche Spielabnahme.
 
-## Ergebnis, nicht bloß Aufräumen
+## Ziel und Zuständigkeit
 
-Eine gemeinsam betreibbare KFB-Arbeitsbasis: lokale, reproduzierbare Quellen; funktionsfähige bestehende Sites; echte Verbindungen zwischen ausgewählten Produzenten und Consumern; aktualisierter KFB Hub; Wiederaufnahme ohne Chatprotokoll. Kein neues Dashboard als Ersatz für funktionierende Werkzeuge und Spiele.
+Ein größerer produktiver Integrationslauf auf den vorhandenen Quellen: BOX1/Race/Vehicles/Audio, World/Environment, Residents/Animation, ToolBox/Studio/Rigging, Arena, Librarian und der bestehende Hub. Ein gemeinsamer lokaler Multi-Repo-Arbeitsraum, keine Universal-Engine, kein Monorepo-Umzug, keine neue Registry.
 
-Georg möchte sein Work/Astra-Kontingent jetzt für einen größeren produktiven Integrationslauf nutzen. Er nennt ausdrücklich BOX1/Race/Vehicles, World/Environment, Residents/Animation, Locomotion/Combat Arena, ToolBox/Studio/Rigging, Asset Librarian und den vorhandenen Hub. Keine dieser Lanes darf bei der Bestands- oder Ergebnisübersicht verschwinden. Das bedeutet jedoch nicht, alle Engines in einer Session zu verschmelzen.
+Astra ist Ausführungsinstanz unter der bestehenden WSA-/Web-Lead-Leitung; Claude Design bleibt Authoring-/LookDev-Produzent. Projekt- und Modulowner bleiben unverändert. GitHub ist dauerhafte Wahrheit. Der kleine Integrations-Lock beschreibt nur die zusammen geprüften bestehenden Revisionen. Keine zweite gleichartige Astra-Session ohne Abgleich bereits beanspruchter Pfade.
 
-## Eine Integrationsleitung, kein neuer Universal-Owner
+## Jetzt lesen
 
-Astra arbeitet als ausführende Integrationsinstanz innerhalb der bestehenden WSA-Leitung. Georg/Web-Lead entscheiden Produktumfang und Abnahme; Claude Design bleibt Authoring-/LookDev-Produzent. Bestehende Owner werden nicht ersetzt. Eine laufende andere Astra-Session wird nicht parallel mit demselben Schreibbereich gestartet: erst Checkpoint/Scope abgleichen.
+1. Dieses Dokument → [aktiver Brief r2](EXECUTION_BRIEF.md).
+2. [WORLD_REVIEW.md](WORLD_REVIEW.md), Abschnitt **r2 · ausgeführter World-Gegencheck**: sieben konkrete Befunde mit Quellen und Ownern. Die r1-Review-Anforderung davor bleibt unveränderte Historie.
+3. [SOURCE_BASELINES.json](SOURCE_BASELINES.json): unveränderter r1-Quellensnapshot, **kein aktiver Integrations-Lock**. Der dortige Review-PENDING-Wert beschreibt den damaligen Zustand. Neu geprüfte Pins und Einschränkungen stehen im r2-Review; beim Work-Start HEAD/PR/Quelleneingänge erneut prüfen.
+4. [WORKSPACE_RECOVERY.md](WORKSPACE_RECOVERY.md): Capability-Preflight, sichere Branches/Checkpoints, zweiter sauberer Wiederanlauf, Publikationsgrenzen.
+5. Bestehender Router `skills/chat/START_HERE.md`, Registry, Sync-Protokoll, Production SOP, Astra-Adapter, Assembly A0 und relevante Projekt-AGENTS/Contracts. Nur relevante Deltas, keine vollständige Historienrekonstruktion.
+6. [CHANGELOG.md](CHANGELOG.md): WR01–WR07 als Briefpräzisierungen übernommen. Frühere positive Urteile bleiben erhalten.
 
-**Zentralisieren:** Arbeitszugriff, reproduzierbarer Gesamtstand, Build-/Test-Orchestrierung, Übergaben und Hub-Navigation.
-**Nicht zentralisieren:** sämtliche Physik, Weltkoordinaten, Kamera, AnimationMixer, Actor-Look oder Registry in eine neue Runtime.
+## Entscheidende Präzisierungen
 
-Der lokale Arbeitsordner ist ein Multi-Repo-Workspace, kein neuer SSOT und kein Auftrag zum Monorepo-Umzug. GitHub bleibt dauerhafte Wahrheit, pro Verantwortung mit genau einem Owner. Ein kleiner Integrations-Lock beschreibt nur, welche bestehenden Revisionen zusammen geprüft wurden. Er ersetzt weder Asset-Registry noch Projekt-Contracts.
+WB0 hat derzeit einen **Asset-Palettenimport**, noch keinen vollständigen S6-Ensembleimport. Der erste neue Consumerbeweis bleibt Lorekeeper/Tome/Staff + sieben Hex-Zellen + Travel-ROAD nach dem bestehenden Ground-Gate. Persistenz, sphärischer Bezug und Handslot müssen ausdrücklich mittransportiert werden.
 
-## Leseweg für Astra
+Der v0.10-Blockout existiert, ist aber **vor dem nächsten Topologie-Gate geometrisch zu korrigieren**: Stützen und Servicegebäude schneiden den unteren Fahrkorridor; der bisherige Audit prüft das nicht. BOX1 bleibt auf seiner akzeptierten v0.8-Fahrbasis. Keine zweite Facility bauen.
 
-1. Dieses Dokument und [WORLD_REVIEW.md](WORLD_REVIEW.md), insbesondere nachgetragene Befunde.
-2. [SOURCE_BASELINES.json](SOURCE_BASELINES.json): beim Briefing tatsächlich gelesene Revisionen und konkrete Einstiegspfade. Snapshot, kein bereits getesteter Integrations-Lock.
-3. [EXECUTION_BRIEF.md](EXECUTION_BRIEF.md): Produktabläufe, Scope, Abnahme und Grenzen.
-4. [WORKSPACE_RECOVERY.md](WORKSPACE_RECOVERY.md): lokale Arbeit, sichere Git-Synchronisation und Wiederanlauf.
-5. Bestehende zentrale Regeln: `skills/chat/START_HERE.md`, `REGISTRY.json`, `SYNC_PROTOCOL.md`, `PRODUCTION_SOP.md`, `adapters/chatgpt-astra.md` und Assembly A0. Nur relevante Deltas der langen Living-/History-Dateien lesen.
-6. Aktuelles HEAD, offene aufgabenrelevante PRs/Branches, lokale Änderungen und aktuelle Start-/Return-Dateien jedes tatsächlich bearbeiteten Owners prüfen. Bei Teilbereichsarbeit dessen AGENTS/Verträge lesen.
+Audio A1 bleibt klanglich akzeptiert. Originalquelle bei Einstieg neu suchen; fehlende Quelle nur für diese Integrationsnaht als SOURCE BLOCKED führen. BOX1-Preview-PASS ist kein Cloudflare-PASS. Arena-Anbindung bleibt zunächst Start/Regression/Hub-Rückweg, kein nahtloses Travel-Portal.
 
-Die Quellenkarte verkürzt die Suche, friert aber die Entwicklung anderer Chats nicht ein. Neu eingehende Audio-Dateien zuerst am wirklichen GitHub-Stand suchen. Ein höherer Versionsname oder ein neuer Inbox-Ordner ist noch keine Promotion.
+## Startprompt
 
-## Freigabestatus dieses Pakets
+> Führe KFB Integration 01 als Ausführungsinstanz der bestehenden WSA-Leitung aus. Lies START_HERE und den einzigen aktiven EXECUTION_BRIEF r2 aus aktuellem GitHub, danach den ausgeführten World-Gegencheck WR01–WR07. Prüfe echte lokale/Git-/Browser-/Netzwerkrechte und neue Quellen, insbesondere Audio A1. Nutze lokale Checkouts, vorhandene Tests und reviewbare Branches; sichere frühe gepushte Checkpoints. Liefere die Gebrauchspfade A und B mit genauer Integrationstiefe pro Lane. Repariere die benannten Import-/Persistenz-/Facility-Lücken in ihren jeweiligen Ownern; keine Universal-Engine, neue Registry, zweite Garage oder Ersatz-Audioquelle. Bestehende humane Gates nicht selbst erteilen. Keine Fahrer-Rigs, kein v0.9-Replay, keine Birthday-Reaktivierung. Ein unvollständiger Consumerpfad bleibt PARTIAL/BLOCKED; ein Linkhub allein ist kein Integrationserfolg. Georg benötigt kein Terminal und keinen Transkript-Dump.
 
-Georg hat die Vorbereitung dieses Onboardings beauftragt. Hierdurch wurde noch kein Work-Run gestartet, kein lokaler Astra-Workspace eingerichtet und kein Zugriff in einer anderen Session bestätigt.
+## Archiv und Grenzen
 
-Der World-Chat soll den Entwurf unabhängig prüfen und additiv ergänzen. Astra darf einen kurzen read-only Capability-/Quellen-Preflight vorbereiten. Der teure Cross-Owner-Implementierungslauf beginnt nach aufgelöstem World-Gegencheck oder einer ausdrücklichen Entscheidung Georgs, ohne ihn zu starten. Ein fehlender Review rechtfertigt keine weitere endlose Recherche.
+[archive/r1/START_HERE.md](archive/r1/START_HERE.md) und [archive/r1/EXECUTION_BRIEF.md](archive/r1/EXECUTION_BRIEF.md) sind byte-identische Vorgänger aus `9493bce02c0e8ca39ca34c741e9a98993422ddad`. Sie sind nicht parallel aktiv.
 
-Der Gegencheck erteilt keine menschliche Topologie-/Fahr-/Klang-/Visual-Abnahme. Bereits akzeptiertes Audio und v0.8-Feel werden nicht erneut pauschal zur Abstimmung gestellt.
-
-## Startprompt für die Work-/Astra-Session
-
-> Du führst **KFB Integration 01** als Ausführungsinstanz der bestehenden WSA-Leitung durch. Lies dieses START_HERE und die verlinkten Dateien aus aktuellem GitHub. Prüfe World-Review, echte Berechtigungen, lokale Arbeitsumgebung und neu eingegangene Quellen, insbesondere Audio A1. Nutze lokale Repo-Checkouts und die vorhandenen Build-/Testwege, nicht hunderte Datei-Connector-Roundtrips oder immer neue Einmal-Workflows. Arbeite auf reviewbaren aufgabenbezogenen Branches, lasse fremde lokale Änderungen unangetastet und sichere Fortschritt früh auf GitHub. Liefere einen zusammenhängenden nutzbaren Integrationsstand mit realen Producer→Consumer-Nachweisen und dem aktualisierten bestehenden KFB Hub, keine neue Universal-Engine und kein bloßes Link-Dashboard. Respektiere die Scope-/Abnahmegrenzen im EXECUTION_BRIEF. Keine Fahrer-Rigs in BOX1, kein v0.9-Replay, keine Birthday-Reaktivierung, keine erfundenen Assets oder Audio-Nachbauten. Nicht ausgeführte Tests bleiben offen. Georg benötigt weder Terminalbefehle noch ein erneutes Gesprächsarchiv.
-
-## Praktisches Erfolgsbild
-
-Georg öffnet den bestehenden Hub, erreicht die korrekt bezeichnete Race-/Box-Stop-Site sowie die bestehenden World-, ToolBox-, Atlas-, Librarian- und Arena-Einstiege, und kann mindestens die im Brief definierten tatsächlichen Integrationspfade benutzen. Ein neuer Arbeitsprozess stellt denselben geprüften Zustand aus GitHub wieder her und kennt den nächsten konkreten Schritt. Ein Chat darf enden, ohne dass dadurch Arbeit oder Zuständigkeit neu erfunden werden muss.
-
-**Noch nicht vorhanden:** Integration-01-Implementierung, Astra-Workspace-/Permission-PASS, World-Gegencheck, neuer Gesamt-Browser-PASS. Dieses Paket ist der ausführbare Auftrag, nicht dessen Ergebnis.
+Dieser Review richtet keine Work-Umgebung ein und startet keinen Astra-Lauf. Routinepräzisierungen sind konsolidiert; Umfangs-/Owner-/Kanonänderungen oder das Überspringen vorhandener menschlicher Gates bleiben Entscheidungen Georgs.
