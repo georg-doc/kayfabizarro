@@ -23,7 +23,7 @@ permissions:
 
 concurrency:
   group: osm-city-huerth-v0
-  cancel-in-progress: false
+  cancel-in-progress: true
 
 jobs:
   cache-normalize-and-check-fixture:
@@ -64,4 +64,5 @@ jobs:
             exit 0
           fi
           git commit -m "OSM City: cache Hürth v0 source + fixture evidence [osm-city-cache]"
+          git pull --rebase origin osm-city/huerth-v0-2026-09-18
           git push origin HEAD:osm-city/huerth-v0-2026-09-18
