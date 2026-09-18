@@ -1,6 +1,6 @@
 {
   "schema": "kfb.chat-registry/0.1",
-  "updated": "2026-09-18",
+  "updated": "2026-09-19",
   "owner": "Georg / KFB",
   "router": "skills/chat/START_HERE.md",
   "livingMasterplan": "skills/chat/LIVING_MASTERPLAN.md",
@@ -13,6 +13,7 @@
     "skills/chat/masterplan/CHATTERBOX_TOURBUS_REUSE_2026-09-14.md"
   ],
   "recoveryPath": "skills/chat/RECOVERY_PATH.md",
+  "freshChatSliceProtocol": "skills/chat/FRESH_CHAT_SLICE_PROTOCOL.md",
   "syncProtocol": "skills/chat/SYNC_PROTOCOL.md",
   "inboxProtocol": "skills/chat/INBOX_PROTOCOL.md",
   "privateInboxTarget": "georg-doc/KFB-Production-Inbox",
@@ -30,6 +31,21 @@
     "EXPERIMENTAL"
   ],
   "entries": [
+    {
+      "id": "fresh-chat-slice-protocol",
+      "kind": "coordination",
+      "status": "CURRENT_REFERENCE",
+      "version": "1.0",
+      "path": "skills/chat/FRESH_CHAT_SLICE_PROTOCOL.md",
+      "loadWhen": [
+        "fresh chat",
+        "cold start",
+        "parallel web slice",
+        "module or POC",
+        "next-day Work review"
+      ],
+      "note": "Bounded autonomous execution and compact review-packet contract. It never grants new implementation ownership or automatic merge authority."
+    },
     {
       "id": "session-design-briefing",
       "kind": "skill",

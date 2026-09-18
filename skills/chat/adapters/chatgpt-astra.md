@@ -8,3 +8,5 @@ Apply after `skills/chat/PRODUCTION_SOP.md`.
 - Keep the implementation SSOT in the named project repository. Publishing mirrors remain mirrors.
 - When code conflicts with the lead plan, STOP with the concrete code evidence rather than inventing a broader architecture.
 - Return compactly: what changed, what was tested, what remains open, exact branch/PR/commit/public URL.
+
+- For fresh chats, standalone modules or POCs, apply `skills/chat/FRESH_CHAT_SLICE_PROTOCOL.md`; finish one bounded slice and leave the standard review packet for the next Work session.

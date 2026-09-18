@@ -10,3 +10,5 @@ Apply after `skills/chat/PRODUCTION_SOP.md`.
 - When working on actor/rig/look, read the current FrankenStein Studio node first.
 - When working on motion/animation, also load `skills/kfb-cartoon-animation_v2.md` unless the registry supersedes it.
 - Return configuration/manifests/measurements that runtime owners can consume. Do not silently duplicate runtime movement, physics or world ownership.
+
+- For a bounded independent web/design slice, apply `skills/chat/FRESH_CHAT_SLICE_PROTOCOL.md`; return the candidate plus additive changelog, exact source state, real checks, visible proof and the next owner gate.
