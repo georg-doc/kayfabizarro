@@ -33,3 +33,23 @@ Additive history. Append; do not rewrite older entries to make the current state
 - built the Eumel browser Rig Lab with source-layer toggles, component atlas, pose export, optional 2.5D pointer parallax and five motion presets;
 - added lab-level WIP / changelog / Return recovery files;
 - status remains IMPLEMENTATION: real-browser QA and Georg/AD acceptance are still pending.
+
+
+## 2026-09-18 · v0.4 · Neutral bind + shared EyeRig
+
+Human browser feedback found two real rig defects and one presentation defect: leg pivots detached during swing, the authored one-leg lean was a poor reusable locomotion bind, and many component-atlas cards rendered blank.
+
+Additive repairs:
+- added measured/PCA-derived neutral bind pose; source pose remains available as QA mode;
+- added explicit hip bones so leg swing stays attached to the body;
+- added optional lower-leg/knee proxy bend without editing source paths;
+- added limb stretch/squash on bone wrappers;
+- added a neutral-based walk clip;
+- introduced renderer-neutral `kfb.eye-rig.protocol/1` based on existing EyeRig v6 public calls;
+- added a 2D EyeRig adapter with the same gaze/blink/emote/kinetics/life control surface;
+- added shared semantic eye clips;
+- fixed component-atlas fitting in root SVG coordinates;
+- reclassified the visible foreground black/white source pair as the source hat/headwear from Georg's browser screenshot;
+- documented the richer Eye/Face Modifier Atlas lane for rings/lids/eyewear without inventing unresolved source assets.
+
+Status remains IMPLEMENTATION; browser retest is required.
