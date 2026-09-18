@@ -1,59 +1,54 @@
 # KFB img2threejs · Arbeitsbereich
 
-**Status:** EXPERIMENTAL · Stand 2026-09-18  
-**Owner:** Georg / KFB  
-**Ablage dieser Arbeit:** `georg-doc/kayfabizarro/tools/img2threejs/`  
-**Aktueller Kandidat:** Kölner Dom v0.2.0 — Geometriekorrektur bei erhaltenem Low-Poly-Stil.  
-**Prüfstand:** 53/53 statische/numerische Dachprüfungen; neuer Browserrender und Georgs Abnahme offen.
+**Stand:** 2026-09-18 · **Owner:** Georg / KFB  
+**Aktueller Return / Living Addendum:** [Landmark Pilot 01 ↔ OSM ↔ Desktop Work Lead](docs/LANDMARK_OSM_RETURN_2026-09-18.md)
 
-Dieser Ordner führt die Arbeit aus dem Webchat additiv weiter. Er ist kein Fork und keine Installation des externen Projekts `img2threejs/img2threejs`. Der bisherige Dom wurde im Chat von Hand als prozeduraler Three.js-Code aufgebaut, **nicht** mit der img2threejs-Pipeline erzeugt.
+## Aktuell
+
+**Dom v0.2: GEORG VISUAL ACCEPTANCE für die cartoonige Stil-/Formrichtung.** Die noch fehlende architektonische Detailtreue, Meterkalibrierung und OSM-Integration sind davon ausgenommen. Die akzeptierte HTML-Datei bleibt unverändert.
+
+**Landmark Pilot 01: IMPLEMENTATION + NUMERICAL / GLB TESTED RESULT.** Eiffelturm, Gizeh-Pyramiden und schematisches Stonehenge; gemeinsamer Metermaßstab, bis zu sechs Materialzonen, vorhandene OSM-City-Palette, Farbwahl, gleiche Maßstabsreihe, GLB-Export. Neue Modelle noch nicht von Georg abgenommen; kein neuer Browser-/City-/Travel-PASS.
 
 ## Öffnen
 
-- [Browser-Einstieg](index.html) — bei Auslieferung über einen statischen Webhost.
-- [Dom · v0.2 · HTML-Quelltext](prototypes/koelner-dom/v0.2/index.html) — aktueller Kandidat. In GitHub über **Download raw file** herunterladen, dann im Browser öffnen. Internetzugriff auf `unpkg.com` wird benötigt.
-- [Dom · v0.1 · vorheriger Viewer](prototypes/koelner-dom/v0.1/index.html) — unveränderte Vergleichsfassung; Dachfehler durch Georgs Screenshot gemeldet.
-- [Unverändertes Chat-Original](archive/2026-09-18/koelner_dom_lowpoly_threejs.html) — ARCHIVED HISTORY; enthält einen bekannten Importfehler.
-- [Living Doc / Entscheidungen / nächste Schritte](docs/LIVING_IMG2THREEJS.md).
-- [Additives Changelog](CHANGELOG.md).
-- [Aktueller v0.2-Prüfbericht](evidence/2026-09-18-v0.2/TEST_REPORT.md) und [Dachprüfungen](evidence/2026-09-18-v0.2/geometry-checks.json).
-- [Historischer v0.1-Prüfbericht](evidence/2026-09-18/TEST_REPORT.md) und [damalige Quellprüfungen](evidence/2026-09-18/static-checks.json).
+- [Browser-Einstieg mit allen erhaltenen Fassungen](index.html) — über einen statischen Webhost.
+- [Landmark Pilot 01](landmarks/pilot-01/index.html) — aktueller Showroom-Kandidat; Quelle und acht kleine Module im selben Ordner.
+- [Akzeptierte Dom-Stilprobe v0.2](prototypes/koelner-dom/v0.2/index.html) — unveränderte Einzeldatei.
+- [Vorherige Dom-Fassung v0.1](prototypes/koelner-dom/v0.1/index.html) — bekannte Dachfehler, Vergleichshistorie.
+- [Unverändertes Chat-Original](archive/2026-09-18/koelner_dom_lowpoly_threejs.html) — ARCHIVED HISTORY; bekannter Importfehler.
 
-**GitHub zeigt HTML als Quelltext, nicht als laufenden 3D-Viewer.** Ein öffentliches Deployment ist mit dieser Ablage noch nicht bestätigt. Für die heruntergeladene Einzeldatei ist kein eigener Build-Schritt vorgesehen. Georgs Screenshot belegt einen sichtbaren vorherigen Viewer, aber keine korrekte Geometrie; der neue v0.2-Browserstart bleibt unabhängig davon zu prüfen.
+GitHub zeigt HTML als Quelltext, nicht als laufenden Viewer. Öffentliches Deployment ist nicht bestätigt. Der modulare Pilot wird über einen statischen Host geöffnet. Im Chat wurde zusätzlich ein abgeleiteter Einzeldatei-Download bereitgestellt. Beide benötigen Zugriff auf die gepinnten Three.js-CDN-Module; der Pilot verwendet 0.160.0 wie City Lab, Dom v0.2 behält 0.161.0.
 
-## Aktueller Umfang
+## Dokumentation / Recovery
 
-v0.2 ersetzt die liegenden Dachpyramiden durch geschlossene Dachprismen und ein verbundenes Kreuzdach. Strebewerk, Auflagen kleiner Spitzen, Grundplatte und einige Außenflächen sind korrigiert. Hauptturm-Dimensionen, einfache Materialien und Beleuchtung bleiben erhalten. Bedienelemente liegen außerhalb der 3D-Fläche.
+1. [`skills/chat/START_HERE.md`](../../skills/chat/START_HERE.md), Registry und relevante SOP-/Sync-Regeln aktuell lesen.
+2. [Aktuellen Return](docs/LANDMARK_OSM_RETURN_2026-09-18.md) lesen; danach [additives Changelog](CHANGELOG.md), insbesondere Ereignis 05.
+3. Für Herkunft und frühere Entscheidungen: [Living Doc](docs/LIVING_IMG2THREEJS.md). Frühere Status-Snapshots dort werden durch die datierten Addenda ergänzt, nicht rückwirkend in Erfolge umgeschrieben.
+4. [Neue Messwerte / Hashes / GLB-Reimports](evidence/2026-09-18-landmark-pilot/summary.json), [Dom-v0.2-Prüfbericht](evidence/2026-09-18-v0.2/TEST_REPORT.md) und [v0.1-Historie](evidence/2026-09-18/TEST_REPORT.md) getrennt lesen.
+5. Nächster sichtbarer Schritt: neue drei Modelle im echten Browser ansehen, Farben und GLB-Reimport prüfen. Für das erste echte OSM-Override anschließend den Dom separat an verifizierten Footprint/Höhe/Ausrichtung kalibrieren. Kein künstliches Einsetzen außerhalb des realen Kartenausschnitts.
 
-Das ist eine Reparatur des einfachen Modells, keine hochauflösende Neumodellierung. Die zehn Dächer benötigen zusammen 86 Dreiecke. Die vollständige Quellrechnung des Modellbudgets und sämtliche Prüfgrenzen stehen im aktuellen Bericht.
-
-## Ordner
+## Reproduzierbare Quellen
 
 ```text
-img2threejs/
-  README.md                         Einstieg und Recovery
-  CHANGELOG.md                      additive Historie
-  index.html                        Browser-Einstieg mit getrennten Versionen
-  docs/LIVING_IMG2THREEJS.md         Herkunft, Entscheidungen, offene Punkte
-  prototypes/koelner-dom/v0.2/       aktueller Geometriekandidat
-  prototypes/koelner-dom/v0.1/       unveränderte Vergleichsfassung
-  archive/2026-09-18/                unverändertes Chat-Original
-  tests/check_roofs_v02.mjs          aktuelle numerische Dachprüfungen
-  tests/check_static.py             historische v0.1-Quellprüfungen
-  evidence/2026-09-18-v0.2/          neue Testergebnisse und Grenzen
-  evidence/2026-09-18/               frühere Testergebnisse unverändert
+landmarks/pilot-01/
+  geometry.mjs          benannte prozedurale Bauteile, Meter, sechs Zonen
+  presentation.mjs      Adapter auf bestehende City-Palette
+  three-adapter.mjs     Modellfabrik mit THREE-Instanz des Hosts
+  glb.mjs               Export derselben Geometrie; kein Viewer-Boden
+  osm-bridge.mjs        Platzierungsvorschau/Guards, kein Consumer-Mount
+  viewer.mjs            Showroom, Farbzonen, Maßstabsvergleich
+  index.html            Browser-Einstieg
+  sources.json          Referenzmaße versus Modellannahmen
 ```
 
-## Recovery für den nächsten Chat
+Für ausführende Agenten, nicht als Terminalaufgabe für Georg: `node tests/check_landmarks_p01.mjs` erzeugt vollständige Checkliste und drei GLBs aus der Repo-Quelle; `python tests/build_landmark_standalone.py <output.html>` erzeugt den portablen Viewer mit markiertem Buildzeit-Palettensnapshot. Die kanonische Palette bleibt bei City Lab. Der neu hinzugefügte Python-Roundtrip-Test kann die GLBs unabhängig prüfen.
 
-1. Zuerst [`skills/chat/START_HERE.md`](../../skills/chat/START_HERE.md), Registry und relevante SOP-/Sync-Regeln aktuell lesen.
-2. Danach dieses README, Living Doc, letzte Changelog-Einträge und aktuellen Prüfbericht lesen.
-3. GitHub-Stand vor Änderungen prüfen. Original und v0.1 nicht korrigieren; sie bleiben Vergleichsbelege.
-4. Nächster konkreter Schritt: v0.2 im Browser prüfen — Front, Seite, Rückseite, freie Drehung; Dachanschlüsse, aufliegende Spitzen und freie Sicht auf das Modell beurteilen.
-5. Änderungen und Belege additiv dokumentieren. `IMPLEMENTATION`, `TESTED RESULT` und Georgs visuelle Abnahme nicht gleichsetzen. Numerische Prüfung für einen ausführenden Agenten: im Arbeitsordner `node tests/check_roofs_v02.mjs`; keine Terminalaufgabe für Georg.
+**Prüfgrenze:** 111 Geometrie-/Export-/Guard-Checks bestanden; GLBs separat wieder eingelesen; CPU-Vorschauen aus echten Vertices erzeugt. Der Browseraufruf dieser Umgebung blieb vor Seiteneinstieg blockiert. Keine behauptete WebGL-/Mobile-/Consumer-Abnahme.
 
-## Grenzen und Zuständigkeiten
+## Herkunft / Zuständigkeiten
 
-Vorhandene GitHub-Assets zuerst wiederverwenden. Dieser experimentelle Authoring-Bereich ersetzt weder Asset Librarian noch ToolBox, World oder Race. Eine spätere Übernahme in die ToolBox ist **PROPOSAL**, kein integriertes Ergebnis. Die Race-Implementierungs-SSOT bleibt `georg-doc/KFB-Stunt-Car-Race`.
+Dieser Ordner ist kein Fork und keine Installation von `img2threejs/img2threejs`. Die Modelle sind handgeschriebener prozeduraler Code, kein Forge-Ergebnis und keine kopierten Sketchfab-Meshes.
 
-Dropbox wurde am 2026-09-18 bei der Erstablage mit dem exakten Suchbegriff `img2threejs` geprüft: keine Treffer. Es wurden dort keine Dateien verändert oder neue Parallelablagen angelegt. Für v0.2 wurde keine neue Dropbox-Prüfung oder Synchronisierung behauptet.
+City Lab besitzt Geodaten, lokale Meterprojektion, Stadtstyle und den bestehenden Landmark-Override-Vertrag. Registry/Librarian besitzt Assetidentität. Travel/Free Roam besitzt Bewegung, Terrainkontakt und Persistenz; Race-Implementierungs-SSOT bleibt `georg-doc/KFB-Stunt-Car-Race`.
+
+Keine Änderung an City-Lab-Styles/Manifest, zentraler Registry, fremden Runtime-Ownern oder Deployment-Konfiguration. Dropbox-Konzeptinput wurde gelesen, nicht synchronisiert oder zur Implementierungswahrheit erklärt. Pentagon/Kreml/Dom-Detailtreue bleiben weitere angeforderte Beispiele; Verwitterung/Decals/Papier/Stoff bleiben nachgeordnet.
