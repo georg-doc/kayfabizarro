@@ -8,7 +8,7 @@ function esc(s=''){return String(s).replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt
 function coveragePct(r){return Math.min(100,Math.round((r.currentAssets.length/Math.max(1,r.targetAssets))*100))}
 function metricClass(n){return n===0?'none':n<2?'mid':'good'}
 function assetCard(a){
- const visual=a.src?'<img loading="lazy" src="'+esc(a.src)+'" alt="'+esc(a.id)+'">':'<div class="asset-symbol">'+(a.type==='recipe'?'◫':a.type==='procedural'?'○':'●')+'</div>';
+ const visual=a.src?'<img loading="lazy" src="'+esc(a.src)+'" alt="'+esc(a.id)+'" data-img-fallback>':'<div class="asset-symbol">'+(a.type==='recipe'?'◫':a.type==='procedural'?'○':'●')+'</div>';
  return '<div class="asset-card"><div class="thumb">'+visual+'<div class="asset-status">'+esc(a.status||'CURRENT')+'</div></div><div class="asset-id">'+esc(a.id)+'</div></div>';
 }
 function missingCard(i){return '<div class="missing-card"><div class="thumb"><div class="asset-symbol">＋</div></div><div class="asset-id">fehlend '+(i+1)+'</div></div>'}
