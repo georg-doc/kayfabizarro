@@ -53,12 +53,13 @@
     ]
   },
   "gates": {
-    "staticSanity": "PENDING",
+    "staticSanity": "PASS",
     "cloudflareRoute": "PENDING",
     "twoDPlayback": "PENDING",
     "threeDLoad": "PENDING",
     "sameSequenceObserved": "PENDING",
     "eyeFrameMarkersObserved": "PENDING",
-    "georgAcceptance": "PENDING"
+    "georgAcceptance": "PENDING",
+    "staticSanityEvidence": "qa/STATIC_SANITY_2026-09-18.md"
   }
 }
