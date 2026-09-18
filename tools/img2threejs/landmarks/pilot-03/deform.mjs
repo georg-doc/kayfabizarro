@@ -38,12 +38,12 @@ function courses(asset){
   return g;
 }
 function steps(asset){
-  const a=assembly('giza-voxel','Giza · Voxel Steps','Square slab steps derived from the existing Giza course bounds.');
+  const a=assembly('giza','Giza · Voxel Steps','Square slab steps derived from the existing Giza course bounds.');
   for(const list of courses(asset).values())for(const c of list)a.box(c.part.name,c.part.zone,c.b.center,c.b.size);
   const out=a.finish();out.shapeMode='voxel-steps';out.sourceAsset='giza';return out;
 }
 function boxel(asset){
-  const a=assembly('giza-boxel','Giza · Boxel Blocks','Macro-block study derived from the existing Giza course count and bounds.');
+  const a=assembly('giza','Giza · Boxel Blocks','Macro-block study derived from the existing Giza course count and bounds.');
   for(const list of courses(asset).values()){
     const n0=list.length;
     for(const c of list){
