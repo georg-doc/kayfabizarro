@@ -6,15 +6,18 @@
       "id": "fr-s04-02",
       "published": true,
       "title": "Slice 04 · Corrected controls, stable reverse & wide Travel terrain",
-      "status": "Source-browser PASS · public-host verification running · human feel review open",
+      "status": "PUBLIC BROWSER PASS · human feel review open",
       "path": "./versions/fr-s04-02/",
       "summary": "Corrected A/D and orbit direction, hysteretic reverse without neutral chatter, stronger low-speed handling, no circular fence and a much wider baked-Travel test region for boost, curves and hops. Same Slice-04/Rapier owner and same original kart.",
-      "evidence": "Race run 35365197941 PASS: 9 drive-intent tests plus 33 Chromium/WebGL assertions; 652 baked contact triangles, 113 dry support samples, radius-48 play area / radius-56 recovery envelope, continuous 180-tick curve without stuck/outside recovery. Public-host proof is separate.",
+      "evidence": "Race source: 9 drive-intent tests + 33 Chromium/WebGL assertions PASS. Actual KFB Cloudflare: 62/62 delivery/byte/navigation/handling checks PASS in run 35367513758 attempt 2. Human feel and physical-device acceptance remain separate.",
       "sourceRepository": "georg-doc/KFB-Stunt-Car-Race",
       "sourceCommit": "a7a48a8c6e1589a18134aa619e2be22d79124c32",
       "sourceMerge": "63cb97d5e321700e55f7658104b42c9c09d97d70",
       "sourceRun": 35365197941,
-      "humanAcceptance": "PENDING"
+      "humanAcceptance": "PENDING",
+      "publicRun": 35367513758,
+      "publicArtifact": 10556454159,
+      "publicChecksPassed": 62
     },
     {
       "id": "fr-s04-01",
