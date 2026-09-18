@@ -1,0 +1,49 @@
+{
+  "classification": "SOURCE_DERIVED_GEOMETRY_COUNTEREXAMPLES_NOT_BROWSER_QA",
+  "reviewDate": "2026-09-18",
+  "repo": "georg-doc/KFB-Stunt-Car-Race",
+  "commit": "616c151b3b82c06e1e87694e3b83400746fb843b",
+  "recipeBlob": "e08c223c213d262b5649c566263207a54400db61",
+  "rendererBlob": "f2cdde89af5734d906f0f221e9039d3fe9bb53dd",
+  "inputs": "Relevant numbers manually transcribed from connector-read pinned source; no model or runtime edited.",
+  "pillars": [
+    {
+      "id": "support--6",
+      "positionXZ": [-6.0, 0.0],
+      "lowerSegmentIndex": 14,
+      "nearestSegmentParameter": 0.7352941176470589,
+      "distanceToCenterline": 1.4552137502179978,
+      "lowerHalfWidth": 3.75,
+      "maxPillarRadius": 0.9,
+      "pillarInsideLowerRoadFootprint": true
+    },
+    {
+      "id": "support-6",
+      "positionXZ": [6.0, 0.0],
+      "lowerSegmentIndex": 14,
+      "nearestSegmentParameter": 0.2647058823529412,
+      "distanceToCenterline": 1.4552137502179978,
+      "lowerHalfWidth": 3.75,
+      "maxPillarRadius": 0.9,
+      "pillarInsideLowerRoadFootprint": true
+    }
+  ],
+  "serviceBuilding": {
+    "aabbMin": [-15, 0, -9],
+    "aabbMax": [15, 5, -1],
+    "lowerRoadCenterPointInside": [-8, 0, -2],
+    "pointOnLowerSegment": true
+  },
+  "centralVerticalClearance": {
+    "upperCenterY": 5,
+    "upperThickness": 0.46,
+    "lowerCenterY": 0,
+    "lowerThickness": 0.34,
+    "upperUndersideY": 4.77,
+    "lowerTopY": 0.17,
+    "actualGapAtCenter": 4.6,
+    "declaredCenterlineSeparation": 5,
+    "note": "Geometric gap at central crossing only, not a whole-route drive or vehicle-clearance test."
+  },
+  "verdict": "Existing audit PASS does not establish clear lower passage. Repair in Race-owned candidate before topology acceptance or driving integration; preserve BOX1 v0.8."
+}
