@@ -69,3 +69,25 @@ Live-Abfragen der drei Cloudflare-Zielseiten in dieser Review-Umgebung fehlgesch
 ### OPEN / READINESS
 
 Briefing: **READY WITH SCOPED CHANGES**, Präzisierungen in r2 konsolidiert. Ausführung: **NOT STARTED**. A1 ohne Originalquelle SOURCE BLOCKED; Pilot nach bestehendem Ground-/Atlas-Gate; Facility-Drive erst nach technischen Reparaturen und menschlichem Topologie-Gate. Ein aktiver Work-Executor beginnt mit echtem Capability-/Quellenpreflight, nicht mit neuen Quellenrekonstruktionen oder einem weiteren Gesamtplan.
+
+---
+
+## 2026-09-18 · r2.1 · WSA/Web-Lead · ChatGPT-Site + KFB Cloudflare
+
+### DECISION BY GEORG
+
+Auslieferung als echte ChatGPT-Site UND Cloudflare über den vorhandenen KFB-/Hub-Weg, nicht über githack. Derselbe GitHub-Quellstand, getrennte echte Nachweise beider Zielumgebungen. Fehlendes Site-/Deploy-Werkzeug als BLOCKED ausweisen; keine Download-/iframe-Attrappe und kein Ersatzhost. Historische githack-Nachweise bleiben erhalten, sind keine aktuelle Lieferempfehlung.
+
+### CONCURRENT SOURCE PRESERVED
+
+Während der Vorbereitung traf World-Review PR #54 / Merge `0ce76d66c12beea294cf9024ad65b57eb4c1141b` ein. Vor dem Schreiben erneut gelesen. Der World-konsolidierte EXECUTION_BRIEF r2, WORLD_REVIEW, r1-Archiv und World-Geometriebelege bleiben unverändert. Kein Zurücksetzen auf den früheren REVIEW PENDING-Entwurf. START_HERE r2.1 bindet den engeren DELIVERY_CONTRACT und den aktiven World-Brief zusammen. Vorgänger von START_HERE/WORKSPACE_RECOVERY unter archive/pre-delivery-r2 byte-identisch erhalten; Source-Snapshot r1 bleibt historisch.
+
+### TESTED RESULT · ACTUAL KFB CLOUDFLARE
+
+Bestehenden BOX1-Prüflauf einmal wiederholt, kein neuer Workflow: `kayfabizarro/35297175922`, neuer Job `105467708547`, **29/29 PASS** auf `https://kayfabizarro.pages.dev/kfb-hub/stunt-race/track-environment-lab/`. Tatsächlich ausgelieferte Quelle: `1d88a887fc6ff4a1fc907afe5dbdef154181b221`. Prüfung umfasst Source-Marker/Bytes, Fahrzeugwahl/Wagon, Countdown, Tastaturfahrt/Drift, Van-Metronome-/Next-Track-Playback und simulierte mobile Touch-Eingaben. Keine Page-/Console-/HTTP-Fehler. Kein physischer Gerätetest und keine automatische Georg-Abnahme.
+
+Artefakt `10529969236`, erstellt 2026-09-18T03:16:14Z, SHA-256 `26f69e7b7d5d2105ecb8780d5c46f0c4e25e6cdefd75e19a76c07e3cff6c4687`; results.json SHA-256 `ee713f56b52c2ed3498c299ffe158860789d79041a52b4945b918152cb5e795a`. Originalbericht lokal gelesen, Desktop-Box-Stop-Screenshot angesehen. Der erste Fehlversuch desselben Runs bleibt historische Evidenz und wurde nicht umgedeutet.
+
+### OPEN / DELIVERY BOUNDARY
+
+Native ChatGPT-Site in dieser Web-Session nicht erstellt: kein entsprechendes Publish-Werkzeug verfügbar; Connector-Verzeichnissuche liefert keinen nativen Site-Weg. Kein Drittanbieter-Generator installiert. Diese Zielauslieferung bleibt offen und ist im tatsächlichen Work-/Sites-Kontext zu erfüllen. Erfolgreiche BOX1-Cloudflare-Prüfung ist kein fertiger Integration-01-Gesamtstand. Keine Runtime-/Assetänderung durch diese Dokumentationskorrektur; keine neue Astra-Ausführung.

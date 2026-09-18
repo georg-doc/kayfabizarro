@@ -1,7 +1,6 @@
 # Lokaler Workspace, Git und Wiederaufnahme · Integration 01
 
 **Status:** AUFTRAGSREGELN FÜR DIESEN LAUF · kein bereits eingerichteter Workspace, kein Ersatz von SYNC_PROTOCOL.
-**r2-Auslieferung:** [DELIVERY_CONTRACT.md](DELIVERY_CONTRACT.md) — ChatGPT-Site UND Cloudflare über KFB; kein fremder CDN-Preview als Ersatz.
 
 ## 1 · Zentraler Arbeitsordner
 
@@ -31,11 +30,10 @@ Astra prüft in seiner wirklichen Session, nicht anhand dieses Chats:
 - autorisierten Schreib-/Pushweg auf aufgabenbezogenem Branch; privates Repo lesbar bedeutet nicht automatisch Merge-/Deployment-Rechte;
 - Abhängigkeitsinstallation, Netzwerk zu konkret benötigten GitHub-Assets/Sidecars und Paketquellen;
 - lokalen HTTP-Start mit korrektem Base-Path/MIME, Browser/WebGL, Audio-Nutzergeste und Screenshot-/Capture-Weg;
-- echtes ChatGPT-Site-Erstellen/Aktualisieren/Öffnen in der Zielumgebung, nicht nur das Speichern einer HTML-Datei;
-- vorhandene KFB-Cloudflare-Publish-Konfiguration und reale Deployment-Berechtigung, ohne Secrets auszugeben;
+- vorhandene Publish-Konfiguration und reale Deployment-Berechtigung, ohne Secrets auszugeben;
 - Lebensdauer des lokalen Volumes: bestätigt persistent oder UNVERIFIED/EPHEMERAL.
 
-Bei fehlendem Site-/Browser-/Netzwerk-/Git-Schreibzugriff nicht Vollintegration behaupten. Konkretes fehlendes Recht im Work-Chat anfordern, soweit die Umgebung das vorsieht. Ein Berechtigungsfehler dieser Umgebung ist kein Gameplayfehler. Lokale Dateien schützen nicht gegen den Verlust des Volumes; nur hochgeladene/committete Quellen und reproduzierbare Abhängigkeiten bilden den dauerhaften Checkpoint. Fehlende Publikationswerkzeuge nicht durch einen anderen Host ersetzen.
+Bei fehlendem Browser-/Netzwerk-/Git-Schreibzugriff nicht Vollintegration behaupten. Konkretes fehlendes Recht im Work-Chat anfordern, soweit die Umgebung das vorsieht. Ein Berechtigungsfehler dieser Umgebung ist kein Gameplayfehler. Lokale Dateien schützen nicht gegen den Verlust des Volumes; nur hochgeladene/committete Quellen und reproduzierbare Abhängigkeiten bilden den dauerhaften Checkpoint.
 
 ## 3 · Quellen lokal erhalten, nicht neu erfinden
 
@@ -61,7 +59,7 @@ Astra erzeugt erst beim tatsächlichen Lauf, mit echten Werten:
 
 - `INTEGRATION_LOCK.json`: pro bestehender Registry-/Lane-ID Owner-Repo, Source-Pfad, Source-/Contract-Revision, aktiver Branch/Commit, benötigte Assetpins, Test-/Deploynachweise. Keine geheimen URLs/Tokens, kein Ersatz für Registry-Einträge.
 - `RUN_STATE.md`: nächste konkrete Aktion, aktive Aufgabe/Dateien, letzter gepushter Checkpoint je Repo, lokaler Dirty-/Unpushed-Status, offene Blocker, benötigte menschliche Entscheidung. Kurz halten, etwa ein bis zwei Bildschirmseiten.
-- `RETURN.md`: tatsächlicher Produktablauf, Status pro Lane, Belege beider Lieferziele nach DELIVERY_CONTRACT, Unterschiede zwischen lokal/CI/public/human, Grenzen und Rollback.
+- `RETURN.md`: tatsächlicher Produktablauf, Status pro Lane, Nachweise, getestete URLs, Unterschiede zwischen lokal/CI/public/human, Grenzen und Rollback.
 - additive Einträge in `CHANGELOG.md`; detaillierte Testergebnisse in den betreffenden Projekt-Returns verlinken statt vervielfachen.
 
 Die Namen sind vorgeschlagene Ausgaben dieses Auftrags, heute nicht mit behaupteten Laufwerten vorbefüllt. Bevor eine neue Projektstatus-Datei erzeugt wird, vorhandene WIP-/Manifest-/Return-Struktur prüfen; ein Link reicht, wenn die Information dort bereits lebt.
@@ -80,14 +78,12 @@ Nach einem brauchbaren Integrationsstand einen zweiten sauberen Arbeitsordner/Pr
 
 Dieser Test beweist Rekonstruierbarkeit. Er verspricht weder unbegrenzten Modellkontext noch dauerhafte Chat-/Container-Prozesse. Verwaiste Server-/Audio-/Inputinstanzen beim Wiederanlauf sauber identifizieren und nur eigene Prozesse beenden.
 
-## 8 · Veröffentlichung / Hub · r2
-
-Verbindlich sind eine echte **ChatGPT-Site** und **Cloudflare über den vorhandenen KFB-Pfad**, entsprechend DELIVERY_CONTRACT. Keine neue Drittanbieter-Startadresse. Historische githack-Nachweise bleiben Geschichte und keine aktuelle Lieferempfehlung.
+## 8 · Veröffentlichung / Hub
 
 Öffentlich nur ausdrücklich für Veröffentlichung vorgesehene App-Dateien und kuratierte Metadaten. Private Repo-Checkouts, interne Voll-Handoffs, lokale Rechnerpfade, Tokens, signierte Download-URLs, Credentials, vollständige Logs mit sensitiven Daten und private Inbox-Pakete sind keine Site-Assets.
 
 Der vorhandene Hub bleibt Einstieg. Sein öffentlicher Status wird aus referenzierten Owner-Ständen beziehungsweise einer kleinen freigegebenen Release-Projektion erzeugt/aktualisiert. Nicht zwei manuell auseinanderlaufende Wahrheiten pflegen. Ein Load-OK ist nicht DATA-INTEGRATED; eine veröffentlichte Seite kann noch eine ältere Revision ausliefern.
 
-Prüfen: lokale Tests → CI sofern verfügbar → tatsächlicher ChatGPT-Site-/Cloudflare-Deploy-Identifier → Zielumgebung und Source-Marker → realer Browserablauf. Beide Ziele erhalten einen getrennten Nachweis und dieselbe Source-Revision beziehungsweise dokumentierte Packaging-Deltas. Scheitert Cloudflare, den bestehenden KFB-Deployweg reparieren und den Fehler benennen; kein Ersatzhost. Fehlt das native Site-Werkzeug, die ChatGPT-Auslieferung als BLOCKED melden statt einen Download als Site auszugeben. LocalStorage ist Origin-gebunden: Export/Import oder ausdrückliche Migrationsentscheidung vor URL-Wechsel, nie `localStorage.clear()` als Reparatur.
+Prüfen: lokale Tests → CI sofern verfügbar → Build-/Deploy-ID → tatsächliche URL und Source-Marker → realer Browserablauf. Scheitert Cloudflare, letzten funktionierenden Link erhalten und Fehler benennen. Ein zusätzlicher gepinnter Preview ist als Preview zu kennzeichnen; nicht zur neuen SSOT machen. LocalStorage ist Origin-gebunden: Export/Import oder ausdrückliche Migrationsentscheidung vor URL-Wechsel, nie `localStorage.clear()` als Reparatur.
 
 Kein noch nicht eingerichteter Daueragent/Watcher und keine neue Cloud-Infrastruktur durch diesen Auftrag. Regelmäßige Wiederaufnahme funktioniert über Git-Zustand; zukünftige automatische Läufe bedürfen eines eigenen real eingerichteten Triggers.
