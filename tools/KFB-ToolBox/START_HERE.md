@@ -40,3 +40,16 @@ Nach jedem sinnvollen Arbeitsschritt den aktuellen Return und CHANGELOG sichern.
 ## Nachtrag 15.09.2026 · A/B-Wiedereinstieg aus dem Authoring-Workspace
 
 [WS0-Korrekturen und konkreter Startweg](../../skills/chat/masterplan/TOOLBOX_UX_TOWN_BIRTHDAY_2026-09-15.md), Abschnitt 1, qualifizieren den historischen Paketbefund oben. Der bisherige Design-Workspace meldet unter anderem einen gebauten Recherchi und Animation Lab v3; das ist noch kein vollständig übergebener und hier abgenommener ToolBox-Stand. Erst A sichern und unabhängig starten, danach B als einen gemeinsamen UI-Piloten auf denselben Modulen bauen. Der frische Design-Chat arbeitet dafür vorzugsweise im vorhandenen Quellenprojekt; die ToolBox bleibt Empfänger für Integration und Veröffentlichung. Keine Parallelreparatur oder Rückkehr zu widerlegten CSS3D-/Messbank-Annahmen. Die Town-Geburtstags- und Kinoideen aus dem Addendum erweitern diesen Auftrag nicht.
+
+
+## CURRENT ADDITIVE ALIGNMENT · 2D Animation Studio
+
+For cross-render eye/face work also read:
+
+`docs/2D_ANIMATION_STUDIO_BRIDGE.md`
+
+and
+
+`_handover/2D_ANIMATION_STUDIO_ALIGNMENT_2026-09-18/START_HERE.md`
+
+This alignment is additive to Stage-First. It does not replace the current Stage-First intake/promotion override, does not redesign ToolBox, and does not promote the older Animation Lab node.
