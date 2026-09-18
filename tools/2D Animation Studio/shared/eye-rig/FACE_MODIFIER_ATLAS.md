@@ -45,3 +45,12 @@ A modifier becomes reusable only after:
 - occlusion order documented;
 - eyeFrame placement tested;
 - browser evidence recorded.
+
+
+## Current implementation scaffold
+
+- `modifier-atlas/MODIFIER_MANIFEST.v0.1.json`
+- `modifier-atlas/index.html`
+- `modifier-atlas/README.md`
+
+Current source-resolved entries are deliberately small: Eumel eye bases, pupils, hat/headwear and forehead mirror. The richer DocCheck rings/lids/eyewear set remains `AWAITING_NATIVE_SOURCE_INVENTORY`.

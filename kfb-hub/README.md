@@ -116,3 +116,17 @@ First lab:
 `tools/2D Animation Studio/labs/eumel-rig-lab/`
 
 The current Eumel implementation uses source-exact visible vectors extracted from the DocCheck AD Illustrator/PDF-compatible source. Browser QA and Georg/AD visual acceptance remain pending; the Hub does not promote those gates.
+
+
+#### Cross-render Eye Proof
+
+Candidate:
+`https://kayfabizarro.pages.dev/tools/2D%20Animation%20Studio/proofs/cross-render-eye-v1/`
+
+Source:
+`tools/2D Animation Studio/proofs/cross-render-eye-v1/`
+
+Purpose: same semantic EyeRig sequence on source-exact Eumel 2D and the existing Rig_Medium / EyeRig-v6 ToolBox Graft actor. Static sanity PASS; browser visual proof pending.
+
+Modifier Atlas:
+`tools/2D Animation Studio/shared/eye-rig/modifier-atlas/`

@@ -12,7 +12,7 @@
     "measuredEumelReconstruction": "PROVISIONAL_DONOR",
     "doccheckAdIllustratorSource": "PINNED_AND_PDF_VECTOR_AUDITED"
   },
-  "nextGate": "Browser retest after neutral-bind/bone/EyeRig/atlas fix: verify anchored legs, normalized neutral walk base, component atlas visibility and shared eye controls.",
+  "nextGate": "Browser QA of cross-render Eye Proof: both renderers load, exact sequence visibly matches semantics, eyeFrame markers work, then begin native DocCheck modifier-source inventory.",
   "evidence": {
     "studioBootstrap": "IMPLEMENTATION",
     "sourceIntake": "IMPLEMENTATION",
@@ -25,7 +25,7 @@
     "sharedEyeRigProtocol": "IMPLEMENTATION",
     "componentAtlasFix": "IMPLEMENTATION_STATIC_SANITY_PENDING",
     "toolboxIntegration": "IMPLEMENTATION",
-    "crossRenderEyeProof": "PENDING_AFTER_ONE_TOOLBOX_MEDIUM_APPROVAL"
+    "crossRenderEyeProof": "IMPLEMENTATION_STATIC_PASS_BROWSER_PENDING"
   },
   "sourceAudit": {
     "gitBlobSha": "436143b019f0034c6d2d9183154cf613ff8c701e",
@@ -60,5 +60,26 @@
     "sharedProtocol": "shared/eye-rig/eye-rig-protocol.v1.json",
     "bridgeManifest": "shared/eye-rig/toolbox-bridge.v1.json",
     "ownerRule": "2D owns source-exact cutout assets/adapters; ToolBox owns 3D EyeRig/FaceHost/FrankenStein."
+  },
+  "crossRenderProof": {
+    "path": "proofs/cross-render-eye-v1/",
+    "publicCandidate": "https://kayfabizarro.pages.dev/tools/2D%20Animation%20Studio/proofs/cross-render-eye-v1/",
+    "twoD": "doccheck-eumel-2d",
+    "threeD": "frizzlebob-driver-graft / Rig_Medium / EyeRig v6",
+    "sequence": [
+      "neutral",
+      "blink",
+      "look_left",
+      "look_right",
+      "surprised",
+      "thinking",
+      "neutral"
+    ],
+    "staticSanity": "PASS",
+    "browserQA": "PENDING"
+  },
+  "modifierAtlas": {
+    "path": "shared/eye-rig/modifier-atlas/",
+    "status": "PREPARED_SOURCE_INVENTORY_INCOMPLETE"
   }
 }
