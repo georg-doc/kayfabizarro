@@ -1,6 +1,6 @@
 # KFB OSM City Lab
 
-Status: **MULTI-SLICE S0 TESTED · S1b CLEAN/CARTOON BROWSER PASS · S2 EXPORT CONTRACT TESTED**
+Status: **MULTI-SLICE S0 TESTED · S1c CLEAN/CARTOON/GROTESQUE + SIGNS + FOREST BROWSER PASS · S2 EXPORT CONTRACT TESTED**
 
 Browser entry: `tools/osm-city-lab/index.html`
 
@@ -9,21 +9,27 @@ Current datasets:
 - `ehrenfeld-v0` — dense urban pilot
 - `huerth-v0` — suburban / road↔terrain pilot
 
-Viewer selection:
+Viewer examples:
 
 ```text
 index.html?city=ehrenfeld-v0&look=clean
 index.html?city=ehrenfeld-v0&look=cartoon
-index.html?city=huerth-v0&look=clean
-index.html?city=huerth-v0&look=cartoon
+index.html?city=ehrenfeld-v0&look=grotesque
+index.html?city=ehrenfeld-v0&look=cartoon&labels=1
+index.html?city=huerth-v0&look=cartoon&nature=1
 ```
 
-S1b keeps one geometry source but exposes two presentation modes:
+S1c keeps one normalized OSM source but exposes independent presentation modes/layers:
 
 - **Clean Massing** — direct footprint extrusion, flat extrusion cap, no separate roof geometry;
-- **Cartoon Massing** — the same source footprint/height with conservative deterministic lean/bend/taper/twist plus sparse irregular window material-codes.
+- **Cartoon Massing** — stronger but controlled deterministic lean/bend/taper/twist plus sparse irregular window material-codes;
+- **Grotesque Massing** — exaggerated stacked/cubist building deformation plus wide-angle composition, still presentation-only;
+- **Street Signs** — actual preserved OSM `name=*` rendered on small 3D signposts with building-clearance checks;
+- **Forest POC** — exact GitHub KayKit Forest/Nature trees scattered deterministically only on mapped green landuse.
 
-The cartoon presentation does **not** modify the S2 road/building collision export.
+Road presentation now uses continuous strips plus shared-OSM-node junction patches, and non-driveable pale paths sit below driveable asphalt to avoid coplanar flicker.
+
+None of these presentation layers modifies the S2 road/building collision export.
 
 ## Current tested S0 results
 
@@ -92,7 +98,7 @@ City Lab owns geodata normalization, city geometry, styling and export only.
 
 **S0 TESTED RESULT:** Ehrenfeld + Hürth source/cache/normalization gates are green.
 
-**S1b TESTED RESULT:** shared Clean/Cartoon Massing viewer boots in Chromium/WebGL for both cities. Separate roof caps are removed, road centerlines render as continuous joined strips instead of per-segment quads, and the four clean/cartoon cases passed without page/console errors. Georg live visual/zoom acceptance remains pending.
+**S1c TESTED RESULT:** Clean/Cartoon/Grotesque, OSM street-sign and KayKit Forest/Nature presentation cases boot in Chromium/WebGL. Ehrenfeld produces 183 driveable-road junction patches / 168 lower path meshes / 27 safe OSM-name signs; Hürth produces 104 / 48 / 19 plus a 72-tree KayKit green-landuse POC. Separate roof caps remain removed and S2 geometry remains undeformed. Georg live moving/zoom/art-direction acceptance remains pending.
 
 **S2 IMPLEMENTATION:** consumer exports exist. The actual Walk/Drive receiver loops have not yet been run on these OSM scenes.
 
@@ -102,4 +108,4 @@ City Lab owns geodata normalization, city geometry, styling and export only.
 
 Map data © OpenStreetMap contributors, ODbL 1.0. Exact bbox, query, endpoint, OSM base timestamp and SHA-256 live in each dataset’s `PROVENANCE.json`.
 
-See `START_HERE.md`, `docs/CARTOON_MASSING.md`, the remaining `docs/`, and `evidence/`.
+See `START_HERE.md`, `docs/CARTOON_MASSING.md`, `docs/PRESENTATION_S1C.md`, `docs/LANDMARK_OVERRIDES.md`, `docs/CORRIDOR_EHRENFELD_HUERTH.md`, the remaining `docs/`, and `evidence/`.

@@ -1,16 +1,13 @@
-// KFB OSM City · conservative cartoon massing helpers.
+// KFB OSM City · deterministic cartoon massing helpers.
 //
-// Lineage:
-// - Dropbox / KFB VoxelWorld / KFB Cartoon-Verbieger (2026-07-26)
-// - GitHub donor-bank/kfb-cartoon-deform.js
+// Donor grammar: KFB Cartoon-Verbieger.
+// City adaptation:
+// - normalized per building, never arbitrary metre noise;
+// - ground anchored, stronger towards the top;
+// - stable OSM-identity seed;
+// - optional ring staggering for a controlled cubist/grotesque silhouette.
 //
-// We reuse three proven rules only:
-// 1) object-normalized deformation,
-// 2) ground-anchored change (stronger toward the top),
-// 3) deterministic per-OSM-identity variation.
-//
-// This is deliberately milder than the old prop deformer. City source footprints and
-// S2 collision/export geometry stay untouched; this module is S1 presentation only.
+// S1 presentation only. S2 collision/export geometry is never deformed.
 
 export function stableHash(value){
   let h=2166136261;
@@ -32,20 +29,31 @@ export function mulberry32(seed){
 }
 
 export function cityCartoonParams(id,cfg={},seedRoot='kfb-city'){
-  const r=mulberry32(stableHash(seedRoot+':'+id));
+  const seed=stableHash(seedRoot+':'+id);
+  const r=mulberry32(seed);
   const sym=()=>r()*2-1;
   const bend=Number(cfg.bend??0.018);
   const lean=Number(cfg.lean??0.024);
   const taper=Number(cfg.taper??0.055);
   const twistDeg=Number(cfg.twistDeg??1.8);
+  const stackSteps=Math.max(0,Math.floor(Number(cfg.stackSteps??0)));
+  const stackShift=Math.max(0,Number(cfg.stackShift??0));
+  const stackOffsets=[{x:0,z:0}];
+
+  for(let i=1;i<=stackSteps;i++){
+    const strength=stackShift*(.4+.6*i/Math.max(1,stackSteps));
+    stackOffsets.push({x:sym()*strength,z:sym()*strength});
+  }
+
   return {
     bendX:sym()*bend,
     bendZ:sym()*bend,
     leanX:sym()*lean,
     leanZ:sym()*lean,
-    taper:(0.35+r()*0.65)*taper,
+    taper:(.35+r()*.65)*taper,
     twist:sym()*twistDeg*Math.PI/180,
-    seed:stableHash(seedRoot+':'+id)
+    stackOffsets,
+    seed
   };
 }
 
@@ -59,19 +67,29 @@ function boundsLike(bb){
   };
 }
 
+function stackOffsetAt(t,p,bounds){
+  const offsets=p.stackOffsets||[];
+  if(offsets.length<=1)return {x:0,z:0};
+  const index=Math.min(offsets.length-1,Math.max(0,Math.round(t*(offsets.length-1))));
+  const o=offsets[index]||offsets[0];
+  return {x:o.x*bounds.h,z:o.z*bounds.h};
+}
+
 export function deformPoint(point,bounds,p){
   const t=Math.max(0,Math.min(1,(point.y-bounds.minY)/bounds.h));
   let rx=point.x-bounds.cx;
   let rz=point.z-bounds.cz;
-  const s=Math.max(.72,1-p.taper*t);
-  rx*=s; rz*=s;
+  const s=Math.max(.68,1-p.taper*t);
+  rx*=s;
+  rz*=s;
   const a=p.twist*t,ca=Math.cos(a),sa=Math.sin(a);
   const tx=rx*ca-rz*sa;
   const tz=rx*sa+rz*ca;
+  const stack=stackOffsetAt(t,p,bounds);
   return {
-    x:bounds.cx+tx+(p.bendX*t*t+p.leanX*t)*bounds.h,
+    x:bounds.cx+tx+(p.bendX*t*t+p.leanX*t)*bounds.h+stack.x,
     y:point.y,
-    z:bounds.cz+tz+(p.bendZ*t*t+p.leanZ*t)*bounds.h
+    z:bounds.cz+tz+(p.bendZ*t*t+p.leanZ*t)*bounds.h+stack.z
   };
 }
 
@@ -116,6 +134,7 @@ export function windowCodesForBuilding(building,deform,cfg={},seedRoot='kfb-city
   const maxPerFacade=Math.max(1,Math.floor(cfg.maxPerFacade??3));
   const r=mulberry32(stableHash(seedRoot+':windows:'+building.id));
   const edges=[];
+
   for(let i=0;i<poly.length;i++){
     const a=poly[i],b=poly[(i+1)%poly.length],dx=b.x-a.x,dz=b.z-a.z;
     const len=Math.hypot(dx,dz);
@@ -125,12 +144,12 @@ export function windowCodesForBuilding(building,deform,cfg={},seedRoot='kfb-city
     if(nx*(mx-center.x)+nz*(mz-center.z)<0){nx=-nx;nz=-nz;}
     edges.push({i,a,b,dx,dz,len,nx,nz,rank:len*(.92+r()*.16)});
   }
+
   edges.sort((a,b)=>b.rank-a.rank);
   const out=[];
   for(const edge of edges.slice(0,maxFacades)){
     const count=Math.max(1,Math.min(maxPerFacade,Math.floor(edge.len/7.5)));
     for(let j=0;j<count;j++){
-      // Deliberately not aligned to floors or a grid: these are material/readability codes.
       const u=.16+r()*.68;
       const v=.24+r()*.56;
       const width=Math.min(edge.len*.22,.75+r()*1.05);

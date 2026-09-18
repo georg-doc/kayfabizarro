@@ -6,6 +6,7 @@
     "road": "#3b3a46",
     "roadEdge": "#5a5868",
     "sidewalk": "#c9b7a5",
+    "path": "#d9c8aa",
     "green": "#5f8f5b",
     "greenDark": "#3e6944",
     "water": "#4c8ca6",
@@ -14,23 +15,45 @@
     "buildingIndustrial": ["#6f7180","#81705f","#596b70"],
     "roof": ["#5c4650","#6a5f5b","#4a5360"],
     "accent": ["#d6a936","#72a6a1","#b85f76"],
-    "window": ["#31414a","#61767a","#d2aa4a"]
+    "window": ["#31414a","#61767a","#d2aa4a"],
+    "streetSign": {
+      "board": "#255a72",
+      "text": "#f7efe0",
+      "pole": "#504a48"
+    }
   },
   "layers": {
-    "groundY": -0.12,
-    "landuseY": -0.075,
-    "waterAreaY": -0.065,
-    "sidewalkY": 0.012,
-    "roadY": 0.065,
-    "waterLineY": 0.04
+    "groundY": -0.16,
+    "landuseY": -0.11,
+    "waterAreaY": -0.095,
+    "sidewalkY": -0.005,
+    "pathY": 0.03,
+    "roadY": 0.095,
+    "junctionPatchLift": 0.004,
+    "waterLineY": 0.045
   },
   "cartoonMassing": {
     "defaultMode": "cartoon",
-    "verticalSteps": 4,
-    "bend": 0.018,
-    "lean": 0.024,
-    "taper": 0.055,
-    "twistDeg": 1.8,
+    "presets": {
+      "cartoon": {
+        "verticalSteps": 5,
+        "bend": 0.026,
+        "lean": 0.032,
+        "taper": 0.075,
+        "twistDeg": 3.2,
+        "stackSteps": 3,
+        "stackShift": 0.008
+      },
+      "grotesque": {
+        "verticalSteps": 8,
+        "bend": 0.105,
+        "lean": 0.09,
+        "taper": 0.22,
+        "twistDeg": 11,
+        "stackSteps": 7,
+        "stackShift": 0.065
+      }
+    },
     "windows": {
       "enabled": true,
       "minBuildingHeightM": 5,
@@ -39,12 +62,33 @@
       "maxPerFacade": 3
     }
   },
+  "streetSigns": {
+    "maxSigns": 28,
+    "minRoadLengthM": 16,
+    "poleHeightM": 2.15,
+    "boardHeightM": 0.52,
+    "sideOffsetM": 1.25
+  },
+  "naturePoc": {
+    "maxTrees": 72,
+    "minGreenAreaM2": 120,
+    "roadClearanceM": 3.2,
+    "buildingClearanceM": 1.8,
+    "treeScaleMin": 0.82,
+    "treeScaleMax": 1.35,
+    "assets": [
+      "/media/3D_Assets/KayKit_Forest_Nature_Pack_1.0_FREE/Assets/gltf/Tree_1_A_Color1.gltf",
+      "/media/3D_Assets/KayKit_Forest_Nature_Pack_1.0_FREE/Assets/gltf/Tree_2_A_Color1.gltf",
+      "/media/3D_Assets/KayKit_Forest_Nature_Pack_1.0_FREE/Assets/gltf/Tree_3_A_Color1.gltf"
+    ]
+  },
   "rules": {
     "noPhotoTextures": true,
     "deterministicByOsmIdentity": true,
     "buildingFallbackFloorHeightM": 3.1,
     "sidewalkDefaultWidthM": 2.1,
     "separateRoofCaps": false,
-    "physicsGeometryRemainsUndeformed": true
+    "physicsGeometryRemainsUndeformed": true,
+    "cityLabOwnsNoMovementEngine": true
   }
 }
