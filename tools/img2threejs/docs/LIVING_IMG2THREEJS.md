@@ -3,6 +3,8 @@
 Stand: 2026-09-18 · Status: **EXPERIMENTAL**  
 Einstieg / Recovery: [README](../README.md) · Historie: [CHANGELOG](../CHANGELOG.md)
 
+> **CURRENT UPDATE:** Für die Fortsetzung zuerst §8 lesen: Georgs sichtbarer Fehlerbefund und v0.2-Geometriekandidat. Die früheren v0.1-Prüfaussagen und der damalige nächste Schritt bleiben unten als historische Arbeitsstände erhalten.
+
 ## 1. Auftrag und Abgrenzung
 
 **DECISION — Georg, 2026-09-18:** Unter `georg-doc/kayfabizarro/tools/img2threejs/` einen Arbeitsordner mit passenden Unterordnern anlegen und die bisherige Chat-Arbeit mit additivem Changelog weiterführen. Kontext und Arbeitsregeln kommen aus `skills/chat/`.
@@ -94,3 +96,23 @@ Gelesen am 2026-09-18; Blob-IDs dokumentieren die konkreten Textstände, nicht e
 Bei Wiederaufnahme frisch lesen, nicht diese Liste als Current-Behauptung übernehmen. Shared SOPs werden verlinkt, nicht hier dupliziert. Änderungen bleiben in diesem Arbeitsbereich; zentrale Router-, Hub-, Deployment- und Consumer-Dateien wurden nicht verändert.
 
 Neue Einträge unterscheiden `PROPOSAL`, `DECISION`, `IMPLEMENTATION`, `TESTED RESULT`, `DEFERRED`, `UNRESOLVED` und `ARCHIVED HISTORY`. Frühere Einträge nicht umschreiben, um spätere Ergebnisse vorwegzunehmen.
+
+## 8. Zulauf 2026-09-18 · Dachfehler sichtbar / v0.2 als aktueller Kandidat
+
+**USER EVIDENCE:** Georgs Screenshot zeigt den vorherigen Viewer mit tatsächlich sichtbarem Modell, aber stark fehlerhaften Dachpyramiden. Damit gibt es einen Benutzer-Renderbeleg für den alten Stand, keinen korrekten Geometrie-PASS. Bildherkunft und Prüfsumme sind im [neuen Bericht](../evidence/2026-09-18-v0.2/TEST_REPORT.md) dokumentiert.
+
+**USER DIRECTION / DECISION:** Die einfache Low-Poly-Richtung erhalten und die Grundgeometrie reparieren. Georg hält sie nach Reparatur für möglicherweise passend für KFB. Keine Umdeutung in eine finale Stil-/Consumer-Abnahme und kein Auftrag zur hochauflösenden Neumodellierung.
+
+**IMPLEMENTATION — v0.2.0:** [Separates HTML](../prototypes/koelner-dom/v0.2/index.html). Seitlich gedrehte Kegel als Dächer entfernt; geschlossene Sattel-/Pultdachprismen und ein eigenes geschlossenes Kreuzdach eingeführt. Angrenzende Dächer haben identische Anschlussquerschnitte. Wandhöhen, Choranschluss, Fundament, Auflagen kleiner Spitzen und Strebewerk korrigiert. Hauptturm-Dimensionen, achtseitige Hauptspitzen, Materialien und Beleuchtung bleiben erhalten. Bedienfeld außerhalb der 3D-Fläche; Front-/Seiten-/Rückansicht ergänzt.
+
+Quell-Commit: `3df61d811e2bbb51af80ff8cb38d3a79b627ffe4`; Git-Blob `c0a3fd9d01b137f7819b3c90e5247a88686599aa`; SHA-256 `122960a8870f79c6c78d8b87fe01aedc73c2b469e4306e1900936528bf25c5c6`. GitHub-Readback stimmt mit dem lokal geprüften und als Download bereitgestellten HTML überein.
+
+**TESTED RESULT — statisch/numerisch:** 53/53 Prüfungen an den echten Dach-Datenfunktionen sowie der Modulsyntax bestanden. Zehn Dächer mit zusammen 86 Dreiecken. Geschlossene konsistent orientierte Einzelkörper; vier korrekte Anschlussquerschnitte; keine numerisch entarteten Dreiecke in diesen Dachkörpern. Keine Aussage über ein global verschweißtes Gebäudemesh. [Maschinelles Ergebnis](../evidence/2026-09-18-v0.2/geometry-checks.json).
+
+**SOURCE INVENTORY:** Schon das ursprüngliche Modell war polygonarm. Die im neuen Bericht hergeleitete Quellrechnung ergibt 1499 Indexdreiecke für v0.1 und 1142 für v0.2, jeweils ohne Boden/Platz/Kontextwürfel. Das sind keine Browser-Performance-Messungen.
+
+**UNRESOLVED:** Die Browser-Umgebungsprobe wurde vor Seitenaufruf blockiert. Neuer WebGL-Render, Interaktion, mobile Darstellung und Georgs Abnahme sind weiterhin offen. Kein behaupteter visueller PASS aufgrund der 53 numerischen Prüfungen.
+
+**CURRENT NEXT — ersetzt den damaligen nächsten Schritt aus §6:** v0.2 öffnen und Front/Seite/Rückseite, freie Drehung, Dachanschlüsse, Spitzenauflagen und Sichtbarkeit trotz Bedienelementen prüfen. Erst danach weitere Detaillierung oder Export entscheiden. Referenzvermessung, GLB, ToolBox-/World-/Race-Integration und öffentliches Deployment bleiben offen.
+
+Original und v0.1 wurden nicht verändert. Nur dieser Arbeitsordner wurde ergänzt. Router und Registry wurden erneut gelesen; `START_HERE.md` lag nun als Blob `1b589b3543873ea1c380c49febdb37c68886b195` vor, die SOP blieb beim oben verzeichneten Blob. Keine neue Dropbox-Ablage, kein Wechsel von Modul-Ownern und kein img2threejs-Forge-Lauf.
