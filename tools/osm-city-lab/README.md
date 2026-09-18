@@ -1,6 +1,6 @@
 # KFB OSM City Lab
 
-Status: **MULTI-SLICE S0 TESTED · SHARED S1 VIEWER IMPLEMENTED · SHARED S2 EXPORT CONTRACT IMPLEMENTED**
+Status: **MULTI-SLICE S0 TESTED · S1b CLEAN/CARTOON BROWSER PASS · S2 EXPORT CONTRACT TESTED**
 
 Browser entry: `tools/osm-city-lab/index.html`
 
@@ -12,9 +12,18 @@ Current datasets:
 Viewer selection:
 
 ```text
-index.html?city=ehrenfeld-v0
-index.html?city=huerth-v0
+index.html?city=ehrenfeld-v0&look=clean
+index.html?city=ehrenfeld-v0&look=cartoon
+index.html?city=huerth-v0&look=clean
+index.html?city=huerth-v0&look=cartoon
 ```
+
+S1b keeps one geometry source but exposes two presentation modes:
+
+- **Clean Massing** — direct footprint extrusion, flat extrusion cap, no separate roof geometry;
+- **Cartoon Massing** — the same source footprint/height with conservative deterministic lean/bend/taper/twist plus sparse irregular window material-codes.
+
+The cartoon presentation does **not** modify the S2 road/building collision export.
 
 ## Current tested S0 results
 
@@ -83,7 +92,7 @@ City Lab owns geodata normalization, city geometry, styling and export only.
 
 **S0 TESTED RESULT:** Ehrenfeld + Hürth source/cache/normalization gates are green.
 
-**S1 IMPLEMENTATION:** shared low-poly viewer exists. Georg visual acceptance is still pending.
+**S1b TESTED RESULT:** shared Clean/Cartoon Massing viewer boots in Chromium/WebGL for both cities. Separate roof caps are removed, road centerlines render as continuous joined strips instead of per-segment quads, and the four clean/cartoon cases passed without page/console errors. Georg live visual/zoom acceptance remains pending.
 
 **S2 IMPLEMENTATION:** consumer exports exist. The actual Walk/Drive receiver loops have not yet been run on these OSM scenes.
 
@@ -93,4 +102,4 @@ City Lab owns geodata normalization, city geometry, styling and export only.
 
 Map data © OpenStreetMap contributors, ODbL 1.0. Exact bbox, query, endpoint, OSM base timestamp and SHA-256 live in each dataset’s `PROVENANCE.json`.
 
-See `START_HERE.md`, `docs/`, and `evidence/`.
+See `START_HERE.md`, `docs/CARTOON_MASSING.md`, the remaining `docs/`, and `evidence/`.

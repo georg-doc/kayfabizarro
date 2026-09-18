@@ -1,0 +1,42 @@
+name: OSM City S1b massing proof
+
+on:
+  push:
+    branches:
+      - osm-city/cartoon-massing-s1b-2026-09-18
+      - main
+    paths:
+      - 'tools/osm-city-lab/index.html'
+      - 'tools/osm-city-lab/src/viewer/**'
+      - 'tools/osm-city-lab/src/style/**'
+      - 'tools/osm-city-lab/styles/**'
+      - 'tools/osm-city-lab/qa/massing-local.mjs'
+      - '.github/workflows/osm-city-massing.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  browser:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout: |
+            tools/osm-city-lab
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: |
+          npm install --no-save playwright@1.51.1
+          npx playwright install --with-deps chromium
+      - name: Verify clean/cartoon massing in both OSM slices
+        run: node tools/osm-city-lab/qa/massing-local.mjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: osm-city-massing-proof
+          path: osm-city-massing-evidence
+          retention-days: 30

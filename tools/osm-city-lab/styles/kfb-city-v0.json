@@ -13,12 +13,38 @@
     "buildingPale": ["#dccfb8","#c7d2c3","#d7c7ad"],
     "buildingIndustrial": ["#6f7180","#81705f","#596b70"],
     "roof": ["#5c4650","#6a5f5b","#4a5360"],
-    "accent": ["#d6a936","#72a6a1","#b85f76"]
+    "accent": ["#d6a936","#72a6a1","#b85f76"],
+    "window": ["#31414a","#61767a","#d2aa4a"]
+  },
+  "layers": {
+    "groundY": -0.12,
+    "landuseY": -0.075,
+    "waterAreaY": -0.065,
+    "sidewalkY": 0.012,
+    "roadY": 0.065,
+    "waterLineY": 0.04
+  },
+  "cartoonMassing": {
+    "defaultMode": "cartoon",
+    "verticalSteps": 4,
+    "bend": 0.018,
+    "lean": 0.024,
+    "taper": 0.055,
+    "twistDeg": 1.8,
+    "windows": {
+      "enabled": true,
+      "minBuildingHeightM": 5,
+      "minFacadeM": 4.5,
+      "facadesPerBuilding": 2,
+      "maxPerFacade": 3
+    }
   },
   "rules": {
     "noPhotoTextures": true,
     "deterministicByOsmIdentity": true,
     "buildingFallbackFloorHeightM": 3.1,
-    "sidewalkDefaultWidthM": 2.1
+    "sidewalkDefaultWidthM": 2.1,
+    "separateRoofCaps": false,
+    "physicsGeometryRemainsUndeformed": true
   }
 }

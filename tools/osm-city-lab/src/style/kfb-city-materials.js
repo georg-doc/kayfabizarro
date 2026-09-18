@@ -2,7 +2,7 @@ export function materialPalette(style) {
   const p=style.palette;
   return {
     road:p.road, roadEdge:p.roadEdge, sidewalk:p.sidewalk, green:p.green, water:p.water,
-    roof:p.roof, accent:p.accent,
+    roof:p.roof, accent:p.accent, window:p.window || ['#31414a'],
     'building-warm':p.buildingWarm,
     'building-pale':p.buildingPale,
     'building-industrial':p.buildingIndustrial

@@ -1,5 +1,42 @@
 # Changelog · additive
 
+## 2026-09-18 · S1b simplified / cartoon massing
+
+### DECISION
+- Preserve one OSM source geometry and compare two viewer modes: `clean` and `cartoon`.
+- Clean mode is the anatomy baseline: OSM footprint → simple extrusion → flat top cap.
+- Cartoon mode reuses the older KFB Cartoon-Verbieger grammar only in a conservative presentation layer: object-normalized, ground-anchored, deterministic per OSM identity.
+- S2 collision/export geometry remains undeformed.
+
+### IMPLEMENTATION
+- Removed all separate roof boxes/cones from the S1 viewer.
+- Added `src/style/cartoon-city.js` with mild deterministic lean/bend/taper/twist for building massing.
+- Added sparse irregular window material-codes; they are intentionally not floor-aligned facade rows.
+- Replaced per-segment road rectangles with a continuous joined-miter strip per centerline.
+- Increased explicit vertical separation between terrain / landuse / sidewalk / road to reduce depth fighting.
+- Added Clean Massing / Cartoon Massing controls and a first Cartoon View camera preset.
+- Added branch browser/WebGL proof for both cities and both looks.
+
+### TESTED RESULT
+- Branch browser/WebGL run `35385560694`, job `105731534856`: **PASS**.
+- Four cases passed: Ehrenfeld clean/cartoon and Hürth clean/cartoon.
+- Expected source counts remained intact: Ehrenfeld 372 roads / 1,808 buildings; Hürth 164 roads / 700 buildings.
+- Clean mode emitted 0 window codes; Cartoon mode emitted 3,367 in Ehrenfeld and 849 in Hürth.
+- All cases reported 0 separate roof meshes, `joined-miter` road strips, explicit road/sidewalk/landuse vertical separation, undeformed S2 geometry, and no page/console errors.
+- Screenshot artifact `osm-city-massing-proof` (artifact `10564070951`) was visually inspected: the former large floating roof caps are absent and the captured road surfaces no longer show the previous bright segment-junction triangles. Live moving/zoom shimmer remains a Georg browser gate rather than an automated visual claim.
+
+### PUBLIC DEPLOYMENT
+- Not claimed by this branch.
+
+### GEORG ACCEPTANCE
+- Pending comparison of road shimmer, city anatomy and cartoon intensity.
+
+### OPEN
+- Tune one shared deformation grammar only after visual review; avoid per-building exceptions.
+- Continue City Drive / Travel integration from the unchanged S2 export, not from presentation-deformed building geometry.
+
+---
+
 ## 2026-09-18 · S2 consumer export hardening
 
 ### TESTED RESULT
