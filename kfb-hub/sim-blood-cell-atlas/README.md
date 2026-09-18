@@ -6,7 +6,7 @@ This surface evolves Frank's compact multi-variant cell matrix into a production
 
 ## What it shows
 
-For every current Reference-Wave entity:
+For every current Reference-Wave 3 entity:
 - entity name / ID
 - entity kind
 - family
@@ -45,7 +45,7 @@ Empty slots stay visible instead of being filled by invented morphology.
 
 ## Current data
 
-`coverage.v0.1.json`
+`coverage.v0.2.json`
 
 Built from:
 - `CELL_TAXONOMY_v0.2.json`
@@ -67,3 +67,14 @@ POC/procedural representations count as “present” for coverage visibility bu
 3. add approved true-cutout thumbnails after extraction
 4. add medical-review state and canonical-anchor marker
 5. keep this same surface usable for production planning and later learner-facing Atlas mode
+
+
+## Reference previews
+
+Direct external previews are now shown where a stable source image URL is available.
+
+Current rule:
+- ASH Image Bank item URLs with a numeric image ID are rendered through ASH's external image endpoint.
+- Generic atlas/category pages (for example broad CellaVision/ICSH pages) remain link cards until an entity-specific preview is mapped.
+- Reference imagery is not copied into this repository by this UI.
+- Broken external images fall back to an explicit "Bild extern" tile instead of disappearing.
