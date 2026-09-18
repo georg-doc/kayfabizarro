@@ -113,16 +113,26 @@ export function streetSignCandidates(roads,cfg={},seedRoot='kfb-city',buildings=
     return {...e,score:e.rep.lengthM*(.9+jitter*.2)};
   }).sort((a,b)=>b.score-a.score).slice(0,maxSigns);
 
-  return ranked.map(e=>{
-    const edgeOffset=Math.max(.35,Number(cfg.sideOffsetM??1.25))+Number(e.road.widthM||5)/2;
+  const minClearance=Math.max(.08,Number(cfg.minBuildingClearanceM??.28));
+  const maxSideOffset=Math.max(.35,Number(cfg.sideOffsetM??1.25));
+  const offsets=[.35,.5,.7,.9,maxSideOffset].filter((v,i,a)=>v<=maxSideOffset+.001&&a.indexOf(v)===i);
+  const placed=[];
+  for(const e of ranked){
     const nx=-e.rep.tangent.z,nz=e.rep.tangent.x;
-    const sides=[-1,1].map(side=>{
-      const p={x:e.rep.x+nx*edgeOffset*side,z:e.rep.z+nz*edgeOffset*side};
-      return {side,p,clearance:buildingDistance(p,preparedBuildings)};
-    }).sort((a,b)=>b.clearance-a.clearance);
-    const chosen=sides[0];
+    const roadHalf=Number(e.road.widthM||5)/2;
+    const options=[];
+    for(const side of [-1,1]){
+      for(const extra of offsets){
+        const edgeOffset=roadHalf+extra;
+        const p={x:e.rep.x+nx*edgeOffset*side,z:e.rep.z+nz*edgeOffset*side};
+        options.push({side,extra,p,clearance:buildingDistance(p,preparedBuildings)});
+      }
+    }
+    options.sort((a,b)=>b.clearance-a.clearance||a.extra-b.extra);
+    const chosen=options.find(o=>!Number.isFinite(o.clearance)||o.clearance>=minClearance);
+    if(!chosen)continue;
     const normal={x:nx*chosen.side,z:nz*chosen.side};
-    return {
+    placed.push({
       name:e.name,
       sourceRoadId:e.road.id,
       x:chosen.p.x,
@@ -131,10 +141,12 @@ export function streetSignCandidates(roads,cfg={},seedRoot='kfb-city',buildings=
       roadZ:e.rep.z,
       tangent:e.rep.tangent,
       normal,
+      sideOffsetFromRoadEdgeM:chosen.extra,
       buildingClearanceM:Number.isFinite(chosen.clearance)?+chosen.clearance.toFixed(3):null,
       lengthM:e.rep.lengthM
-    };
-  });
+    });
+  }
+  return placed;
 }
 
 function makeTexture(THREE,name,colors){
