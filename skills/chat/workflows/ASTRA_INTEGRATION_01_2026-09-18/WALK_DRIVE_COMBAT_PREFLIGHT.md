@@ -118,6 +118,28 @@ Optional later content donors are:
 
 Neither donor is required for the first city geometry or Walk/Drive proof.
 
+## 6.2 · Reconstructible experience / journey-memory backlog
+
+The bounded Game Development Studio packaging lane now also documents a later **reconstructible experience** layer:
+
+`skills/chat/workflows/OSM_CITY_SLICE_2026-09-18/GAME_DEV_STUDIO_ASSET_PACKAGING_LIVING.md`
+
+This is **BACKLOG / ARCHITECTURE**, not a new active implementation requirement for the current Walk↔Drive preparation.
+
+Relevant future seam:
+
+```text
+real gameplay state
+→ Camera/HeroShot or TransitionRecipe
+→ lean MomentReceipt
+→ JourneyEntry / travel diary
+→ later reconstruction from pinned refs + seeds + minimal state
+```
+
+It may later cover portal/warp/black-hole/dungeon entry, loading-cover camera moves, CCTV-style milestone captures, card-acquisition context and hero shots. Recipes consume authoritative Travel/Drive/Animation/Audio/VFX/Card facts; they do not replace those owners.
+
+Exact historical replay requires pinned consumer/build + source/data + deterministic state evidence. Newer-runtime recreation is semantic reconstruction unless equivalence is demonstrated.
+
 ## 7 · Begrenzter Vorbereitungsauftrag / Exit-Kriterium
 
 Ein eigener Chat heißt **KFB Free Roam · Walk ↔ Drive ↔ Combat · Preparation**. Er koordiniert, besitzt aber kein neues Repo/Framework.
