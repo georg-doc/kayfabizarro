@@ -63,5 +63,26 @@
     "Dungeon 1.0 is legacy source and does not replace current Dungeon 1.1.",
     "Resident Atlas may consume these as candidate assets; animation/rig compatibility remains consumer-owned.",
     "GitHub paths are source truth; no duplicate Atlas asset store."
-  ]
+  ],
+  "residentAtlasCandidateNotes": [
+    "Skeletons 1.0 contributes 37 GLTF/GLB model files (characters + props).",
+    "Spooktober 1.1 contributes 48 GLTF/GLB model files including Jack and Witch characters plus habitat/prop pieces.",
+    "Orc Warband legacy contributes 6 GLTF/GLB model files; alternate DAE/FBX/OBJ representations remain provenance, not automatic preferred browser representations.",
+    "Character Animations 1.2 legacy contributes historical animation sources; animation compatibility remains Movement/Animation Lab owned.",
+    "Dungeon 1.0 contributes 202 GLTF/GLB model files and remains a legacy source alongside current Dungeon 1.1; it does not replace the current pack."
+  ],
+  "librarianUpdate": {
+    "requested": true,
+    "expectedBehavior": "Asset Registry indexes exact GitHub paths; Librarian exposes them as candidate assets without implying Resident Atlas fit or animation compatibility.",
+    "preferredBrowserFormats": [
+      "glb",
+      "gltf"
+    ],
+    "duplicateRepresentationRule": "Prefer one primary browser representation while preserving alternate source formats in provenance."
+  },
+  "audit": {
+    "dungeonUnpackCommit": "afe719020e7f6c365cc970898bec2b4eb8bf58cd",
+    "oneShotWorkflowRemovedAt": "1408125ba679f39049f3b3f40cad02bc87e56351",
+    "zipPreserved": true
+  }
 }
