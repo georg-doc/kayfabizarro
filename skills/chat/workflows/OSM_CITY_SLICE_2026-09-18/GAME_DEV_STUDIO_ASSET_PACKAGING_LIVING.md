@@ -669,3 +669,24 @@ The current webchat environment does not expose the Game Development Studio loca
 **PUBLIC DEPLOYMENT:** source target implemented; actual Cloudflare/browser verification remains a separate gate.
 
 **UNCHANGED:** Pilot 01 binary/consumer/human acceptance gates remain open; the preview surface is not acceptance evidence by itself.
+
+
+### 2026-09-18 · A4 · fixed Game Dev Studio URL public PASS
+
+The permanent package/recovery lane is now verified on the real KFB Cloudflare host:
+
+`https://kayfabizarro.pages.dev/kfb-hub/free-roam/game-dev-studio/`
+
+Public proof:
+
+- GitHub Actions run `35368827693`, attempt 2;
+- job `105680028742`;
+- artifact `10557444939`;
+- artifact SHA-256 `cea1a31ec087aaa697deb7c64b00f078c502735056473ee0cdb02deaa56a24ac`;
+- **11/11 public checks PASS**.
+
+Coverage includes deployed catalog, fixed page HTTP, WebGL Studio boot, four Pilot-01 preview controls, Lorekeeper preview, Sedan preview + package-evidence overlay, pinned source revisions, tool route and zero browser errors.
+
+Attempt 1 failed only because the new catalog had not propagated to the Cloudflare host within the first polling window. The unchanged proof passed on rerun; no viewer or asset repair was required.
+
+**Boundary:** public preview PASS is not Sedan/Lorekeeper runtime consumer acceptance and not Georg's visual acceptance.
