@@ -1,5 +1,7 @@
 # KFB Lead · Current Recovery Checkpoint · 18.09.2026
 
+> **Latest webchat checkpoint:** [`WEBCHAT_RECOVERY_2026-09-18_1857.md`](WEBCHAT_RECOVERY_2026-09-18_1857.md). Re-fetch current GitHub state before writing; multiple lanes are active.
+
 ## Current Race delta · audio accepted / Box Stop · 18.09.2026
 
 Georg accepts Audio A1 sonic direction and authorizes integration; full feature-test coverage is unknown. Original A1 source transfer is still required. Do not repeat the completed blanket listening gate.
