@@ -93,6 +93,7 @@ After Pilot 01 gates:
 - TransitionRecipe;
 - MomentReceipt / JourneyEntry;
 - Rule-of-Three SceneKit;
-- dungeon/instance transition proof.
+- dungeon/instance transition proof;
+- **Living Plant / Plant Prop package** from `skills/chat/workflows/PLANT_PROP_LAB_2026-09-18/`: pot+plant recipe, pattern style, prop rig and optional existing EyeRig adapter. **P2 / BACKLOG only; do not displace Pilot 01 consumer gates.**
 
 See `GAME_DEV_STUDIO_ASSET_PACKAGING_LIVING.md`.
