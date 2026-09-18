@@ -1,5 +1,44 @@
 # Changelog · additive
 
+## 2026-09-18 · S1c roads / grotesque skyline / OSM signs / KayKit nature
+
+### DECISION
+- Keep City Lab movement-free; actual WASD / Walk↔Drive remains Travel + Free Roam owned.
+- Split presentation into `clean | cartoon | grotesque` instead of forcing extreme distortion into the playable default.
+- Preserve OSM road/name/landuse truth and treat signs, trees and landmark overrides as presentation consumers.
+
+### IMPLEMENTATION
+- Driveable roads remain continuous joined strips and now receive presentation-only junction patches at shared OSM node IDs.
+- Non-driveable pale paths render below driveable asphalt, removing the remaining path/road coplanar competition at crossings.
+- Added stronger `cartoon` tuning plus an optional `grotesque` preset with deterministic stacked-ring offsets and wide-angle camera composition.
+- Added `STREET SIGNS` from preserved OSM `name=*` tags plus a `SIGN VIEW` camera.
+- Street-sign placement evaluates both road sides and multiple edge offsets against building footprints; roads without safe sign space are skipped.
+- Added `FOREST POC` using exact GitHub KayKit Forest/Nature Tree_1/2/3 assets, deterministically scattered only on mapped green landuse with road/building clearance.
+- Added empty landmark-override manifest/contract for later GitHub low-poly landmarks such as the Cologne Cathedral.
+- Added Work Lead handoff and a source-derived Ehrenfeld↔Hürth corridor discovery lane.
+
+### TESTED RESULT
+- Latest S1c browser/WebGL run `35389507129`, job `105744305683`: **PASS**.
+- Ehrenfeld: 372 source roads / 1,808 buildings / 183 road-junction patches / 168 lower path meshes / 27 safe OSM street-name signs.
+- Hürth: 164 source roads / 700 buildings / 104 road-junction patches / 48 lower path meshes / 19 safe OSM street-name signs.
+- Hürth Forest POC: 72 source-backed KayKit tree instances loaded from the repository.
+- Clean emits 0 window material-codes; Cartoon/Grotesque preserve the deterministic 3,367 Ehrenfeld / 849 Hürth code set.
+- S2 geometry remains undeformed and viewer movement owner reports `none-viewer-only`.
+- No page/console errors in the tested cases.
+- Evidence artifact `10564934919` (`osm-city-s1c-presentation-proof`).
+
+### PUBLIC DEPLOYMENT
+- Not claimed by this branch. Permanent Cloudflare verification remains a separate post-merge gate.
+
+### GEORG ACCEPTANCE
+- S1b direction was positively received; S1c road shimmer/gap repair, stronger Grotesque intensity, sign readability and forest density remain a live browser/art-direction review.
+
+### OPEN
+- Ehrenfeld↔Hürth source route discovery is independent from S1c and currently subject to public Overpass availability.
+- Real Walk/Drive remains the existing Free-Roam/Travel receiver task.
+- Landmark models remain optional overrides; base OSM massing must always work without them.
+
+---
 ## 2026-09-18 · S1b simplified / cartoon massing
 
 ### DECISION
