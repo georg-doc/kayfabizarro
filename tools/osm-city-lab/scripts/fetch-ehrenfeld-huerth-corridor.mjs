@@ -5,14 +5,15 @@ const DATA=new URL('../data/corridors/ehrenfeld-huerth-v0/',import.meta.url);
 const spec=JSON.parse(await fs.readFile(new URL('SOURCE_SPEC.json',DATA),'utf8'));
 const endpoints=['https://overpass-api.de/api/interpreter','https://overpass.kumi.systems/api/interpreter'];
 const B=spec.discoveryBbox;
-const midLat=(B.south+B.north)/2;
 const midLon=(B.west+B.east)/2;
-const chunks=[
-  {id:'NW',south:midLat,west:B.west,north:B.north,east:midLon},
-  {id:'NE',south:midLat,west:midLon,north:B.north,east:B.east},
-  {id:'SW',south:B.south,west:B.west,north:midLat,east:midLon},
-  {id:'SE',south:B.south,west:midLon,north:midLat,east:B.east}
-];
+const latStep=(B.north-B.south)/4;
+const chunks=[];
+for(let row=0;row<4;row++){
+  const south=B.south+latStep*row;
+  const north=row===3?B.north:B.south+latStep*(row+1);
+  chunks.push({id:`R${row+1}W`,south,west:B.west,north,east:midLon});
+  chunks.push({id:`R${row+1}E`,south,west:midLon,north,east:B.east});
+}
 const highway='^(trunk|primary|secondary|tertiary|unclassified|residential|living_street|service)$';
 const q=c=>`[out:json][timeout:40];\n(\n  way["highway"~"${highway}"](${c.south},${c.west},${c.north},${c.east});\n);\nout body;\n>;\nout skel qt;\n`;
 
@@ -75,7 +76,7 @@ await fs.writeFile(new URL('source.overpass.json',DATA),compact+'\n');
 await fs.writeFile(new URL('PROVENANCE.json',DATA),JSON.stringify({
   schema:'kfb.osm-city.corridor-provenance.v0',
   id:spec.id,
-  strategy:'2x2 deterministic Overpass chunks merged by type/id',
+  strategy:'4x2 deterministic Overpass chunks merged by type/id',
   retrievedAt:new Date().toISOString(),
   osmBaseTimestamp:merged.osm3s.timestamp_osm_base,
   sourceSha256:sha256,
