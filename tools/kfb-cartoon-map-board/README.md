@@ -1,6 +1,6 @@
 # KFB Cartoon Map Board
 
-**Status:** P0 IMPLEMENTATION · STATIC SYNTAX CHECK PASSED · BROWSER / PUBLIC DEPLOYMENT NOT YET CLAIMED
+**Status:** P0.2 IMPLEMENTATION · STORY FOCUS ADDED · BROWSER / CLOUDFLARE RESULT NOT YET CLAIMED
 
 Browser entry: `tools/kfb-cartoon-map-board/index.html`
 
@@ -17,7 +17,7 @@ This tool is a **presentation + interaction consumer** for geographic data. It d
 - `media/3D_Assets/KayKit_BoardGameBits_1.0_FREE/` remains the asset source. The P0 loads the actual GitHub GLTFs; it does not rebuild substitute meeples/tokens.
 - KFB CardBuilder / PDF cards are a later consumer layer, not silently bundled into P0.
 
-## P0 implementation
+## P0 / P0.2 implementation
 
 The first vertical slice is a Europe board:
 
@@ -28,6 +28,10 @@ The first vertical slice is a Europe board:
 - Orbit camera presets: HERO, TOP, LOW.
 - Real KayKit Board Game Bits are loaded for Berlin, Paris, Rome, Warsaw and London as content markers.
 - Labels, tokens, ink gain and piece height are interactive.
+- P0.2 adds deterministic paper texture, hover discovery, a selected-country focus ring and smooth camera moves.
+- `FOCUS` frames the selected tile; `NEXT STORY` cycles declarative story anchors from `data/story-demo.v1.json`.
+- KayKit story markers are children of their country tile, so EXPLODE / RECOMBINE cannot detach content from geography.
+- `data/europe-p0/SOURCE_SPEC.json` records the current live OSM-derived source contract.
 - No raster map tiles are used as the country geometry.
 
 ## Data path
@@ -63,7 +67,9 @@ This is **implementation**, not a new canon decision. If the map treatment is ac
 - Drag: orbit
 - Wheel / pinch: zoom
 - Click country: select and lift
-- `HERO`, `TOP`, `LOW`: camera presets
+- `HERO`, `TOP`, `LOW`: smooth camera presets
+- `FOCUS`: frame the selected country
+- `NEXT STORY`: cycle through data-driven KayKit content anchors
 - `EXPLODE`: separate / recombine country pieces
 - `LABELS`: toggle country names
 - `TOKENS`: toggle KayKit markers
@@ -82,10 +88,10 @@ As of 2026-09-18:
 
 ## Next slices
 
-1. **P0.1 visual acceptance:** tune board scale, palette, ink wobble, south-east weight and KayKit marker scale from a real browser screenshot.
+1. **P0.2 browser/visual acceptance:** inspect the deployed board, then tune board scale, palette, ink wobble, south-east weight and KayKit marker scale from screenshots.
 2. **P1 deterministic data:** cache/pin Europe boundary GeoJSON + provenance/checksums instead of depending on the live catalogue at runtime.
 3. **P2 hierarchy:** continent -> country -> region -> city, reusing `osm-city-lab` where detailed street/building geometry begins.
-4. **P3 storytelling layer:** content anchors, animated arcs/routes, focus camera and controlled country explode/recombine choreography.
+4. **P3 story expansion:** route arcs, multi-anchor sequences and timed explode/recombine choreography.
 5. **P4 KFB cards:** instantiate KFB CardBuilder/PDF cards above map anchors, keeping card ink on its own image-plane contract.
 6. **P5 authoring:** save/load scenes with map level, focus area, token/card placement and camera state.
 
