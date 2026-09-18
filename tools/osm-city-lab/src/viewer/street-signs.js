@@ -44,9 +44,58 @@ function representative(road){
   return null;
 }
 
-export function streetSignCandidates(roads,cfg={},seedRoot='kfb-city'){
+function openPoly(poly){
+  const pts=(poly||[]).map(p=>({x:+p.x,z:+p.z})).filter(p=>Number.isFinite(p.x)&&Number.isFinite(p.z));
+  if(pts.length>1&&Math.hypot(pts[0].x-pts.at(-1).x,pts[0].z-pts.at(-1).z)<.001)pts.pop();
+  return pts;
+}
+function polyBounds(poly){
+  const xs=poly.map(p=>p.x),zs=poly.map(p=>p.z);
+  return {minX:Math.min(...xs),maxX:Math.max(...xs),minZ:Math.min(...zs),maxZ:Math.max(...zs)};
+}
+function pointSegDistance(p,a,b){
+  const dx=b.x-a.x,dz=b.z-a.z,l2=dx*dx+dz*dz||1;
+  const t=Math.max(0,Math.min(1,((p.x-a.x)*dx+(p.z-a.z)*dz)/l2));
+  return Math.hypot(p.x-(a.x+dx*t),p.z-(a.z+dz*t));
+}
+function inside(p,poly){
+  let hit=false;
+  for(let i=0,j=poly.length-1;i<poly.length;j=i++){
+    const a=poly[i],b=poly[j];
+    const cross=((a.z>p.z)!==(b.z>p.z))&&(p.x<(b.x-a.x)*(p.z-a.z)/((b.z-a.z)||1e-12)+a.x);
+    if(cross)hit=!hit;
+  }
+  return hit;
+}
+function pointPolyDistance(p,poly){
+  if(inside(p,poly))return 0;
+  let best=Infinity;
+  for(let i=0,j=poly.length-1;i<poly.length;j=i++)best=Math.min(best,pointSegDistance(p,poly[j],poly[i]));
+  return best;
+}
+function prepareBuildings(buildings){
+  return (buildings||[]).map(b=>{
+    const poly=openPoly(b.footprint);
+    return poly.length>=3?{poly,bounds:polyBounds(poly),sourceId:b.id}:null;
+  }).filter(Boolean);
+}
+function buildingDistance(p,prepared){
+  let best=Infinity;
+  for(const b of prepared){
+    const q=b.bounds;
+    const dx=p.x<q.minX?q.minX-p.x:p.x>q.maxX?p.x-q.maxX:0;
+    const dz=p.z<q.minZ?q.minZ-p.z:p.z>q.maxZ?p.z-q.maxZ:0;
+    const boxD=Math.hypot(dx,dz);
+    if(boxD>best)continue;
+    best=Math.min(best,pointPolyDistance(p,b.poly));
+  }
+  return best;
+}
+
+export function streetSignCandidates(roads,cfg={},seedRoot='kfb-city',buildings=[]){
   const maxSigns=Math.max(1,Number(cfg.maxSigns??28));
   const minLength=Number(cfg.minRoadLengthM??16);
+  const preparedBuildings=prepareBuildings(buildings);
   const groups=new Map();
 
   for(const road of roads||[]){
@@ -65,17 +114,24 @@ export function streetSignCandidates(roads,cfg={},seedRoot='kfb-city'){
   }).sort((a,b)=>b.score-a.score).slice(0,maxSigns);
 
   return ranked.map(e=>{
-    const sideOffset=Number(cfg.sideOffsetM??1.25)+Number(e.road.widthM||5)/2;
+    const edgeOffset=Math.max(.35,Number(cfg.sideOffsetM??1.25))+Number(e.road.widthM||5)/2;
     const nx=-e.rep.tangent.z,nz=e.rep.tangent.x;
-    const flip=(stableHash(seedRoot+':sign-side:'+e.name)&1)?1:-1;
+    const sides=[-1,1].map(side=>{
+      const p={x:e.rep.x+nx*edgeOffset*side,z:e.rep.z+nz*edgeOffset*side};
+      return {side,p,clearance:buildingDistance(p,preparedBuildings)};
+    }).sort((a,b)=>b.clearance-a.clearance);
+    const chosen=sides[0];
+    const normal={x:nx*chosen.side,z:nz*chosen.side};
     return {
       name:e.name,
       sourceRoadId:e.road.id,
-      x:e.rep.x+nx*sideOffset*flip,
-      z:e.rep.z+nz*sideOffset*flip,
+      x:chosen.p.x,
+      z:chosen.p.z,
       roadX:e.rep.x,
       roadZ:e.rep.z,
       tangent:e.rep.tangent,
+      normal,
+      buildingClearanceM:Number.isFinite(chosen.clearance)?+chosen.clearance.toFixed(3):null,
       lengthM:e.rep.lengthM
     };
   });
@@ -109,10 +165,10 @@ function makeTexture(THREE,name,colors){
   return texture;
 }
 
-export function createStreetSigns(THREE,roads,cfg={},colors={},seedRoot='kfb-city'){
+export function createStreetSigns(THREE,roads,cfg={},colors={},seedRoot='kfb-city',buildings=[]){
   const root=new THREE.Group();
   root.name='osm-street-signs';
-  const candidates=streetSignCandidates(roads,cfg,seedRoot);
+  const candidates=streetSignCandidates(roads,cfg,seedRoot,buildings);
   const poleHeight=Number(cfg.poleHeightM??2.15);
   const boardHeight=Number(cfg.boardHeightM??.52);
   const poleGeo=new THREE.CylinderGeometry(.035,.05,poleHeight,7);
@@ -125,6 +181,7 @@ export function createStreetSigns(THREE,roads,cfg={},colors={},seedRoot='kfb-cit
     group.userData.streetSign=true;
     group.userData.name=c.name;
     group.userData.sourceRoadId=c.sourceRoadId;
+    group.userData.buildingClearanceM=c.buildingClearanceM;
 
     const pole=new THREE.Mesh(poleGeo,poleMat);
     pole.position.y=poleHeight/2;
