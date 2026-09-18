@@ -12,7 +12,7 @@
     .eyebrow { font-size:12px; letter-spacing:.1em; color:#586d72; }
     h1 { font-size:clamp(30px,6vw,48px); margin:4px 0 12px; line-height:1.15; }
     h2 { margin:0 0 8px; font-size:24px; }
-    article { padding:28px; background:#fff; border:1px solid #c8d4d1; border-radius:14px; }
+    article { padding:28px; background:#fff; border:1px solid #c8d4d1; border-radius:14px; margin-bottom:20px; }
     a { color:#245965; }
     .actions { display:flex; flex-wrap:wrap; gap:12px; margin:24px 0 12px; }
     .button { display:inline-block; padding:10px 16px; border:1px solid #245965; border-radius:7px; text-decoration:none; }
@@ -29,20 +29,31 @@
     <p>Procedural 3D studies, source files and recorded checks. This workspace is not an installed instance of the upstream img2threejs pipeline.</p>
   </header>
   <article>
-    <p class="eyebrow">FIRST STUDY / VIEWER v0.1</p>
+    <p class="eyebrow">CURRENT CANDIDATE / GEOMETRY REPAIR v0.2</p>
     <h2>Cologne Cathedral</h2>
-    <p>A rough low-poly study made from code. The original model is preserved; this candidate adds dependency mapping, view reset, wireframe inspection and startup diagnostics.</p>
+    <p>The same simple low-poly direction, with closed roof prisms, a joined crossing roof, corrected supports and an unobstructed viewport. Original twin-tower dimensions and materials are retained.</p>
     <div class="actions">
-      <a class="button primary" href="prototypes/koelner-dom/v0.1/index.html">Open 3D candidate</a>
-      <a class="button" href="prototypes/koelner-dom/v0.1/index.html" download="koelner_dom_lowpoly_v0_1.html">Download HTML</a>
+      <a class="button primary" href="prototypes/koelner-dom/v0.2/index.html">Open v0.2</a>
+      <a class="button" href="prototypes/koelner-dom/v0.2/index.html" download="koelner_dom_lowpoly_v0_2.html">Download HTML</a>
     </div>
-    <p class="note">Requires JavaScript, WebGL and internet access to the pinned Three.js 0.161.0 modules on unpkg.com. Static checks passed; successful 3D rendering and visual acceptance remain unverified.</p>
+    <p class="note">53 numerical/static checks passed. The ten roof meshes contain 86 triangles in total. A new browser render, interaction checks and human visual acceptance are still pending.</p>
+    <p class="note">Requires JavaScript, WebGL and internet access to Three.js 0.161.0 on unpkg.com.</p>
+  </article>
+  <article>
+    <p class="eyebrow">PREVIOUS STUDY / VIEWER v0.1 / REPORTED ROOF DEFECTS</p>
+    <h2>Preserved comparison version</h2>
+    <p>The original model with dependency mapping, view reset, wireframe inspection and startup diagnostics. A user screenshot confirms visible rendering but exposes malformed roof pyramids. Retained for comparison, not accepted geometry.</p>
+    <div class="actions">
+      <a class="button" href="prototypes/koelner-dom/v0.1/index.html">Open previous v0.1</a>
+      <a class="button" href="prototypes/koelner-dom/v0.1/index.html" download="koelner_dom_lowpoly_v0_1.html">Download previous HTML</a>
+    </div>
     <p class="note"><a href="archive/2026-09-18/koelner_dom_lowpoly_threejs.html" download="koelner_dom_original_archived.html">Archived original</a> — known import issue; retained as history, not the current candidate.</p>
   </article>
   <footer>
     <a href="https://github.com/georg-doc/kayfabizarro/tree/main/tools/img2threejs">Repository / recovery</a> ·
     <a href="https://github.com/georg-doc/kayfabizarro/blob/main/tools/img2threejs/CHANGELOG.md">Changelog</a> ·
-    <a href="https://github.com/georg-doc/kayfabizarro/blob/main/tools/img2threejs/evidence/2026-09-18/TEST_REPORT.md">Test report</a>
+    <a href="https://github.com/georg-doc/kayfabizarro/blob/main/tools/img2threejs/evidence/2026-09-18-v0.2/TEST_REPORT.md">Current test report</a> ·
+    <a href="https://github.com/georg-doc/kayfabizarro/blob/main/tools/img2threejs/evidence/2026-09-18/TEST_REPORT.md">Previous report</a>
   </footer>
 </main>
 </body>
