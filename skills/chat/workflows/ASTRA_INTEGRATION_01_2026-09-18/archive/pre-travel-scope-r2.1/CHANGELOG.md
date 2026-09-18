@@ -91,31 +91,3 @@ Artefakt `10529969236`, erstellt 2026-09-18T03:16:14Z, SHA-256 `26f69e7b7d5d2105
 ### OPEN / DELIVERY BOUNDARY
 
 Native ChatGPT-Site in dieser Web-Session nicht erstellt: kein entsprechendes Publish-Werkzeug verfügbar; Connector-Verzeichnissuche liefert keinen nativen Site-Weg. Kein Drittanbieter-Generator installiert. Diese Zielauslieferung bleibt offen und ist im tatsächlichen Work-/Sites-Kontext zu erfüllen. Erfolgreiche BOX1-Cloudflare-Prüfung ist kein fertiger Integration-01-Gesamtstand. Keine Runtime-/Assetänderung durch diese Dokumentationskorrektur; keine neue Astra-Ausführung.
-
----
-
-## 2026-09-18 · r3 · World/Web-Lead · KFB World / Travel → Walk Kernumfang
-
-### USER CORRECTION / DECISION
-
-Georg verlangt ausdrücklich auch World-/Travel-Slices mit Movement, TinySkies-Terrain und dem KFB Travel→Walk-Umfang. r2 war als aktiver Integrationsauftrag zu stark auf Race/BOX1 und einen Lorekeeper-Prefabimport zugeschnitten. **Korrektur:** A Race/BOX1 und B World/Travel→Walk sind gleichrangige Produktpfade. Ein erfolgreicher NPC-Import oder das Booten zweier Szenen kann B nicht ersetzen.
-
-### SOURCE REVIEW
-
-Travel main weiterhin `33c731c012c573977cccd4f62723b741f0c1e785`. Direkt gelesen: `WSA_START.md`, `MASTERPLAN.md`, `AGENTS.md`, `travel/CONTRACT.md`, `docs/DONOR_MATRIX.md`, WB0 `REUSE_MATRIX.md`, `site/world-builder/runtime-mode.js`, Site-/Travel-Bäume. Sie bestätigen die reale Travel-/TinySkies-Makrowelt, PLAY/BUILD/GOD getrennt von GROUND/FLIGHT/DRIVE(later), vorhandene Modusübergabe und den World-Recipe-Loop. Die kanonische Carpet-Exklusivitätsformulierung und der WB0-Kandidaten-Ownerwechsel bleiben ausdrücklich getrennt.
-
-TinySkies-Referenzpin `2659a5cc987d7e4a4c5aa7e79c86a1626ad75df6` aus vorhandener `kayfabizarro/travel/wip/travel_globe_wsa/docs/reference/SOURCE_PATHS.md`; tatsächlichen Upstream-Baum `client/src/game/` am Pin aufgelöst. Alte Re-home-SSOT-/Lieferpfade dieses historischen Indexes nicht wieder als aktuelle Eigentümer eingesetzt. Kein neuer Transfer sämtlicher TinySkies-Features behauptet.
-
-Aktiver Onboarding-Eingang beim Lesen: kayfabizarro `22884b8cbcd993217abd09550907c920928b6b15`. Der parallel gelieferte r2.1-DELIVERY_CONTRACT und sein späterer echter BOX1-Cloudflare-Nachweis wurden berücksichtigt, nicht durch den früheren fehlgeschlagenen Preview-/Markerstand ersetzt.
-
-### DOCUMENTATION IMPLEMENTATION
-
-Einziger aktiver EXECUTION_BRIEF jetzt r3 mit neuem Pflicht-§0: World-/Terrain-/Water-/Coast-/Sky-/Lightbasis; sichtbarer Flight→Ground→Walk/Run/Jump/LAND→Flight-Loop; BUILD/PLAY/GOD und reproduzierbarer World-/Modus-/Authoringzustand. Vorhandene Karten-/Portal-/Travel-Atmosphäre erhalten; Flight-Präsentation nicht in Ground leaken lassen. Das Ende von §8 verlangt beide Produktpfade statt Erfolg aus einem beliebigen Producer→Consumer-Test. §4 führt Lorekeeper weiter als konkreten Ensemble-Teilnachweis, nicht als gesamte World-Erfahrung.
-
-Bath Flight/Card-Surf/Seat-/DriveActing und weitere Reiseformen bleiben als benannte Donor-/Folgeslices erfasst. Bath ist im aktuellen Travel-Masterplan DEFERRED, wird durch diesen Scopehinweis nicht still aktiviert. Orte/Interaktion/Combat und Innenräume bleiben nach ihren vorhandenen Gates erfasst. Keine neue Physik/Registry, keine TinySkies-Serverübernahme, keine neu erfundene Welt und keine Wiederbelebung von Town-v3/Birthday.
-
-START_HERE r3 und Startprompt entsprechen diesem Umfang. Unmittelbare Vorgänger von START_HERE, EXECUTION_BRIEF und CHANGELOG sind über die ursprünglichen Git-Blobs unter `archive/pre-travel-scope-r2.1/` gesichert. DELIVERY_CONTRACT, WORKSPACE_RECOVERY, WORLD_REVIEW/WR01–WR07, dessen Evidenz und historische Source-Baselines bleiben unverändert. ChatGPT-Site UND KFB-Cloudflare, kein githack, weiterhin verbindlich.
-
-### TESTED RESULT / OPEN
-
-Nur Quellen-/Scopeprüfung und Dokumentänderung, kein neuer Browser-/Movement-/Terrain-/Audio-/Integrationstest. Kein Runtime-, Asset-, Workflow- oder Owner-/Contract-Write; kein Astra-Lauf gestartet. Bestehende menschliche Gates bleiben offen, wo kein konkretes neueres Urteil vorliegt. Nächste Ausführung prüft echte Sessionrechte/aktuelle Quellen und setzt den zusammenhängenden World-/Movement-/Authoringpfad um; kein weiterer Gesamtplan erforderlich.
