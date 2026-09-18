@@ -1,5 +1,5 @@
 {
-  "schema": "kfb.eumel.rig/0.1",
+  "schema": "kfb.eumel.rig/0.2",
   "updated": "2026-09-18",
   "source": {
     "illustrator": "../../_inbox/doccheck-ad-ai-source/sources/_Dr_Vorlage.ai",
@@ -40,8 +40,12 @@
               "rig-pupil-B"
             ]
           },
-          "rig-foreground-black",
-          "rig-foreground-white"
+          {
+            "hat": [
+              "rig-foreground-black",
+              "rig-foreground-white"
+            ]
+          }
         ]
       }
     ]
@@ -92,14 +96,14 @@
       "status": "DERIVED"
     },
     "legA": {
-      "x": 0.5,
-      "y": 0.08,
-      "status": "DERIVED"
+      "x": "targetHip.x",
+      "y": "targetHip.y",
+      "status": "DERIVED_FROM_NEUTRAL_BIND_PCA"
     },
     "legB": {
-      "x": 0.5,
-      "y": 0.08,
-      "status": "DERIVED"
+      "x": "targetHip.x",
+      "y": "targetHip.y",
+      "status": "DERIVED_FROM_NEUTRAL_BIND_PCA"
     },
     "eyes": {
       "x": 0.5,
@@ -130,6 +134,21 @@
       "x": 0.5,
       "y": 0.5,
       "status": "DERIVED"
+    },
+    "kneeA": {
+      "x": "neutral_bind_pose.legA.knee.x",
+      "y": "neutral_bind_pose.legA.knee.y",
+      "status": "DERIVED_OPTIONAL_DEFORMER"
+    },
+    "kneeB": {
+      "x": "neutral_bind_pose.legB.knee.x",
+      "y": "neutral_bind_pose.legB.knee.y",
+      "status": "DERIVED_OPTIONAL_DEFORMER"
+    },
+    "hat": {
+      "x": 0.5,
+      "y": 0.82,
+      "status": "DERIVED_HEADWEAR_FOLLOW"
     }
   },
   "hardConstraints": [
@@ -138,7 +157,9 @@
     "stroke families remain distinct",
     "forehead mirror remains source-flat with no invented gradient",
     "eyes and pupils remain separate source groups",
-    "foreground semantics remain unresolved until visual/native confirmation",
-    "derived pivots are metadata only and never baked into source paths"
-  ]
+    "derived pivots are metadata only and never baked into source paths",
+    "hat/headwear source paths remain unchanged; animation uses wrapper transforms only"
+  ],
+  "neutralBindPose": "../data/neutral_bind_pose.json",
+  "sharedEyeRigProtocol": "../../../shared/eye-rig/eye-rig-protocol.v1.json"
 }
