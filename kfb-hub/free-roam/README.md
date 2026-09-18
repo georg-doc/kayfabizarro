@@ -23,3 +23,20 @@ Noch nicht umgesetzt: Ein-/Aussteigen, Fahrer-/Charakterwechsel in diesem Probeh
 ## Additiver Changelog
 
 2026-09-18 · USER DECISION: fester aktueller/älterer Testeinstieg und Slice-04-Fortsetzung. Navigator mit d7381f87 angelegt; Cloudflare-Check 105633001349 erfolgreich. FR-S04-01 aus getestetem Race-Kandidaten vorbereitet; Public-Mirror und wiederverwendbarer URL-/Byte-/Browsercheck hinzugefügt. Source-Test ist kein Public-/Human-PASS. Public-Resultat im Actions-Artefakt `free-roam-public-proof`; menschliche Abnahme bleibt offen.
+
+
+## OSM City Slices · stable entries
+
+Permanent Cloudflare city navigators:
+
+- Ehrenfeld: `https://kayfabizarro.pages.dev/kfb-hub/free-roam/cities/ehrenfeld/`
+- Hürth: `https://kayfabizarro.pages.dev/kfb-hub/free-roam/cities/huerth/`
+
+Current shared S1 consumers:
+
+- `https://kayfabizarro.pages.dev/tools/osm-city-lab/?city=ehrenfeld-v0`
+- `https://kayfabizarro.pages.dev/tools/osm-city-lab/?city=huerth-v0`
+
+The city entry pages are permanent navigators. They expose tested S0 evidence and city-specific recovery now; they will expose a Drive button only after the existing Travel/Free-Roam receiver has browser evidence on the exact exported city scene. Do not make the navigator a movement owner.
+
+`cities.json` is the publication/status catalog for this lane. It is separate from `releases.json`, which remains the version catalog for immutable Free-Drive runtime candidates.
