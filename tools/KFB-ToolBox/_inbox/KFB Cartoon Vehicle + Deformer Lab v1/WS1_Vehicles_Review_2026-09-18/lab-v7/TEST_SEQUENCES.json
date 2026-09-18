@@ -1,0 +1,66 @@
+{
+  "schema": "kfb.deformer-test-sequences/1",
+  "note": "Deterministische Testsequenzen fuer die Briefing-Knoepfe. Ein Schritt ist [ms, signale] oder [ms, {event}]. Zwischen Stuetzwerten wird linear interpoliert; Events feuern genau einmal. Jede Sequenz endet im Ruhezustand - eine Bewegung ohne definierte Rueckkehr ist im KFB-Motion-Skill keine Bewegung.",
+  "sequences": {
+    "ACCEL": {
+      "label": "ACCEL",
+      "read": "Nase hebt, Heck laedt, Fahrer laggt nach. Gewicht liegt hinten.",
+      "steps": [[0, {"speed": 0.1, "longAccel": 0}], [120, {"longAccel": 0.95, "speed": 0.2}], [700, {"longAccel": 0.5, "speed": 0.75}], [1200, {"longAccel": 0, "speed": 0.8}], [1800, {"speed": 0, "longAccel": 0}]]
+    },
+    "BRAKE": {
+      "label": "BRAKE",
+      "read": "Nase taucht, kurze Vorwaertskompression, ein Rueckschwinger, Stand.",
+      "steps": [[0, {"speed": 0.85, "longAccel": 0}], [100, {"longAccel": -1, "speed": 0.8}], [520, {"longAccel": -0.6, "speed": 0.25}], [900, {"longAccel": 0, "speed": 0}], [1600, {"speed": 0}]]
+    },
+    "LEFT LOAD": {
+      "label": "LEFT LOAD",
+      "read": "Shell legt sich nach aussen, Seitenstauchung, Fahrer kippt gegen.",
+      "steps": [[0, {"speed": 0.7}], [140, {"lateral": -0.9, "speed": 0.65}], [800, {"lateral": -0.75, "speed": 0.6}], [1200, {"lateral": 0, "speed": 0.6}], [1900, {"speed": 0, "lateral": 0}]]
+    },
+    "RIGHT LOAD": {
+      "label": "RIGHT LOAD",
+      "read": "Spiegelbild von LEFT LOAD. Beide muessen gleich stark lesen.",
+      "steps": [[0, {"speed": 0.7}], [140, {"lateral": 0.9, "speed": 0.65}], [800, {"lateral": 0.75, "speed": 0.6}], [1200, {"lateral": 0, "speed": 0.6}], [1900, {"speed": 0, "lateral": 0}]]
+    },
+    "DRIFT LEFT": {
+      "label": "DRIFT LEFT",
+      "read": "Deutlich andere Pose als LEFT LOAD: sichtbarer Yaw, Gegenroll, beim Loslassen lesbares Re-Grip.",
+      "steps": [[0, {"speed": 0.8, "lateral": -0.3}], [180, {"drift": -0.95, "lateral": -0.5, "speed": 0.75}], [900, {"drift": -0.85, "lateral": -0.45, "speed": 0.7}], [1150, {"drift": -0.2, "lateral": -0.15, "speed": 0.75}], [1500, {"drift": 0, "lateral": 0, "speed": 0.7}], [2200, {"speed": 0}]]
+    },
+    "DRIFT RIGHT": {
+      "label": "DRIFT RIGHT",
+      "read": "Spiegelbild. Der Re-Grip-Moment bei 1150 ms ist der eigentliche Beweis.",
+      "steps": [[0, {"speed": 0.8, "lateral": 0.3}], [180, {"drift": 0.95, "lateral": 0.5, "speed": 0.75}], [900, {"drift": 0.85, "lateral": 0.45, "speed": 0.7}], [1150, {"drift": 0.2, "lateral": 0.15, "speed": 0.75}], [1500, {"drift": 0, "lateral": 0, "speed": 0.7}], [2200, {"speed": 0}]]
+    },
+    "RAIL HIT LEFT": {
+      "label": "RAIL HIT LEFT",
+      "read": "squash -> recoil -> kleiner Overshoot -> gedaempft aus. Einmal, nicht wiederholt.",
+      "steps": [[0, {"speed": 0.8, "lateral": -0.4}], [200, {"event": "railImpact", "side": -1, "strength": 1}], [260, {"lateral": -0.2, "speed": 0.7}], [900, {"lateral": 0, "speed": 0.65}], [1700, {"speed": 0}]]
+    },
+    "RAIL HIT RIGHT": {
+      "label": "RAIL HIT RIGHT",
+      "read": "Spiegelbild. Richtung der Stauchung muss der Wandseite folgen.",
+      "steps": [[0, {"speed": 0.8, "lateral": 0.4}], [200, {"event": "railImpact", "side": 1, "strength": 1}], [260, {"lateral": 0.2, "speed": 0.7}], [900, {"lateral": 0, "speed": 0.65}], [1700, {"speed": 0}]]
+    },
+    "RAIL HOLD": {
+      "label": "RAIL HOLD",
+      "read": "Wand wird 600 ms lang jeden Frame als DERSELBE Kontakt gemeldet (contact: true). Es darf genau ein Einschlag lesen, danach eine gehaltene Schraeglage, dann ein Aufrichten beim Loslassen. Kein zweiter Schlag. Das ist der Kontakt-Latch-Test.",
+      "steps": [[0, {"speed": 0.8, "lateral": 0.5}], [200, {"event": "railImpact", "side": 1, "strength": 1, "hold": 600}], [900, {"lateral": 0, "speed": 0.65}], [1700, {"speed": 0}]]
+    },
+    "LANDING": {
+      "label": "LANDING",
+      "read": "vertical squash -> rebound stretch -> ein kleinerer Settle -> neutral. Genau ein Nachschwinger.",
+      "steps": [[0, {"speed": 0.6}], [150, {"event": "landing", "strength": 1}], [400, {"speed": 0.6}], [1100, {"speed": 0.5}], [1800, {"speed": 0}]]
+    },
+    "HIGH SPEED": {
+      "label": "HIGH SPEED",
+      "read": "Chassis nur sehr dezent tiefer und nasenlastig. Sekundaerteile spaeter staerker. Kein Flattern.",
+      "steps": [[0, {"speed": 0}], [500, {"speed": 1}], [2000, {"speed": 1}], [2600, {"speed": 0}]]
+    },
+    "NEUTRAL": {
+      "label": "NEUTRAL",
+      "read": "Zwei Sekunden Neutralfahrt. Muss sichtbar absolut ruhig sein - kein Wobble, kein Noise.",
+      "steps": [[0, {"speed": 0.55}], [2000, {"speed": 0.55}], [2400, {"speed": 0}]]
+    }
+  }
+}
