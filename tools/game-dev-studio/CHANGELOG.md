@@ -38,3 +38,28 @@
 - First public Cloudflare check.
 - Binary Sedan collider generation/validation.
 - Real consumer gates.
+
+
+## 2026-09-18 · GDS-02 · first real Cloudflare proof
+
+### IMPLEMENTATION
+- Added repeatable Playwright proof at `kfb-hub/free-roam/game-dev-studio/qa/public.mjs`.
+- Added workflow `.github/workflows/game-dev-studio-public.yml`.
+- Test targets the actual fixed `kayfabizarro.pages.dev` URL, not GitHub Pages or localhost.
+- Intended checks include catalog identity, four preview assets, WebGL Studio boot, Lorekeeper preview, Sedan preview, Sedan evidence overlay and pinned 40-character GitHub revisions.
+
+### TESTED RESULT
+- GitHub Actions run `35368827693`, attempt 1: **FAIL** at the first deployment gate.
+- Exact failure: `https://kayfabizarro.pages.dev/tools/game-dev-studio/catalog.json` did not expose the current catalog during 30 × 10 s polling.
+- Browser/WebGL steps were therefore never reached. This is not evidence that the viewer or models are broken.
+- A second run attempt was started after all navigation/recovery wiring was committed.
+
+### DEPLOYMENT FINDING
+- Repository root contains `wrangler.jsonc` with asset directory `.`.
+- No repository workflow references `CLOUDFLARE_API_TOKEN`, `CLOUDFLARE_ACCOUNT_ID` or a Wrangler deployment action.
+- No Cloudflare deployment plugin/connector is currently available in this chat.
+- GitHub Pages deployment evidence remains separate and is not accepted as proof for the requested Cloudflare URL.
+
+### OPEN
+- Resolve whether the existing Cloudflare project auto-syncs the current `main` head or requires an external/manual Wrangler deployment.
+- Do not label the Game Dev Studio URL PUBLIC PASS until the actual pages.dev workflow succeeds.
