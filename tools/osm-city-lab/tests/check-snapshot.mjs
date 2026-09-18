@@ -16,6 +16,8 @@ assert.deepEqual(buildConsumerScene(rebuilt),scene);
 assert.ok(norm.features.roads.length>0,'roads missing');
 assert.ok(norm.features.buildings.length>0,'buildings missing');
 assert.equal(norm.frame.units,'metre');
+assert.ok(norm.bounds.sizeM.x <= spec.approxSizeM.eastWest + 1, `x bounds escaped bbox: ${norm.bounds.sizeM.x}`);
+assert.ok(norm.bounds.sizeM.z <= spec.approxSizeM.northSouth + 1, `z bounds escaped bbox: ${norm.bounds.sizeM.z}`);
 assert.equal(prov.attribution.license,'ODbL 1.0');
 for(const b of norm.features.buildings) assert.ok(Number.isFinite(b.heightM) && b.heightM>0);
 console.log(`PASS check-snapshot: ${norm.features.roads.length} roads, ${norm.features.buildings.length} buildings, deterministic cached regeneration`);
