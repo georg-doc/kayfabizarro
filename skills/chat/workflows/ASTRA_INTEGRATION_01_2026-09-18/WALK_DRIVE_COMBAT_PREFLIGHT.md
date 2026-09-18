@@ -25,7 +25,7 @@ Die sichtbare Environment-Landschaft neben dem Track beweist keine befahrbare Ge
 ### Production Race / Slice 04
 
 Datei: `race/CONTRACT.md`, Blob `d9e29a4ff6906af18684c56f87ae63b6c6a28589`.
-Datei: `race/src/physics.js`, Blob `5c72c2d2dfe530eddfbf7285308b99e71e1c5d6` nicht erhoben; für diese Datei wurde der Quelltext gelesen, aber hier wird kein ungeprüfter Blobpin als Beleg verwendet.
+Datei: `race/src/physics.js`, direkt gelesener Blob `1e5df99cc18d3c3156f84af25a1cf5bcbdfb4fd2`.
 
 Vorhanden: dynamisches Chassis, vier Suspension-Rays, Radlenkung, Bremsen/Drift/Hop, tatsächliche Bumper-/Breakable-/Landekontakte, Kollisionsabfragen, sicherer Checkpoint und Recovery. Physical pose/velocity hat genau einen Owner. Diese Linie ist ein konkreter Free-Drive-Spender, kein bereits akzeptierter Ersatz für BOX1-v0.8-Feel.
 
