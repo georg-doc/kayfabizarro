@@ -1,6 +1,6 @@
-[out:json][timeout:60];
+[out:json][timeout:40];
 (
-  way["highway"~"^(trunk|primary|secondary|tertiary|unclassified|residential|living_street|service)$"](50.854,6.855,50.961,6.938);
+  way["highway"~"^(trunk|primary|secondary|tertiary|unclassified)$"](50.854,6.855,50.961,6.938);
 );
 out body;
 >;
