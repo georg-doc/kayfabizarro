@@ -19,7 +19,9 @@ const storyBtn = document.querySelector('#storyBtn');
 const OPENPLANET_API = 'https://download.openplanetdata.com/files?category=boundaries&subcategory=countries&limit=-1';
 const OPENPLANET_BASE = 'https://download.openplanetdata.com';
 const KFB_INK_URL = 'https://cdn.jsdelivr.net/gh/georg-doc/kayfabizarro@main/skills/kfb-ink-canon.js';
-const KAYKIT_BASE = 'https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/KayKit_BoardGameBits_1.0_FREE/Assets/gltf/';
+const KAYKIT_REPO_PATH = '/media/3D_Assets/KayKit_BoardGameBits_1.0_FREE/Assets/gltf/';
+const KAYKIT_RAW_BASE = 'https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/KayKit_BoardGameBits_1.0_FREE/Assets/gltf/';
+const KAYKIT_BASE = location.hostname === 'kayfabizarro.pages.dev' ? KAYKIT_REPO_PATH : KAYKIT_RAW_BASE;
 
 const CORE_CODES = [
   'IS','IE','GB','PT','ES','FR','BE','NL','LU','DE','DK','NO','SE','FI','CH','AT','IT',
@@ -68,6 +70,14 @@ const cameraGoalTarget = new THREE.Vector3();
 
 window.__KFB_MAP_BOARD_READY__ = false;
 window.__KFB_MAP_BOARD_ERROR__ = null;
+window.__KFB_MAP_BOARD_PHASE__ = 'init';
+let bootPhase = 'init';
+
+function setBootPhase(phase, detail='') {
+  bootPhase=phase;
+  window.__KFB_MAP_BOARD_PHASE__=phase;
+  if (detail) loadingText.textContent=detail;
+}
 
 const renderer = new THREE.WebGLRenderer({ canvas, antialias:true, alpha:false });
 renderer.setPixelRatio(Math.min(devicePixelRatio, 2));
@@ -244,13 +254,23 @@ function withinEuropeCentroid(coords) {
   lon/=n; lat/=n;
   return lon>=EUROPE_BBOX.minLon && lon<=EUROPE_BBOX.maxLon && lat>=EUROPE_BBOX.minLat && lat<=EUROPE_BBOX.maxLat;
 }
+function sampleRing(coords,maxPoints=720) {
+  if (coords.length<=maxPoints) return coords;
+  const step=Math.ceil(coords.length/maxPoints);
+  const sampled=[];
+  for(let i=0;i<coords.length;i+=step) sampled.push(coords[i]);
+  const last=coords[coords.length-1];
+  if(sampled[sampled.length-1]!==last) sampled.push(last);
+  return sampled;
+}
 function ringToProjected(coords) {
-  const a = coords.map(p=>project(p[0],p[1]));
+  const sampled=sampleRing(coords);
+  const a = sampled.map(p=>project(p[0],p[1]));
   if (a.length>1) {
     const f=a[0], l=a[a.length-1];
     if (Math.abs(f.x-l.x)<1e-8 && Math.abs(f.z-l.z)<1e-8) a.pop();
   }
-  return simplifyRDP(a, a.length>1500 ? 0.10 : a.length>500 ? 0.065 : 0.035);
+  return simplifyRDP(a, a.length>520 ? 0.085 : a.length>220 ? 0.055 : 0.035);
 }
 function pointSegDist(p,a,b) {
   const dx=b.x-a.x, dz=b.z-a.z;
@@ -318,8 +338,6 @@ function makeInkRibbonGeometry(points, y, width, seed, centroid, hole=false) {
   const verts=[];
   const idx=[];
   const se = new THREE.Vector2(0.70710678,0.70710678);
-  const area = polygonArea2D(points);
-  const winding = Math.sign(area) || 1;
   for (let i=0;i<points.length;i++) {
     const prev=points[(i-1+points.length)%points.length];
     const p=points[i];
@@ -360,17 +378,30 @@ function addCountryFromGeoJSON(code, name, geojson) {
   } else if (geojson.type==='Feature') geoms.push(geojson.geometry);
   else geoms.push(geojson);
 
-  const polygons=[];
+  const candidates=[];
   for (const geom of geoms) {
     for (const poly of normalizeGeometryInput(geom)) {
       if (!poly?.[0] || !withinEuropeCentroid(poly[0])) continue;
       const outer=ringToProjected(poly[0]);
       if (outer.length<3) continue;
-      const holes=(poly.slice(1)||[]).filter(r=>r?.length>3).map(ringToProjected).filter(r=>r.length>=3);
-      polygons.push({outer,holes});
+      const area=Math.abs(polygonArea2D(outer));
+      if(area<0.004) continue;
+      const holes=(poly.slice(1)||[])
+        .filter(r=>r?.length>3)
+        .map(ringToProjected)
+        .filter(r=>r.length>=3 && Math.abs(polygonArea2D(r))>0.025)
+        .sort((a,b)=>Math.abs(polygonArea2D(b))-Math.abs(polygonArea2D(a)))
+        .slice(0,6);
+      candidates.push({outer,holes,area});
     }
   }
-  if (!polygons.length) return null;
+  if (!candidates.length) return null;
+  candidates.sort((a,b)=>b.area-a.area);
+  const largestArea=candidates[0].area;
+  const polygons=candidates
+    .filter((p,i)=>i===0 || p.area>=Math.max(0.018,largestArea*0.00035))
+    .slice(0,24)
+    .map(({outer,holes})=>({outer,holes}));
 
   const seed=hashString(code);
   const group=new THREE.Group();
@@ -451,10 +482,23 @@ function buildCountryInk(rec) {
 function fileUrl(f) {
   return OPENPLANET_BASE+'/'+f.remote_path+'/'+f.remote_version+'/'+f.remote_filename;
 }
-async function fetchJson(url) {
-  const res=await fetch(url,{mode:'cors',cache:'force-cache'});
-  if (!res.ok) throw new Error('HTTP '+res.status);
-  return res.json();
+async function fetchJson(url,{timeoutMs=12000,retries=1,cache='force-cache'}={}) {
+  let lastError=null;
+  for(let attempt=0;attempt<=retries;attempt++){
+    const ctrl=new AbortController();
+    const timer=setTimeout(()=>ctrl.abort(new Error('timeout '+timeoutMs+'ms')),timeoutMs);
+    try{
+      const res=await fetch(url,{mode:'cors',cache,signal:ctrl.signal});
+      if(!res.ok) throw new Error('HTTP '+res.status);
+      return await res.json();
+    }catch(err){
+      lastError=err;
+      if(attempt<retries) await new Promise(resolve=>setTimeout(resolve,250*(attempt+1)));
+    }finally{
+      clearTimeout(timer);
+    }
+  }
+  throw new Error('fetchJson failed: '+url+' · '+String(lastError?.message||lastError));
 }
 async function mapLimit(items,limit,fn) {
   let cursor=0;
@@ -468,8 +512,8 @@ async function mapLimit(items,limit,fn) {
 }
 
 async function resolveBoundaryFiles() {
-  loadingText.textContent='Reading the OpenPlanetData OSM-boundary catalogue…';
-  const data=await fetchJson(OPENPLANET_API);
+  setBootPhase('boundary-catalogue','Reading the OpenPlanetData OSM-boundary catalogue…');
+  const data=await fetchJson(OPENPLANET_API,{timeoutMs:12000,retries:1,cache:'no-store'});
   const files=(data.files || []).filter(f =>
     f.remote_version==='v2' && f.extension==='geojson' && !f.deprecated
   );
@@ -483,12 +527,13 @@ async function resolveBoundaryFiles() {
 
 async function loadBoundaries() {
   selectedFiles=await resolveBoundaryFiles();
+  setBootPhase('boundaries','Cutting Europe into puzzle pieces…');
   loadingTitle.textContent='Cutting Europe into puzzle pieces…';
-  await mapLimit(selectedFiles,5,async(f)=>{
+  await mapLimit(selectedFiles,8,async(f)=>{
     const code=String(f.entity).toUpperCase();
     try {
       loadingText.textContent='Loading '+code+' · '+(loadedCount+failedCount+1)+' / '+selectedFiles.length;
-      const data=await fetchJson(fileUrl(f));
+      const data=await fetchJson(fileUrl(f),{timeoutMs:10000,retries:1});
       const feature=data.features?.[0];
       const name=f.name || feature?.properties?.name || code;
       const rec=addCountryFromGeoJSON(code,name,data);
@@ -597,7 +642,7 @@ const FALLBACK_MARKERS=[
 
 async function loadStoryManifest() {
   try {
-    storyManifest=await fetchJson('./data/story-demo.v1.json');
+    storyManifest=await fetchJson('./data/story-demo.v1.json',{timeoutMs:6000,retries:0,cache:'no-store'});
     markerSpecs=(storyManifest.stories||[]).filter(s=>s.asset && s.countryCode);
     if (!markerSpecs.length) throw new Error('story manifest has no markers');
   } catch (err) {
@@ -606,8 +651,31 @@ async function loadStoryManifest() {
   }
 }
 
-function loadGltf(url) {
-  return new Promise((resolve,reject)=>gltfLoader.load(url,resolve,undefined,reject));
+function loadGltf(url,timeoutMs=12000) {
+  return new Promise((resolve,reject)=>{
+    let settled=false;
+    const timer=setTimeout(()=>{
+      if(settled) return;
+      settled=true;
+      reject(new Error('GLTF timeout '+timeoutMs+'ms · '+url));
+    },timeoutMs);
+    gltfLoader.load(
+      url,
+      gltf=>{
+        if(settled) return;
+        settled=true;
+        clearTimeout(timer);
+        resolve(gltf);
+      },
+      undefined,
+      err=>{
+        if(settled) return;
+        settled=true;
+        clearTimeout(timer);
+        reject(err);
+      }
+    );
+  });
 }
 async function addKayKitMarkers() {
   for (const spec of markerSpecs) {
@@ -675,7 +743,11 @@ function activateStory(index) {
 
 async function loadInkCanon() {
   try {
-    const canon=await import(KFB_INK_URL);
+    setBootPhase('ink-canon','Loading KFB ink capability…');
+    const canon=await Promise.race([
+      import(KFB_INK_URL),
+      new Promise((_,reject)=>setTimeout(()=>reject(new Error('KFB ink import timeout')),8000))
+    ]);
     const version=canon.INK_CANON_VERSION;
     if (version>=2 && typeof canon.measureInk==='function') {
       inkCanonStatus='canon v'+version+' + map BAND adapter';
@@ -781,6 +853,7 @@ function reportState() {
   return {
     slice:'P0.2',
     ready:window.__KFB_MAP_BOARD_READY__===true,
+    phase:bootPhase,
     countriesLoaded:loadedCount,
     countriesExpected:selectedFiles.length,
     countriesFailed:failedCount,
@@ -866,26 +939,35 @@ function animate() {
 animate();
 
 async function boot() {
+  const watchdog=setTimeout(()=>{
+    if(window.__KFB_MAP_BOARD_READY__||window.__KFB_MAP_BOARD_ERROR__) return;
+    window.__KFB_MAP_BOARD_ERROR__='Boot watchdog expired at phase '+bootPhase;
+    setBootPhase('watchdog-error',window.__KFB_MAP_BOARD_ERROR__);
+  },105000);
   try {
     await loadInkCanon();
     updateDiag('boundary catalogue pending');
     await loadBoundaries();
     if (!loadedCount) throw new Error('No OSM-derived country boundary loaded.');
     applyTargets();
+    setBootPhase('story-manifest','Loading story-anchor manifest…');
     await loadStoryManifest();
+    setBootPhase('kaykit-markers','Loading actual Board Game Bits from the KFB repository mirror…');
     loadingTitle.textContent='Placing KayKit story tokens…';
-    loadingText.textContent='Loading actual Board Game Bits from the KFB GitHub asset repository.';
     await addKayKitMarkers();
     storyBtn.disabled=!markerRecords.length;
+    setBootPhase('ready','P0.2 story focus ready');
     updateDiag('P0.2 story focus ready');
     window.__KFB_MAP_BOARD_READY__=true;
+    clearTimeout(watchdog);
     loading.classList.add('hidden');
     setTimeout(()=>loading.style.display='none',450);
   } catch (err) {
+    clearTimeout(watchdog);
     console.error(err);
     window.__KFB_MAP_BOARD_ERROR__=String(err?.stack||err);
+    setBootPhase('boot-error',String(err?.message||err));
     loadingTitle.textContent='Board boot stopped';
-    loadingText.textContent=String(err?.message||err)+'. Check browser console / CORS and retry.';
     updateDiag('boot error');
   }
 }
