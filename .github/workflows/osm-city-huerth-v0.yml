@@ -1,0 +1,67 @@
+name: OSM City · Hürth v0 cache
+
+on:
+  push:
+    branches:
+      - osm-city/huerth-v0-2026-09-18
+    paths:
+      - '.github/workflows/osm-city-huerth-v0.yml'
+      - 'tools/osm-city-lab/data/huerth-v0/SOURCE_SPEC.json'
+      - 'tools/osm-city-lab/data/huerth-v0/query.overpassql'
+      - 'tools/osm-city-lab/scripts/fetch-city.mjs'
+      - 'tools/osm-city-lab/scripts/build-city.mjs'
+      - 'tools/osm-city-lab/scripts/analyze-city.mjs'
+      - 'tools/osm-city-lab/src/osm/**'
+      - 'tools/osm-city-lab/src/export/**'
+      - 'tools/osm-city-lab/tests/check-normalize.mjs'
+      - 'tools/osm-city-lab/tests/check-city-snapshot.mjs'
+      - 'tools/osm-city-lab/tests/check-fixture-analysis.mjs'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: osm-city-huerth-v0
+  cancel-in-progress: false
+
+jobs:
+  cache-normalize-and-check-fixture:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: osm-city/huerth-v0-2026-09-18
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Shared deterministic fixture test
+        run: node tools/osm-city-lab/tests/check-normalize.mjs
+      - name: Fetch fixed Hürth bbox
+        run: node tools/osm-city-lab/scripts/fetch-city.mjs huerth-v0
+      - name: Build normalized S0 and S2 export
+        run: node tools/osm-city-lab/scripts/build-city.mjs huerth-v0
+      - name: Analyze Hürth gameplay fixture signals
+        run: node tools/osm-city-lab/scripts/analyze-city.mjs huerth-v0
+      - name: Verify cached snapshot
+        run: node tools/osm-city-lab/tests/check-city-snapshot.mjs huerth-v0
+      - name: Verify requested Hürth fixture mix
+        run: node tools/osm-city-lab/tests/check-fixture-analysis.mjs huerth-v0
+      - name: Commit cached source and evidence
+        run: |
+          git config user.name "KFB OSM City Bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add tools/osm-city-lab/data/huerth-v0/source.overpass.json \
+                  tools/osm-city-lab/data/huerth-v0/PROVENANCE.json \
+                  tools/osm-city-lab/data/huerth-v0/normalized.json \
+                  tools/osm-city-lab/scenes/huerth-v0.json \
+                  tools/osm-city-lab/evidence/huerth-v0-s0-report.json \
+                  tools/osm-city-lab/evidence/huerth-v0-fixture-analysis.json
+          if git diff --cached --quiet; then
+            echo "No Hürth cache delta."
+            exit 0
+          fi
+          git commit -m "OSM City: cache Hürth v0 source + fixture evidence [osm-city-cache]"
+          git push origin HEAD:osm-city/huerth-v0-2026-09-18
