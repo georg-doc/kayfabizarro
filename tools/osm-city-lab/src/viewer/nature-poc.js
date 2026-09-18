@@ -36,13 +36,21 @@ function polyDistance(p,poly){
   return best;
 }
 
-function validPoint(p,city,cfg){
+function prepObstacles(city){
+  return (city.features.buildings||[]).map(b=>{
+    const poly=openPoly(b.footprint);
+    return {poly,bounds:poly.length>=3?bounds(poly):null};
+  }).filter(b=>b.bounds);
+}
+
+function validPoint(p,city,cfg,buildings){
   const roadClear=Number(cfg.roadClearanceM??3.2);
   if(pointRoadDistance(p,city.features.roads)<roadClear)return false;
   const buildClear=Number(cfg.buildingClearanceM??1.8);
-  for(const b of city.features.buildings){
-    const poly=openPoly(b.footprint);
-    if(poly.length>=3&&polyDistance(p,poly)<buildClear)return false;
+  for(const b of buildings){
+    const q=b.bounds;
+    if(p.x<q.minX-buildClear||p.x>q.maxX+buildClear||p.z<q.minZ-buildClear||p.z>q.maxZ+buildClear)continue;
+    if(polyDistance(p,b.poly)<buildClear)return false;
   }
   return true;
 }
@@ -51,6 +59,7 @@ function scatterCandidates(city,cfg,seedRoot){
   const maxTrees=Math.max(0,Math.floor(Number(cfg.maxTrees??72)));
   if(!maxTrees)return [];
   const minArea=Number(cfg.minGreenAreaM2??120);
+  const buildings=prepObstacles(city);
   const greens=city.features.landuse
     .filter(g=>g.class==='green')
     .map(g=>({source:g,poly:openPoly(g.polygon)}))
@@ -70,7 +79,7 @@ function scatterCandidates(city,cfg,seedRoot){
           z:g.bounds.minZ+r()*(g.bounds.maxZ-g.bounds.minZ)
         };
         if(!inside(p,g.poly))continue;
-        if(!validPoint(p,city,cfg))continue;
+        if(!validPoint(p,city,cfg,buildings))continue;
         accepted={
           ...p,
           yaw:r()*Math.PI*2,
