@@ -38,3 +38,8 @@ ToolBox and 2D Animation Studio keep separate renderer/source ownership but shar
 
 ### OPEN
 Cross-render runtime proof is still pending: DocCheck Eumel 2D + one approved Rig_Medium actor must consume the same semantic eye sequence. No claim of common whole-body clip tracks.
+
+
+## 2026-09-18 · Dropbox v18 EyeRig cross-check
+
+Read-only donor audit confirmed the Dropbox FrankenStein Studio v18 session carries `pet-eye-rig.v6.js` text-equivalent to the current GitHub EyeRig-v6 donor after line-ending/trailing-whitespace normalization. The same Dropbox session contains Animation Lab v3, but no GitHub/current-tool promotion is inferred from presence alone.
