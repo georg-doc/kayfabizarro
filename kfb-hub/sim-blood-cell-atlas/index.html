@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>SimBlood · Cell Atlas Progressive Template</title>
+<link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+<main class="shell">
+  <header class="hero">
+    <div>
+      <div class="eyebrow">DocCheck · SimBlood · Cell Atlas</div>
+      <h1>Blutzellen · Progressive Matrix</h1>
+      <p>Frank-Matrix als progressive Disclosure: alle Zelltypen bleiben schnell scannbar; Varianten, Quellen- und Reviewdetails erscheinen erst beim Aufklappen.</p>
+    </div>
+    <div class="toolbar">
+      <input id="search" type="search" placeholder="Zelltyp suchen …" aria-label="Zelltyp suchen">
+      <select id="groupFilter" aria-label="Gruppe filtern"><option value="">Alle Gruppen</option></select>
+      <button id="openAll" type="button">Alle öffnen</button>
+      <button id="closeAll" type="button">Alle schließen</button>
+    </div>
+  </header>
+  <section class="legend">
+    <span><b>Frank-Matrix</b> 21 Typen</span>
+    <span><b>SimBlood+</b> Thrombozyten ergänzt</span>
+    <span><b>Varianten</b> 1–5 / 6–10</span>
+    <span><b>Progressiv</b> Source / Review / Scale erst bei Bedarf</span>
+  </section>
+  <div id="atlas"></div>
+  <footer>Template / UI donor only. Empty slots intentionally remain empty instead of inventing morphology.</footer>
+</main>
+<script src="./app.js"></script>
+</body>
+</html>
