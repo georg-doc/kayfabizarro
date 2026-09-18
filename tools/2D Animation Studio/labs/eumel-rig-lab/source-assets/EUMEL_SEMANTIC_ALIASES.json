@@ -1,7 +1,7 @@
 {
   "schema": "kfb.eumel.semantic-aliases/0.1",
   "sourceBlobSha": "436143b019f0034c6d2d9183154cf613ff8c701e",
-  "status": "CANDIDATE_SEMANTIC_MAP",
+  "status": "CANDIDATE_SEMANTIC_MAP_WITH_HAT_CONFIRMED",
   "aliases": {
     "shadow": "rig-shadow",
     "leg_right": "rig-leg-A",
@@ -22,14 +22,14 @@
     "eye_left": "rig-eye-B",
     "pupil_right": "rig-pupil-A",
     "pupil_left": "rig-pupil-B",
-    "foreground_occlusion_candidate": [
+    "headwear_hat": [
       "rig-foreground-black",
       "rig-foreground-white"
     ]
   },
   "evidence": {
     "leftRightAssignment": "INFERRED_FROM_PAGE_X_POSITION; requires visual confirmation",
-    "foregroundSemantics": "UNRESOLVED",
+    "foregroundSemantics": "VISUALLY_CONFIRMED_AS_HEADWEAR_HAT_FROM_BROWSER_SCREENSHOT_2026-09-18",
     "geometry": "SOURCE_EXACT_VISIBLE_PDF_VECTOR"
   },
   "rule": "Aliases never rewrite source IDs or path data. Promotion to canonical semantic names requires visual/native confirmation."
