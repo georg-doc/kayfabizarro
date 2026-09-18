@@ -187,3 +187,24 @@ This proves protocol alignment. It does **not** prove pixel-identical eyes or co
 - ToolBox EyeRig Batch: `tools/KFB-ToolBox/_handover/EYE_RIG_BATCH_2026-09-18/START_HERE.md`
 - 2D Studio: `tools/2D Animation Studio/START_HERE.md`
 - Eumel lab: `tools/2D Animation Studio/labs/eumel-rig-lab/RETURN.md`
+
+
+## Dropbox v18 donor cross-check
+
+Read-only cross-check on 2026-09-18:
+
+`/CLAUDE/KFB ToolBox Studio Rig Anim/KFB FrankenStein Studio v18/WSA_2026-09-16_SESSION/`
+
+contains:
+
+- `src/KFB FrankenStein Studio v18.dc.html`
+- `src/KFB Animation Lab v3.dc.html`
+- `src/petstudio-v9/studio-v12/pet-eye-rig.v6.js`
+
+The Dropbox `pet-eye-rig.v6.js` and the current GitHub ToolBox donor at:
+
+`tools/KFB-ToolBox/kfb-rigs-embed-v3/petstudio-v9/studio-v12/pet-eye-rig.v6.js`
+
+are **text-identical after line-ending + trailing-whitespace normalization**. This is useful source evidence that the v18 Dropbox session still uses the same EyeRig-v6 implementation seam.
+
+This does **not** promote the Dropbox v18 Studio or Animation Lab v3 as current GitHub SSOT. Their presence is donor evidence only until those source trees are intentionally pinned/promoted.

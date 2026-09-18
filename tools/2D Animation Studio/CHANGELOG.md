@@ -67,3 +67,8 @@ Status remains IMPLEMENTATION; browser retest is required.
 - defined the first cross-render proof as Eumel 2D + one approved Rig_Medium actor using the same semantic eye sequence.
 
 Runtime proof remains pending.
+
+
+## 2026-09-18 · Dropbox v18 EyeRig cross-check
+
+Read-only donor audit confirmed the Dropbox FrankenStein Studio v18 session carries `pet-eye-rig.v6.js` text-equivalent to the current GitHub EyeRig-v6 donor after line-ending/trailing-whitespace normalization. The same Dropbox session contains Animation Lab v3, but no GitHub/current-tool promotion is inferred from presence alone.
