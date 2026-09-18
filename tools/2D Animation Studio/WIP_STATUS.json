@@ -23,7 +23,9 @@
     "sourceVsExtractedVisualPass": "PARTIAL_VISUAL_REVIEW_NO_PASS",
     "neutralBindBones": "IMPLEMENTATION",
     "sharedEyeRigProtocol": "IMPLEMENTATION",
-    "componentAtlasFix": "IMPLEMENTATION_STATIC_SANITY_PENDING"
+    "componentAtlasFix": "IMPLEMENTATION_STATIC_SANITY_PENDING",
+    "toolboxIntegration": "IMPLEMENTATION",
+    "crossRenderEyeProof": "PENDING_AFTER_ONE_TOOLBOX_MEDIUM_APPROVAL"
   },
   "sourceAudit": {
     "gitBlobSha": "436143b019f0034c6d2d9183154cf613ff8c701e",
@@ -50,5 +52,13 @@
       "shared EyeRig logic with FrankenStein stack",
       "richer face/eyewear asset inventory"
     ]
+  },
+  "toolboxAlignment": {
+    "bridge": "tools/KFB-ToolBox/docs/2D_ANIMATION_STUDIO_BRIDGE.md",
+    "handover": "tools/KFB-ToolBox/_handover/2D_ANIMATION_STUDIO_ALIGNMENT_2026-09-18/START_HERE.md",
+    "eyeRigBatchAddendum": "tools/KFB-ToolBox/_handover/EYE_RIG_BATCH_2026-09-18/2D_ALIGNMENT_ADDENDUM.md",
+    "sharedProtocol": "shared/eye-rig/eye-rig-protocol.v1.json",
+    "bridgeManifest": "shared/eye-rig/toolbox-bridge.v1.json",
+    "ownerRule": "2D owns source-exact cutout assets/adapters; ToolBox owns 3D EyeRig/FaceHost/FrankenStein."
   }
 }
