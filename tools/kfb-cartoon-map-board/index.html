@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="color-scheme" content="dark">
-<title>KFB Cartoon Map Board · Europe P0</title>
+<title>KFB Cartoon Map Board · Europe P0.2</title>
 <style>
 :root{
   font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
@@ -29,6 +29,7 @@ button{
 }
 button:hover{transform:translateY(-1px)}
 button.active{background:#f0c94d;border-color:#f0c94d;color:#231d2b}
+button:disabled{opacity:.42;cursor:default;transform:none}
 .spacer{flex:1}
 .slider{display:flex;align-items:center;gap:6px;font-size:11px;color:#d7cddd}
 .slider input{width:92px}
@@ -44,6 +45,12 @@ button.active{background:#f0c94d;border-color:#f0c94d;color:#231d2b}
   background:#1d1824;color:#fff;border:2px solid #f4eee4;
   box-shadow:4px 5px 0 #100d14;padding:4px 7px;font-size:10px;font-weight:900;
   letter-spacing:.04em;transform:translate(-50%,-115%);white-space:nowrap
+}
+.story-label.active{background:#f0c94d;color:#241d2d;border-color:#241d2d;box-shadow:5px 6px 0 #100d14}
+.hover-note{
+  position:absolute;z-index:11;pointer-events:none;display:none;padding:4px 7px;
+  background:#f6eddf;color:#211b28;border:1px solid #211b28;border-radius:7px;
+  box-shadow:3px 4px 0 #17121d55;font-size:10px;font-weight:900;letter-spacing:.04em
 }
 .panel{
   position:absolute;left:14px;bottom:14px;z-index:12;width:min(390px,calc(100% - 28px));
@@ -94,13 +101,16 @@ button.active{background:#f0c94d;border-color:#f0c94d;color:#231d2b}
 <div id="app">
   <header class="topbar">
     <div class="brand">KFB CARTOON MAP BOARD</div>
-    <span class="badge">EUROPE P0</span>
+    <span class="badge">EUROPE P0.2</span>
     <span class="badge">OSM-DERIVED</span>
     <span class="badge">KAYKIT TOKENS</span>
+    <span class="badge">STORY FOCUS</span>
     <div class="controls">
       <button data-camera="hero" class="active">HERO</button>
       <button data-camera="top">TOP</button>
       <button data-camera="low">LOW</button>
+      <button id="focusBtn" disabled>FOCUS</button>
+      <button id="storyBtn">NEXT STORY</button>
       <button id="explodeBtn">EXPLODE</button>
       <button id="labelsBtn" class="active">LABELS</button>
       <button id="tokensBtn" class="active">TOKENS</button>
@@ -111,15 +121,16 @@ button.active{background:#f0c94d;border-color:#f0c94d;color:#231d2b}
   </header>
   <main class="stage" id="stage">
     <canvas id="view"></canvas>
+    <div class="hover-note" id="hoverNote"></div>
     <aside class="panel">
-      <div class="kicker">SELECT A COUNTRY TILE</div>
+      <div class="kicker" id="selKicker">SELECT A COUNTRY TILE</div>
       <h2 id="selName">Europe · Board View</h2>
       <p id="selText">Orbit, zoom and click a country. The map is built as individual 3D puzzle pieces with hand-inked border ribbons and real KayKit board-game markers.</p>
       <div class="diag" id="diag">Booting…</div>
     </aside>
     <aside class="legend">
       <strong>Visual grammar</strong><br>
-      pastel country tiles · thickened south-east ink edge · upper-left key light · physical drop shadows · deterministic contour wobble · separable / recombinable countries.
+      pastel country tiles · thickened south-east ink edge · upper-left key light · physical drop shadows · deterministic paper + contour wobble · focus choreography · separable / recombinable countries.
     </aside>
     <div class="loading" id="loading">
       <div class="loading-card"><strong id="loadingTitle">Building the board…</strong><span id="loadingText">Resolving OSM-derived country boundaries.</span></div>
