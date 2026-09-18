@@ -1,0 +1,107 @@
+{
+  "schema": "kfb.eye-clips/1",
+  "clips": {
+    "neutral": {
+      "duration": 0.4,
+      "commands": [
+        {
+          "at": 0,
+          "method": "applyEmote",
+          "args": {
+            "lidUpper": 0,
+            "lidLower": 0,
+            "slant": 0,
+            "pupil": "normal",
+            "gaze": "front"
+          }
+        }
+      ]
+    },
+    "blink": {
+      "duration": 0.18,
+      "commands": [
+        {
+          "at": 0,
+          "method": "blinkNow"
+        }
+      ]
+    },
+    "look_left": {
+      "duration": 0.45,
+      "commands": [
+        {
+          "at": 0,
+          "method": "setGazeFollow",
+          "args": false
+        },
+        {
+          "at": 0.02,
+          "method": "pointTo",
+          "args": [
+            -0.75,
+            0.05
+          ]
+        }
+      ]
+    },
+    "look_right": {
+      "duration": 0.45,
+      "commands": [
+        {
+          "at": 0,
+          "method": "setGazeFollow",
+          "args": false
+        },
+        {
+          "at": 0.02,
+          "method": "pointTo",
+          "args": [
+            0.75,
+            0.05
+          ]
+        }
+      ]
+    },
+    "surprised": {
+      "duration": 0.6,
+      "commands": [
+        {
+          "at": 0,
+          "method": "applyEmote",
+          "args": {
+            "lidUpper": -0.45,
+            "lidLower": -0.25,
+            "slant": -0.05,
+            "pupil": "wide",
+            "gaze": "front"
+          }
+        }
+      ]
+    },
+    "thinking": {
+      "duration": 0.8,
+      "commands": [
+        {
+          "at": 0,
+          "method": "applyEmote",
+          "args": {
+            "lidUpper": [
+              0.18,
+              0.32
+            ],
+            "lidLower": [
+              0.05,
+              0.08
+            ],
+            "slant": [
+              0.12,
+              -0.08
+            ],
+            "pupil": "normal",
+            "gaze": "away"
+          }
+        }
+      ]
+    }
+  }
+}
