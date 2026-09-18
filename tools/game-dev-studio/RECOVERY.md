@@ -36,13 +36,28 @@ Public proof workflow:
 Latest evidence:
 - run `35368827693`, attempt 1: **FAIL before browser boot** because `/tools/game-dev-studio/catalog.json` was not deployed on the real `kayfabizarro.pages.dev` host during the five-minute polling window;
 - therefore no WebGL/preview failure is established by attempt 1;
-- attempt 2 was explicitly rerun against the same fixed public URL after the repo wiring completed;
-- GitHub Pages success is not treated as Cloudflare proof;
+- attempt 2: **PUBLIC BROWSER PASS** against the same fixed public URL after deployment propagation;
+- real Cloudflare proof: run `35368827693`, attempt 2, job `105680028742`, artifact `10557444939`, artifact SHA-256 `cea1a31ec087aaa697deb7c64b00f078c502735056473ee0cdb02deaa56a24ac`;
 - no Cloudflare deployment credential/workflow is present in repository source, and no Cloudflare deployment connector is available in this chat.
 
 The new public Game Dev Studio site is data-driven from:
 
 `tools/game-dev-studio/catalog.json`
+
+Public checks passed: 11/11:
+- catalog deployed;
+- four preview assets;
+- fixed page HTTP;
+- Studio/WebGL boot;
+- four asset controls;
+- Lorekeeper default preview;
+- Sedan preview selection;
+- Sedan evidence overlay enabled;
+- pinned GitHub revision links;
+- tool route HTTP 200;
+- zero browser errors.
+
+Human visual acceptance remains pending.
 
 Initial preview set:
 
