@@ -4,7 +4,10 @@ on:
   push:
     branches: [main]
     paths:
-      - 'tools/kfb-cartoon-map-board/**'
+      - 'tools/kfb-cartoon-map-board/index.html'
+      - 'tools/kfb-cartoon-map-board/src/**'
+      - 'tools/kfb-cartoon-map-board/data/**'
+      - 'tools/kfb-cartoon-map-board/qa/**'
       - '.github/workflows/kfb-cartoon-map-board-public.yml'
   workflow_dispatch:
 
