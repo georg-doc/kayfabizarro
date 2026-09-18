@@ -62,3 +62,26 @@ FR-S04-02 uses the original kart. Its PASS proves the donor receiver/control/con
 ### TESTED RESULT
 - Adapter is source-derived and structurally specified.
 - No Sedan receiver runtime/browser test has been executed yet.
+
+
+## 2026-09-18 · P01-D · Lorekeeper Travel Atlas adapter
+
+### SOURCE REVIEW
+- Current Travel WSA head checked; repaired Ground public proof is green, but Georg's current Ground human review still gates new Lorekeeper/City runtime work.
+- Existing Travel Atlas Pilot 01 remains the governing consumer brief: Lorekeeper + Tome/lectern + Staff at one stable spherical anchor, compared across `VISIBLE_HEX | SEATED_HEX | NO_VISIBLE_HEX`.
+
+### CREATED FILES
+- `resident/lorekeeper/TRAVEL_ATLAS_PILOT_01_ADAPTER.json`
+- `resident/lorekeeper/TRAVEL_ATLAS_PILOT_01_HANDOFF.md`
+- additive Travel-owner handoff: `georg-doc/KFB-Travel-Globe/_handover/GAME_DEV_STUDIO_LOREKEEPER_PACKAGE_2026-09-18.md` @ `8614282aab2ced43bb5dda9fcf7abadf9768100a`
+
+### OWNER BOUNDARY
+- Game Dev Studio owns the exact relative resident package only.
+- Travel owns spherical anchor/tangent frame, support/Hex treatment, ROAD, camera, Ground movement and World Recipe persistence.
+- `NO_VISIBLE_HEX` must not leave invisible support.
+- No reading animation, interaction, Combat or dungeon scope is added to this gate.
+
+### TESTED RESULT
+- Package/consumer mapping is source-aligned and implementation-ready.
+- Travel runtime import remains **DEFERRED** until the current Ground human gate carries.
+- No Travel consumer PASS is claimed.
