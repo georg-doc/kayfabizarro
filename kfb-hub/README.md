@@ -102,3 +102,17 @@ The To-do board is a personal convenience layer, not project truth. Task definit
 The page is intentionally dependency-free and self-contained in `index.html`. Update links, labels and current task definitions only when they remain useful for daily work. Avoid turning it into a second registry, issue tracker or project dashboard with independently maintained truth.
 
 For project-specific recovery pages such as Travel/World Builder, SimBlood and Doc Animation, the Hub should route to the project recovery/current-state files rather than duplicate implementation truth.
+
+
+### 2D Animation Studio
+
+Human recovery page:
+`https://kayfabizarro.pages.dev/kfb-hub/2d-animation-studio.html`
+
+Tool SSOT:
+`https://github.com/georg-doc/kayfabizarro/tree/main/tools/2D%20Animation%20Studio`
+
+First lab:
+`tools/2D Animation Studio/labs/eumel-rig-lab/`
+
+The current Eumel implementation uses source-exact visible vectors extracted from the DocCheck AD Illustrator/PDF-compatible source. Browser QA and Georg/AD visual acceptance remain pending; the Hub does not promote those gates.
