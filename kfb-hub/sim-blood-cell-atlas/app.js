@@ -54,10 +54,10 @@ function render(){
  );
  matrix.innerHTML=rows.map(row).join('');empty.hidden=rows.length>0;renderStats(rows);
 }
-Promise.all([fetch('./coverage.v0.1.json').then(r=>r.json())]).then(([data])=>{
+Promise.all([fetch('./coverage.v0.1.json?v=20260918c').then(r=>{if(!r.ok)throw new Error('coverage '+r.status);return r.json()})]).then(([data])=>{
  DATA=data;
  [...new Set(DATA.rows.map(r=>r.family))].sort().forEach(f=>familyFilter.insertAdjacentHTML('beforeend','<option value="'+esc(f)+'">'+esc(f)+'</option>'));
  render();
-});
+}).catch(err=>{console.error(err);document.getElementById('empty').hidden=false;document.getElementById('empty').textContent='Coverage-Daten konnten nicht geladen werden. Bitte Seite hart neu laden.';});
 kindTabs.addEventListener('click',e=>{const b=e.target.closest('button[data-kind]');if(!b)return;activeKind=b.dataset.kind;kindTabs.querySelectorAll('button').forEach(x=>x.classList.toggle('active',x===b));render()});
 [search,familyFilter,priorityFilter,coverageFilter,onlyMissing].forEach(el=>el.addEventListener(el===search?'input':'change',render));
