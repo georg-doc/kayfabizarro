@@ -1,3 +1,5 @@
+> **CURRENT OVERRIDE · 2026-09-18:** This 16 Sep gap snapshot is historical. Since then, Medieval Hexagon, Furniture Bits, Restaurant Bits and Space Base Bits have been unpacked/indexed, and a new KayKit Legacy source shelf has been added. See [LEGACY_INTAKE_2026-09-18.md](LEGACY_INTAKE_2026-09-18.md) for Skeletons, Spooktober, Orc Warband, Character Animations 1.2 legacy and Dungeon Pack 1.0. Current GitHub/Registry state wins over the older missing-pack statements below.
+
 # Pack-Lücken · was in den Screenshots steht und was wir wirklich haben
 
 Stand 2026-09-16. Grundlage: Ordner in `georg-doc/kayfabizarro/media/3D_Assets/` (gelesen, nicht erinnert),
