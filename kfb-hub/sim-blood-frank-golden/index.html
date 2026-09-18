@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="light">
+<title>SimBlood</title>
+<link rel="stylesheet" href="./styles.css?v=20260918a">
+</head>
+<body>
+<main class="stage">
+  <header class="topbar">
+    <a class="brand" href="#" aria-label="SimBlood">SimBlood</a>
+    <nav class="filters" aria-label="Filter">
+      <button class="active" data-group="">Alle</button>
+      <button data-group="RBC">RBC</button>
+      <button data-group="WBC">WBC</button>
+      <button data-group="PLT">PLT</button>
+    </nav>
+  </header>
+
+  <section class="grid" id="grid" aria-live="polite"></section>
+</main>
+
+<div class="veil" id="veil" hidden>
+  <button class="close" id="close" aria-label="Schließen" data-tip="Esc">×</button>
+  <section class="focus" role="dialog" aria-modal="true" aria-labelledby="focusTitle">
+    <header class="focus-head">
+      <h1 id="focusTitle"></h1>
+      <div class="sample-dots" id="dots" aria-hidden="true"></div>
+    </header>
+    <div class="compare" id="compare"></div>
+    <div class="rail" id="rail"></div>
+  </section>
+</div>
+
+<div class="hint" id="hint" aria-hidden="true"></div>
+<script src="./app.js?v=20260918a"></script>
+</body>
+</html>
