@@ -48,15 +48,17 @@ jobs:
               manifest_path=target/'PUBLIC_MANIFEST.json'
               assert manifest_path.exists(),'Expected mirrored PUBLIC_MANIFEST missing'
               manifest=json.loads(manifest_path.read_text())
-          # Update only the named Race todo; preserve every other project and task.
-          p=pathlib.Path('kfb-hub/index.html');s=p.read_text();lines=s.splitlines(keepends=True)
-          found=[i for i,l in enumerate(lines) if 'race-box-stop-integration' in l]
-          if len(found)==1:
-              task={'id':'race-box-stop-review','title':'Drive Box Stop · choose your vehicle shortlist','lane':'Stunt Race / Vehicle Review','priority':'P0','desc':'BOX1: 43 source-backed vehicle candidates, WS1 motion profiles, Original/Deformer comparison, Test Lap countdown and ten-track Jukebox. No new rider rigs. Audio A1 original source and Kenney Facility topology remain open.','url':'https://kayfabizarro.pages.dev/kfb-hub/stunt-race/track-environment-lab/?world=facility&seed=KFB-1842','tags':['stunt','race','box stop','vehicle','human review']}
-              lines[found[0]]=json.dumps(task)+',\n';p.write_text(''.join(lines))
-          p=pathlib.Path('kfb-hub/stunt-race.html');s=p.read_text()
-          if 'BOX1 · Vehicle selection' not in s:
-              s=s.replace('<h2>Current direction</h2>','<h2>BOX1 · Vehicle selection</h2><p>Box Stop is implemented on the accepted v0.8 / Environment site: 43 source-backed vehicles, WS1 deformer profiles, test-lap countdown and the original Jukebox. No new rider rigs. Full A1 integration and the corrected Kenney Facility remain open.</p><p><a href="./stunt-race/track-environment-lab/?world=facility&amp;seed=KFB-1842">Drive Box Stop</a> · <a href="https://github.com/georg-doc/KFB-Stunt-Car-Race/blob/main/ChatGPT_web/track-environment-lab/box-stop/RETURN.md">Implementation / test return</a></p><h2>Current direction</h2>',1);p.write_text(s)
+          # Historical Hub migration is only needed while importing a new package.
+          # If the exact public tree is already present, verification must be read-only.
+          if not already_mirrored:
+              p=pathlib.Path('kfb-hub/index.html');s=p.read_text();lines=s.splitlines(keepends=True)
+              found=[i for i,l in enumerate(lines) if 'race-box-stop-integration' in l]
+              if len(found)==1:
+                  task={'id':'race-box-stop-review','title':'Review BOX1 + Environment drive site','lane':'Stunt Race / Vehicle Review','priority':'P0','desc':'BOX1 is implemented and browser-tested; human visual/product acceptance remains open. Audio A1 exact source transfer remains open.','url':'https://kayfabizarro.pages.dev/kfb-hub/stunt-race/track-environment-lab/?world=facility&seed=KFB-1842','tags':['stunt','race','box stop','vehicle','human review']}
+                  lines[found[0]]=json.dumps(task)+',\n';p.write_text(''.join(lines))
+              p=pathlib.Path('kfb-hub/stunt-race.html');s=p.read_text()
+              if 'BOX1 · Vehicle selection' not in s:
+                  s=s.replace('<h2>Current direction</h2>','<h2>BOX1 · Vehicle selection</h2><p>Box Stop is implemented on the accepted v0.8 / Environment site. Human visual/product acceptance remains open.</p><h2>Current direction</h2>',1);p.write_text(s)
           subprocess.run(['git','add','--',str(target),'kfb-hub/index.html','kfb-hub/stunt-race.html'],check=True)
           tree=git('write-tree')
           for p,sha in protected.items():assert git('rev-parse',tree+':'+p)==sha,'Protected assets/source changed'
