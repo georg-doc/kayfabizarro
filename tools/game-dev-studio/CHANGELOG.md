@@ -107,3 +107,22 @@ Register `GameReadyPlantPackage` as a later Game Dev Studio package type:
 
 ### BOUNDARY
 This is **P2 / BACKLOG** and does not expand or replace active Pilot 01 (Lorekeeper + Sedan). No catalog entry is added until an actual package exists.
+
+
+## 2026-09-18 · GDS-04 · Race owner Sedan handoff
+
+### CREATED
+Additive cross-repo handoff:
+
+`georg-doc/KFB-Stunt-Car-Race/_handover/GAME_DEV_STUDIO_SEDAN_PACKAGE_2026-09-18.md`
+
+Commit: `3286ed5315c837753d1efe93d5580460ee9b8642`.
+
+### BOUNDARY
+- No Race runtime patch was made by Game Dev Studio.
+- FR-S04-02 remains immutable.
+- The Race/Free-Roam owner receives exact package refs and decides when to create the next Sedan receiver candidate.
+- Existing 62/62 FR-S04-02 evidence remains donor evidence, not Sedan acceptance.
+
+### NEXT OWNER GATE
+Mount exact `car_sedan.gltf`, numeric body proxy and four real wheel nodes in a later immutable receiver candidate; rerun the applicable handling/contact checks; keep human feel separate.
