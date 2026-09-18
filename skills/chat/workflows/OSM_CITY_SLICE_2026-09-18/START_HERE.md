@@ -9,7 +9,9 @@
 
 Build a modular pipeline that turns a small real OpenStreetMap area into a stylized low-poly KFB urban scene that can later be walked and driven.
 
-First pilot: **a deliberately small Köln-Ehrenfeld area**, not all of Cologne.
+Primary pilot: **a deliberately small Köln-Ehrenfeld area**, not all of Cologne.
+
+Parallel complementary pilot: [**Hürth / Stotzheimer Straße**](HUERTH_PILOT.md) — suburban/off-road/high-speed Free Roam test, with a smaller v0 clip inside the broader 1.5 km discovery envelope.
 
 Core sequence:
 
@@ -215,6 +217,10 @@ Drift/boost/ramp can be added to this same fixture after base reverse/parking co
 
 - [ ] implementation, automated tests, public deployment and Georg acceptance reported separately.
 
+## 4.1 · Game Development Studio · optional game-ready packaging lane
+
+Use [GAME_DEV_STUDIO_ASSET_PACKAGING.md](GAME_DEV_STUDIO_ASSET_PACKAGING.md) as the bounded plugin contract. Game Development Studio may package real KFB/KayKit residents, vehicles, animation mappings, colliders, VFX/SFX anchors and reusable City asset families, while canonical GitHub sources and consumer owners remain unchanged. Start with one resident + one BOX1 vehicle + minimal event bundle before any batch expansion.
+
 ## 5 · Donor hook A · img2threejs / landmark geometry
 
 Current source:
@@ -325,7 +331,7 @@ Attribution should visibly identify OpenStreetMap contributors and the ODbL data
 OSM City preparation is ready to feed Astra when:
 
 1. the source/data pipeline is deterministic;
-2. a small Ehrenfeld blockout is actually generated;
+2. a small Ehrenfeld blockout is actually generated; Hürth may proceed in parallel as the suburban/off-road comparison after its v0 bbox is frozen;
 3. style layer is separable from geometry;
 4. the consumer export contract is explicit;
 5. Free Roam preparation can name the receiving Walk/Drive engine without creating a third controller;
