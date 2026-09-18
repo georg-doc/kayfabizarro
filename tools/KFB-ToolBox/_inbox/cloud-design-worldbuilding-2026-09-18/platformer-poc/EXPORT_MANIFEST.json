@@ -1,0 +1,185 @@
+{
+  "schema": "kfb.platformer-poc.export-manifest/1",
+  "product": "KFB_FREE_ROAM_PLATFORMER_POC_v0",
+  "zip": "KFB_Free_Roam_Platformer_POC_v0_EXPORT_2026-09-18.zip",
+  "date": "2026-09-18",
+  "builtFrom": {
+    "repo": "georg-doc/kayfabizarro",
+    "brief": "skills/chat/workflows/FREE_ROAM_PLATFORMER_POC_2026-09-18/CLAUDE_DESIGN_BRIEF.md",
+    "briefCommit": "a12e3316dd56f2bcda1bf0d7c1b743f40fec849e"
+  },
+  "entry": "index.html",
+  "runtime": {
+    "three": "0.160.0 via cdn.jsdelivr.net importmap",
+    "build": "none",
+    "server": "none required (ES modules); ein statischer Server nur, wenn der Browser file://-Module blockiert",
+    "network": "erforderlich — alle Modelle sind GitHub-SourceRefs"
+  },
+  "files": [
+    {
+      "path": "CHANGELOG.md",
+      "bytes": 1927
+    },
+    {
+      "path": "data/actors.json",
+      "bytes": 5328
+    },
+    {
+      "path": "data/hub-portals.json",
+      "bytes": 1770
+    },
+    {
+      "path": "data/level.json",
+      "bytes": 4694
+    },
+    {
+      "path": "data/pack-index.json",
+      "bytes": 7303
+    },
+    {
+      "path": "docs/ACTOR_ADAPTERS.md",
+      "bytes": 4890
+    },
+    {
+      "path": "docs/ARCHITECTURE.md",
+      "bytes": 3947
+    },
+    {
+      "path": "docs/ASSET_MANIFEST.json",
+      "bytes": 41498
+    },
+    {
+      "path": "docs/evidence/01-island-overview.png",
+      "bytes": 40412
+    },
+    {
+      "path": "docs/evidence/02-motion-lab-skeleton-warrior.png",
+      "bytes": 44743
+    },
+    {
+      "path": "docs/evidence/03-frizzlebob-graft.png",
+      "bytes": 36427
+    },
+    {
+      "path": "docs/evidence/04-capsulecarl-airborne.png",
+      "bytes": 33608
+    },
+    {
+      "path": "docs/KNOWN_ISSUES.md",
+      "bytes": 3498
+    },
+    {
+      "path": "docs/RECOVERY.md",
+      "bytes": 2459
+    },
+    {
+      "path": "docs/TEST_REPORT.md",
+      "bytes": 4959
+    },
+    {
+      "path": "FEATURE_PARITY.md",
+      "bytes": 3121
+    },
+    {
+      "path": "index.html",
+      "bytes": 6794
+    },
+    {
+      "path": "README.md",
+      "bytes": 3743
+    },
+    {
+      "path": "src/actors.js",
+      "bytes": 15128
+    },
+    {
+      "path": "src/assist.js",
+      "bytes": 4663
+    },
+    {
+      "path": "src/camera-rig.js",
+      "bytes": 3421
+    },
+    {
+      "path": "src/fx.js",
+      "bytes": 4930
+    },
+    {
+      "path": "src/hud.js",
+      "bytes": 8565
+    },
+    {
+      "path": "src/loader.js",
+      "bytes": 3398
+    },
+    {
+      "path": "src/main.js",
+      "bytes": 12128
+    },
+    {
+      "path": "src/physics.js",
+      "bytes": 12338
+    },
+    {
+      "path": "src/sources.js",
+      "bytes": 903
+    },
+    {
+      "path": "src/world.js",
+      "bytes": 9628
+    },
+    {
+      "path": "START_HERE.md",
+      "bytes": 2092
+    },
+    {
+      "path": "tests/probe.js",
+      "bytes": 5169
+    },
+    {
+      "path": "tests/README.md",
+      "bytes": 1300
+    }
+  ],
+  "fileCount": 31,
+  "totalBytes": 334784,
+  "excluded": [
+    "node_modules",
+    "Paket-/Build-Caches",
+    "dist-Baeume",
+    "Kopien von KayKit-/KFB-Modellen",
+    "Animationsbibliotheken",
+    "Font-Binaerdateien",
+    "Audio-Binaerdateien (Ton ist synthetisiert)",
+    "Videos",
+    "Screenshot-Sammlungen (4 Belegbilder, gelistet)",
+    "ZIP im ZIP",
+    "Vorgaengerprojekte",
+    "Birthday-Material",
+    "Travel-/Race-/OSM-Quellbaeume"
+  ],
+  "newAssets": {
+    "folder": "NEW_ASSETS_FOR_GITHUB_IMPORT/",
+    "present": false,
+    "note": "Es wurde kein neues visuelles oder akustisches Asset erzeugt. Alles Sichtbare kommt aus dem Repo; der Ton ist zur Laufzeit synthetisiert (WebAudio), also keine Datei."
+  },
+  "assetSources": "docs/ASSET_MANIFEST.json — 135 SourceRefs, 40 im Preview nachweislich geladen",
+  "evidence": [
+    "docs/evidence/01-island-overview.png",
+    "docs/evidence/02-motion-lab-skeleton-warrior.png",
+    "docs/evidence/03-frizzlebob-graft.png",
+    "docs/evidence/04-capsulecarl-airborne.png"
+  ],
+  "honesty": {
+    "SOURCE": "Brief a12e331; Pack-Pfade aus registry/assets/v1/packs/platformer-game-kit-dec-2021.json (@ eb48f50); Aktorpfade aus tools/resident_atlas_s6/data/cast.js und hexrealm/hub/stations.js; Leser aus tools/KFB-ToolBox/kfb-rigs-embed-v3 (EMBED_KFB_RIGS_v3.md).",
+    "DECISION": "Eigenstaendiges Paket neben dem veroeffentlichten Free-Roam-Drive-POC. Ein Bewegungs-Besitzer, vier Aktor-Adapter, zwei Modi auf einer Welt, Level in Zellen statt Weltmassen, Ton synthetisiert statt als Datei.",
+    "IMPLEMENTATION": "17 Plattformen, 9 Portale, 18 Pickups, Bouncer, 2 Gefahren, 8 Checkpoints; 9 semantische Zustaende; Roster mit 15 Eintraegen, lazy; Motion Lab; zwei Eingabe-Presets.",
+    "TESTED_RESULT": "Siehe docs/TEST_REPORT.md. Kern: Boot ohne Fehler, 35/35 Quellen geladen, 12/12 assistierte Spruenge auf dem angekuendigten Ziel, 3/7 manuelle Spruenge (Leveldesign, nicht Physik), Bouncer erreicht 12,9 bei Arena-Oberkante 13,0, vier Adapter gemountet.",
+    "EXPORT": "Dieses ZIP. Voller editierbarer Quellcode, keine Modellkopien, kein node_modules, kein ZIP im ZIP.",
+    "PUBLIC_DEPLOYMENT": "NOT PERFORMED",
+    "GITHUB_PUSH": "NOT PERFORMED",
+    "GEORG_ACCEPTANCE": "OPEN",
+    "OPEN": "docs/KNOWN_ISSUES.md — 19 Punkte, u. a. manuelle Spruenge von 2x2-Plattformen, Rig_Large und Legacy ungetestet, keine Touch-Steuerung, keine Kamera-Kollision.",
+    "ARCHIVED_HISTORY": "Keine. Erste Fassung; es wurde kein Vorgaengerprojekt mitgeschleppt."
+  }
+}

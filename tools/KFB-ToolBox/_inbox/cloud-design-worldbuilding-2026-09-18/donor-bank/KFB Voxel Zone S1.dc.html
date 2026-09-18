@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>KFB Voxel Zone — Slice 1: Texturen + Variation</title>
+<style>
+  html,body{margin:0;height:100%;background:#0e0d0c;overflow:hidden;font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased;}
+  #dc-root,.sc-host{height:100%;}
+  a{color:#d9a35a;} a:hover{color:#f0c184;}
+  input[type=range]{-webkit-appearance:none;appearance:none;width:100%;height:3px;border-radius:2px;background:#4a4038;outline:none;}
+  input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:13px;height:13px;border-radius:50%;background:#d9a35a;border:2px solid #1b1815;cursor:pointer;}
+  input[type=range]::-moz-range-thumb{width:13px;height:13px;border-radius:50%;background:#d9a35a;border:2px solid #1b1815;cursor:pointer;}
+  .s1-scroll::-webkit-scrollbar{width:7px;} .s1-scroll::-webkit-scrollbar-thumb{background:#4a403880;border-radius:4px;}
+</style>
+<script type="importmap">
+{
+  "imports": {
+    "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
+    "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/"
+  }
+}
+</script>
+<script type="module">
+  import * as THREE from 'three';
+  import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+  import { RoomEnvironment } from 'three/addons/environments/RoomEnvironment.js';
+  window.__S1 = { THREE, OrbitControls, RoomEnvironment };
+  window.dispatchEvent(new Event('s1ready'));
+</script>
+</helmet>
+
+<div style="position:absolute;inset:0;background:#0e0d0c">
+  <canvas ref="{{ canvasRef }}" style="position:absolute;inset:0;width:100%;height:100%;display:block"></canvas>
+
+  <div class="s1-scroll" style="position:absolute;top:0;left:0;bottom:0;width:302px;overflow-y:auto;background:rgba(20,18,15,0.9);backdrop-filter:blur(6px);border-right:1px solid #2b2620;padding:20px 20px 32px;box-sizing:border-box;display:flex;flex-direction:column;gap:22px;color:#e8e2d6">
+
+    <div style="display:flex;flex-direction:column;gap:7px">
+      <span style="font-family:ui-monospace,Menlo,monospace;font-size:10.5px;letter-spacing:0.14em;text-transform:uppercase;color:#8c8175">Slice 1 · Abnahme</span>
+      <span style="font-size:19px;font-weight:700;line-height:1.2">Texturen auf die Box-Sprache</span>
+      <span style="font-size:12.5px;line-height:1.5;color:#a89e90">Textur multiplikativ als Kanten-Layer, Variation über <strong style="color:#d9a35a;font-weight:600">Wert</strong> (Helligkeit, Sättigung, Ramp) — keine UV-Rotation, kein Kippen. Regler <strong style="color:#d9a35a;font-weight:600">Variation</strong> auf 0 = alle Cubes identisch.</span>
+    </div>
+
+    <div style="display:flex;flex-direction:column;gap:9px">
+      <span style="font-family:ui-monospace,Menlo,monospace;font-size:10.5px;letter-spacing:0.12em;text-transform:uppercase;color:#8c8175">Story-Modus</span>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px">
+        <sc-for list="{{ modeButtons }}" as="m" hint-placeholder-count="6">
+          <button type="button" onClick="{{ m.go }}" style="{{ m.style }}">{{ m.label }}</button>
+        </sc-for>
+      </div>
+    </div>
+
+    <div style="display:flex;flex-direction:column;gap:14px">
+      <span style="font-family:ui-monospace,Menlo,monospace;font-size:10.5px;letter-spacing:0.12em;text-transform:uppercase;color:#8c8175">Variation</span>
+      <div style="display:flex;flex-direction:column;gap:6px">
+        <div style="display:flex;justify-content:space-between;font-size:12.5px;color:#c2b9ab"><span>Variation gesamt</span><span style="font-family:ui-monospace,Menlo,monospace;color:#d9a35a">{{ vVariation }}</span></div>
+        <input type="range" min="0" max="1" step="0.05" value="{{ variation }}" onInput="{{ onVariation }}">
+      </div>
+      <div style="display:flex;flex-direction:column;gap:6px">
+        <div style="display:flex;justify-content:space-between;font-size:12.5px;color:#c2b9ab"><span>Helligkeit-Streuung</span><span style="font-family:ui-monospace,Menlo,monospace;color:#d9a35a">{{ vJitter }}</span></div>
+        <input type="range" min="0" max="0.7" step="0.02" value="{{ brightRange }}" onInput="{{ onJitter }}">
+      </div>
+      <div style="display:flex;flex-direction:column;gap:6px">
+        <div style="display:flex;justify-content:space-between;font-size:12.5px;color:#c2b9ab"><span>Körnung (noise)</span><span style="font-family:ui-monospace,Menlo,monospace;color:#d9a35a">{{ vGrain }}</span></div>
+        <input type="range" min="0" max="0.9" step="0.03" value="{{ grain }}" onInput="{{ onGrain }}">
+      </div>
+      <div style="display:flex;flex-direction:column;gap:6px">
+        <div style="display:flex;justify-content:space-between;font-size:12.5px;color:#c2b9ab"><span>Biom-Tint</span><span style="font-family:ui-monospace,Menlo,monospace;color:#d9a35a">{{ vTint }}</span></div>
+        <input type="range" min="0" max="1" step="0.05" value="{{ tint }}" onInput="{{ onTint }}">
+      </div>
+      <div style="display:flex;flex-direction:column;gap:6px">
+        <div style="display:flex;justify-content:space-between;font-size:12.5px;color:#c2b9ab"><span>Wert-Bänder (weich)</span><span style="font-family:ui-monospace,Menlo,monospace;color:#d9a35a">{{ vBands }}</span></div>
+        <input type="range" min="0" max="1" step="0.05" value="{{ bandAmount }}" onInput="{{ onBands }}">
+        <div style="display:flex;justify-content:space-between;font-size:12.5px;color:#c2b9ab;margin-top:8px"><span>Foto-Fleck-Layer</span><span style="font-family:ui-monospace,Menlo,monospace;color:#d9a35a">{{ vPhoto }}</span></div>
+        <input type="range" min="0" max="0.8" step="0.04" value="{{ photo }}" onInput="{{ onPhoto }}">
+        <div style="display:flex;justify-content:space-between;font-size:12.5px;color:#c2b9ab;margin-top:8px"><span>Fugen-Tiefe</span><span style="font-family:ui-monospace,Menlo,monospace;color:#d9a35a">{{ vSeam }}</span></div>
+        <input type="range" min="0" max="0.9" step="0.03" value="{{ seam }}" onInput="{{ onSeam }}">
+        <div style="display:flex;justify-content:space-between;font-size:12.5px;color:#c2b9ab;margin-top:8px"><span>Fugen-Breite</span><span style="font-family:ui-monospace,Menlo,monospace;color:#d9a35a">{{ vSeamW }}</span></div>
+        <input type="range" min="0" max="0.3" step="0.01" value="{{ seamWidth }}" onInput="{{ onSeamW }}">
+        <div style="display:flex;justify-content:space-between;font-size:12.5px;color:#c2b9ab;margin-top:8px"><span>Streifen (Seiten)</span><span style="font-family:ui-monospace,Menlo,monospace;color:#d9a35a">{{ vStripe }}</span></div>
+        <input type="range" min="0" max="0.8" step="0.03" value="{{ stripe }}" onInput="{{ onStripe }}">
+        <button type="button" onClick="{{ cycleMat }}" style="{{ matStyle }}">{{ matLabel }}</button>
+        <div style="display:flex;gap:6px">
+          <button type="button" onClick="{{ toggleEdgeMix }}" style="{{ edgeMixStyle }}">{{ edgeMixLabel }}</button>
+          <button type="button" onClick="{{ reseed }}" style="flex:1;padding:9px 10px;border-radius:3px;border:1px solid #3b3128;background:#241f1a;color:#c2b9ab;font-family:ui-monospace,Menlo,monospace;font-size:11.5px;cursor:pointer">Seed neu</button>
+        </div>
+      </div>
+    </div>
+
+    <div style="display:flex;flex-direction:column;gap:9px">
+      <span style="font-family:ui-monospace,Menlo,monospace;font-size:10.5px;letter-spacing:0.12em;text-transform:uppercase;color:#8c8175">Zone</span>
+      <div style="display:flex;flex-direction:column;gap:6px">
+        <div style="display:flex;justify-content:space-between;font-size:12.5px;color:#c2b9ab"><span>Kantenlänge</span><span style="font-family:ui-monospace,Menlo,monospace;color:#d9a35a">{{ vSize }}</span></div>
+        <input type="range" min="16" max="48" step="2" value="{{ size }}" onInput="{{ onSize }}">
+      </div>
+      <div style="display:flex;flex-direction:column;gap:6px">
+        <button type="button" onClick="{{ toggleBrick }}" style="{{ brickStyle }}">{{ brickLabel }}</button>
+        <button type="button" onClick="{{ toggleWater }}" style="{{ waterStyle }}">{{ waterLabel }}</button>
+      </div>
+    </div>
+
+    <div style="display:flex;flex-direction:column;gap:8px;border-top:1px solid #2b2620;padding-top:16px;font-family:ui-monospace,Menlo,monospace;font-size:11.5px;color:#8c8175">
+      <span style="color:#c2b9ab">{{ hud }}</span>
+      <span>{{ hudTex }}</span>
+      <span style="line-height:1.5">Texturen live aus kfb-textures.json über asset-index.js — kein relativer Pfad.</span>
+    </div>
+
+  </div>
+
+  <div style="position:absolute;right:18px;bottom:18px;display:flex;flex-direction:column;gap:6px;align-items:flex-end;pointer-events:none">
+    <span style="font-family:ui-monospace,Menlo,monospace;font-size:11px;color:#8c8175;background:rgba(20,18,15,0.72);padding:6px 10px;border-radius:3px">{{ status }}</span>
+    <span style="font-family:ui-monospace,Menlo,monospace;font-size:11px;color:#6f665b;background:rgba(20,18,15,0.72);padding:6px 10px;border-radius:3px">Ziehen = drehen · Rad = Zoom</span>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1280,&quot;height&quot;:800},&quot;mode&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;tragic&quot;,&quot;comic&quot;,&quot;absurd&quot;,&quot;heroic&quot;,&quot;mystical&quot;,&quot;forbidden&quot;],&quot;default&quot;:&quot;forbidden&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Look&quot;},&quot;variation&quot;:{&quot;editor&quot;:&quot;range&quot;,&quot;min&quot;:0,&quot;max&quot;:1,&quot;step&quot;:0.05,&quot;default&quot;:1,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Look&quot;},&quot;brick&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Zone&quot;}}">
+const MODE_LABELS = ['Tragic', 'Comic', 'Absurd', 'Heroic', 'Mystical', 'Forbidden'];
+
+class Component extends DCLogic {
+  state = {
+    ready: false, status: 'lädt three + Texturen …',
+    mode: 5, variation: 1, brightRange: 0.4, grain: 0.2, tint: 0.85,
+    bandAmount: 0.4, matMix: 0, photo: 0,
+    edgeMode: 0, seam: 0.26, seamWidth: 0.07, stripe: 0.26,
+    size: 30, seed: 7, edgeMix: false, brick: true, water: true,
+    stats: { inst: 0, draws: 0, fps: 0 },
+  };
+
+  componentDidMount() {
+    // Der Runtime-Stand hier kann dieselbe Instanz erneut mounten (Hot-Reload):
+    // dann Loop wieder anwerfen statt neu bauen.
+    if (this.booted && this._loop) { this.stop = false; this._loop(); return; }
+    const boot = () => this.boot();
+    if (window.__S1) boot(); else window.addEventListener('s1ready', boot, { once: true });
+  }
+
+  componentWillUnmount() {
+    if (this.canvas && this.canvas.isConnected) return; // Zwischen-Unmount: Szene behalten
+    this.stop = true;
+    if (this.r) this.r.dispose();
+    window.removeEventListener('resize', this.onResize);
+  }
+
+  async boot() {
+    if (!this.canvas || this.booted) return;
+    this.booted = true; this.stop = false;
+    const { THREE, OrbitControls, RoomEnvironment } = window.__S1;
+    this.T = THREE;
+    const [mat, wc] = await Promise.all([
+      import('./kfb-box-material.js'),
+      import('./terrain/world-context.js'),
+    ]);
+    this.M = mat; this.WC = wc;
+    this.tex = await mat.loadKfbTextures(THREE, ['edge', 'noise', 'brick', 'water']);
+    this.MATS = mat.MATERIALS;
+
+    // preserveDrawingBuffer: Beleg-Bilder pro Slice sind Pflicht (Brief §10) — ohne das
+    // liest jeder Screenshot den WebGL-Canvas schwarz (PROJECT_LOG, Learning 4).
+    const r = this.r = new THREE.WebGLRenderer({ canvas: this.canvas, antialias: true, alpha: false, preserveDrawingBuffer: true });
+    r.setPixelRatio(Math.min(devicePixelRatio, 2));
+    r.outputColorSpace = THREE.SRGBColorSpace;
+    r.toneMapping = THREE.ACESFilmicToneMapping;
+    r.toneMappingExposure = 0.96;
+
+    const scene = this.scene = new THREE.Scene();
+    const cam = this.cam = new THREE.PerspectiveCamera(42, 1, 0.1, 500);
+    cam.position.set(26, 20, 30);
+    const ctr = this.ctr = new OrbitControls(cam, r.domElement);
+    ctr.enableDamping = true; ctr.dampingFactor = 0.08;
+    ctr.maxPolarAngle = Math.PI * 0.49; ctr.minDistance = 6; ctr.maxDistance = 120;
+
+    const pmrem = new THREE.PMREMGenerator(r);
+    scene.environment = pmrem.fromScene(new RoomEnvironment(), 0.04).texture;
+
+    this.hemi = new THREE.HemisphereLight(0xffffff, 0x404040, 0.34); scene.add(this.hemi);
+    this.sun = new THREE.DirectionalLight(0xffffff, 2.1); this.sun.position.set(18, 26, 12); scene.add(this.sun);
+    this.amb = new THREE.AmbientLight(0xffffff, 0.14); scene.add(this.amb);
+    scene.fog = new THREE.Fog(0x14120f, 55, 165);
+
+    this.world = new THREE.Group(); scene.add(this.world);
+    this.build();
+    this.applyPalette();
+
+    this.onResize = () => {
+      const w = this.canvas.clientWidth || 1, h = this.canvas.clientHeight || 1;
+      r.setSize(w, h, false); cam.aspect = w / h; cam.updateProjectionMatrix();
+    };
+    window.addEventListener('resize', this.onResize); this.onResize();
+
+    let last = performance.now(), acc = 0, frames = 0;
+    const loop = this._loop = () => {
+      // Selbstheilend: der Loop haengt an der Lebendigkeit des Canvas, nicht am
+      // Lifecycle — der Runtime-Stand hier unmountet zwischendurch.
+      if (!this.canvas || !this.canvas.isConnected) { this.stop = true; return; }
+      requestAnimationFrame(loop);
+      const now = performance.now(), dt = Math.min(0.05, (now - last) / 1000); last = now;
+      acc += dt; frames++;
+      if (this.waterMesh && this.waterMesh.visible) {
+        const m = this.waterMesh.material;
+        if (m.map) { m.map.offset.x += dt * 0.012; m.map.offset.y += dt * 0.008; }
+        if (m.normalMap) { m.normalMap.offset.x -= dt * 0.018; }
+      }
+      this.ctr.update();
+      r.render(scene, cam);
+      if (acc > 0.6) {
+        const info = r.info.render;
+        this.setState({ stats: { inst: this.instCount || 0, draws: info.calls, fps: Math.round(frames / acc) } });
+        acc = 0; frames = 0;
+      }
+    };
+    this.setState({ ready: true, status: 'Zone gebaut · ' + this.tex.edgeIds.join(' / ') + ' + noise + brick' });
+    // stop kann waehrend der await-Fenster von einem Zwischen-Unmount gesetzt worden
+    // sein — hier zuruecknehmen, sonst stirbt der Loop im ersten Frame.
+    this.stop = false;
+    loop();
+  }
+
+  // Materialzuordnung: Terrassen tragen Material, nicht einzelne Würfel — sonst
+  // wird es Flickenteppich. matMix 0 = gemischt nach Ortsfeld + Höhe, 1..6 = eins fest.
+  matOf(c) {
+    const s = this._s || this.state;
+    if (s.matMix > 0) return s.matMix - 1;
+    const t = c.f * 0.65 + (c.h / Math.max(1, this.maxH)) * 0.35;
+    if (t < 0.22) return 3;        // stein — tiefe, kühle Lagen
+    if (t < 0.42) return 2;        // filz
+    if (t < 0.62) return 1;        // ton
+    if (t < 0.84) return 0;        // karton
+    return 4;                      // papier — Kuppen
+  }
+
+  // ---------------------------------------------------------------- Zone
+  build() {
+    const T = this.T, M = this.M, s = this._s || this.state;
+    const N = s.size, half = N / 2, CELL = 1;
+    while (this.world.children.length) {
+      const c = this.world.children.pop();
+      if (c.geometry) c.geometry.dispose();
+      if (c.material && c.material.dispose && c !== this.waterMesh) c.material.dispose();
+    }
+    this.waterMesh = null;
+
+    // Hoehenfeld: zwei Oktaven Hash-Rauschen, deterministisch aus dem Seed
+    const hAt = (x, z) => {
+      const o = (f, a) => {
+        const xi = Math.floor(x * f), zi = Math.floor(z * f);
+        const fx = x * f - xi, fz = z * f - zi;
+        const g = (a1, b1) => M.rnd(s.seed, 'h', a1, b1);
+        const l = (u, v, t) => u + (v - u) * (t * t * (3 - 2 * t));
+        return a * l(l(g(xi, zi), g(xi + 1, zi), fx), l(g(xi, zi + 1), g(xi + 1, zi + 1), fx), fz);
+      };
+      return o(0.11, 1) * 0.72 + o(0.34, 1) * 0.28;
+    };
+    // Zweites, sehr niederfrequentes Feld: liefert die GEKOPPELTE Helligkeit/Saettigung.
+    // Nachbarn liegen im selben Fleck → Materialwechsel statt Flickenteppich.
+    const fAt = (x, z) => {
+      const o = (f) => {
+        const xi = Math.floor(x * f), zi = Math.floor(z * f);
+        const fx = x * f - xi, fz = z * f - zi;
+        const g = (a1, b1) => M.rnd(s.seed, 'f', a1, b1);
+        const l = (u, v, t) => u + (v - u) * (t * t * (3 - 2 * t));
+        return l(l(g(xi, zi), g(xi + 1, zi), fx), l(g(xi, zi + 1), g(xi + 1, zi + 1), fx), fz);
+      };
+      return o(0.085) * 0.66 + o(0.21) * 0.34;
+    };
+
+    const cols = [];
+    let maxH = 1;
+    for (let ix = 0; ix < N; ix++) for (let iz = 0; iz < N; iz++) {
+      const x = ix - half + 0.5, z = iz - half + 0.5;
+      const d = Math.hypot(x, z) / half;
+      const n = hAt(ix, iz) * (1.12 - d * 0.62);
+      const h = Math.max(1, Math.round(1 + n * 13));
+      maxH = Math.max(maxH, h);
+      cols.push({ x, z, h, f: fAt(ix, iz) });
+    }
+    this.cols = cols; this.maxH = maxH;
+
+    // Variation 0 heisst: eine Textur, keine Streuung → sichtbar gekachelt (der A/B-Beweis)
+    const variants = (s.edgeMix && s.variation > 0) ? this.tex.edge.filter(Boolean) : [this.tex.edge[0]];
+    const buckets = variants.map(() => []);
+    cols.forEach((c, i) => buckets[M.rnd(s.seed, 'v', i) * buckets.length | 0].push(c));
+
+    this.meshes = [];
+    this.instCount = cols.length;
+    buckets.forEach((list, bi) => {
+      if (!list.length) return;
+      const geo = M.makeBoxGeometry(T, list.length, CELL);
+      const mat = M.makeVariedBoxMaterial(T, {
+        edgeMap: s.edgeMode === 1 ? variants[bi] : null, grainMap: this.tex.noise, grain: s.grain,
+        edgeStrength: 0.78, roughness: 0.9, bands: 4, bandAmount: s.bandAmount,
+        seam: s.edgeMode === 2 ? 0 : s.seam, seamWidth: s.edgeMode === 2 ? 0 : s.seamWidth, stripe: s.stripe,
+        photoMap: this.tex.brick ? this.tex.brick.map : null, photoStrength: s.photo, photoScale: 0.22,
+      });
+      const mesh = new T.InstancedMesh(geo, mat, list.length);
+      mesh.frustumCulled = false;
+      const m4 = new T.Matrix4();
+      list.forEach((c, i) => {
+        m4.makeScale(1, c.h, 1); m4.setPosition(c.x, 0, c.z);
+        mesh.setMatrixAt(i, m4);
+        M.writeVariation(geo, i, s.seed + ':' + bi, {
+          variation: s.variation, brightRange: s.brightRange, heightCells: c.h, field: c.f,
+          mat: this.matOf(c),
+        });
+      });
+      mesh.instanceMatrix.needsUpdate = true;
+      mesh.userData.list = list;
+      mesh.userData.bi = bi;   // Bucket-Index am Mesh: applyLive muss denselben Seed benutzen
+      this.world.add(mesh);
+      this.meshes.push(mesh);
+    });
+
+    // Mauer-Patch: Vorbereitung fuer Slice 2 (brick-PBR in derselben Box-Sprache)
+    if (s.brick) {
+      // Mauer mit Tor-Lücke: freie Bahn ist Bedingung (Vorbereitung Slice 2/3)
+      const wall = [];
+      const len = Math.min(15, N - 6), wx = -Math.floor(len / 2), wz = half - 5.5;
+      const gate = [Math.floor(len / 2) - 1, Math.floor(len / 2)];
+      for (let i = 0; i < len; i++) {
+        const isGate = gate.includes(i);
+        if (isGate) { wall.push({ x: wx + i + 0.5, z: wz + 0.5, y: 4, h: 1 }); continue; }
+        for (let y = 0; y < 4; y++) wall.push({ x: wx + i + 0.5, z: wz + 0.5, y, h: 1 });
+        if (i === 0 || i === len - 1) wall.push({ x: wx + i + 0.5, z: wz + 0.5, y: 4, h: 1 });
+      }
+      const geo = M.makeBoxGeometry(T, wall.length, CELL);
+      // Die Mauer nimmt dasselbe Material-System wie die Cubes (Stein, prozedural) und
+      // dieselbe Kanten-Fassung — deshalb liest sie als Architektur DIESER Welt.
+      const mat = M.makeVariedBoxMaterial(T, {
+        edgeMap: s.edgeMode === 1 ? variants[0] : null, grainMap: this.tex.noise, grain: s.grain * 0.7,
+        edgeStrength: 0.7, roughness: 0.95, bands: 4, bandAmount: s.bandAmount,
+        seam: s.edgeMode === 2 ? 0 : s.seam * 0.85, seamWidth: s.edgeMode === 2 ? 0 : s.seamWidth * 1.15,
+        stripe: s.stripe * 0.6,
+        photoMap: this.tex.brick ? this.tex.brick.map : null,
+        photoStrength: s.photo > 0 ? Math.min(1, s.photo + 0.25) : 0, photoScale: 0.2,
+      });
+      const mesh = new T.InstancedMesh(geo, mat, wall.length);
+      mesh.frustumCulled = false;
+      const m4 = new T.Matrix4();
+      const baseH = (x, z) => {
+        const c = this.cols.find((q) => Math.abs(q.x - x) < 0.6 && Math.abs(q.z - z) < 0.6);
+        return c ? c.h : 1;
+      };
+      wall.forEach((w, i) => {
+        m4.makeScale(1, 1, 1); m4.setPosition(w.x, baseH(w.x, w.z) + w.y, w.z);
+        mesh.setMatrixAt(i, m4);
+        M.writeVariation(geo, i, s.seed + ':brick', {
+          variation: s.variation, brightRange: s.brightRange * 0.6, mat: 3,
+          field: 0.35 + (w.y / 5) * 0.4,
+        });
+      });
+      mesh.instanceMatrix.needsUpdate = true;
+      mesh.userData.list = wall;
+      mesh.userData.bi = 'brick';
+      this.brickMesh = mesh;
+      this.world.add(mesh);
+      this.instCount += wall.length;
+    }
+
+    if (s.water) {
+      const g = new T.PlaneGeometry(N * 1.35, N * 1.35);
+      g.rotateX(-Math.PI / 2);
+      const wt = this.tex.water || {};
+      if (wt.map) { wt.map.repeat.set(N / 9, N / 9); }
+      if (wt.normalMap) { wt.normalMap.repeat.set(N / 7, N / 7); }
+      const mat = new T.MeshStandardMaterial({
+        map: wt.map || null, normalMap: wt.normalMap || null, normalScale: new T.Vector2(0.32, 0.32),
+        transparent: true, opacity: 0.66, roughness: 0.14, metalness: 0.22, color: 0x3f6a72,
+      });
+      const mesh = new T.Mesh(g, mat);
+      mesh.position.y = 1.35;
+      this.waterMesh = mesh;
+      this.world.add(mesh);
+    }
+  }
+
+  applyPalette() {
+    const T = this.T, M = this.M, s = this._s || this.state;
+    const stops = this.WC.STORY_PALETTES[s.mode].c;
+    const ink = this.WC.MODES[s.mode].ink;
+    for (const mesh of this.meshes) {
+      const list = mesh.userData.list;
+      list.forEach((c, i) => {
+        const t = Math.pow(Math.min(1, (c.h - 1) / Math.max(1, this.maxH - 1)), 1.7);
+        mesh.setColorAt(i, M.tintFor(T, stops, t, s.seed, i, {
+          variation: s.variation, strength: s.tint,
+        }));
+      });
+      if (mesh.instanceColor) mesh.instanceColor.needsUpdate = true;
+    }
+    // Die Mauer gehoert zur selben Welt: schwaecherer Story-Tint, gleiche Palette,
+    // Hoehen-Rampe ueber die Mauerhoehe. Sonst liest brick als aufgeklebtes Requisit.
+    if (this.brickMesh) {
+      const wall = this.brickMesh.userData.list || [];
+      wall.forEach((w, i) => {
+        this.brickMesh.setColorAt(i, M.tintFor(T, stops, 0.12 + (w.y / 5) * 0.45, s.seed + ':brick', i, {
+          variation: s.variation, strength: s.tint * 0.55, jitter: 0.14,
+        }));
+      });
+      if (this.brickMesh.instanceColor) this.brickMesh.instanceColor.needsUpdate = true;
+    }
+    const base = new T.Color(stops[0][0], stops[0][1], stops[0][2]);
+    const glow = new T.Color(stops[2][0], stops[2][1], stops[2][2]);
+    this.scene.fog.color.copy(base).lerp(new T.Color(0x14120f), 0.45);
+    this.scene.background = base.clone().lerp(new T.Color(0x0e0d0c), 0.62);
+    this.hemi.color.copy(glow).lerp(new T.Color(0xffffff), 0.45); this.hemi.groundColor.copy(base);
+    this.sun.color.copy(new T.Color(0xffffff).lerp(new T.Color(ink), 0.22));
+    if (this.waterMesh) this.waterMesh.material.color.copy(base).lerp(new T.Color(0x3f6a72), 0.6);
+  }
+
+  applyLive() {
+    const M = this.M, s = this._s || this.state;
+    for (const mesh of this.meshes) {
+      const U = mesh.material.userData.kfb;
+      U.uKfbGrain.value = s.grain;
+      U.uKfbBandAmt.value = s.bandAmount;
+      U.uKfbPhotoStr.value = s.photo;
+      U.uKfbSeam.value = s.edgeMode === 2 ? 0 : s.seam;
+      U.uKfbSeamW.value = s.edgeMode === 2 ? 0 : s.seamWidth;
+      U.uKfbStripe.value = s.stripe;
+      mesh.userData.list.forEach((c, i) => M.writeVariation(mesh.geometry, i, s.seed + ':' + mesh.userData.bi, {
+        variation: s.variation, brightRange: s.brightRange, heightCells: c.h, field: c.f,
+        mat: this.matOf(c),
+      }));
+    }
+    if (this.brickMesh) {
+      const BU = this.brickMesh.material.userData.kfb;
+      BU.uKfbGrain.value = s.grain * 0.7;
+      BU.uKfbBandAmt.value = s.bandAmount;
+      BU.uKfbPhotoStr.value = s.photo > 0 ? Math.min(1, s.photo + 0.25) : 0;
+      BU.uKfbSeam.value = s.edgeMode === 2 ? 0 : s.seam * 0.85;
+      BU.uKfbSeamW.value = s.edgeMode === 2 ? 0 : s.seamWidth * 1.15;
+      BU.uKfbStripe.value = s.stripe * 0.6;
+      (this.brickMesh.userData.list || []).forEach((w, i) => M.writeVariation(this.brickMesh.geometry, i, s.seed + ':brick', {
+        variation: s.variation, brightRange: s.brightRange * 0.6, mat: 3,
+        field: 0.35 + (w.y / 5) * 0.4,
+      }));
+    }
+    this.applyPalette();
+  }
+
+  // Kein setState-Callback: der Runtime-Stand hier ruft ihn nicht. Erst den
+  // Arbeitsstand (_s) setzen, dann rendern, dann State fuer die UI nachziehen.
+  set(patch, rebuild) {
+    this._s = { ...this.state, ...patch };
+    if (this.r) {
+      if (rebuild) { this.build(); this.applyPalette(); } else this.applyLive();
+      // Ein Bild sofort zeichnen: in gedrosselten/unsichtbaren Iframes tickt rAF nicht,
+      // sonst bleibt jede Zustandsaenderung unsichtbar (und Beleg-Bilder werden schwarz).
+      this.r.render(this.scene, this.cam);
+      patch = { ...patch, stats: { inst: this.instCount || 0, draws: this.r.info.render.calls, fps: this.state.stats.fps } };
+    }
+    this.setState(patch);
+  }
+
+  renderVals() {
+    const s = this.state;
+    const btn = (on) => 'padding:9px 8px;border-radius:3px;border:1px solid ' + (on ? '#d9a35a' : '#3b3128') +
+      ';background:' + (on ? 'rgba(217,163,90,0.16)' : '#241f1a') + ';color:' + (on ? '#f0c184' : '#a89e90') +
+      ";font-family:ui-monospace,Menlo,monospace;font-size:11.5px;cursor:pointer;text-align:center";
+    const wide = (on, extra) => btn(on) + ';flex:1;' + (extra || '');
+    return {
+      canvasRef: (el) => {
+      if (!el) return;
+      this.canvas = el;
+      if (this.booted && this._loop && this.stop) { this.stop = false; this._loop(); return; }
+      if (window.__S1) this.boot();
+    },
+      status: s.status,
+      modeButtons: MODE_LABELS.map((l, i) => ({
+        label: l, style: btn(i === s.mode), go: () => this.set({ mode: i }, false),
+      })),
+      variation: s.variation, brightRange: s.brightRange, grain: s.grain, tint: s.tint, size: s.size,
+      vVariation: s.variation.toFixed(2), vJitter: s.brightRange.toFixed(2),
+      vGrain: s.grain.toFixed(2), vTint: s.tint.toFixed(2), vSize: s.size + '×' + s.size,
+      onVariation: (e) => { const v = +e.target.value; this.set({ variation: v }, (v === 0) !== (s.variation === 0)); },
+      onJitter: (e) => this.set({ brightRange: +e.target.value }, false),
+      onGrain: (e) => this.set({ grain: +e.target.value }, false),
+      onTint: (e) => this.set({ tint: +e.target.value }, false),
+      onSize: (e) => this.set({ size: +e.target.value }, true),
+      reseed: () => this.set({ seed: Math.floor(Math.random() * 9999) }, true),
+      toggleEdgeMix: () => this.set({ edgeMode: (s.edgeMode + 1) % 3 }, true),
+      edgeMixStyle: wide(s.edgeMode === 0),
+      edgeMixLabel: ['Fassung: prozedural', 'Fassung: edge3-PNG', 'Fassung: aus'][s.edgeMode],
+      seam: s.seam, vSeam: s.seam.toFixed(2),
+      onSeam: (e) => this.set({ seam: +e.target.value }, false),
+      seamWidth: s.seamWidth, vSeamW: s.seamWidth.toFixed(2),
+      onSeamW: (e) => this.set({ seamWidth: +e.target.value }, false),
+      stripe: s.stripe, vStripe: s.stripe.toFixed(2),
+      onStripe: (e) => this.set({ stripe: +e.target.value }, false),
+      bandAmount: s.bandAmount, vBands: s.bandAmount.toFixed(2),
+      onBands: (e) => this.set({ bandAmount: +e.target.value }, false),
+      photo: s.photo, vPhoto: s.photo.toFixed(2),
+      onPhoto: (e) => this.set({ photo: +e.target.value }, false),
+      cycleMat: () => this.set({ matMix: (s.matMix + 1) % 7 }, true),
+      matStyle: wide(s.matMix > 0),
+      matLabel: 'Material: ' + (s.matMix === 0 ? 'gemischt' : ['Karton', 'Ton', 'Filz', 'Stein', 'Papier', 'glatt'][s.matMix - 1]),
+      toggleBrick: () => this.set({ brick: !s.brick }, true),
+      brickStyle: wide(s.brick), brickLabel: s.brick ? 'Mauer-Patch (brick) an' : 'Mauer-Patch aus',
+      toggleWater: () => this.set({ water: !s.water }, true),
+      waterStyle: wide(s.water), waterLabel: s.water ? 'Wasser an' : 'Wasser aus',
+      hud: s.stats.inst + ' Instanzen · ' + s.stats.draws + ' Draw-Calls · ' + s.stats.fps + ' fps',
+      hudTex: this.tex ? (this.tex.edgeIds || []).join(' · ') + ' · noise · brick' : 'Texturen laden …',
+    };
+  }
+}
+</script>
+</body>
+</html>

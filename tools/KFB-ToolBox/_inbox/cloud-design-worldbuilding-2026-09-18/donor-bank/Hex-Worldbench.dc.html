@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rye&family=Archivo:wght@500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  html,body{margin:0;height:100%;background:#0e0d0c;overflow:hidden;font-family:'Archivo',system-ui,sans-serif;-webkit-font-smoothing:antialiased;}
+  #dc-root,.sc-host{height:100%;}
+  a{color:#c9663a;} a:hover{color:#ffbe07;}
+  input[type=range]{-webkit-appearance:none;appearance:none;height:4px;border-radius:2px;background:#8a7f6a;outline:none;}
+  input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:15px;height:15px;border-radius:50%;background:#ffbe07;border:2px solid #23201c;cursor:pointer;}
+  input[type=range]::-moz-range-thumb{width:15px;height:15px;border-radius:50%;background:#ffbe07;border:2px solid #23201c;cursor:pointer;}
+  select{font-family:'Archivo',sans-serif;}
+  .wb-scroll::-webkit-scrollbar{width:8px;} .wb-scroll::-webkit-scrollbar-thumb{background:#8a7f6a80;border-radius:4px;}
+</style>
+<script type="importmap">
+{
+  "imports": {
+    "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
+    "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/"
+  }
+}
+</script>
+<script type="module">
+  import * as THREE from 'three';
+  import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+  import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
+  import { RoomEnvironment } from 'three/addons/environments/RoomEnvironment.js';
+  import { EffectComposer } from 'three/addons/postprocessing/EffectComposer.js';
+  import { RenderPass } from 'three/addons/postprocessing/RenderPass.js';
+  import { ShaderPass } from 'three/addons/postprocessing/ShaderPass.js';
+  let H = { THREE, OrbitControls, GLTFLoader, RoomEnvironment, EffectComposer, RenderPass, ShaderPass };
+  try {
+    const { HorizontalTiltShiftShader } = await import('three/addons/shaders/HorizontalTiltShiftShader.js');
+    const { VerticalTiltShiftShader } = await import('three/addons/shaders/VerticalTiltShiftShader.js');
+    H.HorizontalTiltShiftShader = HorizontalTiltShiftShader;
+    H.VerticalTiltShiftShader = VerticalTiltShiftShader;
+  } catch(e){}
+  window.__HEX = H;
+  window.dispatchEvent(new Event('hexready'));
+</script>
+</helmet>
+
+<div style="position:absolute;inset:0;background:radial-gradient(120% 100% at 50% 0%,#2a2723 0%,#131210 70%);">
+
+  <canvas ref="{{ canvasRef }}" style="position:absolute;inset:0;width:100%;height:100%;display:block;"></canvas>
+
+  <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:14px;color:#e8dcc4;pointer-events:none;transition:opacity .5s;z-index:5;opacity:{{ loaderOpacity }};">
+    <div style="font-family:'Rye',serif;font-size:26px;color:#ffbe07;letter-spacing:.5px;">Lade echte Kenney-Teile …</div>
+    <div ref="{{ loadMsgRef }}" style="font-size:13px;opacity:.7;">GLB-Tiles + Cube-Pet aus dem Repo</div>
+  </div>
+
+  <div style="position:absolute;top:16px;left:50%;transform:translateX(-50%);text-align:center;pointer-events:none;">
+    <div style="font-family:'Rye',serif;font-size:22px;color:#ffbe07;text-shadow:0 2px 0 #00000060;letter-spacing:.5px;">Bizarro-Hex · 3D-Worldbench</div>
+    <div style="font-size:11px;color:#e8dcc4;opacity:.75;letter-spacing:2px;text-transform:uppercase;margin-top:2px;">Echte Kenney-GLB · Material · Belichtung — orbit mit Maus</div>
+  </div>
+
+  <button onClick="{{ onHud }}" style="{{ hudBtn }};position:absolute;top:18px;left:16px;z-index:6;">{{ hudLabel }}</button>
+
+  <!-- LEFT: LIGHT & LOOK -->
+  <div class="wb-scroll" style="display:{{ hudDisplay }};position:absolute;top:62px;left:16px;bottom:112px;width:236px;overflow-y:auto;background:#f4ecd8ee;border:2px solid #23201c;border-radius:10px;box-shadow:0 10px 30px #00000070;padding:14px 14px 16px;color:#23201c;">
+    <div style="font-family:'Rye',serif;font-size:15px;color:#a6371f;margin-bottom:10px;">Licht &amp; Look</div>
+
+    <div style="font-size:10px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;opacity:.6;margin-bottom:6px;">Material-Look</div>
+    <div style="display:flex;gap:6px;margin-bottom:14px;">
+      <sc-for list="{{ modeBtns }}" as="m" hint-placeholder-count="3">
+        <button onClick="{{ m.on }}" style="{{ m.style }}">{{ m.label }}</button>
+      </sc-for>
+    </div>
+
+    <div style="font-size:10px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;opacity:.6;margin-bottom:6px;">Belichtung</div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-bottom:14px;">
+      <sc-for list="{{ moods }}" as="m" hint-placeholder-count="4">
+        <button onClick="{{ m.on }}" style="{{ m.style }}">{{ m.label }}</button>
+      </sc-for>
+    </div>
+
+    <div style="display:flex;justify-content:space-between;font-size:11px;font-weight:700;margin-bottom:3px;"><span>Sonne · Richtung</span><span style="opacity:.55;">{{ sunLabel }}</span></div>
+    <input type="range" min="0" max="360" step="1" value="{{ sun }}" onInput="{{ onSun }}" style="width:100%;margin-bottom:12px;">
+
+    <div style="display:flex;justify-content:space-between;font-size:11px;font-weight:700;margin-bottom:3px;"><span>Sonne · Höhe</span><span style="opacity:.55;">{{ elevLabel }}</span></div>
+    <input type="range" min="8" max="88" step="1" value="{{ sunElev }}" onInput="{{ onElev }}" style="width:100%;margin-bottom:12px;">
+
+    <div style="display:flex;justify-content:space-between;font-size:11px;font-weight:700;margin-bottom:3px;"><span>Belichtung</span><span style="opacity:.55;">{{ expLabel }}</span></div>
+    <input type="range" min="0.5" max="1.7" step="0.02" value="{{ exposure }}" onInput="{{ onExp }}" style="width:100%;margin-bottom:12px;">
+
+    <div style="display:flex;justify-content:space-between;font-size:11px;font-weight:700;margin-bottom:3px;"><span>Biom-Farbe</span><span style="opacity:.55;">{{ tintLabel }}</span></div>
+    <input type="range" min="0" max="1" step="0.02" value="{{ tint }}" onInput="{{ onTint }}" style="width:100%;margin-bottom:14px;">
+
+    <button onClick="{{ onTilt }}" style="{{ tiltBtn }}">Tilt-Shift-Diorama: {{ tiltState }}</button>
+  </div>
+
+  <!-- RIGHT: TILES & BIOME -->
+  <div class="wb-scroll" style="display:{{ hudDisplay }};position:absolute;top:62px;right:16px;bottom:172px;width:250px;overflow-y:auto;background:#f4ecd8ee;border:2px solid #23201c;border-radius:10px;box-shadow:0 10px 30px #00000070;padding:14px 14px 16px;color:#23201c;">
+    <div style="font-family:'Rye',serif;font-size:15px;color:#a6371f;margin-bottom:4px;">Kacheln &amp; Biome</div>
+    <div style="font-size:10.5px;opacity:.7;margin-bottom:10px;">Endlos-fähiges Hex-Grid (19 Felder). Kachel im 3D-Bild anklicken, dann Biome + Ebene zuweisen.</div>
+
+    <div style="font-size:10.5px;font-weight:700;margin-bottom:12px;background:#e6d9bd;border-radius:7px;padding:7px 9px;">↳ Aktive Kachel: {{ activeLabel }}</div>
+
+    <div style="font-size:10px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;opacity:.6;margin-bottom:6px;">Biome der Kachel {{ activeLabel }}</div>
+    <div style="display:flex;flex-direction:column;gap:4px;margin-bottom:14px;">
+      <sc-for list="{{ biomeChips }}" as="b" hint-placeholder-count="6">
+        <button onClick="{{ b.on }}" style="{{ b.style }}"><span style="width:12px;height:12px;border-radius:3px;border:1.5px solid #23201c;flex:0 0 auto;background:{{ b.dot }};"></span><span style="flex:1;text-align:left;">{{ b.name }}</span><span style="font-size:9px;opacity:.5;font-family:ui-monospace,monospace;">{{ b.tile }}</span></button>
+      </sc-for>
+    </div>
+
+    <div style="font-size:10px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;opacity:.6;margin-bottom:6px;">Ebene (Register)</div>
+    <div style="display:flex;gap:6px;margin-bottom:12px;">
+      <sc-for list="{{ levels }}" as="l" hint-placeholder-count="3">
+        <button onClick="{{ l.on }}" style="{{ l.style }}">{{ l.label }}</button>
+      </sc-for>
+    </div>
+
+    <div style="background:#e6d9bd;border-radius:8px;padding:9px 11px;border-left:4px solid #a6371f;margin-bottom:14px;">
+      <div style="font-size:11px;font-weight:800;">{{ activeBiomeName }} · {{ activeLevelName }}</div>
+      <div style="font-size:11px;opacity:.75;margin-top:2px;">Stimmung: {{ activeMood }}</div>
+    </div>
+
+    <div style="font-size:10px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;opacity:.6;margin-bottom:6px;">Floor-FX · Erkundung</div>
+    <div style="font-size:10px;opacity:.65;margin-bottom:7px;">Zustand der aktiven Kachel (das gewählte Feld zeigt immer „Hier").</div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:5px;margin-bottom:8px;">
+      <sc-for list="{{ fxBtns }}" as="f" hint-placeholder-count="4">
+        <button onClick="{{ f.on }}" style="{{ f.style }}"><span style="width:10px;height:10px;border-radius:2px;flex:0 0 auto;background:{{ f.col }};border:1px solid #23201c40;"></span>{{ f.label }}</button>
+      </sc-for>
+    </div>
+    <div style="display:flex;flex-wrap:wrap;gap:4px 10px;font-size:9.5px;opacity:.7;">
+      <sc-for list="{{ fxLegend }}" as="l" hint-placeholder-count="5">
+        <span style="display:flex;align-items:center;gap:4px;"><span style="width:9px;height:9px;border-radius:2px;background:{{ l.col }};box-shadow:0 0 0 1px #23201c40;"></span>{{ l.label }}</span>
+      </sc-for>
+    </div>
+  </div>
+
+  <!-- BOTTOM LEFT: PROPS -->
+  <div style="display:{{ hudDisplay }};position:absolute;bottom:16px;left:16px;background:#f4ecd8ee;border:2px solid #23201c;border-radius:10px;box-shadow:0 8px 24px #00000060;padding:10px 12px;color:#23201c;">
+    <div style="font-size:10px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;opacity:.6;margin-bottom:7px;">Requisiten auf Zentrum</div>
+    <div style="display:flex;gap:6px;">
+      <sc-for list="{{ propChips }}" as="p" hint-placeholder-count="3">
+        <button onClick="{{ p.on }}" style="{{ p.style }}">{{ p.label }}</button>
+      </sc-for>
+    </div>
+  </div>
+
+  <!-- BOTTOM RIGHT: PET SELECTOR -->
+  <div style="display:{{ hudDisplay }};position:absolute;bottom:16px;right:16px;width:288px;background:#f4ecd8ee;border:2px solid #23201c;border-radius:10px;box-shadow:0 8px 24px #00000060;padding:11px 12px;color:#23201c;">
+    <div style="font-size:10px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;opacity:.6;margin-bottom:6px;">Cube-Pet (Spieler-Avatar)</div>
+    <div style="display:flex;gap:7px;align-items:center;">
+      <select value="{{ petSpecies }}" onChange="{{ onPet }}" style="flex:1;font-size:12px;font-weight:700;padding:6px 7px;border:2px solid #23201c;border-radius:6px;background:#fffaf0;color:#23201c;cursor:pointer;">
+        <sc-for list="{{ petList }}" as="p" hint-placeholder-count="24">
+          <option value="{{ p.id }}">{{ p.name }}</option>
+        </sc-for>
+      </select>
+      <span style="font-size:10px;opacity:.7;white-space:nowrap;">{{ status }}</span>
+    </div>
+    <div style="font-size:9.5px;opacity:.6;margin-top:6px;">Echte Kenney-GLB · CC0 · bunny = FrizzleBob</div>
+  </div>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:&quot;100%&quot;,&quot;height&quot;:&quot;100%&quot;},&quot;shaderMode&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;original&quot;,&quot;clay&quot;,&quot;cel&quot;],&quot;default&quot;:&quot;original&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Look&quot;},&quot;lightMood&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;tag&quot;,&quot;daemmerung&quot;,&quot;nacht&quot;,&quot;untergrund&quot;],&quot;default&quot;:&quot;tag&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Look&quot;},&quot;tiltShift&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Look&quot;},&quot;tintStrength&quot;:{&quot;editor&quot;:&quot;range&quot;,&quot;default&quot;:0.72,&quot;min&quot;:0,&quot;max&quot;:1,&quot;step&quot;:0.05,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Look&quot;}}">
+const RAW = 'https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets';
+const HEXBASE = RAW + '/GLB_hexagon_kit';
+const PETBASE = RAW + '/GLB_cube-pets';
+
+const BIOMES = [
+  { id:'wellpappe_wildnis', name:'Wellpappe-Wildnis', tile:'grass-forest',
+    up:{tint:'#8fae4e',mood:'überwuchert'}, mid:{tint:'#b5895a',mood:'neugierig'}, down:{tint:'#8a8378',mood:'gepresst / grau'} },
+  { id:'zeitungsstadt', name:'Zeitungsstadt', tile:'building-village',
+    up:{tint:'#e7e0d2',mood:'reine Schlagzeile'}, mid:{tint:'#cbb98f',mood:'aufgeregt / zynisch'}, down:{tint:'#6d6455',mood:'durchgesickert'} },
+  { id:'filz_sumpf', name:'Filz-Sumpf', tile:'grass-hill',
+    up:{tint:'#cdb8c6',mood:'traumseidig'}, mid:{tint:'#5f7355',mood:'verträumt / traurig'}, down:{tint:'#4a4640',mood:'vom Filz verschluckt'} },
+  { id:'ton_ebenen', name:'Ton-Ebenen', tile:'sand-desert',
+    up:{tint:'#e08a44',mood:'glasiert / heroisch'}, mid:{tint:'#b25a38',mood:'staubig / episch'}, down:{tint:'#6e564a',mood:'rissig / verlassen'} },
+  { id:'holzsteg_werft', name:'Holzsteg-Werft', tile:'building-dock',
+    up:{tint:'#5fa0a6',mood:'frisch gestrichen'}, mid:{tint:'#3f6f86',mood:'robust / salzig'}, down:{tint:'#6b4a38',mood:'verrostet / industriell'} },
+  { id:'stein_katakomben', name:'Stein-Katakomben', tile:'stone-mountain',
+    up:{tint:'#cfc9be',mood:'marmorner Tempel'}, mid:{tint:'#8f8a80',mood:'unheimlich'}, down:{tint:'#4d4740',mood:'flüsternder Fels'} },
+];
+const BIO = {}; BIOMES.forEach(b=>BIO[b.id]=b);
+
+const PETS = ['bunny','cat','fox','tiger','lion','penguin','panda','koala','deer','monkey','pig','hog','cow','polar','beaver','giraffe','chick','fish','parrot','bee','crab','caterpillar','elephant','dog'];
+const cap = s=>s.charAt(0).toUpperCase()+s.slice(1);
+
+const MOODS = [
+  { id:'tag',        label:'Tag',        bg:0x2a3138, amb:[0xfff2d6,0.55], hemi:[0xdfeaff,0x6b5a44,0.55], sun:[0xffe6b0,2.7], exp:1.0,  fog:0.9 },
+  { id:'daemmerung', label:'Dämmerung',  bg:0x3a2a20, amb:[0xffdca8,0.42], hemi:[0xffc79a,0x3a2c20,0.45], sun:[0xff9d5c,2.3], exp:0.95, fog:1.4 },
+  { id:'nacht',      label:'Nacht',      bg:0x14181f, amb:[0x8aa0c8,0.26], hemi:[0x38486b,0x0e0b12,0.4],  sun:[0xffd9a0,1.5], exp:1.05, fog:2.0 },
+  { id:'untergrund', label:'Untergrund', bg:0x0d0c0a, amb:[0x6a7686,0.20], hemi:[0x272c34,0x080706,0.35], sun:[0xe8d2a0,1.1], exp:1.1,  fog:3.4 },
+];
+const MOOD = {}; MOODS.forEach(m=>MOOD[m.id]=m);
+const LEVELV = { up:1.14, mid:1.0, down:0.82 };
+const SCALE = 5.2;
+const SKY = RAW + '/skydome_a.webp';
+// Reusable floor-FX vocabulary — one visual language for every hex floor.
+const FX = {
+  current: { label:'Hier',      col:'#ffbe07', ring:0.95, fill:0.15 },
+  visited: { label:'Besucht',   col:'#d8b45a', ring:0.55, fill:0.06 },
+  known:   { label:'Bekannt',   col:'#5fc8cf', ring:0.55, fill:0.0  },
+  unknown: { label:'Unbekannt', col:'#171310', ring:0.0,  fill:0.6  },
+  locked:  { label:'Gesperrt',  col:'#d0567a', ring:0.6,  fill:0.16 },
+};
+const FX_ORDER = ['visited','known','unknown','locked'];
+function hexDist(q,r){ return (Math.abs(q)+Math.abs(q+r)+Math.abs(r))/2; }
+function genGrid(R){
+  const out=[]; const order=['wellpappe_wildnis','ton_ebenen','holzsteg_werft','stein_katakomben','filz_sumpf','zeitungsstadt'];
+  for(let q=-R;q<=R;q++) for(let r=Math.max(-R,-q-R); r<=Math.min(R,-q+R); r++){
+    const biome=(q===0&&r===0)?'wellpappe_wildnis':order[(((q*2 - r*3)%6)+6)%6];
+    out.push({q,r,biome,level:'mid'});
+  }
+  out.sort((a,b)=>(hexDist(a.q,a.r)-hexDist(b.q,b.r)));
+  // seed exploration states so the whole FX language is visible at once
+  out.forEach((t,i)=>{ const d=hexDist(t.q,t.r);
+    t.fx = d<=1 ? 'visited' : ['unknown','known','unknown','locked','known','unknown'][((t.q*3+t.r)%6+6)%6];
+  });
+  return out;
+}
+
+class Component extends DCLogic {
+  constructor(props){
+    super(props);
+    this.state = {
+      mode: this.props.shaderMode==='cel'?'cel':(this.props.shaderMode==='clay'?'clay':'original'),
+      mood: this.props.lightMood ?? 'tag',
+      sun:55, sunElev:52, exposure:1.0, tint: this.props.tintStrength ?? 0.72,
+      tilt: this.props.tiltShift ?? true,
+      active:0, ready:false, hud:true,
+      tiles: genGrid(2),
+      props:{ pet:true, dice:true, pad:true },
+      petSpecies:'bunny',
+      status:'lädt …',
+    };
+    this.modelCache = new Map();
+    this.tileRoots = [];
+    this.fxRoots = [];
+    this.disposed = false;
+    this.boardR = 8;
+    this._enterAt = -9;
+    this.canvasRef = (el)=>{ if(el) this._canvas = el; };
+    this.loaderRef = (el)=>{ if(el) this._loader = el; };
+    this.loadMsgRef = (el)=>{ if(el) this._loadMsg = el; };
+  }
+
+  componentDidMount(){
+    if(window.__HEX) this.init();
+    else window.addEventListener('hexready', ()=>this.init(), { once:true });
+    this._onResize = ()=>this.resize();
+    window.addEventListener('resize', this._onResize);
+  }
+  componentWillUnmount(){
+    this.disposed=true;
+    if(this._raf) cancelAnimationFrame(this._raf);
+    window.removeEventListener('resize', this._onResize);
+  }
+
+  gradMap(){
+    if(this._grad) return this._grad;
+    const THREE=this.THREE;
+    const c=document.createElement('canvas'); c.width=4;c.height=1;
+    const x=c.getContext('2d'); ['#4a4130','#857654','#bcaC85'.replace('C','c'),'#f3ead0'].forEach((s,i)=>{x.fillStyle=s;x.fillRect(i,0,1,1);});
+    const g=new THREE.CanvasTexture(c); g.minFilter=g.magFilter=THREE.NearestFilter; g.colorSpace=THREE.SRGBColorSpace;
+    this._grad=g; return g;
+  }
+
+  async loadGLTF(url){
+    if(this.modelCache.has(url)) return this.modelCache.get(url);
+    const g = await this.gltf.loadAsync(url);
+    this.modelCache.set(url, g);
+    return g;
+  }
+
+  // ---------- material modes ----------
+  // Hex-kit tiles ship untextured (stripped) → we skin them in a solid biome colour
+  // (KFB clay/cardboard papertoy). Pet/die pass tileCol=null → keep their own materials.
+  tileColor(biomeId, level){
+    const THREE=this.THREE;
+    const cream=new THREE.Color(0xcdbb95);
+    const tint=new THREE.Color(BIO[biomeId][level].tint);
+    const c=cream.lerp(tint, this.state.tint);
+    c.multiplyScalar(LEVELV[level]);
+    return c;
+  }
+  applyMode(root, tileCol){
+    const THREE=this.THREE, mode=this.state.mode;
+    root.traverse(o=>{
+      if(!o.isMesh) return;
+      if(!o.userData.__orig){ o.userData.__orig=o.material; o.castShadow=true; o.receiveShadow=true; }
+      const vc = !!(o.geometry && o.geometry.attributes && o.geometry.attributes.color);
+      const makeFrom=(om)=>{
+        const base = tileCol ? tileCol.clone() : ((om && om.color)? om.color.clone() : new THREE.Color(0xffffff));
+        const map = tileCol ? null : (om? (om.map||null) : null);
+        const useVC = vc && !tileCol;
+        if(mode==='cel') return new THREE.MeshToonMaterial({ color:base, map, vertexColors:useVC, gradientMap:this.gradMap() });
+        if(mode==='clay') return new THREE.MeshStandardMaterial({ color:base, map, vertexColors:useVC, metalness:0, roughness:1.0, flatShading:true, envMapIntensity:0.2 });
+        return new THREE.MeshStandardMaterial({ color:base, map, vertexColors:useVC, metalness:0, roughness:0.55, flatShading:false, envMapIntensity:0.6 });
+      };
+      const orig=o.userData.__orig;
+      o.material = Array.isArray(orig)? orig.map(makeFrom) : makeFrom(orig);
+    });
+  }
+
+  // ---------- build world ----------
+  init(){
+    if(this.scene) return;
+    const H=window.__HEX, THREE=this.THREE=H.THREE;
+    const canvas=this._canvas;
+    const renderer=this.renderer=new THREE.WebGLRenderer({ canvas, antialias:true, preserveDrawingBuffer:true });
+    renderer.setPixelRatio(Math.min(2,window.devicePixelRatio));
+    renderer.outputColorSpace=THREE.SRGBColorSpace;
+    renderer.toneMapping=THREE.ACESFilmicToneMapping;
+    renderer.shadowMap.enabled=true; renderer.shadowMap.type=THREE.PCFSoftShadowMap;
+
+    const scene=this.scene=new THREE.Scene();
+    scene.fog=new THREE.FogExp2(0x14120f, 0.02);
+    const cam=this.cam=new THREE.PerspectiveCamera(42,1,0.1,400);
+    cam.position.set(0,14,18);
+    const controls=this.controls=new H.OrbitControls(cam,canvas);
+    controls.enableDamping=true; controls.dampingFactor=0.08; controls.maxPolarAngle=Math.PI*0.49;
+
+    this.gltf=new H.GLTFLoader();
+    this._texLoader=new THREE.TextureLoader(); this._texLoader.setCrossOrigin('anonymous');
+    this._ray=new THREE.Raycaster(); this._m=new THREE.Vector2();
+    canvas.addEventListener('pointerdown', e=>{ this._dn=[e.clientX,e.clientY]; });
+    canvas.addEventListener('pointerup', e=>{
+      if(!this._dn) return; if(Math.hypot(e.clientX-this._dn[0],e.clientY-this._dn[1])>6) return;
+      const rc=canvas.getBoundingClientRect();
+      this._m.set(((e.clientX-rc.left)/rc.width)*2-1, -((e.clientY-rc.top)/rc.height)*2+1);
+      this._ray.setFromCamera(this._m,this.cam);
+      const hits=this._ray.intersectObjects(this.tileGroup.children,true);
+      if(hits.length){ let o=hits[0].object; while(o&&o.userData.tileIndex===undefined)o=o.parent; if(o) this.setState({active:o.userData.tileIndex},()=>this.updateRing()); }
+    });
+    const pmrem=new THREE.PMREMGenerator(renderer);
+    scene.environment=pmrem.fromScene(new H.RoomEnvironment(),0.04).texture;
+
+    this.ambient=new THREE.AmbientLight(0xffffff,0.5); scene.add(this.ambient);
+    this.hemi=new THREE.HemisphereLight(0xffffff,0x444444,0.5); scene.add(this.hemi);
+    const sun=this.sun=new THREE.DirectionalLight(0xffffff,2.6);
+    sun.castShadow=true; sun.shadow.mapSize.set(2048,2048);
+    sun.shadow.bias=-0.0005; sun.shadow.radius=4;
+    scene.add(sun); scene.add(sun.target);
+    this.rim=new THREE.DirectionalLight(0xffffff,0.6); scene.add(this.rim);
+
+    this.groundPlane=new THREE.Mesh(new THREE.PlaneGeometry(400,400), new THREE.ShadowMaterial({opacity:0.32}));
+    this.groundPlane.rotation.x=-Math.PI/2; this.groundPlane.receiveShadow=true; scene.add(this.groundPlane);
+
+    this.tileGroup=new THREE.Group(); scene.add(this.tileGroup);
+    this.propGroup=new THREE.Group(); scene.add(this.propGroup);
+
+    this.setupComposer();
+    this.applyLights();
+    this.resize();
+    this.clock=new THREE.Clock();
+    this.animate();
+    this.buildWorld();
+  }
+
+  setupComposer(){
+    const H=window.__HEX;
+    try{
+      const composer=this.composer=new H.EffectComposer(this.renderer);
+      composer.addPass(new H.RenderPass(this.scene,this.cam));
+      if(H.HorizontalTiltShiftShader && H.VerticalTiltShiftShader){
+        const hp=this.hPass=new H.ShaderPass(H.HorizontalTiltShiftShader);
+        const vp=this.vPass=new H.ShaderPass(H.VerticalTiltShiftShader);
+        hp.uniforms.r.value=0.5; vp.uniforms.r.value=0.5;
+        composer.addPass(hp); composer.addPass(vp);
+      }
+    }catch(e){ this.composer=null; }
+  }
+
+  pixel(q,r){ return [ this.sx*SCALE*(q + r/2), 0.75*this.sz*SCALE*r ]; }
+  async loadSky(){
+    try{
+      const t=await new Promise((res,rej)=>this._texLoader.load(SKY,res,undefined,rej));
+      t.mapping=this.THREE.EquirectangularReflectionMapping; t.colorSpace=this.THREE.SRGBColorSpace;
+      this._sky=t;
+    }catch(e){ this._sky=null; }
+  }
+  async buildWorld(){
+    const THREE=this.THREE;
+    try{
+      const base=await this.loadGLTF(HEXBASE+'/grass.glb');
+      const bb=new THREE.Box3().setFromObject(base.scene);
+      this.sx=bb.max.x-bb.min.x; this.sz=bb.max.z-bb.min.z; this.topY=bb.max.y*SCALE;
+      await this.loadSky();
+      for(let i=0;i<this.state.tiles.length;i++){ await this.buildTile(i); }
+      this.buildFX();
+      this.buildPad();
+      await this.loadPet(this.state.petSpecies);
+      this.buildDie();
+      this.refresh();
+      this.fitView();
+      this.setState({ status:'✓ live', ready:true });
+    }catch(e){
+      if(this._loadMsg) this._loadMsg.textContent='Fehler beim Laden: '+e.message;
+      this.setState({ status:'Fehler' });
+    }
+  }
+
+  async buildTile(i){
+    const THREE=this.THREE;
+    const b=this.state.tiles[i];
+    const g=await this.loadGLTF(HEXBASE+'/'+BIO[b.biome].tile+'.glb');
+    const inst=g.scene.clone(true);
+    inst.scale.setScalar(SCALE);
+    const p=this.pixel(b.q,b.r);
+    inst.position.set(p[0],0,p[1]);
+    this.applyMode(inst, this.tileColor(b.biome,b.level));
+    inst.userData.tileIndex=i;
+    this.tileGroup.add(inst); this.tileRoots[i]=inst;
+  }
+  async swapTile(i){
+    if(this.tileRoots[i]){ this.tileGroup.remove(this.tileRoots[i]); this.tileRoots[i]=null; }
+    await this.buildTile(i);
+    this.needsRender=true;
+  }
+  reskinAll(){
+    this.tileRoots.forEach((r,i)=>{ if(r) this.applyMode(r, this.tileColor(this.state.tiles[i].biome,this.state.tiles[i].level)); });
+    if(this._pet) this.applyMode(this._pet, null);
+    if(this._die) this.applyMode(this._die, null);
+    this.needsRender=true;
+  }
+
+  // ---------- clearing pad (game-plausible standing token under the pet) ----------
+  buildPad(){
+    const THREE=this.THREE;
+    const r=this.sz*SCALE*0.14, h=this.sz*SCALE*0.03;
+    const g=new THREE.CylinderGeometry(r,r*1.05,h,6,1);
+    const pad=new THREE.Mesh(g, new THREE.MeshStandardMaterial({color:0xcdbb95,roughness:1,metalness:0,flatShading:true}));
+    pad.rotation.y=Math.PI/6; pad.castShadow=false; pad.receiveShadow=true;
+    this._padH=h; this._pad=pad; this._pad.visible=this.state.props.pad;
+    this.propGroup.add(pad);
+  }
+
+  // ---------- slot system (free positions per floor tile) ----------
+  // Ray-cast a candidate grid (centre + inner ring) straight down onto the tile's
+  // baked geometry. A candidate is FREE when the first hit sits at floor height;
+  // if a tree / house / peak rises above it, the slot is OCCUPIED. Cached on the
+  // tile → the exact data contract an in-game placer would read.
+  computeSlots(i){
+    const THREE=this.THREE; const root=this.tileRoots[i]; if(!root) return [];
+    root.updateMatrixWorld(true);
+    const t=this.state.tiles[i]; const [cx,cz]=this.pixel(t.q,t.r);
+    const apo=this.sx*0.5*SCALE;                 // world apothem
+    const cand=[[0,0]];
+    for(let k=0;k<6;k++){ const a=(30+60*k)*Math.PI/180; cand.push([Math.cos(a)*apo*0.42, Math.sin(a)*apo*0.42]); }
+    for(let k=0;k<6;k++){ const a=(60*k)*Math.PI/180; cand.push([Math.cos(a)*apo*0.74, Math.sin(a)*apo*0.74]); }
+    const floorTol=0.13*SCALE;
+    const slots=cand.map(([lx,lz])=>{
+      const ox=cx+lx, oz=cz+lz;
+      this._ray.set(new THREE.Vector3(ox, this.topY+8, oz), new THREE.Vector3(0,-1,0));
+      const hit=this._ray.intersectObject(root,true)[0];
+      const surfaceY = hit ? hit.point.y : this.topY;
+      return { x:ox, z:oz, y:this.topY, surfaceY, free: surfaceY <= this.topY + floorTol };
+    });
+    root.userData.slots=slots;
+    return slots;
+  }
+  placeActors(){
+    const i=this.state.active, t=this.state.tiles[i];
+    if(!this.tileRoots[i]) return;
+    let slots=this.tileRoots[i].userData.slots || this.computeSlots(i);
+    const [cx,cz]=this.pixel(t.q,t.r);
+    let free=slots.filter(s=>s.free);
+    if(!free.length) free=[{x:cx,z:cz,y:this.topY,free:true}];
+    free.sort((a,b)=>Math.hypot(a.x-cx,a.z-cz)-Math.hypot(b.x-cx,b.z-cz));
+    const petSlot=free[0];
+    const padTop = this.topY + (this.state.props.pad ? (this._padH||0) : 0);
+    if(this._pad){
+      this._pad.position.set(petSlot.x, this.topY + (this._padH||0)*0.5, petSlot.z);
+      this._pad.material.color.copy(this.tileColor(t.biome,t.level).multiplyScalar(1.12));
+      this._pad.visible = this.state.props.pad && this.state.props.pet;
+    }
+    if(this._pet){ this._pet.position.set(petSlot.x, padTop - this._petMinY, petSlot.z); }
+    if(this._die){
+      const rest=free.slice(1);
+      const ds=rest.length ? rest.sort((a,b)=>Math.hypot(b.x-petSlot.x,b.z-petSlot.z)-Math.hypot(a.x-petSlot.x,a.z-petSlot.z))[0] : petSlot;
+      this._die.position.set(ds.x, this.topY + this._dieH*0.5, ds.z);
+    }
+    this.needsRender=true;
+  }
+
+  // ---------- floor-FX (reusable per-hex overlay) ----------
+  makeHexBand(Rc,inner){
+    const THREE=this.THREE; const pos=[],idx=[];
+    for(let k=0;k<6;k++){ const a=(90+60*k)*Math.PI/180;
+      pos.push(Math.cos(a)*Rc,0,Math.sin(a)*Rc, Math.cos(a)*Rc*inner,0,Math.sin(a)*Rc*inner); }
+    for(let k=0;k<6;k++){ const a=2*k, an=2*((k+1)%6); idx.push(a,an,a+1, an,an+1,a+1); }
+    const g=new THREE.BufferGeometry(); g.setAttribute('position',new THREE.Float32BufferAttribute(pos,3)); g.setIndex(idx); return g;
+  }
+  makeHexFill(Rc){
+    const THREE=this.THREE; const pos=[0,0,0],idx=[];
+    for(let k=0;k<6;k++){ const a=(90+60*k)*Math.PI/180; pos.push(Math.cos(a)*Rc,0,Math.sin(a)*Rc); }
+    for(let k=0;k<6;k++){ idx.push(0,1+k,1+((k+1)%6)); }
+    const g=new THREE.BufferGeometry(); g.setAttribute('position',new THREE.Float32BufferAttribute(pos,3)); g.setIndex(idx); return g;
+  }
+  buildFX(){
+    const THREE=this.THREE; const Rc=this.sz*0.5*SCALE*0.985;
+    const bandGeo=this.makeHexBand(Rc,0.82), fillGeo=this.makeHexFill(Rc);
+    this.state.tiles.forEach((t,i)=>{
+      const [cx,cz]=this.pixel(t.q,t.r);
+      const grp=new THREE.Group(); grp.position.set(cx, this.topY+0.04, cz);
+      const fill=new THREE.Mesh(fillGeo, new THREE.MeshBasicMaterial({transparent:true,depthWrite:false,side:THREE.DoubleSide,opacity:0}));
+      fill.renderOrder=2;
+      const ring=new THREE.Mesh(bandGeo, new THREE.MeshBasicMaterial({transparent:true,depthWrite:false,side:THREE.DoubleSide,opacity:0}));
+      ring.position.y=0.03; ring.renderOrder=3;
+      grp.add(fill); grp.add(ring); this.scene.add(grp);
+      this.fxRoots[i]={group:grp,ring,fill};
+    });
+    this.repaintFX();
+  }
+  paintFX(i){
+    const fx=this.fxRoots[i]; if(!fx) return;
+    const eff=(i===this.state.active)?'current':(this.state.tiles[i].fx||'known');
+    const d=FX[eff];
+    fx.ring.material.color.set(d.col); fx.ring.material.opacity=d.ring; fx.ring.visible=d.ring>0.01;
+    fx.fill.material.color.set(d.col); fx.fill.material.opacity=d.fill; fx.fill.visible=d.fill>0.01;
+    fx.group.scale.set(1,1,1);
+  }
+  repaintFX(){ for(let i=0;i<this.fxRoots.length;i++) this.paintFX(i); this.needsRender=true; }
+  refresh(){ this.repaintFX(); this.placeActors(); }
+
+  async loadPet(species){
+    const THREE=this.THREE;
+    try{
+      const g=await this.loadGLTF(PETBASE+'/animal-'+species+'.glb');
+      const pet=g.scene.clone(true);
+      const bb=new THREE.Box3().setFromObject(pet.scene||pet);
+      const h=bb.max.y-bb.min.y || 1;
+      const s=(this.sz*SCALE*0.20)/h; pet.scale.setScalar(s);
+      const bb2=new THREE.Box3().setFromObject(pet);
+      this._petMinY=bb2.min.y;
+      pet.position.set(0, this.topY - bb2.min.y, 0);
+      this.applyMode(pet, null);
+      if(this._pet) this.propGroup.remove(this._pet);
+      this._pet=pet; this.propGroup.add(pet);
+      // idle animation
+      this._mixer=null;
+      if(g.animations && g.animations.length){
+        const mixer=new THREE.AnimationMixer(pet);
+        const clip = g.animations.find(c=>/idle/i.test(c.name)) || g.animations.find(c=>/static/i.test(c.name)) || g.animations[0];
+        if(clip){ mixer.clipAction(clip).play(); this._mixer=mixer; }
+      }
+      pet.visible=this.state.props.pet;
+      this.placeActors();
+      this.needsRender=true;
+    }catch(e){ /* pet optional */ }
+  }
+
+  buildDie(){
+    const THREE=this.THREE;
+    if(this._die){ this.propGroup.remove(this._die); this._die=null; }
+    const sz=this.sz*SCALE*0.037; this._dieH=sz;
+    const d=new THREE.Mesh(new THREE.BoxGeometry(sz,sz,sz), new THREE.MeshStandardMaterial({color:0xf3ead3,roughness:0.6,metalness:0}));
+    d.castShadow=true; d.receiveShadow=true;
+    d.position.set(this.sx*SCALE*0.24, this.topY+sz*0.5, this.sz*SCALE*0.22); d.rotation.y=0.4;
+    const pipMat=new THREE.MeshStandardMaterial({color:0x23201c,roughness:0.5});
+    const r=sz*0.5, pr=sz*0.09;
+    [[0,r,0],[-0.25*sz,0.5*sz-0*sz,0.5*sz],[0.25*sz,0.5*sz,0.5*sz],[0,0.5*sz,0.5*sz]].forEach(p=>{
+      const pip=new THREE.Mesh(new THREE.SphereGeometry(pr,10,10),pipMat); pip.position.set(p[0],p[1],p[2]); d.add(pip);
+    });
+    this.applyMode(d, null);
+    d.visible=this.state.props.dice;
+    this._die=d; this.propGroup.add(d);
+    this.placeActors();
+  }
+
+  // ---------- lights / camera ----------
+  applyLights(){
+    const THREE=this.THREE, mp=MOOD[this.state.mood];
+    if(this._sky && (this.state.mood==='tag'||this.state.mood==='daemmerung')) this.scene.background=this._sky;
+    else this.scene.background=new THREE.Color(mp.bg);
+    this.scene.fog.color.setHex(mp.bg);
+    this.scene.fog.density = mp.fog / Math.max(1,this.boardR*8);
+    this.ambient.color.setHex(mp.amb[0]); this.ambient.intensity=mp.amb[1];
+    this.hemi.color.setHex(mp.hemi[0]); this.hemi.groundColor.setHex(mp.hemi[1]); this.hemi.intensity=mp.hemi[2];
+    const lv=LEVELV[this.state.tiles[0].level];
+    this.sun.color.setHex(mp.sun[0]); this.sun.intensity=mp.sun[1]*lv;
+    this.renderer.toneMappingExposure=this.state.exposure*mp.exp;
+    this.updateSunPos();
+    const b=BIO[this.state.tiles[0].biome][this.state.tiles[0].level];
+    this.rim.color.set(b.tint); this.rim.intensity=this.state.mood==='untergrund'?0.9:0.6;
+    this.needsRender=true;
+  }
+  updateSunPos(){
+    const az=this.state.sun*Math.PI/180, el=this.state.sunElev*Math.PI/180, r=this.boardR*3;
+    this.sun.position.set(Math.cos(el)*Math.cos(az)*r, Math.sin(el)*r, Math.cos(el)*Math.sin(az)*r);
+    this.rim.position.set(-Math.cos(az)*r, r*0.5, -Math.sin(az)*r);
+    this.needsRender=true;
+  }
+  updateRing(){ this._enterAt=this.clock?this.clock.getElapsedTime():0; this.refresh(); }
+  fitView(){
+    const THREE=this.THREE;
+    const box=new THREE.Box3().setFromObject(this.tileGroup);
+    const c=box.getCenter(new THREE.Vector3()), s=box.getSize(new THREE.Vector3());
+    this.boardR=Math.max(s.x,s.z)*0.5;
+    const R3=Math.hypot(s.x,s.y,s.z)*0.5;
+    const dist=R3/Math.sin(this.cam.fov*Math.PI/360)*0.95;
+    this.controls.target.copy(c);
+    this.cam.position.set(c.x+dist*0.05, c.y+dist*0.72, c.z+dist*0.7);
+    this.controls.minDistance=dist*0.3; this.controls.maxDistance=dist*2.6;
+    this.cam.near=dist*0.02; this.cam.far=dist*10; this.cam.updateProjectionMatrix();
+    this.groundPlane.position.y=box.min.y+0.001;
+    const sc=this.boardR*1.7;
+    Object.assign(this.sun.shadow.camera,{left:-sc,right:sc,top:sc,bottom:-sc,near:this.boardR*0.5,far:this.boardR*8});
+    this.sun.shadow.camera.updateProjectionMatrix();
+    this.applyLights();
+    this.controls.update();
+    this.needsRender=true;
+  }
+
+  resize(){
+    if(!this.renderer||!this._canvas) return;
+    const w=this._canvas.clientWidth||window.innerWidth, h=this._canvas.clientHeight||window.innerHeight;
+    this.renderer.setSize(w,h,false); this.composer?.setSize(w,h);
+    this.cam.aspect=w/h; this.cam.updateProjectionMatrix();
+    if(this.hPass) this.hPass.uniforms.h.value=1.4/w;
+    if(this.vPass) this.vPass.uniforms.v.value=1.4/h;
+    this.needsRender=true;
+  }
+
+  animate(){
+    if(this.disposed) return;
+    this._raf=requestAnimationFrame(()=>this.animate());
+    const dt=this.clock.getDelta();
+    this.controls.update();
+    if(this._mixer && this.state.props.pet){ this._mixer.update(dt); this.needsRender=true; }
+    // active-tile "Hier" pulse + enter-flash (reusable floor-FX motion)
+    const afx=this.fxRoots[this.state.active];
+    if(afx && afx.ring){
+      const et=this.clock.getElapsedTime();
+      let p=0.68+0.30*Math.sin(et*3.2);
+      const since=et-this._enterAt; if(since>=0 && since<0.7) p+=(1-since/0.7)*0.9;
+      afx.ring.material.opacity=Math.min(1.0,p);
+      const sc=1+0.028*Math.sin(et*3.2)+(since>=0&&since<0.7?(1-since/0.7)*0.06:0);
+      afx.group.scale.set(sc,1,sc);
+      this.needsRender=true;
+    }
+    if(this.needsRender || this.controls.enableDamping){
+      if(this.state.tilt && this.composer) this.composer.render();
+      else this.renderer.render(this.scene,this.cam);
+      this.needsRender=false;
+    }
+  }
+
+  // ---------- handlers ----------
+  h={
+    mode:(m)=>this.setState({mode:m}, ()=>this.reskinAll()),
+    mood:(id)=>this.setState({mood:id}, ()=>this.applyLights()),
+    sun:(e)=>{const v=+e.target.value; this.state.sun=v; this.setState({sun:v}); this.updateSunPos();},
+    elev:(e)=>{const v=+e.target.value; this.state.sunElev=v; this.setState({sunElev:v}); this.updateSunPos();},
+    exp:(e)=>{const v=+e.target.value; this.state.exposure=v; this.setState({exposure:v}); this.applyLights();},
+    tint:(e)=>{const v=+e.target.value; this.state.tint=v; this.setState({tint:v}); this.reskinAll();},
+    tilt:()=>this.setState(s=>({tilt:!s.tilt}), ()=>{this.needsRender=true;}),
+    active:(i)=>this.setState({active:i}, ()=>this.updateRing()),
+    biome:(id)=>{const tiles=this.state.tiles.slice(); tiles[this.state.active]={...tiles[this.state.active],biome:id}; this.setState({tiles}, ()=>{ this.swapTile(this.state.active); if(this.state.active===0)this.applyLights(); this.updateRing(); });},
+    level:(l)=>{const tiles=this.state.tiles.slice(); tiles[this.state.active]={...tiles[this.state.active],level:l}; this.setState({tiles}, ()=>{ const i=this.state.active; if(this.tileRoots[i])this.applyMode(this.tileRoots[i],this.tileColor(tiles[i].biome,l)); if(i===0)this.applyLights(); this.needsRender=true; });},
+    prop:(k)=>{const props={...this.state.props,[k]:!this.state.props[k]}; this.setState({props}, ()=>{ if(this._pet)this._pet.visible=props.pet; if(this._die)this._die.visible=props.dice; this.placeActors(); this.needsRender=true; });},
+    pet:(e)=>{const v=e.target.value; this.setState({petSpecies:v}); this.loadPet(v);},
+    fx:(st)=>{const tiles=this.state.tiles.slice(); tiles[this.state.active]={...tiles[this.state.active],fx:st}; this.setState({tiles}, ()=>{ this.paintFX(this.state.active); this.needsRender=true; });},
+    hud:()=>this.setState(s=>({hud:!s.hud})),
+  };
+
+  btn(active, base){ return `${base};${active?'background:#23201c;color:#ffe9b0;border-color:#23201c;':'background:#fff8ea;color:#3a352c;border-color:#c3b48f;'}`; }
+  renderVals(){
+    const s=this.state;
+    const B='flex:1;padding:7px 4px;font:800 12px Archivo,sans-serif;border:2px solid;border-radius:7px;cursor:pointer;text-align:center;';
+    const SM='padding:6px 4px;font:800 11px Archivo,sans-serif;border:2px solid;border-radius:6px;cursor:pointer;text-align:center;';
+    const CHIP='flex:0 0 auto;width:30px;height:30px;font:800 12px Archivo,sans-serif;border:2px solid;border-radius:7px;cursor:pointer;';
+    const BIOROW='display:flex;align-items:center;gap:8px;padding:6px 8px;font:700 11px Archivo,sans-serif;border:2px solid;border-radius:7px;cursor:pointer;';
+    const act=s.tiles[s.active], ab=BIO[act.biome], al=ab[act.level];
+    return {
+      canvasRef:this.canvasRef, loadMsgRef:this.loadMsgRef, loaderOpacity: s.ready?0:1,
+      hudDisplay: s.hud?'block':'none', hudFlex: s.hud?'flex':'none', onHud:this.h.hud,
+      hudLabel: s.hud?'Panels ausblenden':'Panels einblenden',
+      hudBtn:'pointer-events:auto;font:800 11px Archivo,sans-serif;padding:7px 12px;border:2px solid #23201c;border-radius:7px;cursor:pointer;background:'+(s.hud?'#fff8ea':'#ffbe07')+';color:#23201c;box-shadow:0 4px 14px #00000050;',
+      modeBtns:[['original','Kenney'],['clay','Clay'],['cel','Cel']].map(([id,l])=>({label:l,on:()=>this.h.mode(id),style:this.btn(s.mode===id,B)})),
+      moods:MOODS.map(m=>({label:m.label,on:()=>this.h.mood(m.id),style:this.btn(s.mood===m.id,SM)})),
+      sun:s.sun, sunLabel:s.sun+'°', onSun:this.h.sun,
+      sunElev:s.sunElev, elevLabel:s.sunElev+'°', onElev:this.h.elev,
+      exposure:s.exposure, expLabel:s.exposure.toFixed(2), onExp:this.h.exp,
+      tint:s.tint, tintLabel:Math.round(s.tint*100)+'%', onTint:this.h.tint,
+      onTilt:this.h.tilt, tiltState:s.tilt?'AN':'AUS',
+      tiltBtn:this.btn(s.tilt,'width:100%;padding:8px;font:800 11px Archivo,sans-serif;border:2px solid;border-radius:7px;cursor:pointer;'),
+      biomeChips:BIOMES.map(b=>({name:b.name,dot:b.mid.tint,tile:b.tile,on:()=>this.h.biome(b.id),style:this.btn(act.biome===b.id,BIOROW)})),
+      levels:[['up','Up'],['mid','Mid'],['down','Down']].map(([id,l])=>({label:l,on:()=>this.h.level(id),style:this.btn(act.level===id,B)})),
+      activeLabel: s.active===0?'Zentrum':('Feld #'+(s.active+1)),
+      activeBiomeName:ab.name, activeLevelName:act.level==='up'?'Up · utopisch':act.level==='down'?'Down · Untergrund':'Mid · Heimat',
+      activeMood:al.mood,
+      fxBtns:FX_ORDER.map(st=>({label:FX[st].label,col:FX[st].col,on:()=>this.h.fx(st),style:this.btn(act.fx===st,'display:flex;align-items:center;gap:6px;justify-content:center;padding:6px 4px;font:800 11px Archivo,sans-serif;border:2px solid;border-radius:6px;cursor:pointer;')})),
+      fxLegend:Object.keys(FX).map(k=>({label:FX[k].label,col:FX[k].col})),
+      propChips:[['pet','Pet'],['dice','Würfel'],['pad','Standfläche']].map(([k,l])=>({label:l,on:()=>this.h.prop(k),style:this.btn(s.props[k],'padding:6px 12px;font:800 11px Archivo,sans-serif;border:2px solid;border-radius:6px;cursor:pointer;')})),
+      petList:PETS.map(p=>({id:p,name:cap(p)+(p==='bunny'?' (FrizzleBob)':'')})),
+      petSpecies:s.petSpecies, onPet:this.h.pet, status:s.status,
+    };
+  }
+}
+</script>
+</body>
+</html>
