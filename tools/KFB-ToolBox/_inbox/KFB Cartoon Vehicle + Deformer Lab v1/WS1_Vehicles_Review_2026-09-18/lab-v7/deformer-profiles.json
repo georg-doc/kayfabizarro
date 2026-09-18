@@ -61,6 +61,32 @@
       "springFrequency": 1.9, "springDamping": 0.68, "secondaryLag": 0.25,
       "volumePreserve": 0.9, "retriggerMs": 200
     },
+    "SPACE_HAULER": {
+      "id": "SPACE_HAULER",
+      "label": "Space hauler",
+      "use": "Spacetruck und Spacetruck Large. Kurzer Radstand, hoher Aufbau, dicke Raeder: nickt sichtbar, staucht mittig, klingt langsamer ab als ein Kart.",
+      "tested": "NICHT abgestimmt. Struktur, abgeleitet aus HEAVY_FUTURE, an der gemessenen Geometrie gesetzt (Radstand 0,43 u gegen Aufbauhoehe 0,48 u).",
+      "massFeel": 0.75,
+      "squashAmount": 0.04, "stretchAmount": 0.025, "lateralSquash": 0.028,
+      "pitchResponse": 5, "rollResponse": 5, "bankFollow": 0.65,
+      "driftYawResponse": 7, "driftRoll": 2,
+      "impactResponse": 0.06, "landingSquash": 0.11, "speedBias": 0.4,
+      "springFrequency": 2.4, "springDamping": 0.62, "secondaryLag": 0.3,
+      "volumePreserve": 0.85, "retriggerMs": 180
+    },
+    "TRAILER_TOWED": {
+      "id": "TRAILER_TOWED",
+      "label": "Trailer towed",
+      "use": "Spacetruck Trailer. Gezogene Einheit ohne Antrieb: kein Stretch aus Beschleunigung, dafuer viel Nachlauf.",
+      "tested": "NICHT abgestimmt. stretchAmount steht auf 0, weil ein Anhaenger nicht zieht — das ist eine Ableitung aus der Sache, keine Messung. Der Nachlauf braucht das Zugfahrzeug und ist ohne Kopplung nicht abnehmbar.",
+      "massFeel": 0.8,
+      "squashAmount": 0.035, "stretchAmount": 0.0, "lateralSquash": 0.02,
+      "pitchResponse": 4, "rollResponse": 4, "bankFollow": 0.5,
+      "driftYawResponse": 3, "driftRoll": 1,
+      "impactResponse": 0.06, "landingSquash": 0.1, "speedBias": 0.15,
+      "springFrequency": 2.1, "springDamping": 0.6, "secondaryLag": 0.85,
+      "volumePreserve": 0.85, "retriggerMs": 200
+    },
     "MECH_FUTURE": {
       "id": "MECH_FUTURE",
       "label": "Mech future",
