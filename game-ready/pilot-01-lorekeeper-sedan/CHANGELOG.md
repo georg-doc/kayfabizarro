@@ -40,3 +40,25 @@
 
 ### IMPORTANT LIMIT
 FR-S04-02 uses the original kart. Its PASS proves the donor receiver/control/contact path, not the Pilot-01 Sedan package. Sedan consumer acceptance remains NOT RUN until the exact `car_sedan.gltf` + wheel bindings + validated chassis proxy are mounted and rerun.
+
+## 2026-09-18 · P01-C · FR-S04-02 Sedan adapter contract
+
+### SOURCE REVIEW
+- Read current public FR-S04-02 `app.mjs`, `physics.js`, `PROVENANCE.json` and release evidence.
+- Receiver currently hardcodes a 2.6 m kart chassis cuboid, four synthetic wheel connection points, 0.42 wheel radius and a 2.8 m visual kart.
+- Exact Sedan package geometry differs materially and cannot be treated as a texture/skin swap.
+
+### CREATED FILES
+- `vehicle/car-sedan/FR_S04_02_RECEIVER_ADAPTER.json`
+- `vehicle/car-sedan/FR_S04_02_RECEIVER_HANDOFF.md`
+
+### DECISION
+- Keep BOX1 4.1 m Sedan scale as the package baseline.
+- Use the Sedan's four real wheel nodes for visual wheel/steer presentation.
+- Runtime collider can use the already-derived numeric body AABB directly as a Rapier cuboid for the first consumer probe.
+- The still-missing binary collider GLB remains a **Game Development Studio capability gate**, not a mandatory blocker for a numeric FR-S04-02 receiver experiment.
+- Kart mass/inertia/suspension/recovery/camera geometry are not Sedan facts and must be revalidated rather than copied silently.
+
+### TESTED RESULT
+- Adapter is source-derived and structurally specified.
+- No Sedan receiver runtime/browser test has been executed yet.
