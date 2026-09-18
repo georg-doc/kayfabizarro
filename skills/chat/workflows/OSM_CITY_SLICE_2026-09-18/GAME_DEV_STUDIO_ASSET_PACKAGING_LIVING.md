@@ -749,3 +749,31 @@ This **does not remove** the binary Game Development Studio capability gate. It 
 2. can the real FR-S04-02 Rapier consumer use the package's numeric proxy + exact wheel nodes? — adapter now specified, runtime test still OPEN.
 
 The adapter explicitly forbids silently inheriting kart mass/inertia, suspension geometry, recovery volume or camera clearance as Sedan facts.
+
+
+---
+
+## Vehicle EyeRig / front-face anchors · BACKLOG PACKAGE EXTENSION
+
+Game-ready vehicle packages may later expose optional expressive face anchors for the shared KFB EyeRig.
+
+Candidate fields:
+
+```text
+vehicleEyeAnchors
+  left
+  right
+  source: named-node | measured-component | manual-approved
+  forward/up axes
+  sourceLightPolicy
+```
+
+Rules:
+- do not invent headlight node names;
+- named source nodes win when verified;
+- otherwise measure symmetric front anchors and require visual approval;
+- original headlight illumination semantics remain separate from visible eye geometry;
+- EyeRig reads vehicle telemetry/Kinetics only and never writes physics.
+
+Canonical implementation brief:
+`tools/KFB-ToolBox/_handover/EYE_RIG_BATCH_2026-09-18/START_HERE.md`, sections 23–24.
