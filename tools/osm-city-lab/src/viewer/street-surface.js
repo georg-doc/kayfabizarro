@@ -65,7 +65,7 @@ export function circlePatch(THREE,x,z,radius,y,material,segments=12){
     const a=i/n*Math.PI*2;
     pos.push(x+Math.cos(a)*radius,y,z+Math.sin(a)*radius);
   }
-  for(let i=0;i<n;i++)idx.push(0,1+i,1+((i+1)%n));
+  for(let i=0;i<n;i++)idx.push(0,1+((i+1)%n),1+i);
   const g=new THREE.BufferGeometry();
   g.setAttribute('position',new THREE.Float32BufferAttribute(pos,3));
   g.setIndex(idx);
