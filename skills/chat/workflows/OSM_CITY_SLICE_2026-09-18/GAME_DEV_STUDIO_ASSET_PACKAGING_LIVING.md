@@ -565,7 +565,7 @@ Enter one generated/assembled room through an external world anchor; return thro
 
 | Area | Status |
 |---|---|
-| Lorekeeper + Sedan Pilot 01 | ACTIVE CAPABILITY PROOF |
+| Lorekeeper + Sedan Pilot 01 | PACKAGE METADATA IMPLEMENTED · BINARY/CONSUMER/HUMAN GATES OPEN |
 | CameraRecipe / HeroShotRecipe | BACKLOG · ARCHITECTURE DEFINED |
 | TransitionRecipe | BACKLOG · ARCHITECTURE DEFINED |
 | MomentReceipt | BACKLOG · ARCHITECTURE DEFINED |
@@ -599,3 +599,45 @@ Added without expanding Pilot 01:
 - backlog B1–B5.
 
 **UNCHANGED:** canonical asset ownership, Travel/Race/Animation/Audio/Combat owners, Lorekeeper + Sedan Pilot 01 scope and acceptance ladder.
+
+
+### 2026-09-18 · A2 · Pilot 01 package implementation
+
+Implemented on GitHub:
+
+`game-ready/pilot-01-lorekeeper-sedan/`
+
+Implementation commit:
+
+`d7fd4c8ed062cfbc304f9c70fc1c3be30f26c6bf`
+
+Created:
+
+- `GAME_ASSET_PACKAGE.json`;
+- pinned source/dependency/provenance manifests;
+- Lorekeeper resident binding, Rig/Socket report, Animation Map and interaction-proxy proposal;
+- exact Sedan wheel-node report from source glTF;
+- source-derived wheel-free chassis AABB proxy specification;
+- Slice-04-derived DRIVE physics handoff;
+- `CAR_CHILL_LIGHT` deformer reference;
+- gameplay-event, VFX and SFX maps;
+- static QA and consumer test plan.
+
+Key new source-derived fact:
+
+> `car_sedan.gltf` contains four named wheel child nodes plus a separate `car_sedan` body mesh, so the chassis proxy can be derived from the body accessor without folding wheel geometry into the collider.
+
+Current gate state:
+
+```text
+SOURCE REVIEW      PASS
+PACKAGE METADATA   IMPLEMENTED
+STRUCTURAL QA      PARTIAL PASS
+BINARY DERIVATIVE  BLOCKED_TOOL_UNAVAILABLE
+CONSUMER TEST      NOT RUN
+HUMAN ACCEPTANCE   PENDING
+```
+
+The current webchat environment does not expose the Game Development Studio local `game-dev` CLI, so no binary `car-sedan-chassis-proxy.glb` was fabricated or falsely marked as created. The exact derivation input is persisted in `COLLIDER_PROXY_SPEC.json` for the later producer run.
+
+**UNCHANGED:** Pilot scope remains Lorekeeper + Sedan + minimal event handoff. Reconstructible camera/transition/journey architecture remains backlog until this package passes its own gates.
