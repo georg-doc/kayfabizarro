@@ -1,22 +1,22 @@
 {
   "schema": "kfb.osm-city.s0-report.v0",
   "id": "ehrenfeld-v0",
-  "generatedAt": "2026-09-18T15:20:43.497Z",
+  "generatedAt": "2026-09-18T15:24:52.760Z",
   "sourceSha256": "7b017ec065be5e068b179a93e6f339afaec0b3cf3af6b92898ddd968cb02b285",
-  "normalizedSha256": "81f3a512982e92ff4ad747079fbf025d703a12ede52750c750e502a5bfdec784",
+  "normalizedSha256": "fcc3cf30669278379788ffa2e28c9eb36ecdf2667ec005a18f84709f02a5c8a3",
   "deterministic": true,
   "bounds": {
     "min": {
-      "x": -1954.55,
-      "z": -1357.575
+      "x": -329.62,
+      "z": -297.78
     },
     "max": {
-      "x": 1009.739,
-      "z": 2684.147
+      "x": 329.62,
+      "z": 297.78
     },
     "sizeM": {
-      "x": 2964.289,
-      "z": 4041.722
+      "x": 659.24,
+      "z": 595.56
     }
   },
   "diagnostics": {
@@ -24,13 +24,15 @@
     "openPolygonWays": 0,
     "unsupportedRelations": 0,
     "relationRings": 1,
+    "clippedLineParts": 6,
+    "clippedPolygons": 117,
     "elementCounts": {
       "nodes": 9675,
       "ways": 2197,
       "relations": 1
     },
     "featureCounts": {
-      "roads": 366,
+      "roads": 372,
       "buildings": 1808,
       "landuse": 22,
       "waterLines": 0
@@ -42,6 +44,7 @@
     "localMetreFrame": true,
     "roads": true,
     "buildings": true,
-    "deterministicReload": true
+    "deterministicReload": true,
+    "geometryClippedToBbox": true
   }
 }
