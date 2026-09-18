@@ -35,8 +35,15 @@ jobs:
           node-version: '20'
       - name: Deterministic fixture test
         run: node tools/osm-city-lab/tests/check-normalize.mjs
-      - name: Fetch one cached Overpass snapshot
-        run: node tools/osm-city-lab/scripts/fetch-ehrenfeld-v0.mjs
+      - name: Fetch source only when source spec/query changed or cache is absent
+        run: |
+          if [ ! -f tools/osm-city-lab/data/ehrenfeld-v0/source.overpass.json ]; then
+            node tools/osm-city-lab/scripts/fetch-ehrenfeld-v0.mjs
+          elif git diff --name-only HEAD^ HEAD | grep -Eq 'tools/osm-city-lab/data/ehrenfeld-v0/(SOURCE_SPEC.json|query.overpassql)'; then
+            node tools/osm-city-lab/scripts/fetch-ehrenfeld-v0.mjs
+          else
+            echo 'Reusing committed OSM source cache.'
+          fi
       - name: Build normalized S0 and S2 export
         run: node tools/osm-city-lab/scripts/build-ehrenfeld-v0.mjs
       - name: Verify cached snapshot
