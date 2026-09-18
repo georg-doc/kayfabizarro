@@ -1297,11 +1297,23 @@
     "shard": "packs/kaykit-halloweenbits.json"
   },
   {
-    "assetCount": 85,
+    "assetCount": 389,
     "collections": [
       {
         "assetCount": 54,
         "path": "KayKit Character Animations 1.2 - legacy"
+      },
+      {
+        "assetCount": 207,
+        "path": "KayKit Dungeon Pack 1.0 2"
+      },
+      {
+        "assetCount": 45,
+        "path": "KayKit Legacy Character Pack - Skeletons 1.0"
+      },
+      {
+        "assetCount": 52,
+        "path": "KayKit Spooktober Seasonal Pack 1.1"
       },
       {
         "assetCount": 31,
@@ -1310,21 +1322,21 @@
     ],
     "dependencyStatus": {
       "complete": 18,
-      "embedded": 10,
+      "embedded": 297,
       "unresolved": 49
     },
     "displayName": "KayKit Legacy",
     "formats": {
       "dae": 9,
       "fbx": 40,
-      "glb": 7,
-      "gltf": 3,
+      "glb": 274,
+      "gltf": 23,
       "obj": 18,
-      "png": 8
+      "png": 25
     },
     "kinds": {
-      "image-2d": 8,
-      "model-3d": 77
+      "image-2d": 25,
+      "model-3d": 364
     },
     "packId": "kaykit-legacy",
     "provenance": "generated-structural",

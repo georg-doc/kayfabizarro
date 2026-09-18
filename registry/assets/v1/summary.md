@@ -1,21 +1,21 @@
 # KFB Asset Registry v1 · AR1 + AR2 + AR3 + AR4
 
-Source commit: `88b2a79395a9629f511db1534d1ac99b4334681a`
+Source commit: `eb48f50489b9e4903ec1e3d2fb1837605ce7d792`
 
-Total indexed assets: **13922** · packs: **107** · explicit decks: **4**
+Total indexed assets: **14226** · packs: **107** · explicit decks: **4**
 
 | Kind | Count |
 |---|---:|
 | `audio` | 1689 |
-| `image-2d` | 6539 |
-| `model-3d` | 5694 |
+| `image-2d` | 6556 |
+| `model-3d` | 5981 |
 
 ## Model dependency status
 
 | Status | Count |
 |---|---:|
 | `complete` | 3361 |
-| `embedded` | 1600 |
+| `embedded` | 1887 |
 | `missing` | 339 |
 | `unresolved` | 394 |
 
@@ -25,13 +25,13 @@ Problems: **1392**. See `problems.json`.
 
 ## Delta from previous canonical registry
 
-From: `34cde3f8f752d481a03c9714f1c3b3a8b2c15c46` · To: `88b2a79395a9629f511db1534d1ac99b4334681a`
+From: `88b2a79395a9629f511db1534d1ac99b4334681a` · To: `eb48f50489b9e4903ec1e3d2fb1837605ce7d792`
 
-- `added`: **584**
+- `added`: **304**
 - `removed`: **0**
 - `moved`: **0**
 - `changedDependencies`: **0**
-- `newProblems`: **52**
+- `newProblems`: **0**
 - `resolvedProblems`: **0**
 
 Pack grouping is structural; dependency claims come only from explicit model/material references or reviewed overrides. Deck grouping comes only from the existing explicit deck registry.
