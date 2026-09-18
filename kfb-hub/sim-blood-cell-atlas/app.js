@@ -59,7 +59,7 @@ function render(){
  matrix.querySelectorAll('img[data-img-fallback]').forEach(img=>img.addEventListener('error',()=>{const p=img.closest('.ref-preview,.thumb');if(p){p.classList.add('image-failed');p.innerHTML='<span class="fallback-mark">Bild extern</span>'}}));
  empty.hidden=rows.length>0;renderStats(rows);
 }
-Promise.all([fetch('./coverage.v0.2.json?v=20260918d').then(r=>{if(!r.ok)throw new Error('coverage '+r.status);return r.json()})]).then(([data])=>{
+Promise.all([fetch('./coverage.v0.2.json?v=20260918e').then(r=>{if(!r.ok)throw new Error('coverage '+r.status);return r.json()})]).then(([data])=>{
  DATA=data;
  [...new Set(DATA.rows.map(r=>r.family))].sort().forEach(f=>familyFilter.insertAdjacentHTML('beforeend','<option value="'+esc(f)+'">'+esc(f)+'</option>'));
  render();
