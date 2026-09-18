@@ -59,3 +59,16 @@ The Studio uses Asset Registry/Librarian source facts and pinned GitHub assets, 
 Current package: `pilot-01-lorekeeper-sedan`.
 
 Deployment/browser status remains separate from source implementation and Georg acceptance.
+
+
+## KFB Cartoon Map Board · P0.2 candidate
+
+Tool/recovery owner:
+
+`tools/kfb-cartoon-map-board/`
+
+Expected public route:
+
+`https://kayfabizarro.pages.dev/tools/kfb-cartoon-map-board/`
+
+The current slice renders OSM-derived Europe country tiles as a 3D board, adds the map-specific BAND ink adapter, real KayKit markers and a data-driven Story Focus layer. It is a presentation consumer, not a replacement owner for OSM City Lab, CardBuilder or the Asset Registry. Public browser proof and Georg visual acceptance remain separate gates.
