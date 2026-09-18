@@ -1,7 +1,7 @@
 # KFB Chat Production Router
 
-Status: CURRENT ROUTER v0.2
-Date: 2026-09-17
+Status: CURRENT ROUTER v0.3
+Date: 2026-09-19
 Owner: Georg / KFB
 
 This folder is the current LLM production routing layer for ChatGPT/Astra and Claude Design.
@@ -16,7 +16,8 @@ It does not replace project SSOTs, current tools, or canonical skills. It tells 
 5. If the task points to a shared intake package, apply `INBOX_PROTOCOL.md` before treating anything there as current truth.
 6. Load only the current skills required for the task.
 7. Apply the provider adapter only after the provider-neutral SOP.
-8. Record decisions and results additively.
+8. For a bounded fresh-chat/module/POC slice, also apply `FRESH_CHAT_SLICE_PROTOCOL.md`.
+9. Record decisions and results additively.
 
 For meta-narrative/cross-module ideation, especially KFB Town, use the registry entries for `kfb-meta-compendium-v1` and `kfb-town`. The Meta Compendium is an index, not a canon/implementation SSOT; Town has its own living document under `town/`.
 
@@ -51,6 +52,7 @@ If this is a replacement/fresh chat after context loss, use `RECOVERY_PATH.md` r
 - `meta/KFB_META_COMPENDIUM_v1.md` — cross-module meta index; routing/reference only
 - `town/START_HERE.md` + `town/LIVING_KFB_TOWN.md` — current KFB Town ideation home
 - `RECOVERY_PATH.md` — deterministic recovery after chat/context failure
+- `FRESH_CHAT_SLICE_PROTOCOL.md` — bounded cold-start work and compact next-day review packet
 - `SYNC_PROTOCOL.md` — shared GitHub-based chat/agent synchronization
 - `INBOX_PROTOCOL.md` — shared cross-project intake/staging rules
 - `INBOX_REPO_BOOTSTRAP.md` — one-time structure for the private production inbox
@@ -101,3 +103,8 @@ Status: **ONBOARDING PREPARED · WORLD REVIEW PENDING · EXECUTION NOT STARTED**
 Georg established a current tool lane at `tools/2D Animation Studio/` for browser-first 2D/2.5D cutout rigs, pivot hierarchies, cartoon deformation/motion calibration and reusable animation modules for mini-games. Load it with `skills/kfb-cartoon-animation_v2.md`.
 
 The first lab is DocCheck Eumel. The current measured/traced Eumel package is **provisional donor evidence** only. Georg will provide the DocCheck AD Illustrator source in the tool-local `_inbox/doccheck-ad-ai-source/`; that intake remains input until classified, measured and explicitly accepted into the tool's canonical asset library. The tool-local inbox does not replace the central production inbox contract.
+
+
+## 2026-09-19 · Fresh-chat slice handoff
+
+For Georg's parallel web chats, modules and POCs, use `FRESH_CHAT_SLICE_PROTOCOL.md`. It lets one chat finish one clearly bounded slice independently, but never grants broader ownership. Every result remains additive and returns as a small review packet: exact source state, changed files, actual tests, visible proof, open questions and the next safe gate.

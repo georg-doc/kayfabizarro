@@ -2,6 +2,14 @@
 
 History is additive. Earlier statements are not silently rewritten. If a later entry corrects or replaces an earlier one, mark it `SUPERSEDES` and keep both.
 
+## 2026-09-19
+
+### CURRENT_REFERENCE / FRESH CHAT SLICES
+Add `FRESH_CHAT_SLICE_PROTOCOL.md` for bounded cold starts, parallel web-chat slices, modules and POCs. It requires current GitHub recovery, one explicit slice, additive changes, actual test evidence and a compact next-day Work review packet. It does not grant a new owner, broad runtime scope, automatic promotion or automatic merge authority.
+
+### HUB ROUTING
+Group the human Production Hub into separate KFB and DocCheck tabs. Add current Hürth/Grotesk OSM City Lab and City Drive C1 review pointers plus the shared fresh-chat protocol. Hub todos remain personal browser state and never become project status.
+
 ## 2026-09-14
 
 ### CURRENT_REFERENCE

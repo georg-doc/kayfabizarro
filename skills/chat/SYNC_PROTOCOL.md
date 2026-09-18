@@ -41,6 +41,8 @@ A chat should write back to GitHub only what it owns:
 - tool authoring result → current tool source/SSOT;
 - consumer sync metadata → consumer-local sync state.
 
+For a bounded web-chat slice, the session-end writeback also follows `FRESH_CHAT_SLICE_PROTOCOL.md`: exact source revision, additive changelog, actual checks, visible evidence, open gate and next safe resume point.
+
 ## Consumer sync state
 
 A consumer may store a small JSON file such as:
@@ -81,3 +83,18 @@ Shared changes are additive. If a central rule is superseded, the central change
 ## Future automation
 
 A GitHub Action or indexer may later compare consumer `lastSeenRouterCommit` values against current router HEAD and flag stale consumers. Until that exists and is tested, the authoritative process is read-on-session-start plus local sync cursor.
+
+
+## Next-day Work review packet
+
+When several chats continue in parallel, each one returns the same small packet:
+
+1. project/repository, branch or PR and exact head;
+2. one-sentence slice goal;
+3. changed files and owner boundaries preserved;
+4. tests actually run, with failures left visible;
+5. screenshot/live URL when the work is visual;
+6. additive changelog/Return location;
+7. one next gate or decision for Georg/Work.
+
+A chat link may be included for convenience, but GitHub evidence must be enough to review the result.

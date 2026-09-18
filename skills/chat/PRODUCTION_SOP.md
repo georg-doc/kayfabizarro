@@ -42,3 +42,10 @@ Do not rewrite history to make it look cleaner. Record `PROPOSAL`, `DECISION`, `
 ## 10. Human visual authority
 
 Anything whose acceptance depends on look, timing, feel, readability or play must be presented to Georg. Automation may support the judgment but does not replace it.
+
+
+## 11. Keep an autonomous chat slice bounded
+
+A fresh chat may finish one clearly named slice without waiting for continuous lead supervision when the current owner, source state and success check are explicit. Apply `FRESH_CHAT_SLICE_PROTOCOL.md`. Do not use autonomy to broaden scope, replace another owner, merge an unreviewed visual direction or turn a POC into production truth.
+
+Its end product is not only code. It must leave an additive changelog entry and a compact review packet that another Work session can verify without replaying the chat.
