@@ -13,7 +13,11 @@ const report={
   storyVersion:localStory.version,
   checks:[],
   errors:[],
+  failedRequests:[],
   runtime:null,
+  phase:null,
+  diag:null,
+  loadingText:null,
   humanAcceptance:'PENDING'
 };
 const check=(name,pass,details)=>{
@@ -22,7 +26,7 @@ const check=(name,pass,details)=>{
 };
 const sleep=ms=>new Promise(r=>setTimeout(r,ms));
 
-let browser;
+let browser,page;
 try{
   // Cloudflare is an external deploy from the same main tree. Wait for the exact story manifest.
   let live=false,remoteStory=null;
@@ -53,10 +57,14 @@ try{
 
   browser=await chromium.launch({headless:true,args:['--use-angle=swiftshader','--enable-unsafe-swiftshader']});
   const context=await browser.newContext({viewport:{width:1440,height:960}});
-  const page=await context.newPage();
+  page=await context.newPage();
   page.on('pageerror',e=>report.errors.push(String(e)));
   page.on('console',m=>{
     if(m.type()==='error'&&!/favicon/i.test(m.text())) report.errors.push(m.text());
+  });
+  page.on('requestfailed',req=>{
+    const url=req.url();
+    if(!/favicon/i.test(url)) report.failedRequests.push({url,error:req.failure()?.errorText||'request failed'});
   });
 
   const nav=await page.goto(origin+route,{waitUntil:'domcontentloaded',timeout:60000});
@@ -64,12 +72,21 @@ try{
   await page.waitForFunction(
     ()=>window.__KFB_MAP_BOARD_READY__||window.__KFB_MAP_BOARD_ERROR__,
     {},
-    {timeout:180000}
+    {timeout:125000}
   );
+  report.phase=await page.evaluate(()=>window.__KFB_MAP_BOARD_PHASE__||null);
+  report.diag=await page.locator('#diag').textContent();
+  report.loadingText=await page.locator('#loadingText').textContent();
   check(
     'runtime boot',
     await page.evaluate(()=>!!window.__KFB_MAP_BOARD_READY__),
-    await page.evaluate(()=>window.__KFB_MAP_BOARD_ERROR__)
+    {
+      error:await page.evaluate(()=>window.__KFB_MAP_BOARD_ERROR__),
+      phase:report.phase,
+      diag:report.diag,
+      loadingText:report.loadingText,
+      failedRequests:report.failedRequests
+    }
   );
 
   const snap=await page.evaluate(()=>window.KFBMapBoard?.report?.());
@@ -95,6 +112,12 @@ try{
 }catch(e){
   report.status='FAIL';
   report.failure=String(e.stack||e);
+  if(page){
+    try{report.phase=await page.evaluate(()=>window.__KFB_MAP_BOARD_PHASE__||null,{timeout:3000});}catch{}
+    try{report.diag=await page.locator('#diag').textContent({timeout:3000});}catch{}
+    try{report.loadingText=await page.locator('#loadingText').textContent({timeout:3000});}catch{}
+    try{await page.screenshot({path:out+'/failure.png',fullPage:true,timeout:5000});}catch{}
+  }
   process.exitCode=1;
 }finally{
   await browser?.close();
