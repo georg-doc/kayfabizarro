@@ -221,6 +221,8 @@ Drift/boost/ramp can be added to this same fixture after base reverse/parking co
 
 Use [GAME_DEV_STUDIO_ASSET_PACKAGING.md](GAME_DEV_STUDIO_ASSET_PACKAGING.md) as the bounded plugin contract. Game Development Studio may package real KFB/KayKit residents, vehicles, animation mappings, colliders, VFX/SFX anchors and reusable City asset families, while canonical GitHub sources and consumer owners remain unchanged. Start with one resident + one BOX1 vehicle + minimal event bundle before any batch expansion.
 
+For the additive future architecture — reconstructible camera/hero-shot recipes, portal/warp/dungeon transitions, lean MomentReceipts, personal JourneyEntries, card-context reconstruction and hierarchical Rule-of-Three SceneKits — read [GAME_DEV_STUDIO_ASSET_PACKAGING_LIVING.md](GAME_DEV_STUDIO_ASSET_PACKAGING_LIVING.md). This is **backlog architecture and must not expand the current OSM S0–S2 or packaging Pilot 01 scope**.
+
 ## 5 · Donor hook A · img2threejs / landmark geometry
 
 Current source:
