@@ -75,8 +75,12 @@ async function runCase(browser,{city,look,labels=false,nature=false,suffix=''}) 
   if(look==='clean')assert.equal(report.windowInstances,0);
   else assert.ok(report.windowInstances>0,'deformed mode should emit window material codes');
 
-  if(labels)assert.ok(report.streetSigns>0,'street-name signs should exist');
-  else assert.equal(report.streetSigns,0);
+  if(labels){
+    assert.ok(report.streetSigns>0,'street-name signs should exist');
+    assert.ok(report.streetSignMinBuildingClearanceM==null||report.streetSignMinBuildingClearanceM>0,'street sign must not be inside a building footprint');
+  }else{
+    assert.equal(report.streetSigns,0);
+  }
 
   if(nature){
     assert.ok(report.natureInstances>0,'KayKit nature POC should place trees');
