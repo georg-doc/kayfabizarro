@@ -42,7 +42,7 @@ A resident is posed **before** it is grounded. Ground contact is a property of t
 ### TESTED RESULT
 
 - Earlier viewer mechanism: Georg visually confirmed the old public mobile build loaded `14/14` models on 2026-09-16.
-- Current posed/grounded revision: static source/JSON sanity is required before merge; public/mobile visual QA remains open.
+- Current posed/grounded revision: **STATIC TESTED RESULT** — scene JSON parses, the module script parses, 11 scene assets are declared, `Melee_Unarmed_Idle` + ground lock + both source pins are present, and mixer-update-before-ground-lock ordering was checked on the branch. Public/mobile visual QA remains open.
 
 ### GEORG ACCEPTANCE
 
