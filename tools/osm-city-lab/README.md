@@ -1,18 +1,44 @@
 # KFB OSM City Lab
 
-Status: **PREPARED · NO RUNTIME YET**  
-Owner scope: OSM source normalization, low-poly urban geometry, KFB city style and consumer-ready scene export.
+Status: **S0 IMPLEMENTATION + S1 VIEWER + S2 EXPORT CONTRACT · REAL SOURCE CACHE VIA CI**  
+Pilot: **Köln-Ehrenfeld v0**
 
-Current briefing:
+Browser entry: `tools/osm-city-lab/index.html`
 
-[`skills/chat/workflows/OSM_CITY_SLICE_2026-09-18/START_HERE.md`](../../skills/chat/workflows/OSM_CITY_SLICE_2026-09-18/START_HERE.md)
+## Fixed v0 area
 
-First pilot: a compact Köln-Ehrenfeld OSM area.
+`50.94675, 6.91280 → 50.95210, 6.92220`
 
-The lab will not own Travel movement, Race vehicle physics, Asset Registry, Resident animation or Combat. It should generate deterministic city geometry/data that named consumers can use.
+Approx. **596 m north–south × 659 m east–west**, centred at `50.949425, 6.917500`, around Venloer Straße / Ehrenfeldgürtel / Heliosstraße.
 
-Optional future donor hooks:
-- `tools/img2threejs/` for individually approved landmark geometry;
-- `tools/2D Animation Studio/` for reusable KFB-authored 2D/2.5D cutout actors/props.
+The source is a cached, read-only Overpass vector query. The browser never queries Overpass and no OSM raster tile is used as geometry.
 
-No implementation or public deployment is claimed by this README.
+## Pipeline
+
+```text
+SOURCE_SPEC + query.overpassql
+→ one CI Overpass refresh
+→ source.overpass.json + PROVENANCE.json
+→ deterministic local ENU/metre normalization
+→ normalized.json
+→ procedural KFB low-poly viewer
+→ scenes/ehrenfeld-v0.json consumer handoff
+```
+
+OSM IDs and source tags survive normalization. Missing widths/heights use explicit deterministic fallback rules; roof/style choices are stable by OSM identity.
+
+## Ownership
+
+City Lab owns geodata normalization, city geometry, styling and export only.
+
+- Travel owns World/Terrain/Mode/Persistence.
+- Ground uses the existing Travel/WB0 movement seam.
+- DRIVE receiver is the existing Race Slice-04 physics donor described by `skills/chat/workflows/ASTRA_INTEGRATION_01_2026-09-18/WALK_DRIVE_COMBAT/CONTRACT_PROPOSAL.md`; it is not reimplemented here.
+- Registry/Librarian owns GitHub asset identity/provenance.
+- `img2threejs` and `2D Animation Studio` remain optional later donors.
+
+## Source / licence
+
+Map data © OpenStreetMap contributors, ODbL 1.0. Exact bbox, query, endpoint, OSM base timestamp and SHA-256 live in `data/ehrenfeld-v0/PROVENANCE.json` after a successful cache run.
+
+See `START_HERE.md` and `docs/`.
