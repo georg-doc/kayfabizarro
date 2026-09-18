@@ -83,3 +83,27 @@ The first attempt remains useful deployment-propagation evidence; no code/model 
 
 ### HUMAN ACCEPTANCE
 Still PENDING. Automated public delivery and WebGL preview evidence do not approve presentation quality or consumer behavior.
+
+
+## 2026-09-18 · GDS-04 · Living Plant package registered as backlog
+
+### SOURCE
+Plant Prop Lab prepared under:
+`skills/chat/workflows/PLANT_PROP_LAB_2026-09-18/`
+
+Tiny Treats House Plants source is unpacked in GitHub; Quaternius Sci-Fi botanical donors and KFB EyeRig v6 are identified.
+
+### DECISION
+Register `GameReadyPlantPackage` as a later Game Dev Studio package type:
+- exact pot/plant source refs;
+- PlantRecipe;
+- procedural pot-style recipe;
+- transform-based prop rig;
+- optional existing EyeRig adapter;
+- support/collider proxy;
+- VFX/SFX hooks;
+- LOD/instancing notes;
+- consumer evidence.
+
+### BOUNDARY
+This is **P2 / BACKLOG** and does not expand or replace active Pilot 01 (Lorekeeper + Sedan). No catalog entry is added until an actual package exists.
