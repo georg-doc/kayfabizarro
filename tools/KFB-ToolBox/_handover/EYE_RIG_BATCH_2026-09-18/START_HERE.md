@@ -773,3 +773,254 @@ Do not wait for every Legacy actor before proving Medium.
 > Return immer:
 >
 > `SOURCE | DECISION | IMPLEMENTATION | TESTED RESULT | PUBLIC DEPLOYMENT | GEORG ACCEPTANCE | OPEN | ARCHIVED HISTORY`.
+
+
+---
+
+## 21 · Source-face cleanup · remove original KayKit eyes non-destructively
+
+**Added:** 2026-09-18 · user requirement.
+
+Before overlaying KFB EyeRig, detect whether the source character already contains visible eye geometry.
+
+Preferred order:
+
+```text
+1. explicit named eye mesh/node
+2. measured symmetric connected components in the head mesh
+3. verified material group / draw group
+4. texture cleanup / mask only when geometry separation is impossible
+5. no removal if confidence is insufficient
+```
+
+### Why mesh/component removal is preferred
+
+Do not merely recolor original black “button eyes” to skin color if they can be cleanly hidden as geometry. Recoloring can leave silhouette, shading and female eyelash-spike geometry visible.
+
+Use non-destructive runtime visibility/index/group filtering or a derived render adapter. Canonical GLTF/GLB remains untouched.
+
+### Existing exact precedent · GothGirl
+
+Current project evidence in:
+
+`tools/KFB-ToolBox/_inbox/KFB Elisa B-Day Reference+Mockups/kfb-pet-gothgirl.json`
+
+records:
+
+- Rig_Medium, 23 bones;
+- one head mesh with **12 connected islands**;
+- **eyes = islands 6 + 7 removed from the rendered head index**;
+- mouth handled separately via `texclean`;
+- original brows = islands 4 + 5;
+- original nose = island 3;
+- ears / earrings preserved.
+
+This is a proven source-specific pattern, not permission to assume the same island indices for other KayKit models.
+
+### Batch detector candidate
+
+For each actor, produce a `sourceFaceReport`:
+
+```json
+{
+  "headMesh": "…",
+  "connectedComponents": 0,
+  "eyeCandidates": [],
+  "pairConfidence": 0,
+  "femaleOuterLashCandidate": null,
+  "removalMode": "mesh-components | node | material-group | texture-clean | none",
+  "status": "AUTO_CANDIDATE | HUMAN_REQUIRED | UNSUPPORTED"
+}
+```
+
+Candidate eye-pair scoring may use:
+
+- symmetry around measured face center;
+- position in upper/front head region;
+- small size relative to head;
+- dark/black material or sampled source appearance only as supporting evidence;
+- similar dimensions;
+- frontal depth;
+- reference screenshot crosscheck.
+
+Do **not** use black color alone; hair, nostrils, accessories and masks can also be dark.
+
+Female outer eyelash spikes must be explicitly classified:
+- same connected component as eye;
+- separate component;
+- texture-only;
+- or not present.
+
+When source eye removal is approved, store the exact component/node/group ids in the EyeProfile so the same character reconstructs deterministically.
+
+## 22 · Selected-character face grafts · later layer
+
+EyeRig v0 remains eyes/lids only.
+
+After approved eye profiles, selected characters may receive additional source-specific face cleanup/grafts.
+
+### Mouth
+
+GothGirl is the concrete precedent:
+- original mouth appearance was handled with measured `texclean`;
+- KFB mouth overlay can then own the visible mouth.
+
+Do not globally erase mouths on the whole batch.
+
+Candidate later status:
+
+`MOUTH_GRAFT_CANDIDATE`
+
+requires:
+- source mouth classification;
+- reversible cleanup;
+- measured mouth anchor;
+- selected KFB mouth source;
+- visual approval.
+
+### Nose
+
+FrizzleBob Driver/Graft line already contains measured nose modules/graft logic anchored from `eyeFrame()`.
+
+Do not apply a FrizzleBob nose to all KayKit residents.
+
+Candidate later status:
+
+`NOSE_GRAFT_CANDIDATE`
+
+is per selected character only.
+
+### Brows / lashes
+
+Remain later overlays.
+
+The important architecture is:
+
+```text
+source-face cleanup
+→ approved EyeRig profile
+→ public eyeFrame()
+→ optional selected Brow / Nose / Mouth grafts
+```
+
+so later face work does not invalidate eye calibration.
+
+## 23 · Vehicle EyeRig · front-light / front-face anchors
+
+**Important future extension, separate from Rig_Medium/Large v0.**
+
+Goal:
+
+Mount the same KFB EyeRig-v6 expression/gaze system onto vehicles so front lights / front-face points become expressive cartoon eyes.
+
+Potential consumers:
+- BOX1 vehicle pool;
+- Free Roam;
+- Stunt Race;
+- Game Dev Studio vehicle packages.
+
+### Do not assume every vehicle has named headlight nodes
+
+Current Pilot-01 Sedan evidence proves:
+- source forward = +Z;
+- up = +Y;
+- left = +X;
+- four named wheel nodes and measured dimensions.
+
+It does **not** currently document verified headlight nodes.
+
+Therefore anchor priority is:
+
+```text
+1. explicit source headlight/light nodes, if verified
+2. explicit emissive/light meshes or symmetric front components, if verified
+3. measured symmetric manual front anchors
+4. unsupported
+```
+
+Never fabricate `headlight_left/right` source nodes.
+
+### Candidate VehicleFaceProfile
+
+```json
+{
+  "schema": "kfb.vehicle-eye-profile/0.1-candidate",
+  "vehicleId": "car-sedan",
+  "sourceRef": "…",
+  "axes": {"forward":"+Z","up":"+Y","left":"+X"},
+  "anchors": {
+    "left": [0,0,0],
+    "right": [0,0,0],
+    "source": "named-node | measured-component | manual-approved"
+  },
+  "host": {
+    "mode": "two-anchor-front-face",
+    "radius": 0,
+    "normal": [0,0,1]
+  },
+  "sourceLightPolicy": "preserve | hide-under-eyes | dim | unsupported",
+  "eyeProfileRef": "…",
+  "status": "AUTO_CANDIDATE"
+}
+```
+
+### Vehicle FaceHost adapter
+
+Do not use the biped Head-bone detector.
+
+Proposed later local adapter:
+
+`vehicle-eye-adapter.v1.js`
+
+It creates an EyeRig-compatible front FaceHost from:
+- left/right front anchors;
+- vehicle forward/up axes;
+- measured front-face depth/normal.
+
+The same EyeRig v6 remains the eye implementation.
+
+### Kinetics are especially reusable on vehicles
+
+Vehicle runtime may feed normalized telemetry into existing:
+
+`setKinetics({a,c,j})`
+
+where:
+- `a` = acceleration/braking;
+- `c` = steering/curve/drift direction;
+- `j` = hop/drop/landing vertical event.
+
+This should remain **presentation driven by vehicle telemetry**. EyeRig never writes vehicle physics.
+
+Potential expressive examples:
+- braking → concerned lids;
+- drift → outside glance / asymmetric lid;
+- jump/drop → wide surprised eyes;
+- idle → wander/blink;
+- pointer/player interaction → gaze follow.
+
+### Source headlight handling
+
+Prefer preserving original lighting semantics.
+
+If EyeRig visually replaces the front lamps:
+- hide/dim only the verified source lamp geometry/material;
+- keep light-emission functionality separately if the consumer needs headlights at night;
+- do not remove headlight functionality merely because the mesh is hidden.
+
+The visual eye and gameplay illumination are separate responsibilities.
+
+## 24 · Revised expansion order
+
+Keep implementation order:
+
+```text
+V0  Rig_Medium EyeRig + source-eye cleanup
+V1  Rig_Large EyeRig + source-eye cleanup
+V2  Legacy EyeRig + source-eye cleanup
+V3  selected Mouth/Nose/Brow grafts
+V4  Vehicle EyeRig at verified front anchors
+V5  Living Plants / other Frankensteining hosts
+```
+
+This order prevents the high-value Medium batch from being blocked by vehicle or full-face complexity.
