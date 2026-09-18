@@ -55,6 +55,7 @@ const metrics={
   roofMeshes:0,
   windowInstances:0,
   streetSigns:0,
+  streetSignMinBuildingClearanceM:null,
   natureInstances:0,
   natureAssets:[],
   zLevels:null
@@ -353,6 +354,8 @@ async function load(){
       streetSignController=createStreetSigns(THREE,city.features.roads,style.streetSigns||{},p.streetSign,style.seed||'kfb-city',city.features.buildings);
       root.add(streetSignController.root);
       metrics.streetSigns=streetSignController.candidates.length;
+      const clearances=streetSignController.candidates.map(c=>c.buildingClearanceM).filter(Number.isFinite);
+      metrics.streetSignMinBuildingClearanceM=clearances.length?Math.min(...clearances):null;
     }
 
     if(requestedNature){
