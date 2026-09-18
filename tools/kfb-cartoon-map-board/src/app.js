@@ -22,7 +22,7 @@ const KFB_INK_URL = 'https://cdn.jsdelivr.net/gh/georg-doc/kayfabizarro@main/ski
 const KAYKIT_REPO_PATH = '/media/3D_Assets/KayKit_BoardGameBits_1.0_FREE/Assets/gltf/';
 const KAYKIT_RAW_BASE = 'https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/KayKit_BoardGameBits_1.0_FREE/Assets/gltf/';
 const KAYKIT_BASE = location.hostname === 'kayfabizarro.pages.dev' ? KAYKIT_REPO_PATH : KAYKIT_RAW_BASE;
-const KFB_MAP_BUILD = 'p0.2-r4-full-europe';
+const KFB_MAP_BUILD = 'p0.2-r5-marker-scale';
 
 const CORE_CODES = [
   'IS','IE','GB','PT','ES','FR','BE','NL','LU','DE','DK','NO','SE','FI','CH','AT','IT',
@@ -133,13 +133,30 @@ const root = new THREE.Group();
 scene.add(root);
 
 const focusRingMat = new THREE.MeshBasicMaterial({
-  color:inkColor, transparent:true, opacity:0.82, depthWrite:false, toneMapped:false
+  color:inkColor, transparent:true, opacity:0.82, depthWrite:false, toneMapped:false, side:THREE.DoubleSide
 });
-const focusRing = new THREE.Mesh(
-  new THREE.TorusGeometry(4.2,0.15,6,72),
-  focusRingMat
-);
-focusRing.rotation.x = Math.PI/2;
+function makeFocusRingGeometry(segments=72) {
+  const verts=[], idx=[];
+  for(let i=0;i<segments;i++){
+    const a=i/segments*Math.PI*2;
+    const wobble=Math.sin(a*3+0.7)*0.16+Math.sin(a*7+1.9)*0.07;
+    const half=0.11*(1+0.18*Math.sin(a*5+0.4));
+    const r=3.8+wobble;
+    const co=Math.cos(a), si=Math.sin(a);
+    verts.push(co*(r+half),0,si*(r+half),co*(r-half),0,si*(r-half));
+  }
+  for(let i=0;i<segments;i++){
+    const j=(i+1)%segments;
+    const a=i*2,b=i*2+1,c=j*2,d=j*2+1;
+    idx.push(a,b,c,b,d,c);
+  }
+  const g=new THREE.BufferGeometry();
+  g.setAttribute('position',new THREE.Float32BufferAttribute(verts,3));
+  g.setIndex(idx);
+  g.computeVertexNormals();
+  return g;
+}
+const focusRing = new THREE.Mesh(makeFocusRingGeometry(),focusRingMat);
 focusRing.visible = false;
 
 function makePaperTexture(base = '#d8c6a6', line = '#ffffff') {
@@ -586,7 +603,7 @@ function setFocusRing(rec) {
     focusRing.visible=false;
     return;
   }
-  const scale=THREE.MathUtils.clamp(Math.sqrt(Math.max(1,rec.totalArea))/18,0.72,1.85);
+  const scale=THREE.MathUtils.clamp(Math.sqrt(Math.max(1,rec.totalArea))/19,0.68,1.45);
   focusRing.position.set(rec.centroid.x,PIECE_DEPTH+0.19,rec.centroid.z);
   focusRing.userData.baseScale=scale;
   focusRing.scale.setScalar(scale);
@@ -693,9 +710,12 @@ async function addKayKitMarkers() {
       });
       let box=new THREE.Box3().setFromObject(obj);
       const size=box.getSize(new THREE.Vector3());
-      const scale=spec.height/Math.max(0.001,size.y);
+      const targetSize=Number(spec.size ?? spec.height ?? 4);
+      const longest=Math.max(size.x,size.y,size.z,0.001);
+      const scale=targetSize/longest;
       obj.scale.multiplyScalar(scale);
       box=new THREE.Box3().setFromObject(obj);
+      const scaledSize=box.getSize(new THREE.Vector3());
       obj.position.y-=box.min.y;
 
       const rec=countries.find(c=>c.code===spec.countryCode);
@@ -705,13 +725,15 @@ async function addKayKitMarkers() {
       const p=project(spec.lon,spec.lat);
       holder.position.set(p.x,PIECE_DEPTH+0.12,p.z);
       holder.scale.y=1/heightScale;
+      holder.userData.extent=Math.max(scaledSize.x,scaledSize.y,scaledSize.z);
+      holder.userData.visualHeight=scaledSize.y;
       holder.add(obj);
 
       const el=document.createElement('div');
       el.className='story-label';
       el.textContent=spec.label;
       const lab=new CSS2DObject(el);
-      lab.position.set(0,spec.height+0.7,0);
+      lab.position.set(0,Math.max(1.5,scaledSize.y+0.72),0);
       holder.add(lab);
 
       rec.group.add(holder);
@@ -738,9 +760,11 @@ function activateStory(index) {
   selText.textContent=mark.spec.body || 'Data-driven content anchor on the geographic board.';
   const wp=new THREE.Vector3();
   mark.holder.getWorldPosition(wp);
+  const extent=mark.holder.userData.extent||Number(mark.spec.size??mark.spec.height??4);
+  const reach=Math.max(22,extent*5.3);
   queueCamera(
-    new THREE.Vector3(wp.x+24, Math.max(27,18+(mark.spec.height||4)*2.2), wp.z+31),
-    new THREE.Vector3(wp.x, BOARD_TOP+PIECE_DEPTH+3.2, wp.z)
+    new THREE.Vector3(wp.x+reach*0.72, Math.max(24,16+extent*2.1), wp.z+reach),
+    new THREE.Vector3(wp.x, BOARD_TOP+PIECE_DEPTH+Math.max(1.8,mark.holder.userData.visualHeight||2), wp.z)
   );
 }
 
