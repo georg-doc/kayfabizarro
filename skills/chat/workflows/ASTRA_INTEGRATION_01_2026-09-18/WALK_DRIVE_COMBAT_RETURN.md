@@ -1,6 +1,47 @@
 # KFB Free Roam · Walk ↔ Drive ↔ Combat · Return / Recovery
 
-## CURRENT · FR-S04-01 · 18.09.2026
+## CURRENT · FR-S04-02 + repaired Ground · 18.09.2026
+
+**IMPLEMENTATION / SOURCE TESTED · GROUND PUBLIC REGRESSION PASS · FR-S04-02 PUBLIC VERIFICATION RUNNING · HUMAN FEEL REVIEW OPEN.**
+
+**Permanent test entry:** https://kayfabizarro.pages.dev/kfb-hub/free-roam/
+
+### Ground / World receiver sanity
+
+Georg's browser report exposed a real regression rather than a new desired feature: terrain-card meshes were present but blank/white, locomotion was too slow/out of sync, and the five Movement-Lab specimens were being collapsed into wrong scale behavior.
+
+Current Travel implementation SSOT:
+- PR #25 / merge `e1450b1d80d69b9992a57686d11e3f5890f97c36`: explicit rig classes and body-relative Ground speed;
+- PR #27 / merge `30b1f5144f27bfa60936ff161a347006f7b26166`: additive one-deck text-first card startup, frozen B0 unchanged;
+- PR #28 / merge `da7e9a5a3c4c6125e9314ced838cdfa5ff1f7a43`: Ground keeps the existing PDF artwork pump advancing outside Flight presentation.
+
+Actual public Ground proof: kayfabizarro run `35365887832`, attempt 2, job `105672379932`, artifact `10556777649` **PASS** on the fixed Ground URL. It measured 56/56 terrain cards built, assigned and textured, with real PDF fronts already progressing. The five profile classes are now distinct: Medium 1.0×, Large 1.7716565×, Legacy 0.7571559×, KFB-Mech 3.6×, Raw-Mech 3.6×; Ground speeds scale with those classes. This is automated regression closure, not a substitute for Georg's visual/cadence review.
+
+Travel recovery SSOT: [WSA_START.md](https://github.com/georg-doc/KFB-Travel-Globe/blob/main/WSA_START.md).
+
+### Free Drive / S04-02
+
+Georg rejected FR-S04-01 for reversed/wrong-feeling A/D and Orbit conventions, reverse wobble, trap-prone behavior and the circular fence. That version remains immutable history at `/versions/fr-s04-01/`.
+
+Current Race implementation: PR #6 / merge `63cb97d5e321700e55f7658104b42c9c09d97d70`. Tested source `a7a48a8c6e1589a18134aa619e2be22d79124c32`, run `35365197941`, artifact `10555832979`: **9 drive-intent tests + 33 Chromium/WebGL checks PASS**.
+
+Implemented in FR-S04-02:
+- corrected semantic and physical A/D steering signs;
+- candidate arcade reverse steering assist, without double-inverting the raw donor profile;
+- hysteretic reverse handoff without neutral/reversal chatter, independent reverse cap and no reverse boost;
+- Orbit drag convention aligned with Ground; pan disabled;
+- stronger low-speed steering with speed falloff retained;
+- same real baked Travel terrain but radius-48 play area / radius-56 recovery envelope and **no circular fence colliders**;
+- >10 high-speed boost proof, Hop and a continuous 180-tick driven curve without stuck/outside recovery.
+
+Public mirror PR #63 is merged; immutable target is `/kfb-hub/free-roam/versions/fr-s04-02/` and the permanent navigator now points there in source. The separate Cloudflare delivery/browser proof is still running at this recovery write. Do not label FR-S04-02 PUBLIC PASS until that run succeeds.
+
+**Still open:** human steering/reverse/camera/terrain feel; defined stunt-ramp follow-up; Walk↔Drive handoff in the Travel owner; safe exit volume; parked vehicle/save restore; city/Combat/audio/driver integration. No new movement owner or third vehicle solver.
+
+---
+
+## PREVIOUS · FR-S04-01 · preserved public history
+
 
 **IMPLEMENTATION + SOURCE TESTED + PUBLIC BROWSER PASS · HUMAN REVIEW OPEN.** Auf Georgs Folgeauftrag wurden ein fester Testeinstieg und der begrenzte Slice-04-Fahrversuch umgesetzt. Die frühere Vorbereitung unten bleibt unverändert als datierter Ausgangsstand, nicht als heutige Aussage, dass keinerlei Runtime existiert.
 
