@@ -46,3 +46,22 @@ The Studio owns 2D source geometry, cutout bind/bones, 2D deformers and SVG adap
 Shared eye semantics are defined by `kfb.eye-rig.protocol/1`; 2D and 3D differ at the renderer/host binding layer.
 
 No claim is made that SVG cutout body clips and KayKit skeletal clips are interchangeable.
+
+
+## Cross-render proof
+
+Phase A implementation:
+
+`proofs/cross-render-eye-v1/`
+
+It drives source-exact Eumel and the existing ToolBox FrizzleBob Driver Graft / Rig_Medium EyeRig-v6 stack with the same semantic eye sequence.
+
+Static sanity is PASS; browser/visual acceptance remains pending.
+
+## Eye / Face Modifier Atlas
+
+Initial source-first scaffold:
+
+`shared/eye-rig/modifier-atlas/`
+
+Only source-resolved modifiers are promoted. Reported richer DocCheck rings/lids/eyewear remain pending until their authoritative source package is identified.
