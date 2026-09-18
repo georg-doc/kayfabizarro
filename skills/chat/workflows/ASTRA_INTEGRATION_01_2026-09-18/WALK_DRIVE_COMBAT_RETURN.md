@@ -1,5 +1,31 @@
 # KFB Free Roam · Walk ↔ Drive ↔ Combat · Return / Recovery
 
+## CURRENT · FR-S04-01 · 18.09.2026
+
+**IMPLEMENTATION + SOURCE TESTED + PUBLIC BROWSER PASS · HUMAN REVIEW OPEN.** Auf Georgs Folgeauftrag wurden ein fester Testeinstieg und der begrenzte Slice-04-Fahrversuch umgesetzt. Die frühere Vorbereitung unten bleibt unverändert als datierter Ausgangsstand, nicht als heutige Aussage, dass keinerlei Runtime existiert.
+
+**Fester Testeinstieg:** https://kayfabizarro.pages.dev/kfb-hub/free-roam/
+
+**Erste feste Version:** https://kayfabizarro.pages.dev/kfb-hub/free-roam/versions/fr-s04-01/
+
+Implementation-SSOT und aktuelle Runtime-Recovery: [Race / ChatGPT_web/free-roam/RETURN.md](https://github.com/georg-doc/KFB-Stunt-Car-Race/blob/main/ChatGPT_web/free-roam/RETURN.md).
+
+**Tatsächlicher Public-Nachweis:** [PUBLIC_STATUS.md](https://github.com/georg-doc/kayfabizarro/blob/main/kfb-hub/free-roam/PUBLIC_STATUS.md). 9/9 reine Eingabetests, 19/19 Source-Browserchecks und separat 48/48 Quellen-/Byte-/Navigations-/Browserchecks auf der wirklichen KFB-Cloudflare-Adresse. Public-Run `35358106388`, Job `105642348266`, Artefakt `10553581108`. Keine menschliche oder physische Geräteabnahme daraus ableiten.
+
+Getestete Race-Quelle `d98600ef52c9f1fc28bd93bcbbe8f6f177eece37`; Race PR #5 / Merge `04256ecb817e5d0e2e57a2476039294c26ceab79`; Public PR #57 / Merge `f044d7908d967e1cf8056b2f831a7d30529b1fda`.
+
+Der vorhandene Slice-04-/Rapier-Spender fährt mit neuem Reverse-/Brake-Input und rohem Inputvergleich auf echten gebackenen Travel-Kontaktdreiecken. 81 Bodenproben validieren das trockene begrenzte Fixture. Eine feste lokale Schwerkraftrichtung, Maßstab und sichtbare Grenze sind explizit; das ist kein vollständiger globaler DRIVE-Receiver und nicht der laufende Travel-Host. Der frühere küstennahe Screenshotbefund wurde vor Veröffentlichung durch reine Standortauswahl korrigiert, nicht durch eine Ersatzwelt.
+
+**Jetzt verfügbar:** ein originaler Kart, zwei Inputprofile, physisches Vor-/Rückwärtsfahren/Lenken/Bremsen/Hop, Pause/Reset/Orbit; daneben bestehende Ground8-/BOX1-/Resident-/World-Atlas-Vergleiche. Neue Free-Roam-Versionen erhalten unveränderliche Pfade und einen aktuellen Navigator-Zeiger. Owner-aktuelle Vergleichslinks sind keine eingefrorenen Altversionen.
+
+**Weiter offen:** Human-Fahrgefühl; tatsächlicher Walk↔Drive-Transfer im vorhandenen Travel-Modusowner; sichere Ausstiegsvolumen; geparkter Wagen und Save/Reload; Charakter-/Fahrzeugwechsel in der neuen Probe; City-Quartier; Combat; Audio/Deformerintegration. Kein zweiter Spielerroot. Nächste Arbeit an genau dieser Receiver-/Übergabenaht, nicht erneut einen anderen Fahrzeugsolver entwickeln.
+
+BOX1/v0.8 und Produktions-`race/src/physics.js` blieben unverändert. Travel/Arena/ToolBox behalten ihre Owner. Der aktive Astra-r3-Brief bleibt unverändert, der gebündelte Astra-Delta inaktiv; kein großer Astra-Lauf gestartet. Native ChatGPT-Site wurde mangels Werkzeug nicht erzeugt; die tatsächlich geprüfte Lieferung ist KFB-Cloudflare.
+
+---
+
+## Preparation r1 · erhaltener Ausgangsstand
+
 **18.09.2026 · Preparation r1 · READY WITH OPEN DECISIONS**
 
 Auftrag: [WALK_DRIVE_COMBAT_PREFLIGHT.md](WALK_DRIVE_COMBAT_PREFLIGHT.md), insbesondere §7. Dieses Ergebnis konkretisiert das KFB-Core-Zusammenspiel vorhandener Module. Es erzeugt weder eine neue Engine noch einen neuen Runtime-Owner. Der einzige aktive Astra-Ausführungsbrief bleibt [EXECUTION_BRIEF r3](EXECUTION_BRIEF.md); der große Lauf wurde hier nicht gestartet.

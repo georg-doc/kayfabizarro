@@ -17,3 +17,15 @@ Bestehende Einträge erhalten. Dieses Protokoll gehört nur zum abgegrenzten Wal
 **NOT TESTED:** Modellbounds/Sidecar-Closure, dynamische Physik, Reverse-Fahrt, sphärischer Receiver, Enter/Exit, Combat, Browser, Public-Deployment und menschliche Abnahme. Historische Donor-/Browserergebnisse nicht zu neuen Ergebnissen umbenannt.
 
 **STATUS / NEXT:** READY WITH OPEN DECISIONS. Nächster begrenzter Lauf: physischer Spendernachweis auf tatsächlicher Travel-Kontaktgeometrie mit Einheiten-/Up-/Gebietsvertrag, dann valide Walk↔Drive-Transaktion. Ground=8-/Atlas-/BOX1-/v0.10-Gates bleiben bestehen. Recovery in `../WALK_DRIVE_COMBAT_RETURN.md`.
+
+## 2026-09-18 · FR-S04-01 · fester Testeinstieg / implementierter Kontaktversuch
+
+**USER DECISION:** Georg verlangt eine feste URL für aktuelle und ältere Testkonfigurationen mit Figuren/Fahrzeugen und die Fortsetzung am vorhandenen Slice-04-Fahrzeug.
+
+**IMPLEMENTATION:** Race `ChatGPT_web/free-roam/` enthält quellengepinnten Slice-04-Adapter, Reverse-/Brake-Input, zwei vergleichbare Inputprofile, Originalkart, echten Travel-Terrainbäcker mit gebackener Kontaktgeometrie und begrenztem lokalen Physikraum. Ein wiederverwendbarer Build/Testlauf; akzeptierter Produktionscode und BOX1/v0.8 bleiben unverändert. Öffentlicher KFB-Navigator `/kfb-hub/free-roam/`, Release-Zeiger und feste Version `/versions/fr-s04-01/`. Bestehende Ground8-/BOX1-/Resident-/World-Atlas-Einstiege bleiben separate Owner-Vergleiche.
+
+**TESTED RESULT:** 9/9 reine Inputtests und 19/19 Source-Browserchecks bestanden. Screenshot-Review verwarf die erste zu küstennahe Fläche trotz enger grüner Quelltests; trockene Standortauswahl, 81 Bodenproben und erneuter Browserlauf an Quelle `d98600ef52c9f1fc28bd93bcbbe8f6f177eece37` / Race Run `35356984356`. Früherer MIME-Fehler durch Same-Origin-Packaging unveränderter Travel-JS-Quellen geschlossen; alte Befunde bleiben History.
+
+**PUBLIC DEPLOYMENT / TEST:** Race PR #5 / Merge `04256ecb817e5d0e2e57a2476039294c26ceab79`; öffentlicher Mirror PR #57 / Merge `f044d7908d967e1cf8056b2f831a7d30529b1fda`. Tatsächliche Cloudflare-Prüfung `35358106388`, Job `105642348266`, Artefakt `10553581108`: 48/48 Quellen-/Byte-/Navigations-/Browserchecks PASS, keine Script-/Console-Fehler. ZIP heruntergeladen und gehasht, Report gelesen, Screenshots angesehen. Vollständige Herkunft, Hashes, Umfang und Grenzen in `kfb-hub/free-roam/PUBLIC_STATUS.md`. Die öffentlich abweichende abschließende LF in physics.js ist explizit im Mirrorvertrag und Byteprüfer erfasst; keine pauschale Byteidentität behauptet.
+
+**OPEN / UNCHANGED:** Human-Fahrgefühl, physische Geräte und längeres Freeplay; tatsächliche Walk↔Drive-Übergabe im Travel-Host, geparkter Wagen/Exit/Save, weitere Fahrzeug-/Figurenkombinationen in der Probe, City/Combat/Audio/Deformer. Ein Kart auf lokalem Terrain ist kein vollständiger World-Consumer-PASS. Keine neue Engine/Registry/Owner; keine native ChatGPT-Site erzeugt; kein großer Astra-Start, r3 und inaktiver Delta bleiben unverändert. Recovery erhält einen additiven aktuellen Einstieg über der unberührten Vorbereitungshistorie.
