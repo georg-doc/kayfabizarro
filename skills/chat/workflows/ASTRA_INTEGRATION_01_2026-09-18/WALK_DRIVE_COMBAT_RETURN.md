@@ -2,7 +2,7 @@
 
 ## CURRENT · FR-S04-02 + repaired Ground · 18.09.2026
 
-**IMPLEMENTATION / SOURCE TESTED · GROUND PUBLIC REGRESSION PASS · FR-S04-02 PUBLIC VERIFICATION RUNNING · HUMAN FEEL REVIEW OPEN.**
+**IMPLEMENTATION / SOURCE TESTED · GROUND PUBLIC REGRESSION PASS · FR-S04-02 PUBLIC BROWSER PASS · HUMAN FEEL REVIEW OPEN.**
 
 **Permanent test entry:** https://kayfabizarro.pages.dev/kfb-hub/free-roam/
 
@@ -34,7 +34,7 @@ Implemented in FR-S04-02:
 - same real baked Travel terrain but radius-48 play area / radius-56 recovery envelope and **no circular fence colliders**;
 - >10 high-speed boost proof, Hop and a continuous 180-tick driven curve without stuck/outside recovery.
 
-Public mirror PR #63 is merged; immutable target is `/kfb-hub/free-roam/versions/fr-s04-02/` and the permanent navigator now points there in source. The separate Cloudflare delivery/browser proof is still running at this recovery write. Do not label FR-S04-02 PUBLIC PASS until that run succeeds.
+Public mirror PR #63 is merged; immutable target is `/kfb-hub/free-roam/versions/fr-s04-02/`. Actual Cloudflare run `35367513758`, attempt 2, job `105675602369`, artifact `10556454159` passed **62/62** delivery/byte/navigation/handling checks. The first attempt was a deployment-propagation failure before WebGL, not a vehicle failure. Human feel remains open.
 
 **Still open:** human steering/reverse/camera/terrain feel; defined stunt-ramp follow-up; Walk↔Drive handoff in the Travel owner; safe exit volume; parked vehicle/save restore; city/Combat/audio/driver integration. No new movement owner or third vehicle solver.
 
