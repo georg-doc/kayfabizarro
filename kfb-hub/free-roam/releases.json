@@ -1,17 +1,33 @@
 {
-  "current": "fr-s04-01",
+  "current": "fr-s04-02",
   "updated": "2026-09-18",
-  "releases": [{
-    "id": "fr-s04-01",
-    "published": true,
-    "title": "Slice 04 · Reverse, steering & baked Travel contact",
-    "status": "Browser-tested candidate · human review open",
-    "path": "./versions/fr-s04-01/",
-    "summary": "Drive one original Kenney kart in a bounded dry area of the actual baked Travel globe. Compare new reverse/brake controls with raw Slice-04 input on the same physics and terrain. Character and wider vehicle comparisons remain in the linked owner apps below.",
-    "evidence": "Source: 9 input tests + 19 Chromium browser checks passed; 81 dry support samples. This is a local contact probe, not completed Walk / Drive / Combat integration. Public-host verification is recorded separately in qa and GitHub Actions.",
-    "sourceRepository": "georg-doc/KFB-Stunt-Car-Race",
-    "sourceCommit": "d98600ef52c9f1fc28bd93bcbbe8f6f177eece37",
-    "sourceRun": 35356984356,
-    "humanAcceptance": "PENDING"
-  }]
+  "releases": [
+    {
+      "id": "fr-s04-02",
+      "published": true,
+      "title": "Slice 04 · Corrected controls, stable reverse & wide Travel terrain",
+      "status": "Source-browser PASS · public-host verification running · human feel review open",
+      "path": "./versions/fr-s04-02/",
+      "summary": "Corrected A/D and orbit direction, hysteretic reverse without neutral chatter, stronger low-speed handling, no circular fence and a much wider baked-Travel test region for boost, curves and hops. Same Slice-04/Rapier owner and same original kart.",
+      "evidence": "Race run 35365197941 PASS: 9 drive-intent tests plus 33 Chromium/WebGL assertions; 652 baked contact triangles, 113 dry support samples, radius-48 play area / radius-56 recovery envelope, continuous 180-tick curve without stuck/outside recovery. Public-host proof is separate.",
+      "sourceRepository": "georg-doc/KFB-Stunt-Car-Race",
+      "sourceCommit": "a7a48a8c6e1589a18134aa619e2be22d79124c32",
+      "sourceMerge": "63cb97d5e321700e55f7658104b42c9c09d97d70",
+      "sourceRun": 35365197941,
+      "humanAcceptance": "PENDING"
+    },
+    {
+      "id": "fr-s04-01",
+      "published": true,
+      "title": "Slice 04 · Reverse, steering & baked Travel contact",
+      "status": "Preserved rejected comparison · public browser evidence retained",
+      "path": "./versions/fr-s04-01/",
+      "summary": "Preserved first Free Drive contact probe. Georg rejected its A/D/camera direction, reverse wobble, trap-prone bounded behavior and circular fence. Kept intact for comparison; it is no longer the current candidate.",
+      "evidence": "Source: 9 input tests + 19 Chromium browser checks passed; 81 dry support samples. This is a local contact probe, not completed Walk / Drive / Combat integration. Public-host verification is recorded separately in qa and GitHub Actions.",
+      "sourceRepository": "georg-doc/KFB-Stunt-Car-Race",
+      "sourceCommit": "d98600ef52c9f1fc28bd93bcbbe8f6f177eece37",
+      "sourceRun": 35356984356,
+      "humanAcceptance": "REJECTED_2026-09-18_CONTROLS_REVERSE_CAMERA_BOUNDARY"
+    }
+  ]
 }
