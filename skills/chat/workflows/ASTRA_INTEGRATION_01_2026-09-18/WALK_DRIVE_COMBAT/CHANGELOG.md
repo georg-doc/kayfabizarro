@@ -29,3 +29,20 @@ Bestehende Einträge erhalten. Dieses Protokoll gehört nur zum abgegrenzten Wal
 **PUBLIC DEPLOYMENT / TEST:** Race PR #5 / Merge `04256ecb817e5d0e2e57a2476039294c26ceab79`; öffentlicher Mirror PR #57 / Merge `f044d7908d967e1cf8056b2f831a7d30529b1fda`. Tatsächliche Cloudflare-Prüfung `35358106388`, Job `105642348266`, Artefakt `10553581108`: 48/48 Quellen-/Byte-/Navigations-/Browserchecks PASS, keine Script-/Console-Fehler. ZIP heruntergeladen und gehasht, Report gelesen, Screenshots angesehen. Vollständige Herkunft, Hashes, Umfang und Grenzen in `kfb-hub/free-roam/PUBLIC_STATUS.md`. Die öffentlich abweichende abschließende LF in physics.js ist explizit im Mirrorvertrag und Byteprüfer erfasst; keine pauschale Byteidentität behauptet.
 
 **OPEN / UNCHANGED:** Human-Fahrgefühl, physische Geräte und längeres Freeplay; tatsächliche Walk↔Drive-Übergabe im Travel-Host, geparkter Wagen/Exit/Save, weitere Fahrzeug-/Figurenkombinationen in der Probe, City/Combat/Audio/Deformer. Ein Kart auf lokalem Terrain ist kein vollständiger World-Consumer-PASS. Keine neue Engine/Registry/Owner; keine native ChatGPT-Site erzeugt; kein großer Astra-Start, r3 und inaktiver Delta bleiben unverändert. Recovery erhält einen additiven aktuellen Einstieg über der unberührten Vorbereitungshistorie.
+
+
+## 2026-09-18 · Ground regression repair + FR-S04-02
+
+**HUMAN FINDING:** Georg reports the public Ground comparison regressed (white/missing-looking terrain cards, locomotion too slow/out of sync, five test models at wrong scale classes) and rejects FR-S04-01 handling (A/D + Orbit conventions, unstable reverse, trap-prone circular test area).
+
+**GROUND IMPLEMENTATION:** Travel PR #25 restores explicit measured rig classes / class-relative movement; PR #27 restores one-world-deck text-first terrain cards through an additive WB0 adapter; PR #28 advances the existing PDF artwork pump in Ground without re-enabling Flight presentation. Frozen B0 remains guarded.
+
+**GROUND TESTED PUBLIC RESULT:** kayfabizarro run `35365887832` attempt 2 / job `105672379932` / artifact `10556777649` PASS on the actual fixed URL: 56/56 cards assigned + textured, progressive real PDF fronts; Medium/Large/Legacy/KFB-Mech/Raw-Mech classes and distinct speeds verified. Human visual/cadence acceptance remains open.
+
+**FR-S04-02 IMPLEMENTATION:** Race PR #6 / merge `63cb97d5e321700e55f7658104b42c9c09d97d70`. Corrected A/D physical convention, reverse hysteresis + bounded reverse + candidate reverse assist, Ground-compatible Orbit direction, stronger low-speed steering, radius-48/radius-56 open baked-Travel fixture with no fence. FR-S04-01 preserved and labelled rejected/superseded rather than overwritten.
+
+**FR-S04-02 SOURCE TESTED RESULT:** source `a7a48a8c6e1589a18134aa619e2be22d79124c32`, run `35365197941`, artifact `10555832979`: 9 intent tests + 33 browser assertions PASS including reverse no-chatter, actual turn response, Orbit convention, boost, Hop and 180-tick no-stuck curve.
+
+**PUBLICATION:** kayfabizarro PR #63 publishes immutable `fr-s04-02` and moves the permanent navigator current pointer. Actual Cloudflare proof remains a separate gate and was running when this entry was written.
+
+**NEXT:** human FR-S04-02 handling review first; then defined stunt-ramp slice on the wide fixture. Receiver work stays Walk↔Drive handoff / park / safe exit / restore. No owner replacement and no Astra full-run promotion from source tests alone.
