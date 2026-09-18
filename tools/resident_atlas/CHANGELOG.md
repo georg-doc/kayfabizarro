@@ -16,8 +16,11 @@ The scene-composition viewer consumes resident pose evidence from `tools/residen
 - kept habitat and signature props as whole KayKit assets;
 - added `SCENE_STAGING_CONTRACT.md` and explicit `skills/chat/` sync order.
 
-### TESTED RESULT
-Pending static parse/sanity and browser visual QA at the time of this entry.
+### STATIC TESTED RESULT
+Branch sanity passed: scene JSON parses; the HTML module script parses; the Caveman recipe declares 11 scene assets, `Melee_Unarmed_Idle`, `ground.lock=true`, the exact asset/animation pins, precise posed bounds, and mixer-update-before-ground-lock ordering.
+
+### BROWSER TESTED RESULT
+Pending. No live/mobile visual PASS is claimed yet.
 
 ### ARCHIVED HISTORY
 The 2026-09-16 raw.githack build that loaded `14/14` models remains evidence for the earlier viewer mechanism only. It is not evidence for this posed/grounded revision.
