@@ -1,0 +1,42 @@
+name: KFB Cartoon Map Board public proof
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'tools/kfb-cartoon-map-board/**'
+      - '.github/workflows/kfb-cartoon-map-board-public.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  public-proof:
+    runs-on: ubuntu-latest
+    timeout-minutes: 14
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout: |
+            tools/kfb-cartoon-map-board
+            media/3D_Assets/KayKit_BoardGameBits_1.0_FREE/Assets/gltf
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Static source checks
+        run: |
+          node --check tools/kfb-cartoon-map-board/src/app.js
+          node -e "const fs=require('fs'); for (const p of ['tools/kfb-cartoon-map-board/data/story-demo.v1.json','tools/kfb-cartoon-map-board/data/europe-p0/SOURCE_SPEC.json']) JSON.parse(fs.readFileSync(p,'utf8')); console.log('JSON PASS')"
+          node -e "const fs=require('fs'); const j=JSON.parse(fs.readFileSync('tools/kfb-cartoon-map-board/data/story-demo.v1.json')); for(const s of j.stories){const p='media/3D_Assets/KayKit_BoardGameBits_1.0_FREE/Assets/gltf/'+s.asset;if(!fs.existsSync(p))throw Error('missing '+p); const bin=p.replace(/\.gltf$/,'.bin');if(!fs.existsSync(bin))throw Error('missing '+bin)} console.log('KayKit refs PASS')"
+      - run: |
+          npm install --no-save playwright@1.51.1
+          npx playwright install --with-deps chromium
+      - name: Verify fixed Cloudflare P0.2 runtime
+        run: node tools/kfb-cartoon-map-board/qa/public.mjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: kfb-cartoon-map-board-public-proof
+          path: kfb-cartoon-map-board-public-evidence
+          retention-days: 30
