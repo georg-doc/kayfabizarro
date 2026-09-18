@@ -1,5 +1,7 @@
 # KFB Free Roam · Platformer Hub POC · Claude Design Brief
 
+> **CURRENT RECOVERY OVERRIDE · 2026-09-18:** The first Claude Design Project-Island composition is **STRUCTURAL / VISUAL FAIL** as a kit reconstruction, while viewer/UI/camera code may remain donor material. Before any further Project Island polish, Claude Design must follow [PLATFORMER_KIT_MENTAL_MODEL.md](PLATFORMER_KIT_MENTAL_MODEL.md) and [CLAUDE_DESIGN_RECOVERY_REBRIEF.md](CLAUDE_DESIGN_RECOVERY_REBRIEF.md): **Asset Atlas S0 → source Preview reconstruction S1 → measured platform grammar S2 → movement S3 → actor adapters S4 → Project Island S5**. Audio is frozen/out of scope for this recovery pass.
+
 **Date:** 2026-09-18  
 **Status:** DESIGN / IMPLEMENTATION BRIEF · CLAUDE DESIGN EXPORT ONLY  
 **Target public family:** `https://kayfabizarro.pages.dev/kfb-hub/free-roam/`  
