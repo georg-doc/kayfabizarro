@@ -1,0 +1,126 @@
+{
+  "schema": "doccheck.simblood.frank-golden-demo/0.1",
+  "updated": "2026-09-18",
+  "source": "app/cell-atlas-progressive-template/coverage.v0.2.json",
+  "items": [
+    {
+      "id": "RBC-NORM",
+      "label": "Normaler Erythrozyt",
+      "group": "RBC",
+      "hero": "https://imagebank.hematology.org/getimagebyid/60303?size=3",
+      "samples": [
+        {
+          "kind": "ref",
+          "src": "https://imagebank.hematology.org/getimagebyid/60303?size=3",
+          "href": "https://imagebank.hematology.org/image/60303/normocytic-rbcs-with-lymphocyte-for-comparison"
+        }
+      ]
+    },
+    {
+      "id": "RBC-SPH",
+      "label": "Sphärozyt",
+      "group": "RBC",
+      "hero": "https://imagebank.hematology.org/getimagebyid/60308?size=3",
+      "samples": [
+        {
+          "kind": "ref",
+          "src": "https://imagebank.hematology.org/getimagebyid/60308?size=3",
+          "href": "https://imagebank.hematology.org/image/60308/spherocytes--hereditary-spherocytosis"
+        }
+      ]
+    },
+    {
+      "id": "RBC-ECHINO",
+      "label": "Echinozyt",
+      "group": "RBC",
+      "hero": "https://imagebank.hematology.org/getimagebyid/60291?size=3",
+      "samples": [
+        {
+          "kind": "ref",
+          "src": "https://imagebank.hematology.org/getimagebyid/60291?size=3",
+          "href": "https://imagebank.hematology.org/atlas/60291"
+        }
+      ]
+    },
+    {
+      "id": "WBC-NEUT-SEG",
+      "label": "Neutrophiler",
+      "group": "WBC",
+      "hero": "https://imagebank.hematology.org/getimagebyid/60395?size=3",
+      "samples": [
+        {
+          "kind": "ref",
+          "src": "https://imagebank.hematology.org/getimagebyid/60395?size=3",
+          "href": "https://imagebank.hematology.org/image/60395/segmented-neutrophil"
+        },
+        {
+          "kind": "candidate",
+          "src": "https://raw.githubusercontent.com/official-Auralin/Blood-Cell-Classification/main/PBC_dataset_normal_DIB/neutrophil/BNE_985930.jpg",
+          "state": "PRE_QC_ACCEPT"
+        },
+        {
+          "kind": "candidate",
+          "src": "https://raw.githubusercontent.com/official-Auralin/Blood-Cell-Classification/main/PBC_dataset_normal_DIB/neutrophil/BNE_101007.jpg",
+          "state": "PRE_QC_ACCEPT"
+        }
+      ]
+    },
+    {
+      "id": "WBC-LYMPH-SMALL",
+      "label": "Lymphozyt",
+      "group": "WBC",
+      "hero": "https://imagebank.hematology.org/getimagebyid/63344?size=3",
+      "samples": [
+        {
+          "kind": "ref",
+          "src": "https://imagebank.hematology.org/getimagebyid/63344?size=3",
+          "href": "https://imagebank.hematology.org/image/63344/mature-lymphocyte"
+        }
+      ]
+    },
+    {
+      "id": "WBC-MONO",
+      "label": "Monozyt",
+      "group": "WBC",
+      "hero": "https://imagebank.hematology.org/getimagebyid/61933?size=3",
+      "samples": [
+        {
+          "kind": "ref",
+          "src": "https://imagebank.hematology.org/getimagebyid/61933?size=3",
+          "href": "https://imagebank.hematology.org/image/61933/monocyte"
+        },
+        {
+          "kind": "candidate",
+          "src": "https://raw.githubusercontent.com/official-Auralin/Blood-Cell-Classification/main/PBC_dataset_normal_DIB/monocyte/MO_102400.jpg",
+          "state": "SOURCE_PASS_POC_RECROP"
+        }
+      ]
+    },
+    {
+      "id": "PLT-NORM",
+      "label": "Thrombozyt",
+      "group": "PLT",
+      "hero": "https://imagebank.hematology.org/getimagebyid/60932?size=3",
+      "samples": [
+        {
+          "kind": "ref",
+          "src": "https://imagebank.hematology.org/getimagebyid/60932?size=3",
+          "href": "https://imagebank.hematology.org/atlas/60932"
+        }
+      ]
+    },
+    {
+      "id": "PLT-GIANT",
+      "label": "Riesenthrombozyt",
+      "group": "PLT",
+      "hero": "https://imagebank.hematology.org/getimagebyid/60930?size=3",
+      "samples": [
+        {
+          "kind": "ref",
+          "src": "https://imagebank.hematology.org/getimagebyid/60930?size=3",
+          "href": "https://imagebank.hematology.org/image/60930/giant-platelets"
+        }
+      ]
+    }
+  ]
+}
