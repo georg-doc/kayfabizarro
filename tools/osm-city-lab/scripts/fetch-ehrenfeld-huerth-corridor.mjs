@@ -3,14 +3,14 @@ import crypto from 'node:crypto';
 
 const DATA=new URL('../data/corridors/ehrenfeld-huerth-v0/',import.meta.url);
 const spec=JSON.parse(await fs.readFile(new URL('SOURCE_SPEC.json',DATA),'utf8'));
-const endpoints=['https://overpass-api.de/api/interpreter','https://overpass.kumi.systems/api/interpreter'];
+const endpoints=['https://overpass-api.de/api/interpreter','https://overpass.kumi.systems/api/interpreter','https://overpass.private.coffee/api/interpreter'];
 const B=spec.discoveryBbox;
 const midLon=(B.west+B.east)/2;
-const latStep=(B.north-B.south)/4;
+const latStep=(B.north-B.south)/8;
 const chunks=[];
-for(let row=0;row<4;row++){
+for(let row=0;row<8;row++){
   const south=B.south+latStep*row;
-  const north=row===3?B.north:B.south+latStep*(row+1);
+  const north=row===7?B.north:B.south+latStep*(row+1);
   chunks.push({id:`R${row+1}W`,south,west:B.west,north,east:midLon});
   chunks.push({id:`R${row+1}E`,south,west:midLon,north,east:B.east});
 }
@@ -30,7 +30,7 @@ async function fetchChunk(chunk){
           'user-agent':'KFB-OSM-City-Lab/0.32 corridor discovery'
         },
         body:new URLSearchParams({data:query}),
-        signal:AbortSignal.timeout(40000)
+        signal:AbortSignal.timeout(30000)
       });
       if(!res.ok)throw new Error(`${endpoint} HTTP ${res.status}`);
       const raw=JSON.parse(await res.text());
@@ -54,6 +54,7 @@ for(const chunk of chunks){
   const result=await fetchChunk(chunk);
   results.push(result);
   console.log(`chunk ${chunk.id}: ${result.elementCount} major-road elements via ${result.endpoint}`);
+  await new Promise(resolve=>setTimeout(resolve,350));
 }
 
 const map=new Map();
@@ -89,7 +90,7 @@ await fs.writeFile(new URL('source.overpass.json',DATA),compact+'\n');
 await fs.writeFile(new URL('PROVENANCE.json',DATA),JSON.stringify({
   schema:'kfb.osm-city.corridor-provenance.v0',
   id:spec.id,
-  strategy:'4x2 major-road Overpass chunks + existing Ehrenfeld/Hürth S0 highway connectors; merged by type/id',
+  strategy:'8x2 major-road Overpass chunks + existing Ehrenfeld/Hürth S0 highway connectors; merged by type/id',
   retrievedAt:new Date().toISOString(),
   osmBaseTimestamp:merged.osm3s.timestamp_osm_base,
   sourceSha256:sha256,
