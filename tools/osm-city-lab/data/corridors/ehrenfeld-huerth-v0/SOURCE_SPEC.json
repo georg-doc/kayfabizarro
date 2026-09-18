@@ -21,7 +21,18 @@
   "preferredRoadNames": [
     "Militärringstraße"
   ],
-  "highwayClasses": [
+  "globalHighwayClasses": [
+    "trunk",
+    "primary",
+    "secondary",
+    "tertiary",
+    "unclassified"
+  ],
+  "endpointConnectorSources": [
+    "data/ehrenfeld-v0/source.overpass.json",
+    "data/huerth-v0/source.overpass.json"
+  ],
+  "endpointConnectorHighwayClasses": [
     "trunk",
     "primary",
     "secondary",
