@@ -1,9 +1,18 @@
 {
-  "build":"ENV1-20260918-A",
-  "implementationSSOT":"georg-doc/KFB-Stunt-Car-Race",
-  "sourcePath":"ChatGPT_web/track-environment-lab",
-  "sourceCommit":"97e03d8eb5e635db8bfac2f769c6a24be776bcde",
-  "assetRevision":"ce1d201217f40abfc8850eb8e7d6ea7ab9d07f39",
-  "mirrorOnly":true,
-  "humanVisualAcceptance":"PENDING"
+  "schema": "kfb.public-mirror/0.2",
+  "build": "BOX1-20260918",
+  "status": "PUBLIC_CANDIDATE_HUMAN_VISUAL_ACCEPTANCE_PENDING",
+  "implementationSSOT": "georg-doc/KFB-Stunt-Car-Race",
+  "sourceCommit": "1d88a887fc6ff4a1fc907afe5dbdef154181b221",
+  "integratedRaceMain": "7b851480f8bf75ef876c9fb9cd723e31b0e99dec",
+  "sourcePath": "ChatGPT_web/track-environment-lab",
+  "route": "/kfb-hub/stunt-race/track-environment-lab/",
+  "runtimeSha256": "30b5c120dba5fa82209e58b950bbfc735d3b1ba00ab62f452339edcbb54456ca",
+  "browserEvidence": "box-stop/evidence/browser.json",
+  "sourceAssets": "remote pinned GitHub refs; no model duplication",
+  "noClaims": [
+    "no human Box Stop acceptance",
+    "no real pit-entry trigger",
+    "Audio A1 original source still pending"
+  ]
 }
