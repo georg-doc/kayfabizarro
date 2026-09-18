@@ -726,3 +726,26 @@ Important:
 - current Lorekeeper + Sedan Pilot 01 remains the active Game Dev Studio capability proof.
 
 This package type is intentionally compatible with Frankensteining: a static PlantRecipe can later gain a transform rig, style recipe, EyeRig adapter and consumer-specific interaction without replacing the canonical source meshes.
+
+
+### 2026-09-18 · A5 · FR-S04-02 Sedan receiver adapter
+
+Pilot 01 now pins the current Free Roam donor to `fr-s04-02` and defines a package-local Sedan receiver adapter.
+
+New package files:
+
+- `game-ready/pilot-01-lorekeeper-sedan/vehicle/car-sedan/FR_S04_02_RECEIVER_ADAPTER.json`
+- `game-ready/pilot-01-lorekeeper-sedan/vehicle/car-sedan/FR_S04_02_RECEIVER_HANDOFF.md`
+
+Key boundary:
+
+> FR-S04-02 has 62/62 real public checks, but those checks currently run the original kart. They prove the receiver donor, not the Sedan package.
+
+Source review of FR-S04-02 confirms that its current vehicle geometry is hardcoded as a Rapier cuboid plus four synthetic wheel connections. Pilot 01 already has source-derived numeric Sedan body/wheel geometry, so a first real Sedan receiver probe may consume the numeric proxy directly without waiting for a collider GLB.
+
+This **does not remove** the binary Game Development Studio capability gate. It separates two questions correctly:
+
+1. can the Game Development Studio producer generate/inspect/package an explicit derived binary? — still BLOCKED in this webchat environment;
+2. can the real FR-S04-02 Rapier consumer use the package's numeric proxy + exact wheel nodes? — adapter now specified, runtime test still OPEN.
+
+The adapter explicitly forbids silently inheriting kart mass/inertia, suspension geometry, recovery volume or camera clearance as Sedan facts.
