@@ -21,3 +21,9 @@ tools/KFB-ToolBox/eye-rig-batch/
 ```
 
 Do not create runtime/source files here until the dedicated implementation branch begins.
+
+
+Planned sequence:
+`Rig_Medium + source-eye cleanup → Rig_Large → Legacy → selected face grafts → Vehicle EyeRig → Living Plants`.
+
+Original source-eye geometry is removed non-destructively when measured/verified; recolor is only a fallback.
