@@ -114,5 +114,15 @@
       "status": "AWAITING_NATIVE_SOURCE_INVENTORY"
     }
   ],
-  "promotionRule": "A modifier becomes reusable only after exact source identity, layer/group geometry, pair/occlusion behavior, attachment class, browser evidence and Georg/AD acceptance are recorded."
+  "promotionRule": "A modifier becomes reusable only after exact source identity, layer/group geometry, pair/occlusion behavior, attachment class, browser evidence and Georg/AD acceptance are recorded.",
+  "sourceDiscovery": {
+    "githubCurrentSource": "tools/2D Animation Studio/_inbox/doccheck-ad-ai-source/sources/_Dr_Vorlage.ai",
+    "dropboxSearch20260918": {
+      "scope": "/CLAUDE",
+      "filters": "Adobe Illustrator extension + filename/content terms Eumel, Brille, Augen, DocCheck, Vorlage, Dr, Logo",
+      "result": "NO_ADDITIONAL_AI_CANDIDATE_FOUND_BY_SEARCH",
+      "caveat": "Search non-result is not proof that no richer source exists; binary/source files may be stored under unrelated names or outside indexed search."
+    },
+    "nextAction": "Ask/source-authoritative richer DocCheck Illustrator package or identify its exact Dropbox/GitHub path; do not synthesize missing modifiers."
+  }
 }
