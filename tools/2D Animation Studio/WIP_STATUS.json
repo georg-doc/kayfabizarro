@@ -12,13 +12,15 @@
     "measuredEumelReconstruction": "PROVISIONAL_DONOR",
     "doccheckAdIllustratorSource": "PINNED_AND_PDF_VECTOR_AUDITED"
   },
-  "nextGate": "Visually compare the extracted SVG master against the Illustrator/PDF render, then split accepted source geometry into canonical reusable parts and retarget the Eumel browser rig.",
+  "nextGate": "Real-browser QA of the source-retargeted Eumel Rig Lab: PDF source vs extracted SVG, then motion/occlusion/pivot acceptance.",
   "evidence": {
     "studioBootstrap": "IMPLEMENTATION",
     "sourceIntake": "IMPLEMENTATION",
-    "canonicalAssetLibrary": "IN_PROGRESS",
-    "browserRigAfterCanonicalIngest": "NOT_STARTED",
-    "georgAcceptance": "PENDING"
+    "canonicalAssetLibrary": "IMPLEMENTATION_CANDIDATE",
+    "browserRigAfterCanonicalIngest": "IMPLEMENTATION",
+    "georgAcceptance": "PENDING",
+    "browserRuntimeTest": "PENDING",
+    "sourceVsExtractedVisualPass": "PENDING"
   },
   "sourceAudit": {
     "gitBlobSha": "436143b019f0034c6d2d9183154cf613ff8c701e",
@@ -27,5 +29,7 @@
     "sourceVectorMaster": "labs/eumel-rig-lab/source-assets/_Dr_Vorlage_PDF_VECTOR_MASTER.svg",
     "viewer": "labs/eumel-rig-lab/source-assets/index.html",
     "manifest": "_inbox/doccheck-ad-ai-source/manifests/_Dr_Vorlage_native_structure.json"
-  }
+  },
+  "activeLabStatus": "labs/eumel-rig-lab/WIP_STATUS.json",
+  "activeLabSite": "tools/2D Animation Studio/labs/eumel-rig-lab/site/"
 }
