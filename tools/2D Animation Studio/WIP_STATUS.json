@@ -12,15 +12,18 @@
     "measuredEumelReconstruction": "PROVISIONAL_DONOR",
     "doccheckAdIllustratorSource": "PINNED_AND_PDF_VECTOR_AUDITED"
   },
-  "nextGate": "Real-browser QA of the source-retargeted Eumel Rig Lab: PDF source vs extracted SVG, then motion/occlusion/pivot acceptance.",
+  "nextGate": "Browser retest after neutral-bind/bone/EyeRig/atlas fix: verify anchored legs, normalized neutral walk base, component atlas visibility and shared eye controls.",
   "evidence": {
     "studioBootstrap": "IMPLEMENTATION",
     "sourceIntake": "IMPLEMENTATION",
     "canonicalAssetLibrary": "IMPLEMENTATION_CANDIDATE",
     "browserRigAfterCanonicalIngest": "IMPLEMENTATION",
     "georgAcceptance": "PENDING",
-    "browserRuntimeTest": "PENDING",
-    "sourceVsExtractedVisualPass": "PENDING"
+    "browserRuntimeTest": "HUMAN_FEEDBACK_WITH_DEFECTS_2026-09-18",
+    "sourceVsExtractedVisualPass": "PARTIAL_VISUAL_REVIEW_NO_PASS",
+    "neutralBindBones": "IMPLEMENTATION",
+    "sharedEyeRigProtocol": "IMPLEMENTATION",
+    "componentAtlasFix": "IMPLEMENTATION_STATIC_SANITY_PENDING"
   },
   "sourceAudit": {
     "gitBlobSha": "436143b019f0034c6d2d9183154cf613ff8c701e",
@@ -31,5 +34,21 @@
     "manifest": "_inbox/doccheck-ad-ai-source/manifests/_Dr_Vorlage_native_structure.json"
   },
   "activeLabStatus": "labs/eumel-rig-lab/WIP_STATUS.json",
-  "activeLabSite": "tools/2D Animation Studio/labs/eumel-rig-lab/site/"
+  "activeLabSite": "tools/2D Animation Studio/labs/eumel-rig-lab/site/",
+  "humanFeedback": {
+    "date": "2026-09-18",
+    "observed": [
+      "animation visible and direction accepted",
+      "legs detached/pendled out",
+      "source pose too asymmetrical for reusable locomotion bind",
+      "many atlas cards blank"
+    ],
+    "requested": [
+      "hip bones/anchors",
+      "neutral T-pose-like bind stance",
+      "optional bend/stretch/squash",
+      "shared EyeRig logic with FrankenStein stack",
+      "richer face/eyewear asset inventory"
+    ]
+  }
 }
