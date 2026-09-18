@@ -25,6 +25,21 @@ The package contains Lorekeeper + Tome/lectern + Staff, exact BOX1 `car-sedan`, 
 
 ## PUBLIC / PREVIEW LANE
 
+Public target:
+
+`https://kayfabizarro.pages.dev/kfb-hub/free-roam/game-dev-studio/`
+
+Public proof workflow:
+
+`.github/workflows/game-dev-studio-public.yml`
+
+Latest evidence:
+- run `35368827693`, attempt 1: **FAIL before browser boot** because `/tools/game-dev-studio/catalog.json` was not deployed on the real `kayfabizarro.pages.dev` host during the five-minute polling window;
+- therefore no WebGL/preview failure is established by attempt 1;
+- attempt 2 was explicitly rerun against the same fixed public URL after the repo wiring completed;
+- GitHub Pages success is not treated as Cloudflare proof;
+- no Cloudflare deployment credential/workflow is present in repository source, and no Cloudflare deployment connector is available in this chat.
+
 The new public Game Dev Studio site is data-driven from:
 
 `tools/game-dev-studio/catalog.json`
