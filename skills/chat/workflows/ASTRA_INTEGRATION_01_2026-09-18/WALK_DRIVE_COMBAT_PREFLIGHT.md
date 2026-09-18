@@ -98,6 +98,26 @@ Fußgänger, Ampeln und NPC-Verkehr sind eine spätere Ausbaustufe desselben Qua
 
 Free Roam→Stunt Race: gleicher Wagen, gleiche Pose/Geschwindigkeit, derselbe Controller/Kamera-/Audiokontext; Rennauftrag fügt Checkpoints, Zeitwertung und klaren Start/Abbruch/Return hinzu. Kein ungekennzeichnetes Umschalten in den v0.8-Streckenkanal an einer Kreuzung. Ein expliziter getrennter BOX1-Event-Einstieg ist als Zwischenstand zulässig, aber kein Seamless-PASS. Vorhandene v0.10-Facility-Gegenbefunde/Owner-Gates bleiben gültig; City-Drift-Arbeit muss nicht auf deren komplette Politur warten.
 
+## 6.1 · Parallel geometry donor · OSM City Slice
+
+Parallel to this Free Roam preflight, the OSM urban geometry lane is now prepared at:
+
+`skills/chat/workflows/OSM_CITY_SLICE_2026-09-18/START_HERE.md`
+
+Implementation home proposal:
+
+`tools/osm-city-lab/`
+
+It may prepare a compact Köln-Ehrenfeld road/building/landuse fixture, but it does **not** choose or own the Drive controller. The Free Roam preflight remains responsible for selecting the receiving Walk/Drive movement seam.
+
+The city fixture should become a useful input to §6 above: parking bay, intersection, street corridor, sidewalk, road↔terrain seam and later stunt branch. Do not let OSM work create a third physics/controller stack.
+
+Optional later content donors are:
+- `tools/img2threejs/` for individually approved low-poly landmarks such as a future Dom candidate;
+- `tools/2D Animation Studio/` for KFB-authored 2D/2.5D cutout actors/props.
+
+Neither donor is required for the first city geometry or Walk/Drive proof.
+
 ## 7 · Begrenzter Vorbereitungsauftrag / Exit-Kriterium
 
 Ein eigener Chat heißt **KFB Free Roam · Walk ↔ Drive ↔ Combat · Preparation**. Er koordiniert, besitzt aber kein neues Repo/Framework.
