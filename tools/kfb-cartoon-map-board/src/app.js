@@ -168,4 +168,191 @@ function createBoard() {
   });
   const m = new THREE.Mesh(g,[top,side]);
   m.receiveShadow = true;
-  m.castShadow =
+  m.castShadow = true;
+  m.position.y = -0.02;
+  root.add(m);
+
+  const under = new THREE.Mesh(
+    new THREE.CylinderGeometry(96,104,4.5,8,1,false,Math.PI/8),
+    new THREE.MeshStandardMaterial({color:0x45384d,roughness:1})
+  );
+  under.scale.z = 0.76;
+  under.position.y = -3.8;
+  under.rotation.y = Math.PI/8;
+  under.receiveShadow = true;
+  root.add(under);
+}
+createBoard();
+
+function hashString(s) {
+  let h = 2166136261 >>> 0;
+  for (let i=0;i<s.length;i++) {
+    h ^= s.charCodeAt(i);
+    h = Math.imul(h,16777619);
+  }
+  return h >>> 0;
+}
+function seeded01(seed, n=0) {
+  let x = (seed + Math.imul(n+1, 0x9e3779b1)) >>> 0;
+  x ^= x << 13; x ^= x >>> 17; x ^= x << 5;
+  return (x >>> 0) / 4294967295;
+}
+function project(lon,lat) {
+  const cos = Math.cos(CENTER.lat * Math.PI/180);
+  return {
+    x:(lon-CENTER.lon)*cos*MAP_SCALE,
+    z:-(lat-CENTER.lat)*MAP_SCALE,
+    lon, lat
+  };
+}
+function withinEuropeCentroid(coords) {
+  let lon=0,lat=0,n=0;
+  for (const p of coords) { lon += p[0]; lat += p[1]; n++; }
+  if (!n) return false;
+  lon/=n; lat/=n;
+  return lon>=EUROPE_BBOX.minLon && lon<=EUROPE_BBOX.maxLon && lat>=EUROPE_BBOX.minLat && lat<=EUROPE_BBOX.maxLat;
+}
+function ringToProjected(coords) {
+  const a = coords.map(p=>project(p[0],p[1]));
+  if (a.length>1) {
+    const f=a[0], l=a[a.length-1];
+    if (Math.abs(f.x-l.x)<1e-8 && Math.abs(f.z-l.z)<1e-8) a.pop();
+  }
+  return simplifyRDP(a, a.length>1500 ? 0.10 : a.length>500 ? 0.065 : 0.035);
+}
+function pointSegDist(p,a,b) {
+  const dx=b.x-a.x, dz=b.z-a.z;
+  if (!dx && !dz) return Math.hypot(p.x-a.x,p.z-a.z);
+  let t=((p.x-a.x)*dx+(p.z-a.z)*dz)/(dx*dx+dz*dz);
+  t=Math.max(0,Math.min(1,t));
+  return Math.hypot(p.x-(a.x+t*dx),p.z-(a.z+t*dz));
+}
+function simplifyRDP(points,eps) {
+  if (points.length<6) return points;
+  let max=0, idx=0;
+  const a=points[0], b=points[points.length-1];
+  for (let i=1;i<points.length-1;i++) {
+    const d=pointSegDist(points[i],a,b);
+    if (d>max) { max=d; idx=i; }
+  }
+  if (max>eps) {
+    const left=simplifyRDP(points.slice(0,idx+1),eps);
+    const right=simplifyRDP(points.slice(idx),eps);
+    return left.slice(0,-1).concat(right);
+  }
+  return [a,b];
+}
+function polygonArea2D(points) {
+  let a=0;
+  for (let i=0;i<points.length;i++) {
+    const p=points[i], q=points[(i+1)%points.length];
+    a += p.x*q.z-q.x*p.z;
+  }
+  return a/2;
+}
+function centroid2D(points) {
+  let a=0,cx=0,cz=0;
+  for (let i=0;i<points.length;i++) {
+    const p=points[i],q=points[(i+1)%points.length];
+    const cross=p.x*q.z-q.x*p.z;
+    a+=cross; cx+=(p.x+q.x)*cross; cz+=(p.z+q.z)*cross;
+  }
+  if (Math.abs(a)<1e-6) {
+    return points.reduce((s,p)=>({x:s.x+p.x/points.length,z:s.z+p.z/points.length}),{x:0,z:0});
+  }
+  return {x:cx/(3*a),z:cz/(3*a)};
+}
+function makeShape(outer,holes) {
+  const s = new THREE.Shape();
+  outer.forEach((p,i)=>i ? s.lineTo(p.x,-p.z) : s.moveTo(p.x,-p.z));
+  s.closePath();
+  for (const ring of holes) {
+    const h = new THREE.Path();
+    ring.forEach((p,i)=>i ? h.lineTo(p.x,-p.z) : h.moveTo(p.x,-p.z));
+    h.closePath();
+    s.holes.push(h);
+  }
+  return s;
+}
+function normalizeGeometryInput(g) {
+  if (!g) return [];
+  if (g.type==='Polygon') return [g.coordinates];
+  if (g.type==='MultiPolygon') return g.coordinates;
+  return [];
+}
+
+function makeInkRibbonGeometry(points, y, width, seed, centroid, hole=false) {
+  if (points.length<3) return null;
+  const verts=[];
+  const idx=[];
+  const se = new THREE.Vector2(0.70710678,0.70710678);
+  const area = polygonArea2D(points);
+  const winding = Math.sign(area) || 1;
+  for (let i=0;i<points.length;i++) {
+    const prev=points[(i-1+points.length)%points.length];
+    const p=points[i];
+    const next=points[(i+1)%points.length];
+    let tx=next.x-prev.x, tz=next.z-prev.z;
+    const tl=Math.hypot(tx,tz)||1; tx/=tl; tz/=tl;
+    let nx=-tz, nz=tx;
+    const radial=(p.x-centroid.x)*nx+(p.z-centroid.z)*nz;
+    if ((!hole && radial<0) || (hole && radial>0)) { nx=-nx; nz=-nz; }
+
+    const wobble = (
+      Math.sin(i*0.47 + seed*0.013) * 0.55 +
+      Math.sin(i*0.137 + seed*0.021) * 0.45
+    ) * width * 0.20;
+    const sx=p.x+nx*wobble, sz=p.z+nz*wobble;
+    const shadow=Math.max(0,nx*se.x+nz*se.y);
+    const feather=0.86 + 0.13*Math.sin(i*0.61+seed*0.07) + (hole?0:shadow*0.72);
+    const half=width*0.5*Math.max(0.52,feather);
+    verts.push(sx+nx*half,y,sz+nz*half,sx-nx*half,y,sz-nz*half);
+  }
+  const n=points.length;
+  for (let i=0;i<n;i++) {
+    const j=(i+1)%n;
+    const a=i*2,b=i*2+1,c=j*2,d=j*2+1;
+    idx.push(a,b,c,b,d,c);
+  }
+  const g=new THREE.BufferGeometry();
+  g.setAttribute('position',new THREE.Float32BufferAttribute(verts,3));
+  g.setIndex(idx);
+  g.computeVertexNormals();
+  return g;
+}
+
+function addCountryFromGeoJSON(code, name, geojson) {
+  const geoms=[];
+  if (geojson.type==='FeatureCollection') {
+    for (const f of geojson.features || []) geoms.push(f.geometry);
+  } else if (geojson.type==='Feature') geoms.push(geojson.geometry);
+  else geoms.push(geojson);
+
+  const polygons=[];
+  for (const geom of geoms) {
+    for (const poly of normalizeGeometryInput(geom)) {
+      if (!poly?.[0] || !withinEuropeCentroid(poly[0])) continue;
+      const outer=ringToProjected(poly[0]);
+      if (outer.length<3) continue;
+      const holes=(poly.slice(1)||[]).filter(r=>r?.length>3).map(ringToProjected).filter(r=>r.length>=3);
+      polygons.push({outer,holes});
+    }
+  }
+  if (!polygons.length) return null;
+
+  const seed=hashString(code);
+  const group=new THREE.Group();
+  group.position.y=BOARD_TOP+0.06;
+  group.userData.code=code;
+  group.userData.name=name;
+
+  const allOuter=polygons.map(p=>p.outer);
+  const largest=allOuter.slice().sort((a,b)=>Math.abs(polygonArea2D(b))-Math.abs(polygonArea2D(a)))[0];
+  const centroid=centroid2D(largest);
+  const totalArea=allOuter.reduce((s,r)=>s+Math.abs(polygonArea2D(r)),0);
+
+  const color=palette[seed%palette.length];
+  const topMat=new THREE.MeshStandardMaterial({
+    color, map:countryTexture, roughness:0.98, metalness:0, side:THREE.DoubleSide
+  });
+  topM
