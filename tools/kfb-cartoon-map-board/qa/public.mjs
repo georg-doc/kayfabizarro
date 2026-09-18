@@ -1,0 +1,103 @@
+import fs from 'node:fs';
+import { chromium } from 'playwright';
+
+const origin='https://kayfabizarro.pages.dev';
+const route='/tools/kfb-cartoon-map-board/';
+const localStory=JSON.parse(fs.readFileSync('tools/kfb-cartoon-map-board/data/story-demo.v1.json','utf8'));
+const out='kfb-cartoon-map-board-public-evidence';
+fs.mkdirSync(out,{recursive:true});
+
+const report={
+  slice:'P0.2',
+  url:origin+route,
+  storyVersion:localStory.version,
+  checks:[],
+  errors:[],
+  runtime:null,
+  humanAcceptance:'PENDING'
+};
+const check=(name,pass,details)=>{
+  report.checks.push({name,pass:!!pass,details});
+  if(!pass) throw new Error(name);
+};
+const sleep=ms=>new Promise(r=>setTimeout(r,ms));
+
+let browser;
+try{
+  // Cloudflare is an external deploy from the same main tree. Wait for the exact story manifest.
+  let live=false,remoteStory=null;
+  for(let attempt=0;attempt<36;attempt++){
+    try{
+      const r=await fetch(origin+route+'data/story-demo.v1.json?ci='+Date.now(),{
+        cache:'no-store',signal:AbortSignal.timeout(15000)
+      });
+      if(r.ok && /json/i.test(r.headers.get('content-type')||'')){
+        const j=await r.json();
+        if(j.schema===localStory.schema && j.version===localStory.version && j.stories?.length===localStory.stories?.length){
+          live=true;remoteStory=j;break;
+        }
+      }
+    }catch{}
+    await sleep(10000);
+  }
+  check('Cloudflare story manifest deployed',live,{
+    url:origin+route+'data/story-demo.v1.json',
+    expectedVersion:localStory.version,
+    actualVersion:remoteStory?.version
+  });
+
+  const html=await fetch(origin+route+'?ci='+Date.now(),{cache:'no-store',signal:AbortSignal.timeout(15000)});
+  check('fixed Cloudflare route HTTP',html.ok,{status:html.status,url:origin+route});
+  const htmlText=await html.text();
+  check('P0.2 page identity',htmlText.includes('EUROPE P0.2')&&htmlText.includes('NEXT STORY'),'P0.2 controls present');
+
+  browser=await chromium.launch({headless:true,args:['--use-angle=swiftshader','--enable-unsafe-swiftshader']});
+  const context=await browser.newContext({viewport:{width:1440,height:960}});
+  const page=await context.newPage();
+  page.on('pageerror',e=>report.errors.push(String(e)));
+  page.on('console',m=>{
+    if(m.type()==='error'&&!/favicon/i.test(m.text())) report.errors.push(m.text());
+  });
+
+  const nav=await page.goto(origin+route,{waitUntil:'domcontentloaded',timeout:60000});
+  check('browser route HTTP',nav?.ok(),nav?.status());
+  await page.waitForFunction(
+    ()=>window.__KFB_MAP_BOARD_READY__||window.__KFB_MAP_BOARD_ERROR__,
+    {},
+    {timeout:180000}
+  );
+  check(
+    'runtime boot',
+    await page.evaluate(()=>!!window.__KFB_MAP_BOARD_READY__),
+    await page.evaluate(()=>window.__KFB_MAP_BOARD_ERROR__)
+  );
+
+  const snap=await page.evaluate(()=>window.KFBMapBoard?.report?.());
+  report.runtime=snap;
+  check('country board populated',snap?.countriesLoaded>=30,snap);
+  check('story anchors populated',snap?.markersLoaded===localStory.stories.length,snap);
+  check('map ink capability resolved',/canon v\d+ \+ map BAND adapter/.test(snap?.inkCanonStatus||''),snap?.inkCanonStatus);
+  await page.screenshot({path:out+'/hero.png',fullPage:true});
+
+  const story=await page.evaluate(()=>window.KFBMapBoard.nextStory());
+  check('story focus selects country',!!story?.selected&&!!story?.storyId,story);
+  check('story panel changed',/STORY FOCUS/.test(await page.locator('#selKicker').textContent()),await page.locator('#selKicker').textContent());
+  await page.waitForTimeout(1400);
+  await page.screenshot({path:out+'/story-focus.png',fullPage:true});
+
+  const exploded=await page.evaluate(()=>window.KFBMapBoard.setExploded(true));
+  check('explode state',exploded?.exploded===true,exploded);
+  await page.waitForTimeout(1200);
+  await page.screenshot({path:out+'/explode.png',fullPage:true});
+
+  check('no browser errors',report.errors.length===0,report.errors);
+  report.status='PASS';
+}catch(e){
+  report.status='FAIL';
+  report.failure=String(e.stack||e);
+  process.exitCode=1;
+}finally{
+  await browser?.close();
+  fs.writeFileSync(out+'/report.json',JSON.stringify(report,null,2)+'\n');
+  console.log(JSON.stringify(report,null,2));
+}
