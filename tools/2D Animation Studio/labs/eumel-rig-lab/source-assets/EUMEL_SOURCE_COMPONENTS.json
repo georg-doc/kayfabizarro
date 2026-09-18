@@ -192,8 +192,8 @@
         0,
         1
       ],
-      "sourceRole": "SOURCE_EXACT_VISIBLE_SEMANTICS_UNRESOLVED",
-      "rigRole": "head_foreground_occlusion_candidate"
+      "sourceRole": "SOURCE_EXACT_VISIBLE",
+      "rigRole": "headwear_hat_silhouette"
     },
     {
       "id": "foreground-white",
@@ -202,8 +202,8 @@
         2,
         3
       ],
-      "sourceRole": "SOURCE_EXACT_VISIBLE_SEMANTICS_UNRESOLVED",
-      "rigRole": "head_foreground_occlusion_candidate"
+      "sourceRole": "SOURCE_EXACT_VISIBLE",
+      "rigRole": "headwear_hat_band"
     }
   ],
   "sourceStrokeWidthsPt": [
@@ -217,5 +217,12 @@
     "eyesAndPupils": "Separate Form XObjects with identical page transform; preserve exactly.",
     "stethoscope": "Nested Form XObject with its own matrix; preserve as a secondary-motion module."
   },
-  "derivedRigPivotsRule": "Rig pivots are stored separately from source geometry and must be labeled DERIVED unless they correspond directly to a source transform origin."
+  "derivedRigPivotsRule": "Rig pivots are stored separately from source geometry and must be labeled DERIVED unless they correspond directly to a source transform origin.",
+  "visualCorrections": [
+    {
+      "date": "2026-09-18",
+      "evidence": "User browser screenshot shows the two foreground source forms as a large black hat plus white hat band.",
+      "change": "Semantic role only. Source IDs/path data unchanged."
+    }
+  ]
 }
