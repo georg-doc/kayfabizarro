@@ -196,9 +196,10 @@ function focusStreetSign(bounds){
   setCameraBasics();
   camera.fov=48;
   const tx=c.tangent?.x||0,tz=c.tangent?.z||1;
-  const nx=-tz,nz=tx;
+  const nx=c.normal?.x??-tz,nz=c.normal?.z??tx;
   controls.target.set(c.x,1.8,c.z);
-  camera.position.set(c.x-tx*8+nx*3.2,3.4,c.z-tz*8+nz*3.2);
+  // Camera stays mostly on the road side of the sign, reducing building occlusion.
+  camera.position.set(c.x-nx*5.5-tx*2.5,3.1,c.z-nz*5.5-tz*2.5);
   camera.near=.15;
   camera.far=Math.max(300,Math.max(bounds.sizeM.x,bounds.sizeM.z)*2);
   camera.updateProjectionMatrix();
@@ -349,7 +350,7 @@ async function load(){
     if(look!=='clean')addWindowInstances(windowBuckets,p);
 
     if(requestedLabels){
-      streetSignController=createStreetSigns(THREE,city.features.roads,style.streetSigns||{},p.streetSign,style.seed||'kfb-city');
+      streetSignController=createStreetSigns(THREE,city.features.roads,style.streetSigns||{},p.streetSign,style.seed||'kfb-city',city.features.buildings);
       root.add(streetSignController.root);
       metrics.streetSigns=streetSignController.candidates.length;
     }
