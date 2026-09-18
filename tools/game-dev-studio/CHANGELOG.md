@@ -126,3 +126,19 @@ Commit: `3286ed5315c837753d1efe93d5580460ee9b8642`.
 
 ### NEXT OWNER GATE
 Mount exact `car_sedan.gltf`, numeric body proxy and four real wheel nodes in a later immutable receiver candidate; rerun the applicable handling/contact checks; keep human feel separate.
+
+
+## 2026-09-18 · GDS-05 · Lorekeeper Travel owner handoff
+
+### CREATED
+- Package-local Travel adapter and handoff under `game-ready/pilot-01-lorekeeper-sedan/resident/lorekeeper/`.
+- Additive Travel-owner brief: `georg-doc/KFB-Travel-Globe/_handover/GAME_DEV_STUDIO_LOREKEEPER_PACKAGE_2026-09-18.md`, commit `8614282aab2ced43bb5dda9fcf7abadf9768100a`.
+
+### CURRENT GATE
+Travel's repaired Ground state has public automated evidence, but the current Georg Ground human gate is still open. The Lorekeeper runtime import is therefore explicitly DEFERRED.
+
+### OWNER BOUNDARY
+The package supplies actor + lectern + Staff relative composition, Rig/animation refs and attachment calibration. Travel retains spherical placement, Hex/support semantics, ROAD, camera, locomotion and persistence.
+
+### OPEN
+After the Ground human gate carries, run the existing Travel Atlas Pilot 01 across `VISIBLE_HEX | SEATED_HEX | NO_VISIBLE_HEX`; do not create a parallel pilot.
