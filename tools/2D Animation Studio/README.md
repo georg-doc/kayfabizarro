@@ -33,3 +33,16 @@ The existing measured/traced Eumel reconstruction is a **provisional donor**. Ge
 - Consumer runtime/game rules remain with the consumer project.
 
 **Measure → decompose → rig → animate → browser-test → hand off.**
+
+
+## ToolBox alignment
+
+Cross-tool contract:
+
+`tools/KFB-ToolBox/docs/2D_ANIMATION_STUDIO_BRIDGE.md`
+
+The Studio owns 2D source geometry, cutout bind/bones, 2D deformers and SVG adapters. ToolBox remains the 3D EyeRig/FaceHost/FrankenStein owner.
+
+Shared eye semantics are defined by `kfb.eye-rig.protocol/1`; 2D and 3D differ at the renderer/host binding layer.
+
+No claim is made that SVG cutout body clips and KayKit skeletal clips are interchangeable.
