@@ -1,5 +1,40 @@
 # CURRENT PRIORITY · 2026-09-18
 
+## CURRENT PARALLELISM OVERRIDE · 2026-09-18 · 16:45Z
+
+GitHub has advanced beyond several older entries below. Use this section first; project SSOTs still win.
+
+### Active KFB implementation / human-gate lanes
+
+1. **Free Roam FR-S04-02** — PUBLIC BROWSER PASS **62/62** on the real KFB Cloudflare host; human feel review remains open. Walk↔Drive/save/city/combat are still later seams.
+2. **OSM City Lab** — Ehrenfeld + Hürth S0 deterministic source/normalization PASS; shared S1 viewer implemented; S2 scene export contract implemented. Actual Walk/Drive consumer loops on the OSM scenes are not yet run.
+3. **Game Dev Studio Pilot 01** — permanent public preview lane has **11/11 Cloudflare browser checks PASS**; Lorekeeper + Sedan package metadata exists. Binary collider derivative and real consumer gates remain open.
+
+### Prepared donor / external-design lanes — do not become concurrent runtime owners
+
+- **Free Roam Platformer POC** — Claude Design export brief prepared; candidate only, no overwrite of current Free Roam.
+- **Plant Prop Lab** — **P2 PREPARED**. Tiny Treats House Plants unpacked; Floate Design brief + mental model prepared. Allowed parallel work: external/browser authoring, recipes, patterns, prop-rig/EyeRig experiments and clean ZIP export. Do **not** write Travel/Free-Roam/Game-Dev runtime owners in parallel.
+- **img2threejs / 2D Animation Studio** — donor/tool lanes; integrate only through named consumers after their own evidence.
+
+### Astra
+
+**Astra Integration 01 is still NOT STARTED.** Finish/resolve the current preflight deltas before starting a broad multi-repo writer. External design exports may continue because they return as candidate ZIPs rather than editing runtime SSOTs.
+
+### Separate DocCheck / SimBlood
+
+SimBlood is a separate repo/owner. Current recovery shows multiple P0 morphology/review lanes plus a new **3D Morphology Lab = P2_RND**. Its 3D lane must not displace the true-cell/WBC/RBC/medical-review P0 sequence.
+
+### Rule
+
+Prefer one writer per runtime/contract path. Candidate authoring tools may run in parallel if they:
+- preserve exact GitHub sources;
+- return additive candidate packages/ZIPs;
+- do not silently promote themselves into Travel/Race/Free-Roam/Arena;
+- keep IMPLEMENTATION / TESTED RESULT / HUMAN ACCEPTANCE separate.
+
+---
+
+
 ## Current Race delta · audio accepted / Box Stop · 18.09.2026
 
 Georg accepts Audio A1 sonic direction and authorizes integration; full feature-test coverage is unknown. Original A1 source transfer is still required. Do not repeat the completed blanket listening gate.
