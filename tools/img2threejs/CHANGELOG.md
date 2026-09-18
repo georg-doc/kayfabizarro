@@ -69,3 +69,17 @@ Die Geometrie und Materialien bleiben gegenüber dem Original unverändert. v0.1
 **UNRESOLVED:** Browseraufruf in dieser Umgebung vor Einstieg mit ERR_BLOCKED_BY_ADMINISTRATOR verweigert. Kein neuer WebGL-/Mobile-/Interaktions-PASS, keine Human-Abnahme dieser drei Kandidaten, keine City-Integration und kein bestätigtes öffentliches Deployment. OSM-Bindungen bleiben null; keine echten IDs oder Ausrichtungen erfunden.
 
 **CURRENT RETURN / Living Addendum:** [Landmark ↔ OSM ↔ Desktop Work Lead](docs/LANDMARK_OSM_RETURN_2026-09-18.md). [Messwerte und Hashes](evidence/2026-09-18-landmark-pilot/summary.json). Nächster Schritt: Browseransicht / menschliche Beurteilung, anschließend Dom-Maßstab und realen OSM-Footprint separat kalibrieren; Fallback unter bestehendem City-Vertrag prüfen. Pentagon, Kreml und Dom-Detailtreue bleiben im Auftrag, Weathering bleibt nachgeordnet.
+
+## 2026-09-18 · 06 · Pentagon / Spasskaja / Kreml-Mauerstudie · WSA-Check-in
+
+**DECISION — Nutzerauftrag:** Weitere ikonische Landmarks erstellen und für den bestehenden WSA Lead auf GitHub einchecken. Aus dem erhaltenen Auftrag werden Pentagon und Kreml als zwei neue Objektfamilien bearbeitet.
+
+**IMPLEMENTATION:** Separater [Pilot 02](landmarks/pilot-02/index.html) mit Pentagon, einzelnem Spasskaja-Turm und derselben Turmgeometrie mit zwei modularen Mauerflügeln. Der Viewer zeigt außerdem unverändert die drei Pilot-01-Modelle; die akzeptierte Dom-v0.2-Datei bleibt unberührt. Gemeinsame Metergeometrie, vorhandene City-Palette, einzeln färbbare Zonen, Größenvergleich und bestehender GLB-Exporter. Kein neues Registry-/Movement-/Style-System.
+
+**SOURCE REVIEW:** Bestehender WSA-Recovery-Einstieg und OSM-Landmark-Override-Vertrag gelesen. Dropbox-Travel-Landmark-Export als historische Referenz geprüft, nicht zum neuen Owner erklärt. Referenzmaße versus Modellannahmen in `landmarks/pilot-02/sources.json` getrennt. Die Kreml-Mauern sind schematisch; kein vollständiger Kreml, keine Basilius-Kathedrale und keine behauptete OSM-Verortung.
+
+**TESTED RESULT:** 176/176 ausführbare Prüfungen bestanden: reale Produktionsgeometrie, geschlossene konsistent orientierte Einzelbauteile, keine entarteten Dreiecke, offene Pentagon-Mitte und Toröffnung, vier Zifferblätter, Meter-/Bodenbezug, Paletten und GLB-Struktur, unveränderte Pilot-01-Geometrien. Neue Modellbudgets: Pentagon 11.384 Dreiecke / 4 Materialmeshes; Turm 3.496 / 5; Mauerstudie 5.008 / 6. Drei neue GLBs unabhängig wieder eingelesen; größte BBox-Abweichung unter 0,000008 m. Sechs neue Pilot-Quelldateien per Git-Blob nach GitHub zurückgelesen und byteidentisch zum lokalen Stand bestätigt.
+
+**VISUAL EVIDENCE / OPEN:** CPU-Vorschauen aus denselben Koordinaten gerendert und angesehen. Browserprobe vor Einstieg durch `ERR_BLOCKED_BY_ADMINISTRATOR` blockiert; kein neuer WebGL-, Interaktions-, Mobile- oder Consumer-PASS. Keine automatische Human-Abnahme aus dem allgemeinen „gerne weiter“ abgeleitet. Dateiexport und Repo-Ablage sind keine City-Integration.
+
+**CURRENT RETURN / WSA:** [Pilot 02 · WSA Lead Return](docs/LANDMARK_PILOT_02_WSA_RETURN_2026-09-18.md). [Messwerte und Grenzen](evidence/2026-09-18-landmark-pilot-02/summary.json). Quellen und Tests bleiben hier; ein separater Quellenzeiger wird im bestehenden Race-`_handover` abgelegt. Kein WSA-Status und keine Runtime-Zuständigkeit werden ersetzt. Verwitterung und Texturen bleiben DEFERRED; nächster Gate ist die sichtbare Beurteilung, danach gezielte Detail-/LOD-Arbeit und echter Dom-OSM-Fit.
