@@ -63,3 +63,23 @@
 ### OPEN
 - Resolve whether the existing Cloudflare project auto-syncs the current `main` head or requires an external/manual Wrangler deployment.
 - Do not label the Game Dev Studio URL PUBLIC PASS until the actual pages.dev workflow succeeds.
+
+
+## 2026-09-18 · GDS-03 · public Cloudflare browser pass
+
+### PUBLIC DEPLOYMENT / TESTED RESULT
+The unchanged public proof passed on run `35368827693`, attempt 2 after deployment propagation.
+
+- job: `105680028742`
+- artifact: `10557444939`
+- artifact SHA-256: `cea1a31ec087aaa697deb7c64b00f078c502735056473ee0cdb02deaa56a24ac`
+- fixed public URL: `https://kayfabizarro.pages.dev/kfb-hub/free-roam/game-dev-studio/`
+- catalog URL: `https://kayfabizarro.pages.dev/tools/game-dev-studio/catalog.json`
+
+**11/11 public checks PASS:**
+catalog deployed; four preview assets; fixed page HTTP; Studio/WebGL boot; four asset controls; Lorekeeper preview; Sedan preview; Sedan evidence overlay; pinned source revisions; tool route HTTP 200; zero browser errors.
+
+The first attempt remains useful deployment-propagation evidence; no code/model repair occurred between the two attempts.
+
+### HUMAN ACCEPTANCE
+Still PENDING. Automated public delivery and WebGL preview evidence do not approve presentation quality or consumer behavior.
