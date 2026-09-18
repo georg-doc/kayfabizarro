@@ -2,6 +2,8 @@
 
 Status: **PREPARED DONOR / P2 · SOURCE UNPACKED · NO RUNTIME YET**
 
+Current source state: **UNPACKED + REGISTRY INDEXED**. Authoring/runtime remains candidate-only.
+
 Current briefing:
 
 `skills/chat/workflows/PLANT_PROP_LAB_2026-09-18/START_HERE.md`
@@ -35,7 +37,7 @@ First external authoring brief:
 Tiny Treats House Plants:
 - original ZIP preserved;
 - 113 GLTF models + 113 BIN sidecars;
-- Registry refresh in review;
+- Registry refresh merged via PR #69; Asset Librarian browser smoke v1–v1.7 PASS;
 - exact source paths remain canonical.
 
 Game Dev Studio:
