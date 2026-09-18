@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>KFB OSM City Lab · Köln-Ehrenfeld v0</title>
+<title>KFB OSM City Lab</title>
 <style>
 :root{font-family:Inter,ui-sans-serif,system-ui,sans-serif;color:#251f2f;background:#eadfcd}
 *{box-sizing:border-box}body{margin:0}.app{height:100vh;display:grid;grid-template-rows:auto 1fr auto}.bar{display:flex;gap:12px;align-items:center;flex-wrap:wrap;padding:12px 16px;background:#2d2638;color:#fff;border-bottom:4px solid #d7a83d}
@@ -15,7 +15,7 @@
 <script type="importmap">{"imports":{"three":"https://unpkg.com/three@0.160.0/build/three.module.js","three/addons/":"https://unpkg.com/three@0.160.0/examples/jsm/"}}</script>
 </head>
 <body><main class="app">
-<header class="bar"><span class="brand">KFB OSM CITY LAB · EHRENFELD v0</span><span class="pill">S0 DATA</span><span class="pill">S1 LOW-POLY</span><span class="pill">S2 EXPORT CONTRACT</span><button data-camera="top">TOP</button><button data-camera="oblique">OBLIQUE</button><button data-camera="street">STREET</button></header>
+<header class="bar"><span class="brand" id="brand">KFB OSM CITY LAB</span><span class="pill">S0 DATA</span><span class="pill">S1 LOW-POLY</span><span class="pill">S2 EXPORT CONTRACT</span><button data-camera="top">TOP</button><button data-camera="oblique">OBLIQUE</button><button data-camera="street">STREET</button></header>
 <section class="stage"><canvas id="view"></canvas><aside class="panel"><strong id="status">Loading cached OSM…</strong><div id="diag" class="small"></div><div class="small">Viewer only. Walk / Drive remains owned by the named Travel + Free-Roam receiver.</div></aside></section>
 <footer class="foot">Map data © <a href="https://www.openstreetmap.org/copyright">OpenStreetMap contributors</a>, ODbL 1.0 · no raster tiles used as geometry.</footer>
 </main><script type="module" src="./src/viewer/app.js"></script></body></html>

@@ -2,9 +2,14 @@ import * as THREE from 'three';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 import { materialPalette, pickStable } from '../style/kfb-city-materials.js';
 
+const params=new URLSearchParams(location.search);
+const cityId=(params.get('city')||'ehrenfeld-v0').trim();
+if(!/^[a-z0-9-]+$/.test(cityId)) throw new Error('Invalid city id');
+
 const canvas=document.querySelector('#view');
 const status=document.querySelector('#status');
 const diag=document.querySelector('#diag');
+const brand=document.querySelector('#brand');
 const renderer=new THREE.WebGLRenderer({canvas,antialias:true});
 renderer.setPixelRatio(Math.min(devicePixelRatio,2));
 renderer.outputColorSpace=THREE.SRGBColorSpace;
@@ -75,10 +80,13 @@ new ResizeObserver(resize).observe(canvas); resize();
 
 async function load(){
   try{
-    const [city,style]=await Promise.all([
-      fetch('./data/ehrenfeld-v0/normalized.json',{cache:'no-store'}).then(r=>{if(!r.ok)throw new Error(`normalized.json ${r.status}`);return r.json();}),
-      fetch('./data/ehrenfeld-v0/STYLE.json').then(r=>r.json())
+    const [city,style,spec]=await Promise.all([
+      fetch(`./data/${cityId}/normalized.json`,{cache:'no-store'}).then(r=>{if(!r.ok)throw new Error(`normalized.json ${r.status}`);return r.json();}),
+      fetch('./styles/kfb-city-v0.json').then(r=>{if(!r.ok)throw new Error(`style ${r.status}`);return r.json();}),
+      fetch(`./data/${cityId}/SOURCE_SPEC.json`).then(r=>r.ok?r.json():({label:cityId}))
     ]);
+    document.title=`KFB OSM City Lab · ${spec.label||cityId}`;
+    brand.textContent=`KFB OSM CITY LAB · ${(spec.label||cityId).toUpperCase()}`;
     const p=materialPalette(style);
     root.add(polygonSurface([
       {x:city.bounds.min.x-30,z:city.bounds.min.z-30},{x:city.bounds.max.x+30,z:city.bounds.min.z-30},
@@ -101,6 +109,7 @@ async function load(){
     diag.textContent=`${city.diagnostics.featureCounts.roads} roads · ${city.diagnostics.featureCounts.buildings} buildings · ${city.diagnostics.featureCounts.landuse} landuse · ${city.bounds.sizeM.x.toFixed(0)} × ${city.bounds.sizeM.z.toFixed(0)} m local`;
     document.querySelectorAll('[data-camera]').forEach(b=>b.onclick=()=>frame(city.bounds,b.dataset.camera));
   }catch(err){
+    brand.textContent=`KFB OSM CITY LAB · ${cityId.toUpperCase()}`;
     status.textContent='SOURCE CACHE PENDING';
     diag.textContent=`${err.message}. The GitHub source-cache workflow must complete before the real OSM blockout can render.`;
   }

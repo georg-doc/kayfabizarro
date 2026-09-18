@@ -1,5 +1,44 @@
 # Changelog · additive
 
+## 2026-09-18 · Hürth v0 S0 tested result + shared multi-city pipeline
+
+### DECISION
+- Reused the Ehrenfeld City-Lab architecture instead of copying it.
+- Fixed the first Hürth v0 candidate directly around the supplied centre at a ~700 × 700 m bbox:
+  `50.862756,6.872018,50.869044,6.881982`.
+- The first candidate passed all requested source-derived fixture signals, so no bbox shift was required.
+
+### IMPLEMENTATION
+- Added generic `fetch-city.mjs`, `build-city.mjs`, `analyze-city.mjs` and city-ID snapshot tests.
+- Removed the last Ehrenfeld-specific path from the shared S2 exporter.
+- Added one shared KFB city style and parameterized the S1 viewer via `?city=<id>`.
+- Added Hürth source spec, exact fixed-bbox query and CI source/fixture workflow.
+- Hardened the cache workflow against branch-write races by rebasing before the bot push.
+
+### TESTED RESULT
+- Hürth cached source: **5,640** Overpass elements; OSM base timestamp `2026-09-18T15:30:51Z`.
+- Final normalized bounds: **700.05 × 699.976 m**.
+- Feature counts: **164** road parts, **116** driveable road parts, **700** buildings, **22** landuse surfaces, **10** green polygons, **2** water lines.
+- Fixture probe found **154** road connection/intersection nodes.
+- Longest driveable normalized road part: `Am Heideberg`, OSM `way/27933239`, **478.64 m**.
+- Requested fixture signals all PASS: residential context, intersection, acceleration corridor, road/green edge.
+- Deterministic reload, OSM ID preservation, metre frame and fixed-bbox clipping PASS.
+- Diagnostics: 0 missing nodes, 0 open polygon ways, 0 unsupported relations.
+
+### PUBLIC DEPLOYMENT
+- Not claimed.
+
+### GEORG ACCEPTANCE
+- S1 Hürth visual acceptance pending.
+- S2 Hürth Walk/Drive acceptance pending.
+
+### OPEN
+- Review Hürth in the shared browser viewer.
+- Mount the generated Hürth scene into the named Travel/Free-Roam receiver and execute the requested reverse/turn/parking/road↔terrain loop.
+- Authored stunt layer only after the base receiver seam works.
+
+---
+
 ## 2026-09-18 · Ehrenfeld v0 S0 tested result
 
 ### TESTED RESULT
@@ -32,7 +71,6 @@
 ### OPEN
 - Browser visual review of Ehrenfeld S1.
 - Mount `ehrenfeld-v0.json` into the existing Travel/Free-Roam receiver and execute the full Walk→Drive loop.
-- Hürth pilot should reuse this same pipeline with a second source spec, not fork the architecture.
 
 ---
 
@@ -53,15 +91,13 @@
 - Added source/style/consumer/test/donor documentation.
 
 ### TESTED RESULT
-- Pending local fixture run and GitHub CI source cache at time of this entry.
+- Pending local fixture run and GitHub CI source cache at time of this historical entry.
 
 ### PUBLIC DEPLOYMENT
 - Not claimed.
 
 ### GEORG ACCEPTANCE
-- Pending.
+- Pending at that historical checkpoint.
 
 ### OPEN
-- Real Overpass cache + S0 report.
-- S1 browser visual review.
-- S2 receiver integration in named Travel/Free-Roam seam.
+- Historical entry retained; superseded by the tested-result sections above.
