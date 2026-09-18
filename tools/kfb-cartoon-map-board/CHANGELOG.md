@@ -21,3 +21,26 @@
 - Browser/WebGL visual run: NOT YET RUN.
 - Public Pages deployment: NOT YET VERIFIED.
 - Georg acceptance: OPEN.
+
+
+## 2026-09-18 · P0.2 Story Focus
+
+### DECISION
+- Story anchors are declarative demo content, not card canon.
+- KayKit map content must remain registered to its geographic owner during explode/recombine.
+- Live-boundary provenance is made explicit in `data/europe-p0/SOURCE_SPEC.json`; this is not yet a pinned snapshot.
+
+### IMPLEMENTATION
+- Added deterministic paper texture generation.
+- Added hover feedback and selected-country focus ring.
+- Added smooth camera choreography plus `FOCUS` and `NEXT STORY`.
+- Added `data/story-demo.v1.json` as a data-driven content-anchor manifest.
+- Reparented KayKit markers to their country tiles and counter-scaled marker Y against the HEIGHT presentation control.
+- Added P0.2 story-focus documentation.
+
+### TESTED RESULT
+- GitHub source readback confirms the P0.2 files are on `main`.
+- GitHub Pages build/deployment workflow has been triggered for the new commits; that is separate from the canonical Cloudflare `kayfabizarro.pages.dev` deployment.
+- Browser/WebGL execution of P0.2: NOT YET CLAIMED.
+- Cloudflare public deployment: NOT YET VERIFIED.
+- Georg visual acceptance: OPEN.
