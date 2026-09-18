@@ -355,4 +355,177 @@ function addCountryFromGeoJSON(code, name, geojson) {
   const topMat=new THREE.MeshStandardMaterial({
     color, map:countryTexture, roughness:0.98, metalness:0, side:THREE.DoubleSide
   });
-  topM
+  topMat.emissive=new THREE.Color(0x000000);
+  const sideColor=new THREE.Color(color).multiplyScalar(0.60);
+  const sideMat=new THREE.MeshStandardMaterial({color:sideColor,roughness:1,metalness:0});
+
+  const inkMat=new THREE.MeshBasicMaterial({color:inkColor,side:THREE.DoubleSide,depthWrite:false,toneMapped:false});
+  const rec={code,name,group,centroid,totalArea,polygons,topMat,sideMat,inkMat,inkMeshes:[],meshes:[],label:null,seed};
+
+  for (const poly of polygons) {
+    const shape=makeShape(poly.outer,poly.holes);
+    const geom=new THREE.ExtrudeGeometry(shape,{
+      depth:PIECE_DEPTH,bevelEnabled:true,bevelSize:0.035,bevelThickness:0.045,bevelSegments:1,curveSegments:2
+    });
+    geom.rotateX(-Math.PI/2);
+    const mesh=new THREE.Mesh(geom,[topMat,sideMat]);
+    mesh.castShadow=true;
+    mesh.receiveShadow=true;
+    mesh.userData.country=rec;
+    group.add(mesh);
+    rec.meshes.push(mesh);
+    pickMeshes.push(mesh);
+  }
+
+  buildCountryInk(rec);
+
+  if (totalArea>LABEL_MIN_AREA) {
+    const el=document.createElement('div');
+    el.className='country-label';
+    el.textContent=name.toUpperCase();
+    const label=new CSS2DObject(el);
+    label.position.set(centroid.x,PIECE_DEPTH+0.22,centroid.z);
+    group.add(label);
+    rec.label=label;
+  }
+
+  root.add(group);
+  countries.push(rec);
+  return rec;
+}
+
+function buildCountryInk(rec) {
+  for (const m of rec.inkMeshes) {
+    rec.group.remove(m);
+    m.geometry.dispose();
+  }
+  rec.inkMeshes.length=0;
+  for (const poly of rec.polygons) {
+    const rings=[{pts:poly.outer,hole:false},...poly.holes.map(pts=>({pts,hole:true}))];
+    for (const r of rings) {
+      const g=makeInkRibbonGeometry(
+        r.pts, PIECE_DEPTH+0.055, BASE_INK_WIDTH*inkScale*(r.hole?0.72:1),
+        rec.seed, rec.centroid, r.hole
+      );
+      if (!g) continue;
+      const m=new THREE.Mesh(g,rec.inkMat);
+      m.renderOrder=8;
+      rec.group.add(m);
+      rec.inkMeshes.push(m);
+    }
+  }
+}
+
+function fileUrl(f) {
+  return OPENPLANET_BASE+'/'+f.remote_path+'/'+f.remote_version+'/'+f.remote_filename;
+}
+async function fetchJson(url) {
+  const res=await fetch(url,{mode:'cors',cache:'force-cache'});
+  if (!res.ok) throw new Error('HTTP '+res.status);
+  return res.json();
+}
+async function mapLimit(items,limit,fn) {
+  let cursor=0;
+  const workers=Array.from({length:Math.min(limit,items.length)},async()=>{
+    while (cursor<items.length) {
+      const i=cursor++;
+      await fn(items[i],i);
+    }
+  });
+  await Promise.all(workers);
+}
+
+async function resolveBoundaryFiles() {
+  loadingText.textContent='Reading the OpenPlanetData OSM-boundary catalogue…';
+  const data=await fetchJson(OPENPLANET_API);
+  const files=(data.files || []).filter(f =>
+    f.remote_version==='v2' && f.extension==='geojson' && !f.deprecated
+  );
+  const byCode=new Map();
+  for (const f of files) {
+    const code=String(f.entity||'').toUpperCase();
+    if (!byCode.has(code)) byCode.set(code,f);
+  }
+  return CORE_CODES.map(code=>byCode.get(code)).filter(Boolean);
+}
+
+async function loadBoundaries() {
+  selectedFiles=await resolveBoundaryFiles();
+  loadingTitle.textContent='Cutting Europe into puzzle pieces…';
+  await mapLimit(selectedFiles,5,async(f)=>{
+    const code=String(f.entity).toUpperCase();
+    try {
+      loadingText.textContent='Loading '+code+' · '+(loadedCount+failedCount+1)+' / '+selectedFiles.length;
+      const data=await fetchJson(fileUrl(f));
+      const feature=data.features?.[0];
+      const name=f.name || feature?.properties?.name || code;
+      const rec=addCountryFromGeoJSON(code,name,data);
+      if (rec) loadedCount++; else failedCount++;
+    } catch (err) {
+      failedCount++;
+      console.warn('Boundary failed',code,err);
+    }
+    updateDiag();
+  });
+}
+
+function updateDiag(extra='') {
+  diag.textContent=
+    'countries '+loadedCount+'/'+selectedFiles.length+
+    ' · failed '+failedCount+
+    ' · ink '+inkCanonStatus+
+    ' · KayKit '+tokenHolders.length+'/5'+
+    (extra ? ' · '+extra : '');
+}
+
+function applyTargets() {
+  for (const rec of countries) {
+    let ox=0,oz=0;
+    if (exploded) {
+      const len=Math.hypot(rec.centroid.x,rec.centroid.z)||1;
+      const spread=5.0 + seeded01(rec.seed,4)*4.2;
+      ox=rec.centroid.x/len*spread;
+      oz=rec.centroid.z/len*spread;
+    }
+    rec.targetX=ox;
+    rec.targetZ=oz;
+    rec.targetY=BOARD_TOP+0.06+(selected===rec ? 1.6 : 0)+(exploded ? seeded01(rec.seed,7)*0.55 : 0);
+  }
+}
+function selectCountry(rec) {
+  if (selected && selected!==rec) selected.topMat.emissive.setHex(0x000000);
+  selected=rec;
+  if (selected) {
+    selected.topMat.emissive.setHex(0x1d1207);
+    selName.textContent=selected.name+' · '+selected.code;
+    selText.textContent='Independent 3D tile. Click another country, orbit around it, or use EXPLODE to separate the board into geographic pieces.';
+  } else {
+    selName.textContent='Europe · Board View';
+    selText.textContent='Orbit, zoom and click a country. The map is built as individual 3D puzzle pieces with hand-inked border ribbons and real KayKit board-game markers.';
+  }
+  applyTargets();
+}
+
+const gltfLoader=new GLTFLoader();
+const markerSpecs=[
+  {label:'BERLIN',code:'DE',lon:13.405,lat:52.52,file:'meeple_red.gltf',height:4.8},
+  {label:'PARIS',code:'FR',lon:2.3522,lat:48.8566,file:'pawn_A_blue.gltf',height:4.6},
+  {label:'ROME',code:'IT',lon:12.4964,lat:41.9028,file:'flag_A_yellow.gltf',height:5.4},
+  {label:'WARSAW',code:'PL',lon:21.0122,lat:52.2297,file:'token_green.gltf',height:3.4},
+  {label:'LONDON',code:'GB',lon:-0.1276,lat:51.5072,file:'building_blue.gltf',height:4.7}
+];
+function loadGltf(url) {
+  return new Promise((resolve,reject)=>gltfLoader.load(url,resolve,undefined,reject));
+}
+async function addKayKitMarkers() {
+  for (const spec of markerSpecs) {
+    try {
+      const gltf=await loadGltf(KAYKIT_BASE+spec.file);
+      const obj=gltf.scene;
+      obj.traverse(o=>{
+        if (o.isMesh) {
+          o.castShadow=true;
+          o.receiveShadow=true;
+        }
+      });
+      let box=new THREE.Box3().
