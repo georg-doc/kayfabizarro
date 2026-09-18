@@ -34,7 +34,7 @@ button.active{background:#f0c94d;border-color:#f0c94d;color:#231d2b}
 .slider input{width:92px}
 .stage{position:relative;min-height:0}
 #view{position:absolute;inset:0;width:100%;height:100%;display:block;touch-action:none}
-#labels{position:absolute;inset:0;pointer-events:none}
+.label-layer{position:absolute;inset:0;pointer-events:none}
 .country-label{
   font-family:Georgia,"Times New Roman",serif;font-weight:900;font-size:11px;
   color:#241e28;text-shadow:0 1px 0 #fff9e9,1px 0 0 #fff9e9,-1px 0 0 #fff9e9;
@@ -111,7 +111,6 @@ button.active{background:#f0c94d;border-color:#f0c94d;color:#231d2b}
   </header>
   <main class="stage" id="stage">
     <canvas id="view"></canvas>
-    <div id="labels"></div>
     <aside class="panel">
       <div class="kicker">SELECT A COUNTRY TILE</div>
       <h2 id="selName">Europe · Board View</h2>
