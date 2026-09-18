@@ -66,6 +66,9 @@ const clock = new THREE.Clock();
 const cameraGoalPos = new THREE.Vector3();
 const cameraGoalTarget = new THREE.Vector3();
 
+window.__KFB_MAP_BOARD_READY__ = false;
+window.__KFB_MAP_BOARD_ERROR__ = null;
+
 const renderer = new THREE.WebGLRenderer({ canvas, antialias:true, alpha:false });
 renderer.setPixelRatio(Math.min(devicePixelRatio, 2));
 renderer.shadowMap.enabled = true;
@@ -774,6 +777,51 @@ canvas.addEventListener('pointerup',e=>{
   selectCountry(hit?.object?.userData?.country || null);
 });
 
+function reportState() {
+  return {
+    slice:'P0.2',
+    ready:window.__KFB_MAP_BOARD_READY__===true,
+    countriesLoaded:loadedCount,
+    countriesExpected:selectedFiles.length,
+    countriesFailed:failedCount,
+    countryCodes:countries.map(c=>c.code),
+    markersLoaded:markerRecords.length,
+    markersExpected:markerSpecs.length,
+    selected:selected?.code||null,
+    exploded,
+    labelsVisible,
+    tokensVisible,
+    inkCanonStatus,
+    storyId:storyCursor>=0 ? markerRecords[storyCursor]?.spec?.id || null : null
+  };
+}
+
+window.KFBMapBoard = {
+  report:reportState,
+  select(code){
+    const rec=countries.find(c=>c.code===String(code||'').toUpperCase())||null;
+    selectCountry(rec);
+    return reportState();
+  },
+  focus(code){
+    const rec=countries.find(c=>c.code===String(code||'').toUpperCase())||selected;
+    if(rec){selectCountry(rec);focusCountry(rec);}
+    return reportState();
+  },
+  nextStory(){
+    activateStory(storyCursor+1);
+    return reportState();
+  },
+  setExploded(value){
+    exploded=!!value;
+    const btn=document.querySelector('#explodeBtn');
+    btn?.classList.toggle('active',exploded);
+    if(btn) btn.textContent=exploded?'RECOMBINE':'EXPLODE';
+    applyTargets();
+    return reportState();
+  }
+};
+
 function resize() {
   const w=stage.clientWidth,h=stage.clientHeight;
   renderer.setSize(w,h,false);
@@ -830,10 +878,12 @@ async function boot() {
     await addKayKitMarkers();
     storyBtn.disabled=!markerRecords.length;
     updateDiag('P0.2 story focus ready');
+    window.__KFB_MAP_BOARD_READY__=true;
     loading.classList.add('hidden');
     setTimeout(()=>loading.style.display='none',450);
   } catch (err) {
     console.error(err);
+    window.__KFB_MAP_BOARD_ERROR__=String(err?.stack||err);
     loadingTitle.textContent='Board boot stopped';
     loadingText.textContent=String(err?.message||err)+'. Check browser console / CORS and retry.';
     updateDiag('boot error');
