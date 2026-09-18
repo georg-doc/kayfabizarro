@@ -1,0 +1,32 @@
+name: OSM City S2 export contract
+
+on:
+  push:
+    branches:
+      - main
+      - osm-city/s2-contract-hardening-2026-09-18
+    paths:
+      - 'tools/osm-city-lab/scenes/**'
+      - 'tools/osm-city-lab/src/export/**'
+      - 'tools/osm-city-lab/tests/check-consumer-contract.mjs'
+      - '.github/workflows/osm-city-s2-contract.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  contract:
+    runs-on: ubuntu-latest
+    timeout-minutes: 4
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout: |
+            tools/osm-city-lab/scenes
+            tools/osm-city-lab/tests
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Validate both city consumer exports
+        run: node tools/osm-city-lab/tests/check-consumer-contract.mjs ehrenfeld-v0 huerth-v0
