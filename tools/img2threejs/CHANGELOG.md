@@ -51,3 +51,21 @@ Die Geometrie und Materialien bleiben gegenüber dem Original unverändert. v0.1
 **UNRESOLVED:** Neue Browser-Umgebungsprobe wurde vor Seiteneinstieg durch `ERR_BLOCKED_BY_ADMINISTRATOR` blockiert. Kein eigener v0.2-WebGL-Frame, kein Mobile-/Interaktions-PASS, keine visuelle oder Consumer-Abnahme. Die erfolgreiche mathematische Dachprüfung wird nicht zum Gesamtmodell-PASS erklärt.
 
 **CURRENT NEXT:** v0.2 öffnen und Ansichten / Dachanschlüsse / Spitzen prüfen. Weitere Details erst nach Beurteilung dieser Grundgeometrie. README und Browser-Einstieg verweisen auf den neuen Kandidaten; v0.1 bleibt Vergleichs-/Fehlerhistorie. Keine Änderungen an fremden Modul-Ownern, zentraler Registry, Deployment oder Race-Implementierung.
+
+## 2026-09-18 · 05 · Dom-Look akzeptiert / OSM-Abgleich / Landmark Pilot 01
+
+**GEORG VISUAL ACCEPTANCE:** Georg akzeptierte anschließend ausdrücklich die cartoonige Abstraktion, Glaubwürdigkeit und Materialwirkung des reparierten Dom-v0.2-Modells. Seine Einschränkung zur noch fehlenden Dom-Detailtreue bleibt bestehen. Das ist eine Stil-/Formabnahme, kein vermessener Metermaßstab oder OSM-/Consumer-PASS. Die akzeptierte HTML-Datei wurde nicht verändert.
+
+**DECISION — Nutzerauftrag:** Landmark-Varianten und Materialzonen mit dem vorhandenen Hürth-/Ehrenfeld-OSM-Strang abstimmen; Geometrie zuerst, Weathering/Repo-Texturen später. Genannte weitere Bauten: Eiffel, Gizeh, Stonehenge, Pentagon, Kreml. Die frühere Framework-/Build-Order-Empfehlung des Assistenten war PROPOSAL, kein neuer Owner-Vertrag.
+
+**SOURCE REVIEW:** City Lab, reale Meterprojektion, gemeinsame Palette, LANDMARK_OVERRIDES, leeres Manifest, S2-Consumer-Vertrag und Desktop Work Lead Handoff gelesen. Ehrenfeld–Hürth-Korridor im gelesenen Stand SOURCE BLOCKED / RETRYABLE; kein erfundener Lückenschluss. Dropbox-Hürth-Konzept als Input gelesen, nicht über GitHub-Implementierung gestellt. Keine Fremd-Owner- oder Dropbox-Dateien verändert.
+
+**IMPLEMENTATION:** [Landmark Pilot 01](landmarks/pilot-01/index.html) mit Eiffelturm, drei Gizeh-Pyramiden und schematischem Stonehenge. Gemeinsame Metergeometrie, maximal sechs Materialmeshes, Farb-/Zonendiagnose, Same-scale lineup, GLB-Export und eine ausdrücklich nur vorbereitende OSM-Platzierungsprüfung. City-Palette und Projektion werden direkt vom bestehenden Owner importiert. Keine Kopie in eine zweite Registry, kein City-/Travel-Loader-Mount und kein Movement-Owner.
+
+**TESTED RESULT:** 111/111 ausführbare Geometrie-/Export-/Placement-Guard-Prüfungen PASS; 6.060 / 342 / 1.596 tatsächliche Modelldreiecke. Drei erzeugte GLBs unabhängig mit trimesh wieder eingelesen, Geometriezahlen und Bounds erhalten. Acht Pilot-Quelldateien per Git-Blob mit GitHub-main-Readback identisch zum geprüften lokalen Stand.
+
+**VISUAL EVIDENCE — CPU, nicht Browser:** Drei Vorschauen aus denselben erzeugten Vertices gerastert und angesehen. Kein KI-Mockup, kein WebGL-PASS. Ein herunterladbarer Einzeldatei-Viewer sowie GLBs und Vorschauen wurden erzeugt. Die Binärdateien sind abgeleitete Downloadartefakte, keine hier behaupteten neuen GitHub-Modellpfade.
+
+**UNRESOLVED:** Browseraufruf in dieser Umgebung vor Einstieg mit ERR_BLOCKED_BY_ADMINISTRATOR verweigert. Kein neuer WebGL-/Mobile-/Interaktions-PASS, keine Human-Abnahme dieser drei Kandidaten, keine City-Integration und kein bestätigtes öffentliches Deployment. OSM-Bindungen bleiben null; keine echten IDs oder Ausrichtungen erfunden.
+
+**CURRENT RETURN / Living Addendum:** [Landmark ↔ OSM ↔ Desktop Work Lead](docs/LANDMARK_OSM_RETURN_2026-09-18.md). [Messwerte und Hashes](evidence/2026-09-18-landmark-pilot/summary.json). Nächster Schritt: Browseransicht / menschliche Beurteilung, anschließend Dom-Maßstab und realen OSM-Footprint separat kalibrieren; Fallback unter bestehendem City-Vertrag prüfen. Pentagon, Kreml und Dom-Detailtreue bleiben im Auftrag, Weathering bleibt nachgeordnet.
