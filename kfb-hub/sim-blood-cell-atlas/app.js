@@ -14,7 +14,10 @@ function assetCard(a){
 function missingCard(i){return '<div class="missing-card"><div class="thumb"><div class="asset-symbol">＋</div></div><div class="asset-id">fehlend '+(i+1)+'</div></div>'}
 function refsHtml(r){
  if(!r.references.length)return '<div class="source-card"><b>Noch keine direkte Vorlage</b><span>Reference Wave erweitern.</span></div>';
- return r.references.map(x=>'<a class="ref-link" target="_blank" rel="noreferrer" href="'+esc(x.url)+'"><b>'+esc(x.name)+'</b><span>Reference / morphology anchor ↗</span></a>').join('');
+ return r.references.map(x=>{
+   const preview=x.previewUrl?'<div class="ref-preview"><img loading="lazy" src="'+esc(x.previewUrl)+'" alt="" data-img-fallback></div>':'<div class="ref-preview ref-preview-missing">REF</div>';
+   return '<a class="ref-link visual-ref" target="_blank" rel="noreferrer" href="'+esc(x.url)+'">'+preview+'<div><b>'+esc(x.name)+'</b><span>Reference / morphology anchor ↗</span></div></a>';
+ }).join('');
 }
 function sourcesHtml(r){
  if(!r.datasets.length)return '<div class="source-card"><b>Noch keine Dataset-Lane</b><span>Asset-/Source-Recherche offen.</span></div>';
@@ -52,9 +55,11 @@ function render(){
   (!onlyMissing.checked||r.missingAssets>0)&&
   (!q||[r.id,r.label,r.family,r.kind,r.scope,...r.references.map(x=>x.name),...r.datasets.map(x=>x.id)].join(' ').toLowerCase().includes(q))
  );
- matrix.innerHTML=rows.map(row).join('');empty.hidden=rows.length>0;renderStats(rows);
+ matrix.innerHTML=rows.map(row).join('');
+ matrix.querySelectorAll('img[data-img-fallback]').forEach(img=>img.addEventListener('error',()=>{const p=img.closest('.ref-preview,.thumb');if(p){p.classList.add('image-failed');p.innerHTML='<span class="fallback-mark">Bild extern</span>'}}));
+ empty.hidden=rows.length>0;renderStats(rows);
 }
-Promise.all([fetch('./coverage.v0.1.json?v=20260918c').then(r=>{if(!r.ok)throw new Error('coverage '+r.status);return r.json()})]).then(([data])=>{
+Promise.all([fetch('./coverage.v0.2.json?v=20260918d').then(r=>{if(!r.ok)throw new Error('coverage '+r.status);return r.json()})]).then(([data])=>{
  DATA=data;
  [...new Set(DATA.rows.map(r=>r.family))].sort().forEach(f=>familyFilter.insertAdjacentHTML('beforeend','<option value="'+esc(f)+'">'+esc(f)+'</option>'));
  render();
