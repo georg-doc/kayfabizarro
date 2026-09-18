@@ -1,8 +1,53 @@
 # KFB OSM City Slice · Hürth / Stotzheimer Straße Pilot
 
 **Date:** 2026-09-18  
-**Status:** PROPOSAL / SOURCE-QUERY CANDIDATE · LIVE OSM DATA NOT YET VERIFIED  
+**Current status:** S0 TESTED RESULT · S1 SHARED VIEWER IMPLEMENTED · S2 SHARED EXPORT GENERATED · HUMAN/RUNTIME ACCEPTANCE OPEN  
 **Parent brief:** `START_HERE.md`
+
+## 0 · Current verified v0 result
+
+The first fixed **700 × 700 m** candidate around the user-provided centre already contains the requested complementary Free-Roam mix. No bbox search/shift was required after the real OSM check.
+
+Exact v0 bbox:
+
+```text
+south 50.862756
+west   6.872018
+north 50.869044
+east   6.881982
+origin 50.865900, 6.877000
+```
+
+Committed real-source result:
+
+- Overpass elements: **5,640**
+- normalized bounds: **700.05 × 699.976 m**
+- road parts: **164**
+- driveable road parts: **116**
+- buildings: **700**
+- landuse surfaces: **22**
+- green polygons: **10**
+- water lines: **2**
+- intersection/link nodes detected by the fixture probe: **154**
+- driveable road parts touching the local edge band: **42**
+- green polygons touching the local edge band: **10**
+- longest contiguous driveable road part in the normalized fixture: **Am Heideberg**, OSM `way/27933239`, **478.64 m**
+- missing referenced nodes: **0**
+- unsupported relations in this snapshot: **0**
+- deterministic reload: **PASS**
+- OSM ID preservation: **PASS**
+- fixed-bbox clipping: **PASS**
+
+Fixture signals required by this brief:
+
+```text
+residentialContext   PASS
+intersection         PASS
+accelerationCorridor PASS
+roadTerrainEdge      PASS
+```
+
+This is a **source/geometry TESTED RESULT**, not a visual or driving acceptance. The shared S1 viewer can display Hürth through `?city=huerth-v0`; the S2 scene export exists, but the receiving Travel/Free-Roam Walk→Drive loop has not yet been executed on this scene.
 
 ## 1 · Why Hürth
 
@@ -23,17 +68,17 @@ with building, highway, landuse and water queries.
 
 Treat the 1.5 km radius as a **source envelope / later expansion**, not the first render target. At roughly 7 km² it is too broad for a first geometry/controller proof.
 
-### Hürth v0 recommendation
+### Hürth v0 decision
 
-Start with a clipped deterministic bbox or equivalent ~500–800 m local window containing:
+The first deterministic bbox is now fixed to the 700 m window recorded in §0. Real OSM evidence confirms that it contains:
 
-- one residential/suburban cluster;
-- one useful intersection;
-- one longer road segment;
-- one road↔field/green transition;
+- residential/suburban context;
+- many usable road intersections/connections;
+- a long driveable road corridor;
+- road and green geometry at the local edge;
 - enough building footprints for parking / turning context.
 
-Record the exact bbox after selection.
+The 1.5 km discovery envelope remains only a future expansion aid.
 
 ## 3 · Corrected Overpass pilot query
 
@@ -64,7 +109,9 @@ out body;
 out skel qt;
 ```
 
-This remains a discovery query. After the v0 area is selected, prefer a fixed bbox query for deterministic source capture.
+That remains the discovery query only. The accepted v0 source capture uses the exact fixed bbox query committed at:
+
+`tools/osm-city-lab/data/huerth-v0/query.overpassql`
 
 Do not infer a complete road/carriageway model from `highway=*`; classify road, service, path, footway, cycleway etc. before generating drive surfaces.
 
@@ -95,7 +142,7 @@ A longer road segment can test:
 - road hierarchy;
 - later timed/stunt activity.
 
-Actual selected road and legal/source geometry must come from the captured OSM data. Do not claim a specific road is inside the first v0 bbox until the source is checked.
+The source probe has now established a concrete candidate: `Am Heideberg` / OSM `way/27933239` contributes a **478.64 m driveable normalized part** inside the v0 window. This is a geometry candidate, not yet a gameplay-approved boost strip.
 
 ### Green / Off-road Edge
 
@@ -104,6 +151,8 @@ Use open land/green edges for:
 - asphalt→terrain seam;
 - low-speed terrain handling first;
 - later off-road jumps / destructible fences / water-edge tests.
+
+The source probe confirms both driveable roads and green polygons reach the local edge band. It does **not** yet prove the Travel terrain seam or safe vehicle contact.
 
 Do not infer driveable water, jump geometry or destructibility from OSM tags.
 
@@ -141,6 +190,8 @@ controlled drift
 → return to ordinary street
 ```
 
+The source fixture now passes the geometry/content preconditions for this route. Actual Walk/Drive execution remains a receiver test.
+
 ## 7 · KFB style
 
 Initial city shell remains procedural and asset-light:
@@ -162,14 +213,26 @@ Do not turn every OSM building into an individual art-production task.
 
 ## 8 · Acceptance
 
-Hürth v0 is useful when:
+### TESTED RESULT
 
 - exact source bbox/query is pinned;
+- real OSM cache exists with source timestamp + SHA-256;
 - geometry regenerates deterministically;
-- one suburban block is visually readable;
-- reverse/turn/parking can be exercised in the receiving Free Roam slice;
-- road↔terrain seam is explicit;
-- no second movement/collision owner appears;
-- the scene still works without landmark/2.5D extras.
+- OSM IDs are retained;
+- geometry is clipped to the exact v0 bbox;
+- the requested suburban/intersection/corridor/green-edge fixture signals are all present.
 
-No human acceptance or live OSM result is claimed by this document.
+### OPEN
+
+- S1 browser visual review: suburban block readability, road/building overlap, roofs/materials.
+- S2 receiver validation: reverse, three-point turn, parking, intersection and real Travel road↔terrain seam.
+- No second movement/collision owner may appear.
+- Landmark/2.5D extras remain optional.
+
+### PUBLIC DEPLOYMENT
+
+Not claimed.
+
+### GEORG ACCEPTANCE
+
+Pending for visual S1 and runtime S2.
