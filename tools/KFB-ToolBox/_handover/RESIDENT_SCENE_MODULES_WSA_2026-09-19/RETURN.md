@@ -37,7 +37,7 @@ S33 static execution evidence already recorded:
 - 6-club v1 guard PASS;
 - module contract declares consumer-owned collision.
 
-This handoff adds documentation/routing only; it does not convert that static PASS into a browser PASS.
+The handoff merge was followed by an actual Cloudflare Playwright run; browser evidence is recorded below. Static and browser status remain separate from Georg acceptance.
 
 ## PUBLIC DEPLOYMENT
 
@@ -49,9 +49,21 @@ KFB Hub:
 
 `https://kayfabizarro.pages.dev/kfb-hub/`
 
-Current status: **PUBLIC ROUTE EXISTS; S33 exact deployed/browser revision still requires WSA verification.**
+Current status: **PUBLIC DEPLOYMENT · CLOUDFLARE BROWSER PASS** for the S33 Clown deep link.
 
-A Cloudflare-only Playwright proof is checked in at `.github/workflows/resident-scene-modules-cloudflare-qa.yml`; see `TEST_REPORT.md`. Its actual merged workflow result must be recorded before claiming a browser PASS.
+Proof:
+
+- merge under test: `ae79765c02953704fefaa44fc0c40e21c23da372`
+- workflow run: `35421198328` · SUCCESS
+- Cloudflare response: 200
+- Clown selected through the deep link
+- `juggle-cascade-v1` mounted and advanced
+- 21 scene nodes
+- no console/page errors
+- screenshot/report artifact: `10577298328`
+- persisted report: `evidence/CLOUDFLARE_BROWSER_RESULT_2026-09-19.json`
+
+Automated diagnostics: max arm residual `0.0001394517`; minimum club **pivot** distance `0.0247257373`. The latter is not surface-clearance acceptance and keeps catch/overlap review open.
 
 No githack/rawcdn.githack URL is part of this handoff.
 
