@@ -84,4 +84,5 @@ Inherited from the S6 Atlas Return / Next Slices:
 - [ ] Human-facing previews always use `kayfabizarro.pages.dev` / KFB Hub / Stage routes.
 - [ ] Remove future review instructions that suggest githack/rawcdn.githack.
 - [ ] Historical documents may retain old URLs as historical evidence, but new active handoffs must name the Cloudflare canonical target.
+- [ ] Cross-owner cleanup for WSA/Race owner: `.github/workflows/box-stop-pinned-preview.yml` still contains a manual/historical rawcdn.githack test path. Do not use it for new proof; retire or replace it with a Cloudflare-only proof in the owning Race/BOX1 lane rather than changing Race test ownership from this Resident slice.
 - [ ] A third-party CDN load success is never a KFB public-deployment PASS.
