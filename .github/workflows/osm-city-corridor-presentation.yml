@@ -1,0 +1,68 @@
+name: OSM City · corridor presentation sidecar
+
+on:
+  push:
+    branches:
+      - osm-city/corridor-presentation-s1-2026-09-19
+      - main
+    paths:
+      - 'tools/osm-city-lab/data/ehrenfeld-huerth-corridor-v0/normalized.json'
+      - 'tools/osm-city-lab/evidence/ehrenfeld-huerth-corridor-v0-consumer.json'
+      - 'tools/osm-city-lab/styles/kfb-city-v0.json'
+      - 'tools/osm-city-lab/scripts/build-corridor-presentation.mjs'
+      - 'tools/osm-city-lab/src/style/cartoon-city.js'
+      - 'tools/osm-city-lab/src/viewer/street-signs.js'
+      - 'tools/osm-city-lab/scenes/ehrenfeld-huerth-corridor-v0.presentation.json'
+      - 'tools/osm-city-lab/evidence/ehrenfeld-huerth-corridor-v0-presentation.json'
+      - '.github/workflows/osm-city-corridor-presentation.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: osm-city-corridor-presentation-${{ github.ref_name }}
+  cancel-in-progress: true
+
+jobs:
+  presentation:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref_name }}
+          fetch-depth: 0
+          sparse-checkout: |
+            tools/osm-city-lab/data/ehrenfeld-huerth-corridor-v0/normalized.json
+            tools/osm-city-lab/evidence/ehrenfeld-huerth-corridor-v0-consumer.json
+            tools/osm-city-lab/styles/kfb-city-v0.json
+            tools/osm-city-lab/scripts/build-corridor-presentation.mjs
+            tools/osm-city-lab/src/style/cartoon-city.js
+            tools/osm-city-lab/src/viewer/street-signs.js
+            tools/osm-city-lab/scenes
+            tools/osm-city-lab/evidence
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Syntax
+        run: node --check tools/osm-city-lab/scripts/build-corridor-presentation.mjs
+      - name: Build deterministic presentation sidecar
+        run: node tools/osm-city-lab/scripts/build-corridor-presentation.mjs
+      - name: Persist branch candidate or verify main is clean
+        run: |
+          git add tools/osm-city-lab/scenes/ehrenfeld-huerth-corridor-v0.presentation.json \
+                  tools/osm-city-lab/evidence/ehrenfeld-huerth-corridor-v0-presentation.json
+          if [ "$GITHUB_REF_NAME" = "main" ]; then
+            git diff --cached --exit-code
+            exit 0
+          fi
+          if git diff --cached --quiet; then
+            echo "No presentation sidecar delta."
+            exit 0
+          fi
+          git config user.name "KFB OSM City Bot"
+          git config user.email "actions@users.noreply.github.com"
+          git commit -m "OSM City: cache corridor presentation sidecar"
+          git pull --rebase origin "$GITHUB_REF_NAME"
+          git push origin HEAD:"$GITHUB_REF_NAME"
