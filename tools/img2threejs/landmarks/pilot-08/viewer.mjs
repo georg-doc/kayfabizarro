@@ -143,7 +143,7 @@ export async function boot(){
       env=applyWorldEnvironment(THREE,scene,renderer,{environment:'osm'});
       system.setRim('#ffe6bd');setDomGlow(dom,.08);
     }else{
-      env=applyWorldEnvironment(THREE,scene,renderer,{environment:'travel',snapshot,timeOfDay:lightMode,fogScale:22});
+      env=applyWorldEnvironment(THREE,scene,renderer,{environment:'travel',snapshot,timeOfDay:lightMode,fogScale:40});
       const p=snapshot.skyPresets[lightMode]||snapshot.skyPresets.day;system.setRim(p.rim);
       setDomGlow(dom,lightMode==='night'?.72:lightMode==='evening'?.30:.10);
     }
