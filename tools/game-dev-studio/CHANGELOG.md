@@ -177,3 +177,44 @@ Documentation checkpoints were fetched back after every write; detailed counts a
 
 ### NEXT RESEARCH GATE
 Deep-review KayKit Live Show Episodes 0–4 and append creator modeling grammar: primitives, proportions, bevels, origins/pivots, part splitting, material/atlas usage and variant decisions.
+
+
+## 2026-09-19 · GDS-07 · KayKit animation timing synthesis
+
+### SOURCE
+Added creator video:
+`KayKit - Animations - Overview Set 1`
+https://www.youtube.com/watch?v=T1KNCtAqJ7A
+
+The video is treated as an older **visual animation overview**, not as current inventory truth or a state-machine how-to. Current implementation facts were rechecked against KFB main and the current official Character Animations source.
+
+### CURRENT REPO EVIDENCE
+At main `c84c3c57aa875e1ac1cd8cc17eb966cb37c0f317`:
+- Rig_Medium motion Registry: **139 motions / 8 sets**;
+- MovementBasic: 11;
+- MovementAdvanced: 13;
+- General: 15;
+- CombatMelee: 22;
+- CombatRanged: 20;
+- Simulation: 14;
+- Special: 15;
+- Tools: 29;
+- no explicit `Sprint` clip;
+- Mixed Bag shard: **47 assets = 41 GLTF models + 6 PNG images**, pinned to source commit `378b209355b13304e3cff656ec0806ca5b89df28`.
+
+### RESEARCH DECISION
+The useful KFB synthesis is:
+- phase-sync Walk/Run transitions rather than reset-to-frame-zero;
+- measured speed ↔ playback-rate calibration;
+- hysteresis around locomotion speed bands;
+- optional temporary warp during crossfade;
+- physics-owned Jump_Start → Jump_Idle → Jump_Land;
+- phase-relative combat release/contact markers;
+- entry/loop/exit interaction graphs;
+- stance/equipment participates in locomotion selection.
+
+### BOUNDARY
+No runtime state machine, consumer movement, Registry schema or Animation Lab implementation changed in this pass.
+
+### NEXT GATE
+**KCL-M1 · Locomotion Sync Bench** — one current Rig_Medium actor, Walking_A/B/C + Running_A/B only, measurement and A/B evidence before any consumer integration.
