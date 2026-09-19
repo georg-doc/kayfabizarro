@@ -409,3 +409,73 @@ Start with:
 Judge foot sliding, double-step, hip pop, cadence and weight.
 
 No consumer MotionProfile promotion before that human gate.
+
+
+## Final public-verified handoff · 2026-09-20
+
+### Git state before this Return write
+
+- repository: `georg-doc/kayfabizarro`
+- branch: `chatgpt-web/kaykit-creator-learning-2026-09-19`
+- synced branch head: `f3d955bd1ce9ec6d1bf121781422ee509e7b5836`
+- base: `main@9b3c57ec09af8a9601a7221a84ee9a6de1e287f5`
+- compare: **61 commits ahead · 0 behind · 15 changed files**
+- Draft PR #107: **OPEN · DRAFT · UNMERGED**
+- Hub blob identical on main/branch: `e7c8f9a57a91821e4cf2545cccf1b69b871e6a7e`
+
+### KCL-M1 technical evidence
+
+Local browser:
+- **39/39 PASS**
+- run `35468444150`, local job `105964939873`
+- artifact `10591764219`
+- digest `sha256:55b8cc47723a64fc9c633ad46e2008a446d666ba724d02fed6242c17354de75e`
+
+Public browser:
+- publication branch `cloudflare-live`
+- KCL publication commit `fac041eb34c9a284d724a3ee2b945bef7d020d04`
+- Cloudflare deploy: PASS
+- run `35468444150`, attempt 2
+- public job `105981648314`
+- **39/39 PASS**
+- artifact `10593933655`
+- digest `sha256:5d7f6bb436d0030a3ddec3f080e0a6b041fe196cdf36cd3d34d5f5d01f71c0cf`
+- 0 failed resources
+- 0 page/console errors
+
+Public Hub status:
+- publication commit `3c1135bc5d24727a011735a4d4bf2ff707b1757c`
+- Cloudflare deploy: PASS
+- Hub marks KCL-M1 **PUBLIC 39/39**
+
+### Fixed human Stage
+
+https://kayfabizarro.pages.dev/kfb-hub/stage/game-dev-studio/kcl-m1-locomotion-sync/
+
+### Current status
+
+`PUBLIC_VERIFIED = YES`
+
+`GEORG_MOTION_ACCEPTANCE = OPEN`
+
+No consumer MotionProfile has been promoted. No Sprint source has been invented. Travel/Race/Combat/Platformer still own movement, physics and gameplay state.
+
+### Exactly one next gate
+
+Georg visually compares **A · NAIVE** vs **B · PHASE SYNC**.
+
+Initial review:
+- Walking_A → Running_A
+- LEFT
+- fade 0.12 s
+- warp ON
+- speed-match ON
+
+Judge:
+- planted-foot sliding;
+- double-step;
+- hip pop;
+- cadence;
+- perceived weight / naturalness.
+
+Only after human acceptance should KCL-M2 define the first reusable consumer MotionProfile seam.
