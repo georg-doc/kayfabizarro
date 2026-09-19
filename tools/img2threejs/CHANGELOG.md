@@ -150,3 +150,41 @@ All internal Rig calls use the aliased names, making the source itself safer for
 **TESTED RESULT:** The repaired downloadable artifact `KFB_Landmark_Group_Rig_v1_1.html` passes Node module syntax plus six packaging guards: no unprefixed helper calls remain and all three embedded prefixed helpers are defined. Core Rig geometry was re-evaluated for Spasskaya/Kremlin × Base/Grotesque/Soft-Cubist; triangle counts, four attachments, ground anchor and ~4e-15 m maximum rigid-clock error remain unchanged. [Regression evidence](evidence/2026-09-19-landmark-rig-v1-1/standalone-regression.json).
 
 **BOUNDARY:** This fixes the reported startup ReferenceError. Successful WebGL visual rendering remains a separate browser/human gate.
+
+
+## 2026-09-19 · 10 · v1.2 rejected by screenshot · Semantic Band Rig v2 rebuild
+
+**USER EVIDENCE / REJECTION:** Georg opened the v1.2 surface-socket standalone and supplied another screenshot. The clocks still floated / separated from the deformed tower. Georg explicitly required detailed analysis, a new concept, a clean rebuild and screenshot evidence before claiming success.
+
+**ROOT CAUSE — measured against the rendered host, not the socket itself:** The v1.2 QA proved that each clock remained rigid around its own sampled socket. It did **not** prove that the socket remained on the actually rendered coarse `clock-stage`. Re-evaluation against the true transformed host triangles reproduced the failure: the four v1.2 sockets sat approximately **2.162 m / 3.784 m / 2.436 m / 3.457 m** from their intended rendered faces in City Grotesque.
+
+The mismatch is structural: v1.2 sampled a continuous deformation field at a free socket point while the visible host is a coarse eight-corner box with discrete grotesque stack offsets. A better socket cannot repair two different deformation representations.
+
+**DECISION / NEW CONCEPT:** Replace socket-driven attachment with **Semantic Affine Bands**. [Pilot 05 slice](landmarks/pilot-05/SLICE.md).
+
+Bands:
+- `lower` — lower tower / gate / walls;
+- `clock` — lower hip roof, clock-stage, four clock assemblies, gables and pinnacles;
+- `belfry` — belfry;
+- `tent` — tent / ribs / star.
+
+Each band receives one fitted affine transform derived from the City/Soft-Cubist field. The visible `clock-stage` **and every `clock-*` part use exactly the same clock-band transform**. The lower band's X/Z basis stays horizontal so its authored Y=0 ground plane remains terrain-anchored.
+
+**IMPLEMENTATION:** [Pilot 05 · Band Rig v2](landmarks/pilot-05/index.html), with:
+- Band Rig v2 vs legacy point-deform A/B;
+- Base / City Grotesque / Soft Cubist;
+- semantic-band diagnostic colours;
+- real Three groups/pivots per band;
+- idle / synthetic disco / impact presentation reactor;
+- host-standoff diagnostics in the viewer;
+- GLB export of current generated geometry.
+
+**TESTED RESULT — current GitHub source:** **159/159 PASS** in the latest source evaluation. Spasskaya remains 3,496 triangles and Kremlin wall 5,008; min Y stays exactly 0. Source clock back-plane standoff is 0.080 m. Spasskaya City Grotesque transforms it to ~0.071586 m on all four sides with max mount error ~2.13e-15 m; Soft Cubist gives ~0.084910 m with max error ~1.31e-15 m. [Evidence summary](evidence/2026-09-19-landmark-band-rig-v2/summary.json).
+
+**VISUAL TESTED RESULT — exact generated vertices:** A deterministic CPU z-buffer/triangle renderer was used on the production vertices. Same-camera before/after, plus front/right/oblique views, were visually inspected. The old v1.2 render reproduces detached clocks; Band Rig v2 keeps the front and side clocks on the clock-stage assembly. The compact before/after proof is checked into GitHub: [Visual Evidence](evidence/2026-09-19-landmark-band-rig-v2/VISUAL_EVIDENCE.md).
+
+**BROWSER LIMIT:** A real Chromium/WebGL probe was attempted in the agent container, but EGL/ANGLE initialization failed before a valid WebGL frame. No WebGL/browser PASS is claimed from that environment.
+
+**PROTECTED BOUNDARIES:** City S2 collision/export geometry, OSM landmark manifest, Race/Travel contact/movement/physics, Audio runtime and Registry ownership remain unchanged. The living-toy/bump response is still a presentation donor / proposal seam, not a physics implementation.
+
+**OPEN:** Georg visual review of the new Band Rig v2 standalone, then exactly one style choice: City Grotesque vs Soft Cubist as the landmark deformation baseline.
