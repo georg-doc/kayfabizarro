@@ -4,9 +4,9 @@ import { searchRegistry } from './search.js';
 import { setResultView, renderResults, showDetail, closeDetail } from './render.js';
 import { updateSelectionUI, renderConsumerBoundary, buildHandoff, copyText, downloadJSON } from './selection.js';
 import { fitCamera, setWireframe, playClip, animationState } from './preview.js';
-import { initProductionResources } from './resources-ui.js';
+import { initProductionResources } from './resources-ui.js';\nimport { initModuleKitWorkbench } from './module-kit.js';
 
-let productionUi;
+let productionUi;\nlet moduleKitUi;
 let registryLoadToken = 0;
 
 function closeSelection() {
@@ -96,7 +96,7 @@ async function loadRegistry(mode = state.registryMode, { rerun = false, allowFal
     $('registryStatus').classList.remove('error');
     $('registryStatus').textContent = 'Registry ready';
     $('sourceCommit').textContent = formatSourceLine(manifest);
-    $('packFilter').replaceChildren(option('', 'All packs'), ...packs.map((pack) => option(pack.packId, pack.packId)));
+    $('packFilter').replaceChildren(option('', 'All packs'), ...packs.map((pack) => option(pack.packId, String(pack.displayName||pack.packId).replaceAll('_',' '))));
     $('consumerSelect').replaceChildren(...Object.entries(state.profiles).map(([id, profile]) => option(id, profile.displayName || id)));
     renderMetrics(); renderConsumerBoundary(); setResultView(state.viewMode); updateSelectionUI(); setBusy(false);
     if (rerun && hasSearchIntent()) await runSearch();
@@ -136,7 +136,11 @@ async function openAssetFromResource(assetId, clipName = null) {
   playClip(Number(match.value));
 }
 
-async function bootstrap() { $('browseModeFilter').value=state.browseMode; refreshMultiFilterSummaries(); await loadRegistry(state.registryMode, { allowFallback:true }); }
+async function bootstrap() {
+  $('browseModeFilter').value=state.browseMode; refreshMultiFilterSummaries(); await loadRegistry(state.registryMode, { allowFallback:true });
+  moduleKitUi=await initModuleKitWorkbench();
+  if(moduleKitUi.initialPackId){$('packFilter').value=moduleKitUi.initialPackId;await moduleKitUi.openPack(moduleKitUi.initialPackId,{updateUrl:false});await runSearch();}
+}
 
 productionUi = initProductionResources({ showAsset: openAssetFromResource });
 // Town v1.6 remains a compatibility module and may set its historical visible version during module init.
@@ -147,7 +151,7 @@ const visibleVersion=document.querySelector('h1 span'); if(visibleVersion)visibl
 $('searchButton').onclick = () => runSearch().catch(showError);
 $('searchInput').onkeydown = (event) => { if (event.key === 'Enter') runSearch().catch(showError); };
 $('kaykitPreset').onclick = () => { $('searchInput').value = 'KayKit'; $('kindFilter').value = ''; setBrowseMode('primary'); $('browseModeFilter').value='primary'; setResultView('gallery'); runSearch().catch(showError); };
-$('browseModeFilter').onchange = (event) => { setBrowseMode(event.target.value); if(hasSearchIntent())runSearch().catch(showError); };
+$('packFilter').onchange = (event) => { moduleKitUi?.openPack?.(event.target.value,{updateUrl:true}).catch(showError); };\n$('browseModeFilter').onchange = (event) => { setBrowseMode(event.target.value); if(hasSearchIntent())runSearch().catch(showError); };
 $('loadMoreButton').onclick = () => { state.resultVisibleLimit += RESULT_LIMIT; runSearch({resetLimit:false}).catch(showError); };
 $('resetButton').onclick = resetFilters;
 $('filtersToggle').onclick = () => toggleFilters().catch(showError);
@@ -178,7 +182,7 @@ $('clipSelect').onchange = (event) => { if (event.target.value === '') return; $
 document.addEventListener('kfb-open-asset', (event) => showDetail(event.detail).catch(showError));
 document.addEventListener('keydown', (event) => { if (event.key === 'Escape') closePanels(); });
 
-const publicApi = { version:'1.5', runSearch, showDetail, buildHandoff, activateProductionTab: productionUi.activateProductionTab, setRegistryMode:(mode)=>loadRegistry(mode,{rerun:true}), ensureCatalog, ensureRigFacts, ensureProblems, getState:() => ({ selectedAssetIds:[...state.selected].sort(), activeAssetId:state.active, viewMode:state.viewMode, registryMode:state.registryMode, browseMode:state.browseMode, resultVisibleLimit:state.resultVisibleLimit, sourceCommit:state.manifest?.sourceCommit || null }) };
+const publicApi = { version:'1.5', runSearch, showDetail, buildHandoff, activateProductionTab: productionUi.activateProductionTab, setRegistryMode:(mode)=>loadRegistry(mode,{rerun:true}), ensureCatalog, ensureRigFacts, ensureProblems, moduleKitState:()=>moduleKitUi?.getState?.()||null, getState:() => ({ selectedAssetIds:[...state.selected].sort(), activeAssetId:state.active, viewMode:state.viewMode, registryMode:state.registryMode, browseMode:state.browseMode, resultVisibleLimit:state.resultVisibleLimit, sourceCommit:state.manifest?.sourceCommit || null }) };
 window.KFBAssetLibrarianV12 = publicApi;
 window.KFBAssetLibrarianV13 = publicApi;
 window.KFBAssetLibrarianV14 = publicApi;
