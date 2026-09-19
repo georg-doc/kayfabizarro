@@ -5,7 +5,7 @@ Date: 2026-09-19
 Owner: Georg / KFB
 Purpose: cold starts, parallel web chats, bounded modules and POCs
 
-Use this after `START_HERE.md` and `PRODUCTION_SOP.md`. It helps a chat finish one useful slice independently and hand it back for a compact Work review. It does not create a new owner, SSOT, runtime, architecture or merge right.
+Use this after `START_HERE.md`, `PRODUCTION_SOP.md` and `CHAT_GITHUB_KFB_STAGE_WORKFLOW.md`. It helps a chat finish one useful slice independently and hand it back for a compact Work review. It does not create a new owner, SSOT, runtime, architecture or merge right.
 
 ## 1. Recover before changing anything
 
@@ -29,6 +29,9 @@ A module/POC stays a candidate until its receiving owner explicitly accepts it. 
 ## 3. Work additively
 
 - Use a reviewable branch/PR when that project's contract calls for one.
+- Save implementation, evidence and handoff in small checkpoints; after each GitHub write verify the exact branch head.
+- Treat timeouts as `UNKNOWN`, inspect before retrying, and never duplicate a commit on assumption.
+- Use only a direct `kayfabizarro.pages.dev` route linked from the KFB Hub for human Stage testing.
 - Preserve existing working paths; make experiments reversible.
 - Reuse pinned donors before rebuilding.
 - Keep one writer for movement, camera, actor, audio state, asset truth and deployment.
@@ -84,4 +87,4 @@ A successful export is a recovery result, not proof that the failed visual/game 
 
 ## Paste-ready cold-start request
 
-> Sync from `skills/chat/START_HERE.md` and `skills/chat/FRESH_CHAT_SLICE_PROTOCOL.md`, then recover this project's current GitHub state. Complete only the named slice additively. Keep the existing owners and SSOTs. Update the project Return/changelog and leave the standard compact review packet with exact PR/head, actual tests, visible proof, open items and one next gate.
+> Sync from `skills/chat/START_HERE.md`, `skills/chat/CHAT_GITHUB_KFB_STAGE_WORKFLOW.md` and `skills/chat/FRESH_CHAT_SLICE_PROTOCOL.md`, then recover this project's current GitHub state. Complete only the named slice additively. Keep the existing owners and SSOTs. Update the project Return/changelog and leave the standard compact review packet with exact PR/head, actual tests, visible proof, open items and one next gate.

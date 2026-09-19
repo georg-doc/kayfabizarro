@@ -1,5 +1,15 @@
 # KFB Chat Production Router · additive changelog
 
+## 2026-09-19 · Chat → GitHub → KFB Stage + Tiny Treats intake
+
+### DECISION
+
+Add one binding delivery workflow for Web, Claude Design and Codex slices. GitHub writes are saved in small checkpoints and verified against the exact branch head. Timeouts are `UNKNOWN`, never success. Human testing uses only direct KFB Cloudflare routes linked from the Hub; GitHub Pages, githack and local files are not acceptance surfaces.
+
+### ASSETS / BRIEFING
+
+Admit Tiny Treats Charming Kitchen 1.1 as a closed 244-file CC0 package on main and route the Asset Registry rebuild. Expand 3D Hub C0 to eight Tiny Treats packs, including Baked Goods and Charming Kitchen, plus the current Plant Prop Lab v2 donor for environment/resident scenery. Update Dungeon, Hex and Combat briefs to use the same delivery workflow.
+
 ## 2026-09-19 · Claude Design failure recovery + export
 
 ### DECISION

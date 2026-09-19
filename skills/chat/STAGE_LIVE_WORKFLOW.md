@@ -3,6 +3,8 @@
 Status: **DECISION · FIRST ROUTE IMPLEMENTED**  
 Human entry: `https://kayfabizarro.pages.dev/kfb-hub/stage/`
 
+Binding delivery/timeout rules: [`CHAT_GITHUB_KFB_STAGE_WORKFLOW.md`](./CHAT_GITHUB_KFB_STAGE_WORKFLOW.md)
+
 ## In plain language
 
 **Live** is the last accepted, dependable version.  
@@ -55,3 +57,8 @@ a small GitHub-backed slice or brief first; it does not depend on an unshared lo
 Merging a candidate into a clearly labelled Stage path is not Georg acceptance and does not make it
 Live. Promotion requires a named accepted revision and updates the Live pointer; no folder is
 silently overwritten.
+
+
+## Publication proof
+
+A Stage result is complete only after the exact Cloudflare URL is opened and visibly matches the intended revision. A GitHub commit, CI PASS, GitHub Pages preview or deployment timeout is not public proof. The KFB Hub link is updated in the same publication batch.

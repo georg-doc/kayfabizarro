@@ -115,3 +115,8 @@ Gehe erst danach zu DG2-C. Prüfe Determinismus, Ebenenverbindung, Tür-/Treppen
 
 Arbeite in einem eigenen Branch, veröffentliche die feste Stage-Adresse und liefere RETURN.md, SOURCE.json, TEST_REPORT.md, drei Recipe-Beispiele, Screenshots, additive Changelog-Notiz und einen PR ohne Auto-Merge. Trenne Proposal, Implementation, Test und Georg-Akzeptanz.
 ```
+
+
+## Verbindlicher Chat→Stage-Lieferweg
+
+Vor dem Schreiben `skills/chat/CHAT_GITHUB_KFB_STAGE_WORKFLOW.md` lesen. Kleine verifizierte GitHub-Checkpoints verwenden; bei Timeout den Zustand als `UNKNOWN` prüfen, nicht blind erneut committen. Der Human-Test-Link muss direkt unter `https://kayfabizarro.pages.dev/` liegen und im KFB Hub erscheinen. GitHub Pages/githack sind keine Stage. Ohne sichtbaren Test der exakten Cloudflare-URL kein `PUBLIC_VERIFIED`.

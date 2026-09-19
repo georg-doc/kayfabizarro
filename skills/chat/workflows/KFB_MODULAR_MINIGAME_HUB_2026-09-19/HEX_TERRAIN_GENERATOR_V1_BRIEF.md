@@ -133,3 +133,8 @@ HX1-D verwendet vorhandene Bewegung und mindestens eine bestehende Resident Scen
 
 Eigener Branch, feste Stage, RETURN.md, SOURCE.json, MODULE_LIBRARY.json, TEST_REPORT.md, drei Seed-Rezepte, Screenshots, additive Changelog-Notiz und PR ohne Auto-Merge. Trenne Proposal, Implementation, Test und Georg-Akzeptanz.
 ```
+
+
+## Verbindlicher Chat→Stage-Lieferweg
+
+Vor dem Schreiben `skills/chat/CHAT_GITHUB_KFB_STAGE_WORKFLOW.md` lesen. Kleine verifizierte GitHub-Checkpoints verwenden; bei Timeout den Zustand als `UNKNOWN` prüfen, nicht blind erneut committen. Der Human-Test-Link muss direkt unter `https://kayfabizarro.pages.dev/` liegen und im KFB Hub erscheinen. GitHub Pages/githack sind keine Stage. Ohne sichtbaren Test der exakten Cloudflare-URL kein `PUBLIC_VERIFIED`.

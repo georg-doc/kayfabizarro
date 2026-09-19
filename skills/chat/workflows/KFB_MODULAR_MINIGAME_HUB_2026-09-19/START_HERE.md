@@ -63,7 +63,7 @@ Die Rollen sind wichtiger als die Pack-Namen:
 
 ### Tiny Treats ist ausdrücklich Teil von C0
 
-Im aktuellen Asset-Register sind sechs Tiny-Treats-Pakete verzeichnet:
+Die C0-Lane umfasst jetzt acht Tiny-Treats-Pakete. Sechs sind bereits im bisherigen Register; Baked Goods ist auf GitHub und Charming Kitchen 1.1 wurde am 19.09.2026 als vollständiger CC0-Bestand auf `main` aufgenommen:
 
 - Pretty Park — 28 GLTF-Modelle
 - Pleasant Picnic — 41 GLTF-Modelle
@@ -71,10 +71,16 @@ Im aktuellen Asset-Register sind sechs Tiny-Treats-Pakete verzeichnet:
 - Bakery Interior — 114 GLTF-Modelle
 - House Plants — 113 GLTF-Modelle
 - Bubbly Bathroom — 84 GLTF-Modelle
+- Baked Goods — 32 GLTF-Modelle; kleine Backwaren-/Auslagenfamilien
+- Charming Kitchen 1.1 — 118 GLTF-Modelle; modulare Küchenwände, Schränke, Arbeitsflächen, Geräte, Tische, Stühle und Utensilien
 
-Wichtig: Bakery, Bathroom und House Plants enthalten auch zusammengehörige Wand-/Boden-/Innenraumteile. Sie dürfen nicht automatisch wie lose Dekoration verstreut werden. Pretty Park besitzt ebenfalls eigene Bodenteile. Erst katalogisieren und messen, dann entscheiden, ob ein Teil nur erzählt oder auch tragen darf.
+Wichtig: Bakery, Bathroom, House Plants und Charming Kitchen enthalten auch zusammengehörige Wand-/Boden-/Innenraumteile. Sie dürfen nicht automatisch wie lose Dekoration verstreut werden. Pretty Park besitzt ebenfalls eigene Bodenteile. Erst katalogisieren und messen, dann entscheiden, ob ein Teil nur erzählt oder auch tragen darf.
 
 Der Recovery-Export enthält für Tiny Treats einen **Kandidatenwert**: `door_modular` wurde von 2,80 auf ca. 2,05 Einheiten skaliert, also etwa Faktor 0,73. Das ist ein guter Startwert, aber noch keine globale Regel. Der aktuelle, gepinnte Asset-Stand muss neu gemessen werden.
+
+### Plant Prop Lab als Scenery-Donor
+
+Der aktuelle Donor liegt unter `tools/KFB-ToolBox/_inbox/KFB_Plant_Prop_Lab_v1/` (aktueller Export: Plant Prop Lab v2). C0 katalogisiert daraus belegte Pflanzenfamilien, Maßstab, Palette, Licht, Streuung und kleine Resident-Szenerien. Das Lab besitzt weder Weltgenerator noch Resident-Identität und kopiert keine Assets in eine zweite Library.
 
 ## 5. Was der Katalog pro Pack und Bauteil zeigen muss
 
@@ -331,11 +337,11 @@ Zuerst nur ein visueller Adapter auf einen vorhandenen Gegnertyp. Trefferpunkte,
 ### C0 · Katalog
 
 ```text
-Arbeite aus dem aktuellen GitHub-main von georg-doc/kayfabizarro. Lies zuerst skills/chat/START_HERE.md, skills/chat/FRESH_CHAT_SLICE_PROTOCOL.md und skills/chat/workflows/KFB_MODULAR_MINIGAME_HUB_2026-09-19/START_HERE.md vollständig.
+Arbeite aus dem aktuellen GitHub-main von georg-doc/kayfabizarro. Lies zuerst skills/chat/START_HERE.md, skills/chat/CHAT_GITHUB_KFB_STAGE_WORKFLOW.md, skills/chat/FRESH_CHAT_SLICE_PROTOCOL.md und skills/chat/workflows/KFB_MODULAR_MINIGAME_HUB_2026-09-19/START_HERE.md vollständig.
 
-Übernimm nur C0: einen kleinen visuellen Baukasten-Katalog für Kenney Platformer, KayKit Dungeon, KayKit Medieval Hexagon + Builder, alle sechs Tiny-Treats-Pakete, KayKit Mystery Series 6, Resident Scene Modules und den FrizzleBob-Driver-Graft. Nutze das zentrale Asset-Register; kopiere keine Assets und erfinde keine zweite Asset Library.
+Übernimm nur C0: einen kleinen visuellen Baukasten-Katalog für Kenney Platformer, KayKit Dungeon, KayKit Medieval Hexagon + Builder, alle acht Tiny-Treats-Pakete, KayKit Mystery Series 6, Resident Scene Modules und den FrizzleBob-Driver-Graft. Nutze das zentrale Asset-Register; kopiere keine Assets und erfinde keine zweite Asset Library.
 
-Beweise zuerst je eine Familie für trägt, erzählt, bewohnt und handelt. Zeige Pfad, Quelle, Maße, Pivot/Unterkante, Größenanker, Kollisionsrolle, Vorschau und Belegstatus. Tiny Treats muss zwischen modularen Innenraumteilen und loser Szenendekoration unterscheiden. Unbekanntes bleibt sichtbar unbekannt.
+Beweise zuerst je eine Familie für trägt, erzählt, bewohnt und handelt. Zeige Pfad, Quelle, Maße, Pivot/Unterkante, Größenanker, Kollisionsrolle, Vorschau und Belegstatus. Tiny Treats muss zwischen modularen Innenraumteilen und loser Szenendekoration unterscheiden. Nimm Baked Goods und Charming Kitchen 1.1 ausdrücklich auf; erfasse zusätzlich den Plant-Prop-Lab-Donor für Environment- und Resident-Szenerien. Unbekanntes bleibt sichtbar unbekannt.
 
 Arbeite in einem eigenen Branch, stelle eine feste Stage-Adresse bereit und liefere RETURN.md, SOURCE.json, TEST_REPORT.md, Screenshots und additive Changelog-Notiz. Öffne einen PR, aber merge nicht automatisch.
 ```
@@ -381,3 +387,8 @@ Am günstigsten ist diese Reihenfolge:
 
 D01 und die Vorbereitung von C01 können parallel laufen, sobald C0 einen gepinnten Stand hat. H01 bleibt absichtlich klein, bis das Dreier-Gate und danach der bewusst gebaute Mikroturm sichtbar überzeugen.
 
+
+
+## Verbindlicher Lieferweg
+
+Alle C0-/Dungeon-/Hex-/Combat-Slices folgen `skills/chat/CHAT_GITHUB_KFB_STAGE_WORKFLOW.md`: kleine verifizierte GitHub-Checkpoints, direkte Cloudflare-Stage-Adresse, Hub-Link im selben Publikationsschritt und `UNKNOWN` statt Erfolgsbehauptung nach einem Timeout.

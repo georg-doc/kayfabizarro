@@ -139,3 +139,8 @@ Binde anschließend genau zwei belegte KayKit-Gegner als visuelle/animierte Adap
 
 CA2-E simuliert den späteren Instanz-/Portalvertrag nur in der Combat-Stage. Verändere Race, Travel, Dungeon und Hub Runtime nicht. Eigener Branch, feste Stage, RETURN.md, SOURCE.json, ANIMATION_MAP.json, TEST_REPORT.md, Screenshots, Changelog und PR ohne Auto-Merge. Trenne Proposal, Implementation, Tests und Georg-Akzeptanz.
 ```
+
+
+## Verbindlicher Chat→Stage-Lieferweg
+
+Vor dem Schreiben `skills/chat/CHAT_GITHUB_KFB_STAGE_WORKFLOW.md` lesen. Kleine verifizierte GitHub-Checkpoints verwenden; bei Timeout den Zustand als `UNKNOWN` prüfen, nicht blind erneut committen. Der Human-Test-Link muss direkt unter `https://kayfabizarro.pages.dev/` liegen und im KFB Hub erscheinen. GitHub Pages/githack sind keine Stage. Ohne sichtbaren Test der exakten Cloudflare-URL kein `PUBLIC_VERIFIED`.
