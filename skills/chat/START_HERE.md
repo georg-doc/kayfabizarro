@@ -205,4 +205,4 @@ KCL-M1 has moved beyond proposal status: the neutral Rig_Medium locomotion bench
 
 Ownership remains unchanged: Asset Librarian / Registry owns source truth; ToolBox / FrankenStein / Animation owns authoring and calibration; Travel / Race / Combat / Platformer retain movement, physics and gameplay state. KCL-M1 is measurement/QA only.
 
-Current gate: the pages.dev Stage source exists but is **not PUBLIC_VERIFIED** because Cloudflare publication is failing repo-wide. Restore a successful current Cloudflare deployment, rerun the unchanged public KCL proof, then Georg compares NAIVE vs PHASE SYNC visually. Do not invent a KayKit Sprint clip or integrate into consumers before that human gate.
+Current gate: KCL-M1 is **PUBLIC_VERIFIED · 39/39 PASS** on the fixed pages.dev Stage. Georg now compares NAIVE vs PHASE SYNC visually; do not invent a KayKit Sprint clip or integrate/promote MotionProfiles into consumers before that human gate.
