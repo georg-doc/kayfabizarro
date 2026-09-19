@@ -1,7 +1,7 @@
 # KFB Chat Production Router
 
 Status: CURRENT ROUTER v0.3
-Date: 2026-09-19
+Date: 2026-09-20
 Owner: Georg / KFB
 
 This folder is the current LLM production routing layer for ChatGPT/Astra and Claude Design.
@@ -23,6 +23,18 @@ It does not replace project SSOTs, current tools, or canonical skills. It tells 
 For meta-narrative/cross-module ideation, especially KFB Town, use the registry entries for `kfb-meta-compendium-v1` and `kfb-town`. The Meta Compendium is an index, not a canon/implementation SSOT; Town has its own living document under `town/`.
 
 If this is a replacement/fresh chat after context loss, use `RECOVERY_PATH.md` rather than asking Georg for a transcript reconstruction.
+
+## Current WSA MVP consolidation · 2026-09-20
+
+For the next WSA Work Lead handoff, read `workflows/WSA_MVP_CONSOLIDATION_2026-09-20/START_HERE.md` plus its `STATUS_MATRIX.json` before replaying any parallel Web-chat history.
+
+It separates:
+- stable tested donor evidence from live/moving PR heads;
+- source/browser PASS from Cloudflare publication failures;
+- current MVP inputs from frozen/rejected C0, Voxel-track, TE-01 and HUD histories;
+- the existing project owners from the Hub's coordination-only role.
+
+The associated Stage navigator is `/kfb-hub/stage/wsa-mvp-consolidation/`. It is not a runtime owner or a merge authority. The Cloud Design mini-editor is recorded only as a user-reported incoming authoring donor until its exact editable source/export is pinned.
 
 ## Hard rules
 
