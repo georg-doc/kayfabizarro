@@ -9,9 +9,10 @@ export function sampleLivingToyState(opts={}){
   const direction=Number(opts.direction||1)>=0?1:-1;
   const pulse=(.008+.012*intensity)*idle+(.018+.052*intensity)*beat+.07*impact;
   const sy=1+pulse,sxz=1/Math.sqrt(Math.max(.7,sy));
+  const tiltRaw=direction*impact*(.025+.055*intensity)+Math.sin(time*.43)*.006*intensity;
   return {
     scale:{x:sxz,y:sy,z:sxz},
-    tiltZ:direction*impact*(.025+.055*intensity)+Math.sin(time*.43)*.006*intensity,
+    tiltZ:Math.max(-.08,Math.min(.08,tiltRaw)),
     swayY:Math.sin(time*.31)*.008*intensity,
     offsetX:direction*impact*(.18+.42*intensity),
     accent:Math.max(.05,Math.min(1,.08+beat*.72+impact*.95)),
