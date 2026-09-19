@@ -3,6 +3,16 @@
 **Status:** additive backlog after S33.  
 This file covers the Resident Scene Module → Platformer seam. It does not replace the full Resident Atlas OPEN list in `tools/resident_atlas_s6/docs/ATLAS_RETURN.md`.
 
+## 2026-09-19 · Georg review fail / R0 repair
+
+- [x] Record C0 human visual rejection separately from the earlier technical/browser PASS.
+- [x] Record briefing ambiguity + intent-resolution + execution failure in `POSTMORTEM_C0_BRIEFING_INTENT_EXECUTION_2026-09-19.md`.
+- [x] Prepare one next owner-lane brief only: `tools/KFB-ToolBox/_handover/RESIDENT_CLOWN_ACTIVITY_REPAIR_2026-09-19/START_HERE.md`.
+- [ ] Run R0 source-isolation proof before any tuning.
+- [ ] Repair arm throw/catch readability without changing module ownership.
+- [ ] Prove club mesh does not visibly cross head/torso in side + three-quarter review.
+- [ ] Keep C0 scale/UI repair and Platformer integration deferred until R0 gets its own visual gate.
+
 ## P0 · review / evidence
 
 - [x] Cloudflare CI opened the Resident Atlas S6 route with `?resident=clown`; HTTP 200, Clown deep-link and `juggle-cascade-v1` confirmed on merged handoff commit `ae79765c…`.
