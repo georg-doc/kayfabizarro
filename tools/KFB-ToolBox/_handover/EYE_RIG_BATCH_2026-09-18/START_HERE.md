@@ -6,6 +6,16 @@
 **Proposed source path:** `tools/KFB-ToolBox/eye-rig-batch/`  
 **Proposed public candidate:** `https://kayfabizarro.pages.dev/tools/KFB-ToolBox/eye-rig-batch/`
 
+> **CURRENT AUTHORING-SURFACE GATE · 2026-09-19**  
+> Source/Return: `fe088da25bb344a522b61ac7c554d0a4dc8cc15e`; implementation: `c74cbd6e0691d0bd3bcc574203219cdb0e9f647f`; evidence: `eeb79850a8142968c418e23b482a330f120dd9c2`; Stage: `40133c8b2d6d8f210003a6ef7cfa793aebac63bf`.  
+> Georg's tuned values are now the `Rig_Medium` authoring default. Source measurement is suggestion-only. Existing `eyeoval.v1.js` supplies Width/Height/Depth/Tilt; EyeRig-v6 gaze is surfaced as Life/Pointer/Fixed; persistent Batch I/O uses `rigClass → character → session` inheritance. Tests: **46/46 static · 15/15 focused · 2/2 syntax**.  
+> Human gate: verify these Studio controls on the fixed Stage. After acceptance, build a varied 5–8 actor Medium sample. No Large/Legacy, merge or Live promotion yet.
+
+> **CURRENT CALIBRATION GATE · 2026-09-19**  
+> Current source/Return head: `08c088cc06ffdc7190d6fd6ba55df54f457567d0`; calibration implementation: `6f7d7988849cf0c74a6551a33ee422d8584c87c2`; QA/evidence: `ef7a8f203762f670e00ccdd27b540703d855807d`; Stage publication: `786568b1e4434f458379c3aa5f8a83f3fd82a8d9`.  
+> Georg's 3/4 screenshot rejected the previous eye scale, pupil scale and yellow lids. The current Rig_Medium candidate derives eye-size proportion from the tuned GothGirl JSON (`.32/.49`), uses pupil `.34`, and passes the actor's face color `#e6cbc3` through EyeRig v6's existing darker-lid path. **QA 4-view** captures Front / ¾ L / ¾ R / Side R as one contact sheet.  
+> Tests: **37/37 static · 17/17 focused · 2/2 changed-JS syntax**. Current public browser verification remains OPEN. Human gate: open the fixed Stage with Neutral + Bind/T, click QA 4-view, then accept or reject the four visual questions. No batch expansion, merge or Live promotion before that gate.
+
 > **CURRENT IMPLEMENTATION RETURN · 2026-09-19**  
 > PR **#104** remains Draft/Open/Unmerged. Current Return/source head: `5e203568884b3f0d564a3d6fbc09be1122303ac3`; source-identity checkpoint: `949ff8037df2da88eb91ef825984ef57870b8238`; corrected Stage publication: `c6489fce74f98b2124feb184becd27d2cbe4a922`.  
 > Direct analysis of the pinned current GothGirl GLB resolves **components 2 + 3 as the eyes**; 6/7/8 are lateral accessories. The historical 6+7 measured preview is diagnostic history only. Corrected static/contract evidence is **28/28 PASS**.  
