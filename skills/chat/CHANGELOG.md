@@ -499,3 +499,43 @@ Implementation SSOT: `georg-doc/KFB-Stunt-Car-Race`, Draft PR #29, frozen runtim
 Final static/ownership checks PASS. Two repaired real-browser passes did not reach a full green gate: first failed a BLACK_ICE realtime decay comparison, second progressed beyond that check but timed out waiting for LOW_GRAVITY landing telemetry after 12 s. The last run reached 24 checks with 0 page errors and 0 HTTP errors.
 
 Per the two-repair stop rule the candidate is frozen and a full failure-recovery export is preserved in the Race branch under `ChatGPT_web/track-lab/st01b/failure-recovery/`. No S-T01b Stage publication. Exactly one next gate: deterministic fixed-step LOW_GRAVITY jump/landing seam. Hub should route to recovery, not ask Georg to test this failed candidate.
+
+
+## 2026-09-19 · Track Ribbon terrain-donor correction
+
+### CORRECTION
+The prior S-T01b implementation/recovery used the wrong terrain donor family.
+
+Wrong:
+`travel/travel-v16/terrain-v16/voxel-terrain.js`
+
+Current Travel implementation SSOT:
+`georg-doc/KFB-Travel-Globe@8614282aab2ced43bb5dda9fcf7abadf9768100a`
+
+Current Travel/TinySkies surface owners:
+- `travel/globe-v13/globe.js`
+- `travel/globe-v13/terrain-surface.js`
+- `travel/globe-v13/simplex-noise.js`
+- `travel/globe-v13/boden-lesung.js`
+
+Upstream terrain/world gold-standard:
+`dannylimanseta/tinyskies@2659a5cc987d7e4a4c5aa7e79c86a1626ad75df6`.
+
+Current Travel Masterplan/Donor Matrix explicitly state that Travel/TinySkies remains the macro world and Travel-v16 Voxel is selective only, not a replacement world aesthetic.
+
+Race PR #29 is reclassified:
+`REJECTED FOUNDATION · WRONG TERRAIN DONOR`.
+
+Salvage:
+- wider track scale;
+- clean road-surface direction;
+- default prop cleanup;
+- semantic terrain-coupling modes;
+- Race-local BLACK_ICE/OIL/LOW_GRAVITY concepts.
+
+Reject:
+- voxel terrain sleeve implementation;
+- voxel-derived terrain assumptions/evidence.
+
+New exactly-one gate:
+verify the current Travel Globe/TinySkies surface donor in isolation, then define the smallest Track-to-spherical-surface deformation seam through the existing Globe terrain truth.
