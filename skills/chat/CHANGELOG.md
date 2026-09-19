@@ -14,7 +14,7 @@ Repository/state readback: **24/24 PASS**. Stable exact heads remain pinned for 
 - `main` and `cloudflare-live` are selectively divergent; do not wholesale-merge them.
 
 ### HUB / STAGE
-Add a WSA MVP handoff card to the Hub source and a compact Stage navigator at `/kfb-hub/stage/wsa-mvp-consolidation/`. The new route remains `SOURCE_BRANCH_ONLY_NOT_PUBLIC_VERIFIED` until selectively published and opened on the exact Cloudflare URL.
+Add a WSA MVP handoff card to the Hub source and a compact Stage navigator at `/kfb-hub/stage/wsa-mvp-consolidation/`. The navigator/Hub links were selectively mirrored through `cloudflare-live@aa1dde22d2f6108e97f986f7cc1e9f3e16dffc48`, but canonical public QA run `35475904961` failed before browser at the exact deployment-marker wait. This matches the TinySkies donor publication symptom and is treated as one shared Cloudflare publication/control-plane blocker, not as a slice redesign trigger.
 
 ### INCOMING DONOR
 Record Georg's Cloud Design mini-editor as `USER_REPORTED_SOURCE_NOT_YET_PINNED`: intended reuse for Dungeon v3 prop placement, Platformer/scenery composition and Resident posing. Do not rebuild from prose; pin the editable export first.
