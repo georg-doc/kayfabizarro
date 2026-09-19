@@ -25,7 +25,7 @@ export function prepareVerifiedGothGirlCleanup({
   figure,
   preferredHeadMesh = 'GothGirl_Head',
   expectedConnectedComponents = 12,
-  eyeComponents = [6, 7],
+  eyeComponents = [2, 3],
   log = () => {}
 } = {}) {
   if (!figure) {
@@ -54,6 +54,15 @@ export function prepareVerifiedGothGirlCleanup({
   const guardOk = shells.length === expectedConnectedComponents &&
     eyeComponents.length === 2 &&
     eyeComponents.every((i) => Number.isInteger(i) && i >= 0 && i < shells.length);
+  const eyeIdentityOk = guardOk &&
+    eyeComponents[0] === 2 && eyeComponents[1] === 3 &&
+    shells[2].count === 69 && shells[3].count === 69 &&
+    shells[2].xmin > 0.1 && shells[2].xmax < 0.3 &&
+    shells[3].xmin > -0.3 && shells[3].xmax < -0.1 &&
+    Math.abs(shells[2].ymin - shells[3].ymin) < 0.002 &&
+    Math.abs(shells[2].ymax - shells[3].ymax) < 0.002 &&
+    Math.abs(shells[2].zmin - shells[3].zmin) < 0.002 &&
+    Math.abs(shells[2].zmax - shells[3].zmax) < 0.002;
 
   const report = {
     schema: SOURCE_FACE_SCHEMA,
@@ -69,11 +78,11 @@ export function prepareVerifiedGothGirlCleanup({
         z: [+shells[i].zmin.toFixed(4), +shells[i].zmax.toFixed(4)]
       }
     })) : [],
-    pairConfidence: guardOk ? 1 : 0,
-    femaleOuterLashCandidate: 'VISUAL_REVIEW_REQUIRED',
-    removalMode: guardOk ? 'mesh-components' : 'none',
+    pairConfidence: eyeIdentityOk ? 1 : 0,
+    femaleOuterLashCandidate: 'EYE_ASSEMBLY_OR_TEXTURE_UNRESOLVED',
+    removalMode: eyeIdentityOk ? 'mesh-components' : 'none',
     guard: `connectedComponents === ${expectedConnectedComponents}`,
-    status: guardOk ? 'AUTO_CANDIDATE' : 'HUMAN_REQUIRED',
+    status: eyeIdentityOk ? 'SOURCE_IDENTITY_VERIFIED_AUTO_CANDIDATE' : 'HUMAN_REQUIRED',
     sourceGeometryUuid: original.uuid,
     materialGroups: original.groups ? original.groups.length : 0,
     components: shells.map((s, component) => ({
@@ -89,8 +98,8 @@ export function prepareVerifiedGothGirlCleanup({
     sourceMeasuredSeed: null
   };
 
-  if (!guardOk) {
-    log(`source-face guard failed · ${shells.length} components; expected ${expectedConnectedComponents}; no geometry hidden`);
+  if (!eyeIdentityOk) {
+    log(`source-face identity guard failed · ${shells.length} components; expected current GothGirl eye pair 2+3; no geometry hidden`);
     return {
       status: 'HUMAN_REQUIRED',
       headMesh,

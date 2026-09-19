@@ -4,18 +4,22 @@
   "sourceRepo": "georg-doc/kayfabizarro",
   "sourceBranch": "toolbox/eye-rig-batch-2026-09-18",
   "sourcePR": 104,
-  "sourceHead": "148e3cfd3523655ecb408d117e77109c61c624f4",
+  "sourceHead": "949ff8037df2da88eb91ef825984ef57870b8238",
   "implementationCheckpoint": "d900fb99f3b04d52f266febd1501368c5fedd360",
-  "stageMirrorParent": "f28d3495caf373a9d04a5d69e5d0b4870abe9a12",
-  "expectedVisibleMarker": "source 148e3cf · impl d900fb9 · PR #104 · Stage · component diagnostic",
-  "humanGate": "Georg visual/tuning acceptance; no Live promotion",
+  "stageMirrorParent": "cd8ac363ed5708103324581e683f6b33c6c265f6",
+  "expectedVisibleMarker": "source 949ff80 · impl d900fb9 · PR #104 · Stage · eyes 2+3",
+  "humanGate": "Georg visual acceptance of corrected 2+3 cleanup / measured baseline; no Live promotion",
   "previousPublicProof": {
     "run": 35460179569,
     "checks": "21/21 PASS",
-    "screenshots": 6
+    "screenshots": 6,
+    "sourceHead": "fd7a123b3747f74f79b2759e1cbb48fc64f823f0",
+    "note": "historical pre-identity proof; 6+7 baseline diagnostic only"
   },
-  "measurementMode": "SOURCE_COMPONENT_ISOLATION_DIAGNOSTIC",
+  "measurementMode": "CORRECTED_SOURCE_EYE_COMPONENTS_2_3_PENDING_PUBLIC_PROOF",
+  "sourceIdentity": "RESOLVED_EYES_2_3",
+  "identityEvidence": "./docs/source-components-0-11.html",
   "candidateAction": "EXPLICIT_ONLY_RESETTABLE_NOT_APPROVED",
-  "nextGate": "IDENTIFY_CURRENT_GOTHGIRL_HEAD_COMPONENTS_0_11",
-  "diagnosticProofRequest": "SOURCE_COMPONENTS_0_11_PUBLIC_PROOF"
+  "nextGate": "CORRECTED_2_3_MEASURED_BASELINE_VISUAL_GATE",
+  "proofRequest": "CORRECTED_2_3_PUBLIC_PROOF"
 }

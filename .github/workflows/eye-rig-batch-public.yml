@@ -34,7 +34,7 @@ jobs:
           const BASE='https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/eye-rig-batch/';
           const WANT={
             sourcePR:104,
-            sourceHead:'148e3cfd3523655ecb408d117e77109c61c624f4',
+            sourceHead:'949ff8037df2da88eb91ef825984ef57870b8238',
             implementationCheckpoint:'d900fb99f3b04d52f266febd1501368c5fedd360'
           };
           const result={url:BASE,want:WANT,checks:[],errors:[],screenshots:[],status:'RUNNING'};
@@ -89,7 +89,7 @@ jobs:
             }));
 
             check('page title',/Batch EyeRig Atlas/.test(initial.title),initial.title);
-            check('visible revision marker',initial.marker.includes('source 148e3cf')&&initial.marker.includes('impl d900fb9')&&initial.marker.includes('PR #104'),initial.marker);
+            check('visible revision marker',initial.marker.includes('source 949ff80')&&initial.marker.includes('impl d900fb9')&&initial.marker.includes('PR #104'),initial.marker);
             check('runtime no boot error',!initial.report.error,initial.report.error);
             check('source gate',initial.report.gates?.source===true,initial.report.gates);
             check('cleanup gate',initial.report.gates?.cleanup===true,initial.report.cleanup);
@@ -97,8 +97,8 @@ jobs:
             check('eyerig gate',initial.report.gates?.eye===true,initial.report.eyes?.eyeFrame);
             check('motion gate',initial.report.gates?.motion===true,initial.report.clips);
             check('12 source components',initial.report.cleanup?.connectedComponents===12,initial.report.cleanup);
-            check('eye components 6+7',
-              JSON.stringify((initial.report.cleanup?.eyeCandidates||[]).map(x=>x.component))===JSON.stringify([6,7]),
+            check('eye components 2+3',
+              JSON.stringify((initial.report.cleanup?.eyeCandidates||[]).map(x=>x.component))===JSON.stringify([2,3]),
               initial.report.cleanup?.eyeCandidates);
             check('source-measured seed report-only',
               initial.report.cleanup?.sourceMeasuredSeed?.status==='MEASURED_NOT_APPLIED' &&
@@ -110,6 +110,11 @@ jobs:
               initial.report.clips);
 
             const measuredTarget=initial.report.cleanup?.sourceMeasuredSeed?.anchorCandidate;
+            check('corrected source baseline is facial, not lateral',
+              Number.isFinite(measuredTarget?.dx) && measuredTarget.dx>0.15 && measuredTarget.dx<0.5 &&
+              Number.isFinite(measuredTarget?.dy) && measuredTarget.dy>-0.2 && measuredTarget.dy<0.2 &&
+              Number.isFinite(measuredTarget?.ring) && measuredTarget.ring>0.04 && measuredTarget.ring<0.2,
+              measuredTarget);
             check('measured baseline button available',
               !(await page.locator('#useMeasuredBtn').isDisabled()),
               await page.locator('#useMeasuredBtn').textContent());
