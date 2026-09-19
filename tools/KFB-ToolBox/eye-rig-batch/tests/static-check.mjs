@@ -76,5 +76,7 @@ check('class-switch-runtime',app.includes('async function switchRigClass')&&app.
 check('per-class-persistence',app.includes('classDefaults')&&app.includes('selectedByClass')&&app.includes('currentActorByClass')&&app.includes('currentRigClass'));
 check('large-batch-no-fake-default',app.includes('classDefault:clone(seed?.authoringDefault||null)')&&app.includes('calibrationStart:clone(seed?.calibrationStart||null)'));
 check('large-doc',largeDoc.includes('Monstrosity')&&largeDoc.includes('Black Knight')&&largeDoc.includes('Demon Lord')&&largeDoc.includes('Orc Brute')&&largeDoc.includes('Set as Large default'));
+check('generic-cleanup-single-material-fallback',mediumCleanup.includes('if(!hadGroups) g.addGroup(0,g.index.count,0)')&&mediumCleanup.includes('donorRestore?.()')&&mediumCleanup.includes('g.clearGroups()'));
+check('loader-error-review-recovery',app.includes("reviewState==='UNSUPPORTED'")&&app.includes("/^load failed:/.test")&&app.includes("reviewState='UNREVIEWED'")&&app.includes('recovered from previous loader error'));
 check('no-global-schema-promotion',!app.includes('kfb.eye-profile/1'));
 console.log(JSON.stringify({pass,fail,total:pass+fail,results},null,2)); if(fail)process.exit(1);
