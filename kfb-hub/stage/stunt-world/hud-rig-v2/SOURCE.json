@@ -1,0 +1,22 @@
+{
+  "schema": "kfb.stage-mirror/0.1",
+  "status": "PUBLIC_STAGE_CANDIDATE",
+  "implementation_ssot": "georg-doc/KFB-Stunt-Car-Race",
+  "race_pr": 19,
+  "tested_runtime_head": "6a235d299d181562e46638362cb9dd20dc74b7f3",
+  "tested_workflow_run": 35447501690,
+  "tested_browser": "27/27 PASS",
+  "tested_static": "17/17 PASS",
+  "evidence_artifact": 10586525655,
+  "evidence_digest": "sha256:0fdf2427e719f1c9e7af6465bb346f7e905755c366c93e146437dc43877ed439",
+  "donor_pin": "georg-doc/kayfabizarro@5650b6c54d8789b20ea80abe857688173d506d3b",
+  "runtime_blobs": {
+    "index.html": "fafb0883911cb3094041b00a7a1c97e6f47452b4",
+    "hud-rig-v2.mjs": "89bc0b9e89cefcf895d7314d16ee0e5431f085fb",
+    "hud-rig-v2-embed.mjs": "394281d6716cec7856d59d63a011557435894b19"
+  },
+  "fixed_stage_url": "https://kayfabizarro.pages.dev/kfb-hub/stage/stunt-world/hud-rig-v2/",
+  "github_pages_url": "https://georg-doc.github.io/kayfabizarro/kfb-hub/stage/stunt-world/hud-rig-v2/",
+  "acceptance": "PENDING_GEORG_REVIEW",
+  "live_unchanged": true
+}
