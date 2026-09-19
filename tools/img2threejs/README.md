@@ -14,6 +14,8 @@
 
 **Default review environment:** **OSM City Lab**. Travel Verdant / Day remains an alternate comparison mode.
 
+**TinySkies × OSM integrated Stage candidate:** [direct Cloudflare route](https://kayfabizarro.pages.dev/kfb-hub/stage/img2threejs/tinyskies-osm-cohesion-v1/) · source PR [#110](https://github.com/georg-doc/kayfabizarro/pull/110) · tested runtime `aa28a743628699271c94c1911af23d0564c6f3cc`. Publication is being independently public-browser verified; this link is a Stage candidate, not Live promotion.
+
 **Pilot 06 · World Style Bridge v1:** Eiffel, Giza, Stonehenge, Pentagon, Spasskaya and the Kremlin wall study now share the Grotesque default and flexible landmark-specific cartoon palettes. The review viewer can place them in either the exact current OSM City presentation context or a pinned current Travel/TinySkies-derived sky/light/biome context.
 
 **Pilot 05 · Semantic Band Rig v2: IMPLEMENTATION + STATIC/NUMERICAL + CPU VISUAL TESTED RESULT.**

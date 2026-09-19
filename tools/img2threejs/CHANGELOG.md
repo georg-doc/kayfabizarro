@@ -246,3 +246,22 @@ Because the Travel repo is private, the authoring viewer uses [travel-visual-sna
 **TESTED RESULT:** 6/6 targeted current-source checks PASS: profile default, explicit environment rules, viewer consumption of the profile default, and current OSM background/light constants. [Evidence](evidence/2026-09-19-landmark-world-style-v1-1/summary.json).
 
 **NEXT GATE:** real-browser Pilot-06 visual review in OSM-default mode, then modular Grotesque Cologne Cathedral / OSM Golden Sample.
+
+
+## 2026-09-19 · 15 · TinySkies × OSM integrated Stage candidate
+
+**IMPLEMENTATION / SOURCE TESTED:** Pilot 08 combines a TinySkies-like terrain host, current real Hürth OSM Grotesque massing and a modular Cologne Cathedral derived from the Georg-accepted v0.2 source. The Cathedral placement in Hürth is explicitly `STYLE_INTEGRATION_ONLY_NOT_GEO`.
+
+**TESTED RUNTIME:** `aa28a743628699271c94c1911af23d0564c6f3cc` on draft PR #110.
+
+**STATIC RESULT:** 27/27 PASS. Full Hürth source scene: 700 OSM buildings / 65,648 Grotesque triangles. Modular Cathedral: 1,050 triangles.
+
+**REAL BROWSER RESULT:** 19/19 PASS with zero page/console/HTTP errors. Visible review subset: 90 real OSM buildings / 9,459 OSM triangles. Screenshots prove TinySkies lighthouse and observatory references in isolation before integrated OSM / Evening / Rain views.
+
+**VISUAL REPAIR:** initial camera over-framed the terrain; repair 1 tightened the Hürth composition; repair 2 moved dynamic fog farther out so Evening retains local terrain/OSM/landmark identity. No third visual repair pass was made.
+
+**STAGE PUBLICATION:** direct candidate route: https://kayfabizarro.pages.dev/kfb-hub/stage/img2threejs/tinyskies-osm-cohesion-v1/
+
+The Stage mirror uses exact tested runtime files except two import-path-only adapters in `dom-geometry.mjs` / `dom-rig.mjs`, which point back to existing canonical `/tools/...` donors. A dedicated Cloudflare public browser workflow must verify the exact route before PUBLIC VERIFIED status is claimed.
+
+**BOUNDARIES:** no real Cologne OSM override yet; no wet facade material; no new physics/audio/world owner; no Live promotion.
