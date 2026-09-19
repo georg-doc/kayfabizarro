@@ -1,3 +1,27 @@
+## 2026-09-20 · WSA MVP consolidation handoff
+
+### CURRENT REFERENCE
+Add `workflows/WSA_MVP_CONSOLIDATION_2026-09-20/` as the current coordination packet for the next WSA Work Lead local assembly. It pins seven current input lanes, separates source/browser evidence from public deployment gates, records frozen/rejected paths, and treats the KFB Hub only as navigator.
+
+### STATUS AUDIT
+Repository/state readback: **24/24 PASS**. Stable exact heads remain pinned for OSM/Grotesque PR #110, KCL-M1 #107, EyeRig #104, Race HUD #28 and Combat CA2 #5. Travel PR #30 moved during the audit; its tested evidence head `80cfaa685cdfcdeab7cbd52f2cea6fb16bd8d4f4` is durable while the active branch head must be re-fetched before integration.
+
+### PUBLICATION DIAGNOSIS
+- TinySkies terrain public run `35474894951`: deployment-marker wait FAIL before browser.
+- HUD v3 public run `35470815300`: Playwright install FAIL before browser.
+- OSM/Grotesque source/browser run `35471501769`: PASS; public marker parse failed after two repair attempts, so no third Web repair pass.
+- Combat CA2 repo validation `35463139401`: PASS.
+- `main` and `cloudflare-live` are selectively divergent; do not wholesale-merge them.
+
+### HUB / STAGE
+Add a WSA MVP handoff card to the Hub source and a compact Stage navigator at `/kfb-hub/stage/wsa-mvp-consolidation/`. The new route remains `SOURCE_BRANCH_ONLY_NOT_PUBLIC_VERIFIED` until selectively published and opened on the exact Cloudflare URL.
+
+### INCOMING DONOR
+Record Georg's Cloud Design mini-editor as `USER_REPORTED_SOURCE_NOT_YET_PINNED`: intended reuse for Dungeon v3 prop placement, Platformer/scenery composition and Resident posing. Do not rebuild from prose; pin the editable export first.
+
+### GAME DEVELOPMENT STUDIO
+`GAME_DEV_CLI_UNAVAILABLE · OPTIONAL FALLBACK USED`. Repository-native checks continue; no sealed GDS evidence is claimed.
+
 ## 2026-09-19 · Hub briefings repair + separated generator lanes
 
 ### DECISION
