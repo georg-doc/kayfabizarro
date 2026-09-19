@@ -34,34 +34,37 @@ check('rain wetness false',state.weather?.materialWetness===false);
 check('rain albedo false',state.weather?.materialAlbedoShift===false);
 check('lighthouse donor ref',state.donorRefs?.lighthouse?.status==='SOURCE_DERIVED_KFB_RECREATION_NOT_COPIED_ASSET');
 check('observatory donor ref',state.donorRefs?.observatory?.status==='SOURCE_DERIVED_KFB_RECREATION_NOT_COPIED_ASSET');
-await page.screenshot({path:path.join(OUT,'01-integrated-osm.png'),fullPage:true});
+await page.selectOption('#mode','lighthouse');
+await page.waitForTimeout(500);
+state=await page.evaluate(()=>window.__KFB_TINYSKIES_OSM_PROOF__);
+check('lighthouse isolation',state.mode==='lighthouse',state.mode);
+await page.screenshot({path:path.join(OUT,'01-source-lighthouse.png'),fullPage:true});
+
+await page.selectOption('#mode','observatory');
+await page.waitForTimeout(500);
+state=await page.evaluate(()=>window.__KFB_TINYSKIES_OSM_PROOF__);
+check('observatory isolation',state.mode==='observatory',state.mode);
+await page.screenshot({path:path.join(OUT,'02-source-observatory.png'),fullPage:true});
+
+await page.selectOption('#mode','integrated');
+await page.selectOption('#light','osm');
+await page.waitForTimeout(700);
+state=await page.evaluate(()=>window.__KFB_TINYSKIES_OSM_PROOF__);
+check('integrated after donor isolation',state.mode==='integrated',state.mode);
+await page.screenshot({path:path.join(OUT,'03-integrated-osm.png'),fullPage:true});
 
 await page.selectOption('#light','evening');
 await page.waitForTimeout(800);
 state=await page.evaluate(()=>window.__KFB_TINYSKIES_OSM_PROOF__);
 check('evening switch',state.lightMode==='evening',state.lightMode);
-await page.screenshot({path:path.join(OUT,'02-integrated-evening.png'),fullPage:true});
+await page.screenshot({path:path.join(OUT,'04-integrated-evening.png'),fullPage:true});
 
 await page.check('#rain');
 await page.waitForTimeout(700);
 state=await page.evaluate(()=>window.__KFB_TINYSKIES_OSM_PROOF__);
 check('rain switch',state.rainWeight===1,String(state.rainWeight));
 check('rain still no wetness',state.weather.materialWetness===false);
-await page.screenshot({path:path.join(OUT,'03-integrated-rain.png'),fullPage:true});
-
-await page.uncheck('#rain');
-await page.selectOption('#light','osm');
-await page.selectOption('#mode','lighthouse');
-await page.waitForTimeout(500);
-state=await page.evaluate(()=>window.__KFB_TINYSKIES_OSM_PROOF__);
-check('lighthouse isolation',state.mode==='lighthouse',state.mode);
-await page.screenshot({path:path.join(OUT,'04-source-lighthouse.png'),fullPage:true});
-
-await page.selectOption('#mode','observatory');
-await page.waitForTimeout(500);
-state=await page.evaluate(()=>window.__KFB_TINYSKIES_OSM_PROOF__);
-check('observatory isolation',state.mode==='observatory',state.mode);
-await page.screenshot({path:path.join(OUT,'05-source-observatory.png'),fullPage:true});
+await page.screenshot({path:path.join(OUT,'05-integrated-rain.png'),fullPage:true});
 
 check('no page/console/http errors',errors.length===0,errors.join('\n'));
 const result={url:URL,checks,errors,state,passed:checks.filter(x=>x.pass).length,total:checks.length};
