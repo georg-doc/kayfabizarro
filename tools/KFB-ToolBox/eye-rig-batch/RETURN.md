@@ -165,3 +165,27 @@ Post-proof routing/status surfaces were aligned without changing the Stage runti
 These later commits only surface the verified 17/17 proof and the human tuning gate. They do not alter the EyeRig Stage runtime proven by run `35457983922`.
 
 The authoritative next gate remains: Georg tunes the visible `AUTO_CANDIDATE`, then explicitly approves or rejects. PR #104 remains Draft/Open and unmerged.
+
+
+## SOURCE-MEASURED SEED PROOF · REPORT ONLY
+
+Branch measurement head: `52768e828192e77b43d57f882594f304bcc79180`  
+Cloudflare Stage proof head: `9a3345a01935fe87651ec49cea3afc19715f84ef`  
+GitHub Actions run: `35459726128`  
+Result: **18/18 PASS · 5 screenshots · 0 runtime/page errors**
+
+The verified source eye components were measured through the skinned actor into FaceHost-local coordinates. The measurement is recorded only as a candidate and is **not automatically applied** to EyeRig.
+
+Measured source baseline:
+
+- component 6 center: `[-0.66145, 0.00424, 0.01785]`, radiusXY `0.04975`;
+- component 7 center: `[0.65370, -0.08388, 0.02421]`, radiusXY `0.05750`;
+- FaceHost unit: `0.77441`;
+- source pair span X: `1.31515`;
+- source vertical asymmetry: `0.08812`;
+- normalized candidate: **dx `0.84913` · dy `-0.05142` · ring `0.06925`**;
+- status: `MEASURED_NOT_APPLIED`.
+
+This explains the current visual mismatch without inventing replacement numbers: the visible seed remains `dx=0.345 · dy=-0.10 · ring=0.30`, which is much larger and substantially tighter than the verified source-eye baseline.
+
+**Next gate remains visual, not numeric approval:** expose the measured baseline as an explicit reversible preview, then Georg compares it against the current candidate before any value becomes an approved EyeProfile.

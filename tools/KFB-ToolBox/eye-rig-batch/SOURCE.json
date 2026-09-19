@@ -10,21 +10,21 @@
     "route": "/kfb-hub/stage/toolbox/eye-rig-batch/",
     "url": "https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/eye-rig-batch/",
     "publicationBranch": "cloudflare-live",
-    "publicationCommit": "e56ae972d05e06c5112fe2de4314192c3e3c8110",
+    "publicationCommit": "9a3345a01935fe87651ec49cea3afc19715f84ef",
     "hubLinked": true,
     "mainRouterCommit": "ac067d09919f744750649e3652dd00036d7ccd6f",
     "status": "PUBLIC_VERIFIED_HUMAN_VISUAL_GATE_OPEN",
-    "stageSourceSnapshot": "b05172eccf4687cfd2e8523995d39611e62de81d",
+    "stageSourceSnapshot": "52768e828192e77b43d57f882594f304bcc79180",
     "publicProof": {
       "status": "PASS",
-      "runId": 35457983922,
-      "runUrl": "https://github.com/georg-doc/kayfabizarro/actions/runs/35457983922",
-      "publicationHead": "e56ae972d05e06c5112fe2de4314192c3e3c8110",
-      "checks": "17/17 PASS",
+      "runId": 35459726128,
+      "runUrl": "https://github.com/georg-doc/kayfabizarro/actions/runs/35459726128",
+      "publicationHead": "9a3345a01935fe87651ec49cea3afc19715f84ef",
+      "checks": "18/18 PASS",
       "screenshots": 5,
-      "artifactId": 10589300370,
+      "artifactId": 10589617618,
       "artifactName": "kfb-eye-rig-batch-public-stage-proof",
-      "artifactDigest": "sha256:db0ab0d5238d1e97890df21ea43333f1d6fd90aecafa5ae993b5c072b42dd16e",
+      "artifactDigest": "sha256:11202846c592b0147584b12b31629eada4f097c2ac45c8194312b7acb73e82fe",
       "errors": 0
     }
   },
@@ -68,7 +68,19 @@
       7
     ],
     "mode": "runtime-derived-geometry",
-    "policy": "FAIL_CLOSED"
+    "policy": "FAIL_CLOSED",
+    "measuredSeed": {
+      "method": "verified-source-components→skinned-vertex→world→FaceHost-local",
+      "status": "MEASURED_NOT_APPLIED",
+      "hostUnit": 0.77441,
+      "sourcePairSpanX": 1.31515,
+      "sourceVerticalAsymmetry": 0.08812,
+      "anchorCandidate": {
+        "dx": 0.84913,
+        "dy": -0.05142,
+        "ring": 0.06925
+      }
+    }
   },
   "pullRequest": {
     "number": 104,
@@ -81,17 +93,19 @@
     "jsSyntax": "3/3 PASS",
     "githubPersistence": "PASS",
     "localChromium": "ENVIRONMENT_UNAVAILABLE_2_PRE_APP_EGL_X_FAILURES",
-    "exactCloudflareUrl": "PASS_PLAYWRIGHT_GITHUB_ACTIONS_17_17_5_SCREENSHOTS"
+    "exactCloudflareUrl": "PASS_PLAYWRIGHT_GITHUB_ACTIONS_18_18_5_SCREENSHOTS"
   },
   "visualReview": {
     "status": "AUTO_CANDIDATE_NEEDS_TUNING",
     "observation": "Mount and motion attachment are technically clean; default ring=0.30 reads visibly oversized/protruding in Front/3/4/Side evidence.",
-    "firstAdjustmentHint": "Reduce eye size first; then tune inset and spacing before approval."
+    "firstAdjustmentHint": "Reduce eye size first; then tune inset and spacing before approval.",
+    "measurementFinding": "Verified source-eye baseline is dx=0.84913, dy=-0.05142, ring=0.06925; report-only and not applied.",
+    "nextGate": "Expose the verified measured baseline as a reversible preview for Georg comparison; no silent parameter promotion."
   },
   "handoffSurfaces": {
     "mainHubRouterStatusCommit": "8d534f013710d4aa57d1ca2baa7358b2957c35a5",
     "cloudflareHubMirrorHead": "aaf66bfa4e779c59aa7534998e1650a79551f6e4",
-    "stageRuntimeProofHead": "e56ae972d05e06c5112fe2de4314192c3e3c8110",
-    "note": "Router/Hub alignment only; proven Stage runtime unchanged."
+    "stageRuntimeProofHead": "9a3345a01935fe87651ec49cea3afc19715f84ef",
+    "note": "Latest Stage proof adds report-only source-eye measurement; visible candidate values remain unchanged."
   }
 }

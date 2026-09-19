@@ -152,3 +152,23 @@ Artifact:
 The screenshots prove the rig is present and attached across the tested views/motions. They also show that the current geometry seed is **not yet visually approved**: `ring=0.30` produces oversized/protruding eyes, especially in the 3/4 and side evidence.
 
 This is intentionally left as `AUTO_CANDIDATE`. Georg's next pass should reduce eye size first, then tune inset/spacing before approving the profile.
+
+
+## SOURCE-MEASURED SEED · PUBLIC REPORT-ONLY PROOF
+
+Run: `35459726128`  
+Stage head: `9a3345a01935fe87651ec49cea3afc19715f84ef`  
+Result: **18 / 18 PASS**, **5 screenshots**, **0 runtime/page errors**.
+
+Additional gate added to the previous 17-check suite:
+
+- `source-measured seed report-only` = PASS;
+- exact source components 6 + 7 transformed through skinned vertices → world → FaceHost-local;
+- candidate values: `dx=0.84913`, `dy=-0.05142`, `ring=0.06925`;
+- measurement status: `MEASURED_NOT_APPLIED`;
+- visible EyeRig seed remained unchanged during this proof.
+
+Artifact:
+- id: `10589617618`
+- digest: `sha256:11202846c592b0147584b12b31629eada4f097c2ac45c8194312b7acb73e82fe`
+- name: `kfb-eye-rig-batch-public-stage-proof`.

@@ -111,3 +111,26 @@ Georg tunes Eye size first, then Inset and spacing/vertical, checks the standard
 - Stage runtime itself was not changed after the successful proof head `e56ae972d05e06c5112fe2de4314192c3e3c8110`;
 - PR #104 stays Draft/Open/Unmerged;
 - next gate remains Georg's visual tuning/acceptance.
+
+
+## 2026-09-19 · Checkpoint 6 · SOURCE-MEASURED SEED · REPORT ONLY
+
+### IMPLEMENTATION
+- added FaceHost-local measurement of the already verified GothGirl source-eye components;
+- measurement uses actual skinned vertices and the existing FaceHost transform;
+- wired measurement into the runtime report only;
+- **did not apply** measured values to the visible EyeRig or approved profile.
+
+### TESTED RESULT
+- Cloudflare Stage proof run `35459726128`: **18/18 PASS**;
+- screenshots: **5**;
+- runtime/page errors: **0**;
+- measured normalized source baseline: `dx=0.84913 · dy=-0.05142 · ring=0.06925`;
+- measurement status: `MEASURED_NOT_APPLIED`.
+
+### PUBLIC DEPLOYMENT
+- report-only Stage head: `9a3345a01935fe87651ec49cea3afc19715f84ef`;
+- direct route unchanged: `https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/eye-rig-batch/`.
+
+### NEXT GATE
+Expose this verified source baseline as an explicit reversible preview for Georg. Do not silently replace the current candidate and do not merge/promote Live.
