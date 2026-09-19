@@ -11,6 +11,10 @@ Before using this handoff, read:
 
 `GEORG_REVIEW_FAIL_C0_2026-09-19.md`
 
+Also read the process/root-cause postmortem:
+
+`POSTMORTEM_C0_BRIEFING_INTENT_EXECUTION_2026-09-19.md`
+
 The later C0 consumer proof produced a **GEORG VISUAL REVIEW FAIL**. `juggle-cascade-v1` is **not accepted**; arm/catch/club-clearance review remains open. Technical mount/browser PASS must not be interpreted as visual acceptance.
 
 ## GOAL
@@ -124,6 +128,14 @@ WSA can close this handoff when all of the following are explicit:
 7. Return identifies whether the module seam is accepted, needs tuning or is rejected;
 8. no githack/raw-CDN review URL is introduced.
 
+## NEXT BOUNDED SLICE
+
+Georg approved **Resident Clown Activity Repair R0 as the sole next implementation slice**. Implementation has not started:
+
+`tools/KFB-ToolBox/_handover/RESIDENT_CLOWN_ACTIVITY_REPAIR_2026-09-19/START_HERE.md`
+
+This next slice repairs only the Resident-owned Clown activity. It does not repair C0 UI/scale or integrate Platformer/Race/Travel.
+
 ## ONE HUMAN REVIEW QUESTION
 
-**Is the Clown 3-club loop visually good enough in height, tempo, catches and arm motion to accept `juggle-cascade-v1` as the first reusable Resident Activity contract before WSA mounts it into the Platformer?**
+**After R0 implementation: do the arms, catches and three club paths read as believable juggling without clubs visibly crossing the Clown's head/torso?**

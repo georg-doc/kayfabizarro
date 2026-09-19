@@ -91,4 +91,33 @@ See `BACKLOG.md`.
 
 The one immediate human gate remains:
 
-**Accept / tune / reject the visual 3-club loop before Platformer integration.**
+**After R0 implementation: do the arms, catches and three club paths read as believable juggling without clubs visibly crossing the Clown's head/torso?**
+
+
+## 2026-09-19 GEORG VISUAL REVIEW FAIL
+
+Later C0 consumer evidence did **not** visually accept the Resident activity.
+
+Current status split:
+
+- `TESTED RESULT`: earlier mount/advance/browser technical checks remain historically valid;
+- `PUBLIC DEPLOYMENT`: Resident deep link remains publicly reachable;
+- `GEORG ACCEPTANCE`: **FAIL · NOT ACCEPTED**;
+- `OPEN`: arm throw/catch readability, club mesh vs body clearance, visual cascade quality.
+
+Process/root-cause postmortem:
+
+`POSTMORTEM_C0_BRIEFING_INTENT_EXECUTION_2026-09-19.md`
+
+Next bounded implementation briefing:
+
+`tools/KFB-ToolBox/_handover/RESIDENT_CLOWN_ACTIVITY_REPAIR_2026-09-19/START_HERE.md`
+
+Do not proceed to Platformer consumer integration, C0 scale repair or C0 UI repair before that owner-lane activity gate is addressed.
+
+
+## GEORG SEQUENCING DECISION
+
+Georg approved Resident Clown Activity Repair R0 as the sole next implementation slice on 2026-09-19.
+
+Implementation is still `NOT STARTED`; this decision does not pre-accept the repaired animation.

@@ -13,10 +13,11 @@ A chat is not the archive, GitHub is not the test surface, and a successful comm
 
 ## 1. Recover exact truth
 
-1. Read `skills/chat/START_HERE.md`, this workflow and the named project brief.
+1. Read `skills/chat/START_HERE.md`, this workflow, `skills/chat/FRESH_CHAT_SLICE_PROTOCOL.md`, `skills/chat/BOUNDED_PRODUCTION_SLICE_CONTRACT.md` and the named project brief.
 2. Fetch the current project default-branch head and any active PR immediately before writing.
 3. GitHub state overrides chat memory, screenshots and old handovers.
 4. Name one owner, one bounded outcome, one branch and one Stage route.
+5. State the human review question before implementation. If materially different interpretations remain plausible, resolve them or stop at `INTENT AMBIGUOUS · HUMAN GATE REQUIRED`.
 
 ## 2. Save in small checkpoints
 

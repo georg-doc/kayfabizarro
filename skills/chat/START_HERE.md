@@ -16,7 +16,7 @@ It does not replace project SSOTs, current tools, or canonical skills. It tells 
 5. If the task points to a shared intake package, apply `INBOX_PROTOCOL.md` before treating anything there as current truth.
 6. Load only the current skills required for the task.
 7. Apply the provider adapter only after the provider-neutral SOP.
-8. For a bounded fresh-chat/module/POC slice, also apply `FRESH_CHAT_SLICE_PROTOCOL.md`.
+8. For a bounded fresh-chat/module/POC slice, apply `FRESH_CHAT_SLICE_PROTOCOL.md` and `BOUNDED_PRODUCTION_SLICE_CONTRACT.md` before implementation.
 9. For every Web/Claude/Codex delivery, apply `CHAT_GITHUB_KFB_STAGE_WORKFLOW.md` before writing or publishing.
 10. Record decisions and results additively.
 
@@ -33,6 +33,7 @@ If this is a replacement/fresh chat after context loss, use `RECOVERY_PATH.md` r
 - A donor PASS is not an integration PASS.
 - A numerical PASS is not a browser PASS.
 - A browser PASS is not Georg's visual/freeplay acceptance.
+- Before visual implementation, state the human review question. If materially different interpretations remain plausible, do not choose silently; resolve or stop at an explicit human gate.
 - Legacy files remain useful evidence but are not current merely because they exist.
 - Meta indexes may contain stale version/status/count snapshots; verify operational claims in the current project/tool SSOT.
 - Inbox files are inputs, not SSOTs, until a receiving owner accepts/pins them.
@@ -57,6 +58,7 @@ If this is a replacement/fresh chat after context loss, use `RECOVERY_PATH.md` r
 - `town/START_HERE.md` + `town/LIVING_KFB_TOWN.md` — current KFB Town ideation home
 - `RECOVERY_PATH.md` — deterministic recovery after chat/context failure
 - `FRESH_CHAT_SLICE_PROTOCOL.md` — bounded cold-start work and compact next-day review packet
+- `BOUNDED_PRODUCTION_SLICE_CONTRACT.md` — intent-resolution, donor-isolation, post-write verification and Cloudflare-only human-test contract
 - `CHAT_GITHUB_KFB_STAGE_WORKFLOW.md` — binding Chat → GitHub → Cloudflare Stage → Hub delivery and timeout recovery
 - `WEB_PROJECT_FOLDER_INSTRUCTIONS.md` — copy-ready instruction text for Web project folders
 - `templates/CLAUDE_DESIGN_FAILURE_RECOVERY_EXPORT.md` — stop/export/post-mortem template after repeated visual or kit failures

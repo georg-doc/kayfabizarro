@@ -5,7 +5,7 @@ Date: 2026-09-19
 Owner: Georg / KFB
 Purpose: cold starts, parallel web chats, bounded modules and POCs
 
-Use this after `START_HERE.md`, `PRODUCTION_SOP.md` and `CHAT_GITHUB_KFB_STAGE_WORKFLOW.md`. It helps a chat finish one useful slice independently and hand it back for a compact Work review. It does not create a new owner, SSOT, runtime, architecture or merge right.
+Use this after `START_HERE.md`, `PRODUCTION_SOP.md`, `CHAT_GITHUB_KFB_STAGE_WORKFLOW.md` and `BOUNDED_PRODUCTION_SLICE_CONTRACT.md`. It helps a chat finish one useful slice independently and hand it back for a compact Work review. It does not create a new owner, SSOT, runtime, architecture or merge right.
 
 ## 1. Recover before changing anything
 
@@ -23,6 +23,10 @@ Write down five lines before implementation:
 - **Source:** exact repository/ref plus named donors.
 - **Protected boundary:** what this slice must not replace or retune.
 - **Done when:** the smallest real check that proves the slice works.
+- **Human review question:** the one visible/human decision this slice is meant to enable.
+- **Branch / Stage:** the review branch and fixed Cloudflare Stage target.
+
+If the brief still permits materially different reasonable interpretations after reading the current sources, do not choose one silently. Resolve the ambiguity from owner documents or stop at `INTENT AMBIGUOUS · HUMAN GATE REQUIRED` before implementation.
 
 A module/POC stays a candidate until its receiving owner explicitly accepts it. Do not turn “while here” ideas into hidden extra scope; record them as `DEFERRED` or `PROPOSAL`.
 

@@ -69,6 +69,12 @@ Smallest correct next slice is inside the existing Resident Atlas owner lane:
 
 Only after that should a consumer shared-scale proof or C0 UI rebuild continue.
 
+## GEORG SEQUENCING DECISION
+
+Georg approved **Resident Clown Activity Repair R0 as the sole next implementation slice** on 2026-09-19.
+
+Implementation is still `NOT STARTED`; repaired-animation acceptance remains open.
+
 ## ONE OPEN HUMAN REVIEW QUESTION
 
-**Should WSA take only the Resident-Clown activity repair as the next bounded slice before any C0.1 scale/UI work continues?**
+**After R0 implementation: do the arms, catches and three club paths read as believable juggling without clubs visibly crossing the Clown's head/torso?**

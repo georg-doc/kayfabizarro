@@ -234,3 +234,14 @@ All three prepare the same neutral materialize/enter/instance/result/return cont
 
 ### HUB ROUTING
 Keep the existing briefing IDs for stable filters, but point them to the new standalone briefs and updated copyable start texts.
+
+
+## 2026-09-19 · Bounded Production Slice Contract · intent gate
+
+- added `skills/chat/BOUNDED_PRODUCTION_SLICE_CONTRACT.md` as a current coordination reference;
+- added mandatory pre-implementation `HUMAN REVIEW QUESTION` and explicit stop state `INTENT AMBIGUOUS · HUMAN GATE REQUIRED`;
+- reinforced donor-isolation proof, shared-scale visual comparison rules, post-write branch/file verification, Cloudflare-only human test links and the two-pass stop rule;
+- linked the contract from `START_HERE.md`, `FRESH_CHAT_SLICE_PROTOCOL.md`, `CHAT_GITHUB_KFB_STAGE_WORKFLOW.md` and `REGISTRY.json`;
+- recorded the C0 Baukasten failure as three separate causes: briefing gap, intent-resolution failure and execution failure;
+- prepared `tools/KFB-ToolBox/_handover/RESIDENT_CLOWN_ACTIVITY_REPAIR_2026-09-19/START_HERE.md` as the sole next WSA implementation brief;
+- no Resident runtime, animation, collision, movement, camera or deployment owner changed in this documentation slice.

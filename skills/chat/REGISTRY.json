@@ -47,6 +47,21 @@
       "note": "Bounded autonomous execution and compact review-packet contract. It never grants new implementation ownership or automatic merge authority."
     },
     {
+      "id": "bounded-production-slice-contract",
+      "kind": "coordination",
+      "status": "CURRENT_REFERENCE",
+      "version": "1.0",
+      "path": "skills/chat/BOUNDED_PRODUCTION_SLICE_CONTRACT.md",
+      "loadWhen": [
+        "bounded production slice",
+        "visual comparison",
+        "human review gate",
+        "fresh chat implementation",
+        "Stage publication"
+      ],
+      "note": "Adds explicit human-review-question and intent-resolution gates, donor-isolation proof, shared-scale comparison rules, post-write verification and Cloudflare-only human test links. It sharpens but does not replace the Fresh Chat / Stage workflows."
+    },
+    {
       "id": "claude-design-failure-recovery",
       "kind": "coordination",
       "status": "CURRENT_REFERENCE",
@@ -442,5 +457,6 @@
       "note": "Source-version audit, read-only probes and integration proposals. WaterBowser is Georg's new model selection; no conversion, runtime promotion, owner change or replacement ChatterBox master. Prefer verified newer donor versions over uploaded v10 snapshots."
     }
   ],
-  "failureRecoveryTemplate": "skills/chat/templates/CLAUDE_DESIGN_FAILURE_RECOVERY_EXPORT.md"
+  "failureRecoveryTemplate": "skills/chat/templates/CLAUDE_DESIGN_FAILURE_RECOVERY_EXPORT.md",
+  "boundedProductionSliceContract": "skills/chat/BOUNDED_PRODUCTION_SLICE_CONTRACT.md"
 }
