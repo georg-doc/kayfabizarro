@@ -218,3 +218,34 @@ No runtime state machine, consumer movement, Registry schema or Animation Lab im
 
 ### NEXT GATE
 **KCL-M1 · Locomotion Sync Bench** — one current Rig_Medium actor, Walking_A/B/C + Running_A/B only, measurement and A/B evidence before any consumer integration.
+
+
+## 2026-09-19 · GDS-08 · KCL-M1 measured locomotion proof
+
+### IMPLEMENTATION
+Built `research/kcl-m1-locomotion-sync/` as a bounded measurement/QA consumer of the exact current ActionFigure / Rig_Medium and MovementBasic library. It reuses existing Travel foot-sampling/root-cleaning concepts and the one-mixer-per-host rule without importing consumer movement.
+
+### TESTED RESULT
+- source/static: **20/20 PASS**;
+- first local run measured 5/5 clips but exposed a proof-harness source-metadata bug;
+- Repair Pass 1 changed proof scripts only;
+- second local browser run: **39/39 PASS**;
+- run `35468444150`, job `105964939873`;
+- artifact `10591764219`;
+- digest `sha256:55b8cc47723a64fc9c633ad46e2008a446d666ba724d02fed6242c17354de75e`;
+- 0 failed resources / 0 page-console errors.
+
+### MEASURED CANDIDATES
+- Walking_C ~0.447
+- Walking_A ~0.611
+- Walking_B ~0.751
+- Running_A ~2.480
+- Running_B ~0.284 — **AUTO_METRIC_AMBIGUOUS_HOLD**
+
+These are reference-speed candidates, not approved game speeds.
+
+### PUBLIC
+The fixed pages.dev Stage target exists in source but is **NOT PUBLIC_VERIFIED**. KCL marker polling returned HTML fallback; independent pre-KCL and subsequent workflows show the same repo-wide Cloudflare deployment failure. No animation repair is justified by that public failure.
+
+### NEXT GATE
+Restore current Cloudflare publication, rerun the unchanged KCL public proof, then Georg compares the visible naive/phase-sync A/B. No consumer integration before human review.
