@@ -6,14 +6,12 @@ const $=id=>document.getElementById(id);
 const escapeHtml=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 export async function installBoxStop(port,environment){
   const source=await loadSources(),factory=vehicleFactory(source),pit=createPitPresentation(),hud=createInstruments(),saved=readSaved();
-  const prefs=saved.vehicles||{},votes=saved.votes||{};let mode='drive',active=null,draft=null,requested='car-hatchback',loadToken=0,loading=false,counterElapsed=0,counterLast=0,toastTimer=0,radio=null,lastRadioTitle='',dragX=null,stageRect=null,failures=[];
+  const prefs=saved.vehicles||{},votes=saved.votes||{};let mode='drive',active=null,draft=null,requested='car-hatchback',loadToken=0,loading=false,counterElapsed=0,counterLast=0,toastTimer=0,radio=null,lastRadioTitle='',dragX=null,stageRect=null,failures=[],audioPrev=null;
   let reduced=!!saved.reducedMotion||matchMedia('(prefers-reduced-motion: reduce)').matches;
   const block=on=>{window.__KFB_BOX_BLOCK_INPUT__=on;port.box.pause(on||document.hidden)};
   document.body.insertAdjacentHTML('beforeend',`
     <div id="boxToast" role="status" hidden></div>
     <div class="driveStatus"><span id="boxDriving">Hatchback</span> · <span id="boxResponse">Deformer</span></div>
-    <div id="radioControls" aria-label="Car radio"><button id="radioPlay">Play</button><button id="radioNext" title="Next track">Next</button><button id="radioMore" title="Radio settings">···</button><input id="radioVolume" type="range" min="0" max="1" step="0.01" value="0.45" aria-label="Music volume"></div>
-    <section id="radioMorePanel" hidden><b>KFB Radio</b><p id="radioCatalogLabel" class="subtle">Repository jukebox · loading</p><select id="radioTrack" aria-label="Music track"></select><p id="radioState" class="subtle radioState">Ready · press Play</p><p class="subtle">Adaptive A1 soundscape: awaiting original source. No replacement synthesis is playing.</p><label class="subtle"><input id="reducedMotion" type="checkbox"> Steady instruments</label></section>
     <section id="boxOverlay" role="dialog" aria-modal="true" aria-labelledby="boxTitle" hidden>
       <header><div><div class="eyebrow">KFB / TEST GARAGE</div><h1 id="boxTitle">Box Stop</h1></div><span class="muted">Choose a shell. Take it for a lap.</span><button id="boxClose">Back to drive</button></header>
       <aside id="vehicleListPanel"><label class="heading" for="vehicleSearch">Vehicle collection</label><input id="vehicleSearch" type="search" placeholder="Find a vehicle…" autocomplete="off"><div id="vehicleList" role="listbox" aria-label="Vehicle candidates"></div><p class="subtle">43 source-backed candidates.<br>No driver rigs.</p><details class="sourceInfo"><summary>Unresolved source requests</summary><p>Space Base Bits: three original handoff requests remain outside this delivered 43-model set. No fabricated model paths.</p></details></aside>
@@ -50,7 +48,7 @@ export async function installBoxStop(port,environment){
       candidate.configure(prefs[id]||{});const old=draft;draft=candidate;pit.mount(draft);old?.dispose();loading=false;updateDetails(draft);$('testLap').disabled=false;
     }catch(e){if(token!==loadToken)return;loading=false;failures.push({id,message:e.message});$('boxStatus').textContent='Could not load this candidate. The last valid vehicle is preserved. '+e.message;$('testLap').disabled=!draft;toast('Vehicle source failed; no model was replaced.');}
   }
-  async function open(){if(mode==='box')return;mode='box';block(true);hud.counter('',0);$('labPanel').hidden=true;$('miniWrap').hidden=true;$('radioMorePanel').hidden=true;
+  async function open(){if(mode==='box')return;mode='box';block(true);hud.counter('',0);$('labPanel').hidden=true;$('miniWrap').hidden=true;
     document.body.classList.add('body-box');$('boxOverlay').hidden=false;$('vehicleSearch').value='';stageRect=$('previewStage').getBoundingClientRect();
     requested=active?.row.id||'car-hatchback';drawList();$('boxClose').focus();await select(requested);
   }
@@ -80,27 +78,47 @@ export async function installBoxStop(port,environment){
   addEventListener('keydown',e=>{if(e.repeat||e.target.closest?.('input,select,textarea'))return;if(e.code==='KeyB'){e.preventDefault();open()}if(e.code==='KeyV'){e.preventDefault();compare()}});
   addEventListener('resize',()=>stageRect=$('previewStage').getBoundingClientRect());
   document.addEventListener('visibilitychange',()=>{counterLast=performance.now();port.box.pause(mode!=='drive'||document.hidden)});
-  $('radioMore').onclick=()=>{$('radioMorePanel').hidden=!$('radioMorePanel').hidden};$('reducedMotion').checked=reduced;hud.setReduced(reduced);
-  $('reducedMotion').onchange=e=>{reduced=e.target.checked;hud.setReduced(reduced);persist()};
-  try{radio=await createRadio(i=>{lastRadioTitle=i.title;hud.setTitle(i.title);$('radioPlay').textContent=i.playing?'Pause':'Play';$('radioState').textContent=i.error|| (i.playing?'Playing · ':'Ready · ')+i.title;if($('radioTrack').options.length)$('radioTrack').value=String(i.index)});
-    $('radioCatalogLabel').textContent=radio.snapshot().stageMode?`Repository jukebox · ${radio.tracks.length} tracks · RoadTrip v2 Stage`:`Repository jukebox · ${radio.tracks.length} tracks`;
-    $('radioTrack').innerHTML=radio.tracks.map((t,i)=>`<option value="${i}">${escapeHtml(t.title)}</option>`).join('');$('radioTrack').onchange=e=>radio.choose(+e.target.value);
-    $('radioPlay').onclick=()=>radio.toggle();$('radioNext').onclick=()=>radio.next();$('radioVolume').oninput=e=>radio.setVolume(+e.target.value);
-  }catch(e){$('radioState').textContent='Jukebox source unavailable.';$('radioPlay').disabled=true;failures.push({component:'radio',message:e.message})}
+  hud.setReduced(reduced);document.body.classList.add('box-instruments-3d');
+  function primeAudio(t){audioPrev={boost:!!t.boostActive,airborne:!!t.airborne,drift:!!t.driftActive,regrip:!!t.regrip,railHits:t.railHits||0}}
+  function audioFrame(t){
+    if(!radio||mode!=='drive'){audioPrev=null;return}
+    if(!audioPrev){primeAudio(t);return}
+    if(t.boostActive&&!audioPrev.boost)radio.trigger('boost',{strength:.95});
+    if(!t.boostActive&&audioPrev.boost)radio.trigger('boostRelease',{strength:.6});
+    if(t.airborne&&!audioPrev.airborne)radio.trigger('jump',{strength:.8});
+    if(!t.airborne&&audioPrev.airborne)radio.trigger('land',{strength:.65+.35*clamp(t.landingImpulse||0,0,1)});
+    if(t.driftActive&&!audioPrev.drift)radio.trigger('drift',{strength:.62,pan:clamp(t.driftDirection||0,-1,1)*.45});
+    if(t.regrip&&!audioPrev.regrip)radio.trigger('regrip',{strength:.62});
+    if((t.railHits||0)>audioPrev.railHits)radio.trigger('rail',{strength:.75+.25*clamp(t.railImpact||0,0,1),pan:clamp(t.impactSide||0,-1,1)*.7});
+    primeAudio(t);
+  }
+  async function instrumentAction(action){
+    if(!radio)return false;hud.press(action);await radio.resume();
+    const snap=radio.snapshot();
+    if(action==='radio.play')radio.toggle();
+    else if(action==='radio.next')radio.next();
+    else if(action==='radio.volDown')radio.setVolume(Math.max(0,snap.volume-.12));
+    else if(action==='radio.volUp')radio.setVolume(Math.min(1,snap.volume+.12));
+    return true;
+  }
+  addEventListener('pointerdown',e=>{if(mode!=='drive')return;const action=hud.hitTest(e.clientX,e.clientY);if(action)instrumentAction(action)});
+  addEventListener('keydown',()=>{radio?.resume()}, {capture:true});
+  try{radio=await createRadio(i=>{lastRadioTitle=i.title;hud.setRadioState(i)});hud.setRadioState(radio.snapshot())}
+  catch(e){failures.push({component:'radio',message:e.message});hud.setRadioState({title:'RADIO OFF',playing:false,volume:0})}
   try{active=await factory.load(source.fixtures.ALL.some(r=>r.id===saved.selected)?saved.selected:'car-hatchback')}catch{active=await factory.load('car-hatchback')}
   active.configure(prefs[active.row.id]||{});port.box.mount(active.root);port.box.setMode(active.info().mode);driveLabel();
-  port.box.onReset(()=>{active?.reset()});
+  port.box.onReset(()=>{active?.reset();audioPrev=null});
   port.box.onFrame((dt,t)=>{
     active?.update(dt,t,mode==='drive'&&!document.hidden);
     if(mode==='countdown'&&!document.hidden){const now=performance.now();counterElapsed+=(now-counterLast)/1000;counterLast=now;const n=3-Math.floor(counterElapsed);hud.counter(n>0?String(n):'GO',counterElapsed%1);
       if(counterElapsed>=3.45){mode='drive';block(false);hud.counter('',0);toast('WASD / arrows · Q/E drift · Shift boost · Space jump · B Box Stop · V compare')}}
-    hud.update(dt,t,document.activeElement?.closest?.('#radioControls,#radioMorePanel')||$('radioControls').matches(':hover'));
+    audioFrame(t);hud.update(dt,t);
   });
   port.box.drawWith((renderer,draw,scene,camera)=>{if(mode==='box'){
       renderer.setClearColor('#171910',1);renderer.clear();pit.draw(renderer,draw,stageRect);
     }else{draw(scene,camera);hud.draw(renderer,draw)}});
   $('buildLabel').textContent='BOX1 · v0.8 + ENV1';
-  window.__KFB_BOX__=Object.freeze({open,close,testLap,select,compare,snapshot:()=>({build:'BOX1-20260918',mode,loading,requested,active:active?.info(),draft:draft?.info(),count:source.fixtures.ALL.length,votes:structuredClone(votes),failures:structuredClone(failures),race:port.box.state(),host:port.box.diagnostics(),radio:radio?.snapshot(),instruments:hud.snapshot()}),
+  window.__KFB_BOX__=Object.freeze({open,close,testLap,select,compare,instrumentAction,audioTrigger:(name,options)=>radio?.trigger(name,options),snapshot:()=>({build:'BOX1-20260918',mode,loading,requested,active:active?.info(),draft:draft?.info(),count:source.fixtures.ALL.length,votes:structuredClone(votes),failures:structuredClone(failures),race:port.box.state(),host:port.box.diagnostics(),radio:radio?.snapshot(),instruments:hud.snapshot()}),
     // Existing source candidates; diagnostic access does not accept them for Georg.
     candidates:source.fixtures.ALL.map(r=>({id:r.id,label:r.label,sourcePath:r.path,pin:r.pin})),radio});
   window.__KFB_BOX_READY__=true;return window.__KFB_BOX__;
