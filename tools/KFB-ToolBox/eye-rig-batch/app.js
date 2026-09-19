@@ -8,13 +8,30 @@ const DONOR_PIN = '5650b6c54d8789b20ea80abe857688173d506d3b';
 const DONOR_CDN = `https://cdn.jsdelivr.net/gh/georg-doc/kayfabizarro@${DONOR_PIN}/`;
 const ANIM_PIN = 'aa16a777a970f23d3f11fb3c23dc40718b04fa88';
 const ANIM_CDN = `https://cdn.jsdelivr.net/gh/georg-doc/kayfabizarro@${ANIM_PIN}/`;
-const CATALOG_URL = './data/rig-medium-actors.v0.json';
-const GENERAL_URL = ANIM_CDN + 'media/3D_Assets/KayKit_Character_Animations_1.1/Animations/gltf/Rig_Medium/Rig_Medium_General.glb';
-const MOVE_URL = ANIM_CDN + 'media/3D_Assets/KayKit_Character_Animations_1.1/Animations/gltf/Rig_Medium/Rig_Medium_MovementBasic.glb';
+const CLASS_CONFIG = {
+  Rig_Medium:{
+    label:'Medium',
+    catalogUrl:'./data/rig-medium-actors.v0.json',
+    seedUrl:'./data/rig-medium-default.v0.json',
+    defaultActor:'gothgirl',
+    generalUrl:ANIM_CDN+'media/3D_Assets/KayKit_Character_Animations_1.1/Animations/gltf/Rig_Medium/Rig_Medium_General.glb',
+    moveUrl:ANIM_CDN+'media/3D_Assets/KayKit_Character_Animations_1.1/Animations/gltf/Rig_Medium/Rig_Medium_MovementBasic.glb',
+    requiredClips:['Idle_A','Walking_A','Running_A','Jump_Full_Short']
+  },
+  Rig_Large:{
+    label:'Large',
+    catalogUrl:'./data/rig-large-actors.v0.json',
+    seedUrl:'./data/rig-large-default.v0.json',
+    defaultActor:'monstrosity',
+    generalUrl:ANIM_CDN+'media/3D_Assets/KayKit_Character_Animations_1.1/Animations/gltf/Rig_Large/Rig_Large_General.glb',
+    moveUrl:ANIM_CDN+'media/3D_Assets/KayKit_Character_Animations_1.1/Animations/gltf/Rig_Large/Rig_Large_MovementBasic.glb',
+    requiredClips:['Idle_A','Walking_A','Running_A']
+  }
+};
 const CONTRACT_URL = DONOR_CDN + 'tools/KFB-ToolBox/kfb-rigs-embed-v3/contracts/kfb-pet-graft-driver.v4.json';
 function actorUrl(actor){ return encodeURI(`https://cdn.jsdelivr.net/gh/georg-doc/kayfabizarro@${actor.revision}/${actor.path}`); }
+function classConfig(rigClass=state.rigClass){ return CLASS_CONFIG[rigClass] || CLASS_CONFIG.Rig_Medium; }
 const STORAGE_KEY = 'kfb.toolbox.eye-rig-batch.v0';
-const MEDIUM_SEED_URL = './data/rig-medium-default.v0.json';
 const $ = (q) => document.querySelector(q);
 const $$ = (q) => [...document.querySelectorAll(q)];
 const clone = (v) => JSON.parse(JSON.stringify(v));
@@ -22,13 +39,15 @@ const logLines = [];
 let bootError = null;
 
 const state = {
-  seed: null, mediumSeed: null, catalog: [], profile: null, profiles: {}, approved: null, pendingImport: null,
-  currentActor: null, currentActorId: null, rosterFilter: 'all', switching: false, loader: null,
-  figure: null, stageRoot: null, cleanup: null, eyes: null, mixer: null,
-  componentDiagnosticRestore: null, qaLast: null, savedLegacyDefault: false,
-  selectedActors: new Set(['gothgirl']), trackingMode: 'life', fixedGaze: [0,0],
-  clips: new Map(), currentAction: null, currentMotion: 'bind', currentView: 'front',
-  expression: 'neutral', sourceReady: false, cleanupReady: false, hostReady: false, eyeReady: false, motionReady: false
+  seed:null, classSeeds:{}, catalogs:{}, rigClass:'Rig_Medium', catalog:[],
+  profile:null, profiles:{}, approvedProfiles:{}, pendingImport:null,
+  currentActor:null, currentActorId:null, currentActorByClass:{}, rosterFilter:'all', switching:false, loader:null,
+  figure:null, stageRoot:null, cleanup:null, eyes:null, mixer:null,
+  componentDiagnosticRestore:null, qaLast:null, savedLegacyDefault:false,
+  selectedByClass:{Rig_Medium:new Set(['gothgirl']),Rig_Large:new Set(['monstrosity'])},
+  selectedActors:new Set(['gothgirl']), trackingMode:'life', fixedGaze:[0,0],
+  clips:new Map(), currentAction:null, currentMotion:'bind', currentView:'front',
+  expression:'neutral', sourceReady:false, cleanupReady:false, hostReady:false, eyeReady:false, motionReady:false
 };
 
 function log(msg) {
@@ -45,13 +64,16 @@ function sourceRef() {
 function readSaved() { try { return JSON.parse(localStorage.getItem(STORAGE_KEY) || 'null'); } catch { return null; } }
 function save() {
   if(state.profile?.actorId) state.profiles[state.profile.actorId]=clone(state.profile);
+  state.selectedByClass[state.rigClass]=state.selectedActors;
+  const classDefaults={};
+  for(const [k,v] of Object.entries(state.classSeeds)) classDefaults[k]=v?.authoringDefault||null;
   localStorage.setItem(STORAGE_KEY, JSON.stringify({
     profiles:state.profiles,
-    profile:state.profile,
-    approved:state.approved,
-    classDefault:state.mediumSeed?.authoringDefault || null,
-    selectedActors:[...state.selectedActors],
-    currentActorId:state.currentActorId,
+    approvedProfiles:state.approvedProfiles,
+    classDefaults,
+    selectedByClass:Object.fromEntries(Object.entries(state.selectedByClass).map(([k,v])=>[k,[...v]])),
+    currentRigClass:state.rigClass,
+    currentActorByClass:state.currentActorByClass,
     rosterFilter:state.rosterFilter
   }));
 }
@@ -61,9 +83,12 @@ function isLegacyUntunedProfile(p) {
   return p?.actorId==='gothgirl' && p?.status==='AUTO_CANDIDATE' &&
     near(p?.eye?.anchor?.ring,0.30) && near(p?.eye?.pupilSize,0.50) && !p?.eye?.baseColor;
 }
+function currentClassSeed(){ return state.classSeeds[state.rigClass] || null; }
 function classEyeDefault() {
-  return clone(state.mediumSeed?.authoringDefault?.eye || state.seed?.eye || {});
+  const seed=currentClassSeed();
+  return clone(seed?.authoringDefault?.eye || seed?.calibrationStart?.eye || state.seed?.eye || {});
 }
+function hasAcceptedClassDefault(rigClass=state.rigClass){ return !!state.classSeeds[rigClass]?.authoringDefault?.eye; }
 function applyAuthoringDefaultToProfile(profile=state.profile, { markSession=true }={}) {
   if (!profile) return null;
   const d=classEyeDefault(), actorBase=profile.eye?.baseColor || profile.sourceFace?.faceColor || state.seed?.sourceFace?.faceColor;
@@ -85,22 +110,21 @@ function applyAuthoringDefaultToProfile(profile=state.profile, { markSession=tru
   };
   profile.inheritance={
     order:['rigClass','character','session'],
-    rigClass:profile.rigClass || 'Rig_Medium',
-    classSeed:'data/rig-medium-default.v0.json',
+    rigClass:profile.rigClass || state.rigClass,
+    classSeed:classConfig(profile.rigClass || state.rigClass).seedUrl.replace('./',''),
     characterId:profile.actorId,
     sessionAdjusted:!!markSession
   };
   profile.status='AUTO_CANDIDATE';
   return profile;
 }
-
 function actorById(id){ return state.catalog.find((a)=>a.id===id) || null; }
 function makeActorProfile(actor) {
   const p=clone(state.seed);
   const d=classEyeDefault();
   p.actorId=actor.id;
   p.source={repo:'georg-doc/kayfabizarro',path:actor.path,revision:actor.revision};
-  p.rigClass='Rig_Medium';
+  p.rigClass=actor.rigClass;
   p.sourceFace={
     headMesh:null, expectedConnectedComponents:null, connectedComponents:null, eyeComponents:[],
     pairConfidence:0, femaleOuterLashCandidate:'UNRESOLVED', removalMode:actor.cleanup?.mode||'auto-mirrored-front-pair',
@@ -118,7 +142,7 @@ function makeActorProfile(actor) {
   };
   p.status='AUTO_CANDIDATE';
   p.reviewState='UNREVIEWED';
-  p.inheritance={order:['rigClass','character','session'],rigClass:'Rig_Medium',classSeed:'data/rig-medium-default.v0.json',characterId:actor.id,sessionAdjusted:false};
+  p.inheritance={order:['rigClass','character','session'],rigClass:actor.rigClass,classSeed:classConfig(actor.rigClass).seedUrl.replace('./',''),characterId:actor.id,sessionAdjusted:false};
   p.evidence={camera:'front',motionClip:'bind',sourceEyeCleanupVisuallyAccepted:false,eyeProfileVisuallyApproved:false};
   return p;
 }
@@ -156,7 +180,7 @@ function renderRoster() {
       <input class="actor-select" data-select-id="${a.id}" type="checkbox" ${checked?'checked':''} aria-label="Select ${a.label}">
       <button class="actor-card ${current?'selected':''}" data-actor-id="${a.id}" type="button">
         <span class="actor-icon">${a.initials||a.label.slice(0,2).toUpperCase()}</span>
-        <span class="actor-copy"><strong>${a.label}</strong><small>Rig_Medium · ${rs.replaceAll('_',' ')}</small></span>
+        <span class="actor-copy"><strong>${a.label}</strong><small>${a.rigClass} · ${rs.replaceAll('_',' ')}</small></span>
         <span class="dot ${reviewClass(rs)}" title="${rs}"></span>
       </button>
     </div>`;
@@ -220,13 +244,47 @@ function setTrackingMode(mode, persist=true) {
   }
   if(persist) save();
 }
+function updateClassUi() {
+  const cfg=classConfig();
+  const title=$('#rigClassTitle'); if(title) title.textContent=state.rigClass;
+  const marker=$('#rigClassMarker'); if(marker) marker.textContent=state.rigClass==='Rig_Large'
+    ? 'Rig_Large · calibrate Monstrosity first · PR #104'
+    : 'Rig_Medium · 27 actor review · PR #104';
+  const hint=$('#classStatusHint');
+  if(hint) hint.textContent=state.rigClass==='Rig_Large'
+    ? (hasAcceptedClassDefault('Rig_Large') ? 'Large default set from Monstrosity · review the other Large actors' : 'No Large default yet · tune Monstrosity, then Set as Large default')
+    : 'Medium default set · review and save character overrides';
+  const seedHint=$('#mediumSeedHint');
+  if(seedHint) seedHint.textContent=state.rigClass==='Rig_Large'
+    ? (hasAcceptedClassDefault('Rig_Large') ? 'Rig_Large default active · source measurement remains optional' : 'Large calibration start only · tune Monstrosity before setting the class default')
+    : 'Rig_Medium authoring default active · source measurement remains suggestion only';
+  $$('[data-rig-class]').forEach((b)=>b.classList.toggle('active',b.dataset.rigClass===state.rigClass));
+  const promote=$('#promoteClassDefaultBtn');
+  if(promote){
+    promote.hidden=state.rigClass!=='Rig_Large';
+    promote.disabled=state.rigClass!=='Rig_Large' || state.currentActorId!=='monstrosity';
+    promote.textContent=hasAcceptedClassDefault('Rig_Large')?'Update Large default':'Set as Large default';
+  }
+}
 function updateBatchUi() {
   const selected=state.selectedActors.size;
   const reviewed=(state.catalog||[]).filter((a)=>isReviewedState(currentReviewState(a.id))).length;
-  const el=$('#batchSelectionStatus'); if(el) el.textContent=`${selected} selected · ${reviewed}/${state.catalog.length||0} reviewed · ${state.currentActor?.label || 'loading'}`;
-  const btn=$('#batchApplySelectedBtn'); if(btn) btn.disabled=selected===0;
+  const el=$('#batchSelectionStatus'); if(el) el.textContent=`${classConfig().label} · ${selected} selected · ${reviewed}/${state.catalog.length||0} reviewed · ${state.currentActor?.label || 'loading'}`;
+  const btn=$('#batchApplySelectedBtn'); if(btn) btn.disabled=selected===0 || !hasAcceptedClassDefault();
+  updateClassUi();
 }
-
+function promoteCurrentAsClassDefault(){
+  if(state.rigClass!=='Rig_Large' || state.currentActorId!=='monstrosity' || !state.profile) return false;
+  profileFromRig();
+  const seed=currentClassSeed();
+  seed.authoringDefault={source:'Monstrosity human calibration',eye:clone(state.profile.eye)};
+  seed.status='AUTHORING_DEFAULT_FROM_MONSTROSITY';
+  state.profile.inheritance={...(state.profile.inheritance||{}),rigClass:'Rig_Large',classSeed:'data/rig-large-default.v0.json',sessionAdjusted:true};
+  state.profiles[state.profile.actorId]=clone(state.profile);
+  save(); updateBatchUi(); renderRoster();
+  log('Rig_Large default set from current Monstrosity profile');
+  return true;
+}
 function profileFromRig() {
   if (!state.eyes) return state.profile;
   const r = state.eyes.rig, report=state.eyes.report(), oldEye=state.profile.eye || {};
@@ -269,7 +327,7 @@ function setReviewStatus(status) {
   };
   if(map[status]) state.profile.reviewState=map[status];
   if(status==='EYE_PROFILE_VISUALLY_APPROVED'||status==='ADJUSTED_APPROVED'){
-    profileFromRig(); state.approved=clone(state.profile);
+    profileFromRig(); state.approvedProfiles[state.profile.actorId]=clone(state.profile);
   }
   state.profiles[state.profile.actorId]=clone(state.profile);
   save();
@@ -346,90 +404,97 @@ function wireProfileIo() {
     storeCurrentProfile();
     const ids=state.selectedActors.size?[...state.selectedActors]:state.catalog.map((a)=>a.id);
     const profiles=ids.map((id)=>ensureProfile(actorById(id))).filter(Boolean);
-    downloadJson('eye-rig-medium.batch.json',{
+    const seed=currentClassSeed();
+    downloadJson(`eye-rig-${classConfig().label.toLowerCase()}.batch.json`,{
       schema:'kfb.eye-profile-batch/0.2-candidate',
-      rigClass:'Rig_Medium',
+      rigClass:state.rigClass,
       inheritanceOrder:['rigClass','character','session'],
-      classDefault:clone(state.mediumSeed.authoringDefault),
+      classDefault:clone(seed?.authoringDefault||null),
+      calibrationStart:clone(seed?.calibrationStart||null),
       selectedActorIds:ids,
       profiles
     });
   };
   const resetCurrent=()=>{
-    const actor=state.currentActor; if(!actor)return;
+    const actor=state.currentActor;if(!actor)return;
     state.profile=applyAuthoringDefaultToProfile(makeActorProfile(actor),{markSession:false});
-    state.profile.reviewState='UNREVIEWED';
-    state.profiles[actor.id]=clone(state.profile);
-    applyProfileToRig(state.profile); save(); renderRoster(); log('reset current actor to Rig_Medium authoring default');
+    state.profile.reviewState='UNREVIEWED';state.profiles[actor.id]=clone(state.profile);
+    applyProfileToRig(state.profile);save();renderRoster();log(`reset ${actor.label} to ${state.rigClass} class start`);
   };
   $('#exportBtn').onclick=exportCharacter;
   $('#exportBatchBtn').onclick=exportBatch;
-  $('#copyBtn').onclick=async()=>{ profileFromRig(); await navigator.clipboard?.writeText(JSON.stringify(state.profile,null,2)); log('profile copied'); };
+  $('#copyBtn').onclick=async()=>{profileFromRig();await navigator.clipboard?.writeText(JSON.stringify(state.profile,null,2));log('profile copied');};
   $('#importBtn').onclick=()=>$('#importInput').click();
   $('#batchImportBtn').onclick=()=>$('#importInput').click();
   $('#batchExportCharacterBtn').onclick=exportCharacter;
   $('#batchExportBatchBtn').onclick=exportBatch;
   $('#batchResetBtn').onclick=resetCurrent;
   $('#batchApproveBtn').onclick=()=>setReviewStatus(state.profile.reviewState==='ADJUSTED'?'ADJUSTED_APPROVED':'EYE_PROFILE_VISUALLY_APPROVED');
+  $('#promoteClassDefaultBtn').onclick=()=>promoteCurrentAsClassDefault();
   $('#batchApplySelectedBtn').onclick=()=>{
+    if(!hasAcceptedClassDefault()) return;
     storeCurrentProfile();
     for(const id of state.selectedActors){
-      const actor=actorById(id); if(!actor)continue;
+      const actor=actorById(id);if(!actor)continue;
       const p=applyAuthoringDefaultToProfile(ensureProfile(actor),{markSession:true});
-      p.reviewState='UNREVIEWED'; state.profiles[id]=clone(p);
+      p.reviewState='UNREVIEWED';state.profiles[id]=clone(p);
     }
-    state.profile=clone(state.profiles[state.currentActorId]);
-    applyProfileToRig(state.profile); save(); renderRoster();
-    log(`Rig_Medium authoring default applied to ${state.selectedActors.size} selected actor(s)`);
+    state.profile=clone(state.profiles[state.currentActorId]);applyProfileToRig(state.profile);save();renderRoster();
+    log(`${state.rigClass} default applied to ${state.selectedActors.size} selected actor(s)`);
   };
   $('#importInput').onchange=async(e)=>{
     try{
       const data=JSON.parse(await e.target.files[0].text());
       if(data?.schema==='kfb.eye-profile/0.1-candidate'){
-        if(!actorById(data.actorId)) throw new Error('actorId not in current Medium catalog');
+        if(!actorById(data.actorId))throw new Error('actorId not in current class catalog');
         state.pendingImport={kind:'profile',data};
       }else if(data?.schema==='kfb.eye-profile-batch/0.2-candidate'){
-        if(data.rigClass!=='Rig_Medium'||!Array.isArray(data.profiles)) throw new Error('invalid Medium batch');
+        if(data.rigClass!==state.rigClass||!Array.isArray(data.profiles))throw new Error('batch rig class does not match current tab');
         state.pendingImport={kind:'batch',data};
       }else throw new Error('unsupported import schema');
       $('#importPreview').hidden=false;
-      $('#importPreviewTitle').textContent=state.pendingImport.kind==='batch'?`Rig_Medium batch · ${data.profiles.length} profile(s)`:`${data.actorId} · ${data.status}`;
+      $('#importPreviewTitle').textContent=state.pendingImport.kind==='batch'?`${state.rigClass} batch · ${data.profiles.length} profile(s)`:`${data.actorId} · ${data.status}`;
       $('#importPreviewText').textContent='Validated structure. Nothing has been applied yet.';
     }catch(err){alert(`Import rejected: ${err.message}`);}
     e.target.value='';
   };
   $('#acceptImportBtn').onclick=async()=>{
     if(!state.pendingImport)return;
-    const imp=state.pendingImport; state.pendingImport=null; $('#importPreview').hidden=true;
+    const imp=state.pendingImport;state.pendingImport=null;$('#importPreview').hidden=true;
     if(imp.kind==='profile'){
       state.profiles[imp.data.actorId]=clone(imp.data);
       if(imp.data.actorId===state.currentActorId){state.profile=clone(imp.data);applyProfileToRig(state.profile);}
     }else{
-      if(imp.data.classDefault) state.mediumSeed.authoringDefault=clone(imp.data.classDefault);
-      for(const p of imp.data.profiles||[]) if(actorById(p.actorId)) state.profiles[p.actorId]=clone(p);
+      if(imp.data.classDefault) currentClassSeed().authoringDefault=clone(imp.data.classDefault);
+      for(const p of imp.data.profiles||[])if(actorById(p.actorId))state.profiles[p.actorId]=clone(p);
       state.selectedActors=new Set((imp.data.selectedActorIds||[]).filter((id)=>actorById(id)));
       if(state.profiles[state.currentActorId]){state.profile=clone(state.profiles[state.currentActorId]);applyProfileToRig(state.profile);}
     }
-    save(); renderRoster(); log(`validated ${imp.kind} import accepted`);
+    save();renderRoster();updateBatchUi();log(`validated ${imp.kind} import accepted`);
   };
   $('#cancelImportBtn').onclick=()=>{state.pendingImport=null;$('#importPreview').hidden=true;};
   $('#resetSeedBtn').onclick=resetCurrent;
-  $('#revertApprovedBtn').onclick=()=>{if(!state.approved)return;state.profile=clone(state.approved);state.profiles[state.profile.actorId]=clone(state.profile);applyProfileToRig(state.profile);save();renderRoster();log('reverted to last approved profile');};
+  $('#revertApprovedBtn').onclick=()=>{
+    const approved=state.approvedProfiles[state.currentActorId];if(!approved)return;
+    state.profile=clone(approved);state.profiles[state.profile.actorId]=clone(state.profile);applyProfileToRig(state.profile);save();renderRoster();log('reverted current actor to approved profile');
+  };
   $$('[data-review]').forEach((b)=>b.onclick=()=>setReviewStatus(b.dataset.review));
 }
 function wireRoster() {
   $('#actorList').onclick=async(e)=>{
     const button=e.target.closest('[data-actor-id]');
-    if(button) await loadActor(button.dataset.actorId);
+    if(button)await loadActor(button.dataset.actorId);
   };
   $('#actorList').onchange=(e)=>{
-    const box=e.target.closest('[data-select-id]'); if(!box)return;
-    if(box.checked) state.selectedActors.add(box.dataset.selectId); else state.selectedActors.delete(box.dataset.selectId);
-    save(); updateBatchUi();
+    const box=e.target.closest('[data-select-id]');if(!box)return;
+    if(box.checked)state.selectedActors.add(box.dataset.selectId);else state.selectedActors.delete(box.dataset.selectId);
+    state.selectedByClass[state.rigClass]=state.selectedActors;save();updateBatchUi();
   };
   $$('[data-roster-filter]').forEach((b)=>b.onclick=()=>{state.rosterFilter=b.dataset.rosterFilter;save();renderRoster();});
+  $$('[data-rig-class]').forEach((b)=>b.onclick=()=>switchRigClass(b.dataset.rigClass));
   $('#nextUnreviewedBtn').onclick=async()=>{const a=nextUnreviewed();if(a)await loadActor(a.id);};
 }
+
 function configureRenderer() {
   const stage = $('#stage');
   const renderer = new THREE.WebGLRenderer({antialias:true, alpha:false, preserveDrawingBuffer:true});
@@ -493,12 +558,32 @@ function playMotion(name) {
 }
 
 async function loadMotion(loader) {
-  const [general,movement] = await Promise.all([loader.loadAsync(GENERAL_URL),loader.loadAsync(MOVE_URL)]);
-  [...general.animations,...movement.animations].forEach((c)=>{ if(!state.clips.has(c.name)) state.clips.set(c.name,c); });
-  const required=['Idle_A','Walking_A','Running_A','Jump_Full_Short'];
-  state.motionReady=required.every((n)=>state.clips.has(n)); gate('#gateMotion',state.motionReady?'pass':'fail');
-  $('#motionStatus').textContent=state.motionReady?`1 mixer · ${state.clips.size} clips loaded`:'required clips missing';
-  log(`motion packs loaded · ${state.clips.size} unique clips · required ${state.motionReady?'OK':'MISSING'}`);
+  const cfg=classConfig();
+  state.currentAction?.stop?.(); state.currentAction=null; state.clips.clear(); state.currentMotion='bind';
+  const [general,movement]=await Promise.all([loader.loadAsync(cfg.generalUrl),loader.loadAsync(cfg.moveUrl)]);
+  [...general.animations,...movement.animations].forEach((c)=>{if(!state.clips.has(c.name))state.clips.set(c.name,c);});
+  state.motionReady=cfg.requiredClips.every((n)=>state.clips.has(n));
+  gate('#gateMotion',state.motionReady?'pass':'fail');
+  $('#motionStatus').textContent=state.motionReady?`1 mixer · ${state.clips.size} ${cfg.label} clips loaded`:'required clips missing';
+  $$('.motion').forEach((b)=>{const n=b.dataset.motion;b.disabled=n!=='bind'&&!state.clips.has(n);});
+  log(`${state.rigClass} motion packs loaded · ${state.clips.size} unique clips · required ${state.motionReady?'OK':'MISSING'}`);
+}
+
+async function switchRigClass(rigClass){
+  if(!CLASS_CONFIG[rigClass] || state.switching || rigClass===state.rigClass) return false;
+  storeCurrentProfile();
+  if(state.currentActorId) state.currentActorByClass[state.rigClass]=state.currentActorId;
+  state.selectedByClass[state.rigClass]=state.selectedActors;
+  state.rigClass=rigClass;
+  state.catalog=state.catalogs[rigClass]||[];
+  state.selectedActors=state.selectedByClass[rigClass] || new Set([classConfig(rigClass).defaultActor]);
+  state.rosterFilter='all';
+  updateClassUi(); renderRoster();
+  await loadMotion(state.loader);
+  const target=actorById(state.currentActorByClass[rigClass])||actorById(classConfig(rigClass).defaultActor)||state.catalog[0];
+  if(target) await loadActor(target.id,{preserve:false});
+  save();
+  return !!target;
 }
 
 function wireComponentDiagnostic(camera,controls) {
@@ -547,7 +632,7 @@ async function loadActor(actorId,{preserve=true}={}) {
     state.mixer?.stopAllAction?.(); state.eyes?.dispose?.(); state.cleanup?.dispose?.();
     if(state.figure?.parent) state.figure.parent.remove(state.figure);
     state.figure=null; state.eyes=null; state.cleanup=null; state.mixer=null; state.componentDiagnosticRestore=null;
-    state.currentActor=actor; state.currentActorId=actor.id; state.profile=ensureProfile(actor);
+    state.currentActor=actor; state.currentActorId=actor.id; state.currentActorByClass[state.rigClass]=actor.id; state.profile=ensureProfile(actor);
     state.sourceReady=state.cleanupReady=state.hostReady=state.eyeReady=false;
     gate('#gateSource','pending');gate('#gateCleanup','pending');gate('#gateHost','pending');gate('#gateEye','pending');
     renderRoster(); updateActorAudit();
@@ -602,7 +687,7 @@ async function captureQaContactSheet(renderer,camera,controls) {
   setView(prior,camera,controls); renderer.render(window.__EYE_RIG_BATCH.scene,camera);
   const controlsReport=state.eyes?.report()?.controls || {};
   state.qaLast={views:[...views],ring:controlsReport.anchor?.ring,pupilSize:controlsReport.pupilSize,baseColor:controlsReport.baseColor,motion:state.currentMotion,expression:state.expression};
-  const a=document.createElement('a'); a.href=sheet.toDataURL('image/png'); a.download='gothgirl-qa-front-3q-side.png'; a.click();
+  const a=document.createElement('a'); a.href=sheet.toDataURL('image/png'); a.download=`${state.currentActorId||'actor'}-qa-front-3q-side.png`; a.click();
   log(`QA contact sheet captured · ${views.join(' / ')} · ring ${value(state.qaLast.ring)} · pupil ${value(state.qaLast.pupilSize)}`);
   renderReport();
 }
@@ -651,47 +736,68 @@ function wireRuntimeControls(camera,controls,renderer) {
       log(`source-measured suggestion applied explicitly · dx ${measured.dx} · dy ${measured.dy} · ring ${measured.ring}`);
     };
   }
-  $('#captureBtn').onclick=()=>{ renderer.render(window.__EYE_RIG_BATCH.scene,camera); const a=document.createElement('a'); a.href=renderer.domElement.toDataURL('image/png'); a.download=`gothgirl-${state.currentView}-${state.currentMotion}.png`; a.click(); };
+  $('#captureBtn').onclick=()=>{ renderer.render(window.__EYE_RIG_BATCH.scene,camera); const a=document.createElement('a'); a.href=renderer.domElement.toDataURL('image/png'); a.download=`${state.currentActorId||'actor'}-${state.currentView}-${state.currentMotion}.png`; a.click(); };
   $('#qaCaptureBtn').onclick=()=>captureQaContactSheet(renderer,camera,controls);
 }
 
 async function boot() {
-  const [seed,mediumSeed,catalog,contract] = await Promise.all([
+  const [seed,mediumSeed,mediumCatalog,largeSeed,largeCatalog,contract]=await Promise.all([
     fetch('./data/gothgirl.seed.json').then((r)=>{if(!r.ok)throw new Error(`seed ${r.status}`);return r.json();}),
-    fetch(MEDIUM_SEED_URL).then((r)=>{if(!r.ok)throw new Error(`medium seed ${r.status}`);return r.json();}),
-    fetch(CATALOG_URL).then((r)=>{if(!r.ok)throw new Error(`actor catalog ${r.status}`);return r.json();}),
+    fetch(CLASS_CONFIG.Rig_Medium.seedUrl).then((r)=>{if(!r.ok)throw new Error(`medium seed ${r.status}`);return r.json();}),
+    fetch(CLASS_CONFIG.Rig_Medium.catalogUrl).then((r)=>{if(!r.ok)throw new Error(`medium catalog ${r.status}`);return r.json();}),
+    fetch(CLASS_CONFIG.Rig_Large.seedUrl).then((r)=>{if(!r.ok)throw new Error(`large seed ${r.status}`);return r.json();}),
+    fetch(CLASS_CONFIG.Rig_Large.catalogUrl).then((r)=>{if(!r.ok)throw new Error(`large catalog ${r.status}`);return r.json();}),
     fetch(CONTRACT_URL).then((r)=>{if(!r.ok)throw new Error(`contract ${r.status}`);return r.json();})
   ]);
-  state.seed=seed; state.mediumSeed=mediumSeed; state.catalog=catalog.actors||[];
+  state.seed=seed;
+  state.classSeeds={Rig_Medium:mediumSeed,Rig_Large:largeSeed};
+  state.catalogs={Rig_Medium:mediumCatalog.actors||[],Rig_Large:largeCatalog.actors||[]};
   window.__EYE_RIG_CONTRACT=contract;
+
   const saved=readSaved();
-  if(saved?.classDefault) state.mediumSeed.authoringDefault=clone(saved.classDefault);
+  if(saved?.classDefault&&!saved?.classDefaults) state.classSeeds.Rig_Medium.authoringDefault=clone(saved.classDefault);
+  for(const [k,v] of Object.entries(saved?.classDefaults||{})) if(state.classSeeds[k]&&v) state.classSeeds[k].authoringDefault=clone(v);
   state.profiles=clone(saved?.profiles||{});
-  if(saved?.profile?.actorId && !state.profiles[saved.profile.actorId]) state.profiles[saved.profile.actorId]=clone(saved.profile);
-  state.selectedActors=new Set((saved?.selectedActors?.length?saved.selectedActors:['gothgirl']).filter((id)=>actorById(id)));
+  if(saved?.profile?.actorId&&!state.profiles[saved.profile.actorId])state.profiles[saved.profile.actorId]=clone(saved.profile);
+  state.approvedProfiles=clone(saved?.approvedProfiles||{});
+  if(saved?.approved?.actorId&&!state.approvedProfiles[saved.approved.actorId])state.approvedProfiles[saved.approved.actorId]=clone(saved.approved);
+
+  state.rigClass=CLASS_CONFIG[saved?.currentRigClass]?saved.currentRigClass:'Rig_Medium';
+  state.catalog=state.catalogs[state.rigClass]||[];
+  state.currentActorByClass=clone(saved?.currentActorByClass||{});
+  state.selectedByClass={
+    Rig_Medium:new Set(saved?.selectedByClass?.Rig_Medium?.length?saved.selectedByClass.Rig_Medium:['gothgirl']),
+    Rig_Large:new Set(saved?.selectedByClass?.Rig_Large?.length?saved.selectedByClass.Rig_Large:['monstrosity'])
+  };
+  state.selectedActors=state.selectedByClass[state.rigClass];
   state.rosterFilter=saved?.rosterFilter||'all';
+
   state.savedLegacyDefault=isLegacyUntunedProfile(state.profiles.gothgirl);
   if(state.savedLegacyDefault){
-    const g=actorById('gothgirl'); state.profiles.gothgirl=applyAuthoringDefaultToProfile(state.profiles.gothgirl||makeActorProfile(g),{markSession:false}); state.profiles.gothgirl.reviewState='UNREVIEWED';
+    const oldClass=state.rigClass,oldCatalog=state.catalog;
+    state.rigClass='Rig_Medium';state.catalog=state.catalogs.Rig_Medium;
+    const g=actorById('gothgirl');state.profiles.gothgirl=applyAuthoringDefaultToProfile(state.profiles.gothgirl||makeActorProfile(g),{markSession:false});state.profiles.gothgirl.reviewState='UNREVIEWED';
+    state.rigClass=oldClass;state.catalog=oldCatalog;
   }
 
   const {renderer,scene,camera,controls,ro}=configureRenderer();
-  state.loader=new GLTFLoader(); THREE.Cache.enabled=true;
+  state.loader=new GLTFLoader();THREE.Cache.enabled=true;
   window.__EYE_RIG_BATCH={state,scene,camera,controls,renderer,logLines,
-    report:()=>({profile:profileFromRig(),profiles:clone(state.profiles),currentActor:state.currentActor,cleanup:state.cleanup?.report,eyes:state.eyes?.report(),qa:state.qaLast,mediumSeed:state.mediumSeed,selectedActors:[...state.selectedActors],roster:{count:state.catalog.length,filter:state.rosterFilter},clips:[...state.clips.keys()],gates:{source:state.sourceReady,cleanup:state.cleanupReady,host:state.hostReady,eye:state.eyeReady,motion:state.motionReady},error:bootError?.message||null})
+    report:()=>({profile:profileFromRig(),profiles:clone(state.profiles),currentActor:state.currentActor,rigClass:state.rigClass,classSeed:clone(currentClassSeed()),cleanup:state.cleanup?.report,eyes:state.eyes?.report(),qa:state.qaLast,selectedActors:[...state.selectedActors],roster:{count:state.catalog.length,filter:state.rosterFilter},clips:[...state.clips.keys()],gates:{source:state.sourceReady,cleanup:state.cleanupReady,host:state.hostReady,eye:state.eyeReady,motion:state.motionReady},error:bootError?.message||null})
   };
 
-  wireProfileIo(); wireRuntimeControls(camera,controls,renderer); wireRoster();
-  renderRoster();
+  wireProfileIo();wireRuntimeControls(camera,controls,renderer);wireRoster();
+  updateClassUi();renderRoster();
   await loadMotion(state.loader);
 
-  const first=actorById(saved?.currentActorId)||actorById('gothgirl')||state.catalog[0];
-  if(!first) throw new Error('no Rig_Medium actors in catalog');
+  const cfg=classConfig();
+  const first=actorById(state.currentActorByClass[state.rigClass])||actorById(cfg.defaultActor)||state.catalog[0];
+  if(!first)throw new Error(`no actors in ${state.rigClass} catalog`);
   await loadActor(first.id,{preserve:false});
 
   let last=performance.now();
   function frame(now){const dt=Math.min(.05,(now-last)/1000);last=now;state.mixer?.update(dt);state.eyes?.update(dt,camera);controls.update();renderer.render(scene,camera);requestAnimationFrame(frame);}
-  requestAnimationFrame(frame); renderReport();
+  requestAnimationFrame(frame);renderReport();
 }
 
 boot().catch((err)=>{

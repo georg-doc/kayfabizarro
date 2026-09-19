@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>KFB ToolBox · Batch EyeRig Atlas · Rig_Medium Proof</title>
-  <meta name="description" content="KFB ToolBox Batch EyeRig Atlas — first bounded Rig_Medium proof on GothGirl using existing EyeRig v6 and measured FaceHost.">
+  <title>KFB ToolBox · Batch EyeRig Atlas</title>
+  <meta name="description" content="KFB ToolBox Batch EyeRig Atlas — Rig_Medium and Rig_Large EyeRig authoring with existing EyeRig v6 and FaceHost.">
   <link rel="stylesheet" href="./styles.css">
   <script type="importmap">
   {
@@ -20,7 +20,7 @@
     <div class="brand">
       <span class="brand-kicker">KFB TOOLBOX / RIGGING</span>
       <strong>Batch EyeRig Atlas</strong>
-      <span class="branch">Rig_Medium · authoring default · eyes 2+3 · PR #104</span>
+      <span id="rigClassMarker" class="branch">Rig_Medium · 27 actor review · PR #104</span>
     </div>
     <div class="top-status">
       <span id="bootBadge" class="badge pending">BOOTING</span>
@@ -41,6 +41,7 @@
       <button id="batchExportBatchBtn" type="button">Export Batch</button>
       <button id="batchApplySelectedBtn" type="button">Apply to Selected</button>
       <button id="nextUnreviewedBtn" type="button">Next unreviewed</button>
+      <button id="promoteClassDefaultBtn" type="button" class="approve" hidden disabled>Set as Large default</button>
       <button id="batchResetBtn" type="button" class="quiet">Reset</button>
       <button id="batchApproveBtn" type="button" class="approve">Approve</button>
     </div>
@@ -51,10 +52,16 @@
       <div class="pane-head">
         <div>
           <span class="eyebrow">ROSTER</span>
-          <h1>Rig_Medium</h1>
+          <h1 id="rigClassTitle">Rig_Medium</h1>
         </div>
         <span id="rosterCount" class="count">0/0 reviewed</span>
       </div>
+
+      <div class="segmented rig-class-switch" aria-label="Rig class">
+        <button type="button" class="seg active" data-rig-class="Rig_Medium">Medium</button>
+        <button type="button" class="seg" data-rig-class="Rig_Large">Large</button>
+      </div>
+      <div id="classStatusHint" class="micro-status">Medium default set · review and save character overrides</div>
 
       <div class="filter-row roster-filters" aria-label="Review filters">
         <button class="filter active" type="button" data-roster-filter="all">All</button>
@@ -62,8 +69,8 @@
         <button class="filter" type="button" data-roster-filter="adjusted">Adjusted</button>
         <button class="filter" type="button" data-roster-filter="unsupported">Unsupported</button>
       </div>
-      <div id="rosterStats" class="micro-status">Loading Rig_Medium catalog…</div>
-      <div id="actorList" class="actor-list" aria-label="Rig_Medium actors"></div>
+      <div id="rosterStats" class="micro-status">Loading actor catalog…</div>
+      <div id="actorList" class="actor-list" aria-label="EyeRig actors"></div>
 
       <section class="audit-block">
         <span class="eyebrow">SOURCE LOCK</span>

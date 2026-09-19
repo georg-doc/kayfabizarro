@@ -1,0 +1,56 @@
+{
+  "schema": "kfb.eye-class-seed/0.1-candidate",
+  "rigClass": "Rig_Large",
+  "status": "CALIBRATION_START_ONLY",
+  "reference": {
+    "actorId": "monstrosity",
+    "path": "media/3D_Assets/KayKit_Mystery_Series6/4 - October 2025 - Monstrosity/Monstrosity.glb",
+    "blob": "ff8e7d74026b808a3bedeab4bece830df116a4bc",
+    "reason": "Difficult forehead/front geometry selected by Georg as first Large calibration actor"
+  },
+  "calibrationStart": {
+    "source": "normalized EyeRig starting point only; NOT an accepted Rig_Large default",
+    "eye": {
+      "anchor": {
+        "dx": 0.295,
+        "dy": 0.045,
+        "ring": 0.153,
+        "track": 0.15
+      },
+      "pupilStyle": "matte-cute",
+      "pupilSize": 0.34,
+      "gloss": 0.1,
+      "inset": 0.4,
+      "lidFit": 0.9,
+      "converge": 0.18,
+      "splay": 0,
+      "trackingMode": "life",
+      "fixedGaze": [
+        0,
+        0
+      ],
+      "oval": {
+        "w": 1,
+        "h": 1,
+        "d": 1,
+        "tilt": 0
+      },
+      "lidColorMode": "face-base-darkened"
+    }
+  },
+  "authoringDefault": null,
+  "promotion": {
+    "action": "Set as Large default",
+    "sourceActor": "monstrosity",
+    "policy": "human explicit only",
+    "note": "Current Monstrosity EyeProfile becomes Rig_Large authoringDefault only after Georg tunes and explicitly promotes it."
+  },
+  "inheritance": {
+    "order": [
+      "rigClass",
+      "character",
+      "session"
+    ],
+    "rigClass": "Rig_Large"
+  }
+}
