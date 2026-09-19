@@ -1,0 +1,62 @@
+{
+  "schema": "kfb.c0-a1-failure-recovery-source/1",
+  "date": "2026-09-19",
+  "project": "C0-A1 Charming Kitchen Module Kit",
+  "repository": "georg-doc/kayfabizarro",
+  "branch": "chatgpt-web/c0-a1-charming-kitchen-2026-09-19",
+  "originalBase": "ca7abdb04493168a30f8792981f22e786e300d92",
+  "frozenProductHead": "a5a8fcfb25e2ec89ab4346a812870d5b18bf91e6",
+  "mainAtRecovery": "bdad1806842d733e6217457fe81cd8b6259569e0",
+  "branchRelationAtRecovery": {
+    "aheadOfOriginalBase": 27,
+    "behindCurrentMain": 4,
+    "status": "diverged"
+  },
+  "pack": {
+    "packId": "tiny-treats-charming-kitchen-1-1-free",
+    "root": "media/3D_Assets/Tiny_Treats_Charming_Kitchen_1.1_FREE",
+    "registrySourceCommit": "378b209355b13304e3cff656ec0806ca5b89df28",
+    "models": 118,
+    "textures": 5,
+    "license": "CC0-1.0",
+    "licensePath": "media/3D_Assets/Tiny_Treats_Charming_Kitchen_1.1_FREE/License.txt",
+    "licenseBlob": "c4370cb82dd60896281e23f61ecd5140eda99438"
+  },
+  "classification": {
+    "total": 118,
+    "classified": 118,
+    "unclassified": 0,
+    "lanes": {
+      "build": 69,
+      "furnish": 26,
+      "story": 23
+    }
+  },
+  "gameDev": {
+    "cli": "GAME_DEV_CLI_UNAVAILABLE · OPTIONAL FALLBACK USED",
+    "sealedPackage": "NOT_RUN",
+    "packageVerify": "NOT_RUN",
+    "vendorAdmission": "NOT_RUN"
+  },
+  "publicDeployment": {
+    "target": "https://kayfabizarro.pages.dev/kfb-hub/stage/c0-a1-charming-kitchen/",
+    "status": "NOT_PUBLIC_VERIFIED"
+  },
+  "evidence": [
+    {
+      "run": 35461123803,
+      "head": "46415c979bf2ef3be1f24508304aab917c73866b",
+      "artifact": 10589419759,
+      "result": "FAIL",
+      "cause": "app.js parse error CDP line 6 col 60"
+    },
+    {
+      "run": 35461231731,
+      "head": "a5a8fcfb25e2ec89ab4346a812870d5b18bf91e6",
+      "artifact": 10589564787,
+      "result": "FAIL",
+      "cause": "app.js parse error CDP line 174 col 96"
+    }
+  ],
+  "status": "ARCHIVED_FAILED_CANDIDATE"
+}
