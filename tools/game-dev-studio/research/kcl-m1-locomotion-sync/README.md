@@ -1,6 +1,6 @@
 # KCL-M1 · Locomotion Sync Bench
 
-Status: **IMPLEMENTATION CANDIDATE · SOURCE/STATIC QA PENDING · BROWSER/HUMAN GATE OPEN**  
+Status: **LOCAL BROWSER 39/39 PASS · AUTO-MEASURED PROFILES · PUBLIC/HUMAN GATE BLOCKED BY CLOUDFLARE**  
 Owner: **KFB Game Dev Studio research**, consuming current Asset/ToolBox motion truth.  
 Does not own: Travel/Race/Combat/Platformer movement, physics, gameplay state, canonical animation assets, or a shared global mixer.
 
@@ -138,3 +138,62 @@ Do not call this route deployed or verified until the publication mirror is comm
 ## One next gate
 
 Publish this candidate to the fixed Cloudflare Stage route and run browser QA; then Georg judges whether the phase-synced transition actually reads better than the naive transition before any consumer integration.
+
+
+## Current measured result
+
+Local GitHub Actions browser proof:
+
+- run `35468444150`
+- job `105964939873`
+- **39/39 PASS**
+- artifact `10591764219`
+- digest `sha256:55b8cc47723a64fc9c633ad46e2008a446d666ba724d02fed6242c17354de75e`
+- real ActionFigure + pinned MovementBasic loaded
+- 5/5 requested clips measured
+- WebGL + A/B transition executed
+- 0 failed resources
+- 0 page/console errors
+
+Persisted profile candidate:
+
+`MEASURED_PROFILE_CANDIDATE.json`
+
+Automatic reference-speed candidates:
+
+```text
+Walking_C  0.447
+Walking_A  0.611
+Walking_B  0.751
+Running_A  2.480
+Running_B  0.284  ← AUTO_METRIC_AMBIGUOUS_HOLD
+```
+
+Do not treat this ordering as a semantic speed taxonomy. `Running_B` has fragmented low-foot intervals and the highest compensated slip candidate; it stays HOLD until visual/manual review.
+
+Default A/B proof successfully executed:
+
+```text
+Walking_A → Running_A
+LEFT contact
+fade 0.12 s
+warp ON
+
+A naive target entry: 0%
+B phase-sync entry: ~9.6%
+source left-contact candidate: ~30%
+```
+
+At desired speed 1.5, Walking_A hits the temporary 1.8× bench clamp while Running_A maps to ~0.60×. That is evidence that 1.5 is not a sensible shared default for judging both clips; approved speed/rate ranges remain human-open.
+
+## Public blocker
+
+The pages.dev route is **not PUBLIC_VERIFIED**.
+
+The KCL public proof failed before the bench booted because `SOURCE.json` resolved to the KFB HTML fallback during the whole marker window. Independent pre-KCL TE-01 proof and later Cloudflare Pages builds failed at the same deployment layer.
+
+Do not repair KCL animation code in response to this infrastructure failure.
+
+## Current one gate
+
+Restore a successful current Cloudflare/pages.dev deployment, rerun the exact public proof unchanged, then Georg compares NAIVE vs PHASE SYNC visually before any consumer integration.
