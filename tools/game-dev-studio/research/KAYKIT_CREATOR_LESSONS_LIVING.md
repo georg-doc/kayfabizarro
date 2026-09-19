@@ -2133,3 +2133,147 @@ Cloudflare/pages.dev remains blocked by a repo-wide deployment problem. No publi
 
 ### CURRENT NEXT GATE
 Restore successful current Cloudflare publication, rerun the unchanged public KCL proof and let Georg judge NAIVE vs PHASE SYNC visually before consumer integration.
+
+
+---
+
+# 18 · KCL-M1 public Stage proof
+
+**Status:** PUBLIC BROWSER 39/39 PASS · HUMAN MOTION ACCEPTANCE OPEN
+
+The first measured KayKit locomotion proof is now externally verified on the fixed KFB Cloudflare Stage.
+
+## 18.1 · Root cause of the earlier public failure
+
+The failed public attempts were not animation failures.
+
+Cloudflare publishes from:
+
+`cloudflare-live`
+
+KCL Stage files had been written only to:
+
+`main`
+
+Therefore the public KCL route resolved to the generic KFB Hub fallback.
+
+The first actual publication repair mirrored only the already-tested Stage candidate to `cloudflare-live`:
+
+`fac041eb34c9a284d724a3ee2b945bef7d020d04`
+
+No motion logic changed.
+
+## 18.2 · Public browser evidence
+
+KCL workflow:
+- run `35468444150`;
+- attempt 2;
+- public-proof job `105981648314`.
+
+Exact route:
+
+https://kayfabizarro.pages.dev/kfb-hub/stage/game-dev-studio/kcl-m1-locomotion-sync/
+
+The browser proof confirmed:
+- exact deployment marker;
+- HTTP;
+- bench ready;
+- 5/5 source clips;
+- five measured profiles;
+- real left/right contacts;
+- finite reference-speed/slip metrics;
+- consumer movement ownership preserved;
+- Registry read-only;
+- pinned source;
+- WebGL;
+- naive A lane;
+- phase-sync B lane;
+- A/B transition execution;
+- 0 failed resources;
+- 0 page/console errors.
+
+Result:
+
+`PUBLIC_BROWSER_RESULT 39/39 PASS`
+
+Artifact:
+- `10593933655`
+- `sha256:5d7f6bb436d0030a3ddec3f080e0a6b041fe196cdf36cd3d34d5f5d01f71c0cf`
+
+## 18.3 · What this proves
+
+We now have direct browser evidence for the complete engine-neutral chain:
+
+```text
+real KayKit Rig_Medium actor
+→ real MovementBasic clips
+→ root-translation stripping
+→ real foot sampling
+→ measured contact/profile candidates
+→ speed→timeScale candidate
+→ naive vs phase-aware transition
+→ WebGL runtime
+→ public KFB Stage
+```
+
+This materially changes the confidence level of the creator-video analysis.
+
+The KayKit animation clips are not merely a pile of poses. They are suitable raw material for a measured, reusable KFB motion layer.
+
+## 18.4 · What it does not prove
+
+Technical/public PASS still does not prove:
+- that phase sync looks better in every pairing;
+- approved timeScale ranges;
+- final semantic roles for Walking_A/B/C;
+- any usable semantic role for Running_B;
+- consumer speed bands;
+- a Sprint source;
+- gameplay integration quality.
+
+Those remain human/product judgments.
+
+## 18.5 · Current gate
+
+The next gate is now purely visual:
+
+**Georg compares A · NAIVE vs B · PHASE SYNC on the public Stage.**
+
+Start:
+- Walking_A → Running_A;
+- LEFT;
+- fade ~0.12 s;
+- warp ON;
+- speed-match ON.
+
+Judge:
+- planted-foot slip;
+- double-step;
+- hip discontinuity;
+- cadence;
+- weight/naturalness.
+
+If phase sync is visibly better, the next technical slice can turn the accepted measurements into a reusable MotionProfile seam for named consumers.
+
+---
+
+## 2026-09-20 · KCL-004 · public Stage proof green
+
+### PUBLICATION
+Mirrored the already-tested KCL Stage candidate to the actual Cloudflare publication branch `cloudflare-live`.
+
+### EVIDENCE
+- Cloudflare deploy: PASS
+- public KCL browser proof: **39/39 PASS**
+- exact fixed Stage opened
+- artifact `10593933655`
+- 0 resource errors
+- 0 page/console errors
+
+### STATUS
+`PUBLIC_VERIFIED = YES`
+
+`GEORG_MOTION_ACCEPTANCE = OPEN`
+
+### CURRENT NEXT GATE
+Georg visual A/B acceptance. No consumer promotion before that gate.
