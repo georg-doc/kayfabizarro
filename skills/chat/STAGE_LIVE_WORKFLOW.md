@@ -32,6 +32,18 @@ Every Stage entry shows:
 
 The Hub is only a navigator. Project truth remains in the named repository.
 
+## Public URL rule
+
+All human-facing KFB preview, Stage and Live URLs use the KFB Cloudflare publication surface:
+
+- `https://kayfabizarro.pages.dev/kfb-hub/`
+- `https://kayfabizarro.pages.dev/kfb-hub/stage/`
+- or a named `kayfabizarro.pages.dev/<product-route>/` owned by the relevant tool/project.
+
+Do **not** use raw.githack, rawcdn.githack or similar third-party GitHub-rendering/CDN URLs as active review/publication links. GitHub URLs remain correct for source, commits, PRs and recovery documents. Raw GitHub asset fetches may remain internal runtime source references where the owning contract already uses them; they are not publication surfaces.
+
+A third-party CDN success never counts as a KFB `PUBLIC DEPLOYMENT` or browser PASS.
+
 ## Mobile rule
 
 Mobile starts from the public Stage URL. Web/Work chats may prepare briefs, reviews and cloud work,

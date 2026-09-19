@@ -43,3 +43,17 @@ Manifest parst und hält die Owner-Grenze: `support.owner = consumer`, `collisio
 
 ### OPEN
 Erster Consumer-Import in den Free-Roam-Platformer erst nach visueller Abnahme des Clown-Loops.
+
+## 2026-09-19 · WSA handoff checkpoint
+
+### HANDOFF
+Created `tools/KFB-ToolBox/_handover/RESIDENT_SCENE_MODULES_WSA_2026-09-19/` with exact source state, Return and scoped backlog for the existing WSA lead.
+
+### PUBLICATION
+Human review is Cloudflare-only:
+`https://kayfabizarro.pages.dev/resident-atlas-s6/?resident=clown`.
+
+No githack/raw-CDN fallback is part of the active handoff.
+
+### OPEN
+Visual Clown S33 acceptance first; Platformer consumer proof second. The module seam does not own Platformer support/collision/movement/camera.

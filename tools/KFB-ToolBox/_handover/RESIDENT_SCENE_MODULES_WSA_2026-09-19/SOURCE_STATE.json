@@ -1,0 +1,49 @@
+{
+  "schema": "kfb.wsa-handoff.resident-scene-modules/1",
+  "date": "2026-09-19",
+  "repository": "georg-doc/kayfabizarro",
+  "existingIntegrationLead": "WSA",
+  "handoffBaselineMain": "1e9318954c584e8af8498024fd1342e61b604faf",
+  "residentModule": {
+    "mergeCommit": "c867788416c50fa9c6e6ce57abc4bad85dca90d1",
+    "pullRequest": 85,
+    "runtimeSourcePin": "be4843354c5cf420ddecbb25ed5a51aa5f21ca18",
+    "assetPin": "891eadf01e218f5fc21387e64cea1fec8332c5b6",
+    "animationPin": "aa16a777a970f23d3f11fb3c23dc40718b04fa88",
+    "publicReview": "https://kayfabizarro.pages.dev/resident-atlas-s6/?resident=clown"
+  },
+  "platformerDonor": {
+    "status": "CANDIDATE_DONOR_ONLY",
+    "packPin": "eb48f50489b9e4903ec1e3d2fb1837605ce7d792",
+    "githubRecovery": "skills/chat/workflows/FREE_ROAM_PLATFORMER_POC_2026-09-18/CLAUDE_DESIGN_RECOVERY_REBRIEF.md",
+    "dropboxPath": "/CLAUDE/KFB Card Viewer + Crda Zones + Combat Mech + Voxel World + Hex Assets Worldbuilding(5)/KFB_Free_Roam_Platformer_POC_v0/",
+    "note": "Do not integrate against the rejected old Project Island composition; follow current recovery gates."
+  },
+  "dropboxProvenance": [
+    {
+      "path": "/CLAUDE/KFB ToolBox Studio Rig Anim/KayKit Resident Atlas/docs/ATLAS_RETURN.md",
+      "modified": "2026-09-17T21:39:04Z",
+      "relation": "OLDER_EXPORT_PROVENANCE_ONLY"
+    },
+    {
+      "path": "/CLAUDE/KFB Card Viewer + Crda Zones + Combat Mech + Voxel World + Hex Assets Worldbuilding(5)/KFB_Free_Roam_Platformer_POC_v0/README.md",
+      "modified": "2026-09-18T18:04:13Z",
+      "relation": "CANDIDATE_DONOR_PUBLICATION_NOT_PERFORMED"
+    }
+  ],
+  "publicationPolicy": {
+    "humanFacingHost": "https://kayfabizarro.pages.dev/",
+    "hub": "https://kayfabizarro.pages.dev/kfb-hub/",
+    "stage": "https://kayfabizarro.pages.dev/kfb-hub/stage/",
+    "forbiddenForActiveHumanReview": [
+      "raw.githack.com",
+      "rawcdn.githack.com"
+    ],
+    "githubUse": "source/pr/commit/recovery links only"
+  },
+  "browserQa": {
+    "workflow": ".github/workflows/resident-scene-modules-cloudflare-qa.yml",
+    "target": "https://kayfabizarro.pages.dev/resident-atlas-s6/?resident=clown",
+    "status": "PENDING_MERGED_RUN_AT_HANDOFF_AUTHORING"
+  }
+}

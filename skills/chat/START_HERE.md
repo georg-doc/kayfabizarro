@@ -40,6 +40,7 @@ If this is a replacement/fresh chat after context loss, use `RECOVERY_PATH.md` r
 - Do not read giant housekeeping/history files front to back at startup. Search them only for a concrete question.
 - Do not copy canonical skills into this folder. Reference them from the registry.
 - Chats synchronize through GitHub state; do not assume direct chat-to-chat messaging or shared hidden context.
+- Human-facing KFB preview/Stage/Live links use `kayfabizarro.pages.dev` / KFB Hub; do not publish active review links through githack/raw-CDN mirrors.
 
 ## Status vocabulary
 

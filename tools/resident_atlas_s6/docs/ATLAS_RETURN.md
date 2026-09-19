@@ -188,3 +188,17 @@ Entweder (a) Kulisse für Goth Girl belegen und die Vignette auf Habitat-Vollst�
 
 ### Neuer OPEN-Punkt 31
 **4–6 Keulen sind nicht freigegeben.** Der alte Jonglier-Brief fordert vor der Erweiterung eine Flugbahn-/Abstandsrechnung. S33 implementiert deshalb absichtlich exakt drei Keulen und wirft bei `count !== 3` einen Fehler, statt eine ungeprüfte Variante sichtbar zu machen.
+
+## WSA handoff checkpoint · 2026-09-19
+
+The S33 Resident Scene Module work is handed to the existing WSA integration lead at:
+
+`tools/KFB-ToolBox/_handover/RESIDENT_SCENE_MODULES_WSA_2026-09-19/START_HERE.md`
+
+The handoff preserves the S33 implementation state and adds no second owner. Current immediate gate remains the same: visually accept/tune/reject the 3-club Clown loop on the Cloudflare Resident Atlas route before the first Platformer consumer import.
+
+Canonical human review URL:
+
+`https://kayfabizarro.pages.dev/resident-atlas-s6/?resident=clown`
+
+Active review/publication links must not use githack/raw-CDN mirrors.
