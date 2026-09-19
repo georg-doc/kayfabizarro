@@ -223,6 +223,12 @@ The added rule is the missing one:
 2. Shared-scale comparison stage only after R0 is visually acceptable.
 3. C0 presentation rebuild only after 1–2, reusing an existing Atlas/Lab shell.
 
+## Georg sequencing decision
+
+Georg accepted **Resident-Clown Activity Repair R0 as the sole next implementation slice** on 2026-09-19.
+
+Implementation remains not started; this decision does not pre-accept the repaired activity.
+
 ## One next gate
 
-**Accept the new Resident-Clown Activity Repair R0 briefing as the sole next implementation slice.**
+**After R0 implementation: do the arms, catches and three club paths read as believable juggling without clubs visibly crossing the Clown's head/torso?**
