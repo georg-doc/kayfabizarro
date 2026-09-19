@@ -1,0 +1,66 @@
+{
+  "schema": "kfb.tinyskies-osm-integrated-proof.qa/1.0",
+  "date": "2026-09-19",
+  "testedRuntimeHead": "aa28a743628699271c94c1911af23d0564c6f3cc",
+  "pr": 110,
+  "workflowRun": {
+    "id": 35471351012,
+    "conclusion": "success",
+    "artifactId": 10591829944,
+    "artifactDigest": "sha256:14aed09ddd226a584a7c7979f70e75502a84d7a97a7833275d972ec49856a821"
+  },
+  "static": {
+    "passed": 27,
+    "total": 27,
+    "fullSceneOsmBuildings": 700,
+    "fullSceneOsmTriangles": 65648,
+    "domTriangles": 1050
+  },
+  "browser": {
+    "passed": 19,
+    "total": 19,
+    "subsetOsmBuildings": 90,
+    "subsetOsmTriangles": 9459,
+    "errors": 0
+  },
+  "sourceFiles": {
+    "index.html": "3ac03356a921d80a080570631ef8f1154edd9d6e",
+    "viewer.mjs": "303eca488386c2c46315f9f7a6b1096341856532",
+    "dom-geometry.mjs": "8a70e132134fa56094707b97828ae70b6748f403",
+    "dom-rig.mjs": "d7c81468113f42a56cd3db66d3ac5490d0081bd0",
+    "world-material.mjs": "fd19341f5039108a529f554fe77f21dd9036fa87",
+    "terrain-host.mjs": "c70d11725e3a3ced444a3d95ff06f05e19f4b5bb",
+    "tinyskies-reference.mjs": "2774c29ea67375a650b5f57e03a280d7549b8ab8",
+    "browser-proof.mjs": "0b43eda7470aa74a4241033ccfba23c7b5e0350a",
+    "check_tinyskies_osm_integrated_v1.mjs": "e463ae660e838c9a94ce7cb8fd49ac6a7fd38aef"
+  },
+  "screenshots": {
+    "01-source-lighthouse.png": "8d6f639d791533d425ce31bc3061a326ca29944504c2fd2bb68ed518795995ef",
+    "02-source-observatory.png": "7b935d1fc3e9c4a8f87fc7cbf15a5536dc0e195ae79b56bd51df985fe8a655db",
+    "03-integrated-osm.png": "9b8f06c5e07f5894d32590f3c5eed53959768d0025f9b64679d758a4d1f3f901",
+    "04-integrated-evening.png": "850f350242db520d235eb3585aebe604e065aa6fed040d3d52133d786de29b59",
+    "05-integrated-rain.png": "d3fa27511ed59376f8ae8516dc8a1ed63533d72329c86073aa061d700d4e7428"
+  },
+  "visualReview": {
+    "status": "PASS_FOR_HUMAN_GATE",
+    "notes": [
+      "TinySkies lighthouse and observatory source-derived recreations are shown in isolation before integrated evidence.",
+      "Hürth OSM subset, rolling terrain host and Grotesque Cathedral are readable together under OSM City default lighting.",
+      "Dynamic Evening retains local object identity after the final fog-scale repair.",
+      "Rain remains a world overlay; facade wetness/albedo changes remain false."
+    ],
+    "repairHistory": [
+      "Initial technical proof over-framed the 900 m terrain and washed out the city.",
+      "Repair 1 tightened the Hürth subset/camera but Evening remained too fog-tinted.",
+      "Repair 2 moved dynamic fog farther out; no further visual repair pass was performed."
+    ]
+  },
+  "boundaries": {
+    "cathedralPlacement": "STYLE_INTEGRATION_ONLY_NOT_GEO",
+    "realCologneOsmOverride": false,
+    "physicsContact": false,
+    "wetFacadeMaterial": false,
+    "audioOwnerChanged": false,
+    "publicStage": "PENDING"
+  }
+}
