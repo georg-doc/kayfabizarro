@@ -5,11 +5,12 @@
   "status": "candidate-only",
   "source": {
     "repo": "georg-doc/kayfabizarro",
-    "commit": "b6a5bdb0f5d6a6e5f245ada254873bcb87f0912e",
+    "commit": "be4843354c5cf420ddecbb25ed5a51aa5f21ca18",
     "residentRecipe": "tools/resident_atlas_s6/data/cast.js",
     "residentId": "clown",
     "builder": "tools/resident_atlas_s6/lib/atlas.js",
-    "adapter": "tools/resident_atlas/modules/runtime/s6-resident-module.js"
+    "adapter": "tools/resident_atlas/modules/runtime/s6-resident-module.js",
+    "note": "Pinned after Clown recipe ownership fix, cascade syntax fix and alternating-hand correction; later docs/tests may advance branch without changing this runtime source."
   },
   "scene": {
     "anchor": "support-top-center",
