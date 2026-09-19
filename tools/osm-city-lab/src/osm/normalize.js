@@ -215,10 +215,14 @@ export function normalizeOverpass(raw, sourceSpec, provenance = {}) {
   for (const b of features.buildings) all.push(...b.footprint);
   for (const a of features.landuse) all.push(...a.polygon);
   for (const l of features.waterLines) all.push(...l.line);
-  const xs = all.map(p=>p.x), zs = all.map(p=>p.z);
+  let minX=Infinity,maxX=-Infinity,minZ=Infinity,maxZ=-Infinity;
+  for(const p of all){
+    if(p.x<minX)minX=p.x; if(p.x>maxX)maxX=p.x;
+    if(p.z<minZ)minZ=p.z; if(p.z>maxZ)maxZ=p.z;
+  }
   const bounds = all.length ? {
-    min:{x:round3(Math.min(...xs)), z:round3(Math.min(...zs))},
-    max:{x:round3(Math.max(...xs)), z:round3(Math.max(...zs))}
+    min:{x:round3(minX), z:round3(minZ)},
+    max:{x:round3(maxX), z:round3(maxZ)}
   } : {min:{x:0,z:0},max:{x:0,z:0}};
   bounds.sizeM = {x:round3(bounds.max.x-bounds.min.x), z:round3(bounds.max.z-bounds.min.z)};
 

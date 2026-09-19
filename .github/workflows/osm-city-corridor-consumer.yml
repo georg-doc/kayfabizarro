@@ -1,0 +1,86 @@
+name: OSM City · corridor consumer export
+
+on:
+  push:
+    branches:
+      - osm-city/corridor-consumer-export-2026-09-19
+    paths:
+      - 'tools/osm-city-lab/data/ehrenfeld-huerth-corridor-v0/SOURCE_SPEC.json'
+      - 'tools/osm-city-lab/data/ehrenfeld-huerth-corridor-v0/QUERY_PLAN.json'
+      - 'tools/osm-city-lab/data/ehrenfeld-huerth-corridor-v0/PROVENANCE.json'
+      - 'tools/osm-city-lab/data/ehrenfeld-huerth-corridor-v0/source.overpass.json'
+      - 'tools/osm-city-lab/evidence/ehrenfeld-huerth-route.json'
+      - 'tools/osm-city-lab/scripts/build-ehrenfeld-huerth-corridor.mjs'
+      - 'tools/osm-city-lab/src/osm/normalize.js'
+      - 'tools/osm-city-lab/src/export/scene-recipe.js'
+      - '.github/workflows/osm-city-corridor-consumer.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: osm-city-ehrenfeld-huerth-corridor-consumer
+  cancel-in-progress: true
+
+jobs:
+  build-corridor:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref_name }}
+          fetch-depth: 0
+          sparse-checkout: |
+            tools/osm-city-lab/data/ehrenfeld-huerth-corridor-v0
+            tools/osm-city-lab/data/ehrenfeld-v0
+            tools/osm-city-lab/data/huerth-v0
+            tools/osm-city-lab/evidence
+            tools/osm-city-lab/scenes
+            tools/osm-city-lab/scripts/build-city.mjs
+            tools/osm-city-lab/scripts/build-ehrenfeld-huerth-corridor.mjs
+            tools/osm-city-lab/src
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Syntax
+        run: |
+          node --check tools/osm-city-lab/scripts/build-ehrenfeld-huerth-corridor.mjs
+          node --check tools/osm-city-lab/src/osm/normalize.js
+      - name: Existing city normalization regression
+        run: |
+          node tools/osm-city-lab/scripts/build-city.mjs ehrenfeld-v0 >/tmp/ehrenfeld-report.json
+          node tools/osm-city-lab/scripts/build-city.mjs huerth-v0 >/tmp/huerth-report.json
+          git diff --exit-code -- \
+            tools/osm-city-lab/data/ehrenfeld-v0/normalized.json \
+            tools/osm-city-lab/data/huerth-v0/normalized.json \
+            tools/osm-city-lab/scenes/ehrenfeld-v0.json \
+            tools/osm-city-lab/scenes/huerth-v0.json
+          git restore --worktree -- \
+            tools/osm-city-lab/evidence/ehrenfeld-v0-s0-report.json \
+            tools/osm-city-lab/evidence/huerth-v0-s0-report.json
+      - name: Build corridor consumer scene
+        run: |
+          node tools/osm-city-lab/scripts/build-ehrenfeld-huerth-corridor.mjs | tee /tmp/corridor-report.json
+          sha256sum             tools/osm-city-lab/data/ehrenfeld-huerth-corridor-v0/normalized.json             tools/osm-city-lab/scenes/ehrenfeld-huerth-corridor-v0.json > /tmp/corridor-first.sha
+      - name: Deterministic rebuild
+        run: |
+          node tools/osm-city-lab/scripts/build-ehrenfeld-huerth-corridor.mjs >/tmp/corridor-report-2.json
+          sha256sum             tools/osm-city-lab/data/ehrenfeld-huerth-corridor-v0/normalized.json             tools/osm-city-lab/scenes/ehrenfeld-huerth-corridor-v0.json > /tmp/corridor-second.sha
+          diff -u /tmp/corridor-first.sha /tmp/corridor-second.sha
+      - name: Commit corridor consumer artifacts
+        run: |
+          git config user.name "KFB OSM City Bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add \
+            tools/osm-city-lab/data/ehrenfeld-huerth-corridor-v0/normalized.json \
+            tools/osm-city-lab/scenes/ehrenfeld-huerth-corridor-v0.json \
+            tools/osm-city-lab/evidence/ehrenfeld-huerth-corridor-v0-consumer.json
+          if git diff --cached --quiet; then
+            echo "No corridor consumer delta."
+            exit 0
+          fi
+          git commit -m "OSM City: cache Ehrenfeld-Hürth corridor consumer [osm-city-corridor-consumer]"
+          git pull --rebase origin "$GITHUB_REF_NAME"
+          git push origin HEAD:"$GITHUB_REF_NAME"
