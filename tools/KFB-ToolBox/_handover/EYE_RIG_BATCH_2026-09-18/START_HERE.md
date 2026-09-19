@@ -6,6 +6,11 @@
 **Proposed source path:** `tools/KFB-ToolBox/eye-rig-batch/`  
 **Proposed public candidate:** `https://kayfabizarro.pages.dev/tools/KFB-ToolBox/eye-rig-batch/`
 
+> **CURRENT 27-ACTOR REVIEW WAVE · 2026-09-19**  
+> Source/Return: `ab5215ce4f31d80fe4ecb98077f15e3df58ecb97`; actor-browser implementation: `5f2e981cbcf4ca72a6c186c96ed008be535856a9`; evidence: `fa7fdb5b9c5b9c4d443e4f19f47260f934c90147`; Stage: `ae61e50d525e942a755cf46d0ed807b49b5a3e38`.  
+> The workbench now exposes **27 actual Rig_Medium actors** with model switching, per-actor profile/review persistence, All/Unreviewed/Adjusted/Unsupported filters, progress count and **Next unreviewed**. GothGirl keeps exact 2+3 cleanup; the remaining actors use the existing donor-eye detector fail-closed, so uncertain geometry is never silently removed. Tests: **62/62 static · 14/14 focused · 3/3 syntax**.  
+> Human gate: Georg rapidly clicks through the Medium roster and records Approve / Adjusted + approve / Unsupported. Large/Legacy remains parked until this review wave yields real override data. Current public browser verification remains OPEN; no new Actions run was triggered.
+
 > **CURRENT AUTHORING-SURFACE GATE · 2026-09-19**  
 > Source/Return: `fe088da25bb344a522b61ac7c554d0a4dc8cc15e`; implementation: `c74cbd6e0691d0bd3bcc574203219cdb0e9f647f`; evidence: `eeb79850a8142968c418e23b482a330f120dd9c2`; Stage: `40133c8b2d6d8f210003a6ef7cfa793aebac63bf`.  
 > Georg's tuned values are now the `Rig_Medium` authoring default. Source measurement is suggestion-only. Existing `eyeoval.v1.js` supplies Width/Height/Depth/Tilt; EyeRig-v6 gaze is surfaced as Life/Pointer/Fixed; persistent Batch I/O uses `rigClass → character → session` inheritance. Tests: **46/46 static · 15/15 focused · 2/2 syntax**.  

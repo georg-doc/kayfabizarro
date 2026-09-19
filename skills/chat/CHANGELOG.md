@@ -419,3 +419,29 @@ The same publication batch adds a KFB Hub briefing card and a public Playwright 
 
 ### HUMAN GATE
 After automated public proof, Georg compares A · NAIVE against B · PHASE SYNC for foot sliding, double-step, hip pop, cadence and weight. No consumer integration before that visual gate.
+
+
+## 2026-09-19 · Batch EyeRig Atlas · 27 Rig_Medium actors ready for rapid review
+
+### IMPLEMENTATION
+- replaced the one-actor roster with a verified 27-entry `Rig_Medium` catalog;
+- added real model switching;
+- added per-character EyeProfile persistence;
+- added All / Unreviewed / Adjusted / Unsupported filters;
+- added reviewed/27 progress and **Next unreviewed**;
+- shared Medium animation packs stay single-owner;
+- GothGirl retains exact components 2+3 cleanup;
+- other Medium actors reuse the existing `donoreyes.v1.js` mirrored-front detector through a fail-closed adapter.
+
+### EVIDENCE
+- source/Return: `ab5215ce4f31d80fe4ecb98077f15e3df58ecb97`;
+- implementation: `5f2e981cbcf4ca72a6c186c96ed008be535856a9`;
+- evidence: `fa7fdb5b9c5b9c4d443e4f19f47260f934c90147`;
+- Stage runtime: `ae61e50d525e942a755cf46d0ed807b49b5a3e38`;
+- **62/62 static PASS · 14/14 focused PASS · 3/3 syntax PASS**;
+- exact GitHub Stage readback PASS.
+
+The public workflow now smoke-switches GothGirl → Clown → Ninja → Magical Girl → GothGirl. No new Actions run was triggered by the connector and this web environment cannot open `pages.dev`, so current public verification remains OPEN.
+
+### NEXT GATE
+Georg clicks through the Medium roster, using Approve / Adjusted + approve / Unsupported and Next unreviewed. Large/Legacy remains parked until this wave yields real override data.
