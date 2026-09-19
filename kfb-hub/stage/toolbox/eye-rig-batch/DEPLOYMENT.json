@@ -8,11 +8,11 @@
   "returnHead": "af2827b60ced330e57bf4a7f553ad30dbf45b205",
   "implementationCheckpoint": "c6608ab5c76509bb54ae6b4375b87ed338e61427",
   "evidenceCheckpoint": "1416092e87018ce32507d4d91e1d13d39f62c1ac",
-  "stageRuntimeHead": "670e11d56fe5b85e6264d8a294868c32540db5c6",
-  "mainRouterHead": "779019712716c137746155b292c39ec486732d0f",
+  "stageRuntimeHead": "e3c4a79d959aa5a09bfb7d5cec67807b27170d6c",
+  "mainRouterHead": "f7bdcf001abefd4b40cc722729eb3b406b041936",
   "expectedVisibleMarker": "Medium / Large class switch · PR #104",
   "humanGate": "Reload Stage; Clown/other Medium actors and Large actors should load without the push exception; then continue Medium review or Monstrosity Large calibration",
-  "publicVerification": "PENDING_LOADER_FIX_PUBLICATION",
+  "publicVerification": "Loader fix published; human reload/model-switch check next",
   "medium": {
     "actorCount": 27,
     "defaultStatus": "SET",
@@ -52,8 +52,8 @@
     "optional Nose/Brow",
     "Vehicle EyeRig"
   ],
-  "hubCard": "SYNCED_TO_LARGE_MONSTROSITY_CALIBRATION",
-  "nextGate": "GEORG_RELOAD_AND_MODEL_SWITCH_SANITY",
+  "hubCard": "SYNCED_TO_LOADER_FIX",
+  "nextGate": "RELOAD_AND_CLICK_PREVIOUSLY_FAILING_ACTOR",
   "loaderFix": {
     "status": "FIXED",
     "error": "Cannot read properties of undefined (reading 'push')",

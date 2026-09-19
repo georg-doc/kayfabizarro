@@ -504,3 +504,20 @@ Medium remains unchanged and keeps its own default and actor overrides.
 
 ### Next action
 Georg tunes Monstrosity and sends the resulting view / values back. Then the Large default can be locked and tested on Black Knight, Demon Lord and Orc Brute.
+
+
+## 2026-09-20 · COMMON ACTOR LOADER FIX
+
+The recurring `Cannot read properties of undefined (reading 'push')` failure was traced to the shared source-eye cleanup path, not to individual actor files.
+
+KayKit actors such as Clown and Monstrosity use a single GLTF primitive on the head. Three.js therefore exposes no explicit geometry group. The reused donor stripper assumed at least one group.
+
+Repair:
+- add a temporary full-head group only when none exists;
+- run the existing donor stripper unchanged;
+- remove the temporary group again on restore/failure;
+- clear stale technical Unsupported states after a successful reload.
+
+Evidence: `docs/LOADER_SINGLE_MATERIAL_FIX_2026-09-20.md`.
+
+Tests after repair: **84/84 PASS**; focused loader checks **8/8 PASS**.

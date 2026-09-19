@@ -4,7 +4,7 @@
   "repository": "georg-doc/kayfabizarro",
   "sourceBranch": "toolbox/eye-rig-batch-2026-09-18",
   "identityCheckpoint": "949ff8037df2da88eb91ef825984ef57870b8238",
-  "implementationCheckpoint": "a843a9e9666d2d0d7d0c6a95f801a969f57941c3",
+  "implementationCheckpoint": "c6608ab5c76509bb54ae6b4375b87ed338e61427",
   "mergeBase": "5650b6c54d8789b20ea80abe857688173d506d3b",
   "stage": {
     "route": "/kfb-hub/stage/toolbox/eye-rig-batch/",
@@ -110,7 +110,7 @@
     "merged": false
   },
   "tests": {
-    "staticContract": "82/82 PASS",
+    "staticContract": "84/84 PASS",
     "githubPersistence": "PASS · identity checkpoint and all five intended files fetched back",
     "exactSourceGeometry": "PASS · 12/12 connected components measured from pinned GLB",
     "historicalJsSyntax": "3/3 PASS on pre-identity implementation checkpoint",
@@ -121,13 +121,14 @@
     "changedJsSyntax": "3/3 PASS",
     "focusedStudioControls": "15/15 PASS",
     "focusedActorBrowser": "14/14 PASS",
-    "focusedLargeCandidate": "15/15 PASS"
+    "focusedLargeCandidate": "15/15 PASS",
+    "loaderFocused": "8/8 PASS"
   },
   "visualReview": {
     "status": "LARGE_MONSTROSITY_CALIBRATION_OPEN",
     "nextGate": "Switch to Large, tune Monstrosity, press Set as Large default, then review the other three Large actors."
   },
-  "currentEvidenceHead": "e60f1db1e2436f11549e44def25ab9b2718eac3b",
+  "currentEvidenceHead": "1416092e87018ce32507d4d91e1d13d39f62c1ac",
   "calibrationCheckpoint": "6f7d7988849cf0c74a6551a33ee422d8584c87c2",
   "qaEvidenceCheckpoint": "e60f1db1e2436f11549e44def25ab9b2718eac3b",
   "rigMediumDefault": {
@@ -246,5 +247,13 @@
       "Running_A"
     ],
     "jumpAvailable": false
+  },
+  "loaderFix": {
+    "status": "FIXED",
+    "error": "Cannot read properties of undefined (reading 'push')",
+    "cause": "single-material head geometry with zero explicit groups in donor strip path",
+    "repair": "temporary whole-mesh group around reused donor strip; restore original no-group state",
+    "staleUnsupportedRecovery": true,
+    "evidence": "docs/LOADER_SINGLE_MATERIAL_FIX_2026-09-20.md"
   }
 }
