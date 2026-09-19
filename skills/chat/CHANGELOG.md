@@ -593,6 +593,45 @@ The pages.dev KCL route remains **NOT PUBLIC_VERIFIED** because Cloudflare publi
 
 Exactly one next gate: restore one successful current Cloudflare deployment, rerun the unchanged KCL public proof, then Georg compares NAIVE vs PHASE SYNC visually before any consumer integration.
 
+
+## 2026-09-20 · KCL-M1 · public Stage 39/39 PASS
+
+### PUBLICATION REPAIR
+Root cause of the earlier KCL public failure was the publication branch, not animation code: Cloudflare deploys from `cloudflare-live`, while the KCL Stage files existed only on `main`.
+
+Publication repair:
+- `cloudflare-live@fac041eb34c9a284d724a3ee2b945bef7d020d04`;
+- mirrored only the exact tested KCL Stage files: `index.html`, `bench.mjs`, `SOURCE.json`;
+- mirrored the current KFB Hub entry;
+- Cloudflare Pages check: **SUCCESS**.
+
+### PUBLIC BROWSER EVIDENCE
+KCL workflow run `35468444150`, attempt 2, public-proof job `105981648314` opened the exact route:
+
+`https://kayfabizarro.pages.dev/kfb-hub/stage/game-dev-studio/kcl-m1-locomotion-sync/`
+
+Result:
+- **39/39 PASS**
+- exact deployment marker matched source head `d5c112af24df803462f0a326a85925f34170a5ed`
+- 5/5 scoped clips loaded + measured
+- real left/right foot contacts present
+- WebGL canvas present
+- naive and phase-sync A/B transition executed
+- consumer movement ownership preserved
+- Registry read-only
+- 0 failed HTTP/resources
+- 0 page/console errors
+- artifact `10593933655`
+- digest `sha256:5d7f6bb436d0030a3ddec3f080e0a6b041fe196cdf36cd3d34d5f5d01f71c0cf`
+
+### STATUS
+`PUBLIC_VERIFIED = YES`.
+
+Georg visual motion acceptance remains OPEN. No consumer integration, speed-band promotion or Sprint inference follows automatically from technical PASS.
+
+### EXACT NEXT GATE
+Georg compares **A · NAIVE** vs **B · PHASE SYNC** on the public KCL Stage, beginning with Walking_A → Running_A, LEFT contact, fade around 0.12 s, warp ON, and judges foot sliding, double-step, hip pop, cadence and weight.
+
 ## 2026-09-19 · KayKit Creator Lessons · additive Game Dev Studio research
 
 ### USER DIRECTION
