@@ -82,3 +82,30 @@ Focus on decisions that let KFB build or adapt KayKit-compatible objects without
 - material/atlas usage;
 - variant policy;
 - reusable recipes suitable for browser/tool automation.
+
+
+## PR / branch review state
+
+- Draft PR: **#107** — `https://github.com/georg-doc/kayfabizarro/pull/107`
+- Head at PR creation: `2b7d70a6b6484f29f344e8f4e86e540ff570120d`
+- Base: `main@a92e3c70029d811b76a88a15459adc20fea943bb`
+- PR state: OPEN · DRAFT · UNMERGED
+- Changed files at PR creation: **10**
+- Commits at PR creation: **11**
+- Additions/deletions at PR creation: **1567 / 0**
+
+Changed files:
+1. `kfb-hub/index.html`
+2. `skills/chat/CHANGELOG.md`
+3. `skills/chat/START_HERE.md`
+4. `tools/game-dev-studio/CHANGELOG.md`
+5. `tools/game-dev-studio/README.md`
+6. `tools/game-dev-studio/RECOVERY.md`
+7. `tools/game-dev-studio/research/KAYKIT_CREATOR_LESSONS_LIVING.md`
+8. `tools/game-dev-studio/research/KAYKIT_CREATOR_LESSONS_RETURN.md`
+9. `tools/game-dev-studio/research/KAYKIT_CREATOR_LESSONS_SOURCE.json`
+10. `tools/game-dev-studio/research/KAYKIT_CREATOR_LESSONS_TEST_REPORT.md`
+
+Static documentation/wiring sanity: **9/9 PASS**.
+
+No public Cloudflare deployment was performed for this branch. The existing Game Dev Studio route is not evidence for this revision.
