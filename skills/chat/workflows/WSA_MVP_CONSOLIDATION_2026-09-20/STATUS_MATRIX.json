@@ -1,0 +1,192 @@
+{
+  "schema": "kfb.wsa-mvp-consolidation/0.1",
+  "updated": "2026-09-20",
+  "owner": "existing WSA Work Lead / existing project owners",
+  "coordinationOwner": "KFB Production Hub / router",
+  "sourceBaseline": {
+    "repo": "georg-doc/kayfabizarro",
+    "head": "9b3c57ec09af8a9601a7221a84ee9a6de1e287f5"
+  },
+  "stageTarget": "https://kayfabizarro.pages.dev/kfb-hub/stage/wsa-mvp-consolidation/",
+  "publication": {
+    "branch": "cloudflare-live",
+    "head": "3c1135bc5d24727a011735a4d4bf2ff707b1757c",
+    "relationToMain": {
+      "status": "diverged",
+      "mainOnlyCommits": 183,
+      "publicationOnlyCommits": 40
+    },
+    "rule": "select exact tested Stage files; never wholesale-merge main into publication"
+  },
+  "slices": [
+    {
+      "id": "travel-tinyskies-terrain",
+      "owner": "georg-doc/KFB-Travel-Globe",
+      "pr": 30,
+      "head": "0b354d8b8cdbe55e10ecc91221ae933058306f3b",
+      "mvpUse": "WORLD_TRUTH",
+      "sourceStatus": "TESTED_DONOR",
+      "publicStatus": "DEPLOYMENT_MARKER_FAIL_BEFORE_BROWSER",
+      "tests": [
+        "earlier candidate Chromium 12/12 PASS",
+        "0 page/script errors",
+        "0 failed HTTP assets"
+      ],
+      "publicRun": 35474894951,
+      "stage": "https://kayfabizarro.pages.dev/kfb-hub/stage/stunt-world/tinyskies-terrain-donor/",
+      "nextGate": "repair publication synchronization only; do not restart terrain"
+    },
+    {
+      "id": "tinyskies-osm-grotesque",
+      "owner": "georg-doc/kayfabizarro",
+      "pr": 110,
+      "head": "8033e64d2638740fe2c9133216d42c56c306a4aa",
+      "testedRuntimeHead": "aa28a743628699271c94c1911af23d0564c6f3cc",
+      "mvpUse": "VISUAL_WORLD_DONOR",
+      "sourceStatus": "LOCAL_BROWSER_PASS",
+      "publicStatus": "FROZEN_PUBLIC_MARKER_PARSE_FAIL_AFTER_TWO_ATTEMPTS",
+      "tests": [
+        "27/27 static PASS",
+        "19/19 browser PASS",
+        "0 browser errors"
+      ],
+      "sourceRun": 35471501769,
+      "failedPublicRun": 35471646709,
+      "stage": "https://kayfabizarro.pages.dev/kfb-hub/stage/img2threejs/tinyskies-osm-cohesion-v1/",
+      "nextGate": "WSA normalization during local consolidation; no third Web repair pass"
+    },
+    {
+      "id": "race-hud-v3",
+      "owner": "georg-doc/KFB-Stunt-Car-Race",
+      "pr": 28,
+      "head": "8918471bf6c5e3fa1b945109fd37019df600cad6",
+      "testedRuntimeHead": "6d8284c4d6069305e35f349ea1cfcdc605e27a02",
+      "mvpUse": "DRIVE_HUD_CANDIDATE",
+      "sourceStatus": "BROWSER_PASS",
+      "publicStatus": "PUBLIC_QA_FAIL_BEFORE_BROWSER_AT_PLAYWRIGHT_INSTALL",
+      "tests": [
+        "11/11 static PASS",
+        "12/12 browser interaction PASS"
+      ],
+      "sourceRun": 35470897447,
+      "failedPublicRun": 35470815300,
+      "stage": "https://kayfabizarro.pages.dev/kfb-hub/stage/stunt-world/hud-game-v3/",
+      "nextGate": "bounded publication/QA repair; no redesign"
+    },
+    {
+      "id": "kcl-m1-locomotion",
+      "owner": "georg-doc/kayfabizarro",
+      "pr": 107,
+      "head": "fc49a336af57adb6317b74211b3318d004d96de5",
+      "mvpUse": "MOTION_MEASUREMENT_DONOR",
+      "sourceStatus": "PUBLIC_WORKFLOW_PASS_RECORDED",
+      "publicStatus": "ROUTE_PUBLISHED_METADATA_STALE",
+      "tests": [
+        "20/20 source/static PASS",
+        "39/39 local WebGL PASS",
+        "39/39 public Cloudflare browser PASS recorded"
+      ],
+      "stage": "https://kayfabizarro.pages.dev/kfb-hub/stage/game-dev-studio/kcl-m1-locomotion-sync/",
+      "humanGate": "NAIVE vs PHASE SYNC",
+      "nextGate": "reconcile SOURCE metadata then Georg visual motion choice"
+    },
+    {
+      "id": "resident-clown-module",
+      "owner": "georg-doc/kayfabizarro/tools/resident_atlas",
+      "handoff": "tools/KFB-ToolBox/_handover/RESIDENT_SCENE_MODULES_WSA_2026-09-19/START_HERE.md",
+      "mvpUse": "FIRST_RESIDENT_MODULE",
+      "sourceStatus": "HANDOFF_READY",
+      "publicStatus": "RECORDED_CLOUDFLARE_BROWSER_GREEN",
+      "tests": [
+        "run 35421198328 green",
+        "run 35421390825 green",
+        "HTTP 200",
+        "activity advancing",
+        "no browser errors"
+      ],
+      "stage": "https://kayfabizarro.pages.dev/resident-atlas-s6/?resident=clown",
+      "humanGate": "trajectory/catch visual tuning",
+      "nextGate": "Platformer Resident Consumer R1 on consumer-owned 4x4 grass support"
+    },
+    {
+      "id": "toolbox-eyerig",
+      "owner": "georg-doc/kayfabizarro/tools/KFB-ToolBox",
+      "pr": 104,
+      "head": "af2827b60ced330e57bf4a7f553ad30dbf45b205",
+      "mvpUse": "MEDIUM_ACTOR_CALIBRATION",
+      "sourceStatus": "LOADER_FIX_TEST_PASS",
+      "publicStatus": "CORRECTED_PUBLIC_PROOF_NOT_RUN",
+      "tests": [
+        "84/84 full PASS",
+        "8/8 focused loader PASS"
+      ],
+      "stage": "https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/eye-rig-batch/",
+      "largeStatus": "HUMAN_CALIBRATION_OPEN_NOT_MVP_BLOCKER",
+      "nextGate": "corrected Stage smoke; Monstrosity Large default remains separate human gate"
+    },
+    {
+      "id": "combat-ca2",
+      "owner": "georg-doc/KFB-Combat-Arena",
+      "pr": 5,
+      "head": "6bd36e7a2da090d240ab520de9c280ac73fe12cb",
+      "mvpUse": "COMBAT_CANDIDATE",
+      "sourceStatus": "REPO_VALIDATION_PASS",
+      "publicStatus": "FIXED_STAGE_BROWSER_PROOF_OPEN",
+      "tests": [
+        "workflow 35463139401 PASS",
+        "npm test PASS",
+        "portable build PASS",
+        "re-home verify PASS"
+      ],
+      "nextGate": "publish exact CA2 to fixed Cloudflare Stage and run browser/human visual gate"
+    }
+  ],
+  "excluded": [
+    {
+      "ref": "georg-doc/KFB-Stunt-Car-Race#29",
+      "reason": "frozen wrong macro-world foundation for this slice"
+    },
+    {
+      "ref": "georg-doc/kayfabizarro#108",
+      "reason": "TE-01 Cloudflare failure recovery only"
+    },
+    {
+      "ref": "georg-doc/kayfabizarro#106",
+      "reason": "C0-A1 archived failed candidate"
+    },
+    {
+      "ref": "georg-doc/kayfabizarro#101",
+      "reason": "C0 Baukasten visual rejection history"
+    },
+    {
+      "ref": "Race HUD #26/#27 and HUD Rig v1",
+      "reason": "rejected visual history"
+    },
+    {
+      "ref": "Birthday lanes",
+      "reason": "archived/outdated execution scope"
+    }
+  ],
+  "incomingDonors": [
+    {
+      "id": "cloud-design-mini-editor",
+      "status": "USER_REPORTED_SOURCE_NOT_YET_PINNED",
+      "intendedReuse": [
+        "Dungeon v3 prop placement",
+        "Platformer scenery placement",
+        "Resident Atlas scene composition",
+        "simple resident posing / pose collection"
+      ],
+      "rule": "pin exact editable export first; reuse as authoring donor; do not rebuild from prose or create a new runtime owner"
+    }
+  ],
+  "recommendedParallelSlices": [
+    "HUD v3 Publication Repair",
+    "Combat CA2 Stage Proof",
+    "EyeRig Corrected Public Smoke",
+    "Platformer Resident Consumer R1",
+    "Mini-editor Intake after source pin"
+  ],
+  "gameDevelopmentStudio": "GAME_DEV_CLI_UNAVAILABLE · OPTIONAL FALLBACK USED",
+  "nextGate": "WSA reviews this matrix and performs one local multi-repo MVP assembly without changing owner boundaries"
+}
