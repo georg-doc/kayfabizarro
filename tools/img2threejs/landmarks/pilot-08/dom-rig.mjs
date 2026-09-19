@@ -40,10 +40,13 @@ function fitGroupTransform(parts,bounds,params,groupId){
   const xp=fieldPoint([mid[0]+e,mid[1],mid[2]],bounds,params),xm=fieldPoint([mid[0]-e,mid[1],mid[2]],bounds,params);
   const zp=fieldPoint([mid[0],mid[1],mid[2]+e],bounds,params),zm=fieldPoint([mid[0],mid[1],mid[2]-e],bounds,params);
   const xFull=sub(xp,xm),zFull=sub(zp,zm);
-  let xRaw=sub(xFull,mul(yAxis,dot(xFull,yAxis)));
-  let xAxis=unit(xRaw),zAxis=unit(cross(xAxis,yAxis));
+  // Preserve each semantic assembly's authored contact plane. Grotesque lean/bend
+  // travels through the Y vector; the X/Z basis stays horizontal so roofs,
+  // windows and buttresses move with their host without pushing ground-contact
+  // corners below terrain.
+  let xAxis=unit([xFull[0],0,xFull[2]]);
+  let zAxis=unit([-xAxis[2],0,xAxis[0]]);
   if(dot(zAxis,zFull)<0)zAxis=mul(zAxis,-1);
-  xAxis=unit(cross(yAxis,zAxis));
   return {id:groupId,pivot,origin,x:xAxis,y:yAxis,z:zAxis,sx:len(xFull)/(2*e),sy,sz:len(zFull)/(2*e)};
 }
 function applyPoint(p,T){
