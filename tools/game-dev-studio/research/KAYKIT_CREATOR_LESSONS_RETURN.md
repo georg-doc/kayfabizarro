@@ -354,3 +354,58 @@ The first KCL public job never booted the bench; its `SOURCE.json` request resol
 ### Exactly one next gate
 
 Restore one successful **current** Cloudflare/pages.dev deployment without changing KCL motion logic; rerun the unchanged public KCL proof; then Georg compares **A · NAIVE** vs **B · PHASE SYNC** visually before any consumer integration.
+
+
+## Public Stage recovery complete · 2026-09-20
+
+This supersedes the earlier KCL public-blocker status.
+
+### Root cause resolved
+
+Cloudflare publication is sourced from `cloudflare-live`, not `main`.
+
+The exact tested KCL Stage candidate was mirrored to:
+`cloudflare-live@fac041eb34c9a284d724a3ee2b945bef7d020d04`
+
+Cloudflare Pages deployment: **SUCCESS**.
+
+No KCL motion, measurement, clip or transition logic changed for this repair.
+
+### Public browser result
+
+- workflow run: `35468444150`
+- attempt: **2**
+- public-proof job: `105981648314`
+- result: **39/39 PASS**
+- exact fixed pages.dev route opened
+- 5/5 scoped clips loaded + measured
+- WebGL + naive/phase-sync A/B executed
+- movement owner preserved
+- Registry read-only
+- 0 failed HTTP/resources
+- 0 page/console errors
+- artifact: `10593933655`
+- digest: `sha256:5d7f6bb436d0030a3ddec3f080e0a6b041fe196cdf36cd3d34d5f5d01f71c0cf`
+
+Fixed Stage:
+https://kayfabizarro.pages.dev/kfb-hub/stage/game-dev-studio/kcl-m1-locomotion-sync/
+
+### Current status
+
+`PUBLIC_VERIFIED = YES`
+
+`GEORG_MOTION_ACCEPTANCE = OPEN`
+
+The machine measurements remain candidates, not approved consumer speeds.
+
+### Exactly one next gate
+
+Georg visually compares:
+**A · NAIVE** vs **B · PHASE SYNC**.
+
+Start with:
+`Walking_A → Running_A · LEFT · fade 0.12 s · warp ON · speed-match ON`.
+
+Judge foot sliding, double-step, hip pop, cadence and weight.
+
+No consumer MotionProfile promotion before that human gate.
