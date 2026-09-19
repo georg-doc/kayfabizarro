@@ -183,6 +183,16 @@ Potential later reuse, subject to WSA acceptance:
 
 It should **not** become a navigation owner for the active drive loop merely because it can display geography.
 
+## GITHUB CHECK-IN / REVIEW ROUTING
+
+- repository: `georg-doc/kayfabizarro`
+- branch: `handoff/cartoon-map-board-wsa-2026-09-19`
+- draft PR: `#93`
+- Race / WSA intake issue: `georg-doc/KFB-Stunt-Car-Race#15`
+- PR head before this final routing note: `e47f8494f545160c979806f5ef6d6b7fcc496584`
+
+The PR is documentation-only and mergeable at the time of review creation. The Race issue is the WSA intake pointer; it does not copy the donor runtime into Race.
+
 ## DONE WHEN
 
 This handoff is complete when WSA can review one pinned donor package and can answer the single human gate below without reconstructing chat history.
