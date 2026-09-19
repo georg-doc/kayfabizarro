@@ -27,3 +27,23 @@
 ## Scope boundary
 
 The test verifies catalog loading, exact registry/source wiring, visual WebGL previews, measurements, responsive layout and existing Resident/Graft seams. It does **not** claim gameplay collision, Dungeon integration, public Cloudflare deployment or Georg acceptance.
+
+
+## HUMAN VISUAL REVIEW · 2026-09-19
+
+**Status:** `FAIL · NOT ACCEPTED`
+
+The automated PASS above is intentionally preserved as a **technical** test result. Georg's subsequent Stage review rejected the visual result.
+
+Observed review failures:
+
+- the measurement presentation did not make the acceptance decision understandable;
+- relative scale cannot be judged because each proof card auto-frames independently;
+- the Clown vignette appears too small relative to isolated characters/props in this presentation;
+- the 3-club activity is visually broken: arms do not read as convincing juggling motion and clubs cross the body;
+- the page introduces a new UI rather than matching the existing Resident Atlas / World Atlas / Plant Prop Lab family.
+
+Canonical analysis:
+`POSTMORTEM_VISUAL_REVIEW_FAIL_2026-09-19.md`
+
+Therefore `TESTED RESULT · PASS` above must not be cited as `GEORG ACCEPTANCE` or as proof of visual correctness.
