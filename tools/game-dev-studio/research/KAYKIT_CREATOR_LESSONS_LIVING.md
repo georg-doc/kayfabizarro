@@ -1204,7 +1204,7 @@ The animation layer must never become a second movement/physics writer.
 
 The 2024 overview is an older visual preview. For current implementation facts KFB must use the current source/Registry rather than the old video count.
 
-**CURRENT MAIN SNAPSHOT reviewed:** `c84c3c57aa875e1ac1cd8cc17eb966cb37c0f317`  
+**CURRENT MAIN SNAPSHOT reviewed:** `3d9ac78bfabcec0c43fc453c124133764221139c`  
 **Motion registry:** `registry/resources/v1/motions.jsonl`  
 **Registry blob:** `1f266ab2e9e57db63f5596ba83f616872b502909`
 
@@ -1944,4 +1944,4 @@ Continue the creator analysis with `KayKit - Animations - Overview Set 1`, espec
 **KCL-M1 · Locomotion Sync Bench measurement pass** on one current Rig_Medium actor using Walking_A/B/C + Running_A/B only. Measure foot contacts, planted intervals, acceptable playback ranges and naive-vs-phase-synced transitions. No consumer movement changes in that gate.
 
 ### BRANCH NOTE
-At this source pass, GitHub main had advanced to `c84c3c57aa875e1ac1cd8cc17eb966cb37c0f317` while PR #107's research branch remained intentionally unmerged. Current-main source facts were read/pinned; no parallel EyeRig/Hub changes are overwritten by this research update.
+At this source pass, GitHub main had advanced to `3d9ac78bfabcec0c43fc453c124133764221139c` while PR #107's research branch remained intentionally unmerged. Current-main source facts were read/pinned; no parallel EyeRig/Hub changes are overwritten by this research update.
