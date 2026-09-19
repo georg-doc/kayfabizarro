@@ -1,14 +1,7 @@
 name: OSM City · Ehrenfeld Hürth corridor discovery
 
 on:
-  push:
-    branches:
-      - osm-city/corridor-checkpoint-retry-2026-09-19
-    paths:
-      - 'tools/osm-city-lab/data/corridors/ehrenfeld-huerth-v0/**'
-      - 'tools/osm-city-lab/scripts/fetch-ehrenfeld-huerth-corridor.mjs'
-      - 'tools/osm-city-lab/scripts/route-ehrenfeld-huerth.mjs'
-      - '.github/workflows/osm-city-corridor.yml'
+  # Networked source refresh is explicit after promotion; do not refetch OSM on merge.
   workflow_dispatch:
 
 permissions:
