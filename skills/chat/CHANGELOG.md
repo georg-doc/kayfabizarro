@@ -669,9 +669,9 @@ Travel PR #31 implements a first spherical Track/Terrain proof without modifying
 - evidence artifact `10595045594`, digest `sha256:c36a74e2ef05929769d642228a5b94398bdc0de582ae4f316dc9740cbf43535a`.
 
 ### STAGE PACKAGE
-kayfabizarro PR #115 is **13/13 local Stage-mirror browser PASS** at head `7e6f3c440d54410342d1d884d3f63118468d241c`, run `35477163769`, job `105988280389`, boot 641 ms, 0 page/HTTP errors.
+The first Stage PR #115 reached **13/13 local Stage-mirror PASS** but became non-mergeable after current-main Hub/router updates and was closed unmerged. Rebased Stage PR #116 is now **13/13 PASS** at head `a93adaa7ee53b475c794fda4ae562573202989db`, run `35477388625`, job `105988875164`, boot 698 ms, 0 page/HTTP errors. Artifact `10595135543`, digest `sha256:4d779b11a0f14ebce9d5fbb3a14aaa16ef64daca530baf3cccb6413a4d660763`.
 
-PR #115 remains deliberately **unmerged**. No Cloudflare/public human link is claimed yet.
+PR #116 remains deliberately **unmerged**. No Cloudflare/public human link is claimed yet.
 
 ### OSM FOLLOW-UP
 Planning lives in Travel `site/terrain-corridor-tc01/OSM_FOLLOWUP.md`: OSM stays geographic/semantic truth; Travel stays terrain/world truth; Race stays movement/contact owner; OMS/Landmark slices remain explicit presentation overrides.
