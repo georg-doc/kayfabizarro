@@ -248,11 +248,14 @@ function zoneMaterial(){
 function addRadioZones(group){
   for(const old of radioHitZoneMeshes){const i=actionMeshes.indexOf(old);if(i>=0)actionMeshes.splice(i,1);old.removeFromParent();old.geometry.dispose();old.material.dispose()}
   radioHitZoneMeshes=[];
+  // Model-space hit zones follow visible Tiny Treats controls, never the speaker grille:
+  // NEXT = red tuning slider, PLAY = small lower-right button,
+  // VOL− / VOL+ = left/right halves of the large upper-right knob.
   const defs=[
-    ['radio.play',-91,-49,54,52],
-    ['radio.next',-30,-50,42,40],
-    ['radio.volDown',70,-50,43,52],
-    ['radio.volUp',112,-50,43,52]
+    ['radio.next',-73,19,66,28],
+    ['radio.play',88,-51,42,40],
+    ['radio.volDown',55,-10,28,44],
+    ['radio.volUp',78,-10,28,44]
   ];
   for(const [action,x,y,w,h] of defs){
     const m=registerAction(invisibleHit(w,h,24),action,'radio');m.material.dispose();m.material=zoneMaterial();m.position.set(x,y,24);
