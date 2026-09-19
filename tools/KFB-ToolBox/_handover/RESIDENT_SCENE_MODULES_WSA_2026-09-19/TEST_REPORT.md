@@ -33,31 +33,50 @@ The underlying S33 implementation was already tested before this handoff and is 
 - integer half-turn orientation closure PASS;
 - 6-club guard PASS.
 
-## Cloudflare browser proof · workflow added
+## Cloudflare browser proof · PASS
 
 Workflow:
 
 `.github/workflows/resident-scene-modules-cloudflare-qa.yml`
 
-Target:
+Canonical target:
 
 `https://kayfabizarro.pages.dev/resident-atlas-s6/?resident=clown`
 
-It checks:
+Merged handoff commit:
 
-- Cloudflare HTTP response;
-- deep-link selects `clown`;
-- `juggle-cascade-v1` mounts;
-- activity samples advance;
-- scene node count is nontrivial;
-- club-clearance diagnostic becomes finite;
-- arm-residual diagnostic becomes finite;
-- no console/page errors;
-- screenshot artifact `clown-s33.png`;
-- JSON artifact `report.json`.
+`ae79765c02953704fefaa44fc0c40e21c23da372`
 
-At handoff-authoring time this workflow has not yet run on the merged handoff commit. Do not mark `BROWSER TESTED RESULT` until the actual workflow run is green and the artifact is inspected.
+Actual run:
 
-## Environment limitation
+- workflow run: `35421198328` · **SUCCESS**
+- job: `105839115967` · **SUCCESS**
+- artifact: `10577298328` · `resident-scene-modules-cloudflare-proof`
+- artifact digest: `sha256:f23f9efd2ca56018658886aed1085676dde050cae8a6aa9b65cd6158d0183ca8`
 
-This chat's direct Cloudflare fetch attempt could not resolve `kayfabizarro.pages.dev` because the execution environment had temporary DNS failure. That is not evidence that the site is down. Browser proof is delegated to the repository CI workflow above, on the canonical Cloudflare URL only.
+Persisted machine-readable result:
+
+`evidence/CLOUDFLARE_BROWSER_RESULT_2026-09-19.json`
+
+Observed checks:
+
+- Cloudflare HTTP **200**;
+- deep link selected `clown`;
+- `juggle-cascade-v1` mounted;
+- 21 scene nodes loaded;
+- activity advanced to 31 sampled frames during the proof window;
+- max CCD arm residual measured `0.0001394517`;
+- minimum **club pivot-to-pivot** distance observed `0.0247257373`;
+- no console/page errors.
+
+The workflow artifact contains `clown-s33.png` and `report.json`.
+
+### Evidence boundary
+
+This is now a real **BROWSER TESTED RESULT on Cloudflare**. It is not Georg's visual acceptance.
+
+The `0.0247` minimum club-distance value is a **pivot-position diagnostic**, not mesh surface clearance. It shows that two club anchors become very close during the loop and therefore strengthens, rather than closes, the human/geometry review gate around catch overlap.
+
+## Environment note
+
+The chat execution environment itself could not resolve `kayfabizarro.pages.dev` during a direct fetch attempt. Repository CI did resolve and execute the canonical Cloudflare route successfully; the CI result above is the browser evidence.
