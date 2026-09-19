@@ -60,3 +60,18 @@ Measured baked-mesh delta:
 Travel-v16 Voxel remains a valid selective KFB donor for deliberate block/Minecraft/mining/building mini-games, editable/destructible block spaces and special voxel worlds.
 
 It is simply out of scope for this **TinySkies-derived Travel Globe × Track** terrain seam.
+
+
+## Stage-mirror QA
+
+Public-source mirror QA:
+- workflow run `35474534592`
+- job `105981383308`
+- **12/12 PASS**
+- boot **623 ms**
+- page/script errors **0**
+- failed HTTP assets **0**
+- artifact `10593287654`
+- digest `sha256:495020a2cb75a860b7951002ab1bdb31625986886e73ef8c85eeb702f016d721`
+
+This proves the mirror package locally in real Chromium. Canonical Cloudflare publication is still a separate gate and is not claimed here.
