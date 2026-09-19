@@ -9,7 +9,8 @@
 - branch: `chatgpt-web/resident-clown-recovery-brief-2026-09-19`
 - branch base: `bb904bf0983afa209683145427f1c2a068835097`
 - tested documentation head: `76dd0bf9bb21647f3ee3d070d6e4e9b6c1396857`
-- changed files at final audit: **16**
+- Georg decision sync head before final Return metadata: `59f8b800f31e2e7c986c2540189281f0bf542340`
+- changed files at final PR sync: **17** (16 at documentation audit; the later Georg-decision sync additionally updates the existing review-fail marker)
 - PR: [#103 · Docs: C0 intent-fail postmortem + Resident Clown Activity Repair R0](https://github.com/georg-doc/kayfabizarro/pull/103) · OPEN · no auto-merge
 - auto-merge: **NO**
 
