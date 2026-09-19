@@ -653,3 +653,25 @@ Travel-v16 Voxel remains valid selective KFB technology for deliberate block/Min
 
 ### NEXT GATE
 Restore Cloudflare publication of the already-tested donor package. Do not rebuild the terrain donor or Track integration to solve the deployment issue.
+
+
+## 2026-09-20 · TC-01 Track × current Travel terrain
+
+### IMPLEMENTATION
+Travel PR #31 implements a first spherical Track/Terrain proof without modifying the frozen Travel terrain runtime. The Track route is compiled additively into the existing `setTerrainZones()` owner.
+
+### TESTED RESULT
+- Travel TC-01 run `35476602775` / job `105987356806`: **15/15 PASS**, boot 1537 ms, 0 page errors, 0 HTTP errors.
+- Travel baseline on repaired architecture: test/build/verify **PASS**.
+- 43/45 route-center samples reshaped.
+- 766/66,049 baked Globe vertices changed.
+- TinySkies/Travel source probe: 0 errors.
+- evidence artifact `10595045594`, digest `sha256:c36a74e2ef05929769d642228a5b94398bdc0de582ae4f316dc9740cbf43535a`.
+
+### STAGE PACKAGE
+kayfabizarro PR #115 is **13/13 local Stage-mirror browser PASS** at head `7e6f3c440d54410342d1d884d3f63118468d241c`, run `35477163769`, job `105988280389`, boot 641 ms, 0 page/HTTP errors.
+
+PR #115 remains deliberately **unmerged**. No Cloudflare/public human link is claimed yet.
+
+### OSM FOLLOW-UP
+Planning lives in Travel `site/terrain-corridor-tc01/OSM_FOLLOWUP.md`: OSM stays geographic/semantic truth; Travel stays terrain/world truth; Race stays movement/contact owner; OMS/Landmark slices remain explicit presentation overrides.
