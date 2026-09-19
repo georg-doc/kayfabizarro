@@ -1,0 +1,78 @@
+{
+  "schema": "kfb.resident-scene.cloudflare-browser-result/1",
+  "date": "2026-09-19",
+  "repository": "georg-doc/kayfabizarro",
+  "mergeCommit": "33b3785499e37b0a8b39a8465819988bc22a2703",
+  "workflow": {
+    "name": "Resident Scene Modules Cloudflare QA",
+    "runId": 35421390825,
+    "jobId": 105839641004,
+    "conclusion": "success",
+    "runUrl": "https://github.com/georg-doc/kayfabizarro/actions/runs/35421390825",
+    "artifact": {
+      "id": 10577653402,
+      "name": "resident-scene-modules-cloudflare-proof",
+      "digest": "sha256:4aa59b60f86a5b40eb75049f8f4556c5fd808f2b384fd3df0b1b7e0c735fec31",
+      "expiresAt": "2026-12-18T04:28:46Z"
+    }
+  },
+  "target": "https://kayfabizarro.pages.dev/resident-atlas-s6/?resident=clown",
+  "checks": [
+    {
+      "name": "Cloudflare HTTP response",
+      "pass": true,
+      "detail": 200
+    },
+    {
+      "name": "deep link selects Clown",
+      "pass": true
+    },
+    {
+      "name": "S33 juggling activity mounted",
+      "pass": true
+    },
+    {
+      "name": "activity advances",
+      "pass": true,
+      "detail": 32
+    },
+    {
+      "name": "three-club scene loaded",
+      "pass": true,
+      "detail": 21
+    },
+    {
+      "name": "club clearance is measurable",
+      "pass": true,
+      "detail": 0.0007849184817263369
+    },
+    {
+      "name": "arm residual is measurable",
+      "pass": true,
+      "detail": 0.0001464062757976881
+    },
+    {
+      "name": "no browser console/page errors",
+      "pass": true,
+      "detail": []
+    }
+  ],
+  "errors": [],
+  "state": {
+    "residentId": "clown",
+    "nodes": 21,
+    "activity": {
+      "kind": "juggle-cascade-v1",
+      "label": "3-club cascade · 183.8 throws/min · 1.96 s loop",
+      "samples": 32,
+      "maxResidual": 0.0001464062757976881,
+      "minClubDistance": 0.0007849184817263369,
+      "lastResidual": {
+        "l": 0,
+        "r": 0
+      }
+    }
+  },
+  "visualReviewObservation": "The captured browser frame shows juggling clubs entering the Clown head/upper-torso silhouette. Together with near-zero pivot distance this keeps trajectory/catch tuning OPEN; automated browser success is not visual acceptance.",
+  "evidenceBoundary": "Automated Cloudflare/browser PASS. Georg visual acceptance and mesh-surface clearance remain OPEN. minClubDistance is pivot-position distance, not surface clearance."
+}
