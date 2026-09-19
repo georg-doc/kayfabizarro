@@ -1,0 +1,131 @@
+name: TC-01 Track terrain · Stage mirror QA
+
+on:
+  push:
+    branches:
+      - stage/tinyskies-track-corridor-tc01-2026-09-20
+    paths:
+      - 'kfb-hub/stage/stunt-world/tinyskies-track-corridor-tc01/**'
+      - 'kfb-hub/stage/index.html'
+      - 'kfb-hub/index.html'
+      - '.github/workflows/tinyskies-track-corridor-tc01-stage.yml'
+  pull_request:
+    branches:
+      - main
+    paths:
+      - 'kfb-hub/stage/stunt-world/tinyskies-track-corridor-tc01/**'
+      - 'kfb-hub/stage/index.html'
+      - 'kfb-hub/index.html'
+      - '.github/workflows/tinyskies-track-corridor-tc01-stage.yml'
+  workflow_dispatch:
+
+jobs:
+  browser-proof:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Mirror/source contract
+        run: |
+          node --check kfb-hub/stage/stunt-world/tinyskies-track-corridor-tc01/terrain-corridor.mjs
+          node --check kfb-hub/stage/stunt-world/tinyskies-track-corridor-tc01/track-corridor-zones.mjs
+          node - <<'NODE'
+          const fs=require('fs'),cp=require('child_process');
+          const root='kfb-hub/stage/stunt-world/tinyskies-track-corridor-tc01/';
+          const d=JSON.parse(fs.readFileSync(root+'DEPLOYMENT.json','utf8'));
+          const m=JSON.parse(fs.readFileSync(root+'PUBLIC_MANIFEST.json','utf8'));
+          if(d.implementationSSOT!=='georg-doc/KFB-Travel-Globe') throw Error('wrong terrain owner');
+          if(d.testedTravelEvidenceHead!=='b454ab9d98a2b0b860991e7ccd8adc72d26d0e2b') throw Error('wrong TC-01 evidence pin');
+          if(d.tinySkiesPin!=='2659a5cc987d7e4a4c5aa7e79c86a1626ad75df6') throw Error('wrong TinySkies pin');
+          if(d.racePhysics!==false||d.voxelRuntime!==false) throw Error('wrong runtime ownership');
+          const files={
+            'globe.js':'travel/wip/travel_globe_wsa/globe-v13/globe.js',
+            'terrain-surface.js':'travel/wip/travel_globe_wsa/globe-v13/terrain-surface.js',
+            'simplex-noise.js':'travel/wip/travel_globe_wsa/globe-v13/simplex-noise.js',
+            'globe-biome.js':'travel/wip/travel_globe_wsa/globe-v13/globe-biome.js',
+            'sky-presets.js':'travel/wip/travel_globe_wsa/globe-v13/sky-presets.js',
+            'welt-id.js':'travel/wip/travel_globe_wsa/globe-v13/welt-id.js',
+            'erde-maske.js':'travel/wip/travel_globe_wsa/globe-v13/erde-maske.js',
+            'rim-light.js':'travel/wip/travel_globe_wsa/globe-v13/rim-light.js'
+          };
+          for(const [name,path] of Object.entries(files)){
+            const got=cp.execFileSync('git',['hash-object',path],{encoding:'utf8'}).trim();
+            if(got!==m.publicTravelMirrorBlobs[name]) throw Error(name+' Travel mirror mismatch');
+          }
+          const js=fs.readFileSync(root+'terrain-corridor.mjs','utf8');
+          const helper=fs.readFileSync(root+'track-corridor-zones.mjs','utf8');
+          if(!js.includes('/travel/wip/travel_globe_wsa/globe-v13/terrain-surface.js')) throw Error('TC-01 not wired to public Travel terrain owner');
+          if(!helper.includes('compileTrackCorridorZones')) throw Error('missing additive corridor compiler');
+          if(/voxel-terrain|track-terrain-sleeve-st01b/i.test(js+helper)) throw Error('wrong terrain donor leaked into TC-01');
+          console.log('mirror/source contract PASS');
+          NODE
+
+      - name: Install Playwright Chromium
+        run: |
+          npm install --no-save playwright@1.55.0
+          npx playwright install --with-deps chromium
+
+      - name: Start local public mirror
+        run: |
+          python3 -m http.server 4173 --bind 127.0.0.1 > /tmp/kfb-tc01-stage.log 2>&1 &
+          for i in {1..30}; do
+            if curl -fsS http://127.0.0.1:4173/kfb-hub/stage/stunt-world/tinyskies-track-corridor-tc01/ >/dev/null; then exit 0; fi
+            sleep 1
+          done
+          cat /tmp/kfb-tc01-stage.log
+          exit 1
+
+      - name: Real Chromium Stage-mirror proof
+        run: |
+          node - <<'NODE'
+          const fs=require('fs');
+          const {chromium}=require('playwright');
+          const url='http://127.0.0.1:4173/kfb-hub/stage/stunt-world/tinyskies-track-corridor-tc01/';
+          (async()=>{
+            const r={date:new Date().toISOString(),url,checks:[],errors:[],httpErrors:[]};
+            const check=(n,p,d)=>{r.checks.push({name:n,pass:!!p,details:d});if(!p)throw Error(n)};
+            const browser=await chromium.launch({headless:true,args:['--use-angle=swiftshader','--enable-unsafe-swiftshader']});
+            const page=await browser.newPage({viewport:{width:1600,height:900}});
+            page.on('pageerror',e=>r.errors.push(String(e)));
+            page.on('console',m=>{if(m.type()==='error'&&!/favicon/i.test(m.text()))r.errors.push(m.text())});
+            page.on('response',x=>{if(x.status()>=400&&!/favicon/i.test(x.url()))r.httpErrors.push({status:x.status(),url:x.url()})});
+            const t0=Date.now();
+            await page.goto(url,{waitUntil:'domcontentloaded',timeout:180000});
+            await page.waitForFunction(()=>window.__KFB_TC01__?.ready===true,{},{timeout:180000});
+            r.bootMs=Date.now()-t0;
+            const d=await page.evaluate(()=>window.__KFB_TC01__);
+            r.snapshot=d;
+            check('TC-01 mirror boots',d.id==='kfb-travel-track-terrain-corridor-tc01',d.id);
+            check('Travel remains terrain owner',d.owner==='georg-doc/KFB-Travel-Globe',d.owner);
+            check('TinySkies pin',d.tinySkiesPin==='2659a5cc987d7e4a4c5aa7e79c86a1626ad75df6',d.tinySkiesPin);
+            check('no Voxel runtime',d.noVoxelRuntime===true,d.noVoxelRuntime);
+            check('no Race physics owner',d.noRacePhysics===true,d.noRacePhysics);
+            check('route land-backed',d.route.samples===45&&d.route.landFraction===1,d.route);
+            check('45 Travel terrain zones',d.corridor.count===45&&d.corridor.zones===45,d.corridor);
+            check('route center reshaped',d.corridor.changedCenterSamples>=40&&d.corridor.maxCenterDelta>.1,d.corridor);
+            check('same Globe topology',d.baseReport.vertices===66049&&d.corridorReport.vertices===66049&&d.baseReport.seed===d.corridorReport.seed,d.baseReport);
+            check('actual baked geometry changed',d.geometryDelta.changedVertices>500&&d.geometryDelta.changedFraction<.03&&d.geometryDelta.maxDelta>.2,d.geometryDelta);
+            check('Travel source probe clean',d.sourceProbe?.fehler===0,d.sourceProbe);
+            check('no page/script errors',r.errors.length===0,r.errors);
+            check('no failed HTTP assets',r.httpErrors.length===0,r.httpErrors);
+            r.status='PASS';
+            fs.mkdirSync('stage-proof',{recursive:true});
+            await page.screenshot({path:'stage-proof/tc01-track-terrain-stage.png',fullPage:true});
+            fs.writeFileSync('stage-proof/results.json',JSON.stringify(r,null,2)+'\n');
+            console.log(JSON.stringify({status:r.status,checks:r.checks.length,bootMs:r.bootMs,errors:r.errors.length,httpErrors:r.httpErrors.length},null,2));
+            await browser.close();
+          })().catch(e=>{console.error(e);process.exit(1)});
+          NODE
+
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: tinyskies-track-corridor-tc01-stage-proof
+          path: stage-proof
