@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>KFB Landmark Band Rig v2</title>
+<style>
+:root{font-family:system-ui,sans-serif;background:#d7e0e8;color:#302c33}*{box-sizing:border-box}body{margin:0}.app{height:100dvh;display:grid;grid-template-rows:auto 1fr auto}.bar{background:#f3eee5;border-bottom:2px solid #39343d;padding:10px 14px;display:flex;align-items:center;gap:7px;flex-wrap:wrap}.brand{font-size:14px;font-weight:800;margin-right:5px}.tag{display:block;font-size:10px;font-weight:400;color:#6a625f;letter-spacing:.08em}select,button,input[type=range]{font:inherit}select,button{font-size:12px;background:#fffaf2;border:1px solid #a19795;border-radius:6px;padding:7px 8px}button{cursor:pointer}.slider{font-size:11px;display:flex;gap:4px;align-items:center}.slider input{width:78px}.impact{background:#ffe2b3;font-weight:700}.stage{min-height:0}canvas{display:block;width:100%;height:100%;touch-action:none}.foot{background:#f3eee5;border-top:1px solid #b5afa5;padding:8px 14px;display:grid;gap:5px}h1{font-family:Georgia,serif;font-size:20px;font-weight:500;margin:0}#note,#status,.small{font-size:11px;color:#555;line-height:1.4}.description{display:flex;gap:12px;align-items:baseline;flex-wrap:wrap}.error{color:#9a3228!important}@media(max-width:760px){.brand{width:100%}.bar{padding:7px;gap:5px}.foot{padding:7px}}
+</style>
+<script type="importmap">{"imports":{"three":"https://unpkg.com/three@0.160.0/build/three.module.js","three/addons/":"https://unpkg.com/three@0.160.0/examples/jsm/"}}</script></head>
+<body><main class="app"><header class="bar">
+<div class="brand">KFB LANDMARK BAND RIG<span class="tag">V2 · SEMANTIC BANDS · HOST + CLOCK ASSEMBLY LOCK</span></div>
+<select id="model"><option value="spasskaya">Spasskaya Tower</option><option value="kremlin-wall">Kremlin wall study</option></select>
+<select id="shape"><option value="base">Base</option><option value="city-grotesque" selected>City grotesque</option><option value="soft-cubist">Soft cubist</option></select>
+<select id="rigMode"><option value="band" selected>Semantic band rig v2</option><option value="legacy">Legacy point deform</option></select>
+<select id="palette"><option value="city">OSM City palette</option><option value="natural">Natural materials</option><option value="colour">KFB colour study</option><option value="zones">Material zone IDs</option><option value="bands">Semantic band colours</option></select>
+<select id="vibe"><option value="idle">Idle breathe</option><option value="disco">Disco beat</option></select>
+<span class="slider">BPM <input id="bpm" type="range" min="60" max="180" value="112"><b id="bpmValue">112</b></span>
+<span class="slider">Vibe <input id="intensity" type="range" min="0" max="1" step=".05" value=".65"><b id="intensityValue">0.65</b></span>
+<button id="impactL" class="impact">Impact ←</button><button id="impactR" class="impact">Impact →</button>
+<button data-view="oblique">Reset</button><button data-view="front">Front</button><button data-view="side">Side</button><button data-view="top">Top</button>
+<label class="small"><input id="showRig" type="checkbox" checked> band joints</label><label class="small"><input id="wire" type="checkbox"> wire</label><label class="small"><input id="grid" type="checkbox"> grid</label><button id="export">Export GLB</button>
+</header><section id="stage" class="stage"><canvas id="view"></canvas></section>
+<footer class="foot"><div class="description"><h1 id="title">Spasskaya Tower · Band Rig v2</h1><span id="note">Loading…</span></div><div id="status">Loading Three.js and City style…</div><div class="small">Band Rig v2 deforms four semantic assemblies: lower / clock / belfry / tent. The clock-stage and all four clocks share one transform. Disco/Impact remain presentation-only; no Race physics or Audio owner is created. <a href="SLICE.md">Slice contract</a></div></footer>
+</main><script type="module">
+const timer=setTimeout(()=>document.querySelector('#status').textContent='Still loading. Check access to unpkg.com.',12000);
+try{const {boot}=await import('./viewer.mjs');await boot();clearTimeout(timer);}
+catch(e){clearTimeout(timer);const s=document.querySelector('#status');s.textContent='Viewer could not start: '+e.message;s.classList.add('error');console.error(e);}
+</script></body></html>
