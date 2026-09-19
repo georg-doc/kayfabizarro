@@ -59,7 +59,27 @@
       "minClubPivotDistance": 0.024725737341776334,
       "browserErrors": 0
     },
-    "acceptanceBoundary": "AUTOMATED_BROWSER_PASS_NOT_GEORG_VISUAL_ACCEPTANCE"
+    "acceptanceBoundary": "AUTOMATED_BROWSER_PASS_NOT_GEORG_VISUAL_ACCEPTANCE",
+    "latestRun": {
+      "status": "CLOUDFLARE_BROWSER_PASS",
+      "runId": 35421390825,
+      "jobId": 105839641004,
+      "artifactId": 10577653402,
+      "artifactDigest": "sha256:4aa59b60f86a5b40eb75049f8f4556c5fd808f2b384fd3df0b1b7e0c735fec31",
+      "expiresAt": "2026-12-18T04:28:46Z",
+      "observed": {
+        "httpStatus": 200,
+        "residentId": "clown",
+        "nodes": 21,
+        "activity": "juggle-cascade-v1",
+        "samples": 32,
+        "maxArmResidual": 0.0001464062757976881,
+        "minClubPivotDistance": 0.0007849184817263369,
+        "browserErrors": 0
+      },
+      "visualReviewObservation": "Captured frame shows club geometry entering Clown head/upper-torso silhouette; trajectory/catch tuning remains OPEN."
+    }
   },
-  "handoffMerge": "ae79765c02953704fefaa44fc0c40e21c23da372"
+  "handoffMerge": "ae79765c02953704fefaa44fc0c40e21c23da372",
+  "proofMerge": "33b3785499e37b0a8b39a8465819988bc22a2703"
 }
