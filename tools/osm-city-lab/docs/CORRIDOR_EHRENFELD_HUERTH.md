@@ -3,6 +3,60 @@
 **Date:** 2026-09-19  
 **Status:** SOURCE-DERIVED ROUTE CANDIDATE · WORKFLOW PASS · MAP / TEMPORAL-COHERENCE REVIEW OPEN
 
+## CURRENT DETAIL OVERRIDE · 2026-09-19 · fresh narrow source succeeded
+
+The mixed-time discovery graph remains useful as the route spine, but it is no longer the intended geography source for the final corridor.
+
+A dedicated current narrow-source slice now exists:
+
+- branch: `osm-city/corridor-detail-current-2026-09-19`;
+- PR: `georg-doc/kayfabizarro#81`;
+- workflow run: `35411563105`;
+- workflow job: `105812057380`;
+- source bot commit: `69645c04f8ca2b1ec979c6b046a4a7d551cd88df`.
+
+It builds 15 deterministic route-length query windows around the source-derived route and expands each about 220 m around the route segment.
+
+Only the canonical `overpass-api.de` endpoint is used for this current-detail source.
+
+Freshness policy is explicit:
+
+- oldest OSM base <= 48 h;
+- inter-chunk base skew <= 6 h.
+
+### TESTED RESULT
+
+The workflow needed all three bounded passes because the endpoint intermittently returned HTTP 429:
+
+- pass 1: 10/15 fetched;
+- pass 2: 10 cache hits + 3 fetched;
+- pass 3: 13 cache hits + final 2 fetched;
+- 15/15 complete.
+
+Final source candidate:
+
+- elements: **117,750**;
+- source SHA-256: `a6a6479e540a9c89d73da86a34313708920e5b0e1f551c9ca4c61c59d06928f6`;
+- OSM base oldest: `2026-09-19T01:04:32Z`;
+- OSM base newest: `2026-09-19T01:08:37Z`;
+- base skew: **0.068 h**;
+- oldest source age at gate: **0.085 h**.
+
+Freshness gates PASS.
+
+### Boundary
+
+The 15 acquisition bboxes are intentionally overlapping source windows, **not** the final corridor mask.
+
+Next:
+- normalize the merged current source into one metre frame;
+- select/clip features against the route-band corridor;
+- export the existing City consumer contract;
+- still no movement/controller work in City Lab.
+
+Full return:
+`docs/CORRIDOR_DETAIL_RETURN_2026-09-19.md`.
+
 ## CURRENT OVERRIDE · 2026-09-19 · source discovery succeeded
 
 The previous public-Overpass blocker is now historical. A bounded checkpoint/retry repair was implemented on:
