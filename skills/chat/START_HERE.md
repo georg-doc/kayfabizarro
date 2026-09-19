@@ -139,3 +139,12 @@ All future visual/UI/asset-based briefs load `ANTI_SLOP_VISUAL_BRIEF_GUARDRAILS.
 The KFB Production Hub now defaults to a lean `Heute` surface. Explanatory hero copy, giant focus tabs and the default link-card wall are removed from the first view. The Pocket Inbox/dropzone is open and visible; the first screen is limited to current P0 actions and four handoff briefs. Long project/reference lists remain available only through compact filters. Claude Design receives the separate three-viewport brief under `workflows/KFB_HUB_UI_V2_2026-09-19/`.
 
 HUD Rig v1 remains rejected history. The current Race/Travel radio restart brief lives in `georg-doc/KFB-Stunt-Car-Race/_handover/RACE_HUB_3D_AUTORADIO_RESTART_BRIEF_2026-09-19.md` and starts with the isolated exact Tiny Treats radio donor, never the rejected presentation.
+
+
+## 2026-09-19 · Priorisierte KFB-Route: World/Race → Librarian/C0 → Babel
+
+Für den aktuellen KFB-Fokus zuerst [Racetrack World Look + 3D HUD v1](workflows/RACETRACK_WORLD_LOOK_AND_3D_HUD_V1_2026-09-19/START_HERE.md) lesen: OSM/Track, Tiny-Skies-/Travel-Gestaltungsgrammatik, KayKit/Kenney-Rollen und das laufende eigene 3D-HUD werden als eine kleine, testbare Weltprobe behandelt. Die abgelehnte HUD-v1-Historie ist keine Vorlage; Tiny Treats ist nicht der Standard-HUD-Donor.
+
+Vor C0 folgt [Asset Librarian × Tiny Treats · Discoverability Recon](workflows/ASSET_LIBRARIAN_TINY_TREATS_RECON_V1_2026-09-19/START_HERE.md). Charming Kitchen 1.1 ist im Registry-Bestand, aber der Librarian muss es über menschliche Namen und eine direkte Packansicht auffindbar machen. ToolBox ergänzt dies als Konsument, nicht als zweite Bibliothek.
+
+Danach ist der [Babel Tower S2b → Hex Platform Generator](workflows/KFB_MODULAR_MINIGAME_HUB_2026-09-19/BABEL_HEX_PLATFORM_GENERATOR_V1_BRIEF.md) der konkrete Hex-Platformer-POC. Dungeon und Combat bleiben vorbereitet, aber nachrangig gegenüber der Weltkonsistenz.

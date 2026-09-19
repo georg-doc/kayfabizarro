@@ -120,3 +120,8 @@ Arbeite in einem eigenen Branch, veröffentliche die feste Stage-Adresse und lie
 ## Verbindlicher Chat→Stage-Lieferweg
 
 Vor dem Schreiben `skills/chat/CHAT_GITHUB_KFB_STAGE_WORKFLOW.md` lesen. Kleine verifizierte GitHub-Checkpoints verwenden; bei Timeout den Zustand als `UNKNOWN` prüfen, nicht blind erneut committen. Der Human-Test-Link muss direkt unter `https://kayfabizarro.pages.dev/` liegen und im KFB Hub erscheinen. GitHub Pages/githack sind keine Stage. Ohne sichtbaren Test der exakten Cloudflare-URL kein `PUBLIC_VERIFIED`.
+
+
+## Prioritäts-Override · 2026-09-19
+
+Dungeon Generator v2 bleibt ein wertvoller, vorhandener Generator und eine **Side Quest**. Welt/Racetrack, Librarian/C0 und Babel-Hex-Probe haben Vorrang. Kein Start allein aus diesem Text, solange kein eigener Branch, Stage-Ort und aktueller World-Atlas-HEAD für diese Side Quest gepinnt sind.

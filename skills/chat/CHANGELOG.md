@@ -1,5 +1,16 @@
 # KFB Chat Production Router · additive changelog
 
+## 2026-09-19 · World/Race P0 + Tiny Treats discovery + Babel Generator
+
+### DECISION
+Reprioritize the active KFB line: first a coherent Racetrack/OSM world look plus the current own 3D HUD candidate; then repair human discovery for Tiny Treats in the canonical Asset Librarian; then C0; then a bounded Babel Hex Platform Generator. Combat and the reliable Dungeon Generator remain prepared, but are not the next MVP.
+
+### FACT / RECON
+Tiny Treats Charming Kitchen 1.1 is present in the Registry as 123 entries (118 GLTF models, 5 PNG textures). The reported absence is treated as a discoverability/UI failure, not as an asset-admission failure. The Librarian stays canonical; ToolBox/C0 consume a shared recipe bridge instead of duplicating a library.
+
+### BRIEFING
+Add three current briefs: Racetrack World Look + 3D HUD v1, Asset Librarian × Tiny Treats Discoverability Recon v1, and Babel Tower S2b → Hex Platform Generator v1. The master mini-game brief and Hub default four are revised accordingly. The S2b screenshot is recovery evidence only until a full export or pinned GitHub path is located.
+
 ## 2026-09-19 · Chat → GitHub → KFB Stage + Tiny Treats intake
 
 ### DECISION

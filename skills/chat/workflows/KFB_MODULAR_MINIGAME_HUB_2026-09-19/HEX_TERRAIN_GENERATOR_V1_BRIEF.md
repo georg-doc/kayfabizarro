@@ -138,3 +138,8 @@ Eigener Branch, feste Stage, RETURN.md, SOURCE.json, MODULE_LIBRARY.json, TEST_R
 ## Verbindlicher Chat→Stage-Lieferweg
 
 Vor dem Schreiben `skills/chat/CHAT_GITHUB_KFB_STAGE_WORKFLOW.md` lesen. Kleine verifizierte GitHub-Checkpoints verwenden; bei Timeout den Zustand als `UNKNOWN` prüfen, nicht blind erneut committen. Der Human-Test-Link muss direkt unter `https://kayfabizarro.pages.dev/` liegen und im KFB Hub erscheinen. GitHub Pages/githack sind keine Stage. Ohne sichtbaren Test der exakten Cloudflare-URL kein `PUBLIC_VERIFIED`.
+
+
+## Prioritäts-Override · 2026-09-19
+
+Dieser allgemeine Hex-Brief bleibt die gemeinsame Modulbibliotheks-Grundlage. Der nächste konkrete Consumer ist jedoch **Babel Tower S2b → Hex Platform Generator v1**. Welt/Racetrack und der Librarian/C0-Pre-Gate haben Vorrang. Nicht gleichzeitig einen zweiten Hex-Generator beginnen; nach dem Babel-Source-Gate dessen kleine 8–14-Stufen-Probe führen.

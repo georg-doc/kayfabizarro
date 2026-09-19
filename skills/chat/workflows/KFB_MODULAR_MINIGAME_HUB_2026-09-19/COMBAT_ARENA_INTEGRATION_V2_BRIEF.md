@@ -144,3 +144,8 @@ CA2-E simuliert den späteren Instanz-/Portalvertrag nur in der Combat-Stage. Ve
 ## Verbindlicher Chat→Stage-Lieferweg
 
 Vor dem Schreiben `skills/chat/CHAT_GITHUB_KFB_STAGE_WORKFLOW.md` lesen. Kleine verifizierte GitHub-Checkpoints verwenden; bei Timeout den Zustand als `UNKNOWN` prüfen, nicht blind erneut committen. Der Human-Test-Link muss direkt unter `https://kayfabizarro.pages.dev/` liegen und im KFB Hub erscheinen. GitHub Pages/githack sind keine Stage. Ohne sichtbaren Test der exakten Cloudflare-URL kein `PUBLIC_VERIFIED`.
+
+
+## Prioritäts-Override · 2026-09-19
+
+Die Arena-Integration bleibt vorbereitet, startet aber nach Welt/Racetrack, Librarian/C0 und dem kleinen Babel-Hex-Proof. Sie darf die spätere Portalidee beschreiben, aber keinen Race-/Travel-Owner vorwegnehmen und keine Parallel-Combat-Logik bauen.

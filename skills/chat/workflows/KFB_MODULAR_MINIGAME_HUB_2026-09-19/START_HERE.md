@@ -6,17 +6,20 @@ Auftraggeber: Georg / KFB
 Arbeitsweg: ChatGPT Web + GitHub-Sync  
 Koordination: `skills/chat/START_HERE.md` und `skills/chat/FRESH_CHAT_SLICE_PROTOCOL.md`
 
-## CURRENT OVERRIDE · Generator- und Integrationslinie
+## CURRENT OVERRIDE · 2026-09-19 · Welt zuerst, Generatoren vorbereitet
 
-Die bisherigen Einzel-POCs D01, H01 und C01 sind **superseded als Ausführungsbriefings**. Sie bleiben weiter unten nur als Planungsherkunft lesbar.
+Die verbindliche Reihenfolge ist jetzt:
 
-Aktuelle, getrennte Aufträge:
+1. [Racetrack World Look + 3D HUD v1](../RACETRACK_WORLD_LOOK_AND_3D_HUD_V1_2026-09-19/START_HERE.md) — **P0**. Aktuelle OSM-Fahrprobe, Track, Tiny-Skies-/Travel-Gestaltungsgrammatik, KayKit/Kenney-Rollen und das neue eigene 3D-HUD in einem kleinen messbaren Look-Vertrag bündeln.
+2. [Asset Librarian × Tiny Treats · Discoverability Recon](../ASSET_LIBRARIAN_TINY_TREATS_RECON_V1_2026-09-19/START_HERE.md) — **P0-Gate für C0**. Charming Kitchen ist im Register, muss aber ohne Slug-Wissen gefunden werden. Librarian bleibt die eine Bibliothek; ToolBox/C0 sind Konsumenten.
+3. **C0 Baukasten** — erst danach den verständlichen, gemessenen Rollen-Katalog aus Registry/Librarian aufbauen; keine Parallelbibliothek.
+4. [Babel Tower S2b → Hex Platform Generator](./BABEL_HEX_PLATFORM_GENERATOR_V1_BRIEF.md) — **P1**. S2b-Quelle sichern, drei echte Hex-Verbindungen beweisen, dann einen kleinen Turm-Recipe-Generator.
+5. [Combat Arena Integration v2](./COMBAT_ARENA_INTEGRATION_V2_BRIEF.md) — vorbereitet, aber nicht vor Welt/Race/C0 starten.
+6. [Dungeon Generator v2](./DUNGEON_GENERATOR_V2_BRIEF.md) — Side Quest; vorhandenen stabilen Generator weiterbauen, nicht neu erfinden.
 
-1. [Dungeon Generator v2](./DUNGEON_GENERATOR_V2_BRIEF.md) — vorhandenen zweigeschossigen S13.2-Generator mit Raumtypen, Katalog-Tiles und Requisiten ausbauen.
-2. [Combat Arena Integration v2](./COMBAT_ARENA_INTEGRATION_V2_BRIEF.md) — aktuellen FrizzleBob Driver Graft und belegte KayKit-Gegner/Clips in die bestehende Arena integrieren.
-3. [Hex Terrain Generator v1](./HEX_TERRAIN_GENERATOR_V1_BRIEF.md) — aus beiden KayKit-Hex-Packs, Katalog und vorhandener Resident-Hex-Welt eine geprüfte Modulbibliothek und danach einen begrenzten Generator bauen.
+Der allgemeine [Hex Terrain Generator v1](./HEX_TERRAIN_GENERATOR_V1_BRIEF.md) bleibt als Modulbibliotheks-Grundlage erhalten. Der neue Babel-Brief ist sein konkreter Plattform-/Turm-Consumer.
 
-Dungeon und Combat sind die zwei unmittelbaren Briefings. Hex ist der nächste parallele POC. Alle drei bereiten denselben neutralen Portal-/Rückkehrvertrag vor, koppeln ihre Runtimes aber noch nicht direkt an Race oder Travel.
+Alle Mini-Game-Portalideen bleiben späterer Integrationsvertrag. Sie koppeln jetzt weder Race/Travel noch Spiel-Runtimes direkt.
 
 ## 1. Ziel in einem Satz
 
