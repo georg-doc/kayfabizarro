@@ -1,6 +1,6 @@
 # KCL-M1 · Locomotion Sync Bench
 
-Status: **LOCAL BROWSER 39/39 PASS · AUTO-MEASURED PROFILES · PUBLIC/HUMAN GATE BLOCKED BY CLOUDFLARE**  
+Status: **PUBLIC BROWSER 39/39 PASS · AUTO-MEASURED PROFILES · HUMAN MOTION GATE OPEN**  
 Owner: **KFB Game Dev Studio research**, consuming current Asset/ToolBox motion truth.  
 Does not own: Travel/Race/Combat/Platformer movement, physics, gameplay state, canonical animation assets, or a shared global mixer.
 
@@ -197,3 +197,54 @@ Do not repair KCL animation code in response to this infrastructure failure.
 ## Current one gate
 
 Restore a successful current Cloudflare/pages.dev deployment, rerun the exact public proof unchanged, then Georg compares NAIVE vs PHASE SYNC visually before any consumer integration.
+
+
+## Public browser proof · 39/39 PASS
+
+The earlier Cloudflare blocker is resolved.
+
+Root cause:
+- Cloudflare deploys from `cloudflare-live`;
+- KCL Stage files had existed only on `main`;
+- the public URL therefore returned the generic Hub fallback.
+
+Publication repair:
+- `cloudflare-live@fac041eb34c9a284d724a3ee2b945bef7d020d04`;
+- mirrored only the exact tested KCL `index.html`, `bench.mjs`, `SOURCE.json` plus current Hub;
+- Cloudflare Pages deployment check: SUCCESS.
+
+Public proof:
+- workflow run `35468444150`, attempt 2;
+- public-proof job `105981648314`;
+- exact fixed Stage URL opened successfully;
+- **39/39 PASS**;
+- 5/5 scoped clips loaded + measured;
+- WebGL + naive/phase-sync A/B executed;
+- 0 failed HTTP/resources;
+- 0 page/console errors;
+- artifact `10593933655`;
+- digest `sha256:5d7f6bb436d0030a3ddec3f080e0a6b041fe196cdf36cd3d34d5f5d01f71c0cf`.
+
+`PUBLIC_VERIFIED = YES`.
+
+The remaining gate is human motion judgment only.
+
+## Current one gate
+
+Open the fixed public Stage and compare **A · NAIVE** vs **B · PHASE SYNC**.
+
+Start with:
+- Walking_A → Running_A
+- LEFT contact
+- fade ~0.12 s
+- warp ON
+- speed-match ON
+
+Judge:
+- foot sliding;
+- double-step;
+- hip pop;
+- cadence;
+- perceived weight.
+
+Do not promote a consumer MotionProfile until Georg accepts the visual result.
