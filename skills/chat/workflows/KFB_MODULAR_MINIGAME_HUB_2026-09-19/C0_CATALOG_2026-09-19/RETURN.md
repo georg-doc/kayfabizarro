@@ -1,6 +1,6 @@
 # RETURN · C0 Baukasten Catalog
 
-**Status:** `IMPLEMENTATION + TESTED RESULT · PASS`  
+**Status:** `TECHNICAL TEST PASS · GEORG VISUAL REVIEW FAIL · NOT ACCEPTED`  
 **Repository:** `georg-doc/kayfabizarro`  
 **Base main:** `5650b6c54d8789b20ea80abe857688173d506d3b`  
 **Branch:** `chatgpt-web/baukasten-c0-2026-09-19`  
@@ -98,7 +98,7 @@ The screenshots were visually inspected after CI. Source models are visibly pres
 - `IMPLEMENTATION`: present on the branch / PR.
 - `TESTED RESULT`: PASS as above.
 - `PUBLIC DEPLOYMENT`: **PASS · CLOUDFLARE STAGE** — fixed route `https://kayfabizarro.pages.dev/kfb-hub/stage/minigames/baukasten-c0/` returned HTTP 200 and passed the dedicated public browser proof.
-- `GEORG ACCEPTANCE`: **OPEN**.
+- `GEORG ACCEPTANCE`: **FAIL · NOT ACCEPTED** — 2026-09-19 visual review rejected the current scale presentation, Clown activity quality and bespoke C0 UI as an acceptance basis.
 - `ARCHIVED HISTORY`: failed Run #1/#2 were evidence-persist race conditions caused by concurrent branch writes; their browser proof step itself was not the product failure. Run #3 is the clean final test.
 
 ## PUBLIC DEPLOYMENT EVIDENCE
@@ -112,6 +112,26 @@ The screenshots were visually inspected after CI. Source models are visibly pres
 - runtime: **11 packs · 6 Tiny Treats · 5/5 browser proofs · 0 runtime/console/page errors**
 - public Stage remains a candidate; PR #101 is still open and unmerged, and Georg acceptance is still OPEN.
 
+## GEORG VISUAL REVIEW FAIL · 2026-09-19
+
+Canonical postmortem:
+
+`POSTMORTEM_VISUAL_REVIEW_FAIL_2026-09-19.md`
+
+The technical/browser results above remain valid only for source wiring, loading, counts, bounds and runtime health. They do **not** establish visual scale correctness, animation quality, club/body clearance, UI continuity or acceptance.
+
+Key review failures:
+
+- per-card auto-framing makes relative scale comparison invalid;
+- the Resident measurement is whole-vignette bounds, not Clown actor height;
+- Clown juggling is visually rejected: arm participation is not convincing and clubs cross the body;
+- the Resident handoff had already kept arm/catch/club-clearance QA open;
+- the bespoke C0 UI does not reuse the Resident Atlas / World Atlas / Plant Prop Lab presentation language;
+- H01/D01 continuation is blocked until the visual basis is repaired.
+
+WSA entry:
+`tools/KFB-ToolBox/_handover/C0_BAUKASTEN_VISUAL_FAIL_WSA_2026-09-19/START_HERE.md`
+
 ## ONE OPEN HUMAN REVIEW QUESTION
 
-**Does this role/family/measurement presentation pass as the shared C0 Baukasten basis for the next bounded H01/D01 slices?**
+**Should WSA take only the Resident-Clown activity repair as the next bounded slice before any C0.1 scale/UI work continues?**
