@@ -23,7 +23,6 @@
       "id": "travel-tinyskies-terrain",
       "owner": "georg-doc/KFB-Travel-Globe",
       "pr": 30,
-      "head": "0b354d8b8cdbe55e10ecc91221ae933058306f3b",
       "mvpUse": "WORLD_TRUTH",
       "sourceStatus": "TESTED_DONOR",
       "publicStatus": "DEPLOYMENT_MARKER_FAIL_BEFORE_BROWSER",
@@ -34,7 +33,11 @@
       ],
       "publicRun": 35474894951,
       "stage": "https://kayfabizarro.pages.dev/kfb-hub/stage/stunt-world/tinyskies-terrain-donor/",
-      "nextGate": "repair publication synchronization only; do not restart terrain"
+      "nextGate": "re-fetch active PR #30, then repair publication synchronization only; do not restart terrain",
+      "branch": "wsa/tinyskies-terrain-donor-isolation-2026-09-19",
+      "lastObservedHead": "ee240a72cfa2305a77a1a083636f567d1fb9d482",
+      "headVolatileDuringAudit": true,
+      "stableTestedEvidenceHead": "80cfaa685cdfcdeab7cbd52f2cea6fb16bd8d4f4"
     },
     {
       "id": "tinyskies-osm-grotesque",
