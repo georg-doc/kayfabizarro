@@ -121,3 +121,28 @@ Recorded as **PROPOSAL**, not current implementation:
 ## Exactly one open human review question
 
 **Does Grouped Soft Cubist or Grouped City Grotesque feel closer to the intended “breathing living toy” landmark language?**
+
+
+## v1.1 · Standalone packaging correction
+
+Georg's first downloadable single-file build failed at startup with `mulberry32 is not defined`.
+
+That failure was isolated to the standalone packaging seam: the embedded City helper functions had been renamed to `cityMulberry32` / `cityStableHash` / `cityDeformPoint`, while the injected Rig block still called the module-source names.
+
+The actual Pilot-04 source now imports and uses those prefixed aliases explicitly. Regression evidence:
+
+`tools/img2threejs/evidence/2026-09-19-landmark-rig-v1-1/standalone-regression.json`
+
+Fixed downloadable artifact identity:
+
+- filename: `KFB_Landmark_Group_Rig_v1_1.html`
+- bytes: `51,352`
+- SHA-256: `e600d3218040e2906863b6c464460d6ef8e8191d71f1aad3be3e6435d1ca6d31`
+
+Packaging checks confirm:
+- no unprefixed `mulberry32()`, `stableHash()` or `deformPoint()` calls remain in the repaired standalone;
+- the corresponding `city*` helpers are actually defined;
+- module syntax passes;
+- the six core grouped-rig model/mode cases reproduce the prior triangle counts and rigid-clock errors.
+
+This correction removes the reported startup ReferenceError. It still does not substitute for a successful WebGL visual pass.
