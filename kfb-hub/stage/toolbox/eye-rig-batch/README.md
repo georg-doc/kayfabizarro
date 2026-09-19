@@ -1,6 +1,6 @@
 # KFB Batch EyeRig Atlas
 
-**Status:** IMPLEMENTED CANDIDATE · Rig_Medium first · source identity resolved (eyes 2+3) · corrected Stage published · Georg visual gate pending.
+**Status:** IMPLEMENTED CANDIDATE · Rig_Medium authoring seed accepted · Studio controls integrated · Stage human gate pending.
 
 Owner: KFB ToolBox / Rigging.
 
@@ -67,3 +67,22 @@ Source identity checkpoint: `949ff8037df2da88eb91ef825984ef57870b8238`.
 Corrected Stage mirror: `cloudflare-live@c6489fce74f98b2124feb184becd27d2cbe4a922`.
 
 The earlier 21/21 public proof remains useful runtime history but is **not** current 2+3 visual proof. The corrected Stage needs one human browser review: use the runtime-generated source-measured baseline, compare Front / 3/4 / Side and motion, then approve or reject. The profile remains `AUTO_CANDIDATE`.
+
+
+## Current authoring surface
+
+Georg's visual Medium starting seed is now:
+
+`dx .295 · dy .045 · ring .153 · track .15 · pupil .34 · inset .40 · lidFit .90 · converge .18 · splay 0 · gloss .10`.
+
+Additional current controls:
+
+- eye Width / Height / Depth / inward Tilt via reused `eyeoval.v1.js`;
+- pupil tracking: Life / Pointer / Fixed;
+- permanent Batch bar with single-character + batch import/export;
+- `Apply to Selected` and explicit `rigClass → character → session` inheritance;
+- QA 4-view.
+
+The bounded runtime still loads one actor. The next class-expansion gate is a varied 5–8 actor `Rig_Medium` sample after the authoring surface is accepted.
+
+Deferred feature map: `docs/BATCH_FEATURE_BACKLOG_2026-09-19.md`.

@@ -5,27 +5,24 @@
   "sourceBranch": "toolbox/eye-rig-batch-2026-09-18",
   "sourcePR": 104,
   "sourceHead": "eeb79850a8142968c418e23b482a330f120dd9c2",
+  "returnHead": "fe088da25bb344a522b61ac7c554d0a4dc8cc15e",
   "implementationCheckpoint": "c74cbd6e0691d0bd3bcc574203219cdb0e9f647f",
-  "stageMirrorParent": "cd8ac363ed5708103324581e683f6b33c6c265f6",
+  "evidenceCheckpoint": "eeb79850a8142968c418e23b482a330f120dd9c2",
+  "stageRuntimeHead": "40133c8b2d6d8f210003a6ef7cfa793aebac63bf",
+  "mainRouterHead": "3d9ac78bfabcec0c43fc453c124133764221139c",
   "expectedVisibleMarker": "source eeb7985 · Medium authoring · PR #104",
-  "humanGate": "Georg checks Medium authoring seed + Oval + Tracking + Batch I/O on fixed Stage; no merge/Live",
+  "humanGate": "Georg checks Medium authoring seed + Oval + Life/Pointer/Fixed + Batch I/O + QA 4-view; no merge/Live",
   "previousPublicProof": {
     "run": 35460179569,
     "checks": "21/21 PASS",
     "screenshots": 6,
     "sourceHead": "fd7a123b3747f74f79b2759e1cbb48fc64f823f0",
-    "note": "historical pre-identity proof; 6+7 baseline diagnostic only"
+    "note": "historical pre-identity/pre-authoring proof only"
   },
   "measurementMode": "SOURCE_MEASUREMENT_SUGGESTION_ONLY",
   "sourceIdentity": "RESOLVED_EYES_2_3",
   "identityEvidence": "./docs/source-components-0-11.html",
-  "candidateAction": "EXPLICIT_ONLY_RESETTABLE_NOT_APPROVED",
-  "nextGate": "GEORG_STAGE_STUDIO_CONTROLS_ACCEPTANCE",
-  "proofRequest": "MEDIUM_AUTHORING_STUDIO_CONTROLS_PUBLIC_PROOF",
-  "returnHead": "08c088cc06ffdc7190d6fd6ba55df54f457567d0",
-  "mainRouterHead": "c84c3c57aa875e1ac1cd8cc17eb966cb37c0f317",
-  "hubCard": "SYNCED_TO_RIG_MEDIUM_4VIEW_QA_GATE",
-  "publicVerification": "PENDING_NEW_STAGE_PUBLICATION",
+  "publicVerification": "OPEN_CURRENT_TOOLS_CANNOT_OPEN_PAGES_DEV_AND_CONNECTOR_PUSH_DID_NOT_TRIGGER_ACTIONS",
   "eyeDefaults": {
     "dx": 0.295,
     "dy": 0.045,
@@ -53,7 +50,6 @@
     "side-right"
   ],
   "qaArtifact": "gothgirl-qa-front-3q-side.png",
-  "evidenceCheckpoint": "eeb79850a8142968c418e23b482a330f120dd9c2",
   "batchUi": {
     "schema": "kfb.eye-profile-batch/0.2-candidate",
     "inheritance": [
@@ -68,10 +64,26 @@
       "Apply to Selected",
       "Reset",
       "Approve"
-    ]
+    ],
+    "currentLoadedActors": 1,
+    "nextExpansion": "varied 5–8 actor Rig_Medium sample after human gate"
   },
   "studioDonors": {
     "eyeOval": "frizzlegraft-v1/eyeoval.v1.js",
     "tracking": "EyeRig v6 setGazeFollow + pointTo"
-  }
+  },
+  "deferred": [
+    "top/bottom eye contour shaping",
+    "Mouth Batch",
+    "optional Nose/Brow grafts",
+    "Vehicle EyeRig via measured front/headlight host",
+    "later plant/object hosts"
+  ],
+  "tests": {
+    "persistedStatic": "46/46 PASS",
+    "focusedStudioControls": "15/15 PASS",
+    "changedJsSyntax": "2/2 PASS"
+  },
+  "hubCard": "SYNCED_TO_MEDIUM_AUTHORING_STUDIO_CONTROLS_GATE",
+  "nextGate": "GEORG_STAGE_AUTHORING_SURFACE_ACCEPTANCE"
 }

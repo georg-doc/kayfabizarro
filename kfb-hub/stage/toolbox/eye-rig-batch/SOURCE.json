@@ -4,16 +4,16 @@
   "repository": "georg-doc/kayfabizarro",
   "sourceBranch": "toolbox/eye-rig-batch-2026-09-18",
   "identityCheckpoint": "949ff8037df2da88eb91ef825984ef57870b8238",
-  "implementationCheckpoint": "d900fb99f3b04d52f266febd1501368c5fedd360",
+  "implementationCheckpoint": "c74cbd6e0691d0bd3bcc574203219cdb0e9f647f",
   "mergeBase": "5650b6c54d8789b20ea80abe857688173d506d3b",
   "stage": {
     "route": "/kfb-hub/stage/toolbox/eye-rig-batch/",
     "url": "https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/eye-rig-batch/",
     "componentEvidenceUrl": "https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/eye-rig-batch/docs/source-components-0-11.html",
     "publicationBranch": "cloudflare-live",
-    "publicationCommit": "786568b1e4434f458379c3aa5f8a83f3fd82a8d9",
-    "status": "PUBLISHED_RIG_MEDIUM_CALIBRATION_QA_PUBLIC_VERIFICATION_OPEN",
-    "correctedPublicProof": "NOT_RUN · connector push did not trigger Actions; current web tool cannot access pages.dev",
+    "publicationCommit": "40133c8b2d6d8f210003a6ef7cfa793aebac63bf",
+    "status": "PUBLISHED_MEDIUM_AUTHORING_STUDIO_CONTROLS_PUBLIC_VERIFICATION_OPEN",
+    "correctedPublicProof": "NOT_RUN · connector push did not trigger Actions; web tool cannot access fixed pages.dev route",
     "historicalPublicProof": {
       "status": "PASS_HISTORICAL_PRE_IDENTITY_CORRECTION",
       "runId": 35460179569,
@@ -110,42 +110,88 @@
     "merged": false
   },
   "tests": {
-    "staticContract": "37/37 PASS · persisted repository static-check replay",
+    "staticContract": "46/46 PASS · persisted branch replay",
     "githubPersistence": "PASS · identity checkpoint and all five intended files fetched back",
     "exactSourceGeometry": "PASS · 12/12 connected components measured from pinned GLB",
     "historicalJsSyntax": "3/3 PASS on pre-identity implementation checkpoint",
     "correctedJsSyntax": "NOT_RERUN_AS_NODE_MODULE",
-    "correctedCloudflareUrl": "PUBLIC_VERIFICATION_OPEN · pages.dev inaccessible from current web tool",
+    "correctedCloudflareUrl": "PUBLIC_VERIFICATION_OPEN · exact route inaccessible to current web tool",
     "correctedGithubActions": "NOT_RUN · connector push did not trigger workflow",
     "focusedCalibration": "17/17 PASS",
-    "changedJsSyntax": "2/2 PASS · syntax parse after import/export stripping"
+    "changedJsSyntax": "2/2 PASS",
+    "focusedStudioControls": "15/15 PASS"
   },
   "visualReview": {
-    "status": "GEORG_QA_4VIEW_DEFAULT_CALIBRATION_OPEN",
-    "rejectedBaseline": "2026-09-19 user screenshot: eyeballs too large/protruding; pupils too large; lids yellow instead of skin-derived",
-    "currentCandidate": "Rig_Medium ring runtime-calibrated from GothGirl JSON proportion; pupil 0.34; lids darker face color",
-    "nextGate": "Open fixed Stage, capture QA 4-view contact sheet, judge eye scale / pupil / lid color / attachment; then approve or request one-parameter-family adjustment."
+    "status": "MEDIUM_AUTHORING_SEED_ACCEPTED_BY_USER · STUDIO_CONTROLS_STAGE_GATE_OPEN",
+    "acceptedReference": "user screenshot/browser tuning 2026-09-19 21:46 CEST",
+    "nextGate": "Open fixed Stage; verify authoring defaults, eye oval, Life/Pointer/Fixed, Batch I/O and QA 4-view. Then start varied 5–8 actor Rig_Medium sample."
   },
-  "currentEvidenceHead": "ef7a8f203762f670e00ccdd27b540703d855807d",
+  "currentEvidenceHead": "eeb79850a8142968c418e23b482a330f120dd9c2",
   "calibrationCheckpoint": "6f7d7988849cf0c74a6551a33ee422d8584c87c2",
-  "qaEvidenceCheckpoint": "ef7a8f203762f670e00ccdd27b540703d855807d",
+  "qaEvidenceCheckpoint": "eeb79850a8142968c418e23b482a330f120dd9c2",
   "rigMediumDefault": {
     "schema": "kfb.eye-class-seed/0.1-candidate",
     "path": "tools/KFB-ToolBox/eye-rig-batch/data/rig-medium-default.v0.json",
-    "reference": "tools/KFB-ToolBox/_inbox/KFB Elisa B-Day Reference+Mockups/kfb-pet-gothgirl.json",
-    "referenceBlob": "e87e6337a6db67096a9577335f36d60672aa389e",
-    "bootFallbackRing": 0.2,
-    "runtimeRule": "ring = sourceMeasured.dx * 0.32 / 0.49",
-    "pupilSize": 0.34,
-    "lidBaseColor": "#e6cbc3",
+    "status": "AUTHORING_DEFAULT_FROM_GEORG_VISUAL_REFERENCE",
+    "eye": {
+      "dx": 0.295,
+      "dy": 0.045,
+      "ring": 0.153,
+      "track": 0.15,
+      "pupilSize": 0.34,
+      "gloss": 0.1,
+      "inset": 0.4,
+      "lidFit": 0.9,
+      "converge": 0.18,
+      "splay": 0
+    },
+    "trackingMode": "life",
+    "oval": {
+      "w": 1,
+      "h": 1,
+      "d": 1,
+      "tilt": 0
+    },
     "lidColorMode": "face-base-darkened",
-    "qaViews": [
-      "front",
-      "three-left",
-      "three-right",
-      "side-right"
-    ],
-    "qaDownload": "gothgirl-qa-front-3q-side.png",
-    "status": "AUTO_CANDIDATE"
+    "measurementPolicy": "EXPLICIT_SUGGESTION_ONLY_NEVER_AUTO_APPLY",
+    "inheritance": [
+      "rigClass",
+      "character",
+      "session"
+    ]
+  },
+  "studioControls": {
+    "eyeOval": {
+      "donor": "tools/KFB-ToolBox/kfb-rigs-embed-v3/frizzlegraft-v1/eyeoval.v1.js",
+      "fields": [
+        "width",
+        "height",
+        "depth",
+        "inward tilt"
+      ],
+      "status": "INTEGRATED"
+    },
+    "pupilTracking": {
+      "modes": [
+        "life",
+        "pointer",
+        "fixed"
+      ],
+      "owner": "EyeRig v6 setGazeFollow + pointTo",
+      "status": "INTEGRATED"
+    },
+    "batchIO": {
+      "schema": "kfb.eye-profile-batch/0.2-candidate",
+      "actions": [
+        "Import",
+        "Export Character",
+        "Export Batch",
+        "Apply to Selected",
+        "Reset",
+        "Approve"
+      ],
+      "status": "INTEGRATED_ONE_LOADED_ACTOR"
+    },
+    "backlog": "docs/BATCH_FEATURE_BACKLOG_2026-09-19.md"
   }
 }
