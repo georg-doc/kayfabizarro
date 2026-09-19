@@ -89,3 +89,54 @@ No `tools/resident_atlas_s6/lib/**`, `data/**` or `tools/resident_atlas/modules/
 ## One next gate
 
 **Accept the Resident-Clown Activity Repair R0 briefing as the sole next implementation slice.**
+
+
+## Final metadata / routing audit
+
+A second compact audit was run after Router / Protocol / Registry / Hub synchronization.
+
+**19 / 19 checks PASS**
+
+Verified:
+
+1. Registry points to the bounded production slice contract.
+2. Registry contains the current contract entry.
+3. Hub contains `Resident Clown · Activity Repair R0`.
+4. Old `Resident Clown · fix scene overlap` task is gone.
+5. Hub labels the existing review state `FAIL / REPAIR`.
+6. Hub retains the direct Resident Cloudflare review link.
+7. Hub records the exact future R0 Stage target.
+8. R0 brief contains the human review question.
+9. R0 brief contains the exact fixed Stage target.
+10. R0 brief contains protected boundaries.
+11. Postmortem records `BRIEFING GAP`.
+12. Postmortem records `INTENT-RESOLUTION FAIL`.
+13. Postmortem records `EXECUTION FAIL`.
+14. Historical C0 base commit is pinned.
+15. Historical C0 briefing blob is pinned.
+16. No Resident runtime file changed.
+17. No asset file changed.
+18. Documentation branch is not behind its base.
+19. Current `main` still equals the branch base at audit time.
+
+Branch at final audit:
+
+`46bbe6efd23c483e29c28efada991216b8d78d3d`
+
+Main/base at final audit:
+
+`bb904bf0983afa209683145427f1c2a068835097`
+
+Changed-file count at final audit:
+
+**16 files**
+
+All changes are documentation / routing / Hub metadata. No Resident implementation or media asset file is in the diff.
+
+## Aggregate documentation checks
+
+- first recovery/briefing audit: **21/21 PASS**
+- final metadata/routing audit: **19/19 PASS**
+- aggregate executed checks: **40/40 PASS**
+
+This aggregate is a documentation/recovery result only. It is not a Resident animation, browser, Stage or Georg visual PASS.
