@@ -1,0 +1,74 @@
+{
+  "schema": "kfb.module-kit.pack-profile/1",
+  "packId": "tiny-treats-charming-kitchen-1-1-free",
+  "displayName": "Tiny Treats · Charming Kitchen 1.1",
+  "source": {
+    "repo": "georg-doc/kayfabizarro",
+    "registryPackShard": "registry/assets/v1/packs/tiny-treats-charming-kitchen-1-1-free.json",
+    "registrySourceCommit": "378b209355b13304e3cff656ec0806ca5b89df28",
+    "packRoot": "media/3D_Assets/Tiny_Treats_Charming_Kitchen_1.1_FREE"
+  },
+  "license": {
+    "spdx": "CC0-1.0",
+    "sourcePath": "media/3D_Assets/Tiny_Treats_Charming_Kitchen_1.1_FREE/License.txt",
+    "blobSha": "c4370cb82dd60896281e23f61ecd5140eda99438",
+    "creator": "Isa Lousberg / Tiny Treats"
+  },
+  "counts": {
+    "models": 118,
+    "textures": 5,
+    "byLane": {
+      "story": 23,
+      "furnish": 26,
+      "build": 69
+    },
+    "byFamily": {
+      "prop.kitchen": 17,
+      "furniture": 4,
+      "prop.container": 6,
+      "fixture.worktop": 7,
+      "structure.connector": 6,
+      "appliance": 5,
+      "structure.floor": 1,
+      "fixture.wall-storage": 8,
+      "fixture.wall-prop": 2,
+      "structure.wall.modular": 45,
+      "structure.wall.composite": 17
+    }
+  },
+  "aliases": [
+    "Charming Kitchen",
+    "Tiny Treats Kitchen",
+    "Tiny Treats Charming Kitchen",
+    "Kitchen",
+    "Küche"
+  ],
+  "builderIntent": {
+    "primary": "interior-grid-and-furnishing-kit",
+    "phases": [
+      "shell",
+      "worktop-fixtures",
+      "furniture-appliances",
+      "story-props"
+    ],
+    "consumers": [
+      "Asset Librarian",
+      "Game Dev Studio",
+      "KFB ToolBox",
+      "future Kitchen/Interior Generator"
+    ]
+  },
+  "evidence": {
+    "sourceClassification": "PASS_118_OF_118",
+    "geometryMeasurement": "BROWSER_RUNTIME_OPEN",
+    "connectorProof": "SAMPLE_BUILD_OPEN",
+    "gameDevCli": "GAME_DEV_CLI_UNAVAILABLE · OPTIONAL FALLBACK USED",
+    "sealedGdsPackage": "OPEN"
+  },
+  "boundaries": [
+    "Registry remains source truth; module semantics are derived sidecar data.",
+    "No source model or texture is copied.",
+    "Story props default to non-colliding until a consumer validates them.",
+    "Generator semantics remain candidate until sample builds prove the relevant connections."
+  ]
+}
