@@ -501,3 +501,20 @@ Tests: **82/82 PASS**.
 Runtime-critical JS syntax: **3/3 PASS**.
 
 Stage files were written and read back successfully. Browser-side class-switch proof is prepared; no new automated browser run started from this write.
+
+
+## 2026-09-20 · COMMON ACTOR LOADER FIX
+
+The recurring `Cannot read properties of undefined (reading 'push')` failure was traced to the shared source-eye cleanup path, not to individual actor files.
+
+KayKit actors such as Clown and Monstrosity use a single GLTF primitive on the head. Three.js therefore exposes no explicit geometry group. The reused donor stripper assumed at least one group.
+
+Repair:
+- add a temporary full-head group only when none exists;
+- run the existing donor stripper unchanged;
+- remove the temporary group again on restore/failure;
+- clear stale technical Unsupported states after a successful reload.
+
+Evidence: `docs/LOADER_SINGLE_MATERIAL_FIX_2026-09-20.md`.
+
+Tests after repair: **84/84 PASS**; focused loader checks **8/8 PASS**.
