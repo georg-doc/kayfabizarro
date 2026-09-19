@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>KFB Asset Librarian v1.7</title>
   <link rel="canonical" href="https://kayfabizarro.pages.dev/asset-librarian/">
-  <link rel="stylesheet" href="./styles.css">
+  <link rel="stylesheet" href="./styles.css">\n  <link rel="stylesheet" href="./module-kit.css">
   <script type="importmap">
     {
       "imports": {
@@ -102,6 +102,15 @@
       </section>
 
       <section id="metrics" class="metrics" aria-label="Registry summary"></section>
+
+      <section id="moduleKitPanel" class="module-kit-panel panel" hidden aria-label="Pack module workbench">
+        <div class="module-kit-head"><div><div class="eyebrow">pack workbench · derived module grammar</div><h2 id="moduleKitTitle">Module Kit</h2><p id="moduleKitMeta" class="small-note"></p></div><a id="moduleKitShare" class="button-link quiet" href="#">Pack link</a></div>
+        <div id="moduleKitFamilies" class="module-kit-families"></div>
+        <div class="module-kit-workspace">
+          <div class="module-kit-viewer"><div class="preview-toolbar"><strong>3D sample build</strong><span id="moduleKitStatus">Idle</span></div><canvas id="moduleKitCanvas"></canvas></div>
+          <div class="module-kit-side"><div><div class="eyebrow">sample recipes</div><div id="moduleKitSamples" class="module-kit-samples"></div></div><div id="moduleKitSampleMeta" class="module-kit-note">Source assets stay canonical in GitHub. Sample builds are derived reference recipes.</div><div class="module-kit-path">Registry remains source truth · Module Kit is derived builder semantics · no copied assets</div></div>
+        </div>
+      </section>
 
       <section id="assetResults" class="results panel">
         <div class="results-head">
