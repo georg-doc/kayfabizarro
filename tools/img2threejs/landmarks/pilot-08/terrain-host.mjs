@@ -2,7 +2,7 @@ const clamp=(v,a=0,b=1)=>Math.max(a,Math.min(b,v));
 const smooth=t=>t*t*(3-2*t);
 const remap=(v,a,b)=>clamp((v-a)/(b-a));
 
-export const INTEGRATED_DOM_POSITION=Object.freeze({x:-180,z:160});
+export const INTEGRATED_DOM_POSITION=Object.freeze({x:-150,z:165});
 
 export function terrainHeightAt(x,z){
   const radial=Math.hypot(x,z);
