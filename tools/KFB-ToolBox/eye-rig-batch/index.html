@@ -33,13 +33,14 @@
   <nav class="batchbar" aria-label="Batch authoring">
     <div class="batch-context">
       <span class="eyebrow">BATCH</span>
-      <strong id="batchSelectionStatus">1 selected · Rig_Medium · gothgirl</strong>
+      <strong id="batchSelectionStatus">1 selected · 0/0 reviewed · loading</strong>
     </div>
     <div class="batch-actions">
       <button id="batchImportBtn" type="button">Import</button>
       <button id="batchExportCharacterBtn" type="button">Export Character</button>
       <button id="batchExportBatchBtn" type="button">Export Batch</button>
       <button id="batchApplySelectedBtn" type="button">Apply to Selected</button>
+      <button id="nextUnreviewedBtn" type="button">Next unreviewed</button>
       <button id="batchResetBtn" type="button" class="quiet">Reset</button>
       <button id="batchApproveBtn" type="button" class="approve">Approve</button>
     </div>
@@ -52,40 +53,33 @@
           <span class="eyebrow">ROSTER</span>
           <h1>Rig_Medium</h1>
         </div>
-        <span class="count">1 proof</span>
+        <span id="rosterCount" class="count">0/0 reviewed</span>
       </div>
 
-      <div class="filter-row" aria-label="Rig filters">
-        <button class="filter active" type="button">Medium</button>
-        <button class="filter" type="button" disabled>Large</button>
-        <button class="filter" type="button" disabled>Legacy</button>
+      <div class="filter-row roster-filters" aria-label="Review filters">
+        <button class="filter active" type="button" data-roster-filter="all">All</button>
+        <button class="filter" type="button" data-roster-filter="unreviewed">Unreviewed</button>
+        <button class="filter" type="button" data-roster-filter="adjusted">Adjusted</button>
+        <button class="filter" type="button" data-roster-filter="unsupported">Unsupported</button>
       </div>
-
-      <button id="actorCard" class="actor-card selected" type="button" aria-current="true">
-        <span class="actor-icon">GG</span>
-        <span class="actor-copy">
-          <strong>GothGirl</strong>
-          <small>KayKit · 23 joints</small>
-        </span>
-        <span id="actorStatusDot" class="dot candidate" title="AUTO_CANDIDATE"></span>
-      </button>
-      <label class="actor-select-line">
-        <input id="actorSelectToggle" type="checkbox" checked>
-        <span>Selected for batch apply</span>
-      </label>
+      <div id="rosterStats" class="micro-status">Loading Rig_Medium catalog…</div>
+      <div id="actorList" class="actor-list" aria-label="Rig_Medium actors"></div>
 
       <section class="audit-block">
         <span class="eyebrow">SOURCE LOCK</span>
         <dl class="mini-dl">
-          <div><dt>Actor</dt><dd>5650b6c</dd></div>
+          <div><dt>Actor</dt><dd id="sourceActor">—</dd></div>
+          <div><dt>Name</dt><dd id="sourceActorName">—</dd></div>
+          <div><dt>Model</dt><dd id="sourcePath">—</dd></div>
           <div><dt>EyeRig</dt><dd>v6 · 853bcf5</dd></div>
           <div><dt>FaceHost</dt><dd>v1 · 38ec777</dd></div>
-          <div><dt>Cleanup</dt><dd>12 → hide 2+3</dd></div>
+          <div><dt>Cleanup</dt><dd id="sourceCleanup">—</dd></div>
         </dl>
+        <div id="actorTechHint" class="micro-status"></div>
       </section>
 
       <section class="audit-block">
-        <span class="eyebrow">SOURCE COMPONENTS · 0–11</span>
+        <span class="eyebrow">SOURCE COMPONENTS / CLEANUP</span>
         <div class="filter-row">
           <select id="componentSelect" class="filter" disabled aria-label="Source head component"></select>
           <button id="isolateComponentBtn" class="filter" type="button" disabled>Isolate</button>
@@ -285,7 +279,7 @@
           <button id="importBtn" type="button" class="quiet">Import…</button>
         </div>
         <input id="importInput" type="file" accept="application/json,.json" hidden>
-        <button id="nextBtn" type="button" class="wide-action quiet" disabled>Next unreviewed · bounded slice has 1 actor</button>
+        <button id="nextBtn" type="button" class="wide-action quiet" disabled>Legacy hidden I/O</button>
       </section>
     </aside>
   </main>
