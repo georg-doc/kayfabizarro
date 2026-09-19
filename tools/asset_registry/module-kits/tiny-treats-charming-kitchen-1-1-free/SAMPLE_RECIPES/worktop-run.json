@@ -1,0 +1,26 @@
+{
+  "schema": "kfb.module-kit.sample-recipe/1",
+  "id": "worktop-run",
+  "label": "Worktop run · straight / sink / corner",
+  "layout": "chain-x",
+  "gap": 0.02,
+  "note": "Bounding-box chain proof candidate. Visual continuity must still be human-reviewed.",
+  "items": [
+    {
+      "assetId": "media/3D_Assets/Tiny_Treats_Charming_Kitchen_1.1_FREE/Assets/gltf/countertop_straight_A.gltf",
+      "role": "worktop"
+    },
+    {
+      "assetId": "media/3D_Assets/Tiny_Treats_Charming_Kitchen_1.1_FREE/Assets/gltf/countertop_sink.gltf",
+      "role": "sink"
+    },
+    {
+      "assetId": "media/3D_Assets/Tiny_Treats_Charming_Kitchen_1.1_FREE/Assets/gltf/countertop_straight_B.gltf",
+      "role": "worktop"
+    },
+    {
+      "assetId": "media/3D_Assets/Tiny_Treats_Charming_Kitchen_1.1_FREE/Assets/gltf/countertop_corner_inner.gltf",
+      "role": "corner"
+    }
+  ]
+}
