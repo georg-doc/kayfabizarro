@@ -1,7 +1,7 @@
 {
   "schema": "kfb.public-mirror/0.2",
   "build": "STUNT-WORLD-TINYSKIES-TERRAIN-DONOR-20260919",
-  "status": "STAGE_SOURCE_CANDIDATE_LOCAL_PUBLIC_QA_PENDING",
+  "status": "STAGE_SOURCE_CANDIDATE_LOCAL_BROWSER_QA_PASS_CLOUDFLARE_PENDING",
   "implementationSSOT": "georg-doc/KFB-Travel-Globe",
   "sourcePr": 30,
   "testedTravelEvidenceHead": "80cfaa685cdfcdeab7cbd52f2cea6fb16bd8d4f4",
@@ -14,5 +14,13 @@
   "trackIntegrated": false,
   "voxelRuntime": false,
   "livePromotion": false,
-  "humanAcceptance": "PENDING"
+  "humanAcceptance": "PENDING",
+  "stageMirrorWorkflowRun": 35474534592,
+  "stageMirrorWorkflowJob": 105981383308,
+  "stageMirrorBrowserChecks": "12/12 PASS",
+  "stageMirrorBootMs": 623,
+  "stageMirrorPageErrors": 0,
+  "stageMirrorHttpErrors": 0,
+  "stageMirrorArtifact": 10593287654,
+  "stageMirrorArtifactDigest": "sha256:495020a2cb75a860b7951002ab1bdb31625986886e73ef8c85eeb702f016d721"
 }
