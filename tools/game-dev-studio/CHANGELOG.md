@@ -249,3 +249,28 @@ The fixed pages.dev Stage target exists in source but is **NOT PUBLIC_VERIFIED**
 
 ### NEXT GATE
 Restore current Cloudflare publication, rerun the unchanged KCL public proof, then Georg compares the visible naive/phase-sync A/B. No consumer integration before human review.
+
+
+## 2026-09-20 · GDS-09 · KCL-M1 public Stage proof
+
+### PUBLICATION REPAIR
+The previous public failure was caused by Stage files missing from the actual Cloudflare publication branch. Mirrored the exact tested KCL Stage candidate to `cloudflare-live@fac041eb34c9a284d724a3ee2b945bef7d020d04`. Motion logic remained unchanged.
+
+### TESTED RESULT
+Public browser run `35468444150`, attempt 2, job `105981648314`:
+- **39/39 PASS**;
+- exact pages.dev route opened;
+- deployment marker matched;
+- 5/5 clips loaded + measured;
+- WebGL + A/B transition PASS;
+- ownership/source-pin PASS;
+- 0 failed resources;
+- 0 page/console errors;
+- artifact `10593933655`;
+- digest `sha256:5d7f6bb436d0030a3ddec3f080e0a6b041fe196cdf36cd3d34d5f5d01f71c0cf`.
+
+### STATUS
+`PUBLIC_VERIFIED = YES`.
+
+### NEXT
+Human motion gate only: Georg compares A · NAIVE vs B · PHASE SYNC. No consumer profile promotion before acceptance.
