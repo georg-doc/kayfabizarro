@@ -63,6 +63,13 @@ Travel:
 8. A candidate catalogue prepares the next genii loci by geometry class, source strategy, colour identity and rig strategy.
 9. Tests prove default mode, source pins, valid palettes and finite Grotesque geometry.
 
-## OPEN HUMAN REVIEW QUESTION
+## HUMAN DECISION · 2026-09-19
 
-Does the **Travel Verdant / Day** environment or the **OSM City** environment make the better default showroom context for landmark review?
+Georg selected **OSM City Lab** as the default landmark-review environment.
+
+- default review environment: `osm`;
+- Travel Verdant / Day remains an explicit alternate context;
+- the landmark deformation default remains City Grotesque;
+- the OSM City Lab's own building default remains `cartoon`.
+
+This closes the Pilot-06 environment-choice gate.

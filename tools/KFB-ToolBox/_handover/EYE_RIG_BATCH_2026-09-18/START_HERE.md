@@ -1,3 +1,7 @@
+> **CURRENT LOADER FIX · 2026-09-20**  
+> The shared actor-loading error `Cannot read properties of undefined (reading 'push')` is fixed. It was caused by single-material head meshes with no explicit geometry groups, not bad actor files. Clown and Monstrosity match this exact geometry case. The cleanup adapter now handles it safely and automatically clears stale technical Unsupported states after a successful reload. Tests: **84/84 PASS · 8/8 focused loader PASS**. Stage fix: `e3c4a79d959aa5a09bfb7d5cec67807b27170d6c`.  
+> Next action: reload the EyeRig page and click a previously failing model. If it loads, continue the Medium review or switch to Large and tune Monstrosity.
+
 # KFB ToolBox · Batch EyeRig Atlas · Fresh Chat Brief
 
 **Date:** 2026-09-18  
@@ -5,6 +9,16 @@
 **Owner:** ToolBox / Rigging  
 **Proposed source path:** `tools/KFB-ToolBox/eye-rig-batch/`  
 **Proposed public candidate:** `https://kayfabizarro.pages.dev/tools/KFB-ToolBox/eye-rig-batch/`
+
+> **CURRENT LARGE CALIBRATION · 2026-09-19**  
+> Source/Return: `a4d01402c5bd4785be480151ef7cd0b2317f2c71`; implementation: `a843a9e9666d2d0d7d0c6a95f801a969f57941c3`; evidence: `e60f1db1e2436f11549e44def25ab9b2718eac3b`; Stage: `670e11d56fe5b85e6264d8a294868c32540db5c6`.  
+> Large now contains **Monstrosity, Black Knight, Demon Lord and Orc Brute**. Monstrosity is the first calibration actor. No Large class default exists until Georg tunes Monstrosity and presses **Set as Large default**. Large uses its own animation files; Idle/Walk/Run are available and Jump is disabled because that Large clip does not exist. Medium remains separate and unchanged. Tests: **82/82 · 15/15 Large-focused · 3/3 syntax**.  
+> Next action: switch to Large, tune Monstrosity, set the Large default, then review the remaining three.
+
+> **CURRENT 27-ACTOR REVIEW WAVE · 2026-09-19**  
+> Source/Return: `ab5215ce4f31d80fe4ecb98077f15e3df58ecb97`; actor-browser implementation: `5f2e981cbcf4ca72a6c186c96ed008be535856a9`; evidence: `fa7fdb5b9c5b9c4d443e4f19f47260f934c90147`; Stage: `ae61e50d525e942a755cf46d0ed807b49b5a3e38`.  
+> The workbench now exposes **27 actual Rig_Medium actors** with model switching, per-actor profile/review persistence, All/Unreviewed/Adjusted/Unsupported filters, progress count and **Next unreviewed**. GothGirl keeps exact 2+3 cleanup; the remaining actors use the existing donor-eye detector fail-closed, so uncertain geometry is never silently removed. Tests: **62/62 static · 14/14 focused · 3/3 syntax**.  
+> Human gate: Georg rapidly clicks through the Medium roster and records Approve / Adjusted + approve / Unsupported. Large/Legacy remains parked until this review wave yields real override data. Current public browser verification remains OPEN; no new Actions run was triggered.
 
 > **CURRENT AUTHORING-SURFACE GATE · 2026-09-19**  
 > Source/Return: `fe088da25bb344a522b61ac7c554d0a4dc8cc15e`; implementation: `c74cbd6e0691d0bd3bcc574203219cdb0e9f647f`; evidence: `eeb79850a8142968c418e23b482a330f120dd9c2`; Stage: `40133c8b2d6d8f210003a6ef7cfa793aebac63bf`.  

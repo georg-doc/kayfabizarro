@@ -1,6 +1,6 @@
 {
   "schema": "kfb.chat-registry/0.1",
-  "updated": "2026-09-19",
+  "updated": "2026-09-20",
   "owner": "Georg / KFB",
   "router": "skills/chat/START_HERE.md",
   "livingMasterplan": "skills/chat/LIVING_MASTERPLAN.md",
@@ -380,21 +380,21 @@
       "sharedEyeRigProtocol": "tools/2D Animation Studio/shared/eye-rig/eye-rig-protocol.v1.json",
       "sharedEyeRigBridge": "tools/2D Animation Studio/shared/eye-rig/toolbox-bridge.v1.json",
       "toolboxEyeRigBatch": "tools/KFB-ToolBox/_handover/EYE_RIG_BATCH_2026-09-18/START_HERE.md",
-      "toolboxEyeRigBatchStatus": "MEDIUM_AUTHORING_STUDIO_CONTROLS_STAGE_GATE",
+      "toolboxEyeRigBatchStatus": "ACTOR_LOADER_FIXED_MEDIUM_LARGE_READY",
       "toolboxEyeRigBatchPR": 104,
-      "toolboxEyeRigBatchImplementation": "c74cbd6e0691d0bd3bcc574203219cdb0e9f647f",
-      "toolboxEyeRigBatchSourceHead": "fe088da25bb344a522b61ac7c554d0a4dc8cc15e",
+      "toolboxEyeRigBatchImplementation": "c6608ab5c76509bb54ae6b4375b87ed338e61427",
+      "toolboxEyeRigBatchSourceHead": "af2827b60ced330e57bf4a7f553ad30dbf45b205",
       "toolboxEyeRigBatchStageSourceSnapshot": "b05172eccf4687cfd2e8523995d39611e62de81d",
       "toolboxEyeRigBatchPublicProofRun": 35457983922,
-      "toolboxEyeRigBatchPublicProof": "OPEN · 46/46 static · 15/15 focused · 2/2 syntax · no new Actions run",
-      "toolboxEyeRigBatchVisualStatus": "MEDIUM_DEFAULT_ACCEPTED · STUDIO_CONTROLS_HUMAN_GATE",
+      "toolboxEyeRigBatchPublicProof": "84/84 static · 8/8 loader focused · actor loader fix published",
+      "toolboxEyeRigBatchVisualStatus": "RELOAD_AND_MODEL_SWITCH_SANITY",
       "toolboxEyeRigBatchStage": "https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/eye-rig-batch/",
       "toolboxEyeRigBatchIdentityCheckpoint": "949ff8037df2da88eb91ef825984ef57870b8238",
-      "toolboxEyeRigBatchStagePublicationHead": "40133c8b2d6d8f210003a6ef7cfa793aebac63bf",
+      "toolboxEyeRigBatchStagePublicationHead": "e3c4a79d959aa5a09bfb7d5cec67807b27170d6c",
       "toolboxEyeRigBatchHistoricalPublicProofRun": 35460179569,
       "toolboxEyeRigBatchComponentEvidence": "https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/eye-rig-batch/docs/source-components-0-11.html",
       "toolboxEyeRigBatchCalibrationCheckpoint": "6f7d7988849cf0c74a6551a33ee422d8584c87c2",
-      "toolboxEyeRigBatchEvidenceCheckpoint": "eeb79850a8142968c418e23b482a330f120dd9c2",
+      "toolboxEyeRigBatchEvidenceCheckpoint": "1416092e87018ce32507d4d91e1d13d39f62c1ac",
       "toolboxEyeRigBatchMediumDefaults": {
         "dx": 0.295,
         "dy": 0.045,
@@ -427,7 +427,48 @@
           "session"
         ]
       },
-      "toolboxEyeRigBatchNextGate": "Stage authoring-surface acceptance → varied 5–8 actor Rig_Medium sample"
+      "toolboxEyeRigBatchNextGate": "Reload Stage → test Clown/another Medium actor → switch Large → tune Monstrosity",
+      "toolboxEyeRigBatchActorCatalog": {
+        "path": "tools/KFB-ToolBox/eye-rig-batch/data/rig-medium-actors.v0.json",
+        "count": 27,
+        "rigClass": "Rig_Medium",
+        "filters": [
+          "all",
+          "unreviewed",
+          "adjusted",
+          "unsupported"
+        ],
+        "workflow": [
+          "click actor",
+          "approve",
+          "adjusted approve",
+          "unsupported",
+          "next unreviewed"
+        ]
+      },
+      "toolboxEyeRigBatchLarge": {
+        "count": 4,
+        "actors": [
+          "Monstrosity",
+          "Black Knight",
+          "Demon Lord",
+          "Orc Brute"
+        ],
+        "firstCalibrationActor": "Monstrosity",
+        "acceptedDefault": false,
+        "action": "Set as Large default",
+        "motions": [
+          "Idle_A",
+          "Walking_A",
+          "Running_A"
+        ],
+        "jumpAvailable": false
+      },
+      "toolboxEyeRigBatchLoaderFix": {
+        "status": "FIXED",
+        "error": "Cannot read properties of undefined (reading 'push')",
+        "staleUnsupportedRecovery": true
+      }
     },
     {
       "id": "animation-lab",

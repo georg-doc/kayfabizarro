@@ -2,7 +2,7 @@
   "schema": "kfb.landmark.style-profiles/1.0",
   "status": "AUTHORING_DECISION",
   "defaultShapeMode": "city-grotesque",
-  "defaultEnvironment": "travel",
+  "defaultEnvironment": "osm",
   "sourcePins": {
     "kayfabizarroHeadAtDecision": "0f46003fa8ffd63c0b190c639a6a6c38bfec592b",
     "osmCityStyle": {
@@ -44,7 +44,9 @@
     "noPrivateTravelFetchAtRuntime": true,
     "derivedTravelSnapshot": "travel-visual-snapshot.v1.json",
     "currentTravelSkyPresetsOwnDefaultLook": true,
-    "legacySkydomeVariantsAreOptional": true
+    "legacySkydomeVariantsAreOptional": true,
+    "osmCityIsDefaultReviewEnvironment": true,
+    "travelRemainsAlternateReviewEnvironment": true
   },
   "profiles": {
     "koelner-dom": {

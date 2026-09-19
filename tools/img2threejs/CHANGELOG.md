@@ -233,3 +233,52 @@ Because the Travel repo is private, the authoring viewer uses [travel-visual-sna
 **OPEN:** Cologne Cathedral still needs modular Grotesque migration and real OSM Golden-Sample calibration; Pilot-06 browser/human review; semantic GLB hierarchy export; fixed Stage URL; surface/edge/weathering; Audio and Race/Travel receiver seams.
 
 **CURRENT RETURN:** [LANDMARK_WORLD_STYLE_V1_RETURN_2026-09-19.md](docs/LANDMARK_WORLD_STYLE_V1_RETURN_2026-09-19.md).
+
+
+## 2026-09-19 · 13 · OSM City Lab selected as default landmark review environment
+
+**GEORG DECISION:** Pilot-06 landmark review pages should start in **OSM City Lab**. Travel Verdant / Day remains an alternate comparison context.
+
+**IMPLEMENTATION:** `styles/landmark-style-profiles.v1.json` now sets `defaultEnvironment: "osm"`. Pilot 06 already reads that profile at startup, so no second viewer default was introduced.
+
+**BOUNDARY:** This does not change the OSM City Lab's own building-style default (`cartoon`) and does not remove the Travel bridge.
+
+**TESTED RESULT:** 6/6 targeted current-source checks PASS: profile default, explicit environment rules, viewer consumption of the profile default, and current OSM background/light constants. [Evidence](evidence/2026-09-19-landmark-world-style-v1-1/summary.json).
+
+**NEXT GATE:** real-browser Pilot-06 visual review in OSM-default mode, then modular Grotesque Cologne Cathedral / OSM Golden Sample.
+
+
+## 2026-09-19 · 15 · TinySkies × OSM integrated Stage candidate
+
+**IMPLEMENTATION / SOURCE TESTED:** Pilot 08 combines a TinySkies-like terrain host, current real Hürth OSM Grotesque massing and a modular Cologne Cathedral derived from the Georg-accepted v0.2 source. The Cathedral placement in Hürth is explicitly `STYLE_INTEGRATION_ONLY_NOT_GEO`.
+
+**TESTED RUNTIME:** `aa28a743628699271c94c1911af23d0564c6f3cc` on draft PR #110.
+
+**STATIC RESULT:** 27/27 PASS. Full Hürth source scene: 700 OSM buildings / 65,648 Grotesque triangles. Modular Cathedral: 1,050 triangles.
+
+**REAL BROWSER RESULT:** 19/19 PASS with zero page/console/HTTP errors. Visible review subset: 90 real OSM buildings / 9,459 OSM triangles. Screenshots prove TinySkies lighthouse and observatory references in isolation before integrated OSM / Evening / Rain views.
+
+**VISUAL REPAIR:** initial camera over-framed the terrain; repair 1 tightened the Hürth composition; repair 2 moved dynamic fog farther out so Evening retains local terrain/OSM/landmark identity. No third visual repair pass was made.
+
+**STAGE PUBLICATION:** direct candidate route: https://kayfabizarro.pages.dev/kfb-hub/stage/img2threejs/tinyskies-osm-cohesion-v1/
+
+The Stage mirror uses exact tested runtime files except two import-path-only adapters in `dom-geometry.mjs` / `dom-rig.mjs`, which point back to existing canonical `/tools/...` donors. A dedicated Cloudflare public browser workflow must verify the exact route before PUBLIC VERIFIED status is claimed.
+
+**BOUNDARIES:** no real Cologne OSM override yet; no wet facade material; no new physics/audio/world owner; no Live promotion.
+
+
+## 2026-09-20 · 16 · Pilot 08 public Stage recovery · STOP after two failed publication passes
+
+**SOURCE CANDIDATE RETAINED:** exact runtime `aa28a743628699271c94c1911af23d0564c6f3cc` remains 27/27 static + 19/19 Chromium PASS with zero browser errors.
+
+**PUBLIC ATTEMPT 1 FAIL:** workflow `35471646709` attempt 1 reached Hub fallback HTML because the candidate had not yet been mirrored to the actual `cloudflare-live` publication branch.
+
+**PUBLICATION REPAIR:** candidate, missing img2threejs dependencies, Hub card and Stage navigator were mirrored to `cloudflare-live`; candidate path is present there.
+
+**PUBLIC ATTEMPT 2 FAIL:** workflow `35471646709` attempt 2 reached candidate `SOURCE.json`, but parsing failed after the JSON object. Proven current marker blob `08550009f6d32c3e33cfae6796a9f79ba095049f` ends in literal backslash + `n`, confirmed by GitHub tail char codes `[125,10,125,92,110]`.
+
+**STOP RULE:** no third repair pass in this slice. The public Stage is **NOT PUBLIC_VERIFIED** and human review is BLOCKED.
+
+**RECOVERY EXPORT:** [Pilot 08 failure recovery](landmarks/pilot-08/failure-recovery/START_HERE.md) preserves source, attempts, evidence, proven causes, salvage map, known issue and one next gate.
+
+**NEXT GATE ONLY:** correct the marker trailing literal `\\n`, repository-parse it, mirror that exact marker to `cloudflare-live`, verify the exact public marker revision, then rerun the existing public proof unchanged. No visual/runtime changes.
