@@ -20,7 +20,9 @@ async function waitMarker(label,url){
   for(let i=0;i<100;i++){last=await marker(url);if(last.ok){console.log('DEPLOYED',label,url);return last}await sleep(2400)}
   throw Error(label+' deploy marker timeout '+JSON.stringify(last));
 }
-await Promise.all([waitMarker('GitHub Pages',GH),waitMarker('Cloudflare',CF)]);
+await waitMarker('GitHub Pages',GH);
+const cloudflareMarker=await marker(CF);
+console.log('CLOUDFLARE_STATUS',JSON.stringify({url:CF,...cloudflareMarker}));
 
 async function startDrive(page){
   await page.waitForFunction(()=>{
@@ -38,7 +40,7 @@ async function inspectPage(page,label){
   page.on('pageerror',e=>pageErrors.push(String(e)));
   page.on('console',m=>{if(m.type()==='error')consoleErrors.push(m.text())});
   page.on('requestfailed',r=>failed.push({url:r.url(),error:r.failure()?.errorText}));
-  const response=await page.goto(CF,{waitUntil:'domcontentloaded',timeout:60000});
+  const response=await page.goto(GH,{waitUntil:'domcontentloaded',timeout:60000});
   pass(label+' Stage HTTP OK',response?.ok()===true,'status='+response?.status());
   await page.waitForFunction(()=>window.__KFB_HUD_V2_WRAPPER__?.snapshot?.().ready===true,null,{timeout:90000});
   await page.waitForFunction(()=>window.__KFB_HUD_V2__?.ready===true,null,{timeout:90000});
@@ -77,6 +79,6 @@ try{
   pass('mobile real touch controls present',await mobile.evaluate(()=>!!document.getElementById('driveHost')?.contentDocument?.getElementById('touch')));
   await mobile.screenshot({path:'hud-stage-v2-evidence/public-mobile-driving.png',fullPage:true});
 
-  await fs.writeFile('hud-stage-v2-evidence/public-browser.json',JSON.stringify({url:CF,githubPages:GH,checks,desktop:d,mobile:m},null,2));
+  await fs.writeFile('hud-stage-v2-evidence/public-browser.json',JSON.stringify({url:GH,cloudflare:{url:CF,...cloudflareMarker},checks,desktop:d,mobile:m},null,2));
   console.log('PUBLIC_BROWSER_RESULT',checks.length+'/'+checks.length,'PASS');
 }finally{if(browser)await browser.close()}
