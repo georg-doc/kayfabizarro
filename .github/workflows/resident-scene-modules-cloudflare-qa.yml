@@ -1,0 +1,104 @@
+name: Resident Scene Modules Cloudflare QA
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'tools/resident_atlas_s6/**'
+      - 'tools/resident_atlas/modules/**'
+      - 'resident-atlas-s6/**'
+      - 'kfb-hub/index.html'
+      - '.github/workflows/resident-scene-modules-cloudflare-qa.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  clown-s33:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Install browser
+        run: |
+          npm install --no-save playwright@1.51.1
+          npx playwright install --with-deps chromium
+
+      - name: Test Clown S33 on KFB Cloudflare
+        run: |
+          mkdir -p resident-scene-proof
+          cat > resident-scene-proof/check.mjs <<'JS'
+          import fs from 'node:fs';
+          import { chromium } from 'playwright';
+
+          const url = 'https://kayfabizarro.pages.dev/resident-atlas-s6/?resident=clown';
+          const report = { url, checks: [], errors: [] };
+          const check = (name, pass, detail = null) => {
+            report.checks.push({ name, pass: !!pass, detail });
+            if (!pass) process.exitCode = 1;
+          };
+
+          const browser = await chromium.launch({ headless: true });
+          const page = await browser.newPage({ viewport: { width: 1280, height: 820 } });
+          page.on('pageerror', e => report.errors.push('pageerror: ' + String(e)));
+          page.on('console', m => { if (m.type() === 'error') report.errors.push('console: ' + m.text()); });
+
+          try {
+            const response = await page.goto(url, { waitUntil: 'domcontentloaded', timeout: 60000 });
+            check('Cloudflare HTTP response', !!response && response.ok(), response?.status());
+
+            await page.waitForFunction(() =>
+              window.__atlas?.cur?.()?.recipe?.residentId === 'clown',
+              {}, { timeout: 120000 });
+            check('deep link selects Clown', true);
+
+            await page.waitForFunction(() =>
+              window.__atlas?.cur?.()?.activity?.kind === 'juggle-cascade-v1',
+              {}, { timeout: 120000 });
+            check('S33 juggling activity mounted', true);
+
+            await page.waitForTimeout(2600);
+            const state = await page.evaluate(() => {
+              const cur = window.__atlas?.cur?.();
+              const a = cur?.activity;
+              return {
+                residentId: cur?.recipe?.residentId || null,
+                nodes: cur?.nodes?.size ?? null,
+                activity: a ? {
+                  kind: a.kind,
+                  label: a.label,
+                  samples: a.stats?.samples ?? null,
+                  maxResidual: a.stats?.maxResidual ?? null,
+                  minClubDistance: a.stats?.minClubDistance ?? null,
+                  lastResidual: a.stats?.lastResidual ?? null
+                } : null
+              };
+            });
+            report.state = state;
+            check('activity advances', Number(state.activity?.samples) > 10, state.activity?.samples);
+            check('three-club scene loaded', Number(state.nodes) >= 3, state.nodes);
+            check('club clearance is measurable', Number.isFinite(state.activity?.minClubDistance), state.activity?.minClubDistance);
+            check('arm residual is measurable', Number.isFinite(state.activity?.maxResidual), state.activity?.maxResidual);
+
+            await page.screenshot({ path: 'resident-scene-proof/clown-s33.png', fullPage: true });
+          } catch (e) {
+            report.errors.push(String(e?.stack || e));
+            process.exitCode = 1;
+          } finally {
+            check('no browser console/page errors', report.errors.length === 0, report.errors);
+            fs.writeFileSync('resident-scene-proof/report.json', JSON.stringify(report, null, 2));
+            await browser.close();
+          }
+          JS
+          node resident-scene-proof/check.mjs
+
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: resident-scene-modules-cloudflare-proof
+          path: resident-scene-proof
+          retention-days: 14
