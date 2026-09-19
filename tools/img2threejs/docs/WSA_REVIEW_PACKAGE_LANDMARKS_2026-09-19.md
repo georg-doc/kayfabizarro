@@ -69,7 +69,7 @@ Current relevant source blobs:
 | Pilot 03 · Grotesque / Soft Cubist / Giza Voxel/Boxel | IMPLEMENTATION + TESTED RESULT | **DECISION: Grotesque is landmark default** |
 | Pilot 04 · Clock sockets / Rig v1.x | **ARCHIVED FAILED HISTORY** | rejected by Georg screenshots |
 | Pilot 05 · Semantic Band Rig v2 | IMPLEMENTATION + STATIC/NUMERICAL + CPU VISUAL TESTED RESULT | **GEORG ACCEPTANCE on 2026-09-19:** “das klappt” / “sieht richtig cool aus” |
-| Pilot 06 · Grotesque World Style / OSM + Travel | IMPLEMENTATION + 1,354/1,354 TESTED RESULT | human visual review OPEN |
+| Pilot 06 · Grotesque World Style / OSM + Travel | IMPLEMENTATION + 1,354/1,354 TESTED RESULT | **default review environment = OSM City Lab; visual review still OPEN** |
 | OSM/City integration | OPEN | not integrated |
 | Race/Travel contact integration | OPEN | not implemented |
 | Audio-driven beat integration | OPEN | not implemented |
@@ -159,7 +159,7 @@ Therefore:
 
 ## WORLD STYLE BRIDGE ADDENDUM · 2026-09-19
 
-Current authoring implementation: [Pilot 06](../landmarks/pilot-06/index.html) · [RETURN](LANDMARK_WORLD_STYLE_V1_RETURN_2026-09-19.md) · [1,354/1,354 evidence](../evidence/2026-09-19-landmark-world-style-v1/summary.json).
+Current authoring implementation: [Pilot 06](../landmarks/pilot-06/index.html) · [RETURN](LANDMARK_WORLD_STYLE_V1_RETURN_2026-09-19.md) · [1,354/1,354 evidence](../evidence/2026-09-19-landmark-world-style-v1/summary.json) · [OSM-default decision evidence](../evidence/2026-09-19-landmark-world-style-v1-1/summary.json).
 
 The current modular set (Eiffel, Giza, Stonehenge, Pentagon, Spasskaya, Kremlin wall study) now opens Grotesque-first with landmark-specific cartoon palettes. The viewer can consume either current OSM City presentation constants or a pinned noncanonical snapshot of the current private Travel/TinySkies-derived sky/light/mood/biome values. Travel remains the owner.
 
@@ -261,4 +261,6 @@ Do not reconstruct the landmark donor from prose; consume the pinned source.
 
 ## EXACTLY ONE OPEN HUMAN REVIEW QUESTION
 
-**For landmark-review pages, should the default environment be Travel Verdant / Day or OSM City Lab?**
+**DECISION CLOSED:** default landmark-review environment = **OSM City Lab**. Travel Verdant / Day remains the alternate comparison context.
+
+**NEXT GATE:** real-browser Pilot-06 visual review in OSM-default mode; if accepted, start the modular Grotesque Cologne Cathedral OSM Golden Sample.
