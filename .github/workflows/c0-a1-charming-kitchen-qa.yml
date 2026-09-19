@@ -1,0 +1,52 @@
+name: C0-A1 Charming Kitchen QA
+
+on:
+  push:
+    branches: [chatgpt-web/c0-a1-charming-kitchen-2026-09-19]
+    paths:
+      - 'tools/asset_registry/module-kits/**'
+      - 'tools/asset_registry/librarian/**'
+      - 'tools/asset_registry/tests/test_charming_kitchen_module_kit.py'
+      - 'game-ready/module-kits/tiny-treats-charming-kitchen-1-1-free/**'
+      - 'tools/game-dev-studio/catalog.json'
+      - 'kfb-hub/free-roam/game-dev-studio/app.js'
+      - 'kfb-hub/stage/c0-a1-charming-kitchen/**'
+      - '.github/scripts/c0-a1-charming-kitchen-smoke.mjs'
+      - '.github/workflows/c0-a1-charming-kitchen-qa.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  qa:
+    runs-on: ubuntu-latest
+    timeout-minutes: 18
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Static module-kit tests
+        run: python tools/asset_registry/tests/test_charming_kitchen_module_kit.py
+      - name: JS syntax
+        run: |
+          node --check tools/asset_registry/librarian/module-kit.js
+          node --check tools/asset_registry/librarian/app.js
+          node --check kfb-hub/free-roam/game-dev-studio/app.js
+      - name: Install Playwright Chromium
+        run: |
+          npm install --no-save playwright@1.55.0
+          npx playwright install --with-deps chromium
+      - name: Serve repository
+        run: |
+          python3 -m http.server 8778 --bind 127.0.0.1 > /tmp/c0-a1-http.log 2>&1 &
+          echo $! > /tmp/c0-a1-http.pid
+      - name: Browser sample-build proof
+        run: node .github/scripts/c0-a1-charming-kitchen-smoke.mjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: c0-a1-charming-kitchen-proof
+          path: c0-a1-proof
+          retention-days: 90
