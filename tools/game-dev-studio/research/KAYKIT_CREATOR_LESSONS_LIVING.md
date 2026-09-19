@@ -1945,3 +1945,191 @@ Continue the creator analysis with `KayKit - Animations - Overview Set 1`, espec
 
 ### BRANCH NOTE
 At this source pass, GitHub main had advanced to `3d9ac78bfabcec0c43fc453c124133764221139c` while PR #107's research branch remained intentionally unmerged. Current-main source facts were read/pinned; no parallel EyeRig/Hub changes are overwritten by this research update.
+
+
+---
+
+# 17 · KCL-M1 measured locomotion proof
+
+**Status:** LOCAL BROWSER TECHNICAL PASS · HUMAN / PUBLIC STAGE OPEN  
+**Bench:** `tools/game-dev-studio/research/kcl-m1-locomotion-sync/`
+
+The proposal from section 16 is no longer purely conceptual. A neutral current `Rig_Medium` ActionFigure was loaded against the exact current `MovementBasic` source and the five scoped clips were measured in a real Three.js browser runtime.
+
+## 17.1 · Technical proof
+
+GitHub Actions local-browser run:
+
+- workflow `35468444150`;
+- job `105964939873`;
+- **39/39 checks PASS**;
+- artifact `10591764219`;
+- artifact digest `sha256:55b8cc47723a64fc9c633ad46e2008a446d666ba724d02fed6242c17354de75e`;
+- WebGL canvas: PASS;
+- exact five source clips: PASS;
+- real left/right foot nodes: PASS;
+- five automatic MotionProfiles: PASS;
+- A/B transition execution: PASS;
+- consumer movement ownership: PASS;
+- failed HTTP/resources: 0;
+- page/console errors: 0.
+
+The first local run already loaded/measured the five clips, then failed only because the proof harness read source metadata from the wrong object. Repair Pass 1 changed the proof scripts only; motion code remained unchanged. The second run passed completely.
+
+## 17.2 · First actual kinetic measurements
+
+Automatic candidate values:
+
+| Clip | Duration | Reference-speed candidate | Compensated slip / actor height |
+|---|---:|---:|---:|
+| Walking_C | 1.600 s | 0.447 | 1.73% |
+| Walking_A | 1.067 s | 0.611 | 1.38% |
+| Walking_B | 1.067 s | 0.751 | 3.09% |
+| Running_A | 0.800 s | 2.480 | 6.63% |
+| Running_B | 0.800 s | 0.284 | 10.94% |
+
+The useful lesson is **not** “therefore these are the final KFB speeds”.
+
+The useful lesson is:
+
+> The clips contain enough real foot motion to derive distinct cadence/contact profiles, but automatic metrics can also identify a clip that should *not* be assigned a speed role yet.
+
+### Walking family
+
+The auto-reference-speed candidates produce:
+
+`Walking_C < Walking_A < Walking_B`
+
+This is plausible as a useful candidate ordering, but remains visually unapproved. A/B/C naming still does not constitute semantic proof.
+
+### Running_A
+
+`Running_A` produces a much larger forward reference-speed candidate (~2.48) and clean alternating primary contact candidates around:
+- left ~9.6%;
+- right ~59.6%.
+
+That makes it a strong first Run donor for the phase-sync experiment.
+
+### Running_B · HOLD
+
+`Running_B` produces:
+- fragmented multiple low-foot intervals;
+- reference-speed candidate ~0.284;
+- the largest compensated-slip candidate (~10.94% of actor height).
+
+Therefore:
+
+`Running_B = AUTO_METRIC_AMBIGUOUS_HOLD`
+
+Do **not** interpret it as “slow run”. It may represent a different body mechanic, or the simple low-foot plant heuristic may not fit it. Visual/manual inspection must decide.
+
+This is exactly why the system needs measured profiles instead of filename logic.
+
+## 17.3 · Phase-sync A/B works mechanically
+
+Default successful bench execution:
+
+```text
+source: Walking_A
+target: Running_A
+sync foot: LEFT
+fade: 0.12 s
+warp: ON
+desired speed: 1.5
+```
+
+Measured entry:
+
+```text
+Walking_A source left-contact candidate ≈ 30%
+A · NAIVE target Running_A = 0%
+B · PHASE SYNC target Running_A ≈ 9.6%
+```
+
+So the two lanes genuinely differ in target gait phase while all other configured variables are shared.
+
+Whether B **looks better** is deliberately still a human gate.
+
+## 17.4 · The first speed→timeScale test also found a useful limit
+
+At desired speed 1.5:
+
+```text
+Walking_A reference ≈ 0.611
+→ candidate rate hits temporary 1.80× clamp
+
+Running_A reference ≈ 2.480
+→ candidate rate ≈ 0.60×
+```
+
+This means the current default desired speed is intentionally a poor common operating point for those two clips. It proves the mechanism, but also shows why an approved locomotion system should not stretch a gait arbitrarily.
+
+Next visual calibration should find:
+- useful speed window per gait;
+- acceptable rate range per clip;
+- the speed region where a gait handoff is preferable to further timeScale.
+
+## 17.5 · Public Stage remains infrastructure-blocked
+
+The exact pages.dev target was published in source, but KCL public proof never reached the bench: `SOURCE.json` returned the generic KFB HTML fallback for the complete marker window.
+
+This is independently shown to be repo-wide / publication-layer:
+- a TE-01 public proof immediately preceding KCL failed the same Cloudflare deployment-marker gate;
+- subsequent Cloudflare Pages builds also failed.
+
+Therefore:
+
+`LOCAL_BROWSER_TECHNICAL_PASS = YES`  
+`PUBLIC_VERIFIED = NO`  
+`GEORG_MOTION_ACCEPTED = NO`
+
+No KCL motion repair is justified by the current Cloudflare failure.
+
+## 17.6 · Consequence for the broader KFB animation programme
+
+We now have evidence that the path is viable:
+
+```text
+KayKit clip library
+→ exact rig/source
+→ strip movement-owner root translation
+→ measure real feet
+→ derive contact/cadence profile
+→ phase-aware transition
+→ timeScale inside calibrated range
+→ consumer-owned movement facts
+```
+
+The same method can later expand to:
+- backwards/strafe locomotion;
+- equipped bow/rifle locomotion;
+- dodge;
+- Jump_Start / Jump_Idle / Jump_Land;
+- melee anticipation/contact/recovery;
+- ranged aim/release/reload;
+- tool entry/loop/impact/exit;
+- sit/lie state families.
+
+But expansion should follow the same rule:
+
+**measure one family, prove its transitions, then expose a reusable profile.**
+
+---
+
+## 2026-09-19 · KCL-003 · first measured locomotion proof
+
+### IMPLEMENTATION
+Built KCL-M1 Locomotion Sync Bench using the exact current ActionFigure / Rig_Medium and five MovementBasic clips. Reused Travel foot-sampling/root-cleaning concepts and KFB one-mixer-per-host ownership without importing any consumer movement controller.
+
+### TESTED RESULT
+- source/static sanity: 20/20 PASS;
+- runtime local browser proof after one harness-only repair: **39/39 PASS**;
+- five real clips loaded/measured;
+- machine-readable `MEASURED_PROFILE_CANDIDATE.json` persisted;
+- Running_B held out as automatic-metric ambiguous rather than forced into a speed role.
+
+### PUBLIC
+Cloudflare/pages.dev remains blocked by a repo-wide deployment problem. No public or human PASS claimed.
+
+### CURRENT NEXT GATE
+Restore successful current Cloudflare publication, rerun the unchanged public KCL proof and let Georg judge NAIVE vs PHASE SYNC visually before consumer integration.
