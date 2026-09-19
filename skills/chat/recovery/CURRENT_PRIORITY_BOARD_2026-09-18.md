@@ -194,3 +194,25 @@ Historical files stay for provenance and generic donor mechanisms only.
 5. current project/tool source before implementation.
 
 No Bash/terminal action is required from Georg.
+
+## 2026-09-19 · Resident Scene Modules → WSA review
+
+**HANDOFF READY.** Resident Atlas S33 now has a thin Plug&Play scene-module seam and a dedicated WSA package:
+
+`tools/KFB-ToolBox/_handover/RESIDENT_SCENE_MODULES_WSA_2026-09-19/START_HERE.md`
+
+Current proof: Clown + exact KayKit blue/green/red juggling pins + deterministic 3-club activity. Static math/source checks are recorded; exact S33 browser deployment still needs visual verification.
+
+Human review URL:
+
+`https://kayfabizarro.pages.dev/resident-atlas-s6/?resident=clown`
+
+Order:
+
+1. WSA/Georg visual gate on the 3-club loop;
+2. then first Platformer consumer proof on a normal consumer-owned 4×4 grass support island;
+3. only then consider more resident modules or 4–6 Clown clubs.
+
+The current Free Roam Platformer Claude export remains a candidate donor. Its earlier Project Island composition is structurally/visually rejected by the recovery rebrief; do not use it as an accepted integration base merely because it boots.
+
+**Publication rule:** active KFB review/Stage/Live links use Cloudflare/KFB Hub only, never githack/raw-CDN mirrors.
