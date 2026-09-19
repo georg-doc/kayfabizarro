@@ -1,0 +1,45 @@
+{
+  "schema": "kfb.module-kit.validation-report/1",
+  "packId": "tiny-treats-charming-kitchen-1-1-free",
+  "status": "SOURCE_ANALYSIS_PASS_BROWSER_OPEN",
+  "checks": {
+    "registryPackModels": {
+      "pass": true,
+      "actual": 118,
+      "expected": 118
+    },
+    "classifiedModels": {
+      "pass": true,
+      "actual": 118,
+      "expected": 118
+    },
+    "unclassifiedModels": {
+      "pass": true,
+      "actual": 0,
+      "expected": 0
+    },
+    "license": {
+      "pass": true,
+      "spdx": "CC0-1.0",
+      "source": "License.txt"
+    },
+    "sourceCopies": {
+      "pass": true,
+      "actual": 0,
+      "rule": "reference-only"
+    },
+    "gameDevCli": {
+      "pass": false,
+      "status": "GAME_DEV_CLI_UNAVAILABLE",
+      "blocking": "sealed package receipt only"
+    }
+  },
+  "browser": {
+    "sampleBuilds": "PENDING",
+    "measurements": "PENDING",
+    "consoleErrors": "PENDING"
+  },
+  "human": {
+    "acceptance": "OPEN"
+  }
+}
