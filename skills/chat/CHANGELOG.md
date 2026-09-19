@@ -335,3 +335,32 @@ The historical public run `35460179569` remains runtime/action evidence but is n
 
 ### NEXT GATE
 Georg opens the fixed Stage, uses the runtime-generated source-measured baseline from corrected components 2+3, compares Source/Cleaned/EyeRig in Front/3/4/Side and motion, and approves or rejects the single GothGirl candidate. No Medium batch expansion, Large/Legacy, merge or Live promotion before that gate.
+
+
+## 2026-09-19 · Batch EyeRig Atlas · Rig_Medium default calibration + 4-view gate
+
+### USER VISUAL FINDING
+Georg's GothGirl 3/4 screenshot rejects the previous default: eye spheres are too large/protruding, pupils are too large, and the lids read yellow instead of as a darker face/skin tone.
+
+### IMPLEMENTATION
+The existing tuned GothGirl JSON is now the calibration donor, not a raw unit copy. Its actor values `dx=.49 / ring=.32 / pupil=.34 / face=#e6cbc3` establish `ring/dx=.653061224`. The Batch FaceHost candidate therefore uses:
+
+`Rig_Medium ring = current sourceMeasured.dx × .32/.49`
+
+with `ring=.20` only as the safe pre-measurement boot fallback. Pupil default is `.34`. GothGirl face color `#e6cbc3` is passed into EyeRig v6's existing dark-lid function; no second lid renderer was introduced.
+
+The workbench now has **QA 4-view** for Front / ¾ L / ¾ R / Side R, downloaded as one `gothgirl-qa-front-3q-side.png` contact sheet.
+
+### TESTED RESULT
+- source/Return head: `08c088cc06ffdc7190d6fd6ba55df54f457567d0`;
+- implementation: `6f7d7988849cf0c74a6551a33ee422d8584c87c2`;
+- QA/evidence: `ef7a8f203762f670e00ccdd27b540703d855807d`;
+- focused calibration checks: **17/17 PASS**;
+- persisted static suite: **37/37 PASS**;
+- changed-JS syntax parse: **2/2 PASS**;
+- Stage publication: `786568b1e4434f458379c3aa5f8a83f3fd82a8d9` · GitHub readback PASS.
+
+No current calibrated browser PASS is claimed: connector writes did not start the Actions proof and the current web tool cannot open `pages.dev`.
+
+### NEXT GATE
+Georg opens the fixed Stage, leaves Neutral + Bind/T, clicks **QA 4-view**, and judges only eye scale, pupil scale, darker skin-derived lids and ¾/Side attachment. No Medium batch expansion, Large/Legacy, merge or Live promotion before that one visual gate.
