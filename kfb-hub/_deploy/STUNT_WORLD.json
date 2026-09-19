@@ -1,0 +1,17 @@
+{
+  "schema": "kfb.public-mirror-request/0.1",
+  "build": "STUNT-WORLD-S1-CORRIDOR-20260919",
+  "targetBranch": "publish/stunt-world-stage-2026-09-19",
+  "testedRuntimeCommit": "d2529e634952f25d691d68873801b2651125ac0c",
+  "browserEvidenceCommit": "7208b4167df6fbea62703177301473eb841522d7",
+  "racePr": 12,
+  "artifactId": 10575681969,
+  "artifactSha256": "c02f930bf68c9fa893f797ae8805038fc2518e2362e6c0e6dc2ac4e82c2753e6",
+  "siteZipSha256": "923aac2ac3c1ecc8e2627840afa3da4b98f796adc04ba6fe072a1101e156dc60",
+  "downloadUrl": "https://sdmntprpolandcentral.oaiusercontent.com/files/00000000-6de0-820a-8498-e2d34f18e1fa/raw?se=2026-09-19T02%3A25%3A51Z&sp=r&sv=2026-02-06&sr=b&scid=a021a5bb-e347-5aa1-bab0-67140e481f68&skoid=5c9dda00-298b-4376-81e9-b4568c8a3c0f&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-09-18T20%3A17%3A57Z&ske=2026-09-19T20%3A17%3A57Z&sks=b&skv=2026-02-06&sig=QPmoHsvotw%2BWJQxEgyw9E/Wipb49MzotUA0Q9Zx0dOI%3D",
+  "publicRoute": "https://kayfabizarro.pages.dev/kfb-hub/stage/stunt-world/",
+  "implementationSSOT": "georg-doc/KFB-Stunt-Car-Race",
+  "sourcePolicy": "9 exact tested Race runtime files; public Stage wrapper/provenance/manifests only; no tests/private project context",
+  "humanAcceptance": "PENDING",
+  "livePromotion": "NONE"
+}
