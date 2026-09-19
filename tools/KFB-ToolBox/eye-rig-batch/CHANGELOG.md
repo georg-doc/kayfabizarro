@@ -102,3 +102,12 @@ The candidate is technically sound but not visually accepted. Current `ring=0.30
 
 ### NEXT GATE
 Georg tunes Eye size first, then Inset and spacing/vertical, checks the standard cameras and motions, and explicitly approves or rejects. No Large/Legacy work and no Live promotion before that decision.
+
+
+## 2026-09-19 · Checkpoint 5 · HANDOFF SURFACES ALIGNED
+
+- main KFB Hub / router now surfaces the final public-proof + tuning-gate state at `8d534f013710d4aa57d1ca2baa7358b2957c35a5`;
+- Cloudflare KFB Hub mirror carries the same state at `aaf66bfa4e779c59aa7534998e1650a79551f6e4`;
+- Stage runtime itself was not changed after the successful proof head `e56ae972d05e06c5112fe2de4314192c3e3c8110`;
+- PR #104 stays Draft/Open/Unmerged;
+- next gate remains Georg's visual tuning/acceptance.

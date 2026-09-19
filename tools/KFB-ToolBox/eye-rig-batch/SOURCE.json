@@ -87,5 +87,11 @@
     "status": "AUTO_CANDIDATE_NEEDS_TUNING",
     "observation": "Mount and motion attachment are technically clean; default ring=0.30 reads visibly oversized/protruding in Front/3/4/Side evidence.",
     "firstAdjustmentHint": "Reduce eye size first; then tune inset and spacing before approval."
+  },
+  "handoffSurfaces": {
+    "mainHubRouterStatusCommit": "8d534f013710d4aa57d1ca2baa7358b2957c35a5",
+    "cloudflareHubMirrorHead": "aaf66bfa4e779c59aa7534998e1650a79551f6e4",
+    "stageRuntimeProofHead": "e56ae972d05e06c5112fe2de4314192c3e3c8110",
+    "note": "Router/Hub alignment only; proven Stage runtime unchanged."
   }
 }

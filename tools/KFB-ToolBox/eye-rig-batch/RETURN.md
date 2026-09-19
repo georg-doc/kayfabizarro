@@ -150,3 +150,18 @@ First tuning order:
 4. re-check Front / 3/4 / Side and motion before `Adjusted + approve`.
 
 No Large/Legacy expansion and no Live promotion before Georg's gate.
+
+
+## HANDOFF ALIGNMENT · FINAL STATUS SURFACES
+
+The proven Stage runtime remains pinned to source snapshot `b05172eccf4687cfd2e8523995d39611e62de81d` with implementation checkpoint `d900fb99f3b04d52f266febd1501368c5fedd360`.
+
+Post-proof routing/status surfaces were aligned without changing the Stage runtime:
+
+- public proof head: `e56ae972d05e06c5112fe2de4314192c3e3c8110`;
+- Cloudflare KFB Hub mirror status head: `aaf66bfa4e779c59aa7534998e1650a79551f6e4`;
+- main KFB Hub / central router public-proof status commit: `8d534f013710d4aa57d1ca2baa7358b2957c35a5`.
+
+These later commits only surface the verified 17/17 proof and the human tuning gate. They do not alter the EyeRig Stage runtime proven by run `35457983922`.
+
+The authoritative next gate remains: Georg tunes the visible `AUTO_CANDIDATE`, then explicitly approves or rejects. PR #104 remains Draft/Open and unmerged.
