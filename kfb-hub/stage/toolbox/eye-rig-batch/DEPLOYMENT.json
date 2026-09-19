@@ -5,24 +5,20 @@
   "sourceBranch": "toolbox/eye-rig-batch-2026-09-18",
   "sourcePR": 104,
   "sourceHead": "fa7fdb5b9c5b9c4d443e4f19f47260f934c90147",
-  "returnHead": "fe088da25bb344a522b61ac7c554d0a4dc8cc15e",
+  "returnHead": "ab5215ce4f31d80fe4ecb98077f15e3df58ecb97",
   "implementationCheckpoint": "5f2e981cbcf4ca72a6c186c96ed008be535856a9",
   "evidenceCheckpoint": "fa7fdb5b9c5b9c4d443e4f19f47260f934c90147",
-  "stageRuntimeHead": null,
-  "mainRouterHead": "3d9ac78bfabcec0c43fc453c124133764221139c",
+  "stageRuntimeHead": "ae61e50d525e942a755cf46d0ed807b49b5a3e38",
+  "mainRouterHead": "986699c81340dc3b266bf921441f93bf18127f6b",
   "expectedVisibleMarker": "source fa7fdb5 · 27 Medium actors · PR #104",
-  "humanGate": "Georg clicks through Rig_Medium roster; approve/adjust/unsupported; no Large/Legacy merge/Live",
+  "humanGate": "Georg rapidly reviews Rig_Medium roster: Approve / Adjusted + approve / Unsupported / Next unreviewed; no Large/Legacy merge/Live",
   "previousPublicProof": {
     "run": 35460179569,
     "checks": "21/21 PASS",
     "screenshots": 6,
-    "sourceHead": "fd7a123b3747f74f79b2759e1cbb48fc64f823f0",
-    "note": "historical pre-identity/pre-authoring proof only"
+    "note": "historical pre-identity/pre-authoring single-actor proof only"
   },
-  "measurementMode": "SOURCE_MEASUREMENT_SUGGESTION_ONLY",
-  "sourceIdentity": "RESOLVED_EYES_2_3",
-  "identityEvidence": "./docs/source-components-0-11.html",
-  "publicVerification": "PENDING_ACTOR_BROWSER_STAGE_PUBLICATION",
+  "publicVerification": "OPEN_CURRENT_TOOLS_CANNOT_OPEN_PAGES_DEV_AND_CONNECTOR_PUSH_DID_NOT_TRIGGER_ACTIONS",
   "eyeDefaults": {
     "dx": 0.295,
     "dy": 0.045,
@@ -34,62 +30,14 @@
     "converge": 0.18,
     "splay": 0,
     "gloss": 0.1,
-    "lidMode": "face-base-darkened",
-    "trackingMode": "life",
-    "oval": {
-      "w": 1,
-      "h": 1,
-      "d": 1,
-      "tilt": 0
-    }
+    "lidMode": "face-base-darkened"
   },
-  "qaViews": [
-    "front",
-    "three-left",
-    "three-right",
-    "side-right"
-  ],
-  "qaArtifact": "gothgirl-qa-front-3q-side.png",
-  "batchUi": {
-    "schema": "kfb.eye-profile-batch/0.2-candidate",
-    "inheritance": [
-      "rigClass",
-      "character",
-      "session"
-    ],
-    "controls": [
-      "Import",
-      "Export Character",
-      "Export Batch",
-      "Apply to Selected",
-      "Reset",
-      "Approve"
-    ],
-    "currentLoadedActors": 27,
-    "nextExpansion": "review actual Medium roster; collect character overrides"
-  },
-  "studioDonors": {
-    "eyeOval": "frizzlegraft-v1/eyeoval.v1.js",
-    "tracking": "EyeRig v6 setGazeFollow + pointTo"
-  },
-  "deferred": [
-    "top/bottom eye contour shaping",
-    "Mouth Batch",
-    "optional Nose/Brow grafts",
-    "Vehicle EyeRig via measured front/headlight host",
-    "later plant/object hosts"
-  ],
-  "tests": {
-    "persistedStatic": "62/62 PASS",
-    "syntax": "3/3 PASS",
-    "focusedCandidate": "14/14 PASS"
-  },
-  "hubCard": "SYNCED_TO_MEDIUM_AUTHORING_STUDIO_CONTROLS_GATE",
-  "nextGate": "GEORG_MEDIUM_ROSTER_REVIEW_WAVE",
   "actorBrowser": {
     "schema": "kfb.eye-rig-actor-catalog/0.1-candidate",
+    "catalog": "./data/rig-medium-actors.v0.json",
     "actorCount": 27,
     "rigClass": "Rig_Medium",
+    "jointCount": 23,
     "filters": [
       "All",
       "Unreviewed",
@@ -101,10 +49,35 @@
       "Approve",
       "Adjusted + approve",
       "Unsupported",
+      "Reject",
       "Next unreviewed"
     ],
-    "cleanup": "GothGirl exact 2+3; other actors generic mirrored-front donor cleanup fail-closed",
-    "profilePersistence": "per actor"
+    "profilePersistence": "per actor",
+    "cleanup": "GothGirl exact components 2+3; generic actors reuse donoreyes.v1 mirrored-front pair fail-closed"
   },
-  "proofRequest": "MEDIUM_ACTOR_BROWSER_PUBLIC_PROOF"
+  "batchUi": {
+    "schema": "kfb.eye-profile-batch/0.2-candidate",
+    "inheritance": [
+      "rigClass",
+      "character",
+      "session"
+    ],
+    "selectedActorExport": true
+  },
+  "tests": {
+    "persistedStatic": "62/62 PASS",
+    "focusedActorBrowser": "14/14 PASS",
+    "syntax": "3/3 PASS",
+    "stageReadback": "PASS",
+    "publicActorSmoke": "PREPARED · GothGirl → Clown → Ninja → Magical Girl → GothGirl · NOT RUN"
+  },
+  "deferred": [
+    "Large/Legacy until Medium review data",
+    "top/bottom eye contour",
+    "Mouth Batch",
+    "optional Nose/Brow",
+    "Vehicle EyeRig / headlight host"
+  ],
+  "hubCard": "SYNCED_TO_27_ACTOR_MEDIUM_REVIEW_WAVE",
+  "nextGate": "GEORG_MEDIUM_ROSTER_REVIEW_WAVE"
 }
