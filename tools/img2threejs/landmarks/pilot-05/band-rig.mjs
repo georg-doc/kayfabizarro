@@ -108,3 +108,35 @@ export function bandRigLandmark(asset,style,mode='base'){
   };
   return out;
 }
+
+function partBounds(part){
+  const lo=[Infinity,Infinity,Infinity],hi=[-Infinity,-Infinity,-Infinity];
+  for(let i=0;i<part.positions.length;i++){const k=i%3;lo[k]=Math.min(lo[k],part.positions[i]);hi[k]=Math.max(hi[k],part.positions[i]);}
+  return {min:lo,max:hi};
+}
+function projectExtents(parts,axis){
+  let lo=Infinity,hi=-Infinity;
+  for(const part of parts)for(let i=0;i<part.positions.length;i+=3){
+    const p=part.positions.slice(i,i+3),v=dot(p,axis);lo=Math.min(lo,v);hi=Math.max(hi,v);
+  }
+  return {min:lo,max:hi};
+}
+export function clockMountReport(source,rigged){
+  const sourceStage=source.parts.find(p=>p.name==='clock-stage'),riggedStage=rigged.parts.find(p=>p.name==='clock-stage');
+  if(!sourceStage||!riggedStage)throw Error('Missing clock-stage');
+  const T=rigged.rig?.bands?.clock;if(!T)throw Error('Missing clock band');
+  const cases=[
+    {token:'0',sourceAxis:[0,0,1],targetAxis:T.z,scale:T.sz},
+    {token:String(Math.PI/2),sourceAxis:[1,0,0],targetAxis:T.x,scale:T.sx},
+    {token:String(Math.PI),sourceAxis:[0,0,-1],targetAxis:mul(T.z,-1),scale:T.sz},
+    {token:String(Math.PI*1.5),sourceAxis:[-1,0,0],targetAxis:mul(T.x,-1),scale:T.sx}
+  ];
+  return cases.map((item,index)=>{
+    const sourceClock=source.parts.filter(p=>p.name==='clock-face-'+item.token);
+    const riggedClock=rigged.parts.filter(p=>p.name==='clock-face-'+item.token);
+    const sStage=projectExtents([sourceStage],item.sourceAxis),sClock=projectExtents(sourceClock,item.sourceAxis);
+    const rStage=projectExtents([riggedStage],item.targetAxis),rClock=projectExtents(riggedClock,item.targetAxis);
+    const sourceStandoff=sClock.min-sStage.max,riggedStandoff=rClock.min-rStage.max,expected=sourceStandoff*item.scale;
+    return {index,sourceStandoff,riggedStandoff,expected,error:Math.abs(riggedStandoff-expected)};
+  });
+}
