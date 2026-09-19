@@ -51,4 +51,4 @@
 ### GEORG ACCEPTANCE
 
 - C0 visual result: **FAIL · NOT ACCEPTED**.
-- R0 briefing: awaiting explicit human gate before implementation.
+- R0 sequencing decision: **GEORG APPROVED AS NEXT SLICE**; implementation has not started. The repaired animation still requires its own later visual acceptance gate.
