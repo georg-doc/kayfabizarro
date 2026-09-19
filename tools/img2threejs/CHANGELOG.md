@@ -233,3 +233,16 @@ Because the Travel repo is private, the authoring viewer uses [travel-visual-sna
 **OPEN:** Cologne Cathedral still needs modular Grotesque migration and real OSM Golden-Sample calibration; Pilot-06 browser/human review; semantic GLB hierarchy export; fixed Stage URL; surface/edge/weathering; Audio and Race/Travel receiver seams.
 
 **CURRENT RETURN:** [LANDMARK_WORLD_STYLE_V1_RETURN_2026-09-19.md](docs/LANDMARK_WORLD_STYLE_V1_RETURN_2026-09-19.md).
+
+
+## 2026-09-19 · 13 · OSM City Lab selected as default landmark review environment
+
+**GEORG DECISION:** Pilot-06 landmark review pages should start in **OSM City Lab**. Travel Verdant / Day remains an alternate comparison context.
+
+**IMPLEMENTATION:** `styles/landmark-style-profiles.v1.json` now sets `defaultEnvironment: "osm"`. Pilot 06 already reads that profile at startup, so no second viewer default was introduced.
+
+**BOUNDARY:** This does not change the OSM City Lab's own building-style default (`cartoon`) and does not remove the Travel bridge.
+
+**TESTED RESULT:** 6/6 targeted current-source checks PASS: profile default, explicit environment rules, viewer consumption of the profile default, and current OSM background/light constants. [Evidence](evidence/2026-09-19-landmark-world-style-v1-1/summary.json).
+
+**NEXT GATE:** real-browser Pilot-06 visual review in OSM-default mode, then modular Grotesque Cologne Cathedral / OSM Golden Sample.
