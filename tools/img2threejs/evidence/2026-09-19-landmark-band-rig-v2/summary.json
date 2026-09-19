@@ -19,7 +19,12 @@
   },
   "newConcept": {
     "schema": "kfb.landmark-band-rig/0.2",
-    "bands": ["lower", "clock", "belfry", "tent"],
+    "bands": [
+      "lower",
+      "clock",
+      "belfry",
+      "tent"
+    ],
     "clockInvariant": "clock-stage and every clock-* part share exactly one affine clock-band transform",
     "groundInvariant": "lower X/Z basis remains horizontal so authored Y=0 ground vertices stay at Y=0"
   },
@@ -29,9 +34,19 @@
       "baseMinY": 0,
       "cityGrotesqueMinY": 0,
       "softCubistMinY": 0,
-      "cityGrotesqueClockStandoffM": [0.07158591182282592,0.07158591182282614,0.07158591182282592,0.07158591182282503],
+      "cityGrotesqueClockStandoffM": [
+        0.07158591182282592,
+        0.07158591182282614,
+        0.07158591182282592,
+        0.07158591182282503
+      ],
       "cityGrotesqueMaxMountErrorM": 2.123301534595612e-15,
-      "softCubistClockStandoffM": [0.08490982970927341,0.0849098297092743,0.08490982970927341,0.0849098297092743],
+      "softCubistClockStandoffM": [
+        0.08490982970927341,
+        0.0849098297092743,
+        0.08490982970927341,
+        0.0849098297092743
+      ],
       "softCubistMaxMountErrorM": 1.304512053934559e-15
     },
     "kremlinWall": {
@@ -44,11 +59,16 @@
     }
   },
   "visualEvidence": {
-    "method": "CPU triangle renderer fed from the exact generated production vertices; no AI image generation",
-    "sameCameraBeforeAfter": "before-after.jpg",
-    "frontRightBands": "views.jpg",
+    "method": "CPU z-buffer / triangle raster from exact generated production vertices; no AI image generation",
+    "githubBeforeAfter": "before-after.jpg",
+    "localReviewedViews": [
+      "bandrig2_z_front.png",
+      "bandrig2_z_right.png",
+      "bandrig2_z_oblique.png",
+      "bandrig2_bands.png"
+    ],
     "reviewed": true,
-    "finding": "v1.2 visibly detached clocks; Band Rig v2 keeps front and side clocks on the clock-stage assembly in oblique/front/right evidence."
+    "finding": "v1.2 visibly detached clocks; Band Rig v2 keeps front/right/oblique clock assemblies on the clock-stage host."
   },
   "browserProbe": {
     "attempted": true,
