@@ -1,0 +1,36 @@
+{
+  "schema": "kfb.osm-city.presentation-report.v0",
+  "id": "ehrenfeld-huerth-corridor-v0",
+  "source": {
+    "expectedNormalizedSha256": "e88450d51169f7293bdbfb87955826cf3328a25e00eb3c24e8a08c636e406e6f",
+    "actualNormalizedSha256": "e88450d51169f7293bdbfb87955826cf3328a25e00eb3c24e8a08c636e406e6f",
+    "sceneSha256": "258c4d5a3872750bc9045d771646e85dbf36aab8a14243db98adc0d288edf07d"
+  },
+  "counts": {
+    "greenLanduseCandidates": 116,
+    "forestInstances": 420,
+    "streetSigns": 80,
+    "forestAssets": 4
+  },
+  "minimumObservedClearanceM": {
+    "road": 4.531,
+    "building": 9.737,
+    "treeSpacing": null
+  },
+  "sidecarSha256": "c3028b13a239dd618ff5766777298e17070264b66d38fa8fe46ddcd7ff48a1ce",
+  "gates": {
+    "exactNormalizedPin": true,
+    "forestExists": true,
+    "forestAssetsAreGithubPaths": true,
+    "forestRoadClearance": true,
+    "forestBuildingClearance": true,
+    "forestSpacing": true,
+    "streetSignsExist": true,
+    "streetNamesSourceExact": true,
+    "localMetreFrame": true,
+    "noCollisionMutation": true,
+    "movementOwnerExternal": true,
+    "landmarkSocketNonOwning": true,
+    "deterministic": true
+  }
+}
