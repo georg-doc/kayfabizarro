@@ -8,13 +8,13 @@
 
 Sanity check after chat interruption:
 
-- Kayfabizarro current main observed: `e00e9d67fcf6884a9d92d01c1b3c397ef50307c9`; later commits are from other active lanes and do not replace City ownership.
+- Corridor is now promoted to current Kayfabizarro main via PR #86 / merge `3813d24e3db04a43117676890e48f7b6baaf6cd9`; post-merge consumer evidence refreshed at `25c2c616720e18d97028bf06fdd03d10c16b3504`.
 - S1c public proof is now real: `35390530619`, attempt 2, job `105748631023` → **27 checks / 2 cities PASS** on `kayfabizarro.pages.dev`.
-- The previous corridor `SOURCE BLOCKED` state is superseded on stacked draft PRs #80 → #81 → #82. Route discovery, current narrow source and deterministic City consumer export all have green CI evidence.
+- The previous corridor `SOURCE BLOCKED` state is closed. PRs #80 → #81 → #82 remain provenance; their tested route/current source/consumer artifacts were reconciled and promoted through PR #86.
 - Exact corridor consumer pin used downstream: `3db2c786152fd4d77ca33a63effd2a9db9c1d4c1`, scene SHA-256 `258c4d5a3872750bc9045d771646e85dbf36aab8a14243db98adc0d288edf07d`.
 - Race receiver branch: `georg-doc/KFB-Stunt-Car-Race@wsa/osm-city-drive-corridor-2026-09-19`, observed head `d2529e634952f25d691d68873801b2651125ac0c`.
 - Race workflow `35414946641`, job `105821630552` subsequently completed **PASS**: module/owner regression 10/10, existing Hürth C1 browser 26/26, continuous corridor browser 17/17. Evidence commit `7208b4167df6fbea62703177301473eb841522d7`, artifact `10574843986`.
-- Race corridor branch is diverged from newer Race `main`; PR80–82 are also stacked/diverged from newer Kayfabizarro `main`. Reconcile before promotion; do not flatten or force-merge the chain.
+- Race corridor branch remains separate from Race `main` until its own promotion decision. Kayfabizarro corridor data is already reconciled on current main; do not merge the old stacked City PRs over it.
 - Dropbox read-only sanity found the same Race remote branch refs under `/CLAUDE/KFB Stunt Car Race/.git/refs/remotes/origin/`, server-modified around 2026-09-19 02:03Z. No Dropbox mutation was required.
 
 
@@ -148,7 +148,7 @@ Routing evidence target:
 
 `tools/osm-city-lab/evidence/ehrenfeld-huerth-route.json`
 
-**Current corridor status:** route discovery + fresh narrow source + deterministic corridor consumer are TESTED on stacked draft PRs #80/#81/#82. They are not yet promoted to current `main`. The Race receiver consumes the exact pinned consumer scene on its WSA branch; browser/human continuous-driving acceptance remains separate.
+**Current corridor status:** route discovery + fresh narrow source + deterministic corridor consumer are TESTED and promoted to current `main` via PR #86. Main consumer regression `35415680112` and S2 export contract `35415680163` are PASS. The Race receiver consumes the same exact scene on its WSA branch and its short browser drive is PASS; longer human continuous-driving acceptance remains separate.
 
 Militärringstraße is preferred when the real OSM graph supports it; never hand-draw it to satisfy the name.
 
