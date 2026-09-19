@@ -1,10 +1,16 @@
 # START HERE · Resident Clown Activity Repair R0
 
 **Date:** 2026-09-19  
-**Status:** `BRIEFING READY · IMPLEMENTATION NOT STARTED`  
+**Status:** `DECISION · GEORG APPROVED AS NEXT SLICE · IMPLEMENTATION NOT STARTED`  
 **Existing owner:** Resident Atlas S6  
 **Integration lead:** WSA unchanged  
 **Repository:** `georg-doc/kayfabizarro`
+
+## GEORG DECISION
+
+Georg explicitly approved this as the **sole next implementation slice** on 2026-09-19.
+
+That approval authorizes starting R0 under the existing Resident Atlas owner. It does **not** pre-accept the repaired animation, C0 scale/UI work, or Platformer integration.
 
 ## Required reading
 
