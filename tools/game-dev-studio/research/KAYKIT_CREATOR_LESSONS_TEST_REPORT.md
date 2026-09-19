@@ -184,3 +184,27 @@ The 2024 animation video is used as **visual/catalog evidence**. Current motion 
 
 The proposed phase-sync, timeScale ranges, hysteresis and event markers are KFB synthesis until KCL-M1 measures them on a real actor.
 
+
+
+## KCL-M1 public browser closure
+
+Publication owner correction:
+- actual Cloudflare branch: `cloudflare-live`;
+- KCL publication commit: `fac041eb34c9a284d724a3ee2b945bef7d020d04`;
+- Cloudflare Pages: PASS.
+
+Public browser:
+- run `35468444150`, attempt 2;
+- job `105981648314`;
+- **39/39 PASS**;
+- exact pages.dev route opened;
+- 5/5 clips + profiles PASS;
+- A/B transition PASS;
+- 0 resource errors;
+- 0 page/console errors;
+- artifact `10593933655`;
+- digest `sha256:5d7f6bb436d0030a3ddec3f080e0a6b041fe196cdf36cd3d34d5f5d01f71c0cf`.
+
+`PUBLIC_VERIFIED = YES`.
+
+Human visual acceptance remains open.
