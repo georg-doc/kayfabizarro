@@ -1,0 +1,41 @@
+{
+  "schema": "kfb.game-asset-package/1",
+  "id": "module-kit-tiny-treats-charming-kitchen-1-1-free",
+  "title": "Module Kit · Tiny Treats Charming Kitchen 1.1",
+  "packageType": "GameReadyModuleKitPackage candidate",
+  "status": "PACKAGE_METADATA_CANDIDATE · SOURCE_ANALYSIS_PASS · SEALED_GDS_OPEN",
+  "source": {
+    "repo": "georg-doc/kayfabizarro",
+    "packId": "tiny-treats-charming-kitchen-1-1-free",
+    "registryCommit": "378b209355b13304e3cff656ec0806ca5b89df28",
+    "moduleKitPath": "/tools/asset_registry/module-kits/tiny-treats-charming-kitchen-1-1-free/",
+    "assetPolicy": "reference-only; no copied source models"
+  },
+  "license": {
+    "spdx": "CC0-1.0",
+    "sourcePath": "/media/3D_Assets/Tiny_Treats_Charming_Kitchen_1.1_FREE/License.txt",
+    "blobSha": "c4370cb82dd60896281e23f61ecd5140eda99438"
+  },
+  "contents": {
+    "packProfile": "/tools/asset_registry/module-kits/tiny-treats-charming-kitchen-1-1-free/PACK_PROFILE.json",
+    "moduleLibrary": "/tools/asset_registry/module-kits/tiny-treats-charming-kitchen-1-1-free/MODULE_LIBRARY.json",
+    "generatorProfile": "/tools/asset_registry/module-kits/tiny-treats-charming-kitchen-1-1-free/GENERATOR_PROFILE.json",
+    "previewManifest": "/tools/asset_registry/module-kits/tiny-treats-charming-kitchen-1-1-free/PREVIEW_MANIFEST.json",
+    "validationReport": "/tools/asset_registry/module-kits/tiny-treats-charming-kitchen-1-1-free/VALIDATION_REPORT.json",
+    "sampleRecipes": [
+      "/tools/asset_registry/module-kits/tiny-treats-charming-kitchen-1-1-free/SAMPLE_RECIPES/wall-grammar.json",
+      "/tools/asset_registry/module-kits/tiny-treats-charming-kitchen-1-1-free/SAMPLE_RECIPES/worktop-run.json",
+      "/tools/asset_registry/module-kits/tiny-treats-charming-kitchen-1-1-free/SAMPLE_RECIPES/furnished-cell.json"
+    ]
+  },
+  "validation": {
+    "sourceModels": "118/118 classified",
+    "sourceDependencies": "registry-backed",
+    "browserSampleBuilds": "PENDING",
+    "gameDevCli": "GAME_DEV_CLI_UNAVAILABLE · OPTIONAL FALLBACK USED",
+    "packageBuildReceipt": "NOT_RUN",
+    "packageVerifyReceipt": "NOT_RUN",
+    "consumerAdmission": "NOT_RUN"
+  },
+  "consumerBoundary": "ToolBox/Generator consumers may read this package only after their own module/sample gates. Package metadata does not grant collision or runtime ownership."
+}
