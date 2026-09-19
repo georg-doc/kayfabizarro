@@ -211,3 +211,21 @@ Current Travel/TinySkies donor source is now isolated and browser-proved on `geo
 Do not send Georg the unverified child route as a test link. Keep the current accepted Travel Globe public route as the only visible donor reference until Cloudflare publishes the new source-first comparison.
 
 Next technical product gate after public donor review: extend the existing Travel terrain-owner seam from authored zones to one sampled spherical Track corridor. Do not revive the rejected S-T01b voxel sleeve.
+
+
+### 2026-09-20 · Current Track/Terrain gate · TC-01 ready for Stage promotion
+
+TC-01 is now the current Track/Terrain candidate.
+
+- implementation SSOT: `georg-doc/KFB-Travel-Globe#31`
+- architecture: sampled spherical Track route → additive compiler → existing `setTerrainZones()` → current TinySkies-derived Travel surface
+- frozen `terrain-surface.js`: unchanged
+- implementation browser: **15/15 PASS**
+- Travel baseline: **PASS**
+- Stage source package: `georg-doc/kayfabizarro#115`
+- Stage mirror browser: **13/13 PASS**
+- PR #115: **UNMERGED / PUBLICATION PENDING**
+- no public `kayfabizarro.pages.dev` TC-01 link may be claimed yet
+- Voxel remains a valid selective KFB donor for deliberate block/Minecraft/mining/building worlds; it is only out of scope for this Globe seam
+
+After the TC-01 human visual gate, the next prepared lane is OSM translation through the same terrain owner: lat/lon → Globe normal/ENU, one short OSM road → spherical route → same Track/Terrain adapter, then a few building support pads and one exact landmark override.
