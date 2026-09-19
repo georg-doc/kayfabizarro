@@ -22,6 +22,11 @@ assert.equal(timing.cycleBeats, 6);
 close(handPulse(0, 'l', timing), 1);
 close(handPulse(timing.beatSec, 'r', timing), 1);
 
+assert.equal(clubState(0, 0, timing).from, 'l');
+assert.equal(clubState(timing.beatSec, 1, timing).from, 'r');
+assert.equal(clubState(timing.beatSec * 2, 2, timing).from, 'l');
+assert.equal(clubState(timing.beatSec * 3, 0, timing).from, 'r');
+
 for (let club = 0; club < 3; club++) {
   const a = clubState(0.137, club, timing);
   const b = clubState(0.137 + timing.cycleSec, club, timing);
