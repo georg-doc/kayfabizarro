@@ -44,6 +44,22 @@
   "browserQa": {
     "workflow": ".github/workflows/resident-scene-modules-cloudflare-qa.yml",
     "target": "https://kayfabizarro.pages.dev/resident-atlas-s6/?resident=clown",
-    "status": "PENDING_MERGED_RUN_AT_HANDOFF_AUTHORING"
-  }
+    "status": "CLOUDFLARE_BROWSER_PASS",
+    "runId": 35421198328,
+    "jobId": 105839115967,
+    "artifactId": 10577298328,
+    "artifactDigest": "sha256:f23f9efd2ca56018658886aed1085676dde050cae8a6aa9b65cd6158d0183ca8",
+    "observed": {
+      "httpStatus": 200,
+      "residentId": "clown",
+      "nodes": 21,
+      "activity": "juggle-cascade-v1",
+      "samples": 31,
+      "maxArmResidual": 0.00013945167765827538,
+      "minClubPivotDistance": 0.024725737341776334,
+      "browserErrors": 0
+    },
+    "acceptanceBoundary": "AUTOMATED_BROWSER_PASS_NOT_GEORG_VISUAL_ACCEPTANCE"
+  },
+  "handoffMerge": "ae79765c02953704fefaa44fc0c40e21c23da372"
 }
