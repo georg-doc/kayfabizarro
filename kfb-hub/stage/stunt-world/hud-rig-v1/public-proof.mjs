@@ -5,15 +5,16 @@ const URL='https://georg-doc.github.io/kayfabizarro/kfb-hub/stage/stunt-world/hu
 const CLOUDFLARE_URL='https://kayfabizarro.pages.dev/kfb-hub/stage/stunt-world/hud-rig-v1/';
 const sleep=ms=>new Promise(r=>setTimeout(r,ms));
 const checks=[];const pass=(name,cond,extra='')=>{checks.push({name,pass:!!cond,extra});if(!cond)throw Error('FAIL '+name+' '+extra);console.log('PASS',name)};
-let marker=false,lastStatus=0,lastText='';
+let marker=false,lastStatus=0,lastText='',runtimeText='';
 for(let i=0;i<75;i++){
   try{
     const r=await fetch(URL,{cache:'no-store'});lastStatus=r.status;lastText=await r.text();
-    if(r.ok&&lastText.includes('KFB Stunt World · HUD Rig Lab v1')){marker=true;break}
+    const rr=await fetch(URL+'hud-rig-lab.mjs',{cache:'no-store'});runtimeText=await rr.text();
+    if(r.ok&&rr.ok&&lastText.includes('KFB Stunt World · HUD Rig Lab v1')&&runtimeText.includes('never the speaker grille')){marker=true;break}
   }catch{}
   await sleep(2400);
 }
-pass('GitHub Pages deployed HUD marker',marker,'status='+lastStatus);
+pass('GitHub Pages deployed final HUD runtime marker',marker,'status='+lastStatus);
 let browser;
 try{
   browser=await chromium.launch({headless:true,args:['--use-angle=swiftshader','--enable-unsafe-swiftshader']});
