@@ -159,3 +159,12 @@ Danach ist der [Babel Tower S2b → Hex Platform Generator](workflows/KFB_MODULA
 - `KFB_INK_CARTOON_MECHANICS_V1_2026-09-19.md` defines isolated Ink / rubber barrier / tube / EyeRig reaction proofs using existing canon.
 - `KFB_WORLD_ONBOARDING_CHATTERBOX_V1_2026-09-19.md` is planning-only and keeps private personal-admin subjects out of public runtime.
 - `EYE_RIG_BATCH_TOOLBOX_SLICE_V1_2026-09-19.md` makes the existing EyeRig batch brief a visible ToolBox slice.
+
+
+## 2026-09-19 · Track Ribbon S-T01b failure recovery
+
+Race S-T01b was intentionally built as an **integration-first** candidate: wider 14.4 / 18.0 / 21.6 / 28.8 track scale, clean broad-guidance surface, Travel-derived terrain coupling and active BLACK_ICE / OIL / LOW_GRAVITY zones, with the distracting Kenney cue cluster disabled by default.
+
+Implementation SSOT remains `georg-doc/KFB-Stunt-Car-Race`, Draft PR #29 / branch `wsa/track-ribbon-st01b-2026-09-19`. The candidate is now **FROZEN FAILED CANDIDATE** after two repaired browser-gate failures. Final static/ownership checks are green; the last real-browser run reached 24 checks with 0 page errors and 0 HTTP errors, then timed out on LOW_GRAVITY landing observability.
+
+Do not publish S-T01b to Stage or resume the full candidate. Exact recovery lives at `ChatGPT_web/track-lab/ST01B_RETURN_2026-09-19.md` and `ChatGPT_web/track-lab/st01b/failure-recovery/` in the Race repository. Exactly one next gate: deterministic fixed-step LOW_GRAVITY jump/landing seam. S-T01 remains separate prior evidence.
