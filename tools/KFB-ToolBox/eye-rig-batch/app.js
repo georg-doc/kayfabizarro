@@ -20,6 +20,7 @@ let bootError = null;
 const state = {
   seed: null, profile: null, approved: null, pendingImport: null,
   figure: null, stageRoot: null, cleanup: null, eyes: null, mixer: null,
+  componentDiagnosticRestore: null,
   clips: new Map(), currentAction: null, currentMotion: 'bind', currentView: 'front',
   expression: 'neutral', sourceReady: false, cleanupReady: false, hostReady: false, eyeReady: false, motionReady: false
 };
@@ -213,6 +214,53 @@ async function loadMotion(loader) {
   log(`motion packs loaded · ${state.clips.size} unique clips · required ${state.motionReady?'OK':'MISSING'}`);
 }
 
+function wireComponentDiagnostic(camera, controls) {
+  const select=$('#componentSelect'), isolateBtn=$('#isolateComponentBtn'), exitBtn=$('#exitComponentBtn'), hint=$('#componentHint');
+  const components=state.cleanup?.report?.components || [];
+  if(!select || !isolateBtn || !exitBtn || !hint || !components.length) return;
+
+  select.innerHTML=components.map((c)=>`<option value="${c.component}">#${c.component} · ${c.triangles} tris</option>`).join('');
+  select.disabled=false; isolateBtn.disabled=false;
+  hint.textContent=`${components.length} measured head components · source-only diagnostic · no profile change`;
+
+  const isolateSelected=()=>{
+    const component=+select.value;
+    if(!state.componentDiagnosticRestore){
+      state.componentDiagnosticRestore={
+        cleanup:!!state.cleanup.active,
+        eyeRig:!!$('#eyeRigToggle').checked,
+        hostDebug:!!$('#hostDebugToggle').checked,
+        motion:state.currentMotion
+      };
+      poseBind();
+      $('#cleanupToggle').checked=false; state.cleanup.apply(false);
+      $('#eyeRigToggle').checked=false; state.eyes.setVisible(false);
+      $('#hostDebugToggle').checked=false; $('#hostDebugToggle').dispatchEvent(new Event('change'));
+      setView('front',camera,controls);
+    }
+    const detail=state.cleanup.setComponentIsolation(component);
+    if(!detail) return;
+    exitBtn.disabled=false;
+    hint.textContent=`Component #${component} · ${detail.triangles} tris · source-only isolation · use Front / ¾ / Side`;
+    renderReport();
+  };
+
+  isolateBtn.onclick=isolateSelected;
+  select.onchange=()=>{ if(state.cleanup.isolatedComponent != null) isolateSelected(); };
+  exitBtn.onclick=()=>{
+    state.cleanup.clearComponentIsolation();
+    const restore=state.componentDiagnosticRestore || {cleanup:true,eyeRig:true,hostDebug:false,motion:'bind'};
+    $('#cleanupToggle').checked=!!restore.cleanup; state.cleanup.apply(!!restore.cleanup);
+    $('#eyeRigToggle').checked=!!restore.eyeRig; state.eyes.setVisible(!!restore.eyeRig);
+    $('#hostDebugToggle').checked=!!restore.hostDebug; $('#hostDebugToggle').dispatchEvent(new Event('change'));
+    if(restore.motion && restore.motion!=='bind') playMotion(restore.motion); else poseBind();
+    state.componentDiagnosticRestore=null;
+    exitBtn.disabled=true;
+    hint.textContent=`${components.length} measured head components · source-only diagnostic · no profile change`;
+    renderReport();
+  };
+}
+
 function wireRuntimeControls(camera,controls,renderer) {
   $$('.tool[data-view]').forEach((b)=> b.onclick=()=>setView(b.dataset.view,camera,controls));
   $$('.motion').forEach((b)=> b.onclick=()=>playMotion(b.dataset.motion));
@@ -272,7 +320,7 @@ async function boot() {
   state.cleanupReady=cleanup.status==='AUTO_CANDIDATE'; gate('#gateCleanup',state.cleanupReady?'pass':'fail'); if(state.cleanupReady)cleanup.apply(true);
   state.mixer=new THREE.AnimationMixer(figure);
   const eyes=await mountKayKitEyes({THREE,figure,sourceRef:sourceRef(),profile:state.profile,expressionContract:contract,camera,log}); state.eyes=eyes; cleanup.measureOnFaceHost?.(eyes.faceHost); state.hostReady=eyes.faceHost.status==='OK'; state.eyeReady=!!eyes.eyeFrame(); gate('#gateHost',state.hostReady?'pass':'fail'); gate('#gateEye',state.eyeReady?'pass':'fail');
-  figure.visible=true; bindUiFromProfile(); wireProfileIo(); wireRuntimeControls(camera,controls,renderer); setView('front',camera,controls); poseBind();
+  figure.visible=true; bindUiFromProfile(); wireProfileIo(); wireRuntimeControls(camera,controls,renderer); wireComponentDiagnostic(camera,controls); setView('front',camera,controls); poseBind();
   await loadMotion(loader);
   $('#loadingCard').remove(); setBadge($('#bootBadge'),'READY',state.sourceReady&&state.cleanupReady&&state.hostReady&&state.eyeReady&&state.motionReady?'pass':'candidate');
   let last=performance.now(); function frame(now){const dt=Math.min(.05,(now-last)/1000);last=now; state.mixer?.update(dt); state.eyes?.update(dt,camera); controls.update(); renderer.render(scene,camera); requestAnimationFrame(frame);} requestAnimationFrame(frame);

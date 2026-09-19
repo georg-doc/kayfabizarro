@@ -65,6 +65,16 @@
       </section>
 
       <section class="audit-block">
+        <span class="eyebrow">SOURCE COMPONENTS · 0–11</span>
+        <div class="filter-row">
+          <select id="componentSelect" class="filter" disabled aria-label="Source head component"></select>
+          <button id="isolateComponentBtn" class="filter" type="button" disabled>Isolate</button>
+          <button id="exitComponentBtn" class="filter" type="button" disabled>Exit</button>
+        </div>
+        <div id="componentHint" class="micro-status">Waiting for source components…</div>
+      </section>
+
+      <section class="audit-block">
         <span class="eyebrow">RUNTIME REPORT</span>
         <div id="sourceReport" class="report compact">Waiting for source…</div>
       </section>
