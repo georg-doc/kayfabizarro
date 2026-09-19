@@ -1,4 +1,4 @@
-import {cityCartoonParams,deformPoint,stableHash,mulberry32} from '../../../osm-city-lab/src/style/cartoon-city.js';
+import {cityCartoonParams,deformPoint as cityDeformPoint,stableHash as cityStableHash,mulberry32 as cityMulberry32} from '../../../osm-city-lab/src/style/cartoon-city.js';
 import {boundsOf} from '../pilot-01/geometry.mjs';
 
 export const RIG_MODEL_IDS=['spasskaya','kremlin-wall'];
@@ -43,15 +43,15 @@ function profileFor(style,mode,id){
   const exact=style.cartoonMassing?.presets?.grotesque||{};
   const cfg=mode==='city-grotesque'?exact:{...exact,bend:.078,lean:.055,taper:.105,twistDeg:7.5,stackSteps:5,stackShift:.028};
   const params=cityCartoonParams(id,cfg,style.seed||'kfb-city');
-  const r=mulberry32(stableHash((style.seed||'kfb-city')+':grouped-soft:'+id));
+  const r=cityMulberry32(cityStableHash((style.seed||'kfb-city')+':grouped-soft:'+id));
   return {params,bulge:mode==='soft-cubist'?(.10+r()*.055):0,mode};
 }
 function fieldPoint(p,b,profile){
   if(!profile)return [...p];
-  let q=deformPoint({x:p[0],y:p[1],z:p[2]},b,profile.params);
+  let q=cityDeformPoint({x:p[0],y:p[1],z:p[2]},b,profile.params);
   if(profile.bulge){
     const t=Math.max(0,Math.min(1,(p[1]-b.minY)/b.h));
-    const c=deformPoint({x:b.cx,y:p[1],z:b.cz},b,profile.params);
+    const c=cityDeformPoint({x:b.cx,y:p[1],z:b.cz},b,profile.params);
     const s=1+profile.bulge*Math.sin(Math.PI*t);
     q={x:c.x+(q.x-c.x)*s,y:q.y,z:c.z+(q.z-c.z)*s};
   }
