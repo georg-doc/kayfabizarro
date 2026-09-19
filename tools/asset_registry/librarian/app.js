@@ -35,6 +35,8 @@ function updateSearchMeta(result) {
   $('loadMoreButton').textContent=remaining?`Show ${Math.min(RESULT_LIMIT,remaining).toLocaleString()} more`:'Show more';
 }
 export async function runSearch({ resetLimit=true } = {}) {
+  const aliasPack=moduleKitUi?.resolveAlias?.($('searchInput').value.trim());
+  if(aliasPack&&!$('packFilter').value){$('packFilter').value=aliasPack;$('searchInput').value='';await moduleKitUi.openPack(aliasPack,{updateUrl:true});}
   if (resetLimit) state.resultVisibleLimit=RESULT_LIMIT;
   const result = await searchRegistry();
   state.lastResults = result.rows;
@@ -150,7 +152,7 @@ const visibleVersion=document.querySelector('h1 span'); if(visibleVersion)visibl
 
 $('searchButton').onclick = () => runSearch().catch(showError);
 $('searchInput').onkeydown = (event) => { if (event.key === 'Enter') runSearch().catch(showError); };
-$('kaykitPreset').onclick = () => { $('searchInput').value = 'KayKit'; $('kindFilter').value = ''; setBrowseMode('primary'); $('browseModeFilter').value='primary'; setResultView('gallery'); runSearch().catch(showError); };
+$('kaykitPreset').onclick = () => { $('searchInput').value = 'KayKit'; $('kindFilter').value = ''; $('packFilter').value=''; $('moduleKitPanel').hidden=true; setBrowseMode('primary'); $('browseModeFilter').value='primary'; setResultView('gallery'); runSearch().catch(showError); };
 $('packFilter').onchange = (event) => { moduleKitUi?.openPack?.(event.target.value,{updateUrl:true}).catch(showError); };\n$('browseModeFilter').onchange = (event) => { setBrowseMode(event.target.value); if(hasSearchIntent())runSearch().catch(showError); };
 $('loadMoreButton').onclick = () => { state.resultVisibleLimit += RESULT_LIMIT; runSearch({resetLimit:false}).catch(showError); };
 $('resetButton').onclick = resetFilters;
