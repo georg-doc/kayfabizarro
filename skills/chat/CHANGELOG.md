@@ -464,3 +464,27 @@ Local proof checks the exact Stage mirror, real pinned ActionFigure + MovementBa
 
 ### PUBLIC STATUS
 Cloudflare Stage remains **NOT PUBLIC_VERIFIED**. A local browser PASS will be technical evidence only, not a substitute for the required pages.dev human gate.
+
+
+## 2026-09-19 · Batch EyeRig Atlas · Rig_Large Monstrosity calibration lane
+
+### IMPLEMENTATION
+- added Medium / Large class switch to the existing EyeRig workbench;
+- added verified Large roster: Monstrosity, Black Knight, Demon Lord, Orc Brute;
+- selected Monstrosity as the first Large calibration actor;
+- no accepted Large default is claimed initially;
+- added explicit **Set as Large default** action on Monstrosity;
+- Large Apply-to-Selected remains disabled until that human promotion;
+- Large uses its own General / MovementBasic animation files;
+- Large Idle / Walk / Run are available; Jump is disabled because the current Large library has no matching Jump clip;
+- Medium default, Medium actors and Medium overrides remain separate.
+
+### EVIDENCE
+- source/Return head: `a4d01402c5bd4785be480151ef7cd0b2317f2c71`;
+- implementation: `a843a9e9666d2d0d7d0c6a95f801a969f57941c3`;
+- evidence: `e60f1db1e2436f11549e44def25ab9b2718eac3b`;
+- Stage runtime: `670e11d56fe5b85e6264d8a294868c32540db5c6`;
+- **82/82 PASS · 15/15 focused Large PASS · 3/3 syntax PASS**.
+
+### NEXT
+Open the existing EyeRig Stage, switch to Large, tune Monstrosity and explicitly set it as the Large default. Then compare Black Knight, Demon Lord and Orc Brute.
