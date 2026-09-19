@@ -281,3 +281,76 @@ Do not interpret this as a KCL animation failure.
 Restore one successful **current** Cloudflare/pages.dev deployment, rerun the unchanged KCL public proof, then Georg compares NAIVE vs PHASE SYNC visually.
 
 No consumer integration, Sprint invention, or broader clip-family expansion before that human gate.
+
+
+## Final synchronized handoff · 2026-09-20
+
+Recovered after the interrupted sync and re-read current GitHub refs before writing.
+
+### Exact Git state before this Return write
+
+- repository: `georg-doc/kayfabizarro`
+- branch: `chatgpt-web/kaykit-creator-learning-2026-09-19`
+- Draft PR: **#107**
+- synced branch head: `4a52317f43469b2704c296bd2d1165fec27c6afc`
+- current main base: `c95dd7f6cc03be8463cb4db7ffd7b85ac6cea1dd`
+- compare: **47 commits ahead · 0 behind · 15 changed files**
+- PR state: **OPEN · DRAFT · UNMERGED**
+- PR diff at synced head: **+4050 / -0**
+- KFB Hub blob is identical on main and branch: `ee3e546184819862ac9c8be9d586119f3ee5422b`
+
+### Current KCL-M1 evidence
+
+- source/static sanity: **20/20 PASS**
+- real local browser/WebGL proof: **39/39 PASS**
+- run: `35468444150`
+- local-proof job: `105964939873`
+- artifact: `10591764219`
+- artifact digest: `sha256:55b8cc47723a64fc9c633ad46e2008a446d666ba724d02fed6242c17354de75e`
+- scoped source clips: **5/5 loaded + measured**
+- failed HTTP/resources: **0**
+- page/console errors: **0**
+- Repair Pass 1 affected proof-harness source metadata access only; motion code was unchanged.
+
+Persisted measured candidate:
+`research/kcl-m1-locomotion-sync/MEASURED_PROFILE_CANDIDATE.json`
+
+Automatic reference-speed candidates:
+- Walking_C ~0.447
+- Walking_A ~0.611
+- Walking_B ~0.751
+- Running_A ~2.480
+- Running_B ~0.284 — **AUTO_METRIC_AMBIGUOUS_HOLD**
+
+These are measurement candidates, not approved consumer speeds.
+
+### Public / Hub state
+
+Hub now surfaces KCL-M1 as **LOCAL 39/39** and explicitly says public Stage is blocked by repo-wide Cloudflare deployment.
+
+Intended fixed human route:
+
+https://kayfabizarro.pages.dev/kfb-hub/stage/game-dev-studio/kcl-m1-locomotion-sync/
+
+Current status:
+- Stage source mirror: present in GitHub main
+- Cloudflare/public proof: **FAILED / infrastructure layer**
+- `PUBLIC_VERIFIED`: **NO**
+- Georg motion acceptance: **OPEN**
+
+The first KCL public job never booted the bench; its `SOURCE.json` request resolved to the generic KFB HTML fallback. Pre-KCL TE-01 and later Cloudflare builds showed the same publication-layer failure, so no KCL motion defect is inferred from that result.
+
+### Owners retained
+
+- Asset Librarian / Registry — canonical source truth
+- ToolBox / FrankenStein / Animation — authoring + calibration
+- KCL-M1 — research measurement / QA only
+- Travel / Race / Combat / Platformer — movement, physics, gameplay state
+- no second Registry
+- no second global mixer
+- no Godot dependency
+- no Sprint source invented
+
+### Exactly one next gate
+
+Restore one successful **current** Cloudflare/pages.dev deployment without changing KCL motion logic; rerun the unchanged public KCL proof; then Georg compares **A · NAIVE** vs **B · PHASE SYNC** visually before any consumer integration.
