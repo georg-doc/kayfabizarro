@@ -191,3 +191,69 @@ The local 39/39 browser PASS is technical evidence only and does not replace the
 ## Exactly one next gate
 
 Restore a current successful Cloudflare/pages.dev deployment **without changing KCL motion logic**, then run the exact public browser proof and let Georg compare the visible A/B transition. Only after that human gate should any MotionProfile be proposed to Travel, Race, Combat or Platformer.
+
+
+## Public Stage browser proof · 39/39 PASS
+
+This section supersedes the earlier public Cloudflare blocker status while preserving it as deployment-history evidence.
+
+### Publication repair
+
+Cloudflare publication source is `cloudflare-live`, not `main`.
+
+Repair commit:
+`fac041eb34c9a284d724a3ee2b945bef7d020d04`
+
+Mirrored:
+- exact KCL Stage `index.html`;
+- exact KCL Stage `bench.mjs`;
+- exact KCL Stage `SOURCE.json`;
+- current KFB Hub entry.
+
+Cloudflare Pages deployment: **SUCCESS**.
+
+### Public browser evidence
+
+Run `35468444150`, attempt 2  
+Public-proof job `105981648314`
+
+Exact route opened:
+
+https://kayfabizarro.pages.dev/kfb-hub/stage/game-dev-studio/kcl-m1-locomotion-sync/
+
+Result:
+- deployment marker matched source head `d5c112af24df803462f0a326a85925f34170a5ed`;
+- HTTP PASS;
+- bench ready;
+- no bench error;
+- exact five clips;
+- five profiles;
+- duration/contact/reference-speed/slip checks for 5/5 clips;
+- consumer movement owner preserved;
+- Registry read-only;
+- pinned source verified;
+- WebGL canvas present;
+- naive lane present;
+- phase-sync lane present;
+- A/B transition executed;
+- failed resources: 0;
+- page/console errors: 0.
+
+**PUBLIC_BROWSER_RESULT 39/39 PASS**
+
+Artifact:
+- ID `10593933655`
+- digest `sha256:5d7f6bb436d0030a3ddec3f080e0a6b041fe196cdf36cd3d34d5f5d01f71c0cf`
+- contains screenshot + public-browser JSON.
+
+### Status
+
+`PUBLIC_VERIFIED = YES`
+
+`GEORG_MOTION_ACCEPTANCE = OPEN`
+
+No consumer integration is implied by technical PASS.
+
+## Exactly one current gate
+
+Georg visually compares **A · NAIVE** and **B · PHASE SYNC** on the public Stage, starting with Walking_A → Running_A. Judge foot sliding, double-step, hip pop, cadence and weight. Only after that visual gate may a MotionProfile be proposed to named consumers.
