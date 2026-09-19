@@ -18,7 +18,7 @@
 ### RECEIVER HANDOFF
 - Race branch `wsa/osm-city-drive-corridor-2026-09-19` consumes the exact pinned City consumer while preserving Free Roam C0 as sole movement/contact owner.
 - Observed Race branch head during recovery: `d2529e634952f25d691d68873801b2651125ac0c`.
-- Workflow `35414946641` was active at this checkpoint; do not convert that in-progress run into a PASS claim until it completes.
+- Workflow `35414946641`, job `105821630552`: **PASS**. Module/owner regression 10/10; existing Hürth C1 browser 26/26; continuous corridor browser 17/17. Boot 2237 ms; short drive 6.807 m; four C0 contacts; no new recovery/run; evidence commit `7208b4167df6fbea62703177301473eb841522d7`, artifact `10574843986`.
 
 ### PROMOTION BOUNDARY
 - PRs #80/#81/#82 remain stacked drafts and diverged from newer Kayfabizarro main.
