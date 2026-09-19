@@ -1,7 +1,8 @@
 # KFB img2threejs · Arbeitsbereich
 
 **Stand:** 2026-09-19 · **Owner:** Georg / KFB  
-**Aktueller Slice:** [Landmark Group Rig v1](landmarks/pilot-04/SLICE.md)  
+**Aktueller Return:** [Landmark Group Rig v1](docs/LANDMARK_GROUP_RIG_V1_RETURN_2026-09-19.md)  
+**Slice:** [Bounded contract](landmarks/pilot-04/SLICE.md)  
 **Ideation:** [Living Toy World / Reactive Landmarks](docs/IDEATION_LIVING_TOY_WORLD_2026-09-19.md)
 
 ## Aktuell
