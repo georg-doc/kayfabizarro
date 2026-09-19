@@ -108,3 +108,27 @@ Deep-review the five KayKit Live Show VODs and append source-grounded modeling g
 - atlas/material method;
 - variant/separate-part decisions;
 - reusable KayKit-compatible prop construction heuristics.
+
+
+## Final documentation wiring sanity · pre-PR
+
+Read-only checks at branch head `f11857002e1587eb0c9bfb0a8dcee2fcd15bac0e`:
+
+1. living document contains exact primary video ID — PASS;
+2. `Rig_Medium` compatibility analysis present — PASS;
+3. Platformer interactive-donor proposal present — PASS;
+4. Live Show deep-review next gate present — PASS;
+5. source manifest parses as JSON — PASS;
+6. source manifest contains 13 pinned/reference entries including primary — PASS;
+7. Hub contains exactly one `kaykit-creator-lessons` briefing card — PASS;
+8. Game Dev Studio Recovery contains exactly one research section — PASS;
+9. Game Dev Studio Changelog contains exactly one GDS-06 entry — PASS.
+
+**9/9 static documentation/wiring checks PASS.**
+
+Compare against base `a92e3c70029d811b76a88a15459adc20fea943bb` at that point reported:
+- branch ahead by 10 commits;
+- behind by 0;
+- 10 changed files;
+- all changes additive except the intended documentation/router/Hub insertions;
+- no asset binary, catalog package data, runtime or consumer source changed.
