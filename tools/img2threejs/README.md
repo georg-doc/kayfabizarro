@@ -1,68 +1,88 @@
 # KFB img2threejs · Arbeitsbereich
 
-**Stand:** 2026-09-18 · **Owner:** Georg / KFB  
-**Aktuelle Analyse / Slice:** [Landmark Deformer Modes](docs/DEFORMER_MODES_ANALYSIS_2026-09-18.md)  
-**Vorheriger WSA-Return:** [Landmark Pilot 02](docs/LANDMARK_PILOT_02_WSA_RETURN_2026-09-18.md)
+**Stand:** 2026-09-19 · **Owner:** Georg / KFB  
+**Aktueller Slice:** [Landmark Group Rig v1](landmarks/pilot-04/SLICE.md)  
+**Ideation:** [Living Toy World / Reactive Landmarks](docs/IDEATION_LIVING_TOY_WORLD_2026-09-19.md)
 
 ## Aktuell
 
-**Landmark Pilot 03: EXPERIMENTAL PRESENTATION MODES.** Additiv über den unveränderten Pilot-01/02-Modellen:
-- Base geometry;
-- **City Grotesque · exact** — nutzt die bestehenden Hürth/Ehrenfeld-Werte aus `cartoon-city.js`;
-- **Soft Cubist · rounded** — dieselbe objekt-normalisierte Grammatik plus weiche Mittelzonen-Aufblähung;
-- **Giza Voxel Steps** — 30 vorhandene Pyramidenkurse als Stufen-Slabs;
-- **Giza Boxel Blocks** — makro-blockige / LEGO-artige Studie mit sichtbaren Fugen.
+**Landmark Group Rig v1: IMPLEMENTATION + STATIC / NUMERICAL TESTED RESULT.**  
+Spasskaja-Turm und Kreml-Mauerstudie besitzen jetzt semantische Objektgruppen und vier starre Uhr-Attachments. Die Gruppierung verhindert die sichtbare Ablösung/Verformung der Uhrkörper unter City Grotesque und Soft Cubist.
 
-Die City-Kollisions-/Exportgeometrie bleibt unverändert. Kein OSM-Manifest, Travel-/Race-Movement-Owner oder Registry-Vertrag wurde ersetzt.
+Zusätzlich gibt es einen presentation-only **Living Toy Reactor**:
+- Idle breathing;
+- synthetischer Disco-Beat mit BPM/Intensity;
+- Impact-Reaction Preview;
+- Accent/Glazing-Pulse.
 
-**Pilot 02 bleibt:** Pentagon, Spasskaja-Turm, Kreml-Mauerstudie sowie die unveränderten Eiffel/Giza/Stonehenge-Modelle.  
-**Dom v0.2 bleibt:** GEORG VISUAL ACCEPTANCE für die cartoonige Stil-/Formrichtung; noch kein vermessener OSM-/Meterfit.
+Kein Audio-, Collision-, Movement- oder Terrain-Owner wurde neu geschaffen.
+
+**212/212 aktuelle Source-/Geometrie-/Reactor-/Viewer-Prüfungen PASS.**  
+[Evidence](evidence/2026-09-19-landmark-rig-v1/summary.json)
 
 ## Öffnen
 
-- [Pilot 03 · Deformer + Voxel/Boxel modes](landmarks/pilot-03/index.html)
-- [Pilot 02 · sechs Landmark-Modelle](landmarks/pilot-02/index.html)
+- [Pilot 04 · Group Rig + Living Toy Preview](landmarks/pilot-04/index.html)
+- [Pilot 03 · Grotesque / Soft Cubist / Giza Voxel](landmarks/pilot-03/index.html)
+- [Pilot 02 · Landmark Pack](landmarks/pilot-02/index.html)
 - [Pilot 01 · Eiffel / Giza / Stonehenge](landmarks/pilot-01/index.html)
 - [Dom v0.2 · akzeptierte Stilprobe](prototypes/koelner-dom/v0.2/index.html)
-- [Browser-Einstieg](index.html)
 
-GitHub zeigt HTML als Quelltext. Die modularen Viewer brauchen JavaScript/WebGL und Zugriff auf Three.js 0.160.0; der unveränderte Dom v0.2 nutzt weiterhin 0.161.0.
+GitHub zeigt HTML als Quelltext. Pilot 04 benötigt JavaScript/WebGL und Three.js 0.160.0.
 
-## Pilot 03 · Source Review
+## Pilot 04 · Rig Contract
 
-Gelesene Donoren:
+Aktuelle Gruppen:
+- `towerCore` — deformierbare Hauptmasse;
+- `clock:0..3` — `rigidAttached`, folgen expliziten Ankern / lokaler deformierter Basis;
+- `wall:left/right` — Kernsegmente der Kreml-Mauerstudie;
+- `secondarySoft` — weicher Sekundärkanal für spätere Wobble-/Overshoot-Reaktionen.
 
-- `tools/osm-city-lab/src/style/cartoon-city.js` — City-Deformer, Blob `d08c19fc45d98546b7ef2803f2ddbcb73b7f6782`
-- `tools/osm-city-lab/styles/kfb-city-v0.json` — aktueller `grotesque`-Preset
-- `travel/wip/travel_globe_wsa/kfb-cartoon-deform.js` — geteilter Prop-Verbieger; gemeinsamer Multi-Mesh-Rahmen + Segmentierungs-Fallback
-- `skills/kfb-box-material.js` — Voxel-/Box-Materialsprache
-- `media/3D_Assets/KFB/edge3.jpg` — bestätigtes Kanten-Asset, Blob `1e105dce9dd2cb2321833214040442fa8027eeca`
+Das Rig exportiert zusätzlich `bumperProfile` als **PROPOSAL_METADATA_ONLY**. Es existiert noch kein echter Bounce-/Collision-Receiver.
 
-Die Analyse steht vollständig in [DEFORMER_MODES_ANALYSIS](docs/DEFORMER_MODES_ANALYSIS_2026-09-18.md).
+## Reaktionen / North Star
+
+North Star:
+
+> **the world as a breathing, living toy**
+
+Pilot 04 beweist nur die Präsentationsseite:
+- Atem-/Pulse-Skalierung bleibt begrenzt;
+- Disco-Mode verwendet einen synthetischen Beat-Envelope, keinen Audio-Owner;
+- Impact-Buttons simulieren ein Reaktionssignal, keine Race-Physik.
+
+Vollständige Ideen und nächste Scenery-Kandidaten: [IDEATION_LIVING_TOY_WORLD](docs/IDEATION_LIVING_TOY_WORLD_2026-09-19.md).
 
 ## Evidenz
 
-[Pilot-03 summary](evidence/2026-09-18-landmark-pilot-03/summary.json):
+Die aktuellen Tests belegen:
+- unveränderte Quellmodelle;
+- gleiche Dreieckszahl unter grouped deformation;
+- bodenverankerte Geometrie;
+- vier explizite Clock-Attachments;
+- unabhängige Anchor-Field-Rechnung;
+- orthogonale lokale Attachment-Basen;
+- Uhr-Geometrie bleibt bis ca. `4e-15 m` rigiditätsgenau;
+- Legacy-Point-Deformation verzerrt Uhren in den geprüften Fällen um ca. `0.24–0.44 m`;
+- Living-Toy-Signale bleiben innerhalb definierter Vorschaugrenzen;
+- Viewer-Source/Controls statisch gültig.
 
-- 57 Geometrie-/Mode-Checks PASS;
-- 3 zusätzliche Syntax-/Referenz-Checks PASS;
-- alle sechs Landmarken bleiben unter City Grotesque und Soft Cubist endlich, bodenverankert und behalten ihre Dreieckszahl;
-- Giza Voxel Steps: **360 Dreiecke**, identische Gesamt-Bounding-Box zum Base-Modell;
-- Giza Boxel: **15.552 Dreiecke**, bodenverankert, sichtbare echte Blockfugen;
-- Voxel/Boxel auf Nicht-Giza fällt sicher auf Base zurück.
-
-**Nicht behauptet:** Browser/WebGL-PASS, Mobile, Consumer-Integration, OSM-Bindung oder Georg-Abnahme der neuen Modi.
+**Nicht behauptet:** erfolgreicher WebGL-/Mobile-/Consumer-PASS, echter Pinball-Bounce, Audio-Integration, OSM-Bindung oder Georg-Abnahme des neuen Rig-Looks.
 
 ## Recovery
 
 1. `skills/chat/START_HERE.md` + Registry/SOP aktuell lesen.
-2. Dieses README → [Deformer Analyse](docs/DEFORMER_MODES_ANALYSIS_2026-09-18.md) → jüngste Changelog-Einträge.
-3. Pilot 03 sichtbar prüfen: Spasskaja Base vs City Grotesque vs Soft Cubist; Giza Base vs Grotesque vs Voxel Steps vs Boxel.
-4. Erst nach diesem Look-Gate Material-/Weathering-Layer testen: `kfb-box-material`, edge3, Papier/Karton/Ton/Stein.
-5. Der Dom bleibt der bevorzugte erste echte OSM-Footprint-/Meter-/Yaw-Golden-Sample-Kandidat.
+2. [Pilot-04-Slice](landmarks/pilot-04/SLICE.md) → [Evidence](evidence/2026-09-19-landmark-rig-v1/summary.json) → jüngste Changelog-Einträge.
+3. Sichtbar A/B testen:
+   - Legacy vs Grouped;
+   - Grouped City Grotesque vs Grouped Soft Cubist;
+   - Idle vs Disco;
+   - Impact L/R.
+4. Erst nach Look-Gate nächste Fläche: `kfb-box-material` + `edge3.jpg`.
+5. Danach separate Receiver-Slices für Beat-/Audio-Seam und Bumper-/Contact-Seam.
 
 ## Zuständigkeiten
 
-Dieser Ordner ist Authoring-/Donor-Space. City Lab besitzt Geodaten, lokale Projektion, City-Style und Landmark-Override-Vertrag. Registry/Librarian besitzt Assetidentität. Travel/Free Roam besitzt Bewegung/Terrainkontakt/Persistenz. Race bleibt eigenes Implementation-SSOT.
+City Lab besitzt Geodaten, lokale Projektion, City-Style und Landmark-Override. Registry/Librarian besitzt Assetidentität. Travel/Free Roam besitzt Bewegung/Terrainkontakt/Persistenz. Race besitzt Driving/Contact/Physics/Camera/Gameplay. Audio bleibt beim bestehenden Audio-Owner.
 
-Keine bestehenden Owner wurden ersetzt; Pilot 03 ist eine reversible Präsentationsstudie.
+Pilot 04 ist ein reversibler Authoring-/Presentation-Donor und ersetzt keinen dieser Owner.
