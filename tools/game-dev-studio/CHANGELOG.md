@@ -142,3 +142,39 @@ The package supplies actor + lectern + Staff relative composition, Rig/animation
 
 ### OPEN
 After the Ground human gate carries, run the existing Travel Atlas Pilot 01 across `VISIBLE_HEX | SEATED_HEX | NO_VISIBLE_HEX`; do not create a parallel pilot.
+
+
+## 2026-09-19 · GDS-06 · Charming Kitchen Module Kit candidate / archived fail
+
+### USER DIRECTION
+- Build Dungeon-Generator equivalents across all KayKit + Tiny Treats packs.
+- First analyse each pack, create 3D previews/sample builds, expose the modules through Asset Librarian, then prepare Game Development Studio packages before ToolBox/Builder/Generator consumers.
+
+### SOURCE / CREATED
+- Tiny Treats Charming Kitchen 1.1 analysed from the central Registry.
+- 118/118 GLTF models classified; 0 unclassified.
+- Build 69 · Furnish 26 · Story 23.
+- CC0-1.0 source license pinned.
+- Module Library, Pack Profile, Generator Profile and three sample recipes created.
+- GDS metadata candidate created without copying source assets.
+
+### TESTED RESULT
+- repository-native source/static checks passed;
+- browser Module-Kit integration did **not** boot;
+- final repair run `35461231731` failed at Chromium parse of Librarian `app.js`, CDP line 174 / column 96;
+- browser sample assertions reached: 0.
+
+### DECISION
+- two product repair passes consumed on the same browser gate;
+- no third repair;
+- frozen product head `a5a8fcfb25e2ec89ab4346a812870d5b18bf91e6`;
+- status `ARCHIVED_FAILED_CANDIDATE`;
+- GDS metadata is salvage only, not a current package.
+
+### GAME DEV STUDIO CLI
+`GAME_DEV_CLI_UNAVAILABLE · OPTIONAL FALLBACK USED`
+
+No package-build, package-verify or vendor-admission receipt exists.
+
+### NEXT GATE
+GDS stays out of the immediate repair. First prove one clean six-asset wall-grammar sample in the existing Asset Librarian from current main.
