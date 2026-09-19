@@ -6,6 +6,18 @@ Auftraggeber: Georg / KFB
 Arbeitsweg: ChatGPT Web + GitHub-Sync  
 Koordination: `skills/chat/START_HERE.md` und `skills/chat/FRESH_CHAT_SLICE_PROTOCOL.md`
 
+## CURRENT OVERRIDE · Generator- und Integrationslinie
+
+Die bisherigen Einzel-POCs D01, H01 und C01 sind **superseded als Ausführungsbriefings**. Sie bleiben weiter unten nur als Planungsherkunft lesbar.
+
+Aktuelle, getrennte Aufträge:
+
+1. [Dungeon Generator v2](./DUNGEON_GENERATOR_V2_BRIEF.md) — vorhandenen zweigeschossigen S13.2-Generator mit Raumtypen, Katalog-Tiles und Requisiten ausbauen.
+2. [Combat Arena Integration v2](./COMBAT_ARENA_INTEGRATION_V2_BRIEF.md) — aktuellen FrizzleBob Driver Graft und belegte KayKit-Gegner/Clips in die bestehende Arena integrieren.
+3. [Hex Terrain Generator v1](./HEX_TERRAIN_GENERATOR_V1_BRIEF.md) — aus beiden KayKit-Hex-Packs, Katalog und vorhandener Resident-Hex-Welt eine geprüfte Modulbibliothek und danach einen begrenzten Generator bauen.
+
+Dungeon und Combat sind die zwei unmittelbaren Briefings. Hex ist der nächste parallele POC. Alle drei bereiten denselben neutralen Portal-/Rückkehrvertrag vor, koppeln ihre Runtimes aber noch nicht direkt an Race oder Travel.
+
 ## 1. Ziel in einem Satz
 
 Wir bauen keinen neuen Universal-Editor, sondern eine verständliche, messbare Bauteil-Bibliothek und daraus drei kleine, getrennt testbare Spielproben für den späteren begehbaren KFB Hub:
