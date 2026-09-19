@@ -57,3 +57,17 @@ Therefore:
 **C0-A1R · from current main, prove only the six-asset wall-grammar sample inside the existing Librarian shell with zero browser errors.**
 
 Do not carry the failed `app.js` patch wholesale.
+
+
+## Handoff metadata
+
+- repository: `georg-doc/kayfabizarro`
+- branch: `chatgpt-web/c0-a1-charming-kitchen-2026-09-19`
+- Draft PR: [#106 · C0-A1 Charming Kitchen · archived failed candidate + module-kit recovery](https://github.com/georg-doc/kayfabizarro/pull/106)
+- PR state at creation: `OPEN · DRAFT · NOT MERGED`
+- current main observed at PR creation: `bdad1806842d733e6217457fe81cd8b6259569e0`
+- recovery branch head at PR creation: `5ff322e9ac4d78a65197577f3736b189f47b898d`
+- frozen product head: `a5a8fcfb25e2ec89ab4346a812870d5b18bf91e6`
+- compare at PR creation: **38 changed files · branch diverged · 4 commits behind current main**
+- auto-merge: **NO**
+- Live promotion: **NO**
