@@ -112,6 +112,30 @@ Commit: `8614282aab2ced43bb5dda9fcf7abadf9768100a`.
 
 **Gate remains binding:** current Travel Ground human review must carry before Lorekeeper runtime import. This is READY input, not a Travel consumer PASS.
 
+## KAYKIT CREATOR RESEARCH · 2026-09-19
+
+Additive research lane created:
+
+- `research/KAYKIT_CREATOR_LESSONS_LIVING.md`
+- `research/KAYKIT_CREATOR_LESSONS_SOURCE.json`
+- `research/KAYKIT_CREATOR_LESSONS_TEST_REPORT.md`
+- `research/KAYKIT_CREATOR_LESSONS_RETURN.md`
+
+Current source pass starts with Kay Lousberg's detailed KayKit character/Godot tutorial and current official KayKit pack documentation. Engine-independent lessons are separated from KFB inference/proposals.
+
+Primary consequences recorded, **not yet implemented as schema/runtime changes**:
+- rig-family compatibility (`Rig_Medium` / `Rig_Large`) as explicit metadata;
+- animation library separate from character identity;
+- bone/socket attachment profiles with calibrated local transforms;
+- semantic asset family vs recolor/texture/separate-part variants;
+- staged retargeting evidence;
+- current-vs-legacy KayKit generation;
+- browser-first neutral Rig Bench and Platformer interactive-donor bench proposals.
+
+Owner boundaries remain unchanged: Asset Librarian owns source discovery, ToolBox/FrankenStein/Animation own their authoring domains, consumers own gameplay/state/physics, Game Dev Studio owns package-facing evidence/research presentation.
+
+**Research next gate:** deep-review KayKit Live Show Episodes 0–4 and append modeling grammar (primitives, proportions, bevels, origins/pivots, material/atlas use, part splitting and variation decisions). This research gate does not displace the Pilot 01 runtime/consumer gates below.
+
 ## NEXT
 
 1. keep the verified Cloudflare preview proof green after catalog/UI changes;
@@ -133,3 +157,82 @@ After Pilot 01 gates:
 - **Living Plant / Plant Prop package** from `skills/chat/workflows/PLANT_PROP_LAB_2026-09-18/`: pot+plant recipe, pattern style, prop rig and optional existing EyeRig adapter. **P2 / BACKLOG only; do not displace Pilot 01 consumer gates.**
 
 See `GAME_DEV_STUDIO_ASSET_PACKAGING_LIVING.md`.
+
+
+## KAYKIT CREATOR RESEARCH · v0.2 · animation timing / locomotion
+
+Second source pass added from `KayKit - Animations - Overview Set 1`:
+https://www.youtube.com/watch?v=T1KNCtAqJ7A
+
+Current-main evidence was re-read at `3d9ac78bfabcec0c43fc453c124133764221139c`; PR #107's branch is not treated as newer project truth for parallel EyeRig/Hub work.
+
+Key current facts:
+- `registry/resources/v1/motions.jsonl` contains **139 registered KayKit Rig_Medium motions across 8 sets**;
+- MovementBasic exposes Walking_A/B/C, Running_A/B and segmented Jump Start/Idle/Land;
+- MovementAdvanced exposes dodge/strafe/crouch/sneak/crawl/backwards plus equipped running;
+- CombatRanged currently exposes explicit aim/shoot/reload/bow/magic families;
+- there is **no explicit Sprint clip** in the current Rig_Medium registry;
+- Mixed Bag 1 is now source-visible on current main with **41 GLTF models + 6 PNG assets** in its Registry shard.
+
+Research synthesis now proposes phase-matched locomotion transitions, measured playback-rate ranges, hysteresis, physics-owned jump phases, phase-relative combat/interaction markers and a measurement-only `KCL-M1 Locomotion Sync Bench`.
+
+**CURRENT RESEARCH NEXT GATE:** KCL-M1 measures Walking_A/B/C + Running_A/B on one verified Rig_Medium actor: foot contacts, planted intervals, acceptable timeScale range and naive-vs-phase-synced transition A/B. It must not modify consumer movement/physics.
+
+The earlier KCL-A5 Live Show modeling extraction remains backlog and becomes stronger because current Mixed Bag release geometry can now be compared directly to the creator VODs.
+
+
+
+## KCL-M1 LOCOMOTION SYNC · 39/39 LOCAL PASS
+
+The KayKit creator-research lane has produced its first implementation proof:
+
+`research/kcl-m1-locomotion-sync/`
+
+Current technical result:
+- exact ActionFigure / Rig_Medium + MovementBasic source;
+- exactly Walking_A/B/C + Running_A/B;
+- source/static **20/20 PASS**;
+- local real-browser **39/39 PASS**;
+- workflow `35468444150`, job `105964939873`;
+- artifact `10591764219`;
+- artifact digest `sha256:55b8cc47723a64fc9c633ad46e2008a446d666ba724d02fed6242c17354de75e`;
+- measured profiles persisted in `MEASURED_PROFILE_CANDIDATE.json`;
+- no consumer movement/physics/state ownership introduced.
+
+Auto-measured reference-speed candidates:
+`Walking_C .447 · Walking_A .611 · Walking_B .751 · Running_A 2.480`.
+
+`Running_B .284` is **AUTO_METRIC_AMBIGUOUS_HOLD** because its contact candidates are fragmented and slip candidate is highest. No semantic speed role is assigned.
+
+Default A/B mechanics are proven:
+`Walking_A → Running_A · LEFT · 0.12 s fade · warp ON`, with naive target phase 0 versus phase-sync target ~9.6%.
+
+**PUBLIC/HUMAN:** OPEN. Cloudflare/pages.dev is currently failing repo-wide; KCL public proof never booted the bench and is not evidence of animation failure.
+
+**CURRENT KCL GATE:** restore a successful current Cloudflare deployment, rerun the unchanged public proof, then Georg judges NAIVE vs PHASE SYNC. Pilot 01 and all existing Game Dev Studio package gates remain otherwise unchanged.
+
+
+## KCL-M1 · PUBLIC 39/39 PASS
+
+The first KayKit locomotion measurement proof is now externally browser-verified.
+
+Publication repair:
+- actual Cloudflare owner branch: `cloudflare-live`;
+- tested Stage mirror published at `fac041eb34c9a284d724a3ee2b945bef7d020d04`;
+- no motion code changed.
+
+Public evidence:
+- run `35468444150`, attempt 2;
+- public-proof job `105981648314`;
+- **39/39 PASS**;
+- artifact `10593933655`;
+- digest `sha256:5d7f6bb436d0030a3ddec3f080e0a6b041fe196cdf36cd3d34d5f5d01f71c0cf`;
+- 5/5 real clips measured;
+- A/B transition executed;
+- 0 failed resources;
+- 0 page/console errors.
+
+Fixed Stage:
+`https://kayfabizarro.pages.dev/kfb-hub/stage/game-dev-studio/kcl-m1-locomotion-sync/`
+
+**CURRENT KCL GATE:** Georg compares NAIVE vs PHASE SYNC visually. No consumer integration, semantic speed promotion or Sprint inference before that human gate.

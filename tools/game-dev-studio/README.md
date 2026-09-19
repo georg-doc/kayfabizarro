@@ -43,6 +43,7 @@ The public page loads preview models from **pinned GitHub revisions**. It does n
 - `RECOVERY.md` — current production cursor; update after every substantive turn.
 - `CHANGELOG.md` — append-only project history.
 - `index.html` — stable tool URL redirect to the Free Roam Game Dev Studio entry.
+- `research/KAYKIT_CREATOR_LESSONS_LIVING.md` — additive creator-video/official-source analysis of KayKit compatibility, modularity, rigging, variation and KFB application; research only, not a new Registry/runtime.
 
 ## Turn protocol
 

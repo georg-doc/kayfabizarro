@@ -142,3 +142,135 @@ The package supplies actor + lectern + Staff relative composition, Rig/animation
 
 ### OPEN
 After the Ground human gate carries, run the existing Travel Atlas Pilot 01 across `VISIBLE_HEX | SEATED_HEX | NO_VISIBLE_HEX`; do not create a parallel pilot.
+
+
+## 2026-09-19 · GDS-06 · KayKit Creator Lessons living research
+
+### USER DIRECTION
+Analyze Kay Lousberg's own KayKit creator videos/how-tos, beginning with the detailed Godot character video, extract what KFB can apply even without Godot, and preserve the findings as an additive living document.
+
+### CREATED
+- `tools/game-dev-studio/research/KAYKIT_CREATOR_LESSONS_LIVING.md`
+- `tools/game-dev-studio/research/KAYKIT_CREATOR_LESSONS_SOURCE.json`
+- `tools/game-dev-studio/research/KAYKIT_CREATOR_LESSONS_TEST_REPORT.md`
+- `tools/game-dev-studio/research/KAYKIT_CREATOR_LESSONS_RETURN.md`
+
+### PRIMARY FINDINGS
+- KayKit character identity, rig family, animation library, materials/textures and attachments are separable concerns.
+- `Rig_Medium` and `Rig_Large` are explicit compatibility classes.
+- reusable attachments require socket/bone target plus calibrated local transform.
+- recolors/textures/separate pieces should be grouped under semantic asset families rather than counted as unrelated design assets.
+- animation state machines remain consumer logic; packages should expose clips/tags/timing facts.
+- retargeting needs staged rig-map → clip → library → visual/consumer evidence.
+- a neutral Rig Bench/mannequin is a useful pre-consumer validator.
+- current-vs-legacy KayKit generation must remain visible.
+- Platformer buttons/switches are exact visual/mechanical donors; KFB interaction motion is a separate owned layer.
+- Live Show / Mixed Bag demonstrates that eclectic props stay coherent through shared geometry/material grammar.
+
+### BOUNDARY
+No Asset Registry schema, runtime, binary, rig, animation or gameplay behavior was changed by this research pass. Proposed fields and benches remain proposals until their existing owners accept a bounded slice.
+
+### EVIDENCE
+Base main head: `a92e3c70029d811b76a88a15459adc20fea943bb`.
+
+Documentation checkpoints were fetched back after every write; detailed counts and limitations are in `KAYKIT_CREATOR_LESSONS_TEST_REPORT.md`.
+
+### NEXT RESEARCH GATE
+Deep-review KayKit Live Show Episodes 0–4 and append creator modeling grammar: primitives, proportions, bevels, origins/pivots, part splitting, material/atlas usage and variant decisions.
+
+
+## 2026-09-19 · GDS-07 · KayKit animation timing synthesis
+
+### SOURCE
+Added creator video:
+`KayKit - Animations - Overview Set 1`
+https://www.youtube.com/watch?v=T1KNCtAqJ7A
+
+The video is treated as an older **visual animation overview**, not as current inventory truth or a state-machine how-to. Current implementation facts were rechecked against KFB main and the current official Character Animations source.
+
+### CURRENT REPO EVIDENCE
+At main `3d9ac78bfabcec0c43fc453c124133764221139c`:
+- Rig_Medium motion Registry: **139 motions / 8 sets**;
+- MovementBasic: 11;
+- MovementAdvanced: 13;
+- General: 15;
+- CombatMelee: 22;
+- CombatRanged: 20;
+- Simulation: 14;
+- Special: 15;
+- Tools: 29;
+- no explicit `Sprint` clip;
+- Mixed Bag shard: **47 assets = 41 GLTF models + 6 PNG images**, pinned to source commit `378b209355b13304e3cff656ec0806ca5b89df28`.
+
+### RESEARCH DECISION
+The useful KFB synthesis is:
+- phase-sync Walk/Run transitions rather than reset-to-frame-zero;
+- measured speed ↔ playback-rate calibration;
+- hysteresis around locomotion speed bands;
+- optional temporary warp during crossfade;
+- physics-owned Jump_Start → Jump_Idle → Jump_Land;
+- phase-relative combat release/contact markers;
+- entry/loop/exit interaction graphs;
+- stance/equipment participates in locomotion selection.
+
+### BOUNDARY
+No runtime state machine, consumer movement, Registry schema or Animation Lab implementation changed in this pass.
+
+### NEXT GATE
+**KCL-M1 · Locomotion Sync Bench** — one current Rig_Medium actor, Walking_A/B/C + Running_A/B only, measurement and A/B evidence before any consumer integration.
+
+
+## 2026-09-19 · GDS-08 · KCL-M1 measured locomotion proof
+
+### IMPLEMENTATION
+Built `research/kcl-m1-locomotion-sync/` as a bounded measurement/QA consumer of the exact current ActionFigure / Rig_Medium and MovementBasic library. It reuses existing Travel foot-sampling/root-cleaning concepts and the one-mixer-per-host rule without importing consumer movement.
+
+### TESTED RESULT
+- source/static: **20/20 PASS**;
+- first local run measured 5/5 clips but exposed a proof-harness source-metadata bug;
+- Repair Pass 1 changed proof scripts only;
+- second local browser run: **39/39 PASS**;
+- run `35468444150`, job `105964939873`;
+- artifact `10591764219`;
+- digest `sha256:55b8cc47723a64fc9c633ad46e2008a446d666ba724d02fed6242c17354de75e`;
+- 0 failed resources / 0 page-console errors.
+
+### MEASURED CANDIDATES
+- Walking_C ~0.447
+- Walking_A ~0.611
+- Walking_B ~0.751
+- Running_A ~2.480
+- Running_B ~0.284 — **AUTO_METRIC_AMBIGUOUS_HOLD**
+
+These are reference-speed candidates, not approved game speeds.
+
+### PUBLIC
+The fixed pages.dev Stage target exists in source but is **NOT PUBLIC_VERIFIED**. KCL marker polling returned HTML fallback; independent pre-KCL and subsequent workflows show the same repo-wide Cloudflare deployment failure. No animation repair is justified by that public failure.
+
+### NEXT GATE
+Restore current Cloudflare publication, rerun the unchanged KCL public proof, then Georg compares the visible naive/phase-sync A/B. No consumer integration before human review.
+
+
+## 2026-09-20 · GDS-09 · KCL-M1 public Stage proof
+
+### PUBLICATION REPAIR
+The previous public failure was caused by Stage files missing from the actual Cloudflare publication branch. Mirrored the exact tested KCL Stage candidate to `cloudflare-live@fac041eb34c9a284d724a3ee2b945bef7d020d04`. Motion logic remained unchanged.
+
+### TESTED RESULT
+Public browser run `35468444150`, attempt 2, job `105981648314`:
+- **39/39 PASS**;
+- exact pages.dev route opened;
+- deployment marker matched;
+- 5/5 clips loaded + measured;
+- WebGL + A/B transition PASS;
+- ownership/source-pin PASS;
+- 0 failed resources;
+- 0 page/console errors;
+- artifact `10593933655`;
+- digest `sha256:5d7f6bb436d0030a3ddec3f080e0a6b041fe196cdf36cd3d34d5f5d01f71c0cf`.
+
+### STATUS
+`PUBLIC_VERIFIED = YES`.
+
+### NEXT
+Human motion gate only: Georg compares A · NAIVE vs B · PHASE SYNC. No consumer profile promotion before acceptance.

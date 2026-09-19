@@ -195,3 +195,14 @@ Race PR #29 is now **REJECTED FOUNDATION · WRONG TERRAIN DONOR**. The LOW_GRAVI
 
 Next gate:
 source-isolated current Travel Globe/TinySkies surface proof, then the smallest Track-to-spherical-surface deformation seam through the existing Travel terrain truth.
+
+
+## 2026-09-19 · KayKit Creator Lessons · Game Dev Studio research lane
+
+Kay Lousberg's creator tutorials/live-show material now has an additive KFB interpretation under [Game Dev Studio research](../../tools/game-dev-studio/research/KAYKIT_CREATOR_LESSONS_LIVING.md). The lane covers rig families, reusable animation libraries, calibrated bone attachments, material/texture variants, staged retargeting, semantic asset families, motion timing and Mixed Bag source-analysis.
+
+KCL-M1 has moved beyond proposal status: the neutral Rig_Medium locomotion bench loads the real ActionFigure + MovementBasic donors, measures Walking_A/B/C + Running_A/B, and passed **39/39 local browser checks** after one proof-harness-only repair. Machine-readable measurements live in `tools/game-dev-studio/research/kcl-m1-locomotion-sync/MEASURED_PROFILE_CANDIDATE.json`.
+
+Ownership remains unchanged: Asset Librarian / Registry owns source truth; ToolBox / FrankenStein / Animation owns authoring and calibration; Travel / Race / Combat / Platformer retain movement, physics and gameplay state. KCL-M1 is measurement/QA only.
+
+Current gate: KCL-M1 is **PUBLIC_VERIFIED · 39/39 PASS** on the fixed pages.dev Stage. Georg now compares NAIVE vs PHASE SYNC visually; do not invent a KayKit Sprint clip or integrate/promote MotionProfiles into consumers before that human gate.

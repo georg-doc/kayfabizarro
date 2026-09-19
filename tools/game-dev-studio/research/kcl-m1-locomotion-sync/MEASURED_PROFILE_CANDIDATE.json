@@ -1,0 +1,174 @@
+{
+  "schema": "kfb.motion-profile-candidate/0.1",
+  "updated": "2026-09-20",
+  "status": "PUBLIC_BROWSER_39_39_PASS_HUMAN_OPEN",
+  "owner": "KFB Game Dev Studio research",
+  "source": {
+    "benchSourceHead": "d5c112af24df803462f0a326a85925f34170a5ed",
+    "assetPin": "29c7500b39d20945f4f8e73fb02fef91a055b02c",
+    "actor": "ActionFigure · Rig_Medium",
+    "animationSet": "Rig_Medium_MovementBasic",
+    "workflowRun": 35468444150,
+    "job": 105964939873,
+    "artifactId": 10591764219,
+    "artifactDigest": "sha256:55b8cc47723a64fc9c633ad46e2008a446d666ba724d02fed6242c17354de75e",
+    "browserChecks": "39/39 PASS"
+  },
+  "actorHeight": 2.322,
+  "measurementMethod": {
+    "samplesPerCycle": 240,
+    "rootTranslation": "Root/Hips position tracks stripped",
+    "contact": "low-foot candidate intervals on real foot bones",
+    "referenceSpeed": "median planted-foot counter-velocity candidate",
+    "slip": "residual planted-foot excursion after reference-speed compensation",
+    "note": "Automatic candidates only. Visual/human approval is required before semantic speed roles or consumer use."
+  },
+  "clips": {
+    "Walking_A": {
+      "duration": 1.0666667222976685,
+      "axis": "z",
+      "referenceSpeed": 0.610950956910957,
+      "slipBody": 0.01378884906505853,
+      "maxSlip": 0.03202161005466164,
+      "footCycle": 0.40089665819377873,
+      "leftPrimaryContact": 0.3,
+      "rightPrimaryContact": 0.8041666666666667,
+      "leftPrimaryPlanted": [
+        0.16666666666666666,
+        0.45416666666666666
+      ],
+      "rightPrimaryPlanted": [
+        0.6708333333333333,
+        0.925
+      ],
+      "autoStatus": "MEASURED_CANDIDATE"
+    },
+    "Walking_B": {
+      "duration": 1.0666667222976685,
+      "axis": "z",
+      "referenceSpeed": 0.7508334459170038,
+      "slipBody": 0.03087267905789153,
+      "maxSlip": 0.07169509837044002,
+      "footCycle": 0.4555413926878115,
+      "leftPrimaryContact": 0.30416666666666664,
+      "rightPrimaryContact": 0.75,
+      "leftPrimaryPlanted": [
+        0.1625,
+        0.4
+      ],
+      "rightPrimaryPlanted": [
+        0.6625,
+        0.8958333333333334
+      ],
+      "autoStatus": "MEASURED_CANDIDATE"
+    },
+    "Walking_C": {
+      "duration": 1.600000023841858,
+      "axis": "z",
+      "referenceSpeed": 0.44722797954653737,
+      "slipBody": 0.01733157527757346,
+      "maxSlip": 0.04024882298391563,
+      "footCycle": 0.3947943025422783,
+      "leftPrimaryContact": 0.3458333333333333,
+      "rightPrimaryContact": 0.85,
+      "leftPrimaryPlanted": [
+        0.19166666666666668,
+        0.42083333333333334
+      ],
+      "rightPrimaryPlanted": [
+        0.6875,
+        0.9166666666666666
+      ],
+      "autoStatus": "MEASURED_CANDIDATE"
+    },
+    "Running_A": {
+      "duration": 0.800000011920929,
+      "axis": "z",
+      "referenceSpeed": 2.4802741670129302,
+      "slipBody": 0.06628914910041549,
+      "maxSlip": 0.1539421653927444,
+      "footCycle": 0.7367103253563901,
+      "leftPrimaryContact": 0.09583333333333334,
+      "rightPrimaryContact": 0.5958333333333333,
+      "leftPrimaryPlanted": [
+        0,
+        0.22916666666666666
+      ],
+      "rightPrimaryPlanted": [
+        0.44583333333333336,
+        0.7291666666666666
+      ],
+      "autoStatus": "MEASURED_CANDIDATE"
+    },
+    "Running_B": {
+      "duration": 0.800000011920929,
+      "axis": "z",
+      "referenceSpeed": 0.2840948267606955,
+      "slipBody": 0.10935693683422903,
+      "maxSlip": 0.2539577575732266,
+      "footCycle": 0.6816973195932519,
+      "contactPattern": "fragmented/multiple low-foot spans on both feet",
+      "leftContacts": [
+        0,
+        0.24166666666666667,
+        0.7916666666666666,
+        1
+      ],
+      "rightContacts": [
+        0.2916666666666667,
+        0.5,
+        0.7416666666666667
+      ],
+      "autoStatus": "AUTO_METRIC_AMBIGUOUS_HOLD",
+      "note": "Do not use referenceSpeed as a semantic speed role until visual/manual contact review."
+    }
+  },
+  "autoReferenceSpeedOrder": [
+    "Running_B",
+    "Walking_C",
+    "Walking_A",
+    "Walking_B",
+    "Running_A"
+  ],
+  "semanticInterpretation": {
+    "approved": false,
+    "warnings": [
+      "Reference-speed order is an automatic measurement, not a semantic gait classification.",
+      "A/B/C names do not prove slow/normal/fast.",
+      "Running_B remains HOLD because automatic contact/reference-speed metrics are ambiguous."
+    ]
+  },
+  "defaultAB": {
+    "source": "Walking_A",
+    "target": "Running_A",
+    "syncFoot": "left",
+    "fadeSeconds": 0.12,
+    "warp": true,
+    "desiredSpeed": 1.5,
+    "observedRates": {
+      "Walking_A": 1.8,
+      "Running_A": 0.6
+    },
+    "observedEntry": {
+      "sourceContact": 0.3,
+      "naiveTarget": 0,
+      "targetPhaseSync": 0.09583333333333334
+    },
+    "note": "Walking_A hits the candidate 1.8 clamp at desired speed 1.5; the default desired speed is therefore above its measured reference regime and needs human tuning."
+  },
+  "publicStatus": {
+    "cloudflare": "PUBLIC_VERIFIED",
+    "publicVerified": true,
+    "publicationBranch": "cloudflare-live",
+    "publicationCommit": "fac041eb34c9a284d724a3ee2b945bef7d020d04",
+    "cloudflareCheck": 105981864001,
+    "publicProofRun": 35468444150,
+    "publicProofAttempt": 2,
+    "publicProofJob": 105981648314,
+    "publicProofChecks": "39/39 PASS",
+    "publicArtifactId": 10593933655,
+    "publicArtifactDigest": "sha256:5d7f6bb436d0030a3ddec3f080e0a6b041fe196cdf36cd3d34d5f5d01f71c0cf",
+    "humanAccepted": false,
+    "stageTarget": "https://kayfabizarro.pages.dev/kfb-hub/stage/game-dev-studio/kcl-m1-locomotion-sync/"
+  }
+}

@@ -1,0 +1,92 @@
+{
+  "schema": "kfb.kcl-m1-source/0.1",
+  "date": "2026-09-19",
+  "owner": "KFB Game Dev Studio research / ToolBox motion donor",
+  "status": "PUBLIC_BROWSER_39_39_PASS_HUMAN_OPEN",
+  "mainSnapshot": "29c7500b39d20945f4f8e73fb02fef91a055b02c",
+  "actor": {
+    "name": "ActionFigure",
+    "rig": "Rig_Medium",
+    "path": "media/3D_Assets/KayKit_Mystery_Series6/6 - December 2023 - Action Figure/character/gltf/ActionFigure.glb",
+    "blobSha": "4785276defdb929cb397954eb74b76aecb84486b",
+    "pin": "29c7500b39d20945f4f8e73fb02fef91a055b02c"
+  },
+  "animation": {
+    "set": "Rig_Medium_MovementBasic",
+    "path": "media/3D_Assets/KayKit_Character_Animations_1.1/Animations/gltf/Rig_Medium/Rig_Medium_MovementBasic.glb",
+    "blobSha": "98e965e886ec539e80f8984a77a29b0c1c02e5e5",
+    "pin": "29c7500b39d20945f4f8e73fb02fef91a055b02c",
+    "clips": [
+      "Walking_A",
+      "Walking_B",
+      "Walking_C",
+      "Running_A",
+      "Running_B"
+    ]
+  },
+  "donors": [
+    {
+      "path": "travel/wip/travel_globe_wsa/world-builder/movement-lab.js",
+      "blobSha": "254b1b3f891247b2bdb27bcc74d8e6a838209587",
+      "reuse": [
+        "root-motion stripping",
+        "foot-cycle sampling",
+        "compatibility mindset",
+        "cadence/reference-speed donor"
+      ],
+      "boundary": "Travel Ground movement ownership is not imported"
+    },
+    {
+      "path": "tools/KFB-ToolBox/kfb-rigs-embed-v3/EMBED_KFB_RIGS_v3.md",
+      "blobSha": "5ac6d3ecb81cc2363b7eee8933e609266de77733",
+      "reuse": [
+        "one mixer per host",
+        "mixer-before-graft frame ordering",
+        "Rig_Medium clip source contract"
+      ],
+      "boundary": "KCL-M1 uses a neutral source actor; it does not become a Graft owner"
+    }
+  ],
+  "stageTarget": "https://kayfabizarro.pages.dev/kfb-hub/stage/game-dev-studio/kcl-m1-locomotion-sync/",
+  "stageStatus": "NOT_DEPLOYED",
+  "consumerBoundary": "Measurement/QA only. Travel, Race, Combat, Platformer and other consumers retain movement/physics/state ownership.",
+  "updated": "2026-09-20",
+  "localBrowserEvidence": {
+    "workflowRun": 35468444150,
+    "job": 105964939873,
+    "commit": "72e6eae20699c605c015514600d1ecec792ee127",
+    "checks": "39/39 PASS",
+    "artifactId": 10591764219,
+    "artifactDigest": "sha256:55b8cc47723a64fc9c633ad46e2008a446d666ba724d02fed6242c17354de75e",
+    "contents": [
+      "desktop.png",
+      "local-browser.json"
+    ],
+    "measuredProfile": "tools/game-dev-studio/research/kcl-m1-locomotion-sync/MEASURED_PROFILE_CANDIDATE.json"
+  },
+  "repairHistory": [
+    {
+      "pass": 1,
+      "observed": "First local browser run loaded and measured 5/5 clips, then proof harness failed because source pin was read from snapshot() instead of the exposed bench API.",
+      "repair": "Proof scripts only: merge window.__KFB_KCL_M1__.source into the proof snapshot.",
+      "motionCodeChanged": false,
+      "result": "39/39 local browser PASS"
+    }
+  ],
+  "publicEvidence": {
+    "status": "PUBLIC_VERIFIED",
+    "publicationBranch": "cloudflare-live",
+    "publicationCommit": "fac041eb34c9a284d724a3ee2b945bef7d020d04",
+    "cloudflareCheck": 105981864001,
+    "publicProofRun": 35468444150,
+    "publicProofAttempt": 2,
+    "publicProofJob": 105981648314,
+    "checks": "39/39 PASS",
+    "artifactId": 10593933655,
+    "artifactDigest": "sha256:5d7f6bb436d0030a3ddec3f080e0a6b041fe196cdf36cd3d34d5f5d01f71c0cf",
+    "openedExactRoute": true,
+    "failedResources": 0,
+    "pageConsoleErrors": 0,
+    "humanAcceptance": "PENDING"
+  }
+}

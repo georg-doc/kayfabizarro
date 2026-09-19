@@ -1,0 +1,158 @@
+{
+  "schema": "kfb.research-sources/1",
+  "updated": "2026-09-20",
+  "owner": "KFB Game Dev Studio",
+  "livingDocument": "tools/game-dev-studio/research/KAYKIT_CREATOR_LESSONS_LIVING.md",
+  "primarySource": {
+    "kind": "youtube",
+    "title": "Using KayKit Characters In Godot (Detailed version)",
+    "url": "https://www.youtube.com/watch?v=4p7QaOd8SHE",
+    "published": "2025-10-27",
+    "status": "ANALYZED_V0_1"
+  },
+  "sources": [
+    {
+      "kind": "official_youtube",
+      "title": "KayKit - Animations - Overview Set 1",
+      "url": "https://www.youtube.com/watch?v=T1KNCtAqJ7A",
+      "published": "2024-11-30",
+      "durationApprox": "00:06:05",
+      "status": "ANALYZED_V0_2_VISUAL_CATALOG",
+      "note": "Older visual animation overview. Current inventory/count truth comes from current official Character Animations page and current KFB Registry."
+    },
+    {
+      "kind": "official_youtube",
+      "title": "Using KayKit Characters In Godot (Quick version)",
+      "url": "https://www.youtube.com/watch?v=sp_1WnJUDXM",
+      "status": "REVIEWED_AS_GOLDEN_PATH"
+    },
+    {
+      "kind": "official_itch",
+      "title": "KayKit - Character Animations",
+      "url": "https://kaylousberg.itch.io/kaykit-character-animations",
+      "checked": "2026-09-19",
+      "status": "REVIEWED"
+    },
+    {
+      "kind": "official_itch",
+      "title": "KayKit - Character Pack : Mystery Monthly Series 6",
+      "url": "https://kaylousberg.itch.io/kaykit-series-6",
+      "checked": "2026-09-19",
+      "status": "REVIEWED"
+    },
+    {
+      "kind": "official_itch",
+      "title": "KayKit - Platformer Pack",
+      "url": "https://kaylousberg.itch.io/kaykit-platformer",
+      "checked": "2026-09-19",
+      "status": "REVIEWED"
+    },
+    {
+      "kind": "official_itch",
+      "title": "KayKit - Dungeon Pack",
+      "url": "https://kaylousberg.itch.io/kaykit-dungeon-pack",
+      "checked": "2026-09-19",
+      "status": "REVIEWED"
+    },
+    {
+      "kind": "official_itch",
+      "title": "(Legacy) KayKit - Dungeon Pack",
+      "url": "https://kaylousberg.itch.io/kaykit-dungeon",
+      "checked": "2026-09-19",
+      "status": "REVIEWED_FOR_SUCCESSOR_LEGACY_PATTERN"
+    },
+    {
+      "kind": "official_itch",
+      "title": "KayKit - Medieval Hexagon Pack",
+      "url": "https://kaylousberg.itch.io/kaykit-medieval-hexagon",
+      "checked": "2026-09-19",
+      "status": "REVIEWED"
+    },
+    {
+      "kind": "official_itch",
+      "title": "KayKit - Mixed Bag 1",
+      "url": "https://kaylousberg.itch.io/mixed-bag-1",
+      "checked": "2026-09-19",
+      "status": "REVIEWED"
+    },
+    {
+      "kind": "official_patreon",
+      "title": "Updates recap! — KayKit Live Show / Mixed Bag / Medieval Village / Godot Environment Tutorial",
+      "url": "https://www.patreon.com/posts/updates-recap-169539427",
+      "checked": "2026-09-19",
+      "status": "REVIEWED"
+    },
+    {
+      "kind": "official_youtube",
+      "title": "KayKit Live Show - Episode 2",
+      "url": "https://www.youtube.com/watch?v=JYtajxGwC4M",
+      "status": "INDEXED_FOR_NEXT_DEEP_PASS"
+    },
+    {
+      "kind": "official_youtube",
+      "title": "KayKit Live Show - Episode 3",
+      "url": "https://www.youtube.com/watch?v=vA9TR7MU0jM",
+      "status": "INDEXED_FOR_NEXT_DEEP_PASS"
+    },
+    {
+      "kind": "official_youtube_channel",
+      "title": "Kay Lousberg",
+      "url": "https://www.youtube.com/@KayLousberg",
+      "status": "CHANNEL_WATCHLIST"
+    }
+  ],
+  "watchlist": [
+    {
+      "title": "KayKit Live Show Episodes 0, 1 and 4",
+      "status": "PIN_EXACT_URLS_BEFORE_DEEP_ANALYSIS"
+    },
+    {
+      "title": "Godot Environment Tutorial",
+      "status": "NOT_CONFIRMED_PUBLISHED_AS_OF_2026-09-19"
+    }
+  ],
+  "evidenceRule": "Official creator sources first. Current repo/Registry wins for KFB implementation facts. Distinguish creator-observed source facts from KFB inference/proposal. Do not infer compatibility, speed tier, loop semantics, event timing or animation state from filenames alone.",
+  "currentRepoEvidence": {
+    "checkedMain": "3d9ac78bfabcec0c43fc453c124133764221139c",
+    "motionRegistry": {
+      "path": "registry/resources/v1/motions.jsonl",
+      "blobSha": "1f266ab2e9e57db63f5596ba83f616872b502909",
+      "fact": "139 registered KayKit Rig_Medium motions across 8 sets",
+      "counts": {
+        "Rig_Medium_MovementBasic": 11,
+        "Rig_Medium_MovementAdvanced": 13,
+        "Rig_Medium_General": 15,
+        "Rig_Medium_CombatMelee": 22,
+        "Rig_Medium_CombatRanged": 20,
+        "Rig_Medium_Simulation": 14,
+        "Rig_Medium_Special": 15,
+        "Rig_Medium_Tools": 29
+      },
+      "explicitSprintClip": false
+    },
+    "mixedBag": {
+      "packPath": "media/3D_Assets/KayKit_Mixed_Bag_1_FREE/",
+      "registryShard": "registry/assets/v1/packs/kaykit-mixed-bag-1-free.json",
+      "registryBlobSha": "694555b53014860da88943ba0fbe0760690a8ffb",
+      "sourceCommit": "378b209355b13304e3cff656ec0806ca5b89df28",
+      "assetCount": 47,
+      "model3dGltfCount": 41,
+      "image2dPngCount": 6,
+      "license": "CC0",
+      "variantEvidence": "Resident Atlas S28 measured guitar_A and guitar_B as geometry-identical variants with different UV placement on the shared palette."
+    }
+  },
+  "kclM1Public": {
+    "status": "PUBLIC_VERIFIED",
+    "stageUrl": "https://kayfabizarro.pages.dev/kfb-hub/stage/game-dev-studio/kcl-m1-locomotion-sync/",
+    "publicationBranch": "cloudflare-live",
+    "publicationCommit": "fac041eb34c9a284d724a3ee2b945bef7d020d04",
+    "publicProofRun": 35468444150,
+    "publicProofAttempt": 2,
+    "publicProofJob": 105981648314,
+    "checks": "39/39 PASS",
+    "artifactId": 10593933655,
+    "artifactDigest": "sha256:5d7f6bb436d0030a3ddec3f080e0a6b041fe196cdf36cd3d34d5f5d01f71c0cf",
+    "humanAcceptance": "PENDING"
+  }
+}

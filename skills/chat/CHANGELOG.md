@@ -631,3 +631,47 @@ Georg visual motion acceptance remains OPEN. No consumer integration, speed-band
 
 ### EXACT NEXT GATE
 Georg compares **A · NAIVE** vs **B · PHASE SYNC** on the public KCL Stage, beginning with Walking_A → Running_A, LEFT contact, fade around 0.12 s, warp ON, and judges foot sliding, double-step, hip pop, cadence and weight.
+
+## 2026-09-19 · KayKit Creator Lessons · additive Game Dev Studio research
+
+### USER DIRECTION
+Analyze Kay Lousberg's creator videos/how-tos for directly reusable KFB production knowledge, beginning with `Using KayKit Characters In Godot (Detailed version)`, and keep the findings as a living GitHub document.
+
+### ROUTING
+Research home:
+`tools/game-dev-studio/research/KAYKIT_CREATOR_LESSONS_LIVING.md`.
+
+Asset Librarian remains canonical source/discovery owner. ToolBox/FrankenStein/Animation and named game consumers keep their existing ownership. No Godot dependency, second Registry or second runtime is introduced.
+
+### FIRST PASS
+Recorded rig-family compatibility, reusable animation libraries, calibrated bone attachments, material/texture variants, semantic asset families, staged retargeting, current-vs-legacy KayKit generation and exact Platformer donor reuse.
+
+### EVIDENCE
+Documentation/research branch only. No runtime/schema/binary change and no public deployment claimed.
+
+## 2026-09-19 · KayKit Creator Lessons v0.2 · motion timing synthesis
+
+### SOURCE / CURRENT FACTS
+Added `KayKit - Animations - Overview Set 1` and rechecked current source facts against main `3d9ac78bfabcec0c43fc453c124133764221139c`.
+
+- current KFB Rig_Medium motion Registry: **139 motions across 8 sets**;
+- Walking_A/B/C and Running_A/B exist;
+- there is **no explicit Sprint source clip** in the current Rig_Medium Registry;
+- segmented Jump_Start / Jump_Idle / Jump_Land exist;
+- current ranged combat contains explicit aim / shoot / reload / bow / magic families;
+- Mixed Bag 1 Registry shard contains **41 GLTF models + 6 PNG assets**.
+
+### RESEARCH SYNTHESIS
+- sync locomotion phase/foot contact across Walk ↔ Run rather than resetting target clips;
+- use speed ↔ playback-rate calibration only within measured visual limits;
+- use speed-band hysteresis;
+- keep physics authoritative for jump/world movement;
+- keep combat contact/release events phase-relative when timeScale changes;
+- treat tool/sit/lie/fishing families as candidates for measured entry/loop/exit graphs;
+- compare Live Show modeling decisions directly against released Mixed Bag GLTF geometry.
+
+### CURRENT NEXT GATE
+**KCL-M1 · Locomotion Sync Bench** — measurement-only on one current Rig_Medium actor with Walking_A/B/C + Running_A/B. Measure foot contacts, planted intervals, playback-rate range and naive-vs-phase-synced A/B before consumer integration.
+
+### BOUNDARY
+No consumer movement, runtime state machine, Registry schema, animation clip or package binary changed.
