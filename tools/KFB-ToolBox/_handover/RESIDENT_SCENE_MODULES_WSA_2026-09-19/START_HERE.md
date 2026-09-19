@@ -5,6 +5,14 @@
 **Implementation SSOT:** `georg-doc/kayfabizarro`  
 **Existing integration lead:** **WSA** — unchanged.
 
+## 2026-09-19 REVIEW UPDATE
+
+Before using this handoff, read:
+
+`GEORG_REVIEW_FAIL_C0_2026-09-19.md`
+
+The later C0 consumer proof produced a **GEORG VISUAL REVIEW FAIL**. `juggle-cascade-v1` is **not accepted**; arm/catch/club-clearance review remains open. Technical mount/browser PASS must not be interpreted as visual acceptance.
+
 ## GOAL
 
 Hand WSA one bounded resident-scene package that can later be consumed by the KFB Free Roam Platformer or other KFB runtimes without creating a second movement, collision, camera, quest, animation or world owner.
