@@ -32,8 +32,12 @@ Do not create a second world, movement owner, asset registry, animation mixer, r
 
 Repository: `georg-doc/KFB-Travel-Globe`
 PR: **#30**
-Branch/head: `wsa/tinyskies-terrain-donor-isolation-2026-09-19@0b354d8b8cdbe55e10ecc91221ae933058306f3b`
+Branch: `wsa/tinyskies-terrain-donor-isolation-2026-09-19`
+Last observed head during this audit: `ee240a72cfa2305a77a1a083636f567d1fb9d482`
+Stable tested evidence head: `80cfaa685cdfcdeab7cbd52f2cea6fb16bd8d4f4`
 Base owner head: `8614282aab2ced43bb5dda9fcf7abadf9768100a`
+
+**Drift note:** this PR moved repeatedly while the consolidation audit was running. The exact branch head is therefore a live cursor; WSA must re-fetch PR #30 before local integration. The tested evidence head above is the stable proof pin.
 
 Proven earlier on the candidate:
 - 12/12 Chromium checks PASS;
