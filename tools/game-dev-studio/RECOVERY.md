@@ -164,7 +164,7 @@ See `GAME_DEV_STUDIO_ASSET_PACKAGING_LIVING.md`.
 Second source pass added from `KayKit - Animations - Overview Set 1`:
 https://www.youtube.com/watch?v=T1KNCtAqJ7A
 
-Current-main evidence was re-read at `c84c3c57aa875e1ac1cd8cc17eb966cb37c0f317`; PR #107's branch is not treated as newer project truth for parallel EyeRig/Hub work.
+Current-main evidence was re-read at `3d9ac78bfabcec0c43fc453c124133764221139c`; PR #107's branch is not treated as newer project truth for parallel EyeRig/Hub work.
 
 Key current facts:
 - `registry/resources/v1/motions.jsonl` contains **139 registered KayKit Rig_Medium motions across 8 sets**;
