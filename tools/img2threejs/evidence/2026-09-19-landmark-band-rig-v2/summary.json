@@ -1,0 +1,64 @@
+{
+  "schema": "kfb.landmark-band-rig-v2.qa/0.1",
+  "date": "2026-09-19",
+  "evidenceClass": "CURRENT_GITHUB_SOURCE_EVAL_PLUS_CPU_VISUAL",
+  "browserWebGL": "BLOCKED_IN_AGENT_ENVIRONMENT",
+  "consumerIntegration": "NOT_RUN",
+  "humanAcceptance": "PENDING",
+  "checksPassed": 159,
+  "checksFailed": 0,
+  "failureReproduction": {
+    "replacedImplementation": "Pilot 04 / socket rig v1.2",
+    "clockSocketDistanceToActualRenderedHostFaceM": [
+      2.16174523673423,
+      3.783660793999535,
+      2.435788203598338,
+      3.457264447352294
+    ],
+    "meaning": "v1.2 kept each clock rigid around a socket, but the sockets did not lie on the actually rendered coarse clock-stage faces."
+  },
+  "newConcept": {
+    "schema": "kfb.landmark-band-rig/0.2",
+    "bands": ["lower", "clock", "belfry", "tent"],
+    "clockInvariant": "clock-stage and every clock-* part share exactly one affine clock-band transform",
+    "groundInvariant": "lower X/Z basis remains horizontal so authored Y=0 ground vertices stay at Y=0"
+  },
+  "results": {
+    "spasskaya": {
+      "triangles": 3496,
+      "baseMinY": 0,
+      "cityGrotesqueMinY": 0,
+      "softCubistMinY": 0,
+      "cityGrotesqueClockStandoffM": [0.07158591182282592,0.07158591182282614,0.07158591182282592,0.07158591182282503],
+      "cityGrotesqueMaxMountErrorM": 2.123301534595612e-15,
+      "softCubistClockStandoffM": [0.08490982970927341,0.0849098297092743,0.08490982970927341,0.0849098297092743],
+      "softCubistMaxMountErrorM": 1.304512053934559e-15
+    },
+    "kremlinWall": {
+      "triangles": 5008,
+      "baseMinY": 0,
+      "cityGrotesqueMinY": 0,
+      "softCubistMinY": 0,
+      "cityGrotesqueMaxMountErrorM": 2.067790383364354e-15,
+      "softCubistMaxMountErrorM": 2.1510571102112408e-15
+    }
+  },
+  "visualEvidence": {
+    "method": "CPU triangle renderer fed from the exact generated production vertices; no AI image generation",
+    "sameCameraBeforeAfter": "before-after.jpg",
+    "frontRightBands": "views.jpg",
+    "reviewed": true,
+    "finding": "v1.2 visibly detached clocks; Band Rig v2 keeps front and side clocks on the clock-stage assembly in oblique/front/right evidence."
+  },
+  "browserProbe": {
+    "attempted": true,
+    "result": "BLOCKED",
+    "errorClass": "Chromium EGL/ANGLE initialization failed in agent container; no WebGL screenshot claimed."
+  },
+  "protectedBoundaries": {
+    "cityS2PhysicsGeometry": "UNCHANGED",
+    "osmLandmarkManifest": "UNCHANGED",
+    "raceTravelContact": "NOT_IMPLEMENTED",
+    "audioRuntime": "NOT_IMPLEMENTED"
+  }
+}
