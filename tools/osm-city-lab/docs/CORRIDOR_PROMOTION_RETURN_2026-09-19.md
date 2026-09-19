@@ -1,7 +1,7 @@
 # Return · Corridor tested-stack promotion onto current main
 
 **Date:** 2026-09-19  
-**Status:** PROMOTION CANDIDATE · CURRENT-MAIN-BASED · DETERMINISTIC CI PASS · MAIN MERGE OPEN
+**Status:** MAIN PROMOTED · POST-MERGE CONSUMER CI PASS · RACE RECEIVER PASS · STAGE PACKAGE ON MAIN · PUBLIC/HUMAN FULL-ROUTE GATES OPEN
 
 ## Goal
 
@@ -123,9 +123,40 @@ OPEN:
 
 **Drive a meaningful longer portion of the connected Hürth → Ehrenfeld corridor and judge scale, road readability, grotesque city/forest balance and overall coherence.**
 
+## Main promotion result
+
+- PR: **#86**
+- merge commit: `3813d24e3db04a43117676890e48f7b6baaf6cd9`
+- post-merge consumer run: `35415680112` / job `105823765381` → **PASS**
+- S2 export-contract run on the merge: `35415680163` → **PASS**
+- evidence refresh commit on main: `25c2c616720e18d97028bf06fdd03d10c16b3504`
+
+Post-merge hashes remained exact:
+
+- normalized SHA-256: `e88450d51169f7293bdbfb87955826cf3328a25e00eb3c24e8a08c636e406e6f`
+- scene SHA-256: `258c4d5a3872750bc9045d771646e85dbf36aab8a14243db98adc0d288edf07d`
+
+## Stage mirror package
+
+Current kayfabizarro main also contains the public Stage mirror package from:
+
+`8607fb512726af81848b6545eda25ad451491f36`
+
+Route:
+
+`/kfb-hub/stage/stunt-world/`
+
+It contains exactly 9 Race runtime files source-identical to tested Race runtime `d2529e634952f25d691d68873801b2651125ac0c` plus the thin Stage wrapper/provenance/deployment manifests. Race remains the implementation SSOT.
+
+Current deployment manifest status:
+
+`PUBLIC_STAGE_PACKAGE_TESTED_SOURCE_PENDING_MIRROR`
+
+Therefore file packaging is implemented, but public/mobile mirror acceptance is not yet claimed.
+
 ## Still open
 
-- main merge of this promotion candidate;
+- longer human route drive;
 - longer human route drive;
 - public standalone Corridor Drive page;
 - Travel Walk↔Drive;
