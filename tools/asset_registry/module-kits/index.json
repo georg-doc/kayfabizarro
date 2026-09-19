@@ -1,0 +1,42 @@
+{
+  "schema": "kfb.module-kit-index/1",
+  "updated": "2026-09-19",
+  "ownerBoundary": "Derived builder/module semantics only. Canonical asset identity stays in Registry; source files are never copied.",
+  "kits": [
+    {
+      "packId": "tiny-treats-charming-kitchen-1-1-free",
+      "displayName": "Tiny Treats · Charming Kitchen 1.1",
+      "status": "SOURCE_ANALYSIS_PASS_BROWSER_OPEN",
+      "aliases": [
+        "Charming Kitchen",
+        "Tiny Treats Kitchen",
+        "Tiny Treats Charming Kitchen",
+        "Kitchen",
+        "Küche"
+      ],
+      "root": "../module-kits/tiny-treats-charming-kitchen-1-1-free/",
+      "packProfile": "../module-kits/tiny-treats-charming-kitchen-1-1-free/PACK_PROFILE.json",
+      "moduleLibrary": "../module-kits/tiny-treats-charming-kitchen-1-1-free/MODULE_LIBRARY.json",
+      "generatorProfile": "../module-kits/tiny-treats-charming-kitchen-1-1-free/GENERATOR_PROFILE.json",
+      "previewManifest": "../module-kits/tiny-treats-charming-kitchen-1-1-free/PREVIEW_MANIFEST.json",
+      "validationReport": "../module-kits/tiny-treats-charming-kitchen-1-1-free/VALIDATION_REPORT.json",
+      "sampleRecipes": [
+        {
+          "id": "wall-grammar",
+          "label": "Wall grammar · source modules",
+          "path": "../module-kits/tiny-treats-charming-kitchen-1-1-free/SAMPLE_RECIPES/wall-grammar.json"
+        },
+        {
+          "id": "worktop-run",
+          "label": "Worktop run · straight / sink / corner",
+          "path": "../module-kits/tiny-treats-charming-kitchen-1-1-free/SAMPLE_RECIPES/worktop-run.json"
+        },
+        {
+          "id": "furnished-cell",
+          "label": "Furnished kitchen cell",
+          "path": "../module-kits/tiny-treats-charming-kitchen-1-1-free/SAMPLE_RECIPES/furnished-cell.json"
+        }
+      ]
+    }
+  ]
+}
