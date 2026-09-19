@@ -38,6 +38,7 @@ jobs:
           node --check game-ready/theatre-curtain-v1/runtime/kfb-theatre-curtain.mjs
           node --check kfb-hub/stage/game-dev-studio/theatre-curtain-v1/lab.mjs
           node --check kfb-hub/stage/game-dev-studio/theatre-curtain-v1/local-proof.mjs
+          node --check kfb-hub/stage/game-dev-studio/theatre-curtain-v1/public-proof.mjs
 
       - name: Install Playwright Chromium
         run: |
@@ -65,4 +66,33 @@ jobs:
         with:
           name: theatre-curtain-v1-local-evidence
           path: curtain-v1-local-evidence
+          retention-days: 14
+
+  public-proof:
+    needs: local-proof
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout: |
+            kfb-hub/stage/game-dev-studio/theatre-curtain-v1
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Install Playwright Chromium
+        run: |
+          npm install --no-save playwright@1.51.1
+          npx playwright install --with-deps chromium
+
+      - name: Fixed Cloudflare Stage browser proof
+        run: node kfb-hub/stage/game-dev-studio/theatre-curtain-v1/public-proof.mjs
+
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: theatre-curtain-v1-public-evidence
+          path: curtain-v1-public-evidence
           retention-days: 14
