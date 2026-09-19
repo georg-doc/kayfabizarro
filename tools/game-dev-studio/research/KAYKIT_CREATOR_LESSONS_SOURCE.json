@@ -1,0 +1,106 @@
+{
+  "schema": "kfb.research-sources/1",
+  "updated": "2026-09-19",
+  "owner": "KFB Game Dev Studio",
+  "livingDocument": "tools/game-dev-studio/research/KAYKIT_CREATOR_LESSONS_LIVING.md",
+  "primarySource": {
+    "kind": "youtube",
+    "title": "Using KayKit Characters In Godot (Detailed version)",
+    "url": "https://www.youtube.com/watch?v=4p7QaOd8SHE",
+    "published": "2025-10-27",
+    "status": "ANALYZED_V0_1"
+  },
+  "sources": [
+    {
+      "kind": "official_youtube",
+      "title": "Using KayKit Characters In Godot (Quick version)",
+      "url": "https://www.youtube.com/watch?v=sp_1WnJUDXM",
+      "status": "REVIEWED_AS_GOLDEN_PATH"
+    },
+    {
+      "kind": "official_itch",
+      "title": "KayKit - Character Animations",
+      "url": "https://kaylousberg.itch.io/kaykit-character-animations",
+      "checked": "2026-09-19",
+      "status": "REVIEWED"
+    },
+    {
+      "kind": "official_itch",
+      "title": "KayKit - Character Pack : Mystery Monthly Series 6",
+      "url": "https://kaylousberg.itch.io/kaykit-series-6",
+      "checked": "2026-09-19",
+      "status": "REVIEWED"
+    },
+    {
+      "kind": "official_itch",
+      "title": "KayKit - Platformer Pack",
+      "url": "https://kaylousberg.itch.io/kaykit-platformer",
+      "checked": "2026-09-19",
+      "status": "REVIEWED"
+    },
+    {
+      "kind": "official_itch",
+      "title": "KayKit - Dungeon Pack",
+      "url": "https://kaylousberg.itch.io/kaykit-dungeon-pack",
+      "checked": "2026-09-19",
+      "status": "REVIEWED"
+    },
+    {
+      "kind": "official_itch",
+      "title": "(Legacy) KayKit - Dungeon Pack",
+      "url": "https://kaylousberg.itch.io/kaykit-dungeon",
+      "checked": "2026-09-19",
+      "status": "REVIEWED_FOR_SUCCESSOR_LEGACY_PATTERN"
+    },
+    {
+      "kind": "official_itch",
+      "title": "KayKit - Medieval Hexagon Pack",
+      "url": "https://kaylousberg.itch.io/kaykit-medieval-hexagon",
+      "checked": "2026-09-19",
+      "status": "REVIEWED"
+    },
+    {
+      "kind": "official_itch",
+      "title": "KayKit - Mixed Bag 1",
+      "url": "https://kaylousberg.itch.io/mixed-bag-1",
+      "checked": "2026-09-19",
+      "status": "REVIEWED"
+    },
+    {
+      "kind": "official_patreon",
+      "title": "Updates recap! — KayKit Live Show / Mixed Bag / Medieval Village / Godot Environment Tutorial",
+      "url": "https://www.patreon.com/posts/updates-recap-169539427",
+      "checked": "2026-09-19",
+      "status": "REVIEWED"
+    },
+    {
+      "kind": "official_youtube",
+      "title": "KayKit Live Show - Episode 2",
+      "url": "https://www.youtube.com/watch?v=JYtajxGwC4M",
+      "status": "INDEXED_FOR_NEXT_DEEP_PASS"
+    },
+    {
+      "kind": "official_youtube",
+      "title": "KayKit Live Show - Episode 3",
+      "url": "https://www.youtube.com/watch?v=vA9TR7MU0jM",
+      "status": "INDEXED_FOR_NEXT_DEEP_PASS"
+    },
+    {
+      "kind": "official_youtube_channel",
+      "title": "Kay Lousberg",
+      "url": "https://www.youtube.com/@KayLousberg",
+      "status": "CHANNEL_WATCHLIST"
+    }
+  ],
+  "watchlist": [
+    {
+      "title": "KayKit Live Show Episodes 0, 1 and 4",
+      "status": "PIN_EXACT_URLS_BEFORE_DEEP_ANALYSIS"
+    },
+    {
+      "title": "Godot Environment Tutorial",
+      "status": "NOT_CONFIRMED_PUBLISHED_AS_OF_2026-09-19"
+    }
+  ],
+  "evidenceRule": "Official creator sources first. Distinguish observed source facts from KFB inference/proposal. Do not infer compatibility from filenames or pack co-location."
+}
