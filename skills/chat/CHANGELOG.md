@@ -335,3 +335,29 @@ The historical public run `35460179569` remains runtime/action evidence but is n
 
 ### NEXT GATE
 Georg opens the fixed Stage, uses the runtime-generated source-measured baseline from corrected components 2+3, compares Source/Cleaned/EyeRig in Front/3/4/Side and motion, and approves or rejects the single GothGirl candidate. No Medium batch expansion, Large/Legacy, merge or Live promotion before that gate.
+
+
+## 2026-09-19 · KayKit Creator Lessons · additive Game Dev Studio research
+
+### USER DIRECTION
+Analyze Kay Lousberg's creator videos/how-tos for directly reusable KFB production knowledge, starting with `Using KayKit Characters In Godot (Detailed version)`, then keep the findings as a living GitHub document.
+
+### ROUTING
+The research lives inside the existing KFB Game Dev Studio:
+`tools/game-dev-studio/research/KAYKIT_CREATOR_LESSONS_LIVING.md`.
+
+Asset Librarian remains canonical source/discovery owner. ToolBox/FrankenStein/Animation and named game consumers keep their existing ownership.
+
+### CURRENT FINDINGS
+- separate character source, rig family, animation library, material/texture variant and attachment profile;
+- treat `Rig_Medium` / `Rig_Large` as compatibility facts;
+- represent recolors/texture variants/separate parts under semantic families rather than raw-file identity;
+- preserve socket target plus measured local attachment transform;
+- keep runtime state machines with consumers;
+- stage retargeting evidence rather than declaring blanket compatibility;
+- distinguish current KayKit standards from legacy/superseded packs;
+- use exact Platformer controls as donors before adding KFB interaction behavior;
+- deep Live Show modeling analysis is the next research gate.
+
+### EVIDENCE
+Documentation-only branch checkpoint; no runtime/schema/binary change and no new public deployment claimed.
