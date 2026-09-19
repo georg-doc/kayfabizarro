@@ -88,3 +88,25 @@ This is **not** recorded as an application/browser FAIL because the app did not 
 | profile import/export interaction in browser | NOT_TESTED |
 
 The next valid visual gate is the normal-browser Cloudflare Stage route, not another container Chromium workaround.
+
+
+## PUBLICATION CHECKPOINT
+
+Stage mirror commit: `f309948a3bd265154e6d3f5c959b69ec9b725f26` on `cloudflare-live`.
+
+The publication branch was fetched back after the write and contains:
+
+- the Stage HTML with visible `candidate f23b2f6 · PR #104 · Stage`;
+- byte-identical runtime blobs for `app.js`, CSS, adapter and source-face cleanup;
+- the GothGirl seed and source audit;
+- a KFB Hub card linking directly to the Stage route.
+
+Main router/Hub metadata was updated separately at `ac067d09919f744750649e3652dd00036d7ccd6f` without merging EyeRig implementation code.
+
+Exact public route:
+
+`https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/eye-rig-batch/`
+
+Public verification attempt result: **ENVIRONMENT_UNAVAILABLE**. The web fetcher reports the `pages.dev` route as inaccessible, and the execution container reports temporary DNS resolution failure for `kayfabizarro.pages.dev`. No `PUBLIC_VERIFIED` claim is made.
+
+This is now a **human browser gate**, not another source-code repair pass.

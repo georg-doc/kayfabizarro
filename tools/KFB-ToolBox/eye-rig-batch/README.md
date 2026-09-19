@@ -1,6 +1,6 @@
 # KFB Batch EyeRig Atlas
 
-**Status:** IMPLEMENTED CANDIDATE · Rig_Medium first · static tests green · visual Stage gate pending.
+**Status:** IMPLEMENTED CANDIDATE · Rig_Medium first · static tests green · Stage mirror written · public/human visual gate pending.
 
 Owner: KFB ToolBox / Rigging.
 
@@ -43,3 +43,12 @@ Cross-render semantics remain aligned with:
 `../docs/2D_ANIMATION_STUDIO_BRIDGE.md`
 
 The existing `kfb.eye-profile/0.1-candidate` schema remains local/candidate. No global contract promotion is claimed.
+
+
+## Review handoff
+
+Draft PR: `#104` — not merged.
+
+Publication mirror: `cloudflare-live@f309948a3bd265154e6d3f5c959b69ec9b725f26`.
+
+The fixed Stage route is linked from the KFB Hub. Automated public verification is still open because the available environments cannot resolve/open `pages.dev`; Georg's normal-browser check is the next gate.

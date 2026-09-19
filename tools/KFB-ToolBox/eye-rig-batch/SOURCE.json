@@ -10,7 +10,10 @@
     "route": "/kfb-hub/stage/toolbox/eye-rig-batch/",
     "url": "https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/eye-rig-batch/",
     "publicationBranch": "cloudflare-live",
-    "status": "PENDING_PUBLICATION_AT_THIS_CHECKPOINT"
+    "publicationCommit": "f309948a3bd265154e6d3f5c959b69ec9b725f26",
+    "hubLinked": true,
+    "mainRouterCommit": "ac067d09919f744750649e3652dd00036d7ccd6f",
+    "status": "PUBLICATION_BRANCH_WRITTEN_PUBLIC_VERIFICATION_UNAVAILABLE"
   },
   "actor": {
     "id": "gothgirl",
@@ -53,5 +56,18 @@
     ],
     "mode": "runtime-derived-geometry",
     "policy": "FAIL_CLOSED"
+  },
+  "pullRequest": {
+    "number": 104,
+    "url": "https://github.com/georg-doc/kayfabizarro/pull/104",
+    "state": "DRAFT_OPEN",
+    "merged": false
+  },
+  "tests": {
+    "staticContract": "22/22 PASS",
+    "jsSyntax": "3/3 PASS",
+    "githubPersistence": "PASS",
+    "localChromium": "ENVIRONMENT_UNAVAILABLE_2_PRE_APP_EGL_X_FAILURES",
+    "exactCloudflareUrl": "UNVERIFIED_ENVIRONMENT_CANNOT_RESOLVE_OR_OPEN_PAGES_DEV"
   }
 }

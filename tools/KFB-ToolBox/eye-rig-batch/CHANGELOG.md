@@ -56,3 +56,25 @@ Commit: `d900fb99f3b04d52f266febd1501368c5fedd360`
 
 ### ARCHIVED HISTORY
 - one interrupted, unreferenced Git blob was left outside the branch; recovery proved no partial branch write and resumed without duplicate commit.
+
+
+## 2026-09-19 · Checkpoint 3 · PR / STAGE / ROUTER HANDOFF
+
+### SOURCE
+- draft PR **#104** opened against `main`; no merge performed;
+- implementation checkpoint remains `d900fb99f3b04d52f266febd1501368c5fedd360`.
+
+### PUBLICATION
+- Stage-only mirror committed to `cloudflare-live` at `f309948a3bd265154e6d3f5c959b69ec9b725f26`;
+- fixed route: `https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/eye-rig-batch/`;
+- KFB Hub publication card updated in the same publication commit;
+- main KFB Hub + central router metadata updated at `ac067d09919f744750649e3652dd00036d7ccd6f` without merging EyeRig runtime code.
+
+### TESTED RESULT
+- publication branch readback: PASS;
+- public URL open: UNAVAILABLE in current web/container environments because `pages.dev` cannot be reached/resolved;
+- `PUBLIC_VERIFIED`: OPEN;
+- Georg acceptance: OPEN.
+
+### NEXT GATE
+Normal-browser review of GothGirl source-eye cleanup, EyeRig placement and head attachment through Front / 3/4 / Side and Idle / Walk / Run / Jump. No Large/Legacy expansion and no Live promotion before that gate.

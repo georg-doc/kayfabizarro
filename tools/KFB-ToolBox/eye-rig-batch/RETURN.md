@@ -9,6 +9,7 @@ Owner: KFB ToolBox / Rigging
 Repository: `georg-doc/kayfabizarro`  
 Branch: `toolbox/eye-rig-batch-2026-09-18`  
 Implementation checkpoint: `d900fb99f3b04d52f266febd1501368c5fedd360`  
+Draft PR: `#104` · `https://github.com/georg-doc/kayfabizarro/pull/104`  
 Merge base: `5650b6c54d8789b20ea80abe857688173d506d3b`  
 Concurrent `main` observed during handoff: `ebed22c4245bdbd9541ad8287028f773bc08d66e`
 
@@ -77,7 +78,9 @@ Designated Stage route:
 
 Publication owner/bridge: `cloudflare-live`.
 
-At this metadata checkpoint the Stage mirror has **not yet been written**, therefore status is `NOT_DEPLOYED` and not `PUBLIC_VERIFIED`.
+Stage mirror is written on `cloudflare-live` at `f309948a3bd265154e6d3f5c959b69ec9b725f26`, and the KFB Hub card links directly to the route. Main router/Hub metadata is current at `ac067d09919f744750649e3652dd00036d7ccd6f`.
+
+The exact `pages.dev` route could not be opened from the available verification environments: the web fetcher reports it inaccessible and the container cannot resolve `kayfabizarro.pages.dev`. Status is therefore `PUBLICATION_BRANCH_WRITTEN / PUBLIC_VERIFIED OPEN`, not Live.
 
 ## GEORG ACCEPTANCE
 
@@ -91,14 +94,24 @@ Then tune placement only as needed and use `Approve` or `Adjusted + approve`.
 
 ## OPEN
 
-1. publish the exact candidate to the fixed Cloudflare Stage route;
-2. open that exact URL and verify the expected candidate is visible;
-3. Georg visual/tuning gate;
-4. only after Medium approval expand the calibration sample;
-5. no Rig_Large or Legacy implementation before the Medium gate.
+1. open the exact Cloudflare Stage URL in a normal browser and confirm the visible `candidate f23b2f6 · PR #104 · Stage` marker;
+2. Georg visual/tuning gate on source-eye cleanup, eye placement and motion attachment;
+3. only after Medium approval expand the calibration sample;
+4. no Rig_Large or Legacy implementation before the Medium gate.
 
 ## ARCHIVED HISTORY
 
 The interrupted connector operation produced one unreferenced Git blob before commit. Recovery re-read the branch and target directory first; no partial runtime file had entered the branch, so work resumed from checkpoint `c4dd0c8` without duplicate writes.
 
 Dropbox search found historical PetStudio / Vehicle+Rigging / Stunt-Race exports. None superseded current GitHub state; Dropbox remains secondary reference only for this slice.
+
+
+## FINAL HANDOFF METADATA
+
+- source PR: **#104 · DRAFT · OPEN · NOT MERGED**
+- publication mirror: `cloudflare-live@f309948a3bd265154e6d3f5c959b69ec9b725f26`
+- main router / KFB Hub metadata: `ac067d09919f744750649e3652dd00036d7ccd6f`
+- screenshots: **none** — both local Chromium passes failed before app boot at the container EGL/X boundary
+- public screenshot/browser proof: **OPEN**
+- Live promotion: **NOT PERFORMED**
+- next gate: **Georg opens the direct Stage URL and judges GothGirl Front / 3/4 / Side plus Idle / Walk / Run / Jump.**
