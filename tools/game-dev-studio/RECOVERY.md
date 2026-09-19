@@ -112,6 +112,30 @@ Commit: `8614282aab2ced43bb5dda9fcf7abadf9768100a`.
 
 **Gate remains binding:** current Travel Ground human review must carry before Lorekeeper runtime import. This is READY input, not a Travel consumer PASS.
 
+## KAYKIT CREATOR RESEARCH · 2026-09-19
+
+Additive research lane created:
+
+- `research/KAYKIT_CREATOR_LESSONS_LIVING.md`
+- `research/KAYKIT_CREATOR_LESSONS_SOURCE.json`
+- `research/KAYKIT_CREATOR_LESSONS_TEST_REPORT.md`
+- `research/KAYKIT_CREATOR_LESSONS_RETURN.md`
+
+Current source pass starts with Kay Lousberg's detailed KayKit character/Godot tutorial and current official KayKit pack documentation. Engine-independent lessons are separated from KFB inference/proposals.
+
+Primary consequences recorded, **not yet implemented as schema/runtime changes**:
+- rig-family compatibility (`Rig_Medium` / `Rig_Large`) as explicit metadata;
+- animation library separate from character identity;
+- bone/socket attachment profiles with calibrated local transforms;
+- semantic asset family vs recolor/texture/separate-part variants;
+- staged retargeting evidence;
+- current-vs-legacy KayKit generation;
+- browser-first neutral Rig Bench and Platformer interactive-donor bench proposals.
+
+Owner boundaries remain unchanged: Asset Librarian owns source discovery, ToolBox/FrankenStein/Animation own their authoring domains, consumers own gameplay/state/physics, Game Dev Studio owns package-facing evidence/research presentation.
+
+**Research next gate:** deep-review KayKit Live Show Episodes 0–4 and append modeling grammar (primitives, proportions, bevels, origins/pivots, material/atlas use, part splitting and variation decisions). This research gate does not displace the Pilot 01 runtime/consumer gates below.
+
 ## NEXT
 
 1. keep the verified Cloudflare preview proof green after catalog/UI changes;
