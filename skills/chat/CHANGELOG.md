@@ -157,3 +157,18 @@ Georg explicitly corrected the earlier Skydome request to planets. Planet versus
 - loads with `skills/kfb-cartoon-animation_v2.md`;
 - established a scoped tool-local inbox for the incoming DocCheck AD Illustrator source;
 - preserved the evidence boundary: inbox input != accepted SSOT, and no supersession of the older Animation Lab node is claimed yet.
+
+## 2026-09-19 · Cloudflare-only human review publication
+
+### DECISION
+Georg requires all active KFB human-facing preview, Stage and Live publication through the existing Cloudflare/KFB Hub surface. New active review instructions must use `kayfabizarro.pages.dev` routes and must not use githack/rawcdn.githack or similar third-party GitHub rendering/CDN mirrors.
+
+GitHub links remain correct for source, PR, commit and recovery documents. Existing raw GitHub asset fetch contracts are not reclassified as publication URLs.
+
+### IMPLEMENTATION
+- added the rule to `START_HERE.md` and `STAGE_LIVE_WORKFLOW.md`;
+- removed the active githack review URL from the current Astra Integration source baseline while leaving archived history intact;
+- added the Resident Scene Modules WSA review card to the KFB Hub using the Cloudflare Resident Atlas route.
+
+### EVIDENCE BOUNDARY
+A third-party CDN success is never a KFB `PUBLIC DEPLOYMENT` or browser PASS.
