@@ -333,3 +333,60 @@ Judge only:
 4. ¾ / Side attachment.
 
 If one family still fails, adjust only that family and capture the same four views again. No Medium batch expansion, Large/Legacy, merge or Live promotion before this GothGirl four-view gate.
+
+
+## CURRENT RETURN · MEDIUM AUTHORING + STUDIO CONTROLS
+
+### SOURCE
+- branch: `toolbox/eye-rig-batch-2026-09-18`;
+- implementation: `c74cbd6e0691d0bd3bcc574203219cdb0e9f647f`;
+- evidence: `eeb79850a8142968c418e23b482a330f120dd9c2`;
+- PR #104 remains Draft/Open/Unmerged.
+
+### DECISION
+Georg's tuned GothGirl browser configuration is promoted to the **starting authoring seed for Rig_Medium**, not an immutable per-character final.
+
+Default:
+`dx=.295 · dy=.045 · ring=.153 · track=.15 · pupil=.34 · inset=.40 · lidFit=.90 · converge=.18 · splay=0 · gloss=.10`.
+
+Source measurement is now suggestion-only and never silently replaces that authoring default.
+
+### IMPLEMENTATION
+- class seed → character override → session adjustment is explicit in the candidate data contract;
+- existing `eyeoval.v1.js` donor integrated without forking EyeRig;
+- Width / Height / Depth / inward Tilt exposed;
+- pupil tracking UX now has Life / Pointer / Fixed;
+- hidden lower-page profile I/O is replaced for normal use by a persistent Batch bar;
+- single-character and whole-batch import/export supported;
+- `Apply to Selected` exists and currently operates on the one loaded bounded actor while preserving actor identity / face color;
+- QA 4-view remains Front / ¾ L / ¾ R / Side R.
+
+### DEFERRED
+Recorded in `docs/BATCH_FEATURE_BACKLOG_2026-09-19.md`:
+- top/bottom eye-contour shaping;
+- Mouth Batch;
+- optional Nose/Brow grafts;
+- Vehicle EyeRig using a measured front/headlight host;
+- later plant/object hosts.
+
+### TESTED RESULT
+- full persisted static/contract suite: **46/46 PASS**;
+- focused Studio-control checks: **15/15 PASS**;
+- changed-JS syntax: **2/2 PASS**;
+- source branch persistence/readback: **PASS**;
+- Stage mirror persistence/readback: **PASS**.
+
+### PUBLIC DEPLOYMENT
+- fixed Stage runtime head: `40133c8b2d6d8f210003a6ef7cfa793aebac63bf`;
+- direct route: `https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/eye-rig-batch/`;
+- public browser verification: **OPEN** — connector write triggered no Actions run and current web tooling cannot open the route.
+
+### ONE NEXT GATE
+Georg opens the fixed Stage and checks:
+1. screenshot Medium default remains the expected starting look;
+2. Oval Width/Height/Depth/Tilt;
+3. Life / Pointer / Fixed pupil tracking;
+4. persistent Batch Import / Export / Apply-to-Selected;
+5. QA 4-view.
+
+If that authoring surface is accepted, the next implementation slice is a deliberately varied **5–8 actor Rig_Medium sample**, not all classes at once.

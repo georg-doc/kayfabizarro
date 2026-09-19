@@ -331,3 +331,73 @@ GitHub Actions did not start from the connector write, and the current web tool 
 `PUBLISHED · GITHUB_READBACK_PASS · PUBLIC_VERIFIED_OPEN · GEORG_ACCEPTANCE_OPEN`.
 
 No new screenshot artifact is claimed until the fixed Stage is actually opened.
+
+
+## 2026-09-19 · MEDIUM AUTHORING SEED + STUDIO CONTROL INTEGRATION
+
+Implementation checkpoint: `c74cbd6e0691d0bd3bcc574203219cdb0e9f647f`  
+Evidence checkpoint: `eeb79850a8142968c418e23b482a330f120dd9c2`  
+Stage publication: `40133c8b2d6d8f210003a6ef7cfa793aebac63bf`
+
+### User-approved authoring seed
+
+Georg's tuned browser configuration is now the `Rig_Medium` **authoring default**:
+
+- spacing `0.295`;
+- vertical `0.045`;
+- eye size `0.153`;
+- inset `0.40`;
+- splay `0`;
+- lid fit `0.90`;
+- pupil size `0.34`;
+- track `0.15`;
+- converge `0.18`;
+- gloss `0.10`;
+- lids = actor face base, darkened by the existing EyeRig-v6 lid path.
+
+The former automatic source-measurement calibration is no longer allowed to override this default. Source measurement remains available through the explicit **Use source-measured baseline** action only.
+
+### Studio controls integrated
+
+- reused existing `frizzlegraft-v1/eyeoval.v1.js`;
+- added Width / Height / Depth / inward Tilt;
+- added explicit pupil tracking modes **Life / Pointer / Fixed** on top of existing EyeRig-v6 `setGazeFollow()` + `pointTo()`;
+- added persistent Batch bar:
+  - Import
+  - Export Character
+  - Export Batch
+  - Apply to Selected
+  - Reset
+  - Approve
+- batch schema: `kfb.eye-profile-batch/0.2-candidate`;
+- inheritance order: `rigClass → character → session`;
+- current bounded roster still loads only GothGirl; multi-select architecture is present, class expansion is not claimed.
+
+### Tests
+
+Persisted branch replay: **46/46 PASS**.
+
+Focused implementation pass: **15/15 PASS**.
+
+Changed-JS syntax:
+- `app.js`: PASS;
+- `lib/kaykit-eye-adapter.v1.js`: PASS.
+
+Protected boundaries remain PASS:
+- one `AnimationMixer`;
+- no GLB/GLTF writer;
+- source cleanup still 2+3 and fail-closed;
+- no global `kfb.eye-profile/1` promotion;
+- no Large/Legacy runtime expansion.
+
+### Stage / browser status
+
+The fixed Stage mirror is persisted and read back at `40133c8b2d6d8f210003a6ef7cfa793aebac63bf`.
+
+The updated public proof now checks authoring defaults, Oval, tracking modes, Apply-to-Selected, Batch export/import roundtrip and the existing four-view QA download.
+
+A new Actions run did **not** start from the connector push, and the current web tool cannot open the exact `pages.dev` route.
+
+Status:
+
+`PUBLISHED · GITHUB_READBACK_PASS · PUBLIC_VERIFIED_OPEN · GEORG_STAGE_ACCEPTANCE_OPEN`.

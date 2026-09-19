@@ -226,3 +226,35 @@ The supplied GothGirl 3/4 screenshot rejects the previous default: eye spheres t
 
 ### NEXT GATE
 Georg captures the fixed four-view sheet and accepts or rejects the new default before any batch expansion.
+
+
+## 2026-09-19 · Checkpoint 10 · MEDIUM AUTHORING SEED + STUDIO FEATURES
+
+### DECISION
+Georg's tuned browser values become the `Rig_Medium` authoring start:
+`.295 / .045 / .153 / track .15 / pupil .34 / inset .40 / lidFit .90 / converge .18 / splay 0 / gloss .10`.
+
+The source-measured baseline remains diagnostic/suggestion-only.
+
+### IMPLEMENTATION
+- integrated existing `eyeoval.v1.js` donor;
+- added eye Width / Height / Depth / inward Tilt;
+- replaced ambiguous Follow-pointer checkbox with Life / Pointer / Fixed tracking modes;
+- added always-visible Batch bar;
+- added Character + Batch import/export, batch v0.2 roundtrip, selected-actor application and explicit inheritance `rigClass → character → session`;
+- documented Mouth/Nose/Brow/Vehicle/plant follow-up lanes without implementing them.
+
+### TESTED RESULT
+- implementation `c74cbd6e0691d0bd3bcc574203219cdb0e9f647f`;
+- evidence `eeb79850a8142968c418e23b482a330f120dd9c2`;
+- **46/46 PASS** persisted suite;
+- **15/15 PASS** focused controls;
+- **2/2 PASS** changed-JS syntax.
+
+### PUBLICATION
+- fixed Stage mirror `40133c8b2d6d8f210003a6ef7cfa793aebac63bf`;
+- exact GitHub readback PASS;
+- current public-browser proof OPEN; no new Actions run and current web tool cannot access `pages.dev`.
+
+### NEXT GATE
+Human review of the expanded authoring surface, then a varied 5–8 actor `Rig_Medium` sample.
