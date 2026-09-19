@@ -631,3 +631,25 @@ Georg visual motion acceptance remains OPEN. No consumer integration, speed-band
 
 ### EXACT NEXT GATE
 Georg compares **A · NAIVE** vs **B · PHASE SYNC** on the public KCL Stage, beginning with Walking_A → Running_A, LEFT contact, fade around 0.12 s, warp ON, and judges foot sliding, double-step, hip pop, cadence and weight.
+
+
+## 2026-09-19 · TinySkies / Travel terrain donor isolation
+
+### SOURCE / IMPLEMENTATION
+Current Travel terrain donor was recovered from `georg-doc/KFB-Travel-Globe@8614282aab2ced43bb5dda9fcf7abadf9768100a` and upstream `dannylimanseta/tinyskies@2659a5cc987d7e4a4c5aa7e79c86a1626ad75df6`.
+
+Travel PR #30 adds a source-isolated comparison only: base Globe vs the existing Travel `setTerrainZones()` seam. No Track and no second terrain owner.
+
+### TESTED RESULT
+Travel donor browser proof: run `35474259865` / job `105980700507`, **12/12 PASS**, boot 834 ms, 0 page errors, 0 HTTP errors. The existing terrain zone changes 1,562 of 66,049 baked Globe vertices locally.
+
+Public mirror package: **12/12 local Chromium PASS**. Stage source merged at `9b3c57ec09af8a9601a7221a84ee9a6de1e287f5`.
+
+### PUBLIC DEPLOYMENT
+Canonical Cloudflare QA `#112`, run `35474894951`, job `105982344849`: expected deployment marker did not appear; the route returned fallback HTML after the polling window. Public browser step skipped. **CLOUDFLARE BLOCKED / NOT PUBLIC_VERIFIED.**
+
+### VOXEL SCOPE
+Travel-v16 Voxel remains valid selective KFB technology for deliberate block/Minecraft/mining/building mini-games, destructible/editable block spaces and special voxel worlds. It is only out of scope for this TinySkies-derived Travel Globe Track-terrain seam.
+
+### NEXT GATE
+Restore Cloudflare publication of the already-tested donor package. Do not rebuild the terrain donor or Track integration to solve the deployment issue.
