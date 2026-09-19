@@ -5,7 +5,10 @@ on:
     branches:
       - osm-city/corridor-consumer-export-2026-09-19
     paths:
-      - 'tools/osm-city-lab/data/ehrenfeld-huerth-corridor-v0/**'
+      - 'tools/osm-city-lab/data/ehrenfeld-huerth-corridor-v0/SOURCE_SPEC.json'
+      - 'tools/osm-city-lab/data/ehrenfeld-huerth-corridor-v0/QUERY_PLAN.json'
+      - 'tools/osm-city-lab/data/ehrenfeld-huerth-corridor-v0/PROVENANCE.json'
+      - 'tools/osm-city-lab/data/ehrenfeld-huerth-corridor-v0/source.overpass.json'
       - 'tools/osm-city-lab/evidence/ehrenfeld-huerth-route.json'
       - 'tools/osm-city-lab/scripts/build-ehrenfeld-huerth-corridor.mjs'
       - 'tools/osm-city-lab/src/osm/normalize.js'
@@ -49,7 +52,14 @@ jobs:
         run: |
           node tools/osm-city-lab/scripts/build-city.mjs ehrenfeld-v0 >/tmp/ehrenfeld-report.json
           node tools/osm-city-lab/scripts/build-city.mjs huerth-v0 >/tmp/huerth-report.json
-          git diff --exit-code --             tools/osm-city-lab/data/ehrenfeld-v0/normalized.json             tools/osm-city-lab/data/huerth-v0/normalized.json             tools/osm-city-lab/scenes/ehrenfeld-v0.json             tools/osm-city-lab/scenes/huerth-v0.json
+          git diff --exit-code -- \
+            tools/osm-city-lab/data/ehrenfeld-v0/normalized.json \
+            tools/osm-city-lab/data/huerth-v0/normalized.json \
+            tools/osm-city-lab/scenes/ehrenfeld-v0.json \
+            tools/osm-city-lab/scenes/huerth-v0.json
+          git restore --worktree -- \
+            tools/osm-city-lab/evidence/ehrenfeld-v0-s0-report.json \
+            tools/osm-city-lab/evidence/huerth-v0-s0-report.json
       - name: Build corridor consumer scene
         run: |
           node tools/osm-city-lab/scripts/build-ehrenfeld-huerth-corridor.mjs | tee /tmp/corridor-report.json
@@ -63,7 +73,10 @@ jobs:
         run: |
           git config user.name "KFB OSM City Bot"
           git config user.email "actions@users.noreply.github.com"
-          git add             tools/osm-city-lab/data/ehrenfeld-huerth-corridor-v0/normalized.json             tools/osm-city-lab/scenes/ehrenfeld-huerth-corridor-v0.json             tools/osm-city-lab/evidence/ehrenfeld-huerth-corridor-v0-consumer.json
+          git add \
+            tools/osm-city-lab/data/ehrenfeld-huerth-corridor-v0/normalized.json \
+            tools/osm-city-lab/scenes/ehrenfeld-huerth-corridor-v0.json \
+            tools/osm-city-lab/evidence/ehrenfeld-huerth-corridor-v0-consumer.json
           if git diff --cached --quiet; then
             echo "No corridor consumer delta."
             exit 0
