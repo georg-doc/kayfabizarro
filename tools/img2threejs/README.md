@@ -2,6 +2,7 @@
 
 **Stand:** 2026-09-19 · **Owner:** Georg / KFB  
 **WSA Review Package:** [Landmarks · full handoff + backlog](docs/WSA_REVIEW_PACKAGE_LANDMARKS_2026-09-19.md)  
+**Current candidate:** [TinySkies × OSM × Landmark Cohesion v1](landmarks/pilot-07/RETURN.md)  
 **Aktueller Return:** [Grotesque World Style Bridge v1](docs/LANDMARK_WORLD_STYLE_V1_RETURN_2026-09-19.md)  
 **Slice:** [Pilot 06 · bounded style bridge](landmarks/pilot-06/SLICE.md)  
 **Aktuelle Evidenz:** [World Style v1 · 1354/1354](evidence/2026-09-19-landmark-world-style-v1/summary.json)  
@@ -9,6 +10,8 @@
 **Ideation:** [Living Toy World / Reactive Landmarks](docs/IDEATION_LIVING_TOY_WORLD_2026-09-19.md)
 
 ## Aktuell
+
+**Pilot 07 · TinySkies × OSM × Landmark Cohesion v1:** source-backed contract for one coherent world appearance across terrain, OSM buildings and Grotesque landmarks. TinySkies donor review confirms terrain-aware sinking/foundations, flat-shaded lit materials, shared global rim colour, local emissive details, world-owned day/night, and rain as overlay/audio rather than verified wet-building material response. 31/31 contract checks PASS. Stage route is reserved but not deployed.
 
 **GEORG DECISION — landmark default:** **City Grotesque** is now the default landmark view/style. Soft Cubist remains an alternate/debug mode. This decision applies to the landmark lane only; the OSM City Lab keeps its own current default `cartoon` mode unchanged.
 
@@ -90,8 +93,9 @@ These remain **presentation signals only**. No Audio engine, vehicle bounce, col
 2. Read [Pilot-05 Slice](landmarks/pilot-05/SLICE.md).
 3. Read [Visual Evidence](evidence/2026-09-19-landmark-band-rig-v2/VISUAL_EVIDENCE.md) and [summary](evidence/2026-09-19-landmark-band-rig-v2/summary.json).
 4. Treat Pilot 04/v1.2 as rejected attachment history, not the current solution.
-5. Visually review Pilot 06 starting in **OSM City Lab**; use Travel Verdant/Day as the alternate comparison context.
-6. Next implementation target: modular Grotesque Cologne Cathedral as the first real OSM Golden Sample; then Acropolis / Area 51 according to the prepared catalogue.
+5. Read [Pilot 07 RETURN](landmarks/pilot-07/RETURN.md) before any TinySkies-terrain/OSM integration work.
+6. Visually review Pilot 06 starting in **OSM City Lab**; use Travel Verdant/Day as the alternate comparison context.
+7. Next integrated proof: TinySkies-like terrain + one OSM cluster + modular Grotesque Cologne Cathedral + shared day/night/rim/weather state.
 
 ## Zuständigkeiten
 
