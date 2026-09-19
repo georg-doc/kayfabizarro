@@ -37,7 +37,7 @@ try{
   pass('HTTP',response?.ok()===true,'status='+response?.status());
 
   await page.waitForFunction(()=>window.__KFB_KCL_M1__?.ready===true||!!window.__KFB_KCL_M1__?.error,null,{timeout:120000});
-  let snap=await page.evaluate(()=>window.__KFB_KCL_M1__.snapshot());
+  let snap=await page.evaluate(()=>({...window.__KFB_KCL_M1__.snapshot(),source:window.__KFB_KCL_M1__.source}));
   pass('bench ready',snap.ready===true,JSON.stringify(snap.error));
   pass('no bench error',!snap.error,String(snap.error));
   pass('exact five clips',JSON.stringify(snap.clipNames)===JSON.stringify(['Walking_A','Walking_B','Walking_C','Running_A','Running_B']),JSON.stringify(snap.clipNames));
