@@ -117,11 +117,33 @@ export class KFBTheatreCurtain{
   setWind(v){this.o.wind=clamp(Number(v)||0,0,2.5)}
   impulse(o={}){const a=Object.assign({x:0,y:-.25,strength:1.5,radius:1.05},o);let n=0;for(const p of this.panels)n+=p.impulse(a.x,a.y,a.strength,a.radius);this.stats.impulses++;return n}
   pointer(e){const rect=this.renderer.domElement.getBoundingClientRect(),n=new THREE.Vector2((e.clientX-rect.left)/rect.width*2-1,-(e.clientY-rect.top)/rect.height*2+1),ray=new THREE.Raycaster(),pt=new THREE.Vector3();ray.setFromCamera(n,this.camera);if(ray.ray.intersectPlane(new THREE.Plane(new THREE.Vector3(0,0,1),0),pt))this.impulse({x:pt.x,y:pt.y})}
-  update(dt){
-    const d=Math.sign(this.goal-this.open);if(Math.abs(this.goal-this.open)>.001){this.open=clamp(this.open+d*dt/this.o.openDuration,0,1);this.state=d>0?'opening':'closing'}else{this.open=this.goal;this.state=this.open>.98?'open-rest':'closed-wind'}
-    this.time+=dt;for(const p of this.panels)p.step(dt,this.time,this.o.wind,this.open);this.syncRings();
+  advanceState(dt){
+    const d=Math.sign(this.goal-this.open);
+    if(Math.abs(this.goal-this.open)>.001){
+      this.open=clamp(this.open+d*dt/this.o.openDuration,0,1);
+      this.state=d>0?'opening':'closing';
+    }else{
+      this.open=this.goal;
+      this.state=this.open>.98?'open-rest':'closed-wind';
+    }
   }
-  frame(now){if(!this.running)return;this.acc=Math.min(this.acc+Math.min(.05,(now-this.last)/1000),.12);this.last=now;let n=0;while(this.acc>=this.stepDt&&n++<12){this.update(this.stepDt);this.acc-=this.stepDt}this.renderer.render(this.scene,this.camera);this.raf=requestAnimationFrame(t=>this.frame(t))}
+  stepPhysics(dt){
+    this.time+=dt;
+    for(const p of this.panels)p.step(dt,this.time,this.o.wind,this.open);
+    this.syncRings();
+  }
+  update(dt){this.advanceState(dt);this.stepPhysics(dt)}
+  frame(now){
+    if(!this.running)return;
+    const wallDt=Math.min(.5,Math.max(0,(now-this.last)/1000));
+    this.last=now;
+    this.advanceState(wallDt);
+    this.acc=Math.min(this.acc+Math.min(.05,wallDt),.12);
+    let n=0;
+    while(this.acc>=this.stepDt&&n++<12){this.stepPhysics(this.stepDt);this.acc-=this.stepDt}
+    this.renderer.render(this.scene,this.camera);
+    this.raf=requestAnimationFrame(t=>this.frame(t));
+  }
   resize(){const w=Math.max(2,this.el.clientWidth),h=Math.max(2,this.el.clientHeight);this.renderer.setSize(w,h,false);this.camera.aspect=w/h;this.camera.position.z=w/h<1.2?13.2:10.8;this.camera.updateProjectionMatrix()}
   reset(){this.open=this.goal=0;this.state='closed-rest';for(const p of this.panels)p.reset();this.syncRings()}
   snapshot(){return{ready:!!this.renderer&&this.panels.length===2,backend:this.stats.backend,state:this.state,openProgress:+this.open.toFixed(4),texture:this.texture,panelCount:this.panels.length,hooks:this.panels.reduce((n,p)=>n+p.rings.length,0),wind:this.o.wind,impulses:this.stats.impulses,sourcePin:SOURCE_PIN,api:['mount','update','setState','impulse','reset','dispose']}}
