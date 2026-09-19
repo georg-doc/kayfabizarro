@@ -24,6 +24,21 @@ jobs:
     timeout-minutes: 18
     steps:
       - uses: actions/checkout@v4
+        with:
+          sparse-checkout: |
+            asset-librarian
+            registry/assets/v1
+            registry/resources/v1
+            tools/asset_registry/librarian
+            tools/asset_registry/module-kits
+            tools/asset_registry/consumer_profiles.json
+            tools/asset_registry/tests/test_charming_kitchen_module_kit.py
+            media/3D_Assets/Tiny_Treats_Charming_Kitchen_1.1_FREE
+            game-ready/module-kits/tiny-treats-charming-kitchen-1-1-free
+            tools/game-dev-studio/catalog.json
+            kfb-hub/free-roam/game-dev-studio
+            kfb-hub/stage/c0-a1-charming-kitchen
+            .github/scripts/c0-a1-charming-kitchen-smoke.mjs
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
