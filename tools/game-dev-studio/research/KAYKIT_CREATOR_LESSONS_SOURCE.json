@@ -1,6 +1,6 @@
 {
   "schema": "kfb.research-sources/1",
-  "updated": "2026-09-19",
+  "updated": "2026-09-20",
   "owner": "KFB Game Dev Studio",
   "livingDocument": "tools/game-dev-studio/research/KAYKIT_CREATOR_LESSONS_LIVING.md",
   "primarySource": {
@@ -141,5 +141,18 @@
       "license": "CC0",
       "variantEvidence": "Resident Atlas S28 measured guitar_A and guitar_B as geometry-identical variants with different UV placement on the shared palette."
     }
+  },
+  "kclM1Public": {
+    "status": "PUBLIC_VERIFIED",
+    "stageUrl": "https://kayfabizarro.pages.dev/kfb-hub/stage/game-dev-studio/kcl-m1-locomotion-sync/",
+    "publicationBranch": "cloudflare-live",
+    "publicationCommit": "fac041eb34c9a284d724a3ee2b945bef7d020d04",
+    "publicProofRun": 35468444150,
+    "publicProofAttempt": 2,
+    "publicProofJob": 105981648314,
+    "checks": "39/39 PASS",
+    "artifactId": 10593933655,
+    "artifactDigest": "sha256:5d7f6bb436d0030a3ddec3f080e0a6b041fe196cdf36cd3d34d5f5d01f71c0cf",
+    "humanAcceptance": "PENDING"
   }
 }
