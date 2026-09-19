@@ -1,7 +1,7 @@
 {
   "schema": "kfb.public-mirror/0.2",
   "build": "STUNT-WORLD-TINYSKIES-TERRAIN-DONOR-20260919",
-  "status": "STAGE_SOURCE_CANDIDATE_LOCAL_BROWSER_QA_PASS_CLOUDFLARE_PENDING",
+  "status": "STAGE_SOURCE_MERGED_LOCAL_BROWSER_PASS_CLOUDFLARE_BLOCKED",
   "implementationSSOT": "georg-doc/KFB-Travel-Globe",
   "sourcePr": 30,
   "testedTravelEvidenceHead": "80cfaa685cdfcdeab7cbd52f2cea6fb16bd8d4f4",
@@ -22,5 +22,11 @@
   "stageMirrorPageErrors": 0,
   "stageMirrorHttpErrors": 0,
   "stageMirrorArtifact": 10593287654,
-  "stageMirrorArtifactDigest": "sha256:495020a2cb75a860b7951002ab1bdb31625986886e73ef8c85eeb702f016d721"
+  "stageMirrorArtifactDigest": "sha256:495020a2cb75a860b7951002ab1bdb31625986886e73ef8c85eeb702f016d721",
+  "stageSourceMerge": "9b3c57ec09af8a9601a7221a84ee9a6de1e287f5",
+  "cloudflareQaPr": 112,
+  "cloudflareQaRun": 35474894951,
+  "cloudflareQaJob": 105982344849,
+  "cloudflareStatus": "BLOCKED_FALLBACK_HTML_NO_DEPLOYMENT_MARKER",
+  "publicVerified": false
 }

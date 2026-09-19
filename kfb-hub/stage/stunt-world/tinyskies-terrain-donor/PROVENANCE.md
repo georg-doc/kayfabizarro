@@ -75,3 +75,22 @@ Public-source mirror QA:
 - digest `sha256:495020a2cb75a860b7951002ab1bdb31625986886e73ef8c85eeb702f016d721`
 
 This proves the mirror package locally in real Chromium. Canonical Cloudflare publication is still a separate gate and is not claimed here.
+
+
+## Canonical Cloudflare publication
+
+Stage source merge:
+`9b3c57ec09af8a9601a7221a84ee9a6de1e287f5`
+
+Canonical QA:
+- PR `#112` (QA-only, closed unmerged)
+- run `35474894951`
+- job `105982344849`
+- expected marker `STUNT-WORLD-TINYSKIES-TERRAIN-DONOR-20260919`
+- result: **BLOCKED**
+- response remained Cloudflare fallback HTML rather than the expected `DEPLOYMENT.json`
+- canonical Chromium runtime step was skipped
+
+Therefore the Stage source package is green locally but the fixed `kayfabizarro.pages.dev` route is **not public-verified**.
+
+Do not substitute GitHub Pages or another CDN as the human gate.
