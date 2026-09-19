@@ -1,6 +1,6 @@
 # KayKit Creator Lessons · Living Research for KFB
 
-**Status:** CURRENT RESEARCH · ADDITIVE · v0.1  
+**Status:** CURRENT RESEARCH · ADDITIVE · v0.2  
 **Date:** 2026-09-19  
 **Owner:** KFB Game Dev Studio  
 **Source-of-truth boundary:** canonical asset identity/provenance stays with Asset Registry / Asset Librarian; rig/look authoring stays with ToolBox / FrankenStein / Animation owners; runtime state, physics and gameplay stay with the named consumer.  
@@ -1147,3 +1147,801 @@ Documentation/research only in v0.1. Proposed schema/tool/runtime changes remain
 
 ### NEXT RESEARCH GATE
 Deep-watch KayKit Live Show Episodes 0–4 and append creator modeling grammar, especially pivots/origins, shape construction, bevels, palette/atlas usage, part splitting and variation decisions.
+
+
+---
+
+# 16 · Source pass 04 — KayKit - Animations - Overview Set 1
+
+**Creator video:**  
+https://www.youtube.com/watch?v=T1KNCtAqJ7A
+
+**Identified title:** `KayKit - Animations - Overview Set 1`  
+**Published:** 2024-11-30  
+**Duration:** ~6:05  
+**Role in this research:** visual animation-catalog evidence, not a state-machine implementation tutorial.
+
+## 16.1 · Why this video matters to KFB
+
+This video and the detailed Godot tutorial answer two different questions:
+
+```text
+Overview Set 1
+→ what motions exist / how the authored motion vocabulary reads
+
+Detailed Godot tutorial
+→ how animation libraries, state machines, transitions and playback timing can be wired
+```
+
+For KFB the combination is more useful than either source alone.
+
+The animation overview gives us a **motion vocabulary to classify and measure**. The detailed tutorial gives us the idea that runtime locomotion should not merely hard-switch clips: state transitions, timing and playback speed can be shaped to improve the resulting motion.
+
+This maps directly onto the existing KFB cartoon-animation rule:
+
+```text
+start
+→ travel
+→ stop
+→ turn
+→ recovery
+```
+
+and onto the existing ownership rule:
+
+```text
+consumer physics/state
+→ semantic motion state
+→ Animation owner selects/calibrates clips
+→ one host mixer plays/blends them
+```
+
+The animation layer must never become a second movement/physics writer.
+
+---
+
+## 16.2 · Current KFB motion inventory is already large enough for a real system
+
+The 2024 overview is an older visual preview. For current implementation facts KFB must use the current source/Registry rather than the old video count.
+
+**CURRENT MAIN SNAPSHOT reviewed:** `c84c3c57aa875e1ac1cd8cc17eb966cb37c0f317`  
+**Motion registry:** `registry/resources/v1/motions.jsonl`  
+**Registry blob:** `1f266ab2e9e57db63f5596ba83f616872b502909`
+
+Current registered **Rig_Medium KayKit motions: 139 across 8 sets**:
+
+| Set | Count | KFB relevance |
+|---|---:|---|
+| `MovementBasic` | 11 | Walk / Run / Jump foundation |
+| `MovementAdvanced` | 13 | dodge, strafe, crouch, sneak, crawl, backwards, equipped running |
+| `General` | 15 | idle, hit, death, spawn, interact, pickup, throw, use |
+| `CombatMelee` | 22 | stance, attacks, block, hit, unarmed |
+| `CombatRanged` | 20 | aim, shoot, reload, bow, magic |
+| `Simulation` | 14 | sit, lie, wave, cheer, exercise |
+| `Special` | 15 | skeleton / special-state family |
+| `Tools` | 29 | chop, dig, fish, hammer, hold, lockpick, pickaxe, saw, work |
+
+This is already enough to stop treating animation as a flat dropdown of clips.
+
+It should become a **measured semantic motion graph**.
+
+---
+
+## 16.3 · Critical correction — KFB currently has no explicit source Sprint clip
+
+The current Rig_Medium registry contains:
+
+```text
+Walking_A
+Walking_B
+Walking_C
+Running_A
+Running_B
+```
+
+but no clip named `Sprint`.
+
+Therefore:
+
+```text
+Walk → Run → Sprint
+```
+
+is a useful **KFB locomotion state graph**, but `Sprint` is not currently a proven KayKit source-animation identity.
+
+A future sprint may be:
+
+1. a newly sourced real KayKit clip;
+2. a deliberately derived KFB locomotion profile from a measured Running clip;
+3. a consumer-specific faster state with another approved donor.
+
+Until proved, do not write `KayKit Sprint`.
+
+Likewise, the letters A/B/C do not prove a speed hierarchy. `Walking_A`, `Walking_B`, `Walking_C`, `Running_A`, `Running_B` must be visually and kinetically measured before assigning them slow/normal/fast roles.
+
+---
+
+## 16.4 · The key locomotion insight — synchronize **phase**, not only state
+
+A naive state machine does this:
+
+```text
+speed crosses threshold
+→ stop Walk
+→ start Run at frame 0
+→ crossfade
+```
+
+That can still produce:
+- foot sliding;
+- double steps;
+- apparent foot teleportation;
+- hip pops;
+- left/right cadence flips;
+- a visually soft but mechanically wrong crossfade.
+
+The better target is:
+
+```text
+actual player speed / acceleration
+→ choose locomotion state
+→ identify source gait phase
+→ enter target clip at compatible gait phase
+→ short crossfade
+→ optional temporary playback warp
+→ settle target clip at reference cadence
+```
+
+### KFB-INFERENCE · locomotion phase
+
+For cyclical locomotion, normalized clip time alone is useful but not sufficient.
+
+The stronger semantic phase model is:
+
+```text
+LEFT_CONTACT
+LEFT_SUPPORT
+PASSING
+RIGHT_CONTACT
+RIGHT_SUPPORT
+PASSING
+```
+
+At minimum, measure:
+- left foot contact;
+- right foot contact;
+- approximate planted interval;
+- cycle duration.
+
+Then a transition can prefer:
+
+```text
+Walk left-contact
+→ Run left-contact
+```
+
+rather than:
+
+```text
+Walk 63%
+→ Run 0%
+```
+
+This is the KFB route toward genuinely smooth Walk → Run changes without hiding mistakes in a long blend.
+
+---
+
+## 16.5 · TimeScale should follow speed — within a measured visual range
+
+The first detailed tutorial's state-machine/timing work points to an important runtime control: animation playback rate does not have to be fixed.
+
+KFB already has an existing browser-side donor pattern in Town code that maps movement speed to `AnimationAction.timeScale`. That proves the mechanism is not Godot-specific.
+
+Three.js itself supports per-action:
+- `timeScale`;
+- `setEffectiveTimeScale()`;
+- `crossFadeTo()` / `crossFadeFrom()`;
+- optional fade warping;
+- `syncWith()`;
+- `warp()`;
+- `halt()`.
+
+### KFB-PROPOSAL
+
+For a measured locomotion clip:
+
+```text
+referenceSpeed = world speed at which feet look planted at playbackRate 1.0
+
+targetPlaybackRate ≈ actualSpeed / referenceSpeed
+```
+
+then clamp to a **human-approved range**.
+
+Example concept only:
+
+```text
+Walking_A
+referenceSpeed = measured, not guessed
+approvedRateRange = measured, not guessed
+
+actualSpeed 1.1 × referenceSpeed
+→ playbackRate about 1.1
+```
+
+Do not stretch one clip across the full walking/running range.
+
+At some point a different gait must take over.
+
+### Why an upper clamp matters
+
+Excessive playback speed:
+- destroys weight;
+- makes arms/legs buzz;
+- compresses anticipation/recovery;
+- can make a heavy character read as weightless;
+- does not solve stride-length mismatch.
+
+So TimeScale is a **local cadence correction**, not a replacement for a good locomotion set.
+
+---
+
+## 16.6 · Walk → Run should use hysteresis, not one threshold
+
+A single threshold can flap:
+
+```text
+3.99 → Walk
+4.01 → Run
+3.98 → Walk
+4.02 → Run
+```
+
+That is especially visible when analog input, slopes or physics cause small speed fluctuations.
+
+### KFB-PROPOSAL
+
+Use separate enter/exit thresholds:
+
+```text
+WALK → RUN only above runEnter
+RUN → WALK only below runExit
+runExit < runEnter
+```
+
+This **hysteresis** creates a stable band.
+
+The animation state still consumes consumer-owned speed. It does not set player velocity.
+
+---
+
+## 16.7 · Transition duration should depend on the kind of transition
+
+One global crossfade time is not enough.
+
+Examples:
+
+```text
+Walk ↔ Run
+short phase-preserving locomotion blend
+
+Run → Dodge
+fast intent/read transition
+
+Idle → PickUp
+allow anticipation to read
+
+Attack → Hit reaction
+consumer decides interruptibility
+
+Death
+usually no casual blend back to locomotion
+```
+
+The KFB motion system therefore needs more than:
+
+`from + to + fadeSeconds`.
+
+Candidate data:
+
+```yaml
+MotionTransitionProfile:
+  from:
+  to:
+  condition:
+  phaseSync: foot-contact | normalized | none
+  crossfadeDuration:
+  warpDuringCrossfade:
+  interruptPolicy:
+  hysteresis:
+  evidence:
+```
+
+This remains a proposal, not a Registry migration.
+
+---
+
+## 16.8 · Jump is a particularly good fit for consumer physics + animation phases
+
+Current `MovementBasic` includes:
+
+```text
+Jump_Start
+Jump_Idle
+Jump_Land
+Jump_Full_Short
+Jump_Full_Long
+```
+
+For physically controlled KFB movement, the strongest default architecture is:
+
+```text
+grounded + jump requested
+→ Jump_Start
+
+consumer physics launches actor
+→ airborne
+→ Jump_Idle
+
+consumer physics reports real ground contact
+→ Jump_Land
+→ recovery / locomotion
+```
+
+The full short/long clips are still useful, but should not silently dictate world trajectory when the consumer already owns jump physics.
+
+### Important TimeScale rule
+
+Do not speed up or slow down a complete jump clip merely to force it to match physics if that destroys:
+- launch anticipation;
+- apex read;
+- landing preparation;
+- contact timing.
+
+Better:
+- physics owns trajectory;
+- animation state consumes grounded / vertical velocity / landing facts;
+- segment timing is calibrated separately.
+
+This aligns directly with `kfb-cartoon-animation_v2`:
+**squash → launch → stretch → arc → landing preparation → impact → recovery**.
+
+---
+
+## 16.9 · Combat becomes a motion graph, not “play attack animation”
+
+The current source inventory already supports meaningful micro-state graphs.
+
+### Melee example
+
+```text
+Melee_1H / 2H / dual-wield / unarmed stance
+→ attack anticipation
+→ strike/contact phase
+→ follow-through
+→ recovery
+→ stance/locomotion
+```
+
+There are explicit:
+- block;
+- blocking;
+- block-hit;
+- block-attack;
+- multiple attack directions/styles.
+
+### Ranged example
+
+Current source contains explicit:
+- `Ranged_1H_Aiming`;
+- `Ranged_1H_Shoot`;
+- `Ranged_1H_Shooting`;
+- `Ranged_1H_Reload`;
+- equivalent 2H states;
+- bow aim/draw/release;
+- magic raise/shoot/spellcasting/summon.
+
+This matters because older KFB notes that scanned an earlier/partial 119-clip view and found no blaster shooting clips are **not current global animation truth**. The current Registry has explicit ranged-combat families.
+
+### KFB consequence
+
+Combat should own:
+- attack permission;
+- hit/damage;
+- ammo;
+- reload state;
+- target;
+- interrupt rules;
+- actual release/contact event.
+
+Animation supplies:
+- pose;
+- cadence;
+- semantic phases;
+- contact/release marker candidate.
+
+When playback rate changes, contact/release events must stay tied to **animation phase**, not an unadjusted wall-clock timeout.
+
+---
+
+## 16.10 · Equipped locomotion is already part of the KayKit grammar
+
+`MovementAdvanced` includes:
+- `Running_HoldingBow`;
+- `Running_HoldingRifle`;
+- `Running_Strafe_Left`;
+- `Running_Strafe_Right`;
+- `Walking_Backwards`;
+- dodge directions;
+- crouch;
+- sneak;
+- crawl.
+
+Therefore locomotion state cannot be modeled only as:
+
+```text
+idle / walk / run
+```
+
+A better semantic key is closer to:
+
+```text
+locomotionMode
++ speedBand
++ direction
++ stance/equipment
++ grounded
++ action override
+```
+
+Example:
+
+```text
+LOCOMOTION
+speedBand = RUN
+stance = RIFLE
+direction = FORWARD
+→ Running_HoldingRifle
+
+LOCOMOTION
+speedBand = RUN
+stance = COMBAT
+direction = LEFT
+→ Running_Strafe_Left
+```
+
+The receiving game still decides whether those modes are legal.
+
+---
+
+## 16.11 · Interactions and tools naturally form entry / loop / exit graphs
+
+The current library has especially useful sequences.
+
+### Sitting / lying
+
+```text
+Sit_Chair_Down
+→ Sit_Chair_Idle
+→ Sit_Chair_StandUp
+```
+
+```text
+Lie_Down
+→ Lie_Idle
+→ Lie_StandUp
+```
+
+### Tools
+
+Pairs/families include:
+
+```text
+Hammer / Hammering
+Dig / Digging
+Saw / Sawing
+Pickaxe / Pickaxing
+Lockpick / Lockpicking
+Work_* / Working_*
+Fishing_Cast / Idle / Bite / Reeling / Struggling / Tug / Catch
+```
+
+Names alone are not enough to declare loop semantics, but they give us excellent candidates for a measured interaction state graph.
+
+### KFB application
+
+An interaction owner may say:
+
+```text
+interaction accepted
+→ entry clip
+→ loop while progress is active
+→ impact marker drives SFX/VFX/progress
+→ completion/cancel
+→ exit/recovery
+```
+
+Again:
+- consumer owns task/progress;
+- Animation owns motion calibration;
+- Audio/VFX consume event markers;
+- one actor mixer remains authoritative.
+
+---
+
+## 16.12 · KFB needs **motion markers**, not only clip names
+
+For smooth locomotion and meaningful combat/interactions, the most valuable future metadata is not another tag cloud.
+
+It is measured temporal structure.
+
+Candidate:
+
+```yaml
+MotionClipProfile:
+  clipRef:
+  rigFamily:
+  motionFamily:
+  direction:
+  stanceTags:
+  loopCandidate:
+  duration:
+  cyclePhase:
+  footContacts:
+    left: []
+    right: []
+  plantedIntervals: []
+  strideReference:
+  referenceSpeed:
+  approvedPlaybackRateRange:
+  actionMarkers:
+    - anticipation
+    - contact
+    - release
+    - impact
+    - recoveryStart
+  evidence:
+```
+
+Unknown markers remain unknown.
+
+Do not derive `contact` from an English filename.
+
+---
+
+## 16.13 · Proposed ToolBox / Animation Lab proof — Locomotion Sync Bench
+
+This is the highest-value direct application of the first + current video pair.
+
+### KCL-M1 · measurement-only proof
+
+Use exactly one verified current `Rig_Medium` actor and only:
+
+```text
+Walking_A
+Walking_B
+Walking_C
+Running_A
+Running_B
+```
+
+No consumer physics changes yet.
+
+### Required views
+
+- source actor alone;
+- ground/contact grid;
+- side view;
+- front;
+- 3/4;
+- optional foot trajectories.
+
+### Controls
+
+- clip;
+- playback rate;
+- normalized phase;
+- actual/reference speed preview;
+- left/right contact markers;
+- naive transition;
+- phase-synced transition;
+- crossfade duration;
+- warp on/off.
+
+### Measurements
+
+For every candidate clip:
+- duration;
+- apparent gait character;
+- exact left/right foot contact frames/times;
+- planted intervals;
+- hip/root motion behavior;
+- measured foot sliding under a reference translation;
+- visually acceptable playback-rate range.
+
+### A/B proof
+
+```text
+A · naive
+Walk → Run
+target starts at t=0
+
+B · phase matched
+Walk → Run
+same supporting/contact foot + short crossfade + optional temporary warp
+```
+
+Record:
+- maximum planted-foot slip;
+- discontinuity at switch;
+- cadence convergence;
+- visual Front / Side / 3/4;
+- Georg preference.
+
+### Owner boundary
+
+The bench may simulate world translation for measurement.
+
+It must not become:
+- the Race movement controller;
+- Travel movement;
+- Combat player controller;
+- global actor state machine.
+
+It exports measured motion profiles for those owners to consume.
+
+---
+
+## 16.14 · Mixed Bag on GitHub is now a real creator-workflow microscope
+
+Georg correctly noted that Mixed Bag 1 is now present in GitHub, so the Live Show research can compare **what Kay did on screen** against the actual released geometry.
+
+Current main evidence:
+
+```text
+Pack:
+media/3D_Assets/KayKit_Mixed_Bag_1_FREE/
+
+Registry shard:
+registry/assets/v1/packs/kaykit-mixed-bag-1-free.json
+
+Registry shard facts:
+47 total assets
+41 GLTF model-3d
+6 PNG image-2d
+
+Pinned source commit:
+378b209355b13304e3cff656ec0806ca5b89df28
+```
+
+This is substantially more useful than analyzing screenshots alone.
+
+### Already-proven variant example
+
+Current Resident Atlas analysis measured `guitar_A` and `guitar_B` as:
+- same vertex count: 1385;
+- same bounding box;
+- same buffer size;
+- same geometry;
+- different visual result through UV placement on the shared palette.
+
+That is a source-level proof of:
+
+```text
+one semantic geometry family
++ appearance/UV variant
+```
+
+rather than two unrelated objects.
+
+### Live Show research method from now on
+
+For each modeled request:
+
+```text
+creator video decision
+→ released GLTF
+→ hierarchy / mesh count
+→ dimensions / pivot / orientation
+→ geometry/topology
+→ UV/material usage
+→ variant relationship
+→ reusable KFB construction rule
+```
+
+This gives us a path to reverse-engineer **KayKit-compatible construction grammar** without requiring Georg to operate Blender.
+
+---
+
+## 16.15 · What should move into KFB canon eventually
+
+Not yet implemented; candidate lessons:
+
+### Animation Lab / ToolBox
+- MotionClipProfile;
+- foot-contact/phase annotation;
+- playback-rate calibration;
+- phase-synced crossfade A/B;
+- equipment/stance tags;
+- interaction/combat event-marker preview.
+
+### Consumers
+- speed/acceleration/grounded facts drive animation state;
+- hysteresis between speed bands;
+- phase-preserving transitions;
+- physics remains authoritative;
+- combat markers stay phase-relative under timeScale changes.
+
+### Asset Librarian / Registry
+- current motion inventory stays canonical source truth;
+- future measured motion sidecars enrich rather than replace asset identity.
+
+### Game Dev Studio
+- package-level preview of tested motion profiles and consumer handoffs;
+- no second mixer/state owner.
+
+---
+
+## 16.16 · Research conclusion
+
+The important shift is:
+
+```text
+OLD
+speed threshold → play animation
+
+BETTER
+consumer motion facts
+→ semantic state
+→ measured compatible clip
+→ phase alignment
+→ short blend
+→ local cadence/timeScale correction
+→ contact/release events
+→ recovery
+```
+
+For KFB this is not polish after the game works.
+
+It is the layer that makes a technically correct character feel physically coherent, especially when we combine:
+- KayKit rigs;
+- FrizzleBob grafting;
+- EyeRig kinetics;
+- weapons/tools;
+- Combat;
+- platforming;
+- interactions;
+- procedural cartoon secondary motion.
+
+The first concrete implementation should therefore be **measurement-first**, not another gameplay rewrite.
+
+---
+
+## 2026-09-19 · KCL-002 · Animation overview + locomotion/state-machine synthesis
+
+### USER DIRECTION
+Continue the creator analysis with `KayKit - Animations - Overview Set 1`, especially for ToolBox, Animation Lab, locomotion, combat, interactions, timeScale and smooth Walk → Run → faster-motion transitions.
+
+### CURRENT SOURCE FACTS
+- the 2024 video is an animation overview rather than a state-machine tutorial;
+- current official Character Animations documentation supersedes its inventory count;
+- current KFB main has 139 registered Rig_Medium KayKit motions across 8 sets;
+- current KFB Rig_Medium inventory has Walking_A/B/C and Running_A/B, but no explicit Sprint clip;
+- Three.js already supports per-action timeScale, blending, sync and warp, so the lessons are directly usable in browser runtimes without Godot;
+- Mixed Bag 1 is now structurally registered in current main with 41 GLTF models plus 6 PNG assets.
+
+### KFB SYNTHESIS
+- phase-sync locomotion transitions instead of clip-reset transitions;
+- speed-to-playback-rate matching only inside a measured range;
+- hysteresis for speed bands;
+- consumer physics remains authoritative;
+- jump uses Start / Air / Land phases against actual physics;
+- combat release/contact markers remain phase-relative under playback scaling;
+- interaction/tool families become measured entry/loop/exit graphs;
+- Mixed Bag release geometry becomes ground truth for Live Show modeling analysis.
+
+### CURRENT NEXT GATE
+**KCL-M1 · Locomotion Sync Bench measurement pass** on one current Rig_Medium actor using Walking_A/B/C + Running_A/B only. Measure foot contacts, planted intervals, acceptable playback ranges and naive-vs-phase-synced transitions. No consumer movement changes in that gate.
+
+### BRANCH NOTE
+At this source pass, GitHub main had advanced to `c84c3c57aa875e1ac1cd8cc17eb966cb37c0f317` while PR #107's research branch remained intentionally unmerged. Current-main source facts were read/pinned; no parallel EyeRig/Hub changes are overwritten by this research update.
