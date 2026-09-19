@@ -398,6 +398,170 @@ Top/bottom eye contour, Mouth Batch, optional Nose/Brow grafts, Vehicle/headligh
 Review the expanded authoring surface on the fixed Stage. On acceptance, build a varied 5–8 actor `Rig_Medium` sample before expanding the class.
 
 
+## 2026-09-19 · KCL-M1 Locomotion Sync · Stage candidate
+
+### SOURCE
+- research branch: `chatgpt-web/kaykit-creator-learning-2026-09-19`;
+- source head: `d5c112af24df803462f0a326a85925f34170a5ed`;
+- Draft PR #107 remains OPEN / UNMERGED;
+- exact donor actor: ActionFigure · Rig_Medium;
+- exact scope: Walking_A/B/C + Running_A/B;
+- source bench preserves consumer movement/physics ownership and contains no Sprint source.
+
+### STAGE PUBLICATION
+Lean Stage mirror prepared at:
+`https://kayfabizarro.pages.dev/kfb-hub/stage/game-dev-studio/kcl-m1-locomotion-sync/`
+
+The same publication batch adds a KFB Hub briefing card and a public Playwright proof that waits for the exact source-head marker before browser checks.
+
+### CURRENT STATUS
+`DEPLOYMENT / PUBLIC_BROWSER = PENDING` at commit preparation. A source commit is not a public PASS.
+
+### HUMAN GATE
+After automated public proof, Georg compares A · NAIVE against B · PHASE SYNC for foot sliding, double-step, hip pop, cadence and weight. No consumer integration before that visual gate.
+
+
+## 2026-09-19 · Batch EyeRig Atlas · 27 Rig_Medium actors ready for rapid review
+
+### IMPLEMENTATION
+- replaced the one-actor roster with a verified 27-entry `Rig_Medium` catalog;
+- added real model switching;
+- added per-character EyeProfile persistence;
+- added All / Unreviewed / Adjusted / Unsupported filters;
+- added reviewed/27 progress and **Next unreviewed**;
+- shared Medium animation packs stay single-owner;
+- GothGirl retains exact components 2+3 cleanup;
+- other Medium actors reuse the existing `donoreyes.v1.js` mirrored-front detector through a fail-closed adapter.
+
+### EVIDENCE
+- source/Return: `ab5215ce4f31d80fe4ecb98077f15e3df58ecb97`;
+- implementation: `5f2e981cbcf4ca72a6c186c96ed008be535856a9`;
+- evidence: `fa7fdb5b9c5b9c4d443e4f19f47260f934c90147`;
+- Stage runtime: `ae61e50d525e942a755cf46d0ed807b49b5a3e38`;
+- **62/62 static PASS · 14/14 focused PASS · 3/3 syntax PASS**;
+- exact GitHub Stage readback PASS.
+
+The public workflow now smoke-switches GothGirl → Clown → Ninja → Magical Girl → GothGirl. No new Actions run was triggered by the connector and this web environment cannot open `pages.dev`, so current public verification remains OPEN.
+
+### NEXT GATE
+Georg clicks through the Medium roster, using Approve / Adjusted + approve / Unsupported and Next unreviewed. Large/Legacy remains parked until this wave yields real override data.
+
+
+## 2026-09-19 · KCL-M1 · Cloudflare infrastructure blocker + local browser fallback
+
+### OBSERVED
+KCL-M1 public-proof run `35467428927` / job `105962230768` never reached the bench. For the full marker window, the requested KCL `SOURCE.json` returned the KFB HTML fallback rather than JSON.
+
+This is not isolated to KCL:
+- the preceding TE-01 public proof on `6f8f685…` failed at its Cloudflare deployment marker before the KCL publication;
+- current Cloudflare Pages build for `986699c…` is failed;
+- therefore no animation/runtime defect is established by the public failure.
+
+### DECISION
+Do not patch KCL motion code in response to a deployment failure. Preserve the exact Stage candidate and add a repository-native **local HTTP + Playwright WebGL proof** to measure the real five clips while Cloudflare remains an external public gate.
+
+Local proof checks the exact Stage mirror, real pinned ActionFigure + MovementBasic sources, 5/5 automatic motion profiles, A/B transition execution, source ownership and browser/console errors. It exports measured profiles and a screenshot as a GitHub Actions artifact.
+
+### PUBLIC STATUS
+Cloudflare Stage remains **NOT PUBLIC_VERIFIED**. A local browser PASS will be technical evidence only, not a substitute for the required pages.dev human gate.
+
+
+## 2026-09-19 · Batch EyeRig Atlas · Rig_Large Monstrosity calibration lane
+
+### IMPLEMENTATION
+- added Medium / Large class switch to the existing EyeRig workbench;
+- added verified Large roster: Monstrosity, Black Knight, Demon Lord, Orc Brute;
+- selected Monstrosity as the first Large calibration actor;
+- no accepted Large default is claimed initially;
+- added explicit **Set as Large default** action on Monstrosity;
+- Large Apply-to-Selected remains disabled until that human promotion;
+- Large uses its own General / MovementBasic animation files;
+- Large Idle / Walk / Run are available; Jump is disabled because the current Large library has no matching Jump clip;
+- Medium default, Medium actors and Medium overrides remain separate.
+
+### EVIDENCE
+- source/Return head: `a4d01402c5bd4785be480151ef7cd0b2317f2c71`;
+- implementation: `a843a9e9666d2d0d7d0c6a95f801a969f57941c3`;
+- evidence: `e60f1db1e2436f11549e44def25ab9b2718eac3b`;
+- Stage runtime: `670e11d56fe5b85e6264d8a294868c32540db5c6`;
+- **82/82 PASS · 15/15 focused Large PASS · 3/3 syntax PASS**.
+
+### NEXT
+Open the existing EyeRig Stage, switch to Large, tune Monstrosity and explicitly set it as the Large default. Then compare Black Knight, Demon Lord and Orc Brute.
+
+
+## 2026-09-19 · Track Ribbon S-T01b integration-first freeze
+
+Race S-T01b intentionally tested the combined experience rather than postponing local surface physics: wider 14.4 / 18.0 / 21.6 / 28.8 track scale, clean broad-guidance surface, Travel-derived terrain coupling, default Kenney cue props OFF, and active BLACK_ICE / OIL / LOW_GRAVITY zones.
+
+Implementation SSOT: `georg-doc/KFB-Stunt-Car-Race`, Draft PR #29, frozen runtime/test source head `ee51495d0efd0a8d94781cac82aa2de9fbf3ff46`.
+
+Final static/ownership checks PASS. Two repaired real-browser passes did not reach a full green gate: first failed a BLACK_ICE realtime decay comparison, second progressed beyond that check but timed out waiting for LOW_GRAVITY landing telemetry after 12 s. The last run reached 24 checks with 0 page errors and 0 HTTP errors.
+
+Per the two-repair stop rule the candidate is frozen and a full failure-recovery export is preserved in the Race branch under `ChatGPT_web/track-lab/st01b/failure-recovery/`. No S-T01b Stage publication. Exactly one next gate: deterministic fixed-step LOW_GRAVITY jump/landing seam. Hub should route to recovery, not ask Georg to test this failed candidate.
+
+
+## 2026-09-19 · Track Ribbon terrain-donor correction
+
+### CORRECTION
+The prior S-T01b implementation/recovery used the wrong terrain donor family.
+
+Wrong:
+`travel/travel-v16/terrain-v16/voxel-terrain.js`
+
+Current Travel implementation SSOT:
+`georg-doc/KFB-Travel-Globe@8614282aab2ced43bb5dda9fcf7abadf9768100a`
+
+Current Travel/TinySkies surface owners:
+- `travel/globe-v13/globe.js`
+- `travel/globe-v13/terrain-surface.js`
+- `travel/globe-v13/simplex-noise.js`
+- `travel/globe-v13/boden-lesung.js`
+
+Upstream terrain/world gold-standard:
+`dannylimanseta/tinyskies@2659a5cc987d7e4a4c5aa7e79c86a1626ad75df6`.
+
+Current Travel Masterplan/Donor Matrix explicitly state that Travel/TinySkies remains the macro world and Travel-v16 Voxel is selective only, not a replacement world aesthetic.
+
+Race PR #29 is reclassified:
+`REJECTED FOUNDATION · WRONG TERRAIN DONOR`.
+
+Salvage:
+- wider track scale;
+- clean road-surface direction;
+- default prop cleanup;
+- semantic terrain-coupling modes;
+- Race-local BLACK_ICE/OIL/LOW_GRAVITY concepts.
+
+Reject:
+- voxel terrain sleeve implementation;
+- voxel-derived terrain assumptions/evidence.
+
+New exactly-one gate:
+verify the current Travel Globe/TinySkies surface donor in isolation, then define the smallest Track-to-spherical-surface deformation seam through the existing Globe terrain truth.
+
+
+## 2026-09-20 · EyeRig Batch · common actor loader fixed
+
+The recurring model-switch failure `Cannot read properties of undefined (reading 'push')` was a shared cleanup bug, not broken individual GLBs.
+
+Cause: single-material KayKit head meshes can have zero explicit Three.js geometry groups; the reused donor stripper assumed one existed.
+
+Repair:
+- temporary whole-head group only for that case;
+- existing donor stripper reused unchanged;
+- original no-group state restored afterwards;
+- stale Unsupported states caused by the exception reset to Unreviewed after a successful reload.
+
+Evidence:
+- implementation `c6608ab5c76509bb54ae6b4375b87ed338e61427`;
+- regression evidence `1416092e87018ce32507d4d91e1d13d39f62c1ac`;
+- source/Return `af2827b60ced330e57bf4a7f553ad30dbf45b205`;
+- Stage `e3c4a79d959aa5a09bfb7d5cec67807b27170d6c`;
+- **84/84 PASS** plus **8/8 focused loader checks**.
+
+Next: reload the EyeRig page, select Clown or another previously failing model, then continue the Medium review or switch to Large/Monstrosity.
+
 ## 2026-09-19 · KayKit Creator Lessons · additive Game Dev Studio research
 
 ### USER DIRECTION
@@ -414,7 +578,6 @@ Recorded rig-family compatibility, reusable animation libraries, calibrated bone
 
 ### EVIDENCE
 Documentation/research branch only. No runtime/schema/binary change and no public deployment claimed.
-
 
 ## 2026-09-19 · KayKit Creator Lessons v0.2 · motion timing synthesis
 
