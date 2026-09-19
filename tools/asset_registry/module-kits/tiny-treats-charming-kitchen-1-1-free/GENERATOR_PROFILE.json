@@ -1,0 +1,75 @@
+{
+  "schema": "kfb.generator-profile/1",
+  "id": "tiny-treats-charming-kitchen-generator-candidate",
+  "packId": "tiny-treats-charming-kitchen-1-1-free",
+  "status": "PROPOSAL_FROM_MODULE_ANALYSIS",
+  "generatorClass": "interior-grid-and-furnishing",
+  "inputContract": {
+    "footprint": "room width/depth in proven structural cells",
+    "wallStyle": [
+      "plain",
+      "tiles"
+    ],
+    "openingPlan": [
+      "doorway",
+      "window-small",
+      "window-large",
+      "window-full"
+    ],
+    "worktopPlan": [
+      "straight",
+      "corner",
+      "sink"
+    ],
+    "furnishingDensity": "0..1",
+    "storyPropDensity": "0..1",
+    "paletteVariants": [
+      "source-authored"
+    ],
+    "seed": "deterministic integer"
+  },
+  "phases": [
+    {
+      "id": "shell",
+      "usesFamilies": [
+        "structure.floor",
+        "structure.wall.modular",
+        "structure.connector"
+      ],
+      "gate": "connector/sample proof required"
+    },
+    {
+      "id": "fixtures",
+      "usesFamilies": [
+        "fixture.worktop",
+        "fixture.wall-storage",
+        "fixture.wall-prop",
+        "appliance"
+      ],
+      "gate": "wall/worktop placement proof required"
+    },
+    {
+      "id": "furniture",
+      "usesFamilies": [
+        "furniture"
+      ],
+      "gate": "walkable clearance is consumer-owned"
+    },
+    {
+      "id": "story",
+      "usesFamilies": [
+        "prop.container",
+        "prop.kitchen"
+      ],
+      "gate": "visual-only by default"
+    }
+  ],
+  "output": "kfb.scene-recipe/1",
+  "open": [
+    "derive exact structural cell / connector dimensions from browser measurements",
+    "prove wall doorway/window continuity",
+    "prove worktop chain alignment",
+    "define walkable/collision proxy policy in receiving builder",
+    "no automatic generator until sample builds are visually accepted"
+  ]
+}
