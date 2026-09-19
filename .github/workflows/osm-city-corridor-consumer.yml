@@ -3,7 +3,8 @@ name: OSM City · corridor consumer export
 on:
   push:
     branches:
-      - osm-city/corridor-consumer-export-2026-09-19
+      - osm-city/corridor-promote-tested-stack-2026-09-19
+      - main
     paths:
       - 'tools/osm-city-lab/data/ehrenfeld-huerth-corridor-v0/SOURCE_SPEC.json'
       - 'tools/osm-city-lab/data/ehrenfeld-huerth-corridor-v0/QUERY_PLAN.json'
