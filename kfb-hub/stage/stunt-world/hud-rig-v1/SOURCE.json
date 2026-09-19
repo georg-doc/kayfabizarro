@@ -3,12 +3,16 @@
   "implementation_ssot": "georg-doc/KFB-Stunt-Car-Race",
   "race_branch": "wsa/hud-rig-lab-v1-2026-09-19",
   "race_pr": 16,
-  "tested_head": "06d3a337810e1b3b3394452457e19061a86308f6",
-  "tested_run": 35423028624,
+  "tested_head": "c8cd8deab9bfef7efbfa02d771ea3ba532e81872",
+  "tested_run": 35423503488,
   "static_result": "28/28 PASS",
   "browser_result": "23/23 PASS",
-  "evidence_artifact": 10578176086,
+  "evidence_artifact": 10578645793,
   "asset_pin": "georg-doc/kayfabizarro@13bee1bb6db0f27fbd13da2a3750f19859ca58af",
   "fixed_stage_url": "https://kayfabizarro.pages.dev/kfb-hub/stage/stunt-world/hud-rig-v1/",
-  "note": "Public Stage mirror only. Do not treat as a second runtime owner or implementation SSOT."
+  "note": "Public Stage mirror only. Do not treat as a second runtime owner or implementation SSOT.",
+  "evidence_digest": "sha256:4d56047a91fabf8b5ca1066320a8ae3c5c41920e24a1c1677944e6c69f34bfc9",
+  "github_pages_stage_url": "https://georg-doc.github.io/kayfabizarro/kfb-hub/stage/stunt-world/hud-rig-v1/",
+  "cloudflare_stage_url": "https://kayfabizarro.pages.dev/kfb-hub/stage/stunt-world/hud-rig-v1/",
+  "cloudflare_status": "OPEN: HTTP 200 but HUD marker stale in proof run 35423141979 attempts 1 and 2; no public Chromium phase executed."
 }
