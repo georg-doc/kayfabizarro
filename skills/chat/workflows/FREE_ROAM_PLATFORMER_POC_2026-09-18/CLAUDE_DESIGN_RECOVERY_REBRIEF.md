@@ -1,5 +1,7 @@
 # Claude Design Recovery Rebrief · KFB Free Roam Platformer Hub
 
+> **CURRENT RECOVERY OVERRIDE · 2026-09-19:** After the reported third Quaternius/Platformer/Hex kit failure, do not start another world/generator rebuild from this candidate. First read [the current post-mortem](POSTMORTEM_CLAUDE_DESIGN_QUATERNIUS_HEX_2026-09-19.md), apply [the shared full-export template](../../templates/CLAUDE_DESIGN_FAILURE_RECOVERY_EXPORT.md), and return a complete editable failure-recovery export. Resume only at the single measured three-part connection gate.
+
 **Date:** 2026-09-18  
 **Status:** CURRENT RECOVERY / REBUILD ORDER  
 **Previous candidate:** STRUCTURAL / VISUAL FAIL, salvageable source only  

@@ -69,6 +69,19 @@ Stop at the current owner boundary when:
 
 Return the concrete blocker and the smallest decision needed. Do not fill the gap with a new architecture.
 
+## 7. Recover a failed or repeating slice
+
+If two consecutive repair passes do not improve the same explicit gate, stop implementation before consuming the remaining session on another variation.
+
+- Freeze the current candidate; do not delete or cosmetically rewrite the failed code.
+- Apply `templates/CLAUDE_DESIGN_FAILURE_RECOVERY_EXPORT.md` for Claude Design or an equivalent visual authoring environment.
+- Export the full editable codebase, data, state, dependency/asset manifest and actual evidence.
+- Separate observed failure, proven cause and hypothesis.
+- Record a salvage map and exactly one smaller next gate.
+- Classify the frozen result as `ARCHIVED_FAILED_CANDIDATE`; it remains an intake/reference, not an owner or SSOT.
+
+A successful export is a recovery result, not proof that the failed visual/game result works.
+
 ## Paste-ready cold-start request
 
 > Sync from `skills/chat/START_HERE.md` and `skills/chat/FRESH_CHAT_SLICE_PROTOCOL.md`, then recover this project's current GitHub state. Complete only the named slice additively. Keep the existing owners and SSOTs. Update the project Return/changelog and leave the standard compact review packet with exact PR/head, actual tests, visible proof, open items and one next gate.

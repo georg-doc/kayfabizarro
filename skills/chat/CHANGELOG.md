@@ -1,5 +1,16 @@
 # KFB Chat Production Router · additive changelog
 
+## 2026-09-19 · Claude Design failure recovery + export
+
+### DECISION
+After two consecutive repair passes without progress on the same explicit gate, stop the repair loop. Preserve the current candidate as `ARCHIVED_FAILED_CANDIDATE` and spend the remaining session on a complete editable export, evidence, post-mortem, salvage map and one smaller next gate.
+
+### CURRENT_REFERENCE
+Add `templates/CLAUDE_DESIGN_FAILURE_RECOVERY_EXPORT.md` as the reusable provider-specific recovery/export template. It requires source, data/state, dependency and asset manifests, actual tests, checksums where possible, known omissions and a paste-ready stop/export request. An export is a recovery result, not implementation or visual acceptance.
+
+### FAILURE REVIEW
+Record the reported three Quaternius/Platformer attempts and the current Hex-Baukasten screenshot as a pre-export post-mortem under `workflows/FREE_ROAM_PLATFORMER_POC_2026-09-18/`. Viewer/UI/catalog code may be salvageable; current composition and generator rules are not accepted before a measured three-part connection proof.
+
 ## 2026-09-19 · Stage → Live and Vehicle Lab v3
 
 ### DECISION

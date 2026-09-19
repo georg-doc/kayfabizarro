@@ -47,6 +47,21 @@
       "note": "Bounded autonomous execution and compact review-packet contract. It never grants new implementation ownership or automatic merge authority."
     },
     {
+      "id": "claude-design-failure-recovery",
+      "kind": "coordination",
+      "status": "CURRENT_REFERENCE",
+      "version": "1.0",
+      "path": "skills/chat/templates/CLAUDE_DESIGN_FAILURE_RECOVERY_EXPORT.md",
+      "loadWhen": [
+        "repeated Claude Design failure",
+        "visual repair loop",
+        "kit mental model failure",
+        "full codebase recovery export",
+        "failed candidate postmortem"
+      ],
+      "note": "After two repair passes without progress on the same gate, freeze and export the complete editable candidate, preserve evidence, record salvage and choose one smaller next gate. Export does not promote the failed candidate."
+    },
+    {
       "id": "session-design-briefing",
       "kind": "skill",
       "status": "CURRENT_REFERENCE",
@@ -355,5 +370,6 @@
       ],
       "note": "Source-version audit, read-only probes and integration proposals. WaterBowser is Georg's new model selection; no conversion, runtime promotion, owner change or replacement ChatterBox master. Prefer verified newer donor versions over uploaded v10 snapshots."
     }
-  ]
+  ],
+  "failureRecoveryTemplate": "skills/chat/templates/CLAUDE_DESIGN_FAILURE_RECOVERY_EXPORT.md"
 }

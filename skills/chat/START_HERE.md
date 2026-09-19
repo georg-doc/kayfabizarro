@@ -41,6 +41,7 @@ If this is a replacement/fresh chat after context loss, use `RECOVERY_PATH.md` r
 - Do not copy canonical skills into this folder. Reference them from the registry.
 - Chats synchronize through GitHub state; do not assume direct chat-to-chat messaging or shared hidden context.
 - Human-facing KFB preview/Stage/Live links use `kayfabizarro.pages.dev` / KFB Hub; do not publish active review links through githack/raw-CDN mirrors.
+- After two repair passes without progress on the same gate, stop and export. Preserve the failed candidate and route through the failure-recovery template instead of spending a third pass on the same foundation.
 
 ## Status vocabulary
 
@@ -54,6 +55,7 @@ If this is a replacement/fresh chat after context loss, use `RECOVERY_PATH.md` r
 - `town/START_HERE.md` + `town/LIVING_KFB_TOWN.md` — current KFB Town ideation home
 - `RECOVERY_PATH.md` — deterministic recovery after chat/context failure
 - `FRESH_CHAT_SLICE_PROTOCOL.md` — bounded cold-start work and compact next-day review packet
+- `templates/CLAUDE_DESIGN_FAILURE_RECOVERY_EXPORT.md` — stop/export/post-mortem template after repeated visual or kit failures
 - `SYNC_PROTOCOL.md` — shared GitHub-based chat/agent synchronization
 - `INBOX_PROTOCOL.md` — shared cross-project intake/staging rules
 - `INBOX_REPO_BOOTSTRAP.md` — one-time structure for the private production inbox
@@ -109,3 +111,8 @@ The first lab is DocCheck Eumel. The current measured/traced Eumel package is **
 ## 2026-09-19 · Fresh-chat slice handoff
 
 For Georg's parallel web chats, modules and POCs, use `FRESH_CHAT_SLICE_PROTOCOL.md`. It lets one chat finish one clearly bounded slice independently, but never grants broader ownership. Every result remains additive and returns as a small review packet: exact source state, changed files, actual tests, visible proof, open questions and the next safe gate.
+
+
+## 2026-09-19 · Claude Design failure recovery
+
+Repeated visual/kit repair loops now stop after two passes without progress on the same gate. Use `templates/CLAUDE_DESIGN_FAILURE_RECOVERY_EXPORT.md` to preserve the complete editable source/state, distinguish evidence from hypothesis, record salvageable parts and return one smaller next gate. Project-specific post-mortems remain additive examples; an exported failed candidate is not promoted to current implementation truth.
