@@ -4,15 +4,15 @@
   "sourceRepo": "georg-doc/kayfabizarro",
   "sourceBranch": "toolbox/eye-rig-batch-2026-09-18",
   "sourcePR": 104,
-  "sourceHead": "e60f1db1e2436f11549e44def25ab9b2718eac3b",
-  "returnHead": "a4d01402c5bd4785be480151ef7cd0b2317f2c71",
-  "implementationCheckpoint": "a843a9e9666d2d0d7d0c6a95f801a969f57941c3",
-  "evidenceCheckpoint": "e60f1db1e2436f11549e44def25ab9b2718eac3b",
+  "sourceHead": "1416092e87018ce32507d4d91e1d13d39f62c1ac",
+  "returnHead": "af2827b60ced330e57bf4a7f553ad30dbf45b205",
+  "implementationCheckpoint": "c6608ab5c76509bb54ae6b4375b87ed338e61427",
+  "evidenceCheckpoint": "1416092e87018ce32507d4d91e1d13d39f62c1ac",
   "stageRuntimeHead": "670e11d56fe5b85e6264d8a294868c32540db5c6",
   "mainRouterHead": "779019712716c137746155b292c39ec486732d0f",
   "expectedVisibleMarker": "Medium / Large class switch · PR #104",
-  "humanGate": "Large → Monstrosity → tune → Set as Large default → review Black Knight, Demon Lord, Orc Brute",
-  "publicVerification": "OPEN · latest Large browser proof not yet run automatically",
+  "humanGate": "Reload Stage; Clown/other Medium actors and Large actors should load without the push exception; then continue Medium review or Monstrosity Large calibration",
+  "publicVerification": "PENDING_LOADER_FIX_PUBLICATION",
   "medium": {
     "actorCount": 27,
     "defaultStatus": "SET",
@@ -38,11 +38,12 @@
     "jumpAvailable": false
   },
   "tests": {
-    "static": "82/82 PASS",
+    "static": "84/84 PASS",
     "focusedLarge": "15/15 PASS",
     "syntax": "3/3 PASS",
     "sourceReadback": "PASS",
-    "stageReadback": "PASS"
+    "stageReadback": "PASS",
+    "loaderFocused": "8/8 PASS"
   },
   "deferred": [
     "Legacy",
@@ -52,5 +53,11 @@
     "Vehicle EyeRig"
   ],
   "hubCard": "SYNCED_TO_LARGE_MONSTROSITY_CALIBRATION",
-  "nextGate": "GEORG_MONSTROSITY_LARGE_CALIBRATION"
+  "nextGate": "GEORG_RELOAD_AND_MODEL_SWITCH_SANITY",
+  "loaderFix": {
+    "status": "FIXED",
+    "error": "Cannot read properties of undefined (reading 'push')",
+    "cause": "single-material head with zero explicit geometry groups",
+    "staleUnsupportedRecovery": true
+  }
 }

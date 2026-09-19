@@ -34,8 +34,8 @@ jobs:
           const BASE='https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/eye-rig-batch/';
           const WANT={
             sourcePR:104,
-            sourceHead:'e60f1db1e2436f11549e44def25ab9b2718eac3b',
-            implementationCheckpoint:'a843a9e9666d2d0d7d0c6a95f801a969f57941c3'
+            sourceHead:'1416092e87018ce32507d4d91e1d13d39f62c1ac',
+            implementationCheckpoint:'c6608ab5c76509bb54ae6b4375b87ed338e61427'
           };
           const result={url:BASE,want:WANT,checks:[],errors:[],screenshots:[],status:'RUNNING'};
           const check=(name,pass,detail)=>{result.checks.push({name,pass:Boolean(pass),detail});if(!pass)throw Error(name+' :: '+JSON.stringify(detail))};
