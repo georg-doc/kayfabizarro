@@ -1,7 +1,7 @@
 {
   "schema": "kfb.public-mirror/0.2",
   "build": "STUNT-WORLD-TINYSKIES-TRACK-CORRIDOR-TC01-20260920",
-  "status": "STAGE_SOURCE_CANDIDATE_LOCAL_QA_PENDING",
+  "status": "STAGE_SOURCE_READY_LOCAL_BROWSER_QA_PASS_PUBLICATION_PENDING",
   "implementationSSOT": "georg-doc/KFB-Travel-Globe",
   "sourcePr": 31,
   "testedTravelEvidenceHead": "b454ab9d98a2b0b860991e7ccd8adc72d26d0e2b",
@@ -16,5 +16,14 @@
   "racePhysics": false,
   "voxelRuntime": false,
   "livePromotion": false,
-  "humanAcceptance": "PENDING"
+  "humanAcceptance": "PENDING",
+  "stageMirrorWorkflowRun": 35477051809,
+  "stageMirrorWorkflowJob": 105987982471,
+  "stageMirrorBrowserChecks": "13/13 PASS",
+  "stageMirrorBootMs": 745,
+  "stageMirrorPageErrors": 0,
+  "stageMirrorHttpErrors": 0,
+  "stageMirrorArtifact": 10594801631,
+  "stageMirrorArtifactDigest": "sha256:50d6d9f27a52ff46f896b13475dbc3f77088d515c9bb606f7f372f4c6dc4293d",
+  "publicVerified": false
 }
