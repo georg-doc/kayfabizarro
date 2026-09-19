@@ -89,7 +89,7 @@ jobs:
             }));
 
             check('page title',/Batch EyeRig Atlas/.test(initial.title),initial.title);
-            check('visible revision marker',initial.marker.includes('candidate f23b2f6')&&initial.marker.includes('PR #104'),initial.marker);
+            check('visible revision marker',initial.marker.includes('source b05172e')&&initial.marker.includes('impl d900fb9')&&initial.marker.includes('PR #104'),initial.marker);
             check('runtime no boot error',!initial.report.error,initial.report.error);
             check('source gate',initial.report.gates?.source===true,initial.report.gates);
             check('cleanup gate',initial.report.gates?.cleanup===true,initial.report.cleanup);
