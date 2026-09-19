@@ -1,0 +1,131 @@
+{
+  "schema": "kfb.failure-recovery-export/1",
+  "project": "C0-A1 Charming Kitchen Module Kit",
+  "exportRevision": "2026-09-19-r1",
+  "status": "ARCHIVED_FAILED_CANDIDATE",
+  "repository": "georg-doc/kayfabizarro",
+  "branch": "chatgpt-web/c0-a1-charming-kitchen-2026-09-19",
+  "frozenProductHead": "a5a8fcfb25e2ec89ab4346a812870d5b18bf91e6",
+  "recoveryDocsHeadAtManifest": null,
+  "entrypoints": [
+    "asset-librarian/index.html",
+    "tools/asset_registry/librarian/index.html",
+    "kfb-hub/free-roam/game-dev-studio/index.html",
+    "kfb-hub/stage/c0-a1-charming-kitchen/index.html"
+  ],
+  "sourceFiles": [
+    ".github/scripts/c0-a1-charming-kitchen-smoke.mjs",
+    ".github/workflows/c0-a1-charming-kitchen-qa.yml",
+    "game-ready/module-kits/tiny-treats-charming-kitchen-1-1-free/GAME_ASSET_PACKAGE.json",
+    "game-ready/module-kits/tiny-treats-charming-kitchen-1-1-free/README.md",
+    "kfb-hub/free-roam/game-dev-studio/app.js",
+    "kfb-hub/stage/c0-a1-charming-kitchen/index.html",
+    "tools/asset_registry/librarian/app.js",
+    "tools/asset_registry/librarian/index.html",
+    "tools/asset_registry/librarian/module-kit.css",
+    "tools/asset_registry/librarian/module-kit.js",
+    "tools/asset_registry/module-kits/index.json",
+    "tools/asset_registry/module-kits/tiny-treats-charming-kitchen-1-1-free/GENERATOR_PROFILE.json",
+    "tools/asset_registry/module-kits/tiny-treats-charming-kitchen-1-1-free/MODULE_LIBRARY.json",
+    "tools/asset_registry/module-kits/tiny-treats-charming-kitchen-1-1-free/PACK_PROFILE.json",
+    "tools/asset_registry/module-kits/tiny-treats-charming-kitchen-1-1-free/PREVIEW_MANIFEST.json",
+    "tools/asset_registry/module-kits/tiny-treats-charming-kitchen-1-1-free/SAMPLE_RECIPES/furnished-cell.json",
+    "tools/asset_registry/module-kits/tiny-treats-charming-kitchen-1-1-free/SAMPLE_RECIPES/wall-grammar.json",
+    "tools/asset_registry/module-kits/tiny-treats-charming-kitchen-1-1-free/SAMPLE_RECIPES/worktop-run.json",
+    "tools/asset_registry/module-kits/tiny-treats-charming-kitchen-1-1-free/VALIDATION_REPORT.json",
+    "tools/asset_registry/tests/test_charming_kitchen_module_kit.py",
+    "tools/game-dev-studio/catalog.json"
+  ],
+  "buildOutputs": [],
+  "dataFiles": [
+    "tools/asset_registry/module-kits/index.json",
+    "tools/asset_registry/module-kits/tiny-treats-charming-kitchen-1-1-free/PACK_PROFILE.json",
+    "tools/asset_registry/module-kits/tiny-treats-charming-kitchen-1-1-free/MODULE_LIBRARY.json",
+    "tools/asset_registry/module-kits/tiny-treats-charming-kitchen-1-1-free/GENERATOR_PROFILE.json",
+    "tools/asset_registry/module-kits/tiny-treats-charming-kitchen-1-1-free/PREVIEW_MANIFEST.json",
+    "tools/asset_registry/module-kits/tiny-treats-charming-kitchen-1-1-free/VALIDATION_REPORT.json",
+    "tools/asset_registry/module-kits/tiny-treats-charming-kitchen-1-1-free/SAMPLE_RECIPES/wall-grammar.json",
+    "tools/asset_registry/module-kits/tiny-treats-charming-kitchen-1-1-free/SAMPLE_RECIPES/worktop-run.json",
+    "tools/asset_registry/module-kits/tiny-treats-charming-kitchen-1-1-free/SAMPLE_RECIPES/furnished-cell.json"
+  ],
+  "assetRefs": [
+    {
+      "packId": "tiny-treats-charming-kitchen-1-1-free",
+      "root": "media/3D_Assets/Tiny_Treats_Charming_Kitchen_1.1_FREE",
+      "modelCount": 118,
+      "textureCount": 5,
+      "registrySourceCommit": "378b209355b13304e3cff656ec0806ca5b89df28",
+      "license": "CC0-1.0",
+      "copiedIntoExport": false,
+      "referenceIndex": "tools/asset_registry/module-kits/tiny-treats-charming-kitchen-1-1-free/MODULE_LIBRARY.json"
+    }
+  ],
+  "externalDependencies": [
+    {
+      "name": "three",
+      "version": "0.160.0",
+      "source": "existing Librarian import map",
+      "included": false
+    },
+    {
+      "name": "Playwright",
+      "version": "1.55.0",
+      "role": "CI browser evidence only",
+      "included": false
+    }
+  ],
+  "browserStateExports": [],
+  "evidence": [
+    {
+      "kind": "workflow",
+      "run": 35461123803,
+      "artifact": 10589419759,
+      "head": "46415c979bf2ef3be1f24508304aab917c73866b",
+      "result": "FAIL"
+    },
+    {
+      "kind": "workflow",
+      "run": 35461231731,
+      "artifact": 10589564787,
+      "head": "a5a8fcfb25e2ec89ab4346a812870d5b18bf91e6",
+      "result": "FAIL"
+    },
+    {
+      "kind": "report",
+      "path": "skills/chat/workflows/KFB_MODULAR_MINIGAME_HUB_2026-09-19/C0_A1_CHARMING_KITCHEN_FAILURE_RECOVERY_2026-09-19/evidence/run-5-browser-report.json"
+    },
+    {
+      "kind": "report",
+      "path": "skills/chat/workflows/KFB_MODULAR_MINIGAME_HUB_2026-09-19/C0_A1_CHARMING_KITCHEN_FAILURE_RECOVERY_2026-09-19/evidence/run-6-browser-report.json"
+    }
+  ],
+  "missing": [
+    {
+      "item": "sealed game-dev package receipt",
+      "reason": "GAME_DEV_CLI_UNAVAILABLE"
+    },
+    {
+      "item": "package verify receipt",
+      "reason": "game-dev unavailable"
+    },
+    {
+      "item": "vendor admission receipt",
+      "reason": "not attempted; package not verified"
+    },
+    {
+      "item": "public Cloudflare Stage proof",
+      "reason": "candidate never reached local browser-ready state"
+    },
+    {
+      "item": "successful sample-build screenshots",
+      "reason": "browser parser failed before sample checks"
+    }
+  ],
+  "start": {
+    "command": "python3 -m http.server 8778 --bind 127.0.0.1",
+    "url": "http://127.0.0.1:8778/asset-librarian/?pack=tiny-treats-charming-kitchen-1-1-free&moduleKit=1",
+    "notes": "Frozen candidate is expected to fail browser module parsing. Use for reproduction only, not acceptance."
+  },
+  "exportForm": "branch-native complete source + recovery manifest; no duplicate source ZIP checked into the repository",
+  "rationale": "The exact editable candidate is already preserved by immutable Git commit. Duplicating it into a second source archive would create another source copy; this manifest closes the roster and evidence instead."
+}
