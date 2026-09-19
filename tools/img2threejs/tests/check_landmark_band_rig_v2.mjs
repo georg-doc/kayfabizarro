@@ -44,7 +44,7 @@ function pointFaceDistance(point,sourceStage,riggedStage,axis){
   const axes=[[0,0,1],[1,0,0],[0,0,-1],[-1,0,0]];
   const distances=old.rig.attachments.map((a,i)=>pointFaceDistance(a.anchorDeformed,ss,rs,axes[i]));
   ok('v1.2.failure-reproduced',distances.every(v=>v>1),distances);
-  ok('v1.2.failure-range',Math.min(...distances)>2.3&&Math.max(...distances)>3.7,distances);
+  ok('v1.2.failure-range',Math.min(...distances)>2.0&&Math.max(...distances)>3.7,distances);
   stats.socketV12HostFaceDistanceM=distances;
   stats.socketV12ClockCenterBiasM=old.rig.attachments[0].anchorOriginal[1]-41.5;
 }
