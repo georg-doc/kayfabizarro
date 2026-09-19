@@ -159,3 +159,10 @@ Danach ist der [Babel Tower S2b → Hex Platform Generator](workflows/KFB_MODULA
 - `KFB_INK_CARTOON_MECHANICS_V1_2026-09-19.md` defines isolated Ink / rubber barrier / tube / EyeRig reaction proofs using existing canon.
 - `KFB_WORLD_ONBOARDING_CHATTERBOX_V1_2026-09-19.md` is planning-only and keeps private personal-admin subjects out of public runtime.
 - `EYE_RIG_BATCH_TOOLBOX_SLICE_V1_2026-09-19.md` makes the existing EyeRig batch brief a visible ToolBox slice.
+
+
+## 2026-09-19 · KayKit Creator Lessons · Game Dev Studio research lane
+
+Kay Lousberg's creator tutorials/live-show material now has an additive KFB interpretation under [Game Dev Studio research](../../tools/game-dev-studio/research/KAYKIT_CREATOR_LESSONS_LIVING.md). Start with the detailed character/Godot tutorial, but apply its engine-neutral findings first: rig family, reusable animation libraries, calibrated bone attachments, material/texture variants, staged retargeting and semantic asset families.
+
+This is a **research/reference lane inside the existing Game Dev Studio owner**, not a second Asset Registry, rig owner, animation owner or runtime. Asset Librarian remains canonical discovery/source truth; ToolBox/FrankenStein/Animation retain their authoring domains; named consumers retain state/physics/gameplay. Proposed metadata fields and Rig/interactive-donor benches remain proposals until separately assigned and proven.
