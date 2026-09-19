@@ -1,7 +1,7 @@
 # Batch EyeRig Atlas · RETURN
 
 Date: 2026-09-19  
-Status: IMPLEMENTED CANDIDATE · STATIC PASS · PUBLIC VISUAL GATE PENDING  
+Status: IMPLEMENTED CANDIDATE · PUBLIC BROWSER PROOF PASS · GEORG VISUAL/TUNING GATE OPEN  
 Owner: KFB ToolBox / Rigging
 
 ## SOURCE
@@ -80,7 +80,7 @@ Publication owner/bridge: `cloudflare-live`.
 
 Stage mirror is written on `cloudflare-live` at `f309948a3bd265154e6d3f5c959b69ec9b725f26`, and the KFB Hub card links directly to the route. Main router/Hub metadata is current at `ac067d09919f744750649e3652dd00036d7ccd6f`.
 
-The exact `pages.dev` route could not be opened from the available verification environments: the web fetcher reports it inaccessible and the container cannot resolve `kayfabizarro.pages.dev`. Status is therefore `PUBLICATION_BRANCH_WRITTEN / PUBLIC_VERIFIED OPEN`, not Live.
+The exact `pages.dev` route was subsequently opened from GitHub Actions Playwright after the deployment marker matched the Stage source snapshot. Final public proof run `35457983922` passed **17/17 checks**, produced **5 screenshots**, and reported **0 page/console errors**. Status is `PUBLIC_VERIFIED = PASS`; this remains Stage, not Live.
 
 ## GEORG ACCEPTANCE
 
@@ -112,6 +112,41 @@ Dropbox search found historical PetStudio / Vehicle+Rigging / Stunt-Race exports
 - publication mirror: `cloudflare-live@f309948a3bd265154e6d3f5c959b69ec9b725f26`
 - main router / KFB Hub metadata: `ac067d09919f744750649e3652dd00036d7ccd6f`
 - screenshots: **none** — both local Chromium passes failed before app boot at the container EGL/X boundary
-- public screenshot/browser proof: **OPEN**
+- public screenshot/browser proof: **PASS · Run 35457983922 · 17/17 · 5 screenshots · Artifact 10589300370**
 - Live promotion: **NOT PERFORMED**
 - next gate: **Georg opens the direct Stage URL and judges GothGirl Front / 3/4 / Side plus Idle / Walk / Run / Jump.**
+
+
+## PUBLIC PROOF · FINAL
+
+- Stage source snapshot: `b05172eccf4687cfd2e8523995d39611e62de81d`
+- implementation checkpoint: `d900fb99f3b04d52f266febd1501368c5fedd360`
+- publication/proof head: `e56ae972d05e06c5112fe2de4314192c3e3c8110`
+- GitHub Actions run: `35457983922`
+- runtime checks: **17/17 PASS**
+- page/console errors: **0**
+- screenshot evidence: **5**
+- artifact: `kfb-eye-rig-batch-public-stage-proof` · id `10589300370`
+
+Measured public runtime evidence includes:
+
+- source cleanup: 12 connected head components, verified eye components 6 + 7;
+- FaceHost: `OK`, head `head`, facing `Zehen`, yaw 0;
+- head bounds: `1.422 × 1.549 × 1.307`;
+- head-weighted vertices: `1279 / 5019`;
+- EyeRig frame: left `[-0.2672,-0.0774,0.5438]`, right `[0.2672,-0.0774,0.5438]`, radius `0.2323`;
+- required Idle / Walk / Run / Jump clips available;
+- interactions remain clean after expression, view, motion and blink changes.
+
+### Visual finding for Georg
+
+Technical PASS does **not** equal visual approval. The screenshot set shows the default eye geometry is currently too large/protruding for GothGirl, especially in 3/4 and side views. The seed stays `AUTO_CANDIDATE`.
+
+First tuning order:
+
+1. reduce **Eye size / ring** from the current `0.30`;
+2. then adjust **Inset**;
+3. only then fine-tune **Spacing / vertical**;
+4. re-check Front / 3/4 / Side and motion before `Adjusted + approve`.
+
+No Large/Legacy expansion and no Live promotion before Georg's gate.

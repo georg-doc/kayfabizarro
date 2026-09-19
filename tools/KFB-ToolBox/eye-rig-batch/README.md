@@ -1,6 +1,6 @@
 # KFB Batch EyeRig Atlas
 
-**Status:** IMPLEMENTED CANDIDATE · Rig_Medium first · static tests green · Stage mirror written · public/human visual gate pending.
+**Status:** IMPLEMENTED CANDIDATE · Rig_Medium first · public Stage browser proof 17/17 PASS · Georg visual/tuning gate pending.
 
 Owner: KFB ToolBox / Rigging.
 
@@ -52,3 +52,8 @@ Draft PR: `#104` — not merged.
 Publication mirror: `cloudflare-live@f309948a3bd265154e6d3f5c959b69ec9b725f26`.
 
 The fixed Stage route is linked from the KFB Hub. Automated public verification is still open because the available environments cannot resolve/open `pages.dev`; Georg's normal-browser check is the next gate.
+
+
+Public proof: GitHub Actions run `35457983922` · 17/17 PASS · 5 screenshots · 0 page/console errors.
+
+The current GothGirl seed remains `AUTO_CANDIDATE`: screenshots show the default eye size (`ring=0.30`) is visibly oversized/protruding. Use the Stage workbench to tune Eye size → Inset → Spacing/Vertical before approval.

@@ -78,3 +78,27 @@ Commit: `d900fb99f3b04d52f266febd1501368c5fedd360`
 
 ### NEXT GATE
 Normal-browser review of GothGirl source-eye cleanup, EyeRig placement and head attachment through Front / 3/4 / Side and Idle / Walk / Run / Jump. No Large/Legacy expansion and no Live promotion before that gate.
+
+
+## 2026-09-19 · Checkpoint 4 · PUBLIC BROWSER PROOF
+
+### PUBLIC DEPLOYMENT
+- publication/proof head: `e56ae972d05e06c5112fe2de4314192c3e3c8110`;
+- final public proof run: `35457983922`;
+- exact Stage route returned HTTP 200 with the expected source/implementation/PR marker.
+
+### TESTED RESULT
+- public Playwright checks: **17/17 PASS**;
+- screenshots: **5**;
+- page/console errors: **0**;
+- source-face cleanup measured: 12 components, eyes 6 + 7;
+- FaceHost: OK;
+- EyeRig frame: ready;
+- required Idle / Walk / Run / Jump clips: present;
+- interaction sequence stayed clean.
+
+### VISUAL REVIEW
+The candidate is technically sound but not visually accepted. Current `ring=0.30` is clearly oversized/protruding in the generated Front / 3/4 / Side evidence. Keep status `AUTO_CANDIDATE`.
+
+### NEXT GATE
+Georg tunes Eye size first, then Inset and spacing/vertical, checks the standard cameras and motions, and explicitly approves or rejects. No Large/Legacy work and no Live promotion before that decision.

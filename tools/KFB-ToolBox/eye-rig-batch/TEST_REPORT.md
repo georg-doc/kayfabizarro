@@ -110,3 +110,45 @@ Exact public route:
 Public verification attempt result: **ENVIRONMENT_UNAVAILABLE**. The web fetcher reports the `pages.dev` route as inaccessible, and the execution container reports temporary DNS resolution failure for `kayfabizarro.pages.dev`. No `PUBLIC_VERIFIED` claim is made.
 
 This is now a **human browser gate**, not another source-code repair pass.
+
+
+## FINAL PUBLIC BROWSER PROOF · PASS
+
+Final proof run: `35457983922`  
+Publication head: `e56ae972d05e06c5112fe2de4314192c3e3c8110`  
+Exact route: `https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/eye-rig-batch/`
+
+Result: **17 / 17 PASS** with **5 screenshots** and **0 page/console errors**.
+
+The Playwright proof verified:
+
+- exact deployment marker for PR #104 / Stage source snapshot `b05172e` / implementation `d900fb9`;
+- HTTP 200;
+- expected page title and visible revision marker;
+- no boot error;
+- source / cleanup / FaceHost / EyeRig / motion gates all true;
+- GothGirl head = exactly 12 connected components;
+- verified source eye components = 6 + 7;
+- FaceHost = `OK`, head bone `head`, facing source `Zehen`, yaw 0;
+- EyeRig eyeFrame present;
+- Idle / Walk / Run / Jump clips present;
+- runtime remains clean after happy + Idle + 3/4, thinking + Run + side, surprised + Jump + front, and Blink;
+- 832px review layout rendered without runtime errors.
+
+Artifact:
+
+- name: `kfb-eye-rig-batch-public-stage-proof`
+- artifact id: `10589300370`
+- digest: `sha256:db0ab0d5238d1e97890df21ea43333f1d6fd90aecafa5ae993b5c072b42dd16e`
+- screenshots:
+  - `01-front-bind.png`
+  - `02-three-quarter-happy-idle.png`
+  - `03-side-thinking-run.png`
+  - `04-front-surprised-jump.png`
+  - `05-832-review.png`
+
+### Visual sanity, not acceptance
+
+The screenshots prove the rig is present and attached across the tested views/motions. They also show that the current geometry seed is **not yet visually approved**: `ring=0.30` produces oversized/protruding eyes, especially in the 3/4 and side evidence.
+
+This is intentionally left as `AUTO_CANDIDATE`. Georg's next pass should reduce eye size first, then tune inset/spacing before approving the profile.
