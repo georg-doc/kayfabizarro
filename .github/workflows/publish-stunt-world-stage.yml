@@ -94,12 +94,6 @@ jobs:
               p.parent.mkdir(parents=True,exist_ok=True)
               p.write_bytes(z.read(name))
 
-          # Promote mirror status only; runtime bytes remain source-identical.
-          dep=json.loads((target/'DEPLOYMENT.json').read_text())
-          dep['status']='PUBLIC_STAGE_MIRROR_CANDIDATE_HUMAN_ACCEPTANCE_PENDING'
-          dep['publicMirrorCommit']='PENDING_BRANCH_COMMIT'
-          (target/'DEPLOYMENT.json').write_text(json.dumps(dep,indent=2)+'\n')
-
           # Update only the existing OSM Stage card, preserving parallel Stage work.
           s=stage_index.read_text()
           old='''<div class="top"><h2>OSM City Drive · C0</h2><span class="badge">Current review</span></div>
