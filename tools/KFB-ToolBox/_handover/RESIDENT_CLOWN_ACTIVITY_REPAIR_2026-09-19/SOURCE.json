@@ -1,0 +1,67 @@
+{
+  "schema": "kfb.resident-clown-recovery-source/1",
+  "date": "2026-09-19",
+  "repository": "georg-doc/kayfabizarro",
+  "documentationBranch": "chatgpt-web/resident-clown-recovery-brief-2026-09-19",
+  "branchBase": "bb904bf0983afa209683145427f1c2a068835097",
+  "owner": "Resident Atlas S6",
+  "integrationLead": "WSA",
+  "c0History": {
+    "baseCommit": "5650b6c54d8789b20ea80abe857688173d506d3b",
+    "briefingPath": "skills/chat/workflows/KFB_MODULAR_MINIGAME_HUB_2026-09-19/START_HERE.md",
+    "briefingBlobAtBase": "4e2a3f6e0b4fe4cb2ed13336afc5f1b0e170fd6c",
+    "failedPR": 101,
+    "failedStage": "https://kayfabizarro.pages.dev/kfb-hub/stage/minigames/baukasten-c0/",
+    "acceptance": "GEORG_VISUAL_REVIEW_FAIL"
+  },
+  "requiredProcessDocs": [
+    "skills/chat/START_HERE.md",
+    "skills/chat/CHAT_GITHUB_KFB_STAGE_WORKFLOW.md",
+    "skills/chat/FRESH_CHAT_SLICE_PROTOCOL.md",
+    "skills/chat/BOUNDED_PRODUCTION_SLICE_CONTRACT.md"
+  ],
+  "residentOwnerFiles": [
+    "tools/resident_atlas_s6/data/cast.js",
+    "tools/resident_atlas_s6/lib/atlas.js",
+    "tools/resident_atlas_s6/lib/juggle-math.js",
+    "tools/resident_atlas_s6/KFB_Resident_Atlas_S6.html",
+    "tools/resident_atlas_s6/tests/test-juggle-module.mjs",
+    "tools/resident_atlas/modules/clown-juggling-island.module.json",
+    "tools/resident_atlas/modules/runtime/s6-resident-module.js"
+  ],
+  "existingHandoff": [
+    "tools/KFB-ToolBox/_handover/RESIDENT_SCENE_MODULES_WSA_2026-09-19/START_HERE.md",
+    "tools/KFB-ToolBox/_handover/RESIDENT_SCENE_MODULES_WSA_2026-09-19/RETURN.md",
+    "tools/KFB-ToolBox/_handover/RESIDENT_SCENE_MODULES_WSA_2026-09-19/BACKLOG.md",
+    "tools/KFB-ToolBox/_handover/RESIDENT_SCENE_MODULES_WSA_2026-09-19/GEORG_REVIEW_FAIL_C0_2026-09-19.md",
+    "tools/KFB-ToolBox/_handover/RESIDENT_SCENE_MODULES_WSA_2026-09-19/POSTMORTEM_C0_BRIEFING_INTENT_EXECUTION_2026-09-19.md"
+  ],
+  "presentationDonors": [
+    "tools/resident_atlas_s6/KFB_Resident_Atlas_S6.html",
+    "tools/world_atlas/",
+    "tools/KFB-ToolBox/_inbox/KFB_Plant_Prop_Lab_v1/KFB_Plant_Prop_Lab_v2_EXPORT_2026-09-19/KFB_Plant_Prop_Lab_v2/"
+  ],
+  "dropboxReadOnlyProvenance": [
+    {
+      "path": "/CLAUDE/KFB KayKit Plant Toon Atlas v1/KFB_Plant_Prop_Lab_v1/KFB_Plant_Prop_Lab_v2_EXPORT_2026-09-19/KFB_Plant_Prop_Lab_v2",
+      "observedModified": "2026-09-19T13:40:46Z",
+      "role": "current export provenance / presentation donor cross-check only"
+    },
+    {
+      "path": "/CLAUDE/KFB ToolBox Studio Rig Anim/KayKit Resident Atlas/github.md",
+      "observedModified": "2026-09-17T21:39:02Z",
+      "role": "older Resident provenance only; GitHub current state wins"
+    }
+  ],
+  "publicRoutes": {
+    "currentResidentOwner": "https://kayfabizarro.pages.dev/resident-atlas-s6/?resident=clown",
+    "failedC0Evidence": "https://kayfabizarro.pages.dev/kfb-hub/stage/minigames/baukasten-c0/",
+    "nextCandidateTarget": "https://kayfabizarro.pages.dev/kfb-hub/stage/resident-clown-activity-r0/",
+    "nextCandidateDeploymentStatus": "NOT_DEPLOYED"
+  },
+  "screenshotEvidence": {
+    "existingC0Branch": "skills/chat/workflows/KFB_MODULAR_MINIGAME_HUB_2026-09-19/C0_CATALOG_2026-09-19/screenshots/03-resident-desktop.png",
+    "georgChatReview20260919": "Human review screenshot supplied in chat; observations are transcribed in the postmortem. Binary chat attachment is not promoted as GitHub source truth."
+  },
+  "mutationScope": "documentation/recovery only; no Resident runtime files changed"
+}
