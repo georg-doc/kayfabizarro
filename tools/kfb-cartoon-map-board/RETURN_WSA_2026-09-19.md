@@ -17,6 +17,14 @@ Recovered before handoff from:
 - latest Map Board implementation commit `43dc6f45748aa62cec3bb3515aee868e1d0dc529`
 - `georg-doc/KFB-Stunt-Car-Race@3d21812903b6d1c015252cddf386328d4cec4fb2`
 
+## GITHUB CHECK-IN
+
+- repository: `georg-doc/kayfabizarro`
+- branch: `handoff/cartoon-map-board-wsa-2026-09-19`
+- draft PR: `https://github.com/georg-doc/kayfabizarro/pull/93`
+- Race / WSA review issue: `https://github.com/georg-doc/KFB-Stunt-Car-Race/issues/15`
+- review head before this routing-note update: `e47f8494f545160c979806f5ef6d6b7fcc496584`
+
 ## HANDOFF PACKAGE
 
 Primary review document:
