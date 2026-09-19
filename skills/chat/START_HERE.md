@@ -168,3 +168,30 @@ Race S-T01b was intentionally built as an **integration-first** candidate: wider
 Implementation SSOT remains `georg-doc/KFB-Stunt-Car-Race`, Draft PR #29 / branch `wsa/track-ribbon-st01b-2026-09-19`. The candidate is now **FROZEN FAILED CANDIDATE** after two repaired browser-gate failures. Final static/ownership checks are green; the last real-browser run reached 24 checks with 0 page errors and 0 HTTP errors, then timed out on LOW_GRAVITY landing observability.
 
 Do not publish S-T01b to Stage or resume the full candidate. Exact recovery lives at `ChatGPT_web/track-lab/ST01B_RETURN_2026-09-19.md` and `ChatGPT_web/track-lab/st01b/failure-recovery/` in the Race repository. Exactly one next gate: deterministic fixed-step LOW_GRAVITY jump/landing seam. S-T01 remains separate prior evidence.
+
+
+### Correction · Track Ribbon terrain donor
+
+The S-T01b failure-recovery note above is superseded on one crucial point: its terrain donor was wrong.
+
+Do **not** route future Track/Terrain work through Travel-v16 Voxel.
+
+Current Travel implementation SSOT:
+`georg-doc/KFB-Travel-Globe@8614282aab2ced43bb5dda9fcf7abadf9768100a`
+
+Current macro-world rule:
+**Travel/TinySkies remains the world.** BlockBits/Voxel is local/selective tooling, never the replacement world aesthetic.
+
+Current surface owners:
+- `travel/globe-v13/globe.js`
+- `travel/globe-v13/terrain-surface.js`
+- `travel/globe-v13/simplex-noise.js`
+- `travel/globe-v13/boden-lesung.js`
+
+Gold-standard upstream:
+`dannylimanseta/tinyskies@2659a5cc987d7e4a4c5aa7e79c86a1626ad75df6`.
+
+Race PR #29 is now **REJECTED FOUNDATION · WRONG TERRAIN DONOR**. The LOW_GRAVITY timeout is secondary evidence, not the next product gate.
+
+Next gate:
+source-isolated current Travel Globe/TinySkies surface proof, then the smallest Track-to-spherical-surface deformation seam through the existing Travel terrain truth.
