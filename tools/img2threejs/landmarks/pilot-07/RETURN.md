@@ -1,7 +1,10 @@
 # RETURN · TinySkies × OSM × Landmark Cohesion v1 · 2026-09-19
 
 **Owner:** `tools/img2threejs/`  
+**Repo:** `georg-doc/kayfabizarro`  
 **Branch:** `img2threejs/tinyskies-osm-cohesion-v1-2026-09-19`  
+**PR:** `#109` · DRAFT / OPEN · no auto-merge  
+**Head before final metadata update:** `4af12b484ed9ee85a7e4e033d3f26f2966a948e6`  
 **Outcome:** source-backed world/object cohesion contract  
 **Stage:** reserved but **NOT DEPLOYED / NOT VERIFIED**
 
