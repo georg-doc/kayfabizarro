@@ -562,6 +562,37 @@ Evidence:
 
 Next: reload the EyeRig page, select Clown or another previously failing model, then continue the Medium review or switch to Large/Monstrosity.
 
+
+## 2026-09-20 · KCL-M1 · local browser 39/39 PASS
+
+### TECHNICAL RESULT
+The exact KCL-M1 Stage mirror was booted locally over HTTP in GitHub Actions against the pinned real ActionFigure / Rig_Medium and MovementBasic GLBs.
+
+Run `35468444150`, local-proof job `105964939873`:
+- **39/39 PASS**;
+- 5/5 scoped clips loaded and measured;
+- real left/right foot contacts resolved;
+- WebGL canvas present;
+- naive and phase-sync A/B transition executed;
+- ownership/source-pin checks PASS;
+- 0 failed resources;
+- 0 page/console errors;
+- artifact `10591764219`;
+- digest `sha256:55b8cc47723a64fc9c633ad46e2008a446d666ba724d02fed6242c17354de75e`.
+
+Repair Pass 1 changed only proof-harness source metadata access; KCL motion/measurement logic did not change.
+
+### MEASURED CANDIDATES
+Automatic reference-speed candidates:
+`Walking_C .447 · Walking_A .611 · Walking_B .751 · Running_A 2.480`.
+
+`Running_B .284` is **AUTO_METRIC_AMBIGUOUS_HOLD**, not a semantic “slow run”: automatic contact spans are fragmented and compensated slip is highest.
+
+### PUBLIC / HUMAN
+The pages.dev KCL route remains **NOT PUBLIC_VERIFIED** because Cloudflare publication is failing repo-wide. The local browser PASS is technical evidence only.
+
+Exactly one next gate: restore one successful current Cloudflare deployment, rerun the unchanged KCL public proof, then Georg compares NAIVE vs PHASE SYNC visually before any consumer integration.
+
 ## 2026-09-19 · KayKit Creator Lessons · additive Game Dev Studio research
 
 ### USER DIRECTION
