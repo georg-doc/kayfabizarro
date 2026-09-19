@@ -22,10 +22,10 @@
   "candidateAction": "EXPLICIT_ONLY_RESETTABLE_NOT_APPROVED",
   "nextGate": "GEORG_QA_4VIEW_DEFAULT_CALIBRATION",
   "proofRequest": "RIG_MEDIUM_DEFAULT_CALIBRATION_PUBLIC_PROOF",
-  "returnHead": "5e203568884b3f0d564a3d6fbc09be1122303ac3",
-  "mainRouterHead": "a92e3c70029d811b76a88a15459adc20fea943bb",
-  "hubCard": "SYNCED_TO_CORRECTED_2_3_HUMAN_GATE",
-  "publicVerification": "OPEN_AFTER_THIS_PUBLICATION",
+  "returnHead": "08c088cc06ffdc7190d6fd6ba55df54f457567d0",
+  "mainRouterHead": "c84c3c57aa875e1ac1cd8cc17eb966cb37c0f317",
+  "hubCard": "SYNCED_TO_RIG_MEDIUM_4VIEW_QA_GATE",
+  "publicVerification": "OPEN_CURRENT_TOOLS_CANNOT_OPEN_PAGES_DEV",
   "eyeDefaults": {
     "bootFallbackRing": 0.2,
     "runtimeRingRule": "sourceMeasured.dx * 0.32 / 0.49",
@@ -39,5 +39,8 @@
     "three-right",
     "side-right"
   ],
-  "qaArtifact": "gothgirl-qa-front-3q-side.png"
+  "qaArtifact": "gothgirl-qa-front-3q-side.png",
+  "calibrationCheckpoint": "6f7d7988849cf0c74a6551a33ee422d8584c87c2",
+  "evidenceCheckpoint": "ef7a8f203762f670e00ccdd27b540703d855807d",
+  "stageRuntimeHead": "786568b1e4434f458379c3aa5f8a83f3fd82a8d9"
 }

@@ -196,3 +196,33 @@ Build a source-only 12-component isolation/highlight diagnostic and identify the
 
 ### NEXT GATE
 Georg reviews the corrected runtime-generated 2+3 measured baseline on the fixed Stage. No batch expansion, merge or Live promotion before that one visual gate.
+
+
+## 2026-09-19 · Checkpoint 9 · RIG_MEDIUM CALIBRATION + 4-VIEW QA
+
+### USER VISUAL GATE
+The supplied GothGirl 3/4 screenshot rejects the previous default: eye spheres too large/protruding, pupils too large, lids yellow rather than skin-derived.
+
+### IMPLEMENTATION
+- added local `rig-medium-default.v0.json` based on the pinned tuned GothGirl JSON;
+- mapped old tuned `ring/dx = .32/.49` proportion into current FaceHost measured spacing instead of copying incompatible raw ring units;
+- boot fallback ring reduced `.30 → .20`;
+- pupil default reduced `.50 → .34`;
+- lid base color set from GothGirl face `#e6cbc3`; existing EyeRig v6 darkening remains the renderer owner;
+- added legacy untouched-default migration;
+- added 4-view QA contact-sheet capture.
+
+### TESTED RESULT
+- implementation head `6f7d7988849cf0c74a6551a33ee422d8584c87c2`;
+- QA/test head `ef7a8f203762f670e00ccdd27b540703d855807d`;
+- focused checks **17/17 PASS**;
+- full persisted static suite **37/37 PASS**;
+- changed-JS syntax parse **2/2 PASS**.
+
+### PUBLICATION
+- Stage mirror `786568b1e4434f458379c3aa5f8a83f3fd82a8d9`;
+- GitHub readback PASS;
+- public browser proof OPEN because connector writes did not trigger Actions and this environment cannot access pages.dev.
+
+### NEXT GATE
+Georg captures the fixed four-view sheet and accepts or rejects the new default before any batch expansion.

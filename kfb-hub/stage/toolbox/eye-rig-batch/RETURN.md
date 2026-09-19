@@ -289,3 +289,47 @@ The current tool environment cannot access `pages.dev`, and connector writes did
 Open the corrected Stage, press **Use source-measured baseline** (now calculated from components 2+3), and compare Source / Cleaned / EyeRig in Front / 3/4 / Side plus motion.
 
 Approve or reject that single GothGirl candidate before any Medium batch expansion. No Large/Legacy work, merge or Live promotion before this gate.
+
+
+## CURRENT RETURN · RIG_MEDIUM EYE SCALE / PUPIL / LID QA
+
+### SOURCE
+- branch implementation: `6f7d7988849cf0c74a6551a33ee422d8584c87c2`;
+- test/evidence: `ef7a8f203762f670e00ccdd27b540703d855807d`;
+- PR #104 remains Draft/Open/Unmerged;
+- tuned GothGirl JSON donor blob: `e87e6337a6db67096a9577335f36d60672aa389e`.
+
+### IMPLEMENTATION
+- Rig_Medium eye size no longer boots at the oversized `ring=0.30`;
+- boot fallback is `0.20`, then runtime ring is derived from current measured source-eye spacing using the tuned GothGirl ratio `0.32/0.49`;
+- pupil default is now **0.34** from the actor-specific GothGirl JSON instead of the previous Batch `0.50`;
+- eyelid base is the actor face color `#e6cbc3`, passed through EyeRig v6's existing darker-lid function;
+- stale untouched local profiles with exact old `ring=.30 / pupil=.50` migrate to the new candidate; manually adjusted profiles are not silently overwritten;
+- source-eye cleanup remains 2+3;
+- **QA 4-view** captures Front / ¾ L / ¾ R / Side R into one contact sheet.
+
+### TESTED RESULT
+- focused calibration checks: **17/17 PASS**;
+- persisted full static suite: **37/37 PASS**;
+- changed-JS syntax parse: **2/2 PASS**;
+- source branch readback: **PASS**;
+- Stage mirror readback: **PASS**.
+
+### PUBLIC DEPLOYMENT
+- Stage publication head: `786568b1e4434f458379c3aa5f8a83f3fd82a8d9`;
+- direct route: `https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/eye-rig-batch/`;
+- corrected new browser proof: **OPEN** — no Actions run was triggered and the current web tool cannot access `pages.dev`.
+
+### GEORG ACCEPTANCE
+OPEN.
+
+### ONE NEXT GATE
+Open the fixed Stage with a normal browser, leave Neutral + Bind/T for the first comparison, and click **QA 4-view**.
+
+Judge only:
+1. eye size;
+2. pupil size;
+3. darker skin-derived lids;
+4. ¾ / Side attachment.
+
+If one family still fails, adjust only that family and capture the same four views again. No Medium batch expansion, Large/Legacy, merge or Live promotion before this GothGirl four-view gate.

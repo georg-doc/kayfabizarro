@@ -257,3 +257,77 @@ Direct routes:
 The connector push did not create a new GitHub Actions run, and the current web environment cannot open `pages.dev`. Therefore the corrected build is **PUBLISHED / READBACK PASS / PUBLIC_VERIFIED OPEN**.
 
 No claim is made that the corrected measured 2+3 EyeRig placement is visually accepted yet.
+
+
+## 2026-09-19 · RIG_MEDIUM DEFAULT CALIBRATION · SCREENSHOT QA PREP
+
+Implementation checkpoint: `6f7d7988849cf0c74a6551a33ee422d8584c87c2`  
+QA/test checkpoint: `ef7a8f203762f670e00ccdd27b540703d855807d`  
+Stage publication head: `786568b1e4434f458379c3aa5f8a83f3fd82a8d9`
+
+### User visual finding
+
+The supplied 3/4 screenshot establishes the rejected baseline:
+
+- eyeballs are much too large / protruding;
+- pupils are too large;
+- lid shells read yellow rather than as part of the face.
+
+### Calibration source
+
+The existing tuned GothGirl JSON is pinned at blob `e87e6337a6db67096a9577335f36d60672aa389e`.
+
+Relevant actor values:
+
+- eye `dx=0.49`;
+- eye `ring=0.32`;
+- `pupilSize=0.34`;
+- face color `#e6cbc3`;
+- lid policy `base-darkened`.
+
+Because the old GothGirl JSON and current FaceHost use different normalized spaces, `ring=0.32` is not copied directly. The current Rig_Medium candidate preserves the tuned visual proportion:
+
+`ring / dx = 0.32 / 0.49 = 0.653061224`
+
+and maps it to the current measured source-eye spacing:
+
+`ring = sourceMeasured.dx × 0.653061224`.
+
+The file seed uses `ring=0.20` only as a pre-measurement boot fallback. Pupil default is `0.34`.
+
+### Lid color
+
+The adapter now passes the actor's face base color into the existing EyeRig v6 `_lidColor()` path. For GothGirl the base is `#e6cbc3`; EyeRig performs the existing darkening operation. The previous yellow fallback is no longer the current actor default.
+
+### Tests
+
+Focused calibration checks: **17/17 PASS**.
+
+Persisted repository static suite after QA additions: **37/37 PASS**.
+
+Changed-JS syntax parse:
+- `app.js`: PASS;
+- `lib/kaykit-eye-adapter.v1.js`: PASS.
+
+This syntax parse strips import/export statements before parsing; it is not relabeled as a Node module execution.
+
+### QA loop
+
+The workbench now provides **QA 4-view**, producing one `gothgirl-qa-front-3q-side.png` contact sheet with:
+
+1. Front;
+2. ¾ L;
+3. ¾ R;
+4. Side R.
+
+QA questions are fixed in `docs/QA_EYE_CALIBRATION_LOOP_2026-09-19.md`: eye scale, pupil scale, lid/skin relationship, attachment/silhouette.
+
+### Public status
+
+The Stage mirror is persisted and read back at `786568b1e4434f458379c3aa5f8a83f3fd82a8d9`.
+
+GitHub Actions did not start from the connector write, and the current web tool cannot open `kayfabizarro.pages.dev`. Therefore:
+
+`PUBLISHED · GITHUB_READBACK_PASS · PUBLIC_VERIFIED_OPEN · GEORG_ACCEPTANCE_OPEN`.
+
+No new screenshot artifact is claimed until the fixed Stage is actually opened.
