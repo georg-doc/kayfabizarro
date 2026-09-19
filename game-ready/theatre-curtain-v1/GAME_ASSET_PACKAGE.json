@@ -1,0 +1,80 @@
+{
+  "schema": "kfb.game-asset-package/0.1",
+  "id": "theatre-curtain-v1",
+  "type": "transition-module",
+  "owner": "KFB Game Dev Studio",
+  "status": "IMPLEMENTATION_CANDIDATE_HUMAN_GATE_OPEN",
+  "source": {
+    "kfbBaseCommit": "9b3c57ec09af8a9601a7221a84ee9a6de1e287f5",
+    "threeJs": {
+      "commit": "7300402f96c23bfa2174ffc0da01fb4e277d33da",
+      "version": "0.186.0",
+      "examplePath": "examples/webgpu_compute_cloth.html",
+      "exampleBlob": "0b3c18d87ac0d2428e6a558b6d09889e425dd537"
+    }
+  },
+  "textures": {
+    "velour_velvet": {
+      "diffuse": "a2c55b663ef148acc277f2bd165a00ce23348efa",
+      "normal": "980f2e9368be2334d3c0c4fe8b1054c84cae420e",
+      "roughness": "19cda555952923613d27e60c562525ecaec612e7",
+      "ao": "f3d83d495de8ecb5032562aef48c74ade73f3af0"
+    },
+    "rough_linen": {
+      "diffuse": "1086910338bdd692fbb1537db0b5227853f4fc6c",
+      "normal": "fdcd90b00a4099b5f638b69ad94161b57365a2d3",
+      "roughness": "0c8446c68d1746674efac4cf47900f1b85685b89",
+      "ao": "679d87c61bcd5bc892f05e55c8b7f3a72c2d2f24"
+    },
+    "hessian_230": {
+      "diffuse": "a60907a6601cc4ca06bb44308103dccc16067861",
+      "normal": "04fa59958abd73e941dfc9a8e489e9c1a87ce36b",
+      "roughness": "ad6309e943e31f36482dc008c2d208da66ce0f0c",
+      "ao": "d8359035f45e15a5cd1f4383fcbd5c61b12ab366"
+    },
+    "crepe_satin": {
+      "diffuse": "670448e5c0d547d69043794c149f75f3f2c32612",
+      "normal": "d86c1200c990c6eb5568fc99bf0571f4778b39ea",
+      "roughness": "f37576f61b50ecbf0524232d7d27ad7d748e233c",
+      "ao": "e72e1f3a7f970511cf7eb9226f9d094ca6d1e480"
+    }
+  },
+  "runtime": {
+    "file": "runtime/kfb-theatre-curtain.mjs",
+    "backend": "CPU_VERLET_WEBGL_FALLBACK",
+    "panels": 2,
+    "states": [
+      "closed-rest",
+      "closed-wind",
+      "opening",
+      "open-rest",
+      "closing",
+      "impact",
+      "reset"
+    ],
+    "api": [
+      "mount",
+      "update",
+      "setState",
+      "impulse",
+      "reset",
+      "dispose"
+    ],
+    "openingPolicy": "MOVE_SUPPORTED_TOP_TARGETS_AND_GATHER_CLOTH"
+  },
+  "protectedBoundaries": [
+    "NO_BIRTHDAY_RUNTIME_REACTIVATION",
+    "NO_SECOND_GAMEPLAY_PHYSICS_OWNER",
+    "NO_CONSUMER_INTEGRATION_BEFORE_HUMAN_GATE",
+    "NO_FAKE_AGING_DECALS_BEFORE_FABRIC_GATE"
+  ],
+  "deferred": [
+    "WEBGPU_COMPUTE_CURTAIN_BACKEND",
+    "AGING_DECALS_AND_HOLES",
+    "CARD_BREACH_RIPPLE_DISSOLVE",
+    "LOWER_THIRD_TIEBACK_AND_SWAG_PRESETS",
+    "SHADER_POOL_RESEARCH"
+  ],
+  "stageUrl": "https://kayfabizarro.pages.dev/kfb-hub/stage/game-dev-studio/theatre-curtain-v1/",
+  "humanAcceptance": "PENDING"
+}
