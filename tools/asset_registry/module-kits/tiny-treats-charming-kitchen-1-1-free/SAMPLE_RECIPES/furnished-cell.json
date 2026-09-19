@@ -1,0 +1,73 @@
+{
+  "schema": "kfb.module-kit.sample-recipe/1",
+  "id": "furnished-cell",
+  "label": "Furnished kitchen cell",
+  "layout": "furnished-cell",
+  "note": "One shared-scale sample cell using exact source assets. Layout is a catalog proof, not a walkability/collision acceptance.",
+  "items": [
+    {
+      "assetId": "media/3D_Assets/Tiny_Treats_Charming_Kitchen_1.1_FREE/Assets/gltf/floor_tiles_kitchen.gltf",
+      "anchor": "floor"
+    },
+    {
+      "assetId": "media/3D_Assets/Tiny_Treats_Charming_Kitchen_1.1_FREE/Assets/gltf/wall_modular_tiles_kitchen_straight_A.gltf",
+      "edge": "north",
+      "u": 0.28
+    },
+    {
+      "assetId": "media/3D_Assets/Tiny_Treats_Charming_Kitchen_1.1_FREE/Assets/gltf/wall_modular_tiles_kitchen_window_small_A.gltf",
+      "edge": "north",
+      "u": 0.72
+    },
+    {
+      "assetId": "media/3D_Assets/Tiny_Treats_Charming_Kitchen_1.1_FREE/Assets/gltf/wall_modular_tiles_kitchen_doorway.gltf",
+      "edge": "west",
+      "u": 0.5,
+      "rotationYDeg": 90
+    },
+    {
+      "assetId": "media/3D_Assets/Tiny_Treats_Charming_Kitchen_1.1_FREE/Assets/gltf/fridge.gltf",
+      "uv": [
+        0.18,
+        0.22
+      ],
+      "rotationYDeg": 90
+    },
+    {
+      "assetId": "media/3D_Assets/Tiny_Treats_Charming_Kitchen_1.1_FREE/Assets/gltf/stove.gltf",
+      "uv": [
+        0.32,
+        0.8
+      ]
+    },
+    {
+      "assetId": "media/3D_Assets/Tiny_Treats_Charming_Kitchen_1.1_FREE/Assets/gltf/table_A.gltf",
+      "uv": [
+        0.62,
+        0.45
+      ]
+    },
+    {
+      "assetId": "media/3D_Assets/Tiny_Treats_Charming_Kitchen_1.1_FREE/Assets/gltf/chair.gltf",
+      "uv": [
+        0.62,
+        0.28
+      ],
+      "rotationYDeg": 180
+    },
+    {
+      "assetId": "media/3D_Assets/Tiny_Treats_Charming_Kitchen_1.1_FREE/Assets/gltf/kettle.gltf",
+      "uv": [
+        0.43,
+        0.78
+      ]
+    },
+    {
+      "assetId": "media/3D_Assets/Tiny_Treats_Charming_Kitchen_1.1_FREE/Assets/gltf/mug_blue.gltf",
+      "uv": [
+        0.58,
+        0.46
+      ]
+    }
+  ]
+}
