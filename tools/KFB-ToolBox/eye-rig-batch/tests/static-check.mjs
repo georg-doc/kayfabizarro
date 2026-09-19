@@ -1,0 +1,23 @@
+import fs from 'node:fs'; import path from 'node:path';
+const root=path.resolve(process.argv[2]||'.');
+const files=['index.html','styles.css','app.js','lib/kaykit-eye-adapter.v1.js','lib/source-face-cleanup.v1.js','data/gothgirl.seed.json','docs/SOURCE_AUDIT.md'];
+let pass=0, fail=0; const results=[];
+function check(name,ok,detail=''){(ok?pass++:fail++);results.push({name,status:ok?'PASS':'FAIL',detail});}
+for(const f of files)check(`file:${f}`,fs.existsSync(path.join(root,f)),fs.existsSync(path.join(root,f))?'present':'missing');
+const app=fs.readFileSync(path.join(root,'app.js'),'utf8'); const html=fs.readFileSync(path.join(root,'index.html'),'utf8'); const cleanup=fs.readFileSync(path.join(root,'lib/source-face-cleanup.v1.js'),'utf8'); const adapter=fs.readFileSync(path.join(root,'lib/kaykit-eye-adapter.v1.js'),'utf8');
+check('one-localStorage-namespace',app.includes("kfb.toolbox.eye-rig-batch.v0"));
+check('never-localStorage-clear',!app.includes('localStorage.clear'));
+check('pinned-source-revision',(app.match(/5650b6c54d8789b20ea80abe857688173d506d3b/g)||[]).length>=1);
+check('eye-update-render-loop',/state\.eyes\?\.update\(dt,camera\)/.test(app));
+check('single-animation-mixer',(app.match(/new THREE\.AnimationMixer/g)||[]).length===1,`${(app.match(/new THREE\.AnimationMixer/g)||[]).length} constructors`);
+check('cleanup-fail-closed',cleanup.includes("status: 'HUMAN_REQUIRED'")&&cleanup.includes('expectedConnectedComponents = 12'));
+check('cleanup-reuses-donor',cleanup.includes('faceShells, buildStripped'));
+check('no-source-GLB-write',!app.includes('GLTFExporter')&&!cleanup.includes('GLTFExporter'));
+check('lashes-off',adapter.includes("length: 0")&&adapter.includes("density: 0"));
+check('neutral-settle-before-ready',adapter.includes("applyExpression('neutral')")&&adapter.includes('for (let i = 0; i < 16; i++) rig.update(1 / 60)'));
+check('six-expression-buttons',['neutral','happy','angry','sad','surprised','thinking'].every((x)=>html.includes(`data-expression="${x}"`)));
+check('standard-camera-views',['front','three-left','three-right','side-left','side-right','face'].every((x)=>html.includes(`data-view="${x}"`)));
+check('motion-regression-buttons',['Idle_A','Walking_A','Running_A','Jump_Full_Short'].every((x)=>html.includes(`data-motion="${x}"`)));
+check('profile-import-preview',html.includes('importPreview')&&app.includes('Nothing has been applied yet'));
+check('no-global-schema-promotion',!app.includes('kfb.eye-profile/1'));
+console.log(JSON.stringify({pass,fail,total:pass+fail,results},null,2)); if(fail)process.exit(1);
