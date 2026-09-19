@@ -1,0 +1,30 @@
+{
+  "schema": "kfb.module-kit.preview-manifest/1",
+  "packId": "tiny-treats-charming-kitchen-1-1-free",
+  "stageTarget": "https://kayfabizarro.pages.dev/kfb-hub/stage/c0-a1-charming-kitchen/",
+  "librarianTarget": "https://kayfabizarro.pages.dev/asset-librarian/?pack=tiny-treats-charming-kitchen-1-1-free&moduleKit=1",
+  "sourceIsolationFirst": true,
+  "samples": [
+    {
+      "id": "wall-grammar",
+      "label": "Wall grammar · source modules",
+      "path": "../module-kits/tiny-treats-charming-kitchen-1-1-free/SAMPLE_RECIPES/wall-grammar.json"
+    },
+    {
+      "id": "worktop-run",
+      "label": "Worktop run · straight / sink / corner",
+      "path": "../module-kits/tiny-treats-charming-kitchen-1-1-free/SAMPLE_RECIPES/worktop-run.json"
+    },
+    {
+      "id": "furnished-cell",
+      "label": "Furnished kitchen cell",
+      "path": "../module-kits/tiny-treats-charming-kitchen-1-1-free/SAMPLE_RECIPES/furnished-cell.json"
+    }
+  ],
+  "requiredViews": [
+    "shared-scale orbit",
+    "sample build",
+    "individual source detail via Librarian"
+  ],
+  "acceptance": "GEORG_OPEN"
+}
