@@ -34,8 +34,13 @@ export function clubState(t, clubIndex, timing) {
   const phase = mod(beat - clubIndex, timing.cycleBeats);
   const secondHalf = phase >= timing.count;
   const within = secondHalf ? phase - timing.count : phase;
-  const from = secondHalf ? 'r' : 'l';
-  const to = secondHalf ? 'l' : 'r';
+  /* Cascade parity matters: club 0 launches L→R at beat 0, club 1 launches R→L
+     at beat 1, club 2 launches L→R at beat 2. Three beats later each club swaps.
+     Without club-index parity the loop degenerates into L,L,L,R,R,R throws. */
+  const firstFrom = clubIndex % 2 === 0 ? 'l' : 'r';
+  const firstTo = firstFrom === 'l' ? 'r' : 'l';
+  const from = secondHalf ? firstTo : firstFrom;
+  const to = secondHalf ? firstFrom : firstTo;
 
   if (within < timing.flightBeats) {
     const u = within / timing.flightBeats;
