@@ -1,6 +1,6 @@
 {
   "schema": "kfb.public-app-manifest/0.1",
-  "build": "BOX1-20260918",
+  "build": "BOX1-ROADTRIP-V2-STAGE-20260919",
   "sourceCommit": "1d88a887fc6ff4a1fc907afe5dbdef154181b221",
   "filePolicy": "26 public app/evidence files + deployment manifests; tests/private project context excluded",
   "preservedHostBlob": "84d71552ebe17b7332b18305bb111136ec746577",
@@ -22,11 +22,15 @@
   "host/RACE_FLOW_RUNTIME_CONFIG.json": "5ff463f32a7a138bff7e83adb583ed5272511d0f2cbe544f297b3f5150e658a3",
   "host/RACE_FEEL_V08_CONFIG.json": "2d82083c747d323e7f1d6417b8456bf3f500ef4ef2a1f101548f47c053c2b968",
   "host/race-track-adapter.mjs": "eea7171b63fb763dbf86c10a477f3f1829c8781d2bb84cfc7ac13706af544cd3",
-  "box-stop/session.mjs": "5800d9e9d90733bb3faf64e7087461c1d5cfa3edeb784a9ee7626c2e7dcd22a7",
+  "box-stop/session.mjs": "1bcac78c6dc0e94c8dc8499f90e1042c2df81bca472607fbf8992159d16b2fcb",
   "box-stop/host-glue.mjs": "ea69120da064b11d21dc81e844f1de88dedd50535b88467f1bac97dc693d34d7",
   "box-stop/vehicles.mjs": "22b8c9993f1a95c0a3224746211f3095f4f3c633f6d7a8646fb6985eb5dc4593",
   "box-stop/box-stop.css": "03c9e8c394a19cecf1ccdc0a0fd8c1196b680114a09f889adeb75006afe5c7ec",
   "box-stop/sources.mjs": "902b52396e2167d3b42eb69f50732c0b685d8cab0d0b9c441c90436007d86a9f",
   "box-stop/presentation.mjs": "441861520dade502ef19cc586c56da7ffcf8c760ea2b7ccd3303756ea03e10d7",
-  "box-stop/radio.mjs": "2de9622f9f5846c62399f4c32effc2178d88c134e9db94da2e4440a63efbc7e6"
+  "box-stop/radio.mjs": "4e25fecf6091875aabee02ea05eff7330f3f60232809c9715590061773718e5c",
+  "stagePatchSourceCommit": "1de02739c17291b6eb8e556bfb0c2b5801f9dcff",
+  "roadTripV2Stage": true,
+  "stageQuery": "audio=roadtrip-v2",
+  "humanAudioAcceptance": "PENDING"
 }
