@@ -10,12 +10,36 @@
     "green": "#5f8f5b",
     "greenDark": "#3e6944",
     "water": "#4c8ca6",
-    "buildingWarm": ["#d7775f","#e1a36f","#c66f70"],
-    "buildingPale": ["#dccfb8","#c7d2c3","#d7c7ad"],
-    "buildingIndustrial": ["#6f7180","#81705f","#596b70"],
-    "roof": ["#5c4650","#6a5f5b","#4a5360"],
-    "accent": ["#d6a936","#72a6a1","#b85f76"],
-    "window": ["#31414a","#61767a","#d2aa4a"],
+    "buildingWarm": [
+      "#d7775f",
+      "#e1a36f",
+      "#c66f70"
+    ],
+    "buildingPale": [
+      "#dccfb8",
+      "#c7d2c3",
+      "#d7c7ad"
+    ],
+    "buildingIndustrial": [
+      "#6f7180",
+      "#81705f",
+      "#596b70"
+    ],
+    "roof": [
+      "#5c4650",
+      "#6a5f5b",
+      "#4a5360"
+    ],
+    "accent": [
+      "#d6a936",
+      "#72a6a1",
+      "#b85f76"
+    ],
+    "window": [
+      "#31414a",
+      "#61767a",
+      "#d2aa4a"
+    ],
     "streetSign": {
       "board": "#255a72",
       "text": "#f7efe0",
@@ -90,5 +114,48 @@
     "separateRoofCaps": false,
     "physicsGeometryRemainsUndeformed": true,
     "cityLabOwnsNoMovementEngine": true
+  },
+  "corridorPresentation": {
+    "schema": "kfb.osm-city.corridor-presentation-config.v0",
+    "forest": {
+      "maxTrees": 420,
+      "minGreenAreaM2": 120,
+      "roadClearanceM": 3.8,
+      "buildingClearanceM": 2.2,
+      "treeSpacingM": 4.5,
+      "treeScaleMin": 0.82,
+      "treeScaleMax": 1.5,
+      "assetSource": {
+        "repository": "georg-doc/kayfabizarro",
+        "commit": "28f0355eae9b3f231a62da2f102a99817cd4bced",
+        "paths": [
+          "media/3D_Assets/KayKit_Forest_Nature_Pack_1.0_FREE/Assets/gltf/Tree_1_A_Color1.gltf",
+          "media/3D_Assets/KayKit_Forest_Nature_Pack_1.0_FREE/Assets/gltf/Tree_2_A_Color1.gltf",
+          "media/3D_Assets/KayKit_Forest_Nature_Pack_1.0_FREE/Assets/gltf/Tree_3_A_Color1.gltf",
+          "media/3D_Assets/KayKit_Forest_Nature_Pack_1.0_FREE/Assets/gltf/Tree_4_A_Color1.gltf"
+        ]
+      }
+    },
+    "streetSigns": {
+      "maxSigns": 80,
+      "minRoadLengthM": 18,
+      "poleHeightM": 2.15,
+      "boardHeightM": 0.52,
+      "sideOffsetM": 1.25,
+      "minBuildingClearanceM": 0.28,
+      "carrierCandidate": {
+        "repository": "georg-doc/kayfabizarro",
+        "commit": "29aac1061bdd73736351cb856fa9f1e322478abc",
+        "path": "media/3D_Assets/kenney_city-kit-roads/Models/GLB format/road-sign-street.glb"
+      }
+    },
+    "landmarkSocket": "scene.landmarkPlacementSocket",
+    "rules": [
+      "presentation only; never a movement/contact/collision owner",
+      "all placements stay in the City local-metre frame",
+      "forest placements require mapped green landuse plus road/building clearance",
+      "street names come only from preserved OSM name tags",
+      "GitHub assets are referenced, not copied into a new registry"
+    ]
   }
 }
