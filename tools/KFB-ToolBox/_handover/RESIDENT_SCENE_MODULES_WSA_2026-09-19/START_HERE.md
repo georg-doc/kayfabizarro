@@ -33,10 +33,11 @@ Read in this order:
 1. this file;
 2. `SOURCE_STATE.json`;
 3. `RETURN.md`;
-4. `BACKLOG.md`;
-5. `tools/resident_atlas_s6/docs/ATLAS_RETURN.md`;
-6. `tools/resident_atlas/modules/README.md`;
-7. only then inspect implementation files.
+4. `TEST_REPORT.md`;
+5. `BACKLOG.md`;
+6. `tools/resident_atlas_s6/docs/ATLAS_RETURN.md`;
+7. `tools/resident_atlas/modules/README.md`;
+8. only then inspect implementation files.
 
 ## EXACT IMPLEMENTATION FILES
 
@@ -47,6 +48,7 @@ Resident/activity owner lane:
 - `tools/resident_atlas_s6/lib/juggle-math.js`
 - `tools/resident_atlas_s6/KFB_Resident_Atlas_S6.html`
 - `tools/resident_atlas_s6/tests/test-juggle-module.mjs`
+- `.github/workflows/resident-scene-modules-cloudflare-qa.yml` — canonical Cloudflare browser proof; not a runtime owner.
 
 Plug&Play seam:
 
