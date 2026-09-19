@@ -173,3 +173,18 @@ Zwei Feinheiten bleiben offen: „Requisiten aus" nimmt auch die Handwaffen mit 
 ## Nächste konkrete Scheibe
 
 Entweder (a) Kulisse für Goth Girl belegen und die Vignette auf Habitat-Vollständigkeit bringen, oder (b) den `kaykit-mystery-series6`-Shard auswerten und Caveman als dritten Resident bauen. Beides ist eine Sitzung, nicht ein Architekturdurchlauf.
+
+## S33 Return · Clown-Jonglage / Plug&Play Resident Module
+
+| Status | Ergebnis |
+|---|---|
+| DECISION | Resident-Aktivitäten dürfen als lokaler Präsentations-Loop auf einer bereits geprüften Recipe-Pose liegen; sie übernehmen keine Consumer-Physik. |
+| IMPLEMENTATION | Clown: `Idle_B` eingefroren, 3 echte KayKit-Keulen blau/grün/rot in einer phasenbasierten Cascade; Arme folgen gemessenen Handslot-Ankern per `reachChain()`. |
+| STATIC TESTED RESULT | Syntax/Recipe/Manifest PASS; alternierende Throw-Sequenz L/R/L/R/L/R; 0,832568 s Flug, 0,326497 s Beat, 1,958985 s Loop; periodischer Zustand und Integer-Halbdrehungs-Closure geprüft. |
+| MODULE SEAM | `tools/resident_atlas/modules/clown-juggling-island.module.json` + dünner S6-Mount-Adapter. Support/Collision bleibt beim Consumer. |
+| PLATFORMER HANDOFF | Empfehlung: normale consumer-owned 4×4-Grass-Plattform aus dem gemessenen Platformer-Kit; Resident-Root am top-center mounten; `update(dt)` pro Frame. Keine Platformer-Datei wurde verändert. |
+| PUBLIC DEPLOYMENT | Noch nicht als S33 bewiesen. |
+| GEORG ACCEPTANCE | OPEN für visuelle Höhe/Tempo/Handbewegung. |
+
+### Neuer OPEN-Punkt 31
+**4–6 Keulen sind nicht freigegeben.** Der alte Jonglier-Brief fordert vor der Erweiterung eine Flugbahn-/Abstandsrechnung. S33 implementiert deshalb absichtlich exakt drei Keulen und wirft bei `count !== 3` einen Fehler, statt eine ungeprüfte Variante sichtbar zu machen.
