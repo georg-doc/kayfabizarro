@@ -19,5 +19,6 @@ check('six-expression-buttons',['neutral','happy','angry','sad','surprised','thi
 check('standard-camera-views',['front','three-left','three-right','side-left','side-right','face'].every((x)=>html.includes(`data-view="${x}"`)));
 check('motion-regression-buttons',['Idle_A','Walking_A','Running_A','Jump_Full_Short'].every((x)=>html.includes(`data-motion="${x}"`)));
 check('profile-import-preview',html.includes('importPreview')&&app.includes('Nothing has been applied yet'));
+check('source-measured-explicit-candidate',html.includes('Use source-measured baseline')&&app.includes("$('#useMeasuredBtn')")&&app.includes("state.profile.status='AUTO_CANDIDATE'"));
 check('no-global-schema-promotion',!app.includes('kfb.eye-profile/1'));
 console.log(JSON.stringify({pass,fail,total:pass+fail,results},null,2)); if(fail)process.exit(1);
