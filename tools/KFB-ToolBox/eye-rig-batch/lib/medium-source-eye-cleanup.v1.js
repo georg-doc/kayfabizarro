@@ -98,12 +98,28 @@ export function prepareMediumActorCleanup({THREE,figure,actor,log=()=>{}}={}){
     on=!!on;
     if(on===active) return active;
     if(on){
-      stripState=stripDonorEyes({THREE,headRoot:mesh,log});
+      const g=mesh.geometry;
+      const hadGroups=Array.isArray(g.groups)&&g.groups.length>0;
+      if(!hadGroups) g.addGroup(0,g.index.count,0);
+      try{
+        stripState=stripDonorEyes({THREE,headRoot:mesh,log});
+      }catch(err){
+        if(!hadGroups) g.clearGroups();
+        throw err;
+      }
       if(stripState?.status!=='OK'){
+        if(!hadGroups) g.clearGroups();
         report.status='HUMAN_REQUIRED';
         report.reason='strip failed after detector pass';
         active=false;
         return false;
+      }
+      if(!hadGroups){
+        const donorRestore=stripState.restore;
+        stripState.restore=()=>{
+          donorRestore?.();
+          g.clearGroups();
+        };
       }
       active=true;
     }else{

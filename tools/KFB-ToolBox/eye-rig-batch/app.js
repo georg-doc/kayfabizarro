@@ -655,6 +655,13 @@ async function loadActor(actorId,{preserve=true}={}) {
     state.hostReady=eyes.faceHost.status==='OK'; state.eyeReady=!!eyes.eyeFrame();
     gate('#gateHost',state.hostReady?'pass':'fail');gate('#gateEye',state.eyeReady?'pass':'fail');
     figure.visible=true;
+    if(state.profile.reviewState==='UNSUPPORTED' && /^load failed:/.test(state.profile.technicalNote||'')){
+      state.profile.reviewState='UNREVIEWED';
+      state.profile.status='AUTO_CANDIDATE';
+      delete state.profile.technicalNote;
+      state.profiles[state.profile.actorId]=clone(state.profile);
+      log(`${actor.label} recovered from previous loader error · review state reset to Unreviewed`);
+    }
     bindUiFromProfile(); setView('front',window.__EYE_RIG_BATCH.camera,window.__EYE_RIG_BATCH.controls); poseBind();
     wireComponentDiagnostic(window.__EYE_RIG_BATCH.camera,window.__EYE_RIG_BATCH.controls);
     updateActorAudit(); renderRoster(); save();
