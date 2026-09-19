@@ -142,3 +142,38 @@ The package supplies actor + lectern + Staff relative composition, Rig/animation
 
 ### OPEN
 After the Ground human gate carries, run the existing Travel Atlas Pilot 01 across `VISIBLE_HEX | SEATED_HEX | NO_VISIBLE_HEX`; do not create a parallel pilot.
+
+
+## 2026-09-19 · GDS-06 · KayKit Creator Lessons living research
+
+### USER DIRECTION
+Analyze Kay Lousberg's own KayKit creator videos/how-tos, beginning with the detailed Godot character video, extract what KFB can apply even without Godot, and preserve the findings as an additive living document.
+
+### CREATED
+- `tools/game-dev-studio/research/KAYKIT_CREATOR_LESSONS_LIVING.md`
+- `tools/game-dev-studio/research/KAYKIT_CREATOR_LESSONS_SOURCE.json`
+- `tools/game-dev-studio/research/KAYKIT_CREATOR_LESSONS_TEST_REPORT.md`
+- `tools/game-dev-studio/research/KAYKIT_CREATOR_LESSONS_RETURN.md`
+
+### PRIMARY FINDINGS
+- KayKit character identity, rig family, animation library, materials/textures and attachments are separable concerns.
+- `Rig_Medium` and `Rig_Large` are explicit compatibility classes.
+- reusable attachments require socket/bone target plus calibrated local transform.
+- recolors/textures/separate pieces should be grouped under semantic asset families rather than counted as unrelated design assets.
+- animation state machines remain consumer logic; packages should expose clips/tags/timing facts.
+- retargeting needs staged rig-map → clip → library → visual/consumer evidence.
+- a neutral Rig Bench/mannequin is a useful pre-consumer validator.
+- current-vs-legacy KayKit generation must remain visible.
+- Platformer buttons/switches are exact visual/mechanical donors; KFB interaction motion is a separate owned layer.
+- Live Show / Mixed Bag demonstrates that eclectic props stay coherent through shared geometry/material grammar.
+
+### BOUNDARY
+No Asset Registry schema, runtime, binary, rig, animation or gameplay behavior was changed by this research pass. Proposed fields and benches remain proposals until their existing owners accept a bounded slice.
+
+### EVIDENCE
+Base main head: `a92e3c70029d811b76a88a15459adc20fea943bb`.
+
+Documentation checkpoints were fetched back after every write; detailed counts and limitations are in `KAYKIT_CREATOR_LESSONS_TEST_REPORT.md`.
+
+### NEXT RESEARCH GATE
+Deep-review KayKit Live Show Episodes 0–4 and append creator modeling grammar: primitives, proportions, bevels, origins/pivots, part splitting, material/atlas usage and variant decisions.
