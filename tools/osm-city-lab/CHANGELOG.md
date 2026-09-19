@@ -1,5 +1,38 @@
 # Changelog · additive
 
+## 2026-09-19 · corridor on main + canonical public Stunt World PASS
+
+### IMPLEMENTATION
+- PR #86 promoted the reconciled current-source corridor into City Lab `main` at `3813d24e3db04a43117676890e48f7b6baaf6cd9`.
+- Main consumer evidence refreshed at `25c2c616720e18d97028bf06fdd03d10c16b3504`; normalized and scene hashes stayed exact.
+- Stage mirror package `8607fb512726af81848b6545eda25ad451491f36` exposes the tested Race runtime under `/kfb-hub/stage/stunt-world/`.
+- Main proof commit `d78fa862262184aa0ed172ed42e10db6e3705c71` adds canonical public URL verification; no runtime bytes changed.
+
+### TESTED RESULT
+- Main corridor consumer `35415680112` / job `105823765381`: **PASS**.
+- S2 export contract `35415680163`: **PASS**.
+- Canonical Cloudflare Stunt World `35416057009` / job `105824845921`: **29/29 PASS**.
+- 9/9 public runtime bytes equal the tested Race revision.
+- Public WebGL boot: **2852 ms**.
+- Public Hürth join: **4/4** C0 contacts on mapped road.
+- Public short drive: **6.406 m**, same C0 run, no new recovery.
+- No console/page errors and no failed HTTP assets.
+- Artifact: `10575592864`.
+
+### PUBLIC DEPLOYMENT
+- `https://kayfabizarro.pages.dev/kfb-hub/stage/stunt-world/` → **PUBLIC STAGE BROWSER PASS**.
+- Race remains implementation SSOT; Free Roam C0 remains movement/contact/recovery owner.
+
+### OPEN
+- Georg longer/full-route Hürth → Ehrenfeld drive.
+- Physical mobile QA.
+- Travel Walk↔Drive / Drive↔Flight.
+- Landmark runtime.
+- Audio integration.
+- Live promotion beyond Stage.
+
+---
+
 ## 2026-09-19 · tested corridor stack reconciled onto current main base
 
 ### IMPLEMENTATION
