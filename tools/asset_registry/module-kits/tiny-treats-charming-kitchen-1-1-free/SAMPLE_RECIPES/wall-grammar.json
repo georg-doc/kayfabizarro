@@ -1,0 +1,34 @@
+{
+  "schema": "kfb.module-kit.sample-recipe/1",
+  "id": "wall-grammar",
+  "label": "Wall grammar · source modules",
+  "layout": "lineup-x",
+  "gap": 0.25,
+  "note": "Shared-scale source lineup. It proves identity/family grouping, not connector acceptance.",
+  "items": [
+    {
+      "assetId": "media/3D_Assets/Tiny_Treats_Charming_Kitchen_1.1_FREE/Assets/gltf/wall_modular_tiles_kitchen_straight_A.gltf",
+      "role": "straight"
+    },
+    {
+      "assetId": "media/3D_Assets/Tiny_Treats_Charming_Kitchen_1.1_FREE/Assets/gltf/wall_modular_tiles_kitchen_corner_inner_A.gltf",
+      "role": "corner-inner"
+    },
+    {
+      "assetId": "media/3D_Assets/Tiny_Treats_Charming_Kitchen_1.1_FREE/Assets/gltf/wall_modular_tiles_kitchen_doorway.gltf",
+      "role": "doorway"
+    },
+    {
+      "assetId": "media/3D_Assets/Tiny_Treats_Charming_Kitchen_1.1_FREE/Assets/gltf/wall_modular_tiles_kitchen_window_small_A.gltf",
+      "role": "window-wall"
+    },
+    {
+      "assetId": "media/3D_Assets/Tiny_Treats_Charming_Kitchen_1.1_FREE/Assets/gltf/window_small_modular.gltf",
+      "role": "window-insert"
+    },
+    {
+      "assetId": "media/3D_Assets/Tiny_Treats_Charming_Kitchen_1.1_FREE/Assets/gltf/door_modular.gltf",
+      "role": "door-insert"
+    }
+  ]
+}
