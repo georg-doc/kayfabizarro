@@ -918,3 +918,35 @@ Enthüllung als deklarative Keyframe-Spur (`lib/studio.js · makeReveal`), 4,8 s
 - Wandmontierte Teile (`shelf_large`, `shelf_small_candles`, Banner, Fackeln): Pivot-Höhe noch nicht vermessen → aktuell per Auge auf y = 2,4.
 - Höhenstufe zwischen oberem und unterem Block (Key-Art zeigt eine Stufe) fehlt.
 - Requisitendichte der Key-Art (Bücher, Flaschenreihen, Geschirr) noch nicht ausgereizt.
+
+## S33 · 2026-09-19 · Clown · 3-Keulen-Cascade + Resident Scene Module v1
+
+### GOAL
+Den bereits dokumentierten Jonglier-Auftrag als kleine, wiederverwendbare Resident-Aktivität umsetzen und den Clown als erstes Plug&Play-Szenenmodul für externe Consumer vorbereiten.
+
+### DECISION
+- Nur die im vorhandenen Brief als sicher bezeichnete **3-Keulen-Cascade** wird implementiert.
+- 4–6 Keulen bleiben OPEN, bis Flugbahnen/Abstände gerechnet sind.
+- Die Flugbahn bestimmt das Timing: Apex + Gravitation → Flugzeit → Beat. Kein frei getipptes BPM.
+- Die Basispose `Idle_B` wird eingefroren. Nur die Armketten werden aus gemessenen Handankern per bestehendem `reachChain()` nachgeführt.
+- Der Platformer bleibt Collision-/World-/Movement-Owner. Resident Module liefert Präsentation + `update(dt)`, keinen zweiten Solid/Controller.
+
+### IMPLEMENTATION
+- `lib/juggle-math.js`: reine, deterministische Cascade-Mathematik.
+- `lib/atlas.js`: `makeJuggleCascade()`; echte KayKit-Keulen blau/grün/rot, CCD-Handfolge, phasenfester Loop.
+- `data/cast.js`: Clown besitzt `juggle-cascade-v1`; Hammer liegt während der Nummer als echtes Pack-Prop auf dem Podest.
+- Viewer tickt Resident-Aktivitäten und akzeptiert `?resident=clown` als direkten Test-Link.
+- `tools/resident_atlas/modules/`: consumer-neutraler Manifest-/Mount-Vertrag. Empfohlener Platformer-Support: 4×4 Grass-Zellen, top-center; Collision bleibt beim Consumer.
+
+### STATIC TESTED RESULT
+V8/source sanity auf dem Branch:
+- `juggle-math.js`, `atlas.js`, `cast.js`, Module-Adapter, Testmodul und S6-HTML-Modul parsen;
+- Throw-Reihenfolge über sechs Beats: **L → R → L → R → L → R**;
+- Apex 0,85 bei g=9,81 → Flugzeit **0,832568 s**, Beat **0,326497 s**, geschlossener 6-Beat-Zyklus **1,958985 s**;
+- Zustand jeder Keule ist nach einem Zyklus identisch;
+- zwei ganze Halbdrehungen pro Flug schließen die Orientierung;
+- `count: 6` wird von v1 absichtlich abgewiesen;
+- Module-Manifest deklariert Consumer-Owned Collision und 4×4 Mindest-Support.
+
+### OPEN
+Browser-/Mobile-Visual-QA der Armwege, Fangmomente und Keulenabstände. Keine 4–6-Keulen-Freigabe in S33.
