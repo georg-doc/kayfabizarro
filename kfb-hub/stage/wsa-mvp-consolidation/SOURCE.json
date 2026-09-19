@@ -2,7 +2,7 @@
   "schema": "kfb.stage-source/1.0",
   "stageBuild": "KFB-WSA-MVP-CONSOLIDATION-20260920",
   "route": "https://kayfabizarro.pages.dev/kfb-hub/stage/wsa-mvp-consolidation/",
-  "status": "PUBLISHED_STAGE_AWAITING_PUBLIC_BROWSER_PROOF",
+  "status": "GITHUB_MIRRORED_CLOUDFLARE_MARKER_BLOCKED",
   "sourceRepo": "georg-doc/kayfabizarro",
   "sourceBranch": "orchestration/wsa-mvp-consolidation-2026-09-20",
   "sourceBranchHead": "02a127cc3625887b3f66b402c0b45d49322c09ed",
@@ -15,12 +15,21 @@
   "runtimeOwner": false,
   "tests": {
     "sourceReadback": "24/24 PASS",
-    "publicBrowser": "PENDING"
+    "publicBrowser": "FAIL_BEFORE_BROWSER"
   },
   "constraints": [
     "no runtime merge",
     "no owner transfer",
     "no auto-merge",
     "no Live promotion"
-  ]
+  ],
+  "publicQa": {
+    "run": 35475904961,
+    "job": 105984997880,
+    "failedStep": "Wait for exact published marker",
+    "browserStep": "SKIPPED",
+    "screenshot": "NOT_PRODUCED",
+    "commonBlockerWith": "TinySkies terrain donor run 35474894951"
+  },
+  "nextGate": "Inspect Cloudflare Pages publication/control plane once; do not redesign individual slices."
 }
