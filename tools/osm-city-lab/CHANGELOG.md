@@ -1,5 +1,49 @@
 # Changelog · additive
 
+## 2026-09-19 · Ehrenfeld↔Hürth source checkpoint retry
+
+### GOAL
+Close the transient public-Overpass discovery blocker without replacing the existing OSM City source/router pipeline.
+
+### DECISION
+- Keep the existing 8×2 real-OSM chunk strategy, endpoint fallbacks and Dijkstra route logic.
+- Checkpoint successful chunks only inside the workflow job.
+- Retry at most three bounded passes; later passes request only missing chunks.
+- Commit no partial source as geographic truth.
+
+### IMPLEMENTATION
+- `fetch-ehrenfeld-huerth-corridor.mjs` now validates/reuses job-local chunks by id + bbox + query SHA-256.
+- A failed chunk no longer discards successful siblings in the same pass.
+- Corridor workflow now performs up to three bounded passes and includes the evidence directory in sparse checkout.
+
+### TESTED RESULT
+- GitHub Actions run `35410991615`, job `105810446135`: **PASS**.
+- Syntax PASS.
+- Pass 1: 15/16 chunks fetched; only `R5E` timed out.
+- Pass 2: 15 cache hits; only `R5E` fetched; 16/16 complete.
+- Generated merged source: **12,417** elements.
+- Source SHA-256: `b1ad3dd65574bef8ca6ea806e14f317d8f78ae08ed8147393b1f8ff3d8b7612f`.
+- Generated route: **11,384.3 m**, **510 nodes**, **509 segments**.
+- `Militärringstraße` is genuinely present in the chosen route: **344.9 m / 14 segments**.
+- Source/evidence bot commit: `12bc1b03bf179e3d2b45b3a1cf4e56914690f506`.
+
+### SOURCE QUALITY BOUNDARY
+- Route status remains `SOURCE_DERIVED_ROUTE_CANDIDATE`.
+- Most chunk OSM bases are current to 2026-09-19; fallback chunks `R3W`, `R6W`, `R8E` report older OSM bases.
+- No freshness threshold existed in the source contract, so mixed-time discovery is recorded rather than silently promoted.
+- Final narrow corridor geometry must be reviewed/refetched against a current snapshot before it becomes geographic truth.
+
+### PUBLIC DEPLOYMENT
+- None. This is source/evidence work only.
+
+### GEORG ACCEPTANCE
+- Not applicable yet; no visible gameplay slice changed.
+
+### OPEN
+- Review named-road sequence + temporal coherence before extracting the ~220 m half-width visual corridor.
+
+---
+
 ## 2026-09-18 · S1c roads / grotesque skyline / OSM signs / KayKit nature
 
 ### DECISION
