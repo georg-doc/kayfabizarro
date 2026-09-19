@@ -20,7 +20,7 @@
     <div class="brand">
       <span class="brand-kicker">KFB TOOLBOX / RIGGING</span>
       <strong>Batch EyeRig Atlas</strong>
-      <span class="branch">Rig_Medium · identity 949ff80 · eyes 2+3 · PR #104</span>
+      <span class="branch">Rig_Medium · authoring default · eyes 2+3 · PR #104</span>
     </div>
     <div class="top-status">
       <span id="bootBadge" class="badge pending">BOOTING</span>
@@ -29,6 +29,21 @@
       <a class="text-link" href="./docs/source-components-0-11.html">Components 0–11</a>
     </div>
   </header>
+
+  <nav class="batchbar" aria-label="Batch authoring">
+    <div class="batch-context">
+      <span class="eyebrow">BATCH</span>
+      <strong id="batchSelectionStatus">1 selected · Rig_Medium · gothgirl</strong>
+    </div>
+    <div class="batch-actions">
+      <button id="batchImportBtn" type="button">Import</button>
+      <button id="batchExportCharacterBtn" type="button">Export Character</button>
+      <button id="batchExportBatchBtn" type="button">Export Batch</button>
+      <button id="batchApplySelectedBtn" type="button">Apply to Selected</button>
+      <button id="batchResetBtn" type="button" class="quiet">Reset</button>
+      <button id="batchApproveBtn" type="button" class="approve">Approve</button>
+    </div>
+  </nav>
 
   <main class="workbench">
     <aside class="roster pane">
@@ -54,6 +69,10 @@
         </span>
         <span id="actorStatusDot" class="dot candidate" title="AUTO_CANDIDATE"></span>
       </button>
+      <label class="actor-select-line">
+        <input id="actorSelectToggle" type="checkbox" checked>
+        <span>Selected for batch apply</span>
+      </label>
 
       <section class="audit-block">
         <span class="eyebrow">SOURCE LOCK</span>
@@ -122,10 +141,6 @@
           <input id="hostDebugToggle" type="checkbox">
           <span>FaceHost debug</span>
         </label>
-        <label class="switchline">
-          <input id="gazeFollowToggle" type="checkbox">
-          <span>Follow pointer</span>
-        </label>
       </div>
 
       <div class="motion-strip">
@@ -162,7 +177,18 @@
         </div>
         <button id="useMeasuredBtn" type="button" class="wide-action quiet" disabled>Use source-measured baseline</button>
         <div id="measuredSeedHint" class="micro-status">Measured baseline appears after source / FaceHost analysis.</div>
-        <div id="mediumSeedHint" class="micro-status">Rig_Medium calibration appears after source / FaceHost analysis.</div>
+        <div id="mediumSeedHint" class="micro-status">Rig_Medium authoring default loaded; source measurement remains suggestion only.</div>
+      </details>
+
+      <details open>
+        <summary>Eye shape / oval</summary>
+        <div class="control-grid">
+          <label>Width <output data-out="ovalW"></output><input data-param="ovalW" type="range" min="0.55" max="1.6" step="0.01"></label>
+          <label>Height <output data-out="ovalH"></output><input data-param="ovalH" type="range" min="0.55" max="1.6" step="0.01"></label>
+          <label>Depth <output data-out="ovalD"></output><input data-param="ovalD" type="range" min="0.55" max="1.6" step="0.01"></label>
+          <label>Inward tilt <output data-out="ovalTilt"></output><input data-param="ovalTilt" type="range" min="-30" max="30" step="0.5"></label>
+        </div>
+        <div class="micro-status">Reuses Frankensteining donor <code>eyeoval.v1.js</code>. Top/bottom contour shaping remains backlog.</div>
       </details>
 
       <details open>
@@ -173,14 +199,21 @@
           <label>Converge <output data-out="converge"></output><input data-param="converge" type="range" min="-0.5" max="0.5" step="0.01"></label>
           <label>Gloss <output data-out="gloss"></output><input data-param="gloss" type="range" min="0" max="1" step="0.01"></label>
         </div>
+        <span class="eyebrow mode-label">PUPIL TRACKING</span>
+        <div id="trackingModes" class="segmented tracking-modes">
+          <button type="button" class="seg active" data-tracking-mode="life">Life</button>
+          <button type="button" class="seg" data-tracking-mode="pointer">Pointer</button>
+          <button type="button" class="seg" data-tracking-mode="fixed">Fixed</button>
+        </div>
+        <div class="micro-status">Track controls travel amplitude. Life = idle wander/kinetics; Pointer = stage cursor; Fixed = buttons below.</div>
         <div class="segmented">
           <button id="matteBtn" type="button" class="seg active">Matte cute</button>
           <button id="googlyBtn" type="button" class="seg">Glossy googly</button>
         </div>
         <div class="segmented gaze-buttons">
-          <button type="button" class="seg" data-gaze="0,0">Front</button>
-          <button type="button" class="seg" data-gaze="0,-0.85">Down</button>
-          <button type="button" class="seg" data-gaze="0.9,0.2">Away</button>
+          <button type="button" class="seg" data-gaze="0,0">Fixed front</button>
+          <button type="button" class="seg" data-gaze="0,-0.85">Fixed down</button>
+          <button type="button" class="seg" data-gaze="0.9,0.2">Fixed away</button>
         </div>
       </details>
 
@@ -241,7 +274,7 @@
         </div>
       </section>
 
-      <section class="profile-io">
+      <section class="profile-io legacy-io" aria-hidden="true">
         <span class="eyebrow">PROFILE I/O</span>
         <div class="split-actions">
           <button id="exportBtn" type="button">Export profile</button>

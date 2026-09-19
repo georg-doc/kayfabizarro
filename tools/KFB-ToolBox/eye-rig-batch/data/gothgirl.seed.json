@@ -56,20 +56,31 @@
   },
   "eye": {
     "anchor": {
-      "dx": 0.345,
-      "dy": -0.1,
-      "ring": 0.2,
-      "track": 0.1
+      "dx": 0.295,
+      "dy": 0.045,
+      "ring": 0.153,
+      "track": 0.15
     },
     "pupilStyle": "matte-cute",
     "pupilSize": 0.34,
     "gloss": 0.1,
-    "inset": 0,
+    "inset": 0.4,
     "lidFit": 0.9,
-    "converge": 0,
+    "converge": 0.18,
     "splay": 0,
     "baseColor": "#e6cbc3",
-    "lidColorMode": "face-base-darkened"
+    "lidColorMode": "face-base-darkened",
+    "trackingMode": "life",
+    "fixedGaze": [
+      0,
+      0
+    ],
+    "oval": {
+      "w": 1,
+      "h": 1,
+      "d": 1,
+      "tilt": 0
+    }
   },
   "blink": {
     "minGap": 2.5,
@@ -93,14 +104,31 @@
     "camera": "front",
     "motionClip": "T-Pose",
     "sourceEyeCleanupVisuallyAccepted": false,
-    "eyeProfileVisuallyApproved": false
+    "eyeProfileVisuallyApproved": false,
+    "visualReference": "user screenshot 2026-09-19 21:46 CEST"
   },
   "calibration": {
     "schema": "kfb.eye-medium-calibration/0.1-candidate",
     "classSeed": "./rig-medium-default.v0.json",
-    "bootFallbackRing": 0.2,
-    "runtimeRule": "ring = sourceMeasured.dx * (gothgirlJson.eye.anchor.ring / gothgirlJson.eye.anchor.dx)",
-    "sourceMeasuredPlacementPolicy": "ring-only for class default; raw dx/dy remain explicit comparison controls",
-    "status": "AUTO_CANDIDATE"
+    "authoringDefaultSource": "Georg screenshot / browser tuning 2026-09-19",
+    "authoringDefault": {
+      "dx": 0.295,
+      "dy": 0.045,
+      "ring": 0.153,
+      "track": 0.15,
+      "pupilSize": 0.34,
+      "inset": 0.4,
+      "lidFit": 0.9,
+      "converge": 0.18,
+      "splay": 0,
+      "gloss": 0.1
+    },
+    "sourceMeasuredPlacementPolicy": "EXPLICIT_SUGGESTION_ONLY_NEVER_AUTO_APPLY",
+    "inheritance": [
+      "rigClass",
+      "character",
+      "session"
+    ],
+    "status": "AUTHORING_DEFAULT_REFERENCE"
   }
 }

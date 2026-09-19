@@ -1,5 +1,6 @@
 import { buildFaceHost } from 'https://cdn.jsdelivr.net/gh/georg-doc/kayfabizarro@5650b6c54d8789b20ea80abe857688173d506d3b/tools/KFB-ToolBox/kfb-rigs-embed-v3/frizzlegraft-v1/facehost.v1.js';
 import { EyeRig } from 'https://cdn.jsdelivr.net/gh/georg-doc/kayfabizarro@5650b6c54d8789b20ea80abe857688173d506d3b/tools/KFB-ToolBox/kfb-rigs-embed-v3/petstudio-v9/studio-v12/pet-eye-rig.v6.js';
+import { attach as attachEyeOval, applyOval as applyEyeOval, detach as detachEyeOval, DEFAULTS as EYE_OVAL_DEFAULTS } from 'https://cdn.jsdelivr.net/gh/georg-doc/kayfabizarro@5650b6c54d8789b20ea80abe857688173d506d3b/tools/KFB-ToolBox/kfb-rigs-embed-v3/frizzlegraft-v1/eyeoval.v1.js';
 
 export const ADAPTER_SCHEMA = 'kfb.kaykit-eye-adapter/0.1-candidate';
 
@@ -45,6 +46,8 @@ export async function mountKayKitEyes({
 
   rig.build();
   rig.setLashes({ length: 0, density: 0, width: 1 });
+  const ovalState = Object.assign({}, EYE_OVAL_DEFAULTS, clone(eye.oval || {}));
+  attachEyeOval(rig, () => ovalState);
   const emotes = expressionContract?.face?.emotes || expressionContract?.emotes || {};
 
   const api = {
@@ -69,6 +72,7 @@ export async function mountKayKitEyes({
     setEye(patch) { rig.setEye(patch); api.setVisible(api.visible); },
     setPupilStyle(style) { rig.setPupilStyle(style); api.setVisible(api.visible); },
     setBaseColor(hex) { rig.setBaseColor(hex); api.setVisible(api.visible); },
+    setOval(patch) { Object.assign(ovalState, patch || {}); applyEyeOval(rig, ovalState); api.setVisible(api.visible); },
     setGazeFollow(on) { rig.setGazeFollow(on); },
     setLife(patch) { rig.setLife(patch); },
     setKinetics(patch) { rig.setKinetics(patch); },
@@ -91,11 +95,13 @@ export async function mountKayKitEyes({
           anchor: clone(rig.anchor), pupilStyle: rig.pupilStyle, pupilSize: rig.pupilSize,
           gloss: rig.gloss, inset: rig.inset, lidFit: rig.lidFit, converge: rig.converge, splay: rig.splay,
           baseColor: colorHex(THREE, rig.baseColor), lidColorMode: eye.lidColorMode || 'face-base-darkened',
+          oval: clone(ovalState),
           blink: clone(rig.blink), life: clone(rig.life), kinetics: clone(rig.kinetics)
         }
       };
     },
     dispose() {
+      detachEyeOval(rig);
       rig.dispose();
       faceHost.dispose();
     }
