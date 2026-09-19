@@ -13,7 +13,7 @@ Sanity check after chat interruption:
 - The previous corridor `SOURCE BLOCKED` state is superseded on stacked draft PRs #80 → #81 → #82. Route discovery, current narrow source and deterministic City consumer export all have green CI evidence.
 - Exact corridor consumer pin used downstream: `3db2c786152fd4d77ca33a63effd2a9db9c1d4c1`, scene SHA-256 `258c4d5a3872750bc9045d771646e85dbf36aab8a14243db98adc0d288edf07d`.
 - Race receiver branch: `georg-doc/KFB-Stunt-Car-Race@wsa/osm-city-drive-corridor-2026-09-19`, observed head `d2529e634952f25d691d68873801b2651125ac0c`.
-- At sanity-check time, Race workflow `35414946641` was actively running; syntax + module/owner regression had already passed and the existing Hürth C1 browser regression was underway.
+- Race workflow `35414946641`, job `105821630552` subsequently completed **PASS**: module/owner regression 10/10, existing Hürth C1 browser 26/26, continuous corridor browser 17/17. Evidence commit `7208b4167df6fbea62703177301473eb841522d7`, artifact `10574843986`.
 - Race corridor branch is diverged from newer Race `main`; PR80–82 are also stacked/diverged from newer Kayfabizarro `main`. Reconcile before promotion; do not flatten or force-merge the chain.
 - Dropbox read-only sanity found the same Race remote branch refs under `/CLAUDE/KFB Stunt Car Race/.git/refs/remotes/origin/`, server-modified around 2026-09-19 02:03Z. No Dropbox mutation was required.
 
