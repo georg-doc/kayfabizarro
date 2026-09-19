@@ -1,7 +1,22 @@
 # Ehrenfeld ↔ Hürth OSM Corridor
 
 **Date:** 2026-09-19  
-**Status:** MAIN PROMOTION OPEN · SOURCE/DETAIL/CONSUMER TESTED ON STACKED DRAFT PRs · RACE RECEIVER BROWSER GATE ACTIVE
+**Status:** MAIN PROMOTION CANDIDATE · CURRENT-MAIN RECONCILED · DETERMINISTIC CI PASS · RACE RECEIVER BROWSER PASS
+
+## CURRENT PROMOTION CANDIDATE · current-main rebase
+
+The tested stack has now been selectively transplanted onto a fresh branch from current main:
+
+- branch: `osm-city/corridor-promote-tested-stack-r2-2026-09-19`;
+- base: `c867788416c50fa9c6e6ce57abc4bad85dca90d1`;
+- promotion workflow: `35415509853` / job `105823274200` → **PASS**;
+- normalized and scene SHA-256 values remain byte-identical to PR #82;
+- networked Overpass refresh workflows are explicit/manual;
+- deterministic consumer regression remains automatic.
+
+See `CORRIDOR_PROMOTION_RETURN_2026-09-19.md`.
+
+The earlier stacked PRs remain provenance/history and must not be force-merged over this reconciled branch.
 
 ## CURRENT RECOVERY OVERRIDE · 2026-09-19
 
