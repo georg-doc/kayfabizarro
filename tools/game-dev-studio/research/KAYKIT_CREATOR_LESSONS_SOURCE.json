@@ -13,6 +13,15 @@
   "sources": [
     {
       "kind": "official_youtube",
+      "title": "KayKit - Animations - Overview Set 1",
+      "url": "https://www.youtube.com/watch?v=T1KNCtAqJ7A",
+      "published": "2024-11-30",
+      "durationApprox": "00:06:05",
+      "status": "ANALYZED_V0_2_VISUAL_CATALOG",
+      "note": "Older visual animation overview. Current inventory/count truth comes from current official Character Animations page and current KFB Registry."
+    },
+    {
+      "kind": "official_youtube",
       "title": "Using KayKit Characters In Godot (Quick version)",
       "url": "https://www.youtube.com/watch?v=sp_1WnJUDXM",
       "status": "REVIEWED_AS_GOLDEN_PATH"
@@ -102,5 +111,35 @@
       "status": "NOT_CONFIRMED_PUBLISHED_AS_OF_2026-09-19"
     }
   ],
-  "evidenceRule": "Official creator sources first. Distinguish observed source facts from KFB inference/proposal. Do not infer compatibility from filenames or pack co-location."
+  "evidenceRule": "Official creator sources first. Current repo/Registry wins for KFB implementation facts. Distinguish creator-observed source facts from KFB inference/proposal. Do not infer compatibility, speed tier, loop semantics, event timing or animation state from filenames alone.",
+  "currentRepoEvidence": {
+    "checkedMain": "c84c3c57aa875e1ac1cd8cc17eb966cb37c0f317",
+    "motionRegistry": {
+      "path": "registry/resources/v1/motions.jsonl",
+      "blobSha": "1f266ab2e9e57db63f5596ba83f616872b502909",
+      "fact": "139 registered KayKit Rig_Medium motions across 8 sets",
+      "counts": {
+        "Rig_Medium_MovementBasic": 11,
+        "Rig_Medium_MovementAdvanced": 13,
+        "Rig_Medium_General": 15,
+        "Rig_Medium_CombatMelee": 22,
+        "Rig_Medium_CombatRanged": 20,
+        "Rig_Medium_Simulation": 14,
+        "Rig_Medium_Special": 15,
+        "Rig_Medium_Tools": 29
+      },
+      "explicitSprintClip": false
+    },
+    "mixedBag": {
+      "packPath": "media/3D_Assets/KayKit_Mixed_Bag_1_FREE/",
+      "registryShard": "registry/assets/v1/packs/kaykit-mixed-bag-1-free.json",
+      "registryBlobSha": "694555b53014860da88943ba0fbe0760690a8ffb",
+      "sourceCommit": "378b209355b13304e3cff656ec0806ca5b89df28",
+      "assetCount": 47,
+      "model3dGltfCount": 41,
+      "image2dPngCount": 6,
+      "license": "CC0",
+      "variantEvidence": "Resident Atlas S28 measured guitar_A and guitar_B as geometry-identical variants with different UV placement on the shared palette."
+    }
+  }
 }
