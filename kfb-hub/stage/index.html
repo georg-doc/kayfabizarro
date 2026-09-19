@@ -49,9 +49,16 @@
       <div class="actions"><a class="button primary" href="./stunt-world/track-ribbon-st01/">Öffnen</a><a class="button" href="https://github.com/georg-doc/KFB-Stunt-Car-Race/pull/14">Race PR #14</a></div>
     </article>
     <article class="card">
+      <div class="top"><h2>WSA MVP Consolidation</h2><span class="badge">Current handoff</span></div>
+      <p>Gemeinsamer Integrationsstand für Travel/TinySkies, OSM/Grotesque, Race HUD v3, KCL Motion, Resident Module, EyeRig und Combat CA2. Trennt getestete Runtime-Inputs sauber von offenen Cloudflare-/Human-Gates und eingefrorenen Fehlpfaden.</p>
+      <div class="facts"><span class="fact">24/24 handoff checks PASS</span><span class="fact">7 core lanes</span><span class="fact">No runtime merge</span></div>
+      <div class="question"><b>Nächstes Gate:</b> WSA liest Handoff + Statusmatrix, re-fetcht die aktiven Heads und baut lokal genau einen kleinen MVP ohne Owner-Wechsel.</div>
+      <div class="actions"><a class="button primary" href="./wsa-mvp-consolidation/">Übersicht öffnen</a><a class="button" href="https://github.com/georg-doc/kayfabizarro/blob/orchestration/wsa-mvp-consolidation-2026-09-20/skills/chat/workflows/WSA_MVP_CONSOLIDATION_2026-09-20/START_HERE.md">Handoff</a></div>
+    </article>
+    <article class="card">
       <div class="top"><h2>Travel Globe · TinySkies Terrain Donor</h2><span class="badge">Source-first gate</span></div>
       <p>Der aktuelle Travel-/TinySkies-Untergrund isoliert vor jeder Track-Integration: links die unveränderte Globe-Oberfläche, rechts dieselbe Welt mit der bereits vorhandenen Travel-Terrain-Zone im selben Höhen-Owner.</p>
-      <div class="facts"><span class="fact">12/12 browser PASS</span><span class="fact">66,049 vertices</span><span class="fact">No Track yet</span></div>
+      <div class="facts"><span class="fact">12/12 donor browser PASS</span><span class="fact">66,049 vertices</span><span class="fact">Public marker FAIL before browser</span></div>
       <div class="question"><b>Prüffrage:</b> Ist das die richtige Terrain-/World-Basis, auf der der Track später als kugelförmiger Terrain-Korridor eingebettet werden soll?</div>
       <div class="actions"><a class="button primary" href="./stunt-world/tinyskies-terrain-donor/">Öffnen</a><a class="button" href="https://github.com/georg-doc/KFB-Travel-Globe/pull/30">Travel PR #30</a></div>
     </article>
@@ -59,7 +66,7 @@
       <div class="top"><h2>TinySkies × OSM × Grotesque</h2><span class="badge">Public proof blocked</span></div>
       <p>Der Source-Kandidat ist technisch/browsergeprüft, aber der Cloudflare-Publikationsmarker ist nach zwei Reparaturversuchen noch nicht verifiziert. Kein Human Gate in diesem Stand; die Szene selbst wird nicht neu gebaut.</p>
       <div class="facts"><span class="fact">27/27 source PASS</span><span class="fact">19/19 browser PASS</span><span class="fact">Public marker FAIL ×2</span></div>
-      <div class="question"><b>Nächstes Gate:</b> Nur SOURCE.json reparieren und den bestehenden Public-Proof unverändert erneut ausführen.</div>
+      <div class="question"><b>Nächstes Gate:</b> Kein dritter Web-Repair-Pass. Kandidat lokal als Visual-Donor nutzen; Marker erst bei der deliberate WSA-Konsolidierung normalisieren.</div>
       <div class="actions"><a class="button primary" href="https://github.com/georg-doc/kayfabizarro/blob/main/tools/img2threejs/landmarks/pilot-08/failure-recovery/START_HERE.md">Recovery öffnen</a><a class="button" href="https://github.com/georg-doc/kayfabizarro/pull/110">Source PR #110</a></div>
     </article>
   </section>
