@@ -103,3 +103,32 @@ Die Geometrie und Materialien bleiben gegenüber dem Original unverändert. v0.1
 **OPEN:** No new WebGL/browser/mobile or consumer PASS. No City S2 geometry, landmark manifest, OSM identity, collision, Travel/Race runtime or Registry owner was changed. Coarse solids can still shear instead of curve; vertical subdivision remains a later quality lever. edge3 / KFB box-material integration, studs and weathering stay after the geometry/look gate.
 
 **CURRENT ANALYSIS:** [Deformer modes source analysis](docs/DEFORMER_MODES_ANALYSIS_2026-09-18.md).
+
+
+## 2026-09-19 · 08 · Landmark Group Rig v1 / living-toy preview
+
+**USER EVIDENCE:** Georg's Pilot-03 screenshot showed Spasskaya/Kremlin clock assemblies visually separating from the grotesquely deformed tower body. Georg asked for object groups, grouped cubist/Nickelodeon-style deformation, living-toy beat/vibe/impact reactions and additive GitHub persistence for WSA review.
+
+**BOUND SCOPE:** [Slice contract](landmarks/pilot-04/SLICE.md). One implementation slice only: Spasskaya + Kremlin wall semantic rig and presentation reactor. Area 51 / JFK / Atlantis / Acropolis remain separately documented PROPOSAL ideation.
+
+**IMPLEMENTATION:** [Pilot 04](landmarks/pilot-04/index.html).
+- `towerCore`
+- four `clock:0..3` `rigidAttached` groups
+- `wall:left/right`
+- `secondarySoft`
+- explicit clock anchors and sampled local deformation bases
+- Legacy vs Grouped A/B
+- Base / City Grotesque / Soft Cubist
+- Idle breathing / synthetic Disco beat / Impact L/R preview
+- optional rig-anchor helpers
+- GLB export of the currently selected rigged geometry
+
+The clock groups no longer receive independent point deformation. Their host anchor is transformed through the same City/Soft-Cubist field, then the clock geometry follows a rigid orthonormal local basis.
+
+**TESTED RESULT:** 212/212 current-source evaluation checks PASS. Grouped clocks preserve anchor-relative vertex distances to floating-point noise (~4e-15 m). The same legacy pointwise deformation changes those distances by about 0.24–0.44 m in the four tested grotesque/soft cases. Triangle counts remain 3,496 (Spasskaya) / 5,008 (Kremlin study), ground remains anchored, reactor math remains bounded, and viewer source / required controls parse. [Evidence](evidence/2026-09-19-landmark-rig-v1/summary.json).
+
+**BOUNDARY:** `bumperProfile` is metadata only. No collision/bounce force, movement, camera, terrain, persistence or audio runtime was created. Disco preview is a synthetic signal source. City S2 physics/export geometry and OSM landmark manifest remain unchanged.
+
+**IDEATION / DEFERRED:** The North Star and future scenic candidates are persisted in [Living Toy World ideation](docs/IDEATION_LIVING_TOY_WORLD_2026-09-19.md): Acropolis, Area 51 + crashed UFO, JFK/Dealey-style source-backed scenario, underwater Atlantis / general impossible-geometry architecture. `kfb-box-material` + `edge3.jpg` remain the next surface-layer donor, not silently folded into this rig slice.
+
+**OPEN:** successful browser/WebGL evidence for Pilot 04; Georg visual choice between Grouped City Grotesque and Grouped Soft Cubist; later receiver-side Audio and Race/Travel contact seams.
