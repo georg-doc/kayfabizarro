@@ -23,3 +23,19 @@
 - reduced the QA evidence payload from a full pack-shard snapshot to compact registry summary + proof/module references, preserving the central Asset Registry as the only asset identity/provenance owner;
 - visually inspected desktop overview, Tiny Treats classification, Resident module, FrizzleBob Driver Graft and mobile carry proof; no source-fallback geometry is used;
 - `PUBLIC DEPLOYMENT` remains pending because the fixed Cloudflare Stage route is not claimed before review/merge.
+
+
+## 2026-09-19 · GEORG VISUAL REVIEW · FAIL / WSA HANDOFF
+
+- Georg rejected the C0 page as a visual acceptance basis despite the technical browser PASS;
+- recorded that raw XYZ/base/pivot values do not answer the human review question;
+- identified per-card auto-framing as the reason cross-card visual scale comparison is invalid; whole-vignette bounds are not a Clown actor-height proxy;
+- recorded human review of `juggle-cascade-v1` as FAIL: arm motion does not read correctly and clubs visibly cross the body;
+- linked this failure to the pre-existing Resident Scene Module backlog, where catch quality, arm motion and actual club-mesh/body clearance were already OPEN;
+- recorded the status-semantics failure: `MODULE MOUNTED / BROWSER SEEN / zero console errors` is technical evidence, not visual acceptance;
+- recorded the UI reuse failure: C0 introduced a bespoke shell instead of reusing Resident Atlas / World Atlas / Plant Prop Lab presentation donors;
+- added `POSTMORTEM_VISUAL_REVIEW_FAIL_2026-09-19.md`;
+- added WSA entry `tools/KFB-ToolBox/_handover/C0_BAUKASTEN_VISUAL_FAIL_WSA_2026-09-19/START_HERE.md`;
+- changed `GEORG ACCEPTANCE` from OPEN to **FAIL · NOT ACCEPTED**;
+- blocked H01/D01 continuation from this C0 visual premise;
+- proposed the smallest next proof as Resident-Clown activity repair first, then one shared-scale stage, then UI-shell correction.
