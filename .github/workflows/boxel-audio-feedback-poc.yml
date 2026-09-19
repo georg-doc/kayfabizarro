@@ -25,7 +25,8 @@ jobs:
           npx playwright install --with-deps chromium
       - name: Exercise POC with real KFB audio files
         run: |
-          cat > /tmp/check.mjs <<'JS'
+          mkdir -p boxel-proof
+          cat > .boxel-check.mjs <<'JS'
           import http from 'node:http';import fs from 'node:fs';import path from 'node:path';import {chromium} from 'playwright';
           const root=path.resolve('KFB Boxel Blitz/audio-feedback-poc'),result={status:'RUNNING',checks:[],errors:[],httpErrors:[]};
           const check=(name,ok,detail)=>{result.checks.push({name,pass:!!ok,detail});if(!ok)throw Error(name)};
@@ -43,16 +44,16 @@ jobs:
             await page.evaluate(async()=>{for(let i=0;i<10;i++)await window.__KFB_BOXEL_AUDIO_POC__.trigger('cascade')});check('cascade ladder reaches 10',(await page.evaluate(()=>window.__KFB_BOXEL_AUDIO_POC__.snapshot())).cascadeStep===10);
             await page.evaluate(()=>window.__KFB_BOXEL_AUDIO_POC__.trigger('powerup'));await page.waitForTimeout(250);check('powerup event',(await page.evaluate(()=>window.__KFB_BOXEL_AUDIO_POC__.snapshot())).lastEvent==='POWER UP');
             await page.evaluate(()=>window.__KFB_BOXEL_AUDIO_POC__.trigger('powerdown'));await page.waitForTimeout(250);check('powerdown event',(await page.evaluate(()=>window.__KFB_BOXEL_AUDIO_POC__.snapshot())).lastEvent==='POWER DOWN');
-            await page.screenshot({path:'/tmp/boxel-audio-poc.png'});
+            await page.screenshot({path:'boxel-proof/boxel-audio-poc.png'});
             check('no page errors',result.errors.length===0,result.errors);check('no failed audio/http',result.httpErrors.length===0,result.httpErrors);result.status='PASS';
-          }catch(e){result.status='FAIL';result.failure=String(e.stack||e);process.exitCode=1}finally{fs.writeFileSync('/tmp/boxel-audio-results.json',JSON.stringify(result,null,2));if(browser)await browser.close();server.close()}
+          }catch(e){result.status='FAIL';result.failure=String(e.stack||e);process.exitCode=1}finally{fs.writeFileSync('boxel-proof/results.json',JSON.stringify(result,null,2));if(browser)await browser.close();server.close()}
           JS
-          node /tmp/check.mjs
+          node .boxel-check.mjs
       - uses: actions/upload-artifact@v4
         if: always()
         with:
           name: boxel-audio-feedback-poc
           path: |
-            /tmp/boxel-audio-results.json
-            /tmp/boxel-audio-poc.png
+            boxel-proof/results.json
+            boxel-proof/boxel-audio-poc.png
           retention-days: 14
