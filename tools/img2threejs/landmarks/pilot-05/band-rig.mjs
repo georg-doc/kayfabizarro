@@ -64,17 +64,27 @@ export function buildBandTransform(asset,band,profile){
   const yVec=sub(B,A),sy=len(yVec)/(y1-y0),yAxis=unit(yVec);
   const e=Math.max(.05,bounds.h*.0025);
   const xMinus=bandFieldPoint([-e,ym,0],bounds,profile),xPlus=bandFieldPoint([e,ym,0],bounds,profile);
-  let xRaw=sub(xPlus,xMinus);
-  xRaw=sub(xRaw,mul(yAxis,dot(xRaw,yAxis)));
-  let xAxis=unit(xRaw);
+  const xRawFull=sub(xPlus,xMinus);
   const zMinus=bandFieldPoint([0,ym,-e],bounds,profile),zPlus=bandFieldPoint([0,ym,e],bounds,profile);
   const zRaw=sub(zPlus,zMinus);
-  let zAxis=unit(cross(xAxis,yAxis));
-  if(dot(zAxis,zRaw)<0)zAxis=mul(zAxis,-1);
-  xAxis=unit(cross(yAxis,zAxis));
+  let xAxis,zAxis;
+  if(band==='lower'){
+    // Preserve the authored ground plane: X/Z basis vectors stay horizontal.
+    // Lean/bend still travel through the Y basis from A→B, so the lower tower
+    // can skew without sending its bottom corners below terrain.
+    xAxis=unit([xRawFull[0],0,xRawFull[2]]);
+    zAxis=unit([-xAxis[2],0,xAxis[0]]);
+    if(dot(zAxis,zRaw)<0)zAxis=mul(zAxis,-1);
+  }else{
+    let xRaw=sub(xRawFull,mul(yAxis,dot(xRawFull,yAxis)));
+    xAxis=unit(xRaw);
+    zAxis=unit(cross(xAxis,yAxis));
+    if(dot(zAxis,zRaw)<0)zAxis=mul(zAxis,-1);
+    xAxis=unit(cross(yAxis,zAxis));
+  }
   return {
     band,sourceY:[y0,y1],origin:A,x:xAxis,y:yAxis,z:zAxis,
-    sx:len(sub(xPlus,xMinus))/(2*e),sy,sz:len(zRaw)/(2*e)
+    sx:len(xRawFull)/(2*e),sy,sz:len(zRaw)/(2*e)
   };
 }
 export function applyBandTransformPoint(point,T){
