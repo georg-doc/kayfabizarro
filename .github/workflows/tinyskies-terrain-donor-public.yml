@@ -1,0 +1,102 @@
+name: TinySkies terrain donor · canonical Cloudflare proof
+
+on:
+  pull_request:
+    branches:
+      - main
+    paths:
+      - '.github/workflows/tinyskies-terrain-donor-public.yml'
+  workflow_dispatch:
+
+jobs:
+  public-proof:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Install Playwright Chromium
+        run: |
+          npm install --no-save playwright@1.55.0
+          npx playwright install --with-deps chromium
+
+      - name: Wait for exact Cloudflare deployment marker
+        run: |
+          node - <<'NODE'
+          const url='https://kayfabizarro.pages.dev/kfb-hub/stage/stunt-world/tinyskies-terrain-donor/DEPLOYMENT.json';
+          const want='STUNT-WORLD-TINYSKIES-TERRAIN-DONOR-20260919';
+          const pause=ms=>new Promise(r=>setTimeout(r,ms));
+          (async()=>{
+            let last='';
+            for(let i=0;i<42;i++){
+              try{
+                const res=await fetch(url+'?qa='+Date.now(),{cache:'no-store'});
+                const txt=await res.text();
+                last=res.status+' '+txt.slice(0,500);
+                if(res.ok){
+                  const d=JSON.parse(txt);
+                  if(d.build===want
+                    && d.testedTravelEvidenceHead==='80cfaa685cdfcdeab7cbd52f2cea6fb16bd8d4f4'
+                    && d.tinySkiesPin==='2659a5cc987d7e4a4c5aa7e79c86a1626ad75df6'){
+                    console.log('Cloudflare deployment marker PASS',d.build,d.status);
+                    return;
+                  }
+                }
+              }catch(e){last=String(e)}
+              await pause(10000);
+            }
+            throw Error('Cloudflare deployment marker not ready: '+last);
+          })().catch(e=>{console.error(e);process.exit(1)});
+          NODE
+
+      - name: Canonical Cloudflare Chromium proof
+        run: |
+          node - <<'NODE'
+          const fs=require('fs');
+          const {chromium}=require('playwright');
+          const url='https://kayfabizarro.pages.dev/kfb-hub/stage/stunt-world/tinyskies-terrain-donor/';
+          (async()=>{
+            const r={date:new Date().toISOString(),url,checks:[],errors:[],httpErrors:[]};
+            const check=(n,p,d)=>{r.checks.push({name:n,pass:!!p,details:d});if(!p)throw Error(n)};
+            const browser=await chromium.launch({headless:true,args:['--use-angle=swiftshader','--enable-unsafe-swiftshader']});
+            const page=await browser.newPage({viewport:{width:1600,height:900}});
+            page.on('pageerror',e=>r.errors.push(String(e)));
+            page.on('console',m=>{if(m.type()==='error'&&!/favicon/i.test(m.text()))r.errors.push(m.text())});
+            page.on('response',x=>{if(x.status()>=400&&!/favicon/i.test(x.url()))r.httpErrors.push({status:x.status(),url:x.url()})});
+            const t0=Date.now();
+            await page.goto(url+'?qa='+Date.now(),{waitUntil:'domcontentloaded',timeout:180000});
+            await page.waitForFunction(()=>window.__KFB_TERRAIN_DONOR__?.ready===true,{},{timeout:180000});
+            r.bootMs=Date.now()-t0;
+            const d=await page.evaluate(()=>window.__KFB_TERRAIN_DONOR__);
+            r.snapshot=d;
+            check('current Travel owner',d.owner==='georg-doc/KFB-Travel-Globe',d.owner);
+            check('Travel base pin',d.travelHead==='8614282aab2ced43bb5dda9fcf7abadf9768100a',d.travelHead);
+            check('TinySkies gold-standard pin',d.tinySkiesPin==='2659a5cc987d7e4a4c5aa7e79c86a1626ad75df6',d.tinySkiesPin);
+            check('no Voxel runtime',d.noVoxelRuntime===true,d.noVoxelRuntime);
+            check('same world/seed pair',d.baseReport.seed===d.zonedReport.seed&&d.baseReport.typ===d.zonedReport.typ,d.baseReport);
+            check('current 256-segment Globe',d.baseReport.segmente===256&&d.baseReport.vertices===66049,d.baseReport);
+            check('existing Travel terrain-zone seam',d.zone.configuredCount===1,d.zone);
+            check('actual baked vertices changed',d.geometryDelta.changedVertices===1562&&d.geometryDelta.maxDelta>.4,d.geometryDelta);
+            check('deformation stays local',d.geometryDelta.changedFraction>0&&d.geometryDelta.changedFraction<.03,d.geometryDelta.changedFraction);
+            check('Travel/TinySkies source probe clean',d.sourceProbe?.fehler===0,d.sourceProbe);
+            check('no page/script errors',r.errors.length===0,r.errors);
+            check('no failed HTTP assets',r.httpErrors.length===0,r.httpErrors);
+            r.status='PASS';
+            fs.mkdirSync('public-proof',{recursive:true});
+            await page.screenshot({path:'public-proof/tinyskies-terrain-donor-cloudflare.png',fullPage:true});
+            fs.writeFileSync('public-proof/results.json',JSON.stringify(r,null,2)+'\n');
+            console.log(JSON.stringify({status:r.status,checks:r.checks.length,bootMs:r.bootMs,errors:r.errors.length,httpErrors:r.httpErrors.length},null,2));
+            await browser.close();
+          })().catch(e=>{console.error(e);process.exit(1)});
+          NODE
+
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: tinyskies-terrain-donor-cloudflare-proof
+          path: public-proof
