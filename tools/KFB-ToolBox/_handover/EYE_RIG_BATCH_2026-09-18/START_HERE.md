@@ -1,3 +1,7 @@
+> **CURRENT LOADER FIX · 2026-09-20**  
+> The shared actor-loading error `Cannot read properties of undefined (reading 'push')` is fixed. It was caused by single-material head meshes with no explicit geometry groups, not bad actor files. Clown and Monstrosity match this exact geometry case. The cleanup adapter now handles it safely and automatically clears stale technical Unsupported states after a successful reload. Tests: **84/84 PASS · 8/8 focused loader PASS**. Stage fix: `e3c4a79d959aa5a09bfb7d5cec67807b27170d6c`.  
+> Next action: reload the EyeRig page and click a previously failing model. If it loads, continue the Medium review or switch to Large and tune Monstrosity.
+
 # KFB ToolBox · Batch EyeRig Atlas · Fresh Chat Brief
 
 **Date:** 2026-09-18  

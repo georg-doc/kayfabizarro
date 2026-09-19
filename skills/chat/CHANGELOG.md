@@ -539,3 +539,25 @@ Reject:
 
 New exactly-one gate:
 verify the current Travel Globe/TinySkies surface donor in isolation, then define the smallest Track-to-spherical-surface deformation seam through the existing Globe terrain truth.
+
+
+## 2026-09-20 · EyeRig Batch · common actor loader fixed
+
+The recurring model-switch failure `Cannot read properties of undefined (reading 'push')` was a shared cleanup bug, not broken individual GLBs.
+
+Cause: single-material KayKit head meshes can have zero explicit Three.js geometry groups; the reused donor stripper assumed one existed.
+
+Repair:
+- temporary whole-head group only for that case;
+- existing donor stripper reused unchanged;
+- original no-group state restored afterwards;
+- stale Unsupported states caused by the exception reset to Unreviewed after a successful reload.
+
+Evidence:
+- implementation `c6608ab5c76509bb54ae6b4375b87ed338e61427`;
+- regression evidence `1416092e87018ce32507d4d91e1d13d39f62c1ac`;
+- source/Return `af2827b60ced330e57bf4a7f553ad30dbf45b205`;
+- Stage `e3c4a79d959aa5a09bfb7d5cec67807b27170d6c`;
+- **84/84 PASS** plus **8/8 focused loader checks**.
+
+Next: reload the EyeRig page, select Clown or another previously failing model, then continue the Medium review or switch to Large/Monstrosity.
