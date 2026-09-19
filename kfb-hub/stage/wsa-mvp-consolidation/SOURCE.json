@@ -1,0 +1,27 @@
+{
+  "schema": "kfb.stage-source/1.0",
+  "stageBuild": "KFB-WSA-MVP-CONSOLIDATION-20260920",
+  "route": "https://kayfabizarro.pages.dev/kfb-hub/stage/wsa-mvp-consolidation/",
+  "status": "SOURCE_BRANCH_ONLY_NOT_PUBLIC_VERIFIED",
+  "sourceRepo": "georg-doc/kayfabizarro",
+  "sourceBranch": "orchestration/wsa-mvp-consolidation-2026-09-20",
+  "sourceBranchContentHead": "caf87457c39c4344d8b5a106f37b6406765ab4e4",
+  "sourceBaselineMain": "9b3c57ec09af8a9601a7221a84ee9a6de1e287f5",
+  "handoff": "skills/chat/workflows/WSA_MVP_CONSOLIDATION_2026-09-20/START_HERE.md",
+  "matrix": "skills/chat/workflows/WSA_MVP_CONSOLIDATION_2026-09-20/STATUS_MATRIX.json",
+  "role": "navigator-and-handoff-only",
+  "runtimeOwner": false,
+  "publication": {
+    "branch": "cloudflare-live",
+    "inspectedHead": "3c1135bc5d24727a011735a4d4bf2ff707b1757c",
+    "currentState": "NOT_YET_MIRRORED",
+    "publicBrowserProof": "NOT_RUN"
+  },
+  "constraints": [
+    "no runtime merge in this Stage page",
+    "no owner transfer",
+    "no auto-merge",
+    "no Live promotion",
+    "only direct kayfabizarro.pages.dev route is a human acceptance surface after publication"
+  ]
+}
