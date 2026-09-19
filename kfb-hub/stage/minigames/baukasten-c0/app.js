@@ -28,7 +28,7 @@ const PACKS=[
 const TINY_CLASS={
   'tiny-treats-bakery-interior-1-1-free':{tags:['MODULAR INTERIOR','LOOSE PROPS'],note:'Walls, floors, doorway + bakery furniture/food. Structural pieces stay modular.'},
   'bubbly-bathroom-tiny-treats-1-1':{tags:['MODULAR INTERIOR','LOOSE PROPS'],note:'Bathroom shell pieces + fixtures/props. Do not scatter wall/floor parts.'},
-  'tiny-treats-house-plants-1-0-free-2':{tags:['MODULAR INTERIOR','LOOSE SCENERY'],note:'Interior support parts plus plant families. Classification is per component.'},
+  'tiny-treats-house-plants-1-0-free-2':{tags:['LOOSE SCENERY','STRUCTURAL UNKNOWN'],note:'Current registry shard shows plant, pot, leaf and vine families; no wall/floor/door/modular filename was found. This conflicts with the workflow briefing, so structural use stays UNKNOWN until positive source evidence exists.'},
   'tiny-treats-pretty-park-1-0-free':{tags:['GROUND MODULES','LOOSE SCENERY'],note:'Authored sliced grass/floor parts coexist with bench, trees and shrubs.'},
   'tiny-treats-pleasant-picnic-1-0-free':{tags:['LOOSE SCENERY'],note:'Picnic scene dressing; no C0 claim of a structural interior grammar.'},
   'tiny-treats-homely-house-1-0-free':{tags:['LOOSE / ROOM SCENERY'],note:'Home-scene components; C0 does not promote them to a universal building grammar.'}
