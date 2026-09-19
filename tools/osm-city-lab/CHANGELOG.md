@@ -1,5 +1,34 @@
 # Changelog · additive
 
+## 2026-09-19 · corridor on main + Stage mirror package
+
+### IMPLEMENTATION
+- PR #86 promoted the reconciled current-source corridor stack into main at `3813d24e3db04a43117676890e48f7b6baaf6cd9`.
+- Main consumer evidence refreshed at `25c2c616720e18d97028bf06fdd03d10c16b3504` without changing normalized/scene hashes.
+- Stage package commit `8607fb512726af81848b6545eda25ad451491f36` adds the thin public mirror wrapper under `/kfb-hub/stage/stunt-world/`.
+- Stage mirror contains 9 runtime files source-identical to tested Race runtime `d2529e634952f25d691d68873801b2651125ac0c`; Race remains implementation SSOT.
+
+### TESTED RESULT
+- Main corridor consumer run `35415680112`, job `105823765381`: **PASS**.
+- S2 export contract run `35415680163`: **PASS**.
+- Normalized SHA-256 remains `e88450d51169f7293bdbfb87955826cf3328a25e00eb3c24e8a08c636e406e6f`.
+- Scene SHA-256 remains `258c4d5a3872750bc9045d771646e85dbf36aab8a14243db98adc0d288edf07d`.
+- Race continuous corridor browser remains **17/17 PASS** with 4/4 C0 contacts and no new recovery/run.
+
+### PUBLIC DEPLOYMENT
+- Public S1 city viewer: already PASS.
+- Stunt World Stage files: packaged on main.
+- Stage deployment manifest: `PUBLIC_STAGE_PACKAGE_TESTED_SOURCE_PENDING_MIRROR`.
+- No public/mobile/full-route acceptance is claimed yet.
+
+### OPEN
+- Longer human Hürth → Ehrenfeld drive.
+- Public Stage mirror verification and physical mobile QA.
+- Travel Walk↔Drive / Drive↔Flight.
+- Landmark runtime and audio integration.
+
+---
+
 ## 2026-09-19 · tested corridor stack reconciled onto current main base
 
 ### IMPLEMENTATION
