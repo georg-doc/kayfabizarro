@@ -190,3 +190,94 @@ Measure:
 - optional crossfade warp.
 
 Do **not** alter Travel/Race/Combat movement or invent a Sprint source in this gate.
+
+
+## KCL-M1 implementation return
+
+### Actual result
+
+The first proposed motion gate is now implemented and technically proven:
+
+`tools/game-dev-studio/research/kcl-m1-locomotion-sync/`
+
+Created:
+- `index.html`
+- `bench.mjs`
+- `SOURCE.json`
+- `README.md`
+- `TEST_REPORT.md`
+- `MEASURED_PROFILE_CANDIDATE.json`
+
+The bench loads the exact pinned current ActionFigure / Rig_Medium and exactly:
+- Walking_A
+- Walking_B
+- Walking_C
+- Running_A
+- Running_B
+
+It strips Root/Hips translation, measures real foot nodes across 240 intervals, derives contact/plant candidates and reference-speed/slip candidates, then compares:
+- A · naive target phase 0
+- B · matching-foot phase sync
+
+with common crossfade, optional Three.js warp and speed→timeScale mapping.
+
+### Evidence
+
+Source/static: **20/20 PASS**.
+
+Local browser after Repair Pass 1:
+- run `35468444150`
+- job `105964939873`
+- **39/39 PASS**
+- artifact `10591764219`
+- digest `sha256:55b8cc47723a64fc9c633ad46e2008a446d666ba724d02fed6242c17354de75e`
+- 5/5 real clips loaded and measured
+- A/B transition executed
+- 0 failed resources
+- 0 page/console errors
+
+Repair Pass 1 changed only proof-harness source-pin access. Motion code did not change.
+
+### Measurement headline
+
+Auto reference-speed candidates:
+- Walking_C ≈ 0.447
+- Walking_A ≈ 0.611
+- Walking_B ≈ 0.751
+- Running_A ≈ 2.480
+- Running_B ≈ 0.284 — **AUTO_METRIC_AMBIGUOUS_HOLD**
+
+`Running_B` is explicitly not assigned a semantic speed role because its automatic contact windows are fragmented and compensated-slip candidate is highest.
+
+Persisted machine-readable evidence:
+`kcl-m1-locomotion-sync/MEASURED_PROFILE_CANDIDATE.json`.
+
+### Stage/public state
+
+Stage source mirror exists at:
+
+https://kayfabizarro.pages.dev/kfb-hub/stage/game-dev-studio/kcl-m1-locomotion-sync/
+
+but **PUBLIC_VERIFIED is OPEN**.
+
+KCL public run `35467428927` / job `105962230768` failed before bench boot because the Stage `SOURCE.json` returned the generic KFB HTML fallback throughout marker polling.
+
+This is independently a repo-wide Cloudflare publication problem:
+- pre-KCL TE-01 proof already failed its deployment marker;
+- later Cloudflare Pages builds also failed.
+
+Do not interpret this as a KCL animation failure.
+
+### Ownership retained
+
+- Asset Librarian / Registry: source truth
+- ToolBox / Animation: authoring/calibration
+- KCL-M1: research measurement / QA only
+- Travel / Race / Combat / Platformer: movement, physics, gameplay state
+- no new global mixer or locomotion owner
+
+### Exactly one next gate
+
+Restore one successful **current** Cloudflare/pages.dev deployment, rerun the unchanged KCL public proof, then Georg compares NAIVE vs PHASE SYNC visually.
+
+No consumer integration, Sprint invention, or broader clip-family expansion before that human gate.
