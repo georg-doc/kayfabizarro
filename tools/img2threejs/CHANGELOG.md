@@ -132,3 +132,21 @@ The clock groups no longer receive independent point deformation. Their host anc
 **IDEATION / DEFERRED:** The North Star and future scenic candidates are persisted in [Living Toy World ideation](docs/IDEATION_LIVING_TOY_WORLD_2026-09-19.md): Acropolis, Area 51 + crashed UFO, JFK/Dealey-style source-backed scenario, underwater Atlantis / general impossible-geometry architecture. `kfb-box-material` + `edge3.jpg` remain the next surface-layer donor, not silently folded into this rig slice.
 
 **OPEN:** successful browser/WebGL evidence for Pilot 04; Georg visual choice between Grouped City Grotesque and Grouped Soft Cubist; later receiver-side Audio and Race/Travel contact seams.
+
+
+## 2026-09-19 · 09 · Standalone v1.1 packaging regression fix
+
+**USER EVIDENCE:** Georg opened the downloadable single-file Rig v1 viewer and got: `Viewer could not start: mulberry32 is not defined`.
+
+**ROOT CAUSE:** The chat-generated standalone embedded the City helpers under prefixed names (`cityMulberry32`, `cityStableHash`, `cityDeformPoint`) but the newly injected Rig block still called the module-source names. The modular GitHub Pilot-04 source imported those helpers correctly, so this was a standalone packaging seam rather than a grouped-rig math failure.
+
+**FIX:** `pilot-04/rig.mjs` now uses explicit City helper aliases in its actual source import:
+- `deformPoint as cityDeformPoint`
+- `stableHash as cityStableHash`
+- `mulberry32 as cityMulberry32`
+
+All internal Rig calls use the aliased names, making the source itself safer for future standalone bundling.
+
+**TESTED RESULT:** The repaired downloadable artifact `KFB_Landmark_Group_Rig_v1_1.html` passes Node module syntax plus six packaging guards: no unprefixed helper calls remain and all three embedded prefixed helpers are defined. Core Rig geometry was re-evaluated for Spasskaya/Kremlin × Base/Grotesque/Soft-Cubist; triangle counts, four attachments, ground anchor and ~4e-15 m maximum rigid-clock error remain unchanged. [Regression evidence](evidence/2026-09-19-landmark-rig-v1-1/standalone-regression.json).
+
+**BOUNDARY:** This fixes the reported startup ReferenceError. Successful WebGL visual rendering remains a separate browser/human gate.
