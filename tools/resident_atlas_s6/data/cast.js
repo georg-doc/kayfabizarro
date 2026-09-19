@@ -126,20 +126,6 @@ export const RESIDENTS = [
       layer: { from: /^Waving$/, mask: 'torso' },
       texture: P + 'GothGirl/textures/gothgirl_texture.png (Variante A · texture_b ist Alt-Variante)'
     },
-    juggle: {
-      kind: 'juggle-cascade-v1',
-      actor: 'clown',
-      props: ['pin_blue', 'pin_green', 'pin_red'],
-      apex: 0.85,
-      gravity: 9.81,
-      dwellBeats: 0.45,
-      spinHalfTurns: 2,
-      handLift: 0.12,
-      handSweep: 0.055,
-      handWindowBeats: 0.42,
-      maxArmResidual: 0.10,
-      armIterations: 18
-    },
     habitat: [],
     signatureProps: [
       { id: 'stool', slot: 3, role: 'Sitz / Möbel', a: P + 'GothGirl/assets/gltf/GothGirl_Stool.gltf', p: [0, 0] },
@@ -178,6 +164,20 @@ export const RESIDENTS = [
       rigFamily: 'Rig_Medium', rig: 'Rig_Medium', p: [-1.5, 0], r: 0, on: 'podium',
       pose: /^Idle_B$/, poseFreeze: true,
       texture: P + '11 - May 2024 - Clown/textures/clown_texture.png'
+    },
+    juggle: {
+      kind: 'juggle-cascade-v1',
+      actor: 'clown',
+      props: ['pin_blue', 'pin_green', 'pin_red'],
+      apex: 0.85,
+      gravity: 9.81,
+      dwellBeats: 0.45,
+      spinHalfTurns: 2,
+      handLift: 0.12,
+      handSweep: 0.055,
+      handWindowBeats: 0.42,
+      maxArmResidual: 0.10,
+      armIterations: 18
     },
     habitat: [
       { id: 'podium', role: 'landmark · Hauptpodest', a: P + '11 - May 2024 - Clown/assets/gltf/circus_podium.gltf', p: [-1.5, 0] }
