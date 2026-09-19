@@ -222,9 +222,9 @@ TC-01 is now the current Track/Terrain candidate.
 - frozen `terrain-surface.js`: unchanged
 - implementation browser: **15/15 PASS**
 - Travel baseline: **PASS**
-- Stage source package: `georg-doc/kayfabizarro#115`
+- Stage source package: `georg-doc/kayfabizarro#116`
 - Stage mirror browser: **13/13 PASS**
-- PR #115: **UNMERGED / PUBLICATION PENDING**
+- PR #116: **13/13 STAGE-MIRROR PASS · UNMERGED / PUBLICATION PENDING**
 - no public `kayfabizarro.pages.dev` TC-01 link may be claimed yet
 - Voxel remains a valid selective KFB donor for deliberate block/Minecraft/mining/building worlds; it is only out of scope for this Globe seam
 
