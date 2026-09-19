@@ -1,6 +1,6 @@
 {
   "schema": "kfb.game-dev-studio.catalog.v0",
-  "updated": "2026-09-18",
+  "updated": "2026-09-19",
   "publicUrl": "https://kayfabizarro.pages.dev/kfb-hub/free-roam/game-dev-studio/",
   "toolUrl": "https://kayfabizarro.pages.dev/tools/game-dev-studio/",
   "sourceHome": "tools/game-dev-studio/",
@@ -102,7 +102,89 @@
         },
         "note": "Use the existing Travel Atlas Pilot 01 only after the current Travel Ground human gate carries."
       }
+    },
+    {
+      "id": "module-kit-tiny-treats-charming-kitchen-1-1-free",
+      "title": "Module Kit · Charming Kitchen 1.1",
+      "subtitle": "118-source modular interior kit · Librarian + future Kitchen Generator",
+      "status": "SOURCE ANALYSIS PASS · MODULE-KIT CANDIDATE · SEALED GDS OPEN",
+      "packageRoot": "/game-ready/module-kits/tiny-treats-charming-kitchen-1-1-free/",
+      "manifest": "/game-ready/module-kits/tiny-treats-charming-kitchen-1-1-free/GAME_ASSET_PACKAGE.json",
+      "recovery": "/tools/game-dev-studio/RECOVERY.md",
+      "assets": [
+        {
+          "id": "floor_tiles_kitchen",
+          "label": "floor tiles kitchen",
+          "kind": "structure.floor",
+          "role": "build · floor",
+          "status": "SOURCE CLASSIFIED",
+          "format": "gltf",
+          "revision": "378b209355b13304e3cff656ec0806ca5b89df28",
+          "sourcePath": "media/3D_Assets/Tiny_Treats_Charming_Kitchen_1.1_FREE/Assets/gltf/floor_tiles_kitchen.gltf",
+          "packagePath": "/tools/asset_registry/module-kits/tiny-treats-charming-kitchen-1-1-free/MODULE_LIBRARY.json",
+          "previewUrl": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/378b209355b13304e3cff656ec0806ca5b89df28/media/3D_Assets/Tiny_Treats_Charming_Kitchen_1.1_FREE/Assets/gltf/floor_tiles_kitchen.gltf",
+          "githubUrl": "https://github.com/georg-doc/kayfabizarro/blob/378b209355b13304e3cff656ec0806ca5b89df28/media/3D_Assets/Tiny_Treats_Charming_Kitchen_1.1_FREE/Assets/gltf/floor_tiles_kitchen.gltf"
+        },
+        {
+          "id": "wall_modular_tiles_kitchen_straight_A",
+          "label": "wall modular tiles kitchen straight A",
+          "kind": "structure.wall.modular",
+          "role": "build · straight",
+          "status": "SOURCE CLASSIFIED",
+          "format": "gltf",
+          "revision": "378b209355b13304e3cff656ec0806ca5b89df28",
+          "sourcePath": "media/3D_Assets/Tiny_Treats_Charming_Kitchen_1.1_FREE/Assets/gltf/wall_modular_tiles_kitchen_straight_A.gltf",
+          "packagePath": "/tools/asset_registry/module-kits/tiny-treats-charming-kitchen-1-1-free/MODULE_LIBRARY.json",
+          "previewUrl": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/378b209355b13304e3cff656ec0806ca5b89df28/media/3D_Assets/Tiny_Treats_Charming_Kitchen_1.1_FREE/Assets/gltf/wall_modular_tiles_kitchen_straight_A.gltf",
+          "githubUrl": "https://github.com/georg-doc/kayfabizarro/blob/378b209355b13304e3cff656ec0806ca5b89df28/media/3D_Assets/Tiny_Treats_Charming_Kitchen_1.1_FREE/Assets/gltf/wall_modular_tiles_kitchen_straight_A.gltf"
+        },
+        {
+          "id": "countertop_sink",
+          "label": "countertop sink",
+          "kind": "fixture.worktop",
+          "role": "furnish · sink",
+          "status": "SOURCE CLASSIFIED",
+          "format": "gltf",
+          "revision": "378b209355b13304e3cff656ec0806ca5b89df28",
+          "sourcePath": "media/3D_Assets/Tiny_Treats_Charming_Kitchen_1.1_FREE/Assets/gltf/countertop_sink.gltf",
+          "packagePath": "/tools/asset_registry/module-kits/tiny-treats-charming-kitchen-1-1-free/MODULE_LIBRARY.json",
+          "previewUrl": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/378b209355b13304e3cff656ec0806ca5b89df28/media/3D_Assets/Tiny_Treats_Charming_Kitchen_1.1_FREE/Assets/gltf/countertop_sink.gltf",
+          "githubUrl": "https://github.com/georg-doc/kayfabizarro/blob/378b209355b13304e3cff656ec0806ca5b89df28/media/3D_Assets/Tiny_Treats_Charming_Kitchen_1.1_FREE/Assets/gltf/countertop_sink.gltf"
+        },
+        {
+          "id": "fridge",
+          "label": "fridge",
+          "kind": "appliance",
+          "role": "furnish · appliance",
+          "status": "SOURCE CLASSIFIED",
+          "format": "gltf",
+          "revision": "378b209355b13304e3cff656ec0806ca5b89df28",
+          "sourcePath": "media/3D_Assets/Tiny_Treats_Charming_Kitchen_1.1_FREE/Assets/gltf/fridge.gltf",
+          "packagePath": "/tools/asset_registry/module-kits/tiny-treats-charming-kitchen-1-1-free/MODULE_LIBRARY.json",
+          "previewUrl": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/378b209355b13304e3cff656ec0806ca5b89df28/media/3D_Assets/Tiny_Treats_Charming_Kitchen_1.1_FREE/Assets/gltf/fridge.gltf",
+          "githubUrl": "https://github.com/georg-doc/kayfabizarro/blob/378b209355b13304e3cff656ec0806ca5b89df28/media/3D_Assets/Tiny_Treats_Charming_Kitchen_1.1_FREE/Assets/gltf/fridge.gltf"
+        },
+        {
+          "id": "table_A",
+          "label": "table A",
+          "kind": "furniture",
+          "role": "furnish · furniture",
+          "status": "SOURCE CLASSIFIED",
+          "format": "gltf",
+          "revision": "378b209355b13304e3cff656ec0806ca5b89df28",
+          "sourcePath": "media/3D_Assets/Tiny_Treats_Charming_Kitchen_1.1_FREE/Assets/gltf/table_A.gltf",
+          "packagePath": "/tools/asset_registry/module-kits/tiny-treats-charming-kitchen-1-1-free/MODULE_LIBRARY.json",
+          "previewUrl": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/378b209355b13304e3cff656ec0806ca5b89df28/media/3D_Assets/Tiny_Treats_Charming_Kitchen_1.1_FREE/Assets/gltf/table_A.gltf",
+          "githubUrl": "https://github.com/georg-doc/kayfabizarro/blob/378b209355b13304e3cff656ec0806ca5b89df28/media/3D_Assets/Tiny_Treats_Charming_Kitchen_1.1_FREE/Assets/gltf/table_A.gltf"
+        }
+      ],
+      "moduleKit": {
+        "source": "/tools/asset_registry/module-kits/tiny-treats-charming-kitchen-1-1-free/",
+        "librarianUrl": "https://kayfabizarro.pages.dev/asset-librarian/?pack=tiny-treats-charming-kitchen-1-1-free&moduleKit=1",
+        "stageTarget": "https://kayfabizarro.pages.dev/kfb-hub/stage/c0-a1-charming-kitchen/",
+        "gameDevCli": "UNAVAILABLE"
+      }
     }
   ],
-  "catalogRevision": "gds-2026-09-18-r3"
+  "catalogRevision": "gds-2026-09-19-module-kit-a1"
 }
