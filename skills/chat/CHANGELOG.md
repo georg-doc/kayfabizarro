@@ -262,3 +262,17 @@ The current execution environment cannot resolve/open `pages.dev`, so `PUBLIC_VE
 
 ### HUMAN GATE
 Georg reviews the original GothGirl head with verified source-eye cleanup plus EyeRig placement from Front / 3/4 / Side and attachment during Idle / Walk / Run / Jump. No merge or Live promotion before that gate.
+
+
+## 2026-09-19 · Batch EyeRig Atlas · public Stage proof green
+
+### PUBLIC PROOF
+The fixed Cloudflare Stage route for the GothGirl / Rig_Medium EyeRig candidate is now externally browser-verified. GitHub Actions run `35457983922` opened the exact `pages.dev` route with Playwright/SwiftShader and completed **17/17 checks**, **5 screenshots**, and **0 page/console errors**.
+
+### MEASURED RUNTIME
+Source-face cleanup reports exactly 12 GothGirl head components and removes verified eye components 6 + 7 non-destructively. FaceHost reports `OK`; EyeRig v6 exposes a valid eyeFrame; Idle / Walk / Run / Jump sources are present and the single actor mixer remains healthy through the scripted interaction pass.
+
+### HUMAN GATE
+Technical proof is green, but the profile is still `AUTO_CANDIDATE`. Screenshot review shows the current `ring=0.30` eyes are visibly too large/protruding, especially in 3/4 and side views. Georg tunes Eye size first, then Inset and spacing/vertical, rechecks the standard cameras and motions, and explicitly approves or rejects.
+
+Draft PR #104 remains open and unmerged. No Live promotion and no Rig_Large/Legacy expansion before that gate.
