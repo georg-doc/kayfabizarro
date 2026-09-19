@@ -1,6 +1,6 @@
 # KFB OSM City Lab
 
-Status: **MULTI-SLICE S0 TESTED · S1c CLEAN/CARTOON/GROTESQUE + SIGNS + FOREST BROWSER PASS · PUBLIC S1c PASS · S2 EXPORT CONTRACT TESTED**
+Status: **MULTI-SLICE S0 TESTED · S1c PUBLIC PASS · CORRIDOR ON MAIN · RACE RECEIVER PASS · PUBLIC STUNT WORLD 29/29 PASS · TRAVEL WALK↔DRIVE OPEN**
 
 Browser entry: `tools/osm-city-lab/index.html`
 
@@ -100,9 +100,9 @@ City Lab owns geodata normalization, city geometry, styling and export only.
 
 **S1c TESTED RESULT:** Clean/Cartoon/Grotesque, OSM street-sign and KayKit Forest/Nature presentation cases boot in Chromium/WebGL. Ehrenfeld produces 183 driveable-road junction patches / 168 lower path meshes / 27 safe OSM-name signs; Hürth produces 104 / 48 / 19 plus a 72-tree KayKit green-landuse POC. Separate roof caps remain removed and S2 geometry remains undeformed. Georg live moving/zoom/art-direction acceptance remains pending.
 
-**S2 IMPLEMENTATION / RECEIVER TESTED RESULT:** per-city consumer exports exist. The tested 11.384 km corridor source + normalized data + consumer scene are now also present on the current-main-based promotion branch `osm-city/corridor-promote-tested-stack-r2-2026-09-19`; promotion run `35415509853` is deterministic PASS. A separate Race / Free-Roam Stage branch consumes the exact Hürth + Ehrenfeld exports and the pinned corridor consumer. Race workflow `35414946641`, job `105821630552` passed: existing Hürth C1 browser 26/26 plus continuous corridor browser 17/17; a short 6.807 m browser drive preserved four C0 wheel contacts with no new recovery/run. This is still DRIVE-only and is not Travel Walk↔Drive acceptance. The corridor consumer remains on stacked draft PRs / pinned commits and is not yet promoted to City Lab `main`.
+**S2 IMPLEMENTATION / RECEIVER TESTED RESULT:** the tested **11.384 km** corridor source, normalized data and consumer scene are on City Lab `main` via PR #86 / merge `3813d24e3db04a43117676890e48f7b6baaf6cd9`. Post-merge consumer run `35415680112` and S2 export-contract run `35415680163` are PASS; the main evidence refresh at `25c2c616720e18d97028bf06fdd03d10c16b3504` kept normalized and scene hashes exact. The Race / Free-Roam receiver passed run `35414946641`, job `105821630552`: Hürth C1 26/26 plus continuous corridor 17/17, four C0 wheel contacts, 6.807 m short drive, no new recovery/run. This remains DRIVE-only and is not Travel Walk↔Drive acceptance.
 
-**PUBLIC DEPLOYMENT · TESTED RESULT:** public S1 city navigator/viewer proof passed on `kayfabizarro.pages.dev`: workflow run `35390530619`, attempt 2, job `105748631023`, **27 checks / 2 cities PASS**. This proves the public S1 browser consumers, provenance, source counts, no separate roof caps, and no City movement owner. It does not claim public corridor driving or Travel integration.
+**PUBLIC DEPLOYMENT · TESTED RESULT:** public S1 city navigator/viewer proof passed on `kayfabizarro.pages.dev`: run `35390530619`, attempt 2, job `105748631023`, **27 checks / 2 cities PASS**. The canonical Stunt World corridor is now also public-browser tested at `https://kayfabizarro.pages.dev/kfb-hub/stage/stunt-world/`: main proof `35416057009`, job `105824845921`, **29/29 PASS**, 9/9 public runtime byte hashes exact, WebGL boot 2852 ms, 4/4 C0 contacts, 6.406 m short public drive, no new recovery/run and no console/page/HTTP errors. Full-route human drive and physical mobile QA remain open.
 
 ## Source / licence
 

@@ -1,7 +1,7 @@
 # Return · Corridor tested-stack promotion onto current main
 
 **Date:** 2026-09-19  
-**Status:** PROMOTION CANDIDATE · CURRENT-MAIN-BASED · DETERMINISTIC CI PASS · MAIN MERGE OPEN
+**Status:** MAIN PROMOTED · POST-MERGE CONSUMER PASS · PUBLIC STUNT WORLD 29/29 PASS · HUMAN FULL-ROUTE OPEN
 
 ## Goal
 
@@ -111,11 +111,29 @@ Latest tested browser proof:
 - evidence commit: `7208b4167df6fbea62703177301473eb841522d7`
 - artifact: `10574843986`
 
-## PUBLIC DEPLOYMENT
+## PUBLIC DEPLOYMENT · TESTED RESULT
 
-The public Ehrenfeld/Hürth S1 viewer is already tested on `kayfabizarro.pages.dev`.
+The public Ehrenfeld/Hürth S1 viewer is tested on `kayfabizarro.pages.dev`.
 
-This promotion does **not** claim a public Corridor Drive Stage. The Race receiver remains a Stage branch until explicitly promoted.
+The corridor Stage mirror is also now tested at:
+
+`https://kayfabizarro.pages.dev/kfb-hub/stage/stunt-world/`
+
+Official proof:
+
+- main proof commit: `d78fa862262184aa0ed172ed42e10db6e3705c71`;
+- workflow `35416057009`;
+- job `105824845921`;
+- **29/29 PASS**;
+- 9/9 public runtime bytes exact;
+- public WebGL boot 2852 ms;
+- 4/4 C0 contacts;
+- 6.406 m short public drive;
+- no new recovery/run;
+- no console/page or failed-HTTP errors;
+- artifact `10575592864`.
+
+This is **PUBLIC STAGE BROWSER PASS**, not human full-route or physical mobile acceptance.
 
 ## GEORG ACCEPTANCE
 
@@ -123,11 +141,21 @@ OPEN:
 
 **Drive a meaningful longer portion of the connected Hürth → Ehrenfeld corridor and judge scale, road readability, grotesque city/forest balance and overall coherence.**
 
+## Main promotion result
+
+- PR #86
+- merge `3813d24e3db04a43117676890e48f7b6baaf6cd9`
+- post-merge consumer run `35415680112` / job `105823765381`: **PASS**
+- S2 export contract `35415680163`: **PASS**
+- main evidence refresh `25c2c616720e18d97028bf06fdd03d10c16b3504`
+- normalized/scene hashes unchanged.
+
 ## Still open
 
-- main merge of this promotion candidate;
-- longer human route drive;
-- public standalone Corridor Drive page;
+- longer human full-route drive;
+- physical mobile QA;
 - Travel Walk↔Drive;
 - Drive↔Flight;
-- landmark runtime insertion.
+- landmark runtime insertion;
+- audio integration;
+- Live promotion beyond Stage.
