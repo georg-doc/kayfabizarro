@@ -234,3 +234,20 @@ All three prepare the same neutral materialize/enter/instance/result/return cont
 
 ### HUB ROUTING
 Keep the existing briefing IDs for stable filters, but point them to the new standalone briefs and updated copyable start texts.
+
+
+## 2026-09-19 · Batch EyeRig Atlas · first Rig_Medium Stage candidate
+
+### IMPLEMENTATION
+The ToolBox-owned Batch EyeRig slice now has a bounded GothGirl / Rig_Medium candidate on branch `toolbox/eye-rig-batch-2026-09-18`, implementation checkpoint `d900fb99f3b04d52f266febd1501368c5fedd360`, with draft PR #104. It reuses EyeRig v6, FaceHost v1 and one actor AnimationMixer; no canonical GLB/GLTF or Resident Atlas recipe is rewritten.
+
+### TESTED RESULT
+Static contract suite: **22/22 PASS**. JavaScript syntax: **3/3 PASS**. The available container Chromium could not initialize EGL/X in two attempts before application boot, so no local visual/browser PASS is claimed.
+
+### STAGE ROUTING
+Fixed human route: `https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/eye-rig-batch/`. The lean `cloudflare-live` publication branch contains Stage mirror commit `f309948a3bd265154e6d3f5c959b69ec9b725f26` and the Hub card points there.
+
+The current execution environment cannot resolve/open `pages.dev`, so `PUBLIC_VERIFIED` remains OPEN until the exact route is visibly confirmed in a normal browser.
+
+### HUMAN GATE
+Georg reviews the original GothGirl head with verified source-eye cleanup plus EyeRig placement from Front / 3/4 / Side and attachment during Idle / Walk / Run / Jump. No merge or Live promotion before that gate.
