@@ -40,7 +40,9 @@
       "10": "brow-x-negative",
       "11": "brow-x-positive"
     },
-    "identityEvidence": "docs/SOURCE_COMPONENT_IDENTITY_2026-09-19.md"
+    "identityEvidence": "docs/SOURCE_COMPONENT_IDENTITY_2026-09-19.md",
+    "faceColor": "#e6cbc3",
+    "faceColorSource": "tools/KFB-ToolBox/_inbox/KFB Elisa B-Day Reference+Mockups/kfb-pet-gothgirl.json#pets[gothgirl].color"
   },
   "eyeRigSource": {
     "path": "tools/KFB-ToolBox/kfb-rigs-embed-v3/petstudio-v9/studio-v12/pet-eye-rig.v6.js",
@@ -56,16 +58,18 @@
     "anchor": {
       "dx": 0.345,
       "dy": -0.1,
-      "ring": 0.3,
+      "ring": 0.2,
       "track": 0.1
     },
     "pupilStyle": "matte-cute",
-    "pupilSize": 0.5,
+    "pupilSize": 0.34,
     "gloss": 0.1,
     "inset": 0,
     "lidFit": 0.9,
     "converge": 0,
-    "splay": 0
+    "splay": 0,
+    "baseColor": "#e6cbc3",
+    "lidColorMode": "face-base-darkened"
   },
   "blink": {
     "minGap": 2.5,
@@ -90,5 +94,13 @@
     "motionClip": "T-Pose",
     "sourceEyeCleanupVisuallyAccepted": false,
     "eyeProfileVisuallyApproved": false
+  },
+  "calibration": {
+    "schema": "kfb.eye-medium-calibration/0.1-candidate",
+    "classSeed": "./rig-medium-default.v0.json",
+    "bootFallbackRing": 0.2,
+    "runtimeRule": "ring = sourceMeasured.dx * (gothgirlJson.eye.anchor.ring / gothgirlJson.eye.anchor.dx)",
+    "sourceMeasuredPlacementPolicy": "ring-only for class default; raw dx/dy remain explicit comparison controls",
+    "status": "AUTO_CANDIDATE"
   }
 }

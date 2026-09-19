@@ -4,6 +4,9 @@ import { EyeRig } from 'https://cdn.jsdelivr.net/gh/georg-doc/kayfabizarro@5650b
 export const ADAPTER_SCHEMA = 'kfb.kaykit-eye-adapter/0.1-candidate';
 
 function clone(v) { return JSON.parse(JSON.stringify(v)); }
+function colorHex(THREE, value) {
+  try { return '#' + new THREE.Color(value).getHexString(); } catch { return null; }
+}
 
 export async function mountKayKitEyes({
   THREE,
@@ -23,6 +26,7 @@ export async function mountKayKitEyes({
   }
 
   const eye = profile?.eye || {};
+  const baseColor = eye.baseColor ?? profile?.sourceFace?.faceColor ?? '#b58f83';
   const rig = new EyeRig(faceHost.faceCtx(), {
     anchor: clone(eye.anchor || {}),
     pupilStyle: eye.pupilStyle || 'matte-cute',
@@ -32,6 +36,7 @@ export async function mountKayKitEyes({
     lidFit: eye.lidFit ?? 0.9,
     converge: eye.converge ?? 0,
     splay: eye.splay ?? 0,
+    baseColor,
     blink: clone(profile?.blink || {}),
     life: clone(profile?.life || {}),
     kinetics: clone(profile?.kinetics || {}),
@@ -63,6 +68,7 @@ export async function mountKayKitEyes({
     setAnchor(patch) { rig.setAnchor(patch); api.setVisible(api.visible); },
     setEye(patch) { rig.setEye(patch); api.setVisible(api.visible); },
     setPupilStyle(style) { rig.setPupilStyle(style); api.setVisible(api.visible); },
+    setBaseColor(hex) { rig.setBaseColor(hex); api.setVisible(api.visible); },
     setGazeFollow(on) { rig.setGazeFollow(on); },
     setLife(patch) { rig.setLife(patch); },
     setKinetics(patch) { rig.setKinetics(patch); },
@@ -84,6 +90,7 @@ export async function mountKayKitEyes({
         controls: {
           anchor: clone(rig.anchor), pupilStyle: rig.pupilStyle, pupilSize: rig.pupilSize,
           gloss: rig.gloss, inset: rig.inset, lidFit: rig.lidFit, converge: rig.converge, splay: rig.splay,
+          baseColor: colorHex(THREE, rig.baseColor), lidColorMode: eye.lidColorMode || 'face-base-darkened',
           blink: clone(rig.blink), life: clone(rig.life), kinetics: clone(rig.kinetics)
         }
       };
@@ -98,7 +105,7 @@ export async function mountKayKitEyes({
   rig.setGazeFollow(false);
   for (let i = 0; i < 16; i++) rig.update(1 / 60);
   api.setVisible(true);
-  log('EyeRig v6 mounted · neutral applied · 16 settle ticks · update(dt) required every rendered frame');
+  log(`EyeRig v6 mounted · neutral applied · 16 settle ticks · lids ${colorHex(THREE, rig.baseColor)} base-darkened · update(dt) required every rendered frame`);
   return api;
 }
 

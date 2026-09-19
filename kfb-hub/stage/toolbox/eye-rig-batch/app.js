@@ -11,6 +11,7 @@ const GENERAL_URL = CDN + 'media/3D_Assets/KayKit_Mystery_Series6/GothGirl/Anima
 const MOVE_URL = CDN + 'media/3D_Assets/KayKit_Mystery_Series6/GothGirl/Animations/gltf/Rig_Medium/Rig_Medium_MovementBasic.glb';
 const CONTRACT_URL = CDN + 'tools/KFB-ToolBox/kfb-rigs-embed-v3/contracts/kfb-pet-graft-driver.v4.json';
 const STORAGE_KEY = 'kfb.toolbox.eye-rig-batch.v0';
+const MEDIUM_SEED_URL = './data/rig-medium-default.v0.json';
 const $ = (q) => document.querySelector(q);
 const $$ = (q) => [...document.querySelectorAll(q)];
 const clone = (v) => JSON.parse(JSON.stringify(v));
@@ -18,9 +19,9 @@ const logLines = [];
 let bootError = null;
 
 const state = {
-  seed: null, profile: null, approved: null, pendingImport: null,
+  seed: null, mediumSeed: null, profile: null, approved: null, pendingImport: null,
   figure: null, stageRoot: null, cleanup: null, eyes: null, mixer: null,
-  componentDiagnosticRestore: null,
+  componentDiagnosticRestore: null, qaLast: null, savedLegacyDefault: false,
   clips: new Map(), currentAction: null, currentMotion: 'bind', currentView: 'front',
   expression: 'neutral', sourceReady: false, cleanupReady: false, hostReady: false, eyeReady: false, motionReady: false
 };
@@ -37,6 +38,45 @@ function sourceRef() { return { repo:'georg-doc/kayfabizarro', path:state.profil
 function readSaved() { try { return JSON.parse(localStorage.getItem(STORAGE_KEY) || 'null'); } catch { return null; } }
 function save() { localStorage.setItem(STORAGE_KEY, JSON.stringify({ profile: state.profile, approved: state.approved })); }
 function value(v, digits=3) { return Number(v).toFixed(digits).replace(/0+$/,'').replace(/\.$/,''); }
+function near(a,b,eps=1e-6){ return Number.isFinite(+a) && Math.abs(+a-b)<=eps; }
+function isLegacyUntunedProfile(p) {
+  return p?.actorId==='gothgirl' && p?.status==='AUTO_CANDIDATE' &&
+    near(p?.eye?.anchor?.ring,0.30) && near(p?.eye?.pupilSize,0.50) && !p?.eye?.baseColor;
+}
+function calibrateRigMediumDefault(measured, applyToProfile=false) {
+  const cfg=state.mediumSeed, dx=measured?.anchorCandidate?.dx;
+  if(!cfg || !Number.isFinite(dx)) return null;
+  const ratio=cfg.mapping.ringToMeasuredDxRatio;
+  const ring=+(dx*ratio).toFixed(5);
+  const pupilSize=cfg.mapping.pupilSize;
+  const faceColor=state.seed?.sourceFace?.faceColor || cfg.reference.actorFaceColor;
+  state.seed.eye.anchor.ring=ring;
+  state.seed.eye.pupilSize=pupilSize;
+  state.seed.eye.baseColor=faceColor;
+  state.seed.eye.lidColorMode=cfg.mapping.lidColorMode;
+  state.seed.calibration={...(state.seed.calibration||{}),measuredDx:+dx.toFixed(5),ringToDxRatio:ratio,result:{ring,pupilSize,baseColor:faceColor},status:'AUTO_CANDIDATE'};
+  if(applyToProfile && state.profile){
+    state.profile.eye.anchor.ring=ring;
+    state.profile.eye.pupilSize=pupilSize;
+    state.profile.eye.baseColor=faceColor;
+    state.profile.eye.lidColorMode=cfg.mapping.lidColorMode;
+    state.profile.calibration=clone(state.seed.calibration);
+    state.profile.status='AUTO_CANDIDATE';
+    state.eyes?.setBaseColor(faceColor);
+    state.eyes?.setAnchor({ring});
+    state.eyes?.setEye({pupilSize});
+    save();
+  } else if(state.profile && !state.profile.eye.baseColor) {
+    state.profile.eye.baseColor=faceColor;
+    state.profile.eye.lidColorMode=cfg.mapping.lidColorMode;
+    state.eyes?.setBaseColor(faceColor);
+    save();
+  }
+  const hint=$('#mediumSeedHint');
+  if(hint) hint.textContent=`Rig_Medium candidate · ring ${value(ring)} · pupil ${value(pupilSize)} · lids darkened from ${faceColor} · GothGirl JSON ratio ${value(ratio)}`;
+  log(`Rig_Medium calibration · measured dx ${value(dx)} × ${value(ratio)} → ring ${value(ring)} · pupil ${value(pupilSize)} · lid base ${faceColor}`);
+  return {ring,pupilSize,baseColor:faceColor,ratio,measuredDx:dx};
+}
 
 function profileFromRig() {
   if (!state.eyes) return state.profile;
@@ -47,7 +87,8 @@ function profileFromRig() {
   state.profile.sourceFace = { ...state.profile.sourceFace, ...clone(state.cleanup.report), connectedComponents: state.cleanup.report.connectedComponents };
   state.profile.eye = {
     anchor: clone(r.anchor), pupilStyle:r.pupilStyle, pupilSize:r.pupilSize, gloss:r.gloss,
-    inset:r.inset, lidFit:r.lidFit, converge:r.converge, splay:r.splay
+    inset:r.inset, lidFit:r.lidFit, converge:r.converge, splay:r.splay,
+    baseColor: state.eyes.report().controls.baseColor, lidColorMode: state.profile.eye.lidColorMode || 'face-base-darkened'
   };
   state.profile.blink = clone(r.blink);
   state.profile.life = clone(r.life);
@@ -97,6 +138,7 @@ function bindUiFromProfile() {
 function applyProfileToRig(profile) {
   if (!state.eyes) return;
   const e = profile.eye || {}, a = e.anchor || {};
+  if(e.baseColor) state.eyes.setBaseColor(e.baseColor);
   state.eyes.setAnchor({dx:a.dx,dy:a.dy,ring:a.ring,track:a.track});
   state.eyes.setEye({pupilSize:e.pupilSize,gloss:e.gloss,inset:e.inset,lidFit:e.lidFit,converge:e.converge,splay:e.splay});
   state.eyes.setPupilStyle(e.pupilStyle || 'matte-cute');
@@ -261,6 +303,29 @@ function wireComponentDiagnostic(camera, controls) {
   };
 }
 
+async function captureQaContactSheet(renderer,camera,controls) {
+  const views=['front','three-left','three-right','side-right'];
+  const prior=state.currentView;
+  const tileW=800,tileH=500;
+  const sheet=document.createElement('canvas'); sheet.width=tileW*2; sheet.height=tileH*2;
+  const ctx=sheet.getContext('2d');
+  for(let i=0;i<views.length;i++){
+    const name=views[i]; setView(name,camera,controls); controls.update();
+    renderer.render(window.__EYE_RIG_BATCH.scene,camera);
+    const x=(i%2)*tileW,y=Math.floor(i/2)*tileH;
+    ctx.drawImage(renderer.domElement,x,y,tileW,tileH);
+    ctx.fillStyle='rgba(20,16,14,.72)'; ctx.fillRect(x+12,y+tileH-42,250,28);
+    ctx.fillStyle='#fff'; ctx.font='18px system-ui,sans-serif';
+    ctx.fillText(name.replaceAll('-',' '),x+22,y+tileH-22);
+  }
+  setView(prior,camera,controls); renderer.render(window.__EYE_RIG_BATCH.scene,camera);
+  const controlsReport=state.eyes?.report()?.controls || {};
+  state.qaLast={views:[...views],ring:controlsReport.anchor?.ring,pupilSize:controlsReport.pupilSize,baseColor:controlsReport.baseColor,motion:state.currentMotion,expression:state.expression};
+  const a=document.createElement('a'); a.href=sheet.toDataURL('image/png'); a.download='gothgirl-qa-front-3q-side.png'; a.click();
+  log(`QA contact sheet captured · ${views.join(' / ')} · ring ${value(state.qaLast.ring)} · pupil ${value(state.qaLast.pupilSize)}`);
+  renderReport();
+}
+
 function wireRuntimeControls(camera,controls,renderer) {
   $$('.tool[data-view]').forEach((b)=> b.onclick=()=>setView(b.dataset.view,camera,controls));
   $$('.motion').forEach((b)=> b.onclick=()=>playMotion(b.dataset.motion));
@@ -305,21 +370,34 @@ function wireRuntimeControls(camera,controls,renderer) {
     };
   }
   $('#captureBtn').onclick=()=>{ renderer.render(window.__EYE_RIG_BATCH.scene,camera); const a=document.createElement('a'); a.href=renderer.domElement.toDataURL('image/png'); a.download=`gothgirl-${state.currentView}-${state.currentMotion}.png`; a.click(); };
+  $('#qaCaptureBtn').onclick=()=>captureQaContactSheet(renderer,camera,controls);
+
 }
 
 async function boot() {
-  const seed = await fetch('./data/gothgirl.seed.json').then((r)=>{if(!r.ok)throw new Error(`seed ${r.status}`);return r.json();}); state.seed=seed;
-  const saved=readSaved(); state.profile = saved?.profile ? validateProfile(saved.profile) : clone(seed); state.approved=saved?.approved||null;
+  const [seed,mediumSeed] = await Promise.all([
+    fetch('./data/gothgirl.seed.json').then((r)=>{if(!r.ok)throw new Error(`seed ${r.status}`);return r.json();}),
+    fetch(MEDIUM_SEED_URL).then((r)=>{if(!r.ok)throw new Error(`medium seed ${r.status}`);return r.json();})
+  ]);
+  state.seed=seed; state.mediumSeed=mediumSeed;
+  const saved=readSaved();
+  state.savedLegacyDefault=isLegacyUntunedProfile(saved?.profile);
+  state.profile = saved?.profile ? validateProfile(saved.profile) : clone(seed);
+  state.approved=saved?.approved||null;
+  if(!state.profile.eye.baseColor){
+    state.profile.eye.baseColor=seed.sourceFace.faceColor || mediumSeed.reference.actorFaceColor;
+    state.profile.eye.lidColorMode=mediumSeed.mapping.lidColorMode;
+  }
   const contract=await fetch(CONTRACT_URL).then((r)=>{if(!r.ok)throw new Error(`contract ${r.status}`);return r.json();});
   const {renderer,scene,camera,controls,ro}=configureRenderer();
-  window.__EYE_RIG_BATCH={state,scene,camera,controls,renderer,logLines,report:()=>({profile:profileFromRig(),cleanup:state.cleanup?.report,eyes:state.eyes?.report(),clips:[...state.clips.keys()],gates:{source:state.sourceReady,cleanup:state.cleanupReady,host:state.hostReady,eye:state.eyeReady,motion:state.motionReady},error:bootError?.message||null})};
+  window.__EYE_RIG_BATCH={state,scene,camera,controls,renderer,logLines,report:()=>({profile:profileFromRig(),cleanup:state.cleanup?.report,eyes:state.eyes?.report(),qa:state.qaLast,mediumSeed:state.mediumSeed,clips:[...state.clips.keys()],gates:{source:state.sourceReady,cleanup:state.cleanupReady,host:state.hostReady,eye:state.eyeReady,motion:state.motionReady},error:bootError?.message||null})};
   const loader=new GLTFLoader();
   const gltf=await loader.loadAsync(ACTOR_URL); const figure=gltf.scene; state.figure=figure; state.stageRoot.add(figure);
   const norm=normalizeActor(figure); figure.visible=false; state.sourceReady=true; gate('#gateSource','pass'); log(`GothGirl source loaded · ${norm.sourceHeight} → ${norm.normalizedHeight} high · 1 figure`);
   const cleanup=prepareVerifiedGothGirlCleanup({figure,preferredHeadMesh:seed.sourceFace.headMesh,expectedConnectedComponents:seed.sourceFace.expectedConnectedComponents,eyeComponents:seed.sourceFace.eyeComponents,log}); state.cleanup=cleanup;
-  state.cleanupReady=cleanup.status==='AUTO_CANDIDATE'; gate('#gateCleanup',state.cleanupReady?'pass':'fail'); if(state.cleanupReady)cleanup.apply(true);
+  state.cleanupReady=['AUTO_CANDIDATE','SOURCE_IDENTITY_VERIFIED_AUTO_CANDIDATE'].includes(cleanup.status); gate('#gateCleanup',state.cleanupReady?'pass':'fail'); if(state.cleanupReady)cleanup.apply(true);
   state.mixer=new THREE.AnimationMixer(figure);
-  const eyes=await mountKayKitEyes({THREE,figure,sourceRef:sourceRef(),profile:state.profile,expressionContract:contract,camera,log}); state.eyes=eyes; cleanup.measureOnFaceHost?.(eyes.faceHost); state.hostReady=eyes.faceHost.status==='OK'; state.eyeReady=!!eyes.eyeFrame(); gate('#gateHost',state.hostReady?'pass':'fail'); gate('#gateEye',state.eyeReady?'pass':'fail');
+  const eyes=await mountKayKitEyes({THREE,figure,sourceRef:sourceRef(),profile:state.profile,expressionContract:contract,camera,log}); state.eyes=eyes; const measured=cleanup.measureOnFaceHost?.(eyes.faceHost); calibrateRigMediumDefault(measured,!saved?.profile || state.savedLegacyDefault); state.hostReady=eyes.faceHost.status==='OK'; state.eyeReady=!!eyes.eyeFrame(); gate('#gateHost',state.hostReady?'pass':'fail'); gate('#gateEye',state.eyeReady?'pass':'fail');
   figure.visible=true; bindUiFromProfile(); wireProfileIo(); wireRuntimeControls(camera,controls,renderer); wireComponentDiagnostic(camera,controls); setView('front',camera,controls); poseBind();
   await loadMotion(loader);
   $('#loadingCard').remove(); setBadge($('#bootBadge'),'READY',state.sourceReady&&state.cleanupReady&&state.hostReady&&state.eyeReady&&state.motionReady?'pass':'candidate');

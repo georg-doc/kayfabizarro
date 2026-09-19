@@ -4,10 +4,10 @@
   "sourceRepo": "georg-doc/kayfabizarro",
   "sourceBranch": "toolbox/eye-rig-batch-2026-09-18",
   "sourcePR": 104,
-  "sourceHead": "949ff8037df2da88eb91ef825984ef57870b8238",
+  "sourceHead": "ef7a8f203762f670e00ccdd27b540703d855807d",
   "implementationCheckpoint": "d900fb99f3b04d52f266febd1501368c5fedd360",
   "stageMirrorParent": "cd8ac363ed5708103324581e683f6b33c6c265f6",
-  "expectedVisibleMarker": "source 949ff80 · impl d900fb9 · PR #104 · Stage · eyes 2+3",
+  "expectedVisibleMarker": "source ef7a8f2 · calibrated · eyes 2+3 · PR #104",
   "humanGate": "Georg visual acceptance of corrected 2+3 cleanup / measured baseline; no Live promotion",
   "previousPublicProof": {
     "run": 35460179569,
@@ -16,14 +16,28 @@
     "sourceHead": "fd7a123b3747f74f79b2759e1cbb48fc64f823f0",
     "note": "historical pre-identity proof; 6+7 baseline diagnostic only"
   },
-  "measurementMode": "CORRECTED_SOURCE_EYE_COMPONENTS_2_3_PENDING_PUBLIC_PROOF",
+  "measurementMode": "RIG_MEDIUM_GOTHGIRL_CALIBRATED_RING_AND_PUPIL",
   "sourceIdentity": "RESOLVED_EYES_2_3",
   "identityEvidence": "./docs/source-components-0-11.html",
   "candidateAction": "EXPLICIT_ONLY_RESETTABLE_NOT_APPROVED",
-  "nextGate": "CORRECTED_2_3_MEASURED_BASELINE_VISUAL_GATE",
-  "proofRequest": "CORRECTED_2_3_PUBLIC_PROOF",
+  "nextGate": "GEORG_QA_4VIEW_DEFAULT_CALIBRATION",
+  "proofRequest": "RIG_MEDIUM_DEFAULT_CALIBRATION_PUBLIC_PROOF",
   "returnHead": "5e203568884b3f0d564a3d6fbc09be1122303ac3",
   "mainRouterHead": "a92e3c70029d811b76a88a15459adc20fea943bb",
   "hubCard": "SYNCED_TO_CORRECTED_2_3_HUMAN_GATE",
-  "publicVerification": "OPEN_CURRENT_TOOLS_CANNOT_OPEN_PAGES_DEV"
+  "publicVerification": "OPEN_AFTER_THIS_PUBLICATION",
+  "eyeDefaults": {
+    "bootFallbackRing": 0.2,
+    "runtimeRingRule": "sourceMeasured.dx * 0.32 / 0.49",
+    "pupilSize": 0.34,
+    "lidBaseColor": "#e6cbc3",
+    "lidMode": "face-base-darkened"
+  },
+  "qaViews": [
+    "front",
+    "three-left",
+    "three-right",
+    "side-right"
+  ],
+  "qaArtifact": "gothgirl-qa-front-3q-side.png"
 }

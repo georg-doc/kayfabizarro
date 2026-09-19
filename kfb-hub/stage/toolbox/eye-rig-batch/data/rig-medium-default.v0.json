@@ -1,0 +1,38 @@
+{
+  "schema": "kfb.eye-class-seed/0.1-candidate",
+  "rigClass": "Rig_Medium",
+  "status": "CANDIDATE_FROM_GOTHGIRL_REFERENCE",
+  "reference": {
+    "path": "tools/KFB-ToolBox/_inbox/KFB Elisa B-Day Reference+Mockups/kfb-pet-gothgirl.json",
+    "blob": "e87e6337a6db67096a9577335f36d60672aa389e",
+    "actorId": "gothgirl",
+    "actorEyeAnchor": {
+      "dx": 0.49,
+      "dy": -0.01,
+      "ring": 0.32,
+      "track": 0.06
+    },
+    "actorPupilSize": 0.34,
+    "actorFaceColor": "#e6cbc3",
+    "globalEyeAnchor": {
+      "dx": 0.345,
+      "dy": -0.1,
+      "ring": 0.3,
+      "track": 0.1
+    }
+  },
+  "mapping": {
+    "ringToMeasuredDxRatio": 0.653061224,
+    "formula": "ring = sourceMeasured.anchorCandidate.dx * 0.32 / 0.49",
+    "bootFallbackRing": 0.2,
+    "pupilSize": 0.34,
+    "lidColorMode": "face-base-darkened",
+    "note": "Translate tuned GothGirl proportions into FaceHost-normalized KayKit space; do not copy legacy ring units 1:1."
+  },
+  "protected": {
+    "dx": "do not class-retune automatically",
+    "dy": "do not class-retune automatically",
+    "sourceAssets": "never modify GLB/GLTF",
+    "approval": "AUTO_CANDIDATE until screenshot QA + Georg review"
+  }
+}

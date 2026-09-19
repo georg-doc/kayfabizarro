@@ -34,7 +34,7 @@ jobs:
           const BASE='https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/eye-rig-batch/';
           const WANT={
             sourcePR:104,
-            sourceHead:'949ff8037df2da88eb91ef825984ef57870b8238',
+            sourceHead:'ef7a8f203762f670e00ccdd27b540703d855807d',
             implementationCheckpoint:'d900fb99f3b04d52f266febd1501368c5fedd360'
           };
           const result={url:BASE,want:WANT,checks:[],errors:[],screenshots:[],status:'RUNNING'};
@@ -89,7 +89,7 @@ jobs:
             }));
 
             check('page title',/Batch EyeRig Atlas/.test(initial.title),initial.title);
-            check('visible revision marker',initial.marker.includes('source 949ff80')&&initial.marker.includes('impl d900fb9')&&initial.marker.includes('PR #104'),initial.marker);
+            check('visible revision marker',initial.marker.includes('source ef7a8f2')&&initial.marker.includes('impl d900fb9')&&initial.marker.includes('PR #104'),initial.marker);
             check('runtime no boot error',!initial.report.error,initial.report.error);
             check('source gate',initial.report.gates?.source===true,initial.report.gates);
             check('cleanup gate',initial.report.gates?.cleanup===true,initial.report.cleanup);
@@ -110,6 +110,20 @@ jobs:
               initial.report.clips);
 
             const measuredTarget=initial.report.cleanup?.sourceMeasuredSeed?.anchorCandidate;
+            const mediumRatio=initial.report.mediumSeed?.mapping?.ringToMeasuredDxRatio;
+            const calibratedRing=measuredTarget?.dx*mediumRatio;
+            check('Rig_Medium calibrated eye size',
+              Number.isFinite(calibratedRing) &&
+              Math.abs(initial.report.profile?.eye?.anchor?.ring-calibratedRing)<1e-4 &&
+              initial.report.profile?.eye?.anchor?.ring<0.30,
+              {measuredTarget,mediumRatio,actual:initial.report.profile?.eye?.anchor?.ring});
+            check('GothGirl pupil default 0.34',
+              Math.abs(initial.report.profile?.eye?.pupilSize-0.34)<1e-6,
+              initial.report.profile?.eye?.pupilSize);
+            check('lid base uses GothGirl face color',
+              initial.report.eyes?.controls?.baseColor==='#e6cbc3' &&
+              initial.report.profile?.eye?.lidColorMode==='face-base-darkened',
+              {baseColor:initial.report.eyes?.controls?.baseColor,lidColorMode:initial.report.profile?.eye?.lidColorMode});
             check('corrected source baseline is facial, not lateral',
               Number.isFinite(measuredTarget?.dx) && measuredTarget.dx>0.15 && measuredTarget.dx<0.5 &&
               Number.isFinite(measuredTarget?.dy) && measuredTarget.dy>-0.2 && measuredTarget.dy<0.2 &&
@@ -130,11 +144,12 @@ jobs:
             await page.click('#resetSeedBtn');
             await pause(220);
             const resetApplied=await page.evaluate(()=>window.__EYE_RIG_BATCH.report());
-            check('reset seed restores visible candidate',
+            check('reset seed restores calibrated candidate',
               Math.abs(resetApplied.profile?.eye?.anchor?.dx-0.345)<1e-6 &&
               Math.abs(resetApplied.profile?.eye?.anchor?.dy+0.10)<1e-6 &&
-              Math.abs(resetApplied.profile?.eye?.anchor?.ring-0.30)<1e-6,
-              resetApplied.profile?.eye?.anchor);
+              Math.abs(resetApplied.profile?.eye?.anchor?.ring-calibratedRing)<1e-4 &&
+              Math.abs(resetApplied.profile?.eye?.pupilSize-0.34)<1e-6,
+              {anchor:resetApplied.profile?.eye?.anchor,pupilSize:resetApplied.profile?.eye?.pupilSize,calibratedRing});
 
             check('component selector has 12 entries',
               await page.locator('#componentSelect option').count()===12,
@@ -173,6 +188,16 @@ jobs:
             result.componentProof=componentProof;
             await page.click('[data-view="front"]');
             await pause(120);
+
+            const qaDownloadPromise=page.waitForEvent('download');
+            await page.click('#qaCaptureBtn');
+            const qaDownload=await qaDownloadPromise;
+            const qaPath='public-proof/qa-4view-contact-sheet.png';
+            await qaDownload.saveAs(qaPath);
+            result.screenshots.push(qaPath);
+            check('QA four-view contact sheet download',
+              qaDownload.suggestedFilename()==='gothgirl-qa-front-3q-side.png',
+              qaDownload.suggestedFilename());
 
             await shot('01-front-bind');
 
