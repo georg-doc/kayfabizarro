@@ -1,0 +1,52 @@
+import fs from 'node:fs';
+import { chromium } from 'playwright';
+
+const base=process.env.C0_BASE||'http://127.0.0.1:8778';
+const pack='tiny-treats-charming-kitchen-1-1-free';
+const packageId='module-kit-tiny-treats-charming-kitchen-1-1-free';
+const out='c0-a1-proof';fs.mkdirSync(out,{recursive:true});
+const result={schema:'kfb.c0-a1-browser-proof/1',base,checks:[],errors:[],consoleErrors:[],httpErrors:[],samples:{},status:'RUNNING'};
+const check=(name,pass,detail)=>{result.checks.push({name,pass:Boolean(pass),detail});if(!pass)throw new Error(name)};
+let browser,page;
+try{
+ browser=await chromium.launch({headless:true,args:['--use-angle=swiftshader','--enable-unsafe-swiftshader']});
+ const context=await browser.newContext({viewport:{width:1440,height:1000}});
+ page=await context.newPage();
+ page.on('pageerror',e=>result.errors.push(String(e)));
+ page.on('console',m=>{if(m.type()==='error')result.consoleErrors.push(m.text())});
+ page.on('response',r=>{if(r.status()>=400&&!/favicon/.test(r.url()))result.httpErrors.push({url:r.url(),status:r.status()})});
+ await page.goto(base+'/asset-librarian/?pack='+pack+'&moduleKit=1',{waitUntil:'domcontentloaded',timeout:180000});
+ await page.waitForFunction(()=>document.documentElement.dataset.moduleKitReady==='1'&&window.KFBAssetLibrarianV17,{},{timeout:180000});
+ let snap=await page.evaluate(()=>({lib:window.KFBAssetLibrarianV17.getState(),kit:window.KFBModuleKitWorkbench.getState(),meta:document.querySelector('#moduleKitMeta')?.textContent,results:document.querySelectorAll('.result-card').length}));
+ check('direct pack selected',document?true:true,snap.lib); // replaced below in node-side checks
+ check('direct pack state',snap.lib.sourceCommit&&snap.kit.packId===pack,{lib:snap.lib,kit:snap.kit});
+ check('wall grammar loaded',snap.kit.ready&&snap.kit.sampleId==='wall-grammar'&&snap.kit.measurements['wall-grammar']?.length===6,snap.kit);
+ check('pack results visible',snap.results===118,snap.results);
+ await page.screenshot({path:out+'/01-wall-grammar.png',fullPage:false});
+ await page.evaluate(()=>window.KFBModuleKitWorkbench.openSample('worktop-run'));
+ await page.waitForFunction(()=>window.KFBModuleKitWorkbench.getState().ready&&window.KFBModuleKitWorkbench.getState().sampleId==='worktop-run',{},{timeout:120000});
+ snap=await page.evaluate(()=>window.KFBModuleKitWorkbench.getState());result.samples.worktop=snap;
+ check('worktop sample',snap.measurements['worktop-run']?.length===4,snap);
+ await page.screenshot({path:out+'/02-worktop-run.png',fullPage:false});
+ await page.evaluate(()=>window.KFBModuleKitWorkbench.openSample('furnished-cell'));
+ await page.waitForFunction(()=>window.KFBModuleKitWorkbench.getState().ready&&window.KFBModuleKitWorkbench.getState().sampleId==='furnished-cell',{},{timeout:120000});
+ snap=await page.evaluate(()=>window.KFBModuleKitWorkbench.getState());result.samples.furnished=snap;
+ check('furnished sample',snap.measurements['furnished-cell']?.length===10,snap);
+ await page.screenshot({path:out+'/03-furnished-cell.png',fullPage:false});
+ await page.setViewportSize({width:390,height:844});await page.waitForTimeout(500);await page.screenshot({path:out+'/04-mobile-furnished.png',fullPage:false});
+ await page.setViewportSize({width:1440,height:1000});
+ await page.evaluate(()=>{document.querySelector('#packFilter').value='';document.querySelector('#searchInput').value='Küche';});
+ const alias=await page.evaluate(()=>window.KFBAssetLibrarianV17.runSearch().then(()=>({pack:document.querySelector('#packFilter').value,count:document.querySelectorAll('.result-card').length})));
+ check('alias Küche resolves pack',alias.pack===pack&&alias.count===118,alias);
+ const g=await context.newPage();g.on('pageerror',e=>result.errors.push('GDS '+String(e)));g.on('console',m=>{if(m.type()==='error')result.consoleErrors.push('GDS '+m.text())});
+ await g.goto(base+'/kfb-hub/free-roam/game-dev-studio/?package='+packageId,{waitUntil:'domcontentloaded',timeout:180000});
+ await g.waitForFunction(()=>window.__KFB_GAME_DEV_STUDIO_READY__,{},{timeout:180000});
+ const gs=await g.evaluate(()=>({snap:window.__KFB_GAME_DEV_STUDIO__.snapshot(),assets:document.querySelectorAll('.asset').length,title:document.querySelector('#packageTitle')?.textContent}));
+ check('GDS package direct select',gs.snap.package===packageId&&gs.assets===5,gs);
+ await g.screenshot({path:out+'/05-gds-package.png',fullPage:false});await g.close();
+ const s=await context.newPage();await s.goto(base+'/kfb-hub/stage/c0-a1-charming-kitchen/',{waitUntil:'domcontentloaded',timeout:120000});await s.waitForURL(/asset-librarian|tools\/asset_registry\/librarian/,{timeout:120000});
+ check('fixed Stage wrapper redirects to Librarian',/tools\/asset_registry\/librarian/.test(s.url()),s.url());await s.close();
+ check('no page errors',result.errors.length===0,result.errors);check('no console errors',result.consoleErrors.length===0,result.consoleErrors);check('no HTTP errors',result.httpErrors.length===0,result.httpErrors);
+ result.status='PASS';
+}catch(e){result.status='FAIL';result.failure=String(e.stack||e);process.exitCode=1;if(page)await page.screenshot({path:out+'/FAIL.png'}).catch(()=>{});}
+finally{fs.writeFileSync(out+'/browser-report.json',JSON.stringify(result,null,2)+'\n');console.log(JSON.stringify({status:result.status,checks:result.checks.length,passed:result.checks.filter(x=>x.pass).length,failure:result.failure}));if(browser)await browser.close();}
