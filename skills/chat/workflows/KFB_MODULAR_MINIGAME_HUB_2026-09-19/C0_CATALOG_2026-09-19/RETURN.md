@@ -97,9 +97,20 @@ The screenshots were visually inspected after CI. Source models are visibly pres
 - `PROPOSAL`: none promoted beyond this bounded C0.
 - `IMPLEMENTATION`: present on the branch / PR.
 - `TESTED RESULT`: PASS as above.
-- `PUBLIC DEPLOYMENT`: **OPEN** — fixed route source exists, but no Cloudflare public-pass claim before review/merge and propagation.
+- `PUBLIC DEPLOYMENT`: **PASS · CLOUDFLARE STAGE** — fixed route `https://kayfabizarro.pages.dev/kfb-hub/stage/minigames/baukasten-c0/` returned HTTP 200 and passed the dedicated public browser proof.
 - `GEORG ACCEPTANCE`: **OPEN**.
 - `ARCHIVED HISTORY`: failed Run #1/#2 were evidence-persist race conditions caused by concurrent branch writes; their browser proof step itself was not the product failure. Run #3 is the clean final test.
+
+## PUBLIC DEPLOYMENT EVIDENCE
+
+- publication mirror branch: `cloudflare-live`
+- publish commit: `915b9f64451ba7e692505e598b74a0ace2db423f`
+- public proof run: `35447051965` · SUCCESS
+- public proof artifact: `10586540044`
+- public checks: **8/8 PASS**
+- HTTP: **200**
+- runtime: **11 packs · 6 Tiny Treats · 5/5 browser proofs · 0 runtime/console/page errors**
+- public Stage remains a candidate; PR #101 is still open and unmerged, and Georg acceptance is still OPEN.
 
 ## ONE OPEN HUMAN REVIEW QUESTION
 
