@@ -88,7 +88,7 @@ No `tools/resident_atlas_s6/lib/**`, `data/**` or `tools/resident_atlas/modules/
 
 ## One next gate
 
-**Accept the Resident-Clown Activity Repair R0 briefing as the sole next implementation slice.**
+**After R0 implementation: do the arms, catches and three club paths read as believable juggling without clubs visibly crossing the Clown's head/torso?**
 
 
 ## Final metadata / routing audit
