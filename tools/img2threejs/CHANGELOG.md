@@ -246,3 +246,28 @@ Because the Travel repo is private, the authoring viewer uses [travel-visual-sna
 **TESTED RESULT:** 6/6 targeted current-source checks PASS: profile default, explicit environment rules, viewer consumption of the profile default, and current OSM background/light constants. [Evidence](evidence/2026-09-19-landmark-world-style-v1-1/summary.json).
 
 **NEXT GATE:** real-browser Pilot-06 visual review in OSM-default mode, then modular Grotesque Cologne Cathedral / OSM Golden Sample.
+
+
+## 2026-09-19 · 14 · TinySkies × OSM × landmark cohesion contract
+
+**USER DIRECTION:** Georg wants future TinySkies terrain, OSM buildings and Grotesque landmarks to read as one coherent toy world, integrated/coloured/lit in the same spirit as TinySkies lighthouses, village buildings and observatories, including weather and time-of-day response.
+
+**SOURCE REVIEW:** current public TinySkies donor reviewed at `dannylimanseta/tinyskies@2659a5cc987d7e4a4c5aa7e79c86a1626ad75df6`. Relevant source pins are recorded in Pilot 07.
+
+Confirmed donor behaviour:
+- terrain-aware placement and deliberate sinking/foundations;
+- simple local object palettes;
+- flat-shaded Phong-style materials;
+- shared global rim colour updated by the current sky preset;
+- local emissive windows/lanterns;
+- world-owned sky/fog/light/ocean/cloud/rim day-night response;
+- rain overlay/audio;
+- no confirmed rain-driven building wetness/albedo material response.
+
+**IMPLEMENTATION:** [Pilot 07 cohesion contract](landmarks/pilot-07/RETURN.md) with machine-readable [contract](styles/tinyskies-osm-cohesion.v1.json) and pure [WorldAppearanceState helper](styles/world-appearance-state.mjs). The target split is: Grotesque = shape, local palette = identity, WorldAppearanceState = atmosphere, terrain sample/foundation = physical belonging.
+
+**TESTED RESULT:** **31/31 PASS** current-branch contract/source checks. [Evidence](evidence/2026-09-19-tinyskies-osm-cohesion-v1/summary.json).
+
+**BOUNDARY:** TinySkies is a donor, not a KFB runtime owner. Travel remains KFB world/sky owner; OSM City Lab remains OSM geometry/style owner. Wetness/specular rain response is a future KFB extension and is not claimed as TinySkies behaviour.
+
+**NEXT GATE:** one integrated Stage proof: TinySkies-like terrain + one OSM cluster + modular Grotesque Cologne Cathedral + shared day/night/rim/weather state. Reserved Stage route is not yet deployed.

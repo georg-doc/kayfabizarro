@@ -1,0 +1,108 @@
+{
+  "schema": "kfb.tinyskies-osm-landmark-cohesion/1.0",
+  "status": "SOURCE_BACKED_DESIGN_CONTRACT",
+  "defaultLandmarkShape": "city-grotesque",
+  "defaultReviewEnvironment": "osm",
+  "donor": {
+    "repo": "dannylimanseta/tinyskies",
+    "branch": "cursor/globefly-multiplayer-globe-flight-game",
+    "commit": "2659a5cc987d7e4a4c5aa7e79c86a1626ad75df6",
+    "sources": {
+      "globe": "c853d16bd7b5e44fcd331e6ff90ab82142e66c9e",
+      "dayNight": "dd485092e574037f9782f9ef68f7649e8e100287",
+      "skyPresets": "dfbab3f733eed74cc281df47a3e44967c1c7b2eb",
+      "rimLight": "e2a669912b9cb65fc96889a544024bbe2e20be44",
+      "rainOverlay": "02e3e690b621c67052817fa4bb81d1bc65da8491",
+      "terrainSurface": "1996a314b506144ae118665be0e1c31e2f5d4c5d",
+      "game": "3a96cae26f4c9034bacd6d60a60e2a005e261ccc"
+    }
+  },
+  "donorFacts": {
+    "materialLanguage": {
+      "flatShading": true,
+      "commonMaterial": "MeshPhongMaterial",
+      "villages": "vertex colours + InstancedMesh + flat shading + shininess 15",
+      "sharedRimColour": true,
+      "rimColourUpdatedFromSkyPreset": true
+    },
+    "emissiveExamples": {
+      "villageWindows": "warm emissive shader accent",
+      "lighthouseLantern": "warm emissive material + additive glow"
+    },
+    "grounding": {
+      "terrainSurfaceSampled": true,
+      "propsSunkIntoTerrain": true,
+      "observatoryUsesDeeperFoundation": true
+    },
+    "placementSemantics": {
+      "lighthouse": "coastal / high surrounding water ratio",
+      "observatory": "higher land / isolated from other landmarks",
+      "villages": "moderate land elevation"
+    },
+    "dayNight": {
+      "cycleSeconds": 195,
+      "interpolates": [
+        "skyGradient",
+        "fog",
+        "hemisphere",
+        "ambient",
+        "sun",
+        "sun2",
+        "fill",
+        "fill2",
+        "back",
+        "ocean",
+        "rimColor",
+        "cloudOpacity",
+        "atmosphereGlow"
+      ]
+    },
+    "weather": {
+      "confirmedRainVisual": "RainOverlay",
+      "confirmedRainAudio": true,
+      "confirmedBuildingWetness": false,
+      "confirmedBuildingAlbedoShift": false
+    }
+  },
+  "kfbPolicy": {
+    "worldOwns": [
+      "sky",
+      "fog",
+      "lights",
+      "rimColor",
+      "weather"
+    ],
+    "objectOwns": [
+      "baseAlbedo",
+      "identityPalette",
+      "localEmissiveRoles",
+      "geometry"
+    ],
+    "materialModel": {
+      "target": "flat-lit low-poly",
+      "preferred": "Phong-like or Standard with equivalent shared Fresnel rim",
+      "oneSharedRimUniform": true,
+      "deterministicPalette": true
+    },
+    "osm": {
+      "colourStrategy": "deterministic building/roof/accent families related to terrain/biome but not identical",
+      "repeatedEnvironment": "instance/merge where geometry actually repeats",
+      "uniqueFootprints": "retain unique OSM geometry",
+      "warmWindowRole": "optional emissive accent"
+    },
+    "landmarks": {
+      "colourStrategy": "six-zone identity palette with bounded biome/world coupling",
+      "heroLightByDefault": false,
+      "deformation": "City Grotesque presentation; semantic rig where attachments require it"
+    },
+    "grounding": {
+      "mode": "terrain-sampled-foundation",
+      "requireNoFloating": true,
+      "foundationDepthOwnedByAssetOrClass": true
+    },
+    "weather": {
+      "baseline": "world-first atmosphere/overlay/audio",
+      "wetMaterialExtension": "DEFERRED_SEPARATE_GATE"
+    }
+  }
+}
