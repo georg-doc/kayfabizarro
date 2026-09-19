@@ -1,0 +1,100 @@
+name: Track Ribbon S-T01 · canonical public URL proof
+
+on:
+  pull_request:
+    branches:
+      - main
+    paths:
+      - '.github/workflows/track-ribbon-st01-public.yml'
+  workflow_dispatch:
+
+jobs:
+  public-proof:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install Playwright Chromium
+        run: |
+          npm install --no-save playwright@1.55.0
+          npx playwright install --with-deps chromium
+      - name: Wait for canonical Cloudflare mirror
+        run: |
+          node - <<'NODE'
+          const url='https://kayfabizarro.pages.dev/kfb-hub/stage/stunt-world/track-ribbon-st01/DEPLOYMENT.json';
+          const want='9d67a259e496f2f2fdbbf3940553446fae20890a';
+          const pause=ms=>new Promise(r=>setTimeout(r,ms));
+          (async()=>{
+            let last='';
+            for(let i=0;i<36;i++){
+              try{
+                const r=await fetch(url+'?qa='+Date.now(),{cache:'no-store'});
+                last=r.status+' '+await r.text();
+                if(r.ok){
+                  const d=JSON.parse(last.slice(last.indexOf(' ')+1));
+                  if(d.testedRaceCommit===want){
+                    console.log('canonical deployment marker PASS',d.build);
+                    return;
+                  }
+                }
+              }catch(e){last=String(e)}
+              await pause(10000);
+            }
+            throw Error('canonical deployment marker not ready: '+last.slice(0,500));
+          })().catch(e=>{console.error(e);process.exit(1)});
+          NODE
+      - name: Canonical public Chromium proof
+        run: |
+          node - <<'NODE'
+          const fs=require('fs');
+          const {chromium}=require('playwright');
+          const base='https://kayfabizarro.pages.dev/kfb-hub/stage/stunt-world/track-ribbon-st01/';
+          (async()=>{
+            const r={url:base,date:new Date().toISOString(),checks:[],errors:[],httpErrors:[]};
+            const check=(n,p,d)=>{r.checks.push({name:n,pass:!!p,details:d});if(!p)throw Error(n)};
+            const browser=await chromium.launch({headless:true,args:['--use-angle=swiftshader','--enable-unsafe-swiftshader']});
+            const page=await browser.newPage({viewport:{width:1440,height:900}});
+            page.on('pageerror',e=>r.errors.push(String(e)));
+            page.on('console',m=>{if(m.type()==='error'&&!/favicon/i.test(m.text()))r.errors.push(m.text())});
+            page.on('response',x=>{if(x.status()>=400&&!/favicon/i.test(x.url()))r.httpErrors.push({status:x.status(),url:x.url()})});
+            const t0=Date.now();
+            await page.goto(base+'?qa='+Date.now(),{waitUntil:'domcontentloaded',timeout:180000});
+            await page.waitForFunction(()=>window.__KFB_ST01_READY__===true,{},{timeout:180000});
+            r.bootMs=Date.now()-t0;
+            const s=await page.evaluate(()=>window.__KFB_ST01__.snapshot());
+            check('canonical S-T01 boot',s.id==='kfb-track-ribbon-st01',s.id);
+            check('v0.8 Race physical owner',s.physicalOwner==='TRACK_LAB_V08_RACE',s.physicalOwner);
+            check('single-surface Toy Grid',s.grid.mode==='SINGLE_SURFACE_SHADER'&&s.grid.overlayMeshes===0,s.grid);
+            check('3/3 cue assets',s.cueCluster.loaded===3&&s.cueCluster.failed.length===0,s.cueCluster);
+            const samples=await page.evaluate(()=>window.__KFB_ST01__.samples);
+            for(const [key,w] of Object.entries({standard:14.4,wide:18,narrow:10.8,ramp:21.6,landing:21.6})){
+              await page.evaluate(t=>window.__KFB_ST01__.teleport(t),samples[key]);
+              await page.waitForTimeout(80);
+              const q=await page.evaluate(()=>window.__KFB_ST01__.snapshot());
+              check('public width '+key,Math.abs(q.trackWidth-w)<.06,q.trackWidth);
+            }
+            await page.locator('#gl').focus();
+            await page.keyboard.down('w');await page.waitForTimeout(800);await page.keyboard.up('w');
+            const moved=await page.evaluate(()=>window.__KFB_ST01__.snapshot());
+            check('public drive responds',Math.abs(moved.telemetry.speed)>1,moved.telemetry.speed);
+            check('no page errors',r.errors.length===0,r.errors);
+            check('no failed HTTP assets',r.httpErrors.length===0,r.httpErrors);
+            r.status='PASS';
+            await page.screenshot({path:'public-proof.png'});
+            await browser.close();
+            fs.mkdirSync('public-proof',{recursive:true});
+            fs.renameSync('public-proof.png','public-proof/st01-public.png');
+            fs.writeFileSync('public-proof/results.json',JSON.stringify(r,null,2)+'\n');
+            console.log(JSON.stringify({status:r.status,checks:r.checks.length,bootMs:r.bootMs,errors:r.errors.length,httpErrors:r.httpErrors.length}));
+          })().catch(e=>{console.error(e);process.exit(1)});
+          NODE
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: track-ribbon-st01-public-proof
+          path: public-proof
