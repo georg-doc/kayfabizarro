@@ -1,7 +1,7 @@
 # RETURN · Resident Clown recovery / R0 briefing
 
 **Date:** 2026-09-19  
-**Status:** `HANDOFF · BRIEFING READY · DOCUMENTATION TEST PASS · IMPLEMENTATION NOT STARTED`
+**Status:** `HANDOFF · GEORG DECISION: R0 NEXT · DOCUMENTATION TEST PASS · IMPLEMENTATION NOT STARTED`
 
 ## Repository state
 
@@ -12,6 +12,12 @@
 - changed files at final audit: **16**
 - PR: [#103 · Docs: C0 intent-fail postmortem + Resident Clown Activity Repair R0](https://github.com/georg-doc/kayfabizarro/pull/103) · OPEN · no auto-merge
 - auto-merge: **NO**
+
+## GEORG DECISION
+
+Georg explicitly accepted **Resident Clown Activity Repair R0 as the sole next implementation slice** on 2026-09-19.
+
+This is a sequencing decision only. The repaired animation itself still requires its own later visual review.
 
 ## GOAL
 
@@ -111,4 +117,4 @@ No Dropbox mutation was performed.
 
 ## Exactly one next gate
 
-**Accept Resident Clown Activity Repair R0 as the sole next implementation slice.**
+**After R0 implementation: do the arms, catches and three club paths read as believable juggling without clubs visibly crossing the Clown's head/torso?**
