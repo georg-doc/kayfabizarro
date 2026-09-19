@@ -18,14 +18,29 @@
     "expectedConnectedComponents": 12,
     "connectedComponents": null,
     "eyeComponents": [
-      6,
-      7
+      2,
+      3
     ],
     "pairConfidence": 1,
-    "femaleOuterLashCandidate": "included-in-or-adjacent-to-verified-eye-components; runtime visual review required",
+    "femaleOuterLashCandidate": "eye-assembly-or-texture; exact lash sub-identity not separated in v0",
     "removalMode": "mesh-components",
     "guard": "apply only when connectedComponents === 12",
-    "status": "AUTO_CANDIDATE"
+    "status": "SOURCE_IDENTITY_VERIFIED_AUTO_CANDIDATE",
+    "componentIdentity": {
+      "0": "head-face-shell",
+      "1": "nose",
+      "2": "eye-x-positive",
+      "3": "eye-x-negative",
+      "4": "ear-x-positive",
+      "5": "ear-x-negative",
+      "6": "side-accessory-x-negative",
+      "7": "side-accessory-x-positive-lower",
+      "8": "side-accessory-x-positive-upper",
+      "9": "hair",
+      "10": "brow-x-negative",
+      "11": "brow-x-positive"
+    },
+    "identityEvidence": "docs/SOURCE_COMPONENT_IDENTITY_2026-09-19.md"
   },
   "eyeRigSource": {
     "path": "tools/KFB-ToolBox/kfb-rigs-embed-v3/petstudio-v9/studio-v12/pet-eye-rig.v6.js",

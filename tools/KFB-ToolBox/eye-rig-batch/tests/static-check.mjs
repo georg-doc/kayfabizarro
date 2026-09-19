@@ -1,10 +1,10 @@
 import fs from 'node:fs'; import path from 'node:path';
 const root=path.resolve(process.argv[2]||'.');
-const files=['index.html','styles.css','app.js','lib/kaykit-eye-adapter.v1.js','lib/source-face-cleanup.v1.js','data/gothgirl.seed.json','docs/SOURCE_AUDIT.md'];
+const files=['index.html','styles.css','app.js','lib/kaykit-eye-adapter.v1.js','lib/source-face-cleanup.v1.js','data/gothgirl.seed.json','docs/SOURCE_AUDIT.md','docs/SOURCE_COMPONENT_IDENTITY_2026-09-19.md','docs/source-components-0-11.html'];
 let pass=0, fail=0; const results=[];
 function check(name,ok,detail=''){(ok?pass++:fail++);results.push({name,status:ok?'PASS':'FAIL',detail});}
 for(const f of files)check(`file:${f}`,fs.existsSync(path.join(root,f)),fs.existsSync(path.join(root,f))?'present':'missing');
-const app=fs.readFileSync(path.join(root,'app.js'),'utf8'); const html=fs.readFileSync(path.join(root,'index.html'),'utf8'); const cleanup=fs.readFileSync(path.join(root,'lib/source-face-cleanup.v1.js'),'utf8'); const adapter=fs.readFileSync(path.join(root,'lib/kaykit-eye-adapter.v1.js'),'utf8');
+const app=fs.readFileSync(path.join(root,'app.js'),'utf8'); const html=fs.readFileSync(path.join(root,'index.html'),'utf8'); const cleanup=fs.readFileSync(path.join(root,'lib/source-face-cleanup.v1.js'),'utf8'); const adapter=fs.readFileSync(path.join(root,'lib/kaykit-eye-adapter.v1.js'),'utf8'); const seed=JSON.parse(fs.readFileSync(path.join(root,'data/gothgirl.seed.json'),'utf8')); const identity=fs.readFileSync(path.join(root,'docs/SOURCE_COMPONENT_IDENTITY_2026-09-19.md'),'utf8'); const componentHtml=fs.readFileSync(path.join(root,'docs/source-components-0-11.html'),'utf8');
 check('one-localStorage-namespace',app.includes("kfb.toolbox.eye-rig-batch.v0"));
 check('never-localStorage-clear',!app.includes('localStorage.clear'));
 check('pinned-source-revision',(app.match(/5650b6c54d8789b20ea80abe857688173d506d3b/g)||[]).length>=1);
@@ -21,5 +21,7 @@ check('motion-regression-buttons',['Idle_A','Walking_A','Running_A','Jump_Full_S
 check('profile-import-preview',html.includes('importPreview')&&app.includes('Nothing has been applied yet'));
 check('source-measured-explicit-candidate',html.includes('Use source-measured baseline')&&app.includes("$('#useMeasuredBtn')")&&app.includes("state.profile.status='AUTO_CANDIDATE'"));
 check('source-component-isolation-diagnostic',html.includes('id="componentSelect"')&&html.includes('id="isolateComponentBtn"')&&cleanup.includes('setComponentIsolation')&&cleanup.includes('clearComponentIsolation')&&app.includes('wireComponentDiagnostic'));
+check('current-source-eye-components-2-3',JSON.stringify(seed.sourceFace.eyeComponents)===JSON.stringify([2,3])&&cleanup.includes('eyeComponents = [2, 3]')&&cleanup.includes('eyeIdentityOk'));
+check('source-component-identity-evidence',identity.includes('| 2 | eye')&&identity.includes('| 3 | eye')&&(componentHtml.match(/data-component=/g)||[]).length===12);
 check('no-global-schema-promotion',!app.includes('kfb.eye-profile/1'));
 console.log(JSON.stringify({pass,fail,total:pass+fail,results},null,2)); if(fail)process.exit(1);
