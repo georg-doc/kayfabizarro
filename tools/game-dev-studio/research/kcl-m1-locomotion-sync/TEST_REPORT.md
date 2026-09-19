@@ -106,3 +106,88 @@ Publish the exact candidate to:
 https://kayfabizarro.pages.dev/kfb-hub/stage/game-dev-studio/kcl-m1-locomotion-sync/
 
 Then run a browser proof covering source marker, WebGL boot, 5/5 measurements, A/B transition state and zero page/console errors. Human review follows automated proof.
+
+
+## Runtime proof · 39/39 local browser PASS
+
+### Repair history
+
+**Pass 0 / first local run:** the bench itself loaded and measured all five source clips successfully. The workflow then failed in the test harness because the proof tried to read `snap.source`; the bench intentionally exposes source metadata at `window.__KFB_KCL_M1__.source`, outside `snapshot()`.
+
+**Repair Pass 1:** changed the local/public proof scripts only. No bench, clip, contact, transition, timeScale or source-asset logic changed.
+
+Result on commit `72e6eae20699c605c015514600d1ecec792ee127`:
+
+- workflow run: `35468444150`
+- local-proof job: `105964939873`
+- **39/39 PASS**
+- source actor + real MovementBasic GLB loaded
+- 5/5 clips measured
+- real left/right foot contacts resolved for every clip
+- WebGL canvas present
+- naive + phase-sync lanes present
+- A/B transition executed
+- ownership checks PASS
+- source pin PASS
+- failed HTTP/resources: 0
+- page/console errors: 0
+- artifact: `10591764219`
+- artifact digest: `sha256:55b8cc47723a64fc9c633ad46e2008a446d666ba724d02fed6242c17354de75e`
+- artifact files: `desktop.png`, `local-browser.json`
+
+### Auto-measured candidate summary
+
+| Clip | Duration | Reference speed candidate | Slip / actor height | Primary contact notes | Status |
+|---|---:|---:|---:|---|---|
+| Walking_C | 1.600 s | 0.447 | 1.73% | L ~34.6%, R ~85.0% | measured candidate |
+| Walking_A | 1.067 s | 0.611 | 1.38% | L ~30.0%, R ~80.4% | measured candidate |
+| Walking_B | 1.067 s | 0.751 | 3.09% | L ~30.4%, R ~75.0% | measured candidate |
+| Running_A | 0.800 s | 2.480 | 6.63% | L ~9.6%, R ~59.6% | measured candidate |
+| Running_B | 0.800 s | 0.284 | 10.94% | fragmented multiple low-foot spans | **AUTO_METRIC_AMBIGUOUS_HOLD** |
+
+These values are automatic measurement candidates, not approved KFB world speeds.
+
+The automatic reference-speed ordering is:
+
+`Running_B < Walking_C < Walking_A < Walking_B < Running_A`
+
+This **must not** be interpreted as semantic slow/normal/fast ordering. The most useful result is that `Running_B` is not safely classifiable from the current automatic plant metric and is therefore held out of speed-band mapping until visual/manual review.
+
+### Default A/B execution
+
+Default bench run:
+
+- source: `Walking_A`
+- target: `Running_A`
+- LEFT contact
+- fade: 0.12 s
+- warp: ON
+- desired speed: 1.5
+- source phase candidate: ~30%
+- naive target entry: 0%
+- phase-sync target entry: ~9.6%
+- Walking_A rate candidate hit the temporary clamp: 1.80×
+- Running_A rate candidate: ~0.60×
+
+The clamp hit is itself useful evidence: desired speed 1.5 is above `Walking_A`'s measured reference regime. The `0.45 … 1.8` bench range remains a technical candidate, not an approved locomotion policy.
+
+See `MEASURED_PROFILE_CANDIDATE.json` for persisted machine-readable values.
+
+## Public Cloudflare gate
+
+KCL public-proof run `35467428927`, job `105962230768`, failed **before the bench booted**. During the full marker poll, the KCL `SOURCE.json` URL returned the KFB HTML fallback rather than JSON.
+
+Cross-checks show this is not KCL-specific:
+- the preceding TE-01 public proof had already failed its Cloudflare deployment-marker gate before KCL publication;
+- later Cloudflare Pages builds also failed;
+- therefore no KCL animation/runtime defect is established by the public failure.
+
+Current public state:
+
+`PUBLIC_VERIFIED = OPEN / BLOCKED BY REPO-WIDE CLOUDFLARE DEPLOYMENT`
+
+The local 39/39 browser PASS is technical evidence only and does not replace the required pages.dev human gate.
+
+## Exactly one next gate
+
+Restore a current successful Cloudflare/pages.dev deployment **without changing KCL motion logic**, then run the exact public browser proof and let Georg compare the visible A/B transition. Only after that human gate should any MotionProfile be proposed to Travel, Race, Combat or Platformer.
