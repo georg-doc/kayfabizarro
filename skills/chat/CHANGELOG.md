@@ -445,3 +445,22 @@ The public workflow now smoke-switches GothGirl → Clown → Ninja → Magical 
 
 ### NEXT GATE
 Georg clicks through the Medium roster, using Approve / Adjusted + approve / Unsupported and Next unreviewed. Large/Legacy remains parked until this wave yields real override data.
+
+
+## 2026-09-19 · KCL-M1 · Cloudflare infrastructure blocker + local browser fallback
+
+### OBSERVED
+KCL-M1 public-proof run `35467428927` / job `105962230768` never reached the bench. For the full marker window, the requested KCL `SOURCE.json` returned the KFB HTML fallback rather than JSON.
+
+This is not isolated to KCL:
+- the preceding TE-01 public proof on `6f8f685…` failed at its Cloudflare deployment marker before the KCL publication;
+- current Cloudflare Pages build for `986699c…` is failed;
+- therefore no animation/runtime defect is established by the public failure.
+
+### DECISION
+Do not patch KCL motion code in response to a deployment failure. Preserve the exact Stage candidate and add a repository-native **local HTTP + Playwright WebGL proof** to measure the real five clips while Cloudflare remains an external public gate.
+
+Local proof checks the exact Stage mirror, real pinned ActionFigure + MovementBasic sources, 5/5 automatic motion profiles, A/B transition execution, source ownership and browser/console errors. It exports measured profiles and a screenshot as a GitHub Actions artifact.
+
+### PUBLIC STATUS
+Cloudflare Stage remains **NOT PUBLIC_VERIFIED**. A local browser PASS will be technical evidence only, not a substitute for the required pages.dev human gate.
