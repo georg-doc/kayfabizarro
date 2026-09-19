@@ -34,7 +34,7 @@ jobs:
           const BASE='https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/eye-rig-batch/';
           const WANT={
             sourcePR:104,
-            sourceHead:'fd7a123b3747f74f79b2759e1cbb48fc64f823f0',
+            sourceHead:'148e3cfd3523655ecb408d117e77109c61c624f4',
             implementationCheckpoint:'d900fb99f3b04d52f266febd1501368c5fedd360'
           };
           const result={url:BASE,want:WANT,checks:[],errors:[],screenshots:[],status:'RUNNING'};
@@ -89,7 +89,7 @@ jobs:
             }));
 
             check('page title',/Batch EyeRig Atlas/.test(initial.title),initial.title);
-            check('visible revision marker',initial.marker.includes('source fd7a123')&&initial.marker.includes('impl d900fb9')&&initial.marker.includes('PR #104'),initial.marker);
+            check('visible revision marker',initial.marker.includes('source 148e3cf')&&initial.marker.includes('impl d900fb9')&&initial.marker.includes('PR #104'),initial.marker);
             check('runtime no boot error',!initial.report.error,initial.report.error);
             check('source gate',initial.report.gates?.source===true,initial.report.gates);
             check('cleanup gate',initial.report.gates?.cleanup===true,initial.report.cleanup);
@@ -130,6 +130,44 @@ jobs:
               Math.abs(resetApplied.profile?.eye?.anchor?.dy+0.10)<1e-6 &&
               Math.abs(resetApplied.profile?.eye?.anchor?.ring-0.30)<1e-6,
               resetApplied.profile?.eye?.anchor);
+
+            check('component selector has 12 entries',
+              await page.locator('#componentSelect option').count()===12,
+              await page.locator('#componentSelect option').allTextContents());
+
+            await page.selectOption('#componentSelect','0');
+            await page.click('#isolateComponentBtn');
+            await pause(180);
+            await page.click('[data-view="face"]');
+            await pause(180);
+
+            const componentProof=[];
+            for(let i=0;i<12;i++){
+              if(i>0){
+                await page.selectOption('#componentSelect',String(i));
+                await pause(140);
+              }
+              const diag=await page.evaluate(()=>window.__EYE_RIG_BATCH.report().cleanup?.componentDiagnostic);
+              check(`component ${i} isolated`,
+                diag?.status==='ISOLATED_SOURCE_COMPONENT' && diag?.selected===i,
+                diag);
+              componentProof.push(diag);
+              await shot(`component-${String(i).padStart(2,'0')}-face`);
+            }
+
+            await page.click('#exitComponentBtn');
+            await pause(180);
+            const afterDiagnostic=await page.evaluate(()=>window.__EYE_RIG_BATCH.report());
+            check('component diagnostic exit restores state',
+              afterDiagnostic.cleanup?.componentDiagnostic?.status==='OFF' &&
+              document.querySelector('#eyeRigToggle')?.checked===true &&
+              document.querySelector('#cleanupToggle')?.checked===true,
+              {diagnostic:afterDiagnostic.cleanup?.componentDiagnostic,
+               eyeRig:await page.locator('#eyeRigToggle').isChecked(),
+               cleanup:await page.locator('#cleanupToggle').isChecked()});
+            result.componentProof=componentProof;
+            await page.click('[data-view="front"]');
+            await pause(120);
 
             await shot('01-front-bind');
 

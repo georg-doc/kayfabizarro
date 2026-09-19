@@ -20,7 +20,7 @@
     <div class="brand">
       <span class="brand-kicker">KFB TOOLBOX / RIGGING</span>
       <strong>Batch EyeRig Atlas</strong>
-      <span class="branch">Rig_Medium · source fd7a123 · impl d900fb9 · PR #104 · Stage</span>
+      <span class="branch">Rig_Medium · source 148e3cf · impl d900fb9 · PR #104 · Stage · component diagnostic</span>
     </div>
     <div class="top-status">
       <span id="bootBadge" class="badge pending">BOOTING</span>
@@ -62,6 +62,16 @@
           <div><dt>FaceHost</dt><dd>v1 · 38ec777</dd></div>
           <div><dt>Cleanup</dt><dd>12 → hide 6+7</dd></div>
         </dl>
+      </section>
+
+      <section class="audit-block">
+        <span class="eyebrow">SOURCE COMPONENTS · 0–11</span>
+        <div class="filter-row">
+          <select id="componentSelect" class="filter" disabled aria-label="Source head component"></select>
+          <button id="isolateComponentBtn" class="filter" type="button" disabled>Isolate</button>
+          <button id="exitComponentBtn" class="filter" type="button" disabled>Exit</button>
+        </div>
+        <div id="componentHint" class="micro-status">Waiting for source components…</div>
       </section>
 
       <section class="audit-block">

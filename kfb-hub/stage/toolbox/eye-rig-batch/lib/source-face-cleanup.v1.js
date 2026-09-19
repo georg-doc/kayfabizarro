@@ -76,6 +76,16 @@ export function prepareVerifiedGothGirlCleanup({
     status: guardOk ? 'AUTO_CANDIDATE' : 'HUMAN_REQUIRED',
     sourceGeometryUuid: original.uuid,
     materialGroups: original.groups ? original.groups.length : 0,
+    components: shells.map((s, component) => ({
+      component,
+      triangles: s.count,
+      bounds: {
+        x: [+s.xmin.toFixed(4), +s.xmax.toFixed(4)],
+        y: [+s.ymin.toFixed(4), +s.ymax.toFixed(4)],
+        z: [+s.zmin.toFixed(4), +s.zmax.toFixed(4)]
+      }
+    })),
+    componentDiagnostic: { status: 'OFF', selected: null },
     sourceMeasuredSeed: null
   };
 
@@ -94,14 +104,75 @@ export function prepareVerifiedGothGirlCleanup({
   const stripTris = eyeComponents.flatMap((i) => shells[i].tris);
   const stripped = buildStripped(original, stripTris, false);
   stripped.name = `${original.name || headMesh.name || 'head'}__KFB_EYES_HIDDEN_RUNTIME`;
+  const originalMaterial = headMesh.material;
+  const materialSource = Array.isArray(originalMaterial) ? originalMaterial[0] : originalMaterial;
+  const debugMaterial = materialSource?.clone ? materialSource.clone() : materialSource;
+  if (debugMaterial && debugMaterial !== materialSource) {
+    debugMaterial.name = 'KFB_SOURCE_COMPONENT_DIAGNOSTIC';
+    debugMaterial.color?.setHex?.(0xff3b72);
+    debugMaterial.emissive?.setHex?.(0x4a081d);
+    if ('map' in debugMaterial) debugMaterial.map = null;
+    if ('emissiveMap' in debugMaterial) debugMaterial.emissiveMap = null;
+    debugMaterial.transparent = false;
+    debugMaterial.opacity = 1;
+    debugMaterial.depthTest = true;
+    debugMaterial.depthWrite = true;
+    debugMaterial.needsUpdate = true;
+  }
+  const componentGeometries = new Map();
   let active = false;
+  let isolatedComponent = null;
+
+  function componentGeometry(component) {
+    if (componentGeometries.has(component)) return componentGeometries.get(component);
+    const shell = shells[component];
+    if (!shell) return null;
+    const keep = new Set(shell.tris);
+    const triCount = original.index ? original.index.count / 3 : original.attributes.position.count / 3;
+    const remove = [];
+    for (let t = 0; t < triCount; t++) if (!keep.has(t)) remove.push(t);
+    const geo = buildStripped(original, remove, false);
+    geo.clearGroups();
+    geo.name = `${original.name || headMesh.name || 'head'}__KFB_COMPONENT_${String(component).padStart(2, '0')}`;
+    componentGeometries.set(component, geo);
+    return geo;
+  }
+
+  function renderHeadGeometry() {
+    if (isolatedComponent != null) {
+      headMesh.geometry = componentGeometry(isolatedComponent);
+      if (debugMaterial) headMesh.material = debugMaterial;
+    } else {
+      headMesh.geometry = active ? stripped : original;
+      headMesh.material = originalMaterial;
+    }
+    headMesh.geometry?.computeBoundingBox?.();
+    headMesh.geometry?.computeBoundingSphere?.();
+  }
 
   function apply(on = true) {
     active = !!on;
-    headMesh.geometry = active ? stripped : original;
-    headMesh.geometry.computeBoundingBox?.();
-    headMesh.geometry.computeBoundingSphere?.();
+    renderHeadGeometry();
     return active;
+  }
+
+  function setComponentIsolation(component) {
+    const i = Number(component);
+    if (!Number.isInteger(i) || i < 0 || i >= shells.length) return null;
+    isolatedComponent = i;
+    renderHeadGeometry();
+    const detail = report.components[i];
+    report.componentDiagnostic = { status: 'ISOLATED_SOURCE_COMPONENT', selected: i, ...detail };
+    log(`source component ${i} isolated · ${detail.triangles} tris · original source geometry`);
+    return report.componentDiagnostic;
+  }
+
+  function clearComponentIsolation() {
+    isolatedComponent = null;
+    report.componentDiagnostic = { status: 'OFF', selected: null };
+    renderHeadGeometry();
+    log('source component diagnostic off');
+    return true;
   }
 
   function measureOnFaceHost(faceHost) {
@@ -174,11 +245,18 @@ export function prepareVerifiedGothGirlCleanup({
     headMesh,
     report,
     get active() { return active; },
+    get isolatedComponent() { return isolatedComponent; },
     apply,
+    setComponentIsolation,
+    clearComponentIsolation,
     measureOnFaceHost,
     dispose() {
+      isolatedComponent = null;
       headMesh.geometry = original;
+      headMesh.material = originalMaterial;
       stripped.dispose();
+      componentGeometries.forEach((geo) => geo.dispose());
+      if (debugMaterial && debugMaterial !== materialSource) debugMaterial.dispose?.();
     }
   };
 }
