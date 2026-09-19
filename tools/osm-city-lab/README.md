@@ -1,6 +1,6 @@
 # KFB OSM City Lab
 
-Status: **MULTI-SLICE S0 TESTED · S1c CLEAN/CARTOON/GROTESQUE + SIGNS + FOREST BROWSER PASS · S2 EXPORT CONTRACT TESTED**
+Status: **MULTI-SLICE S0 TESTED · S1c CLEAN/CARTOON/GROTESQUE + SIGNS + FOREST BROWSER PASS · PUBLIC S1c PASS · S2 EXPORT CONTRACT TESTED**
 
 Browser entry: `tools/osm-city-lab/index.html`
 
@@ -100,9 +100,9 @@ City Lab owns geodata normalization, city geometry, styling and export only.
 
 **S1c TESTED RESULT:** Clean/Cartoon/Grotesque, OSM street-sign and KayKit Forest/Nature presentation cases boot in Chromium/WebGL. Ehrenfeld produces 183 driveable-road junction patches / 168 lower path meshes / 27 safe OSM-name signs; Hürth produces 104 / 48 / 19 plus a 72-tree KayKit green-landuse POC. Separate roof caps remain removed and S2 geometry remains undeformed. Georg live moving/zoom/art-direction acceptance remains pending.
 
-**S2 IMPLEMENTATION:** consumer exports exist. The actual Walk/Drive receiver loops have not yet been run on these OSM scenes.
+**S2 IMPLEMENTATION:** per-city consumer exports exist. A separate Race / Free-Roam Stage branch now also consumes the exact Hürth + Ehrenfeld exports and a pinned 11.384 km corridor consumer candidate; this is still DRIVE-only and is not Travel Walk↔Drive acceptance. The corridor consumer lives in stacked draft PRs / pinned commits and is not yet promoted to City Lab `main`.
 
-**PUBLIC DEPLOYMENT:** not claimed.
+**PUBLIC DEPLOYMENT · TESTED RESULT:** public S1 city navigator/viewer proof passed on `kayfabizarro.pages.dev`: workflow run `35390530619`, attempt 2, job `105748631023`, **27 checks / 2 cities PASS**. This proves the public S1 browser consumers, provenance, source counts, no separate roof caps, and no City movement owner. It does not claim public corridor driving or Travel integration.
 
 ## Source / licence
 
