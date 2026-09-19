@@ -203,3 +203,33 @@ Each band receives one fitted affine transform derived from the City/Soft-Cubist
 **BACKLOG PERSISTED:** OSM Dom golden sample; declarative landmark rig manifest; semantic GLB export; surface/material pass with existing KFB box material + edge3; Audio beat seam; Race/Travel bumper/contact receiver; instance-friendly living-toy environment reactions; Giza voxel/boxel material proof; Acropolis / Area 51 / JFK route / Atlantis future scenery; Stage deployment only after an accepted consumer exists.
 
 **WSA REVIEW QUESTION:** For the first integrated OSM landmark baseline, choose City Grotesque or Soft Cubist deformation.
+
+
+## 2026-09-19 · 12 · Grotesque landmark default / World Style Bridge v1 / genius-loci preparation
+
+**GEORG DECISION:** City Grotesque is the default landmark view/style going forward. This closes the previous Grotesque-vs-Soft-Cubist baseline question. Soft Cubist remains an alternate/debug mode.
+
+**BOUNDARY:** The decision is scoped to the landmark lane. The OSM City Lab's own current `cartoonMassing.defaultMode = cartoon` is deliberately unchanged.
+
+**SOURCE REVIEW:** Current OSM City and current private Travel SSOT were recovered before implementation. Travel pins: `georg-doc/KFB-Travel-Globe@8614282aab2ced43bb5dda9fcf7abadf9768100a`, sky `04dd730ee735f064888e8472eff79583f17bebb0`, moods `2747a526e2aa38989c9c4052304da8733662b61c`, biomes `db3acf6ae6b7ebbc6cb4a7113a0d0fe782429d74`. OSM pins: style `f129cca3041b55b84de26048dad7aef8fac8b292`, deformer `d08c19fc45d98546b7ef2803f2ddbcb73b7f6782`, viewer lighting `181edccab50c2b127b95370cc67da55e138b7a78`.
+
+**DECISION — colour/world contract:** landmark palettes remain local and recognizable. Travel mood/biome coupling changes hue relationships only; landmark saturation/lightness remain stable. World lighting/fog/sky remain host-owned. This mirrors the current Travel rule that mood owns atmosphere/hue, not a second lighting or saturation writer.
+
+**IMPLEMENTATION:** [Pilot 06 · Landmark World Style Bridge](landmarks/pilot-06/index.html):
+- Grotesque selected by default;
+- Eiffel / Giza / Stonehenge / Pentagon use generic City Grotesque;
+- Spasskaya / Kremlin use accepted Semantic Band Rig v2 + Grotesque;
+- flexible landmark-specific six-zone palettes;
+- OSM City environment mode with current City constants;
+- Travel environment mode with current DAY/EVENING/NIGHT sky/light values plus Verdant/Molten/Frost/Bone and Plateau/Spires/Shatter/Flatwater;
+- Giza Voxel Steps / Boxel retained as explicit construction alternates.
+
+Because the Travel repo is private, the authoring viewer uses [travel-visual-snapshot.v1.json](styles/travel-visual-snapshot.v1.json), a derived NONCANONICAL snapshot pinned to the Travel source. Travel remains owner. The older animated skydome and named world-palette modules are pinned only as optional donors; current Travel sky presets/moods/biomes own the default look.
+
+**TESTED RESULT:** **1,354 / 1,354 current-GitHub-source checks PASS.** Tested all six current modular landmarks, Grotesque finite geometry / triangle preservation / ground anchors, all Travel mood × biome × landmark-zone palette combinations, saturation/lightness preservation, OSM/Travel source pins, sky/light structures, viewer syntax/UI and the implementation candidate catalogue. [Evidence](evidence/2026-09-19-landmark-world-style-v1/summary.json).
+
+**GENIUS LOCI PREPARATION:** Added [human-readable](docs/GENIUS_LOCI_CANDIDATES_2026-09-19.md) and [machine-readable](docs/GENIUS_LOCI_CANDIDATES_V1.json) implementation catalogues. P1 geometry proofs: Acropolis, Area 51/UFO, Sagrada Família, Sydney Opera House, Atomium, Gateway Arch. P2/P3 include St. Basil's, Hagia Sophia, Taj Mahal, Colosseum, Petra, Mont-Saint-Michel, Angkor Wat, Chichén Itzá, Machu Picchu, Rapa Nui, Golden Gate, JFK/Dealey scenario, Atlantis, Devils Tower, Uluru and Guggenheim Bilbao.
+
+**OPEN:** Cologne Cathedral still needs modular Grotesque migration and real OSM Golden-Sample calibration; Pilot-06 browser/human review; semantic GLB hierarchy export; fixed Stage URL; surface/edge/weathering; Audio and Race/Travel receiver seams.
+
+**CURRENT RETURN:** [LANDMARK_WORLD_STYLE_V1_RETURN_2026-09-19.md](docs/LANDMARK_WORLD_STYLE_V1_RETURN_2026-09-19.md).
