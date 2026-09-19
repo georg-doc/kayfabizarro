@@ -1,0 +1,129 @@
+{
+  "schema": "kfb.failure-recovery-export/1",
+  "project": "TE-01 OSM Depth + KFB Ink · Cloudflare Stage publication",
+  "exportRevision": "2026-09-19-r1",
+  "status": "ARCHIVED_FAILED_CANDIDATE",
+  "entrypoints": [
+    "kfb-hub/stage/stunt-world/te01-osm-depth-ink/index.html",
+    "kfb-hub/stage/stunt-world/te01-osm-depth-ink/public-proof.mjs"
+  ],
+  "sourceFiles": [
+    {
+      "path": "runtime/ChatGPT_web/osm-city-drive/index.html",
+      "gitBlob": "f8a7b339c90a2d925b97823534e140a2bdba3b46"
+    },
+    {
+      "path": "runtime/ChatGPT_web/osm-city-drive/styles.css",
+      "gitBlob": "ee2358084b85726b0f359f7fc722e6b7d7846f6f"
+    },
+    {
+      "path": "runtime/ChatGPT_web/osm-city-drive/city-drive-recipe.json",
+      "gitBlob": "0674fba9763c9711eaa8a3ced26d76d5de6e5b31"
+    },
+    {
+      "path": "runtime/ChatGPT_web/osm-city-drive/src/app.mjs",
+      "gitBlob": "777d9cfe873b17c4343a0ede27cbc1613181a128"
+    },
+    {
+      "path": "runtime/ChatGPT_web/osm-city-drive/src/city-geometry.mjs",
+      "gitBlob": "a600aedb4a364f2de13e1cb84cc5869e580c4a9f"
+    },
+    {
+      "path": "runtime/ChatGPT_web/osm-city-drive/src/city-style.mjs",
+      "gitBlob": "5ab6b18077b13e1c48769c0cbdfc4987fe5adcf4"
+    },
+    {
+      "path": "runtime/ChatGPT_web/osm-city-drive/src/ink-world.mjs",
+      "gitBlob": "0a8cedda34806937c77414931e159db8043241d5"
+    },
+    {
+      "path": "runtime/ChatGPT_web/free-roam/site/physics.js",
+      "gitBlob": "c8457bce24b270d65d2f24c94609db9169cc1927"
+    },
+    {
+      "path": "runtime/ChatGPT_web/free-roam/site/drive-intent.mjs",
+      "gitBlob": "bbf9c9f77ab96ca0ff96e68f84ccfe71b87434a6"
+    },
+    {
+      "path": "runtime/ChatGPT_web/free-roam/site/world.js",
+      "gitBlob": "fa14b407886175d140c7aece59caa7897e690216"
+    }
+  ],
+  "buildOutputs": [
+    {
+      "role": "publication tree",
+      "repository": "georg-doc/kayfabizarro",
+      "branch": "cloudflare-live",
+      "commit": "66bd1707173e250f5410b5da90a7472863d1c825"
+    }
+  ],
+  "dataFiles": [
+    "PUBLIC_MANIFEST.json",
+    "DEPLOYMENT.json",
+    "SOURCE.json",
+    "PROVENANCE.md",
+    "CHANGELOG.md"
+  ],
+  "assetRefs": [
+    {
+      "role": "OSM city/style",
+      "status": "external pinned sources in city-drive-recipe.json"
+    },
+    {
+      "role": "vehicle deformer",
+      "status": "external pinned module in app.mjs"
+    }
+  ],
+  "externalDependencies": [
+    "Three.js 0.160.0 via jsDelivr",
+    "@dimforge/rapier3d-compat 0.17.3 via jsDelivr",
+    "pinned KFB vehicle deformer via jsDelivr",
+    "pinned OSM scene/style JSON URLs"
+  ],
+  "browserStateExports": [],
+  "evidence": [
+    {
+      "type": "race-workflow",
+      "run": 35459658425,
+      "result": "60/60 PASS"
+    },
+    {
+      "type": "local-stage",
+      "run": 35460338909,
+      "artifact": 10589368634,
+      "digest": "sha256:27ae96fc34dedc4a635c83669fe5ac8c127dd63d1111e27bcd4a39aa7e6462dd",
+      "result": "22/22 PASS"
+    },
+    {
+      "type": "public-proof",
+      "run": 35460463723,
+      "attempt": 1,
+      "artifact": 10589048551,
+      "result": "FAIL_DEPLOYMENT_MARKER"
+    },
+    {
+      "type": "public-proof",
+      "run": 35460463723,
+      "attempt": 2,
+      "artifact": 10591633629,
+      "result": "FAIL_DEPLOYMENT_MARKER"
+    },
+    {
+      "type": "public-proof",
+      "run": 35460463723,
+      "attempt": 3,
+      "artifact": 10591509359,
+      "result": "FAIL_DEPLOYMENT_MARKER"
+    }
+  ],
+  "missing": [
+    "Cloudflare Pages project configuration and deployment logs are not accessible through the available GitHub connector",
+    "No public TE-01 screenshot exists because public proof never passed deployment discovery",
+    "No binary ZIP was produced: this chat can persist text/Git objects through the connector but cannot package the remote Git tree as a new downloadable ZIP without a filesystem checkout. Exact source is preserved by immutable Git commits/blobs and this manifest."
+  ],
+  "start": {
+    "command": "python3 -m http.server 4173",
+    "url": "http://127.0.0.1:4173/kfb-hub/stage/stunt-world/te01-osm-depth-ink/",
+    "notes": "Local-only recovery start. Public acceptance is blocked until NEXT_GATE.md passes."
+  }
+}
