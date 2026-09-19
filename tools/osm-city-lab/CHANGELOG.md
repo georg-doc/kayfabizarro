@@ -1,5 +1,30 @@
 # Changelog · additive
 
+## 2026-09-19 · tested corridor stack reconciled onto current main base
+
+### IMPLEMENTATION
+- Created fresh branch `osm-city/corridor-promote-tested-stack-r2-2026-09-19` from current main `c867788416c50fa9c6e6ce57abc4bad85dca90d1`.
+- Reused exact tested Git blobs from stacked PRs #80/#81/#82 instead of replaying old history or reserializing large source files.
+- Preserved newer unrelated Resident Atlas main changes.
+- Promoted route evidence, current narrow source, normalized corridor, consumer scene, tested source/build scripts and Return docs.
+- Promoted the shared normalizer bounds hardening required for corridor-scale arrays.
+- Changed networked Overpass workflows to explicit `workflow_dispatch`; deterministic consumer regression remains automatic.
+
+### TESTED RESULT
+- Promotion run `35415509853`, job `105823274200`: **PASS**.
+- Existing Ehrenfeld/Hürth normalization outputs remain stable.
+- Corridor build + deterministic rebuild PASS.
+- Normalized SHA-256 remains `e88450d51169f7293bdbfb87955826cf3328a25e00eb3c24e8a08c636e406e6f`.
+- Scene SHA-256 remains `258c4d5a3872750bc9045d771646e85dbf36aab8a14243db98adc0d288edf07d`.
+
+### OPEN
+- Main merge of the reconciled promotion candidate.
+- Human longer-distance Hürth → Ehrenfeld drive.
+- Public Corridor Drive Stage.
+- Travel Walk↔Drive / Drive↔Flight.
+
+---
+
 ## 2026-09-19 · recovery sync after S1c public proof + corridor handoff
 
 ### SANITY CHECK
