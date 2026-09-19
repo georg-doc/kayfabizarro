@@ -183,3 +183,18 @@ GitHub links remain correct for source, PR, commit and recovery documents. Exist
 
 ### EVIDENCE BOUNDARY
 A third-party CDN success is never a KFB `PUBLIC DEPLOYMENT` or browser PASS.
+
+
+## 2026-09-19 · Modular 3D Mini-Game Hub + ChatGPT Web POCs
+
+### RECOVERY EVIDENCE
+The complete Hex Platformer failure export was locally verified against its SHA-256 manifest. It remains recovery evidence, not a promoted implementation. Inventory, measurement, loader, pack-family, grid, camera and jump/contact donors are retained; the large generated island, current platform generator and automatic diorama composition are rejected as foundations.
+
+### CURRENT_REFERENCE
+Add `workflows/KFB_MODULAR_MINIGAME_HUB_2026-09-19/START_HERE.md` as the detailed plain-language briefing. It starts with one visual measured Baukasten catalog covering structural kits, all six Tiny Treats packs, residents and FrizzleBob, then routes three independent POCs: D01 furnished Dungeon rooms, H01 three-piece Hex proof/Babel micro-tower, and C01 Combat Arena platform level.
+
+### OWNER BOUNDARY
+World Atlas keeps Dungeon/authoring grammar, Resident Scene Modules keep resident activity only, the FrizzleBob graft keeps the actor contract and `georg-doc/KFB-Combat-Arena` keeps combat implementation truth. The Production Hub coordinates links and prompts; it does not become a game runtime.
+
+### HUB ROUTING
+Add one P0 C0 catalog todo and four ready-to-copy ChatGPT Web starters for C0, D01, H01 and C01. Each slice uses a separate branch, fixed Stage route, additive return packet and PR without automatic merge.
