@@ -1,4 +1,3 @@
-addEventListener('keydown',e=>{if((e.code==='Space'||e.code==='Enter')&&e.target instanceof Element&&e.target.closest('#radioControls button,#radioMorePanel button'))e.stopImmediatePropagation()},{capture:true});
 addEventListener('pointerdown',e=>{if(window.__KFB_BOX_BLOCK_INPUT__&&e.target instanceof Element&&e.target.closest('[data-key]')){e.preventDefault();e.stopImmediatePropagation()}},{capture:true});
 import {installBoxStop} from './box-stop/session.mjs';
 import {startRaceHost} from './host-bootstrap.mjs';
