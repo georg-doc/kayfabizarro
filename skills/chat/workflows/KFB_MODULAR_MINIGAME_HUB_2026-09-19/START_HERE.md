@@ -1,5 +1,51 @@
 # KFB 3D Mini-Game Hub · Baukasten- und POC-Briefing
 
+## CURRENT C0 PIPELINE OVERRIDE · 2026-09-19 · Pack → Module Kit → Generator
+
+Georg clarified and accepted the C0 production goal:
+
+**C0 is not a one-off visual catalog.** C0 turns all current KayKit + Tiny Treats packs into analysed modular construction kits that can later feed Dungeon-Generator-equivalent builders/generators.
+
+Binding pipeline:
+
+`Registry source → C0-A Pack Analysis → C0-B Module Atlas / sample builds → C0-C Asset Librarian → C0-D Game Development Studio package → C1 ToolBox/Builder → C2 pack-specific Generator`
+
+Full addendum:
+
+[C0 · Pack-to-Generator Production Pipeline](./C0_PACK_TO_GENERATOR_PIPELINE_2026-09-19.md)
+
+Current Registry snapshot: **19 KayKit + 8 Tiny Treats = 27 pack lanes**. Re-enumerate Registry at execution time; do not hardcode this count as permanent canon.
+
+### First end-to-end attempt · Charming Kitchen
+
+C0-A1 analysed Tiny Treats Charming Kitchen 1.1:
+
+- 118/118 source models classified;
+- Build 69 · Furnish 26 · Story 23;
+- CC0 license pinned;
+- no source assets copied;
+- Module Library + Pack Profile + Generator Profile + three sample recipes prepared.
+
+The later Asset Librarian browser integration failed the same parser gate after two repair passes and is frozen as:
+
+`ARCHIVED_FAILED_CANDIDATE`
+
+Recovery:
+
+[C0-A1 Charming Kitchen Failure Recovery](./C0_A1_CHARMING_KITCHEN_FAILURE_RECOVERY_2026-09-19/START_HERE.md)
+
+**Do not continue patching that implementation branch.** Next gate is the clean six-asset Librarian wall-grammar proof from current main.
+
+## CURRENT CORRECTION · 2026-09-19 · Visible briefs, C0 recovery, Raid order
+
+The Hub now exposes a dedicated **Briefings** filter. “Today” remains intentionally compact; it is not the full briefing catalogue.
+
+- C0 is retained as a documented **GEORG VISUAL REVIEW FAIL** recovery record, not a default execution brief. The Asset Librarian is the only shared discovery surface.
+- Combat CA2 actor/enemy proof precedes the productive KayKit Dungeon Raid; Dungeon owns rooms/spawns only, Arena owns combat.
+- Tiny Treats Bakery/Kitchen generation is separate from Dungeon.
+- EyeRig Batch is a named ToolBox slice with its own current entry and public candidate.
+- KFB Ink/cartoon mechanics consume the existing Ink canon and TE-01 candidate rather than introducing a new outline system.
+
 Status: **BRIEFING CURRENT · UMSETZUNG NOCH NICHT GESTARTET**  
 Datum: 2026-09-19  
 Auftraggeber: Georg / KFB  
@@ -12,7 +58,7 @@ Die verbindliche Reihenfolge ist jetzt:
 
 1. [Racetrack World Look + 3D HUD v1](../RACETRACK_WORLD_LOOK_AND_3D_HUD_V1_2026-09-19/START_HERE.md) — **P0**. Aktuelle OSM-Fahrprobe, Track, Tiny-Skies-/Travel-Gestaltungsgrammatik, KayKit/Kenney-Rollen und das neue eigene 3D-HUD in einem kleinen messbaren Look-Vertrag bündeln.
 2. [Asset Librarian × Tiny Treats · Discoverability Recon](../ASSET_LIBRARIAN_TINY_TREATS_RECON_V1_2026-09-19/START_HERE.md) — **P0-Gate für C0**. Charming Kitchen ist im Register, muss aber ohne Slug-Wissen gefunden werden. Librarian bleibt die eine Bibliothek; ToolBox/C0 sind Konsumenten.
-3. **C0 Baukasten** — erst danach den verständlichen, gemessenen Rollen-Katalog aus Registry/Librarian aufbauen; keine Parallelbibliothek.
+3. [**C0 Pack-to-Generator Pipeline**](./C0_PACK_TO_GENERATOR_PIPELINE_2026-09-19.md) — Packanalyse und Modulgrammatik vor Builder/Generator. Asset Librarian bleibt die eine Bibliothek; GDS paketiert erst nach sichtbarem Modulbeleg.
 4. [Babel Tower S2b → Hex Platform Generator](./BABEL_HEX_PLATFORM_GENERATOR_V1_BRIEF.md) — **P1**. S2b-Quelle sichern, drei echte Hex-Verbindungen beweisen, dann einen kleinen Turm-Recipe-Generator.
 5. [Combat Arena Integration v2](./COMBAT_ARENA_INTEGRATION_V2_BRIEF.md) — vorbereitet, aber nicht vor Welt/Race/C0 starten.
 6. [Dungeon Generator v2](./DUNGEON_GENERATOR_V2_BRIEF.md) — Side Quest; vorhandenen stabilen Generator weiterbauen, nicht neu erfinden.
@@ -40,9 +86,9 @@ Die Webseite koordiniert. Die Spielwelt spielt. Die Webseite wird nicht zum neue
 
 ## 3. Verbindliche Reihenfolge
 
-### C0 · Katalog und gemeinsame Sprache
+### C0 · Pack-to-Generator Foundation
 
-Zuerst wird ein kleiner, visueller Katalog gebaut. Er erklärt die vorhandenen Packs so, dass ein neuer Web-Chat nicht wieder aus Dateinamen, Vorschaubildern und Größen raten muss.
+Zuerst wird jeder Pack analysiert und als **Module Kit** mit Source Truth, Familien, Maßen/Connector-Evidence und kleinen Sample Builds aufbereitet. Der Asset Librarian zeigt dieselben Daten; Game Development Studio paketiert bewiesene Kits; erst danach entstehen manuelle Builder und pack-spezifische Generatoren. Kein zweiter Asset-Katalog.
 
 Danach dürfen die drei Spielproben unabhängig und bei Bedarf parallel laufen:
 
