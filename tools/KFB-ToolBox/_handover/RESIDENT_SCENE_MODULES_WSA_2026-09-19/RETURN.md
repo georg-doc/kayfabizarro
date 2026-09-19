@@ -51,6 +51,8 @@ KFB Hub:
 
 Current status: **PUBLIC ROUTE EXISTS; S33 exact deployed/browser revision still requires WSA verification.**
 
+A Cloudflare-only Playwright proof is checked in at `.github/workflows/resident-scene-modules-cloudflare-qa.yml`; see `TEST_REPORT.md`. Its actual merged workflow result must be recorded before claiming a browser PASS.
+
 No githack/rawcdn.githack URL is part of this handoff.
 
 ## DROPBOX RESULT
