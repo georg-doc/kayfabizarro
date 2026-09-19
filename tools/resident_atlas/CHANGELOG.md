@@ -24,3 +24,22 @@ Pending. No live/mobile visual PASS is claimed yet.
 
 ### ARCHIVED HISTORY
 The 2026-09-16 raw.githack build that loaded `14/14` models remains evidence for the earlier viewer mechanism only. It is not evidence for this posed/grounded revision.
+
+## 2026-09-19 · Resident Scene Module seam · Clown first proof
+
+### DECISION
+`tools/resident_atlas/` bekommt einen dünnen Plug&Play-Vertrag über die bestehenden S6-Resident-Rezepte, statt Vignetten/Rigs/Activities zu duplizieren.
+
+### IMPLEMENTATION
+- `modules/index.json`
+- `modules/clown-juggling-island.module.json`
+- `modules/runtime/s6-resident-module.js`
+- `modules/README.md`
+
+Der Consumer liefert Parent/Anchor und besitzt Support/Collision. Das Modul liefert Resident-Root, lokale Aktivität, `update(dt)` und `dispose()`.
+
+### STATIC TESTED RESULT
+Manifest parst und hält die Owner-Grenze: `support.owner = consumer`, `collisionOwnedByConsumer = true`, empfohlene Mindestfläche 4×4 Platformer-Zellen.
+
+### OPEN
+Erster Consumer-Import in den Free-Roam-Platformer erst nach visueller Abnahme des Clown-Loops.
