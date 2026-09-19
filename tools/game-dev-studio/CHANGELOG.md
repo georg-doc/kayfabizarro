@@ -189,7 +189,7 @@ https://www.youtube.com/watch?v=T1KNCtAqJ7A
 The video is treated as an older **visual animation overview**, not as current inventory truth or a state-machine how-to. Current implementation facts were rechecked against KFB main and the current official Character Animations source.
 
 ### CURRENT REPO EVIDENCE
-At main `c84c3c57aa875e1ac1cd8cc17eb966cb37c0f317`:
+At main `3d9ac78bfabcec0c43fc453c124133764221139c`:
 - Rig_Medium motion Registry: **139 motions / 8 sets**;
 - MovementBasic: 11;
 - MovementAdvanced: 13;
