@@ -141,3 +141,18 @@ None claimed. Pilot 05 is currently source / downloadable-review work, not a pro
 ## EXACTLY ONE OPEN HUMAN REVIEW QUESTION
 
 **Now that the attachment seam is removed, should the landmark baseline use City Grotesque or Soft Cubist deformation intensity?**
+
+
+## GEORG ACCEPTANCE · 2026-09-19
+
+After opening the final Band Rig v2 standalone in a real browser, Georg explicitly confirmed that the rebuilt attachment logic **works** and that the result **looks right / cool**.
+
+This acceptance supersedes the earlier Pilot-04/v1.2 screenshot rejection for the clock-attachment problem.
+
+Acceptance scope:
+- semantic Band Rig v2 attachment behaviour: **accepted**;
+- current visible landmark result: **accepted as a working direction**;
+- City Grotesque vs Soft Cubist default baseline: **still open**;
+- OSM placement, Race/Travel contact integration, Audio beat integration and public Stage deployment: **not implied**.
+
+The consolidated WSA review/backlog is maintained in [WSA_REVIEW_PACKAGE_LANDMARKS_2026-09-19.md](WSA_REVIEW_PACKAGE_LANDMARKS_2026-09-19.md).
