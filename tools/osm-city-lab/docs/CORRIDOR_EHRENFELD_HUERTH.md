@@ -1,7 +1,88 @@
 # Ehrenfeld ↔ Hürth OSM Corridor
 
-**Date:** 2026-09-18  
-**Status:** IMPLEMENTATION READY · SOURCE BLOCKED (public Overpass availability) · RETRYABLE
+**Date:** 2026-09-19  
+**Status:** SOURCE-DERIVED ROUTE CANDIDATE · WORKFLOW PASS · MAP / TEMPORAL-COHERENCE REVIEW OPEN
+
+## CURRENT OVERRIDE · 2026-09-19 · source discovery succeeded
+
+The previous public-Overpass blocker is now historical. A bounded checkpoint/retry repair was implemented on:
+
+- branch: `osm-city/corridor-checkpoint-retry-2026-09-19`;
+- PR: `georg-doc/kayfabizarro#80`;
+- workflow run: `35410991615`;
+- workflow job: `105810446135`;
+- source/evidence commit: `12bc1b03bf179e3d2b45b3a1cf4e56914690f506`.
+
+### What changed
+
+Successful Overpass chunks are written immediately to the GitHub Actions job temp directory and validated by:
+
+- chunk id;
+- exact bbox;
+- query SHA-256;
+- minimum element payload.
+
+The job makes at most three bounded passes. Later passes read already-successful chunks from the job-local checkpoint and request only missing chunks. Partial checkpoints are **not** committed as canonical OSM source.
+
+### TESTED RESULT
+
+Run `35410991615` passed:
+
+- syntax: PASS;
+- source fetch: PASS;
+- route source graph: PASS;
+- source/provenance/route-evidence commit: PASS.
+
+Pass 1 fetched 15 / 16 chunks. Only `R5E` timed out.
+
+Pass 2:
+
+- reused the 15 successful chunks from checkpoint;
+- fetched only `R5E`;
+- completed the 16 / 16 source set.
+
+Generated source:
+
+- merged elements: **12,417**;
+- source SHA-256: `b1ad3dd65574bef8ca6ea806e14f317d8f78ae08ed8147393b1f8ff3d8b7612f`;
+- evidence: `evidence/ehrenfeld-huerth-route.json`.
+
+Generated route candidate:
+
+- physical length: **11,384.3 m**;
+- nodes: **510**;
+- segments: **509**;
+- start snap: **12.3 m**;
+- end snap: **40.4 m**;
+- preferred road requested: `Militärringstraße`;
+- preferred road actually used: **yes**, **344.9 m / 14 segments**.
+
+Largest named-route contributions currently include:
+
+- Luxemburger Straße: 3,857.7 m;
+- Melatengürtel: 1,381.9 m;
+- Stadtwaldgürtel: 1,052.5 m;
+- Berrenrather Straße: 1,037.3 m;
+- Lindenthalgürtel: 962.6 m;
+- Sülzgürtel: 822.1 m.
+
+### Temporal-coherence boundary
+
+This is a **source-derived discovery route candidate**, not yet the final current-OSM corridor asset.
+
+Most chunks came from OSM base timestamps on 2026-09-19, but three fallback-mirror chunks report older bases:
+
+- `R3W`: 2026-07-28;
+- `R6W`: 2026-05-06;
+- `R8E`: 2026-06-01.
+
+The provenance records those timestamps explicitly. No freshness threshold existed in the original `SOURCE_SPEC.json`, so this slice does **not** invent one after the fact or silently call the mixed-time source “current”.
+
+Use this route as the reproducible discovery candidate. Before the narrow visual corridor becomes geographic truth, review the route and refetch/verify the accepted narrow corridor against a current source snapshot.
+
+### Current next gate
+
+Review the actual named-road path and temporal-source mix. Only then extract the proposed ~220 m half-width corridor and fetch its buildings / green / water source.
 
 ## Goal
 
