@@ -488,3 +488,14 @@ Cloudflare Stage remains **NOT PUBLIC_VERIFIED**. A local browser PASS will be t
 
 ### NEXT
 Open the existing EyeRig Stage, switch to Large, tune Monstrosity and explicitly set it as the Large default. Then compare Black Knight, Demon Lord and Orc Brute.
+
+
+## 2026-09-19 · Track Ribbon S-T01b integration-first freeze
+
+Race S-T01b intentionally tested the combined experience rather than postponing local surface physics: wider 14.4 / 18.0 / 21.6 / 28.8 track scale, clean broad-guidance surface, Travel-derived terrain coupling, default Kenney cue props OFF, and active BLACK_ICE / OIL / LOW_GRAVITY zones.
+
+Implementation SSOT: `georg-doc/KFB-Stunt-Car-Race`, Draft PR #29, frozen runtime/test source head `ee51495d0efd0a8d94781cac82aa2de9fbf3ff46`.
+
+Final static/ownership checks PASS. Two repaired real-browser passes did not reach a full green gate: first failed a BLACK_ICE realtime decay comparison, second progressed beyond that check but timed out waiting for LOW_GRAVITY landing telemetry after 12 s. The last run reached 24 checks with 0 page errors and 0 HTTP errors.
+
+Per the two-repair stop rule the candidate is frozen and a full failure-recovery export is preserved in the Race branch under `ChatGPT_web/track-lab/st01b/failure-recovery/`. No S-T01b Stage publication. Exactly one next gate: deterministic fixed-step LOW_GRAVITY jump/landing seam. Hub should route to recovery, not ask Georg to test this failed candidate.
