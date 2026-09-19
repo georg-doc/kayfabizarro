@@ -1,5 +1,58 @@
 # Changelog · additive
 
+## 2026-09-19 · Ehrenfeld↔Hürth corridor consumer export
+
+### GOAL
+Normalize/select the fresh current source into one deterministic metre-frame City consumer scene without adding movement.
+
+### IMPLEMENTATION
+- added `build-ehrenfeld-huerth-corridor.mjs`;
+- reused the existing normalizer + City consumer-scene builder;
+- route-band selection at 220 m;
+- explicit city join anchors;
+- non-owning landmark socket with `osmIdentityOverride | authoredSurrealPlacement`;
+- hardened shared bounds reduction for corridor-scale point counts.
+
+### TESTED RESULT
+Final workflow run `35412177342`, job `105813800461`: **PASS**.
+- syntax PASS;
+- existing Ehrenfeld/Hürth normalization regression PASS;
+- corridor build PASS;
+- deterministic rebuild PASS;
+- generated-artifact commit PASS.
+
+Consumer evidence:
+- source 117,750 OSM elements;
+- route 11,384.3 m / 510 nodes;
+- before selection: 3,958 roads / 14,492 buildings / 474 landuse / 15 water lines;
+- after selection: 2,486 roads / 7,420 buildings / 332 landuse / 2 water lines;
+- bounds: 3,560.216 × 9,735.554 m;
+- source freshness, SHA, metre frame, route, route band, road selection, OSM IDs, finite values, endpoint joins, landmark socket, movement-owner boundary and deterministic gates all PASS.
+
+Generated bot commit:
+`3db2c786152fd4d77ca33a63effd2a9db9c1d4c1`.
+
+### DELIVERY CORRECTION
+The first run had green build/regression/determinism but failed only at `git pull --rebase` because existing-city regression reports were rewritten with timestamps and left unstaged.
+CI now restores those non-target evidence side-effects and does not trigger itself from generated corridor outputs.
+
+### SIZE BOUNDARY
+- normalized JSON: 6,091,678 bytes;
+- consumer scene: 10,206,808 bytes.
+
+Do not infer mobile/streaming requirements before the real Race C0 browser consumer test.
+
+### STATUS
+- City consumer export: TESTED RESULT.
+- Race C0/C1 consumer integration: OPEN.
+- Browser gameplay / Stage / Georg acceptance: OPEN.
+
+### OPEN
+Exactly one next gate:
+**mount the pinned corridor scene into the existing Race OSM City Drive candidate and browser-test continuous driving from the Hürth join without changing C0 physics.**
+
+---
+
 ## 2026-09-19 · current narrow Ehrenfeld↔Hürth detail source
 
 ### GOAL
