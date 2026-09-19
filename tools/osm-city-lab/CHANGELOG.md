@@ -1,5 +1,33 @@
 # Changelog · additive
 
+## 2026-09-19 · recovery sync after S1c public proof + corridor handoff
+
+### SANITY CHECK
+- Current Kayfabizarro main observed at `e00e9d67fcf6884a9d92d01c1b3c397ef50307c9`; unrelated active lanes have advanced main after the City commits.
+- S1c public proof: run `35390530619`, attempt 2, job `105748631023` → **27 checks / 2 cities PASS**.
+- Public proof validates city entry pages, provenance, exact source road/building counts, no separate roof caps, no City-owned movement and no browser errors.
+
+### CORRIDOR STATUS CORRECTION
+- The older `SOURCE BLOCKED · RETRYABLE` note is historical.
+- PR #80 generated the 11,384.3 m / 510-node real OSM route candidate and recorded actual Militärringstraße use.
+- PR #81 fetched a current narrow corridor source with freshness/skew gates PASS.
+- PR #82 exported a deterministic metre-frame consumer scene at bot commit `3db2c786152fd4d77ca33a63effd2a9db9c1d4c1`.
+- Corridor scene SHA-256: `258c4d5a3872750bc9045d771646e85dbf36aab8a14243db98adc0d288edf07d`.
+- After route-band selection: 2,486 roads / 7,420 buildings / 332 landuse / 2 water lines.
+
+### RECEIVER HANDOFF
+- Race branch `wsa/osm-city-drive-corridor-2026-09-19` consumes the exact pinned City consumer while preserving Free Roam C0 as sole movement/contact owner.
+- Observed Race branch head during recovery: `d2529e634952f25d691d68873801b2651125ac0c`.
+- Workflow `35414946641` was active at this checkpoint; do not convert that in-progress run into a PASS claim until it completes.
+
+### PROMOTION BOUNDARY
+- PRs #80/#81/#82 remain stacked drafts and diverged from newer Kayfabizarro main.
+- Race corridor branch also diverges from newer Race main.
+- Reconcile/rebase before promotion; no force-merge / owner replacement.
+- Travel Walk↔Drive remains OPEN.
+
+---
+
 ## 2026-09-18 · S1c roads / grotesque skyline / OSM signs / KayKit nature
 
 ### DECISION
