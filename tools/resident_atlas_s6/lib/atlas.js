@@ -699,13 +699,13 @@ export function makeJuggleCascade(root, nodes, spec, open = [], notes = []) {
   const actor = nodes.get(spec.actor);
   const pins = (spec.props || []).map((id) => ({ id, node: nodes.get(id) })).filter((p) => p.node);
   if (!actor || pins.length !== (spec.props || []).length) {
-    open.push(\`Jonglage nicht gebaut — Aktor oder Keule fehlt (\${pins.length}/\${(spec.props || []).length} Requisiten gefunden).\`);
+    open.push(`Jonglage nicht gebaut — Aktor oder Keule fehlt (${pins.length}/${(spec.props || []).length} Requisiten gefunden).`);
     return null;
   }
 
   let timing;
   try { timing = juggleTiming({ ...spec, count: pins.length }); }
-  catch (e) { open.push(\`Jonglage nicht gebaut — \${e.message}.\`); return null; }
+  catch (e) { open.push(`Jonglage nicht gebaut — ${e.message}.`); return null; }
 
   const hand = {
     l: findBone(actor, spec.leftHand || 'handslot.l'),
@@ -768,7 +768,7 @@ export function makeJuggleCascade(root, nodes, spec, open = [], notes = []) {
 
   const activity = {
     kind: 'juggle-cascade-v1',
-    label: \`3-club cascade · \${(60 / timing.beatSec).toFixed(1)} throws/min · \${timing.cycleSec.toFixed(2)} s loop\`,
+    label: `3-club cascade · ${(60 / timing.beatSec).toFixed(1)} throws/min · ${timing.cycleSec.toFixed(2)} s loop`,
     enabled: true,
     timing,
     stats,
@@ -827,10 +827,10 @@ export function makeJuggleCascade(root, nodes, spec, open = [], notes = []) {
   actor.userData.activity = activity;
   for (const p of pins) p.node.userData.activity = { kind: activity.kind, actor: spec.actor };
 
-  notes.push(\`Jonglage gebaut: \${activity.label}. Apex \${timing.apex.toFixed(2)}, g \${timing.gravity.toFixed(2)}, Flug \${timing.flightSec.toFixed(3)} s. Timing kommt aus der Flugbahn, nicht aus getipptem BPM.\`);
-  notes.push(\`Jonglage: Handanker aus der Recipe-Pose gemessen (L [\${anchors.l.toArray().map((v) => v.toFixed(3)).join(' / ')}], R [\${anchors.r.toArray().map((v) => v.toFixed(3)).join(' / ')}]); Arme werden pro Frame aus der Basispose restauriert und per CCD auf die Throw/Catch-Scoop-Ziele geführt. Initialer Restfehler L/R \${stats.lastResidual.l} / \${stats.lastResidual.r}.\`);
-  notes.push(\`Jonglage: jede Keule macht \${timing.spinHalfTurns} Halbdrehungen pro Flug. Integer-Halbdrehungen + 6-Beat-Phasenfunktion schließen Lage und Orientierung konstruktiv; kein Keyframe-Drift.\`);
-  if (stats.maxResidual > maxResidual) open.push(\`Jonglage Arm-Restfehler initial \${stats.maxResidual.toFixed(3)} > \${maxResidual.toFixed(3)} — visuell prüfen; Ziel nicht als abgenommen behandeln.\`);
+  notes.push(`Jonglage gebaut: ${activity.label}. Apex ${timing.apex.toFixed(2)}, g ${timing.gravity.toFixed(2)}, Flug ${timing.flightSec.toFixed(3)} s. Timing kommt aus der Flugbahn, nicht aus getipptem BPM.`);
+  notes.push(`Jonglage: Handanker aus der Recipe-Pose gemessen (L [${anchors.l.toArray().map((v) => v.toFixed(3)).join(' / ')}], R [${anchors.r.toArray().map((v) => v.toFixed(3)).join(' / ')}]); Arme werden pro Frame aus der Basispose restauriert und per CCD auf die Throw/Catch-Scoop-Ziele geführt. Initialer Restfehler L/R ${stats.lastResidual.l} / ${stats.lastResidual.r}.`);
+  notes.push(`Jonglage: jede Keule macht ${timing.spinHalfTurns} Halbdrehungen pro Flug. Integer-Halbdrehungen + 6-Beat-Phasenfunktion schließen Lage und Orientierung konstruktiv; kein Keyframe-Drift.`);
+  if (stats.maxResidual > maxResidual) open.push(`Jonglage Arm-Restfehler initial ${stats.maxResidual.toFixed(3)} > ${maxResidual.toFixed(3)} — visuell prüfen; Ziel nicht als abgenommen behandeln.`);
   return activity;
 }
 
