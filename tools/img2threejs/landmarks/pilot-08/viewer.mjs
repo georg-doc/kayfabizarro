@@ -1,8 +1,8 @@
 import * as THREE from 'three';
 import {OrbitControls} from 'three/addons/controls/OrbitControls.js';
-import {buildStyledBuildingMesh} from '../../../../kfb-hub/stage/stunt-world/runtime/ChatGPT_web/osm-city-drive/src/city-style.mjs';
-import {buildRoadMesh,buildSidewalkMesh} from '../../../../kfb-hub/stage/stunt-world/runtime/ChatGPT_web/osm-city-drive/src/city-geometry.mjs';
-import {resolveLandmarkColours,applyWorldEnvironment} from '../../styles/landmark-world-style.mjs';
+import {buildStyledBuildingMesh} from '/kfb-hub/stage/stunt-world/runtime/ChatGPT_web/osm-city-drive/src/city-style.mjs';
+import {buildRoadMesh,buildSidewalkMesh} from '/kfb-hub/stage/stunt-world/runtime/ChatGPT_web/osm-city-drive/src/city-geometry.mjs';
+import {resolveLandmarkColours,applyWorldEnvironment} from '/tools/img2threejs/styles/landmark-world-style.mjs';
 import {buildCologneCathedral} from './dom-geometry.mjs';
 import {rigCologneCathedralGrotesque} from './dom-rig.mjs';
 import {createWorldMaterialSystem} from './world-material.mjs';
@@ -10,10 +10,10 @@ import {createTerrainHost,terrainHeightAt,INTEGRATED_DOM_POSITION} from './terra
 import {createLighthouseReference,createObservatoryReference} from './tinyskies-reference.mjs';
 
 const BUILD='KFB-TS-OSM-INTEGRATED-V1-20260919';
-const SCENE_URL='../../../../tools/osm-city-lab/scenes/huerth-v0.json';
-const STYLE_URL='../../../../tools/osm-city-lab/styles/kfb-city-v0.json';
-const PROFILE_URL='../../styles/landmark-style-profiles.v1.json';
-const TRAVEL_URL='../../styles/travel-visual-snapshot.v1.json';
+const SCENE_URL='/tools/osm-city-lab/scenes/huerth-v0.json';
+const STYLE_URL='/tools/osm-city-lab/styles/kfb-city-v0.json';
+const PROFILE_URL='/tools/img2threejs/styles/landmark-style-profiles.v1.json';
+const TRAVEL_URL='/tools/img2threejs/styles/travel-visual-snapshot.v1.json';
 
 function centroid(footprint=[]){
   if(!footprint.length)return {x:0,z:0};
