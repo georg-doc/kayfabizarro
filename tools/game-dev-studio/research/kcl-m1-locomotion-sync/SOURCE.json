@@ -1,0 +1,53 @@
+{
+  "schema": "kfb.kcl-m1-source/0.1",
+  "date": "2026-09-19",
+  "owner": "KFB Game Dev Studio research / ToolBox motion donor",
+  "status": "IMPLEMENTATION_CANDIDATE_NOT_BROWSER_VERIFIED",
+  "mainSnapshot": "29c7500b39d20945f4f8e73fb02fef91a055b02c",
+  "actor": {
+    "name": "ActionFigure",
+    "rig": "Rig_Medium",
+    "path": "media/3D_Assets/KayKit_Mystery_Series6/6 - December 2023 - Action Figure/character/gltf/ActionFigure.glb",
+    "blobSha": "4785276defdb929cb397954eb74b76aecb84486b",
+    "pin": "29c7500b39d20945f4f8e73fb02fef91a055b02c"
+  },
+  "animation": {
+    "set": "Rig_Medium_MovementBasic",
+    "path": "media/3D_Assets/KayKit_Character_Animations_1.1/Animations/gltf/Rig_Medium/Rig_Medium_MovementBasic.glb",
+    "blobSha": "98e965e886ec539e80f8984a77a29b0c1c02e5e5",
+    "pin": "29c7500b39d20945f4f8e73fb02fef91a055b02c",
+    "clips": [
+      "Walking_A",
+      "Walking_B",
+      "Walking_C",
+      "Running_A",
+      "Running_B"
+    ]
+  },
+  "donors": [
+    {
+      "path": "travel/wip/travel_globe_wsa/world-builder/movement-lab.js",
+      "blobSha": "254b1b3f891247b2bdb27bcc74d8e6a838209587",
+      "reuse": [
+        "root-motion stripping",
+        "foot-cycle sampling",
+        "compatibility mindset",
+        "cadence/reference-speed donor"
+      ],
+      "boundary": "Travel Ground movement ownership is not imported"
+    },
+    {
+      "path": "tools/KFB-ToolBox/kfb-rigs-embed-v3/EMBED_KFB_RIGS_v3.md",
+      "blobSha": "5ac6d3ecb81cc2363b7eee8933e609266de77733",
+      "reuse": [
+        "one mixer per host",
+        "mixer-before-graft frame ordering",
+        "Rig_Medium clip source contract"
+      ],
+      "boundary": "KCL-M1 uses a neutral source actor; it does not become a Graft owner"
+    }
+  ],
+  "stageTarget": "https://kayfabizarro.pages.dev/kfb-hub/stage/game-dev-studio/kcl-m1-locomotion-sync/",
+  "stageStatus": "NOT_DEPLOYED",
+  "consumerBoundary": "Measurement/QA only. Travel, Race, Combat, Platformer and other consumers retain movement/physics/state ownership."
+}
