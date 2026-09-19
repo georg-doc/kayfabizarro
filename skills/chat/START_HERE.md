@@ -207,3 +207,19 @@ Race PR #29 is now **REJECTED FOUNDATION · WRONG TERRAIN DONOR**. The LOW_GRAVI
 
 Next gate:
 source-isolated current Travel Globe/TinySkies surface proof, then the smallest Track-to-spherical-surface deformation seam through the existing Travel terrain truth.
+
+
+### Current Track/Terrain donor gate · TinySkies source isolated
+
+Current Travel/TinySkies donor source is now isolated and browser-proved on `georg-doc/KFB-Travel-Globe#30`.
+
+- Travel donor: **12/12 browser PASS**
+- existing Travel `setTerrainZones()`: proven to deform the real baked Globe surface
+- no Race Track in this gate
+- Voxel remains valid for deliberately voxel/block-based KFB modes; it is only out of scope for this seam
+- public mirror source merged to kayfabizarro
+- canonical Cloudflare child route: **BLOCKED / NOT PUBLIC_VERIFIED** after QA #112 returned fallback HTML
+
+Do not send Georg the unverified child route as a test link. Keep the current accepted Travel Globe public route as the only visible donor reference until Cloudflare publishes the new source-first comparison.
+
+Next technical product gate after public donor review: extend the existing Travel terrain-owner seam from authored zones to one sampled spherical Track corridor. Do not revive the rejected S-T01b voxel sleeve.
