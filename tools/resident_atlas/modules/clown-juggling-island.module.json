@@ -1,0 +1,72 @@
+{
+  "schema": "kfb.resident-scene-module/1",
+  "id": "clown-juggling-island",
+  "title": "Clown · Juggling Island",
+  "status": "candidate-only",
+  "source": {
+    "repo": "georg-doc/kayfabizarro",
+    "commit": "b6a5bdb0f5d6a6e5f245ada254873bcb87f0912e",
+    "residentRecipe": "tools/resident_atlas_s6/data/cast.js",
+    "residentId": "clown",
+    "builder": "tools/resident_atlas_s6/lib/atlas.js",
+    "adapter": "tools/resident_atlas/modules/runtime/s6-resident-module.js"
+  },
+  "scene": {
+    "anchor": "support-top-center",
+    "position": [
+      0,
+      0,
+      0
+    ],
+    "rotationYDeg": 0,
+    "scale": 1,
+    "activity": "juggle-cascade-v1"
+  },
+  "activity": {
+    "kind": "juggle-cascade-v1",
+    "count": 3,
+    "props": [
+      "pin_blue",
+      "pin_green",
+      "pin_red"
+    ],
+    "apex": 0.85,
+    "gravity": 9.81,
+    "dwellBeats": 0.45,
+    "spinHalfTurns": 2,
+    "note": "Three-club proof only. 4–6 clubs require trajectory/collision proof before promotion."
+  },
+  "support": {
+    "owner": "consumer",
+    "collisionOwnedByConsumer": true,
+    "minFlatFootprintCells": [
+      4,
+      4
+    ],
+    "recommendedPlatformer": {
+      "sourceStatus": "candidate donor from current Claude export; consumer must re-pin when integrated",
+      "packRoot": "media/3D_Assets/Platformer Game Kit - Dec 2021/",
+      "packCommit": "eb48f50489b9e4903ec1e3d2fb1837605ce7d792",
+      "theme": "grass",
+      "widthCells": 4,
+      "depthCells": 4,
+      "anchor": "top-center",
+      "rule": "Use the Platformer consumer's measured cell and SOLID/VISUAL separation; this module must not write collision."
+    }
+  },
+  "lifecycle": {
+    "mount": "mountResidentSceneModule(def, { parent, anchor, onProgress })",
+    "update": "module.update(dt)",
+    "dispose": "module.dispose()"
+  },
+  "boundaries": [
+    "No player physics, collision, camera, portal, progression or persistence ownership.",
+    "No asset identity rewrite; paths remain exact GitHub/KayKit sources.",
+    "Resident Atlas S6 owns the vignette/activity evidence; consumer owns world placement."
+  ],
+  "open": [
+    "Browser/mobile visual acceptance of the three-club loop.",
+    "4–6 club variants remain unapproved until trajectories and clearances are measured.",
+    "Platformer integration is not performed in this slice."
+  ]
+}
