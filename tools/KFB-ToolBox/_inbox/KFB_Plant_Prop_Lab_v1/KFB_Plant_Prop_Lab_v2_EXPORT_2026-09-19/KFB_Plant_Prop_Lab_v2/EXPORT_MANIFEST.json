@@ -1,0 +1,66 @@
+{
+  "name": "KFB Plant Prop Lab",
+  "version": "v2",
+  "revision": "2026-09-19-r2",
+  "sprint": "S19 · Register-Grammatik",
+  "scope": "C · nur Plant Prop (index.html + 7 Module + docs/ + CHANGELOG + HOUSEKEEPING + 3 Abnahmebilder)",
+  "entry": "index.html",
+  "runtime": {
+    "build": "keiner",
+    "server": "nicht nötig",
+    "webgl": 2,
+    "three": "unpkg, gepinnte Version",
+    "assets": "raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/"
+  },
+  "copiedModels": 0,
+  "copiedTextures": 0,
+  "relativeAssetPaths": 0,
+  "largestFileKiB": 587,
+  "files": {
+    "root": [
+      "index.html",
+      "README.md",
+      "START_HERE.md",
+      "EXPORT_MANIFEST.json",
+      "CHANGELOG.md",
+      "HOUSEKEEPING.md"
+    ],
+    "src": [
+      "kit-lab.js",
+      "plant-inventory.js",
+      "plant-recipe.js",
+      "plant-pattern.js",
+      "plant-rig.js",
+      "plant-eyes.js",
+      "plant-light.js"
+    ],
+    "docs": [
+      "HANDOFF_WSA_S18.md",
+      "DESIGN_LINE_TOPFMUSTER.md",
+      "BACKLOG_PLANT_PROP.md",
+      "SPRINT_19_CARTOON_DEFORMER.md",
+      "SPRINT_20_LIVING_PLANTS.md",
+      "PACK_GAPS.md",
+      "UI_SPLIT_EINBAU_RESIDENT_ATLAS.md",
+      "HANDOFF_dungeon_S13.md",
+      "HANDOFF_dungeon_props_S13_3.md",
+      "PROPS_S13_4.md",
+      "LIGHT_CONCEPT_S13_3.md"
+    ],
+    "proof": [
+      "s19-final.png",
+      "s19-final-crop.png",
+      "s19-tip.png"
+    ]
+  },
+  "notInPackage": [
+    ".gltf/.glb/Texturen (CC0, extern)",
+    "pet-eye-rig.v6.js (jsDelivr)",
+    "die übrigen 19 Atlas-Seiten und ihre Module"
+  ],
+  "openRisks": [
+    "Asset-RAW-URL zeigt auf main, nicht auf einen Commit-SHA (P0-1)",
+    "kein Durchdringungs-Gate für Mischgruppen (P0-2)",
+    "S19- und S20-Vertrag sind Verträge, kein Code"
+  ]
+}
