@@ -65,6 +65,7 @@ If this is a replacement/fresh chat after context loss, use `RECOVERY_PATH.md` r
 - `adapters/chatgpt-astra.md` — ChatGPT/Astra operating layer
 - `adapters/claude-design.md` — Claude Design operating layer
 - `workflows/` — reusable task workflows
+- `workflows/KFB_MODULAR_MINIGAME_HUB_2026-09-19/START_HERE.md` — current Baukasten catalog + Dungeon/Hex/Combat Web-Chat slices
 - `tool-nodes/` — current tool/project entry cards
 - `consumers/` — project/chat-specific sync adapters without copied skill bodies
 
@@ -116,3 +117,10 @@ For Georg's parallel web chats, modules and POCs, use `FRESH_CHAT_SLICE_PROTOCOL
 ## 2026-09-19 · Claude Design failure recovery
 
 Repeated visual/kit repair loops now stop after two passes without progress on the same gate. Use `templates/CLAUDE_DESIGN_FAILURE_RECOVERY_EXPORT.md` to preserve the complete editable source/state, distinguish evidence from hypothesis, record salvageable parts and return one smaller next gate. Project-specific post-mortems remain additive examples; an exported failed candidate is not promoted to current implementation truth.
+
+
+## 2026-09-19 · Modular 3D Mini-Game Hub briefing
+
+For the next ChatGPT Web comparison, use [KFB 3D Mini-Game Hub · START_HERE](workflows/KFB_MODULAR_MINIGAME_HUB_2026-09-19/START_HERE.md). It defines one shared Baukasten catalog and three separate POCs: furnished Dungeon rooms, a measured three-piece Hex gate leading to a hand-authored Babel micro-tower, and a Combat Arena platform level that preserves the Combat repository's current owners.
+
+The verified Claude Design recovery export is donor evidence only. Its inventory, measurement, loader, grid, camera and jump/contact ideas may be reused; its large island generator and automatic diorama composition are explicitly rejected. Tiny Treats is a first-class catalog lane and must distinguish modular interior parts from loose scenery before use.
