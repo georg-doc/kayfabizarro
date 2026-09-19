@@ -54,6 +54,34 @@ These results were re-read before this report:
 - OSM/Grotesque source/browser run `35471501769`: **PASS**.
 - OSM/Grotesque public attempt `35471646709`: marker parse failure after the JSON object; two public repair attempts already consumed.
 
+## Consolidation Stage public attempt
+
+Publication branch mirror:
+`cloudflare-live@aa1dde22d2f6108e97f986f7cc1e9f3e16dffc48`
+
+GitHub source state confirmed before the public check:
+- WSA navigator HTML present on `cloudflare-live`;
+- WSA `SOURCE.json` present on `cloudflare-live`;
+- public Hub contains the WSA card in branch source;
+- public Stage index contains the WSA card in branch source.
+
+Canonical public QA:
+- workflow run `35475904961`;
+- job `105984997880`;
+- conclusion: **FAIL before browser**;
+- failed step: **Wait for exact published marker**;
+- wait window: approximately 3 minutes;
+- expected build `KFB-WSA-MVP-CONSOLIDATION-20260920` and source head `02a127cc3625887b3f66b402c0b45d49322c09ed` never appeared together on the exact public `SOURCE.json`;
+- HTTP-marker/browser/screenshot steps were skipped.
+
+This matches the already documented TinySkies donor publication symptom:
+`BLOCKED_FALLBACK_HTML_NO_DEPLOYMENT_MARKER`.
+
+Interpretation:
+**the new WSA navigator is correctly mirrored in GitHub, but the canonical Cloudflare surface is not serving the new publication state.** This is now treated as one shared deployment/control-plane blocker, not as a failure of each individual slice.
+
+No second public repair pass was attempted. The QA workflow was removed after this evidence so the handoff does not keep burning CI on the same blocked gate.
+
 ## Not tested here
 
 - no integrated Travel + Race + Resident + Combat runtime;
