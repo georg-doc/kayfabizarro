@@ -180,3 +180,33 @@ Research synthesis now proposes phase-matched locomotion transitions, measured p
 
 The earlier KCL-A5 Live Show modeling extraction remains backlog and becomes stronger because current Mixed Bag release geometry can now be compared directly to the creator VODs.
 
+
+
+## KCL-M1 LOCOMOTION SYNC · 39/39 LOCAL PASS
+
+The KayKit creator-research lane has produced its first implementation proof:
+
+`research/kcl-m1-locomotion-sync/`
+
+Current technical result:
+- exact ActionFigure / Rig_Medium + MovementBasic source;
+- exactly Walking_A/B/C + Running_A/B;
+- source/static **20/20 PASS**;
+- local real-browser **39/39 PASS**;
+- workflow `35468444150`, job `105964939873`;
+- artifact `10591764219`;
+- artifact digest `sha256:55b8cc47723a64fc9c633ad46e2008a446d666ba724d02fed6242c17354de75e`;
+- measured profiles persisted in `MEASURED_PROFILE_CANDIDATE.json`;
+- no consumer movement/physics/state ownership introduced.
+
+Auto-measured reference-speed candidates:
+`Walking_C .447 · Walking_A .611 · Walking_B .751 · Running_A 2.480`.
+
+`Running_B .284` is **AUTO_METRIC_AMBIGUOUS_HOLD** because its contact candidates are fragmented and slip candidate is highest. No semantic speed role is assigned.
+
+Default A/B mechanics are proven:
+`Walking_A → Running_A · LEFT · 0.12 s fade · warp ON`, with naive target phase 0 versus phase-sync target ~9.6%.
+
+**PUBLIC/HUMAN:** OPEN. Cloudflare/pages.dev is currently failing repo-wide; KCL public proof never booted the bench and is not evidence of animation failure.
+
+**CURRENT KCL GATE:** restore a successful current Cloudflare deployment, rerun the unchanged public proof, then Georg judges NAIVE vs PHASE SYNC. Pilot 01 and all existing Game Dev Studio package gates remain otherwise unchanged.
