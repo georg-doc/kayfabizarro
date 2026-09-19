@@ -1,0 +1,165 @@
+name: KFB EyeRig Batch public Stage proof
+
+on:
+  push:
+    branches: [cloudflare-live]
+    paths:
+      - 'kfb-hub/stage/toolbox/eye-rig-batch/**'
+      - '.github/workflows/eye-rig-batch-public.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  public-proof:
+    runs-on: ubuntu-latest
+    timeout-minutes: 14
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install Playwright Chromium
+        run: |
+          npm install --no-save playwright@1.55.0
+          npx playwright install --with-deps chromium
+      - name: Verify fixed Cloudflare EyeRig Stage
+        run: |
+          mkdir -p public-proof
+          cat > public-proof/check.mjs <<'JS'
+          import fs from 'node:fs';
+          import { chromium } from 'playwright';
+
+          const BASE='https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/eye-rig-batch/';
+          const WANT={
+            sourcePR:104,
+            sourceHead:'b05172eccf4687cfd2e8523995d39611e62de81d',
+            implementationCheckpoint:'d900fb99f3b04d52f266febd1501368c5fedd360'
+          };
+          const result={url:BASE,want:WANT,checks:[],errors:[],screenshots:[],status:'RUNNING'};
+          const check=(name,pass,detail)=>{result.checks.push({name,pass:Boolean(pass),detail});if(!pass)throw Error(name+' :: '+JSON.stringify(detail))};
+          const pause=ms=>new Promise(r=>setTimeout(r,ms));
+          let browser,page;
+
+          async function shot(name){
+            const p='public-proof/'+name+'.png';
+            await page.screenshot({path:p,fullPage:false});
+            result.screenshots.push(p);
+          }
+
+          try{
+            let marker=null,ready=false;
+            for(let i=0;i<42;i++){
+              try{
+                const r=await fetch(BASE+'DEPLOYMENT.json?ci='+Date.now(),{cache:'no-store'});
+                if(r.ok){
+                  marker=await r.json();
+                  if(marker.sourcePR===WANT.sourcePR &&
+                     marker.sourceHead===WANT.sourceHead &&
+                     marker.implementationCheckpoint===WANT.implementationCheckpoint){
+                    ready=true;break;
+                  }
+                }
+              }catch{}
+              await pause(10000);
+            }
+            check('deployment marker',ready,marker);
+
+            browser=await chromium.launch({headless:true,args:['--use-angle=swiftshader','--enable-unsafe-swiftshader']});
+            page=await browser.newPage({viewport:{width:1440,height:900}});
+            page.on('pageerror',e=>result.errors.push('pageerror: '+String(e)));
+            page.on('console',m=>{if(m.type()==='error')result.errors.push('console: '+m.text())});
+
+            const response=await page.goto(BASE+'?ci='+Date.now(),{waitUntil:'domcontentloaded',timeout:180000});
+            check('stage http',response?.ok(),response?.status());
+
+            await page.waitForFunction(
+              ()=>window.__EYE_RIG_BATCH && typeof window.__EYE_RIG_BATCH.report==='function' &&
+                  document.querySelector('#bootBadge')?.textContent!=='BOOTING',
+              {},
+              {timeout:180000}
+            );
+
+            const initial=await page.evaluate(()=>({
+              title:document.title,
+              marker:document.querySelector('.branch')?.textContent||'',
+              boot:document.querySelector('#bootBadge')?.textContent||'',
+              report:window.__EYE_RIG_BATCH.report()
+            }));
+
+            check('page title',/Batch EyeRig Atlas/.test(initial.title),initial.title);
+            check('visible revision marker',initial.marker.includes('candidate f23b2f6')&&initial.marker.includes('PR #104'),initial.marker);
+            check('runtime no boot error',!initial.report.error,initial.report.error);
+            check('source gate',initial.report.gates?.source===true,initial.report.gates);
+            check('cleanup gate',initial.report.gates?.cleanup===true,initial.report.cleanup);
+            check('facehost gate',initial.report.gates?.host===true,initial.report.eyes?.faceHost);
+            check('eyerig gate',initial.report.gates?.eye===true,initial.report.eyes?.eyeFrame);
+            check('motion gate',initial.report.gates?.motion===true,initial.report.clips);
+            check('12 source components',initial.report.cleanup?.connectedComponents===12,initial.report.cleanup);
+            check('eye components 6+7',
+              JSON.stringify((initial.report.cleanup?.eyeCandidates||[]).map(x=>x.component))===JSON.stringify([6,7]),
+              initial.report.cleanup?.eyeCandidates);
+            check('eyeFrame ready',Boolean(initial.report.eyes?.eyeFrame?.left&&initial.report.eyes?.eyeFrame?.right),initial.report.eyes?.eyeFrame);
+            check('required clips',
+              ['Idle_A','Walking_A','Running_A','Jump_Full_Short'].every(x=>initial.report.clips.includes(x)),
+              initial.report.clips);
+
+            await shot('01-front-bind');
+
+            await page.click('[data-expression="happy"]');
+            await page.click('[data-view="three-left"]');
+            await page.click('[data-motion="Idle_A"]');
+            await pause(900);
+            await shot('02-three-quarter-happy-idle');
+
+            await page.click('[data-expression="thinking"]');
+            await page.click('[data-view="side-right"]');
+            await page.click('[data-motion="Running_A"]');
+            await pause(900);
+            await shot('03-side-thinking-run');
+
+            await page.click('[data-expression="surprised"]');
+            await page.click('[data-view="front"]');
+            await page.click('[data-motion="Jump_Full_Short"]');
+            await pause(900);
+            await shot('04-front-surprised-jump');
+
+            await page.click('#blinkBtn');
+            await pause(80);
+            const interaction=await page.evaluate(()=>window.__EYE_RIG_BATCH.report());
+            check('interaction runtime remains clean',!interaction.error,interaction.error);
+            check('single actor mixer state',interaction.gates?.motion===true,interaction.gates);
+
+            await page.setViewportSize({width:832,height:900});
+            await pause(400);
+            await shot('05-832-review');
+
+            check('console/page errors',result.errors.length===0,result.errors);
+            result.initial=initial;
+            result.afterInteractions=interaction;
+            result.status='PASS';
+          }catch(e){
+            result.status='FAIL';
+            result.failure=String(e.stack||e);
+            process.exitCode=1;
+            if(page)await page.screenshot({path:'public-proof/FAIL.png'}).catch(()=>{});
+          }finally{
+            fs.writeFileSync('public-proof/results.json',JSON.stringify(result,null,2)+'\n');
+            if(browser)await browser.close();
+            console.log(JSON.stringify({
+              status:result.status,
+              checks:result.checks.length,
+              passed:result.checks.filter(x=>x.pass).length,
+              screenshots:result.screenshots.length,
+              failure:result.failure||null
+            }));
+          }
+          JS
+          node public-proof/check.mjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: kfb-eye-rig-batch-public-stage-proof
+          path: public-proof
+          retention-days: 30
