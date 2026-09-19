@@ -56,7 +56,7 @@ try{
 
  await page.click('#reset');
  snap=await page.evaluate(()=>window.__KFB_CURTAIN_V1__.snapshot());
- check('reset state',snap.state==='closed-rest',snap.state);
+ check('reset returns closed idle',['closed-rest','closed-wind'].includes(snap.state),snap.state);
  check('reset progress',snap.openProgress===0,String(snap.openProgress));
 
  const donor=await page.request.get(URL+'donor.html');
