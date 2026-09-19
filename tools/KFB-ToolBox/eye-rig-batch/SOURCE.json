@@ -1,0 +1,97 @@
+{
+  "schema": "kfb.eye-rig-batch-source/0.1",
+  "owner": "KFB ToolBox / Rigging",
+  "repository": "georg-doc/kayfabizarro",
+  "sourceBranch": "toolbox/eye-rig-batch-2026-09-18",
+  "implementationCheckpoint": "d900fb99f3b04d52f266febd1501368c5fedd360",
+  "mergeBase": "5650b6c54d8789b20ea80abe857688173d506d3b",
+  "mainObserved": "ebed22c4245bdbd9541ad8287028f773bc08d66e",
+  "stage": {
+    "route": "/kfb-hub/stage/toolbox/eye-rig-batch/",
+    "url": "https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/eye-rig-batch/",
+    "publicationBranch": "cloudflare-live",
+    "publicationCommit": "e56ae972d05e06c5112fe2de4314192c3e3c8110",
+    "hubLinked": true,
+    "mainRouterCommit": "ac067d09919f744750649e3652dd00036d7ccd6f",
+    "status": "PUBLIC_VERIFIED_HUMAN_VISUAL_GATE_OPEN",
+    "stageSourceSnapshot": "b05172eccf4687cfd2e8523995d39611e62de81d",
+    "publicProof": {
+      "status": "PASS",
+      "runId": 35457983922,
+      "runUrl": "https://github.com/georg-doc/kayfabizarro/actions/runs/35457983922",
+      "publicationHead": "e56ae972d05e06c5112fe2de4314192c3e3c8110",
+      "checks": "17/17 PASS",
+      "screenshots": 5,
+      "artifactId": 10589300370,
+      "artifactName": "kfb-eye-rig-batch-public-stage-proof",
+      "artifactDigest": "sha256:db0ab0d5238d1e97890df21ea43333f1d6fd90aecafa5ae993b5c072b42dd16e",
+      "errors": 0
+    }
+  },
+  "actor": {
+    "id": "gothgirl",
+    "rigClass": "Rig_Medium",
+    "path": "media/3D_Assets/KayKit_Mystery_Series6/GothGirl/characters/GothGirl.glb",
+    "revision": "5650b6c54d8789b20ea80abe857688173d506d3b"
+  },
+  "donors": {
+    "eyeRig": {
+      "path": "tools/KFB-ToolBox/kfb-rigs-embed-v3/petstudio-v9/studio-v12/pet-eye-rig.v6.js",
+      "revision": "5650b6c54d8789b20ea80abe857688173d506d3b",
+      "blob": "853bcf5fb090dd6564fda8bc83d0b4cb527e6b26"
+    },
+    "faceHost": {
+      "path": "tools/KFB-ToolBox/kfb-rigs-embed-v3/frizzlegraft-v1/facehost.v1.js",
+      "revision": "5650b6c54d8789b20ea80abe857688173d506d3b",
+      "blob": "38ec7770f5fccf3aca93ee234f94b801d527d415"
+    },
+    "expressionContract": {
+      "path": "tools/KFB-ToolBox/kfb-rigs-embed-v3/contracts/kfb-pet-graft-driver.v4.json",
+      "revision": "5650b6c54d8789b20ea80abe857688173d506d3b",
+      "blob": "f202a1c2f1670ab6045176af6621c94041124e76"
+    },
+    "faceComponentUtilities": {
+      "path": "media/3D_Assets/build/pet-library.v6.js",
+      "revision": "5650b6c54d8789b20ea80abe857688173d506d3b",
+      "blob": "45d0679127740adaa83f57027e2de41e0e778c4b",
+      "reused": [
+        "faceShells",
+        "buildStripped"
+      ]
+    }
+  },
+  "sourceEyeCleanup": {
+    "headMesh": "GothGirl_Head",
+    "expectedConnectedComponents": 12,
+    "eyeComponents": [
+      6,
+      7
+    ],
+    "mode": "runtime-derived-geometry",
+    "policy": "FAIL_CLOSED"
+  },
+  "pullRequest": {
+    "number": 104,
+    "url": "https://github.com/georg-doc/kayfabizarro/pull/104",
+    "state": "DRAFT_OPEN",
+    "merged": false
+  },
+  "tests": {
+    "staticContract": "22/22 PASS",
+    "jsSyntax": "3/3 PASS",
+    "githubPersistence": "PASS",
+    "localChromium": "ENVIRONMENT_UNAVAILABLE_2_PRE_APP_EGL_X_FAILURES",
+    "exactCloudflareUrl": "PASS_PLAYWRIGHT_GITHUB_ACTIONS_17_17_5_SCREENSHOTS"
+  },
+  "visualReview": {
+    "status": "AUTO_CANDIDATE_NEEDS_TUNING",
+    "observation": "Mount and motion attachment are technically clean; default ring=0.30 reads visibly oversized/protruding in Front/3/4/Side evidence.",
+    "firstAdjustmentHint": "Reduce eye size first; then tune inset and spacing before approval."
+  },
+  "handoffSurfaces": {
+    "mainHubRouterStatusCommit": "8d534f013710d4aa57d1ca2baa7358b2957c35a5",
+    "cloudflareHubMirrorHead": "aaf66bfa4e779c59aa7534998e1650a79551f6e4",
+    "stageRuntimeProofHead": "e56ae972d05e06c5112fe2de4314192c3e3c8110",
+    "note": "Router/Hub alignment only; proven Stage runtime unchanged."
+  }
+}

@@ -1,0 +1,79 @@
+{
+  "schema": "kfb.eye-profile/0.1-candidate",
+  "actorId": "gothgirl",
+  "source": {
+    "repo": "georg-doc/kayfabizarro",
+    "path": "media/3D_Assets/KayKit_Mystery_Series6/GothGirl/characters/GothGirl.glb",
+    "revision": "5650b6c54d8789b20ea80abe857688173d506d3b"
+  },
+  "rigClass": "Rig_Medium",
+  "faceHost": {
+    "status": "PENDING_RUNTIME_MEASURE",
+    "headBone": null,
+    "headSize": null,
+    "facingSource": null
+  },
+  "sourceFace": {
+    "headMesh": "GothGirl_Head",
+    "expectedConnectedComponents": 12,
+    "connectedComponents": null,
+    "eyeComponents": [
+      6,
+      7
+    ],
+    "pairConfidence": 1,
+    "femaleOuterLashCandidate": "included-in-or-adjacent-to-verified-eye-components; runtime visual review required",
+    "removalMode": "mesh-components",
+    "guard": "apply only when connectedComponents === 12",
+    "status": "AUTO_CANDIDATE"
+  },
+  "eyeRigSource": {
+    "path": "tools/KFB-ToolBox/kfb-rigs-embed-v3/petstudio-v9/studio-v12/pet-eye-rig.v6.js",
+    "revision": "5650b6c54d8789b20ea80abe857688173d506d3b",
+    "blob": "853bcf5fb090dd6564fda8bc83d0b4cb527e6b26"
+  },
+  "expressionSource": {
+    "path": "tools/KFB-ToolBox/kfb-rigs-embed-v3/contracts/kfb-pet-graft-driver.v4.json",
+    "revision": "5650b6c54d8789b20ea80abe857688173d506d3b",
+    "blob": "f202a1c2f1670ab6045176af6621c94041124e76"
+  },
+  "eye": {
+    "anchor": {
+      "dx": 0.345,
+      "dy": -0.1,
+      "ring": 0.3,
+      "track": 0.1
+    },
+    "pupilStyle": "matte-cute",
+    "pupilSize": 0.5,
+    "gloss": 0.1,
+    "inset": 0,
+    "lidFit": 0.9,
+    "converge": 0,
+    "splay": 0
+  },
+  "blink": {
+    "minGap": 2.5,
+    "maxGap": 6.5,
+    "dur": 0.12
+  },
+  "life": {
+    "on": true,
+    "wander": 0.09,
+    "tremor": 0.045
+  },
+  "kinetics": {
+    "enabled": false,
+    "gain": 1,
+    "a": 0,
+    "c": 0,
+    "j": 0
+  },
+  "status": "AUTO_CANDIDATE",
+  "evidence": {
+    "camera": "front",
+    "motionClip": "T-Pose",
+    "sourceEyeCleanupVisuallyAccepted": false,
+    "eyeProfileVisuallyApproved": false
+  }
+}
