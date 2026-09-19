@@ -21,6 +21,8 @@ Kein Audio-, Collision-, Movement- oder Terrain-Owner wurde neu geschaffen.
 **212/212 aktuelle Source-/Geometrie-/Reactor-/Viewer-Prüfungen PASS.**  
 [Evidence](evidence/2026-09-19-landmark-rig-v1/summary.json)
 
+**Standalone v1.1:** Georgs erster Single-File-Build traf einen Packaging-Fehler (`mulberry32 is not defined`). Die Quelle verwendet jetzt explizite `city*`-Aliases; der reparierte Einzeldatei-Build besteht Syntax- und Helper-Guard-Prüfungen. [Regression evidence](evidence/2026-09-19-landmark-rig-v1-1/standalone-regression.json)
+
 ## Öffnen
 
 - [Pilot 04 · Group Rig + Living Toy Preview](landmarks/pilot-04/index.html)
