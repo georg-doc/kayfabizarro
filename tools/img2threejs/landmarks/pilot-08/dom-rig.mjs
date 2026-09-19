@@ -1,5 +1,5 @@
-import {cityCartoonParams,deformPoint} from '/tools/osm-city-lab/src/style/cartoon-city.js';
-import {boundsOf} from '/tools/img2threejs/landmarks/pilot-01/geometry.mjs';
+import {cityCartoonParams,deformPoint} from '../../../osm-city-lab/src/style/cartoon-city.js';
+import {boundsOf} from '../pilot-01/geometry.mjs';
 
 const sub=(a,b)=>a.map((v,i)=>v-b[i]);
 const add=(a,b)=>a.map((v,i)=>v+b[i]);
