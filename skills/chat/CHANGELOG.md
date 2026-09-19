@@ -198,3 +198,18 @@ World Atlas keeps Dungeon/authoring grammar, Resident Scene Modules keep residen
 
 ### HUB ROUTING
 Add one P0 C0 catalog todo and four ready-to-copy ChatGPT Web starters for C0, D01, H01 and C01. Each slice uses a separate branch, fixed Stage route, additive return packet and PR without automatic merge.
+
+
+## 2026-09-19 · Hub UI rejection response + Race 3D radio rebrief
+
+### GEORG UI DIRECTION
+Adopt “every letter and every pixel has to pay rent” as the KFB Hub and visual-brief North Star. The prior Hub default is rejected for explanatory header ballast, oversized focus tabs, an unprioritized card wall and a hidden Pocket Inbox/dropzone.
+
+### IMPLEMENTATION
+The Hub now defaults to a compact `Heute` view: short header utilities, small KFB/DocCheck switch, search, permanently visible local Inbox/dropzone, four P0 actions and four current briefings. Full project/reference lists appear only through explicit filters. The rejected HUD Rig v1 Stage card is replaced by a rejection-history pointer.
+
+### CURRENT_REFERENCE
+Add `ANTI_SLOP_VISUAL_BRIEF_GUARDRAILS.md` and the bounded Claude Design brief under `workflows/KFB_HUB_UI_V2_2026-09-19/`. Future briefs must prove each source donor visually before composition, fail loudly instead of using aesthetic fallbacks, keep task/FOV clear and separate technical PASS from Georg acceptance.
+
+### RACE REBRIEF
+The Hub briefing box now routes to `georg-doc/KFB-Stunt-Car-Race/_handover/RACE_HUB_3D_AUTORADIO_RESTART_BRIEF_2026-09-19.md`. R0 proves only the exact Tiny Treats radio with invisible hit targets and the existing Audio owner. HUD Rig v1 remains rejected and is never the restart baseline.
