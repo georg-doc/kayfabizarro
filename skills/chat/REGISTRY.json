@@ -62,6 +62,47 @@
       "note": "After two repair passes without progress on the same gate, freeze and export the complete editable candidate, preserve evidence, record salvage and choose one smaller next gate. Export does not promote the failed candidate."
     },
     {
+      "id": "anti-slop-visual-brief-guardrails",
+      "kind": "coordination",
+      "status": "CURRENT_REFERENCE",
+      "version": "1.0",
+      "path": "skills/chat/ANTI_SLOP_VISUAL_BRIEF_GUARDRAILS.md",
+      "loadWhen": [
+        "visual brief",
+        "UI or HUD",
+        "source-backed 3D prop",
+        "Claude Design",
+        "asset identity",
+        "human visual gate"
+      ],
+      "note": "Mandatory donor-first and every-letter/pixel-pays-rent rules derived from the Georg-rejected HUD Rig v1. Source loading is not visual fidelity; no aesthetic fallback for mandated assets."
+    },
+    {
+      "id": "kfb-hub-ui-v2-2026-09-19",
+      "kind": "workflow",
+      "status": "CURRENT_REFERENCE",
+      "version": "1.0",
+      "path": "skills/chat/workflows/KFB_HUB_UI_V2_2026-09-19/CLAUDE_DESIGN_BRIEF.md",
+      "loadWhen": [
+        "KFB Production Hub UI",
+        "Hub mobile UI",
+        "Hub split screen",
+        "Pocket Inbox",
+        "progressive disclosure"
+      ],
+      "owns": [
+        "Hub presentation brief",
+        "first-viewport content budget",
+        "desktop/split-screen/mobile design gate"
+      ],
+      "doesNotOwn": [
+        "project status truth",
+        "game runtime",
+        "Cloudflare deployment credentials"
+      ],
+      "note": "Lean Today-first Hub direction. Visible Inbox/dropzone, at most four current actions and four briefings; long lists are disclosed only on demand."
+    },
+    {
       "id": "kfb-modular-minigame-hub-2026-09-19",
       "kind": "workflow",
       "status": "CURRENT_REFERENCE",

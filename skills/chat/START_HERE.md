@@ -56,6 +56,8 @@ If this is a replacement/fresh chat after context loss, use `RECOVERY_PATH.md` r
 - `RECOVERY_PATH.md` — deterministic recovery after chat/context failure
 - `FRESH_CHAT_SLICE_PROTOCOL.md` — bounded cold-start work and compact next-day review packet
 - `templates/CLAUDE_DESIGN_FAILURE_RECOVERY_EXPORT.md` — stop/export/post-mortem template after repeated visual or kit failures
+- `ANTI_SLOP_VISUAL_BRIEF_GUARDRAILS.md` — mandatory donor-first and every-pixel-pays-rent rules for visual briefs
+- `workflows/KFB_HUB_UI_V2_2026-09-19/CLAUDE_DESIGN_BRIEF.md` — lean Hub UI brief for desktop, split-screen and mobile
 - `SYNC_PROTOCOL.md` — shared GitHub-based chat/agent synchronization
 - `INBOX_PROTOCOL.md` — shared cross-project intake/staging rules
 - `INBOX_REPO_BOOTSTRAP.md` — one-time structure for the private production inbox
@@ -124,3 +126,12 @@ Repeated visual/kit repair loops now stop after two passes without progress on t
 For the next ChatGPT Web comparison, use [KFB 3D Mini-Game Hub · START_HERE](workflows/KFB_MODULAR_MINIGAME_HUB_2026-09-19/START_HERE.md). It defines one shared Baukasten catalog and three separate POCs: furnished Dungeon rooms, a measured three-piece Hex gate leading to a hand-authored Babel micro-tower, and a Combat Arena platform level that preserves the Combat repository's current owners.
 
 The verified Claude Design recovery export is donor evidence only. Its inventory, measurement, loader, grid, camera and jump/contact ideas may be reused; its large island generator and automatic diorama composition are explicitly rejected. Tiny Treats is a first-class catalog lane and must distinguish modular interior parts from loose scenery before use.
+
+
+## 2026-09-19 · Visual anti-slop guardrails + lean Hub UI
+
+All future visual/UI/asset-based briefs load `ANTI_SLOP_VISUAL_BRIEF_GUARDRAILS.md`: source output must visibly reappear; source-mandated objects have no aesthetic fallback; generic UI chrome is not added without request; FOV/task composition outranks safe-area containment; technical PASS, visual comparison and Georg acceptance remain separate.
+
+The KFB Production Hub now defaults to a lean `Heute` surface. Explanatory hero copy, giant focus tabs and the default link-card wall are removed from the first view. The Pocket Inbox/dropzone is open and visible; the first screen is limited to current P0 actions and four handoff briefs. Long project/reference lists remain available only through compact filters. Claude Design receives the separate three-viewport brief under `workflows/KFB_HUB_UI_V2_2026-09-19/`.
+
+HUD Rig v1 remains rejected history. The current Race/Travel radio restart brief lives in `georg-doc/KFB-Stunt-Car-Race/_handover/RACE_HUB_3D_AUTORADIO_RESTART_BRIEF_2026-09-19.md` and starts with the isolated exact Tiny Treats radio donor, never the rejected presentation.
