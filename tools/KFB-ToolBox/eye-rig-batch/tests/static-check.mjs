@@ -1,10 +1,10 @@
 import fs from 'node:fs'; import path from 'node:path';
 const root=path.resolve(process.argv[2]||'.');
-const files=['index.html','styles.css','app.js','lib/kaykit-eye-adapter.v1.js','lib/source-face-cleanup.v1.js','data/gothgirl.seed.json','data/rig-medium-default.v0.json','docs/SOURCE_AUDIT.md','docs/SOURCE_COMPONENT_IDENTITY_2026-09-19.md','docs/source-components-0-11.html','docs/QA_EYE_CALIBRATION_LOOP_2026-09-19.md'];
+const files=['index.html','styles.css','app.js','lib/kaykit-eye-adapter.v1.js','lib/source-face-cleanup.v1.js','data/gothgirl.seed.json','data/rig-medium-default.v0.json','docs/SOURCE_AUDIT.md','docs/SOURCE_COMPONENT_IDENTITY_2026-09-19.md','docs/source-components-0-11.html','docs/QA_EYE_CALIBRATION_LOOP_2026-09-19.md','docs/BATCH_FEATURE_BACKLOG_2026-09-19.md'];
 let pass=0, fail=0; const results=[];
 function check(name,ok,detail=''){(ok?pass++:fail++);results.push({name,status:ok?'PASS':'FAIL',detail});}
 for(const f of files)check(`file:${f}`,fs.existsSync(path.join(root,f)),fs.existsSync(path.join(root,f))?'present':'missing');
-const app=fs.readFileSync(path.join(root,'app.js'),'utf8'); const html=fs.readFileSync(path.join(root,'index.html'),'utf8'); const cleanup=fs.readFileSync(path.join(root,'lib/source-face-cleanup.v1.js'),'utf8'); const adapter=fs.readFileSync(path.join(root,'lib/kaykit-eye-adapter.v1.js'),'utf8'); const seed=JSON.parse(fs.readFileSync(path.join(root,'data/gothgirl.seed.json'),'utf8')); const medium=JSON.parse(fs.readFileSync(path.join(root,'data/rig-medium-default.v0.json'),'utf8')); const identity=fs.readFileSync(path.join(root,'docs/SOURCE_COMPONENT_IDENTITY_2026-09-19.md'),'utf8'); const componentHtml=fs.readFileSync(path.join(root,'docs/source-components-0-11.html'),'utf8'); const qa=fs.readFileSync(path.join(root,'docs/QA_EYE_CALIBRATION_LOOP_2026-09-19.md'),'utf8');
+const app=fs.readFileSync(path.join(root,'app.js'),'utf8'); const html=fs.readFileSync(path.join(root,'index.html'),'utf8'); const cleanup=fs.readFileSync(path.join(root,'lib/source-face-cleanup.v1.js'),'utf8'); const adapter=fs.readFileSync(path.join(root,'lib/kaykit-eye-adapter.v1.js'),'utf8'); const seed=JSON.parse(fs.readFileSync(path.join(root,'data/gothgirl.seed.json'),'utf8')); const medium=JSON.parse(fs.readFileSync(path.join(root,'data/rig-medium-default.v0.json'),'utf8')); const identity=fs.readFileSync(path.join(root,'docs/SOURCE_COMPONENT_IDENTITY_2026-09-19.md'),'utf8'); const componentHtml=fs.readFileSync(path.join(root,'docs/source-components-0-11.html'),'utf8'); const qa=fs.readFileSync(path.join(root,'docs/QA_EYE_CALIBRATION_LOOP_2026-09-19.md'),'utf8'); const backlog=fs.readFileSync(path.join(root,'docs/BATCH_FEATURE_BACKLOG_2026-09-19.md'),'utf8');
 check('one-localStorage-namespace',app.includes("kfb.toolbox.eye-rig-batch.v0"));
 check('never-localStorage-clear',!app.includes('localStorage.clear'));
 check('pinned-source-revision',(app.match(/5650b6c54d8789b20ea80abe857688173d506d3b/g)||[]).length>=1);
@@ -24,10 +24,24 @@ check('source-component-isolation-diagnostic',html.includes('id="componentSelect
 check('current-source-eye-components-2-3',JSON.stringify(seed.sourceFace.eyeComponents)===JSON.stringify([2,3])&&cleanup.includes('eyeComponents = [2, 3]')&&cleanup.includes('eyeIdentityOk'));
 check('source-component-identity-evidence',identity.includes('| 2 | eye')&&identity.includes('| 3 | eye')&&(componentHtml.match(/data-component=/g)||[]).length===12);
 check('medium-seed-reference',medium.reference?.blob==='e87e6337a6db67096a9577335f36d60672aa389e'&&medium.reference?.actorId==='gothgirl');
-check('medium-ring-ratio',Math.abs(medium.mapping?.ringToMeasuredDxRatio-(0.32/0.49))<1e-8);
-check('gothgirl-calibrated-boot-size',seed.eye?.anchor?.ring===0.20&&seed.eye?.pupilSize===0.34);
+check('medium-authoring-default-screenshot',
+  medium.authoringDefault?.eye?.anchor?.dx===0.295 &&
+  medium.authoringDefault?.eye?.anchor?.dy===0.045 &&
+  medium.authoringDefault?.eye?.anchor?.ring===0.153 &&
+  medium.authoringDefault?.eye?.anchor?.track===0.15 &&
+  medium.authoringDefault?.eye?.pupilSize===0.34 &&
+  medium.authoringDefault?.eye?.inset===0.4 &&
+  medium.authoringDefault?.eye?.converge===0.18);
+check('measurement-suggestion-only',medium.measurementSuggestion?.policy==='EXPLICIT_SUGGESTION_ONLY_NEVER_AUTO_APPLY'&&!app.includes('calibrateRigMediumDefault'));
+check('gothgirl-authoring-seed',seed.eye?.anchor?.dx===0.295&&seed.eye?.anchor?.dy===0.045&&seed.eye?.anchor?.ring===0.153&&seed.eye?.anchor?.track===0.15&&seed.eye?.pupilSize===0.34&&seed.eye?.inset===0.4&&seed.eye?.converge===0.18);
 check('lids-face-base-darkened',seed.eye?.baseColor==='#e6cbc3'&&seed.eye?.lidColorMode==='face-base-darkened'&&adapter.includes('baseColor,')&&adapter.includes('setBaseColor(hex)'));
-check('legacy-default-migration',app.includes('isLegacyUntunedProfile')&&app.includes('state.savedLegacyDefault')&&app.includes('calibrateRigMediumDefault(measured,!saved?.profile || state.savedLegacyDefault)'));
+check('legacy-default-migration',app.includes('isLegacyUntunedProfile')&&app.includes('state.savedLegacyDefault')&&app.includes('applyAuthoringDefaultToProfile(state.profile'));
+check('eyeoval-donor-reuse',adapter.includes('frizzlegraft-v1/eyeoval.v1.js')&&adapter.includes('attachEyeOval')&&adapter.includes('setOval(patch)')&&['ovalW','ovalH','ovalD','ovalTilt'].every((k)=>html.includes(`data-param="${k}"`)));
+check('pupil-tracking-modes',['life','pointer','fixed'].every((k)=>html.includes(`data-tracking-mode="${k}"`))&&app.includes('function setTrackingMode')&&!html.includes('id="gazeFollowToggle"'));
+check('persistent-batchbar',['batchImportBtn','batchExportCharacterBtn','batchExportBatchBtn','batchApplySelectedBtn','batchResetBtn','batchApproveBtn'].every((id)=>html.includes(`id="${id}"`)));
+check('batch-import-export-v02',app.includes('kfb.eye-profile-batch/0.2-candidate')&&app.includes('classDefault:clone(state.mediumSeed.authoringDefault)')&&app.includes('selectedActorIds:[...state.selectedActors]'));
+check('inheritance-class-character-session',JSON.stringify(medium.inheritance?.order)===JSON.stringify(['rigClass','character','session'])&&app.includes("order:['rigClass','character','session']"));
+check('deferred-feature-backlog',backlog.includes('top / bottom eye contour')&&backlog.includes('Mouth Batch')&&backlog.includes('Vehicle EyeRig')&&backlog.includes('headlight'));
 check('corrected-cleanup-status-accepted',app.includes("'SOURCE_IDENTITY_VERIFIED_AUTO_CANDIDATE'"));
 check('qa-four-key-views',html.includes('id="qaCaptureBtn"')&&app.includes("['front','three-left','three-right','side-right']")&&app.includes('gothgirl-qa-front-3q-side.png')&&qa.includes('Front')&&qa.includes('¾ L')&&qa.includes('¾ R')&&qa.includes('Side'));
 check('no-global-schema-promotion',!app.includes('kfb.eye-profile/1'));
