@@ -1,6 +1,6 @@
 {
   "counts": {
-    "DUPLICATE_NAME": 670,
+    "DUPLICATE_NAME": 672,
     "MISSING_REFERENCED_FILE": 339,
     "UNRESOLVED_FBX_DEPENDENCY": 305,
     "UNRESOLVED_MODEL_DEPENDENCY": 89
@@ -7600,6 +7600,19 @@
       "collectionPath": "Assets",
       "format": "png",
       "kind": "image-2d",
+      "name": "tiny_treats_texture_1",
+      "packId": "tiny-treats-baked-goods-1-0-free",
+      "paths": [
+        "media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE/Assets/Textures/tiny_treats_texture_1.png",
+        "media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE/Assets/gltf/tiny_treats_texture_1.png"
+      ],
+      "problemId": "DUPLICATE_NAME:tiny-treats-baked-goods-1-0-free:Assets:image-2d:png:tiny_treats_texture_1",
+      "type": "DUPLICATE_NAME"
+    },
+    {
+      "collectionPath": "Assets",
+      "format": "png",
+      "kind": "image-2d",
       "name": "bakery_sign_long_texture",
       "packId": "tiny-treats-bakery-interior-1-1-free",
       "paths": [
@@ -7633,6 +7646,19 @@
         "media/3D_Assets/Tiny_Treats_Bakery_Interior_1.1_FREE/Assets/gltf/tiny_treats_texture_1.png"
       ],
       "problemId": "DUPLICATE_NAME:tiny-treats-bakery-interior-1-1-free:Assets:image-2d:png:tiny_treats_texture_1",
+      "type": "DUPLICATE_NAME"
+    },
+    {
+      "collectionPath": "Assets",
+      "format": "png",
+      "kind": "image-2d",
+      "name": "tiny_treats_texture_1",
+      "packId": "tiny-treats-charming-kitchen-1-1-free",
+      "paths": [
+        "media/3D_Assets/Tiny_Treats_Charming_Kitchen_1.1_FREE/Assets/Textures/tiny_treats_texture_1.png",
+        "media/3D_Assets/Tiny_Treats_Charming_Kitchen_1.1_FREE/Assets/gltf/tiny_treats_texture_1.png"
+      ],
+      "problemId": "DUPLICATE_NAME:tiny-treats-charming-kitchen-1-1-free:Assets:image-2d:png:tiny_treats_texture_1",
       "type": "DUPLICATE_NAME"
     },
     {
@@ -14489,5 +14515,5 @@
     }
   ],
   "schema": "kfb.asset-registry.problems.v1",
-  "sourceCommit": "29aac1061bdd73736351cb856fa9f1e322478abc"
+  "sourceCommit": "378b209355b13304e3cff656ec0806ca5b89df28"
 }
