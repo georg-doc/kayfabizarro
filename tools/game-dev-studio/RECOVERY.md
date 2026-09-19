@@ -133,3 +133,49 @@ After Pilot 01 gates:
 - **Living Plant / Plant Prop package** from `skills/chat/workflows/PLANT_PROP_LAB_2026-09-18/`: pot+plant recipe, pattern style, prop rig and optional existing EyeRig adapter. **P2 / BACKLOG only; do not displace Pilot 01 consumer gates.**
 
 See `GAME_DEV_STUDIO_ASSET_PACKAGING_LIVING.md`.
+
+
+## 2026-09-19 · C0-A1 Module Kit recovery
+
+A first `GameReadyModuleKitPackage` candidate was prepared for Tiny Treats Charming Kitchen 1.1 as part of the new Pack → Module Atlas → Librarian → GDS → Builder/Generator pipeline.
+
+### Source-analysis result
+
+- 118/118 models classified;
+- Build 69 · Furnish 26 · Story 23;
+- CC0-1.0 source license pinned;
+- no source GLTF/BIN/PNG copied into the package;
+- Module Library + Pack Profile + Generator Profile + three sample recipes created.
+
+### Candidate status
+
+The package metadata is **salvageable candidate data only**.
+
+Frozen implementation head:
+
+`a5a8fcfb25e2ec89ab4346a812870d5b18bf91e6`
+
+Recovery:
+
+`skills/chat/workflows/KFB_MODULAR_MINIGAME_HUB_2026-09-19/C0_A1_CHARMING_KITCHEN_FAILURE_RECOVERY_2026-09-19/START_HERE.md`
+
+The Asset Librarian integration failed the browser module-parse gate after two product repair passes, so the candidate is classified:
+
+`ARCHIVED_FAILED_CANDIDATE`
+
+Do not treat its catalog entry as a current verified GDS package.
+
+### game-dev boundary
+
+`GAME_DEV_CLI_UNAVAILABLE · OPTIONAL FALLBACK USED`
+
+No sealed:
+- package-build receipt;
+- package-verify receipt;
+- vendor-admission receipt.
+
+### Next GDS involvement
+
+None in the next repair gate.
+
+First prove one clean six-asset wall-grammar view inside the existing Asset Librarian from current main. Only after that browser gate passes should the GDS package candidate be reconstructed/revalidated.
