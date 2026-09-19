@@ -1,0 +1,41 @@
+{
+  "schema": "kfb.stage-mirror/0.1",
+  "product": "KFB Theatre Curtain v1",
+  "owner": "KFB Game Dev Studio",
+  "status": "LOCAL_BROWSER_PROOF_PENDING",
+  "sourceRepo": "georg-doc/kayfabizarro",
+  "sourceBranch": "chat/gds-theatre-curtain-v1-2026-09-20",
+  "implementationHead": "4e2de202f82b0f0d7dfa3241d6f0416a84eb15d0",
+  "sourceFiles": {
+    "runtime": {
+      "path": "game-ready/theatre-curtain-v1/runtime/kfb-theatre-curtain.mjs",
+      "blobSha": "2be5fb4b590d732179839cc904b9d643f3750d80"
+    },
+    "package": {
+      "path": "game-ready/theatre-curtain-v1/GAME_ASSET_PACKAGE.json",
+      "blobSha": "8bdc4b25350320aa282153a65c906b18b18f3d25"
+    },
+    "stageIndex": {
+      "path": "kfb-hub/stage/game-dev-studio/theatre-curtain-v1/index.html",
+      "blobSha": "937369a4aabb3c192f278dcd802f2b34b6029cfb"
+    },
+    "stageLab": {
+      "path": "kfb-hub/stage/game-dev-studio/theatre-curtain-v1/lab.mjs",
+      "blobSha": "40854bd93ff4419ebb28ade5090fc649820a4cc0"
+    },
+    "donorSurface": {
+      "path": "kfb-hub/stage/game-dev-studio/theatre-curtain-v1/donor.html",
+      "blobSha": "5cd16419dfb69fb1dfc0d717db85f138f1cc14e7"
+    }
+  },
+  "donor": {
+    "threeJsCommit": "7300402f96c23bfa2174ffc0da01fb4e277d33da",
+    "examplePath": "examples/webgpu_compute_cloth.html",
+    "exampleBlob": "0b3c18d87ac0d2428e6a558b6d09889e425dd537",
+    "isolationMode": "OFFICIAL_THREEJS_DEMO_EMBED_WITH_PINNED_SOURCE_REFERENCE"
+  },
+  "runtimeBackend": "CPU_VERLET_WEBGL_FALLBACK",
+  "stageUrl": "https://kayfabizarro.pages.dev/kfb-hub/stage/game-dev-studio/theatre-curtain-v1/",
+  "protectedBoundary": "Transition overlay only; no Birthday reactivation and no consumer gameplay renderer/physics ownership.",
+  "humanAcceptance": "PENDING"
+}
