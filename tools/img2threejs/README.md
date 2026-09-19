@@ -12,6 +12,8 @@
 
 **GEORG DECISION — landmark default:** **City Grotesque** is now the default landmark view/style. Soft Cubist remains an alternate/debug mode. This decision applies to the landmark lane only; the OSM City Lab keeps its own current default `cartoon` mode unchanged.
 
+**Default review environment:** **OSM City Lab**. Travel Verdant / Day remains an alternate comparison mode.
+
 **Pilot 06 · World Style Bridge v1:** Eiffel, Giza, Stonehenge, Pentagon, Spasskaya and the Kremlin wall study now share the Grotesque default and flexible landmark-specific cartoon palettes. The review viewer can place them in either the exact current OSM City presentation context or a pinned current Travel/TinySkies-derived sky/light/biome context.
 
 **Pilot 05 · Semantic Band Rig v2: IMPLEMENTATION + STATIC/NUMERICAL + CPU VISUAL TESTED RESULT.**
@@ -88,7 +90,7 @@ These remain **presentation signals only**. No Audio engine, vehicle bounce, col
 2. Read [Pilot-05 Slice](landmarks/pilot-05/SLICE.md).
 3. Read [Visual Evidence](evidence/2026-09-19-landmark-band-rig-v2/VISUAL_EVIDENCE.md) and [summary](evidence/2026-09-19-landmark-band-rig-v2/summary.json).
 4. Treat Pilot 04/v1.2 as rejected attachment history, not the current solution.
-5. Visually review Pilot 06: current landmarks under Travel Verdant/Day and OSM City contexts.
+5. Visually review Pilot 06 starting in **OSM City Lab**; use Travel Verdant/Day as the alternate comparison context.
 6. Next implementation target: modular Grotesque Cologne Cathedral as the first real OSM Golden Sample; then Acropolis / Area 51 according to the prepared catalogue.
 
 ## Zuständigkeiten
