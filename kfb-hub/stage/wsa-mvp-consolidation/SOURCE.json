@@ -2,7 +2,7 @@
   "schema": "kfb.stage-source/1.0",
   "stageBuild": "KFB-WSA-MVP-CONSOLIDATION-20260920",
   "route": "https://kayfabizarro.pages.dev/kfb-hub/stage/wsa-mvp-consolidation/",
-  "status": "SOURCE_BRANCH_ONLY_NOT_PUBLIC_VERIFIED",
+  "status": "GITHUB_PUBLICATION_MIRRORED_CLOUDFLARE_MARKER_BLOCKED",
   "sourceRepo": "georg-doc/kayfabizarro",
   "sourceBranch": "orchestration/wsa-mvp-consolidation-2026-09-20",
   "sourceBranchContentHead": "caf87457c39c4344d8b5a106f37b6406765ab4e4",
@@ -13,9 +13,15 @@
   "runtimeOwner": false,
   "publication": {
     "branch": "cloudflare-live",
-    "inspectedHead": "3c1135bc5d24727a011735a4d4bf2ff707b1757c",
-    "currentState": "NOT_YET_MIRRORED",
-    "publicBrowserProof": "NOT_RUN"
+    "branchHead": "aa1dde22d2f6108e97f986f7cc1e9f3e16dffc48",
+    "githubMirror": "CONFIRMED",
+    "publicBrowserProof": "FAIL_BEFORE_BROWSER",
+    "workflowRun": 35475904961,
+    "workflowJob": 105984997880,
+    "failedStep": "Wait for exact published marker",
+    "expectedBuild": "KFB-WSA-MVP-CONSOLIDATION-20260920",
+    "expectedSourceHead": "02a127cc3625887b3f66b402c0b45d49322c09ed",
+    "interpretation": "shared Cloudflare publication/control-plane blocker; canonical pages.dev did not serve the mirrored marker during bounded QA"
   },
   "constraints": [
     "no runtime merge in this Stage page",
@@ -23,5 +29,7 @@
     "no auto-merge",
     "no Live promotion",
     "only direct kayfabizarro.pages.dev route is a human acceptance surface after publication"
-  ]
+  ],
+  "sourceBranchPublicQaHead": "1f913f9e2ed6dca0b4e09344539c2c2c80ec4ef7",
+  "nextGate": "WSA/local lead inspects Cloudflare Pages publication control plane once; do not redesign or rerun individual slices while this shared marker gate is blocked"
 }
