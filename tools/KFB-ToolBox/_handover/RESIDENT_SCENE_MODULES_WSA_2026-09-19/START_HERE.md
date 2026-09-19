@@ -130,7 +130,7 @@ WSA can close this handoff when all of the following are explicit:
 
 ## NEXT BOUNDED SLICE
 
-Prepared briefing only — implementation not started:
+Georg approved **Resident Clown Activity Repair R0 as the sole next implementation slice**. Implementation has not started:
 
 `tools/KFB-ToolBox/_handover/RESIDENT_CLOWN_ACTIVITY_REPAIR_2026-09-19/START_HERE.md`
 
@@ -138,4 +138,4 @@ This next slice repairs only the Resident-owned Clown activity. It does not repa
 
 ## ONE HUMAN REVIEW QUESTION
 
-**Accept Resident Clown Activity Repair R0 as the sole next implementation slice?**
+**After R0 implementation: do the arms, catches and three club paths read as believable juggling without clubs visibly crossing the Clown's head/torso?**
