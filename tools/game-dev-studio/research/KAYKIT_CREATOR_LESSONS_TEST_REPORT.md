@@ -132,3 +132,55 @@ Compare against base `a92e3c70029d811b76a88a15459adc20fea943bb` at that point re
 - 10 changed files;
 - all changes additive except the intended documentation/router/Hub insertions;
 - no asset binary, catalog package data, runtime or consumer source changed.
+
+
+## v0.2 animation / current-main sync sanity
+
+Research update:
+- added `KayKit - Animations - Overview Set 1`;
+- added current Rig_Medium motion inventory analysis;
+- added phase-sync / timeScale / locomotion / combat / interaction synthesis;
+- added current Mixed Bag repository evidence;
+- synchronized branch to current `main@3d9ac78bfabcec0c43fc453c124133764221139c` before final evidence.
+
+### Read-only static checks
+
+1. living document reports v0.2 — PASS;
+2. exact video ID `T1KNCtAqJ7A` present — PASS;
+3. phase-sync locomotion section present — PASS;
+4. explicit “no source Sprint” constraint present — PASS;
+5. KCL-M1 measurement gate present — PASS;
+6. source manifest parses as JSON — PASS;
+7. overview video source is pinned — PASS;
+8. source manifest records 139 current Rig_Medium motions — PASS;
+9. source manifest records 41 Mixed Bag GLTF models — PASS;
+10. current `motions.jsonl` actually yields **139** KayKit Rig_Medium rows — PASS;
+11. current Rig_Medium Registry contains **0** clip names matching `sprint` — PASS;
+12. current Mixed Bag shard contains **47** assets — PASS;
+13. Mixed Bag shard contains **41 model-3d GLTF** — PASS;
+14. Mixed Bag shard contains **6 image-2d PNG** — PASS;
+15. Hub contains exactly one `kaykit-creator-lessons` card — PASS;
+16. latest parallel EyeRig Hub card (`Review Medium EyeRig authoring · Studio controls`) preserved — PASS;
+17. branch `skills/chat/REGISTRY.json` blob equals current main — PASS;
+18. branch EyeRig handover blob equals current main — PASS;
+19. parallel uploaded `kfb-FACTORY+UI_asset-handoff-animation-lab (8).json` preserved — PASS;
+20. branch is **0 commits behind main** after merge sync — PASS;
+21. compare against current main contains exactly the intended **10 research/router files** — PASS.
+
+**21/21 static/source/current-main synchronization checks PASS.**
+
+### Runtime / visual status
+
+- game runtime tests: **0** — no consumer/runtime code changed;
+- animation playback measurements: **0** — KCL-M1 is the next gate, not claimed here;
+- browser visual tests: **0** for this branch;
+- Cloudflare deployment: **NOT PERFORMED / NOT CLAIMED**;
+- Georg motion acceptance: **PENDING**;
+- `game-dev` CLI: **NOT REQUIRED**.
+
+### Important scope limitation
+
+The 2024 animation video is used as **visual/catalog evidence**. Current motion count and clip availability come from the current KFB Registry / current official Character Animations source, not from the historical video.
+
+The proposed phase-sync, timeScale ranges, hysteresis and event markers are KFB synthesis until KCL-M1 measures them on a real actor.
+
