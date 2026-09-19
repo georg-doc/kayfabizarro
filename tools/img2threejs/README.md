@@ -1,12 +1,15 @@
 # KFB img2threejs · Arbeitsbereich
 
 **Stand:** 2026-09-19 · **Owner:** Georg / KFB  
+**WSA Review Package:** [Landmarks · full handoff + backlog](docs/WSA_REVIEW_PACKAGE_LANDMARKS_2026-09-19.md)  
 **Aktueller Return:** [Semantic Band Rig v2](docs/LANDMARK_BAND_RIG_V2_RETURN_2026-09-19.md)  
 **Slice:** [Bounded rebuild contract](landmarks/pilot-05/SLICE.md)  
 **Aktuelle Evidenz:** [Band Rig v2 summary](evidence/2026-09-19-landmark-band-rig-v2/summary.json) · [Visual Evidence](evidence/2026-09-19-landmark-band-rig-v2/VISUAL_EVIDENCE.md)  
 **Ideation:** [Living Toy World / Reactive Landmarks](docs/IDEATION_LIVING_TOY_WORLD_2026-09-19.md)
 
 ## Aktuell
+
+**GEORG ACCEPTANCE — Band Rig v2:** Georg opened the final standalone in a real browser and confirmed the attachment fix works and the result looks right. This accepts the Band Rig v2 attachment solution/current direction, but does not yet choose City Grotesque vs Soft Cubist as the one default profile and does not imply OSM/Race/Audio integration acceptance.
 
 **Pilot 05 · Semantic Band Rig v2: IMPLEMENTATION + STATIC/NUMERICAL + CPU VISUAL TESTED RESULT.**
 
