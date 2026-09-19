@@ -32,6 +32,26 @@
   ],
   "entries": [
     {
+      "id": "wsa-mvp-consolidation-2026-09-20",
+      "kind": "coordination",
+      "status": "CURRENT_REFERENCE",
+      "version": "0.1",
+      "path": "skills/chat/workflows/WSA_MVP_CONSOLIDATION_2026-09-20/START_HERE.md",
+      "loadWhen": [
+        "WSA Work Lead handoff",
+        "MVP consolidation",
+        "parallel slice status review",
+        "Stage/publication reconciliation",
+        "next local multi-repo integration"
+      ],
+      "notes": [
+        "Coordination-only handoff; does not become a runtime owner.",
+        "Use STATUS_MATRIX.json for pinned/current slice state and public gate separation.",
+        "Re-fetch active PR heads before integration; Travel PR #30 moved during the audit.",
+        "Cloud Design mini-editor remains incoming user-reported source until exact editable export is pinned."
+      ]
+    },
+    {
       "id": "fresh-chat-slice-protocol",
       "kind": "coordination",
       "status": "CURRENT_REFERENCE",
