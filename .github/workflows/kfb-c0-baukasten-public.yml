@@ -1,0 +1,91 @@
+name: KFB C0 Baukasten public Stage proof
+
+on:
+  push:
+    branches: [cloudflare-live]
+    paths:
+      - 'kfb-hub/stage/minigames/baukasten-c0/**'
+      - '.github/workflows/kfb-c0-baukasten-public.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  public-proof:
+    runs-on: ubuntu-latest
+    timeout-minutes: 14
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install Playwright Chromium
+        run: |
+          npm install --no-save playwright@1.55.0
+          npx playwright install --with-deps chromium
+      - name: Verify fixed Cloudflare C0 Stage
+        run: |
+          mkdir -p public-proof
+          cat > public-proof/check.mjs <<'JS'
+          import fs from 'node:fs';
+          import { chromium } from 'playwright';
+          const BASE='https://kayfabizarro.pages.dev/kfb-hub/stage/minigames/baukasten-c0/';
+          const result={url:BASE,checks:[],errors:[],status:'RUNNING'};
+          const check=(name,pass,detail)=>{result.checks.push({name,pass:Boolean(pass),detail});if(!pass)throw Error(name)};
+          const pause=ms=>new Promise(r=>setTimeout(r,ms));
+          let browser,page;
+          try{
+            let marker=null,ready=false;
+            for(let i=0;i<42;i++){
+              try{
+                const r=await fetch(BASE+'DEPLOYMENT.json?ci='+Date.now(),{cache:'no-store'});
+                if(r.ok){marker=await r.json();if(marker.sourcePR===101&&marker.sourceHead==='3ce1b90ee6549bb32ad80ffbf382459c290edccb'){ready=true;break}}
+              }catch{}
+              await pause(10000);
+            }
+            check('deployment marker',ready,marker);
+            browser=await chromium.launch({headless:true,args:['--use-angle=swiftshader','--enable-unsafe-swiftshader']});
+            page=await browser.newPage({viewport:{width:1440,height:1000}});
+            page.on('pageerror',e=>result.errors.push(String(e)));
+            page.on('console',m=>{if(m.type()==='error')result.errors.push(m.text())});
+            const response=await page.goto(BASE+'?ci='+Date.now(),{waitUntil:'domcontentloaded',timeout:180000});
+            check('stage http',response?.ok(),response?.status());
+            await page.waitForFunction(()=>document.documentElement.dataset.c0Ready==='1',{}, {timeout:180000});
+            const snap=await page.evaluate(()=>({
+              title:document.title,
+              packs:document.querySelectorAll('.pack').length,
+              tiny:document.querySelectorAll('.tiny-card').length,
+              proofs:document.querySelectorAll('[data-proof][data-evidence="browser-seen"]').length,
+              status:document.querySelector('#globalStatus')?.textContent,
+              errors:window.__C0_EVIDENCE__?.errors||[]
+            }));
+            check('C0 title',/KFB C0/.test(snap.title),snap.title);
+            check('11 packs',snap.packs===11,snap.packs);
+            check('6 Tiny Treats',snap.tiny===6,snap.tiny);
+            check('5 browser proofs',snap.proofs===5,snap.proofs);
+            check('runtime errors',snap.errors.length===0,snap.errors);
+            check('console/page errors',result.errors.length===0,result.errors);
+            await page.screenshot({path:'public-proof/c0-stage-desktop.png',fullPage:false});
+            await page.setViewportSize({width:390,height:844});
+            await page.locator('#carries').scrollIntoViewIfNeeded();
+            await pause(500);
+            await page.screenshot({path:'public-proof/c0-stage-mobile.png',fullPage:false});
+            result.runtime=snap;
+            result.status='PASS';
+          }catch(e){
+            result.status='FAIL';result.failure=String(e.stack||e);process.exitCode=1;
+            if(page)await page.screenshot({path:'public-proof/FAIL.png'}).catch(()=>{});
+          }finally{
+            fs.writeFileSync('public-proof/results.json',JSON.stringify(result,null,2)+'\n');
+            if(browser)await browser.close();
+            console.log(JSON.stringify({status:result.status,checks:result.checks.length,passed:result.checks.filter(x=>x.pass).length,failure:result.failure}));
+          }
+          JS
+          node public-proof/check.mjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: kfb-c0-baukasten-public-stage-proof
+          path: public-proof
+          retention-days: 30
