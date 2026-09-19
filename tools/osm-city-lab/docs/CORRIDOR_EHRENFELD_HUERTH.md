@@ -1,22 +1,26 @@
 # Ehrenfeld ↔ Hürth OSM Corridor
 
 **Date:** 2026-09-19  
-**Status:** MAIN PROMOTION CANDIDATE · CURRENT-MAIN RECONCILED · DETERMINISTIC CI PASS · RACE RECEIVER BROWSER PASS
+**Status:** MAIN PROMOTED · POST-MERGE DETERMINISTIC CI PASS · RACE RECEIVER BROWSER PASS · STAGE PACKAGE ON MAIN · PUBLIC/HUMAN FULL-ROUTE GATES OPEN
 
-## CURRENT PROMOTION CANDIDATE · current-main rebase
+## CURRENT MAIN STATE · promoted 2026-09-19
 
-The tested stack has now been selectively transplanted onto a fresh branch from current main:
+The tested stack was reconciled onto current main and promoted through PR #86:
 
-- branch: `osm-city/corridor-promote-tested-stack-r2-2026-09-19`;
-- base: `c867788416c50fa9c6e6ce57abc4bad85dca90d1`;
-- promotion workflow: `35415509853` / job `105823274200` → **PASS**;
+- reconciled branch: `osm-city/corridor-promote-tested-stack-r2-2026-09-19`;
+- promotion PR: **#86**;
+- merge: `3813d24e3db04a43117676890e48f7b6baaf6cd9`;
+- pre-merge promotion workflow: `35415509853` / job `105823274200` → **PASS**;
+- post-merge consumer workflow: `35415680112` / job `105823765381` → **PASS**;
+- S2 export contract on merge: `35415680163` → **PASS**;
+- main evidence refresh: `25c2c616720e18d97028bf06fdd03d10c16b3504`;
 - normalized and scene SHA-256 values remain byte-identical to PR #82;
 - networked Overpass refresh workflows are explicit/manual;
 - deterministic consumer regression remains automatic.
 
 See `CORRIDOR_PROMOTION_RETURN_2026-09-19.md`.
 
-The earlier stacked PRs remain provenance/history and must not be force-merged over this reconciled branch.
+The earlier stacked PRs remain provenance/history and must not be force-merged over current main.
 
 ## CURRENT RECOVERY OVERRIDE · 2026-09-19
 
@@ -44,17 +48,25 @@ Three stacked draft PRs now contain tested corridor work:
   - consumer bounds: **3,560.216 × 9,735.554 m**;
   - all source / metre-frame / route-band / OSM-id / endpoint-join / movement-owner / determinism gates PASS.
 
-These PRs are **stacked draft branches and currently diverged from newer `main`**. Do not merge them blindly. Reconcile/rebase the stack against current main before City Lab promotion.
+These stacked draft PRs are historical provenance. Their tested artifacts were selectively reconciled and promoted through PR #86; do not merge the old stack over current main.
 
 The existing Race / Free-Roam receiver is already consuming the exact pinned consumer scene on branch:
 
 `georg-doc/KFB-Stunt-Car-Race@wsa/osm-city-drive-corridor-2026-09-19`
 
-Current observed branch head during this recovery check:
+Receiver evidence commit for the green continuous-corridor browser run:
 
-`d2529e634952f25d691d68873801b2651125ac0c`
+`7208b4167df6fbea62703177301473eb841522d7`
 
 The Race lane remains the movement/contact owner; City Lab still owns no driving engine.
+
+## Stage mirror package · current main
+
+Current main commit `8607fb512726af81848b6545eda25ad451491f36` adds the thin Stage mirror at:
+
+`/kfb-hub/stage/stunt-world/`
+
+Its 9 runtime files are source-identical to tested Race runtime `d2529e634952f25d691d68873801b2651125ac0c`; Race remains the implementation SSOT. Deployment manifest status remains `PUBLIC_STAGE_PACKAGE_TESTED_SOURCE_PENDING_MIRROR`. Human full-route drive, physical mobile QA, Live promotion, landmark runtime and audio integration remain open.
 
 ## Goal
 
@@ -109,11 +121,11 @@ Because the failure moved between chunks on an unchanged source query, the evide
 
 Do not fabricate a corridor from memory and do not hammer public Overpass indefinitely.
 
-Current status:
+Historical status at that checkpoint:
 
 `SOURCE BLOCKED · RETRYABLE`
 
-The local Work Lead may rerun the exact workflow later or execute the same source scripts in an environment with a healthy Overpass endpoint. A route is not called TESTED until `evidence/ehrenfeld-huerth-route.json` is actually generated from source.
+This blocker was later closed by checkpoint/retry PR #80, current-detail PR #81 and consumer export PR #82. The generated route/source/consumer artifacts are now on current main via PR #86.
 
 ## Next after source succeeds
 
