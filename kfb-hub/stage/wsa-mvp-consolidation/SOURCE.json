@@ -1,0 +1,26 @@
+{
+  "schema": "kfb.stage-source/1.0",
+  "stageBuild": "KFB-WSA-MVP-CONSOLIDATION-20260920",
+  "route": "https://kayfabizarro.pages.dev/kfb-hub/stage/wsa-mvp-consolidation/",
+  "status": "PUBLISHED_STAGE_AWAITING_PUBLIC_BROWSER_PROOF",
+  "sourceRepo": "georg-doc/kayfabizarro",
+  "sourceBranch": "orchestration/wsa-mvp-consolidation-2026-09-20",
+  "sourceBranchHead": "02a127cc3625887b3f66b402c0b45d49322c09ed",
+  "sourceBaselineMain": "10b55c928d6e41652e3c53f5244e2b77eac2aabc",
+  "publicationBranch": "cloudflare-live",
+  "publicationParentHead": "0a72c7f566f50423ecbb6966ed0d339cf6732258",
+  "expectedVisibleMarker": "WSA MVP Consolidation",
+  "handoffUrl": "https://github.com/georg-doc/kayfabizarro/blob/orchestration/wsa-mvp-consolidation-2026-09-20/skills/chat/workflows/WSA_MVP_CONSOLIDATION_2026-09-20/START_HERE.md",
+  "role": "navigator-and-handoff-only",
+  "runtimeOwner": false,
+  "tests": {
+    "sourceReadback": "24/24 PASS",
+    "publicBrowser": "PENDING"
+  },
+  "constraints": [
+    "no runtime merge",
+    "no owner transfer",
+    "no auto-merge",
+    "no Live promotion"
+  ]
+}
