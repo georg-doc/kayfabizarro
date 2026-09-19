@@ -38,10 +38,10 @@ export async function createRadio(onChange=()=>{}){
   const tracks=(stageMode?[...canonical,...ROADTRIP_V2]:canonical).map(t=>({...t,collection:t.collection||'canonical'}));
   const media=new Audio();media.preload='none';media.crossOrigin='anonymous';
   let context=null,node=null,musicGain=null,sfxGain=null,compressor=null,index=0,playing=false,volume=.45,sfxVolume=.95,seq=0,error='',hiddenWasPlaying=false;
-  const buffers=new Map(),loading=new Set();let sfxEvents=0,lastSfx='',sfxSkipped=0;
+  const buffers=new Map(),loading=new Set(),sfxCounts=Object.create(null);let sfxEvents=0,lastSfx='',sfxSkipped=0;
   const sourceUrl=t=>raw(t.file,t.pin);
   const audioUrl=file=>raw(file,SFX_PIN);
-  function snapshot(){const t=tracks[index];return {track:t.id,title:t.title,index,playing,volume,sfxVolume,state:context?.state||'not-started',sourceCount:node?1:0,position:media.currentTime||0,error,a1:'SOURCE_PENDING_NOT_IMPLEMENTED',stageMode,trackCount:tracks.length,collection:t.collection,file:t.file,pin:t.pin||null,sfxLoaded:buffers.size,sfxLoading:loading.size,sfxEvents,lastSfx,sfxSkipped}}
+  function snapshot(){const t=tracks[index];return {track:t.id,title:t.title,index,playing,volume,sfxVolume,state:context?.state||'not-started',sourceCount:node?1:0,position:media.currentTime||0,error,a1:'SOURCE_PENDING_NOT_IMPLEMENTED',stageMode,trackCount:tracks.length,collection:t.collection,file:t.file,pin:t.pin||null,sfxLoaded:buffers.size,sfxLoading:loading.size,sfxEvents,lastSfx,sfxSkipped,sfxCounts:{...sfxCounts}}}
   const publish=()=>onChange(snapshot());
   async function loadBuffer(file){
     if(buffers.has(file)||loading.has(file)||!context)return;
@@ -73,13 +73,13 @@ export async function createRadio(onChange=()=>{}){
     if(name==='checkpoint'||name==='cascade'){
       const file=ladder(name==='checkpoint'?'xylophone':'synth',step);
       if(!buffers.has(file)){loadBuffer(file);sfxSkipped++;publish();return false}
-      const ok=playBuffer(file,{gain:(name==='checkpoint' ? .72 : .84)*strength,pan});if(ok){lastSfx=name+':'+clamp(Math.round(step),1,10);sfxEvents++;duck(name==='checkpoint' ? .68 : .48,.28)}publish();return ok;
+      const ok=playBuffer(file,{gain:(name==='checkpoint' ? .72 : .84)*strength,pan});if(ok){lastSfx=name+':'+clamp(Math.round(step),1,10);sfxEvents++;sfxCounts[name]=(sfxCounts[name]||0)+1;duck(name==='checkpoint' ? .68 : .48,.28)}publish();return ok;
     }
     const spec=SFX[name];if(!spec)return false;
     if(!buffers.has(spec.file)){loadBuffer(spec.file);sfxSkipped++;publish();return false}
     const ok=playBuffer(spec.file,{gain:spec.gain*strength,rate:spec.rate||1,pan});
     if(ok&&spec.layer&&buffers.has(spec.layer))playBuffer(spec.layer,{gain:(spec.layerGain||.4)*strength,rate:1,pan:pan*.35});
-    if(ok){lastSfx=name;sfxEvents++;duck(spec.duck??.6,(name==='rail'||name==='land') ? .34 : .24)}publish();return ok;
+    if(ok){lastSfx=name;sfxEvents++;sfxCounts[name]=(sfxCounts[name]||0)+1;duck(spec.duck??.6,(name==='rail'||name==='land') ? .34 : .24)}publish();return ok;
   }
   media.onended=()=>{if(playing)choose(index+1)};
   media.onerror=()=>{playing=false;error='Track could not load. Choose another track or retry.';publish()};
