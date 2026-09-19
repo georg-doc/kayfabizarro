@@ -1,0 +1,221 @@
+{
+  "schema": "kfb.osm-city.corridor-detail-provenance.v0",
+  "id": "ehrenfeld-huerth-corridor-v0",
+  "status": "CURRENT_NARROW_SOURCE_CANDIDATE",
+  "routeEvidence": "evidence/ehrenfeld-huerth-route.json",
+  "routeSourceRevision": "12bc1b03bf179e3d2b45b3a1cf4e56914690f506",
+  "routeEvidenceSha256": "ef4433a4fce02362c0478434b9642dbe4f216661141472abc0ea95679fec0451",
+  "halfWidthM": 220,
+  "queryPlan": "QUERY_PLAN.json",
+  "canonicalEndpoint": "https://overpass-api.de/api/interpreter",
+  "retrievedAt": "2026-09-19T01:09:39.380Z",
+  "osmBaseOldest": "2026-09-19T01:04:32.000Z",
+  "osmBaseNewest": "2026-09-19T01:08:37.000Z",
+  "baseSkewHours": 0.068,
+  "oldestAgeHours": 0.085,
+  "sourceSha256": "a6a6479e540a9c89d73da86a34313708920e5b0e1f551c9ca4c61c59d06928f6",
+  "elementCount": 117750,
+  "chunks": [
+    {
+      "id": "D01",
+      "bbox": {
+        "south": 50.94314501541502,
+        "west": 6.909407214757647,
+        "north": 50.951440884584976,
+        "east": 6.920801285242352
+      },
+      "endpoint": "https://overpass-api.de/api/interpreter",
+      "elementCount": 14629,
+      "timestamp": "2026-09-19T01:04:32Z",
+      "querySha256": "61b50aaade6f37db406c31128dbee5d2e429031930c984e4fa60294f7de20fea"
+    },
+    {
+      "id": "D02",
+      "bbox": {
+        "south": 50.936802615415026,
+        "west": 6.906442575239053,
+        "north": 50.947097584584974,
+        "east": 6.915787324760947
+      },
+      "endpoint": "https://overpass-api.de/api/interpreter",
+      "elementCount": 7083,
+      "timestamp": "2026-09-19T01:04:32Z",
+      "querySha256": "8e3bdb73af52952f0f2c6e5d1e933fa1a2ae8444f669c329ac3996cdacb6683c"
+    },
+    {
+      "id": "D03",
+      "bbox": {
+        "south": 50.93022591541502,
+        "west": 6.904520110917032,
+        "north": 50.94075518458498,
+        "east": 6.912714989082968
+      },
+      "endpoint": "https://overpass-api.de/api/interpreter",
+      "elementCount": 10370,
+      "timestamp": "2026-09-19T01:04:32Z",
+      "querySha256": "a7ddc22b49212e5e8053f524a0519afeb671244d9484680a8723ce410cad6ba0"
+    },
+    {
+      "id": "D04",
+      "bbox": {
+        "south": 50.92381291541502,
+        "west": 6.9045518488137025,
+        "north": 50.934178484584976,
+        "east": 6.913624551186298
+      },
+      "endpoint": "https://overpass-api.de/api/interpreter",
+      "elementCount": 14260,
+      "timestamp": "2026-09-19T01:05:33Z",
+      "querySha256": "dd2ade9a4902654157764af1e2f6abe2f5f6e81656db2a4245b574f336b3cd72"
+    },
+    {
+      "id": "D05",
+      "bbox": {
+        "south": 50.917425515415026,
+        "west": 6.907353880169848,
+        "north": 50.927765484584974,
+        "east": 6.918699119830152
+      },
+      "endpoint": "https://overpass-api.de/api/interpreter",
+      "elementCount": 16548,
+      "timestamp": "2026-09-19T01:06:36Z",
+      "querySha256": "6357a62bbd85d3c837f277bc6745e7817688eca5e9d6ba765afaeb9432be9576"
+    },
+    {
+      "id": "D06",
+      "bbox": {
+        "south": 50.91151751541502,
+        "west": 6.912429294359614,
+        "north": 50.92137808458498,
+        "east": 6.924018605640385
+      },
+      "endpoint": "https://overpass-api.de/api/interpreter",
+      "elementCount": 14133,
+      "timestamp": "2026-09-19T01:06:36Z",
+      "querySha256": "f97d925e4718e4fda523ec35d68dc5fbe77a77640643b5de3c27e2f41d19947a"
+    },
+    {
+      "id": "D07",
+      "bbox": {
+        "south": 50.90578221541502,
+        "west": 6.910861386448238,
+        "north": 50.915470084584975,
+        "east": 6.923465113551762
+      },
+      "endpoint": "https://overpass-api.de/api/interpreter",
+      "elementCount": 13759,
+      "timestamp": "2026-09-19T01:07:33Z",
+      "querySha256": "a787ad652412725f792b0b02bd188e60b57d283642f82cff9338f35c83c3bd8f"
+    },
+    {
+      "id": "D08",
+      "bbox": {
+        "south": 50.899957015415026,
+        "west": 6.909111075619534,
+        "north": 50.90973478458498,
+        "east": 6.918579524380466
+      },
+      "endpoint": "https://overpass-api.de/api/interpreter",
+      "elementCount": 5851,
+      "timestamp": "2026-09-19T01:05:33Z",
+      "querySha256": "503fe04e94ac07b151832b25e2e43c5fce98c565be3b22725439b03d093d4b68"
+    },
+    {
+      "id": "D09",
+      "bbox": {
+        "south": 50.89415481541502,
+        "west": 6.9038827669133065,
+        "north": 50.90390958458498,
+        "east": 6.916143933086694
+      },
+      "endpoint": "https://overpass-api.de/api/interpreter",
+      "elementCount": 7181,
+      "timestamp": "2026-09-19T01:05:33Z",
+      "querySha256": "f3b5d8c3e872db7d5025593d021a80e606cfe9aa2f8a13d480de87b1da7d5f82"
+    },
+    {
+      "id": "D10",
+      "bbox": {
+        "south": 50.88838941541502,
+        "west": 6.897784956065693,
+        "north": 50.898107384584975,
+        "east": 6.910149443934308
+      },
+      "endpoint": "https://overpass-api.de/api/interpreter",
+      "elementCount": 15080,
+      "timestamp": "2026-09-19T01:06:36Z",
+      "querySha256": "b190632fdf4b723213cb1603a6df50449f3cc07ad40e9501929d5aa8efaecfaf"
+    },
+    {
+      "id": "D11",
+      "bbox": {
+        "south": 50.884005415415025,
+        "west": 6.893228297401695,
+        "north": 50.892341984584974,
+        "east": 6.904050902598305
+      },
+      "endpoint": "https://overpass-api.de/api/interpreter",
+      "elementCount": 8366,
+      "timestamp": "2026-09-19T01:05:33Z",
+      "querySha256": "3388f97cc8173b847e9b7b2210768d059de44deb2c86c1f8cb8aa8d556a0cf94"
+    },
+    {
+      "id": "D12",
+      "bbox": {
+        "south": 50.87776421541502,
+        "west": 6.886817954633398,
+        "north": 50.88795798458498,
+        "east": 6.899493545366602
+      },
+      "endpoint": "https://overpass-api.de/api/interpreter",
+      "elementCount": 16256,
+      "timestamp": "2026-09-19T01:07:33Z",
+      "querySha256": "8d0bbd64f0e388412cb8f7554fb0fbb1e7683f1d21d4a5ffebd8f6ffa07243a2"
+    },
+    {
+      "id": "D13",
+      "bbox": {
+        "south": 50.87230111541502,
+        "west": 6.882271248020257,
+        "north": 50.881716784584974,
+        "east": 6.893082451979743
+      },
+      "endpoint": "https://overpass-api.de/api/interpreter",
+      "elementCount": 11843,
+      "timestamp": "2026-09-19T01:08:37Z",
+      "querySha256": "9be7c4e87e0722bb42ced91a55f8964f39d60d891507d81b9441e58cc2837b3a"
+    },
+    {
+      "id": "D14",
+      "bbox": {
+        "south": 50.867377815415026,
+        "west": 6.875781197001803,
+        "north": 50.876253684584974,
+        "east": 6.889704902998197
+      },
+      "endpoint": "https://overpass-api.de/api/interpreter",
+      "elementCount": 4992,
+      "timestamp": "2026-09-19T01:06:36Z",
+      "querySha256": "a9a1bbc3ce96a2f33c3adfb4640d46ca4fae2cbb65805c0fa9f667bf5cc66c68"
+    },
+    {
+      "id": "D15",
+      "bbox": {
+        "south": 50.863984915415024,
+        "west": 6.873301576350325,
+        "north": 50.87133038458498,
+        "east": 6.882044323649675
+      },
+      "endpoint": "https://overpass-api.de/api/interpreter",
+      "elementCount": 4212,
+      "timestamp": "2026-09-19T01:06:36Z",
+      "querySha256": "33e2ff39b573c30078585e75313189fca6ebed128dbc9117846b0b10a420938a"
+    }
+  ],
+  "attribution": {
+    "data": "© OpenStreetMap contributors",
+    "license": "ODbL 1.0",
+    "url": "https://www.openstreetmap.org/copyright"
+  },
+  "runtimePolicy": "browser/consumer reads committed GitHub source; no runtime Overpass"
+}
