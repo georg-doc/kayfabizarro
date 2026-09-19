@@ -66,15 +66,16 @@ Current relevant source blobs:
 | Dom v0.2 cartoon proof | IMPLEMENTATION + TESTED RESULT | **GEORG ACCEPTANCE** for cartoon abstraction/material direction; OSM accuracy still open |
 | Pilot 01 · Eiffel / Giza / Stonehenge | IMPLEMENTATION + numerical/GLB TESTED RESULT | no final per-landmark acceptance |
 | Pilot 02 · Pentagon / Spasskaya / Kremlin wall | IMPLEMENTATION + numerical/GLB TESTED RESULT | no final pack acceptance |
-| Pilot 03 · Grotesque / Soft Cubist / Giza Voxel/Boxel | IMPLEMENTATION + TESTED RESULT | deformation direction explored; baseline not chosen |
+| Pilot 03 · Grotesque / Soft Cubist / Giza Voxel/Boxel | IMPLEMENTATION + TESTED RESULT | **DECISION: Grotesque is landmark default** |
 | Pilot 04 · Clock sockets / Rig v1.x | **ARCHIVED FAILED HISTORY** | rejected by Georg screenshots |
 | Pilot 05 · Semantic Band Rig v2 | IMPLEMENTATION + STATIC/NUMERICAL + CPU VISUAL TESTED RESULT | **GEORG ACCEPTANCE on 2026-09-19:** “das klappt” / “sieht richtig cool aus” |
+| Pilot 06 · Grotesque World Style / OSM + Travel | IMPLEMENTATION + 1,354/1,354 TESTED RESULT | human visual review OPEN |
 | OSM/City integration | OPEN | not integrated |
 | Race/Travel contact integration | OPEN | not implemented |
 | Audio-driven beat integration | OPEN | not implemented |
 | Public Stage deployment | OPEN | no fixed Pilot-05 Stage URL claimed |
 
-**Acceptance boundary:** Georg's latest acceptance confirms the visible Band Rig v2 attachment fix and current visual result. It does **not** yet select City Grotesque vs Soft Cubist as the single default landmark deformation profile, and it is not a Race/OSM integration acceptance.
+**Acceptance boundary:** Georg's Band Rig v2 acceptance remains valid. **New DECISION on 2026-09-19: City Grotesque is the default landmark deformation profile.** Soft Cubist remains an alternate/debug mode. This still is not a Race/OSM integration acceptance, and it does not change the OSM City Lab's own current `cartoon` default.
 
 ## CURRENT IMPLEMENTATION
 
@@ -146,7 +147,7 @@ Therefore:
 
 ## WSA REVIEW CHECKLIST
 
-1. Read this package, then the Band Rig v2 RETURN and Visual Evidence.
+1. Read this package, then the current [World Style v1 RETURN](LANDMARK_WORLD_STYLE_V1_RETURN_2026-09-19.md), Band Rig v2 RETURN and Visual Evidence.
 2. Open Pilot 05 from a static host / local served repo and compare:
    - Band Rig v2 vs Legacy point deform;
    - City Grotesque vs Soft Cubist;
@@ -155,12 +156,22 @@ Therefore:
 4. Review the proposed receiver seams below before assigning any Race/Travel integration.
 5. Keep Pilot 04/v1.2 as failure history; do not patch forward from the socket model.
 
+
+## WORLD STYLE BRIDGE ADDENDUM · 2026-09-19
+
+Current authoring implementation: [Pilot 06](../landmarks/pilot-06/index.html) · [RETURN](LANDMARK_WORLD_STYLE_V1_RETURN_2026-09-19.md) · [1,354/1,354 evidence](../evidence/2026-09-19-landmark-world-style-v1/summary.json).
+
+The current modular set (Eiffel, Giza, Stonehenge, Pentagon, Spasskaya, Kremlin wall study) now opens Grotesque-first with landmark-specific cartoon palettes. The viewer can consume either current OSM City presentation constants or a pinned noncanonical snapshot of the current private Travel/TinySkies-derived sky/light/mood/biome values. Travel remains the owner.
+
+Prepared next-geometry catalogue: [GENIUS_LOCI_CANDIDATES_2026-09-19.md](GENIUS_LOCI_CANDIDATES_2026-09-19.md).
+
 ## OPEN POINTS / BACKLOG
 
 ### P0 · review / product gate
 
 - **OPEN:** WSA technical review of Band Rig v2 source and receiver boundary.
-- **OPEN:** select one baseline deformation profile for the first integrated landmark proof: City Grotesque or Soft Cubist.
+- **DECISION:** landmark deformation baseline = **City Grotesque**. Soft Cubist remains alternate/debug.
+- **OPEN:** visually review Pilot 06 in Travel Verdant/Day and OSM City contexts.
 - **OPEN:** automated real-browser/WebGL regression on a usable browser runner.
 - **OPEN:** fixed public Stage URL for Pilot 05 if/when WSA wants shared review outside the source/download path.
 
@@ -250,4 +261,4 @@ Do not reconstruct the landmark donor from prose; consume the pinned source.
 
 ## EXACTLY ONE OPEN HUMAN REVIEW QUESTION
 
-**For the first integrated OSM landmark baseline, should WSA carry forward City Grotesque or Soft Cubist deformation?**
+**For landmark-review pages, should the default environment be Travel Verdant / Day or OSM City Lab?**
