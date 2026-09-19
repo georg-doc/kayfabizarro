@@ -213,3 +213,14 @@ Add `ANTI_SLOP_VISUAL_BRIEF_GUARDRAILS.md` and the bounded Claude Design brief u
 
 ### RACE REBRIEF
 The Hub briefing box now routes to `georg-doc/KFB-Stunt-Car-Race/_handover/RACE_HUB_3D_AUTORADIO_RESTART_BRIEF_2026-09-19.md`. R0 proves only the exact Tiny Treats radio with invisible hit targets and the existing Audio owner. HUD Rig v1 remains rejected and is never the restart baseline.
+
+## 2026-09-19 · Dungeon, Combat and Hex rebrief
+
+### DECISION
+Replace the executable D01/H01/C01 mini-POC prompts with three current briefs: existing Dungeon Generator v2 expansion, productive Combat Arena Driver/KayKit integration, and a verified-module-first Hex Terrain Generator.
+
+### PORTAL SEAM
+All three prepare the same neutral materialize/enter/instance/result/return contract. Direct Race/Travel coupling remains outside the first slices.
+
+### HUB ROUTING
+Keep the existing briefing IDs for stable filters, but point them to the new standalone briefs and updated copyable start texts.
