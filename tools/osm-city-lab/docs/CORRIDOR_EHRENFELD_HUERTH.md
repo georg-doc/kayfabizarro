@@ -1,22 +1,43 @@
 # Ehrenfeld ↔ Hürth OSM Corridor
 
 **Date:** 2026-09-19  
-**Status:** MAIN PROMOTION CANDIDATE · CURRENT-MAIN RECONCILED · DETERMINISTIC CI PASS · RACE RECEIVER BROWSER PASS
+**Status:** MAIN PROMOTED · MAIN CONSUMER CI PASS · RACE RECEIVER PASS · PUBLIC STUNT WORLD 29/29 PASS · HUMAN FULL-ROUTE OPEN
 
-## CURRENT PROMOTION CANDIDATE · current-main rebase
+## CURRENT MAIN STATE · 2026-09-19
 
-The tested stack has now been selectively transplanted onto a fresh branch from current main:
+The tested corridor stack is now on current City Lab `main`:
 
-- branch: `osm-city/corridor-promote-tested-stack-r2-2026-09-19`;
-- base: `c867788416c50fa9c6e6ce57abc4bad85dca90d1`;
-- promotion workflow: `35415509853` / job `105823274200` → **PASS**;
-- normalized and scene SHA-256 values remain byte-identical to PR #82;
-- networked Overpass refresh workflows are explicit/manual;
+- promotion PR: **#86**;
+- merge: `3813d24e3db04a43117676890e48f7b6baaf6cd9`;
+- post-merge consumer run: `35415680112` / job `105823765381` → **PASS**;
+- S2 export contract: `35415680163` → **PASS**;
+- main evidence refresh: `25c2c616720e18d97028bf06fdd03d10c16b3504`;
+- normalized SHA-256: `e88450d51169f7293bdbfb87955826cf3328a25e00eb3c24e8a08c636e406e6f`;
+- scene SHA-256: `258c4d5a3872750bc9045d771646e85dbf36aab8a14243db98adc0d288edf07d`;
+- networked Overpass refresh is explicit/manual;
 - deterministic consumer regression remains automatic.
 
-See `CORRIDOR_PROMOTION_RETURN_2026-09-19.md`.
+The earlier PRs #80/#81/#82 remain provenance/history and must not be force-merged over current main.
 
-The earlier stacked PRs remain provenance/history and must not be force-merged over this reconciled branch.
+### Public Stunt World
+
+Canonical URL:
+
+`https://kayfabizarro.pages.dev/kfb-hub/stage/stunt-world/`
+
+Official main proof `35416057009` / job `105824845921`: **29/29 PASS**.
+
+- 9/9 public runtime files byte-identical to tested Race runtime;
+- WebGL boot: 2852 ms;
+- Hürth join on mapped road;
+- 4/4 C0 contacts;
+- short public drive: 6.406 m;
+- no new recovery/run;
+- no console/page errors;
+- no failed HTTP assets;
+- artifact `10575592864`.
+
+Race remains implementation SSOT; Free Roam C0 remains movement/contact/recovery owner.
 
 ## CURRENT RECOVERY OVERRIDE · 2026-09-19
 
@@ -44,13 +65,13 @@ Three stacked draft PRs now contain tested corridor work:
   - consumer bounds: **3,560.216 × 9,735.554 m**;
   - all source / metre-frame / route-band / OSM-id / endpoint-join / movement-owner / determinism gates PASS.
 
-These PRs are **stacked draft branches and currently diverged from newer `main`**. Do not merge them blindly. Reconcile/rebase the stack against current main before City Lab promotion.
+These stacked draft PRs are historical provenance. Their accepted artifacts were reconciled and promoted through PR #86; do not merge the old stack over current main.
 
 The existing Race / Free-Roam receiver is already consuming the exact pinned consumer scene on branch:
 
 `georg-doc/KFB-Stunt-Car-Race@wsa/osm-city-drive-corridor-2026-09-19`
 
-Current observed branch head during this recovery check:
+Tested Race runtime used by the public mirror:
 
 `d2529e634952f25d691d68873801b2651125ac0c`
 
@@ -109,13 +130,13 @@ Because the failure moved between chunks on an unchanged source query, the evide
 
 Do not fabricate a corridor from memory and do not hammer public Overpass indefinitely.
 
-Current status:
+Historical status at that checkpoint:
 
 `SOURCE BLOCKED · RETRYABLE`
 
-The local Work Lead may rerun the exact workflow later or execute the same source scripts in an environment with a healthy Overpass endpoint. A route is not called TESTED until `evidence/ehrenfeld-huerth-route.json` is actually generated from source.
+This blocker was closed by checkpoint/retry PR #80, current-detail PR #81 and consumer-export PR #82. Their accepted artifacts are now on current main via PR #86.
 
-## Next after source succeeds
+## Historical next-step list after the old source blocker
 
 1. Review actual named-road sequence and whether Militärringstraße is genuinely used.
 2. Approve or adjust graph weighting if the route is technically valid but visually uninteresting.
