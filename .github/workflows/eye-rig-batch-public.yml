@@ -34,7 +34,7 @@ jobs:
           const BASE='https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/eye-rig-batch/';
           const WANT={
             sourcePR:104,
-            sourceHead:'52768e828192e77b43d57f882594f304bcc79180',
+            sourceHead:'fd7a123b3747f74f79b2759e1cbb48fc64f823f0',
             implementationCheckpoint:'d900fb99f3b04d52f266febd1501368c5fedd360'
           };
           const result={url:BASE,want:WANT,checks:[],errors:[],screenshots:[],status:'RUNNING'};
@@ -89,7 +89,7 @@ jobs:
             }));
 
             check('page title',/Batch EyeRig Atlas/.test(initial.title),initial.title);
-            check('visible revision marker',initial.marker.includes('source 52768e8')&&initial.marker.includes('impl d900fb9')&&initial.marker.includes('PR #104'),initial.marker);
+            check('visible revision marker',initial.marker.includes('source fd7a123')&&initial.marker.includes('impl d900fb9')&&initial.marker.includes('PR #104'),initial.marker);
             check('runtime no boot error',!initial.report.error,initial.report.error);
             check('source gate',initial.report.gates?.source===true,initial.report.gates);
             check('cleanup gate',initial.report.gates?.cleanup===true,initial.report.cleanup);
@@ -108,6 +108,28 @@ jobs:
             check('required clips',
               ['Idle_A','Walking_A','Running_A','Jump_Full_Short'].every(x=>initial.report.clips.includes(x)),
               initial.report.clips);
+
+            const measuredTarget=initial.report.cleanup?.sourceMeasuredSeed?.anchorCandidate;
+            check('measured baseline button available',
+              !(await page.locator('#useMeasuredBtn').isDisabled()),
+              await page.locator('#useMeasuredBtn').textContent());
+            await page.click('#useMeasuredBtn');
+            await pause(220);
+            const measuredApplied=await page.evaluate(()=>window.__EYE_RIG_BATCH.report());
+            check('measured baseline explicit apply',
+              ['dx','dy','ring'].every(k=>Math.abs(measuredApplied.profile?.eye?.anchor?.[k]-measuredTarget?.[k])<1e-6) &&
+              measuredApplied.profile?.status==='AUTO_CANDIDATE',
+              {target:measuredTarget,actual:measuredApplied.profile?.eye?.anchor,status:measuredApplied.profile?.status});
+            await shot('00-source-measured-baseline');
+
+            await page.click('#resetSeedBtn');
+            await pause(220);
+            const resetApplied=await page.evaluate(()=>window.__EYE_RIG_BATCH.report());
+            check('reset seed restores visible candidate',
+              Math.abs(resetApplied.profile?.eye?.anchor?.dx-0.345)<1e-6 &&
+              Math.abs(resetApplied.profile?.eye?.anchor?.dy+0.10)<1e-6 &&
+              Math.abs(resetApplied.profile?.eye?.anchor?.ring-0.30)<1e-6,
+              resetApplied.profile?.eye?.anchor);
 
             await shot('01-front-bind');
 

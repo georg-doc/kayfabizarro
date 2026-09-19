@@ -236,6 +236,26 @@ function wireRuntimeControls(camera,controls,renderer) {
     else if(['a','c','j'].includes(k)){state.profile.kinetics[k]=v; state.eyes.setKinetics({[k]:v});}
     if(state.profile.status==='EYE_PROFILE_VISUALLY_APPROVED')setReviewStatus('AUTO_CANDIDATE'); else save();
   });
+  const measured=state.cleanup?.report?.sourceMeasuredSeed?.anchorCandidate;
+  const measuredBtn=$('#useMeasuredBtn'), measuredHint=$('#measuredSeedHint');
+  if(measuredBtn&&measuredHint&&measured){
+    for(const k of ['dx','dy','ring']){
+      const input=$(`[data-param="${k}"]`), v=+measured[k];
+      if(input&&Number.isFinite(v)){
+        if(v<+input.min)input.min=String(v);
+        if(v>+input.max)input.max=String(v);
+      }
+    }
+    measuredHint.textContent=`Measured source baseline · dx ${value(measured.dx)} · dy ${value(measured.dy)} · ring ${value(measured.ring)} · explicit local candidate only`;
+    measuredBtn.disabled=false;
+    measuredBtn.onclick=()=>{
+      state.profile.eye.anchor={...state.profile.eye.anchor,dx:measured.dx,dy:measured.dy,ring:measured.ring};
+      state.profile.status='AUTO_CANDIDATE';
+      state.eyes.setAnchor({dx:measured.dx,dy:measured.dy,ring:measured.ring});
+      bindUiFromProfile(); save(); renderReport();
+      log(`source-measured baseline applied explicitly · dx ${measured.dx} · dy ${measured.dy} · ring ${measured.ring} · AUTO_CANDIDATE`);
+    };
+  }
   $('#captureBtn').onclick=()=>{ renderer.render(window.__EYE_RIG_BATCH.scene,camera); const a=document.createElement('a'); a.href=renderer.domElement.toDataURL('image/png'); a.download=`gothgirl-${state.currentView}-${state.currentMotion}.png`; a.click(); };
 }
 
