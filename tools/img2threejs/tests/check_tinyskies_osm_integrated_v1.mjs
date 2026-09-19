@@ -3,7 +3,7 @@ import {fileURLToPath} from 'node:url';
 import {buildCologneCathedral} from '../landmarks/pilot-08/dom-geometry.mjs';
 import {rigCologneCathedralGrotesque,groupAttachmentReport} from '../landmarks/pilot-08/dom-rig.mjs';
 import {terrainHeightAt,INTEGRATED_DOM_POSITION} from '../landmarks/pilot-08/terrain-host.mjs';
-import {buildStyledBuildingMesh} from '../../kfb-hub/stage/stunt-world/runtime/ChatGPT_web/osm-city-drive/src/city-style.mjs';
+import {buildStyledBuildingMesh} from '../../../kfb-hub/stage/stunt-world/runtime/ChatGPT_web/osm-city-drive/src/city-style.mjs';
 
 const root=fileURLToPath(new URL('../',import.meta.url));
 const style=JSON.parse(readFileSync(root+'../osm-city-lab/styles/kfb-city-v0.json','utf8'));
