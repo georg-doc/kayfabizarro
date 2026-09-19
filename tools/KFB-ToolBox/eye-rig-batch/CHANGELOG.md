@@ -258,3 +258,41 @@ The source-measured baseline remains diagnostic/suggestion-only.
 
 ### NEXT GATE
 Human review of the expanded authoring surface, then a varied 5–8 actor `Rig_Medium` sample.
+
+
+## 2026-09-19 · Checkpoint 11 · 27-ACTOR RIG_MEDIUM BROWSER
+
+### SOURCE
+- merged verified Medium paths from Animation-Lab handoff, Resident Atlas and existing Frankensteining/resource evidence;
+- created `data/rig-medium-actors.v0.json`;
+- catalog contains **27 unique Rig_Medium actors**, all declared 23-joint Medium class.
+
+### IMPLEMENTATION
+- dynamic actor roster replaces the one-GothGirl roster;
+- real model switching;
+- All / Unreviewed / Adjusted / Unsupported filters;
+- per-actor review/profile persistence;
+- review progress count;
+- Next unreviewed;
+- shared Medium motion clips loaded once;
+- one active mixer at a time;
+- generic source-eye cleanup reuses `donoreyes.v1.js` and fails closed;
+- GothGirl exact 2+3 cleanup remains untouched.
+
+### TESTED RESULT
+- implementation `5f2e981cbcf4ca72a6c186c96ed008be535856a9`;
+- evidence `fa7fdb5b9c5b9c4d443e4f19f47260f934c90147`;
+- **62/62 PASS** persisted contract suite;
+- **14/14 PASS** focused actor-browser checks;
+- **3/3 PASS** critical JS syntax.
+
+### PUBLICATION
+- Stage runtime mirror: `ae61e50d525e942a755cf46d0ed807b49b5a3e38`;
+- GitHub readback PASS;
+- actor-browser Playwright proof prepared for Clown / Ninja / Magical Girl switching;
+- new Actions run NOT started by connector;
+- exact public URL inaccessible from current web tool;
+- therefore PUBLIC_VERIFIED remains OPEN.
+
+### NEXT GATE
+Georg performs the fast Medium review wave in the browser and accumulates real character overrides / unsupported cases.

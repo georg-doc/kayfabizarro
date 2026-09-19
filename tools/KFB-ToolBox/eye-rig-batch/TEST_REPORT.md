@@ -401,3 +401,80 @@ A new Actions run did **not** start from the connector push, and the current web
 Status:
 
 `PUBLISHED · GITHUB_READBACK_PASS · PUBLIC_VERIFIED_OPEN · GEORG_STAGE_ACCEPTANCE_OPEN`.
+
+
+## 2026-09-19 · RIG_MEDIUM ACTOR BROWSER
+
+Implementation checkpoint: `5f2e981cbcf4ca72a6c186c96ed008be535856a9`  
+Evidence checkpoint: `fa7fdb5b9c5b9c4d443e4f19f47260f934c90147`  
+Stage publication: `ae61e50d525e942a755cf46d0ed807b49b5a3e38`
+
+### Catalog
+
+The one-actor GothGirl proof has been expanded to a **27-entry Rig_Medium actor catalog**.
+
+Catalog:
+`data/rig-medium-actors.v0.json`
+
+Evidence:
+`docs/RIG_MEDIUM_ACTOR_BROWSER_2026-09-19.md`
+
+The catalog reuses current KFB evidence from Animation Lab, Resident Atlas, resource registry and Frankensteining donors. All entries declare `Rig_Medium` / 23 joints and have unique actor IDs.
+
+### Runtime workflow
+
+The workbench now supports:
+
+- real model switching from the left roster;
+- filters: All / Unreviewed / Adjusted / Unsupported;
+- per-actor EyeProfile persistence;
+- review states:
+  - UNREVIEWED
+  - ADJUSTED
+  - APPROVED
+  - ADJUSTED_APPROVED
+  - UNSUPPORTED
+  - REJECTED
+- **Next unreviewed**;
+- shared Rig_Medium animation packs loaded once;
+- one current actor mixer at a time;
+- selected-actor batch export/application.
+
+### Cleanup generalization
+
+GothGirl retains its exact verified 2+3 source-eye rule.
+
+Other actors reuse the existing `frizzlegraft-v1/donoreyes.v1.js` mirrored-front-pair detector through `medium-source-eye-cleanup.v1.js`.
+
+The generic path is fail-closed:
+
+- no head-named indexed skinned mesh → HUMAN_REQUIRED;
+- no valid mirrored front pair → HUMAN_REQUIRED;
+- strip failure → HUMAN_REQUIRED;
+- in every failure case source geometry remains intact.
+
+### Tests
+
+Persisted branch replay after implementation: **62 / 62 PASS**.
+
+Focused actor-browser candidate checks: **14 / 14 PASS**.
+
+Syntax parse:
+- `app.js`: PASS;
+- `lib/medium-source-eye-cleanup.v1.js`: PASS;
+- `lib/kaykit-eye-adapter.v1.js`: PASS.
+
+The tests cover the 27 unique Medium entries, exact GothGirl cleanup preservation, generic donor reuse, fail-closed behavior, dynamic loader, per-actor profiles, review states, filters and Next unreviewed.
+
+### Stage status
+
+The actor browser is mirrored to:
+`cloudflare-live@ae61e50d525e942a755cf46d0ed807b49b5a3e38`.
+
+The Stage workflow was extended to smoke-switch GothGirl → Clown → Ninja → Magical Girl → GothGirl and verify source / FaceHost / EyeRig stability while allowing generic cleanup to report manual review.
+
+No new Actions run was started by the connector write, and the current web tool cannot open the fixed `pages.dev` route.
+
+Classification:
+
+`PUBLISHED · GITHUB_READBACK_PASS · PUBLIC_VERIFIED_OPEN · HUMAN_REVIEW_WAVE_OPEN`.

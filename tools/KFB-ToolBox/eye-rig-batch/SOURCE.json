@@ -4,16 +4,16 @@
   "repository": "georg-doc/kayfabizarro",
   "sourceBranch": "toolbox/eye-rig-batch-2026-09-18",
   "identityCheckpoint": "949ff8037df2da88eb91ef825984ef57870b8238",
-  "implementationCheckpoint": "c74cbd6e0691d0bd3bcc574203219cdb0e9f647f",
+  "implementationCheckpoint": "5f2e981cbcf4ca72a6c186c96ed008be535856a9",
   "mergeBase": "5650b6c54d8789b20ea80abe857688173d506d3b",
   "stage": {
     "route": "/kfb-hub/stage/toolbox/eye-rig-batch/",
     "url": "https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/eye-rig-batch/",
     "componentEvidenceUrl": "https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/eye-rig-batch/docs/source-components-0-11.html",
     "publicationBranch": "cloudflare-live",
-    "publicationCommit": "40133c8b2d6d8f210003a6ef7cfa793aebac63bf",
-    "status": "PUBLISHED_MEDIUM_AUTHORING_STUDIO_CONTROLS_PUBLIC_VERIFICATION_OPEN",
-    "correctedPublicProof": "NOT_RUN · connector push did not trigger Actions; web tool cannot access fixed pages.dev route",
+    "publicationCommit": "ae61e50d525e942a755cf46d0ed807b49b5a3e38",
+    "status": "PUBLISHED_RIG_MEDIUM_ACTOR_BROWSER_PUBLIC_VERIFICATION_OPEN",
+    "correctedPublicProof": "NOT_RUN · connector push did not trigger Actions; exact pages.dev route inaccessible from current web tool",
     "historicalPublicProof": {
       "status": "PASS_HISTORICAL_PRE_IDENTITY_CORRECTION",
       "runId": 35460179569,
@@ -110,7 +110,7 @@
     "merged": false
   },
   "tests": {
-    "staticContract": "46/46 PASS · persisted branch replay",
+    "staticContract": "62/62 PASS · persisted branch replay",
     "githubPersistence": "PASS · identity checkpoint and all five intended files fetched back",
     "exactSourceGeometry": "PASS · 12/12 connected components measured from pinned GLB",
     "historicalJsSyntax": "3/3 PASS on pre-identity implementation checkpoint",
@@ -118,17 +118,18 @@
     "correctedCloudflareUrl": "PUBLIC_VERIFICATION_OPEN · exact route inaccessible to current web tool",
     "correctedGithubActions": "NOT_RUN · connector push did not trigger workflow",
     "focusedCalibration": "17/17 PASS",
-    "changedJsSyntax": "2/2 PASS",
-    "focusedStudioControls": "15/15 PASS"
+    "changedJsSyntax": "3/3 PASS · app + medium cleanup + adapter",
+    "focusedStudioControls": "15/15 PASS",
+    "focusedActorBrowser": "14/14 PASS"
   },
   "visualReview": {
-    "status": "MEDIUM_AUTHORING_SEED_ACCEPTED_BY_USER · STUDIO_CONTROLS_STAGE_GATE_OPEN",
-    "acceptedReference": "user screenshot/browser tuning 2026-09-19 21:46 CEST",
-    "nextGate": "Open fixed Stage; verify authoring defaults, eye oval, Life/Pointer/Fixed, Batch I/O and QA 4-view. Then start varied 5–8 actor Rig_Medium sample."
+    "status": "RIG_MEDIUM_ACTOR_BROWSER_HUMAN_REVIEW_WAVE_OPEN",
+    "acceptedReference": "Georg-approved Medium class authoring default",
+    "nextGate": "Open fixed Stage and click through the 27 Medium actors. For each: approve, adjust+approve, unsupported or reject; use Next unreviewed. Collect character overrides before Large/Legacy."
   },
-  "currentEvidenceHead": "eeb79850a8142968c418e23b482a330f120dd9c2",
+  "currentEvidenceHead": "fa7fdb5b9c5b9c4d443e4f19f47260f934c90147",
   "calibrationCheckpoint": "6f7d7988849cf0c74a6551a33ee422d8584c87c2",
-  "qaEvidenceCheckpoint": "eeb79850a8142968c418e23b482a330f120dd9c2",
+  "qaEvidenceCheckpoint": "fa7fdb5b9c5b9c4d443e4f19f47260f934c90147",
   "rigMediumDefault": {
     "schema": "kfb.eye-class-seed/0.1-candidate",
     "path": "tools/KFB-ToolBox/eye-rig-batch/data/rig-medium-default.v0.json",
@@ -190,8 +191,40 @@
         "Reset",
         "Approve"
       ],
-      "status": "INTEGRATED_ONE_LOADED_ACTOR"
+      "status": "INTEGRATED_27_ACTOR_ROSTER"
     },
     "backlog": "docs/BATCH_FEATURE_BACKLOG_2026-09-19.md"
+  },
+  "actorCatalog": {
+    "schema": "kfb.eye-rig-actor-catalog/0.1-candidate",
+    "path": "tools/KFB-ToolBox/eye-rig-batch/data/rig-medium-actors.v0.json",
+    "actorCount": 27,
+    "rigClass": "Rig_Medium",
+    "jointCount": 23,
+    "recoveredMainAtCatalogCreation": "29c7500b39d20945f4f8e73fb02fef91a055b02c",
+    "evidence": "docs/RIG_MEDIUM_ACTOR_BROWSER_2026-09-19.md",
+    "workflow": [
+      "click actor",
+      "inspect",
+      "approve / adjusted approve / unsupported / reject",
+      "Next unreviewed"
+    ],
+    "filters": [
+      "all",
+      "unreviewed",
+      "adjusted",
+      "unsupported"
+    ],
+    "profilePersistence": "per actor",
+    "nextGate": "Georg rapid review wave across real Medium actors"
+  },
+  "genericSourceEyeCleanup": {
+    "schema": "kfb.medium-source-eye-cleanup/0.1-candidate",
+    "path": "tools/KFB-ToolBox/eye-rig-batch/lib/medium-source-eye-cleanup.v1.js",
+    "gothGirl": "exact verified components 2+3",
+    "otherActors": "reuse frizzlegraft-v1/donoreyes.v1.js mirrored-front-pair detector",
+    "policy": "FAIL_CLOSED",
+    "unsupportedBehavior": "remove nothing; mark/manual review",
+    "visualApproval": "per actor required"
   }
 }

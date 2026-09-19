@@ -1,6 +1,6 @@
 # KFB Batch EyeRig Atlas
 
-**Status:** IMPLEMENTED CANDIDATE · Rig_Medium authoring seed accepted · Studio controls integrated · Stage human gate pending.
+**Status:** IMPLEMENTED CANDIDATE · 27-actor Rig_Medium browser · rapid review wave ready · public browser verification pending.
 
 Owner: KFB ToolBox / Rigging.
 
@@ -83,6 +83,31 @@ Additional current controls:
 - `Apply to Selected` and explicit `rigClass → character → session` inheritance;
 - QA 4-view.
 
-The bounded runtime still loads one actor. The next class-expansion gate is a varied 5–8 actor `Rig_Medium` sample after the authoring surface is accepted.
+The runtime now exposes **27 Rig_Medium actors** through a real roster. Per-actor review state and overrides persist while the accepted Medium values remain the class default.
 
 Deferred feature map: `docs/BATCH_FEATURE_BACKLOG_2026-09-19.md`.
+
+
+## Rig_Medium actor browser
+
+Catalog: `data/rig-medium-actors.v0.json`  
+Evidence: `docs/RIG_MEDIUM_ACTOR_BROWSER_2026-09-19.md`
+
+Current catalog size: **27 actors**.
+
+Normal authoring loop:
+
+`click actor → inspect → adjust only if needed → Approve / Adjusted + approve / Unsupported → Next unreviewed`
+
+Roster filters:
+
+- All
+- Unreviewed
+- Adjusted
+- Unsupported
+
+GothGirl keeps the exact verified source-eye cleanup. Other actors use the existing generic mirrored-front donor detector, fail-closed; if it cannot safely identify source eyes, nothing is removed and the actor remains available for manual review.
+
+Current Stage mirror: `cloudflare-live@ae61e50d525e942a755cf46d0ed807b49b5a3e38`.
+
+Large and Legacy remain out of scope until the Medium review wave has real results.

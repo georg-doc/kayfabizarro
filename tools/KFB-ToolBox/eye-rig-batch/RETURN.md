@@ -390,3 +390,83 @@ Georg opens the fixed Stage and checks:
 5. QA 4-view.
 
 If that authoring surface is accepted, the next implementation slice is a deliberately varied **5–8 actor Rig_Medium sample**, not all classes at once.
+
+
+## CURRENT RETURN · 27-ACTOR RIG_MEDIUM REVIEW WAVE
+
+### SOURCE
+
+- repo: `georg-doc/kayfabizarro`;
+- branch: `toolbox/eye-rig-batch-2026-09-18`;
+- implementation: `5f2e981cbcf4ca72a6c186c96ed008be535856a9`;
+- evidence: `fa7fdb5b9c5b9c4d443e4f19f47260f934c90147`;
+- PR #104 remains Draft/Open/Unmerged.
+
+### OUTCOME
+
+The workbench now contains **27 actual Rig_Medium models** and is ready for the productive review loop Georg requested.
+
+The left roster is no longer a one-actor proof. Click any actor to replace the current model.
+
+Review loop:
+
+`actor → quick face check → adjust if needed → Approve / Adjusted + approve / Unsupported → Next unreviewed`
+
+Filters:
+
+`All · Unreviewed · Adjusted · Unsupported`
+
+Progress is displayed as `reviewed / 27`.
+
+### PROFILE OWNERSHIP
+
+The accepted Medium values remain the class default.
+
+Each actor owns its own override profile. Runtime state follows:
+
+`Rig_Medium class default → actor override → session adjustment`.
+
+Changing one actor no longer changes the class default or another actor's saved override.
+
+### SOURCE-EYE CLEANUP
+
+GothGirl remains exact:
+
+`components 2 + 3`.
+
+For the other actors, the existing donor detector `donoreyes.v1.js` is reused rather than inventing a new eye detector.
+
+The generic path only strips source geometry after a head-named skinned mesh produces a valid mirrored front pair. Otherwise nothing is removed and the actor stays available for manual review / Unsupported.
+
+This is intentionally conservative.
+
+### TESTED RESULT
+
+- persisted static/contract suite: **62/62 PASS**;
+- focused actor-browser checks: **14/14 PASS**;
+- changed/runtime-critical JS syntax: **3/3 PASS**;
+- source branch write/readback: PASS;
+- Stage mirror write/readback: PASS.
+
+### STAGE
+
+Runtime mirror:
+`cloudflare-live@ae61e50d525e942a755cf46d0ed807b49b5a3e38`
+
+Direct route:
+`https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/eye-rig-batch/`
+
+Public browser proof remains **OPEN** because connector writes did not trigger the Actions proof and the current web source cannot access `pages.dev`.
+
+### ONE NEXT GATE
+
+Georg opens the fixed Stage and begins clicking through Medium actors.
+
+For each actor use only:
+
+- **Approve** if the class default works;
+- adjust the ordinary EyeRig controls then **Adjusted + approve** if it needs an override;
+- **Unsupported** when source cleanup / anatomy is not suitable for the current automatic path;
+- **Next unreviewed** to continue.
+
+Do not start Large/Legacy until this Medium review wave has produced useful override/unsupported data.
