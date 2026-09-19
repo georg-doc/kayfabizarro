@@ -34,7 +34,7 @@ jobs:
           const BASE='https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/eye-rig-batch/';
           const WANT={
             sourcePR:104,
-            sourceHead:'b05172eccf4687cfd2e8523995d39611e62de81d',
+            sourceHead:'52768e828192e77b43d57f882594f304bcc79180',
             implementationCheckpoint:'d900fb99f3b04d52f266febd1501368c5fedd360'
           };
           const result={url:BASE,want:WANT,checks:[],errors:[],screenshots:[],status:'RUNNING'};
@@ -89,7 +89,7 @@ jobs:
             }));
 
             check('page title',/Batch EyeRig Atlas/.test(initial.title),initial.title);
-            check('visible revision marker',initial.marker.includes('source b05172e')&&initial.marker.includes('impl d900fb9')&&initial.marker.includes('PR #104'),initial.marker);
+            check('visible revision marker',initial.marker.includes('source 52768e8')&&initial.marker.includes('impl d900fb9')&&initial.marker.includes('PR #104'),initial.marker);
             check('runtime no boot error',!initial.report.error,initial.report.error);
             check('source gate',initial.report.gates?.source===true,initial.report.gates);
             check('cleanup gate',initial.report.gates?.cleanup===true,initial.report.cleanup);
@@ -100,6 +100,10 @@ jobs:
             check('eye components 6+7',
               JSON.stringify((initial.report.cleanup?.eyeCandidates||[]).map(x=>x.component))===JSON.stringify([6,7]),
               initial.report.cleanup?.eyeCandidates);
+            check('source-measured seed report-only',
+              initial.report.cleanup?.sourceMeasuredSeed?.status==='MEASURED_NOT_APPLIED' &&
+              ['dx','dy','ring'].every(k=>Number.isFinite(initial.report.cleanup?.sourceMeasuredSeed?.anchorCandidate?.[k])),
+              initial.report.cleanup?.sourceMeasuredSeed);
             check('eyeFrame ready',Boolean(initial.report.eyes?.eyeFrame?.left&&initial.report.eyes?.eyeFrame?.right),initial.report.eyes?.eyeFrame);
             check('required clips',
               ['Idle_A','Walking_A','Running_A','Jump_Full_Short'].every(x=>initial.report.clips.includes(x)),

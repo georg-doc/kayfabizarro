@@ -251,7 +251,7 @@ async function boot() {
   const cleanup=prepareVerifiedGothGirlCleanup({figure,preferredHeadMesh:seed.sourceFace.headMesh,expectedConnectedComponents:seed.sourceFace.expectedConnectedComponents,eyeComponents:seed.sourceFace.eyeComponents,log}); state.cleanup=cleanup;
   state.cleanupReady=cleanup.status==='AUTO_CANDIDATE'; gate('#gateCleanup',state.cleanupReady?'pass':'fail'); if(state.cleanupReady)cleanup.apply(true);
   state.mixer=new THREE.AnimationMixer(figure);
-  const eyes=await mountKayKitEyes({THREE,figure,sourceRef:sourceRef(),profile:state.profile,expressionContract:contract,camera,log}); state.eyes=eyes; state.hostReady=eyes.faceHost.status==='OK'; state.eyeReady=!!eyes.eyeFrame(); gate('#gateHost',state.hostReady?'pass':'fail'); gate('#gateEye',state.eyeReady?'pass':'fail');
+  const eyes=await mountKayKitEyes({THREE,figure,sourceRef:sourceRef(),profile:state.profile,expressionContract:contract,camera,log}); state.eyes=eyes; cleanup.measureOnFaceHost?.(eyes.faceHost); state.hostReady=eyes.faceHost.status==='OK'; state.eyeReady=!!eyes.eyeFrame(); gate('#gateHost',state.hostReady?'pass':'fail'); gate('#gateEye',state.eyeReady?'pass':'fail');
   figure.visible=true; bindUiFromProfile(); wireProfileIo(); wireRuntimeControls(camera,controls,renderer); setView('front',camera,controls); poseBind();
   await loadMotion(loader);
   $('#loadingCard').remove(); setBadge($('#bootBadge'),'READY',state.sourceReady&&state.cleanupReady&&state.hostReady&&state.eyeReady&&state.motionReady?'pass':'candidate');
