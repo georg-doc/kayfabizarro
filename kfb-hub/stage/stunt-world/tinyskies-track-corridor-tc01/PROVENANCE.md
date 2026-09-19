@@ -79,3 +79,18 @@ It is only out of scope for this current TinySkies/Travel Globe Track seam.
 ## Human gate
 
 **Does the embedded Track read as part of the current TinySkies/Travel terrain, rather than as a separate ribbon floating above an unrelated ground plane?**
+
+
+## Stage mirror QA
+
+Lean public-mirror package:
+- run `35477051809`
+- job `105987982471`
+- **13/13 PASS**
+- boot **745 ms**
+- page/script errors **0**
+- failed HTTP assets **0**
+- artifact `10594801631`
+- digest `sha256:50d6d9f27a52ff46f896b13475dbc3f77088d515c9bb606f7f372f4c6dc4293d`
+
+This proves the Stage package locally in real Chromium. It is **not** a Cloudflare/public proof. The source PR must not be described as a human test surface until the exact `kayfabizarro.pages.dev` path is published and opened.
