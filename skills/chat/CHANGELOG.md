@@ -337,27 +337,108 @@ The historical public run `35460179569` remains runtime/action evidence but is n
 Georg opens the fixed Stage, uses the runtime-generated source-measured baseline from corrected components 2+3, compares Source/Cleaned/EyeRig in Front/3/4/Side and motion, and approves or rejects the single GothGirl candidate. No Medium batch expansion, Large/Legacy, merge or Live promotion before that gate.
 
 
+## 2026-09-19 · Batch EyeRig Atlas · Rig_Medium default calibration + 4-view gate
+
+### USER VISUAL FINDING
+Georg's GothGirl 3/4 screenshot rejects the previous default: eye spheres are too large/protruding, pupils are too large, and the lids read yellow instead of as a darker face/skin tone.
+
+### IMPLEMENTATION
+The existing tuned GothGirl JSON is now the calibration donor, not a raw unit copy. Its actor values `dx=.49 / ring=.32 / pupil=.34 / face=#e6cbc3` establish `ring/dx=.653061224`. The Batch FaceHost candidate therefore uses:
+
+`Rig_Medium ring = current sourceMeasured.dx × .32/.49`
+
+with `ring=.20` only as the safe pre-measurement boot fallback. Pupil default is `.34`. GothGirl face color `#e6cbc3` is passed into EyeRig v6's existing dark-lid function; no second lid renderer was introduced.
+
+The workbench now has **QA 4-view** for Front / ¾ L / ¾ R / Side R, downloaded as one `gothgirl-qa-front-3q-side.png` contact sheet.
+
+### TESTED RESULT
+- source/Return head: `08c088cc06ffdc7190d6fd6ba55df54f457567d0`;
+- implementation: `6f7d7988849cf0c74a6551a33ee422d8584c87c2`;
+- QA/evidence: `ef7a8f203762f670e00ccdd27b540703d855807d`;
+- focused calibration checks: **17/17 PASS**;
+- persisted static suite: **37/37 PASS**;
+- changed-JS syntax parse: **2/2 PASS**;
+- Stage publication: `786568b1e4434f458379c3aa5f8a83f3fd82a8d9` · GitHub readback PASS.
+
+No current calibrated browser PASS is claimed: connector writes did not start the Actions proof and the current web tool cannot open `pages.dev`.
+
+### NEXT GATE
+Georg opens the fixed Stage, leaves Neutral + Bind/T, clicks **QA 4-view**, and judges only eye scale, pupil scale, darker skin-derived lids and ¾/Side attachment. No Medium batch expansion, Large/Legacy, merge or Live promotion before that one visual gate.
+
+
+## 2026-09-19 · Batch EyeRig Atlas · Medium authoring surface ready for Stage review
+
+### DEFAULT
+Georg's tuned browser configuration is now the `Rig_Medium` authoring start:
+`dx .295 · dy .045 · ring .153 · track .15 · pupil .34 · inset .40 · lidFit .90 · converge .18 · splay 0 · gloss .10`.
+
+Source measurement is suggestion-only and never auto-promotes over this visual default.
+
+### STUDIO FEATURES
+- existing `eyeoval.v1.js` reused for Width / Height / Depth / inward Tilt;
+- existing EyeRig-v6 gaze owner surfaced as Life / Pointer / Fixed;
+- persistent Batch bar added;
+- Character + Batch import/export;
+- `Apply to Selected`;
+- batch schema `kfb.eye-profile-batch/0.2-candidate`;
+- inheritance `rigClass → character → session`.
+
+### EVIDENCE
+- source/Return head `fe088da25bb344a522b61ac7c554d0a4dc8cc15e`;
+- implementation `c74cbd6e0691d0bd3bcc574203219cdb0e9f647f`;
+- evidence `eeb79850a8142968c418e23b482a330f120dd9c2`;
+- Stage `40133c8b2d6d8f210003a6ef7cfa793aebac63bf`;
+- **46/46 static PASS · 15/15 focused PASS · 2/2 syntax PASS**;
+- public browser verification remains OPEN: no new Actions run and current web source cannot access `pages.dev`.
+
+### DEFERRED
+Top/bottom eye contour, Mouth Batch, optional Nose/Brow grafts, Vehicle/headlight EyeRig and later plant/object hosts are recorded, not implemented.
+
+### NEXT GATE
+Review the expanded authoring surface on the fixed Stage. On acceptance, build a varied 5–8 actor `Rig_Medium` sample before expanding the class.
+
+
 ## 2026-09-19 · KayKit Creator Lessons · additive Game Dev Studio research
 
 ### USER DIRECTION
-Analyze Kay Lousberg's creator videos/how-tos for directly reusable KFB production knowledge, starting with `Using KayKit Characters In Godot (Detailed version)`, then keep the findings as a living GitHub document.
+Analyze Kay Lousberg's creator videos/how-tos for directly reusable KFB production knowledge, beginning with `Using KayKit Characters In Godot (Detailed version)`, and keep the findings as a living GitHub document.
 
 ### ROUTING
-The research lives inside the existing KFB Game Dev Studio:
+Research home:
 `tools/game-dev-studio/research/KAYKIT_CREATOR_LESSONS_LIVING.md`.
 
-Asset Librarian remains canonical source/discovery owner. ToolBox/FrankenStein/Animation and named game consumers keep their existing ownership.
+Asset Librarian remains canonical source/discovery owner. ToolBox/FrankenStein/Animation and named game consumers keep their existing ownership. No Godot dependency, second Registry or second runtime is introduced.
 
-### CURRENT FINDINGS
-- separate character source, rig family, animation library, material/texture variant and attachment profile;
-- treat `Rig_Medium` / `Rig_Large` as compatibility facts;
-- represent recolors/texture variants/separate parts under semantic families rather than raw-file identity;
-- preserve socket target plus measured local attachment transform;
-- keep runtime state machines with consumers;
-- stage retargeting evidence rather than declaring blanket compatibility;
-- distinguish current KayKit standards from legacy/superseded packs;
-- use exact Platformer controls as donors before adding KFB interaction behavior;
-- deep Live Show modeling analysis is the next research gate.
+### FIRST PASS
+Recorded rig-family compatibility, reusable animation libraries, calibrated bone attachments, material/texture variants, semantic asset families, staged retargeting, current-vs-legacy KayKit generation and exact Platformer donor reuse.
 
 ### EVIDENCE
-Documentation-only branch checkpoint; no runtime/schema/binary change and no new public deployment claimed.
+Documentation/research branch only. No runtime/schema/binary change and no public deployment claimed.
+
+
+## 2026-09-19 · KayKit Creator Lessons v0.2 · motion timing synthesis
+
+### SOURCE / CURRENT FACTS
+Added `KayKit - Animations - Overview Set 1` and rechecked current source facts against main `3d9ac78bfabcec0c43fc453c124133764221139c`.
+
+- current KFB Rig_Medium motion Registry: **139 motions across 8 sets**;
+- Walking_A/B/C and Running_A/B exist;
+- there is **no explicit Sprint source clip** in the current Rig_Medium Registry;
+- segmented Jump_Start / Jump_Idle / Jump_Land exist;
+- current ranged combat contains explicit aim / shoot / reload / bow / magic families;
+- Mixed Bag 1 Registry shard contains **41 GLTF models + 6 PNG assets**.
+
+### RESEARCH SYNTHESIS
+- sync locomotion phase/foot contact across Walk ↔ Run rather than resetting target clips;
+- use speed ↔ playback-rate calibration only within measured visual limits;
+- use speed-band hysteresis;
+- keep physics authoritative for jump/world movement;
+- keep combat contact/release events phase-relative when timeScale changes;
+- treat tool/sit/lie/fishing families as candidates for measured entry/loop/exit graphs;
+- compare Live Show modeling decisions directly against released Mixed Bag GLTF geometry.
+
+### CURRENT NEXT GATE
+**KCL-M1 · Locomotion Sync Bench** — measurement-only on one current Rig_Medium actor with Walking_A/B/C + Running_A/B. Measure foot contacts, planted intervals, playback-rate range and naive-vs-phase-synced A/B before consumer integration.
+
+### BOUNDARY
+No consumer movement, runtime state machine, Registry schema, animation clip or package binary changed.
