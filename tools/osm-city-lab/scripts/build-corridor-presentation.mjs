@@ -170,7 +170,9 @@ for(const {g,target=0,base} of allocation.map(x=>({...x,target:x.base}))){
     if(bd<buildingClearance)continue;
     let spacingOk=true,nearestTree=Infinity;
     for(const t of treeGrid.around(p,spacing)){
-      const d=Math.hypot(p.x-t.x,p.z-t.z);
+      const tx=t.local?.x, tz=t.local?.z;
+      if(!Number.isFinite(tx)||!Number.isFinite(tz))throw new Error('tree spacing index missing local coordinates');
+      const d=Math.hypot(p.x-tx,p.z-tz);
       if(d<nearestTree)nearestTree=d;
       if(d<spacing){spacingOk=false;break;}
     }
