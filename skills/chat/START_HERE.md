@@ -161,12 +161,48 @@ Danach ist der [Babel Tower S2b → Hex Platform Generator](workflows/KFB_MODULA
 - `EYE_RIG_BATCH_TOOLBOX_SLICE_V1_2026-09-19.md` makes the existing EyeRig batch brief a visible ToolBox slice.
 
 
+## 2026-09-19 · Track Ribbon S-T01b failure recovery
+
+Race S-T01b was intentionally built as an **integration-first** candidate: wider 14.4 / 18.0 / 21.6 / 28.8 track scale, clean broad-guidance surface, Travel-derived terrain coupling and active BLACK_ICE / OIL / LOW_GRAVITY zones, with the distracting Kenney cue cluster disabled by default.
+
+Implementation SSOT remains `georg-doc/KFB-Stunt-Car-Race`, Draft PR #29 / branch `wsa/track-ribbon-st01b-2026-09-19`. The candidate is now **FROZEN FAILED CANDIDATE** after two repaired browser-gate failures. Final static/ownership checks are green; the last real-browser run reached 24 checks with 0 page errors and 0 HTTP errors, then timed out on LOW_GRAVITY landing observability.
+
+Do not publish S-T01b to Stage or resume the full candidate. Exact recovery lives at `ChatGPT_web/track-lab/ST01B_RETURN_2026-09-19.md` and `ChatGPT_web/track-lab/st01b/failure-recovery/` in the Race repository. Exactly one next gate: deterministic fixed-step LOW_GRAVITY jump/landing seam. S-T01 remains separate prior evidence.
+
+
+### Correction · Track Ribbon terrain donor
+
+The S-T01b failure-recovery note above is superseded on one crucial point: its terrain donor was wrong.
+
+Do **not** route future Track/Terrain work through Travel-v16 Voxel.
+
+Current Travel implementation SSOT:
+`georg-doc/KFB-Travel-Globe@8614282aab2ced43bb5dda9fcf7abadf9768100a`
+
+Current macro-world rule:
+**Travel/TinySkies remains the world.** BlockBits/Voxel is local/selective tooling, never the replacement world aesthetic.
+
+Current surface owners:
+- `travel/globe-v13/globe.js`
+- `travel/globe-v13/terrain-surface.js`
+- `travel/globe-v13/simplex-noise.js`
+- `travel/globe-v13/boden-lesung.js`
+
+Gold-standard upstream:
+`dannylimanseta/tinyskies@2659a5cc987d7e4a4c5aa7e79c86a1626ad75df6`.
+
+Race PR #29 is now **REJECTED FOUNDATION · WRONG TERRAIN DONOR**. The LOW_GRAVITY timeout is secondary evidence, not the next product gate.
+
+Next gate:
+source-isolated current Travel Globe/TinySkies surface proof, then the smallest Track-to-spherical-surface deformation seam through the existing Travel terrain truth.
+
+
 ## 2026-09-19 · KayKit Creator Lessons · Game Dev Studio research lane
 
-Kay Lousberg's creator tutorials/live-show material has an additive KFB interpretation under [Game Dev Studio research](../../tools/game-dev-studio/research/KAYKIT_CREATOR_LESSONS_LIVING.md). v0.2 combines the detailed character/Godot workflow with the animation overview and current KFB motion/asset evidence.
+Kay Lousberg's creator tutorials/live-show material now has an additive KFB interpretation under [Game Dev Studio research](../../tools/game-dev-studio/research/KAYKIT_CREATOR_LESSONS_LIVING.md). The lane covers rig families, reusable animation libraries, calibrated bone attachments, material/texture variants, staged retargeting, semantic asset families, motion timing and Mixed Bag source-analysis.
 
-Engine-neutral findings now include: rig families, reusable animation libraries, calibrated bone attachments, material/texture variants, staged retargeting, semantic asset families, phase-synced locomotion transitions, measured timeScale ranges, physics-owned jump phases and phase-relative combat/interaction markers.
+KCL-M1 has moved beyond proposal status: the neutral Rig_Medium locomotion bench loads the real ActionFigure + MovementBasic donors, measures Walking_A/B/C + Running_A/B, and passed **39/39 local browser checks** after one proof-harness-only repair. Machine-readable measurements live in `tools/game-dev-studio/research/kcl-m1-locomotion-sync/MEASURED_PROFILE_CANDIDATE.json`.
 
-This is a **research/reference lane inside the existing Game Dev Studio owner**, not a second Asset Registry, rig owner, animation owner or runtime. Asset Librarian remains canonical discovery/source truth; ToolBox/FrankenStein/Animation retain their authoring domains; named consumers retain state/physics/gameplay.
+Ownership remains unchanged: Asset Librarian / Registry owns source truth; ToolBox / FrankenStein / Animation owns authoring and calibration; Travel / Race / Combat / Platformer retain movement, physics and gameplay state. KCL-M1 is measurement/QA only.
 
-Current research next gate: **KCL-M1 Locomotion Sync Bench**, measurement-only on one current `Rig_Medium` actor with Walking_A/B/C + Running_A/B. Do not modify consumer movement/physics and do not invent a KayKit Sprint clip.
+Current gate: the pages.dev Stage source exists but is **not PUBLIC_VERIFIED** because Cloudflare publication is failing repo-wide. Restore a successful current Cloudflare deployment, rerun the unchanged public KCL proof, then Georg compares NAIVE vs PHASE SYNC visually. Do not invent a KayKit Sprint clip or integrate into consumers before that human gate.
