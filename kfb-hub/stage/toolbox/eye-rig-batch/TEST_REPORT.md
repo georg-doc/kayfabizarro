@@ -478,3 +478,26 @@ No new Actions run was started by the connector write, and the current web tool 
 Classification:
 
 `PUBLISHED · GITHUB_READBACK_PASS · PUBLIC_VERIFIED_OPEN · HUMAN_REVIEW_WAVE_OPEN`.
+
+
+## 2026-09-19 · RIG_LARGE MONSTROSITY CALIBRATION
+
+Implementation: `a843a9e9666d2d0d7d0c6a95f801a969f57941c3`  
+Evidence: `e60f1db1e2436f11549e44def25ab9b2718eac3b`  
+Stage: `670e11d56fe5b85e6264d8a294868c32540db5c6`
+
+- Large catalog: **4 actors** — Monstrosity, Black Knight, Demon Lord, Orc Brute.
+- All four exact GLBs report a 23-joint skin named `Rig_Large`.
+- Monstrosity is the explicit first calibration actor.
+- No accepted Large class default exists initially.
+- The initial eye values are only a visible calibration start.
+- `Set as Large default` is available only on Monstrosity.
+- `Apply to Selected` remains blocked until that explicit promotion.
+- Large uses its own General + MovementBasic files.
+- Large supports Idle / Walk / Run in this slice; Jump is disabled because the Large library does not contain `Jump_Full_Short`.
+- Medium and Large defaults/selections/current actors persist separately.
+
+Tests: **82/82 PASS**.  
+Runtime-critical JS syntax: **3/3 PASS**.
+
+Stage files were written and read back successfully. Browser-side class-switch proof is prepared; no new automated browser run started from this write.

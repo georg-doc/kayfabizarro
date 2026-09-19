@@ -470,3 +470,37 @@ For each actor use only:
 - **Next unreviewed** to continue.
 
 Do not start Large/Legacy until this Medium review wave has produced useful override/unsupported data.
+
+
+## CURRENT RETURN · RIG_LARGE MONSTROSITY CALIBRATION
+
+Large is now available in the same EyeRig workbench as Medium.
+
+### Large actors
+- Monstrosity
+- Black Knight
+- Demon Lord
+- Orc Brute
+
+### Current Large workflow
+1. click **Large**;
+2. Monstrosity loads first;
+3. tune the eye placement;
+4. check Front / ¾ / Side;
+5. click **Set as Large default**;
+6. then review the other three Large actors.
+
+There is deliberately **no accepted Large default yet**. The first visible values are only a starting position for Monstrosity.
+
+Medium remains unchanged and keeps its own default and actor overrides.
+
+### Tests
+- **82/82 PASS**
+- **3/3 JS syntax PASS**
+- Stage write/readback PASS
+
+### Stage
+`https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/eye-rig-batch/`
+
+### Next action
+Georg tunes Monstrosity and sends the resulting view / values back. Then the Large default can be locked and tested on Black Knight, Demon Lord and Orc Brute.

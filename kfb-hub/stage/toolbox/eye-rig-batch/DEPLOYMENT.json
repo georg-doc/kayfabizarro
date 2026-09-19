@@ -5,83 +5,20 @@
   "sourceBranch": "toolbox/eye-rig-batch-2026-09-18",
   "sourcePR": 104,
   "sourceHead": "e60f1db1e2436f11549e44def25ab9b2718eac3b",
-  "returnHead": "ab5215ce4f31d80fe4ecb98077f15e3df58ecb97",
+  "returnHead": "a4d01402c5bd4785be480151ef7cd0b2317f2c71",
   "implementationCheckpoint": "a843a9e9666d2d0d7d0c6a95f801a969f57941c3",
   "evidenceCheckpoint": "e60f1db1e2436f11549e44def25ab9b2718eac3b",
-  "stageRuntimeHead": "ae61e50d525e942a755cf46d0ed807b49b5a3e38",
-  "mainRouterHead": "986699c81340dc3b266bf921441f93bf18127f6b",
-  "expectedVisibleMarker": "Rig_Medium / Rig_Large class switch · PR #104",
-  "humanGate": "Switch to Large, tune Monstrosity, then explicitly Set as Large default; afterwards review Black Knight, Demon Lord and Orc Brute",
-  "previousPublicProof": {
-    "run": 35460179569,
-    "checks": "21/21 PASS",
-    "screenshots": 6,
-    "note": "historical pre-identity/pre-authoring single-actor proof only"
-  },
-  "publicVerification": "PENDING_MEDIUM_LARGE_STAGE_PUBLICATION",
-  "eyeDefaults": {
-    "dx": 0.295,
-    "dy": 0.045,
-    "ring": 0.153,
-    "track": 0.15,
-    "pupilSize": 0.34,
-    "inset": 0.4,
-    "lidFit": 0.9,
-    "converge": 0.18,
-    "splay": 0,
-    "gloss": 0.1,
-    "lidMode": "face-base-darkened"
-  },
-  "actorBrowser": {
-    "schema": "kfb.eye-rig-actor-catalog/0.1-candidate",
-    "catalog": "./data/rig-medium-actors.v0.json",
+  "stageRuntimeHead": "670e11d56fe5b85e6264d8a294868c32540db5c6",
+  "mainRouterHead": "779019712716c137746155b292c39ec486732d0f",
+  "expectedVisibleMarker": "Medium / Large class switch · PR #104",
+  "humanGate": "Large → Monstrosity → tune → Set as Large default → review Black Knight, Demon Lord, Orc Brute",
+  "publicVerification": "OPEN · latest Large browser proof not yet run automatically",
+  "medium": {
     "actorCount": 27,
-    "rigClass": "Rig_Medium",
-    "jointCount": 23,
-    "filters": [
-      "All",
-      "Unreviewed",
-      "Adjusted",
-      "Unsupported"
-    ],
-    "actions": [
-      "actor click",
-      "Approve",
-      "Adjusted + approve",
-      "Unsupported",
-      "Reject",
-      "Next unreviewed"
-    ],
-    "profilePersistence": "per actor",
-    "cleanup": "GothGirl exact components 2+3; generic actors reuse donoreyes.v1 mirrored-front pair fail-closed"
+    "defaultStatus": "SET",
+    "workflow": "review / override / Next unreviewed"
   },
-  "batchUi": {
-    "schema": "kfb.eye-profile-batch/0.2-candidate",
-    "inheritance": [
-      "rigClass",
-      "character",
-      "session"
-    ],
-    "selectedActorExport": true
-  },
-  "tests": {
-    "persistedStatic": "82/82 PASS",
-    "focusedLargeCandidate": "15/15 PASS",
-    "syntax": "3/3 PASS",
-    "stageReadback": "PENDING",
-    "publicLargeSmoke": "PREPARED · Monstrosity → Black Knight → Monstrosity · NOT RUN"
-  },
-  "deferred": [
-    "Large/Legacy until Medium review data",
-    "top/bottom eye contour",
-    "Mouth Batch",
-    "optional Nose/Brow",
-    "Vehicle EyeRig / headlight host"
-  ],
-  "hubCard": "SYNCED_TO_27_ACTOR_MEDIUM_REVIEW_WAVE",
-  "nextGate": "GEORG_MONSTROSITY_LARGE_CALIBRATION",
-  "largeCalibration": {
-    "rigClass": "Rig_Large",
+  "large": {
     "actorCount": 4,
     "actors": [
       "Monstrosity",
@@ -90,8 +27,7 @@
       "Orc Brute"
     ],
     "firstActor": "Monstrosity",
-    "acceptedDefault": false,
-    "calibrationStart": "normalized starting point only",
+    "defaultStatus": "NOT_SET",
     "promotionAction": "Set as Large default",
     "applyToSelectedBeforePromotion": false,
     "motions": [
@@ -101,5 +37,20 @@
     ],
     "jumpAvailable": false
   },
-  "proofRequest": "MEDIUM_LARGE_CLASS_SWITCH_PUBLIC_PROOF"
+  "tests": {
+    "static": "82/82 PASS",
+    "focusedLarge": "15/15 PASS",
+    "syntax": "3/3 PASS",
+    "sourceReadback": "PASS",
+    "stageReadback": "PASS"
+  },
+  "deferred": [
+    "Legacy",
+    "top/bottom eye contour",
+    "Mouth Batch",
+    "optional Nose/Brow",
+    "Vehicle EyeRig"
+  ],
+  "hubCard": "SYNCED_TO_LARGE_MONSTROSITY_CALIBRATION",
+  "nextGate": "GEORG_MONSTROSITY_LARGE_CALIBRATION"
 }
