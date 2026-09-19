@@ -2,7 +2,8 @@
 
 **Status:** DECISION + IMPLEMENTATION + STATIC/NUMERICAL TESTED RESULT · BROWSER/HUMAN REVIEW OPEN  
 **Authoring owner:** `georg-doc/kayfabizarro/tools/img2threejs/`  
-**Default landmark shape mode:** **City Grotesque**
+**Default landmark shape mode:** **City Grotesque**  
+**Default landmark review environment:** **OSM City Lab**
 
 ## GOAL
 
@@ -27,6 +28,12 @@ Scope:
 - closes the previous Grotesque-vs-Soft-Cubist baseline question;
 - does **not** change OSM City Lab's own current `cartoonMassing.defaultMode = cartoon`;
 - Soft Cubist remains an alternate/debug style, not the default.
+
+**GEORG DECISION · 2026-09-19 — review environment**
+
+> OSM City Lab is the default landmark-review environment.
+
+Travel Verdant / Day remains available as an alternate world-context comparison. This changes only the review default; it does not remove or demote the Travel bridge.
 
 ## EXACT WORLD SOURCES
 
@@ -160,7 +167,7 @@ Current Grotesque triangle counts:
 | Spasskaya | 3,496 |
 | Kremlin wall study | 5,008 |
 
-[Evidence summary](../evidence/2026-09-19-landmark-world-style-v1/summary.json)
+[Evidence summary](../evidence/2026-09-19-landmark-world-style-v1/summary.json) · [OSM-default decision evidence](../evidence/2026-09-19-landmark-world-style-v1-1/summary.json)
 
 Reproducible repository test:
 
@@ -252,6 +259,8 @@ Unchanged:
 5. Sagrada Família or Sydney Opera House — hard non-box hero geometry.
 6. Expand catalogue after those geometry families prove reusable.
 
-## EXACTLY ONE OPEN HUMAN REVIEW QUESTION
+## DECISION CLOSED / NEXT GATE
 
-**For landmark-review pages, should the default environment be Travel Verdant / Day or OSM City Lab?**
+The review-environment question is closed: **OSM City Lab is the default**.
+
+**Next gate:** open Pilot 06 in a real browser with its new OSM-default startup and visually check the full existing landmark set. If that passes, proceed to the modular Grotesque Cologne Cathedral as the first real OSM Golden Sample.
