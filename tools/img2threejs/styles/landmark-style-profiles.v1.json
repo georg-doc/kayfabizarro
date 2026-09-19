@@ -22,7 +22,17 @@
       "blob": "181edccab50c2b127b95370cc67da55e138b7a78"
     },
     "travelRepo": "georg-doc/KFB-Travel-Globe",
-    "travelCommit": "8614282aab2ced43bb5dda9fcf7abadf9768100a"
+    "travelCommit": "8614282aab2ced43bb5dda9fcf7abadf9768100a",
+    "legacySkydomeDonor": {
+      "path": "travel/travel-v16/terrain-v16/skydome-shader.js",
+      "blob": "f747574d42835ffec335443dadc481f077e5dc2f",
+      "role": "optional donor; current Travel sky-presets remain authoritative for default look"
+    },
+    "legacyWorldPalettesDonor": {
+      "path": "travel/travel-v16/terrain-v16/world-palettes.js",
+      "blob": "f6121ae41f00804a321592f60cdefb78206e76c6",
+      "role": "optional named-palette donor; current Travel mood/biome rules remain authoritative"
+    }
   },
   "worldStyleRules": {
     "grotesqueIsLandmarkDefault": true,
@@ -32,7 +42,9 @@
     "preserveLandmarkSaturationAndLightness": true,
     "environmentLightingOwnedByHost": true,
     "noPrivateTravelFetchAtRuntime": true,
-    "derivedTravelSnapshot": "travel-visual-snapshot.v1.json"
+    "derivedTravelSnapshot": "travel-visual-snapshot.v1.json",
+    "currentTravelSkyPresetsOwnDefaultLook": true,
+    "legacySkydomeVariantsAreOptional": true
   },
   "profiles": {
     "koelner-dom": {
