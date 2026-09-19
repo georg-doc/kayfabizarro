@@ -642,7 +642,11 @@ picker($('c'), V, () => curRoot, (hit) => {
 });
 
 who.onchange = () => show(who.value);
-await show(RESIDENTS[0].residentId);
+const requestedResident = new URLSearchParams(location.search).get('resident');
+const startResident = requestedResident && RESIDENTS.some((r) => r.residentId === requestedResident)
+  ? requestedResident : RESIDENTS[0].residentId;
+who.value = startResident;
+await show(startResident);
 window.__atlas = { V, ST, built, cur: () => cur, measured };
 </script>
 </body>
