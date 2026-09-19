@@ -62,6 +62,36 @@
       "note": "After two repair passes without progress on the same gate, freeze and export the complete editable candidate, preserve evidence, record salvage and choose one smaller next gate. Export does not promote the failed candidate."
     },
     {
+      "id": "kfb-modular-minigame-hub-2026-09-19",
+      "kind": "workflow",
+      "status": "CURRENT_REFERENCE",
+      "version": "1.0",
+      "path": "skills/chat/workflows/KFB_MODULAR_MINIGAME_HUB_2026-09-19/START_HERE.md",
+      "recoveryIntake": "skills/chat/workflows/KFB_MODULAR_MINIGAME_HUB_2026-09-19/FAILURE_EXPORT_INTAKE.md",
+      "loadWhen": [
+        "3D mini-game hub",
+        "asset pack catalog",
+        "Tiny Treats scenery",
+        "Dungeon room POC",
+        "KayKit Hex platformer",
+        "Combat Arena platform level",
+        "ChatGPT Web comparison"
+      ],
+      "owns": [
+        "cross-slice briefing and sequence",
+        "catalog field contract",
+        "bounded C0/D01/H01/C01 return gates"
+      ],
+      "doesNotOwn": [
+        "Asset Library source assets",
+        "World Atlas runtime",
+        "Combat Arena runtime",
+        "FrizzleBob actor contract",
+        "automatic promotion or merge"
+      ],
+      "note": "Starts with a visual measured catalog, then routes three independent POCs. The verified Claude failure export is evidence/donor only; its large island generator and automatic diorama are rejected."
+    },
+    {
       "id": "session-design-briefing",
       "kind": "skill",
       "status": "CURRENT_REFERENCE",
