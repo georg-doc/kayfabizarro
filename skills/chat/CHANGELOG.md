@@ -276,3 +276,17 @@ Source-face cleanup reports exactly 12 GothGirl head components and removes veri
 Technical proof is green, but the profile is still `AUTO_CANDIDATE`. Screenshot review shows the current `ring=0.30` eyes are visibly too large/protruding, especially in 3/4 and side views. Georg tunes Eye size first, then Inset and spacing/vertical, rechecks the standard cameras and motions, and explicitly approves or rejects.
 
 Draft PR #104 remains open and unmerged. No Live promotion and no Rig_Large/Legacy expansion before that gate.
+
+
+## 2026-09-19 · Batch EyeRig Atlas · source-measured baseline proof
+
+### TESTED RESULT
+The GothGirl / Rig_Medium Stage candidate now reports the verified original eye components in FaceHost-local coordinates. Public Cloudflare Playwright run `35459726128` completed **18/18 PASS**, **5 screenshots**, and **0 runtime/page errors** against Stage head `9a3345a01935fe87651ec49cea3afc19715f84ef`.
+
+Measured source baseline: `dx=0.84913 · dy=-0.05142 · ring=0.06925`.
+
+### STATUS
+The measured baseline is explicitly `MEASURED_NOT_APPLIED`. It is evidence for the next visual comparison, not an approved profile and not an automatic retune. PR #104 remains Draft/Open/Unmerged. No Live promotion.
+
+Direct human Stage:
+`https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/eye-rig-batch/`
