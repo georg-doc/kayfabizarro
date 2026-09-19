@@ -12,11 +12,11 @@ try{
  browser=await chromium.launch({headless:true,args:['--use-angle=swiftshader','--enable-unsafe-swiftshader']});
  const context=await browser.newContext({viewport:{width:1440,height:1000}});
  page=await context.newPage();
- page.on('pageerror',e=>result.errors.push(String(e)));
- page.on('console',m=>{if(m.type()==='error')result.consoleErrors.push(m.text())});
- page.on('response',r=>{if(r.status()>=400&&!/favicon/.test(r.url()))result.httpErrors.push({url:r.url(),status:r.status()})});
+ page.on('pageerror',e=>result.errors.push({message:e.message,stack:e.stack||String(e)}));
+ page.on('console',m=>{if(m.type()==='error')result.consoleErrors.push({text:m.text(),location:m.location()})});
+ page.on('response',r=>{if(r.status()>=400&&!/favicon/.test(r.url()))result.httpErrors.push({url:r.url(),status:r.status()})});page.on('requestfailed',r=>result.httpErrors.push({url:r.url(),failure:r.failure()?.errorText||'request failed'}));
  await page.goto(base+'/asset-librarian/?pack='+pack+'&moduleKit=1',{waitUntil:'domcontentloaded',timeout:180000});
- await page.waitForFunction(()=>document.documentElement.dataset.moduleKitReady==='1'&&window.KFBAssetLibrarianV17,{},{timeout:180000});
+ await page.waitForFunction(()=>document.documentElement.dataset.moduleKitReady==='1'&&window.KFBAssetLibrarianV17,{},{timeout:45000});
  let snap=await page.evaluate(()=>({lib:window.KFBAssetLibrarianV17.getState(),kit:window.KFBModuleKitWorkbench.getState(),meta:document.querySelector('#moduleKitMeta')?.textContent,results:document.querySelectorAll('.result-card').length}));
  check('direct pack state',snap.lib.sourceCommit&&snap.kit.packId===pack,{lib:snap.lib,kit:snap.kit});
  check('wall grammar loaded',snap.kit.ready&&snap.kit.sampleId==='wall-grammar'&&snap.kit.measurements['wall-grammar']?.length===6,snap.kit);
