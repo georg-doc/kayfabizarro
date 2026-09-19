@@ -157,3 +157,26 @@ After Pilot 01 gates:
 - **Living Plant / Plant Prop package** from `skills/chat/workflows/PLANT_PROP_LAB_2026-09-18/`: pot+plant recipe, pattern style, prop rig and optional existing EyeRig adapter. **P2 / BACKLOG only; do not displace Pilot 01 consumer gates.**
 
 See `GAME_DEV_STUDIO_ASSET_PACKAGING_LIVING.md`.
+
+
+## KAYKIT CREATOR RESEARCH · v0.2 · animation timing / locomotion
+
+Second source pass added from `KayKit - Animations - Overview Set 1`:
+https://www.youtube.com/watch?v=T1KNCtAqJ7A
+
+Current-main evidence was re-read at `c84c3c57aa875e1ac1cd8cc17eb966cb37c0f317`; PR #107's branch is not treated as newer project truth for parallel EyeRig/Hub work.
+
+Key current facts:
+- `registry/resources/v1/motions.jsonl` contains **139 registered KayKit Rig_Medium motions across 8 sets**;
+- MovementBasic exposes Walking_A/B/C, Running_A/B and segmented Jump Start/Idle/Land;
+- MovementAdvanced exposes dodge/strafe/crouch/sneak/crawl/backwards plus equipped running;
+- CombatRanged currently exposes explicit aim/shoot/reload/bow/magic families;
+- there is **no explicit Sprint clip** in the current Rig_Medium registry;
+- Mixed Bag 1 is now source-visible on current main with **41 GLTF models + 6 PNG assets** in its Registry shard.
+
+Research synthesis now proposes phase-matched locomotion transitions, measured playback-rate ranges, hysteresis, physics-owned jump phases, phase-relative combat/interaction markers and a measurement-only `KCL-M1 Locomotion Sync Bench`.
+
+**CURRENT RESEARCH NEXT GATE:** KCL-M1 measures Walking_A/B/C + Running_A/B on one verified Rig_Medium actor: foot contacts, planted intervals, acceptable timeScale range and naive-vs-phase-synced transition A/B. It must not modify consumer movement/physics.
+
+The earlier KCL-A5 Live Show modeling extraction remains backlog and becomes stronger because current Mixed Bag release geometry can now be compared directly to the creator VODs.
+
