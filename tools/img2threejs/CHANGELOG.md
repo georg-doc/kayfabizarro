@@ -188,3 +188,18 @@ Each band receives one fitted affine transform derived from the City/Soft-Cubist
 **PROTECTED BOUNDARIES:** City S2 collision/export geometry, OSM landmark manifest, Race/Travel contact/movement/physics, Audio runtime and Registry ownership remain unchanged. The living-toy/bump response is still a presentation donor / proposal seam, not a physics implementation.
 
 **OPEN:** Georg visual review of the new Band Rig v2 standalone, then exactly one style choice: City Grotesque vs Soft Cubist as the landmark deformation baseline.
+
+
+## 2026-09-19 · 11 · Band Rig v2 accepted · consolidated WSA review package / backlog
+
+**GEORG ACCEPTANCE:** Georg opened the final Band Rig v2 standalone in a real browser and confirmed that the rebuilt attachment logic works and the result looks right. This supersedes the earlier Pilot-04/v1.2 rejection for the clock-attachment seam.
+
+**ACCEPTANCE BOUNDARY:** accepted: Band Rig v2 attachment behaviour and current visible direction. Still OPEN: City Grotesque vs Soft Cubist as one default profile; OSM placement; Race/Travel contact; Audio beat integration; automated browser/WebGL regression; public Stage deployment.
+
+**HANDOFF:** Added [WSA Review Package · Landmarks](docs/WSA_REVIEW_PACKAGE_LANDMARKS_2026-09-19.md) as the single consolidated review entry. It includes exact source pins, owner boundaries, status matrix, current tests/evidence, rejected history, known exporter limitation, WSA review checklist, recovery order and prioritized backlog.
+
+**IMPORTANT OPEN TECHNICAL LIMIT:** the current GLB exporter still merges geometry by material zone through the Pilot-01 `mergeZones(asset)` path; semantic `lower / clock / belfry / tent` hierarchy is not yet preserved as GLTF nodes. This is explicitly P1 backlog rather than a completed export contract.
+
+**BACKLOG PERSISTED:** OSM Dom golden sample; declarative landmark rig manifest; semantic GLB export; surface/material pass with existing KFB box material + edge3; Audio beat seam; Race/Travel bumper/contact receiver; instance-friendly living-toy environment reactions; Giza voxel/boxel material proof; Acropolis / Area 51 / JFK route / Atlantis future scenery; Stage deployment only after an accepted consumer exists.
+
+**WSA REVIEW QUESTION:** For the first integrated OSM landmark baseline, choose City Grotesque or Soft Cubist deformation.
