@@ -1,6 +1,6 @@
 # KFB Batch EyeRig Atlas
 
-**Status:** IMPLEMENTED CANDIDATE · 27-actor Rig_Medium browser · rapid review wave ready · public browser verification pending.
+**Status:** IMPLEMENTED CANDIDATE · 27 Medium actors + 4 Large actors · Monstrosity Large calibration ready.
 
 Owner: KFB ToolBox / Rigging.
 
@@ -111,3 +111,18 @@ GothGirl keeps the exact verified source-eye cleanup. Other actors use the exist
 Current Stage mirror: `cloudflare-live@ae61e50d525e942a755cf46d0ed807b49b5a3e38`.
 
 Large and Legacy remain out of scope until the Medium review wave has real results.
+
+
+## Rig_Large calibration
+
+Large is now available beside Medium.
+
+Current verified Large set:
+- Monstrosity
+- Black Knight
+- Demon Lord
+- Orc Brute
+
+Monstrosity is the first calibration actor. Large starts without an accepted class default. Tune Monstrosity and press **Set as Large default**; only then should the value be applied to the remaining Large actors.
+
+Large motion uses the actual Large animation library. Idle / Walk / Run are available; Jump is intentionally unavailable in this slice because no matching Large jump clip exists.

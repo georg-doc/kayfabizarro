@@ -296,3 +296,24 @@ Human review of the expanded authoring surface, then a varied 5–8 actor `Rig_M
 
 ### NEXT GATE
 Georg performs the fast Medium review wave in the browser and accumulates real character overrides / unsupported cases.
+
+
+## 2026-09-19 · Checkpoint 12 · RIG_LARGE MONSTROSITY CALIBRATION
+
+- added verified four-actor `Rig_Large` catalog;
+- added Medium/Large class switch;
+- Monstrosity chosen as first Large calibration actor;
+- no Large default is claimed before explicit human promotion;
+- added **Set as Large default** action;
+- class defaults, selected actors and current actors persist separately;
+- Large uses actual Large animation files; Jump is disabled because no matching Large clip exists;
+- Medium workflow remains intact.
+
+Evidence:
+- implementation `a843a9e9666d2d0d7d0c6a95f801a969f57941c3`;
+- evidence `e60f1db1e2436f11549e44def25ab9b2718eac3b`;
+- **82/82 PASS**;
+- **3/3 syntax PASS**;
+- Stage `670e11d56fe5b85e6264d8a294868c32540db5c6`.
+
+Next: tune Monstrosity, promote the Large default, then compare the other three.
