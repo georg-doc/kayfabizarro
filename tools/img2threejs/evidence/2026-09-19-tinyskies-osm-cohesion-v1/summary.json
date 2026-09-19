@@ -1,0 +1,58 @@
+{
+  "schema": "kfb.tinyskies-osm-cohesion.qa/1.0",
+  "date": "2026-09-19",
+  "branch": "img2threejs/tinyskies-osm-cohesion-v1-2026-09-19",
+  "evidenceClass": "STATIC_SOURCE_CONTRACT",
+  "browserWebGL": "NOT_RUN",
+  "publicStage": "NOT_DEPLOYED",
+  "checksPassed": 31,
+  "checksFailed": 0,
+  "donor": {
+    "repo": "dannylimanseta/tinyskies",
+    "branch": "cursor/globefly-multiplayer-globe-flight-game",
+    "commit": "2659a5cc987d7e4a4c5aa7e79c86a1626ad75df6",
+    "files": {
+      "Globe": "c853d16bd7b5e44fcd331e6ff90ab82142e66c9e",
+      "DayNightCycle": "dd485092e574037f9782f9ef68f7649e8e100287",
+      "SkyPresets": "dfbab3f733eed74cc281df47a3e44967c1c7b2eb",
+      "RimLight": "e2a669912b9cb65fc96889a544024bbe2e20be44",
+      "RainOverlay": "02e3e690b621c67052817fa4bb81d1bc65da8491",
+      "TerrainSurface": "1996a314b506144ae118665be0e1c31e2f5d4c5d",
+      "Game": "3a96cae26f4c9034bacd6d60a60e2a005e261ccc"
+    }
+  },
+  "verifiedDonorFindings": [
+    "terrain-aware placement and deliberate terrain sink/foundation",
+    "flat-shaded Phong-style materials and vertex-colour instancing for villages",
+    "shared global rim colour driven by the current sky preset",
+    "local emissive accents for windows/lighthouse lantern",
+    "day/night updates sky, fog, lights, atmosphere, clouds, ocean and rim together",
+    "rain is confirmed as overlay/audio driven; no building wetness/albedo response was promoted"
+  ],
+  "kfbContract": {
+    "landmarkDefault": "city-grotesque",
+    "reviewEnvironmentDefault": "osm",
+    "worldOwns": [
+      "sky",
+      "fog",
+      "lights",
+      "rimColor",
+      "weather"
+    ],
+    "objectOwns": [
+      "baseAlbedo",
+      "identityPalette",
+      "localEmissiveRoles",
+      "geometry"
+    ],
+    "grounding": "terrain-sampled-foundation",
+    "heroLightByDefault": false,
+    "wetMaterialExtension": "DEFERRED_SEPARATE_GATE"
+  },
+  "limits": [
+    "No browser/WebGL or Cloudflare Stage result in this slice.",
+    "No TinySkies code is copied into a KFB runtime; only source-backed behaviour is translated into a KFB contract.",
+    "Travel remains KFB world/sky owner; OSM City Lab remains OSM geometry/style owner.",
+    "Wetness/specular rain response is a future KFB extension, not a verified TinySkies donor fact."
+  ]
+}
