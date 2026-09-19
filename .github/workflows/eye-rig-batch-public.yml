@@ -34,8 +34,8 @@ jobs:
           const BASE='https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/eye-rig-batch/';
           const WANT={
             sourcePR:104,
-            sourceHead:'fa7fdb5b9c5b9c4d443e4f19f47260f934c90147',
-            implementationCheckpoint:'5f2e981cbcf4ca72a6c186c96ed008be535856a9'
+            sourceHead:'e60f1db1e2436f11549e44def25ab9b2718eac3b',
+            implementationCheckpoint:'a843a9e9666d2d0d7d0c6a95f801a969f57941c3'
           };
           const result={url:BASE,want:WANT,checks:[],errors:[],screenshots:[],status:'RUNNING'};
           const check=(name,pass,detail)=>{result.checks.push({name,pass:Boolean(pass),detail});if(!pass)throw Error(name+' :: '+JSON.stringify(detail))};
@@ -89,7 +89,7 @@ jobs:
             }));
 
             check('page title',/Batch EyeRig Atlas/.test(initial.title),initial.title);
-            check('visible revision marker',initial.marker.includes('source fa7fdb5')&&initial.marker.includes('27 Medium actors')&&initial.marker.includes('PR #104'),initial.marker);
+            check('visible revision marker',initial.marker.includes('Rig_Medium')&&initial.marker.includes('PR #104'),initial.marker);
             check('runtime no boot error',!initial.report.error,initial.report.error);
             check('source gate',initial.report.gates?.source===true,initial.report.gates);
             check('cleanup gate',initial.report.gates?.cleanup===true,initial.report.cleanup);
@@ -207,7 +207,7 @@ jobs:
 
             const roundtrip=await page.evaluate(()=>{
               const r=window.__EYE_RIG_BATCH.report();
-              return {schema:'kfb.eye-profile-batch/0.2-candidate',rigClass:'Rig_Medium',inheritanceOrder:['rigClass','character','session'],classDefault:r.mediumSeed.authoringDefault,selectedActorIds:r.selectedActors,profiles:[r.profile]};
+              return {schema:'kfb.eye-profile-batch/0.2-candidate',rigClass:'Rig_Medium',inheritanceOrder:['rigClass','character','session'],classDefault:r.classSeed.authoringDefault,selectedActorIds:r.selectedActors,profiles:[r.profile]};
             });
             await page.setInputFiles('#importInput',{name:'eye-rig-medium.batch.json',mimeType:'application/json',buffer:Buffer.from(JSON.stringify(roundtrip))});
             await page.waitForSelector('#importPreview:not([hidden])');
@@ -327,6 +327,63 @@ jobs:
             const interaction=await page.evaluate(()=>window.__EYE_RIG_BATCH.report());
             check('interaction runtime remains clean',!interaction.error,interaction.error);
             check('single actor mixer state',interaction.gates?.motion===true,interaction.gates);
+
+            await page.click('[data-rig-class="Rig_Large"]');
+            await page.waitForFunction(()=>{
+              const r=window.__EYE_RIG_BATCH?.report?.();
+              return r?.rigClass==='Rig_Large' && r?.currentActor?.id==='monstrosity' &&
+                r?.gates?.source===true && r?.gates?.host===true && r?.gates?.eye===true && r?.gates?.motion===true;
+            },{timeout:180000});
+            await pause(220);
+            const largeInitial=await page.evaluate(()=>window.__EYE_RIG_BATCH.report());
+            check('Large class switch',largeInitial.rigClass==='Rig_Large'&&largeInitial.currentActor?.id==='monstrosity',largeInitial.currentActor);
+            check('Large catalog 4',
+              largeInitial.roster?.count===4 && await page.locator('#actorList [data-actor-id]').count()===4,
+              {runtime:largeInitial.roster,dom:await page.locator('#actorList [data-actor-id]').count()});
+            check('Large has no accepted default yet',
+              largeInitial.classSeed?.status==='CALIBRATION_START_ONLY' && largeInitial.classSeed?.authoringDefault===null,
+              largeInitial.classSeed);
+            check('Set as Large default available',
+              await page.locator('#promoteClassDefaultBtn').isVisible() &&
+              !(await page.locator('#promoteClassDefaultBtn').isDisabled()),
+              await page.locator('#promoteClassDefaultBtn').textContent());
+            check('Apply to Selected blocked before Large default',
+              await page.locator('#batchApplySelectedBtn').isDisabled(),
+              await page.locator('#batchApplySelectedBtn').isDisabled());
+            check('Large jump disabled',
+              await page.locator('[data-motion="Jump_Full_Short"]').isDisabled(),
+              await page.locator('[data-motion="Jump_Full_Short"]').isDisabled());
+            check('Large Idle Walk Run available',
+              !(await page.locator('[data-motion="Idle_A"]').isDisabled()) &&
+              !(await page.locator('[data-motion="Walking_A"]').isDisabled()) &&
+              !(await page.locator('[data-motion="Running_A"]').isDisabled()),
+              largeInitial.clips);
+            check('Monstrosity Large profile',
+              largeInitial.profile?.actorId==='monstrosity' && largeInitial.profile?.rigClass==='Rig_Large',
+              largeInitial.profile);
+            await shot('06-large-monstrosity-front');
+
+            await page.click('[data-actor-id="black-knight"]');
+            await page.waitForFunction(()=>{
+              const r=window.__EYE_RIG_BATCH?.report?.();
+              return r?.rigClass==='Rig_Large' && r?.currentActor?.id==='black-knight' &&
+                r?.gates?.source===true && r?.gates?.host===true && r?.gates?.eye===true;
+            },{timeout:180000});
+            await pause(180);
+            const largeKnight=await page.evaluate(()=>window.__EYE_RIG_BATCH.report());
+            check('Large Black Knight switch',
+              largeKnight.currentActor?.id==='black-knight' && largeKnight.profile?.rigClass==='Rig_Large',
+              {actor:largeKnight.currentActor,profile:largeKnight.profile,cleanup:largeKnight.cleanup?.status});
+            await shot('07-large-black-knight-front');
+
+            await page.click('[data-actor-id="monstrosity"]');
+            await page.waitForFunction(()=>window.__EYE_RIG_BATCH?.report?.().currentActor?.id==='monstrosity',{timeout:180000});
+            const largeBack=await page.evaluate(()=>window.__EYE_RIG_BATCH.report());
+            check('Large default still unpromoted after smoke',
+              largeBack.classSeed?.authoringDefault===null,
+              largeBack.classSeed);
+
+            result.largeSmoke={monstrosity:largeInitial,blackKnight:{actor:largeKnight.currentActor,cleanup:largeKnight.cleanup?.status||null}};
 
             await page.setViewportSize({width:832,height:900});
             await pause(400);

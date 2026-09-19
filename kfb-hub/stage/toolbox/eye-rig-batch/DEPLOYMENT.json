@@ -4,21 +4,21 @@
   "sourceRepo": "georg-doc/kayfabizarro",
   "sourceBranch": "toolbox/eye-rig-batch-2026-09-18",
   "sourcePR": 104,
-  "sourceHead": "fa7fdb5b9c5b9c4d443e4f19f47260f934c90147",
+  "sourceHead": "e60f1db1e2436f11549e44def25ab9b2718eac3b",
   "returnHead": "ab5215ce4f31d80fe4ecb98077f15e3df58ecb97",
-  "implementationCheckpoint": "5f2e981cbcf4ca72a6c186c96ed008be535856a9",
-  "evidenceCheckpoint": "fa7fdb5b9c5b9c4d443e4f19f47260f934c90147",
+  "implementationCheckpoint": "a843a9e9666d2d0d7d0c6a95f801a969f57941c3",
+  "evidenceCheckpoint": "e60f1db1e2436f11549e44def25ab9b2718eac3b",
   "stageRuntimeHead": "ae61e50d525e942a755cf46d0ed807b49b5a3e38",
   "mainRouterHead": "986699c81340dc3b266bf921441f93bf18127f6b",
-  "expectedVisibleMarker": "source fa7fdb5 · 27 Medium actors · PR #104",
-  "humanGate": "Georg rapidly reviews Rig_Medium roster: Approve / Adjusted + approve / Unsupported / Next unreviewed; no Large/Legacy merge/Live",
+  "expectedVisibleMarker": "Rig_Medium / Rig_Large class switch · PR #104",
+  "humanGate": "Switch to Large, tune Monstrosity, then explicitly Set as Large default; afterwards review Black Knight, Demon Lord and Orc Brute",
   "previousPublicProof": {
     "run": 35460179569,
     "checks": "21/21 PASS",
     "screenshots": 6,
     "note": "historical pre-identity/pre-authoring single-actor proof only"
   },
-  "publicVerification": "OPEN_CURRENT_TOOLS_CANNOT_OPEN_PAGES_DEV_AND_CONNECTOR_PUSH_DID_NOT_TRIGGER_ACTIONS",
+  "publicVerification": "PENDING_MEDIUM_LARGE_STAGE_PUBLICATION",
   "eyeDefaults": {
     "dx": 0.295,
     "dy": 0.045,
@@ -65,11 +65,11 @@
     "selectedActorExport": true
   },
   "tests": {
-    "persistedStatic": "62/62 PASS",
-    "focusedActorBrowser": "14/14 PASS",
+    "persistedStatic": "82/82 PASS",
+    "focusedLargeCandidate": "15/15 PASS",
     "syntax": "3/3 PASS",
-    "stageReadback": "PASS",
-    "publicActorSmoke": "PREPARED · GothGirl → Clown → Ninja → Magical Girl → GothGirl · NOT RUN"
+    "stageReadback": "PENDING",
+    "publicLargeSmoke": "PREPARED · Monstrosity → Black Knight → Monstrosity · NOT RUN"
   },
   "deferred": [
     "Large/Legacy until Medium review data",
@@ -79,5 +79,27 @@
     "Vehicle EyeRig / headlight host"
   ],
   "hubCard": "SYNCED_TO_27_ACTOR_MEDIUM_REVIEW_WAVE",
-  "nextGate": "GEORG_MEDIUM_ROSTER_REVIEW_WAVE"
+  "nextGate": "GEORG_MONSTROSITY_LARGE_CALIBRATION",
+  "largeCalibration": {
+    "rigClass": "Rig_Large",
+    "actorCount": 4,
+    "actors": [
+      "Monstrosity",
+      "Black Knight",
+      "Demon Lord",
+      "Orc Brute"
+    ],
+    "firstActor": "Monstrosity",
+    "acceptedDefault": false,
+    "calibrationStart": "normalized starting point only",
+    "promotionAction": "Set as Large default",
+    "applyToSelectedBeforePromotion": false,
+    "motions": [
+      "Idle_A",
+      "Walking_A",
+      "Running_A"
+    ],
+    "jumpAvailable": false
+  },
+  "proofRequest": "MEDIUM_LARGE_CLASS_SWITCH_PUBLIC_PROOF"
 }
