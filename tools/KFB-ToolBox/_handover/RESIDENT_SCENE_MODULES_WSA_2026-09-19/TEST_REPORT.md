@@ -71,6 +71,30 @@ Observed checks:
 
 The workflow artifact contains `clown-s33.png` and `report.json`.
 
+
+### Confirmation run after proof-doc merge
+
+A second run on final proof merge `33b3785499e37b0a8b39a8465819988bc22a2703` also passed:
+
+- workflow run: `35421390825` · **SUCCESS**
+- job: `105839641004` · **SUCCESS**
+- artifact: `10577653402`
+- artifact digest: `sha256:4aa59b60f86a5b40eb75049f8f4556c5fd808f2b384fd3df0b1b7e0c735fec31`
+- retention: through `2026-12-18T04:28:46Z`
+- HTTP 200
+- Clown selected
+- `juggle-cascade-v1` mounted
+- 21 nodes
+- 32 activity samples
+- max arm residual `0.0001464063`
+- minimum club **pivot** distance `0.0007849185`
+- no browser console/page errors
+
+Persisted as:
+`evidence/CLOUDFLARE_BROWSER_RESULT_2026-09-19_R2.json`
+
+The captured frame shows club geometry entering the Clown head/upper-torso silhouette. Combined with the near-zero pivot-distance sample, this makes trajectory/catch tuning an explicit OPEN visual/geometry item. The automated run is green because boot/activity/error contracts pass; it does **not** assert that the juggling paths look accepted.
+
 ### Evidence boundary
 
 This is now a real **BROWSER TESTED RESULT on Cloudflare**. It is not Georg's visual acceptance.
