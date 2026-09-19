@@ -8,7 +8,9 @@
 - repository: `georg-doc/kayfabizarro`
 - branch: `chatgpt-web/resident-clown-recovery-brief-2026-09-19`
 - branch base: `bb904bf0983afa209683145427f1c2a068835097`
-- PR: pending at this checkpoint
+- tested documentation head: `76dd0bf9bb21647f3ee3d070d6e4e9b6c1396857`
+- changed files at final audit: **16**
+- PR: [#103 · Docs: C0 intent-fail postmortem + Resident Clown Activity Repair R0](https://github.com/georg-doc/kayfabizarro/pull/103) · OPEN · no auto-merge
 - auto-merge: **NO**
 
 ## GOAL
