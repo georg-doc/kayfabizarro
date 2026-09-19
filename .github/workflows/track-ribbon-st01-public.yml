@@ -1,4 +1,4 @@
-name: Track Ribbon S-T01 · canonical public URL proof
+name: Track Ribbon S-T01 · public mirror proof
 
 on:
   pull_request:
@@ -23,10 +23,10 @@ jobs:
         run: |
           npm install --no-save playwright@1.55.0
           npx playwright install --with-deps chromium
-      - name: Wait for canonical Cloudflare mirror
+      - name: Wait for GitHub Pages fallback mirror
         run: |
           node - <<'NODE'
-          const url='https://kayfabizarro.pages.dev/kfb-hub/stage/stunt-world/track-ribbon-st01/DEPLOYMENT.json';
+          const url='https://georg-doc.github.io/kayfabizarro/kfb-hub/stage/stunt-world/track-ribbon-st01/DEPLOYMENT.json';
           const want='9d67a259e496f2f2fdbbf3940553446fae20890a';
           const pause=ms=>new Promise(r=>setTimeout(r,ms));
           (async()=>{
@@ -38,22 +38,22 @@ jobs:
                 if(r.ok){
                   const d=JSON.parse(last.slice(last.indexOf(' ')+1));
                   if(d.testedRaceCommit===want){
-                    console.log('canonical deployment marker PASS',d.build);
+                    console.log('GitHub Pages deployment marker PASS',d.build);
                     return;
                   }
                 }
               }catch(e){last=String(e)}
               await pause(10000);
             }
-            throw Error('canonical deployment marker not ready: '+last.slice(0,500));
+            throw Error('GitHub Pages deployment marker not ready: '+last.slice(0,500));
           })().catch(e=>{console.error(e);process.exit(1)});
           NODE
-      - name: Canonical public Chromium proof
+      - name: GitHub Pages public Chromium proof
         run: |
           node - <<'NODE'
           const fs=require('fs');
           const {chromium}=require('playwright');
-          const base='https://kayfabizarro.pages.dev/kfb-hub/stage/stunt-world/track-ribbon-st01/';
+          const base='https://georg-doc.github.io/kayfabizarro/kfb-hub/stage/stunt-world/track-ribbon-st01/';
           (async()=>{
             const r={url:base,date:new Date().toISOString(),checks:[],errors:[],httpErrors:[]};
             const check=(n,p,d)=>{r.checks.push({name:n,pass:!!p,details:d});if(!p)throw Error(n)};
@@ -67,7 +67,7 @@ jobs:
             await page.waitForFunction(()=>window.__KFB_ST01_READY__===true,{},{timeout:180000});
             r.bootMs=Date.now()-t0;
             const s=await page.evaluate(()=>window.__KFB_ST01__.snapshot());
-            check('canonical S-T01 boot',s.id==='kfb-track-ribbon-st01',s.id);
+            check('GitHub Pages S-T01 boot',s.id==='kfb-track-ribbon-st01',s.id);
             check('v0.8 Race physical owner',s.physicalOwner==='TRACK_LAB_V08_RACE',s.physicalOwner);
             check('single-surface Toy Grid',s.grid.mode==='SINGLE_SURFACE_SHADER'&&s.grid.overlayMeshes===0,s.grid);
             check('3/3 cue assets',s.cueCluster.loaded===3&&s.cueCluster.failed.length===0,s.cueCluster);
@@ -96,5 +96,5 @@ jobs:
       - uses: actions/upload-artifact@v4
         if: always()
         with:
-          name: track-ribbon-st01-public-proof
+          name: track-ribbon-st01-github-pages-proof
           path: public-proof
