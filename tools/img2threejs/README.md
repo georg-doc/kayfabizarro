@@ -14,7 +14,7 @@
 
 **Default review environment:** **OSM City Lab**. Travel Verdant / Day remains an alternate comparison mode.
 
-**TinySkies × OSM integrated Stage candidate:** [direct Cloudflare route](https://kayfabizarro.pages.dev/kfb-hub/stage/img2threejs/tinyskies-osm-cohesion-v1/) · source PR [#110](https://github.com/georg-doc/kayfabizarro/pull/110) · tested runtime `aa28a743628699271c94c1911af23d0564c6f3cc`. Publication is being independently public-browser verified; this link is a Stage candidate, not Live promotion.
+**TinySkies × OSM integrated source candidate:** source PR [#110](https://github.com/georg-doc/kayfabizarro/pull/110) · tested runtime `aa28a743628699271c94c1911af23d0564c6f3cc` remains **27/27 static + 19/19 Chromium PASS**. The Cloudflare public gate failed twice on publication/marker issues, so human Stage review is currently **BLOCKED**. [Failure recovery + one next gate](landmarks/pilot-08/failure-recovery/START_HERE.md).
 
 **Pilot 06 · World Style Bridge v1:** Eiffel, Giza, Stonehenge, Pentagon, Spasskaya and the Kremlin wall study now share the Grotesque default and flexible landmark-specific cartoon palettes. The review viewer can place them in either the exact current OSM City presentation context or a pinned current Travel/TinySkies-derived sky/light/biome context.
 
@@ -93,7 +93,8 @@ These remain **presentation signals only**. No Audio engine, vehicle bounce, col
 3. Read [Visual Evidence](evidence/2026-09-19-landmark-band-rig-v2/VISUAL_EVIDENCE.md) and [summary](evidence/2026-09-19-landmark-band-rig-v2/summary.json).
 4. Treat Pilot 04/v1.2 as rejected attachment history, not the current solution.
 5. Visually review Pilot 06 starting in **OSM City Lab**; use Travel Verdant/Day as the alternate comparison context.
-6. Next implementation target: modular Grotesque Cologne Cathedral as the first real OSM Golden Sample; then Acropolis / Area 51 according to the prepared catalogue.
+6. Pilot 08 source runtime is retained; do **not** rebuild it. First complete the marker-only public recovery gate in [Pilot 08 failure recovery](landmarks/pilot-08/failure-recovery/START_HERE.md).
+7. Only after public PASS + Georg review: real Cologne Cathedral OSM Golden Sample; then Acropolis / Area 51.
 
 ## Zuständigkeiten
 

@@ -265,3 +265,20 @@ Because the Travel repo is private, the authoring viewer uses [travel-visual-sna
 The Stage mirror uses exact tested runtime files except two import-path-only adapters in `dom-geometry.mjs` / `dom-rig.mjs`, which point back to existing canonical `/tools/...` donors. A dedicated Cloudflare public browser workflow must verify the exact route before PUBLIC VERIFIED status is claimed.
 
 **BOUNDARIES:** no real Cologne OSM override yet; no wet facade material; no new physics/audio/world owner; no Live promotion.
+
+
+## 2026-09-20 · 16 · Pilot 08 public Stage recovery · STOP after two failed publication passes
+
+**SOURCE CANDIDATE RETAINED:** exact runtime `aa28a743628699271c94c1911af23d0564c6f3cc` remains 27/27 static + 19/19 Chromium PASS with zero browser errors.
+
+**PUBLIC ATTEMPT 1 FAIL:** workflow `35471646709` attempt 1 reached Hub fallback HTML because the candidate had not yet been mirrored to the actual `cloudflare-live` publication branch.
+
+**PUBLICATION REPAIR:** candidate, missing img2threejs dependencies, Hub card and Stage navigator were mirrored to `cloudflare-live`; candidate path is present there.
+
+**PUBLIC ATTEMPT 2 FAIL:** workflow `35471646709` attempt 2 reached candidate `SOURCE.json`, but parsing failed after the JSON object. Proven current marker blob `08550009f6d32c3e33cfae6796a9f79ba095049f` ends in literal backslash + `n`, confirmed by GitHub tail char codes `[125,10,125,92,110]`.
+
+**STOP RULE:** no third repair pass in this slice. The public Stage is **NOT PUBLIC_VERIFIED** and human review is BLOCKED.
+
+**RECOVERY EXPORT:** [Pilot 08 failure recovery](landmarks/pilot-08/failure-recovery/START_HERE.md) preserves source, attempts, evidence, proven causes, salvage map, known issue and one next gate.
+
+**NEXT GATE ONLY:** correct the marker trailing literal `\\n`, repository-parse it, mirror that exact marker to `cloudflare-live`, verify the exact public marker revision, then rerun the existing public proof unchanged. No visual/runtime changes.

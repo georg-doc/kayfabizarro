@@ -1,6 +1,6 @@
 # TinySkies × OSM × Grotesque Stage Return · 2026-09-19
 
-**Status:** STAGE CANDIDATE PUBLISHED TO MAIN · PUBLIC BROWSER VERIFICATION PENDING  
+**Status:** PUBLIC PROOF FAILED ×2 · RECOVERY EXPORTED · HUMAN REVIEW BLOCKED  
 **Direct human route:** https://kayfabizarro.pages.dev/kfb-hub/stage/img2threejs/tinyskies-osm-cohesion-v1/
 
 ## Source
@@ -44,8 +44,21 @@ Those two adapters only rewrite authoring-relative imports to canonical public `
 - no new Race/Travel/Audio/Registry owner
 - no Live promotion
 
-## Public verification gate
+## Public verification result
 
-A dedicated main-branch workflow polls `SOURCE.json` on the exact pages.dev route, then runs Chromium checks and screenshots.
+The public gate failed twice:
 
-Do not change this status to PUBLIC VERIFIED until that workflow passes and the exact route exposes `aa28a743628699271c94c1911af23d0564c6f3cc`.
+1. attempt 1: candidate not yet present on the actual `cloudflare-live` publication branch; public marker returned Hub fallback HTML;
+2. attempt 2: publication branch contained the candidate, but `SOURCE.json` is malformed by a trailing literal `\\n`.
+
+Workflow: `35471646709` · attempts 1–2.
+
+Per KFB stop rule, no third repair pass is made in this slice.
+
+Recovery export:
+[../landmarks/pilot-08/failure-recovery/START_HERE.md](../landmarks/pilot-08/failure-recovery/START_HERE.md)
+
+**PUBLIC_VERIFIED = NO**  
+**HUMAN REVIEW = BLOCKED**
+
+Exactly one next gate: marker-only repair and rerun of the unchanged public proof.
