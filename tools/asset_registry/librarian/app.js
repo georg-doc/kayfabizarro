@@ -4,9 +4,11 @@ import { searchRegistry } from './search.js';
 import { setResultView, renderResults, showDetail, closeDetail } from './render.js';
 import { updateSelectionUI, renderConsumerBoundary, buildHandoff, copyText, downloadJSON } from './selection.js';
 import { fitCamera, setWireframe, playClip, animationState } from './preview.js';
-import { initProductionResources } from './resources-ui.js';\nimport { initModuleKitWorkbench } from './module-kit.js';
+import { initProductionResources } from './resources-ui.js';
+import { initModuleKitWorkbench } from './module-kit.js';
 
-let productionUi;\nlet moduleKitUi;
+let productionUi;
+let moduleKitUi;
 let registryLoadToken = 0;
 
 function closeSelection() {
@@ -153,7 +155,8 @@ const visibleVersion=document.querySelector('h1 span'); if(visibleVersion)visibl
 $('searchButton').onclick = () => runSearch().catch(showError);
 $('searchInput').onkeydown = (event) => { if (event.key === 'Enter') runSearch().catch(showError); };
 $('kaykitPreset').onclick = () => { $('searchInput').value = 'KayKit'; $('kindFilter').value = ''; $('packFilter').value=''; $('moduleKitPanel').hidden=true; setBrowseMode('primary'); $('browseModeFilter').value='primary'; setResultView('gallery'); runSearch().catch(showError); };
-$('packFilter').onchange = (event) => { moduleKitUi?.openPack?.(event.target.value,{updateUrl:true}).catch(showError); };\n$('browseModeFilter').onchange = (event) => { setBrowseMode(event.target.value); if(hasSearchIntent())runSearch().catch(showError); };
+$('packFilter').onchange = (event) => { moduleKitUi?.openPack?.(event.target.value,{updateUrl:true}).catch(showError); };
+$('browseModeFilter').onchange = (event) => { setBrowseMode(event.target.value); if(hasSearchIntent())runSearch().catch(showError); };
 $('loadMoreButton').onclick = () => { state.resultVisibleLimit += RESULT_LIMIT; runSearch({resetLimit:false}).catch(showError); };
 $('resetButton').onclick = resetFilters;
 $('filtersToggle').onclick = () => toggleFilters().catch(showError);
@@ -169,7 +172,8 @@ $('drawerBackdrop').onclick = closePanels;
 $('technicalToggle').onclick = toggleTechnical;
 $('clearSelection').onclick = () => { state.selected.clear(); persistSelection(); updateSelectionUI(); renderResults(state.lastResults); if (state.active) $('toggleSelection').textContent = 'Add'; };
 $('consumerSelect').onchange = renderConsumerBoundary;
-$('copyHandoff').onclick = async () => copyText(JSON.stringify(await buildHandoff(), null, 2) + '\n');
+$('copyHandoff').onclick = async () => copyText(JSON.stringify(await buildHandoff(), null, 2) + '
+');
 $('downloadHandoff').onclick = async () => downloadJSON(`kfb-asset-handoff-${$('consumerSelect').value}.json`, await buildHandoff());
 $('resetCamera').onclick = fitCamera;
 $('fitCamera').onclick = fitCamera;
