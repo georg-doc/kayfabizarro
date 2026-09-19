@@ -88,3 +88,172 @@ This is **not** recorded as an application/browser FAIL because the app did not 
 | profile import/export interaction in browser | NOT_TESTED |
 
 The next valid visual gate is the normal-browser Cloudflare Stage route, not another container Chromium workaround.
+
+
+## PUBLICATION CHECKPOINT
+
+Stage mirror commit: `f309948a3bd265154e6d3f5c959b69ec9b725f26` on `cloudflare-live`.
+
+The publication branch was fetched back after the write and contains:
+
+- the Stage HTML with visible `candidate f23b2f6 · PR #104 · Stage`;
+- byte-identical runtime blobs for `app.js`, CSS, adapter and source-face cleanup;
+- the GothGirl seed and source audit;
+- a KFB Hub card linking directly to the Stage route.
+
+Main router/Hub metadata was updated separately at `ac067d09919f744750649e3652dd00036d7ccd6f` without merging EyeRig implementation code.
+
+Exact public route:
+
+`https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/eye-rig-batch/`
+
+Public verification attempt result: **ENVIRONMENT_UNAVAILABLE**. The web fetcher reports the `pages.dev` route as inaccessible, and the execution container reports temporary DNS resolution failure for `kayfabizarro.pages.dev`. No `PUBLIC_VERIFIED` claim is made.
+
+This is now a **human browser gate**, not another source-code repair pass.
+
+
+## FINAL PUBLIC BROWSER PROOF · PASS
+
+Final proof run: `35457983922`  
+Publication head: `e56ae972d05e06c5112fe2de4314192c3e3c8110`  
+Exact route: `https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/eye-rig-batch/`
+
+Result: **17 / 17 PASS** with **5 screenshots** and **0 page/console errors**.
+
+The Playwright proof verified:
+
+- exact deployment marker for PR #104 / Stage source snapshot `b05172e` / implementation `d900fb9`;
+- HTTP 200;
+- expected page title and visible revision marker;
+- no boot error;
+- source / cleanup / FaceHost / EyeRig / motion gates all true;
+- GothGirl head = exactly 12 connected components;
+- verified source eye components = 6 + 7;
+- FaceHost = `OK`, head bone `head`, facing source `Zehen`, yaw 0;
+- EyeRig eyeFrame present;
+- Idle / Walk / Run / Jump clips present;
+- runtime remains clean after happy + Idle + 3/4, thinking + Run + side, surprised + Jump + front, and Blink;
+- 832px review layout rendered without runtime errors.
+
+Artifact:
+
+- name: `kfb-eye-rig-batch-public-stage-proof`
+- artifact id: `10589300370`
+- digest: `sha256:db0ab0d5238d1e97890df21ea43333f1d6fd90aecafa5ae993b5c072b42dd16e`
+- screenshots:
+  - `01-front-bind.png`
+  - `02-three-quarter-happy-idle.png`
+  - `03-side-thinking-run.png`
+  - `04-front-surprised-jump.png`
+  - `05-832-review.png`
+
+### Visual sanity, not acceptance
+
+The screenshots prove the rig is present and attached across the tested views/motions. They also show that the current geometry seed is **not yet visually approved**: `ring=0.30` produces oversized/protruding eyes, especially in the 3/4 and side evidence.
+
+This is intentionally left as `AUTO_CANDIDATE`. Georg's next pass should reduce eye size first, then tune inset/spacing before approving the profile.
+
+
+## SOURCE-MEASURED SEED · PUBLIC REPORT-ONLY PROOF
+
+Run: `35459726128`  
+Stage head: `9a3345a01935fe87651ec49cea3afc19715f84ef`  
+Result: **18 / 18 PASS**, **5 screenshots**, **0 runtime/page errors**.
+
+Additional gate added to the previous 17-check suite:
+
+- `source-measured seed report-only` = PASS;
+- exact source components 6 + 7 transformed through skinned vertices → world → FaceHost-local;
+- candidate values: `dx=0.84913`, `dy=-0.05142`, `ring=0.06925`;
+- measurement status: `MEASURED_NOT_APPLIED`;
+- visible EyeRig seed remained unchanged during this proof.
+
+Artifact:
+- id: `10589617618`
+- digest: `sha256:11202846c592b0147584b12b31629eada4f097c2ac45c8194312b7acb73e82fe`
+- name: `kfb-eye-rig-batch-public-stage-proof`.
+
+
+## EXPLICIT MEASURED-BASELINE ACTION · PUBLIC PROOF
+
+Run: `35460179569`  
+Stage head: `26810dbc2f5a2d1f650c485b31f08bc2f4b0f8d5`  
+Source head: `fd7a123b3747f74f79b2759e1cbb48fc64f823f0`  
+Result: **21 / 21 PASS**, **6 screenshots**, **0 runtime/page errors**.
+
+New verified interaction gates:
+
+- measured-baseline button available: PASS;
+- explicit apply: PASS — exact `dx=0.84913 · dy=-0.05142 · ring=0.06925`;
+- candidate state remains `AUTO_CANDIDATE`: PASS;
+- reset seed restores exact `dx=0.345 · dy=-0.10 · ring=0.30`: PASS;
+- prior source / cleanup / FaceHost / EyeRig / motion / interaction gates remain PASS.
+
+Artifact:
+- id: `10589418791`;
+- digest: `sha256:bea3014475b594ea9099897a30338af336579f6ca836327be4cb963f249cb450`;
+- screenshots: **6**, including `00-source-measured-baseline.png`.
+
+### Visual evidence gate · NOT PASS
+
+The explicit action is technically correct, but the resulting screenshot does **not** validate components 6 + 7 as the visible eye source.
+
+Observed in `00-source-measured-baseline.png`:
+
+- measured EyeRig spheres land far laterally near the ear region;
+- black eye-like source forms remain central under the brows.
+
+Classification:
+
+`TECHNICAL ACTION PASS · SOURCE-FACE IDENTITY UNRESOLVED · VISUAL ACCEPTANCE OPEN`.
+
+No further placement tuning should treat `0.84913 / -0.05142 / 0.06925` as a recommended seed until current source components are isolated and visually identified.
+
+
+## 2026-09-19 · SOURCE COMPONENT IDENTITY RESOLUTION · CORRECTED 2+3
+
+Source identity checkpoint: `949ff8037df2da88eb91ef825984ef57870b8238`  
+Stage publication head: `c6489fce74f98b2124feb184becd27d2cbe4a922`
+
+### Exact source geometry
+
+The pinned current `GothGirl.glb` blob `b56f67e4ddb7db95ff54fef526148a49289f3915` was parsed with the same 1e-3 welded connected-component rule as `faceShells()`.
+
+Result: **12 / 12 components resolved**.
+
+- eye pair: **2 + 3** · 69 tris each · frontal and mirrored;
+- nose: **1**;
+- ears: **4 + 5**;
+- lateral accessories: **6 + 7 + 8**;
+- hair: **9**;
+- brows: **10 + 11**.
+
+The previous 6+7 interpretation is therefore archived as **wrong source identity / useful diagnostic history**. It correctly explained why the old measured preview landed near the ears.
+
+### Static / contract replay
+
+Against the exact persisted branch files after the correction:
+
+- **28 / 28 PASS**;
+- one mixer owner preserved;
+- EyeRig `update(dt)` preserved;
+- donor `faceShells()` + `buildStripped()` reuse preserved;
+- source cleanup remains fail-closed;
+- corrected eye pair 2+3 is guarded by current-GothGirl triangle/bounds signature;
+- 12-card source projection evidence present;
+- no source GLB write and no global schema promotion.
+
+The earlier **3/3 JavaScript syntax PASS** belongs to the pre-identity implementation checkpoint. A new Node-module syntax run was not available in this connector-only pass and is **NOT_RERUN**, not silently carried forward.
+
+### Publication / browser status
+
+The corrected 2+3 candidate was mirrored to `cloudflare-live@c6489fce74f98b2124feb184becd27d2cbe4a922`.
+
+Direct routes:
+
+- `https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/eye-rig-batch/`
+- `https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/eye-rig-batch/docs/source-components-0-11.html`
+
+The connector push did not create a new GitHub Actions run, and the current web environment cannot open `pages.dev`. Therefore the corrected build is **PUBLISHED / READBACK PASS / PUBLIC_VERIFIED OPEN**.
+
+No claim is made that the corrected measured 2+3 EyeRig placement is visually accepted yet.
