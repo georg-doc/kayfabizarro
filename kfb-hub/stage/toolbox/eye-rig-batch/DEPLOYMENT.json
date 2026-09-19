@@ -4,11 +4,11 @@
   "sourceRepo": "georg-doc/kayfabizarro",
   "sourceBranch": "toolbox/eye-rig-batch-2026-09-18",
   "sourcePR": 104,
-  "sourceHead": "ef7a8f203762f670e00ccdd27b540703d855807d",
-  "implementationCheckpoint": "d900fb99f3b04d52f266febd1501368c5fedd360",
+  "sourceHead": "eeb79850a8142968c418e23b482a330f120dd9c2",
+  "implementationCheckpoint": "c74cbd6e0691d0bd3bcc574203219cdb0e9f647f",
   "stageMirrorParent": "cd8ac363ed5708103324581e683f6b33c6c265f6",
-  "expectedVisibleMarker": "source ef7a8f2 · calibrated · eyes 2+3 · PR #104",
-  "humanGate": "Georg visual acceptance of corrected 2+3 cleanup / measured baseline; no Live promotion",
+  "expectedVisibleMarker": "source eeb7985 · Medium authoring · PR #104",
+  "humanGate": "Georg checks Medium authoring seed + Oval + Tracking + Batch I/O on fixed Stage; no merge/Live",
   "previousPublicProof": {
     "run": 35460179569,
     "checks": "21/21 PASS",
@@ -16,22 +16,35 @@
     "sourceHead": "fd7a123b3747f74f79b2759e1cbb48fc64f823f0",
     "note": "historical pre-identity proof; 6+7 baseline diagnostic only"
   },
-  "measurementMode": "RIG_MEDIUM_GOTHGIRL_CALIBRATED_RING_AND_PUPIL",
+  "measurementMode": "SOURCE_MEASUREMENT_SUGGESTION_ONLY",
   "sourceIdentity": "RESOLVED_EYES_2_3",
   "identityEvidence": "./docs/source-components-0-11.html",
   "candidateAction": "EXPLICIT_ONLY_RESETTABLE_NOT_APPROVED",
-  "nextGate": "GEORG_QA_4VIEW_DEFAULT_CALIBRATION",
-  "proofRequest": "RIG_MEDIUM_DEFAULT_CALIBRATION_PUBLIC_PROOF",
+  "nextGate": "GEORG_STAGE_STUDIO_CONTROLS_ACCEPTANCE",
+  "proofRequest": "MEDIUM_AUTHORING_STUDIO_CONTROLS_PUBLIC_PROOF",
   "returnHead": "08c088cc06ffdc7190d6fd6ba55df54f457567d0",
   "mainRouterHead": "c84c3c57aa875e1ac1cd8cc17eb966cb37c0f317",
   "hubCard": "SYNCED_TO_RIG_MEDIUM_4VIEW_QA_GATE",
-  "publicVerification": "OPEN_CURRENT_TOOLS_CANNOT_OPEN_PAGES_DEV",
+  "publicVerification": "PENDING_NEW_STAGE_PUBLICATION",
   "eyeDefaults": {
-    "bootFallbackRing": 0.2,
-    "runtimeRingRule": "sourceMeasured.dx * 0.32 / 0.49",
+    "dx": 0.295,
+    "dy": 0.045,
+    "ring": 0.153,
+    "track": 0.15,
     "pupilSize": 0.34,
-    "lidBaseColor": "#e6cbc3",
-    "lidMode": "face-base-darkened"
+    "inset": 0.4,
+    "lidFit": 0.9,
+    "converge": 0.18,
+    "splay": 0,
+    "gloss": 0.1,
+    "lidMode": "face-base-darkened",
+    "trackingMode": "life",
+    "oval": {
+      "w": 1,
+      "h": 1,
+      "d": 1,
+      "tilt": 0
+    }
   },
   "qaViews": [
     "front",
@@ -40,7 +53,25 @@
     "side-right"
   ],
   "qaArtifact": "gothgirl-qa-front-3q-side.png",
-  "calibrationCheckpoint": "6f7d7988849cf0c74a6551a33ee422d8584c87c2",
-  "evidenceCheckpoint": "ef7a8f203762f670e00ccdd27b540703d855807d",
-  "stageRuntimeHead": "786568b1e4434f458379c3aa5f8a83f3fd82a8d9"
+  "evidenceCheckpoint": "eeb79850a8142968c418e23b482a330f120dd9c2",
+  "batchUi": {
+    "schema": "kfb.eye-profile-batch/0.2-candidate",
+    "inheritance": [
+      "rigClass",
+      "character",
+      "session"
+    ],
+    "controls": [
+      "Import",
+      "Export Character",
+      "Export Batch",
+      "Apply to Selected",
+      "Reset",
+      "Approve"
+    ]
+  },
+  "studioDonors": {
+    "eyeOval": "frizzlegraft-v1/eyeoval.v1.js",
+    "tracking": "EyeRig v6 setGazeFollow + pointTo"
+  }
 }

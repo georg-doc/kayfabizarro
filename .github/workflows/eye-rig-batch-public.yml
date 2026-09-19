@@ -34,8 +34,8 @@ jobs:
           const BASE='https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/eye-rig-batch/';
           const WANT={
             sourcePR:104,
-            sourceHead:'ef7a8f203762f670e00ccdd27b540703d855807d',
-            implementationCheckpoint:'d900fb99f3b04d52f266febd1501368c5fedd360'
+            sourceHead:'eeb79850a8142968c418e23b482a330f120dd9c2',
+            implementationCheckpoint:'c74cbd6e0691d0bd3bcc574203219cdb0e9f647f'
           };
           const result={url:BASE,want:WANT,checks:[],errors:[],screenshots:[],status:'RUNNING'};
           const check=(name,pass,detail)=>{result.checks.push({name,pass:Boolean(pass),detail});if(!pass)throw Error(name+' :: '+JSON.stringify(detail))};
@@ -89,7 +89,7 @@ jobs:
             }));
 
             check('page title',/Batch EyeRig Atlas/.test(initial.title),initial.title);
-            check('visible revision marker',initial.marker.includes('source ef7a8f2')&&initial.marker.includes('impl d900fb9')&&initial.marker.includes('PR #104'),initial.marker);
+            check('visible revision marker',initial.marker.includes('source eeb7985')&&initial.marker.includes('Medium authoring')&&initial.marker.includes('PR #104'),initial.marker);
             check('runtime no boot error',!initial.report.error,initial.report.error);
             check('source gate',initial.report.gates?.source===true,initial.report.gates);
             check('cleanup gate',initial.report.gates?.cleanup===true,initial.report.cleanup);
@@ -110,25 +110,36 @@ jobs:
               initial.report.clips);
 
             const measuredTarget=initial.report.cleanup?.sourceMeasuredSeed?.anchorCandidate;
-            const mediumRatio=initial.report.mediumSeed?.mapping?.ringToMeasuredDxRatio;
-            const calibratedRing=measuredTarget?.dx*mediumRatio;
-            check('Rig_Medium calibrated eye size',
-              Number.isFinite(calibratedRing) &&
-              Math.abs(initial.report.profile?.eye?.anchor?.ring-calibratedRing)<1e-4 &&
-              initial.report.profile?.eye?.anchor?.ring<0.30,
-              {measuredTarget,mediumRatio,actual:initial.report.profile?.eye?.anchor?.ring});
-            check('GothGirl pupil default 0.34',
-              Math.abs(initial.report.profile?.eye?.pupilSize-0.34)<1e-6,
-              initial.report.profile?.eye?.pupilSize);
+            const p=initial.report.profile?.eye, a0=p?.anchor, oval=p?.oval;
+            check('Rig_Medium authoring default',
+              Math.abs(a0?.dx-0.295)<1e-6 &&
+              Math.abs(a0?.dy-0.045)<1e-6 &&
+              Math.abs(a0?.ring-0.153)<1e-6 &&
+              Math.abs(a0?.track-0.15)<1e-6 &&
+              Math.abs(p?.pupilSize-0.34)<1e-6 &&
+              Math.abs(p?.inset-0.40)<1e-6 &&
+              Math.abs(p?.lidFit-0.90)<1e-6 &&
+              Math.abs(p?.converge-0.18)<1e-6 &&
+              Math.abs(p?.splay-0)<1e-6 &&
+              Math.abs(p?.gloss-0.10)<1e-6,
+              p);
+            check('source measurement suggestion only',
+              ['dx','dy','ring'].every(k=>Number.isFinite(measuredTarget?.[k])) &&
+              Math.abs(a0?.ring-measuredTarget?.ring)>1e-3,
+              {authoring:a0,measuredTarget});
+            check('GothGirl pupil default 0.34',Math.abs(p?.pupilSize-0.34)<1e-6,p?.pupilSize);
             check('lid base uses GothGirl face color',
               initial.report.eyes?.controls?.baseColor==='#e6cbc3' &&
-              initial.report.profile?.eye?.lidColorMode==='face-base-darkened',
-              {baseColor:initial.report.eyes?.controls?.baseColor,lidColorMode:initial.report.profile?.eye?.lidColorMode});
-            check('corrected source baseline is facial, not lateral',
-              Number.isFinite(measuredTarget?.dx) && measuredTarget.dx>0.15 && measuredTarget.dx<0.5 &&
-              Number.isFinite(measuredTarget?.dy) && measuredTarget.dy>-0.2 && measuredTarget.dy<0.2 &&
-              Number.isFinite(measuredTarget?.ring) && measuredTarget.ring>0.04 && measuredTarget.ring<0.2,
-              measuredTarget);
+              p?.lidColorMode==='face-base-darkened',
+              {baseColor:initial.report.eyes?.controls?.baseColor,lidColorMode:p?.lidColorMode});
+            check('oval donor neutral default',
+              oval?.w===1 && oval?.h===1 && oval?.d===1 && oval?.tilt===0,
+              oval);
+            check('tracking default Life',p?.trackingMode==='life',p?.trackingMode);
+            check('batchbar visible',
+              await page.locator('.batchbar').isVisible() &&
+              await page.locator('#batchApplySelectedBtn').isVisible(),
+              await page.locator('#batchSelectionStatus').textContent());
             check('measured baseline button available',
               !(await page.locator('#useMeasuredBtn').isDisabled()),
               await page.locator('#useMeasuredBtn').textContent());
@@ -144,12 +155,62 @@ jobs:
             await page.click('#resetSeedBtn');
             await pause(220);
             const resetApplied=await page.evaluate(()=>window.__EYE_RIG_BATCH.report());
-            check('reset seed restores calibrated candidate',
-              Math.abs(resetApplied.profile?.eye?.anchor?.dx-0.345)<1e-6 &&
-              Math.abs(resetApplied.profile?.eye?.anchor?.dy+0.10)<1e-6 &&
-              Math.abs(resetApplied.profile?.eye?.anchor?.ring-calibratedRing)<1e-4 &&
-              Math.abs(resetApplied.profile?.eye?.pupilSize-0.34)<1e-6,
-              {anchor:resetApplied.profile?.eye?.anchor,pupilSize:resetApplied.profile?.eye?.pupilSize,calibratedRing});
+            check('reset seed restores Medium authoring default',
+              Math.abs(resetApplied.profile?.eye?.anchor?.dx-0.295)<1e-6 &&
+              Math.abs(resetApplied.profile?.eye?.anchor?.dy-0.045)<1e-6 &&
+              Math.abs(resetApplied.profile?.eye?.anchor?.ring-0.153)<1e-6 &&
+              Math.abs(resetApplied.profile?.eye?.anchor?.track-0.15)<1e-6 &&
+              Math.abs(resetApplied.profile?.eye?.pupilSize-0.34)<1e-6 &&
+              Math.abs(resetApplied.profile?.eye?.inset-0.40)<1e-6 &&
+              Math.abs(resetApplied.profile?.eye?.converge-0.18)<1e-6,
+              resetApplied.profile?.eye);
+
+            await page.locator('[data-param="ovalW"]').evaluate(el=>{el.value='1.12';el.dispatchEvent(new Event('input',{bubbles:true}))});
+            await page.locator('[data-param="ovalTilt"]').evaluate(el=>{el.value='8';el.dispatchEvent(new Event('input',{bubbles:true}))});
+            await pause(160);
+            const ovalEdited=await page.evaluate(()=>window.__EYE_RIG_BATCH.report());
+            check('oval donor edits apply',
+              Math.abs(ovalEdited.profile?.eye?.oval?.w-1.12)<1e-6 &&
+              Math.abs(ovalEdited.profile?.eye?.oval?.tilt-8)<1e-6 &&
+              Math.abs(ovalEdited.eyes?.controls?.oval?.w-1.12)<1e-6,
+              {profile:ovalEdited.profile?.eye?.oval,rig:ovalEdited.eyes?.controls?.oval});
+
+            await page.click('[data-tracking-mode="pointer"]'); await pause(80);
+            let tracking=await page.evaluate(()=>window.__EYE_RIG_BATCH.report());
+            check('tracking Pointer mode',tracking.profile?.eye?.trackingMode==='pointer',tracking.profile?.eye?.trackingMode);
+            await page.click('[data-gaze="0,-0.85"]'); await pause(80);
+            tracking=await page.evaluate(()=>window.__EYE_RIG_BATCH.report());
+            check('tracking Fixed mode + gaze',tracking.profile?.eye?.trackingMode==='fixed'&&tracking.profile?.eye?.fixedGaze?.[1]===-0.85,tracking.profile?.eye);
+            await page.click('[data-tracking-mode="life"]'); await pause(80);
+            tracking=await page.evaluate(()=>window.__EYE_RIG_BATCH.report());
+            check('tracking Life mode',tracking.profile?.eye?.trackingMode==='life',tracking.profile?.eye?.trackingMode);
+
+            await page.locator('[data-param="ring"]').evaluate(el=>{el.value='0.18';el.dispatchEvent(new Event('input',{bubbles:true}))});
+            await page.click('#batchApplySelectedBtn'); await pause(100);
+            const appliedSelected=await page.evaluate(()=>window.__EYE_RIG_BATCH.report());
+            check('Apply to Selected restores class default',
+              Math.abs(appliedSelected.profile?.eye?.anchor?.ring-0.153)<1e-6 &&
+              appliedSelected.selectedActors?.includes('gothgirl'),
+              {ring:appliedSelected.profile?.eye?.anchor?.ring,selected:appliedSelected.selectedActors});
+
+            const batchDownloadPromise=page.waitForEvent('download');
+            await page.click('#batchExportBatchBtn');
+            const batchDownload=await batchDownloadPromise;
+            check('Export Batch download',batchDownload.suggestedFilename()==='eye-rig-medium.batch.json',batchDownload.suggestedFilename());
+
+            const roundtrip=await page.evaluate(()=>{
+              const r=window.__EYE_RIG_BATCH.report();
+              return {schema:'kfb.eye-profile-batch/0.2-candidate',rigClass:'Rig_Medium',inheritanceOrder:['rigClass','character','session'],classDefault:r.mediumSeed.authoringDefault,selectedActorIds:r.selectedActors,profiles:[r.profile]};
+            });
+            await page.setInputFiles('#importInput',{name:'eye-rig-medium.batch.json',mimeType:'application/json',buffer:Buffer.from(JSON.stringify(roundtrip))});
+            await page.waitForSelector('#importPreview:not([hidden])');
+            check('Import Batch preview visible',await page.locator('#importPreview').isVisible(),await page.locator('#importPreviewText').textContent());
+            await page.click('#acceptImportBtn'); await pause(100);
+            const imported=await page.evaluate(()=>window.__EYE_RIG_BATCH.report());
+            check('Import Batch roundtrip',
+              Math.abs(imported.profile?.eye?.anchor?.ring-0.153)<1e-6 &&
+              imported.mediumSeed?.authoringDefault?.eye?.anchor?.dx===0.295,
+              {profile:imported.profile?.eye,default:imported.mediumSeed?.authoringDefault});
 
             check('component selector has 12 entries',
               await page.locator('#componentSelect option').count()===12,
