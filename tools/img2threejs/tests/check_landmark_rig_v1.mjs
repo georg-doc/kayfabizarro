@@ -5,6 +5,7 @@ import {buildLandmark} from '../landmarks/pilot-02/geometry.mjs';
 import {shapeAsset} from '../landmarks/pilot-03/deform.mjs';
 import {rigLandmark,rigidDistanceReport,groupForPart} from '../landmarks/pilot-04/rig.mjs';
 import {sampleLivingToyState} from '../landmarks/pilot-04/reactor.mjs';
+import {deformPoint} from '../../osm-city-lab/src/style/cartoon-city.js';
 
 const root=fileURLToPath(new URL('../',import.meta.url));
 const style=JSON.parse(readFileSync(new URL('../../osm-city-lab/styles/kfb-city-v0.json',import.meta.url)));
@@ -16,6 +17,15 @@ function avgPoint(parts){
   return s.map(v=>v/Math.max(1,n));
 }
 function dist(a,b){return Math.hypot(a[0]-b[0],a[1]-b[1],a[2]-b[2]);}
+function independentAnchor(source,a,deformation){
+  if(deformation.mode==='base')return [...a.anchorOriginal];
+  const b={minY:source.bounds.min[1],maxY:source.bounds.max[1],h:Math.max(1e-5,source.bounds.size[1]),cx:(source.bounds.min[0]+source.bounds.max[0])/2,cz:(source.bounds.min[2]+source.bounds.max[2])/2};
+  const p=a.anchorOriginal,q=deformPoint({x:p[0],y:p[1],z:p[2]},b,deformation.params);
+  if(!deformation.bulge)return [q.x,q.y,q.z];
+  const t=Math.max(0,Math.min(1,(p[1]-b.minY)/b.h));
+  const center=deformPoint({x:b.cx,y:p[1],z:b.cz},b,deformation.params),s=1+deformation.bulge*Math.sin(Math.PI*t);
+  return [center.x+(q.x-center.x)*s,q.y,center.z+(q.z-center.z)*s];
+}
 const stats={};
 
 for(const id of ['spasskaya','kremlin-wall']){
@@ -32,9 +42,12 @@ for(const id of ['spasskaya','kremlin-wall']){
     ok(id+'.'+mode+'.clock-rigid',reports.every(r=>r.vertices>0&&r.maxError<1e-8),reports);
     for(const a of rigged.rig.attachments){
       const parts=rigged.parts.filter(p=>p.rigGroup===a.id),center=avgPoint(parts);
+      ok(id+'.'+mode+'.anchor-field-'+a.id,dist(independentAnchor(source,a,rigged.rig.deformation),a.anchorDeformed)<1e-9);
       ok(id+'.'+mode+'.anchor-near-clock-'+a.id,dist(center,a.anchorDeformed)<4.0,[center,a.anchorDeformed]);
-      ok(id+'.'+mode+'.basis-orthogonal-'+a.id,
-        Math.abs(a.basis.x[0]*a.basis.y[0]+a.basis.x[1]*a.basis.y[1]+a.basis.x[2]*a.basis.y[2])<1e-8);
+      const xy=Math.abs(a.basis.x[0]*a.basis.y[0]+a.basis.x[1]*a.basis.y[1]+a.basis.x[2]*a.basis.y[2]);
+      const xz=Math.abs(a.basis.x[0]*a.basis.z[0]+a.basis.x[1]*a.basis.z[1]+a.basis.x[2]*a.basis.z[2]);
+      const yz=Math.abs(a.basis.y[0]*a.basis.z[0]+a.basis.y[1]*a.basis.z[1]+a.basis.y[2]*a.basis.z[2]);
+      ok(id+'.'+mode+'.basis-orthogonal-'+a.id,Math.max(xy,xz,yz)<1e-8,[xy,xz,yz]);
     }
     stats[id+'-'+mode]={triangles:countTriangles(rigged),bounds:rigged.bounds,rigidDistance:reports};
   }
@@ -70,8 +83,15 @@ for(const mode of ['idle','disco']){
 for(const dir of [-1,1]){
   const s=sampleLivingToyState({time:.4,bpm:120,intensity:1,mode:'disco',impact:1,direction:dir});
   ok('reactor.impact-direction-'+dir,Math.sign(s.offsetX)===dir,[s.offsetX,dir]);
-  ok('reactor.impact-bounded-'+dir,Math.abs(s.offsetX)<=.61&&Math.abs(s.tiltZ)<=.081,[s.offsetX,s.tiltZ]);
+  ok('reactor.impact-bounded-'+dir,Math.abs(s.offsetX)<=.61&&Math.abs(s.tiltZ)<=.08,[s.offsetX,s.tiltZ]);
 }
+
+const viewerSource=readFileSync(root+'landmarks/pilot-04/viewer.mjs','utf8');
+const strippedViewer=viewerSource.replace(/^import .*?;\s*$/gm,'').replace(/\bexport\s+(?=(const|function|async function))/g,'');
+try{new Function(strippedViewer);ok('viewer.syntax',true);}catch(e){ok('viewer.syntax',false,String(e));}
+const indexSource=readFileSync(root+'landmarks/pilot-04/index.html','utf8');
+ok('index.controls',['rigMode','vibe','impactL','impactR','showRig'].every(id=>indexSource.includes('id="'+id+'"')));
+ok('index.module',indexSource.includes('./viewer.mjs'));
 
 const files=[
   'landmarks/pilot-04/SLICE.md','landmarks/pilot-04/rig.mjs','landmarks/pilot-04/rig-three.mjs',
