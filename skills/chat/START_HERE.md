@@ -163,6 +163,10 @@ Danach ist der [Babel Tower S2b → Hex Platform Generator](workflows/KFB_MODULA
 
 ## 2026-09-19 · KayKit Creator Lessons · Game Dev Studio research lane
 
-Kay Lousberg's creator tutorials/live-show material now has an additive KFB interpretation under [Game Dev Studio research](../../tools/game-dev-studio/research/KAYKIT_CREATOR_LESSONS_LIVING.md). Start with the detailed character/Godot tutorial, but apply its engine-neutral findings first: rig family, reusable animation libraries, calibrated bone attachments, material/texture variants, staged retargeting and semantic asset families.
+Kay Lousberg's creator tutorials/live-show material has an additive KFB interpretation under [Game Dev Studio research](../../tools/game-dev-studio/research/KAYKIT_CREATOR_LESSONS_LIVING.md). v0.2 combines the detailed character/Godot workflow with the animation overview and current KFB motion/asset evidence.
 
-This is a **research/reference lane inside the existing Game Dev Studio owner**, not a second Asset Registry, rig owner, animation owner or runtime. Asset Librarian remains canonical discovery/source truth; ToolBox/FrankenStein/Animation retain their authoring domains; named consumers retain state/physics/gameplay. Proposed metadata fields and Rig/interactive-donor benches remain proposals until separately assigned and proven.
+Engine-neutral findings now include: rig families, reusable animation libraries, calibrated bone attachments, material/texture variants, staged retargeting, semantic asset families, phase-synced locomotion transitions, measured timeScale ranges, physics-owned jump phases and phase-relative combat/interaction markers.
+
+This is a **research/reference lane inside the existing Game Dev Studio owner**, not a second Asset Registry, rig owner, animation owner or runtime. Asset Librarian remains canonical discovery/source truth; ToolBox/FrankenStein/Animation retain their authoring domains; named consumers retain state/physics/gameplay.
+
+Current research next gate: **KCL-M1 Locomotion Sync Bench**, measurement-only on one current `Rig_Medium` actor with Walking_A/B/C + Running_A/B. Do not modify consumer movement/physics and do not invent a KayKit Sprint clip.
