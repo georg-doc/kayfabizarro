@@ -2,14 +2,17 @@ import * as THREE from 'three';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 import { mountKayKitEyes } from './lib/kaykit-eye-adapter.v1.js';
-import { prepareVerifiedGothGirlCleanup } from './lib/source-face-cleanup.v1.js';
+import { prepareMediumActorCleanup } from './lib/medium-source-eye-cleanup.v1.js';
 
-const PIN = '5650b6c54d8789b20ea80abe857688173d506d3b';
-const CDN = `https://cdn.jsdelivr.net/gh/georg-doc/kayfabizarro@${PIN}/`;
-const ACTOR_URL = CDN + 'media/3D_Assets/KayKit_Mystery_Series6/GothGirl/characters/GothGirl.glb';
-const GENERAL_URL = CDN + 'media/3D_Assets/KayKit_Mystery_Series6/GothGirl/Animations/gltf/Rig_Medium/Rig_Medium_General.glb';
-const MOVE_URL = CDN + 'media/3D_Assets/KayKit_Mystery_Series6/GothGirl/Animations/gltf/Rig_Medium/Rig_Medium_MovementBasic.glb';
-const CONTRACT_URL = CDN + 'tools/KFB-ToolBox/kfb-rigs-embed-v3/contracts/kfb-pet-graft-driver.v4.json';
+const DONOR_PIN = '5650b6c54d8789b20ea80abe857688173d506d3b';
+const DONOR_CDN = `https://cdn.jsdelivr.net/gh/georg-doc/kayfabizarro@${DONOR_PIN}/`;
+const ANIM_PIN = 'aa16a777a970f23d3f11fb3c23dc40718b04fa88';
+const ANIM_CDN = `https://cdn.jsdelivr.net/gh/georg-doc/kayfabizarro@${ANIM_PIN}/`;
+const CATALOG_URL = './data/rig-medium-actors.v0.json';
+const GENERAL_URL = ANIM_CDN + 'media/3D_Assets/KayKit_Character_Animations_1.1/Animations/gltf/Rig_Medium/Rig_Medium_General.glb';
+const MOVE_URL = ANIM_CDN + 'media/3D_Assets/KayKit_Character_Animations_1.1/Animations/gltf/Rig_Medium/Rig_Medium_MovementBasic.glb';
+const CONTRACT_URL = DONOR_CDN + 'tools/KFB-ToolBox/kfb-rigs-embed-v3/contracts/kfb-pet-graft-driver.v4.json';
+function actorUrl(actor){ return encodeURI(`https://cdn.jsdelivr.net/gh/georg-doc/kayfabizarro@${actor.revision}/${actor.path}`); }
 const STORAGE_KEY = 'kfb.toolbox.eye-rig-batch.v0';
 const MEDIUM_SEED_URL = './data/rig-medium-default.v0.json';
 const $ = (q) => document.querySelector(q);
@@ -19,7 +22,8 @@ const logLines = [];
 let bootError = null;
 
 const state = {
-  seed: null, mediumSeed: null, profile: null, approved: null, pendingImport: null,
+  seed: null, mediumSeed: null, catalog: [], profile: null, profiles: {}, approved: null, pendingImport: null,
+  currentActor: null, currentActorId: null, rosterFilter: 'all', switching: false, loader: null,
   figure: null, stageRoot: null, cleanup: null, eyes: null, mixer: null,
   componentDiagnosticRestore: null, qaLast: null, savedLegacyDefault: false,
   selectedActors: new Set(['gothgirl']), trackingMode: 'life', fixedGaze: [0,0],
@@ -35,9 +39,22 @@ function log(msg) {
 }
 function setBadge(el, text, kind) { el.textContent = text; el.className = `badge ${kind}`; }
 function gate(id, status) { const el = $(id); el.className = `gate ${status}`; }
-function sourceRef() { return { repo:'georg-doc/kayfabizarro', path:state.profile.source.path, revision:PIN }; }
+function sourceRef() {
+  return { repo:'georg-doc/kayfabizarro', path:state.currentActor?.path || state.profile?.source?.path, revision:state.currentActor?.revision || state.profile?.source?.revision };
+}
 function readSaved() { try { return JSON.parse(localStorage.getItem(STORAGE_KEY) || 'null'); } catch { return null; } }
-function save() { localStorage.setItem(STORAGE_KEY, JSON.stringify({ profile: state.profile, approved: state.approved, classDefault: state.mediumSeed?.authoringDefault || null, selectedActors:[...state.selectedActors] })); }
+function save() {
+  if(state.profile?.actorId) state.profiles[state.profile.actorId]=clone(state.profile);
+  localStorage.setItem(STORAGE_KEY, JSON.stringify({
+    profiles:state.profiles,
+    profile:state.profile,
+    approved:state.approved,
+    classDefault:state.mediumSeed?.authoringDefault || null,
+    selectedActors:[...state.selectedActors],
+    currentActorId:state.currentActorId,
+    rosterFilter:state.rosterFilter
+  }));
+}
 function value(v, digits=3) { return Number(v).toFixed(digits).replace(/0+$/,'').replace(/\.$/,''); }
 function near(a,b,eps=1e-6){ return Number.isFinite(+a) && Math.abs(+a-b)<=eps; }
 function isLegacyUntunedProfile(p) {
@@ -76,6 +93,106 @@ function applyAuthoringDefaultToProfile(profile=state.profile, { markSession=tru
   profile.status='AUTO_CANDIDATE';
   return profile;
 }
+
+function actorById(id){ return state.catalog.find((a)=>a.id===id) || null; }
+function makeActorProfile(actor) {
+  const p=clone(state.seed);
+  const d=classEyeDefault();
+  p.actorId=actor.id;
+  p.source={repo:'georg-doc/kayfabizarro',path:actor.path,revision:actor.revision};
+  p.rigClass='Rig_Medium';
+  p.sourceFace={
+    headMesh:null, expectedConnectedComponents:null, connectedComponents:null, eyeComponents:[],
+    pairConfidence:0, femaleOuterLashCandidate:'UNRESOLVED', removalMode:actor.cleanup?.mode||'auto-mirrored-front-pair',
+    guard:'generic cleanup must pass fail-closed detector', status:'PENDING_AUTO_DETECT',
+    faceColor:actor.faceColor||null, faceColorSource:actor.faceColor?'catalog-explicit':'generic-fallback-unverified'
+  };
+  p.eye={
+    anchor:clone(d.anchor||{}),
+    pupilStyle:d.pupilStyle||'matte-cute',
+    pupilSize:d.pupilSize??0.34, gloss:d.gloss??0.1, inset:d.inset??0.4,
+    lidFit:d.lidFit??0.9, converge:d.converge??0.18, splay:d.splay??0,
+    baseColor:actor.faceColor||'#b58f83', lidColorMode:d.lidColorMode||'face-base-darkened',
+    trackingMode:d.trackingMode||'life', fixedGaze:clone(d.fixedGaze||[0,0]),
+    oval:clone(d.oval||{w:1,h:1,d:1,tilt:0})
+  };
+  p.status='AUTO_CANDIDATE';
+  p.reviewState='UNREVIEWED';
+  p.inheritance={order:['rigClass','character','session'],rigClass:'Rig_Medium',classSeed:'data/rig-medium-default.v0.json',characterId:actor.id,sessionAdjusted:false};
+  p.evidence={camera:'front',motionClip:'bind',sourceEyeCleanupVisuallyAccepted:false,eyeProfileVisuallyApproved:false};
+  return p;
+}
+function ensureProfile(actor) {
+  if(!actor) return null;
+  const existing=state.profiles[actor.id];
+  if(existing) return clone(existing);
+  const p=makeActorProfile(actor); state.profiles[actor.id]=clone(p); return p;
+}
+function currentReviewState(actorId) {
+  return state.profiles[actorId]?.reviewState || 'UNREVIEWED';
+}
+function reviewClass(stateName) {
+  if(['APPROVED','ADJUSTED_APPROVED'].includes(stateName)) return 'approved';
+  if(stateName==='UNSUPPORTED') return 'unsupported';
+  if(stateName==='REJECTED') return 'rejected';
+  if(stateName==='ADJUSTED') return 'adjusted';
+  return 'candidate';
+}
+function isReviewedState(v){ return ['APPROVED','ADJUSTED_APPROVED','UNSUPPORTED','REJECTED'].includes(v); }
+function renderRoster() {
+  const all=state.catalog || [];
+  const filter=state.rosterFilter;
+  const visible=all.filter((a)=>{
+    const rs=currentReviewState(a.id);
+    if(filter==='unreviewed') return rs==='UNREVIEWED';
+    if(filter==='adjusted') return rs==='ADJUSTED'||rs==='ADJUSTED_APPROVED';
+    if(filter==='unsupported') return rs==='UNSUPPORTED';
+    return true;
+  });
+  const list=$('#actorList');
+  if(list) list.innerHTML=visible.map((a)=>{
+    const rs=currentReviewState(a.id), current=a.id===state.currentActorId, checked=state.selectedActors.has(a.id);
+    return `<div class="actor-row ${current?'current':''}" data-row-id="${a.id}">
+      <input class="actor-select" data-select-id="${a.id}" type="checkbox" ${checked?'checked':''} aria-label="Select ${a.label}">
+      <button class="actor-card ${current?'selected':''}" data-actor-id="${a.id}" type="button">
+        <span class="actor-icon">${a.initials||a.label.slice(0,2).toUpperCase()}</span>
+        <span class="actor-copy"><strong>${a.label}</strong><small>Rig_Medium · ${rs.replaceAll('_',' ')}</small></span>
+        <span class="dot ${reviewClass(rs)}" title="${rs}"></span>
+      </button>
+    </div>`;
+  }).join('');
+  const reviewed=all.filter((a)=>isReviewedState(currentReviewState(a.id))).length;
+  const adjusted=all.filter((a)=>['ADJUSTED','ADJUSTED_APPROVED'].includes(currentReviewState(a.id))).length;
+  const unsupported=all.filter((a)=>currentReviewState(a.id)==='UNSUPPORTED').length;
+  const count=$('#rosterCount'); if(count) count.textContent=`${reviewed}/${all.length} reviewed`;
+  const stats=$('#rosterStats'); if(stats) stats.textContent=`${visible.length} shown · ${adjusted} adjusted · ${unsupported} unsupported`;
+  $$('[data-roster-filter]').forEach((b)=>b.classList.toggle('active',b.dataset.rosterFilter===filter));
+  updateBatchUi();
+}
+function nextUnreviewed() {
+  const all=state.catalog||[]; if(!all.length) return null;
+  const start=Math.max(0,all.findIndex((a)=>a.id===state.currentActorId));
+  for(let step=1;step<=all.length;step++){
+    const a=all[(start+step)%all.length];
+    if(currentReviewState(a.id)==='UNREVIEWED') return a;
+  }
+  return null;
+}
+function updateActorAudit() {
+  const a=state.currentActor;
+  if(!a) return;
+  $('#sourceActor').textContent=a.revision.slice(0,7);
+  $('#sourceActorName').textContent=a.label;
+  $('#sourceCleanup').textContent=state.cleanupReady ? (state.cleanup.report?.removalMode||'candidate') : 'manual / unsupported';
+  $('#sourcePath').textContent=a.path.split('/').pop();
+  const info=$('#actorTechHint');
+  if(info) info.textContent=`${a.provenance} · ${a.path}`;
+}
+function storeCurrentProfile() {
+  if(!state.profile?.actorId) return;
+  try{ profileFromRig(); }catch{}
+  state.profiles[state.profile.actorId]=clone(state.profile);
+}
 function recordMeasuredSuggestion(measured) {
   const m=measured?.anchorCandidate;
   if(!m) return null;
@@ -105,7 +222,8 @@ function setTrackingMode(mode, persist=true) {
 }
 function updateBatchUi() {
   const selected=state.selectedActors.size;
-  const el=$('#batchSelectionStatus'); if(el) el.textContent=`${selected} selected · Rig_Medium · ${state.profile?.actorId || 'loading'}`;
+  const reviewed=(state.catalog||[]).filter((a)=>isReviewedState(currentReviewState(a.id))).length;
+  const el=$('#batchSelectionStatus'); if(el) el.textContent=`${selected} selected · ${reviewed}/${state.catalog.length||0} reviewed · ${state.currentActor?.label || 'loading'}`;
   const btn=$('#batchApplySelectedBtn'); if(btn) btn.disabled=selected===0;
 }
 
@@ -138,20 +256,27 @@ function renderReport() {
   if (logLines.length) chunks.push(`\nLOG\n${logLines.slice(-8).join('\n')}`);
   $('#sourceReport').textContent = chunks.join('\n') || 'Waiting for source…';
   const on = ['sourceReady','cleanupReady','hostReady','eyeReady','motionReady'].filter((k)=>state[k]).length;
-  $('#runtimeLine').textContent = bootError ? `FAIL · ${bootError.message}` : `${on}/5 technical gates · source ${PIN.slice(0,7)} · ${state.currentMotion} · ${state.currentView}`;
+  $('#runtimeLine').textContent = bootError ? `FAIL · ${bootError.message}` : `${on}/5 gates · ${state.currentActor?.label||'no actor'} · ${state.currentMotion} · ${state.currentView}`;
 }
 
 function setReviewStatus(status) {
-  state.profile.status = status;
-  if (status === 'EYE_PROFILE_VISUALLY_APPROVED' || status === 'ADJUSTED_APPROVED') {
-    profileFromRig(); state.approved = clone(state.profile);
+  state.profile.status=status;
+  const map={
+    EYE_PROFILE_VISUALLY_APPROVED:'APPROVED',
+    ADJUSTED_APPROVED:'ADJUSTED_APPROVED',
+    REJECTED:'REJECTED',
+    UNSUPPORTED:'UNSUPPORTED'
+  };
+  if(map[status]) state.profile.reviewState=map[status];
+  if(status==='EYE_PROFILE_VISUALLY_APPROVED'||status==='ADJUSTED_APPROVED'){
+    profileFromRig(); state.approved=clone(state.profile);
   }
+  state.profiles[state.profile.actorId]=clone(state.profile);
   save();
-  $('#reviewStatus').textContent = status;
-  $('#reviewStatus').className = `badge ${status.includes('APPROVED') ? 'approved' : status === 'REJECTED' ? 'rejected' : 'candidate'}`;
-  $('#actorStatusDot').className = `dot ${status.includes('APPROVED') ? 'approved' : status === 'REJECTED' ? 'rejected' : 'candidate'}`;
+  $('#reviewStatus').textContent=state.profile.reviewState || status;
+  $('#reviewStatus').className=`badge ${reviewClass(state.profile.reviewState)}`;
+  renderRoster();
 }
-
 function bindUiFromProfile() {
   const e = state.profile.eye, a = e.anchor, oval=e.oval || {w:1,h:1,d:1,tilt:0};
   const values = { dx:a.dx, dy:a.dy, ring:a.ring, track:a.track, pupilSize:e.pupilSize, gloss:e.gloss, inset:e.inset, lidFit:e.lidFit, converge:e.converge, splay:e.splay,
@@ -167,7 +292,6 @@ function bindUiFromProfile() {
   $('#eyeRigToggle').checked = state.eyes ? state.eyes.visible : true;
   $('#matteBtn').classList.toggle('active', e.pupilStyle !== 'glossy-googly');
   $('#googlyBtn').classList.toggle('active', e.pupilStyle === 'glossy-googly');
-  const select=$('#actorSelectToggle'); if(select) select.checked=state.selectedActors.has(state.profile.actorId);
   state.fixedGaze=clone(e.fixedGaze || [0,0]);
   setTrackingMode(e.trackingMode || 'life', false);
   updateBatchUi();
@@ -217,19 +341,27 @@ function downloadJson(name, data) {
 }
 
 function wireProfileIo() {
-  const exportCharacter=()=>{ profileFromRig(); downloadJson(`${state.profile.actorId}.eye-profile.json`, state.profile); };
+  const exportCharacter=()=>{ profileFromRig(); state.profiles[state.profile.actorId]=clone(state.profile); downloadJson(`${state.profile.actorId}.eye-profile.json`,state.profile); };
   const exportBatch=()=>{
-    profileFromRig();
+    storeCurrentProfile();
+    const ids=state.selectedActors.size?[...state.selectedActors]:state.catalog.map((a)=>a.id);
+    const profiles=ids.map((id)=>ensureProfile(actorById(id))).filter(Boolean);
     downloadJson('eye-rig-medium.batch.json',{
       schema:'kfb.eye-profile-batch/0.2-candidate',
       rigClass:'Rig_Medium',
       inheritanceOrder:['rigClass','character','session'],
       classDefault:clone(state.mediumSeed.authoringDefault),
-      selectedActorIds:[...state.selectedActors],
-      profiles:[clone(state.profile)]
+      selectedActorIds:ids,
+      profiles
     });
   };
-  const resetCurrent=()=>{ state.profile=applyAuthoringDefaultToProfile(clone(state.seed),{markSession:false}); applyProfileToRig(state.profile); save(); log('reset to Rig_Medium authoring default + actor identity'); };
+  const resetCurrent=()=>{
+    const actor=state.currentActor; if(!actor)return;
+    state.profile=applyAuthoringDefaultToProfile(makeActorProfile(actor),{markSession:false});
+    state.profile.reviewState='UNREVIEWED';
+    state.profiles[actor.id]=clone(state.profile);
+    applyProfileToRig(state.profile); save(); renderRoster(); log('reset current actor to Rig_Medium authoring default');
+  };
   $('#exportBtn').onclick=exportCharacter;
   $('#exportBatchBtn').onclick=exportBatch;
   $('#copyBtn').onclick=async()=>{ profileFromRig(); await navigator.clipboard?.writeText(JSON.stringify(state.profile,null,2)); log('profile copied'); };
@@ -238,47 +370,66 @@ function wireProfileIo() {
   $('#batchExportCharacterBtn').onclick=exportCharacter;
   $('#batchExportBatchBtn').onclick=exportBatch;
   $('#batchResetBtn').onclick=resetCurrent;
-  $('#batchApproveBtn').onclick=()=>setReviewStatus('ADJUSTED_APPROVED');
+  $('#batchApproveBtn').onclick=()=>setReviewStatus(state.profile.reviewState==='ADJUSTED'?'ADJUSTED_APPROVED':'EYE_PROFILE_VISUALLY_APPROVED');
   $('#batchApplySelectedBtn').onclick=()=>{
-    if(!state.selectedActors.has(state.profile.actorId)) return;
-    applyAuthoringDefaultToProfile(state.profile,{markSession:true});
-    applyProfileToRig(state.profile); save(); log(`Rig_Medium authoring default applied to selected · ${[...state.selectedActors].join(', ')}`);
-  };
-  $('#actorSelectToggle').onchange=(e)=>{
-    if(e.target.checked) state.selectedActors.add(state.profile.actorId); else state.selectedActors.delete(state.profile.actorId);
-    updateBatchUi(); save();
+    storeCurrentProfile();
+    for(const id of state.selectedActors){
+      const actor=actorById(id); if(!actor)continue;
+      const p=applyAuthoringDefaultToProfile(ensureProfile(actor),{markSession:true});
+      p.reviewState='UNREVIEWED'; state.profiles[id]=clone(p);
+    }
+    state.profile=clone(state.profiles[state.currentActorId]);
+    applyProfileToRig(state.profile); save(); renderRoster();
+    log(`Rig_Medium authoring default applied to ${state.selectedActors.size} selected actor(s)`);
   };
   $('#importInput').onchange=async(e)=>{
     try{
-      const parsed=validateImport(JSON.parse(await e.target.files[0].text()));
-      state.pendingImport=clone(parsed);
+      const data=JSON.parse(await e.target.files[0].text());
+      if(data?.schema==='kfb.eye-profile/0.1-candidate'){
+        if(!actorById(data.actorId)) throw new Error('actorId not in current Medium catalog');
+        state.pendingImport={kind:'profile',data};
+      }else if(data?.schema==='kfb.eye-profile-batch/0.2-candidate'){
+        if(data.rigClass!=='Rig_Medium'||!Array.isArray(data.profiles)) throw new Error('invalid Medium batch');
+        state.pendingImport={kind:'batch',data};
+      }else throw new Error('unsupported import schema');
       $('#importPreview').hidden=false;
-      $('#importPreviewTitle').textContent=parsed.kind==='batch' ? `Rig_Medium batch · ${parsed.data.profiles.length} profile(s)` : `${parsed.data.actorId} · ${parsed.data.status}`;
-      $('#importPreviewText').textContent=parsed.kind==='batch'
-        ? 'Validated batch import. Class default / selected actor list / matching current actor profile are still preview-only.'
-        : `Validated ${parsed.data.schema}; source ${parsed.data.source.revision.slice(0,7)}. Nothing has been applied yet.`;
-    }catch(err){ alert(`Import rejected: ${err.message}`); }
+      $('#importPreviewTitle').textContent=state.pendingImport.kind==='batch'?`Rig_Medium batch · ${data.profiles.length} profile(s)`:`${data.actorId} · ${data.status}`;
+      $('#importPreviewText').textContent='Validated structure. Nothing has been applied yet.';
+    }catch(err){alert(`Import rejected: ${err.message}`);}
     e.target.value='';
   };
-  $('#acceptImportBtn').onclick=()=>{
-    if(!state.pendingImport) return;
+  $('#acceptImportBtn').onclick=async()=>{
+    if(!state.pendingImport)return;
     const imp=state.pendingImport; state.pendingImport=null; $('#importPreview').hidden=true;
     if(imp.kind==='profile'){
-      state.profile=clone(imp.data);
-    } else {
+      state.profiles[imp.data.actorId]=clone(imp.data);
+      if(imp.data.actorId===state.currentActorId){state.profile=clone(imp.data);applyProfileToRig(state.profile);}
+    }else{
       if(imp.data.classDefault) state.mediumSeed.authoringDefault=clone(imp.data.classDefault);
-      state.selectedActors=new Set(imp.data.selectedActorIds || ['gothgirl']);
-      const current=imp.data.profiles.find((p)=>p.actorId===state.seed.actorId);
-      state.profile=current ? clone(current) : applyAuthoringDefaultToProfile(clone(state.seed),{markSession:false});
+      for(const p of imp.data.profiles||[]) if(actorById(p.actorId)) state.profiles[p.actorId]=clone(p);
+      state.selectedActors=new Set((imp.data.selectedActorIds||[]).filter((id)=>actorById(id)));
+      if(state.profiles[state.currentActorId]){state.profile=clone(state.profiles[state.currentActorId]);applyProfileToRig(state.profile);}
     }
-    applyProfileToRig(state.profile); save(); log(`validated ${imp.kind} import accepted`);
+    save(); renderRoster(); log(`validated ${imp.kind} import accepted`);
   };
-  $('#cancelImportBtn').onclick=()=>{ state.pendingImport=null; $('#importPreview').hidden=true; };
+  $('#cancelImportBtn').onclick=()=>{state.pendingImport=null;$('#importPreview').hidden=true;};
   $('#resetSeedBtn').onclick=resetCurrent;
-  $('#revertApprovedBtn').onclick=()=>{ if(!state.approved)return; state.profile=clone(state.approved); applyProfileToRig(state.profile); save(); log('reverted to last approved profile'); };
+  $('#revertApprovedBtn').onclick=()=>{if(!state.approved)return;state.profile=clone(state.approved);state.profiles[state.profile.actorId]=clone(state.profile);applyProfileToRig(state.profile);save();renderRoster();log('reverted to last approved profile');};
   $$('[data-review]').forEach((b)=>b.onclick=()=>setReviewStatus(b.dataset.review));
 }
-
+function wireRoster() {
+  $('#actorList').onclick=async(e)=>{
+    const button=e.target.closest('[data-actor-id]');
+    if(button) await loadActor(button.dataset.actorId);
+  };
+  $('#actorList').onchange=(e)=>{
+    const box=e.target.closest('[data-select-id]'); if(!box)return;
+    if(box.checked) state.selectedActors.add(box.dataset.selectId); else state.selectedActors.delete(box.dataset.selectId);
+    save(); updateBatchUi();
+  };
+  $$('[data-roster-filter]').forEach((b)=>b.onclick=()=>{state.rosterFilter=b.dataset.rosterFilter;save();renderRoster();});
+  $('#nextUnreviewedBtn').onclick=async()=>{const a=nextUnreviewed();if(a)await loadActor(a.id);};
+}
 function configureRenderer() {
   const stage = $('#stage');
   const renderer = new THREE.WebGLRenderer({antialias:true, alpha:false, preserveDrawingBuffer:true});
@@ -350,51 +501,87 @@ async function loadMotion(loader) {
   log(`motion packs loaded · ${state.clips.size} unique clips · required ${state.motionReady?'OK':'MISSING'}`);
 }
 
-function wireComponentDiagnostic(camera, controls) {
-  const select=$('#componentSelect'), isolateBtn=$('#isolateComponentBtn'), exitBtn=$('#exitComponentBtn'), hint=$('#componentHint');
-  const components=state.cleanup?.report?.components || [];
-  if(!select || !isolateBtn || !exitBtn || !hint || !components.length) return;
-
+function wireComponentDiagnostic(camera,controls) {
+  const select=$('#componentSelect'),isolateBtn=$('#isolateComponentBtn'),exitBtn=$('#exitComponentBtn'),hint=$('#componentHint');
+  if(!select||!isolateBtn||!exitBtn||!hint)return;
+  select.innerHTML=''; select.disabled=true; isolateBtn.disabled=true; exitBtn.disabled=true;
+  const components=state.cleanup?.report?.components||[];
+  if(!components.length){
+    hint.textContent=state.cleanupReady?'Generic cleanup active · component isolation available only for verified-source actors':'Cleanup requires manual review · no source components hidden';
+    return;
+  }
   select.innerHTML=components.map((c)=>`<option value="${c.component}">#${c.component} · ${c.triangles} tris</option>`).join('');
   select.disabled=false; isolateBtn.disabled=false;
   hint.textContent=`${components.length} measured head components · source-only diagnostic · no profile change`;
-
   const isolateSelected=()=>{
     const component=+select.value;
     if(!state.componentDiagnosticRestore){
-      state.componentDiagnosticRestore={
-        cleanup:!!state.cleanup.active,
-        eyeRig:!!$('#eyeRigToggle').checked,
-        hostDebug:!!$('#hostDebugToggle').checked,
-        motion:state.currentMotion
-      };
-      poseBind();
-      $('#cleanupToggle').checked=false; state.cleanup.apply(false);
-      $('#eyeRigToggle').checked=false; state.eyes.setVisible(false);
-      $('#hostDebugToggle').checked=false; $('#hostDebugToggle').dispatchEvent(new Event('change'));
-      setView('front',camera,controls);
+      state.componentDiagnosticRestore={cleanup:!!state.cleanup.active,eyeRig:!!$('#eyeRigToggle').checked,hostDebug:!!$('#hostDebugToggle').checked,motion:state.currentMotion};
+      poseBind(); $('#cleanupToggle').checked=false; state.cleanup.apply(false); $('#eyeRigToggle').checked=false; state.eyes.setVisible(false);
+      $('#hostDebugToggle').checked=false; $('#hostDebugToggle').dispatchEvent(new Event('change')); setView('front',camera,controls);
     }
-    const detail=state.cleanup.setComponentIsolation(component);
-    if(!detail) return;
-    exitBtn.disabled=false;
-    hint.textContent=`Component #${component} · ${detail.triangles} tris · source-only isolation · use Front / ¾ / Side`;
-    renderReport();
+    const detail=state.cleanup.setComponentIsolation(component); if(!detail)return;
+    exitBtn.disabled=false; hint.textContent=`Component #${component} · ${detail.triangles} tris · source-only isolation`; renderReport();
   };
-
   isolateBtn.onclick=isolateSelected;
-  select.onchange=()=>{ if(state.cleanup.isolatedComponent != null) isolateSelected(); };
+  select.onchange=()=>{if(state.cleanup.isolatedComponent!=null)isolateSelected();};
   exitBtn.onclick=()=>{
     state.cleanup.clearComponentIsolation();
-    const restore=state.componentDiagnosticRestore || {cleanup:true,eyeRig:true,hostDebug:false,motion:'bind'};
-    $('#cleanupToggle').checked=!!restore.cleanup; state.cleanup.apply(!!restore.cleanup);
-    $('#eyeRigToggle').checked=!!restore.eyeRig; state.eyes.setVisible(!!restore.eyeRig);
-    $('#hostDebugToggle').checked=!!restore.hostDebug; $('#hostDebugToggle').dispatchEvent(new Event('change'));
-    if(restore.motion && restore.motion!=='bind') playMotion(restore.motion); else poseBind();
-    state.componentDiagnosticRestore=null;
-    exitBtn.disabled=true;
-    hint.textContent=`${components.length} measured head components · source-only diagnostic · no profile change`;
-    renderReport();
+    const restore=state.componentDiagnosticRestore||{cleanup:true,eyeRig:true,hostDebug:false,motion:'bind'};
+    $('#cleanupToggle').checked=!!restore.cleanup;state.cleanup.apply(!!restore.cleanup);
+    $('#eyeRigToggle').checked=!!restore.eyeRig;state.eyes.setVisible(!!restore.eyeRig);
+    $('#hostDebugToggle').checked=!!restore.hostDebug;$('#hostDebugToggle').dispatchEvent(new Event('change'));
+    if(restore.motion&&restore.motion!=='bind')playMotion(restore.motion);else poseBind();
+    state.componentDiagnosticRestore=null;exitBtn.disabled=true;hint.textContent=`${components.length} measured head components · source-only diagnostic`;renderReport();
   };
+}
+
+async function loadActor(actorId,{preserve=true}={}) {
+  const actor=actorById(actorId); if(!actor||state.switching)return false;
+  state.switching=true;
+  const loading=$('#loadingCard');
+  try{
+    if(preserve) storeCurrentProfile();
+    if(loading){loading.hidden=false;$('#loadingDetail').textContent=`Loading ${actor.label}…`;}
+    state.currentAction?.stop?.(); state.currentAction=null;
+    state.mixer?.stopAllAction?.(); state.eyes?.dispose?.(); state.cleanup?.dispose?.();
+    if(state.figure?.parent) state.figure.parent.remove(state.figure);
+    state.figure=null; state.eyes=null; state.cleanup=null; state.mixer=null; state.componentDiagnosticRestore=null;
+    state.currentActor=actor; state.currentActorId=actor.id; state.profile=ensureProfile(actor);
+    state.sourceReady=state.cleanupReady=state.hostReady=state.eyeReady=false;
+    gate('#gateSource','pending');gate('#gateCleanup','pending');gate('#gateHost','pending');gate('#gateEye','pending');
+    renderRoster(); updateActorAudit();
+
+    const gltf=await state.loader.loadAsync(actorUrl(actor));
+    const figure=gltf.scene; state.figure=figure; state.stageRoot.add(figure);
+    const norm=normalizeActor(figure); figure.visible=false; state.sourceReady=true; gate('#gateSource','pass');
+    log(`${actor.label} loaded · ${norm.sourceHeight} → ${norm.normalizedHeight} high`);
+
+    const cleanup=prepareMediumActorCleanup({THREE,figure,actor,log}); state.cleanup=cleanup;
+    state.cleanupReady=['AUTO_CANDIDATE','SOURCE_IDENTITY_VERIFIED_AUTO_CANDIDATE','AUTO_CANDIDATE_GENERIC'].includes(cleanup.status);
+    gate('#gateCleanup',state.cleanupReady?'pass':'fail'); if(state.cleanupReady) cleanup.apply(true);
+    state.profile.sourceFace={...state.profile.sourceFace,...clone(cleanup.report)};
+    if(!state.cleanupReady && state.profile.reviewState==='UNREVIEWED') state.profile.technicalNote='source-eye cleanup requires manual review';
+
+    state.mixer=new THREE.AnimationMixer(figure);
+    const eyes=await mountKayKitEyes({THREE,figure,sourceRef:sourceRef(),profile:state.profile,expressionContract:window.__EYE_RIG_CONTRACT,camera:window.__EYE_RIG_BATCH.camera,log});
+    state.eyes=eyes;
+    const measured=cleanup.measureOnFaceHost?.(eyes.faceHost); if(measured) recordMeasuredSuggestion(measured);
+    state.hostReady=eyes.faceHost.status==='OK'; state.eyeReady=!!eyes.eyeFrame();
+    gate('#gateHost',state.hostReady?'pass':'fail');gate('#gateEye',state.eyeReady?'pass':'fail');
+    figure.visible=true;
+    bindUiFromProfile(); setView('front',window.__EYE_RIG_BATCH.camera,window.__EYE_RIG_BATCH.controls); poseBind();
+    wireComponentDiagnostic(window.__EYE_RIG_BATCH.camera,window.__EYE_RIG_BATCH.controls);
+    updateActorAudit(); renderRoster(); save();
+    if(loading)loading.hidden=true;
+    setBadge($('#bootBadge'),state.sourceReady&&state.hostReady&&state.eyeReady?'READY':'CHECK',state.sourceReady&&state.hostReady&&state.eyeReady?'pass':'candidate');
+    return true;
+  }catch(err){
+    console.error(err); log(`actor load failed · ${actor.label} · ${err.message}`);
+    const p=ensureProfile(actor); p.status='UNSUPPORTED'; p.reviewState='UNSUPPORTED'; p.technicalNote=`load failed: ${err.message}`; state.profiles[actor.id]=clone(p); state.profile=p;
+    renderRoster(); save(); if(loading){loading.hidden=false;$('#loadingDetail').textContent=`Unsupported · ${err.message}`;}
+    setBadge($('#bootBadge'),'CHECK','candidate'); return false;
+  }finally{ state.switching=false; }
 }
 
 async function captureQaContactSheet(renderer,camera,controls) {
@@ -445,7 +632,7 @@ function wireRuntimeControls(camera,controls,renderer) {
     }
     else if(['wander','tremor'].includes(k)){state.profile.life[k]=v; state.eyes.setLife({[k]:v});}
     else if(['a','c','j'].includes(k)){state.profile.kinetics[k]=v; state.eyes.setKinetics({[k]:v});}
-    if(state.profile.status==='EYE_PROFILE_VISUALLY_APPROVED'||state.profile.status==='ADJUSTED_APPROVED')setReviewStatus('AUTO_CANDIDATE'); else save();
+    state.profile.status='AUTO_CANDIDATE'; state.profile.reviewState='ADJUSTED'; state.profiles[state.profile.actorId]=clone(state.profile); save(); renderRoster();
   });
   const measured=state.cleanup?.report?.sourceMeasuredSeed?.anchorCandidate;
   const measuredBtn=$('#useMeasuredBtn'), measuredHint=$('#measuredSeedHint');
@@ -469,43 +656,42 @@ function wireRuntimeControls(camera,controls,renderer) {
 }
 
 async function boot() {
-  const [seed,mediumSeed] = await Promise.all([
+  const [seed,mediumSeed,catalog,contract] = await Promise.all([
     fetch('./data/gothgirl.seed.json').then((r)=>{if(!r.ok)throw new Error(`seed ${r.status}`);return r.json();}),
-    fetch(MEDIUM_SEED_URL).then((r)=>{if(!r.ok)throw new Error(`medium seed ${r.status}`);return r.json();})
+    fetch(MEDIUM_SEED_URL).then((r)=>{if(!r.ok)throw new Error(`medium seed ${r.status}`);return r.json();}),
+    fetch(CATALOG_URL).then((r)=>{if(!r.ok)throw new Error(`actor catalog ${r.status}`);return r.json();}),
+    fetch(CONTRACT_URL).then((r)=>{if(!r.ok)throw new Error(`contract ${r.status}`);return r.json();})
   ]);
-  state.seed=seed; state.mediumSeed=mediumSeed;
+  state.seed=seed; state.mediumSeed=mediumSeed; state.catalog=catalog.actors||[];
+  window.__EYE_RIG_CONTRACT=contract;
   const saved=readSaved();
   if(saved?.classDefault) state.mediumSeed.authoringDefault=clone(saved.classDefault);
-  state.selectedActors=new Set(saved?.selectedActors?.length ? saved.selectedActors : ['gothgirl']);
-  state.savedLegacyDefault=isLegacyUntunedProfile(saved?.profile);
-  state.profile = saved?.profile ? validateProfile(saved.profile) : clone(seed);
-  state.approved=saved?.approved||null;
-  if(state.savedLegacyDefault) applyAuthoringDefaultToProfile(state.profile,{markSession:false});
-  if(!state.profile.eye.baseColor){
-    state.profile.eye.baseColor=seed.sourceFace.faceColor || mediumSeed.reference.actorFaceColor;
-    state.profile.eye.lidColorMode=mediumSeed.authoringDefault?.eye?.lidColorMode || 'face-base-darkened';
+  state.profiles=clone(saved?.profiles||{});
+  if(saved?.profile?.actorId && !state.profiles[saved.profile.actorId]) state.profiles[saved.profile.actorId]=clone(saved.profile);
+  state.selectedActors=new Set((saved?.selectedActors?.length?saved.selectedActors:['gothgirl']).filter((id)=>actorById(id)));
+  state.rosterFilter=saved?.rosterFilter||'all';
+  state.savedLegacyDefault=isLegacyUntunedProfile(state.profiles.gothgirl);
+  if(state.savedLegacyDefault){
+    const g=actorById('gothgirl'); state.profiles.gothgirl=applyAuthoringDefaultToProfile(state.profiles.gothgirl||makeActorProfile(g),{markSession:false}); state.profiles.gothgirl.reviewState='UNREVIEWED';
   }
-  state.profile.eye.oval=clone(state.profile.eye.oval || mediumSeed.authoringDefault?.eye?.oval || {w:1,h:1,d:1,tilt:0});
-  state.profile.eye.trackingMode=state.profile.eye.trackingMode || mediumSeed.authoringDefault?.eye?.trackingMode || 'life';
-  state.profile.eye.fixedGaze=clone(state.profile.eye.fixedGaze || [0,0]);
-  state.trackingMode=state.profile.eye.trackingMode; state.fixedGaze=clone(state.profile.eye.fixedGaze);
-  const contract=await fetch(CONTRACT_URL).then((r)=>{if(!r.ok)throw new Error(`contract ${r.status}`);return r.json();});
+
   const {renderer,scene,camera,controls,ro}=configureRenderer();
-  window.__EYE_RIG_BATCH={state,scene,camera,controls,renderer,logLines,report:()=>({profile:profileFromRig(),cleanup:state.cleanup?.report,eyes:state.eyes?.report(),qa:state.qaLast,mediumSeed:state.mediumSeed,selectedActors:[...state.selectedActors],clips:[...state.clips.keys()],gates:{source:state.sourceReady,cleanup:state.cleanupReady,host:state.hostReady,eye:state.eyeReady,motion:state.motionReady},error:bootError?.message||null})};
-  const loader=new GLTFLoader();
-  const gltf=await loader.loadAsync(ACTOR_URL); const figure=gltf.scene; state.figure=figure; state.stageRoot.add(figure);
-  const norm=normalizeActor(figure); figure.visible=false; state.sourceReady=true; gate('#gateSource','pass'); log(`GothGirl source loaded · ${norm.sourceHeight} → ${norm.normalizedHeight} high · 1 figure`);
-  const cleanup=prepareVerifiedGothGirlCleanup({figure,preferredHeadMesh:seed.sourceFace.headMesh,expectedConnectedComponents:seed.sourceFace.expectedConnectedComponents,eyeComponents:seed.sourceFace.eyeComponents,log}); state.cleanup=cleanup;
-  state.cleanupReady=['AUTO_CANDIDATE','SOURCE_IDENTITY_VERIFIED_AUTO_CANDIDATE'].includes(cleanup.status); gate('#gateCleanup',state.cleanupReady?'pass':'fail'); if(state.cleanupReady)cleanup.apply(true);
-  state.mixer=new THREE.AnimationMixer(figure);
-  const eyes=await mountKayKitEyes({THREE,figure,sourceRef:sourceRef(),profile:state.profile,expressionContract:contract,camera,log}); state.eyes=eyes;
-  const measured=cleanup.measureOnFaceHost?.(eyes.faceHost); recordMeasuredSuggestion(measured);
-  state.hostReady=eyes.faceHost.status==='OK'; state.eyeReady=!!eyes.eyeFrame(); gate('#gateHost',state.hostReady?'pass':'fail'); gate('#gateEye',state.eyeReady?'pass':'fail');
-  figure.visible=true; bindUiFromProfile(); wireProfileIo(); wireRuntimeControls(camera,controls,renderer); wireComponentDiagnostic(camera,controls); setView('front',camera,controls); poseBind();
-  await loadMotion(loader);
-  $('#loadingCard').remove(); setBadge($('#bootBadge'),'READY',state.sourceReady&&state.cleanupReady&&state.hostReady&&state.eyeReady&&state.motionReady?'pass':'candidate');
-  let last=performance.now(); function frame(now){const dt=Math.min(.05,(now-last)/1000);last=now; state.mixer?.update(dt); state.eyes?.update(dt,camera); controls.update(); renderer.render(scene,camera); requestAnimationFrame(frame);} requestAnimationFrame(frame);
-  renderReport();
+  state.loader=new GLTFLoader(); THREE.Cache.enabled=true;
+  window.__EYE_RIG_BATCH={state,scene,camera,controls,renderer,logLines,
+    report:()=>({profile:profileFromRig(),profiles:clone(state.profiles),currentActor:state.currentActor,cleanup:state.cleanup?.report,eyes:state.eyes?.report(),qa:state.qaLast,mediumSeed:state.mediumSeed,selectedActors:[...state.selectedActors],roster:{count:state.catalog.length,filter:state.rosterFilter},clips:[...state.clips.keys()],gates:{source:state.sourceReady,cleanup:state.cleanupReady,host:state.hostReady,eye:state.eyeReady,motion:state.motionReady},error:bootError?.message||null})
+  };
+
+  wireProfileIo(); wireRuntimeControls(camera,controls,renderer); wireRoster();
+  renderRoster();
+  await loadMotion(state.loader);
+
+  const first=actorById(saved?.currentActorId)||actorById('gothgirl')||state.catalog[0];
+  if(!first) throw new Error('no Rig_Medium actors in catalog');
+  await loadActor(first.id,{preserve:false});
+
+  let last=performance.now();
+  function frame(now){const dt=Math.min(.05,(now-last)/1000);last=now;state.mixer?.update(dt);state.eyes?.update(dt,camera);controls.update();renderer.render(scene,camera);requestAnimationFrame(frame);}
+  requestAnimationFrame(frame); renderReport();
 }
 
 boot().catch((err)=>{
