@@ -20,7 +20,7 @@ function centroid(footprint=[]){
   const xs=footprint.map(p=>p.x),zs=footprint.map(p=>p.z);
   return {x:(Math.min(...xs)+Math.max(...xs))/2,z:(Math.min(...zs)+Math.max(...zs))/2};
 }
-function citySubset(scene,radius=225){
+function citySubset(scene,radius=150){
   const inside=p=>Math.hypot(p.x,p.z)<=radius;
   return {
     ...scene,
@@ -56,7 +56,7 @@ function groupLandmarkByZone(THREE,asset,system,colours){
   for(const [zone,positions] of zonePositions){
     const opts={color:colours[zone]||'#888888'};
     if(zone==='glazing'){opts.emissive=colours[zone]||'#56788a';opts.emissiveIntensity=.08;opts.transparent=true;opts.opacity=.82;}
-    const mat=system.phong(opts,zone==='glazing'?.5:.46,zone==='upper'?2.45:2.7);
+    const mat=system.phong(opts,zone==='glazing'?.44:.38,zone==='upper'?2.45:2.7);
     materials.set(zone,mat);
     const geo=new THREE.BufferGeometry();
     geo.setAttribute('position',new THREE.Float32BufferAttribute(positions,3));geo.computeVertexNormals();
@@ -84,7 +84,7 @@ function makeRoads(THREE,scene,system){
 }
 function makeBuildings(THREE,scene,style,system){
   const data=buildStyledBuildingMesh(scene,style,'grotesque'),geo=geometryFromMesh(THREE,data,true);
-  const mat=system.phong({vertexColors:true,shininess:15},.48,3);
+  const mat=system.phong({vertexColors:true,shininess:15},.34,3);
   const mesh=new THREE.Mesh(geo,mat);mesh.name='osm-grotesque-buildings';mesh.castShadow=true;mesh.receiveShadow=true;
   return {mesh,stats:data.stats};
 }
@@ -104,7 +104,7 @@ function makeRain(THREE){
 }
 function addPedestal(THREE,system){
   const mat=system.phong({color:'#8b927f',shininess:3},.25,3);
-  const mesh=new THREE.Mesh(new THREE.CylinderGeometry(26,30,2.2,28),mat);mesh.position.y=-1.1;mesh.receiveShadow=true;return mesh;
+  const mesh=new THREE.Mesh(new THREE.CylinderGeometry(15,18,1.6,28),mat);mesh.position.y=-.8;mesh.receiveShadow=true;return mesh;
 }
 
 export async function boot(){
@@ -115,11 +115,11 @@ export async function boot(){
     fetch(PROFILE_URL,{cache:'no-store'}).then(r=>r.json()),
     fetch(TRAVEL_URL,{cache:'no-store'}).then(r=>r.json())
   ]);
-  const subset=citySubset(city,225),system=createWorldMaterialSystem(THREE);
+  const subset=citySubset(city,150),system=createWorldMaterialSystem(THREE);
   const renderer=new THREE.WebGLRenderer({canvas,antialias:true});renderer.setPixelRatio(Math.min(devicePixelRatio,2));renderer.outputColorSpace=THREE.SRGBColorSpace;renderer.shadowMap.enabled=true;renderer.shadowMap.type=THREE.PCFSoftShadowMap;
   const scene=new THREE.Scene(),camera=new THREE.PerspectiveCamera(48,1,.1,4000),controls=new OrbitControls(camera,canvas);controls.enableDamping=true;controls.dampingFactor=.08;controls.maxPolarAngle=Math.PI*.495;
   const integrated=new THREE.Group(),isolation=new THREE.Group();scene.add(integrated,isolation);
-  const terrain=createTerrainHost(THREE,system,{size:900,segments:96});integrated.add(terrain.mesh);
+  const terrain=createTerrainHost(THREE,system,{size:720,segments:80});integrated.add(terrain.mesh);
   const cityView=makeBuildings(THREE,subset,style,system);integrated.add(cityView.mesh);
   const roads=makeRoads(THREE,subset,system);integrated.add(roads.group);
 
@@ -129,9 +129,6 @@ export async function boot(){
   dom.root.position.set(INTEGRATED_DOM_POSITION.x,-.10,INTEGRATED_DOM_POSITION.z);dom.root.rotation.y=-.38;integrated.add(dom.root);
   const plazaMat=system.phong({color:'#b6ab99',shininess:3},.22,3);
   const plaza=new THREE.Mesh(new THREE.CylinderGeometry(43,47,.55,32),plazaMat);plaza.position.set(INTEGRATED_DOM_POSITION.x,-.12,INTEGRATED_DOM_POSITION.z+7);plaza.receiveShadow=true;integrated.add(plaza);
-
-  const lighthouse=createLighthouseReference(THREE,system);lighthouse.position.set(155,terrainHeightAt(155,-175),-175);lighthouse.rotation.y=.6;integrated.add(lighthouse);
-  const observatory=createObservatoryReference(THREE,system);observatory.position.set(160,terrainHeightAt(160,155),155);observatory.rotation.y=-.55;integrated.add(observatory);
 
   const isolatedLight=createLighthouseReference(THREE,system),isolatedObs=createObservatoryReference(THREE,system),pedestal=addPedestal(THREE,system);isolation.add(pedestal,isolatedLight,isolatedObs);isolatedLight.visible=false;isolatedObs.visible=false;
 
@@ -146,17 +143,24 @@ export async function boot(){
       env=applyWorldEnvironment(THREE,scene,renderer,{environment:'osm'});
       system.setRim('#ffe6bd');setDomGlow(dom,.08);
     }else{
-      env=applyWorldEnvironment(THREE,scene,renderer,{environment:'travel',snapshot,timeOfDay:lightMode,fogScale:14});
+      env=applyWorldEnvironment(THREE,scene,renderer,{environment:'travel',snapshot,timeOfDay:lightMode,fogScale:22});
       const p=snapshot.skyPresets[lightMode]||snapshot.skyPresets.day;system.setRim(p.rim);
       setDomGlow(dom,lightMode==='night'?.72:lightMode==='evening'?.30:.10);
     }
     document.querySelector('#light').value=lightMode;
   }
   function frame(){
-    const target=mode==='integrated'?integrated:isolation,box=new THREE.Box3().setFromObject(target),size=box.getSize(new THREE.Vector3()),c=box.getCenter(new THREE.Vector3()),d=Math.max(1,size.length());
-    const dir=mode==='integrated'?new THREE.Vector3(1.15,.62,1):new THREE.Vector3(1,.55,1);dir.normalize();
-    camera.fov=mode==='integrated'?52:43;camera.filmOffset=mode==='integrated'?3.4:0;camera.up.set(.025,.9997,0);camera.updateProjectionMatrix();
-    const vf=THREE.MathUtils.degToRad(camera.fov),hf=2*Math.atan(Math.tan(vf/2)*camera.aspect),dist=d*.5/Math.sin(Math.min(vf,hf)/2)*1.08;
+    let box;
+    if(mode==='integrated'){
+      box=new THREE.Box3();
+      for(const object of [cityView.mesh,roads.group,dom.root,plaza])box.expandByObject(object);
+    }else{
+      box=new THREE.Box3().setFromObject(isolation);
+    }
+    const size=box.getSize(new THREE.Vector3()),c=box.getCenter(new THREE.Vector3()),d=Math.max(1,size.length());
+    const dir=mode==='integrated'?new THREE.Vector3(1.08,.56,1):new THREE.Vector3(1,.48,1);dir.normalize();
+    camera.fov=mode==='integrated'?48:40;camera.filmOffset=mode==='integrated'?2.2:0;camera.up.set(.018,.9998,0);camera.updateProjectionMatrix();
+    const vf=THREE.MathUtils.degToRad(camera.fov),hf=2*Math.atan(Math.tan(vf/2)*camera.aspect),dist=d*.5/Math.sin(Math.min(vf,hf)/2)*(mode==='integrated'?.92:1.02);
     controls.target.copy(c);camera.position.copy(c).addScaledVector(dir,dist);camera.near=Math.max(.05,d/5000);camera.far=dist+d*12;camera.updateProjectionMatrix();controls.update();
   }
   function applyMode(){
@@ -176,7 +180,7 @@ export async function boot(){
       ready:true,build:BUILD,mode,lightMode,rainWeight,
       osm:{city:city.id,buildings:cityView.stats.sourceBuildings,triangles:cityView.stats.triangles},
       dom:{id:domAsset.id,triangles:domAsset.triangles,shapeMode:domAsset.shapeMode,placement:'STYLE_INTEGRATION_ONLY_NOT_GEO'},
-      donorRefs:{lighthouse:lighthouse.userData.sourceReference,observatory:observatory.userData.sourceReference},
+      donorRefs:{lighthouse:isolatedLight.userData.sourceReference,observatory:isolatedObs.userData.sourceReference},
       weather:{materialWetness:false,materialAlbedoShift:false}
     };
   }
