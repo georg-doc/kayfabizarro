@@ -18,7 +18,6 @@ try{
  await page.goto(base+'/asset-librarian/?pack='+pack+'&moduleKit=1',{waitUntil:'domcontentloaded',timeout:180000});
  await page.waitForFunction(()=>document.documentElement.dataset.moduleKitReady==='1'&&window.KFBAssetLibrarianV17,{},{timeout:180000});
  let snap=await page.evaluate(()=>({lib:window.KFBAssetLibrarianV17.getState(),kit:window.KFBModuleKitWorkbench.getState(),meta:document.querySelector('#moduleKitMeta')?.textContent,results:document.querySelectorAll('.result-card').length}));
- check('direct pack selected',document?true:true,snap.lib); // replaced below in node-side checks
  check('direct pack state',snap.lib.sourceCommit&&snap.kit.packId===pack,{lib:snap.lib,kit:snap.kit});
  check('wall grammar loaded',snap.kit.ready&&snap.kit.sampleId==='wall-grammar'&&snap.kit.measurements['wall-grammar']?.length===6,snap.kit);
  check('pack results visible',snap.results===118,snap.results);
