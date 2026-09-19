@@ -62,6 +62,9 @@ Proof:
 - no console/page errors
 - screenshot/report artifact: `10577298328`
 - persisted report: `evidence/CLOUDFLARE_BROWSER_RESULT_2026-09-19.json`
+- confirmation run on proof merge `33b3785499e37b0a8b39a8465819988bc22a2703`: `35421390825` · SUCCESS
+- confirmation artifact: `10577653402` · retained through 2026-12-18
+- confirmation report: `evidence/CLOUDFLARE_BROWSER_RESULT_2026-09-19_R2.json`
 
 Automated diagnostics: max arm residual `0.0001394517`; minimum club **pivot** distance `0.0247257373`. The latter is not surface-clearance acceptance and keeps catch/overlap review open.
 
