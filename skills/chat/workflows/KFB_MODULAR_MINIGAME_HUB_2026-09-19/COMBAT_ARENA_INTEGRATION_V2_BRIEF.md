@@ -1,5 +1,19 @@
 # Combat Arena Integration v2 · FrizzleBob Driver + KayKit Gegner
 
+## PRIORITÄTS-OVERRIDE · CA2 als Dungeon-Raid-Gate
+
+Status: **CURRENT BRIEF · PREREQUISITE FOR DUNGEON RAID · IMPLEMENTATION NOT STARTED**  
+Datum: 2026-09-19
+
+Die Combat Arena ist technisch älter als die laufende Race-/World-Linie. Sie wird daher nicht blind “weitergebaut”, sondern zuerst als kleine produktive Integrationsprobe stabilisiert.
+
+**CA2-A – Actor proof:** aktueller FrizzleBob Driver Graft ist sichtbar spielbar; genau ein Bewegungs-, Ground-, Mixer- und Face-Owner.  
+**CA2-B – Enemy proof:** genau zwei echte KayKit-Gegner mit überprüften Modellpfaden und Animationsclips laufen durch vorhandene Arena-Zustände.  
+**CA2-C – Raid handoff:** erst danach darf der Dungeon einen Raum/Spawn-Adapter für einen nachgewiesenen KayKit-Skelett-Mob erhalten.
+
+Dungeon besitzt niemals Schaden, Treffer, Reward, VFX oder Mob-Logik. Das bleibt Arena-Owner. Umgekehrt besitzt die Arena keine Dungeon-Layout- oder Schatzraumlogik. Bei fehlendem Skeleton-Modell/Clip lautet das Ergebnis **MISSING_ASSET**, ohne Ersatzmodell.
+
+---
 Status: **BRIEFING CURRENT · IMPLEMENTATION NOT STARTED**  
 Datum: 2026-09-19  
 Implementation-Owner: **georg-doc/KFB-Combat-Arena**  

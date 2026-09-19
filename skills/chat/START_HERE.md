@@ -148,3 +148,14 @@ Für den aktuellen KFB-Fokus zuerst [Racetrack World Look + 3D HUD v1](workflows
 Vor C0 folgt [Asset Librarian × Tiny Treats · Discoverability Recon](workflows/ASSET_LIBRARIAN_TINY_TREATS_RECON_V1_2026-09-19/START_HERE.md). Charming Kitchen 1.1 ist im Registry-Bestand, aber der Librarian muss es über menschliche Namen und eine direkte Packansicht auffindbar machen. ToolBox ergänzt dies als Konsument, nicht als zweite Bibliothek.
 
 Danach ist der [Babel Tower S2b → Hex Platform Generator](workflows/KFB_MODULAR_MINIGAME_HUB_2026-09-19/BABEL_HEX_PLATFORM_GENERATOR_V1_BRIEF.md) der konkrete Hex-Platformer-POC. Dungeon und Combat bleiben vorbereitet, aber nachrangig gegenüber der Weltkonsistenz.
+
+
+## 2026-09-19 · Visible briefs and separated generator lanes
+
+- The KFB Hub gets a dedicated **Briefings** filter; Today is a short priority view, never the complete catalogue.
+- C0 is now recovery/history after its documented visual rejection. Asset Librarian remains the only common discovery layer.
+- `DUNGEON_GENERATOR_V2_BRIEF.md` is corrected to a KayKit-only productive Dungeon Raid: existing S13.2 generator, real original pack props, filled treasure room and Combat-gated Skeleton Raid.
+- `TINY_TREATS_VENUE_GENERATOR_V1_2026-09-19.md` owns Bakery/Charming Kitchen; it is separate from Dungeon.
+- `KFB_INK_CARTOON_MECHANICS_V1_2026-09-19.md` defines isolated Ink / rubber barrier / tube / EyeRig reaction proofs using existing canon.
+- `KFB_WORLD_ONBOARDING_CHATTERBOX_V1_2026-09-19.md` is planning-only and keeps private personal-admin subjects out of public runtime.
+- `EYE_RIG_BATCH_TOOLBOX_SLICE_V1_2026-09-19.md` makes the existing EyeRig batch brief a visible ToolBox slice.

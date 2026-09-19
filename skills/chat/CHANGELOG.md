@@ -1,3 +1,14 @@
+## 2026-09-19 · Hub briefings repair + separated generator lanes
+
+### DECISION
+“Today” is explicitly compact; a dedicated Briefings filter exposes the complete current KFB briefing catalogue. C0 is a documented visual-rejection recovery record, not a starting brief. Combat actor/enemy proof is the gate for the KayKit-only Dungeon Raid; Tiny Treats venues are separate.
+
+### BRIEFING
+Add the productive Dungeon Raid v2, Tiny Treats Venue Generator v1, KFB Ink + Cartoon Mechanics v1, World Onboarding + Chatterbox v1 and EyeRig ToolBox Slice entry. Existing EyeRig Batch remains source authority.
+
+### PRIVACY BOUNDARY
+Personal payment, birthday and individual administrative items are not published in the public KFB Hub or runtime briefs.
+
 # KFB Chat Production Router · additive changelog
 
 ## 2026-09-19 · World/Race P0 + Tiny Treats discovery + Babel Generator

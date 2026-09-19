@@ -1,5 +1,15 @@
 # KFB 3D Mini-Game Hub · Baukasten- und POC-Briefing
 
+## CURRENT CORRECTION · 2026-09-19 · Visible briefs, C0 recovery, Raid order
+
+The Hub now exposes a dedicated **Briefings** filter. “Today” remains intentionally compact; it is not the full briefing catalogue.
+
+- C0 is retained as a documented **GEORG VISUAL REVIEW FAIL** recovery record, not a default execution brief. The Asset Librarian is the only shared discovery surface.
+- Combat CA2 actor/enemy proof precedes the productive KayKit Dungeon Raid; Dungeon owns rooms/spawns only, Arena owns combat.
+- Tiny Treats Bakery/Kitchen generation is separate from Dungeon.
+- EyeRig Batch is a named ToolBox slice with its own current entry and public candidate.
+- KFB Ink/cartoon mechanics consume the existing Ink canon and TE-01 candidate rather than introducing a new outline system.
+
 Status: **BRIEFING CURRENT · UMSETZUNG NOCH NICHT GESTARTET**  
 Datum: 2026-09-19  
 Auftraggeber: Georg / KFB  
