@@ -134,3 +134,33 @@ Georg tunes Eye size first, then Inset and spacing/vertical, checks the standard
 
 ### NEXT GATE
 Expose this verified source baseline as an explicit reversible preview for Georg. Do not silently replace the current candidate and do not merge/promote Live.
+
+
+## 2026-09-19 · Checkpoint 7 · EXPLICIT MEASURED PREVIEW · VISUAL CONTRADICTION
+
+### IMPLEMENTATION
+- added explicit `Use source-measured baseline` action;
+- action is disabled until source/FaceHost measurement exists;
+- measured values are applied only on user click;
+- sliders expand only to the measured values actually required;
+- candidate remains `AUTO_CANDIDATE`;
+- existing `Reset seed` is the exact rollback path.
+
+### TESTED RESULT
+- public Cloudflare Playwright run `35460179569`: **21/21 PASS**;
+- screenshots: **6**;
+- runtime/page errors: **0**;
+- explicit measured apply exact: PASS;
+- exact seed reset: PASS;
+- artifact: `10589418791`.
+
+### VISUAL FINDING
+Screenshot `00-source-measured-baseline.png` contradicts the earlier interpretation that current source eye components 6 + 7 map to the visible eye positions: the measured preview lands near the lateral ear region while central black eye-like source forms remain visible.
+
+The measured `dx=.84913 / dy=-.05142 / ring=.06925` values are therefore reclassified as **DIAGNOSTIC_ONLY**, not a recommended EyeRig seed.
+
+### DECISION
+Stop EyeRig placement tuning. Do not guess replacement values.
+
+### NEXT GATE
+Build a source-only 12-component isolation/highlight diagnostic and identify the actual current eye/lash/brow/nose/accessory components before changing cleanup or EyeRig calibration. No Medium batch expansion, merge, or Live promotion before this gate.

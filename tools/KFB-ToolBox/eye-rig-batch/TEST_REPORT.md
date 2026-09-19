@@ -172,3 +172,39 @@ Artifact:
 - id: `10589617618`
 - digest: `sha256:11202846c592b0147584b12b31629eada4f097c2ac45c8194312b7acb73e82fe`
 - name: `kfb-eye-rig-batch-public-stage-proof`.
+
+
+## EXPLICIT MEASURED-BASELINE ACTION · PUBLIC PROOF
+
+Run: `35460179569`  
+Stage head: `26810dbc2f5a2d1f650c485b31f08bc2f4b0f8d5`  
+Source head: `fd7a123b3747f74f79b2759e1cbb48fc64f823f0`  
+Result: **21 / 21 PASS**, **6 screenshots**, **0 runtime/page errors**.
+
+New verified interaction gates:
+
+- measured-baseline button available: PASS;
+- explicit apply: PASS — exact `dx=0.84913 · dy=-0.05142 · ring=0.06925`;
+- candidate state remains `AUTO_CANDIDATE`: PASS;
+- reset seed restores exact `dx=0.345 · dy=-0.10 · ring=0.30`: PASS;
+- prior source / cleanup / FaceHost / EyeRig / motion / interaction gates remain PASS.
+
+Artifact:
+- id: `10589418791`;
+- digest: `sha256:bea3014475b594ea9099897a30338af336579f6ca836327be4cb963f249cb450`;
+- screenshots: **6**, including `00-source-measured-baseline.png`.
+
+### Visual evidence gate · NOT PASS
+
+The explicit action is technically correct, but the resulting screenshot does **not** validate components 6 + 7 as the visible eye source.
+
+Observed in `00-source-measured-baseline.png`:
+
+- measured EyeRig spheres land far laterally near the ear region;
+- black eye-like source forms remain central under the brows.
+
+Classification:
+
+`TECHNICAL ACTION PASS · SOURCE-FACE IDENTITY UNRESOLVED · VISUAL ACCEPTANCE OPEN`.
+
+No further placement tuning should treat `0.84913 / -0.05142 / 0.06925` as a recommended seed until current source components are isolated and visually identified.

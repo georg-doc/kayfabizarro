@@ -1,8 +1,48 @@
 # Batch EyeRig Atlas · RETURN
 
 Date: 2026-09-19  
-Status: IMPLEMENTED CANDIDATE · PUBLIC BROWSER PROOF PASS · GEORG VISUAL/TUNING GATE OPEN  
+Status: IMPLEMENTED CANDIDATE · PUBLIC BROWSER PROOF PASS · SOURCE-FACE IDENTITY GATE OPEN  
 Owner: KFB ToolBox / Rigging
+
+## CURRENT OVERRIDE · SOURCE COMPONENT IDENTITY MISMATCH
+
+The explicit source-measured preview is now implemented and browser-proven, but its **visual result contradicts the earlier source-face interpretation**.
+
+Latest source branch head: `fd7a123b3747f74f79b2759e1cbb48fc64f823f0`  
+Latest Stage proof head: `26810dbc2f5a2d1f650c485b31f08bc2f4b0f8d5`  
+GitHub Actions run: `35460179569`  
+Result: **21/21 PASS · 6 screenshots · 0 runtime/page errors**  
+Artifact: `10589418791` · digest `sha256:bea3014475b594ea9099897a30338af336579f6ca836327be4cb963f249cb450`
+
+The new **Use source-measured baseline** action is explicit and reversible:
+
+- explicit apply = exact measured values `dx=0.84913 · dy=-0.05142 · ring=0.06925`;
+- status stays `AUTO_CANDIDATE`;
+- `Reset seed` restores exactly `dx=0.345 · dy=-0.10 · ring=0.30`;
+- no automatic approval and no default seed promotion.
+
+### Visual contradiction
+
+Screenshot `00-source-measured-baseline.png` shows the EyeRig spheres from the measured component-6/7 baseline far laterally, near the ear region. At the same time, black eye-like source forms remain visible in the central face under the brows.
+
+Therefore the measured values are **diagnostic evidence only**. They are **not a recommended tuning seed**.
+
+The earlier handover statement “GothGirl eyes = components 6 + 7” is now **UNVERIFIED / CONTRADICTED BY CURRENT VISUAL EVIDENCE** until the 12 head components are isolated and identified in the current source.
+
+Possible explanations remain hypotheses, not conclusions:
+
+1. components 6 + 7 are not the current visible eye pair;
+2. the component → FaceHost coordinate interpretation is wrong;
+3. the remaining central eye-like forms belong to a separate component/material/geometry layer.
+
+### Next gate
+
+Build a bounded **12-component isolation diagnostic** on the unchanged GothGirl source:
+
+`source-only → select component 0…11 → highlight/isolate it → Front / 3/4 / Side evidence → identify actual eyes/lashes/brows/nose/accessories`.
+
+Do **not** continue EyeRig placement tuning, change the cleanup contract, expand to more actors, merge PR #104, or promote Live before this source-face identity gate is resolved.
+
 
 ## SOURCE
 

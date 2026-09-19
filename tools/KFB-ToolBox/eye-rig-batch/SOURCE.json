@@ -10,21 +10,21 @@
     "route": "/kfb-hub/stage/toolbox/eye-rig-batch/",
     "url": "https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/eye-rig-batch/",
     "publicationBranch": "cloudflare-live",
-    "publicationCommit": "9a3345a01935fe87651ec49cea3afc19715f84ef",
+    "publicationCommit": "26810dbc2f5a2d1f650c485b31f08bc2f4b0f8d5",
     "hubLinked": true,
     "mainRouterCommit": "ac067d09919f744750649e3652dd00036d7ccd6f",
-    "status": "PUBLIC_VERIFIED_HUMAN_VISUAL_GATE_OPEN",
-    "stageSourceSnapshot": "52768e828192e77b43d57f882594f304bcc79180",
+    "status": "PUBLIC_VERIFIED_SOURCE_FACE_IDENTITY_GATE_OPEN",
+    "stageSourceSnapshot": "fd7a123b3747f74f79b2759e1cbb48fc64f823f0",
     "publicProof": {
       "status": "PASS",
-      "runId": 35459726128,
-      "runUrl": "https://github.com/georg-doc/kayfabizarro/actions/runs/35459726128",
-      "publicationHead": "9a3345a01935fe87651ec49cea3afc19715f84ef",
-      "checks": "18/18 PASS",
-      "screenshots": 5,
-      "artifactId": 10589617618,
+      "runId": 35460179569,
+      "runUrl": "https://github.com/georg-doc/kayfabizarro/actions/runs/35460179569",
+      "publicationHead": "26810dbc2f5a2d1f650c485b31f08bc2f4b0f8d5",
+      "checks": "21/21 PASS",
+      "screenshots": 6,
+      "artifactId": 10589418791,
       "artifactName": "kfb-eye-rig-batch-public-stage-proof",
-      "artifactDigest": "sha256:11202846c592b0147584b12b31629eada4f097c2ac45c8194312b7acb73e82fe",
+      "artifactDigest": "sha256:bea3014475b594ea9099897a30338af336579f6ca836327be4cb963f249cb450",
       "errors": 0
     }
   },
@@ -71,7 +71,7 @@
     "policy": "FAIL_CLOSED",
     "measuredSeed": {
       "method": "verified-source-components→skinned-vertex→world→FaceHost-local",
-      "status": "MEASURED_NOT_APPLIED",
+      "status": "EXPLICIT_PREVIEW_PROVEN_DIAGNOSTIC_ONLY",
       "hostUnit": 0.77441,
       "sourcePairSpanX": 1.31515,
       "sourceVerticalAsymmetry": 0.08812,
@@ -79,7 +79,18 @@
         "dx": 0.84913,
         "dy": -0.05142,
         "ring": 0.06925
-      }
+      },
+      "visualIdentity": "CONTRADICTED_BY_CURRENT_VISUAL_EVIDENCE"
+    },
+    "identityGate": {
+      "status": "OPEN",
+      "observation": "Explicit component-6/7 baseline places EyeRig near lateral ear region while black eye-like source forms remain central under brows.",
+      "hypotheses": [
+        "components_6_7_not_current_visible_eye_pair",
+        "component_to_facehost_coordinate_interpretation_wrong",
+        "central_eye_like_forms_are_separate_component_or_material_layer"
+      ],
+      "nextProof": "isolate/highlight GothGirl head components 0..11 in source-only Front/3/4/Side views"
     }
   },
   "pullRequest": {
@@ -93,19 +104,18 @@
     "jsSyntax": "3/3 PASS",
     "githubPersistence": "PASS",
     "localChromium": "ENVIRONMENT_UNAVAILABLE_2_PRE_APP_EGL_X_FAILURES",
-    "exactCloudflareUrl": "PASS_PLAYWRIGHT_GITHUB_ACTIONS_18_18_5_SCREENSHOTS"
+    "exactCloudflareUrl": "PASS_PLAYWRIGHT_GITHUB_ACTIONS_21_21_6_SCREENSHOTS"
   },
   "visualReview": {
-    "status": "AUTO_CANDIDATE_NEEDS_TUNING",
-    "observation": "Mount and motion attachment are technically clean; default ring=0.30 reads visibly oversized/protruding in Front/3/4/Side evidence.",
-    "firstAdjustmentHint": "Reduce eye size first; then tune inset and spacing before approval.",
-    "measurementFinding": "Verified source-eye baseline is dx=0.84913, dy=-0.05142, ring=0.06925; report-only and not applied.",
-    "nextGate": "Expose the verified measured baseline as a reversible preview for Georg comparison; no silent parameter promotion."
+    "status": "SOURCE_FACE_IDENTITY_UNRESOLVED",
+    "observation": "Default EyeRig seed is oversized/protruding. The explicit source-measured component-6/7 preview is also not a valid visual placement: it lands near the ears while central black eye-like source forms remain visible.",
+    "measuredCandidate": "DIAGNOSTIC_ONLY_NOT_RECOMMENDED",
+    "nextGate": "12-component isolation diagnostic; identify actual source eyes/lashes/brows/nose/accessories before further EyeRig tuning."
   },
   "handoffSurfaces": {
     "mainHubRouterStatusCommit": "8d534f013710d4aa57d1ca2baa7358b2957c35a5",
     "cloudflareHubMirrorHead": "aaf66bfa4e779c59aa7534998e1650a79551f6e4",
-    "stageRuntimeProofHead": "9a3345a01935fe87651ec49cea3afc19715f84ef",
-    "note": "Latest Stage proof adds report-only source-eye measurement; visible candidate values remain unchanged."
+    "stageRuntimeProofHead": "26810dbc2f5a2d1f650c485b31f08bc2f4b0f8d5",
+    "note": "Explicit measured-baseline action is proven and reversible; visual source-face identity is unresolved, so component isolation is the next gate."
   }
 }
