@@ -290,3 +290,17 @@ The measured baseline is explicitly `MEASURED_NOT_APPLIED`. It is evidence for t
 
 Direct human Stage:
 `https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/eye-rig-batch/`
+
+
+## 2026-09-19 · Batch EyeRig Atlas · source-face identity gate
+
+### TESTED RESULT
+The explicit source-measured preview is now browser-proven on the fixed Cloudflare Stage. Run `35460179569` completed **21/21 PASS**, **6 screenshots**, and **0 runtime/page errors** against Stage head `26810dbc2f5a2d1f650c485b31f08bc2f4b0f8d5`.
+
+The explicit action applies exactly `dx=0.84913 · dy=-0.05142 · ring=0.06925` as `AUTO_CANDIDATE`, and Reset restores exactly `dx=0.345 · dy=-0.10 · ring=0.30`.
+
+### VISUAL FINDING
+The source-measured screenshot contradicts the previous component interpretation: the component-6/7-derived EyeRig placement lands near the lateral ear region while black eye-like source forms remain centrally visible under the brows.
+
+### STATUS / NEXT GATE
+The measured values are diagnostic only. Stop EyeRig placement tuning. Next bounded proof is source-only isolation/highlight of GothGirl head components 0–11 to identify actual eyes/lashes/brows/nose/accessories. PR #104 remains Draft/Open/Unmerged. No Live promotion.
