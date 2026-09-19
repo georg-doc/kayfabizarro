@@ -1,7 +1,7 @@
 {
   "schema": "kfb.public-mirror/0.2",
   "build": "STUNT-WORLD-TE01-OSM-INK-20260919",
-  "status": "STAGE_CANDIDATE_PACKAGED_PUBLIC_PROOF_PENDING",
+  "status": "STAGE_CANDIDATE_CLOUDFLARE_DEPLOY_TRIGGERED_PUBLIC_PROOF_PENDING",
   "implementationSSOT": "georg-doc/KFB-Stunt-Car-Race",
   "implementationPR": 24,
   "testedRuntimeCommit": "666d3e43314cb43f0286c93442c335dcb60167d8",
@@ -17,5 +17,20 @@
   "humanAcceptance": "PENDING",
   "motionVisualAcceptance": "PENDING",
   "livePromotion": false,
-  "oldCanonicalStuntWorldUnchanged": true
+  "oldCanonicalStuntWorldUnchanged": true,
+  "publicationBranch": "cloudflare-live",
+  "publicationTreeCommit": "07c47e118ed3bbed4ea7b9c27054f0f8a616ac95",
+  "publicProofHistory": {
+    "initialMainOnly": {
+      "run": 35460463723,
+      "attempt": 1,
+      "result": "FAIL_DEPLOYMENT_MARKER"
+    },
+    "afterCloudflareBranchMirror": {
+      "run": 35460463723,
+      "attempt": 2,
+      "result": "FAIL_DEPLOYMENT_MARKER"
+    },
+    "next": "CONTENTS_API_PUBLICATION_TRIGGER_THEN_ONE_FINAL_PUBLIC_PROOF"
+  }
 }
