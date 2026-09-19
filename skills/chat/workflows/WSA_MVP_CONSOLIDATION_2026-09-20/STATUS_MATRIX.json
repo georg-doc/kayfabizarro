@@ -16,7 +16,17 @@
       "mainOnlyCommits": 183,
       "publicationOnlyCommits": 40
     },
-    "rule": "select exact tested Stage files; never wholesale-merge main into publication"
+    "rule": "select exact tested Stage files; never wholesale-merge main into publication",
+    "wsaNavigator": {
+      "githubPublicationBranchHead": "aa1dde22d2f6108e97f986f7cc1e9f3e16dffc48",
+      "githubMirror": "CONFIRMED",
+      "publicQaRun": 35475904961,
+      "publicQaJob": 105984997880,
+      "status": "CLOUDFLARE_MARKER_BLOCKED_BEFORE_BROWSER",
+      "browserScreenshot": "NOT_PRODUCED_BROWSER_STEP_SKIPPED",
+      "commonBlockerWith": "travel-tinyskies-terrain public run 35474894951",
+      "nextGate": "inspect Cloudflare Pages publication/control plane once; no per-slice redesign/retry"
+    }
   },
   "slices": [
     {
@@ -191,5 +201,5 @@
     "Mini-editor Intake after source pin"
   ],
   "gameDevelopmentStudio": "GAME_DEV_CLI_UNAVAILABLE · OPTIONAL FALLBACK USED",
-  "nextGate": "WSA reviews this matrix and performs one local multi-repo MVP assembly without changing owner boundaries"
+  "nextGate": "WSA reviews this matrix, re-fetches active heads, inspects the shared Cloudflare publication blocker once, then performs one local multi-repo MVP assembly without changing owner boundaries"
 }
