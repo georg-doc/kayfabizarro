@@ -5,12 +5,12 @@ This file covers the Resident Scene Module → Platformer seam. It does not repl
 
 ## P0 · review / evidence
 
-- [ ] Open the Cloudflare Resident Atlas S6 route with `?resident=clown`; verify the deployed page is the current S33 code.
+- [x] Cloudflare CI opened the Resident Atlas S6 route with `?resident=clown`; HTTP 200, Clown deep-link and `juggle-cascade-v1` confirmed on merged handoff commit `ae79765c…`.
 - [ ] Visual QA: three club paths read as a cascade rather than grouped throws.
 - [ ] Visual QA: catches occur at the hand region without obvious teleport/pop.
 - [ ] Visual QA: arm CCD does not visibly twist/elbow-flip.
-- [ ] Record maximum practical hand/club residual after the final parameter values; do not reuse an earlier measurement after tuning.
-- [ ] Check minimum club-to-club clearance over a full loop in the built browser scene.
+- [x] Automated current-pass arm-target residual recorded: max `0.0001394517`; rerun after any tuning rather than reusing this value.
+- [ ] Replace the current pivot-distance diagnostic with actual club mesh/vertex surface clearance over a full loop. Current browser run observed minimum pivot distance `0.0247257373`, which is close enough to require explicit catch/overlap review.
 - [ ] Narrow/mobile viewport QA for the direct Clown route.
 - [ ] Keep `PUBLIC DEPLOYMENT`, `BROWSER TESTED RESULT` and `GEORG ACCEPTANCE` separate.
 
