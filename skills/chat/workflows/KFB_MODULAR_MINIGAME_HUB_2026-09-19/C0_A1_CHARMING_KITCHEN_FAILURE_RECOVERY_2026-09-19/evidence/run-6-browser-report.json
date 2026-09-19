@@ -1,0 +1,31 @@
+{
+  "schema": "kfb.c0-a1-browser-proof/1",
+  "base": "http://127.0.0.1:8778",
+  "checks": [],
+  "errors": [
+    {
+      "message": "Invalid or unexpected token",
+      "stack": "SyntaxError: Invalid or unexpected token"
+    }
+  ],
+  "consoleErrors": [],
+  "httpErrors": [],
+  "cdpExceptions": [
+    {
+      "text": "Uncaught",
+      "url": "http://127.0.0.1:8778/tools/asset_registry/librarian/app.js",
+      "lineNumber": 174,
+      "columnNumber": 96,
+      "exception": "SyntaxError: Invalid or unexpected token",
+      "stack": null
+    }
+  ],
+  "samples": {},
+  "status": "FAIL",
+  "failure": "page.waitForFunction: Timeout 15000ms exceeded.",
+  "workflow": {
+    "run": 35461231731,
+    "artifact": 10589564787,
+    "head": "a5a8fcfb25e2ec89ab4346a812870d5b18bf91e6"
+  }
+}
