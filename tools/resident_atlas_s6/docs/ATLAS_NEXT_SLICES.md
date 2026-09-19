@@ -103,3 +103,17 @@ Der Exportauftrag ist ausgeführt, Ergebnis `EXPORT_PARTIAL`: Code, Daten und al
 - Pack-eigene Animations-Ordner: bei Hero Man namensgleiche Duplikate der geteilten Sets (15/15, 11/11). Ein pack-eigener Ordner ist kein Hinweis auf zusätzliche Clips.
 - Fehlende Clips, jeweils über die volle Bibliothek geprüft: kein Schuss-/Lade-Clip (Blaster), kein Lese-Clip (Foliant), kein Flug-Clip (Witch-Besen), kein Armbrust-Spann-Clip, kein Trommel-Clip, kein Instrumenten-Clip, keine Balance-Pose (Clown).
 - Honig existiert im Repo nicht.
+
+## S33 Nachtrag · Scheibe B jetzt als 3-Keulen-Proof implementiert
+
+Der ursprüngliche Auftrag unter „Scheibe B · Jonglier-Clip“ bleibt oben als Entwurfsgrundlage stehen. S33 hat daraus den begrenzten ersten Proof gebaut:
+
+- drei echte farbige KayKit-Keulen;
+- Flugzeit aus Apex/Gravitation;
+- alternierende Wurfhand L/R/L/R/L/R;
+- gemessene Handanker aus der eingefrorenen `Idle_B`-Pose;
+- Arm-Nachführung mit bestehendem CCD;
+- integer Halbdrehungen und 6-Beat-Phasenfunktion für exaktes Loop-Closing;
+- Module-Manifest für consumer-owned Floating-Island/Platformer-Support.
+
+**Nicht erledigt:** 4–6 Keulen. Das bleibt eine eigene Erweiterung nach geometrischem Clearance-Proof, nicht ein Parameterwechsel.
