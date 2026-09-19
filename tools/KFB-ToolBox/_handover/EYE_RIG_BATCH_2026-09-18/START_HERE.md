@@ -6,6 +6,11 @@
 **Proposed source path:** `tools/KFB-ToolBox/eye-rig-batch/`  
 **Proposed public candidate:** `https://kayfabizarro.pages.dev/tools/KFB-ToolBox/eye-rig-batch/`
 
+> **CURRENT IMPLEMENTATION RETURN · 2026-09-19**  
+> PR **#104** remains Draft/Open/Unmerged. Current Return/source head: `5e203568884b3f0d564a3d6fbc09be1122303ac3`; source-identity checkpoint: `949ff8037df2da88eb91ef825984ef57870b8238`; corrected Stage publication: `c6489fce74f98b2124feb184becd27d2cbe4a922`.  
+> Direct analysis of the pinned current GothGirl GLB resolves **components 2 + 3 as the eyes**; 6/7/8 are lateral accessories. The historical 6+7 measured preview is diagnostic history only. Corrected static/contract evidence is **28/28 PASS**.  
+> Current human gate: open `https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/eye-rig-batch/`, use the source-measured baseline generated from 2+3, compare Source/Cleaned/EyeRig in Front/3/4/Side and motion, then approve or reject. Corrected public browser verification is still open; do not expand Medium, start Large/Legacy, merge or promote Live before that gate.
+
 > **Additive cross-render note:** read [`2D_ALIGNMENT_ADDENDUM.md`](2D_ALIGNMENT_ADDENDUM.md) for the 2D Animation Studio bridge. It does not replace or delay the Medium-first Batch plan.
 
 ## 0 · Product goal

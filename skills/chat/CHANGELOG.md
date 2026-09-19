@@ -315,3 +315,23 @@ The source-measured screenshot contradicts the previous component interpretation
 
 ### STATUS / NEXT GATE
 The measured values are diagnostic only. Stop EyeRig placement tuning. Next bounded proof is source-only isolation/highlight of GothGirl head components 0–11 to identify actual eyes/lashes/brows/nose/accessories. PR #104 remains Draft/Open/Unmerged. No Live promotion.
+
+
+## 2026-09-19 · Batch EyeRig Atlas · current GothGirl source identity resolved
+
+### SOURCE / DECISION
+Direct analysis of the pinned current `GothGirl.glb` with the existing `faceShells()` rule resolves the 12 head components. The current frontal eyes are **2 + 3**. Components 6/7/8 are lateral ear-side accessories; the old 6+7 eye interpretation is retained only as diagnostic history.
+
+### IMPLEMENTATION / TESTED RESULT
+- source identity checkpoint: `949ff8037df2da88eb91ef825984ef57870b8238`;
+- current Return/source branch head: `5e203568884b3f0d564a3d6fbc09be1122303ac3`;
+- PR #104 remains Draft/Open/Unmerged;
+- exact-source component map: **12/12 resolved**;
+- corrected static/contract replay: **28/28 PASS**;
+- corrected Stage publication head: `c6489fce74f98b2124feb184becd27d2cbe4a922`;
+- source and Stage GitHub readback: **PASS**.
+
+The historical public run `35460179569` remains runtime/action evidence but is not current 2+3 visual proof. Connector writes did not trigger a new Actions run, and the current tool environment cannot open `pages.dev`; corrected `PUBLIC_VERIFIED` therefore remains **OPEN**.
+
+### NEXT GATE
+Georg opens the fixed Stage, uses the runtime-generated source-measured baseline from corrected components 2+3, compares Source/Cleaned/EyeRig in Front/3/4/Side and motion, and approves or rejects the single GothGirl candidate. No Medium batch expansion, Large/Legacy, merge or Live promotion before that gate.
