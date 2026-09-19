@@ -2,14 +2,17 @@
 
 **Stand:** 2026-09-19 · **Owner:** Georg / KFB  
 **WSA Review Package:** [Landmarks · full handoff + backlog](docs/WSA_REVIEW_PACKAGE_LANDMARKS_2026-09-19.md)  
-**Aktueller Return:** [Semantic Band Rig v2](docs/LANDMARK_BAND_RIG_V2_RETURN_2026-09-19.md)  
-**Slice:** [Bounded rebuild contract](landmarks/pilot-05/SLICE.md)  
-**Aktuelle Evidenz:** [Band Rig v2 summary](evidence/2026-09-19-landmark-band-rig-v2/summary.json) · [Visual Evidence](evidence/2026-09-19-landmark-band-rig-v2/VISUAL_EVIDENCE.md)  
+**Aktueller Return:** [Grotesque World Style Bridge v1](docs/LANDMARK_WORLD_STYLE_V1_RETURN_2026-09-19.md)  
+**Slice:** [Pilot 06 · bounded style bridge](landmarks/pilot-06/SLICE.md)  
+**Aktuelle Evidenz:** [World Style v1 · 1354/1354](evidence/2026-09-19-landmark-world-style-v1/summary.json)  
+**Vorherige akzeptierte Rig-Evidenz:** [Band Rig v2](docs/LANDMARK_BAND_RIG_V2_RETURN_2026-09-19.md)  
 **Ideation:** [Living Toy World / Reactive Landmarks](docs/IDEATION_LIVING_TOY_WORLD_2026-09-19.md)
 
 ## Aktuell
 
-**GEORG ACCEPTANCE — Band Rig v2:** Georg opened the final standalone in a real browser and confirmed the attachment fix works and the result looks right. This accepts the Band Rig v2 attachment solution/current direction, but does not yet choose City Grotesque vs Soft Cubist as the one default profile and does not imply OSM/Race/Audio integration acceptance.
+**GEORG DECISION — landmark default:** **City Grotesque** is now the default landmark view/style. Soft Cubist remains an alternate/debug mode. This decision applies to the landmark lane only; the OSM City Lab keeps its own current default `cartoon` mode unchanged.
+
+**Pilot 06 · World Style Bridge v1:** Eiffel, Giza, Stonehenge, Pentagon, Spasskaya and the Kremlin wall study now share the Grotesque default and flexible landmark-specific cartoon palettes. The review viewer can place them in either the exact current OSM City presentation context or a pinned current Travel/TinySkies-derived sky/light/biome context.
 
 **Pilot 05 · Semantic Band Rig v2: IMPLEMENTATION + STATIC/NUMERICAL + CPU VISUAL TESTED RESULT.**
 
@@ -28,7 +31,11 @@ The lower band keeps horizontal X/Z basis vectors so the authored ground remains
 
 ## Test result
 
-Current-source evaluation: **159/159 PASS**.
+Current Pilot-06 source evaluation: **1,354/1,354 PASS**.
+
+This includes all current modular landmarks in Grotesque, all Travel moods/biomes, palette saturation/lightness preservation, current OSM/Travel source pins and viewer/style contracts.
+
+Band Rig v2 remains separately tested at **159/159 PASS**.
 
 Key values:
 
@@ -55,6 +62,7 @@ A Chromium/WebGL probe was also attempted, but EGL/ANGLE initialization failed i
 
 ## Öffnen
 
+- [Pilot 06 · Grotesque World Style / OSM + Travel](landmarks/pilot-06/index.html)
 - [Pilot 05 · Semantic Band Rig v2](landmarks/pilot-05/index.html)
 - [Pilot 04 · rejected attachment history / living-toy donor](landmarks/pilot-04/index.html)
 - [Pilot 03 · Grotesque / Soft Cubist / Giza Voxel](landmarks/pilot-03/index.html)
@@ -80,8 +88,8 @@ These remain **presentation signals only**. No Audio engine, vehicle bounce, col
 2. Read [Pilot-05 Slice](landmarks/pilot-05/SLICE.md).
 3. Read [Visual Evidence](evidence/2026-09-19-landmark-band-rig-v2/VISUAL_EVIDENCE.md) and [summary](evidence/2026-09-19-landmark-band-rig-v2/summary.json).
 4. Treat Pilot 04/v1.2 as rejected attachment history, not the current solution.
-5. Visually review Pilot 05 in a real browser.
-6. Only after the deformation gate: surface pass with `skills/kfb-box-material.js` + `edge3.jpg`, then separate Audio and Race/Travel receiver slices.
+5. Visually review Pilot 06: current landmarks under Travel Verdant/Day and OSM City contexts.
+6. Next implementation target: modular Grotesque Cologne Cathedral as the first real OSM Golden Sample; then Acropolis / Area 51 according to the prepared catalogue.
 
 ## Zuständigkeiten
 
