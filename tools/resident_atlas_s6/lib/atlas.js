@@ -6,6 +6,7 @@ import * as THREE from 'three';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 import { clone as skinClone } from 'three/addons/utils/SkeletonUtils.js';
+import { juggleTiming, clubState, handPulse } from './juggle-math.js';
 
 THREE.Cache.enabled = true;
 
@@ -684,6 +685,155 @@ export function strumClip(node, opts = {}) {
   };
 }
 
+
+/* ---------- Clown cascade · procedural resident activity ----------
+   S33 implements only the measured 3-club proof from ATLAS_NEXT_SLICES. The trajectory owns
+   the timing: apex + gravity -> flight time -> beat. Hands are measured from the frozen base
+   pose, then both arm chains are CCD-reached to a small throw/catch scoop. Clubs are whole,
+   authored KayKit props; only their runtime transform changes.
+
+   6 clubs are intentionally NOT accepted here. The brief requires a trajectory-intersection
+   calculation first; pretending the same loop scales to 6 would turn an OPEN point into a
+   hidden guess. */
+export function makeJuggleCascade(root, nodes, spec, open = [], notes = []) {
+  const actor = nodes.get(spec.actor);
+  const pins = (spec.props || []).map((id) => ({ id, node: nodes.get(id) })).filter((p) => p.node);
+  if (!actor || pins.length !== (spec.props || []).length) {
+    open.push(`Jonglage nicht gebaut — Aktor oder Keule fehlt (${pins.length}/${(spec.props || []).length} Requisiten gefunden).`);
+    return null;
+  }
+
+  let timing;
+  try { timing = juggleTiming({ ...spec, count: pins.length }); }
+  catch (e) { open.push(`Jonglage nicht gebaut — ${e.message}.`); return null; }
+
+  const hand = {
+    l: findBone(actor, spec.leftHand || 'handslot.l'),
+    r: findBone(actor, spec.rightHand || 'handslot.r')
+  };
+  if (!hand.l || !hand.r) {
+    open.push('Jonglage nicht gebaut — linker oder rechter handslot fehlt.');
+    return null;
+  }
+
+  const chains = {
+    l: (spec.leftChain || ['upperarm.l', 'lowerarm.l', 'wrist.l']).map((n) => findBone(actor, n)).filter(Boolean),
+    r: (spec.rightChain || ['upperarm.r', 'lowerarm.r', 'wrist.r']).map((n) => findBone(actor, n)).filter(Boolean)
+  };
+  if (!chains.l.length || !chains.r.length) {
+    open.push('Jonglage nicht gebaut — eine Armkette ist unvollständig.');
+    return null;
+  }
+
+  actor.updateWorldMatrix(true, true);
+  const toActorLocal = (p) => actor.worldToLocal(p.clone());
+  const anchors = {
+    l: toActorLocal(hand.l.bone.getWorldPosition(new THREE.Vector3())),
+    r: toActorLocal(hand.r.bone.getWorldPosition(new THREE.Vector3()))
+  };
+
+  /* Restore exactly the arm bones touched by CCD before every sample. Without this, iterative
+     correction accumulates and the loop no longer closes even when the phase function does. */
+  const baseQ = new Map();
+  for (const f of [...chains.l, ...chains.r]) if (!baseQ.has(f.bone)) baseQ.set(f.bone, f.bone.quaternion.clone());
+
+  const pinBaseQ = new Map(pins.map((p) => [p.node, p.node.quaternion.clone()]));
+  const spinAxis = new THREE.Vector3(...(spec.spinAxis || [0, 0, 1])).normalize();
+  const lift = spec.handLift ?? 0.12;
+  const sweep = spec.handSweep ?? 0.055;
+  const windowBeats = spec.handWindowBeats ?? 0.42;
+  const maxResidual = spec.maxArmResidual ?? 0.1;
+  let t = spec.phase ?? 0;
+
+  const stats = {
+    maxResidual: 0,
+    minClubDistance: Infinity,
+    samples: 0,
+    timing,
+    handAnchorsLocal: { l: anchors.l.toArray(), r: anchors.r.toArray() }
+  };
+
+  const restoreArms = () => {
+    for (const [b, q] of baseQ) b.quaternion.copy(q);
+    actor.updateWorldMatrix(true, true);
+  };
+  const targetFor = (side) => {
+    const pulse = handPulse(t, side, timing, windowBeats);
+    const p = anchors[side].clone();
+    p.y += pulse * lift;
+    p.x += (side === 'l' ? 1 : -1) * pulse * sweep;
+    return actor.localToWorld(p);
+  };
+  const currentHand = (side) => hand[side].bone.getWorldPosition(new THREE.Vector3());
+
+  const activity = {
+    kind: 'juggle-cascade-v1',
+    label: `3-club cascade · ${(60 / timing.beatSec).toFixed(1)} throws/min · ${timing.cycleSec.toFixed(2)} s loop`,
+    enabled: true,
+    timing,
+    stats,
+    reset() { t = spec.phase ?? 0; },
+    update(dt = 0) {
+      if (!activity.enabled) return;
+      t = ((t + Math.max(0, dt)) % timing.cycleSec + timing.cycleSec) % timing.cycleSec;
+      restoreArms();
+
+      const lr = {};
+      for (const side of ['l', 'r']) {
+        const target = targetFor(side);
+        const names = chains[side].map((f) => f.matched);
+        const rr = reachChain(actor, names, hand[side].matched, target, spec.armIterations ?? 18);
+        if (rr) {
+          lr[side] = rr;
+          stats.maxResidual = Math.max(stats.maxResidual, rr.after);
+        }
+      }
+      actor.updateWorldMatrix(true, true);
+
+      const h = { l: currentHand('l'), r: currentHand('r') };
+      root.updateWorldMatrix(true, true);
+      const positions = [];
+      for (let i = 0; i < pins.length; i++) {
+        const p = pins[i], st = clubState(t, i, timing);
+        let world;
+        if (st.airborne) {
+          world = h[st.from].clone().lerp(h[st.to], st.u);
+          world.y += timing.apex * st.arc;
+        } else {
+          world = h[st.to].clone();
+        }
+        const local = root.worldToLocal(world.clone());
+        p.node.position.copy(local);
+        const qs = new THREE.Quaternion().setFromAxisAngle(spinAxis, st.spin);
+        p.node.quaternion.copy(pinBaseQ.get(p.node)).premultiply(qs);
+        p.node.updateWorldMatrix(true, true);
+        positions.push(world);
+      }
+
+      for (let a = 0; a < positions.length; a++) {
+        for (let b = a + 1; b < positions.length; b++) {
+          stats.minClubDistance = Math.min(stats.minClubDistance, positions[a].distanceTo(positions[b]));
+        }
+      }
+      stats.samples++;
+      stats.lastResidual = {
+        l: lr.l ? +lr.l.after.toFixed(4) : null,
+        r: lr.r ? +lr.r.after.toFixed(4) : null
+      };
+    }
+  };
+
+  activity.update(0);
+  actor.userData.activity = activity;
+  for (const p of pins) p.node.userData.activity = { kind: activity.kind, actor: spec.actor };
+
+  notes.push(`Jonglage gebaut: ${activity.label}. Apex ${timing.apex.toFixed(2)}, g ${timing.gravity.toFixed(2)}, Flug ${timing.flightSec.toFixed(3)} s. Timing kommt aus der Flugbahn, nicht aus getipptem BPM.`);
+  notes.push(`Jonglage: Handanker aus der Recipe-Pose gemessen (L [${anchors.l.toArray().map((v) => v.toFixed(3)).join(' / ')}], R [${anchors.r.toArray().map((v) => v.toFixed(3)).join(' / ')}]); Arme werden pro Frame aus der Basispose restauriert und per CCD auf die Throw/Catch-Scoop-Ziele geführt. Initialer Restfehler L/R ${stats.lastResidual.l} / ${stats.lastResidual.r}.`);
+  notes.push(`Jonglage: jede Keule macht ${timing.spinHalfTurns} Halbdrehungen pro Flug. Integer-Halbdrehungen + 6-Beat-Phasenfunktion schließen Lage und Orientierung konstruktiv; kein Keyframe-Drift.`);
+  if (stats.maxResidual > maxResidual) open.push(`Jonglage Arm-Restfehler initial ${stats.maxResidual.toFixed(3)} > ${maxResidual.toFixed(3)} — visuell prüfen; Ziel nicht als abgenommen behandeln.`);
+  return activity;
+}
+
 /* dependency order: anything referenced by on / sitOn / hand must be placed first */
 function orderItems(items) {
   const byId = new Map(items.map((i) => [i.id, i]));
@@ -726,6 +876,7 @@ export async function buildVignette(recipe, onProgress) {
   const extraMixers = [];
   const pendingStrum = [];
   const heldInfo = new Map();
+  let activity = null;
   const items = orderItems([...(recipe.habitat || []), recipe.actor, ...(recipe.signatureProps || [])].filter(Boolean));
   let done = 0;
 
@@ -1174,6 +1325,8 @@ export async function buildVignette(recipe, onProgress) {
     if (opts.dir && held) notes.push(`${ps.it.id}: Anschlagrichtung [${held.dir.toArray().map((v) => v.toFixed(3)).join(' / ')}] nicht gesetzt, sondern aus der Deckenlage gerechnet — Weltsenkrechte in die Deckenebene projiziert, davon ${Math.round(Math.abs(held.dir.y) * 100)} % senkrechter Anteil. Hoch/runter statt seitlich ist damit eine Rechnung, keine Einstellung.`);
   }
 
+  if (recipe.juggle) activity = makeJuggleCascade(root, nodes, recipe.juggle, open, notes);
+
   const b = box(root);
   const size = b.getSize(new THREE.Vector3());
   const actor = nodes.get(recipe.actor.id);
@@ -1187,7 +1340,7 @@ export async function buildVignette(recipe, onProgress) {
   }
   notes.push('Box-Maße stammen aus der Rest-Pose-Geometrie (Three.js Box3 berücksichtigt keine Skinning-Deformation). Der Kopf-Bone-Wert ist posenabhängig gemessen.');
   return {
-    root, nodes, open, notes, mixer: mixerInfo, extraMixers, headY,
+    root, nodes, open, notes, mixer: mixerInfo, extraMixers, activity, headY,
     bounds: { size: size.toArray(), min: b.min.toArray(), max: b.max.toArray() },
     actorBounds: actorBox ? {
       height: actorBox.max.y - actorBox.min.y,

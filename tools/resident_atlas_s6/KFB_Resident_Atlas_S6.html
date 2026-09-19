@@ -176,7 +176,10 @@ let revTime = 0, revPlaying = true;
 let showToken = 0;
 
 const actorOf = () => (cur && !cur.ensemble ? cur.nodes.get(cur.recipe.actor.id) : null);
+const tickActivity = (v, dt) => { if (v && v.activity && v.activity.enabled !== false) v.activity.update(dt); };
 V.post.add((dt) => {
+  if (cur && cur.ensemble) for (const v of cur.members) tickActivity(v, dt);
+  else tickActivity(cur, dt);
   if (cur && !cur.ensemble && cur.rev && revPlaying) {
     revTime += dt;
     cur.rev.at(revTime);
@@ -223,6 +226,7 @@ function facts(v) {
     ['handslot', af ? af.joints.filter((j) => /handslot/i.test(j)).join(', ') || 'keine' : '–'],
     ['Textur', r.actor.texture || '–'],
     ['Basis-Pose', v.mixer ? `${v.mixer.clip} · ${v.mixer.report.bound}/${v.mixer.report.total} Tracks` : 'keine'],
+    ['Aktivitäts-Runtime', v.activity ? v.activity.label : '–'],
     ['Schicht-Pose', v.mixer && v.mixer.layer ? `${v.mixer.layer.clip} auf ${v.mixer.layer.maskRoot} · ${v.mixer.layer.upper} Tracks` : '–'],
     ['Basis nach Maske', v.mixer && v.mixer.layer ? `${v.mixer.layer.lower} Tracks` : '–'],
     ['Sitz-Ausrichtung', seat.seatFacts ? `Bone ${seat.seatFacts.bone} → ${seat.seatFacts.host} y=${seat.seatFacts.seatY}` : '–']
@@ -292,6 +296,10 @@ async function fillClips(v) {
   const figures = [...v.nodes.entries()].filter(([, n]) => n.userData.poseInfo);
   sel.onchange = () => {
     const pick = clips.find((c) => c.name === sel.value);
+    if (v.activity) {
+      v.activity.enabled = !pick;
+      if (!pick) v.activity.reset?.();
+    }
     for (const m of V.mixers) V.mixers.delete(m);
     for (const [, n] of figures) n.userData.poseInfo.mixer.stopAllAction();
     if (!pick) {
@@ -339,6 +347,7 @@ async function fillClips(v) {
 }
 function freezeMotion(why) {
   revPlaying = false;
+  if (cur && !cur.ensemble && cur.activity) cur.activity.enabled = false;
   press($('tPlay'), false); $('tPlay').textContent = 'Abspielen';
   for (const m of V.mixers) V.mixers.delete(m);
   if (cur && cur.mixer) { cur.mixer.action.paused = true; if (cur.mixer.layer) cur.mixer.layer.action.paused = true; }
@@ -633,7 +642,11 @@ picker($('c'), V, () => curRoot, (hit) => {
 });
 
 who.onchange = () => show(who.value);
-await show(RESIDENTS[0].residentId);
+const requestedResident = new URLSearchParams(location.search).get('resident');
+const startResident = requestedResident && RESIDENTS.some((r) => r.residentId === requestedResident)
+  ? requestedResident : RESIDENTS[0].residentId;
+who.value = startResident;
+await show(startResident);
 window.__atlas = { V, ST, built, cur: () => cur, measured };
 </script>
 </body>
