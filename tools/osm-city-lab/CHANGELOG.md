@@ -1,5 +1,48 @@
 # Changelog · additive
 
+## 2026-09-19 · current narrow Ehrenfeld↔Hürth detail source
+
+### GOAL
+Use the tested source-derived route only as a spine, then fetch a fresh ~220 m half-width OSM detail source around that route instead of caching/rendering all of Cologne.
+
+### DECISION
+- Use one canonical current endpoint (`overpass-api.de`) for the final detail candidate.
+- Keep bounded job-local checkpoint retries for throttling.
+- Add explicit source freshness gates rather than accepting older fallback mirrors.
+- Source acquisition windows are not the final visible/collision corridor boundary.
+
+### IMPLEMENTATION
+- added `data/ehrenfeld-huerth-corridor-v0/SOURCE_SPEC.json`;
+- added `scripts/fetch-ehrenfeld-huerth-corridor-detail.mjs`;
+- added `.github/workflows/osm-city-corridor-detail.yml`;
+- generated deterministic `QUERY_PLAN.json`, cached source and provenance.
+
+### TESTED RESULT
+- GitHub Actions run `35411563105`, job `105812057380`: **PASS**.
+- Syntax PASS.
+- Pass 1: 10/15 chunks fetched; five HTTP 429 failures checkpointed around.
+- Pass 2: 10 cache hits; three more chunks fetched; two remained throttled.
+- Pass 3: 13 cache hits; final two chunks fetched; 15/15 complete.
+- Current merged detail source: **117,750** OSM elements.
+- Source SHA-256: `a6a6479e540a9c89d73da86a34313708920e5b0e1f551c9ca4c61c59d06928f6`.
+- OSM base oldest/newest: `2026-09-19T01:04:32Z` → `2026-09-19T01:08:37Z`.
+- Inter-chunk base skew: **0.068 h**.
+- Oldest source age at gate: **0.085 h**.
+- Freshness gates: **PASS**.
+- Source bot commit: `69645c04f8ca2b1ec979c6b046a4a7d551cd88df`.
+
+### STATUS
+- Current narrow OSM source: TESTED RESULT.
+- Route-band normalization / City consumer export: OPEN.
+- Continuous 3D drive integration: OPEN.
+- Browser / Stage / Georg acceptance: NOT RUN / PENDING.
+
+### OPEN
+Exactly one next gate:
+**normalize/select the ~220 m route band into one deterministic City consumer-scene export without adding movement.**
+
+---
+
 ## 2026-09-19 · Ehrenfeld↔Hürth source checkpoint retry
 
 ### GOAL
