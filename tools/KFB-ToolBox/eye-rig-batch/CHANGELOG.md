@@ -164,3 +164,35 @@ Stop EyeRig placement tuning. Do not guess replacement values.
 
 ### NEXT GATE
 Build a source-only 12-component isolation/highlight diagnostic and identify the actual current eye/lash/brow/nose/accessory components before changing cleanup or EyeRig calibration. No Medium batch expansion, merge, or Live promotion before this gate.
+
+
+## 2026-09-19 · Checkpoint 8 · CURRENT SOURCE IDENTITY RESOLVED
+
+### SOURCE
+- parsed pinned `GothGirl.glb` blob `b56f67e4ddb7db95ff54fef526148a49289f3915` with the current `faceShells()` connectivity rule;
+- confirmed exactly 12 head components;
+- added front/side static source projections for components 0–11.
+
+### DECISION
+- **eyes = 2 + 3**;
+- nose = 1;
+- ears = 4 + 5;
+- side accessories = 6 + 7 + 8;
+- hair = 9;
+- brows = 10 + 11;
+- historical 6+7 eye interpretation is retained as diagnostic history, not current truth.
+
+### IMPLEMENTATION
+- source cleanup now hides 2+3 only behind a fail-closed current-source signature;
+- EyeRig, FaceHost, mixer, expressions and seed placement remain otherwise unchanged;
+- lashes/brows/nose/mouth remain outside v0 graft scope.
+
+### TESTED RESULT
+- source identity checkpoint: `949ff8037df2da88eb91ef825984ef57870b8238`;
+- static/contract replay: **28/28 PASS**;
+- source write/readback: **PASS**;
+- Stage mirror: `c6489fce74f98b2124feb184becd27d2cbe4a922` · readback **PASS**;
+- corrected public browser proof: **OPEN** because connector push did not start Actions and current tools cannot access `pages.dev`.
+
+### NEXT GATE
+Georg reviews the corrected runtime-generated 2+3 measured baseline on the fixed Stage. No batch expansion, merge or Live promotion before that one visual gate.

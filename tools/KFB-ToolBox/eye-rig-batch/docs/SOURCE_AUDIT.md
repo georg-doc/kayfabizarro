@@ -1,5 +1,7 @@
 # Batch EyeRig Atlas · Source Audit · Checkpoint 1
 
+> **CURRENT CORRECTION · 2026-09-19:** this Checkpoint-1 audit recorded the historical `6 + 7 = eyes` precedent. Direct analysis of the pinned current `GothGirl.glb` resolves **2 + 3 as the frontal eye pair**; 6/7/8 are lateral accessories. Current implementation truth is [SOURCE_COMPONENT_IDENTITY_2026-09-19.md](SOURCE_COMPONENT_IDENTITY_2026-09-19.md). The remaining audit below is preserved as historical source/checkpoint evidence.
+
 Date: 2026-09-19  
 Status: IMPLEMENTATION · RIG_MEDIUM FIRST  
 Owner: KFB ToolBox / Rigging  

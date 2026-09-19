@@ -3,36 +3,33 @@
   "owner": "KFB ToolBox / Rigging",
   "repository": "georg-doc/kayfabizarro",
   "sourceBranch": "toolbox/eye-rig-batch-2026-09-18",
+  "identityCheckpoint": "949ff8037df2da88eb91ef825984ef57870b8238",
   "implementationCheckpoint": "d900fb99f3b04d52f266febd1501368c5fedd360",
   "mergeBase": "5650b6c54d8789b20ea80abe857688173d506d3b",
-  "mainObserved": "ebed22c4245bdbd9541ad8287028f773bc08d66e",
   "stage": {
     "route": "/kfb-hub/stage/toolbox/eye-rig-batch/",
     "url": "https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/eye-rig-batch/",
+    "componentEvidenceUrl": "https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/eye-rig-batch/docs/source-components-0-11.html",
     "publicationBranch": "cloudflare-live",
-    "publicationCommit": "26810dbc2f5a2d1f650c485b31f08bc2f4b0f8d5",
-    "hubLinked": true,
-    "mainRouterCommit": "ac067d09919f744750649e3652dd00036d7ccd6f",
-    "status": "PUBLIC_VERIFIED_SOURCE_FACE_IDENTITY_GATE_OPEN",
-    "stageSourceSnapshot": "fd7a123b3747f74f79b2759e1cbb48fc64f823f0",
-    "publicProof": {
-      "status": "PASS",
+    "publicationCommit": "c6489fce74f98b2124feb184becd27d2cbe4a922",
+    "status": "PUBLISHED_CORRECTED_2_3_PUBLIC_VERIFICATION_OPEN",
+    "correctedPublicProof": "NOT_RUN_CONNECTOR_PUSH_DID_NOT_TRIGGER_ACTIONS_AND_PAGES_DEV_UNREACHABLE_FROM_CURRENT_TOOLS",
+    "historicalPublicProof": {
+      "status": "PASS_HISTORICAL_PRE_IDENTITY_CORRECTION",
       "runId": 35460179569,
-      "runUrl": "https://github.com/georg-doc/kayfabizarro/actions/runs/35460179569",
       "publicationHead": "26810dbc2f5a2d1f650c485b31f08bc2f4b0f8d5",
       "checks": "21/21 PASS",
       "screenshots": 6,
-      "artifactId": 10589418791,
-      "artifactName": "kfb-eye-rig-batch-public-stage-proof",
-      "artifactDigest": "sha256:bea3014475b594ea9099897a30338af336579f6ca836327be4cb963f249cb450",
-      "errors": 0
+      "errors": 0,
+      "note": "Validated the runtime/action mechanics but exposed that the then-assumed 6+7 source components were lateral accessories; not current source-eye identity proof."
     }
   },
   "actor": {
     "id": "gothgirl",
     "rigClass": "Rig_Medium",
     "path": "media/3D_Assets/KayKit_Mystery_Series6/GothGirl/characters/GothGirl.glb",
-    "revision": "5650b6c54d8789b20ea80abe857688173d506d3b"
+    "revision": "5650b6c54d8789b20ea80abe857688173d506d3b",
+    "blob": "b56f67e4ddb7db95ff54fef526148a49289f3915"
   },
   "donors": {
     "eyeRig": {
@@ -64,14 +61,34 @@
     "headMesh": "GothGirl_Head",
     "expectedConnectedComponents": 12,
     "eyeComponents": [
-      6,
-      7
+      2,
+      3
     ],
     "mode": "runtime-derived-geometry",
-    "policy": "FAIL_CLOSED",
-    "measuredSeed": {
-      "method": "verified-source-components→skinned-vertex→world→FaceHost-local",
-      "status": "EXPLICIT_PREVIEW_PROVEN_DIAGNOSTIC_ONLY",
+    "policy": "FAIL_CLOSED_CURRENT_SOURCE_SIGNATURE",
+    "identityStatus": "RESOLVED_CURRENT_GLB",
+    "componentIdentity": {
+      "0": "head-face-shell",
+      "1": "nose",
+      "2": "eye-x-positive",
+      "3": "eye-x-negative",
+      "4": "ear-x-positive",
+      "5": "ear-x-negative",
+      "6": "side-accessory-x-negative",
+      "7": "side-accessory-x-positive-lower",
+      "8": "side-accessory-x-positive-upper",
+      "9": "hair",
+      "10": "brow-x-negative",
+      "11": "brow-x-positive"
+    },
+    "identityEvidence": "docs/SOURCE_COMPONENT_IDENTITY_2026-09-19.md",
+    "staticProjectionEvidence": "docs/source-components-0-11.html",
+    "historicalMeasuredSeed": {
+      "components": [
+        6,
+        7
+      ],
+      "status": "ARCHIVED_DIAGNOSTIC_ONLY_WRONG_SOURCE_IDENTITY",
       "hostUnit": 0.77441,
       "sourcePairSpanX": 1.31515,
       "sourceVerticalAsymmetry": 0.08812,
@@ -79,18 +96,11 @@
         "dx": 0.84913,
         "dy": -0.05142,
         "ring": 0.06925
-      },
-      "visualIdentity": "CONTRADICTED_BY_CURRENT_VISUAL_EVIDENCE"
+      }
     },
-    "identityGate": {
-      "status": "OPEN",
-      "observation": "Explicit component-6/7 baseline places EyeRig near lateral ear region while black eye-like source forms remain central under brows.",
-      "hypotheses": [
-        "components_6_7_not_current_visible_eye_pair",
-        "component_to_facehost_coordinate_interpretation_wrong",
-        "central_eye_like_forms_are_separate_component_or_material_layer"
-      ],
-      "nextProof": "isolate/highlight GothGirl head components 0..11 in source-only Front/3/4/Side views"
+    "correctedMeasurement": {
+      "status": "RUNTIME_RECOMPUTE_ON_2_3_STAGE_REQUIRED",
+      "applyPolicy": "EXPLICIT_ONLY_RESETTABLE_NOT_APPROVED"
     }
   },
   "pullRequest": {
@@ -100,22 +110,18 @@
     "merged": false
   },
   "tests": {
-    "staticContract": "22/22 PASS",
-    "jsSyntax": "3/3 PASS",
-    "githubPersistence": "PASS",
-    "localChromium": "ENVIRONMENT_UNAVAILABLE_2_PRE_APP_EGL_X_FAILURES",
-    "exactCloudflareUrl": "PASS_PLAYWRIGHT_GITHUB_ACTIONS_21_21_6_SCREENSHOTS"
+    "staticContract": "28/28 PASS · connector-side replay against persisted branch files",
+    "githubPersistence": "PASS · identity checkpoint and all five intended files fetched back",
+    "exactSourceGeometry": "PASS · 12/12 connected components measured from pinned GLB",
+    "historicalJsSyntax": "3/3 PASS on pre-identity implementation checkpoint",
+    "correctedJsSyntax": "NOT_RERUN_AS_NODE_MODULE",
+    "correctedCloudflareUrl": "PUBLIC_VERIFICATION_OPEN · current tools cannot access pages.dev",
+    "correctedGithubActions": "NOT_RUN · connector push did not trigger workflow"
   },
   "visualReview": {
-    "status": "SOURCE_FACE_IDENTITY_UNRESOLVED",
-    "observation": "Default EyeRig seed is oversized/protruding. The explicit source-measured component-6/7 preview is also not a valid visual placement: it lands near the ears while central black eye-like source forms remain visible.",
-    "measuredCandidate": "DIAGNOSTIC_ONLY_NOT_RECOMMENDED",
-    "nextGate": "12-component isolation diagnostic; identify actual source eyes/lashes/brows/nose/accessories before further EyeRig tuning."
-  },
-  "handoffSurfaces": {
-    "mainHubRouterStatusCommit": "8d534f013710d4aa57d1ca2baa7358b2957c35a5",
-    "cloudflareHubMirrorHead": "aaf66bfa4e779c59aa7534998e1650a79551f6e4",
-    "stageRuntimeProofHead": "26810dbc2f5a2d1f650c485b31f08bc2f4b0f8d5",
-    "note": "Explicit measured-baseline action is proven and reversible; visual source-face identity is unresolved, so component isolation is the next gate."
+    "status": "CORRECTED_2_3_HUMAN_GATE_OPEN",
+    "sourceIdentity": "RESOLVED",
+    "eyeProfile": "AUTO_CANDIDATE",
+    "nextGate": "Open corrected Stage; use source-measured baseline generated from components 2+3; compare Source/Cleaned/EyeRig in Front/3/4/Side and motion; approve/reject before Medium batch expansion."
   }
 }

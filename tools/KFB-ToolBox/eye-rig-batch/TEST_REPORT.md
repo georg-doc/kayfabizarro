@@ -208,3 +208,52 @@ Classification:
 `TECHNICAL ACTION PASS · SOURCE-FACE IDENTITY UNRESOLVED · VISUAL ACCEPTANCE OPEN`.
 
 No further placement tuning should treat `0.84913 / -0.05142 / 0.06925` as a recommended seed until current source components are isolated and visually identified.
+
+
+## 2026-09-19 · SOURCE COMPONENT IDENTITY RESOLUTION · CORRECTED 2+3
+
+Source identity checkpoint: `949ff8037df2da88eb91ef825984ef57870b8238`  
+Stage publication head: `c6489fce74f98b2124feb184becd27d2cbe4a922`
+
+### Exact source geometry
+
+The pinned current `GothGirl.glb` blob `b56f67e4ddb7db95ff54fef526148a49289f3915` was parsed with the same 1e-3 welded connected-component rule as `faceShells()`.
+
+Result: **12 / 12 components resolved**.
+
+- eye pair: **2 + 3** · 69 tris each · frontal and mirrored;
+- nose: **1**;
+- ears: **4 + 5**;
+- lateral accessories: **6 + 7 + 8**;
+- hair: **9**;
+- brows: **10 + 11**.
+
+The previous 6+7 interpretation is therefore archived as **wrong source identity / useful diagnostic history**. It correctly explained why the old measured preview landed near the ears.
+
+### Static / contract replay
+
+Against the exact persisted branch files after the correction:
+
+- **28 / 28 PASS**;
+- one mixer owner preserved;
+- EyeRig `update(dt)` preserved;
+- donor `faceShells()` + `buildStripped()` reuse preserved;
+- source cleanup remains fail-closed;
+- corrected eye pair 2+3 is guarded by current-GothGirl triangle/bounds signature;
+- 12-card source projection evidence present;
+- no source GLB write and no global schema promotion.
+
+The earlier **3/3 JavaScript syntax PASS** belongs to the pre-identity implementation checkpoint. A new Node-module syntax run was not available in this connector-only pass and is **NOT_RERUN**, not silently carried forward.
+
+### Publication / browser status
+
+The corrected 2+3 candidate was mirrored to `cloudflare-live@c6489fce74f98b2124feb184becd27d2cbe4a922`.
+
+Direct routes:
+
+- `https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/eye-rig-batch/`
+- `https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/eye-rig-batch/docs/source-components-0-11.html`
+
+The connector push did not create a new GitHub Actions run, and the current web environment cannot open `pages.dev`. Therefore the corrected build is **PUBLISHED / READBACK PASS / PUBLIC_VERIFIED OPEN**.
+
+No claim is made that the corrected measured 2+3 EyeRig placement is visually accepted yet.

@@ -1,6 +1,6 @@
 # KFB Batch EyeRig Atlas
 
-**Status:** IMPLEMENTED CANDIDATE · Rig_Medium first · public Stage browser proof 17/17 PASS · Georg visual/tuning gate pending.
+**Status:** IMPLEMENTED CANDIDATE · Rig_Medium first · source identity resolved (eyes 2+3) · corrected Stage published · Georg visual gate pending.
 
 Owner: KFB ToolBox / Rigging.
 
@@ -26,7 +26,7 @@ Stage target:
 
 The tool reuses the current EyeRig-v6 / FaceHost owners. It does not modify canonical GLB/GLTF files, create a second eye implementation, rewrite Resident Atlas recipes or introduce another animation owner.
 
-GothGirl source-eye cleanup uses the exact documented precedent only when the head still measures 12 connected components; components 6 + 7 are removed from a derived runtime index. Guard mismatch fails closed.
+GothGirl source-eye cleanup now uses current-source components **2 + 3** and a fail-closed identity signature (12 components, 69-triangle mirrored frontal eye pair). Components 6/7/8 are lateral accessories and remain preserved. The historical 6+7 interpretation is diagnostic history only.
 
 v0 includes eyes, pupils, gaze, blink, upper/lower lids, splay, the six existing expressions, life/kinetics and motion regression. Lashes, brows, nose and mouth stay out.
 
@@ -34,6 +34,8 @@ See:
 
 - `SOURCE.json`
 - `docs/SOURCE_AUDIT.md`
+- `docs/SOURCE_COMPONENT_IDENTITY_2026-09-19.md`
+- `docs/source-components-0-11.html`
 - `TEST_REPORT.md`
 - `RETURN.md`
 - `CHANGELOG.md`
@@ -57,3 +59,11 @@ The fixed Stage route is linked from the KFB Hub. Automated public verification 
 Public proof: GitHub Actions run `35457983922` · 17/17 PASS · 5 screenshots · 0 page/console errors.
 
 The current GothGirl seed remains `AUTO_CANDIDATE`: screenshots show the default eye size (`ring=0.30`) is visibly oversized/protruding. Use the Stage workbench to tune Eye size → Inset → Spacing/Vertical before approval.
+
+
+## Current corrected gate
+
+Source identity checkpoint: `949ff8037df2da88eb91ef825984ef57870b8238`.  
+Corrected Stage mirror: `cloudflare-live@c6489fce74f98b2124feb184becd27d2cbe4a922`.
+
+The earlier 21/21 public proof remains useful runtime history but is **not** current 2+3 visual proof. The corrected Stage needs one human browser review: use the runtime-generated source-measured baseline, compare Front / 3/4 / Side and motion, then approve or reject. The profile remains `AUTO_CANDIDATE`.

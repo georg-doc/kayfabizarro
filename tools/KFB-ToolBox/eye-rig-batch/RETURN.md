@@ -229,3 +229,63 @@ Measured source baseline:
 This explains the current visual mismatch without inventing replacement numbers: the visible seed remains `dx=0.345 · dy=-0.10 · ring=0.30`, which is much larger and substantially tighter than the verified source-eye baseline.
 
 **Next gate remains visual, not numeric approval:** expose the measured baseline as an explicit reversible preview, then Georg compares it against the current candidate before any value becomes an approved EyeProfile.
+
+
+## CURRENT RETURN · SOURCE IDENTITY RESOLVED
+
+### SOURCE
+
+- repo: `georg-doc/kayfabizarro`;
+- branch: `toolbox/eye-rig-batch-2026-09-18`;
+- identity checkpoint: `949ff8037df2da88eb91ef825984ef57870b8238`;
+- PR: **#104 · Draft · Open · Unmerged**;
+- exact actor blob: `b56f67e4ddb7db95ff54fef526148a49289f3915`.
+
+### DECISION
+
+Current GothGirl source eyes are **components 2 + 3**, not 6 + 7.
+
+The current 12-component source map is:
+
+`0 face/head · 1 nose · 2/3 eyes · 4/5 ears · 6/7/8 side accessories · 9 hair · 10/11 brows`.
+
+The historical 6+7 measurement remains preserved as diagnostic evidence. It is not reused as an eye seed.
+
+### IMPLEMENTATION
+
+- source cleanup switched to 2+3;
+- current-source fail-closed identity signature added;
+- static front/side source projections for all 12 components added;
+- canonical GLB/GLTF remains untouched;
+- EyeRig v6, FaceHost v1 and actor mixer ownership remain unchanged;
+- no EyeRig placement number was silently promoted.
+
+### TESTED RESULT
+
+- exact source connected-component analysis: **12/12 resolved**;
+- persisted static/contract replay: **28/28 PASS**;
+- GitHub branch/file readback after implementation write: **PASS**;
+- Stage publication/file readback: **PASS**;
+- corrected public browser proof: **OPEN / NOT RUN**.
+
+### PUBLIC DEPLOYMENT
+
+Publication branch head: `c6489fce74f98b2124feb184becd27d2cbe4a922`.
+
+Stage candidate:
+`https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/eye-rig-batch/`
+
+Static source-component evidence:
+`https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/eye-rig-batch/docs/source-components-0-11.html`
+
+The current tool environment cannot access `pages.dev`, and connector writes did not trigger the public Playwright workflow. This state is therefore **PUBLISHED / PUBLIC_VERIFIED OPEN**, not a new browser PASS.
+
+### GEORG ACCEPTANCE
+
+**OPEN.**
+
+### OPEN · exactly one next gate
+
+Open the corrected Stage, press **Use source-measured baseline** (now calculated from components 2+3), and compare Source / Cleaned / EyeRig in Front / 3/4 / Side plus motion.
+
+Approve or reject that single GothGirl candidate before any Medium batch expansion. No Large/Legacy work, merge or Live promotion before this gate.
