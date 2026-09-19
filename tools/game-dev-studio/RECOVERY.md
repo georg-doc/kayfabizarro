@@ -210,3 +210,29 @@ Default A/B mechanics are proven:
 **PUBLIC/HUMAN:** OPEN. Cloudflare/pages.dev is currently failing repo-wide; KCL public proof never booted the bench and is not evidence of animation failure.
 
 **CURRENT KCL GATE:** restore a successful current Cloudflare deployment, rerun the unchanged public proof, then Georg judges NAIVE vs PHASE SYNC. Pilot 01 and all existing Game Dev Studio package gates remain otherwise unchanged.
+
+
+## KCL-M1 · PUBLIC 39/39 PASS
+
+The first KayKit locomotion measurement proof is now externally browser-verified.
+
+Publication repair:
+- actual Cloudflare owner branch: `cloudflare-live`;
+- tested Stage mirror published at `fac041eb34c9a284d724a3ee2b945bef7d020d04`;
+- no motion code changed.
+
+Public evidence:
+- run `35468444150`, attempt 2;
+- public-proof job `105981648314`;
+- **39/39 PASS**;
+- artifact `10593933655`;
+- digest `sha256:5d7f6bb436d0030a3ddec3f080e0a6b041fe196cdf36cd3d34d5f5d01f71c0cf`;
+- 5/5 real clips measured;
+- A/B transition executed;
+- 0 failed resources;
+- 0 page/console errors.
+
+Fixed Stage:
+`https://kayfabizarro.pages.dev/kfb-hub/stage/game-dev-studio/kcl-m1-locomotion-sync/`
+
+**CURRENT KCL GATE:** Georg compares NAIVE vs PHASE SYNC visually. No consumer integration, semantic speed promotion or Sprint inference before that human gate.
