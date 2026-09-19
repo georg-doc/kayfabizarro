@@ -10,7 +10,7 @@ This file covers the Resident Scene Module → Platformer seam. It does not repl
 - [ ] Visual QA: catches occur at the hand region without obvious teleport/pop.
 - [ ] Visual QA: arm CCD does not visibly twist/elbow-flip.
 - [x] Automated current-pass arm-target residual recorded: max `0.0001394517`; rerun after any tuning rather than reusing this value.
-- [ ] Replace the current pivot-distance diagnostic with actual club mesh/vertex surface clearance over a full loop. Current browser run observed minimum pivot distance `0.0247257373`, which is close enough to require explicit catch/overlap review.
+- [ ] Replace the current pivot-distance diagnostic with actual club mesh/vertex surface clearance over a full loop. Two green Cloudflare runs observed minima `0.0247257373` and `0.0007849185`; the second is effectively coincident at pivot level. Browser screenshot also shows club geometry entering the head/upper-torso silhouette. Treat trajectory/catch tuning as OPEN, not accepted.
 - [ ] Narrow/mobile viewport QA for the direct Clown route.
 - [ ] Keep `PUBLIC DEPLOYMENT`, `BROWSER TESTED RESULT` and `GEORG ACCEPTANCE` separate.
 
