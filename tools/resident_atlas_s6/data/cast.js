@@ -126,6 +126,20 @@ export const RESIDENTS = [
       layer: { from: /^Waving$/, mask: 'torso' },
       texture: P + 'GothGirl/textures/gothgirl_texture.png (Variante A · texture_b ist Alt-Variante)'
     },
+    juggle: {
+      kind: 'juggle-cascade-v1',
+      actor: 'clown',
+      props: ['pin_blue', 'pin_green', 'pin_red'],
+      apex: 0.85,
+      gravity: 9.81,
+      dwellBeats: 0.45,
+      spinHalfTurns: 2,
+      handLift: 0.12,
+      handSweep: 0.055,
+      handWindowBeats: 0.42,
+      maxArmResidual: 0.10,
+      armIterations: 18
+    },
     habitat: [],
     signatureProps: [
       { id: 'stool', slot: 3, role: 'Sitz / Möbel', a: P + 'GothGirl/assets/gltf/GothGirl_Stool.gltf', p: [0, 0] },
@@ -155,22 +169,22 @@ export const RESIDENTS = [
     pack: 'KayKit Mystery Series · 11 - May 2024 - Clown',
     townRole: 'Performer · Zirkus / Jahrmarkt',
     habitatIntent: 'Zirkus-Podest-Nummer (Promo-Artwork 1:1)',
-    activity: 'Balanciert auf dem Podest, Hammer rechts, Jonglierkeule links',
+    activity: '3-Keulen-Cascade auf dem Zirkus-Podest · prozeduraler Loop mit Arm-Nachführung',
     relationships: ['Birthday-Set-Kandidat (Ballons, Torte-Kontext)', 'Gegenstück zur Goth-Girl-Bühne'],
     reference: { src: 'media/3D_Assets/KayKit_Mystery_Series6/11 - May 2024 - Clown/artwork.png', label: 'KayKit Clown · Promo-Artwork', promoBackground: 0xa974f0 },
     keyArt: { dir: [0.05, 0.22, 1], pad: 1.3 },
     actor: {
       id: 'clown', role: 'resident', a: P + '11 - May 2024 - Clown/characters/Clown.glb',
       rigFamily: 'Rig_Medium', rig: 'Rig_Medium', p: [-1.5, 0], r: 0, on: 'podium',
-      pose: /^Idle_B$/, poseFreeze: false,
+      pose: /^Idle_B$/, poseFreeze: true,
       texture: P + '11 - May 2024 - Clown/textures/clown_texture.png'
     },
     habitat: [
       { id: 'podium', role: 'landmark · Hauptpodest', a: P + '11 - May 2024 - Clown/assets/gltf/circus_podium.gltf', p: [-1.5, 0] }
     ],
     signatureProps: [
-      { id: 'hammer', slot: 1, role: 'Identität / Clownhammer', a: P + '11 - May 2024 - Clown/assets/gltf/clown_hammer.gltf', hand: { of: 'clown', bone: 'handslot.r' } },
-      { id: 'pin_blue', slot: 2, role: 'Aktivität / Jonglierkeule', a: P + '11 - May 2024 - Clown/assets/gltf/juggling_pin_blue.gltf', hand: { of: 'clown', bone: 'handslot.l' } },
+      { id: 'hammer', slot: 1, role: 'Identität / Clownhammer · abgelegt während Jonglage', a: P + '11 - May 2024 - Clown/assets/gltf/clown_hammer.gltf', on: 'podium', p: [-0.55, 0.55], r: 22, rx: 90 },
+      { id: 'pin_blue', slot: 2, role: 'Aktivität / Jonglierkeule · blau', a: P + '11 - May 2024 - Clown/assets/gltf/juggling_pin_blue.gltf', p: [0, 0] },
       { id: 'ball', slot: 4, role: 'Nummer / Balancierball', a: P + '11 - May 2024 - Clown/assets/gltf/clown_ball.gltf', p: [1.5, -0.55] },
       { id: 'podium_hoop', slot: 6, role: 'Podest für Reifen', a: P + '11 - May 2024 - Clown/assets/gltf/circus_podium.gltf', p: [2.95, -0.95], s: 0.55, scaleNote: 'Vorschau-Korrektur: Promo zeigt ein kleineres Podest; das Pack hat nur circus_podium. s=0.55 ist bewusst gesetzt, kein Registry-Fakt.' },
       { id: 'hoop', slot: 5, role: 'Lore / Sprungreifen', a: P + '11 - May 2024 - Clown/assets/gltf/circus_hoop.gltf', on: 'podium_hoop', p: [2.95, -0.95] },
@@ -181,8 +195,8 @@ export const RESIDENTS = [
       { id: 'dog_green', role: 'promo-extra', a: P + '11 - May 2024 - Clown/assets/gltf/balloon_dog_green.gltf', p: [-1.8, 1.05], r: -40 },
       { id: 'bomb_a', role: 'promo-extra', a: P + '11 - May 2024 - Clown/assets/gltf/clown_bomb.gltf', p: [-0.95, 1.25] },
       { id: 'bomb_b', role: 'promo-extra', a: P + '11 - May 2024 - Clown/assets/gltf/clown_bomb.gltf', p: [1.15, 1.15], r: 30 },
-      { id: 'pin_green', role: 'promo-extra', a: P + '11 - May 2024 - Clown/assets/gltf/juggling_pin_green.gltf', p: [0.25, 0.95], r: 74, rx: 90 },
-      { id: 'pin_red', role: 'promo-extra', a: P + '11 - May 2024 - Clown/assets/gltf/juggling_pin_red.gltf', p: [0.65, 1.05], r: 108, rx: 90 },
+      { id: 'pin_green', role: 'Aktivität / Jonglierkeule · grün', a: P + '11 - May 2024 - Clown/assets/gltf/juggling_pin_green.gltf', p: [0, 0] },
+      { id: 'pin_red', role: 'Aktivität / Jonglierkeule · rot', a: P + '11 - May 2024 - Clown/assets/gltf/juggling_pin_red.gltf', p: [0, 0] },
       { id: 'bal_blue_l', role: 'promo-extra', a: P + '11 - May 2024 - Clown/assets/gltf/balloon_blue.gltf', p: [-3.0, -2.45], float: 3.15 },
       { id: 'bal_green_l', role: 'promo-extra', a: P + '11 - May 2024 - Clown/assets/gltf/balloon_green.gltf', p: [-3.5, -2.1], float: 2.35 },
       { id: 'bal_red_l', role: 'promo-extra', a: P + '11 - May 2024 - Clown/assets/gltf/balloon_red.gltf', p: [-2.6, -2.15], float: 2.7 },
@@ -196,12 +210,14 @@ export const RESIDENTS = [
       'Zwei Podeste sind bewusst skalierte Instanzen desselben Meshes (siehe scaleNote) — kein zweites Modell erfunden.',
       'S32 · INSZENIERUNG: die erste Fassung lag auf einem flachen z-Band (-1,35 bis 1,3) und las sich als Reihe. Neu in drei Tiefenebenen gruppiert, ohne ein Objekt zu tauschen oder zu skalieren — nur Positionen: HINTEN die zwei Ballontrauben (z -2,0 bis -2,45, Schwebehöhen 2,25 bis 3,15 statt 2,0 bis 2,6); DAHINTER-MITTE Ball (z -0,55) und Reifen-Podest (z -0,95); MITTE Hauptpodest mit Figur und Ballonhund-Podest; VORN die zwei losen Ballonhunde am Podestfuß (z 0,82 / 1,05), davor Bomben (1,15 / 1,25) und lose Keulen (0,95 / 1,05) als Pointe. Die Stärke der Staffelung ist Bildabgleich gegen die Promo-Blende, keine gemessene Größe.',
       'S32b · DIE VORDEREBENE MUSS ÜBER DER CAPTION-BANDE BLEIBEN. Erste Fassung schob Bomben auf z 1,85 und Keulen auf 2,10 — projiziert lagen sie bei Bildschirm-y 482 und 505, und die HUD-Leiste (#dockrow) beginnt bei 475. Verdeckt war damit genau das, was als Pointe gedacht war. Die Leiste ist nicht wegschaltbar („Leiste ausblenden“ klappt die Seitenspalte, nicht die Caption). Vorderebene deshalb auf z 0,82 bis 1,25 zurückgenommen — gemessener Abstand zur Leistenoberkante danach: Ballonhunde +71/+76 px, Bomben +65/+68 px, Keulen +57/+60 px. Zwischenstand war +11 bzw. -8 px: die Keulen lagen nach dem ersten Zurücknehmen noch unter der Kante, weil sie flach liegen und ihr tiefster Punkt am Boden näher an die Kante reicht als eine stehende Bombe und pad von 1,2 auf 1,3 erhöht, weil die Vignette rund 1,7 tiefer geworden ist als beim Setzen des alten Werts. Geprüft wird das durch PROJEKTION gegen die Oberkante der Leiste, nicht nach Augenschein.',
-      'Pose: Idle_B aus Rig_Medium_General.glb. Das Promo-Artwork zeigt eine Balance-Pose auf einem Bein; die geteilte Bibliothek hat keinen Balance-Clip. Abweichung bleibt stehen, statt sie zu erfinden.'
+      'Pose: Idle_B aus Rig_Medium_General.glb. Das Promo-Artwork zeigt eine Balance-Pose auf einem Bein; die geteilte Bibliothek hat keinen Balance-Clip. Für die Jonglage wird Idle_B auf der Basiszeit eingefroren und nur die beiden Armketten werden prozedural nachgeführt — kein erfundener Ganzkörper-Clip.',
+      'S33 · JONGLAGE: drei echte Pack-Keulen (blau/grün/rot) laufen als geschlossene 6-Beat-Cascade. Apex + Gravitation bestimmen die Flugzeit; die Hände stammen aus der gemessenen Recipe-Pose; CCD führt beide Arme zu Throw/Catch-Scoop-Zielen. Der Hammer bleibt als echtes KayKit-Prop sichtbar, liegt während der Nummer aber auf dem Podest statt eine Hand zu blockieren.'
     ],
     open: [
       'Ballon-Schwebehöhen sind Bildabgleich, keine gemessene Registry-Größe.',
       'Die geteilte Bibliothek hat 119 Clips in 7 Sets, aber keinen Balance-Clip — über die vollständige Clip-Liste geprüft, nicht vermutet.',
-      'Promo-Hintergrund ist ein Studio-Violett; die Atlas-Grundbeleuchtung bleibt neutral, damit Residents vergleichbar bleiben.'
+      'Promo-Hintergrund ist ein Studio-Violett; die Atlas-Grundbeleuchtung bleibt neutral, damit Residents vergleichbar bleiben.',
+      'Mehr als drei Keulen bleiben OPEN. Der vorhandene Brief verlangt vor 4–6 Keulen eine Flugbahn-/Abstandsrechnung; v1 promotet deshalb bewusst nur die belegte 3-Keulen-Cascade.'
     ]
   },
   {
