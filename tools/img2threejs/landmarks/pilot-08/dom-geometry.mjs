@@ -1,4 +1,4 @@
-import {assembly,spin,add} from '/tools/img2threejs/landmarks/pilot-02/builder.mjs';
+import {assembly,spin,add} from '../pilot-02/builder.mjs';
 
 const TAU=Math.PI*2;
 
