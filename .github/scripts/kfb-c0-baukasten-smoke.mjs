@@ -28,10 +28,21 @@ try{
     evidence:window.__C0_EVIDENCE__
   }));
   report.runtime={status:summary.status,packs:summary.packs,tiny:summary.tiny,proofs:summary.proofs};
-  report.evidence=summary.evidence;
+  report.evidence={
+    schema:summary.evidence?.schema,
+    baseCommit:summary.evidence?.baseCommit,
+    registry:{schema:summary.evidence?.registry?.schema,sourceCommit:summary.evidence?.registry?.sourceCommit,counts:summary.evidence?.registry?.counts},
+    proofs:summary.evidence?.proofs,
+    modules:summary.evidence?.modules,
+    errors:summary.evidence?.errors,
+    ready:summary.evidence?.ready,
+    finishedAt:summary.evidence?.finishedAt
+  };
   check('11 scoped registry pack cards',summary.packs===11,summary.packs);
   check('all six Tiny Treats cards',summary.tiny===6,summary.tiny);
   check('five measured browser witnesses',summary.proofs===5,summary.proofs);
+  const tinyText=await page.locator('#tinyGrid').innerText();
+  check('House Plants stays structural UNKNOWN',/House Plants[\s\S]*STRUCTURAL UNKNOWN/.test(tinyText),tinyText.includes('STRUCTURAL UNKNOWN'));
   check('runtime evidence has no errors',(summary.evidence?.errors||[]).length===0,summary.evidence?.errors||[]);
   for(const id of ['carry','tell-modular','tell-loose','inhabit','act']){
     const e=summary.evidence?.proofs?.[id];
@@ -60,6 +71,14 @@ try{
     baseCommit:summary.evidence?.baseCommit,
     registry:{schema:summary.evidence?.registry?.schema,sourceCommit:summary.evidence?.registry?.sourceCommit,counts:summary.evidence?.registry?.counts},
     packs:compactPacks,
+    tinyTreatsClassification:{
+      'tiny-treats-bakery-interior-1-1-free':{structural:'PROVEN_MODULAR_INTERIOR',looseScenery:'PROVEN'},
+      'bubbly-bathroom-tiny-treats-1-1':{structural:'PROVEN_MODULAR_INTERIOR',looseScenery:'PROVEN'},
+      'tiny-treats-pretty-park-1-0-free':{structural:'PROVEN_GROUND_MODULES',looseScenery:'PROVEN'},
+      'tiny-treats-pleasant-picnic-1-0-free':{structural:'NOT_PROVEN',looseScenery:'PROVEN'},
+      'tiny-treats-homely-house-1-0-free':{structural:'LIMITED_GROUND_SCENE_PARTS_ONLY',looseScenery:'PROVEN'},
+      'tiny-treats-house-plants-1-0-free-2':{structural:'UNKNOWN_CONFLICT_WITH_BRIEFING',looseScenery:'PROVEN',note:'Current registry shard exposes plant/pot/leaf/vine families and no wall/floor/door/modular filename in C0 scan.'}
+    },
     proofs:summary.evidence?.proofs,
     modules:{
       resident:{manifest:'tools/resident_atlas/modules/clown-juggling-island.module.json',adapter:'tools/resident_atlas/modules/runtime/s6-resident-module.js',definition:summary.evidence?.modules?.resident},
