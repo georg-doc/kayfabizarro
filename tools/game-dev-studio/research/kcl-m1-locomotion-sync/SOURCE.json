@@ -2,7 +2,7 @@
   "schema": "kfb.kcl-m1-source/0.1",
   "date": "2026-09-19",
   "owner": "KFB Game Dev Studio research / ToolBox motion donor",
-  "status": "IMPLEMENTATION_CANDIDATE_NOT_BROWSER_VERIFIED",
+  "status": "LOCAL_BROWSER_39_39_PASS_PUBLIC_CLOUDFLARE_BLOCKED",
   "mainSnapshot": "29c7500b39d20945f4f8e73fb02fef91a055b02c",
   "actor": {
     "name": "ActionFigure",
@@ -49,5 +49,37 @@
   ],
   "stageTarget": "https://kayfabizarro.pages.dev/kfb-hub/stage/game-dev-studio/kcl-m1-locomotion-sync/",
   "stageStatus": "NOT_DEPLOYED",
-  "consumerBoundary": "Measurement/QA only. Travel, Race, Combat, Platformer and other consumers retain movement/physics/state ownership."
+  "consumerBoundary": "Measurement/QA only. Travel, Race, Combat, Platformer and other consumers retain movement/physics/state ownership.",
+  "updated": "2026-09-19",
+  "localBrowserEvidence": {
+    "workflowRun": 35468444150,
+    "job": 105964939873,
+    "commit": "72e6eae20699c605c015514600d1ecec792ee127",
+    "checks": "39/39 PASS",
+    "artifactId": 10591764219,
+    "artifactDigest": "sha256:55b8cc47723a64fc9c633ad46e2008a446d666ba724d02fed6242c17354de75e",
+    "contents": [
+      "desktop.png",
+      "local-browser.json"
+    ],
+    "measuredProfile": "tools/game-dev-studio/research/kcl-m1-locomotion-sync/MEASURED_PROFILE_CANDIDATE.json"
+  },
+  "repairHistory": [
+    {
+      "pass": 1,
+      "observed": "First local browser run loaded and measured 5/5 clips, then proof harness failed because source pin was read from snapshot() instead of the exposed bench API.",
+      "repair": "Proof scripts only: merge window.__KFB_KCL_M1__.source into the proof snapshot.",
+      "motionCodeChanged": false,
+      "result": "39/39 local browser PASS"
+    }
+  ],
+  "publicEvidence": {
+    "status": "BLOCKED_REPO_WIDE_CLOUDFLARE_DEPLOYMENT",
+    "firstKclRun": 35467428927,
+    "firstKclJob": 105962230768,
+    "failure": "SOURCE.json returned HTML fallback during marker polling; bench never booted publicly.",
+    "crosscheck": "TE-01 public proof already failed the same Cloudflare deployment-marker gate before KCL publication; later Cloudflare builds also failed.",
+    "publicVerified": false,
+    "humanAcceptance": "PENDING"
+  }
 }
