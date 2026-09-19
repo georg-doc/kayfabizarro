@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#171811"><title>KFB Boxel Blitz · Audio Feedback POC</title>
+<style>
+:root{color-scheme:dark;font:14px/1.4 system-ui,sans-serif;--bg:#171811;--fg:#f2ecd9;--muted:#a9ad91;--gold:#d9c36d}
+*{box-sizing:border-box}html,body{margin:0;width:100%;height:100%;overflow:hidden;background:var(--bg);color:var(--fg)}
+#gl{position:fixed;inset:0;width:100%;height:100%;display:block;touch-action:none}
+.hud{position:fixed;left:18px;top:16px;max-width:min(520px,calc(100vw - 36px));pointer-events:none}
+.eyebrow{font:11px ui-monospace,monospace;letter-spacing:.12em;color:var(--gold)}h1{margin:6px 0 4px;font-size:clamp(24px,4vw,44px);line-height:.96;letter-spacing:-.04em}
+p{margin:6px 0;color:var(--muted)}#readout{margin-top:10px;font:12px ui-monospace,monospace;color:#fff3bc}
+.legend{position:fixed;left:18px;right:18px;bottom:14px;display:flex;gap:8px;flex-wrap:wrap;pointer-events:none}.chip{background:#1f2318dd;border:1px solid #596044;border-radius:999px;padding:6px 9px;font-size:10px;color:#d7d8c5}
+@media(max-width:650px){.hud{top:10px;left:10px}.legend{left:10px;right:10px;bottom:8px}.chip{font-size:9px;padding:5px 7px}}
+</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js"}}</script>
+</head>
+<body>
+<canvas id="gl" aria-label="Boxel audio feedback playground"></canvas>
+<div class="hud"><div class="eyebrow">KFB / BOXEL BLITZ / AUDIO FEEDBACK POC</div><h1>Pickups, power states & cascades</h1><p>Tap a Boxel. Audio is existing KFB/Kenney material; visuals are presentation-only.</p><div id="readout">Tap a Boxel to start audio.</div></div>
+<div class="legend"><span class="chip">GOLD · PICKUP</span><span class="chip">LIME · POWER UP</span><span class="chip">RED · POWER DOWN</span><span class="chip">CYAN · CHECKPOINT LADDER</span><span class="chip">VIOLET · CASCADE</span><span class="chip">WHITE · RANDOM</span></div>
+<script type="module" src="./poc.mjs"></script>
+</body></html>
