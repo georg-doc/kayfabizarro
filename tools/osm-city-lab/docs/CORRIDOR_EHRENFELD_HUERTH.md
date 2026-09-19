@@ -1,7 +1,45 @@
 # Ehrenfeld ↔ Hürth OSM Corridor
 
-**Date:** 2026-09-18  
-**Status:** IMPLEMENTATION READY · SOURCE BLOCKED (public Overpass availability) · RETRYABLE
+**Date:** 2026-09-19  
+**Status:** MAIN PROMOTION OPEN · SOURCE/DETAIL/CONSUMER TESTED ON STACKED DRAFT PRs · RACE RECEIVER BROWSER GATE ACTIVE
+
+## CURRENT RECOVERY OVERRIDE · 2026-09-19
+
+The old `SOURCE BLOCKED` state below is historical, not current execution state.
+
+Three stacked draft PRs now contain tested corridor work:
+
+- PR #80 · `osm-city/corridor-checkpoint-retry-2026-09-19`
+  - route discovery workflow PASS: run `35410991615`, job `105810446135`;
+  - route candidate: **11,384.3 m / 510 nodes / 509 segments**;
+  - real `Militärringstraße` contribution: **344.9 m / 14 segments**;
+  - source/evidence commit: `12bc1b03bf179e3d2b45b3a1cf4e56914690f506`.
+
+- PR #81 · `osm-city/corridor-detail-current-2026-09-19`
+  - current narrow source workflow PASS: run `35411563105`, job `105812057380`;
+  - 15/15 detail chunks complete after bounded checkpoint/retry;
+  - current-source SHA-256: `a6a6479e540a9c89d73da86a34313708920e5b0e1f551c9ca4c61c59d06928f6`;
+  - freshness / inter-chunk skew gates PASS.
+
+- PR #82 · `osm-city/corridor-consumer-export-2026-09-19`
+  - consumer workflow PASS: run `35412177342`, job `105813800461`;
+  - generated consumer commit: `3db2c786152fd4d77ca33a63effd2a9db9c1d4c1`;
+  - scene SHA-256: `258c4d5a3872750bc9045d771646e85dbf36aab8a14243db98adc0d288edf07d`;
+  - selected corridor content: **2,486 roads / 7,420 buildings / 332 landuse / 2 water lines**;
+  - consumer bounds: **3,560.216 × 9,735.554 m**;
+  - all source / metre-frame / route-band / OSM-id / endpoint-join / movement-owner / determinism gates PASS.
+
+These PRs are **stacked draft branches and currently diverged from newer `main`**. Do not merge them blindly. Reconcile/rebase the stack against current main before City Lab promotion.
+
+The existing Race / Free-Roam receiver is already consuming the exact pinned consumer scene on branch:
+
+`georg-doc/KFB-Stunt-Car-Race@wsa/osm-city-drive-corridor-2026-09-19`
+
+Current observed branch head during this recovery check:
+
+`d2529e634952f25d691d68873801b2651125ac0c`
+
+The Race lane remains the movement/contact owner; City Lab still owns no driving engine.
 
 ## Goal
 
