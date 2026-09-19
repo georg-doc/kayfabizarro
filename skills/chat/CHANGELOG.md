@@ -364,3 +364,35 @@ No current calibrated browser PASS is claimed: connector writes did not start th
 
 ### NEXT GATE
 Georg opens the fixed Stage, leaves Neutral + Bind/T, clicks **QA 4-view**, and judges only eye scale, pupil scale, darker skin-derived lids and ¾/Side attachment. No Medium batch expansion, Large/Legacy, merge or Live promotion before that one visual gate.
+
+
+## 2026-09-19 · Batch EyeRig Atlas · Medium authoring surface ready for Stage review
+
+### DEFAULT
+Georg's tuned browser configuration is now the `Rig_Medium` authoring start:
+`dx .295 · dy .045 · ring .153 · track .15 · pupil .34 · inset .40 · lidFit .90 · converge .18 · splay 0 · gloss .10`.
+
+Source measurement is suggestion-only and never auto-promotes over this visual default.
+
+### STUDIO FEATURES
+- existing `eyeoval.v1.js` reused for Width / Height / Depth / inward Tilt;
+- existing EyeRig-v6 gaze owner surfaced as Life / Pointer / Fixed;
+- persistent Batch bar added;
+- Character + Batch import/export;
+- `Apply to Selected`;
+- batch schema `kfb.eye-profile-batch/0.2-candidate`;
+- inheritance `rigClass → character → session`.
+
+### EVIDENCE
+- source/Return head `fe088da25bb344a522b61ac7c554d0a4dc8cc15e`;
+- implementation `c74cbd6e0691d0bd3bcc574203219cdb0e9f647f`;
+- evidence `eeb79850a8142968c418e23b482a330f120dd9c2`;
+- Stage `40133c8b2d6d8f210003a6ef7cfa793aebac63bf`;
+- **46/46 static PASS · 15/15 focused PASS · 2/2 syntax PASS**;
+- public browser verification remains OPEN: no new Actions run and current web source cannot access `pages.dev`.
+
+### DEFERRED
+Top/bottom eye contour, Mouth Batch, optional Nose/Brow grafts, Vehicle/headlight EyeRig and later plant/object hosts are recorded, not implemented.
+
+### NEXT GATE
+Review the expanded authoring surface on the fixed Stage. On acceptance, build a varied 5–8 actor `Rig_Medium` sample before expanding the class.
