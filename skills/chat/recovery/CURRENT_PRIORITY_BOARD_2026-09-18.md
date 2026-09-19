@@ -201,7 +201,7 @@ No Bash/terminal action is required from Georg.
 
 `tools/KFB-ToolBox/_handover/RESIDENT_SCENE_MODULES_WSA_2026-09-19/START_HERE.md`
 
-Current proof: Clown + exact KayKit blue/green/red juggling pins + deterministic 3-club activity. Static math/source checks are recorded, and Cloudflare browser run `35421198328` is green on the exact Clown deep link (HTTP 200, activity mounted/advancing, no browser errors). Georg visual acceptance remains open.
+Current proof: Clown + exact KayKit blue/green/red juggling pins + deterministic 3-club activity. Cloudflare browser runs `35421198328` and `35421390825` are green on the exact Clown deep link (HTTP 200, activity mounted/advancing, no browser errors). The second captured frame plus near-zero club pivot-distance sample keeps trajectory/catch tuning OPEN; Georg visual acceptance remains open.
 
 Human review URL:
 
