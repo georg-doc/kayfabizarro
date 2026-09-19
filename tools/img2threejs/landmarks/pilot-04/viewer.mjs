@@ -21,7 +21,7 @@ export async function boot(){
   const content=new THREE.Group();scene.add(content);
 
   let model='spasskaya',shapeMode='city-grotesque',rigMode='grouped',paletteMode='city',vibe='idle';
-  let bpm=112,intensity=.65,wire=false,showRig=true,current=null,reactor=null,floor=null,grid=null,helpers=null,lastAsset=null;
+  let bpm=112,intensity=.65,wire=false,showRig=true,current=null,currentKind=null,reactor=null,floor=null,grid=null,helpers=null,lastAsset=null;
   const params=new URLSearchParams(location.search);
   if(['spasskaya','kremlin-wall'].includes(params.get('model')))model=params.get('model');
   if(['base','city-grotesque','soft-cubist'].includes(params.get('shape')))shapeMode=params.get('shape');
@@ -40,12 +40,12 @@ export async function boot(){
   function disposeCurrent(){
     reactor?.reset();reactor=null;
     if(!current)return;
-    if(rigMode==='grouped')disposeRiggedLandmark(current);
+    if(currentKind==='grouped')disposeRiggedLandmark(current);
     else{
       if(current.legacyInner)disposeLandmark(current.legacyInner);
       if(current.root.parent)current.root.parent.remove(current.root);
     }
-    content.clear();current=null;helpers=null;
+    content.clear();current=null;currentKind=null;helpers=null;
     if(floor){scene.remove(floor);floor.geometry.dispose();floor.material.dispose();floor=null;}
     if(grid){scene.remove(grid);grid.geometry.dispose();grid.material.dispose();grid=null;}
   }
@@ -90,12 +90,12 @@ export async function boot(){
     const base=buildLandmark(model);
     if(rigMode==='grouped'){
       lastAsset=rigLandmark(base,style,shapeMode);
-      current=createRiggedLandmarkGroup(THREE,lastAsset,palette(lastAsset));content.add(current.root);
+      current=createRiggedLandmarkGroup(THREE,lastAsset,palette(lastAsset));currentKind='grouped';content.add(current.root);
       helpers=addRigHelpers(THREE,current,showRig);
     }else{
       lastAsset=shapeAsset(base,style,shapeMode);
       const legacy=createLandmarkGroup(THREE,lastAsset,palette(lastAsset));
-      current=fakeRigView(legacy,lastAsset);
+      current=fakeRigView(legacy,lastAsset);currentKind='legacy';
     }
     reactor=createLivingToyReactor(THREE,current,{mode:vibe,bpm,intensity});
     recolour();makeFloor();resize();frame();updateStatus();
