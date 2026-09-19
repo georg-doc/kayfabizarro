@@ -1,0 +1,38 @@
+{
+  "schema": "kfb.stage-mirror/0.1",
+  "product": "KCL-M1 Locomotion Sync Bench",
+  "status": "PUBLIC_STAGE_CANDIDATE_PROOF_PENDING",
+  "owner": "KFB Game Dev Studio research",
+  "sourceRepo": "georg-doc/kayfabizarro",
+  "sourceBranch": "chatgpt-web/kaykit-creator-learning-2026-09-19",
+  "sourceBranchHead": "d5c112af24df803462f0a326a85925f34170a5ed",
+  "sourceFiles": {
+    "indexHtml": {
+      "path": "tools/game-dev-studio/research/kcl-m1-locomotion-sync/index.html",
+      "blobSha": "2c40f43e8aad23d0863489af74b129cab666246a"
+    },
+    "benchMjs": {
+      "path": "tools/game-dev-studio/research/kcl-m1-locomotion-sync/bench.mjs",
+      "blobSha": "b7c22883f90b12e852a558a73eac6abb3f78142d"
+    },
+    "sourceJson": {
+      "path": "tools/game-dev-studio/research/kcl-m1-locomotion-sync/SOURCE.json",
+      "blobSha": "d7b890fc138b31d77bd7ee6e8328175ae34a914a"
+    }
+  },
+  "assetPins": {
+    "base": "29c7500b39d20945f4f8e73fb02fef91a055b02c",
+    "actionFigureBlob": "4785276defdb929cb397954eb74b76aecb84486b",
+    "movementBasicBlob": "98e965e886ec539e80f8984a77a29b0c1c02e5e5"
+  },
+  "stageUrl": "https://kayfabizarro.pages.dev/kfb-hub/stage/game-dev-studio/kcl-m1-locomotion-sync/",
+  "scope": [
+    "Walking_A",
+    "Walking_B",
+    "Walking_C",
+    "Running_A",
+    "Running_B"
+  ],
+  "ownerBoundary": "Measurement/QA only; no consumer movement, physics, gameplay state or global animation owner.",
+  "humanAcceptance": "PENDING"
+}

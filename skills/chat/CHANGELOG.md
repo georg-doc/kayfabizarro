@@ -396,3 +396,26 @@ Top/bottom eye contour, Mouth Batch, optional Nose/Brow grafts, Vehicle/headligh
 
 ### NEXT GATE
 Review the expanded authoring surface on the fixed Stage. On acceptance, build a varied 5–8 actor `Rig_Medium` sample before expanding the class.
+
+
+## 2026-09-19 · KCL-M1 Locomotion Sync · Stage candidate
+
+### SOURCE
+- research branch: `chatgpt-web/kaykit-creator-learning-2026-09-19`;
+- source head: `d5c112af24df803462f0a326a85925f34170a5ed`;
+- Draft PR #107 remains OPEN / UNMERGED;
+- exact donor actor: ActionFigure · Rig_Medium;
+- exact scope: Walking_A/B/C + Running_A/B;
+- source bench preserves consumer movement/physics ownership and contains no Sprint source.
+
+### STAGE PUBLICATION
+Lean Stage mirror prepared at:
+`https://kayfabizarro.pages.dev/kfb-hub/stage/game-dev-studio/kcl-m1-locomotion-sync/`
+
+The same publication batch adds a KFB Hub briefing card and a public Playwright proof that waits for the exact source-head marker before browser checks.
+
+### CURRENT STATUS
+`DEPLOYMENT / PUBLIC_BROWSER = PENDING` at commit preparation. A source commit is not a public PASS.
+
+### HUMAN GATE
+After automated public proof, Georg compares A · NAIVE against B · PHASE SYNC for foot sliding, double-step, hip pop, cadence and weight. No consumer integration before that visual gate.
