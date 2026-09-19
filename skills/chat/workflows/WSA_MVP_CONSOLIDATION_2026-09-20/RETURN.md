@@ -107,12 +107,25 @@ Reserved/new route:
 `https://kayfabizarro.pages.dev/kfb-hub/stage/wsa-mvp-consolidation/`
 
 Current status:
-`SOURCE_BRANCH_ONLY_NOT_PUBLIC_VERIFIED`
+`GITHUB_PUBLICATION_MIRRORED · CLOUDFLARE_MARKER_BLOCKED · NOT_HUMAN_READY`
 
-Do not call it live until the exact Cloudflare route is published and browser-opened with the expected source marker.
+Publication branch:
+`cloudflare-live@aa1dde22d2f6108e97f986f7cc1e9f3e16dffc48`
+
+Public QA:
+- run `35475904961`
+- job `105984997880`
+- FAIL before browser at the exact source-marker wait
+- expected build/source marker did not appear during the bounded wait
+- browser and screenshot steps were therefore skipped
+
+This reproduces the same deployment/control-plane symptom already recorded for the TinySkies terrain donor. The new navigator is present in GitHub publication state but is **not** a valid human test surface yet.
+
+Do not call it live or ask Georg to review it until the exact Cloudflare route serves the expected source marker and a browser proof passes.
 
 ## Unresolved items
 
+- Shared Cloudflare publication/control-plane blocker: new child-route/source-marker state is not reaching the canonical pages.dev surface; WSA navigator public run `35475904961` and TinySkies donor run `35474894951` both fail before browser at the deployment marker gate.
 - Travel PR #30 is actively moving; WSA must re-fetch it immediately before local integration.
 - TinySkies terrain publication marker is not current.
 - OSM/Grotesque public marker remains frozen after two failed repair passes.
