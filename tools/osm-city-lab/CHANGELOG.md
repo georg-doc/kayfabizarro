@@ -1,5 +1,28 @@
 # Changelog · additive
 
+## 2026-09-19 · corridor promoted to main
+
+### IMPLEMENTATION
+- PR #86 merged the reconciled current-source corridor stack into current main at `3813d24e3db04a43117676890e48f7b6baaf6cd9`.
+- Exact tested source, route evidence, normalized data and consumer scene are now main-owned City Lab artifacts rather than branch-only pins.
+- Main consumer evidence timestamp refreshed at `25c2c616720e18d97028bf06fdd03d10c16b3504`; heavy normalized/scene payload hashes did not change.
+
+### TESTED RESULT
+- Post-merge consumer run `35415680112`, job `105823765381`: **PASS**.
+- S2 export contract run `35415680163`: **PASS**.
+- Existing Ehrenfeld/Hürth normalization regression: PASS.
+- Corridor build + deterministic rebuild: PASS.
+- Normalized SHA-256: `e88450d51169f7293bdbfb87955826cf3328a25e00eb3c24e8a08c636e406e6f`.
+- Scene SHA-256: `258c4d5a3872750bc9045d771646e85dbf36aab8a14243db98adc0d288edf07d`.
+
+### OPEN
+- Full-route human drive.
+- Public Corridor Drive Stage.
+- Travel Walk↔Drive / Drive↔Flight.
+- Landmark runtime insertion.
+
+---
+
 ## 2026-09-19 · tested corridor stack reconciled onto current main base
 
 ### IMPLEMENTATION
@@ -18,7 +41,7 @@
 - Scene SHA-256 remains `258c4d5a3872750bc9045d771646e85dbf36aab8a14243db98adc0d288edf07d`.
 
 ### OPEN
-- Main merge of the reconciled promotion candidate.
+- Main merge completed through PR #86 / `3813d24e3db04a43117676890e48f7b6baaf6cd9`.
 - Human longer-distance Hürth → Ehrenfeld drive.
 - Public Corridor Drive Stage.
 - Travel Walk↔Drive / Drive↔Flight.
