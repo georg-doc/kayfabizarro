@@ -1,14 +1,7 @@
 name: OSM City · current Ehrenfeld Hürth corridor detail
 
 on:
-  push:
-    branches:
-      - osm-city/corridor-detail-current-2026-09-19
-    paths:
-      - 'tools/osm-city-lab/data/ehrenfeld-huerth-corridor-v0/SOURCE_SPEC.json'
-      - 'tools/osm-city-lab/evidence/ehrenfeld-huerth-route.json'
-      - 'tools/osm-city-lab/scripts/fetch-ehrenfeld-huerth-corridor-detail.mjs'
-      - '.github/workflows/osm-city-corridor-detail.yml'
+  # Current-detail Overpass refresh is explicit; committed source stays reproducible.
   workflow_dispatch:
 
 permissions:
