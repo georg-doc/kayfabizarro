@@ -357,3 +357,12 @@ It routes four separate, source-preserving work lanes:
 - [3D in-scene editor](workflows/KFB_INSCENE_EDITOR_MODULE_V1_2026-09-20/START_HERE.md) — adapters for Resident, Environment, Dungeon and Babel rather than a replacement editor.
 
 These briefs are planning/export instructions. They grant no Race/Combat runtime rewrite or automatic Live promotion.
+
+
+## 2026-09-21 · Hub UI v2 accepted + ToolBox v2
+
+Georg accepted the Paper/Dark Hub UI v2 Stage. Promotion is source-reconciled onto the current Hub rather than merging the older diverged PR #141 snapshot directly.
+
+ToolBox Home adopts the same Paper/Dark/hash/preview grammar at `/kfb-hub/stage/toolbox/` and is linked prominently from the Hub header. Its current route audit is honest: 6 public previews, 5 missing/blocked routes, 6 source/integration gates. Missing Cloudflare routes receive no fake preview.
+
+WorldSurface I1A is locally complete at `georg-doc/KFB-Travel-Globe@d9d9d93c286fa52551ee881292a4db426a4cb8fc`: 72/72 PASS; SurfacePatch C is the technical leader but Georg's B/C/neither visual gate remains open. No public I1A Stage is claimed.
