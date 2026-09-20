@@ -76,3 +76,17 @@ Evidence: **87/87 public browser PASS**.
 This is additive to Stage-First and does not promote Animation Lab to a separate CURRENT_TOOL. ToolBox owns motion/profile authoring; consumers retain movement, physics and gameplay state. Medium and Large remain separate rig-profile families.
 
 Current gate: Georg reviews the three actors' Idle → Walk → Run / phase-sync result and the Medium-vs-Large motion feel. Attachments remain proposals until their own visible gate.
+
+
+## CURRENT ADDITIVE · KayKit Ranged Calibration v1 · 2026-09-20
+
+ToolBox now has the CA2-02 public weapon-calibration candidate for FrizzleBob Driver Graft and GothGirl.
+
+- exact separate gun donor: `Character_Gun.gltf`;
+- motion donor: real `Rig_Medium_CombatRanged.glb` with 20 clips enumerated;
+- both current actors resolve the same measured `handslotr` grip/muzzle profile within measurement precision;
+- single-shot primary release: `0.150 s`; later `0.883 s` rotation peak is not a second projectile;
+- fixed Stage: `https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/kaykit-ranged-calibration-v1/`;
+- public evidence: **55/55 PASS**.
+
+This is measurement/handoff only. Combat target selection, projectile/damage state, Player movement/root/ground, rewards/runflow and audio remain with the Combat Arena owner.

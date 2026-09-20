@@ -1,0 +1,125 @@
+{
+  "schema": "kfb.stage-source/0.1",
+  "product": "KFB ToolBox · KayKit Ranged Calibration v1",
+  "slice": "CA2-02",
+  "owner": "KFB ToolBox / weapon-motion calibration",
+  "consumer": "georg-doc/KFB-Combat-Arena / WSA",
+  "status": "ARCHIVED_FAILED_CA2_02B_PITCH",
+  "sourceRepo": "georg-doc/kayfabizarro",
+  "sourceBranch": "chatgpt-web/ca2-02-ranged-calibration-2026-09-20",
+  "implementationHead": "155becf16a467f125ee44958b2f2a295dbe27cd0",
+  "baseMain": "52532aee17f85324a6d04ab53150216f00ac5d89",
+  "donors": {
+    "motionLab": {
+      "stage": "https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/kaykit-motion-lab-v1/",
+      "sourceHead": "3ab2a439b013b816e843ea303e7015a26ee2aff8",
+      "publicChecks": "87/87 PASS"
+    },
+    "modelPin": "bdaea0648f27c0f16e0a737bfba237eb54dd4cbb",
+    "modulePin": "bdaea0648f27c0f16e0a737bfba237eb54dd4cbb",
+    "assetPin": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+    "graftMountCurrentBlob": "a84b2c92a00f7764088c4916030327eb04a91c5c",
+    "fxCurrentBlob": "7791b484fb2136bd6269b200da72ff9636c3dd2e",
+    "gunPath": "media/3D_Assets/Platformer Game Kit - Dec 2021/Character/glTF/Character_Gun.gltf",
+    "combatRangedPath": "media/3D_Assets/KayKit_Character_Animations_1.1/Animations/gltf/Rig_Medium/Rig_Medium_CombatRanged.glb"
+  },
+  "existingGripCalibration": {
+    "source": "graft contract / Studio weapon defaults",
+    "anchor": "slot",
+    "hand": "right",
+    "eulerDeg": [
+      -14,
+      77,
+      0
+    ],
+    "offsetForearm": [
+      0,
+      -0.03,
+      0
+    ],
+    "scale": 0.37
+  },
+  "stageUrl": "https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/kaykit-ranged-calibration-v1/",
+  "protectedOwners": [
+    "Arena Player movement/root/ground",
+    "Arena Gunfight targeting/projectile/damage/release state",
+    "Arena rewards/runflow",
+    "Arena audio"
+  ],
+  "publicVerified": false,
+  "humanAcceptance": "FAILED_PITCH_GATE",
+  "repairNote": "Deterministic release-frame seek plus explicit one-release scheduling for the single-shot clip.",
+  "singleShotPolicy": {
+    "clip": "Ranged_1H_Shoot",
+    "primaryReleaseSeconds": 0.15,
+    "laterRotationalPeaksSeconds": [
+      0.883
+    ],
+    "scheduledProjectileReleasesPerActor": [
+      0.15
+    ]
+  },
+  "syntaxRepair": "Removed accidental literal backslash-n introduced by marker-report text edit; measurements unchanged.",
+  "sourcePr": {
+    "number": 135,
+    "url": "https://github.com/georg-doc/kayfabizarro/pull/135",
+    "state": "DRAFT_OPEN"
+  },
+  "previewFxRepair": "Deterministic release-frame now records the primary marker as already fired before the manual calibration FX, preventing duplicate preview FX; release schedule unchanged at [0.150].",
+  "proofedBranchHead": "431723aa69316136aeeb0d7411d28846fe0d41da",
+  "pitchTuning": {
+    "source": "Georg visual gate + failed first pitch measurement",
+    "studioBaseEulerDeg": [
+      -14,
+      77,
+      0
+    ],
+    "failedFirstDeltaDeg": -5,
+    "failedFirstAimPitchDeg": 12.471,
+    "measuredAxisConclusion": "negative X Euler raises muzzle in this mounted/animated frame",
+    "humanPitchDeltaDeg": 1.5,
+    "effectiveEulerDeg": [
+      -12.5,
+      77,
+      0
+    ],
+    "scope": "rotation only; offsets/yaw/roll/scale/muzzle geometry/release timing unchanged",
+    "intent": "near-horizontal standard aim; clip recoil remains upward"
+  },
+  "publicBaseline": {
+    "runtime": "a5e09d6744f4a26e63a5f7e706be8a631459d28d",
+    "publicStage": "https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/kaykit-ranged-calibration-v1/",
+    "run": 35489658278,
+    "job": 106022296782,
+    "checks": "55/55 PASS",
+    "proofedPublication": "cf15f612e6a700608564cadbded4302ba59b1af2"
+  },
+  "pitchFailureRecovery": {
+    "folder": "kfb-hub/stage/toolbox/kaykit-ranged-calibration-v1/failure-recovery/CA2_02B_PITCH_2026-09-20",
+    "pass1": {
+      "runtime": "d32b71d800a8d5ffc7c58828b1544e6d47731143",
+      "gateHead": "78b0dc20c858017e94c443c1e068aa38893fd261",
+      "deltaDeg": -5,
+      "aimPitchDeg": 12.471,
+      "run": 35490564334,
+      "job": 106024650939,
+      "artifactId": 10598807248
+    },
+    "pass2": {
+      "runtime": "155becf16a467f125ee44958b2f2a295dbe27cd0",
+      "gateHead": "ec2693055a465dee050d3127bd7d3263d8f94276",
+      "deltaDeg": 1.5,
+      "aimPitchDeg": 5.151,
+      "run": 35490701005,
+      "job": 106025001031,
+      "artifactId": 10598967232
+    },
+    "stopRule": "two failed repair passes; no third blind Euler tuning",
+    "nextGate": "external deterministic frozen-Aim gizmo calibration",
+    "untestedHypothesis": {
+      "approxZeroPitchEulerX": -7.93,
+      "approxDeltaFromStudioDeg": 6.07,
+      "note": "two-point linear extrapolation only; NOT TESTED / NOT PROMOTED"
+    }
+  }
+}

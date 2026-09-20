@@ -1,3 +1,11 @@
+## 2026-09-20 · Combat CA2-02 · Ranged Calibration
+
+### CURRENT_REFERENCE / PUBLIC STAGE
+Add the bounded ToolBox ranged-calibration candidate for Combat Arena v5. The exact separate `Character_Gun.gltf` donor is shown before integration; FrizzleBob Driver Graft and GothGirl use the real Rig_Medium CombatRanged clips and the same measured `handslotr` grip/muzzle profile. Single-shot primary release is `0.150 s`; the later `0.883 s` rotation peak is retained as evidence, not a second projectile.
+
+### EVIDENCE
+Fixed Stage: `https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/kaykit-ranged-calibration-v1/`. Public proof: **55/55 PASS**, marker/navigation PASS, 0 failed resources, 0 page/console errors. Arena Player/Gunfight ownership remains external; locomotion optimization, 2H/Bow/Magic and productive combat integration are deferred.
+
 ## 2026-09-19 · Hub briefings repair + separated generator lanes
 
 ### DECISION

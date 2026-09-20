@@ -1,0 +1,110 @@
+{
+  "schema": "kfb.failure-recovery-export/1",
+  "project": "KFB ToolBox · KayKit Ranged Calibration v1 · CA2-02b pitch tuning",
+  "exportRevision": "2026-09-20-r1",
+  "status": "ARCHIVED_FAILED_CANDIDATE",
+  "repo": "georg-doc/kayfabizarro",
+  "branch": "chatgpt-web/ca2-02-ranged-calibration-2026-09-20",
+  "parentHead": "19b7699a5b79a296ebc818256b200129a7a8254e",
+  "entrypoints": [
+    "kfb-hub/stage/toolbox/kaykit-ranged-calibration-v1/failure-recovery/CA2_02B_PITCH_2026-09-20/START_HERE.md",
+    "kfb-hub/stage/toolbox/kaykit-ranged-calibration-v1/failure-recovery/CA2_02B_PITCH_2026-09-20/source/index.html"
+  ],
+  "sourceFiles": [
+    {
+      "role": "stage UI",
+      "originalPath": "kfb-hub/stage/toolbox/kaykit-ranged-calibration-v1/index.html",
+      "blobSha": "3bd9e5f2f03516bc19778d3bbe7fbb119de0c71e",
+      "copiedTo": "kfb-hub/stage/toolbox/kaykit-ranged-calibration-v1/failure-recovery/CA2_02B_PITCH_2026-09-20/source/index.html",
+      "sha256": null
+    },
+    {
+      "role": "failed runtime",
+      "originalPath": "kfb-hub/stage/toolbox/kaykit-ranged-calibration-v1/lab.mjs",
+      "blobSha": "9cc7827e869b648b72e494ff3365452ecac60c5f",
+      "copiedTo": "kfb-hub/stage/toolbox/kaykit-ranged-calibration-v1/failure-recovery/CA2_02B_PITCH_2026-09-20/source/lab.mjs",
+      "sha256": null
+    },
+    {
+      "role": "browser proof",
+      "originalPath": "kfb-hub/stage/toolbox/kaykit-ranged-calibration-v1/proof.mjs",
+      "blobSha": "6816c78afabec64a39cc9d62bc4291a710bc83ec",
+      "copiedTo": "kfb-hub/stage/toolbox/kaykit-ranged-calibration-v1/failure-recovery/CA2_02B_PITCH_2026-09-20/source/proof.mjs",
+      "sha256": null
+    },
+    {
+      "role": "weapon profiles",
+      "originalPath": "kfb-hub/stage/toolbox/kaykit-ranged-calibration-v1/WEAPON_PROFILES.json",
+      "blobSha": "3c47168e4b79f85fc693e1fb9a8b6b03277506d9",
+      "copiedTo": "kfb-hub/stage/toolbox/kaykit-ranged-calibration-v1/failure-recovery/CA2_02B_PITCH_2026-09-20/source/WEAPON_PROFILES.json",
+      "sha256": null
+    },
+    {
+      "role": "source receipt",
+      "originalPath": "kfb-hub/stage/toolbox/kaykit-ranged-calibration-v1/SOURCE.json",
+      "blobSha": "c4686f2a11f7ade8858d777ba92216ede716e13a",
+      "copiedTo": "kfb-hub/stage/toolbox/kaykit-ranged-calibration-v1/failure-recovery/CA2_02B_PITCH_2026-09-20/source/SOURCE.json",
+      "sha256": null
+    },
+    {
+      "role": "workflow",
+      "originalPath": ".github/workflows/toolbox-kaykit-ranged-calibration.yml",
+      "blobSha": "f5661b1b0226cf2f1c76ab6e82e67232b075ec33",
+      "copiedTo": "kfb-hub/stage/toolbox/kaykit-ranged-calibration-v1/failure-recovery/CA2_02B_PITCH_2026-09-20/source/toolbox-kaykit-ranged-calibration.yml",
+      "sha256": null
+    }
+  ],
+  "buildOutputs": [],
+  "dataFiles": [
+    "kfb-hub/stage/toolbox/kaykit-ranged-calibration-v1/failure-recovery/CA2_02B_PITCH_2026-09-20/source/WEAPON_PROFILES.json",
+    "kfb-hub/stage/toolbox/kaykit-ranged-calibration-v1/failure-recovery/CA2_02B_PITCH_2026-09-20/source/SOURCE.json"
+  ],
+  "assetRefs": [
+    {
+      "path": "media/3D_Assets/Platformer Game Kit - Dec 2021/Character/glTF/Character_Gun.gltf",
+      "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+      "included": false
+    },
+    {
+      "path": "media/3D_Assets/KayKit_Character_Animations_1.1/Animations/gltf/Rig_Medium/Rig_Medium_CombatRanged.glb",
+      "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+      "included": false
+    }
+  ],
+  "externalDependencies": [
+    "three@0.160.0 via jsdelivr",
+    "pinned GitHub raw KFB/KayKit assets"
+  ],
+  "browserStateExports": [],
+  "evidence": [
+    {
+      "kind": "workflow",
+      "run": 35490564334,
+      "job": 106024650939,
+      "artifactId": 10598807248,
+      "digest": "sha256:3eb207daa156ff4cffe8a720a0a3bc5613dfcf5b357c1ee8db668e54bccbe7b0"
+    },
+    {
+      "kind": "workflow",
+      "run": 35490701005,
+      "job": 106025001031,
+      "artifactId": 10598967232,
+      "digest": "sha256:67ba0593340e141bf2d408916c8f3e7af48392b75072f796a84514ca91c5d3d2"
+    },
+    {
+      "kind": "human-screenshot",
+      "status": "NOT_EXPORTED",
+      "note": "chat upload; observations transcribed"
+    }
+  ],
+  "missing": [
+    "ZIP not generated in connector-only GitHub write path; repo-native folder is the editable export.",
+    "Text-file SHA-256 not generated; exact Git blob SHAs are recorded.",
+    "User chat screenshot binary not copied into repository."
+  ],
+  "start": {
+    "command": "python3 -m http.server 4173",
+    "url": "http://127.0.0.1:4173/kfb-hub/stage/toolbox/kaykit-ranged-calibration-v1/failure-recovery/CA2_02B_PITCH_2026-09-20/source/",
+    "notes": "Inspection only; failed candidate. External pinned assets required."
+  }
+}

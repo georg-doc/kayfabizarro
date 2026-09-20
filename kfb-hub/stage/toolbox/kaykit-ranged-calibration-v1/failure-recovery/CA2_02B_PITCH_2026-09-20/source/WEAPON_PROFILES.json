@@ -1,0 +1,138 @@
+{
+  "schema": "kfb.combat.weapon-profile-set/0.1-candidate",
+  "date": "2026-09-20",
+  "status": "CA2_02B_SECOND_PASS_CANDIDATE",
+  "source": {
+    "gun": {
+      "repo": "georg-doc/kayfabizarro",
+      "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+      "path": "media/3D_Assets/Platformer Game Kit - Dec 2021/Character/glTF/Character_Gun.gltf",
+      "node": "gun"
+    },
+    "ranged": {
+      "repo": "georg-doc/kayfabizarro",
+      "commit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+      "path": "media/3D_Assets/KayKit_Character_Animations_1.1/Animations/gltf/Rig_Medium/Rig_Medium_CombatRanged.glb",
+      "clipCount": 20
+    }
+  },
+  "rigProfile": {
+    "id": "rig-medium-character-gun-1h",
+    "rigFamily": "Rig_Medium",
+    "hand": "right",
+    "socket": {
+      "bone": "handslotr",
+      "parent": "handr",
+      "anchor": "slot"
+    },
+    "forearmModelUnits": 0.4336773697706736,
+    "grip": {
+      "eulerOrder": "YXZ",
+      "eulerDeg": [
+        -12.5,
+        77,
+        0
+      ],
+      "offsetForearmRatio": [
+        0,
+        -0.03,
+        0
+      ],
+      "scale": 0.37,
+      "source": "existing Georg Studio/graft contract calibration",
+      "studioBaseEulerDeg": [
+        -14,
+        77,
+        0
+      ],
+      "humanVisualDeltaDeg": [
+        1.5,
+        0,
+        0
+      ],
+      "tuningReason": "First -5° trial moved muzzle the wrong way (+12.471° world pitch). Reverse with a small +1.5° X-Euler correction while preserving all other grip values.",
+      "tuningScope": "rotation-only second/last repair pass",
+      "failedFirstDeltaDeg": -5,
+      "failedFirstAimPitchDeg": 12.471
+    },
+    "muzzle": {
+      "space": "weapon-holder-local",
+      "units": "source model units before holder scale",
+      "barrelAxis": "z",
+      "barrelLength": 1.9971,
+      "position": [
+        -0.0039,
+        0.1387,
+        1.5373
+      ],
+      "forward": [
+        -0.00252,
+        0.08989,
+        0.99595
+      ]
+    },
+    "bindComparison": {
+      "slotPositionDelta": 0,
+      "slotQuaternionDeltaDeg": 0.000002,
+      "forearmDelta": 0,
+      "result": "SAME_RIG_PROFILE_NO_ACTOR_GRIP_DELTA_MEASURED"
+    }
+  },
+  "actions": {
+    "aim": {
+      "clip": "Ranged_1H_Aiming"
+    },
+    "fire": {
+      "clip": "Ranged_1H_Shoot",
+      "durationSeconds": 1.0667,
+      "primaryReleaseSeconds": 0.15,
+      "laterRotationalPeaksSeconds": [
+        0.883
+      ],
+      "laterPeakPolicy": "NOT_PROJECTILE_RELEASE",
+      "releaseMeasurement": "handslotr.quaternion rotational peak · 385 deg/s",
+      "recoveryStartCandidateSeconds": 0.35,
+      "recoveryPolicy": "technical pose-recovery candidate; Arena/WSA owns transition semantics"
+    },
+    "continuousFire": {
+      "clip": "Ranged_1H_Shooting",
+      "durationSeconds": 1.6,
+      "cadenceCandidatesSeconds": [
+        0.083,
+        0.483,
+        0.883,
+        1.283
+      ],
+      "measurement": "handr rotational peaks · 247 deg/s after quiet slot",
+      "status": "MEASURED_DEFERRED_NOT_FIRST_ARENA_FIRE_PATH"
+    },
+    "reload": {
+      "clip": "Ranged_1H_Reload"
+    }
+  },
+  "actors": [
+    {
+      "actorId": "frizzlebob-driver",
+      "adapter": "driver-graft",
+      "weaponOwner": "existing graft reader",
+      "profile": "rig-medium-character-gun-1h",
+      "actorGripDelta": null,
+      "status": "MEASURED_CANDIDATE"
+    },
+    {
+      "actorId": "gothgirl",
+      "adapter": "kaykit-medium-direct",
+      "weaponOwner": "CA2 direct calibration adapter until WSA consumes profile",
+      "profile": "rig-medium-character-gun-1h",
+      "actorGripDelta": null,
+      "status": "MEASURED_CANDIDATE"
+    }
+  ],
+  "protectedOwners": [
+    "Arena Player movement/root/ground",
+    "Arena Gunfight target/projectile/damage/release state",
+    "Arena rewards/runflow",
+    "Arena audio"
+  ],
+  "humanAcceptance": "PENDING_CA2_02B"
+}

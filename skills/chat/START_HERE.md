@@ -343,3 +343,8 @@ Next gate is one A/B/C design/geometry proof:
 Do not tune the existing TC-01 ribbon/zone composition forward. TinySkies/Travel remains one spherical WorldSurface donor; OSM remains geographic/semantic truth; OMS/Grotesque remains a stylised environment donor; Race retains driving/contact ownership.
 
 The wider KFB target may support Sphere / Plane / InnerSphere and later structure/tunnel/underwater/free-space routes, but do not build a mega-engine before Sphere + Plane share one proven TrackPatch contract.
+
+
+## 2026-09-20 · Combat CA2-02 · KayKit Ranged Calibration v1
+
+Current bounded Combat weapon-calibration lane: `kfb-hub/stage/toolbox/kaykit-ranged-calibration-v1/`. It uses the exact separate `Character_Gun.gltf`, real `Rig_Medium_CombatRanged.glb` clips, and measured FrizzleBob Driver/GothGirl grip + muzzle data. Public browser proof is **55/55 PASS**. Productive Arena Player/Gunfight ownership stays in `georg-doc/KFB-Combat-Arena`; this ToolBox Stage is a measured handoff and human gate, not a second combat runtime.
