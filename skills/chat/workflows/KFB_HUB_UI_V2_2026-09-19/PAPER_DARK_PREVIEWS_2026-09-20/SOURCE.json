@@ -6,7 +6,7 @@
   "base_branch": "main",
   "base_head": "a6b9220a0b42d50a9de9804fad22e84dde2c322c",
   "branch": "work/kfb-hub-paper-dark-previews-2026-09-20",
-  "implementation_head": "0c609eaf8013b605238b29fd3597c037613ad453",
+  "implementation_head": "90e7d4fee3d874271a9dffd89839d240d1de37a0",
   "runtime_owner": "kfb-hub/index.html",
   "changed_runtime_files": [
     "kfb-hub/index.html"
@@ -19,5 +19,20 @@
     "No project/runtime ownership moved into Hub",
     "No new project status truth introduced",
     "No Live promotion"
-  ]
+  ],
+  "stageCandidate": {
+    "path": "kfb-hub/stage/hub-ui-v2/index.html",
+    "publicUrl": "https://kayfabizarro.pages.dev/kfb-hub/stage/hub-ui-v2/",
+    "sourceHead": "90e7d4fee3d874271a9dffd89839d240d1de37a0",
+    "publicationHead": "78f0af6e0aa24e4489fe8ab0e3d52656b4832a90",
+    "status": "PUBLIC_ROUTE_VISIBLE_POST_FIX_DEPLOY_CONFIRMATION_PENDING"
+  },
+  "publicObservations": {
+    "routeVisible": true,
+    "stageLiveViewTargets": 19,
+    "previewImagesVisible": true,
+    "initialStageLinkBug": "Detected root-bound filter links in first publication; source and publication corrected.",
+    "initialThemeToggleBug": "Detected hidden toggle in first publication; source and publication corrected.",
+    "postFixBrowserConfirmation": "PENDING_CLOUDFLARE_DEPLOY"
+  }
 }
