@@ -1,0 +1,210 @@
+{
+  "schema": "kfb.racer-engine-audio-pack/0.1",
+  "date": "2026-09-20",
+  "status": "SOURCE_READY_INTEGRATION_OPEN",
+  "sourceRepository": "georg-doc/kayfabizarro",
+  "sourceFolder": "media/3D_Assets/Audio/KFB Racer/",
+  "receivingOwner": "georg-doc/KFB-Stunt-Car-Race",
+  "sourceSnapshotBase": "26c00b98a60ec6346810f6777c1b7873600e1767",
+  "preferredV8Idle": "Seamless_10–12_secon_#1-1789884544910.mp3",
+  "counts": {
+    "assets": 19,
+    "wav": 5,
+    "mp3": 14,
+    "totalBytes": 10232146
+  },
+  "assets": [
+    {
+      "name": "KFB_Steampunk_SciFi_Engine_Idle_Loop_12s_48k.wav",
+      "sha": "0c3f52468f9f708f43c2f5e0779a47577701cf0e",
+      "size": 2304044,
+      "ext": "wav",
+      "family": "STEAMPUNK_SCI_FI",
+      "role": "IDLE",
+      "source": "Synthetic",
+      "status": "REFERENCE_CANDIDATE"
+    },
+    {
+      "name": "KFB_Steampunk_SciFi_Engine_Throttle_8s_48k.wav",
+      "sha": "e412e737564821ba8db0d6f02fa63f3323a0fb31",
+      "size": 1536044,
+      "ext": "wav",
+      "family": "STEAMPUNK_SCI_FI",
+      "role": "THROTTLE",
+      "source": "Synthetic",
+      "status": "REFERENCE_CANDIDATE"
+    },
+    {
+      "name": "KFB_V8_Load_Loop_10s_48k.wav",
+      "sha": "3fcfd2dc422a24f0107cc95ad3932de37b9ac8c3",
+      "size": 1920044,
+      "ext": "wav",
+      "family": "V8",
+      "role": "LOAD",
+      "source": "Synthetic",
+      "status": "REFERENCE_CANDIDATE"
+    },
+    {
+      "name": "KFB_V8_Muscle_Idle_Loop_12s_48k.wav",
+      "sha": "c0d82fdd932f4e9e8ee7659dae565633be092b50",
+      "size": 2304044,
+      "ext": "wav",
+      "family": "V8",
+      "role": "IDLE",
+      "source": "Synthetic",
+      "status": "REFERENCE_CANDIDATE"
+    },
+    {
+      "name": "KFB_V8_Rev_Sweep_8s_48k.wav",
+      "sha": "a58734f9ccae76d4d008f0436c8c6281a1410358",
+      "size": 1536044,
+      "ext": "wav",
+      "family": "V8",
+      "role": "REV",
+      "source": "Synthetic",
+      "status": "REFERENCE_CANDIDATE"
+    },
+    {
+      "name": "Seamless_10_second_l_#1-1789885228084.mp3",
+      "sha": "9796e8f9c232e6d2b237e670c01bc629b55bc56d",
+      "size": 55341,
+      "ext": "mp3",
+      "family": "V8",
+      "role": "LOAD",
+      "source": "Suno",
+      "status": "CANDIDATE"
+    },
+    {
+      "name": "Seamless_10_second_l_#3-1789885309613.mp3",
+      "sha": "811e51712e149e1d875ade9edac632d1baa91592",
+      "size": 55341,
+      "ext": "mp3",
+      "family": "V8",
+      "role": "LOAD",
+      "source": "Suno",
+      "status": "CANDIDATE"
+    },
+    {
+      "name": "Seamless_10–12_secon_#1-1789884544910.mp3",
+      "sha": "df60a77be7c0678b7f27676172ba8727749bc281",
+      "size": 55341,
+      "ext": "mp3",
+      "family": "V8",
+      "role": "IDLE",
+      "source": "Suno",
+      "status": "GEORG_PREFERRED"
+    },
+    {
+      "name": "Seamless_10–12_secon_#2-1789884654695.mp3",
+      "sha": "4f20d17d219e26a3a26fe9c3192d62e05cb444af",
+      "size": 55341,
+      "ext": "mp3",
+      "family": "V8",
+      "role": "IDLE",
+      "source": "Suno",
+      "status": "CANDIDATE"
+    },
+    {
+      "name": "Seamless_12_second_s_#1-1789885344453.mp3",
+      "sha": "20110c8171ac150798c268a765d9e7b12c56c503",
+      "size": 55341,
+      "ext": "mp3",
+      "family": "STEAMPUNK_SCI_FI",
+      "role": "IDLE",
+      "source": "Suno",
+      "status": "CANDIDATE"
+    },
+    {
+      "name": "Seamless_12_second_s_#2-1789885351951.mp3",
+      "sha": "f822b124af16557ac502b72f7745ad4d6803d2fe",
+      "size": 55341,
+      "ext": "mp3",
+      "family": "STEAMPUNK_SCI_FI",
+      "role": "IDLE",
+      "source": "Suno",
+      "status": "CANDIDATE"
+    },
+    {
+      "name": "Steampunk_sci-fi_eng_#1-1789885377561.mp3",
+      "sha": "22061f9caf12db8e6b84fd8b571f4582929d4e5e",
+      "size": 37485,
+      "ext": "mp3",
+      "family": "STEAMPUNK_SCI_FI",
+      "role": "THROTTLE",
+      "source": "Suno",
+      "status": "CANDIDATE"
+    },
+    {
+      "name": "Steampunk_sci-fi_eng_#2-1789885374520.mp3",
+      "sha": "60aa1319702e7869c6d98d82390d4f60c5b4d83c",
+      "size": 37485,
+      "ext": "mp3",
+      "family": "STEAMPUNK_SCI_FI",
+      "role": "THROTTLE",
+      "source": "Suno",
+      "status": "CANDIDATE"
+    },
+    {
+      "name": "Steampunk_sci-fi_eng_#3-1789885371241.mp3",
+      "sha": "99b960194d22035e764aac4c35a404da5af5f7a3",
+      "size": 37485,
+      "ext": "mp3",
+      "family": "STEAMPUNK_SCI_FI",
+      "role": "THROTTLE",
+      "source": "Suno",
+      "status": "CANDIDATE"
+    },
+    {
+      "name": "Steampunk_sci-fi_eng_#4-1789885366063.mp3",
+      "sha": "06aef71fb158aef8aae82ab2925747c1c5a72691",
+      "size": 37485,
+      "ext": "mp3",
+      "family": "STEAMPUNK_SCI_FI",
+      "role": "THROTTLE",
+      "source": "Suno",
+      "status": "CANDIDATE"
+    },
+    {
+      "name": "Vintage_tuned_big-bl_#1-1789885183009.mp3",
+      "sha": "92844c3ed8ec3deb5f7af8e8a2e7d00852a0ccd6",
+      "size": 37485,
+      "ext": "mp3",
+      "family": "V8",
+      "role": "REV",
+      "source": "Suno",
+      "status": "CANDIDATE"
+    },
+    {
+      "name": "Vintage_tuned_big-bl_#2-1789885183009.mp3",
+      "sha": "122c32e457bc0a751f6859a19888fe5c0e0fce6f",
+      "size": 37485,
+      "ext": "mp3",
+      "family": "V8",
+      "role": "REV",
+      "source": "Suno",
+      "status": "CANDIDATE"
+    },
+    {
+      "name": "Vintage_tuned_big-bl_#3-1789885183010.mp3",
+      "sha": "f9d4c529ca2257261ab0c2ca79c3ca32fa70e425",
+      "size": 37485,
+      "ext": "mp3",
+      "family": "V8",
+      "role": "REV",
+      "source": "Suno",
+      "status": "CANDIDATE"
+    },
+    {
+      "name": "Vintage_tuned_big-bl_#4-1789885183010.mp3",
+      "sha": "8c0c2c145f6b816ff03f107a4770182b156d1960",
+      "size": 37485,
+      "ext": "mp3",
+      "family": "V8",
+      "role": "REV",
+      "source": "Suno",
+      "status": "CANDIDATE"
+    }
+  ],
+  "runtimeIntegrated": false,
+  "publicStageVerified": false
+}

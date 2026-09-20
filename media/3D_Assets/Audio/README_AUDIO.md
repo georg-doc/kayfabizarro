@@ -49,3 +49,15 @@ Pfad **url-encoden** — die Ordner enthalten Leerzeichen (`Steel jingles`, `400
 
 ## Merksatz
 > Der Audio-Ordner ist nie leer — das Tool sieht ihn nur nicht. **Manifest lesen oder raw-URL bauen, und das `/Audio/`-Segment nicht vergessen.**
+
+## Generated KFB Racer engine candidates · 2026-09-20
+
+The historical **1006-sound CC0 inventory above is a separate pack count** and does not include the newer generated Racer candidates.
+
+Current generated engine-audio source:
+
+- `media/3D_Assets/Audio/KFB Racer/`
+- pack guide: `media/3D_Assets/Audio/KFB Racer/README_KFB_RACER_ENGINE_AUDIO.md`
+- WSA handoff: `skills/chat/workflows/KFB_RACER_ENGINE_AUDIO_PACK_2026-09-20/START_HERE.md`
+
+These V8 / Steampunk files are generated KFB candidates with their own provenance/status. **Do not classify them as Kenney/CC0 merely because they live under the common Audio root.** The preferred human-reviewed V8 idle donor and the candidate/runtime boundary are recorded in the pack guide and manifest.

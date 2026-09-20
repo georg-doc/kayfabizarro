@@ -1,7 +1,7 @@
 # KFB Chat Production Router
 
 Status: CURRENT ROUTER v0.3
-Date: 2026-09-19
+Date: 2026-09-20
 Owner: Georg / KFB
 
 This folder is the current LLM production routing layer for ChatGPT/Astra and Claude Design.
@@ -343,3 +343,17 @@ Next gate is one A/B/C design/geometry proof:
 Do not tune the existing TC-01 ribbon/zone composition forward. TinySkies/Travel remains one spherical WorldSurface donor; OSM remains geographic/semantic truth; OMS/Grotesque remains a stylised environment donor; Race retains driving/contact ownership.
 
 The wider KFB target may support Sphere / Plane / InnerSphere and later structure/tunnel/underwater/free-space routes, but do not build a mega-engine before Sphere + Plane share one proven TrackPatch contract.
+
+
+## 2026-09-20 · KFB Racer Engine Audio Pack
+
+The generated V8 + Steampunk sci-fi engine candidates are now routed through [KFB Racer Engine Audio Pack · WSA Handoff](workflows/KFB_RACER_ENGINE_AUDIO_PACK_2026-09-20/START_HERE.md).
+
+- source home: `media/3D_Assets/Audio/KFB Racer/`
+- receiving implementation owner remains `georg-doc/KFB-Stunt-Car-Race` / WSA;
+- **19 source files** are pinned in the asset manifest: 5 WAV reference masters + 14 Suno MP3 renders;
+- Georg's explicit preferred V8 idle donor is `Seamless_10–12_secon_#1-1789884544910.mp3`;
+- later V8 load/rev and Steampunk renders remain candidates, not blanket-human-accepted assets;
+- this registration changes no Race runtime, physics, input or AudioContext owner and makes no new Stage/Live claim.
+
+Next gate is deliberately small: preferred V8 idle #1 + one V8 load candidate through the existing Race audio graph, read-only from speed/acceleration telemetry, then direct Cloudflare driving/listening proof.
