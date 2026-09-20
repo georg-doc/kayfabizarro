@@ -1,0 +1,85 @@
+{
+  "schema": "kfb.inline-3d-edit-layer-intake/0.1",
+  "date": "2026-09-20",
+  "status": "REVIEWED_SOURCE_INTAKE",
+  "owner": "KFB ToolBox / Stage Scene authoring",
+  "baseline": {
+    "repo": "georg-doc/kayfabizarro",
+    "head": "5316ce6903760f19e50bb8f7f619951b43bb1f47"
+  },
+  "donorRoot": "tools/KFB-ToolBox/_inbox/KayKit Environment Atlas + Dungeon Generator + 3D scene editor TOOL (5)/KFB_Dungeon_RoomStudy_S21_EXPORT_2026-09-20/",
+  "pins": {
+    "readme": {
+      "path": "README.md",
+      "blob": "0ca3dfa7b94f7e5109bb5c26d147fc958521f5d1"
+    },
+    "editorContract": {
+      "path": "docs/EDITOR_LAYER.md",
+      "blob": "8e2d88c1d19f15a40d34ead56a612df53225e530"
+    },
+    "host": {
+      "path": "KayKit_Room_Study_S21.html",
+      "blob": "0f847c792322e56e8d92d97fda208af3560da806"
+    },
+    "kitLab": {
+      "path": "lib/kit-lab.js",
+      "blob": "4d616bea2e6eb0c4f7c1ff2a74504b5682c1ae5b"
+    },
+    "roomRecipes": {
+      "path": "lib/room-recipes.js",
+      "blob": "eb8ac0c37b4a64f462a0d082b47726c66c345cb8"
+    },
+    "housekeeping": {
+      "path": "HOUSEKEEPING.md",
+      "blob": "589e54435e4e03c2d242626d0d8aec2e6afd3c0b"
+    },
+    "onboarding": {
+      "path": "docs/HANDOFF_S21_ONBOARDING.md",
+      "blob": "42e7a68d2314b2e07d6d6a7ef678ab18467181f6"
+    },
+    "sprint22": {
+      "path": "docs/SPRINT_22_ROOMS.md",
+      "blob": "403b6f158915a65b40cc128739da63ebb9630b71"
+    }
+  },
+  "existingDonors": {
+    "worldAuthoring": {
+      "path": "travel/wip/travel_globe_wsa/world/README.md",
+      "blob": "da48c50391af41ef396f36a3a5a0ad4f1d289f6",
+      "role": "broad object/prefab/spline authoring POC; candidate recipes only"
+    },
+    "stageSceneBuilder": {
+      "path": "tools/KFB-ToolBox/_handover/ELISA_PRIORITY_STAGE_BUILDER_2026-09-15/SCENE_WORLD_EDITOR_REFERENCE_2026-09-15.md",
+      "blob": "7504dcf1c2b7e0f743e38089fd5b54e4247b9530",
+      "role": "viewport-first ToolBox Stage/Scene/World product direction"
+    },
+    "platformerCandidate": {
+      "path": "tools/KFB-ToolBox/_inbox/cloud-design-worldbuilding-2026-09-18/platformer-poc/START_HERE.md",
+      "blob": "bf371f35516edd45151dba5089c5094573bf3e1e",
+      "role": "candidate gameplay POC; not production editor owner"
+    }
+  },
+  "implementedMechanisms": [
+    "TransformControls move/rotate",
+    "0.1-unit and 15-degree snapping",
+    "object-attached mini menu",
+    "part/semantic-group scope",
+    "bottom/surface placement",
+    "visible-object picking filter",
+    "localStorage hand-correction cache",
+    "recipe patch output",
+    "reset to source recipe",
+    "onFrame/onResize viewer hooks"
+  ],
+  "evidence": {
+    "sourceFilesPresent": true,
+    "r02AcceptedInExportDocs": true,
+    "userDirectionAccepted": true,
+    "independentBrowserRerun": false,
+    "dedicatedEditorTestReport": false,
+    "publicStage": false,
+    "exportManifestAtRoot": false
+  },
+  "extractionRule": "Do not extract lib/edit-layer.js until E1 proves a second real host.",
+  "nextGate": "E1 Dungeon/World Atlas second-host proof: one prop adjustment to recipe-patch roundtrip; generator retains structure ownership."
+}
