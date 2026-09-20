@@ -1,0 +1,63 @@
+name: World Atlas · Inline Detail Editor E1
+
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - '.github/workflows/world-atlas-inline-editor-e1.yml'
+      - 'tools/world_atlas/source/KayKit_Dungeon_Generator_S13_2.html'
+      - 'tools/world_atlas/docs/INLINE_EDITOR_E1_*'
+      - 'tools/world_atlas/CHANGELOG.md'
+
+permissions:
+  contents: read
+
+jobs:
+  browser-proof:
+    runs-on: ubuntu-latest
+    timeout-minutes: 6
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Start local site
+        shell: bash
+        run: |
+          python3 -m http.server 8000 > /tmp/kfb-world-atlas-http.log 2>&1 &
+          echo $! > /tmp/kfb-world-atlas-http.pid
+          for i in {1..20}; do
+            curl -fsS http://127.0.0.1:8000/tools/world_atlas/source/KayKit_Dungeon_Generator_S13_2.html >/dev/null && exit 0
+            sleep 1
+          done
+          cat /tmp/kfb-world-atlas-http.log
+          exit 1
+
+      - name: Headless Chrome roundtrip proof
+        shell: bash
+        run: |
+          set -euo pipefail
+          CHROME="$(command -v google-chrome || command -v chromium || command -v chromium-browser)"
+          test -n "$CHROME"
+          URL="http://127.0.0.1:8000/tools/world_atlas/source/KayKit_Dungeon_Generator_S13_2.html?e1proof=1"
+          timeout 220s "$CHROME"             --headless --no-sandbox --disable-gpu             --window-size=1440,900             --virtual-time-budget=120000             --screenshot="$GITHUB_WORKSPACE/world-atlas-inline-editor-e1.png"             --dump-dom "$URL" > "$GITHUB_WORKSPACE/world-atlas-inline-editor-e1.dom.html"
+          grep -Fq 'data-e1-proof="pass"' "$GITHUB_WORKSPACE/world-atlas-inline-editor-e1.dom.html"
+          grep -Fq 'E1 proof · PASS' "$GITHUB_WORKSPACE/world-atlas-inline-editor-e1.dom.html"
+
+      - name: Write evidence
+        shell: bash
+        run: |
+          cat > world-atlas-inline-editor-e1.txt <<'EOF'
+          route=/tools/world_atlas/source/KayKit_Dungeon_Generator_S13_2.html?e1proof=1
+          seed=A1
+          action=move first editable detail +0.1 X
+          expected=patch emitted then restored after rebuild
+          domMarker=PASS
+          browser=Headless Chrome
+          EOF
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: world-atlas-inline-editor-e1
+          path: |
+            world-atlas-inline-editor-e1.txt
+            world-atlas-inline-editor-e1.png
+            world-atlas-inline-editor-e1.dom.html
