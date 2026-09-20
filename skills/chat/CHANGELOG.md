@@ -921,3 +921,18 @@ A new source-head sampler reads each loaded actor's own face/head texture around
 
 ### NEXT
 Reload the EyeRig Stage and visually check only the lid colors on the four accepted Large actors.
+
+
+## 2026-09-20 · Combat CA2-03B · Enemy State Playback
+
+### PUBLIC_VERIFIED
+The isolated Combat Web Stage now plays exact five-state maps on Skeleton Warrior (Rig_Medium), Orc Brute (Rig_Large) and Avian Swordsman (comparison). One mixer per visible actor; imported Root/Hips position tracks do not own world movement.
+
+### EVIDENCE
+Final workflow `35493474052`: branch/public **109/109 PASS**. Public marker, Combat Stage navigation and delivered playback-module body PASS; 0 failed resources / 0 page errors.
+
+Stage:
+`https://kayfabizarro.pages.dev/kfb-hub/stage/combat/ca2-enemy-adapters/`
+
+### OWNERSHIP / NEXT
+No Arena HP/damage/reward/respawn or mob-slot runtime moved. Human state-playback review is open. After acceptance, WSA integrates the two proof enemies within the existing three-enemy Arena logic; Dungeon Raid remains downstream.

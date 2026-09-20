@@ -343,3 +343,16 @@ Next gate is one A/B/C design/geometry proof:
 Do not tune the existing TC-01 ribbon/zone composition forward. TinySkies/Travel remains one spherical WorldSurface donor; OSM remains geographic/semantic truth; OMS/Grotesque remains a stylised environment donor; Race retains driving/contact ownership.
 
 The wider KFB target may support Sphere / Plane / InnerSphere and later structure/tunnel/underwater/free-space routes, but do not build a mega-engine before Sphere + Plane share one proven TrackPatch contract.
+
+
+## 2026-09-20 · Combat CA2-03B · Enemy State Playback
+
+Current bounded Combat enemy-adapter gate is **PUBLIC_VERIFIED** at:
+
+`https://kayfabizarro.pages.dev/kfb-hub/stage/combat/ca2-enemy-adapters/`
+
+Exact actors: Skeleton Warrior / Rig_Medium, Orc Brute / Rig_Large, Avian Swordsman / Rig_Medium comparison. The frozen Idle → Move → Attack → Hit → Defeat maps run with one mixer per visible actor; Root/Hips position tracks are stripped and all world anchors remain stable in deterministic browser samples.
+
+Evidence: final workflow `35493474052` · branch/public **109/109 PASS** · public marker, Combat Web Stage navigation and playback-module body PASS · zero failed resources/page errors.
+
+This remains an isolated Web adapter proof. Combat Arena HP, damage, rewards, respawn, target state and mob-slot integration remain WSA-owned. The next product gate is human playback review, then WSA consumption of `ENEMY_PROFILES.json` + `ANIMATION_MAP.json` inside the existing three-enemy logic. Dungeon Raid is a later consumer, not a second combat owner.
