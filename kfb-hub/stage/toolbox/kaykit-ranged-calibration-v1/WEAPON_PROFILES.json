@@ -3,11 +3,11 @@
   "date": "2026-09-20",
   "status": "PUBLIC_VERIFIED_HUMAN_OPEN",
   "sourceEvidence": {
-    "run": 35487908222,
-    "job": 106017552194,
-    "checks": "52/52 PASS",
-    "artifactId": 10598476584,
-    "artifactDigest": "sha256:fc7c3b05bc1e00f3274ca8c3fbd40329eae479a187b3446fb6951c6e603e1706"
+    "run": 35489658278,
+    "job": 106022296749,
+    "checks": "55/55 PASS",
+    "artifactId": 10598448427,
+    "artifactDigest": "sha256:f1dc330364eaf77eb13b2b58634501f2be43582519dcbc125d0deb95acbfbda8"
   },
   "source": {
     "gun": {
@@ -129,10 +129,12 @@
   ],
   "humanAcceptance": "PENDING",
   "publicEvidence": {
-    "run": 35488456185,
-    "job": 106019011425,
+    "run": 35489658278,
+    "job": 106022296782,
     "checks": "55/55 PASS",
-    "artifactId": 10597659083,
-    "artifactDigest": "sha256:f641fee4394584f12013b2edb455d31ec015e50f48f71fbdef40369ed3f2705c"
+    "marker": "PASS",
+    "hubStageNavigation": "PASS",
+    "artifactId": 10598651751,
+    "artifactDigest": "sha256:7f8140c90f84f2d7f528b27f431a0843ca5e408901057c027bef30f0bf8c7449"
   }
 }
