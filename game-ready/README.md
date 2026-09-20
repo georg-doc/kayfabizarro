@@ -19,6 +19,23 @@ Status:
 
 Implementation commit: `d7fd4c8ed062cfbc304f9c70fc1c3be30f26c6bf`
 
+### Eumel · 2.5D Actor
+
+[Open candidate package](eumel-2p5d-actor/README.md)
+
+Status:
+
+- SOURCE / COMPONENT PINS: PASS
+- PACKAGE METADATA: IMPLEMENTED
+- THREE2P5D STATIC QA: PASS
+- THREE2P5D BROWSER QA: NOT RUN
+- RESIDENT CONSUMER: PREPARED / NOT INDEXED
+- DOCCHECK PROJECT ISLAND: PREPARED / NOT BUILT
+- KFB GAME CONSUMER: NOT SELECTED YET
+- HUMAN ACCEPTANCE: PENDING
+
+This package does not replace Pilot 01 or claim public/runtime acceptance. It registers a reusable 2.5D actor candidate and exact owner/consumer seams.
+
 ## Governing documents
 
 - `skills/chat/workflows/OSM_CITY_SLICE_2026-09-18/GAME_DEV_STUDIO_ASSET_PACKAGING.md`
