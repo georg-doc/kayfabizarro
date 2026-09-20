@@ -28,7 +28,7 @@ Canonical source geometry is referenced, not copied into this package.
 - Illustrator source blob: `436143b019f0034c6d2d9183154cf613ff8c701e`
 - source-exact component SVG blob: `457bca8a76bd156ba627763098f0dcfc9a54edc1`
 - neutral bind blob: `3f080dc26b74e3f2b9ae6283aff18a26347a0782`
-- three2p5d implementation merge: `25d0be9a0965542724e8ece40b2626f3f6b46994`
+- three2p5d implementation merge: `52702836bf0740414e53abb5a3867af5981c195a`
 
 ## What is packaged
 
