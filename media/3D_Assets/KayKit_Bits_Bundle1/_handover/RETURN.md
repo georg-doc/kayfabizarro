@@ -1,6 +1,6 @@
 # RETURN · KayKit Bits Bundle 1 admission
 
-Status: **LOCAL PACKAGE PASS · GITHUB PUSH PENDING**
+Status: **LOCAL PACKAGE PASS · GITHUB BRANCH PASS · PR PENDING**
 Date: 2026-09-20
 
 ## Exact state
@@ -8,7 +8,8 @@ Date: 2026-09-20
 - Repository: `georg-doc/kayfabizarro`
 - Branch: `asset/kaykit-bits-bundle1-2026-09-20`
 - Package root: `media/3D_Assets/KayKit_Bits_Bundle1/`
-- Package checkpoint: `a91c137d` locally before publication
+- Package checkpoint: `a91c137d624e4b19270d9f4c66585e093698d614`
+- First published handoff head: `5755e7830bee9344b5c91def7f56e386ecd146be`
 - License: CC0 1.0, original `License.txt` preserved
 
 ## Admitted
@@ -42,6 +43,7 @@ No source file was deleted. The filtered package is a new Git review branch.
 - 0 FBX/OBJ/MTL/BLEND/URL files.
 - 0 FBX/OBJ directory remnants.
 - Manifest payload count matches the filesystem.
+- GitHub recursive-tree verification: 1,306 package-root files, not truncated, exact format counts match and 0 forbidden files/directories.
 
 ## Next gate
 
