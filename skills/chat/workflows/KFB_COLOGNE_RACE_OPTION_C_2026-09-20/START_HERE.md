@@ -31,8 +31,9 @@ The first hero experience is a **race around the Kölner Dom**, using:
 7. [FORM_ANSWERS.md](FORM_ANSWERS.md)
 8. [SOURCE_PINS.json](SOURCE_PINS.json)
 9. [CLAUDE_DESIGN_BRIEF.md](CLAUDE_DESIGN_BRIEF.md)
-10. [RETURN_TEMPLATE.md](RETURN_TEMPLATE.md)
-11. [CLAUDE_START_PROMPT.md](CLAUDE_START_PROMPT.md)
+10. [RETURN.md](RETURN.md)
+11. [RETURN_TEMPLATE.md](RETURN_TEMPLATE.md)
+12. [CLAUDE_START_PROMPT.md](CLAUDE_START_PROMPT.md)
 
 ## Visual authority
 
