@@ -31,16 +31,15 @@ The ToolBox Home currently exposes 15 cards:
 
 Static contract: **32/32 PASS**.
 
-No public browser pass is claimed. The external browser reader in this chat could not access the current Cloudflare Pages host, so the public deployment state remains separate.
+Public route visibility is now proven in the KFB in-app browser: the exact Cloudflare URL rendered `KFB ToolBox · Stage` with all 15/15 cards and the three intended sections. Cross-origin iframe completeness and Georg's visual/mobile usefulness review remain separate.
 
 ## PUBLIC DEPLOYMENT
 
-**PENDING.**
+**PUBLIC ROUTE VISIBLE · HUMAN GATE OPEN.**
 
-Target route only:
 https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/
 
-Do not call this slice live until that exact route is opened and the build marker `KFB_TOOLBOX_HOME_V1_2026_09_20` is visibly present.
+Verified on 2026-09-20 in the KFB in-app browser: ToolBox title, source-first intro, Build scenes, Integrating now, Current source tools and all 15 named cards rendered. This is Stage evidence, not Live promotion.
 
 ## OWNER BOUNDARIES
 
@@ -57,7 +56,7 @@ Read-only source discovery confirmed current Room Study, Tiny Treats Bakery/Kitc
 
 ## OPEN / UNRESOLVED
 
-1. Public ToolBox Home browser proof.
+1. Georg visual/mobile usefulness review of ToolBox Home.
 2. Current deployed Asset Librarian revision vs. KayKit Bits Bundle 1 discovery.
 3. Scene-editor two-host gate: Resident Atlas then Dungeon.
 4. Stable Stage routes + real previews for Plant Lab, Vehicle Lab, FrankenStein, Rigging and Animation Lab.
@@ -65,7 +64,7 @@ Read-only source discovery confirmed current Room Study, Tiny Treats Bakery/Kitc
 
 ## ONE NEXT GATE
 
-Publish this exact candidate to the Cloudflare Stage path and perform the human ToolBox Home review. After that, the first functional integration slice is **3D scene-patch adapter: Resident Atlas → Dungeon S13.2**.
+Georg reviews the public ToolBox Home. If accepted, the first functional integration slice is **3D scene-patch adapter: Resident Atlas first → Dungeon S13.2 second**.
 
 
 ## STAGE PUBLICATION ATTEMPT
@@ -78,4 +77,4 @@ Lean publication files were copied additively to `cloudflare-live`:
 Exact public route requested for proof:
 https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/
 
-Result: **PUBLIC PROOF UNKNOWN**. The external web reader rejected access to the Pages host and the execution container then failed DNS resolution. This is not counted as a site failure and not counted as a PASS. The Stage branch content itself was fetched back from GitHub after every write and contains the expected build marker.
+Result update · 2026-09-20: **PUBLIC ROUTE VISIBLE**. The KFB in-app browser opened the exact route and rendered all 15/15 cards across the three intended sections. Cross-origin iframe completeness is not counted; Georg's visual/mobile review remains the single gate. No Live promotion or merge was made.
