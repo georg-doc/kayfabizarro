@@ -42,3 +42,12 @@ Implement one isolated `three2p5d` Eumel world-space adapter proof. Do not modif
 `tools/KFB-ToolBox/_handover/RESIDENT_SCENE_MODULES_WSA_2026-09-19/START_HERE.md`
 
 The Clown S33 gate remains separate and unchanged.
+
+
+## Phase 1 proof now exists
+
+`tools/2D Animation Studio/proofs/eumel-three2p5d-v1/`
+
+Static sanity is PASS. Browser/visual acceptance is still pending.
+
+WSA should inspect this proof before any Resident Atlas index change or DocCheck Project Island runtime work.
