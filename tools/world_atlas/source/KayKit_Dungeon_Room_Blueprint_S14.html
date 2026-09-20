@@ -437,7 +437,7 @@ async function bauen(keepCam) {
   V.onResize = () => { if (root) setzeKamera(); };
   const wieder = ablageAnwenden();
   if (wieder) built.notes.push(`Editor: ${wieder} Handkorrektur${wieder === 1 ? '' : 'en'} aus der Ablage wiederhergestellt`);
-  window.__S21 = { V, root, built, kit, box, frame };
+  window.__S14 = { V, root, built, kit, box, frame, room: raum, blenderManifest: currentBlenderManifest, editor: { nudgeByPropId: regressionNudgeByPropId, patchText: () => document.getElementById('patch').textContent } };
   bericht(blatt, lights.length, fix, deckel);
 }
 
@@ -963,9 +963,9 @@ setInterval(herzschlag, 40);
 (function schlag() { requestAnimationFrame(schlag); herzschlag(); })();
 
 
-document.getElementById('blenderExport').onclick = () => {
-  if (!root) return;
-  const manifest = makeBlenderManifest({
+function currentBlenderManifest() {
+  if (!root) throw new Error('R02 is not built yet');
+  return makeBlenderManifest({
     root,
     room: raum,
     camera: V.camera,
@@ -980,8 +980,32 @@ document.getElementById('blenderExport').onclick = () => {
       donorRoom: 'R02'
     }
   });
-  downloadBlenderManifest(manifest, 'KFB_R02_blender_manifest.json');
-};
+}
+
+/* Deterministic regression seam: it drives the SAME editor state/persistence path used by the
+   gizmo and exists so CI can prove the second-host recipe-patch/reload roundtrip without guessing
+   screen-space gizmo handles. It does not write source or create a second layout truth. */
+function regressionNudgeByPropId(propId, dx = 0.1, dz = 0, deg = 0) {
+  const nd = root?.children.find((x) => x.visible && x.userData.recipe?.propId === propId);
+  if (!nd) throw new Error('visible prop not found: ' + propId);
+  nd.position.x += dx;
+  nd.position.z += dz;
+  nd.rotation.y += THREE.MathUtils.degToRad(deg);
+  nd.updateMatrixWorld(true);
+  geaendert.set(nd.uuid, nd);
+  patchZeigen();
+  ablageSchreiben();
+  menuStellen();
+  return {
+    propId,
+    position: nd.position.toArray().map((v) => +v.toFixed(4)),
+    rotationY: +nd.rotation.y.toFixed(5),
+    patch: patchZeile(nd)
+  };
+}
+
+document.getElementById('blenderExport').onclick = () =>
+  downloadBlenderManifest(currentBlenderManifest(), 'KFB_R02_blender_manifest.json');
 
 await bauen(false);
 </script>

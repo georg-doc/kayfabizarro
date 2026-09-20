@@ -17,7 +17,7 @@ import urllib.parse
 import urllib.request
 
 import bpy
-from mathutils import Matrix
+from mathutils import Matrix, Vector
 
 
 def log(msg):
@@ -141,7 +141,7 @@ def scene_bounds():
     for obj in bpy.context.scene.objects:
         if obj.type != "MESH" or not obj.visible_get():
             continue
-        pts.extend(obj.matrix_world @ Matrix.Translation(c).translation for c in obj.bound_box)
+        pts.extend(obj.matrix_world @ Vector(c) for c in obj.bound_box)
     if not pts:
         return None
     mn = [min(p[i] for p in pts) for i in range(3)]
