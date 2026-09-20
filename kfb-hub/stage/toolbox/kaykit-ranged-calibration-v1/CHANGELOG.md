@@ -11,11 +11,11 @@ FB Driver Graft and GothGirl resolve the same `handslotr` bind frame within meas
 ### RELEASE
 Single-shot `Ranged_1H_Shoot`: primary release `0.150 s`; later rotational peak `0.883 s` is retained as evidence but not promoted to another projectile. Recovery candidate `0.350 s`.
 
-### REPAIR
-The deterministic Release Frame initially double-counted the preview FX because the manual calibration flash and the normal preview tick saw the same primary marker. Runtime `a5e09d6744f4a26e63a5f7e706be8a631459d28d` records the marker as fired before the manual flash. Scheduled single-shot releases remain exactly `[0.150]`.
+### RECOVERY / PREVIEW FIX
+After the chat interruption, sanity recovery found duplicate preview-FX counting at the deterministic Release Frame. Runtime `a5e09d6744f4a26e63a5f7e706be8a631459d28d` marks the primary marker as fired before the manual calibration flash. The scheduled projectile release remains exactly `[0.150]`.
 
 ### PUBLIC_VERIFIED
-Workflow `35489464770`: branch and public browser jobs both **55/55 PASS**. Public marker + Hub/Stage navigation PASS; 0 failed resources and 0 page/console errors.
+Final closure workflow `35489658278`: branch and public browser jobs both **55/55 PASS**. Public marker + Hub/Stage navigation PASS; 0 failed resources and 0 page/console errors.
 
 Fixed Stage:
 `https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/kaykit-ranged-calibration-v1/`

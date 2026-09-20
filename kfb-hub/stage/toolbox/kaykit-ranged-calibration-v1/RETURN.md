@@ -6,7 +6,7 @@ Status: **PUBLIC_VERIFIED · HUMAN OPEN**
 
 Weapon / Grip / Muzzle / Release calibration for FrizzleBob Driver Graft and GothGirl, using the exact separate `Character_Gun.gltf` attachment and the real Rig_Medium CombatRanged clips.
 
-Measured result: both actors share the same Rig_Medium `handslotr` socket/grip/muzzle profile within measurement precision; GothGirl needs no actor-specific grip delta in this gate. Single-shot primary release is `0.150 s`; the later `0.883 s` rotational peak is evidence only and is not scheduled as another projectile release.
+Both actors share the same measured Rig_Medium `handslotr` socket/grip/muzzle profile within measurement precision. GothGirl therefore needs no actor-specific grip delta at this gate. Single-shot primary release is `0.150 s`; the later `0.883 s` rotational peak remains evidence only.
 
 ## Exact source state
 
@@ -14,16 +14,16 @@ Measured result: both actors share the same Rig_Medium `handslotr` socket/grip/m
 - branch: `chatgpt-web/ca2-02-ranged-calibration-2026-09-20`
 - source PR: `#135` — Draft, no auto-merge
 - final runtime revision: `a5e09d6744f4a26e63a5f7e706be8a631459d28d`
-- proof/handoff revision before Hub sync: `9d16facfe4fd2dd3e8d2ee2adafec97263f58552`
-- current branch includes Hub/router source sync additively
+- proofed branch head: `431723aa69316136aeeb0d7411d28846fe0d41da`
+- Hub/router source sync is included on the same branch.
 
 ## Final evidence
 
-Workflow `35489464770`:
-- branch job `106021777516`: **55/55 PASS**, 0 failed resources, 0 page/console errors
-- branch artifact `10598656283` · `sha256:6a986f361a91c667a3ef01084fc661435ac8b75071efa5b47963cbe7157eb9bc`
-- public job `106021777418`: marker PASS · Hub/Stage navigation PASS · **55/55 PASS**
-- public artifact `10598539749` · `sha256:04fe77711f3af6ba4d1243ea068d37606b7a0685eab54891a60ea3057326a3e9`
+Workflow `35489658278`:
+- branch job `106022296749`: **55/55 PASS**, 0 failed resources, 0 page/console errors
+- branch artifact `10598448427` · `sha256:f1dc330364eaf77eb13b2b58634501f2be43582519dcbc125d0deb95acbfbda8`
+- public job `106022296782`: marker PASS · Hub/Stage navigation PASS · **55/55 PASS**
+- public artifact `10598651751` · `sha256:7f8140c90f84f2d7f528b27f431a0843ca5e408901057c027bef30f0bf8c7449`
 
 Public Stage:
 `https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/kaykit-ranged-calibration-v1/`

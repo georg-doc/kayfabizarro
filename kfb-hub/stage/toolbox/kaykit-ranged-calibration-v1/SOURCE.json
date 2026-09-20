@@ -66,30 +66,31 @@
     "state": "DRAFT_OPEN"
   },
   "branchProof": {
-    "run": 35489464770,
-    "job": 106021777516,
+    "run": 35489658278,
+    "job": 106022296749,
     "checks": "55/55 PASS",
     "failedResources": 0,
     "pageConsoleErrors": 0,
-    "artifactId": 10598656283,
-    "artifactDigest": "sha256:6a986f361a91c667a3ef01084fc661435ac8b75071efa5b47963cbe7157eb9bc"
+    "artifactId": 10598448427,
+    "artifactDigest": "sha256:f1dc330364eaf77eb13b2b58634501f2be43582519dcbc125d0deb95acbfbda8"
   },
   "publication": {
     "branch": "cloudflare-live",
     "proofedHead": "cf15f612e6a700608564cadbded4302ba59b1af2",
     "stageUrl": "https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/kaykit-ranged-calibration-v1/",
-    "verifiedAt": "2026-09-20T04:37:19Z"
+    "verifiedAt": "2026-09-20T04:40:04Z"
   },
   "publicProof": {
-    "run": 35489464770,
-    "job": 106021777418,
+    "run": 35489658278,
+    "job": 106022296782,
     "marker": "PASS",
     "hubStageNavigation": "PASS",
     "checks": "55/55 PASS",
     "failedResources": 0,
     "pageConsoleErrors": 0,
-    "artifactId": 10598539749,
-    "artifactDigest": "sha256:04fe77711f3af6ba4d1243ea068d37606b7a0685eab54891a60ea3057326a3e9"
+    "artifactId": 10598651751,
+    "artifactDigest": "sha256:7f8140c90f84f2d7f528b27f431a0843ca5e408901057c027bef30f0bf8c7449"
   },
-  "previewFxRepair": "Deterministic release-frame now records the primary marker as already fired before the manual calibration FX, preventing duplicate preview FX; release schedule unchanged at [0.150]."
+  "previewFxRepair": "Deterministic release-frame now records the primary marker as already fired before the manual calibration FX, preventing duplicate preview FX; release schedule unchanged at [0.150].",
+  "proofedBranchHead": "431723aa69316136aeeb0d7411d28846fe0d41da"
 }
