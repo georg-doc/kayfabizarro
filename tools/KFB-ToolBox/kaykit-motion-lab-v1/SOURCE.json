@@ -2,7 +2,7 @@
   "schema": "kfb.toolbox-kaykit-motion-lab-source/0.1",
   "date": "2026-09-20",
   "owner": "KFB ToolBox / Motion authoring",
-  "status": "IMPLEMENTATION_CANDIDATE_SOURCE_PINNED",
+  "status": "LOCAL_BROWSER_87_87_PASS_STAGE_PENDING",
   "sourceMain": "bdaea0648f27c0f16e0a737bfba237eb54dd4cbb",
   "kclResearch": {
     "pr": 107,
@@ -86,5 +86,42 @@
     }
   },
   "stageTarget": "https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/kaykit-motion-lab-v1/",
-  "consumerBoundary": "Measurement/authoring only. No world movement, physics, gameplay state or damage ownership."
+  "consumerBoundary": "Measurement/authoring only. No world movement, physics, gameplay state or damage ownership.",
+  "implementationHead": "3ab2a439b013b816e843ea303e7015a26ee2aff8",
+  "localBrowserEvidence": {
+    "workflowRun": 35480849313,
+    "job": 105998255165,
+    "checks": "87/87 PASS",
+    "artifactId": 10595139102,
+    "artifactDigest": "sha256:4065242e4a5be9c2a451dfc24a24a1ef409099f3dce00f02ec31bd277ff6aaf3",
+    "failedResources": 0,
+    "pageConsoleErrors": 0
+  },
+  "measuredFindings": {
+    "Rig_Medium": {
+      "bindableGeneralMovementCount": 25,
+      "handoffSpeed": 1.108,
+      "rateWindowOverlap": false,
+      "gap": 0.016,
+      "walkRate": 1.8,
+      "runRate": 0.45
+    },
+    "Rig_Large": {
+      "bindableGeneralMovementCount": 8,
+      "available": [
+        "Death_A",
+        "Death_A_Pose",
+        "Hit_A",
+        "Idle_A",
+        "Idle_B",
+        "T-Pose",
+        "Running_A",
+        "Walking_A"
+      ],
+      "handoffSpeed": 1.811,
+      "rateWindowOverlap": true,
+      "walkRate": 1.02,
+      "runRate": 0.97
+    }
+  }
 }

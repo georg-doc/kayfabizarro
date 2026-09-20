@@ -150,3 +150,61 @@ FrizzleBob and GothGirl share Medium clip timing/reference-speed facts but still
 ## Current next gate
 
 Improve the candidate transition-speed default from a fixed number to a measured **Walk/Run handoff-speed candidate**, then rerun the same 3-actor proof before Stage publication.
+
+
+## Handoff-speed replay · 87/87 PASS
+
+Implementation head:
+`3ab2a439b013b816e843ea303e7015a26ee2aff8`
+
+Workflow:
+- run `35480849313`
+- job `105998255165`
+- **87/87 PASS**
+- artifact `10595139102`
+- digest `sha256:4065242e4a5be9c2a451dfc24a24a1ef409099f3dce00f02ec31bd277ff6aaf3`
+- 0 failed resources
+- 0 page/console errors
+
+### Measured Walk/Run handoff windows
+
+**Rig_Medium · FrizzleBob + GothGirl**
+
+```text
+Walking_A ref ≈ 0.611
+Running_A ref ≈ 2.480
+technical playback clamp = 0.45 … 1.80
+
+handoff speed ≈ 1.108
+rate-window overlap = NO
+gap ≈ 0.016
+Walking_A ≈ 1.80×
+Running_A ≈ 0.45×
+```
+
+The tiny speed-window gap is explicit evidence, not hidden. Phase-sync/warp may bridge it, but the rates sit at the current clamp edges. Human visual approval is required; Walking_B/C remain available candidates for later comparison.
+
+**Rig_Large · Black Knight**
+
+```text
+Walking_A ref ≈ 1.772
+Running_A ref ≈ 1.850
+
+handoff speed ≈ 1.811
+rate-window overlap = YES
+Walking_A ≈ 1.02×
+Running_A ≈ 0.97×
+```
+
+This is a notably cleaner speed handoff near native playback. Running_A nevertheless retains the high automatic slip candidate (~15.27% actor height), so its final profile is not promoted without visual review.
+
+### Architecture consequence
+
+Browser evidence supports:
+`RigMotionProfile → ActorMotionReview/Overrides`.
+
+Medium shared motion facts can be authored once and visually reviewed on FrizzleBob/GothGirl. Large remains a separate profile family.
+
+## Current next gate
+
+Publish this exact tested implementation as the ToolBox Stage candidate and run the same 3-actor proof against the direct pages.dev route. Attachment proposals remain unmounted until their own visual gate.

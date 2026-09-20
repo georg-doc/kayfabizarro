@@ -83,9 +83,11 @@
           "Running_B"
         ],
         "notes": [
-          "Remeasure on Driver host before exporting consumer speeds.",
+          "Browser-proven on Driver Graft with one host mixer.",
+          "Uses measured Rig_Medium handoff candidate; actor-specific visual approval remains open.",
           "poseOverClip=false for locomotion proof."
-        ]
+        ],
+        "rigProfile": "Rig_Medium"
       },
       "attachment": {
         "defaultVisible": false,
@@ -112,8 +114,10 @@
           "Running_B"
         ],
         "notes": [
-          "Remeasure on GothGirl itself; do not inherit ActionFigure speeds."
-        ]
+          "Browser-proven on GothGirl.",
+          "Uses measured Rig_Medium handoff candidate; actor-specific visual approval remains open."
+        ],
+        "rigProfile": "Rig_Medium"
       },
       "attachment": {
         "proposal": "GothGirl_Microphone",
@@ -132,7 +136,15 @@
         "runCandidate": "Running_A",
         "runtimeRule": "Enumerate exact Rig_Large clip names first; only enable clips that exist and bind.",
         "mediumProfileReuse": false,
-        "jump": "DISABLED_UNLESS_EXACT_LARGE_CLIP_PROVEN"
+        "jump": "UNAVAILABLE_IN_TESTED_GENERAL_MOVEMENTBASIC",
+        "rigProfile": "Rig_Large",
+        "exactAvailable": [
+          "Idle_A",
+          "Idle_B",
+          "Walking_A",
+          "Running_A"
+        ],
+        "handoffSpeed": 1.811
       },
       "attachments": [
         {
@@ -150,5 +162,89 @@
       ]
     }
   },
-  "promotionRule": "No profile becomes a consumer default until exact actor browser proof + Georg visual acceptance."
+  "promotionRule": "No profile becomes a consumer default until exact actor browser proof + Georg visual acceptance.",
+  "evidence": {
+    "status": "LOCAL_BROWSER_87_87_PASS",
+    "implementationHead": "3ab2a439b013b816e843ea303e7015a26ee2aff8",
+    "workflowRun": 35480849313,
+    "job": 105998255165,
+    "artifactId": 10595139102,
+    "artifactDigest": "sha256:4065242e4a5be9c2a451dfc24a24a1ef409099f3dce00f02ec31bd277ff6aaf3"
+  },
+  "rigProfiles": {
+    "Rig_Medium": {
+      "status": "MEASURED_PROPOSAL_HUMAN_OPEN",
+      "bindableGeneralMovementCount": 25,
+      "locomotion": {
+        "Walking_A": {
+          "duration": 1.0666667222976685,
+          "referenceSpeed": 0.610950956910957
+        },
+        "Running_A": {
+          "duration": 0.800000011920929,
+          "referenceSpeed": 2.4802741670129
+        },
+        "Walking_B_C": "available alternatives",
+        "Running_B": "HOLD"
+      },
+      "handoff": {
+        "speed": 1.108,
+        "playbackClamp": [
+          0.45,
+          1.8
+        ],
+        "rateWindowOverlap": false,
+        "gap": 0.016,
+        "walkingRate": 1.8,
+        "runningRate": 0.45,
+        "note": "The allowed speed windows nearly touch but do not overlap at the current technical clamp. Phase sync/warp can bridge the handoff, but human visual approval is required."
+      }
+    },
+    "Rig_Large": {
+      "status": "MEASURED_PROPOSAL_HIGH_RUN_SLIP_HUMAN_OPEN",
+      "bindableGeneralMovementCount": 8,
+      "exactAvailable": [
+        "Death_A",
+        "Death_A_Pose",
+        "Hit_A",
+        "Idle_A",
+        "Idle_B",
+        "T-Pose",
+        "Running_A",
+        "Walking_A"
+      ],
+      "exactUnavailable": [
+        "Walking_B",
+        "Walking_C",
+        "Running_B",
+        "Jump_Start",
+        "Jump_Idle",
+        "Jump_Land",
+        "Jump_Full_Short",
+        "Jump_Full_Long"
+      ],
+      "locomotion": {
+        "Walking_A": {
+          "duration": 1.0666667222976685,
+          "referenceSpeed": 1.7722505608669725
+        },
+        "Running_A": {
+          "duration": 1.0666667222976685,
+          "referenceSpeed": 1.8496479967365194,
+          "slipBody": 0.15269965757474385
+        }
+      },
+      "handoff": {
+        "speed": 1.811,
+        "playbackClamp": [
+          0.45,
+          1.8
+        ],
+        "rateWindowOverlap": true,
+        "walkingRate": 1.02,
+        "runningRate": 0.97,
+        "note": "Large Walk/Run can hand off close to native playback speed. Running_A still has a high automatic slip candidate and must be visually reviewed."
+      }
+    }
+  }
 }

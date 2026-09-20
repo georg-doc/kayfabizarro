@@ -3,11 +3,11 @@
   "date": "2026-09-20",
   "status": "LOCAL_BROWSER_87_87_PASS_HUMAN_OPEN",
   "evidence": {
-    "workflowRun": 35480691218,
-    "job": 105997821543,
+    "workflowRun": 35480849313,
+    "job": 105998255165,
     "checks": "87/87 PASS",
-    "artifactId": 10595562539,
-    "artifactDigest": "sha256:b160162a2a8b7047e0925d966bebdc4f51829fd18c551c816554055cef8e69f3",
+    "artifactId": 10595139102,
+    "artifactDigest": "sha256:4065242e4a5be9c2a451dfc24a24a1ef409099f3dce00f02ec31bd277ff6aaf3",
     "artifactFiles": [
       "frizzlebob.png",
       "gothgirl.png",
@@ -16,7 +16,7 @@
     ],
     "failedResources": 0,
     "pageConsoleErrors": 0,
-    "sourceHead": "35ac2306ed4308b853161edea7113cbbbb49b9c2"
+    "sourceHead": "3ab2a439b013b816e843ea303e7015a26ee2aff8"
   },
   "architectureFinding": {
     "proposal": "RigMotionProfile + ActorMotionReview",
@@ -177,5 +177,22 @@
       ]
     }
   },
-  "humanAcceptance": false
+  "humanAcceptance": false,
+  "handoffCandidates": {
+    "Rig_Medium": {
+      "speed": 1.108,
+      "rateWindowOverlap": false,
+      "gap": 0.016,
+      "Walking_A_rate": 1.8,
+      "Running_A_rate": 0.45,
+      "status": "MEASURED_TECHNICAL_CANDIDATE_HUMAN_OPEN"
+    },
+    "Rig_Large": {
+      "speed": 1.811,
+      "rateWindowOverlap": true,
+      "Walking_A_rate": 1.02,
+      "Running_A_rate": 0.97,
+      "status": "MEASURED_TECHNICAL_CANDIDATE_HIGH_RUN_SLIP_HUMAN_OPEN"
+    }
+  }
 }
