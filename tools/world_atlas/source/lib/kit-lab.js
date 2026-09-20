@@ -590,6 +590,40 @@ export function makeViewer(canvas, opts = {}) {
   new ResizeObserver(resize).observe(canvas);
   resize();
 
+  /* NOTNAGEL FÜR DIE GRÖSSE, nicht nur für das Zeichnen.
+     Gemessen in dieser Vorschau: der erste `resize()` läuft, während das Canvas noch 0 × 0 ist
+     (`Math.max(1, …)` → Puffer 2 × 2 bei pixelRatio 2), und danach feuert der ResizeObserver
+     nicht mehr — die Seite lädt blank, obwohl die Szene vollständig gebaut ist und alle Prüfungen
+     grün sind. Der bestehende rAF-Notnagel zeichnet nur neu, er MISST nicht.
+     Also: in jedem Bild Puffergrösse gegen Layoutgrösse halten. Betrifft alle Seiten des
+     Projekts (dieselbe Klasse Fehler wie S7.1/S11 mit gedrosseltem rAF). */
+  let lastW = 0, lastH = 0;
+  /* Eigene Variable statt Zugriff auf das Rückgabeobjekt: die rAF-Schleife startet VOR dem
+     `return`, ein `const api` wäre dort noch in der temporalen Totzone (gemessen: Uncaught
+     ReferenceError im ersten Bild, Seite blieb beim Laden stehen). */
+  let hook = opts.onResize || null;
+  /* ZWEITER HAKEN: onFrame. Diese Vorschau drosselt `requestAnimationFrame` bis auf null Bilder
+     pro Sekunde — eine Seite, die Licht und Effekte in ihrer EIGENEN rAF-Schleife treibt, steht
+     dann still, während der Notnagel unten das Bild weiterzeichnet (gemessen: 0 rAF-Frames in
+     1000 ms, alle Punktlichter aus, Funken eingefroren). Also hängen Licht und Effekte an einer
+     Quelle, die beide Betriebsarten bedient. */
+  let hookFrame = opts.onFrame || null;
+  let letzterPuls = performance.now();
+  function puls() {
+    const jetzt = performance.now();
+    const dt = Math.min(0.1, (jetzt - letzterPuls) / 1000);
+    letzterPuls = jetzt;
+    hookFrame?.(dt, jetzt / 1000);
+  }
+  function autoResize() {
+    const w = canvas.clientWidth | 0, h = canvas.clientHeight | 0;
+    if (w < 2 || h < 2) return;
+    if (w === lastW && h === lastH) return;
+    lastW = w; lastH = h;
+    resize();
+    hook?.();
+  }
+
   function frame(object, dir = [1, 0.78, 1], pad = 1.12) {
     const box = new THREE.Box3().setFromObject(object);
     const size = box.getSize(new THREE.Vector3());
@@ -618,6 +652,8 @@ export function makeViewer(canvas, opts = {}) {
     requestAnimationFrame(loop);
     ticks++;
     lastTick = performance.now();
+    autoResize();
+    puls();
     draw();
   })();
   /* Safety net for frames where requestAnimationFrame stalls — this embedded preview stops firing
@@ -626,7 +662,14 @@ export function makeViewer(canvas, opts = {}) {
      showing the island). The old version retired itself for good once rAF had run once, so a
      later stall was invisible. Now it stays, and draws only while rAF is actually stalled — that
      keeps the out-of-band controls.update() stutter (S7.1) away during normal operation. */
-  setInterval(() => { if (performance.now() - lastTick > 400) draw(); }, 150);
+  setInterval(() => { if (performance.now() - lastTick > 400) { autoResize(); puls(); draw(); } }, 60);
 
-  return { renderer, scene, camera, controls, grid, frame, resize, draw, home: () => controls.reset() };
+  return {
+    renderer, scene, camera, controls, grid, frame, resize, draw,
+    home: () => controls.reset(),
+    get onResize() { return hook; },
+    set onResize(f) { hook = f; },
+    get onFrame() { return hookFrame; },
+    set onFrame(f) { hookFrame = f; }
+  };
 }
