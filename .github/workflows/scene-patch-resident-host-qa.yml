@@ -6,6 +6,7 @@ on:
     paths:
       - 'tools/KFB-ToolBox/shared/scene-patch/**'
       - 'tools/resident_atlas/**'
+      - 'tools/world_atlas/source/**'
       - '.github/workflows/scene-patch-resident-host-qa.yml'
   workflow_dispatch:
 
@@ -18,6 +19,10 @@ jobs:
     timeout-minutes: 15
     steps:
       - uses: actions/checkout@v4
+        with:
+          sparse-checkout: |
+            tools/resident_atlas
+            tools/KFB-ToolBox/shared/scene-patch
 
       - uses: actions/setup-node@v4
         with:
@@ -153,4 +158,152 @@ jobs:
         with:
           name: scene-patch-resident-host-proof
           path: scene-patch-proof/resident
+          retention-days: 90
+
+
+  dungeon-host:
+    needs: resident-host
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout: |
+            tools/world_atlas/source
+            tools/KFB-ToolBox/shared/scene-patch
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Install Chromium
+        run: |
+          npm install --no-save playwright@1.51.1
+          npx playwright install --with-deps chromium
+
+      - name: Start repository server
+        run: |
+          python3 -m http.server 4173 --bind 127.0.0.1 > /tmp/kfb-scene-patch-http.log 2>&1 &
+          echo $! > /tmp/kfb-scene-patch-http.pid
+          for i in $(seq 1 30); do
+            curl -fsS http://127.0.0.1:4173/tools/world_atlas/source/KayKit_Dungeon_Generator_S13_2.html >/dev/null && exit 0
+            sleep 1
+          done
+          cat /tmp/kfb-scene-patch-http.log
+          exit 1
+
+      - name: Browser proof · Dungeon S13.2
+        run: |
+          mkdir -p scene-patch-proof/dungeon
+          cat > scene-patch-proof/dungeon/check.mjs <<'JS'
+          import fs from 'node:fs';
+          import { chromium } from 'playwright';
+
+          const url='http://127.0.0.1:4173/tools/world_atlas/source/KayKit_Dungeon_Generator_S13_2.html';
+          const report={url,checks:[],errors:[],state:null};
+          const check=(name,pass,detail=null)=>{report.checks.push({name,pass:!!pass,detail});if(!pass)process.exitCode=1;};
+          const browser=await chromium.launch({headless:true});
+          const page=await browser.newPage({viewport:{width:1280,height:820}});
+          page.on('pageerror',e=>report.errors.push('pageerror: '+String(e)));
+          page.on('console',m=>{if(m.type()==='error')report.errors.push('console: '+m.text());});
+
+          async function waitBuilt(seed){
+            await page.waitForFunction((s)=>window.__dungeonScenePatch?.session?.source?.context?.seed===s&&window.__s132?.root,seed,{timeout:150000});
+          }
+          try{
+            const response=await page.goto(url,{waitUntil:'domcontentloaded',timeout:60000});
+            check('dungeon HTTP response',!!response&&response.ok(),response?.status());
+            await waitBuilt('A1');
+
+            let count=await page.evaluate(()=>window.__dungeonScenePatch.editableNodes().length);
+            if(!count){
+              for(const seed of ['PATCH1','CANDLE','KFB42']){
+                await page.fill('#seed',seed);await page.press('#seed','Enter');await waitBuilt(seed);
+                count=await page.evaluate(()=>window.__dungeonScenePatch.editableNodes().length);
+                if(count)break;
+              }
+            }
+            const initial=await page.evaluate(()=>{
+              const a=window.__dungeonScenePatch,s=a.session,root=window.__s132.root;
+              const nodes=a.editableNodes(),first=nodes[0]||null;
+              const ro=root.children.find(n=>n.userData.scenePatchRecord&&!n.userData.scenePatchRecord.editable)||null;
+              return {
+                source:s.source,registered:s.stats().registered,editable:nodes.length,
+                first:first?.userData.scenePatchRecord||null,
+                readOnly:ro?.userData.scenePatchRecord||null,
+                candleLayers:[...new Set(nodes.map(n=>n.userData.scenePatchRecord?.layer))],
+                placementSnapshot:JSON.stringify(window.__s132.placements)
+              };
+            });
+            check('at least one real candle registered',initial.registered>0,initial);
+            check('only candle layer is editable',initial.candleLayers.length===1&&initial.candleLayers[0]==='candle',initial.candleLayers);
+            check('structural object remains read only',!!initial.readOnly&&initial.readOnly.editable===false,initial.readOnly);
+            check('candle source is exact Dungeon Registry path',initial.first?.assetId===initial.first?.sourceRef&&initial.first?.sourceRef?.startsWith('media/3D_Assets/KayKit_Dungeon_Pack_1.1_FREE 2/Assets/gltf/'),initial.first);
+            check('host source remains S13.2',initial.source?.sourceRef==='tools/world_atlas/source/KayKit_Dungeon_Generator_S13_2.html',initial.source);
+
+            await page.click('#editor');
+            const editState=await page.evaluate(()=>{
+              const a=window.__dungeonScenePatch,editable=a.editableNodes()[0],ro=window.__s132.root.children.find(n=>n.userData.scenePatchRecord&&!n.userData.scenePatchRecord.editable);
+              const refused=a.edit.select(ro);
+              const readOnlySelection=a.edit.selection.length;
+              a.edit.select(editable);a.edit.follow();
+              return {on:a.edit.on,refused:refused===null,readOnlySelection,menuHidden:document.getElementById('editMenu').hidden,dockHidden:document.getElementById('patchDock').hidden};
+            });
+            check('editor toggles on',editState.on===true,editState);
+            check('read-only structure cannot attach gizmo',editState.refused&&editState.readOnlySelection===0,editState);
+            check('candle object menu appears',editState.menuHidden===false,editState);
+            check('patch dock appears',editState.dockHidden===false,editState);
+
+            const move=await page.evaluate(()=>{
+              const a=window.__dungeonScenePatch,s=a.session,n=a.editableNodes()[0],lights=window.__s132.torchLights;
+              const light=lights.find(x=>x.node===n),id=n.userData.scenePatchRecord.id,x0=n.position.x,light0=light?.p?.slice()||null;
+              s.begin([n],'qa-move');n.position.x+=0.25;n.updateMatrixWorld(true);s.commit([n],'qa-move');
+              return {id,x0,light0,patch:s.makePatch(),stats:s.stats(),recipe:JSON.stringify(window.__s132.placements)};
+            });
+            check('move creates one Dungeon patch op',move.patch.ops.length===1,move);
+            check('Dungeon patch schema/host exact',move.patch.schema==='kfb.scene-patch.v1'&&move.patch.host==='dungeon',move.patch);
+            check('patch op keeps exact candle source',move.patch.ops[0].source.assetId===move.patch.ops[0].source.sourceRef,move.patch.ops[0]);
+            check('generator placements were not rewritten',move.recipe===initial.placementSnapshot,null);
+
+            const roundtrip=await page.evaluate((patch)=>{
+              const a=window.__dungeonScenePatch,s=a.session,n=a.resolve(patch.ops[0].id);
+              const findLight=()=>window.__s132.torchLights.find(x=>x.node===n);
+              const target=patch.ops[0].position[0],resetCount=s.reset(),afterReset=n.position.x,lightReset=findLight()?.p?.slice()||null;
+              const applied=s.applyPatch(patch,'qa-import'),afterImport=n.position.x,lightImport=findLight()?.p?.slice()||null;
+              return {target,resetCount,afterReset,lightReset,applied,afterImport,lightImport,stats:s.stats(),recipe:JSON.stringify(window.__s132.placements)};
+            },move.patch);
+            check('Dungeon reset restores baseline',roundtrip.resetCount===1&&Math.abs(roundtrip.afterReset-move.x0)<1e-6,roundtrip);
+            check('Dungeon import restores moved candle',roundtrip.applied.ok===true&&Math.abs(roundtrip.afterImport-roundtrip.target)<1e-6,roundtrip);
+            check('candle light follows moved mesh',!!move.light0&&!!roundtrip.lightImport&&Math.abs((roundtrip.lightImport[0]-move.light0[0])-0.25)<1e-4,{before:move.light0,after:roundtrip.lightImport});
+            check('roundtrip still does not rewrite generator recipe',roundtrip.recipe===initial.placementSnapshot,null);
+
+            const reject=await page.evaluate((patch)=>{
+              const a=window.__dungeonScenePatch,s=a.session,n=a.resolve(patch.ops[0].id),before=n.position.toArray();
+              const bad=structuredClone(patch);bad.ops[0].source.assetId='wrong/asset.gltf';
+              const result=s.applyPatch(bad,'bad-source'),after=n.position.toArray();
+              const badRev=structuredClone(patch);badRev.source.revision='wrong-revision';
+              const resultRev=s.applyPatch(badRev,'bad-revision');
+              return {result,resultRev,before,after,final:n.position.toArray()};
+            },move.patch);
+            check('Dungeon wrong asset source rejected',reject.result.ok===false&&reject.result.errors.some(x=>x.startsWith('OBJECT_SOURCE_MISMATCH')),reject.result);
+            check('Dungeon wrong host revision rejected',reject.resultRev.ok===false&&reject.resultRev.errors.includes('HOST_REVISION_MISMATCH'),reject.resultRev);
+            check('Dungeon rejected imports are atomic',JSON.stringify(reject.before)===JSON.stringify(reject.after)&&JSON.stringify(reject.after)===JSON.stringify(reject.final),reject);
+
+            report.state={initial:{...initial,placementSnapshot:'<captured>'},move:{id:move.id,patch:move.patch,stats:move.stats,light0:move.light0},roundtrip,reject};
+            await page.screenshot({path:'scene-patch-proof/dungeon/dungeon-scene-patch.png',fullPage:true});
+          }catch(e){
+            report.errors.push(String(e?.stack||e));process.exitCode=1;
+          }finally{
+            check('no browser console/page errors',report.errors.length===0,report.errors);
+            fs.writeFileSync('scene-patch-proof/dungeon/report.json',JSON.stringify(report,null,2));
+            await browser.close();
+          }
+          JS
+          node scene-patch-proof/dungeon/check.mjs
+
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: scene-patch-dungeon-host-proof
+          path: scene-patch-proof/dungeon
           retention-days: 90
