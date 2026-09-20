@@ -1,3 +1,11 @@
+## 2026-09-20 · Combat CA2-02 · Ranged Calibration
+
+### CURRENT_REFERENCE / PUBLIC STAGE
+Add the bounded ToolBox ranged-calibration candidate for Combat Arena v5. The exact separate `Character_Gun.gltf` donor is shown before integration; FrizzleBob Driver Graft and GothGirl use the real Rig_Medium CombatRanged clips and the same measured `handslotr` grip/muzzle profile. Single-shot primary release is `0.150 s`; the later `0.883 s` rotation peak is retained as evidence, not a second projectile.
+
+### EVIDENCE
+Fixed Stage: `https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/kaykit-ranged-calibration-v1/`. Public proof: **55/55 PASS**, marker/navigation PASS, 0 failed resources, 0 page/console errors. Arena Player/Gunfight ownership remains external; locomotion optimization, 2H/Bow/Magic and productive combat integration are deferred.
+
 ## 2026-09-19 · Hub briefings repair + separated generator lanes
 
 ### DECISION
@@ -891,3 +899,33 @@ Run `35484127790`, public-proof job `106007210838`:
 `PUBLIC_VERIFIED = YES`.
 
 Exactly one next gate: Georg reviews the three actors and their phase-sync/weight/cadence on the public Stage before any consumer MotionProfile promotion.
+
+
+## 2026-09-20 · EyeRig Batch · four Large profiles accepted + actor-specific lid color
+
+### ACCEPTED LARGE PROFILES
+Georg's reviewed batch from `tools/KFB-ToolBox/_inbox/eye-rig-large.batch.json` at `main@52532aee17f85324a6d04ab53150216f00ac5d89` is now the canonical per-character Large baseline.
+
+Accepted:
+- Monstrosity
+- Black Knight
+- Demon Lord
+- Orc Brute
+
+Canonical copy: `tools/KFB-ToolBox/eye-rig-batch/data/rig-large-reviewed.v1.json`.
+
+### LID COLOR FIX
+The common pink fallback `#b58f83` is no longer persisted for generic actors.
+
+A new source-head sampler reads each loaded actor's own face/head texture around the eye placement. The sampled color becomes the EyeRig base color; existing EyeRig v6 remains the owner that darkens it for lids. Explicit actor colors such as GothGirl remain untouched.
+
+### EVIDENCE
+- implementation `480c5770ef8ef391043b0b93ec3f51b04af7dfef`;
+- evidence `40c2f920a96ea00bf99593610a49a646b2e0873c`;
+- source/Return `e277c3456651d314a01adea046e0105d2a12cdd1`;
+- Stage `e9f97c594bce46607e95928dd349cf081c36783d`;
+- **95/95 PASS**;
+- **4/4 runtime-critical JS syntax PASS**.
+
+### NEXT
+Reload the EyeRig Stage and visually check only the lid colors on the four accepted Large actors.
