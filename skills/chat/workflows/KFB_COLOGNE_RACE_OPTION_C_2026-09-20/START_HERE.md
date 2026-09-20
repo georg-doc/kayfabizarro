@@ -34,15 +34,16 @@ The first hero experience is a **race around the Kölner Dom**, using:
 
 ## Visual authority
 
-Georg will attach exactly two boards to Claude Design:
+Slice C has two exact Option-C authority boards already on public `kayfabizarro/main`:
 
-- `OPTION_C_VISUAL_AUTHORITY` — Elastic Cartoon World
-- `OPTION_A_VISUAL_AUTHORITY` — Hybrid Default
+- `travel/wip/travel_globe_wsa/_inbox/KFB Racer Option C - ChatGPT Image 20. Sept. 2026, 05_06_22 (1).png` — blob `59fd27fcb5dae48bc159093427a3e688cc83b6a4`
+- `travel/wip/travel_globe_wsa/_inbox/KFB Racer Option C - ChatGPT Image 20. Sept. 2026, 05_06_22 (2).png` — blob `ac0bf0064c8af8235a49b97d3b7e5e8196ed5579`
 
-For Slice C, **Option C is the literal color/light/style authority**.  
-Option A is comparison context only until the second slice.
+Claude must open/show each exact board in isolation before sampling or integration. Together they are the binding Option-C color/light/form authority for Slice C.
 
-Do not sample a substitute palette if the boards are absent.
+Option A visual authority is deliberately deferred until after Georg reviews C. It is not required to start Slice C.
+
+Do not sample or invent a substitute palette.
 
 ## Owner boundary
 
@@ -74,6 +75,4 @@ Claude must not query Overpass again for this slice unless Georg explicitly requ
 
 ## One next gate
 
-Georg attaches the two visual authority boards.
-
-Then Claude may build Slice C immediately.
+Claude Design builds Slice C from the pinned Option-C boards + cached Dom/Zentrum OSM and returns the complete export for GitHub/Stage intake.
