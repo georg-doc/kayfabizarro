@@ -146,6 +146,23 @@ function playCompare(name){
 function showSource(){
   currentMode='source';currentClip=null;modeStamp.textContent='SOURCE GUN · ISOLATED';for(const l of lanes){stopLane(l);l.root.visible=false;l.arrow.visible=false}sourceGroup.visible=true;badgeL.style.display='none';badgeR.style.display='none';fitObjects([sourceGroup]);renderReports();
 }
+function seekRelease(){
+  const name='Ranged_1H_Shoot',rep=markerReport(rangedMap.get(name)),t=rep.releaseTimes[0];
+  if(!Number.isFinite(t))throw Error('release marker unavailable');
+  playCompare(name);
+  shotEvents=0;
+  for(const l of lanes){
+    l.mixer.setTime(t);
+    if(l.action){l.action.time=t;l.action.paused=true}
+    l.update?.(0);
+    updateArrow(l);
+    fx.fire(l.weapon.muzzle,'muzzle',l.weapon.report.forearm);
+    shotEvents++;
+  }
+  currentMode='release-frame';modeStamp.textContent='RELEASE FRAME · '+t.toFixed(3)+'s';
+  renderReports();
+  return t;
+}
 function updateArrow(l){
   const pose=muzzlePose(l.weapon),p=new THREE.Vector3().fromArray(pose.worldPosition),d=new THREE.Vector3().fromArray(pose.worldForward);l.arrow.position.copy(p);l.arrow.setDirection(d);l.arrow.setLength(Math.max(.3,l.weapon.report.forearm*2.2),.16,.08);
 }
@@ -175,12 +192,12 @@ function snapshot(){
   return{ready,error,mode:currentMode,currentClip,source:{modelPin:MODEL_PIN,modulePin:MODULE_PIN,assetPin:ASSET_PIN,gun:PATHS.gun,ranged:PATHS.ranged},inventory:[...inventory],required:[...REQUIRED],shotEvents,
     bind:lanes.length?{frizzlebob:lanes[0].bind,gothgirl:lanes[1].bind,delta:bindDelta(lanes[0].bind,lanes[1].bind)}:null,
     markers:{shoot,continuous:auto},
-    actors:Object.fromEntries(lanes.map(l=>[l.id,{weaponReport:JSON.parse(JSON.stringify(l.weapon.report)),muzzle:muzzlePose(l.weapon)}])),
+    actors:Object.fromEntries(lanes.map(l=>[l.id,{weaponReport:JSON.parse(JSON.stringify(l.weapon.report)),muzzle:muzzlePose(l.weapon),actionTime:l.action?+l.action.time.toFixed(4):null,actionPaused:!!l.action?.paused}])),
     scope:{worldMovement:false,physics:false,targetSelection:false,projectileSpawn:false,damage:false,rewards:false,audio:false,arenaSave:false}};
 }
-window.__KFB_RANGED_CALIBRATION__={version:'0.1-candidate',ready:false,error:null,showSource,play:playCompare,snapshot};
+window.__KFB_RANGED_CALIBRATION__={version:'0.1-candidate',ready:false,error:null,showSource,play:playCompare,seekRelease,snapshot};
 
-document.getElementById('showSource').onclick=showSource;document.getElementById('showAim').onclick=()=>playCompare('Ranged_1H_Aiming');
+document.getElementById('showSource').onclick=showSource;document.getElementById('showAim').onclick=()=>playCompare('Ranged_1H_Aiming');document.getElementById('releaseFrame').onclick=seekRelease;
 clipSel.onchange=()=>playCompare(clipSel.value);document.querySelectorAll('[data-clip]').forEach(b=>b.onclick=()=>playCompare(b.dataset.clip));
 
 async function boot(){
