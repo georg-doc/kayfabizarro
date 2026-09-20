@@ -12,7 +12,7 @@
     "measuredEumelReconstruction": "PROVISIONAL_DONOR",
     "doccheckAdIllustratorSource": "PINNED_AND_PDF_VECTOR_AUDITED"
   },
-  "nextGate": "Implement/browser-test one world-space three2p5d Eumel adapter before Resident Atlas index promotion or DocCheck Project Island scene build.",
+  "nextGate": "Real-browser QA of proofs/eumel-three2p5d-v1 before Resident Atlas module index promotion or DocCheck Project Island scene build.",
   "evidence": {
     "studioBootstrap": "IMPLEMENTATION",
     "sourceIntake": "IMPLEMENTATION",
@@ -29,7 +29,7 @@
     "actorModuleContract": "IMPLEMENTATION_CANDIDATE",
     "eumel2p5dResidentBinding": "PREPARED_CANDIDATE",
     "residentAtlasCandidate": "PREPARED_NOT_INDEXED",
-    "three2p5dAdapter": "NOT_IMPLEMENTED",
+    "three2p5dAdapter": "IMPLEMENTATION_STATIC_PASS_BROWSER_PENDING",
     "doccyQuadrupedTemplate": "TEMPLATE_ONLY_SOURCE_REQUIRED"
   },
   "sourceAudit": {
@@ -95,5 +95,21 @@
     "residentCandidate": "tools/resident_atlas/modules/candidates/eumel-doccheck-project-island.module.json",
     "doccyTemplate": "templates/DOCCY_QUADRUPED_RIG_TEMPLATE.v0.1.json",
     "wsaHandoff": "skills/chat/workflows/2D_RESIDENT_ACTOR_WSA_2026-09-20/START_HERE.md"
+  },
+  "three2p5dProof": {
+    "path": "proofs/eumel-three2p5d-v1/",
+    "staticSanity": "PASS",
+    "browserQA": "PENDING",
+    "modes": [
+      "upright-yaw-billboard",
+      "world-facing-upright"
+    ],
+    "states": [
+      "neutral",
+      "idle",
+      "look",
+      "walk",
+      "hop"
+    ]
   }
 }
