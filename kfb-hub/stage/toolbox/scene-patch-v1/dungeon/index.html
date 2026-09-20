@@ -1,0 +1,1129 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>KFB Kit Lab · S13.2 · Dungeon-Generator</title>
+<script type="importmap">
+{"imports":{
+ "three":"https://unpkg.com/three@0.184.0/build/three.module.js",
+ "three/addons/controls/OrbitControls.js":"https://unpkg.com/three@0.184.0/examples/jsm/controls/OrbitControls.js",
+ "three/addons/controls/TransformControls.js":"https://unpkg.com/three@0.184.0/examples/jsm/controls/TransformControls.js",
+ "three/addons/loaders/GLTFLoader.js":"https://unpkg.com/three@0.184.0/examples/jsm/loaders/GLTFLoader.js"
+}}
+</script>
+<style>
+  *{box-sizing:border-box}
+  body{margin:0;background:#120e18;color:#e6e0f0;font:13px/1.5 ui-sans-serif,system-ui,-apple-system,"Helvetica Neue",sans-serif}
+  a{color:#b79ae0}a:hover{color:#cdb8ee}
+  /* Die Leiste ist zu: Split-Screen ist der Normalfall, nicht die Ausnahme. Sie oeffnet auf
+     Anforderung und nimmt der Szene dann rechts Platz weg (breit) bzw. legt sich darueber (schmal). */
+  #app{display:grid;grid-template-columns:minmax(0,1fr) 0;grid-template-rows:38px minmax(0,1fr);height:100vh}
+  #app.panel{grid-template-columns:minmax(0,1fr) 352px}
+  aside{display:none}
+  #app.panel aside{display:block}
+  #app.clean{grid-template-columns:minmax(0,1fr);grid-template-rows:0 minmax(0,1fr)}
+  #app.clean header,#app.clean aside,#app.clean #pick,#app.clean #editMenu,#app.clean #patchDock{display:none}
+  #app.clean #stage{grid-row:1/-1;grid-column:1/-1}
+  #exitClean{display:none;position:absolute;right:12px;top:12px;z-index:9;opacity:.3}
+  #exitClean:hover{opacity:1}
+  #app.clean #exitClean{display:block}
+
+  /* EINE Zeile, die nie umbricht. Umbrechende Kopfzeilen haben in S13.2 die Szene bei jedem
+     Fensterwechsel um eine Zeilenhoehe verschoben — bei Split-Screen dauernd. */
+  header{grid-column:1/-1;display:flex;align-items:center;gap:6px;padding:0 8px;
+    border-bottom:1px solid #2a2135;background:#171122;flex-wrap:nowrap;
+    overflow-x:auto;overflow-y:hidden;scrollbar-width:none}
+  header::-webkit-scrollbar{display:none}
+  header>*{flex:0 0 auto}
+  h1{font:600 11px/1 ui-monospace,monospace;margin:0 4px 0 2px;color:#9385a8;letter-spacing:.04em}
+  .sep{width:1px;height:18px;background:#2f2640;margin:0 2px}
+  .spacer{flex:1 1 auto;min-width:6px}
+  button,select,input[type=text]{font:11px/1 inherit;padding:6px 8px;background:#1e1729;color:#e6e0f0;
+    border:1px solid #3b2f4d;border-radius:5px;cursor:pointer}
+  input[type=text]{cursor:text;width:52px;font-family:ui-monospace,monospace;text-align:center}
+  button:hover,select:hover{background:#281f36}
+  button[aria-pressed="true"]{background:#7a5ea8;border-color:#9b7fd0;color:#140f1d}
+  .steps{display:flex;gap:0}
+  .steps button{border-radius:0;border-left-width:0}
+  .steps button:first-child{border-radius:5px 0 0 5px;border-left-width:1px}
+  .steps button:last-child{border-radius:0 5px 5px 0}
+  label.sl{display:flex;gap:6px;align-items:center;font:10px/1 ui-monospace,monospace;color:#8a7d9e}
+  input[type=range]{width:78px;accent-color:#9b7fd0}
+  #panel{font-size:13px;line-height:1;padding:6px 9px}
+
+  #stage{position:relative;min-width:0;min-height:0}
+  canvas{display:block;width:100%;height:100%}
+  /* Nur noch das Ergebnis eines Klicks liegt auf der Szene. Alle Kennzahlen stehen in der Leiste. */
+  #pick{position:absolute;left:10px;bottom:10px;font:10px/1.55 ui-monospace,monospace;
+    background:#120e18e0;border:1px solid #3b2f4d;padding:6px 8px;border-radius:6px;display:none;max-width:52%}
+  #editMenu{position:absolute;z-index:31;display:flex;gap:4px;padding:4px;background:#171122ee;border:1px solid #9b7fd0;border-radius:7px;transform:translate(-50%,-100%);box-shadow:0 8px 22px #08060cb0}
+  #editMenu[hidden],#patchDock[hidden]{display:none}
+  #editMenu button{padding:5px 7px;min-width:31px}
+  #patchDock{position:absolute;z-index:29;right:10px;bottom:10px;display:flex;align-items:center;gap:4px;max-width:58%;overflow:auto;padding:5px 6px;background:#171122ee;border:1px solid #3b2f4d;border-radius:7px}
+  #patchDock button{padding:5px 7px;font-size:10px}
+  #patchStatus{font:9px/1.3 ui-monospace,monospace;color:#9385a8;max-width:250px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+  @media(max-width:720px){#patchDock{left:8px;right:8px;bottom:8px;max-width:none}#pick{bottom:48px;max-width:88%}#patchStatus{max-width:130px}}
+
+  aside{border-left:1px solid #2a2135;background:#161020;overflow:auto;padding:0 0 24px}
+  @media (max-width:1100px){
+    #app.panel{grid-template-columns:minmax(0,1fr) 0}
+    #app.panel aside{position:fixed;right:0;top:38px;bottom:0;width:min(352px,94vw);z-index:20;
+      box-shadow:-16px 0 44px #08060cc0}
+  }
+  details{border-bottom:1px solid #221a2f}
+  summary{font:600 10px/1 ui-monospace,monospace;letter-spacing:.1em;text-transform:uppercase;
+    color:#8a7d9e;padding:11px 14px;cursor:pointer;list-style:none;display:flex;align-items:center;gap:7px}
+  summary::-webkit-details-marker{display:none}
+  summary::before{content:"+";font-size:12px;color:#6d6084;width:8px}
+  details[open]>summary::before{content:"\2013"}
+  details[open]>summary{color:#c9bcdd}
+  summary:hover{background:#1c1428}
+  .body{padding:0 14px 14px}
+  .tools{display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+  .mono{font:10px/1.6 ui-monospace,monospace;color:#c4b8d8;background:#0f0c16;border:1px solid #241c31;
+    border-radius:5px;padding:8px 9px;white-space:pre-wrap;word-break:break-word}
+  .mono.bad{background:#2a1a12;border-color:#8a4f2a;color:#f0cdb4}
+  .kv{display:flex;justify-content:space-between;gap:10px;padding:3px 0;border-bottom:1px solid #241c31;font:10px/1.55 ui-monospace,monospace}
+  .kv span:last-child{color:#e0d6f2;text-align:right}
+  .kv.no span:last-child{color:#e0896f}
+  .kv.yes span:last-child{color:#8fd0a8}
+  .note{font-size:12px;color:#8d81a1;margin:6px 0;text-wrap:pretty}
+  code{color:#b79ae0}
+  .plan{background:#0d0a13;border:1px solid #2b2239;border-radius:6px;padding:6px;margin-bottom:8px}
+  .plan svg{width:100%;display:block}
+  .plan b{font:10px/1.4 ui-monospace,monospace;color:#9385a8;display:block;padding:2px 3px 4px}
+  .legend{display:flex;gap:9px;flex-wrap:wrap;font:10px/1.6 ui-monospace,monospace;color:#9385a8}
+  .legend i{display:inline-block;width:9px;height:9px;border-radius:2px;margin-right:4px;vertical-align:-1px}
+</style>
+</head>
+<body data-stage-build="KFB_SCENE_PATCH_V1_2026_09_20">
+<div id="app">
+  <header>
+    <h1>S13.2</h1>
+    <input type="text" id="seed" value="A1" spellcheck="false" title="Saat">
+    <button id="roll">Würfeln</button>
+    <div class="sep"></div>
+    <label class="sl">Licht <select id="mood"><option value="promo">Promo</option><option value="fackeln">Fackeln</option><option value="nacht">Nacht</option></select></label>
+    <select id="lvl" title="Ebenen"><option value="both">beide Ebenen</option><option value="0">nur unten</option><option value="1">nur oben</option></select>
+    <div class="spacer"></div>
+    <button id="top">Draufsicht</button>
+    <button id="editor" aria-pressed="false">Editor</button>
+    <button id="clean">Nur Ansicht</button>
+    <button id="panel" aria-pressed="false" title="Leiste (Werkzeuge, Prüfungen, Notizen)">☰</button>
+  </header>
+  <div id="stage">
+    <canvas id="c"></canvas>
+    <div id="pick"></div>
+    <div id="editMenu" hidden aria-label="Object edit controls"><button data-m="translate" title="Verschieben (g)">✥</button><button data-m="rotate" title="Drehen (r)">⟳</button><button data-m="scale" title="Skalieren (s)">↗</button><button data-m="floor" title="Absetzen">⬓</button><button data-m="scope" title="Teil / Gruppe">⛓</button><button data-m="close" title="Schließen">×</button></div>
+    <div id="patchDock" hidden><span id="patchStatus">scene patch ready</span><button id="patchUndo">↶</button><button id="patchRedo">↷</button><button id="patchDraft">Draft</button><button id="patchExport">Export</button><button id="patchImport">Import</button><button id="patchReset">Reset</button><input id="patchFile" type="file" accept=".json,application/json" hidden></div>
+    <button id="exitClean" title="Escape">Ansicht verlassen</button>
+  </div>
+  <aside>
+    <details open>
+      <summary>Aufbau</summary>
+      <div class="body tools">
+        <label class="sl">Dichte <input type="range" id="dens" min="0" max="100" value="50"></label>
+        <label class="sl">Feld <select id="grid"><option value="8">8×8</option><option value="12">12×12</option><option value="16">16×16</option></select></label>
+        <span class="steps" id="steps"><button data-step="0">Räume</button><button data-step="1">Gänge</button><button data-step="2">Wände</button><button data-step="3" aria-pressed="true">Alles</button></span>
+        <button id="ov" aria-pressed="false">Fugen</button>
+        <button id="exp">Recipe JSON</button>
+        <a href="/world-atlas/source/KayKit_Dungeon_Model_S13.html"><button>← Modell S13</button></a>
+      </div>
+    </details>
+    <details>
+      <summary>Stand</summary>
+      <div class="body">
+        <div id="gate" class="mono">messe Bauteile…</div>
+        <div id="hud" class="mono" style="margin-top:6px">lade…</div>
+      </div>
+    </details>
+    <details>
+      <summary>Draufsicht-Plan</summary>
+      <div class="body">
+        <div id="plans"></div>
+        <div class="legend">
+      <span><i style="background:#8f86a0"></i>solid</span>
+      <span><i style="background:#e0b877"></i>door</span>
+      <span><i style="background:#7fa8d8"></i>gate</span>
+      <span><i style="background:#3d3450"></i>open</span>
+      <span><i style="background:#79b7c9"></i>rail (barrier)</span>
+      <span><i style="background:#e0b877;border-radius:0"></i>wall_corner</span>
+      <span><i style="background:#ff9d4d;border-radius:50%"></i>torch_mounted</span>
+      <span><i style="background:#ffd9a0;border-radius:50%"></i>candle</span>
+    </div>
+      </div>
+    </details>
+    <details>
+      <summary>Prüfungen</summary>
+      <div class="body"><div id="audits"></div></div>
+    </details>
+    <details>
+      <summary>Gemessen · nicht angenommen</summary>
+      <div class="body"><div id="facts"></div></div>
+    </details>
+    <details>
+      <summary>Das Modell · zwei Proben</summary>
+      <div class="body">
+        <p class="note"><b>1</b> Die Fuge trägt das Merkmal: Boden ist die Zelle, Wand ist ein eigenes
+    Objekt auf der Kante zwischen zwei Zellen. Die Fugenliste ist ein Set mit kanonischem
+    Schlüssel <code>min(a,b)|max(a,b)</code> — zwei Objekte auf einer Fuge sind damit strukturell
+    unmöglich, nicht bloss geprüft.
+    <b>2</b> Vier Klassen: <code>solid</code>, <code>door</code> (nur <code>wall_doorway</code>,
+    die einzige begehbare), <code>gate</code> (sichtbar, gesperrt), <code>open</code> (kein Objekt,
+    beide Zellen im selben Gebiet). Die Solid-Varianten sind reine Varianz — austauschbar ohne
+    Folgen für den Wegegraph.
+    <b>3</b> Kein <code>wall_end</code>, kein T, kein Kreuz: also nur geschlossene, achsparallele
+    Züge. Deshalb BSP — es erzeugt ausschliesslich Rechtecke mit rechten Winkeln, die
+    <code>wall_corner</code> auf dem Gitterpunkt abdeckt.
+    <b>4</b> Die Treppe wird <b>zuerst</b> gesetzt: ihr gemessener Lauf ist länger als ein Modul,
+    sie braucht einen reservierten Streifen und einen Schacht ohne Boden darüber. Der Rest wird
+    darum gelöst.</p>
+    <h2>Zwei Proben, nicht eine</h2>
+    <p class="note">In S11 blieb der Balken grün, während jede Kurve spiegelverkehrt lag: ein
+    Masken-Audit prüft den Solver gegen sich selbst. Hier prüfen zwei unabhängige Proben die
+    <b>fertige Szene</b>. Die <b>Draufsicht</b> rendert sie flach ein‑gefärbt und liest Pixel an
+    Weltkoordinaten — sie findet Lage und Identität (Wand um 90° verdreht, halber Modul versetzt).
+    Sie kann Begehbarkeit aber <b>nicht</b> sehen: <code>wall_doorway</code> ist gemessene
+    4 × 4 × 1 mit geschlossenem Sturz, von oben ein Rechteck wie jede Wand. Deshalb die zweite
+    Probe, ein <b>waagerechter Strahl</b> quer durch jede Fuge in Türhöhe: Türen müssen ihn
+    durchlassen, Wände nicht. Jede neue Darstellung braucht ihre eigene Gegenprobe gegen die
+    Geometrie — nicht gegen die vorige Darstellung.</p>
+    <p class="note">Was diese zweite Probe gefunden hat, korrigiert das Modell aus S13: sie meldete
+    <b>jede</b> Tür als versperrt — und lag richtig. Die Datei <code>wall_doorway</code> enthält
+    <b>zwei</b> Meshes: die Wand <b>und ein Türblatt</b> <code>wall_doorway_door</code>, das die
+    Öffnung füllt. S13 hat „Tür als Objekt: fehlt" notiert — sie fehlt nur als eigene Datei. Beim
+    Bauen wird das Blatt aus der Instanz entfernt (nicht versteckt: three.js trifft auch
+    unsichtbare Objekte mit dem Strahl). Ohne Blatt ist die Öffnung <b>1,90 breit und mittig</b> —
+    gemessen, nicht gelesen. Die zweite Zahl, die die Bauweise bestimmt, ist der Schenkel von
+    <code>wall_corner</code>: <b>2,0</b>, also eine halbe Fugenlänge. Deshalb trägt eine Fuge mit
+    einer Ecke am Ende nur <code>wall_half</code>, eine mit zwei Ecken gar kein Teil — und ein
+    Durchgang braucht eine Fuge ohne Eckteil, sonst deckt der Schenkel die halbe Öffnung.</p>
+      </div>
+    </details>
+    <details>
+      <summary>Herkunft</summary>
+      <div class="body">
+        <div class="kv"><span>repo</span><span>georg-doc/kayfabizarro</span></div>
+        <div class="kv"><span>pack</span><span>KayKit Dungeon 1.1 FREE</span></div>
+        <div class="kv"><span>lizenz</span><span>CC0 · Kay Lousberg</span></div>
+      </div>
+    </details>
+  </aside></div>
+
+<script type="module">
+import * as THREE from 'three';
+import { buildScene, makeViewer, measure, measured, loadAsset, repairTextures } from './lib/kit-lab.js';
+import { generate, layout, collectTris, planScan, wallFrame, cornerFrame, stairFrame, openingScan, cellId }
+  from './lib/dungeon-grid.js';
+import { makeLightRig, measureFlame, lightReach } from './lib/dungeon-light.js';
+import { makeDungeonScenePatchAdapter } from './lib/dungeon-scene-patch-adapter.v1.js';
+
+const hud = document.getElementById('hud');
+const gateEl = document.getElementById('gate');
+const say = (s) => { hud.textContent = s; };
+const f2 = (v) => (Math.abs(v - Math.round(v)) < 0.005 ? String(Math.round(v)) : (+v).toFixed(2));
+const V = makeViewer(document.getElementById('c'), { background: 0x15101f, fov: 30 });
+/* ACES-Tonemapping: ohne Tonemapping clippen helle Stellen hart auf Weiss — das waren die
+   ausgeblasenen Flecken auf den Wänden und die weisse Flamme. Mit ACES rollen die Lichter ab,
+   statt zu clippen. */
+V.renderer.toneMapping = THREE.ACESFilmicToneMapping;
+V.renderer.toneMappingExposure = 1.15;
+
+/* ---------- Inventar. Nur was WIRKLICH lädt, darf der Generator wählen ---------- */
+const FLOORS = ['floor_tile_large', 'floor_wood_large', 'floor_dirt_large'];
+const WALLS = ['wall', 'wall_half', 'wall_cracked', 'wall_broken', 'wall_doorway', 'wall_gated', 'wall_shelves',
+  'wall_scaffold', 'wall_window_closed', 'wall_window_open', 'wall_pillar', 'wall_corner'];
+/* Leuchtbauteile als ZWILLINGSPAARE: die "_lit"-Variante trägt die Flamme, die stille Variante
+   gibt die Trennhöhe. Aus Georgs Asset-Übergabe (commit 10a7fdce, KayKit Dungeon 1.1 FREE). */
+const TWINS = { candle_lit: 'candle', candle_thin_lit: 'candle_thin', torch_lit: 'torch' };
+const REST = ['stairs_wood', 'stairs', 'torch_mounted', 'barrier',
+  ...Object.keys(TWINS), ...Object.values(TWINS)];
+const CAND = [...FLOORS, ...WALLS, ...REST];
+
+/* Vier Ladeversuche parallel: sequenziell blockiert minutenlang, alle gleichzeitig sättigen den
+   Hauptthread (GLTF-Parse und Texturdekodierung laufen dort) und die Seite bleibt weiss. */
+const box = {};
+let done = 0, next = 0;
+async function worker() {
+  while (next < CAND.length) {
+    const name = CAND[next++];
+    try { const m = await measure('dungeon', name); box[name] = { min: m.min, max: m.max, size: m.size }; }
+    catch (e) { /* nicht im FREE-Tier */ }
+    gateEl.textContent = `messe Bauteile ${++done}/${CAND.length}`;
+  }
+}
+await Promise.all([worker(), worker(), worker(), worker()]);
+const parts = new Set(Object.keys(box));
+
+/* ---------- Rahmen aus der GEOMETRIE, nicht aus der Box ----------
+   Eine Wand wird an ihrer PLATTENMITTE aufgehängt, nicht an der Boxmitte: bei wall_pillar liegen
+   die gemessenen 0,5 Überstand daneben, und eine an der Boxmitte hängende Wand rutscht um die
+   Hälfte davon von der Fuge. wall_corner wird an seinem GELENK aufgehängt, nicht an der Boxmitte. */
+const frame = {};
+for (const name of [...WALLS, 'barrier', 'stairs_wood', 'stairs'].filter((n) => parts.has(n))) {
+  const node = await loadAsset('dungeon', name);
+  const tris = collectTris(node);
+  const scan = planScan(tris, 72);
+  frame[name] = /corner/.test(name) ? cornerFrame(scan)
+    : /stairs/.test(name) ? stairFrame(scan, tris)
+      : wallFrame(scan);
+  /* Öffnung im Aufriss messen: „begehbar" ist eine Messung, keine Namensregel. Und ein Befund,
+     der das Modell aus S13 korrigiert: die Datei `wall_doorway` enthält ZWEI Meshes — die Wand mit
+     der Öffnung und ein Türblatt `wall_doorway_door`, das sie füllt. Das Pack hat also ein
+     Türblatt, nur nicht als eigene Datei. Gemessen wird ohne Blatt, gebaut wird ohne Blatt —
+     sonst ist die einzige begehbare Fuge des Packs zu. */
+  if (/^wall/.test(name) && frame[name].runAxis) frame[name].opening = openingScan(collectTris(node, /_door$/), frame[name].runAxis);
+  frame[name].scan = { min: scan.min, max: scan.max, size: scan.size };
+  frame[name].meshes = [];
+  node.traverse((o) => { if (o.isMesh) frame[name].meshes.push(o.name); });
+}
+
+const MOD = box.floor_tile_large ? Math.max(box.floor_tile_large.size[0], box.floor_tile_large.size[2]) : 4;
+const WALL_H = box.wall ? box.wall.size[1] : 4;
+const WALL_THICK = box.wall ? frame.wall.plateThick : 1;
+const STAIR = parts.has('stairs_wood') ? 'stairs_wood' : (parts.has('stairs') ? 'stairs' : null);
+/* Ebenenabstand ist der gemessene HUB der gewählten Treppe, nicht die angenommene Wandhöhe. */
+const HUB = STAIR ? frame[STAIR].hub : WALL_H;
+const kit = { MOD, HUB, WALL_H, WALL_THICK, box, frame };
+/* Flammenpunkt gemessen: Schwerpunkt der obersten 18 % der Fackelgeometrie. Die Boxmitte wäre der
+   Griff — ein Licht darin leuchtet das Bauteil von innen aus statt den Raum. */
+/* Flammenpunkt UND Eigenradius je Lichtbauteil: der Radius (Flammenpunkt → weitester eigener
+   Vertex) klammert das Teil aus seiner eigenen Schattenkarte aus. Ohne das verschattet sich die
+   Fackel selbst und die Wand, an der sie hängt, wird schwarz. */
+const FLAME = {}, SELFR = {};
+for (const n of ['torch_mounted', ...Object.keys(TWINS), 'candle']) {
+  if (!parts.has(n)) continue;
+  const tris = collectTris(await loadAsset('dungeon', n));
+  FLAME[n] = measureFlame(tris);
+  let d2 = 0;
+  for (const tri of tris) for (const v of tri) {
+    d2 = Math.max(d2, (v[0] - FLAME[n][0]) ** 2 + (v[1] - FLAME[n][1]) ** 2 + (v[2] - FLAME[n][2]) ** 2);
+  }
+  SELFR[n] = Math.sqrt(d2);
+}
+/* Die Flamme ist EIGENLEUCHTEND: sie wird aus dem Netz des Bauteils gelöst und unbeleuchtet
+   gerendert — Geometrie und Textur bleiben die des Packs, nur multipliziert kein Licht mehr
+   dagegen. Ohne das blasen Hemisphäre und Key die Flamme auf 255, gemessen.
+   Die Trennhöhe ist nicht geraten, sondern das ZWILLINGSPAAR: `candle_lit` ist 1,05 hoch,
+   `candle` 0,87 — die Differenz IST das Feuer. */
+const SPLIT = {};
+/* Die Flamme wird aus dem Netz gelöst und unbeleuchtet gerendert — Geometrie und Textur bleiben
+   die des Packs, nur multipliziert kein Licht mehr dagegen (sonst blasen Hemisphäre und Key sie
+   auf 255, gemessen).
+   WELCHE Dreiecke? Der Atlas-Texel am UV-Schwerpunkt entscheidet. Die Trennhöhe aus dem stillen
+   Zwilling war der Umweg: sie löst `torch_mounted` gar nicht (kein Zwilling im Pack) und
+   `torch_lit` nicht (Feuer sitzt IN der Schale). Und meine erste Schlussfolgerung „eine Farbregel
+   kann Flamme nicht von Holz trennen“ war falsch — ich hatte auf Wärme geprüft statt auf Farbton.
+   Gemessene Texel dieses Atlas:
+     Kerzenflamme  246,151,117 · 249,179,133   → sehr hell und warm (r>235, r−b>100)
+     Fackelflamme    0,117, 80 ·   0,132, 84   → GRÜN (g>r+30) — dieses Pack hat grünes Feuer an der
+                                                 Wandfackel; das war das Türkis im ersten Screenshot
+     Holz          201,141, 64 · 189,124, 55   → warm, aber dunkler als 235
+     Stein         181,181,181 · 232,232,232   → unbunt (r−b = 0)
+   Beide Feuerfamilien liegen damit sauber getrennt von Holz und Stein. */
+/* Zwei gemessene Feuerfamilien — und sie werden GETRENNT probiert, nicht verodert. Verodert traf
+   das Prädikat bei `torch_mounted` die grüne Familie am Schaft (y −0,05–0,05) statt der Flamme in
+   der Schale, und die Schale blieb schwarz. Welche Familie stimmt, entscheidet die Gegenprobe
+   gegen den gemessenen Flammenpunkt des Teils. */
+const FIRE_FAMILIES = [
+  { name: 'hellwarm', test: (r, g, b) => r > 235 && r - b > 100 },
+  { name: 'grün', test: (r, g, b) => g > r + 30 && b < g }
+];
+const ATLAS = new Map();
+function texelReader(map) {
+  if (!map || !map.image) return null;
+  if (!ATLAS.has(map.image)) {
+    const c = document.createElement('canvas');
+    c.width = map.image.width; c.height = map.image.height;
+    const ctx = c.getContext('2d');
+    ctx.drawImage(map.image, 0, 0);
+    ATLAS.set(map.image, { d: ctx.getImageData(0, 0, c.width, c.height).data, w: c.width, h: c.height });
+  }
+  const a = ATLAS.get(map.image);
+  return (u, v) => {
+    const x = Math.min(a.w - 1, Math.max(0, Math.round(u * a.w)));
+    const y = Math.min(a.h - 1, Math.max(0, Math.round((1 - v) * a.h)));
+    const i = (y * a.w + x) * 4;
+    return [a.d[i], a.d[i + 1], a.d[i + 2]];
+  };
+}
+function splitByTexel(node, expectY) {
+  let mesh = null;
+  node.traverse((o) => { if (o.isMesh && !mesh) mesh = o; });
+  const g = mesh && mesh.geometry, idx = g && g.index;
+  if (!idx || !g.attributes.uv) return null;
+  const map = [].concat(mesh.material)[0].map;
+  const at = texelReader(map);
+  if (!at) return null;
+  const pos = g.attributes.position, uv = g.attributes.uv;
+  const total = idx.count / 3;
+  const tried = [];
+  for (const fam of FIRE_FAMILIES) {
+    const body = [], flame = [];
+    for (let i = 0; i + 2 < idx.count; i += 3) {
+      const a = idx.getX(i), b = idx.getX(i + 1), c = idx.getX(i + 2);
+      const u = (uv.getX(a) + uv.getX(b) + uv.getX(c)) / 3;
+      const v = (uv.getY(a) + uv.getY(b) + uv.getY(c)) / 3;
+      (fam.test(...at(u, v)) ? flame : body).push(a, b, c);
+    }
+    if (!flame.length || !body.length || flame.length / 3 > total * 0.6) { tried.push(fam.name + ' 0'); continue; }
+    /* Flammenfuss und -spitze NUR aus den Dreiecken der Flamme: `computeBoundingBox()` ignoriert
+       den Index und hätte die Unterkante des ganzen Teils geliefert. */
+    let foot = Infinity, top = -Infinity;
+    for (const i of flame) { const y = pos.getY(i); if (y < foot) foot = y; if (y > top) top = y; }
+    /* GEGENPROBE: die gelöste Flamme muss den gemessenen Flammenpunkt des Teils enthalten. Ohne
+       diese Prüfung hat die grüne Familie bei `torch_mounted` den Schaft gelöst (Fuss −0,08 gegen
+       Flammenpunkt 0,55) — und die Schale blieb schwarz. */
+    if (expectY !== undefined && !(foot - 0.25 <= expectY && expectY <= top + 0.25)) {
+      tried.push(`${fam.name} ${flame.length / 3} @${foot.toFixed(2)}–${top.toFixed(2)} verworfen`);
+      continue;
+    }
+    const bodyGeo = g.clone(); bodyGeo.setIndex(body);
+    const flameGeo = g.clone(); flameGeo.setIndex(flame);
+    flameGeo.translate(0, -foot, 0);
+    return { body: bodyGeo, flame: flameGeo, baseY: foot, top, tris: flame.length / 3, map, family: fam.name };
+  }
+  return { fail: tried.join(' · ') };
+}
+const SPLITMISS = [];
+for (const nm of ['torch_mounted', ...Object.keys(TWINS)]) {
+  if (!parts.has(nm) || !FLAME[nm]) continue;
+  const sp = splitByTexel(await loadAsset('dungeon', nm), FLAME[nm][1]);
+  if (sp && !sp.fail) SPLIT[nm] = sp;
+  else SPLITMISS.push(`${nm}${sp && sp.fail ? ' (' + sp.fail + ')' : ''}`);
+}
+const LIGHTPARTS = Object.keys(SPLIT).filter((n) => n !== 'torch_mounted');
+const FLAMEMAT = {};
+const rig = makeLightRig(V, { budget: 18, shadowed: 0, mood: 'promo' });
+let moodName = 'promo';
+rig.setMood(moodName);
+
+document.getElementById('facts').innerHTML = [
+  ['Modul (floor_tile_large)', f2(MOD)],
+  ['Wand · Länge / Höhe', `${f2(Math.max(box.wall.size[0], box.wall.size[2]))} / ${f2(WALL_H)}`],
+  ['Wandplatte (gemessen)', `${f2(WALL_THICK)} dick · Mitte ${f2(frame.wall.plateMid)}`],
+  ['Laufachse wall', frame.wall.runAxis],
+  ['wall_corner · Gelenk', `${f2(frame.wall_corner.joint[0])} / ${f2(frame.wall_corner.joint[1])}`],
+  ['wall_corner · Schenkel', frame.wall_corner.arms.map((a) => a.join(',')).join(' + ')],
+  ['Treppe gewählt', STAIR || '—'],
+  ['Treppe · Hub / Lauf / Breite', STAIR ? `${f2(frame[STAIR].hub)} / ${f2(frame[STAIR].run)} / ${f2(frame[STAIR].width)}` : '—'],
+  ['Ebenenabstand', f2(HUB) + (STAIR ? ' (Hub)' : ' (Wandhöhe)')],
+  ['Überstände', Object.entries(frame).filter(([, f]) => f.protrude && f.protrude.sign)
+    .map(([n, f]) => `${n.replace('wall_', '')} ${f2(f.protrude.amount)}`).join(' · ') || 'keine'],
+  ['Begehbare Öffnung (gemessen)', Object.entries(frame).filter(([n, f]) => /^wall/.test(n) && f.opening && f.opening.width >= MOD * 0.25)
+    .map(([n, f]) => `${n.replace('wall_', '')} · breit ${f2(f.opening.width)} · Mitte ${f2(f.opening.at)} · Sturz ${f2(f.opening.head)}`).join(' · ') || 'keine'],
+  ['Sichtdurchlass ohne Weg', Object.entries(frame).filter(([n, f]) => /^wall/.test(n) && f.opening && f.opening.width < MOD * 0.25)
+    .map(([n]) => n.replace('wall_', '')).join(' · ') || 'keiner'],
+  ['Türblatt im gltf', frame.wall_doorway && frame.wall_doorway.meshes.length > 1
+    ? `${frame.wall_doorway.meshes.join(' + ')} — Blatt beim Bauen entfernt` : 'kein eigenes Mesh'],
+  ['Bauteile bestätigt', `${parts.size}/${CAND.length}`]
+].map(([k, v]) => `<div class="kv"><span>${k}</span><span>${v}</span></div>`).join('');
+
+/* ---------- Zustand ---------- */
+let model = null, root = null, placements = [], step = 3, levelView = 'both', overlay = false;
+let seamLines = null, lastProbe = null, flameNodes = [], torchLights = [];
+const scenePatch = makeDungeonScenePatchAdapter({
+  viewer: V, canvas: document.getElementById('c'), getRoot: () => root,
+  menu: document.getElementById('editMenu'), dock: document.getElementById('patchDock'), status: document.getElementById('patchStatus'),
+  editorButton: document.getElementById('editor'), undoButton: document.getElementById('patchUndo'), redoButton: document.getElementById('patchRedo'),
+  draftButton: document.getElementById('patchDraft'), exportButton: document.getElementById('patchExport'), importButton: document.getElementById('patchImport'),
+  resetButton: document.getElementById('patchReset'), fileInput: document.getElementById('patchFile'),
+  onPick: showDungeonPick, onEdited: syncEditedFixtureLights
+});
+window.__dungeonScenePatch = scenePatch;
+
+/* Flache Prüffarben. MeshBasicMaterial ignoriert Licht — die Probe soll Geometrie lesen, nicht
+   Beleuchtung. Und das Renderziel bekommt SRGBColorSpace: ohne das liefert readRenderTargetPixels
+   LINEARE Werte, und ein sattes Grau 0x808080 kommt als 11 zurück statt als 128 — die erste
+   Fassung hat deshalb jeden Boden als „nichts" gelesen. */
+const MAT_WALL = new THREE.MeshBasicMaterial({ color: 0xffffff });
+const MAT_DOOR = new THREE.MeshBasicMaterial({ color: 0x2040ff });
+const MAT_FLOOR = new THREE.MeshBasicMaterial({ color: 0x808080 });
+
+/* ---------- Probe 1 · Draufsicht-Rendering der ASSEMBLIERTEN Szene ----------
+   Achsen wie in tools/truth-hex-axes.html bewiesen: readRenderTargetPixels liefert Zeilen von
+   UNTEN, und bei einer Draufsichtkamera zeigt Bildschirm-oben auf −z. Daher cam.up=(0,0,−1) und
+   das Minus in der z-Rechnung.
+   Gelesen wird LAGE UND IDENTITÄT: Durchgänge blau, andere Wandteile weiss, Böden grau, ausserhalb
+   schwarz. Eine um 90° verdrehte oder um einen halben Modul versetzte Wand deckt dann eine
+   Zellmitte zu und lässt eine Fugenmitte frei — beides fällt hier auf, nicht im Solver. */
+function topProbe(level, size = 1024) {
+  const saved = [], vis = [];
+  for (const n of root.children) {
+    const rec = n.userData.recipe;
+    const skip = !rec || rec.level !== level || ['stair', 'torch', 'candle'].includes(rec.layer);
+    vis.push([n, n.visible]);
+    if (skip) { n.visible = false; continue; }
+    n.visible = true;
+    const m = rec.seamKind === 'door' ? MAT_DOOR : (rec.layer === 'wall' || rec.layer === 'corner') ? MAT_WALL : MAT_FLOOR;
+    n.traverse((o) => { if (o.isMesh) { saved.push([o, o.material]); o.material = m; } });
+  }
+  const half = (model.grid * MOD) / 2, c0 = ((model.grid - 1) / 2) * MOD;
+  const rt = new THREE.WebGLRenderTarget(size, size);
+  rt.texture.colorSpace = THREE.SRGBColorSpace;
+  const cam = new THREE.OrthographicCamera(-half, half, half, -half, 0.1, 400);
+  cam.layers.enable(rig.FIX);
+  cam.position.set(c0, level * HUB + WALL_H + 30, c0);
+  cam.up.set(0, 0, -1);
+  cam.lookAt(c0, level * HUB, c0);
+  const prevBg = V.scene.background, prevRT = V.renderer.getRenderTarget();
+  V.scene.background = new THREE.Color(0x000000);
+  const buf = new Uint8Array(size * size * 4);
+  V.renderer.setRenderTarget(rt);
+  V.renderer.render(V.scene, cam);
+  V.renderer.readRenderTargetPixels(rt, 0, 0, size, size, buf);
+  V.renderer.setRenderTarget(prevRT);
+  V.scene.background = prevBg;
+  rt.dispose();
+  for (const [o, m] of saved) o.material = m;
+  for (const [n, v] of vis) n.visible = v;
+
+  const at = (wx, wz) => {
+    const x = Math.round((((wx - c0) / half) * 0.5 + 0.5) * (size - 1));
+    const y = Math.round(((-(wz - c0) / half) * 0.5 + 0.5) * (size - 1));
+    if (x < 0 || y < 0 || x >= size || y >= size) return null;
+    const i = (y * size + x) * 4;
+    return [buf[i], buf[i + 1], buf[i + 2]];
+  };
+  /* Klassifiziert über KANALVERHÄLTNISSE, 3×3-Median in Weltmaß: ein einzelnes Pixel kann auf
+     einer Kante liegen. */
+  const kind = (wx, wz) => {
+    const sp = (half / size) * 2.5, votes = {};
+    for (const dx of [-sp, 0, sp]) for (const dz of [-sp, 0, sp]) {
+      const p = at(wx + dx, wz + dz);
+      if (!p) continue;
+      const [r, g, b] = p;
+      const k = b > 130 && r < 120 ? 'door' : r > 180 && g > 180 ? 'wall' : r > 50 ? 'floor' : 'void';
+      votes[k] = (votes[k] || 0) + 1;
+    }
+    const b = Object.entries(votes).sort((x, y) => y[1] - x[1])[0];
+    return b ? b[0] : null;
+  };
+  return { kind };
+}
+
+/* ---------- Probe 2 · Waagerechter Strahl in Türhöhe ----------
+   Die Draufsicht kann Begehbarkeit NICHT sehen: wall_doorway ist gemessene 4 × 4 × 1 mit
+   geschlossenem Sturz über der Öffnung — von oben ist ein Durchgang ein Rechteck wie jede Wand.
+   Also eine zweite, eigenständige Probe an derselben Geometrie: Strahlen quer durch die Fuge,
+   auf Höhe 0,15 und 0,32 der Wandhöhe (unter jedem Fenster und jedem Bruch, über dem Boden).
+   Türen müssen alle durchlassen, solid und die von zwei Eckschenkeln gefüllten Fugen keinen. */
+function rayProbe() {
+  root.updateMatrixWorld(true);
+  const walls = root.children.filter((n) => ['wall', 'corner'].includes(n.userData.recipe?.layer));
+  const bySeam = new Map();
+  for (const n of walls) if (n.userData.recipe.seam) bySeam.set(n.userData.recipe.seam, n.userData.recipe);
+  const ray = new THREE.Raycaster();
+  ray.far = MOD;
+  const res = { doors: { n: 0, bad: [] }, solids: { n: 0, bad: [] }, gatesBlocked: 0, gates: 0, rails: 0, railsBlocked: 0 };
+  for (const s of model.seams.values()) {
+    if (s.kind === 'open') continue;
+    const rec = bySeam.get(s.key);
+    /* Gezielt wird auf die GEMESSENE Öffnung, nicht auf die Fugenmitte — sonst trifft der Strahl
+       den Türpfosten und meldet jede Tür als versperrt (genau das tat die erste Fassung). */
+    const aim = rec?.openWorld || [s.mid[0] * MOD, s.mid[1] * MOD];
+    const lat = rec?.openWidth ? Math.min(rec.openWidth * 0.3, 0.6) : MOD * 0.12;
+    const nx = s.b[0] - s.a[0], nz = s.b[1] - s.a[1];
+    let blocked = false;
+    for (const hf of [0.15, 0.32]) for (const l of [-lat, 0, lat]) {
+      const ox = aim[0] - nx * (MOD / 2) + (nx ? 0 : l), oz = aim[1] - nz * (MOD / 2) + (nz ? 0 : l);
+      ray.set(new THREE.Vector3(ox, s.level * HUB + WALL_H * hf, oz), new THREE.Vector3(nx, 0, nz));
+      if (ray.intersectObjects(walls, true).length) { blocked = true; break; }
+    }
+    if (s.kind === 'door') { res.doors.n++; if (blocked) res.doors.bad.push(s.mid.join(',')); }
+    else if (s.kind === 'gate') { res.gates++; if (blocked) res.gatesBlocked++; }
+    else if (s.kind === 'rail') { res.rails++; if (blocked) res.railsBlocked++; }
+    else { res.solids.n++; if (!blocked) res.solids.bad.push(s.mid.join(',') + (s.covered ? ' (nur Ecken)' : '')); }
+  }
+  return res;
+}
+
+function probeAll() {
+  const levels = [...new Set([...model.cells.values()].map((c) => c.level))];
+  const res = { doors: { n: 0, bad: [] }, solids: { n: 0, bad: [] }, floors: { n: 0, bad: [] }, rails: { n: 0, bad: [] } };
+  for (const L of levels) {
+    const pr = topProbe(L);
+    for (const s of model.seams.values()) {
+      if (s.level !== L || s.kind === 'open') continue;
+      const k = pr.kind(s.mid[0] * MOD, s.mid[1] * MOD);
+      /* Die Brüstung ist AUSKUNFT, kein Gate: `barrier` ist 0,50 schmal und hat Lücken zwischen
+         den Pfosten — ein Pixel in der Fugenmitte darf dort Boden sehen. */
+      if (s.kind === 'rail') { res.rails.n++; if (k !== 'wall') res.rails.bad.push(`${s.mid.join(',')}→${k}`); }
+      else if (s.kind === 'door') { res.doors.n++; if (k !== 'door') res.doors.bad.push(`${s.mid.join(',')}→${k}`); }
+      else { res.solids.n++; if (k !== 'wall') res.solids.bad.push(`${s.mid.join(',')}→${k}`); }
+    }
+    for (const cell of model.cells.values()) {
+      if (cell.level !== L) continue;
+      res.floors.n++;
+      const k = pr.kind(cell.c * MOD, cell.r * MOD);
+      if (k !== 'floor') res.floors.bad.push(`${cell.c},${cell.r}→${k}`);
+    }
+  }
+  return res;
+}
+
+/* ---------- Probe 3 · Leseprobe: kommt das Licht in der Zelle an? ----------
+   Lichtwirkung ist messbar, also wird sie gemessen und nicht gefühlt: dieselbe Draufsicht, aber
+   mit den ECHTEN Materialien und dem echten Licht. Gelesen wird die Luminanz an der Zellmitte
+   (Rec.709 auf dem sRGB-Bild).
+   Gemessen wird in STAPELN, weil der Lichtpool fest ist: ein einzelnes Bild zeigt nur die ≤10
+   Fackeln, die gerade beim Kameraziel stehen — ein Gate daraus wäre kameraabhängig und bei 16×16
+   mit 25 Fackeln fast immer rot. Der Pool geht reihum über alle Fackeln, je Zelle gilt das
+   MAXIMUM. Das Gate ist bewusst nicht „alles hell", sondern: JEDER Raum hat mindestens eine
+   lesbare Zelle — das gilt auch nachts, wenn seine Fackel brennt. */
+function lumProbe(torchLights, thr = 0.17, size = 512) {
+  const levels = [...new Set([...model.cells.values()].map((c) => c.level))];
+  const byCell = new Map();
+  let batches = 0;
+  for (const L of levels) {
+    const vis = [];
+    for (const n of root.children) {
+      const rec = n.userData.recipe;
+      vis.push([n, n.visible]);
+      n.visible = !rec || rec.level === L || rec.layer === 'stair';
+    }
+    const half = (model.grid * MOD) / 2, c0 = ((model.grid - 1) / 2) * MOD;
+    const rt = new THREE.WebGLRenderTarget(size, size);
+    rt.texture.colorSpace = THREE.SRGBColorSpace;
+    const cam = new THREE.OrthographicCamera(-half, half, half, -half, 0.1, 400);
+    cam.layers.enable(rig.FIX);
+    cam.position.set(c0, L * HUB + WALL_H + 30, c0);
+    cam.up.set(0, 0, -1);
+    cam.lookAt(c0, L * HUB, c0);
+    const prevRT = V.renderer.getRenderTarget();
+    const buf = new Uint8Array(size * size * 4);
+    const cells = [...model.cells.values()].filter((c) => c.level === L);
+    const read = () => {
+      V.renderer.setRenderTarget(rt);
+      V.renderer.render(V.scene, cam);
+      V.renderer.readRenderTargetPixels(rt, 0, 0, size, size, buf);
+      V.renderer.setRenderTarget(prevRT);
+      const lum = (wx, wz) => {
+        const x = Math.round((((wx - c0) / half) * 0.5 + 0.5) * (size - 1));
+        const y = Math.round(((-(wz - c0) / half) * 0.5 + 0.5) * (size - 1));
+        if (x < 1 || y < 1 || x >= size - 1 || y >= size - 1) return 0;
+        let s = 0;
+        for (let dx = -1; dx <= 1; dx++) for (let dy = -1; dy <= 1; dy++) {
+          const i = ((y + dy) * size + (x + dx)) * 4;
+          s += (0.2126 * buf[i] + 0.7152 * buf[i + 1] + 0.0722 * buf[i + 2]) / 255;
+        }
+        return s / 9;
+      };
+      for (const cell of cells) {
+        const k = `${cell.level}:${cell.c},${cell.r}`;
+        const v = +lum(cell.c * MOD, cell.r * MOD).toFixed(3);
+        byCell.set(k, Math.max(byCell.get(k) ?? 0, v));
+      }
+    };
+    batches = rig.probeBatches(torchLights, read);
+    rt.dispose();
+    for (const [n, v] of vis) n.visible = v;
+  }
+  const vals = [...byCell.values()];
+  const dark = [...byCell.entries()].filter(([, v]) => v < thr);
+  const rooms = model.regions.filter((r) => r.kind === 'room');
+  const blind = rooms.filter((rg) => Math.max(...rg.cells.map((id) => byCell.get(id) ?? 0)) < thr);
+  return {
+    thr, batches, min: Math.min(...vals),
+    mean: +(vals.reduce((a, b) => a + b, 0) / vals.length).toFixed(3),
+    dark: dark.length, cells: vals.length, blind, rooms: rooms.length,
+    darkest: [...byCell.entries()].sort((a, b) => a[1] - b[1])[0]
+  };
+}
+
+/* ---------- Durchdringungen, nach Ursache getrennt ----------
+   Zwei senkrecht aufeinander laufende Wände überlappen am Gitterpunkt IMMER um eine halbe
+   Wanddicke — das ist Pack-Geometrie, genau die Kerbe, die wall_corner zudeckt. Sie als
+   Kollision zu zählen würde eine korrekte Ecke als Fehler melden; sie zu ignorieren würde eine
+   echte Durchdringung verstecken. Also: gemessen und nach Tiefe getrennt. */
+function footprintAudit() {
+  root.updateMatrixWorld(true);
+  const nodes = root.children.filter((n) => n.userData.recipe);
+  const boxes = nodes.map((n) => new THREE.Box3().setFromObject(n));
+  /* `wall_corner` ist ein L: seine AABB deckt auch das LEERE Innenviertel mit ab. Eine Kerze, die
+     genau dort in der Zellecke steht, meldet damit eine Durchdringung, die es nicht gibt (0,33
+     gemessen, real 0). Also wird das Eckteil durch seine beiden SCHENKEL ersetzt \u2014 Lage aus dem
+     Gitterpunkt im Recipe, Breite und L\u00e4nge aus dem gemessenen Rahmen. Dieselbe Klasse Ausnahme
+     wie die Sechseck-Boxen in kit-lab.js, nur hier aus der Geometrie abgeleitet statt gesetzt. */
+  const cf = kit.frame.wall_corner;
+  const legLen = cf ? Math.max(Math.abs(cf.joint[0] - box.wall_corner.min[0]), Math.abs(box.wall_corner.max[0] - cf.joint[0])) : MOD / 2;
+  const legs = nodes.map((n, i) => {
+    const rec = n.userData.recipe;
+    if (rec.layer !== 'corner' || !cf || !rec.pts) return null;
+    const [, ij] = rec.pts[0].split('|');
+    const [gi, gj] = ij.split(',').map(Number);
+    const gx = (gi - 0.5) * MOD, gz = (gj - 0.5) * MOD;
+    const half = cf.legThick / 2;
+    return rec.dirs.map((d) => {
+      const v = { E: [1, 0], W: [-1, 0], N: [0, -1], S: [0, 1] }[d];
+      const x0 = gx - v[0] * 0.5, z0 = gz - v[1] * 0.5;
+      const x1 = gx + v[0] * legLen, z1 = gz + v[1] * legLen;
+      return new THREE.Box3(
+        new THREE.Vector3(Math.min(x0, x1) - (v[0] ? 0 : half), boxes[i].min.y, Math.min(z0, z1) - (v[1] ? 0 : half)),
+        new THREE.Vector3(Math.max(x0, x1) + (v[0] ? 0 : half), boxes[i].max.y, Math.max(z0, z1) + (v[1] ? 0 : half)));
+    });
+  });
+  const thinOf = (rec) => {
+    const nm = rec.a.split(':')[1], f = kit.frame[nm], b = box[nm];
+    if (!b) return 1;
+    return f && f.thinAxis ? (f.thinAxis === 'x' ? b.size[0] : b.size[2]) : Math.min(b.size[0], b.size[2]);
+  };
+  const pen3 = (a, b) => {
+    const ox = Math.min(a.max.x, b.max.x) - Math.max(a.min.x, b.min.x);
+    const oy = Math.min(a.max.y, b.max.y) - Math.max(a.min.y, b.min.y);
+    const oz = Math.min(a.max.z, b.max.z) - Math.max(a.min.z, b.min.z);
+    return ox <= 0.01 || oy <= 0.01 || oz <= 0.01 ? 0 : Math.min(ox, oz);
+  };
+  let seamCross = 0, worstCross = 0;
+  const real = [];
+  for (let i = 0; i < nodes.length; i++) {
+    const ra = nodes[i].userData.recipe;
+    for (let j = i + 1; j < nodes.length; j++) {
+      const rb = nodes[j].userData.recipe;
+      if (ra.layer === 'floor' || rb.layer === 'floor') continue;
+      if (ra.level !== rb.level) continue;
+      /* Gegen ein Eckteil wird der Schenkel gepr\u00fcft, nicht der Kasten \u2014 ausser wenn beide Ecken
+         sind (zwei L in einem Gitterpunkt teilen ohnehin ihre Fugen). */
+      let pen;
+      if (legs[i] && !legs[j]) pen = Math.max(...legs[i].map((L) => pen3(L, boxes[j])));
+      else if (legs[j] && !legs[i]) pen = Math.max(...legs[j].map((L) => pen3(L, boxes[i])));
+      else pen = pen3(boxes[i], boxes[j]);
+      if (!pen) continue;
+      const shares = ra.pts && rb.pts && ra.pts.some((k) => rb.pts.includes(k));
+      if (shares && pen <= Math.max(thinOf(ra), thinOf(rb)) / 2 + 0.08) {
+        seamCross++; worstCross = Math.max(worstCross, pen); continue;
+      }
+      real.push({ a: ra.a.split(':')[1], b: rb.a.split(':')[1], pen: +pen.toFixed(2) });
+    }
+  }
+  real.sort((x, y) => y.pen - x.pen);
+  return { pairs: (nodes.length * (nodes.length - 1)) / 2, seamCross, worstCross: +worstCross.toFixed(2), real, legLen: +legLen.toFixed(2) };
+}
+
+/* Fackel im Raum? Die Drehung wird aus der Boxmitte abgeleitet — also wird sie GEPRÜFT, am
+   gerenderten Schwerpunkt, nicht an der Absicht. */
+function torchAudit() {
+  root.updateMatrixWorld(true);
+  const bad = [];
+  let n = 0;
+  for (const node of root.children) {
+    const rec = node.userData.recipe;
+    if (rec?.layer !== 'torch') continue;
+    n++;
+    const b = new THREE.Box3().setFromObject(node);
+    const cx = (b.min.x + b.max.x) / 2, cz = (b.min.z + b.max.z) / 2;
+    const want = rec.cellTarget;
+    if (Math.hypot(cx - want[0], cz - want[1]) > MOD / 2) bad.push(rec.seam);
+  }
+  return { n, bad };
+}
+
+/* ---------- Plan ---------- */
+const FLOORCOL = { floor_tile_large: '#4d4658', floor_wood_large: '#6b4f36', floor_dirt_large: '#4a3f33' };
+const SEAMCOL = { solid: '#8f86a0', door: '#e0b877', gate: '#7fa8d8', open: '#3d3450', rail: '#79b7c9' };
+
+function planSVG(level) {
+  const G = model.grid, S = Math.max(14, Math.floor(300 / G)), pad = 10, W = G * S + pad * 2;
+  const px = (v) => pad + (v + 0.5) * S;
+  let s = `<svg viewBox="0 0 ${W} ${W}" role="img">`;
+  s += `<rect x="0" y="0" width="${W}" height="${W}" fill="#0d0a13"/>`;
+  for (const cell of model.cells.values()) {
+    if (cell.level !== level) continue;
+    const col = FLOORCOL[cell.floor] || '#4d4658';
+    s += `<rect x="${px(cell.c) - S / 2}" y="${px(cell.r) - S / 2}" width="${S}" height="${S}" fill="${col}" opacity="${cell.kind === 'room' ? 1 : 0.62}"/>`;
+  }
+  for (const seam of model.seams.values()) {
+    if (seam.level !== level) continue;
+    if (seam.kind === 'open' && !overlay) continue;
+    const col = SEAMCOL[seam.kind] || '#8f86a0';
+    const x = px(seam.mid[0]), y = px(seam.mid[1]);
+    /* Der Plan zeigt die LÄNGE des Bauteils, nicht die Länge der Fuge: wall_half füllt nur die
+       freie Hälfte, eine von zwei Eckschenkeln gedeckte Fuge trägt gar kein Teil. */
+    const full = S / 2;
+    const a1 = seam.part === 'wall_half' ? (seam.halfShift > 0 ? 0 : -full) : -full;
+    const a2 = seam.part === 'wall_half' ? (seam.halfShift > 0 ? full : 0) : full;
+    const [x1, y1, x2, y2] = seam.run === 'z' ? [x, y + a1, x, y + a2] : [x + a1, y, x + a2, y];
+    const dash = seam.kind === 'open' ? ' stroke-dasharray="2 3"' : seam.kind === 'door' ? ' stroke-dasharray="3 2"' : '';
+    const op = seam.kind !== 'open' && !seam.part ? ' opacity="0.4"' : '';
+    s += `<line x1="${x1}" y1="${y1}" x2="${x2}" y2="${y2}" stroke="${col}" stroke-width="${seam.kind === 'open' ? 1.4 : 2.6}"${dash}${op}/>`;
+  }
+  if (overlay) for (const c of model.corners) {
+    if (c.level !== level) continue;
+    s += `<rect x="${px(c.i - 0.5) - 2}" y="${px(c.j - 0.5) - 2}" width="4" height="4" fill="#e0b877"/>`;
+  }
+  for (const cd of model.candles || []) {
+    if (cd.level !== level) continue;
+    s += `<circle cx="${px(cd.cell[0] + cd.corner[0] * 0.3)}" cy="${px(cd.cell[1] + cd.corner[1] * 0.3)}" r="1.4" fill="#ffd9a0"/>`;
+  }
+  for (const t of model.torches) {
+    if (t.level !== level) continue;
+    s += `<circle cx="${px(t.mid[0] + t.into[0] * 0.28)}" cy="${px(t.mid[1] + t.into[1] * 0.28)}" r="1.9" fill="#ff9d4d"/>`;
+  }
+  const st = model.stair;
+  if (level === 0) {
+    const ax = px(st.A[0]), az = px(st.A[1]), bx = px(st.C[0]), bz = px(st.C[1]);
+    s += `<line x1="${ax}" y1="${az}" x2="${bx}" y2="${bz}" stroke="#8fd0a8" stroke-width="2.4"/>
+          <circle cx="${ax}" cy="${az}" r="2.6" fill="#8fd0a8"/>`;
+  }
+  if (level === 1) s += `<circle cx="${px(st.C[0])}" cy="${px(st.C[1])}" r="2.6" fill="#8fd0a8" stroke="#0d0a13"/>`;
+  /* Kompass wie in S13: Welt +x rechts, +z UNTEN. SVG-y wächst nach unten, also z → +y ohne
+     Vorzeichen — dieselbe Regel wie in der Pixelprobe, aber eigenständig gegen die Geometrie
+     geprüft (Zellmitten gegen Bodenpixel), nicht gegen diese Zeichnung. */
+  s += `<g font-family="ui-monospace,monospace" font-size="7" fill="#6b6080">
+    <text x="${W - 22}" y="${W - 26}" text-anchor="middle">−z</text>
+    <text x="${W - 22}" y="${W - 6}" text-anchor="middle">+z</text>
+    <text x="${W - 8}" y="${W - 15}" text-anchor="middle">+x</text></g></svg>`;
+  return s;
+}
+
+function drawPlans() {
+  const levels = [...new Set([...model.cells.values()].map((c) => c.level))].sort();
+  document.getElementById('plans').innerHTML = levels.map((L) => {
+    const n = [...model.cells.values()].filter((c) => c.level === L).length;
+    const rooms = model.regions.filter((r) => r.level === L && r.kind === 'room').length;
+    const corrs = model.regions.filter((r) => r.level === L && r.kind === 'corr').length;
+    const pl = (k, one, many) => `${k} ${k === 1 ? one : many}`;
+    return `<div class="plan"><b>Ebene ${L} · y = ${f2(L * HUB)} · ${pl(n, 'Zelle', 'Zellen')} · ${pl(rooms, 'Raum', 'Räume')} · ${pl(corrs, 'Gang', 'Gänge')}</b>${planSVG(L)}</div>`;
+  }).join('');
+}
+
+/* ---------- Fugen-Overlay in 3D ---------- */
+function buildSeamLines() {
+  if (seamLines) { V.scene.remove(seamLines); seamLines.geometry.dispose(); }
+  const pos = [], col = [], c = new THREE.Color();
+  for (const s of model.seams.values()) {
+    const x = s.mid[0] * MOD, z = s.mid[1] * MOD, y = s.level * HUB + 0.06, h = MOD / 2 - 0.08;
+    const [x1, z1, x2, z2] = s.run === 'z' ? [x, z - h, x, z + h] : [x - h, z, x + h, z];
+    pos.push(x1, y, z1, x2, y, z2);
+    c.set(SEAMCOL[s.kind] || '#8f86a0');
+    col.push(c.r, c.g, c.b, c.r, c.g, c.b);
+  }
+  const g = new THREE.BufferGeometry();
+  g.setAttribute('position', new THREE.Float32BufferAttribute(pos, 3));
+  g.setAttribute('color', new THREE.Float32BufferAttribute(col, 3));
+  seamLines = new THREE.LineSegments(g, new THREE.LineBasicMaterial({ vertexColors: true }));
+  seamLines.visible = overlay;
+  V.scene.add(seamLines);
+}
+
+/* ---------- Sichtbarkeit je Schritt · der Aufbau ist schrittweise, die Prüfung nie ---------- */
+function applyView() {
+  for (const n of root.children) {
+    const rec = n.userData.recipe;
+    if (!rec) continue;
+    const byStep = rec.layer === 'floor' ? (rec.kindCell === 'room' ? step >= 0 : step >= 1)
+      : rec.layer === 'wall' || rec.layer === 'corner' ? step >= 2 : step >= 3;   // stair/torch/candle
+    const byLevel = levelView === 'both' || String(rec.level) === levelView;
+    n.visible = byStep && byLevel;
+  }
+  if (seamLines) seamLines.visible = overlay;
+  /* Licht-Beiwerk folgt demselben Filter wie die Bauteile — je Kind, weil eine Gruppe beide
+     Ebenen enthält. Ein Schatten oder eine Flamme an einer ausgeblendeten Ebene schwebt sonst
+     im Leeren, und der Pool wirft Flecken aus dem Nichts. */
+  rig.setLevelFilter(levelView === 'both' ? null : levelView);
+  rig.setEnabled(step >= 3);
+  /* Sofort nachziehen, nicht erst im nächsten Bild: dieser Rahmen drosselt
+     `requestAnimationFrame`, und ein Pool-Licht, das eine Ebene später umschaltet, wirft
+     Flecken aus dem Nichts (dieselbe Lehre wie der rAF-Notnagel in kit-lab.js). */
+  rig.update(performance.now() / 1000);
+}
+
+/* ---------- Bauen ---------- */
+async function build() {
+  scenePatch.toggleEditor(false);
+  const t0 = performance.now();
+  const keepCam = build.keepCam;
+  const camWas = keepCam ? [V.camera.position.clone(), V.controls.target.clone()] : null;
+  build.keepCam = false;
+  placements = layout(model, kit);
+  const node = await buildScene(placements, (d, t) => { say(`baue ${d}/${t}`); }, { concurrency: 6 });
+  if (root) V.scene.remove(root);
+  root = node;
+  V.scene.add(root);
+  /* Jedes Teil dieses Packs teilt zwei Atlas-Texturen; kommt eine Anfrage leer zurück, ist das
+     Material intakt aber texturlos und das Teil rendert SCHWARZ. Von innen heilen. */
+  repairTextures(root);
+  /* Das Türblatt ist Teil derselben Datei wie die Türwand — für eine begehbare Fuge wird das Mesh
+     der Instanz ENTFERNT, nicht nur unsichtbar gesetzt: three.js raycastet auch unsichtbare
+     Objekte, ein verstecktes Blatt hätte die Strahlprobe weiter blockiert (und tat es). Steht im
+     Recipe (`hide`), ist also keine Ansichtssache. */
+  let leaves = 0;
+  const drop = [];
+  for (const n of root.children) {
+    const h = n.userData.recipe?.hide;
+    if (!h) continue;
+    n.traverse((o) => { if (o.isMesh && o.name === h) drop.push(o); });
+  }
+  for (const o of drop) { o.removeFromParent(); leaves++; }
+  buildSeamLines();
+  applyView();
+  const fit = rig.fitShadow(root);
+  /* Lichtpunkte aus den BAUTEILEN: jede Fackel und jede Kerze gibt ihren gemessenen Flammenpunkt
+     her, in Weltkoordinaten über die Matrix der gesetzten Instanz. Keine gemalte Kugel, kein
+     geklebter Schatten — das Feuer ist die Flammengeometrie des Packs, der Schatten kommt aus der
+     Schattenkarte der Punktlichter, die im Bauteil sitzen. */
+  torchLights = [];
+  const v = new THREE.Vector3();
+  for (const n of root.children) {
+    const rec = n.userData.recipe;
+    /* Name aus dem Recipe, nicht aus der Schicht geraten: welche Kerze gesetzt wurde, weiss das
+       Modell (candle_lit, wenn das Pack sie hat). */
+    const nm = rec && ['torch', 'candle'].includes(rec.layer) ? rec.a.split(':')[1] : null;
+    if (!nm || !FLAME[nm]) continue;
+    const localFlame = FLAME[nm].slice();
+    v.set(localFlame[0], localFlame[1], localFlame[2]);
+    n.localToWorld(v);
+    torchLights.push({ node:n, local:localFlame, p:[v.x,v.y,v.z], level:rec.level, part:nm, r:SELFR[nm], selfLit:!!SPLIT[nm] });
+  }
+  /* Reihenfolge: erst jede Etage auf ihre Empfänger-Ebene, dann die Leuchtkörper auf ihre eigene
+     (die überschreibt die Etagen-Ebene, damit kein Punktlicht sie anleuchtet). */
+  rig.markLevels(root);
+  const matte = rig.matteMaterials(root);
+  const fixtures = rig.markFixtures(root, (rec) => !!SPLIT[rec.a.split(':')[1]]);
+  flameNodes = [];
+  for (const n of root.children) {
+    const rec = n.userData.recipe;
+    if (!rec || !['torch', 'candle'].includes(rec.layer)) continue;
+    const sp = SPLIT[rec.a.split(':')[1]];
+    if (!sp) continue;
+    if (!FLAMEMAT[rec.a]) FLAMEMAT[rec.a] = new THREE.MeshBasicMaterial({ map: sp.map });
+    n.traverse((o) => {
+      if (!o.isMesh || o.userData.kfbFlame) return;
+      o.geometry = sp.body;
+      const f = new THREE.Mesh(sp.flame, FLAMEMAT[rec.a]);
+      f.userData.kfbFlame = true;
+      f.position.y = sp.baseY;
+      f.castShadow = false;
+      f.layers.set(rig.FIX);
+      o.add(f);
+      flameNodes.push(f);
+    });
+  }
+  rig.bind(torchLights);
+  applyView();
+  if (camWas) { V.camera.position.copy(camWas[0]); V.controls.target.copy(camWas[1]); V.controls.update(); }
+  else V.frame(root, [0.55, 0.9, 1], 1.06);
+
+  const ck = model.checks;
+  const probe = probeAll();
+  const rays = rayProbe();
+  lastProbe = { top: probe, ray: rays };
+  const fp = footprintAudit();
+  const tor = torchAudit();
+  const lum = lumProbe(torchLights);
+  const reach = lightReach(model, torchLights, MOD, rig.mood.reach);
+  const wallPlaced = placements.filter((p) => p.layer === 'wall').length;
+  const stairOk = !!model.stair.part && model.seams.get(model.stair.headSeam)?.kind === 'door';
+  const stairWide = STAIR ? frame[STAIR].width <= MOD + 0.05 : false;
+
+  const rows = [
+    ['Gebiete (Räume + Gänge)', `${model.regions.length} · ${model.regions.filter((r) => r.kind === 'room').length} Räume`],
+    ['Fugen aus Zellbesuchen', `${ck.seams} aus ${ck.seamVisits} · ${ck.seamVisits - ck.seams} Doppelsetzungen verhindert`],
+    ['Objekte je Fuge', wallPlaced === ck.walls ? `${wallPlaced}/${ck.walls} · genau eins` : `${wallPlaced} Objekte auf ${ck.walls} Fugen`, wallPlaced === ck.walls],
+    ['Klassen solid / door / gate / open', `${ck.walls - ck.doors - ck.gates - ck.rails} / ${ck.doors} / ${ck.gates} / ${ck.open}`],
+    ['Brüstung statt Wand (Balkonkante)', ck.rails ? `${ck.rails} Fugen mit barrier · Draufsicht ${probe.rails.n - probe.rails.bad.length}/${probe.rails.n} trägt Geometrie · Strahl ${rays.railsBlocked}/${rays.rails} versperrt` : 'keine — obere Ebene liegt ganz auf Aussenwand'],
+    ['Wand stösst an Brüstung', ck.wallMeetsRail === 0 ? 'keine Stelle' : `${ck.wallMeetsRail} · dort ${f2(WALL_H - (box.barrier ? box.barrier.size[1] : 0))} Stirnfläche über der Brüstung — das Pack hat kein Abschlussteil`],
+    ['Länge folgt den Ecken', `${ck.halves}× wall_half · ${ck.covered}× ganz von zwei Schenkeln gedeckt`, ck.cramped === 0],
+    ['Gitter (gate) gesetzt / möglich', `${ck.gates} von ${ck.gateSlots} · nur die zweite Fuge eines verbundenen Paares kann eines tragen`],
+    ['Grundriss nachgezogen', `${ck.thinned} Gangzelle${ck.thinned === 1 ? '' : 'n'} entzerrt · ${ck.slivers} Splitterraum → Gang`],
+    ['Durchgänge an einer Ecke', ck.doorsCramped === 0 ? 'keine' : `${ck.doorsCramped} · Öffnung auf die freie Hälfte gedreht, Strahlprobe entscheidet`],
+    ['Jeder Raum erreichbar', ck.islands.length === 0 ? `${model.graph.reached}/${model.regions.length} · Inseln 0` : `${model.graph.reached}/${model.regions.length} · ${ck.islands.length} Inseln`, ck.islands.length === 0],
+    ['Kein freies Wandende', ck.freeEnds === 0 ? '0 offene Zugenden' : `${ck.freeEnds} offene Zugenden`, ck.freeEnds === 0],
+    ['wall_corner gesetzt', `${placements.filter((p) => p.layer === 'corner').length}/${ck.corners} Gitterpunkte`, placements.filter((p) => p.layer === 'corner').length === ck.corners],
+    ['T-/Kreuz-Knoten (Zug läuft durch)', String(ck.junctions)],
+    ['Gänge genau 1 Modul breit', ck.corrWide.length === 0 ? 'kein 2×2-Gangblock' : `${ck.corrWide.length} Blöcke`, ck.corrWide.length === 0],
+    ['Kein Raum kleiner 2×2', ck.smallRooms.length === 0 ? `${model.regions.filter((r) => r.kind === 'room').length}/${model.regions.filter((r) => r.kind === 'room').length}` : `${ck.smallRooms.length} zu klein`, ck.smallRooms.length === 0],
+    ['Jeder Raum ≥ 1 torch_mounted', ck.darkRooms.length === 0 ? `${model.torches.length} Fackeln in ${model.regions.filter((r) => r.kind === 'room').length} Räumen` : `${ck.darkRooms.length} Räume dunkel`, ck.darkRooms.length === 0],
+    ['Fackel ragt in den Raum (gerendert)', tor.bad.length === 0 ? `${tor.n}/${tor.n}` : `${tor.n - tor.bad.length}/${tor.n}`, tor.bad.length === 0],
+    ['Draufsicht · door trägt wall_doorway', probe.doors.bad.length === 0 ? `${probe.doors.n}/${probe.doors.n}` : `${probe.doors.bad.length} von ${probe.doors.n} falsch · ${probe.doors.bad.slice(0, 3).join(' ')}`, probe.doors.bad.length === 0],
+    ['Draufsicht · Fugenmitte trägt Wand', probe.solids.bad.length === 0 ? `${probe.solids.n}/${probe.solids.n}` : `${probe.solids.bad.length} von ${probe.solids.n} leer · ${probe.solids.bad.slice(0, 3).join(' ')}`, probe.solids.bad.length === 0],
+    ['Draufsicht · Zellmitte trägt Boden', probe.floors.bad.length === 0 ? `${probe.floors.n}/${probe.floors.n}` : `${probe.floors.bad.length} von ${probe.floors.n} verdeckt · ${probe.floors.bad.slice(0, 3).join(' ')}`, probe.floors.bad.length === 0],
+    ['Strahlprobe · door begehbar', rays.doors.bad.length === 0 ? `${rays.doors.n}/${rays.doors.n} frei` : `${rays.doors.bad.length} von ${rays.doors.n} versperrt · ${rays.doors.bad.slice(0, 3).join(' ')}`, rays.doors.bad.length === 0],
+    ['Strahlprobe · solid dicht', rays.solids.bad.length === 0 ? `${rays.solids.n}/${rays.solids.n} versperrt` : `${rays.solids.bad.length} von ${rays.solids.n} durchlässig · ${rays.solids.bad.slice(0, 3).join(' ')}`, rays.solids.bad.length === 0],
+    ['Strahlprobe · gate (nur Auskunft)', rays.gates ? `${rays.gatesBlocked}/${rays.gates} Gitter treffen den Strahl` : '0 gates'],
+    ['Treppe · Streifen + Kopf als Durchgang', stairOk ? `${model.stair.A.join(',')} → ${model.stair.C.join(',')} · Fuß open, Kopf wall_doorway` : 'keine Treppe gesetzt', stairOk],
+    ['Treppenbreite ≤ Modul', STAIR ? `${f2(frame[STAIR].width)} ≤ ${f2(MOD)}` : '—', stairWide],
+    ['Eckverschneidung (konstruktiv)', `${fp.seamCross} Paare · max ${fp.worstCross} = halbe Dicke des dickeren Teils · Eckteil als 2 Schenkel à ${fp.legLen} geprüft, nicht als Kasten`],
+    ['Echte Durchdringungen', fp.real.length === 0 ? `0 von ${fp.pairs} Paaren` : `${fp.real.length} · max ${fp.real[0].pen} (${fp.real[0].a}/${fp.real[0].b})`, fp.real.length === 0],
+    ['Türblatt entfernt', `${leaves}/${ck.doors} · sonst ist der Durchgang zu`, leaves === ck.doors],
+    ['Lichtstimmung', `${rig.mood.label} · Fackel ${rig.mood.torch} cd, Reichweite ${rig.mood.reach} · Hemisphäre ×${rig.mood.hemi}`],
+    ['Lichtbudget (fester Pool)', `${Math.min(rig.budget, torchLights.length)} von ${torchLights.length} Lichtquellen tragen ein Licht (Budget ${rig.budget}) · Abfall 1/r statt 1/r² · Schattenwurf übernimmt das Key-Light — wie in den Promobildern alle Schatten aus einer Richtung`],
+    ['Lichtquelle leuchtet sich nicht selbst an', `${fixtures} mit gelöster Flamme auf eigener Ebenen-Maske · ${torchLights.length - fixtures} ohne Split werden von ihrem Punktlicht angeleuchtet`],
+    ['Matte Materialien', `${matte} Materialien auf roughness 0.95 / metalness 0 gesetzt — das Pack liefert 0.45, und das war der Spiegelglanz`],
+    ['Licht bleibt in seiner Etage', `Ebenen-Masken: Punktlicht erreicht nur Geometrie seiner Etage — ohne Schattenkarten gibt es keine Verdeckung, ein Licht unten schien sonst durch den 0.15 dünnen Boden nach oben`],
+    ['Eigenradius gemessen (Vorhalt)', `${Object.entries(SELFR).map(([n, r]) => `${n} ${f2(r)}`).join(' · ')} — gebraucht erst, wenn Punktlichter wieder Schatten werfen sollen`],
+    ['Flamme eigenleuchtend aus dem Netz gelöst', Object.keys(SPLIT).length
+      ? `${flameNodes.length}× in der Szene · ${Object.entries(SPLIT).map(([n, s]) => `${n} ${s.tris} Dreiecke ${f2(s.baseY)}–${f2(s.top)} (${s.family})`).join(' · ')} · flackert ± 5/11 %`
+      : 'kein Zwillingspaar im Pack — Flamme bleibt beleuchtet'],
+    ['Flamme per Atlas-Texel gelöst', `${Object.keys(SPLIT).length}/${Object.keys(SPLIT).length + SPLITMISS.length} Teile · gegen den gemessenen Flammenpunkt geprüft${SPLITMISS.length ? ' · verworfen: ' + SPLITMISS.join(' · ') : ''}`],
+    ['Leuchtbauteile gewürfelt', [...new Set(model.candles.map((c) => c.part))].map((p) => `${p} ×${model.candles.filter((c) => c.part === p).length}`).join(' · ') || 'keine'],
+    ['Flammenpunkt gemessen', Object.entries(FLAME).map(([n, f]) => `${n} y ${f2(f[1])}`).join(' · ') + ' · aus den obersten 18 % der Geometrie'],
+    ['Schattenkamera aus der Szenenbox', fit ? `Radius ${fit.radius} statt fester 40` : '—'],
+    ['Lichtquellen sind Bauteile', `${torchLights.filter((l) => l.part === 'torch_mounted').length}× torch_mounted an der Wand · ${torchLights.filter((l) => l.part !== 'torch_mounted').length}× Leuchtbauteil in der Zellecke · Flamme ist Pack-Geometrie, nichts gemalt`],
+    ['Kerze in der Zellecke an zwei Wänden', ck.candles ? `${ck.candlesInCorner}/${ck.candles} · Abstand je Achse aus der gemessenen Wandfläche` : 'keine — jede Zelle im Fackelradius'],
+    ['Fackel im Radius (Raster)', `${reach.lit}/${reach.total} Zellen · ${reach.dark.length} ohne Fackel in ${f2(rig.mood.reach * 0.55)}`],
+    ['Leseprobe · Luminanz je Zelle', `min ${lum.min} · Mittel ${lum.mean} · ${lum.dark} von ${lum.cells} unter ${lum.thr} · in ${lum.batches} Stapel${lum.batches === 1 ? '' : 'n'} gemessen (kameraunabhängig)`],
+    ['Jeder Raum hat eine lesbare Zelle', lum.blind.length === 0 ? `${lum.rooms}/${lum.rooms}` : `${lum.rooms - lum.blind.length}/${lum.rooms} · ${lum.blind.length} unlesbar`, lum.blind.length === 0],
+    ['Teile in der Szene', `${placements.length} · Saat ${model.seed} · Versuch ${model.attempt + 1}`],
+    ['Bauzeit', `${Math.round(performance.now() - t0)} ms`]
+  ];
+  document.getElementById('audits').innerHTML = rows.map(([k, v, ok]) =>
+    `<div class="kv${ok === true ? ' yes' : ok === false ? ' no' : ''}"><span>${k}</span><span>${v}</span></div>`).join('');
+
+  const hard = [ck.islands.length === 0, ck.freeEnds === 0, wallPlaced === ck.walls, ck.corrWide.length === 0,
+    ck.smallRooms.length === 0, ck.darkRooms.length === 0, probe.doors.bad.length === 0,
+    probe.solids.bad.length === 0, probe.floors.bad.length === 0, rays.doors.bad.length === 0,
+    rays.solids.bad.length === 0, fp.real.length === 0, tor.bad.length === 0, stairOk, leaves === ck.doors,
+    lum.blind.length === 0];
+  const fails = hard.filter((x) => !x).length;
+  const pxErr = probe.doors.bad.length + probe.solids.bad.length + probe.floors.bad.length;
+  gateEl.className = fails === 0 ? 'mono' : 'mono bad';
+  gateEl.textContent = `${model.regions.filter((r) => r.kind === 'room').length} Räume · ${ck.walls} Wandobjekte `
+    + `(${ck.doors} door, ${ck.gates} gate, ${ck.halves} halb) · ${ck.corners} Ecken · ${ck.freeEnds} freie Enden · `
+    + `Inseln ${ck.islands.length} · Draufsicht ${pxErr} Fehler (${probe.solids.n + probe.doors.n} Fugen, ${probe.floors.n} Zellen) · `
+    + `Strahl ${rays.doors.bad.length + rays.solids.bad.length} Fehler (${rays.doors.n} Türen, ${rays.solids.n} Wände) · `
+    + `Durchdringungen ${fp.real.length}` + (fails ? ` · ${fails} GATES ROT` : ' · alle Gates grün');
+
+  say(`Saat ${model.seed} · Feld ${model.grid}×${model.grid} · ${model.cells.size} Zellen · `
+    + `${placements.length} Teile · Ebenenabstand ${f2(HUB)} · Schritt ${['Räume', 'Gänge', 'Wände', 'Alles'][step]}`);
+  drawPlans();
+  scenePatch.bindDungeon(model, root);
+}
+
+async function regen() {
+  const seed = document.getElementById('seed').value.trim() || 'A1';
+  const density = +document.getElementById('dens').value / 100;
+  const grid = +document.getElementById('grid').value;
+  gateEl.textContent = 'löse Grundriss…';
+  /* Der Kerzen-Radius kommt aus der LICHTEINSTELLUNG, nicht aus einer Zahl im Generator:
+     wie weit eine Fackel trägt, weiss das Lichtwerk. */
+  model = generate({ seed, grid, density, parts, lightParts: LIGHTPARTS, litRadius: (rig.mood.reach * 0.55) / MOD });
+  if (model.failed) {
+    gateEl.className = 'mono bad';
+    gateEl.textContent = 'kein Grundriss mit dieser Saat lösbar: ' + [...new Set(model.notes)].join(' · ');
+    return;
+  }
+  await build();
+}
+
+/* ---------- Bedienung ---------- */
+document.getElementById('roll').onclick = () => {
+  const s = Math.random().toString(36).slice(2, 7).toUpperCase();
+  document.getElementById('seed').value = s;
+  regen();
+};
+document.getElementById('seed').addEventListener('keydown', (e) => { if (e.key === 'Enter') regen(); });
+document.getElementById('dens').onchange = regen;
+document.getElementById('grid').onchange = regen;
+document.getElementById('steps').onclick = (e) => {
+  const b = e.target.closest('button[data-step]');
+  if (!b) return;
+  step = +b.dataset.step;
+  for (const x of document.querySelectorAll('#steps button')) x.setAttribute('aria-pressed', String(+x.dataset.step === step));
+  applyView();
+  say(`Schritt ${['Räume', 'Gänge', 'Wände', 'Alles'][step]} · die Prüfungen gelten für den vollen Aufbau`);
+};
+document.getElementById('lvl').onchange = (e) => { levelView = e.target.value; applyView(); };
+document.getElementById('mood').onchange = (e) => {
+  moodName = e.target.value;
+  rig.setMood(moodName);
+  /* Neu bauen statt nur umschalten: die Leseprobe misst das Bild, also muss sie nach jedem
+     Lichtwechsel neu laufen. Die Kamera bleibt, wo sie war. */
+  build.keepCam = true;
+  build();
+};
+document.getElementById('ov').onclick = (e) => {
+  overlay = !overlay;
+  e.currentTarget.setAttribute('aria-pressed', String(overlay));
+  applyView();
+  drawPlans();
+};
+document.getElementById('top').onclick = () => V.frame(root, [0, 1, 0.0001], 1.04);
+const setClean = (on) => {
+  document.getElementById('app').classList.toggle('clean', on);
+  requestAnimationFrame(() => {
+    V.resize();
+    if (on && root) V.frame(root, [0.55, 0.9, 1], 1.04);   // sonst sitzt die Szene klein im Feld
+    V.draw();
+  });
+};
+document.getElementById('clean').onclick = () => setClean(true);
+document.getElementById('exitClean').onclick = () => setClean(false);
+addEventListener('keydown', (e) => { if (e.key === 'Escape') setClean(false); });
+document.getElementById('panel').onclick = (e) => {
+  const on = document.getElementById('app').classList.toggle('panel');
+  e.currentTarget.setAttribute('aria-pressed', String(on));
+  requestAnimationFrame(() => V.resize());
+};
+document.getElementById('exp').onclick = () => {
+  const doc = {
+    id: 'kaykit-dungeon-s13-2', pack: 'KayKit_Dungeon_Pack_1.1_FREE', licence: 'CC0 · Kay Lousberg',
+    seed: model.seed, params: model.params, grid: model.grid,
+    metrics: { MOD, WALL_H, WALL_THICK, HUB, stair: STAIR, frames: frame },
+    levels: model.levels,
+    cells: [...model.cells.values()],
+    seams: [...model.seams.values()].map((s) => ({ key: s.key, level: s.level, a: s.a, b: s.b, run: s.run, mid: s.mid, kind: s.kind, part: s.part, into: s.into })),
+    regions: model.regions, corners: model.corners, torches: model.torches, stair: model.stair,
+    checks: model.checks, probe: lastProbe, placements
+  };
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(new Blob([JSON.stringify(doc, null, 2)], { type: 'application/json' }));
+  a.download = 'kaykit-dungeon-s13-2.recipe.json';
+  a.click();
+};
+
+function showDungeonPick(node, patchRec) {
+  const pickEl=document.getElementById('pick');
+  const rec=node?.userData?.recipe;
+  if(!node||!rec){pickEl.style.display='none';return;}
+  const nm=rec.a.split(':')[1],b=box[nm];
+  pickEl.style.display='block';
+  pickEl.innerHTML=`<b>${nm}</b> · ${patchRec?.editable?'scene-patch editable':'read only'}<br>${rec.layer} · Ebene ${rec.level}`
+    +(rec.cell?`<br>Zelle ${rec.cell.join(',')} · ${rec.kindCell||''}`:'')
+    +(rec.seamKind?`<br>Fuge ${rec.seamKind}`:'')
+    +(rec.dirs?`<br>Schenkel ${rec.dirs.join('+')}`:'')
+    +(b?`<br>${b.size.map((x)=>f2(x)).join(' × ')} · Drehung ${rec.r||0}°`:'')
+    +(patchRec?`<br>${patchRec.sourceRef}`:'');
+}
+
+function syncEditedFixtureLights(nodes=[]) {
+  const touched=new Set(nodes);
+  if(!torchLights.length||!touched.size)return 0;
+  const p=new THREE.Vector3();let changed=0;
+  for(const tr of torchLights){
+    if(!tr.node||!touched.has(tr.node))continue;
+    p.fromArray(tr.local);tr.node.localToWorld(p);
+    tr.p[0]=p.x;tr.p[1]=p.y;tr.p[2]=p.z;changed++;
+  }
+  if(changed){
+    rig.setLevelFilter(levelView==='both'?null:levelView);
+    rig.update(performance.now()/1000);
+  }
+  return changed;
+}
+
+await regen();
+/* Eigener Takt nur für das Licht: der Pool wandert zu den nächsten Lichtquellen und flackert.
+   Gezeichnet wird weiter von makeViewer — zwei Renderschleifen wären zwei Wahrheiten. */
+function flicker(t) {
+  rig.update(t);
+  /* Die Flamme flackert mit: ein Hauch Höhe und Breite gegenläufig, je Kerze mit eigener Phase.
+     Skaliert wird um den gemessenen Flammenfuss, deshalb wandert sie nicht. */
+  for (let i = 0; i < flameNodes.length; i++) {
+    const ph = i * 2.399;
+    const s = Math.sin(t * 8.1 + ph) * 0.6 + Math.sin(t * 14.7 + ph * 1.7) * 0.4;
+    flameNodes[i].scale.set(1 - s * 0.05, 1 + s * 0.11, 1 - s * 0.05);
+  }
+}
+/* Takt per Intervall, nicht per `requestAnimationFrame`: in einem nicht sichtbaren Rahmen ist rAF
+   gedrosselt oder steht. Gemessen ist allerdings auch das Intervall dort gedrosselt — ein eigens
+   gesetztes 70-ms-Intervall feuerte einmal in 500 ms. In einem sichtbaren Tab läuft beides
+   normal; das Flackern ist deshalb nicht von der Bildrate abhaengig formuliert, sondern von der
+   übergebenen Zeit. 14 Aufrufe je Sekunde für zehn Lichter und ein Dutzend Flammen sind nichts,
+   und makeViewer zeichnet ohnehin selbst. */
+setInterval(() => flicker(performance.now() / 1000), 70);
+window.__s132 = { V, kit, frame, box, rig, get model() { return model; }, get root() { return root; },
+  get placements() { return placements; }, get torchLights() { return torchLights; }, get probe() { return lastProbe; }, regen, cellId, measured };
+</script>
+</body>
+</html>
