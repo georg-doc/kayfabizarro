@@ -38,9 +38,71 @@ jobs:
           CHROME="$(command -v google-chrome || command -v chromium || command -v chromium-browser)"
           test -n "$CHROME"
           URL="http://127.0.0.1:8000/tools/world_atlas/source/KayKit_Dungeon_Generator_S13_2.html?e1proof=1"
-          timeout 220s "$CHROME"             --headless --no-sandbox --disable-gpu             --window-size=1440,900             --virtual-time-budget=120000             --screenshot="$GITHUB_WORKSPACE/world-atlas-inline-editor-e1.png"             --dump-dom "$URL" > "$GITHUB_WORKSPACE/world-atlas-inline-editor-e1.dom.html"
+          "$CHROME" --headless --no-sandbox --disable-gpu --enable-unsafe-swiftshader \
+            --window-size=1440,900 --remote-debugging-port=9222 --user-data-dir=/tmp/kfb-e1-chrome \
+            "$URL" > /tmp/kfb-e1-chrome.log 2>&1 &
+          CHROME_PID=$!
+          trap 'kill "$CHROME_PID" 2>/dev/null || true' EXIT
+
+          for i in {1..30}; do
+            curl -fsS http://127.0.0.1:9222/json/list >/tmp/kfb-e1-tabs.json && break
+            sleep 1
+          done
+
+          node <<'NODE'
+          const fs = require('fs');
+          const sleep = ms => new Promise(r => setTimeout(r, ms));
+          const tabs = JSON.parse(fs.readFileSync('/tmp/kfb-e1-tabs.json','utf8'));
+          const tab = tabs.find(t => t.type === 'page' && t.url.includes('e1proof=1'));
+          if (!tab) throw new Error('E1 Chrome page target not found');
+
+          const ws = new WebSocket(tab.webSocketDebuggerUrl);
+          const pending = new Map();
+          let seq = 0;
+          ws.onmessage = e => {
+            const m = JSON.parse(e.data);
+            if (m.id && pending.has(m.id)) {
+              const p = pending.get(m.id);
+              pending.delete(m.id);
+              m.error ? p.reject(new Error(JSON.stringify(m.error))) : p.resolve(m.result);
+            }
+          };
+          await new Promise((resolve,reject) => { ws.onopen=resolve; ws.onerror=reject; });
+          const send = (method,params={}) => new Promise((resolve,reject) => {
+            const id=++seq;
+            pending.set(id,{resolve,reject});
+            ws.send(JSON.stringify({id,method,params}));
+          });
+
+          await send('Runtime.enable');
+          await send('Page.enable');
+
+          let state='';
+          for (let i=0;i<120;i++) {
+            const r=await send('Runtime.evaluate',{expression:"document.documentElement.dataset.e1Proof || ''",returnByValue:true});
+            state=r.result?.value || '';
+            if (state === 'pass') break;
+            if (state === 'fail') {
+              const e=await send('Runtime.evaluate',{expression:"JSON.stringify(window.__E1_PROOF || {})",returnByValue:true});
+              throw new Error('E1 proof FAIL '+(e.result?.value || ''));
+            }
+            await sleep(1000);
+          }
+          if (state !== 'pass') throw new Error('E1 proof marker timeout');
+
+          const dom=await send('Runtime.evaluate',{expression:'document.documentElement.outerHTML',returnByValue:true});
+          fs.writeFileSync('world-atlas-inline-editor-e1.dom.html',dom.result.value);
+          const proof=await send('Runtime.evaluate',{expression:'JSON.stringify(window.__E1_PROOF)',returnByValue:true});
+          fs.writeFileSync('world-atlas-inline-editor-e1.json',proof.result.value+'\n');
+          const shot=await send('Page.captureScreenshot',{format:'png',captureBeyondViewport:false});
+          fs.writeFileSync('world-atlas-inline-editor-e1.png',Buffer.from(shot.data,'base64'));
+          ws.close();
+          NODE
+
+          kill "$CHROME_PID" 2>/dev/null || true
+          trap - EXIT
           grep -Fq 'data-e1-proof="pass"' "$GITHUB_WORKSPACE/world-atlas-inline-editor-e1.dom.html"
-          grep -Fq 'E1 proof · PASS' "$GITHUB_WORKSPACE/world-atlas-inline-editor-e1.dom.html"
+          grep -Fq '"ok":true' "$GITHUB_WORKSPACE/world-atlas-inline-editor-e1.json"
 
       - name: Write evidence
         shell: bash
