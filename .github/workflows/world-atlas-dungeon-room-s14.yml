@@ -1,24 +1,9 @@
 name: World Atlas Dungeon Room S14 proof
 
+# FROZEN after two failed Blender review-render repair passes (2026-09-20).
+# Manual only: browser proof is green; .blend build succeeds; Ubuntu EGL review render is blocked.
 on:
-  push:
-    branches:
-      - world-atlas/dungeon-room-blueprint-s14-blender-2026-09-20
-    paths:
-      - 'tools/world_atlas/source/KayKit_Dungeon_Room_Blueprint_S14.html'
-      - 'tools/world_atlas/source/lib/**'
-      - 'tools/world_atlas/blender/room_blueprint/**'
-      - 'tools/world_atlas/rooms/R02_s21_blueprint/**'
-      - '.github/scripts/world-atlas-dungeon-room-s14-smoke.mjs'
-      - '.github/workflows/world-atlas-dungeon-room-s14.yml'
-  pull_request:
-    paths:
-      - 'tools/world_atlas/source/KayKit_Dungeon_Room_Blueprint_S14.html'
-      - 'tools/world_atlas/source/lib/**'
-      - 'tools/world_atlas/blender/room_blueprint/**'
-      - 'tools/world_atlas/rooms/R02_s21_blueprint/**'
-      - '.github/scripts/world-atlas-dungeon-room-s14-smoke.mjs'
-      - '.github/workflows/world-atlas-dungeon-room-s14.yml'
+  workflow_dispatch:
 
 permissions:
   contents: read
