@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>KFB · KayKit Character Compatibility v0</title>
+  <meta name="description" content="Source-first KFB compatibility bench for KayKit characters, mounts and prop hosts.">
+  <style>
+    :root{
+      color-scheme:dark;
+      --ink:#171513;--paper:#eee7d8;--paper2:#d8cfbd;--red:#b8361f;
+      --green:#6e8b63;--amber:#c58a2a;--muted:#999083;--panel:#201e1a;
+      --line:#49443c;--shadow:rgba(0,0,0,.28)
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;height:100%;background:var(--ink);color:var(--paper);font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+    body{overflow:hidden}
+    button,a{font:inherit}
+    a{color:var(--paper);text-decoration-color:var(--red);text-underline-offset:3px}
+    .shell{height:100%;display:grid;grid-template-rows:auto 1fr}
+    header{display:flex;gap:18px;align-items:flex-start;padding:14px 18px;border-bottom:1px solid var(--line);background:#141310}
+    .mark{min-width:58px;height:58px;border:2px solid var(--paper);display:grid;place-items:center;transform:rotate(-2deg);box-shadow:4px 4px 0 var(--red);font-weight:900;letter-spacing:.08em}
+    h1{margin:0;font-family:Georgia,serif;font-weight:500;font-size:clamp(21px,2.5vw,36px);line-height:1}
+    .sub{margin-top:6px;color:var(--muted);max-width:900px;font-size:12px;line-height:1.45}
+    .statusbar{margin-left:auto;display:flex;gap:8px;align-items:center;flex-wrap:wrap;justify-content:flex-end}
+    .pill{border:1px solid var(--line);padding:5px 8px;font-size:10px;letter-spacing:.06em}
+    .pill.red{border-color:var(--red);color:#efb5a8}
+    .pill.green{border-color:var(--green);color:#c0d5b7}
+    main{min-height:0;display:grid;grid-template-columns:minmax(250px,330px) minmax(360px,1fr) minmax(290px,390px)}
+    aside,.info{min-height:0;overflow:auto;background:var(--panel)}
+    aside{border-right:1px solid var(--line)}
+    .info{border-left:1px solid var(--line)}
+    .section{padding:15px;border-bottom:1px solid var(--line)}
+    .section h2{margin:0 0 10px;font:700 11px/1.2 ui-monospace,monospace;text-transform:uppercase;letter-spacing:.14em;color:var(--muted)}
+    #sourceList{display:grid;gap:7px}
+    .source{
+      width:100%;text-align:left;color:var(--paper);background:#191815;border:1px solid var(--line);
+      padding:10px 11px;cursor:pointer;transition:.12s transform,.12s border-color
+    }
+    .source:hover{transform:translateX(2px);border-color:var(--paper2)}
+    .source[aria-pressed="true"]{border-color:var(--red);box-shadow:inset 3px 0 0 var(--red)}
+    .source .name{font-weight:800}
+    .source .meta{margin-top:4px;color:var(--muted);font-size:10px}
+    .source.blocked{opacity:.68}
+    .source.blocked .name:after{content:" · SOURCE REQUIRED";color:#e7aa65;font-size:9px}
+    .viewer{position:relative;min-height:0;background:
+      radial-gradient(circle at 50% 44%,#2b2924 0,#1b1916 55%,#11100e 100%)}
+    #stage{position:absolute;inset:0}
+    #stage canvas{display:block;width:100%;height:100%}
+    .hud{position:absolute;left:12px;right:12px;bottom:12px;display:flex;gap:7px;align-items:center;pointer-events:none}
+    .hud>*{pointer-events:auto}
+    .hud button{background:#171614e8;border:1px solid var(--line);color:var(--paper);padding:7px 9px;cursor:pointer}
+    .hud button:hover{border-color:var(--paper)}
+    .hud .spacer{flex:1}
+    .hud label{display:flex;align-items:center;gap:6px;background:#171614e8;border:1px solid var(--line);padding:6px 8px;font-size:10px}
+    .loadstate{
+      position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);max-width:min(580px,80%);
+      background:#171614ee;border:1px solid var(--line);padding:14px 16px;text-align:center;display:none;
+      box-shadow:0 8px 30px var(--shadow)
+    }
+    .loadstate.show{display:block}
+    .loadstate strong{display:block;margin-bottom:5px;color:var(--paper)}
+    .loadstate span{color:var(--muted);font-size:11px;line-height:1.5}
+    .kv{display:grid;grid-template-columns:105px 1fr;gap:6px 10px;font-size:11px;line-height:1.45}
+    .kv dt{color:var(--muted)}.kv dd{margin:0;overflow-wrap:anywhere}
+    .rule{padding:9px 10px;border-left:3px solid var(--red);background:#171614;margin:8px 0;font-size:11px;line-height:1.5}
+    .rule.ok{border-left-color:var(--green)}
+    .rule.warn{border-left-color:var(--amber)}
+    .path{font-size:10px;color:#c9c0b1;word-break:break-all;background:#151411;padding:8px;border:1px solid #353129}
+    .metrics{display:grid;grid-template-columns:repeat(3,1fr);gap:7px}
+    .metric{padding:8px;border:1px solid var(--line);background:#191815}
+    .metric b{display:block;font-size:18px;font-family:Georgia,serif;font-weight:500}
+    .metric span{font-size:9px;color:var(--muted);text-transform:uppercase;letter-spacing:.08em}
+    .links{display:grid;gap:7px}
+    .links a{padding:8px;border:1px solid var(--line);text-decoration:none}
+    .links a:hover{border-color:var(--paper)}
+    footer{font-size:10px;color:var(--muted)}
+    @media(max-width:1050px){
+      body{overflow:auto}.shell{height:auto;min-height:100%}
+      main{grid-template-columns:270px 1fr}.info{grid-column:1/-1;border-left:0;border-top:1px solid var(--line)}
+      .viewer{min-height:65vh}
+    }
+    @media(max-width:720px){
+      main{display:block}.viewer{min-height:60vh}aside{border-right:0;border-bottom:1px solid var(--line)}
+      .statusbar{display:none}.mark{min-width:48px;height:48px}.hud{flex-wrap:wrap}
+    }
+  </style>
+  <script type="importmap">
+  {
+    "imports":{
+      "three":"https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+      "three/addons/":"https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
+    }
+  }
+  </script>
+</head>
+<body>
+<div class="shell">
+  <header>
+    <div class="mark">KCC</div>
+    <div>
+      <h1>KayKit Character Compatibility · v0</h1>
+      <div class="sub">Source-first bench. Every rendered object below is the named donor itself, isolated before integration. Missing sources stay missing — no substitute geometry, no second animation owner, no copied EyeRig.</div>
+    </div>
+    <div class="statusbar">
+      <span class="pill red">CANDIDATE</span>
+      <span class="pill green">SOURCE FIRST</span>
+      <span class="pill">NO RUNTIME PROMOTION</span>
+    </div>
+  </header>
+
+  <main>
+    <aside>
+      <div class="section">
+        <h2>Verified sources</h2>
+        <div id="sourceList" aria-label="Source objects"></div>
+      </div>
+      <div class="section">
+        <h2>Compatibility rule</h2>
+        <div class="rule ok">KayKit skeleton / MotionProfile remains the motion owner.</div>
+        <div class="rule ok">EyeRig v6 remains the eye owner.</div>
+        <div class="rule">Grafts and props only add measured adapters / leaf attachments.</div>
+        <div class="rule warn">Vehicle world/root and physics remain consumer-owned.</div>
+      </div>
+      <div class="section links">
+        <h2>Existing proof</h2>
+        <a href="https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/kaykit-motion-lab-v1/" target="_blank" rel="noreferrer">KayKit Motion Lab v1 ↗</a>
+        <a href="/kfb-hub/" target="_blank" rel="noreferrer">KFB Hub ↗</a>
+      </div>
+    </aside>
+
+    <section class="viewer" aria-label="3D donor isolation">
+      <div id="stage"></div>
+      <div id="loadstate" class="loadstate show"><strong>Source bench</strong><span>Select a verified source. The bench will load only that repository asset. Rubber/Eraser deliberately has no render until a real source is resolved.</span></div>
+      <div class="hud">
+        <button type="button" data-view="front">Front</button>
+        <button type="button" data-view="three">¾</button>
+        <button type="button" data-view="side">Side</button>
+        <button type="button" data-view="back">Back</button>
+        <button type="button" id="fitBtn">Fit</button>
+        <div class="spacer"></div>
+        <label><input id="spinToggle" type="checkbox"> spin</label>
+        <label><input id="boundsToggle" type="checkbox"> bounds</label>
+      </div>
+    </section>
+
+    <section class="info">
+      <div class="section">
+        <h2>Selected source</h2>
+        <dl id="details" class="kv">
+          <dt>Status</dt><dd>—</dd>
+          <dt>Role</dt><dd>—</dd>
+          <dt>Rig</dt><dd>—</dd>
+          <dt>Isolation</dt><dd>—</dd>
+        </dl>
+      </div>
+      <div class="section">
+        <h2>Repository path</h2>
+        <div id="assetPath" class="path">—</div>
+      </div>
+      <div class="section">
+        <h2>Loaded object facts</h2>
+        <div class="metrics">
+          <div class="metric"><b id="meshCount">—</b><span>meshes</span></div>
+          <div class="metric"><b id="skinCount">—</b><span>skinned</span></div>
+          <div class="metric"><b id="boneCount">—</b><span>bones</span></div>
+        </div>
+      </div>
+      <div class="section">
+        <h2>Integration boundary</h2>
+        <div id="integration" class="rule">—</div>
+        <h2 style="margin-top:15px">Next gate</h2>
+        <div id="nextGate" class="rule ok">—</div>
+      </div>
+      <div class="section">
+        <h2>KCC-0 scope</h2>
+        <div class="kv">
+          <dt>Goth Girl</dt><dd>native Rig_Medium reference</dd>
+          <dt>FrizzleBob</dt><dd>existing graft + future new-ear adapter</dd>
+          <dt>Vehicles</dt><dd>reversible VehicleMount target; Bath before Rover</dd>
+          <dt>Pencil</dt><dd>future static FaceHost → EyeRig v6</dd>
+          <dt>Rubber</dt><dd>blocked until a real source is found</dd>
+        </div>
+      </div>
+      <div class="section"><footer id="buildInfo">Loading source matrix…</footer></div>
+    </section>
+  </main>
+</div>
+<script type="module" src="./app.mjs"></script>
+</body>
+</html>
