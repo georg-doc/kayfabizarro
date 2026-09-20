@@ -64,3 +64,9 @@ https://kayfabizarro.pages.dev/kfb-hub/stunt-race/track-environment-lab/?world=f
 ## Exactly one next gate
 
 **WSA integrates preferred V8 idle #1 + one V8 load candidate only, driven by read-only speed/acceleration telemetry, and returns a direct Cloudflare Stage driving/listening proof.**
+
+## Hub sanity repair
+
+During final source validation, the existing KFB Hub script failed to parse because three structural literal `\\n` tokens existed outside strings. The handoff branch repairs exactly those three artifacts and the full embedded JavaScript now syntax-compiles PASS. The Racer audio briefing appears exactly once and is listed under the Projects filter.
+
+This is not a public deployment claim. Cloudflare must still publish and be opened before the Hub repair or new briefing is called PUBLIC_VERIFIED.
