@@ -338,3 +338,7 @@ Register `KFB Comic Card Deck Viewer v4 (WS0)` as a future shared card/deck pres
 
 ### 2026-09-13 · DONOR / BACKLOG
 Register `travel/3D Conspiracy Iceberg Explorer` as a strong future 3D donor for a portal-entered KFB Conspiracy Deck iceberg instance. Preserve its tier/cluster/depth/atmo/navigation ideas, but re-audit its older Three.js/DC runtime before integration. Add submarine exploration as a future instance-local mode and a corresponding reusable KayKit swim-motion family to the Animation Lab backlog.
+
+
+### 2026-09-20 · INTEGRATION FOCUS
+The scoped WSA/Astra integration cursor now lives in `skills/chat/workflows/WSA_MVP_CONSOLIDATION_2026-09-20/LIVING_INTEGRATION_MASTERPLAN.md`. It inventories current branch refs separately from the curated six-lane integration set: Combat/melee/Raid, Walk→Drive→Fly, Resident Zones/ChatterBox, shared in-place editor reuse, modular Environment Scene/Zone recipes, and Storytelling Maps. This central document remains the lead-level router; project SSOTs remain implementation truth.

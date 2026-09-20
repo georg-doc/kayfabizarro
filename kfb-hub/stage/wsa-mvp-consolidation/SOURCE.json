@@ -1,0 +1,27 @@
+{
+  "schema": "kfb.stage-source/1",
+  "id": "wsa-mvp-consolidation",
+  "updated": "2026-09-20",
+  "repo": "georg-doc/kayfabizarro",
+  "branch": "orchestration/wsa-mvp-consolidation-2026-09-20",
+  "substantiveEvidenceHead": "1059db171d08ebfc93b510a72a32967ee99aed93",
+  "pr": 113,
+  "status": "SOURCE_BRANCH_ONLY_NOT_PUBLIC_VERIFIED",
+  "stageUrl": "https://kayfabizarro.pages.dev/kfb-hub/stage/wsa-mvp-consolidation/",
+  "focus": [
+    "combat-melee-raid",
+    "world-race-mobility",
+    "resident-zones",
+    "toolbox-inline-editor",
+    "environment-scene-zone",
+    "storytelling-maps"
+  ],
+  "census": {
+    "repos": 4,
+    "branches": 243,
+    "openPrs": 61,
+    "focusRefs": 18,
+    "prHeadMismatches": 0
+  },
+  "rule": "Do not call this refreshed navigator live until the exact Cloudflare URL serves this source revision and browser proof passes."
+}

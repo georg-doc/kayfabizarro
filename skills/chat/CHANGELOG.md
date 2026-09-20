@@ -959,3 +959,18 @@ Reload the EyeRig Stage and visually check only the lid colors on the four accep
 ## 2026-09-20 · MVP integration board and bounded briefs
 
 Added a planning index plus four source-preserving briefings for World/Race/Audio/Traffic, Combat Raid/Open World, ToolBox Cloudflare consolidation and the shared in-scene editor. Each keeps the named runtime/tool owner, requires direct Cloudflare Stage proof, and explicitly blocks placeholder/parallel-engine work and automatic promotion.
+
+
+## 2026-09-20 · WSA/Astra focus consolidation v0.2
+
+### USER REQUEST
+Consolidate current GitHub check-ins, commits, slices and WIP branches into a token-efficient Work/Astra handoff. Maintain a living masterplan with focus on Combat→melee→Dungeon/Raid/Open World, Walk→Drive→Fly free-roam/race, Resident Zones + ChatterBox mini-quests, ToolBox in-place 3D editor reuse, modular KayKit/Tiny Treats environment recipes, and KFB Storytelling Maps.
+
+### IMPLEMENTATION
+Reused existing PR #113 / branch `orchestration/wsa-mvp-consolidation-2026-09-20`; no second orchestration owner. Synced the branch against current main through a two-parent merge checkpoint, preserved the previous handoff in an archive snapshot, added the six-lane Living Integration Masterplan, Astra handoff, curated status matrix and mechanical four-repo branch census.
+
+### TESTED RESULT
+Census: **4 repos · 243 branch refs · 61 open PRs · 18/18 focus refs found · 0 open-PR head mismatches**. STATUS_MATRIX: **6 unique lanes**. Coordination-only checks; no integrated runtime/browser/freeplay PASS and no public verification of the refreshed navigator claimed.
+
+### SOURCE / INTAKE
+Dropbox confirms the S21 RoomStudy editor export and current Tiny Treats/KayKit intake files. Game Development Studio skill loaded; no local `game-dev` execution surface exposed, so repository-native evidence remains the fallback. No sealed GDS run claimed.

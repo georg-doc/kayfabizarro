@@ -357,3 +357,12 @@ It routes four separate, source-preserving work lanes:
 - [3D in-scene editor](workflows/KFB_INSCENE_EDITOR_MODULE_V1_2026-09-20/START_HERE.md) — adapters for Resident, Environment, Dungeon and Babel rather than a replacement editor.
 
 These briefs are planning/export instructions. They grant no Race/Combat runtime rewrite or automatic Live promotion.
+
+
+## 2026-09-20 · WSA/Astra six-lane consolidation
+
+The refreshed coordination packet is [WSA MVP / Astra Consolidation](workflows/WSA_MVP_CONSOLIDATION_2026-09-20/START_HERE.md). It is the current scoped intake for the existing Astra Integration 01, not a new runtime owner.
+
+Focus: Combat→melee→Raid/Open World; Walk→Drive→Fly free-roam; Resident Zones + ChatterBox mini-quests; S21/S14 in-place editor reuse; KayKit/Tiny Treats Scene/Zone recipes with rule-of-three prop groups; and KFB Storytelling Maps as World/Zone/Tactical/Cut-scene presentation.
+
+Read its `LIVING_INTEGRATION_MASTERPLAN.md`, `STATUS_MATRIX.json` and mechanical `BRANCH_CENSUS.json`. The census preserves all refs but does not make every branch current. No auto-merge or Live promotion follows from this router entry.
