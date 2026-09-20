@@ -39,3 +39,12 @@ After Stage publication:
 3. confirm the Source-only cards are visibly distinct from runnable tools;
 4. confirm the page is useful on mobile;
 5. approve or reject the router before any Live promotion.
+
+
+## Publication evidence
+
+- source candidate functional/static head tested: `bd47d3f1080f23aeb0f447b730848c1cd2a13227` — **32/32 PASS**;
+- Cloudflare publication branch page: `a4123884bd4e7f411b3a8dfc380fbc92e32ad953` — GitHub fetch-back marker PASS;
+- publication manifest: `f83bf34528e0ece03b81a410efeb685350c048b9` — GitHub fetch-back marker PASS;
+- publication Hub head: `d683a3febe5f583d6fc5036943efd8c7368bdc99` — ToolBox top-link + fallback link fetch-back PASS;
+- public HTTP/browser: **UNKNOWN / NOT COUNTED** because the available environments could not resolve/access `kayfabizarro.pages.dev`.
