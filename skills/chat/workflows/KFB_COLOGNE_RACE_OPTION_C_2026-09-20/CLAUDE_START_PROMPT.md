@@ -6,10 +6,11 @@ Read, in order:
 
 1. `skills/chat/workflows/KFB_COLOGNE_RACE_OPTION_C_2026-09-20/START_HERE.md`
 2. `DATA_READY.md`
-3. `FORM_ANSWERS.md`
-4. `SOURCE_PINS.json`
-5. `CLAUDE_DESIGN_BRIEF.md`
-6. `RETURN_TEMPLATE.md`
+3. `FILAMENT_REFERENCE.md`
+4. `FORM_ANSWERS.md`
+5. `SOURCE_PINS.json`
+6. `CLAUDE_DESIGN_BRIEF.md`
+7. `RETURN_TEMPLATE.md`
 
 ## Visual authority · already pinned
 
@@ -36,13 +37,15 @@ Full source remains available under:
 
 Do not query Overpass again for this slice and do not invent Cologne geometry.
 
-## Route donor
+## Route benchmark
 
-FILAMENT is **reference-only grammar**.
+FILAMENT #02 is **benchmark-only**.
 
-Re-author the 7-anchor kidney / opening tunnel / tightening double-apex rhythm into the real Dom/Zentrum metre frame.
+Use it to judge whether the KFB route has strong tempo, a memorable opening beat, compression/release, readable edges and one distinctive tunnel/arch moment. Do **not** derive or adapt the original circuit geometry.
 
-Do not copy SP13KTRA source, literal corner coordinates, meshes, materials or original scale.
+The Cologne route is authored independently from a blank route. It may follow streets where useful, but it may also use roofs, courtyards, alleys, ramps, bridges and explicit elevated structures around the Dom.
+
+Do not copy SP13KTRA source, corner sequence, coordinates, palette values, meshes, materials, scenery or original scale.
 
 ## Owner rules
 
@@ -51,6 +54,7 @@ Do not copy SP13KTRA source, literal corner coordinates, meshes, materials or or
 - use current HUD v3 rules;
 - use real KFB/MED CardBuilder art;
 - use verified Kenney Racing Kit assets only after isolated donor inspection;
+- prioritize Option-C world/Track design over exact OMS/OSM street fidelity in Slice C;
 - do not revive the rejected TC-01 black-ribbon solution.
 
 ## Deliverable
