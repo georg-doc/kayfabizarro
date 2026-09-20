@@ -311,7 +311,7 @@ const filters=document.getElementById('filters');
 kinds.forEach(([id,label])=>{const a=document.createElement('a');a.className='filter';a.dataset.kind=id;a.textContent=label;filters.append(a);});
 function syncRouteNav(){
   document.querySelectorAll('.focus-tab').forEach(tab=>tab.classList.toggle('active',tab.dataset.focus===focus));
-  [...filters.children].forEach(a=>{a.classList.toggle('active',a.dataset.kind===active);a.href=routeHash(focus,a.dataset.kind);});
+  [...filters.children].forEach(a=>{a.classList.toggle('active',a.dataset.kind===active);a.href=location.pathname+location.search+routeHash(focus,a.dataset.kind);});
 }
 function applyRoute(){
   const next=parseRoute(),focusChanged=focus!==next.focus;
