@@ -6,8 +6,6 @@ on:
       - 'kfb-hub/stage/combat/ca2-enemy-adapters/index.html'
       - 'kfb-hub/stage/combat/ca2-enemy-adapters/lab.mjs'
       - 'kfb-hub/stage/combat/ca2-enemy-adapters/proof.mjs'
-      - 'kfb-hub/stage/combat/ca2-enemy-adapters/SOURCE.json'
-      - '.github/workflows/combat-ca2-enemy-enumeration.yml'
   workflow_dispatch:
 permissions: {contents: read}
 jobs:

@@ -1,7 +1,7 @@
 {
   "schema": "kfb.stage-source/0.1",
   "product": "KFB Combat · CA2-03A Enemy Source + Clip Enumeration",
-  "status": "BRANCH_ENUM_VERIFIED",
+  "status": "PUBLIC_VERIFIED_CA2_03A",
   "sourceRepo": "georg-doc/kayfabizarro",
   "sourceBranch": "chatgpt-web/ca2-03-enemy-adapters-2026-09-20",
   "implementationHead": "8b325ec856d2de6bba33968d725516e2b5ccd29f",
@@ -30,14 +30,14 @@
     "CombatMelee"
   ],
   "stageUrl": "https://kayfabizarro.pages.dev/kfb-hub/stage/combat/ca2-enemy-adapters/",
-  "publicVerified": false,
+  "publicVerified": true,
   "humanAcceptance": "PENDING",
   "branchProof": {
-    "run": 35492453999,
-    "job": 106029613333,
+    "run": 35492632529,
+    "job": 106030073603,
     "checks": "32/32 PASS",
-    "artifactId": 10599820951,
-    "artifactDigest": "sha256:896584b1998dcb0f3e234f85e50c225fee7a165b426e0cca3e669da9a545e339"
+    "artifactId": 10599840995,
+    "artifactDigest": "sha256:6e1b2d9b44aa3ebe800d557a60e3de67e8e84778325cd90ca05e972cb5912b91"
   },
   "measurements": {
     "skeleton-warrior": {
@@ -55,5 +55,19 @@
       "height": 2.3241792388642932,
       "rig": "Rig_Medium"
     }
+  },
+  "publication": {
+    "branch": "cloudflare-live",
+    "proofedHead": "b11d87ac8f12e30b4098aafcc412fc41018369e6",
+    "stageUrl": "https://kayfabizarro.pages.dev/kfb-hub/stage/combat/ca2-enemy-adapters/"
+  },
+  "publicProof": {
+    "run": 35492632529,
+    "job": 106030073584,
+    "checks": "32/32 PASS",
+    "marker": "PASS",
+    "combatStageNavigation": "PASS",
+    "artifactId": 10600125047,
+    "artifactDigest": "sha256:125327b7ff1a056d8ee6628ebdce09da3d04cd69b413d8463a1e104ec27f4666"
   }
 }
