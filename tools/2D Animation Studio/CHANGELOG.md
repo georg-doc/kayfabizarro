@@ -100,3 +100,19 @@ Read-only donor audit confirmed the Dropbox FrankenStein Studio v18 session carr
 - preserved world/collision/camera/gameplay ownership with the receiving consumer.
 
 No three2p5d runtime adapter or Resident mount PASS is claimed yet.
+
+
+## 2026-09-20 · v0.8 · Eumel three2p5d Phase 1
+
+- added `shared/renderers/three2p5d/cutout-svg-plane-stack.v0.1.js`;
+- added `proofs/eumel-three2p5d-v1/`;
+- rasterizes only selected source-exact SVG groups into transparent textures;
+- mounts those groups as world-space Three.js layers;
+- applies measured neutral leg rest corrections around explicit hip anchors;
+- maps the source shadow onto a world-space ground plane;
+- supports `upright-yaw-billboard` and `world-facing-upright`;
+- reuses the shared EyeRig semantic adapter on Three.js wrapper groups;
+- includes neutral/idle/look/walk/hop presentation states;
+- static syntax/reference sanity PASS.
+
+Browser/visual QA remains pending. No Resident Atlas or DocCheck Project Island runtime promotion is claimed.
