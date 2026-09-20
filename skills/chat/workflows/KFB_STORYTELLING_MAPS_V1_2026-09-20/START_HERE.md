@@ -139,3 +139,38 @@ See:
 
 Exactly one next gate:
 **VL1 / CardRig source proof — exact KayKit card, measured fixed-corner mesh deformation, zero visible square image corners from oblique views.**
+
+
+## Prepared parallel lane · Storytelling Map Animator v1
+
+This is **planning only** while the current CardRig gate remains active.
+
+Prepared Claude Design package:
+
+- `CLAUDE_DESIGN_BRIEF_MAP_ANIMATOR_V1.md`
+- `MAP_ANIMATOR_DONOR_MATRIX.md`
+- `MAP_ANIMATOR_RETURN.md`
+
+Planning branch:
+`planning/storytelling-map-animator-v1-2026-09-20`
+
+Future Stage target:
+`https://kayfabizarro.pages.dev/kfb-hub/stage/storytelling-maps/animator-v1/`
+
+Status:
+**TARGET ONLY · NOT DEPLOYED · NOT PUBLIC_VERIFIED**
+
+Direction captured:
+- arbitrary public GeoJSON / OSM-derived maps;
+- world → continent → country → region → city hierarchy;
+- independent puzzle-piece countries/regions;
+- flat / table / flyover / dive / popup views;
+- add/fill/remove/raise/stand-up/assemble/explode animation vocabulary;
+- semantic VFX roadmap including ripple, burn, bomb and hurricane;
+- reuse of current Hürth / Ehrenfeld / Cologne City Lab sources;
+- reuse of current Grotesque landmark lane;
+- cutout / papercraft / popup-diorama treatment;
+- separate Game Dev Studio Theatre Curtain module consumed later through an adapter.
+
+Important:
+The Map Animator does not replace the current CardRig gate. The first Map Animator implementation gate is SMA1 only, after the relevant current visual gate is cleared.

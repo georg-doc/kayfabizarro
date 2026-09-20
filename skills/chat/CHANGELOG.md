@@ -991,3 +991,23 @@ Plan one shared PropActor adapter seam for standees and future EyeRig pencil/era
 
 ### NEXT GATE
 VL1 exact KayKit responsive CardRig proof only. No T3, Odyssey, Near East or editor mega-slice before that proof.
+
+
+## 2026-09-20 · Storytelling Map Animator Claude brief
+
+### PREPARED
+- `skills/chat/workflows/KFB_STORYTELLING_MAPS_V1_2026-09-20/CLAUDE_DESIGN_BRIEF_MAP_ANIMATOR_V1.md`
+- `skills/chat/workflows/KFB_STORYTELLING_MAPS_V1_2026-09-20/MAP_ANIMATOR_DONOR_MATRIX.md`
+- `skills/chat/workflows/KFB_STORYTELLING_MAPS_V1_2026-09-20/MAP_ANIMATOR_RETURN.md`
+
+### REUSE DECISION
+Map Animator extends `tools/kfb-cartoon-map-board/`. It consumes OSM City Lab for Hürth/Ehrenfeld/Cologne, img2threejs Pilot 06 for Grotesque landmark authoring, existing KFB palette/sky/FX owners, and later the separate Game Dev Studio Theatre Curtain.
+
+### CURTAIN
+Official Three.js compute-cloth donor is already pinned through the existing Theatre Curtain package. No SVG/CSS substitute and no second cloth runtime are authorized.
+
+### SCOPE
+SMA1 is the only first implementation gate: puzzle-piece motion/camera + one real landmark + one reused ripple with clean canonical recovery. Burn/bomb/hurricane, papercraft, city drilldown, curtain adapter, CardRig/PDF and full authoring remain later slices.
+
+### STATUS
+Planning ready. Runtime not started. Future Animator Stage target is not deployed/public-verified.

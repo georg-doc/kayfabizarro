@@ -178,3 +178,29 @@ Investigate a shared legless PropActor class using the proven six-bone Rig_Legac
 
 ### STATUS
 T2's 13/13 browser PASS remains technical evidence only. The responsive visual contract is not accepted until VL1 proves the rounded CardRig from oblique views.
+
+
+## 2026-09-20 · Storytelling Map Animator v1 planning package
+
+### DIRECTION
+The existing Cartoon Map Board is the runtime/presentation owner for the planned Animator.
+
+Prepared Claude Design contract covers:
+- arbitrary GeoJSON / public boundaries;
+- OSM City Lab adapters;
+- puzzle-piece country/region motion;
+- flat/table/flyover/dive/popup cameras;
+- add/fill/remove/raise/stand-up/explode/assemble actions;
+- later semantic VFX presets (ripple/burn/bomb/hurricane etc.);
+- Hürth/Ehrenfeld/Cologne drilldown;
+- Grotesque landmark donor integration;
+- papercraft/cutout/popup-diorama presentation;
+- manifest-first authoring.
+
+### OWNER BOUNDARIES
+No second OSM, Landmark, PDF/Card, FX or Curtain runtime.
+
+Game Dev Studio Theatre Curtain PR #114 remains a separate reusable dependency.
+
+### NEXT MAP-ANIMATOR GATE
+SMA1 only: existing Europe pieces + reversible map motion/camera + one real landmark donor + one reused ripple.

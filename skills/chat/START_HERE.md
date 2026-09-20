@@ -411,3 +411,19 @@ Current docs:
 Reuse is mandatory: existing KFB palette/color-world modules, skydome, Card/PDF Viewer, Living Illustration, FX donors, Resident Atlas/Rig_Legacy, CapsuleCarl procedural actor seam and EyeRig must be inspected before replacements are invented.
 
 Current next gate: **VL1 responsive rounded CardRig source proof**. T3 motion remains blocked.
+
+
+## 2026-09-20 · Storytelling Map Animator v1 briefing
+
+Prepared a bounded Claude Design lane under the existing Storytelling Maps / Cartoon Map Board owner.
+
+Read:
+- `skills/chat/workflows/KFB_STORYTELLING_MAPS_V1_2026-09-20/CLAUDE_DESIGN_BRIEF_MAP_ANIMATOR_V1.md`
+- `skills/chat/workflows/KFB_STORYTELLING_MAPS_V1_2026-09-20/MAP_ANIMATOR_DONOR_MATRIX.md`
+- `skills/chat/workflows/KFB_STORYTELLING_MAPS_V1_2026-09-20/MAP_ANIMATOR_RETURN.md`
+
+The brief covers public GeoJSON/OSM map sources, puzzle-piece map animation, flat/table/flyover/popup views, progressive disclosure, later burn/bomb/hurricane VFX, Hürth/Ehrenfeld/Cologne reuse, Grotesque landmarks and papercraft/diorama staging.
+
+Theatre Curtain is not rebuilt: Game Dev Studio PR #114 remains the separate cloth module and later Animator dependency.
+
+Current implementation gate remains CardRig; Map Animator SMA1 is a prepared parallel lane, not a promoted runtime.
