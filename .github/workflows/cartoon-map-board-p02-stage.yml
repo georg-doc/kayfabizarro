@@ -1,0 +1,38 @@
+name: Cartoon Map Board P0.2 Stage proof
+
+on:
+  pull_request:
+    paths:
+      - 'kfb-hub/stage/cartoon-map-board-p02/**'
+      - '.github/workflows/cartoon-map-board-p02-stage.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  stage-proof:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Static Stage checks
+        run: |
+          node --check kfb-hub/stage/cartoon-map-board-p02/src/app.js
+          node -e "const fs=require('fs'); for(const p of ['kfb-hub/stage/cartoon-map-board-p02/data/story-demo.v1.json','kfb-hub/stage/cartoon-map-board-p02/DEPLOYMENT.json','kfb-hub/stage/cartoon-map-board-p02/SOURCE.json']) JSON.parse(fs.readFileSync(p,'utf8')); console.log('JSON PASS')"
+          grep -q "p0.2-stage-exp-r1" kfb-hub/stage/cartoon-map-board-p02/src/app.js
+          grep -q "NEXT STORY" kfb-hub/stage/cartoon-map-board-p02/index.html
+      - run: |
+          npm install --no-save playwright@1.51.1
+          npx playwright install --with-deps chromium
+      - name: Verify exact Cloudflare Stage
+        run: node kfb-hub/stage/cartoon-map-board-p02/qa/public.mjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: cartoon-map-board-p02-stage-proof
+          path: cartoon-map-board-p02-stage-evidence
+          retention-days: 30
