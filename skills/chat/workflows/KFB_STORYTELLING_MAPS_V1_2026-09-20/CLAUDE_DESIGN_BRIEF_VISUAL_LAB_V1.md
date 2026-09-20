@@ -70,6 +70,28 @@ Verified donor facts:
 
 The existing T2 Stage proves front-material replacement is reversible, but it is **not** the finished responsive rig.
 
+
+## Measured VL1 geometry constants
+
+Do not spend a repair pass guessing the donor's corner zones.
+
+Pinned BIN inspection measured:
+
+- outer card bounds: x ±0.600, y 0…1.500;
+- outer straight-center transition: x ±0.450, y 0.150…1.350;
+- **outer fixed corner band: 0.150 × 0.150**;
+- front-art bounds: x ±0.574359, y 0.025641…1.474359;
+- front-art straight-center transition: x ±0.450, y 0.150…1.350;
+- **front fixed corner band: 0.124359 × 0.124359**.
+
+The front donor UVs are also rounded/inset rather than a naïve 0…1 plane (rough overall range U 0.046898…0.953102, V 0.020732…0.979267).
+
+For the first proof:
+- preserve donor UV topology;
+- deform geometry using these measured fixed-corner bands;
+- do not recreate planar UVs;
+- make any alternative threshold an evidence-backed change, not an aesthetic guess.
+
 ## Absolute visual rule
 
 **NO visible rectangular image corners. Ever.**

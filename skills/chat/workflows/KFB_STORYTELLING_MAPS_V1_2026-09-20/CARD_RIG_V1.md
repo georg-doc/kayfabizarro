@@ -32,6 +32,62 @@ So the front-art surface is already a dedicated inset mesh region, not an arbitr
 
 **Use it. Do not add a replacement front plane.**
 
+
+## Exact measured corner bands · donor binary inspection
+
+The donor BIN was decoded at the pinned asset revision; these are actual position-coordinate bands, not guessed radii.
+
+### Outer `boardgame` primitive
+
+Unique x bands include:
+
+`-0.600000 · -0.579904 · -0.574359 · -0.557683 · -0.525000 · -0.512171 · -0.450000 · +0.450000 · … · +0.600000`
+
+Unique y bands include:
+
+`0.000000 · 0.020096 · 0.025641 · 0.042317 · 0.075000 · 0.087829 · 0.150000 · 1.350000 · … · 1.500000`
+
+The straight center therefore begins at ±0.450 on x and at y=0.150 / 1.350.
+
+**Measured fixed corner band candidate:**
+
+- outer `Rx = 0.600 - 0.450 = 0.150`
+- outer `Ry = 0.150 - 0.000 = 0.150`
+
+### Inset `red_knight` front-art primitive
+
+Bounds:
+
+- x ±0.574359
+- y 0.025641 … 1.474359
+
+Its straight-center transition uses the same inner ±0.450 / y 0.150…1.350 bands.
+
+**Measured fixed inset corner band candidate:**
+
+- front `Rx = 0.574359 - 0.450 = 0.124359`
+- front `Ry = 0.150000 - 0.025641 = 0.124359`
+
+This gives a donor-native pair of deformation bands:
+
+```text
+frame  corner band = 0.150000
+art    corner band = 0.124359
+```
+
+Use these values as the first source-derived 9-slice thresholds. If topology inspection shows a better semantic boundary, the bench must display the evidence before changing them.
+
+### Front-art UV evidence
+
+The front primitive does **not** use a naïve 0…1 rectangular UV box. Its donor UV bands already inset/round the art region, approximately:
+
+- U: 0.046898 … 0.953102
+- V: 0.020732 … 0.979267
+
+with intermediate bands matching the rounded perimeter.
+
+Therefore do not regenerate planar UVs for VL1. Preserve/remap the donor UV topology and apply crop/fit through texture transform or controlled UV-space mapping.
+
 ## T2 evidence boundary
 
 T2 proved that replacing only `red_knight` while preserving `boardgame` is technically reversible and browser-safe.
