@@ -1,6 +1,6 @@
 # Claude Design · Start Prompt · Cologne Race Option C
 
-Use this after attaching the two visual authority boards.
+Use this directly from GitHub; no separate visual-board upload is required for Slice C.
 
 Read, in order:
 
@@ -11,14 +11,16 @@ Read, in order:
 5. `CLAUDE_DESIGN_BRIEF.md`
 6. `RETURN_TEMPLATE.md`
 
-## External visual inputs
+## Visual authority · already pinned
 
-Attached to this Claude session:
+Use both exact Option-C boards from public `kayfabizarro/main`:
 
-- `OPTION_C_VISUAL_AUTHORITY`
-- `OPTION_A_VISUAL_AUTHORITY`
+- `travel/wip/travel_globe_wsa/_inbox/KFB Racer Option C - ChatGPT Image 20. Sept. 2026, 05_06_22 (1).png` — blob `59fd27fcb5dae48bc159093427a3e688cc83b6a4`
+- `travel/wip/travel_globe_wsa/_inbox/KFB Racer Option C - ChatGPT Image 20. Sept. 2026, 05_06_22 (2).png` — blob `ac0bf0064c8af8235a49b97d3b7e5e8196ed5579`
 
-For this first build, **Option C is binding**. Option A is reference only until Georg reviews C.
+Before scene integration, open/show each board in isolation and confirm the exact source is visible. Then treat the pair as the binding Option-C color/light/form authority.
+
+Option A visual authority is deferred until Georg reviews C and is not required for this build.
 
 ## Data gate
 
@@ -59,4 +61,4 @@ Do not claim GitHub push, PR, Stage or Cloudflare publication. Work/ChatGPT perf
 
 ## One goal
 
-Build the first playable **KFB Cologne Race · Option C · Elastic Cartoon World** candidate around the Kölner Dom, using the real cached OSM geography and the attached Option C visual authority.
+Build the first playable **KFB Cologne Race · Option C · Elastic Cartoon World** candidate around the Kölner Dom, using the real cached OSM geography and the two pinned Option-C visual authority boards.
