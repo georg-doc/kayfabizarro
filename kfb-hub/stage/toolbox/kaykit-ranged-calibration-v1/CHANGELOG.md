@@ -24,3 +24,15 @@ Proofed publication:
 `cloudflare-live@cf15f612e6a700608564cadbded4302ba59b1af2`.
 
 Human grip/pose/muzzle/release acceptance remains open.
+
+
+## 2026-09-20 · CA2-02b human pitch correction
+
+### HUMAN GATE
+Georg accepted the existing fist/grip position but judged Aim/Fire too high in the Stage screenshot. The future universal inline 3D gizmo is explicitly not added to this slice.
+
+### CANDIDATE
+Keep the Studio grip base `[-14,77,0]`; apply one rotation-only visual correction of `-5°` pitch, effective `[-19,77,0]`, identically for FrizzleBob Driver Graft and GothGirl. Offsets, yaw/roll, scale, muzzle geometry and release timing remain unchanged.
+
+### GATE
+Measure Aim world pitch and Release-frame pitch in-browser. Aim should be near horizontal; the Shoot clip may lift upward as recoil. No Arena ballistics or locomotion tuning in this slice.

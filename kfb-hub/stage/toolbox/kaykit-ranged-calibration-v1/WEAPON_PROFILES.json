@@ -1,14 +1,7 @@
 {
   "schema": "kfb.combat.weapon-profile-set/0.1-candidate",
   "date": "2026-09-20",
-  "status": "PUBLIC_VERIFIED_HUMAN_OPEN",
-  "sourceEvidence": {
-    "run": 35489658278,
-    "job": 106022296749,
-    "checks": "55/55 PASS",
-    "artifactId": 10598448427,
-    "artifactDigest": "sha256:f1dc330364eaf77eb13b2b58634501f2be43582519dcbc125d0deb95acbfbda8"
-  },
+  "status": "CA2_02B_PITCH_CANDIDATE",
   "source": {
     "gun": {
       "repo": "georg-doc/kayfabizarro",
@@ -36,7 +29,7 @@
     "grip": {
       "eulerOrder": "YXZ",
       "eulerDeg": [
-        -14,
+        -19,
         77,
         0
       ],
@@ -46,7 +39,19 @@
         0
       ],
       "scale": 0.37,
-      "source": "existing Georg Studio/graft contract calibration"
+      "source": "existing Georg Studio/graft contract calibration",
+      "studioBaseEulerDeg": [
+        -14,
+        77,
+        0
+      ],
+      "humanVisualDeltaDeg": [
+        -5,
+        0,
+        0
+      ],
+      "tuningReason": "Human visual gate: gun sat acceptably in fist but aimed too high; lower barrel toward forearm extension.",
+      "tuningScope": "rotation-only candidate"
     },
     "muzzle": {
       "space": "weapon-holder-local",
@@ -127,14 +132,5 @@
     "Arena rewards/runflow",
     "Arena audio"
   ],
-  "humanAcceptance": "PENDING",
-  "publicEvidence": {
-    "run": 35489658278,
-    "job": 106022296782,
-    "checks": "55/55 PASS",
-    "marker": "PASS",
-    "hubStageNavigation": "PASS",
-    "artifactId": 10598651751,
-    "artifactDigest": "sha256:7f8140c90f84f2d7f528b27f431a0843ca5e408901057c027bef30f0bf8c7449"
-  }
+  "humanAcceptance": "PENDING_CA2_02B"
 }

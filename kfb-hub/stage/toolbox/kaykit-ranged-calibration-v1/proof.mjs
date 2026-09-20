@@ -31,6 +31,9 @@ try{
   check('lab ready',snap.ready===true,JSON.stringify(snap.error));
   check('no lab error',!snap.error,String(snap.error));
   check('source-first default',snap.mode==='source',snap.mode);
+  check('Studio grip base retained',JSON.stringify(snap.gripTuning?.studioBaseEulerDeg)===JSON.stringify([-14,77,0]),JSON.stringify(snap.gripTuning));
+  check('human pitch delta',snap.gripTuning?.humanPitchDeltaDeg===-5,JSON.stringify(snap.gripTuning));
+  check('effective tuned grip',JSON.stringify(snap.gripTuning?.effectiveEulerDeg)===JSON.stringify([-19,77,0]),JSON.stringify(snap.gripTuning));
   check('exact model pin',snap.source.modelPin==='bdaea0648f27c0f16e0a737bfba237eb54dd4cbb',snap.source.modelPin);
   check('exact module pin',snap.source.modulePin==='bdaea0648f27c0f16e0a737bfba237eb54dd4cbb',snap.source.modulePin);
   check('exact asset pin',snap.source.assetPin==='11d7df978c63b9e375707bd8d9431b4c8358cda8',snap.source.assetPin);
@@ -48,6 +51,7 @@ try{
   await page.waitForTimeout(750);
   snap=await page.evaluate(()=>window.__KFB_RANGED_CALIBRATION__.snapshot());
   check('aim mode compare',snap.mode==='compare'&&snap.currentClip==='Ranged_1H_Aiming',JSON.stringify({mode:snap.mode,clip:snap.currentClip}));
+  const aimPitch={};
   for(const id of ['frizzlebob','gothgirl']){
     const a=snap.actors[id];
     check(id+' weapon report OK',a?.weaponReport?.status==='OK',JSON.stringify(a?.weaponReport));
@@ -56,10 +60,14 @@ try{
     check(id+' muzzle world',finiteArray(a?.muzzle?.worldPosition,3),JSON.stringify(a?.muzzle));
     check(id+' forward local',finiteArray(a?.muzzle?.localForward,3),JSON.stringify(a?.muzzle));
     check(id+' forward world',finiteArray(a?.muzzle?.worldForward,3),JSON.stringify(a?.muzzle));
+    aimPitch[id]=a?.muzzle?.worldPitchDeg;
+    check(id+' aim pitch measured',Number.isFinite(aimPitch[id]),JSON.stringify(a?.muzzle));
+    check(id+' aim near horizontal',Math.abs(aimPitch[id])<=3.5,'pitch='+aimPitch[id]+'deg');
     check(id+' forearm measured',Number(a?.weaponReport?.forearm)>0,String(a?.weaponReport?.forearm));
     check(id+' barrel measured',Number(a?.weaponReport?.barrelLength)>0,String(a?.weaponReport?.barrelLength));
   }
   check('bind delta finite',Object.values(snap.bind?.delta||{}).every(Number.isFinite),JSON.stringify(snap.bind?.delta));
+  check('aim pitch matches across actors',Math.abs(aimPitch.frizzlebob-aimPitch.gothgirl)<=0.15,JSON.stringify(aimPitch));
   await page.screenshot({path:OUT+'/01-aim-compare.png',fullPage:true});
 
   const release=snap.markers?.shoot?.primaryRelease;
@@ -78,6 +86,8 @@ try{
   check('release event reached both actors',flash.shotEvents===2,'shotEvents='+flash.shotEvents);
   for(const id of ['frizzlebob','gothgirl']){
     check(id+' scheduled single release',Array.isArray(flash.actors[id]?.scheduledMarkers)&&flash.actors[id].scheduledMarkers.length===1&&Math.abs(flash.actors[id].scheduledMarkers[0]-release)<0.001,JSON.stringify(flash.actors[id]));
+    check(id+' release pitch measured',Number.isFinite(flash.actors[id]?.muzzle?.worldPitchDeg),JSON.stringify(flash.actors[id]));
+    check(id+' recoil lifts above aim',flash.actors[id].muzzle.worldPitchDeg>=aimPitch[id]+3.5,'aim='+aimPitch[id]+' release='+flash.actors[id].muzzle.worldPitchDeg);
     check(id+' action paused at release',flash.actors[id]?.actionPaused===true,JSON.stringify(flash.actors[id]));
     check(id+' action time at release',Math.abs(flash.actors[id]?.actionTime-release)<0.002,JSON.stringify(flash.actors[id]));
   }

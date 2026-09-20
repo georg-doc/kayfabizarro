@@ -1,58 +1,33 @@
-# CA2-02 · Return
+# CA2-02b · Return
 
-Status: **PUBLIC_VERIFIED · HUMAN OPEN**
+Status: **PITCH-TUNING CANDIDATE · BRANCH PROOF PENDING**
 
-## Goal/result
+## Human gate input
 
-Weapon / Grip / Muzzle / Release calibration for FrizzleBob Driver Graft and GothGirl, using the exact separate `Character_Gun.gltf` attachment and the real Rig_Medium CombatRanged clips.
+Georg accepted the basic fist/grip position but found Aim and Fire too high. Requested correction: keep the Frankenstein/Studio position, tip the separate gun forward/down a little, and do not build the future inline 3D gizmo into this calibration slice.
 
-Both actors share the same measured Rig_Medium `handslotr` socket/grip/muzzle profile within measurement precision. GothGirl therefore needs no actor-specific grip delta at this gate. Single-shot primary release is `0.150 s`; the later `0.883 s` rotational peak remains evidence only.
+## Bounded change
 
-## Exact source state
+- Studio base grip stays documented as `[-14, 77, 0]` in YXZ.
+- Human visual pitch delta: `-5°`.
+- Effective candidate: `[-19, 77, 0]`.
+- Same correction is applied explicitly to FrizzleBob Driver Graft and GothGirl.
+- Position offsets, yaw, roll, scale, hand socket, muzzle geometry, `0.150 s` primary release and Arena ownership are unchanged.
+- Locomotion optimization remains deferred.
+
+## Intended behavior
+
+- `Ranged_1H_Aiming`: muzzle should read approximately horizontal.
+- `Ranged_1H_Shoot` at `0.150 s`: animation may lift the muzzle above Aim as recoil.
+- Ballistics/projectile physics are still Arena-owned and are not added here.
+
+## Source
 
 - repo: `georg-doc/kayfabizarro`
 - branch: `chatgpt-web/ca2-02-ranged-calibration-2026-09-20`
-- source PR: `#135` — Draft, no auto-merge
-- final runtime revision: `a5e09d6744f4a26e63a5f7e706be8a631459d28d`
-- proofed branch head: `431723aa69316136aeeb0d7411d28846fe0d41da`
-- Hub/router source sync is included on the same branch.
-
-## Final evidence
-
-Workflow `35489658278`:
-- branch job `106022296749`: **55/55 PASS**, 0 failed resources, 0 page/console errors
-- branch artifact `10598448427` · `sha256:f1dc330364eaf77eb13b2b58634501f2be43582519dcbc125d0deb95acbfbda8`
-- public job `106022296782`: marker PASS · Hub/Stage navigation PASS · **55/55 PASS**
-- public artifact `10598651751` · `sha256:7f8140c90f84f2d7f528b27f431a0843ca5e408901057c027bef30f0bf8c7449`
-
-Public Stage:
-`https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/kaykit-ranged-calibration-v1/`
-
-Proofed publication:
-`cloudflare-live@cf15f612e6a700608564cadbded4302ba59b1af2`
-
-## Delivered
-
-- exact gun donor in isolation before integration;
-- full 20-clip CombatRanged inventory;
-- FB/GothGirl 1H Aim/Shoot/Reload comparison;
-- measured grip, muzzle position and muzzle forward direction;
-- deterministic Release Frame;
-- one scheduled single-shot release per actor at `0.150 s`;
-- measured common weapon profile in `WEAPON_PROFILES.json`;
-- KFB Hub, Stage navigator, central router, ToolBox entry and additive changelog source-sync on PR #135.
-
-## Retained owners
-
-Arena Player still owns movement/root/ground. Arena Gunfight still owns target selection, projectile spawn, damage and productive release state. Rewards/runflow/audio remain unchanged. No Combat Arena runtime file is edited.
-
-## Deferred
-
-- additional locomotion/phase optimizations;
-- 2H, Bow and Magic integration;
-- continuous-fire consumer semantics;
-- productive Arena Player/Gunfight integration.
+- runtime candidate: `d32b71d800a8d5ffc7c58828b1544e6d47731143`
+- PR: `#135` remains Draft.
 
 ## Next gate
 
-Georg reviews only grip/pose, muzzle direction and the `0.150 s` Release Frame. After acceptance WSA may consume `WEAPON_PROFILES.json`; productive integration remains WSA-owned.
+Branch browser measures Aim world pitch on both actors and compares it to Release-frame pitch. Only after that passes is this candidate mirrored to the fixed Cloudflare Stage.

@@ -4,10 +4,10 @@
   "slice": "CA2-02",
   "owner": "KFB ToolBox / weapon-motion calibration",
   "consumer": "georg-doc/KFB-Combat-Arena / WSA",
-  "status": "PUBLIC_VERIFIED_HUMAN_OPEN",
+  "status": "CA2_02B_BRANCH_PROOF_PENDING",
   "sourceRepo": "georg-doc/kayfabizarro",
   "sourceBranch": "chatgpt-web/ca2-02-ranged-calibration-2026-09-20",
-  "implementationHead": "a5e09d6744f4a26e63a5f7e706be8a631459d28d",
+  "implementationHead": "d32b71d800a8d5ffc7c58828b1544e6d47731143",
   "baseMain": "52532aee17f85324a6d04ab53150216f00ac5d89",
   "donors": {
     "motionLab": {
@@ -46,8 +46,8 @@
     "Arena rewards/runflow",
     "Arena audio"
   ],
-  "publicVerified": true,
-  "humanAcceptance": "PENDING",
+  "publicVerified": false,
+  "humanAcceptance": "PENDING_CA2_02B",
   "repairNote": "Deterministic release-frame seek plus explicit one-release scheduling for the single-shot clip.",
   "singleShotPolicy": {
     "clip": "Ranged_1H_Shoot",
@@ -65,32 +65,22 @@
     "url": "https://github.com/georg-doc/kayfabizarro/pull/135",
     "state": "DRAFT_OPEN"
   },
-  "branchProof": {
-    "run": 35489658278,
-    "job": 106022296749,
-    "checks": "55/55 PASS",
-    "failedResources": 0,
-    "pageConsoleErrors": 0,
-    "artifactId": 10598448427,
-    "artifactDigest": "sha256:f1dc330364eaf77eb13b2b58634501f2be43582519dcbc125d0deb95acbfbda8"
-  },
-  "publication": {
-    "branch": "cloudflare-live",
-    "proofedHead": "cf15f612e6a700608564cadbded4302ba59b1af2",
-    "stageUrl": "https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/kaykit-ranged-calibration-v1/",
-    "verifiedAt": "2026-09-20T04:40:04Z"
-  },
-  "publicProof": {
-    "run": 35489658278,
-    "job": 106022296782,
-    "marker": "PASS",
-    "hubStageNavigation": "PASS",
-    "checks": "55/55 PASS",
-    "failedResources": 0,
-    "pageConsoleErrors": 0,
-    "artifactId": 10598651751,
-    "artifactDigest": "sha256:7f8140c90f84f2d7f528b27f431a0843ca5e408901057c027bef30f0bf8c7449"
-  },
   "previewFxRepair": "Deterministic release-frame now records the primary marker as already fired before the manual calibration FX, preventing duplicate preview FX; release schedule unchanged at [0.150].",
-  "proofedBranchHead": "431723aa69316136aeeb0d7411d28846fe0d41da"
+  "proofedBranchHead": "431723aa69316136aeeb0d7411d28846fe0d41da",
+  "pitchTuning": {
+    "source": "Georg visual gate · screenshot 2026-09-20",
+    "studioBaseEulerDeg": [
+      -14,
+      77,
+      0
+    ],
+    "humanPitchDeltaDeg": -5,
+    "effectiveEulerDeg": [
+      -19,
+      77,
+      0
+    ],
+    "scope": "rotation only; offsets/yaw/roll/scale/muzzle geometry/release timing unchanged",
+    "intent": "near-horizontal standard aim; clip recoil remains upward"
+  }
 }
