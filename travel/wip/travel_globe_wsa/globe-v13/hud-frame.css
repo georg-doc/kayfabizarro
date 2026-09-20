@@ -1,0 +1,131 @@
+/* ============================================================================
+   hud-frame.css — Die Einfassung · v5 · Slice G
+   ----------------------------------------------------------------------------
+   ⚠ **Es gibt keine Platten mehr, und das ist die Vorgabe, nicht ein Rückbau aus Ratlosigkeit.**
+   Georg, 30.8., in zwei Zügen: erst „Metall-Rost war NIE die Idee", dann „die ganzen BG-Boxen
+   müssen weg". Slice G hatte einen Materialbegriff aus dem Living Doc (§05n) als HUD-Vorgabe
+   gelesen und daraus vier Kästen gebaut — zuerst Blech, dann Papier. Beide Male war der KASTEN
+   der Fehler, nicht seine Oberfläche: die vier Ecken lesen auf einem bewegten Globus schon durch
+   Tusche-Kontur und Schlagschatten, und ein Kasten dahinter nimmt dem Bild Fläche, ohne
+   Information hinzuzufügen.
+   **Was von Slice G bleibt, ist alles, was NICHT Oberfläche war:** die EINE Maßfamilie (drei
+   Zahlen, vier Ecken), die Tempo-Zahl in der Nabe, der Träger der Flug-Reaktion, die
+   Selbsttests. Das war der Auftrag aus dem Zielbild („harmonisiert bzgl. Größe & Flucht") —
+   und Flucht ist Geometrie, nicht Hintergrund.
+   Georg, 29.8. (Zielbild §S14): *„Würfel, Card-Stapel und Gear-Icon stellen zusammen mit der
+   Wortmarke eine gemeinsame Einfassung, die Elemente sind harmonisiert bzgl. Größe & Flucht."*
+
+   ⚠ **Warum diese Datei hier liegt und nicht in `themes/`.**
+   `themes/kfb-shell.css` ist von v3, v4 UND v5 verlinkt. Eine v5-Gestaltung dort wäre eine
+   Änderung an drei Versionen — genau die Falle, die in §05j als „geteilt und damit gefährlich"
+   benannt ist. Also: eigene Datei im eigenen Zweig, nach `kfb-shell.css` eingebunden, damit sie
+   gewinnt. Die geteilte Datei bleibt unberührt.
+
+   ── Die Maßfamilie ────────────────────────────────────────────────────────────────────────────
+   Das Zielbild nennt den Befund: „drei verschiedene Randabstände und zwei Grundlinien". Also gibt
+   es ab hier DREI Zahlen für alle vier Ecken, und sie stehen als Variablen — wer eine Ecke
+   verschiebt, verschiebt alle vier oder keine.
+
+   ============================================================================ */
+
+/* ⚠ **Die Variablen stehen auf :root, und das ist ein Befund, nicht Bequemlichkeit.**
+   Erste Fassung: `#tv-hud, #kfb-hud, #tv-frame`. Gemessen von der Abnahme: auf dem Zahnradknopf
+   lasen `--kfb-inset` und `--kfb-slot` **leer** — der Knopf lebt in `#kfb-ui`, einem
+   GESCHWISTER-Teilbaum, und Custom Properties erben nach unten, nicht seitwärts. Eine Variable,
+   die im falschen Teilbaum deklariert ist, ist keine Variable, sondern eine leere Zeichenkette
+   — und `var()` ohne Fallback macht daraus lautlos gar nichts. */
+:root {
+  /* Die drei Zahlen der Einfassung. Alles andere leitet sich ab. */
+  --kfb-inset: 16px;      /* Abstand zum Bildrand, alle vier Ecken */
+  --kfb-slot: 44px;       /* Kantenmaß eines Ecken-Elements (= Zahnrad-Breite) */
+  --kfb-base: 9px;        /* Grundlinie der Zahlen unten */
+}
+
+/* ⚠ **Hier standen 60 Zeilen Platten-CSS. Sie sind ersatzlos weg, und die Lücke ist der Punkt.**
+   `.kfb-plate` malte über `::before`/`::after` einen Kasten hinter jede Ecke: Fläche, Fase,
+   Stanzkante, vier eigene `clip-path`-Silhouetten. Georg, 30.8.: **„die ganzen BG-Boxen müssen
+   weg."** Die Klasse bleibt im Markup stehen (sie ist der Haken, an dem `hud-flight.js` die
+   vier Ecken findet) und ist ab jetzt **rein semantisch** — sie zeichnet nichts.
+   *Zwei Runden Oberfläche für ein Element, das keins hätte sein sollen: das ist der Preis dafür,
+   eine Formfrage aus einem alten Dokument statt aus dem Bild zu beantworten.*
+   Was die Ecken lesbar hält, hatte jede von ihnen schon vorher: Tusche-Kontur am Glyph und
+   Schlagschatten. Wird eine Ecke auf hellem Himmel unlesbar, ist die Antwort ein stärkerer
+   Schatten AM ZEICHEN — nicht ein Kasten dahinter. */
+.kfb-slot[data-slot='wordmark'] { position: relative; }
+
+/* ── Die vier Ecken auf EINE Maßfamilie ───────────────────────────────────────────────────────
+   Der Befund aus dem Zielbild, Zeile für Zeile behoben: das Zahnrad stand auf 14, der Rahmen auf
+   16/18, der Stapel auf 18, die Zahlen auf 9. Jetzt lesen alle vier `--kfb-inset` und
+   `--kfb-base`. */
+#tv-frame { padding: var(--kfb-inset) var(--kfb-inset); }
+/* ⚠ **Der Knopf heißt `#kfb-gear`, nicht `.gear`** — drei Regeln waren toter Text, und der
+   Befund wäre nie durch Ansehen aufgefallen: das Zahnrad stand weiter auf `top: 14px`, während
+   die anderen drei Ecken auf 16 gingen. Zwei Pixel. Genau die Zahl, die das Zielbild als Beispiel
+   für „nicht harmonisiert" genannt hat — und ich habe „behoben" ins Dokument geschrieben, ohne
+   den Selektor gegen das DOM zu prüfen.
+   *Eine CSS-Regel, die nichts trifft, ist die stillste Fehlerklasse dieses Projekts: kein
+   Fehler, keine Warnung, kein Unterschied im Bild, den man ohne Lineal sieht.* */
+#kfb-gear { top: var(--kfb-inset) !important; right: var(--kfb-inset) !important; }
+#kfb-hud .fan { right: var(--kfb-inset); bottom: calc(var(--kfb-base) + 9px); }
+#kfb-hud .count { right: var(--kfb-inset); bottom: var(--kfb-base); }
+#kfb-hud .pop { left: var(--kfb-inset); bottom: var(--kfb-base); }
+
+/* ⚠ **Die Diagnose-Marke, zweiter Anlauf — und der erste war eine Verschlechterung.**
+   Sie saß auf `left:14 bottom:12`, also **im Pop-Feld**, zwei Pixel daneben. Erster Versuch:
+   Mitte unten, „dort steht nichts“. Am Bild angesehen war das falsch: die Mitte unten ist die
+   **symmetrischste Stelle des Schirms**, und Symmetrie liest als Wichtigkeit — ein
+   Diagnose-Streifen wurde damit zur Bildunterschrift und stach die vier Ecken aus.
+   *Ein Element wegzuschieben ist keine Gestaltung, solange man nicht sagt, WOHIN und warum.*
+   Jetzt: bottom-left über der Pop-Platte, linksbündig, leise. Die Ecken behalten die Ecken,
+   die Marke bekommt ein Regal. (PM-49: erst ansehen, dann messen — hier hat das Ansehen
+   meinen ersten Zug widerlegt.) */
+/* ⚠ **Nur die Position, nicht die Sichtbarkeit.** Die erste Fassung setzte hier `opacity: .5`
+   und hat damit `#kfb-badge { opacity: 0 }` aus `settings-panel.js` überschrieben — die
+   Diagnose-Leiste stand ab Slice G dauerhaft im Bild, gegen „dezent verstecken/onHover"
+   (Georg, 28.8.). Ein Slice, der eine Kachel EINFASST, darf nicht entscheiden, ob sie
+   sichtbar ist. Deckkraft gehört dem Panel, Geometrie gehört der Einfassung. */
+#kfb-badge { left: var(--kfb-inset) !important; bottom: 46px !important;
+  transform: none; }
+
+/* ── Die Tempo-Zahl in der Nabe des Zahnrads ──────────────────────────────────────────────────
+   Zielbild: *„Tempo, dimensionslos, in der MITTE des Zahnrads"* — und im selben Dokument steht
+   die Bedingung, die die Bauform entscheidet: *„Die Tempozahl in der Gear … darf mitfahren,
+   nicht mitkippen. Der Rahmen bewegt sich, die Information nicht."*
+   Damit ist die Entscheidung getroffen und nicht geraten: **DOM-Label, nicht CanvasTexture auf
+   der Nabe.** Eine Textur auf der Nabe DREHT sich mit dem Zahnrad — genau das, was die Regel
+   verbietet — und müsste bei jeder Änderung neu gemalt werden (der Backlog nennt „auf 10/s
+   drosseln" als Preis). Das Label kostet nichts und bleibt aufrecht.
+   ⚠ **Und einmal hin und zurück, weil ich „über" falsch gelesen habe** (3.9.): ich hatte die Zahl
+   ins Band oberhalb des Zahnrads geschoben (`top: 1px`). Georgs Korrektur: „auf/über dem gear,
+   nicht darüber" — gemeint war überlagernd, wie es vorher stand. Also zurück auf die vertikale
+   Mitte des Knopfs. Merksatz für räumliche Ansagen: „über" ist im Deutschen zweideutig (auf vs.
+   oberhalb) — im Zweifel fragen, nicht raten. Klicks gehen weiter durch. */
+#kfb-gear-speed { position: absolute; z-index: 12; pointer-events: none;
+  width: var(--kfb-slot); text-align: center;
+  top: calc(var(--kfb-inset) + var(--kfb-slot) * 0.5 - 8px);
+  right: var(--kfb-inset);
+  font-family: 'Irish Grover', cursive; font-size: 14px; line-height: 1;
+  color: #f6efd9; letter-spacing: .02em;
+  text-shadow: 0 0 3px #1f1a14, 0 1px 0 #1f1a14, 0 2px 6px rgba(0,0,0,.75); }
+
+/* ── Der Träger der Flug-Reaktion ─────────────────────────────────────────────────────────────
+   ⚠ **EIN Schreiber je Element.** Die Wortmarke hat seit v3j eine CSS-Schleife auf `transform`
+   (`kfb-wm-float`, 11 s). Ein zweiter Schreiber aus JS auf demselben `transform` wäre
+   Fehlerklasse 1 in Reinform — und der Backlog hat genau davor gewarnt.
+   Lösung ohne Verhandlung: **ein Träger.** `.kfb-slot` ist ein zusätzliches Element; JS schreibt
+   dessen `transform`, die CSS-Schleife bleibt auf dem Kind. Zwei Elemente, zwei Eigentümer, kein
+   Konflikt — und die Schleife musste nicht angefasst werden.
+   Die Beträge kommen aus dem Backlog („maximal ±1,5° und ±4 px bei voller Schräglage") und aus
+   dem Zielbild („1–3° Rotation, 2–6 px Versatz, Squash ≤ 6 %"). */
+.kfb-slot { display: inline-block; will-change: transform; }
+
+/* Die Zahlen fahren mit, kippen aber nicht: sie hängen an der Platte, nicht am Träger. */
+#kfb-hud .count, #kfb-hud .pop .n, #kfb-gear-speed { transform-origin: 50% 50%; }
+
+/* v12 · Schweben (H): derselbe Zähler, eine Marke. Ein Modus, der das Tempo auf 0 fährt, muss
+   sichtbar sein — sonst hält man das Ausrollen für einen Fehler. Kein zweites Element: das wäre
+   ein zweiter Eigentümer für dieselbe Aussage.
+   ⚠ Das `HOVER`-Wörtchen unter der Zahl ist WEG: seit die Anzeige über dem Zahnrad steht, sind
+   dort nur noch 15 px, und eine zweite Zeile würde auf den Knopf lappen. Die Farbe trägt die
+   Aussage allein — und der Moduswechsel sagt sich beim Drücken ohnehin selbst an (`sagen`). */
+#kfb-gear-speed.schwebt { color: #7fe3ff; text-shadow: 0 0 10px rgba(127,227,255,.65); }

@@ -1,0 +1,97 @@
+{
+  "updated": "2026-07-23",
+  "gemessen_via": "Chrome-Durchgang durch das echte Repo (GitHub-Baum), nicht behauptet",
+  "repo_base": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/",
+  "note": "Pflegbare Wahrheit ueber den GitHub-Stand. WICHTIG: Der Browser markiert grün per EXAKTEM Pfad-Vergleich gegen den Live-GitHub-Baum (LIVE.has(a.path)). Katalog-Pfade sind LOKAL, GitHub-Pfade weichen ab -> ohne naming_map/ghPath bleibt es grau, auch wenn die Datei auf GitHub liegt. Diese Datei ist nur der Offline-Fallback; der echte Fix ist die naming_map unten + ein ghPath pro Asset.",
+  "legende": {
+    "github": "Ordner liegt im Repo (per Chrome am 23.07. im Baum gesehen)",
+    "github_nested": "im Repo, aber unter einem Unterpfad (siehe naming_map)",
+    "github_renamed": "im Repo unter ANDEREM Namen (siehe naming_map) - Hauptgrund fuer faelschlich graue Kacheln",
+    "local": "nicht im Repo-Top-Level gefunden = nur lokal",
+    "local_partial_on_git": "volles Kit nur lokal; auf GitHub liegt nur eine kleine Character-Teilmenge unter GLB_* (mini-arcade 2, mini-arena 1, mini-dungeon 2, mini-market 1, platformer 5). NICHT als voll gemappt.",
+    "absent": "von Georg frueher als hochgeladen genannt, am 23.07. im Repo NICHT vorhanden"
+  },
+  "packs": {
+    "Dice": "local",
+    "GLB_block_chars": "github",
+    "GLB_blocky_chars": "github",
+    "GLB_cube-pets": "github",
+    "GLB_graveyard": "github",
+    "GLB_hexagon_kit": "github",
+    "GLB_mini_arcade": "github",
+    "GLB_mini_arena": "github",
+    "GLB_mini_chars": "github",
+    "GLB_mini_dungeon": "github",
+    "GLB_mini_market": "github",
+    "GLB_pirate": "github",
+    "GLB_platformer": "github",
+    "Ultimate Monsters Bundle-glb": "github",
+    "_loose": "github",
+    "kenney_blocky-characters_20": "local",
+    "kenney_building-kit": "local",
+    "kenney_castle-kit": "local",
+    "kenney_city-kit-commercial_2.1": "absent",
+    "kenney_city-kit-industrial_1.0": "absent",
+    "kenney_city-kit-suburban_20": "absent",
+    "kenney_coaster-kit": "local",
+    "kenney_cube-pets_1.0": "github_renamed",
+    "kenney_factory-kit_3.0": "local",
+    "kenney_fantasy-town-kit_2.0": "github",
+    "kenney_furniture-kit": "local",
+    "kenney_graveyard-kit_5.0": "github_nested",
+    "kenney_hexagon-kit": "github_renamed",
+    "kenney_holiday-kit": "absent",
+    "kenney_mini-arcade": "local_partial_on_git",
+    "kenney_mini-arena": "local_partial_on_git",
+    "kenney_mini-characters": "github_renamed",
+    "kenney_mini-dungeon": "local_partial_on_git",
+    "kenney_mini-market": "local_partial_on_git",
+    "kenney_modular-buildings": "local",
+    "kenney_modular-cave-kit_1.0": "local",
+    "kenney_modular-dungeon-kit_1.0": "local",
+    "kenney_nature-kit": "github_nested",
+    "kenney_pirate-kit": "github_renamed",
+    "kenney_platformer-kit": "local_partial_on_git",
+    "kenney_prototype-kit": "local",
+    "kenney_survival-kit": "github_nested",
+    "kenney_tower-defense-kit": "local"
+  },
+  "naming_map": {
+    "hinweis": "Lokaler Katalog-Pack -> echter GitHub-Pfad-Praefix (Basename anhaengen). Diese Zuordnung ist am 23.07. per Dateinamen+Anzahl gegen den Repo-Baum verifiziert und liegt 1:1 als GH_PACKMAP in asset-browser.html.",
+    "voll_gemappt_verifiziert": {
+      "kenney_pirate-kit": { "github_prefix": "GLB_pirate/", "n": 72, "namen_exakt": true },
+      "kenney_cube-pets_1.0": { "github_prefix": "GLB_cube-pets/", "n": 24 },
+      "kenney_hexagon-kit": { "github_prefix": "GLB_hexagon_kit/", "n": 72 },
+      "kenney_mini-characters": { "github_prefix": "GLB_mini_chars/", "n": 26 },
+      "kenney_blocky-characters_20": { "github_prefix": "GLB_blocky_chars/", "n": 18 }
+    },
+    "schon_gruen_ohne_map_katalogpfad_gleich_github": {
+      "kenney_nature-kit": "kenney_nature-kit/Models/GLTF format/",
+      "kenney_graveyard-kit_5.0": "kenney_graveyard-kit_5.0/Models/GLB format/",
+      "kenney_survival-kit": "kenney_survival-kit/Models/GLB format/",
+      "kenney_fantasy-town-kit_2.0": "kenney_fantasy-town-kit_2.0/Models/GLB format/",
+      "GLB_*_und__loose": "flache GLB_-Packs + lose GLBs liegen 1:1 flach im Repo"
+    },
+    "NICHT_gemappt_nur_teilmenge_auf_git": {
+      "hinweis": "Volles Kit lokal; auf GitHub nur kleine Character-Teilmenge unter GLB_*. Nicht mappen.",
+      "kenney_mini-arcade": "lokal 20, GLB_mini_arcade nur 2",
+      "kenney_mini-arena": "lokal 22, GLB_mini_arena nur 1",
+      "kenney_mini-dungeon": "lokal 25, GLB_mini_dungeon nur 2",
+      "kenney_mini-market": "lokal 20, GLB_mini_market nur 1",
+      "kenney_platformer-kit": "lokal 153, GLB_platformer nur 5"
+    }
+  },
+  "unklar": {
+    "GLB format/": "Flacher Top-Level-Ordner im Repo mit Mittelalter-/Hex-Terrain (building-*, unit-*, path-*, river-*, water/sand/stone/grass). Kein Katalog-Pack sauber zugeordnet. Identitaet vs GLB_hexagon_kit klaeren, dann benennen."
+  },
+  "assets_github": [],
+  "auf_github_ausserhalb_dieses_katalogs": [
+    "GLB_cube-pets/ (Pets)", "kfb-pets.json + kfb-pets.js", "build/ Module",
+    "Textures/", "Sounds/", "Audio/", "skydome_a.webp + skydome_b.webp",
+    "KFB_Coin/Crown/PaperCard/OpenBook .glb", "3 Huete", "Ultimate Monsters Bundle",
+    "diverse lose Poly-Pizza-.glb im Wurzelverzeichnis"
+  ],
+  "nicht_im_repo_23_07": [
+    "kenney_holiday-kit", "kenney_city-kit-commercial", "kenney_city-kit-industrial", "kenney_city-kit-suburban"
+  ]
+}

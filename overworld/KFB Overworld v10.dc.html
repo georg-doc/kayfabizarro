@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+<template id="__bundler_thumbnail">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="#47aba9"/><g fill="#e8d38a" font-family="Georgia,serif" font-weight="700" text-anchor="middle"><text x="50" y="58" font-size="30">KFB</text><text x="50" y="72" font-size="7.5" letter-spacing="1.6" fill="#0e3d3c">OVERWORLD</text></g></svg>
+</template>
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>
+/* v10-S3b · Blasenschrift »PottyMouth BB« (Blambot, von Georg gekauft — Live-Lizenz noch offen,
+   intern zum Ansehen). Fällt sie aus, zeichnet mob-ai.js in Monospace weiter. */
+@font-face{font-family:"PottyMouth BB";src:url("./overworld/fonts/pottymouthbb_reg.otf") format("opentype");font-display:swap}
+html,body{margin:0;height:100%;overflow:hidden;background:#47aba9}
+a{color:#0e3d3c}a:hover{color:#000}
+</style>
+<script src="./overworld/asset-source.js"></script>
+<script src="./overworld/units-catalog.js"></script>
+<script src="./overworld/unit-loader.js"></script>
+<script src="./overworld/hero-frames.js"></script>
+<script src="./overworld/kayfabe-abilities.js"></script>
+<script src="./overworld/audio-2d.js"></script>
+<script src="./overworld/journey.js"></script>
+<script src="./overworld/narrator-2d.js"></script>
+<script src="./overworld/factions.js"></script>
+<script src="./overworld/cartoon-motion-2d.js"></script>
+<script src="./overworld/shadow-2d.js"></script>
+<script src="./overworld/card-ink-2d.js"></script>
+<script src="./overworld/card-backs.js"></script>
+<script src="./overworld/card-art-2d.js"></script>
+<script src="./overworld/reveal-2d.js"></script>
+<script src="./overworld/cursors-2d.js"></script>
+<script src="./overworld/anim-clock.js"></script>
+<script src="./overworld/game-feel.js"></script>
+<script src="./overworld/dungeon-2d.js"></script>
+<script src="./overworld/identity.js"></script>
+<script src="./overworld/chatter-phrases.js"></script>
+<script src="./overworld/chatter-2d.js"></script>
+<script src="./overworld/rss-2d.js"></script>
+<script src="./overworld/bubble-ts.js"></script>
+<script src="./overworld/zone-story.js"></script>
+<script src="./overworld/mob-ai.js"></script>
+<script src="./overworld/bench.js"></script>
+<script src="./overworld/spot-probe.js"></script>
+<script src="./overworld/relief.js"></script>
+<script src="./overworld/ground-paint.js"></script>
+<script src="./overworld/ground-band.js"></script>
+<script src="./overworld/skyshade-2d.js"></script>
+<script src="./overworld/gutter-2d.js"></script>
+<script src="./overworld/prop-sheet.js"></script>
+<script src="./overworld/contact-shadow.js"></script>
+<script src="./overworld/puddles.js"></script>
+<script src="./overworld/rubber-coast.js"></script>
+<script src="./overworld/terrain-paint.js"></script>
+<script src="./overworld/hud-skin.js"></script>
+<script src="./overworld/kfb-paper-atlas.js"></script>
+<script src="./overworld/hud-v7.js"></script>
+
+<script src="./overworld/roster-sheet.js"></script>
+</helmet>
+<x-import component-from-global-scope="overworld-game" loot="{{lootStyle}}" from="./overworld/overworld-game-v10.js" seed="{{seed}}" hero="{{heroUnit}}" hero-color="{{heroColor}}" zoom="{{zoom}}" town-color="{{townColor}}" world-size="{{worldSize}}" zones="{{zones}}" sound="{{sound}}" layout="{{layout}}" ground="{{ground}}" life="{{life}}" terrain="{{terrain}}" shade="{{shade}}" fluid="{{fluid}}" waber="{{waber}}" waber-props="{{waberProps}}" coast-ink="{{coastInk}}" relief-tex="{{reliefTex}}" relief="{{relief}}" hud-skin="{{hudSkin}}" prop-sheet="{{propSheet}}" prop-grid="{{propGrid}}" shadow="{{shadow}}" puddles="{{puddles}}" render-scale="{{renderScale}}" bubble-font="{{bubbleFont}}" chatter="{{chatter}}" style="position:fixed;inset:0" hint-size="100%,100%"></x-import>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;bubbleFont&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;default&quot;:&quot;potty&quot;,&quot;options&quot;:[&quot;potty&quot;,&quot;mono&quot;],&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Talk&quot;},&quot;chatter&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;default&quot;:&quot;on&quot;,&quot;options&quot;:[&quot;on&quot;,&quot;off&quot;],&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Talk&quot;},&quot;renderScale&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;default&quot;:&quot;1&quot;,&quot;options&quot;:[&quot;1&quot;,&quot;0.75&quot;,&quot;0.5&quot;],&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Ground&quot;},&quot;puddles&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;default&quot;:&quot;on&quot;,&quot;options&quot;:[&quot;on&quot;,&quot;off&quot;],&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Props&quot;},&quot;shadow&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;default&quot;:&quot;contact&quot;,&quot;options&quot;:[&quot;contact&quot;,&quot;ellipse&quot;,&quot;off&quot;],&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Props&quot;},&quot;propSheet&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;default&quot;:&quot;mix&quot;,&quot;options&quot;:[&quot;mix&quot;,&quot;sheet&quot;,&quot;tiny&quot;],&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Props&quot;},&quot;propGrid&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;default&quot;:&quot;smooth&quot;,&quot;options&quot;:[&quot;smooth&quot;,&quot;pixel&quot;,&quot;both&quot;],&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Props&quot;},&quot;terrain&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;default&quot;:&quot;paint&quot;,&quot;options&quot;:[&quot;paint&quot;,&quot;band&quot;,&quot;tiles&quot;],&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Ground&quot;},&quot;shade&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;default&quot;:&quot;off&quot;,&quot;options&quot;:[&quot;on&quot;,&quot;stark&quot;,&quot;off&quot;],&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Ground&quot;},&quot;fluid&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;default&quot;:&quot;wasser&quot;,&quot;options&quot;:[&quot;wasser&quot;,&quot;bubblegum&quot;,&quot;oel&quot;,&quot;saeure&quot;],&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Ground&quot;},&quot;waber&quot;:{&quot;editor&quot;:&quot;range&quot;,&quot;default&quot;:4.5,&quot;min&quot;:0,&quot;max&quot;:10,&quot;step&quot;:0.5,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Ground&quot;},&quot;waberProps&quot;:{&quot;editor&quot;:&quot;range&quot;,&quot;default&quot;:0.45,&quot;min&quot;:0,&quot;max&quot;:1,&quot;step&quot;:0.05,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Ground&quot;},&quot;coastInk&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;default&quot;:&quot;feather&quot;,&quot;options&quot;:[&quot;feather&quot;,&quot;hard&quot;,&quot;off&quot;],&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Ground&quot;},&quot;relief&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;default&quot;:&quot;bevel&quot;,&quot;options&quot;:[&quot;bevel&quot;,&quot;off&quot;],&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Ground&quot;},&quot;reliefTex&quot;:{&quot;editor&quot;:&quot;range&quot;,&quot;default&quot;:0.55,&quot;min&quot;:0,&quot;max&quot;:1,&quot;step&quot;:0.05,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Ground&quot;},&quot;hudSkin&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;default&quot;:&quot;v7&quot;,&quot;options&quot;:[&quot;v7&quot;,&quot;v6&quot;],&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;HUD&quot;},&quot;ground&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Ground&quot;},&quot;life&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;default&quot;:&quot;subtle&quot;,&quot;options&quot;:[&quot;off&quot;,&quot;subtle&quot;,&quot;full&quot;],&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Ground&quot;},&quot;seed&quot;:{&quot;editor&quot;:&quot;int&quot;,&quot;default&quot;:7,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;World&quot;},&quot;worldSize&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;default&quot;:&quot;large&quot;,&quot;options&quot;:[&quot;small&quot;,&quot;medium&quot;,&quot;large&quot;,&quot;huge&quot;],&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;World&quot;},&quot;layout&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;default&quot;:&quot;utopia&quot;,&quot;options&quot;:[&quot;utopia&quot;,&quot;noise&quot;],&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;World&quot;},&quot;zones&quot;:{&quot;editor&quot;:&quot;range&quot;,&quot;default&quot;:6,&quot;min&quot;:2,&quot;max&quot;:12,&quot;step&quot;:1,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;World&quot;},&quot;townColor&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;default&quot;:&quot;Blue&quot;,&quot;options&quot;:[&quot;Blue&quot;,&quot;Red&quot;,&quot;Yellow&quot;,&quot;Purple&quot;],&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;World&quot;},&quot;heroUnit&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;default&quot;:&quot;random&quot;,&quot;options&quot;:[&quot;random&quot;,&quot;warrior&quot;,&quot;archer&quot;,&quot;pawn&quot;,&quot;frizzlebob&quot;,&quot;rogue&quot;,&quot;knight&quot;,&quot;mage&quot;,&quot;torch_goblin_ep&quot;,&quot;spear_goblin&quot;,&quot;hex_shaman&quot;,&quot;pig_rider&quot;,&quot;pig&quot;,&quot;bear&quot;,&quot;lizard&quot;,&quot;snake&quot;,&quot;spider&quot;,&quot;turtle&quot;,&quot;gnoll&quot;,&quot;gnome&quot;,&quot;panda&quot;,&quot;skull&quot;,&quot;thief&quot;,&quot;bomb_fish&quot;,&quot;harpoon_shark&quot;,&quot;paddle_shark&quot;,&quot;minotaur&quot;,&quot;troll&quot;,&quot;sheep&quot;],&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Hero&quot;},&quot;heroColor&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;default&quot;:&quot;Blue&quot;,&quot;options&quot;:[&quot;Blue&quot;,&quot;Red&quot;,&quot;Yellow&quot;,&quot;Purple&quot;],&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Hero&quot;},&quot;zoom&quot;:{&quot;editor&quot;:&quot;range&quot;,&quot;default&quot;:1,&quot;min&quot;:0.5,&quot;max&quot;:1.4,&quot;step&quot;:0.05,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;World&quot;},&quot;sound&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;World&quot;},&quot;lootStyle&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;default&quot;:&quot;pen&quot;,&quot;options&quot;:[&quot;pen&quot;,&quot;chest&quot;],&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;World&quot;}}">
+class Component extends DCLogic {
+  renderVals(){
+    return {
+      seed: this.props.seed ?? 7,
+      heroUnit: this.props.heroUnit ?? 'random',
+      heroColor: this.props.heroColor ?? 'Blue',
+      zoom: this.props.zoom ?? 1,
+      townColor: this.props.townColor ?? 'Blue',
+      worldSize: this.props.worldSize ?? 'large',
+      zones: this.props.zones ?? 6,
+      sound: (this.props.sound ?? true) ? 'true' : 'false',
+      layout: this.props.layout ?? 'utopia',
+      lootStyle: this.props.lootStyle ?? 'pen',
+      ground: (this.props.ground ?? true) ? 'true' : 'false',
+      life: this.props.life ?? 'subtle',
+      terrain: this.props.terrain ?? 'paint',
+      shade: this.props.shade ?? 'off',
+      fluid: this.props.fluid ?? 'wasser',
+      waber: String(this.props.waber ?? 4.5),
+      waberProps: String(this.props.waberProps ?? 0.45),
+      coastInk: this.props.coastInk ?? 'feather',
+      relief: this.props.relief ?? 'bevel',
+      reliefTex: String(this.props.reliefTex ?? 0.55),
+      hudSkin: this.props.hudSkin ?? 'v7',
+      propSheet: this.props.propSheet ?? 'mix',
+      propGrid: this.props.propGrid ?? 'smooth',
+      shadow: this.props.shadow ?? 'contact',
+      puddles: this.props.puddles ?? 'on',
+      renderScale: String(this.props.renderScale ?? 1),
+      bubbleFont: this.props.bubbleFont ?? 'potty',
+      chatter: this.props.chatter ?? 'on',
+    };
+  }
+}
+</script>
+</body>
+</html>

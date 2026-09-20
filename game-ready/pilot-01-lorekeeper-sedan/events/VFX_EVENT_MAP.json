@@ -1,0 +1,34 @@
+{
+  "schema": "kfb.vfx-event-map.v0",
+  "packageId": "pilot-01-lorekeeper-sedan",
+  "events": {
+    "vehicle.boost.start": {
+      "anchor": {
+        "type": "derived-rear-center",
+        "status": "PROPOSAL_REQUIRES_CHASSIS_VALIDATION"
+      },
+      "owner": "existing VFX/presentation consumer"
+    },
+    "vehicle.drift.loop": {
+      "anchors": [
+        "car_sedan_wheel_rear_left",
+        "car_sedan_wheel_rear_right"
+      ],
+      "intensityDriver": "authoritative drift/slip facts"
+    },
+    "vehicle.regrip": {
+      "anchors": [
+        "car_sedan_wheel_rear_left",
+        "car_sedan_wheel_rear_right"
+      ]
+    },
+    "vehicle.landing": {
+      "anchor": "vehicle chassis/root",
+      "intensityDriver": "landingImpulse"
+    },
+    "vehicle.impact": {
+      "anchor": "vehicle chassis/root",
+      "directionDriver": "impactSide"
+    }
+  }
+}

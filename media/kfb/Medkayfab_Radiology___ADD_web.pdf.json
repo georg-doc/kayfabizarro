@@ -1,0 +1,599 @@
+{
+  "sourceFile": "Medkayfab_Radiology - ADD web.pdf",
+  "deckTitle": "MedKayfab: Radiology ADD",
+  "deckType": "Medical imaging education deck",
+  "bundleSuggestion": "TBD",
+  "pageCount": 15,
+  "analysisVersion": 1.0,
+  "generatedAt": "2026-06-20T18:35:17",
+  "savedAt": "2026-06-20T18:35:17",
+  "extractionTool": "cowork_task_v3",
+  "RAF": false,
+  "gradingMode": "educational",
+  "deckFunction": [
+    "educational",
+    "mnemonic"
+  ],
+  "seriesId": "medkayfab",
+  "cards": [
+    {
+      "cardNumber": 1,
+      "cardName": "Roentgen-Ray",
+      "grade": 1,
+      "power": "The Density-Mapper. Ray shoots through the body; bones stop him (White), air lets him fly (black); everything else is grey.",
+      "lore": "Calcium or Bone is a Heavy Hitter that blocks the beam, creating the shadow-silhouette.",
+      "gradeReason": "Instant embodiment — you ARE the X-ray beam blasting through flesh.",
+      "artworkPrompt": "Style: Kayfabizarro wrestler card. Subject: Charging bull skeleton glowing white on X-ray film. Mood: Primal, illuminating."
+    },
+    {
+      "cardNumber": 2,
+      "cardName": "Hounsfield-the-Hunter",
+      "grade": 1,
+      "power": "The Slice-and-Dice. Hunter spins, creating 3D volumes that can be sliced in any direction.",
+      "lore": "X-Ray Attenuation calculates precise density. Distinguishes Fresh-Blood (+80 HU) from Simple-Fluid (0 HU).",
+      "gradeReason": "Spinning hunter persona is immediately performable. HU as battle stats — genius.",
+      "artworkPrompt": "Style: Kayfabizarro monster card. Subject: Rhinoceros centaur spinning CT gantry, slicing anatomy into luminous cross-sections. Mood: Relentless, precise."
+    },
+    {
+      "cardNumber": 3,
+      "cardName": "Echo-the-Sonar",
+      "grade": 1,
+      "power": "The Bounce-Back. Fluid is Black (Silent), Bone is White-Noisy (Hyperechoic).",
+      "lore": "Based on Acoustic Impedance. Watches the Heart Pump in real-time without hurting it.",
+      "gradeReason": "Echolocating bat bouncing sound — zero friction, anyone can play this.",
+      "artworkPrompt": "Style: Kayfabizarro nature card. Subject: Cartoon bat sending sound-wave rings through pulsing heart, fluid black and bone white. Mood: Gentle, real-time."
+    },
+    {
+      "cardNumber": 4,
+      "cardName": "Mag-the-Magnet",
+      "grade": 1,
+      "power": "The Proton-Spinner. Mag makes the body's Water-Protons dance to his magnetic rhythm.",
+      "lore": "Unlocks Soft-Tissue Secrets. Sees the nerves and ligaments that Roentgen-Ray completely misses.",
+      "gradeReason": "Magnetic fox making protons dance — pure performative gold. Best card in deck.",
+      "artworkPrompt": "Style: Kayfabizarro elemental card. Subject: Electric fox surrounded by spinning water-proton aurora, rainbow soft-tissue secrets emerging. Mood: Mysterious, powerful."
+    },
+    {
+      "cardNumber": 5,
+      "cardName": "Silhouette-Sid",
+      "grade": 2,
+      "power": "The Boundary-Blur. Tells you exactly which Lobe-Lobby is full of fluid.",
+      "lore": "You only see a border when Air meets Water. If Water meets Water, the line is erased.",
+      "gradeReason": "Clear concept but needs table context to perform the 'disappearing border' move.",
+      "artworkPrompt": "Style: Kayfabizarro ghost card. Subject: Bear silhouette dissolving where fluid meets fluid, lung lobe border erasing. Mood: Eerie, diagnostic."
+    },
+    {
+      "cardNumber": 6,
+      "cardName": "Kerley-the-Lines",
+      "grade": 1,
+      "power": "The Fluid-Ladder. When the Heart-Pump fails, Lymphatic-Drains overflow, drawing rungs on the ladder.",
+      "lore": "Thickened interlobular septa. The first sign the lungs are becoming a Swamp.",
+      "gradeReason": "Frog on a ladder of overflowing lymphatics — immediate and visual.",
+      "artworkPrompt": "Style: Kayfabizarro swamp card. Subject: Frog climbing flooded lung ladder, horizontal rungs drawn by drowning lymphatics. Mood: Ominous, early-warning."
+    },
+    {
+      "cardNumber": 7,
+      "cardName": "Wedge-the-Infarct",
+      "grade": 2,
+      "power": "The Dead-Zone. The PE-Phantom blocks an artery; a wedge of tissue dies and turns white.",
+      "lore": "Ischemic necrosis of parenchyma. Revealed by a Filling Defect in the pipe on CT-Angio.",
+      "gradeReason": "Dead-Zone is vivid but Hampton's Hump wedge needs PE context to click.",
+      "artworkPrompt": "Style: Kayfabizarro horror card. Subject: Wolf phantom blocking lung artery, wedge of dead white tissue spreading below. Mood: Fatal, silent."
+    },
+    {
+      "cardNumber": 8,
+      "cardName": "Air-Broncho-Bill",
+      "grade": 2,
+      "power": "The Tubule-Glow. Shows the Air-Pipes running through a solid Infection-Block.",
+      "lore": "Proof that Alveolar-Balloons are full of pus, but Airway-Tunnels remain open.",
+      "gradeReason": "Glowing airways in pus-block is clear once you see it, but needs X-ray context.",
+      "artworkPrompt": "Style: Kayfabizarro infection card. Subject: Badger charging through solid white lung block, air bronchi glowing as tunnels of light. Mood: Stubborn, illuminating."
+    },
+    {
+      "cardNumber": 9,
+      "cardName": "Rigler-the-Double-Wall",
+      "grade": 1,
+      "power": "The Leak-Detector. Appears when a pipe pops, letting air escape into the belly.",
+      "lore": "Normally you only see the inside. If you see the outside too, there is Free-Air-Frenzy.",
+      "gradeReason": "Double wall = double trouble. Anyone sees the outside, they know the pipe popped.",
+      "artworkPrompt": "Style: Kayfabizarro plumbing card. Subject: Infinity-loop serpent bowel both walls outlined, free air escaping into darkened belly cavity. Mood: Urgent, surgical."
+    },
+    {
+      "cardNumber": 10,
+      "cardName": "Coffee-Bean-Carl",
+      "grade": 1,
+      "power": "The Twist-Indicator. Shows exactly where the colon has a Twisted-Spaghetti Obstruction.",
+      "lore": "A closed-loop surgical emergency. If not untwisted, it becomes Necrosis-Nick.",
+      "gradeReason": "Walrus coffee-bean colon is absurd and perfect. Emergency stakes are crystal clear.",
+      "artworkPrompt": "Style: Kayfabizarro grotesque card. Subject: Bloated walrus-seal colon twisted coffee-bean shape, surgical emergency red alarm flashing. Mood: Tragicomic, urgent."
+    },
+    {
+      "cardNumber": 11,
+      "cardName": "Sentinel-the-Loop",
+      "grade": 1,
+      "power": "The Crime-Scene-Pointer. Stays perfectly still and bloated, pointing at the Inflammation-Riot.",
+      "lore": "Localized paralysis of the gut caused by nearby Cytokine-Chaos.",
+      "gradeReason": "Bloated sloth sentinel refusing to move — instantly playable, unforgettable.",
+      "artworkPrompt": "Style: Kayfabizarro detective card. Subject: Sloth sentinel standing motionless, single bloated bowel loop pointing accusingly toward hidden inflammation. Mood: Still, ominous."
+    },
+    {
+      "cardNumber": 12,
+      "cardName": "String-Sign-Steve",
+      "grade": 2,
+      "power": "The Stricture-Signal. Shows where chronic inflammation turns the Gut-Highway into a Narrow-Thread.",
+      "lore": "Transmural scarring and spasm. If the thread completely breaks, a Fistula forms.",
+      "gradeReason": "Thread highway is clear but Crohn's-specific context needed for full performance.",
+      "artworkPrompt": "Style: Kayfabizarro disease card. Subject: Worm narrowing into single thread, gut highway barely passable, fistula crack forming. Mood: Chronic, relentless."
+    },
+    {
+      "cardNumber": 13,
+      "cardName": "Midline-Mitch",
+      "grade": 2,
+      "power": "The Brain-Bully. Occurs when a Brain-Bleed pushes the whole brain-center to one side.",
+      "lore": "The skull is a Fixed-Box. If Mitch pushes too hard, he causes Herniation-Harry — the total system crash.",
+      "gradeReason": "Brain-bully gorilla is vivid but the fixed-box skull mechanic needs explaining first.",
+      "artworkPrompt": "Style: Kayfabizarro neuro card. Subject: Gorilla fist pushing brain center sideways, septum pellucidum shifting toward herniation. Mood: Relentless, catastrophic."
+    },
+    {
+      "cardNumber": 14,
+      "cardName": "Crescent-Chris",
+      "grade": 1,
+      "power": "The Slow-Squeeze. A Venous-Leak that slowly wraps around the brain like a creeping shadow.",
+      "lore": "Tearing of Bridging-Veins. Common in Elderly-Wrestling after a minor Tumble.",
+      "gradeReason": "Crescent shadow creeping — slow, sinister, you feel the slow squeeze immediately.",
+      "artworkPrompt": "Style: Kayfabizarro shadow card. Subject: Sloth blood crescent wrapping elderly brain, concave shadow crossing sutures. Mood: Slow, insidious."
+    },
+    {
+      "cardNumber": 15,
+      "cardName": "Lemon-Lenny",
+      "grade": 1,
+      "power": "The High-Pressure-Punch. An Arterial-Burst building fast, punching a sharp lens-shape.",
+      "lore": "Tearing of Middle Meningeal-Artery. Features a Lucid-Interval before total blackout.",
+      "gradeReason": "Ram punching a lens-shaped hematoma fast — you ARE the arterial burst.",
+      "artworkPrompt": "Style: Kayfabizarro impact card. Subject: Ram headbutt creating convex lemon lens hematoma, arterial blood building at speed. Mood: Fast, explosive."
+    },
+    {
+      "cardNumber": 16,
+      "cardName": "FLAIR-the-Light",
+      "grade": 2,
+      "power": "The Edema-Finder. Turns off the White-Noise of normal CSF so only Inflammation-Fluid glows.",
+      "lore": "Essential for spotting MS-the-Plaque-Maker or Stroke-Steve.",
+      "gradeReason": "Silencing CSF noise to reveal MS plaques — needs MRI literacy to embody.",
+      "artworkPrompt": "Style: Kayfabizarro dark-scanner card. Subject: Black wolf in MRI cave, CSF noise cancelled, only inflammation glowing bright white. Mood: Revealing, silent."
+    },
+    {
+      "cardNumber": 17,
+      "cardName": "Gadolinium-Garry",
+      "grade": 1,
+      "power": "The Barrier-Breaker. Only shows up where the Blood-Brain-Barrier is broken by Tumor-Max.",
+      "lore": "Garry makes things Bright-White on T1. If it glows, it's growing or it's angry.",
+      "gradeReason": "Glows where barriers break — if it lights up, it's bad news. Immediate.",
+      "artworkPrompt": "Style: Kayfabizarro contrast card. Subject: Silver fox piercing blood-brain barrier, tumor glowing white-hot on T1. Mood: Electric, revelatory."
+    },
+    {
+      "cardNumber": 18,
+      "cardName": "Iodine-the-Ion",
+      "grade": 1,
+      "power": "The Vessel-Painter. Iodine turns blood into White-Flowing-Lava on a CT scan.",
+      "lore": "Finds Hank-the-Hemorrhage or Clot-the-Blocker. Caveat: Watch out for the kidneys!",
+      "gradeReason": "Painting blood into lava-white rivers — beautiful, immediately playable persona.",
+      "artworkPrompt": "Style: Kayfabizarro contrast card. Subject: Octopus painting CT vessel tree white-lava, kidneys glowing warning-red in corner. Mood: Vivid, urgent."
+    },
+    {
+      "cardNumber": 19,
+      "cardName": "Barium-the-Bulwark",
+      "grade": 2,
+      "power": "The Gut-Coater. Barium paints the Digestive-Tunnel lining, revealing Percy-the-Ulcer.",
+      "lore": "High density allows for Double-Contrast (Air + Barium) to see incredibly fine surface detail.",
+      "gradeReason": "Chalk-coating the gut is clear but double-contrast technique needs demonstration.",
+      "artworkPrompt": "Style: Kayfabizarro chalk-coat card. Subject: Hippo painting gut walls chalky-white, ulcer revealed by double-contrast air-barium study. Mood: Thorough, revealing."
+    },
+    {
+      "cardNumber": 20,
+      "cardName": "Nephro-the-Reaction",
+      "grade": 2,
+      "power": "The Kidney-Stunner. Nephro strikes when Iodine-the-Ion is too harsh on the Renal-Tubes.",
+      "lore": "Prevented by Fluid-Flooding before the scan. High-risk for Diabetes-Dan.",
+      "gradeReason": "Kidney stunner is vivid but the prevention mechanic adds needed clinical context.",
+      "artworkPrompt": "Style: Kayfabizarro complication card. Subject: Cartoon kidneys recoiling from iodine overload, creatinine spike graph red warning 24-48h. Mood: Reactive, cautionary."
+    },
+    {
+      "cardNumber": 21,
+      "cardName": "Scottie-the-Dog",
+      "grade": 2,
+      "power": "The Spine-Snap. Shows a stress-fracture in the Pars-Interarticularis.",
+      "lore": "Common in Gymnast-and-Wrestler athletes who ask their backs too much.",
+      "gradeReason": "Broken-neck Scottie dog is a great mnemonic but only clicks once you've seen the sign.",
+      "artworkPrompt": "Style: Kayfabizarro skeleton card. Subject: Scottie dog spine oblique view, pars interarticularis 'neck' cracked, athlete backstory visible. Mood: Fragile, overloaded."
+    },
+    {
+      "cardNumber": 22,
+      "cardName": "Fat-Pad-Fred",
+      "grade": 2,
+      "power": "The Hidden-Blood-Detector. Shows the Shadow-of-Blood even if the fracture is invisible.",
+      "lore": "Blood filling the joint capsule physically pushes the normal fat pads out of their hiding spots.",
+      "gradeReason": "Fat pads pushed by blood is clever but needs X-ray orientation to perform.",
+      "artworkPrompt": "Style: Kayfabizarro hidden-clue card. Subject: Kangaroo elbow sail sign fat pad displaced by blood, invisible fracture lurking beneath. Mood: Subtle, revealing."
+    },
+    {
+      "cardNumber": 23,
+      "cardName": "Step-off-the-Joint",
+      "grade": 1,
+      "power": "The Staircase-Sign. Shows exactly where a joint has Slipped-the-Gears.",
+      "lore": "A stark indicator of Ligament-Laceration or unstable, sliding fractures.",
+      "gradeReason": "Staircase step-off — you feel the joint slipping gears immediately. No setup needed.",
+      "artworkPrompt": "Style: Kayfabizarro fracture card. Subject: Mountain goats locking horns, joint surfaces misaligned in visible staircase step, ligaments torn. Mood: Sharp, unstable."
+    },
+    {
+      "cardNumber": 24,
+      "cardName": "Sunburst-the-Sarcoma",
+      "grade": 1,
+      "power": "The Bone-Explosion. Malignant-Max Tumor grows so fast it blasts through the bone-armor.",
+      "lore": "The bone tries to build new periosteum armor but fails, leaving radiating Sunray-Spikes.",
+      "gradeReason": "Bone exploding into sunburst spikes — grotesque, vivid, zero ambiguity.",
+      "artworkPrompt": "Style: Kayfabizarro malignant card. Subject: Porcupine bone tumor erupting sunray periosteal spikes, failed armor shredding outward. Mood: Explosive, malignant."
+    },
+    {
+      "cardNumber": 25,
+      "cardName": "Shadow-the-Stone",
+      "grade": 1,
+      "power": "The Gallstone-Guard. Cathy-the-Gallstone is so hard that zero sound waves can pass through.",
+      "lore": "Sound is reflected 100% by the surface, leaving the area behind it absolutely Silent-and-Black.",
+      "gradeReason": "Zero sound through stone — perfect physical logic, plays itself at any table.",
+      "artworkPrompt": "Style: Kayfabizarro acoustic card. Subject: Turtle gallstone casting total dark shadow, zero sound penetrating, black void below. Mood: Absolute, impenetrable."
+    },
+    {
+      "cardNumber": 26,
+      "cardName": "Comet-the-Tail",
+      "grade": 2,
+      "power": "The Metal-Finder. Appears when sound hits a rigid Needle or a Stent.",
+      "lore": "Sound bounces back and forth infinitely inside the metal, confusing the machine into seeing a long Tail.",
+      "gradeReason": "Reverberation artifact needs ultrasound physics context before it clicks for players.",
+      "artworkPrompt": "Style: Kayfabizarro artifact card. Subject: Swordfish trailing comet-tail echoes from metal stent, infinite reverb confusion. Mood: Chaotic, metallic."
+    },
+    {
+      "cardNumber": 27,
+      "cardName": "Doppler-the-Drifter",
+      "grade": 1,
+      "power": "The Flow-Meter. Shows if blood is blasting Toward (Red) or away (Blue) from the Pipe-Highway or stalled by a clot.",
+      "lore": "Remember BART: Blue Away, Red Toward. Essential for tracking down Doris-the-DVT.",
+      "gradeReason": "BART mnemonic baked into the card. Red toward, blue away — instant recall.",
+      "artworkPrompt": "Style: Kayfabizarro flow card. Subject: Colorful fish streaming red toward and blue away in vessel highway, Doris-DVT lurking. Mood: Dynamic, color-coded."
+    },
+    {
+      "cardNumber": 28,
+      "cardName": "Sludge-the-Sediment",
+      "grade": 2,
+      "power": "The Stagnant-Pool. Sludge is the Pre-Stone-Thickening of bile that slowly shifts with gravity.",
+      "lore": "Micro-crystals and heavy mucus settling quietly at the absolute bottom of the Biliary-Bucket.",
+      "gradeReason": "Quietly settling sludge is accurate but lacks the urgency that makes a card pop.",
+      "artworkPrompt": "Style: Kayfabizarro sediment card. Subject: Toad at bottom of gallbladder, bile sludge gravity-settling, micro-crystals forming pre-stone layer. Mood: Slow, accumulating."
+    },
+    {
+      "cardNumber": 29,
+      "cardName": "Hot-Spot-the-Isotope",
+      "grade": 1,
+      "power": "The Repair-Radar. Glows bright wherever Bone-Builders are working overtime to fix damage.",
+      "lore": "Excellent for sniffing out Mitch-the-Metastasis long before he shows up on a standard Roentgen-Ray.",
+      "gradeReason": "Glowing wherever bone-builders hustle — whole-body radar, vivid and performative.",
+      "artworkPrompt": "Style: Kayfabizarro nuclear card. Subject: Flaming skeleton glowing hot-spots at metastasis sites, repair-builders visible, Roentgen-Ray standing blind. Mood: Anticipatory, early."
+    },
+    {
+      "cardNumber": 30,
+      "cardName": "Cold-Node-the-Void",
+      "grade": 1,
+      "power": "The Cancer-Crate. A Cold-Node isn't making hormone. In ENT, this is highly suspicious.",
+      "lore": "Hot-Nodes are overactive but benign. Cold-Nodes are silent, sneaky, and potentially lethal.",
+      "gradeReason": "Silent darkness = lethal suspicion. Hot=benign, Cold=danger. Instantly memorable.",
+      "artworkPrompt": "Style: Kayfabizarro nuclear card. Subject: Purple moth thyroid cold node, void of uptake, silent sneaky cancer lurking in darkness. Mood: Silent, sinister."
+    },
+    {
+      "cardNumber": 31,
+      "cardName": "Pet-the-Sugar-Eater",
+      "grade": 1,
+      "power": "The Hunger-Detector. Shows which cells are Eating-Sugar the fastest. Tumor-Max is always hungry.",
+      "lore": "Cancer cells are Anabolic Gluttons (Warburg Effect), turning them into glaring Neon-Signs.",
+      "gradeReason": "Sugar glider PET scan eating tumors — Warburg Effect made delicious and immediate.",
+      "artworkPrompt": "Style: Kayfabizarro nuclear card. Subject: Glowing sugar-glider PET scan, tumor cells lit neon by FDG hunger, Warburg effect visualized. Mood: Hungry, glowing."
+    },
+    {
+      "cardNumber": 32,
+      "cardName": "V/Q-the-Mismatch",
+      "grade": 1,
+      "power": "The Clot-Hunter. Finds the area of lung that is Breathing fine but has No-Blood-Flow.",
+      "lore": "The classic scintigraphic signature of a massive Pulmonary Embolism.",
+      "gradeReason": "Ventilation without perfusion = PE. Clean logic, immediate diagnostic story.",
+      "artworkPrompt": "Style: Kayfabizarro nuclear card. Subject: Split-lung scan, one half ventilated bright, other half dark perfusion void, clot-hunter tracking PE. Mood: Diagnostic, split."
+    },
+    {
+      "cardNumber": 33,
+      "cardName": "Seldinger-the-Entry",
+      "grade": 2,
+      "power": "The Wire-Master. Seldinger lets the surgeon enter any Pipe in the body through a tiny pinhole.",
+      "lore": "The foundation of IR. Once the Guidewire-Ghost is placed, the Catheter-Cavalry can safely follow.",
+      "gradeReason": "Wire through pinhole is precise but the Needle→Wire→Catheter chain needs demonstration.",
+      "artworkPrompt": "Style: Kayfabizarro technique card. Subject: Wire-master ghost guiding catheter cavalry through pinhole vessel entry, Seldinger sequence visible. Mood: Precise, foundational."
+    },
+    {
+      "cardNumber": 34,
+      "cardName": "Embolo-the-Plug",
+      "grade": 1,
+      "power": "The Bleed-Stopper. Intentionally blocks a Leaky-Pipe to stop a hemorrhage or starve a tumor.",
+      "lore": "Creates a perfectly timed Strategic-Clot exactly where the plumbing is failing most.",
+      "gradeReason": "Intentional clot as weapon — the strategic clot concept is thrillingly counterintuitive.",
+      "artworkPrompt": "Style: Kayfabizarro intervention card. Subject: Beaver coiling embolization beads into leaky tumor vessel, strategic clot starving malignancy. Mood: Tactical, decisive."
+    },
+    {
+      "cardNumber": 35,
+      "cardName": "Stent-the-Scaffold",
+      "grade": 2,
+      "power": "The Pipe-Prop. Pushes Athero-Al's gunk tightly against the wall to keep the Highway open.",
+      "lore": "Installs permanent, unyielding structural support for a failing, narrowed Vessel-Wall.",
+      "gradeReason": "Scaffold holding vessel open is clear but self-expanding vs. balloon detail needs context.",
+      "artworkPrompt": "Style: Kayfabizarro engineering card. Subject: Armadillo stent scaffold expanding in narrowed vessel, plaque compressed against wall, highway reopened. Mood: Structural, permanent."
+    },
+    {
+      "cardNumber": 36,
+      "cardName": "Drainage-the-Drain",
+      "grade": 1,
+      "power": "The Pus-Vacuum. Bypasses the Blade-Brigade to safely suck infection through a tiny tube.",
+      "lore": "Relies on Gravity-and-Negative-Pressure to entirely drain the deeply buried Septic-Swamp.",
+      "gradeReason": "Pus-vacuum sucking swamp through tiny tube — grotesque and instantly actionable.",
+      "artworkPrompt": "Style: Kayfabizarro intervention card. Subject: Pigtail mosquito catheter sucking septic abscess swamp dry, gravity and negative pressure draining deep infection. Mood: Satisfying, precise."
+    },
+    {
+      "cardNumber": 37,
+      "cardName": "FAST-Fiona",
+      "grade": 1,
+      "power": "The Blood-Seeker. Scans the belly and heart-sac in seconds to hunt for hidden hemorrhage.",
+      "lore": "A positive FAST-Fiona means the wrestler is actively bleeding internally — straight to the OR!",
+      "gradeReason": "Scanning for blood in seconds, straight to OR — trauma urgency is perfectly encoded.",
+      "artworkPrompt": "Style: Kayfabizarro trauma card. Subject: Owl scanning trauma belly in seconds, blood found glowing in pericardium, OR arrow flashing. Mood: Urgent, decisive."
+    },
+    {
+      "cardNumber": 38,
+      "cardName": "Tension-Tony",
+      "grade": 1,
+      "power": "The Heart-Crusher. A one-way air valve inflates until it squeezes the heart from pumping.",
+      "lore": "Primarily a clinical diagnosis, but Roentgen-Ray confirms it visually with a massive Vivid-Air-Space.",
+      "gradeReason": "One-way air valve crushing heart — devastating mechanic, everyone feels the squeeze.",
+      "artworkPrompt": "Style: Kayfabizarro pneumo card. Subject: Puffer fish inflating to crush mediastinum, heart displaced, massive air space expanding. Mood: Fatal, relentless."
+    },
+    {
+      "cardNumber": 39,
+      "cardName": "Deep-Sulcus-the-Sign",
+      "grade": 2,
+      "power": "The Hidden-Air-Detector. When a wrestler is lying flat, Tension-Tony's air hides at the bottom.",
+      "lore": "A subtle but increasingly important sign of a massive Pneumothorax in the supine ICU patient.",
+      "gradeReason": "Air hiding at the bottom when supine — clever but needs ICU clinical scenario context.",
+      "artworkPrompt": "Style: Kayfabizarro hidden-clue card. Subject: ICU patient supine, air pooling at deep costophrenic angle, Tension-Tony hiding below. Mood: Subtle, dangerous."
+    },
+    {
+      "cardNumber": 40,
+      "cardName": "Aortic-the-Dissection",
+      "grade": 1,
+      "power": "The Double-Pipe. Shows the Wall-Tear that splits the main aorta into two competing tunnels.",
+      "lore": "High pressure violently rips the layers apart. If the tear hits the Heart-Gate, it's game over.",
+      "gradeReason": "Aorta splitting into two competing tunnels — catastrophic and vivid, zero setup needed.",
+      "artworkPrompt": "Style: Kayfabizarro catastrophe card. Subject: Aorta ripped into true and false lumen pipes, intimal flap visible, heart-gate rupture imminent. Mood: Violent, fatal."
+    },
+    {
+      "cardNumber": 41,
+      "cardName": "Birads-the-Score",
+      "grade": 2,
+      "power": "The Risk-Meter. Tells the surgeon exactly how worried they need to be about a Lump-Max.",
+      "lore": "A score of 4 or 5 is a massive red flag meaning Biopsy-for-the-Win.",
+      "gradeReason": "Risk-meter 0–6 is clear but BIRADS scoring is specialist vocabulary that needs grounding.",
+      "artworkPrompt": "Style: Kayfabizarro scoring card. Subject: Peacock risk meter scoring breast lump 0-6, surgeon anxiety rising at 4-5, biopsy flag raised. Mood: Calibrated, anxious."
+    },
+    {
+      "cardNumber": 42,
+      "cardName": "Spiculated-the-Shadow",
+      "grade": 1,
+      "power": "The Malignant-Signature. The distinct radiographic look of cancer Reaching-Out to invade.",
+      "lore": "Desmoplastic reaction physically shortens and pulls on the surrounding Cooper's-Ligaments.",
+      "gradeReason": "Cancer reaching out with radiating spines — malignance made visible and terrifying.",
+      "artworkPrompt": "Style: Kayfabizarro malignant card. Subject: Spider star-shaped mass on mammogram, radiating spicules reaching to invade, Cooper's ligaments pulling. Mood: Invasive, signature."
+    },
+    {
+      "cardNumber": 43,
+      "cardName": "Micro-Calc-the-Dots",
+      "grade": 2,
+      "power": "The DCIS-Signal. Tiny, jagged white dots that look like Cracked-Salt, often the only early sign.",
+      "lore": "Microscopic apoptotic debris inside the breast ducts that has died and turned to stone.",
+      "gradeReason": "Cracked-salt dots visible on mammogram — needs specialist eye to perform confidently.",
+      "artworkPrompt": "Style: Kayfabizarro early-warning card. Subject: Cracked salt microcalcification dots in breast duct, DCIS visible before invasion, stone-turned debris. Mood: Early, subtle."
+    },
+    {
+      "cardNumber": 44,
+      "cardName": "Shadow-the-Acoustic",
+      "grade": 2,
+      "power": "The Solid-Finder. If the sound waves can't pierce through the lump, it's highly suspicious.",
+      "lore": "Malignant tissue is Dense-and-Absorbing, while benign simple cysts are Fluid-and-Transmitting.",
+      "gradeReason": "Sound blocked by solid mass versus fluid — clean logic but needs ultrasound context.",
+      "artworkPrompt": "Style: Kayfabizarro breast US card. Subject: Shark solid lump blocking ultrasound beam, posterior shadow, suspicious dense mass versus clear cyst. Mood: Suspicious, dense."
+    },
+    {
+      "cardNumber": 45,
+      "cardName": "Alara-the-Protector",
+      "grade": 2,
+      "power": "The Radiation-Shield. Ensures we use the absolute minimum Roentgen-Rays needed to win.",
+      "lore": "Dictates Time, Distance, and Shielding. Use Echo or Mag whenever possible instead.",
+      "gradeReason": "ALARA as principle-character hybrid — more doctrine than persona, needs referee mode.",
+      "artworkPrompt": "Style: Kayfabizarro safety card. Subject: Armadillo holding radiation shield, ALARA principle enforced, time-distance-shielding triangle glowing. Mood: Protective, principled."
+    },
+    {
+      "cardNumber": 46,
+      "cardName": "Shielding-the-Lead",
+      "grade": 2,
+      "power": "The Photon-Stop. Lead armor stops stray Roentgen-Rays from hitting the Ovarian-Bench.",
+      "lore": "The incredibly high atomic number of lead absorbs the incoming X-ray energy before it hits DNA.",
+      "gradeReason": "Lead stopping photons is clear but PPE card needs safety-rules framing to land.",
+      "artworkPrompt": "Style: Kayfabizarro protection card. Subject: Elephant in lead apron stopping X-ray photon barrage, ovarian bench shielded behind atomic armor. Mood: Shielding, heavy."
+    },
+    {
+      "cardNumber": 47,
+      "cardName": "Pregnancy-the-Red-Flag",
+      "grade": 1,
+      "power": "The Fetal-Defense. The supreme rule: always ask if there is a Fetal-Fighter in the fortress.",
+      "lore": "Ionizing radiation is infinitely more dangerous during the delicate Organ-Creation phase.",
+      "gradeReason": "Always ask about the Fetal-Fighter — supreme rule, zero ambiguity, instant behavioral change.",
+      "artworkPrompt": "Style: Kayfabizarro contraindication card. Subject: Kangaroo mother holding HALT sign, fetus in pouch, radiation banned from fortress, first trimester. Mood: Absolute, protective."
+    },
+    {
+      "cardNumber": 48,
+      "cardName": "Metal-the-Missile",
+      "grade": 1,
+      "power": "The Magnetic-Attraction. Mag-the-Magnet turns wheelchairs and pacemakers into Lethal-Projectiles.",
+      "lore": "The magnet is ALWAYS ON; it will rip ferromagnetic metal through the air like a fired rocket.",
+      "gradeReason": "Wheelchair fired like a missile — most viscerally unforgettable safety card in radiology.",
+      "artworkPrompt": "Style: Kayfabizarro hazard card. Subject: Wheelchair and pacemaker fired as missiles toward MRI bore, magnet always-on, lethal projectile trajectory. Mood: Terrifying, instant."
+    },
+    {
+      "cardNumber": 49,
+      "cardName": "PACS-the-Archive",
+      "grade": 2,
+      "power": "The Infinite-Memory. PACS stores every scan the wrestler has ever had for Old-vs-New battles.",
+      "lore": "Comparison is the key to Radiology. A terrifying lump from 2020 is much safer if it hasn't grown.",
+      "gradeReason": "Old-vs-new comparison logic is sharp but PACS as persona needs digital-library setup.",
+      "artworkPrompt": "Style: Kayfabizarro archive card. Subject: Digital library sphinx holding stacks of DICOM scans, old vs new comparison glowing, lump stability measured. Mood: Temporal, methodical."
+    },
+    {
+      "cardNumber": 50,
+      "cardName": "The Apple-Core Sign",
+      "grade": 1,
+      "power": "The Cancer-Collar. Shows precisely where Malignant-Max has wrapped entirely around the colon.",
+      "lore": "The classic, definitive hallmark of advanced colon cancer visualized on a Barium-Enema.",
+      "gradeReason": "Cancer collar choking the colon apple-core — visual, definitive, immediately haunting.",
+      "artworkPrompt": "Style: Kayfabizarro cancer card. Subject: Beaver colon cancer collar wrapping circumferential apple-core, barium enema revealing classic constriction. Mood: Definitive, grim."
+    },
+    {
+      "cardNumber": 51,
+      "cardName": "The Honey-Combing",
+      "grade": 2,
+      "power": "The End-Stage-Lung. Chronic inflammation turns the flexible breathing-balloons into useless cysts.",
+      "lore": "The irreversible signature of Pulmonary Fibrosis. The lungs are now permanent, unyielding stone.",
+      "gradeReason": "Breathing balloons turned to rigid stone honeycombs — accurate but end-stage needs framing.",
+      "artworkPrompt": "Style: Kayfabizarro fibrosis card. Subject: Bear lungs transformed to rigid honeycomb stone cysts, subpleural rows stacked, pulmonary fibrosis endgame. Mood: Irreversible, heavy."
+    },
+    {
+      "cardNumber": 52,
+      "cardName": "The Thumb-Print Sign",
+      "grade": 1,
+      "power": "The Airway-Alarm. A massive warning that the wrestler's primary breathing tube is swelling shut.",
+      "lore": "The delicate epiglottis leaf swells up so large it looks exactly like a giant thumb on the X-ray.",
+      "gradeReason": "Epiglottis swelling to thumb-size on X-ray — grotesque image locked forever in memory.",
+      "artworkPrompt": "Style: Kayfabizarro airway card. Subject: Giant thumb epiglottis swelling on lateral neck X-ray, airway alarm flashing, breathing tube closing. Mood: Grotesque, urgent."
+    },
+    {
+      "cardNumber": 53,
+      "cardName": "The Radiology Attending",
+      "grade": 1,
+      "power": "The Pattern-Recognizer. Doc: 'Don't just look, see! Is the silhouette lost? Is the HU correct? Compare it to the old films or stay in the dark! Stay fluffy!'",
+      "lore": "Don't just look, see! Is the silhouette lost? Is the HU correct? Compare it to the old films or stay in the dark! Stay Fluffy!",
+      "gradeReason": "Doc FrizzleBob as attending radiologist — meta-card that teaches method AND persona.",
+      "artworkPrompt": "Style: Kayfabizarro mentor card. Subject: FrizzleBob rabbit in dark reading room, pattern-recognizer attending, old films and new scans compared. Mood: Wise, sharp."
+    },
+    {
+      "cardNumber": 54,
+      "cardName": "FrizzleBob's Synthesis Quest 1",
+      "grade": 3,
+      "power": null,
+      "lore": "Trauma wrestler. Sharp pain, low SpO2. Supine chest X-ray shows Deep-Sulcus-Sign.",
+      "gradeReason": "Quiz scenario not a playable card — describes a clinical case rather than inviting performance.",
+      "artworkPrompt": "Style: Kayfabizarro quest card. Subject: FrizzleBob and mole examining supine X-ray for hidden air, synthesis challenge framed. Mood: Educational, investigative."
+    },
+    {
+      "cardNumber": 55,
+      "cardName": "FrizzleBob's Synthesis Quest 2",
+      "grade": 3,
+      "power": null,
+      "lore": "A CT head scan shows Crescent-Chris on the left side and Lemon-Lenny on the right.",
+      "gradeReason": "Differentiate-the-bleeds quiz — teaching tool masquerading as a card, G3 by design.",
+      "artworkPrompt": "Style: Kayfabizarro quiz card. Subject: FrizzleBob holding banana and lemon brain shapes, two bleeds to identify, CT scan background. Mood: Cerebral, comparative."
+    },
+    {
+      "cardNumber": 56,
+      "cardName": "FrizzleBob's Synthesis Quest 3",
+      "grade": 3,
+      "power": null,
+      "lore": "A PET scan shows the Malignant-Max and Metastasis-Mitch, and explain exactly why their cells glow so bright on the scan.",
+      "gradeReason": "Warburg Effect explanation quest — valuable teaching but firmly a written exercise.",
+      "artworkPrompt": "Style: Kayfabizarro quest card. Subject: FrizzleBob chasing glowing cancer cells on PET scan, golden glow quest background. Mood: Investigative, cellular."
+    }
+  ],
+  "cardCount": 56,
+  "gradeDistribution": {
+    "G1": 31,
+    "G2": 22,
+    "G3": 3
+  },
+  "overallScore": 8,
+  "verdict": "MedKayfab Radiology is a tour de force of educational card design — 52 vivid personas covering X-ray physics, CT, MRI, ultrasound, nuclear medicine, interventional radiology, breast imaging, and radiation safety in a single deck. The Warburg-Effect sugar-eater, the magnet-fired wheelchair, the lemon versus crescent brain bleeds: these stick. The three Synthesis Quest cards (54–56) are the one structural wrinkle — they are written exercises disguised as play cards. Table-ready: YES for medical education contexts.",
+  "blurb": "Radiology's entire visual library transformed into 56 performable characters — from Roentgen-Ray to the magnet-fired wheelchair missile. For med students who learn by doing, not memorizing.",
+  "viralScore": 8,
+  "qa": {
+    "readability": 9,
+    "artworkConsistency": 8,
+    "overall": 8
+  },
+  "coverQA": {
+    "coverVisual": "4 — FrizzleBob rabbit with psychedelic glasses pointing at colorful CT scanner portal, medical mice at controls. Explosive energy.",
+    "coverTitle": "4 — 'Radiology & Medical Imaging: The Photonic Frontier' — specific, memorable, slightly long.",
+    "coverVibeMatch": "5 — Chaotic, colorful, kayfabizarro energy matches the deck's dense performative content perfectly.",
+    "coverOriginality": "4 — CT scanner as interdimensional portal with mice crew is distinctly this universe.",
+    "coverViral": "4 — 'Seeing through the smoke of symptoms. Stay fluffy!' is a strong tagline. Highly shareable to medical audiences.",
+    "coverScore": 4.2,
+    "coverNote": "The rabbit-meets-CT-portal cover works hard. 'Stay fluffy' landing on a radiology deck earns its absurdism. Only minor note: the GvW watermark competes slightly with the right edge composition."
+  },
+  "coverScore": 4.2,
+  "fontArtifactCount": 0,
+  "notes": "Deck has two distinct visual layouts: pages 2-6 are unnumbered (cards 1-20, modality overview section) and pages 7-15 carry explicit stamp numbers 21-56 (sign/technique/safety section). All 56 cards are in this single ADD PDF. No RAF dice boxes visible. Page 9 cards (29-32: nuclear medicine) appear to follow numbering sequence but numbers may be less prominent. Synthesis Quest cards 54-56 read as end-of-deck quiz scenarios — effective pedagogy but structural outliers in the card format. Lore on card 53 (Doc FrizzleBob) appears to repeat the Power text verbatim; transcribed as seen.",
+  "topCards": [
+    "Mag-the-Magnet",
+    "Metal-the-Missile",
+    "Pet-the-Sugar-Eater",
+    "Tension-Tony",
+    "The Thumb-Print Sign"
+  ],
+  "worstCards": [
+    "FrizzleBob's Synthesis Quest 1",
+    "FrizzleBob's Synthesis Quest 2",
+    "FrizzleBob's Synthesis Quest 3"
+  ],
+  "todos": {
+    "urgent": [
+      "Cards 54-56 (Synthesis Quests) are written clinical scenarios, not playable cards — reformat as a separate Rules/Quest insert or game-mode card with explicit mechanic"
+    ],
+    "quickWins": [
+      "Add explicit card numbers to pages 2-6 (cards 1-20) for visual consistency with numbered section 21-56",
+      "Clarify LORE on card 53 (Doc FrizzleBob) — currently reads as duplicate of Power text"
+    ],
+    "niceToHave": [
+      "Cards 45-48 (radiation safety cluster) could anchor a dedicated safety mini-game mechanic",
+      "Consider a series index card showing all MedKayfab deck topics for cross-deck navigation"
+    ]
+  },
+  "hashtags": [
+    "#MedKayfab",
+    "#Radiology",
+    "#MedStudents",
+    "#FOAMed",
+    "#Kayfabizarro",
+    "#MedTwitter",
+    "#Radiology101",
+    "#MedEd"
+  ],
+  "genre": "medical",
+  "bundle": "EDUCATION",
+  "exhibitions": [
+    "classroom",
+    "workshop",
+    "conference"
+  ],
+  "channels": [
+    "Gumroad",
+    "Instagram",
+    "TikTok",
+    "Substack"
+  ]
+}

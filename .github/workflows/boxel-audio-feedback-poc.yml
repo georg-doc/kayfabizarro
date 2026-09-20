@@ -1,0 +1,59 @@
+name: Boxel audio feedback POC
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'KFB Boxel Blitz/audio-feedback-poc/**'
+      - '.github/workflows/boxel-audio-feedback-poc.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  browser:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout: |
+            KFB Boxel Blitz/audio-feedback-poc
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: |
+          npm install --no-save playwright@1.51.1
+          npx playwright install --with-deps chromium
+      - name: Exercise POC with real KFB audio files
+        run: |
+          mkdir -p boxel-proof
+          cat > .boxel-check.mjs <<'JS'
+          import http from 'node:http';import fs from 'node:fs';import path from 'node:path';import {chromium} from 'playwright';
+          const root=path.resolve('KFB Boxel Blitz/audio-feedback-poc'),result={status:'RUNNING',checks:[],errors:[],httpErrors:[]};
+          const check=(name,ok,detail)=>{result.checks.push({name,pass:!!ok,detail});if(!ok)throw Error(name)};
+          const server=http.createServer((req,res)=>{try{let p=decodeURIComponent(new URL(req.url,'http://x').pathname);if(p==='/'||p.endsWith('/'))p+='index.html';const f=path.resolve(root,'.'+p);if(!f.startsWith(root))throw Error();const ext=path.extname(f);res.writeHead(200,{'content-type':ext==='.html'?'text/html':ext==='.mjs'?'application/javascript':'application/octet-stream'});res.end(fs.readFileSync(f))}catch{res.writeHead(404);res.end('missing')}});
+          await new Promise(r=>server.listen(8146,'127.0.0.1',r));let browser,page;
+          try{
+            browser=await chromium.launch({headless:true,args:['--autoplay-policy=no-user-gesture-required','--use-angle=swiftshader','--enable-unsafe-swiftshader']});
+            page=await browser.newPage({viewport:{width:1200,height:800}});
+            page.on('pageerror',e=>result.errors.push(String(e)));page.on('console',m=>{if(m.type()==='error')result.errors.push(m.text())});page.on('response',r=>{if(r.status()>=400)result.httpErrors.push({url:r.url(),status:r.status()})});
+            await page.goto('http://127.0.0.1:8146/',{waitUntil:'networkidle',timeout:90000});await page.waitForFunction(()=>!!window.__KFB_BOXEL_AUDIO_POC__,{},{timeout:30000});
+            check('POC ready',true);
+            await page.evaluate(()=>window.__KFB_BOXEL_AUDIO_POC__.trigger('pickup'));await page.waitForFunction(()=>window.__KFB_BOXEL_AUDIO_POC__.snapshot().lastEvent==='PICKUP',{},{timeout:30000});
+            check('real pickup audio decoded',await page.evaluate(()=>window.__KFB_BOXEL_AUDIO_POC__.snapshot().buffers>=1));
+            await page.evaluate(async()=>{for(let i=0;i<10;i++)await window.__KFB_BOXEL_AUDIO_POC__.trigger('checkpoint')});check('checkpoint ladder reaches 10',(await page.evaluate(()=>window.__KFB_BOXEL_AUDIO_POC__.snapshot())).checkpointStep===10);
+            await page.evaluate(async()=>{for(let i=0;i<10;i++)await window.__KFB_BOXEL_AUDIO_POC__.trigger('cascade')});check('cascade ladder reaches 10',(await page.evaluate(()=>window.__KFB_BOXEL_AUDIO_POC__.snapshot())).cascadeStep===10);
+            await page.evaluate(()=>window.__KFB_BOXEL_AUDIO_POC__.trigger('powerup'));await page.waitForTimeout(250);check('powerup event',(await page.evaluate(()=>window.__KFB_BOXEL_AUDIO_POC__.snapshot())).lastEvent==='POWER UP');
+            await page.evaluate(()=>window.__KFB_BOXEL_AUDIO_POC__.trigger('powerdown'));await page.waitForTimeout(250);check('powerdown event',(await page.evaluate(()=>window.__KFB_BOXEL_AUDIO_POC__.snapshot())).lastEvent==='POWER DOWN');
+            await page.screenshot({path:'boxel-proof/boxel-audio-poc.png'});
+            check('no page errors',result.errors.length===0,result.errors);check('no failed audio/http',result.httpErrors.length===0,result.httpErrors);result.status='PASS';
+          }catch(e){result.status='FAIL';result.failure=String(e.stack||e);process.exitCode=1}finally{fs.writeFileSync('boxel-proof/results.json',JSON.stringify(result,null,2));if(browser)await browser.close();server.close()}
+          JS
+          node .boxel-check.mjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: boxel-audio-feedback-poc
+          path: |
+            boxel-proof/results.json
+            boxel-proof/boxel-audio-poc.png
+          retention-days: 14

@@ -1,0 +1,85 @@
+{
+  "schema": "kfb.platformer-poc.roster/1",
+  "note": "Manifest-getrieben und erweiterbar. Nichts hier wird vorgeladen — `mount()` läuft erst bei Auswahl, der vorherige Aktor wird entsorgt. Die vier mit `proof:true` sind die geforderten Adapter-Nachweise, nicht das Roster.",
+  "pins": {
+    "pack": "eb48f50489b9e4903ec1e3d2fb1837605ce7d792",
+    "assets": "891eadf01e218f5fc21387e64cea1fec8332c5b6",
+    "anims": "aa16a777a970f23d3f11fb3c23dc40718b04fa88",
+    "legacy": "10a7fdce6b3a1ae22504ade71b7dbec5f25e0ff0",
+    "main": "main"
+  },
+  "animLib": {
+    "root": "media/3D_Assets/KayKit_Character_Animations_1.1/Animations/gltf/",
+    "sets": ["MovementBasic", "MovementAdvanced", "General", "Simulation", "Tools", "CombatMelee", "CombatRanged", "Special"],
+    "pin": "anims"
+  },
+  "groups": [
+    {
+      "id": "platformer", "label": "Platformer",
+      "actors": [
+        { "id": "platformer-character", "name": "Platformer Character", "adapter": "platformer",
+          "path": "media/3D_Assets/Platformer Game Kit - Dec 2021/Character/glTF/Character.gltf",
+          "pin": "pack", "proof": true,
+          "note": "Referenz-Kontrolle. Eigene eingebettete Clips, keine KayKit-Bibliothek." },
+        { "id": "platformer-character-gun", "name": "Platformer Character (Gun)", "adapter": "platformer",
+          "path": "media/3D_Assets/Platformer Game Kit - Dec 2021/Character/glTF/Character_Gun.gltf",
+          "pin": "pack" }
+      ]
+    },
+    {
+      "id": "kfb", "label": "KFB",
+      "actors": [
+        { "id": "frizzlebob", "name": "FrizzleBob · Graft", "adapter": "graft", "proof": true,
+          "reader": "frizzlegraft-v1/graft-mount.v1.js",
+          "contract": "contracts/kfb-pet-graft-driver.v4.json",
+          "rig": "Rig_Medium",
+          "note": "Öffentlicher Leser aus kfb-rigs-embed-v3, animation:'host' — der Platformer besitzt den einen Mixer." },
+        { "id": "capsulecarl", "name": "CapsuleCarl", "adapter": "carl", "proof": true,
+          "reader": "lab-v6/carlrig-mount.v1.js",
+          "contract": "contracts/kfb-carl-rig-v6.json",
+          "note": "0 Knochen. Keine KayKit-Clips. Prozedurale Präsentation." }
+      ]
+    },
+    {
+      "id": "residents", "label": "Residents",
+      "actors": [
+        { "id": "skeleton-warrior", "name": "Skeleton Warrior", "adapter": "kaykit", "rig": "Rig_Medium", "proof": true,
+          "path": "media/3D_Assets/KayKit_Skeletons/characters/gltf/Skeleton_Warrior.glb", "pin": "main" },
+        { "id": "gothgirl", "name": "Goth Girl", "adapter": "kaykit", "rig": "Rig_Medium",
+          "path": "media/3D_Assets/KayKit_Mystery_Series6/GothGirl/characters/GothGirl.glb", "pin": "assets" },
+        { "id": "clown", "name": "Clown", "adapter": "kaykit", "rig": "Rig_Medium",
+          "path": "media/3D_Assets/KayKit_Mystery_Series6/11 - May 2024 - Clown/characters/Clown.glb", "pin": "assets" },
+        { "id": "witch", "name": "Witch", "adapter": "kaykit", "rig": "Rig_Medium",
+          "path": "media/3D_Assets/KayKit_Mystery_Series6/5 - November 2024 - Witch/characters/Witch.glb", "pin": "assets" },
+        { "id": "lorekeeper", "name": "Lorekeeper", "adapter": "kaykit", "rig": "Rig_Medium",
+          "path": "media/3D_Assets/KayKit_Mystery_Series6/6 - October 2024 - Lorekeeper/Lorekeeper.glb", "pin": "assets" },
+        { "id": "caveman", "name": "Caveman", "adapter": "kaykit", "rig": "Rig_Medium",
+          "path": "media/3D_Assets/KayKit_Mystery_Series6/8 - February 2025 - Caveman/characters/Caveman.glb", "pin": "assets" },
+        { "id": "avian", "name": "Avian Swordsman", "adapter": "kaykit", "rig": "Rig_Medium",
+          "path": "media/3D_Assets/KayKit_Mystery_Series6/9 - March 2026 - Avian Swordsman/AvianSwordsman.glb", "pin": "assets" },
+        { "id": "skeleton-rogue", "name": "Skeleton Rogue", "adapter": "kaykit", "rig": "Rig_Medium",
+          "path": "media/3D_Assets/KayKit_Skeletons/characters/gltf/Skeleton_Rogue.glb", "pin": "main" },
+        { "id": "skeleton-mage", "name": "Skeleton Mage", "adapter": "kaykit", "rig": "Rig_Medium",
+          "path": "media/3D_Assets/KayKit_Skeletons/characters/gltf/Skeleton_Mage.glb", "pin": "main" }
+      ]
+    },
+    {
+      "id": "kaykit", "label": "KayKit",
+      "actors": [
+        { "id": "black-knight", "name": "Black Knight", "adapter": "kaykit", "rig": "Rig_Large",
+          "path": "media/3D_Assets/KayKit_Mystery_Series6/3 - September 2024 - Black Knight/characters/BlackKnight.glb", "pin": "assets",
+          "note": "Rig_Large — gemessen, nicht angenommen (Resident Atlas S9/S10)." },
+        { "id": "demon-lord", "name": "Demon Lord", "adapter": "kaykit", "rig": "Rig_Large",
+          "path": "media/3D_Assets/KayKit_Mystery_Series6/DemonLord/characters/DemonLord.glb", "pin": "assets" }
+      ]
+    },
+    {
+      "id": "legacy", "label": "Legacy",
+      "actors": [
+        { "id": "legacy-knight", "name": "Knight · Dungeon 1.0", "adapter": "kaykit", "rig": "Rig_Legacy",
+          "path": "media/3D_Assets/KayKit Legacy/KayKit Dungeon Pack 1.0 2/Models/Characters/gltf/character_knight.gltf", "pin": "pack",
+          "note": "Legacy-Figuren sind NICHT geriggt (0 Bones, vier Teilgruppen). Ohne den Legacy-Zusammenbau aus dem Resident Atlas steht die Figur; der Adapter meldet das statt es zu verstecken." }
+      ]
+    }
+  ]
+}

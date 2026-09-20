@@ -1,0 +1,129 @@
+{
+  "schema": "kfb.deformer-test-sequences/1",
+  "note": "Deterministische Testsequenzen fuer die Briefing-Knoepfe. Ein Schritt ist [ms, signale] oder [ms, {event}]. Zwischen Stuetzwerten wird linear interpoliert; Events feuern genau einmal. Jede Sequenz endet im Ruhezustand - eine Bewegung ohne definierte Rueckkehr ist im KFB-Motion-Skill keine Bewegung.",
+  "sequences": {
+    "FASSROLLE": {
+      "label": "FASSROLLE",
+      "driver": "manoeuvre",
+      "read": "Überschlag um die Längsachse. Die Drehachse WANDERT: am Boden kippt es über die Radkante, in der Luft dreht es um den Schwerpunkt, zur Landung geht die Achse zurück an die Kante — Räder zuerst. Die Zahl der Umdrehungen ist auf eine GANZE Zahl gerundet, darum landet es immer auf den Rädern.",
+      "steps": [[0, {"event": "tumble", "severity": 0.55, "speed": 0.6, "side": 1}], [400, {}]]
+    },
+    "FASSROLLE SCHWER": {
+      "label": "FASSROLLE SCHWER",
+      "driver": "manoeuvre",
+      "read": "Voller Ausschlag bei Tempo 1: höher, länger, mehr Umdrehungen — und trotzdem exakt auf den Rädern. Drei Beats hintereinander: Überschlag (Hauptread), Aufsetzen mit Lautwort und EINEM Nachfedern (Akzent), Schlingern (Erholung). Nicht gleichzeitig.",
+      "steps": [[0, {"event": "tumble", "severity": 1, "speed": 1, "side": 1}], [400, {}]]
+    },
+    "RÜCKWÄRTS": {
+      "label": "RÜCKWÄRTS",
+      "driver": "manoeuvre",
+      "read": "Standzeit, dann zieht es gerade zurück. Die Standzeit ist der Gangwechsel und der eigentliche Read. Räder drehen rückwärts; die Nase TAUCHT beim Anfahren, weil die Trägheit nach vorn drückt — das ist gerechnet, nicht gesetzt.",
+      "steps": [[0, {"event": "manoeuvre", "program": "reverse"}], [400, {}]]
+    },
+    "RÜCKWÄRTS ECKE": {
+      "label": "RÜCKWÄRTS ECKE",
+      "driver": "manoeuvre",
+      "read": "Rückwärts um die Ecke: Vollausschlag bis 75° Gierwinkel, dann gerade weiter. Die Vorderräder legen den Einschlag im STAND vor — genau das tut ein Fahrer, und es ist die Anticipation.",
+      "steps": [[0, {"event": "manoeuvre", "program": "reverseArc"}], [400, {}]]
+    },
+    "WENDEN": {
+      "label": "WENDEN",
+      "driver": "manoeuvre",
+      "read": "Es passt nicht in einem Zug: vor, zurück, vor. Wie viele Züge es braucht, ist AUSGERECHNET — der Löser fährt bei Vollausschlag, bis eine gemessene Fahrzeugecke aus der Gasse läuft. Die grauen Linien sind die Gasse, die rote der gefahrene Weg.",
+      "steps": [[0, {"event": "manoeuvre", "program": "turn"}], [400, {}]]
+    },
+    "EINPARKEN": {
+      "label": "EINPARKEN",
+      "driver": "manoeuvre",
+      "read": "Vorbeifahren, halten, in zwei gleich großen Bögen in die Lücke, ein kurzer Schub nach vorn zum Ausrichten. Der Einschlagbogen ist exakt gelöst: arccos(1 − Versatz/2R). Der Rahmen zeigt die Lücke, die der Weg braucht.",
+      "steps": [[0, {"event": "manoeuvre", "program": "park"}], [400, {}]]
+    },
+    "2 RÄDER FREI": {
+      "label": "2 RÄDER FREI",
+      "driver": "manoeuvre",
+      "read": "Steht frei auf zwei Rädern, knapp UNTER dem gerechneten Umfallwinkel, und balanciert sichtbar. Gedreht wird um die Aufstandslinie der Räder einer Seite — die unteren Räder bleiben auf dem Boden, prüfbar am Schatten.",
+      "steps": [[0, {"event": "twowheel", "variant": "free", "side": 1, "holdMs": 1600}], [400, {}]]
+    },
+    "BANDE": {
+      "label": "BANDE",
+      "driver": "manoeuvre",
+      "read": "Fahrt und Stunt zugleich: es fährt an der Bande entlang, während es auf zwei Rädern steht. Die Schräglage liegt hier ÜBER dem Umfallwinkel — die Wand trägt. Sie steht genau an der gemessenen Berührstelle der Karosseriehülle.",
+      "steps": [[0, {"event": "manoeuvre", "program": "straight", "distOfLength": 2.6}], [900, {"event": "twowheel", "variant": "wallride", "side": 1, "holdMs": 1500}], [1400, {}]]
+    },
+    "SCHLINGERN LEICHT": {
+      "label": "SCHLINGERN LEICHT",
+      "read": "Heck bricht nach links aus und pendelt aus. Die Nase bleibt auf Kurs — das ist der Unterschied zum Drift. Gegenroll laeuft eine Vierteldrehung nach, Vorderraeder lenken gegen.",
+      "steps": [[0, {"speed": 0.7}], [200, {"event": "fishtail", "severity": 0.45, "dir": -1}], [1600, {"speed": 0.7}], [2400, {"speed": 0}]]
+    },
+    "SCHLINGERN SCHWER": {
+      "label": "SCHLINGERN SCHWER",
+      "read": "Dieselbe Bewegung zur anderen Seite, voll ausgestellt. Gleich viele Schwinger, nur weiter — die Zahl der Schwinger haengt am Profil, nicht an der Staerke.",
+      "steps": [[0, {"speed": 0.85}], [200, {"event": "fishtail", "severity": 1, "dir": 1}], [1800, {"speed": 0.8}], [2600, {"speed": 0}]]
+    },
+    "LANDUNG + SCHLINGERN": {
+      "label": "LANDUNG + SCHLINGERN",
+      "read": "Der Fall, fuer den die Familie gebaut ist: Aufsetzen ist der Hauptread, das Schlingern kommt danach als Erholung. Nicht gleichzeitig — sonst konkurrieren zwei Reads.",
+      "steps": [[0, {"speed": 0.9}], [200, {"event": "landing", "strength": 1}], [340, {"event": "fishtail", "severity": 0.85, "dir": -1}], [1900, {"speed": 0.85}], [2700, {"speed": 0}]]
+    },
+    "ACCEL": {
+      "label": "ACCEL",
+      "read": "Nase hebt, Heck laedt, Fahrer laggt nach. Gewicht liegt hinten.",
+      "steps": [[0, {"speed": 0.1, "longAccel": 0}], [120, {"longAccel": 0.95, "speed": 0.2}], [700, {"longAccel": 0.5, "speed": 0.75}], [1200, {"longAccel": 0, "speed": 0.8}], [1800, {"speed": 0, "longAccel": 0}]]
+    },
+    "BRAKE": {
+      "label": "BRAKE",
+      "read": "Nase taucht, kurze Vorwaertskompression, ein Rueckschwinger, Stand.",
+      "steps": [[0, {"speed": 0.85, "longAccel": 0}], [100, {"longAccel": -1, "speed": 0.8}], [520, {"longAccel": -0.6, "speed": 0.25}], [900, {"longAccel": 0, "speed": 0}], [1600, {"speed": 0}]]
+    },
+    "LEFT LOAD": {
+      "label": "LEFT LOAD",
+      "read": "Shell legt sich nach aussen, Seitenstauchung, Fahrer kippt gegen.",
+      "steps": [[0, {"speed": 0.7}], [140, {"lateral": -0.9, "speed": 0.65}], [800, {"lateral": -0.75, "speed": 0.6}], [1200, {"lateral": 0, "speed": 0.6}], [1900, {"speed": 0, "lateral": 0}]]
+    },
+    "RIGHT LOAD": {
+      "label": "RIGHT LOAD",
+      "read": "Spiegelbild von LEFT LOAD. Beide muessen gleich stark lesen.",
+      "steps": [[0, {"speed": 0.7}], [140, {"lateral": 0.9, "speed": 0.65}], [800, {"lateral": 0.75, "speed": 0.6}], [1200, {"lateral": 0, "speed": 0.6}], [1900, {"speed": 0, "lateral": 0}]]
+    },
+    "DRIFT LEFT": {
+      "label": "DRIFT LEFT",
+      "read": "Deutlich andere Pose als LEFT LOAD: sichtbarer Yaw, Gegenroll, beim Loslassen lesbares Re-Grip.",
+      "steps": [[0, {"speed": 0.8, "lateral": -0.3}], [180, {"drift": -0.95, "lateral": -0.5, "speed": 0.75}], [900, {"drift": -0.85, "lateral": -0.45, "speed": 0.7}], [1150, {"drift": -0.2, "lateral": -0.15, "speed": 0.75}], [1500, {"drift": 0, "lateral": 0, "speed": 0.7}], [2200, {"speed": 0}]]
+    },
+    "DRIFT RIGHT": {
+      "label": "DRIFT RIGHT",
+      "read": "Spiegelbild. Der Re-Grip-Moment bei 1150 ms ist der eigentliche Beweis.",
+      "steps": [[0, {"speed": 0.8, "lateral": 0.3}], [180, {"drift": 0.95, "lateral": 0.5, "speed": 0.75}], [900, {"drift": 0.85, "lateral": 0.45, "speed": 0.7}], [1150, {"drift": 0.2, "lateral": 0.15, "speed": 0.75}], [1500, {"drift": 0, "lateral": 0, "speed": 0.7}], [2200, {"speed": 0}]]
+    },
+    "RAIL HIT LEFT": {
+      "label": "RAIL HIT LEFT",
+      "read": "squash -> recoil -> kleiner Overshoot -> gedaempft aus. Einmal, nicht wiederholt.",
+      "steps": [[0, {"speed": 0.8, "lateral": -0.4}], [200, {"event": "railImpact", "side": -1, "strength": 1}], [260, {"lateral": -0.2, "speed": 0.7}], [900, {"lateral": 0, "speed": 0.65}], [1700, {"speed": 0}]]
+    },
+    "RAIL HIT RIGHT": {
+      "label": "RAIL HIT RIGHT",
+      "read": "Spiegelbild. Richtung der Stauchung muss der Wandseite folgen.",
+      "steps": [[0, {"speed": 0.8, "lateral": 0.4}], [200, {"event": "railImpact", "side": 1, "strength": 1}], [260, {"lateral": 0.2, "speed": 0.7}], [900, {"lateral": 0, "speed": 0.65}], [1700, {"speed": 0}]]
+    },
+    "RAIL HOLD": {
+      "label": "RAIL HOLD",
+      "read": "Wand wird 600 ms lang jeden Frame als DERSELBE Kontakt gemeldet (contact: true). Es darf genau ein Einschlag lesen, danach eine gehaltene Schraeglage, dann ein Aufrichten beim Loslassen. Kein zweiter Schlag. Das ist der Kontakt-Latch-Test.",
+      "steps": [[0, {"speed": 0.8, "lateral": 0.5}], [200, {"event": "railImpact", "side": 1, "strength": 1, "hold": 600}], [900, {"lateral": 0, "speed": 0.65}], [1700, {"speed": 0}]]
+    },
+    "LANDING": {
+      "label": "LANDING",
+      "read": "vertical squash -> rebound stretch -> ein kleinerer Settle -> neutral. Genau ein Nachschwinger.",
+      "steps": [[0, {"speed": 0.6}], [150, {"event": "landing", "strength": 1}], [400, {"speed": 0.6}], [1100, {"speed": 0.5}], [1800, {"speed": 0}]]
+    },
+    "HIGH SPEED": {
+      "label": "HIGH SPEED",
+      "read": "Chassis nur sehr dezent tiefer und nasenlastig. Sekundaerteile spaeter staerker. Kein Flattern.",
+      "steps": [[0, {"speed": 0}], [500, {"speed": 1}], [2000, {"speed": 1}], [2600, {"speed": 0}]]
+    },
+    "NEUTRAL": {
+      "label": "NEUTRAL",
+      "read": "Zwei Sekunden Neutralfahrt. Muss sichtbar absolut ruhig sein - kein Wobble, kein Noise.",
+      "steps": [[0, {"speed": 0.55}], [2000, {"speed": 0.55}], [2400, {"speed": 0}]]
+    }
+  }
+}

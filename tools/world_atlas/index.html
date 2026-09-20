@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>KFB World Atlas · Kit Lab</title>
+<style>
+:root{font-family:system-ui,sans-serif;color-scheme:light dark}body{margin:0;background:Canvas;color:CanvasText}.shell{width:min(1000px,calc(100% - 28px));margin:auto;padding:28px 0 48px}h1{font-size:clamp(28px,5vw,48px);margin:.2em 0}.lede{opacity:.72;max-width:76ch}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:22px}.card{border:1px solid color-mix(in srgb,CanvasText 18%,transparent);border-radius:16px;padding:18px;background:color-mix(in srgb,Canvas 92%,CanvasText 8%)}.card h2{font-size:17px;margin:0 0 8px}.card p{opacity:.72}.actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}a{color:inherit}a.button{text-decoration:none;border:1px solid currentColor;border-radius:9px;padding:8px 10px;font-weight:700;font-size:13px}.primary{background:CanvasText;color:Canvas!important}.meta{font-size:12px;opacity:.65;margin-top:24px}@media(max-width:720px){.grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body><main class="shell">
+<div>KFB ToolBox · Candidate Site</div>
+<h1>World Atlas · Kit Lab</h1>
+<p class="lede">Measured KayKit/Kenney environment workbench. This is an authoring and geometry donor, not a second Travel runtime. Existing model assets load from the central GitHub asset source.</p>
+<div class="grid">
+<section class="card"><h2>Dungeon Generator · S13.2</h2><p>Seeded BSP dungeon, two levels, measured seams, doors, stairs, lighting and recipe export.</p><div class="actions"><a class="button primary" href="./source/KayKit_Dungeon_Generator_S13_2.html">Open generator</a><a class="button" href="./source/KayKit_Dungeon_Model_S13.html">Dungeon model</a></div></section>
+<section class="card"><h2>Hex Realm · S11/S12</h2><p>Measured pointy-top hex grammar with road, river and coast edge truth.</p><div class="actions"><a class="button primary" href="./source/KayKit_Hex_Realm_S11.html">Open realm</a><a class="button" href="./source/KayKit_Hex_Tile_Model_S12.html">Tile model</a></div></section>
+<section class="card"><h2>Road + Forest</h2><p>Measured road-network and forest-clearing donor scenes.</p><div class="actions"><a class="button primary" href="./source/KayKit_Road_Network_S5.html">Road network</a><a class="button" href="./source/KayKit_Forest_Clearing_S6.html">Forest clearing</a></div></section>
+<section class="card"><h2>City + Racing</h2><p>City and track geometry probes retained for comparison and reuse.</p><div class="actions"><a class="button primary" href="./source/KayKit_City_Sample_S4.html">KayKit city</a><a class="button" href="./source/Kenney_Racing_Track_S3.html">Racing track</a></div></section>
+<section class="card"><h2>Tools Workshop</h2><p>KayKit tools/workshop scene and measured prop set.</p><div class="actions"><a class="button primary" href="./source/KayKit_Tools_Workshop_S7.html">Open workshop</a></div></section>
+<section class="card"><h2>Documentation</h2><p>Export manifest, recovery, evidence and A0 mapping from the reviewed intake.</p><div class="actions"><a class="button" href="./START_HERE.md">Start here</a><a class="button" href="./docs/FEATURE_PARITY.md">Feature parity</a><a class="button" href="./docs/RECIPE_MAPPING_A0.md">A0 mapping</a></div></section>
+</div>
+<p class="meta"><strong>Status:</strong> candidate preview. No Travel L5, actor collision or walkable-interior acceptance is implied. Promoted runtime asset paths are pinned to GitHub revision 8948a06b75cb18c970599afb29b6a772315fad0e; browser/consumer acceptance remains separate.</p>
+</main></body></html>

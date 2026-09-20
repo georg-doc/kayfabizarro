@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>KFB · Hex-Baukasten S0</title>
+<style>
+  :root{
+    --ink:#f2efe6; --dim:#9aa0a6; --line:#2b2f36; --bg:#14171c; --panel:#1b1f26;
+    --hot:#ffc857; --ok:#7bd88f; --bad:#ff6b6b; --warn:#f0a500;
+    --mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;height:100%;background:var(--bg);color:var(--ink);
+    font:14px/1.5 ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,sans-serif;overflow:hidden}
+  a{color:var(--hot)} a:hover{color:#ffe0a0}
+  #shell{display:grid;grid-template-columns:360px 1fr;height:100%}
+  #side{border-right:1px solid var(--line);background:var(--panel);display:flex;flex-direction:column;min-height:0}
+  #head{padding:14px 16px 10px;border-bottom:1px solid var(--line)}
+  #head h1{margin:0;font-size:15px;letter-spacing:.14em;text-transform:uppercase}
+  #head p{margin:4px 0 0;color:var(--dim);font-size:12px}
+  #tabs{display:flex;gap:2px;padding:8px;border-bottom:1px solid var(--line);flex-wrap:wrap}
+  #tabs button{flex:1 1 auto;background:#20252d;border:1px solid var(--line);color:var(--dim);
+    padding:7px 6px;border-radius:6px;cursor:pointer;font-size:12px}
+  #tabs button.on{background:var(--hot);border-color:var(--hot);color:#191919;font-weight:600}
+  #pane{flex:1;overflow:auto;padding:12px 14px 40px;min-height:0}
+  h2{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--dim);margin:18px 0 8px}
+  h2:first-child{margin-top:0}
+  .kv{display:flex;justify-content:space-between;gap:10px;padding:4px 0;border-bottom:1px solid #22262d;font-size:12.5px}
+  .kv span{color:var(--dim)} .kv b{font-weight:600;font-family:var(--mono);text-align:right}
+  .note{color:var(--dim);font-size:12px;margin:8px 0 0}
+  .tag{display:inline-block;padding:1px 7px;border-radius:99px;font-size:11px;font-family:var(--mono);
+    border:1px solid var(--line);color:var(--dim);margin:2px 3px 2px 0}
+  .tag.ok{color:var(--ok);border-color:#2c4a34} .tag.bad{color:var(--bad);border-color:#4a2c2c}
+  .tag.warn{color:var(--warn);border-color:#4a3c1c}
+  .ctrl{display:flex;align-items:center;justify-content:space-between;gap:10px;margin:8px 0}
+  .ctrl label{color:var(--dim);font-size:12px}
+  .ctrl input[type=range]{flex:1;accent-color:var(--hot)}
+  .ctrl input[type=checkbox]{width:18px;height:18px;accent-color:var(--hot);cursor:pointer}
+  .ctrl input[type=text],.ctrl select{background:#20252d;border:1px solid var(--line);color:var(--ink);
+    border-radius:6px;padding:5px 8px;font-family:var(--mono);font-size:12px;min-width:120px}
+  .val{font-family:var(--mono);font-size:12px;min-width:34px;text-align:right}
+  .go{width:100%;background:var(--hot);border:0;color:#191919;font-weight:700;padding:10px;
+    border-radius:8px;cursor:pointer;margin-top:10px;letter-spacing:.04em}
+  .go.sec{background:#20252d;color:var(--ink);border:1px solid var(--line);font-weight:500}
+  #main{position:relative;min-width:0}
+  canvas#view{display:block;width:100%;height:100%}
+  #sheet{position:absolute;inset:0;overflow:auto;padding:14px;display:none;background:var(--bg)}
+  #sheet.on{display:block}
+  #grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(112px,1fr));gap:8px}
+  .cardi{background:var(--panel);border:1px solid var(--line);border-radius:8px;overflow:hidden}
+  .cardi canvas,.cardi .ph{display:block;width:100%;aspect-ratio:1;background:#0f1216}
+  .cardi .cap{padding:5px 6px;font-family:var(--mono);font-size:10px;line-height:1.35;color:var(--dim);
+    word-break:break-all}
+  .cardi .cap b{display:block;color:var(--ink);font-weight:600}
+  #boot{position:absolute;inset:0;display:grid;place-content:center;gap:6px;text-align:center;
+    background:var(--bg);z-index:5}
+  #boot b{font-size:14px;letter-spacing:.14em;text-transform:uppercase}
+  #boot span{color:var(--dim);font-size:12px}
+  #boot.gone{display:none}
+  #hint{position:absolute;left:14px;bottom:12px;color:var(--dim);font-size:11px;font-family:var(--mono)}
+  table{width:100%;border-collapse:collapse;font-size:12px}
+  td,th{text-align:left;padding:3px 4px;border-bottom:1px solid #22262d}
+  th{color:var(--dim);font-weight:500;font-size:11px;text-transform:uppercase;letter-spacing:.08em}
+  td.n{text-align:right;font-family:var(--mono)}
+  @media (max-width:900px){ #shell{grid-template-columns:1fr;grid-template-rows:auto 1fr} #side{max-height:46vh} }
+</style>
+<script type="importmap">
+{ "imports": {
+  "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+  "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
+} }
+</script>
+</head>
+<body>
+<div id="shell">
+  <aside id="side">
+    <div id="head">
+      <h1>Hex-Baukasten S0</h1>
+      <p>Bestand · Bauteile · Regeln · Generator</p>
+    </div>
+    <nav id="tabs"></nav>
+    <div id="pane"></div>
+  </aside>
+  <main id="main">
+    <canvas id="view"></canvas>
+    <div id="sheet"><div id="grid"></div></div>
+    <div id="hint">Ziehen dreht · Rad zoomt</div>
+    <div id="boot"><b>Hex-Baukasten</b><span>Registry wird gelesen…</span></div>
+  </main>
+</div>
+<script type="module" src="src/app.js"></script>
+</body>
+</html>

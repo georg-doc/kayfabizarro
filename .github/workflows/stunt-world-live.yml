@@ -1,0 +1,267 @@
+name: Stunt World public URL proof
+
+on:
+  push:
+    branches: [main]
+    paths: ['kfb-hub/_deploy/STUNT_WORLD_LIVE_TRIGGER.json']
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  live:
+    runs-on: ubuntu-latest
+    timeout-minutes: 14
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout: kfb-hub/_deploy
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install Playwright Chromium
+        run: |
+          npm install --no-save playwright@1.55.0
+          npx playwright install --with-deps chromium
+      - name: Exercise canonical deployed Stunt World
+        run: |
+          mkdir -p live-proof
+          cat > live-proof/check.mjs <<'JS'
+          import fs from 'node:fs';
+          import crypto from 'node:crypto';
+          import { chromium } from 'playwright';
+
+          const cfg = JSON.parse(fs.readFileSync('kfb-hub/_deploy/STUNT_WORLD_LIVE_TRIGGER.json'));
+          const base = cfg.publicRoute.endsWith('/') ? cfg.publicRoute : cfg.publicRoute + '/';
+          const runtime = base + 'runtime/ChatGPT_web/osm-city-drive/?qa=1&city=ehrenfeld-huerth-corridor-v0&look=grotesque';
+          const pause = ms => new Promise(resolve => setTimeout(resolve, ms));
+          const result = {
+            url: base,
+            runtimeUrl: runtime,
+            sourceCommit: cfg.testedRuntimeCommit,
+            browserEvidenceCommit: cfg.browserEvidenceCommit,
+            publicMirrorCommit: cfg.publicMirrorCommit,
+            checks: [],
+            errors: [],
+            httpErrors: [],
+            status: 'RUNNING',
+            humanAcceptance: 'PENDING',
+            fullRouteHumanDrive: 'NOT_RUN',
+            physicalDeviceTest: 'NOT_RUN'
+          };
+          const check = (name, pass, detail) => {
+            result.checks.push({ name, pass: Boolean(pass), detail });
+            if (!pass) throw new Error(name);
+          };
+
+          let browser, page;
+          try {
+            let deployed = false;
+            let deployment = null;
+            for (let i = 0; i < 42; i += 1) {
+              try {
+                const response = await fetch(base + 'DEPLOYMENT.json?ci=' + Date.now(), { cache: 'no-store' });
+                if (response.ok) {
+                  deployment = await response.json();
+                  if (deployment.testedRuntimeCommit === cfg.testedRuntimeCommit
+                    && deployment.browserEvidenceCommit === cfg.browserEvidenceCommit
+                    && deployment.implementationSSOT === 'georg-doc/KFB-Stunt-Car-Race') {
+                    deployed = true;
+                    break;
+                  }
+                }
+              } catch {}
+              await pause(10000);
+            }
+            check('canonical deployment marker', deployed, deployment);
+
+            const wrapperResponse = await fetch(base + '?ci=' + Date.now(), { cache: 'no-store' });
+            const wrapperText = await wrapperResponse.text();
+            check('stable Stage wrapper', wrapperResponse.ok
+              && wrapperText.includes('KFB Stunt World Stage')
+              && wrapperText.includes('ehrenfeld-huerth-corridor-v0'), {
+              status: wrapperResponse.status,
+              length: wrapperText.length
+            });
+
+            const manifestResponse = await fetch(base + 'PUBLIC_MANIFEST.json?ci=' + Date.now(), { cache: 'no-store' });
+            check('public manifest loads', manifestResponse.ok, manifestResponse.status);
+            const manifest = await manifestResponse.json();
+            check('manifest preserves Race ownership',
+              manifest.implementationSSOT === 'georg-doc/KFB-Stunt-Car-Race'
+              && manifest.testedRuntimeCommit === cfg.testedRuntimeCommit
+              && manifest.browserEvidenceCommit === cfg.browserEvidenceCommit,
+              {
+                implementationSSOT: manifest.implementationSSOT,
+                testedRuntimeCommit: manifest.testedRuntimeCommit,
+                browserEvidenceCommit: manifest.browserEvidenceCommit
+              });
+
+            const runtimeFiles = Object.entries(manifest.files)
+              .filter(([name, meta]) => name.startsWith('runtime/') && meta.sourcePath);
+            check('public runtime file count', runtimeFiles.length === 9, runtimeFiles.map(([name]) => name));
+
+            for (const [name, meta] of runtimeFiles) {
+              const response = await fetch(base + name + '?ci=' + Date.now(), { cache: 'no-store' });
+              const bytes = Buffer.from(await response.arrayBuffer());
+              const sha256 = crypto.createHash('sha256').update(bytes).digest('hex');
+              check('public bytes ' + name, response.ok && sha256 === meta.sha256, {
+                status: response.status,
+                sha256,
+                expected: meta.sha256,
+                gitBlob: meta.gitBlob
+              });
+            }
+
+            browser = await chromium.launch({
+              headless: true,
+              args: ['--use-angle=swiftshader', '--enable-unsafe-swiftshader']
+            });
+            result.browser = browser.version();
+            const context = await browser.newContext({ viewport: { width: 1280, height: 900 } });
+            page = await context.newPage();
+            page.on('pageerror', error => result.errors.push(String(error)));
+            page.on('console', message => {
+              if (message.type() === 'error' && !/favicon/.test(message.text())) result.errors.push(message.text());
+            });
+            page.on('response', response => {
+              if (response.status() >= 400) result.httpErrors.push({ url: response.url(), status: response.status() });
+            });
+
+            const t0 = Date.now();
+            await page.goto(runtime, { waitUntil: 'domcontentloaded', timeout: 180000 });
+            await page.waitForFunction(
+              () => window.__OSM_CITY_DRIVE_READY__ || window.__OSM_CITY_DRIVE_ERROR__,
+              {},
+              { timeout: 180000 }
+            );
+            result.bootMs = Date.now() - t0;
+            check('public corridor browser ready',
+              await page.evaluate(() => Boolean(window.__OSM_CITY_DRIVE_READY__)),
+              await page.evaluate(() => window.__OSM_CITY_DRIVE_ERROR__));
+            check('public boot within proof ceiling', result.bootMs < 180000, result.bootMs);
+
+            const snapshot = () => page.evaluate(() => window.__OSM_CITY_DRIVE__.snapshot());
+            const waitTicks = async (count, timeout = 60000) => {
+              const startTick = (await snapshot()).physical.tick;
+              await page.waitForFunction(
+                ({ startTick, count }) => window.__OSM_CITY_DRIVE__.snapshot().physical.tick >= startTick + count,
+                { startTick, count },
+                { timeout }
+              );
+            };
+
+            result.snapshots = {};
+            result.snapshots.boot = await snapshot();
+            check('public corridor identity',
+              result.snapshots.boot.id === 'osm-city-drive-c1-deformer-ehrenfeld-huerth-corridor-v0-grotesque',
+              result.snapshots.boot.id);
+            check('public corridor donor pin',
+              result.snapshots.boot.sourcePins.cityCommit === '3db2c786152fd4d77ca33a63effd2a9db9c1d4c1'
+              && result.snapshots.boot.sourcePins.cityBlob === '5d47021f9380101454b707a028d8675cab37fbe1',
+              result.snapshots.boot.sourcePins);
+            check('public corridor metadata',
+              result.snapshots.boot.city.corridor?.routePhysicalLengthM === 11384.3
+              && result.snapshots.boot.city.corridor?.halfWidthM === 220
+              && result.snapshots.boot.city.corridor?.routePoints === 510
+              && result.snapshots.boot.city.corridor?.joinCount === 2,
+              result.snapshots.boot.city.corridor);
+            check('public C0 remains physical owner',
+              result.snapshots.boot.presentation.physicalOwner === 'FREE_ROAM_C0'
+              && result.snapshots.boot.presentation.collisionGeometryDeformed === false,
+              result.snapshots.boot.presentation);
+            check('public Hürth join heading',
+              result.snapshots.boot.city.start.anchorId === 'huerth-corridor-join'
+              && result.snapshots.boot.city.start.headingSource === 'corridor-route-reverse',
+              result.snapshots.boot.city.start);
+
+            await page.locator('#start').click();
+            await page.waitForFunction(
+              () => window.__OSM_CITY_DRIVE__.snapshot().physical.contacts.filter(Boolean).length === 4,
+              {},
+              { timeout: 30000 }
+            );
+            result.snapshots.settled = await snapshot();
+            check('public four C0 wheel contacts',
+              result.snapshots.settled.physical.contacts.every(Boolean),
+              result.snapshots.settled.physical.contacts);
+            check('public start on mapped road',
+              result.snapshots.settled.city.driveSurface.onMappedRoad === true
+              && result.snapshots.settled.city.nearestRoad?.distanceM < 1,
+              {
+                driveSurface: result.snapshots.settled.city.driveSurface,
+                nearestRoad: result.snapshots.settled.city.nearestRoad
+              });
+            check('public same-scene target distance',
+              result.snapshots.settled.city.anchorDistancesM.huerthJoin < 10
+              && result.snapshots.settled.city.anchorDistancesM.ehrenfeldJoin > 8000,
+              result.snapshots.settled.city.anchorDistancesM);
+            const runBefore = result.snapshots.settled.physical.run;
+            const recoveryCountBefore = result.snapshots.settled.physical.events
+              .filter(event => event.type === 'recovery').length;
+            await page.screenshot({ path: 'live-proof/corridor-settled.png' });
+
+            await page.locator('#view').focus();
+            await page.keyboard.down('w');
+            await page.waitForFunction(
+              () => window.__OSM_CITY_DRIVE__.snapshot().signedForwardSpeed > 1.5,
+              {},
+              { timeout: 20000 }
+            );
+            await waitTicks(40);
+            result.snapshots.forward = await snapshot();
+            await page.keyboard.up('w');
+
+            const moved = Math.hypot(
+              result.snapshots.forward.physical.position.x - result.snapshots.settled.physical.position.x,
+              result.snapshots.forward.physical.position.z - result.snapshots.settled.physical.position.z
+            );
+            const recoveryCountAfter = result.snapshots.forward.physical.events
+              .filter(event => event.type === 'recovery').length;
+            check('public short C0 drive',
+              moved > 2
+              && result.snapshots.forward.physical.run === runBefore
+              && result.snapshots.forward.physical.contacts.filter(Boolean).length >= 2,
+              {
+                moved,
+                runBefore,
+                runAfter: result.snapshots.forward.physical.run,
+                contacts: result.snapshots.forward.physical.contacts
+              });
+            check('public no new recovery',
+              recoveryCountAfter === recoveryCountBefore,
+              { recoveryCountBefore, recoveryCountAfter, events: result.snapshots.forward.physical.events });
+            check('public deformer stays downstream',
+              result.snapshots.forward.presentation.physicalOwner === 'FREE_ROAM_C0'
+              && result.snapshots.forward.presentation.signals.speed > 0.04,
+              result.snapshots.forward.presentation);
+            await page.screenshot({ path: 'live-proof/corridor-forward.png' });
+
+            check('no console/page errors', result.errors.length === 0, result.errors);
+            check('no failed HTTP assets', result.httpErrors.length === 0, result.httpErrors);
+            result.status = 'PASS';
+          } catch (error) {
+            result.status = 'FAIL';
+            result.failure = String(error.stack || error);
+            process.exitCode = 1;
+            if (page) await page.screenshot({ path: 'live-proof/FAIL.png' }).catch(() => {});
+          } finally {
+            fs.writeFileSync('live-proof/results.json', JSON.stringify(result, null, 2) + '\n');
+            console.log(JSON.stringify({
+              status: result.status,
+              checks: result.checks.length,
+              passed: result.checks.filter(check => check.pass).length,
+              bootMs: result.bootMs,
+              failure: result.failure
+            }));
+            if (browser) await browser.close();
+          }
+          JS
+          node live-proof/check.mjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: stunt-world-live-proof
+          path: live-proof
+          retention-days: 14

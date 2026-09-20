@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="de">
+<head><meta charset="utf-8"><title>Animatronic · Gitarren-Griff-Sonde</title>
+<script type="importmap">
+{"imports":{
+ "three":"https://unpkg.com/three@0.184.0/build/three.module.js",
+ "three/addons/controls/OrbitControls.js":"https://unpkg.com/three@0.184.0/examples/jsm/controls/OrbitControls.js",
+ "three/addons/controls/TransformControls.js":"https://unpkg.com/three@0.184.0/examples/jsm/controls/TransformControls.js",
+ "three/addons/loaders/GLTFLoader.js":"https://unpkg.com/three@0.184.0/examples/jsm/loaders/GLTFLoader.js",
+ "three/addons/utils/SkeletonUtils.js":"https://unpkg.com/three@0.184.0/examples/jsm/utils/SkeletonUtils.js"
+}}
+</script>
+<style>body{background:#12110d;color:#e8e2cf;font:12px/1.5 ui-monospace,monospace;padding:16px}pre{white-space:pre-wrap}</style>
+</head>
+<body><pre id="out">messe …</pre>
+<script type="module">
+import * as THREE from 'three';
+import { instance, loadClips, findBone } from '../lib/atlas.js';
+
+const AN = 'media/3D_Assets/KayKit_Mystery_Series6/5 - November 2023 - Animatronic/';
+const CH = AN + 'characters/gltf/Animatronic_Normal.glb';
+const GU = AN + 'assets/gltf/Guitar.gltf';
+
+const n = (v) => Math.round(v * 1000) / 1000;
+const med = await loadClips('Rig_Medium');
+const out = {};
+
+const poses = ['Holding_A', 'Holding_B', 'Holding_C', 'Idle_A', 'Cheering', 'Melee_2H_Idle', 'Waving'];
+
+for (const pn of poses) {
+  const hit = med.find((c) => c.name === pn);
+  if (!hit) { out[pn] = 'kein Clip'; continue; }
+  for (const slot of ['handslot.l', 'handslot.r']) {
+    const fig = await instance(CH);
+    const m = new THREE.AnimationMixer(fig);
+    const a = m.clipAction(hit.clip); a.play(); m.update(0); a.paused = true;
+    const g = await instance(GU);
+    const f = findBone(fig, slot);
+    if (!f) continue;
+    f.bone.add(g);
+    g.position.set(0, 0, 0);
+    fig.updateWorldMatrix(true, true);
+    const gb = new THREE.Box3().setFromObject(g);
+    const wp = (bn) => { const b = findBone(fig, bn); return b ? b.bone.getWorldPosition(new THREE.Vector3()) : null; };
+    const other = slot === 'handslot.l' ? wp('handslot.r') : wp('handslot.l');
+    const head = wp('head');
+    const dist = (p) => p ? n(gb.clampPoint(p, new THREE.Vector3()).distanceTo(p)) : null;
+    out[pn + ' @ ' + slot] = {
+      guitarBox: { min: gb.min.toArray().map(n), max: gb.max.toArray().map(n) },
+      distOtherHand: dist(other), distHead: dist(head),
+      bottomY: n(gb.min.y), topY: n(gb.max.y)
+    };
+  }
+}
+
+document.getElementById('out').textContent = JSON.stringify(out, null, 1);
+window.__grip = out;
+</script>
+</body>
+</html>

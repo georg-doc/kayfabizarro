@@ -1,0 +1,2129 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Irish+Grover&family=Special+Elite&family=Space+Grotesk:wght@400;500;600;700&family=Shantell+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+<style>
+  html,body{margin:0;height:100%;background:#131210;overflow:hidden;font-family:'Special Elite',monospace;-webkit-font-smoothing:antialiased;}
+  #dc-root,.sc-host{height:100%;}
+  a{color:#b8361f;} a:hover{color:#8a6a16;}
+  input[type=range]{-webkit-appearance:none;appearance:none;height:4px;border-radius:0;background:#c2ad79;outline:none;width:100%;}
+  input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:14px;height:14px;border-radius:0;background:#b8361f;border:2px solid #1f1a14;cursor:pointer;}
+  input[type=range]::-moz-range-thumb{width:14px;height:14px;border-radius:0;background:#b8361f;border:2px solid #1f1a14;cursor:pointer;}
+  .pe-scroll::-webkit-scrollbar{width:8px;} .pe-scroll::-webkit-scrollbar-thumb{background:#a89a78;border-radius:0;}
+  ::selection{background:rgba(233,193,74,.5);}
+  /* --- v2-Chrome (Studio v3) --- */
+  .v2c input[type=range]{-webkit-appearance:none;appearance:none;height:6px;border-radius:3px;background:var(--track,#e2e5e8);outline:none;width:100%;cursor:pointer;}
+  .v2c input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:16px;height:16px;border-radius:50%;background:var(--thumb,#2a2d31);border:3px solid var(--surface,#fff);box-shadow:0 1px 4px rgba(0,0,0,.3);cursor:pointer;}
+  .v2c input[type=range]::-moz-range-thumb{width:16px;height:16px;border-radius:50%;background:var(--thumb,#2a2d31);border:3px solid var(--surface,#fff);cursor:pointer;}
+  .v2scroll::-webkit-scrollbar{width:8px;} .v2scroll::-webkit-scrollbar-thumb{background:var(--scroll,#cfd3d8);border-radius:4px;} .v2scroll::-webkit-scrollbar-track{background:transparent;}
+  @keyframes kfSlideIn{from{opacity:0;transform:translateY(-5px);}to{opacity:1;transform:none;}}
+</style>
+<script type="importmap">
+{
+  "imports": {
+    "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
+    "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/"
+  }
+}
+</script>
+<script type="module">
+  import * as THREE from 'three';
+  import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+  import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
+  import { RoomEnvironment } from 'three/addons/environments/RoomEnvironment.js';
+  window.__PETED = { THREE, OrbitControls, GLTFLoader, RoomEnvironment };
+  window.dispatchEvent(new Event('petedready'));
+</script>
+</helmet>
+
+<template id="__bundler_thumbnail"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400"><rect width="400" height="400" fill="#f3ead3"/><rect x="30" y="30" width="340" height="340" fill="#b8361f" transform="rotate(-1.5 200 200)"/><circle cx="200" cy="205" r="118" fill="#f7f0da" stroke="#1f1a14" stroke-width="8"/><circle cx="228" cy="228" r="52" fill="#1f1a14"/><circle cx="246" cy="210" r="15" fill="#f7f0da"/></svg></template>
+<div style="position:absolute;inset:0;background:radial-gradient(120% 100% at 50% 0%,#2a2723 0%,#131210 70%);">
+
+  <canvas ref="{{ canvasRef }}" style="position:absolute;top:48px;left:0;width:calc(100% - 324px);height:calc(100% - 100px);display:block;"></canvas>
+  <input type="file" accept="application/json,.json" ref="{{ fileRef }}" onChange="{{ onImport }}" style="display:none;">
+
+  <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:12px;pointer-events:none;transition:opacity .5s;z-index:9;opacity:{{ loaderOpacity }};">
+    <div style="font-family:'Irish Grover',cursive;font-size:26px;color:#f6efd9;text-shadow:3px 3px 0 rgba(31,26,20,.6);transform:rotate(-1deg);">Pet-Studio v4 lädt …</div>
+    <div style="font-size:12px;color:#e3d5af;opacity:.75;">GLB-Cube-Pets + pet-LIBRARY.json aus dem Repo</div>
+  </div>
+
+  <!-- v2-Chrome (Skin) über dem v9-Motor. Regler/IO in Schritt 1 inert. -->
+  <div ref="{{ chromeRef }}" class="v2c" style="position:absolute;inset:0;font-family:'Space Grotesk',sans-serif;color:var(--text,#1b1e23);pointer-events:none;z-index:5;">
+
+    <!-- HEADER -->
+    <div style="position:absolute;top:0;left:0;right:0;height:48px;display:flex;align-items:stretch;gap:8px;padding:0 12px 0 14px;background:var(--surface,#fff);border-bottom:1px solid var(--border,#e4e7ea);pointer-events:auto;">
+      <div style="display:flex;flex:1;min-width:0;">
+        <sc-for list="{{ tabs }}" as="t" hint-placeholder-count="6">
+          <button onClick="{{ t.on }}" style="{{ t.style }}" style-hover="{{ t.hover }}">{{ t.label }}</button>
+        </sc-for>
+      </div>
+      <div style="display:flex;align-items:center;gap:2px;flex:0 0 auto;">
+        <div style="width:34px;height:34px;flex:0 0 auto;margin-right:6px;background:var(--chip,#eef0f2);border:1px solid var(--border,#e4e7ea);display:grid;place-items:center;font-weight:700;font-size:14px;color:var(--muted,#6b7178);">{{ petInitial }}</div>
+        <sc-for list="{{ v2ioBtns }}" as="b" hint-placeholder-count="4">
+          <button onClick="{{ b.on }}" title="{{ b.title }}" style="width:34px;height:34px;display:grid;place-items:center;background:none;border:none;cursor:pointer;color:var(--muted,#6b7178);font-size:15px;" style-hover="color:var(--text,#1b1e23);">{{ b.icon }}</button>
+        </sc-for>
+        <span style="width:1px;height:20px;background:var(--border,#e4e7ea);margin:0 5px;flex:0 0 auto;"></span>
+        <button onClick="{{ onThemeCycle }}" title="{{ themeTitle }}" style="width:34px;height:34px;display:grid;place-items:center;background:none;border:none;cursor:pointer;color:var(--muted,#6b7178);font-size:15px;" style-hover="color:var(--text,#1b1e23);">{{ themeIcon }}</button>
+      </div>
+    </div>
+
+    <!-- SIDE PANEL -->
+    <div class="v2scroll" style="position:absolute;top:48px;right:0;bottom:52px;width:324px;background:var(--surface,#fff);border-left:1px solid var(--border,#e4e7ea);overflow-y:auto;pointer-events:auto;">
+      <div style="display:flex;align-items:center;gap:8px;padding:10px 14px 9px;background:{{ th.tint }};border-bottom:1px solid {{ th.line }};">
+        <span style="font-weight:700;font-size:15px;color:{{ th.tcol }};letter-spacing:.2px;">{{ tabTitle }}</span>
+        <span style="margin-left:auto;font-size:11px;color:var(--faint,#9aa1a8);">{{ liveLabel }}</span>
+      </div>
+      <div style="padding:0 16px 20px;">
+        <sc-for list="{{ sections }}" as="sec" hint-placeholder-count="4">
+          <div style="border-bottom:1px solid var(--border-soft,#eef0f2);">
+            <button onClick="{{ sec.onToggle }}" style="{{ sec.headStyle }}">
+              <span>{{ sec.title }}</span>
+              <span style="display:inline-flex;color:{{ sec.chevColor }};transition:transform .2s;transform:{{ sec.chev }};">▸</span>
+            </button>
+            <div style="{{ sec.contentStyle }}">
+              <sc-for list="{{ sec.rows }}" as="r" hint-placeholder-count="3">
+                <sc-if value="{{ r.isSlider }}" hint-placeholder-val="{{ true }}">
+                  <div style="margin-bottom:11px;">
+                    <div style="display:flex;justify-content:space-between;font-size:13px;margin-bottom:5px;"><span style="color:var(--faint,#9aa1a8);">{{ r.label }}</span><span style="color:{{ r.accent }};font-weight:700;font-variant-numeric:tabular-nums;">{{ r.val }}</span></div>
+                    <input type="range" min="{{ r.min }}" max="{{ r.max }}" step="{{ r.step }}" value="{{ r.value }}" onInput="{{ r.on }}">
+                  </div>
+                </sc-if>
+                <sc-if value="{{ r.isButtons }}" hint-placeholder-val="{{ true }}">
+                  <div style="margin-bottom:11px;">
+                    <div style="font-size:12px;color:var(--faint,#9aa1a8);margin-bottom:6px;">{{ r.label }}</div>
+                    <div style="display:grid;grid-template-columns:{{ r.cols }};gap:6px;">
+                      <sc-for list="{{ r.items }}" as="it" hint-placeholder-count="3"><button onClick="{{ it.on }}" style="{{ it.style }}">{{ it.label }}</button></sc-for>
+                    </div>
+                  </div>
+                </sc-if>
+                <sc-if value="{{ r.isToggle }}" hint-placeholder-val="{{ true }}">
+                  <button onClick="{{ r.on }}" style="width:100%;display:flex;justify-content:space-between;align-items:center;gap:10px;background:none;border:none;padding:7px 1px;cursor:pointer;margin-bottom:3px;">
+                    <span style="font-size:13px;color:var(--text,#1b1e23);text-align:left;">{{ r.label }}</span>
+                    <span style="width:44px;height:24px;border-radius:12px;background:{{ r.trackBg }};position:relative;flex:0 0 auto;"><span style="position:absolute;top:3px;left:3px;width:18px;height:18px;border-radius:50%;background:#fff;box-shadow:0 1px 3px rgba(0,0,0,.35);transform:{{ r.knobX }};"></span></span>
+                  </button>
+                </sc-if>
+                <sc-if value="{{ r.isNote }}" hint-placeholder-val="{{ true }}">
+                  <div style="font-size:13px;line-height:1.55;color:var(--muted,#6b7178);margin-bottom:10px;padding:9px 12px;background:{{ th.tint }};">{{ r.text }}</div>
+                </sc-if>
+                <sc-if value="{{ r.isRich }}" hint-placeholder-val="{{ false }}">
+                  <div style="margin-bottom:11px;">
+                    <div style="font-size:12px;color:var(--faint,#9aa1a8);margin-bottom:6px;">{{ r.label }}</div>
+                    <div contenteditable="true" ref="{{ r.ref }}" onInput="{{ r.on }}" style="min-height:38px;box-sizing:border-box;padding:8px 10px;border:1px solid var(--border,#e4e7ea);background:var(--chip,#eef0f2);color:var(--text,#1b1e23);font-family:'Space Grotesk',sans-serif;font-size:13px;line-height:1.4;outline:none;"></div>
+                  </div>
+                </sc-if>
+              </sc-for>
+            </div>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+
+    <!-- BOTTOM -->
+    <div class="v2scroll" style="position:absolute;bottom:0;left:0;right:0;height:52px;background:var(--surface,#fff);border-top:1px solid var(--border,#e4e7ea);overflow-x:auto;pointer-events:auto;display:flex;align-items:center;padding:0 16px;">
+      <div style="display:flex;gap:20px;align-items:center;min-width:min-content;">
+        <sc-for list="{{ bottomGroups }}" as="g" hint-placeholder-count="4">
+          <div style="display:flex;align-items:center;gap:8px;flex:0 0 auto;">
+            <span style="font-size:11px;font-weight:600;color:{{ g.color }};white-space:nowrap;">{{ g.label }}</span>
+            <div style="display:flex;gap:6px;">
+              <sc-for list="{{ g.pads }}" as="p" hint-placeholder-count="4"><button onClick="{{ p.on }}" style="{{ p.style }}">{{ p.label }}</button></sc-for>
+            </div>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:&quot;100%&quot;,&quot;height&quot;:&quot;100%&quot;},&quot;turntable&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:false,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Editor&quot;},&quot;zenMode&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:false,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Editor&quot;},&quot;lightMood&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;tag&quot;,&quot;daemmerung&quot;,&quot;nacht&quot;,&quot;untergrund&quot;],&quot;default&quot;:&quot;tag&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Editor&quot;}}">
+const LIB_URL = './studio-v3/PET_EDITOR/pet-LIBRARY.json';
+const SKY = 'https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/skydome_a.webp'; // Watercolor-Skydome (aus v1); Fallback: Gradient-Backdrop
+const SESSION_KEY = 'kfb-pet-library-v9';   // v9: eigener Key. NEU: Mund-Tab — Platzierung der Talk-Muender pro Pet (pet.mouth {size,dy,sx}), PNGs aus FrizzelBob-Mouth_01 via pet-mouth.v1.js (geteilt mit Motion-Editor v2).
+const MOUTH_SLIDERS = [['size', 'Größe', 0.15, 0.9, 0.01, 2], ['dy', 'Höhe (± unter Mitte)', -1.0, 0.15, 0.01, 2], ['sx', 'Breite ×', 0.5, 2, 0.02, 2], ['rot', 'Kippung °', -25, 25, 0.5, 1], ['bend', 'Bogen ↑↓ (Mundwinkel)', -1, 1, 0.02, 2]];
+const MOUTH_DEF = { size: 0.44, dy: -0.52, sx: 1, dx: 0, tilt: 0, rot: 0, bend: 0, set: 'male', lift: 0.03, wrap: 1, onTop: false, visemeMap: { closed: 'm', open: 'ah', wide: 'ee', round: 'oh', smile: 'smile' } };
+// v4 §2a: FUENF Sprech-Formen als umschaltbare Zustaende der 13 Decals (kein neuer Mund).
+// Labels = UI, die Zuordnung Visem->Decal wohnt im Modul (pet-mouth.v1.js VISEME_MAP_DEFAULT)
+// und ist pro Pet ueberschreibbar — der Look gehoert Georg, nicht dem Code.
+const VISEME_LABELS = [['closed','Zu'],['open','Offen'],['wide','Breit'],['round','Rund'],['smile','Lächeln']];
+const MOUTH_KEYS = ['smile','neutral','m','d','s','ee','uh','ah','oh','r','f','woo','l'];
+// v3-Oberfläche = object-space Triplanar (KEIN Modell-UV -> keine Terrassen/Wiederhol-Linien; klebt
+// am Pet). Zwei frei kombinierbare Achsen: TEXTURE (Basis-Fläche: prozedurales Knet-Clay ODER eine
+// echte Diffuse-Textur aus dem Repo, triplanar projiziert + getönt) und MOD (Overlay: Fingerabdrücke
+// als Relief, oder handmade-Grunge/Decal per Alpha). Alle Regler live per Uniform (kein Reload).
+const TEXBASE = 'https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/Textures/';
+// Diagnose-Colormap: direkte URL (liegt NICHT im <id>/<id>_diffuse.jpg-Schema, also nicht konstruieren).
+// Ersetzt n.material.map 1:1 -> repeat entscheidet: echtes Unwrap = Fell, Paletten-Atlas = ein Fleck/Fläche.
+const FUR_URL = 'https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/Textures/fur/fluffy_fur_01.jpg';
+const TEX_GROUPS = [
+  ['Prozedural', [['proc', 'Knet-Clay (prozedural)']]],
+  ['Fell', [['fur_fluffy', 'fluffy_fur (triplanar)']]],
+  ['Clay', ['Clay001', 'Clay002', 'Clay004', 'GlazedTerracotta001', 'GlazedTerracotta002', 'clay_floor_001'].map((id) => [id, id])],
+  ['Fabric', ['Fabric030', 'Fabric048', 'Fabric061', 'Fabric069', 'Fabric077', 'cotton_jersey', 'rough_linen', 'hessian_230', 'velour_velvet', 'Carpet016'].map((id) => [id, id])],
+  ['Holz (alt/lackiert)', ['PaintedWood005', 'PaintedWood007B', 'PaintedWood008C', 'PaintedWood009C', 'Wood035', 'Wood036', 'Wood089', 'WoodFloor044', 'WoodSiding013', 'Planks039'].map((id) => [id, id])],
+  ['Papier/Karton', ['Paper001', 'Paper002', 'Paper004', 'Cardboard001', 'Cardboard003', 'CardboardSet001', 'Chipboard007'].map((id) => [id, id])],
+  ['Stein/Putz', ['Plaster001', 'PaintedPlaster006', 'Concrete024', 'Onyx015'].map((id) => [id, id])],
+];
+// Mods = handmade-Overlays, frei mit jeder Textur kombinierbar. kind: relief = in die Höhe (Bump),
+// grunge = dunkler Fleck, lighten = heller Aufkleber (Tape). tex = Alpha-Decal aus dem Repo.
+const MODS = [
+  ['none', '— kein Mod —', 'none', null],
+  ['fingerprint', 'Fingerabdrücke', 'relief', 'decals/fingerprint_alpha.png'],
+  ['coffee', 'Kaffeerand', 'grunge', 'decals/coffee_ring_alpha.png'],
+  ['ink', 'Tinten-Klecks', 'grunge', 'decals/ink_splat_alpha.png'],
+  ['scratch', 'Kratzer', 'grunge', 'decals/scratches_alpha.png'],
+  ['tape', 'Klebeband', 'lighten', 'decals/tape_alpha.png'],
+];
+const MODOF = (id) => MODS.find((m) => m[0] === id) || MODS[0];
+const SURF_SLIDERS = [['texScale', 'Textur-Skala', 0.3, 5, 0.05, 2], ['tint', 'Tönung (Pet-Farbe)', 0, 1, 0.02, 2], ['relief', 'Relief (Textur)', 0, 1.2, 0.02, 2], ['knet', 'Knet-Bump', 0, 0.12, 0.002, 3], ['ao', 'AO (Höhlen)', 0, 0.7, 0.02, 2], ['rough', 'Rauheit', 0.3, 1, 0.02, 2], ['modScale', 'Mod-Skala', 0.3, 6, 0.05, 2], ['modAmt', 'Mod-Stärke', 0, 1, 0.02, 2], ['paper', 'Papier-Detail (Gelb-Look)', 0, 1, 0.02, 2]];
+const SWATCHES = ['#f2c93c', '#b8361f', '#2f7a72', '#d9622b', '#8a8f96', '#2b3440'];
+
+const MOODS = [
+  { id: 'tag', label: 'Tag', bg: 0x2a3138, amb: [0xfff2d6, 0.55], hemi: [0xdfeaff, 0x6b5a44, 0.55], sun: [0xffe6b0, 2.7], exp: 1.0 },
+  { id: 'daemmerung', label: 'Dämmerung', bg: 0x3a2a20, amb: [0xffdca8, 0.42], hemi: [0xffc79a, 0x3a2c20, 0.45], sun: [0xff9d5c, 2.3], exp: 0.95 },
+  { id: 'nacht', label: 'Nacht', bg: 0x14181f, amb: [0x8aa0c8, 0.30], hemi: [0x38486b, 0x0e0b12, 0.4], sun: [0xffd9a0, 1.7], exp: 1.05 },
+  { id: 'untergrund', label: 'Untergrund', bg: 0x0d0c0a, amb: [0x6a7686, 0.26], hemi: [0x272c34, 0x080706, 0.35], sun: [0xe8d2a0, 1.3], exp: 1.1 },
+];
+const MOOD = {}; MOODS.forEach((m) => MOOD[m.id] = m);
+
+const ANIMS = [['idle', 'Idle'], ['enter', 'Walk'], ['run', 'Run'], ['eat', 'Eat'], ['celebrate', 'Dance'], ['react-positive', 'Pos !'], ['react-negative', 'Neg ?!'], ['talk', 'Talk'], ['grin', 'Grin'], ['pout', 'Pout']];
+const ANCHOR_SLIDERS = [['dx', 'dx · Abstand', 0.10, 0.60, 0.005, 3], ['dy', 'dy · Höhe', -0.40, 0.40, 0.005, 3], ['ring', 'ring · Augengröße', 0.10, 0.50, 0.005, 3], ['track', 'Blick-Wander', 0, 0.30, 0.005, 3]];
+const SHAPE_SLIDERS = [['inset', 'inset · Tiefe', 0, 1, 0.01, 2], ['pupilSize', 'Pupillengröße', 0, 1, 0.01, 2], ['lidFit', 'Lid-Fit (eng→)', 0, 1, 0.01, 2], ['gloss', 'Glanz (googly)', 0, 1, 0.01, 2], ['converge', 'Schielen (−aus/+ein)', -0.5, 0.5, 0.01, 2]];
+const BLINK_SLIDERS = [['minGap', 'Gap min (s)', 0.5, 6, 0.1, 1], ['maxGap', 'Gap max (s)', 2, 12, 0.1, 1], ['dur', 'Dauer (s)', 0.06, 0.4, 0.01, 2]];
+const EMOTE_SLIDERS = [['lidUpper', 'Lid oben', -0.4, 1, 0.01, 2], ['lidLower', 'Lid unten', -0.4, 1, 0.01, 2], ['slant', 'Slant', -0.8, 0.8, 0.01, 2]];
+const ASYM_SLIDERS = [['u', 'Δ links · Lid oben', -0.8, 0.8, 0.01, 2], ['l', 'Δ links · Lid unten', -0.8, 0.8, 0.01, 2], ['sl', 'Δ links · Slant', -0.8, 0.8, 0.01, 2]];
+const LIFE_SLIDERS = [['wander', 'Wandern', 0, 1, 0.01, 2], ['tremor', 'Zittern', 0, 1, 0.01, 2]];
+const KIN_SLIDERS = [['a', 'a · Beschleunigung (− Bremse)', -1, 1, 0.01, 2], ['c', 'c · Kurve (−L / +R)', -1, 1, 0.01, 2], ['j', 'j · Fall (+ Drop)', -1, 1, 0.01, 2]];
+const LIGHT_SLIDERS = [['sunAz', 'Azimut °', 0, 360, 1, 0], ['sunEl', 'Höhe °', 8, 85, 1, 0]];
+const cap = (s) => s.charAt(0).toUpperCase() + s.slice(1);
+const hexInt = (h) => parseInt(String(h).replace('#', ''), 16);
+// v5 Eingriff 3: Patch-Stelle hoch, nie zurueck (Kopien-Friedhof vermeiden).
+const bumpPatch = (v) => { const m = /^(\d+)\.(\d+)\.(\d+)$/.exec(String(v || '')); return m ? (m[1] + '.' + m[2] + '.' + (parseInt(m[3], 10) + 1)) : '0.3.1'; };
+const CANON_URL = 'https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/pet-LIBRARY.json';
+const today = () => new Date().toISOString().slice(0, 10);
+
+const V2THEME = {
+  koerper:{name:'Körper',accent:'#c86a86',tcol:'#c05f7d',ink:'#fff',tint:'#f6e6ec',chip:'#eecfd9',line:'#ecd3dc'},
+  gesicht:{name:'Gesicht',accent:'#e0ac10',tcol:'#7a5e08',ink:'#2e2400',tint:'#fbf1cb',chip:'#f2e3a2',line:'#efdd97'},
+  actor:{name:'Actor',accent:'#3f8478',tcol:'#3f8478',ink:'#fff',tint:'#e1efeb',chip:'#cee4de',line:'#d2e0da'},
+  motion:{name:'Motion',accent:'#b8361f',tcol:'#b8361f',ink:'#fff',tint:'#f4ded6',chip:'#f0cdc0',line:'#eed3c8'},
+  voice:{name:'Voice',accent:'#7a5a92',tcol:'#7a5a92',ink:'#fff',tint:'#ece4f1',chip:'#dccfe7',line:'#ddd2e6'},
+  perform:{name:'Perform',accent:'#4d7488',tcol:'#4d7488',ink:'#fff',tint:'#e3ecf0',chip:'#cfe0e8',line:'#d3e0e6'},
+};
+const V2SURF = {
+  clean:{'--app-bg':'#eceef1','--surface':'#ffffff','--border':'#e4e7ea','--border-soft':'#eef0f2','--text':'#1b1e23','--muted':'#6b7178','--faint':'#9aa1a8','--chip':'#eef0f2','--chip-text':'#565b61','--pad':'#f1f3f5','--pad-text':'#3c4045','--track':'#e2e5e8','--toggle-off':'#cbcfd4','--hover':'#f2f4f6','--chevron-idle':'#c0c5cb','--scroll':'#cfd3d8','--thumb':'#2a2d31'},
+  paper:{'--app-bg':'#f2ecdd','--surface':'#faf6ee','--border':'#e0d7bf','--border-soft':'#ece3cd','--text':'#1f1a14','--muted':'#8a7f63','--faint':'#9a8f72','--chip':'#efe8d6','--chip-text':'#6b6350','--pad':'#f1ebdc','--pad-text':'#4a4335','--track':'#e2d7b7','--toggle-off':'#cfc4a4','--hover':'#f3ead3','--chevron-idle':'#b6a985','--scroll':'#cfc4a4','--thumb':'#3a342a'},
+  dark:{'--app-bg':'#141619','--surface':'#1e2126','--border':'#2f343b','--border-soft':'#282c32','--text':'#eceef0','--muted':'#98a0a8','--faint':'#6c747c','--chip':'#2a2f35','--chip-text':'#c2c8ce','--pad':'#262b31','--pad-text':'#cdd2d7','--track':'#333a42','--toggle-off':'#3c434b','--hover':'#2a2f35','--chevron-idle':'#5a626b','--scroll':'#3a424a','--thumb':'#cfd4d9'},
+};
+const V2TABS = ['koerper','gesicht','actor','motion','voice','perform'];
+const V2isObj = (v) => v && typeof v === 'object' && !Array.isArray(v);
+const V2deepMerge = (a, b) => { if (!V2isObj(a)) return b === undefined ? a : b; const o = { ...a }; for (const k of Object.keys(b || {})) o[k] = V2isObj(o[k]) && V2isObj(b[k]) ? V2deepMerge(o[k], b[k]) : b[k]; return o; };
+const V2deepDiff = (a, b, p, out) => { out = out || []; p = p || ''; const ka = V2isObj(a) ? Object.keys(a) : null, kb = V2isObj(b) ? Object.keys(b) : null;
+  if (ka && kb) { for (const k of new Set([...ka, ...kb])) { if (!(k in a)) out.push('+ ' + p + k); else if (!(k in b)) out.push('- ' + p + k); else V2deepDiff(a[k], b[k], p + k + '.', out); } }
+  else if (Array.isArray(a) && Array.isArray(b)) { if (a.length !== b.length) out.push('≠len ' + p); else for (let i = 0; i < a.length; i++) V2deepDiff(a[i], b[i], p + i + '.', out); }
+  else if (a !== b) out.push('≠ ' + p.slice(0, -1)); return out; };
+const V2CFG = {
+  koerper:[
+    {id:'material',title:'Material',rows:[
+      {t:'seg',label:'Stil',opts:['Kenney','Clay','Cel'],ids:['original','clay','cel'],bind:{h:'mode',sp:'mode'}},
+      {t:'slider',label:'Textur-Skala',min:0.3,max:5,step:0.05,bind:{h:'surf',k:'texScale',sp:'surf.texScale'}},
+      {t:'slider',label:'Tönung',min:0,max:1,step:0.02,bind:{h:'surf',k:'tint',sp:'surf.tint'}},
+      {t:'slider',label:'Relief',min:0,max:1.2,step:0.02,bind:{h:'surf',k:'relief',sp:'surf.relief'}},
+      {t:'slider',label:'AO (Höhlen)',min:0,max:0.7,step:0.02,bind:{h:'surf',k:'ao',sp:'surf.ao'}},
+      {t:'slider',label:'Rauheit',min:0.3,max:1,step:0.02,bind:{h:'surf',k:'rough',sp:'surf.rough'}}]},
+    {id:'licht',title:'Licht',rows:[
+      {t:'seg',label:'Stimmung',opts:['Tag','Dämm.','Nacht','U-grund'],ids:['tag','daemmerung','nacht','untergrund'],bind:{h:'mood',sp:'mood'}},
+      {t:'slider',label:'Azimut',min:0,max:360,step:1,bind:{h:'light',k:'sunAz',sp:'sunAz'}},
+      {t:'slider',label:'Höhe',min:8,max:85,step:1,bind:{h:'light',k:'sunEl',sp:'sunEl'}},
+      {t:'toggle',label:'Streiflicht',bind:{h:'rim',on:'rim'}}]},
+    {id:'farbe',title:'Farbe',rows:[
+      {t:'sw',label:'Pet-Farbe',opts:['#d3a244','#b8361f','#2f7a72','#d9622b','#8a8f96','#2b3440'],bind:{h:'swatch'}},
+      {t:'toggle',label:'Native Kenney-Farbe',bind:{h:'native',on:'native'}},
+      {t:'toggle',label:'Facetten',bind:{h:'facet',on:'facet'}}]},
+  ],
+  gesicht:[
+    {id:'augen',title:'Augen',rows:[
+      {t:'seg',label:'Pupillen-Stil',opts:['matte-cute','glossy-googly'],ids:['matte-cute','glossy-googly'],bind:{h:'pupilStyle',sp:'pupilStyle'}},
+      {t:'slider',label:'Abstand',min:0.1,max:0.6,step:0.005,bind:{h:'anchor',k:'dx',sp:'anchor.dx'}},
+      {t:'slider',label:'Höhe',min:-0.4,max:0.4,step:0.005,bind:{h:'anchor',k:'dy',sp:'anchor.dy'}},
+      {t:'slider',label:'Augengröße (ring)',min:0.1,max:0.5,step:0.005,bind:{h:'anchor',k:'ring',sp:'anchor.ring'}},
+      {t:'slider',label:'Blick-Wander',min:0,max:0.3,step:0.005,bind:{h:'anchor',k:'track',sp:'anchor.track'}},
+      {t:'slider',label:'Pupillengröße',min:0,max:1,step:0.01,bind:{h:'shape',k:'pupilSize',sp:'shape.pupilSize'}},
+      {t:'slider',label:'Glanz',min:0,max:1,step:0.01,bind:{h:'shape',k:'gloss',sp:'shape.gloss'}},
+      {t:'slider',label:'Wimpern Länge',min:0,max:1,step:0.02,bind:{h:'lashes',k:'length',sp:'lashesP.length'}},
+      {t:'slider',label:'Wimpern Dichte',min:0,max:12,step:1,bind:{h:'lashes',k:'density',sp:'lashesP.density'}},
+      {t:'slider',label:'Wimpern Breite',min:0.2,max:3,step:0.05,bind:{h:'lashes',k:'width',sp:'lashesP.width'}}]},
+    {id:'emotes',title:'Emotes',rows:[
+      {t:'chips',label:'Ausdruck',bind:{h:'emoteSel'}},
+      {t:'toggle',label:'Blick folgt Cursor',bind:{h:'gazeFollow',on:'gazeFollow'}}]},
+    {id:'mund',title:'Mund',rows:[
+      {t:'toggle',label:'Mund sichtbar',bind:{h:'mouthOn',on:'mouthOn'}},
+      {t:'seg',label:'Mund-Set',opts:['männlich','weiblich','rote Lippen'],ids:['male','female','red'],bind:{h:'mouthSet',sp:'mouthP.set'}},
+      {t:'slider',label:'Größe',min:0.15,max:0.9,step:0.01,bind:{h:'mouthSlider',k:'size',sp:'mouthP.size'}},
+      {t:'slider',label:'Höhe',min:-1,max:0.15,step:0.01,bind:{h:'mouthSlider',k:'dy',sp:'mouthP.dy'}},
+      {t:'slider',label:'Neigung',min:-40,max:40,step:1,bind:{h:'mouthSlider',k:'tilt',sp:'mouthP.tilt'}},
+      {t:'slider',label:'Breite ×',min:0.5,max:2,step:0.02,bind:{h:'mouthSlider',k:'sx',sp:'mouthP.sx'}},
+      {t:'slider',label:'Abstand (Auflage)',min:0,max:0.12,step:0.002,bind:{h:'mouthSlider',k:'lift',sp:'mouthP.lift'}},
+      {t:'slider',label:'Anschmiegen',min:0,max:1,step:0.02,bind:{h:'mouthSlider',k:'wrap',sp:'mouthP.wrap'}},
+      {t:'toggle',label:'Immer obenauf (alter Zustand)',bind:{h:'mouthOnTop',on:'mouthP.onTop'}}]},
+    {id:'visem',title:'Viseme (5 Formen)',custom:'_visemeRows',rows:[]},
+  ],
+  actor:[
+    {id:'asym',title:'Asymmetrie (Δ linkes Auge)',rows:[
+      {t:'slider',label:'Lid oben',min:-0.8,max:0.8,step:0.01,bind:{h:'asym',k:'u',sp:'asym.u'}},
+      {t:'slider',label:'Lid unten',min:-0.8,max:0.8,step:0.01,bind:{h:'asym',k:'l',sp:'asym.l'}},
+      {t:'slider',label:'Schräge',min:-0.8,max:0.8,step:0.01,bind:{h:'asym',k:'sl',sp:'asym.sl'}}]},
+    {id:'leben',title:'Leben',rows:[
+      {t:'toggle',label:'Eigenleben',bind:{h:'lifeOn',on:'life.on'}},
+      {t:'slider',label:'Wandern',min:0,max:1,step:0.01,bind:{h:'life',k:'wander',sp:'life.wander'}},
+      {t:'slider',label:'Zittern',min:0,max:1,step:0.01,bind:{h:'life',k:'tremor',sp:'life.tremor'}}]},
+    {id:'kinetik',title:'Kinetik (Fake-Ride)',rows:[
+      {t:'slider',label:'Beschleunigung',min:-1,max:1,step:0.01,bind:{h:'kin',k:'a',sp:'kin.a'}},
+      {t:'slider',label:'Kurve',min:-1,max:1,step:0.01,bind:{h:'kin',k:'c',sp:'kin.c'}},
+      {t:'slider',label:'Fallen',min:-1,max:1,step:0.01,bind:{h:'kin',k:'j',sp:'kin.j'}}]},
+  ],
+  motion:[
+    {id:'clips',title:'Animation (GLB-Clips)',rows:[
+      {t:'seg',label:'Clip',opts:['Idle','Walk','Run','Eat'],ids:['idle','enter','run','eat'],bind:{h:'anim',trigger:true}},
+      {t:'seg',label:'Aktion',opts:['Dance','Pos','Neg','Talk'],ids:['celebrate','react-positive','react-negative','talk'],bind:{h:'anim',trigger:true}}]},
+    {id:'tuning',title:'Bewegungs-Tuning',rows:[
+      {t:'note',text:'Attrappe: Sprunghöhe, Dauer, Squash/Stretch und Glättung wohnen in der Motion-Library (motion-LIBRARY.v2.json / Bewegungs-Editor), NICHT im v9-Aussehen-Motor. Wird verdrahtet, sobald beide Contracts vereint sind.'}]},
+    {id:'treiber',title:'Treiber-Vertrag (§2b)',custom:'_puppetRows',rows:[]},
+  ],
+  voice:[{id:'quelle',title:'Voice',rows:[{t:'note',text:'ATTRAPPE — kein Vertragsfeld. Geplant: Song-Quelle · Lippen-Sync-Modus · Synchronisation. voice.* ist im Vertrag noch null und wird verdrahtet, sobald WS0 die Felder liefert.'}]}],
+  perform:[{id:'capture',title:'Perform',rows:[{t:'note',text:'ATTRAPPE — kein Vertragsfeld. Geplant: Erfassung (Webcam) · Zuordnung · Aufnahme. perform.* ist null; Aufnahmen laufen später über perform.aufnahme → benannter Schritt → motion.clips.'}]}],
+};
+const CLIP8 = [['Idle','idle'],['Walk','enter'],['Run','run'],['Eat','eat'],['Dance','celebrate'],['Pos','react-positive'],['Neg','react-negative'],['Talk','talk']];
+const V2BOTTOM = {
+  gesicht:[{label:'Emotes',key:'gesicht',emote:true},{label:'Viseme',key:'gesicht',vis:VISEME_LABELS},{label:'Anim',key:'motion',anim:CLIP8}],
+  _default:[{label:'Anim',key:'motion',anim:CLIP8}],
+};
+const V2OPEN0 = (()=>{const o={};Object.keys(V2CFG).forEach(t=>V2CFG[t].forEach((sec,i)=>{o[t+'.'+sec.id]=i<2;}));o['gesicht.visem']=true;return o;})();   // v4: Viseme-Bank offen, das ist die Abnahme dieser Runde
+
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = {
+      status: 'lädt …', ready: false, hud: !(this.props.zenMode ?? false),
+      petIdx: 0, mode: 'clay', texture: 'proc', mod: 'none', matTab: 'material', mood: this.props.lightMood ?? 'tag',
+      surf: { texScale: 0.9, tint: 0.85, relief: 0.8, knet: 0.22, ao: 0.26, rough: 0.90, freq: 11, modScale: 2.0, modAmt: 0.55, paper: 0.32 },
+      recolor: true, rim: true, hideEyes: false, facet: false, showDisc: false, gazeFollow: false, sunAz: 40, sunEl: 52, kenneyBase: false,
+      shadowOn: true, shadowOpacity: 0.32,   // v4: Kontakt-Schatten — bleibt auch bei transparentem BG (Export)
+      paperGold: true, tintMode: 'lum',
+      pupilStyle: 'matte-cute',
+      anchor: { dx: 0.345, dy: -0.10, ring: 0.30, track: 0.10 },
+      shape: { inset: 0, pupilSize: 0.4, lidFit: 0.9, gloss: 0.85, converge: 0 },
+      blink: { minGap: 2.5, maxGap: 6.5, dur: 0.12 },
+      emoteSel: 'neutral', pets: [], emotes: [], dirty: false,
+      stripEyes: true, shells: [], eyeShellIdx: [],
+      asym: { u: 0, l: 0, sl: 0 }, life: { on: true, wander: 0.45, tremor: 0.35 }, kin: { a: 0, c: 0, j: 0 }, rideLoop: false, ridePhase: '—',
+      colormap: 'glb', mapRepeat: 1, mapRot: 0,   // Coworker-Diagnose: GLB-Colormap vs. fluffy_fur
+      mouthOn: true, mouthTalk: false, mouthSel: 'neutral', mouthP: { ...MOUTH_DEF },   // v9: Mund-Tab
+      visemeSel: 'open',   // v4 §2a: welches der 5 Viseme gerade auf dem Tisch liegt
+      puppetRun: null,     // v4 §2b: Messwerte der letzten speak()-Fahrt
+      lashesP: { length: 0, density: 6, width: 1 },   // Wimpern (pro Pet, EyeRig-Overlay)
+      v2tab: 'gesicht', v2theme: 'clean', v2open: V2OPEN0,   // Studio-v3-Chrome (Schritt 1: inert)
+      v2bubble: { open: true, type: 'speech', text: 'BINGO!', gap: 46, pad: 9, line: 2, tint: 0.5, font: 15, arrow: 34, dead: 44, lazy: 0.10 },   // Stufe 1: Sprechblase (v4: Pfeil + Totzone + Trägheit)
+      v2speech: { pitch: 0, rate: 1, category: null },   // Stufe 2: Stimme-Wunsch (spiegelt Contract voice.speech; category null = aus Archetyp)
+      v2ind: { state: 'new' },   // Stufe 3: Indikator-Bewegungszustand (neu/gelesen/denkt)
+      v2sleep: { auto: false, idle: 12 },   // Stufe 5: Schlaf (Auto bei Untaetigkeit, Schwelle in s)
+    };
+    this.modelCache = new Map();
+    this._clayMaps = {};
+    this.disposed = false;
+    this.canvasRef = (el) => { if (el) this._canvas = el; };
+    this.fileRef = (el) => { this._file = el; };
+  }
+
+  componentDidMount() {
+    if (window.__PETED) this.init();
+    else window.addEventListener('petedready', () => this.init(), { once: true });
+    this._onResize = () => this.resize();
+    window.addEventListener('resize', this._onResize);
+    this._onPointer = (ev) => {
+      this._idleT = 0;
+      if (!this.rig || !this.state.gazeFollow || !this._canvas) return;
+      const r = this._canvas.getBoundingClientRect();
+      if (!r.width || !r.height) return;
+      const nx = ((ev.clientX - r.left) / r.width) * 2 - 1;
+      const ny = -(((ev.clientY - r.top) / r.height) * 2 - 1);
+      this.rig.pointTo(nx, ny);
+    };
+    window.addEventListener('pointermove', this._onPointer);
+    this._onDown = () => { this._idleT = 0; if (this._sleeping) this._sleep(false); };
+    window.addEventListener('pointerdown', this._onDown);
+    this._loadExportContract();
+    this._bubbleInit();
+    if ('speechSynthesis' in window) { try { window.speechSynthesis.getVoices(); window.speechSynthesis.onvoiceschanged = () => {}; } catch (e) {} }
+  }
+  componentWillUnmount() {
+    this.disposed = true;
+    if (this._raf) cancelAnimationFrame(this._raf);
+    window.removeEventListener('resize', this._onResize);
+    if (this._onPointer) window.removeEventListener('pointermove', this._onPointer);
+    if (this._onDown) window.removeEventListener('pointerdown', this._onDown);
+    if (this.rig) this.rig.dispose();
+    if (this.mouth) this.mouth.dispose();
+    if (this.puppet) this.puppet.dispose();
+    if (this._visCy) clearInterval(this._visCy);
+    if (this._bubbleRAF) cancelAnimationFrame(this._bubbleRAF);
+    try { window.speechSynthesis.cancel(); } catch (e) {}
+  }
+
+  gradMap() {
+    if (this._grad) return this._grad;
+    const THREE = this.THREE;
+    const c = document.createElement('canvas'); c.width = 4; c.height = 1;
+    const x = c.getContext('2d');
+    ['#4a4130', '#857654', '#bcac85', '#f3ead0'].forEach((s, i) => { x.fillStyle = s; x.fillRect(i, 0, 1, 1); });
+    const g = new THREE.CanvasTexture(c); g.minFilter = g.magFilter = THREE.NearestFilter; g.colorSpace = THREE.SRGBColorSpace;
+    this._grad = g; return g;
+  }
+  _white() {
+    if (this._whiteTex) return this._whiteTex;
+    const THREE = this.THREE;
+    const t = new THREE.DataTexture(new Uint8Array([255, 255, 255, 255]), 1, 1, THREE.RGBAFormat);
+    t.needsUpdate = true; this._whiteTex = t; return t;
+  }
+  loadTex(url) {   // object-space Triplanar -> raw (NoColorSpace) sampeln, im Shader linearisieren; Repeat.
+    this._texCache = this._texCache || new Map();
+    if (this._texCache.has(url)) return this._texCache.get(url);
+    const THREE = this.THREE;
+    const pr = new Promise((res, rej) => this._texLoader.load(url, (t) => {
+      t.wrapS = t.wrapT = THREE.RepeatWrapping; t.colorSpace = THREE.NoColorSpace; t.anisotropy = 4;
+      try { this.renderer.initTexture(t); } catch (e) {}   // GPU-Upload erzwingen: custom Sampler-Uniform triggert three's Auto-Upload NICHT -> sonst sampelt es Weiss
+      res(t);
+    }, undefined, rej));
+    this._texCache.set(url, pr);
+    return pr;
+  }
+  // Coworker-Diagnose: fluffy_fur als direkte Colormap laden (SRGB, wie die GLB-map -> Hardware-Decode).
+  // Einmalig; repeat/rotation live per Slider auf demselben Textur-Objekt (von allen Body-Meshes geteilt).
+  _loadFur() {
+    if (this._furPr) return this._furPr;
+    const THREE = this.THREE;
+    this._furPr = new Promise((res) => this._texLoader.load(FUR_URL, (t) => {
+      t.wrapS = t.wrapT = THREE.RepeatWrapping; t.colorSpace = THREE.SRGBColorSpace; t.anisotropy = 4;
+      t.center.set(0.5, 0.5); t.repeat.set(this.state.mapRepeat, this.state.mapRepeat); t.rotation = this.state.mapRot * Math.PI / 180;
+      try { this.renderer.initTexture(t); } catch (e) {}
+      this._furTex = t; res(t);
+    }, undefined, () => res(null)));
+    return this._furPr;
+  }
+  _modKind() {   // 0 none, 1 relief (Bump), 2 grunge (dunkler), 3 lighten (Tape)
+    const m = MODOF(this.state.mod); const k = m[2];
+    if (!this._modTex || k === 'none') return 0;
+    return k === 'relief' ? 1 : (k === 'grunge' ? 2 : 3);
+  }
+  _eachClayMat(fn) {   // Live-Uniform-Update ohne Reskin (Regler)
+    const visit = (n) => { if (n.isMesh && !n.userData.petOverlay && n.material && n.material.userData && n.material.userData.isClay) fn(n.material); };
+    if (this.ch && this.ch.inner) this.ch.inner.traverse(visit);
+    if (this.disc) visit(this.disc);
+  }
+  _persistSurf() {   // Editor-Look in den Contract stopfen (Fremdfelder laufen durch)
+    if (!this.lib) return;
+    this.lib.material = this.lib.material || {};
+    // v7: die Look-Entscheidung wandert VOLLSTÄNDIG in den Contract (Eingriff 4). facet zusätzlich
+    // im face-Block (dort liest die Library sie ohne Änderung) -> face.facet maßgeblich, hier Spiegel.
+    this.lib.material.live = { texture: this.state.texture, mod: this.state.mod, surf: { ...this.state.surf }, kenneyBase: this.state.kenneyBase, paperGold: this.state.paperGold, tintMode: this.state.tintMode, facet: this.state.facet };
+    this._ensureFace(); this.lib.face.facet = this.state.facet;
+  }
+  // Look aus einem material.live-Block zurueckholen (Texturen/Mod laden + reskin). Ein Vorbild,
+  // benutzt von init(), Library-Import und Single-Import. Der Boot-Pfad machte das schon richtig;
+  // der alte onImport ignorierte material.live komplett (gemeldeter Bug).
+  async _applyLive(live) {
+    if (!live) return;
+    this.setState({ texture: live.texture || 'proc', mod: live.mod || 'none', surf: { ...this.state.surf, ...(live.surf || {}) }, kenneyBase: !!live.kenneyBase, paperGold: live.paperGold !== false, tintMode: live.tintMode || 'lum', facet: !!live.facet });
+    if (live.texture && live.texture !== 'proc') {
+      try { this._tex = await this.loadTex(live.texture === 'fur_fluffy' ? FUR_URL : (TEXBASE + live.texture + '/' + live.texture + '_diffuse.jpg')); } catch (e) { this._tex = null; }
+      if (live.texture === 'fur_fluffy') this._nrm = null;
+      else { try { this._nrm = await this.loadTex(TEXBASE + live.texture + '/' + live.texture + '_normal.jpg'); } catch (e) { this._nrm = null; } }
+    } else { this._tex = null; this._nrm = null; }
+    if (live.mod && live.mod !== 'none') { const mm = MODOF(live.mod); try { this._modTex = await this.loadTex(TEXBASE + mm[3]); } catch (e) { this._modTex = null; } }
+    else { this._modTex = null; }
+    this.reskin();
+  }
+  async _importLibrary(text, name) {
+    try {
+      const lib = JSON.parse(text);
+      this.lib = lib;
+      this._ensureFace(); this._buildRoster();
+      const er = lib.eyeRig || {};
+      this.setState({ pets: this.roster, emotes: lib.emotes, stripEyes: this.lib.face.stripEyes !== false, blink: { ...(er.blink || this.state.blink) }, dirty: true, status: '✓ importiert: ' + name });
+      await this.loadPet(0);
+      const live = (lib.material && lib.material.live) || null;
+      if (live) await this._applyLive(live);
+    } catch (err) { this.setState({ status: 'Import-Fehler: ' + err.message }); }
+  }
+  async _importOnePet(text, name) {
+    try {
+      const one = JSON.parse(text);
+      const pet = one.pet || (Array.isArray(one.pets) ? one.pets[0] : null);
+      if (!pet || !pet.id) throw new Error('kein Pet im Single-Format');
+      const idx = this.lib.pets.findIndex((q) => q.id === pet.id);
+      if (idx < 0) throw new Error('id „' + pet.id + '“ nicht in Library, nichts geschrieben');
+      this.lib.pets[idx] = pet;                                    // nur diesen einen Eintrag ersetzen
+      if (one.canonical && !this.lib.canonical) this.lib.canonical = one.canonical;   // Eingriff 3: Felder zurueckgeben
+      this._buildRoster();
+      const ri = this.roster.findIndex((q) => q.id === pet.id);
+      this.setState({ pets: this.roster.slice(), dirty: true, status: '✓ Pet importiert: ' + pet.id });
+      await this.loadPet(ri < 0 ? 0 : ri);
+      if (one.material && one.material.live) await this._applyLive(one.material.live);
+    } catch (err) { this.setState({ status: 'Single-Import-Fehler: ' + err.message }); }
+  }
+  // v3-Surface-Shader: object-space Triplanar. Basis = prozedurales Knet-Clay ODER echte Diffuse-Textur
+  // (kein Modell-UV -> keine Terrassen). Relief aus Textur-Luminanz + Knet-Noise; breite weiche AO;
+  // Mod-Layer als Relief (Fingerabdrücke) oder Grunge/Lighten-Decal. Alle Regler = Uniforms (live).
+  _surfShader(mat, useTex, dScale, plain, lid) {
+    const THREE = this.THREE, sf = this.state.surf, st = this.state;
+    const ds = dScale || 1;                 // kleine Overlay-Meshes (Lider) brauchen feinere Abtastung
+    mat.userData.dScale = ds;
+    const tex = useTex ? this._tex : this._white();
+    const modK = this._modKind();
+    mat.userData.isClay = true;
+    // v7 Eingriff 3: uLook 0=recolor / 1=Kenney-Basis / 2=Colormap+Papier+Gelb (nicht multiplikativ).
+    // v8-Fix „dunkle Augenringe": Lider (lid-Flag aus dem Rig) gehen NICHT durch paperGold/kenneyBase —
+    // dort würde die fehlende Colormap als Weiß gelesen und die abgedunkelte Lid-Base weggeblichen.
+    let look = (plain || lid) ? 0 : (st.paperGold ? 2 : (st.kenneyBase ? 1 : 0));
+    let hasColor = 0;
+    if (!plain && !lid) { try { const pth = this._pet(); hasColor = (st.recolor && pth && pth.color) ? 1 : 0; } catch (e) {} }
+    // three cacht Shader-Programme nach Quelltext -> teilen sich Materialien EIN Programm, läuft
+    // onBeforeCompile für die weiteren NICHT und ihre Custom-Uniforms (uTex…) bleiben ungebunden
+    // (= Fallback auf glattes Material ohne Textur). Eindeutiger Cache-Key erzwingt onBeforeCompile.
+    const pck = 'kfclay' + (this._pckN = (this._pckN || 0) + 1);
+    mat.customProgramCacheKey = () => pck;
+    mat.onBeforeCompile = (sh) => {
+      Object.assign(sh.uniforms, {
+        uFreq: { value: sf.freq }, uKnet: { value: sf.knet }, uAO: { value: sf.ao },
+        uTexScale: { value: sf.texScale * ds }, uTint: { value: sf.tint }, uRelief: { value: sf.relief },
+        uModScale: { value: sf.modScale }, uModAmt: { value: sf.modAmt },
+        uHasTex: { value: useTex ? 1 : 0 }, uTex: { value: tex },
+        uHasNrm: { value: (useTex && this._nrm) ? 1 : 0 }, uNrm: { value: (useTex && this._nrm) ? this._nrm : this._white() },
+        uModKind: { value: modK }, uMod: { value: this._modTex || this._white() },
+        uLook: { value: look }, uTintMode: { value: st.tintMode === 'lerp' ? 1 : 0 },
+        uHasColor: { value: hasColor }, uPaper: { value: sf.paper != null ? sf.paper : 0.32 }, uLidM: { value: lid ? 1 : 0 },
+      });
+      sh.vertexShader = sh.vertexShader
+        .replace('#include <common>', '#include <common>\nvarying vec3 vObjP;\nvarying vec3 vObjN;\nvarying mat3 vNMat;')
+        .replace('#include <beginnormal_vertex>', '#include <beginnormal_vertex>\n  vObjN = objectNormal;')
+        .replace('#include <begin_vertex>', '#include <begin_vertex>\n  vObjP = transformed;\n  vNMat = normalMatrix;');
+      sh.fragmentShader = sh.fragmentShader
+        .replace('#include <common>', '#include <common>\n'
+          + 'varying vec3 vObjP; varying vec3 vObjN; varying mat3 vNMat;\n'
+          + 'uniform float uFreq,uKnet,uAO,uTexScale,uTint,uRelief,uModScale,uModAmt,uHasTex,uHasNrm,uModKind,uLook,uTintMode,uHasColor,uPaper,uLidM;\n'
+          + 'uniform sampler2D uTex,uMod,uNrm;\n'
+          + 'float kfH(vec3 p){ p=fract(p*0.3183099+0.1); p*=17.0; return fract(p.x*p.y*p.z*(p.x+p.y+p.z)); }\n'
+          + 'float kfN(vec3 x){ vec3 i=floor(x),f=fract(x); f=f*f*(3.0-2.0*f);\n'
+          + '  return mix(mix(mix(kfH(i+vec3(0,0,0)),kfH(i+vec3(1,0,0)),f.x),mix(kfH(i+vec3(0,1,0)),kfH(i+vec3(1,1,0)),f.x),f.y),\n'
+          + '             mix(mix(kfH(i+vec3(0,0,1)),kfH(i+vec3(1,0,1)),f.x),mix(kfH(i+vec3(0,1,1)),kfH(i+vec3(1,1,1)),f.x),f.y),f.z); }\n'
+          + 'float kfClay(vec3 p){ float h=kfN(p*uFreq)*0.66; h+=kfN(p*uFreq*2.3)*0.28; h+=kfN(p*uFreq*5.4)*0.06; return h; }\n'
+          + 'vec3 kfW(vec3 n){ vec3 w=pow(abs(normalize(n)),vec3(2.0)); return w/max(w.x+w.y+w.z,1e-4); }\n'
+          + 'vec4 kfTri(sampler2D t,vec3 p,vec3 w){ return texture2D(t,p.yz)*w.x+texture2D(t,p.xz)*w.y+texture2D(t,p.xy)*w.z; }\n'
+          + 'float kfLum(vec3 p,vec3 w){ vec3 c=kfTri(uTex,p*uTexScale,w).rgb; return dot(c,vec3(0.299,0.587,0.114)); }\n'
+          + 'float kfMod(vec3 p,vec3 w){ vec4 c=kfTri(uMod,p*uModScale,w); return (c.a<0.999)?c.a:(1.0-dot(c.rgb,vec3(0.3333))); }\n'
+          + 'float kfHeight(vec3 p){ vec3 w=kfW(vObjN); float h=uKnet*(kfN(p*uFreq)*0.8+kfN(p*uFreq*2.0)*0.2);\n'
+          + '  if(uModKind>0.5 && uModKind<1.5) h+=uModAmt*0.4*kfMod(p,w); return h; }')
+        .replace('#include <normal_fragment_maps>', '#include <normal_fragment_maps>\n'
+          + '{ vec3 p=vObjP; float e=0.15/uFreq;\n'
+          + '  vec3 g=vec3(kfHeight(p+vec3(e,0.,0.))-kfHeight(p-vec3(e,0.,0.)), kfHeight(p+vec3(0.,e,0.))-kfHeight(p-vec3(0.,e,0.)), kfHeight(p+vec3(0.,0.,e))-kfHeight(p-vec3(0.,0.,e)))/(2.0*e);\n'
+          + '  vec3 gn=normalize(vObjN); g-=gn*dot(g,gn); vec3 nObj=normalize(gn-g);\n'
+          + '  if(uHasNrm>0.5){ vec3 w=kfW(gn);\n'
+          + '    vec3 tx=texture2D(uNrm,p.zy*uTexScale).xyz*2.0-1.0;\n'
+          + '    vec3 ty=texture2D(uNrm,p.xz*uTexScale).xyz*2.0-1.0;\n'
+          + '    vec3 tz=texture2D(uNrm,p.xy*uTexScale).xyz*2.0-1.0;\n'
+          + '    tx.xy*=uRelief; ty.xy*=uRelief; tz.xy*=uRelief;\n'
+          + '    tx=vec3(tx.xy+nObj.zy, abs(tx.z)*nObj.x);\n'
+          + '    ty=vec3(ty.xy+nObj.xz, abs(ty.z)*nObj.y);\n'
+          + '    tz=vec3(tz.xy+nObj.xy, abs(tz.z)*nObj.z);\n'
+          + '    nObj=normalize(tx.zyx*w.x + ty.xzy*w.y + tz.xyz*w.z); }\n'
+          + '  normal=normalize(vNMat*nObj); }')
+        .replace('#include <map_fragment>', '#ifdef USE_MAP\n'
+          + '  vec4 kfMap=texture2D(map,vMapUv);\n'                          // Colormap (Hardware sRGB->linear)
+          + '  if(uLook<1.5) diffuseColor*=kfMap;\n'                          // Pfade 0/1: Colormap wie gehabt; Pfad 2 macht es selbst
+          + '#endif')
+        .replace('#include <color_fragment>', '#include <color_fragment>\n'
+          + '{ vec3 p=vObjP; vec3 w=kfW(vObjN);\n'
+          + '  float lp=1.0; vec3 tex=vec3(1.0);\n'
+          + '  if(uHasTex>0.5){ tex=pow(kfTri(uTex,p*uTexScale,w).rgb,vec3(2.2)); lp=dot(tex,vec3(0.299,0.587,0.114)); }\n'
+          + '  if(uLook>1.5){\n'                                             // PFAD 2: Colormap + Papier + Gelb, NICHT multiplikativ
+          + '    vec3 cm=vec3(1.0);\n'
+          + '    #ifdef USE_MAP\n      cm=texture2D(map,vMapUv).rgb;\n    #endif\n'   // Colormap linear (Innenohren etc.)
+          + '    vec3 baseC=cm*mix(1.0, lp*1.7, uPaper);\n'                  // Papier als Helligkeits-Detail auf der Colormap
+          + '    vec3 yellow=diffuseColor.rgb;\n'                            // uniform diffuse = pet.color (Gelb)
+          + '    float t=uTint*uHasColor;\n'                                 // ohne pet.color -> t=0 -> native Colormap
+          + '    vec3 tinted;\n'
+          + '    if(uTintMode<0.5){\n'                                       // Variante A: Luminanz behalten, Farbton ersetzen
+          + '      float lum=dot(baseC,vec3(0.299,0.587,0.114));\n'
+          + '      float yl=max(dot(yellow,vec3(0.299,0.587,0.114)),1e-3);\n'
+          + '      tinted=mix(baseC, (yellow/yl)*lum, t);\n'
+          + '    } else {\n'                                                 // Variante B: Lerp gegen Gelb
+          + '      tinted=mix(baseC, yellow, t);\n'
+          + '    }\n'
+          + '    diffuseColor.rgb=tinted;\n'
+          + '  } else if(uLook>0.5){\n'                                      // PFAD 1: Kenney-Basis (Colormap via map_fragment)
+          + '    if(uHasTex>0.5) diffuseColor.rgb*=mix(vec3(1.0),vec3(lp*1.9),uTint);\n'
+          + '  } else if(uHasTex>0.5){\n'                                    // PFAD 0: Recolor (Detail voll in Pet-Farbe)
+          + '    if(uLidM>0.5){ diffuseColor.rgb*=mix(1.0, lp*1.25, uTint); }\n'   // Lid: dunkle Base bleibt, Textur nur als Helligkeits-Detail (~neutral)
+          + '    else { vec3 recol=diffuseColor.rgb*lp*1.9; diffuseColor.rgb=mix(tex, recol, uTint); }\n'
+          + '  }\n'
+          + '  float ao=kfN(p*uFreq*0.5); diffuseColor.rgb*=mix(1.0-uAO,1.0,smoothstep(0.2,0.72,ao));\n'
+          + '  if(uModKind>1.5){ float md=kfMod(p,w);\n'
+          + '    if(uModKind<2.5) diffuseColor.rgb*=mix(1.0,1.0-0.85*uModAmt,md);\n'
+          + '    else diffuseColor.rgb=mix(diffuseColor.rgb, vec3(0.90,0.86,0.72), md*uModAmt); } }');
+      mat.userData.shader = sh;
+    };
+    mat.needsUpdate = true;
+    return mat;
+  }
+  // Look: Kenney (GLB-Colormap) / Clay (Toon-Clay, object-space Triplanar) / Cel (Toon-Bänder)
+  makeMat(o = {}) {
+    const THREE = this.THREE;
+    const col = new THREE.Color(o.color != null ? o.color : 0xffffff);
+    const m = this.state.mode;
+    if (m === 'cel') return new THREE.MeshToonMaterial({ color: col, map: o.map || null, gradientMap: this.gradMap() });
+    if (m === 'original') return new THREE.MeshStandardMaterial({ color: col, map: o.map || null, metalness: 0, roughness: o.roughness != null ? o.roughness : 0.55, envMapIntensity: 0.6 });
+    // clay = Toon-Clay: matt, Studio-HDRI trägt das Licht. Basis-Textur wird triplanar überlagert
+    // (kein UV); nur bei 'proc' bleibt die GLB-Colormap (o.map) für sichtbare Original-Augen erhalten.
+    const lidFlatten = o.lid && this.state.texture === 'fur_fluffy';   // NUR Fell: gerichtet+hochkontrastig -> Chevron-Naht auf der gekruemmten Lid-Kappe. Andere Texturen (Fabric/Clay) kacheln dort sauber -> Anschluss behalten.
+    const useTex = this.state.texture !== 'proc' && !!this._tex && !lidFlatten;
+    const keepMap = this.state.kenneyBase || this.state.paperGold || !useTex;   // v7: paperGold behält die Colormap (farbige Innenohren) NEBEN der Triplanar-Textur
+    const mat = new THREE.MeshStandardMaterial({ color: col, map: keepMap ? (o.map || null) : null, metalness: 0, roughness: o.roughness != null ? o.roughness : this.state.surf.rough, envMapIntensity: 1.0, flatShading: false });
+    this._surfShader(mat, useTex, o.detailScale, o.plain, o.lid);
+    return mat;
+  }
+  async loadGLTF(url) {
+    if (this.modelCache.has(url)) return this.modelCache.get(url);
+    const g = await this.gltf.loadAsync(url);
+    this.modelCache.set(url, g);
+    return g;
+  }
+
+  async init() {
+    if (this.scene) return;
+    const H = window.__PETED, THREE = this.THREE = H.THREE;
+    window.__petStudio = this;   // Mess-Griff: die Projekt-Regel ist "messen statt behaupten" — ohne
+                                 // Handle laesst sich am laufenden Studio nichts nachpruefen.
+    const renderer = this.renderer = new THREE.WebGLRenderer({ canvas: this._canvas, antialias: true, preserveDrawingBuffer: true, alpha: true });
+    // alpha:true ist die Bedingung fuer den transparenten Hintergrund — ohne sie bleibt setClearAlpha(0)
+    // wirkungslos und die Buehne wird schwarz (Befund Georg 30.7.). Bei Clear-Alpha 1 (Default) aendert
+    // sich nichts, deshalb gefahrlos.
+    renderer.setPixelRatio(Math.min(2, window.devicePixelRatio));
+    renderer.outputColorSpace = THREE.SRGBColorSpace;
+    renderer.toneMapping = THREE.ACESFilmicToneMapping;
+    renderer.shadowMap.enabled = true; renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+    const scene = this.scene = new THREE.Scene();
+    const cam = this.cam = new THREE.PerspectiveCamera(38, 1, 0.05, 100);
+    cam.position.set(1.15, 1.08, 3.5);
+    const controls = this.controls = new H.OrbitControls(cam, this._canvas);
+    controls.enableDamping = true; controls.dampingFactor = 0.08;
+    controls.maxPolarAngle = Math.PI * 0.98;  // Blick auch von unten erlaubt
+    controls.minDistance = 0.7; controls.maxDistance = 8;
+    controls.target.set(0, 0.5, 0);
+    this.gltf = new H.GLTFLoader();
+    this._texLoader = new THREE.TextureLoader(); this._texLoader.setCrossOrigin('anonymous');
+    const pmrem = new THREE.PMREMGenerator(renderer);
+    scene.environment = pmrem.fromScene(new H.RoomEnvironment(), 0.04).texture;
+    this.ambient = new THREE.AmbientLight(0xffffff, 0.5); scene.add(this.ambient);
+    this.hemi = new THREE.HemisphereLight(0xffffff, 0x444444, 0.5); scene.add(this.hemi);
+    const sun = this.sun = new THREE.DirectionalLight(0xffffff, 2.6);
+    sun.castShadow = true; sun.shadow.mapSize.set(2048, 2048);
+    sun.shadow.bias = -0.0005; sun.shadow.radius = 12;
+    Object.assign(sun.shadow.camera, { left: -3, right: 3, top: 3, bottom: -3, near: 0.5, far: 14 });
+    sun.shadow.camera.updateProjectionMatrix();
+    scene.add(sun); scene.add(sun.target);
+    // 3-Punkt-Studio (Kenney-Basic-Scene-Idee): Key (sun) + Fill (weich, gegenüber) + Rim (hinten)
+    // -> auf der glänzenden Pupille entstehen 3 echte Spekular-Highlights unterschiedlicher Größe.
+    this.fill = new THREE.DirectionalLight(0xdfeaff, 0.9); scene.add(this.fill);
+    this.rim = new THREE.DirectionalLight(0xf6efd9, 0.8); this.rim.position.set(-2.4, 1.9, -2.6); scene.add(this.rim);
+    // Bühne: Sockel im Pet-Material + Kontakt-Schatten (keine Tusche-Outline, Master §4)
+    this.disc = new THREE.Mesh(new THREE.CylinderGeometry(1.28, 1.4, 0.12, 40),
+      this.makeMat({ color: 0xe3d5af, plain: true }));
+    this.disc.position.y = -0.06; this.disc.rotation.y = 0.22; this.disc.receiveShadow = true; this.disc.castShadow = true;
+    this.disc.visible = this.state.showDisc;   // Podest default AUS
+    scene.add(this.disc);
+    // Kontakt-Schatten auf einer ShadowMaterial-Ebene: sie zeigt NUR den Schatten, sonst nichts —
+    // deshalb bleibt sie auch bei transparentem Hintergrund stehen und liefert den halbtransparenten
+    // 3D-Schatten fuer den PNG-Export (pseudo-raeumlich auf Karten platzieren).
+    const shadow = this._shadowPlane = new THREE.Mesh(new THREE.PlaneGeometry(40, 40), new THREE.ShadowMaterial({ opacity: this.state.shadowOpacity, transparent: true }));
+    shadow.rotation.x = -Math.PI / 2; shadow.position.y = 0.001; shadow.receiveShadow = true;
+    shadow.visible = this.state.shadowOn;
+    scene.add(shadow);
+    this.setSunDir();
+    this.applyLights();
+    this.resize();
+    this.clock = new THREE.Clock();
+    this.animate();
+    // Contract: Session-Stand > frisch geladen (Save-in-Session, Feedback D)
+    let fromSession = false;
+    try {
+      const saved = localStorage.getItem(SESSION_KEY);
+      if (saved) { this.lib = JSON.parse(saved); fromSession = true; }
+    } catch (e) {}
+    if (!this.lib) {
+      try {
+        const r = await fetch(LIB_URL);
+        if (!r.ok) throw new Error('pet-LIBRARY.json HTTP ' + r.status);
+        this.lib = await r.json();
+      } catch (e) { this.setState({ status: 'Library-Fehler: ' + e.message }); return; }
+    }
+    const _abs = (rel) => new URL(rel, location.href).href;   // blob/eval-Kontext: relative Specifier scheitern -> absolut auflösen
+    this._CharMod = await import(_abs('./studio-v3/pet-library.v6.js'));
+    this._RigMod = await import(_abs('./studio-v3/pet-eye-rig.v5.js'));
+    this._MouthMod = await import(_abs('./studio-v3/pet-mouth.v1.js') + '?v=' + Date.now());   // geteilt mit Motion-Editor v2, cache-gebustet
+    this._PuppetMod = await import(_abs('./studio-v3/pet-puppet.v1.js') + '?v=' + Date.now());   // v4 §2b: Treiber-Vertrag
+    this.ch = new this._CharMod.Character({
+      THREE, loadGltf: (u) => this.loadGLTF(u), makeMat: (o) => this.makeMat(o), receiveShadow: false,
+    });
+    this.ch.group.scale.setScalar(1.6);
+    this.ch.group.position.y = 0.004;
+    this.scene.add(this.ch.group);
+    this._ensureFace(); this._buildRoster();
+    const er = this.lib.eyeRig || {};
+    const live = (this.lib.material && this.lib.material.live) || null;
+    this.setState({
+      pets: this.roster, emotes: this.lib.emotes, stripEyes: this.lib.face.stripEyes !== false,
+      blink: { ...(er.blink || this.state.blink) },
+      facet: this.lib.face.facet === true,
+      ...(live ? { texture: live.texture || 'proc', mod: live.mod || 'none', surf: { ...this.state.surf, ...(live.surf || {}) }, kenneyBase: !!live.kenneyBase, paperGold: live.paperGold !== false, tintMode: live.tintMode || 'lum', facet: !!live.facet } : {}),
+      status: fromSession ? 'Session wiederhergestellt' : 'lädt Pet …', dirty: fromSession,
+    });
+    this.loadSky();
+    await this.loadPet(0);
+    if (live) await this._applyLive(live);
+  }
+
+  async loadSky() {
+    if (!this._texLoader) return;
+    try {
+      const t = await new Promise((res, rej) => this._texLoader.load(SKY, res, undefined, rej));
+      t.mapping = this.THREE.EquirectangularReflectionMapping; t.colorSpace = this.THREE.SRGBColorSpace;
+      this._sky = t; this.applyLights();       // Watercolor-Backdrop für Tag/Dämmerung
+    } catch (e) { this._sky = null; }           // 404 -> Gradient-Backdrop bleibt
+  }
+
+  setSunDir() {
+    if (!this.sun) return;
+    const az = this.state.sunAz * Math.PI / 180, el = this.state.sunEl * Math.PI / 180, r = 4.8;
+    this.sun.position.set(Math.cos(el) * Math.sin(az) * r, Math.sin(el) * r, Math.cos(el) * Math.cos(az) * r);
+    this.sun.target.position.set(0, 0.45, 0); this.sun.target.updateMatrixWorld();
+    if (this.fill) {
+      const fa = az + Math.PI * 0.72, fe = Math.max(0.18, el * 0.55);
+      this.fill.position.set(Math.cos(fe) * Math.sin(fa) * 4.2, Math.sin(fe) * 3, Math.cos(fe) * Math.cos(fa) * 4.2);
+    }
+  }
+  // Weicher Studio-Backdrop (Gradient) statt flacher Farbe / unverifiziertem Skydome.
+  bgTex(hex) {
+    this._bgCache = this._bgCache || {};
+    if (this._bgCache[hex]) return this._bgCache[hex];
+    const THREE = this.THREE, base = new THREE.Color(hex);
+    const top = base.clone().multiplyScalar(1.5).offsetHSL(0, -0.04, 0.04);
+    const bot = base.clone().multiplyScalar(0.5);
+    const c = document.createElement('canvas'); c.width = 16; c.height = 256;
+    const g = c.getContext('2d');
+    const grd = g.createLinearGradient(0, 0, 0, 256);
+    grd.addColorStop(0, '#' + top.getHexString());
+    grd.addColorStop(0.62, '#' + base.getHexString());
+    grd.addColorStop(1, '#' + bot.getHexString());
+    g.fillStyle = grd; g.fillRect(0, 0, 16, 256);
+    const t = new THREE.CanvasTexture(c); t.colorSpace = THREE.SRGBColorSpace;
+    this._bgCache[hex] = t; return t;
+  }
+  applyLights() {
+    const THREE = this.THREE, mp = MOOD[this.state.mood] || MOODS[0];
+    if (!this.scene) return;
+    this.scene.background = (this._sky && (this.state.mood === 'tag' || this.state.mood === 'daemmerung')) ? this._sky : this.bgTex(mp.bg);
+    this.ambient.color.setHex(mp.amb[0]); this.ambient.intensity = mp.amb[1];
+    this.hemi.color.setHex(mp.hemi[0]); this.hemi.groundColor.setHex(mp.hemi[1]); this.hemi.intensity = mp.hemi[2];
+    // v3-Licht: Studio-HDRI (RoomEnvironment als scene.environment) trägt das weiche Grundlicht;
+    // der Directional ist nur ein sanfter Key (halbe Intensität, weicher Schatten) — harte Directionals
+    // schnitzen sonst die Low-Poly-Facetten als Terrassen heraus (Post-Mortem D).
+    this.sun.color.setHex(mp.sun[0]); this.sun.intensity = mp.sun[1] * 0.5;
+    if (this.fill) this.fill.intensity = mp.sun[1] * 0.28;
+    this.rim.visible = this.state.rim; this.rim.intensity = mp.sun[1] * 0.32;
+    this.renderer.toneMappingExposure = mp.exp;
+  }
+
+  _emote(id) { return (this.state.emotes || []).find((e) => e.id === id); }
+  _pet() { return (this.roster || this.lib.pets)[this.state.petIdx]; }
+  // v5: 24-Pet-Roster aus dem Contract (assetNotes.petsAll24) + getunte Eintraege aus lib.pets.
+  // Untunte Pets sind synthetische Defaults; sobald einer getunt wird, wandert er nach lib.pets
+  // (Export bleibt minimal, nur beruehrte Pets). petsAll24 wird GELESEN, nicht hardcodiert.
+  _buildRoster() {
+    const all = (this.lib.assetNotes && this.lib.assetNotes.petsAll24) || this.lib.pets.map((p) => p.id);
+    const byId = {}; (this.lib.pets || []).forEach((p) => { byId[p.id] = p; });
+    this.roster = all.map((id) => byId[id] || { id, name: cap(id), glb: 'animal-' + id + '.glb', eye: {}, skin: 'default' });
+  }
+  _ensureInLib(pet) {
+    if (pet && this.lib.pets.indexOf(pet) < 0) { this.lib.pets.push(pet); this.setState({ pets: this.roster.slice() }); }
+  }
+  _ensureFace() {
+    this.lib.face = this.lib.face || {};
+    if (this.lib.face.stripEyes === undefined) this.lib.face.stripEyes = true;
+    if (this.lib.face.facet === undefined) this.lib.face.facet = false;   // v7: Normalen-Entscheidung im Contract (Default rund)
+    this.lib.face.stripSnout = this.lib.face.stripSnout || { perPet: {} };
+    this.lib.face.stripSnout.perPet = this.lib.face.stripSnout.perPet || {};
+  }
+  // Highlight-Mesh aus den Dreiecken einer Schale (Original-Geometrie), immer sichtbar (Ablesehilfe).
+  _highlightShell(shellIdx) {
+    this._clearHighlight();
+    if (shellIdx == null || !this.ch || !this.ch._body) return;
+    const THREE = this.THREE, body = this.ch._body;
+    const orig = this.ch.getBodyOrigGeo(); if (!orig) return;
+    const sh = this.ch.getFaceShells()[shellIdx]; if (!sh) return;
+    const pos = orig.attributes.position, idx = orig.index;
+    const gi = (t, c) => idx ? idx.getX(t * 3 + c) : (t * 3 + c);
+    const arr = [];
+    for (const t of sh.tris) for (let c = 0; c < 3; c++) { const i = gi(t, c); arr.push(pos.getX(i), pos.getY(i), pos.getZ(i)); }
+    const g = new THREE.BufferGeometry();
+    g.setAttribute('position', new THREE.Float32BufferAttribute(arr, 3)); g.computeVertexNormals();
+    const mesh = new THREE.Mesh(g, new THREE.MeshBasicMaterial({ color: 0xb8361f, transparent: true, opacity: 0.9, side: THREE.DoubleSide, depthTest: false, toneMapped: false }));
+    mesh.userData.petOverlay = true; mesh.frustumCulled = false; mesh.renderOrder = 999; mesh.raycast = () => {};
+    body.add(mesh); this._hl = mesh;
+  }
+  _clearHighlight() { if (this._hl) { if (this._hl.parent) this._hl.parent.remove(this._hl); this._hl.geometry.dispose(); this._hl = null; } }
+  _petHex(p) {
+    p = p || this._pet();
+    return (this.state.recolor && p && p.color) ? hexInt(p.color) : null;
+  }
+  _petEye() {
+    const p = this._pet();
+    p.eye = p.eye || {};
+    p.eye.anchor = p.eye.anchor || { dx: 0.345, dy: -0.10, ring: 0.30, track: 0.10 };
+    return p.eye;
+  }
+
+  // v6: CPU-lesbare Colormap fuer die Lid-Farbe. Einmal je Pet auf ein Offscreen-Canvas, getImageData,
+  // gecacht. Liefert fn(u,v)->THREE.Color der ROHEN Colormap. GLTFLoader setzt flipY=false -> Zeile ist
+  // v*H, NICHT (1-v)*H (die eine Stelle, an der man still Unsinn bekommt). uv koennen negativ sein -> wrappen.
+  _buildLidSampler() {
+    this._lidSampler = null;
+    const THREE = this.THREE, body = this.ch && this.ch._body;
+    const tex = body && (body.userData._glbMap || (body.material && body.material.map));
+    const img = tex && tex.image;
+    if (!img || !img.width) return;
+    const pid = this._pet().id;
+    this._cmCache = this._cmCache || {};
+    let data = this._cmCache[pid];
+    if (!data) {
+      const w = img.width, h = img.height;
+      const cv = document.createElement('canvas'); cv.width = w; cv.height = h;
+      const g = cv.getContext('2d', { willReadFrequently: true });
+      g.drawImage(img, 0, 0, w, h);
+      let px; try { px = g.getImageData(0, 0, w, h); } catch (e) { return; }
+      data = { d: px.data, w, h }; this._cmCache[pid] = data;
+    }
+    const d = data.d, w = data.w, h = data.h;
+    this._lidSampler = (u, v) => {
+      const uu = ((u % 1) + 1) % 1, vv = ((v % 1) + 1) % 1;
+      const x = Math.min(w - 1, Math.max(0, Math.floor(uu * w)));
+      const y = Math.min(h - 1, Math.max(0, Math.floor(vv * h)));   // v*H: GLTF flipY=false
+      const i = (y * w + x) * 4;
+      return new THREE.Color().setStyle('rgb(' + d[i] + ',' + d[i + 1] + ',' + d[i + 2] + ')');
+    };
+  }
+
+  // In-Place-Reskin: KEIN GLB-Reload -> Kamera bleibt stehen (Feedback A3)
+  reskin() {
+    if (!this.ch || !this.ch.inner) return;
+    const p = this._pet();
+    const hex = this._petHex(p);
+    const baseHex = (p && p.color) ? hexInt(p.color) : 0xf2c93c;
+    this.ch.inner.traverse((n) => {
+      if (!n.isMesh || n.userData.petOverlay) return;
+      const glbMap = n.userData._glbMap !== undefined ? n.userData._glbMap : ((n.material && n.material.map) || null);   // Original-Colormap (ueberlebt Textur-Wechsel), fuer kenneyBase/paperGold + recolor
+      // v7 Eingriff 1: facet=AN facettiert (computeVertexNormals, destruktiv), facet=AUS behält Kenneys
+      // runde Normalen. Original-Normalen pro Geometrie gemerkt -> Toggle reversibel (kein Kippen).
+      if (n.geometry) {
+        const g = n.geometry;
+        if (this.state.facet) {
+          if (!g.userData._faceted) { if (g.attributes.normal && !g.userData._origNorm) g.userData._origNorm = g.attributes.normal.clone(); g.computeVertexNormals(); g.userData._faceted = true; }
+        } else if (g.userData._faceted && g.userData._origNorm) { g.setAttribute('normal', g.userData._origNorm.clone()); g.attributes.normal.needsUpdate = true; g.userData._faceted = false; }
+      }
+      let map = glbMap, color = 0xffffff;
+      if (this.state.paperGold) { map = glbMap; color = (hex != null ? hex : 0xffffff); }   // v7 Pfad 2: Colormap behalten, Gelb per Uniform (nicht in die Map gebacken)
+      else if (this.state.kenneyBase) { map = glbMap; color = 0xffffff; }   // originale Kenney-Colormap als Basis (native Pet-Farben via UV)
+      else if (this.state.hideEyes) { map = null; color = baseHex; }   // Original-(Colormap-)Augen ausblenden -> flache Base-Color
+      else if (map && hex != null) map = this.ch._recolorMap(map, hex);
+      n.material = this.makeMat({ map, color });
+      if (this.state.colormap === 'fluffy_fur' && this._furTex && this.state.texture !== 'fur_fluffy') { n.material.map = this._furTex; n.material.needsUpdate = true; }   // Coworker-Diagnose: material.map 1:1 tauschen. Wenn der Fell-Triplanar aktiv ist, NICHT clobbern (sonst gewinnt der kaputte-UV-Pfad).
+      n.castShadow = true; n.receiveShadow = false;
+      n.frustumCulled = false;  // node-animierte GLB-Nodes: lokale BoundingSphere trackt die Clip-Transforms nicht -> sonst gecullt
+    });
+    if (this.disc) this.disc.material = this.makeMat({ color: 0xe3d5af, plain: true });
+    if (this.rig) { this.rig.baseColor = baseHex; const petC = this._pet() && this._pet().color; this.rig.lidSampler = (this.state.kenneyBase || !petC) ? this._lidSampler : null; if (this.rig.reskinLids) this.rig.reskinLids(); }  // v7: native/ohne pet.color -> Lid aus Colormap; mit pet.color -> Base-Color; folgt Look ohne Rebuild
+    // Materialien deterministisch kompilieren -> onBeforeCompile läuft + bindet die Custom-Uniforms
+    // (uTex/uHasTex/…) SOFORT. Ohne das kompiliert three lazy/uneinheitlich -> Textur fehlt (gold).
+    if (this.renderer && this.scene && this.cam) this.renderer.compile(this.scene, this.cam);
+  }
+
+  async loadPet(idx) {
+    if (this._loading || !this.lib) return;
+    this._loading = true;
+    this._clearHighlight();
+    const p = this.roster[idx];
+    this.setState({ status: 'lädt ' + p.id + ' …', petIdx: idx });
+    try {
+      if (this.rig) { this.rig.dispose(); this.rig = null; }
+      await this.ch.load('animals', p.id, { mods: [], recolor: null, face: this.lib.face });  // v5: face-Block gibt stripEyes/stripSnout, v7: + face.facet (Normalen)
+      this._buildLidSampler();                                                 // v6: CPU-Colormap fuer die Lid-Farbe
+      await new Promise((r) => this.setState({ facet: this.lib.face.facet === true }, r));  // v7 Eingriff 3: Look hängt NICHT mehr an !p.color; Normalen kommen aus dem Contract
+      this.reskin();
+      const er = this.lib.eyeRig || {};
+      const eye = p.eye || {};
+      const lashes = eye.lashes || (this.lib.face && this.lib.face.eye && this.lib.face.eye.lashes) || { length: 0, density: 6, width: 1 };
+      const rig = this.rig = new this._RigMod.EyeRig(this.ch, {
+        anchor: eye.anchor, pupilStyle: eye.pupilStyle || 'matte-cute',
+        blink: this.state.blink,
+        pupilSize: eye.pupilSize != null ? eye.pupilSize : (er.pupilSize != null ? er.pupilSize : 0.4),
+        inset: eye.inset != null ? eye.inset : (er.inset != null ? er.inset : 0),
+        lidFit: eye.lidFit != null ? eye.lidFit : (er.lidFit != null ? er.lidFit : 0.9),
+        gloss: (er.gloss && er.gloss[eye.pupilStyle || 'matte-cute']) != null ? er.gloss[eye.pupilStyle || 'matte-cute'] : 0.85,
+        converge: eye.converge != null ? eye.converge : (er.converge != null ? er.converge : 0),
+        lidSampler: p.color ? null : this._lidSampler,   // v6: native -> Lid aus Colormap, umgefaerbt -> Base-Color
+        baseColor: p.color ? hexInt(p.color) : 0xf2c93c,
+        lashes: lashes,
+      });
+      this.setState({ lashesP: { ...lashes } });
+      rig.build();
+      this._applyEmote(this._emote(this.state.emoteSel));   // v8: Asymmetrie-Deltas einmischen
+      rig.setLife(this.state.life); rig.setKinetics(this.state.kin);
+      rig.setGazeFollow(this.state.gazeFollow);   // Cursor-Follow überlebt Pet-Wechsel
+      this._mountMouth();                          // v9: Mund neu fitten (pet.mouth > lib.mouth > Default)
+      const shells = this.ch.getFaceShells();
+      const eyeIdx = this._CharMod.selectEyeShells(shells, this.lib.face || {}) || [];
+      this.setState({
+        anchor: { ...rig.anchor }, pupilStyle: rig.pupilStyle,
+        shape: { inset: rig.inset, pupilSize: rig.pupilSize, lidFit: rig.lidFit, gloss: rig.gloss, converge: rig.converge },
+        shells: shells.map((sh) => ({ count: sh.count, xmin: sh.xmin, xmax: sh.xmax, ymin: sh.ymin, ymax: sh.ymax, zmin: sh.zmin, zmax: sh.zmax })),
+        eyeShellIdx: eyeIdx,
+        status: '✓ ' + (p.name || p.id), ready: true,
+      });
+    } catch (e) { this.setState({ status: 'Fehler: ' + e.message }); }
+    this._loading = false;
+  }
+
+  // v8: Emote + Asymmetrie-Deltas (linkes Auge) -> Arrays [L,R] ins Rig (rig v5, Eingriff 1).
+  // Bewusst NICHT im Contract, bis Abnahme — die Deltas leben nur im Editor-State.
+  _applyEmote(em) {
+    // v4: der Ausdruck praegt jetzt AUCH den Ruhe-Mund (restMap: Decal + Mundwinkel). Vorher trugen
+    // happy/sad/angry nur Lider und Pupillen — der Mund blieb die neutrale Kerbe. Das war der offene
+    // Backlog-Punkt „happy-Emote ↔ Mund-Verdrahtung"; der Hook existierte im Modul, nur ungenutzt.
+    if (this.mouth && em && em.id) this.mouth.setRest(em.id);
+    if (!this.rig) return;
+    const A = this.state.asym, n = (v) => Array.isArray(v) ? (v[0] || 0) : (v || 0);
+    const e = Object.assign({}, em || {});
+    if (A.u || A.l || A.sl) {
+      e.lidUpper = [n(e.lidUpper) + A.u, n(e.lidUpper)];
+      e.lidLower = [n(e.lidLower) + A.l, n(e.lidLower)];
+      e.slant = [n(e.slant) + A.sl, n(e.slant)];
+    }
+    this.rig.applyEmote(e);
+  }
+  // Fake-Ride: 12s-Skript liefert a/c/j wie der Ride. Das Skript wiederholt sich EXAKT —
+  // die Nicht-Wiederholung des Gesichts muss aus dem Leben-Layer kommen (Abnahme 4).
+  _rideKin(t) {
+    const T = t % 12;
+    const env = (t0, t1, v) => (T > t0 && T < t1) ? v * Math.sin((T - t0) / (t1 - t0) * Math.PI) : 0;
+    const k = { a: 0.15 + env(3.0, 4.2, -1.1), c: env(0.8, 2.6, 0.9) + env(6.2, 8.2, -0.9), j: env(9.4, 10.4, 1.0) };
+    const phase = T < 0.8 ? 'Fahrt' : T < 2.6 ? 'Kurve R' : T < 3 ? 'Fahrt' : T < 4.2 ? 'BREMSE' : T < 6.2 ? 'Fahrt' : T < 8.2 ? 'Kurve L' : T < 9.4 ? 'Fahrt' : T < 10.4 ? 'DROP' : 'Fahrt';
+    if (phase !== this.state.ridePhase) this.setState({ ridePhase: phase });
+    return k;
+  }
+
+  // v9 Mund: Platzierung pro Pet (pet.mouth) > globaler Default (lib.mouth) > MOUTH_DEF
+  _mouthParams() {
+    const p = this._pet();
+    const mp = Object.assign({}, MOUTH_DEF, (this.lib && this.lib.mouth) || {}, (p && p.mouth) || {});
+    // v4: visemeMap ist eine Karte, kein Skalar — Teil-Overrides ERGAENZEN den Default, statt ihn
+    // wegzuwerfen (Object.assign ist flach; ohne diese Zeile kippt ein einzelnes getuntes Visem
+    // die anderen vier auf undefined).
+    mp.visemeMap = Object.assign({}, MOUTH_DEF.visemeMap,
+      (this.lib && this.lib.mouth && this.lib.mouth.visemeMap) || {},
+      (p && p.mouth && p.mouth.visemeMap) || {});
+    return mp;
+  }
+  _mountMouth() {
+    if (!this._MouthMod || !this.ch || !this.ch.inner) return;
+    const mp = this._mouthParams();
+    if (!this.mouth) this.mouth = new this._MouthMod.PetMouth(this.ch, { params: mp });
+    else Object.assign(this.mouth.p, mp);
+    this.mouth.build();
+    this.mouth.enabled = this.state.mouthOn;
+    this.mouth.talk(this.state.mouthTalk);
+    if (!this.state.mouthTalk) { this.mouth.rest = this.state.mouthSel; this.mouth.setTex(this.state.mouthSel); }
+    this.setState({ mouthP: mp });
+    this._mountPuppet();
+  }
+
+  // v4 §2b: der Treiber-Vertrag. Der Puppet ist eine FASSADE — er haelt keine zweite Wahrheit,
+  // sondern ruft Mund/Rig/Emote-Tabelle/Clips des Studios ueber deren oeffentliche Wege. Deshalb
+  // wird er nach dem Mund gebaut und bei Pet-Wechsel nur nachverdrahtet, nicht neu erfunden.
+  _mountPuppet() {
+    if (!this._PuppetMod || !this.mouth) return;
+    const parts = {
+      THREE: this.THREE, mouth: this.mouth, rig: this.rig, cam: this.cam, controls: this.controls,
+      scene: this.scene, renderer: this.renderer,
+      focus: () => this._petFocus(), radius: () => this._petRadius(), facing: () => this._petFacing(),
+      emote: (id) => this.h.emoteSel(id),
+      clip: (id) => this.h.anim(id),
+      background: (mode) => this._puppetBackground(mode),
+    };
+    if (this.puppet) { Object.assign(this.puppet.parts, parts); return; }
+    this.puppet = this._PuppetMod.createPuppet(parts, { warn: (m) => this._flash(m, '#b8361f') });
+  }
+  _petBox() {
+    const ch = this.ch; if (!ch || !ch.group) return null;
+    return new this.THREE.Box3().setFromObject(ch.group);
+  }
+  _petFocus() {   // Kamera-Ziel = Gesichtshöhe. 0,60 der Bauhöhe ab Boden gemessen (nicht Mitte+Offset):
+                  // Mitte+0,18 landete beim Hasen auf der Kopf-Oberkante und die Kamera schaute von oben drauf.
+    const b = this._petBox(); if (!b) return new this.THREE.Vector3(0, 0.4, 0);
+    const c = b.getCenter(new this.THREE.Vector3()), s = b.getSize(new this.THREE.Vector3());
+    c.y = b.min.y + s.y * 0.60; return c;
+  }
+  _petRadius() {
+    const b = this._petBox(); if (!b) return 0.5;
+    const s = b.getSize(new this.THREE.Vector3());
+    return Math.max(s.x, s.y, s.z) * 0.5;
+  }
+  // Blickrichtung = Frontnormale der Mundfläche. Gemessen am Modell (der Mund wurde per Raycast
+  // von vorn auf den Körper gefittet), nicht aus einer Achsen-Annahme abgeleitet — genau die Falle,
+  // in die der Travel-Cut mit „Gesicht ist −Z" getappt ist.
+  _petFacing() {
+    const T = this.THREE;
+    if (this.mouth && this.mouth.mesh) {
+      this.mouth.mesh.updateWorldMatrix(true, false);
+      return new T.Vector3(0, 0, 1).transformDirection(this.mouth.mesh.matrixWorld).normalize();
+    }
+    if (this.ch && this.ch.group) return new T.Vector3(0, 0, 1).transformDirection(this.ch.group.matrixWorld).normalize();
+    return new T.Vector3(0, 0, 1);
+  }
+  // Der Studio besitzt seine Stimmungen + den Skydome — der Puppet fragt hier nach, statt sie zu
+  // ueberschreiben. 'transparent' ist der einzige Modus, der wirklich etwas Neues tut.
+  _puppetBackground(mode) {
+    if (!this.scene) return;
+    // Der Schatten haengt NICHT am Hintergrund-Modus: er ist eine eigene Entscheidung des Hosts
+    // (Regler unten). Genau deshalb kann „transparent" den halbtransparenten 3D-Schatten behalten.
+    if (mode === 'transparent') { this.scene.background = null; if (this.renderer) this.renderer.setClearAlpha(0); if (this.disc) this.disc.visible = false; return; }
+    if (this.renderer) this.renderer.setClearAlpha(1);
+    if (this.disc) this.disc.visible = this.state.showDisc;
+    if (mode === 'studio') { this.scene.background = this.bgTex((MOOD[this.state.mood] || MOODS[0]).bg); return; }
+    this.applyLights();   // 'world' = Stimmung + Skydome, die Wahrheit des Studios
+  }
+
+  h = {
+    selPet: (i) => { if (i !== this.state.petIdx) this.loadPet(i); },
+    mouthOn: () => this.setState((s) => ({ mouthOn: !s.mouthOn }), () => { if (this.mouth) this.mouth.enabled = this.state.mouthOn; }),
+    mouthTalk: () => this.setState((s) => ({ mouthTalk: !s.mouthTalk }), () => { if (this.mouth) this.mouth.talk(this.state.mouthTalk); }),
+    mouthSel: (e) => { const id = e.target.value; this.setState({ mouthSel: id }, () => { if (this.mouth && !this.state.mouthTalk) { this.mouth.rest = id; this.mouth.setTex(id); } }); },
+    mouthSlider: (k, e) => {
+      const v = parseFloat(e.target.value);
+      const p = this._pet(); this._ensureInLib(p);
+      p.mouth = Object.assign({}, MOUTH_DEF, (this.lib && this.lib.mouth) || {}, p.mouth || {});
+      p.mouth[k] = v;
+      this.lib.mouth = this.lib.mouth || { src: 'FrizzelBob-Mouth_01 (GitHub raw)' };   // Quelle einmal im Contract vermerken
+      this.setState({ mouthP: { ...p.mouth }, dirty: true });
+      if (this.mouth) this.mouth.setParams({ [k]: v });
+    },
+    lashes: (k, e) => {
+      const v = parseFloat(e.target.value);
+      const p = this._pet(); this._ensureInLib(p);
+      p.eye = p.eye || {};
+      p.eye.lashes = Object.assign({ length: 0, density: 6, width: 1 }, p.eye.lashes || {});
+      p.eye.lashes[k] = v;
+      this.setState({ lashesP: { ...p.eye.lashes }, dirty: true });
+      if (this.rig) this.rig.setLashes(p.eye.lashes);
+    },
+    // v4 §2a: Visem zeigen. Stoppt den Sprech-Shuffle — sonst kaempfen zwei Besitzer um den Mund.
+    viseme: (id) => {
+      if (this._visCy) { clearInterval(this._visCy); this._visCy = null; }
+      this.setState({ visemeSel: id, mouthTalk: false }, () => {
+        if (!this.mouth) return;
+        this.mouth.talk(false);
+        this.mouth.setViseme(id);
+      });
+    },
+    // Form-Zuweisung = Georgs Look-Entscheidung. Wandert nach p.mouth.visemeMap (Vertrag).
+    visemeShape: (key) => {
+      const p = this._pet(); this._ensureInLib(p);
+      p.mouth = Object.assign({}, MOUTH_DEF, (this.lib && this.lib.mouth) || {}, p.mouth || {});
+      p.mouth.visemeMap = Object.assign({}, MOUTH_DEF.visemeMap, p.mouth.visemeMap || {}, { [this.state.visemeSel]: key });
+      this.lib.mouth = this.lib.mouth || { src: 'FrizzelBob-Mouth_01 (GitHub raw)' };
+      this._touchPet(p);   // sonst faellt der Look aus dem Export (nur beruehrte Pets werden gemerged)
+      this.setState({ mouthP: { ...p.mouth }, dirty: true }, () => {
+        if (!this.mouth) return;
+        this.mouth.setVisemeMap(p.mouth.visemeMap);
+        this.mouth.setViseme(this.state.visemeSel);
+      });
+    },
+    visemeStep: (id) => { if (this.mouth) this.mouth.setViseme(id); this.setState({ visemeSel: id }); },
+    visemeCycle: () => {
+      if (this._visCy) { clearInterval(this._visCy); this._visCy = null; this.forceUpdate(); return; }
+      this.setState({ mouthTalk: false }, () => { if (this.mouth) this.mouth.talk(false); });
+      let i = 0;
+      const step = () => { if (this.mouth) this.h.visemeStep(VISEME_LABELS[i++ % VISEME_LABELS.length][0]); };
+      step(); this._visCy = setInterval(step, 620);   // 620ms = lang genug, um die Form zu lesen
+      this.forceUpdate();
+    },
+    visemeReset: () => {
+      const p = this._pet(); if (p && p.mouth) { delete p.mouth.visemeMap; this._touchPet(p); }
+      const mp = this._mouthParams();
+      this.setState({ mouthP: mp, dirty: true }, () => {
+        if (!this.mouth) return;
+        this.mouth.setVisemeMap(mp.visemeMap);
+        if (this.mouth.viseme) this.mouth.setViseme(this.mouth.viseme);
+      });
+    },
+    // v4: alter Zustand als Rueckweg — Mund ohne Tiefentest, liegt vor allem.
+    mouthOnTop: () => {
+      const p = this._pet(); this._ensureInLib(p);
+      p.mouth = Object.assign({}, MOUTH_DEF, (this.lib && this.lib.mouth) || {}, p.mouth || {});
+      p.mouth.onTop = !p.mouth.onTop;
+      this._touchPet(p);
+      this.setState({ mouthP: { ...p.mouth }, dirty: true }, () => { if (this.mouth) this.mouth.setParams({ onTop: p.mouth.onTop }); });
+    },
+    // v4 §2b: Testsatz über die Puppet-Uhr. Betonungen werden nur GEZÄHLT — der Körper gehört
+    // PetMotion (§2c), und PetMotion ist in diesem Studio nicht eingehängt. Ehrlicher Zwischenstand.
+    puppetSpeak: () => {
+      const P = this.puppet; if (!P) return;
+      if (P.speaking) { P.stop(); this.setState({ puppetRun: P.lastRun }); return; }
+      if (this._speaking) this._stopSpeak();   // die Stimme des Studios ist ein anderer Besitzer
+      if (!this._emphOff) this._emphOff = P.onEmphasis((k) => { this._emphSeen = (this._emphSeen || 0) + 1; });
+      this._emphSeen = 0;
+      const DEMO = [
+        { t: 0.00, viseme: 'open', emphasis: 1 },
+        { t: 0.16, viseme: 'closed' },
+        { t: 0.30, viseme: 'wide' },
+        { t: 0.44, viseme: 'closed' },
+        { t: 0.56, viseme: 'round' },
+        { t: 0.70, viseme: 'closed' },
+        { t: 0.84, viseme: 'open', emphasis: 1 },
+        { t: 1.00, viseme: 'wide' },
+        { t: 1.14, viseme: 'closed' },
+        { t: 1.28, viseme: 'round', emphasis: 0.6 },
+        { t: 1.46, viseme: 'smile' },
+      ];
+      P.speak(DEMO, { onDone: (run) => this.setState({ puppetRun: run }) });
+      this.forceUpdate();
+    },
+    mouthSet: (id) => {
+      const p = this._pet(); this._ensureInLib(p);
+      p.mouth = Object.assign({}, MOUTH_DEF, (this.lib && this.lib.mouth) || {}, p.mouth || {});
+      const cur = p.mouth.set || 'male';
+      if (id !== cur) {
+        p.mouth['_' + cur] = { size: p.mouth.size, dy: p.mouth.dy, sx: p.mouth.sx, dx: p.mouth.dx || 0 };   // aktuelle Platzierung dem alten Set merken
+        const here = { size: p.mouth.size, dy: p.mouth.dy, sx: p.mouth.sx, dx: p.mouth.dx || 0 };
+        // red hat dieselbe Leinwand wie male (274x169) -> erbt dessen Platzierung, nicht die
+        // engere female-Lage; female bringt eigene Startwerte mit.
+        const seed = id === 'female' ? { size: 0.40, dy: -0.73, sx: p.mouth.sx, dx: p.mouth.dx || 0 }
+                   : id === 'red'    ? (p.mouth._male || here)
+                   : here;
+        const saved = p.mouth['_' + id] || seed;
+        Object.assign(p.mouth, saved);
+        p.mouth.set = id;
+      }
+      const mp = this._mouthParams();
+      this.setState({ mouthP: mp, dirty: true });
+      if (this.mouth) { this.mouth.setSet(id); this.mouth.setParams(mp); this.mouth.refit(); }
+    },
+    mode: (m) => this.setState({ mode: m }, () => this.reskin()),
+    tex: (id) => this.setState({ texture: id, dirty: true }, async () => {
+      this._persistSurf();
+      if (id === 'proc') { this._tex = null; this._nrm = null; this.reskin(); return; }
+      this.setState({ status: 'lädt Textur ' + id + ' …' });
+      try {
+        this._tex = await this.loadTex(id === 'fur_fluffy' ? FUR_URL : (TEXBASE + id + '/' + id + '_diffuse.jpg'));
+        if (id === 'fur_fluffy') this._nrm = null;   // Fell hat keine Normalmap -> triplanar nur Diffuse
+        else { try { this._nrm = await this.loadTex(TEXBASE + id + '/' + id + '_normal.jpg'); } catch (e2) { this._nrm = null; } }
+        this.setState({ status: '✓ Textur ' + id });
+      } catch (e) { this._tex = null; this._nrm = null; this.setState({ status: 'Textur-Fehler: ' + id }); }
+      this.reskin();
+    }),
+    colormap: (id) => this.setState({ colormap: id }, () => {
+      if (id === 'fluffy_fur' && !this._furTex) this._loadFur().then(() => this.reskin());
+      else this.reskin();
+    }),
+    mapRepeat: (e) => { const v = parseFloat(e.target.value); this.setState({ mapRepeat: v }); if (this._furTex) this._furTex.repeat.set(v, v); },
+    mapRot: (e) => { const v = parseFloat(e.target.value); this.setState({ mapRot: v }); if (this._furTex) this._furTex.rotation = v * Math.PI / 180; },
+    mod: (id) => this.setState({ mod: id, dirty: true }, async () => {
+      this._persistSurf();
+      const mm = MODOF(id);
+      if (mm[2] === 'none') { this._modTex = null; this.reskin(); return; }
+      try { this._modTex = await this.loadTex(TEXBASE + mm[3]); }
+      catch (e) { this._modTex = null; this.setState({ status: 'Mod-Fehler: ' + id }); }
+      this.reskin();
+    }),
+    surf: (k, e) => {
+      const v = parseFloat(e.target.value);
+      this.setState({ surf: { ...this.state.surf, [k]: v }, dirty: true }, () => this._persistSurf());
+      const uni = { texScale: 'uTexScale', tint: 'uTint', relief: 'uRelief', knet: 'uKnet', ao: 'uAO', modScale: 'uModScale', modAmt: 'uModAmt', freq: 'uFreq', paper: 'uPaper' }[k];
+      this._eachClayMat((m) => {
+        if (k === 'rough') m.roughness = v;
+        else if (k === 'texScale' && m.userData.shader && m.userData.shader.uniforms.uTexScale) m.userData.shader.uniforms.uTexScale.value = v * (m.userData.dScale || 1);
+        else if (uni && m.userData.shader && m.userData.shader.uniforms[uni]) m.userData.shader.uniforms[uni].value = v;
+      });
+    },
+    matTab: (t) => this.setState({ matTab: t }),
+    mood: (id) => this.setState({ mood: id }, () => this.applyLights()),
+    light: (k, e) => { const v = parseFloat(e.target.value); this.setState({ [k]: v }, () => this.setSunDir()); },
+    rim: () => this.setState((s) => ({ rim: !s.rim }), () => this.applyLights()),
+    shadowOn: () => this.setState((s) => ({ shadowOn: !s.shadowOn }), () => { if (this._shadowPlane) this._shadowPlane.visible = this.state.shadowOn; }),
+    shadowOpacity: (e) => { const v = parseFloat(e.target.value); this.setState({ shadowOpacity: v }, () => { if (this._shadowPlane) this._shadowPlane.material.opacity = v; }); },
+    disc: () => this.setState((s) => ({ showDisc: !s.showDisc }), () => { if (this.disc) this.disc.visible = this.state.showDisc; }),
+    hideEyes: () => this.setState((s) => ({ hideEyes: !s.hideEyes, dirty: true }), () => this.reskin()),
+    stripEyes: () => { this._ensureFace(); this.lib.face.stripEyes = !this.lib.face.stripEyes; this.setState({ stripEyes: this.lib.face.stripEyes, dirty: true }, () => this.loadPet(this.state.petIdx)); },
+    hlShell: (i) => this._highlightShell(i),
+    snout: (i) => {
+      this._ensureFace();
+      const id = this._pet().id, per = this.lib.face.stripSnout.perPet;
+      const list = per[id] ? per[id].slice() : [];
+      const at = list.indexOf(i); if (at >= 0) list.splice(at, 1); else list.push(i);
+      if (list.length) per[id] = list.sort((a, b) => a - b); else delete per[id];
+      this.setState({ dirty: true }, () => this.loadPet(this.state.petIdx));
+    },
+    facet: () => this.setState((s) => ({ facet: !s.facet, dirty: true }), () => {
+      this._ensureFace(); this.lib.face.facet = this.state.facet;   // v7: Entscheidung in den Contract (face-Block, dort liest die Library sie)
+      this.reskin();
+    }),
+    paperGold: () => this.setState((s) => ({ paperGold: !s.paperGold, dirty: true }), () => { this._persistSurf(); this.reskin(); }),
+    tintMode: (m) => this.setState({ tintMode: m, dirty: true }, () => { this._persistSurf(); this.reskin(); }),
+    recolor: () => this.setState((s) => ({ recolor: !s.recolor, dirty: true }), () => { this.reskin(); if (this.rig) this.rig.setBaseColor(this._pet().color ? hexInt(this._pet().color) : 0xf2c93c); }),
+    kenneyBase: () => this.setState((s) => ({ kenneyBase: !s.kenneyBase, dirty: true }), () => { this._persistSurf(); this.reskin(); }),
+    swatch: (hex) => {
+      const p = this._pet(); p.color = hex; this._ensureInLib(p);   // bewusstes Umfaerben (schreibt pet.color, Uebersteuerung der nativen Farbe)
+      this.setState({ kenneyBase: false, dirty: true }, () => { this.reskin(); if (this.rig) { this.rig.lidSampler = null; this.rig.setBaseColor(hexInt(hex)); } });
+    },
+    pick: (e) => this.h.swatch(e.target.value),   // Colorpicker (KISS) statt fester Swatches
+    native: () => {
+      const p = this._pet(); if (p.color == null) return;
+      delete p.color;   // zurueck zu nativen Kenney-Farben (Body + Lider aus der Colormap), pet.color entfernt statt auf Swatch gestellt
+      this.setState({ kenneyBase: true, dirty: true }, () => { if (this.rig) this.rig.lidSampler = this._lidSampler; this.reskin(); if (this.rig) this.rig.setBaseColor(0xf2c93c); });
+    },
+    pupilStyle: (s) => {
+      this._ensureInLib(this._pet());
+      this._petEye().pupilStyle = s;
+      const er = this.lib.eyeRig || {}; const g = (er.gloss && er.gloss[s] != null) ? er.gloss[s] : this.state.shape.gloss;
+      this.setState({ pupilStyle: s, shape: { ...this.state.shape, gloss: g }, dirty: true });
+      if (this.rig) this.rig.setEye({ pupilStyle: s, gloss: g });
+    },
+    anchor: (k, e) => {
+      const v = parseFloat(e.target.value);
+      const anchor = { ...this.state.anchor, [k]: v };
+      this._ensureInLib(this._pet());
+      this._petEye().anchor = { ...anchor };
+      this.setState({ anchor, dirty: true });
+      this._queue(() => this.rig && this.rig.setAnchor({ [k]: v }));
+    },
+    shape: (k, e) => {
+      const v = parseFloat(e.target.value);
+      const shape = { ...this.state.shape, [k]: v };
+      if (k === 'gloss') { this.lib.eyeRig = this.lib.eyeRig || {}; this.lib.eyeRig.gloss = this.lib.eyeRig.gloss || {}; this.lib.eyeRig.gloss[this.state.pupilStyle] = v; }
+      else { this._ensureInLib(this._pet()); this._petEye()[k] = v; }
+      this.setState({ shape, dirty: true });
+      this._queue(() => this.rig && this.rig.setEye({ [k]: v }));
+    },
+    blink: (k, e) => {
+      const v = parseFloat(e.target.value);
+      const blink = { ...this.state.blink, [k]: v };
+      this.lib.eyeRig = this.lib.eyeRig || {}; this.lib.eyeRig.blink = blink;
+      this.setState({ blink, dirty: true });
+      if (this.rig) this.rig.setBlink(blink);
+    },
+    blinkNow: () => { if (this.rig) this.rig.blinkNow(); },
+    gazeFollow: () => this.setState((st) => ({ gazeFollow: !st.gazeFollow }), () => { if (this.rig) this.rig.setGazeFollow(this.state.gazeFollow); }),
+    asym: (k, e) => { const v = parseFloat(e.target.value); this.setState({ asym: { ...this.state.asym, [k]: v } }, () => this._applyEmote(this._emote(this.state.emoteSel))); },
+    skeptic: () => this.setState({ asym: { u: 0.10, l: 0.42, sl: -0.18 } }, () => this._applyEmote(this._emote(this.state.emoteSel))),
+    asymOff: () => this.setState({ asym: { u: 0, l: 0, sl: 0 } }, () => this._applyEmote(this._emote(this.state.emoteSel))),
+    lifeOn: () => this.setState((st) => ({ life: { ...st.life, on: !st.life.on } }), () => { if (this.rig) this.rig.setLife(this.state.life); }),
+    life: (k, e) => { const v = parseFloat(e.target.value); this.setState({ life: { ...this.state.life, [k]: v } }, () => { if (this.rig) this.rig.setLife(this.state.life); }); },
+    kin: (k, e) => { const v = parseFloat(e.target.value); const kin = { ...this.state.kin, [k]: v }; this.setState({ kin }); if (this.rig) this.rig.setKinetics(kin); },
+    kinZero: () => { const kin = { a: 0, c: 0, j: 0 }; this.setState({ kin }); if (this.rig) this.rig.setKinetics(kin); },
+    pulse: (kind) => { this._pulseK = { kind, t: 0 }; },
+    rideLoop: () => this.setState((st) => ({ rideLoop: !st.rideLoop }), () => { this._rideT = 0; if (!this.state.rideLoop && this.rig) { this.rig.setKinetics(this.state.kin); this.setState({ ridePhase: '—' }); } }),
+    emoteSel: (id) => { this.setState({ emoteSel: id }, () => this._applyEmote(this._emote(id))); },
+    emoteVal: (k, e) => {
+      const em = this._emote(this.state.emoteSel); if (!em) return;
+      em[k] = parseFloat(e.target.value);
+      this.setState({ emotes: this.state.emotes.slice(), dirty: true });
+      this._applyEmote(em);
+    },
+    emoteOpt: (k, val) => {
+      const em = this._emote(this.state.emoteSel); if (!em) return;
+      em[k] = val;
+      this.setState({ emotes: this.state.emotes.slice(), dirty: true });
+      this._applyEmote(em);
+    },
+    anim: (t) => {
+      // v9: Mund-Trigger in der Anim-Leiste. Grin/Pout = Express-Preset (Bogen+Kippung, klingt aus).
+      if (t === 'talk') return this.h.mouthTalk();
+      if (t === 'grin') { if (this.mouth) { this.mouth.setTex('smile'); this.mouth.express({ bend: 0.7, rot: -4 }, 1.6); } return; }
+      if (t === 'pout') { if (this.mouth) { this.mouth.setTex('m'); this.mouth.express({ bend: -0.75, rot: 5 }, 1.6); } return; }
+      if (this.ch && this.ch.loaded) this.ch.play(t);
+    },
+    hud: () => this.setState((s) => ({ hud: !s.hud })),
+    export: () => {
+      if (!this.lib) return;
+      this._persistSurf();
+      this.lib.canonical = this.lib.canonical || CANON_URL;   // Eingriff 3: canonical nie verlieren
+      this.lib.version = bumpPatch(this.lib.version);          // Patch hoch, nie zurueck
+      this.lib.updated = today();                              // updated auf heute
+      const blob = new Blob([JSON.stringify(this.lib, null, 2)], { type: 'application/json' });
+      const a = document.createElement('a');
+      a.href = URL.createObjectURL(blob); a.download = 'pet-LIBRARY.json'; a.click();
+      setTimeout(() => URL.revokeObjectURL(a.href), 2000);
+      this.setState({ dirty: false, status: '✓ exportiert v' + this.lib.version + ' — commit-fertig' });
+    },
+    exportOne: () => {
+      if (!this.lib) return;
+      this._persistSurf();
+      const p = this._pet();
+      const live = (this.lib.material && this.lib.material.live) || { texture: this.state.texture, mod: this.state.mod, surf: { ...this.state.surf } };
+      const out = { $schema: 'kfb.pet-single/1', version: this.lib.version || null, canonical: this.lib.canonical || CANON_URL, updated: this.lib.updated || today(), pet: p, material: { live } };
+      const blob = new Blob([JSON.stringify(out, null, 2)], { type: 'application/json' });
+      const a = document.createElement('a');
+      a.href = URL.createObjectURL(blob); a.download = 'pet-' + p.id + '.json'; a.click();
+      setTimeout(() => URL.revokeObjectURL(a.href), 2000);
+      this.setState({ status: '✓ exportiert: pet-' + p.id + '.json' });
+    },
+    save: () => {
+      try { localStorage.setItem(SESSION_KEY, JSON.stringify(this.lib)); this.setState({ dirty: false, status: '✓ in Session gesichert' }); }
+      catch (e) { this.setState({ status: 'Save fehlgeschlagen: ' + e.message }); }
+    },
+    import: () => { this._importSingle = false; if (this._file) this._file.click(); },
+    importOne: () => { this._importSingle = true; if (this._file) this._file.click(); },
+    onImport: (e) => {
+      const f = e.target.files && e.target.files[0]; if (!f) return;
+      const single = this._importSingle; this._importSingle = false;
+      const rd = new FileReader();
+      rd.onload = () => { single ? this._importOnePet(rd.result, f.name) : this._importLibrary(rd.result, f.name); };
+      rd.readAsText(f);
+      e.target.value = '';
+    },
+  };
+  _queue(fn) {
+    this._pendFn = fn;
+    if (this._rq) return;
+    this._rq = requestAnimationFrame(() => { this._rq = null; if (this._pendFn) this._pendFn(); this._pendFn = null; });
+  }
+
+  resize() {
+    if (!this.renderer || !this._canvas) return;
+    const w = this._canvas.clientWidth || window.innerWidth, h = this._canvas.clientHeight || window.innerHeight;
+    this.renderer.setSize(w, h, false);
+    this.cam.aspect = w / h; this.cam.updateProjectionMatrix();
+  }
+  animate() {
+    if (this.disposed) return;
+    this._raf = requestAnimationFrame(() => this.animate());
+    const dt = Math.min(0.05, this.clock ? this.clock.getDelta() : 0.016);
+    this.controls.update();
+    if (this.rig) {   // v8: Kinetik-Quellen — Puls-Envelope > Fake-Ride-Loop > Slider (direkt gesetzt)
+      if (this._pulseK) {
+        const P = this._pulseK; P.t += dt;
+        const ev = Math.sin(Math.min(1, P.t / 0.9) * Math.PI);
+        const k = { a: 0, c: 0, j: 0 };
+        if (P.kind === 'brake') k.a = -ev; else if (P.kind === 'curveL') k.c = -ev; else if (P.kind === 'curveR') k.c = ev; else if (P.kind === 'drop') k.j = ev;
+        this.rig.setKinetics(k);
+        if (P.t >= 0.9) { this._pulseK = null; this.rig.setKinetics(this.state.kin); }
+      } else if (this.state.rideLoop) {
+        this._rideT = (this._rideT || 0) + dt;
+        this.rig.setKinetics(this._rideKin(this._rideT));
+      }
+    }
+    if (this.ch) this.ch.update(dt);
+    this._sleepTick(dt);
+    if (this.rig) this.rig.update(dt);
+    if (this.puppet) this.puppet.update(dt);   // v4 §2b: Sprech-Uhr + Kamerafahrt des Treibers
+    if (this._speaking) this._visemTick(dt);
+    if (this.mouth) this.mouth.update(dt, this.cam);
+    if (this.ch && (this.props.turntable ?? false)) this.ch.group.rotation.y += dt * 0.4;
+    this.renderer.render(this.scene, this.cam);
+  }
+
+  btn(active, extra) {
+    return "font-family:'Special Elite',monospace;font-size:11px;padding:5px 6px;border:2px solid #1f1a14;border-radius:0;cursor:pointer;" +
+      (active ? 'background:#1f1a14;color:#f6efd9;' : 'background:#f7f0da;color:#3a342a;') + (extra || '');
+  }
+  ioBtn(icon, title, on, accent) {
+    return { icon, title, on, style: "font-family:'Special Elite',monospace;border:2px solid #1f1a14;box-shadow:3px 3px 0 rgba(31,26,20,.35);border-radius:0;width:34px;height:34px;font-size:15px;cursor:pointer;" + (accent ? 'background:#b8361f;color:#f6efd9;' : 'background:#f3ead3;color:#3a342a;') };
+  }
+  // Studio-v3-Chrome (v2-Skin) — Schritt 1: rein präsentational, Regler/IO inert. Motor unberührt.
+  _chromeVals(s) {
+    const NOOP = () => {};
+    const tab = s.v2tab, th = V2THEME[tab];
+    if (this._v2el) { const sv = V2SURF[s.v2theme] || V2SURF.clean; for (const k in sv) this._v2el.style.setProperty(k, sv[k]); this._v2el.style.setProperty('--accent', th.accent); }
+    const seg = (active) => "font-family:'Space Grotesk',sans-serif;font-size:13px;font-weight:500;padding:9px 6px;border:none;background:" + (active ? th.accent : 'var(--chip)') + ";color:" + (active ? th.ink : 'var(--chip-text)') + ";cursor:pointer;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;";
+    const sw = (color, active) => "height:34px;background:" + color + ";border:2px solid " + (active ? 'var(--text)' : 'rgba(128,128,128,.25)') + ";cursor:pointer;";
+    const pad = () => "font-family:'Space Grotesk',sans-serif;font-size:12px;font-weight:500;padding:7px 10px;background:var(--pad);border:none;color:var(--pad-text);cursor:pointer;white-space:nowrap;";
+    const H = this.h, pet = (this.roster && this.roster[s.petIdx]) || {};
+    const V2MAT = { surf:1, mode:1, mood:1, light:1, rim:1, facet:1 };
+    const mark = (bh) => { if (tab !== 'koerper' && tab !== 'gesicht') return; if (V2MAT[bh]) this._touchedMat = true; else { const id = pet && pet.id; if (id) { (this._touchedPets = this._touchedPets || new Set()).add(id); } } };
+    const getSP = (sp) => sp.split('.').reduce((a, k) => (a == null ? undefined : a[k]), s);
+    const row = (r) => {
+      const b = r.bind;
+      if (r.t === 'slider') {
+        let v = b ? getSP(b.sp) : (r.def != null ? r.def : r.min);
+        if (typeof v !== 'number' || isNaN(v)) v = r.min || 0;
+        const fix = r.step < 0.1 ? 3 : (r.step < 1 ? 2 : 0);
+        return { isSlider:true, label:r.label, min:r.min, max:r.max, step:r.step, value:v, val:v.toFixed(fix), accent:th.tcol, on: b ? (e) => { mark(b.h); H[b.h](b.k, e); } : NOOP };
+      }
+      if (r.t === 'toggle') {
+        let on = !!r.def;
+        if (b) on = b.on === 'native' ? !pet.color : !!getSP(b.on);
+        return { isToggle:true, label:r.label, on: b ? () => { mark(b.h); H[b.h](); } : NOOP, trackBg: on ? th.accent : 'var(--toggle-off)', knobX: on ? 'translateX(20px)' : 'translateX(0)' };
+      }
+      if (r.t === 'note') return { isNote:true, text:r.text };
+      if (b && b.h === 'emoteSel') {
+        const ids = (s.emotes || []).map((e) => e.id);
+        return { isButtons:true, label:r.label, cols:'repeat(3,1fr)', items: ids.map((id) => ({ label:id, on:() => H.emoteSel(id), style:seg(s.emoteSel === id) })) };
+      }
+      if (b && b.h === 'swatch') {
+        return { isButtons:true, label:r.label, cols:'repeat(6,1fr)', items: r.opts.map((hex) => ({ label:'', on:() => { mark('swatch'); H.swatch(hex); }, style:sw(hex, pet.color === hex) })) };
+      }
+      const cols = r.t === 'sw' ? 'repeat(6,1fr)' : (r.t === 'chips' ? 'repeat(3,1fr)' : 'repeat(' + r.opts.length + ',1fr)');
+      const items = r.opts.map((o, oi) => {
+        if (r.t === 'sw') return { label:'', on:NOOP, style:sw(o, oi === (r.def||0)) };
+        if (b && r.ids) { const id = r.ids[oi]; const active = b.trigger ? false : (getSP(b.sp) === id); return { label:o, on:() => { if (!b.trigger) mark(b.h); H[b.h](id); }, style:seg(active) }; }
+        return { label:o, on:NOOP, style:seg(oi === (r.def||0)) };
+      });
+      return { isButtons:true, label:r.label, cols, items };
+    };
+    const tabStyle = (id) => { const a = id === tab, t = V2THEME[id]; return "flex:1 1 auto;min-width:0;font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:13px;padding:0 6px;background:" + (a ? t.tint : 'transparent') + ";border:none;border-bottom:3px solid " + (a ? t.accent : 'transparent') + ";color:" + (a ? t.tcol : 'var(--muted)') + ";cursor:pointer;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;"; };
+    const sections = (tab === 'voice') ? this._bubbleSections(s, th) : (V2CFG[tab] || []).map((sec) => {
+      const key = tab + '.' + sec.id, open = key in s.v2open ? s.v2open[key] : false;
+      return { title:sec.title, onToggle:() => this.setState((st) => ({ v2open:{ ...st.v2open, [key]:!(key in st.v2open ? st.v2open[key] : false) } })),
+        headStyle:"width:100%;display:flex;justify-content:space-between;align-items:center;background:none;border:none;padding:14px 1px;cursor:pointer;font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:15px;color:" + (open ? th.tcol : 'var(--text)') + ";",
+        chev: open ? 'rotate(90deg)' : 'rotate(0deg)', chevColor: open ? th.tcol : 'var(--chevron-idle)',
+        contentStyle: (open ? 'display:block;animation:kfSlideIn .2s ease;' : 'display:none;') + 'padding:2px 1px 14px;',
+        rows: sec.custom ? this[sec.custom](s, th) : sec.rows.map(row) };
+    });
+    const groups = (V2BOTTOM[tab] || V2BOTTOM._default).map((g) => { const gt = V2THEME[g.key];
+      let pads;
+      if (g.emote) pads = (s.emotes || []).map((e) => ({ label:e.id, on:() => H.emoteSel(e.id), style:pad() }));
+      else if (g.anim) pads = g.anim.map((a) => ({ label:a[0], on:() => H.anim(a[1]), style:pad() }));
+      else if (g.vis) pads = g.vis.map((v) => ({ label:v[1], on:() => H.viseme(v[0]), style:pad() }));
+      else pads = (g.pads || []).map((p) => ({ label:p, on:NOOP, style:pad() }));
+      return { label:g.label, color:gt.tcol, pads };
+    });
+    const petName = (this.roster && this.roster[s.petIdx] && this.roster[s.petIdx].id) || 'bunny';
+    const themeIcon = { clean:'☀', paper:'▤', dark:'☾' }[s.v2theme] || '☀';
+    return {
+      chromeRef: (el) => { this._v2el = el; },
+      tabs: V2TABS.map((id) => ({ label:V2THEME[id].name, on:() => this.setState({ v2tab:id }), style:tabStyle(id), hover: id === tab ? '' : 'color:var(--text);background:var(--hover);' })),
+      th, tabTitle: th.name, sections, bottomGroups: groups,
+      petInitial: petName.charAt(0).toUpperCase(),
+      v2ioBtns: [ { icon:'▤', title:'In Session speichern', on: H.save }, { icon:'↑', title:'pet-LIBRARY.json laden', on: H.import }, { icon:'⟳', title:'Round-Trip-Test (kfb-pets.json)', on: () => this._roundtrip() }, { icon:'↓', title:'Export kfb-pets.json', on: () => this._exportContract() } ],
+      onThemeCycle: () => { const o = ['clean','paper','dark']; this.setState({ v2theme:o[(o.indexOf(s.v2theme)+1)%3] }); },
+      themeIcon, themeTitle: 'Theme: ' + s.v2theme,
+      liveLabel: (tab === 'gesicht') ? 'live · Viseme (v4 §2a)' : (tab === 'koerper' ? 'live · Schritt 2' : (tab === 'actor' ? 'live · Schritt 3' : (tab === 'motion' ? 'Clips live · Tuning Attrappe' : (tab === 'voice' ? 'live · Blase (Stufe 1)' : 'Attrappe · Schritt 4')))),
+    };
+  }
+
+  // v4: Die Viseme-Bank haengt NICHT am generischen row()-Builder, also auch nicht an dessen mark()-
+  // Haken — sie muss den Pet selbst als „beruehrt" melden. Ohne das laesst _buildContract(useTouches)
+  // den Pet beim Export weg und die abgenommene visemeMap verschwindet still (Befund Abnahme 29.7.).
+  _touchPet(p) {
+    const id = p && p.id;
+    if (id) (this._touchedPets = this._touchedPets || new Set()).add(id);
+  }
+
+  // v4 §2a — Viseme-Abnahmebank. Zeilen von Hand gebaut (wie _bubbleSections), weil die Zuordnung
+  // ein ZWEISTUFIGER Griff ist: erst Visem waehlen, dann Form zuweisen. Kein neuer Zeilentyp im
+  // Template — alles isButtons/isNote, damit die Chrome-Schicht unberuehrt bleibt.
+  _visemeRows(s, th) {
+    const seg = (a) => "font-family:'Space Grotesk',sans-serif;font-size:13px;font-weight:500;padding:9px 6px;border:none;background:" + (a ? th.accent : 'var(--chip)') + ";color:" + (a ? th.ink : 'var(--chip-text)') + ";cursor:pointer;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;";
+    const small = (a) => "font-family:'Space Grotesk',sans-serif;font-size:12px;font-weight:500;padding:7px 2px;border:none;background:" + (a ? th.accent : 'var(--chip)') + ";color:" + (a ? th.ink : 'var(--chip-text)') + ";cursor:pointer;";
+    const map = (this.mouth && this.mouth.p && this.mouth.p.visemeMap) || (s.mouthP && s.mouthP.visemeMap) || MOUTH_DEF.visemeMap;
+    const sel = s.visemeSel || 'open';
+    const name = (VISEME_LABELS.find((v) => v[0] === sel) || ['', sel])[1];
+    const live = this.mouth ? this.mouth.viseme : null;
+    return [
+      { isNote:true, text:'Fünf Formen tragen die Rede, nicht fünfzig — Ohren, Squash und Blick tragen den Rest. Ein Visem wechselt NUR den Mund: Augen und Körper bleiben, wo sie sind.' },
+      { isButtons:true, label:'Visem zeigen — ' + (live ? 'live: ' + live + ' → ' + map[live] : 'Ruhe-Mund'), cols:'repeat(3,1fr)',
+        items: VISEME_LABELS.map((v) => ({ label:v[1], on:() => this.h.viseme(v[0]), style:seg(live === v[0]) })) },
+      { isButtons:true, label:'Form für »' + name + '« — dein Look, nicht meiner', cols:'repeat(5,1fr)',
+        items: MOUTH_KEYS.map((k) => ({ label:k, on:() => this.h.visemeShape(k), style:small(map[sel] === k) })) },
+      { isButtons:true, label:'Abnahme', cols:'repeat(2,1fr)',
+        items:[{ label: this._visCy ? '⏹ Stop' : '▶ 5 durchspielen', on:() => this.h.visemeCycle(), style:seg(!!this._visCy) },
+               { label:'↺ Standard-Look', on:() => this.h.visemeReset(), style:seg(false) }] },
+      { isNote:true, text:'Der Wechsel ist ein Textur-Tausch im selben Frame — kein Rebuild, keine Geometrie-Änderung, kein Skalen-Plopp. Die Zuordnung liegt pro Pet in mouth.visemeMap und wandert mit in kfb-pets.json.' },
+    ];
+  }
+
+  // v4 §2b — Treiber-Bank. Jede Zeile ruft GENAU eine Vertrags-Methode, damit am Bild prüfbar ist,
+  // dass der Vertrag trägt und nicht nur existiert. „Testsatz" fährt eine echte Timeline über die
+  // Uhr des Puppets und zeigt danach die Messzahlen (Ereignisse, Zeitfehler, Betonungen).
+  _puppetRows(s, th) {
+    const P = this.puppet, M = this._PuppetMod;
+    if (!P || !M) return [{ isNote:true, text:'Treiber lädt … (der Puppet wird nach dem Mund verdrahtet).' }];
+    const seg = (a) => "font-family:'Space Grotesk',sans-serif;font-size:12px;font-weight:500;padding:8px 3px;border:none;background:" + (a ? th.accent : 'var(--chip)') + ";color:" + (a ? th.ink : 'var(--chip-text)') + ";cursor:pointer;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;";
+    const big = (a) => "font-family:'Irish Grover',cursive;font-size:15px;padding:11px 6px;border:2px solid #1f1a14;border-radius:0;cursor:pointer;box-shadow:3px 3px 0 rgba(31,26,20,.18);background:" + (a ? '#b8361f' : '#f3ead3') + ";color:" + (a ? '#f6efd9' : '#3a342a') + ";";
+    const call = (fn) => { fn(); this.forceUpdate(); };
+    const r = s.puppetRun;
+    const rows = [
+      { isNote:true, text:'Sechs Methoden, damit eine externe Zeitleiste den Pet treiben kann, ohne seine Interna zu kennen: setViseme · setExpression · playState · speak · setCamera · setBackground. Jeder Knopf hier ruft genau eine davon.' },
+      { isButtons:true, label:'setExpression', cols:'repeat(3,1fr)',
+        items: M.EXPRESSIONS.map((n) => ({ label:n, on:() => call(() => P.setExpression(n)), style:seg(P.expression === n) })) },
+      { isButtons:true, label:'playState', cols:'repeat(3,1fr)',
+        items: M.STATES.map((n) => ({ label:n, on:() => call(() => P.playState(n)), style:seg(P.state === n) })) },
+      { isButtons:true, label:'setCamera', cols:'repeat(3,1fr)',
+        items: M.CAMERAS.map((n) => ({ label:n, on:() => call(() => P.setCamera(n)), style:seg(P.camera === n) })) },
+      { isButtons:true, label:'setBackground', cols:'repeat(3,1fr)',
+        items: M.BACKGROUNDS.map((n) => ({ label:n, on:() => call(() => P.setBackground(n)), style:seg(P.background === n) })) },
+      { isToggle:true, label:'3D-Schatten (bleibt bei transparent)', on:() => call(this.h.shadowOn),
+        trackBg: s.shadowOn ? th.accent : 'var(--toggle-off)', knobX: s.shadowOn ? 'translateX(20px)' : 'translateX(0)' },
+      { isSlider:true, label:'Schatten-Deckkraft', min:0, max:0.8, step:0.02, value:s.shadowOpacity, val:(+s.shadowOpacity).toFixed(2), accent:th.tcol, on:this.h.shadowOpacity },
+      { isNote:true, text:'„transparent" räumt Hintergrund und Podest weg, lässt den bewegten Kontaktschatten aber stehen — er liegt auf einer eigenen Ebene, die nur den Schatten zeigt. Für den späteren PNG-Export heißt das: freigestelltes Pet plus halbtransparenter Schatten, pseudo-räumlich auf Karten und Illus platzierbar.' },
+      { isButtons:true, label:'speak(timeline) — 11 Ereignisse, 3 Betonungen', cols:'1fr',
+        items:[{ label: P.speaking ? '⏹ Stop' : '▶ Testsatz sprechen', on:() => this.h.puppetSpeak(), style:big(P.speaking) }] },
+    ];
+    if (r) rows.push({ isNote:true, text:'Gemessen: ' + r.fired + '/' + r.events + ' Ereignisse gefeuert · größter Zeitfehler ' + r.maxErrMs + ' ms · ' + r.emphasis + ' Betonungen empfangen · Dauer ' + r.duration + ' s. Der Mund steht danach wieder im Ruhe-Zustand.' });
+    rows.push({ isNote:true, text:'Betonungs-Marker werden über onEmphasis() gemeldet — das ist die Naht zu §2c („der ganze Körper spricht"). Der Körper bewegt sich noch NICHT: PetMotion ist in diesem Studio nicht eingehängt, das ist der nächste Slice.' });
+    return rows;
+  }
+
+  // --- Schritt 5: getrennte Export-Schicht (kfb-pets.json). Motor unberührt; nur berührte Pets + material.live. ---
+  async _loadExportContract() {
+    const CANON = 'https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kfb-pets.json';
+    const load = async (u) => { const r = await fetch(u, { cache: 'no-store' }); if (!r.ok) throw new Error(u + ' ' + r.status); return r.json(); };
+    const sv = (v) => String(v || '0').split('.').map(Number);
+    const cmp = (a, b) => { a = sv(a); b = sv(b); for (let i = 0; i < 3; i++) { if ((a[i] || 0) !== (b[i] || 0)) return (a[i] || 0) - (b[i] || 0); } return 0; };
+    let canon = null, local = null;
+    try { canon = await load(CANON); } catch (e) {}
+    try { local = await load('./studio-v3/kfb-pets.json'); } catch (e) {}
+    // canonical zuerst, aber die neuere Version gewinnt: GitHub laggt evtl. hinter der lokalen Fassung (Georgs Hinweis 2026-07-22)
+    this.contract = (canon && local) ? (cmp(local.version, canon.version) > 0 ? local : canon) : (canon || local);
+    if (this.contract) { this._touchedPets = new Set(); this._touchedMat = false; this._seedVoiceState(); }
+    else console.warn('[studio] kfb-pets.json weder canonical noch lokal geladen');
+  }
+  _buildContract(bump, useTouches) {
+    const out = JSON.parse(JSON.stringify(this.contract));
+    const tP = useTouches ? this._touchedPets : null, tM = useTouches ? this._touchedMat : false;
+    if (tM && this.lib && this.lib.material && this.lib.material.live) { out.koerper = out.koerper || {}; out.koerper.material = out.koerper.material || {}; out.koerper.material.live = JSON.parse(JSON.stringify(this.lib.material.live)); }
+    if (tP) for (const id of tP) { const src = (this.lib.pets || []).find((p) => p.id === id); if (!src) continue; out.pets = out.pets || []; const i = out.pets.findIndex((p) => p.id === id); const m = V2deepMerge(i >= 0 ? out.pets[i] : {}, src); if (i >= 0) out.pets[i] = m; else out.pets.push(m); }
+    if (bump) { out.version = bumpPatch(out.version); out.updated = today(); }
+    return out;
+  }
+  _exportContract() {
+    if (!this.contract) { this._flash('kfb-pets.json nicht geladen', '#b8361f'); return; }
+    const out = this._buildContract(true, true);
+    const blob = new Blob([JSON.stringify(out, null, 2)], { type: 'application/json' });
+    const a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = 'kfb-pets.json'; document.body.appendChild(a); a.click();
+    setTimeout(() => { URL.revokeObjectURL(a.href); a.remove(); }, 400);
+    this._flash('Export · kfb-pets.json v' + out.version, '#4f6029');
+  }
+  _roundtrip() {   // Test „mit Zähnen": EIN Pet verstellen -> exportieren A -> A laden -> exportieren B -> A==B & Sonde überlebt
+    if (!this.contract) { this._flash('kfb-pets.json nicht geladen', '#b8361f'); return; }
+    const id = (this.roster && this.roster[this.state.petIdx] && this.roster[this.state.petIdx].id) || (this.contract.pets && this.contract.pets[0] && this.contract.pets[0].id);
+    if (!id) { this._flash('kein Pet für den Test', '#b8361f'); return; }
+    this.lib = this.lib || {}; this.lib.pets = this.lib.pets || [];
+    let lp = this.lib.pets.find((p) => p.id === id), added = false;
+    if (!lp) { lp = { id }; this.lib.pets.push(lp); added = true; }
+    lp.eye = lp.eye || {}; lp.eye.anchor = lp.eye.anchor || {};
+    const prevDx = lp.eye.anchor.dx, probe = 0.4242;
+    lp.eye.anchor.dx = probe;                                   // 1) EIN Pet verstellen
+    const sTP = this._touchedPets, sTM = this._touchedMat, sC = this.contract;
+    this._touchedPets = new Set([id]); this._touchedMat = false;
+    const A = this._buildContract(false, true);                // 2) exportieren
+    this.contract = JSON.parse(JSON.stringify(A));             // 3) Export wieder laden
+    this._touchedPets = new Set(); this._touchedMat = false;
+    const B = this._buildContract(false, false);              // 4) nochmal exportieren
+    this.contract = sC; this._touchedPets = sTP; this._touchedMat = sTM;   // aufräumen
+    if (added) this.lib.pets = this.lib.pets.filter((p) => p !== lp); else lp.eye.anchor.dx = prevDx;
+    const norm = (o) => { const c = JSON.parse(JSON.stringify(o)); delete c.version; delete c.updated; return c; };
+    const d = V2deepDiff(norm(A), norm(B));                    // 5) A und B müssen gleich sein
+    const ap = (A.pets || []).find((p) => p.id === id);
+    const survived = !!(ap && ap.eye && ap.eye.anchor && ap.eye.anchor.dx === probe);
+    const ok = d.length === 0 && survived;
+    this._flash(ok ? ('✓ Round-Trip mit Zähnen leer — Spiegelung verlustfrei (' + id + ')') : ('✗ ' + (d.length ? (d.length + ' Abweichung(en)') : 'Sonde verloren')), ok ? '#4f6029' : '#b8361f');
+    if (!ok) console.warn('[studio] teeth-diff', d.slice(0, 40), 'survived', survived);
+  }
+  _flash(msg, color) {
+    let el = this._flashEl;
+    if (!el) { el = this._flashEl = document.createElement('div'); el.style.cssText = 'position:fixed;left:50%;bottom:72px;transform:translateX(-50%);z-index:99;padding:9px 16px;background:#1e2126;color:#fff;font:600 13px/1.3 \'Space Grotesk\',sans-serif;box-shadow:0 8px 26px rgba(0,0,0,.28);pointer-events:none;transition:opacity .3s;'; document.body.appendChild(el); }
+    el.style.borderLeft = '3px solid ' + color; el.textContent = msg; el.style.opacity = '1';
+    clearTimeout(this._flashT); this._flashT = setTimeout(() => { el.style.opacity = '0'; }, 2000);
+  }
+
+  // ===== Stufe 1: Blasen-Generator (DOM/SVG-Overlay, Motor unberuehrt) =====
+  _bubbleSections(s, th) {
+    const B = s.v2bubble || {};
+    const seg = (active) => "font-family:'Space Grotesk',sans-serif;font-size:13px;font-weight:500;padding:9px 6px;border:none;background:" + (active ? th.accent : 'var(--chip)') + ";color:" + (active ? th.ink : 'var(--chip-text)') + ";cursor:pointer;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;";
+    const sl = (label, k, min, max, step) => { const v = B[k] != null ? B[k] : min; const fix = step < 1 ? (step < 0.1 ? 2 : 1) : 0; return { isSlider:true, label, min, max, step, value:v, val:(+v).toFixed(fix), accent:th.tcol, on:(e) => this._setBubble(k, parseFloat(e.target.value)) }; };
+    const segRow = (label, opts, ids, k) => ({ isButtons:true, label, cols:'repeat(' + opts.length + ',1fr)', items: opts.map((o, i) => ({ label:o, on:() => this._setBubble(k, ids[i]), style:seg(B[k] === ids[i]) })) });
+    const tog = (label, k) => ({ isToggle:true, label, on:() => this._setBubble(k, !B[k]), trackBg: B[k] ? th.accent : 'var(--toggle-off)', knobX: B[k] ? 'translateX(20px)' : 'translateX(0)' });
+    const rows = [
+      segRow('Typ', ['Sprech','Denk','Fluester'], ['speech','thought','whisper'], 'type'),
+      tog('Blase zeigen', 'open'),
+      segRow('Beispieltext', ['BINGO!','...hmm?','psst'], ['BINGO!','...hmm?','psst'], 'text'),
+      { isRich:true, label:'Freier Text (Cmd/Ctrl+B fett · Cmd/Ctrl+I kursiv)', ref:(el) => { if (el && this._richEl !== el) { this._richEl = el; el.innerHTML = (B.html != null ? B.html : this._esc(B.text || '')); } }, on:(e) => this._setBubble('html', this._sanitize(e.target.innerHTML)) },
+      sl('Abstand', 'gap', 0, 120, 1),
+      sl('Innenabstand', 'pad', 3, 24, 1),
+      sl('Linienstaerke', 'line', 1, 5, 0.1),
+      sl('Papier-Toenung', 'tint', 0, 1, 0.02),
+      sl('Schriftgroesse', 'font', 11, 24, 0.5),
+      sl('Pfeil-Länge', 'arrow', 16, 80, 1),
+      sl('Totzone (Pfeil steht)', 'dead', 0, 140, 2),
+      sl('Trägheit (folgt weich)', 'lazy', 0.03, 0.4, 0.01),
+      { isNote:true, text:'Der Pfeil klebt magnetisch am Pet-Zentrum (Luftballon an Schnur), aber die Schnur ist kurz — die Spitze zielt nur, sie reicht nicht quer durchs Bild. Innerhalb der Totzone steht der Anker STILL: im Idle und bei kleinen Clips pendelt nichts. Erst wenn der Pet weiter wandert (Dance, Walk), folgt die Blase weich nach. Am Bildrand geklemmt zeigt sie immer vom Rand weg zum Pet.' },
+      { isNote:true, text:'Umrandung + Schrift bleiben schwarz; nur das Papier wird getoent. Immer nur EINE Blase.' },
+    ];
+    const headStyle = "width:100%;display:flex;justify-content:space-between;align-items:center;background:none;border:none;padding:14px 1px;cursor:pointer;font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:15px;color:" + th.tcol + ";";
+    const SP = s.v2speech || { pitch: 0, rate: 1, category: 'carny' };
+    const spk = !!this._speaking;
+    const speakStyle = "font-family:'Irish Grover',cursive;font-size:15px;padding:11px 6px;border:2px solid #1f1a14;border-radius:0;cursor:pointer;box-shadow:3px 3px 0 rgba(31,26,20,.18);background:" + (spk ? '#1f1a14' : th.accent) + ";color:#f6efd9;";
+    const speechRows = [
+      { isButtons:true, label:'Stimme testen \u2014 die Stimme ist die Uhr', cols:'1fr', items:[{ label: spk ? '\u23f9 Stop' : '\u25b6 Sprechen', on:() => this._speak(), style: speakStyle }] },
+      { isSlider:true, label:'Tonlage (Wunsch)', min:-1, max:1, step:0.05, value:SP.pitch, val:(+SP.pitch).toFixed(2), accent:th.tcol, on:(e) => this._setSpeech('pitch', parseFloat(e.target.value)) },
+      { isSlider:true, label:'Tempo (Wunsch)', min:0.6, max:1.4, step:0.05, value:SP.rate, val:(+SP.rate).toFixed(2), accent:th.tcol, on:(e) => this._setSpeech('rate', parseFloat(e.target.value)) },
+      { isButtons:true, label:'Klang-Kategorie (Wunsch; auto = aus Archetyp)', cols:'repeat(5,1fr)', items:['auto','carny','deadpan','sage','neutral'].map((c) => ({ label:c, on:() => this._setSpeech('category', c), style:seg((SP.category == null ? 'auto' : SP.category) === c) })) },
+      { isNote:true, text:'Die Runtime waehlt die naechstbeste lokale de-DE-Stimme zum Wunsch (nie eine feste Stimme). Der Mund folgt den Wort-Grenzen der Stimme, Buchstaben \u2192 Viseme (DE); betonte Vokale halten laenger, der Blasentext baut mit auf.' },
+    ];
+    const IST = (s.v2ind && s.v2ind.state) || 'new';
+    const indRows = [
+      { isNote:true, text:'Erscheint, wenn die Blase geschlossen ist (Klick auf die Blase schliesst sie \u2014 die Stimme laeuft weiter). Klick auf die Zeichen holt die Blase zurueck. Form: Quadrate = Sprechblase, Punkte = Denkblase.' },
+      { isButtons:true, label:'Zustand (ueber Bewegung, nicht Farbe)', cols:'repeat(3,1fr)', items:[['neu','new'],['gelesen','read'],['denkt','thinking']].map((p) => ({ label:p[0], on:() => this._setInd(p[1]), style:seg(IST === p[1]) })) },
+    ];
+    const SL = s.v2sleep || { auto:false, idle:12 };
+    const slp = !!this._sleeping;
+    const sleepStyle = "font-family:'Irish Grover',cursive;font-size:15px;padding:11px 6px;border:2px solid #1f1a14;border-radius:0;cursor:pointer;box-shadow:3px 3px 0 rgba(31,26,20,.18);background:" + (slp ? '#2f7a72' : th.accent) + ";color:#f6efd9;";
+    const sleepRows = [
+      { isButtons:true, label:'Schlaf \u2014 Ausdruck + Bewegung zusammen', cols:'1fr', items:[{ label: slp ? '\u2600 Aufwecken (Freuden-Huepfer)' : '\u263e Jetzt einschlafen', on:() => this._sleep(!this._sleeping), style: sleepStyle }] },
+      { isToggle:true, label:'Auto-Schlaf bei Untaetigkeit (pro Pet)', on:() => this.setState((st) => ({ v2sleep:{ ...st.v2sleep, auto:!(st.v2sleep && st.v2sleep.auto) } }), () => { this._idleT = 0; }), trackBg: SL.auto ? th.accent : 'var(--toggle-off)', knobX: SL.auto ? 'translateX(20px)' : 'translateX(0)' },
+      { isSlider:true, label:'Untaetigkeit bis Schlaf (s)', min:4, max:40, step:1, value:SL.idle, val:(+SL.idle).toFixed(0), accent:th.tcol, on:(e) => this.setState((st) => ({ v2sleep:{ ...st.v2sleep, idle:parseFloat(e.target.value) } }), () => { this._idleT = 0; }) },
+      { isNote:true, text:'Ein Ausloeser setzt Lider, langsameren Atem, breiteres Wiegen und leichte Vorneigung zusammen. Klick in die Buehne weckt mit dem Freuden-Huepfer. Der Timer laeuft pro Pet und wird bei jeder Aktivitaet zurueckgesetzt; ein sprechendes Pet schlaeft nicht ein.' },
+    ];
+    return [
+      { title:'Sprechblase', onToggle:() => {}, headStyle, chev:'rotate(90deg)', chevColor:th.tcol, contentStyle:'display:block;padding:2px 1px 14px;', rows },
+      { title:'Stimme', onToggle:() => {}, headStyle, chev:'rotate(90deg)', chevColor:th.tcol, contentStyle:'display:block;padding:2px 1px 14px;', rows:speechRows },
+      { title:'Indikator', onToggle:() => {}, headStyle, chev:'rotate(90deg)', chevColor:th.tcol, contentStyle:'display:block;padding:2px 1px 14px;', rows:indRows },
+      { title:'Schlaf', onToggle:() => {}, headStyle, chev:'rotate(90deg)', chevColor:th.tcol, contentStyle:'display:block;padding:2px 1px 14px;', rows:sleepRows },
+    ];
+  }
+  _setBubble(k, v) { this.setState((st) => { const nb = { ...st.v2bubble, [k]: v }; if (k === 'text') { nb.html = null; if (this._richEl) this._richEl.innerHTML = this._esc(v); } return { v2bubble: nb }; }, () => { this._syncBubbleContract(); this._indSig = null; this._drawBubble(); }); }
+  // ===== Stufe 2: Stimme als Uhr — Mund + Text an speechSynthesis.boundary =====
+  _seedVoiceState() {
+    const vv = (this.contract && this.contract.voice) || {};
+    if (vv.speech) this.setState({ v2speech: { pitch: vv.speech.pitch != null ? vv.speech.pitch : 0, rate: vv.speech.rate != null ? vv.speech.rate : 1, category: vv.speech.category != null ? vv.speech.category : null } });
+    if (vv.bubble) { const m = { gap: 'gap', pad: 'pad', line: 'line', paperTint: 'tint', fontSize: 'font' }; this.setState((st) => { const nb = { ...st.v2bubble }; for (const ck in m) if (vv.bubble[ck] != null) nb[m[ck]] = vv.bubble[ck]; return { v2bubble: nb }; }, () => this._drawBubble()); }
+  }
+  _syncBubbleContract() {
+    if (!this.contract) return; this.contract.voice = this.contract.voice || {}; const vb = this.contract.voice.bubble = this.contract.voice.bubble || {};
+    const b = this.state.v2bubble || {}, map = { gap: 'gap', pad: 'pad', line: 'line', tint: 'paperTint', font: 'fontSize' }; let ch = false;
+    for (const k in map) if (b[k] != null && vb[map[k]] !== b[k]) { vb[map[k]] = b[k]; ch = true; }
+    if (ch && !this.state.dirty) this.setState({ dirty: true });
+  }
+  _setSpeech(k, v) {
+    const val = (k === 'category' && v === 'auto') ? null : v;
+    this.setState((st) => ({ v2speech: { ...st.v2speech, [k]: val } }), () => {
+      if (this.contract) { this.contract.voice = this.contract.voice || {}; const sp = this.contract.voice.speech = this.contract.voice.speech || {}; sp[k] = val; }
+      if (!this.state.dirty) this.setState({ dirty: true });
+    });
+  }
+  _bubblePlain() { const b = this.state.v2bubble || {}; return (b.html != null ? String(b.html).replace(/<[^>]*>/g, '') : String(b.text || '')).replace(/\s+/g, ' ').trim(); }
+  _patchReveal(n) { const el = this._bubbleEl; if (!el) return; const sp = el.querySelector('.v2txt'); if (sp) sp.innerHTML = this._md(this._bubblePlain().slice(0, n)); }
+  _wordVisemes(word) {
+    if (!this._DEVIS) this._DEVIS = { a: 'ah', '\u00e4': 'ah', e: 'ee', '\u00e9': 'ee', '\u00e8': 'ee', i: 'ee', '\u00ef': 'ee', y: 'ee', o: 'oh', '\u00f6': 'oh', u: 'uh', '\u00fc': 'woo', m: 'm', b: 'm', p: 'm', f: 'f', v: 'f', w: 'f', s: 's', '\u00df': 's', z: 's', c: 's', x: 's', d: 'd', t: 'd', n: 'd', l: 'l', r: 'r', g: 'uh', k: 'uh', q: 'uh', h: 'uh', j: 'ee' };
+    const out = [], str = String(word).toLowerCase();
+    for (const ch of str) { const v = this._DEVIS[ch]; if (v && v !== out[out.length - 1]) out.push(v); }
+    if (!out.length) out.push('neutral'); return out;
+  }
+  _enqueueVisemes(vis, dur) {
+    const VOW = { ah: 1, ee: 1, oh: 1, uh: 1, woo: 1 };
+    const w = vis.map((v) => VOW[v] ? 1.5 : 1), tot = w.reduce((a, b) => a + b, 0) || 1;
+    const q = []; let t = 0; for (let i = 0; i < vis.length; i++) { q.push({ v: vis[i], t }); t += dur * w[i] / tot; }
+    this._visQ = q; this._visT = 0; this._visIdx = 0;
+  }
+  _visemTick(dt) {
+    if (!this.mouth || !this._visQ) return; this._visT = (this._visT || 0) + dt; let i = this._visIdx || 0;
+    while (i < this._visQ.length && this._visQ[i].t <= this._visT) { this.mouth.setTex(this._visQ[i].v); i++; }
+    this._visIdx = i;
+  }
+  _pickVoice() {
+    const ss = window.speechSynthesis; if (!ss) return null; const vs = ss.getVoices() || []; if (!vs.length) return null;
+    const de = vs.filter((v) => /^de(-|_|$)/i.test(v.lang || '')); const pool = de.length ? de : vs; return pool[0];
+  }
+  _speak() { if (this._speaking) this._stopSpeak(); else this._startSpeak(); }
+  _startSpeak() {
+    if (!('speechSynthesis' in window)) { this._flash('Keine Sprachausgabe im Browser', '#b8361f'); return; }
+    const text = this._bubblePlain(); if (!text) { this._flash('Blase ist leer', '#b8361f'); return; }
+    try { window.speechSynthesis.cancel(); } catch (e) {}
+    this._spoken = this._spoken || new Set(); const repeat = this._spoken.has(text); this._spoken.add(text);
+    this._speaking = true; this._reveal = repeat ? text.length : 0; this._visQ = null; this._visIdx = 0; this._boundaryFired = false;
+    this._drawBubble();
+    if (this.mouth) { this.mouth.enabled = true; this.mouth._talk = false; this.mouth.setTex('neutral'); }
+    const sp = this.state.v2speech || {};
+    const u = new SpeechSynthesisUtterance(text);
+    u.lang = 'de-DE';
+    u.rate = Math.max(0.5, Math.min(1.6, sp.rate || 1));
+    u.pitch = Math.max(0.4, Math.min(1.9, 1 + (sp.pitch || 0) * 0.7));
+    const voice = this._pickVoice(); if (voice) u.voice = voice;
+    u.onboundary = (e) => { this._boundaryFired = true; this._onBoundary(e, text, u); };
+    u.onend = () => this._stopSpeak();
+    u.onerror = () => this._stopSpeak();
+    this._utter = u;
+    try { window.speechSynthesis.speak(u); } catch (e) { this._stopSpeak(); return; }
+    this.setState({});
+    clearTimeout(this._boundaryTimer);
+    this._boundaryTimer = setTimeout(() => { if (this._speaking && !this._boundaryFired) this._fallbackSpeak(text, u); }, 380);
+  }
+  _onBoundary(e, text, u) {
+    const ci = Math.max(0, e.charIndex || 0);
+    let cl = e.charLength; if (!cl) { const m = /\S+/.exec(text.slice(ci)); cl = m ? m[0].length : 1; }
+    const end = Math.min(text.length, ci + cl);
+    this._reveal = Math.max(this._reveal || 0, end); this._patchReveal(this._reveal);
+    if (e.name === 'word' || e.name === undefined || e.name === '') {
+      const word = text.slice(ci, end);
+      const dur = Math.max(0.12, word.length * 0.075 / (u.rate || 1));
+      this._enqueueVisemes(this._wordVisemes(word), dur);
+    }
+  }
+  _fallbackSpeak(text, u) {
+    if (this.mouth) this.mouth.talk(true);
+    const dur = Math.max(800, text.length * 70 / (u.rate || 1)), t0 = performance.now();
+    const step = () => { if (!this._speaking) return; const p = Math.min(1, (performance.now() - t0) / dur); const n = Math.round(p * text.length); this._reveal = n; this._patchReveal(n); if (p < 1) this._fbRAF = requestAnimationFrame(step); };
+    step();
+  }
+  _stopSpeak() {
+    this._speaking = false; this._visQ = null; this._visIdx = 0;
+    clearTimeout(this._boundaryTimer); if (this._fbRAF) cancelAnimationFrame(this._fbRAF);
+    try { window.speechSynthesis.cancel(); } catch (e) {}
+    if (this.mouth) { this.mouth.talk(false); this.mouth.rest = this.state.mouthSel; this.mouth.setTex(this.state.mouthSel); }
+    this._reveal = null; this._drawBubble(); this.setState({});
+  }
+  // ===== Stufe 3: Indikator (drei Zeichen ueber dem KOERPER, Bewegung statt Farbe) =====
+  // Anker = Oberkante der groessten zusammenhaengenden Body-Schale; Ohren/Hoerner/Geweih/Schnaebel
+  // sind eigene, kleinere Schalen und fallen weg. Konstanter Abstand ueber dem Kopf (Screen-px),
+  // NICHT konstante Hoehe ueber dem Boden. Reuse der v9-Schalen-Logik (getFaceShells/_body).
+  _bodyHeadLocal() {
+    const ch = this.ch; if (!ch || !ch.inner || !ch._body) return null;
+    if (this._headLocalId === this.state.petIdx && this._headLocal) return this._headLocal;
+    let shells = null; try { shells = ch.getFaceShells ? ch.getFaceShells() : null; } catch (e) {}
+    let hx, hy, hz;
+    if (shells && shells.length) {
+      let main = shells[0]; for (const sh of shells) if (sh.count > main.count) main = sh;
+      hx = (main.xmin + main.xmax) / 2; hy = main.ymax; hz = (main.zmin + main.zmax) / 2;
+    } else {
+      const geo = (ch.getBodyOrigGeo && ch.getBodyOrigGeo()) || ch._body.geometry;
+      if (!geo.boundingBox) geo.computeBoundingBox(); const bb = geo.boundingBox;
+      hx = (bb.min.x + bb.max.x) / 2; hy = bb.max.y; hz = (bb.min.z + bb.max.z) / 2;
+    }
+    this._headLocal = { x: hx, y: hy, z: hz }; this._headLocalId = this.state.petIdx;
+    return this._headLocal;
+  }
+  _petHeadBodyScreen() {
+    const hl = this._bodyHeadLocal(); if (!hl) return null;
+    const THREE = this.THREE, cam = this.cam, cv = this._canvas, ch = this.ch;
+    if (!THREE || !cam || !cv || !ch || !ch._body) return null;
+    ch._body.updateMatrixWorld(true);
+    const wp = ch._body.localToWorld(new THREE.Vector3(hl.x, hl.y, hl.z));
+    const v = wp.project(cam); const r = cv.getBoundingClientRect();
+    return { x: r.left + (v.x * 0.5 + 0.5) * r.width, y: r.top + (-v.y * 0.5 + 0.5) * r.height, behind: v.z > 1 };
+  }
+  _mix(a, b, t) {
+    const p = (h) => { h = String(h).replace('#', ''); if (h.length === 3) h = h.split('').map((c) => c + c).join(''); return [parseInt(h.slice(0, 2), 16), parseInt(h.slice(2, 4), 16), parseInt(h.slice(4, 6), 16)]; };
+    const A = p(a), B = p(b); return 'rgb(' + A.map((v, i) => Math.round(v + (B[i] - v) * t)).join(',') + ')';
+  }
+  _buildInd() {
+    const el = this._indEl; if (!el) return;
+    const b = this.state.v2bubble || {}, line = b.line || 2, tt = b.tint || 0;
+    const st = (this.state.v2ind && this.state.v2ind.state) || 'new';
+    const paper = 'rgb(' + [250 - tt * 6, 244 - tt * 22, 230 - tt * 62].map(Math.round).join(',') + ')';
+    const circle = (st === 'thinking') || (b.type === 'thought');   // denkt IMMER Kreise (Typing-Punkte); sonst nach Blasen-Typ
+    let fill = paper;
+    if (st === 'new') { const pc = (this._pet() && this._pet().color) || '#d3a244'; fill = this._mix(pc, '#b8361f', 0.5); }   // Pet-Farbe mit KFB-rotem Tint
+    const n = 3, sq = 12, gp = 8, pad = 5, W = n * sq + (n - 1) * gp + pad * 2, H = sq + 16;
+    this._indW = W; this._indH = H;
+    let shapes = '';
+    for (let i = 0; i < n; i++) {
+      const x0 = pad + i * (sq + gp);
+      if (circle) shapes += "<circle class='indm' cx='" + (x0 + sq / 2).toFixed(1) + "' cy='" + (H / 2).toFixed(1) + "' r='" + (sq / 2).toFixed(1) + "' fill='" + fill + "' stroke='#1f1a14' stroke-width='" + line + "'/>";
+      else shapes += "<rect class='indm' x='" + x0.toFixed(1) + "' y='" + (H / 2 - sq / 2).toFixed(1) + "' width='" + sq + "' height='" + sq + "' rx='1.5' fill='" + fill + "' stroke='#1f1a14' stroke-width='" + line + "' stroke-linejoin='round'/>";
+    }
+    el.innerHTML = "<svg width='" + W + "' height='" + H + "' style='position:absolute;left:0;top:0;overflow:visible;'>" + shapes + "</svg>";
+    this._indMarks = Array.prototype.slice.call(el.querySelectorAll('.indm'));
+    for (const m of this._indMarks) { m.style.transformBox = 'fill-box'; m.style.transformOrigin = 'center'; }
+  }
+  _animInd() {
+    const marks = this._indMarks; if (!marks || !marks.length) return;
+    const t = performance.now() / 1000, st = (this.state.v2ind && this.state.v2ind.state) || 'new';
+    for (let i = 0; i < marks.length; i++) {
+      let dy = 0, op = 1, sc = 1;
+      if (st === 'new') { const k = 0.5 + 0.5 * Math.sin(t * 3.4); sc = 0.9 + 0.16 * k; op = 0.82 + 0.18 * k; }        // Pet-Farbe+rot, sanftes synchrones Pulsieren
+      else if (st === 'read') { op = 0.6; }                                                                          // gelesen: still, zurueckgenommen
+      else { const ph = t * 3.6 - i * 0.7, up = Math.max(0, Math.sin(ph)); dy = -up * 5; op = 0.45 + 0.55 * up; }    // denkt: „schreibt gerade…" Typing-Wave
+      marks[i].setAttribute('transform', 'translate(0 ' + dy.toFixed(2) + ') scale(' + sc.toFixed(3) + ')');
+      marks[i].style.opacity = op;
+    }
+  }
+  _indTick() {
+    if (!this._v2el) return;
+    if (!this._indEl) {
+      const el = document.createElement('div');
+      el.style.cssText = 'position:absolute;z-index:9;pointer-events:auto;cursor:pointer;filter:drop-shadow(2px 2px 0 rgba(31,26,20,.16));';
+      el.title = 'Blase zurueckholen'; el.onclick = () => this._setBubble('open', true);
+      this._v2el.appendChild(el); this._indEl = el;
+    }
+    const b = this.state.v2bubble || {};
+    if (b.open) { this._indEl.style.display = 'none'; return; }
+    const hs = this._petHeadBodyScreen(); if (!hs || hs.behind) { this._indEl.style.display = 'none'; return; }
+    const st = (this.state.v2ind && this.state.v2ind.state) || 'new';
+    const sig = st + '|' + (b.type || 'speech');
+    if (this._indSig !== sig) { this._indSig = sig; this._buildInd(); }
+    const cr = this._v2el.getBoundingClientRect(), iw = this._indW || 54, ih = this._indH || 28, gap = 20;
+    let x = (hs.x - cr.left) - iw / 2, y = (hs.y - cr.top) - gap - ih;
+    x = Math.max(4, Math.min(cr.width - 324 - iw - 4, x)); y = Math.max(52, Math.min(cr.height - 52 - ih, y));
+    this._indEl.style.left = Math.round(x) + 'px'; this._indEl.style.top = Math.round(y) + 'px'; this._indEl.style.display = 'block';
+    this._animInd();
+  }
+  _setInd(state) { this._indSig = null; this.setState((st) => ({ v2ind: { ...st.v2ind, state } })); }
+  // ===== Stufe 5: Schlaf (EIN Ausloeser setzt Ausdruck UND Bewegung zusammen) =====
+  _sleep(on) {
+    on = !!on; if (on === !!this._sleeping) return;
+    this._sleeping = on; this._idleT = 0;
+    if (this.rig) {
+      if (on) { this.rig.applyEmote({ lidUpper: 0.94, lidLower: 0.14, slant: 0.06, pupil: 'normal', gaze: 'front' }); this.rig.setBlink({ minGap: 5.5, maxGap: 9, dur: 0.45 }); this.rig.setLife({ on: false }); }
+      else { this._applyEmote(this._emote(this.state.emoteSel)); this.rig.setBlink(this.state.blink); this.rig.setLife(this.state.life); }
+    }
+    if (!on && this.ch && this.ch.hopJoy) this.ch.hopJoy();   // Klick weckt mit dem vorhandenen Freuden-Huepfer
+    this.setState({});
+  }
+  _sleepTick(dt) {
+    const ch = this.ch; if (!ch || !ch.group) return;
+    const sl = this.state.v2sleep || {};
+    if (this._speaking) this._idleT = 0;   // ein sprechendes Pet schlaeft nicht mitten im Satz ein
+    if (sl.auto && !this._sleeping && ch.loaded) { this._idleT = (this._idleT || 0) + dt; if (this._idleT >= (sl.idle || 12)) this._sleep(true); }
+    const tK = this._sleeping ? 1 : 0; this._sK = (this._sK || 0) + (tK - (this._sK || 0)) * Math.min(1, dt * 3);
+    const t = performance.now() / 1000;
+    ch.group.rotation.x = this._sK * (0.14 + Math.sin(t * 1.1) * 0.02);   // Vorneigung + langsamer Atem
+    ch.group.rotation.z = this._sK * Math.sin(t * 0.62) * 0.06;           // breiteres, langsames Wiegen
+  }
+  _bmul(a) { return function () { a |= 0; a = a + 0x6D2B79F5 | 0; let t = Math.imul(a ^ a >>> 15, 1 | a); t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t; return ((t ^ t >>> 14) >>> 0) / 4294967296; }; }
+  _petHeadScreen() {
+    const THREE = this.THREE, cam = this.cam, cv = this._canvas, ch = this.ch;
+    if (!THREE || !cam || !cv || !ch || !ch.group) return null;
+    const box = new THREE.Box3().setFromObject(ch.group);
+    if (!isFinite(box.max.y)) return null;
+    const wp = new THREE.Vector3((box.min.x + box.max.x) / 2, box.max.y + 0.05, (box.min.z + box.max.z) / 2);
+    const v = wp.project(cam); const r = cv.getBoundingClientRect();
+    return { x: r.left + (v.x * 0.5 + 0.5) * r.width, y: r.top + (-v.y * 0.5 + 0.5) * r.height };
+  }
+  // v4: Anker-Schicht der Blase. EINE Groesse besitzt die Position, an der der Pfeil klebt: der
+  // geglaettete Bild-Punkt des Pet-ZENTRUMS. Vorher hing der Zipfel an der Bbox-OBERKANTE — bei
+  // naher Kamera liegt die ausserhalb des Bildes, der Anker wanderte nach oben aus der Buehne und
+  // der Pfeil zeigte in den Header (Befund Georg 30.7., Bild 1).
+  _petPoints() {
+    const THREE = this.THREE, cam = this.cam, cv = this._canvas, ch = this.ch;
+    if (!THREE || !cam || !cv || !ch || !ch.group || !this._v2el) return null;
+    const box = new THREE.Box3().setFromObject(ch.group);
+    if (!isFinite(box.max.y)) return null;
+    const cr = this._v2el.getBoundingClientRect(), r = cv.getBoundingClientRect();
+    const toStage = (wp) => {
+      const v = wp.clone().project(cam);
+      return { x: r.left - cr.left + (v.x * 0.5 + 0.5) * r.width, y: r.top - cr.top + (-v.y * 0.5 + 0.5) * r.height, behind: v.z > 1 };
+    };
+    const mid = new THREE.Vector3((box.min.x + box.max.x) / 2, (box.min.y + box.max.y) / 2, (box.min.z + box.max.z) / 2);
+    const top = new THREE.Vector3(mid.x, box.max.y + 0.05, mid.z);
+    const c = toStage(mid), t = toStage(top);
+    return { cx: c.x, cy: c.y, topY: t.y, behind: c.behind, cr };
+  }
+  // Traegheit + Totzone in EINER Groesse: innerhalb der Totzone steht der Anker STILL (deshalb
+  // pendelt der Pfeil im Idle und bei kleinen Clips nicht), ausserhalb folgt er weich. Bei „Dance"
+  // wandert der Kopf weit -> der Anker folgt, aber traege, damit man weiterlesen kann.
+  _anchorTick(P) {
+    const b = this.state.v2bubble || {}, cr = P.cr;
+    const dead = b.dead != null ? b.dead : 44, lazy = b.lazy != null ? b.lazy : 0.10;
+    const rx = Math.max(8, Math.min(cr.width - 324 - 8, P.cx));        // Anker bleibt im Buehnenkasten
+    const ry = Math.max(56, Math.min(cr.height - 56, P.cy));
+    if (!this._an) { this._an = { x: rx, y: ry, vx: 0, vy: 0 }; }
+    const a = this._an, d = Math.hypot(rx - a.x, ry - a.y);
+    if (d > dead) {
+      const k = Math.min(1, (d - dead) / dead);                        // je weiter weg, desto entschlossener
+      a.vx = (a.vx + (rx - a.x) * lazy * k) * 0.80;
+      a.vy = (a.vy + (ry - a.y) * lazy * k) * 0.80;
+      // Tempo-Deckel: ohne ihn schoss der Anker bei einem weiten Weg (Dance quer durch die Buehne,
+      // 471 px) mit 55 px/Frame los \u2014 das liest sich als Sprung, nicht als Nachziehen. 18 px/Frame
+      // (\u2248 1080 px/s) laesst 471 px in 0,44 s wandern und bleibt lesbar (gemessen 30.7.).
+      const sp = Math.hypot(a.vx, a.vy), cap = 18;
+      if (sp > cap) { a.vx = a.vx / sp * cap; a.vy = a.vy / sp * cap; }
+      a.x += a.vx; a.y += a.vy;
+    } else { a.vx *= 0.86; a.vy *= 0.86; a.x += a.vx; a.y += a.vy; }    // Restschwung ausklingen, dann Stillstand
+    return a;
+  }
+  _drawBubble() {
+    const el = this._bubbleEl; if (!el) return;
+    const b = this.state.v2bubble || {};
+    if (!b.open) { el.style.display = 'none'; return; }
+    const font = b.font || 15, pad = b.pad || 14, text = String(b.text || ''), plain = (b.html != null ? String(b.html).replace(/<[^>]*>/g, '') : text), type = b.type || 'speech';
+    const w = Math.max(Math.round(Math.min(240, Math.max(70, plain.length * font * 0.62)) + pad * 2), Math.round(font * 2.4 + pad * 2));
+    const cpl = Math.max(6, (w - pad * 2) / (font * 0.58));
+    const lines = Math.max(1, Math.ceil(plain.length / cpl));
+    const lh = 1.3, padV = Math.max(3, Math.round(pad - (lh - 1) / 2 * font)); let hh = Math.round(lines * font * lh + padV * 2); const minSide = Math.round(font * 2.2 + pad * 2); hh = Math.max(hh, minSide);
+    const M = 30; this._bw = w; this._bh = hh; this._bM = M;
+    const svgW = w + 2 * M, svgH = hh + 2 * M; el.style.width = svgW + 'px';
+    const tt = b.tint || 0; const paper = 'rgb(' + [250 - tt * 6, 244 - tt * 22, 230 - tt * 62].map(Math.round).join(',') + ')';
+    el.innerHTML = "<svg width='" + svgW + "' height='" + svgH + "' style='position:absolute;left:0;top:0;overflow:visible;'><g class='v2think'></g><path class='v2out' fill='" + paper + "' stroke='#1f1a14' stroke-linejoin='round' stroke-linecap='round'></path></svg>" + "<div style='position:absolute;left:" + M + "px;top:" + M + "px;width:" + w + "px;height:" + hh + "px;box-sizing:border-box;padding:" + padV + "px " + pad + "px;display:flex;align-items:center;justify-content:center;text-align:center;font-family:\"Shantell Sans\",cursive;font-size:" + font + "px;line-height:" + lh + ";color:#1f1a14;word-break:break-word;'>" + "<span class='v2txt'>" + (this._speaking ? this._md(plain.slice(0, this._reveal || 0)) : (b.html != null ? this._sanitize(b.html) : this._md(text))) + "</span></div>";
+    el.style.display = 'block'; this._bubbleShape();
+  }
+  // EIN geschlossener Zug: gerade Kanten mit Linien-Jitter (Ecken exakt), Zipfel als Umweg in die dem
+  // Kopf naechste Kante. Nur die Denkblase ist rund/wolkig. Der Zipfel zielt (Fuss auf der Kante, Spitze zum Kopf).
+  _bubbleShape() {
+    const el = this._bubbleEl; if (!el) return; const path = el.querySelector('.v2out'); if (!path) return;
+    const b = this.state.v2bubble || {}; const type = b.type || 'speech', line = b.line || 2, w = this._bw || 120, hh = this._bh || 80, M = this._bM || 30;
+    const tt = b.tint || 0; const paper = 'rgb(' + [250 - tt * 6, 244 - tt * 22, 230 - tt * 62].map(Math.round).join(',') + ')';
+    path.setAttribute('fill', paper); path.setAttribute('stroke-width', line); path.setAttribute('stroke-dasharray', type === 'whisper' ? '7 5' : 'none');
+    let hlx = (this._bhx != null ? this._bhx : null), hly = (this._bhy != null ? this._bhy : null);   // eingefrorene Kopf-Richtung -> Zipfel wippt nicht
+    const seed = (w * 131 + hh * 17 + type.length * 7) % 9999;
+    const think = el.querySelector('.v2think'); if (think) think.innerHTML = '';
+    if (type === 'thought') { path.setAttribute('d', this._blobPath(M, w, hh, seed)); this._thinkTail(think, M, w, hh, hlx, hly, paper, line); return; }
+    path.setAttribute('d', this._rectPath(M, w, hh, seed, hlx, hly));
+  }
+  _rectPath(M, w, hh, seed, hlx, hly) {
+    const rng = this._bmul(seed); const j = () => (rng() * 2 - 1) * 1.3;
+    const x0 = M, y0 = M, x1 = M + w, y1 = M + hh, cx = M + w / 2, cy = M + hh / 2;
+    const dx = (hlx == null ? 0 : hlx - cx), dy = (hly == null ? 1 : hly - cy);
+    let edge; if (Math.abs(dy) >= Math.abs(dx)) edge = dy >= 0 ? 0 : 1; else edge = dx >= 0 ? 2 : 3;
+    const E = [ { a:[x0,y0], b:[x1,y0], n:[0,-1], id:1 }, { a:[x1,y0], b:[x1,y1], n:[1,0], id:2 }, { a:[x1,y1], b:[x0,y1], n:[0,1], id:0 }, { a:[x0,y1], b:[x0,y0], n:[-1,0], id:3 } ];
+    const foot = 18, hlen = Math.hypot(dx, dy) || 1;
+    const b2 = this.state.v2bubble || {};
+    const aMin = 14, aMax = b2.arrow != null ? b2.arrow : 34;   // Luftballon an Schnur: die Spitze zielt
+    // aufs Pet-Zentrum, aber die Schnur ist KURZ — ein Gummiband quer durchs Bild liest sich nicht.
+    const tailLen = Math.max(aMin, Math.min(aMax, hlen - 8));
+    const P = [];
+    for (const e of E) {
+      P.push([e.a[0], e.a[1]]);
+      const len = Math.hypot(e.b[0] - e.a[0], e.b[1] - e.a[1]), ux = (e.b[0] - e.a[0]) / len, uy = (e.b[1] - e.a[1]) / len;
+      const K = 4, mids = [];
+      for (let k = 1; k < K; k++) { const ss = len * k / K; mids.push({ s: ss, x: e.a[0] + ux * ss + e.n[0] * j(), y: e.a[1] + uy * ss + e.n[1] * j() }); }
+      if (e.id === edge) {
+        let ha = (hlx == null) ? len / 2 : (hlx - e.a[0]) * ux + (hly - e.a[1]) * uy;
+        ha = Math.max(len * 0.32, Math.min(len * 0.68, ha));   // zentrales Band: Fuss wandert nicht an den Rand
+        const footCx = e.a[0] + ux * ha, footCy = e.a[1] + uy * ha;
+        let tx, ty;
+        if (hlx != null && hly != null) { const vx = hlx - footCx, vy = hly - footCy, tl = Math.hypot(vx, vy) || 1, use = Math.max(aMin, Math.min(aMax, tl)); tx = footCx + vx / tl * use; ty = footCy + vy / tl * use; }
+        else { tx = footCx + dx / hlen * tailLen; ty = footCy + dy / hlen * tailLen; }
+        const fx = e.a[0] + ux * (ha - foot / 2), fy = e.a[1] + uy * (ha - foot / 2);
+        const gx = e.a[0] + ux * (ha + foot / 2), gy = e.a[1] + uy * (ha + foot / 2);
+        // v4: PFEIL statt Kerbe — zwei Schulterpunkte bei 55 % der Länge verjüngen den Zug, so liest
+        // sich der Zipfel als Spitze und nicht als abgeschnittenes Dreieck (Befund Georg 30.7., Bild 3).
+        const shx = footCx + (tx - footCx) * 0.55, shy = footCy + (ty - footCy) * 0.55;
+        const s1x = shx + (fx - footCx) * 0.34, s1y = shy + (fy - footCy) * 0.34;
+        const s2x = shx + (gx - footCx) * 0.34, s2y = shy + (gy - footCy) * 0.34;
+        for (const m of mids) if (m.s < ha - foot / 2) P.push([m.x, m.y]);
+        P.push([fx, fy], [s1x, s1y], [tx, ty], [s2x, s2y], [gx, gy]);
+        for (const m of mids) if (m.s > ha + foot / 2) P.push([m.x, m.y]);
+      } else { for (const m of mids) P.push([m.x, m.y]); }
+    }
+    let d = 'M' + P[0][0].toFixed(1) + ' ' + P[0][1].toFixed(1);
+    for (let p = 1; p < P.length; p++) d += ' L' + P[p][0].toFixed(1) + ' ' + P[p][1].toFixed(1);
+    return d + ' Z';
+  }
+  _blobPath(M, w, hh, seed) {
+    // Wolke, IRREGULAER: ungleiche Lappen-Abstaende, ungleiche Radien, ungleiche Bogen-Woelbung (seeded,
+    // also stabil pro Blase, aber handgezeichnet-unregelmaessig). Gross genug, dass der Text hineinpasst.
+    // Scallop-Wolke: N Lappen nahezu gleichmaessig um eine Ellipse, nur KLEINE seeded Unregelmaessigkeit
+    // (Winkel < halber Lappenabstand, Radius +-7%) -> Lappen ueberholen sich nie und kreuzen nie. Jeder
+    // Lappen ein nach aussen gewoelbter Bogen mit Radius ~ halbe Sehne (sauberer Halbkreis, kein Einknick).
+    const rng = this._bmul(seed);
+    const cx = M + w / 2, cy = M + hh / 2, rx = w * 0.60 + 12, ry = hh * 0.64 + 12;
+    const N = 11 + Math.floor(rng() * 3);
+    const step = Math.PI * 2 / N;
+    const P = []; const a0 = -Math.PI / 2 + (rng() * 2 - 1) * 0.15;
+    for (let i = 0; i < N; i++) {
+      const a = a0 + i * step + (rng() * 2 - 1) * step * 0.28;
+      const rr = 1 + (rng() * 2 - 1) * 0.07;
+      P.push([cx + Math.cos(a) * rx * rr, cy + Math.sin(a) * ry * rr]);
+    }
+    let d = 'M' + P[0][0].toFixed(1) + ' ' + P[0][1].toFixed(1);
+    for (let i = 0; i < N; i++) { const p1 = P[(i + 1) % N]; const ch = Math.hypot(p1[0] - P[i][0], p1[1] - P[i][1]); const r = (ch / 2 * 1.02).toFixed(1); d += ' A' + r + ' ' + r + ' 0 0 1 ' + p1[0].toFixed(1) + ' ' + p1[1].toFixed(1); }
+    return d + ' Z';
+  }
+  _thinkTail(g, M, w, hh, hlx, hly, paper, line) {
+    if (!g) return; const cx = M + w / 2, cy = M + hh / 2;
+    let dx = (hlx == null ? 0 : hlx - cx), dy = (hly == null ? 1 : hly - cy); const L = Math.hypot(dx, dy) || 1; dx /= L; dy /= L;
+    const ex = cx + dx * (w / 2 + 4), ey = cy + dy * (hh / 2 + 4);
+    const c = (o, r) => "<circle cx='" + (ex + dx * o).toFixed(1) + "' cy='" + (ey + dy * o).toFixed(1) + "' r='" + r + "' fill='" + paper + "' stroke='#1f1a14' stroke-width='" + line + "'/>";
+    g.innerHTML = c(9, 4.5) + c(20, 3);
+  }
+  _md(s) { s = String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;'); s = s.replace(/[*][*]([^*]+)[*][*]/g, '<b>$1</b>').replace(/[*]([^*]+)[*]/g, '<i>$1</i>'); return s; }
+  _esc(s) { return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;'); }
+  _sanitize(html) { let s = String(html).replace(/<div>/gi, '<br>').replace(/<[/]div>/gi, '').replace(/&nbsp;/gi, ' '); s = s.replace(/<(?![/]?(b|i|strong|em|br)\b)[^>]*>/gi, ''); return s; }
+  _bubbleInit() { if (this._bubbleRAF) return; const tick = () => { this._bubbleRAF = requestAnimationFrame(tick); this._bubbleTick(); this._indTick(); }; tick(); }
+  _bubbleTick() {
+    if (!this._v2el) return;
+    if (!this._bubbleEl) { const el = document.createElement('div'); el.style.cssText = 'position:absolute;z-index:8;pointer-events:auto;cursor:pointer;filter:drop-shadow(2px 3px 0 rgba(31,26,20,.18));'; el.title = 'Blase wegklicken (Stimme laeuft weiter)'; el.onclick = () => { const full = this._bubblePlain().length; if (this._speaking && this._reveal != null && this._reveal < full) { this._reveal = full; this._patchReveal(full); return; } this._setBubble('open', false); }; this._v2el.appendChild(el); this._bubbleEl = el; this._drawBubble(); }
+    const b = this.state.v2bubble;
+    if (!b || !b.open) { this._bubbleEl.style.display = 'none'; return; }
+    const P = this._petPoints(); if (!P || P.behind) { this._bubbleEl.style.display = 'none'; return; }
+    const an = this._anchorTick(P);
+    this._lastHead = { x: an.x, y: an.y };
+    const cr = P.cr; const el = this._bubbleEl; el.style.display = 'block';
+    const M = this._bM || 30, w = this._bw || 120, hh = this._bh || 80, gap = b.gap != null ? b.gap : 46;
+    // Die Blase sitzt ueber dem KOPF (Abstand Zentrum->Oberkante aus dem aktuellen Frame), der Pfeil
+    // zielt aufs ZENTRUM. Zwei Punkte, EINE Traegheit: gedaempft wird nur das Zentrum.
+    const dTop = Math.min(0, P.topY - P.cy);
+    let tx = an.x - M - w / 2, ty = an.y + dTop - gap - hh - M;
+    // Denkblase: die Wolken-Lappen ragen ueber das Text-Rechteck hinaus (_blobPath rx=w*0.72,
+    // ry=hh*0.80, rr bis 1.17). Clamp an die REALE Ausdehnung koppeln, nicht an M — sonst haengt
+    // der Wolken-Oberrand im Header (Verifier-Befund m0257).
+    const isTh = b.type === 'thought';
+    const ovT = isTh ? Math.round(0.44 * hh + 16) : 0;   // Ueberstand oben/unten ueber das Text-Rechteck
+    const ovX = isTh ? Math.round(0.35 * w + 16) : 0;     // Ueberstand seitlich
+    const byMin = 52 - M + ovT, byMax = (cr.height - 52) - hh - M - ovT;
+    // kein Flip: bei wenig Platz oben nur klemmen, der Pfeil dreht sich unten heraus (Randregel unten)
+    const bxMin = 4 - M + ovX, bxMax = (cr.width - 324) - w - M - ovX - 4;   // im Buehnenkasten (Seitenpanel 324)
+    tx = Math.max(bxMin, Math.min(bxMax, tx)); ty = Math.max(byMin, Math.min(byMax, ty));
+    if (this._bx == null) { this._bx = tx; this._by = ty; }
+    this._bvx = ((this._bvx || 0) + (tx - this._bx) * 0.14) * 0.80; this._bx += this._bvx;
+    this._bvy = ((this._bvy || 0) + (ty - this._by) * 0.14) * 0.80; this._by += this._bvy;
+    this._bx = Math.max(bxMin, Math.min(bxMax, this._bx)); this._by = Math.max(byMin, Math.min(byMax, this._by));
+    el.style.left = Math.round(this._bx) + 'px'; el.style.top = Math.round(this._by) + 'px';
+    // Anker in Blasen-Koordinaten. RANDREGEL: eine oben geklemmte Blase zeigt IMMER nach unten, eine
+    // unten geklemmte immer nach oben. Ohne die zielte der Pfeil bei naher Kamera in den Header
+    // (Befund Georg 30.7., Bild 1) \u2014 der Anker lag ausserhalb des Bildes ueber der Blase.
+    let ax = an.x - this._bx, ay = an.y - this._by;
+    if (this._by <= byMin + 1) ay = Math.max(ay, M + hh + 14);
+    else if (this._by >= byMax - 1) ay = Math.min(ay, M - 14);
+    this._bhx = ax; this._bhy = ay;
+    this._bubbleShape();
+  }
+
+  renderVals() {
+    const s = this.state;
+    const em = this._emote(s.emoteSel) || {};
+    const p = s.pets[s.petIdx] || {};
+    const slider = (defs, values, on) => defs.map(([k, label, min, max, step, fix]) => ({
+      label, min, max, step,
+      value: values[k] != null ? values[k] : 0,
+      val: (values[k] != null ? values[k] : 0).toFixed(fix),
+      on: (e) => on(k, e),
+    }));
+    return {
+      ...this._chromeVals(this.state),
+      canvasRef: this.canvasRef, fileRef: this.fileRef,
+      loaderOpacity: s.ready ? 0 : 1, status: s.status,
+      hudDisplay: s.hud ? 'block' : 'none', hudFlex: s.hud ? 'flex' : 'none',
+      hudLabel: s.hud ? '⊟' : '⊞', onHud: this.h.hud,
+      dirtyLabel: s.dirty ? '● ungespeichert' : '○ synchron', dirtyColor: s.dirty ? '#e9c14a' : '#a89a78',
+      ioBtns: [
+        this.ioBtn('↑', 'Ganze pet-LIBRARY.json importieren', this.h.import),
+        this.ioBtn('⤦', 'EIN Pet importieren (pet-<id>.json) — ersetzt nur diesen Eintrag', this.h.importOne),
+        this.ioBtn('❖', 'In Session speichern', this.h.save),
+        this.ioBtn('⤥', 'NUR dieses Pet exportieren (pet-<id>.json)', this.h.exportOne),
+        this.ioBtn('↓', 'Ganze pet-LIBRARY.json exportieren', this.h.export, true),
+      ],
+      onImport: this.h.onImport,
+      modeBtns: [['original', 'Kenney'], ['clay', 'Clay'], ['cel', 'Cel']].map(([id, l]) => ({ label: l, on: () => this.h.mode(id), style: this.btn(s.mode === id, 'flex:1;') })),
+      matTabs: [['material', 'Material'], ['licht', 'Licht'], ['farbe', 'Farbe'], ['gesicht', 'Gesicht'], ['mund', 'Mund']].map(([id, l]) => ({ label: l, on: () => this.h.matTab(id), style: this.btn(s.matTab === id, 'flex:1;padding:5px 2px;font-size:10px;') })),
+      matMat: s.matTab === 'material' ? 'block' : 'none',
+      matLicht: s.matTab === 'licht' ? 'block' : 'none',
+      matFarbe: s.matTab === 'farbe' ? 'block' : 'none',
+      matGesicht: s.matTab === 'gesicht' ? 'block' : 'none',
+      matMund: s.matTab === 'mund' ? 'block' : 'none',
+      onMouthOn: this.h.mouthOn, mouthOnStyle: this.btn(s.mouthOn, 'width:100%;'), mouthOnLabel: s.mouthOn ? '◉ Mund: sichtbar' : 'Mund: aus',
+      mouthOpts: ['neutral', 'smile', 'm', 'd', 's', 'ee', 'uh', 'ah', 'oh', 'r', 'f', 'woo', 'l'].map((id) => ({ id })),
+      mouthSelVal: s.mouthSel, onMouthSel: this.h.mouthSel,
+      mouthSliders: slider(MOUTH_SLIDERS, s.mouthP, this.h.mouthSlider),
+      onMouthTalk: this.h.mouthTalk, mouthTalkStyle: this.btn(s.mouthTalk, 'width:100%;'), mouthTalkLabel: s.mouthTalk ? '◉ Talk-Test läuft' : 'Talk-Test (Visem-Shuffle)',
+      texGroups: TEX_GROUPS.map(([cat, items]) => ({ cat, items: items.map(([id, label]) => ({ id, label })) })),
+      texVal: s.texture, onTex: (e) => this.h.tex(e.target.value),
+      colormapVal: s.colormap, onColormap: (e) => this.h.colormap(e.target.value),
+      mapCtlDisplay: s.colormap === 'fluffy_fur' ? 'block' : 'none',
+      mapRepeatVal: s.mapRepeat, onMapRepeat: this.h.mapRepeat,
+      mapRotVal: s.mapRot, onMapRot: this.h.mapRot,
+      modOpts: MODS.map((m) => ({ id: m[0], label: m[1] })),
+      modVal: s.mod, onMod: (e) => this.h.mod(e.target.value),
+      surfSliders: slider(SURF_SLIDERS, s.surf, this.h.surf),
+      selStyle: "font-family:'Special Elite',monospace;font-size:11px;width:100%;padding:6px;border:2px solid #1f1a14;border-radius:0;background:#f7f0da;color:#3a342a;cursor:pointer;box-shadow:2px 2px 0 rgba(31,26,20,.25);",
+      onPaperGold: this.h.paperGold,
+      paperGoldStyle: this.btn(s.paperGold, 'width:100%;'),
+      paperGoldLabel: s.paperGold ? '◉ Colormap + Papier + Gelb: AN' : 'Colormap + Papier + Gelb',
+      tintModeDisplay: s.paperGold ? 'block' : 'none',
+      tintModeBtns: [['lum', 'Luminanz'], ['lerp', 'Lerp']].map(([id, l]) => ({ label: l, on: () => this.h.tintMode(id), style: this.btn(s.tintMode === id, 'flex:1;font-size:10px;') })),
+      onRecolor: this.h.recolor,
+      recolorStyle: this.btn(s.recolor, 'width:100%;'),
+      recolorLabel: s.recolor ? 'Recolor AN (pet.color)' : 'Recolor AUS (Original)',
+      onNative: this.h.native,
+      nativeStyle: this.btn(!p.color, 'width:100%;'),
+      nativeState: p.color ? 'umgefärbt: ' + p.color : 'native aktiv',
+      onKenneyBase: this.h.kenneyBase,
+      kenneyBaseStyle: this.btn(s.kenneyBase, 'width:100%;'),
+      kenneyBaseLabel: s.kenneyBase ? 'Kenney-Farben (Basis): AN' : 'Kenney-Farben (Basis): aus',
+      onHideEyes: this.h.hideEyes,
+      hideEyesStyle: this.btn(s.hideEyes, 'width:100%;'),
+      hideEyesLabel: s.hideEyes ? 'Original-Augen: versteckt' : 'Original-Augen: sichtbar',
+      onFacet: this.h.facet,
+      facetStyle: this.btn(s.facet, 'width:100%;'),
+      facetLabel: s.facet ? 'Facetten: AN (hart)' : 'Kenney-Rundung (weich, aus)',
+      onDisc: this.h.disc,
+      discStyle: this.btn(s.showDisc, 'width:100%;'),
+      discLabel: s.showDisc ? 'Boden-Kachel (Podest): sichtbar' : 'Boden-Kachel (Podest): aus',
+      onStripEyes: this.h.stripEyes,
+      stripEyesStyle: this.btn(s.stripEyes, 'width:100%;'),
+      stripEyesLabel: s.stripEyes ? 'Kenney-Augen: gelöscht' : 'Kenney-Augen: vorhanden',
+      shellRows: (() => {
+        const eyeSet = new Set(s.eyeShellIdx || []);
+        const per = (this.lib && this.lib.face && this.lib.face.stripSnout && this.lib.face.stripSnout.perPet) || {};
+        const snout = per[p.id] || [];
+        return (s.shells || []).map((sh, i) => {
+          const isEye = eyeSet.has(i), on = snout.indexOf(i) >= 0;
+          const dims = (sh.xmax - sh.xmin).toFixed(2) + '×' + (sh.ymax - sh.ymin).toFixed(2) + '×' + (sh.zmax - sh.zmin).toFixed(2);
+          const base = "font-family:'Special Elite',monospace;font-size:10px;width:100%;display:flex;justify-content:space-between;gap:6px;align-items:center;padding:4px 7px;margin-bottom:4px;border:2px solid #1f1a14;border-radius:0;cursor:pointer;text-align:left;box-sizing:border-box;";
+          const skin = isEye ? 'background:#e3d5af;color:#6f6450;cursor:default;' : (on ? 'background:#b8361f;color:#f6efd9;' : 'background:#f7f0da;color:#3a342a;');
+          return {
+            label: '#' + i + ' · ' + sh.count + ' tris · ' + dims,
+            tag: isEye ? 'Auge' : (on ? '✕ weg' : ''),
+            onEnter: () => this.h.hlShell(i), onLeave: () => this.h.hlShell(null),
+            onClick: isEye ? (() => {}) : (() => this.h.snout(i)),
+            style: base + skin,
+          };
+        });
+      })(),
+      pickerVal: p.color || '#d3a244',
+      pickerLabel: p.color ? ('umgefärbt ' + p.color) : 'native (keine Farbe gesetzt)',
+      onPick: this.h.pick,
+      moodBtns: MOODS.map((m) => ({ label: m.label, on: () => this.h.mood(m.id), style: this.btn(s.mood === m.id) })),
+      lightSliders: slider(LIGHT_SLIDERS, s, this.h.light),
+      onRim: this.h.rim, rimStyle: this.btn(s.rim, 'width:100%;'), rimLabel: s.rim ? 'Rim-Licht AN' : 'Rim-Licht AUS',
+      pupilBtns: [['matte-cute', 'matte-cute'], ['glossy-googly', 'glossy-googly']].map(([id, l]) => ({ label: l, on: () => this.h.pupilStyle(id), style: this.btn(s.pupilStyle === id, 'flex:1;font-size:10px;') })),
+      petName: p.id || '…',
+      anchorSliders: slider(ANCHOR_SLIDERS, s.anchor, this.h.anchor),
+      shapeSliders: slider(SHAPE_SLIDERS, s.shape, this.h.shape),
+      blinkSliders: slider(BLINK_SLIDERS, s.blink, this.h.blink),
+      onBlink: this.h.blinkNow, ghostBtn: this.btn(false, 'width:100%;'),
+      emoteChips: (s.emotes || []).map((e) => ({ label: e.id, on: () => this.h.emoteSel(e.id), style: this.btn(s.emoteSel === e.id) })),
+      emoteSel: s.emoteSel,
+      emoteSliders: slider(EMOTE_SLIDERS, em, this.h.emoteVal),
+      pupilKindBtns: [['normal', 'normal'], ['wide', 'wide']].map(([id, l]) => ({ label: l, on: () => this.h.emoteOpt('pupil', id), style: this.btn(em.pupil === id, 'flex:1;') })),
+      gazeBtns: [['front', 'front'], ['down', 'down'], ['away', 'away']].map(([id, l]) => ({ label: l, on: () => this.h.emoteOpt('gaze', id), style: this.btn(em.gaze === id, 'flex:1;') })),
+      onGazeFollow: this.h.gazeFollow,
+      gazeFollowStyle: this.btn(s.gazeFollow, 'width:100%;margin-top:2px;'),
+      gazeFollowLabel: s.gazeFollow ? '◉ Blick folgt Cursor: AN' : 'Blick folgt Cursor',
+      asymSliders: slider(ASYM_SLIDERS, s.asym, this.h.asym),
+      onSkeptic: this.h.skeptic, onAsymOff: this.h.asymOff,
+      skepticBtn: this.btn(!!(s.asym.u || s.asym.l || s.asym.sl), 'flex:1;'), resetBtn: this.btn(false, 'flex:1;'),
+      lifeSliders: slider(LIFE_SLIDERS, s.life, this.h.life),
+      onLifeOn: this.h.lifeOn, lifeOnStyle: this.btn(s.life.on, 'width:100%;margin-bottom:8px;'),
+      lifeOnLabel: s.life.on ? '◉ Leben: AN (wandern + zittern)' : 'Leben: aus',
+      kinSliders: slider(KIN_SLIDERS, s.kin, this.h.kin),
+      pulseBtns: [['brake', 'Bremse'], ['curveL', 'Kurve L'], ['curveR', 'Kurve R'], ['drop', 'Drop']].map(([id, l]) => ({ label: l, on: () => this.h.pulse(id), style: this.btn(false, 'flex:1;font-size:10px;padding:5px 2px;') })),
+      onKinZero: this.h.kinZero, kinZeroStyle: this.btn(false, 'width:100%;margin-top:2px;'),
+      onRideLoop: this.h.rideLoop, rideLoopStyle: this.btn(s.rideLoop, 'width:100%;margin-top:6px;'),
+      rideLoopLabel: s.rideLoop ? '◉ Fake-Ride läuft · ' + s.ridePhase : 'Fake-Ride (12s-Loop) starten',
+      petOpts: (s.pets || []).map((pp, i) => ({ i: String(i), label: (pp.isDefault ? '★ ' : '') + cap(pp.id) })),
+      petVal: String(s.petIdx), onPet: (e) => this.h.selPet(parseInt(e.target.value, 10)),
+      animBtns: ANIMS.map(([id, l]) => ({ label: (id === 'talk' ? (s.mouthTalk ? '◉ ' : '○ ') : '') + l, on: () => this.h.anim(id), style: this.btn(id === 'talk' && s.mouthTalk, 'font-size:10px;') })),
+    };
+  }
+}
+</script>
+</body>
+</html>

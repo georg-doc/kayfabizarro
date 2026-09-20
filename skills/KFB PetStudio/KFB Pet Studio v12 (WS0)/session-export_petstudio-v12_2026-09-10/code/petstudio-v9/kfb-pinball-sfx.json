@@ -1,0 +1,525 @@
+{
+  "schema": "kfb-pinball-sfx/v1",
+  "version": "v1",
+  "updated": "2026-08-22",
+  "note": "Ereignis auf Klangvorrat. Alle Pfade relativ zu baseUrl. Verifiziert gegen den Repo-Baum am 2026-08-22.",
+  "note_baseUrl": "GEAENDERT 2026-08-24 fuer Pet Podcast v2. Vorher jsdelivr — diese Adresse ist fuer dieses Repo am 17.8. gemessen 404 ('Failed to fetch georg-doc/kayfabizarro@main from GitHub'), weil das Repo privat ist und kein CDN spiegeln darf. Der Hauptweg steht jetzt auf raw; podcast-v1/mirror.v1.js schreibt raw -> kayfabizarro.pages.dev um (gemessen 200 in 271 ms). Rueckweg: baseUrl wieder auf jsdelivr, oder window.__kfbMirror.off().",
+  "baseUrl": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/",
+  "baseUrlAlt": "https://cdn.jsdelivr.net/gh/georg-doc/kayfabizarro@main/",
+  "buses": {
+    "sfx": 0.9,
+    "drone": 0.35,
+    "music": 0.5
+  },
+  "preload": [
+    "dice.throw",
+    "dice.impact.card",
+    "dice.impact.blade",
+    "blade.flip",
+    "pop",
+    "cascade",
+    "edge.enter"
+  ],
+  "events": {
+    "dice.throw": {
+      "files": [
+        "media/3D_Assets/Audio/Card and Board/dice_shake_2.wav",
+        "media/3D_Assets/Audio/Card and Board/dice_shake_3.wav",
+        "media/3D_Assets/Audio/Card and Board/dice_shake_4.wav",
+        "media/3D_Assets/Audio/Other/whoosh_1.wav"
+      ],
+      "gain": 0.8,
+      "pitch": [
+        0.94,
+        1.06
+      ],
+      "voices": 3,
+      "note": "Flitschen. Kein Rollen, das kommt erst beim Aufkommen."
+    },
+    "dice.roll": {
+      "files": [
+        "media/3D_Assets/Audio/Card and Board/dice_roll_1.wav",
+        "media/3D_Assets/Audio/Card and Board/dice_roll_2.wav",
+        "media/3D_Assets/Audio/Card and Board/dice_roll_3.wav",
+        "media/3D_Assets/Audio/Card and Board/dice_roll_4.wav"
+      ],
+      "gain": 0.7,
+      "pitch": [
+        0.9,
+        1.1
+      ],
+      "voices": 2,
+      "note": "An Ort rollen."
+    },
+    "dice.grab": {
+      "files": [
+        "media/3D_Assets/Audio/Card and Board/dice_grab.wav"
+      ],
+      "gain": 0.6
+    },
+    "dice.impact.card": {
+      "files": {
+        "light": [
+          "media/3D_Assets/Audio/kenney_impact-sounds/Audio/impactGlass_light_000.ogg",
+          "media/3D_Assets/Audio/kenney_impact-sounds/Audio/impactGlass_light_001.ogg",
+          "media/3D_Assets/Audio/kenney_impact-sounds/Audio/impactGlass_light_002.ogg",
+          "media/3D_Assets/Audio/kenney_impact-sounds/Audio/impactGlass_light_003.ogg",
+          "media/3D_Assets/Audio/kenney_impact-sounds/Audio/impactGlass_light_004.ogg"
+        ],
+        "medium": [
+          "media/3D_Assets/Audio/kenney_impact-sounds/Audio/impactGlass_medium_000.ogg",
+          "media/3D_Assets/Audio/kenney_impact-sounds/Audio/impactGlass_medium_001.ogg",
+          "media/3D_Assets/Audio/kenney_impact-sounds/Audio/impactGlass_medium_002.ogg",
+          "media/3D_Assets/Audio/kenney_impact-sounds/Audio/impactGlass_medium_003.ogg",
+          "media/3D_Assets/Audio/kenney_impact-sounds/Audio/impactGlass_medium_004.ogg"
+        ],
+        "heavy": [
+          "media/3D_Assets/Audio/kenney_impact-sounds/Audio/impactGlass_heavy_000.ogg",
+          "media/3D_Assets/Audio/kenney_impact-sounds/Audio/impactGlass_heavy_001.ogg",
+          "media/3D_Assets/Audio/kenney_impact-sounds/Audio/impactGlass_heavy_002.ogg",
+          "media/3D_Assets/Audio/kenney_impact-sounds/Audio/impactGlass_heavy_003.ogg",
+          "media/3D_Assets/Audio/kenney_impact-sounds/Audio/impactGlass_heavy_004.ogg"
+        ]
+      },
+      "layers": "velocity",
+      "thresholds": [
+        0.25,
+        0.6
+      ],
+      "gain": 1.0,
+      "pitch": [
+        0.92,
+        1.08
+      ],
+      "voices": 6,
+      "note": "Glaswürfel auf Kartenmembran. Anschlagstufe aus der Aufprallgeschwindigkeit, normiert 0..1."
+    },
+    "dice.impact.blade": {
+      "files": {
+        "light": [
+          "media/3D_Assets/Audio/kenney_impact-sounds/Audio/impactMetal_light_000.ogg",
+          "media/3D_Assets/Audio/kenney_impact-sounds/Audio/impactMetal_light_001.ogg",
+          "media/3D_Assets/Audio/kenney_impact-sounds/Audio/impactMetal_light_002.ogg",
+          "media/3D_Assets/Audio/kenney_impact-sounds/Audio/impactMetal_light_003.ogg",
+          "media/3D_Assets/Audio/kenney_impact-sounds/Audio/impactMetal_light_004.ogg"
+        ],
+        "medium": [
+          "media/3D_Assets/Audio/kenney_impact-sounds/Audio/impactMetal_medium_000.ogg",
+          "media/3D_Assets/Audio/kenney_impact-sounds/Audio/impactMetal_medium_001.ogg",
+          "media/3D_Assets/Audio/kenney_impact-sounds/Audio/impactMetal_medium_002.ogg",
+          "media/3D_Assets/Audio/kenney_impact-sounds/Audio/impactMetal_medium_003.ogg",
+          "media/3D_Assets/Audio/kenney_impact-sounds/Audio/impactMetal_medium_004.ogg"
+        ],
+        "heavy": [
+          "media/3D_Assets/Audio/kenney_impact-sounds/Audio/impactMetal_heavy_000.ogg",
+          "media/3D_Assets/Audio/kenney_impact-sounds/Audio/impactMetal_heavy_001.ogg",
+          "media/3D_Assets/Audio/kenney_impact-sounds/Audio/impactMetal_heavy_002.ogg",
+          "media/3D_Assets/Audio/kenney_impact-sounds/Audio/impactMetal_heavy_003.ogg",
+          "media/3D_Assets/Audio/kenney_impact-sounds/Audio/impactMetal_heavy_004.ogg"
+        ]
+      },
+      "layers": "velocity",
+      "thresholds": [
+        0.25,
+        0.6
+      ],
+      "gain": 1.0,
+      "pitch": [
+        0.95,
+        1.05
+      ],
+      "voices": 4,
+      "note": "Der Scheren-Thunk. Metall, nicht Glas."
+    },
+    "dice.impact.dice": {
+      "files": [
+        "media/3D_Assets/Audio/Materials/glass_ping_small.wav",
+        "media/3D_Assets/Audio/Materials/glass_ping_big.wav"
+      ],
+      "gain": 0.7,
+      "pitch": [
+        0.9,
+        1.12
+      ],
+      "voices": 4,
+      "note": "Würfel gegen Würfel. Der borromäische Klang."
+    },
+    "dice.trap": {
+      "files": [
+        "media/3D_Assets/Audio/Materials/clothing_thud.wav",
+        "media/3D_Assets/Audio/kenney_impact-sounds/Audio/impactSoft_medium_000.ogg"
+      ],
+      "gain": 0.7,
+      "note": "Fang in der Klinge. Weich, damit die Ruhe hörbar wird."
+    },
+    "blade.flip": {
+      "files": [
+        "media/3D_Assets/Audio/Other/slide_and_click.wav",
+        "media/3D_Assets/Audio/Other/snap.wav",
+        "media/3D_Assets/Audio/Materials/metal_blunt_tap.wav"
+      ],
+      "gain": 0.55,
+      "pitch": [
+        0.96,
+        1.1
+      ],
+      "voices": 4,
+      "note": "Jeder Flip. Leise, er kommt oft."
+    },
+    "blade.stretch": {
+      "files": [
+        "media/3D_Assets/Audio/Other/elastic_twang.wav"
+      ],
+      "gain": 0.5,
+      "pitch": [
+        0.85,
+        1.15
+      ],
+      "note": "Klingendehnung bei schnellen Flips. Tonhöhe steigt mit der Dehnung."
+    },
+    "blade.tesla": {
+      "files": [
+        "media/3D_Assets/Audio/kenney_sci-fi-sounds/Audio/forceField_000.ogg",
+        "media/3D_Assets/Audio/kenney_sci-fi-sounds/Audio/forceField_001.ogg",
+        "media/3D_Assets/Audio/kenney_sci-fi-sounds/Audio/forceField_002.ogg",
+        "media/3D_Assets/Audio/kenney_sci-fi-sounds/Audio/forceField_003.ogg",
+        "media/3D_Assets/Audio/kenney_sci-fi-sounds/Audio/forceField_004.ogg"
+      ],
+      "gain": 0.85,
+      "pitch": [
+        0.9,
+        1.1
+      ],
+      "note": "Tesla-Rettung. Braucht die Ladephase davor, siehe tesla.charge."
+    },
+    "tesla.charge": {
+      "files": [
+        "media/3D_Assets/Audio/kenney_sci-fi-sounds/Audio/computerNoise_000.ogg",
+        "media/3D_Assets/Audio/kenney_sci-fi-sounds/Audio/computerNoise_001.ogg",
+        "media/3D_Assets/Audio/kenney_sci-fi-sounds/Audio/computerNoise_002.ogg",
+        "media/3D_Assets/Audio/kenney_sci-fi-sounds/Audio/computerNoise_003.ogg"
+      ],
+      "gain": 0.4,
+      "note": "Ladephase, sonst wirkt der Blitz willkuerlich."
+    },
+    "edge.enter": {
+      "files": [
+        "media/3D_Assets/Audio/Materials/cardboard_push.wav",
+        "media/3D_Assets/Audio/Other/paste.wav"
+      ],
+      "gain": 0.5,
+      "pitch": [
+        0.95,
+        1.1
+      ],
+      "note": "Eintritt: die Kante gibt nach. Weicher als der Austritt."
+    },
+    "edge.exit": {
+      "files": [
+        "media/3D_Assets/Audio/Other/elastic_twang.wav",
+        "media/3D_Assets/Audio/Materials/cardboard_hit.wav"
+      ],
+      "gain": 0.75,
+      "pitch": [
+        0.8,
+        0.95
+      ],
+      "note": "Austritt: die Kante haelt lange und schnalzt. Tiefer und lauter als der Eintritt, das ist die hoerbare Asymmetrie."
+    },
+    "zone.enter": {
+      "files": [
+        "media/3D_Assets/Audio/kenney_sci-fi-sounds/Audio/forceField_002.ogg"
+      ],
+      "gain": 0.35,
+      "pitch": [
+        1.05,
+        1.2
+      ]
+    },
+    "censor.stamp": {
+      "files": [
+        "media/3D_Assets/Audio/Materials/paper_tear_1.wav",
+        "media/3D_Assets/Audio/Materials/paper_tear_2.wav",
+        "media/3D_Assets/Audio/Materials/cardboard_tear.wav"
+      ],
+      "gain": 0.8,
+      "pitch": [
+        0.95,
+        1.05
+      ],
+      "note": "Der Balken faellt. Papier, nicht digital."
+    },
+    "censor.reveal": {
+      "files": [
+        "media/3D_Assets/Audio/Materials/paper_move.wav",
+        "media/3D_Assets/Audio/Card and Board/card_fan.wav"
+      ],
+      "gain": 0.6,
+      "note": "Freilegung entlang der Wuerfelpfade."
+    },
+    "letter.activate": {
+      "files": {
+        "ladder": [
+          "media/3D_Assets/Audio/Match Three/match_xylophone_1.wav",
+          "media/3D_Assets/Audio/Match Three/match_xylophone_2.wav",
+          "media/3D_Assets/Audio/Match Three/match_xylophone_3.wav",
+          "media/3D_Assets/Audio/Match Three/match_xylophone_4.wav",
+          "media/3D_Assets/Audio/Match Three/match_xylophone_5.wav",
+          "media/3D_Assets/Audio/Match Three/match_xylophone_6.wav",
+          "media/3D_Assets/Audio/Match Three/match_xylophone_7.wav",
+          "media/3D_Assets/Audio/Match Three/match_xylophone_8.wav",
+          "media/3D_Assets/Audio/Match Three/match_xylophone_9.wav",
+          "media/3D_Assets/Audio/Match Three/match_xylophone_10_MAX.wav"
+        ]
+      },
+      "layers": "ladder",
+      "gain": 0.7,
+      "note": "Buchstabe zu Wort zu Phrase. Die Leiter steigt mit der Kette und rastet bei 10 aus."
+    },
+    "cascade": {
+      "files": {
+        "ladder": [
+          "media/3D_Assets/Audio/Match Three/match_synth_1.wav",
+          "media/3D_Assets/Audio/Match Three/match_synth_2.wav",
+          "media/3D_Assets/Audio/Match Three/match_synth_3.wav",
+          "media/3D_Assets/Audio/Match Three/match_synth_4.wav",
+          "media/3D_Assets/Audio/Match Three/match_synth_5.wav",
+          "media/3D_Assets/Audio/Match Three/match_synth_6.wav",
+          "media/3D_Assets/Audio/Match Three/match_synth_7.wav",
+          "media/3D_Assets/Audio/Match Three/match_synth_8.wav",
+          "media/3D_Assets/Audio/Match Three/match_synth_9.wav",
+          "media/3D_Assets/Audio/Match Three/match_synth_10_MAX.wav"
+        ]
+      },
+      "layers": "ladder",
+      "gain": 0.85,
+      "note": "Kettenreaktion. Fertige Tonleiter, genau die Candy-Crush-Eskalation."
+    },
+    "banner.land": {
+      "files": [
+        "media/3D_Assets/Audio/Card and Board/chips_place_1.wav",
+        "media/3D_Assets/Audio/Card and Board/chips_place_2.wav",
+        "media/3D_Assets/Audio/Card and Board/chips_place_3.wav"
+      ],
+      "gain": 0.7
+    },
+    "banner.shakeoff": {
+      "files": [
+        "media/3D_Assets/Audio/Materials/paper_scrunch.wav"
+      ],
+      "gain": 0.8,
+      "note": "Ripple reisst die Verankerung."
+    },
+    "banner.catapult": {
+      "files": [
+        "media/3D_Assets/Audio/Retro/power_up.wav",
+        "media/3D_Assets/Audio/Retro/throw.wav"
+      ],
+      "gain": 0.9
+    },
+    "pop": {
+      "files": [
+        "media/3D_Assets/Audio/UI/pop_1.wav",
+        "media/3D_Assets/Audio/UI/pop_2.wav",
+        "media/3D_Assets/Audio/UI/pop_3.wav",
+        "media/3D_Assets/Audio/UI/pop_4.wav"
+      ],
+      "gain": 0.9,
+      "pitch": [
+        0.95,
+        1.1
+      ],
+      "note": "Die Waehrung heisst Pop, und die Datei auch. Nicht ersetzen."
+    },
+    "pop.big": {
+      "files": [
+        "media/3D_Assets/Audio/Other/applause.wav"
+      ],
+      "gain": 0.8,
+      "note": "Nur fuer das Publikum bei einem echten Treffer."
+    },
+    "bloedsinn": {
+      "files": [
+        "media/3D_Assets/Audio/Musical Effects/8_bit_negative_quick.wav",
+        "media/3D_Assets/Audio/Retro/undesired_effect.wav",
+        "media/3D_Assets/Audio/Retro/wobble.wav"
+      ],
+      "gain": 0.8,
+      "note": "Komplementaerwaehrung. Klingt nach Panne, nicht nach Strafe: man will sie sammeln."
+    },
+    "fluff": {
+      "files": [
+        "media/3D_Assets/Audio/Musical Effects/8_bit_chime_quick.wav"
+      ],
+      "gain": 0.7,
+      "note": "Blödsinn zu Fluff getauscht."
+    },
+    "transgression": {
+      "files": [
+        "media/3D_Assets/Audio/Other/whoosh_2.wav",
+        "media/3D_Assets/Audio/kenney_casino-audio/Audio/card-slide-3.ogg"
+      ],
+      "gain": 0.8,
+      "note": "Sprung auf die Nachbarkarte. Haeufig und spielbar, also leicht."
+    },
+    "gutter.enter": {
+      "files": [
+        "media/3D_Assets/Audio/Environment/air_burst.wav"
+      ],
+      "gain": 0.6,
+      "zone": "gutter",
+      "note": "Loest zugleich die Zonenblende aus: der Raum oeffnet sich."
+    },
+    "gutter.return": {
+      "files": [
+        "media/3D_Assets/Audio/Retro/jump.wav",
+        "media/3D_Assets/Audio/Musical Effects/8_bit_chime_positive.wav"
+      ],
+      "gain": 0.75,
+      "zone": "card",
+      "note": "Pac-Man von oben zurueck. Der Witz nach dem Schreck."
+    },
+    "dive": {
+      "files": [
+        "media/3D_Assets/Audio/kenney_sci-fi-sounds/Audio/spaceEngineLow_000.ogg",
+        "media/3D_Assets/Audio/kenney_sci-fi-sounds/Audio/spaceEngineLow_001.ogg",
+        "media/3D_Assets/Audio/kenney_sci-fi-sounds/Audio/spaceEngineLow_002.ogg"
+      ],
+      "gain": 0.8,
+      "zone": "dive",
+      "note": "Hard-Core-Sog. Lang, kein Einschlag."
+    },
+    "dive.dock": {
+      "files": [
+        "media/3D_Assets/Audio/kenney_sci-fi-sounds/Audio/doorOpen_001.ogg",
+        "media/3D_Assets/Audio/Musical Effects/brass_level_start.wav"
+      ],
+      "gain": 0.9,
+      "zone": "card",
+      "note": "Andockmanoever gelungen, Closure als Handlung."
+    },
+    "drain": {
+      "files": [
+        "media/3D_Assets/Audio/Musical Effects/brass_defeated.wav",
+        "media/3D_Assets/Audio/Retro/power_down.wav"
+      ],
+      "gain": 0.9,
+      "note": "Der Knoten bricht. Muss sich hoerbar von transgression unterscheiden, das ist der ganze Punkt."
+    },
+    "card.enter": {
+      "files": [
+        "media/3D_Assets/Audio/kenney_casino-audio/Audio/card-place-2.ogg",
+        "media/3D_Assets/Audio/Card and Board/card_draw_1.wav"
+      ],
+      "gain": 0.7
+    },
+    "almanac.open": {
+      "files": [
+        "media/3D_Assets/Audio/kenney_casino-audio/Audio/cards-pack-open-1.ogg",
+        "media/3D_Assets/Audio/Environment/creaky_door_short.wav"
+      ],
+      "gain": 0.7
+    },
+    "almanac.loot": {
+      "files": [
+        "media/3D_Assets/Audio/Card and Board/chips_gather.wav",
+        "media/3D_Assets/Audio/Card and Board/chips_gather_2.wav"
+      ],
+      "gain": 0.7,
+      "note": "Waehrend des Einsaugens, nicht danach."
+    },
+    "almanac.score": {
+      "files": {
+        "ladder": [
+          "media/3D_Assets/Audio/Retro/coin.wav",
+          "media/3D_Assets/Audio/Retro/coin_2.wav",
+          "media/3D_Assets/Audio/Retro/coin_3.wav",
+          "media/3D_Assets/Audio/Retro/coin_4.wav"
+        ]
+      },
+      "layers": "ladder",
+      "gain": 0.5,
+      "note": "Zaehlt mit, solange die Karten fliegen."
+    },
+    "ui.click": {
+      "files": [
+        "media/3D_Assets/Audio/curated/click_001.ogg",
+        "media/3D_Assets/Audio/curated/click_002.ogg",
+        "media/3D_Assets/Audio/curated/click_003.ogg"
+      ],
+      "gain": 0.45
+    },
+    "ui.select": {
+      "files": [
+        "media/3D_Assets/Audio/curated/confirmation_001.ogg"
+      ],
+      "gain": 0.5
+    }
+  },
+  "decks": {
+    "_note": "Platzhalter bis die Suno-Tracks liegen. Ein Jingle je Deckfarbe, damit Slice 1 nicht auf die Musik wartet.",
+    "protopia": "media/3D_Assets/Audio/kenney_music-jingles/Audio/Pizzicato jingles/jingles_PIZZI00.ogg",
+    "doom": "media/3D_Assets/Audio/kenney_music-jingles/Audio/Steel jingles/jingles_STEEL05.ogg",
+    "hopium": "media/3D_Assets/Audio/kenney_music-jingles/Audio/Sax jingles/jingles_SAX03.ogg"
+  },
+  "zones": {
+    "card": {
+      "lowpass": 10000,
+      "reverb": 0.12,
+      "droneGain": 0.3,
+      "detune": 0,
+      "note": "eng und hell. Der Normalzustand."
+    },
+    "gutter": {
+      "lowpass": 2600,
+      "reverb": 0.55,
+      "droneGain": 0.5,
+      "detune": -7,
+      "note": "Der Raum oeffnet sich, der Hall wird lang. Man hoert, wo der Ball ist, bevor man es sieht."
+    },
+    "dive": {
+      "lowpass": 1200,
+      "reverb": 0.8,
+      "droneGain": 0.7,
+      "detune": -19,
+      "note": "Hard-Core-Tiefe. Nur mit dem Dive erreichbar."
+    }
+  },
+  "drone": {
+    "note": "Prozedural, keine Dateien. R, A und F sind die drei Wuerfel: Resonanz, Amplitude, Frequenz. An den Wuerfeln sind sie nur Farbcodierung, hier sind sie wieder das, was sie bedeuten. Damit ist die 4D-Behauptung eingeloest.",
+    "base": 55,
+    "partials": [
+      1,
+      1.5,
+      2,
+      3
+    ],
+    "mapping": {
+      "R": {
+        "von": "roter Wuerfel",
+        "auf": "Filterresonanz Q",
+        "bereich": [
+          0.5,
+          14
+        ]
+      },
+      "A": {
+        "von": "gelber Wuerfel",
+        "auf": "Grundpegel",
+        "bereich": [
+          0.0,
+          1.0
+        ]
+      },
+      "F": {
+        "von": "blauer Wuerfel",
+        "auf": "Grundfrequenz in Halbtoenen",
+        "bereich": [
+          -12,
+          12
+        ]
+      }
+    },
+    "kopplung": "Jeder Wuerfel speist seinen Parameter aus Geschwindigkeit und Naehe zur Kartenmitte. Ruht ein Wuerfel, faellt sein Anteil weich auf null."
+  }
+}

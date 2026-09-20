@@ -1,0 +1,131 @@
+{
+  "schema": "kfb-deck-registry/v2",
+  "note": "Multi-Deck-Registry für den KFB-Table (06-Integration). Deploy nach media/kfb/index.json. FLACH: Dateien liegen direkt in media/kfb mit ORIGINAL-Namen (nicht umbenennen). URL = baseUrl + '/' + encodeURIComponent(dateiname) (Leerzeichen -> %20). Karten-Mapping siehe cardMapping. Utopia-JSON in v7 per Fetch verifiziert; B/C folgen exakt demselben Muster; Sonic = verifyHosted pruefen. Keys je Karte: cardNumber/cardName/power/lore/grade (+gradeReason/artworkPrompt).",
+  "baseUrl": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/kfb",
+  "cardMapping": {
+    "gridCols": 2,
+    "gridRows": 2,
+    "cellsPerPage": 4,
+    "quadrantOrder": [
+      "TL",
+      "TR",
+      "BL",
+      "BR"
+    ],
+    "page": "coverOffset + 1 + floor((cardNumber-1)/4)",
+    "quadrant": "(cardNumber-1) % 4",
+    "note": "coverOffset=1 => Seite 1 = Cover, Karten ab Seite 2. v4 schneidet ohne weissen Gutter (m=0), Ink-Edge bleibt."
+  },
+  "keyMap": {
+    "n": "cardNumber",
+    "t": "cardName",
+    "p": "power",
+    "l": "lore",
+    "g": "grade"
+  },
+  "decks": [
+    {
+      "packId": "forget_utopia",
+      "title": "Forget Utopia",
+      "role": "FORGET",
+      "gameMode": "KFB",
+      "cardCount": 56,
+      "pages": 15,
+      "coverOffset": 1,
+      "pdf": "Deck_A_UTOPIA_-_Forget_Utopia web H.pdf",
+      "data": "Deck_A_UTOPIA_-_Forget_Utopia_web_H.pdf.json",
+      "cardGrid": {
+        "x": 0.05,
+        "y": 0.037,
+        "w": 0.899,
+        "h": 0.947,
+        "gapX": 0.135,
+        "gapY": 0.01
+      }
+    },
+    {
+      "packId": "ignore_dystopia",
+      "title": "Anatomy of a Trap",
+      "role": "IGNORE",
+      "gameMode": "KFB",
+      "cardCount": 56,
+      "pages": 15,
+      "coverOffset": 1,
+      "pdf": "Deck_B_DYSTOPIA_-_ANATOMY_OF_A_TRAP web H.pdf",
+      "data": "Deck_B_DYSTOPIA_-_ANATOMY_OF_A_TRAP_web_H.pdf.json",
+      "cardGrid": {
+        "x": 0.06,
+        "y": 0.117,
+        "w": 0.879,
+        "h": 0.823,
+        "gapX": 0.09,
+        "gapY": 0.01
+      }
+    },
+    {
+      "packId": "embrace_protopia",
+      "title": "Protopia Sketchbook",
+      "role": "EMBRACE",
+      "gameMode": "KFB",
+      "cardCount": 56,
+      "pages": 15,
+      "coverOffset": 1,
+      "pdf": "Deck_C_PROTOPIA_-_Protopia_Sketchbook_(1) web H.pdf",
+      "data": "Deck_C_PROTOPIA_-_Protopia_Sketchbook_(1)_web_H.pdf.json",
+      "cardGrid": {
+        "x": 0.048,
+        "y": 0.093,
+        "w": 0.903,
+        "h": 0.822,
+        "gapX": 0.022,
+        "gapY": 0.02
+      }
+    },
+    {
+      "packId": "sonic_slaughterhouse",
+      "title": "Sonic Slaughterhouse — Music Industry",
+      "role": "MED",
+      "gameMode": "KFB",
+      "cardCount": 56,
+      "pages": 15,
+      "coverOffset": 1,
+      "verifyHosted": true,
+      "pdf": "Epistemic_Sabotage_LET_AI_READ_YOUR_COMIC_v1 - ADD web.pdf",
+      "data": "Epistemic_Sabotage_LET_AI_READ_YOUR_COMIC_v1_-_ADD_web.pdf.json"
+    }
+  ],
+  "sets": [
+    {
+      "setId": "three_futures",
+      "title": "Three Futures (Exhibition trio)",
+      "note": "Forget / Ignore / Embrace auf geteilter 14-Positionen-Spine — kuratiertes Promo/Onboarding-Set.",
+      "decks": [
+        "forget_utopia",
+        "ignore_dystopia",
+        "embrace_protopia"
+      ]
+    }
+  ],
+  "rules": [
+    {
+      "title": "KFB Freestyle Rules",
+      "pdf": "KAYFABIZARRO_FREESTYLE_RULES.pdf"
+    },
+    {
+      "title": "Anti-Rules Booklet (A4-quer v4)",
+      "pdf": "KayfaBizarro - The Anti-Rules-Booklet - A4-quer print v4.pdf"
+    },
+    {
+      "title": "Freestyle Comic Booklet",
+      "pdf": "Kayfabizarro_Freestyle_ComicBooklet_WEB_v1.pdf"
+    },
+    {
+      "title": "Quick-Rules OnePager DE v6",
+      "pdf": "KayfaBizarro Quick-Rules OnePager DE v6.pdf"
+    },
+    {
+      "title": "Quick-Rules OnePager EN v6",
+      "pdf": "KayfaBizarro Quick-Rules OnePager EN v6.pdf"
+    }
+  ]
+}

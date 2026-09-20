@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Shantell+Sans:wght@400;600;700&family=Special+Elite&display=swap">
+<style>
+html,body{margin:0;background:#efe9db}
+a{color:#0e3d3c}a:hover{color:#000}
+</style>
+</helmet>
+<div style="background:#efe9db;color:#241d16;font-family:'Shantell Sans',system-ui,sans-serif;-webkit-font-smoothing:antialiased;padding:clamp(20px,4vw,52px)">
+<div style="max-width:1060px;margin:0 auto">
+
+<div style="font-family:'Courier New',monospace;font-size:12px;letter-spacing:2px;color:#6b6259">KFB OVERWORLD · ÜBERGABE AN WS1 · 08.08.2026</div>
+<h1 style="font-family:'Special Elite',cursive;font-size:clamp(28px,5vw,44px);line-height:1.05;margin:8px 0 0;font-weight:400">Übergabedokument</h1>
+<div style="font-size:clamp(16px,1.9vw,18px);line-height:1.6;margin-top:14px;color:#3a3129;max-width:820px">Was hier gebaut, gemessen und verworfen wurde — und was WS1 braucht, um die Terrain- und Map-Slices abzuarbeiten. Alles Gemessene steht als Zahl, alles Vermutete ist als Vermutung markiert.</div>
+
+<div style="background:#241d16;color:#efe9db;padding:clamp(18px,3vw,26px);margin-top:22px">
+<div style="font-family:'Special Elite',cursive;font-size:clamp(19px,2.6vw,23px);color:#e8d38a">In drei Sätzen</div>
+<div style="font-size:clamp(15px,1.8vw,16.5px);line-height:1.65;margin-top:10px">v8 ist die Basis; die Weltschicht dort ist teurer nachzubauen als unsere FX-Schicht zu portieren. Der Boden ist die offene Baustelle — acht Bauarten sind gescheitert, die neunte trägt, und die Fehlerkette ist unten dokumentiert, damit sie niemand wiederholt. Karte, Mobs und Kartenzonen sind konzipiert und als Slices mit Abnahmekriterien beschrieben, aber noch nicht gebaut.</div>
+</div>
+
+<h2 style="font-family:'Special Elite',cursive;font-weight:400;font-size:clamp(21px,3vw,26px);margin:40px 0 6px">1 · Stand und Messwerte</h2>
+<div style="height:2px;background:#241d16;margin-bottom:16px"></div>
+
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:12px">
+<sc-for list="{{ zahlen }}" as="z" hint-placeholder-count="6">
+<div style="background:#e3ddcc;padding:15px 17px;border-top:5px solid {{ z.farbe }}">
+<div style="font-family:'Special Elite',cursive;font-size:clamp(22px,3vw,28px);line-height:1">{{ z.wert }}</div>
+<div style="font-size:14px;line-height:1.5;margin-top:6px">{{ z.text }}</div>
+</div>
+</sc-for>
+</div>
+
+<div style="background:#e3ddcc;padding:17px 20px;margin-top:14px;border-left:5px solid #c43c3c">
+<div style="font-family:'Special Elite',cursive;font-size:16.5px">Die Kostenregel, an der schon ein System gestorben ist</div>
+<div style="font-size:14.5px;line-height:1.6;margin-top:7px">Das Reliefsystem brauchte <strong>36 Sekunden</strong> Kaltstart und wurde deshalb abgeschaltet. Jede neue Schicht nennt ihre Kosten, <em>bevor</em> sie beschrieben wird. Grenzen: erstes Bild unter 400 ms, 60 fps beim Scrollen, keine synchrone Arbeit im Zeichenpfad. Ein Vorschlag ohne Kostenaussage gilt als unfertig.</div>
+</div>
+
+<h2 style="font-family:'Special Elite',cursive;font-weight:400;font-size:clamp(21px,3vw,26px);margin:40px 0 6px">2 · Terrain-Floor-Art · Briefing mit Post-mortem</h2>
+<div style="height:2px;background:#241d16;margin-bottom:16px"></div>
+<div style="font-size:clamp(15.5px,1.9vw,17px);line-height:1.6;max-width:840px;margin-bottom:18px">Neun Bauarten, acht davon gescheitert. Jede hat den Befund der vorigen behoben und einen neuen erzeugt. <strong>Diese Liste ist der wertvollste Teil des Dokuments</strong> — sie spart WS1 die Wochen, die sie gekostet hat.</div>
+
+<sc-for list="{{ kette }}" as="k" hint-placeholder-count="9">
+<div style="display:grid;grid-template-columns:46px 132px 1fr;gap:14px;align-items:baseline;background:#e3ddcc;padding:11px 16px;margin-bottom:7px;border-left:4px solid {{ k.farbe }}">
+<div style="font-family:'Courier New',monospace;font-size:12px;color:#6b6259">{{ k.nr }}</div>
+<div style="font-family:'Special Elite',cursive;font-size:15.5px">{{ k.name }}</div>
+<div style="font-size:14.5px;line-height:1.55">{{ k.text }}</div>
+</div>
+</sc-for>
+
+<div style="background:#241d16;color:#efe9db;padding:clamp(18px,3vw,26px);margin-top:16px">
+<div style="font-family:'Special Elite',cursive;font-size:clamp(19px,2.6vw,23px);color:#e8d38a">Die eine Einsicht darunter</div>
+<div style="font-size:clamp(15px,1.8vw,16.5px);line-height:1.65;margin-top:10px">Sieben der acht Fehlschläge sind derselbe Fehler auf verschiedenen Ebenen: <strong style="color:#e8d38a">ein Grundelement erzeugen und vervielfältigen.</strong> Oval, Gitterzelle, Zug, Scheibe, Rechteck — sobald das Bild aus <em>Dingen</em> besteht, sieht man die Dinge, und keine Parameteränderung kann das heilen.</div>
+<div style="font-size:clamp(15px,1.8vw,16.5px);line-height:1.65;margin-top:12px">Was funktioniert: <strong style="color:#e8d38a">Detail auf allen Größenstufen aus einer Regel</strong> — als Fläche (Feld über Weltkoordinaten, quantisiert) und als Kontur (Randabstand aus einer Summe von Wellen). Beide haben keinen charakteristischen Maßstab, also gibt es nichts wiederzuerkennen.</div>
+</div>
+
+<h3 style="font-family:'Special Elite',cursive;font-weight:400;font-size:clamp(18px,2.4vw,21px);margin:28px 0 10px">Anti-Pattern-Liste · gilt als Abnahmekriterium</h3>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:12px">
+<sc-for list="{{ verbote }}" as="v" hint-placeholder-count="10">
+<div style="background:#fbf8f0;border:2px solid #241d16;padding:13px 16px">
+<div style="font-family:'Special Elite',cursive;font-size:15.5px;color:#c43c3c">{{ v.titel }}</div>
+<div style="font-size:14px;line-height:1.55;margin-top:5px">{{ v.text }}</div>
+</div>
+</sc-for>
+</div>
+
+<div style="background:#e3ddcc;padding:17px 20px;margin-top:16px;border-left:5px solid #2f6f4f">
+<div style="font-family:'Special Elite',cursive;font-size:16.5px">Die drei Schichten sauber getrennt halten</div>
+<div style="font-size:14.5px;line-height:1.6;margin-top:7px">Die häufigste Vermischung in dieser Session war, <strong>Bodenkunst</strong> mit <strong>Höhenlogik</strong> zu verwechseln. Getrennt gehören: <strong>Floor-Art</strong> (die gemalte Fläche einer Terrain-Ebene — flach, keine Plastik, kein Bevel); <strong>Layer/Height</strong> (Wurfschatten und Kanten <em>zwischen</em> Ebenen — dort und nur dort gehört die Plastik hin); <strong>Feldränder</strong> (Materialgrenzen — Tusche unten rechts, Lichtsaum oben links). Bevel &amp; Emboss ist ein Werkzeug der zweiten Schicht und hat in der ersten nichts verloren.</div>
+</div>
+
+<h2 style="font-family:'Special Elite',cursive;font-weight:400;font-size:clamp(21px,3vw,26px);margin:40px 0 6px">3 · Die Sternkarte</h2>
+<div style="height:2px;background:#241d16;margin-bottom:16px"></div>
+
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:14px">
+<div style="background:#e3ddcc;padding:17px 20px;border-top:5px solid #241d16">
+<div style="font-family:'Special Elite',cursive;font-size:17px">Zentrum</div>
+<div style="font-size:14.5px;line-height:1.6;margin-top:7px">Marktplatz mit <strong>King Kayfabians Kastle</strong> als Turm — die einzige Landmarke, die von jedem Punkt der Karte sichtbar bleibt und damit die Orientierung trägt. Um ihn die Stadt: Händler, Jukebox, Tagebuch, Kartenablage. Keine Gegner, kein Kampf.</div>
+</div>
+<div style="background:#e3ddcc;padding:17px 20px;border-top:5px solid #241d16">
+<div style="font-family:'Special Elite',cursive;font-size:17px">Sechs Pfade, nicht sechs Linien</div>
+<div style="font-size:14.5px;line-height:1.6;margin-top:7px">Die Pfade folgen der <strong>Terrainlogik</strong>, nicht der Geometrie: sie laufen an Materialgrenzen entlang, umgehen Fels, queren Senken an der schmalsten Stelle. Sechs gerade Speichen wären ein Rad und würden alles verraten, was der Boden erzählt.</div>
+</div>
+<div style="background:#e3ddcc;padding:17px 20px;border-top:5px solid #241d16">
+<div style="font-family:'Special Elite',cursive;font-size:17px">Gleiche Laufzeit, ungleicher Weg</div>
+<div style="font-size:14.5px;line-height:1.6;margin-top:7px">Alle sechs Zonen liegen etwa <strong>gleich weit vom Zentrum</strong> — gemessen in Laufzeit, nicht in Luftlinie. Der Pfad wird nach dem Legen so lange nachgezogen, bis seine Laufzeit im Zielband liegt. Damit ist keine Zone die naheliegende und keine die abgelegene.</div>
+</div>
+<div style="background:#241d16;color:#efe9db;padding:17px 20px;border-top:5px solid #e8d38a">
+<div style="font-family:'Special Elite',cursive;font-size:17px;color:#e8d38a">Abseits des Pfades</div>
+<div style="font-size:14.5px;line-height:1.6;margin-top:7px">Wer den Pfad verlässt, trifft <strong style="color:#e8d38a">ein bis zwei Begegnungen</strong> auf dem Weg zur Zone: Mobs derselben Fraktion, in Gruppen von zwei bis drei, aber <em>nicht</em> als Wache postiert — sie sind bei ihrer eigenen Beschäftigung. Das ist die eigentliche Spielfläche: der Kampf findet zwischen den Wegen statt, nicht auf ihnen.</div>
+</div>
+</div>
+
+<h2 style="font-family:'Special Elite',cursive;font-weight:400;font-size:clamp(21px,3vw,26px);margin:40px 0 6px">4 · Kartenzone · vom Papier ins Gelände</h2>
+<div style="height:2px;background:#241d16;margin-bottom:16px"></div>
+<div style="font-size:clamp(15.5px,1.9vw,17px);line-height:1.6;max-width:840px;margin-bottom:16px">Eine Kartenzone ist eine PDF-Karte, die als Stück Comic im Terrain liegt. Ihre Ränder sind die Grenze zwischen zwei Bildwelten — und diese Grenze wird <strong>behauptet, nicht überblendet</strong>.</div>
+
+<sc-for list="{{ zone }}" as="z" hint-placeholder-count="5">
+<div style="display:grid;grid-template-columns:150px 1fr;gap:16px;align-items:baseline;background:#e3ddcc;padding:13px 17px;margin-bottom:8px">
+<div style="font-family:'Special Elite',cursive;font-size:15.5px">{{ z.name }}</div>
+<div style="font-size:14.5px;line-height:1.55">{{ z.text }}</div>
+</div>
+</sc-for>
+
+<h2 style="font-family:'Special Elite',cursive;font-weight:400;font-size:clamp(21px,3vw,26px);margin:40px 0 6px">5 · Bosse und Fraktionen</h2>
+<div style="height:2px;background:#241d16;margin-bottom:16px"></div>
+
+<div>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:12px">
+<sc-for list="{{ bosse }}" as="b" hint-placeholder-count="6">
+<div style="background:#e3ddcc;padding:14px 15px;border-top:6px solid {{ b.tint }}">
+<div style="font-family:'Courier New',monospace;font-size:11px;letter-spacing:1px;color:#6b6259">{{ b.zone }}</div>
+<div style="font-family:'Special Elite',cursive;font-size:17px;margin-top:3px">{{ b.boss }}</div>
+<div style="font-size:13.5px;line-height:1.5;margin-top:8px"><span style="color:#6b6259">Signatur-Wellen</span><br>{{ b.wellen }}</div>
+<div style="font-size:13.5px;line-height:1.5;margin-top:6px"><span style="color:#6b6259">Wegrand</span><br>{{ b.rand }}</div>
+<div style="font-size:13.5px;line-height:1.5;margin-top:6px"><span style="color:#6b6259">Beschäftigung</span><br>{{ b.tun }}</div>
+</div>
+</sc-for>
+</div>
+</div>
+
+<div style="background:#e3ddcc;padding:17px 20px;margin-top:14px;border-left:5px solid #b8862a">
+<div style="font-family:'Special Elite',cursive;font-size:16.5px">Bossgröße ohne große Sprites</div>
+<div style="font-size:14.5px;line-height:1.6;margin-top:7px">Echte große Sprites gibt es nur für <strong>Troll, Minotaurus, Bär und Schildkröte</strong>. Für die übrigen Bosse trägt nicht die Pixelgröße die Bedeutung, sondern die <strong>Inszenierung</strong>: eine leichte Vergrößerung (1,2–1,35×, nie mehr — darüber wird die Pixelkante sichtbar), ein eigener Kontaktschatten mit größerem Radius, ein Auftrittsmoment vor der dritten Welle, und im Kampf die Selbstheilung als sichtbarer Effekt. Ein Boss ist ein Mob mit einer längeren Kampfsequenz, nicht ein größeres Bild.</div>
+<div style="font-size:14.5px;line-height:1.6;margin-top:9px"><strong>Das große rosa Schwein</strong> ist konzeptionell der Starter-Boss: Hof-Biom, Tutorial-Zone, klassische MMORPG-Logik — der erste Gegner, an dem man die Kampfschleife lernt, ohne sterben zu können.</div>
+</div>
+
+<div style="background:#fbf8f0;border:2px solid #c43c3c;padding:17px 20px;margin-top:14px">
+<div style="font-family:'Special Elite',cursive;font-size:16.5px;color:#c43c3c">Offene Fehler in der Mob-Übersicht</div>
+<div style="font-size:14.5px;line-height:1.6;margin-top:7px">
+<strong>1 · Falsches Sprite unter „Troll".</strong> Die dort gezeigte Einheit — blondes Deckhaar, blaue Grundfläche — ist nicht der Troll. Der Schlüssel zeigt auf das falsche Blatt oder den falschen Rahmen. Vor jeder weiteren Arbeit prüfen, sonst wandert der Fehler in die Zonenlogik.<br>
+<strong>2 · Bosszuordnungen stimmen nicht</strong> mit der Fraktionstabelle oben überein — die Tabelle ist die Wahrheit, die Übersicht muss nachziehen.<br>
+<strong>3 · Monk und Lancer fehlen</strong> und müssen noch importiert werden.<br>
+<strong>4 · Namen und Mappings</strong> sind an mehreren Stellen inkonsistent (Zonenschlüssel gegen Anzeigename).
+</div>
+</div>
+
+<h2 style="font-family:'Special Elite',cursive;font-weight:400;font-size:clamp(21px,3vw,26px);margin:40px 0 6px">6 · Lebendige Biome · Neugier statt Wache</h2>
+<div style="height:2px;background:#241d16;margin-bottom:16px"></div>
+<div style="font-size:clamp(15.5px,1.9vw,17px);line-height:1.6;max-width:840px;margin-bottom:16px">Das mentale Modell, das aus Mobs Bewohner macht: <strong>jede Einheit hat etwas vor</strong>. Sie steht nicht herum und wartet auf den Spieler — sie ist bei einer Tätigkeit, und der Spieler stört sie dabei. Das kostet fast nichts und verändert alles.</div>
+
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px">
+<sc-for list="{{ leben }}" as="l" hint-placeholder-count="4">
+<div style="background:#e3ddcc;padding:15px 17px;border-top:5px solid {{ l.farbe }}">
+<div style="font-family:'Courier New',monospace;font-size:11px;letter-spacing:1px;color:#6b6259">{{ l.stufe }}</div>
+<div style="font-family:'Special Elite',cursive;font-size:16.5px;margin-top:3px">{{ l.name }}</div>
+<div style="font-size:14px;line-height:1.55;margin-top:6px">{{ l.text }}</div>
+</div>
+</sc-for>
+</div>
+
+<div style="background:#241d16;color:#efe9db;padding:17px 20px;margin-top:14px;border-left:5px solid #e8d38a">
+<div style="font-family:'Special Elite',cursive;font-size:16.5px;color:#e8d38a">Der Auf- und Abbauzyklus</div>
+<div style="font-size:14.5px;line-height:1.6;margin-top:7px">Peasants bauen, Goblins zerstören. Ein Goblin-Trupp <strong style="color:#e8d38a">sprengt und verbrennt Häuser und Türme</strong>; Peasants derselben Karte bauen sie wieder auf. Der Spieler kommt also nie in dieselbe Karte zurück — nicht weil sie neu erzeugt wird, sondern weil dort inzwischen etwas passiert ist. Das ist erzählerisch mehr wert als jede prozedurale Variation und kostet einen Zustandszähler pro Gebäude.</div>
+</div>
+
+<h2 style="font-family:'Special Elite',cursive;font-weight:400;font-size:clamp(21px,3vw,26px);margin:40px 0 6px">7 · Kampf, Animation, Skills · der Bestand</h2>
+<div style="height:2px;background:#241d16;margin-bottom:16px"></div>
+<div style="font-size:clamp(15.5px,1.9vw,17px);line-height:1.6;max-width:840px;margin-bottom:16px">Diese Schicht gibt es <strong>schon</strong> — sie muss beim Re-Home mit, nicht neu erfunden werden. Ausführlich in <code style="font-family:'Courier New',monospace;font-size:13.5px">KFB System Übersicht</code> und <code style="font-family:'Courier New',monospace;font-size:13.5px">docs/overworld-v4b/</code>.</div>
+
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:14px">
+<div style="background:#e3ddcc;padding:17px 20px;border-top:5px solid #2f6f4f">
+<div style="font-family:'Special Elite',cursive;font-size:17px">Steht und läuft</div>
+<div style="font-size:14.5px;line-height:1.6;margin-top:7px">Level, XP, Level-Up (Cap 8) · Karten-Drops mit fünf Seltenheitsstufen · drei Fähigkeits-Slots auf Tasten 1–3 · sechs Effekt-Typen: freeze, distract, heal, bridge, meta, mark · Journey-Speicherung für Werte, Slots, Karten, Fortschritt.<br><br><strong>Kampfgefühl:</strong> Kill-Streak mit Zähler, Squash und Streak-Poke · Teilchen, Blut, Erschütterung mit Regler 0–3 · Todesanimation, Waffen-Trail, sichtbarer Stun.</div>
+</div>
+<div style="background:#e3ddcc;padding:17px 20px;border-top:5px solid #b8862a">
+<div style="font-family:'Special Elite',cursive;font-size:17px">Fehlt noch</div>
+<div style="font-size:14.5px;line-height:1.6;margin-top:7px">Projektile mit Standardpfeil als Rückfall · eine echte Statuseffekt-Liste (heute Einzelflags — ohne sie wird jeder Skill ein Sonderfall) · Trophäensystem mit Galerie · Pop als verteilbare Währung · die drei neuen Werte Bingo, Bongo, Boggle · sechs Slots statt drei · Downed-State als Cut-Scene.</div>
+</div>
+<div style="background:#241d16;color:#efe9db;padding:17px 20px;border-top:5px solid #c43c3c">
+<div style="font-family:'Special Elite',cursive;font-size:17px;color:#e8d38a">Klang gibt es überhaupt nicht</div>
+<div style="font-size:14.5px;line-height:1.6;margin-top:7px">Im Repo liegen <strong style="color:#e8d38a">null Audiodateien</strong>. Der Ansager ist verdrahtet (combo, multiKill, eliteDown) und stumm. Jede Idee, die auf Ton baut — akustische Fährten, Jukebox, Wegweiser per Klang — steht auf einer Schicht, die nicht existiert. Das ist kein Feinschliff, das ist ein fehlendes Fundament.</div>
+</div>
+</div>
+
+<div style="background:#e3ddcc;padding:17px 20px;margin-top:14px;border-left:5px solid #47aba9">
+<div style="font-family:'Special Elite',cursive;font-size:16.5px">Skill und Karte sind getrennt — entschieden am 8.8.</div>
+<div style="font-size:14.5px;line-height:1.6;margin-top:7px"><strong>Die Karte hat keine Macht. Sie ist der Beweis.</strong> Karten sind Reisetagebuch — man sammelt sie, man spielt sie nicht. Was man <em>einsetzt</em>, sitzt in den Action-Slots: Skills, Pilzhut, Anker-Gegenstände.</div>
+<div style="font-size:14.5px;line-height:1.6;margin-top:9px"><strong>Damit sind die Karten das Levelsystem</strong> — „ab X Karten öffnet sich Y" ersetzt eine Erfahrungskurve. Und der Clou am Trophäensystem: wer einen Hex-Shaman erlegt, schaltet ihn als Einheit frei <em>und</em> lernt seinen Zauber. Die Trophäe <strong>ist</strong> der Skill.</div>
+<div style="font-size:14.5px;line-height:1.6;margin-top:9px;padding-top:9px;border-top:1px solid #c9c0ac"><strong>Offen und wichtig:</strong> die Schwellentabelle („ab 3 Karten zweiter Slot, ab 12 Zone X"). Ohne sie ist das Sammeln wieder Kosmetik. Ebenso offen: drei oder sechs Slots, und ob der Held beim Deckwechsel Werte und Trophäen mitnimmt — mit ist NewGame+, ohne ist Neustart.</div>
+</div>
+
+<h2 style="font-family:'Special Elite',cursive;font-weight:400;font-size:clamp(21px,3vw,26px);margin:40px 0 6px">8 · Slices mit Abnahme</h2>
+<div style="height:2px;background:#241d16;margin-bottom:16px"></div>
+
+<sc-for list="{{ slices }}" as="s" hint-placeholder-count="6">
+<div style="background:#e3ddcc;padding:15px 18px;margin-bottom:9px;border-left:5px solid {{ s.farbe }}">
+<div style="display:flex;flex-wrap:wrap;gap:10px;align-items:baseline">
+<div style="font-family:'Courier New',monospace;font-size:12px;color:#6b6259">{{ s.id }}</div>
+<div style="font-family:'Special Elite',cursive;font-size:16.5px">{{ s.name }}</div>
+</div>
+<div style="font-size:14.5px;line-height:1.55;margin-top:5px">{{ s.text }}</div>
+<div style="font-size:14px;line-height:1.5;margin-top:7px;padding-top:7px;border-top:1px solid #c9c0ac"><strong>Abnahme:</strong> {{ s.abnahme }}</div>
+</div>
+</sc-for>
+
+<h2 style="font-family:'Special Elite',cursive;font-weight:400;font-size:clamp(21px,3vw,26px);margin:40px 0 6px">9 · Offene Entscheidungen</h2>
+<div style="height:2px;background:#241d16;margin-bottom:16px"></div>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:12px">
+<sc-for list="{{ offen }}" as="o" hint-placeholder-count="5">
+<div style="background:#fbf8f0;border:2px solid #241d16;padding:14px 17px">
+<div style="font-family:'Special Elite',cursive;font-size:15.5px">{{ o.frage }}</div>
+<div style="font-size:14px;line-height:1.55;margin-top:5px">{{ o.text }}</div>
+</div>
+</sc-for>
+</div>
+
+<h2 style="font-family:'Special Elite',cursive;font-weight:400;font-size:clamp(21px,3vw,26px);margin:40px 0 6px">10 · Dateien in diesem Projekt</h2>
+<div style="height:2px;background:#241d16;margin-bottom:16px"></div>
+<sc-for list="{{ dateien }}" as="d" hint-placeholder-count="8">
+<div style="display:grid;grid-template-columns:250px 1fr;gap:14px;align-items:baseline;padding:8px 0;border-bottom:1px solid #d6cfbc">
+<div style="font-family:'Courier New',monospace;font-size:12.5px">{{ d.name }}</div>
+<div style="font-size:14px;line-height:1.5">{{ d.text }}</div>
+</div>
+</sc-for>
+
+<div style="margin-top:34px;text-align:center;font-family:'Special Elite',cursive;font-size:15px;color:#6b6259">Stay fluffy.</div>
+
+</div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1080,&quot;height&quot;:900}}">
+/* Übergabedokument an WS1. Reine Datenhaltung — die Substanz steht in den Listen, damit sie
+   bearbeitbar bleibt und nicht in Markup verschwindet. */
+
+const ZAHLEN = [
+  {wert:'236 ms', farbe:'#2f6f4f', text:'Bodenwerkstatt, vollständiger Neuaufbau des sichtbaren Ausschnitts. Vorher 5146 ms.'},
+  {wert:'254 ms', farbe:'#2f6f4f', text:'Größte einzelne Blockade des Hauptfadens nach Keimwechsel; danach durchgehend 16–19 ms.'},
+  {wert:'427/615', farbe:'#c43c3c', text:'Die Tusche-Ebene kostete 427 der 615 ms — mehr als alle acht anderen zusammen. Ursache: Hüllfläche bis 7000×7000 px pro Strich.'},
+  {wert:'149 ms', farbe:'#2f6f4f', text:'Feldbänder-Prüfstand, Vollbild neu. Beleg, dass die Feldbauart bezahlbar ist.'},
+  {wert:'36 s', farbe:'#c43c3c', text:'Kaltstart des alten Reliefsystems. Der Grund, warum es abgeschaltet wurde — und der Maßstab für jede neue Schicht.'},
+  {wert:'9', farbe:'#b8862a', text:'Bauarten für den Boden. Acht gescheitert, die neunte trägt. Die Kette steht unten.'},
+];
+
+const KETTE = [
+  {nr:'01', name:'Ovale',      farbe:'#c43c3c', text:'Überlagerte Ovale mit Verlaufsfüllung → Tarnmuster. Ein Verlauf, der auf jeder Form gleich liegt, ist ein Muster.'},
+  {nr:'02', name:'Wertleiter', farbe:'#c43c3c', text:'Ovale ohne Verlauf, deckende Werte → Pillen auf einem Hintergrund. Es fehlte die Lückenlosigkeit.'},
+  {nr:'03', name:'Schnitte',   farbe:'#c43c3c', text:'Scharen gewellter Trennlinien statt Flecken → ein Gitter. Zwei Familien paralleler Linien sind per Konstruktion eines.'},
+  {nr:'04', name:'Züge',       farbe:'#c43c3c', text:'Pinselzüge aus einer Hüllkurve → Avocados. Beide Kanten aus einer Funktion sind zwangsläufig spiegelsymmetrisch.'},
+  {nr:'05', name:'Borsten',    farbe:'#c43c3c', text:'Züge aus vielen einzelnen Borsten → Kapseln. Parallele Borsten gleicher Länge mit runden Enden.'},
+  {nr:'06', name:'Anwuchs',    farbe:'#c43c3c', text:'Massen, die durch Anlagerung wachsen → lesbare Kreise. Der Krümmungsradius war am ganzen Rand derselbe.'},
+  {nr:'07', name:'Anwuchs ×3', farbe:'#c43c3c', text:'Drei Generationen mit gestaffelter Größe → drei erkennbare Stufen. Das ist kein Fraktal, das sind drei Maßstäbe.'},
+  {nr:'08', name:'Rückgrat',   farbe:'#c43c3c', text:'Scheiben entlang der Bahn statt Zufallsweg → die Ausdehnung stimmte endlich, die Kontur blieb eine Scheibenvereinigung. Rechtecke statt Kreise.'},
+  {nr:'09', name:'Band',       farbe:'#2f6f4f', text:'TRÄGT. Gefüllte Fläche, deren Randabstand aus einer Summe von fünf Wellen über der Bogenlänge kommt — Detail auf allen Stufen, kein charakteristischer Krümmungsradius. Wellenlänge in BANDBREITEN, nicht in Zuglängen.'},
+];
+
+const VERBOTE = [
+  {titel:'Kein Grundelement', text:'Wenn ein Betrachter sagen kann „das sind alles Kreise / Blätter / Zellen / Rechtecke", ist die Bauart durchgefallen. Der Test gilt für die Ebene ALLEIN, nicht nur fürs Gesamtbild.'},
+  {titel:'Keine Symmetrie aus einer Funktion', text:'Links und rechts einer Form dürfen nie aus derselben Funktion kommen. Eine glatte Funktion über eine Symmetrieachse ergibt zwangsläufig eine Linse.'},
+  {titel:'Keine Linien, die im Nichts enden', text:'Jeder Strich hat einen Aufsatz und einen Auslauf. Ein Band mit flachem Abschluss ist ein Rechteck; eine Linie, die einfach aufhört, ist ein Fehler.'},
+  {titel:'Keine runden Linienenden ohne Taper', text:'Verstößt direkt gegen die KFB-Ink-Outline-Spec. Runde Kappen an gleichbleibender Strichstärke sind das „dead line weight"-Anti-Pattern — Stärke muss über die Bahn um mehr als Faktor zwei wandern.'},
+  {titel:'Keine Linien aus Kreisen', text:'Eine Tuschelinie, die als Kette von Scheiben gebaut wird, zeigt eine perlige Kante. Linien sind Striche, keine Massen.'},
+  {titel:'Keine Pixelgrafik im Terrain', text:'Feldränder sind erwünscht, Treppen nicht. Bandgrenzen entstehen aus Schwellen und müssen wie geschnitten aussehen, nicht wie hochskaliert.'},
+  {titel:'Kein Bevel im Bodenbild', text:'Bevel und Emboss gehören zur Höhen- und Ebenenlogik — Wurfschatten ZWISCHEN Terrain-Ebenen. In der Floor-Art einer einzelnen Ebene haben sie nichts zu suchen; sie machen aus Malerei eine Reliefkarte.'},
+  {titel:'Keine Verläufe als Flächenfüllung', text:'Flach heißt deckend und geschnitten. Verläufe nur für Wasser, Nebel und Tiefe.'},
+  {titel:'Kein gleichmäßiges Streuen', text:'Ruhe ist Pflicht: der überwiegende Teil der Fläche ist unaufgeregt, das Auffällige selten. Hundert gleichwertige Kleinigkeiten sind ein Durchfaller, auch wenn jede für sich gut ist.'},
+  {titel:'Keine Wellenlänge in Objektlängen', text:'Randwellen müssen in der BREITE des Objekts schwingen, nicht in seiner Länge. Sonst ist eine Welle bei langen Objekten dreimal so lang wie das Objekt breit — und liest sich als Gerade.'},
+];
+
+const ZONE = [
+  {name:'Gummi-Outline', text:'Der Kartenrand ist eine geschlossene, elastisch wirkende Kontur mit KFB-Tusche: Stärke wandert, Enden laufen aus, keine runden Kappen. Sie sitzt auf der Bildebene, nicht auf dem Terrain — sie folgt also nicht dem Terrainlicht.'},
+  {name:'Fluid-Gutter', text:'Zwischen Karte und Terrain liegt ein Gutter — der Papierzwischenraum aus dem Comic, hier als fließende Fläche. Er hat eine eigene, dünnere Tusche zum Terrain hin: der Übergang wird zweimal behauptet, nie überblendet.'},
+  {name:'Holzbrücke', text:'Der einzige Eingang. Tiny-Sword-Asset, quert den Gutter. Ohne Brücke kein Betreten — damit ist der Einstieg ein Ort und kein Zustand, und der Kampf hat eine Tür.'},
+  {name:'Drei Wellen', text:'Welle 1 und 2 sind Signatur-Mobs des Bioms, Welle 3 ist der Boss. Die Karte gilt als „cleared", wenn Welle 3 fällt. Zwischen den Wellen eine Atempause, in der die Karte sichtbar reagiert.'},
+  {name:'Kayfabe-Pop', text:'Victory: „Pop" mit großem Erfahrungsgewinn — die Karte klappt zusammen, der Gutter schließt sich, die Zone wird Teil des Tagebuchs. Das ist der Moment, in dem die Karte vom Ort zum Beweisstück wird.'},
+];
+
+const BOSSE = [
+  {zone:'HOF', tint:'#e0a3c0', boss:'Rosa Schwein',
+   wellen:'Peasants, Hofvieh, dann der Eber', rand:'Streunende Peasants, Schafe',
+   tun:'Ernten, tragen, ausbessern — die harmloseste Fraktion, das Tutorial'},
+  {zone:'WILDNIS', tint:'#5c7a3c', boss:'Troll',
+   wellen:'Wilde Kämpfer, Bogenschützen, dann der Troll', rand:'Zweier- und Dreiertrupps',
+   tun:'Holz schlagen, Feuerstellen unterhalten, Beute zerlegen'},
+  {zone:'GOBLINS', tint:'#8fae4e', boss:'Hex-Shaman',
+   wellen:'Goblins, TNT-Goblins, dann der Shaman', rand:'Sprengtrupps mit Fackeln',
+   tun:'Häuser und Türme sprengen und verbrennen — der Abbau im Zyklus'},
+  {zone:'VERLIES', tint:'#6a4f8c', boss:'Minotaurus',
+   wellen:'Verlieswachen, Fernkämpfer, dann der Minotaurus', rand:'Selten, immer paarweise',
+   tun:'Patrouillieren, Fackeln wechseln, Gänge bewachen'},
+  {zone:'LAGER', tint:'#b06a4a', boss:'Bär',
+   wellen:'Lagerwachen, Späher, dann der Bär', rand:'Wachfeuer mit zwei bis drei',
+   tun:'Vorräte stapeln, Zelte richten, Feuer hüten'},
+  {zone:'WASSER', tint:'#3f7fa0', boss:'Paddle-Shark',
+   wellen:'Harpunen-Hai, Ruderboote, dann der Paddle-Shark', rand:'Boote an der Halbinsel',
+   tun:'Fischen, Boote festmachen, Fracht umschlagen'},
+];
+
+const LEBEN = [
+  {stufe:'ZUSTAND 1', farbe:'#7dc36a', name:'Beschäftigung',
+   text:'Die Grundhaltung. Jede Einheit hat eine Tätigkeit aus ihrem Biom — hacken, tragen, feuern, fischen. Sie läuft in Schleife, an einem Ort, mit Werkzeug. Kein Spielerbezug.'},
+  {stufe:'ZUSTAND 2', farbe:'#e8c34a', name:'Neugier',
+   text:'Der Spieler kommt in Reichweite. Die Einheit unterbricht, dreht sich, schaut. Noch kein Kampf. Dieser eine Zustand macht aus einem Gegner ein Wesen — und er ist der billigste Effekt im ganzen System.'},
+  {stufe:'ZUSTAND 3', farbe:'#d96a3c', name:'Absicht',
+   text:'Aus der Neugier folgt eine Entscheidung, die zum Temperament passt: angreifen, rufen, fliehen, weiterarbeiten. Nicht alle greifen an — das Schaf flieht, der Peasant ruft, der Goblin zündet.'},
+  {stufe:'ZUSTAND 4', farbe:'#6a4f8c', name:'Gruppe',
+   text:'Zwei bis drei Einheiten teilen einen Ort und eine Beschäftigung. Ruft eine, reagieren die anderen — versetzt, nicht gleichzeitig. Gleichzeitigkeit ist das Verräterische an gescripteten Gegnern.'},
+];
+
+const SLICES = [
+  {id:'M1', farbe:'#c43c3c', name:'Boden in v8 einsetzen',
+   text:'Die Bandbauart aus der Bodenwerkstatt als Terrain-Ebene in v8 einhängen, mit den neun Schichten und dem Feldbänder-Overlay. Eimer asynchron backen, nie im Zeichenpfad.',
+   abnahme:'Erstes Bild unter 400 ms, keine Blockade über 250 ms beim Laufen, zwanzig Keime ohne wiedererkennbares Grundelement.'},
+  {id:'M2', farbe:'#b8862a', name:'Mob-Übersicht berichtigen',
+   text:'Falsches Troll-Sprite finden, Bosszuordnungen an die Fraktionstabelle angleichen, Monk und Lancer importieren, Zonenschlüssel gegen Anzeigenamen prüfen.',
+   abnahme:'Jede Einheit zeigt ihr eigenes Blatt; jede Zone hat genau einen Boss; keine Karteileiche ohne Sprite.'},
+  {id:'M3', farbe:'#2f6f4f', name:'Sternkarte legen',
+   text:'Zentrum mit Turm, sechs Zonen auf einem Ring, sechs Pfade entlang der Terrainlogik. Laufzeit je Pfad messen und nachziehen, bis alle im selben Band liegen.',
+   abnahme:'Sechs gemessene Laufzeiten innerhalb ±15 %; kein Pfad verläuft über mehr als 40 m gerade.'},
+  {id:'M4', farbe:'#47aba9', name:'Kartenzone im Gelände',
+   text:'Gummi-Outline, Fluid-Gutter mit eigener dünner Tusche, Holzbrücke als einziger Eingang. Zunächst eine Zone, ohne Kampf.',
+   abnahme:'Der Übergang ist an keiner Stelle überblendet; die Zone lässt sich nur über die Brücke betreten.'},
+  {id:'M5', farbe:'#d96a3c', name:'Drei Wellen und der Boss',
+   text:'Wellenlogik, Signatur-Mobs je Biom, dritte Welle als Boss mit Selbstheilung. Kayfabe-Pop bei Sieg.',
+   abnahme:'Die Bosssequenz dauert nachweislich länger als eine Mobwelle; der Sieg schreibt ins Tagebuch.'},
+  {id:'M6', farbe:'#6a4f8c', name:'Lebendige Biome',
+   text:'Beschäftigung, Neugier, Absicht, Gruppe als vier Zustände. Goblin-Sprengtrupps und Peasant-Aufbau als Zyklus.',
+   abnahme:'Keine Einheit steht ohne Tätigkeit; eine Gruppe reagiert versetzt, nie gleichzeitig; ein zerstörtes Gebäude steht nach Rückkehr im Aufbau.'},
+];
+
+const OFFEN = [
+  {frage:'Kollision oder Bild?', text:'Der Boden ist die sichtbare Schicht. Die Kollision bleibt beim bestehenden Raster — das ist entschieden und darf nicht aufgeweicht werden, sonst entscheidet die Malerei über die Begehbarkeit.'},
+  {frage:'Wie stark darf der Boden wabern?', text:'Ein Himmel wird gestreift, ein Boden stundenlang angesehen. Die Amplitude muss deutlich unter der des Skydomes liegen — eher „Papier atmet" als „Waber". Als Zahl festschreiben und messen, nicht nach Gefühl regeln.'},
+  {frage:'Terrain-Tusche als eigenes Preset', text:'Nicht das Karten-Preset verbiegen. Terrain bekommt eigene Federbreite, eigenen Bogen und eigene Abnahmewerte. Lichtseite oben links, Schattenseite unten rechts — dieselbe Sonne wie die Kontaktschatten.'},
+  {frage:'Marken von Hand', text:'Die einzige Ebene, die kein Verfahren erzeugen kann, ohne generisch zu werden. Zwölf bis achtzehn gezeichnete Marken, je Biom drei, schwarz auf transparent, etwa 64 px. Der Code streut sie dann nur noch.'},
+  {frage:'Ton fehlt vollständig', text:'Es gibt keine Klangschicht im Repo. Jede Idee, die auf Ton baut — Fährten, Jukebox, akustische Wegweiser — steht auf einer Schicht, die nicht existiert.'},
+];
+
+const DATEIEN = [
+  {name:'KFB Boden-Konzept.dc.html', text:'Der lebende Generator. Neun Schaltbare Ebenen, sechs Biome, Bandbauart. Der eigentliche Übergabegegenstand für das Terrain.'},
+  {name:'KFB Boden-Analyse und Briefing.dc.html', text:'Analyse der Fehlerkette plus lösungsoffenes Briefing für externe Modelle. Enthält den Feldbänder-Prüfstand.'},
+  {name:'KFB Mob Übersicht.dc.html', text:'Einheitenkatalog mit Größenvergleich. Enthält die vier oben genannten Fehler.'},
+  {name:'KFB v8 Re-Home Befund.dc.html', text:'Ergebnis des v8-Re-Homes: was übernommen wurde und warum.'},
+  {name:'KFB Overworld v8.dc.html', text:'Die Basis. Weltschicht, Kollisionsraster, bestehende Systeme.'},
+  {name:'KFB Travel v14.dc.html', text:'Skydome mit den bewährten Shadern. Quelle für die Wabern-Ebene.'},
+  {name:'KFB Card Zone Lab v2.dc.html', text:'Vorarbeit zur Kartenzone.'},
+  {name:'zone-registry.json · asset-repo.json', text:'Zonen- und Assetverzeichnis. Grundlage für die Sternkarte.'},
+];
+
+class Component extends DCLogic {
+  renderVals(){
+    return {zahlen:ZAHLEN, kette:KETTE, verbote:VERBOTE, zone:ZONE, bosse:BOSSE,
+            leben:LEBEN, slices:SLICES, offen:OFFEN, dateien:DATEIEN};
+  }
+}
+</script>
+</body>
+</html>

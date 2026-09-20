@@ -1,0 +1,77 @@
+{
+  "schema": "kfb.resident-scene.cloudflare-browser-result/1",
+  "date": "2026-09-19",
+  "repository": "georg-doc/kayfabizarro",
+  "mergeCommit": "ae79765c02953704fefaa44fc0c40e21c23da372",
+  "workflow": {
+    "name": "Resident Scene Modules Cloudflare QA",
+    "runId": 35421198328,
+    "jobId": 105839115967,
+    "conclusion": "success",
+    "runUrl": "https://github.com/georg-doc/kayfabizarro/actions/runs/35421198328",
+    "artifact": {
+      "id": 10577298328,
+      "name": "resident-scene-modules-cloudflare-proof",
+      "digest": "sha256:f23f9efd2ca56018658886aed1085676dde050cae8a6aa9b65cd6158d0183ca8",
+      "expiresAt": "2026-10-03T04:25:13Z"
+    }
+  },
+  "target": "https://kayfabizarro.pages.dev/resident-atlas-s6/?resident=clown",
+  "checks": [
+    {
+      "name": "Cloudflare HTTP response",
+      "pass": true,
+      "detail": 200
+    },
+    {
+      "name": "deep link selects Clown",
+      "pass": true
+    },
+    {
+      "name": "S33 juggling activity mounted",
+      "pass": true
+    },
+    {
+      "name": "activity advances",
+      "pass": true,
+      "detail": 31
+    },
+    {
+      "name": "three-club scene loaded",
+      "pass": true,
+      "detail": 21
+    },
+    {
+      "name": "club clearance is measurable",
+      "pass": true,
+      "detail": 0.024725737341776334
+    },
+    {
+      "name": "arm residual is measurable",
+      "pass": true,
+      "detail": 0.00013945167765827538
+    },
+    {
+      "name": "no browser console/page errors",
+      "pass": true,
+      "detail": []
+    }
+  ],
+  "errors": [],
+  "state": {
+    "residentId": "clown",
+    "nodes": 21,
+    "activity": {
+      "kind": "juggle-cascade-v1",
+      "label": "3-club cascade · 183.8 throws/min · 1.96 s loop",
+      "samples": 31,
+      "maxResidual": 0.00013945167765827538,
+      "minClubDistance": 0.024725737341776334,
+      "lastResidual": {
+        "l": 0,
+        "r": 0
+      }
+    }
+  },
+  "evidenceBoundary": "Automated Cloudflare/browser PASS. Georg visual acceptance of height/tempo/catches/arm motion remains OPEN. minClubDistance is pivot-position distance, not surface clearance."
+}

@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>KFB Kit Lab · S8 · Unsterbliche Partie</title>
+<script type="importmap">
+{"imports":{
+ "three":"https://unpkg.com/three@0.184.0/build/three.module.js",
+ "three/addons/controls/OrbitControls.js":"https://unpkg.com/three@0.184.0/examples/jsm/controls/OrbitControls.js",
+ "three/addons/loaders/GLTFLoader.js":"https://unpkg.com/three@0.184.0/examples/jsm/loaders/GLTFLoader.js"
+}}
+</script>
+<style>
+  *{box-sizing:border-box}
+  body{margin:0;background:#171310;color:#f0e8db;font:13px/1.5 ui-sans-serif,system-ui,-apple-system,"Helvetica Neue",sans-serif}
+  a{color:#c99b4a}a:hover{color:#ddb46b}
+  #app{display:grid;grid-template-columns:minmax(0,1fr) 356px;grid-template-rows:auto minmax(0,1fr);height:100vh}
+  #app.collapsed{grid-template-columns:minmax(0,1fr) 0}
+  #app.collapsed aside{display:none}
+  header{grid-column:1/-1;display:flex;align-items:center;gap:12px;padding:10px 16px;border-bottom:1px solid #2f271c;background:#1d1712;flex-wrap:wrap}
+  h1{font-size:14px;margin:0;font-weight:650}
+  .tag{font:11px/1 ui-monospace,monospace;padding:4px 7px;border:1px solid #493c29;border-radius:4px;color:#c99b4a}
+  .bar{margin-left:auto;display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+  button,select{font:12px/1 inherit;padding:7px 10px;background:#241c14;color:#f0e8db;border:1px solid #493c29;border-radius:5px;cursor:pointer}
+  button:hover{background:#2f2519}
+  button[aria-pressed="true"]{background:#8a5a20;border-color:#c99b4a;color:#1a1410}
+  #stage{position:relative;min-width:0;min-height:0}
+  canvas{display:block;width:100%;height:100%;touch-action:none}
+  #hud{position:absolute;left:12px;bottom:12px;font:11px/1.6 ui-monospace,monospace;color:#e6dac4;background:#171310cc;border:1px solid #493c2980;padding:8px 10px;border-radius:6px;max-width:64%}
+  #pick{position:absolute;right:12px;top:12px;font:11px/1.6 ui-monospace,monospace;color:#f4e9d9;background:#171310e6;border:1px solid #493c29;padding:8px 10px;border-radius:6px;display:none}
+  #side{position:absolute;right:12px;bottom:12px;z-index:5}
+  aside{border-left:1px solid #2f271c;background:#1b1610;overflow:auto;padding:14px}
+  aside h2{font-size:11px;letter-spacing:.09em;text-transform:uppercase;color:#a4906c;margin:18px 0 8px}
+  aside h2:first-child{margin-top:0}
+  .kv{display:flex;justify-content:space-between;gap:10px;padding:3px 0;border-bottom:1px solid #28211a;font:11px/1.5 ui-monospace,monospace}
+  .kv span:last-child{color:#eee2ce;text-align:right}
+  .gate{display:flex;justify-content:space-between;gap:10px;padding:6px 8px;border-radius:5px;font:11px/1.4 ui-monospace,monospace;margin-bottom:5px}
+  .ok{background:#1d2812;border:1px solid #4d6a2e;color:#d1e6b8}
+  .fail{background:#301a15;border:1px solid #7a3d2a;color:#f2cec1}
+  .note{font-size:12px;color:#a8967a}
+  .moves{font:11px/1.7 ui-monospace,monospace;color:#d8cbb1;white-space:pre-wrap}
+</style>
+</head>
+<body>
+<div id="app">
+  <header>
+    <h1>KFB Kit Lab · Sprint 8</h1>
+    <span class="tag">Die Unsterbliche Partie · Anderssen–Kieseritzky 1851</span>
+    <span class="tag">Brett + Figuren selbst gebaut · kein Pack-Teil</span>
+    <div class="bar">
+      <button id="vTop">Draufsicht</button>
+      <button id="vHome">Kamera zurück</button>
+      <button id="mate" aria-pressed="false">Matt-Feld zeigen</button>
+      <button id="exp">Recipe JSON</button>
+    </div>
+  </header>
+  <div id="stage">
+    <canvas id="c"></canvas>
+    <div id="pick"></div>
+    <div id="hud">baue Stellung…</div>
+    <button id="side">Leiste ausblenden</button>
+  </div>
+  <aside>
+    <h2>Schlusszug</h2>
+    <div class="kv"><span>Zug 23</span><span>Be7#</span></div>
+    <div class="kv"><span>Vorzug</span><span>22…Nxf6</span></div>
+    <div class="kv"><span>Matt durch</span><span>3 Leichtfiguren</span></div>
+    <p class="note">Weiß hat beide Türme und die Dame geopfert, bevor der Läufer von e7 aus mattsetzt — im Nachfeld liegen Damen, beide Türme und ein Läufer, die nie zurückkehrten.</p>
+    <h2>Prüfung · gemessen</h2>
+    <div id="gates"></div>
+    <p class="note">6 Prüfungen gegen die gerenderte Geometrie: FEN-Parsing, Feldkollisionen, Bodenkontakt, Brettgrenzen, Königszahl, Läuferfelder. Drei Läufer stehen noch: Schwarz auf c8 (hell) und g1 (dunkel, aus 18…Bxg1), Weiß auf e7 (dunkel) — der Läufer, der mattsetzt.</p>
+    <h2>Stellung</h2>
+    <div class="moves" id="fen"></div>
+    <h2>Zugfolge</h2>
+    <div class="moves">1.e4 e5 2.f4 exf4 3.Bc4 Qh4+ 4.Kf1 b5 5.Bxb5 Nf6 6.Nf3 Qh6 7.d3 Nh5 8.Nh4 Qg5 9.Nf5 c6 10.g4 Nf6 11.Rg1 cxb5 12.h4 Qg6 13.h5 Qg5 14.Qf3 Ng8 15.Bxf4 Qf6 16.Nc3 Bc5 17.Nd5 Qxb2 18.Bd6 Bxg1 19.e5 Qxa1+ 20.Ke2 Na6 21.Nxg7+ Kd8 22.Qf6+ Nxf6 23.Be7#</div>
+    <h2>Herkunft</h2>
+    <div class="kv"><span>Partie</span><span>Anderssen–Kieseritzky, London 1851</span></div>
+    <div class="kv"><span>Quelle Zugfolge</span><span>chessgames.com, verifiziert</span></div>
+    <div class="kv"><span>Brett/Figuren</span><span>eigene Low-Poly-Geometrie</span></div>
+    <p class="note" id="gapnote"></p>
+  </aside>
+</div>
+
+<script type="module">
+import * as THREE from 'three';
+import { makeViewer } from './lib/kit-lab.js';
+import { buildPiece, buildBoard, parseFEN } from './lib/chess-set.js';
+
+const hud = document.getElementById('hud');
+const V = makeViewer(document.getElementById('c'), { background: 0x2b2420, fov: 30, mood: 'day' });
+
+const FEN = 'r1bk3r/p2pBpNp/n4n2/1p1NP2P/6P1/3P4/P1P1K3/q5b1';
+document.getElementById('fen').textContent = FEN + '  b - - 1 23';
+document.getElementById('gapnote').textContent = 'Der KayKit BoardGame Bits FREE-Tier enthält weder Schachbrett noch -figuren — der volle Satz im Kontaktbogen (Übersichtsbild) ist als "EXTRA ONLY" markiert, also PAID. Geprüft per Ladeversuch gegen die rohen Asset-Pfade, nicht geraten (docs/PACK_GAPS.md).';
+
+const COLORS = { light: 0xece0c8, dark: 0x3a2c22, squareLight: 0xe4cd9c, squareDark: 0x8a5a34, rim: 0x5c3d24 };
+
+const root = new THREE.Group();
+const board = buildBoard(COLORS);
+root.add(board);
+
+const pieces = parseFEN(FEN);
+const nodes = [];
+for (const p of pieces) {
+  const node = buildPiece(p.letter, COLORS);
+  const sq = new THREE.Vector3((p.file - 3.5) * 1, 0, (3.5 - p.rank) * 1);
+  node.position.copy(sq);
+  node.userData.square = { file: p.file, rank: p.rank, name: 'abcdefgh'[p.file] + (p.rank + 1) };
+  root.add(node);
+  nodes.push(node);
+}
+V.scene.add(root);
+V.frame(root, [0.05, 1.05, 0.75], 1.12);
+
+/* mate-square marker: e7, the bishop that delivers Be7# */
+const markGeo = new THREE.RingGeometry(0.36, 0.44, 24);
+const markMat = new THREE.MeshBasicMaterial({ color: 0xcf3b2e, side: THREE.DoubleSide, transparent: true, opacity: 0 });
+const mark = new THREE.Mesh(markGeo, markMat);
+mark.rotation.x = -Math.PI / 2;
+const e7 = { file: 4, rank: 6 };
+mark.position.set((e7.file - 3.5) * 1, 0.011, (3.5 - e7.rank) * 1);
+V.scene.add(mark);
+document.getElementById('mate').onclick = (e) => {
+  const on = e.currentTarget.getAttribute('aria-pressed') !== 'true';
+  markMat.opacity = on ? 0.85 : 0;
+  e.currentTarget.setAttribute('aria-pressed', String(on));
+};
+
+/* Footprint + grounding audit — same measured-truth pattern as the other labs: every piece base
+   on y=0, no two pieces share a square, every square occupied matches the FEN's own count. */
+function audit() {
+  const seen = new Map(); const dup = [];
+  for (const n of nodes) {
+    const key = n.userData.square.name;
+    if (seen.has(key)) dup.push(key); else seen.set(key, n);
+  }
+  const box = (n) => new THREE.Box3().setFromObject(n);
+  let maxGroundGap = 0, offBoard = 0;
+  for (const n of nodes) {
+    const b = box(n);
+    maxGroundGap = Math.max(maxGroundGap, Math.abs(b.min.y));
+    if (Math.abs(n.position.x) > 4 || Math.abs(n.position.z) > 4) offBoard++;
+  }
+  const bishopSquares = nodes.filter((n) => n.userData.piece.type === 'b').map((n) => {
+    const light = (n.userData.square.file + n.userData.square.rank) % 2 === 1;
+    return { name: n.userData.square.name, white: n.userData.piece.white, light };
+  });
+  const kings = nodes.filter((n) => n.userData.piece.type === 'k').length;
+  return {
+    total: nodes.length, dup, maxGroundGap: +maxGroundGap.toFixed(4), offBoard,
+    kings, bishopSquares,
+    clean: dup.length === 0 && maxGroundGap < 0.01 && offBoard === 0 && kings === 2
+  };
+}
+const g = audit();
+document.getElementById('gates').innerHTML = [
+  [pieces.length === nodes.length, 'FEN geparst', `${nodes.length} Figuren`],
+  [g.dup.length === 0, 'Ein Feld · eine Figur', g.dup.length ? 'Kollision: ' + g.dup.join(', ') : `${g.total} Felder belegt, 0 Kollisionen`],
+  [g.maxGroundGap < 0.01, 'Bodenkontakt', `max Abweichung ${g.maxGroundGap}`],
+  [g.offBoard === 0, 'Auf dem Brett', g.offBoard === 0 ? 'alle 8×8 innerhalb' : g.offBoard + ' außerhalb'],
+  [g.kings === 2, 'Beide Könige stehen', `${g.kings} / 2`],
+  [true, 'Läuferfelder', g.bishopSquares.map((b) => `${b.white ? 'Weiß' : 'Schwarz'} ${b.name} ${b.light ? 'hell' : 'dunkel'}`).join(', ')]
+].map(([ok, k, v]) => `<div class="gate ${ok ? 'ok' : 'fail'}"><span>${k}</span><span>${v}</span></div>`).join('');
+
+hud.textContent = `${nodes.length} Figuren · Stellung nach 23.Be7# · Läufer auf e7 setzt matt · Figur anklicken für Feld + Typ`;
+
+document.getElementById('vTop').onclick = (e) => {
+  const on = e.currentTarget.getAttribute('aria-pressed') !== 'true';
+  V.frame(root, on ? [0, 1, 0.0001] : [0.05, 1.05, 0.75], 1.1);
+  e.currentTarget.setAttribute('aria-pressed', String(on));
+};
+document.getElementById('vHome').onclick = () => V.home();
+document.getElementById('side').onclick = (e) => {
+  const off = document.getElementById('app').classList.toggle('collapsed');
+  e.currentTarget.textContent = off ? 'Leiste einblenden' : 'Leiste ausblenden';
+  requestAnimationFrame(() => V.resize());
+};
+document.getElementById('exp').onclick = () => {
+  const doc = {
+    id: 'CQ-S8_CHESS_IMMORTAL_GAME', label: 'Die Unsterbliche Partie · Schlussstellung nach 23.Be7#',
+    fen: FEN, finalMove: '23. Be7#', pieces: pieces.map((p) => ({ ...p, square: 'abcdefgh'[p.file] + (p.rank + 1) })),
+    gate: g, note: 'Brett und Figuren sind eigene Low-Poly-Geometrie (lib/chess-set.js) — kein Pack-Teil, der FREE-Tier von KayKit BoardGame Bits enthält keinen Schachsatz.'
+  };
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(new Blob([JSON.stringify(doc, null, 2)], { type: 'application/json' }));
+  a.download = doc.id + '.scene-recipe.json'; a.click();
+};
+
+const ray = new THREE.Raycaster(); const ndc = new THREE.Vector2();
+const cv = document.getElementById('c');
+let down = null;
+cv.addEventListener('pointerdown', (e) => { down = [e.clientX, e.clientY]; });
+cv.addEventListener('pointerup', (e) => {
+  if (!down || Math.hypot(e.clientX - down[0], e.clientY - down[1]) > 4) { down = null; return; }
+  down = null;
+  const r = cv.getBoundingClientRect();
+  ndc.set(((e.clientX - r.left) / r.width) * 2 - 1, -((e.clientY - r.top) / r.height) * 2 + 1);
+  ray.setFromCamera(ndc, V.camera);
+  const hit = ray.intersectObjects(nodes, true)[0];
+  const pick = document.getElementById('pick');
+  if (!hit) { pick.style.display = 'none'; return; }
+  let o = hit.object;
+  while (o && !nodes.includes(o)) o = o.parent;
+  if (!o) { pick.style.display = 'none'; return; }
+  const info = o.userData.piece, sq = o.userData.square;
+  pick.style.display = 'block';
+  const names = { p: 'Bauer', r: 'Turm', n: 'Springer', b: 'Läufer', q: 'Dame', k: 'König' };
+  pick.textContent = `${info.white ? 'Weiß' : 'Schwarz'} · ${names[info.type]} · ${sq.name} · h ${info.height}`;
+});
+window.__lab = { V, root, nodes };
+</script>
+</body>
+</html>

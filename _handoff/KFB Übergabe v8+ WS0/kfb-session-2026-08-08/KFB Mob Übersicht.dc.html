@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>
+html,body{margin:0;background:#14171c;color:#e8e6e1;
+  font-family:"Helvetica Neue",Helvetica,Arial,sans-serif}
+a{color:#6fd3d0}a:hover{color:#a9ecea}
+::-webkit-scrollbar{width:9px;height:9px}::-webkit-scrollbar-thumb{background:#333a44;border-radius:5px}
+</style>
+<script src="./overworld/asset-source.js"></script>
+<script src="./overworld/hero-frames.js"></script>
+<script src="./overworld/units-catalog.js"></script>
+</helmet>
+<div style="max-width:1240px;margin:0 auto;padding:38px 30px 90px;display:flex;flex-direction:column;gap:28px">
+
+  <div style="display:flex;flex-direction:column;gap:10px">
+    <div style="font-size:10.5px;letter-spacing:2.4px;text-transform:uppercase;color:#7f8c9c">KFB Overworld · Bestand · {{stamp}}</div>
+    <h1 style="margin:0;font-size:33px;font-weight:600;line-height:1.14;letter-spacing:-0.4px">Wer in dieser Welt lebt</h1>
+    <p style="margin:0;max-width:70ch;font-size:15px;line-height:1.62;color:#a8b3c0;text-wrap:pretty">Was im Bestand liegt: Gegner und Kreaturen aus dem Katalog, dazu die Fraktion des Spielers, eine zweite Goblin-Fraktion und die Ressourcen — die drei stehen im Repo, aber noch nicht im Katalog. Gegner tragen Temperament und Biom-Vorschlag, Ressourcen und Bauten nicht. Körperhöhe und Fußpunkt sind am Blatt gemessen, nicht aus den Definitionen übernommen.</p>
+  </div>
+
+  <div style="display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1px;background:#2b323c;border:1px solid #2b323c;border-radius:9px;overflow:hidden">
+    <sc-for list="{{facts}}" as="f" hint-placeholder-count="4">
+      <div style="background:#1b1f26;padding:14px 16px;display:flex;flex-direction:column;gap:4px">
+        <b style="font-size:22px;font-weight:600;font-family:ui-monospace,monospace;color:#6fd3d0">{{f.v}}</b>
+        <span style="font-size:11.5px;line-height:1.45;color:#8b97a6;text-wrap:pretty">{{f.k}}</span>
+      </div>
+    </sc-for>
+  </div>
+
+  <div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center">
+    <sc-for list="{{filters}}" as="f" hint-placeholder-count="6">
+      <button onClick="{{f.on}}" style="{{f.style}}">{{f.label}}</button>
+    </sc-for>
+    <label style="display:flex;gap:7px;align-items:center;font-size:12px;color:#b7c1cd;cursor:pointer;margin-left:6px">
+      <input type="checkbox" checked="{{animate}}" onChange="{{setAnimate}}" style="accent-color:#47aba9" />
+      <span>laufen lassen</span>
+    </label>
+    <label style="display:flex;gap:7px;align-items:center;font-size:12px;color:#b7c1cd;cursor:pointer">
+      <input type="checkbox" checked="{{scaled}}" onChange="{{setScaled}}" style="accent-color:#47aba9" />
+      <span>auf Heldenmaß skalieren</span>
+    </label>
+  </div>
+
+  <sc-for list="{{groups}}" as="g" hint-placeholder-count="4">
+    <div style="display:flex;flex-direction:column;gap:13px">
+      <div style="display:flex;align-items:baseline;gap:11px;border-bottom:1px solid #2b323c;padding-bottom:9px">
+        <h2 style="margin:0;font-size:19px;font-weight:600">{{g.title}}</h2>
+        <span style="font-size:12px;color:#78838f">{{g.sub}}</span>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(196px,1fr));gap:13px">
+        <sc-for list="{{g.mobs}}" as="m" hint-placeholder-count="6">
+          <div style="background:#1b1f26;border:1px solid #2b323c;border-radius:10px;overflow:hidden;display:flex;flex-direction:column">
+            <div style="{{m.stage}}">
+              <canvas ref="{{m.ref}}" width="180" height="150" style="width:180px;height:150px;display:block;image-rendering:pixelated"></canvas>
+            </div>
+            <div style="padding:11px 13px 13px;display:flex;flex-direction:column;gap:7px">
+              <div style="display:flex;justify-content:space-between;align-items:baseline;gap:8px">
+                <b style="font-size:14.5px;font-weight:600;line-height:1.2">{{m.name}}</b>
+                <span style="font-size:10px;font-family:ui-monospace,monospace;color:{{m.roleColor}};letter-spacing:.6px;text-transform:uppercase;flex:none">{{m.role}}</span>
+              </div>
+              <div style="display:flex;gap:5px;flex-wrap:wrap">
+                <span style="font-size:10.5px;padding:3px 7px;border-radius:4px;background:#252c36;color:#9fb0c0;font-family:ui-monospace,monospace">{{m.biome}}</span>
+                <span style="{{m.temperStyle}}">{{m.temper}}</span>
+              </div>
+              <div style="display:grid;grid-template-columns:auto 1fr;gap:3px 10px;font-size:10.5px;font-family:ui-monospace,monospace;color:#78838f;line-height:1.5">
+                <span>Körper</span><b style="color:#b7c1cd;text-align:right">{{m.bodyH}}</b>
+                <span>zum Helden</span><b style="color:#b7c1cd;text-align:right">{{m.sizeRel}}</b>
+                <span>Anims</span><b style="color:#b7c1cd;text-align:right;overflow-wrap:anywhere">{{m.anims}}</b>
+              </div>
+              <div style="font-size:11px;line-height:1.5;color:#8b97a6;text-wrap:pretty">{{m.note}}</div>
+            </div>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </sc-for>
+
+  <div style="background:#1b1f26;border:1px solid #2b323c;border-left:3px solid #6fd3d0;border-radius:9px;padding:15px 17px;font-size:13.5px;line-height:1.62;color:#b7c1cd;text-wrap:pretty">{{footer}}</div>
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1300,&quot;height&quot;:900}}">
+class Component extends DCLogic {
+  state={mobs:[],animate:true,scaled:true,filter:'alle',stamp:'',ready:false};
+
+  /* Rolle und Biom kommen aus dem Katalog; was hier dazukommt, ist die eine Zeile, die man beim
+     Ansehen wissen will — Temperament in Worten und der Grund, warum das Wesen in dieses Biom
+     gehört. Bewusst KEINE Zahlen: Karten sind Beweisstücke, keine Statblöcke. */
+  static NOTES={
+    torch_goblin_ep:'Rennt mit der Fackel voraus, brennt schnell aus. Der Anfängergegner des Lagers.',
+    spear_goblin:'Zwei Angriffe, schnell und schwer — hält Abstand über die Stangenlänge.',
+    hex_shaman:'Boss der Goblins. Wirft aus der zweiten Reihe, heilt sich selbst — deshalb dauert seine Sequenz länger als eine Mobwelle.',
+    pig_rider:'Kommt in einer Linie und bremst nicht. Am Baum ist er langsamer als am Weg.',
+    pig:'Starter-Boss im Hof. Der erste Gegner, an dem man die Kampfschleife lernt, ohne sterben zu können.',
+    bear:'Boss des Lagers. Langsam, breit, nimmt den kürzesten Weg — die dritte Welle am Wachfeuer.',
+    lizard:'Wendig, unterbricht den eigenen Angriff. Hat eine eigene Trefferbewegung.',
+    snake:'Bleibt am Rand und schlägt aus dem Stand zu. Ideal für Engstellen.',
+    spider:'Kommt seitlich und zu mehreren — die Höhle kennt keine Einzelspinne.',
+    turtle:'Geht in den Panzer, statt zu weichen. Zwei Bewegungen dafür, rein und raus.',
+    gnoll:'Wirft Knochen aus der Distanz. Die Wildnis lässt ihm den Blickwinkel.',
+    gnome:'Klein, flink, tritt in Gruppen auf. Kein Einzelkämpfer.',
+    panda:'Blockt, statt auszuweichen. Der ruhige Brocken der Wildnis.',
+    skull:'Steht wieder auf, wenn man ihn liegen lässt. Das Kellergefühl in einem Sprite.',
+    thief:'Schneller als er aussieht, sucht die offene Seite. Gehört in Gänge.',
+    bomb_fish:'Schießt über Wasser, trifft die Fläche statt des Ziels.',
+    harpoon_shark:'Zieht auf Distanz, hat eine eigene Harpune als Geschoss.',
+    paddle_shark:'Boss am Wasser. Rudert heran und schlägt aus dem Boot — der Kampf findet auf der Halbinsel statt.',
+    minotaur:'Der Boss unter Tage: langsame Ansage, dann die ganze Breite.',
+    /* Georgs Befund „das ist kein Troll" ist nachgeprüft, nicht vermutet: das Blatt unter
+       Enemy Pack/Enemies/Troll/Troll_Idle.png ist 4608×384, also 12 Zellen à 384, und zeigt
+       einen grünen Troll mit Keule — der Pfad im Katalog stimmt. Wenn die Kachel etwas anderes
+       zeigt, liegt der Fehler im Zuschnitt dieser Übersicht (Zellbreite oder Bildzwischen-
+       speicher), nicht in der Quelle. Das gehört geprüft, bevor die Zuordnung in die
+       Zonenlogik wandert. */
+    troll:'Boss der Wildnis. Ansage, Schlag, Erholung — und die Keule zerbricht in zwei Teile. PRÜFEN: Quelle ist nachweislich korrekt (4608×384, grüner Troll mit Keule) — zeigt die Kachel etwas anderes, liegt es am Zuschnitt hier.',
+    sheep:'Wandert, tötbar, gibt keine Erfahrung. Kostet Ruf und landet im Tagebuch.'
+  };
+  /* SSOT für Bosse. Sechs Zonen, sechs Bosse — abgestimmt mit der Fraktionstabelle im
+     Übergabedokument. Der Katalog führte hier nur Troll und Minotaurus und verortete den
+     Hex-Shaman im Lager; beides ist überholt. Diese Zuordnung überschreibt den Katalog. */
+  /* URSACHE des Widerspruchs: Ich hatte die Bosszone ÜBER den Katalog gelegt, ohne die
+     Gruppenzuordnung mitzuziehen. Dadurch sagte dieselbe Kachel zwei Zonen gleichzeitig —
+     Pig stand unter „Lager" und trug „Boss · Hof", der Bär unter „Höhle" und trug „Boss · Lager".
+     Deshalb steht hier jetzt BEIDES an einer Stelle: Zonenname und Zielgruppe. Wer die
+     Zuordnung ändert, ändert automatisch auch, wo die Kachel einsortiert wird. */
+  static BOSS_ZONE={
+    pig:         {zone:'Hof · Starter', group:'knights'},
+    troll:       {zone:'Wildnis',       group:'wilds'},
+    hex_shaman:  {zone:'Goblins',       group:'goblins'},
+    minotaur:    {zone:'Verlies',       group:'dungeon'},
+    bear:        {zone:'Lager',         group:'camp'},
+    paddle_shark:{zone:'Wasser',        group:'water'}
+  };
+  static ROLE_COLOR={melee:'#e0a33c',ranged:'#6fd3d0',boss:'#e0574f',critter:'#7dc36a',
+    worker:'#c9a0dc',resource:'#d8c47a',building:'#9fb0c0'};
+  static BIOME_TITLE={
+    knights:['Hof', 'die Fraktion des Spielers — der Pawn ist der Peasant'],
+    goblins:['Goblins (Update 010)', 'die zweite Fraktion — im Katalog noch nicht geführt'],
+    camp:['Lager', 'Goblin Raiders — der erste Widerstand am Weg'],
+    cave:['Höhle', 'Caveborn — was unter der Insel wohnt'],
+    wilds:['Wildnis', 'die offene Karte zwischen den Zonen'],
+    dungeon:['Verlies', 'hinter dem Papierriss'],
+    water:['Wasser', 'Pirate Fish — Lagune und Einfahrt'],
+    critters:['Kreaturen', 'friedlich, aber nicht unantastbar'],
+    resources:['Ressourcen', 'was man aufhebt, abbaut und baut — nicht auf Heldenmaß, sie sind keine Körper']
+  };
+
+  /* Georgs Frage vom 8.8.: »da fehlen units wie zb. die peasants (zusammen mit den ressourcen wie
+     gold etc)?« — Ja. Die Übersicht zeigte nur `enemies` und `critters`. Der Peasant heißt bei Tiny
+     Swords **Pawn** und steht im Katalog längst unter `playable`; die Ressourcen standen dort gar
+     nicht. Alle Pfade hier sind am Repo geprüft, nicht aus dem Gedächtnis notiert (Maße dahinter). */
+  static EXTRA(P10, PF){
+    const rs=(n,f,cell)=>({id:n,name:n,group:'resources',role:'resource',kind:'strip',
+      cell,url:P10+f});
+    return [
+      {id:'pawn',name:'Pawn (Peasant)',group:'knights',role:'worker',kind:'rowsheet',cell:192,
+        sizeRel:1,url:P10+'Factions/Knights/Troops/Pawn/Blue/Pawn_Blue.png',
+        note:'Der Peasant: trägt, baut, holzt. Sechs Zeilen im Blatt — Ruhe, Lauf, und die Arbeit.'},
+      {id:'warrior',name:'Warrior',group:'knights',role:'melee',kind:'rowsheet',cell:192,sizeRel:1,
+        url:P10+'Factions/Knights/Troops/Warrior/Blue/Warrior_Blue.png',
+        note:'Die Heldenklasse mit dem Schwert. Vier Farben im Repo, eine je Fraktion.'},
+      {id:'archer',name:'Archer',group:'knights',role:'ranged',kind:'rowsheet',cell:192,sizeRel:1,
+        url:P10+'Factions/Knights/Troops/Archer/Blue/Archer_Blue.png',
+        note:'Fernkampf mit eigenem Pfeil-Sprite. Die Purple-Datei heißt im Repo »Purlple«.'},
+      {id:'torch_010',name:'Torch Goblin',group:'goblins',role:'melee',kind:'rowsheet',cell:192,
+        sizeRel:0.9,url:P10+'Factions/Goblins/Troops/Torch/Red/Torch_Red.png',
+        note:'Aus Update 010, nicht aus dem Enemy Pack — dieselbe Rolle, anderes Blatt.'},
+      {id:'tnt',name:'TNT Goblin',group:'goblins',role:'ranged',kind:'rowsheet',cell:192,sizeRel:0.9,
+        url:P10+'Factions/Goblins/Troops/TNT/Red/TNT_Red.png',
+        note:'Wirft Dynamit. Im Katalog noch nicht geführt — der Sprengstoff wäre ein eigener Slice.'},
+      /* Georgs Befund: »barrel goblin scheint eher ammunition/dynamit — sehe da keine goblin im
+         loop?« Richtig, und meine erste Notiz war geraten. Am Blatt gemessen (4×4 Zellen à 192):
+         Zeile 0 = 163 px hohe Figur, dann DREI flache Formen von 42–54 px; Zeile 2 = 177 und 184 px;
+         Zeile 3 = zwei Figuren, dann zwei leere Zellen. Das ist keine Ruheschleife, sondern eine
+         Sequenz — was sie zeigt, ist ungeklärt und wird hier nicht behauptet. */
+      {id:'barrel',name:'Barrel (ungeklärt)',group:'goblins',role:'unknown',kind:'rowsheet',cell:192,
+        sizeRel:0.85,url:P10+'Factions/Goblins/Troops/Barrel/Red/Barrel_Red.png',
+        note:'Zwei Befunde, die sich widersprechen: das Bild zeigt einen Kessel, der Feuer fängt — '+
+          'aber das Blatt liegt in VIER Fraktionsfarben wie Warrior und Pawn, und Munition hätte keine. '+
+          'Ein Cauldron-Asset gibt es nicht. Ungeklärt.'},
+      Object.assign(rs('Gold','Resources/Resources/G_Spawn.png',128),
+        {note:'Sieben Frames Auftauchen. Die Währung, die im HUD nie als Zahl steht.'}),
+      Object.assign(rs('Holz','Resources/Resources/W_Spawn.png',128),
+        {note:'Dasselbe Muster wie Gold — sieben Frames, dann liegt es da.'}),
+      Object.assign(rs('Fleisch','Resources/Resources/M_Spawn.png',128),
+        {note:'Die dritte Ressource. Passt zum Schaf, das schon im Katalog steht.'}),
+      {id:'goldmine',name:'Goldmine',group:'resources',role:'building',kind:'plain',
+        url:P10+'Resources/Gold%20Mine/GoldMine_Active.png',
+        note:'Drei Zustände im Repo: aktiv, still, zerstört. Ein Ort, kein Sprite.'},
+      {id:'tree',name:'Baum (Update 010)',group:'resources',role:'building',kind:'sheet',
+        cellW:192,cellH:192,url:P10+'Resources/Trees/Tree.png',
+        note:'4×3 Zellen — der abbaubare Baum, nicht die Deko. Ein eigener Fund für die Props.'},
+      {id:'castle',name:'Burg',group:'resources',role:'building',kind:'plain',
+        url:P10+'Factions/Knights/Buildings/Castle/Castle_Blue.png',
+        note:'Steht schon in der Welt. Hier zum Größenvergleich mit dem Pawn.'},
+      {id:'house',name:'Haus',group:'resources',role:'building',kind:'plain',
+        url:P10+'Factions/Knights/Buildings/House/House_Blue.png',note:'Vier Farben, eine je Fraktion.'},
+      /* Monk und Lancer fehlten vollständig. Sie liegen im Repo, aber nicht im Katalog — genau
+         der Fall, für den `repoOnly` gebaut wurde. So stehen sie sichtbar als offener Import da,
+         statt einfach zu fehlen. */
+      /* Monk und Lancer liegen NICHT in Update 010, sondern im Free Pack unter Units/<Farbe>.
+         Ich hatte die Pfade zuerst geraten (Factions/Knights/Troops/…) — beide Blätter gibt es
+         dort nicht, unter Knights/Troops stehen nur Pawn, Archer und Warrior. Jetzt nachgesehen
+         statt geraten; gemessen: Monk 1152×192 (6 Zellen à 192), Lancer 3840×320 (12 à 320).
+         Rote Einheiten, passend zur roten Gegnerfraktion. */
+      {id:'monk',name:'Monk',group:'knights',role:'ranged',kind:'strip',
+        cellW:192,cellH:192,url:PF+'Red%20Units/Monk/Idle.png',
+        runUrl:PF+'Red%20Units/Monk/Run.png',
+        note:'NOCH ZU IMPORTIEREN — im Repo vorhanden, im Katalog nicht. Heilt aus der zweiten Reihe.'},
+      {id:'lancer',name:'Lancer',group:'knights',role:'melee',kind:'strip',
+        cellW:320,cellH:320,url:PF+'Red%20Units/Lancer/Lancer_Idle.png',
+        runUrl:PF+'Red%20Units/Lancer/Lancer_Run.png',
+        note:'NOCH ZU IMPORTIEREN — im Repo vorhanden, im Katalog nicht. Reicht über die Stangenlänge.'},
+      {id:'tower',name:'Turm',group:'resources',role:'building',kind:'plain',
+        url:P10+'Factions/Knights/Buildings/Tower/Tower_Blue.png',
+        note:'Der Wachturm an der Einfahrt — in Utopia schon gesetzt.'}
+    ];
+  }
+
+  componentDidMount(){
+    this.canv={};this.imgs={};
+    this.collect();
+    this.raf=requestAnimationFrame(t=>this.tick(t));
+  }
+  componentWillUnmount(){if(this.raf)cancelAnimationFrame(this.raf);}
+
+  async collect(){
+    if(!window.OW_UNITS){this.setState({stamp:'Katalog fehlt'});return;}
+    const E=OW_UNITS.enemies,C=OW_UNITS.critters,T=OW_UNITS.tempers;
+    const list=[];
+    for(const k in E)list.push({id:k,src:E[k],group:E[k].biome||'wilds'});
+    for(const k in C)list.push({id:k,src:C[k],group:'critters'});
+    const mobs=list.map(e=>({
+      id:e.id,name:e.src.name,
+      role:Component.BOSS_ZONE[e.id]?'boss':(e.src.role||'melee'),
+      bossZone:Component.BOSS_ZONE[e.id]?Component.BOSS_ZONE[e.id].zone:null,
+      /* Gruppe und Biom folgen der Bosszuordnung, nicht dem Katalog — sonst widerspricht die
+         Überschrift dem Abzeichen auf derselben Kachel. */
+      biome:Component.BOSS_ZONE[e.id]?Component.BOSS_ZONE[e.id].group:e.group,
+      group:Component.BOSS_ZONE[e.id]?Component.BOSS_ZONE[e.id].group:e.group,
+      temper:T[e.id]||'—',
+      sizeRel:e.src.sizeRel!=null?e.src.sizeRel:1,
+      anims:Object.keys(e.src.anims||{}),
+      url:(e.src.anims&&(e.src.anims.idle||e.src.anims.run))||null,
+      runUrl:(e.src.anims&&e.src.anims.run)||null,
+      kind:'strip',fw:0,fh:0,frames:1,bodyH:0,loaded:false
+    }));
+    /* Fraktionen und Ressourcen dazu (V7-S5c). Die Quelle ist dieselbe wie im Katalog — eine Stelle,
+       an der steht, woher der Bestand kommt (`asset-source.js`). */
+    const BASIS=(window.OW_SRC?OW_SRC.a2d(''):'');
+    const P10=BASIS+'Tiny%20Swords%20(Update%20010)/';
+    const PF =BASIS+'Tiny%20Swords%20(Free%20Pack)/Units/';
+    for(const x of Component.EXTRA(P10, PF))
+      mobs.push(Object.assign({temper:'—',anims:[],sizeRel:1,biome:x.group,repoOnly:true,
+        fw:0,fh:0,frames:1,bodyH:0,loaded:false},x));
+    this.setState({mobs,ready:true});
+    this.catalogCount=mobs.length;   // vor EXTRA gezählt — der Rest liegt nur im Repo
+    // Der Reihe nach laden, damit 21 Blätter nicht gleichzeitig am Netz hängen
+    for(const m of mobs){await this.load(m);}
+    this.setState({mobs:this.state.mobs.slice()});
+  }
+
+  /* Die Alpha-Box von Frame 0 eines Streifens. Wird für JEDE gezeichnete Animation gebraucht, nicht
+     nur für die Ruhe: Idle und Lauf legen den Körper unterschiedlich in die Zelle, und ein Fußpunkt
+     aus dem einen Blatt, angewandt auf das andere, zählt den Versatz doppelt (der Verifier fand es
+     an der Lizard: 14 px zu tief, Füße am Kartenrand abgeschnitten). */
+  static box(img,fw,fh,frames){
+    try{
+      /* Über ALLE Frames messen, nicht über Frame 0 (V7-S5d). Am Barrel Goblin fiel es auf: Frame 0
+         ist das versteckte Fass, die späteren zeigen den Goblin — eine Box von Frame 0 lässt den
+         Maßstab je Bild springen (gemessen 22 px, wo 55 hingehören). Die Vereinigung gibt EINEN
+         Maßstab und EINE Bodenlinie über die ganze Schleife. */
+      const n=Math.max(1,frames|0);
+      const c=document.createElement('canvas');c.width=fw*n;c.height=fh;
+      const x=c.getContext('2d',{willReadFrequently:true});
+      x.drawImage(img,0,0,fw*n,fh,0,0,fw*n,fh);
+      const W=fw*n;
+      const d=x.getImageData(0,0,W,fh).data;
+      let t=fh,b=-1,wMax=0;
+      const used=[];
+      for(let f=0;f<n;f++){
+        let l=fw,r=-1,px=0;
+        for(let j=0;j<fh;j++)for(let i=0;i<fw;i++){
+          if(d[(j*W+f*fw+i)*4+3]<=40)continue;
+          px++;
+          if(j<t)t=j;if(j>b)b=j;if(i<l)l=i;if(i>r)r=i;
+        }
+        /* **Belegte Frames zählen, nicht rechnen** (V7-S5f). Georgs Befund: Archer und TNT Goblin
+           flackern. Ursache war `Breite / Zelle` — Archer 1536÷192 = 8 Zellen, aber die Zeile ist
+           nicht voll belegt, und jede leere Zelle ist ein schwarzes Bild im Loop. Ein Frame gilt als
+           belegt, wenn mehr als 0,3 % der Zelle deckend sind; darunter ist es Streupixel, nicht Figur. */
+        if(px>fw*fh*0.003)used.push(f);
+        if(r>=0&&r-l+1>wMax)wMax=r-l+1;
+      }
+      const l=0,r=wMax-1;
+      /* **Bringt das Blatt seinen Schatten mit?** (V7-S5g) Georgs Befund: doppelte Schatten. Der
+         unit-loader prüft das im Spiel längst, die Übersicht tat es nicht und legte ihre Ellipse
+         unter einen bereits gebackenen Schatten. Gemessen wie dort: im unteren Drittel
+         halbtransparente UND dunkle Pixel. Ergebnis über alle geprüften Blätter: **immer BAKED** —
+         Tiny Swords backt grundsätzlich. Deshalb ist die eigene Auflage jetzt die Ausnahme, nicht
+         die Regel. */
+      let semi=0,semiDark=0;
+      const yb=Math.floor(fh*0.62);
+      for(let f=0;f<n;f++)for(let j=yb;j<fh;j++)for(let i=0;i<fw;i++){
+        const p=(j*W+f*fw+i)*4,a=d[p+3];
+        if(a<=8||a>=235)continue;
+        semi++;
+        if(0.299*d[p]+0.587*d[p+1]+0.114*d[p+2]<110)semiDark++;
+      }
+      const baked=semi>30&&semiDark>semi*0.6;
+      if(b<0||!used.length)return null;
+      /* `bottomRel` ist die Unterkante des Körpers als Anteil der ZELLHÖHE. Damit wird der Fußpunkt
+         direkt gesetzt (Oberkante = Bodenlinie − bottomRel·dh) statt über einen Versatz nach unten —
+         die alte Rechnung stimmte nur bei quadratischen Frames, und das Lauf-Blatt der Lizard ist
+         keines (sie stand 14 px zu tief, Füße am Kartenrand abgeschnitten). */
+      return {fw,fh,bodyH:b-t+1,bottomRel:(b+1)/fh,bodyWRel:(r-l+1)/fw,
+        used,frames:used.length,empty:n-used.length,baked};
+    }catch(e){return null;}
+  }
+
+  /* Frames und Fußpunkt am Blatt messen — nicht aus der Bildhöhe geraten. Die Streifen sind
+     quadratisch geschnitten (Frame-Breite = Höhe), aber die Figur füllt die Zelle nie: deshalb
+     wird die deckende Fläche gesucht, wie im unit-loader. */
+  load(m){
+    return new Promise(res=>{
+      if(!m.url)return res();
+      const img=new Image();img.crossOrigin='anonymous';
+      img.onload=()=>{
+        /* Vier Blattformen, jede mit ihrer eigenen Zellregel — und keine davon geraten:
+           `strip` quadratisch aus der Höhe · `rowsheet` feste Zelle, Zeile 0 · `sheet` Zelle
+           angegeben · `plain` ein einzelnes Bild. Ein Blatt, dessen Zellmaß man annimmt, schneidet
+           quer durch die Figur (dieselbe Lehre wie beim Prop-Blatt). */
+        let fw,fh,frames;
+        /* Der Versuch, eine andere Zeile zu zeigen (`row`), hat den Barrel-Loop zerlegt — vier Frames
+           gleichzeitig in einer Kachel. Zurückgenommen statt nachgebessert: Zeile 0 für alle, wie
+           vorher. Wer eine bestimmte Zeile braucht, baut es mit einer Messung, nicht mit einem Offset. */
+        if(m.kind==='rowsheet'){fw=fh=m.cell;frames=Math.max(1,Math.round(img.width/fw));}
+        else if(m.kind==='sheet'){fw=m.cellW;fh=m.cellH;frames=1;}
+        else if(m.kind==='plain'){fw=img.width;fh=img.height;frames=1;}
+        else {fh=img.height;fw=m.cell||fh;frames=Math.max(1,Math.round(img.width/fw));}
+        const box=Component.box(img,fw,fh,frames);
+        m.img=img;m.fw=fw;m.fh=fh;m.frames=frames;m.loaded=true;
+        // Maße relativ zur Framebreite, damit sie bei anderen Zellgrößen weiter stimmen
+        m.idle={img,fw,frames,box};
+        if(box){m.bodyH=box.bodyH;m.bodyWRel=box.bodyWRel;
+          m.framesUsed=box.frames;m.framesEmpty=box.empty;}
+        if(m.runUrl&&m.runUrl!==m.url){
+          const r2=new Image();r2.crossOrigin='anonymous';
+          r2.onload=()=>{
+            /* Quadratische Frames anzunehmen geht nicht — das Lauf-Blatt der Lizard ist keines.
+               Zellhöhe ist die Bildhöhe, die Zellbreite folgt aus der gerundeten Frame-Anzahl. */
+            const fh2=r2.height, n=Math.max(1,Math.round(r2.width/fh2)), fw2=r2.width/n;
+            m.run={img:r2,fw:fw2,frames:n,box:Component.box(r2,fw2,fh2,n)};
+            res();};
+          r2.onerror=()=>res();r2.src=m.runUrl;
+        }else res();
+        this.setState({mobs:this.state.mobs.slice()});
+      };
+      img.onerror=()=>{m.loaded=true;res();};
+      img.src=m.url;
+    });
+  }
+
+  tick(t){
+    this.raf=requestAnimationFrame(t2=>this.tick(t2));
+    const S=this.state;
+    if(!S.mobs.length)return;
+    const step=Math.floor(t/110);
+    /* EIN Maßstab für die ganze Liste (V7-S5b). Der Verifier hat es zerlegt: die Klemmung rechnete
+       gegen die FRAMEBREITE (192–320 px, größtenteils leeres Futter um die Figur), also entschied
+       für fast jeden Mob die Zellgröße über die Bildhöhe und nicht `sizeRel` — Pig Rider 1,18× und
+       Troll 1,95× kamen beide auf 78 px heraus. Genau die Lüge, die der Schalter verhindern soll.
+       Jetzt: der GRÖSSTE bekommt die verfügbare Höhe, alle anderen ihren Anteil daran. Eine Zahl,
+       ein Ort. */
+    if(!this.pxPerRel||this.pxDirty){
+      const ready=S.mobs.filter(m=>m.loaded&&m.bodyH&&m.group!=='resources');
+      const maxRel=ready.reduce((n,m)=>Math.max(n,m.sizeRel),0.01);
+      this.pxPerRel=(150-24)/maxRel;   // Kachelhöhe minus Bodenlinie und Luft oben
+      this.pxDirty=!ready.length||ready.length<S.mobs.length;
+    }
+    for(const m of S.mobs){
+      const c=this.canv[m.id];
+      if(!c||!m.loaded||!m.img)continue;
+      const use=(S.animate&&m.run)?m.run:m.idle;
+      if(!use)continue;
+      // Nur belegte Frames laufen lassen — eine leere Zelle im Loop ist ein Blinken
+      const seq=(use.box&&use.box.used)||null;
+      const fr=S.animate
+        ? (seq?seq[step%seq.length]:step%use.frames)
+        : (seq?seq[0]:0);
+      const x=c.getContext('2d');
+      x.clearRect(0,0,c.width,c.height);
+      // Der Fußpunkt gilt für den Frame, der GEZEICHNET wird — nicht für die Ruhe
+      const bx=use.box||{fw:use.fw,fh:use.fw,bodyH:use.fw,bottomRel:1,bodyWRel:0.5};
+      const fit=Math.min(c.width*0.86/bx.fw,c.height*0.86/bx.fh);
+      /* Ressourcen und Bauten bleiben vom Heldenmaß ausgenommen: eine Burg ist kein Körper, und
+         `sizeRel` würde für sie erfunden. Sie werden in die Kachel eingepasst, und die Seite sagt es. */
+      const scale=(S.scaled&&m.group!=='resources')
+        ? (m.sizeRel*this.pxPerRel)/Math.max(1,bx.bodyH)
+        : fit;
+      const dw=bx.fw*scale,dh=bx.fh*scale;
+      const cx=c.width/2;
+      const base=c.height-14;                 // die Bodenlinie, für alle Karten dieselbe
+      /* Ressourcen und Bauten stehen nicht, sie liegen — sie werden in die Kachel zentriert statt
+         auf die Bodenlinie gesetzt (sonst hängt ein Goldsack am Kartenrand: gemessen 149 von 150). */
+      const fy=(m.group==='resources')
+        ? c.height/2+dh/2-8
+        : base+(dh-bx.bottomRel*dh);          // Rahmenunterkante, damit der KÖRPER auf base steht
+      // Nur wer keinen mitbringt, bekommt eine Auflage — sonst liegen zwei Schatten übereinander
+      if(!bx.baked){
+        x.save();
+        x.globalCompositeOperation='multiply';
+        x.globalAlpha=0.4;
+        x.fillStyle='#5b4a33';
+        const sw=Math.max(6,bx.bodyWRel*dw);
+        x.beginPath();x.ellipse(cx,base-sw*0.16*0.55,sw*0.5,sw*0.16,0,0,7);x.fill();
+        x.restore();
+      }
+      x.imageSmoothingEnabled=false;
+      x.drawImage(use.img,fr*bx.fw,0,bx.fw,bx.fh,cx-dw/2,fy-dh,dw,dh);
+    }
+  }
+
+  renderVals(){
+    const S=this.state,N=Component.NOTES,RC=Component.ROLE_COLOR,BT=Component.BIOME_TITLE;
+    const shown=S.filter==='alle'?S.mobs
+      :S.filter==='resources'?S.mobs.filter(m=>m.group==='resources')
+      :S.mobs.filter(m=>m.role===S.filter||m.biome===S.filter);
+    const order=['knights','goblins','camp','cave','wilds','dungeon','water','critters','resources'];
+    const groups=order.filter(g=>shown.some(m=>m.group===g)).map(g=>{
+      const mobs=shown.filter(m=>m.group===g).sort((a,b)=>a.sizeRel-b.sizeRel);
+      const t=BT[g]||[g,''];
+      return {key:g,title:t[0],sub:mobs.length+' · '+t[1],
+        mobs:mobs.map(m=>({
+          name:m.name,role:m.role,biome:m.biome,
+          /* Die Bosszone steht auf der Karte, damit Katalog und Fraktionstabelle nicht wieder
+             auseinanderlaufen können — sechs Zonen, sechs Bosse, an einer Stelle ablesbar. */
+          temper:m.bossZone?('Boss · '+m.bossZone):(m.temper==='—'?'kein Temperament':m.temper),
+          temperStyle:'font-size:10.5px;padding:3px 7px;border-radius:4px;font-family:ui-monospace,monospace;'+
+            (m.bossZone?'background:#4a2020;color:#f0a89f'
+              :m.temper==='—'?'background:#20262e;color:#5f6a76':'background:#2c3540;color:#c9d2dc'),
+          roleColor:RC[m.role]||'#9fb0c0',
+          bodyH:m.bodyH?m.bodyH+' px von '+m.fh:'—',
+          sizeRel:m.group==='resources'?'eingepasst':m.sizeRel.toFixed(2)+'×',
+          anims:m.anims.length?m.anims.join(' · ')
+            :(m.framesUsed>1?m.framesUsed+' Frames'+(m.framesEmpty?' ('+m.framesEmpty+' leer)':''):'ein Bild'),
+          note:m.note||N[m.id]||'',
+          stage:'background:linear-gradient(#587f42,#4a6e37);display:flex;align-items:flex-end;'+
+            'justify-content:center;border-bottom:1px solid #2b323c',
+          ref:e=>{if(e)this.canv[m.id]=e;}
+        }))};
+    });
+    const fighters=S.mobs.filter(m=>m.group!=='resources');
+    const withTemper=S.mobs.filter(m=>m.temper!=='—').length;
+    const noAttack=S.mobs.filter(m=>m.anims.length&&m.anims.indexOf('attack')<0&&m.anims.indexOf('attack2')<0);
+    const hs=fighters.filter(m=>m.bodyH).map(m=>m.bodyH);
+    /* Alle drei Kopfzahlen aus den Daten, keine als Text (V7-S5e). Der Verifier hat drei
+       Behauptungen gefunden, die die Seite selbst widerlegte — auf einer Seite, deren ganzer Zweck
+       ein ehrlicher Bestand ist. Die Spanne stand als Zeichenkette »0,72–1,95×« da, während das
+       Schaf auf derselben Seite 0,34× meldete. Eine Zahl, die nicht aus dem Inhalt kommt, ist
+       geraten — dieselbe Regel wie beim Kachelindex. */
+    const rels=fighters.map(m=>m.sizeRel).filter(v=>v>0);
+    const relSpan=rels.length
+      ? Math.min.apply(null,rels).toFixed(2).replace('.',',')+'–'+
+        Math.max.apply(null,rels).toFixed(2).replace('.',',')+'×'
+      : '—';
+    const repoOnly=S.mobs.filter(m=>m.repoOnly).length;
+    const inCatalog=S.mobs.length-repoOnly;
+    const mk=(id,label)=>({label,on:()=>this.setState({filter:id}),
+      style:'padding:7px 12px;border-radius:6px;font-size:12px;cursor:pointer;border:1px solid '+
+        (S.filter===id?'#47aba9':'#39424f')+';background:'+(S.filter===id?'#47aba9':'#252c36')+
+        ';color:'+(S.filter===id?'#0e2b2b':'#c9d2dc')+(S.filter===id?';font-weight:600':'')});
+    return {
+      stamp:S.mobs.length?S.mobs.length+' Einträge · '+inCatalog+' aus dem Katalog, '+repoOnly+' nur im Repo':'lädt …',
+      animate:S.animate,scaled:S.scaled,groups,
+      filters:[mk('alle','alle'),mk('melee','Nahkampf'),mk('ranged','Fernkampf'),
+        mk('boss','Bosse'),mk('critter','Kreaturen'),mk('worker','Peasant'),
+        mk('resources','Ressourcen'),mk('water','Wasser'),mk('dungeon','Verlies')],
+      facts:[
+        {v:inCatalog+' + '+repoOnly,k:'im Katalog geführt, plus nur im Repo vorhanden — alle Pfade am Bild geprüft'},
+        {v:withTemper+' / 21',k:'Gegner mit Temperament — der Rest fällt im Gehirn auf die Rollenvorgabe zurück'},
+        {v:hs.length?Math.min.apply(null,hs)+'–'+Math.max.apply(null,hs)+' px':'—',k:'gemessene Körperhöhe im Blatt, von der kleinsten bis zur größten'},
+        {v:relSpan,k:'Körperhöhe relativ zum Helden — die eine Stelle, an der Gegnergrößen entschieden werden'}
+      ],
+      footer:'Im Spiel geführt sind bisher nur die Gegner und das Schaf. Der Pawn (das ist der Peasant), '+
+        'die Goblins aus Update 010 und die Ressourcen liegen im Repo, stehen aber noch nicht im Katalog — '+
+        'sie sind hier zum Ansehen geladen, nicht angeschlossen.'+
+        (noAttack.length?' Ohne Angriffsanimation: '+noAttack.map(m=>m.name).join(', ')+
+          ' — die bekommen keine Angriffsrolle, statt eine erfundene Bewegung zu spielen.':''),
+      setAnimate:e=>{this.pxDirty=true;this.setState({animate:e.target.checked});},
+      setScaled:e=>this.setState({scaled:e.target.checked})
+    };
+  }
+}
+
+</script>
+</body>
+</html>

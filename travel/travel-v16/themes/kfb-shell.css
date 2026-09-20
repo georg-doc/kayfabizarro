@@ -1,0 +1,43 @@
+/* ============================================================================
+   kfb-shell.css — die Bühne, EINMAL
+   ----------------------------------------------------------------------------
+   Diese Regeln standen inline in ZWEI Dateien (index.html und
+   KFB Travel v16.dc.html) und waren eine Runde nach dem Anlegen der Kopie
+   bereits uneinig: die Meta-Unterzeile nannte im DC noch L2d als letzten Slice,
+   in index.html schon L3. Gefunden hat es der Verifier.
+
+   Das ist die Fehlerklasse, gegen die dieses Projekt geschrieben ist —
+   Naht 121: „die beste Synchronisation ist die, die es nicht gibt", und
+   Naht 118: eine Beschreibung, die einen Umbau nicht mitbekommt.
+
+   Deshalb: die Regeln hier, beide Fassungen binden sie per <link> ein, und der
+   TEXT der Meta-Zeile kommt aus dem Runner (travel-poc.js, SHELL_META) — nicht
+   aus dem Markup. Damit gibt es nichts mehr zu synchronisieren.
+
+   Wer eine Fassung bewusst anders aussehen lassen will, überschreibt hier
+   NICHTS, sondern setzt eine eigene Regel in seiner Datei UND schreibt dazu,
+   warum — sonst liest der nächste Leser es als Versehen.
+   ============================================================================ */
+
+html, body { margin: 0; padding: 0; width: 100%; height: 100%;
+  background: #9fc7e8; overflow: hidden; overscroll-behavior: none; }
+a { color: #e0a83c; }
+a:hover { color: #fff2c8; }
+
+#tv-hud { position: absolute; inset: 0; z-index: 4; pointer-events: none;
+  font-family: 'Baloo 2', system-ui, sans-serif; color: #fff; }
+
+/* S11 · Rahmen: Wortmarke links, Meta klein rechts. Die Wortmarke ist die Klasse aus
+   themes/kfb-med.css — kein Nachbau. Weil sie über einer bewegten Welt sitzt, bekommt
+   „Kayfa" einen harten Cream-Schatten als Kontrastkante. */
+#tv-frame { position: absolute; inset: 0; z-index: 5; pointer-events: none;
+  display: flex; align-items: flex-start; justify-content: space-between; padding: 16px 18px; }
+#tv-frame .kfb-wordmark { font-size: 27px; text-shadow: 2px 2px 0 var(--kfb-cream); }
+#tv-frame .kfb-wordmark b { box-shadow: 3px 3px 0 rgba(31,26,20,.35); text-shadow: none; }
+
+#tv-meta { text-align: right; font-family: var(--kfb-font-ui); color: var(--kfb-cream);
+  text-shadow: 1px 1px 0 rgba(31,26,20,.75); line-height: 1.5; }
+#tv-meta .t { font-size: 12px; letter-spacing: .16em; text-transform: uppercase; }
+#tv-meta .s { font-size: 10px; letter-spacing: .1em; opacity: .8; }
+
+#tv-stage { position: fixed; inset: 0; background: #9fc7e8; overflow: hidden; }

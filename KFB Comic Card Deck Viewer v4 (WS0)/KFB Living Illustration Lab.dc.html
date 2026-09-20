@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <title>KFB Living Illustration — Lab</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+  <style>
+    html, body { margin: 0; padding: 0; background: #F4EFE6; }
+    body { font-family: 'Archivo', system-ui, sans-serif; color: #26221C; }
+    a { color: #A6512E; text-decoration: none; }
+    a:hover { color: #26221C; text-decoration: underline; }
+    @keyframes kfbPulse { 0%, 100% { opacity: 0.35; } 50% { opacity: 0.9; } }
+  </style>
+  <script src="kfb-viewer.js"></script>
+  <script src="kfb-living.js"></script>
+</helmet>
+
+<div style="min-height: 100vh; background: #F4EFE6; padding: 48px 40px 72px;">
+  <div style="max-width: 1360px; margin: 0 auto;">
+
+    <!-- ================= header ================= -->
+    <header style="display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 16px; margin-bottom: 10px;">
+      <div>
+        <div style="font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: #A6512E; margin-bottom: 10px;">KayfaBizarro · Living Illustration Engine · Exploration 02</div>
+        <h1 style="margin: 0; font-size: 42px; font-weight: 800; letter-spacing: -0.02em; line-height: 1.05;">One card, five ways to breathe</h1>
+      </div>
+      <div style="font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 12px; color: #7B7368; text-align: right; line-height: 1.6;">
+        kfb-living.js v0.2 · canvas 2D + SVG filters · no build · deck &amp; card via Tweaks<br>criterion: <em style="font-style: normal; color: #26221C;">still reads as a printed watercolor card?</em>
+      </div>
+    </header>
+
+    <!-- ================= card meta ================= -->
+    <sc-if value="{{ ready }}" hint-placeholder-val="{{ false }}">
+      <div style="display: flex; flex-wrap: wrap; align-items: baseline; gap: 10px 18px; padding: 16px 20px; background: #FBF8F1; border: 1px solid #E4DCCB; border-radius: 10px; margin-bottom: 28px;">
+        <span style="font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 12px; color: #7B7368;">{{ deckLabel }} · CARD {{ cardNumber }}</span>
+        <span style="font-size: 19px; font-weight: 700;">{{ cardName }}</span>
+        <span style="font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: #FBF8F1; background: #5E8C61; padding: 3px 9px; border-radius: 99px;">mood: {{ mood }}</span>
+        <span style="font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 11px; color: #7B7368; background: #F4EFE6; border: 1px solid #E4DCCB; padding: 3px 9px; border-radius: 99px;">preset: {{ presetName }}</span>
+        <span style="flex-basis: 100%; font-size: 13.5px; color: #7B7368; font-style: italic;">{{ artworkPrompt }}</span>
+      </div>
+    </sc-if>
+    <sc-if value="{{ loading }}" hint-placeholder-val="{{ true }}">
+      <div style="padding: 16px 20px; background: #FBF8F1; border: 1px solid #E4DCCB; border-radius: 10px; margin-bottom: 28px; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 12.5px; color: #7B7368; animation: kfbPulse 1.6s ease-in-out infinite;">{{ statusText }}</div>
+    </sc-if>
+    <sc-if value="{{ failed }}" hint-placeholder-val="{{ false }}">
+      <div style="padding: 16px 20px; background: #FBF8F1; border: 1px solid #A6512E; border-radius: 10px; margin-bottom: 28px; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 12.5px; color: #A6512E;">{{ statusText }}</div>
+    </sc-if>
+
+    <!-- ================= panels ================= -->
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(480px, 1fr)); gap: 26px;">
+
+      <div style="display: flex; flex-direction: column; gap: 10px;">
+        <div style="display: flex; align-items: baseline; gap: 10px;">
+          <span style="font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 11.5px; letter-spacing: 0.1em; font-weight: 600; color: #26221C; background: #E9E2D2; padding: 4px 10px; border-radius: 4px;">STILL</span>
+          <span style="font-size: 13px; color: #7B7368;">reference — the printed card, untouched</span>
+        </div>
+        <div ref="{{ refStill }}" style="aspect-ratio: 745 / 416; background: #EDE6D8; border: 1px solid #E4DCCB; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 14px rgba(38, 34, 28, 0.07);"></div>
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: 10px;">
+        <div style="display: flex; align-items: baseline; gap: 10px;">
+          <span style="font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 11.5px; letter-spacing: 0.1em; font-weight: 600; color: #FBF8F1; background: #A6512E; padding: 4px 10px; border-radius: 4px;">A · ATMOSPHERE</span>
+          <span style="font-size: 13px; color: #7B7368;">floating dust + drifting mist, screen/soft-light blended</span>
+        </div>
+        <div ref="{{ refAtmo }}" style="aspect-ratio: 745 / 416; background: #EDE6D8; border: 1px solid #E4DCCB; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 14px rgba(38, 34, 28, 0.07);"></div>
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: 10px;">
+        <div style="display: flex; align-items: baseline; gap: 10px;">
+          <span style="font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 11.5px; letter-spacing: 0.1em; font-weight: 600; color: #FBF8F1; background: #A6512E; padding: 4px 10px; border-radius: 4px;">B · DEPTH</span>
+          <span style="font-size: 13px; color: #7B7368;">luminance pseudo-depth, auto-orbit — <em>move your pointer</em></span>
+        </div>
+        <div ref="{{ refDepth }}" style="aspect-ratio: 745 / 416; background: #EDE6D8; border: 1px solid #E4DCCB; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 14px rgba(38, 34, 28, 0.07); cursor: crosshair;"></div>
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: 10px;">
+        <div style="display: flex; align-items: baseline; gap: 10px;">
+          <span style="font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 11.5px; letter-spacing: 0.1em; font-weight: 600; color: #FBF8F1; background: #A6512E; padding: 4px 10px; border-radius: 4px;">C · SHIMMER</span>
+          <span style="font-size: 13px; color: #7B7368;">iridescent hue drift + sheen sweep, masked to highlights</span>
+        </div>
+        <div ref="{{ refShimmer }}" style="aspect-ratio: 745 / 416; background: #EDE6D8; border: 1px solid #E4DCCB; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 14px rgba(38, 34, 28, 0.07);"></div>
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: 10px;">
+        <div style="display: flex; align-items: baseline; gap: 10px;">
+          <span style="font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 11.5px; letter-spacing: 0.1em; font-weight: 600; color: #FBF8F1; background: #5E8C61; padding: 4px 10px; border-radius: 4px;">D · BOIL</span>
+          <span style="font-size: 13px; color: #7B7368;">boiling line — feTurbulence displacement, stepped at ~7fps</span>
+        </div>
+        <div ref="{{ refBoil }}" style="aspect-ratio: 745 / 416; background: #EDE6D8; border: 1px solid #E4DCCB; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 14px rgba(38, 34, 28, 0.07);"></div>
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: 10px;">
+        <div style="display: flex; align-items: baseline; gap: 10px;">
+          <span style="font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 11.5px; letter-spacing: 0.1em; font-weight: 600; color: #FBF8F1; background: #5E8C61; padding: 4px 10px; border-radius: 4px;">E · KEN BURNS</span>
+          <span style="font-size: 13px; color: #7B7368;">slow zoom + pan of the whole card — chapter/cover use</span>
+        </div>
+        <div ref="{{ refKen }}" style="aspect-ratio: 745 / 416; background: #EDE6D8; border: 1px solid #E4DCCB; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 14px rgba(38, 34, 28, 0.07);"></div>
+      </div>
+
+    </div>
+
+    <sc-if value="{{ reducedMotion }}" hint-placeholder-val="{{ false }}">
+      <div style="margin-top: 18px; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 12px; color: #5E8C61;">prefers-reduced-motion is active — all treatments degraded to stills, as designed.</div>
+    </sc-if>
+
+    <!-- ================= field notes ================= -->
+    <section style="margin-top: 56px;">
+      <h2 style="margin: 0 0 6px; font-size: 24px; font-weight: 800; letter-spacing: -0.01em;">Field notes</h2>
+      <p style="margin: 0 0 22px; font-size: 14px; color: #7B7368; max-width: 720px;">Each treatment judged against the single criterion from the brief: does it still read as a printed watercolor card? All are auto-derived from the flat card bitmap — no hand-authored masks, depth maps or layers. Round 2: intensities boosted well past round 1, D + E added from the Perplexity notes, and deck + card are switchable via Tweaks — test against the dirtier decks, not just glossy Utopia.</p>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 18px;">
+        <div style="background: #FBF8F1; border: 1px solid #E4DCCB; border-radius: 10px; padding: 20px 22px;">
+          <div style="font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 11.5px; letter-spacing: 0.1em; color: #A6512E; margin-bottom: 8px;">A · ATMOSPHERE — <strong>passes</strong></div>
+          <p style="margin: 0; font-size: 14px; line-height: 1.55;">Safest of the three. Dust and mist sit <em>on top of</em> the paint, so the illustration itself is never resampled — printed quality is preserved by construction. Risk is kitsch, not uncanniness: too many particles and it becomes a snow globe. Sparse is right. Works on any card regardless of subject.</p>
+        </div>
+        <div style="background: #FBF8F1; border: 1px solid #E4DCCB; border-radius: 10px; padding: 20px 22px;">
+          <div style="font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 11.5px; letter-spacing: 0.1em; color: #A6512E; margin-bottom: 8px;">B · DEPTH — <strong>passes with a fence</strong></div>
+          <p style="margin: 0; font-size: 14px; line-height: 1.55;">Most alive under the pointer, and the most dangerous: the dark-is-near luminance heuristic is wrong on some compositions, and past ~6px of drift the feathered layer edge reveals itself as a halo — the exact "puppet" failure the brief bans. At the amplitudes used here it reads as the card sitting in shallow air. A real monocular depth model (offline, per deck) would remove the fence.</p>
+        </div>
+        <div style="background: #FBF8F1; border: 1px solid #E4DCCB; border-radius: 10px; padding: 20px 22px;">
+          <div style="font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 11.5px; letter-spacing: 0.1em; color: #A6512E; margin-bottom: 8px;">C · SHIMMER — <strong>passes, best mood fit</strong></div>
+          <p style="margin: 0; font-size: 14px; line-height: 1.55;">Strongest where a bright focal region exists (Glossy Horizon's dome): the highlight mask finds it automatically and the iridescent wash lands exactly there. On cards without one it degrades to almost nothing — correct behavior, but it means C is subject-dependent, not universal.</p>
+        </div>
+        <div style="background: #FBF8F1; border: 1px solid #E4DCCB; border-radius: 10px; padding: 20px 22px;">
+          <div style="font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 11.5px; letter-spacing: 0.1em; color: #5E8C61; margin-bottom: 8px;">D · BOIL — <strong>new · the KFB-native one</strong></div>
+          <p style="margin: 0; font-size: 14px; line-height: 1.55;">Squigglevision: three feTurbulence/feDisplacementMap filters with different seeds, swapped stepped (~7fps) so the ink line "boils" like hand-drawn animation. Uniquely suited to the punky, dirty KFB line work — it makes the drawing look <em>drawn</em>, not processed. Nearly free at runtime (one filter swap per step, no per-frame canvas redraw). Displacement is the whole image, not just outlines — for outline-only wobble the line art would need separation (Parking Lot).</p>
+        </div>
+        <div style="background: #FBF8F1; border: 1px solid #E4DCCB; border-radius: 10px; padding: 20px 22px;">
+          <div style="font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 11.5px; letter-spacing: 0.1em; color: #5E8C61; margin-bottom: 8px;">E · KEN BURNS — <strong>new · chapter openers only</strong></div>
+          <p style="margin: 0; font-size: 14px; line-height: 1.55;">Slow zoom + pan of the whole card. Deliberately breaks the "stable frame" rule from the brief — the frame itself moves — so it is wrong for cards in play, right for covers, chapter starts and idle/attract screens. Cheap and reliable everywhere.</p>
+        </div>
+      </div>
+
+      <div style="margin-top: 26px; display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 18px;">
+        <div style="background: #26221C; color: #F4EFE6; border-radius: 10px; padding: 22px 24px;">
+          <div style="font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 11.5px; letter-spacing: 0.1em; color: #E0A882; margin-bottom: 10px;">RECOMMENDATION</div>
+          <p style="margin: 0 0 10px; font-size: 14px; line-height: 1.6;">Revised after round 2: <strong>D (boil) + A (dust) layered</strong> is the KFB-native default — the boiling line matches the punky hand-drawn register of the normal decks far better than shimmer, which stays a mood accent for glossy subjects. Keep B behind the pointer only; E for covers and chapter starts.</p>
+          <p style="margin: 0; font-size: 13px; line-height: 1.6; color: #B8AE9E;">Substrate: canvas 2D + SVG filters is sufficient — five panels animate simultaneously without WebGL; the boil treatment costs almost nothing. Revisit WebGL only if flow-maps (water, fabric) become a requirement.</p>
+        </div>
+        <div style="background: #FBF8F1; border: 1px solid #E4DCCB; border-radius: 10px; padding: 22px 24px;">
+          <div style="font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 11.5px; letter-spacing: 0.1em; color: #A6512E; margin-bottom: 10px;">INTEGRATION SEAM</div>
+          <p style="margin: 0; font-size: 14px; line-height: 1.6;">Engine consumes exactly what <span style="font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 12.5px;">getCardCanvas()</span> returns; <span style="font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 12.5px;">Mood</span> is parsed from the existing <span style="font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 12.5px;">artworkPrompt</span>. Proposed: <span style="font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 12.5px;">mount(el, { living: true })</span> — a third render mode beside Cards/Pages; the viewer hands the cropped region to <span style="font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 12.5px;">KFBLiving.attach()</span> and everything else (slicing, i18n, themes, prefs) stays untouched. Full write-up: <a href="docs/LIVING_ILLUSTRATION_EVAL.md">docs/LIVING_ILLUSTRATION_EVAL.md</a>.</p>
+        </div>
+      </div>
+    </section>
+
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{
+  &quot;$preview&quot;: { &quot;width&quot;: 1440, &quot;height&quot;: 2100 },
+  &quot;deck&quot;: { &quot;editor&quot;: &quot;enum&quot;, &quot;options&quot;: [&quot;A · Utopia&quot;, &quot;B · Dystopia&quot;, &quot;C · Protopia&quot;], &quot;default&quot;: &quot;B · Dystopia&quot;, &quot;section&quot;: &quot;Card&quot;, &quot;tsType&quot;: &quot;string&quot; },
+  &quot;card&quot;: { &quot;editor&quot;: &quot;int&quot;, &quot;default&quot;: 1, &quot;min&quot;: 1, &quot;max&quot;: 60, &quot;step&quot;: 1, &quot;section&quot;: &quot;Card&quot;, &quot;tsType&quot;: &quot;number&quot; },
+  &quot;intensity&quot;: { &quot;editor&quot;: &quot;range&quot;, &quot;default&quot;: 150, &quot;min&quot;: 0, &quot;max&quot;: 250, &quot;step&quot;: 5, &quot;unit&quot;: &quot;%&quot;, &quot;section&quot;: &quot;Motion&quot;, &quot;tsType&quot;: &quot;number&quot; },
+  &quot;speed&quot;: { &quot;editor&quot;: &quot;range&quot;, &quot;default&quot;: 200, &quot;min&quot;: 25, &quot;max&quot;: 200, &quot;step&quot;: 5, &quot;unit&quot;: &quot;%&quot;, &quot;section&quot;: &quot;Motion&quot;, &quot;tsType&quot;: &quot;number&quot; },
+  &quot;paused&quot;: { &quot;editor&quot;: &quot;boolean&quot;, &quot;default&quot;: false, &quot;section&quot;: &quot;Motion&quot;, &quot;tsType&quot;: &quot;boolean&quot; }
+}">
+class Component extends DCLogic {
+  state = {
+    status: 'loading',           /* loading | ready | failed */
+    statusText: 'Loading Deck A UTOPIA — pdf.js + slicing card 1 "The Glossy Horizon"…',
+    meta: null,
+    mood: null,
+    presetName: null,
+    reducedMotion: false
+  };
+
+  hosts = {};
+  handles = [];
+  card = null;
+  attached = false;
+
+  DECKS = {
+    'A · Utopia':   { pdf: 'pdfs/deck_a_utopia.pdf',   json: 'decks/deck_a_utopia.json',   label: 'DECK A · UTOPIA' },
+    'B · Dystopia': { pdf: 'pdfs/deck_b_dystopia.pdf', json: 'decks/deck_b_dystopia.json', label: 'DECK B · DYSTOPIA' },
+    'C · Protopia': { pdf: 'pdfs/deck_c_protopia.pdf', json: 'decks/deck_c_protopia.json', label: 'DECK C · PROTOPIA' }
+  };
+
+  makeRef(name) {
+    if (!this._refs) this._refs = {};
+    if (!this._refs[name]) {
+      this._refs[name] = (el) => {
+        this.hosts[name] = el;
+        this.tryAttach();
+      };
+    }
+    return this._refs[name];
+  }
+
+  componentDidMount() {
+    const poll = () => {
+      if (window.KayfabizarroViewer && window.KFBLiving) this.loadCard();
+      else setTimeout(poll, 60);
+    };
+    poll();
+  }
+
+  loadCard() {
+    const deckKey = this.DECKS[this.props.deck] ? this.props.deck : 'A · Utopia';
+    const spec = this.DECKS[deckKey];
+    const cardNo = Math.max(1, Math.round(this.props.card ?? 1));
+    this._loadToken = (this._loadToken || 0) + 1;
+    const token = this._loadToken;
+    this.setState({ status: 'loading', statusText: 'Loading ' + spec.label + ' — pdf.js + slicing card ' + cardNo + '…' });
+
+    const deckP = (this._deckKey === deckKey && this.deck)
+      ? Promise.resolve(this.deck)
+      : KayfabizarroViewer.loadDeck({ source: { url: spec.pdf }, deckData: { url: spec.json } }).then((d) => {
+          if (this.deck) this.deck.destroy();
+          this.deck = d;
+          this._deckKey = deckKey;
+          return d;
+        });
+
+    deckP.then((deck) => {
+      const idx = Math.min(cardNo, deck.cardCount || cardNo) - 1;
+      return deck.getCardCanvas(idx, 1600).then((canvas) => {
+        if (token !== this._loadToken) return;
+        this.card = canvas;
+        const meta = deck.getCardData(idx) || {};
+        const mood = KFBLiving.parseMood(meta.artworkPrompt) || 'unknown';
+        this.setState({
+          status: 'ready',
+          deckLabel: spec.label,
+          meta: meta,
+          mood: mood,
+          presetName: KFBLiving.presets.filter(p => p.match.test(mood))[0].name
+        });
+        this.reattach();
+      });
+    }).catch((err) => {
+      if (token !== this._loadToken) return;
+      this.setState({ status: 'failed', statusText: 'Deck load failed: ' + (err && err.message || err) + ' — pdf.js needs network (cdnjs).' });
+    });
+  }
+
+  reattach() {
+    this.handles.forEach(h => h.destroy());
+    this.handles = [];
+    this.attached = false;
+    this.tryAttach();
+  }
+
+  tryAttach() {
+    if (this.attached || !this.card) return;
+    const H = this.hosts;
+    if (!H.still || !H.atmo || !H.depth || !H.shimmer || !H.boil || !H.ken) return;
+    this.attached = true;
+    const mood = this.state.mood;
+    const common = {
+      card: this.card,
+      mood: mood,
+      intensity: (this.props.intensity ?? 150) / 100,
+      speed: (this.props.speed ?? 200) / 100
+    };
+    this.handles = [
+      KFBLiving.attach(H.still, Object.assign({}, common, { treatment: 'still' })),
+      KFBLiving.attach(H.atmo, Object.assign({}, common, { treatment: 'atmosphere' })),
+      KFBLiving.attach(H.depth, Object.assign({}, common, { treatment: 'depth' })),
+      KFBLiving.attach(H.shimmer, Object.assign({}, common, { treatment: 'shimmer' })),
+      KFBLiving.attach(H.boil, Object.assign({}, common, { treatment: 'boil' })),
+      KFBLiving.attach(H.ken, Object.assign({}, common, { treatment: 'kenburns' }))
+    ];
+    if (this.props.paused) this.handles.forEach(h => h.pause());
+    this.setState({ reducedMotion: this.handles.some(h => h.reducedMotion) });
+  }
+
+  componentDidUpdate(prevProps) {
+    if (prevProps.deck !== this.props.deck || prevProps.card !== this.props.card) {
+      if (window.KayfabizarroViewer && window.KFBLiving) this.loadCard();
+      return;
+    }
+    if (!this.handles.length) return;
+    if (prevProps.intensity !== this.props.intensity) {
+      this.handles.forEach(h => h.setIntensity((this.props.intensity ?? 150) / 100));
+    }
+    if (prevProps.speed !== this.props.speed) {
+      this.handles.forEach(h => h.setSpeed((this.props.speed ?? 200) / 100));
+    }
+    if (prevProps.paused !== this.props.paused) {
+      this.handles.forEach(h => this.props.paused ? h.pause() : h.play());
+    }
+  }
+
+  componentWillUnmount() {
+    this.handles.forEach(h => h.destroy());
+    if (this.deck) this.deck.destroy();
+  }
+
+  renderVals() {
+    const s = this.state;
+    const m = s.meta || {};
+    return {
+      loading: s.status === 'loading',
+      ready: s.status === 'ready',
+      failed: s.status === 'failed',
+      statusText: s.statusText,
+      cardNumber: m.cardNumber,
+      cardName: m.cardName,
+      artworkPrompt: m.artworkPrompt,
+      mood: s.mood,
+      presetName: s.presetName,
+      deckLabel: s.deckLabel,
+      reducedMotion: s.reducedMotion,
+      refStill: this.makeRef('still'),
+      refAtmo: this.makeRef('atmo'),
+      refDepth: this.makeRef('depth'),
+      refShimmer: this.makeRef('shimmer'),
+      refBoil: this.makeRef('boil'),
+      refKen: this.makeRef('ken')
+    };
+  }
+}
+</script>
+</body>
+</html>

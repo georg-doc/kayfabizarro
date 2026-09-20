@@ -1,0 +1,46 @@
+{
+  "schema":"kfb.landmark-pilot.reference-notes/0.1",
+  "date":"2026-09-18",
+  "status":"EXPERIMENTAL_DONOR_NOT_OSM_BOUND",
+  "authorship":"Hand-authored procedural geometry; no external model download and no img2threejs forge run.",
+  "units":"metre",
+  "osmBinding":null,
+  "collision":"NOT_PROVIDED",
+  "cityIntegration":"NOT_RUN",
+  "priorModels":"Eiffel, Giza and Stonehenge imported unchanged from pilot-01/geometry.mjs, blob 39b2e511e58e270499391027c267dab0e4a1f395. Dom v0.2 remains unchanged in its separate viewer.",
+  "models":{
+    "pentagon":{
+      "referenceURLs":[
+        "https://www.guinnessworldrecords.com/world-records/69347-largest-administrative-building",
+        "https://www.history.navy.mil/research/library/online-reading-room/title-list-alphabetically/p/pentagon-9-11-footnotes.html",
+        "https://www.defense.gov/News/Feature-Stories/story/Article/1867440/pentagon-history-7-big-things-to-know/"
+      ],
+      "referenceDimension":{"outerSideM":281,"precision":"rounded public reference, not surveyed"},
+      "nominalAuthoringParameters":{"roofHeightM":23.5,"courtApothemM":75,"ringWidthM":15,"radialConnectorCount":10},
+      "assumptions":["regular pentagonal rings", "equal ring widths and generated gaps", "nominal roof height is not independently surveyed", "roof profiles, connector axes and window rhythm simplified", "single portico motif is compositional, not an operational access map", "open court has no exported terrain plate"],
+      "scope":"Exterior massing only. No rooms, security installations, parking or access-control layout."
+    },
+    "spasskaya":{
+      "referenceURLs":["https://kremlin-architectural-ensemble.kreml.ru/en-Us/architecture/view/spasskaya-bashnya-moskovskogo-kremlya/"],
+      "referenceDimension":{"totalHeightM":71,"includes":"star","source":"Moscow Kremlin Museums"},
+      "observedFeatures":["red masonry", "contrasting light trim", "four clock faces", "green tent roof", "star", "gateway"],
+      "nominalAuthoringParameters":{"bodyWidthM":17.8,"clockDiameterM":6.12,"gatewayWidthM":5.6},
+      "assumptions":["intermediate storey heights and widths are approximations", "clock dial diameter is a nominal modelling value in this slice", "round segmented arch and simplified gables", "open belfry geometry", "static clock hands", "local front is +Z, not a verified geographic bearing"]
+    },
+    "kremlin-wall":{
+      "referenceURLs":["https://kremlin-architectural-ensemble.kreml.ru/en-Us/architecture/view/"],
+      "scope":"Spasskaya study with two straight wall modules. NOT the entire Moscow Kremlin, NOT Saint Basil's Cathedral, NOT a surveyed wall alignment.",
+      "nominalAuthoringParameters":{"wallHeightM":11,"wallThicknessM":4,"totalSpanM":116.2},
+      "assumptions":["symmetric schematic wall placement", "simplified notched battlements", "flat ground", "the same tower geometry as the standalone model"]
+    }
+  },
+  "reuse":{
+    "palette":"tools/osm-city-lab/styles/kfb-city-v0.json through the existing materialPalette/pickStable functions",
+    "runtimeFactory":"pilot-01/three-adapter.mjs; host supplies THREE",
+    "exporter":"pilot-01/glb.mjs; same vertex data; no viewer floor/camera",
+    "viewer":"generated from unchanged pilot-01/viewer.mjs using tests/build_landmarks_p02.py",
+    "placementContract":"tools/osm-city-lab/docs/LANDMARK_OVERRIDES.md, blob f9aea1cffb447aa6ede45d47452de4b467be76a2"
+  },
+  "deferred":["OSM identity and footprint fit", "consumer loading/fallback acceptance", "weathering", "paper/fabric/decal textures", "automatic massing deformation"],
+  "dropboxReview":"Read legacy globe-landmarks.js from Travel Globe v13-3 export. It is terrain/prop-placement and colour-context reference, not a new canonical source or a ready Pentagon/Kremlin asset. No Dropbox writes."
+}

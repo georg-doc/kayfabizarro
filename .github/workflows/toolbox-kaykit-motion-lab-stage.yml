@@ -1,0 +1,77 @@
+name: ToolBox KayKit Motion Lab Stage proof
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'kfb-hub/stage/toolbox/kaykit-motion-lab-v1/**'
+      - '.github/workflows/toolbox-kaykit-motion-lab-stage.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  local-proof:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout: |
+            kfb-hub/stage/toolbox/kaykit-motion-lab-v1
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Syntax
+        run: |
+          node --check kfb-hub/stage/toolbox/kaykit-motion-lab-v1/lab.mjs
+          node --check kfb-hub/stage/toolbox/kaykit-motion-lab-v1/proof.mjs
+      - name: Install Playwright Chromium
+        run: |
+          npm install --no-save playwright@1.51.1
+          npx playwright install --with-deps chromium
+      - name: Start local Stage mirror
+        run: |
+          python3 -m http.server 4173 --bind 127.0.0.1 > /tmp/kfb-motion-stage-http.log 2>&1 &
+          echo $! > /tmp/kfb-motion-stage-http.pid
+          for i in {1..30}; do
+            if curl -fsS http://127.0.0.1:4173/kfb-hub/stage/toolbox/kaykit-motion-lab-v1/ >/dev/null; then exit 0; fi
+            sleep 1
+          done
+          cat /tmp/kfb-motion-stage-http.log
+          exit 1
+      - name: Local exact-mirror proof
+        run: |
+          KML_BASE_URL=http://127.0.0.1:4173/kfb-hub/stage/toolbox/kaykit-motion-lab-v1/           KML_PROOF_DIR=toolbox-motion-lab-stage-local           node kfb-hub/stage/toolbox/kaykit-motion-lab-v1/proof.mjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: toolbox-kaykit-motion-lab-stage-local
+          path: toolbox-motion-lab-stage-local
+          retention-days: 14
+
+  public-proof:
+    needs: local-proof
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout: |
+            kfb-hub/stage/toolbox/kaykit-motion-lab-v1
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install Playwright Chromium
+        run: |
+          npm install --no-save playwright@1.51.1
+          npx playwright install --with-deps chromium
+      - name: Public Cloudflare proof
+        run: |
+          KML_BASE_URL=https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/kaykit-motion-lab-v1/           KML_PUBLIC=1           KML_SOURCE_HEAD=3ab2a439b013b816e843ea303e7015a26ee2aff8           KML_PROOF_DIR=toolbox-motion-lab-stage-public           node kfb-hub/stage/toolbox/kaykit-motion-lab-v1/proof.mjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: toolbox-kaykit-motion-lab-stage-public
+          path: toolbox-motion-lab-stage-public
+          retention-days: 14

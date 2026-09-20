@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>KFB Travel v16 — Landschaft</title>
+<!--
+  ============================================================================
+  index.html — KFB Travel v16 · statische Fassung für GitHub Pages
+  ----------------------------------------------------------------------------
+  **Warum diese Datei existiert, und warum sie KEIN Standalone-Bündel ist.**
+  Der Standalone-Bundler des Design-Werkzeugs verliert bei jedem Einstiegs-Modul
+  die erste relative Abhängigkeit (Naht 101 im CHANGELOG_v16 — sieben Umgehungen
+  gemessen, alle gescheitert, weil in ES-Modulen ein nicht auflösbarer
+  Spezifizierer das ganze Modul abbricht).
+
+  Für GitHub Pages braucht es ihn aber gar nicht: ein statischer Server liefert
+  `terrain-v16/*.js` als ES-Module aus, und der Browser löst die Importe selbst
+  auf. **Für Performance-Messung ist das sogar die richtige Fassung** — getrennte
+  Dateien zeigen echte Ladezeiten, Cache-Treffer und die Kosten je Modul; ein
+  600-kB-Blob verwischt beides.
+
+  Was zum Betrieb dazugehört (relativ zu dieser Datei):
+    terrain-v16/       — 57 Module + edge3.jpg + 4 JSON
+    themes/kfb-med.css — Wortmarke und Panel-Typografie
+    asset-repo.json    — Index für die Kenney-Props (RAW-URLs, L3)
+
+  **Was NICHT hierher gehört:** GLB-Modelle und Texturen. Die kommen zur Laufzeit
+  über raw.githubusercontent.com (Workspace-Regel: nichts Schweres ins Repo).
+  Wer offline testen will, muss sie spiegeln — das ist Absicht, nicht Versäumnis.
+  ============================================================================
+-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
+<link href="https://fonts.googleapis.com/css2?family=Special+Elite&amp;family=Irish+Grover&amp;family=Baloo+2:wght@600;800&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="./themes/kfb-med.css">
+<link rel="stylesheet" href="./themes/kfb-shell.css">
+<style>
+  /* Nur was DIESER Fassung gehört. Die gemeinsame Bühne steht in themes/kfb-shell.css —
+     kopieren wäre eine zweite Wahrheit (siehe Kopf jener Datei). */
+  #tv-full { position: absolute; right: 14px; bottom: 12px; z-index: 6;
+    font-family: var(--kfb-font-ui, monospace); font-size: 10px; letter-spacing: .12em;
+    text-transform: uppercase; color: var(--kfb-cream, #efe6d0);
+    background: rgba(31,26,20,.55); border: 1px solid rgba(239,230,208,.35);
+    padding: 6px 10px; border-radius: 3px; cursor: pointer; }
+  #tv-full:hover { background: rgba(31,26,20,.8); }
+  #tv-boot { position: absolute; inset: 0; z-index: 7; display: flex; align-items: center; justify-content: center;
+    background: #9fc7e8; color: #1f1a14; font-family: var(--kfb-font-ui, monospace);
+    font-size: 12px; letter-spacing: .14em; text-transform: uppercase; }
+</style>
+<script type="importmap">
+{ "imports": {
+  "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+  "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
+}}
+</script>
+<script>
+// Fehler-Horcher VOR dem Modul. Grund: ein `SCRIPT failed to load:` ohne Namen verschluckt jeden
+// künftigen echten Ladefehler — hier wird der Verursacher eingesammelt und benannt.
+window.__bootErrors = [];
+window.addEventListener('error', function (e) {
+  var t = e && e.target;
+  if (!t || t === window) return;
+  var rec = { tag: t.tagName || String(t), src: t.src || t.href || '(leer)',
+              type: t.type || '', when: Math.round(performance.now()) + ' ms' };
+  window.__bootErrors.push(rec);
+  console.info('[boot-error]', rec.tag, rec.src, rec);
+}, true);
+</script>
+</head>
+<body>
+<div id="tv-stage">
+  <div id="tv-hud"></div>
+  <div id="tv-frame">
+    <div class="kfb-wordmark">Kayfa<b>Bizarro</b></div>
+    <!-- Leer: der Runner schreibt Titel und Unterzeile aus SHELL_META (travel-poc.js).
+         Hier einen Text hinzuschreiben hieße, ihn bei jedem Slice an zwei Orten zu pflegen —
+         genau das ist einmal auseinandergelaufen. -->
+    <div id="tv-meta"></div>
+  </div>
+  <button id="tv-full" type="button">Vollbild</button>
+  <div id="tv-boot">lädt …</div>
+</div>
+<script type="module" src="./terrain-v16/travel-poc.js"></script>
+<script>
+(function () {
+  var btn = document.getElementById('tv-full');
+  var stage = document.getElementById('tv-stage');
+  btn.addEventListener('click', function () {
+    if (document.fullscreenElement) { document.exitFullscreen(); return; }
+    // Das ganze Dokument, nicht die Bühne: das Panel (Tab) und die Meldungen hängen an `body`,
+    // und ein Vollbild auf `#tv-stage` würde sie abschneiden.
+    (document.documentElement.requestFullscreen || function () {}).call(document.documentElement);
+  });
+  document.addEventListener('fullscreenchange', function () {
+    btn.textContent = document.fullscreenElement ? 'Vollbild aus' : 'Vollbild';
+  });
+  // Der Ladeschirm geht, sobald der Runner sein Handle gesetzt hat — nicht nach einer festen Zeit.
+  // Eine Zeitschaltung würde bei langsamer Verbindung ein leeres Bild freigeben und behaupten,
+  // es sei fertig.
+  var boot = document.getElementById('tv-boot'), t0 = performance.now();
+  (function wait() {
+    if (window.__travelPOC) {
+      boot.textContent = 'bereit in ' + Math.round(performance.now() - t0) + ' ms';
+      setTimeout(function () { boot.remove(); }, 240);
+      return;
+    }
+    if (performance.now() - t0 > 20000) { boot.textContent = 'Start fehlgeschlagen — Konsole prüfen'; return; }
+    requestAnimationFrame(wait);
+  })();
+})();
+</script>
+</body>
+</html>

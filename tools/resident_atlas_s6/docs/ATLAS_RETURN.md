@@ -1,0 +1,230 @@
+# KFB Town Resident Atlas · RETURN
+
+**Stand:** 2026-09-17 · Sprint S32 · **21 Residents**, drei Rig-Klassen (Rig_Medium, Rig_Large, Rig_Legacy), zwei Farbvarianten
+
+**Nächste Scheiben und ihre Briefings:** [docs/ATLAS_NEXT_SLICES.md](ATLAS_NEXT_SLICES.md)
+
+Aktuelle Datei: `KFB_Resident_Atlas_S6.html`.
+
+## Statusklassen
+
+| Klasse | Stand |
+|---|---|
+| DECISION | Atlas wird als Fortsetzung der Kit-Lab-Reihe gebaut: **ein** geteilter Viewer (`lib/atlas.js`), datengetriebene Resident-Recipes (`data/cast.js`), keine handgeschriebene Three.js-App pro Resident. |
+| DECISION | Welle 1 startet mit **Goth Girl** und **Clown**, nicht mit Caveman. Grund: nur für diese beiden liegen exakte, belegte Asset-Pfade vor (Elisa-Handoff `kfb.asset-handoff.v1` @ `891eadf0`). Caveman/Orc Brute hätten erfundene Pfade bedeutet — Briefing §12.2 verbietet das. |
+| IMPLEMENTATION | `KFB_Resident_Atlas_S5.html`, `lib/atlas.js`, `data/cast.js`, `docs/handoff-models.json`. |
+| TESTED RESULT | Browser-QA beide Residents + Ensemble: 26 Objekte, alle Pfade auflösbar, keine 404/CORS-Fehler, Konsole ohne unerklärte Meldungen. Pose-Bindung 69/69 Tracks. Bodenkontakt geprüft (Aktor min.y = 0, Clown auf Podest gestapelt, Requisiten auf gemessener Podesthöhe). |
+| PUBLIC DEPLOYMENT | **offen** — noch kein Commit im Repo, kein `pages.dev`-Pfad verifiziert. |
+| GEORG ACCEPTANCE | **offen** — Komposition beider Vignetten zur Abnahme. |
+| DECISION | Fehlpositionierung wird **nicht** per Augenmaß korrigiert, sondern zweistufig: (1) messbare Regeln im Recipe (`sitOn` = Bone gegen gemessene Sitzfläche, `on` = Stapel, `hand` = Bone-Slot), (2) alles, was keine Regel hat, per Anfasser im Studio — gesammelt, exportiert, von Hand eingepflegt. Kein Studio-Griff schreibt automatisch in `data/cast.js`. |
+| TESTED RESULT | S6 im Browser: Goth Girl sitzt am Hüft-Bone ausgerichtet und winkt aus geschichteten Clips; Toy Soldier 7 Objekte mit 4,8-s-Enthüllung über Zeitleiste geprüft; Ensemble 33 Objekte / 3 Residents; Anfasser und Bone-Drehring greifen, Korrekturen erscheinen in der Sammelliste. |
+| DECISION | Griffausrichtung wird als **Weltrichtung** deklariert (`hand.aim`), nicht als Euler-Winkel. Grund: Hand-Slot-Bones sind nicht achsenparallel, und eine gerechnete Ausrichtung bleibt bei Posenwechsel richtig. |
+| BLOCKER | „Farmer fährt Traktor" ist mit dem einzigen verfügbaren Traktor nicht darstellbar (geschlossene Kenney-Kabine, kein Series-6-Fahrzeug). Drei Optionen zur Entscheidung, siehe OPEN 7. |
+| DECISION (Georg, S8) | Traktor gestrichen — Farmers-Szene trägt sich über KayKit-Assets allein. Fremdpacks bleiben grundsätzlich erlaubt, wenn sie ausgewiesen sind; aktuell nutzt sie kein Resident. Farmer_B arbeitet mit dem Digging-Clip. |
+| TESTED RESULT (S8) | Sechs Resident-Seiten im Browser geprüft, Ensemble 57 Objekte / 6 Residents / Breite 47,0. Alle Pfade auflösbar, keine 404. Caveman-Sitzhaltung über Bone-Höhen verifiziert, nicht nach Augenschein. |
+| FINDING (korrigiert S10) | Der Kollaps unter Rig_Medium lag an der falschen RIG-FAMILIE, nicht an der Pose-Kompatibilität generell. Black Knight ist Rig_LARGE (bestätigt: gleiche Klasse wie Orc Brute, Demon Lord) — `Rig_Large_CombatMelee` bindet UND deformiert korrekt. `actor.manualPose` bleibt als Escape-Hatch im Code, wird für Black Knight aber nicht mehr gebraucht. Bleibender Lehrsatz: identische Bone-NAMEN garantieren keine gemeinsame Rig-Familie. |
+| FINDING | Box3 ist bei SkinnedMesh in JEDER Pose unzuverlässig (nicht nur bei Skinning-Deformation während der Animation) — sie liest die rohe Vertex-Geometrie, nie die Bone-Transformation. Escape-Hatch: `keyArt.manualCamera` (feste Kamera statt Auto-Fit). |
+| FINDING (S18) | Hand-Requisiten brauchen KEINE Ausrichtung. `handslot`-Bones sind authored Befestigungspunkte — Identitäts-Transform sitzt korrekt, in jeder Pose. Das `aim`/`roll`/`grip`-System war ein Eigengoal und ist aus allen 15 Befestigungen entfernt. Regel: erst Identität, Extra-Drehung nur wo sichtbar nötig. |
+| FINDING (S24) | Identität kann formal richtig und im Bild falsch sein. Das Witch-Pilzkörbchen saß korrekt im `handslot.l` — und hing ihr vor dem Gesicht, weil sein Pivot am Korbboden sitzt (Aufbau nach oben) und der Bone unter `Holding_B` auf Kinnhöhe liegt. Korrektur war ein Rollenwechsel (Requisite abgesetzt), kein Dreh- oder Push-Wert. Regel-Ergänzung: **Pivotlage × Bone-Höhe × Pose** entscheiden, nicht die Attachment-Mechanik allein. |
+| FINDING (S24) | Ein 404 im lokalen `media/`-Ordner beweist nicht, dass ein Asset fehlt: `loadAsset()` lädt über `raw.githubusercontent.com` am gepinnten Commit. Vor „Datei fehlt" den Ladeweg lesen. |
+| TESTED RESULT (S24) | Orc Brute 10 Objekte, Monstrosity 5 Objekte, beide ohne Bodendurchstich und ohne Gesichtskontakt (an der gebauten Szene nachgemessen, nicht am Screenshot geschätzt). Ensemble 106 Objekte / 15 Residents / Breite 103,65 — komprimiert 67,94. |
+| FINDING (S25) | **`*_Large` ist die Rig-Größenklasse, keine Deko-Variante.** Rig_Large ist gemessen das Doppelte von Rig_Medium (Handabstand 2,352/0,849, Kopf-Bone 3,116/1,228), und jedes Waffenpaar im Pack ist exakt 2× — über sechs Paare geprüft. Der Atlas hatte die Zuordnung invertiert: Large-Residents trugen die Medium-Datei, die Large-Variante lag „zum Vergleich“ daneben. Regel: **Large-Rig equipt `*_Large`; eine Medium-Pack-Requisite an einem Large-Rig braucht `s: 2`.** |
+| FINDING (S25) | Eine fehlende Pose wird nicht erfunden, sondern gemessen ausgewählt: für die Gitarre gibt es in 119 Clips keinen Spiel-Clip, also wurden sieben Kandidaten MIT angehängter Requisite vermessen (Weltbox, Abstand zur freien Hand, zum Kopf-Bone, zum Boden) und der beste belegt gewählt. Das ist übertragbar auf jede künftige „es gibt keinen Clip dafür“-Lage. |
+| TESTED RESULT (S25) | Black Knight, Monstrosity und Orc Brute auf Large-Ausführung getauscht, Bodenabstände an der gebauten Szene nachgemessen (Monstrosity-Schild endet y≈0,39, Large-Gabel y≈0,34). Animatronic 5 Objekte, zwei Aktoren, keine Kopf- oder Bodenkollision. |
+| FINDING (S26) | **Eine Bounding-Box sagt, WO eine Requisite ist, nicht WIE sie liegt.** Die Gitarre wurde in S25 über ihre Weltbox als „Spielhaltung“ ausgewählt (`y 0,32–0,92 quer vor dem Körper`) und lag tatsächlich waagerecht nach vorn. Bei jeder Ausrichtungsfrage werden seit S26 zusätzlich **Längsachse als Weltrichtung** und **Flächennormale** gemessen — zwei Zahlen, die eine Box prinzipiell nicht liefert. Der Roll-Winkel wurde damit über acht Kandidaten entschieden, nicht nach Augenmaß. |
+| FINDING (S26) | **KayKit liefert Varianten und Zubehör als Geschwister-Meshes in EINER Datei**, nicht als getrennte Dateien: `ActionFigure.glb` trägt eigenen Kopf, Zigarre und Stirnband; jede Kopf-Datei trägt Schale, Gesichtsebene, Zigarre und Stirnband. Ein Variantentausch ist deshalb eine **Sichtbarkeitsfrage** (`hide`), und ein aufgesetztes Teil muss abschalten, was die Basis schon mitbringt. Gleiche Form ist bei jedem künftigen Varianten-Pack zu erwarten. |
+| FINDING (S26) | **Der Gesichtsausdruck ist eine Atlas-Koordinate, keine Geometrie.** 2×2-Blatt aus 512²-Kacheln, jede Kopfvariante samplet eine. Ausgangskachel aus den eigenen UVs messen, dann `map.offset` um die Kachel-Differenz versetzen — Material UND Textur vorher klonen, weil `instance()` beide teilt. Eine der vier Kacheln wird vom Pack ausgeliefert, aber von keinem Kopf benutzt. |
+| DECISION (S26) | Wechselgeometrie am Rig gehört zum **Aktor** (`actor.graft`), nicht in die Requisiten-Ebene: als Requisit wäre der aufgesetzte Kopf wegschaltbar und die Figur — deren eigener Kopf per `hide` aus ist — stünde kopflos da. |
+| TESTED RESULT (S26) | Gitarre nach der Korrektur: y 0,22–1,56, Korpus 0,22 über Boden, Flächennormale [-0,29 / -0,15 / 0,95] nach vorn, freie Pfote am Instrument, Kopfabstand 0,127. Action Figure: Figur 1,94 × 2,32, vier Köpfe mit identischem Pivot, Kachelzuordnung C [0,1] / D [1,1] / B [1,0] aus UVs gemessen, vierte Kachel [0,0] über Offset belegt. |
+| FINDING (S27) | **Der Pivot sagt, welche Hand — vor jeder Messung.** Die Gitarre hat ihren Pivot oben im Hals, gehört also in die GRIFFhand (links), nicht in die Anschlaghand. S26 hing sie an `handslot.r` und reparierte danach Neigung und Roll — ein voller Roll-Sweep auf dem falschen Arm. Der Warnwert stand im eigenen Protokoll (Kopfabstand 0,127) und wurde als „bester der acht“ abgehakt, statt zu fragen, warum alle acht schlecht waren. Drei Metriken sind ab jetzt Pflicht: Spitze gegen Kopf-Bone, freie Hand gegen Requisiten-Box, Unterkante gegen Boden. |
+| FINDING (S27) | **Eine fehlende Bewegung wird additiv gerechnet, nicht ersetzend animiert.** `strumClip()` legt Delta-Quaternionen auf die Werte, die der Basis-Clip an den Bones hinterlässt — die geprüfte Haltung bleibt erhalten, sichtbar ist nur der Zuwachs. Drehachsen über 5°-Probedrehung und Projektion der Pfotenverschiebung ermittelt; der Projektionsbetrag liefert den Faktor Grad → Zentimeter, weshalb die Amplitude eine STRECKE ist (16 cm Pfotenweg), keine Gradzahl. Übertragbar auf jedes Instrument und jedes Rig. |
+| DECISION (S27) | Wippen auf der **Wirbelsäule**, nie auf den Hüften: Hüften tragen die Beine, eine Hüftdrehung verschiebt gepflanzte Füße. Kein eigener Kopf-Track — der Kopf hängt an der Wirbelsäule und nickt mit; ein zweiter Track wäre ein zweiter erfundener Wert. Abschlag 40 % / Rückweg 60 %, weil symmetrisch wie ein Metronom liest. |
+| TESTED RESULT (S27) | Gitarre an `handslot.l`: Halsspitze 1,08 vom Kopf-Bone (vorher 0,66), Boxabstand 0,288 (vorher 0,127), Unterkante 0,36 über Boden, Anschlagpfote innerhalb der Gitarrenbox. Anschlag-Clip gebaut und laufend: 4 Tracks, Ellbogen 12,2° / Handgelenk 15,9° / Schulter 3,3° / Wirbelsäule 2,5°, 2,50 s Schleife. |
+| BLOCKER (S27) | **Mixed-Bag-Gitarren fehlen im Repo.** `KayKit_Mixed_Bag_1_FREE` ist ohne Modelle eingecheckt — nur Texturen und die zwei Contents-Blätter, Regex-Suche nach gltf/glb/bin/fbx/obj trifft 0 von 7 Dateien. Die Contents-Blätter belegen die beiden Flying V; die Geometrie fehlt. |
+| FINDING (S28) | **Ein Clip stellt die Hände dorthin, wo der Clip sie haben will — nicht dorthin, wo ein Instrument sie braucht.** `Holding_B` setzt die linke Pfote 15 cm weiter nach vorn als die rechte; Griffhand am Hals, Korpus am Bauch und Anschlagpfote über der Decke sind damit gleichzeitig unerfüllbar, solange die Requisite an der Pfote hängt. Die Abhängigkeit muss UMGEKEHRT werden: Instrument im Körperraum setzen, beide Arme per CCD nachführen (`hold` + `reachChain`). Anker ist die gemessene Bauchebene, nicht die Schulter — aus der Schulter heraus konstruiert liegt der Zielpunkt bequem in Reichweite und gern mitten im Rumpf. |
+| FINDING (S28) | **Ein Pivot allein reicht nicht, es braucht das Querschnittsprofil.** 24 Scheiben entlang der Längsachse trennen Hals (lokal y -0,28…+0,14, nur 9–12 cm breit) von Kopfplatte (+0,14…+0,36) und Korpus (-0,92…-0,28, bis 50 cm). Erst das macht "Hand am Hals" prüfbar — und es hat gezeigt, dass der S27-Wert `grip 0,42` die Pfote auf den KORPUS setzte. Für jedes künftige Instrument gilt: Profil messen, bevor ein Griffpunkt gesetzt wird. |
+| FINDING (S28) | **Anschlagachsen werden gerechnet, nicht gesucht.** Die Spitze im Abstand r fährt bei Drehung um a mit a × r, also ist a = normalize(r × d) die gesuchte Achse. Ein Suchlauf über x/y/z kann nur Hauptachsen wählen und nahm Bahnen mit 32–41 % Ausrichtung; die Formel liefert 88–94 %. Gelenke unter 60 % Ausrichtung werden ausgeschlossen und ihr Streckenanteil neu verteilt, der Ausschluss wird berichtet. |
+| FINDING (S28) | **`mixer.stopAllAction()` dreht Bone-Werte auf den Stand vor der Bindung zurück.** Das Bauprotokoll meldete Restfehler 0,000 und im Bild stand der Arm woanders — das Protokoll war richtig, eine Zeile später hat three.js die gecachten Ausgangswerte wiederhergestellt. Alte Mixer werden fallen gelassen, nicht gestoppt; ein frischer bindet die nachgeführte Pose. |
+| METHOD FAILURE (S28) | **Box3 ist bei gedrehten Requisiten kein Messwerkzeug.** `setFromObject` dreht die acht Ecken der LOKALEN AABB mit und überschätzt die Ausdehnung — bei der um 36° gekippten Gitarre um 7,2 cm nach unten (Box3 0,398 gegen echtes Vertex-Minimum 0,471). Eine Korrektur, die einen Momentwert durch ein Box3-Minimum ersetzt, macht die Zahl schlechter statt besser: genau das ist hier passiert. Extremwerte immer über das Position-Attribut × `matrixWorld`. Dritter Auftritt derselben Fehlerklasse — S5 (Goth Girl hinter dem Hocker), S28 (Vertex-Abstandstest), S28 (Bodenfreiheit). |
+| METHOD FAILURE (S28) | **Ein Sollwert im Protokoll ist kein Messwert.** Das Laufzeit-Protokoll meldete den Eingabe-Parameter `bellyGap` als "Korpusrücken 4,0 cm davor" im selben Satz wie das Wort "gemessen" — die hinterste Kante liegt bei 2,3 cm, weil der Korpus gegen die Bauchebene gekippt steht; ebenso wurde `bodyY` als Korpusmitte zurückgegeben statt der gebauten Höhe. Regel: was im Protokoll neben "gemessen" steht, muss nachgemessen sein, und Soll und Messung werden getrennt benannt. Phasenabhängige Werte (Bodenfreiheit) als Minimum über die Schleife melden, nicht als Momentwert. |
+| METHOD FAILURE (S28) | **Zwei eigene Prüfmethoden waren falsch und haben vorher grünes Licht gegeben.** (1) Der Durchdringungstest maß den Abstand zum nächsten Rumpf-VERTEX — ein Punkt tief im Körper ist von jeder Oberfläche weit entfernt, die Gitarre saß 45 cm im Bauch und der Test sagte "frei". Ersetzt durch Ebenenvergleich im Aktor-Frame. (2) Die Bauchfront muss an einer FRISCHEN, nur mit dem Basis-Clip posierten Figur gemessen werden — nach der Nachführung liegen Arme und Pfoten vor dem Bauch, ein max-z über alle Aktor-Vertices misst die Pfote. |
+| RETRACTION (S28) | **Mixed Bag 1 ist NICHT leer.** Die S27-Meldung "ohne Modelle eingecheckt, 0 von 7 Dateien" war falsch: die Repo-Baumansicht listet nur, was sie für importierbar hält, und filtert `.gltf`/`.bin` weg. Eine Inhaltssuche zählt 41 glTF-Dateien, darunter beide E-Gitarren. **Regel: Pack-Inhalt über Inhaltssuche zählen, nie über eine Dateiliste. Ein Werkzeug, das "nichts gefunden" meldet, hat nicht "nichts da" gemessen.** |
+| TESTED RESULT (S28) | Acht Prüfpunkte in `tools/guitar-qa.html`, alle bestanden: Griffpfote lokal [0/-0,14/0] mittig am Hals · Anschlagpfote (Bauzeit) [-0,001/-0,561/0,090] mittig auf der Decke, 4,7 cm vor ihr · Deckennormale frontal (z=0,998) · hinterste Korpuskante gemessen 2,3 cm vor dem Bauch (Soll-Parameter am Ankerpunkt 4 cm), keine Durchdringung · Bodenfreiheit 0,471 tiefster / 0,484 höchster Stand über die Schleife, über echte Vertices · Restfehler 0,000 / 0,003 · Bahn senkrecht zu seitlich 107:1 bei 16,9 cm Ausschlag · Pfote an 25/25 Abtastpunkten über der Decke, an keinem dahinter. |
+| FINDING (S25) | Es gibt eine DRITTE Rig-Klasse, und sie ist nicht nur kleiner, sondern anders gebaut: **Rig_Legacy**, sechs Bones, 30 Clips in einer Datei. Die Legacy-FIGUREN sind ungeriggt (0 Bones) und liegen als vier geschachtelte Teilgruppen in Bind-Pose-Weltlage vor — sie werden ZUSAMMENGESETZT, nicht bespielt. Ausgleich exakt über `skeleton.boneInverses`, kein getippter Offset. |
+| FINDING (S25) | Eine Bindungsquote von **0/16** war der Beweis, nicht der Fehler: die Clips adressieren Bone-Namen, die in der nackten Figur nicht existieren. Der Nullwert hat die Zusammensetz-Architektur belegt, statt sie vermuten zu lassen. |
+| FINDING (S25) | Die S18-Identitätsregel gilt NICHT für Rig_Legacy, und der Grund ist eine **Pack-Grenze**: Rig und Requisiten kommen aus zwei verschiedenen Legacy-Packs. Am handSlot zeigt die lokale Z-Achse nach oben, die Requisiten tragen ihre Langachse auf +Y — unter Identität liegen sie flach (an gefrorener Pose gemessen: Schild 0,27 statt 0,95 hoch). Series 6 liefert Figur und Requisiten im selben Pack, deshalb hält Identität dort. |
+| FINDING (S25) | Requisitenlage mitten in einem laufenden Clip ist **kein** Beweis für Attachment-Mechanik. Die erste Messung dieses Sprints lief bei `poseFreeze: false` und war damit ein Standbild aus einer Bewegung. Regel: Attachment-Befunde nur an gefrorener Pose. |
+| TESTED RESULT (S25) | Orc Warband 6 Objekte, 4/4 Teile je Figur an Bones, Posen 16/16 Tracks gebunden, gebaute Figurenhöhen 1,81 / 2,10 (ohne Requisiten gemessen), kein Bodendurchstich (Minimum y = 0,00; Schwert 0,03, Schild 0,06, Axt 0,09), Schwert an der Kopfkante vorbei statt durch. Gerenderte Gegenprobe gegen die Promo: Aufstellung Orc–Banner–Orc stimmt. |
+| FINDING (S25, aus der Prüfung) | Vierter Fall der Stale-Number-Klasse nach S11/S21/S23: orcB stand mit **2,13** in Prosa und Recipe — das ist die Box aus Figur PLUS Requisiten, die Figur allein ist 2,10. Und dasselbe Recipe trug zwei widersprüchliche Höhenpaare (1,76/2,05 unposiert gegen 1,81/2,13). Regel geschärft: Figurenhöhen werden an der Figur OHNE ihre Kinder gemessen, und unposierte Packmaße werden als solche beschriftet. |
+| FINDING (S26) | **Box-gegen-Box ist als Kollisionsprüfung untauglich** für lange diagonale Objekte. Sie meldete alle drei Warband-Waffen als "im Kopf", während das Schwert mit 0 von 711 Vertices völlig frei lag: leere Boxecken überlappen, die Meshes nicht. Freiprüfung läuft ab jetzt über den kleinsten Abstand echter Vertex-Wolken. Dritte Variante der Box3-Lehre nach S9 (posierte SkinnedMesh) und S23 (Kamera-Einpassung). |
+| FINDING (S26) | Auf Rig_Legacy können Requisiten **nicht** senkrecht gehalten werden. Gemessen: handSlot auf y=0,21 und 0,35 von der Körpermitte, Kopf 1,44 breit ab y=0,62 — eine senkrechte Requisite muss durch den Kopf. Mindestens 40° nach außen, gesetzt sind 50–58°, gerechnet gegen die Körperachse der Figur (nicht die Weltachse: beide Orcs stehen gedreht). |
+| FINDING (S26) | Alle S25-Zahlen waren richtig und keine hat den Defekt erfasst — Bodenabstand, Bindungsquote und erreichte Ausrichtung waren grün, nur hat nichts nach dem Kopf gefragt. Eine Messreihe belegt ausschließlich, was sie misst; der Befund kam aus Georgs Screenshot. |
+| TESTED RESULT (S26) | Orc Warband nachgemessen: Abstand Requisite↔Kopf 0,304 / 0,245 / 0,208, Requisite↔Banner 1,269 / 1,882 / 0,785, Unterkanten 0,053 / 0,027 / 0,096 über Grund. Gerendert gegengeprüft: beide Gesichter frei, Waffen neben der Silhouette. |
+| FINDING (S26) | **Nach der Doku-Runde erneut laden, nicht nur nach der Code-Runde.** Eine Batch-Ersetzung von Prosa in `data/cast.js` hat ein Array-Komma mitgefressen — Syntaxfehler, ganzer Atlas leer, alle 18 Residents weg. Unbemerkt, weil in dieser Runde erst gemessen und danach dokumentiert wurde: alle Messungen liefen gegen die intakte Datei. Solange Prosa in einer .js-Datenquelle liegt, ist ein Doku-Commit ein Code-Commit. |
+| FINDING (S27) | Eine Zielprüfung am Endglied beweist nichts über die Kette davor. Die `hold`-Mechanik meldete den Anschlagarm als erreicht (Restfehler 0,003) und hatte Handgelenk und Pfote dabei im Gitarrenkorpus stehen. Freiprüfung jetzt PRO GELENK: vor der Deckenebene ODER außerhalb der Silhouette. |
+| FINDING (S27) | Ein `aim` ist nur in der Pose gültig, gegen die es gerechnet wurde — es ist eine Weltrichtung, die in eine lokale Bone-Drehung umgerechnet wird. Für Figuren, die animiert abgespielt werden sollen, muss gegen die BASISPOSE gerechnet werden (`hand.aimIn`); dann verhält sich die Ausrichtung wie die authored Identität bei Series 6. |
+| FINDING (S27) | Schlag-Clips lassen sich mit rigider Befestigung nicht freihalten. Über neun Legacy-Clips gemessen: Ruhe/Gehen 0,156–0,198 Abstand zum Kopf, `Attack(1h)` 0,006, `HeavyAttack` 0,226 unter Grund. Messbar, nicht behebbar — und deshalb dokumentiert statt weggerechnet. |
+| TESTED RESULT (S27) | Animatronic: 5/5 Gelenke des Anschlagarms frei vom Korpus (0,024–0,092 außerhalb der Silhouette). Orc Warband: Ausrichtung gegen BasePose 12/12 Tracks, Key-View-Sweep über neun Clips. Motion über beide Figuren: "Walk · orcA 18/18, orcB 18/18", zwei Mixer. Prototype Pete: 5 Objekte, Bleistift frei vom Kopf. |
+| FINDING (S27, aus der Prüfung) | **Eine Text-Ersetzung, deren Anker nicht existiert, schlägt lautlos fehl.** Der RETURN-Header war auf `Sprint S26` geankert — den ein früherer Lauf längst auf S28 umgeschrieben hatte; ebenso das Sync-Datum in `github.md`. Beide Ersetzungen liefen durch, ohne etwas zu tun, und der RETURN trug S27-Inhalte unter einem S28/17-Residents-Header. Regel: bei Batch-Ersetzungen die Existenz des Ankers PRÜFEN und fehlschlagen lassen, statt `String.replace` zu vertrauen. Gleiche Klasse wie das verschluckte Komma in S26 — Schreibvorgänge brauchen dieselbe Beweispflicht wie Messungen. |
+| FINDING (S28) | **Zusammengesetzte Legacy-Figuren tragen Requisiten am ARM-Bone, nicht am handSlot.** Die gezeichnete Pfote ist ein rigider Klotz an genau einem Bone; der handSlot wird von den Clips relativ dazu bewegt, also löst sich eine handSlot-Befestigung sichtbar von der Pfote (gemessen: 0,513 und 0,548). `pawAnchor()` befestigt am Arm-Bone und misst den Griffpunkt im Klotz. Danach ≤0,017 und in jedem Clip gleich. |
+| FINDING (S28) | Ein Prüfsatz belegt nur, was er fragt. Drei Sprints lang habe ich Kopf-, Banner- und Bodenabstand gemessen und nie den Abstand zur HAND — also genau die Größe, um die es beim Satz „die Waffe sitzt in der Hand" geht. |
+| FINDING (S28) | Auf diesem Rig ist „in der Pfote" und „weit vom Kopf" nicht gleichzeitig erreichbar: die Pfote liegt innerhalb der Kopf-Silhouette. Nach der S28-Korrektur ist der Kopf-Freiraum 0,024 statt 0,2 — berührungsfrei, aber ohne Spielraum. Eine Entscheidung, keine Lösung. |
+| FINDING (S28) | Packs liefern Farbvarianten als zweite Textur, die das .glb nicht verdrahtet. `skin` tauscht sie auf der Instanz (Material geklont, Farbraum/Filter von der Originalkarte übernommen). Erster Fall: Cleric, 8 Materialien, zwei Figuren aus einer Datei. |
+| TESTED RESULT (S28) | Orc Warband: Abstand Requisite↔Pfote 0,005 / 0,017 / 0,007 (vorher 0,002 / 0,513 / 0,548), ≤0,013 über sieben Clips, kein Bodendurchstich (0,031–0,116), kein Kopfkontakt (0,024–0,228). Cleric: 7 Objekte, Farbvariante 8 Materialien, Buch beidhändig über gemessene Kante (Restfehler 0,132). |
+| FINDING (S29) | **Erst die andere Hand probieren, bevor man eine Ausnahme erfindet.** Der Cleric-Foliant lag an `handslot.l` quer und hochkant (Seitennormale [0,96 / -0,23 / -0,15]); ich habe daraus eine „dritte Ausnahme von der Identitätsregel" gemacht und eine Ausrichtung dazugerechnet. An `handslot.r` gibt reine Identität [-0,40 / 0,85 / 0,35] — aufgeschlagen wie in der Promo. Die Ausnahme war mein Ankerfehler, nicht das Modell. Die S28-Behauptung ist widerrufen. |
+| FINDING (S29) | **Eine CCD-Nachführung, die ihr Ziel nicht erreicht, ist keine Haltung, sondern ein verbogener Arm.** Der `pull`-Arm des Klerikers blieb 0,334 vom Ziel und war dabei sichtbar verdreht. Restfehler über ~0,1 heißt: Ziel verwerfen, nicht Ergebnis behalten. |
+| FINDING (S29, korrigiert) | **Ein pack-eigener Animations-Ordner ist kein Hinweis auf zusätzliche Clips.** Hero Mans General/MovementBasic sind namensweise **15/15 und 11/11 identisch** mit der geteilten Bibliothek. Meine erste Fassung behauptete das Gegenteil — die Prämisse war nie gemessen: verglichen hatte ich die Pack-Namen gegen einen shoot/gun/reload-REGEX-Scan der geteilten Bibliothek, nie gegen deren General-Liste. **Ein Regex-Scan, der einen Namen nicht enthält, beweist nicht, dass der Name fehlt.** `loadClips` kann zusätzliche Wurzeln laden und entdoppelt nach Set/Name; hier trägt es null Clips bei. |
+| TESTED RESULT (S29) | Cleric: Foliant identisch an handslot.r (lokale Drehung 0,00°), Arm unverdreht (Ellbogen 108,5° / 76,3°), 7 Objekte. Hero Man: 5 Objekte, beide Figuren 69/69 gebunden (Spawn_Ground aus der GETEILTEN Bibliothek — source-Pfad geprüft), Farbvariante auf 7 Figuren-Materialien (8 misst, wer die angehängten Requisiten mitzählt), Schwerter identisch an handslot.r. Blaster-Animationen über 119 Clips gesucht: keine. |
+| FINDING (S29, aus der Prüfung) | **Ein Widerruf muss das PROJEKT durchsuchen, nicht die Dokumente.** Die falsche Pack-Bibliotheks-Behauptung war in vier Dokumenten korrigiert und stand wörtlich weiter in zwei Code-Kommentaren — also genau dort, wo ein Entwickler zuerst liest. Ursache: ich habe die Korrektur über die Prosa-Anker der Dokumente gefahren statt über die BEGRIFFE der Behauptung. Regel: nach einem Widerruf projektweit nach den Kernbegriffen greppen, Kommentare eingeschlossen. |
+| FINDING (S30) | **Bevor „geht nicht" in ein Dokument kommt, muss die Gegenprobe im Protokoll stehen.** Dritter Fall in drei Sprints: S28 „Foliant ist eine Ausnahme" (war an der falschen Hand), S29 „Pack hat eigene Clips" (Duplikate), S29 „zwei rechtshändige Requisiten gehen nicht" (gehen — vier Kombinationen gemessen, Schwert sitzt links wie rechts, Blaster braucht keine Ausrichtung). Ein „nicht belegbar" ist selbst eine Behauptung und braucht denselben Beleg wie ein „belegt". |
+| TESTED RESULT (S30) | Hero Man: Blaster identisch an handslot.r, Blade identisch an handslot.l, kein Bodendurchstich (0,187–0,274), Kopfabstand 0,589–0,643. Rot auf Idle_B (contents-Render), Blau auf Spawn_Ground (Promo). 6 Objekte. |
+| FINDING (S30, aus der Prüfung) | **Ein Widerruf-Grep muss case-insensitiv und auf den Wortstamm gehen.** Die widerrufene Behauptung stand weiter in der prominentesten Zeile dieses Dokuments — im Header, als Errungenschaft. Mein projektweiter Sweep suchte `EIGENER CLIP-BIBLIOTHEK` und `Bibliothek hat den Clip nicht`; der Header sagt „pack-eigene Clip-Bibliotheken“ und passte auf keines von beidem. Gesucht wird nach `clip-biblio`, nicht nach dem Satz, den man selbst geschrieben hat. |
+| FINDING (S31) | **Der handslot-Rahmen ist in T-Pose bei Rig_Medium und Rig_Large identisch: lokal X = außen, Y = vorn, Z = oben.** Damit ist Ausrichtung eine Achsen-ZUORDNUNG (`hand.slotAxis`), keine Weltrichtung — eine lokale Drehung, die in jedem Clip gilt. `aim` bleibt nur für Fälle, in denen die Weltlage wirklich gemeint ist (Legacy-Warband). |
+| FINDING (S31) | **Der Pivot sagt die Rolle — jetzt drei Fälle statt zwei.** Boden = Standobjekt (S8), Griff/Kante = Handrequisit, **mittig in allen drei Achsen = schwebendes Artefakt**. Das Dämonenherz ist der dritte Fall: Halbausdehnung 0,44–0,65 gegen Faustradius 0,269 — es kann nicht gehalten werden, nur schweben. Der S22-`push` hat das Symptom verschoben, nicht die Rolle erkannt. |
+| TESTED RESULT (S31) | Blaster: Lauf +Z auf Slot-vorn +Y, 90° lokal, Lauf danach [0,15 / 0,02 / 0,99] bei Blickrichtung +Z — nach vorn statt quer. Foliant: Zuordnung A/B gemessen und VERWORFEN (senkrechter Anteil der Seitennormale 0,53 mit Zuordnung gegen 0,85 unter Identität), läuft wieder auf Identität. Dämonenherz: schwebt über dem Kreis, 0,685 von der Figur, kein Faustdurchstich mehr. |
+| FINDING (S31, aus der Prüfung) | **Eine Achsen-Zuordnung wird per A/B entschieden, nicht per Analogie.** Die Blaster-Zuordnung auf den Folianten übertragen machte ihn schlechter. Und: `slotAxis` ändert NICHTS an der Handgelenk-Kopplung — es ist eine feste lokale Drehung, nur der konstante Versatz ändert sich. Die Formulierung „kippt nicht mehr mit dem Handgelenk“ stand in drei Dokumenten und war mechanisch unmöglich. |
+| FINDING (S32) | **Der sichtbare Bildbereich endet nicht am Canvas-Rand.** `#dockrow` (HUD-Caption) liegt permanent über den unteren ~13 % der Leinwand und ist nicht wegschaltbar — „Leiste ausblenden" klappt die Seitenspalte. Eine Inszenierung, die Objekte nach VORN holt, schiebt sie damit unter die Leiste: die S32-Pointe (Bomben, lose Keulen) lag bei Bildschirm-y 482 und 505 gegen eine Leistenoberkante von 475. Vordere Objekte werden gegen diese Kante PROJIZIERT geprüft, nicht nach Augenschein. |
+| FINDING (S32) | **Ändert eine Nachmessung eine Zahl, ist jede Stelle im gerade geschriebenen Dokument betroffen** — nicht nur die, an der man zuletzt getippt hat. Der S32-Eintrag trug nach dem zweiten Messdurchgang zwei verschiedene z-Bereiche für dieselbe Ebene: der angefügte Nachtrag war aktuell, die Tabelle darüber nicht. Zehnter Fall der Zahlen-Klasse in diesem Projekt und der erste, bei dem sich ein Dokument selbst widersprach. |
+| OPEN | siehe unten. |
+
+## Quellen, die zählen
+
+| Rolle | Quelle | Pin |
+|---|---|---|
+| Asset-Pfade + Rig-Fakten | `tools/KFB-ToolBox/_inbox/KFB Elisa B-Day Reference+Mockups/kfb-asset-handoff-animation-lab (2).json` | commit `891eadf01e218f5fc21387e64cea1fec8332c5b6` |
+| Animationsbibliothek | `registry/assets/v1/packs/kaykit-character-animations-1-1.json` (Branch `bot/asset-registry-update`) | commit `aa16a777a970f23d3f11fb3c23dc40718b04fa88` |
+| Restlicher Cast | `registry/assets/v1/packs/kaykit-mystery-series6.json` — **916 Assets**, noch nicht ausgewertet | — |
+| Referenzbilder | `ref/atlas/*.gif` (lokaler Referenzordner), `media/.../Clown/artwork.png` (Repo) | — |
+| Librarian-Oberfläche | https://kayfabizarro.pages.dev/tools/asset_registry/librarian/ | live, von Georg gemeldet |
+
+## Eigentumsgrenzen eingehalten
+
+Dieses Projekt schreibt **nur** in seinen eigenen Ordner und liest das Repo. Kein Eingriff in Asset Registry, Librarian-Implementierung, ToolBox/Animation Lab, Travel/Stunt/Combat oder Town-Living-Docs. Alle Atlas-Ausgaben sind `candidate-only`; Rig-, Motion- und Attachment-Freigabe bleibt bei der Animation Lab, Runtime-Eignung bei Travel/Stunt/Combat, Charakterbedeutung bei Town.
+
+## OPEN
+
+1. **Kulissen-Kandidat Goth Girl** — die graue Ruinenstadt der Promo ist kein Handoff-Asset. Über Librarian suchen (Kandidaten: City-Bits-Familie), nicht aus dem Gedächtnis bauen.
+2. ~~**Caveman + Orc Brute**~~ — erledigt. Caveman seit S8, Orc Brute in S24. Die Pfade kamen nicht aus dem 916-Asset-Shard, sondern aus der GitHub-Tree-API (der Connector filtert Modell-Binaries heraus, die API nicht).
+3. **Orc Raider** — Textur-Preview-Warnung des Briefings steht unverändert. Kein Palettenurteil aus Thumbnails.
+4. **Balance-Pose Clown** — kein passender Clip in der geteilten Bibliothek. Frage an Animation Lab, nicht an den Atlas.
+5. **Ballonhöhen / Requisiten-Abstände** — Bildabgleich, keine gemessenen Werte.
+6. **Schubkarren-Griffe** — welches Ende die Griffe sind, ist ohne Knotennamen nicht belegt; Farmer_B steht daneben statt falsch zu greifen.
+7. **Traktor-Entscheidung** — (a) offenes Fahrzeug aus einem anderen Kenney-Kit (größerer Stilbruch), (b) Traktor als Landmarke, Farmer daneben (aktueller Stand), (c) Traktor streichen.
+8. **Zielordner** — `tools/kfb-town-resident-atlas/` ist PROPOSAL. Vor dem ersten festen Commit bestätigen.
+9. ~~**Kein Promo für Orc Brute und Monstrosity**~~ — erledigt in S25: beide Patreon-Recap-GIFs liegen unter `ref/atlas/`, die Referenzblende wirkt für alle Residents mit Promo (17 von 19; Orc Warband und Prototype Pete haben keines). Keule und Trommel bleiben Georgs Vorgabe, nicht die Promo-Ausstattung — der Recap zeigt Axt und Banner.
+10. ~~**Maßstab der Orc-Raider-Requisiten**~~ — erledigt in S25: `s: 2`, derselbe Faktor, den das Pack für seine eigenen Large-Varianten verwendet. Bleibt die einzige Atlas-Skalierung im Cast.
+11. **Bärenkopf-Helm der Orc-Warband-Promo** — existiert nicht als Modell. Die Tree-API listet genau zwei Figuren (Narbe, Haarknoten) und vier Requisiten. Promo-Kunst ohne Datei, bewusst nicht nachgebaut.
+12. **Legacy-Requisiten hängen tiefer und schräger als in der Promo** — die handSlots des Animations-Rigs liegen auf y=0,21, die statischen Warband-Arme hielten ihre Waffen auf Bauchhöhe. `grip` hebt an, und die Ausrichtung muss 50–58° nach außen, weil senkrecht durch den Kopf ginge (S26). Beides sind Folgen der Chibi-Proportion; die eigentliche Lösung wäre eine Pose mit angehobenem Arm, nicht eine weitere Zahl.
+13. **Witch trägt den Korb nicht** — die Promo zeigt ihn getragen. Ein Clip mit gesenktem linken Arm (Holding_A/C) oder eine Unterarm-Korrektur wäre nötig; bis dahin steht der Korb am Boden.
+14. **Kein Gitarren-Anschlag** — die Animatronic-Spielhaltung ist eine gemessene Annäherung: Finger greifen keinen Griff, die Schlaghand bewegt sich nicht. Frage an Animation Lab, nicht an den Atlas.
+15. **Dritte Gitarre steht frei** — das Artwork zeigt sie an die Figur angelehnt. Anlehnen wäre eine Kippung nach Augenmaß; bis dahin steht sie gerade.
+16. **Kein Kopf-Wechsel als Bewegung** — die Action Figure zeigt den Tausch als Aufstellung, nicht als Animation. Ein Abnehmen/Aufsetzen wäre eine Reveal-Sequenz wie beim Toy Soldier und ist nicht gebaut.
+17. **Waffenarsenal der Action Figure fehlt** — Gewehre und Granaten des Artworks gehören nicht zu diesem Pack. Nicht aus einem Fremdpack zusammengesucht; damit bleibt `Idle_A` statt einer Waffen-Halte-Pose.
+18. **Vierte Gesichtskachel ist unvorgesehen** — der Pack liefert sie mit, benutzt sie aber auf keinem Kopf. Der Atlas führt sie, weil sie belegt vorhanden ist, nicht weil sie vorgesehen wäre. Ob sie gezeigt werden soll, ist eine Town-Entscheidung.
+19. ~~**Mixed-Bag-Gitarren nicht baubar**~~ — widerrufen in S28, die Modelle liegen da. Beide stehen jetzt als Ausrüstung in der Animatronic-Vignette. Offen bleibt nur ihr Querschnittsprofil: ohne gemessene Hals-/Korpusgrenze wäre ein Griffpunkt geraten, deshalb werden sie nicht gespielt.
+20. **Griffpfote greift keinen Akkord** — nur der Anschlagarm bewegt sich. Ein Griffwechsel bräuchte Finger-Bones, die dieses Rig nicht hat (23 Bones, die Hand endet am handslot).
+21. **E-Gitarren laufen auf `commit: 'main'`** — Mixed Bag 1 wurde erst nach dem gepinnten Asset-Commit eingecheckt. Einzige unpinned Quelle im Cast; sobald ein SHA feststeht, gehört er in `MB_COMMIT`.
+22. **Querschnittsprofil der E-Gitarren fehlt** — Längsachse, Pivot und Deckenachse stimmen mit der Akustikgitarre überein, aber die Hals-/Korpusgrenze einer Flying V liegt anders. Muss gemessen werden, bevor eine in eine Hand geht.
+23. **Anschlag ohne Saitenkontakt** — die Pfote fährt 16 cm durch die Ebene der Decke, wird aber nicht an den Saiten gestoppt. Eine Kollisionsprüfung pro Frame ist möglich, aber nicht gebaut.
+
+## Nachtrag zur OPEN-Liste (S27–S30)
+
+24. **Schlag-Clips der Orc Warband sind nicht freigehalten** — `Attack(1h)` und `HeavyAttack` führen Waffe an Kopf und Boden vorbei (0,006 bzw. -0,226). Mit rigider Befestigung unvermeidbar; behebbar nur über Clip-Auswahl oder eine bewegte Befestigung, beides nicht gebaut.
+25. **Honig fehlt im Repo** — über die Tree-API nach bee/hive/jar/honey/pot gesucht: kein Honigtopf, keine Wabe. Die Biene aus GLB_cube-pets steht als optionaler Ersatz bereit, ist aber Fremdpack und stilistisch nicht KayKit.
+26. **Käse-Maßstab** — der Block ist 1,87³, also so hoch wie Pete. Als Landmarke gesetzt statt herunterskaliert. Ob die Town einen Käse in Figurengröße will, ist eine Erzählentscheidung.
+27. **Konstruktiv gehaltene Instrumente überleben keinen Motion-Wechsel** — jeder Clip überschreibt die CCD-Armnachführung. Das HUD warnt jetzt; gebaut ist keine Lösung.
+28. **Kein Schuss- und kein Lade-Clip für den Blaster** — 119 Clips geprüft (die pack-eigenen Sets sind namensgleiche Duplikate und erweitern die Liste nicht). Treffer nur `Throw` und `Running_HoldingRifle`. Der Blaster wird getragen, aber nicht gezielt; eine Schusshaltung wäre eine Erfindung.
+29. **Streitkolben und Foliant konkurrieren um dieselbe Hand (Cleric)** — beide sind für `handslot.r` authored, und die linke Hand trägt beim Kleriker den Schild. Der zweite Streitkolben steht deshalb abgestellt. **Nicht** verallgemeinerbar: die S29-Fassung dieses Punkts behauptete, zwei rechtshändige Requisiten seien generell nicht belegbar — in S30 widerrufen, beim Hero Man sitzen Blaster rechts und Blade links auf reiner Identität.
+30. **`Spawn_Air` ist nicht gebaut** — eine Figur in der Luft braucht eine Aussage über Höhe und Zeitpunkt, die der Atlas nicht hat.
+
+## Umgang mit Fehlpositionierung (S6)
+
+1. **Erst messen, dann schieben.** Wenn eine Relation messbar ist, gehört sie als Regel ins Recipe — nicht als Zahl aus dem Auge. `sitOn` richtet am Hüft-Bone gegen die gemessene Sitzfläche aus, `on` stapelt auf gemessene Oberkanten, `hand` steckt in den `handslot`-Bone.
+2. **Box-Grounding ist für posierte Figuren prinzipiell falsch.** `Box3` kennt keine Skinning-Deformation. Wer eine sitzende Figur per Box auf y=0 setzt, setzt die stehende Rest-Pose auf y=0.
+3. **Posen nicht erfinden, sondern schichten.** Zwei Clips entlang eines Bone-Teilbaums teilen (disjunkte Track-Mengen) statt Gewichte zu mischen.
+4. **Was danach bleibt, wird von Hand gefasst und gesammelt** — Anfasser oder Bone-Drehring, Ergebnis in der Sammelliste, Export als `studio-patch.json`. Erst Georg entscheidet, was davon ins Recipe wandert.
+5. **Nicht stillschweigend korrigieren.** Jede bewusste Abweichung steht als `scaleNote` oder OPEN-Punkt in der Leiste (Gewehr-Winkel, skalierte Zweitinstanzen, fehlende Balance-Pose).
+
+## Zwei Fehlschlüsse dieses Sprints (dokumentiert, weil sie sich wiederholen können)
+
+1. **Größenverhältnis ≠ Passung.** Den Traktor auf ein real wirkendes Verhältnis zu skalieren (Faktor 2,3) hat die Karosserie mitwachsen lassen und den Farmer darin versenkt. Wer eine Figur in ein Objekt setzt, muss am **Innenraum** maßstäbeln, nicht an der Außenhöhe.
+2. **Ein Vertex-Höhenprofil beweist keinen Hohlraum.** Die gemessene Mulde bei z=-0,2 war eine Dachkontur, kein Sitz. Profile über Vertex-Maxima können Vertiefung und Innenraum nicht unterscheiden — das klärt nur eine Ansicht von der Seite.
+
+## Was ein Dateiname nicht beweist (S8)
+
+`Lorekeeper_Tome` heißt „Foliant" und ist ein **Lesepult**. Ich habe es in eine Hand gesteckt, weil der Name das nahelegte — es wuchs der Figur über den Kopf. Zwei Messwerte hätten gereicht: 1,65 Höhe bei 2,14 Figurenhöhe, und ein Pivot am Objektboden statt an einem Griff. Regel für den Atlas: **Pivotlage und Objekthöhe entscheiden, ob etwas Handrequisit oder Standobjekt ist — nicht der Dateiname.**
+
+Gleiche Klasse: `Campfire_Base` und `Campfire_Logs` sind keine zwei Requisiten, sondern zwei Hälften eines Objekts.
+
+## Ensemble-Lesbarkeit (gelöst, S22)
+
+Die Ebenen-Schalter wirken jetzt auch im Ensemble, und entscheidend: die Vignetten werden nach dem Umschalten **aus den sichtbaren Maßen neu verteilt**. Ohne das half Ausblenden nichts — die Figuren blieben in ihren zu breiten Slots stehen (88,57 → 86,97, praktisch unverändert). Mit Neuverteilung:
+
+| Ansicht | sichtbare Objekte | Breite | (Stand S22, 13 Residents) |
+|---|---|---|---|
+| Alles | 106 | 103,65 | 91 / 88,57 |
+| Kulissen aus | 63 | 94,17 | 54 / 79,03 |
+| Kulissen + Requisiten aus | 15 | **67,94** | 13 / 53,22 |
+
+Bei 67,9 Einheiten für 15 Figuren trägt der Größenvergleich wieder — Black Knight und Demon Lord (Large-Tier) ragen sichtbar über den Rest. Damit das auf dem Schirm ankommt, musste zusätzlich die Kamera-Einpassung korrigiert werden (S23): sie hat die Bounding-Sphere-Diagonale gegen das VERTIKALE Blickfeld gerechnet und das Seitenverhältnis ignoriert — eine breite flache Reihe wurde dadurch rund 48 % zu weit weg gestellt. Jetzt werden beide Achsen gegen ihr eigenes Blickfeld gerechnet; die Reihe füllt 93 % der Breite statt 66 %.
+
+Zwei Feinheiten bleiben offen: „Requisiten aus" nimmt auch die Handwaffen mit (Hand- und Standrequisiten liegen im selben Schalter), und im komprimierten Vergleich fehlt Farmer_B, weil er als Signatur-Requisite geführt wird und nicht als Aktor — die Farmers zeigen dort also nur die Hälfte ihres Personals. Beides Darstellungsfragen, nicht entschieden.
+
+## Nächste konkrete Scheibe
+
+Entweder (a) Kulisse für Goth Girl belegen und die Vignette auf Habitat-Vollständigkeit bringen, oder (b) den `kaykit-mystery-series6`-Shard auswerten und Caveman als dritten Resident bauen. Beides ist eine Sitzung, nicht ein Architekturdurchlauf.
+
+## S33 Return · Clown-Jonglage / Plug&Play Resident Module
+
+| Status | Ergebnis |
+|---|---|
+| DECISION | Resident-Aktivitäten dürfen als lokaler Präsentations-Loop auf einer bereits geprüften Recipe-Pose liegen; sie übernehmen keine Consumer-Physik. |
+| IMPLEMENTATION | Clown: `Idle_B` eingefroren, 3 echte KayKit-Keulen blau/grün/rot in einer phasenbasierten Cascade; Arme folgen gemessenen Handslot-Ankern per `reachChain()`. |
+| STATIC TESTED RESULT | Syntax/Recipe/Manifest PASS; alternierende Throw-Sequenz L/R/L/R/L/R; 0,832568 s Flug, 0,326497 s Beat, 1,958985 s Loop; periodischer Zustand und Integer-Halbdrehungs-Closure geprüft. |
+| MODULE SEAM | `tools/resident_atlas/modules/clown-juggling-island.module.json` + dünner S6-Mount-Adapter. Support/Collision bleibt beim Consumer. |
+| PLATFORMER HANDOFF | Empfehlung: normale consumer-owned 4×4-Grass-Plattform aus dem gemessenen Platformer-Kit; Resident-Root am top-center mounten; `update(dt)` pro Frame. Keine Platformer-Datei wurde verändert. |
+| PUBLIC DEPLOYMENT | Noch nicht als S33 bewiesen. |
+| GEORG ACCEPTANCE | OPEN für visuelle Höhe/Tempo/Handbewegung. |
+
+### Neuer OPEN-Punkt 31
+**4–6 Keulen sind nicht freigegeben.** Der alte Jonglier-Brief fordert vor der Erweiterung eine Flugbahn-/Abstandsrechnung. S33 implementiert deshalb absichtlich exakt drei Keulen und wirft bei `count !== 3` einen Fehler, statt eine ungeprüfte Variante sichtbar zu machen.
+
+## WSA handoff checkpoint · 2026-09-19
+
+The S33 Resident Scene Module work is handed to the existing WSA integration lead at:
+
+`tools/KFB-ToolBox/_handover/RESIDENT_SCENE_MODULES_WSA_2026-09-19/START_HERE.md`
+
+The handoff preserves the S33 implementation state and adds no second owner. Current immediate gate remains the same: visually accept/tune/reject the 3-club Clown loop on the Cloudflare Resident Atlas route before the first Platformer consumer import.
+
+Canonical human review URL:
+
+`https://kayfabizarro.pages.dev/resident-atlas-s6/?resident=clown`
+
+Active review/publication links must not use githack/raw-CDN mirrors.
+
+
+## 2.5D cutout resident preparation · 2026-09-20
+
+A new **prepared candidate** exists for source-exact DocCheck Eumel as a 2.5D cutout Resident:
+
+`tools/resident_atlas/modules/candidates/eumel-doccheck-project-island.module.json`
+
+This is not an S6 cast promotion and is not in the module index.
+
+The candidate uses the 2D Animation Studio actor contract:
+
+`tools/2D Animation Studio/contracts/kfb-2d-actor-module.v0.1-candidate.json`
+
+Current gate:
+
+1. build/browser-test one world-space `three2p5d` adapter;
+2. mount Eumel through the existing Resident Scene Module seam;
+3. keep support/collision/camera with the consumer;
+4. only then decide whether to index/promote the module.
+
+The existing S33 Clown visual gate remains separate and unchanged.
+
+WSA integration brief:
+
+`skills/chat/workflows/2D_RESIDENT_ACTOR_WSA_2026-09-20/START_HERE.md`

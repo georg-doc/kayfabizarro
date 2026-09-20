@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="de">
+<head><meta charset="utf-8"><title>Gitarren-Anatomie · Teil-Meshes</title>
+<script type="importmap">
+{"imports":{
+ "three":"https://unpkg.com/three@0.184.0/build/three.module.js",
+ "three/addons/controls/OrbitControls.js":"https://unpkg.com/three@0.184.0/examples/jsm/controls/OrbitControls.js",
+ "three/addons/controls/TransformControls.js":"https://unpkg.com/three@0.184.0/examples/jsm/controls/TransformControls.js",
+ "three/addons/loaders/GLTFLoader.js":"https://unpkg.com/three@0.184.0/examples/jsm/loaders/GLTFLoader.js",
+ "three/addons/utils/SkeletonUtils.js":"https://unpkg.com/three@0.184.0/examples/jsm/utils/SkeletonUtils.js"
+}}
+</script>
+<style>body{background:#12110d;color:#e8e2cf;font:12px/1.5 ui-monospace,monospace;padding:16px}pre{white-space:pre-wrap}</style>
+</head>
+<body><pre id="out">messe …</pre>
+<script type="module">
+import * as THREE from 'three';
+import { instance } from '../lib/atlas.js';
+
+const AN = 'media/3D_Assets/KayKit_Mystery_Series6/5 - November 2023 - Animatronic/';
+const n = (v) => Math.round(v * 1000) / 1000;
+const out = { parts: {}, whole: null, longAxisProfile: [] };
+
+const g = await instance(AN + 'assets/gltf/Guitar.gltf');
+g.updateWorldMatrix(true, true);
+const whole = new THREE.Box3().setFromObject(g);
+out.whole = { min: whole.min.toArray().map(n), max: whole.max.toArray().map(n) };
+
+/* Teil-Meshes: liegt Hals als eigenes Mesh vor? Dann ist der Griffbereich exakt bekannt
+   und muss nicht aus der Gesamtbox geraten werden. */
+g.traverse((o) => {
+  if (!o.isMesh && !o.isSkinnedMesh) return;
+  const b = new THREE.Box3().setFromObject(o);
+  out.parts[o.name] = {
+    min: b.min.toArray().map(n), max: b.max.toArray().map(n),
+    size: b.getSize(new THREE.Vector3()).toArray().map(n),
+    verts: o.geometry.attributes.position.count,
+    mat: (Array.isArray(o.material) ? o.material : [o.material]).map((m) => m && m.name)
+  };
+});
+
+/* Querschnittsprofil entlang der lokalen Y-Achse: wo ist das Objekt schmal (Hals) und wo
+   breit (Korpus)? Damit ist der Griffbereich gemessen, nicht geschätzt. */
+const pos = [];
+g.traverse((o) => {
+  if (!o.isMesh && !o.isSkinnedMesh) return;
+  const p = o.geometry.attributes.position;
+  const m = o.matrixWorld;
+  for (let i = 0; i < p.count; i++) pos.push(new THREE.Vector3().fromBufferAttribute(p, i).applyMatrix4(m));
+});
+const y0 = whole.min.y, y1 = whole.max.y, steps = 24;
+for (let s = 0; s < steps; s++) {
+  const a = y0 + (y1 - y0) * (s / steps), b = y0 + (y1 - y0) * ((s + 1) / steps);
+  let xmin = 9, xmax = -9, zmin = 9, zmax = -9, cnt = 0;
+  for (const v of pos) {
+    if (v.y < a || v.y >= b) continue;
+    cnt++;
+    xmin = Math.min(xmin, v.x); xmax = Math.max(xmax, v.x);
+    zmin = Math.min(zmin, v.z); zmax = Math.max(zmax, v.z);
+  }
+  out.longAxisProfile.push({ yFrom: n(a), yTo: n(b), verts: cnt,
+    width: cnt ? n(xmax - xmin) : 0, depth: cnt ? n(zmax - zmin) : 0 });
+}
+document.getElementById('out').textContent = JSON.stringify(out, null, 1);
+window.__a = out;
+</script>
+</body>
+</html>

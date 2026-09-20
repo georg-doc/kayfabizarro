@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Roboto+Slab:wght@600;700&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
+<script src="./modules/recherchi-legs.v1.js"></script>
+<style>
+  body{margin:0;background:#EDEEF0;color:#222;font-family:Roboto,-apple-system,"Helvetica Neue",Arial,sans-serif;-webkit-font-smoothing:antialiased}
+  a{color:#CC0033;text-decoration:none}
+  a:hover{text-decoration:underline}
+  ::selection{background:#E7F0D2}
+</style>
+</helmet>
+
+<div lang="de" style="min-height:100vh;background-image:radial-gradient(120% 90% at 86% 0%,#C7CBD1 0%,#DCDFE3 34%,#EAEBEE 64%,#F3F4F6 100%);padding:0 0 90px">
+
+  <header style="background:#fff;border-bottom:1px solid #E5E7EB;padding:26px 34px 22px">
+    <div style="max-width:1080px;margin:0 auto;display:flex;align-items:flex-end;gap:18px;flex-wrap:wrap">
+      <div style="flex:1;min-width:280px">
+        <div style="font-family:'Roboto Mono',monospace;font-size:11px;letter-spacing:.5px;color:#9CA3AF;margin-bottom:8px">LIVING DOCUMENT · FASSUNG 2</div>
+        <h1 style="font-family:'Roboto Slab',Georgia,serif;font-weight:700;font-size:34px;line-height:1.06;letter-spacing:-1px;margin:0">Recherchi wird Bewohner von Pet&nbsp;Studio</h1>
+        <div style="font-size:14.5px;line-height:1.55;color:#4B5158;margin-top:9px;max-width:64ch;text-wrap:pretty">Körper, <b>Beine</b>, Licht, Kamera und Regler kommen aus dem Studio. Recherchi bringt drei Bauteile mit: die HTML-Flächen, die Chat-Eingabe und die Nase als Knopf.</div>
+      </div>
+      <div style="font-family:'Roboto Mono',monospace;font-size:11.5px;line-height:1.9;color:#6B7280;text-align:right">
+        <div>Stand <b style="color:#111">29.08.2026</b></div>
+        <div>Art-Eintrag <b style="color:#111">recherchi.pet.json</b></div>
+        <div>Ziel <b style="color:#111">Pet Studio v10</b></div>
+      </div>
+    </div>
+  </header>
+
+  <div style="max-width:1080px;margin:0 auto;padding:0 34px">
+
+    <section style="margin-top:24px;background:#1B2024;color:#EAECEE;border-radius:12px;padding:26px 28px">
+      <div style="font-family:'Roboto Mono',monospace;font-size:11px;letter-spacing:.5px;color:#8C9691;margin-bottom:10px">DIE RICHTUNG</div>
+      <div style="font-family:'Roboto Slab',Georgia,serif;font-weight:600;font-size:21px;line-height:1.35;color:#fff;max-width:60ch;text-wrap:pretty">Recherchi wird ein Bewohner von Pet Studio, nicht ein Gast mit eigenem Hausrat.</div>
+      <div style="font-size:13.5px;line-height:1.65;color:#B7BFC4;margin-top:12px;max-width:76ch;text-wrap:pretty">v9 forken zu v10, Recherchi als Art in die Bibliothek eintragen — Kamera, Reiter, Regler für Augen und Mund, Export sind dort schon da und funktionieren für jedes Pet. Der Grund, warum das gesagt werden muss: derselbe Fehler ist zweimal passiert — ein Ersatzkörper, und eine Etage höher ein eigenes Licht, eine eigene Kamera, eigene Regler. Jedes Mal war das Ergebnis ein zweites System, das dem ersten widerspricht.</div>
+    </section>
+
+    <section style="margin-top:22px;background:#fff;border:1px solid #E5E7EB;border-radius:12px;overflow:hidden">
+      <div style="padding:16px 20px;border-bottom:1px solid #F0F0F0">
+        <div style="font-family:'Roboto Slab',Georgia,serif;font-weight:600;font-size:15px">Eigentum je Kanal</div>
+        <div style="font-size:12.5px;color:#6B7280;margin-top:3px">Aus dem Treiber-Vertrag übernommen, um drei Zeilen ergänzt. Wer eine Fähigkeit nicht anmeldet, bekommt sie nicht.</div>
+      </div>
+      <div style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr) minmax(0,1.3fr);font-size:11px;font-weight:700;letter-spacing:.3px;color:#9CA3AF;padding:10px 20px;background:#FAFAFA;border-bottom:1px solid #F0F0F0">
+        <div>KANAL</div><div>EIGENTÜMER</div><div>RECHERCHI BRINGT</div>
+      </div>
+      <sc-for list="{{ owners }}" as="o" hint-placeholder-count="7">
+        <div style="{{ o.rowStyle }}">
+          <div style="font-size:13.5px;font-weight:500;padding-right:12px">{{ o.k }}</div>
+          <div style="font-family:'Roboto Mono',monospace;font-size:11.5px;color:#3C4249;padding-right:12px">{{ o.e }}</div>
+          <div style="font-size:13px;line-height:1.5;color:#6B7280">{{ o.r }}</div>
+        </div>
+      </sc-for>
+    </section>
+
+    <section style="margin-top:22px;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(400px,100%),1fr));gap:16px;align-items:start">
+      <div style="background:#fff;border:1px solid #E5E7EB;border-radius:12px;padding:22px">
+        <div style="font-size:11px;font-weight:700;letter-spacing:.4px;color:#3F7A22;margin-bottom:8px">RECHERCHI BRINGT · 1</div>
+        <div style="font-family:'Roboto Slab',Georgia,serif;font-weight:600;font-size:16px;margin-bottom:12px">Frei befüllbare HTML-Flächen</div>
+        <div style="font-size:13.5px;line-height:1.62;color:#3C4249;margin-bottom:14px;text-wrap:pretty">Der Körper rendert echtes DOM als Textur und richtet für jede Fläche eine Trefferfläche aus — native Zeigerereignisse auf <b>allen sechs</b> Seiten. Eine Fläche ist ein <b>innerHTML-String</b>; das ist die ganze Naht, an der ein Pet frei befüllbar wird.</div>
+        <pre style="margin:0 0 14px;background:#FAFAFA;border:1px solid #F0F0F0;border-radius:8px;padding:12px 14px;font-family:'Roboto Mono',monospace;font-size:11.5px;line-height:1.7;color:#2A2E32;overflow-x:auto">el.faces = [{id, l, sub}, …]
+el.setFaceHtml(id, html)
+el.overlay(id)      // L2, kostet keine Rasterung
+el.active = 'scan'</pre>
+        <div style="font-size:12.5px;line-height:1.6;color:#6B7280">Drei nicht verhandelbare Regeln: Entwurfsrahmen 470 px fest · eine Rolle pro Element (Rasterbox, Trefferfläche, Entwurfsrahmen) · bewegliche Gesichtsteile ins L2-Overlay, nicht in die Textur. Der Wirt übernimmt Polyfill, Rahmen und Ausrichtung — wie heute three und den Farbraum.</div>
+      </div>
+      <div style="background:#fff;border:1px solid #E5E7EB;border-radius:12px;padding:22px">
+        <div style="font-size:11px;font-weight:700;letter-spacing:.4px;color:#3F7A22;margin-bottom:8px">RECHERCHI BRINGT · 2</div>
+        <div style="font-family:'Roboto Slab',Georgia,serif;font-weight:600;font-size:16px;margin-bottom:12px">Die Chat-Eingabe — nicht „Mund"</div>
+        <div style="font-size:13.5px;line-height:1.62;color:#3C4249;margin-bottom:14px;text-wrap:pretty">Ein mitwachsendes <b>textarea</b> auf 72 % Flächenhöhe. Klicks und Tasten stellt der Körper synthetisch zu, deshalb funktioniert Tippen auch auf einer gedrehten Fläche.</div>
+        <pre style="margin:0 0 14px;background:#FAFAFA;border:1px solid #F0F0F0;border-radius:8px;padding:12px 14px;font-family:'Roboto Mono',monospace;font-size:11.5px;line-height:1.7;color:#2A2E32;overflow-x:auto">&lt;textarea data-act="chat" rows="1"&gt;
+→ faceaction {face, act, value, key}</pre>
+        <div style="border-left:2px solid #99CC33;padding-left:12px;font-size:13px;line-height:1.62;color:#3C4249">Der Viseme-Mund bleibt bei <b>PetMouth</b>. Das Eingabefeld heißt <b>face.input</b> und liegt auf der Fläche. Zwei Namen, zwei Besitzer, kein Streit — zwei Besitzer an einem Kanal ist der Fehler, an dem der Travel-Cut gescheitert ist. Recherchi spricht mit dem Viseme-Mund des Studios und hört über face.input.</div>
+      </div>
+    </section>
+
+    <section style="margin-top:16px;background:#fff;border:1px solid #E5E7EB;border-radius:12px;padding:22px">
+      <div style="display:flex;gap:22px;align-items:flex-start;flex-wrap:wrap">
+        <div style="flex:1;min-width:280px">
+          <div style="font-size:11px;font-weight:700;letter-spacing:.4px;color:#3F7A22;margin-bottom:8px">RECHERCHI BRINGT · 3 · NEU</div>
+          <div style="font-family:'Roboto Slab',Georgia,serif;font-weight:600;font-size:16px;margin-bottom:12px">Die Nase ist ein Knopf</div>
+          <div style="font-size:13.5px;line-height:1.62;color:#3C4249;margin-bottom:12px;text-wrap:pretty">Ein 3D-Ball zum Eindrücken, kein gemalter Punkt. Damit ist die Nase <b>Geometrie, nicht Fläche</b>: eine Halbkugel vor dem Gesicht, die auf der Flächennormalen eintaucht. Läge sie in der Textur, rasterte jeder Druck den ganzen Würfel neu. Rückkanal ist derselbe wie bei der Chat-Eingabe: <span style="font-family:'Roboto Mono',monospace;font-size:12px">faceaction {act:'nose'}</span>.</div>
+          <div style="font-size:12.5px;line-height:1.6;color:#6B7280">Offen: <b>was der Druck tut</b> — Scan starten (»Apportieren!« wandert von der Schaltfläche auf die Nase), Ton aus/an, oder Recherchi wecken. Eine Entscheidung über die Bedienung, nicht über den Knopf.</div>
+        </div>
+        <div style="width:270px;flex:none">
+          <div style="font-size:11px;font-weight:700;letter-spacing:.4px;color:#9CA3AF;margin-bottom:9px">BEWEGUNGSREGELN</div>
+          <sc-for list="{{ nose }}" as="n" hint-placeholder-count="4">
+            <div style="display:flex;gap:9px;align-items:baseline;padding:0 0 9px">
+              <div style="width:5px;height:5px;border-radius:50%;background:#99CC33;flex:none;margin-top:6px"></div>
+              <div style="font-size:12.5px;line-height:1.55;color:#3C4249">{{ n.t }}</div>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+    </section>
+
+    <section style="margin-top:22px;background:#fff;border:1px solid #E5E7EB;border-radius:12px;overflow:hidden">
+      <div style="padding:16px 20px;border-bottom:1px solid #F0F0F0">
+        <div style="font-family:'Roboto Slab',Georgia,serif;font-weight:600;font-size:15px">Die Beine: Studio-Eigentum, drei Wege</div>
+        <div style="font-size:12.5px;color:#6B7280;margin-top:3px">Bei den 24 Cube-Pets stecken Beingeometrie und Gang im GLB — acht Clips je Pet, Node-Animation, nicht skinned. Recherchi hat kein GLB. Das ist die eine offene Entscheidung.</div>
+      </div>
+      <sc-for list="{{ ways }}" as="w" hint-placeholder-count="3">
+        <div style="{{ w.rowStyle }}">
+          <div style="display:flex;align-items:baseline;gap:10px;margin-bottom:5px;flex-wrap:wrap">
+            <div style="font-family:'Roboto Mono',monospace;font-size:12px;color:#99CC33;font-weight:500">{{ w.n }}</div>
+            <div style="font-size:14.5px;font-weight:500">{{ w.t }}</div>
+            <div style="flex:1"></div>
+            <div style="{{ w.pill }}">{{ w.v }}</div>
+          </div>
+          <div style="font-size:13px;line-height:1.6;color:#6B7280;max-width:82ch;text-wrap:pretty;padding-left:22px">{{ w.d }}</div>
+        </div>
+      </sc-for>
+      <div style="padding:14px 20px 16px;background:#FAFAFA;border-top:1px solid #F0F0F0;font-size:13px;line-height:1.6;color:#3C4249">Was in keinem der drei Wege passiert: <b>Recherchi zeichnet seine eigenen Beine.</b> Ein Modul, das Beine malt, während PetMotion den Körper bewegt, kämpft mit ihm um dieselbe Achse.</div>
+    </section>
+
+    <section style="margin-top:22px;background:#fff;border:1px solid #E5E7EB;border-radius:12px;padding:22px">
+      <div style="font-family:'Roboto Slab',Georgia,serif;font-weight:600;font-size:16px;margin-bottom:5px">Der Art-Eintrag · <span style="font-family:'Roboto Mono',monospace;font-size:13px;font-weight:400">contracts/recherchi.pet.json</span></div>
+      <div style="font-size:12.5px;color:#6B7280;margin-bottom:16px">Entwurf zur Aufnahme in die kanonische <b>pet-LIBRARY.json</b> 0.4.3. Feldnamen daraus übernommen, nicht erfunden.</div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(148px,1fr));gap:10px;margin-bottom:16px">
+        <sc-for list="{{ fields }}" as="f" hint-placeholder-count="9">
+          <div style="{{ f.boxStyle }}">
+            <div style="font-family:'Roboto Mono',monospace;font-size:11px;color:#9CA3AF">{{ f.k }}</div>
+            <div style="font-family:'Roboto Mono',monospace;font-size:13px;font-weight:500;color:#111;margin-top:2px">{{ f.v }}</div>
+          </div>
+        </sc-for>
+      </div>
+      <div style="font-size:13px;line-height:1.62;color:#3C4249;max-width:82ch;text-wrap:pretty">Drei neue Werte (<b>body: html-cube</b>, <b>skin: html-faces</b>, <b>glb: null</b>) mit Begründung je Wert im <b>_abweichungen</b>-Block, vier offene Fragen im <b>_offen</b>-Block. Die Augen-Ankerlage ist aus dem gemessenen Recherchi-Gesicht umgerechnet (Entwurfsrahmen 470 px: Augenbreite 26 %, Abstand 55 %, Mitte auf 27 % Höhe) — <b>eine Quelle, drei Zahlen</b>: in Recherchi als <b>EYE</b>, im Studio als <b>eye.anchor</b>.</div>
+    </section>
+
+    <section style="margin-top:22px;border:1px solid #E8D7B4;background:#FFFCF4;border-radius:12px;overflow:hidden">
+      <div style="padding:18px 22px 14px">
+        <div style="display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;margin-bottom:6px">
+          <div style="font-family:'Roboto Slab',Georgia,serif;font-weight:600;font-size:16px;color:#6B4E12">Fassung 1 war falsch — die Anekdote</div>
+          <div style="display:inline-block;border-radius:4px;padding:3px 8px;background:#F0E2C0;color:#6B4E12;font:700 10.5px/1.5 Roboto,sans-serif;letter-spacing:.3px">ANEKDOTE · NICHT EINBAUEN</div>
+        </div>
+        <div style="font-size:13.5px;line-height:1.62;color:#5C4A22;max-width:82ch;text-wrap:pretty">Zuerst habe ich ein eigenes Bein-Modul gebaut: Rubber-Hose in SVG, Gangzyklus, Plant-Lock, Werkbank, Abnahmezahl. Es lief, der Fußschlupf war 0,00 px — und es war trotzdem die falsche Antwort. Nachtrag: im breiten Feld zeigte sich, dass die Setzpunkt-Übernahme nur in einem Fenster von 0,008 Zyklus griff, bei 0,036 Zyklus pro Bild also fast immer übersprungen wurde. Der Fuß fror ein, das Bein wurde zur Leine — und die eigene Abnahmezahl blieb grün, weil sie nur Bewegung <i>während</i> der Standphase misst. <b>Eine Messzahl, die am Fehler vorbeimisst, ist keine Abnahme.</b> Behoben (Übernahme beim Eintritt in den Stand), damit der Beleg unten läuft.</div>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(260px,100%),1fr));gap:0;border-top:1px solid #F0E6D0">
+        <sc-for list="{{ wrongs }}" as="x" hint-placeholder-count="3">
+          <div style="padding:16px 22px;border-right:1px solid #F0E6D0">
+            <div style="font-size:11px;font-weight:700;letter-spacing:.4px;color:#B08A3C;margin-bottom:6px">{{ x.n }}</div>
+            <div style="font-size:14px;font-weight:500;margin-bottom:4px;color:#4A3B14">{{ x.t }}</div>
+            <div style="font-size:12.5px;line-height:1.58;color:#6B5A2E;text-wrap:pretty">{{ x.d }}</div>
+          </div>
+        </sc-for>
+      </div>
+      <div ref="{{ stageRef }}" style="position:relative;height:210px;overflow:hidden;background:linear-gradient(180deg,#FFFDF7 0%,#F6F2E6 100%);border-top:1px solid #F0E6D0">
+        <div style="{{ floorStyle }}"></div>
+        <div style="{{ bodyStyle }}">
+          <div style="{{ eyeLStyle }}"></div>
+          <div style="{{ eyeRStyle }}"></div>
+          <div style="{{ noseStyle }}"></div>
+          <div style="{{ mouthStyle }}"></div>
+        </div>
+      </div>
+      <div style="display:flex;gap:22px;flex-wrap:wrap;align-items:center;padding:11px 22px 14px;background:#FBF7EC;border-top:1px solid #F0E6D0;font-family:'Roboto Mono',monospace;font-size:11.5px;line-height:1.9;color:#6B5A2E">
+        <button onClick="{{ toggleRun }}" style="{{ runBtnStyle }}">{{ runLabel }}</button>
+        <div><span style="color:#B08A3C">Zustand </span>{{ mState }}</div>
+        <div><span style="color:#B08A3C">Fußschlupf (nur Standphase) </span>{{ mSlip }} px</div>
+        <div><span style="color:#B08A3C">Bilder/s </span>{{ mFps }}</div>
+        <div style="color:#B08A3C">lief, maß sich selbst grün — und beantwortete die falsche Frage</div>
+      </div>
+    </section>
+
+    <section style="margin-top:22px;background:#fff;border:1px solid #E5E7EB;border-radius:12px;padding:22px 22px 8px">
+      <div style="font-family:'Roboto Slab',Georgia,serif;font-weight:600;font-size:16px;margin-bottom:4px">Nächste Schritte</div>
+      <div style="font-size:12.5px;color:#6B7280;margin-bottom:16px">In dieser Reihenfolge. Die erste Zeile ist eine Entscheidung, keine Messung.</div>
+      <sc-for list="{{ next }}" as="o" hint-placeholder-count="5">
+        <div style="display:flex;gap:14px;align-items:baseline;padding:0 0 16px">
+          <div style="font-family:'Roboto Mono',monospace;font-size:12px;color:#99CC33;font-weight:500;width:22px;flex:none">{{ o.n }}</div>
+          <div>
+            <div style="font-size:14px;font-weight:500;line-height:1.45;margin-bottom:3px">{{ o.t }}</div>
+            <div style="font-size:13px;line-height:1.6;color:#6B7280;max-width:74ch;text-wrap:pretty">{{ o.d }}</div>
+          </div>
+        </div>
+      </sc-for>
+    </section>
+
+    <div style="margin-top:26px;font-size:12.5px;line-height:1.7;color:#6B7280;font-style:italic;text-align:center">Ein Modul erklärt, was es braucht. Ein Wirt liefert genau das. Was nicht erklärt wurde, ist nicht da.</div>
+  </div>
+</div>
+
+<template id="__bundler_thumbnail"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120"><rect width="120" height="120" rx="18" fill="#99CC33"/><rect x="30" y="30" width="60" height="48" rx="8" fill="#fff"/><circle cx="48" cy="50" r="6" fill="#1A2026"/><circle cx="72" cy="50" r="6" fill="#1A2026"/><rect x="40" y="78" width="12" height="16" rx="3" fill="#fff" stroke="#1A2026" stroke-width="3"/><rect x="68" y="78" width="12" height="16" rx="3" fill="#fff" stroke="#1A2026" stroke-width="3"/></svg></template>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1180,&quot;height&quot;:1500}}">
+class Component extends DCLogic {
+  state = { run: true, m: { state:'stand', slipMax:0, cycle:0, legLen:0 }, fps: 60,
+            body: { cx: 160, bottom: 150, w: 110 }, ground: 168 };
+
+  componentDidMount(){ this._boot(); }
+  componentWillUnmount(){ this._stop = true; if (this._legs) this._legs.dispose(); }
+
+  /* Die Anekdote laeuft weiter — als Beleg, nicht als Baustein. */
+  async _boot(){
+    if (!this._stage || !window.RecherchiLegs) { setTimeout(() => this._boot(), 120); return; }
+    const legs = new window.RecherchiLegs();
+    let seed = 20260829;
+    const rng = () => (seed = (seed * 1103515245 + 12345) & 0x7fffffff) / 0x7fffffff;
+    await legs.init({ rng, clock: { now: () => performance.now() / 1000 } });
+    legs.mount(this._stage);
+    legs.setInk('#4A3B14', '#FFFDF7');
+    this._legs = legs;
+    this._x = 0; this._dir = 1; this._last = performance.now(); this._fps = 60; this._tick = 0;
+    const loop = now => {
+      if (this._stop) return;
+      const dt = Math.min(0.05, (now - this._last) / 1000); this._last = now;
+      this._fps = this._fps * 0.92 + (1 / Math.max(0.001, dt)) * 0.08;
+      this._frame(dt);
+      requestAnimationFrame(loop);
+    };
+    requestAnimationFrame(loop);
+  }
+
+  _frame(dt){
+    const st = this._stage, legs = this._legs;
+    if (!st || !legs) return;
+    const R = st.getBoundingClientRect();
+    const w = Math.max(78, Math.round(Math.min(112, R.height * 0.5)));
+    const ground = Math.round(R.height * 0.80);
+    const speed = this.state.run ? 130 : 0;
+    this._x += speed * dt * this._dir;
+    const min = w * 0.7, max = Math.max(min + 40, R.width - w * 0.7);
+    if (this._x > max){ this._x = max; this._dir = -1; }
+    if (this._x < min){ this._x = min; this._dir = 1; }
+    const cx = this._x || min;
+    const bottom = ground - w * legs.p.len;
+    legs.setGround(ground);
+    legs.setBody({ cx, bottom, w, sy: 1 });
+    legs.drive({ vx: speed * this._dir, vy: 0, air: 0, land: 0, sy: 1 });
+    legs.update(dt);
+    this._tick += dt;
+    const nb = this.state.body;
+    if (nb.cx !== cx || nb.w !== w || this._tick > 0.25){
+      if (this._tick > 0.25) this._tick = 0;
+      this.setState({ body: { cx, bottom, w }, m: legs.metrics(), fps: Math.round(this._fps), ground });
+    }
+  }
+
+  toggleRun(){ this.setState(s => ({ run: !s.run })); }
+
+  renderVals(){
+    const s = this.state, b = s.body, w = b.w, h = w;
+    const dot = (x, y, d) => 'position:absolute;border-radius:50%;background:#1A2026;width:' + d +
+      'px;height:' + d + 'px;left:' + Math.round(x - d / 2) + 'px;top:' + Math.round(y - d / 2) + 'px';
+    const es = Math.round(w * 0.13), gap = Math.round(w * 0.26), ns = Math.round(w * 0.15);
+    const row = (last, bg) => 'display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr) minmax(0,1.3fr);' +
+      'gap:0;padding:12px 20px;align-items:start' + (last ? '' : ';border-bottom:1px solid #F4F4F5') +
+      (bg ? ';background:#F7FBEF' : '');
+    const O = [
+      ['Augen', 'PetFace / EyeRig', 'drei gemessene Zahlen (Ankerlage), sonst nichts', 0],
+      ['Mund (Viseme)', 'PetMouth', 'nichts', 0],
+      ['Körper, Beine, Gang', 'PetMotion + GLB-Clips', 'nichts', 0],
+      ['Clips + Emote-Tabelle', 'Host (Studio)', 'nichts', 0],
+      ['Licht, Kamera, Boden', 'Host (Studio)', 'nichts', 0],
+      ['Flächen (HTML)', 'neu: html-faces', 'das Bauteil', 1],
+      ['Eingabe auf der Fläche', 'neu: face.input', 'das Bauteil', 1],
+      ['Knopf auf der Fläche (Nase)', 'neu: face.button + pointer', 'das Bauteil', 1]
+    ];
+    const W = [
+      ['a', 'Spender-GLB', 'Ein vorhandenes Cube-Pet liefert Beine und die acht Clips, der Rumpf wird durch den HTML-Würfel ersetzt. Kein neues Asset — fremde Proportionen sind der Preis.', 'für den ersten Lauf', 1],
+      ['b', 'Eigenes GLB', 'Beine und Clips für Recherchi modelliert, gleiche Node-Namen wie die 24. Braucht ein Asset im Repo. Danach ist er ein Pet wie jedes andere.', 'das Ziel', 1],
+      ['c', 'Prozedurale Beine im Wirt', 'PetMotion bekommt ein Bein-Bauteil für körperlose Arten. Teuerste Variante und die einzige, die ein zweites Bewegungssystem einführt — genau der Fehler aus Fassung 1.', 'zuletzt', 0]
+    ];
+    return {
+      stageRef: el => { this._stage = el; },
+      runLabel: s.run ? 'anhalten' : 'laufen lassen',
+      runBtnStyle: 'border:1px solid #E0D2AE;background:' + (s.run ? '#FFF' : '#F0E2C0') +
+        ';color:#6B4E12;border-radius:6px;padding:6px 11px;font:600 12px/1 Roboto,sans-serif;cursor:pointer',
+      floorStyle: 'position:absolute;left:0;right:0;top:' + s.ground + 'px;height:1px;background:rgba(74,59,20,.18)',
+      bodyStyle: 'position:absolute;background:#FFFDF7;border:1px solid rgba(74,59,20,.16);' +
+        'box-shadow:0 12px 30px -14px rgba(74,59,20,.34);border-radius:' + Math.round(w * 0.06) + 'px;' +
+        'width:' + w + 'px;height:' + h + 'px;left:' + Math.round(b.cx - w / 2) + 'px;top:' + Math.round(b.bottom - h) + 'px',
+      eyeLStyle: dot(w / 2 - gap / 2, h * 0.27, es),
+      eyeRStyle: dot(w / 2 + gap / 2, h * 0.27, es),
+      noseStyle: 'position:absolute;border-radius:50%;background:#99CC33;width:' + ns + 'px;height:' + ns +
+        'px;left:' + Math.round(w / 2 - ns / 2) + 'px;top:' + Math.round(h * 0.45 - ns / 2) + 'px',
+      mouthStyle: 'position:absolute;left:19%;right:19%;height:2.5px;border-radius:2px;background:#C9CED4;top:' +
+        Math.round(h * 0.72) + 'px',
+      mState: s.m.state === 'walk' ? 'geht' : s.m.state === 'air' ? 'Flug' : 'steht',
+      mSlip: (s.m.slipMax || 0).toFixed(2).replace('.', ','),
+      mFps: s.fps,
+
+      nose: [
+        { t: 'Keine Anticipation. Ein Knopf, der sich vor dem Druck bewegt, ist kaputt.' },
+        { t: 'Rein hart (60–80 ms), zurück federnd — dasselbe sd() wie pet-puppet, pet-face, pet-motion. Keine vierte Feder.' },
+        { t: 'Der Körper antwortet mit: nudge aus MOVES (apex 0.06). Knopf, dann Kopf, dann Körper.' },
+        { t: 'Eintauchtiefe ist ein Anteil des Ballradius, keine Pixelzahl.' }
+      ],
+
+      owners: O.map((o, i) => ({ k: o[0], e: o[1], r: o[2], rowStyle: row(i === O.length - 1, o[3]) })),
+
+      ways: W.map((x, i) => ({
+        n: '(' + x[0] + ')', t: x[1], d: x[2], v: x[3],
+        rowStyle: 'padding:14px 20px' + (i === W.length - 1 ? '' : ';border-bottom:1px solid #F4F4F5'),
+        pill: 'display:inline-block;border-radius:4px;padding:3px 9px;font:700 10.5px/1.5 Roboto,sans-serif;letter-spacing:.3px;' +
+          (x[4] ? 'background:#EEF6DC;color:#3F7A22' : 'background:#F2F4F6;color:#6B7280')
+      })),
+
+      fields: [
+        ['id', 'recherchi'], ['name', 'Recherchi'], ['glb', 'null'], ['body', 'html-cube'],
+        ['skin', 'html-faces'], ['color', '#FFFFFF'], ['archetype', 'deadpan'],
+        ['eye.anchor.dx', '0.275'], ['eye.anchor.dy', '-0.23'], ['eye.ring', '0.26'],
+        ['pupilSize', '0.30'], ['tuning', '0 / 0']
+      ].map(f => ({ k: f[0], v: f[1],
+        boxStyle: 'border:1px solid ' + (['glb','body','skin'].indexOf(f[0]) >= 0 ? '#DCE9C4' : '#F0F0F0') +
+          ';border-radius:8px;padding:9px 11px;background:' +
+          (['glb','body','skin'].indexOf(f[0]) >= 0 ? '#F7FBEF' : '#FAFAFA') })),
+
+      wrongs: [
+        { n: '1 · FALSCHE FRAGE', t: 'Die Beine kommen aus dem Studio', d: 'Der Grund für Export, Design und Import war genau das. Ein zweites Beinsystem daneben ist der Ersatzkörper-Fehler, eine Etage tiefer.' },
+        { n: '2 · VERTRAGSBRUCH', t: 'Körper gehört PetMotion', d: 'Ein Modul, das Beine zeichnet, hält eine zweite Wahrheit über die Lage der Figur. Der Treiber-Vertrag nennt den Eigentümer namentlich.' },
+        { n: '3 · ANIMATIONSREGELN', t: 'Bewegung ist keine Animation', d: 'Kein Anticipation-Frame, keine Kaskade Augen → Kopf → Körper → Root, keine ballistischen Bögen, keine Feder-Dämpfer. Alles gelöst — in recherchi-motion.js und im Studio.' }
+      ],
+
+      next: [
+        { n: '1', t: 'Weg für die Beine entscheiden: (a), (b) oder (c)', d: 'Empfehlung (a) für den ersten Lauf, (b) als Ziel. Danach richtet sich alles Weitere — ohne diese Entscheidung ist der Art-Eintrag nicht vollständig.' },
+        { n: '2', t: 'v9 forken zu v10, Recherchi als Art eintragen', d: 'contracts/recherchi.pet.json in die kanonische pet-LIBRARY.json einspielen, version zählen, updated setzen, canonical nicht verlieren.' },
+        { n: '3', t: 'html-faces als Fähigkeit in den Katalog', d: 'Der Wirt übernimmt Polyfill, Entwurfsrahmen 470 px und Trefferausrichtung. Ohne die Zeile darf kein Modul die Flächen anfassen.' },
+        { n: '4', t: 'face.input benennen, statt „Mund" zu sagen', d: 'Sonst wandert der Namenskonflikt mit PetMouth in v10 mit hinein.' },
+        { n: '4b', t: 'Entscheiden, was der Nasendruck tut', d: 'Erst die Bedeutung, dann der Ball. Der Knopf selbst ist eine Halbkugel mit Feder — vier Zeilen, wenn klar ist, was er auslöst.' },
+        { n: '5', t: 'Recherchi v5: nichts an Beinen bauen', d: 'v5 bekommt sie, wenn er im Studio steht — dann kommen sie mit Licht, Kamera und Reglern zusammen. Bis dahin bleibt die Flächentabelle die Arbeit: sechs Strings plus IDs nach außen ziehen.' }
+      ]
+    };
+  }
+}
+
+</script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>DocCheck Dr Source Audit · 2D Animation Studio</title>
+<style>
+:root{--dc:#cc0033;--bg:#f4f5f7;--ink:#17191d;--line:#dfe3e8}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:14px/1.45 system-ui,sans-serif}
+main{max-width:1100px;margin:auto;padding:24px}.bar,.stage{background:white;border:1px solid var(--line);border-radius:14px;padding:16px;margin-bottom:14px}.bar{display:flex;gap:14px;flex-wrap:wrap;align-items:center}.bar strong{margin-right:auto}.bar label{display:flex;gap:6px;align-items:center}.stage{display:grid;place-items:center;min-height:720px}.stage svg{height:min(78vh,720px);width:auto;max-width:100%}.note{color:#666}input{accent-color:var(--dc)}
+</style>
+<main>
+<div class="bar"><strong>_Dr_Vorlage.ai · source-extracted vector layers</strong>
+<label><input type="checkbox" data-layer="layer-base" checked> base</label>
+<label><input type="checkbox" data-layer="layer-eyes" checked> eyes</label>
+<label><input type="checkbox" data-layer="layer-pupils" checked> pupils</label>
+<label><input type="checkbox" data-layer="layer-face-foreground" checked> foreground</label>
+</div>
+<div class="stage" id="stage">Loading source-extracted SVG…</div>
+<p class="note">This viewer uses the PDF-compatible vectors from the Illustrator file. It does not redraw or normalize the source. “foreground” is a provisional semantic label inferred from draw order.</p>
+<script>
+fetch('./_Dr_Vorlage_PDF_VECTOR_MASTER.svg').then(r=>r.text()).then(t=>{
+ const host=document.getElementById('stage'); host.innerHTML=t;
+ document.querySelectorAll('[data-layer]').forEach(c=>c.addEventListener('change',()=>{
+   const el=host.querySelector('#'+c.dataset.layer); if(el)el.style.display=c.checked?'':'none';
+ }));
+});
+</script>
+</main>

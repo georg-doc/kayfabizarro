@@ -1,0 +1,561 @@
+{
+  "sourceFile": "MedKayfab_Emergency_Medicine - ADD web.pdf",
+  "deckTitle": "The Golden Hour Gauntlet — Resuscitation, Rhythms & The Triage Tempest",
+  "deckType": "Emergency medicine education deck",
+  "bundleSuggestion": "TBD",
+  "pageCount": 15,
+  "analysisVersion": 1.0,
+  "generatedAt": "2026-06-19T02:10:00",
+  "savedAt": "2026-06-19T02:10:00",
+  "extractionTool": "cowork_task_v3",
+  "RAF": false,
+  "gradingMode": "educational",
+  "deckFunction": ["educational", "medical_training"],
+  "seriesId": "medkayfab",
+  "cards": [
+    {
+      "cardNumber": 1,
+      "cardName": "Airway-Annie (The Open Pipe)",
+      "grade": 1,
+      "power": "Annie ensures oxygen reaches the lungs. If blocked by debris or a swollen tongue, the match ends in minutes.",
+      "lore": "Protecting the airway is the prime directive. Upper Airway compromise demands the Tube-Tango (Intubation) to prevent asphyxiation.",
+      "gradeReason": "GCS < 8 = Intubate — the rule is the card. Instant action.",
+      "artworkPrompt": "Style: Ink+watercolor comic. Subject: Armored nurse elephant securing a glowing airway pipe. Mood: Urgent, heroic."
+    },
+    {
+      "cardNumber": 2,
+      "cardName": "Breathing-Ben (The Bellows-Master)",
+      "grade": 1,
+      "power": "Ben manages the gas exchange. If the chest isn't rising, Ben deploys the BVM-Bag or the Chest-Tube-Chisel.",
+      "lore": "Focus on tension. If obstructive pressure pushes the heart aside, the Needle-Decompression-Nudge restores ventilation.",
+      "gradeReason": "SpO2 < 94% triggers immediate action — bellows metaphor makes the role embody-able.",
+      "artworkPrompt": "Style: Ink+watercolor comic. Subject: Gorilla with massive accordion-lungs pumping air into a patient. Mood: Powerful, determined."
+    },
+    {
+      "cardNumber": 3,
+      "cardName": "Circulation-Cyril (The Tank-Filler)",
+      "grade": 1,
+      "power": "Cyril manages the pressure pipes. If the blood leaks or the pump stalls, Cyril initiates fluid-flooding.",
+      "lore": "Shock is a failure of perfusion. Deploy the Two Large-Bore strategy to keep organs from dying of thirst.",
+      "gradeReason": "MAP < 65 / Cap Refill > 2s — the tank metaphor instantly conveys the fill-or-fail urgency.",
+      "artworkPrompt": "Style: Ink+watercolor comic. Subject: Beaver engineer plugging burst pipes while filling a tank with IV fluid. Mood: Decisive, emergency."
+    },
+    {
+      "cardNumber": 4,
+      "cardName": "Disability-Dave (The Brain-Scan)",
+      "grade": 2,
+      "power": "Dave checks the Mainframe. If pupils differ or both are blown, suspect a massive bleed.",
+      "lore": "Always check the sugar! A low glucose crash mimics a stroke but only needs a Dextrose-Drop to be defeated.",
+      "gradeReason": "Diagnostic role rather than performative — 'Brain-Scan' describes, doesn't invite embodiment.",
+      "artworkPrompt": "Style: Ink+watercolor comic. Subject: Owl scientist scanning a glowing brain model with pupils for clues. Mood: Focused, analytical."
+    },
+    {
+      "cardNumber": 5,
+      "cardName": "V-Fib-Vinnie (The Static Storm)",
+      "grade": 1,
+      "power": "Vinnie makes the heart quiver like a bag of worms. Zero blood moves.",
+      "lore": "Vinnie needs the Electrical-Reset-Button. Defibrillation stops the chaos so the natural pacemaker can regain command.",
+      "gradeReason": "'Bag of worms' / 'Static Storm' — one of the best arrhythmia characterizations in any med ed deck.",
+      "artworkPrompt": "Style: Ink+watercolor comic. Subject: Electric eel coiled around a chaotically quivering heart, sparks flying. Mood: Chaotic, lethal."
+    },
+    {
+      "cardNumber": 6,
+      "cardName": "Flatline-Fred (The Silent Death)",
+      "grade": 1,
+      "power": "Fred is the absence of life. He cannot be shocked.",
+      "lore": "You cannot shock a dead battery. Fred requires high-quality CPR and the Epi-Injection-Engine every 3-5 minutes.",
+      "gradeReason": "Three words: absence of life. Immediately distinguishes asystole from shockable rhythms.",
+      "artworkPrompt": "Style: Ink+watercolor comic. Subject: Ghost possum lying on a flat ECG line, medics frantically doing CPR. Mood: Eerie, desperate."
+    },
+    {
+      "cardNumber": 7,
+      "cardName": "Tachy-Tony (The Engine-Overheat)",
+      "grade": 1,
+      "power": "Tony runs the heart so fast that the filling chambers never have time to load blood.",
+      "lore": "Unstable? Synchronized-Zap. Stable? Adenosine-Reset.",
+      "gradeReason": "Rate > 150 + 'Engine-Overheat' + the lore's binary decision tree = G1 teaching perfection.",
+      "artworkPrompt": "Style: Ink+watercolor comic. Subject: Cheetah on a treadmill with a smoking heart engine, cooling fans failing. Mood: Frantic, overheating."
+    },
+    {
+      "cardNumber": 8,
+      "cardName": "Brady-Bill (The Slow-Mo Curse)",
+      "grade": 1,
+      "power": "Bill makes the heart beat so slowly that the brain blacks out from lack of pressure.",
+      "lore": "Usually a wiring issue. Atropine might speed him up, but an external battery (Pacing) is the real fix.",
+      "gradeReason": "Rate < 40 + 'Slow-Mo Curse' — Pacing as 'external battery' is a memorably accurate metaphor.",
+      "artworkPrompt": "Style: Ink+watercolor comic. Subject: Ancient turtle with a grandfather-clock heart barely ticking, pacemaker wires attached. Mood: Slow, impending."
+    },
+    {
+      "cardNumber": 9,
+      "cardName": "Anaphylaxis-Annie (The Global Leak)",
+      "grade": 1,
+      "power": "Annie turns blood vessels into sieves and slams the airway door shut with explosive edema.",
+      "lore": "Triggered by allergens. Epinephrine is the only key to constrict the pipes and open the lungs simultaneously.",
+      "gradeReason": "'Blood vessels into sieves' + 'airway door shut' — dual threat described in one explosive line.",
+      "artworkPrompt": "Style: Ink+watercolor comic. Subject: Pufferfish exploding with hives, blood vessels leaking, throat swelling shut. Mood: Explosive, allergic crisis."
+    },
+    {
+      "cardNumber": 10,
+      "cardName": "Septic-Sam (The Vasodilation-Vortex)",
+      "grade": 1,
+      "power": "Sam uses a Cytokine-Tsunami to paralyze blood vessels, causing total pressure collapse.",
+      "lore": "Sam demands the Hour-1-Bundle: massive fluids, cultures, and early Pressor-Power (Norepinephrine).",
+      "gradeReason": "'Cytokine-Tsunami' is the kind of metaphor that sticks in a resident's brain for life.",
+      "artworkPrompt": "Style: Ink+watercolor comic. Subject: Microscopic bacteria general directing a wave of cytokines washing out blood vessel walls. Mood: Overwhelming, systemic."
+    },
+    {
+      "cardNumber": 11,
+      "cardName": "Cardiogenic-Carl (The Broken Piston)",
+      "grade": 1,
+      "power": "Carl fails to push. Blood backs up into the lungs, drowning the patient from the inside.",
+      "lore": "Fluid is the enemy. Carl needs Inotrope-Ignition to boost pump strength and an immediate trip to the Cath Lab.",
+      "gradeReason": "'Drowning from the inside' + 'Fluid is the enemy' — reverses the instinct to give fluids. Brilliant teaching.",
+      "artworkPrompt": "Style: Ink+watercolor comic. Subject: Broken rhinoceros piston-heart with fluid flooding backwards into waterlogged lungs. Mood: Failing, urgent."
+    },
+    {
+      "cardNumber": 12,
+      "cardName": "Hypovolemic-Hank (The Dry-Run)",
+      "grade": 1,
+      "power": "Hank strikes when volume is missing. There simply isn't enough juice left to keep the lights on.",
+      "lore": "Replace what is lost! If it's blood, give blood. If it's water, give crystalloids.",
+      "gradeReason": "'Not enough juice to keep the lights on' — immediately embodies the empty-tank emergency.",
+      "artworkPrompt": "Style: Ink+watercolor comic. Subject: Dehydrated camel in a hospital bed with flat veins, IV drip racing in. Mood: Parched, critical."
+    },
+    {
+      "cardNumber": 13,
+      "cardName": "Epi-Eric (The Adrenaline-Jumpstart)",
+      "grade": 1,
+      "power": "Eric violently constricts the pipes and screams at the heart to beat faster.",
+      "lore": "The king of the Code Blue. He diverts all remaining blood to the brain and heart during the fight.",
+      "gradeReason": "'Screams at the heart to beat faster' — this is the most memorable epinephrine description in any deck.",
+      "artworkPrompt": "Style: Ink+watercolor comic. Subject: Adrenaline-crowned rabbit with lightning bolts jumpstarting a stopped heart in a blue boxing ring. Mood: Electric, heroic."
+    },
+    {
+      "cardNumber": 14,
+      "cardName": "Ami-the-Armor (The Rhythm-Shield)",
+      "grade": 1,
+      "power": "Ami stabilizes the heart's electrical wires to keep the static storm of V-Fib from returning.",
+      "lore": "A Class III antiarrhythmic. It buys critical time for the heart to find its normal beat again.",
+      "gradeReason": "Amiodarone as 'Armor' / 'Rhythm-Shield' — STAT 300mg Bolus locks in the dosing immediately.",
+      "artworkPrompt": "Style: Ink+watercolor comic. Subject: Knight in electro-armor holding a shield deflecting ECG chaos away from a glowing heart. Mood: Protective, steady."
+    },
+    {
+      "cardNumber": 15,
+      "cardName": "Atropine-Alice (The Brake-Cutter)",
+      "grade": 1,
+      "power": "Alice cuts the Vagus-Brake, completely removing the inhibitory signals slowing down the heart.",
+      "lore": "An anticholinergic assassin. She stops the Rest and Digest system from ending the match prematurely.",
+      "gradeReason": "'Vagus-Brake' and 'anticholinergic assassin' — dual metaphors that teach the exact mechanism.",
+      "artworkPrompt": "Style: Ink+watercolor comic. Subject: Fox ninja slicing a brake cable labeled VAGUS, heart suddenly accelerating. Mood: Sharp, liberating."
+    },
+    {
+      "cardNumber": 16,
+      "cardName": "Adenosine-Andy (The 6-Second Flatline)",
+      "grade": 1,
+      "power": "Andy stops the heart completely for a few terrifying seconds, forcing it to reboot into a normal rhythm.",
+      "lore": "Used for SVT. It feels like a massive thump in the chest to the conscious patient.",
+      "gradeReason": "'The 6-Second Flatline' is the most accurate and terrifying drug name in medical education.",
+      "artworkPrompt": "Style: Ink+watercolor comic. Subject: Monkey slamming a giant RESET button on a heart that flatlines then reboots glowing. Mood: Terrifying, then relief."
+    },
+    {
+      "cardNumber": 17,
+      "cardName": "Tension-Tony (The Heart-Crush)",
+      "grade": 1,
+      "power": "Tony traps air in the chest on a one-way valve, building pressure until the Great Vessels are squashed flat.",
+      "lore": "A clinical diagnosis! Do not wait for X-Ray. Execute the Needle-Decompression-Nudge in the 5th intercostal Space immediately.",
+      "gradeReason": "'Do not wait for X-Ray' — the lore delivers the single most important teaching point for tension pneumo.",
+      "artworkPrompt": "Style: Ink+watercolor comic. Subject: Air-balloon villain inflating inside a ribcage, squashing the heart and great vessels sideways. Mood: Pressure, crushing."
+    },
+    {
+      "cardNumber": 18,
+      "cardName": "Narcan-Nancy (The Opiate-Evictor)",
+      "grade": 1,
+      "power": "Nancy violently rips opiates off the brain's receptors, bringing the patient back to life instantly.",
+      "lore": "Beware the short half-life. Nancy might wear off before the opiates do, throwing the patient back into a coma.",
+      "gradeReason": "'Violently rips opiates off receptors' — the half-life warning lore is the critical follow-up teaching point.",
+      "artworkPrompt": "Style: Ink+watercolor comic. Subject: Bear bouncer physically ejecting opiate molecules from brain receptor doors, patient eyes flying open. Mood: Violent, life-restoring."
+    },
+    {
+      "cardNumber": 19,
+      "cardName": "Gluca-Gwen (The Sugar-Summoner)",
+      "grade": 1,
+      "power": "Gwen forces the liver to dump its entire emergency stash of sugar into the blood.",
+      "lore": "Beyond low sugar, Gwen is the secret key to restart the engine during a lethal Beta-Blocker overdose.",
+      "gradeReason": "The Beta-Blocker overdose lore is the hidden gem — teaching a non-obvious second use memorably.",
+      "artworkPrompt": "Style: Ink+watercolor comic. Subject: Raccoon wizard summoning sugar crystals from a glowing liver vault into bloodstream. Mood: Magical, energizing."
+    },
+    {
+      "cardNumber": 20,
+      "cardName": "Aspirin-Ace (The Platelet-Slip)",
+      "grade": 1,
+      "power": "Ace makes the blood-clotters slippery so they can't block the Coronary-Canyons.",
+      "lore": "Reduces mortality in Myocardial Infarction by preventing the Clot-Monster from growing any larger.",
+      "gradeReason": "'Coronary-Canyons' and 'Clot-Monster' — STAT 300mg Chewed locks in the route immediately.",
+      "artworkPrompt": "Style: Ink+watercolor comic. Subject: Penguin with grease-covered platelet hockey pucks sliding harmlessly past coronary artery gates. Mood: Slippery, life-saving."
+    },
+    {
+      "cardNumber": 21,
+      "cardName": "Heat-Stroke-Harry (The Internal Oven)",
+      "grade": 1,
+      "power": "Harry cooks the body's proteins from the inside out. Sweat production has utterly failed.",
+      "lore": "A true emergency. Harry requires immediate, aggressive physical cooling (ice water/fans) before the brain permanently melts.",
+      "gradeReason": "'Proteins cooking from the inside out' + 'brain permanently melts' — the urgency is physically felt.",
+      "artworkPrompt": "Style: Ink+watercolor comic. Subject: Red crab in a hospital gown with steaming body, ice packs being furiously applied by medics. Mood: Scorching, critical."
+    },
+    {
+      "cardNumber": 22,
+      "cardName": "Frosty-Frank (The Metabolic Freeze)",
+      "grade": 1,
+      "power": "Frank slows cellular time down to a crawl until the heart stumbles into fatal V-Fib.",
+      "lore": "Nobody is dead until they are warm and dead! Frank requires extremely careful, active internal rewarming.",
+      "gradeReason": "'Nobody dead until warm and dead' is the single most important hypothermia teaching line in existence.",
+      "artworkPrompt": "Style: Ink+watercolor comic. Subject: Polar bear patient with J-waves on frozen ECG monitor, slow-motion heart, warming blankets arriving. Mood: Glacial, cautious."
+    },
+    {
+      "cardNumber": 23,
+      "cardName": "Drowning-Drake (The Fluid Barrier)",
+      "grade": 2,
+      "power": "Drake fills the fragile lungs with water, or triggers an iron-tight spasm of the vocal cords to lock air out.",
+      "lore": "Hypoxia is the ultimate killer. Drake requires immediate ventilation and high PEEP to flush fluid out of the alveoli.",
+      "gradeReason": "Power text has a rendering artifact (duplicate line); no visible STAT box. Concept is strong but card has QA issues.",
+      "artworkPrompt": "Style: Ink+watercolor comic. Subject: Hippo wrestler flooding a tiny pair of lungs with water while vocal cords slam shut. Mood: Suffocating, waterlogged."
+    },
+    {
+      "cardNumber": 24,
+      "cardName": "Burn-Ben (The Barrier Break)",
+      "grade": 1,
+      "power": "Ben destroys the skin shield. Core water evaporates instantly, and bacterial armies march in.",
+      "lore": "Massive volume loss is the silent threat. Ben requires enormous amounts of Ringer's Lactate in the first 24 hours.",
+      "gradeReason": "'Bacterial armies march in' + Parkland Formula STAT — the dual threat is immediately embodied.",
+      "artworkPrompt": "Style: Ink+watercolor comic. Subject: Fire lizard with charred skin, bacteria soldiers invading, massive IV Ringer's drip racing in. Mood: Scorched, besieged."
+    },
+    {
+      "cardNumber": 25,
+      "cardName": "Carbon-Monoxide-Carl (The Hemoglobin Hijack)",
+      "grade": 1,
+      "power": "Carl binds to the oxygen bus 240 times stronger than O2. The pulse oximeter lies to you.",
+      "lore": "The patient suffocates despite ample oxygen in the room. Carl demands 100% O2 or a hyperbaric pressure chamber.",
+      "gradeReason": "'The pulse oximeter lies to you' — the single sentence that prevents diagnostic error. Unforgettable.",
+      "artworkPrompt": "Style: Ink+watercolor comic. Subject: Ghostly CO molecule hijacking a hemoglobin bus, pulse oximeter showing 100% while patient turns blue. Mood: Deceptive, insidious."
+    },
+    {
+      "cardNumber": 26,
+      "cardName": "Organophosphate-Otto (The Cholinergic Storm)",
+      "grade": 1,
+      "power": "Otto blocks the cleanup of nerve signals; the entire parasympathetic system is stuck on Full Fire.",
+      "lore": "Otto requires massive, repeated doses of Atropine-Alice until the lungs are finally dry.",
+      "gradeReason": "SLUDGE mnemonic on the STAT box + 'parasympathetic stuck on Full Fire' — the antidote link to Alice is perfect.",
+      "artworkPrompt": "Style: Ink+watercolor comic. Subject: Bulldog covered in SLUDGE with all body fluids pouring out, Atropine syringe army approaching. Mood: Toxic, overwhelming."
+    },
+    {
+      "cardNumber": 27,
+      "cardName": "Beta-Blocker-Ben (The Heart-Slug)",
+      "grade": 2,
+      "power": "Ben suppresses the beta-receptors, slowing the heart's rate and squeeze down so much that it nearly stalls.",
+      "lore": "If standard Atropine fails to break the lock, Gluca-Gwen is the chemical bypass key needed to restart the engine.",
+      "gradeReason": "Third 'Ben' in the deck (Breathing-Ben, Burn-Ben) — naming collision creates table confusion.",
+      "artworkPrompt": "Style: Ink+watercolor comic. Subject: Sloth strangling heart beta-receptors with both hands, Glucagon syringe waiting as the Atropine bounces off. Mood: Sluggish, stuck."
+    },
+    {
+      "cardNumber": 28,
+      "cardName": "Tricyclic-Ty (The Electrical Chaos)",
+      "grade": 1,
+      "power": "Ty blocks crucial sodium channels, widening the QRS complex and throwing the heart into a deadly cardiac rhythm.",
+      "lore": "The specific antidote is Sodium Bicarbonate—it floods the channels with sodium to flush Ty out and stabilize the wires.",
+      "gradeReason": "QRS widening + Seizures STAT, antidote bicarb in lore — complete clinical package in one card.",
+      "artworkPrompt": "Style: Ink+watercolor comic. Subject: Chaos rat jamming sodium channels while ECG widens into lethal spikes, bicarb flood incoming. Mood: Electric, poisoned."
+    },
+    {
+      "cardNumber": 29,
+      "cardName": "Pregnant-Pam (The Return-Block)",
+      "grade": 1,
+      "power": "The heavy uterus physically crushes the Inferior Vena Cava when lying flat, preventing blood from returning to the heart.",
+      "lore": "During CPR, the uterus must be manually shifted to the left, otherwise compressions are pumping an empty heart.",
+      "gradeReason": "'Pumping an empty heart' — this single image burns the left-lateral tilt maneuver into memory permanently.",
+      "artworkPrompt": "Style: Ink+watercolor comic. Subject: Pregnant deer in CPR with uterus crushing IVC, medic tilting her left as blood flow resumes. Mood: Urgent, precise."
+    },
+    {
+      "cardNumber": 30,
+      "cardName": "Pediatric-Paul (The Respiratory Trigger)",
+      "grade": 1,
+      "power": "In children, cardiac arrest is rarely a primary pump failure; it is almost always driven by fatal hypoxia.",
+      "lore": "Ventilation is the absolute priority. Airway management saves pediatric lives before the heart ever stops.",
+      "gradeReason": "The reversal of adult arrest logic is the key pediatric EM teaching — stated in one clear sentence.",
+      "artworkPrompt": "Style: Ink+watercolor comic. Subject: Small mouse child in arrest, medic prioritizing BVM ventilation over chest compressions in miniature boxing ring. Mood: Tiny, critical."
+    },
+    {
+      "cardNumber": 31,
+      "cardName": "Trauma-Tanya (The Death Spiral)",
+      "grade": 1,
+      "power": "Tanya alters blood physics: blood absolutely refuses to clot when the body gets cold and acidic.",
+      "lore": "Damage Control Resuscitation: Keep them warm, stop the bleed, avoid crystalloids, and pump high ratios of blood products.",
+      "gradeReason": "'Blood refuses to clot when cold and acidic' — the lethal triad personified. Immediately actionable lore.",
+      "artworkPrompt": "Style: Ink+watercolor comic. Subject: Shark in coagulopathy storm with blood refusing to clot, acidosis and cold spiraling into vortex. Mood: Spiraling, lethal."
+    },
+    {
+      "cardNumber": 32,
+      "cardName": "Obese-Oliver (The Physical Barrier)",
+      "grade": 2,
+      "power": "Oliver's sheer mass makes achieving adequate chest compression depth and effective ventilation a monumental physical ordeal.",
+      "lore": "Manual CPR fatigue rescuers instantly. Mechanical CPR devices and advanced airway planning are mandatory here.",
+      "gradeReason": "Describes a barrier rather than a role to embody — player knows the challenge but not who to be.",
+      "artworkPrompt": "Style: Ink+watercolor comic. Subject: Massive walrus in hospital bed, tiny medics compressing with all force, mechanical CPR device appearing. Mood: Exhausting, physical."
+    },
+    {
+      "cardNumber": 33,
+      "cardName": "Defi-Dan (The Resetter)",
+      "grade": 1,
+      "power": "Dan sends a violently controlled electrical punch directly through the heart muscle to end all chaotic activity.",
+      "lore": "Dan discharges every cardiac cell simultaneously, creating a moment of total silence so the pacemaker can restart the beat.",
+      "gradeReason": "'Moment of total silence' — the mechanism of defibrillation has never been better described in 12 words.",
+      "artworkPrompt": "Style: Ink+watercolor comic. Subject: Kangaroo boxer delivering a lightning punch to a chaotic heart, all cells flash-frozen then restarting in sync. Mood: Decisive, electric."
+    },
+    {
+      "cardNumber": 34,
+      "cardName": "BVM-Bill (The Manual Breath)",
+      "grade": 1,
+      "power": "Bill forcefully presses oxygen down into the lungs when the patient's own bellows fail.",
+      "lore": "Avoid gastric inflation! Squeezing Bill too hard forces air into the stomach, guaranteeing a vomit tsunami.",
+      "gradeReason": "'Vomit tsunami' — the most memorable gastric inflation warning in any medical education context.",
+      "artworkPrompt": "Style: Ink+watercolor comic. Subject: Pelican with C-E grip mask on patient, stomach bulging ominously in background as technician squeezes too hard. Mood: Careful, consequential."
+    },
+    {
+      "cardNumber": 35,
+      "cardName": "IO-Iggy (The Bone-Highway)",
+      "grade": 1,
+      "power": "When peripheral veins collapse into hiding, Iggy violently drills a direct fluid highway right into the bone marrow.",
+      "lore": "The bone marrow is a non-collapsible vein. Anything you can push in an IV, you can push through Iggy.",
+      "gradeReason": "'Non-collapsible vein' + 'Bone-Highway' — the anatomy lesson and clinical rule in one card.",
+      "artworkPrompt": "Style: Ink+watercolor comic. Subject: Woodpecker drilling an IO needle into a tibia bone, IV drip rushing in as veins hide in background. Mood: Decisive, invasive."
+    },
+    {
+      "cardNumber": 36,
+      "cardName": "Laryngoscope-Larry (The Tongue-Lifter)",
+      "grade": 1,
+      "power": "Larry physically wrestles the heavy tongue out of the way, lighting a path through the dark tunnel to the vocal cords.",
+      "lore": "Larry is the essential scouting tool required for Airway-Annie to successfully place the Golden Tube.",
+      "gradeReason": "Card explicitly links to Airway-Annie — the cross-reference teaching builds the mental workflow.",
+      "artworkPrompt": "Style: Ink+watercolor comic. Subject: Toucan beak as laryngoscope lifting giant tongue aside, beam lighting vocal cords with gold tube ready. Mood: Exploratory, precise."
+    },
+    {
+      "cardNumber": 37,
+      "cardName": "Stroke-Steve (The Brain-Ischemia)",
+      "grade": 2,
+      "power": "Steve blocks a vital arterial supply line in the head. Every passing minute, millions of neurons permanently die.",
+      "lore": "Time is Brain! Steve demands either the Clot-Dissolver (Lyse) or the Mechanical Grabber (Thrombectomy) immediately.",
+      "gradeReason": "'The Brain-Ischemia' subtitle is a medical term not a performative role — slightly clinical for G1.",
+      "artworkPrompt": "Style: Ink+watercolor comic. Subject: Vulture blockading a brain artery while neuron cities collapse, clock ticking, tPA syringe and thrombectomy device racing in. Mood: Racing, fatal."
+    },
+    {
+      "cardNumber": 38,
+      "cardName": "Seizure-Sidus (The Electrical Firestorm)",
+      "grade": 1,
+      "power": "Sidus forces the brain to fire at maximum capacity uncontrollably, burning incredible energy and risking permanent melting.",
+      "lore": "Sidus needs GABA-Garry (Benzodiazepines) immediately to extinguish the runaway electrical fire.",
+      "gradeReason": "'Permanent melting' + 'Electrical Firestorm' — the severity is viscerally communicated. GABA-Garry link is memorable.",
+      "artworkPrompt": "Style: Ink+watercolor comic. Subject: Porcupine brain in full-electrical wildfire, GABA-rain from benzodiazepine cloud extinguishing the firestorm. Mood: Uncontrolled, scorching."
+    },
+    {
+      "cardNumber": 39,
+      "cardName": "Brain-Bleed-Brawler (The Pressure-Cooker)",
+      "grade": 1,
+      "power": "The Brawler leaks expanding blood into the rigid skull. Because the bone won't yield, intracranial pressure spikes instantly.",
+      "lore": "The Brawler triggers the Cushing Reflex (High BP, Low Pulse) as the brain desperately fights to push blood against the rising crush.",
+      "gradeReason": "'Bone won't yield' + Cushing Reflex in lore — the skull-as-pressure-cooker metaphor is anatomically perfect.",
+      "artworkPrompt": "Style: Ink+watercolor comic. Subject: Ram smashing inside a rigid skull pressure cooker, blood expanding, Cushing reflex gauges spiking BP, dropping pulse. Mood: Crushing, trapped."
+    },
+    {
+      "cardNumber": 40,
+      "cardName": "Hypo-Harry (The Mimic)",
+      "grade": 1,
+      "power": "Harry flawlessly disguises himself as Stroke-Steve or Seizure-Sidus, tricking medics until sugar reveals his true identity.",
+      "lore": "The brain needs glucose like a car needs gas. Without juice, the engine completely stalls. Always check the sugar!",
+      "gradeReason": "'Disguises as Stroke-Steve' — cross-referencing cards as part of the diagnostic teaching is genius design.",
+      "artworkPrompt": "Style: Ink+watercolor comic. Subject: Chameleon in stroke disguise, glucose meter unmasking it, sugar drip restoring color to patient. Mood: Deceptive, then relieved."
+    },
+    {
+      "cardNumber": 41,
+      "cardName": "FAST-Fiona (The Fluid-Finder)",
+      "grade": 1,
+      "power": "Fiona shoots high-frequency sound to hunt down hidden, pooling blood in the belly or trapped around the heart in seconds.",
+      "lore": "A positive Fiona signal in a hemodynamically unstable trauma patient is a direct, one-way ticket to the operating room.",
+      "gradeReason": "'One-way ticket to the operating room' — the decision consequence makes the clinical algorithm immediate.",
+      "artworkPrompt": "Style: Ink+watercolor comic. Subject: Bat using echolocation to find hidden blood pooling around a heart, OR door opening in background. Mood: Hunting, decisive."
+    },
+    {
+      "cardNumber": 42,
+      "cardName": "Lactate-Larry (The Suffocation-Score)",
+      "grade": 1,
+      "power": "Larry acts as the cellular distress signal, revealing exactly how badly the tissues are starving and crying for oxygen.",
+      "lore": "High Larry means occult shock is happening at the cellular level, regardless of how normal the blood pressure currently looks.",
+      "gradeReason": "'Crying for oxygen regardless of normal BP' — teaches the one thing residents most often miss about lactate.",
+      "artworkPrompt": "Style: Ink+watercolor comic. Subject: Dog holding a cellular SOS flare in a blood vessel, BP monitor looking fine while cells starve below. Mood: Hidden crisis."
+    },
+    {
+      "cardNumber": 43,
+      "cardName": "Troponin-Troy (The Muscle-Damage Detector)",
+      "grade": 2,
+      "power": "Troy is exclusively released when cardiac muscle cells are actively dying and breaking apart.",
+      "lore": "Troy is highly specific—if you find these nuggets in the bloodstream, you have absolute proof of a Myocardial Infarction.",
+      "gradeReason": "'The Muscle-Damage Detector' describes the tool not a role — explanatory rather than inviting performance.",
+      "artworkPrompt": "Style: Ink+watercolor comic. Subject: Mole detective with magnifying glass finding golden troponin nuggets leaking from crumbling heart muscle cells. Mood: Specific, forensic."
+    },
+    {
+      "cardNumber": 44,
+      "cardName": "Blood-Gas-Bella (The Acid-Base Balance)",
+      "grade": 1,
+      "power": "Bella reveals the invisible metabolic scale: is the wrestler acidic or basic, and are the lungs or the kidneys to blame?",
+      "lore": "Bella is the ultimate high-fidelity dashboard for fine-tuning mechanical ventilation and targeted fluid resuscitation.",
+      "gradeReason": "'Lungs or kidneys to blame?' — the interpretive framework question is immediately embodiable at the table.",
+      "artworkPrompt": "Style: Ink+watercolor comic. Subject: Flamingo chemist balancing pH scale with lungs on one side and kidneys on the other, ventilator dials visible. Mood: Precise, diagnostic."
+    },
+    {
+      "cardNumber": 45,
+      "cardName": "Triage-Raven (The Life-Decider)",
+      "grade": 1,
+      "power": "In mass casualty chaos, Raven makes the ruthless, split-second decisions about who gets the limited medical resources.",
+      "lore": "Normal medical ethics invert here. The ultimate goal is the survival of the many, not the desperate rescue of the individual.",
+      "gradeReason": "'Ethics invert here' — the philosophical weight of triage delivered in five words. Instantly performative.",
+      "artworkPrompt": "Style: Ink+watercolor comic. Subject: Raven in triage vest making life-or-death tag decisions over rows of casualties, Red/Yellow/Green/Black tags flying. Mood: Ruthless, focused."
+    },
+    {
+      "cardNumber": 46,
+      "cardName": "Scoop vs Stay (The Tactical Choice)",
+      "grade": 2,
+      "power": "The ultimate operational fork: Immediate, frantic transport for surgery bleeding, versus methodical on-scene stabilization for medical codes.",
+      "lore": "Treat as you go. But critical bleeding and airway obstruction are always addressed before the wheels roll.",
+      "gradeReason": "No character name — 'Scoop vs Stay' is a concept card, not a role to embody. Format deviation.",
+      "artworkPrompt": "Style: Ink+watercolor comic. Subject: Beaver medic at a literal fork in road — ambulance speeding left vs. trauma team stabilizing on right. Mood: Decision, urgency."
+    },
+    {
+      "cardNumber": 47,
+      "cardName": "HEMS-Heidi (The Sky-Cavalry)",
+      "grade": 1,
+      "power": "Heidi completely bypasses ground traffic, bringing the highest level of specialized doctor and equipment directly to the dirt.",
+      "lore": "Heidi radically expands the geographical capture radius for highly time-sensitive interventions (Stroke Centers / Level 1 Trauma).",
+      "gradeReason": "'Brings the doctor to the dirt' — the HEMS operational advantage stated with perfect economy.",
+      "artworkPrompt": "Style: Ink+watercolor comic. Subject: Eagle pilot in helicopter with trauma doctor, bypassing gridlocked ambulances to land at rural crash site. Mood: Aerial, elite."
+    },
+    {
+      "cardNumber": 48,
+      "cardName": "C-Spine-Chris (The Spine-Guard)",
+      "grade": 1,
+      "power": "Chris ensures that the fragile spinal cord isn't shredded by unstable, shattered vertebrae during rescue movements.",
+      "lore": "Respect the Log Roll. The patient must be turned as a single, rigid tree trunk to avoid permanently angering Chris.",
+      "gradeReason": "'Permanently angering Chris' — the log roll rule stated through character consequence. Perfect.",
+      "artworkPrompt": "Style: Ink+watercolor comic. Subject: Armadillo in cervical collar guarding a spinal cord, team performing perfect log roll as a rigid tree trunk. Mood: Protective, precise."
+    },
+    {
+      "cardNumber": 49,
+      "cardName": "Handover-Hank (The MIST Protocol)",
+      "grade": 1,
+      "power": "Hank perfectly transfers critical field knowledge from the muddy EMS team to the sterile shock room without dropping a byte.",
+      "lore": "A dropped baton is lethal. A poor Hank kills the patient through hospital ignorance and delayed interventions.",
+      "gradeReason": "'A poor Hank kills the patient' — the consequence of bad handover stated with full clinical gravity.",
+      "artworkPrompt": "Style: Ink+watercolor comic. Subject: Greyhound relay runner passing MIST baton from muddy paramedic to sterile ER team through swinging doors. Mood: Precise, transitional."
+    },
+    {
+      "cardNumber": 50,
+      "cardName": "Shock-Room-Sgt (The Chaos-Control)",
+      "grade": 1,
+      "power": "The Sgt coordinates trauma surgeons, anesthesiologists, and nurses in a perfectly choreographed, silent dance.",
+      "lore": "Without the Sgt commanding the room from the foot of the bed, the high-tech shock room instantly degrades into a noisy chicken coop.",
+      "gradeReason": "'Noisy chicken coop' — the consequence of team leadership failure delivered with devastating humor.",
+      "artworkPrompt": "Style: Ink+watercolor comic. Subject: Lion sergeant conducting trauma team like an orchestra from foot of trauma bed, silent and synchronized. Mood: Command, precision."
+    },
+    {
+      "cardNumber": 51,
+      "cardName": "Transfusion-Tank (The Blood-Flood)",
+      "grade": 1,
+      "power": "When Hypovolemic-Hank drains the blood, the Tank re-enters the system, refilling the wrestler with actual, life-saving hemoglobin and platelets.",
+      "lore": "Clear fluids only dilute clotting factors. In massive hemorrhage, only blood replaces blood.",
+      "gradeReason": "'Only blood replaces blood' — the 1:1:1 doctrine stated with maximum rhetorical force.",
+      "artworkPrompt": "Style: Ink+watercolor comic. Subject: Brown bear pumping blood bags at 1:1:1 ratio into empty wrestler, clotting factors assembling like armor. Mood: Vital, replenishing."
+    },
+    {
+      "cardNumber": 52,
+      "cardName": "Recovery-Ranger (The Safety Guard)",
+      "grade": 1,
+      "power": "The Ranger stands guard, monitoring the chaotic equilibrium after the Golden Hour Gauntlet has been violently survived.",
+      "lore": "The post-resuscitation phase is incredibly critical: the war is won, but the assassins will return if the Ranger isn't violently aggressive.",
+      "gradeReason": "'War is won but assassins will return' — closes the deck with the ICU vigilance mandate. Strong.",
+      "artworkPrompt": "Style: Ink+watercolor comic. Subject: Wolf ranger watching ICU monitors with weapons ready, patient stabilized but danger lurking in the shadows. Mood: Vigilant, post-battle."
+    },
+    {
+      "cardNumber": 53,
+      "cardName": "Doc FrizzleBob (The Final Decision)",
+      "grade": 1,
+      "power": "Cuts through the noise. Operates on pure clinical instinct backed by hardcore physiological lore.",
+      "lore": "Treat the life-threats, not the labs. If the pump is dry, fill it. If air is trapped, vent it. Stay fluffy!",
+      "gradeReason": "'Treat the life-threats, not the labs' — the meta-card delivers the entire EM philosophy in one line.",
+      "artworkPrompt": "Style: Ink+watercolor comic. Subject: FrizzleBob rabbit in white coat with stethoscope and coffee, calmly triaging chaos while all monitors scream. Mood: Serene authority."
+    },
+    {
+      "cardNumber": 54,
+      "cardName": "Synthesis Quest 1 (The Crushed Heart)",
+      "grade": 2,
+      "power": "Identify the mechanical stopper (Tamponade) squeezing the heart.",
+      "lore": "Which intervention clears the blood from the pericardial sac before the pump stalls forever?",
+      "gradeReason": "Quiz-prompt format — player is asked a question, not invited to embody a role. Valid but different register.",
+      "artworkPrompt": "Style: Ink+watercolor comic. Subject: Frog trapped inside pericardial sac with heart squeezed, pericardiocentesis needle approaching, ticking clock. Mood: Diagnostic pressure."
+    },
+    {
+      "cardNumber": 55,
+      "cardName": "Synthesis Quest 2 (The Silent Choke)",
+      "grade": 2,
+      "power": "Activate the ABCDE sequence under maximum stress.",
+      "lore": "Who secures the way (Airway-Annie) and who breaks the fatal allergic reaction (Epi-Eric)?",
+      "gradeReason": "Quiz format linking back to deck characters — smart design but asks rather than commands.",
+      "artworkPrompt": "Style: Ink+watercolor comic. Subject: Child with stridor and hives, Airway-Annie and Epi-Eric cards highlighted in a desperate ABCDE flowchart. Mood: Pediatric crisis."
+    },
+    {
+      "cardNumber": 56,
+      "cardName": "Synthesis Quest 3 (The Quivering Void)",
+      "grade": 1,
+      "power": "The ultimate algorithmic decision tree.",
+      "lore": "Name the rhythm (V-Fib). Compress, shock, or push drugs? You have 5 seconds to decide. Go!",
+      "gradeReason": "'You have 5 seconds to decide. Go!' — pure performance command. Best closing line in the MedKayfab series.",
+      "artworkPrompt": "Style: Ink+watercolor comic. Subject: FrizzleBob at center of V-Fib chaos, defibrillator charged, clock showing 5 seconds, entire deck of cards circling. Mood: Final boss."
+    }
+  ],
+  "cardCount": 56,
+  "gradeDistribution": {"G1": 47, "G2": 9, "G3": 0},
+  "overallScore": 9,
+  "verdict": "The Golden Hour Gauntlet is the sharpest emergency medicine deck FrizzleBob has produced — 56 cards that cover ABCDE through resuscitation, rhythms, shocks, drugs, toxicology, and triage in a coherent curriculum that builds on itself. Named strength: the character naming system (Epi-Eric, V-Fib-Vinnie, Adenosine-Andy) makes pharmacology stick like nothing else in med ed — 'The 6-Second Flatline' alone is worth the price of admission. Named weakness: the three Synthesis Quest cards break the character card format, and there are three different Bens (Breathing, Burn, Beta-Blocker) creating table-level naming collisions. Table-ready? Yes — this is a complete emergency medicine curriculum in card form.",
+  "blurb": "56 emergency medicine cards built for instant recall — from ABCDE to cardiac rhythms, shock types, toxicology, prehospital care, and resuscitation. For medical students, residents, and anyone who needs to act when the alarm goes off.",
+  "viralScore": 8,
+  "qa": {"readability": 9, "artworkConsistency": 8, "overall": 9},
+  "coverQA": {
+    "coverVisual": "5 — FrizzleBob with defibrillator paddles in a boxing ring with medical organs (heart, lungs) fighting as boxers; explosive energy perfectly matches EM chaos",
+    "coverTitle": "5 — 'THE GOLDEN HOUR GAUNTLET / Resuscitation, Rhythms & The Triage Tempest' is punchy, memorable, and accurate",
+    "coverVibeMatch": "5 — the chaos and urgency of emergency medicine is immediately communicated",
+    "coverOriginality": "4 — boxing ring is a series convention but medical organ fighters is a fresh variation",
+    "coverViral": "4 — will stop the scroll for anyone in medicine or medical education",
+    "coverScore": 4.6,
+    "coverNote": "The tagline 'Panic is contagious. Resuscitation is the cure. Stay fluffy!' is a standalone banger and could carry a poster on its own. One of the strongest MedKayfab covers — the defibrillator-wielding FrizzleBob is an immediately iconic image."
+  },
+  "coverScore": 4.6,
+  "fontArtifactCount": 1,
+  "notes": "Beautifully structured curriculum: ABCDE → Rhythms → Shock types → Emergency drugs → Environmental emergencies → Toxicology → Special populations → Equipment → Neurology → Diagnostics → Prehospital → Resuscitation team → Synthesis quizzes. The Synthesis Quest cards (54-56) are intentional quiz/scenario cards that break the character format — a deliberate pedagogical choice. Three 'Ben' characters (Breathing-Ben card 2, Burn-Ben card 24, Beta-Blocker-Ben card 27) create potential table confusion. Font artifact on card 23 (Drowning-Drake): second POWER line reads 'Palm-Pippo let air out' — likely a rendering artifact from decorative font. Card 23 also appears to have no STAT box visible. 'ADD web' suffix indicates this is the Annotated Detail Deck format from the MedKayfab MegaPack release.",
+  "topCards": ["Adenosine-Andy (The 6-Second Flatline)", "V-Fib-Vinnie (The Static Storm)", "Doc FrizzleBob (The Final Decision)"],
+  "worstCards": ["Drowning-Drake (The Fluid Barrier)", "Scoop vs Stay (The Tactical Choice)"],
+  "todos": {
+    "urgent": [
+      "Resolve font artifact on Card 23 (Drowning-Drake) — second POWER line reads 'Palm-Pippo let air out'",
+      "Add visible STAT box to Card 23 (Drowning-Drake)"
+    ],
+    "quickWins": [
+      "Rename one of three 'Ben' characters (Breathing-Ben / Burn-Ben / Beta-Blocker-Ben) to avoid table confusion",
+      "Give 'Scoop vs Stay' a character name to match deck convention"
+    ],
+    "niceToHave": [
+      "Rename 'Stroke-Steve (The Brain-Ischemia)' subtitle to something performative — try 'The Pipeline-Purge' or 'The Time-Thief'",
+      "Add explicit cross-reference icons between linked cards (Epi-Eric ↔ Anaphylaxis-Annie, Larry ↔ Airway-Annie, Otto ↔ Alice)"
+    ]
+  },
+  "hashtags": ["#MedKayfab", "#EmergencyMedicine", "#MedEd", "#GoldenHour", "#Resuscitation", "#Kayfabizarro", "#MedStudentLife", "#EMResident", "#CardiacArrest", "#FrizzleBob"],
+  "genre": "medical",
+  "bundle": "EDUCATION",
+  "exhibitions": ["classroom", "conference", "online"],
+  "channels": ["Gumroad", "TikTok", "Substack", "Instagram", "YouTube"]
+}

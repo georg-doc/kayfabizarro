@@ -1,0 +1,597 @@
+{
+  "sourceFile": "MedKayfab_DIfferential_Diagnosis - ADD web.pdf",
+  "deckTitle": "The Differential Engine",
+  "deckType": "Medical Diagnostic Reasoning Deck",
+  "bundleSuggestion": "TBD",
+  "pageCount": 15,
+  "analysisVersion": 1.0,
+  "generatedAt": "2026-06-19T00:00:00",
+  "savedAt": "2026-06-19T00:00:00",
+  "extractionTool": "cowork_task_v3",
+  "RAF": false,
+  "gradingMode": "educational",
+  "deckFunction": [
+    "educational",
+    "classroom"
+  ],
+  "seriesId": "medkayfab",
+  "cards": [
+    {
+      "cardNumber": 1,
+      "cardName": "PREVAL-THE-PRIOR",
+      "grade": 2,
+      "power": "The Grounding-Force. Prevents the Base-Rate Disaster. Distinction unless evidence is overwhelming.",
+      "lore": "Bayesian Logic. The starting point dictates the weight of any new Signal.",
+      "gradeReason": "Bayesian base role is clear but needs statistical context to fully embody.",
+      "artworkPrompt": "Style: Ink + watercolor. Subject: Rhino labeled COMMON GROUND, cork board behind. Mood: Grounding authority."
+    },
+    {
+      "cardNumber": 2,
+      "cardName": "PATHOG-THE-PIVOTER",
+      "grade": 1,
+      "power": "The Instant-Verdict. Bypasses the Reasoning-Engine for a direct win. Match over.",
+      "lore": "A Silver-Bullet Finding. Extremely rare, but universally fatal in diagnostic combat.",
+      "gradeReason": "INSTANT WIN! RARE BUT DEADLY! — every player knows what to do immediately.",
+      "artworkPrompt": "Style: Ink + watercolor. Subject: Centaur archer shooting bullseye, KayfaBINGO badge. Mood: Lightning precision."
+    },
+    {
+      "cardNumber": 3,
+      "cardName": "SENSI-THE-SCREEN",
+      "grade": 1,
+      "power": "The Safety-Net. If Sensi is negative, the Lethal-Option drops off the table completely.",
+      "lore": "Low False-Negative rate. The Security-Guard at the entrance of the queue.",
+      "gradeReason": "SAFETY NET! CATCHES ALL THREATS! — spider-web catcher is perfectly embodied.",
+      "artworkPrompt": "Style: Ink + watercolor. Subject: Giant spider spinning enormous web safety net. Mood: Protective vigilance."
+    },
+    {
+      "cardNumber": 4,
+      "cardName": "SPECI-THE-SNIPER",
+      "grade": 1,
+      "power": "The Confirmer. Identifies suspects with surgical precision. If positive, suspect is guilty.",
+      "lore": "Low False-Positive rate. Prevents Friendly-Fire and overthinking.",
+      "gradeReason": "CONFIRMER! SURGICAL PRECISION! — owl sniper with magnifying glass nails the role.",
+      "artworkPrompt": "Style: Ink + watercolor. Subject: Owl with monocle and magnifying glass, target in crosshairs. Mood: Cold precision."
+    },
+    {
+      "cardNumber": 5,
+      "cardName": "RED-FLAG-REGGIE",
+      "grade": 1,
+      "power": "The Arena-Stop. Demands you prove the wrestler isn't dying from a catastrophic event.",
+      "lore": "Risk-stratification. In the Emergency-Arena, we seek the most dangerous first, not the most likely.",
+      "gradeReason": "DANGER! WATCH FOR REGGIE! — alarm monkey with siren is instantly performative.",
+      "artworkPrompt": "Style: Ink + watercolor. Subject: Panicking monkey slamming red alarm siren, firefighters in background. Mood: Urgent danger."
+    },
+    {
+      "cardNumber": 6,
+      "cardName": "VINDICATE-THE-MNEMO",
+      "grade": 2,
+      "power": "The Expansion-Burst. Forces a check of every Biological System to find the hidden path.",
+      "lore": "A total-system scan. VINDICATE: Vascular, Infect, Neoplas, Drug, Inflam, Congen, Autoim, Trauma, Endo.",
+      "gradeReason": "Mnemonic structure is clever but requires recall to deploy at table.",
+      "artworkPrompt": "Style: Ink + watercolor. Subject: Giant octopus with 9 labeled tentacles each pointing to body system. Mood: Expansive search."
+    },
+    {
+      "cardNumber": 7,
+      "cardName": "ZE-THE-ZEBRA",
+      "grade": 1,
+      "power": "The Long-Shot. Enters only when Preval-the-Prior has completely failed.",
+      "lore": "When stripes don't fit the horse. The final chapter of a mystery.",
+      "gradeReason": "ZEBRA HUNTING! — rare-diagnosis zebra in neon colors is instantly embodied fun.",
+      "artworkPrompt": "Style: Ink + watercolor. Subject: Vivid rainbow zebra galloping through fog, lone hunter below. Mood: Rare wonder."
+    },
+    {
+      "cardNumber": 8,
+      "cardName": "OCCAM-THE-RAZOR",
+      "grade": 1,
+      "power": "The Logic-Cut. Slices 10 symptoms to show they are caused by a single Master-Antagonist.",
+      "lore": "Law of Parsimony: Why 5 diseases when 1 explains everything?",
+      "gradeReason": "RAZOR SHARP LOGIC! WIMMELBILD CONFIRMED! — swordfish slicing symptoms is immediately playable.",
+      "artworkPrompt": "Style: Ink + watercolor. Subject: Marlin sword-slicing tangled symptom knot into one clean thread. Mood: Elegant simplicity."
+    },
+    {
+      "cardNumber": 9,
+      "cardName": "Chest-Pain-Charlie",
+      "grade": 1,
+      "power": "The High-Stakes-Pivot. Force a logic branch immediately. Five paths, five balloons.",
+      "lore": "Masterclass in Branching. Every unanswered question kills one path and fuels another.",
+      "gradeReason": "HIGH STAKES! FIVE PATHS! — five-headed monster forces immediate branching at table.",
+      "artworkPrompt": "Style: Ink + watercolor. Subject: Five-headed creature each labeled ACS/PE/Diss/PTX/Rupture, branching paths below. Mood: Urgent triage."
+    },
+    {
+      "cardNumber": 10,
+      "cardName": "Fever-the-Flame",
+      "grade": 1,
+      "power": "The Rapid-Screen. If the rash doesn't blanch, we're playing with fire rings.",
+      "lore": "Recognizing lethal, high-speed patterns in the arena.",
+      "gradeReason": "DOESN'T BLANCH = DANGER! + SIREN RINGS! — immediate alarm trigger, zero explanation needed.",
+      "artworkPrompt": "Style: Ink + watercolor. Subject: Salamander engulfed in flames, glass test pressed to skin not blanching. Mood: Lethal urgency."
+    },
+    {
+      "cardNumber": 11,
+      "cardName": "Syncop-the-Drop",
+      "grade": 2,
+      "power": "The History-Heuristic. Drop-Suddenly (Cardiac) vs Fade-Slowly (Vasovagal) sets the Risk-Tier.",
+      "lore": "Analyze Symptoms at Onset to distinguish a Pump failure from a Pipe failure.",
+      "gradeReason": "THREE PULLS strategy is clear but requires cardiac vs vasovagal knowledge to execute.",
+      "artworkPrompt": "Style: Ink + watercolor. Subject: Fainting goat mid-drop, three arrows labeled Cardiac/Vasovagal/Orthostatic. Mood: Sudden collapse."
+    },
+    {
+      "cardNumber": 12,
+      "cardName": "Dyspnea-the-Drown",
+      "grade": 2,
+      "power": "The Fluid-vs-Air-Scan. Is the lung sponge full of water, or is the airway-tunnel blocked?",
+      "lore": "Use the Silhouette-Sign and Lung-Sounds to branch the diagnostic tree.",
+      "gradeReason": "WATER OR SMOKE?! is evocative but lungs vs pipes distinction needs clinical context.",
+      "artworkPrompt": "Style: Ink + watercolor. Subject: Frog drowning in water on left, smoke-filled pipe on right, split panel. Mood: Breathless crisis."
+    },
+    {
+      "cardNumber": 13,
+      "cardName": "System-1-the-Flash",
+      "grade": 1,
+      "power": "The Instant-Read. Recognizes a Classic-Match-Up in seconds based on 10,000 previous reps.",
+      "lore": "High speed, low energy. Prone to severe Bias-Traps if the match is wrong.",
+      "gradeReason": "FAST THINKING! — cheetah sprint toward bullseye is immediately embodied as speed-pattern mode.",
+      "artworkPrompt": "Style: Ink + watercolor. Subject: Cheetah running toward target at lightspeed, pattern-blur trail behind. Mood: Instant reflex."
+    },
+    {
+      "cardNumber": 14,
+      "cardName": "System-2-the-Thinker",
+      "grade": 2,
+      "power": "The Deep-Analysis. Builds a Differential-Table if the System-1-Flash fails.",
+      "lore": "High energy critical thinking. Essential to catch Zebras and stop Flash-Errors.",
+      "gradeReason": "SLOW DOWN! is clear but the tortoise-at-chalkboard is more explanatory than performative.",
+      "artworkPrompt": "Style: Ink + watercolor. Subject: Tortoise at blackboard covered in differential equations, reading glasses. Mood: Methodical depth."
+    },
+    {
+      "cardNumber": 15,
+      "cardName": "Heuristi-the-Shortcut",
+      "grade": 2,
+      "power": "The Pattern-Hack. Skips 10 steps of logic by recognizing a Signature-Move.",
+      "lore": "Mental shortcuts. If it looks like a duck and quacks like a duck...",
+      "gradeReason": "Duck test lore is fun but the card describes the shortcut more than inviting you to take it.",
+      "artworkPrompt": "Style: Ink + watercolor. Subject: Kangaroo leaping over maze shortcut, duck silhouette at finish line. Mood: Clever bypass."
+    },
+    {
+      "cardNumber": 16,
+      "cardName": "Metacog-the-Overseer",
+      "grade": 1,
+      "power": "The Self-Check. Mid-match override: What else could this be? Why am I choosing this?",
+      "lore": "Cognitive monitoring. The only entity that can defeat Anchor-the-Bias.",
+      "gradeReason": "SELF-AWARENESS! + floating eye watching the match — immediately invites the player to pause and question.",
+      "artworkPrompt": "Style: Ink + watercolor. Subject: Giant floating eye above wrestling ring watching all combatants below. Mood: Omniscient vigilance."
+    },
+    {
+      "cardNumber": 17,
+      "cardName": "Anchor-the-Heavy",
+      "grade": 1,
+      "power": "The Mental-Lock. Hooks the team onto the First-Impression, ignoring all subsequent Red-Flags.",
+      "lore": "The supreme Bias in medicine. Once the Anchor drops, the Engine stops.",
+      "gradeReason": "DANGER! NEW DATA! RED FLAG! — walrus with brain-anchor chain is an instantly playable villain.",
+      "artworkPrompt": "Style: Ink + watercolor. Subject: Walrus chained to giant anchor labeled FIRST IMPRESSION, Red Flags flying ignored above. Mood: Dangerous inertia."
+    },
+    {
+      "cardNumber": 18,
+      "cardName": "Confirma-the-Filter",
+      "grade": 2,
+      "power": "The Data-Shredder. Only sees stats proving him right, annihilates data proving him wrong.",
+      "lore": "The Echo-Chamber effect. Turns a Differential into a Self-Fulfilling-Prophecy.",
+      "gradeReason": "Confirmation bias is described clearly but the embodiment of TRUTH vs EVIDENCE needs setup to play.",
+      "artworkPrompt": "Style: Ink + watercolor. Subject: Mole in goggles shredding counter-evidence, echo chamber bubbles floating around. Mood: Willful blindness."
+    },
+    {
+      "cardNumber": 19,
+      "cardName": "Availab-the-Recent",
+      "grade": 2,
+      "power": "The Memory-Flashback. Applying last week's vivid case because rough today.",
+      "lore": "The Recency-Trap. Vividness does NOT equal Prevalence.",
+      "gradeReason": "INSTANT REPLAY is evocative but the emotional-over-statistical swap needs framing to deploy.",
+      "artworkPrompt": "Style: Ink + watercolor. Subject: Parrot replaying TV instant-replay of dramatic rare case on loop. Mood: Vivid distortion."
+    },
+    {
+      "cardNumber": 20,
+      "cardName": "Prematur-the-Closure",
+      "grade": 1,
+      "power": "The Victory-Bell. Rings the final bell at the very first explanation found.",
+      "lore": "The #1 most common error in medicine. Once a diagnosis fires, the thinking stops.",
+      "gradeReason": "MISSED CANCER + victory bell ringing too early — immediately chilling, no explanation needed.",
+      "artworkPrompt": "Style: Ink + watercolor. Subject: Peacock ringing victory bell triumphantly, MISSED CANCER sign visible behind. Mood: Premature celebration horror."
+    },
+    {
+      "cardNumber": 21,
+      "cardName": "Likeli-the-Ratio",
+      "grade": 3,
+      "power": "The Probability-Shifter. Tells you exactly how much a physical finding changes the match.",
+      "lore": "The Math-of-the-Match. LR > 10 makes it highly likely; LR < 0.1 makes it nearly impossible.",
+      "gradeReason": "LR formula (Sens/1-Spec) is essential content but too mathematical to embody at table without explanation.",
+      "artworkPrompt": "Style: Ink + watercolor. Subject: Lemur spinning probability abacus, LR formula glowing on blackboard. Mood: Precise calculation."
+    },
+    {
+      "cardNumber": 22,
+      "cardName": "Nomogram-the-Calculator",
+      "grade": 3,
+      "power": "The Odds-Mapper. Draws a straight line from Preval through Likeli to dictate Truth.",
+      "lore": "Visual Bayes Theorem. Turns gut-feelings into cold Data-Reality.",
+      "gradeReason": "Nomogram tool concept is abstract — describes a visual instrument, hard to perform without it present.",
+      "artworkPrompt": "Style: Ink + watercolor. Subject: Chameleon tongue-drawing a straight line across Fagan nomogram chart. Mood: Mathematical transformation."
+    },
+    {
+      "cardNumber": 23,
+      "cardName": "Baseline-the-Norm",
+      "grade": 2,
+      "power": "The Background-Filter. Prevents overreaction to Minor-Glitches that are normal for this wrestler.",
+      "lore": "Understanding Biological-Noise. Not every abnormal stat is a disease.",
+      "gradeReason": "Meditating bear in spotlight is calm and clear but the role is defined by what it doesn't do.",
+      "artworkPrompt": "Style: Ink + watercolor. Subject: Meditating bear in calm spotlight, chaos of false alarms scattered and ignored around. Mood: Serene calibration."
+    },
+    {
+      "cardNumber": 24,
+      "cardName": "Trend-the-Arrow",
+      "grade": 2,
+      "power": "The Motion-Detector. Ignores the current stat; only cares if the number is Rising or Falling.",
+      "lore": "A stable high-stat is often much safer than a rapidly rising low-stat.",
+      "gradeReason": "Rate-of-change vs absolute value is a clear and important insight but needs delta-value setup.",
+      "artworkPrompt": "Style: Ink + watercolor. Subject: Falcon riding upward trend arrow ignoring static baseline below. Mood: Dynamic vigilance."
+    },
+    {
+      "cardNumber": 25,
+      "cardName": "Overdia-the-Excess",
+      "grade": 2,
+      "power": "The Ghost-Infection. Treats minor glitches as lethal monsters, causing more harm than the disease.",
+      "lore": "The Downside-of-Sensi: A net that is too fine catches dangerous amounts of junk.",
+      "gradeReason": "Overdiagnosis as harm concept is important but requires understanding of Sensi as prerequisite.",
+      "artworkPrompt": "Style: Ink + watercolor. Subject: Net so fine it catches everything including harmless bugs labeled JUNK. Mood: Overcautious harm."
+    },
+    {
+      "cardNumber": 26,
+      "cardName": "False-the-Alarm",
+      "grade": 1,
+      "power": "The Mirage. The test screams positive, but there is no enemy. Causes unnecessary invasive pain.",
+      "lore": "Specificity-Failure. Arena-Panic without a real Threat.",
+      "gradeReason": "KayfaBINGO! + ODD ANIMAL! + fox screaming — immediately performative chaos.",
+      "artworkPrompt": "Style: Ink + watercolor. Subject: Fox screaming POSITIVE while opponent is clearly just a shadow. Mood: Panicked false victory."
+    },
+    {
+      "cardNumber": 27,
+      "cardName": "Silent-the-Stalker",
+      "grade": 1,
+      "power": "The Invisible-Attack. Test says Negative, but Reggie is eating the health-bar from the inside.",
+      "lore": "Sensitivity-Failure. The most dangerous glitch in medicine.",
+      "gradeReason": "SAFE! crossed out + sloth lurking while duck displays false safety — immediately chilling villain.",
+      "artworkPrompt": "Style: Ink + watercolor. Subject: Sloth creeping behind SAFE! sign, health bar quietly draining in background. Mood: Silent threat."
+    },
+    {
+      "cardNumber": 28,
+      "cardName": "Inciden-the-Oma",
+      "grade": 2,
+      "power": "The Distraction-Orb. Finding a harmless spot that spawns Diagnostic-Rabbit-Holes.",
+      "lore": "The curse of High-Tech-Finding. Creating Irrelevant Diagnostic-Rabbit-Holes.",
+      "gradeReason": "ODD ANIMAL! raccoon finding glowing orb is charming but incidentaloma needs clinical context.",
+      "artworkPrompt": "Style: Ink + watercolor. Subject: Raccoon finding shiny orb in cave, rabbit-hole maze spiraling behind. Mood: Distracted curiosity."
+    },
+    {
+      "cardNumber": 29,
+      "cardName": "Pattern-the-Match",
+      "grade": 1,
+      "power": "The Instant-Label. One look at the shape or rash, and the enemy's name is known.",
+      "lore": "System-1 Master. Relies entirely on the internal visual library of past Kayfabe encounters.",
+      "gradeReason": "Non-analytical tiger visual recognition — player immediately knows to embody gestalt snap-judgment.",
+      "artworkPrompt": "Style: Ink + watercolor. Subject: Tiger staring at rash pattern, name tag appearing instantly above. Mood: Visual snap recognition."
+    },
+    {
+      "cardNumber": 30,
+      "cardName": "Deducto-the-Logic",
+      "grade": 2,
+      "power": "The Certainty-Chain. If the General-Rule is true and the Fact fits, the Outcome is guaranteed.",
+      "lore": "Mathematical Logic in biology. All men are mortal; Socrates is a man.",
+      "gradeReason": "Stay Fluffy! badge is fun but the top-down logic chain needs philosophical setup to perform.",
+      "artworkPrompt": "Style: Ink + watercolor. Subject: Bear detective drawing syllogism chain on board, Socrates bust nearby. Mood: Rigorous deduction."
+    },
+    {
+      "cardNumber": 31,
+      "cardName": "Inducto-the-Probable",
+      "grade": 2,
+      "power": "The Likely-Story. Takes 5 specific symptoms and builds a general working theory.",
+      "lore": "The reality of clinical medicine. Dealing in Probabilities, not Certainties.",
+      "gradeReason": "Bottom-up clinical probability is the actual method of medicine but needs the induction frame to embody.",
+      "artworkPrompt": "Style: Ink + watercolor. Subject: Magpie collecting five clues into one nest, probability funnel above. Mood: Patient accumulation."
+    },
+    {
+      "cardNumber": 32,
+      "cardName": "Abducto-the-Best-Guess",
+      "grade": 1,
+      "power": "The Detective-Leap. Takes messy, incomplete data and gambles on the single most sensible explanation.",
+      "lore": "The absolute core operating mechanic of the Differential Engine.",
+      "gradeReason": "The Detective-Leap — player immediately knows to embody the Sherlock intuitive gamble.",
+      "artworkPrompt": "Style: Ink + watercolor. Subject: Detective fox leaping across data canyon to single answer flag on other side. Mood: Daring inference."
+    },
+    {
+      "cardNumber": 33,
+      "cardName": "Probabil-the-Spectrum",
+      "grade": 2,
+      "power": "The Gray-Vision. Reminds the team that every diagnosis is a Probability, never 100%.",
+      "lore": "Fighting the Binary-Illusion. Clinical life is lived permanently in the Gray-Zone.",
+      "gradeReason": "NO BLACK/WHITE! is clear, the bat is charming, but gray-zone embodiment is more philosophy than action.",
+      "artworkPrompt": "Style: Ink + watercolor. Subject: Bat in gradient gray fog between black and white walls refusing to touch either. Mood: Probabilistic uncertainty."
+    },
+    {
+      "cardNumber": 34,
+      "cardName": "Safety-Net-Sarah",
+      "grade": 1,
+      "power": "The Rescue-Trigger. Allows the wrestler to go home safely while uncertain.",
+      "lore": "You don't have to be completely sure. The Safety-Net is perfectly set.",
+      "gradeReason": "CATCH ME! + If X happens, come back — immediately actionable discharge safety move, no setup needed.",
+      "artworkPrompt": "Style: Ink + watercolor. Subject: Spider-woman throwing safety net below uncertain patient about to step off ledge. Mood: Confident discharge safety."
+    },
+    {
+      "cardNumber": 35,
+      "cardName": "Test-of-Time-the-Slow-Reveal",
+      "grade": 2,
+      "power": "The Wait-and-See. Uses ticking Time as a literal diagnostic-monitoring tool.",
+      "lore": "Viral vs Bacterial. Sometimes the smartest move is Watching-the-Trend.",
+      "gradeReason": "TICK TOCK! tortoise with clock is clear but wait-and-observe is a passive role, harder to embody.",
+      "artworkPrompt": "Style: Ink + watercolor. Subject: Tortoise with clock strapped to shell watching patient slowly, bacteria vs virus duel behind. Mood: Patient observation."
+    },
+    {
+      "cardNumber": 36,
+      "cardName": "Triage-the-Sorter",
+      "grade": 1,
+      "power": "The Priority-Pulse. Ignores the Name of the disease, focuses purely on How-Fast-Are-They-Dying?",
+      "lore": "Pure Resource Management. Lethal-Battles go to the front of the line.",
+      "gradeReason": "MOVE! MOVE! MOVE! + Red/Yellow/Green chaos — immediately performative emergency energy.",
+      "artworkPrompt": "Style: Ink + watercolor. Subject: Sheepdog herding patients by color tag Red/Yellow/Green at breakneck speed. Mood: Controlled chaos."
+    },
+    {
+      "cardNumber": 37,
+      "cardName": "Search-the-Satisfier",
+      "grade": 2,
+      "power": "The Blind-Spot. Finding a broken rib and feeling so good you forget to check the spleen next to it.",
+      "lore": "The Second-Injury kills. Never stop searching just because you found one answer.",
+      "gradeReason": "Gold-finding ferret is charming but search satisfaction needs setup about second injuries to land.",
+      "artworkPrompt": "Style: Ink + watercolor. Subject: Ferret triumphant over broken rib trophy, ruptured spleen glowing ignored beside. Mood: Dangerous complacency."
+    },
+    {
+      "cardNumber": 38,
+      "cardName": "Avail-the-Recent",
+      "grade": 2,
+      "power": "The Ghost-Copy. Because you lost to a rare infection yesterday, you hallucinate it everywhere today.",
+      "lore": "Emotional-weight overrides statistical-weight. A glitch in pattern recognition.",
+      "gradeReason": "Ghost-Copy parrot hallucinating yesterday's case — clear but intentional redux of card 19, slightly redundant.",
+      "artworkPrompt": "Style: Ink + watercolor. Subject: Bulldog hallucinating ghost-copy of yesterday's rare case over today's common patient. Mood: Haunted memory."
+    },
+    {
+      "cardNumber": 39,
+      "cardName": "Framing-the-Perspective",
+      "grade": 2,
+      "power": "The Lens-Shift. A 10% survival vs a 90% death: the math is identical.",
+      "lore": "The Psychology-of-Choice. The data is static, but the Frame dictates the Power-Move.",
+      "gradeReason": "KayfaBIZARRO! — the identical-math insight is brilliant but the framing effect needs two presentations to click.",
+      "artworkPrompt": "Style: Ink + watercolor. Subject: Iguana holding two mirrors showing same number labeled SURVIVAL vs DEATH. Mood: Perceptual manipulation."
+    },
+    {
+      "cardNumber": 40,
+      "cardName": "Overconfi-the-Ego",
+      "grade": 1,
+      "power": "The Shield-Drop. Believes he is too expert to need Nomogram-Math or Safety-Nets.",
+      "lore": "The Attending-Aura is lethal. Hubris that ignores uncertainty.",
+      "gradeReason": "Calibration error / Expert-trap lion flexing — instantly embodied as the dangerous arrogant attending villain.",
+      "artworkPrompt": "Style: Ink + watercolor. Subject: Lion in attending coat flexing at mirror, Nomogram and Safety-Net crushed underfoot. Mood: Lethal hubris."
+    },
+    {
+      "cardNumber": 41,
+      "cardName": "Rule-Out-the-Ranger",
+      "grade": 1,
+      "power": "The Narrow-Down. Kills the 10 suspects one by one until only The-Truth survives.",
+      "lore": "Eliminate the impossible; however improbable, what must be truth.",
+      "gradeReason": "Systematic exclusion ranger with laser — Sherlock method is immediately clear and performative.",
+      "artworkPrompt": "Style: Ink + watercolor. Subject: Ranger with laser eliminating suspects from lineup one by one until one remains. Mood: Methodical elimination."
+    },
+    {
+      "cardNumber": 42,
+      "cardName": "Rule-In-the-Confirmer",
+      "grade": 2,
+      "power": "The Evidence-Stacker. Gathers stats until the Diagnostic-Tower is too heavy to topple.",
+      "lore": "Constructive reasoning. Actively building the Story-of-the-Match.",
+      "gradeReason": "Evidence-stacking ant is clear but needs the counterpart Rule-Out framing to feel like its own performance.",
+      "artworkPrompt": "Style: Ink + watercolor. Subject: Ant stacking evidence blocks into tower labeled DIAGNOSIS, tower growing impossibly tall. Mood: Constructive certainty."
+    },
+    {
+      "cardNumber": 43,
+      "cardName": "The Don't-Forget-the-Basics Bot",
+      "grade": 1,
+      "power": "The Reality-Anchor. Interrupts Zebra-arguments to point out the wrestler is actively dying.",
+      "lore": "Vital signs and physical exam. Tunnel-Vision killer. Vitals are the ultimate stat.",
+      "gradeReason": "Call Doc Frizzle! + robot flashing vitals 60/40 — immediately performative interruption move.",
+      "artworkPrompt": "Style: Ink + watercolor. Subject: Retro robot holding giant BP cuff, interrupting elegant theory session with flashing vitals. Mood: Urgent grounding."
+    },
+    {
+      "cardNumber": 44,
+      "cardName": "The Second-Opinion Sage",
+      "grade": 1,
+      "power": "The Bias-Breaker. Enters mid-match to ask: What have you missed?",
+      "lore": "Fresh eyes break Anchor-Lock. The only guaranteed tool to shatter an Anchor-Lock.",
+      "gradeReason": "Fresh eyes ancient sage entering mid-match — What have you missed? is immediately a performative power move.",
+      "artworkPrompt": "Style: Ink + watercolor. Subject: Ancient sage owl emerging from tree mid-match, magnifying glass revealing hidden clue. Mood: Revelatory interruption."
+    },
+    {
+      "cardNumber": 45,
+      "cardName": "Aggresi-the-Interventionist",
+      "grade": 2,
+      "power": "The All-In. Executes the Surgical-Slam even if the diagnosis is highly uncertain.",
+      "lore": "Action-Bias. High stakes demand action now. Huge risk of Friendly-Fire.",
+      "gradeReason": "High-risk/High-reward rhino surgeon is clear but the ethical complexity of when to go all-in needs setup.",
+      "artworkPrompt": "Style: Ink + watercolor. Subject: Rhino surgeon in OR executing slam-move, uncertainty gauge still yellow behind. Mood: Decisive risk."
+    },
+    {
+      "cardNumber": 46,
+      "cardName": "Conserva-the-Watcher",
+      "grade": 2,
+      "power": "The Minimal-Trespass. Prefers Slow-Reveal and Safety-Nets over Invasive-Procedure.",
+      "lore": "Non-maleficence First. Do no harm.",
+      "gradeReason": "STOP DIAGNOSTIC CREEP! badge + turtle with shield is clear but defined by what it avoids.",
+      "artworkPrompt": "Style: Ink + watercolor. Subject: Turtle in riot shield deflecting invasive procedure tools, STOP CREEP sign held up. Mood: Principled restraint."
+    },
+    {
+      "cardNumber": 47,
+      "cardName": "Utility-the-Balancer",
+      "grade": 3,
+      "power": "The Trade-Off-Math. Decides if the Cancer-Screen is worth the Biopsy-Pain.",
+      "lore": "Rational decision-making. Value-of-Victory vs Cost-of-the-Match.",
+      "gradeReason": "Probability x Value of Outcome stat is abstract math — expected utility theory needs calculus context to embody.",
+      "artworkPrompt": "Style: Ink + watercolor. Subject: Elephant balancing Cancer-Screen and Biopsy-Pain on scale, probability formula above. Mood: Ethical calculation."
+    },
+    {
+      "cardNumber": 48,
+      "cardName": "Step-the-Ladder",
+      "grade": 2,
+      "power": "The Controlled-Climb. X-ray, then CT, then Surgery. Never skip a rung.",
+      "lore": "Systematic escalation to prevent Resource-Burnout and trauma.",
+      "gradeReason": "STOP DIAGNOSTIC CREEP + escalation ladder is clear strategic move, slightly mechanical to perform solo.",
+      "artworkPrompt": "Style: Ink + watercolor. Subject: Climber ascending diagnostic ladder X-ray/CT/Surgery, skipped rungs crumbling below. Mood: Disciplined escalation."
+    },
+    {
+      "cardNumber": 49,
+      "cardName": "The Sick-vs-Not-Sick Sorter",
+      "grade": 1,
+      "power": "The Rapid-Triage. 2 seconds to know if it is a Lethal-Match or a Minor-Scuff.",
+      "lore": "Expert-Gestalt. The lightning-fast summation of 10,000 System-1 patterns.",
+      "gradeReason": "CHECK THE LORE! + Waiting-Room vs Life-Support split — 2-second gestalt is instantly embodied.",
+      "artworkPrompt": "Style: Ink + watercolor. Subject: Pigeon glancing between waiting-room and life-support door, deciding in under 2 seconds. Mood: Lightning gestalt."
+    },
+    {
+      "cardNumber": 50,
+      "cardName": "The Typical-Presentation Portrait",
+      "grade": 2,
+      "power": "The Benchmark. The Perfect-Story. If the opponent matches the portrait, the win is automatic.",
+      "lore": "Prototype-Theory. Comparing the Real-Match to the Ideal-Match.",
+      "gradeReason": "Classic textbook portrait lion is clear but embodies a reference standard rather than an active move.",
+      "artworkPrompt": "Style: Ink + watercolor. Subject: Regal lion portrait in golden frame labeled CLASSIC PRESENTATION, mirror beside for comparison. Mood: Authoritative standard."
+    },
+    {
+      "cardNumber": 51,
+      "cardName": "The Atypical-Trickster",
+      "grade": 1,
+      "power": "The Mislead. Presents with Stomach-Ache when it actually has a Heart-Ball.",
+      "lore": "Variance-in-the-Code. Elderly and diabetic wrestlers are Master-Tricksters.",
+      "gradeReason": "DOUBLE AGENT! BLODSINN! + octopus in disguise — immediately embodied as the most dangerous villain in deck.",
+      "artworkPrompt": "Style: Ink + watercolor. Subject: Octopus in pigeon costume, heart attack hidden behind stomach-ache mask, elderly badge. Mood: Deadly deception."
+    },
+    {
+      "cardNumber": 52,
+      "cardName": "The Dual-Diagnosis Duo",
+      "grade": 1,
+      "power": "The Double-Trouble. Slaying Occam-the-Razor. One explains Confusion, the other explains Pain.",
+      "lore": "Patients can have as many diseases as they damn well please.",
+      "gradeReason": "MASTER TRICKSTER! + BLODSINN! + two-headed ice creature — Hickam Dictum delivered as a gut-punch.",
+      "artworkPrompt": "Style: Ink + watercolor. Subject: Two-headed ice demon each holding a different diagnosis, Occam-Razor shattered at their feet. Mood: Dual threat."
+    },
+    {
+      "cardNumber": 53,
+      "cardName": "Doc FrizzleBob",
+      "grade": 1,
+      "power": "The Cognitive-Coach. What else could this be? Did you check the prior?!",
+      "lore": "Don't stop at the first clue. Stay Fluffy, and think twice!",
+      "gradeReason": "FINAL QUEST! Master of the Engine — FrizzleBob as attending coach is the ultimate meta-card, instantly iconic.",
+      "artworkPrompt": "Style: Ink + watercolor. Subject: Rabbit in white coat with magnifying glass and mind-map, coaching wrestling team. Mood: Wise commanding mentor."
+    },
+    {
+      "cardNumber": 54,
+      "cardName": "Quest 1: The Anchored Heart",
+      "grade": 2,
+      "power": "Break the Trap. System-1 calls it Tachy-Patient. The team ignores the Heart-History.",
+      "lore": "Identify Anchor-the-Heavy and deploy Rule-Out-the-Ranger to restore the Grounding-Force.",
+      "gradeReason": "WIN THE GAME! synthesis scenario is exciting but requires prior card knowledge to play correctly.",
+      "artworkPrompt": "Style: Ink + watercolor. Subject: Badger wrestler with anchor around neck fighting heart-attack villain, Ranger entering from side. Mood: High-stakes revelation."
+    },
+    {
+      "cardNumber": 55,
+      "cardName": "Quest 2: The Zebra in the Smoke",
+      "grade": 2,
+      "power": "Break the trap: a vital cough triggers a High-test bias because of yesterday's vivid case.",
+      "lore": "Identify Availab-the-Recent and restore the Grounding-Force of Prevalence.",
+      "gradeReason": "CHECK YOUR BIASES! rhino in smoke is dramatic but the meta-synthesis layer needs full card literacy.",
+      "artworkPrompt": "Style: Ink + watercolor. Subject: Zebra shape emerging from diagnostic smoke, rhino Preval holding up prevalence torch. Mood: Clarifying revelation."
+    },
+    {
+      "cardNumber": 56,
+      "cardName": "Quest 3: The Chameleon's Fever",
+      "grade": 1,
+      "power": "The Hidden Search: Fever + Confusion, but no cough or pain. Deploy Vindicate-the-Mnemo to defeat the Infection.",
+      "lore": "Apply VINDICATE-the-Mnemo to defeat the Atypical-Trickster and find the Infection.",
+      "gradeReason": "VINDICATE LIVES! FLUFFY REVOLUTION! + fiery villain — synthesis quest with immediate call-to-action energy.",
+      "artworkPrompt": "Style: Ink + watercolor. Subject: Octopus trickster engulfed in fever-fire, Vindicate-Mnemo mnemonic wheel spinning to trap it. Mood: Triumphant vindication."
+    }
+  ],
+  "cardCount": 56,
+  "gradeDistribution": {
+    "G1": 27,
+    "G2": 26,
+    "G3": 3
+  },
+  "overallScore": 9,
+  "verdict": "The Differential Engine is the MedKayfab series firing on all cylinders — 56 cards that teach probabilistic clinical reasoning through instantly performable wrestling personas. Named strength: the Bias Suite (cards 17-20, 37-40) is the most teachable run in any MedKayfab deck, with Anchor-the-Heavy and Silent-the-Stalker as standouts. Named weakness: Likeli-the-Ratio and Nomogram-the-Calculator (cards 21-22) are G3 deep-cuts that would benefit from a visual nomogram insert card. Table-ready: YES.",
+  "blurb": "56 diagnostic reasoning wrestlers who teach you to think like a clinician — from Bayesian priors to cognitive bias traps. For med students, residents, and anyone who ever missed the zebra.",
+  "viralScore": 8,
+  "qa": {
+    "readability": 9,
+    "artworkConsistency": 8,
+    "overall": 9
+  },
+  "coverQA": {
+    "coverVisual": "5 — FrizzleBob as medical detective with cork board, anatomical pinups, red string, question marks — rich Wimmelbild energy",
+    "coverTitle": "5 — THE DIFFERENTIAL ENGINE is a perfect deck title: Steampunk, Sherlockian, immediately evocative",
+    "coverVibeMatch": "5 — Puzzle-solving detective aesthetic perfectly mirrors diagnostic reasoning gameplay",
+    "coverOriginality": "4 — Cork board detective is a known trope but the medical+wrestling mashup makes it fresh",
+    "coverViral": "4 — Don't just see the patient; solve the puzzle. Stay fluffy! is a strong hook, could be even punchier",
+    "coverScore": 4.6,
+    "coverNote": "Best MedKayfab cover yet. The cork board pinning anatomical drawings with red string is exactly how differential diagnosis FEELS. FrizzleBob in detective coat + Call Doc Frizzle! tagline earns its own card. Minor note: subtitle font size could be bumped up for thumbnail readability."
+  },
+  "coverScore": 4.6,
+  "fontArtifactCount": 0,
+  "notes": "Page 15 functions as a FINAL QUEST meta-layer with Doc FrizzleBob (53) + 3 Quest scenarios (54-56) — clever synthesis mechanic that turns the deck into a mini-game. KayfaBINGO! badge appears on cards 2 and 26. BLODSINN! header (German expletive) shared by cards 51-52 as a tonal pair. Cards 19 and 38 both cover Availability Bias from different angles (Instant Replay vs Ghost-Copy) — intentional expansion, not error. PROTEST BORDERS! political badge appears on cards 8, 12, 18 — recurring visual motif. Lore text partially obscured on cards 6 and 43 due to decorative overlay — best-effort transcription used.",
+  "topCards": [
+    "Silent-the-Stalker",
+    "The Dual-Diagnosis Duo",
+    "RED-FLAG-REGGIE"
+  ],
+  "worstCards": [
+    "Nomogram-the-Calculator",
+    "Likeli-the-Ratio"
+  ],
+  "todos": {
+    "urgent": [
+      "Cards 21-22 (Likeli + Nomogram) are G3 — consider adding a visual nomogram insert or making the formula a gameplay prop rather than card text"
+    ],
+    "quickWins": [
+      "Add KayfaBINGO! label to Quest cards 54-56 for visual consistency",
+      "Increase subtitle font size on cover for thumbnail readability"
+    ],
+    "niceToHave": [
+      "Expand Quest section to 5-6 scenarios (add Dual-Diagnosis and Premature-Closure quest)",
+      "Consider a VINDICATE mnemonic reference card insert for card 6"
+    ]
+  },
+  "hashtags": [
+    "#MedKayfab",
+    "#DifferentialDiagnosis",
+    "#MedicalEducation",
+    "#Kayfabizarro",
+    "#DiagnosticReasoning",
+    "#MedStudents",
+    "#ClinicalReasoning",
+    "#Bayesian"
+  ],
+  "genre": "medical",
+  "bundle": "EDUCATION",
+  "exhibitions": [
+    "classroom",
+    "conference",
+    "workshop"
+  ],
+  "channels": [
+    "Gumroad",
+    "Instagram",
+    "TikTok"
+  ],
+  "marketingText": "MedKayfab: DIFFERENTIAL DIAGNOSIS – The Differential Engine (Medical Mnemonics Cut & Play Comic)\n\n56 illustrated medical mnemonic cards to master Bayesian priors, sensitivity versus specificity, and the cognitive biases that wreck a diagnosis long before the disease ever does.\n\nEvery other deck hands you a monster to beat. This one hands you a mirror. The disease is rarely what loses the match. What loses it is the prior you never checked, the first answer you fell in love with, the test you trusted without asking what it actually rules out. A clean exam and a confident read are exactly how the obvious case becomes the missed one, and no amount of extra facts saves you if the reasoning underneath is running the wrong move.\n\nMedKayfab: The Differential Engine turns the invisible machinery of clinical reasoning into a narrative wrestling match, where every probability, every test characteristic, and every bias you carry steps into the ring as a fighter with a motive. Stop memorizing disease lists. Start running the engine that picks between them.\n\nYOU'LL GET\n- 56 illustrated MedKayfab cards (14pp, 4 cards/page)\n- Full MedKayfab Freestyle rules (Quest Die mechanics)\n- S-Tier characters like RED-FLAG-REGGIE, Silent-the-Stalker, and The Dual-Diagnosis Duo\n- A Final Quest meta-layer: Doc FrizzleBob plus three chained Quest scenarios that make you run the whole engine on one case\n- Free lifetime updates as the evidence shifts\n- CC BY-NC-SA 4.0 licence, print, share, and adapt freely\n- PDF optimized for home printing (A4 / Letter)\n\nWhat's in the deck\nThis deck personifies the reasoning layer that sits under every specialty. You will meet RED-FLAG-REGGIE, the arena-stop who refuses to let the match continue until you prove the patient is not dying from something catastrophic. Silent-the-Stalker is the false negative made flesh, the test that reads clean while the disease quietly eats the health bar from the inside. The Dual-Diagnosis Duo is the case that breaks Occam's Razor, two problems wearing one set of symptoms. Behind them stand the villains you actually fight every shift: Anchor-the-Heavy, who locks the team onto the first impression and ignores every red flag after it, and Prematur-the-Closure, who rings the victory bell at the first explanation that happens to fit.\n\nHow it works\nEvery card is a cognitive anchor built for high-stress retrieval. You have the Character (the reasoning move or the bias), the Visual (the scene), the Stat Block (sensitivity, specificity, likelihood ratios), the Lore (why it wins or loses the match), and the Quest (the case it shows up in). The Mechanism Flash mode is unforgiving here: explain in one sentence why a negative test does or does not let you send the patient home, without looking, or the patient on the Stage pays for it. The Final Quest page is the synthesis bout, where System-1 the Flash, the biases, and the safety-nets all fight over the same case at once.\n\nHonest cognitive load\nThis is a meta-engine, not a fact dump, so it rewards a little clinical exposure. It fits medical students moving into their clinical years, residents prepping for boards and OSCEs, and anyone who has both missed the zebra and chased one that was never there. It pairs naturally with Emergency Medicine for the same decisions under a running clock, with Internal Medicine for the multimorbid cases where two diagnoses hide behind one complaint, and with any organ-system deck whose look-alikes you keep confusing.\n\nABOUT MEDKAYFAB\nMedKayfab is a narrative medical learning card game, 50 decks covering the full medical curriculum. Every card encodes a clinical mechanism as a character with a personality, a story, and a reasoning challenge. Built by a physician. Assembled with AI tools. Manually revised. Honest about its limitations. Free to use, share, and adapt under CC BY-NC-SA 4.0.\n\nPAY WHAT YOU WANT\nThis deck is Pay What You Want, including free.\nIf you find it useful, a fair price is €5. If you are a student on a budget, enter €0. No questions asked. If you want to support more decks, anything above fair price is appreciated.\nCC BY-NC-SA 4.0, share freely, attribute honestly, never resell.\n\nDISCLAIMER\nMedKayfab is a learning companion, not a clinical reference. Content was created by a physician and reviewed to the best of our knowledge, but medicine evolves, guidelines change, and some mechanisms in here will be simplified or wrong. Always verify against current primary sources and clinical guidelines before applying anything to patient care. The Blödsinn! is the vehicle. The science is serious.\n\nStay fluffy. — Doc FrizzleBob",
+  "marketingEdition": "MED"
+}
