@@ -133,3 +133,26 @@ Purpose: same semantic EyeRig sequence on source-exact Eumel 2D and the existing
 
 Modifier Atlas:
 `tools/2D Animation Studio/shared/eye-rig/modifier-atlas/`
+
+
+## 2026-09-20 · Hub UI candidate · Paper/Dark + visual Stage/Live
+
+Draft PR: `#141`  
+Branch: `work/kfb-hub-paper-dark-previews-2026-09-20`  
+Status: **STATIC PASS · STAGE/PUBLIC PENDING · NO LIVE PROMOTION**
+
+This candidate keeps `kfb-hub/index.html` as the only Hub runtime owner and adds:
+
+- shareable hash navigation such as `#stage`, `#briefings`, `#tools` and DocCheck-prefixed variants such as `#doccheck-stage`;
+- explicit Paper / Dark presentation with the choice stored only in the browser;
+- a Stage / Live visual gallery derived from the Hub's existing `links`, `todos` and `briefings` arrays, deduplicated by current public URL;
+- screenshot tiles requested from the current public target with a one-hour maximum cache; if a thumbnail cannot load, the tile falls back to a lazy, non-interactive view of that same public target.
+
+The gallery is presentation only. It does not create a second registry, change project status, or promote a Stage candidate to Live.
+
+Current static result: **18/18 PASS**. Derived current inventory: **KFB 19 targets = 8 Stage + 11 Live; DocCheck 4 Live targets**.
+
+Evidence and Return:
+`skills/chat/workflows/KFB_HUB_UI_V2_2026-09-19/PAPER_DARK_PREVIEWS_2026-09-20/`
+
+No new `kayfabizarro.pages.dev` review link is claimed until the exact candidate revision has been deliberately published and opened on Cloudflare.
