@@ -13,3 +13,12 @@
 - static contract test: **32/32 PASS**;
 - public browser/deployment: **PENDING**;
 - no Dropbox mutation, no asset copies, no second Registry, no second Dungeon owner, no Live promotion.
+
+
+## 2026-09-20 · Stage publication bridge
+
+- copied only `kfb-hub/stage/toolbox/index.html` and `toolbox-status.v1.json` to `cloudflare-live`;
+- patched the current publication Hub in place rather than overwriting it from the feature branch;
+- publication branch head after Hub patch: `d683a3febe5f583d6fc5036943efd8c7368bdc99`;
+- GitHub fetch-back confirms page marker, status marker and both Hub links;
+- public Cloudflare HTTP/browser proof remains **UNKNOWN** because the available web reader/DNS path could not access the host; no Live claim.
