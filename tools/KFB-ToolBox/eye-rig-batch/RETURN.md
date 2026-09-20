@@ -521,3 +521,31 @@ Repair:
 Evidence: `docs/LOADER_SINGLE_MATERIAL_FIX_2026-09-20.md`.
 
 Tests after repair: **84/84 PASS**; focused loader checks **8/8 PASS**.
+
+
+## 2026-09-20 · LARGE BATCH ACCEPTED + AUTO LID COLOR
+
+Georg's committed Large batch at `tools/KFB-ToolBox/_inbox/eye-rig-large.batch.json` is accepted as the per-character Large baseline.
+
+Accepted:
+- Monstrosity
+- Black Knight
+- Demon Lord
+- Orc Brute
+
+Canonical reviewed copy:
+`data/rig-large-reviewed.v1.json`.
+
+The shared fallback lid base `#b58f83` is not persisted in the reviewed copy.
+
+Lid-color repair:
+- new `lib/face-color-sampler.v1.js`;
+- samples the loaded actor's own head/face texture around the EyeRig placement;
+- writes that color to `sourceFace.faceColor` / `eye.baseColor`;
+- existing EyeRig v6 still owns the darker lid rendering.
+
+Tests: **95/95 PASS**; runtime-critical JS syntax **4/4 PASS**.
+
+Stage: `e9f97c594bce46607e95928dd349cf081c36783d`.
+
+Next: reload the Stage and visually check the four Large lid colors.

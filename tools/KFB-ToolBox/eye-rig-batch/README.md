@@ -126,3 +126,10 @@ Current verified Large set:
 Monstrosity is the first calibration actor. Large starts without an accepted class default. Tune Monstrosity and press **Set as Large default**; only then should the value be applied to the remaining Large actors.
 
 Large motion uses the actual Large animation library. Idle / Walk / Run are available; Jump is intentionally unavailable in this slice because no matching Large jump clip exists.
+
+
+## Accepted Rig_Large profiles
+
+Georg's four reviewed Large profiles are now canonical per-character overrides in `data/rig-large-reviewed.v1.json`.
+
+Lid color no longer uses the common pink fallback for generic actors. The runtime samples each actor's source head/face texture and passes that base into EyeRig v6, which applies the existing darker-lid treatment.

@@ -4,15 +4,15 @@
   "repository": "georg-doc/kayfabizarro",
   "sourceBranch": "toolbox/eye-rig-batch-2026-09-18",
   "identityCheckpoint": "949ff8037df2da88eb91ef825984ef57870b8238",
-  "implementationCheckpoint": "c6608ab5c76509bb54ae6b4375b87ed338e61427",
+  "implementationCheckpoint": "480c5770ef8ef391043b0b93ec3f51b04af7dfef",
   "mergeBase": "5650b6c54d8789b20ea80abe857688173d506d3b",
   "stage": {
     "route": "/kfb-hub/stage/toolbox/eye-rig-batch/",
     "url": "https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/eye-rig-batch/",
     "componentEvidenceUrl": "https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/eye-rig-batch/docs/source-components-0-11.html",
     "publicationBranch": "cloudflare-live",
-    "publicationCommit": "670e11d56fe5b85e6264d8a294868c32540db5c6",
-    "status": "PUBLISHED_MEDIUM_PLUS_LARGE_CALIBRATION",
+    "publicationCommit": "e9f97c594bce46607e95928dd349cf081c36783d",
+    "status": "PUBLISHED_LARGE_REVIEWED_PROFILES_AUTO_LID_COLOR",
     "correctedPublicProof": "NOT_RUN · connector push did not trigger Actions; exact pages.dev route inaccessible from current web tool",
     "historicalPublicProof": {
       "status": "PASS_HISTORICAL_PRE_IDENTITY_CORRECTION",
@@ -110,7 +110,7 @@
     "merged": false
   },
   "tests": {
-    "staticContract": "84/84 PASS",
+    "staticContract": "95/95 PASS",
     "githubPersistence": "PASS · identity checkpoint and all five intended files fetched back",
     "exactSourceGeometry": "PASS · 12/12 connected components measured from pinned GLB",
     "historicalJsSyntax": "3/3 PASS on pre-identity implementation checkpoint",
@@ -118,19 +118,19 @@
     "correctedCloudflareUrl": "PUBLIC_VERIFICATION_OPEN · exact route inaccessible to current web tool",
     "correctedGithubActions": "NOT_RUN · connector push did not trigger workflow",
     "focusedCalibration": "17/17 PASS",
-    "changedJsSyntax": "3/3 PASS",
+    "changedJsSyntax": "4/4 PASS",
     "focusedStudioControls": "15/15 PASS",
     "focusedActorBrowser": "14/14 PASS",
     "focusedLargeCandidate": "15/15 PASS",
     "loaderFocused": "8/8 PASS"
   },
   "visualReview": {
-    "status": "LARGE_MONSTROSITY_CALIBRATION_OPEN",
-    "nextGate": "Switch to Large, tune Monstrosity, press Set as Large default, then review the other three Large actors."
+    "status": "LARGE_ACCEPTED_LID_COLOR_VISUAL_CHECK",
+    "nextGate": "Reload Stage and check that the four Large actors keep Georg's accepted profiles and no longer share the pink lid fallback."
   },
-  "currentEvidenceHead": "1416092e87018ce32507d4d91e1d13d39f62c1ac",
+  "currentEvidenceHead": "40c2f920a96ea00bf99593610a49a646b2e0873c",
   "calibrationCheckpoint": "6f7d7988849cf0c74a6551a33ee422d8584c87c2",
-  "qaEvidenceCheckpoint": "e60f1db1e2436f11549e44def25ab9b2718eac3b",
+  "qaEvidenceCheckpoint": "40c2f920a96ea00bf99593610a49a646b2e0873c",
   "rigMediumDefault": {
     "schema": "kfb.eye-class-seed/0.1-candidate",
     "path": "tools/KFB-ToolBox/eye-rig-batch/data/rig-medium-default.v0.json",
@@ -230,7 +230,9 @@
   },
   "rigLarge": {
     "catalog": "tools/KFB-ToolBox/eye-rig-batch/data/rig-large-actors.v0.json",
-    "seed": "tools/KFB-ToolBox/eye-rig-batch/data/rig-large-default.v0.json",
+    "reviewed": "tools/KFB-ToolBox/eye-rig-batch/data/rig-large-reviewed.v1.json",
+    "acceptedSource": "tools/KFB-ToolBox/_inbox/eye-rig-large.batch.json",
+    "acceptedSourceMain": "52532aee17f85324a6d04ab53150216f00ac5d89",
     "actorCount": 4,
     "actors": [
       "Monstrosity",
@@ -238,15 +240,7 @@
       "Demon Lord",
       "Orc Brute"
     ],
-    "defaultStatus": "NOT_SET",
-    "firstCalibrationActor": "Monstrosity",
-    "promotionAction": "Set as Large default",
-    "motions": [
-      "Idle_A",
-      "Walking_A",
-      "Running_A"
-    ],
-    "jumpAvailable": false
+    "status": "ALL_4_ACCEPTED_PER_ACTOR"
   },
   "loaderFix": {
     "status": "FIXED",
@@ -255,5 +249,11 @@
     "repair": "temporary whole-mesh group around reused donor strip; restore original no-group state",
     "staleUnsupportedRecovery": true,
     "evidence": "docs/LOADER_SINGLE_MATERIAL_FIX_2026-09-20.md"
+  },
+  "lidColor": {
+    "status": "AUTO_SOURCE_HEAD",
+    "sampler": "tools/KFB-ToolBox/eye-rig-batch/lib/face-color-sampler.v1.js",
+    "behavior": "sample actor head/face texture near eye host; EyeRig v6 darkens sampled base",
+    "gothGirl": "explicit face color remains authoritative"
   }
 }
