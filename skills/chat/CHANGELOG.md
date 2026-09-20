@@ -675,3 +675,34 @@ PR #116 remains deliberately **unmerged**. No Cloudflare/public human link is cl
 
 ### OSM FOLLOW-UP
 Planning lives in Travel `site/terrain-corridor-tc01/OSM_FOLLOWUP.md`: OSM stays geographic/semantic truth; Travel stays terrain/world truth; Race stays movement/contact owner; OMS/Landmark slices remain explicit presentation overrides.
+
+
+## 2026-09-20 · TC-01 Stage source merged / Cloudflare blocked
+
+### STAGE SOURCE
+TC-01 Stage source PR #116 merged at `958a0622b03d6164aa80ea4f426272e24531e22e`.
+
+### CANONICAL PUBLIC QA
+QA PR #117, run `35477984153`, job `105990469211` polled the exact TC-01 Cloudflare deployment marker for ~6 minutes.
+
+Expected:
+`STUNT-WORLD-TINYSKIES-TRACK-CORRIDOR-TC01-20260920`
+
+Observed:
+the marker URL returned HTML (`Unexpected token '<'`) instead of `DEPLOYMENT.json`.
+
+The canonical Chromium runtime step was correctly skipped.
+
+### STATUS SEPARATION
+- TC-01 implementation: **15/15 PASS**
+- Travel baseline test/build/verify: **PASS**
+- TC-01 Stage mirror: **13/13 PASS**
+- Stage source: **MERGED**
+- canonical Cloudflare child route: **BLOCKED / NOT PUBLIC_VERIFIED**
+- Georg visual acceptance: **OPEN**
+- Live: **UNCHANGED**
+
+Do not rebuild the Track/Terrain slice to solve this publication issue and do not substitute GitHub Pages or another CDN.
+
+### OSM NEXT
+The prepared OSM lane remains after the public/human TC-01 gate: `lat/lon → Globe normal/ENU → one short OSM road → same Travel terrain adapter → 3–5 building support pads → one exact landmark override`.
