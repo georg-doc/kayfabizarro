@@ -51,7 +51,8 @@
     {
       "id": "doccheck-project-island-eumel",
       "path": "consumers/eumel-resident/",
-      "status": "PREPARED_CANDIDATE"
+      "status": "PREPARED_CANDIDATE",
+      "gameReadyPackage": "game-ready/eumel-2p5d-actor/"
     },
     {
       "id": "resident-atlas-eumel",
@@ -62,6 +63,11 @@
       "id": "doccy-quadruped",
       "path": "templates/DOCCY_QUADRUPED_RIG_TEMPLATE.v0.1.json",
       "status": "TEMPLATE_ONLY"
+    },
+    {
+      "id": "kfb-game-ready-eumel",
+      "path": "game-ready/eumel-2p5d-actor/",
+      "status": "PACKAGE_METADATA_IMPLEMENTED_BROWSER_CONSUMER_GATES_OPEN"
     }
   ],
   "publication": {

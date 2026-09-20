@@ -1,0 +1,25 @@
+{
+  "schema": "kfb.game-ready-provenance/0.1",
+  "packageId": "eumel-2p5d-actor",
+  "prepared": "2026-09-20",
+  "chain": [
+    "DocCheck AD Illustrator source",
+    "2D Animation Studio source audit/component split",
+    "neutral bind + cutout rig",
+    "shared EyeRig protocol",
+    "three2p5d world-space adapter proof",
+    "Game Dev Studio candidate package",
+    "named consumer"
+  ],
+  "evidence": {
+    "sourceExactComponentSplit": "IMPLEMENTATION",
+    "neutralBind": "IMPLEMENTATION",
+    "crossRenderEyeStatic": "PASS",
+    "three2p5dStatic": "PASS",
+    "three2p5dBrowser": "PENDING",
+    "residentMount": "PENDING",
+    "doccheckProjectIsland": "PENDING",
+    "georgAcceptance": "PENDING"
+  },
+  "ownerRule": "Package registration never promotes a consumer or visual PASS."
+}

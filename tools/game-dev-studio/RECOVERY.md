@@ -159,3 +159,33 @@ Georg reviews weight/folds, idle wind, side gathering, closing, impact and fabri
 Deferred until after that gate:
 aging/burn/stain/torn decals; lower-third tieback/swag presets; card breach/ripple/dissolve; production WebGPU backend; Shader Pool / Texture Cauldron research.
 
+
+
+## 2026-09-20 · Eumel 2.5D candidate package
+
+A second **candidate package** is registered:
+
+`game-ready/eumel-2p5d-actor/`
+
+It does not replace Pilot 01 as the existing active package/gate.
+
+Source chain:
+
+`DocCheck Illustrator → 2D Animation Studio source-exact components → three2p5d adapter → game-ready metadata → named consumer`
+
+Current evidence:
+
+- source/component pins: PASS;
+- package metadata: IMPLEMENTED;
+- upstream three2p5d static sanity: PASS;
+- browser three2p5d proof: PENDING;
+- Resident candidate: PREPARED, NOT INDEXED;
+- DocCheck Project Island handoff: PREPARED;
+- named KFB game runtime: not selected yet;
+- human acceptance: PENDING.
+
+Catalog note:
+
+`tools/game-dev-studio/catalog.json` now contains this package, but the current public Studio UI still renders `packages[0]` only. No package-selector/public Eumel preview is claimed by this registration.
+
+Next Eumel gate remains the isolated three2p5d browser/visual review before Resident or Project-Island runtime work.
