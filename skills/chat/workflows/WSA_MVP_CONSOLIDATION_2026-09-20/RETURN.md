@@ -78,3 +78,16 @@ Added after the seven-lane refresh:
 Current recommendation: resume the existing WSA Lead on GPT-5.6 Sol / Medium / Fast off for I0. After the lock, keep the same WSA Lead by default; use Sol / Medium for straightforward execution, Sol / High for harder implementation, and Astra only for a genuinely hard cross-repo/debugging gate. Start a fresh implementation chat only when the accumulated context becomes counterproductive. This recommendation is dated session guidance, not project canon.
 
 No runtime, Stage or Live claim is added by this handoff.
+
+
+## WhackMan existing-tool correction · 2026-09-20
+
+WhackMan is a consumer of already existing tooling, not a replacement authoring stack.
+
+Existing source truth to consume:
+- `KayKit_Dungeon_Model_S13.html` + `HANDOFF_dungeon_S13.md`: measured Dungeon pack model/inventory; do not remeasure as a new POC phase.
+- S13.2: existing Dungeon generator, audits and Recipe JSON.
+- S14/S21: existing in-place editor / recipe-patch proof.
+- Registry + Asset Librarian: existing asset catalogue/discovery owner.
+
+WhackMan-specific implementation is limited to Recipe → MazeGraph, player/pursuer gameplay, LegacyFaceHost → EyeRig v6, pickups/AI/state and camera integration. New measurements are only named MISSING_DELTA values not already owned by those sources.
