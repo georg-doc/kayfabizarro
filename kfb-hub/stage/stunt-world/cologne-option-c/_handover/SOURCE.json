@@ -1,0 +1,30 @@
+{
+  "schema": "kfb.stage.source.v1",
+  "slice": "cologne-option-c",
+  "status": "SOURCE_LOCAL_BROWSER_PASS_PUBLIC_PENDING",
+  "source": {
+    "repository": "georg-doc/KFB-Stunt-Car-Race",
+    "privateMain": "31d834218f0a79f193a44b054e57454d29c305c2",
+    "wipImportCommit": "88fd96efe9eecdfa720d10f5be581436cd5ababb",
+    "path": "_inbox/KFB Cologne Race Option C"
+  },
+  "public": {
+    "repository": "georg-doc/kayfabizarro",
+    "branch": "wsa/cologne-option-c-stage-2026-09-20",
+    "implementationHead": "4bc52ef99d90cd9db216c9c1ff3071f4d5f03b86",
+    "stagePath": "kfb-hub/stage/stunt-world/cologne-option-c/",
+    "stageUrl": "https://kayfabizarro.pages.dev/kfb-hub/stage/stunt-world/cologne-option-c/"
+  },
+  "benchmark": {
+    "repository": "KilledByAPixel/SP13KTRA",
+    "commit": "166ad838b9a067f85100eaff7876522f7cfe9feb",
+    "license": "All Rights Reserved",
+    "use": "behavioral benchmark only; no source, geometry, coordinates or palette copied"
+  },
+  "test": {
+    "static": "18/18 PASS",
+    "modules": "16/16 syntax PASS",
+    "browser": ["desktop normal PASS", "desktop tunnel gate PASS", "mobile 390x844 PASS"],
+    "console": "0 errors / 0 warnings"
+  }
+}
