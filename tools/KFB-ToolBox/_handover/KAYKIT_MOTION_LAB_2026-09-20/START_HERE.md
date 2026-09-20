@@ -1,7 +1,7 @@
 # KFB ToolBox · KayKit Motion / Animation Lab proposal · START HERE
 
 **Date:** 2026-09-20  
-**Status:** IMPLEMENTATION CANDIDATE · TOOLBOX OWNER · HUMAN ACCEPTANCE OPEN  
+**Status:** PUBLIC VERIFIED · TOOLBOX OWNER · HUMAN MOTION/ATTACHMENT ACCEPTANCE OPEN  
 **Owner:** KFB ToolBox / Motion authoring  
 **Does not create:** a second Animation owner, Registry, mixer, physics controller or consumer runtime  
 **Implementation candidate:** `tools/KFB-ToolBox/kaykit-motion-lab-v1/`  
@@ -314,6 +314,21 @@ It may **not** automatically:
 - invent Sprint;
 - claim Large/Medium interchangeability.
 
+## Public Stage proof
+
+Fixed Stage:
+https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/kaykit-motion-lab-v1/
+
+Evidence:
+- run `35484127790`;
+- public-proof job `106007210838`;
+- **87/87 PASS**;
+- artifact `10596912462`;
+- 0 failed resources;
+- 0 page/console errors.
+
+`PUBLIC_VERIFIED = YES`.
+
 ## Exactly one next gate
 
-Publicly prove the three-actor ToolBox candidate, then Georg reviews **FrizzleBob / GothGirl / Black Knight** in the same semantic Idle → Walk → Run / phase-sync workflow before any consumer integration.
+Georg reviews **FrizzleBob / GothGirl / Black Knight** in the same semantic Idle → Walk → Run / phase-sync workflow before any consumer integration. Attachments remain their own visual gate.
