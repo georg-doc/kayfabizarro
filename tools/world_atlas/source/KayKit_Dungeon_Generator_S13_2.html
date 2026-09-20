@@ -7,6 +7,7 @@
 {"imports":{
  "three":"https://unpkg.com/three@0.184.0/build/three.module.js",
  "three/addons/controls/OrbitControls.js":"https://unpkg.com/three@0.184.0/examples/jsm/controls/OrbitControls.js",
+ "three/addons/controls/TransformControls.js":"https://unpkg.com/three@0.184.0/examples/jsm/controls/TransformControls.js",
  "three/addons/loaders/GLTFLoader.js":"https://unpkg.com/three@0.184.0/examples/jsm/loaders/GLTFLoader.js"
 }}
 </script>
@@ -55,6 +56,11 @@
   /* Nur noch das Ergebnis eines Klicks liegt auf der Szene. Alle Kennzahlen stehen in der Leiste. */
   #pick{position:absolute;left:10px;bottom:10px;font:10px/1.55 ui-monospace,monospace;
     background:#120e18e0;border:1px solid #3b2f4d;padding:6px 8px;border-radius:6px;display:none;max-width:52%}
+  #objmenu{position:absolute;z-index:12;display:none;gap:4px;transform:translate(-50%,-100%);
+    background:#120e18ee;border:1px solid #5a4672;border-radius:7px;padding:4px;box-shadow:0 8px 22px #0008}
+  #objmenu button{min-width:28px;padding:6px 7px}
+  #objmenu button[disabled]{opacity:.35;cursor:not-allowed}
+  #app.clean #objmenu{display:none!important}
 
   aside{border-left:1px solid #2a2135;background:#161020;overflow:auto;padding:0 0 24px}
   @media (max-width:1100px){
@@ -99,12 +105,19 @@
     <select id="lvl" title="Ebenen"><option value="both">beide Ebenen</option><option value="0">nur unten</option><option value="1">nur oben</option></select>
     <div class="spacer"></div>
     <button id="top">Draufsicht</button>
+    <button id="editor" aria-pressed="false" title="Detail-Editor · nur Fackeln/Kerzen">Editor</button>
     <button id="clean">Nur Ansicht</button>
     <button id="panel" aria-pressed="false" title="Leiste (Werkzeuge, Prüfungen, Notizen)">☰</button>
   </header>
   <div id="stage">
     <canvas id="c"></canvas>
     <div id="pick"></div>
+    <div id="objmenu" aria-label="Detail-Editor">
+      <button data-edit="translate" title="Verschieben · G">✥</button>
+      <button data-edit="rotate" title="Drehen · R">⟳</button>
+      <button data-edit="floor" title="Auf Boden absetzen">⬓</button>
+      <button data-edit="close" title="Auswahl schließen · Esc">✕</button>
+    </div>
     <button id="exitClean" title="Escape">Ansicht verlassen</button>
   </div>
   <aside>
@@ -117,6 +130,19 @@
         <button id="ov" aria-pressed="false">Fugen</button>
         <button id="exp">Recipe JSON</button>
         <a href="KayKit_Dungeon_Model_S13.html"><button>← Modell S13</button></a>
+      </div>
+    </details>
+    <details id="editBox">
+      <summary>Editor · Detail-Patch</summary>
+      <div class="body">
+        <p class="note">E1 bearbeitet nur <code>torch</code>/<code>candle</code>. Architektur bleibt Generator-Eigentum.
+        Handkorrekturen sind Ablage + Patch; <code>Recipe JSON</code> exportiert die sichtbaren Transformwerte.</p>
+        <div id="editPatch" class="mono">— noch nichts geändert</div>
+        <div class="tools" style="margin-top:6px">
+          <button id="copyEditPatch">Patch kopieren</button>
+          <button id="rebuildEditPatch">Neu bauen</button>
+          <button id="resetEditPatch">Alles zurück</button>
+        </div>
       </div>
     </details>
     <details>
@@ -201,6 +227,7 @@
 
 <script type="module">
 import * as THREE from 'three';
+import { TransformControls } from 'three/addons/controls/TransformControls.js';
 import { buildScene, makeViewer, measure, measured, loadAsset, repairTextures } from './lib/kit-lab.js';
 import { generate, layout, collectTris, planScan, wallFrame, cornerFrame, stairFrame, openingScan, cellId }
   from './lib/dungeon-grid.js';
