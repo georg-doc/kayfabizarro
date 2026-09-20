@@ -40,7 +40,7 @@ jobs:
       - name: Browser proof
         env:
           CA2_BASE_URL: http://127.0.0.1:4173/kfb-hub/stage/combat/ca2-actor-selector/
-          CA2_SOURCE_HEAD: 4bf1176b2387f07966f18463a5887096a285a27a
+          CA2_SOURCE_HEAD: 64638a5818d7b7a75c0a96edd8777580669dcfa3
           CA2_PROOF_DIR: combat-ca2-selector-evidence
         run: node kfb-hub/stage/combat/ca2-actor-selector/proof.mjs
       - uses: actions/upload-artifact@v4
