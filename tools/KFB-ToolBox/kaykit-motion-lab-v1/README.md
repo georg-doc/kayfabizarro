@@ -1,6 +1,6 @@
 # KFB ToolBox · KayKit Motion Lab v1
 
-Status: **LOCAL BROWSER 87/87 PASS · STAGE PENDING · HUMAN MOTION/ATTACHMENT GATES OPEN**  
+Status: **PUBLIC BROWSER 87/87 PASS · HUMAN MOTION/ATTACHMENT GATES OPEN**  
 Owner: **KFB ToolBox / Motion authoring**  
 Implementation tested at: `3ab2a439b013b816e843ea303e7015a26ee2aff8`
 
@@ -92,3 +92,41 @@ Animation Lab remains an unpromoted consumer/authoring target until its own SSOT
 ## Next gate
 
 Publicly verify the exact Stage candidate, then Georg reviews the three actors in the same Idle → Walk → Run / phase-sync workflow. No consumer default is promoted before that human gate.
+
+
+## Public Stage evidence
+
+Fixed route:
+
+https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/kaykit-motion-lab-v1/
+
+Public proof:
+- main publication commit `14707f7018ab1c49bfd2d073a01ab3789422245f`;
+- Cloudflare mirror commit `b69d3c4bd512a8d34e72e0e074a142ba9e961198`;
+- workflow run `35484127790`;
+- public-proof job `106007210838`;
+- **87/87 PASS**;
+- artifact `10596912462`;
+- digest `sha256:d4638aba0e4bd02b690f19cb931c92f99cac020d0af05e5d1124f11003300ca4`;
+- screenshots: FrizzleBob, GothGirl, Black Knight;
+- failed HTTP/resources: 0;
+- page/console errors: 0.
+
+`PUBLIC_VERIFIED = YES`.
+
+Human review remains intentionally open.
+
+## Current review target
+
+Use the same semantic workflow on all three actors:
+
+`Idle → Walking_A → Running_A`
+
+with phase-sync enabled for Walk↔Run.
+
+Key review questions:
+- FrizzleBob / GothGirl Medium: does the current 1.80× → 0.45× handoff still feel natural, or should Walking_B/C become the preferred walk donor?
+- Black Knight Large: does the near-native 1.02× → 0.97× handoff read cleanly despite the high automatic Running_A slip candidate?
+- Attachments: microphone / Large sword / Large shield still need their own visible attachment gate.
+
+No consumer default is promoted from technical PASS alone.
