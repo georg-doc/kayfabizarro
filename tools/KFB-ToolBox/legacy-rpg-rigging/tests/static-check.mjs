@@ -14,7 +14,7 @@ ok(cat.heads.filter(h=>h.kind==='asset').length===13,'12 alternate heads + skull
 ok(new Set(cat.weapons.map(w=>w.family)).size===8,'eight weapon families');
 ok(cat.weapons.filter(w=>w.tier==='common').length===8,'eight common weapons');
 ok(cat.weapons.filter(w=>w.tier==='uncommon').length===8,'eight uncommon weapons');
-ok(cat.weapons.filter(w=>w.tier==='rare').length===0,'eight rare weapons');
+ok(cat.weapons.filter(w=>w.tier==='rare').length===8,'eight rare weapons');
 ok(cat.semantic.attack==='Attack(1h)' && cat.semantic.bow==='Shoot(2h)Bow','semantic combat mappings use real Legacy clip names');
 const app=read('app.js'), rig=read('lib/legacy-rig-adapter.v1.js'), face=read('lib/legacy-facehost.v1.js'), html=read('index.html');
 ok(app.includes("STORAGE='kfb.toolbox.legacy-rpg-rigging.v0'"),'isolated localStorage namespace');
