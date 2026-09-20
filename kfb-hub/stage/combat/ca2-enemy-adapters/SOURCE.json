@@ -1,7 +1,7 @@
 {
   "schema": "kfb.stage-source/0.1",
   "product": "KFB Combat · CA2-03A Enemy Source + Clip Enumeration",
-  "status": "BRANCH_PROOF_PENDING",
+  "status": "BRANCH_ENUM_VERIFIED",
   "sourceRepo": "georg-doc/kayfabizarro",
   "sourceBranch": "chatgpt-web/ca2-03-enemy-adapters-2026-09-20",
   "implementationHead": "8b325ec856d2de6bba33968d725516e2b5ccd29f",
@@ -31,5 +31,29 @@
   ],
   "stageUrl": "https://kayfabizarro.pages.dev/kfb-hub/stage/combat/ca2-enemy-adapters/",
   "publicVerified": false,
-  "humanAcceptance": "PENDING"
+  "humanAcceptance": "PENDING",
+  "branchProof": {
+    "run": 35492453999,
+    "job": 106029613333,
+    "checks": "32/32 PASS",
+    "artifactId": 10599820951,
+    "artifactDigest": "sha256:896584b1998dcb0f3e234f85e50c225fee7a165b426e0cca3e669da9a545e339"
+  },
+  "measurements": {
+    "skeleton-warrior": {
+      "bones": 23,
+      "height": 2.590462322352996,
+      "rig": "Rig_Medium"
+    },
+    "orc-brute": {
+      "bones": 23,
+      "height": 4.194394604340129,
+      "rig": "Rig_Large"
+    },
+    "avian-swordsman": {
+      "bones": 23,
+      "height": 2.3241792388642932,
+      "rig": "Rig_Medium"
+    }
+  }
 }

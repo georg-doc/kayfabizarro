@@ -1,0 +1,77 @@
+{
+  "schema": "kfb.combat.enemy-profile-set/0.1-candidate",
+  "date": "2026-09-20",
+  "status": "ENUMERATED_NOT_ARENA_ENABLED",
+  "profiles": [
+    {
+      "id": "skeleton-warrior",
+      "label": "Skeleton Warrior",
+      "role": "proof-medium-melee",
+      "rigFamily": "Rig_Medium",
+      "model": {
+        "commit": "891eadf01e218f5fc21387e64cea1fec8332c5b6",
+        "path": "media/3D_Assets/KayKit_Skeletons/characters/gltf/Skeleton_Warrior.glb"
+      },
+      "restHeight": 2.590462322352996,
+      "bones": 23,
+      "faceMode": "native-only",
+      "scale": 1,
+      "groundMode": "skinned-vertex-bounds",
+      "weaponStatus": "KNOWN_PROPS_NOT_CA203A_MOUNTED",
+      "capabilities": [
+        "melee"
+      ],
+      "arenaOwner": false
+    },
+    {
+      "id": "orc-brute",
+      "label": "Orc Brute",
+      "role": "proof-large-brute",
+      "rigFamily": "Rig_Large",
+      "model": {
+        "commit": "891eadf01e218f5fc21387e64cea1fec8332c5b6",
+        "path": "media/3D_Assets/KayKit_Mystery_Series6/2 - August 2025 - Orc Brute/OrcBrute.glb"
+      },
+      "restHeight": 4.194394604340129,
+      "bones": 23,
+      "faceMode": "native-only",
+      "scale": 1,
+      "groundMode": "skinned-vertex-bounds",
+      "weaponStatus": "DEFERRED_LARGE",
+      "capabilities": [
+        "melee-body-proof"
+      ],
+      "arenaOwner": false
+    },
+    {
+      "id": "avian-swordsman",
+      "label": "Avian Swordsman",
+      "role": "resident-pool-comparison",
+      "rigFamily": "Rig_Medium",
+      "model": {
+        "commit": "891eadf01e218f5fc21387e64cea1fec8332c5b6",
+        "path": "media/3D_Assets/KayKit_Mystery_Series6/9 - March 2026 - Avian Swordsman/AvianSwordsman.glb"
+      },
+      "restHeight": 2.3241792388642932,
+      "bones": 23,
+      "faceMode": "native-only",
+      "scale": 1,
+      "groundMode": "skinned-vertex-bounds",
+      "weaponStatus": "KNOWN_SWORD_DEFERRED_IN_CA203A",
+      "capabilities": [
+        "comparison"
+      ],
+      "arenaOwner": false
+    }
+  ],
+  "holds": [
+    {
+      "id": "skeleton-rogue",
+      "reason": "crossbow load/cock/fire chain incomplete"
+    },
+    {
+      "id": "skeleton-mage",
+      "reason": "magic/ranged outside first melee gate"
+    }
+  ]
+}
