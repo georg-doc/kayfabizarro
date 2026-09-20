@@ -1,6 +1,6 @@
 # TEST REPORT · World Atlas Inline Detail Editor E1 · 2026-09-20
 
-Status: **20/20 STATIC / CONTRACT PASS · BROWSER OPEN**
+Status: **20/20 STATIC / CONTRACT PASS · BROWSER PROOF HARNESS-BLOCKED**
 
 Repository: `georg-doc/kayfabizarro`  
 Branch: `world-atlas/inline-detail-editor-e1-2026-09-20`
@@ -60,3 +60,37 @@ One bounded browser test only:
 `A1 -> Editor ON -> first editable detail -> move/rotate -> patch appears -> rebuild -> same transform restored`.
 
 If that passes, E1 is the second real host and the next separate slice may extract the genuinely shared edit core.
+
+
+## Browser proof attempts · frozen after two harness failures
+
+The original static result remains **20/20 PASS**.
+
+### Attempt 1
+- run: `35487119077`
+- job: `106015440253`
+- local server: PASS
+- real page/WebGL: loaded
+- harness: FAIL
+- cause: Chrome `--dump-dom --virtual-time-budget` did not terminate because the page intentionally maintains render/timer loops; outer timeout exited 124.
+- application editor assertion: **NOT OBSERVED**
+
+### Attempt 2
+- run: `35487373804`
+- job: `106016124834`
+- local server: PASS
+- Chrome remote-debugging process: started
+- harness: FAIL before application polling
+- cause: Node 22 `ERR_AMBIGUOUS_MODULE_SYNTAX` from CommonJS `require()` plus top-level `await`.
+- application editor assertion: **NOT OBSERVED**
+
+### Classification
+
+`BROWSER = NOT_TESTED`
+
+The candidate is frozen because two repair passes were consumed on the same proof gate. This is not evidence that the editor failed.
+
+Recovery:
+`INLINE_EDITOR_E1_FAILURE_RECOVERY_2026-09-20/START_HERE.md`
+
+No third browser retry in this slice.
