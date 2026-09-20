@@ -1,0 +1,30 @@
+name: KCC-1A Secondary Motion Facts
+
+on:
+  push:
+    branches:
+      - chatgpt-web/frizzlebob-secondary-motion-kcc1a-2026-09-20
+    paths:
+      - 'tools/KFB-ToolBox/kfb-rigs-embed-v3/secondary-motion/**'
+      - 'skills/chat/workflows/KCC1A_FRIZZLEBOB_SECONDARY_MOTION_2026-09-20/**'
+      - '.github/workflows/kcc1a-secondary-motion-test.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  node-contract:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Syntax
+        run: |
+          node --check "tools/KFB-ToolBox/kfb-rigs-embed-v3/secondary-motion/race-secondary-facts.v1.js"
+          node --check "tools/KFB-ToolBox/kfb-rigs-embed-v3/secondary-motion/race-secondary-facts.v1.test.mjs"
+      - name: Contract tests
+        run: node "tools/KFB-ToolBox/kfb-rigs-embed-v3/secondary-motion/race-secondary-facts.v1.test.mjs"
