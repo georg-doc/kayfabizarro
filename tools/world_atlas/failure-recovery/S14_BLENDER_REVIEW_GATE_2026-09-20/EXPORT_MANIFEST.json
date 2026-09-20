@@ -1,0 +1,91 @@
+{
+  "schema": "kfb.failure-recovery-export/1",
+  "project": "World Atlas S14 Blender review-render gate",
+  "exportRevision": "2026-09-20-r1",
+  "status": "ARCHIVED_FAILED_CANDIDATE",
+  "candidateScope": "Automated Ubuntu Blender review-render gate only; S14 browser room is not rejected.",
+  "repository": "georg-doc/kayfabizarro",
+  "branch": "world-atlas/dungeon-room-blueprint-s14-blender-2026-09-20",
+  "pullRequest": 126,
+  "testedHead": "da04e03378f79ca973a3768e0c934bc5372b1aa5",
+  "freezeHead": "e040c76eb3f3669d4fd31db96ee2456e4ed71bd4",
+  "entrypoints": [
+    "tools/world_atlas/source/KayKit_Dungeon_Room_Blueprint_S14.html",
+    "tools/world_atlas/blender/room_blueprint/BUILD_R02.command"
+  ],
+  "sourceFiles": [
+    "tools/world_atlas/source/KayKit_Dungeon_Room_Blueprint_S14.html",
+    "tools/world_atlas/source/lib/kit-lab.js",
+    "tools/world_atlas/source/lib/room-recipes.js",
+    "tools/world_atlas/source/lib/room-fx.js",
+    "tools/world_atlas/source/lib/blender-room-export.js",
+    "tools/world_atlas/blender/room_blueprint/build_room_from_manifest.py",
+    "tools/world_atlas/blender/room_blueprint/BUILD_R02.command"
+  ],
+  "buildOutputs": [
+    {
+      "name": "KFB_R02.blend",
+      "artifactId": 10596520958,
+      "sizeBytes": 4115904,
+      "sha256": "93e439b122d5c6bb35727c8df79c5611a32fb48f7416d164e0471c2421f3ebef",
+      "status": "PASS"
+    }
+  ],
+  "dataFiles": [
+    "tools/world_atlas/rooms/R02_s21_blueprint/room-brief.json",
+    "tools/world_atlas/rooms/R02_s21_blueprint/props.json",
+    "tools/world_atlas/rooms/R02_s21_blueprint/room-layout.json",
+    "tools/world_atlas/rooms/R02_s21_blueprint/openings.json"
+  ],
+  "assetRefs": [
+    {
+      "pack": "kaykit-dungeon-pack-1-1-free-2",
+      "revision": "8948a06b75cb18c970599afb29b6a772315fad0e",
+      "uniqueModels": 24,
+      "registryResolved": 24
+    }
+  ],
+  "externalDependencies": [
+    "three.js browser modules",
+    "Blender 4.x",
+    "network access to pinned GitHub RAW KayKit assets"
+  ],
+  "browserStateExports": [
+    "editor correction persisted in localStorage during CI and reset before Blender manifest export"
+  ],
+  "evidence": [
+    {
+      "type": "github-actions-run",
+      "id": 35482605744,
+      "job": 106002993282
+    },
+    {
+      "type": "artifact",
+      "id": 10596520958,
+      "digest": "sha256:48547a2e8892c18511619d20aaef49d62f0a065ebc5ad90d95b413fea8033757"
+    },
+    {
+      "type": "browser-screenshot",
+      "sha256": "b35b1ce87c48f8aa175fc7553d6dfb1e1e930400cd72cefce22b238f248d9683"
+    },
+    {
+      "type": "blender-manifest",
+      "sha256": "d8431c826ef7aca0c979d3a95e2b8b493730d4eb301de6430fc0977344417b9b"
+    }
+  ],
+  "missing": [
+    {
+      "name": "Blender review PNG",
+      "reason": "BLOCKED: Ubuntu headless render aborted on missing libEGL.so.1"
+    },
+    {
+      "name": "CI GLB",
+      "reason": "NOT_EXPORTED: render abort occurred before export step"
+    }
+  ],
+  "start": {
+    "command": "Double-click tools/world_atlas/blender/room_blueprint/BUILD_R02.command after downloading KFB_R02_blender_manifest.json, or open preserved KFB_R02.blend directly.",
+    "url": null,
+    "notes": "No Blender editing knowledge is required for the next gate; only open and visually compare."
+  }
+}

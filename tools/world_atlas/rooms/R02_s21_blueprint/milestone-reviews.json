@@ -10,23 +10,26 @@
       "tools/KFB-ToolBox/_inbox/KayKit Environment Atlas + Dungeon Generator + 3D scene editor TOOL (5)/KFB_Dungeon_RoomStudy_S21_EXPORT_2026-09-20/docs/MENTAL_MODEL_DIORAMA.md"
     ],
     "strangestElement": "Open diorama composition: the room is deliberately open to the camera rather than a fully enclosed gameplay shell.",
-    "notes": "Approval is inherited only for the S21 R02 source composition. It does not imply S14 browser, Blender, or gameplay runtime approval."
+    "notes": "Approval is inherited only for the S21 R02 source composition. It does not imply S14 Blender/Form or gameplay runtime approval."
   },
   "form": {
     "status": "pending",
     "approvedBy": "",
     "approvedAt": "",
     "evidence": [
-      "S14 implementation commit 548e26a6311ea91b8a8a3d566de4ca20a95fe913"
+      "S14 Chromium/editor 15/15 PASS: run 35482605744, job 106002993282",
+      "KFB_R02.blend built by Blender 4.0.2: 4,115,904 bytes; sha256 93e439b122d5c6bb35727c8df79c5611a32fb48f7416d164e0471c2421f3ebef"
     ],
     "strangestElement": "Browser-authored world transforms are passed to Blender rather than rebuilding the room with Blender-side layout heuristics.",
-    "notes": "Requires S14 browser visual check plus local Blender review render."
+    "notes": "Human Form approval remains open because the automated Blender review render is blocked by runner EGL after the .blend save."
   },
   "runtime": {
     "status": "pending",
     "approvedBy": "",
     "approvedAt": "",
-    "evidence": [],
+    "evidence": [
+      "Browser authoring runtime 15/15 PASS; gameplay runtime not exercised."
+    ],
     "strangestElement": "None proposed; this slice does not add gameplay behavior.",
     "notes": "Gameplay navigation/collision remains outside this room-authoring blueprint."
   }
