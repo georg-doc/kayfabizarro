@@ -8,6 +8,8 @@ Bei Ablösung neuen Auftrag anlegen und alten mit einem additiven Nachfolgerhinw
 
 ## Aktuelle ergänzende Übergaben
 
+- [2D/2.5D Resident Actor Integration](2D_RESIDENT_ACTOR_WSA_2026-09-20/START_HERE.md) — **PREPARED WSA CHECK-IN**. Eumel as first source-exact 2.5D Resident/DocCheck Project Island actor; Resident index promotion waits for a browser-proven world-space adapter. Doccy is topology-template only until source art arrives.
+
 - [2D Animation Studio Alignment](2D_ANIMATION_STUDIO_ALIGNMENT_2026-09-18/START_HERE.md) — **CURRENT CROSS-TOOL ALIGNMENT**. EyeRig-v6 bleibt 3D-Donor; 2D Studio nutzt denselben semantischen Steuervertrag über einen SVG-Adapter. Keine Owner-Mischung, kein ToolBox-Redesign.
 
 - [Batch EyeRig Atlas · Rig_Medium → Rig_Large → Legacy](EYE_RIG_BATCH_2026-09-18/START_HERE.md) — **PREPARED TOOLBOX/RIGGING SLICE**. Bestehendes EyeRig v6 + gemessener FaceHost, Atlas-artige Batch-Freigabe, Profile Export/Import, später Consumer-Handoff. Noch keine Runtime.
