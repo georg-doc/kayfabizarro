@@ -85,7 +85,7 @@ If this is a replacement/fresh chat after context loss, use `RECOVERY_PATH.md` r
 - Wissens-Pilli / DocCheck Interactive Microlearning — `UNVERIFIED` intake until implementation SSOT/runtime is explicitly pinned
 - **SimBlood / DocCheck — `CURRENT_PROJECT_SSOT` at `georg-doc/doccheck/sim-blood/`; recovery in `RECOVERY.md`, current WIPs in `WIP_STATUS.json`**
 - **2D Animation Studio — `CURRENT_TOOL` at `tools/2D Animation Studio/`; browser-first 2D/2.5D cutout rig authoring, first lab DocCheck Eumel**
-- Animation Lab — `UNVERIFIED` until current implementation SSOT/site is pinned
+- Animation Lab — `UNVERIFIED` until current implementation SSOT/site is pinned\n- **KayKit Character Compatibility v0 — `EXPERIMENTAL` ToolBox source/contract bench; Draft PR #147; fixed Stage review at `https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/kaykit-character-compat-v0/`; reuses Motion Lab, EyeRig v6 and the existing FrizzleBob graft; Rubber/Eraser remains `SOURCE_REQUIRED`.**
 
 DocCheck UI convention for project surfaces: use `#cc0033` as a restrained accent for controls/links/active states; do not tint medical imagery.
 

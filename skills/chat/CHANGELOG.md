@@ -1,3 +1,21 @@
+## 2026-09-20 · KayKit Character Compatibility v0 source bench
+
+### DECISION
+Create one bounded KFB ToolBox compatibility layer instead of more per-character Frankenstein runtimes. Motion stays with the current KayKit Motion Lab / RigMotionProfile owner, eyes stay with EyeRig v6, FrizzleBob stays with the current measured graft, and vehicle world/root physics stay with the consumer.
+
+### SOURCE BENCH
+Draft PR #147 / branch `chatgpt-web/toolbox-kaykit-character-compat-2026-09-20` adds a source-first bench for six real donors: GothGirl, the FrizzleBob Driver host, Bath, Rover Round, Paper Plane and Pencil A long. Rubber/Eraser is deliberately `SOURCE_REQUIRED`; no placeholder or substitute geometry is allowed.
+
+Bath's legacy config proves the intact-driver path (`cut=false`), while Rover records the old destructive `cut=true` presentation. The target follow-up is reversible hidden/occluded lower-body presentation through a VehicleMount adapter, not new cut character derivatives.
+
+### EVIDENCE / STAGE
+Repository checks: **28/28 PASS** at KCC runtime head `0fd958f6c35c1b6d74abac2dfc37340eaec6c0c5`.
+
+Fixed review route:
+`https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/kaykit-character-compat-v0/`
+
+The Stage publication includes an exact source marker and a 37-check Playwright donor-isolation proof. Public browser PASS and Georg visual acceptance are not claimed until that workflow proves the deployed revision.
+
 ## 2026-09-19 · Hub briefings repair + separated generator lanes
 
 ### DECISION
