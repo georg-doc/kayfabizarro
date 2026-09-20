@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Lidfarben-Sonde · Rig_Large · vier Figuren</title>
+<script type="importmap">
+{"imports":{
+ "three":"https://unpkg.com/three@0.184.0/build/three.module.js",
+ "three/addons/loaders/GLTFLoader.js":"https://unpkg.com/three@0.184.0/examples/jsm/loaders/GLTFLoader.js"
+}}
+</script>
+<style>
+  *{box-sizing:border-box}
+  body{margin:0;background:#14130f;color:#f0ece2;font:13px/1.6 ui-sans-serif,system-ui,-apple-system,sans-serif;padding:22px 26px 60px}
+  a{color:#e8c84a}a:hover{color:#f3dd82}
+  h1{font:600 15px/1.3 ui-monospace,monospace;margin:0 0 4px;color:#ded7c2;letter-spacing:.02em}
+  h2{font:600 10px/1 ui-monospace,monospace;letter-spacing:.1em;text-transform:uppercase;color:#9c9377;margin:26px 0 8px}
+  p.lead{color:#a49b80;max-width:74ch;margin:0 0 6px}
+  code{font:11px/1.5 ui-monospace,monospace;color:#6fd1ff}
+  table{width:100%;border-collapse:collapse;font:11px/1.5 ui-monospace,monospace;margin-top:6px}
+  th,td{text-align:left;padding:5px 7px;border-bottom:1px solid #26241b;vertical-align:top}
+  th{color:#9c9377;font-weight:500;white-space:nowrap}
+  td.n{text-align:right;color:#eee7d2}
+  .sw{display:inline-block;width:38px;height:16px;border-radius:3px;border:1px solid #00000060;vertical-align:-3px;margin-right:6px}
+  .ok{color:#9ad36a}.bad{color:#f0b37e}.dim{color:#8e866c}
+  .box{border:1px solid #403d2c;background:#1b1a13;border-radius:6px;padding:11px 13px;margin-top:10px}
+  .box.warn{border-color:#6b5a2a;background:#241f10;color:#ecd9a7}
+  .box.fix{border-color:#2a5a6b;background:#101f24;color:#bfe4f2}
+  .box b{color:inherit}
+  ul{margin:6px 0;padding-left:17px}
+  li{margin-bottom:5px}
+  #log{font:10px/1.5 ui-monospace,monospace;color:#8e866c;margin-top:10px;white-space:pre-wrap}
+</style>
+</head>
+<body>
+<h1>Lidfarben-Sonde · Rig_Large</h1>
+<p class="lead">Der Batch <code>eye-rig-large.batch.json</code> trägt bei allen vier Figuren
+<code>baseColor "#b58f83"</code> und gleichzeitig <code>faceColor: null</code> mit
+<code>faceColorSource: "generic-fallback-unverified"</code>. Diese Seite misst die Gesichtsfarbe
+stattdessen am Modell: Kopf-Mesh am Namen aus dem Batch, Stirnband der Vorderseite über die
+UVs abgetastet, Modalfarbe statt Mittelwert (eine KayKit-Palette ist flach, ein Mittelwert
+mischt zwei Paletteneinträge zu einer Farbe, die im Blatt nicht vorkommt).</p>
+
+<h2>Gemessen am Modell</h2>
+<table id="tbl"><thead><tr>
+  <th>Figur</th><th>Kopf-Mesh</th><th>Material</th><th>gemessen (Modal)</th>
+  <th class="n">Anteil</th><th>Lid ×0,82</th><th>Batch-Wert</th><th class="n">Abstand</th>
+</tr></thead><tbody id="rows"><tr><td colspan="8" class="dim">lade…</td></tr></tbody></table>
+<div id="log"></div>
+
+<h2>Was im Batch selbst nicht zusammenpasst</h2>
+<div class="box warn">
+<b>1 · Die Lidfarbe ist bei allen vier dieselbe.</b> <code>#b58f83</code> steht auf Monstrosity,
+Black Knight, Demon Lord und Orc Brute — derselbe rosa Hautton, um den es beim Fix ging. Dazu
+<code>faceColor: null</code> und <code>faceColorSource: "generic-fallback-unverified"</code> auf
+allen vieren. Entweder wirkt der Fix nur zur Laufzeit und der Export schreibt ein totes Feld —
+dann ist der Export falsch. Oder er hat diese vier nicht erreicht — dann ist die Meldung falsch.
+Ein gehelmter Black Knight und ein Demon Lord auf Hautrosa sind genau der Fall, den der Fix
+beenden sollte.
+</div>
+<div class="box warn">
+<b>2 · „95/95 Checks sauber" steht neben
+<code>sourceEyeCleanupVisuallyAccepted: false</code></b> — bei allen vier. Das ausgeschnittene
+Auge im Mesh ist die Bedingung, an der die ganze Mit-/Ohne-Variante hängt; solange der Ausschnitt
+nicht abgenommen ist, prüfen die 95 Checks etwas anderes als die Frage, die zählt. Dieselbe Klasse
+wie die sechs dokumentierten „Testsatz mit einem Loch"-Fälle: der Satz ist grün, weil er die
+teure Frage nicht stellt.
+</div>
+<div class="box warn">
+<b>3 · <code>pairConfidence: 0.7</code> ist eine Konstante, keine Messung.</b> Sie steht auf allen
+vier, obwohl die Beweislage nicht vergleichbar ist:
+<ul>
+<li><b>Black Knight</b> — 6 Inseln, <b>genau ein</b> Kandidat, x ±0,318 exakt gespiegelt. Das ist
+    nahe an Gewissheit und wird als 0,7 geführt.</li>
+<li><b>Demon Lord</b> — 30 Inseln, <b>12</b> Kandidaten, acht davon mit identischen 35 Dreiecken im
+    Band z 0,658–0,693. Die Wahl des Paares ist hier ein Griff aus acht Gleichen und wird als
+    dieselbe 0,7 geführt.</li>
+<li><b>Monstrosity</b> — das angenommene Paar liegt bei x [−0,064, 0,104] und ist damit
+    <b>nicht gespiegelt</b>: 0,040 Versatz auf einem 0,627 breiten Kopf = <b>6,4 % der
+    Kopfbreite</b>. Der Modus heißt <code>mirrored-front-pair</code>; die Annahme verletzt ihn.</li>
+<li><b>Orc Brute</b> — 34 Inseln, 3 Kandidaten, x ±0,167 gespiegelt. In Ordnung.</li>
+</ul>
+Die S37-Regel dafür steht schon geschrieben: <i>ein Richtungsleser muss seine Größenordnung
+nennen</i>. Ein Detektor auch. 1 von 1 und 1 von 12 dürfen nicht dieselbe Zahl tragen.
+</div>
+<div class="box warn">
+<b>4 · Zwei Klassen-Saatgüter in einem Datensatz.</b> <code>calibration.classSeed</code> zeigt auf
+<code>./rig-medium-default.v0.json</code>, <code>inheritance.classSeed</code> auf
+<code>data/rig-large-default.v0.json</code> — im selben Rig_Large-Profil, viermal. Und
+<code>classDefault</code> ist <code>null</code>, <code>calibrationStart</code> ausdrücklich
+„NOT an accepted Rig_Large default". Es gibt also vier freigegebene Figuren und keinen
+Klassenwert, obwohl die vier genau die Belege dafür wären.
+</div>
+<div class="box fix">
+<b>Was daraus folgt, in der Reihenfolge.</b>
+<ol>
+<li>Lidfarbe pro Figur aus der Messung oben setzen, <code>faceColorSource</code> auf den
+    tatsächlichen Weg (Material-Farbe oder Texel) umstellen. Solange dort
+    <code>generic-fallback-unverified</code> steht, ist <code>baseColor</code> eine Behauptung.</li>
+<li><code>pairConfidence</code> aus der Kandidatenlage rechnen — Kandidatenzahl, Spiegelabweichung
+    in % der Kopfbreite, Dreiecksgleichheit. Monstrosity fällt dann von selbst auf.</li>
+<li>Erst danach der Mit-/Ohne-Schalter. Er ist billig, sobald der Ausschnitt abgenommen ist, und
+    wertlos, solange er es nicht ist.</li>
+<li>Rig_Large-Klassenwert aus den vier freigegebenen Profilen ableiten — dann steht er auf
+    Belegen statt auf dem Medium-Startwert.</li>
+</ol>
+</div>
+
+<script type="module">
+import * as THREE from 'three';
+import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
+
+const REPO = 'georg-doc/kayfabizarro';
+const REV = '986699c81340dc3b266bf921441f93bf18127f6b'; // aus dem Batch, nicht geraten
+const raw = (p) => `https://raw.githubusercontent.com/${REPO}/${REV}/${p.split('/').map(encodeURIComponent).join('/')}`;
+const BATCH_COLOR = '#b58f83';
+
+const CAST = [
+  { id: 'monstrosity', mesh: 'Monstrosity_Head', path: 'media/3D_Assets/KayKit_Mystery_Series6/4 - October 2025 - Monstrosity/Monstrosity.glb' },
+  { id: 'black-knight', mesh: 'BlackKnight_Head', path: 'media/3D_Assets/KayKit_Mystery_Series6/3 - September 2024 - Black Knight/characters/BlackKnight.glb' },
+  { id: 'demon-lord', mesh: 'DemonLord_Head', path: 'media/3D_Assets/KayKit_Mystery_Series6/DemonLord/characters/DemonLord.glb' },
+  { id: 'orc-brute', mesh: 'OrcBrute_Head', path: 'media/3D_Assets/KayKit_Mystery_Series6/2 - August 2025 - Orc Brute/OrcBrute.glb' }
+];
+
+const loader = new GLTFLoader();
+const log = (s) => { document.getElementById('log').textContent += s + '\n'; };
+const hex = (r, g, b) => '#' + [r, g, b].map((v) => Math.round(v).toString(16).padStart(2, '0')).join('');
+const dist = (a, b) => Math.round(Math.sqrt(a.reduce((s, v, i) => s + (v - b[i]) ** 2, 0)));
+const fromHex = (h) => [1, 3, 5].map((i) => parseInt(h.slice(i, i + 2), 16));
+
+function texelSampler(tex) {
+  const img = tex.image;
+  if (!img) return null;
+  const w = img.width, h = img.height;
+  const cv = document.createElement('canvas');
+  cv.width = w; cv.height = h;
+  const cx = cv.getContext('2d', { willReadFrequently: true });
+  cx.drawImage(img, 0, 0);
+  const data = cx.getImageData(0, 0, w, h).data;
+  /* GLTFLoader setzt flipY=false; die UVs sind dafür geschrieben, also entspricht v=0 der
+     OBERSTEN Bildzeile — genau der Zeile, die drawImage an y=0 legt. Kein Umdrehen. */
+  return (u, v) => {
+    const x = Math.min(w - 1, Math.max(0, Math.round(u * w)));
+    const y = Math.min(h - 1, Math.max(0, Math.round(v * h)));
+    const i = (y * w + x) * 4;
+    return [data[i], data[i + 1], data[i + 2]];
+  };
+}
+
+/* Stirnband der VORDERSEITE: das vorderste Fünftel in z, mittlere Höhe, Mitte in x. Nicht der
+   ganze Kopf — bei Orc und Monstrosity läge sonst Haar, Horn und Zahn mit im Topf. */
+function faceSamples(mesh) {
+  const g = mesh.geometry;
+  const pos = g.attributes.position, uv = g.attributes.uv;
+  if (!uv) return { out: [], why: 'kein UV-Attribut' };
+  g.computeBoundingBox();
+  const b = g.boundingBox, s = b.getSize(new THREE.Vector3());
+  const zMin = b.max.z - s.z * 0.22;
+  const yLo = b.min.y + s.y * 0.30, yHi = b.min.y + s.y * 0.80;
+  const xMax = s.x * 0.34;
+  const out = [];
+  const v = new THREE.Vector3();
+  for (let i = 0; i < pos.count; i++) {
+    v.fromBufferAttribute(pos, i);
+    if (v.z < zMin || v.y < yLo || v.y > yHi || Math.abs(v.x - (b.min.x + s.x / 2)) > xMax) continue;
+    out.push([uv.getX(i), uv.getY(i)]);
+  }
+  return { out, why: out.length ? '' : 'kein Vertex im Gesichtsband' };
+}
+
+function modal(colors) {
+  const bins = new Map();
+  for (const c of colors) {
+    const k = c.map((x) => x >> 3).join(',');
+    const e = bins.get(k) || { n: 0, c };
+    e.n++; bins.set(k, e);
+  }
+  let best = null;
+  for (const e of bins.values()) if (!best || e.n > best.n) best = e;
+  return best ? { c: best.c, share: best.n / colors.length } : null;
+}
+
+const rows = document.getElementById('rows');
+rows.innerHTML = '';
+for (const it of CAST) {
+  const tr = document.createElement('tr');
+  tr.innerHTML = `<td>${it.id}</td><td colspan="7" class="dim">lade…</td>`;
+  rows.appendChild(tr);
+  try {
+    const gltf = await loader.loadAsync(raw(it.path));
+    let mesh = null;
+    gltf.scene.traverse((o) => { if (!mesh && (o.isMesh || o.isSkinnedMesh) && o.name === it.mesh) mesh = o; });
+    if (!mesh) gltf.scene.traverse((o) => { if (!mesh && (o.isMesh || o.isSkinnedMesh) && /head/i.test(o.name)) mesh = o; });
+    if (!mesh) { tr.innerHTML = `<td>${it.id}</td><td colspan="7" class="bad">Kopf-Mesh „${it.mesh}" nicht gefunden</td>`; continue; }
+    const mat = Array.isArray(mesh.material) ? mesh.material[0] : mesh.material;
+    const matHex = mat && mat.color ? hex(mat.color.r * 255, mat.color.g * 255, mat.color.b * 255) : '–';
+    const sampler = mat && mat.map ? texelSampler(mat.map) : null;
+    const { out, why } = faceSamples(mesh);
+    let m = null;
+    if (sampler && out.length) m = modal(out.map(([u, v]) => sampler(u, v)));
+    const measured = m ? m.c : (mat && mat.color ? [mat.color.r * 255, mat.color.g * 255, mat.color.b * 255] : null);
+    const mh = measured ? hex(...measured) : '–';
+    const lid = measured ? hex(...measured.map((x) => x * 0.82)) : '–';
+    const d = measured ? dist(measured.map(Math.round), fromHex(BATCH_COLOR)) : null;
+    tr.innerHTML = `<td>${it.id}</td>
+      <td>${mesh.name}</td>
+      <td><span class="sw" style="background:${matHex}"></span>${matHex}${mat && mat.map ? ' + Karte' : ''}</td>
+      <td><span class="sw" style="background:${mh}"></span>${mh}</td>
+      <td class="n">${m ? Math.round(m.share * 100) + '%' : '–'}</td>
+      <td><span class="sw" style="background:${lid}"></span>${lid}</td>
+      <td><span class="sw" style="background:${BATCH_COLOR}"></span>${BATCH_COLOR}</td>
+      <td class="n ${d != null && d > 40 ? 'bad' : 'ok'}">${d != null ? d : '–'}</td>`;
+    log(`${it.id}: ${out.length} Gesichtsvertices${why ? ' (' + why + ')' : ''}, Mesh ${mesh.name}, Karte ${mat && mat.map ? (mat.map.image ? mat.map.image.width + '×' + mat.map.image.height : 'ohne Bild') : 'keine'}`);
+  } catch (e) {
+    tr.innerHTML = `<td>${it.id}</td><td colspan="7" class="bad">lädt nicht: ${e.message}</td>`;
+  }
+}
+log('Abstand = euklidisch in RGB (0–441). Über 40 ist der Unterschied am Bildschirm klar sichtbar.');
+</script>
+</body>
+</html>
