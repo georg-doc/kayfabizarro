@@ -438,6 +438,201 @@ document.getElementById('facts').innerHTML = [
 let model = null, root = null, placements = [], step = 3, levelView = 'both', overlay = false;
 let seamLines = null, lastProbe = null, flameNodes = [];
 
+/* ---------- E1 · S21 Inline Detail Editor ----------
+   Zweiter realer Host fuer die S21-Interaktion. Absichtlich NUR Detail-Props:
+   Architektur (floor/wall/corner/stair/seams) bleibt vollstaendig Generator-Eigentum.
+   Noch KEIN lib/edit-layer.js: erst dieser zweite Host beweist, was wirklich gemeinsam ist. */
+const editBtn = document.getElementById('editor');
+const editMenu = document.getElementById('objmenu');
+const editPatchEl = document.getElementById('editPatch');
+const editBox = document.getElementById('editBox');
+const editRay = new THREE.Raycaster();
+const editGizmo = new TransformControls(V.camera, V.renderer.domElement);
+const editGizmoHelper = editGizmo.getHelper ? editGizmo.getHelper() : editGizmo;
+V.scene.add(editGizmoHelper);
+editGizmo.setTranslationSnap(0.1);
+editGizmo.setRotationSnap(THREE.MathUtils.degToRad(15));
+let editOn = false, editNode = null, editMode = 'translate';
+const editPatches = new Map();
+const EDIT_STORE = 'kfb-s132-detail-edits-v1';
+
+function editAllowed(rec) {
+  return !!rec && (rec.layer === 'torch' || rec.layer === 'candle');
+}
+function editId(rec) {
+  if (!editAllowed(rec)) return null;
+  if (rec.layer === 'torch') return ['torch', rec.level, rec.seam, rec.a].join('|');
+  return ['candle', rec.level, (rec.cell || []).join(','), (rec.corner || []).join(','), rec.a].join('|');
+}
+function editScopeKey() {
+  const density = document.getElementById('dens').value;
+  return ['s13.2', model?.seed || document.getElementById('seed').value.trim() || 'A1',
+    model?.grid || document.getElementById('grid').value, density].join('|');
+}
+function editReadAll() {
+  try { return JSON.parse(localStorage.getItem(EDIT_STORE) || '{}'); }
+  catch (e) { return {}; }
+}
+function editWriteScope() {
+  const all = editReadAll(), scope = editScopeKey(), doc = {};
+  for (const [id, p] of editPatches) doc[id] = p;
+  if (Object.keys(doc).length) all[scope] = doc; else delete all[scope];
+  localStorage.setItem(EDIT_STORE, JSON.stringify(all));
+}
+function editPatchDoc() {
+  return {
+    schema: 'kfb.dungeon-detail-patch/0.1',
+    owner: 'World Atlas / S13.2 detail placement',
+    seed: model?.seed || null,
+    grid: model?.grid || null,
+    density: +(document.getElementById('dens').value) / 100,
+    edits: [...editPatches.values()]
+  };
+}
+function editRenderPatch() {
+  editPatchEl.textContent = editPatches.size
+    ? JSON.stringify(editPatchDoc(), null, 2)
+    : '— noch nichts geändert';
+}
+function editRecord(node) {
+  return node?.userData?.recipe || null;
+}
+function editTopNode(obj) {
+  let n = obj;
+  while (n && n.parent && n.parent !== root) n = n.parent;
+  return n && n.parent === root ? n : null;
+}
+function editSetMode(mode) {
+  editMode = mode;
+  editGizmo.setMode(mode);
+  editGizmo.showX = mode === 'translate';
+  editGizmo.showY = true;
+  editGizmo.showZ = mode === 'translate';
+}
+function editMenuPlace() {
+  if (!editOn || !editNode || !editNode.visible) { editMenu.style.display = 'none'; return; }
+  const b = new THREE.Box3().setFromObject(editNode);
+  const p = new THREE.Vector3((b.min.x + b.max.x) / 2, b.max.y, (b.min.z + b.max.z) / 2).project(V.camera);
+  const r = V.renderer.domElement.getBoundingClientRect();
+  const s = document.getElementById('stage').getBoundingClientRect();
+  editMenu.style.display = 'flex';
+  editMenu.style.left = (r.left - s.left + (p.x * 0.5 + 0.5) * r.width) + 'px';
+  editMenu.style.top = Math.max(36, r.top - s.top + (-p.y * 0.5 + 0.5) * r.height - 10) + 'px';
+  const floor = editMenu.querySelector('[data-edit="floor"]');
+  if (floor) floor.disabled = editRecord(editNode)?.layer !== 'candle';
+}
+function editSelect(node) {
+  if (!editOn || !node || !editAllowed(editRecord(node))) {
+    editGizmo.detach();
+    editNode = null;
+    editMenu.style.display = 'none';
+    return;
+  }
+  editNode = node;
+  editSetMode(editMode);
+  editGizmo.attach(node);
+  editMenuPlace();
+}
+function editCommit(node = editNode) {
+  const rec = editRecord(node), id = editId(rec);
+  if (!node || !id) return;
+  const rot = ((THREE.MathUtils.radToDeg(node.rotation.y) % 360) + 360) % 360;
+  rec.p = node.position.toArray().map((v) => +v.toFixed(3));
+  rec.r = +rot.toFixed(2);
+  const patch = { id, a: rec.a, layer: rec.layer, p: [...rec.p], r: rec.r };
+  editPatches.set(id, patch);
+  editWriteScope();
+  editRenderPatch();
+  editMenuPlace();
+}
+function editApplyStored() {
+  editPatches.clear();
+  const stored = editReadAll()[editScopeKey()] || {};
+  let restored = 0;
+  for (const node of root?.children || []) {
+    const rec = editRecord(node), id = editId(rec), patch = id ? stored[id] : null;
+    if (!patch || patch.a !== rec.a || !Array.isArray(patch.p)) continue;
+    node.position.fromArray(patch.p);
+    node.rotation.y = THREE.MathUtils.degToRad(+patch.r || 0);
+    node.updateMatrixWorld(true);
+    rec.p = [...patch.p];
+    rec.r = +patch.r || 0;
+    editPatches.set(id, patch);
+    restored++;
+  }
+  editRenderPatch();
+  return restored;
+}
+function editDropToFloor() {
+  const rec = editRecord(editNode);
+  if (!editNode || rec?.layer !== 'candle') return;
+  const nm = rec.a.split(':')[1], b = box[nm];
+  if (!b) return;
+  editNode.position.y = rec.level * HUB - b.min[1];
+  editNode.updateMatrixWorld(true);
+  editCommit(editNode);
+}
+async function editReset() {
+  const all = editReadAll();
+  delete all[editScopeKey()];
+  localStorage.setItem(EDIT_STORE, JSON.stringify(all));
+  editPatches.clear();
+  editSelect(null);
+  editRenderPatch();
+  build.keepCam = true;
+  await build();
+}
+async function editRebuild() {
+  editSelect(null);
+  build.keepCam = true;
+  await build();
+}
+function editPick(e) {
+  if (!editOn || !root || editGizmo.dragging) return;
+  const r = e.currentTarget.getBoundingClientRect();
+  editRay.setFromCamera(new THREE.Vector2(
+    ((e.clientX - r.left) / r.width) * 2 - 1,
+    -((e.clientY - r.top) / r.height) * 2 + 1
+  ), V.camera);
+  const hit = editRay.intersectObject(root, true).filter((h) => h.object.visible)[0];
+  editSelect(hit ? editTopNode(hit.object) : null);
+}
+editGizmo.addEventListener('dragging-changed', (e) => {
+  V.controls.enabled = !e.value;
+  if (!e.value) editCommit();
+});
+editGizmo.addEventListener('change', editMenuPlace);
+editBtn.onclick = () => {
+  editOn = !editOn;
+  editBtn.setAttribute('aria-pressed', String(editOn));
+  editBox.open = editOn || editBox.open;
+  if (!editOn) editSelect(null);
+  say(editOn ? 'Editor E1 · nur Fackeln/Kerzen auswählbar' : 'Editor aus · Generator bleibt unverändert');
+};
+editMenu.onclick = (e) => {
+  const action = e.target.closest('button')?.dataset.edit;
+  if (action === 'translate' || action === 'rotate') editSetMode(action);
+  if (action === 'floor') editDropToFloor();
+  if (action === 'close') editSelect(null);
+};
+document.getElementById('copyEditPatch').onclick = async () => {
+  const value = JSON.stringify(editPatchDoc(), null, 2);
+  try { await navigator.clipboard.writeText(value); say('Detail-Patch kopiert'); }
+  catch (e) { say('Clipboard nicht verfügbar · Patch steht in der Leiste'); }
+};
+document.getElementById('resetEditPatch').onclick = editReset;
+document.getElementById('rebuildEditPatch').onclick = editRebuild;
+document.getElementById('c').addEventListener('pointerup', editPick);
+addEventListener('keydown', (e) => {
+  if (!editOn || /INPUT|SELECT|TEXTAREA/.test(document.activeElement?.tagName || '')) return;
+  if (e.key.toLowerCase() === 'g') editSetMode('translate');
+  if (e.key.toLowerCase() === 'r') editSetMode('rotate');
+  if (e.key === 'Escape') editSelect(null);
+});
+setInterval(editMenuPlace, 90);
+editSetMode('translate');
+editRenderPatch();
+
 /* Flache Prüffarben. MeshBasicMaterial ignoriert Licht — die Probe soll Geometrie lesen, nicht
    Beleuchtung. Und das Renderziel bekommt SRGBColorSpace: ohne das liefert readRenderTargetPixels
    LINEARE Werte, und ein sattes Grau 0x808080 kommt als 11 zurück statt als 128 — die erste
@@ -840,6 +1035,7 @@ async function build() {
   const keepCam = build.keepCam;
   const camWas = keepCam ? [V.camera.position.clone(), V.controls.target.clone()] : null;
   build.keepCam = false;
+  editSelect(null);
   placements = layout(model, kit);
   const node = await buildScene(placements, (d, t) => { say(`baue ${d}/${t}`); }, { concurrency: 6 });
   if (root) V.scene.remove(root);
@@ -860,6 +1056,7 @@ async function build() {
     n.traverse((o) => { if (o.isMesh && o.name === h) drop.push(o); });
   }
   for (const o of drop) { o.removeFromParent(); leaves++; }
+  const restoredEdits = editApplyStored();
   buildSeamLines();
   applyView();
   const fit = rig.fitShadow(root);
@@ -989,7 +1186,8 @@ async function build() {
     + `Durchdringungen ${fp.real.length}` + (fails ? ` · ${fails} GATES ROT` : ' · alle Gates grün');
 
   say(`Saat ${model.seed} · Feld ${model.grid}×${model.grid} · ${model.cells.size} Zellen · `
-    + `${placements.length} Teile · Ebenenabstand ${f2(HUB)} · Schritt ${['Räume', 'Gänge', 'Wände', 'Alles'][step]}`);
+    + `${placements.length} Teile · Ebenenabstand ${f2(HUB)} · Schritt ${['Räume', 'Gänge', 'Wände', 'Alles'][step]}`
+    + (restoredEdits ? ` · Editor ${restoredEdits} Patch${restoredEdits === 1 ? '' : 'es'}` : ''));
   drawPlans();
 }
 
@@ -1115,7 +1313,16 @@ function flicker(t) {
    und makeViewer zeichnet ohnehin selbst. */
 setInterval(() => flicker(performance.now() / 1000), 70);
 window.__s132 = { V, kit, frame, box, rig, get model() { return model; }, get root() { return root; },
-  get placements() { return placements; }, get probe() { return lastProbe; }, regen, cellId, measured };
+  get placements() { return placements; }, get probe() { return lastProbe; }, regen, cellId, measured,
+  editor: {
+    get enabled() { return editOn; },
+    get editableCount() { return root ? root.children.filter((n) => editAllowed(editRecord(n))).length : 0; },
+    get patch() { return editPatchDoc(); },
+    enable(on = true) { if (editOn !== !!on) editBtn.click(); return editOn; },
+    selectFirst() { const n = root?.children.find((x) => editAllowed(editRecord(x))) || null; editSelect(n); return editId(editRecord(n)); },
+    reset: editReset, rebuild: editRebuild
+  }
+};
 </script>
 </body>
 </html>
