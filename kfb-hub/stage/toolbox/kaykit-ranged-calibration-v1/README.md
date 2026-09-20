@@ -17,3 +17,8 @@ World movement, physics, target selection, projectile spawn, damage, rewards, au
 `Ranged_1H_Aiming → Ranged_1H_Shoot → Ranged_1H_Aiming`.
 
 The 2H and Bow clips remain visible inventory only. Locomotion retiming/phase optimization is intentionally deferred.
+
+
+## Measured CA2-02 result
+
+The two current player candidates share the same measured Rig_Medium right-hand slot/grip profile. `Ranged_1H_Shoot` uses `0.150 s` as the single primary release; the later `0.883 s` motion peak is not a second projectile release. See `WEAPON_PROFILES.json` and `SOURCE_REPORT.md`.
