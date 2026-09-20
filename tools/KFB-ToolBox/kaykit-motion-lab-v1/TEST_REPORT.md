@@ -208,3 +208,62 @@ Medium shared motion facts can be authored once and visually reviewed on Frizzle
 ## Current next gate
 
 Publish this exact tested implementation as the ToolBox Stage candidate and run the same 3-actor proof against the direct pages.dev route. Attachment proposals remain unmounted until their own visual gate.
+
+
+## Public Stage proof · 87/87 PASS
+
+Exact public route:
+
+https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/kaykit-motion-lab-v1/
+
+Evidence:
+- source implementation head: `3ab2a439b013b816e843ea303e7015a26ee2aff8`;
+- main Stage commit: `14707f7018ab1c49bfd2d073a01ab3789422245f`;
+- Cloudflare mirror: `b69d3c4bd512a8d34e72e0e074a142ba9e961198`;
+- workflow run: `35484127790`;
+- public-proof job: `106007210838`;
+- **87/87 PASS**;
+- artifact: `10596912462`;
+- digest: `sha256:d4638aba0e4bd02b690f19cb931c92f99cac020d0af05e5d1124f11003300ca4`;
+- FrizzleBob screenshot: PASS;
+- GothGirl screenshot: PASS;
+- Black Knight screenshot: PASS;
+- failed resources: 0;
+- page/console errors: 0.
+
+The public proof repeats the same three-actor contract as the local branch proof; no motion logic changed for publication.
+
+### Publicly proven findings
+
+**FrizzleBob · Driver Graft · Rig_Medium**
+- 25 bindable General + MovementBasic clips;
+- Walking_A / Running_A measured;
+- phase-sync A/B executes;
+- existing graft reader remains face/weapon owner;
+- one host mixer only.
+
+**GothGirl · Rig_Medium**
+- same 25 bindable Medium clips;
+- Walking_A / Running_A measured;
+- phase-sync A/B executes;
+- existing face/EyeRig owner remains external;
+- microphone remains an attachment proposal.
+
+**Black Knight · Rig_Large**
+- exactly 8 bindable General + MovementBasic clips in the tested sets;
+- Walking_A / Running_A measured independently;
+- no Medium profile reuse;
+- no Walking_B/C, Running_B or Jump state enabled;
+- Sword_Large / Shield_Large remain attachment proposals.
+
+### Status
+
+`PUBLIC_VERIFIED = YES`
+
+`GEORG_MOTION_ACCEPTANCE = OPEN`
+
+`ATTACHMENT_ACCEPTANCE = OPEN`
+
+## Exactly one next gate
+
+Human review of the three actors on the public Stage. Only after that review may the accepted MotionProfile seam be proposed to FrizzleBob Driver consumers, GothGirl consumers or Large-rig consumers.
