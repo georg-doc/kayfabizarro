@@ -1,0 +1,24 @@
+{
+  "schema": "kfb.stage-source/0.1",
+  "project": "KFB Storytelling Maps v1",
+  "slice": "T2 exact KayKit media standee",
+  "implementationOwner": "tools/kfb-cartoon-map-board/",
+  "sourceBranch": "stage/storytelling-maps-v1-t2-media-standee-2026-09-20",
+  "sourceBase": "7583dc324d03f54276abae512b21a0296efc47a6",
+  "kaykitPin": "a6b9220a0b42d50a9de9804fad22e84dde2c322c",
+  "standAsset": "playerstand_red.gltf",
+  "cardAsset": "playercard_knight_red.gltf",
+  "preservedMaterial": "boardgame",
+  "replacedMaterial": "red_knight",
+  "orientations": [
+    "portrait",
+    "landscape"
+  ],
+  "content": "diagnostic calibration texture only",
+  "protectedOwners": [
+    "KFB CardBuilder",
+    "KFB Ink Canon",
+    "central Asset Registry",
+    "consumer game physics"
+  ]
+}
