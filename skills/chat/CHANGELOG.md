@@ -938,3 +938,6 @@ Repository metadata checks: **19/19 source presence, 19/19 classification, 19/19
 
 ### NEXT GATE
 Integrate only preferred V8 idle #1 + one V8 load candidate through the existing one-AudioContext Race graph, then return a direct Cloudflare Stage driving/listening proof before adding rev or Steampunk layers.
+
+### HUB SANITY REPAIR
+Final handoff validation exposed a pre-existing KFB Hub JavaScript parse failure: three structural literal `\\n` tokens had been written outside strings. Repaired only those three structural artifacts; embedded prompt newline strings were left intact. The complete Hub `<script>` block now compiles successfully in V8. This is a source-level repair on the handoff branch; no PUBLIC_VERIFIED Cloudflare claim is inferred.
