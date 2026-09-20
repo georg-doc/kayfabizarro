@@ -29,10 +29,10 @@ scene.add(new THREE.HemisphereLight(0xe7edf0,0x3d4548,1.7));const sun=new THREE.
 const pedestal=new THREE.Mesh(new THREE.CylinderGeometry(1.55,1.7,.12,64),new THREE.MeshStandardMaterial({color:0x252e33,roughness:.95}));pedestal.position.y=-.06;scene.add(pedestal);
 const controls=new OrbitControls(camera,renderer.domElement);controls.enableDamping=true;controls.target.set(0,1.1,0);controls.maxPolarAngle=Math.PI*.48;controls.minDistance=2.2;controls.maxDistance=12;
 const loader=new GLTFLoader();
-let visual=null,disposeVisual=null,selected=null,error=null,ready=false,token=0,graftModule=null,graftContract=null;
+let visual=null,disposeVisual=null,tickVisual=null,selected=null,error=null,ready=false,token=0,graftModule=null,graftContract=null;
 
 function resize(){const r=stage.getBoundingClientRect();renderer.setSize(Math.max(1,r.width),Math.max(1,r.height),false);camera.aspect=Math.max(.2,r.width/Math.max(1,r.height));camera.updateProjectionMatrix()}addEventListener('resize',resize);resize();
-function clearVisual(){try{disposeVisual?.()}catch{}disposeVisual=null;if(visual){scene.remove(visual);visual=null}sourceOnly.classList.remove('show')}
+function clearVisual(){try{disposeVisual?.()}catch{}disposeVisual=null;tickVisual=null;if(visual){scene.remove(visual);visual=null}sourceOnly.classList.remove('show')}
 function ground(obj){obj.updateMatrixWorld(true);const b=new THREE.Box3().setFromObject(obj);if(Number.isFinite(b.min.y))obj.position.y-=b.min.y;obj.updateMatrixWorld(true)}
 function fit(obj){const b=new THREE.Box3().setFromObject(obj),s=b.getSize(new THREE.Vector3()),c=b.getCenter(new THREE.Vector3());if(!Number.isFinite(s.y)||s.y<=0)return;const r=Math.max(s.x,s.y,s.z)*.78;controls.target.copy(c);camera.position.set(c.x+r*.95,c.y+r*.42,c.z+r*1.65);camera.near=Math.max(.01,r/100);camera.far=Math.max(80,r*30);camera.updateProjectionMatrix();controls.update()}
 async function ensureGraft(){if(!graftModule)graftModule=await import(CDN+'tools/KFB-ToolBox/kfb-rigs-embed-v3/frizzlegraft-v1/graft-mount.v1.js');if(!graftContract)graftContract=await fetch(CDN+'tools/KFB-ToolBox/kfb-rigs-embed-v3/contracts/kfb-pet-graft-driver.v4.json').then(r=>{if(!r.ok)throw Error('graft contract '+r.status);return r.json()})}
@@ -45,7 +45,7 @@ async function loadVisual(profile){
     const gltf=await loader.loadAsync(raw(profile.sources.model.path));visual=gltf.scene;scene.add(visual);ground(visual);fit(visual);return;
   }
   if(profile.renderMode==='graft'){
-    await ensureGraft();const holder=new THREE.Group();scene.add(holder);const pet=graftModule.pickGraftPet(graftContract,'graft-driver');const graft=await graftModule.mountGraft({THREE,loader,parent:holder,pet,lib:graftContract,camera,animation:'host',poseOverClip:false,override:{graft:{weapon:{on:false}},pose:{on:false}}});visual=holder;disposeVisual=()=>graft.dispose();ground(holder);fit(holder);return;
+    await ensureGraft();const holder=new THREE.Group();scene.add(holder);const pet=graftModule.pickGraftPet(graftContract,'graft-driver');const graft=await graftModule.mountGraft({THREE,loader,parent:holder,pet,lib:graftContract,camera,animation:'host',poseOverClip:false,override:{graft:{weapon:{on:false}},pose:{on:false}}});visual=holder;disposeVisual=()=>graft.dispose();tickVisual=(dt)=>graft.update(dt,camera);ground(holder);fit(holder);return;
   }
   throw Error('unsupported render mode '+profile.renderMode);
 }
@@ -68,4 +68,4 @@ function snapshot(){const p=byId.get(selected);return{ready,error,selected,rende
 window.__KFB_CA2_SELECTOR__={version:'0.1-candidate',ready:false,error:null,sourcePin:PIN,selectActor,snapshot};
 
 buildRoster();const requested=new URL(location.href).searchParams.get('actor');const initial=byId.has(requested)?requested:'frizzlebob-driver';selectActor(initial).catch(()=>{});
-const clock=new THREE.Clock();renderer.setAnimationLoop(()=>{clock.getDelta();controls.update();renderer.render(scene,camera)});
+const clock=new THREE.Clock();renderer.setAnimationLoop(()=>{const dt=Math.min(.05,clock.getDelta());tickVisual?.(dt);controls.update();renderer.render(scene,camera)});
