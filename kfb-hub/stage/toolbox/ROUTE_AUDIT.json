@@ -9,10 +9,10 @@
   },
   "toolboxRoute": "https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/",
   "counts": {
-    "publicPreview": 6,
+    "publicPreview": 7,
     "missingOrBlocked": 5,
-    "sourceOrIntegration": 6,
-    "totalCards": 17
+    "sourceOrIntegration": 7,
+    "totalCards": 19
   },
   "publicPreview": [
     {
@@ -44,6 +44,12 @@
       "id": "ranged-calibration",
       "url": "https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/kaykit-ranged-calibration-v1/",
       "publicationPath": "kfb-hub/stage/toolbox/kaykit-ranged-calibration-v1/index.html"
+    },
+    {
+      "id": "theatre-curtain-v1",
+      "url": "https://kayfabizarro.pages.dev/kfb-hub/stage/game-dev-studio/theatre-curtain-v1/",
+      "publicationPath": "kfb-hub/stage/game-dev-studio/theatre-curtain-v1/index.html",
+      "evidence": "25/25 public browser PASS at tested head 3bdfdd2e9de648871102d91c89612a5b7ee3c4ab"
     }
   ],
   "missingOrBlocked": [
@@ -85,9 +91,10 @@
     "Living Plant / Prop Lab",
     "FrankenStein Studio v17",
     "Rigging Lab v1",
-    "Animation Lab v2 / v3 intake"
+    "Animation Lab v2 / v3 intake",
+    "Fluid / Card / Beam / Seed / Voxel Lab"
   ],
   "rule": "No preview is shown unless an exact public route is present/proven. Missing/blocked routes link to source or PR only.",
-  "auditedAt": "2026-09-21T00:18:00+02:00",
-  "note": "Counts rechecked against the current cloudflare-live tree before the v2 status refresh. Public HTTP verification is a separate gate."
+  "auditedAt": "2026-09-21T02:10:00+02:00",
+  "note": "Theatre Curtain v1 is a previously public-verified route. The new Fluid/Card/Voxel intake remains source-only until its owner and runtime gates pass. Public verification of this router revision is a separate gate."
 }

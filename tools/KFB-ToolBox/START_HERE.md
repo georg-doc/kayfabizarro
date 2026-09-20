@@ -85,4 +85,15 @@ ToolBox has one prominent Stage router at:
 
 The router adopts the Georg-accepted KFB Hub Paper/Dark v2 presentation. It does not become an asset/runtime owner. Preview policy is strict: exact public route = preview; missing/blocked route = source/status card only.
 
-Current pre-publication audit: 6 public preview routes, 5 missing/blocked routes, 6 source/integration gates. See `kfb-hub/stage/toolbox/ROUTE_AUDIT.json`.
+Current router refresh: 7 public preview routes, 5 missing/blocked routes, 7 source/integration gates. The new router revision still requires its own public verification. See `kfb-hub/stage/toolbox/ROUTE_AUDIT.json`.
+
+## CURRENT ADDITIVE · Fluid / Card / Voxel intake + Theatre Curtain routing · 2026-09-21
+
+The verified 23-file intake under `_inbox/KFB ToolBox Bench v1 - KFB Voxel Card Zone Lab 2 - Hex Assets Worldbuilding/kfb-toolbox-v1/` is now routed through a source-first consolidation brief. It is not a promoted tool set. Fluid/Beam/Seeds have supplied Bench evidence; CardStack and Voxel remain gated by real owner/runtime proofs.
+
+Theatre Curtain v1 is now listed as an existing public ToolBox donor for transitions. Its planned Core v2 wrapper does not move renderer, camera, gameplay, loading, audio or persistence ownership from receiving games.
+
+Briefs:
+- `../../skills/chat/workflows/KFB_TOOLBOX_FLUID_CARD_VOXEL_CONSOLIDATION_V1_2026-09-21/START_HERE.md`
+- `../../skills/chat/workflows/KFB_THEATRE_CURTAIN_CORE_V2_2026-09-21/START_HERE.md`
+- `../../skills/chat/workflows/KFB_PLAYABLE_MVP_CONSOLIDATION_V1_2026-09-21/START_HERE.md`

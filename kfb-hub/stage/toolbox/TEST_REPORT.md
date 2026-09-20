@@ -75,3 +75,22 @@ Covered:
 - route audit rechecked against `cloudflare-live@120159b1d7708b5bf580af63da4c503a6821a286`.
 
 This is source/tree evidence. Public pages.dev verification remains a separate gate.
+
+## Consolidation planning refresh · 2026-09-21
+
+Scope: router and briefing metadata only; no candidate module was promoted.
+
+**9/9 PASS**
+
+Actual static/local-browser gates:
+- Hub inline JavaScript parses and exposes the three new briefs in Today, Tools and Projects as intended;
+- ToolBox roster = 19 cards: 7 public previews, 5 missing/blocked routes, 7 source/integration gates;
+- Theatre Curtain v1 uses its existing direct public route and recorded 25/25 public proof;
+- the verified 23-file Fluid/Card/Voxel intake is labeled source-only;
+- ROUTE_AUDIT.json and SOURCE.json parse and match the visible counts;
+- Stage router reports the same 19 / 7 / 5 figures;
+- local Hub browser boot shows four current briefing cards and the visible local Pocket Inbox;
+- local ToolBox browser boot shows Theatre Curtain under Open now and Fluid/Card/Voxel under Source / integration;
+- the public Theatre Curtain URL opened successfully and exposed its real cloth controls, four fabric choices and CPU Verlet/WebGL status.
+
+Public proof of this router revision remains a separate publication gate. Existing Theatre Curtain evidence is not evidence that this refreshed ToolBox page has deployed.

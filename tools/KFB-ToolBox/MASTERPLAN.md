@@ -52,3 +52,11 @@ Bedienoberfläche verwendet lesbaren Webfont mit System-Fallback, keine Brandfon
 
 ### 2026-09-14 · CLARIFICATION
 Die frühere Actor + Role + Fit-Skizze bezeichnet Verantwortungsgrenzen. Für T1 wird kein inkompatibles neues Exportformat erzwungen und keine WIP-Config zum Kanon erklärt.
+
+### 2026-09-21 · Fluid/Card/Voxel source-first consolidation
+
+The verified 23-file Lab intake enters ToolBox as candidates, not as automatic canonical modules. First resolve exact CardRig, terrain-v10, Card Zone and TinySkies/Travel owners. Then prove Fluid, Beam, Seed/Palette, CardStack and Voxel in separate bounded gates. ToolBox may package accepted modules, but receiving games keep scene/runtime ownership.
+
+### 2026-09-21 · Theatre Curtain transition seam
+
+Route the public Theatre Curtain v1 as a reusable donor. Core v2 may expose deterministic cover/reveal/progress events and host adapters, while consumer games keep renderer, camera, gameplay pause, loading, audio, route and persistence. First integration proves one neutral host and one WSA-selected consumer only.

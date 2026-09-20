@@ -72,6 +72,9 @@ If this is a replacement/fresh chat after context loss, use `RECOVERY_PATH.md` r
 - `adapters/claude-design.md` — Claude Design operating layer
 - `workflows/` — reusable task workflows
 - `workflows/KFB_MODULAR_MINIGAME_HUB_2026-09-19/START_HERE.md` — current Baukasten catalog + Dungeon/Hex/Combat Web-Chat slices
+- `workflows/KFB_PLAYABLE_MVP_CONSOLIDATION_V1_2026-09-21/START_HERE.md` — lock-first WSA/Astra playable loop
+- `workflows/KFB_THEATRE_CURTAIN_CORE_V2_2026-09-21/START_HERE.md` — reusable cutscene/loading/instance transition seam
+- `workflows/KFB_TOOLBOX_FLUID_CARD_VOXEL_CONSOLIDATION_V1_2026-09-21/START_HERE.md` — verified intake, source census and bounded module proofs
 - `tool-nodes/` — current tool/project entry cards
 - `consumers/` — project/chat-specific sync adapters without copied skill bodies
 

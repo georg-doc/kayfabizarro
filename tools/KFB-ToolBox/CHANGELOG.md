@@ -2,6 +2,17 @@
 
 Alte Einträge bleiben unverändert. Korrekturen als neue CORRECTION/SUPERSEDES-Einträge mit Bezug ergänzen. Aktuelle Momentaufnahme im MASTERPLAN/Return, Geschichte hier.
 
+## 2026-09-21 · Fluid/Card/Voxel intake and Theatre Curtain route
+
+### SOURCE VERIFIED
+Dropbox and GitHub contain the same 23 files for the new ToolBox Bench/Card Zone/Voxel intake. Fluid, Beam and Seeds retain their supplied Bench evidence; CardStack is not tested as a module and Voxel is a terrain-v10 mirror pending owner reconciliation.
+
+### ROUTING
+Added a source-first consolidation brief and a ToolBox source card. Added the existing public Theatre Curtain v1 as a real preview route plus a separate Core v2 host-adapter brief for loading, cutscenes and instance transitions.
+
+### BOUNDARY
+No candidate module was promoted, no game runtime owner changed, and no Live consumer integration is claimed.
+
 ## 2026-09-19 · Cartoon Vehicle Deformer Lab v2 intake
 
 ### SOURCE RECEIVED

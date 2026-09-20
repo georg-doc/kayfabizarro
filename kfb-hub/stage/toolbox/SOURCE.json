@@ -46,5 +46,18 @@
       "refresh ROUTE_AUDIT against current cloudflare-live tree"
     ]
   },
+  "currentPlanningDelta": {
+    "date": "2026-09-21",
+    "baseMain": "2dbc965fbe8149318a502fde250ecb1acec65f10",
+    "verifiedIntake": "tools/KFB-ToolBox/_inbox/KFB ToolBox Bench v1 - KFB Voxel Card Zone Lab 2 - Hex Assets Worldbuilding/kfb-toolbox-v1/",
+    "verifiedFileCount": 23,
+    "briefs": [
+      "skills/chat/workflows/KFB_TOOLBOX_FLUID_CARD_VOXEL_CONSOLIDATION_V1_2026-09-21/START_HERE.md",
+      "skills/chat/workflows/KFB_THEATRE_CURTAIN_CORE_V2_2026-09-21/START_HERE.md",
+      "skills/chat/workflows/KFB_PLAYABLE_MVP_CONSOLIDATION_V1_2026-09-21/START_HERE.md"
+    ],
+    "routerCounts": "7 public / 5 missing-or-blocked / 7 source-or-integration / 19 total",
+    "boundary": "Planning/router refresh only. Fluid/Card/Voxel candidates are not promoted; Theatre Curtain v1 remains at its existing human gate."
+  },
   "publicationFilesReadback": "PASS · kfb-hub/index.html + kfb-hub/stage/index.html + ROUTE_AUDIT.json match main blobs"
 }

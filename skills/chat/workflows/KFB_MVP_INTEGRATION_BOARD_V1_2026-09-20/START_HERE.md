@@ -4,6 +4,15 @@ Status: CURRENT PLANNING INDEX
 Date: 2026-09-20
 Purpose: one entry point for the next bounded, Stage-first slices. This index does not replace project SSOTs.
 
+## Current delta · 2026-09-21
+
+- [Playable MVP WSA/Astra consolidation](../KFB_PLAYABLE_MVP_CONSOLIDATION_V1_2026-09-21/START_HERE.md) is the cross-repo execution brief. It starts only after exact heads and human gates are locked.
+- [Theatre Curtain Core v2](../KFB_THEATRE_CURTAIN_CORE_V2_2026-09-21/START_HERE.md) becomes the reusable cutscene/loading/instance-transition seam. Existing v1 remains the mandatory donor and still needs Georg's visual/physics gate.
+- [Fluid / Card / Beam / Seed / Voxel consolidation](../KFB_TOOLBOX_FLUID_CARD_VOXEL_CONSOLIDATION_V1_2026-09-21/START_HERE.md) is a ToolBox source-reconciliation lane. Its verified 23-file intake is not yet a production module set.
+- WorldSurface TrackPatch I1A C remains technical leader only. The first playable integration checkpoint may not silently resolve the B/C/neither human decision.
+
+Recommended order: source/owner census in cheap Web/Sol slices → human gates → one WSA lock → one bounded cross-repo implementation. Do not spend Astra on cataloging, copy updates or isolated donor proofs.
+
 ## P0 — make the public coordination surface reliable
 
 - Hub never-empty publication gate: static direct-route fallback + script/metadata test + exact Cloudflare revision check.

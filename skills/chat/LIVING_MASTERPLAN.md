@@ -338,3 +338,11 @@ Register `KFB Comic Card Deck Viewer v4 (WS0)` as a future shared card/deck pres
 
 ### 2026-09-13 · DONOR / BACKLOG
 Register `travel/3D Conspiracy Iceberg Explorer` as a strong future 3D donor for a portal-entered KFB Conspiracy Deck iceberg instance. Preserve its tier/cluster/depth/atmo/navigation ideas, but re-audit its older Three.js/DC runtime before integration. Add submarine exploration as a future instance-local mode and a corresponding reusable KayKit swim-motion family to the Animation Lab backlog.
+
+### 2026-09-21 · TOOLBOX INTAKE / TRANSITION CORE / PLAYABLE MVP
+
+The 23-file `KFB ToolBox Bench v1 - KFB Voxel Card Zone Lab 2 - Hex Assets Worldbuilding` intake is verified byte-for-byte between Dropbox and GitHub. It supplies candidate Fluid, Beam, Seed, CardStack and Voxel modules; only Fluid/Beam/Seeds carry the supplied Bench evidence. CardStack needs a real CardRig proof, and the Voxel module must resolve its `terrain-v10` owner before promotion.
+
+The existing public Theatre Curtain v1 is registered as the mandatory donor for a reusable cutscene/loading/instance-transition core. It owns cloth and transition state only; Race, Travel, Combat, Dungeon and Story hosts retain renderer, camera, gameplay, loading, audio, routing and persistence.
+
+The next cross-repo target is one playable Stage loop rather than simultaneous lane merging: coherent world → walk/drive → sound → one Resident/Card interaction → one portal activity → preserved return. Cheap source census and isolated proofs precede one WSA/Astra integration lock.
