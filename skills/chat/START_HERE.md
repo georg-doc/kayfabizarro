@@ -256,3 +256,31 @@ Canonical Cloudflare:
 Do not send Georg the intended TC-01 child URL as a human-test link yet. Do not substitute GitHub Pages.
 
 The product slice is technically complete; the only current gate is Cloudflare publication/sync of the already-tested Stage source. After PUBLIC_VERIFIED + Georg visual acceptance, use Travel `site/terrain-corridor-tc01/OSM_FOLLOWUP.md` for the next bounded lane.
+
+
+### 2026-09-20 · TC-01 PUBLIC VERIFIED human gate
+
+Current Track/Terrain candidate:
+`georg-doc/KFB-Travel-Globe#31`
+
+Public Stage:
+`https://kayfabizarro.pages.dev/kfb-hub/stage/stunt-world/tinyskies-track-corridor-tc01/`
+
+Verified evidence:
+- implementation: **15/15 PASS**
+- Travel baseline test/build/verify: **PASS**
+- Stage mirror: **13/13 PASS**
+- Cloudflare canonical: **13/13 PASS**
+- final public run `35477984153`, attempt 3, job `105992963433`
+- boot 946 ms
+- 0 page/script errors
+- 0 failed HTTP assets
+- publication branch `cloudflare-live@ce455841ad1c90d6ea379f1b8ac97dd873a787bc`
+
+Georg acceptance remains OPEN. Live remains unchanged.
+
+Ask only:
+**Does the embedded Track read as part of the current TinySkies/Travel terrain instead of a ribbon floating above unrelated ground?**
+
+Only after acceptance start the prepared OSM lane:
+`lat/lon → Globe normal/ENU → one short OSM road → same Travel terrain adapter → 3–5 building support pads → one exact landmark override`.
