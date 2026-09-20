@@ -921,3 +921,30 @@ A new source-head sampler reads each loaded actor's own face/head texture around
 
 ### NEXT
 Reload the EyeRig Stage and visually check only the lid colors on the four accepted Large actors.
+
+
+## 2026-09-20 · Cologne Race Option C · recovery + FILAMENT benchmark correction
+
+### RECOVERY
+The interrupted Cologne Race / Claude Design preparation was recovered from GitHub rather than chat memory. Superseded PRs #129 and #132 remain history. Current briefing branch is `planning/cologne-race-option-c-claude-r3-2026-09-20`, Draft PR #134.
+
+### DATA
+The reusable `tools/osm-city-lab/data/dom-zentrum-v0/` package on public main closes the Dom/Zentrum data gate: cached real Overpass source, deterministic local-metre normalization, roads/buildings/rail/water context, exact Dom footprint and hero anchors. Claude must use the cached data and must not invent or refetch OSM for Slice C.
+
+### VISUAL AUTHORITY
+The two Option-C reference PNGs already in `travel/wip/travel_globe_wsa/_inbox/` are now pinned in the brief by exact path + blob SHA. Separate user attachment is no longer required. Option A visual authority is deferred until after Georg reviews C.
+
+### FILAMENT #02
+Verified original: `KilledByAPixel/SP13KTRA@166ad838`, `code/levels.js@75189173…`, second listed campaign circuit / human Track #02. The original presents a memorable opening run, dense arch/tunnel beat, tightening technical section, smooth low-frequency rhythm and readable illuminated edges.
+
+The repository license is All rights reserved. The brief was corrected from “derive route grammar” to **benchmark-only**. KFB must independently author its route from blank and must not copy/adapt/derive SP13KTRA geometry, corner sequence, source, palette values, meshes, materials, scenery, assets or scale.
+
+### PRODUCT PRIORITY
+Slice C priority is now explicit:
+
+`Option-C visual design → cool playable Track → recognisable Cologne anchors → OSM context → exact OMS architecture fidelity`.
+
+The first track does not need to follow mapped streets 1:1. Streets/Ringe, alleys, plazas/courtyards, rooftops, ramps, bridges and explicit elevated structures are allowed when they improve the route. OSM remains geographic/semantic context; it does not dictate the Track centerline.
+
+### NEXT GATE
+Claude Design builds the first playable Option-C Dom Loop from the pinned boards + cached OSM and returns the complete export/evidence package. No runtime, Stage or Live result is claimed by this preparation slice.
