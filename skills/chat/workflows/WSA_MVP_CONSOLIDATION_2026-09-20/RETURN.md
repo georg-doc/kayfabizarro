@@ -67,3 +67,14 @@ Do not call the refreshed navigator live or use it as an acceptance surface unti
 **Existing Astra Integration 01 / WSA Work Lead re-fetches every curated input, writes a real local Integration Lock, and assembles the smallest coherent Travel-world slice without changing runtime owners.**
 
 No auto-merge and no Live promotion.
+
+
+## Limit-saving Work handoff
+
+Added after the seven-lane refresh:
+- `LATEST_INPUT_DELTA_2026-09-20.md` — delta over the large branch census; includes Storytelling Maps PR #149 and the WhackMan/Perplexity source boundary.
+- `WORK_INTEGRATION_SLICE_I0_LOCK_SELECT.md` — cheap Work preflight: exact source/ref lock, READY/WAITING/BLOCKED classification and exactly one executable I1 selection.
+
+Current recommendation: run I0 with GPT-5.6 Sol / Medium / Fast off; then start a fresh I1 Work chat with GPT-5.6 Sol / High / Fast off. This recommendation is dated session guidance, not project canon.
+
+No runtime, Stage or Live claim is added by this handoff.

@@ -36,3 +36,15 @@ The earlier packet is preserved in `archive/PRE_FOCUS_REFRESH_SNAPSHOT_2026-09-2
 - KayKit Bits Bundle 1 and ToolBox Home now have named WIP PRs.
 
 No runtime source is changed by this coordination refresh.
+
+
+## Work start · limit-saving path
+
+For the next Work session do **not** start from the full branch census. Read:
+
+1. `WORK_INTEGRATION_SLICE_I0_LOCK_SELECT.md`
+2. `LATEST_INPUT_DELTA_2026-09-20.md`
+3. `STATUS_MATRIX.json`
+4. only the current owner SSOT/Return needed to resolve an exact lane.
+
+Use `BRANCH_CENSUS.json` only when a ref cannot otherwise be resolved. I0 ends after the Integration Lock + one selected executable I1 slice; runtime integration starts in a fresh Work chat.

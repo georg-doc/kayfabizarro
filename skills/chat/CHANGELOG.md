@@ -992,3 +992,15 @@ User-supplied Perplexity research is advisory only. Useful retained ideas: separ
 
 ### NEXT GATE
 Claude Design performs only Gate A/B/C and exports complete editable source/evidence before the broader WhackMan loop is promoted.
+
+
+## 2026-09-20 · Work I0 lock-and-select budget slice
+
+### SOURCE DELTA
+The previous four-repo branch census is retained as inventory but no longer recommended as a Work startup read. A small delta records the new Storytelling Maps PR #149 planning lane and confirms that the user-supplied WhackMan research adds architectural ideas, not a new KFB runtime owner.
+
+### EXECUTION STRATEGY
+Add a two-run Work strategy: I0 locks exact current refs and classifies the seven lanes without runtime implementation; I1 starts in a fresh Work chat and implements exactly one selected vertical slice. This reduces repeated history/context loading and prevents unresolved Human/Claude gates from consuming an expensive integration session.
+
+### CURRENT PRODUCT SETTING RECOMMENDATION
+For I0: GPT-5.6 Sol / Medium / Fast off. For the later one-slice I1: GPT-5.6 Sol / High / Fast off. Astra is reserved for a genuinely hard cross-repo integration/debugging gate, not the source-audit phase.
