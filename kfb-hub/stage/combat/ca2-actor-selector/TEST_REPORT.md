@@ -40,3 +40,21 @@ The workflow also passed JavaScript syntax checks for `selector.mjs` and `proof.
 ## Human gate
 
 Not yet accepted. Public Cloudflare proof is the next gate.
+
+
+## Public Cloudflare proof
+
+Exact public route: `https://kayfabizarro.pages.dev/kfb-hub/stage/combat/ca2-actor-selector/`
+
+- publication branch proofed head: `310baae3cf57cc0d85df5e443b0c5e02b336aeb8`
+- Actions run: `35486328250`
+- public job: `106013271989`
+- marker: **PASS** for implementation `64638a5818d7b7a75c0a96edd8777580669dcfa3`
+- Hub → Stage → Combat navigation: **PASS**
+- browser: **32/32 PASS**
+- failed HTTP/resources: **0**
+- page/console errors: **0**
+- artifact: `10597414088`
+- digest: `sha256:610d38bbabf69a54bcf5a7277e4c2a8df556fc04a65ed098ce31dfdfd51d0558`
+
+Human acceptance remains open.

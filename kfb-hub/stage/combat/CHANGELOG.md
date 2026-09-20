@@ -15,3 +15,9 @@ Initial browser evidence exposed that the mounted Driver Graft was not receiving
 
 ### EVIDENCE
 Workflow run `35486077769`, job `106012591388`: **32/32 PASS**, 0 failed HTTP/resources, 0 page/console errors. Artifact `10597264982`, digest `sha256:f7346d76719f7857c52cc2c31b7b4f626497d565671e11125d0a42f1f89f4350`. Human acceptance remains open.
+
+
+## 2026-09-20 · Public Cloudflare proof
+
+### PUBLIC_VERIFIED
+Publication `cloudflare-live@310baae3cf57cc0d85df5e443b0c5e02b336aeb8` reached the fixed Stage route. Run `35486328250`, public job `106013271989` verified the exact implementation marker, Hub/Stage/Combat navigation and **32/32** browser checks with zero failed resources and zero page/console errors. Human acceptance is still pending.

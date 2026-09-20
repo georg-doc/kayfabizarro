@@ -1,6 +1,6 @@
 # CA2-01 · Return
 
-Status: **BRANCH_BROWSER_VERIFIED · PUBLICATION NEXT · HUMAN OPEN**
+Status: **PUBLIC_VERIFIED · HUMAN OPEN**
 
 ## Exact scope
 
