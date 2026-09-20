@@ -3,7 +3,7 @@
 Date: 2026-09-20  
 Owner: KFB Production Hub  
 Branch: `work/kfb-hub-paper-dark-previews-2026-09-20`  
-Implementation head tested: `0c609eaf8013b605238b29fd3597c037613ad453`
+Implementation head tested: `90e7d4fee3d874271a9dffd89839d240d1de37a0`
 
 ## Static checks
 
@@ -39,12 +39,22 @@ These counts are derived from the current Hub data arrays, not maintained as a s
 
 The screenshot integration uses the documented Thum.io URL API with width, crop, maxAge, JPG and no-animation modifiers. The UI requests at most one-hour-old cached snapshots and falls back to the actual public route if a thumbnail fails.
 
-## Not yet proven
+## Public Stage observation
 
-- no real-browser visual QA on this branch;
-- no Cloudflare Stage publication for this Hub UI candidate;
-- no PUBLIC_VERIFIED claim;
-- no Georg visual acceptance;
+Exact route opened:
+https://kayfabizarro.pages.dev/kfb-hub/stage/hub-ui-v2/#stage
+
+Observed in the KFB in-app browser:
+- candidate route renders instead of a blank/fallback page;
+- Stage / Live view renders **19** current KFB targets;
+- representative preview screenshots are visibly present;
+- Pocket Inbox remains visible.
+
+The first publication exposed two Stage-wrapper defects: filter links resolved to the canonical Hub root, and the Paper/Dark toggle was hidden by the lean-header CSS. Both are corrected in source head `90e7d4fee3d874271a9dffd89839d240d1de37a0` and publication head `78f0af6e0aa24e4489fe8ab0e3d52656b4832a90`.
+
+## Still open
+
+- exact post-fix Cloudflare browser confirmation after deployment cache advances;
+- desktop / split-screen / mobile visual review;
+- Georg Paper/Dark acceptance;
 - no Live promotion.
-
-The exact public KFB Hub remains the old deployed state until a deliberate Stage/publication gate is completed.
