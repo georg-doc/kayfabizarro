@@ -1,14 +1,25 @@
 {
   "schema": "kfb.public-stage/0.2",
   "build": "KFB_HUB_UI_V2_PAPER_DARK_2026_09_20",
-  "status": "STAGE_CANDIDATE_PUBLIC_PROOF_PENDING",
+  "status": "PUBLIC_ROUTE_VISIBLE_POST_FIX_DEPLOY_CONFIRMATION_PENDING",
   "sourceRepo": "georg-doc/kayfabizarro",
   "sourceBranch": "work/kfb-hub-paper-dark-previews-2026-09-20",
   "sourcePr": 141,
-  "sourceHead": "7ec69d3673f02895d3efb11560802d91ac3c778e",
+  "sourceRuntimeHead": "90e7d4fee3d874271a9dffd89839d240d1de37a0",
+  "sourceEvidenceHead": "b12fbb93f1e4721a2db76b0709855ba0b307db40",
+  "publicationHead": "78f0af6e0aa24e4489fe8ab0e3d52656b4832a90",
   "sourcePath": "kfb-hub/index.html",
   "stagePath": "kfb-hub/stage/hub-ui-v2/index.html",
   "publicUrl": "https://kayfabizarro.pages.dev/kfb-hub/stage/hub-ui-v2/",
+  "observed": {
+    "routeVisible": true,
+    "stageLiveTargets": 19,
+    "previewsVisible": true
+  },
+  "corrected": {
+    "stageHashLinks": "source + publication written; deploy confirmation pending",
+    "themeToggle": "source + publication written; deploy confirmation pending"
+  },
   "constraints": [
     "Stage review only",
     "No Live promotion",
