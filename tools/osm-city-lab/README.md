@@ -8,6 +8,7 @@ Current datasets:
 
 - `ehrenfeld-v0` — dense urban pilot
 - `huerth-v0` — suburban / road↔terrain pilot
+- `dom-zentrum-v0` — Cologne Cathedral / HBF / Altstadt / Rhine race-design pilot; cached real OSM + local-metre geometry + rail/water/hero design context
 
 Viewer examples:
 
@@ -68,6 +69,39 @@ Origin: `50.865900, 6.877000`
 - deterministic reload / ID preservation / bbox clipping: **PASS**
 
 The browser never queries Overpass and no OSM raster tile is used as geometry.
+
+
+
+### Köln Dom / Zentrum v0
+
+BBox:
+
+`50.9325, 6.9460 → 50.9515, 6.9785`
+
+Origin:
+
+`50.942000, 6.962250`
+
+- source elements: **145,967**
+- roads: **5,236**
+- driveable roads: **2,523**
+- buildings: **6,351**
+- landuse/surface polygons: **456**
+- water lines: **6**
+- railway ways: **665**
+- normalized bounds: **2,279.652 × 2,115.070 m**
+- exact Dom source: OSM `way/4532022`
+- exact HBF station anchor: OSM `node/2399559029`
+- Hohenzollernbrücke anchor: OSM `relation/5460390`
+- Deutzer Brücke anchor: OSM `relation/3837695`
+- Rheinufertunnel anchor: OSM `way/23559378`
+- deterministic reload / ID preservation / bbox clipping: **PASS**
+
+Design-facing entry:
+
+`data/dom-zentrum-v0/CLAUDE_CONTEXT.json`
+
+The raw Overpass source is cached. Consumers must not repeatedly query Overpass at runtime.
 
 ## Shared pipeline
 
