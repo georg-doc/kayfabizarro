@@ -31,7 +31,7 @@ renderer.outputColorSpace=THREE.SRGBColorSpace;renderer.setPixelRatio(Math.min(d
 scene.add(new THREE.HemisphereLight(0xf5edda,0x342d2a,2.0));
 const key=new THREE.DirectionalLight(0xffefd1,2.35);key.position.set(-3,7,5);scene.add(key);
 const fill=new THREE.DirectionalLight(0xaedbd5,.9);fill.position.set(5,3,2);scene.add(fill);
-const sky=createSkydome({THREE,nearRadius:17,farRadius:26});scene.add(sky.root);
+const sky=createSkydome({THREE,nearRadius:17,farRadius:26});scene.add(sky.group);
 const baseline=new THREE.Line(new THREE.BufferGeometry().setFromPoints([new THREE.Vector3(-4,0,0),new THREE.Vector3(4,0,0)]),new THREE.LineBasicMaterial({color:0x5e5348,transparent:true,opacity:.55}));scene.add(baseline);
 const debug=new THREE.Group();scene.add(debug);
 const fxRoot=new THREE.Group();scene.add(fxRoot);
@@ -220,5 +220,5 @@ document.getElementById('slow').onclick=()=>{slow=slow===.25?1:.25;document.getE
 document.getElementById('scrub').oninput=e=>{if(mode!=='attack')setMode('attack');scrubTo(e.target.value)};
 for(const id of ['showMarkers','showHurt','showSweep'])document.getElementById(id).onchange=applyDebugVisibility;
 window.__KFB_CA204__={ready:false,error:null,snapshot,setMode,replay,scrub:scrubTo,setMiss};
-const clock=new THREE.Clock();renderer.setAnimationLoop(()=>{const dt=Math.min(.05,clock.getDelta());tickAttack(dt);trails.step(dt,camera);sprites.step(dt,camera);sky.update?.(dt,{position:camera.position});renderer.render(scene,camera)});
+const clock=new THREE.Clock();renderer.setAnimationLoop(()=>{const dt=Math.min(.05,clock.getDelta());tickAttack(dt);trails.step(dt,camera);sprites.step(dt,camera);sky.follow?.(camera);sky.update?.(dt,{position:camera.position});renderer.render(scene,camera)});
 boot();

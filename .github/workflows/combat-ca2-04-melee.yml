@@ -27,7 +27,7 @@ jobs:
           npx playwright install --with-deps chromium
           python3 -m http.server 4173 --bind 127.0.0.1 >/tmp/ca204.log 2>&1 &
           for i in {1..30}; do curl -fsS http://127.0.0.1:4173/kfb-hub/stage/combat/ca2-melee-lab/SOURCE.json >/dev/null && break; sleep 1; done
-          CA204_BASE_URL=http://127.0.0.1:4173/kfb-hub/stage/combat/ca2-melee-lab/ CA204_IMPLEMENTATION_HEAD=d00e8b1e2b78dc415e3435317a227e06ff1189f6 CA204_PROOF_DIR=ca204-melee-evidence node kfb-hub/stage/combat/ca2-melee-lab/proof.mjs
+          CA204_BASE_URL=http://127.0.0.1:4173/kfb-hub/stage/combat/ca2-melee-lab/ CA204_IMPLEMENTATION_HEAD=6df5d4cd3b5e17bacb32438beac528a37c943bb0 CA204_PROOF_DIR=ca204-melee-evidence node kfb-hub/stage/combat/ca2-melee-lab/proof.mjs
       - uses: actions/upload-artifact@v4
         if: always()
         with: {name: ca204-melee-evidence, path: ca204-melee-evidence, retention-days: 14}
