@@ -1,17 +1,21 @@
 name: KFB Game Dev Studio public proof
 on:
   push:
-    branches: [main]
+    branches:
+      - main
+      - world-atlas/dungeon-room-blueprint-s14-blender-2026-09-20
     paths:
       - 'tools/game-dev-studio/catalog.json'
       - 'tools/game-dev-studio/index.html'
       - 'kfb-hub/free-roam/game-dev-studio/**'
+      - '.github/scripts/world-atlas-dungeon-room-s14-public.mjs'
       - '.github/workflows/game-dev-studio-public.yml'
   workflow_dispatch:
 permissions:
   contents: read
 jobs:
   public-proof:
+    if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
     timeout-minutes: 12
     steps:
@@ -34,3 +38,29 @@ jobs:
           name: game-dev-studio-public-proof
           path: game-dev-studio-public-evidence
           retention-days: 30
+
+  world-atlas-s14-public:
+    if: github.ref == 'refs/heads/world-atlas/dungeon-room-blueprint-s14-blender-2026-09-20'
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout: |
+            .github/scripts/world-atlas-dungeon-room-s14-public.mjs
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install Chromium
+        run: |
+          npm install --no-save playwright@1.51.1
+          npx playwright install --with-deps chromium
+      - name: Verify exact public S14 Stage and embedded R02
+        run: node .github/scripts/world-atlas-dungeon-room-s14-public.mjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: world-atlas-dungeon-room-s14-public-proof
+          path: artifacts/world-atlas-dungeon-room-s14-public/
+          retention-days: 30
+          if-no-files-found: warn
