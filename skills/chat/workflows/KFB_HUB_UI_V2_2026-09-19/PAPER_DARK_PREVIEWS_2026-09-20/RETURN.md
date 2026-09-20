@@ -6,7 +6,7 @@ Repository: `georg-doc/kayfabizarro`
 Branch: `work/kfb-hub-paper-dark-previews-2026-09-20`  
 Draft PR: **#141**  
 Base: `main@a6b9220a0b42d50a9de9804fad22e84dde2c322c`  
-Review-packet head immediately before this Return seal: `3b583dc226c56d4b8529f69d0f3003ec2cc440ce`
+Current Stage-candidate source head before evidence docs: `90e7d4fee3d874271a9dffd89839d240d1de37a0`
 
 ## Goal
 
@@ -96,19 +96,21 @@ This `RETURN.md` is added as the final handoff document after that roster.
 
 ## Public / human gate
 
-**No new candidate Cloudflare URL is claimed.**
+**STAGE ROUTE VISIBLE · POST-FIX DEPLOY CONFIRMATION + HUMAN REVIEW OPEN.**
 
-The canonical public Hub may still show the previous deployed revision. No real-browser branch visual proof, PUBLIC_VERIFIED claim or Georg visual acceptance has been recorded for this candidate.
+https://kayfabizarro.pages.dev/kfb-hub/stage/hub-ui-v2/
+
+The public route renders the isolated candidate and its Stage/Live view with 19 current targets; representative previews are visibly present. The first wrapper publication exposed root-bound filter links and a hidden theme toggle. Both defects are corrected in source head `90e7d4fee3d874271a9dffd89839d240d1de37a0` and publication head `78f0af6e0aa24e4489fe8ab0e3d52656b4832a90`. The canonical Hub was not replaced.
 
 ## Unresolved
 
-- direct Cloudflare Stage publication of the exact PR head;
+- exact post-fix Cloudflare browser confirmation after deployment cache advances;
 - real-browser check at desktop / split / mobile widths;
-- confirm screenshot tiles load reliably from the public Hub environment;
+- broader screenshot-tile reliability beyond the visibly loaded examples;
 - Georg visual acceptance of Paper and Dark presentation.
 
 ## Exactly one next gate
 
-Publish the exact Draft PR #141 head through the existing Cloudflare publication path to one fixed `kayfabizarro.pages.dev` Stage review route, open that exact route, and verify hash routing, Paper/Dark toggle and representative Stage/Live preview tiles at desktop, split-screen and mobile widths.
+Open the fixed Stage route after the post-fix deployment is visible, then review hash routing, Paper/Dark and representative preview tiles at desktop, split-screen and mobile widths.
 
 Do not merge or promote Live before that gate.
