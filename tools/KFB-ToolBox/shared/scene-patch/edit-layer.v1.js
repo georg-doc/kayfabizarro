@@ -35,6 +35,7 @@ export function makeEditLayer(viewer, canvas, opts = {}) {
   const getRoot = opts.getRoot || (() => null);
   const recordOf = opts.recordOf || ((n) => n.userData.entry);
   const groupOf = opts.groupOf || (() => null);
+  const isEditable = opts.isEditable || (() => true);
   const menu = opts.menu || null;
 
   const gizmo = new TransformControls(viewer.camera, canvas);
@@ -131,7 +132,7 @@ export function makeEditLayer(viewer, canvas, opts = {}) {
       borrowed = null;
       const rec = node && recordOf(node);
       const root = getRoot();
-      sel = !rec ? []
+      sel = !rec || !isEditable(rec) ? []
         : (scope === 'gruppe' && groupOf(rec) && root)
           ? collectRecordNodes(root, []).filter((x) => x.visible && groupOf(recordOf(x)) === groupOf(rec))
           : [node];
@@ -233,10 +234,11 @@ export function makeEditLayer(viewer, canvas, opts = {}) {
     const node = hit ? nodeOf(hit.object) : null;
     /* Auch bei AUSGESCHALTETEM Editor wird gemeldet, was getroffen wurde — die Auskunftskarte
        (Pfad, Rolle, Maße) ist kein Editierwerkzeug und darf nicht am Editor hängen. */
-    if (!on) { opts.onPick?.(node, node ? recordOf(node) : null); return; }
-    if (!node) { E.clear(); opts.onPick?.(null, null); return; }
+    const rec = node ? recordOf(node) : null;
+    if (!on) { opts.onPick?.(node, rec); return; }
+    if (!node || !isEditable(rec)) { E.clear(); opts.onPick?.(node, rec); return; }
     E.select(node);
-    opts.onPick?.(node, recordOf(node));
+    opts.onPick?.(node, rec);
   });
 
   if (menu) menu.addEventListener('click', (e) => {
