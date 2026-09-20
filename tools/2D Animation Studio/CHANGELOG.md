@@ -86,3 +86,17 @@ Read-only donor audit confirmed the Dropbox FrankenStein Studio v18 session carr
 - added optional eyeFrame markers in both renderers;
 - static sanity PASS; browser/playback proof still pending;
 - started the source-first DocCheck Eye/Face Modifier Atlas with current source-resolved parts, KFB logic donors and unresolved richer DocCheck asset categories clearly separated.
+
+
+## 2026-09-20 · v0.7 · Resident / game consumer preparation
+
+- introduced candidate `kfb.2d-actor-module/0.1` lifecycle/ownership contract;
+- added `2D_TOOLBOX_MANIFEST.json` for the Studio's tool/shared/consumer lanes;
+- prepared Eumel as `doccheck-eumel-2p5d` with upright-yaw-billboard / world-facing modes;
+- prepared a Resident Atlas scene-module candidate without indexing/promoting it;
+- documented DocCheck Project Island as the first named environment consumer, with exact KayKit set selection deferred to Registry/Game Dev Studio;
+- prepared a source-required Doccy quadruped rig topology template;
+- created the WSA integration handoff under `skills/chat/workflows/2D_RESIDENT_ACTOR_WSA_2026-09-20/`;
+- preserved world/collision/camera/gameplay ownership with the receiving consumer.
+
+No three2p5d runtime adapter or Resident mount PASS is claimed yet.
