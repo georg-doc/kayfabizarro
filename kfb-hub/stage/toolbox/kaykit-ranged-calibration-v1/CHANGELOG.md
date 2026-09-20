@@ -16,3 +16,13 @@ After replacing a wall-clock FX assertion with deterministic release-frame seeki
 
 ### STATUS
 Branch browser verified. Public Cloudflare and human visual acceptance remain open.
+
+
+## 2026-09-20 · Public proof
+
+### PUBLIC_VERIFIED
+Final runtime `36072e4797d4915d87673432de176e1fa46dcea9` is PUBLIC_VERIFIED at `https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/kaykit-ranged-calibration-v1/`.
+
+Run `35488456185`: branch job `106019011389` and public job `106019011425` both **55/55 PASS**. Public marker and Hub/Stage navigation PASS; 0 failed resources and 0 page/console errors. Public artifact `10597659083`, digest `sha256:f641fee4394584f12013b2edb455d31ec015e50f48f71fbdef40369ed3f2705c`.
+
+Human grip/pose/muzzle/release acceptance remains open.

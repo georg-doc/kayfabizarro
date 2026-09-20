@@ -1,6 +1,6 @@
 # CA2-02 · Return
 
-Status: **BRANCH_BROWSER_VERIFIED · PUBLICATION NEXT · HUMAN OPEN**
+Status: **PUBLIC_VERIFIED · HUMAN OPEN**
 
 ## Goal/result
 

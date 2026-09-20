@@ -4,7 +4,7 @@
   "slice": "CA2-02",
   "owner": "KFB ToolBox / weapon-motion calibration",
   "consumer": "georg-doc/KFB-Combat-Arena / WSA",
-  "status": "FINAL_BRANCH_BROWSER_PROOF_PENDING",
+  "status": "PUBLIC_VERIFIED_HUMAN_OPEN",
   "sourceRepo": "georg-doc/kayfabizarro",
   "sourceBranch": "chatgpt-web/ca2-02-ranged-calibration-2026-09-20",
   "implementationHead": "36072e4797d4915d87673432de176e1fa46dcea9",
@@ -46,7 +46,7 @@
     "Arena rewards/runflow",
     "Arena audio"
   ],
-  "publicVerified": false,
+  "publicVerified": true,
   "humanAcceptance": "PENDING",
   "repairNote": "Deterministic release-frame seek plus explicit one-release scheduling for the single-shot clip.",
   "singleShotPolicy": {
@@ -59,5 +59,36 @@
       0.15
     ]
   },
-  "syntaxRepair": "Removed accidental literal backslash-n introduced by marker-report text edit; measurements unchanged."
+  "syntaxRepair": "Removed accidental literal backslash-n introduced by marker-report text edit; measurements unchanged.",
+  "sourcePr": {
+    "number": 135,
+    "url": "https://github.com/georg-doc/kayfabizarro/pull/135",
+    "state": "DRAFT_OPEN"
+  },
+  "branchProof": {
+    "run": 35488456185,
+    "job": 106019011389,
+    "checks": "55/55 PASS",
+    "failedResources": 0,
+    "pageConsoleErrors": 0,
+    "artifactId": 10597654212,
+    "artifactDigest": "sha256:c35871f008acbffbe6eb1622d2b5cc20841d5f9944bcaa02325499e30fb3c4c6"
+  },
+  "publication": {
+    "branch": "cloudflare-live",
+    "proofedHead": "cf71a28f8ca776d3a09e7653729363a52a5b135e",
+    "stageUrl": "https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/kaykit-ranged-calibration-v1/",
+    "verifiedAt": "2026-09-20T04:11:48Z"
+  },
+  "publicProof": {
+    "run": 35488456185,
+    "job": 106019011425,
+    "marker": "PASS",
+    "hubStageNavigation": "PASS",
+    "checks": "55/55 PASS",
+    "failedResources": 0,
+    "pageConsoleErrors": 0,
+    "artifactId": 10597659083,
+    "artifactDigest": "sha256:f641fee4394584f12013b2edb455d31ec015e50f48f71fbdef40369ed3f2705c"
+  }
 }
