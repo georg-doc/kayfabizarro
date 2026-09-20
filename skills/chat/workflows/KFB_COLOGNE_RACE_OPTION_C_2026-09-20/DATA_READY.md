@@ -157,4 +157,4 @@ re-author the route grammar into these real Cologne constraints. Never copy SP13
 
 **OSM data gate is closed.**
 
-Claude Slice C may start as soon as Georg attaches the two visual authority boards.
+Claude Slice C may start immediately from the pinned Option-C boards already on public `kayfabizarro/main`. Option A visual authority is deferred until after Georg's Option-C gate.
