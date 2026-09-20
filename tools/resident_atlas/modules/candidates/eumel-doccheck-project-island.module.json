@@ -1,0 +1,38 @@
+{
+  "schema": "kfb.resident-scene-module/1-candidate",
+  "id": "eumel-doccheck-project-island",
+  "status": "prepared-candidate-not-indexed",
+  "residentId": "doccheck-eumel-2p5d",
+  "presentationClass": "2p5d-cutout-resident",
+  "actorBinding": "tools/2D Animation Studio/consumers/eumel-resident/EUMEL_2P5D_RESIDENT_BINDING.v0.1.json",
+  "owner": "2D Animation Studio for actor presentation; Resident Atlas/consumer retain scene/runtime ownership",
+  "mount": {
+    "contract": "mount/update/dispose",
+    "anchor": "consumer top-center / ground anchor",
+    "worldTransformOwner": "consumer"
+  },
+  "support": {
+    "environment": "DocCheck Project Island / exact KayKit 3D set to be selected and pinned",
+    "collision": "consumer-owned",
+    "recommendedStage": "consumer-defined; no island dimensions asserted here"
+  },
+  "activity": {
+    "default": "idle",
+    "availableCandidateStates": [
+      "idle",
+      "look",
+      "walk",
+      "hop"
+    ],
+    "note": "World locomotion is not owned by this module. 'walk' is local presentation driven by consumer velocity/state."
+  },
+  "evidence": {
+    "sourceExact2D": "IMPLEMENTATION",
+    "neutralBind": "IMPLEMENTATION",
+    "eyeProtocol": "IMPLEMENTATION",
+    "three2p5dAdapter": "NOT_IMPLEMENTED",
+    "residentAtlasMount": "NOT_TESTED",
+    "georgAcceptance": "PENDING"
+  },
+  "promotionGate": "Implement/test the three2p5d renderer adapter, then mount in Resident Atlas/consumer scene without taking collision/world ownership."
+}
