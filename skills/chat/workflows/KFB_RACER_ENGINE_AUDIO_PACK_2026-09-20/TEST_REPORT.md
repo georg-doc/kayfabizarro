@@ -30,3 +30,13 @@ This report proves source presence and documentation consistency only. It does n
 ## Result
 
 **SOURCE METADATA PASS · RUNTIME / BROWSER / LISTENING INTEGRATION OPEN**
+
+## Hub/router sanity
+
+- KFB Hub embedded JavaScript syntax: **PASS** after repairing 3 pre-existing structural escaped-newline artifacts.
+- remaining structural literal-newline artifacts at the three repaired patterns: **0 / 0 / 0**.
+- Racer audio briefing card count: **1**.
+- Registry JSON parse + unique Racer audio entry: **PASS / 1 entry**.
+- exact manifest metadata match against repository directory: **19/19**.
+
+This remains source/static evidence. The branch has not been published to Cloudflare and therefore is not PUBLIC_VERIFIED.
