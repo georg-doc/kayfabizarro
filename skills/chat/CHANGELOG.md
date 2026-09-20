@@ -925,3 +925,26 @@ Reload the EyeRig Stage and visually check only the lid colors on the four accep
 ## 2026-09-20 · MVP integration board and bounded briefs
 
 Added a planning index plus four source-preserving briefings for World/Race/Audio/Traffic, Combat Raid/Open World, ToolBox Cloudflare consolidation and the shared in-scene editor. Each keeps the named runtime/tool owner, requires direct Cloudflare Stage proof, and explicitly blocks placeholder/parallel-engine work and automatic promotion.
+
+
+## 2026-09-20 · KFB Hub Paper/Dark + visual Stage/Live candidate
+
+### IMPLEMENTATION
+- Existing owner retained: `kfb-hub/index.html`.
+- Draft PR #141 · `work/kfb-hub-paper-dark-previews-2026-09-20`.
+- Added shareable hash routes for Hub filters; `#stage` / `#live` resolve to the Stage/Live presentation and DocCheck variants use the `#doccheck-` prefix.
+- Added explicit Paper/Dark theme with local browser persistence.
+- Added visual preview tiles for current canonical `kayfabizarro.pages.dev` targets. Targets are derived and deduplicated from existing Hub `links + todos + briefings`; no second target registry was created.
+- Thumbnail requests use a maximum one-hour cached screenshot and fall back to the same direct public route in a lazy, non-interactive iframe if the image cannot load.
+
+### TESTED RESULT
+- **18/18 static PASS** on the exact branch runtime.
+- Inline Hub JavaScript parses.
+- Derived current inventory: **KFB 19 = 8 Stage + 11 Live; DocCheck 4 = 4 Live**.
+- Paper/Dark tokens, persisted toggle, hash routing, Stage alias, DocCheck prefix, derived/deduplicated gallery, thumbnail freshness/fallback, direct target links and 3/2/1 responsive grid are all statically asserted.
+
+### STATUS
+**STATIC PASS · STAGE/PUBLIC PENDING · HUMAN VISUAL GATE PENDING · NO LIVE PROMOTION.**
+
+No canonical Cloudflare URL is claimed for this candidate yet. Evidence lives at:
+`skills/chat/workflows/KFB_HUB_UI_V2_2026-09-19/PAPER_DARK_PREVIEWS_2026-09-20/`
