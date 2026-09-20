@@ -75,6 +75,6 @@ Added after the seven-lane refresh:
 - `LATEST_INPUT_DELTA_2026-09-20.md` — delta over the large branch census; includes Storytelling Maps PR #149 and the WhackMan/Perplexity source boundary.
 - `WORK_INTEGRATION_SLICE_I0_LOCK_SELECT.md` — cheap Work preflight: exact source/ref lock, READY/WAITING/BLOCKED classification and exactly one executable I1 selection.
 
-Current recommendation: run I0 with GPT-5.6 Sol / Medium / Fast off; then start a fresh I1 Work chat with GPT-5.6 Sol / High / Fast off. This recommendation is dated session guidance, not project canon.
+Current recommendation: resume the existing WSA Lead on GPT-5.6 Sol / Medium / Fast off for I0. After the lock, keep the same WSA Lead by default; use Sol / Medium for straightforward execution, Sol / High for harder implementation, and Astra only for a genuinely hard cross-repo/debugging gate. Start a fresh implementation chat only when the accumulated context becomes counterproductive. This recommendation is dated session guidance, not project canon.
 
 No runtime, Stage or Live claim is added by this handoff.

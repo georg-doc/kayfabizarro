@@ -7,22 +7,33 @@ Repo/coordination branch: `georg-doc/kayfabizarro · orchestration/wsa-mvp-conso
 
 ## Goal
 
-Produce one exact, recoverable integration lock from the current seven-lane KFB state and return **one** recommended executable integration slice.
+Resume the **existing WSA Lead / Recovery & Integration Work conversation** and use its already-established project context instead of cold-starting a second integration lead.
 
-Do not attempt the seven lanes in one Work run.
+Produce one exact, recoverable integration lock from the current seven-lane KFB state and return **one** executable integration slice.
+
+Do not attempt the seven lanes in one pass.
 
 ## Recommended Work settings for this I0 run
 
 - model: **GPT-5.6 Sol**
 - reasoning: **Medium**
 - speed / Fast mode: **OFF**
-- no Astra unless source reconciliation itself fails on a genuinely hard cross-repo conflict.
+- remain on **Sol / Medium** for source locking and slice selection.
+- after the lock, the same WSA Lead may switch to **Sol / High** for a hard implementation pass, or to **Astra** only when a genuinely difficult cross-repo integration/debugging gate justifies the higher allowance use.
 
 This is an execution recommendation dated 2026-09-20, not a repository contract.
 
-## Minimal read order
+## Context reuse rule
 
-Read only:
+The active WSA Lead is already the integration owner and already has useful local conversation context. Reuse that context for intent and continuity, but **re-fetch GitHub before relying on any implementation fact**.
+
+Do not ask the WSA Lead to reconstruct its own prior work. Do not replay old chats.
+
+If the existing conversation has become confused, contradictory, or too context-heavy to execute cleanly, stop after writing the Integration Lock and open a fresh implementation chat from the lock. Otherwise continue in the same WSA Lead.
+
+## Minimal GitHub refresh
+
+Read/re-fetch only:
 
 1. `skills/chat/START_HERE.md`
 2. `skills/chat/CHAT_GITHUB_KFB_STAGE_WORKFLOW.md`
@@ -95,16 +106,26 @@ No branch cleanup.
 
 ## I1 recommendation after I0
 
-Start a **fresh Work chat** for I1 with:
-- this lock;
-- RUN_STATE;
-- the one selected lane's SSOT/Return;
-- its bounded implementation brief.
+**Default: continue in the same existing WSA Lead conversation.**
 
-Recommended I1 settings:
-- GPT-5.6 Sol **High**
-- Fast OFF
-- use Astra only for a hard cross-repo integration/debugging gate that Sol High cannot resolve efficiently.
+After I0:
+1. keep the Integration Lock and RUN_STATE as the compact execution context;
+2. load only the selected lane's current SSOT/Return + bounded implementation brief;
+3. continue with **Sol / Medium** if the slice is straightforward;
+4. switch to **Sol / High** when implementation/debugging needs more reasoning;
+5. switch the same WSA Lead to **Astra** only for a genuinely hard cross-repo integration/debugging problem where the additional capability is worth the higher allowance use.
+
+Open a fresh Work chat only if:
+- the existing WSA Lead has become context-confused or contradictory;
+- the selected slice deserves a clean implementation boundary;
+- or the accumulated conversation context is clearly causing inefficient rereads.
+
+Fast remains OFF.
+
+Checkpoint I1 as:
+1. implementation;
+2. tests/evidence;
+3. Return/Hub/Stage metadata.
 
 Checkpoint I1 as:
 1. implementation;

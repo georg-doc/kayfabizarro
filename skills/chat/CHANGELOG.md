@@ -1004,3 +1004,12 @@ Add a two-run Work strategy: I0 locks exact current refs and classifies the seve
 
 ### CURRENT PRODUCT SETTING RECOMMENDATION
 For I0: GPT-5.6 Sol / Medium / Fast off. For the later one-slice I1: GPT-5.6 Sol / High / Fast off. Astra is reserved for a genuinely hard cross-repo integration/debugging gate, not the source-audit phase.
+
+
+## 2026-09-20 · WSA Lead context reuse correction
+
+### CORRECTION
+The prior budget brief recommended a fresh Work chat immediately after I0. Georg already has an active `KFB Lead · Recovery & Integration` Work conversation that is itself the WSA Lead and holds useful integration context. The preferred path is therefore to resume that owner rather than cold-start another integration lead.
+
+### EXECUTION
+I0 remains Sol / Medium / Fast off. GitHub must still be re-fetched because conversation context is continuity, not implementation truth. After the lock, continue in the same WSA Lead by default; raise to Sol / High for harder implementation, and use Astra only for a genuinely hard cross-repo integration/debugging gate. A fresh Work chat becomes a fallback when accumulated context causes confusion or inefficiency, not the default.

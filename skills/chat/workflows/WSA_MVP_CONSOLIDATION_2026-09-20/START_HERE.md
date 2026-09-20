@@ -18,7 +18,7 @@ Stage target: `https://kayfabizarro.pages.dev/kfb-hub/stage/wsa-mvp-consolidatio
 
 The earlier packet is preserved in `archive/PRE_FOCUS_REFRESH_SNAPSHOT_2026-09-20.md`.
 
-## Six current focus lanes
+## Seven current focus lanes
 
 1. Combat → KayKit playback → melee/VFX/SFX → Dungeon/Raid → world gateway.
 2. Travel/Race → Walk → Drive → Fly, free-roam first, optional mini-races.
@@ -26,6 +26,7 @@ The earlier packet is preserved in `archive/PRE_FOCUS_REFRESH_SNAPSHOT_2026-09-2
 4. ToolBox → S21/S14 in-place editor → Resident/Dungeon → later Platformer/KFB World.
 5. Environment → KayKit + Tiny Treats → registered Scene/Zone recipes + rule-of-three prop groups.
 6. Storytelling Maps → CardRig → world/zone/tactical/cut-scene presentation + later authoring.
+7. WhackMan v1 → Dungeon-first maze-chase POC → reusable MazeGraph/Dungeon authoring seam.
 
 ## Corrections since the previous handoff
 
@@ -47,4 +48,4 @@ For the next Work session do **not** start from the full branch census. Read:
 3. `STATUS_MATRIX.json`
 4. only the current owner SSOT/Return needed to resolve an exact lane.
 
-Use `BRANCH_CENSUS.json` only when a ref cannot otherwise be resolved. I0 ends after the Integration Lock + one selected executable I1 slice; runtime integration starts in a fresh Work chat.
+Use `BRANCH_CENSUS.json` only when a ref cannot otherwise be resolved. The preferred path is to run I0 inside the **existing WSA Lead / Recovery & Integration conversation**, then continue I1 there unless the chat has become context-confused or a clean implementation boundary is clearly more efficient.
