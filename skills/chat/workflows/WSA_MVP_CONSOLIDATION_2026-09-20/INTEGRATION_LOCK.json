@@ -1,0 +1,212 @@
+{
+  "schema": "kfb.wsa-integration-lock/1.0",
+  "updated": "2026-09-20T23:42:10+02:00",
+  "coordination": {
+    "repo": "georg-doc/kayfabizarro",
+    "branch": "orchestration/wsa-mvp-consolidation-2026-09-20",
+    "sourceHead": "9d514cfd932997598ad6f5ad484416936aabe233",
+    "defaultBranchHead": "6c1b02a3338c005127d45bc7bff3ecbb785f1342",
+    "mode": "I0_LOCK_SELECT_ONLY"
+  },
+  "lanes": [
+    {
+      "id": "combat-melee-raid",
+      "status": "WAITING_HUMAN",
+      "owner": "georg-doc/KFB-Combat-Arena · Player.v2/Gunfight/MobBrain retain movement, damage, AI and enemy lifecycle",
+      "refs": [
+        {
+          "repo": "georg-doc/KFB-Combat-Arena",
+          "ref": "chatgpt-web/combat-arena-integration-v2-2026-09-19",
+          "pr": 5,
+          "head": "954f2db7484dc566e468e5ce89b0d95940d97537"
+        },
+        {
+          "repo": "georg-doc/KFB-Combat-Arena",
+          "ref": "wsa/ca2-kaykit-prep-2026-09-20",
+          "pr": 6,
+          "head": "6ebc609c9ccf87e580268ee766fea9d3c10912f8"
+        },
+        {
+          "repo": "georg-doc/kayfabizarro",
+          "ref": "chatgpt-web/ca2-03-enemy-adapters-2026-09-20",
+          "pr": 137,
+          "head": "15eeb9f765fec1a1388c75f22b86a14f0ef5bb4b"
+        }
+      ],
+      "gate": "Georg visual state-playback review for CA2-03B; only then reconcile CA2-03B into Arena and start CA2-04 melee.",
+      "sources": [
+        "kfb-hub/stage/combat/ca2-enemy-adapters/RETURN.md@db305a2e0befc7eb02d697c742a7a8e16a2fbca7",
+        "https://github.com/georg-doc/KFB-Combat-Arena/pull/5",
+        "https://github.com/georg-doc/KFB-Combat-Arena/pull/6"
+      ],
+      "why": "CA2-03B is public and technically proven, but its Return explicitly leaves Georg's playback review open before Arena integration or melee."
+    },
+    {
+      "id": "world-race-mobility",
+      "status": "READY",
+      "owner": "Travel/WorldSurface owns terrain and world; Race owns vehicle movement, contact and driving.",
+      "refs": [
+        {
+          "repo": "georg-doc/KFB-Travel-Globe",
+          "ref": "main",
+          "head": "8614282aab2ced43bb5dda9fcf7abadf9768100a"
+        },
+        {
+          "repo": "georg-doc/KFB-Travel-Globe",
+          "ref": "wsa/track-terrain-corridor-tc01-2026-09-20",
+          "pr": 31,
+          "head": "35a0b6c8380feb009bd27f1ca811064c1ad74be7"
+        },
+        {
+          "repo": "georg-doc/KFB-Stunt-Car-Race",
+          "ref": "main",
+          "head": "31d834218f0a79f193a44b054e57454d29c305c2"
+        },
+        {
+          "repo": "georg-doc/KFB-Stunt-Car-Race",
+          "ref": "design/hud-v4-game-alignment-2026-09-20",
+          "pr": 30,
+          "head": "f4436c83c674bc5bde017a0c33ca19e5da682894"
+        }
+      ],
+      "gate": "Build one isolated same-route/same-camera TrackPatch A/B/C proof: host terrain, direct existing-face grading, local refined SurfacePatch.",
+      "sources": [
+        "site/terrain-corridor-tc01/RED_TEAM_WORLD_SURFACE_PIVOT.md@104e53ca97f5f0a209189e93ff52a3d0c85d6e96",
+        "https://github.com/georg-doc/KFB-Travel-Globe/pull/31",
+        "https://github.com/georg-doc/KFB-Stunt-Car-Race/pull/30"
+      ],
+      "why": "The rejected TC-01 presentation has a documented replacement seam; current Travel and Race identities are exact, no human/Claude predecessor blocks the isolated geometric proof, and one browser comparison can prove it."
+    },
+    {
+      "id": "resident-zones",
+      "status": "WAITING_HUMAN",
+      "owner": "Resident Scene Modules own resident presentation; receiving world owns support, collision, movement, camera and persistence; existing ChatterBox donor remains dialogue owner.",
+      "refs": [
+        {
+          "repo": "georg-doc/kayfabizarro",
+          "ref": "main",
+          "head": "6c1b02a3338c005127d45bc7bff3ecbb785f1342"
+        }
+      ],
+      "gate": "Accept/tune/reject the public three-club Resident loop, then pin the exact ChatterBox source before the one-zone mini-quest proof.",
+      "sources": [
+        "tools/KFB-ToolBox/_handover/RESIDENT_SCENE_MODULES_WSA_2026-09-19/RETURN.md@bfb7a1e1b6bf7a09aed7b3cf96c7233ff8fb8a91",
+        "skills/chat/workflows/KFB_WORLD_ONBOARDING_CHATTERBOX_V1_2026-09-19.md@c812b9c16f17f42db93e101fd8934245d034e4c1"
+      ],
+      "why": "The current resident module still has an explicit Georg visual gate and the ChatterBox slice is planning-only with source identity still to be pinned."
+    },
+    {
+      "id": "toolbox-inline-editor",
+      "status": "WAITING_HUMAN",
+      "owner": "ToolBox/World Atlas provide authoring; each receiving host keeps its scene/runtime ownership.",
+      "refs": [
+        {
+          "repo": "georg-doc/kayfabizarro",
+          "ref": "toolbox/inline-3d-edit-layer-intake-2026-09-20",
+          "pr": 120,
+          "head": "c52e4139d2b5f311ef5dc9a8cfdecbd8944a469f"
+        },
+        {
+          "repo": "georg-doc/kayfabizarro",
+          "ref": "world-atlas/dungeon-room-blueprint-s14-blender-2026-09-20",
+          "pr": 126,
+          "head": "99a14f7bc77cff58ae68c1e0280ee990574704d6"
+        },
+        {
+          "repo": "georg-doc/kayfabizarro",
+          "ref": "world-atlas/inline-detail-editor-e1-2026-09-20",
+          "pr": 133,
+          "head": "69943c8d57aeb8202aaa3b1673697cec58152aac"
+        },
+        {
+          "repo": "georg-doc/kayfabizarro",
+          "ref": "toolbox/toolbox-home-v1-2026-09-20",
+          "pr": 146,
+          "head": "537ab4f037b76097b0a4b1808943b866f6f7f1f1"
+        }
+      ],
+      "gate": "Georg reviews S14 room/editor/Blender parity; only afterward start the Resident receiving-host proof.",
+      "sources": [
+        "tools/world_atlas/docs/RETURN_dungeon_room_blueprint_S14_2026-09-20.md@8ebf60b234ba51581deebc1d9e865eb9ce5f764d",
+        "https://github.com/georg-doc/kayfabizarro/pull/146"
+      ],
+      "why": "S14 is technically and publicly proven but its Return explicitly keeps the human form/parity gate open before reuse or editor extraction."
+    },
+    {
+      "id": "environment-scene-zone",
+      "status": "WAITING_HUMAN",
+      "owner": "Asset Registry/Librarian owns identity; receiving hosts own SceneRecipe and runtime placement.",
+      "refs": [
+        {
+          "repo": "georg-doc/kayfabizarro",
+          "ref": "asset/kaykit-bits-bundle1-2026-09-20",
+          "pr": 144,
+          "head": "165726d086d9363f3dce5bee9432015da889e77d"
+        }
+      ],
+      "gate": "Review the KayKit Bits package boundary, then run the separate non-destructive Librarian reconciliation/discoverability slice.",
+      "sources": [
+        "media/3D_Assets/KayKit_Bits_Bundle1/_handover/RETURN.md@ae42990eae7666ae840e35bde61f562aae4c8f40",
+        "https://github.com/georg-doc/kayfabizarro/pull/144"
+      ],
+      "why": "The complete package is present and validated, but its Return requires human package review before reconciliation; duplicate handling must not delete or silently replace sources."
+    },
+    {
+      "id": "storytelling-maps",
+      "status": "WAITING_CLAUDE",
+      "owner": "tools/kfb-cartoon-map-board owns presentation and timeline; no second map, curtain, OSM, Card/PDF or VFX runtime.",
+      "refs": [
+        {
+          "repo": "georg-doc/kayfabizarro",
+          "ref": "stage/storytelling-maps-v1-t1-2026-09-20",
+          "pr": 143,
+          "head": "90c98a6b1f00926f110567dff877f3bfe97121ac"
+        },
+        {
+          "repo": "georg-doc/kayfabizarro",
+          "ref": "stage/storytelling-maps-v1-t2-media-standee-2026-09-20",
+          "pr": 145,
+          "head": "e81f0e7a05a56e7c03a38b326df4caa1c7c14428"
+        },
+        {
+          "repo": "georg-doc/kayfabizarro",
+          "ref": "planning/storytelling-map-animator-v1-2026-09-20",
+          "pr": 149,
+          "head": "dadf2fa34cc3b64ae7177953387c91e6d3042bb4"
+        }
+      ],
+      "gate": "Return the T2.1 Responsive Rounded CardRig candidate; Map Animator PR #149 remains planning-only and cannot bypass it.",
+      "sources": [
+        "kfb-hub/stage/storytelling-maps/t2-media-standee/RETURN.md@2872da024cc056f16b337e6c5b1baa253eb9247c",
+        "skills/chat/workflows/WSA_MVP_CONSOLIDATION_2026-09-20/LATEST_INPUT_DELTA_2026-09-20.md@a73605b11d7e437065938a50ec1a4a64f770e87f",
+        "https://github.com/georg-doc/kayfabizarro/pull/149"
+      ],
+      "why": "The current T2 branch routes the next implementation through a fresh Claude Design CardRig pass; PR #149 contains planning only."
+    },
+    {
+      "id": "whackman-dungeon-maze",
+      "status": "WAITING_CLAUDE",
+      "owner": "World Atlas/Dungeon Generator owns spatial recipe; existing actor, EyeRig and movement owners remain intact.",
+      "refs": [
+        {
+          "repo": "georg-doc/kayfabizarro",
+          "ref": "main",
+          "head": "6c1b02a3338c005127d45bc7bff3ecbb785f1342"
+        }
+      ],
+      "gate": "Wait for the editable Claude Gate A/B/C candidate: Dungeon donor identity, Legacy actor pair and Legacy EyeRig.",
+      "sources": [
+        "skills/chat/workflows/KFB_WHACKMAN_V1_2026-09-20/CLAUDE_DESIGN_BRIEF.md",
+        "skills/chat/workflows/WSA_MVP_CONSOLIDATION_2026-09-20/LATEST_INPUT_DELTA_2026-09-20.md@a73605b11d7e437065938a50ec1a4a64f770e87f"
+      ],
+      "why": "The current delta assigns Gate A/B/C to Claude Design and explicitly forbids Work from rebuilding the same candidate in parallel."
+    }
+  ],
+  "selectedI1": {
+    "id": "I1_WORLD_SURFACE_TRACKPATCH_ABC",
+    "lane": "world-race-mobility",
+    "outcome": "One isolated browser A/B/C comparison on the current Travel Globe: host terrain vs direct existing-face grading vs locally refined SurfacePatch, using one identical short route, camera set and material concept.",
+    "selectionReason": "It is the only lane with exact source identity, no unresolved human/Claude predecessor, a documented Travel↔Race seam, one bounded browser proof and no need for a universal runtime.",
+    "forbiddenFoundation": "TC-01 black ribbon/zone composition is rejection evidence only and must not be patched forward."
+  }
+}

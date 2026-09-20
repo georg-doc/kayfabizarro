@@ -1,0 +1,99 @@
+{
+  "schema": "kfb.wsa-mvp-consolidation/0.2",
+  "updated": "2026-09-20",
+  "owner": "existing WSA Work Lead / existing project owners",
+  "coordinationOwner": "KFB Production Hub / router",
+  "sourceBaseline": {
+    "repo": "georg-doc/kayfabizarro",
+    "head": "6c1b02a3338c005127d45bc7bff3ecbb785f1342"
+  },
+  "stageTarget": "https://kayfabizarro.pages.dev/kfb-hub/stage/wsa-mvp-consolidation/",
+  "status": "PLANNING_REFRESHED_SEVEN_LANES_SOURCE_BRANCH_ONLY",
+  "focusLanes": [
+    {
+      "id": "combat-melee-raid",
+      "ownerRepo": "georg-doc/KFB-Combat-Arena",
+      "inputs": [
+        "Combat PR#5",
+        "Combat PR#6",
+        "kayfabizarro PR#137"
+      ],
+      "nextGate": "CA2-03B then CA2-04 melee"
+    },
+    {
+      "id": "world-race-mobility",
+      "ownerRepos": [
+        "georg-doc/KFB-Travel-Globe",
+        "georg-doc/KFB-Stunt-Car-Race"
+      ],
+      "inputs": [
+        "Travel PR#31 technical seam only",
+        "Race PR#30 HUD brief",
+        "KCC-0/KCC-1A"
+      ],
+      "nextGate": "SurfacePatch visual proof + HUD implementation"
+    },
+    {
+      "id": "resident-zones",
+      "owner": "Resident modules + existing ChatterBox donor",
+      "inputs": [
+        "Resident Scene Modules",
+        "KFB_WORLD_ONBOARDING_CHATTERBOX_V1"
+      ],
+      "nextGate": "one-zone Resident+dialogue+mini-quest proof"
+    },
+    {
+      "id": "toolbox-inline-editor",
+      "owner": "ToolBox / World Atlas / receiving hosts",
+      "inputs": [
+        "Dropbox S21",
+        "PR#120",
+        "PR#126",
+        "PR#133 frozen",
+        "PR#146"
+      ],
+      "nextGate": "S14 human review then Resident host proof"
+    },
+    {
+      "id": "environment-scene-zone",
+      "owner": "Registry/Librarian + receiving hosts",
+      "inputs": [
+        "PR#144 KayKit Bits",
+        "Tiny Treats registry/Dropbox",
+        "Venue brief"
+      ],
+      "nextGate": "discoverability + registered SceneRecipe/prop-group proof"
+    },
+    {
+      "id": "storytelling-maps",
+      "owner": "tools/kfb-cartoon-map-board",
+      "inputs": [
+        "PR#143 T1",
+        "PR#145 T2"
+      ],
+      "nextGate": "T2.1/VL1 Responsive Rounded CardRig"
+    },
+    {
+      "id": "whackman-dungeon-maze",
+      "owner": "World Atlas / Dungeon Generator spatial and recipe owner",
+      "inputs": [
+        "S13.2 Dungeon Generator",
+        "PR#126 S14",
+        "Resident Atlas legacyAssemble",
+        "EyeRig v6 / PR#104 boundary",
+        "Tiny Treats Baked Goods",
+        "optional PR#144 Bits"
+      ],
+      "nextGate": "Claude Design Gate A/B/C: Dungeon donor identity + Legacy actor pair + Legacy EyeRig"
+    }
+  ],
+  "protectedBoundaries": [
+    "Travel/TinySkies macro-world",
+    "Race vehicle movement/contact",
+    "Combat damage/AI/combat",
+    "Resident host world/collision",
+    "Registry/Librarian asset identity",
+    "Storytelling Maps presentation/timeline only",
+    "No second universal editor/runtime"
+  ]
+}

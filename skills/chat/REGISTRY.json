@@ -552,6 +552,21 @@
         "FBX without Blender"
       ],
       "note": "Source-version audit, read-only probes and integration proposals. WaterBowser is Georg's new model selection; no conversion, runtime promotion, owner change or replacement ChatterBox master. Prefer verified newer donor versions over uploaded v10 snapshots."
+    },
+    {
+      "id": "wsa-mvp-consolidation-2026-09-20",
+      "kind": "workflow",
+      "status": "CURRENT_REFERENCE",
+      "version": "0.2",
+      "path": "skills/chat/workflows/WSA_MVP_CONSOLIDATION_2026-09-20/START_HERE.md",
+      "living": "skills/chat/workflows/WSA_MVP_CONSOLIDATION_2026-09-20/LIVING_INTEGRATION_MASTERPLAN.md",
+      "branchCensus": "skills/chat/workflows/WSA_MVP_CONSOLIDATION_2026-09-20/BRANCH_CENSUS.json",
+      "loadWhen": [
+        "Work/Astra integration",
+        "WIP branch consolidation",
+        "Combat Race Resident ToolBox Environment Storytelling Map integration"
+      ],
+      "note": "Scoped coordination input to existing Astra Integration 01. Mechanical branch census is inventory only; six curated lanes preserve current runtime owners and human gates."
     }
   ],
   "failureRecoveryTemplate": "skills/chat/templates/CLAUDE_DESIGN_FAILURE_RECOVERY_EXPORT.md"

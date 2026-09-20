@@ -959,3 +959,69 @@ Reload the EyeRig Stage and visually check only the lid colors on the four accep
 ## 2026-09-20 · MVP integration board and bounded briefs
 
 Added a planning index plus four source-preserving briefings for World/Race/Audio/Traffic, Combat Raid/Open World, ToolBox Cloudflare consolidation and the shared in-scene editor. Each keeps the named runtime/tool owner, requires direct Cloudflare Stage proof, and explicitly blocks placeholder/parallel-engine work and automatic promotion.
+
+
+## 2026-09-20 · WSA/Astra focus consolidation v0.2
+
+### USER REQUEST
+Consolidate current GitHub check-ins, commits, slices and WIP branches into a token-efficient Work/Astra handoff. Maintain a living masterplan with focus on Combat→melee→Dungeon/Raid/Open World, Walk→Drive→Fly free-roam/race, Resident Zones + ChatterBox mini-quests, ToolBox in-place 3D editor reuse, modular KayKit/Tiny Treats environment recipes, and KFB Storytelling Maps.
+
+### IMPLEMENTATION
+Reused existing PR #113 / branch `orchestration/wsa-mvp-consolidation-2026-09-20`; no second orchestration owner. Synced the branch against current main through a two-parent merge checkpoint, preserved the previous handoff in an archive snapshot, added the six-lane Living Integration Masterplan, Astra handoff, curated status matrix and mechanical four-repo branch census.
+
+### TESTED RESULT
+Census: **4 repos · 243 branch refs · 61 open PRs · 18/18 focus refs found · 0 open-PR head mismatches**. STATUS_MATRIX: **6 unique lanes**. Coordination-only checks; no integrated runtime/browser/freeplay PASS and no public verification of the refreshed navigator claimed.
+
+### SOURCE / INTAKE
+Dropbox confirms the S21 RoomStudy editor export and current Tiny Treats/KayKit intake files. Game Development Studio skill loaded; no local `game-dev` execution surface exposed, so repository-native evidence remains the fallback. No sealed GDS run claimed.
+
+
+## 2026-09-20 · KFB WhackMan v1 Claude Design brief
+
+### USER DIRECTION
+Prepare a modular third-person/free-orbit KFB maze-chase POC from current sources, using the Dungeon Generator as the first spatial foundation. Primary visual sources are KayKit + Tiny Treats; Legacy actors are player/pursuer candidates; current EyeRig v6 is reused. Later FPS/Doom, BlockBits/Voxel, Boxel Blitz, Storytelling Maps/Ludo-Wala-like tabletop and DocCheck variants are roadmap, not v1 scope.
+
+### SOURCE FINDINGS
+No current in-repo Pac-Man/maze-chase runtime owner was found. The strongest internal spatial donor is World Atlas S13.2/S14. Tiny Treats Baked Goods contains exact donut sources. Legacy is a distinct six-bone / 30-clip architecture: PrototypePete is the skinned reference, while Orc Warband figures require the proven Resident Atlas `legacyAssemble()` path. Current Batch EyeRig explicitly sequences Legacy after Medium/Large, so Legacy EyeRig is a gate rather than an assumed capability.
+
+### BRIEFING
+Added `workflows/KFB_WHACKMAN_V1_2026-09-20/` with Claude Design brief + source map. Three stop gates precede the full game: real Dungeon donor identity; real Legacy player/pursuer motion; LegacyFaceHost + existing EyeRig v6. The first map is an original KFB dungeon maze, not a recreation of the classic Pac-Man board.
+
+### RESEARCH INPUT
+User-supplied Perplexity research is advisory only. Useful retained ideas: separate Input/Motor/Orbit camera, MazeGraph navigation independent of meshes, behaviorally distinct pursuers, and strong pickup/power-up readability. `butchler/Pacman-3D` is reference-only until a separate exact license/source review is pinned.
+
+### NEXT GATE
+Claude Design performs only Gate A/B/C and exports complete editable source/evidence before the broader WhackMan loop is promoted.
+
+
+## 2026-09-20 · Work I0 lock-and-select budget slice
+
+### SOURCE DELTA
+The previous four-repo branch census is retained as inventory but no longer recommended as a Work startup read. A small delta records the new Storytelling Maps PR #149 planning lane and confirms that the user-supplied WhackMan research adds architectural ideas, not a new KFB runtime owner.
+
+### EXECUTION STRATEGY
+Add a two-run Work strategy: I0 locks exact current refs and classifies the seven lanes without runtime implementation; I1 starts in a fresh Work chat and implements exactly one selected vertical slice. This reduces repeated history/context loading and prevents unresolved Human/Claude gates from consuming an expensive integration session.
+
+### CURRENT PRODUCT SETTING RECOMMENDATION
+For I0: GPT-5.6 Sol / Medium / Fast off. For the later one-slice I1: GPT-5.6 Sol / High / Fast off. Astra is reserved for a genuinely hard cross-repo integration/debugging gate, not the source-audit phase.
+
+
+## 2026-09-20 · WSA Lead context reuse correction
+
+### CORRECTION
+The prior budget brief recommended a fresh Work chat immediately after I0. Georg already has an active `KFB Lead · Recovery & Integration` Work conversation that is itself the WSA Lead and holds useful integration context. The preferred path is therefore to resume that owner rather than cold-start another integration lead.
+
+### EXECUTION
+I0 remains Sol / Medium / Fast off. GitHub must still be re-fetched because conversation context is continuity, not implementation truth. After the lock, continue in the same WSA Lead by default; raise to Sol / High for harder implementation, and use Astra only for a genuinely hard cross-repo integration/debugging gate. A fresh Work chat becomes a fallback when accumulated context causes confusion or inefficiency, not the default.
+
+
+## 2026-09-20 · WhackMan correction · consume existing Dungeon tools
+
+### CORRECTION
+The initial WhackMan brief could be read as permission to remeasure Dungeon donors inside a new POC HTML. That is now explicitly forbidden. World Atlas already owns the measured Dungeon model/inventory (`KayKit_Dungeon_Model_S13.html` + `HANDOFF_dungeon_S13.md`), S13.2 generator/audits/recipe export, and S14/S21 authoring/edit proof. Registry/Asset Librarian remains the asset discovery/catalog owner.
+
+### RULE
+WhackMan consumes existing measurements, catalogue, generator and editor. The existing World Atlas runtime may continue to run its own measurement functions; Claude must not duplicate them into a second WhackMan-local measurement/catalog layer. New measurement is allowed only for a named `MISSING_DELTA` and must return to the receiving owner.
+
+### IMPLEMENTATION TARGET
+The WhackMan-specific work is now narrowed to S13.2 Recipe → MazeGraph, player/pursuer gameplay, LegacyFaceHost → EyeRig v6, pickups/AI/state and orbit-camera integration.
