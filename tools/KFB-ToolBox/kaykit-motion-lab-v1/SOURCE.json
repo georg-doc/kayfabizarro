@@ -1,0 +1,90 @@
+{
+  "schema": "kfb.toolbox-kaykit-motion-lab-source/0.1",
+  "date": "2026-09-20",
+  "owner": "KFB ToolBox / Motion authoring",
+  "status": "IMPLEMENTATION_CANDIDATE_SOURCE_PINNED",
+  "sourceMain": "bdaea0648f27c0f16e0a737bfba237eb54dd4cbb",
+  "kclResearch": {
+    "pr": 107,
+    "branch": "chatgpt-web/kaykit-creator-learning-2026-09-19",
+    "publicStage": "https://kayfabizarro.pages.dev/kfb-hub/stage/game-dev-studio/kcl-m1-locomotion-sync/",
+    "publicProof": "39/39 PASS",
+    "donorNote": "Reuse measured contact/phase/timeScale concepts; do not promote its actor-specific values as universal."
+  },
+  "actors": {
+    "frizzlebob": {
+      "adapter": "graft",
+      "label": "FrizzleBob · Driver Graft",
+      "rigFamily": "Rig_Medium",
+      "hostPath": "media/3D_Assets/KayKit_Mystery_Series6/2 - August 2023 - Driver/character/gltf/Driver.glb",
+      "hostBlob": "1a25cb515a7f0332df3bc2d1909d7383f06b42fc",
+      "mountReader": "tools/KFB-ToolBox/kfb-rigs-embed-v3/frizzlegraft-v1/graft-mount.v1.js",
+      "mountReaderBlob": "a84b2c92a00f7764088c4916030327eb04a91c5c",
+      "contract": "tools/KFB-ToolBox/kfb-rigs-embed-v3/contracts/kfb-pet-graft-driver.v4.json",
+      "contractBlob": "f202a1c2f1670ab6045176af6621c94041124e76"
+    },
+    "gothgirl": {
+      "adapter": "direct",
+      "label": "GothGirl",
+      "rigFamily": "Rig_Medium",
+      "modelPath": "media/3D_Assets/KayKit_Mystery_Series6/GothGirl/characters/GothGirl.glb",
+      "modelBlob": "b56f67e4ddb7db95ff54fef526148a49289f3915",
+      "attachment": {
+        "id": "microphone",
+        "path": "media/3D_Assets/KayKit_Mystery_Series6/GothGirl/assets/gltf/GothGirl_Microphone.gltf",
+        "blob": "d718959bbf5c3e949823d47e94b94ef2948b0795",
+        "bone": "handslot.r",
+        "status": "SOURCE_PINNED_ATTACHMENT_PROPOSAL"
+      }
+    },
+    "blackKnight": {
+      "adapter": "direct",
+      "label": "Black Knight",
+      "rigFamily": "Rig_Large",
+      "modelPath": "media/3D_Assets/KayKit_Mystery_Series6/3 - September 2024 - Black Knight/characters/BlackKnight.glb",
+      "modelBlob": "ce20440309951a9d85d246b6ff6b0fa399f6c9d8",
+      "attachments": [
+        {
+          "id": "sword",
+          "path": "media/3D_Assets/KayKit_Mystery_Series6/3 - September 2024 - Black Knight/assets/gltf/BlackKnight_Sword_Large.gltf",
+          "blob": "44f043d4a399b2c0ea6223ce0eb42013747bf25e",
+          "bone": "handslot.r",
+          "status": "SOURCE_PINNED_LARGE_ATTACHMENT"
+        },
+        {
+          "id": "shield",
+          "path": "media/3D_Assets/KayKit_Mystery_Series6/3 - September 2024 - Black Knight/assets/gltf/BlackKnight_Shield_Large.gltf",
+          "blob": "272244ef0f02cae8d025342f5a55913fb86912b9",
+          "bone": "handslot.l",
+          "localPush": 0.55,
+          "localPushEvidence": "Resident Atlas measured shield-hand correction",
+          "status": "SOURCE_PINNED_LARGE_ATTACHMENT"
+        }
+      ]
+    }
+  },
+  "libraries": {
+    "Rig_Medium": {
+      "General": {
+        "path": "media/3D_Assets/KayKit_Character_Animations_1.1/Animations/gltf/Rig_Medium/Rig_Medium_General.glb",
+        "blob": "5d16cb6815fc8371705147188813f851c10ba26a"
+      },
+      "MovementBasic": {
+        "path": "media/3D_Assets/KayKit_Character_Animations_1.1/Animations/gltf/Rig_Medium/Rig_Medium_MovementBasic.glb",
+        "blob": "98e965e886ec539e80f8984a77a29b0c1c02e5e5"
+      }
+    },
+    "Rig_Large": {
+      "General": {
+        "path": "media/3D_Assets/KayKit_Character_Animations_1.1/Animations/gltf/Rig_Large/Rig_Large_General.glb",
+        "blob": "6a4b23c8289e1bf3b82ad62c5ecb31b78630bcfd"
+      },
+      "MovementBasic": {
+        "path": "media/3D_Assets/KayKit_Character_Animations_1.1/Animations/gltf/Rig_Large/Rig_Large_MovementBasic.glb",
+        "blob": "f1f9df3f11523c6c92e8c6bb52b9f906686204a3"
+      }
+    }
+  },
+  "stageTarget": "https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/kaykit-motion-lab-v1/",
+  "consumerBoundary": "Measurement/authoring only. No world movement, physics, gameplay state or damage ownership."
+}
