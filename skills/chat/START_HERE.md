@@ -357,6 +357,6 @@ The accepted S21 R02 treasure/dining room is now an isolated S14 room-authoring 
 - Blender imported 37 manifest instances / 39 objects and saved `KFB_R02.blend`;
 - Ubuntu headless review rendering is frozen after two repair passes on missing EGL after the save.
 
-Human Stage: `https://kayfabizarro.pages.dev/kfb-hub/stage/minigames/dungeon-raid-v2/` once PUBLIC VERIFIED. Until then do not send it as a test link.
+Human Stage: **PUBLIC VERIFIED 17/17 PASS** · `https://kayfabizarro.pages.dev/kfb-hub/stage/minigames/dungeon-raid-v2/` · run `35483284605` / job `106004849935` · publication `cloudflare-live@92d1fb91413457b3288db22dc7be8a487f853065`. This is now the direct human test link.
 Tiny Treats remains in its separate Venue Generator lane. Combat/Raid remains gated by CA2.
 Exactly one gate: Georg reviews R02 as the room blueprint and the preserved Blender file before any BSP integration.

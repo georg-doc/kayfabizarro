@@ -1,6 +1,6 @@
 # RETURN · Dungeon Room Blueprint S14 · 2026-09-20
 
-Status: **IMPLEMENTED / BROWSER PROVEN / BLENDER FILE BUILT / HUMAN FORM GATE OPEN**
+Status: **IMPLEMENTED / PUBLIC VERIFIED / BLENDER FILE BUILT / HUMAN FORM GATE OPEN**
 
 ## Slice
 
@@ -10,7 +10,7 @@ Status: **IMPLEMENTED / BROWSER PROVEN / BLENDER FILE BUILT / HUMAN FORM GATE OP
 - Draft PR: `#126`
 - base main: `b2d5dc445dff045c4579075bee231f2228014319`
 - tested implementation head: `da04e03378f79ca973a3768e0c934bc5372b1aa5`
-- evidence/recovery head: `e2d9a1fa24d024eb89ad513dc3b97762c0fb460b`
+- evidence/recovery source head: `e2d9a1fa24d024eb89ad513dc3b97762c0fb460b`\n- public-evidence closure parent: `c02d062c6ad7e332e554b74c54f9bbdd95cabbfa`
 - fixed Stage route: `https://kayfabizarro.pages.dev/kfb-hub/stage/minigames/dungeon-raid-v2/`
 - Live: unchanged
 - auto-merge: disabled / not requested
@@ -67,9 +67,22 @@ Chromium + Blender CI was used instead.
 
 ## Publication
 
-Candidate Stage files and Hub routing are included in this branch. PUBLIC VERIFIED is **not claimed**
-until the exact Cloudflare route and its `SOURCE.json` marker are opened after mirroring to
-`cloudflare-live`.
+**PUBLIC VERIFIED · HUMAN FORM GATE OPEN**
+
+- exact Stage: `https://kayfabizarro.pages.dev/kfb-hub/stage/minigames/dungeon-raid-v2/`
+- publication branch: `cloudflare-live@92d1fb91413457b3288db22dc7be8a487f853065`
+- public Chromium proof: **17/17 PASS**
+- run/job: `35483284605 / 106004849935`
+- artifact: `10597095887`
+- artifact digest: `sha256:4a601dbbe67940fbed303c6d283bad7531fdc0438f67da3ae7fca239e9a43c51`
+- public screenshot SHA-256: `c150763042ac15096a9db2c1ac009e0e0ba6052ac8eb66607c165497d79555ec`
+- public report SHA-256: `08f0ac204c506e562e0e92abd9034d202ffff1022791795641d37d35106d4bf5`
+- deployed SOURCE marker confirmed implementation `e2d9a1fa24d024eb89ad513dc3b97762c0fb460b`
+  and tested runtime `da04e03378f79ca973a3768e0c934bc5372b1aa5`
+- public room proof: R02, 41 root children, 21 visible props, 37 live Blender-manifest instances,
+  0 page/console errors, 0 failed HTTP assets.
+
+This is Stage verification only. Live remains unchanged and Form approval still requires Georg's review.
 
 ## Boundaries
 

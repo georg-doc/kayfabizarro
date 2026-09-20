@@ -24,6 +24,12 @@ Full recovery is under `failure-recovery/S14_BLENDER_REVIEW_GATE_2026-09-20/`.
 No Tiny Treats merge, no Combat/Raid runtime and no automatic promotion are implied. One next gate:
 human visual review of R02 + the preserved Blender file.
 
+**PUBLIC VERIFIED · exact Cloudflare Stage 17/17 PASS.** Run `35483284605`, job
+`106004849935`, artifact `10597095887`; publication branch
+`cloudflare-live@92d1fb91413457b3288db22dc7be8a487f853065`. Chromium opened the fixed route,
+entered the embedded R02 room and saw 0 browser errors / 0 failed HTTP assets. Human Form approval
+remains open; Live is unchanged.
+
 ---
 
 ## S13.3 · 2026-09-17 · Licht · und die Balkonkante ist eine Brüstung, keine Wand

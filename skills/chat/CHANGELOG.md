@@ -12,6 +12,13 @@ blueprint and does not yet add Raid/Combat or Tiny Treats.
 - Blender 4.0.2 imported 37 manifest instances / 39 objects and saved a valid `KFB_R02.blend`;
 - automated Ubuntu review render is frozen after two repair passes because EGL is missing after the save.
 
+### PUBLIC STAGE
+**17/17 PASS · PUBLIC VERIFIED.** Exact fixed route: `https://kayfabizarro.pages.dev/kfb-hub/stage/minigames/dungeon-raid-v2/`. Public proof run
+`35483284605`, job `106004849935`, artifact `10597095887`; publication branch
+`cloudflare-live@92d1fb91413457b3288db22dc7be8a487f853065`. The public R02 room loaded with
+41 root children / 21 visible props / 37 manifest instances, 0 browser errors and 0 failed HTTP
+assets.
+
 ### GATE
 Human review only: fixed Stage `https://kayfabizarro.pages.dev/kfb-hub/stage/minigames/dungeon-raid-v2/` plus preserved Blender file. Do not integrate S14 into the
 BSP generator or expand to Tiny Treats until this gate is resolved.

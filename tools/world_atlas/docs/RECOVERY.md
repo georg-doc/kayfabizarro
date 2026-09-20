@@ -10,7 +10,7 @@
 - automated Linux review PNG/GLB: **FROZEN BLOCKED** after two repair passes (missing EGL after save)
 - failure recovery: `../failure-recovery/S14_BLENDER_REVIEW_GATE_2026-09-20/START_HERE.md`
 - current Return: `RETURN_dungeon_room_blueprint_S14_2026-09-20.md`
-- human Stage route: `https://kayfabizarro.pages.dev/kfb-hub/stage/minigames/dungeon-raid-v2/` (do not call PUBLIC VERIFIED until the exact Cloudflare route is checked)
+- human Stage route: `https://kayfabizarro.pages.dev/kfb-hub/stage/minigames/dungeon-raid-v2/` — **PUBLIC VERIFIED 17/17 PASS** · run `35483284605` · job `106004849935` · `cloudflare-live@92d1fb91413457b3288db22dc7be8a487f853065`
 
 Exactly one current gate: visually review the isolated R02 room and preserved Blender file. Do not integrate it into the BSP generator or start Tiny Treats rooms before that review.
 

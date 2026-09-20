@@ -52,3 +52,6 @@ dem Save an EGL blockiert und gemäß Recovery-Regel eingefroren. Siehe
 `failure-recovery/S14_BLENDER_REVIEW_GATE_2026-09-20/START_HERE.md`.
 
 S14 ist noch **kein BSP-/Raid-Runtime-Modul**. Genau das bleibt bis zur menschlichen Room-/Blender-Abnahme getrennt.
+
+
+Public Stage for S14 R02: **PUBLIC VERIFIED 17/17 PASS** · `https://kayfabizarro.pages.dev/kfb-hub/stage/minigames/dungeon-raid-v2/` · run `35483284605` / job `106004849935` · `cloudflare-live@92d1fb91413457b3288db22dc7be8a487f853065`. Human Form review remains open.
