@@ -1,0 +1,24 @@
+{
+  "schema": "kfb.toolbox-home.source/2",
+  "date": "2026-09-21",
+  "owner": "KFB ToolBox / Hub integration",
+  "sourceBranch": "promote/hub-ui-v2-accepted-2026-09-21",
+  "implementationHead": "7b23009f1f863d1793421de72862b90e42f650a8",
+  "baseMain": "e95f7291cae15f5f0d5f441a5ddd6fecc4e0243c",
+  "designDonor": {
+    "pr": 141,
+    "branch": "work/kfb-hub-paper-dark-previews-2026-09-20",
+    "publicStage": "https://kayfabizarro.pages.dev/kfb-hub/stage/hub-ui-v2/",
+    "humanDecision": "ACCEPTED_BY_GEORG_2026-09-21"
+  },
+  "stageRoute": "https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/",
+  "status": "SOURCE_IMPLEMENTED_PUBLICATION_PENDING",
+  "routeAudit": "ROUTE_AUDIT.json",
+  "retainedOwners": [
+    "Asset Registry/Librarian = asset identity",
+    "World Atlas = environment/dungeon authoring",
+    "Resident hosts = resident scene/runtime ownership",
+    "EyeRig/Motion/Combat/Race remain their existing owners",
+    "ToolBox Home = router only"
+  ]
+}
