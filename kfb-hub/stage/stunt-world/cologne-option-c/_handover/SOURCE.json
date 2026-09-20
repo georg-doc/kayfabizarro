@@ -1,7 +1,7 @@
 {
   "schema": "kfb.stage.source.v1",
   "slice": "cologne-option-c",
-  "status": "SOURCE_LOCAL_BROWSER_PASS_PUBLIC_PENDING",
+  "status": "SOURCE_LOCAL_BROWSER_PUBLIC_PASS",
   "source": {
     "repository": "georg-doc/KFB-Stunt-Car-Race",
     "privateMain": "31d834218f0a79f193a44b054e57454d29c305c2",
@@ -12,6 +12,7 @@
     "repository": "georg-doc/kayfabizarro",
     "branch": "wsa/cologne-option-c-stage-2026-09-20",
     "implementationHead": "4bc52ef99d90cd9db216c9c1ff3071f4d5f03b86",
+    "cloudflareHead": "75a6d64ca0b18d1244017896da8b26bdbe83bcfd",
     "stagePath": "kfb-hub/stage/stunt-world/cologne-option-c/",
     "stageUrl": "https://kayfabizarro.pages.dev/kfb-hub/stage/stunt-world/cologne-option-c/"
   },

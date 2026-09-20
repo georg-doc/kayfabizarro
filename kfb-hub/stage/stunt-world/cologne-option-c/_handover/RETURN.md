@@ -1,6 +1,6 @@
 # RETURN · KFB Cologne Race · Option C · public Stage candidate
 
-Status: **SOURCE + LOCAL BROWSER PASS · PUBLIC CLOUDFLARE PROOF PENDING**  
+Status: **SOURCE + LOCAL BROWSER PASS · PUBLIC CLOUDFLARE PASS**
 Date: 2026-09-20  
 Human gate: Georg camera/tunnel + road-marking + overall-feel review
 
@@ -33,6 +33,8 @@ Human gate: Georg camera/tunnel + road-marking + overall-feel review
 - Mobile 390×844 boot PASS; HUD remains visible; Doku panel fits without taking permanent FOV.
 - Reproducible tunnel-start screenshot shows the camera inside the arch corridor.
 - Browser console: 0 errors, 0 warnings in desktop/tunnel/mobile checks.
+- Public Cloudflare head `75a6d64ca0b18d1244017896da8b26bdbe83bcfd` opened at the exact Stage route; the tunnel gate reached the playable scene with 0 errors and 0 warnings.
+- The public KFB Hub opened at the same publication and visibly lists the Cologne Option C briefing and Stage route.
 
 ## Not claimed
 
