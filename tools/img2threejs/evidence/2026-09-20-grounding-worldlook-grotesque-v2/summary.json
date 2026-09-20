@@ -1,0 +1,75 @@
+{
+  "schema": "kfb.grounding-worldlook-grotesque-v2.qa/1.0",
+  "date": "2026-09-20",
+  "branch": "img2threejs/grounding-worldlook-grotesque-v2-2026-09-20",
+  "testedHead": "2210e54e3191c478f58b35cfcf997118a9658a91",
+  "pr": 118,
+  "workflow": {
+    "id": 35479355063,
+    "conclusion": "success",
+    "artifactId": 10595357252,
+    "artifactDigest": "sha256:daa0a2575b83fe25b75aea85c555b900d064975410fcdb0222961afbf1cd81d9"
+  },
+  "static": {
+    "passed": 25,
+    "total": 25
+  },
+  "browser": {
+    "passed": 15,
+    "total": 15,
+    "errors": 0,
+    "failedResources": 0
+  },
+  "scene": {
+    "osmBuildings": 90,
+    "legacyTriangles": 9459,
+    "grotesqueV2Triangles": 4936,
+    "windows": 453,
+    "doors": 90,
+    "domTriangles": 1050,
+    "domVisibleBase": false,
+    "domVerticalDropM": 1,
+    "terrain": {
+      "vertices": 10976,
+      "triangles": 21534,
+      "spacingM": 7.5,
+      "seed": 1842,
+      "sineTerrain": false,
+      "surface": "simplex-staggered-triangles"
+    }
+  },
+  "screenshots": [
+    "01-v2-tiny-harmonic.png",
+    "02-legacy-card-stack.png",
+    "03-v2-flat-debug.png",
+    "04-v2-tiny-identity.png"
+  ],
+  "visualReview": {
+    "status": "PASS_FOR_HUMAN_GATE",
+    "observations": [
+      "Tiny Surface removes the broad sinusoidal stripe/band structure from Pilot 08 and reads as irregular faceted terrain.",
+      "Grotesque v2 reads as chunkier building masses with fewer floor bands; legacy A/B visibly reads more like thin shifted cards.",
+      "The Cathedral has no rendered round base, no plaza cylinder and no foundation mesh; terrain/support field owns the ground transition.",
+      "Harmonic Cathedral palette sits closer to the OSM city family than the identity palette."
+    ],
+    "unresolved": [
+      "This is still a Hürth style test, not a real Cologne geographic scene.",
+      "Tiny Surface is a local planar adaptation of the TinySkies/Travel simplex recurrence, not the spherical Travel terrain owner.",
+      "Door/window geometry is KISS material-code shorthand; KayKit/Frankenstein asset replacement is not implemented.",
+      "No public Cloudflare Stage URL is claimed yet."
+    ]
+  },
+  "sourceBlobs": {
+    "slice": "0531f51785e6cd251fbd8d59f2f7ecaaa069ef93",
+    "index": "79f16b09cb1ed137d5dad1df29b2cd1e5c6676c5",
+    "viewer": "ee27fff646930327056b33278e74de80dab44995",
+    "noise": "0978ff1678548fad9525a7066f51e5cac56731ec",
+    "grounding": "884d32c3395ccebe572f5f6fe2e28102f29facb2",
+    "terrain": "58d5dcf91e396e68063fe5b1dc6d4d485b0aab66",
+    "groundLandmark": "5712c7aa7b7a2fd83b7e9fd6cfe78b296038417f",
+    "cityV2": "d5d159cad8ca9cfedec32f5968ef9a7b1a7c7dcc",
+    "browserProof": "2cbefb99aaeb5e0505861473b26d8bfa667e1934",
+    "sourceTest": "86de6b5d2f76572e685042611a1e22b368569e9b",
+    "cologneSprint": "66db07f8e791a704c50d8cded45bc1bd04d421bf"
+  }
+}
