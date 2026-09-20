@@ -8,6 +8,8 @@ Bei Ablösung neuen Auftrag anlegen und alten mit einem additiven Nachfolgerhinw
 
 ## Aktuelle ergänzende Übergaben
 
+- [Inline 3D Edit Layer · S21 Intake](INLINE_3D_EDIT_LAYER_INTAKE_2026-09-20/START_HERE.md) — **REVIEWED SOURCE INTAKE**. Dungeon Room Study S21 pins the object-attached TransformControls editor, semantic part/group scope, snap/drop and recipe-patch return. Do not extract a shared module until the second real host (Dungeon/World Atlas) proves the seam; Resident/Stage/Environment/Platformer follow as separate adapters.
+
 - [2D/2.5D Resident Actor Integration](2D_RESIDENT_ACTOR_WSA_2026-09-20/START_HERE.md) — **PREPARED WSA CHECK-IN**. Eumel as first source-exact 2.5D Resident/DocCheck Project Island actor; Resident index promotion waits for a browser-proven world-space adapter. Doccy is topology-template only until source art arrives.
 
 - [2D Animation Studio Alignment](2D_ANIMATION_STUDIO_ALIGNMENT_2026-09-18/START_HERE.md) — **CURRENT CROSS-TOOL ALIGNMENT**. EyeRig-v6 bleibt 3D-Donor; 2D Studio nutzt denselben semantischen Steuervertrag über einen SVG-Adapter. Keine Owner-Mischung, kein ToolBox-Redesign.

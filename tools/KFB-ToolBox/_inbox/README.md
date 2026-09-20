@@ -60,6 +60,21 @@ Preserved older uploads:
 - `KFB ToolBox Stage First v3.zip` · historical design/rescue donor, not current SSOT
 - `KFB ToolBox Stage v1.zip`, `KFB ToolBox(1).zip`, `KFB ToolBox.zip` · historical uploads; filename alone does not establish precedence.
 
+## 2026-09-20 · Dungeon Room Study S21 + Inline 3D Editor · REVIEWED SOURCE INTAKE
+
+Source:
+`KayKit Environment Atlas + Dungeon Generator + 3D scene editor TOOL (5)/KFB_Dungeon_RoomStudy_S21_EXPORT_2026-09-20/`
+
+Review:
+`../_handover/INLINE_3D_EDIT_LAYER_INTAKE_2026-09-20/START_HERE.md`
+
+Classification:
+- Claude Design / World Atlas source intake;
+- S21 Mini-Editor source and cross-tool editor contract are present;
+- current promoted World Atlas is **not** silently replaced;
+- no second Scene Builder / Registry / runtime owner;
+- next implementation gate is one Dungeon/World Atlas second-host proof before extracting a shared `lib/edit-layer.js`.
+
 ## Atlas Intake · REVIEWED / PROMOTED CANDIDATES
 
 - `KayKit Resident Atlas/` — complete `KFB_Resident_Atlas_S6` intake; 21 Residents + Ensemble.
