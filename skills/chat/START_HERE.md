@@ -343,3 +343,25 @@ Next gate is one A/B/C design/geometry proof:
 Do not tune the existing TC-01 ribbon/zone composition forward. TinySkies/Travel remains one spherical WorldSurface donor; OSM remains geographic/semantic truth; OMS/Grotesque remains a stylised environment donor; Race retains driving/contact ownership.
 
 The wider KFB target may support Sphere / Plane / InnerSphere and later structure/tunnel/underwater/free-space routes, but do not build a mega-engine before Sphere + Plane share one proven TrackPatch contract.
+
+
+## 2026-09-20 · Claude Design · Cologne Race Option C → A briefing candidate
+
+Public briefing candidate:
+`skills/chat/workflows/KFB_COLOGNE_RACE_OPTION_C_2026-09-20/`
+
+Planning branch:
+`planning/cologne-race-option-c-claude-2026-09-20`
+
+Purpose:
+- first playable **Option C · Elastic Cartoon World** Dom Loop;
+- later matched **Option A · Hybrid Default** comparison;
+- public-repo coordination so Claude Design does not depend on the private Stunt Race repository.
+
+Important gates:
+- Georg attaches the Option C + Option A visual authority boards to Claude;
+- real Dom/Zentrum OSM export must be produced from the checked-in Overpass query before the final Dom Loop blockout;
+- FILAMENT is reference-only: derive route grammar and re-author for real geography; do not copy source/code/data;
+- Claude returns a complete export + evidence + GitHub metadata; Work/ChatGPT owns commit/PR/Cloudflare publication.
+
+Do not treat this planning candidate as implemented runtime or public Stage.
