@@ -1,7 +1,7 @@
 {
   "schema": "kfb.combat.weapon-profile-set/0.1-candidate",
   "date": "2026-09-20",
-  "status": "BRANCH_BROWSER_MEASURED_HUMAN_OPEN",
+  "status": "PUBLIC_VERIFIED_HUMAN_OPEN",
   "sourceEvidence": {
     "run": 35487908222,
     "job": 106017552194,
@@ -127,5 +127,12 @@
     "Arena rewards/runflow",
     "Arena audio"
   ],
-  "humanAcceptance": "PENDING"
+  "humanAcceptance": "PENDING",
+  "publicEvidence": {
+    "run": 35488456185,
+    "job": 106019011425,
+    "checks": "55/55 PASS",
+    "artifactId": 10597659083,
+    "artifactDigest": "sha256:f641fee4394584f12013b2edb455d31ec015e50f48f71fbdef40369ed3f2705c"
+  }
 }
