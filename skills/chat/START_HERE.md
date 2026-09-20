@@ -343,3 +343,33 @@ Next gate is one A/B/C design/geometry proof:
 Do not tune the existing TC-01 ribbon/zone composition forward. TinySkies/Travel remains one spherical WorldSurface donor; OSM remains geographic/semantic truth; OMS/Grotesque remains a stylised environment donor; Race retains driving/contact ownership.
 
 The wider KFB target may support Sphere / Plane / InnerSphere and later structure/tunnel/underwater/free-space routes, but do not build a mega-engine before Sphere + Plane share one proven TrackPatch contract.
+
+
+## 2026-09-20 · Cologne Race Option C · Claude Design ready
+
+Current public briefing candidate:
+`skills/chat/workflows/KFB_COLOGNE_RACE_OPTION_C_2026-09-20/START_HERE.md`
+
+Recovery:
+`skills/chat/workflows/KFB_COLOGNE_RACE_OPTION_C_2026-09-20/RECOVERY.md`
+
+Coordination:
+- repo: `georg-doc/kayfabizarro`
+- branch: `planning/cologne-race-option-c-claude-r3-2026-09-20`
+- Draft PR: **#134**
+- runtime implementation: **NOT STARTED**
+
+Input gates are closed:
+- real cached `dom-zentrum-v0` OSM / Overpass data is on public main;
+- both Option-C visual authority PNGs are pinned by exact path + blob SHA;
+- Claude requires no separate user upload to start Slice C.
+
+FILAMENT is identified as the original SP13KTRA **second campaign circuit / human Track #02** at `KilledByAPixel/SP13KTRA@166ad838`. Its repository is All rights reserved. Treat FILAMENT only as a high-level benchmark for tempo, compression/release, tunnel/arch beat, speed readability and overhead silhouette. Do not copy/adapt/derive its route geometry, source, coordinates, palette, assets, materials or scale.
+
+Current Slice-C priority:
+**Option-C visual language → cool playable Track → recognisable Cologne anchors → OSM context → exact OMS architecture fidelity.**
+
+The first Dom loop does not need to trace streets 1:1. Rooftop, alley, courtyard, ring-road, ramp, bridge and explicit elevated Track segments are permitted when they improve the route; OSM anchors Köln but does not dictate the Track centerline.
+
+Exactly one next gate:
+Claude Design builds the first playable Option-C Dom Loop from the pinned boards + cached OSM and returns the complete export/evidence package for GitHub/Stage intake.
