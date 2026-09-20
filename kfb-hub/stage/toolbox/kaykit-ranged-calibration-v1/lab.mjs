@@ -18,7 +18,7 @@ const PATHS={
   ranged:'media/3D_Assets/KayKit_Character_Animations_1.1/Animations/gltf/Rig_Medium/Rig_Medium_CombatRanged.glb',
   gun:'media/3D_Assets/Platformer Game Kit - Dec 2021/Character/glTF/Character_Gun.gltf'
 };
-const GUN_CFG={anchor:'slot',class:'pistol',url:rawAsset(PATHS.gun),node:'gun',hand:'right',ex:-14,ey:77,ez:0,ox:0,oy:-0.03,oz:0,scale:0.37};
+const BASE_GRIP={ex:-14,ey:77,ez:0,ox:0,oy:-0.03,oz:0,scale:0.37};\nconst HUMAN_PITCH_DELTA_DEG=-5;\nconst GUN_CFG={anchor:'slot',class:'pistol',url:rawAsset(PATHS.gun),node:'gun',hand:'right',...BASE_GRIP,ex:BASE_GRIP.ex+HUMAN_PITCH_DELTA_DEG};
 const REQUIRED=['Ranged_1H_Aiming','Ranged_1H_Reload','Ranged_1H_Shoot','Ranged_1H_Shooting'];
 
 const stage=document.getElementById('stage'), statusEl=document.getElementById('status'), clipSel=document.getElementById('clip');
@@ -102,7 +102,7 @@ async function mountWeaponDirect({figure,cfg}){
 }
 function muzzlePose(weapon){
   const p=weapon.muzzle.getWorldPosition(new THREE.Vector3()),o=weapon.holder.getWorldPosition(new THREE.Vector3()),d=p.clone().sub(o);if(d.lengthSq()<1e-8)d.set(0,0,1);d.normalize();
-  return {worldPosition:p.toArray().map(x=>+x.toFixed(4)),worldForward:d.toArray().map(x=>+x.toFixed(5)),localPosition:weapon.muzzle.position.toArray().map(x=>+x.toFixed(4)),localForward:weapon.muzzle.position.clone().normalize().toArray().map(x=>+x.toFixed(5))};
+  const pitchDeg=Math.atan2(d.y,Math.hypot(d.x,d.z))*180/Math.PI;\n  return {worldPosition:p.toArray().map(x=>+x.toFixed(4)),worldForward:d.toArray().map(x=>+x.toFixed(5)),worldPitchDeg:+pitchDeg.toFixed(3),localPosition:weapon.muzzle.position.toArray().map(x=>+x.toFixed(4)),localForward:weapon.muzzle.position.clone().normalize().toArray().map(x=>+x.toFixed(5))};
 }
 function bindDelta(a,b){const qa=new THREE.Quaternion().fromArray(a.quat),qb=new THREE.Quaternion().fromArray(b.quat);return{slotPosition:+new THREE.Vector3().fromArray(a.pos).distanceTo(new THREE.Vector3().fromArray(b.pos)).toFixed(8),slotQuaternionDeg:+(qa.angleTo(qb)*180/Math.PI).toFixed(6),forearm:+Math.abs(a.forearm-b.forearm).toFixed(8)}}
 function velocitySeries(clip){
@@ -123,7 +123,7 @@ async function loadActors(){
   await ensureModules();
   const left=new THREE.Group();left.position.x=-1.6;scene.add(left);
   const pet=graftMod.pickGraftPet(graftContract,'graft-driver');
-  const graft=await graftMod.mountGraft({THREE,loader,parent:left,pet,lib:graftContract,camera,animation:'host',poseOverClip:false,override:{graft:{weapon:{on:true,anchor:'slot',class:'pistol'}}}});
+  const graft=await graftMod.mountGraft({THREE,loader,parent:left,pet,lib:graftContract,camera,animation:'host',poseOverClip:false,override:{graft:{weapon:{on:true,anchor:'slot',class:'pistol',ex:GUN_CFG.ex,ey:GUN_CFG.ey,ez:GUN_CFG.ez,ox:GUN_CFG.ox,oy:GUN_CFG.oy,oz:GUN_CFG.oz,scale:GUN_CFG.scale}}}});
   if(!graft.weapon||graft.report.weapon?.status!=='OK')throw Error('FB weapon mount failed '+JSON.stringify(graft.report.weapon));
   const fb={id:'frizzlebob',label:'FrizzleBob · Driver Graft',root:left,figure:graft.figure,mixer:new THREE.AnimationMixer(graft.figure),update:(dt)=>graft.update(dt,camera),dispose:()=>graft.dispose(),weapon:graft.weapon,bind:measureBind(graft.figure),arrow:makeArrow(),action:null,markers:[],fired:new Set()};
 
@@ -175,13 +175,13 @@ function reportText(l){
   const r=l.weapon.report,p=muzzlePose(l.weapon);return[
     'bone '+r.bone+' · anchor '+r.anchor,
     'forearm '+r.forearm,
-    'grip Euler '+JSON.stringify(r.grip?.eulerDeg||[GUN_CFG.ex,GUN_CFG.ey,GUN_CFG.ez])+' deg',
+    'grip Euler '+JSON.stringify(r.grip?.eulerDeg||[GUN_CFG.ex,GUN_CFG.ey,GUN_CFG.ez])+' deg',\n    'human pitch correction '+HUMAN_PITCH_DELTA_DEG+' deg from Studio base '+BASE_GRIP.ex+' deg',
     'grip offset/forearm '+JSON.stringify(r.grip?.offsetForearm||[GUN_CFG.ox,GUN_CFG.oy,GUN_CFG.oz]),
     'scale '+(r.grip?.scale??GUN_CFG.scale),
     'barrel '+r.barrelAxis+' · '+r.barrelLength,
     'muzzle local '+JSON.stringify(r.muzzleLocal),
     'forward local '+JSON.stringify(p.localForward),
-    'forward world '+JSON.stringify(p.worldForward)
+    'forward world '+JSON.stringify(p.worldForward),\n    'world pitch '+p.worldPitchDeg+' deg'
   ].join('\n')
 }
 function renderReports(){
@@ -191,7 +191,7 @@ function renderReports(){
 }
 function snapshot(){
   const shoot=markerReport(rangedMap.get('Ranged_1H_Shoot')),auto=markerReport(rangedMap.get('Ranged_1H_Shooting'));
-  return{ready,error,mode:currentMode,currentClip,source:{modelPin:MODEL_PIN,modulePin:MODULE_PIN,assetPin:ASSET_PIN,gun:PATHS.gun,ranged:PATHS.ranged},inventory:[...inventory],required:[...REQUIRED],shotEvents,
+  return{ready,error,mode:currentMode,currentClip,source:{modelPin:MODEL_PIN,modulePin:MODULE_PIN,assetPin:ASSET_PIN,gun:PATHS.gun,ranged:PATHS.ranged},gripTuning:{studioBaseEulerDeg:[BASE_GRIP.ex,BASE_GRIP.ey,BASE_GRIP.ez],humanPitchDeltaDeg:HUMAN_PITCH_DELTA_DEG,effectiveEulerDeg:[GUN_CFG.ex,GUN_CFG.ey,GUN_CFG.ez]},inventory:[...inventory],required:[...REQUIRED],shotEvents,
     bind:lanes.length?{frizzlebob:lanes[0].bind,gothgirl:lanes[1].bind,delta:bindDelta(lanes[0].bind,lanes[1].bind)}:null,
     markers:{shoot,continuous:auto},
     actors:Object.fromEntries(lanes.map(l=>[l.id,{weaponReport:JSON.parse(JSON.stringify(l.weapon.report)),muzzle:muzzlePose(l.weapon),scheduledMarkers:[...l.markers],actionTime:l.action?+l.action.time.toFixed(4):null,actionPaused:!!l.action?.paused}])),
