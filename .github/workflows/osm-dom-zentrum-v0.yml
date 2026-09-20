@@ -1,0 +1,89 @@
+name: OSM Dom Zentrum v0 · fetch normalize design context
+
+on:
+  push:
+    branches:
+      - planning/cologne-race-option-c-claude-2026-09-20
+    paths:
+      - 'tools/osm-city-lab/data/dom-zentrum-v0/SOURCE_SPEC.json'
+      - 'tools/osm-city-lab/data/dom-zentrum-v0/query.overpassql'
+      - 'tools/osm-city-lab/scripts/build-dom-zentrum-design-context.mjs'
+      - '.github/workflows/osm-dom-zentrum-v0.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: osm-dom-zentrum-v0
+  cancel-in-progress: true
+
+jobs:
+  fetch-build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.sha }}
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Syntax
+        run: |
+          node --check tools/osm-city-lab/scripts/fetch-city.mjs
+          node --check tools/osm-city-lab/scripts/build-city.mjs
+          node --check tools/osm-city-lab/scripts/analyze-city.mjs
+          node --check tools/osm-city-lab/scripts/build-dom-zentrum-design-context.mjs
+
+      - name: Fetch current OSM / Overpass source
+        run: node tools/osm-city-lab/scripts/fetch-city.mjs dom-zentrum-v0
+
+      - name: Normalize into KFB metre frame
+        run: node tools/osm-city-lab/scripts/build-city.mjs dom-zentrum-v0
+
+      - name: Analyze city fixture
+        run: node tools/osm-city-lab/scripts/analyze-city.mjs dom-zentrum-v0
+
+      - name: Build Claude / race design context
+        run: node tools/osm-city-lab/scripts/build-dom-zentrum-design-context.mjs
+
+      - name: Validate Dom design gate
+        run: |
+          node - <<'NODE'
+          const fs=require('fs');
+          const root='tools/osm-city-lab/data/dom-zentrum-v0/';
+          const p=JSON.parse(fs.readFileSync(root+'PROVENANCE.json','utf8'));
+          const n=JSON.parse(fs.readFileSync(root+'normalized.json','utf8'));
+          const d=JSON.parse(fs.readFileSync(root+'DESIGN_CONTEXT.json','utf8'));
+          const names=d.heroCandidates.map(x=>x.name).join(' | ');
+          const must=(name,pass,details)=>{ if(!pass) throw Error(name+': '+JSON.stringify(details)); console.log('PASS',name,details); };
+          must('raw elements',p.elementCount>1000,p.elementCount);
+          must('roads',d.counts.roads>100,d.counts.roads);
+          must('buildings',d.counts.buildings>300,d.counts.buildings);
+          must('railways',d.counts.railwayWays>5,d.counts.railwayWays);
+          must('water context',d.counts.waterLines>0 || n.features.landuse.some(x=>/water/i.test(x.class)),{waterLines:d.counts.waterLines});
+          must('Dom hero',/Kölner Dom|Cologne Cathedral/i.test(names),names);
+          must('HBF hero',/Hauptbahnhof/i.test(names),names);
+          must('Rhine bridge/context',/Hohenzollernbrücke|Rhein/i.test(names),names);
+          must('ODbL attribution',p.attribution?.license==='ODbL 1.0',p.attribution);
+          console.log(JSON.stringify({status:'PASS',counts:d.counts,heroes:d.heroCandidates.slice(0,30).map(x=>x.name)},null,2));
+          NODE
+
+      - name: Commit cached source + normalized design dataset
+        env:
+          TARGET_BRANCH: planning/cologne-race-option-c-claude-2026-09-20
+        run: |
+          git config user.name "KFB OSM Data Bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add             tools/osm-city-lab/data/dom-zentrum-v0/source.overpass.json             tools/osm-city-lab/data/dom-zentrum-v0/PROVENANCE.json             tools/osm-city-lab/data/dom-zentrum-v0/normalized.json             tools/osm-city-lab/data/dom-zentrum-v0/DESIGN_CONTEXT.json             tools/osm-city-lab/scenes/dom-zentrum-v0.json             tools/osm-city-lab/evidence/dom-zentrum-v0-s0-report.json             tools/osm-city-lab/evidence/dom-zentrum-v0-fixture-analysis.json
+          if git diff --cached --quiet; then
+            echo "No OSM data delta."
+            exit 0
+          fi
+          git commit -m "data(osm): cache Dom Zentrum v0 design dataset"
+          git pull --rebase origin "$TARGET_BRANCH"
+          git push origin HEAD:"$TARGET_BRANCH"
