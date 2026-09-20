@@ -123,7 +123,7 @@ export function makeResidentScenePatchAdapter(ctx) {
     if(e.key==='s')edit.setMode('scale');
   });
 
-  return { edit, bindScene, toggleEditor, get session(){return session;}, setStatus };
+  return { edit, bindScene, toggleEditor, get session(){return session;}, resolve:(id)=>records.get(id)||null, editableNodes:()=>[...records.values()], setStatus };
 }
 
 export function stampResidentPatchRecords(def,nodes) {
