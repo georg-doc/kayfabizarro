@@ -44,3 +44,28 @@
 - Browser/WebGL execution of P0.2: NOT YET CLAIMED.
 - Cloudflare public deployment: NOT YET VERIFIED.
 - Georg visual acceptance: OPEN.
+
+
+## 2026-09-20 · Tactical Game Map v1 planning
+
+### DECISION
+- Use KayKit BoardGameBits as the physical tabletop grammar for Map Board tactical/story presentation.
+- Reuse exact `playerstand_*` and `playercard_*` donors for upright media standees.
+- Reuse exact KayKit D4/D6/D8/D20 where available.
+- KayKit does not provide D10/D12 in this pack; prefer the pinned Three.js/Cannon `3d-dice/dice-box-threejs` donor for the missing dice/result physics seam.
+- Use `skills/kfb-cartoon-animation_v2.md` for standee hop, squash/stretch, impact wobble, knockdown and recovery.
+- Media content (info boards, photos, public figures/politicians) is a data surface; the mechanics do not rank political actors.
+
+### PLANNED SLICES
+- T1 exact donor isolation.
+- T2 media standee adapter.
+- T3 standee motion.
+- T4 D20 collision.
+- T5 unified RPG dice set.
+- T6 Map / Near East integration.
+
+### STATUS
+- Donor audit: COMPLETE.
+- Runtime implementation: NOT STARTED.
+- Current public Map Board Stage: unchanged.
+- Next gate: T1 exact donor isolation page.
