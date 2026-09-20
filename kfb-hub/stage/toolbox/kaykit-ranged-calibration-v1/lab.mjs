@@ -49,6 +49,8 @@ async function ensureModules(){
   if(!graftMod)graftMod=await import(CDN_MODULE+'tools/KFB-ToolBox/kfb-rigs-embed-v3/frizzlegraft-v1/graft-mount.v1.js');
   if(!graftContract)graftContract=await fetch(CDN_MODULE+'tools/KFB-ToolBox/kfb-rigs-embed-v3/contracts/kfb-pet-graft-driver.v4.json').then(r=>{if(!r.ok)throw Error('graft contract '+r.status);return r.json()});
   if(!fxMod)fxMod=await import(CDN_MODULE+'tools/KFB-ToolBox/kfb-rigs-embed-v3/frizzlegraft-v1/fx.v1.js');
+  const pet=graftMod.pickGraftPet(graftContract,'graft-driver');
+  GUN_CFG.matColors={...(pet?.graft?.weapon?.matColors||{})};
 }
 function sideOf(n){return /right/i.test(n)?'r':/left/i.test(n)?'l':(/r$/i.test(n)?'r':/l$/i.test(n)?'l':'')}
 function pickWeaponBone(figure,hand='right'){
@@ -78,7 +80,7 @@ async function loadGunNode(url,nodePattern='gun'){
    Transform numbers remain the existing Georg calibration; no actor-specific Euler/socket is invented. */
 async function mountWeaponDirect({figure,cfg}){
   const bone=pickWeaponBone(figure,cfg.hand);const src=await loadGunNode(cfg.url,cfg.node),obj=src.clone(true);
-  obj.traverse(n=>{if(n.isMesh&&n.material)n.material=n.material.clone()});
+  obj.traverse(n=>{if(!n.isMesh||!n.material)return;n.material=n.material.clone();const hex=cfg.matColors?.[n.material.name];if(hex)n.material.color=new THREE.Color(hex)});
   const holder=new THREE.Group();holder.name='KFB weapon · CA2 direct calibration';holder.add(obj);
   const bind=poseBind(figure,()=>{
     let elbow=bone.parent;while(elbow&&(!elbow.isBone||/handslot|hand|fist|wrist/i.test(elbow.name)))elbow=elbow.parent;
