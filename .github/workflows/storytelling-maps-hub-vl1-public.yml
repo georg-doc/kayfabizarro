@@ -1,0 +1,34 @@
+name: Storytelling Maps Hub VL1 proof
+
+on:
+  pull_request:
+    paths:
+      - 'skills/chat/workflows/KFB_STORYTELLING_MAPS_V1_2026-09-20/**'
+      - 'kfb-hub/index.html'
+      - 'qa/storytelling-maps-hub-vl1-public.mjs'
+      - '.github/workflows/storytelling-maps-hub-vl1-public.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  public-hub-proof:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: |
+          npm install --no-save playwright@1.51.1
+          npx playwright install --with-deps chromium
+      - name: Verify exact Cloudflare Hub
+        run: node qa/storytelling-maps-hub-vl1-public.mjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: storytelling-maps-hub-vl1-proof
+          path: storytelling-maps-hub-evidence
+          retention-days: 30
