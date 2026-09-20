@@ -96,3 +96,24 @@
 - Public Stage: OPEN until exact Cloudflare proof.
 - Human donor identity: OPEN.
 - Next gate: T1 donor identity only.
+
+## 2026-09-20 · Storytelling Maps T1 PUBLIC_VERIFIED
+
+### TESTED RESULT
+- exact Cloudflare Stage: `https://kayfabizarro.pages.dev/kfb-hub/stage/storytelling-maps/t1-donors/`
+- public Chromium proof: **9/9 PASS**
+- exact KayKit donors: **3/3 loaded**
+- external Three/Cannon D10 donor: ready
+- D10 roll: PASS
+- page/script errors: **0**
+- failed HTTP requests: **0**
+- desktop + mobile-landscape screenshots captured
+- run/job: `35522576654` / `106109086411`
+- artifact: `10608862542` · `sha256:eeafbfab2b3cd8b0a79d0588537740129f5749ef7518fe5effbe30a3f7eed787`
+- publication commit: `ea77610ba57b3ed5aa8f045978643d8a8030b3ba`
+
+### STATUS
+- T1 technical/public gate: **PASS**
+- Georg donor identity: **OPEN**
+- T2 Media Standee: blocked on Georg review
+- Live: unchanged

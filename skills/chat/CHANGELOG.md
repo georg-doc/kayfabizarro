@@ -943,3 +943,13 @@ T1 exact donor isolation only: playerstand, playercard, KayKit D20 and pinned 3d
 
 ### OPTIONAL HELPERS
 Game Development Studio is useful later for package/provenance admission, sealed render comparison and performance evidence; local `game-dev` was unavailable in this chat. Build 3D Game Rooms is optional for authored diorama/room cutaways, not the core map runtime.
+
+## 2026-09-20 · Storytelling Maps T1 PUBLIC_VERIFIED
+
+The exact T1 donor-isolation Stage is now browser-proven:
+
+`https://kayfabizarro.pages.dev/kfb-hub/stage/storytelling-maps/t1-donors/`
+
+Evidence: **9/9 PASS**, three exact KayKit donors loaded, external Three/Cannon D10 donor ready and physically rolled, 0 page/script errors, 0 failed HTTP requests, desktop + mobile-landscape captures. Run/job `35522576654` / `106109086411`; artifact `10608862542`.
+
+Human donor identity remains OPEN. Do not advance to T2 media replacement until Georg reviews the four isolated source panels.

@@ -46,8 +46,41 @@ T1 must show these donors separately before combination:
 - exact KayKit `D20_red.gltf`;
 - pinned external `3d-dice/dice-box-threejs` D10/physics donor.
 
-Candidate Stage route:
+PUBLIC_VERIFIED Stage route:
 
 `https://kayfabizarro.pages.dev/kfb-hub/stage/storytelling-maps/t1-donors/`
 
 Do not move to media replacement, dice-to-standee collision, Odyssey integration or Near-East integration before this donor proof is visually reviewed.
+
+
+## T1 PUBLIC VERIFIED · 2026-09-20
+
+Exact Stage:
+`https://kayfabizarro.pages.dev/kfb-hub/stage/storytelling-maps/t1-donors/`
+
+Verified on the public Cloudflare route:
+
+- browser checks: **9/9 PASS**;
+- exact Cloudflare marker: PASS;
+- route HTTP 200;
+- exact KayKit playerstand donor: loaded;
+- exact KayKit playercard donor: loaded;
+- exact KayKit D20 donor: loaded;
+- external Three/Cannon D10 donor: ready;
+- D10 roll resolved with a natural result;
+- page/script errors: **0**;
+- failed HTTP requests: **0**;
+- desktop screenshot: captured;
+- mobile-landscape screenshot (844×390): captured.
+
+Evidence:
+- workflow run: `35522576654`
+- job: `106109086411`
+- artifact: `10608862542`
+- digest: `sha256:eeafbfab2b3cd8b0a79d0588537740129f5749ef7518fe5effbe30a3f7eed787`
+- publication commit: `ea77610ba57b3ed5aa8f045978643d8a8030b3ba`
+
+This is a technical/public donor proof, not Georg's visual donor-identity acceptance.
+
+Exactly one next gate remains:
+**Georg reviews whether all four donors are visually/source-identifiable enough to proceed to T2 Media Standee.**
