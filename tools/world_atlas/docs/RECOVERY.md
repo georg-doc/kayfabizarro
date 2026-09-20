@@ -1,5 +1,19 @@
 # Recovery
 
+## CURRENT · S14 R02 Room Blueprint · 2026-09-20
+
+- owner: `tools/world_atlas/`
+- branch: `world-atlas/dungeon-room-blueprint-s14-blender-2026-09-20`
+- Draft PR: #126
+- browser/editor: **15/15 PASS**
+- Blender: **37 manifest instances / 39 imported objects; KFB_R02.blend saved**
+- automated Linux review PNG/GLB: **FROZEN BLOCKED** after two repair passes (missing EGL after save)
+- failure recovery: `../failure-recovery/S14_BLENDER_REVIEW_GATE_2026-09-20/START_HERE.md`
+- current Return: `RETURN_dungeon_room_blueprint_S14_2026-09-20.md`
+- human Stage route: `https://kayfabizarro.pages.dev/kfb-hub/stage/minigames/dungeon-raid-v2/` (do not call PUBLIC VERIFIED until the exact Cloudflare route is checked)
+
+Exactly one current gate: visually review the isolated R02 room and preserved Blender file. Do not integrate it into the BSP generator or start Tiny Treats rooms before that review.
+
 ## Startpunkt für einen neuen Chat oder Entwickler
 
 1. `README.md`, dann `START_HERE.md` (Start über HTTP, nicht `file://`).
