@@ -380,21 +380,21 @@
       "sharedEyeRigProtocol": "tools/2D Animation Studio/shared/eye-rig/eye-rig-protocol.v1.json",
       "sharedEyeRigBridge": "tools/2D Animation Studio/shared/eye-rig/toolbox-bridge.v1.json",
       "toolboxEyeRigBatch": "tools/KFB-ToolBox/_handover/EYE_RIG_BATCH_2026-09-18/START_HERE.md",
-      "toolboxEyeRigBatchStatus": "ACTOR_LOADER_FIXED_MEDIUM_LARGE_READY",
+      "toolboxEyeRigBatchStatus": "LARGE_4_ACCEPTED_AUTO_LID_COLOR_CHECK",
       "toolboxEyeRigBatchPR": 104,
-      "toolboxEyeRigBatchImplementation": "c6608ab5c76509bb54ae6b4375b87ed338e61427",
-      "toolboxEyeRigBatchSourceHead": "af2827b60ced330e57bf4a7f553ad30dbf45b205",
+      "toolboxEyeRigBatchImplementation": "480c5770ef8ef391043b0b93ec3f51b04af7dfef",
+      "toolboxEyeRigBatchSourceHead": "e277c3456651d314a01adea046e0105d2a12cdd1",
       "toolboxEyeRigBatchStageSourceSnapshot": "b05172eccf4687cfd2e8523995d39611e62de81d",
       "toolboxEyeRigBatchPublicProofRun": 35457983922,
-      "toolboxEyeRigBatchPublicProof": "84/84 static · 8/8 loader focused · actor loader fix published",
-      "toolboxEyeRigBatchVisualStatus": "RELOAD_AND_MODEL_SWITCH_SANITY",
+      "toolboxEyeRigBatchPublicProof": "95/95 PASS · 4/4 syntax · Large lid-color visual check next",
+      "toolboxEyeRigBatchVisualStatus": "LARGE_PROFILES_ACCEPTED_LID_COLOR_CHECK",
       "toolboxEyeRigBatchStage": "https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/eye-rig-batch/",
       "toolboxEyeRigBatchIdentityCheckpoint": "949ff8037df2da88eb91ef825984ef57870b8238",
-      "toolboxEyeRigBatchStagePublicationHead": "e3c4a79d959aa5a09bfb7d5cec67807b27170d6c",
+      "toolboxEyeRigBatchStagePublicationHead": "e9f97c594bce46607e95928dd349cf081c36783d",
       "toolboxEyeRigBatchHistoricalPublicProofRun": 35460179569,
       "toolboxEyeRigBatchComponentEvidence": "https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/eye-rig-batch/docs/source-components-0-11.html",
       "toolboxEyeRigBatchCalibrationCheckpoint": "6f7d7988849cf0c74a6551a33ee422d8584c87c2",
-      "toolboxEyeRigBatchEvidenceCheckpoint": "1416092e87018ce32507d4d91e1d13d39f62c1ac",
+      "toolboxEyeRigBatchEvidenceCheckpoint": "40c2f920a96ea00bf99593610a49a646b2e0873c",
       "toolboxEyeRigBatchMediumDefaults": {
         "dx": 0.295,
         "dy": 0.045,
@@ -427,7 +427,7 @@
           "session"
         ]
       },
-      "toolboxEyeRigBatchNextGate": "Reload Stage → test Clown/another Medium actor → switch Large → tune Monstrosity",
+      "toolboxEyeRigBatchNextGate": "Reload Stage → check Monstrosity / Black Knight / Demon Lord / Orc Brute lid colors",
       "toolboxEyeRigBatchActorCatalog": {
         "path": "tools/KFB-ToolBox/eye-rig-batch/data/rig-medium-actors.v0.json",
         "count": 27,
@@ -454,9 +454,12 @@
           "Demon Lord",
           "Orc Brute"
         ],
-        "firstCalibrationActor": "Monstrosity",
-        "acceptedDefault": false,
-        "action": "Set as Large default",
+        "acceptedProfiles": true,
+        "reviewedPath": "tools/KFB-ToolBox/eye-rig-batch/data/rig-large-reviewed.v1.json",
+        "acceptedSource": "tools/KFB-ToolBox/_inbox/eye-rig-large.batch.json",
+        "acceptedSourceMain": "52532aee17f85324a6d04ab53150216f00ac5d89",
+        "sharedClassDefault": false,
+        "lidColor": "AUTO_SOURCE_HEAD → EyeRig v6 darkened",
         "motions": [
           "Idle_A",
           "Walking_A",
@@ -482,7 +485,13 @@
         "one later named KFB game consumer"
       ],
       "eumelGameReadyPackage": "game-ready/eumel-2p5d-actor/",
-      "eumelGameReadyStatus": "PACKAGE_METADATA_IMPLEMENTED_THREE2P5D_STATIC_PASS_BROWSER_CONSUMER_HUMAN_OPEN"
+      "eumelGameReadyStatus": "PACKAGE_METADATA_IMPLEMENTED_THREE2P5D_STATIC_PASS_BROWSER_CONSUMER_HUMAN_OPEN",
+      "toolboxEyeRigBatchLidColorFix": {
+        "status": "IMPLEMENTED",
+        "sampler": "tools/KFB-ToolBox/eye-rig-batch/lib/face-color-sampler.v1.js",
+        "oldFallback": "#b58f83",
+        "behavior": "measure each actor source head/face texture; EyeRig v6 darkens lids"
+      }
     },
     {
       "id": "animation-lab",

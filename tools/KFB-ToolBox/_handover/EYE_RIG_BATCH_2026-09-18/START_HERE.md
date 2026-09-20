@@ -1,3 +1,7 @@
+> **CURRENT LARGE ACCEPTANCE + LID COLOR FIX · 2026-09-20**  
+> Georg's four reviewed Large profiles from `tools/KFB-ToolBox/_inbox/eye-rig-large.batch.json` are accepted for Monstrosity, Black Knight, Demon Lord and Orc Brute. Canonical reviewed profiles live at `tools/KFB-ToolBox/eye-rig-batch/data/rig-large-reviewed.v1.json`. The shared `#b58f83` lid fallback is removed for generic actors: the runtime now measures each actor's own source head/face texture near the eyes and passes that base to EyeRig v6 for the existing darker-lid treatment. Tests: **95/95 PASS · 4/4 syntax PASS**. Stage: `e9f97c594bce46607e95928dd349cf081c36783d`.  
+> Next action: reload the EyeRig Stage and check the lid colors on the four Large actors.
+
 > **CURRENT LOADER FIX · 2026-09-20**  
 > The shared actor-loading error `Cannot read properties of undefined (reading 'push')` is fixed. It was caused by single-material head meshes with no explicit geometry groups, not bad actor files. Clown and Monstrosity match this exact geometry case. The cleanup adapter now handles it safely and automatically clears stale technical Unsupported states after a successful reload. Tests: **84/84 PASS · 8/8 focused loader PASS**. Stage fix: `e3c4a79d959aa5a09bfb7d5cec67807b27170d6c`.  
 > Next action: reload the EyeRig page and click a previously failing model. If it loads, continue the Medium review or switch to Large and tune Monstrosity.
