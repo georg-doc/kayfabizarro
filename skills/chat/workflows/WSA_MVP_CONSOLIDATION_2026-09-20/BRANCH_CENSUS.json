@@ -1,0 +1,2115 @@
+{
+  "schema": "kfb.branch-census/0.2",
+  "captured": "2026-09-20",
+  "coordinationHead": "cd6cd60c6441df55928232175c3726b8fe235480",
+  "scope": "Mechanical branch/ref inventory. A branch is not accepted/current merely because it exists.",
+  "repos": [
+    {
+      "repo": "georg-doc/kayfabizarro",
+      "defaultBranch": "main",
+      "branchCount": 164,
+      "openPrCount": 38,
+      "branches": [
+        {
+          "name": "alignment/a0-travel-race-2026-09-17",
+          "head": "ab47d993029ef5af50db5b14962ef7d88c510add",
+          "state": "REF_ONLY_NO_OPEN_PR",
+          "integrationFocus": false,
+          "pr": null
+        },
+        {
+          "name": "alignment/a0-travel-race-v2-2026-09-17",
+          "head": "e53b41b1871344dd4de9f06e09d9e3174bfcdaee",
+          "state": "REF_ONLY_NO_OPEN_PR",
+          "integrationFocus": false,
+          "pr": null
+        },
+        {
+          "name": "asset/kaykit-bits-bundle1-2026-09-20",
+          "head": "165726d086d9363f3dce5bee9432015da889e77d",
+          "state": "DRAFT_PR",
+          "integrationFocus": true,
+          "pr": {
+            "number": 144,
+            "title": "assets(kaykit): admit Bits Bundle 1 runtime package",
+            "base": "main",
+            "headSha": "165726d086d9363f3dce5bee9432015da889e77d",
+            "draft": true
+          }
+        },
+        {
+          "name": "asset-librarian/browser-smoke-2026-09-12",
+          "head": "bd83ba29f60eecb40a54edf871353113db6e3923",
+          "state": "REF_ONLY_NO_OPEN_PR",
+          "integrationFocus": false,
+          "pr": null
+        },
+        {
+          "name": "asset-librarian/integration-v1-2026-09-12",
+          "head": "51eb03dcf337ae40789ddd160dd4cf6257580a6d",
+          "state": "REF_ONLY_NO_OPEN_PR",
+          "integrationFocus": false,
+          "pr": null
+        },
+        {
+          "name": "asset-librarian/integration-v1-review-2026-09-12",
+          "head": "8ce56d987fefa6826594e43dc194a4648c70e988",
+          "state": "REF_ONLY_NO_OPEN_PR",
+          "integrationFocus": false,
+          "pr": null
+        },
+        {
+          "name": "asset-librarian/v1-browser-slice-2026-09-12",
+          "head": "0b6073a3f4be88e85460ccbf0dbd059156738bef",
+          "state": "REF_ONLY_NO_OPEN_PR",
+          "integrationFocus": false,
+          "pr": null
+        },
+        {
+          "name": "asset-librarian/v1.1-openai-connector-2026-09-12",
+          "head": "feb2d8ebca87cbecd5d06e5b50fbc444523add9e",
+          "state": "REF_ONLY_NO_OPEN_PR",
+          "integrationFocus": false,
+          "pr": null
+        },
+        {
+          "name": "asset-librarian/v1.1-private-chat-bridge-2026-09-12",
+          "head": "75e43fa3368ac06621edc858f72439dbae26b1ea",
+          "state": "REF_ONLY_NO_OPEN_PR",
+          "integrationFocus": false,
+          "pr": null
+        },
+        {
+          "name": "asset-librarian/v1.1-readonly-tools-2026-09-12",
+          "head": "0ca5dacc4387a50761b68e47b2b530d3b09f1f5e",
+          "state": "REF_ONLY_NO_OPEN_PR",
+          "integrationFocus": false,
+          "pr": null
+        },
+        {
+          "name": "asset-librarian/v1.2-site-core-2026-09-12",
+          "head": "cc35670f0638d1dcb4d6f1bfd9ca4e20b1097503",
+          "state": "REF_ONLY_NO_OPEN_PR",
+          "integrationFocus": false,
+          "pr": null
+        },
+        {
+          "name": "asset-librarian/v1.3-production-resources-2026-09-14",
+          "head": "e596ef3c014c96cd96ed722c6d5e8b4c491a6100",
+          "state": "REF_ONLY_NO_OPEN_PR",
+          "integrationFocus": false,
+          "pr": null
+        },
+        {
+          "name": "asset-librarian/v1.3-production-resources-final-2026-09-14",
+          "head": "135175b3eada4b35a1384b504c97e8bee3374149",
+          "state": "REF_ONLY_NO_OPEN_PR",
+          "integrationFocus": false,
+          "pr": null
+        },
+        {
+          "name": "asset-librarian/v1.4-live-rig-previews-2026-09-14",
+          "head": "1bc5c177af019db3a34459e1b1ea1a1628c89a9a",
+          "state": "REF_ONLY_NO_OPEN_PR",
+          "integrationFocus": false,
+          "pr": null
+        },
+        {
+          "name": "asset-librarian/v1.5-animation-framing-stable-url-2026-09-15",
+          "head": "ea3d37e2ae665e460c76106a8d603638a9c718eb",
+          "state": "REF_ONLY_NO_OPEN_PR",
+          "integrationFocus": false,
+          "pr": null
+        },
+        {
+          "name": "asset-librarian/v1.6-town-workbench-2026-09-15",
+          "head": "36316d4e0f44e3f324a693bb90eebb1f639bf0cd",
+          "state": "REF_ONLY_NO_OPEN_PR",
+          "integrationFocus": false,
+          "pr": null
+        },
+        {
+          "name": "asset-librarian/v1.7-browse-filters-2026-09-15",
+          "head": "223005ddaf173a24202e59ea07128d79365c00c0",
+          "state": "REF_ONLY_NO_OPEN_PR",
+          "integrationFocus": false,
+          "pr": null
+        },
+        {
+          "name": "asset-registry/ar1-flat-inventory-2026-09-12",
+          "head": "1dd5a79b9be01108aca9818d777ce76a17c062e9",
+          "state": "REF_ONLY_NO_OPEN_PR",
+          "integrationFocus": false,
+          "pr": null
+        },
+        {
+          "name": "asset-registry/ar2-packs-dependencies-2026-09-12",
+          "head": "0283669cfa6804196949b243b3df87465100d149",
+          "state": "REF_ONLY_NO_OPEN_PR",
+          "integrationFocus": false,
+          "pr": null
+        },
+        {
+          "name": "asset-registry/ar3-decks-2026-09-12",
+          "head": "d6cf50321db923f771369637142ab955015121ef",
+          "state": "REF_ONLY_NO_OPEN_PR",
+          "integrationFocus": false,
+          "pr": null
+        },
+        {
+          "name": "asset-registry/ar4-github-action-2026-09-12",
+          "head": "7fb014de2eb8634dda920fadca91b099681ff4e7",
+          "state": "REF_ONLY_NO_OPEN_PR",
+          "integrationFocus": false,
+          "pr": null
+        },
+        {
+          "name": "asset-registry/ar5-consumer-handoff-2026-09-12",
+          "head": "ffc9e527602aa7c8e8510bbe3ffb2f75e553d0a8",
+          "state": "REF_ONLY_NO_OPEN_PR",
+          "integrationFocus": false,
+          "pr": null
+        },
+        {
+          "name": "asset-registry/trigger-scope-2026-09-12",
+          "head": "253eb7090b6b573cfe8c77688c58204c36d54c91",
+          "state": "REF_ONLY_NO_OPEN_PR",
+          "integrationFocus": false,
+          "pr": null
+        },
+        {
+          "name": "atlas/site-promotion-recovery-2026-09-17",
+          "head": "6034ae9c93011a5b7935116ce392a2b4d8bea45a",
+          "state": "REF_ONLY_NO_OPEN_PR",
+          "integrationFocus": false,
+          "pr": null
+        },
+        {
+          "name": "bot/asset-registry-update",
+          "head": "8a5f5817dfd174e712aca120868d2a1bb4f19e9f",
+          "state": "REF_ONLY_NO_OPEN_PR",
+          "integrationFocus": false,
+          "pr": null
+        },
+        {
+          "name": "bot/resource-registry-update",
+          "head": "85a94f14ab5195c2f41b70de34b6fc8c43e07370",
+          "state": "REF_ONLY_NO_OPEN_PR",
+          "integrationFocus": false,
+          "pr": null
+        },
+        {
+          "name": "box1-a6-3d-instruments-sfx-stage-2026-09-19",
+          "head": "ec78c4ab4966328b9c9ca9d8c977a96368cc2740",
+          "state": "REF_ONLY_NO_OPEN_PR",
+          "integrationFocus": false,
+          "pr": null
+        },
+        {
+          "name": "box1-a6-publish-2026-09-19",
+          "head": "825d32f29dd97707daf7ebb8eab33cc06aea0395",
+          "state": "REF_ONLY_NO_OPEN_PR",
+          "integrationFocus": false,
+          "pr": null
+        },
+        {
+          "name": "box1-roadtrip-v2-stage-2026-09-19",
+          "head": "e00e9d67fcf6884a9d92d01c1b3c397ef50307c9",
+          "state": "REF_ONLY_NO_OPEN_PR",
+          "integrationFocus": false,
+          "pr": null
+        },
+        {
+          "name": "boxel-audio-feedback-poc-2026-09-19",
+          "head": "d6062351d69939cdd7015337b060b9c50b6b7a72",
+          "state": "REF_ONLY_NO_OPEN_PR",
+          "integrationFocus": false,
+          "pr": null
+        },
+        {
+          "name": "boxel-audio-poc-browser-proof-2026-09-19",
+          "head": "cea6f95d6b29e12578b794843b5e9d2856803e98",
+          "state": "REF_ONLY_NO_OPEN_PR",
+          "integrationFocus": false,
+          "pr": null
+        },
+        {
+          "name": "chat/cozy-look-flybrain-experiments-2026-09-15",
+          "head": "50bee9b87515311ce3019852443078c25fe8e506",
+          "state": "REF_ONLY_NO_OPEN_PR",
+          "integrationFocus": false,
+          "pr": null
+        },
+        {
+          "name": "chat/extract-medieval-hexagon-2026-09-17",
+          "head": "b6b7a2e4f702a5914278643e48ce56cc611b6790",
+          "state": "REF_ONLY_NO_OPEN_PR",
+          "integrationFocus": false,
+          "pr": null
+        },
+        {
+          "name": "chat/gds-theatre-curtain-v1-2026-09-20",
+          "head": "cd9c04cbf009b1211b9b6b008162b9d322d6e152",
+          "state": "DRAFT_PR",
+          "integrationFocus": false,
+          "pr": {
+            "number": 114,
+            "title": "Game Dev Studio: Theatre Curtain v1 physics module",
+            "base": "main",
+            "headSha": "cd9c04cbf009b1211b9b6b008162b9d322d6e152",
+            "draft": true
+          }
+        },
+        {
+          "name": "chat/kaykit-reference-atlas-2026-09-15",
+          "head": "7f127b4248a6a87a030efa06bc4e4fce8826709c",
+          "state": "REF_ONLY_NO_OPEN_PR",
+          "integrationFocus": false,
+          "pr": null
+        },
+        {
+          "name": "chat/kaykit-visual-scene-atlas-preflight-2026-09-16",
+          "head": "90739b019676ac7515d5b986f174c9be8f8839bf",
+          "state": "REF_ONLY_NO_OPEN_PR",
+          "integrationFocus": false,
+          "pr": null
+        },
+        {
+          "name": "chat/production-router-v0-1-2026-09-13",
+          "head": "698d1aef65e33484cb7eada240b0930e84481a0f",
+          "state": "REF_ONLY_NO_OPEN_PR",
+          "integrationFocus": false,
+          "pr": null
+        },
+        {
+          "name": "chat/racer-engine-audio-handoff-2026-09-20",
+          "head": "1bc26465cf6889c1d7ea1e439753b6c8807b26ea",
+          "state": "OPEN_PR",
+          "integrationFocus": false,
+          "pr": {
+            "number": 138,
+            "title": "KFB Racer engine audio pack → WSA handoff",
+            "base": "main",
+            "headSha": "1bc26465cf6889c1d7ea1e439753b6c8807b26ea",
+            "draft": false
+          }
+        },
+        {
+          "name": "chatgpt-web/baukasten-c0-2026-09-19",
+          "head": "9a510309b2609bb9005340813f61ee34d516cc19",
+          "state": "DRAFT_PR",
+          "integrationFocus": false,
+          "pr": {
+            "number": 101,
+            "title": "C0 Baukasten · GEORG VISUAL REVIEW FAIL · WSA postmortem",
+            "base": "main",
+            "headSha": "9a510309b2609bb9005340813f61ee34d516cc19",
+            "draft": true
+          }
+        },
+        {
+          "name": "chatgpt-web/c0-a1-charming-kitchen-2026-09-19",
+          "head": "6355d30b901f3e9e477064556299598bb4577217",
+          "state": "DRAFT_PR",
+          "integrationFocus": false,
+          "pr": {
+            "number": 106,
+            "title": "C0-A1 Charming Kitchen · archived failed candidate + module-kit recovery",
+            "base": "main",
+            "headSha": "6355d30b901f3e9e477064556299598bb4577217",
+            "draft": true
+          }
+        },
+        {
+          "name": "chatgpt-web/ca2-01-actor-selector-2026-09-20",
+          "head": "538f2131393855810df59601fef66058a0a1824e",
+          "state": "DRAFT_PR",
+          "integrationFocus": false,
+          "pr": {
+            "number": 130,
+            "title": "stage(combat): CA2 actor selector/profile POC",
+            "base": "main",
+            "headSha": "538f2131393855810df59601fef66058a0a1824e",
+            "draft": true
+          }
+        },
+        {
+          "name": "chatgpt-web/ca2-02-ranged-calibration-2026-09-20",
+          "head": "f8fa5a34ccd609fd003ce4928dd798df246c16a3",
+          "state": "DRAFT_PR",
+          "integrationFocus": false,
+          "pr": {
+            "number": 135,
+            "title": "stage(toolbox): CA2 ranged calibration + frozen pitch recovery",
+            "base": "main",
+            "headSha": "f8fa5a34ccd609fd003ce4928dd798df246c16a3",
+            "draft": true
+          }
+        },
+        {
+          "name": "chatgpt-web/ca2-03-enemy-adapters-2026-09-20",
+          "head": "15eeb9f765fec1a1388c75f22b86a14f0ef5bb4b",
+          "state": "DRAFT_PR",
+          "integrationFocus": true,
+          "pr": {
+            "number": 137,
+            "title": "stage(combat): CA2-03 enemy adapter proof",
+            "base": "main",
+            "headSha": "15eeb9f765fec1a1388c75f22b86a14f0ef5bb4b",
+            "draft": true
+          }
+        },
+        {
+          "name": "chatgpt-web/combat-ca2-stage-sync-2026-09-20",
+          "head": "2ff8b350beefe02912bbff6eeeead3882e583d08",
+          "state": "REF_ONLY_NO_OPEN_PR",
+          "integrationFocus": false,
+          "pr": null
+        },
+        {
+          "name": "chatgpt-web/frizzlebob-secondary-motion-kcc1a-2026-09-20",
+          "head": "cb3b80eac105fe6c5fa69bc9a4b5dd98a3f17631",
+          "state": "DRAFT_PR",
+          "integrationFocus": true,
+          "pr": {
+            "number": 148,
+            "title": "feat(toolbox): FrizzleBob Race secondary-motion facts KCC-1A",
+            "base": "chatgpt-web/toolbox-kaykit-character-compat-2026-09-20",
+            "headSha": "cb3b80eac105fe6c5fa69bc9a4b5dd98a3f17631",
+            "draft": true
+          }
+        },
+        {
+          "name": "chatgpt-web/kaykit-creator-learning-2026-09-19",
+          "head": "fc49a336af57adb6317b74211b3318d004d96de5",
+          "state": "DRAFT_PR",
+          "integrationFocus": false,
+          "pr": {
+            "number": 107,
+            "title": "docs: KayKit creator lessons living research",
+            "base": "main",
+            "headSha": "fc49a336af57adb6317b74211b3318d004d96de5",
+            "draft": true
+          }
+        },
+        {
+          "name": "chatgpt-web/resident-clown-recovery-brief-2026-09-19",
+          "head": "bd19420e0403685605269866c7d0ad4c287619b0",
+          "state": "OPEN_PR",
+          "integrationFocus": false,
+          "pr": {
+            "number": 103,
+            "title": "Docs: C0 intent-fail postmortem + Resident Clown Activity Repair R0",
+            "base": "main",
+            "headSha": "bd19420e0403685605269866c7d0ad4c287619b0",
+            "draft": false
+          }
+        },
+        {
+          "name": "chatgpt-web/toolbox-kaykit-character-compat-2026-09-20",
+          "head": "d230909626ae24844d2b3109bc45a757b04b1959",
+          "state": "DRAFT_PR",
+          "integrationFocus": true,
+          "pr": {
+            "number": 147,
+            "title": "feat(toolbox): KayKit character compatibility source bench v0",
+            "base": "main",
+            "headSha": "d230909626ae24844d2b3109bc45a757b04b1959",
+            "draft": true
+          }
+        },
+        {
+          "name": "chatgpt-web/toolbox-kaykit-motion-profiles-2026-09-20",
+          "head": "7c8cc218ec46dabb20409c9e0b5368afcf5845c6",
+          "state": "DRAFT_PR",
+          "integrationFocus": true,
+          "pr": {
+            "number": 127,
+            "title": "feat(toolbox): KayKit motion profile lab v1",
+            "base": "main",
+            "headSha": "7c8cc218ec46dabb20409c9e0b5368afcf5845c6",
+            "draft": true
+          }
+        },
+        {
+          "name": "cloudflare/workers-autoconfig",
+          "head": "544b592866a44040232771aebb9c88e5fb760be0",
+          "state": "REF_ONLY_NO_OPEN_PR",
+          "integrationFocus": false,
+          "pr": null
+        },
+        {
+          "name": "cloudflare-live",
+          "head": "8d1721bf2d44cbb978e0a1e5df427a3e23ebe1aa",
+          "state": "REF_ONLY_NO_OPEN_PR",
+          "integrationFocus": false,
+          "pr": null
+        },
+        {
+          "name": "codex/mvp-travel-readiness-2026-09-20",
+          "head": "2353c3654a7374474b23d71fc078eb2667b6d0e0",
+          "state": "DRAFT_PR",
+          "integrationFocus": false,
+          "pr": {
+            "number": 139,
+            "title": "docs(mvp): prepare Travel integration and Hub publish contract",
+            "base": "main",
+            "headSha": "2353c3654a7374474b23d71fc078eb2667b6d0e0",
+            "draft": true
+          }
+        },
+        {
+          "name": "docs/astra-integration-01-travel-walk-r3-2026-09-18",
+          "head": "eee3164c74e5ec1255dcacc6358234cb46c4e91f",
+          "state": "REF_ONLY_NO_OPEN_PR",
+          "integrationFocus": false,
+          "pr": null
+        },
+        {
+          "name": "docs/claude-design-failure-recovery-2026-09-19",
+          "head": "5e853ebe454ecbb4bb4750c8595690e090555f76",
+          "state": "REF_ONLY_NO_OPEN_PR",
+          "integrationFocus": false,
+          "pr": null
+        },
+        {
+          "name": "docs/free-roam-public-return-2026-09-18",
+          "head": "8afbdc1719911d9500ef14159d0ab31f0c5840c7",
+          "state": "REF_ONLY_NO_OPEN_PR",
+          "integrationFocus": false,
+          "pr": null
+        },
+        {
+          "name": "docs/free-roam-recovery-s04-02-2026-09-18",
+          "head": "2c1bb8bd7d340ece3e4f0f415b9cdfc69c8fa3e0",
+          "state": "REF_ONLY_NO_OPEN_PR",
+          "integrationFocus": false,
+          "pr": null
+        },
+        {
+          "name": "docs/free-roam-s04-02-public-pass-2026-09-18",
+          "head": "19b6e38b5a47c8e92ef03f55e6feee6798ee625a",
+          "state": "REF_ONLY_NO_OPEN_PR",
+          "integrationFocus": false,
+          "pr": null
+        },
+        {
+          "name": "fix/hub-never-empty-2026-09-20",
+          "head": "d0248229b651975c8d407a635073e0e1894c44a7",
+          "state": "REF_ONLY_NO_OPEN_PR",
+          "integrationFocus": false,
+          "pr": null
+        },
+        {
+          "name": "fix/travel-ground-artwork-2026-09-18",
+          "head": "a6d028c6047224550c59d652821c8540cd1abd4e",
+          "state": "REF_ONLY_NO_OPEN_PR",
+          "integrationFocus": false,
+          "pr": null
+        },
+        {
+          "name": "fix/travel-ground-regression-2026-09-18",
+          "head": "adac22701b0ba9d68e9f75cc589b9e90f61a0576",
+          "state": "REF_ONLY_NO_OPEN_PR",
+          "integrationFocus": false,
+          "pr": null
+        },
+        {
+          "name": "georg-doc-patch-1",
+          "head": "83136510e6e4cf4b7fbcbe521871ed9fb9bc5029",
+          "state": "REF_ONLY_NO_OPEN_PR",
+          "integrationFocus": false,
+          "pr": null
+        },
+        {
+          "name": "handoff/cartoon-map-board-wsa-2026-09-19",
+          "head": "3949cd09f8190c4d6ca24b77b5d5d910d8ba43df",
+          "state": "DRAFT_PR",
+          "integrationFocus": false,
+          "pr": {
+            "number": 93,
+            "title": "WSA handoff: KFB Cartoon Map Board P0.2 donor",
+            "base": "main",
+            "headSha": "3949cd09f8190c4d6ca24b77b5d5d910d8ba43df",
+            "draft": true
+          }
+        },
+        {
+          "name": "hotfix/hub-literal-newline-2026-09-20",
+          "head": "9ee070b0d1e8007e73d4e78fce9ff404fd5b5c95",
+          "state": "DRAFT_PR",
+          "integrationFocus": false,
+          "pr": {
+            "number": 131,
+            "title": "Hotfix Hub: repair literal newline syntax error",
+            "base": "main",
+            "headSha": "9ee070b0d1e8007e73d4e78fce9ff404fd5b5c95",
+            "draft": true
+          }
+        },
+        {
+          "name": "hub/pocket-inbox-briefings-2026-09-19",
+          "head": "9fafe8ccb6e9adfb6b253a44069dcb5e85e07dc4",
+          "state": "REF_ONLY_NO_OPEN_PR",
+          "integrationFocus": false,
+          "pr": null
+        },
+        {
+          "name": "img2threejs/grounding-worldlook-grotesque-v2-2026-09-20",
+          "head": "e324d6e520c1b0d7dd9dca96c2d3e72b8709b52f",
+          "state": "DRAFT_PR",
+          "integrationFocus": false,
+          "pr": {
+            "number": 118,
+            "title": "img2threejs: Grounding + World Look + Grotesque OSM v2",
+            "base": "main",
+            "headSha": "e324d6e520c1b0d7dd9dca96c2d3e72b8709b52f",
+            "draft": true
+          }
+        },
+        {
+          "name": "img2threejs/tinyskies-osm-cohesion-v1-2026-09-19",
+          "head": "2f98d7adfa6f9074efad6894ecb3e0b4d3b225c6",
+          "state": "DRAFT_PR",
+          "integrationFocus": false,
+          "pr": {
+            "number": 109,
+            "title": "img2threejs: TinySkies × OSM × landmark cohesion v1",
+            "base": "main",
+            "headSha": "2f98d7adfa6f9074efad6894ecb3e0b4d3b225c6",
+            "draft": true
+          }
+        },
+        {
+          "name": "img2threejs/tinyskies-osm-integrated-proof-v1-2026-09-19",
+          "head": "8033e64d2638740fe2c9133216d42c56c306a4aa",
+          "state": "DRAFT_PR",
+          "integrationFocus": false,
+          "pr": {
+            "number": 110,
+            "title": "img2threejs: TinySkies × OSM × Grotesque integrated proof v1",
+            "base": "img2threejs/tinyskies-osm-cohesion-v1-2026-09-19",
+            "headSha": "8033e64d2638740fe2c9133216d42c56c306a4aa",
+            "draft": true
+          }
+        },
+        {
+          "name": "main",
+          "head": "6c1b02a3338c005127d45bc7bff3ecbb785f1342",
+          "state": "DEFAULT",
+          "integrationFocus": false,
+          "pr": null
+        },
+        {
+          "name": "mirror/race-box1-public-2026-09-18",
+          "head": "2561e687b847e819e7d40dc82cc9184ce7710156",
+          "state": "REF_ONLY_NO_OPEN_PR",
+          "integrationFocus": false,
+          "pr": null
+        },
+        {
+          "name": "mirror/race-v010-topology-2026-09-18",
+          "head": "69770ace72e15c9970f7dcdff2094a86798f2f8e",
+          "state": "REF_ONLY_NO_OPEN_PR",
+          "integrationFocus": false,
+          "pr": null
+        },
+        {
+          "name": "orchestration/wsa-mvp-consolidation-2026-09-20",
+          "head": "cd6cd60c6441df55928232175c3726b8fe235480",
+          "state": "DRAFT_PR",
+          "integrationFocus": true,
+          "pr": {
+            "number": 113,
+            "title": "WSA: consolidate current KFB MVP slices and Stage handoff",
+            "base": "main",
+            "headSha": "cd6cd60c6441df55928232175c3726b8fe235480",
+            "draft": true
+          }
+        },
+        {
+          "name": "osm-city/cartoon-massing-s1b-2026-09-18",
+          "head": "0f57b558b450ee9e447a7c3ae28ff0470fbe8868",
+          "state": "REF_ONLY_NO_OPEN_PR",
+          "integrationFocus": false,
+          "pr": null
+        },
+        {
+          "name": "osm-city/corridor-checkpoint-retry-2026-09-19",
+          "head": "1f3bf5af03ad027c42347c9cc0c7a9540dedddcb",
+          "state": "DRAFT_PR",
+          "integrationFocus": false,
+          "pr": {
+            "number": 80,
+            "title": "OSM City: checkpoint Ehrenfeld-Hürth corridor retries",
+            "base": "main",
+            "headSha": "1f3bf5af03ad027c42347c9cc0c7a9540dedddcb",
+            "draft": true
+          }
+        },
+        {
+          "name": "osm-city/corridor-consumer-export-2026-09-19",
+          "head": "012db3b4863de3b23c0030435c7d5151efe4c1e5",
+          "state": "DRAFT_PR",
+          "integrationFocus": false,
+          "pr": {
+            "number": 82,
+            "title": "OSM City: export Ehrenfeld-Hürth corridor consumer scene",
+            "base": "osm-city/corridor-detail-current-2026-09-19",
+            "headSha": "012db3b4863de3b23c0030435c7d5151efe4c1e5",
+            "draft": true
+          }
+        },
+        {
+          "name": "osm-city/corridor-detail-current-2026-09-19",
+          "head": "589bb802eb797373f91d977a36e322c4591cdba3",
+          "state": "DRAFT_PR",
+          "integrationFocus": false,
+          "pr": {
+            "number": 81,
+            "title": "OSM City: fetch current narrow Ehrenfeld-Hürth corridor",
+            "base": "osm-city/corridor-checkpoint-retry-2026-09-19",
+            "headSha": "589bb802eb797373f91d977a36e322c4591cdba3",
+            "draft": true
+          }
+        },
+        {
+          "name": "osm-city/corridor-main-doc-finalize-2026-09-19",
+          "head": "6da66d31e2497e84259b99680c7c8f614cfdf65e",
+          "state": "REF_ONLY_NO_OPEN_PR",
+          "integrationFocus": false,
+          "pr": null
+        },
+        {
+          "name": "osm-city/corridor-presentation-s1-2026-09-19",
+          "head": "f39da99cf2dd58ea1f543af8d3b38017a62c50c8",
+          "state": "REF_ONLY_NO_OPEN_PR",
+          "integrationFocus": false,
+          "pr": null
+        },
+        {
+          "name": "osm-city/corridor-promote-tested-stack-2026-09-19",
+          "head": "92d3419e89e083e5d84c7709f60dcc322f96214d",
+          "state": "REF_ONLY_NO_OPEN_PR",
+          "integrationFocus": false,
+          "pr": null
+        },
+        {
+          "name": "osm-city/corridor-promote-tested-stack-r2-2026-09-19",
+          "head": "b59f9e9490c3082fd60f0c5c82fe8b29d1bb0e75",
+          "state": "REF_ONLY_NO_OPEN_PR",
+          "integrationFocus": false,
+          "pr": null
+        },
+        {
+          "name": "osm-city/ehrenfeld-v0-2026-09-18",
+          "head": "dcbb59a0aa9195381e42ede6760b7f6c4e6604df",
+          "state": "REF_ONLY_NO_OPEN_PR",
+          "integrationFocus": false,
+          "pr": null
+        },
+        {
+          "name": "osm-city/final-public-recovery-sync-2026-09-19",
+          "head": "af4550988274714804281834d198c890bfbb7619",
+          "state": "REF_ONLY_NO_OPEN_PR",
+          "integrationFocus": false,
+          "pr": null
+        },
+        {
+          "name": "osm-city/free-roam-hub-sites-2026-09-18",
+          "head": "77dc8e9042c430ab6b3a929e35a567fc54f83141",
+          "state": "REF_ONLY_NO_OPEN_PR",
+          "integrationFocus": false,
+          "pr": null
+        },
+        {
+          "name": "osm-city/free-roam-s2-handoff-2026-09-18",
+          "head": "2d7f97b20a8d32d0784ba9acb36f95e533412017",
+          "state": "OPEN_PR",
+          "integrationFocus": false,
+          "pr": {
+            "number": 68,
+            "title": "OSM City: prepare Free Roam S2 receiver handoff",
+            "base": "main",
+            "headSha": "2d7f97b20a8d32d0784ba9acb36f95e533412017",
+            "draft": false
+          }
+        },
+        {
+          "name": "osm-city/huerth-v0-2026-09-18",
+          "head": "72fe3f1c4cdb82e0a5e40dec1ea620f72d7e9dea",
+          "state": "REF_ONLY_NO_OPEN_PR",
+          "integrationFocus": false,
+          "pr": null
+        },
+        {
+          "name": "osm-city/recovery-finalize-corridor-pass-2026-09-19",
+          "head": "33b18b24eb210c7218ca9f41d57549b722c40202",
+          "state": "REF_ONLY_NO_OPEN_PR",
+          "integrationFocus": false,
+          "pr": null
+        },
+        {
+          "name": "osm-city/recovery-sync-2026-09-19",
+          "head": "39e6caaa385449422a4bcb144f32e16e8e5e39c5",
+          "state": "REF_ONLY_NO_OPEN_PR",
+          "integrationFocus": false,
+          "pr": null
+        },
+        {
+          "name": "osm-city/recovery-sync-stage-main-2026-09-19",
+          "head": "978ad85020dc03138f2973ec5bf59ff58aad558b",
+          "state": "REF_ONLY_NO_OPEN_PR",
+          "integrationFocus": false,
+          "pr": null
+        },
+        {
+          "name": "osm-city/s1c-public-proof-fix-2026-09-18",
+          "head": "133f4f1b300332c27a901ff51dd2fc9d7e75f40c",
+          "state": "REF_ONLY_NO_OPEN_PR",
+          "integrationFocus": false,
+          "pr": null
+        },
+        {
+          "name": "osm-city/s1c-road-labels-grotesque-forest-2026-09-18",
+          "head": "68ba7287f0c174205c9ca761f0007deacd86d293",
+          "state": "REF_ONLY_NO_OPEN_PR",
+          "integrationFocus": false,
+          "pr": null
+        },
+        {
+          "name": "osm-city/s2-contract-hardening-2026-09-18",
+          "head": "0cbe392a7592fad14ba61a1252452d8f4756ff81",
+          "state": "REF_ONLY_NO_OPEN_PR",
+          "integrationFocus": false,
+          "pr": null
+        },
+        {
+          "name": "planning/cartoon-map-board-tactical-game-v1-2026-09-20",
+          "head": "b2d4291baea6a8c597e66d0d2ce2228ee166a7bf",
+          "state": "DRAFT_PR",
+          "integrationFocus": false,
+          "pr": {
+            "number": 140,
+            "title": "Plan: Cartoon Map Board tactical tabletop props + dice",
+            "base": "main",
+            "headSha": "b2d4291baea6a8c597e66d0d2ce2228ee166a7bf",
+            "draft": true
+          }
+        },
+        {
+          "name": "planning/cologne-race-option-c-claude-2026-09-20",
+          "head": "cae8fb585b306595622b24b83d45cef4c8729898",
+          "state": "REF_ONLY_NO_OPEN_PR",
+          "integrationFocus": false,
+          "pr": null
+        },
+        {
+          "name": "planning/cologne-race-option-c-claude-r2-2026-09-20",
+          "head": "4cb01e29f96ccad7141342a0d86dd83bc88d62c6",
+          "state": "REF_ONLY_NO_OPEN_PR",
+          "integrationFocus": false,
+          "pr": null
+        },
+        {
+          "name": "planning/cologne-race-option-c-claude-r3-2026-09-20",
+          "head": "b475e504bc2194f6baf44239463f14f39015624f",
+          "state": "DRAFT_PR",
+          "integrationFocus": false,
+          "pr": {
+            "number": 134,
+            "title": "Brief r3: Claude Design Cologne Race Option C · self-contained",
+            "base": "main",
+            "headSha": "b475e504bc2194f6baf44239463f14f39015624f",
+            "draft": true
+          }
+        },
+        {
+          "name": "prep/walk-drive-combat-2026-09-18",
+          "head": "31135a0c102a6a0135c328b6dd6c3eee13d5b4ad",
+          "state": "REF_ONLY_NO_OPEN_PR",
+          "integrationFocus": false,
+          "pr": null
+        },
+        {
+          "name": "publish/free-roam-s04-01",
+          "head": "e65c09d7c9774a0b498c631a606abeb38c8860e4",
+          "state": "REF_ONLY_NO_OPEN_PR",
+          "integrationFocus": false,
+          "pr": null
+        },
+        {
+          "name": "publish/free-roam-s04-02-2026-09-18",
+          "head": "950fc5cce9097fc4efef2f47e6c08022d6dec825",
+          "state": "REF_ONLY_NO_OPEN_PR",
+          "integrationFocus": false,
+          "pr": null
+        },
+        {
+          "name": "publish/stunt-world-stage-2026-09-19",
+          "head": "65e461e5f62c13156f47a61a0a103d22f189a559",
+          "state": "REF_ONLY_NO_OPEN_PR",
+          "integrationFocus": false,
+          "pr": null
+        },
+        {
+          "name": "qa/eumel-three2p5d-public-2026-09-20",
+          "head": "b1dbe49c46261ee6e4a6e88ec85a0521ff88bc89",
+          "state": "REF_ONLY_NO_OPEN_PR",
+          "integrationFocus": false,
+          "pr": null
+        },
+        {
+          "name": "qa/stunt-world-public-url-2026-09-19",
+          "head": "d6c7795e48401b9c157d810a757fcfa865324129",
+          "state": "REF_ONLY_NO_OPEN_PR",
+          "integrationFocus": false,
+          "pr": null
+        },
+        {
+          "name": "qa/tinyskies-terrain-donor-public-2026-09-19",
+          "head": "d27eeb634986a7a661ed1d3770db7c2d700e3a3e",
+          "state": "REF_ONLY_NO_OPEN_PR",
+          "integrationFocus": false,
+          "pr": null
+        },
+        {
+          "name": "qa/tinyskies-track-corridor-tc01-public-2026-09-20",
+          "head": "553432fc0104cfcf5fc39967bde5b3d9174c0e4d",
+          "state": "REF_ONLY_NO_OPEN_PR",
+          "integrationFocus": false,
+          "pr": null
+        },
+        {
+          "name": "qa/track-ribbon-st01-public-2026-09-19",
+          "head": "70441ca58be8441d05c199febdba46bbafb49b96",
+          "state": "REF_ONLY_NO_OPEN_PR",
+          "integrationFocus": false,
+          "pr": null
+        },
+        {
+          "name": "recovery/te01-cloudflare-stage-2026-09-19",
+          "head": "69ae33bd2b7cabdaea35b165f401ef9bb6483804",
+          "state": "DRAFT_PR",
+          "integrationFocus": false,
+          "pr": {
+            "number": 108,
+            "title": "Recovery: freeze TE-01 Cloudflare Stage publication failure",
+            "base": "main",
+            "headSha": "69ae33bd2b7cabdaea35b165f401ef9bb6483804",
+            "draft": true
+          }
+        },
+        {
+          "name": "recovery/toolbox-stage-first-hub-2026-09-18",
+          "head": "4057243d97c3350bf753dd2536e16641871a4fc1",
+          "state": "REF_ONLY_NO_OPEN_PR",
+          "integrationFocus": false,
+          "pr": null
+        },
+        {
+          "name": "recovery/travel-world-builder-2026-09-17",
+          "head": "d34c88c5084f37abcaa521efe14642192d9ee317",
+          "state": "REF_ONLY_NO_OPEN_PR",
+          "integrationFocus": false,
+          "pr": null
+        },
+        {
+          "name": "resident-atlas/caveman-calibration-2026-09-16",
+          "head": "0ee844b8fcacb977c78e762caa8a302ac5d4d0ad",
+          "state": "REF_ONLY_NO_OPEN_PR",
+          "integrationFocus": false,
+          "pr": null
+        },
+        {
+          "name": "resident-atlas/caveman-kaykit-scale-2026-09-16",
+          "head": "2221e9a85577c57fdcc82b6860aafcc1ae323b91",
+          "state": "REF_ONLY_NO_OPEN_PR",
+          "integrationFocus": false,
+          "pr": null
+        },
+        {
+          "name": "resident-atlas/clown-juggling-module-v1-2026-09-19",
+          "head": "b4930bcce868b42b960086480ad6f3279e317c76",
+          "state": "REF_ONLY_NO_OPEN_PR",
+          "integrationFocus": false,
+          "pr": null
+        },
+        {
+          "name": "resident-atlas/live-pages-2026-09-16-temp",
+          "head": "ec7764b14ee897216ee197c63cffe536dce9396c",
+          "state": "REF_ONLY_NO_OPEN_PR",
+          "integrationFocus": false,
+          "pr": null
+        },
+        {
+          "name": "resident-atlas/live-pages-2026-09-16",
+          "head": "252449c921d3f8138d68d1faa3f4052e84040dfe",
+          "state": "REF_ONLY_NO_OPEN_PR",
+          "integrationFocus": false,
+          "pr": null
+        },
+        {
+          "name": "resident-atlas/posed-grounded-scenes-2026-09-18",
+          "head": "f73966194da608f158d22aeb0d07d92f38a1adc0",
+          "state": "REF_ONLY_NO_OPEN_PR",
+          "integrationFocus": false,
+          "pr": null
+        },
+        {
+          "name": "resident-atlas/wsa-handoff-2026-09-19",
+          "head": "6074b902b3b8bb7033158621e8196b66e4ce4397",
+          "state": "REF_ONLY_NO_OPEN_PR",
+          "integrationFocus": false,
+          "pr": null
+        },
+        {
+          "name": "resident-atlas/wsa-handoff-final-evidence-2026-09-19",
+          "head": "de7dde83c0c74489a77592c98826037765ccc9e8",
+          "state": "REF_ONLY_NO_OPEN_PR",
+          "integrationFocus": false,
+          "pr": null
+        },
+        {
+          "name": "resident-atlas/wsa-handoff-proof-2026-09-19",
+          "head": "ffcc3d0ecf2a23b120989564c48b0abc5f175425",
+          "state": "REF_ONLY_NO_OPEN_PR",
+          "integrationFocus": false,
+          "pr": null
+        },
+        {
+          "name": "resource-registry/r0-toolbox-actors-motions-2026-09-14",
+          "head": "96949fc0bffcf882e0fad8ae67dd38b77123d84d",
+          "state": "REF_ONLY_NO_OPEN_PR",
+          "integrationFocus": false,
+          "pr": null
+        },
+        {
+          "name": "resource-registry/r0.1-custom-motions-fx-2026-09-14",
+          "head": "f185a78d82c5751fd73b09feefa2861a88763c1a",
+          "state": "REF_ONLY_NO_OPEN_PR",
+          "integrationFocus": false,
+          "pr": null
+        },
+        {
+          "name": "review/astra-integration-01-world-r2-2026-09-18",
+          "head": "5bcf5e09b4e089eb4e8536767dc7dc65e7d7b992",
+          "state": "REF_ONLY_NO_OPEN_PR",
+          "integrationFocus": false,
+          "pr": null
+        },
+        {
+          "name": "roadtrip-v2-suno-v6-prompts-2026-09-19",
+          "head": "3acd0e63599cb8bed0f04488bdb122b5e771b7fc",
+          "state": "REF_ONLY_NO_OPEN_PR",
+          "integrationFocus": false,
+          "pr": null
+        },
+        {
+          "name": "stage/cartoon-map-board-p02-experiment-2026-09-20",
+          "head": "707e5f8ef3087dbf24ca03745f371fb76ce11d41",
+          "state": "DRAFT_PR",
+          "integrationFocus": false,
+          "pr": {
+            "number": 136,
+            "title": "Stage: Cartoon Map Board P0.2 experimental Cloudflare candidate",
+            "base": "main",
+            "headSha": "707e5f8ef3087dbf24ca03745f371fb76ce11d41",
+            "draft": true
+          }
+        },
+        {
+          "name": "stage/storytelling-maps-v1-t1-2026-09-20",
+          "head": "90c98a6b1f00926f110567dff877f3bfe97121ac",
+          "state": "DRAFT_PR",
+          "integrationFocus": true,
+          "pr": {
+            "number": 143,
+            "title": "KFB Storytelling Maps v1: living docs + T1 donor lab",
+            "base": "main",
+            "headSha": "90c98a6b1f00926f110567dff877f3bfe97121ac",
+            "draft": true
+          }
+        },
+        {
+          "name": "stage/storytelling-maps-v1-t2-media-standee-2026-09-20",
+          "head": "e81f0e7a05a56e7c03a38b326df4caa1c7c14428",
+          "state": "DRAFT_PR",
+          "integrationFocus": true,
+          "pr": {
+            "number": 145,
+            "title": "Storytelling Maps T2: exact KayKit media standee A/B",
+            "base": "stage/storytelling-maps-v1-t1-2026-09-20",
+            "headSha": "e81f0e7a05a56e7c03a38b326df4caa1c7c14428",
+            "draft": true
+          }
+        },
+        {
+          "name": "stage/te01-osm-depth-ink-2026-09-19",
+          "head": "d9f291043f33001f1970834fffb050b12e3cdda9",
+          "state": "REF_ONLY_NO_OPEN_PR",
+          "integrationFocus": false,
+          "pr": null
+        },
+        {
+          "name": "stage/tinyskies-terrain-donor-2026-09-19",
+          "head": "ef6b4500957ed31b2d21263f27aa98eabf2c226a",
+          "state": "REF_ONLY_NO_OPEN_PR",
+          "integrationFocus": false,
+          "pr": null
+        },
+        {
+          "name": "stage/tinyskies-track-corridor-tc01-2026-09-20",
+          "head": "7e6f3c440d54410342d1d884d3f63118468d241c",
+          "state": "REF_ONLY_NO_OPEN_PR",
+          "integrationFocus": false,
+          "pr": null
+        },
+        {
+          "name": "stage/tinyskies-track-corridor-tc01-r2-2026-09-20",
+          "head": "a93adaa7ee53b475c794fda4ae562573202989db",
+          "state": "REF_ONLY_NO_OPEN_PR",
+          "integrationFocus": false,
+          "pr": null
+        },
+        {
+          "name": "stage/track-ribbon-st01-2026-09-19",
+          "head": "de6d6e7f1e1c79206f73925adfa74f83b0554adb",
+          "state": "REF_ONLY_NO_OPEN_PR",
+          "integrationFocus": false,
+          "pr": null
+        },
+        {
+          "name": "toolbox/cross-render-eye-proof-2026-09-18",
+          "head": "ea9df634add98319fe7c675d117bc9743a696ca0",
+          "state": "REF_ONLY_NO_OPEN_PR",
+          "integrationFocus": false,
+          "pr": null
+        },
+        {
+          "name": "toolbox/cross-render-eye-proof-r2-2026-09-18",
+          "head": "ac6469d68b7c1a51475717c94df0db5199778bcc",
+          "state": "REF_ONLY_NO_OPEN_PR",
+          "integrationFocus": false,
+          "pr": null
+        },
+        {
+          "name": "toolbox/eye-rig-batch-2026-09-18",
+          "head": "e277c3456651d314a01adea046e0105d2a12cdd1",
+          "state": "DRAFT_PR",
+          "integrationFocus": false,
+          "pr": {
+            "number": 104,
+            "title": "ToolBox: Batch EyeRig Atlas · Rig_Medium proof",
+            "base": "main",
+            "headSha": "e277c3456651d314a01adea046e0105d2a12cdd1",
+            "draft": true
+          }
+        },
+        {
+          "name": "toolbox/inline-3d-edit-layer-intake-2026-09-20",
+          "head": "c52e4139d2b5f311ef5dc9a8cfdecbd8944a469f",
+          "state": "DRAFT_PR",
+          "integrationFocus": true,
+          "pr": {
+            "number": 120,
+            "title": "ToolBox: pin S21 inline 3D Edit Layer intake",
+            "base": "main",
+            "headSha": "c52e4139d2b5f311ef5dc9a8cfdecbd8944a469f",
+            "draft": true
+          }
+        },
+        {
+          "name": "toolbox/toolbox-home-v1-2026-09-20",
+          "head": "537ab4f037b76097b0a4b1808943b866f6f7f1f1",
+          "state": "DRAFT_PR",
+          "integrationFocus": true,
+          "pr": {
+            "number": 146,
+            "title": "ToolBox Home v1 · asset library + scene-tool router",
+            "base": "asset/kaykit-bits-bundle1-2026-09-20",
+            "headSha": "537ab4f037b76097b0a4b1808943b866f6f7f1f1",
+            "draft": true
+          }
+        },
+        {
+          "name": "toolbox/2d-alignment-v18-donor-2026-09-18",
+          "head": "7dd52391fd2c299de1795cba140114cd20fc2e5a",
+          "state": "REF_ONLY_NO_OPEN_PR",
+          "integrationFocus": false,
+          "pr": null
+        },
+        {
+          "name": "toolbox/2d-animation-alignment-2026-09-18",
+          "head": "ce8dc10426928af651bd65ec71222d7f079ff57b",
+          "state": "REF_ONLY_NO_OPEN_PR",
+          "integrationFocus": false,
+          "pr": null
+        },
+        {
+          "name": "travel/a0-exact-mirror-2026-09-17",
+          "head": "7aeff472141bee424fd997165cfb8dcc1164b827",
+          "state": "REF_ONLY_NO_OPEN_PR",
+          "integrationFocus": false,
+          "pr": null
+        },
+        {
+          "name": "travel/town-founding-preview-2026-09-17",
+          "head": "683a272600b1fd695f7282d18a664ac6166fa7b8",
+          "state": "REF_ONLY_NO_OPEN_PR",
+          "integrationFocus": false,
+          "pr": null
+        },
+        {
+          "name": "travel/town-movement-scale-fix-2026-09-17",
+          "head": "115d9c6353a17d4978c26cc3effda894622ac634",
+          "state": "REF_ONLY_NO_OPEN_PR",
+          "integrationFocus": false,
+          "pr": null
+        },
+        {
+          "name": "travel/town-presentation-v3-2026-09-17",
+          "head": "c2b5463d3e0ef81fca67a4d5505f4b27c17bcdc9",
+          "state": "REF_ONLY_NO_OPEN_PR",
+          "integrationFocus": false,
+          "pr": null
+        },
+        {
+          "name": "travel/wb0-ground-controls-camera-cadence-public-2026-09-17",
+          "head": "55aeebda12178fc1f0210298f5b69cab9847ef4b",
+          "state": "REF_ONLY_NO_OPEN_PR",
+          "integrationFocus": false,
+          "pr": null
+        },
+        {
+          "name": "travel/wb0-ground-experience-public-2026-09-17",
+          "head": "1927f4c1336ece448891291d751b5dba81b5f323",
+          "state": "REF_ONLY_NO_OPEN_PR",
+          "integrationFocus": false,
+          "pr": null
+        },
+        {
+          "name": "travel/wb0-ground-hardening-public-2026-09-17",
+          "head": "7d3f0f4e6612662f02cd3ec240638d428b15b5c7",
+          "state": "REF_ONLY_NO_OPEN_PR",
+          "integrationFocus": false,
+          "pr": null
+        },
+        {
+          "name": "travel/wb0-ground-rig-hardening-public-2026-09-17",
+          "head": "5fbdb63ad53afcbb7b16aea7bf97fbf7f99a4c90",
+          "state": "REF_ONLY_NO_OPEN_PR",
+          "integrationFocus": false,
+          "pr": null
+        },
+        {
+          "name": "travel/wb0-mech-bee-recovery-public-2026-09-17",
+          "head": "494bf780a6f1f1650f7a8e61b1c5e39a868a91c1",
+          "state": "REF_ONLY_NO_OPEN_PR",
+          "integrationFocus": false,
+          "pr": null
+        },
+        {
+          "name": "travel/wb0-movement-character-lab-public-2026-09-17",
+          "head": "ec3bf733d0804ac1c4ce26cd428e5fe8e4484325",
+          "state": "REF_ONLY_NO_OPEN_PR",
+          "integrationFocus": false,
+          "pr": null
+        },
+        {
+          "name": "travel/wb0-movement-hardening-public-2026-09-17",
+          "head": "4b764570305181c2cd4a232da5ab0e0a932d2e72",
+          "state": "REF_ONLY_NO_OPEN_PR",
+          "integrationFocus": false,
+          "pr": null
+        },
+        {
+          "name": "travel/wb0-player-calibration-public-2026-09-17",
+          "head": "d3e30b4cc0fccb5418c97ee80c521f93c7247f23",
+          "state": "REF_ONLY_NO_OPEN_PR",
+          "integrationFocus": false,
+          "pr": null
+        },
+        {
+          "name": "travel/wb0-public-2026-09-17",
+          "head": "38e4568b305d8e67c72b1db112ee5901b8545821",
+          "state": "REF_ONLY_NO_OPEN_PR",
+          "integrationFocus": false,
+          "pr": null
+        },
+        {
+          "name": "travel/wb0-support-surface-public-2026-09-17",
+          "head": "8e7e7b28bc94c7a6d90347bc8795501a067d4641",
+          "state": "REF_ONLY_NO_OPEN_PR",
+          "integrationFocus": false,
+          "pr": null
+        },
+        {
+          "name": "travel/wb0-wasd-qe-public-2026-09-17",
+          "head": "3b1f0a9170251fd73491f2448cb198d6ca5fac90",
+          "state": "REF_ONLY_NO_OPEN_PR",
+          "integrationFocus": false,
+          "pr": null
+        },
+        {
+          "name": "work/kfb-hub-paper-dark-previews-2026-09-20",
+          "head": "bc1ebee4f934978e79eef852b4bd66c5203448f4",
+          "state": "DRAFT_PR",
+          "integrationFocus": false,
+          "pr": {
+            "number": 141,
+            "title": "Hub: paper/dark UI, hash routes and visual Stage previews",
+            "base": "main",
+            "headSha": "bc1ebee4f934978e79eef852b4bd66c5203448f4",
+            "draft": true
+          }
+        },
+        {
+          "name": "work/kfb-hub-ui-v2-2026-09-19",
+          "head": "c91417315504ac4199482959d8bafbc8f6245904",
+          "state": "REF_ONLY_NO_OPEN_PR",
+          "integrationFocus": false,
+          "pr": null
+        },
+        {
+          "name": "work/kfb-modular-minigame-hub-2026-09-19",
+          "head": "1dee547022573adb068ffb250701048b3b11ab3d",
+          "state": "REF_ONLY_NO_OPEN_PR",
+          "integrationFocus": false,
+          "pr": null
+        },
+        {
+          "name": "world-atlas/dungeon-room-blueprint-s14-blender-2026-09-20",
+          "head": "99a14f7bc77cff58ae68c1e0280ee990574704d6",
+          "state": "DRAFT_PR",
+          "integrationFocus": true,
+          "pr": {
+            "number": 126,
+            "title": "World Atlas: S14 Dungeon room blueprint + Blender bridge",
+            "base": "main",
+            "headSha": "99a14f7bc77cff58ae68c1e0280ee990574704d6",
+            "draft": true
+          }
+        },
+        {
+          "name": "world-atlas/inline-detail-editor-e1-2026-09-20",
+          "head": "69943c8d57aeb8202aaa3b1673697cec58152aac",
+          "state": "DRAFT_PR",
+          "integrationFocus": true,
+          "pr": {
+            "number": 133,
+            "title": "World Atlas E1: prove S21 inline detail editor as second host",
+            "base": "main",
+            "headSha": "69943c8d57aeb8202aaa3b1673697cec58152aac",
+            "draft": true
+          }
+        },
+        {
+          "name": "wsa/cologne-option-c-stage-2026-09-20",
+          "head": "dbfbb1845772d88b4678a5dabdb83e54748c0cf4",
+          "state": "DRAFT_PR",
+          "integrationFocus": false,
+          "pr": {
+            "number": 142,
+            "title": "stage(race): Cologne Option C public review slice",
+            "base": "main",
+            "headSha": "dbfbb1845772d88b4678a5dabdb83e54748c0cf4",
+            "draft": true
+          }
+        },
+        {
+          "name": "wsa/combat-ca2-kaykit-briefs-2026-09-20",
+          "head": "ac5cd9bbacc20e341d42345e6bd7425ae3ea0284",
+          "state": "OPEN_PR",
+          "integrationFocus": false,
+          "pr": {
+            "number": 128,
+            "title": "hub(combat): prepare CA2 KayKit actor and spindle slices",
+            "base": "main",
+            "headSha": "ac5cd9bbacc20e341d42345e6bd7425ae3ea0284",
+            "draft": false
+          }
+        },
+        {
+          "name": "wsa/doccy-source-intake-prep-2026-09-20",
+          "head": "125e353750139459d9c8e82ab1dbe8f8c1492ada",
+          "state": "REF_ONLY_NO_OPEN_PR",
+          "integrationFocus": false,
+          "pr": null
+        },
+        {
+          "name": "wsa/eumel-game-ready-package-2026-09-20",
+          "head": "dec04f73647fb194e1ba1762812bea1ee9c87a1a",
+          "state": "REF_ONLY_NO_OPEN_PR",
+          "integrationFocus": false,
+          "pr": null
+        },
+        {
+          "name": "wsa/eumel-package-pin-qa-runtime-2026-09-20",
+          "head": "e9c2272d8783bfb16c3f72e9ead65448f779ace0",
+          "state": "REF_ONLY_NO_OPEN_PR",
+          "integrationFocus": false,
+          "pr": null
+        },
+        {
+          "name": "wsa/eumel-three2p5d-proof-2026-09-20",
+          "head": "ec5991c0e19d511091aa4b02a38a17a42af54fb3",
+          "state": "REF_ONLY_NO_OPEN_PR",
+          "integrationFocus": false,
+          "pr": null
+        },
+        {
+          "name": "wsa/hub-chat-osm-refresh-2026-09-19",
+          "head": "6737c80e97bde5f82b239fbc7020ca0bacafc5f8",
+          "state": "REF_ONLY_NO_OPEN_PR",
+          "integrationFocus": false,
+          "pr": null
+        },
+        {
+          "name": "wsa/travel-b0-publication-2026-09-13",
+          "head": "4c7942bce981fe1193c2fbfad3b967b9076036db",
+          "state": "REF_ONLY_NO_OPEN_PR",
+          "integrationFocus": false,
+          "pr": null
+        },
+        {
+          "name": "wsa/vehicle-deformer-v2-stage-2026-09-19",
+          "head": "02b246b9a77b179e7a022c079bfecce87b0205e0",
+          "state": "REF_ONLY_NO_OPEN_PR",
+          "integrationFocus": false,
+          "pr": null
+        },
+        {
+          "name": "wsa/2d-resident-actor-handoff-2026-09-20",
+          "head": "84603ebca6533e3fdb8bb9b7406b63c2b3bd9115",
+          "state": "REF_ONLY_NO_OPEN_PR",
+          "integrationFocus": false,
+          "pr": null
+        }
+      ]
+    },
+    {
+      "repo": "georg-doc/KFB-Combat-Arena",
+      "defaultBranch": "main",
+      "branchCount": 7,
+      "openPrCount": 4,
+      "branches": [
+        {
+          "name": "chat/router-sync-2026-09-13",
+          "head": "8ea08d2fd039cef60b7bfd3c9bbb7dcf1664a811",
+          "state": "REF_ONLY_NO_OPEN_PR",
+          "integrationFocus": false,
+          "pr": null
+        },
+        {
+          "name": "chatgpt-web/c0-review-2026-09-13",
+          "head": "766dcc97a63bf3e1db9dc56362cc167696a07a1d",
+          "state": "DRAFT_PR",
+          "integrationFocus": false,
+          "pr": {
+            "number": 1,
+            "title": "C0 · ChatGPT Web source/owner review",
+            "base": "main",
+            "headSha": "766dcc97a63bf3e1db9dc56362cc167696a07a1d",
+            "draft": true
+          }
+        },
+        {
+          "name": "chatgpt-web/combat-arena-integration-v2-2026-09-19",
+          "head": "954f2db7484dc566e468e5ce89b0d95940d97537",
+          "state": "DRAFT_PR",
+          "integrationFocus": true,
+          "pr": {
+            "number": 5,
+            "title": "CA2: Driver Graft + verified KayKit combat actors",
+            "base": "main",
+            "headSha": "954f2db7484dc566e468e5ce89b0d95940d97537",
+            "draft": true
+          }
+        },
+        {
+          "name": "chatgpt-web/weapon-w0-2026-09-13",
+          "head": "c0f55d6413613ca5bb8d4829ffc8b43c36b38288",
+          "state": "DRAFT_PR",
+          "integrationFocus": false,
+          "pr": {
+            "number": 2,
+            "title": "W0: weapon source and contract delta review",
+            "base": "main",
+            "headSha": "c0f55d6413613ca5bb8d4829ffc8b43c36b38288",
+            "draft": true
+          }
+        },
+        {
+          "name": "chatgpt-web/ws0-v5b-claude-onboarding-2026-09-13",
+          "head": "421abee25757759b58a00c7a479258fd55a4f132",
+          "state": "REF_ONLY_NO_OPEN_PR",
+          "integrationFocus": false,
+          "pr": null
+        },
+        {
+          "name": "main",
+          "head": "f6a59ad15b9ffcf3164b0ab013f223962b63f61f",
+          "state": "DEFAULT",
+          "integrationFocus": false,
+          "pr": null
+        },
+        {
+          "name": "wsa/ca2-kaykit-prep-2026-09-20",
+          "head": "6ebc609c9ccf87e580268ee766fea9d3c10912f8",
+          "state": "OPEN_PR",
+          "integrationFocus": true,
+          "pr": {
+            "number": 6,
+            "title": "docs: prepare CA2 KayKit actor and spindle integration",
+            "base": "main",
+            "headSha": "6ebc609c9ccf87e580268ee766fea9d3c10912f8",
+            "draft": false
+          }
+        }
+      ]
+    },
+    {
+      "repo": "georg-doc/KFB-Stunt-Car-Race",
+      "defaultBranch": "main",
+      "branchCount": 40,
+      "openPrCount": 15,
+      "branches": [
+        {
+          "name": "chat/kaykit-visual-scene-atlas-preflight-2026-09-16",
+          "head": "2290c9943c1b03abc32816c253e07b0d7ed22ec9",
+          "state": "REF_ONLY_NO_OPEN_PR",
+          "integrationFocus": false,
+          "pr": null
+        },
+        {
+          "name": "design/hud-industrial-bits-c1-2026-09-19",
+          "head": "af1da3a1112720145cc9194b502ae784967f8354",
+          "state": "DRAFT_PR",
+          "integrationFocus": false,
+          "pr": {
+            "number": 25,
+            "title": "HUD Industrial Bits C1: donor-first anthracite KFB cockpit language",
+            "base": "main",
+            "headSha": "af1da3a1112720145cc9194b502ae784967f8354",
+            "draft": true
+          }
+        },
+        {
+          "name": "design/hud-toy-system-c0-2026-09-19",
+          "head": "167f4d8620c6a68ded1b8b50da49df53fd473b63",
+          "state": "DRAFT_PR",
+          "integrationFocus": false,
+          "pr": {
+            "number": 23,
+            "title": "HUD Toy System C0: shared 3D component, color and motion design",
+            "base": "main",
+            "headSha": "167f4d8620c6a68ded1b8b50da49df53fd473b63",
+            "draft": true
+          }
+        },
+        {
+          "name": "design/hud-v4-game-alignment-2026-09-20",
+          "head": "f4436c83c674bc5bde017a0c33ca19e5da682894",
+          "state": "DRAFT_PR",
+          "integrationFocus": true,
+          "pr": {
+            "number": 30,
+            "title": "HUD v4 brief: compact game alignment for Cologne Race",
+            "base": "main",
+            "headSha": "f4436c83c674bc5bde017a0c33ca19e5da682894",
+            "draft": true
+          }
+        },
+        {
+          "name": "docs/free-roam-s04-02-public-pass",
+          "head": "1b7d94340896f8ef75c50cadaacd8d7494d32544",
+          "state": "REF_ONLY_NO_OPEN_PR",
+          "integrationFocus": false,
+          "pr": null
+        },
+        {
+          "name": "main",
+          "head": "31d834218f0a79f193a44b054e57454d29c305c2",
+          "state": "DEFAULT",
+          "integrationFocus": false,
+          "pr": null
+        },
+        {
+          "name": "planning/kfb-stage-slices-2026-09-19",
+          "head": "3c8e84b0020e26957431c8ae61699e7396f079c0",
+          "state": "DRAFT_PR",
+          "integrationFocus": false,
+          "pr": {
+            "number": 11,
+            "title": "Docs: KFB Stunt World Stage slice project context",
+            "base": "main",
+            "headSha": "3c8e84b0020e26957431c8ae61699e7396f079c0",
+            "draft": true
+          }
+        },
+        {
+          "name": "planning/track-environment-design-v02-2026-09-19",
+          "head": "b169ddec8770ba29c5d7ef667f25d2c886445e7a",
+          "state": "DRAFT_PR",
+          "integrationFocus": false,
+          "pr": {
+            "number": 22,
+            "title": "Design: KFB Track + Race Environment v0.2",
+            "base": "main",
+            "headSha": "b169ddec8770ba29c5d7ef667f25d2c886445e7a",
+            "draft": true
+          }
+        },
+        {
+          "name": "planning/track-environment-grammar-2026-09-19",
+          "head": "f1e185fa839930c7fd1084460e578bb0e9587b95",
+          "state": "DRAFT_PR",
+          "integrationFocus": false,
+          "pr": {
+            "number": 13,
+            "title": "Docs: KFB track + environment design grammar",
+            "base": "main",
+            "headSha": "f1e185fa839930c7fd1084460e578bb0e9587b95",
+            "draft": true
+          }
+        },
+        {
+          "name": "race-audio-a1-2026-09-18",
+          "head": "e2e7150f8e7bef4ecef269b0d3be2e80c1c9ffac",
+          "state": "REF_ONLY_NO_OPEN_PR",
+          "integrationFocus": false,
+          "pr": null
+        },
+        {
+          "name": "race-audio-a3-research-2026-09-18",
+          "head": "c38c47a091f13f6ccf7cebed654c0536cb57276d",
+          "state": "REF_ONLY_NO_OPEN_PR",
+          "integrationFocus": false,
+          "pr": null
+        },
+        {
+          "name": "race-audio-a3-semantic-2026-09-18",
+          "head": "29390116289ee112cbaf3f575fa96dc937e8f5d9",
+          "state": "REF_ONLY_NO_OPEN_PR",
+          "integrationFocus": false,
+          "pr": null
+        },
+        {
+          "name": "race-audio-a4-efunk-shepard-2026-09-19",
+          "head": "c353d4acef870ddeb1f43886b96e3cfc46a31fba",
+          "state": "REF_ONLY_NO_OPEN_PR",
+          "integrationFocus": false,
+          "pr": null
+        },
+        {
+          "name": "race-audio-a5-jukebox-starter-2026-09-19",
+          "head": "a9b2ae82f9f62d1d8c73a547be0f9a9b41be8647",
+          "state": "REF_ONLY_NO_OPEN_PR",
+          "integrationFocus": false,
+          "pr": null
+        },
+        {
+          "name": "race-audio-a6-3d-instruments-sfx-2026-09-19",
+          "head": "30f68ee33c90beaf7a33dc02ff0906a620b14a76",
+          "state": "REF_ONLY_NO_OPEN_PR",
+          "integrationFocus": false,
+          "pr": null
+        },
+        {
+          "name": "race-audio-contact-a2-2026-09-18",
+          "head": "97ab10d9a6875a36535056c9464b1384886de090",
+          "state": "REF_ONLY_NO_OPEN_PR",
+          "integrationFocus": false,
+          "pr": null
+        },
+        {
+          "name": "race-audio-roadtrip-v2-stage-2026-09-19",
+          "head": "1de02739c17291b6eb8e556bfb0c2b5801f9dcff",
+          "state": "REF_ONLY_NO_OPEN_PR",
+          "integrationFocus": false,
+          "pr": null
+        },
+        {
+          "name": "work/free-roam-s04-01",
+          "head": "726039c9330ea9314550d231f81e29c99b808324",
+          "state": "REF_ONLY_NO_OPEN_PR",
+          "integrationFocus": false,
+          "pr": null
+        },
+        {
+          "name": "work/free-roam-s04-02",
+          "head": "816f9040c1b9e775b2d84ca1c52b108cefe41af1",
+          "state": "REF_ONLY_NO_OPEN_PR",
+          "integrationFocus": false,
+          "pr": null
+        },
+        {
+          "name": "work/free-roam-s04-03-stuntfield",
+          "head": "6a2f620f15ea395a668c7498d2fe607354ff3f9a",
+          "state": "REF_ONLY_NO_OPEN_PR",
+          "integrationFocus": false,
+          "pr": null
+        },
+        {
+          "name": "work/race-3d-radio-restart-brief-2026-09-19",
+          "head": "045b57ee87eb647b594dfef077a59fce5a419696",
+          "state": "REF_ONLY_NO_OPEN_PR",
+          "integrationFocus": false,
+          "pr": null
+        },
+        {
+          "name": "wsa/asset-librarian-v1-intake-2026-09-12",
+          "head": "869dffa9fee19ebab1849a9919ecb8a9624dd4db",
+          "state": "REF_ONLY_NO_OPEN_PR",
+          "integrationFocus": false,
+          "pr": null
+        },
+        {
+          "name": "wsa/hud-2d-interim-v1-2026-09-19",
+          "head": "e23fcf330270c1708ea8c37490d0313b147df651",
+          "state": "REF_ONLY_NO_OPEN_PR",
+          "integrationFocus": false,
+          "pr": null
+        },
+        {
+          "name": "wsa/hud-2d-racer-v2-visual-ssot-2026-09-19",
+          "head": "0aca4dba9527503cf19af3073c66d1dee11c828c",
+          "state": "REF_ONLY_NO_OPEN_PR",
+          "integrationFocus": false,
+          "pr": null
+        },
+        {
+          "name": "wsa/hud-racer-v3-game-hud-2026-09-19",
+          "head": "8918471bf6c5e3fa1b945109fd37019df600cad6",
+          "state": "DRAFT_PR",
+          "integrationFocus": true,
+          "pr": {
+            "number": 28,
+            "title": "HUD Game v3: landscape Almanac + game controls + real-route minimap",
+            "base": "main",
+            "headSha": "8918471bf6c5e3fa1b945109fd37019df600cad6",
+            "draft": true
+          }
+        },
+        {
+          "name": "wsa/hud-rig-lab-v1-2026-09-19",
+          "head": "84e397fff6ae585fff14e136d09ea87002f0d27c",
+          "state": "REF_ONLY_NO_OPEN_PR",
+          "integrationFocus": false,
+          "pr": null
+        },
+        {
+          "name": "wsa/hud-rig-v2-edge-constellation-2026-09-19",
+          "head": "719f492b6fea3026561adeee3026256280b35929",
+          "state": "REF_ONLY_NO_OPEN_PR",
+          "integrationFocus": false,
+          "pr": null
+        },
+        {
+          "name": "wsa/mvp1-i1-flow-2026-09-12",
+          "head": "1723cf1f925e97f058672aa6b071b6448a82d9c4",
+          "state": "REF_ONLY_NO_OPEN_PR",
+          "integrationFocus": false,
+          "pr": null
+        },
+        {
+          "name": "wsa/mvp1-reconciliation-2026-09-12",
+          "head": "57dafbaf6f48e6c626824344506eaaf130b8e2a6",
+          "state": "REF_ONLY_NO_OPEN_PR",
+          "integrationFocus": false,
+          "pr": null
+        },
+        {
+          "name": "wsa/mvp-preflight-modular-2026-09-11",
+          "head": "22cc70efd0ae1e6c6e020c1bd3d1ed5a56cf1a79",
+          "state": "DRAFT_PR",
+          "integrationFocus": false,
+          "pr": {
+            "number": 1,
+            "title": "Prepare modular stunt-zone MVP",
+            "base": "main",
+            "headSha": "22cc70efd0ae1e6c6e020c1bd3d1ed5a56cf1a79",
+            "draft": true
+          }
+        },
+        {
+          "name": "wsa/osm-city-drive-c0-2026-09-18",
+          "head": "c9bed546f6bd290fba48df596ff7e9132c3df22c",
+          "state": "DRAFT_PR",
+          "integrationFocus": false,
+          "pr": {
+            "number": 9,
+            "title": "OSM City Drive C1: Hürth/Ehrenfeld + KFB Cartoon/Grotesk",
+            "base": "main",
+            "headSha": "c9bed546f6bd290fba48df596ff7e9132c3df22c",
+            "draft": true
+          }
+        },
+        {
+          "name": "wsa/osm-city-drive-c1-deformer-2026-09-19",
+          "head": "406cd26f44f22811fe3b3a58776839be7ffb7b2c",
+          "state": "DRAFT_PR",
+          "integrationFocus": false,
+          "pr": {
+            "number": 10,
+            "title": "Stage C1: Vehicle Deformer v2 on OSM City Drive",
+            "base": "wsa/osm-city-drive-c0-2026-09-18",
+            "headSha": "406cd26f44f22811fe3b3a58776839be7ffb7b2c",
+            "draft": true
+          }
+        },
+        {
+          "name": "wsa/osm-city-drive-corridor-2026-09-19",
+          "head": "5f97f462a814dffac6f7d2c3a0abeb05f4f8f90a",
+          "state": "OPEN_PR",
+          "integrationFocus": false,
+          "pr": {
+            "number": 12,
+            "title": "Stage S1: continuous Hürth → Ehrenfeld OSM corridor",
+            "base": "wsa/osm-city-drive-c1-deformer-2026-09-19",
+            "headSha": "5f97f462a814dffac6f7d2c3a0abeb05f4f8f90a",
+            "draft": false
+          }
+        },
+        {
+          "name": "wsa/osm-city-drive-visual-parity-2026-09-19",
+          "head": "ca580109d346b16c0ad0663816668b2c35e77ed8",
+          "state": "DRAFT_PR",
+          "integrationFocus": false,
+          "pr": {
+            "number": 17,
+            "title": "OSM City Drive: restore Grotesque visual parity",
+            "base": "wsa/osm-city-drive-corridor-2026-09-19",
+            "headSha": "ca580109d346b16c0ad0663816668b2c35e77ed8",
+            "draft": true
+          }
+        },
+        {
+          "name": "wsa/osm-town-mvp-s0-2026-09-18",
+          "head": "59b406641c033cb03197eb532630fd3a3346f763",
+          "state": "REF_ONLY_NO_OPEN_PR",
+          "integrationFocus": false,
+          "pr": null
+        },
+        {
+          "name": "wsa/te01-osm-depth-ink-2026-09-19",
+          "head": "37ba93f45d07660ed69a7d049840581612d8a14a",
+          "state": "DRAFT_PR",
+          "integrationFocus": false,
+          "pr": {
+            "number": 24,
+            "title": "TE-01: stabilize OSM depth + add KFB Ink world view",
+            "base": "wsa/osm-city-drive-visual-parity-2026-09-19",
+            "headSha": "37ba93f45d07660ed69a7d049840581612d8a14a",
+            "draft": true
+          }
+        },
+        {
+          "name": "wsa/track-ribbon-st01-2026-09-19",
+          "head": "4136fd04ac28a6c0dc5e8ed2aff623cac8e8f3c7",
+          "state": "DRAFT_PR",
+          "integrationFocus": false,
+          "pr": {
+            "number": 14,
+            "title": "Stage S-T01: KFB Track Ribbon grammar POC",
+            "base": "planning/track-environment-grammar-2026-09-19",
+            "headSha": "4136fd04ac28a6c0dc5e8ed2aff623cac8e8f3c7",
+            "draft": true
+          }
+        },
+        {
+          "name": "wsa/track-ribbon-st01b-2026-09-19",
+          "head": "a47047be2cb63f1c1fa2f70d1d1bf4f5411ce8cc",
+          "state": "DRAFT_PR",
+          "integrationFocus": false,
+          "pr": {
+            "number": 29,
+            "title": "[FROZEN · WRONG FOUNDATION FOR THIS SLICE] S-T01b Voxel vs Travel Globe",
+            "base": "wsa/track-ribbon-st01-2026-09-19",
+            "headSha": "a47047be2cb63f1c1fa2f70d1d1bf4f5411ce8cc",
+            "draft": true
+          }
+        },
+        {
+          "name": "wsa/v010-topology-blockout-2026-09-18",
+          "head": "3784029ce965bc4b070dd590272538c588bab6d1",
+          "state": "REF_ONLY_NO_OPEN_PR",
+          "integrationFocus": false,
+          "pr": null
+        },
+        {
+          "name": "wsa-audio-ui-sfx-checkin-2026-09-19",
+          "head": "4e4e00a753e74fac330924a6a700b37a532bc3bd",
+          "state": "REF_ONLY_NO_OPEN_PR",
+          "integrationFocus": false,
+          "pr": null
+        }
+      ]
+    },
+    {
+      "repo": "georg-doc/KFB-Travel-Globe",
+      "defaultBranch": "main",
+      "branchCount": 32,
+      "openPrCount": 4,
+      "branches": [
+        {
+          "name": "astra/birthday-p0-2026-09-15",
+          "head": "bbf78434aea3ea25e3f6d2ee4e8ec673af1cf2b8",
+          "state": "OPEN_PR",
+          "integrationFocus": false,
+          "pr": {
+            "number": 8,
+            "title": "Birthday P0: frontal sunset, editable hero name and living character choices",
+            "base": "main",
+            "headSha": "bbf78434aea3ea25e3f6d2ee4e8ec673af1cf2b8",
+            "draft": false
+          }
+        },
+        {
+          "name": "docs/ground-recovery-2026-09-18",
+          "head": "cb8baebe948d93c5da34a3ffc535e2181f9a3aa5",
+          "state": "REF_ONLY_NO_OPEN_PR",
+          "integrationFocus": false,
+          "pr": null
+        },
+        {
+          "name": "fix/card-world-start-2026-09-18",
+          "head": "2c5d83dbdeb855f901e93e6bd91f599ec6e5d5dd",
+          "state": "REF_ONLY_NO_OPEN_PR",
+          "integrationFocus": false,
+          "pr": null
+        },
+        {
+          "name": "fix/ground-card-artwork-pump-2026-09-18",
+          "head": "7e0de7162731325bf7fccf9125de77672fa7a5c7",
+          "state": "REF_ONLY_NO_OPEN_PR",
+          "integrationFocus": false,
+          "pr": null
+        },
+        {
+          "name": "fix/ground-card-start-2026-09-18",
+          "head": "10092f112869b1bf361bc30e1154ed97e0bd1547",
+          "state": "REF_ONLY_NO_OPEN_PR",
+          "integrationFocus": false,
+          "pr": null
+        },
+        {
+          "name": "fix/ground-rig-scale-sync-2026-09-18",
+          "head": "f0fed5a2327c80e0628c7d0c2c8a84cfe36c1812",
+          "state": "REF_ONLY_NO_OPEN_PR",
+          "integrationFocus": false,
+          "pr": null
+        },
+        {
+          "name": "main",
+          "head": "8614282aab2ced43bb5dda9fcf7abadf9768100a",
+          "state": "DEFAULT",
+          "integrationFocus": false,
+          "pr": null
+        },
+        {
+          "name": "qa/b0-browser-2026-09-13-astra-work",
+          "head": "f9ebb977c8c5b5c7113cba697ac658592dd77187",
+          "state": "REF_ONLY_NO_OPEN_PR",
+          "integrationFocus": false,
+          "pr": null
+        },
+        {
+          "name": "town/fix-ground-movement-scale-2026-09-17",
+          "head": "67e9e81b36eeeec467f6ba8b3c40f0534cd3a214",
+          "state": "REF_ONLY_NO_OPEN_PR",
+          "integrationFocus": false,
+          "pr": null
+        },
+        {
+          "name": "town/founding-caveman-king-2026-09-17",
+          "head": "25b972b4bb04c5cc7b99a10ed59fba73865cf7c8",
+          "state": "REF_ONLY_NO_OPEN_PR",
+          "integrationFocus": false,
+          "pr": null
+        },
+        {
+          "name": "town/world-builder-wb0-brief-2026-09-17",
+          "head": "7e74cff4fd11f8c60bfa1dc0ebc568f9bc068952",
+          "state": "REF_ONLY_NO_OPEN_PR",
+          "integrationFocus": false,
+          "pr": null
+        },
+        {
+          "name": "wb0/a0-surface-adapter-2026-09-17",
+          "head": "6838b786e553d96a1ff240230591236af8cf74e9",
+          "state": "REF_ONLY_NO_OPEN_PR",
+          "integrationFocus": false,
+          "pr": null
+        },
+        {
+          "name": "wb0/browser-findings-movement-hardening-2026-09-17",
+          "head": "4052c5ad950ae20714c6a509d5055dad6182d44e",
+          "state": "REF_ONLY_NO_OPEN_PR",
+          "integrationFocus": false,
+          "pr": null
+        },
+        {
+          "name": "wb0/ground-controls-camera-cadence-2026-09-17",
+          "head": "64e41a1b279d95ab81449d7652e3528bb884af75",
+          "state": "REF_ONLY_NO_OPEN_PR",
+          "integrationFocus": false,
+          "pr": null
+        },
+        {
+          "name": "wb0/ground-experience-hardening-2026-09-17",
+          "head": "6ab24f71f311599682380720d39dfda825ddf787",
+          "state": "REF_ONLY_NO_OPEN_PR",
+          "integrationFocus": false,
+          "pr": null
+        },
+        {
+          "name": "wb0/ground-hardening-2026-09-17",
+          "head": "4fa4135b853e51ef2ff9bc0c1ca0392346542f66",
+          "state": "REF_ONLY_NO_OPEN_PR",
+          "integrationFocus": false,
+          "pr": null
+        },
+        {
+          "name": "wb0/ground-rig-hardening-2026-09-17",
+          "head": "4f27070fc3f07160611b8303afc05e55928c4c25",
+          "state": "REF_ONLY_NO_OPEN_PR",
+          "integrationFocus": false,
+          "pr": null
+        },
+        {
+          "name": "wb0/ground-wasd-qe-2026-09-17",
+          "head": "843faf9b2ef6cc64696bb4f9b8739a3c0aff8a46",
+          "state": "REF_ONLY_NO_OPEN_PR",
+          "integrationFocus": false,
+          "pr": null
+        },
+        {
+          "name": "wb0/live-authoring-implementation-2026-09-17",
+          "head": "f756819a05a7ef09e8dbca36eb7233c6d5ae2e21",
+          "state": "REF_ONLY_NO_OPEN_PR",
+          "integrationFocus": false,
+          "pr": null
+        },
+        {
+          "name": "wb0/mech-bee-movement-recovery-2026-09-17",
+          "head": "52aee7876ec7f293d13e39e6c26bebcf7e4321eb",
+          "state": "REF_ONLY_NO_OPEN_PR",
+          "integrationFocus": false,
+          "pr": null
+        },
+        {
+          "name": "wb0/movement-character-lab-2026-09-17",
+          "head": "430991e9a87158f93e4c18133eef1a39b032e4e1",
+          "state": "REF_ONLY_NO_OPEN_PR",
+          "integrationFocus": false,
+          "pr": null
+        },
+        {
+          "name": "wb0/player-calibration-2026-09-17",
+          "head": "1c34cf7a5828eb1ef8a21658284020fb93fd4951",
+          "state": "REF_ONLY_NO_OPEN_PR",
+          "integrationFocus": false,
+          "pr": null
+        },
+        {
+          "name": "wb0/support-surface-gate-2026-09-17",
+          "head": "17b18d4d0c1a5a13df6a4a55363dbace58f0851e",
+          "state": "REF_ONLY_NO_OPEN_PR",
+          "integrationFocus": false,
+          "pr": null
+        },
+        {
+          "name": "wsa/b0-acceptance-2026-09-13",
+          "head": "84b8c2bc14a778cee19adb551f81694c11bbd495",
+          "state": "REF_ONLY_NO_OPEN_PR",
+          "integrationFocus": false,
+          "pr": null
+        },
+        {
+          "name": "wsa/b0-mirror-return-2026-09-13",
+          "head": "f5a58d3e33ebc74dab3bd9f1a881e87b7daec6cd",
+          "state": "REF_ONLY_NO_OPEN_PR",
+          "integrationFocus": false,
+          "pr": null
+        },
+        {
+          "name": "wsa/b0-publication-mirror-2026-09-13",
+          "head": "9eef9eb61e8bb2357802bf401558339584030a97",
+          "state": "REF_ONLY_NO_OPEN_PR",
+          "integrationFocus": false,
+          "pr": null
+        },
+        {
+          "name": "wsa/b0-return-and-handoffs-2026-09-13",
+          "head": "49a359f10e1b9b6c550de4221901b172df839974",
+          "state": "REF_ONLY_NO_OPEN_PR",
+          "integrationFocus": false,
+          "pr": null
+        },
+        {
+          "name": "wsa/b0-site-baseline-2026-09-13",
+          "head": "0ca4bab37b29ebfdf3047747b0f9a5bb15e71416",
+          "state": "REF_ONLY_NO_OPEN_PR",
+          "integrationFocus": false,
+          "pr": null
+        },
+        {
+          "name": "wsa/mvp1-frizzlebob-bath-flight",
+          "head": "cae4a1104a4e6f29c721da7227f556bd717de7be",
+          "state": "DRAFT_PR",
+          "integrationFocus": false,
+          "pr": {
+            "number": 7,
+            "title": "MVP1: FrizzleBob Bath Flight with v16 SeatLab acting",
+            "base": "main",
+            "headSha": "cae4a1104a4e6f29c721da7227f556bd717de7be",
+            "draft": true
+          }
+        },
+        {
+          "name": "wsa/tinyskies-terrain-donor-isolation-2026-09-19",
+          "head": "ee240a72cfa2305a77a1a083636f567d1fb9d482",
+          "state": "DRAFT_PR",
+          "integrationFocus": true,
+          "pr": {
+            "number": 30,
+            "title": "Stage donor: isolate current TinySkies-derived Travel terrain",
+            "base": "main",
+            "headSha": "ee240a72cfa2305a77a1a083636f567d1fb9d482",
+            "draft": true
+          }
+        },
+        {
+          "name": "wsa/track-terrain-corridor-tc01-2026-09-20",
+          "head": "35a0b6c8380feb009bd27f1ca811064c1ad74be7",
+          "state": "DRAFT_PR",
+          "integrationFocus": true,
+          "pr": {
+            "number": 31,
+            "title": "TC-01: embed a spherical Track corridor into the current Travel terrain truth",
+            "base": "main",
+            "headSha": "35a0b6c8380feb009bd27f1ca811064c1ad74be7",
+            "draft": true
+          }
+        },
+        {
+          "name": "wsa/v16-donor-refresh-b0-2026-09-13",
+          "head": "bbcb96de44c56625e981d61756066d7d2104594b",
+          "state": "REF_ONLY_NO_OPEN_PR",
+          "integrationFocus": false,
+          "pr": null
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "totalRepos": 4,
+    "totalBranches": 243,
+    "totalOpenPrs": 61,
+    "integrationFocusRefs": 18,
+    "focusMissing": [],
+    "openPrHeadMismatches": []
+  }
+}
