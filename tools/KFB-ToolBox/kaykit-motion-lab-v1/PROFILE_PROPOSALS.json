@@ -1,7 +1,7 @@
 {
   "schema": "kfb.toolbox-motion-profile-proposals/0.1",
   "date": "2026-09-20",
-  "status": "PROPOSAL_NOT_CONSUMER_PROMOTED",
+  "status": "PUBLIC_VERIFIED_PROPOSAL_NOT_CONSUMER_PROMOTED",
   "shared": {
     "semanticStates": [
       "Idle",
@@ -169,7 +169,12 @@
     "workflowRun": 35480849313,
     "job": 105998255165,
     "artifactId": 10595139102,
-    "artifactDigest": "sha256:4065242e4a5be9c2a451dfc24a24a1ef409099f3dce00f02ec31bd277ff6aaf3"
+    "artifactDigest": "sha256:4065242e4a5be9c2a451dfc24a24a1ef409099f3dce00f02ec31bd277ff6aaf3",
+    "publicStatus": "PUBLIC_VERIFIED",
+    "publicWorkflowRun": 35484127790,
+    "publicJob": 106007210838,
+    "publicArtifactId": 10596912462,
+    "publicArtifactDigest": "sha256:d4638aba0e4bd02b690f19cb931c92f99cac020d0af05e5d1124f11003300ca4"
   },
   "rigProfiles": {
     "Rig_Medium": {
