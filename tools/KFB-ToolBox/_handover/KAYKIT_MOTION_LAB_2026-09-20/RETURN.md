@@ -224,3 +224,35 @@ Review:
 - visible weight/foot slip/cadence.
 
 Only after that human gate should the accepted MotionProfile seam be promoted into named consumers.
+
+
+## Final synchronized handoff
+
+State before this Return update:
+- repository: `georg-doc/kayfabizarro`
+- branch: `chatgpt-web/toolbox-kaykit-motion-profiles-2026-09-20`
+- synced branch head: `d5f0657dc5210fd61f462555b90e81cf590bb7a8`
+- base: `main@53b828a29c71b9ee20635dc0133813e37697f961`
+- Draft PR: **#127 · OPEN · DRAFT · UNMERGED**
+- compare: **20 commits ahead · 0 behind · 11 changed files**
+- PR mergeable: **true**
+
+Public Stage:
+`https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/kaykit-motion-lab-v1/`
+
+Public browser:
+- **87/87 PASS**
+- run `35484127790`
+- job `106007210838`
+- artifact `10596912462`
+- 0 failed resources
+- 0 page/console errors
+
+Main/Hub metadata:
+- main publication checkpoint: `53b828a29c71b9ee20635dc0133813e37697f961`
+- Hub badge: `PUBLIC 87/87`
+- ToolBox START/CHANGELOG updated additively
+- public mirror metadata commit: `2df31bea695d634037bd7135401d3b86d108f623`
+
+Exactly one next gate remains human:
+Georg reviews FrizzleBob, GothGirl and Black Knight motion feel on the public Stage. No consumer profile or attachment is promoted before that gate.
