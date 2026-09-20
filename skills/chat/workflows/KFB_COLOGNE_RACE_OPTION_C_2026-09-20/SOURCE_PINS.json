@@ -23,13 +23,31 @@
       "path": "code/skeleton.js",
       "blob": "447ab3566a07420a94a08080a90dc46d04af1dbd"
     },
-    "allowedUse": "DERIVE_ROUTE_GRAMMAR_ONLY_AND_REAUTHOR_FOR_DOM_GEOGRAPHY",
+    "allowedUse": "BENCHMARK_ONLY_FOR_HIGH_LEVEL_DRIVING_QUALITIES_COMPOSITION_AND_READABILITY; AUTHOR_KFB_ROUTE_FROM_BLANK",
     "prohibited": [
       "copy source code",
-      "copy literal corner-coordinate table",
-      "copy original meshes/materials/assets",
+      "copy or adapt literal corner-coordinate table or corner sequence",
+      "derive the KFB circuit geometry from the original circuit geometry",
+      "copy original meshes/materials/assets/scenery",
+      "reuse original palette values",
       "reuse original kilo-unit world scale verbatim"
-    ]
+    ],
+    "license": {
+      "path": "LICENSE",
+      "blob": "1204dfb62806e7944aa43de449352081733486f3",
+      "status": "ALL_RIGHTS_RESERVED",
+      "boundary": "REFERENCE_BENCHMARK_ONLY_NO_COPY_MODIFY_DERIVATIVE_REUSE"
+    },
+    "humanTrackNumber": 2,
+    "kfbBenchmarkQualities": [
+      "memorable opening beat",
+      "compression and release",
+      "distinct tunnel or arch moment",
+      "fast/open versus tight/technical contrast",
+      "readable track edge at speed",
+      "immediately legible overhead silhouette"
+    ],
+    "kfbPriority": "OPTION_C_VISUAL_AUTHORITY_AND_TRACK_DESIGN_BEFORE_EXACT_OMS_OSM_STREET_FIDELITY"
   },
   "publicRaceBaseline": {
     "host": {
