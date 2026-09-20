@@ -28,7 +28,7 @@ jobs:
           npx playwright install --with-deps chromium
           python3 -m http.server 4173 --bind 127.0.0.1 >/tmp/ca203.log 2>&1 &
           for i in {1..30}; do curl -fsS http://127.0.0.1:4173/kfb-hub/stage/combat/ca2-enemy-adapters/SOURCE.json >/dev/null && break; sleep 1; done
-          CA203_BASE_URL=http://127.0.0.1:4173/kfb-hub/stage/combat/ca2-enemy-adapters/ CA203_SOURCE_HEAD=a1594a60805a2254c45eceb4ca8f5053a3e8aad4 CA203_PROOF_DIR=ca203-playback-evidence node kfb-hub/stage/combat/ca2-enemy-adapters/proof.mjs
+          CA203_BASE_URL=http://127.0.0.1:4173/kfb-hub/stage/combat/ca2-enemy-adapters/ CA203_SOURCE_HEAD=8e9b368305ca7ec76bdb9e4b4b89136ef527b2fe CA203_PROOF_DIR=ca203-playback-evidence node kfb-hub/stage/combat/ca2-enemy-adapters/proof.mjs
       - uses: actions/upload-artifact@v4
         if: always()
         with: {name: ca203-playback-evidence, path: ca203-playback-evidence, retention-days: 14}
