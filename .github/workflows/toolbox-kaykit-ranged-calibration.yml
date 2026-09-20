@@ -40,7 +40,7 @@ jobs:
       - name: Browser proof
         env:
           KRC_BASE_URL: http://127.0.0.1:4173/kfb-hub/stage/toolbox/kaykit-ranged-calibration-v1/
-          KRC_SOURCE_HEAD: 36072e4797d4915d87673432de176e1fa46dcea9
+          KRC_SOURCE_HEAD: a5e09d6744f4a26e63a5f7e706be8a631459d28d
           KRC_PROOF_DIR: kaykit-ranged-calibration-evidence
         run: node kfb-hub/stage/toolbox/kaykit-ranged-calibration-v1/proof.mjs
       - uses: actions/upload-artifact@v4
@@ -65,7 +65,7 @@ jobs:
       - name: Wait for exact Cloudflare candidate
         env:
           KRC_PUBLIC_BASE: https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/kaykit-ranged-calibration-v1/
-          KRC_SOURCE_HEAD: 36072e4797d4915d87673432de176e1fa46dcea9
+          KRC_SOURCE_HEAD: a5e09d6744f4a26e63a5f7e706be8a631459d28d
         run: |
           node <<'NODE'
           const base=process.env.KRC_PUBLIC_BASE;
@@ -99,7 +99,7 @@ jobs:
       - name: Exact public browser proof
         env:
           KRC_BASE_URL: https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/kaykit-ranged-calibration-v1/
-          KRC_SOURCE_HEAD: 36072e4797d4915d87673432de176e1fa46dcea9
+          KRC_SOURCE_HEAD: a5e09d6744f4a26e63a5f7e706be8a631459d28d
           KRC_PROOF_DIR: kaykit-ranged-calibration-public-evidence
         run: node kfb-hub/stage/toolbox/kaykit-ranged-calibration-v1/proof.mjs
       - uses: actions/upload-artifact@v4

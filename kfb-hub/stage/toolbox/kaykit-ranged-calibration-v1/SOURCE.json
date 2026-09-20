@@ -4,10 +4,10 @@
   "slice": "CA2-02",
   "owner": "KFB ToolBox / weapon-motion calibration",
   "consumer": "georg-doc/KFB-Combat-Arena / WSA",
-  "status": "PUBLIC_VERIFIED_HUMAN_OPEN",
+  "status": "FINAL_BRANCH_BROWSER_PROOF_PENDING",
   "sourceRepo": "georg-doc/kayfabizarro",
   "sourceBranch": "chatgpt-web/ca2-02-ranged-calibration-2026-09-20",
-  "implementationHead": "36072e4797d4915d87673432de176e1fa46dcea9",
+  "implementationHead": "a5e09d6744f4a26e63a5f7e706be8a631459d28d",
   "baseMain": "52532aee17f85324a6d04ab53150216f00ac5d89",
   "donors": {
     "motionLab": {
@@ -90,5 +90,6 @@
     "pageConsoleErrors": 0,
     "artifactId": 10597659083,
     "artifactDigest": "sha256:f641fee4394584f12013b2edb455d31ec015e50f48f71fbdef40369ed3f2705c"
-  }
+  },
+  "previewFxRepair": "Deterministic release-frame now records the primary marker as already fired before the manual calibration FX, preventing duplicate preview FX; release schedule unchanged at [0.150]."
 }
