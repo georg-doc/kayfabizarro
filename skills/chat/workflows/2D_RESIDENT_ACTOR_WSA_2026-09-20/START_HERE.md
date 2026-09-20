@@ -259,3 +259,16 @@ Current package status:
 - named KFB game runtime: NOT SELECTED.
 
 The current Game Dev Studio public UI still presents `packages[0]`; this registration does not claim a public Eumel package preview.
+
+
+## Doccy intake is ready
+
+Prepared source lane:
+
+`tools/2D Animation Studio/_inbox/doccy-source/`
+
+Topology donor:
+
+`tools/2D Animation Studio/templates/DOCCY_QUADRUPED_RIG_TEMPLATE.v0.1.json`
+
+No Doccy runtime/geometry work should begin until authoritative source art arrives and is audited.
