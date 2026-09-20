@@ -343,3 +343,29 @@ Next gate is one A/B/C design/geometry proof:
 Do not tune the existing TC-01 ribbon/zone composition forward. TinySkies/Travel remains one spherical WorldSurface donor; OSM remains geographic/semantic truth; OMS/Grotesque remains a stylised environment donor; Race retains driving/contact ownership.
 
 The wider KFB target may support Sphere / Plane / InnerSphere and later structure/tunnel/underwater/free-space routes, but do not build a mega-engine before Sphere + Plane share one proven TrackPatch contract.
+
+
+## 2026-09-20 · Claude Design Cologne Race · OSM data ready
+
+Current public briefing candidate:
+`skills/chat/workflows/KFB_COLOGNE_RACE_OPTION_C_2026-09-20/START_HERE.md`
+
+Planning branch:
+`planning/cologne-race-option-c-claude-r2-2026-09-20`
+
+The Dom/Zentrum data gate is now **closed** on public `kayfabizarro/main`:
+- cached real Overpass source;
+- deterministic local-metre normalized geometry;
+- 5,236 roads;
+- 6,351 buildings;
+- 665 railway ways;
+- Rhine/water context;
+- curated Dom/HBF/bridge/tunnel anchors;
+- exact Dom source footprint;
+- `CLAUDE_CONTEXT.json` for lightweight intake.
+
+Claude does not need private Stunt Race access and does not need to query Overpass again.
+
+Remaining external input before Slice C starts: Georg attaches the Option C + Option A visual authority boards.
+
+FILAMENT remains reference-only grammar; no SP13KTRA code/data/assets are copied.
