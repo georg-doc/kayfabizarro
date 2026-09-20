@@ -38,16 +38,31 @@ try{
   const nav=await page.goto(URL+'?storytelling-maps-vl1='+Date.now(),{waitUntil:'domcontentloaded',timeout:60000});
   check('Hub HTTP',nav?.ok(),nav?.status());
 
-  await page.waitForFunction((names)=>names.every(n=>document.body.innerText.includes(n)),required,{timeout:30000});
-  const text=await page.locator('body').innerText();
-  for(const label of required)check('visible: '+label,text.includes(label));
-  await page.screenshot({path:out+'/hub-desktop.png',fullPage:true});
+  // The Hub intentionally limits the default "Heute" surface. Prove visibility
+  // through the actual UI filters instead of requiring all routed items at once.
+  await page.waitForFunction(()=>document.body.innerText.includes('Review / build the rounded responsive CardRig'),{}, {timeout:30000});
+  check('default Heute shows CardRig P0', (await page.locator('body').innerText()).includes('Review / build the rounded responsive CardRig'));
+
+  await page.getByRole('button',{name:'Briefings',exact:true}).click();
+  await page.waitForFunction(()=>document.body.innerText.includes('Storytelling Maps · Claude Visual Lab VL1')&&document.body.innerText.includes('Storytelling Maps · Responsive CardRig v1'),{}, {timeout:30000});
+  let text=await page.locator('body').innerText();
+  check('Briefings shows Claude VL1',text.includes('Storytelling Maps · Claude Visual Lab VL1'));
+  check('Briefings shows CardRig contract',text.includes('Storytelling Maps · Responsive CardRig v1'));
+  await page.screenshot({path:out+'/hub-briefings-desktop.png',fullPage:true});
+
+  await page.getByRole('button',{name:'To-dos',exact:true}).click();
+  await page.waitForFunction(()=>document.body.innerText.includes('Run Claude Design · Storytelling Visual Lab VL1')&&document.body.innerText.includes('WSA planning · shared legless PropActor seam'),{}, {timeout:30000});
+  text=await page.locator('body').innerText();
+  check('To-dos shows CardRig',text.includes('Review / build the rounded responsive CardRig'));
+  check('To-dos shows Claude VL1',text.includes('Run Claude Design · Storytelling Visual Lab VL1'));
+  check('To-dos shows WSA PropActor',text.includes('WSA planning · shared legless PropActor seam'));
 
   const mobile=await browser.newContext({viewport:{width:844,height:390},isMobile:true,hasTouch:true});
   const mp=await mobile.newPage();
   await mp.goto(URL+'?storytelling-maps-vl1-mobile='+Date.now(),{waitUntil:'domcontentloaded',timeout:60000});
-  await mp.waitForFunction((names)=>names.every(n=>document.body.innerText.includes(n)),required,{timeout:30000});
-  await mp.screenshot({path:out+'/hub-mobile-landscape.png',fullPage:true});
+  await mp.getByRole('button',{name:'Briefings',exact:true}).click();
+  await mp.waitForFunction(()=>document.body.innerText.includes('Storytelling Maps · Claude Visual Lab VL1'),{}, {timeout:30000});
+  await mp.screenshot({path:out+'/hub-briefings-mobile-landscape.png',fullPage:true});
   await mobile.close();
 
   check('no page errors',report.errors.length===0,report.errors);
