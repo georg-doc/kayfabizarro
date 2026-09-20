@@ -1,7 +1,7 @@
 {
   "schema": "kfb.toolbox-measured-motion-profiles/0.1",
   "date": "2026-09-20",
-  "status": "LOCAL_BROWSER_87_87_PASS_HUMAN_OPEN",
+  "status": "PUBLIC_BROWSER_87_87_PASS_HUMAN_OPEN",
   "evidence": {
     "workflowRun": 35480849313,
     "job": 105998255165,
@@ -194,5 +194,14 @@
       "Running_A_rate": 0.97,
       "status": "MEASURED_TECHNICAL_CANDIDATE_HIGH_RUN_SLIP_HUMAN_OPEN"
     }
+  },
+  "publicEvidence": {
+    "workflowRun": 35484127790,
+    "job": 106007210838,
+    "checks": "87/87 PASS",
+    "artifactId": 10596912462,
+    "artifactDigest": "sha256:d4638aba0e4bd02b690f19cb931c92f99cac020d0af05e5d1124f11003300ca4",
+    "failedResources": 0,
+    "pageConsoleErrors": 0
   }
 }
