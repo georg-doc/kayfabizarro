@@ -1,0 +1,32 @@
+{
+  "schema": "kfb.toolbox-home.source.v1",
+  "date": "2026-09-20",
+  "branch": "toolbox/toolbox-home-v1-2026-09-20",
+  "parent": "asset/kaykit-bits-bundle1-2026-09-20",
+  "owner": "ToolBox / Hub integration",
+  "outcome": "One compact Stage ToolBox home routing current owners without creating a second asset library or runtime owner.",
+  "stageRoute": "https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/",
+  "sources": [
+    "skills/chat/workflows/KFB_TOOLBOX_CLOUDFLARE_CONSOLIDATION_V1_2026-09-20/START_HERE.md",
+    "skills/chat/workflows/KFB_INSCENE_EDITOR_MODULE_V1_2026-09-20/START_HERE.md",
+    "skills/chat/workflows/ASSET_LIBRARIAN_KAYKIT_BITS_BUNDLE1_RECON_2026-09-20/START_HERE.md",
+    "skills/chat/workflows/TINY_TREATS_VENUE_GENERATOR_V1_2026-09-19.md",
+    "skills/chat/workflows/KFB_MODULAR_MINIGAME_HUB_2026-09-19/DUNGEON_GENERATOR_V2_BRIEF.md",
+    "tools/asset_registry/librarian/",
+    "tools/resident_atlas_s6/",
+    "tools/world_atlas/",
+    "tools/KFB-ToolBox/START_HERE.md"
+  ],
+  "donorChecks": {
+    "dropbox": "Read-only cross-check performed for current S21 Room Study export, Tiny Treats Bakery/Kitchen sources, Environment Atlas/Hex sources and Plant Prop Lab export. No Dropbox files were moved, copied, deleted or promoted.",
+    "sceneEditor": "Resident Atlas and Dungeon Room Study remain donors until the two-host adapter gate passes."
+  },
+  "forbidden": [
+    "second asset registry",
+    "second dungeon generator",
+    "placeholder meshes",
+    "fake preview thumbnails",
+    "Tiny Treats inside Dungeon Raid",
+    "Live promotion without human gate"
+  ]
+}
