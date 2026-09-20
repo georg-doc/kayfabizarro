@@ -1,0 +1,156 @@
+name: Scene Patch Resident Host QA
+
+on:
+  push:
+    branches: ['toolbox/scene-patch-adapter-v1-2026-09-20']
+    paths:
+      - 'tools/KFB-ToolBox/shared/scene-patch/**'
+      - 'tools/resident_atlas/**'
+      - '.github/workflows/scene-patch-resident-host-qa.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  resident-host:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Install Chromium
+        run: |
+          npm install --no-save playwright@1.51.1
+          npx playwright install --with-deps chromium
+
+      - name: Start repository server
+        run: |
+          python3 -m http.server 4173 --bind 127.0.0.1 > /tmp/kfb-scene-patch-http.log 2>&1 &
+          echo $! > /tmp/kfb-scene-patch-http.pid
+          for i in $(seq 1 30); do
+            curl -fsS http://127.0.0.1:4173/tools/resident_atlas/ >/dev/null && exit 0
+            sleep 1
+          done
+          cat /tmp/kfb-scene-patch-http.log
+          exit 1
+
+      - name: Browser proof · Resident Atlas
+        run: |
+          mkdir -p scene-patch-proof/resident
+          cat > scene-patch-proof/resident/check.mjs <<'JS'
+          import fs from 'node:fs';
+          import { chromium } from 'playwright';
+
+          const url='http://127.0.0.1:4173/tools/resident_atlas/';
+          const report={url,checks:[],errors:[],state:null};
+          const check=(name,pass,detail=null)=>{report.checks.push({name,pass:!!pass,detail});if(!pass)process.exitCode=1;};
+          const browser=await chromium.launch({headless:true});
+          const page=await browser.newPage({viewport:{width:1280,height:820}});
+          page.on('pageerror',e=>report.errors.push('pageerror: '+String(e)));
+          page.on('console',m=>{if(m.type()==='error')report.errors.push('console: '+m.text());});
+          try{
+            const response=await page.goto(url,{waitUntil:'domcontentloaded',timeout:60000});
+            check('resident HTTP response',!!response&&response.ok(),response?.status());
+            await page.waitForFunction(()=>document.getElementById('status')?.textContent?.includes('11/11 models loaded'),{}, {timeout:120000});
+            await page.waitForFunction(()=>window.__residentScenePatch?.session?.stats?.().registered===10,{}, {timeout:30000});
+            const initial=await page.evaluate(()=>{
+              const a=window.__residentScenePatch;
+              const nodes=a.editableNodes();
+              return {
+                registered:a.session.stats().registered,
+                editable:nodes.length,
+                actorProtected:a.session.stats().registered===10,
+                first:nodes[0]?.userData?.scenePatchRecord||null,
+                source:a.session.source
+              };
+            });
+            check('10 editable Habitat/Prop nodes registered',initial.registered===10,initial);
+            check('animated actor excluded from v1 editing',initial.actorProtected===true,initial);
+            check('first object has exact source identity',!!initial.first?.assetId&&initial.first.assetId===initial.first.sourceRef,initial.first);
+            check('host source is exact Resident recipe',initial.source?.sourceRef==='tools/resident_atlas/scenes/caveman-cave-camp.json',initial.source);
+
+            await page.click('#editor');
+            const editOn=await page.evaluate(()=>{
+              const a=window.__residentScenePatch,n=a.editableNodes()[0];
+              a.edit.select(n);
+              a.edit.follow();
+              return {on:a.edit.on,menuHidden:document.getElementById('editMenu').hidden,dockHidden:document.getElementById('patchDock').hidden};
+            });
+            check('editor toggles on',editOn.on===true,editOn);
+            check('object menu appears at selection',editOn.menuHidden===false,editOn);
+            check('patch dock appears',editOn.dockHidden===false,editOn);
+
+            const move=await page.evaluate(()=>{
+              const a=window.__residentScenePatch,s=a.session,n=a.editableNodes()[0];
+              const id=n.userData.scenePatchRecord.id;
+              const x0=n.position.x;
+              s.begin([n],'qa-move');
+              n.position.x+=0.25;n.updateMatrixWorld(true);
+              s.commit([n],'qa-move');
+              const patch=s.makePatch();
+              return {id,x0,x1:n.position.x,patch,stats:s.stats()};
+            });
+            check('move creates one patch op',move.patch.ops.length===1,move);
+            check('patch schema/host exact',move.patch.schema==='kfb.scene-patch.v1'&&move.patch.host==='resident-atlas',move.patch);
+            check('op keeps exact asset source',move.patch.ops[0].source.assetId===move.patch.ops[0].source.sourceRef,move.patch.ops[0]);
+            check('local draft written',move.stats.draft===true,move.stats);
+
+            const roundtrip=await page.evaluate((patch)=>{
+              const a=window.__residentScenePatch,s=a.session,n=a.resolve(patch.ops[0].id);
+              const target=patch.ops[0].position[0];
+              const resetCount=s.reset();
+              const afterReset=n.position.x;
+              const applied=s.applyPatch(patch,'qa-import');
+              const afterImport=n.position.x;
+              return {target,resetCount,afterReset,applied,afterImport,stats:s.stats()};
+            },move.patch);
+            check('reset restores baseline',roundtrip.resetCount===1&&Math.abs(roundtrip.afterReset-move.x0)<1e-6,roundtrip);
+            check('import restores moved transform',roundtrip.applied.ok===true&&Math.abs(roundtrip.afterImport-roundtrip.target)<1e-6,roundtrip);
+
+            const reject=await page.evaluate((patch)=>{
+              const a=window.__residentScenePatch,s=a.session,n=a.resolve(patch.ops[0].id);
+              const before=n.position.toArray();
+              const bad=structuredClone(patch);bad.ops[0].source.sourceRef='wrong/source.gltf';
+              const result=s.applyPatch(bad,'bad-source');
+              const after=n.position.toArray();
+              const badRev=structuredClone(patch);badRev.source.revision='wrong-revision';
+              const resultRev=s.applyPatch(badRev,'bad-revision');
+              return {result,resultRev,before,after,final:n.position.toArray()};
+            },move.patch);
+            check('wrong object source rejected',reject.result.ok===false&&reject.result.errors.some(x=>x.startsWith('OBJECT_SOURCE_MISMATCH')),reject.result);
+            check('wrong host revision rejected',reject.resultRev.ok===false&&reject.resultRev.errors.includes('HOST_REVISION_MISMATCH'),reject.resultRev);
+            check('failed imports leave transform untouched',JSON.stringify(reject.before)===JSON.stringify(reject.after)&&JSON.stringify(reject.after)===JSON.stringify(reject.final),reject);
+
+            const history=await page.evaluate(()=>{
+              const s=window.__residentScenePatch.session;
+              const before=s.stats();
+              const u=s.undo(),afterUndo=s.stats();
+              const r=s.redo(),afterRedo=s.stats();
+              return {before,u,afterUndo,r,afterRedo};
+            });
+            check('session undo works',history.u===true&&history.afterUndo.changed===0,history);
+            check('session redo works',history.r===true&&history.afterRedo.changed===1,history);
+
+            report.state={initial,move:{id:move.id,patch:move.patch,stats:move.stats},roundtrip,history};
+            await page.screenshot({path:'scene-patch-proof/resident/resident-scene-patch.png',fullPage:true});
+          }catch(e){
+            report.errors.push(String(e?.stack||e));process.exitCode=1;
+          }finally{
+            check('no browser console/page errors',report.errors.length===0,report.errors);
+            fs.writeFileSync('scene-patch-proof/resident/report.json',JSON.stringify(report,null,2));
+            await browser.close();
+          }
+          JS
+          node scene-patch-proof/resident/check.mjs
+
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: scene-patch-resident-host-proof
+          path: scene-patch-proof/resident
+          retention-days: 90
