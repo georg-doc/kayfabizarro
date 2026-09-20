@@ -182,14 +182,16 @@ export function makeScenePatchSession(opts = {}) {
 
   function applyPatch(doc, label='import') {
     const v = validatePatch(doc);
-    if (!v.ok) return v;
+    /* Reject results never expose live Three.js nodes. Besides making evidence serialisable, this
+       keeps validation internals from becoming a second mutation surface for consumers. */
+    if (!v.ok) return { ok:false, errors:v.errors.slice(), applied:0 };
     const before = v.plan.map(x=>({id:x.id,state:readTransform(x.node)}));
     try {
       for (const x of v.plan) applyTransform(x.node,x.state);
       opts.onApplied?.(v.plan.map(x=>x.node));
     } catch (e) {
       try { restoreStates(before); } catch {}
-      return { ok:false, errors:['APPLY_ROLLED_BACK:'+(e?.message||e)], plan:[] };
+      return { ok:false, errors:['APPLY_ROLLED_BACK:'+(e?.message||e)], applied:0 };
     }
     const after = v.plan.map(x=>({id:x.id,state:readTransform(x.node)}));
     if (after.some((x,i)=>!sameState(before[i].state,x.state))) {
