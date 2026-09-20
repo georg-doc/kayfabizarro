@@ -1,7 +1,7 @@
 {
   "schema": "kfb.public-mirror/0.2",
   "build": "KFB-CARTOON-MAP-BOARD-P02-EXP-20260920-R1",
-  "status": "PUBLICATION_COMMITTED_VERIFYING",
+  "status": "PUBLIC_VERIFIED_HUMAN_GATE_OPEN",
   "sourceRepo": "georg-doc/kayfabizarro",
   "sourceBase": "2ff8b350beefe02912bbff6eeeead3882e583d08",
   "implementationPath": "tools/kfb-cartoon-map-board/",
@@ -12,5 +12,16 @@
   "livePromotion": false,
   "humanAcceptance": "PENDING",
   "publicationBranch": "cloudflare-live",
-  "publicationParent": "76c22b5c837118e9e7a91b372f4f674f6433aa97"
+  "publicationParent": "76c22b5c837118e9e7a91b372f4f674f6433aa97",
+  "publicVerified": true,
+  "publicWorkflowRun": 35490263608,
+  "publicWorkflowJob": 106023878490,
+  "publicBrowserChecks": "12/12 PASS",
+  "countries": "40/40",
+  "countryFailures": 0,
+  "storyMarkers": "5/5",
+  "pageErrors": 0,
+  "failedHttpRequests": 0,
+  "evidenceArtifact": 10599280500,
+  "evidenceArtifactDigest": "sha256:e1badfd8db9d6dc25d12b5059bf49cd8e4b0ea86010881662d0d3029268228f5"
 }
