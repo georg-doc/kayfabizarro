@@ -356,3 +356,14 @@ It routes four separate, source-preserving work lanes:
 - [3D in-scene editor](workflows/KFB_INSCENE_EDITOR_MODULE_V1_2026-09-20/START_HERE.md) — adapters for Resident, Environment, Dungeon and Babel rather than a replacement editor.
 
 These briefs are planning/export instructions. They grant no Race/Combat runtime rewrite or automatic Live promotion.
+
+
+## 2026-09-20 · Cartoon Map Board tactical tabletop direction
+
+Current planning brief:
+
+`tools/kfb-cartoon-map-board/docs/TACTICAL_GAME_MAP_V1_2026-09-20.md`
+
+Direction: reuse exact KayKit BoardGameBits player stands, playercards and dice for a satirical/tabletop Map Board layer. The card donor exposes its artwork as a separate material primitive, enabling media/photo replacement without rebuilding the KayKit card frame. KayKit supplies colored D4/D6/D8/D20 but not D10/D12; the preferred external donor for the missing RPG dice / Cannon physics seam is `3d-dice/dice-box-threejs@6945e0068eae27f22acd26debdb70f6ef2fd6063`.
+
+Motion uses `skills/kfb-cartoon-animation_v2.md`. Next gate is source-isolated proof only: exact playerstand + playercard + D20 + 3d-dice donor shown separately before integration.
