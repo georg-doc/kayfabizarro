@@ -86,7 +86,7 @@ If this is a replacement/fresh chat after context loss, use `RECOVERY_PATH.md` r
 - **SimBlood / DocCheck — `CURRENT_PROJECT_SSOT` at `georg-doc/doccheck/sim-blood/`; recovery in `RECOVERY.md`, current WIPs in `WIP_STATUS.json`**
 - **2D Animation Studio — `CURRENT_TOOL` at `tools/2D Animation Studio/`; browser-first 2D/2.5D cutout rig authoring, first lab DocCheck Eumel**
 - Animation Lab — `UNVERIFIED` until current implementation SSOT/site is pinned
-- **KayKit Character Compatibility v0 — `EXPERIMENTAL` ToolBox source/contract bench; Draft PR #147; fixed Stage review at `https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/kaykit-character-compat-v0/`; reuses Motion Lab, EyeRig v6 and the existing FrizzleBob graft; Rubber/Eraser remains `SOURCE_REQUIRED`.**
+- **KayKit Character Compatibility — `EXPERIMENTAL` ToolBox lane. KCC-0 = Draft PR #147 / 28-of-28 repository PASS; its Cloudflare Stage is `PUBLIC BLOCKED` after run 35528646651 returned the root page instead of the exact marker. KCC-1A = stacked Draft PR #148 / 43-of-43 contract + local-browser PASS for Race secondary-motion facts. Motion Lab, EyeRig v6 and the existing FrizzleBob graft remain owners; Rubber/Eraser remains `SOURCE_REQUIRED`.**
 
 DocCheck UI convention for project surfaces: use `#cc0033` as a restrained accent for controls/links/active states; do not tint medical imagery.
 

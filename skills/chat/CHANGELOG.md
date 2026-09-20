@@ -1,3 +1,19 @@
+## 2026-09-20 · KCC-1A FrizzleBob Race secondary-motion facts
+
+### SUPERSEDES · PUBLICATION STATUS ONLY
+The earlier KCC-0 changelog phrase “Fixed review route” is **not an active human test link**. Public run `35528646651` reached the exact Cloudflare marker gate but the host returned the KFB root page rather than KCC `SOURCE.json`. KCC-0 therefore remains `PUBLIC BLOCKED`; no public browser or Georg visual acceptance is claimed.
+
+### KCC-1A
+Stacked Draft PR #148 on KCC-0 / PR #147 adds a pure, stateless adapter from the existing Stunt Race presentation hooks to bounded secondary-motion target facts. It does not change ear geometry, KayKit skeleton state, vehicle root/contact physics or the existing `actor-wobble.v1.js` spring owner.
+
+Exact tested source head `7a2a774a59d52cc4c7d48ec3997a1912652d5e11` passed **43/43** checks in run `35529859288`: 28/28 Node contract + 15/15 local Chromium browser, with 0 failed resources and 0 page/console errors. Artifact `10611241424` contains `desktop.png` and `browser.json`.
+
+### SOURCE RECON
+Dropbox confirms the 2026-09-20 Cologne FrizzleBob-v2 briefing copy is text-identical to the already inspected copy. No admissible 3D Eraser/Radiergummi donor was found; Rubber Duck 2D assets and the Rubber Ball POC are not substitutes.
+
+### NEXT GATE
+KCC-1B is source isolation only: render the current FrizzleBob ears and at least one real alternative donor separately, measure them, compare front/side/three-quarter, then Georg chooses before any graft integration.
+
 ## 2026-09-20 · KayKit Character Compatibility v0 source bench
 
 ### DECISION
