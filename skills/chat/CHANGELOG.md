@@ -925,3 +925,21 @@ Reload the EyeRig Stage and visually check only the lid colors on the four accep
 ## 2026-09-20 · MVP integration board and bounded briefs
 
 Added a planning index plus four source-preserving briefings for World/Race/Audio/Traffic, Combat Raid/Open World, ToolBox Cloudflare consolidation and the shared in-scene editor. Each keeps the named runtime/tool owner, requires direct Cloudflare Stage proof, and explicitly blocks placeholder/parallel-engine work and automatic promotion.
+
+
+## 2026-09-20 · KFB Storytelling Maps v1
+
+### CURRENT EXPERIMENTAL DIRECTION
+Register `skills/chat/workflows/KFB_STORYTELLING_MAPS_V1_2026-09-20/START_HERE.md` as the cross-slice entry for the existing Cartoon Map Board implementation evolving into Storytelling Maps: world/zone/galaxy maps, tactical board scenes, cinematic map cut-scenes and later one authoring editor feeding the same runtime manifests.
+
+### BENCHMARK
+Record Ludo Wala as a concept/UX benchmark only: physical tabletop, tactile die, dynamic light/shadow, orbit/zoom, orientation-responsive camera and spectacle separated from canonical board state. No proprietary code or assets are copied.
+
+### POC
+Prepare a 2–3 minute Odyssey story-map proof using sourced public-domain art, a narrative/kayfabuliert Mediterranean route, real KayKit standees, FrizzleBob Driver Graft guide/narrator, central VFX/SFX donors and deliberate lulls.
+
+### CURRENT GATE
+T1 exact donor isolation only: playerstand, playercard, KayKit D20 and pinned 3d-dice D10/physics donor shown separately before adaptation.
+
+### OPTIONAL HELPERS
+Game Development Studio is useful later for package/provenance admission, sealed render comparison and performance evidence; local `game-dev` was unavailable in this chat. Build 3D Game Rooms is optional for authored diorama/room cutaways, not the core map runtime.

@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="color-scheme" content="dark">
+<title>KFB Storytelling Maps · T1 Donor Isolation</title>
+<style>
+:root{font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:#111015;color:#f5efe6;--panel:#1b1821;--line:#4a414f;--muted:#aaa0ae;--accent:#f0c94d;--good:#85d5a6}
+*{box-sizing:border-box}html,body{margin:0;min-height:100%;background:radial-gradient(circle at 40% -10%,#302739 0,#17141d 45%,#100e13 100%)}body{padding:env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left)}
+header{padding:18px 18px 10px;max-width:1260px;margin:auto}.kicker{font-size:10px;letter-spacing:.16em;font-weight:900;color:#c6b7ca;text-transform:uppercase}h1{font-size:clamp(24px,5vw,44px);letter-spacing:-.04em;margin:5px 0 8px}header p{margin:0;color:var(--muted);max-width:820px;font-size:13px;line-height:1.45}
+.grid{width:min(1260px,calc(100% - 24px));margin:8px auto 18px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.card{border:1px solid var(--line);border-radius:16px;background:linear-gradient(180deg,#211d28,#17141b);overflow:hidden;box-shadow:0 12px 28px #0005;min-width:0}
+.head{padding:12px 13px;border-bottom:1px solid #3d3543;display:flex;gap:10px;align-items:flex-start}.head>div{min-width:0}.num{width:28px;height:28px;border-radius:50%;display:grid;place-items:center;background:var(--accent);color:#241d27;font-weight:950;font-size:12px;flex:none}.head h2{font-size:15px;margin:0 0 3px}.status{font-size:9px;text-transform:uppercase;letter-spacing:.1em;color:var(--good);font-weight:900}.view{height:330px;position:relative;background:radial-gradient(circle at 50% 35%,#36303b,#15131a 72%);overflow:hidden}.view canvas{width:100%!important;height:100%!important;display:block}.external-stage{position:absolute;inset:0}.external-stage canvas{width:100%!important;height:100%!important}.busy{position:absolute;inset:auto 10px 10px 10px;background:#0f0d12cc;border:1px solid #423a46;border-radius:8px;padding:7px 9px;font:10px/1.35 ui-monospace,SFMono-Regular,Menlo,monospace;color:#d9d0dc;pointer-events:none}.meta{padding:11px 13px 13px}.path{font:10px/1.4 ui-monospace,SFMono-Regular,Menlo,monospace;color:#c7bdca;overflow-wrap:anywhere}.note{font-size:11px;line-height:1.4;color:var(--muted);margin-top:7px}.actions{display:flex;gap:6px;flex-wrap:wrap;margin-top:9px}button{appearance:none;border:1px solid #76677e;background:#efe5d8;color:#251f29;border-radius:8px;padding:7px 9px;font:800 10px/1 system-ui;cursor:pointer}button.primary{background:var(--accent);border-color:var(--accent)}button:disabled{opacity:.42;cursor:default}
+footer{width:min(1260px,calc(100% - 24px));margin:0 auto 22px;border-top:1px solid #3a323e;padding-top:10px;color:#918794;font-size:10px;line-height:1.45}
+@media(max-width:760px){.grid{grid-template-columns:1fr}.view{height:280px}header{padding:12px 12px 7px}}
+@media(max-height:540px) and (orientation:landscape){header{padding:7px 12px 4px}h1{font-size:22px;margin:2px 0 4px}header p{font-size:10px;max-width:none}.grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:7px;width:min(1180px,calc(100% - 12px));margin-top:3px}.view{height:205px}.head{padding:7px 8px}.meta{padding:7px 8px}.note{display:none}.path{font-size:8px}.actions{margin-top:5px}footer{display:none}}
+</style>
+<script type="importmap">
+{"imports":{
+ "three":"https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+ "three/addons/":"https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
+}}
+</script>
+</head>
+<body>
+<header>
+  <div class="kicker">KFB Storytelling Maps v1 · T1 · source objects before adaptation</div>
+  <h1>Exact Donor Isolation</h1>
+  <p>Four separate proofs. No combined standee, no media replacement, no Map integration. The first three are exact KayKit GLTF donors; the fourth is the pinned Three.js/Cannon dice donor used for the missing RPG-die family.</p>
+</header>
+<main class="grid">
+  <section class="card">
+    <div class="head"><span class="num">1</span><div><h2>KayKit Player Stand · red</h2><div class="status">Exact donor · no adaptation</div></div></div>
+    <div class="view" id="view-stand"><div class="busy" id="status-stand">loading exact GLTF…</div></div>
+    <div class="meta"><div class="path">media/3D_Assets/KayKit_BoardGameBits_1.0_FREE/Assets/gltf/playerstand_red.gltf</div><div class="note">Colored physical base intended to remain visible under future media standees.</div><div class="actions"><button data-reset="stand">RESET VIEW</button></div></div>
+  </section>
+  <section class="card">
+    <div class="head"><span class="num">2</span><div><h2>KayKit Player Card · knight red</h2><div class="status">Exact donor · separate art material</div></div></div>
+    <div class="view" id="view-card"><div class="busy" id="status-card">loading exact GLTF…</div></div>
+    <div class="meta"><div class="path">media/3D_Assets/KayKit_BoardGameBits_1.0_FREE/Assets/gltf/playercard_knight_red.gltf</div><div class="note">The original donor keeps its frame geometry. The portrait material is highlighted only for inspection; replacement begins in T2.</div><div class="actions"><button id="artFace">HIGHLIGHT ART FACE</button><button data-reset="card">RESET VIEW</button></div></div>
+  </section>
+  <section class="card">
+    <div class="head"><span class="num">3</span><div><h2>KayKit D20 · red</h2><div class="status">Exact donor · visual source</div></div></div>
+    <div class="view" id="view-d20"><div class="busy" id="status-d20">loading exact GLTF…</div></div>
+    <div class="meta"><div class="path">media/3D_Assets/KayKit_BoardGameBits_1.0_FREE/Assets/gltf/D20_red.gltf</div><div class="note">KayKit already supplies D4/D6/D8/D20 color families. D10 and D12 require a separate donor.</div><div class="actions"><button id="spinD20">AUTO SPIN: ON</button><button data-reset="d20">RESET VIEW</button></div></div>
+  </section>
+  <section class="card">
+    <div class="head"><span class="num">4</span><div><h2>3d-dice · D10 physics donor</h2><div class="status">Pinned external donor · Three.js + Cannon ES</div></div></div>
+    <div class="view"><div class="external-stage" id="external-dice-stage"></div><div class="busy" id="status-external">loading @3d-dice/dice-box-threejs 0.0.12…</div></div>
+    <div class="meta"><div class="path">3d-dice/dice-box-threejs@6945e0068eae27f22acd26debdb70f6ef2fd6063 · npm 0.0.12 · MIT</div><div class="note">Isolated package proof only. It is not yet the Map Board physics owner and does not touch Race/Travel physics.</div><div class="actions"><button class="primary" id="rollD10" disabled>ROLL D10</button></div></div>
+  </section>
+</main>
+<footer>
+  KayKit assets: central KFB repository · pinned T1 source a6b9220a0b42d50a9de9804fad22e84dde2c322c. External dice donor: 6945e0068eae27f22acd26debdb70f6ef2fd6063. This page is an isolation gate, not the final Storytelling Maps UI.
+</footer>
+<script type="module" src="./src/main.js"></script>
+</body>
+</html>

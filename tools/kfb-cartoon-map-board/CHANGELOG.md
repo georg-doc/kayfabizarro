@@ -69,3 +69,30 @@
 - Runtime implementation: NOT STARTED.
 - Current public Map Board Stage: unchanged.
 - Next gate: T1 exact donor isolation page.
+
+
+## 2026-09-20 · KFB Storytelling Maps v1 + T1 donor isolation
+
+### DIRECTION
+- "KFB Storytelling Maps v1" becomes the umbrella product direction over this existing Map Board owner.
+- Target consumers: world/zone/galaxy maps, tactical board scenes, cinematic story maps, cut-scenes and later one manifest-based editor.
+- Ludowala is benchmarked for tabletop/camera/tactility principles only; no proprietary source is reused.
+- Odyssey is prepared as the first 2–3 minute cinematic POC after standee prerequisites.
+
+### IMPLEMENTATION
+- Added T1 donor-isolation lab under `tools/kfb-cartoon-map-board/tactical-lab/t1-donor-isolation/`.
+- Added Stage mirror source at `kfb-hub/stage/storytelling-maps/t1-donors/`.
+- T1 shows exact KayKit playerstand, exact KayKit playercard, exact KayKit D20 and the pinned external Three/Cannon D10 donor separately.
+- Added responsive/mobile-landscape lab layout and machine-readable runtime report.
+- Added public-proof workflow source.
+
+### ASSET / AUDIO / VFX ROUTING
+- Board/Card SFX reuse the central `Audio/Card and Board` WAV family.
+- VFX reuse central Brackeys/Kenney/explosions_smoke/FreeHit donors.
+- FrizzleBob guide remains the existing Driver Graft / Rig_Medium consumer candidate.
+
+### STATUS
+- Source implementation: COMMITTED candidate after write/readback.
+- Public Stage: OPEN until exact Cloudflare proof.
+- Human donor identity: OPEN.
+- Next gate: T1 donor identity only.
