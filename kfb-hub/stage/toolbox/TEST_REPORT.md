@@ -43,3 +43,12 @@ The audit is against `cloudflare-live@ca576e3126e110a2d445b0b4c174faf7217b1c3a` 
 ## Evidence boundary
 
 This proves source composition and current publication-tree presence/absence. It does not yet prove the new Hub/ToolBox files are deployed on Cloudflare or visually accepted after publication.
+
+## Publication checkpoint
+
+- main merge: `dfbbb733b37a3923e4e5a80ff99f9f91209f3aaa`
+- cloudflare-live write/readback: `cbbae810e6ddb8f282e702d0897bed8566361327`
+- exact published file blobs were read back from the publication branch: PASS
+- direct public HTTP/browser verification from this session: **PENDING / TOOL ACCESS BLOCKED**
+
+Do not convert the publication-branch write into `PUBLIC_VERIFIED` until the exact Hub and ToolBox routes visibly show the v2 revision.

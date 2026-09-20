@@ -37,3 +37,16 @@ Publish the exact merged Hub + ToolBox files to `cloudflare-live`, open:
 - `https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/`
 
 and verify the expected v2 markers before calling the promotion public.
+
+## Promotion checkpoint
+
+- accepted UI implementation merged to main: `dfbbb733b37a3923e4e5a80ff99f9f91209f3aaa`
+- exact Hub/ToolBox publication files written to `cloudflare-live@cbbae810e6ddb8f282e702d0897bed8566361327`
+- publication-branch readback: PASS
+- direct pages.dev verification from this session: PENDING because the available HTTP viewer cannot access the host.
+
+Human test URLs remain:
+- `https://kayfabizarro.pages.dev/kfb-hub/`
+- `https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/`
+
+Do not label the new revision PUBLIC_VERIFIED until those exact URLs show the v2 markers.

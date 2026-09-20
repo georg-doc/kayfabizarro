@@ -974,3 +974,8 @@ Against the current Cloudflare publication tree: 6 exact public preview routes, 
 
 ### WORLDSURFACE I1A
 Travel branch `wsa/worldsurface-trackpatch-i1-2026-09-20@d9d9d93c286fa52551ee881292a4db426a4cb8fc` is locally green (72/72). B changes 99 host vertices but is coarse; C replaces 380 source triangles with 6,080 refined triangles, with zero measured seam displacement and zero outside-patch mutation. C is technical leader only; Georg's visual B/C/neither gate remains open.
+
+
+## 2026-09-21 · Hub/ToolBox v2 publication checkpoint
+
+Hub UI v2 + ToolBox v2 promotion merged at `dfbbb733b37a3923e4e5a80ff99f9f91209f3aaa`. The exact public files were copied to and read back from `cloudflare-live@cbbae810e6ddb8f282e702d0897bed8566361327`. Direct `kayfabizarro.pages.dev` browser verification is still pending because this session's HTTP viewer cannot access that host; no PUBLIC_VERIFIED claim is made yet.
