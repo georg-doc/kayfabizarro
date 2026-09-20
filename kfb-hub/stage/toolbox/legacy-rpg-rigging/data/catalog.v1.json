@@ -1,0 +1,478 @@
+{
+  "schema": "kfb.legacy-rpg-catalog/0.1-candidate",
+  "source": {
+    "repo": "georg-doc/kayfabizarro",
+    "packPath": "media/3D_Assets/KayKit Legacy/KayKit Dungeon Pack 1.0 2",
+    "partsRevision": "eb48f50489b9e4903ec1e3d2fb1837605ce7d792",
+    "rigPath": "media/3D_Assets/KayKit Legacy/KayKit Character Animations 1.2 - legacy/Animations/gltf/KayKit_AnimatedCharacter_v1.2.glb",
+    "rigRevision": "10a7fdce6b3a1ae22504ade71b7dbec5f25e0ff0",
+    "license": "CC0"
+  },
+  "characters": [
+    {
+      "id": "barbarian",
+      "label": "Barbarian",
+      "path": "media/3D_Assets/KayKit Legacy/KayKit Dungeon Pack 1.0 2/Models/Characters/gltf/character_barbarian.gltf",
+      "bodyNode": "character_barbarianBody",
+      "headNode": "character_barbarianHead",
+      "leftArmNode": "character_barbarianArmLeft",
+      "rightArmNode": "character_barbarianArmRight",
+      "headExtras": [
+        "character_barbarianHat"
+      ],
+      "bodyMaterials": [
+        "BrownDark",
+        "White",
+        "WoodDark",
+        "BlueDark",
+        "Metal"
+      ]
+    },
+    {
+      "id": "knight",
+      "label": "Knight",
+      "path": "media/3D_Assets/KayKit Legacy/KayKit Dungeon Pack 1.0 2/Models/Characters/gltf/character_knight.gltf",
+      "bodyNode": "character_knightBody",
+      "headNode": "character_knightHead",
+      "leftArmNode": "character_knightArmLeft",
+      "rightArmNode": "character_knightArmRight",
+      "headExtras": [
+        "character_knightHelmet"
+      ],
+      "bodyMaterials": [
+        "Metal",
+        "Stone",
+        "Black",
+        "BrownDark",
+        "Blue",
+        "White"
+      ]
+    },
+    {
+      "id": "mage",
+      "label": "Mage",
+      "path": "media/3D_Assets/KayKit Legacy/KayKit Dungeon Pack 1.0 2/Models/Characters/gltf/character_mage.gltf",
+      "bodyNode": "character_mageBody",
+      "headNode": "character_mageHead",
+      "leftArmNode": "character_mageArnLeft",
+      "rightArmNode": "character_mageArmRight",
+      "headExtras": [
+        "character_mageHat",
+        "character_mageHair"
+      ],
+      "bodyMaterials": [
+        "PurpleDark",
+        "Purple",
+        "Metal",
+        "BrownDark",
+        "WoodDark"
+      ]
+    },
+    {
+      "id": "rogue",
+      "label": "Rogue",
+      "path": "media/3D_Assets/KayKit Legacy/KayKit Dungeon Pack 1.0 2/Models/Characters/gltf/character_rogue.gltf",
+      "bodyNode": "character_rogueBody",
+      "headNode": "character_rogueHead",
+      "leftArmNode": "character_rogueArmLeft",
+      "rightArmNode": "character_rogueArmRight",
+      "headExtras": [
+        "character_rogueHair"
+      ],
+      "bodyMaterials": [
+        "GreenDark",
+        "BrownDark",
+        "Brown",
+        "Metal"
+      ]
+    }
+  ],
+  "heads": [
+    {
+      "id": "barbarian-default",
+      "label": "Barbarian \u00b7 default",
+      "kind": "embedded",
+      "character": "barbarian"
+    },
+    {
+      "id": "barbarian-a",
+      "label": "Barbarian Head A",
+      "kind": "asset",
+      "path": "media/3D_Assets/KayKit Legacy/KayKit Dungeon Pack 1.0 2/Models/Characters/gltf/extra heads/barbarianHeadA.gltf.glb"
+    },
+    {
+      "id": "barbarian-b",
+      "label": "Barbarian Head B",
+      "kind": "asset",
+      "path": "media/3D_Assets/KayKit Legacy/KayKit Dungeon Pack 1.0 2/Models/Characters/gltf/extra heads/barbarianHeadB.gltf.glb"
+    },
+    {
+      "id": "barbarian-c",
+      "label": "Barbarian Head C",
+      "kind": "asset",
+      "path": "media/3D_Assets/KayKit Legacy/KayKit Dungeon Pack 1.0 2/Models/Characters/gltf/extra heads/barbarianHeadC.gltf.glb"
+    },
+    {
+      "id": "knight-default",
+      "label": "Knight \u00b7 default",
+      "kind": "embedded",
+      "character": "knight"
+    },
+    {
+      "id": "knight-a",
+      "label": "Knight Head A",
+      "kind": "asset",
+      "path": "media/3D_Assets/KayKit Legacy/KayKit Dungeon Pack 1.0 2/Models/Characters/gltf/extra heads/knightHeadA.gltf.glb"
+    },
+    {
+      "id": "knight-b",
+      "label": "Knight Head B",
+      "kind": "asset",
+      "path": "media/3D_Assets/KayKit Legacy/KayKit Dungeon Pack 1.0 2/Models/Characters/gltf/extra heads/knightHeadB.gltf.glb"
+    },
+    {
+      "id": "knight-c",
+      "label": "Knight Head C",
+      "kind": "asset",
+      "path": "media/3D_Assets/KayKit Legacy/KayKit Dungeon Pack 1.0 2/Models/Characters/gltf/extra heads/knightHeadC.gltf.glb"
+    },
+    {
+      "id": "mage-default",
+      "label": "Mage \u00b7 default",
+      "kind": "embedded",
+      "character": "mage"
+    },
+    {
+      "id": "mage-a",
+      "label": "Mage Head A",
+      "kind": "asset",
+      "path": "media/3D_Assets/KayKit Legacy/KayKit Dungeon Pack 1.0 2/Models/Characters/gltf/extra heads/mageHeadA.gltf"
+    },
+    {
+      "id": "mage-b",
+      "label": "Mage Head B",
+      "kind": "asset",
+      "path": "media/3D_Assets/KayKit Legacy/KayKit Dungeon Pack 1.0 2/Models/Characters/gltf/extra heads/mageHeadB.gltf"
+    },
+    {
+      "id": "mage-c",
+      "label": "Mage Head C",
+      "kind": "asset",
+      "path": "media/3D_Assets/KayKit Legacy/KayKit Dungeon Pack 1.0 2/Models/Characters/gltf/extra heads/mageHeadC.gltf"
+    },
+    {
+      "id": "rogue-default",
+      "label": "Rogue \u00b7 default",
+      "kind": "embedded",
+      "character": "rogue"
+    },
+    {
+      "id": "rogue-a",
+      "label": "Rogue Head A",
+      "kind": "asset",
+      "path": "media/3D_Assets/KayKit Legacy/KayKit Dungeon Pack 1.0 2/Models/Characters/gltf/extra heads/rogueHeadA.gltf"
+    },
+    {
+      "id": "rogue-b",
+      "label": "Rogue Head B",
+      "kind": "asset",
+      "path": "media/3D_Assets/KayKit Legacy/KayKit Dungeon Pack 1.0 2/Models/Characters/gltf/extra heads/rogueHeadB.gltf"
+    },
+    {
+      "id": "rogue-c",
+      "label": "Rogue Head C",
+      "kind": "asset",
+      "path": "media/3D_Assets/KayKit Legacy/KayKit Dungeon Pack 1.0 2/Models/Characters/gltf/extra heads/rogueHeadC.gltf"
+    },
+    {
+      "id": "skull",
+      "label": "Skull",
+      "kind": "asset",
+      "path": "media/3D_Assets/KayKit Legacy/KayKit Dungeon Pack 1.0 2/Models/Characters/gltf/extra heads/skull.gltf.glb"
+    }
+  ],
+  "weapons": [
+    {
+      "id": "sword-common",
+      "label": "Sword \u00b7 common",
+      "family": "sword",
+      "tier": "common",
+      "path": "gltf/sword_common.gltf.glb"
+    },
+    {
+      "id": "sword-uncommon",
+      "label": "Sword \u00b7 uncommon",
+      "family": "sword",
+      "tier": "uncommon",
+      "path": "gltf/sword_uncommon.gltf.glb"
+    },
+    {
+      "id": "sword-rare",
+      "label": "Sword \u00b7 rare",
+      "family": "sword",
+      "tier": "rare",
+      "path": "gltf/sword_rare.gltf.glb"
+    },
+    {
+      "id": "shield-common",
+      "label": "Shield \u00b7 common",
+      "family": "shield",
+      "tier": "common",
+      "path": "gltf/shield_common.gltf.glb"
+    },
+    {
+      "id": "shield-uncommon",
+      "label": "Shield \u00b7 uncommon",
+      "family": "shield",
+      "tier": "uncommon",
+      "path": "gltf/shield_uncommon.gltf.glb"
+    },
+    {
+      "id": "shield-rare",
+      "label": "Shield \u00b7 rare",
+      "family": "shield",
+      "tier": "rare",
+      "path": "gltf/shield_rare.gltf.glb"
+    },
+    {
+      "id": "axe-common",
+      "label": "Axe \u00b7 common",
+      "family": "axe",
+      "tier": "common",
+      "path": "gltf/axe_common.gltf.glb"
+    },
+    {
+      "id": "axe-uncommon",
+      "label": "Axe \u00b7 uncommon",
+      "family": "axe",
+      "tier": "uncommon",
+      "path": "gltf/axe_uncommon.gltf.glb"
+    },
+    {
+      "id": "axe-rare",
+      "label": "Axe \u00b7 rare",
+      "family": "axe",
+      "tier": "rare",
+      "path": "gltf/axe_rare.gltf.glb"
+    },
+    {
+      "id": "axe-double-common",
+      "label": "Double Axe \u00b7 common",
+      "family": "axeDouble",
+      "tier": "common",
+      "path": "gltf/axeDouble_common.gltf.glb"
+    },
+    {
+      "id": "axe-double-uncommon",
+      "label": "Double Axe \u00b7 uncommon",
+      "family": "axeDouble",
+      "tier": "uncommon",
+      "path": "gltf/axeDouble_uncommon.gltf.glb"
+    },
+    {
+      "id": "axe-double-rare",
+      "label": "Double Axe \u00b7 rare",
+      "family": "axeDouble",
+      "tier": "rare",
+      "path": "gltf/axeDouble_rare.gltf.glb"
+    },
+    {
+      "id": "hammer-common",
+      "label": "Hammer \u00b7 common",
+      "family": "hammer",
+      "tier": "common",
+      "path": "gltf/hammer_common.gltf.glb"
+    },
+    {
+      "id": "hammer-uncommon",
+      "label": "Hammer \u00b7 uncommon",
+      "family": "hammer",
+      "tier": "uncommon",
+      "path": "gltf/hammer_uncommon.gltf.glb"
+    },
+    {
+      "id": "hammer-rare",
+      "label": "Hammer \u00b7 rare",
+      "family": "hammer",
+      "tier": "rare",
+      "path": "gltf/hammer_rare.gltf.glb"
+    },
+    {
+      "id": "crossbow-common",
+      "label": "Crossbow \u00b7 common",
+      "family": "crossbow",
+      "tier": "common",
+      "path": "gltf/crossbow_common.gltf.glb"
+    },
+    {
+      "id": "crossbow-uncommon",
+      "label": "Crossbow \u00b7 uncommon",
+      "family": "crossbow",
+      "tier": "uncommon",
+      "path": "gltf/crossbow_uncommon.gltf.glb"
+    },
+    {
+      "id": "crossbow-rare",
+      "label": "Crossbow \u00b7 rare",
+      "family": "crossbow",
+      "tier": "rare",
+      "path": "gltf/crossbow_rare.gltf.glb"
+    },
+    {
+      "id": "staff-common",
+      "label": "Staff \u00b7 common",
+      "family": "staff",
+      "tier": "common",
+      "path": "gltf/staff_common.gltf.glb"
+    },
+    {
+      "id": "staff-uncommon",
+      "label": "Staff \u00b7 uncommon",
+      "family": "staff",
+      "tier": "uncommon",
+      "path": "gltf/staff_uncommon.gltf.glb"
+    },
+    {
+      "id": "staff-rare",
+      "label": "Staff \u00b7 rare",
+      "family": "staff",
+      "tier": "rare",
+      "path": "gltf/staff_rare.gltf.glb"
+    },
+    {
+      "id": "dagger-common",
+      "label": "Dagger \u00b7 common",
+      "family": "dagger",
+      "tier": "common",
+      "path": "gltf/dagger_common.gltf.glb"
+    },
+    {
+      "id": "dagger-uncommon",
+      "label": "Dagger \u00b7 uncommon",
+      "family": "dagger",
+      "tier": "uncommon",
+      "path": "gltf/dagger_uncommon.gltf.glb"
+    },
+    {
+      "id": "dagger-rare",
+      "label": "Dagger \u00b7 rare",
+      "family": "dagger",
+      "tier": "rare",
+      "path": "gltf/dagger_rare.gltf.glb"
+    }
+  ],
+  "accessories": [
+    {
+      "id": "barbarian-hat",
+      "label": "Barbarian Hat",
+      "kind": "embedded-head-gear",
+      "character": "barbarian",
+      "node": "character_barbarianHat"
+    },
+    {
+      "id": "knight-helmet",
+      "label": "Knight Helmet + Visor",
+      "kind": "embedded-head-gear",
+      "character": "knight",
+      "node": "character_knightHelmet"
+    },
+    {
+      "id": "mage-hat",
+      "label": "Mage Hat",
+      "kind": "embedded-head-gear",
+      "character": "mage",
+      "node": "character_mageHat"
+    },
+    {
+      "id": "mage-hair",
+      "label": "Mage Hair",
+      "kind": "embedded-head-gear",
+      "character": "mage",
+      "node": "character_mageHair"
+    },
+    {
+      "id": "rogue-hair",
+      "label": "Rogue Hair",
+      "kind": "embedded-head-gear",
+      "character": "rogue",
+      "node": "character_rogueHair"
+    },
+    {
+      "id": "arrow",
+      "label": "Arrow",
+      "kind": "prop",
+      "path": "gltf/arrow.gltf.glb"
+    },
+    {
+      "id": "quiver-empty",
+      "label": "Quiver \u00b7 empty",
+      "kind": "prop",
+      "path": "gltf/quiver_empty.gltf.glb"
+    },
+    {
+      "id": "quiver-half",
+      "label": "Quiver \u00b7 half full",
+      "kind": "prop",
+      "path": "gltf/quiver_half_full.gltf.glb"
+    },
+    {
+      "id": "quiver-full",
+      "label": "Quiver \u00b7 full",
+      "kind": "prop",
+      "path": "gltf/quiver_full.gltf.glb"
+    },
+    {
+      "id": "spellbook",
+      "label": "Spell Book",
+      "kind": "prop",
+      "path": "gltf/spellBook.gltf.glb"
+    }
+  ],
+  "motions": [
+    "Attack(1h)",
+    "AttackCombo",
+    "AttackSpinning",
+    "BasePose",
+    "Block",
+    "Cheer",
+    "Climbing",
+    "Dance",
+    "DashBack",
+    "DashFront",
+    "DashLeft",
+    "DashRight",
+    "Defeat",
+    "HeavyAttack",
+    "Hop",
+    "Idle",
+    "Interact",
+    "Jump",
+    "LayingDownIdle",
+    "PickUp",
+    "Roll",
+    "Run",
+    "Shoot(1h)",
+    "Shoot(2h)",
+    "Shoot(2h)Bow",
+    "Shooting(1h)",
+    "Shooting(2h)",
+    "Throw",
+    "Walk",
+    "Wave"
+  ],
+  "semantic": {
+    "idle": "Idle",
+    "walk": "Walk",
+    "run": "Run",
+    "wave": "Wave",
+    "attack": "Attack(1h)",
+    "combo": "AttackCombo",
+    "heavy": "HeavyAttack",
+    "block": "Block",
+    "shoot": "Shoot(1h)",
+    "bow": "Shoot(2h)Bow",
+    "throw": "Throw",
+    "jump": "Jump",
+    "roll": "Roll"
+  }
+}
