@@ -1,40 +1,42 @@
-# CA2-03A · Return
+# CA2-03B · Return
 
-Status: **PUBLIC_VERIFIED · STATE PLAYBACK NEXT**
-
-## Public Stage
-
-https://kayfabizarro.pages.dev/kfb-hub/stage/combat/ca2-enemy-adapters/
+Status: **BRANCH_VERIFIED · PUBLICATION NEXT**
 
 ## Result
 
-Exact source objects and exact animation libraries are verified for:
-- Skeleton Warrior · Rig_Medium;
-- Orc Brute · Rig_Large;
-- Avian Swordsman · Rig_Medium comparison candidate.
+The frozen five-state map now plays on all three exact actors with one mixer each and no Arena runtime ownership.
 
-Measured rest heights: Skeleton `2.59046`, Orc `4.19439`, Avian `2.32418`. All have 23 bones. Orc stays native Large scale; no Medium normalization.
+- Skeleton Warrior · Rig_Medium
+- Orc Brute · Rig_Large
+- Avian Swordsman · Rig_Medium comparison
 
-Frozen first state map:
+State map:
 - Skeleton: `Idle_A → Running_A → Melee_1H_Attack_Chop → Hit_A → Death_A`
 - Orc: `Idle_A → Walking_A → Melee_Unarmed_Smash → Hit_A → Death_A`
-- Avian comparison: `Idle_A → Running_A → Melee_1H_Attack_Jump_Chop → Hit_A → Death_A`
+- Avian: `Idle_A → Running_A → Melee_1H_Attack_Jump_Chop → Hit_A → Death_A`
 
-## Evidence
+Root/Hips position tracks are stripped in the playback harness. All actor world anchors remain stable across every frozen state sample.
 
-Workflow `35492632529`:
-- branch job `106030073603`: **32/32 PASS**;
-- public job `106030073584`: marker PASS · Combat Web Stage navigation PASS · **32/32 PASS**;
-- branch artifact `10599840995`;
-- public artifact `10600125047`;
-- zero failed resources / page errors in both browser proofs.
+## Branch evidence
 
-Proofed publication: `cloudflare-live@b11d87ac8f12e30b4098aafcc412fc41018369e6`.
+Run `35493052845` · job `106031173581`: **109/109 PASS**.
+
+- 3 actors, exactly one mixer each;
+- exact state→clip map preserved;
+- all 5 states sampled at deterministic 35% phase;
+- finite skinned bounds;
+- no collapse for any actor/state;
+- stable root anchor for every actor/state;
+- non-attack ground residual within gate;
+- attack states do not penetrate the floor beyond tolerance;
+- no failed resources or page errors.
+
+Artifact `10599676961` · `sha256:8bc9e098a9439ace78c77da01c5f04fca63135e34fc4f2fa9d1ecb7a91a40233`.
 
 ## Boundary
 
-No Arena mob slots, HP, damage, rewards, respawn, Player or Gunfight files changed. No Large weapon alignment. Rogue ranged remains HOLD.
+No HP, damage, rewards, respawn, Arena mob state, Player, Gunfight or Large weapon alignment.
 
 ## Next gate
 
-**CA2-03B:** play the frozen five-state map on Skeleton Warrior + Orc Brute, with Avian as comparison. Verify deformation, grounding, one mixer per actor and state transitions. Still no Arena combat ownership.
+Publish this exact playback harness to the fixed Combat Stage and run the same 109-check proof publicly.

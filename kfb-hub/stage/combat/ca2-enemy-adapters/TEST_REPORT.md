@@ -1,19 +1,20 @@
-# CA2-03A · Test Report
+# CA2-03B · Test Report
 
-Final status: **PUBLIC_VERIFIED**
+Status: **BRANCH VERIFIED**
 
-Runtime revision: `8b325ec856d2de6bba33968d725516e2b5ccd29f`.
+Runtime under test: `a1594a60805a2254c45eceb4ca8f5053a3e8aad4`.
 
-Workflow `35492632529`:
-- branch `106030073603`: **32/32 PASS**;
-- public `106030073584`: **32/32 PASS**;
-- public marker: PASS;
-- Combat Web Stage route: PASS;
-- failed resources: 0;
-- page errors: 0.
+Run `35493052845` · job `106031173581`: **109/109 PASS**.
 
-Artifacts:
-- branch `10599840995` · `sha256:6e1b2d9b44aa3ebe800d557a60e3de67e8e84778325cd90ca05e972cb5912b91`;
-- public `10600125047` · `sha256:125327b7ff1a056d8ee6628ebdce09da3d04cd69b413d8463a1e104ec27f4666`.
+For each of Idle / Move / Attack / Hit / Defeat:
+- exact clip name checked for all 3 actors;
+- deterministic frozen phase = 0.35;
+- skinned bounds finite;
+- diagonal-size ratio checked against rest pose;
+- root anchor unchanged;
+- grounding checked for non-attack states;
+- attack-state floor penetration bounded.
 
-Exact clip inventories are frozen in `ANIMATION_MAP.json`.
+No failed resources. No page errors.
+
+Artifact: `10599676961` · `sha256:8bc9e098a9439ace78c77da01c5f04fca63135e34fc4f2fa9d1ecb7a91a40233`.
