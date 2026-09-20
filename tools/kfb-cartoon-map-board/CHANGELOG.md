@@ -204,3 +204,15 @@ Game Dev Studio Theatre Curtain PR #114 remains a separate reusable dependency.
 
 ### NEXT MAP-ANIMATOR GATE
 SMA1 only: existing Europe pieces + reversible map motion/camera + one real landmark donor + one reused ripple.
+
+
+## 2026-09-20 · Map Animator planning routing proof
+
+- Claude Design brief + donor matrix + planning Return prepared on `planning/storytelling-map-animator-v1-2026-09-20`.
+- KFB Hub briefing/ToDo publicly verified: **6/6 PASS**.
+- Public Hub: `https://kayfabizarro.pages.dev/kfb-hub/`
+- run/job: `35537569069` / `106149219477`
+- artifact: `10613653218`
+- Animator runtime: **NOT STARTED**
+- Animator Stage target: **NOT DEPLOYED / NOT PUBLIC_VERIFIED**
+- next Map Animator gate: SMA1 only.

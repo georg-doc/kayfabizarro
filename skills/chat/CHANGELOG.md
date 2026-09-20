@@ -1011,3 +1011,13 @@ SMA1 is the only first implementation gate: puzzle-piece motion/camera + one rea
 
 ### STATUS
 Planning ready. Runtime not started. Future Animator Stage target is not deployed/public-verified.
+
+
+## 2026-09-20 · Storytelling Map Animator Hub routing PUBLIC_VERIFIED
+
+The planning brief is now visible through the actual KFB Hub:
+`https://kayfabizarro.pages.dev/kfb-hub/`
+
+Public proof: **6/6 PASS** at source head `f171b3513c4eb9c295ec17e0c2793fe36bafeb72`; run/job `35537569069` / `106149219477`; artifact `10613653218`; digest `sha256:de7bfb9c1c07e4c6c645e42b1ae458971341430dfc53e0d92a4bb2421d23a716`.
+
+This proves only the briefing/ToDo routing. `/storytelling-maps/animator-v1/` remains a future target and is not claimed deployed.

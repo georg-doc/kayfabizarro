@@ -1,6 +1,6 @@
 # KFB Storytelling Map Animator v1 · Slice Plan / Return
 
-Status: **PLANNING PACKAGE READY · IMPLEMENTATION NOT STARTED**
+Status: **PLANNING PACKAGE READY · HUB ROUTING PUBLIC_VERIFIED · IMPLEMENTATION NOT STARTED**
 Date: 2026-09-20
 
 ## Owner
@@ -75,3 +75,36 @@ The Animator brief therefore treats Curtain as an external dependency and explic
 **SMA1 only.**
 
 Do not combine SMA1–SMA7 into one Claude Design build.
+
+
+## KFB Hub publication proof
+
+The Map Animator **briefing / ToDo routing only** is publicly visible on the real KFB Hub:
+
+`https://kayfabizarro.pages.dev/kfb-hub/`
+
+This does **not** mean the Animator Stage exists yet.
+
+Public Chromium proof at planning source head:
+`f171b3513c4eb9c295ec17e0c2793fe36bafeb72`
+
+Result:
+- **6/6 PASS**
+- exact Cloudflare Hub source contains Map Animator routing;
+- Hub HTTP 200;
+- Briefings visibly shows `Storytelling Maps · Map Animator v1`;
+- To-dos visibly shows `Storytelling Map Animator · SMA1 prepared`;
+- 0 page errors;
+- 0 failed HTTP requests;
+- desktop Briefings screenshot captured;
+- mobile-landscape Briefings screenshot captured.
+
+Evidence:
+- workflow run: `35537569069`
+- job: `106149219477`
+- artifact: `10613653218`
+- digest: `sha256:de7bfb9c1c07e4c6c645e42b1ae458971341430dfc53e0d92a4bb2421d23a716`
+- Cloudflare Hub publication commit: `ca576e3126e110a2d445b0b4c174faf7217b1c3a`
+
+Animator runtime Stage remains:
+**TARGET ONLY · NOT DEPLOYED · NOT PUBLIC_VERIFIED**.
