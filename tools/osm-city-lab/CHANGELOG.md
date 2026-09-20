@@ -1,5 +1,39 @@
 # Changelog · additive
 
+## 2026-09-20 · Dom / Zentrum reusable OSM dataset
+
+### DATA
+- Added cached real OSM/Overpass dataset `dom-zentrum-v0` for Cologne Cathedral / HBF / Altstadt / Rhine.
+- Raw source SHA-256: `8ab058da444eee7bd54c367aec770bbe10c4bef2ddda636cd95b886f5dca244c`.
+- OSM base timestamp: `2026-09-20T03:20:04Z`.
+- Source cache commit: `19f6ec3729a2d1be93bab04a871186b53df230ec`.
+- Added normalized metre-frame geometry, consumer scene, fixture evidence, rail/hero design context and a smaller `CLAUDE_CONTEXT.json`.
+
+### TESTED RESULT
+- raw elements: **145,967**
+- roads: **5,236** / driveable **2,523**
+- buildings: **6,351**
+- landuse/surface polygons: **456**
+- water lines: **6**
+- railway ways: **665**
+- local bounds: **2,279.652 × 2,115.070 m**
+- S0 gates: source cached / OSM IDs / local-metre frame / roads / buildings / deterministic reload / bbox clip = **PASS**
+
+### HERO SOURCE ANCHORS
+- Kölner Dom: `way/4532022`
+- Köln Hauptbahnhof: `node/2399559029`
+- Hohenzollernbrücke: `relation/5460390`
+- Deutzer Brücke: `relation/3837695`
+- Rheinufertunnel: `way/23559378`
+
+### LICENSE / ATTRIBUTION
+Map data **© OpenStreetMap contributors · ODbL 1.0**. Exact endpoint, bbox, retrieval time and source hash are in `data/dom-zentrum-v0/PROVENANCE.json`.
+
+### CONSUMER
+The dataset closes the geography gate for the Claude Design Cologne Race Option C slice. OSM stays geographic/semantic truth; styling/deformation/gameplay remain KFB-owned.
+
+---
+
 ## 2026-09-19 · corridor on main + canonical public Stunt World PASS
 
 ### IMPLEMENTATION
