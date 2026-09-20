@@ -994,3 +994,10 @@ Retain the accepted Paper/Dark Hub + ToolBox v2 surfaces, remove stale “review
 
 ### PUBLICATION BOUNDARY
 GitHub/cloudflare-live branch state is not a public browser PASS. Exact `kayfabizarro.pages.dev` URLs must still show the v2 revision before a new PUBLIC_VERIFIED claim.
+
+
+### PUBLICATION SEAL · Hub/ToolBox v2 status refresh
+- PR #153 merged: `dfaafac070747f9543b5eb5a635e2aaa74e57b83`
+- exact Hub/Stage/ToolBox-audit files mirrored to `cloudflare-live@c2185ed4a59bbae0c3610cb35155af1ccb542c00`
+- publication-branch blob readback: PASS
+- direct pages.dev verification: PENDING because both available HTTP paths are blocked in this session; no new PUBLIC_VERIFIED claim.
