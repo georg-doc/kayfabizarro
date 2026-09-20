@@ -1,0 +1,51 @@
+name: ToolBox KayKit Ranged Calibration proof
+on:
+  push:
+    branches:
+      - 'chatgpt-web/ca2-02-ranged-calibration-2026-09-20'
+    paths:
+      - 'kfb-hub/stage/toolbox/kaykit-ranged-calibration-v1/**'
+      - '.github/workflows/toolbox-kaykit-ranged-calibration.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  branch-proof:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Static syntax and JSON
+        run: |
+          node --check kfb-hub/stage/toolbox/kaykit-ranged-calibration-v1/lab.mjs
+          node --check kfb-hub/stage/toolbox/kaykit-ranged-calibration-v1/proof.mjs
+          node -e "JSON.parse(require('fs').readFileSync('kfb-hub/stage/toolbox/kaykit-ranged-calibration-v1/SOURCE.json','utf8'));console.log('JSON PASS')"
+      - name: Install Playwright Chromium
+        run: |
+          npm install --no-save playwright@1.51.1
+          npx playwright install --with-deps chromium
+      - name: Serve exact branch
+        run: |
+          python3 -m http.server 4173 --bind 127.0.0.1 >/tmp/krc-http.log 2>&1 &
+          echo $! >/tmp/krc-http.pid
+          for i in {1..30}; do
+            curl -fsS http://127.0.0.1:4173/kfb-hub/stage/toolbox/kaykit-ranged-calibration-v1/SOURCE.json >/dev/null && exit 0
+            sleep 1
+          done
+          cat /tmp/krc-http.log
+          exit 1
+      - name: Browser proof
+        env:
+          KRC_BASE_URL: http://127.0.0.1:4173/kfb-hub/stage/toolbox/kaykit-ranged-calibration-v1/
+          KRC_SOURCE_HEAD: 4fb8104761e0393c4698206a79b4cc0d0ced6378
+          KRC_PROOF_DIR: kaykit-ranged-calibration-evidence
+        run: node kfb-hub/stage/toolbox/kaykit-ranged-calibration-v1/proof.mjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: kaykit-ranged-calibration-evidence
+          path: kaykit-ranged-calibration-evidence
+          retention-days: 14

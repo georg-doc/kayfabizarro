@@ -4,10 +4,10 @@
   "slice": "CA2-02",
   "owner": "KFB ToolBox / weapon-motion calibration",
   "consumer": "georg-doc/KFB-Combat-Arena / WSA",
-  "status": "IMPLEMENTED_UNTESTED",
+  "status": "BRANCH_BROWSER_PROOF_PENDING",
   "sourceRepo": "georg-doc/kayfabizarro",
   "sourceBranch": "chatgpt-web/ca2-02-ranged-calibration-2026-09-20",
-  "implementationHead": "PENDING_VERIFY",
+  "implementationHead": "4fb8104761e0393c4698206a79b4cc0d0ced6378",
   "baseMain": "52532aee17f85324a6d04ab53150216f00ac5d89",
   "donors": {
     "motionLab": {
@@ -27,12 +27,25 @@
     "source": "graft contract / Studio weapon defaults",
     "anchor": "slot",
     "hand": "right",
-    "eulerDeg": [-14, 77, 0],
-    "offsetForearm": [0, -0.03, 0],
+    "eulerDeg": [
+      -14,
+      77,
+      0
+    ],
+    "offsetForearm": [
+      0,
+      -0.03,
+      0
+    ],
     "scale": 0.37
   },
   "stageUrl": "https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/kaykit-ranged-calibration-v1/",
-  "protectedOwners": ["Arena Player movement/root/ground", "Arena Gunfight targeting/projectile/damage/release state", "Arena rewards/runflow", "Arena audio"],
+  "protectedOwners": [
+    "Arena Player movement/root/ground",
+    "Arena Gunfight targeting/projectile/damage/release state",
+    "Arena rewards/runflow",
+    "Arena audio"
+  ],
   "publicVerified": false,
   "humanAcceptance": "PENDING"
 }
