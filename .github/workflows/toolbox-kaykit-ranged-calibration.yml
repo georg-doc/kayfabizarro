@@ -4,7 +4,9 @@ on:
     branches:
       - 'chatgpt-web/ca2-02-ranged-calibration-2026-09-20'
     paths:
-      - 'kfb-hub/stage/toolbox/kaykit-ranged-calibration-v1/**'
+      - 'kfb-hub/stage/toolbox/kaykit-ranged-calibration-v1/index.html'
+      - 'kfb-hub/stage/toolbox/kaykit-ranged-calibration-v1/lab.mjs'
+      - 'kfb-hub/stage/toolbox/kaykit-ranged-calibration-v1/proof.mjs'
       - '.github/workflows/toolbox-kaykit-ranged-calibration.yml'
   workflow_dispatch:
 permissions:

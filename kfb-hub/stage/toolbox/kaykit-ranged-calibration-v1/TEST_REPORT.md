@@ -1,36 +1,40 @@
 # CA2-02 · Test Report
 
 Date: 2026-09-20  
-Final runtime under test: `36072e4797d4915d87673432de176e1fa46dcea9`.
+Final runtime under test: `a5e09d6744f4a26e63a5f7e706be8a631459d28d`
 
-## Branch browser result
+## Final branch browser result
 
-Final branch run `35488456185` · job `106019011389`: **55/55 PASS**
+Run `35489464770` · job `106021777516`: **55/55 PASS**
 
-- source marker: PASS;
 - exact isolated `Character_Gun.gltf`: PASS;
-- exact CombatRanged source: PASS, 20 clips enumerated;
+- exact `Rig_Medium_CombatRanged.glb`: PASS, 20 clips enumerated;
 - FB + GothGirl weapon mounts: PASS;
-- right `handslotr`: PASS on both;
-- grip/muzzle geometry finite and measured: PASS;
-- bind delta measured: PASS;
-- deterministic release-frame at `0.150 s`: PASS on both;
-- two calibration FX events at the same measured release frame: PASS;
+- `handslotr`: PASS on both;
+- grip/muzzle geometry: measured and finite;
+- bind delta: position `0`, forearm `0`, quaternion about `0.000002°`;
+- deterministic Release Frame: `0.150 s`;
+- single-shot scheduled markers: exactly `[0.150]` per actor;
+- later `0.883 s` rotational peak: measured, explicitly not promoted;
 - Reload pose: PASS;
 - failed HTTP/resources: **0**;
 - page/console errors: **0**.
 
-Branch artifact `10597654212` · `sha256:c35871f008acbffbe6eb1622d2b5cc20841d5f9944bcaa02325499e30fb3c4c6`.
+Branch artifact `10598656283` · `sha256:6a986f361a91c667a3ef01084fc661435ac8b75071efa5b47963cbe7157eb9bc`.
 
-Evidence files:
-- `00-source-gun.png`
-- `01-aim-compare.png`
-- `02-shoot-release.png`
-- `03-reload.png`
-- `measurement.json`
+## Public Cloudflare proof
 
-## Repair history
+Run `35489464770` · public job `106021777418`:
+- exact runtime marker: **PASS**;
+- KFB Hub → Stage navigation: **PASS**;
+- browser: **55/55 PASS**;
+- failed HTTP/resources: **0**;
+- page/console errors: **0**.
 
-Initial run `35487764455` failed only on a wall-clock FX expectation after all source, grip, muzzle and marker checks had passed. The calibration bench was repaired to seek the exact measured release frame deterministically; no grip or muzzle values were changed.
+Public artifact `10598539749` · `sha256:04fe77711f3af6ba4d1243ea068d37606b7a0685eab54891a60ea3057326a3e9`.
 
-## Public Cloudflare proof\n\nRun `35488456185` · public job `106019011425`: marker PASS, KFB Hub/Stage navigation PASS, **55/55 PASS**, 0 failed resources, 0 page/console errors. Public artifact `10597659083` · `sha256:f641fee4394584f12013b2edb455d31ec015e50f48f71fbdef40369ed3f2705c`.\n\nProofed publication: `cloudflare-live@cf71a28f8ca776d3a09e7653729363a52a5b135e`. Georg's visual gate remains open.
+Proofed publication: `cloudflare-live@cf15f612e6a700608564cadbded4302ba59b1af2`.
+
+## Repair note
+
+The previous red metadata run exposed duplicate preview FX counting at the deterministic Release Frame: the manual calibration flash and the next normal preview tick both counted the same primary marker. Runtime `a5e09d6…` marks the primary marker as already fired before the manual flash. The projectile schedule itself remained `[0.150]`; grip, muzzle and release measurements were unchanged.

@@ -4,7 +4,7 @@
   "slice": "CA2-02",
   "owner": "KFB ToolBox / weapon-motion calibration",
   "consumer": "georg-doc/KFB-Combat-Arena / WSA",
-  "status": "FINAL_BRANCH_BROWSER_PROOF_PENDING",
+  "status": "PUBLIC_VERIFIED_HUMAN_OPEN",
   "sourceRepo": "georg-doc/kayfabizarro",
   "sourceBranch": "chatgpt-web/ca2-02-ranged-calibration-2026-09-20",
   "implementationHead": "a5e09d6744f4a26e63a5f7e706be8a631459d28d",
@@ -66,30 +66,30 @@
     "state": "DRAFT_OPEN"
   },
   "branchProof": {
-    "run": 35488456185,
-    "job": 106019011389,
+    "run": 35489464770,
+    "job": 106021777516,
     "checks": "55/55 PASS",
     "failedResources": 0,
     "pageConsoleErrors": 0,
-    "artifactId": 10597654212,
-    "artifactDigest": "sha256:c35871f008acbffbe6eb1622d2b5cc20841d5f9944bcaa02325499e30fb3c4c6"
+    "artifactId": 10598656283,
+    "artifactDigest": "sha256:6a986f361a91c667a3ef01084fc661435ac8b75071efa5b47963cbe7157eb9bc"
   },
   "publication": {
     "branch": "cloudflare-live",
-    "proofedHead": "cf71a28f8ca776d3a09e7653729363a52a5b135e",
+    "proofedHead": "cf15f612e6a700608564cadbded4302ba59b1af2",
     "stageUrl": "https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/kaykit-ranged-calibration-v1/",
-    "verifiedAt": "2026-09-20T04:11:48Z"
+    "verifiedAt": "2026-09-20T04:37:19Z"
   },
   "publicProof": {
-    "run": 35488456185,
-    "job": 106019011425,
+    "run": 35489464770,
+    "job": 106021777418,
     "marker": "PASS",
     "hubStageNavigation": "PASS",
     "checks": "55/55 PASS",
     "failedResources": 0,
     "pageConsoleErrors": 0,
-    "artifactId": 10597659083,
-    "artifactDigest": "sha256:f641fee4394584f12013b2edb455d31ec015e50f48f71fbdef40369ed3f2705c"
+    "artifactId": 10598539749,
+    "artifactDigest": "sha256:04fe77711f3af6ba4d1243ea068d37606b7a0685eab54891a60ea3057326a3e9"
   },
   "previewFxRepair": "Deterministic release-frame now records the primary marker as already fired before the manual calibration FX, preventing duplicate preview FX; release schedule unchanged at [0.150]."
 }
