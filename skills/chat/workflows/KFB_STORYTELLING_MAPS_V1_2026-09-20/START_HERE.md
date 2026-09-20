@@ -5,7 +5,7 @@ Date: 2026-09-20
 Owner: **KFB Cartoon Map Board presentation/story layer**
 Implementation home: `tools/kfb-cartoon-map-board/`
 Integration lead: **WSA / receiving consumer**
-Current slice: **T1 exact donor isolation**
+Current slice: **T2 exact KayKit Media Standee A/B**
 
 ## Product direction
 
@@ -37,20 +37,32 @@ Europe P0.2:
 
 That baseline is PUBLIC_VERIFIED but not a final visual/product acceptance.
 
-## Current bounded gate
+## T1 gate result
 
-T1 must show these donors separately before combination:
+Georg explicitly advanced the work to T2 after the PUBLIC_VERIFIED T1 donor proof. This is sufficient donor-identity acceptance for this bounded production sequence; it is not a blanket final visual acceptance of Storytelling Maps.
+
+T1 proved:
 
 - exact KayKit `playerstand_red.gltf`;
 - exact KayKit `playercard_knight_red.gltf`;
 - exact KayKit `D20_red.gltf`;
 - pinned external `3d-dice/dice-box-threejs` D10/physics donor.
 
-PUBLIC_VERIFIED Stage route:
-
+T1 Stage:
 `https://kayfabizarro.pages.dev/kfb-hub/stage/storytelling-maps/t1-donors/`
 
-Do not move to media replacement, dice-to-standee collision, Odyssey integration or Near-East integration before this donor proof is visually reviewed.
+## Current bounded gate · T2
+
+PUBLIC_VERIFIED T2 Stage:
+`https://kayfabizarro.pages.dev/kfb-hub/stage/storytelling-maps/t2-media-standee/`
+
+T2 uses the exact KayKit `playerstand_red.gltf` + exact `playercard_knight_red.gltf`. It preserves the original `boardgame` frame material and replaces only the `red_knight` front-art material with diagnostic media.
+
+A/B:
+- portrait native orientation;
+- landscape using the same card geometry rotated 90° with media remap.
+
+Do not advance to T3 motion before Georg reviews this A/B.
 
 
 ## T1 PUBLIC VERIFIED · 2026-09-20
@@ -84,3 +96,24 @@ This is a technical/public donor proof, not Georg's visual donor-identity accept
 
 Exactly one next gate remains:
 **Georg reviews whether all four donors are visually/source-identifiable enough to proceed to T2 Media Standee.**
+
+
+## T2 PUBLIC VERIFIED · 2026-09-20
+
+- exact Stage: `https://kayfabizarro.pages.dev/kfb-hub/stage/storytelling-maps/t2-media-standee/`
+- browser checks: **13/13 PASS**
+- portrait + landscape: ready
+- original material discovery: `boardgame` + `red_knight`
+- frame preserved: **true / true**
+- media replacement bindings: **1 / 1**
+- MEDIA → ORIGINAL → MEDIA: PASS
+- page/script errors: **0**
+- failed HTTP requests: **0**
+- desktop media + desktop original + mobile-landscape screenshots captured
+- run/job: `35523870018` / `106112519588`
+- artifact: `10609178985`
+- digest: `sha256:e94c04a8de1eb0f6b7431e2790e64382a7e68904d5df76c7fdd1a54e3b6fbc7a`
+- runtime publication: `2eb9235f075e29b2eaced4ee76485d0c2ed4aeb4`
+
+Exactly one next gate:
+**Georg compares Portrait vs Landscape and decides whether both remain first-class before T3 motion.**

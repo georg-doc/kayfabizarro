@@ -953,3 +953,18 @@ The exact T1 donor-isolation Stage is now browser-proven:
 Evidence: **9/9 PASS**, three exact KayKit donors loaded, external Three/Cannon D10 donor ready and physically rolled, 0 page/script errors, 0 failed HTTP requests, desktop + mobile-landscape captures. Run/job `35522576654` / `106109086411`; artifact `10608862542`.
 
 Human donor identity remains OPEN. Do not advance to T2 media replacement until Georg reviews the four isolated source panels.
+
+
+## 2026-09-20 · Storytelling Maps T2 + KFB Table/gameplay bridge
+
+### SOURCE ANALYSIS
+The supplied KFB Table v6 HTML is recorded as input evidence, not SSOT. It is a wrapper around unavailable sibling runtime files, so only wrapper-visible controls and screenshot/product grammar are claimed. Current Freestyle rules and the historical Gameplay Stage/`KFBStageContext` provide the grounded game-state contract.
+
+### ARCHITECTURE
+Prepare one small narrative Rule Kernel + event log, Deck Provider, Player Avatar Adapter, Storytelling Maps presentation and optional Agent layer. LLMs propose schema-validated actions; the kernel alone commits state. KFB Karaoke is onboarding/performance, FrizzleCrits stays behind a generic CriticProvider until its source home is pinned, and mini-games return narrative encounter results.
+
+### T2 TESTED RESULT
+Exact T2 Cloudflare Stage `https://kayfabizarro.pages.dev/kfb-hub/stage/storytelling-maps/t2-media-standee/`: **13/13 PASS**, Portrait/Landscape ready, original `boardgame` frame material preserved, `red_knight` front-only replacement reversible, 0 page/script errors, 0 failed HTTP requests. Evidence run/job `35523870018` / `106112519588`, artifact `10609178985`.
+
+### HUMAN GATE
+Choose Portrait/Landscape standee policy before T3 motion. Live unchanged.

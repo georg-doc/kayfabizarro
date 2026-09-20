@@ -44,7 +44,7 @@
       "firstPoc": "skills/chat/workflows/KFB_STORYTELLING_MAPS_V1_2026-09-20/ODYSSEY_POC.md",
       "implementationOwner": "tools/kfb-cartoon-map-board/",
       "publicBaseline": "https://kayfabizarro.pages.dev/kfb-hub/stage/cartoon-map-board-p02/",
-      "candidateStage": "https://kayfabizarro.pages.dev/kfb-hub/stage/storytelling-maps/t1-donors/",
+      "candidateStage": "https://kayfabizarro.pages.dev/kfb-hub/stage/storytelling-maps/t2-media-standee/",
       "loadWhen": [
         "storytelling map",
         "tactical map",
@@ -66,7 +66,12 @@
         "asset registry",
         "Race/Travel consumer physics"
       ],
-      "note": "Umbrella product direction over the existing Cartoon Map Board owner. Current gate: T1 exact donor isolation."
+      "note": "Umbrella direction over Cartoon Map Board. T2 PUBLIC_VERIFIED; Portrait/Landscape human A/B gate is current. FrizzleCrits caller/source remains unresolved.",
+      "currentSlice": "T2 exact KayKit media standee A/B",
+      "currentBranch": "stage/storytelling-maps-v1-t2-media-standee-2026-09-20",
+      "currentPr": 145,
+      "tableV6Analysis": "skills/chat/workflows/KFB_STORYTELLING_MAPS_V1_2026-09-20/KFB_TABLE_V6_DONOR_ANALYSIS.md",
+      "gameplayArchitecture": "skills/chat/workflows/KFB_STORYTELLING_MAPS_V1_2026-09-20/GAMEPLAY_ARCHITECTURE_V1.md"
     },
     {
       "id": "fresh-chat-slice-protocol",

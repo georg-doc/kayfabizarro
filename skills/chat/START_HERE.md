@@ -380,3 +380,19 @@ Current gate: **T1 exact donor isolation** at the candidate Stage route
 `https://kayfabizarro.pages.dev/kfb-hub/stage/storytelling-maps/t1-donors/`.
 
 Game Development Studio is an optional later evidence/vendoring/performance helper; `game-dev` was unavailable in the current chat environment and repository-native checks continue. Build 3D Game Rooms is reserved for optional diorama/room cutaways, not ordinary map authoring.
+
+
+## 2026-09-20 · Storytelling Maps T2 + gameplay architecture
+
+Current Stage:
+`https://kayfabizarro.pages.dev/kfb-hub/stage/storytelling-maps/t2-media-standee/`
+
+T2 is PUBLIC_VERIFIED (**13/13**): exact KayKit stand + exact KayKit playercard, original `boardgame` frame preserved, only `red_knight` front media replaced, Portrait/Landscape A/B, reversible MEDIA/ORIGINAL switch.
+
+Gameplay preparation is recorded in:
+- `skills/chat/workflows/KFB_STORYTELLING_MAPS_V1_2026-09-20/KFB_TABLE_V6_DONOR_ANALYSIS.md`
+- `skills/chat/workflows/KFB_STORYTELLING_MAPS_V1_2026-09-20/GAMEPLAY_ARCHITECTURE_V1.md`
+
+The current rules kernel remains Freestyle; preserve/extend the historical `KFBStageContext` seam rather than creating a second map-game state. FrizzleCrits source/caller remains unresolved; use only the generic CriticProvider interface until pinned.
+
+Current human gate: Portrait vs Landscape policy before T3 motion.

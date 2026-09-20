@@ -393,7 +393,7 @@ Do not route ordinary 2D/2.5D map authoring through a room pipeline.
 Already PUBLIC_VERIFIED technical baseline.
 
 **T1 · exact tabletop donor isolation**
-Current gate.
+PUBLIC_VERIFIED and advanced by Georg to T2.
 
 **T2 · media standee**
 Exact KayKit card + stand; replace only media face; portrait/landscape.
@@ -424,9 +424,9 @@ KFB World/Zone/Galaxy and named game cut-scenes.
 
 ## 16. Current next gate
 
-T1 only: exact donor isolation page.
+**T2 Media Standee A/B human review.**
 
-No Odyssey asset ingestion, no Near East content, no dice-to-standee impact and no editor implementation before the T1 donor page is visibly proven.
+Technical/public proof is green. Compare the exact KayKit card in portrait vs landscape. No Odyssey asset ingestion, Near East content, dice-to-standee impact or editor implementation before the A/B direction is chosen.
 
 
 ## T1 PUBLIC VERIFIED · 2026-09-20
@@ -460,3 +460,39 @@ This is a technical/public donor proof, not Georg's visual donor-identity accept
 
 Exactly one next gate remains:
 **Georg reviews whether all four donors are visually/source-identifiable enough to proceed to T2 Media Standee.**
+
+
+## 17. KFB Table v6 donor + gameplay bridge · 2026-09-20
+
+Source analysis:
+- `KFB_TABLE_V6_DONOR_ANALYSIS.md`
+- `GAMEPLAY_ARCHITECTURE_V1.md`
+
+The uploaded KFB Table v6 wrapper is useful as a **physical-presentation and turn-grammar donor**, not a codebase to resurrect wholesale. The attachment proves wrapper-level controls and relative imports, while the actual `kfb-table.v6.js` bytes are not currently located in the GitHub tree.
+
+Modern gameplay architecture therefore preserves:
+- current Freestyle rule kernel;
+- historical `KFBStageContext` idea;
+- Storytelling Maps as theatrical presentation;
+- player-avatar separation from Story Actor card;
+- agents proposing structured legal actions rather than writing state directly;
+- KFB Karaoke as onboarding/performance layer;
+- generic CriticProvider until the unresolved FrizzleCrits source/caller home is pinned;
+- mini-games returning narrative encounter results;
+- later multiplayer syncing action/event logs rather than WebGL transforms.
+
+## 18. T2 Media Standee · PUBLIC_VERIFIED
+
+Exact Stage:
+`https://kayfabizarro.pages.dev/kfb-hub/stage/storytelling-maps/t2-media-standee/`
+
+Measured runtime A/B:
+- portrait bounds: 2.414 × 3.550 × 1.006
+- landscape bounds: 3.550 × 3.467 × 1.183
+- `boardgame` frame material retained in both;
+- one `red_knight` front material binding replaced in each;
+- original/material toggling is reversible.
+
+Evidence: 13/13 browser PASS, 0 errors, 0 failed requests, desktop/media/original + mobile-landscape captures.
+
+This proves the adaptation seam, not Georg's visual choice between orientations.

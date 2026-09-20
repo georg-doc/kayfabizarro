@@ -117,3 +117,36 @@
 - Georg donor identity: **OPEN**
 - T2 Media Standee: blocked on Georg review
 - Live: unchanged
+
+
+## 2026-09-20 · T2 exact KayKit Media Standee
+
+### IMPLEMENTATION
+- exact `playerstand_red.gltf` + `playercard_knight_red.gltf`;
+- original `boardgame` frame material retained;
+- only `red_knight` front-art material replaced;
+- Portrait native orientation;
+- Landscape uses the same exact card geometry rotated 90° plus media remap;
+- calibration-only front texture; no political/story media;
+- reversible MEDIA / ORIGINAL switch;
+- responsive desktop/mobile-landscape lab.
+
+### TESTED RESULT
+- exact Stage: `https://kayfabizarro.pages.dev/kfb-hub/stage/storytelling-maps/t2-media-standee/`
+- browser checks: **13/13 PASS**
+- Portrait ready: PASS
+- Landscape ready: PASS
+- frame preserved: true / true
+- front replacement: one binding / one binding
+- MEDIA → ORIGINAL → MEDIA: PASS
+- page/script errors: 0
+- failed HTTP requests: 0
+- run/job: `35523870018` / `106112519588`
+- artifact: `10609178985` · `sha256:e94c04a8de1eb0f6b7431e2790e64382a7e68904d5df76c7fdd1a54e3b6fbc7a`
+- runtime publication: `2eb9235f075e29b2eaced4ee76485d0c2ed4aeb4`
+
+### STATUS
+- T2 technical/public gate: PASS
+- Georg Portrait/Landscape choice: OPEN
+- T3 motion: blocked on that human gate
+- Live: unchanged
