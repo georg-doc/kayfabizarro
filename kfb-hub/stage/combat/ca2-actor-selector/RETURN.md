@@ -11,7 +11,7 @@ Isolated Actor Selector/Profile POC only. No edits to Combat Arena `index.html`,
 - repo: `georg-doc/kayfabizarro`
 - branch: `chatgpt-web/ca2-01-actor-selector-2026-09-20`
 - implementation revision: `64638a5818d7b7a75c0a96edd8777580669dcfa3`
-- evidence revision: `38ef7502f3b3a641fe93dbedb3058f773e0d07b8`
+- evidence revision: `38ef7502f3b3a641fe93dbedb3058f773e0d07b8`\n- source PR: `georg-doc/kayfabizarro#130` (Draft, no auto-merge)
 - Combat baseline read: `georg-doc/KFB-Combat-Arena@f6a59ad15b9ffcf3164b0ab013f223962b63f61f`
 - CA2 planning read: `georg-doc/KFB-Combat-Arena@0d6e8a651b8b8e8140b67348e67748687b784193`
 
