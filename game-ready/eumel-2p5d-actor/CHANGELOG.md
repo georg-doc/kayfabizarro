@@ -27,3 +27,22 @@
 
 ### HUMAN
 - pending.
+
+
+## 2026-09-20 · E25D-02 · QA-corrected runtime pin
+
+### IMPLEMENTATION PIN
+Advanced the world-space implementation reference to:
+
+`52702836bf0740414e53abb5a3867af5981c195a`
+
+This revision corrects the neutral leg presentation so source pixels are bound around the measured `sourceHip` before placement at `targetHip`, rather than rotating around the target coordinate without source-pivot compensation.
+
+### PUBLIC QA
+Cloudflare browser workflow started:
+
+run `35480439344`
+
+Status at this package update: **IN PROGRESS**.
+
+Do not mark browser PASS until the workflow finishes green and evidence is recorded.
