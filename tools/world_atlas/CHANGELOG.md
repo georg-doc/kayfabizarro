@@ -4,6 +4,18 @@ Nur Zuwachs. Ältere Einträge bleiben stehen.
 
 ---
 
+## E1 · 2026-09-20 · S21 Inline Detail Editor im Dungeon Generator
+
+**IMPLEMENTATION:** `KayKit_Dungeon_Generator_S13_2.html` ist der zweite reale Host für die S21-Editorinteraktion. Bearbeitbar sind bewusst nur `torch` und `candle`; BSP, Böden, Wände, Ecken, Treppe und Fugen bleiben Generator-Eigentum.
+
+**INTERACTION:** TransformControls, 0,1-Translation, 15°-Y-Rotation, objektgebundenes Mini-Menü, candle-only Bodenabsetzen, lokaler Scratch und `kfb.dungeon-detail-patch/0.1`. Die sichtbaren Transformwerte schreiben zurück in den aktuellen Placement-Record, daher enthält der bestehende Recipe-JSON-Export die Korrektur.
+
+**TESTED RESULT:** 20/20 statische/vertragliche Checks PASS. Browser-Roundtrip ist noch offen; deshalb keine Extraktion zu `lib/edit-layer.js` und keine Resident/Stage/Platformer-Weitergabe.
+
+**NEXT GATE:** Seed A1 → Editor → Detail verschieben/drehen → Patch → Neu bauen → identische Position wiederhergestellt.
+
+---
+
 ## S13.3 · 2026-09-17 · Licht · und die Balkonkante ist eine Brüstung, keine Wand
 
 Vorlage: die drei KayKit-Promobilder (`uploads/`). Neu: **`lib/dungeon-light.js`**, verdrahtet in
