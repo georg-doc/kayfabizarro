@@ -746,3 +746,36 @@ Exactly one human question:
 **Does the embedded Track read as part of the current TinySkies/Travel terrain instead of a ribbon floating above unrelated ground?**
 
 OSM integration remains the next bounded lane only after that human gate.
+
+## 2026-09-20 · Theatre Curtain v1 · PUBLIC VERIFIED
+
+### OWNER / BRANCH
+- Owner: KFB Game Dev Studio
+- Draft PR: #114
+- Branch: `chat/gds-theatre-curtain-v1-2026-09-20`
+- Fixed Stage: `https://kayfabizarro.pages.dev/kfb-hub/stage/game-dev-studio/theatre-curtain-v1/`
+
+### RESULT
+Reusable curtain candidate from the pinned Three.js compute-cloth donor:
+- two cloth panels;
+- supported top hooks + visible rings/rail;
+- CPU Verlet/WebGL fallback;
+- real KFB PBR fabrics;
+- open/close gather, idle wind, impact and reset;
+- isolated donor surface.
+
+Run `35479125591`:
+- **22/22 local PASS**
+- **25/25 public Cloudflare PASS**
+- 0 failed public resources
+- 0 public page/console errors
+
+The earlier red run is retained: it exposed a proof-timing race only. Commit `3bdfdd2e9de648871102d91c89612a5b7ee3c4ab` changed the wait, not the curtain runtime.
+
+### HUMAN / NEXT
+Georg acceptance remains OPEN. No merge or consumer integration.
+
+Exactly one gate: review weight/folds, idle wind, gathering, closing, impact and fabric choice.
+
+Aging, lower-third tieback/swag, card ripple/dissolve and Shader Pool / Texture Cauldron work remain later slices.
+

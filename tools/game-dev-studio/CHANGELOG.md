@@ -142,3 +142,38 @@ The package supplies actor + lectern + Staff relative composition, Rig/animation
 
 ### OPEN
 After the Ground human gate carries, run the existing Travel Atlas Pilot 01 across `VISIBLE_HEX | SEATED_HEX | NO_VISIBLE_HEX`; do not create a parallel pilot.
+
+## 2026-09-20 · GDS-06 · Theatre Curtain v1 public technical pass
+
+### OWNER / SCOPE
+- Owner remains KFB Game Dev Studio.
+- Reusable transition/stage module; Birthday remains archived failure history only.
+- No Travel/Race/Town gameplay renderer or physics ownership moved.
+
+### IMPLEMENTATION CANDIDATE
+Draft PR #114 provides:
+- isolated pinned Three.js `webgpu_compute_cloth.html` donor;
+- two-panel CPU Verlet/WebGL fallback;
+- visible rail/rings and repeated supported top attachments;
+- gravity, weighted hem, deterministic idle wind;
+- physical open/close gathering through moving top targets;
+- impact/reset;
+- exact KFB `velour_velvet`, `rough_linen`, `hessian_230`, `crepe_satin` PBR sets;
+- reusable `mount / update / setState / impulse / reset / dispose` seam.
+
+### TESTED RESULT
+Run `35479125591`:
+- local job `105993572063`: **22/22 PASS**;
+- public job `105993698226`: **25/25 PASS**;
+- exact Cloudflare Stage opened and exercised;
+- zero failed resources;
+- zero browser/page errors.
+
+The prior red run `35476179739` was retained as evidence. It failed on a fixed 350 ms test delay while state was still `closing`; test-only commit `3bdfdd2e9de648871102d91c89612a5b7ee3c4ab` replaced the delay with a deterministic state wait. Curtain runtime code was unchanged.
+
+### HUMAN GATE
+Pending Georg review of weight/folds, idle movement, physical gathering, closing, impact and fabric look.
+
+### DEFERRED
+Aging decals/holes, tieback/swag variants, card breach/ripple/dissolve, production WebGPU backend and Shader Pool research.
+

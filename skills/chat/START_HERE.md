@@ -284,3 +284,17 @@ Ask only:
 
 Only after acceptance start the prepared OSM lane:
 `lat/lon → Globe normal/ENU → one short OSM road → same Travel terrain adapter → 3–5 building support pads → one exact landmark override`.
+
+## 2026-09-20 · Game Dev Studio · Theatre Curtain v1
+
+Game Dev Studio now has a reusable Theatre Curtain candidate in Draft PR #114.
+
+Fixed human Stage:
+`https://kayfabizarro.pages.dev/kfb-hub/stage/game-dev-studio/theatre-curtain-v1/`
+
+Technical evidence at run `35479125591`: **22/22 local + 25/25 public PASS**, exact Three.js cloth donor isolated, real KFB fabric maps, two physically gathered panels, zero public resource/browser errors.
+
+Status: **PUBLIC VERIFIED · HUMAN VISUAL/PHYSICS GATE OPEN · UNMERGED**.
+
+Exactly one next gate is Georg's isolated curtain review: weight/folds, idle wind, opening gather, closing, impact and fabric choice. Birthday is not reactivated. Aging, tieback/swag, card-breach/dissolve and Shader Pool research remain deferred.
+

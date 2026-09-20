@@ -133,3 +133,29 @@ After Pilot 01 gates:
 - **Living Plant / Plant Prop package** from `skills/chat/workflows/PLANT_PROP_LAB_2026-09-18/`: pot+plant recipe, pattern style, prop rig and optional existing EyeRig adapter. **P2 / BACKLOG only; do not displace Pilot 01 consumer gates.**
 
 See `GAME_DEV_STUDIO_ASSET_PACKAGING_LIVING.md`.
+
+## 2026-09-20 · Theatre Curtain v1 · public technical gate
+
+Draft PR: `#114`  
+Owner: KFB Game Dev Studio  
+Fixed Stage: `https://kayfabizarro.pages.dev/kfb-hub/stage/game-dev-studio/theatre-curtain-v1/`
+
+Current evidence:
+- isolated pinned Three.js compute-cloth donor;
+- reusable two-panel CPU Verlet/WebGL curtain fallback;
+- four exact KFB PBR fabric sets;
+- opening/closing through moving supported top targets and cloth gathering;
+- local/browser state contract: **22/22 PASS**;
+- exact Cloudflare Stage browser proof: **25/25 PASS**, run `35479125591`;
+- zero public failed resources and zero browser errors.
+
+The one failed follow-up run was test timing only: the proof sampled `closing` after a fixed 350 ms delay even though `openProgress` was already zero. Commit `3bdfdd2e9de648871102d91c89612a5b7ee3c4ab` changed only the wait condition; runtime/material/physics code did not change.
+
+Human visual/physics acceptance remains open. Do not merge or integrate into consumers yet.
+
+Exactly one next gate:
+Georg reviews weight/folds, idle wind, side gathering, closing, impact and fabric choice on the isolated Curtain Stage.
+
+Deferred until after that gate:
+aging/burn/stain/torn decals; lower-third tieback/swag presets; card breach/ripple/dissolve; production WebGPU backend; Shader Pool / Texture Cauldron research.
+
