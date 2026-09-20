@@ -117,3 +117,23 @@ Therefore:
 - fixed `kayfabizarro.pages.dev` child route: **NOT PUBLIC_VERIFIED**
 
 Do not substitute GitHub Pages or another CDN as the human acceptance surface.
+
+
+## PUBLIC VERIFIED
+
+Canonical Cloudflare proof:
+- run `35477984153`
+- attempt **2**
+- job `105992436412`
+- exact deployment marker: **PASS**
+- canonical Chromium: **13/13 PASS**
+- boot **1127 ms**
+- page/script errors **0**
+- failed HTTP assets **0**
+- artifact `10595416425`
+- digest `sha256:66098867548548760f38b4035cd3d08535df9e31583aa7c3c1aef27a604807a2`
+
+Direct human Stage route:
+`https://kayfabizarro.pages.dev/kfb-hub/stage/stunt-world/tinyskies-track-corridor-tc01/`
+
+Georg visual acceptance remains OPEN. Live remains unchanged.
