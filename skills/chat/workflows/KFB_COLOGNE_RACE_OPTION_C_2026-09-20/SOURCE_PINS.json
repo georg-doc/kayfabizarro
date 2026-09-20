@@ -4,7 +4,7 @@
   "status": "BRIEFING_SOURCE_PINS",
   "coordination": {
     "repository": "georg-doc/kayfabizarro",
-    "baseCommit": "a7af6e5b3d5104d23ee9c1df31ae1391d66bb3fc",
+    "baseCommit": "2ff8b350beefe02912bbff6eeeead3882e583d08",
     "planningBranch": "planning/cologne-race-option-c-claude-r3-2026-09-20",
     "intendedClaudeBranch": "claude/cologne-race-option-c-2026-09-20",
     "intendedStageRoute": "/kfb-hub/stage/stunt-world/cologne-option-c/",
@@ -247,9 +247,21 @@
     }
   },
   "visualAuthorities": {
-    "status": "USER_ATTACHES_TO_CLAUDE",
-    "optionCName": "OPTION_C_VISUAL_AUTHORITY",
-    "optionAName": "OPTION_A_VISUAL_AUTHORITY",
-    "samplingRule": "OPTION_C_BINDING_FOR_SLICE_C; OPTION_A_BINDING_ONLY_FOR_SECOND_SLICE"
+    "status": "OPTION_C_PINNED_GITHUB_READY",
+    "samplingRule": "BOTH_PINNED_OPTION_C_BOARDS_BINDING_FOR_SLICE_C; NO_SUBSTITUTE_PALETTE",
+    "optionCBoards": [
+      {
+        "name": "OPTION_C_VISUAL_AUTHORITY_01",
+        "path": "travel/wip/travel_globe_wsa/_inbox/KFB Racer Option C - ChatGPT Image 20. Sept. 2026, 05_06_22 (1).png",
+        "blob": "59fd27fcb5dae48bc159093427a3e688cc83b6a4"
+      },
+      {
+        "name": "OPTION_C_VISUAL_AUTHORITY_02",
+        "path": "travel/wip/travel_globe_wsa/_inbox/KFB Racer Option C - ChatGPT Image 20. Sept. 2026, 05_06_22 (2).png",
+        "blob": "ac0bf0064c8af8235a49b97d3b7e5e8196ed5579"
+      }
+    ],
+    "donorRule": "OPEN_AND_SHOW_EACH_EXACT_BOARD_IN_ISOLATION_BEFORE_SAMPLING_OR_INTEGRATION",
+    "optionAStatus": "DEFERRED_UNTIL_AFTER_GEORG_OPTION_C_GATE_NOT_REQUIRED_TO_START_SLICE_C"
   }
 }
