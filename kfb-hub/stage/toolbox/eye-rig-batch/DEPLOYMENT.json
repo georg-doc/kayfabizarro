@@ -5,14 +5,14 @@
   "sourceBranch": "toolbox/eye-rig-batch-2026-09-18",
   "sourcePR": 104,
   "sourceHead": "40c2f920a96ea00bf99593610a49a646b2e0873c",
-  "returnHead": "af2827b60ced330e57bf4a7f553ad30dbf45b205",
+  "returnHead": "e277c3456651d314a01adea046e0105d2a12cdd1",
   "implementationCheckpoint": "480c5770ef8ef391043b0b93ec3f51b04af7dfef",
   "evidenceCheckpoint": "40c2f920a96ea00bf99593610a49a646b2e0873c",
-  "stageRuntimeHead": "e3c4a79d959aa5a09bfb7d5cec67807b27170d6c",
-  "mainRouterHead": "f7bdcf001abefd4b40cc722729eb3b406b041936",
+  "stageRuntimeHead": "e9f97c594bce46607e95928dd349cf081c36783d",
+  "mainRouterHead": "a7af6e5b3d5104d23ee9c1df31ae1391d66bb3fc",
   "expectedVisibleMarker": "Medium / Large class switch · PR #104",
-  "humanGate": "Reload Stage and visually confirm the four accepted Large profiles plus actor-specific lid colors",
-  "publicVerification": "PENDING_LARGE_REVIEWED_LID_COLOR_PUBLICATION",
+  "humanGate": "Reload Stage and visually check the four accepted Large profiles and actor-specific lid colors",
+  "publicVerification": "Large reviewed profiles + lid color fix published; visual check next",
   "medium": {
     "actorCount": 27,
     "defaultStatus": "SET",
@@ -41,7 +41,7 @@
     "static": "95/95 PASS",
     "syntax": "4/4 PASS",
     "sourceReadback": "PASS",
-    "stageReadback": "PENDING"
+    "stageReadback": "PASS"
   },
   "deferred": [
     "Legacy",
@@ -50,7 +50,7 @@
     "optional Nose/Brow",
     "Vehicle EyeRig"
   ],
-  "hubCard": "SYNCED_TO_LOADER_FIX",
+  "hubCard": "SYNCED_TO_LARGE_4_ACCEPTED_LID_COLOR_CHECK",
   "nextGate": "GEORG_LARGE_LID_COLOR_VISUAL_CHECK",
   "loaderFix": {
     "status": "FIXED",
