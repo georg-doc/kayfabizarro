@@ -1,0 +1,165 @@
+{
+  "schema": "kfb.toolbox-home.v1",
+  "marker": "KFB_TOOLBOX_HOME_V1_2026_09_20",
+  "updated": "2026-09-20",
+  "owner": "ToolBox / Hub integration",
+  "stageRoute": "https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/",
+  "rules": {
+    "assetTruth": "Asset Registry + Asset Librarian",
+    "dungeonOwner": "World Atlas Dungeon Generator S13.2",
+    "sceneEditorOwner": "ToolBox shared editor module; host keeps scene/runtime ownership",
+    "previewRule": "Use a real public tool page when one exists; otherwise show source identity and route status, never a fabricated thumbnail."
+  },
+  "tools": [
+    {
+      "id": "asset-librarian",
+      "title": "Asset Librarian",
+      "group": "build",
+      "state": "route-review",
+      "route": "https://kayfabizarro.pages.dev/tools/asset_registry/librarian/",
+      "source": "tools/asset_registry/librarian/",
+      "purpose": "Find exact assets, packs, previews and candidate handoffs. Registry truth stays here.",
+      "next": "Verify the deployed revision includes KayKit Bits Bundle 1 and Tiny Treats discovery."
+    },
+    {
+      "id": "resident-atlas",
+      "title": "Resident Atlas S6",
+      "group": "build",
+      "state": "candidate",
+      "route": "https://kayfabizarro.pages.dev/resident-atlas-s6/",
+      "source": "tools/resident_atlas_s6/",
+      "purpose": "Residents, scene modules and existing in-scene editing donor.",
+      "next": "Use as first shared-editor adapter host."
+    },
+    {
+      "id": "world-atlas",
+      "title": "World / Environment Atlas",
+      "group": "build",
+      "state": "candidate",
+      "route": "https://kayfabizarro.pages.dev/world-atlas/",
+      "source": "tools/world_atlas/",
+      "purpose": "Environment Kit Lab with Dungeon Generator S13.2, Hex Realm/Tile Model, road, forest and city donors.",
+      "next": "Keep S13.2 as the only dungeon layout/recipe owner."
+    },
+    {
+      "id": "dungeon",
+      "title": "Dungeon Generator S13.2",
+      "group": "build",
+      "state": "candidate",
+      "route": "https://kayfabizarro.pages.dev/world-atlas/source/KayKit_Dungeon_Generator_S13_2.html",
+      "source": "tools/world_atlas/source/KayKit_Dungeon_Generator_S13_2.html",
+      "purpose": "Seeded two-level KayKit dungeon, measured seams, stairs, doors, light and recipe export.",
+      "next": "Prove one named prop through the shared scene-patch adapter; no Tiny Treats in the dungeon."
+    },
+    {
+      "id": "hex",
+      "title": "KayKit Hex Terrain",
+      "group": "build",
+      "state": "candidate",
+      "route": "https://kayfabizarro.pages.dev/world-atlas/source/KayKit_Hex_Realm_S11.html",
+      "source": "tools/world_atlas/source/KayKit_Hex_Realm_S11.html",
+      "purpose": "Current Hex Realm plus measured S12 tile grammar; second pack stays a distinct registered source.",
+      "next": "Route both registered hex families through the Librarian/Atlas without flattening pack identity."
+    },
+    {
+      "id": "motion",
+      "title": "KayKit Motion Lab",
+      "group": "build",
+      "state": "human-gate",
+      "route": "https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/kaykit-motion-lab-v1/",
+      "source": "kfb-hub/stage/toolbox/kaykit-motion-lab-v1/",
+      "purpose": "Motion/profile authoring for real Medium/Large KFB actors.",
+      "next": "Georg reviews phase-sync and Medium-vs-Large feel."
+    },
+    {
+      "id": "eyerig",
+      "title": "EyeRig Batch",
+      "group": "build",
+      "state": "review",
+      "route": "https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/eye-rig-batch/",
+      "source": "tools/KFB-ToolBox/eye-rig-batch/",
+      "purpose": "Measured batch eye/face calibration on existing rigs.",
+      "next": "Finish corrected public browser proof and human multi-view gate before expansion."
+    },
+    {
+      "id": "2d-animation",
+      "title": "2D Animation Studio",
+      "group": "build",
+      "state": "wip",
+      "route": "https://kayfabizarro.pages.dev/kfb-hub/2d-animation-studio.html",
+      "source": "tools/2D Animation Studio/",
+      "purpose": "Browser-first 2D/2.5D cutout rig and motion authoring.",
+      "next": "Keep as a separate renderer/tool lane; shared contracts only where proven."
+    },
+    {
+      "id": "scene-editor",
+      "title": "3D In-scene Editor",
+      "group": "integrating",
+      "state": "adapter-gate",
+      "route": null,
+      "source": "skills/chat/workflows/KFB_INSCENE_EDITOR_MODULE_V1_2026-09-20/START_HERE.md",
+      "purpose": "Select, transform, annotate and export scene patches without replacing host loaders, cameras or save formats.",
+      "next": "Resident Atlas first, Dungeon second; only then call the module shared."
+    },
+    {
+      "id": "tiny-treats",
+      "title": "Tiny Treats Rooms & Prop Groups",
+      "group": "integrating",
+      "state": "library-recipe",
+      "route": null,
+      "source": "skills/chat/workflows/TINY_TREATS_VENUE_GENERATOR_V1_2026-09-19.md",
+      "purpose": "Registered Bakery/Kitchen interiors, grouped props and room recipes for venues/cut-scenes/dioramas.",
+      "next": "Expose exact groups/recipes through Librarian and venue host; keep them out of Dungeon Raid."
+    },
+    {
+      "id": "plant-lab",
+      "title": "Living Plant / Prop Lab",
+      "group": "integrating",
+      "state": "route-blocked",
+      "route": null,
+      "source": "tools/plant-prop-lab/",
+      "purpose": "Plant composition recipes and Crazy-Cat scale look-dev; source unpacked and registry-indexed.",
+      "next": "Promote a direct Cloudflare Stage only after current v2 export is reconciled into the owner path."
+    },
+    {
+      "id": "vehicle-lab",
+      "title": "Vehicle Animation & Deformer Lab",
+      "group": "source-only",
+      "state": "source-only",
+      "route": null,
+      "source": "tools/KFB-ToolBox/_inbox/KFB Vehicle Animation Lab v4/KFB_Vehicle_Lab_v4/",
+      "purpose": "Current presentation-only vehicle animation/deformation source line.",
+      "next": "Promote exact current app + dependencies to a stable ToolBox Stage route; then attach a real preview."
+    },
+    {
+      "id": "frankenstein",
+      "title": "FrankenStein Studio v17",
+      "group": "source-only",
+      "state": "source-only",
+      "route": null,
+      "source": "tools/KFB-ToolBox/KFB ToolBox (studio v17 - rigging v1 - animation v2)/WSA_2026-09-13/",
+      "purpose": "Actor/look/rig/static-pose authoring source; Stage-First intake remains the current promotion direction.",
+      "next": "Use Stage-First promotion, not a second standalone owner."
+    },
+    {
+      "id": "rigging-lab",
+      "title": "Rigging Lab v1",
+      "group": "source-only",
+      "state": "source-only",
+      "route": null,
+      "source": "tools/KFB-ToolBox/KFB ToolBox (studio v17 - rigging v1 - animation v2)/WSA_2026-09-13/",
+      "purpose": "Character rigging authoring source plus newer batch-specific lanes.",
+      "next": "Promote only the current source with visible browser evidence."
+    },
+    {
+      "id": "animation-lab",
+      "title": "Animation Lab v2 / v3 intake",
+      "group": "source-only",
+      "state": "source-only",
+      "route": null,
+      "source": "tools/KFB-ToolBox/_inbox/WS0_2026-09-15/",
+      "purpose": "Motion playback/audit source; does not re-own actor look or rig.",
+      "next": "Resolve v2/v3 current-app naming during Stage-First promotion, then add one stable route."
+    }
+  ]
+}
