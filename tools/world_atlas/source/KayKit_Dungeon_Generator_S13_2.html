@@ -633,6 +633,51 @@ setInterval(editMenuPlace, 90);
 editSetMode('translate');
 editRenderPatch();
 
+async function editSelfProof() {
+  if (new URLSearchParams(location.search).get('e1proof') !== '1') return null;
+  const marker = document.createElement('div');
+  marker.id = 'e1Proof';
+  marker.style.cssText = 'position:fixed;left:8px;top:46px;z-index:50;padding:6px 8px;border-radius:5px;background:#17231d;color:#9be2b1;font:11px ui-monospace,monospace';
+  marker.textContent = 'E1 proof · running';
+  document.body.append(marker);
+  try {
+    const all = editReadAll();
+    delete all[editScopeKey()];
+    localStorage.setItem(EDIT_STORE, JSON.stringify(all));
+    editPatches.clear();
+    editRenderPatch();
+
+    const node = root?.children.find((n) => editAllowed(editRecord(n)));
+    if (!node) throw new Error('no editable detail fixture');
+    const rec = editRecord(node), id = editId(rec);
+    const before = node.position.toArray().map((v) => +v.toFixed(3));
+    node.position.x = +(node.position.x + 0.1).toFixed(3);
+    node.updateMatrixWorld(true);
+    editCommit(node);
+    const expected = [...editPatches.get(id).p];
+
+    editSelect(null);
+    build.keepCam = true;
+    await build();
+
+    const restored = root?.children.find((n) => editId(editRecord(n)) === id);
+    if (!restored) throw new Error('edited fixture missing after rebuild');
+    const got = restored.position.toArray().map((v) => +v.toFixed(3));
+    const same = expected.every((v, i) => Math.abs(v - got[i]) < 0.001);
+    const patch = editPatchDoc();
+    const ok = same && patch.edits.length === 1 && Math.abs(expected[0] - before[0] - 0.1) < 0.001;
+    document.documentElement.dataset.e1Proof = ok ? 'pass' : 'fail';
+    marker.textContent = ok ? 'E1 proof · PASS' : 'E1 proof · FAIL';
+    window.__E1_PROOF = { ok, id, before, expected, got, patch };
+    return window.__E1_PROOF;
+  } catch (e) {
+    document.documentElement.dataset.e1Proof = 'fail';
+    marker.textContent = 'E1 proof · FAIL · ' + e.message;
+    window.__E1_PROOF = { ok: false, error: e.message };
+    return window.__E1_PROOF;
+  }
+}
+
 /* Flache Prüffarben. MeshBasicMaterial ignoriert Licht — die Probe soll Geometrie lesen, nicht
    Beleuchtung. Und das Renderziel bekommt SRGBColorSpace: ohne das liefert readRenderTargetPixels
    LINEARE Werte, und ein sattes Grau 0x808080 kommt als 11 zurück statt als 128 — die erste
@@ -1293,6 +1338,7 @@ document.getElementById('c').addEventListener('pointerup', (e) => {
 });
 
 await regen();
+await editSelfProof();
 /* Eigener Takt nur für das Licht: der Pool wandert zu den nächsten Lichtquellen und flackert.
    Gezeichnet wird weiter von makeViewer — zwei Renderschleifen wären zwei Wahrheiten. */
 function flicker(t) {
