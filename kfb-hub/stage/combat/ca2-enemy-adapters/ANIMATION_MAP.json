@@ -1,0 +1,167 @@
+{
+  "schema": "kfb.combat.enemy-animation-map/0.1-candidate",
+  "date": "2026-09-20",
+  "sourceRun": 35492453999,
+  "status": "ENUMERATED_CANDIDATE",
+  "rigInventories": {
+    "Rig_Medium": {
+      "General": [
+        "Death_A",
+        "Death_A_Pose",
+        "Death_B",
+        "Death_B_Pose",
+        "Hit_A",
+        "Hit_B",
+        "Idle_A",
+        "Idle_B",
+        "Interact",
+        "PickUp",
+        "Spawn_Air",
+        "Spawn_Ground",
+        "T-Pose",
+        "Throw",
+        "Use_Item"
+      ],
+      "MovementBasic": [
+        "Jump_Full_Long",
+        "Jump_Full_Short",
+        "Jump_Idle",
+        "Jump_Land",
+        "Jump_Start",
+        "Running_A",
+        "Running_B",
+        "T-Pose",
+        "Walking_A",
+        "Walking_B",
+        "Walking_C"
+      ],
+      "CombatMelee": [
+        "Melee_1H_Attack_Chop",
+        "Melee_1H_Attack_Jump_Chop",
+        "Melee_1H_Attack_Slice_Diagonal",
+        "Melee_1H_Attack_Slice_Horizontal",
+        "Melee_1H_Attack_Stab",
+        "Melee_2H_Attack_Chop",
+        "Melee_2H_Attack_Slice",
+        "Melee_2H_Attack_Spin",
+        "Melee_2H_Attack_Spinning",
+        "Melee_2H_Attack_Stab",
+        "Melee_2H_Idle",
+        "Melee_Block",
+        "Melee_Block_Attack",
+        "Melee_Block_Hit",
+        "Melee_Blocking",
+        "Melee_Dualwield_Attack_Chop",
+        "Melee_Dualwield_Attack_Slice",
+        "Melee_Dualwield_Attack_Stab",
+        "Melee_Unarmed_Attack_Kick",
+        "Melee_Unarmed_Attack_Punch_A",
+        "Melee_Unarmed_Idle",
+        "T-Pose"
+      ]
+    },
+    "Rig_Large": {
+      "General": [
+        "Death_A",
+        "Death_A_Pose",
+        "Hit_A",
+        "Idle_A",
+        "Idle_B",
+        "T-Pose"
+      ],
+      "MovementBasic": [
+        "Running_A",
+        "T-Pose",
+        "Walking_A"
+      ],
+      "CombatMelee": [
+        "Melee_1H_Slash",
+        "Melee_1H_Stab",
+        "Melee_2H_Attack",
+        "Melee_2H_Idle",
+        "Melee_2H_Slam",
+        "Melee_Block",
+        "Melee_Block_Attack",
+        "Melee_Block_Hit",
+        "Melee_Blocking",
+        "Melee_Dualwield_Slash",
+        "Melee_Dualwield_SlashCombo",
+        "Melee_Unarmed_Idle",
+        "Melee_Unarmed_Kick",
+        "Melee_Unarmed_Punch",
+        "Melee_Unarmed_Smash",
+        "T-Pose"
+      ]
+    }
+  },
+  "actors": {
+    "skeleton-warrior": {
+      "idle": "Idle_A",
+      "move": "Running_A",
+      "attack": "Melee_1H_Attack_Chop",
+      "hit": "Hit_A",
+      "defeat": "Death_A",
+      "sameRigFallbacks": {
+        "move": [
+          "Walking_A",
+          "Running_B"
+        ],
+        "attack": [
+          "Melee_1H_Attack_Slice_Horizontal",
+          "Melee_1H_Attack_Stab"
+        ],
+        "hit": [
+          "Hit_B"
+        ],
+        "defeat": [
+          "Death_B"
+        ]
+      }
+    },
+    "orc-brute": {
+      "idle": "Idle_A",
+      "move": "Walking_A",
+      "attack": "Melee_Unarmed_Smash",
+      "hit": "Hit_A",
+      "defeat": "Death_A",
+      "sameRigFallbacks": {
+        "move": [
+          "Running_A"
+        ],
+        "attack": [
+          "Melee_Unarmed_Punch",
+          "Melee_Unarmed_Kick",
+          "Melee_2H_Slam"
+        ],
+        "defeat": [
+          "Death_A_Pose"
+        ]
+      },
+      "note": "body-only brute proof; Large weapon alignment deferred"
+    },
+    "avian-swordsman": {
+      "idle": "Idle_A",
+      "move": "Running_A",
+      "attack": "Melee_1H_Attack_Jump_Chop",
+      "hit": "Hit_A",
+      "defeat": "Death_A",
+      "sameRigFallbacks": {
+        "move": [
+          "Walking_A",
+          "Running_B"
+        ],
+        "attack": [
+          "Melee_1H_Attack_Chop",
+          "Melee_1H_Attack_Slice_Diagonal"
+        ],
+        "hit": [
+          "Hit_B"
+        ],
+        "defeat": [
+          "Death_B"
+        ]
+      },
+      "role": "comparison-only"
+    }
+  }
+}

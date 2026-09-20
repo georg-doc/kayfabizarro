@@ -1,0 +1,76 @@
+{
+  "schema": "kfb.combat.ca2-03-source-plan/0.1",
+  "date": "2026-09-20",
+  "status": "PREPARED_SOURCE_PLAN",
+  "repo": "georg-doc/kayfabizarro",
+  "branch": "chatgpt-web/ca2-03-enemy-adapters-2026-09-20",
+  "combatOwner": "georg-doc/KFB-Combat-Arena",
+  "arenaRuntimeEdited": false,
+  "proofActors": [
+    {
+      "id": "skeleton-warrior",
+      "role": "proof-medium-melee",
+      "model": "media/3D_Assets/KayKit_Skeletons/characters/gltf/Skeleton_Warrior.glb",
+      "rigFamily": "Rig_Medium",
+      "props": [
+        "media/3D_Assets/KayKit_Skeletons/assets/gltf/Skeleton_Axe.gltf",
+        "media/3D_Assets/KayKit_Skeletons/assets/gltf/Skeleton_Shield_Small_A.gltf"
+      ],
+      "knownAttachmentNotes": {
+        "right": "handslot.r",
+        "left": "handslot.l",
+        "shieldPush": 0.18
+      },
+      "weaponGate": "existing melee props may be shown; productive weapon hit logic remains external"
+    },
+    {
+      "id": "orc-brute",
+      "role": "proof-large-brute",
+      "model": "media/3D_Assets/KayKit_Mystery_Series6/2 - August 2025 - Orc Brute/OrcBrute.glb",
+      "rigFamily": "Rig_Large",
+      "motionRule": "Rig_Large clips only",
+      "weaponGate": "DEFERRED",
+      "scaleRule": "retain Large tier; do not normalize to Medium size"
+    }
+  ],
+  "comparisonActors": [
+    {
+      "id": "avian-swordsman",
+      "role": "resident-pool-comparison",
+      "model": "media/3D_Assets/KayKit_Mystery_Series6/9 - March 2026 - Avian Swordsman/AvianSwordsman.glb",
+      "rigFamily": "Rig_Medium",
+      "prop": "media/3D_Assets/KayKit_Mystery_Series6/9 - March 2026 - Avian Swordsman/gltf/AvianSwordsman_Sword.gltf",
+      "priorClipEvidence": "Melee_1H_Attack_Jump_Chop",
+      "runtimeOwner": false
+    }
+  ],
+  "hold": [
+    {
+      "id": "skeleton-rogue",
+      "reason": "Ranged crossbow load/cock/fire chain not fully measured; no silent fallback"
+    },
+    {
+      "id": "skeleton-mage",
+      "reason": "magic/ranged behavior outside first melee adapter gate"
+    }
+  ],
+  "requiredStateMatrix": [
+    "idle",
+    "move",
+    "attack",
+    "hit",
+    "defeat"
+  ],
+  "protectedOwners": [
+    "Arena mob slots",
+    "HP",
+    "damage",
+    "death",
+    "rewards",
+    "respawn",
+    "Player",
+    "Gunfight",
+    "Dungeon"
+  ],
+  "nextGate": "isolated source-first Stage + exact clip enumeration"
+}
