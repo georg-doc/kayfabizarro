@@ -2,47 +2,35 @@
 
 ## Current entry
 
-Current implementation slice: **P0.2 Story Focus**.
+Current experimental slice: **P0.2 Stage · PUBLIC_VERIFIED**.
 
-Read `docs/STORY_FOCUS_P02.md` after this file.
+Human-test route:
+https://kayfabizarro.pages.dev/kfb-hub/stage/cartoon-map-board-p02/
 
-`tools/kfb-cartoon-map-board/index.html`
+Source branch: stage/cartoon-map-board-p02-experiment-2026-09-20
+Source PR: georg-doc/kayfabizarro#136
+Runtime build: p0.2-stage-exp-r1
 
-Expected public route after Pages deployment:
+## Verified evidence
 
-`https://kayfabizarro.pages.dev/tools/kfb-cartoon-map-board/`
+- browser proof: **12/12 PASS**
+- countries: **40/40**, failures **0**
+- story markers: **5/5**
+- page/script errors: **0**
+- failed HTTP requests: **0**
+- workflow run/job: 35490263608 / 106023878490
+- artifact: 10599280500
+- digest: sha256:e1badfd8db9d6dc25d12b5059bf49cd8e4b0ea86010881662d0d3029268228f5
+- publication commit: a35680ec943cb725e0550a15e7c48ac07145cafc
 
 ## Owners that must not be overwritten
 
-- Detailed city OSM pipeline: `tools/osm-city-lab/`
-- Card ink canon: `skills/kfb-ink-canon.js`
-- Card rendering: `skills/kfb-card-builder.js` + `skills/kfb-card-format.js`
-- 3D asset identity/provenance: central KFB asset repository / Registry
-
-## P0 external runtime dependencies
-
-- Three.js `0.160.0` from unpkg (matching the KFB embed bundle contract).
-- OSM-derived country GeoJSON resolved from `download.openplanetdata.com`.
-- KFB ink canon loaded through jsDelivr.
-- KayKit BoardGameBits GLTF bytes loaded from the KFB GitHub repo.
-
-If the board boots but no countries appear, inspect in this order:
-
-1. OpenPlanetData catalogue request / CORS.
-2. v2 `geojson` country entries returned for the pilot ISO codes.
-3. country GeoJSON request / CORS.
-4. console for geometry/triangulation failures.
-
-If the country board works but markers fail, inspect the KayKit GLTF URL and its sibling `.bin`; GLTF relative buffer URLs must resolve from the same repo folder.
-
-If the KFB ink module fails to import, the P0 keeps the map adapter and reports `canon unavailable; adapter black`. That is a degraded diagnostic state, not permission to fork the card-ink SSOT.
-
-## Rollback
-
-This tool is additive. Rollback is confined to `tools/kfb-cartoon-map-board/`; do not modify `osm-city-lab`, cardbuilder or ink-canon to remove it.
+- detailed city OSM pipeline: tools/osm-city-lab/
+- card ink canon: skills/kfb-ink-canon.js
+- card rendering: skills/kfb-card-builder.js + skills/kfb-card-format.js
+- asset identity/provenance: central KFB asset repository / Registry
+- WSA / Race remains integration lead
 
 ## Resume point
 
-First action in a recovery chat: read this file, `README.md`, `CHANGELOG.md`, `docs/STORY_FOCUS_P02.md`, then inspect the deployed P0.2 visually before adding hierarchy/cards/authoring.
-
-Current next slice after visual QA: **Europe -> country -> region -> city**, handing detailed city ownership back to `osm-city-lab`.
+Inspect the exact PUBLIC_VERIFIED Stage visually first. The only current next gate is Georg's visual direction on board composition, palette/paper, country/ink treatment, token scale and camera/story interaction. Do not start hierarchy, real Cards or authoring before that gate.

@@ -63,3 +63,24 @@
 - Public browser verification: OPEN.
 - Georg visual acceptance: OPEN.
 - Live: unchanged.
+
+
+## 2026-09-20 · P0.2 experimental Stage PUBLIC_VERIFIED
+
+### TESTED RESULT
+- Exact Cloudflare Stage https://kayfabizarro.pages.dev/kfb-hub/stage/cartoon-map-board-p02/ reached runtime-ready state.
+- Browser proof: **12/12 PASS** in Chromium/SwiftShader at 1440×960.
+- Countries: **40/40**, failures **0**.
+- KayKit story markers: **5/5**.
+- KFB Ink capability: **canon v2 + map BAND adapter**.
+- NEXT STORY: PASS. EXPLODE: PASS.
+- Page/script errors: **0**. Failed HTTP requests: **0**.
+- Workflow run/job: 35490263608 / 106023878490.
+- Evidence artifact: 10599280500 · sha256:e1badfd8db9d6dc25d12b5059bf49cd8e4b0ea86010881662d0d3029268228f5.
+- Publication branch commit: a35680ec943cb725e0550a15e7c48ac07145cafc.
+
+### STATUS
+- Experimental Stage: **PUBLIC_VERIFIED**.
+- Georg visual acceptance: **OPEN**.
+- Live: unchanged.
+- Next gate: visual iteration only; hierarchy/Card/editor expansion remains deferred.
