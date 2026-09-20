@@ -164,6 +164,29 @@ function rateFor(name){
   if(!p?.referenceSpeedAbs||p.referenceSpeedAbs<1e-4)return 1;
   return THREE.MathUtils.clamp(d/p.referenceSpeedAbs,.45,1.8);
 }
+function handoffSpeedCandidate(walkName='Walking_A',runName='Running_A'){
+  const w=profiles[walkName]?.referenceSpeedAbs,r=profiles[runName]?.referenceSpeedAbs,minRate=.45,maxRate=1.8;
+  if(!w||!r)return null;
+  const wi=[w*minRate,w*maxRate],ri=[r*minRate,r*maxRate];
+  const lo=Math.max(wi[0],ri[0]),hi=Math.min(wi[1],ri[1]);
+  let speed,overlap=lo<=hi,gap=0;
+  if(overlap){
+    speed=THREE.MathUtils.clamp(Math.sqrt(w*r),lo,hi);
+  }else if(wi[1]<ri[0]){
+    speed=(wi[1]+ri[0])/2;gap=ri[0]-wi[1];
+  }else if(ri[1]<wi[0]){
+    speed=(ri[1]+wi[0])/2;gap=wi[0]-ri[1];
+  }else{
+    speed=Math.sqrt(w*r);
+  }
+  return{walkName,runName,speed,overlap,gap,walkWindow:wi,runWindow:ri,walkRate:THREE.MathUtils.clamp(speed/w,minRate,maxRate),runRate:THREE.MathUtils.clamp(speed/r,minRate,maxRate)};
+}
+function applyHandoffSpeedCandidate(){
+  const h=handoffSpeedCandidate();if(!h)return null;
+  desiredSpeed.value=String(THREE.MathUtils.clamp(h.speed,Number(desiredSpeed.min),Number(desiredSpeed.max)));
+  speedOut.textContent=Number(desiredSpeed.value).toFixed(2);
+  return h;
+}
 function makeMarker(color){const m=new THREE.Mesh(new THREE.SphereGeometry(.035,12,8),new THREE.MeshBasicMaterial({color}));scene.add(m);return m}
 function laneShell(x){
   const holder=new THREE.Group();holder.position.x=x;scene.add(holder);
@@ -231,7 +254,7 @@ function renderMetrics(){
     tr.innerHTML='<td>'+n+(n==='Running_B'?' HOLD':'')+'</td><td>'+fmt(p.duration,3)+'</td><td>'+fmt(p.referenceSpeedAbs,3)+'</td><td>'+fmt(p.slipBody*100,1)+'%</td><td>'+pct(primaryContact(p,'left'))+' / '+pct(primaryContact(p,'right'))+'</td>';
     rows.appendChild(tr);
   }
-  const walk=profiles.Walking_A,run=profiles.Running_A;
+  const walk=profiles.Walking_A,run=profiles.Running_A,h=handoffSpeedCandidate();
   metrics.textContent=[
     'actor '+currentActor.label,
     'rig '+currentActor.rig,
@@ -241,6 +264,9 @@ function renderMetrics(){
     'Walking_A ref '+fmt(walk?.referenceSpeedAbs),
     'Running_A ref '+fmt(run?.referenceSpeedAbs),
     'Running_B '+(profiles.Running_B?'AUTO METRIC · HOLD':'not available'),
+    '',
+    h?('handoff speed '+fmt(h.speed)+' · '+(h.overlap?'rate-window overlap':'rate-window GAP '+fmt(h.gap))):'handoff speed unavailable',
+    h?('handoff rates walk '+fmt(h.walkRate,2)+' · run '+fmt(h.runRate,2)):'',
     '',
     'numbers are actor-specific candidates',
     'human playback range / speed bands remain OPEN'
@@ -327,6 +353,7 @@ async function loadActor(id){
     const options=['Idle_A','Idle_B','Walking_A','Walking_B','Walking_C','Running_A','Running_B'].filter(n=>clips[n]);
     setSelect(sourceSel,options,clips.Walking_A?'Walking_A':options[0]);
     setSelect(targetSel,options,clips.Running_A?'Running_A':options.at(-1));
+    applyHandoffSpeedCandidate();
     renderSourceFacts(lib);renderMetrics();fitCamera();status('ready',true);goSemantic('idle');
     sourceReport={general:lib.general,movement:lib.movement};
     window.__KFB_TOOLBOX_MOTION_LAB__.ready=true;
@@ -354,7 +381,7 @@ window.__KFB_TOOLBOX_MOTION_LAB__={
     actor:currentActor?.id||null,label:currentActor?.label||null,rig:currentActor?.rig||null,adapter:currentActor?.adapter||null,
     available:[...available],profiles:JSON.parse(JSON.stringify(profiles)),sourceReport,
     semantic:currentSemantic,
-    transition:{source:sourceSel.value,target:targetSel.value,foot:syncFoot.value,fade:Number(fade.value),warp:document.getElementById('warp').checked,desiredSpeed:Number(desiredSpeed.value),speedMatch:speedMatch.checked,hysteresis:hysteresis.checked},
+    transition:{source:sourceSel.value,target:targetSel.value,foot:syncFoot.value,fade:Number(fade.value),warp:document.getElementById('warp').checked,desiredSpeed:Number(desiredSpeed.value),speedMatch:speedMatch.checked,hysteresis:hysteresis.checked,handoff:handoffSpeedCandidate()},
     ownership:{movementPhysics:'consumer',mixer:'one-per-visual-host',registry:'read-only',face:currentActor?.id==='frizzlebob'?'graft-reader':'external-owner'},
     attachmentProposal:currentActor?.attachment||null
   })
