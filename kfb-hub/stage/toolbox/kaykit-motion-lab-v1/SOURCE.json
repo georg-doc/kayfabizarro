@@ -1,0 +1,62 @@
+{
+  "schema": "kfb.stage-source/0.2",
+  "product": "KFB ToolBox · KayKit Motion Lab v1",
+  "status": "LOCAL_BROWSER_87_87_PASS_PUBLIC_PENDING",
+  "owner": "KFB ToolBox / Motion authoring",
+  "sourceRepo": "georg-doc/kayfabizarro",
+  "sourceBranch": "chatgpt-web/toolbox-kaykit-motion-profiles-2026-09-20",
+  "implementationHead": "3ab2a439b013b816e843ea303e7015a26ee2aff8",
+  "handoffHead": "9d0c131e7a72d2f8396da276239a1b717b26962f",
+  "sourceMain": "bdaea0648f27c0f16e0a737bfba237eb54dd4cbb",
+  "sourceFiles": {
+    "indexHtml": {
+      "path": "tools/KFB-ToolBox/kaykit-motion-lab-v1/index.html",
+      "blobSha": "38dfb46c3388cf7481ad51a485505c8faa555024"
+    },
+    "labMjs": {
+      "path": "tools/KFB-ToolBox/kaykit-motion-lab-v1/lab.mjs",
+      "blobSha": "ca7bec89776035f1af81ce35c1eec408ba566fa2"
+    },
+    "proofMjs": {
+      "path": "tools/KFB-ToolBox/kaykit-motion-lab-v1/proof.mjs",
+      "blobSha": "76376dab339b1baf738df8d007b3f792fc653cfb"
+    },
+    "profileProposals": {
+      "path": "tools/KFB-ToolBox/kaykit-motion-lab-v1/PROFILE_PROPOSALS.json",
+      "blobSha": "3ee6e57dc1d6e0fc4f2ef65467316d3b76faf0e8"
+    },
+    "measuredProfiles": {
+      "path": "tools/KFB-ToolBox/kaykit-motion-lab-v1/MEASURED_ACTOR_PROFILES.json",
+      "blobSha": "df3e3ecf3e7194d791ffda8ed3e009089db77d57"
+    }
+  },
+  "localEvidence": {
+    "workflowRun": 35480849313,
+    "job": 105998255165,
+    "checks": "87/87 PASS",
+    "artifactId": 10595139102,
+    "artifactDigest": "sha256:4065242e4a5be9c2a451dfc24a24a1ef409099f3dce00f02ec31bd277ff6aaf3",
+    "failedResources": 0,
+    "pageConsoleErrors": 0
+  },
+  "actors": [
+    {
+      "id": "frizzlebob",
+      "rig": "Rig_Medium",
+      "adapter": "graft"
+    },
+    {
+      "id": "gothgirl",
+      "rig": "Rig_Medium",
+      "adapter": "direct"
+    },
+    {
+      "id": "blackknight",
+      "rig": "Rig_Large",
+      "adapter": "direct"
+    }
+  ],
+  "stageUrl": "https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/kaykit-motion-lab-v1/",
+  "humanAcceptance": "PENDING",
+  "consumerBoundary": "ToolBox authoring/measurement only. Consumer movement, physics and gameplay state stay external."
+}
