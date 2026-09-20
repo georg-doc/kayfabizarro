@@ -513,31 +513,590 @@ function rayProbe() {
   const walls = root.children.filter((n) => ['wall', 'corner'].includes(n.userData.recipe?.layer));
   const bySeam = new Map();
   for (const n of walls) if (n.userData.recipe.seam) bySeam.set(n.userData.recipe.seam, n.userData.recipe);
-  function showDungeonPick(node, patchRec) {
-  const pickEl = document.getElementById('pick');
-  const rec = node?.userData?.recipe;
-  if (!node || !rec) { pickEl.style.display='none'; return; }
+  const ray = new THREE.Raycaster();
+  ray.far = MOD;
+  const res = { doors: { n: 0, bad: [] }, solids: { n: 0, bad: [] }, gatesBlocked: 0, gates: 0, rails: 0, railsBlocked: 0 };
+  for (const s of model.seams.values()) {
+    if (s.kind === 'open') continue;
+    const rec = bySeam.get(s.key);
+    /* Gezielt wird auf die GEMESSENE Öffnung, nicht auf die Fugenmitte — sonst trifft der Strahl
+       den Türpfosten und meldet jede Tür als versperrt (genau das tat die erste Fassung). */
+    const aim = rec?.openWorld || [s.mid[0] * MOD, s.mid[1] * MOD];
+    const lat = rec?.openWidth ? Math.min(rec.openWidth * 0.3, 0.6) : MOD * 0.12;
+    const nx = s.b[0] - s.a[0], nz = s.b[1] - s.a[1];
+    let blocked = false;
+    for (const hf of [0.15, 0.32]) for (const l of [-lat, 0, lat]) {
+      const ox = aim[0] - nx * (MOD / 2) + (nx ? 0 : l), oz = aim[1] - nz * (MOD / 2) + (nz ? 0 : l);
+      ray.set(new THREE.Vector3(ox, s.level * HUB + WALL_H * hf, oz), new THREE.Vector3(nx, 0, nz));
+      if (ray.intersectObjects(walls, true).length) { blocked = true; break; }
+    }
+    if (s.kind === 'door') { res.doors.n++; if (blocked) res.doors.bad.push(s.mid.join(',')); }
+    else if (s.kind === 'gate') { res.gates++; if (blocked) res.gatesBlocked++; }
+    else if (s.kind === 'rail') { res.rails++; if (blocked) res.railsBlocked++; }
+    else { res.solids.n++; if (!blocked) res.solids.bad.push(s.mid.join(',') + (s.covered ? ' (nur Ecken)' : '')); }
+  }
+  return res;
+}
+
+function probeAll() {
+  const levels = [...new Set([...model.cells.values()].map((c) => c.level))];
+  const res = { doors: { n: 0, bad: [] }, solids: { n: 0, bad: [] }, floors: { n: 0, bad: [] }, rails: { n: 0, bad: [] } };
+  for (const L of levels) {
+    const pr = topProbe(L);
+    for (const s of model.seams.values()) {
+      if (s.level !== L || s.kind === 'open') continue;
+      const k = pr.kind(s.mid[0] * MOD, s.mid[1] * MOD);
+      /* Die Brüstung ist AUSKUNFT, kein Gate: `barrier` ist 0,50 schmal und hat Lücken zwischen
+         den Pfosten — ein Pixel in der Fugenmitte darf dort Boden sehen. */
+      if (s.kind === 'rail') { res.rails.n++; if (k !== 'wall') res.rails.bad.push(`${s.mid.join(',')}→${k}`); }
+      else if (s.kind === 'door') { res.doors.n++; if (k !== 'door') res.doors.bad.push(`${s.mid.join(',')}→${k}`); }
+      else { res.solids.n++; if (k !== 'wall') res.solids.bad.push(`${s.mid.join(',')}→${k}`); }
+    }
+    for (const cell of model.cells.values()) {
+      if (cell.level !== L) continue;
+      res.floors.n++;
+      const k = pr.kind(cell.c * MOD, cell.r * MOD);
+      if (k !== 'floor') res.floors.bad.push(`${cell.c},${cell.r}→${k}`);
+    }
+  }
+  return res;
+}
+
+/* ---------- Probe 3 · Leseprobe: kommt das Licht in der Zelle an? ----------
+   Lichtwirkung ist messbar, also wird sie gemessen und nicht gefühlt: dieselbe Draufsicht, aber
+   mit den ECHTEN Materialien und dem echten Licht. Gelesen wird die Luminanz an der Zellmitte
+   (Rec.709 auf dem sRGB-Bild).
+   Gemessen wird in STAPELN, weil der Lichtpool fest ist: ein einzelnes Bild zeigt nur die ≤10
+   Fackeln, die gerade beim Kameraziel stehen — ein Gate daraus wäre kameraabhängig und bei 16×16
+   mit 25 Fackeln fast immer rot. Der Pool geht reihum über alle Fackeln, je Zelle gilt das
+   MAXIMUM. Das Gate ist bewusst nicht „alles hell", sondern: JEDER Raum hat mindestens eine
+   lesbare Zelle — das gilt auch nachts, wenn seine Fackel brennt. */
+function lumProbe(torchLights, thr = 0.17, size = 512) {
+  const levels = [...new Set([...model.cells.values()].map((c) => c.level))];
+  const byCell = new Map();
+  let batches = 0;
+  for (const L of levels) {
+    const vis = [];
+    for (const n of root.children) {
+      const rec = n.userData.recipe;
+      vis.push([n, n.visible]);
+      n.visible = !rec || rec.level === L || rec.layer === 'stair';
+    }
+    const half = (model.grid * MOD) / 2, c0 = ((model.grid - 1) / 2) * MOD;
+    const rt = new THREE.WebGLRenderTarget(size, size);
+    rt.texture.colorSpace = THREE.SRGBColorSpace;
+    const cam = new THREE.OrthographicCamera(-half, half, half, -half, 0.1, 400);
+    cam.layers.enable(rig.FIX);
+    cam.position.set(c0, L * HUB + WALL_H + 30, c0);
+    cam.up.set(0, 0, -1);
+    cam.lookAt(c0, L * HUB, c0);
+    const prevRT = V.renderer.getRenderTarget();
+    const buf = new Uint8Array(size * size * 4);
+    const cells = [...model.cells.values()].filter((c) => c.level === L);
+    const read = () => {
+      V.renderer.setRenderTarget(rt);
+      V.renderer.render(V.scene, cam);
+      V.renderer.readRenderTargetPixels(rt, 0, 0, size, size, buf);
+      V.renderer.setRenderTarget(prevRT);
+      const lum = (wx, wz) => {
+        const x = Math.round((((wx - c0) / half) * 0.5 + 0.5) * (size - 1));
+        const y = Math.round(((-(wz - c0) / half) * 0.5 + 0.5) * (size - 1));
+        if (x < 1 || y < 1 || x >= size - 1 || y >= size - 1) return 0;
+        let s = 0;
+        for (let dx = -1; dx <= 1; dx++) for (let dy = -1; dy <= 1; dy++) {
+          const i = ((y + dy) * size + (x + dx)) * 4;
+          s += (0.2126 * buf[i] + 0.7152 * buf[i + 1] + 0.0722 * buf[i + 2]) / 255;
+        }
+        return s / 9;
+      };
+      for (const cell of cells) {
+        const k = `${cell.level}:${cell.c},${cell.r}`;
+        const v = +lum(cell.c * MOD, cell.r * MOD).toFixed(3);
+        byCell.set(k, Math.max(byCell.get(k) ?? 0, v));
+      }
+    };
+    batches = rig.probeBatches(torchLights, read);
+    rt.dispose();
+    for (const [n, v] of vis) n.visible = v;
+  }
+  const vals = [...byCell.values()];
+  const dark = [...byCell.entries()].filter(([, v]) => v < thr);
+  const rooms = model.regions.filter((r) => r.kind === 'room');
+  const blind = rooms.filter((rg) => Math.max(...rg.cells.map((id) => byCell.get(id) ?? 0)) < thr);
+  return {
+    thr, batches, min: Math.min(...vals),
+    mean: +(vals.reduce((a, b) => a + b, 0) / vals.length).toFixed(3),
+    dark: dark.length, cells: vals.length, blind, rooms: rooms.length,
+    darkest: [...byCell.entries()].sort((a, b) => a[1] - b[1])[0]
+  };
+}
+
+/* ---------- Durchdringungen, nach Ursache getrennt ----------
+   Zwei senkrecht aufeinander laufende Wände überlappen am Gitterpunkt IMMER um eine halbe
+   Wanddicke — das ist Pack-Geometrie, genau die Kerbe, die wall_corner zudeckt. Sie als
+   Kollision zu zählen würde eine korrekte Ecke als Fehler melden; sie zu ignorieren würde eine
+   echte Durchdringung verstecken. Also: gemessen und nach Tiefe getrennt. */
+function footprintAudit() {
+  root.updateMatrixWorld(true);
+  const nodes = root.children.filter((n) => n.userData.recipe);
+  const boxes = nodes.map((n) => new THREE.Box3().setFromObject(n));
+  /* `wall_corner` ist ein L: seine AABB deckt auch das LEERE Innenviertel mit ab. Eine Kerze, die
+     genau dort in der Zellecke steht, meldet damit eine Durchdringung, die es nicht gibt (0,33
+     gemessen, real 0). Also wird das Eckteil durch seine beiden SCHENKEL ersetzt \u2014 Lage aus dem
+     Gitterpunkt im Recipe, Breite und L\u00e4nge aus dem gemessenen Rahmen. Dieselbe Klasse Ausnahme
+     wie die Sechseck-Boxen in kit-lab.js, nur hier aus der Geometrie abgeleitet statt gesetzt. */
+  const cf = kit.frame.wall_corner;
+  const legLen = cf ? Math.max(Math.abs(cf.joint[0] - box.wall_corner.min[0]), Math.abs(box.wall_corner.max[0] - cf.joint[0])) : MOD / 2;
+  const legs = nodes.map((n, i) => {
+    const rec = n.userData.recipe;
+    if (rec.layer !== 'corner' || !cf || !rec.pts) return null;
+    const [, ij] = rec.pts[0].split('|');
+    const [gi, gj] = ij.split(',').map(Number);
+    const gx = (gi - 0.5) * MOD, gz = (gj - 0.5) * MOD;
+    const half = cf.legThick / 2;
+    return rec.dirs.map((d) => {
+      const v = { E: [1, 0], W: [-1, 0], N: [0, -1], S: [0, 1] }[d];
+      const x0 = gx - v[0] * 0.5, z0 = gz - v[1] * 0.5;
+      const x1 = gx + v[0] * legLen, z1 = gz + v[1] * legLen;
+      return new THREE.Box3(
+        new THREE.Vector3(Math.min(x0, x1) - (v[0] ? 0 : half), boxes[i].min.y, Math.min(z0, z1) - (v[1] ? 0 : half)),
+        new THREE.Vector3(Math.max(x0, x1) + (v[0] ? 0 : half), boxes[i].max.y, Math.max(z0, z1) + (v[1] ? 0 : half)));
+    });
+  });
+  const thinOf = (rec) => {
+    const nm = rec.a.split(':')[1], f = kit.frame[nm], b = box[nm];
+    if (!b) return 1;
+    return f && f.thinAxis ? (f.thinAxis === 'x' ? b.size[0] : b.size[2]) : Math.min(b.size[0], b.size[2]);
+  };
+  const pen3 = (a, b) => {
+    const ox = Math.min(a.max.x, b.max.x) - Math.max(a.min.x, b.min.x);
+    const oy = Math.min(a.max.y, b.max.y) - Math.max(a.min.y, b.min.y);
+    const oz = Math.min(a.max.z, b.max.z) - Math.max(a.min.z, b.min.z);
+    return ox <= 0.01 || oy <= 0.01 || oz <= 0.01 ? 0 : Math.min(ox, oz);
+  };
+  let seamCross = 0, worstCross = 0;
+  const real = [];
+  for (let i = 0; i < nodes.length; i++) {
+    const ra = nodes[i].userData.recipe;
+    for (let j = i + 1; j < nodes.length; j++) {
+      const rb = nodes[j].userData.recipe;
+      if (ra.layer === 'floor' || rb.layer === 'floor') continue;
+      if (ra.level !== rb.level) continue;
+      /* Gegen ein Eckteil wird der Schenkel gepr\u00fcft, nicht der Kasten \u2014 ausser wenn beide Ecken
+         sind (zwei L in einem Gitterpunkt teilen ohnehin ihre Fugen). */
+      let pen;
+      if (legs[i] && !legs[j]) pen = Math.max(...legs[i].map((L) => pen3(L, boxes[j])));
+      else if (legs[j] && !legs[i]) pen = Math.max(...legs[j].map((L) => pen3(L, boxes[i])));
+      else pen = pen3(boxes[i], boxes[j]);
+      if (!pen) continue;
+      const shares = ra.pts && rb.pts && ra.pts.some((k) => rb.pts.includes(k));
+      if (shares && pen <= Math.max(thinOf(ra), thinOf(rb)) / 2 + 0.08) {
+        seamCross++; worstCross = Math.max(worstCross, pen); continue;
+      }
+      real.push({ a: ra.a.split(':')[1], b: rb.a.split(':')[1], pen: +pen.toFixed(2) });
+    }
+  }
+  real.sort((x, y) => y.pen - x.pen);
+  return { pairs: (nodes.length * (nodes.length - 1)) / 2, seamCross, worstCross: +worstCross.toFixed(2), real, legLen: +legLen.toFixed(2) };
+}
+
+/* Fackel im Raum? Die Drehung wird aus der Boxmitte abgeleitet — also wird sie GEPRÜFT, am
+   gerenderten Schwerpunkt, nicht an der Absicht. */
+function torchAudit() {
+  root.updateMatrixWorld(true);
+  const bad = [];
+  let n = 0;
+  for (const node of root.children) {
+    const rec = node.userData.recipe;
+    if (rec?.layer !== 'torch') continue;
+    n++;
+    const b = new THREE.Box3().setFromObject(node);
+    const cx = (b.min.x + b.max.x) / 2, cz = (b.min.z + b.max.z) / 2;
+    const want = rec.cellTarget;
+    if (Math.hypot(cx - want[0], cz - want[1]) > MOD / 2) bad.push(rec.seam);
+  }
+  return { n, bad };
+}
+
+/* ---------- Plan ---------- */
+const FLOORCOL = { floor_tile_large: '#4d4658', floor_wood_large: '#6b4f36', floor_dirt_large: '#4a3f33' };
+const SEAMCOL = { solid: '#8f86a0', door: '#e0b877', gate: '#7fa8d8', open: '#3d3450', rail: '#79b7c9' };
+
+function planSVG(level) {
+  const G = model.grid, S = Math.max(14, Math.floor(300 / G)), pad = 10, W = G * S + pad * 2;
+  const px = (v) => pad + (v + 0.5) * S;
+  let s = `<svg viewBox="0 0 ${W} ${W}" role="img">`;
+  s += `<rect x="0" y="0" width="${W}" height="${W}" fill="#0d0a13"/>`;
+  for (const cell of model.cells.values()) {
+    if (cell.level !== level) continue;
+    const col = FLOORCOL[cell.floor] || '#4d4658';
+    s += `<rect x="${px(cell.c) - S / 2}" y="${px(cell.r) - S / 2}" width="${S}" height="${S}" fill="${col}" opacity="${cell.kind === 'room' ? 1 : 0.62}"/>`;
+  }
+  for (const seam of model.seams.values()) {
+    if (seam.level !== level) continue;
+    if (seam.kind === 'open' && !overlay) continue;
+    const col = SEAMCOL[seam.kind] || '#8f86a0';
+    const x = px(seam.mid[0]), y = px(seam.mid[1]);
+    /* Der Plan zeigt die LÄNGE des Bauteils, nicht die Länge der Fuge: wall_half füllt nur die
+       freie Hälfte, eine von zwei Eckschenkeln gedeckte Fuge trägt gar kein Teil. */
+    const full = S / 2;
+    const a1 = seam.part === 'wall_half' ? (seam.halfShift > 0 ? 0 : -full) : -full;
+    const a2 = seam.part === 'wall_half' ? (seam.halfShift > 0 ? full : 0) : full;
+    const [x1, y1, x2, y2] = seam.run === 'z' ? [x, y + a1, x, y + a2] : [x + a1, y, x + a2, y];
+    const dash = seam.kind === 'open' ? ' stroke-dasharray="2 3"' : seam.kind === 'door' ? ' stroke-dasharray="3 2"' : '';
+    const op = seam.kind !== 'open' && !seam.part ? ' opacity="0.4"' : '';
+    s += `<line x1="${x1}" y1="${y1}" x2="${x2}" y2="${y2}" stroke="${col}" stroke-width="${seam.kind === 'open' ? 1.4 : 2.6}"${dash}${op}/>`;
+  }
+  if (overlay) for (const c of model.corners) {
+    if (c.level !== level) continue;
+    s += `<rect x="${px(c.i - 0.5) - 2}" y="${px(c.j - 0.5) - 2}" width="4" height="4" fill="#e0b877"/>`;
+  }
+  for (const cd of model.candles || []) {
+    if (cd.level !== level) continue;
+    s += `<circle cx="${px(cd.cell[0] + cd.corner[0] * 0.3)}" cy="${px(cd.cell[1] + cd.corner[1] * 0.3)}" r="1.4" fill="#ffd9a0"/>`;
+  }
+  for (const t of model.torches) {
+    if (t.level !== level) continue;
+    s += `<circle cx="${px(t.mid[0] + t.into[0] * 0.28)}" cy="${px(t.mid[1] + t.into[1] * 0.28)}" r="1.9" fill="#ff9d4d"/>`;
+  }
+  const st = model.stair;
+  if (level === 0) {
+    const ax = px(st.A[0]), az = px(st.A[1]), bx = px(st.C[0]), bz = px(st.C[1]);
+    s += `<line x1="${ax}" y1="${az}" x2="${bx}" y2="${bz}" stroke="#8fd0a8" stroke-width="2.4"/>
+          <circle cx="${ax}" cy="${az}" r="2.6" fill="#8fd0a8"/>`;
+  }
+  if (level === 1) s += `<circle cx="${px(st.C[0])}" cy="${px(st.C[1])}" r="2.6" fill="#8fd0a8" stroke="#0d0a13"/>`;
+  /* Kompass wie in S13: Welt +x rechts, +z UNTEN. SVG-y wächst nach unten, also z → +y ohne
+     Vorzeichen — dieselbe Regel wie in der Pixelprobe, aber eigenständig gegen die Geometrie
+     geprüft (Zellmitten gegen Bodenpixel), nicht gegen diese Zeichnung. */
+  s += `<g font-family="ui-monospace,monospace" font-size="7" fill="#6b6080">
+    <text x="${W - 22}" y="${W - 26}" text-anchor="middle">−z</text>
+    <text x="${W - 22}" y="${W - 6}" text-anchor="middle">+z</text>
+    <text x="${W - 8}" y="${W - 15}" text-anchor="middle">+x</text></g></svg>`;
+  return s;
+}
+
+function drawPlans() {
+  const levels = [...new Set([...model.cells.values()].map((c) => c.level))].sort();
+  document.getElementById('plans').innerHTML = levels.map((L) => {
+    const n = [...model.cells.values()].filter((c) => c.level === L).length;
+    const rooms = model.regions.filter((r) => r.level === L && r.kind === 'room').length;
+    const corrs = model.regions.filter((r) => r.level === L && r.kind === 'corr').length;
+    const pl = (k, one, many) => `${k} ${k === 1 ? one : many}`;
+    return `<div class="plan"><b>Ebene ${L} · y = ${f2(L * HUB)} · ${pl(n, 'Zelle', 'Zellen')} · ${pl(rooms, 'Raum', 'Räume')} · ${pl(corrs, 'Gang', 'Gänge')}</b>${planSVG(L)}</div>`;
+  }).join('');
+}
+
+/* ---------- Fugen-Overlay in 3D ---------- */
+function buildSeamLines() {
+  if (seamLines) { V.scene.remove(seamLines); seamLines.geometry.dispose(); }
+  const pos = [], col = [], c = new THREE.Color();
+  for (const s of model.seams.values()) {
+    const x = s.mid[0] * MOD, z = s.mid[1] * MOD, y = s.level * HUB + 0.06, h = MOD / 2 - 0.08;
+    const [x1, z1, x2, z2] = s.run === 'z' ? [x, z - h, x, z + h] : [x - h, z, x + h, z];
+    pos.push(x1, y, z1, x2, y, z2);
+    c.set(SEAMCOL[s.kind] || '#8f86a0');
+    col.push(c.r, c.g, c.b, c.r, c.g, c.b);
+  }
+  const g = new THREE.BufferGeometry();
+  g.setAttribute('position', new THREE.Float32BufferAttribute(pos, 3));
+  g.setAttribute('color', new THREE.Float32BufferAttribute(col, 3));
+  seamLines = new THREE.LineSegments(g, new THREE.LineBasicMaterial({ vertexColors: true }));
+  seamLines.visible = overlay;
+  V.scene.add(seamLines);
+}
+
+/* ---------- Sichtbarkeit je Schritt · der Aufbau ist schrittweise, die Prüfung nie ---------- */
+function applyView() {
+  for (const n of root.children) {
+    const rec = n.userData.recipe;
+    if (!rec) continue;
+    const byStep = rec.layer === 'floor' ? (rec.kindCell === 'room' ? step >= 0 : step >= 1)
+      : rec.layer === 'wall' || rec.layer === 'corner' ? step >= 2 : step >= 3;   // stair/torch/candle
+    const byLevel = levelView === 'both' || String(rec.level) === levelView;
+    n.visible = byStep && byLevel;
+  }
+  if (seamLines) seamLines.visible = overlay;
+  /* Licht-Beiwerk folgt demselben Filter wie die Bauteile — je Kind, weil eine Gruppe beide
+     Ebenen enthält. Ein Schatten oder eine Flamme an einer ausgeblendeten Ebene schwebt sonst
+     im Leeren, und der Pool wirft Flecken aus dem Nichts. */
+  rig.setLevelFilter(levelView === 'both' ? null : levelView);
+  rig.setEnabled(step >= 3);
+  /* Sofort nachziehen, nicht erst im nächsten Bild: dieser Rahmen drosselt
+     `requestAnimationFrame`, und ein Pool-Licht, das eine Ebene später umschaltet, wirft
+     Flecken aus dem Nichts (dieselbe Lehre wie der rAF-Notnagel in kit-lab.js). */
+  rig.update(performance.now() / 1000);
+}
+
+/* ---------- Bauen ---------- */
+async function build() {
+  scenePatch.toggleEditor(false);
+  const t0 = performance.now();
+  const keepCam = build.keepCam;
+  const camWas = keepCam ? [V.camera.position.clone(), V.controls.target.clone()] : null;
+  build.keepCam = false;
+  placements = layout(model, kit);
+  const node = await buildScene(placements, (d, t) => { say(`baue ${d}/${t}`); }, { concurrency: 6 });
+  if (root) V.scene.remove(root);
+  root = node;
+  V.scene.add(root);
+  /* Jedes Teil dieses Packs teilt zwei Atlas-Texturen; kommt eine Anfrage leer zurück, ist das
+     Material intakt aber texturlos und das Teil rendert SCHWARZ. Von innen heilen. */
+  repairTextures(root);
+  /* Das Türblatt ist Teil derselben Datei wie die Türwand — für eine begehbare Fuge wird das Mesh
+     der Instanz ENTFERNT, nicht nur unsichtbar gesetzt: three.js raycastet auch unsichtbare
+     Objekte, ein verstecktes Blatt hätte die Strahlprobe weiter blockiert (und tat es). Steht im
+     Recipe (`hide`), ist also keine Ansichtssache. */
+  let leaves = 0;
+  const drop = [];
+  for (const n of root.children) {
+    const h = n.userData.recipe?.hide;
+    if (!h) continue;
+    n.traverse((o) => { if (o.isMesh && o.name === h) drop.push(o); });
+  }
+  for (const o of drop) { o.removeFromParent(); leaves++; }
+  buildSeamLines();
+  applyView();
+  const fit = rig.fitShadow(root);
+  /* Lichtpunkte aus den BAUTEILEN: jede Fackel und jede Kerze gibt ihren gemessenen Flammenpunkt
+     her, in Weltkoordinaten über die Matrix der gesetzten Instanz. Keine gemalte Kugel, kein
+     geklebter Schatten — das Feuer ist die Flammengeometrie des Packs, der Schatten kommt aus der
+     Schattenkarte der Punktlichter, die im Bauteil sitzen. */
+  torchLights = [];
+  const v = new THREE.Vector3();
+  for (const n of root.children) {
+    const rec = n.userData.recipe;
+    /* Name aus dem Recipe, nicht aus der Schicht geraten: welche Kerze gesetzt wurde, weiss das
+       Modell (candle_lit, wenn das Pack sie hat). */
+    const nm = rec && ['torch', 'candle'].includes(rec.layer) ? rec.a.split(':')[1] : null;
+    if (!nm || !FLAME[nm]) continue;
+    const localFlame = FLAME[nm].slice();
+    v.set(localFlame[0], localFlame[1], localFlame[2]);
+    n.localToWorld(v);
+    torchLights.push({ node:n, local:localFlame, p:[v.x,v.y,v.z], level:rec.level, part:nm, r:SELFR[nm], selfLit:!!SPLIT[nm] });
+  }
+  /* Reihenfolge: erst jede Etage auf ihre Empfänger-Ebene, dann die Leuchtkörper auf ihre eigene
+     (die überschreibt die Etagen-Ebene, damit kein Punktlicht sie anleuchtet). */
+  rig.markLevels(root);
+  const matte = rig.matteMaterials(root);
+  const fixtures = rig.markFixtures(root, (rec) => !!SPLIT[rec.a.split(':')[1]]);
+  flameNodes = [];
+  for (const n of root.children) {
+    const rec = n.userData.recipe;
+    if (!rec || !['torch', 'candle'].includes(rec.layer)) continue;
+    const sp = SPLIT[rec.a.split(':')[1]];
+    if (!sp) continue;
+    if (!FLAMEMAT[rec.a]) FLAMEMAT[rec.a] = new THREE.MeshBasicMaterial({ map: sp.map });
+    n.traverse((o) => {
+      if (!o.isMesh || o.userData.kfbFlame) return;
+      o.geometry = sp.body;
+      const f = new THREE.Mesh(sp.flame, FLAMEMAT[rec.a]);
+      f.userData.kfbFlame = true;
+      f.position.y = sp.baseY;
+      f.castShadow = false;
+      f.layers.set(rig.FIX);
+      o.add(f);
+      flameNodes.push(f);
+    });
+  }
+  rig.bind(torchLights);
+  applyView();
+  if (camWas) { V.camera.position.copy(camWas[0]); V.controls.target.copy(camWas[1]); V.controls.update(); }
+  else V.frame(root, [0.55, 0.9, 1], 1.06);
+
+  const ck = model.checks;
+  const probe = probeAll();
+  const rays = rayProbe();
+  lastProbe = { top: probe, ray: rays };
+  const fp = footprintAudit();
+  const tor = torchAudit();
+  const lum = lumProbe(torchLights);
+  const reach = lightReach(model, torchLights, MOD, rig.mood.reach);
+  const wallPlaced = placements.filter((p) => p.layer === 'wall').length;
+  const stairOk = !!model.stair.part && model.seams.get(model.stair.headSeam)?.kind === 'door';
+  const stairWide = STAIR ? frame[STAIR].width <= MOD + 0.05 : false;
+
+  const rows = [
+    ['Gebiete (Räume + Gänge)', `${model.regions.length} · ${model.regions.filter((r) => r.kind === 'room').length} Räume`],
+    ['Fugen aus Zellbesuchen', `${ck.seams} aus ${ck.seamVisits} · ${ck.seamVisits - ck.seams} Doppelsetzungen verhindert`],
+    ['Objekte je Fuge', wallPlaced === ck.walls ? `${wallPlaced}/${ck.walls} · genau eins` : `${wallPlaced} Objekte auf ${ck.walls} Fugen`, wallPlaced === ck.walls],
+    ['Klassen solid / door / gate / open', `${ck.walls - ck.doors - ck.gates - ck.rails} / ${ck.doors} / ${ck.gates} / ${ck.open}`],
+    ['Brüstung statt Wand (Balkonkante)', ck.rails ? `${ck.rails} Fugen mit barrier · Draufsicht ${probe.rails.n - probe.rails.bad.length}/${probe.rails.n} trägt Geometrie · Strahl ${rays.railsBlocked}/${rays.rails} versperrt` : 'keine — obere Ebene liegt ganz auf Aussenwand'],
+    ['Wand stösst an Brüstung', ck.wallMeetsRail === 0 ? 'keine Stelle' : `${ck.wallMeetsRail} · dort ${f2(WALL_H - (box.barrier ? box.barrier.size[1] : 0))} Stirnfläche über der Brüstung — das Pack hat kein Abschlussteil`],
+    ['Länge folgt den Ecken', `${ck.halves}× wall_half · ${ck.covered}× ganz von zwei Schenkeln gedeckt`, ck.cramped === 0],
+    ['Gitter (gate) gesetzt / möglich', `${ck.gates} von ${ck.gateSlots} · nur die zweite Fuge eines verbundenen Paares kann eines tragen`],
+    ['Grundriss nachgezogen', `${ck.thinned} Gangzelle${ck.thinned === 1 ? '' : 'n'} entzerrt · ${ck.slivers} Splitterraum → Gang`],
+    ['Durchgänge an einer Ecke', ck.doorsCramped === 0 ? 'keine' : `${ck.doorsCramped} · Öffnung auf die freie Hälfte gedreht, Strahlprobe entscheidet`],
+    ['Jeder Raum erreichbar', ck.islands.length === 0 ? `${model.graph.reached}/${model.regions.length} · Inseln 0` : `${model.graph.reached}/${model.regions.length} · ${ck.islands.length} Inseln`, ck.islands.length === 0],
+    ['Kein freies Wandende', ck.freeEnds === 0 ? '0 offene Zugenden' : `${ck.freeEnds} offene Zugenden`, ck.freeEnds === 0],
+    ['wall_corner gesetzt', `${placements.filter((p) => p.layer === 'corner').length}/${ck.corners} Gitterpunkte`, placements.filter((p) => p.layer === 'corner').length === ck.corners],
+    ['T-/Kreuz-Knoten (Zug läuft durch)', String(ck.junctions)],
+    ['Gänge genau 1 Modul breit', ck.corrWide.length === 0 ? 'kein 2×2-Gangblock' : `${ck.corrWide.length} Blöcke`, ck.corrWide.length === 0],
+    ['Kein Raum kleiner 2×2', ck.smallRooms.length === 0 ? `${model.regions.filter((r) => r.kind === 'room').length}/${model.regions.filter((r) => r.kind === 'room').length}` : `${ck.smallRooms.length} zu klein`, ck.smallRooms.length === 0],
+    ['Jeder Raum ≥ 1 torch_mounted', ck.darkRooms.length === 0 ? `${model.torches.length} Fackeln in ${model.regions.filter((r) => r.kind === 'room').length} Räumen` : `${ck.darkRooms.length} Räume dunkel`, ck.darkRooms.length === 0],
+    ['Fackel ragt in den Raum (gerendert)', tor.bad.length === 0 ? `${tor.n}/${tor.n}` : `${tor.n - tor.bad.length}/${tor.n}`, tor.bad.length === 0],
+    ['Draufsicht · door trägt wall_doorway', probe.doors.bad.length === 0 ? `${probe.doors.n}/${probe.doors.n}` : `${probe.doors.bad.length} von ${probe.doors.n} falsch · ${probe.doors.bad.slice(0, 3).join(' ')}`, probe.doors.bad.length === 0],
+    ['Draufsicht · Fugenmitte trägt Wand', probe.solids.bad.length === 0 ? `${probe.solids.n}/${probe.solids.n}` : `${probe.solids.bad.length} von ${probe.solids.n} leer · ${probe.solids.bad.slice(0, 3).join(' ')}`, probe.solids.bad.length === 0],
+    ['Draufsicht · Zellmitte trägt Boden', probe.floors.bad.length === 0 ? `${probe.floors.n}/${probe.floors.n}` : `${probe.floors.bad.length} von ${probe.floors.n} verdeckt · ${probe.floors.bad.slice(0, 3).join(' ')}`, probe.floors.bad.length === 0],
+    ['Strahlprobe · door begehbar', rays.doors.bad.length === 0 ? `${rays.doors.n}/${rays.doors.n} frei` : `${rays.doors.bad.length} von ${rays.doors.n} versperrt · ${rays.doors.bad.slice(0, 3).join(' ')}`, rays.doors.bad.length === 0],
+    ['Strahlprobe · solid dicht', rays.solids.bad.length === 0 ? `${rays.solids.n}/${rays.solids.n} versperrt` : `${rays.solids.bad.length} von ${rays.solids.n} durchlässig · ${rays.solids.bad.slice(0, 3).join(' ')}`, rays.solids.bad.length === 0],
+    ['Strahlprobe · gate (nur Auskunft)', rays.gates ? `${rays.gatesBlocked}/${rays.gates} Gitter treffen den Strahl` : '0 gates'],
+    ['Treppe · Streifen + Kopf als Durchgang', stairOk ? `${model.stair.A.join(',')} → ${model.stair.C.join(',')} · Fuß open, Kopf wall_doorway` : 'keine Treppe gesetzt', stairOk],
+    ['Treppenbreite ≤ Modul', STAIR ? `${f2(frame[STAIR].width)} ≤ ${f2(MOD)}` : '—', stairWide],
+    ['Eckverschneidung (konstruktiv)', `${fp.seamCross} Paare · max ${fp.worstCross} = halbe Dicke des dickeren Teils · Eckteil als 2 Schenkel à ${fp.legLen} geprüft, nicht als Kasten`],
+    ['Echte Durchdringungen', fp.real.length === 0 ? `0 von ${fp.pairs} Paaren` : `${fp.real.length} · max ${fp.real[0].pen} (${fp.real[0].a}/${fp.real[0].b})`, fp.real.length === 0],
+    ['Türblatt entfernt', `${leaves}/${ck.doors} · sonst ist der Durchgang zu`, leaves === ck.doors],
+    ['Lichtstimmung', `${rig.mood.label} · Fackel ${rig.mood.torch} cd, Reichweite ${rig.mood.reach} · Hemisphäre ×${rig.mood.hemi}`],
+    ['Lichtbudget (fester Pool)', `${Math.min(rig.budget, torchLights.length)} von ${torchLights.length} Lichtquellen tragen ein Licht (Budget ${rig.budget}) · Abfall 1/r statt 1/r² · Schattenwurf übernimmt das Key-Light — wie in den Promobildern alle Schatten aus einer Richtung`],
+    ['Lichtquelle leuchtet sich nicht selbst an', `${fixtures} mit gelöster Flamme auf eigener Ebenen-Maske · ${torchLights.length - fixtures} ohne Split werden von ihrem Punktlicht angeleuchtet`],
+    ['Matte Materialien', `${matte} Materialien auf roughness 0.95 / metalness 0 gesetzt — das Pack liefert 0.45, und das war der Spiegelglanz`],
+    ['Licht bleibt in seiner Etage', `Ebenen-Masken: Punktlicht erreicht nur Geometrie seiner Etage — ohne Schattenkarten gibt es keine Verdeckung, ein Licht unten schien sonst durch den 0.15 dünnen Boden nach oben`],
+    ['Eigenradius gemessen (Vorhalt)', `${Object.entries(SELFR).map(([n, r]) => `${n} ${f2(r)}`).join(' · ')} — gebraucht erst, wenn Punktlichter wieder Schatten werfen sollen`],
+    ['Flamme eigenleuchtend aus dem Netz gelöst', Object.keys(SPLIT).length
+      ? `${flameNodes.length}× in der Szene · ${Object.entries(SPLIT).map(([n, s]) => `${n} ${s.tris} Dreiecke ${f2(s.baseY)}–${f2(s.top)} (${s.family})`).join(' · ')} · flackert ± 5/11 %`
+      : 'kein Zwillingspaar im Pack — Flamme bleibt beleuchtet'],
+    ['Flamme per Atlas-Texel gelöst', `${Object.keys(SPLIT).length}/${Object.keys(SPLIT).length + SPLITMISS.length} Teile · gegen den gemessenen Flammenpunkt geprüft${SPLITMISS.length ? ' · verworfen: ' + SPLITMISS.join(' · ') : ''}`],
+    ['Leuchtbauteile gewürfelt', [...new Set(model.candles.map((c) => c.part))].map((p) => `${p} ×${model.candles.filter((c) => c.part === p).length}`).join(' · ') || 'keine'],
+    ['Flammenpunkt gemessen', Object.entries(FLAME).map(([n, f]) => `${n} y ${f2(f[1])}`).join(' · ') + ' · aus den obersten 18 % der Geometrie'],
+    ['Schattenkamera aus der Szenenbox', fit ? `Radius ${fit.radius} statt fester 40` : '—'],
+    ['Lichtquellen sind Bauteile', `${torchLights.filter((l) => l.part === 'torch_mounted').length}× torch_mounted an der Wand · ${torchLights.filter((l) => l.part !== 'torch_mounted').length}× Leuchtbauteil in der Zellecke · Flamme ist Pack-Geometrie, nichts gemalt`],
+    ['Kerze in der Zellecke an zwei Wänden', ck.candles ? `${ck.candlesInCorner}/${ck.candles} · Abstand je Achse aus der gemessenen Wandfläche` : 'keine — jede Zelle im Fackelradius'],
+    ['Fackel im Radius (Raster)', `${reach.lit}/${reach.total} Zellen · ${reach.dark.length} ohne Fackel in ${f2(rig.mood.reach * 0.55)}`],
+    ['Leseprobe · Luminanz je Zelle', `min ${lum.min} · Mittel ${lum.mean} · ${lum.dark} von ${lum.cells} unter ${lum.thr} · in ${lum.batches} Stapel${lum.batches === 1 ? '' : 'n'} gemessen (kameraunabhängig)`],
+    ['Jeder Raum hat eine lesbare Zelle', lum.blind.length === 0 ? `${lum.rooms}/${lum.rooms}` : `${lum.rooms - lum.blind.length}/${lum.rooms} · ${lum.blind.length} unlesbar`, lum.blind.length === 0],
+    ['Teile in der Szene', `${placements.length} · Saat ${model.seed} · Versuch ${model.attempt + 1}`],
+    ['Bauzeit', `${Math.round(performance.now() - t0)} ms`]
+  ];
+  document.getElementById('audits').innerHTML = rows.map(([k, v, ok]) =>
+    `<div class="kv${ok === true ? ' yes' : ok === false ? ' no' : ''}"><span>${k}</span><span>${v}</span></div>`).join('');
+
+  const hard = [ck.islands.length === 0, ck.freeEnds === 0, wallPlaced === ck.walls, ck.corrWide.length === 0,
+    ck.smallRooms.length === 0, ck.darkRooms.length === 0, probe.doors.bad.length === 0,
+    probe.solids.bad.length === 0, probe.floors.bad.length === 0, rays.doors.bad.length === 0,
+    rays.solids.bad.length === 0, fp.real.length === 0, tor.bad.length === 0, stairOk, leaves === ck.doors,
+    lum.blind.length === 0];
+  const fails = hard.filter((x) => !x).length;
+  const pxErr = probe.doors.bad.length + probe.solids.bad.length + probe.floors.bad.length;
+  gateEl.className = fails === 0 ? 'mono' : 'mono bad';
+  gateEl.textContent = `${model.regions.filter((r) => r.kind === 'room').length} Räume · ${ck.walls} Wandobjekte `
+    + `(${ck.doors} door, ${ck.gates} gate, ${ck.halves} halb) · ${ck.corners} Ecken · ${ck.freeEnds} freie Enden · `
+    + `Inseln ${ck.islands.length} · Draufsicht ${pxErr} Fehler (${probe.solids.n + probe.doors.n} Fugen, ${probe.floors.n} Zellen) · `
+    + `Strahl ${rays.doors.bad.length + rays.solids.bad.length} Fehler (${rays.doors.n} Türen, ${rays.solids.n} Wände) · `
+    + `Durchdringungen ${fp.real.length}` + (fails ? ` · ${fails} GATES ROT` : ' · alle Gates grün');
+
+  say(`Saat ${model.seed} · Feld ${model.grid}×${model.grid} · ${model.cells.size} Zellen · `
+    + `${placements.length} Teile · Ebenenabstand ${f2(HUB)} · Schritt ${['Räume', 'Gänge', 'Wände', 'Alles'][step]}`);
+  drawPlans();
+  scenePatch.bindDungeon(model, root);
+}
+
+async function regen() {
+  const seed = document.getElementById('seed').value.trim() || 'A1';
+  const density = +document.getElementById('dens').value / 100;
+  const grid = +document.getElementById('grid').value;
+  gateEl.textContent = 'löse Grundriss…';
+  /* Der Kerzen-Radius kommt aus der LICHTEINSTELLUNG, nicht aus einer Zahl im Generator:
+     wie weit eine Fackel trägt, weiss das Lichtwerk. */
+  model = generate({ seed, grid, density, parts, lightParts: LIGHTPARTS, litRadius: (rig.mood.reach * 0.55) / MOD });
+  if (model.failed) {
+    gateEl.className = 'mono bad';
+    gateEl.textContent = 'kein Grundriss mit dieser Saat lösbar: ' + [...new Set(model.notes)].join(' · ');
+    return;
+  }
+  await build();
+}
+
+/* ---------- Bedienung ---------- */
+document.getElementById('roll').onclick = () => {
+  const s = Math.random().toString(36).slice(2, 7).toUpperCase();
+  document.getElementById('seed').value = s;
+  regen();
+};
+document.getElementById('seed').addEventListener('keydown', (e) => { if (e.key === 'Enter') regen(); });
+document.getElementById('dens').onchange = regen;
+document.getElementById('grid').onchange = regen;
+document.getElementById('steps').onclick = (e) => {
+  const b = e.target.closest('button[data-step]');
+  if (!b) return;
+  step = +b.dataset.step;
+  for (const x of document.querySelectorAll('#steps button')) x.setAttribute('aria-pressed', String(+x.dataset.step === step));
+  applyView();
+  say(`Schritt ${['Räume', 'Gänge', 'Wände', 'Alles'][step]} · die Prüfungen gelten für den vollen Aufbau`);
+};
+document.getElementById('lvl').onchange = (e) => { levelView = e.target.value; applyView(); };
+document.getElementById('mood').onchange = (e) => {
+  moodName = e.target.value;
+  rig.setMood(moodName);
+  /* Neu bauen statt nur umschalten: die Leseprobe misst das Bild, also muss sie nach jedem
+     Lichtwechsel neu laufen. Die Kamera bleibt, wo sie war. */
+  build.keepCam = true;
+  build();
+};
+document.getElementById('ov').onclick = (e) => {
+  overlay = !overlay;
+  e.currentTarget.setAttribute('aria-pressed', String(overlay));
+  applyView();
+  drawPlans();
+};
+document.getElementById('top').onclick = () => V.frame(root, [0, 1, 0.0001], 1.04);
+const setClean = (on) => {
+  document.getElementById('app').classList.toggle('clean', on);
+  requestAnimationFrame(() => {
+    V.resize();
+    if (on && root) V.frame(root, [0.55, 0.9, 1], 1.04);   // sonst sitzt die Szene klein im Feld
+    V.draw();
+  });
+};
+document.getElementById('clean').onclick = () => setClean(true);
+document.getElementById('exitClean').onclick = () => setClean(false);
+addEventListener('keydown', (e) => { if (e.key === 'Escape') setClean(false); });
+document.getElementById('panel').onclick = (e) => {
+  const on = document.getElementById('app').classList.toggle('panel');
+  e.currentTarget.setAttribute('aria-pressed', String(on));
+  requestAnimationFrame(() => V.resize());
+};
+document.getElementById('exp').onclick = () => {
+  const doc = {
+    id: 'kaykit-dungeon-s13-2', pack: 'KayKit_Dungeon_Pack_1.1_FREE', licence: 'CC0 · Kay Lousberg',
+    seed: model.seed, params: model.params, grid: model.grid,
+    metrics: { MOD, WALL_H, WALL_THICK, HUB, stair: STAIR, frames: frame },
+    levels: model.levels,
+    cells: [...model.cells.values()],
+    seams: [...model.seams.values()].map((s) => ({ key: s.key, level: s.level, a: s.a, b: s.b, run: s.run, mid: s.mid, kind: s.kind, part: s.part, into: s.into })),
+    regions: model.regions, corners: model.corners, torches: model.torches, stair: model.stair,
+    checks: model.checks, probe: lastProbe, placements
+  };
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(new Blob([JSON.stringify(doc, null, 2)], { type: 'application/json' }));
+  a.download = 'kaykit-dungeon-s13-2.recipe.json';
+  a.click();
+};
+
+function showDungeonPick(node, patchRec) {
+  const pickEl=document.getElementById('pick');
+  const rec=node?.userData?.recipe;
+  if(!node||!rec){pickEl.style.display='none';return;}
   const nm=rec.a.split(':')[1],b=box[nm];
   pickEl.style.display='block';
-  pickEl.innerHTML = `<b>${nm}</b> · ${patchRec?.editable?'scene-patch editable':'read only'}<br>${rec.layer} · Ebene ${rec.level}`
-    + (rec.cell ? `<br>Zelle ${rec.cell.join(',')} · ${rec.kindCell||''}` : '')
-    + (rec.seamKind ? `<br>Fuge ${rec.seamKind}` : '')
-    + (rec.dirs ? `<br>Schenkel ${rec.dirs.join('+')}` : '')
-    + (b ? `<br>${b.size.map((x)=>f2(x)).join(' × ')} · Drehung ${rec.r||0}°` : '')
-    + (patchRec ? `<br>${patchRec.sourceRef}` : '');
+  pickEl.innerHTML=`<b>${nm}</b> · ${patchRec?.editable?'scene-patch editable':'read only'}<br>${rec.layer} · Ebene ${rec.level}`
+    +(rec.cell?`<br>Zelle ${rec.cell.join(',')} · ${rec.kindCell||''}`:'')
+    +(rec.seamKind?`<br>Fuge ${rec.seamKind}`:'')
+    +(rec.dirs?`<br>Schenkel ${rec.dirs.join('+')}`:'')
+    +(b?`<br>${b.size.map((x)=>f2(x)).join(' × ')} · Drehung ${rec.r||0}°`:'')
+    +(patchRec?`<br>${patchRec.sourceRef}`:'');
 }
 
 function syncEditedFixtureLights(nodes=[]) {
   const touched=new Set(nodes);
-  if (!torchLights.length || !touched.size) return 0;
-  const p=new THREE.Vector3(); let changed=0;
-  for (const tr of torchLights) {
-    if (!tr.node || !touched.has(tr.node)) continue;
-    p.fromArray(tr.local); tr.node.localToWorld(p);
+  if(!torchLights.length||!touched.size)return 0;
+  const p=new THREE.Vector3();let changed=0;
+  for(const tr of torchLights){
+    if(!tr.node||!touched.has(tr.node))continue;
+    p.fromArray(tr.local);tr.node.localToWorld(p);
     tr.p[0]=p.x;tr.p[1]=p.y;tr.p[2]=p.z;changed++;
   }
-  if (changed) {
-    rig.setLevelFilter(levelView === 'both' ? null : levelView);
+  if(changed){
+    rig.setLevelFilter(levelView==='both'?null:levelView);
     rig.update(performance.now()/1000);
   }
   return changed;
