@@ -356,3 +356,14 @@ It routes four separate, source-preserving work lanes:
 - [3D in-scene editor](workflows/KFB_INSCENE_EDITOR_MODULE_V1_2026-09-20/START_HERE.md) — adapters for Resident, Environment, Dungeon and Babel rather than a replacement editor.
 
 These briefs are planning/export instructions. They grant no Race/Combat runtime rewrite or automatic Live promotion.
+
+
+## Current ToolBox Home Stage router · 2026-09-20
+
+Bounded candidate: `toolbox/toolbox-home-v1-2026-09-20`.
+
+Stage target: `https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/`.
+
+The candidate gives Asset Librarian, Resident/World Atlas, Dungeon/Hex and proven ToolBox surfaces one front door while keeping their existing owners. Tiny Treats rooms/groups, Plant Lab and the shared 3D editor are visible integration gates, not falsely promoted tools. Vehicle/FrankenStein/Rigging/Animation remain source-only until direct Cloudflare routes are proven. Static contract: **32/32 PASS**; public browser gate pending.
+
+Return: `skills/chat/workflows/KFB_TOOLBOX_CLOUDFLARE_CONSOLIDATION_V1_2026-09-20/RETURN.md`.
