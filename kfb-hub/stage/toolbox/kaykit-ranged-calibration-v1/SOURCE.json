@@ -7,7 +7,7 @@
   "status": "FINAL_BRANCH_BROWSER_PROOF_PENDING",
   "sourceRepo": "georg-doc/kayfabizarro",
   "sourceBranch": "chatgpt-web/ca2-02-ranged-calibration-2026-09-20",
-  "implementationHead": "1640c13ea9d8417261eaa22746a2f5c66ea897d3",
+  "implementationHead": "36072e4797d4915d87673432de176e1fa46dcea9",
   "baseMain": "52532aee17f85324a6d04ab53150216f00ac5d89",
   "donors": {
     "motionLab": {
@@ -58,5 +58,6 @@
     "scheduledProjectileReleasesPerActor": [
       0.15
     ]
-  }
+  },
+  "syntaxRepair": "Removed accidental literal backslash-n introduced by marker-report text edit; measurements unchanged."
 }
