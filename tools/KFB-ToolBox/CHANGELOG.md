@@ -77,3 +77,30 @@ Static syntax/JSON/source-pin/sequence checks PASS.
 
 ### OPEN
 Browser runtime and visual sync remain untested here. This is Phase A protocol proof only; first generic Medium EyeProfile approval remains an EyeRig Batch gate and becomes Phase B.
+
+
+## 2026-09-20 · KayKit Motion Lab v1 · public candidate
+
+### SOURCE
+Draft PR #127 on branch `chatgpt-web/toolbox-kaykit-motion-profiles-2026-09-20`.
+
+### IMPLEMENTATION
+Three-actor motion/profile candidate using exact existing sources:
+- FrizzleBob through current `mountGraft(animation:'host')`;
+- GothGirl direct · Rig_Medium;
+- Black Knight direct · Rig_Large.
+
+Includes real clip enumeration/binding, foot-contact measurement, phase-sync A/B, speed→timeScale, hysteresis preview and measured Walk/Run handoff candidates.
+
+### TESTED
+- static/source: **25/25 PASS**
+- local browser: **87/87 PASS**
+- public Stage: **87/87 PASS**
+- 0 failed public resources
+- 0 public page/console errors
+
+### BOUNDARY
+No consumer movement/physics owner changed. Animation Lab remains an unpromoted target under ToolBox; no second Registry/mixer/runtime was introduced.
+
+### NEXT
+Human three-actor motion review. Attachment proposals remain a separate visible gate.

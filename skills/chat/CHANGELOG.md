@@ -857,3 +857,37 @@ At commit preparation this is **LOCAL 87/87 · PUBLIC PENDING**. No consumer pro
 The Track style proof must use continuous material masks, close zoom and no face-by-face colour noise.
 
 OSM follows after this gate: geographic/semantic truth → WorldSurface adapter → stylised OMS/KFB buildings/landmarks. TinySkies stays a spherical-world donor, not the only KFB topology.
+
+
+## 2026-09-20 · ToolBox KayKit Motion Lab · public 87/87 PASS
+
+### IMPLEMENTATION
+ToolBox-owned Motion/Animation-Lab candidate for:
+- FrizzleBob · Driver Graft · Rig_Medium;
+- GothGirl · Rig_Medium;
+- Black Knight · Rig_Large.
+
+The exact tested runtime mirrors implementation head `3ab2a439b013b816e843ea303e7015a26ee2aff8`.
+
+### PUBLIC EVIDENCE
+Fixed Stage:
+`https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/kaykit-motion-lab-v1/`
+
+Run `35484127790`, public-proof job `106007210838`:
+- **87/87 PASS**;
+- artifact `10596912462`;
+- digest `sha256:d4638aba0e4bd02b690f19cb931c92f99cac020d0af05e5d1124f11003300ca4`;
+- FrizzleBob / GothGirl / Black Knight screenshots;
+- 0 failed resources;
+- 0 page/console errors.
+
+### FINDINGS
+- Medium shared motion facts: 25 bindable General+MovementBasic clips; candidate Walk/Run handoff ~1.108 with a small ~0.016 playback-window gap at the current technical clamp.
+- Large Black Knight: 8 bindable clips in the tested sets; Walk/Run handoff ~1.811 near native rates (~1.02× / ~0.97×); Running_A automatic slip remains high and needs visual review.
+- Running_B stays HOLD on Medium.
+- Large does not inherit Medium clips/timing.
+- Attachments remain source-pinned proposals, not accepted mounts.
+
+`PUBLIC_VERIFIED = YES`.
+
+Exactly one next gate: Georg reviews the three actors and their phase-sync/weight/cadence on the public Stage before any consumer MotionProfile promotion.

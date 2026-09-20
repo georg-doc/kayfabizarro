@@ -53,3 +53,26 @@ and
 `_handover/2D_ANIMATION_STUDIO_ALIGNMENT_2026-09-18/START_HERE.md`
 
 This alignment is additive to Stage-First. It does not replace the current Stage-First intake/promotion override, does not redesign ToolBox, and does not promote the older Animation Lab node.
+
+
+## CURRENT ADDITIVE · KayKit Motion Lab v1 · 2026-09-20
+
+ToolBox now has a public-verified Motion authoring candidate for three real KayKit/KFB actors:
+
+- FrizzleBob · Driver Graft · Rig_Medium;
+- GothGirl · Rig_Medium;
+- Black Knight · Rig_Large.
+
+Handoff:
+`_handover/KAYKIT_MOTION_LAB_2026-09-20/START_HERE.md`
+
+Draft PR: **#127**
+
+Public Stage:
+`https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/kaykit-motion-lab-v1/`
+
+Evidence: **87/87 public browser PASS**.
+
+This is additive to Stage-First and does not promote Animation Lab to a separate CURRENT_TOOL. ToolBox owns motion/profile authoring; consumers retain movement, physics and gameplay state. Medium and Large remain separate rig-profile families.
+
+Current gate: Georg reviews the three actors' Idle → Walk → Run / phase-sync result and the Medium-vs-Large motion feel. Attachments remain proposals until their own visible gate.
