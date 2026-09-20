@@ -76,3 +76,13 @@ Evidence: **87/87 public browser PASS**.
 This is additive to Stage-First and does not promote Animation Lab to a separate CURRENT_TOOL. ToolBox owns motion/profile authoring; consumers retain movement, physics and gameplay state. Medium and Large remain separate rig-profile families.
 
 Current gate: Georg reviews the three actors' Idle → Walk → Run / phase-sync result and the Medium-vs-Large motion feel. Attachments remain proposals until their own visible gate.
+
+
+## CURRENT ADDITIVE · ToolBox Home v2 · 2026-09-21
+
+ToolBox has one prominent Stage router at:
+`https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/`
+
+The router adopts the Georg-accepted KFB Hub Paper/Dark v2 presentation. It does not become an asset/runtime owner. Preview policy is strict: exact public route = preview; missing/blocked route = source/status card only.
+
+Current pre-publication audit: 6 public preview routes, 5 missing/blocked routes, 6 source/integration gates. See `kfb-hub/stage/toolbox/ROUTE_AUDIT.json`.

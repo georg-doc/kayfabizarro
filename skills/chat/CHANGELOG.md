@@ -959,3 +959,18 @@ Reload the EyeRig Stage and visually check only the lid colors on the four accep
 ## 2026-09-20 · MVP integration board and bounded briefs
 
 Added a planning index plus four source-preserving briefings for World/Race/Audio/Traffic, Combat Raid/Open World, ToolBox Cloudflare consolidation and the shared in-scene editor. Each keeps the named runtime/tool owner, requires direct Cloudflare Stage proof, and explicitly blocks placeholder/parallel-engine work and automatic promotion.
+
+
+## 2026-09-21 · Hub UI v2 accepted + ToolBox v2 route audit
+
+### HUMAN ACCEPTANCE
+Georg accepted the public Hub UI v2 Paper/Dark candidate and asked to check it in and use it. PR #141 is retained as design/evidence history but not merged wholesale because it is behind newer Hub content.
+
+### IMPLEMENTATION
+A current-main promotion branch ports the accepted Paper/Dark theme, shareable hash routes and Stage/Live previews onto the latest Hub data. ToolBox becomes a prominent header destination and receives the same v2 presentation grammar.
+
+### TOOLBOX ROUTE AUDIT
+Against the current Cloudflare publication tree: 6 exact public preview routes, 5 missing/blocked routes and 6 source/integration gates. Missing routes no longer pretend to have previews. Vehicle Deformer v2 and KayKit Ranged Calibration are surfaced as real public Stage tools; KCC remains PUBLIC BLOCKED.
+
+### WORLDSURFACE I1A
+Travel branch `wsa/worldsurface-trackpatch-i1-2026-09-20@d9d9d93c286fa52551ee881292a4db426a4cb8fc` is locally green (72/72). B changes 99 host vertices but is coarse; C replaces 380 source triangles with 6,080 refined triangles, with zero measured seam displacement and zero outside-patch mutation. C is technical leader only; Georg's visual B/C/neither gate remains open.
