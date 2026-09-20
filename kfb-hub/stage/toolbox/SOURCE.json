@@ -12,7 +12,7 @@
     "humanDecision": "ACCEPTED_BY_GEORG_2026-09-21"
   },
   "stageRoute": "https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/",
-  "status": "SOURCE_IMPLEMENTED_PUBLICATION_PENDING",
+  "status": "PUBLICATION_BRANCH_WRITTEN_BROWSER_VERIFY_PENDING",
   "routeAudit": "ROUTE_AUDIT.json",
   "retainedOwners": [
     "Asset Registry/Librarian = asset identity",
@@ -20,5 +20,12 @@
     "Resident hosts = resident scene/runtime ownership",
     "EyeRig/Motion/Combat/Race remain their existing owners",
     "ToolBox Home = router only"
-  ]
+  ],
+  "mainMergeHead": "dfbbb733b37a3923e4e5a80ff99f9f91209f3aaa",
+  "publicationBranch": "cloudflare-live",
+  "publicationHead": "cbbae810e6ddb8f282e702d0897bed8566361327",
+  "publicVerification": {
+    "status": "PENDING",
+    "reason": "This session's direct HTTP viewer could not fetch kayfabizarro.pages.dev; no PUBLIC_VERIFIED claim is made until the exact routes are opened and v2 markers are visible."
+  }
 }
