@@ -1,7 +1,7 @@
 {
   "schema": "kfb.eye-class-seed/0.1-candidate",
   "rigClass": "Rig_Large",
-  "status": "CALIBRATION_START_ONLY",
+  "status": "REVIEWED_PER_ACTOR_NO_CLASS_DEFAULT",
   "reference": {
     "actorId": "monstrosity",
     "path": "media/3D_Assets/KayKit_Mystery_Series6/4 - October 2025 - Monstrosity/Monstrosity.glb",
@@ -43,7 +43,7 @@
     "action": "Set as Large default",
     "sourceActor": "monstrosity",
     "policy": "human explicit only",
-    "note": "Current Monstrosity EyeProfile becomes Rig_Large authoringDefault only after Georg tunes and explicitly promotes it."
+    "note": "All four currently verified Large actors have accepted per-character profiles. A shared Large class default remains optional and is not inferred from them."
   },
   "inheritance": {
     "order": [
@@ -52,5 +52,13 @@
       "session"
     ],
     "rigClass": "Rig_Large"
+  },
+  "reviewedBatch": {
+    "path": "data/rig-large-reviewed.v1.json",
+    "sourceInbox": "tools/KFB-ToolBox/_inbox/eye-rig-large.batch.json",
+    "sourceMainCommit": "52532aee17f85324a6d04ab53150216f00ac5d89",
+    "acceptedBy": "Georg",
+    "acceptedDate": "2026-09-20",
+    "actorCount": 4
   }
 }
