@@ -1,0 +1,26 @@
+{
+  "schema": "kfb.stage-source/0.1",
+  "project": "KFB Storytelling Maps v1",
+  "slice": "T1 exact donor isolation",
+  "implementationOwner": "tools/kfb-cartoon-map-board/",
+  "sourceBranch": "stage/storytelling-maps-v1-t1-2026-09-20",
+  "sourceBase": "b2d4291baea6a8c597e66d0d2ce2228ee166a7bf",
+  "kaykitPin": "a6b9220a0b42d50a9de9804fad22e84dde2c322c",
+  "exactKaykitDonors": [
+    "playerstand_red.gltf",
+    "playercard_knight_red.gltf",
+    "D20_red.gltf"
+  ],
+  "externalDiceDonor": {
+    "repo": "3d-dice/dice-box-threejs",
+    "commit": "6945e0068eae27f22acd26debdb70f6ef2fd6063",
+    "package": "@3d-dice/dice-box-threejs@0.0.12",
+    "license": "MIT"
+  },
+  "protectedOwners": [
+    "OSM City Lab detailed city geometry",
+    "KFB CardBuilder / card ink",
+    "central Asset Registry",
+    "consumer game physics"
+  ]
+}
