@@ -953,3 +953,41 @@ The exact T1 donor-isolation Stage is now browser-proven:
 Evidence: **9/9 PASS**, three exact KayKit donors loaded, external Three/Cannon D10 donor ready and physically rolled, 0 page/script errors, 0 failed HTTP requests, desktop + mobile-landscape captures. Run/job `35522576654` / `106109086411`; artifact `10608862542`.
 
 Human donor identity remains OPEN. Do not advance to T2 media replacement until Georg reviews the four isolated source panels.
+
+
+## 2026-09-20 · Storytelling Maps T2 + KFB Table/gameplay bridge
+
+### SOURCE ANALYSIS
+The supplied KFB Table v6 HTML is recorded as input evidence, not SSOT. It is a wrapper around unavailable sibling runtime files, so only wrapper-visible controls and screenshot/product grammar are claimed. Current Freestyle rules and the historical Gameplay Stage/`KFBStageContext` provide the grounded game-state contract.
+
+### ARCHITECTURE
+Prepare one small narrative Rule Kernel + event log, Deck Provider, Player Avatar Adapter, Storytelling Maps presentation and optional Agent layer. LLMs propose schema-validated actions; the kernel alone commits state. KFB Karaoke is onboarding/performance, FrizzleCrits stays behind a generic CriticProvider until its source home is pinned, and mini-games return narrative encounter results.
+
+### T2 TESTED RESULT
+Exact T2 Cloudflare Stage `https://kayfabizarro.pages.dev/kfb-hub/stage/storytelling-maps/t2-media-standee/`: **13/13 PASS**, Portrait/Landscape ready, original `boardgame` frame material preserved, `red_knight` front-only replacement reversible, 0 page/script errors, 0 failed HTTP requests. Evidence run/job `35523870018` / `106112519588`, artifact `10609178985`.
+
+### HUMAN GATE
+Choose Portrait/Landscape standee policy before T3 motion. Live unchanged.
+
+
+## 2026-09-20 · Storytelling Maps responsive CardRig + visual-system contract
+
+### USER DECISION
+- Portrait and Landscape are both first-class standee orientations.
+- Media must never show square/rectangular corners outside the physical rounded card.
+- Responsive aspect changes must preserve KayKit rounded corners and frame proportions; plain non-uniform scale is rejected.
+
+### CURRENT CONTRACTS
+- `skills/chat/workflows/KFB_STORYTELLING_MAPS_V1_2026-09-20/CARD_RIG_V1.md`
+- `skills/chat/workflows/KFB_STORYTELLING_MAPS_V1_2026-09-20/VISUAL_MOTION_SYSTEM_V1.md`
+- `skills/chat/workflows/KFB_STORYTELLING_MAPS_V1_2026-09-20/WSA_PROP_RIG_PLANNING_NOTE.md`
+- `skills/chat/workflows/KFB_STORYTELLING_MAPS_V1_2026-09-20/CLAUDE_DESIGN_BRIEF_VISUAL_LAB_V1.md`
+
+### REUSE MAP
+Storytelling Maps routes palette/seed through existing Travel WorldContext/Palette modules, sky through the existing Skydome module, card/PDF through Viewer/CardBuilder, living-card treatments through Living Illustration, map reveal FX through existing Boxel/Travel/FX donors, and prop motion through the proven Resident Atlas/Rig_Legacy and CapsuleCarl procedural lanes where compatible.
+
+### WSA PLANNING
+Plan one shared PropActor adapter seam for standees and future EyeRig pencil/eraser props. Consumer games retain movement/physics/camera/persistence ownership.
+
+### NEXT GATE
+VL1 exact KayKit responsive CardRig proof only. No T3, Odyssey, Near East or editor mega-slice before that proof.

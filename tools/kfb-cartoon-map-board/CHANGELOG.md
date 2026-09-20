@@ -117,3 +117,64 @@
 - Georg donor identity: **OPEN**
 - T2 Media Standee: blocked on Georg review
 - Live: unchanged
+
+
+## 2026-09-20 · T2 exact KayKit Media Standee
+
+### IMPLEMENTATION
+- exact `playerstand_red.gltf` + `playercard_knight_red.gltf`;
+- original `boardgame` frame material retained;
+- only `red_knight` front-art material replaced;
+- Portrait native orientation;
+- Landscape uses the same exact card geometry rotated 90° plus media remap;
+- calibration-only front texture; no political/story media;
+- reversible MEDIA / ORIGINAL switch;
+- responsive desktop/mobile-landscape lab.
+
+### TESTED RESULT
+- exact Stage: `https://kayfabizarro.pages.dev/kfb-hub/stage/storytelling-maps/t2-media-standee/`
+- browser checks: **13/13 PASS**
+- Portrait ready: PASS
+- Landscape ready: PASS
+- frame preserved: true / true
+- front replacement: one binding / one binding
+- MEDIA → ORIGINAL → MEDIA: PASS
+- page/script errors: 0
+- failed HTTP requests: 0
+- run/job: `35523870018` / `106112519588`
+- artifact: `10609178985` · `sha256:e94c04a8de1eb0f6b7431e2790e64382a7e68904d5df76c7fdd1a54e3b6fbc7a`
+- runtime publication: `2eb9235f075e29b2eaced4ee76485d0c2ed4aeb4`
+
+### STATUS
+- T2 technical/public gate: PASS
+- Georg Portrait/Landscape choice: OPEN
+- T3 motion: blocked on that human gate
+- Live: unchanged
+
+
+## 2026-09-20 · Responsive CardRig / Storytelling visual-system direction
+
+### USER DECISION
+- Both Portrait and Landscape remain first-class.
+- A media motif may never render as a visible square/rectangle in front of a rounded standee.
+- Arbitrary aspect ratios require corner-preserving donor-mesh deformation.
+- Existing visual systems must be reused before any new palette/sky/viewer/FX/animation stack is authored.
+
+### SOURCE FACT
+Exact `playercard_knight_red.gltf`:
+- outer `boardgame` primitive: 96 vertices, bounds x ±0.600 · y 0…1.500;
+- `red_knight` front primitive: 40 vertices, bounds x ±0.574359 · y 0.025641…1.474359.
+
+This supports using the existing inset front geometry instead of an overlay plane.
+
+### DESIGN CONTRACTS
+- `CARD_RIG_V1.md`
+- `VISUAL_MOTION_SYSTEM_V1.md`
+- `CLAUDE_DESIGN_BRIEF_VISUAL_LAB_V1.md`
+- `WSA_PROP_RIG_PLANNING_NOTE.md`
+
+### PROP-RIG PLAN
+Investigate a shared legless PropActor class using the proven six-bone Rig_Legacy where clips are visually compatible, with the CapsuleCarl procedural semantic-state lane as an alternative. Pencil/eraser/EyeRig props belong to the same future compatibility proof, not a separate animation stack.
+
+### STATUS
+T2's 13/13 browser PASS remains technical evidence only. The responsive visual contract is not accepted until VL1 proves the rounded CardRig from oblique views.

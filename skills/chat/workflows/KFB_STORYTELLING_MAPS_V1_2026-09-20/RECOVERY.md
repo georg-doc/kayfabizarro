@@ -1,121 +1,104 @@
 # Recovery · KFB Storytelling Maps v1
 
-Status: **CURRENT EXPERIMENTAL RECOVERY · T1 PUBLIC_VERIFIED**
+Status: **CURRENT EXPERIMENTAL RECOVERY · T2 PUBLIC_VERIFIED · CARD RIG GATE**
 Date: 2026-09-20
 
 ## Owner
 
 Implementation remains under:
-
 `tools/kfb-cartoon-map-board/`
 
-"KFB Storytelling Maps v1" is the product/authoring direction for that owner, not a second map runtime.
+Storytelling Maps is the product/authoring direction over that owner, not a second runtime.
 
-## Current branch
+## Current branch / PR
 
-`stage/storytelling-maps-v1-t1-2026-09-20`
+- branch: `stage/storytelling-maps-v1-t2-media-standee-2026-09-20`
+- draft PR: `georg-doc/kayfabizarro#145`
+- T2 runtime implementation head: `d8b8f2e6feb3be88b29a49dd83182c0cf669167d`
 
-Base includes the Tactical Game Map planning from PR #140.
+## Current public gate
 
-## Current gate
+T2 exact Media Standee:
+`https://kayfabizarro.pages.dev/kfb-hub/stage/storytelling-maps/t2-media-standee/`
 
-**T1 exact donor isolation**.
+PUBLIC_VERIFIED:
+- **13/13 PASS**
+- exact KayKit stand/card donors
+- source materials `boardgame` + `red_knight`
+- frame preserved in Portrait + Landscape
+- front-only replacement in Portrait + Landscape
+- MEDIA → ORIGINAL → MEDIA PASS
+- page/script errors: **0**
+- failed HTTP requests: **0**
+- mobile landscape proof captured
 
-PUBLIC_VERIFIED Stage:
+Evidence:
+- run/job: `35523870018` / `106112519588`
+- artifact: `10609178985`
+- digest: `sha256:e94c04a8de1eb0f6b7431e2790e64382a7e68904d5df76c7fdd1a54e3b6fbc7a`
+- runtime publication: `2eb9235f075e29b2eaced4ee76485d0c2ed4aeb4`
+
+## T1 historical gate
 
 `https://kayfabizarro.pages.dev/kfb-hub/stage/storytelling-maps/t1-donors/`
 
-T1 must visibly prove:
-1. exact KayKit playerstand;
-2. exact KayKit playercard;
-3. exact KayKit D20;
-4. external Three/Cannon D10 donor separately.
+T1 was PUBLIC_VERIFIED and Georg explicitly requested proceeding to T2.
 
-## Existing accepted/verified evidence
+## Product / gameplay docs
 
-Europe P0.2 public Stage:
-`https://kayfabizarro.pages.dev/kfb-hub/stage/cartoon-map-board-p02/`
+Read:
+1. `START_HERE.md`
+2. `LIVING_MASTERPLAN.md`
+3. `KFB_TABLE_V6_DONOR_ANALYSIS.md`
+4. `GAMEPLAY_ARCHITECTURE_V1.md`
+5. `LUDOWALA_BENCHMARK.md`
+6. `ODYSSEY_POC.md`
+7. `T2_MEDIA_STANDEE_BRIEF.md`
 
-That is a technical browser proof, not final visual acceptance.
+## KFB Table v6 evidence boundary
 
-## New direction docs
+The user-supplied `KFB Table v6.dc.html` is a thin wrapper. It references `support.js`, `pet-library.v6.js` and `kfb-table.v6.js`; those sibling bytes were not part of the attachment, and the current GitHub tree does not expose a current `kfb-table.v6.js`.
 
-- `START_HERE.md`
-- `LIVING_MASTERPLAN.md`
-- `LUDOWALA_BENCHMARK.md`
-- `ODYSSEY_POC.md`
-- cross-project addendum:
-  `skills/chat/masterplan/KFB_STORYTELLING_MAPS_V1_2026-09-20.md`
+Do not invent its internals. Use the documented current Freestyle rules + historical Gameplay Stage/`KFBStageContext` evidence for gameplay architecture.
 
-## Donor pins
+## FrizzleCrits boundary
 
-- KFB source repo baseline for T1 assets: `a6b9220a0b42d50a9de9804fad22e84dde2c322c`
-- 3d-dice Three/Cannon donor: `6945e0068eae27f22acd26debdb70f6ef2fd6063`
-- 3d-dice themes reference: `0e166e5cd927a1f0a0581f2460a865b134ef1d9e`
+Exact `KFB Game Sim → FrizzleCrits` source/caller chain remains unresolved in the Canon Home Map. Keep only the generic `CriticProvider` seam until it is pinned.
 
-## Optional helper status
+## Optional helpers
 
-Game Development Studio was explicitly considered.
+`game-dev` CLI was unavailable in this chat and is already recorded once. Repository-native checks continue.
 
-Local `game-dev` CLI check in this chat:
-**GAME_DEV_CLI_UNAVAILABLE · OPTIONAL FALLBACK USED**.
-
-Continue with repository-native browser/static checks. This does not block T1.
-
-Build 3D Game Rooms is a later optional donor for authored diorama/room cutaways, not the map runtime owner.
+Build 3D Game Rooms remains optional for special diorama/room transitions, not ordinary map authoring.
 
 ## Protected boundaries
 
 Do not:
-- fork OSM City Lab;
-- create a second Card renderer;
+- create a second Map/World runtime;
+- fork CardBuilder/Ink;
 - create a second asset registry;
-- create global Race/Travel physics;
-- treat browser TTS voice identity as canon;
-- ingest unverified images without provenance;
-- move to Near East editorial content before the neutral mechanics are accepted;
+- let LLMs mutate game state outside validated actions;
+- turn mini-game outcomes into an unrequested score/win condition;
+- ingest contemporary/political content for this technical gate;
 - auto-merge or promote Live.
 
-## Resume
+## Current user direction · 2026-09-20
 
-1. Open the T1 Stage.
-2. Verify exact donors, not merely asset URLs.
-3. Record screenshots and browser checks.
-4. Georg reviews donor identity.
-5. Only then proceed to T2 media standee.
+Portrait and Landscape are both required.
 
-Exactly one next gate:
-**T1 donor identity PASS.**
+T2 remains valid technical evidence for the front-material seam, but the visual contract is now stricter:
 
+- never render a visible rectangular motif plane;
+- media lives on the actual rounded front-art mesh;
+- arbitrary aspect ratios use corner-preserving mesh-space deformation;
+- rounded corners / border inset / thickness must survive all 3D views.
 
-## T1 PUBLIC VERIFIED · 2026-09-20
+New docs:
+- `CARD_RIG_V1.md`
+- `VISUAL_MOTION_SYSTEM_V1.md`
+- `WSA_PROP_RIG_PLANNING_NOTE.md`
+- `CLAUDE_DESIGN_BRIEF_VISUAL_LAB_V1.md`
 
-Exact Stage:
-`https://kayfabizarro.pages.dev/kfb-hub/stage/storytelling-maps/t1-donors/`
+## Exactly one next gate
 
-Verified on the public Cloudflare route:
-
-- browser checks: **9/9 PASS**;
-- exact Cloudflare marker: PASS;
-- route HTTP 200;
-- exact KayKit playerstand donor: loaded;
-- exact KayKit playercard donor: loaded;
-- exact KayKit D20 donor: loaded;
-- external Three/Cannon D10 donor: ready;
-- D10 roll resolved with a natural result;
-- page/script errors: **0**;
-- failed HTTP requests: **0**;
-- desktop screenshot: captured;
-- mobile-landscape screenshot (844×390): captured.
-
-Evidence:
-- workflow run: `35522576654`
-- job: `106109086411`
-- artifact: `10608862542`
-- digest: `sha256:eeafbfab2b3cd8b0a79d0588537740129f5749ef7518fe5effbe30a3f7eed787`
-- publication commit: `ea77610ba57b3ed5aa8f045978643d8a8030b3ba`
-
-This is a technical/public donor proof, not Georg's visual donor-identity acceptance.
-
-Exactly one next gate remains:
-**Georg reviews whether all four donors are visually/source-identifiable enough to proceed to T2 Media Standee.**
+**VL1 Responsive CardRig source proof. Do not start T3 motion until the exact KayKit card survives the responsive transformation without visible square media corners.**

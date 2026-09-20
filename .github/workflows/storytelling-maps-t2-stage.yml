@@ -1,0 +1,37 @@
+name: Storytelling Maps T2 public proof
+on:
+  pull_request:
+    paths:
+      - 'kfb-hub/stage/storytelling-maps/t2-media-standee/**'
+      - '.github/workflows/storytelling-maps-t2-stage.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  public-proof:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Static checks
+        run: |
+          node --check kfb-hub/stage/storytelling-maps/t2-media-standee/src/main.js
+          node -e "const fs=require('fs'); for(const p of ['kfb-hub/stage/storytelling-maps/t2-media-standee/DEPLOYMENT.json','kfb-hub/stage/storytelling-maps/t2-media-standee/SOURCE.json']) JSON.parse(fs.readFileSync(p,'utf8')); console.log('JSON PASS')"
+          grep -q "playerstand_red.gltf" kfb-hub/stage/storytelling-maps/t2-media-standee/src/main.js
+          grep -q "playercard_knight_red.gltf" kfb-hub/stage/storytelling-maps/t2-media-standee/src/main.js
+          grep -q "red_knight" kfb-hub/stage/storytelling-maps/t2-media-standee/src/main.js
+          grep -q "boardgame" kfb-hub/stage/storytelling-maps/t2-media-standee/src/main.js
+      - run: |
+          npm install --no-save playwright@1.51.1
+          npx playwright install --with-deps chromium
+      - name: Verify fixed Cloudflare Stage
+        run: node kfb-hub/stage/storytelling-maps/t2-media-standee/qa/public.mjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: storytelling-maps-t2-public-proof
+          path: storytelling-maps-t2-evidence
+          retention-days: 30
