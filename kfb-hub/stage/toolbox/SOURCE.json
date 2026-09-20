@@ -21,12 +21,17 @@
     "EyeRig/Motion/Combat/Race remain their existing owners",
     "ToolBox Home = router only"
   ],
-  "mainMergeHead": "dfbbb733b37a3923e4e5a80ff99f9f91209f3aaa",
+  "mainMergeHead": "dfaafac070747f9543b5eb5a635e2aaa74e57b83",
   "publicationBranch": "cloudflare-live",
-  "publicationHead": "cbbae810e6ddb8f282e702d0897bed8566361327",
+  "publicationHead": "c2185ed4a59bbae0c3610cb35155af1ccb542c00",
   "publicVerification": {
-    "status": "PENDING",
-    "reason": "This session's direct HTTP viewer could not fetch kayfabizarro.pages.dev; no PUBLIC_VERIFIED claim is made until the exact routes are opened and v2 markers are visible."
+    "status": "PENDING_TOOL_ACCESS_BLOCKED",
+    "attempts": [
+      "web viewer: hub URL inaccessible",
+      "web viewer: toolbox URL cache miss",
+      "direct urllib fetch: DNS resolution unavailable"
+    ],
+    "rule": "Do not claim PUBLIC_VERIFIED until the exact pages.dev routes show the v2 markers."
   },
   "statusRefresh": {
     "branch": "hub/toolbox-v2-status-refresh-2026-09-21",
@@ -40,5 +45,6 @@
       "preserve prominent Hub header ToolBox link",
       "refresh ROUTE_AUDIT against current cloudflare-live tree"
     ]
-  }
+  },
+  "publicationFilesReadback": "PASS · kfb-hub/index.html + kfb-hub/stage/index.html + ROUTE_AUDIT.json match main blobs"
 }

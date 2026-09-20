@@ -67,3 +67,20 @@ Current ToolBox routing truth:
 Source checks: **18/18 PASS** at implementation checkpoint `ff3b71a386f370da80b2a19cfc242ec9c0a7b00a`.
 
 Public pages.dev verification remains separate; do not infer it from GitHub publication-branch state.
+
+
+## Final status refresh publication seal
+
+- status-refresh PR: **#153**
+- merged to main: `dfaafac070747f9543b5eb5a635e2aaa74e57b83`
+- publication branch write: `cloudflare-live@c2185ed4a59bbae0c3610cb35155af1ccb542c00`
+- exact public files read back from publication branch and matched to main blobs: **PASS**
+- public HTTP/browser verification in this session: **PENDING / TOOL ACCESS BLOCKED**
+
+Public routes to verify externally:
+- `https://kayfabizarro.pages.dev/kfb-hub/`
+- `https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/`
+
+Expected visible markers:
+- canonical Hub: Paper/Dark toggle + prominent ToolBox link + no stale Hub UI v2 review todo;
+- ToolBox: `HUB v2 · SOURCE-FIRST ROUTER`, 17 cards, 6 public previews, 5 route gaps/blocked, 6 source/integration gates.
