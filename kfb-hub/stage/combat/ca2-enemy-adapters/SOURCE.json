@@ -1,7 +1,7 @@
 {
   "schema": "kfb.stage-source/0.1",
   "product": "KFB Combat · CA2-03B Enemy State Playback",
-  "status": "CA2_03B_BRANCH_PROOF_PENDING",
+  "status": "BRANCH_VERIFIED_CA2_03B",
   "sourceRepo": "georg-doc/kayfabizarro",
   "sourceBranch": "chatgpt-web/ca2-03-enemy-adapters-2026-09-20",
   "implementationHead": "a1594a60805a2254c45eceb4ca8f5053a3e8aad4",
@@ -62,5 +62,12 @@
     "actorMixerPolicy": "one mixer per visible actor",
     "weapons": "OFF",
     "arenaOwnership": "NONE"
+  },
+  "branchProof": {
+    "run": 35493052845,
+    "job": 106031173581,
+    "checks": "109/109 PASS",
+    "artifactId": 10599676961,
+    "artifactDigest": "sha256:8bc9e098a9439ace78c77da01c5f04fca63135e34fc4f2fa9d1ecb7a91a40233"
   }
 }
