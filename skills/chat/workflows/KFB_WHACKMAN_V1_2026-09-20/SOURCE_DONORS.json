@@ -111,5 +111,27 @@
         "role": "future Storytelling Map/tabletop view; waits for CardRig gate"
       }
     ]
+  },
+  "existingTooling": {
+    "instruction": "CONSUME_NOT_REBUILD",
+    "dungeonModel": [
+      "tools/world_atlas/source/KayKit_Dungeon_Model_S13.html",
+      "tools/world_atlas/docs/HANDOFF_dungeon_S13.md",
+      "tools/world_atlas/source/tools/probe-dungeon-parts.html"
+    ],
+    "dungeonGenerator": [
+      "tools/world_atlas/source/KayKit_Dungeon_Generator_S13_2.html",
+      "tools/world_atlas/source/lib/dungeon-grid.js",
+      "tools/world_atlas/source/lib/dungeon-light.js"
+    ],
+    "editor": [
+      "PR#126 S14 room/editor proof",
+      "PR#120 S21 TransformControls intake"
+    ],
+    "assetTruth": [
+      "registry/assets/v1/",
+      "tools/asset_registry/librarian/"
+    ],
+    "rule": "No new WhackMan-local catalog, full-pack remeasurement or TransformControls editor. Only measure named MISSING_DELTA values not already owned elsewhere."
   }
 }

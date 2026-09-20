@@ -26,6 +26,76 @@ But the visible object must be unmistakably KFB:
 
 Do **not** recreate the original Pac-Man board, character art, sound set, typography or branded presentation. Use the classic maze-chase interaction pattern with an original KFB layout and source-backed assets.
 
+## 0.5 · EXISTING TOOLING IS ALREADY BUILT — CONSUME, DO NOT REBUILD
+
+This is a hard correction to the execution order.
+
+WhackMan is **not** an asset-measurement, catalog, Dungeon-generator or editor project.
+
+The following already exist and are source truth for this slice:
+
+### Existing Dungeon model / measured kit truth
+- `tools/world_atlas/source/KayKit_Dungeon_Model_S13.html` — measured Dungeon pack model/inventory and visual part catalogue.
+- `tools/world_atlas/docs/HANDOFF_dungeon_S13.md` — explicitly says: **“Dann bauen — nicht neu messen, die Zahlen sind belegt.”**
+- `tools/world_atlas/source/tools/probe-dungeon-parts.html` — original inventory probe used to establish the model.
+- `tools/world_atlas/source/lib/kit-lab.js` — existing loading/measurement/audit utilities.
+
+### Existing Dungeon generator
+- `tools/world_atlas/source/KayKit_Dungeon_Generator_S13_2.html`
+- `tools/world_atlas/source/lib/dungeon-grid.js`
+- `tools/world_atlas/source/lib/dungeon-light.js`
+
+It already owns:
+- the seam/cell graph mental model;
+- BSP layout;
+- two levels;
+- measured wall/corner/stair placement;
+- deterministic seed/layout generation;
+- audits and recipe export.
+
+Do not write a second maze/dungeon generator before adapting its output.
+
+### Existing editor / authoring
+S14/S21 already proves:
+- real Three.js `TransformControls`;
+- move/rotate;
+- snapping;
+- floor drop;
+- visible picking;
+- semantic group scope;
+- recipe-patch output;
+- prop-adjustment → recipe-patch → reload roundtrip.
+
+WhackMan may consume this editor/recipe seam. It must **not** implement a new TransformControls editor inside the WhackMan HTML.
+
+### Existing asset catalogue / discovery
+The central asset truth remains:
+- `registry/assets/v1/`
+- `tools/asset_registry/librarian/`
+- pack manifests / Registry shards.
+
+WhackMan must not create a local replacement asset catalogue, asset browser or second inventory.
+
+### What “measure” means in this slice
+
+The current World Atlas pages may themselves run `measure()`, `planScan()`, `openingScan()`, `wallFrame()`, etc at runtime. That is **existing owner logic** and may remain exactly as-is.
+
+WhackMan must not copy/reimplement those functions merely to make its own HTML self-contained.
+
+Allowed new measurement is only a named **MISSING_DELTA** when all of the following are true:
+1. the exact needed asset is not covered by the current Dungeon model/Registry/owner data;
+2. the missing measurement is necessary for WhackMan gameplay or placement;
+3. the existing World Atlas / Librarian utility is reused where possible;
+4. the result is returned to the owning catalogue/model instead of becoming WhackMan-only truth.
+
+Default rule:
+
+`existing catalogue / measurements / generator / editor → consume directly → add only gameplay-specific adapters`
+
+Not:
+
+`reload every GLTF → remeasure every part → create another catalogue → create another editor → then make the game`.
+
 ## 1 · Product value beyond this POC
 
 WhackMan v1 is deliberately **Dungeon-first** because its useful output should survive even if the mini-game is later changed.
@@ -173,9 +243,11 @@ Before gameplay composition, show these donors separately:
 Each proof records:
 - path;
 - revision/pin;
-- bounding box / useful scale;
+- **existing owner measurement/catalog reference where already available**;
 - actual source identity;
 - no fallback.
+
+Do **not** remeasure the Dungeon wall/floor/corner family for Gate A. Read the existing S13 model/Handoff and show the source object. Only LegacyFaceHost and genuinely missing WhackMan-specific deltas may require new measurement.
 
 A loaded URL is not donor proof.
 
@@ -183,7 +255,9 @@ A loaded URL is not donor proof.
 
 Do not begin with procedural maze generation.
 
-Build one hand-authored, reproducible dungeon maze as a **Dungeon Recipe**.
+Create one reproducible WhackMan maze **from the existing S13.2 Dungeon Generator / Recipe contract**.
+
+Prefer adapting/selecting a deterministic S13.2-generated recipe and then using the existing S14/S21 authoring seam for bounded placement corrections. Do not hand-rebuild the Dungeon kit grammar or start a separate maze-construction engine.
 
 Target scale:
 - roughly 13–19 logical cells wide;
@@ -434,7 +508,7 @@ VFX is punctuation, not a permanent particle field.
 
 ## 14 · Dungeon editor reuse
 
-The S21/S14 in-place editor is useful for:
+The S21/S14 in-place editor is **already built and proven**. Reuse it for:
 - wall/prop alignment;
 - spawn markers;
 - pickup anchors;
@@ -512,7 +586,8 @@ Only after all three pass should Claude finish the full one-level game.
 ## 18 · Required evidence
 
 ### Donor evidence
-- isolated screenshots for each required core donor.
+- isolated screenshots for each required core donor;
+- for Dungeon parts, cite the existing `KayKit_Dungeon_Model_S13.html` / Handoff measurement instead of producing a new measurement report.
 
 ### Integrated visual evidence
 - top/oblique maze overview;

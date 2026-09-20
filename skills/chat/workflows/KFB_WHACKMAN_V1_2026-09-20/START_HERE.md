@@ -29,6 +29,20 @@ The first proof must add value to the existing Dungeon/World-Atlas authoring sta
 9. `CLAUDE_DESIGN_BRIEF.md`
 10. `SOURCE_DONORS.json`
 
+## Existing-tool correction
+
+**Do not restart with asset measurement.**
+
+World Atlas already contains the measured Dungeon model/catalogue, S13.2 generator and its probes/audits. S14/S21 already contains the in-place editor/recipe-patch proof. Registry/Asset Librarian already owns asset discovery.
+
+Claude Design should consume those sources and build only the WhackMan-specific adapters:
+- S13.2 recipe → WhackMan MazeGraph;
+- existing actor sources → Player/Pursuer gameplay;
+- LegacyFaceHost → existing EyeRig v6;
+- pickups/state/AI/camera.
+
+If Claude is currently remeasuring the whole Dungeon pack in a new WhackMan HTML, stop that branch of work and return to the existing S13 model/generator.
+
 ## Bounded result
 
 Claude Design builds **one** editable/playable POC candidate and returns the full source/export.
