@@ -94,3 +94,26 @@ Lean public-mirror package:
 - digest `sha256:50d6d9f27a52ff46f896b13475dbc3f77088d515c9bb606f7f372f4c6dc4293d`
 
 This proves the Stage package locally in real Chromium. It is **not** a Cloudflare/public proof. The source PR must not be described as a human test surface until the exact `kayfabizarro.pages.dev` path is published and opened.
+
+
+## Canonical Cloudflare publication
+
+Stage source merge:
+`958a0622b03d6164aa80ea4f426272e24531e22e`
+
+Canonical QA:
+- PR `#117` (QA-only, closed unmerged)
+- run `35477984153`
+- job `105990469211`
+- expected marker `STUNT-WORLD-TINYSKIES-TRACK-CORRIDOR-TC01-20260920`
+- result: **BLOCKED**
+- after ~6 minutes, the marker URL still returned HTML rather than the expected `DEPLOYMENT.json`
+- canonical Chromium runtime step was skipped
+
+Therefore:
+- TC-01 implementation: browser PASS
+- TC-01 Stage mirror package: browser PASS
+- Stage source: merged
+- fixed `kayfabizarro.pages.dev` child route: **NOT PUBLIC_VERIFIED**
+
+Do not substitute GitHub Pages or another CDN as the human acceptance surface.
