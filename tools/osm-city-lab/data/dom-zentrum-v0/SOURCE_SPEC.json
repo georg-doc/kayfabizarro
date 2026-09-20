@@ -1,0 +1,49 @@
+{
+  "schema": "kfb.osm-city.source-spec.v0",
+  "id": "dom-zentrum-v0",
+  "label": "Köln Dom / Hauptbahnhof / Altstadt / Rhein · Race Design Pilot",
+  "bbox": {
+    "south": 50.9325,
+    "west": 6.946,
+    "north": 50.9515,
+    "east": 6.9785
+  },
+  "approxSizeM": {
+    "northSouth": 2115.1,
+    "eastWest": 2279.7
+  },
+  "origin": {
+    "lat": 50.942,
+    "lon": 6.96225,
+    "altM": 0
+  },
+  "projection": {
+    "kind": "local-enu-equirectangular",
+    "axes": {
+      "x": "east",
+      "y": "up",
+      "z": "north"
+    },
+    "units": "metre",
+    "earthRadiusM": 6378137
+  },
+  "overpass": {
+    "endpoints": [
+      "https://overpass-api.de/api/interpreter",
+      "https://overpass.kumi.systems/api/interpreter"
+    ],
+    "queryFile": "query.overpassql",
+    "policy": "one cached refresh on explicit source/workflow change; no browser/runtime Overpass dependency"
+  },
+  "license": {
+    "data": "© OpenStreetMap contributors",
+    "license": "ODbL 1.0",
+    "url": "https://www.openstreetmap.org/copyright"
+  },
+  "consumerIntent": {
+    "primary": "Claude Design Cologne Race Option C",
+    "geographyOwner": "KFB OSM City Lab",
+    "worldPresentation": "KFB / OMS / TinySkies-derived",
+    "note": "OSM supplies geographic/semantic truth; it does not prescribe final art direction."
+  }
+}
