@@ -72,3 +72,81 @@ This prevents “asset loaded = attachment proved”.
 ## Current next gate
 
 Run the exact three-actor browser proof. Do not publish a consumer default or Animation-Lab promotion from static PASS alone.
+
+
+## Branch browser proof · 87/87 PASS
+
+Workflow:
+- run `35480691218`
+- job `105997821543`
+- source head `35ac2306ed4308b853161edea7113cbbbb49b9c2`
+- **87/87 PASS**
+- artifact `10595562539`
+- digest `sha256:b160162a2a8b7047e0925d966bebdc4f51829fd18c551c816554055cef8e69f3`
+- screenshots: FrizzleBob, GothGirl, Black Knight
+- `browser.json`
+- failed HTTP/resources: 0
+- page/console errors: 0
+
+### FrizzleBob · Driver Graft
+
+- Rig_Medium
+- adapter: current `mountGraft`
+- exact General + MovementBasic bindable inventory: **25 clips**
+- Idle_A / Walking_A / Running_A present
+- Walking_A: 1.067 s · ref ~0.611 · slip/body ~1.32%
+- Running_A: 0.800 s · ref ~2.480 · slip/body ~6.36%
+- Running_B present but remains HOLD
+- A/B transition executes
+- one visual-host mixer; graft update follows mixer
+- existing graft weapon/face ownership preserved
+
+### GothGirl
+
+- Rig_Medium
+- direct actor
+- exact General + MovementBasic bindable inventory: **25 clips**
+- same Medium clip names as FrizzleBob
+- Walking_A: 1.067 s · ref ~0.611 · slip/body ~1.45%
+- Running_A: 0.800 s · ref ~2.480 · slip/body ~6.96%
+- Running_B present but remains HOLD
+- A/B transition executes
+- existing EyeRig/Face owner remains external
+- microphone remains source-pinned attachment proposal
+
+### Black Knight
+
+- **Rig_Large**
+- direct actor
+- exact bindable General + MovementBasic inventory: **8 clips only**:
+  `Death_A · Death_A_Pose · Hit_A · Idle_A · Idle_B · T-Pose · Running_A · Walking_A`
+- therefore no Walking_B/C, Running_B or Jump state in this Large proposal
+- Walking_A: 1.067 s · ref ~1.772 · slip/body ~2.93%
+- Running_A: **1.067 s** · ref ~1.850 · slip/body ~15.27%
+- A/B transition executes
+- Large timing is independent from Medium
+- high Running_A compensated-slip candidate requires visual review; do not promote it as final speed mapping
+- Sword_Large / Shield_Large remain source-pinned attachment proposals
+
+## Architecture finding
+
+The browser evidence supports a two-level authoring model:
+
+```text
+RigMotionProfile
+  shared clip/source facts for one rig family
+  duration / phase / reference-cadence candidate
+
+ActorMotionReview
+  binding proof
+  actor dimensions / normalized slip
+  approved playback range
+  attachment profile
+  human status
+```
+
+FrizzleBob and GothGirl share Medium clip timing/reference-speed facts but still require actor-specific visual QA. Black Knight proves that Large must remain a separate profile family.
+
+## Current next gate
+
+Improve the candidate transition-speed default from a fixed number to a measured **Walk/Run handoff-speed candidate**, then rerun the same 3-actor proof before Stage publication.
