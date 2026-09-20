@@ -1,4 +1,4 @@
-import {rasterizeSvgGroups,svgPointToActorLocal,makeTransparentPlane} from '../../../shared/renderers/three2p5d/cutout-svg-plane-stack.v0.1.js';
+import {rasterizeSvgGroups,svgPointToActorLocal,makeTransparentPlane} from '../../shared/renderers/three2p5d/cutout-svg-plane-stack.v0.1.js';
 
 const clamp=(v,a,b)=>Math.max(a,Math.min(b,v));
 
