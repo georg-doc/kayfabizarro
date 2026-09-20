@@ -1,6 +1,6 @@
 # RETURN · World Atlas Inline Detail Editor E1 · 2026-09-20
 
-Status: **IMPLEMENTED · STATIC PASS · BROWSER GATE OPEN**
+Status: **FROZEN CANDIDATE · STATIC PASS · BROWSER PROOF HARNESS-BLOCKED**
 
 ## Goal
 
@@ -78,3 +78,28 @@ Seed A1:
 6. confirm the same transform restored.
 
 No Resident, Scene Builder, Environment or Platformer work before this gate.
+
+
+## Browser-gate recovery
+
+Two proof attempts were consumed without reaching a valid application assertion:
+
+- `35487119077 / 106015440253` — browser page/WebGL loaded, but the first QA command never terminated and was killed by its outer timeout;
+- `35487373804 / 106016124834` — replacement CDP harness failed in Node 22 before page polling because it mixed `require()` with top-level `await`.
+
+This means:
+
+- editor browser result: **NOT TESTED**;
+- editor runtime failure: **NOT PROVEN**;
+- third repair in this slice: **STOPPED**.
+
+Full recovery:
+`docs/INLINE_EDITOR_E1_FAILURE_RECOVERY_2026-09-20/START_HERE.md`
+
+The automatic workflow has been removed from the branch so subsequent handoff commits cannot trigger an accidental third attempt.
+
+## Revised one next gate
+
+A **separate QA-only slice** may test the unchanged `?e1proof=1` candidate with a minimal valid CDP harness using one Node module system.
+
+No edit-layer extraction and no Resident / Stage / Environment / Platformer implementation before that proof.
