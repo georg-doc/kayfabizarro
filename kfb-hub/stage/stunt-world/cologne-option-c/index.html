@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Irish+Grover&display=swap" rel="stylesheet">
+  <style>
+    :root{--kfb-cool:#39bfc4;--kfb-warm:#d6b33a;--kfb-hot:#e33f24;--kfb-panel:#14100e;--kfb-ink:#f2ece1;}
+    html,body{margin:0;padding:0;height:100%;background:#0d131c;overflow:hidden;}
+    a{color:#fdd37b;} a:hover{color:#fde957;}
+    canvas{display:block;}
+    input[type=range]{accent-color:#fb3233;}
+    select option{background:#16212b;color:#f2ece1;}
+    @keyframes kfbFlash{0%{opacity:0;}8%{opacity:.85;}100%{opacity:0;}}
+    @keyframes kfbCardIn{0%{transform:translateY(-14px) scale(.94);opacity:0;}100%{transform:translateY(0) scale(1);opacity:1;}}
+  </style>
+  <script type="importmap">
+  {
+    "imports": {
+      "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
+      "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/"
+    }
+  }
+  </script>
+  <script type="module">
+    import { boot } from './lab-v9/cologne-stage.v1.js';
+    window.__KFB_COLOGNE = { boot };
+    window.dispatchEvent(new Event('kfbCologneReady'));
+  </script>
+</helmet>
+
+<div style="position:relative;width:100%;height:100vh;max-height:100vh;background:#0d131c;font:13px/1.45 ui-sans-serif,system-ui,-apple-system,'Helvetica Neue',sans-serif;color:#f2ece1;overflow:hidden;">
+
+  <canvas ref="{{ canvasRef }}" style="position:absolute;inset:0;width:100%;height:100%;"></canvas>
+
+  <!-- Ladezustand -->
+  <sc-if value="{{ loading }}" hint-placeholder-val="{{ true }}">
+    <div style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;background:linear-gradient(180deg,#0d131c 0%,#164b59 100%);z-index:40;">
+      <div style="font-size:34px;font-weight:800;letter-spacing:-0.02em;color:#fdd37b;">KFB COLOGNE · OPTION C</div>
+      <div style="font-size:14px;color:#d5c8b2;letter-spacing:.14em;">ELASTIC CARTOON WORLD</div>
+      <div style="width:320px;height:5px;background:#164b59;border-radius:3px;overflow:hidden;">
+        <div style="height:100%;background:#fb3233;width:{{ loadPct }};transition:width .3s;"></div>
+      </div>
+      <div style="font:11px/1.5 ui-monospace,monospace;color:#57a59b;min-height:18px;">{{ loadNote }}</div>
+    </div>
+  </sc-if>
+
+  <!-- Countdown im HUD: Bangers, farbig, mit Aufploppen je Ziffer -->
+  <sc-if value="{{ cdOn }}" hint-placeholder-val="{{ false }}">
+    <div style="position:absolute;left:50%;top:44%;transform:translate(-50%,-50%);z-index:30;pointer-events:none;text-align:center;">
+      <div style="font:400 {{ cdSize }} 'Bangers','Irish Grover',ui-sans-serif,sans-serif;letter-spacing:.06em;color:{{ cdColor }};-webkit-text-stroke:2.5px rgba(20,16,14,.9);paint-order:stroke fill;text-shadow:0 6px 0 rgba(20,16,14,.5);opacity:{{ cdFade }};transform:rotate({{ cdTilt }});">{{ cdText }}</div>
+    </div>
+  </sc-if>
+
+  <!-- Kamerablitz -->
+  <sc-if value="{{ flashOn }}" hint-placeholder-val="{{ false }}">
+    <div style="position:absolute;inset:0;background:#fde957;pointer-events:none;z-index:35;animation:kfbFlash .42s ease-out forwards;"></div>
+  </sc-if>
+
+  <!-- HUD v4 · Kopfzeile
+       Default sind drei Knoepfe und ein Regler. Alles Weitere liegt hinter dem
+       Burger, dort in lesbarer Groesse statt in Mikroschrift.
+       Oben links sitzt der Race-State. Ein Score-Platz ist reserviert und bleibt
+       LEER, solange es keinen echten Score-Besitzer gibt (Brief v4 §6). -->
+  <div style="position:absolute;top:0;left:0;right:0;display:flex;align-items:flex-start;justify-content:space-between;gap:10px;padding:10px 14px;z-index:24;pointer-events:none;">
+
+    <div style="display:flex;flex-direction:column;gap:2px;flex:0 0 118px;width:118px;">
+      <div style="font:400 26px/1 'Bangers','Irish Grover',ui-monospace,monospace;letter-spacing:.03em;color:#ffffff;text-shadow:0 2px 0 rgba(13,19,28,.6);">{{ lapClock }}</div>
+      <div style="display:flex;align-items:baseline;gap:6px;">
+        <span style="font:600 9px/1 ui-monospace,monospace;color:#D6B33A;letter-spacing:.08em;background:rgba(20,16,14,.78);padding:3px 6px;border-radius:4px;">{{ bestClock }}</span>
+      </div>
+      <div style="font:600 8px/1 ui-monospace,monospace;color:rgba(213,200,178,.45);letter-spacing:.14em;padding-top:2px;">{{ scoreSlot }}</div>
+    </div>
+
+    <div style="display:flex;align-items:center;gap:7px;flex:0 0 auto;pointer-events:auto;padding:5px 8px;border-radius:7px;background:rgba(20,16,14,.6);border:1px solid rgba(87,165,155,.4);">
+      <button onClick="{{ onTogglePanel }}" title="{{ panelTitle }}" style="width:26px;height:26px;padding:0;border:0;border-radius:5px;background:{{ panelBg }};color:{{ panelFg }};cursor:pointer;display:flex;align-items:center;justify-content:center;">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M3 6h18v2.3H3zM3 10.9h18v2.3H3zM3 15.8h18v2.3H3z"></path></svg>
+      </button>
+      <button onClick="{{ onToggleDocs }}" title="Doku und Weiterarbeit" aria-label="Doku und Weiterarbeit" style="width:26px;height:26px;padding:0;border:1px solid rgba(87,165,155,.45);border-radius:5px;background:{{ docsBg }};color:{{ docsFg }};cursor:pointer;display:flex;align-items:center;justify-content:center;">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 4.5A2.5 2.5 0 0 1 7.5 2H19v17H7.5A2.5 2.5 0 0 0 5 21.5z"></path><path d="M5 4.5v17M9 7h6M9 11h6"></path></svg>
+      </button>
+      <button onClick="{{ onRadioPrev }}" title="Previous track" style="width:26px;height:26px;padding:0;border:0;border-radius:5px;background:rgba(22,75,89,.72);color:#d5c8b2;cursor:pointer;display:flex;align-items:center;justify-content:center;">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M7 5h2.4v14H7zM20 5v14L9.8 12z"></path></svg>
+      </button>
+      <button onClick="{{ onRadioPlay }}" title="Play / pause" style="width:26px;height:26px;padding:0;border:0;border-radius:5px;background:rgba(22,75,89,.72);color:#d5c8b2;cursor:pointer;display:flex;align-items:center;justify-content:center;">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="{{ playPath }}"></path></svg>
+      </button>
+      <button onClick="{{ onRadioNext }}" title="Next track" style="width:26px;height:26px;padding:0;border:0;border-radius:5px;background:rgba(22,75,89,.72);color:#d5c8b2;cursor:pointer;display:flex;align-items:center;justify-content:center;">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M14.6 5H17v14h-2.4zM4 5v14l10.2-7z"></path></svg>
+      </button>
+      <input type="range" min="0" max="100" value="{{ volume }}" onInput="{{ onVolume }}" title="Volume" style="width:58px;height:16px;cursor:pointer;opacity:.8;"></input>
+    </div>
+
+    <div style="display:flex;flex-direction:column;align-items:flex-end;gap:2px;flex:0 0 132px;width:132px;">
+      <div style="font:400 24px/1 'Bangers','Irish Grover',ui-sans-serif,system-ui,sans-serif;letter-spacing:.04em;color:#ffffff;text-shadow:0 2px 0 rgba(13,19,28,.6);">LAP {{ lapText }}</div>
+      <div style="font:700 8px/1 ui-monospace,monospace;color:#d5c8b2;letter-spacing:.09em;background:rgba(20,16,14,.78);padding:3px 6px;border-radius:4px;">{{ segmentName }}</div>
+    </div>
+  </div>
+
+  <!-- Burger-Overlay: lesbare Groesse, nicht die bisherige Mikroschrift -->
+  <sc-if value="{{ panelOpen }}" hint-placeholder-val="{{ false }}">
+    <div style="position:absolute;top:52px;left:50%;transform:translateX(-50%);z-index:26;display:flex;flex-direction:column;gap:11px;padding:14px 16px;border-radius:9px;background:rgba(20,16,14,.93);border:1px solid rgba(87,165,155,.45);box-shadow:0 10px 32px rgba(0,0,0,.5);width:min(430px,86vw);">
+      <div style="display:flex;flex-wrap:wrap;gap:6px;">
+        <sc-for list="{{ modeRows }}" as="m" hint-placeholder-count="8">
+          <button onClick="{{ m.onPick }}" style="padding:7px 11px;border:1px solid {{ m.border }};border-radius:5px;background:{{ m.bg }};color:{{ m.fg }};font:700 11px/1 ui-sans-serif,system-ui,sans-serif;letter-spacing:.08em;cursor:pointer;">{{ m.label }}</button>
+        </sc-for>
+      </div>
+      <div style="display:flex;flex-wrap:wrap;gap:6px;align-items:center;">
+        <button onClick="{{ onToggleOrb }}" style="padding:7px 11px;border:1px solid #57a59b;border-radius:5px;background:{{ orbBg }};color:{{ orbFg }};font:700 11px/1 ui-sans-serif,system-ui,sans-serif;letter-spacing:.08em;cursor:pointer;">DRIVE</button>
+        <button onClick="{{ onToggleTrails }}" style="padding:7px 11px;border:1px solid #57a59b;border-radius:5px;background:{{ trailsBg }};color:{{ trailsFg }};font:700 11px/1 ui-sans-serif,system-ui,sans-serif;letter-spacing:.08em;cursor:pointer;">TRAILS</button>
+        <button onClick="{{ onToggleSkin }}" style="padding:7px 11px;border:1px solid #57a59b;border-radius:5px;background:{{ skinBg }};color:{{ skinFg }};font:700 11px/1 ui-sans-serif,system-ui,sans-serif;letter-spacing:.08em;cursor:pointer;">{{ skinLabel }}</button>
+        <button onClick="{{ onToggleDice }}" title="Würfel-Begleiter · Gimmick" style="padding:7px 11px;border:1px solid #57a59b;border-radius:5px;background:{{ diceBg }};color:{{ diceFg }};font:700 11px/1 ui-sans-serif,system-ui,sans-serif;letter-spacing:.08em;cursor:pointer;">DICE</button>
+        <button onClick="{{ onCycleVehicle }}" title="{{ vehicleTitle }}" style="padding:7px 11px;border:1px solid #57a59b;border-radius:5px;background:transparent;color:#d5c8b2;font:700 11px/1 ui-sans-serif,system-ui,sans-serif;letter-spacing:.08em;cursor:pointer;">{{ vehicleShort }}</button>
+        <button onClick="{{ onReset }}" style="padding:7px 11px;border:1px solid #57a59b;border-radius:5px;background:transparent;color:#d5c8b2;font:700 11px/1 ui-sans-serif,system-ui,sans-serif;letter-spacing:.08em;cursor:pointer;">RESTART</button>
+        <button onClick="{{ onToggleEvidence }}" style="padding:7px 11px;border:1px solid #6b4b2a;border-radius:5px;background:transparent;color:#f0b37e;font:700 11px/1 ui-sans-serif,system-ui,sans-serif;letter-spacing:.08em;cursor:pointer;">{{ evidenceLabel }}</button>
+      </div>
+      <!-- Drei Klangschichten einzeln schaltbar und regelbar, damit man sie
+           getrennt hoeren kann. -->
+      <div style="display:flex;flex-direction:column;gap:6px;padding-top:2px;border-top:1px solid rgba(87,165,155,.22);">
+        <div style="display:flex;align-items:center;gap:8px;">
+          <button onClick="{{ onToggleEngine }}" style="width:74px;padding:6px 0;border:1px solid #57a59b;border-radius:5px;background:{{ engineBg }};color:{{ engineFg }};font:700 10px/1 ui-sans-serif,system-ui,sans-serif;letter-spacing:.08em;cursor:pointer;">MOTOR</button>
+          <input type="range" min="0" max="100" value="{{ bedLevel }}" onInput="{{ onBedLevel }}" style="flex:1 1 auto;height:14px;cursor:pointer;"></input>
+        </div>
+        <div style="display:flex;align-items:center;gap:8px;">
+          <button onClick="{{ onRadioPlay }}" style="width:74px;padding:6px 0;border:1px solid #57a59b;border-radius:5px;background:{{ musicBg }};color:{{ musicFg }};font:700 10px/1 ui-sans-serif,system-ui,sans-serif;letter-spacing:.08em;cursor:pointer;">MUSIK</button>
+          <input type="range" min="0" max="100" value="{{ volume }}" onInput="{{ onVolume }}" style="flex:1 1 auto;height:14px;cursor:pointer;"></input>
+        </div>
+        <div style="display:flex;align-items:center;gap:8px;">
+          <span style="width:74px;text-align:center;font:700 10px/1 ui-sans-serif,system-ui,sans-serif;letter-spacing:.08em;color:#d5c8b2;">JINGLE</span>
+          <input type="range" min="0" max="100" value="{{ sfxLevel }}" onInput="{{ onSfxLevel }}" style="flex:1 1 auto;height:14px;cursor:pointer;"></input>
+        </div>
+      </div>
+      <div style="font:600 10px/1.5 ui-monospace,monospace;color:rgba(213,200,178,.6);letter-spacing:.06em;">W GAS · A D STEER · Q E DRIFT · SHIFT BOOST · SPACE JUMP</div>
+    </div>
+  </sc-if>
+
+  <!-- Kompakte, standardmaessig geschlossene Arbeitsdoku. Kein zweites HUD. -->
+  <sc-if value="{{ docsOpen }}" hint-placeholder-val="{{ false }}">
+    <aside style="position:absolute;top:52px;left:50%;transform:translateX(-50%);z-index:27;width:min(520px,88vw);max-height:72vh;overflow:auto;padding:14px 16px;border-radius:9px;background:rgba(20,16,14,.95);border:1px solid rgba(87,165,155,.55);box-shadow:0 10px 32px rgba(0,0,0,.55);color:var(--kfb-ink);">
+      <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:14px;">
+        <div><b style="font:400 20px/1 'Bangers','Irish Grover',sans-serif;letter-spacing:.05em;">OPTION C · STAGE</b><div style="margin-top:4px;font:10px/1.4 ui-monospace,monospace;color:#57a59b;">{{ paletteLabel }} · {{ paletteSeed }}</div></div>
+        <button onClick="{{ onToggleDocs }}" aria-label="Doku schließen" style="border:0;background:transparent;color:#d5c8b2;font-size:20px;line-height:1;cursor:pointer;">×</button>
+      </div>
+      <p style="margin:11px 0 8px;font-size:12px;line-height:1.45;color:#d5c8b2;">Spielbare Review-Bühne. Hauptziel: Kamera, Strecke, Farbwelt und Module einzeln verbessern, ohne die Race-Engine oder den WIP-Export zu duplizieren.</p>
+      <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px;font-size:11px;">
+        <a href="./ONBOARDING.md" target="_blank" rel="noreferrer" style="padding:8px;border:1px solid #57a59b;border-radius:5px;text-decoration:none;">Start für neue Chats ↗</a>
+        <a href="./_handover/RETURN.md" target="_blank" rel="noreferrer" style="padding:8px;border:1px solid #57a59b;border-radius:5px;text-decoration:none;">Stand & Rückgabe ↗</a>
+        <button onClick="{{ onExportColorMap }}" style="padding:8px;border:1px solid #57a59b;border-radius:5px;background:transparent;color:#fdd37b;text-align:left;cursor:pointer;">Farbkarte exportieren</button>
+        <label style="padding:8px;border:1px solid #57a59b;border-radius:5px;color:#fdd37b;cursor:pointer;">Farbkarte importieren<input type="file" accept="application/json,.json" onChange="{{ onImportColorMap }}" style="display:none;"></input></label>
+      </div>
+      <div style="margin-top:10px;padding-top:9px;border-top:1px solid rgba(87,165,155,.25);font:10px/1.55 ui-monospace,monospace;color:#d5c8b2;">MINI-SPRINTS · Kamera/Tunnel · Stützen-Crop · Farbkarte · Vehicle/Deformer · Wetter/Audio · NPC-Donut-Drive</div>
+    </aside>
+  </sc-if>
+
+  <!-- Almanach: 92 px Kartenbreite, 420 ms, 45 ms Versatz je Karte (v4 §5) -->
+  <div style="position:absolute;top:46px;right:16px;display:flex;flex-direction:column;gap:4px;z-index:22;pointer-events:none;width:92px;">
+    <sc-for list="{{ almanac }}" as="card" hint-placeholder-count="0">
+      <div style="position:relative;width:92px;aspect-ratio:16/10;border-radius:4px;overflow:hidden;background:#16212b;border:1px solid rgba(214,179,58,.75);box-shadow:0 4px 13px rgba(0,0,0,.5);transform:translateY({{ card.shift }}) rotate({{ card.tilt }});opacity:{{ card.fade }};transition:transform 420ms cubic-bezier(.22,.78,.22,1) {{ card.delay }},opacity 420ms cubic-bezier(.22,.78,.22,1) {{ card.delay }};">
+        <img ref="{{ card.imgRef }}" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;">
+        <div style="position:absolute;left:0;right:0;bottom:0;padding:2px 5px;background:linear-gradient(180deg,rgba(20,16,14,0) 0%,rgba(20,16,14,.92) 62%);">
+          <div style="font:700 7px/1.2 ui-sans-serif,system-ui,sans-serif;letter-spacing:.06em;color:#D6B33A;">{{ card.title }}</div>
+        </div>
+      </div>
+    </sc-for>
+  </div>
+
+  <!-- Tacho v4: 132 x 90, Zahl in Bangers, kein KM/H, eine fortlaufende Farbe -->
+  <div style="position:absolute;left:16px;bottom:16px;width:132px;height:90px;pointer-events:none;z-index:20;">
+    <svg viewBox="0 0 132 90" style="width:100%;height:100%;overflow:visible;">
+      <!-- Anthrazit-Grund. Die v3-Fassung hatte ihn, der v4-Umbau hat ihn verloren:
+           gemessen stand die Zahl danach bei 1,89:1 im kuehlen und 1,00:1 im roten
+           Bereich gegen die teale Fahrbahn — bei Hoechsttempo also unlesbar.
+           Brief v4 §8 verlangt genau diesen Grund ("charcoal / dark transparent base"). -->
+      <rect x="0" y="12" width="132" height="78" rx="13" fill="rgba(20,16,14,.82)"></rect>
+      <path d="M 14 78 A 52 52 0 1 1 118 78" fill="none" stroke="rgba(20,16,14,.62)" stroke-width="11" stroke-linecap="round"></path>
+      <path d="M 14 78 A 52 52 0 1 1 118 78" fill="none" stroke="rgba(87,165,155,.22)" stroke-width="9" stroke-linecap="round"></path>
+      <path d="M 14 78 A 52 52 0 1 1 118 78" fill="none" stroke="{{ speedColor }}" stroke-width="9" stroke-linecap="round" stroke-dasharray="{{ arcLen }}" stroke-dashoffset="{{ arcOffset }}" style="filter:drop-shadow(0 0 {{ arcGlow }} {{ speedColor }});"></path>
+    </svg>
+    <div style="position:absolute;left:0;right:0;top:28px;text-align:center;">
+      <!-- Heller Konturstrich: auch mit Anthrazit-Grund bleibt das Rot der heissen
+           Zone knapp unter 3:1. Die Kontur traegt die Lesbarkeit, ohne die
+           Farbsemantik der Rampe anzutasten — und passt zur Comic-Sprache von Bangers. -->
+      <div style="font:400 38px/1 'Bangers','Irish Grover',ui-monospace,monospace;letter-spacing:.06em;color:{{ speedColor }};-webkit-text-stroke:1.1px rgba(255,248,238,.92);paint-order:stroke fill;text-shadow:0 2px 0 rgba(20,16,14,.9);font-variant-numeric:tabular-nums;">{{ kmh }}</div>
+    </div>
+  </div>
+
+  <!-- Grip kuehl und ruhig, Boost als warmer Puls darueber (v4 §3) -->
+  <div style="position:absolute;left:152px;bottom:20px;display:flex;flex-direction:column;gap:4px;pointer-events:none;z-index:20;padding:6px 7px;border-radius:6px;background:rgba(20,16,14,.55);">
+    <div style="width:54px;height:3px;border-radius:2px;background:rgba(20,16,14,.65);overflow:hidden;">
+      <div style="height:100%;background:#39BFC4;width:{{ gripPct }};opacity:.85;"></div>
+    </div>
+    <div style="width:54px;height:3px;border-radius:2px;background:rgba(20,16,14,.65);overflow:hidden;">
+      <div style="height:100%;background:#EF7A36;width:{{ boostPct }};opacity:{{ boostGlow }};"></div>
+    </div>
+    <span style="font:700 7px/1 ui-monospace,monospace;letter-spacing:.13em;color:{{ surfaceColor }};background:rgba(20,16,14,.78);padding:3px 5px;border-radius:3px;">{{ surfaceText }}</span>
+  </div>
+
+  <!-- Minikarte: 100 px, bei Hover weich auf 132 px (v4 §4) -->
+  <div ref="{{ mapWrapRef }}" style="position:absolute;right:16px;bottom:16px;width:{{ mapSize }};height:{{ mapSize }};z-index:21;pointer-events:auto;transition:width {{ mapEase }},height {{ mapEase }};" onMouseEnter="{{ onMapEnter }}" onMouseLeave="{{ onMapLeave }}">
+    <canvas ref="{{ mapRef }}" width="320" height="320" style="width:100%;height:100%;filter:drop-shadow(0 3px 9px rgba(0,0,0,.45));"></canvas>
+  </div>
+
+  <!-- Spenderbeleg -->
+  <sc-if value="{{ showEvidence }}" hint-placeholder-val="{{ false }}">
+    <div style="position:absolute;top:150px;left:50%;transform:translateX(-50%);width:min(430px,60vw);max-height:62vh;overflow:auto;padding:15px 17px;border-radius:7px;background:rgba(13,19,28,.94);border:1px solid #6b4b2a;z-index:30;font:11px/1.6 ui-monospace,SFMono-Regular,monospace;color:#d5c8b2;">
+      <div style="font:700 12px/1.3 ui-sans-serif,system-ui,sans-serif;letter-spacing:.12em;color:#f0b37e;padding-bottom:9px;">SPENDER · GEMESSEN</div>
+      <sc-for list="{{ evidenceRows }}" as="row" hint-placeholder-count="8">
+        <div style="display:grid;grid-template-columns:104px minmax(0,1fr);gap:9px;padding:3px 0;border-bottom:1px solid rgba(87,165,155,.14);">
+          <span style="color:#57a59b;overflow-wrap:anywhere;">{{ row.k }}</span>
+          <span style="overflow-wrap:anywhere;color:{{ row.color }};">{{ row.v }}</span>
+        </div>
+      </sc-for>
+      <div style="padding-top:11px;color:#57a59b;">Map data © OpenStreetMap contributors · ODbL 1.0</div>
+    </div>
+  </sc-if>
+
+  <template id="__bundler_thumbnail">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120">
+      <rect width="120" height="120" fill="#164b59"></rect>
+      <path d="M0 78 Q60 44 120 78 L120 120 L0 120 Z" fill="#279797"></path>
+      <path d="M0 86 Q60 52 120 86" stroke="#fdd37b" stroke-width="3" fill="none"></path>
+      <circle cx="92" cy="30" r="13" fill="#fed95a"></circle>
+      <path d="M40 76 L40 40 L46 24 L52 40 L52 76 Z" fill="#d5c8b2"></path>
+      <path d="M58 76 L58 40 L64 24 L70 40 L70 76 Z" fill="#d5c8b2"></path>
+      <circle cx="60" cy="96" r="7" fill="#fb3233"></circle>
+    </svg>
+  </template>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1280,&quot;height&quot;:720},&quot;startCamera&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;CHASE&quot;,&quot;CLOSE ORBIT&quot;,&quot;HIGH OBLIQUE&quot;,&quot;TRACK SURFACE&quot;,&quot;LANDMARK HERO&quot;],&quot;default&quot;:&quot;CHASE&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Review&quot;},&quot;orbColor&quot;:{&quot;editor&quot;:&quot;color&quot;,&quot;options&quot;:[&quot;#fb3233&quot;,&quot;#fde957&quot;,&quot;#279797&quot;,&quot;#b86384&quot;],&quot;default&quot;:&quot;#fb3233&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Option C&quot;}}">
+class Component extends DCLogic {
+  state = {
+    loading: true, loadPct: '4%', loadNote: 'Bühne wird geladen…',
+    tick: { speedKmh: 0, speedNorm: 0, lap: 1, lapTime: 0, bestLap: null, progress: 0,
+            boosting: false, drift: 0, offTrack: false, surface: 'SURFACE_BOUND', segment: '', fps: 0 },
+    mode: 'CHASE', modes: ['CHASE'], shots: [], showEvidence: false, showHelp: true,
+    orbOn: true, trailsOn: true, vehicleId: 'car_hatchback',
+    evidence: null, card: null, volume: 55, playing: false, radioIndex: 0, flashOn: false,
+    panelOpen: false, docsOpen: false, headOpen: true, driveSkin: 'donut', diceOn: false, engineOn: false, bedLevel: 50, sfxLevel: 55, mapHover: false, colorMap: null
+  };
+
+  RADIO = [
+    'Night Circuit Runner.mp3',
+    'Final Lap Lift A.mp3',
+    'Checkpoint Rush A.mp3'
+  ];
+
+  componentDidMount() {
+    this._start = performance.now() / 1000;
+    const go = () => this.bootStage();
+    if (window.__KFB_COLOGNE) go();
+    else window.addEventListener('kfbCologneReady', go, { once: true });
+    this._helpTimer = setTimeout(() => this.setState({ showHelp: false }), 7000);
+  }
+
+  componentWillUnmount() {
+    clearTimeout(this._helpTimer);
+    if (this._stage) this._stage.dispose();
+    if (this._audio) { this._audio.pause(); this._audio = null; }
+  }
+
+  async bootStage() {
+    if (!this._canvas || this._booting) return;
+    if (!window.__KFB_COLOGNE) {
+      if (!this._waiting) {
+        this._waiting = true;
+        window.addEventListener('kfbCologneReady', () => { this._waiting = false; this.bootStage(); }, { once: true });
+      }
+      return;
+    }
+    this._booting = true;
+    const steps = ['Strecke', 'OSM-Kontext', 'Rhein', 'Dom', 'Fahrzeug', 'Kameras', 'Tafel', 'Stadt', 'Karte'];
+    let done = 0;
+    try {
+      const stage = await window.__KFB_COLOGNE.boot(this._canvas, (msg) => {
+        if (msg.type === 'tick') {
+          this._latest = msg;
+          if (!this._raf) this._raf = requestAnimationFrame(() => { this._raf = 0; this.pump(); });
+        } else if (msg.type === 'log') {
+          done = Math.min(steps.length, done + 1);
+          this.setState({ loadPct: Math.round(8 + 88 * done / steps.length) + '%', loadNote: msg.k + ' · ' + msg.v });
+        } else if (msg.type === 'shot') {
+          this.setState({ shots: msg.shots, flashOn: true });
+          clearTimeout(this._flashT);
+          this._flashT = setTimeout(() => this.setState({ flashOn: false }), 440);
+        } else if (msg.type === 'card') {
+          this.setState({ card: msg.card, evidence: this._stage ? this._stage.evidence() : null });
+        }
+      });
+      this._stage = stage;
+      stage.setMode(this.props.startCamera || 'CHASE');
+      if (this.props.orbColor) stage.setOrbColor(this.props.orbColor);
+      this.setState({
+        loading: false, modes: stage.modes, mode: stage.getMode(),
+        evidence: stage.evidence(), colorMap: stage.colorMap ? stage.colorMap() : null
+      });
+      this.drawMap();
+    } catch (e) {
+      this.setState({ loadNote: 'FEHLER · ' + e.message, loadPct: '100%' });
+      console.error('[cologne-option-c]', e);
+    }
+  }
+
+  pump() {
+    this.setState({ tick: this._latest });
+    this.drawMap();
+  }
+
+  drawMap() {
+    const cv = this._map, st = this._stage;
+    if (!cv || !st) return;
+    const ctx = cv.getContext('2d');
+    const pts = st.routePoints;
+    let mnx = 1e9, mxx = -1e9, mnz = 1e9, mxz = -1e9;
+    for (const p of pts) { mnx = Math.min(mnx, p.x); mxx = Math.max(mxx, p.x); mnz = Math.min(mnz, p.z); mxz = Math.max(mxz, p.z); }
+    const pad = 30, W = cv.width, H = cv.height;
+    const sc = Math.min((W - pad * 2) / (mxx - mnx), (H - pad * 2) / (mxz - mnz));
+    const px = x => pad + (x - mnx) * sc + ((W - pad * 2) - (mxx - mnx) * sc) / 2;
+    const pz = z => H - (pad + (z - mnz) * sc + ((H - pad * 2) - (mxz - mnz) * sc) / 2);
+
+    ctx.clearRect(0, 0, W, H);
+    ctx.fillStyle = 'rgba(13,19,28,0.62)';
+    ctx.beginPath(); ctx.roundRect(0, 0, W, H, 14); ctx.fill();
+    ctx.strokeStyle = '#164b59'; ctx.lineWidth = 5; ctx.stroke();
+
+    // Dom als Ortsmarke
+    const dx = px(-301.298), dz = pz(-75.744);
+    ctx.fillStyle = '#fdd37b';
+    ctx.beginPath(); ctx.moveTo(dx, dz - 13); ctx.lineTo(dx + 8, dz + 7); ctx.lineTo(dx - 8, dz + 7); ctx.closePath(); ctx.fill();
+
+    // Strecke: Boden hell, Bauwerk kräftig, Tunnel gestrichelt
+    const draw = (filter, color, width, dash) => {
+      ctx.strokeStyle = color; ctx.lineWidth = width; ctx.lineCap = 'round';
+      ctx.setLineDash(dash || []);
+      ctx.beginPath();
+      let pen = false;
+      for (let i = 0; i <= pts.length; i++) {
+        const p = pts[i % pts.length];
+        if (filter(p)) { if (!pen) { ctx.moveTo(px(p.x), pz(p.z)); pen = true; } else ctx.lineTo(px(p.x), pz(p.z)); }
+        else pen = false;
+      }
+      ctx.stroke(); ctx.setLineDash([]);
+    };
+    draw(() => true, '#164b59', 15);
+    draw(p => p.kind === 'SURFACE_BOUND', '#279797', 9);
+    draw(p => p.kind === 'STRUCTURE', '#d8956b', 9);
+    draw(p => p.kind === 'TUNNEL', '#fde957', 9, [13, 9]);
+
+    // Fahrzeug
+    const t = this.state.tick;
+    const i = Math.floor((t.progress || 0) * pts.length) % pts.length;
+    const cp = pts[i];
+    ctx.fillStyle = '#fb3233';
+    ctx.beginPath(); ctx.arc(px(cp.x), pz(cp.z), 9, 0, Math.PI * 2); ctx.fill();
+    ctx.strokeStyle = '#ffffff'; ctx.lineWidth = 3; ctx.stroke();
+  }
+
+  // HUD v4 §3 — eine fortlaufende Rampe, vier Stuetzstellen aus dem Brief.
+  speedColor(n) {
+    const parse = (hex, fallback) => {
+      const m = /^#?([0-9a-f]{6})$/i.exec(hex || '');
+      const v = m ? parseInt(m[1], 16) : fallback;
+      return [(v >> 16) & 255, (v >> 8) & 255, v & 255];
+    };
+    const ui = (this.state.colorMap && this.state.colorMap.ui) || {};
+    const cool = parse(ui.cool, 0x39bfc4), warm = parse(ui.warm, 0xd6b33a), hot = parse(ui.hot, 0xe33f24);
+    const stops = [[0.0, ...cool], [0.55, ...warm], [0.78, 0xEF, 0x7A, 0x36], [1.0, ...hot]];
+    const x = Math.max(0, Math.min(1, n));
+    let a = stops[0], b = stops[stops.length - 1];
+    for (let i = 0; i < stops.length - 1; i++) {
+      if (x >= stops[i][0] && x <= stops[i + 1][0]) { a = stops[i]; b = stops[i + 1]; break; }
+    }
+    const span = Math.max(1e-6, b[0] - a[0]);
+    const k = (x - a[0]) / span;
+    const c = [1, 2, 3].map(i => Math.round(a[i] + (b[i] - a[i]) * k));
+    return '#' + c.map(v => v.toString(16).padStart(2, '0')).join('');
+  }
+
+  clock(sec) {
+    if (sec == null) return '—:——.———';
+    const m = Math.floor(sec / 60), s = sec - m * 60;
+    return m + ':' + (s < 10 ? '0' : '') + s.toFixed(3);
+  }
+
+  radio(delta, toggle) {
+    const idx = (this.state.radioIndex + (delta || 0) + this.RADIO.length) % this.RADIO.length;
+    const PIN = '2ff8b350beefe02912bbff6eeeead3882e583d08';
+    const url = 'https://raw.githubusercontent.com/georg-doc/kayfabizarro/' + PIN + '/' +
+      ('media/3D_Assets/Sounds/KFB RoadTrip JukeBox v2/' + this.RADIO[idx]).split('/').map(encodeURIComponent).join('/');
+    if (!this._audio) { this._audio = new Audio(); this._audio.loop = true; }
+    const a = this._audio;
+    a.volume = this.state.volume / 100;
+    if (toggle && this.state.playing && delta === 0) { a.pause(); this.setState({ playing: false }); return; }
+    if (a.dataset_url !== url) { a.src = url; a.dataset_url = url; }
+    a.play().then(() => this.setState({ playing: true, radioIndex: idx }))
+      .catch(() => this.setState({ playing: false, radioIndex: idx }));
+  }
+
+  renderVals() {
+    const t = this.state.tick;
+    const ev = this.state.evidence;
+    const colorMap = this.state.colorMap || { seed: 'loading', paletteLabel: 'Palette lädt', ui: {} };
+    const norm = Math.min(1, t.speedNorm || 0);
+
+    // Der Beleg darf die Oberflaeche nicht mitreissen. Gemessener Befund: als
+    // buildCheckpoints in den Fehlerzweig ging, fehlte `gates`, `.map()` warf, und
+    // damit warf renderVals — ALLE Loecher blieben unaufgeloest, der Kopf war leer
+    // und nur die statischen Spans standen noch da. Ein Beleg ist eine Beilage,
+    // kein Traeger.
+    const evidenceRows = [];
+    try {
+    if (ev) {
+      const add = (k, v, color) => evidenceRows.push({ k, v: String(v), color: color || '#d5c8b2' });
+      add('pin', ev.pin.slice(0, 12) + '…', '#f0b37e');
+      add('route', ev.route.points + ' Punkte · ' + ev.route.lengthM + ' m · ' + ev.route.baseWidthM + ' m breit');
+      add('filament', '#02 nur Maßstab · keine Geometrie', '#fde957');
+      add('osm', ev.osm.dataset + ' · ' + ev.osm.osmBaseTimestamp);
+      add('osm sha256', ev.osm.rawSha256.slice(0, 24) + '…');
+      add('osm counts', ev.osm.counts.buildings + ' Gebäude · ' + ev.osm.counts.driveableRoads + ' Straßen');
+      if (ev.city) add('OMS gebaut', ev.city.built + ' von ' + ev.city.inCorridor + ' im ' + ev.city.corridorM + '-m-Korridor · ' + ev.city.triangles.toLocaleString('de-DE') + ' Dreiecke', '#57a59b');
+      if (ev.city) add('Durchfahrten', ev.city.portals + ' Gebäude überspannen die Strecke · ' + ev.city.clearanceM + ' m Lichte', '#fde957');
+      add('Dom', 'way/4532022 · 157,38 m · Faktor ' + ev.dom.scale);
+      add('Dom Spender', 'koelner-dom v0.2');
+      if (ev.geniusLoci) {
+        add('Genius Loci', ev.geniusLoci.count + ' · ' + ev.geniusLoci.built.map(b => b.name || b.id).join(', '), '#57a59b');
+        add('Loci-Bauweise', ev.geniusLoci.sourceStrategy, '#f0b37e');
+        add('Loci-Befund', ev.geniusLoci.finding, '#f0b37e');
+      }
+      add('Fahrzeug', ev.vehicle.sizeM.x + ' × ' + ev.vehicle.sizeM.y + ' × ' + ev.vehicle.sizeM.z + ' m · Faktor ' + ev.vehicle.scale, '#57a59b');
+      add('Radstand', ev.vehicle.wheelbaseM + ' m · Spur ' + ev.vehicle.trackM + ' m · r ' + ev.vehicle.wheelRadiusM + ' m');
+      if (ev.rhine) add('Rhein', ev.rhine.osm + ' · ' + ev.rhine.points + ' Punkte');
+      if (ev.billboard) add('Billboard', 'billboard.glb · ' + ev.billboard.measuredM.x + ' × ' + ev.billboard.measuredM.y + ' m');
+      add('CCTV', ev.cctv.map(c => c.criterion).join(' · '));
+      if (ev.startGate && ev.startGate.roadStart) add('Start/Ziel', 'roadStart.glb · ' + ev.startGate.roadStart.spanM + ' m Spannweite · Faktor ' + ev.startGate.roadStart.scale, '#57a59b');
+      if (ev.gates) add('Tore', ev.gates.placed + ' Stück · alle ' + ev.gates.spacingM + ' m' +
+        (ev.gates.gates && ev.gates.gates.length ? ' · Lichte ' + ev.gates.gates.map(g => g.clearanceM).join(' / ') + ' m' : ''), '#fde957');
+      if (ev.gates) add('Torquelle', String(ev.gates.source), '#57a59b');
+      if (ev.countdown) add('Countdown', 'Numbers_1..3 · platformer-game-kit-dec-2021 · ERSATZ: das Racing Kit führt keine Ziffern · ' + ev.countdown.heightM + ' m hoch', '#f0b37e');
+      if (ev.sky) add('Himmel', ev.sky.placed + ' von ' + ev.sky.requested + ' Körpern · ' + (ev.sky.names || []).join(', ') +
+        (ev.sky.retries ? ' · ' + ev.sky.retries + (ev.sky.retries === 1 ? ' Sonnenfenster-Ausweichung' : ' Sonnenfenster-Ausweichungen') : ''), ev.sky.placed === ev.sky.requested ? '#57a59b' : '#f0b37e');
+      if (ev.audio) {
+        add('Klangschichten', ev.audio.layers.join(' · '), '#57a59b');
+        add('Motorenlauf', ev.audio.bed.label + ' · ' + ev.audio.bed.bytes + ' B · Pool ' + ev.audio.poolSize + ' Dateien', '#57a59b');
+        add('Audio-Pin', ev.audio.pin.slice(0, 12) + '… — eigener Pin, der Ordner kam NACH dem Slice-Basis-Pin dazu', '#f0b37e');
+      }
+      if (ev.drive && ev.drive.dice) add('Antriebs-Skins', 'Donut · Würfel (' + ev.drive.dice.edgeM + ' m Kante) · Kugel — gleiches Verhalten', '#57a59b');
+      if (ev.dice) add('Würfel-Begleiter', 'Ugur · Modell ' + ev.dice.modelU.join(' × ') + ' u · Faktor ' + ev.dice.scale + ' · leuchtende Augen ' + (ev.dice.pipMaterial ? 'ja' : 'nein'), '#57a59b');
+      if (ev.skyDice) add('Himmelswürfel', ev.skyDice.placed ? ev.skyDice.placed + ' · Maßstab ' + ev.skyDice.scale : String(ev.skyDice.reason), ev.skyDice.placed ? '#57a59b' : '#f0b37e');
+      add('Skydome', 'TinySkies/Travel skydome-shader.js · Variante S · Palette aus den Tafeln', '#57a59b');
+      if (this.state.card) add('Karte', this.state.card.title + ' · Nr ' + this.state.card.cardNumber + ' · S' + this.state.card.page + 'Q' + this.state.card.quadrant, '#fde957');
+      else add('Karte', 'PDF-Pipeline lädt…', '#f0b37e');
+      add('Bewegung', 'Race v0.8 Spiegel · ein Controller', '#57a59b');
+      add('FPS', (t.fps || 0).toFixed(0));
+    }
+    } catch (e) {
+      evidenceRows.push({ k: 'BELEG-FEHLER', v: String(e && e.message), color: '#fb3233' });
+      console.warn('[cologne] evidence row failed:', e);
+    }
+
+    const SHORT = {
+      'CHASE': 'CHASE', 'CLOSE ORBIT': 'ORBIT', 'HIGH OBLIQUE': 'HIGH',
+      'TRACK SURFACE': 'SURF', 'LANDMARK HERO': 'DOM',
+      'CCTV1': 'C1', 'CCTV2': 'C2', 'CCTV3': 'C3'
+    };
+    const modeRows = (this.state.modes || []).map(m => ({
+      label: m, key: m, short: SHORT[m] || m,
+      onPick: () => { this._stage && this._stage.setMode(m); this.setState({ mode: m }); },
+      bg: m === this.state.mode ? '#88243c' : 'rgba(13,19,28,.66)',
+      fg: m === this.state.mode ? '#ffffff' : '#d5c8b2',
+      border: m === this.state.mode ? '#88243c' : '#57a59b'
+    }));
+
+    // Nur Aufnahmen mit echtem Bild. Ein Loch in src wird sonst als URL geladen
+    // und schlaegt mit 404 fehl, bevor irgendein Wert da ist.
+    // Zwei Karten. Gemessen: bei drei reicht die Spalte von y 150 bis 420 und
+    // schneidet die Minikarte, die bei y 340 beginnt.
+    const almanac = (this.state.shots || []).filter(s => !!s.thumb).slice(0, 2).map((s, i) => ({
+      // Das Bild wird ueber eine Referenz gesetzt, nicht ueber ein Loch in src.
+      // Zwei Messungen dahinter: ein ungeloestes Loch in src wird als URL angefragt
+      // (404 beim Laden), und ein langes data:-URL in background-image kommt im
+      // Stil-Uebersetzer verstuemmelt an (22 Zeichen statt 60 kB). Eine Referenz
+      // umgeht beides.
+      imgRef: (el) => { if (el && el.src !== s.thumb) el.src = s.thumb; },
+      title: s.criterion + ' · ' + s.speedMs + ' M/S',
+      shift: (i * 4) + 'px',
+      tilt: (i % 2 ? 1.3 : -1.3) + 'deg',
+      delay: (i * 45) + 'ms',
+      fade: String(1 - i * 0.16)
+    }));
+
+    return {
+      canvasRef: (el) => { this._canvas = el; if (el) this.bootStage(); },
+      mapRef: (el) => { this._map = el; if (el) this.drawMap(); },
+      loading: this.state.loading, loadPct: this.state.loadPct, loadNote: this.state.loadNote,
+      flashOn: this.state.flashOn, showHelp: this.state.showHelp,
+
+      lapClock: this.clock(t.lapTime), bestClock: this.clock(t.bestLap),
+      lapText: String(t.lap || 1), segmentName: t.segment || '',
+      kmh: String(Math.round(t.speedKmh || 0)),
+      boostPct: (t.boosting ? 100 : Math.round(norm * 55)) + '%',
+      // v4 §3: EINE fortlaufende Funktion fuer Zahl und Bogen, keine Stufen.
+      // Stopps aus dem Brief: 0,00 #39BFC4 · 0,55 #D6B33A · 0,78 #EF7A36 · 1,00 #E33F24
+      speedColor: this.speedColor(norm),
+      // Der Bogen ist ein Halbkreis mit r=52, also pi*52 = 163,4 Einheiten lang.
+      // Mit dem vorherigen Schaetzwert 204 fuellte die Anzeige bei halbem Tempo 62 %.
+      arcLen: '163.4',
+      arcOffset: (163.4 - 163.4 * norm).toFixed(1),
+      arcGlow: (2 + norm * 7 + (t.boosting ? 5 : 0)).toFixed(1) + 'px',
+      // Grip bleibt kuehl und ruhig, Boost legt einen warmen Puls darueber
+      gripPct: Math.round(Math.max(0, 1 - (t.drift || 0)) * 100) + '%',
+      boostGlow: String(t.boosting ? (0.65 + 0.35 * Math.abs(Math.sin(Date.now() / 210))) : 0.28),
+      // Countdown im HUD. Jede Ziffer ploppt auf und laeuft aus; GO! kommt in
+      // der heissen Farbe der Tempo-Rampe, die Zahlen davor in der kuehlen.
+      cdOn: (t.countdown || 0) > 0,
+      cdText: (t.countdown || 0) > 0.55 ? String(Math.ceil(t.countdown)) : 'GO!',
+      cdSize: ((t.countdown || 0) > 0.55 ? 108 : 78) + 'px',
+      cdColor: (t.countdown || 0) > 0.55 ? this.speedColor(1 - (Math.ceil(t.countdown) - 1) / 3) : (colorMap.ui.hot || '#E33F24'),
+      cdFade: String(Math.min(1, ((t.countdown || 0) % 1) * 3.2)),
+      cdTilt: (((Math.ceil(t.countdown || 0) % 2) ? -4 : 4) * (1 - ((t.countdown || 0) % 1))).toFixed(1) + 'deg',
+      scoreSlot: '',
+      mapSize: (this.state.mapHover ? 132 : 100) + 'px',
+      mapEase: this.state.mapHover ? '260ms cubic-bezier(.22,.78,.22,1)' : '320ms cubic-bezier(.22,.78,.22,1)',
+      mapWrapRef: (el) => { this._mapWrap = el; },
+      onMapEnter: () => this.setState({ mapHover: true }),
+      onMapLeave: () => this.setState({ mapHover: false }),
+      panelTitle: this.state.panelOpen ? 'Steuerung schließen' : 'Steuerung öffnen',
+
+      surfaceText: t.atWall ? 'WALL' : (t.surface || 'SURFACE_BOUND'),
+      surfaceColor: t.atWall ? '#fb3233' : (t.surface === 'TUNNEL' ? '#fde957' : t.surface === 'STRUCTURE' ? '#d8956b' : '#57a59b'),
+
+      modeRows, almanac,
+
+      // Aktivfarben abgedunkelt. Gemessen an den berechneten Stilen: Weiss auf
+      // #279797 ergab 3,52:1 und auf #fb3233 3,75:1 — bei 11 px und Fettschnitt
+      // gilt aber 4,5:1, nicht die Ueberschriften-Ausnahme von 3:1.
+      // #1c7685 (Tafel 01, 3,31 %) und #88243c (Tafel 02, 4,43 %) sind gemessene
+      // Toene und liefern 5,6:1 bzw. 8,4:1 gegen Weiss.
+      orbBg: this.state.orbOn ? '#1c7685' : 'transparent',
+      orbFg: this.state.orbOn ? '#ffffff' : '#d5c8b2',
+      trailsBg: this.state.trailsOn ? '#1c7685' : 'transparent',
+      trailsFg: this.state.trailsOn ? '#ffffff' : '#d5c8b2',
+      onToggleOrb: () => { const v = !this.state.orbOn; this._stage && this._stage.setOrb(v); this.setState({ orbOn: v }); },
+      onToggleTrails: () => { const v = !this.state.trailsOn; this._stage && this._stage.setTrails(v); this.setState({ trailsOn: v }); },
+      onReset: () => this._stage && this._stage.reset(),
+      vehicleShort: ({ car_hatchback: 'HTB', car_sedan: 'SDN', car_stationwagon: 'WGN' })[this.state.vehicleId] || 'HTB',
+      vehicleTitle: 'Fahrzeug wechseln · ' + (({ car_hatchback: 'Hatchback', car_sedan: 'Sedan', car_stationwagon: 'Station Wagon' })[this.state.vehicleId] || ''),
+      onCycleVehicle: () => {
+        const ids = ['car_hatchback', 'car_sedan', 'car_stationwagon'];
+        const id = ids[(ids.indexOf(this.state.vehicleId) + 1) % ids.length];
+        this.setState({ vehicleId: id });
+        this._stage && this._stage.setVehicle(id).then(() => this.setState({ evidence: this._stage.evidence() }));
+      },
+      vehicleId: this.state.vehicleId,
+      vehicleRows: [
+        { id: 'car_hatchback', label: 'Hatchback' },
+        { id: 'car_sedan', label: 'Sedan' },
+        { id: 'car_stationwagon', label: 'Station Wagon' }
+      ],
+      onVehicle: (e) => {
+        const id = e.target.value;
+        this.setState({ vehicleId: id });
+        this._stage && this._stage.setVehicle(id).then(() => this.setState({ evidence: this._stage.evidence() }));
+      },
+
+      // Drei Antriebs-Skins mit identischem Verhalten: Donut, Würfel, Kugel
+      skinLabel: ({ donut: 'DONUT', dice: 'WÜRFEL', orb: 'ORB' })[this.state.driveSkin] || 'DONUT',
+      skinBg: ({ donut: '#8f4a66', dice: '#D6B33A', orb: '#1c7685' })[this.state.driveSkin] || '#8f4a66',
+      skinFg: this.state.driveSkin === 'dice' ? '#20140e' : '#ffffff',
+      onToggleSkin: () => {
+        const order = ['donut', 'dice', 'orb'];
+        const v = order[(order.indexOf(this.state.driveSkin) + 1) % order.length];
+        this._stage && this._stage.setDriveSkin(v);
+        this.setState({ driveSkin: v });
+      },
+      bedLevel: this.state.bedLevel,
+      sfxLevel: this.state.sfxLevel,
+      onBedLevel: (e) => { const v = Number(e.target.value); this._stage && this._stage.setEngineLevel(v / 100); this.setState({ bedLevel: v }); },
+      onSfxLevel: (e) => { const v = Number(e.target.value); this._stage && this._stage.setJingleLevel(v / 100); this.setState({ sfxLevel: v }); },
+      musicBg: this.state.playing ? '#1c7685' : 'transparent',
+      musicFg: this.state.playing ? '#ffffff' : '#d5c8b2',
+      // Der Wuerfel-Begleiter. Beim Austausch gegen MOTOR waren diese drei Werte
+      // aus renderVals verschwunden; den Knopf zurueckzusetzen genuegte nicht —
+      // ohne sie bleiben die Loecher unaufgeloest, der Knopf traegt Browser-Chrom
+      // und tut nichts.
+      diceBg: this.state.diceOn ? '#1c7685' : 'transparent',
+      diceFg: this.state.diceOn ? '#ffffff' : '#d5c8b2',
+      onToggleDice: () => {
+        const v = !this.state.diceOn;
+        this._stage && this._stage.setDice(v);
+        this.setState({ diceOn: v });
+      },
+      engineLabel: this.state.engineOn ? 'MOTOR AN' : 'MOTOR',
+      engineBg: this.state.engineOn ? '#a73639' : 'transparent',
+      engineFg: this.state.engineOn ? '#ffffff' : '#d5c8b2',
+      onToggleEngine: () => {
+        if (!this._stage) return;
+        if (this.state.engineOn) { this._stage.setEngineMuted(true); this.setState({ engineOn: false }); return; }
+        this._stage.setEngineMuted(false);
+        this._stage.startEngine().then(ok => this.setState({ engineOn: !!ok }));
+      },
+      headOpen: this.state.headOpen,
+      headClosed: !this.state.headOpen,
+      headCaret: this.state.headOpen ? 'M7 14.5l5-5 5 5z' : 'M7 9.5l5 5 5-5z',
+      headTitle: this.state.headOpen ? 'Kopf einklappen' : 'Kopf ausklappen',
+      onToggleHead: () => this.setState({ headOpen: !this.state.headOpen }),
+      mode: this.state.mode,
+      modeTint: this.state.mode === 'CHASE' ? 'rgba(87,165,155,.7)' : '#fdd37b',
+      panelOpen: this.state.panelOpen,
+      panelBg: this.state.panelOpen ? '#279797' : 'rgba(13,19,28,.6)',
+      panelFg: this.state.panelOpen ? '#ffffff' : '#57a59b',
+      onTogglePanel: () => this.setState({ panelOpen: !this.state.panelOpen, docsOpen: false }),
+      docsOpen: this.state.docsOpen,
+      docsBg: this.state.docsOpen ? '#88243c' : 'rgba(13,19,28,.6)',
+      docsFg: this.state.docsOpen ? '#ffffff' : '#fdd37b',
+      paletteLabel: colorMap.paletteLabel || colorMap.paletteId || 'Palette',
+      paletteSeed: 'SEED ' + colorMap.seed,
+      onToggleDocs: () => this.setState({ docsOpen: !this.state.docsOpen, panelOpen: false }),
+      onExportColorMap: () => {
+        const blob = new Blob([JSON.stringify(colorMap, null, 2)], { type: 'application/json' });
+        const a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = 'kfb-cologne-color-map-' + colorMap.seed + '.json'; a.click();
+        setTimeout(() => URL.revokeObjectURL(a.href), 500);
+      },
+      onImportColorMap: (e) => {
+        const file = e.target.files && e.target.files[0]; if (!file) return;
+        file.text().then(text => { const parsed = JSON.parse(text); if (parsed.schema !== 'kfb.track-zone-color-map.v1') throw new Error('Falsches Farbkarten-Schema'); localStorage.setItem('kfb-cologne-color-map', JSON.stringify(parsed)); location.reload(); }).catch(err => alert('Farbkarte nicht geladen: ' + err.message));
+      },
+
+      showEvidence: this.state.showEvidence, evidenceRows,
+      evidenceLabel: this.state.showEvidence ? 'BELEG SCHLIESSEN' : 'SPENDERBELEG',
+      onToggleEvidence: () => this.setState({ showEvidence: !this.state.showEvidence, evidence: this._stage ? this._stage.evidence() : this.state.evidence }),
+
+      volume: this.state.volume,
+      playPath: this.state.playing ? 'M7 5h3.6v14H7zM13.4 5H17v14h-3.6z' : 'M7 4.5v15L19.5 12z',
+      onRadioPrev: () => this.radio(-1, false),
+      onRadioNext: () => this.radio(1, false),
+      onRadioPlay: () => this.radio(0, true),
+      onVolume: (e) => { const v = Number(e.target.value); if (this._audio) this._audio.volume = v / 100; this.setState({ volume: v }); }
+    };
+  }
+}
+</script>
+</body>
+</html>
