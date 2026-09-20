@@ -991,3 +991,33 @@ Plan one shared PropActor adapter seam for standees and future EyeRig pencil/era
 
 ### NEXT GATE
 VL1 exact KayKit responsive CardRig proof only. No T3, Odyssey, Near East or editor mega-slice before that proof.
+
+
+## 2026-09-20 · Storytelling Map Animator Claude brief
+
+### PREPARED
+- `skills/chat/workflows/KFB_STORYTELLING_MAPS_V1_2026-09-20/CLAUDE_DESIGN_BRIEF_MAP_ANIMATOR_V1.md`
+- `skills/chat/workflows/KFB_STORYTELLING_MAPS_V1_2026-09-20/MAP_ANIMATOR_DONOR_MATRIX.md`
+- `skills/chat/workflows/KFB_STORYTELLING_MAPS_V1_2026-09-20/MAP_ANIMATOR_RETURN.md`
+
+### REUSE DECISION
+Map Animator extends `tools/kfb-cartoon-map-board/`. It consumes OSM City Lab for Hürth/Ehrenfeld/Cologne, img2threejs Pilot 06 for Grotesque landmark authoring, existing KFB palette/sky/FX owners, and later the separate Game Dev Studio Theatre Curtain.
+
+### CURTAIN
+Official Three.js compute-cloth donor is already pinned through the existing Theatre Curtain package. No SVG/CSS substitute and no second cloth runtime are authorized.
+
+### SCOPE
+SMA1 is the only first implementation gate: puzzle-piece motion/camera + one real landmark + one reused ripple with clean canonical recovery. Burn/bomb/hurricane, papercraft, city drilldown, curtain adapter, CardRig/PDF and full authoring remain later slices.
+
+### STATUS
+Planning ready. Runtime not started. Future Animator Stage target is not deployed/public-verified.
+
+
+## 2026-09-20 · Storytelling Map Animator Hub routing PUBLIC_VERIFIED
+
+The planning brief is now visible through the actual KFB Hub:
+`https://kayfabizarro.pages.dev/kfb-hub/`
+
+Public proof: **6/6 PASS** at source head `f171b3513c4eb9c295ec17e0c2793fe36bafeb72`; run/job `35537569069` / `106149219477`; artifact `10613653218`; digest `sha256:de7bfb9c1c07e4c6c645e42b1ae458971341430dfc53e0d92a4bb2421d23a716`.
+
+This proves only the briefing/ToDo routing. `/storytelling-maps/animator-v1/` remains a future target and is not claimed deployed.

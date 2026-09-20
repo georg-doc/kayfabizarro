@@ -102,3 +102,44 @@ New docs:
 ## Exactly one next gate
 
 **VL1 Responsive CardRig source proof. Do not start T3 motion until the exact KayKit card survives the responsive transformation without visible square media corners.**
+
+
+## Prepared next design lane · Map Animator
+
+Planning branch:
+`planning/storytelling-map-animator-v1-2026-09-20`
+
+Brief:
+`skills/chat/workflows/KFB_STORYTELLING_MAPS_V1_2026-09-20/CLAUDE_DESIGN_BRIEF_MAP_ANIMATOR_V1.md`
+
+Donor matrix:
+`skills/chat/workflows/KFB_STORYTELLING_MAPS_V1_2026-09-20/MAP_ANIMATOR_DONOR_MATRIX.md`
+
+Return:
+`skills/chat/workflows/KFB_STORYTELLING_MAPS_V1_2026-09-20/MAP_ANIMATOR_RETURN.md`
+
+Future Stage target:
+`https://kayfabizarro.pages.dev/kfb-hub/stage/storytelling-maps/animator-v1/`
+
+Status:
+**NOT IMPLEMENTED / NOT DEPLOYED / NOT PUBLIC_VERIFIED**
+
+### Protected boundaries
+
+- keep `tools/kfb-cartoon-map-board/` as Map owner;
+- OSM City Lab owns normalized detailed city geometry;
+- img2threejs owns current Landmark/Grotesque authoring donors;
+- Game Dev Studio owns Theatre Curtain;
+- no SVG/CSS curtain substitute;
+- no second particle/VFX engine before donor audit;
+- no second PDF/Card renderer;
+- no mega-build across SMA1–SMA7.
+
+### Current sequencing
+
+CardRig remains the active visual gate.
+
+The Map Animator is now sufficiently briefed that a fresh Claude Design session can start SMA1 when Georg chooses that lane.
+
+Exactly one Map Animator gate:
+**SMA1: existing Europe puzzle pieces + reversible map motion/camera + one real Grotesque landmark donor + one reused ripple, all recovering to canonical geography.**

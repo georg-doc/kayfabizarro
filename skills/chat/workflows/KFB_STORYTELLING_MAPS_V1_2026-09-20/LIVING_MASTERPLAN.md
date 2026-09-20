@@ -538,3 +538,104 @@ The prepared Claude Design job is:
 `CLAUDE_DESIGN_BRIEF_VISUAL_LAB_V1.md`.
 
 It is intentionally bounded to **VL1 CardRig first**. Palette/skydome/map-reveal/PDF/prop-motion/Odyssey work is roadmap only until VL1 passes.
+
+
+## 20. Storytelling Map Animator v1 · prepared Claude Design lane
+
+Prepared docs:
+- `CLAUDE_DESIGN_BRIEF_MAP_ANIMATOR_V1.md`
+- `MAP_ANIMATOR_DONOR_MATRIX.md`
+- `MAP_ANIMATOR_RETURN.md`
+
+The Animator is an extension of the existing Cartoon Map Board owner, not a new runtime.
+
+### Geography / hierarchy
+
+It is intended to consume:
+- arbitrary public GeoJSON/boundary sources;
+- current OpenPlanetData/OSM-derived country boundaries;
+- current OSM City Lab normalized sources;
+- explicit hierarchy from world/continent/country/region to city/diorama.
+
+Detailed city geometry remains with OSM City Lab.
+
+### Physical map grammar
+
+Countries/regions remain independent semantic pieces with separate presentation transforms.
+
+Views:
+- flat;
+- tabletop;
+- flyover;
+- dive;
+- popup close;
+- impact orbit;
+- geographic reset.
+
+Actions:
+- add / show / hide;
+- draw / fill / unfill;
+- raise / lower / stand-up / lay-flat;
+- slide / rotate / flip / fold;
+- explode / assemble / snap-home;
+- pulse / wobble / deform / restore.
+
+Canonical geography remains separate from spectacle.
+
+### Existing local donors
+
+Reuse:
+- Hürth;
+- Ehrenfeld;
+- Hürth → Ehrenfeld corridor;
+- Cologne Dom/Zentrum;
+- img2threejs Landmark Pilot 06 / Grotesque landmark lane.
+
+Do not create a second OSM normalizer or landmark system.
+
+### VFX
+
+The Animator plans a semantic MapFxDirector. First inspect Boxel Blitz FX, dissolve/ripple donors, Travel ripple/fog and central `FX_Visual`.
+
+Roadmap presets include ripple, burn, bomb/impact, hurricane, wave/flood, earthquake, ink spill, freeze, storm, teleport/portal, paper tear and smoke/fog.
+
+SMA1 deliberately implements only one reused ripple effect.
+
+### Papercraft / diorama
+
+The physical visual target includes:
+- puzzle pieces;
+- thin paper/card layers;
+- cutouts;
+- hinged/pop-up landmarks;
+- small local 3D dioramas;
+- crafted contact shadows;
+- KFB Ink/paper treatment.
+
+### Theatre Curtain
+
+The curtain remains a **separate Game Dev Studio module**.
+
+Existing Draft PR #114 already has:
+- pinned official Three.js compute-cloth donor;
+- two physical panels;
+- rail/rings;
+- side gathering;
+- wind;
+- KFB fabric maps;
+- reusable module API;
+- 22/22 local + 25/25 public technical PASS.
+
+The Animator must consume it via an adapter later. No SVG/CSS/rebuilt curtain.
+
+### Slice ladder
+
+1. SMA1 map-piece motion + camera + one real landmark + one reused ripple.
+2. SMA2 progressive disclosure + VFX presets.
+3. SMA3 OSM city / Cologne-Hürth-Ehrenfeld drilldown.
+4. SMA4 papercraft / popup diorama.
+5. SMA5 Theatre Curtain adapter.
+6. SMA6 Viewer/CardRig embeds.
+7. SMA7 fuller authoring surface.
+
+Do not collapse this ladder into one Claude Design mega-build.
