@@ -1,6 +1,6 @@
 {
   "schema": "kfb.2d-animation-studio.wip/0.1",
-  "updated": "2026-09-18",
+  "updated": "2026-09-20",
   "status": "IMPLEMENTATION",
   "tool": "2D Animation Studio",
   "owner": "Georg / KFB",
@@ -12,7 +12,7 @@
     "measuredEumelReconstruction": "PROVISIONAL_DONOR",
     "doccheckAdIllustratorSource": "PINNED_AND_PDF_VECTOR_AUDITED"
   },
-  "nextGate": "Browser QA of cross-render Eye Proof: both renderers load, exact sequence visibly matches semantics, eyeFrame markers work, then begin native DocCheck modifier-source inventory.",
+  "nextGate": "Implement/browser-test one world-space three2p5d Eumel adapter before Resident Atlas index promotion or DocCheck Project Island scene build.",
   "evidence": {
     "studioBootstrap": "IMPLEMENTATION",
     "sourceIntake": "IMPLEMENTATION",
@@ -25,7 +25,12 @@
     "sharedEyeRigProtocol": "IMPLEMENTATION",
     "componentAtlasFix": "IMPLEMENTATION_STATIC_SANITY_PENDING",
     "toolboxIntegration": "IMPLEMENTATION",
-    "crossRenderEyeProof": "IMPLEMENTATION_STATIC_PASS_BROWSER_PENDING"
+    "crossRenderEyeProof": "IMPLEMENTATION_STATIC_PASS_BROWSER_PENDING",
+    "actorModuleContract": "IMPLEMENTATION_CANDIDATE",
+    "eumel2p5dResidentBinding": "PREPARED_CANDIDATE",
+    "residentAtlasCandidate": "PREPARED_NOT_INDEXED",
+    "three2p5dAdapter": "NOT_IMPLEMENTED",
+    "doccyQuadrupedTemplate": "TEMPLATE_ONLY_SOURCE_REQUIRED"
   },
   "sourceAudit": {
     "gitBlobSha": "436143b019f0034c6d2d9183154cf613ff8c701e",
@@ -81,5 +86,14 @@
   "modifierAtlas": {
     "path": "shared/eye-rig/modifier-atlas/",
     "status": "PREPARED_SOURCE_INVENTORY_INCOMPLETE"
+  },
+  "consumerIntegration": {
+    "contract": "contracts/kfb-2d-actor-module.v0.1-candidate.json",
+    "matrix": "docs/CONSUMER_MATRIX.md",
+    "toolboxManifest": "2D_TOOLBOX_MANIFEST.json",
+    "eumelResident": "consumers/eumel-resident/EUMEL_2P5D_RESIDENT_BINDING.v0.1.json",
+    "residentCandidate": "tools/resident_atlas/modules/candidates/eumel-doccheck-project-island.module.json",
+    "doccyTemplate": "templates/DOCCY_QUADRUPED_RIG_TEMPLATE.v0.1.json",
+    "wsaHandoff": "skills/chat/workflows/2D_RESIDENT_ACTOR_WSA_2026-09-20/START_HERE.md"
   }
 }
