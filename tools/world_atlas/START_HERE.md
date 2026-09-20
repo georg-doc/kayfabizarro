@@ -18,6 +18,7 @@ Dann im Browser:
 | Seite | URL |
 |---|---|
 | Dungeon-Generator (jüngster Stand) | http://localhost:8080/KayKit_Dungeon_Generator_S13_2.html |
+| **R02 Room Blueprint · S14** | http://localhost:8080/KayKit_Dungeon_Room_Blueprint_S14.html |
 | Dungeon-Modell / Pack-Inventar | http://localhost:8080/KayKit_Dungeon_Model_S13.html |
 | Hex-Insel | http://localhost:8080/KayKit_Hex_Realm_S11.html |
 | Hex-Kacheltabelle | http://localhost:8080/KayKit_Hex_Tile_Model_S12.html |
@@ -39,3 +40,18 @@ Die vollständige Liste der 15 Seiten steht in `EXPORT_MANIFEST.json` unter `pag
 `source/tools/` enthält 11 Sonden, mit denen die Pack-Maße ursprünglich ermittelt wurden
 (`probe-dungeon-parts.html`, `truth-hex-axes.html`, `measure.html` …). Sie sind Teil des
 Arbeitsverfahrens, nicht Beiwerk: jede Zahl in `lib/` kommt aus einer dieser Seiten.
+
+
+## S14 · R02 Room Blueprint
+
+Aktueller isolierter Room-Authoring-Kandidat: `source/KayKit_Dungeon_Room_Blueprint_S14.html`.
+Er übernimmt die bereits akzeptierte S21-R02-Komposition und den In-place-Editor in den World-Atlas-Owner.
+Browser/editor: **15/15 PASS**. Blender: echte `.blend` gebaut; automatisches Linux-Review-Rendering nach
+dem Save an EGL blockiert und gemäß Recovery-Regel eingefroren. Siehe
+`rooms/R02_s21_blueprint/TEST_REPORT.md` und
+`failure-recovery/S14_BLENDER_REVIEW_GATE_2026-09-20/START_HERE.md`.
+
+S14 ist noch **kein BSP-/Raid-Runtime-Modul**. Genau das bleibt bis zur menschlichen Room-/Blender-Abnahme getrennt.
+
+
+Public Stage for S14 R02: **PUBLIC VERIFIED 17/17 PASS** · `https://kayfabizarro.pages.dev/kfb-hub/stage/minigames/dungeon-raid-v2/` · run `35483284605` / job `106004849935` · `cloudflare-live@92d1fb91413457b3288db22dc7be8a487f853065`. Human Form review remains open.

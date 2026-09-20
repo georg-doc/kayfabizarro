@@ -1,0 +1,84 @@
+{
+  "schema": "game-room.room-final-report.v1",
+  "roomId": "R02",
+  "gates": {
+    "function": true,
+    "form": false,
+    "runtime": false
+  },
+  "formChecks": {
+    "floorPlanParity": false,
+    "primaryArrival": false,
+    "symmetry": true,
+    "shell": false,
+    "manifold": false,
+    "booleans": false,
+    "collisions": false,
+    "support": false,
+    "attachmentOrientation": false,
+    "ceilingAttachmentOrientation": false,
+    "seatingOrientation": false,
+    "focalDistribution": false,
+    "heroClearance": false,
+    "colonnades": true,
+    "screenClearance": false,
+    "scale": false,
+    "camera": false,
+    "ceilingCoverage": true,
+    "environmentCoverage": true,
+    "provenance": true
+  },
+  "reviewRenders": {
+    "corners": [],
+    "ceiling": [],
+    "environment": {}
+  },
+  "runtimeChecks": {
+    "vlow": false,
+    "textureTiers": false,
+    "lightmap": false,
+    "lightingManifest": false,
+    "performance": false,
+    "browserCapture": "PUBLIC VERIFIED: run 35483284605 / job 106004849935 / artifact 10597095887 / public-r02.png sha256 c150763042ac15096a9db2c1ac009e0e0ba6052ac8eb66607c165497d79555ec",
+    "errors": [
+      "Browser/editor proof is green: 15/15 PASS, 0 console/page errors.",
+      "Blender imported 37 manifest instances / 39 Blender objects and saved KFB_R02.blend.",
+      "Automated review PNG and GLB are blocked because Ubuntu headless Blender aborts on missing libEGL.so.1 after the .blend save.",
+      "Blender review-render gate frozen after two failed repair passes; no third repair in this slice."
+    ],
+    "publicStage": {
+      "status": "PASS",
+      "checksPassed": 17,
+      "checksTotal": 17,
+      "url": "https://kayfabizarro.pages.dev/kfb-hub/stage/minigames/dungeon-raid-v2/",
+      "publicationBranch": "cloudflare-live",
+      "publicationHead": "92d1fb91413457b3288db22dc7be8a487f853065",
+      "run": 35483284605,
+      "job": 106004849935,
+      "artifact": 10597095887,
+      "pageErrors": 0,
+      "failedHttpAssets": 0
+    }
+  },
+  "postmortem": {
+    "observations": [
+      "R02 needs no generated props: 24/24 unique referenced model names resolve in the registered KayKit Dungeon pack.",
+      "The browser/editor remains layout owner; Blender consumes exported world matrices.",
+      "Chromium proved the editor correction -> recipe patch -> reload roundtrip.",
+      "Blender 4.0.2 imported the pinned glTF room and saved a valid 4,115,904-byte Blender 4.00 file.",
+      "Exact Cloudflare Stage is PUBLIC VERIFIED: 17/17 Chromium checks PASS with 0 page errors and 0 failed HTTP assets."
+    ],
+    "corrections": [
+      "The smoke test originally treated four documented visual deviations as technical failures; the test was corrected without changing the room.",
+      "The first Blender gate exposed missing numpy; the runner dependency and Python exit propagation were corrected."
+    ],
+    "remainingRisks": [
+      "No Blender review PNG exists yet, so the Three.js-to-Blender basis conversion still needs human visual verification.",
+      "Gameplay navigation/collision is intentionally outside this authoring blueprint."
+    ]
+  },
+  "proposedLessons": [
+    "Keep browser layout ownership and export world transforms; do not rebuild accepted room layout heuristically in Blender.",
+    "Headless Blender success must be validated by expected files and explicit Python exit propagation, not process exit alone."
+  ]
+}

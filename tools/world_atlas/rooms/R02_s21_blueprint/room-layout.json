@@ -1,0 +1,33 @@
+{
+  "schema": "game-room.layout.v1",
+  "roomId": "R02",
+  "units": "source-units",
+  "status": "DERIVED_AT_RUNTIME_NOT_DUPLICATED",
+  "sourceOfTruth": "tools/world_atlas/source/lib/room-recipes.js#R02",
+  "surfaces": [
+    {
+      "id": "floor",
+      "part": "floor_tile_large",
+      "grid": [
+        3,
+        3
+      ],
+      "moduleSize": 4
+    },
+    {
+      "id": "wall-W",
+      "modules": 3
+    },
+    {
+      "id": "wall-N",
+      "modules": 3
+    }
+  ],
+  "instances": [],
+  "instancePolicy": "Final instance transforms are exported from the built browser scene as kfb.blender-room-manifest.v1; this file intentionally does not create a second hard-coded layout truth.",
+  "productionCamera": {
+    "source": "room recipe + browser runtime solve",
+    "verticalFovDegrees": 19,
+    "exportedTransform": "camera.matrixWorldThree"
+  }
+}

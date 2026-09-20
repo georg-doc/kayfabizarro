@@ -4,6 +4,34 @@ Nur Zuwachs. Ältere Einträge bleiben stehen.
 
 ---
 
+## S14 · 2026-09-20 · Accepted R02 donor → World Atlas room blueprint + Blender compiler
+
+S21 `R02 · Schatz- und Esskammer` moves from ToolBox intake into the existing World Atlas owner as an
+**isolated room blueprint**, not as a second dungeon generator. The exact S21 recipe and in-place
+TransformControls editor are retained. The S13.2 BSP/two-level/stairs generator remains untouched as
+layout owner for generated dungeons.
+
+R02 uses **24 unique existing KayKit Dungeon models; 24/24 registry-resolved; Meshy 0 credits**.
+The browser is the only room-layout owner. New `kfb.blender-room-manifest.v1` exports the built world
+matrices; Blender only imports the pinned source glTFs and applies those matrices.
+
+Evidence: **22/22 static PASS + 15/15 real Chromium/editor PASS**. Blender 4.0.2 imported **37 visible
+manifest instances / 39 objects** and saved a valid 4,115,904-byte `KFB_R02.blend`.
+The automated Ubuntu review-render gate is frozen after two repair passes: after the successful
+`.blend` save, Blender aborts because `libEGL.so.1` is absent, so no review PNG or GLB is claimed.
+Full recovery is under `failure-recovery/S14_BLENDER_REVIEW_GATE_2026-09-20/`.
+
+No Tiny Treats merge, no Combat/Raid runtime and no automatic promotion are implied. One next gate:
+human visual review of R02 + the preserved Blender file.
+
+**PUBLIC VERIFIED · exact Cloudflare Stage 17/17 PASS.** Run `35483284605`, job
+`106004849935`, artifact `10597095887`; publication branch
+`cloudflare-live@92d1fb91413457b3288db22dc7be8a487f853065`. Chromium opened the fixed route,
+entered the embedded R02 room and saw 0 browser errors / 0 failed HTTP assets. Human Form approval
+remains open; Live is unchanged.
+
+---
+
 ## S13.3 · 2026-09-17 · Licht · und die Balkonkante ist eine Brüstung, keine Wand
 
 Vorlage: die drei KayKit-Promobilder (`uploads/`). Neu: **`lib/dungeon-light.js`**, verdrahtet in

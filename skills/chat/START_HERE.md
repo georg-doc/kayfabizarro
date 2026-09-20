@@ -343,3 +343,20 @@ Next gate is one A/B/C design/geometry proof:
 Do not tune the existing TC-01 ribbon/zone composition forward. TinySkies/Travel remains one spherical WorldSurface donor; OSM remains geographic/semantic truth; OMS/Grotesque remains a stylised environment donor; Race retains driving/contact ownership.
 
 The wider KFB target may support Sphere / Plane / InnerSphere and later structure/tunnel/underwater/free-space routes, but do not build a mega-engine before Sphere + Plane share one proven TrackPatch contract.
+
+
+## 2026-09-20 · Current Dungeon room gate · World Atlas S14 R02
+
+Current owner: `tools/world_atlas/` on Draft PR #126, branch
+`world-atlas/dungeon-room-blueprint-s14-blender-2026-09-20`.
+
+The accepted S21 R02 treasure/dining room is now an isolated S14 room-authoring blueprint:
+- real KayKit Dungeon sources only; 24/24 unique model names registry-resolved;
+- in-place TransformControls editor retained;
+- Chromium/editor **15/15 PASS** including recipe-patch/reload roundtrip;
+- Blender imported 37 manifest instances / 39 objects and saved `KFB_R02.blend`;
+- Ubuntu headless review rendering is frozen after two repair passes on missing EGL after the save.
+
+Human Stage: **PUBLIC VERIFIED 17/17 PASS** · `https://kayfabizarro.pages.dev/kfb-hub/stage/minigames/dungeon-raid-v2/` · run `35483284605` / job `106004849935` · publication `cloudflare-live@92d1fb91413457b3288db22dc7be8a487f853065`. This is now the direct human test link.
+Tiny Treats remains in its separate Venue Generator lane. Combat/Raid remains gated by CA2.
+Exactly one gate: Georg reviews R02 as the room blueprint and the preserved Blender file before any BSP integration.
