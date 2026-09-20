@@ -1,0 +1,76 @@
+name: KCC-1A Secondary Motion Facts
+
+on:
+  push:
+    branches:
+      - chatgpt-web/frizzlebob-secondary-motion-kcc1a-2026-09-20
+    paths:
+      - 'tools/KFB-ToolBox/kfb-rigs-embed-v3/secondary-motion/**'
+      - 'skills/chat/workflows/KCC1A_FRIZZLEBOB_SECONDARY_MOTION_2026-09-20/**'
+      - 'kfb-hub/stage/toolbox/frizzlebob-secondary-motion-kcc1a/**'
+      - '.github/workflows/kcc1a-secondary-motion-test.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  node-contract:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout: |
+            tools/KFB-ToolBox/kfb-rigs-embed-v3/secondary-motion
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Syntax
+        run: |
+          node --check "tools/KFB-ToolBox/kfb-rigs-embed-v3/secondary-motion/race-secondary-facts.v1.js"
+          node --check "tools/KFB-ToolBox/kfb-rigs-embed-v3/secondary-motion/race-secondary-facts.v1.test.mjs"
+      - name: Contract tests
+        run: node "tools/KFB-ToolBox/kfb-rigs-embed-v3/secondary-motion/race-secondary-facts.v1.test.mjs"
+
+  local-browser:
+    needs: node-contract
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout: |
+            tools/KFB-ToolBox/kfb-rigs-embed-v3/secondary-motion
+            kfb-hub/stage/toolbox/frizzlebob-secondary-motion-kcc1a
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Bench syntax
+        run: |
+          node --check "kfb-hub/stage/toolbox/frizzlebob-secondary-motion-kcc1a/bench.mjs"
+          node --check "kfb-hub/stage/toolbox/frizzlebob-secondary-motion-kcc1a/local-proof.mjs"
+      - name: Install Playwright Chromium
+        run: |
+          npm install --no-save playwright@1.55.0
+          npx playwright install --with-deps chromium
+      - name: Start local Stage mirror
+        run: |
+          python3 -m http.server 4173 --bind 127.0.0.1 > /tmp/kcc1a-http.log 2>&1 &
+          echo $! > /tmp/kcc1a-http.pid
+          for i in {1..30}; do
+            if curl -fsS http://127.0.0.1:4173/kfb-hub/stage/toolbox/frizzlebob-secondary-motion-kcc1a/ >/dev/null; then exit 0; fi
+            sleep 1
+          done
+          cat /tmp/kcc1a-http.log
+          exit 1
+      - name: Local browser proof
+        env:
+          KCC1A_PROOF_DIR: kcc1a-browser-evidence
+        run: node "kfb-hub/stage/toolbox/frizzlebob-secondary-motion-kcc1a/local-proof.mjs"
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: kcc1a-browser-evidence
+          path: kcc1a-browser-evidence
+          retention-days: 14

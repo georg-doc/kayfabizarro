@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>KFB · FrizzleBob Secondary Motion Facts · KCC-1A</title>
+<meta name="description" content="KFB source-owned Race telemetry to deterministic secondary-motion target facts. No ear geometry in this slice.">
+<style>
+:root{
+  color-scheme:dark;
+  --ink:#151310;--panel:#201d18;--panel2:#181612;--paper:#eee6d6;--muted:#9d9383;
+  --line:#4b4438;--red:#b8361f;--gold:#c7a24d;--green:#78986d;--cyan:#7eaaa8;
+}
+*{box-sizing:border-box}
+html,body{margin:0;min-height:100%;background:var(--ink);color:var(--paper);font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+body{min-height:100vh}
+a{color:inherit;text-decoration-color:var(--red);text-underline-offset:3px}
+button,input{font:inherit}
+header{padding:16px 20px;border-bottom:1px solid var(--line);display:flex;gap:16px;align-items:flex-start;background:#11100e}
+.stamp{width:62px;height:62px;border:2px solid var(--paper);box-shadow:4px 4px 0 var(--red);display:grid;place-items:center;font-weight:900;transform:rotate(-2deg)}
+h1{margin:0;font:500 clamp(23px,3vw,38px)/1 Georgia,serif}
+.subtitle{max-width:880px;margin-top:7px;color:var(--muted);font-size:12px;line-height:1.45}
+.badges{margin-left:auto;display:flex;gap:6px;flex-wrap:wrap;justify-content:flex-end}
+.badge{font-size:9px;letter-spacing:.08em;border:1px solid var(--line);padding:5px 7px}
+.badge.red{border-color:var(--red);color:#f0b3a7}
+.badge.green{border-color:var(--green);color:#c8dcc0}
+main{display:grid;grid-template-columns:minmax(300px,390px) minmax(420px,1fr);min-height:calc(100vh - 95px)}
+.controls{border-right:1px solid var(--line);background:var(--panel);overflow:auto}
+.view{min-width:0;padding:18px;display:grid;gap:14px;align-content:start}
+.section{padding:14px;border-bottom:1px solid var(--line)}
+.section h2,.card h2{margin:0 0 10px;font-size:10px;letter-spacing:.13em;text-transform:uppercase;color:var(--muted)}
+.notice{padding:10px 12px;border-left:3px solid var(--gold);background:var(--panel2);font-size:11px;line-height:1.5}
+.notice strong{color:var(--paper)}
+.row{display:grid;grid-template-columns:1fr 94px;gap:10px;align-items:center;margin:9px 0}
+.row label{font-size:11px}
+.row output{font-size:10px;color:var(--muted);text-align:right}
+input[type="range"]{width:100%;accent-color:var(--red)}
+.vector{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.vector label{font-size:9px;color:var(--muted)}
+.vector input{width:100%;margin-top:4px}
+.presets{display:flex;gap:6px;flex-wrap:wrap}
+.presets button{background:var(--panel2);color:var(--paper);border:1px solid var(--line);padding:7px 8px;cursor:pointer}
+.presets button:hover{border-color:var(--paper)}
+.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.card{border:1px solid var(--line);background:var(--panel);padding:13px;min-width:0}
+.metric{font:500 clamp(25px,4vw,44px)/1 Georgia,serif}
+.metric small{display:block;font:9px/1.4 ui-monospace,monospace;color:var(--muted);margin-top:6px;text-transform:uppercase;letter-spacing:.08em}
+.axes{display:grid;grid-template-columns:repeat(3,1fr);gap:7px}
+.axis{border:1px solid #3b362e;background:var(--panel2);padding:9px}
+.axis b{display:block;font-size:17px;font-family:Georgia,serif;font-weight:500}
+.axis span{font-size:9px;color:var(--muted)}
+canvas{display:block;width:100%;height:190px;border:1px solid var(--line);background:#12110f}
+pre{margin:0;white-space:pre-wrap;overflow-wrap:anywhere;font-size:10px;line-height:1.5;color:#d9d0c1}
+.source{font-size:10px;color:var(--muted);line-height:1.5;overflow-wrap:anywhere}
+.source code{color:var(--paper)}
+.no-geometry{border:1px dashed var(--gold);padding:12px;font-size:11px;line-height:1.5;background:#1a1711}
+@media(max-width:880px){
+  header{display:block}.stamp{float:left;margin-right:14px}.badges{margin:12px 0 0}
+  main{display:block}.controls{border-right:0;border-bottom:1px solid var(--line)}
+  .grid{grid-template-columns:1fr}.view{padding:12px}
+}
+</style>
+</head>
+<body>
+<header>
+  <div class="stamp">1A</div>
+  <div>
+    <h1>FrizzleBob · Secondary Motion Facts</h1>
+    <div class="subtitle">KCC-1A converts the current Stunt Race presentation hooks into deterministic, bounded target facts for a later approved ear rig. This bench owns no vehicle motion, no KayKit skeleton state and no ear geometry.</div>
+  </div>
+  <div class="badges">
+    <span class="badge red">CANDIDATE</span>
+    <span class="badge green">PURE / STATELESS</span>
+    <span class="badge">NO EAR MESH</span>
+  </div>
+</header>
+
+<main>
+  <aside class="controls">
+    <div class="section">
+      <h2>Scope guard</h2>
+      <div class="notice"><strong>No placeholder ears are rendered here.</strong> The current FrizzleBob ear geometry stays untouched. KCC-1B starts only after a real replacement ear source is approved in isolation.</div>
+    </div>
+
+    <div class="section">
+      <h2>Race presentation presets</h2>
+      <div class="presets">
+        <button data-preset="rest">Rest</button>
+        <button data-preset="cruise">Cruise</button>
+        <button data-preset="crosswind">Crosswind</button>
+        <button data-preset="brake">Brake</button>
+        <button data-preset="impact">Impact</button>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>Existing Race facts</h2>
+      <div class="row"><label>speedNormalized</label><output id="speedOut"></output></div>
+      <input id="speed" type="range" min="0" max="1" step="0.01" value="0.72">
+
+      <div class="row"><label>longitudinalAcceleration</label><output id="longOut"></output></div>
+      <input id="longAccel" type="range" min="-30" max="30" step="0.1" value="4">
+
+      <div class="row"><label>lateralAcceleration</label><output id="latOut"></output></div>
+      <input id="latAccel" type="range" min="-30" max="30" step="0.1" value="-3">
+
+      <div class="row"><label>impactImpulse</label><output id="impactOut"></output></div>
+      <input id="impact" type="range" min="-1" max="1" step="0.01" value="0">
+
+      <div class="row"><label>timeSeconds</label><output id="timeOut"></output></div>
+      <input id="time" type="range" min="0" max="4" step="0.005" value="0.6">
+    </div>
+
+    <div class="section">
+      <h2>relativeAirflowVector · actor local</h2>
+      <div class="vector">
+        <label>X right<input id="airX" type="range" min="-41" max="41" step="0.1" value="2"></label>
+        <label>Y up<input id="airY" type="range" min="-41" max="41" step="0.1" value="0"></label>
+        <label>Z forward<input id="airZ" type="range" min="-41" max="41" step="0.1" value="-29"></label>
+      </div>
+      <div class="source" style="margin-top:8px">Forward travel normally produces negative Z airflow. The consumer owns world→local conversion.</div>
+    </div>
+
+    <div class="section">
+      <h2>angularVelocity · actor local</h2>
+      <div class="vector">
+        <label>Pitch X<input id="angX" type="range" min="-4" max="4" step="0.01" value="0"></label>
+        <label>Yaw Y<input id="angY" type="range" min="-4" max="4" step="0.01" value="-0.25"></label>
+        <label>Roll Z<input id="angZ" type="range" min="-4" max="4" step="0.01" value="0.1"></label>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>Provenance</h2>
+      <div class="source">
+        Race source contract:<br>
+        <code>kfb-hub/stunt-race/track-environment-lab/host/RACE_FLOW_RUNTIME_CONFIG.json</code><br><br>
+        Adapter owner:<br>
+        <code>tools/KFB-ToolBox/kfb-rigs-embed-v3/secondary-motion/race-secondary-facts.v1.js</code>
+      </div>
+    </div>
+  </aside>
+
+  <section class="view">
+    <div class="grid">
+      <div class="card"><h2>Energy</h2><div class="metric" id="energy">—<small>0…1 presentation energy</small></div></div>
+      <div class="card"><h2>Airflow</h2><div class="metric" id="airStrength">—<small>normalized magnitude</small></div></div>
+      <div class="card"><h2>Flutter</h2><div class="metric" id="flutterAmp">—<small>amplitude · deterministic</small></div></div>
+    </div>
+
+    <div class="grid">
+      <div class="card"><h2>Root targets</h2><div class="axes">
+        <div class="axis"><b id="rootPitch">—</b><span>pitch</span></div>
+        <div class="axis"><b id="rootRoll">—</b><span>roll</span></div>
+        <div class="axis"><b id="rootYaw">—</b><span>yaw</span></div>
+      </div></div>
+      <div class="card"><h2>Tip targets</h2><div class="axes">
+        <div class="axis"><b id="tipPitch">—</b><span>pitch</span></div>
+        <div class="axis"><b id="tipRoll">—</b><span>roll</span></div>
+        <div class="axis"><b id="tipYaw">—</b><span>yaw</span></div>
+      </div></div>
+      <div class="card"><h2>Flutter fact</h2><div class="axes">
+        <div class="axis"><b id="flutterValue">—</b><span>value</span></div>
+        <div class="axis"><b id="flutterHz">—</b><span>Hz</span></div>
+        <div class="axis"><b id="impactFact">—</b><span>impact</span></div>
+      </div></div>
+    </div>
+
+    <div class="card">
+      <h2>Deterministic flutter trace · same inputs, explicit time only</h2>
+      <canvas id="plot" width="1100" height="220"></canvas>
+    </div>
+
+    <div class="card no-geometry">
+      <strong>What this proves:</strong> the seam can be tuned and unit-tested before touching any ear mesh. A later visual rig consumes these dimensionless facts and maps them to approved root/tip deformation limits through the existing secondary-motion behavior owner.
+    </div>
+
+    <div class="card">
+      <h2>Current output JSON</h2>
+      <pre id="json"></pre>
+    </div>
+  </section>
+</main>
+
+<script type="module" src="./bench.mjs"></script>
+</body>
+</html>
