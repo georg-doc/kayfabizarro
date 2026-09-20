@@ -1,7 +1,7 @@
 {
   "schema": "kfb.world-atlas.inline-detail-editor-e1/0.1",
   "date": "2026-09-20",
-  "status": "IMPLEMENTED_STATIC_PASS_BROWSER_OPEN",
+  "status": "FROZEN_CANDIDATE_STATIC_PASS_BROWSER_PROOF_HARNESS_BLOCKED",
   "owner": "World Atlas / Dungeon S13.2",
   "donor": {
     "intakePr": 120,
@@ -35,9 +35,22 @@
   ],
   "tests": {
     "staticContract": "20/20 PASS",
-    "browser": "NOT_RUN",
+    "browser": "NOT_TESTED · QA harness failed twice before application assertion",
     "publicStage": "NOT_PUBLISHED",
-    "georgAcceptance": "OPEN"
+    "georgAcceptance": "OPEN",
+    "browserAttempts": [
+      {
+        "run": 35487119077,
+        "job": 106015440253,
+        "result": "HARNESS_TIMEOUT_AFTER_PAGE_WEBGL_LOAD"
+      },
+      {
+        "run": 35487373804,
+        "job": 106016124834,
+        "result": "HARNESS_NODE22_AMBIGUOUS_MODULE_SYNTAX_BEFORE_CDP_POLL"
+      }
+    ]
   },
-  "nextGate": "Browser roundtrip only: seed A1 -> enable Editor -> select first editable detail -> move/rotate -> verify patch -> rebuild -> verify identical restored transform."
+  "nextGate": "Fresh QA-only slice proves unchanged ?e1proof=1 candidate with one valid CDP module system; no third repair in E1.",
+  "recovery": "tools/world_atlas/docs/INLINE_EDITOR_E1_FAILURE_RECOVERY_2026-09-20/START_HERE.md"
 }
