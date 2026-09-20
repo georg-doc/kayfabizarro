@@ -19,7 +19,7 @@ const PATHS={
   gun:'media/3D_Assets/Platformer Game Kit - Dec 2021/Character/glTF/Character_Gun.gltf'
 };
 const BASE_GRIP={ex:-14,ey:77,ez:0,ox:0,oy:-0.03,oz:0,scale:0.37};
-const HUMAN_PITCH_DELTA_DEG=-5;
+const HUMAN_PITCH_DELTA_DEG=1.5;
 const GUN_CFG={anchor:'slot',class:'pistol',url:rawAsset(PATHS.gun),node:'gun',hand:'right',...BASE_GRIP,ex:BASE_GRIP.ex+HUMAN_PITCH_DELTA_DEG};
 const REQUIRED=['Ranged_1H_Aiming','Ranged_1H_Reload','Ranged_1H_Shoot','Ranged_1H_Shooting'];
 
