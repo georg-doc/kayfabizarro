@@ -2,7 +2,7 @@
   "schema": "kfb.toolbox-kaykit-motion-lab-source/0.1",
   "date": "2026-09-20",
   "owner": "KFB ToolBox / Motion authoring",
-  "status": "LOCAL_BROWSER_87_87_PASS_STAGE_PENDING",
+  "status": "PUBLIC_BROWSER_87_87_PASS_HUMAN_OPEN",
   "sourceMain": "bdaea0648f27c0f16e0a737bfba237eb54dd4cbb",
   "kclResearch": {
     "pr": 107,
@@ -123,5 +123,19 @@
       "walkRate": 1.02,
       "runRate": 0.97
     }
+  },
+  "updated": "2026-09-20",
+  "publicStageEvidence": {
+    "stageUrl": "https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/kaykit-motion-lab-v1/",
+    "mainPublicationCommit": "14707f7018ab1c49bfd2d073a01ab3789422245f",
+    "cloudflarePublicationCommit": "b69d3c4bd512a8d34e72e0e074a142ba9e961198",
+    "workflowRun": 35484127790,
+    "publicProofJob": 106007210838,
+    "checks": "87/87 PASS",
+    "artifactId": 10596912462,
+    "artifactDigest": "sha256:d4638aba0e4bd02b690f19cb931c92f99cac020d0af05e5d1124f11003300ca4",
+    "failedResources": 0,
+    "pageConsoleErrors": 0,
+    "humanAcceptance": "PENDING"
   }
 }
