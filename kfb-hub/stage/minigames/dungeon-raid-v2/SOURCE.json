@@ -1,0 +1,36 @@
+{
+  "schema": "kfb.stage-source.v1",
+  "project": "Dungeon Generator v2",
+  "slice": "S14 R02 Room Blueprint",
+  "route": "/kfb-hub/stage/minigames/dungeon-raid-v2/",
+  "implementationOwner": "tools/world_atlas/",
+  "implementationBranch": "world-atlas/dungeon-room-blueprint-s14-blender-2026-09-20",
+  "implementationHead": "e2d9a1fa24d024eb89ad513dc3b97762c0fb460b",
+  "testedHead": "da04e03378f79ca973a3768e0c934bc5372b1aa5",
+  "pullRequest": 126,
+  "status": "HUMAN_FORM_GATE",
+  "preRaid": true,
+  "combat": false,
+  "bspIntegration": false,
+  "tinyTreats": false,
+  "browserProof": {
+    "run": 35482605744,
+    "job": 106002993282,
+    "checksPassed": 15,
+    "checksTotal": 15,
+    "pageErrors": 0,
+    "rootChildren": 41,
+    "visibleProps": 21
+  },
+  "blenderProof": {
+    "version": "4.0.2",
+    "manifestInstances": 37,
+    "importedObjects": 39,
+    "blendSaved": true,
+    "blendBytes": 4115904,
+    "blendSha256": "93e439b122d5c6bb35727c8df79c5611a32fb48f7416d164e0471c2421f3ebef",
+    "reviewRender": "BLOCKED_EGL_AFTER_BLEND_SAVE",
+    "glb": "NOT_REACHED"
+  },
+  "humanQuestion": "Does R02 read as a useful KayKit room blueprint, and is the direct move/rotate -> recipe-patch workflow right for building the next rooms?"
+}
