@@ -366,7 +366,7 @@ function publicTargets(){
   }
   return [...seen.values()].sort((a,b)=>a.type.localeCompare(b.type)||a.title.localeCompare(b.title));
 }
-function snapshotUrl(url){return 'https://image.thum.io/get/width/960/crop/540/noanimate/'+url;}
+function snapshotUrl(url){return 'https://image.thum.io/get/width/960/crop/540/maxAge/1/allowJPG/noanimate/'+url;}
 function renderPreviews(){
   const section=document.getElementById('previewSection'),host=document.getElementById('previewGrid'),counter=document.getElementById('previewCount');
   host.replaceChildren();
