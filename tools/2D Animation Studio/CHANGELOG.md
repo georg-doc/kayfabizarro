@@ -116,3 +116,13 @@ No three2p5d runtime adapter or Resident mount PASS is claimed yet.
 - static syntax/reference sanity PASS.
 
 Browser/visual QA remains pending. No Resident Atlas or DocCheck Project Island runtime promotion is claimed.
+
+
+## 2026-09-20 · v0.9 · Doccy source intake
+
+- prepared `_inbox/doccy-source/`;
+- linked the existing quadruped topology template;
+- defined source audit, anatomy/anchor inventory and promotion gates;
+- explicitly forbade generic-dog reconstruction before authoritative source inspection.
+
+Status: awaiting Doccy source.
