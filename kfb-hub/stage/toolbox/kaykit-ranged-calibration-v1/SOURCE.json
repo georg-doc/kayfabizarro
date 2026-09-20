@@ -4,7 +4,7 @@
   "slice": "CA2-02",
   "owner": "KFB ToolBox / weapon-motion calibration",
   "consumer": "georg-doc/KFB-Combat-Arena / WSA",
-  "status": "CA2_02B_SECOND_PASS_PROOF_PENDING",
+  "status": "ARCHIVED_FAILED_CA2_02B_PITCH",
   "sourceRepo": "georg-doc/kayfabizarro",
   "sourceBranch": "chatgpt-web/ca2-02-ranged-calibration-2026-09-20",
   "implementationHead": "155becf16a467f125ee44958b2f2a295dbe27cd0",
@@ -47,7 +47,7 @@
     "Arena audio"
   ],
   "publicVerified": false,
-  "humanAcceptance": "PENDING_CA2_02B",
+  "humanAcceptance": "FAILED_PITCH_GATE",
   "repairNote": "Deterministic release-frame seek plus explicit one-release scheduling for the single-shot clip.",
   "singleShotPolicy": {
     "clip": "Ranged_1H_Shoot",
@@ -85,5 +85,41 @@
     ],
     "scope": "rotation only; offsets/yaw/roll/scale/muzzle geometry/release timing unchanged",
     "intent": "near-horizontal standard aim; clip recoil remains upward"
+  },
+  "publicBaseline": {
+    "runtime": "a5e09d6744f4a26e63a5f7e706be8a631459d28d",
+    "publicStage": "https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/kaykit-ranged-calibration-v1/",
+    "run": 35489658278,
+    "job": 106022296782,
+    "checks": "55/55 PASS",
+    "proofedPublication": "cf15f612e6a700608564cadbded4302ba59b1af2"
+  },
+  "pitchFailureRecovery": {
+    "folder": "kfb-hub/stage/toolbox/kaykit-ranged-calibration-v1/failure-recovery/CA2_02B_PITCH_2026-09-20",
+    "pass1": {
+      "runtime": "d32b71d800a8d5ffc7c58828b1544e6d47731143",
+      "gateHead": "78b0dc20c858017e94c443c1e068aa38893fd261",
+      "deltaDeg": -5,
+      "aimPitchDeg": 12.471,
+      "run": 35490564334,
+      "job": 106024650939,
+      "artifactId": 10598807248
+    },
+    "pass2": {
+      "runtime": "155becf16a467f125ee44958b2f2a295dbe27cd0",
+      "gateHead": "ec2693055a465dee050d3127bd7d3263d8f94276",
+      "deltaDeg": 1.5,
+      "aimPitchDeg": 5.151,
+      "run": 35490701005,
+      "job": 106025001031,
+      "artifactId": 10598967232
+    },
+    "stopRule": "two failed repair passes; no third blind Euler tuning",
+    "nextGate": "external deterministic frozen-Aim gizmo calibration",
+    "untestedHypothesis": {
+      "approxZeroPitchEulerX": -7.93,
+      "approxDeltaFromStudioDeg": 6.07,
+      "note": "two-point linear extrapolation only; NOT TESTED / NOT PROMOTED"
+    }
   }
 }

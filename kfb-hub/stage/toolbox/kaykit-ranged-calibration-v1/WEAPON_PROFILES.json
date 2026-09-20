@@ -1,7 +1,7 @@
 {
   "schema": "kfb.combat.weapon-profile-set/0.1-candidate",
   "date": "2026-09-20",
-  "status": "CA2_02B_SECOND_PASS_CANDIDATE",
+  "status": "ARCHIVED_FAILED_CA2_02B_PITCH",
   "source": {
     "gun": {
       "repo": "georg-doc/kayfabizarro",
@@ -53,7 +53,8 @@
       "tuningReason": "First -5° trial moved muzzle the wrong way (+12.471° world pitch). Reverse with a small +1.5° X-Euler correction while preserving all other grip values.",
       "tuningScope": "rotation-only second/last repair pass",
       "failedFirstDeltaDeg": -5,
-      "failedFirstAimPitchDeg": 12.471
+      "failedFirstAimPitchDeg": 12.471,
+      "status": "FAILED_TUNING_CANDIDATE_DO_NOT_PROMOTE"
     },
     "muzzle": {
       "space": "weapon-holder-local",
@@ -134,5 +135,29 @@
     "Arena rewards/runflow",
     "Arena audio"
   ],
-  "humanAcceptance": "PENDING_CA2_02B"
+  "humanAcceptance": "FAILED_PITCH_GATE",
+  "pitchFailure": {
+    "pass1": {
+      "deltaDeg": -5,
+      "effectiveEulerDeg": [
+        -19,
+        77,
+        0
+      ],
+      "aimPitchDeg": 12.471,
+      "status": "FAIL"
+    },
+    "pass2": {
+      "deltaDeg": 1.5,
+      "effectiveEulerDeg": [
+        -12.5,
+        77,
+        0
+      ],
+      "aimPitchDeg": 5.151,
+      "status": "FAIL"
+    },
+    "stopRule": "NO_THIRD_BLIND_TUNING",
+    "nextGate": "DETERMINISTIC_EXTERNAL_GIZMO_EXPORT"
+  }
 }

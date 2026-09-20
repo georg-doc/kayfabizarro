@@ -48,3 +48,18 @@ Use a small `+1.5°` X-Euler delta from the Studio base, effective `[-12.5,77,0]
 
 ### STOP RULE
 This is the second and final repair pass for the same pitch gate. If it does not meet the near-horizontal Aim + upward Release criteria, freeze/export rather than continue tuning in this slice.
+
+
+## 2026-09-20 · CA2-02b pitch tuning frozen
+
+Two bounded rotation-only repairs failed the same near-horizontal Aim gate:
+
+- `-5°` X delta → `+12.471°` Aim;
+- `+1.5°` X delta → `+5.151°` Aim.
+
+The second pass improved direction but remained outside ±3.5°. Stop rule reached; no third blind Euler attempt.
+
+Recovery packet:
+`kfb-hub/stage/toolbox/kaykit-ranged-calibration-v1/failure-recovery/CA2_02B_PITCH_2026-09-20/`
+
+The prior public CA2-02 baseline remains unchanged. One next gate: deterministic frozen-Aim transform authoring via Georg's external/universal 3D gizmo, followed by one exported profile and one browser proof.
