@@ -2,51 +2,55 @@
 
 These are the decisions for Claude's current gate form.
 
-## 1 · The two visual authority boards
+## 1 · Visual authority for Slice C
 
-**Answer:** Georg will attach both boards directly to Claude Design.
+**Resolved — no extra user upload needed.**
 
-Treat them as:
-- `OPTION_C_VISUAL_AUTHORITY`
-- `OPTION_A_VISUAL_AUTHORITY`
+Use both exact Option-C boards already present on public `kayfabizarro/main`:
 
-For the first build, **Option C is binding** for color/light/form language.
+- `travel/wip/travel_globe_wsa/_inbox/KFB Racer Option C - ChatGPT Image 20. Sept. 2026, 05_06_22 (1).png` — blob `59fd27fcb5dae48bc159093427a3e688cc83b6a4`
+- `travel/wip/travel_globe_wsa/_inbox/KFB Racer Option C - ChatGPT Image 20. Sept. 2026, 05_06_22 (2).png` — blob `ac0bf0064c8af8235a49b97d3b7e5e8196ed5579`
 
-Do not start palette sampling until the attachments are visible.
+Before sampling or integration, Claude must open/show each exact board in isolation.
 
-## 2 · Filament donor: how to use it?
+Together the two boards are the **binding Option-C color/light/form authority** for the first build.
 
-**Choose:**
+Option A visual authority is deferred until after Georg reviews Option C. It is not a start blocker.
 
-> **Derive the SHAPE but re-proportion it to real Dom geography.**
+## 2 · FILAMENT #02: how to use it?
 
-Verified reference-only source:
+**Use as a benchmark only — not as a geometry donor.**
+
+Verified original source:
 
 - repo: `KilledByAPixel/SP13KTRA`
 - revision: `166ad838`
 - `code/levels.js` blob: `75189173db4f1e15537992c34590f6d8f34ce9b8`
-- `code/skeleton.js` blob: `447ab3566a07420a94a08080a90dc46d04af1dbd`
-- circuit: **FILAMENT / circuit index 1**
+- circuit: **FILAMENT / circuit index 1 / human Track #02**
+- license: **All rights reserved**
 
-Allowed derived grammar:
-- 7-corner kidney family;
-- opening/start run under a dense-arch tunnel;
-- tightening double-apex character;
-- filleted authored polygon;
-- route resampled by arc length;
-- smooth/eased elevation rhythm.
+The original establishes useful benchmark qualities:
+- strong opening/start run;
+- dense arch/tunnel beat;
+- tightening technical section;
+- smooth large-scale rhythm;
+- readable illuminated edges;
+- compression → release;
+- memorable overhead silhouette.
 
-**Do not copy:**
+Do **not** copy or adapt:
 - source code;
-- literal corner-coordinate table;
-- original materials/assets;
-- original scenery;
-- original meshes;
-- original numeric world scale.
+- literal corner sequence or coordinates;
+- original circuit geometry;
+- numeric world scale;
+- palette values;
+- meshes/materials/scenery/assets.
 
-Re-author an independent KFB route in Dom/Zentrum metres using the grammar above.
+Read `FILAMENT_REFERENCE.md`.
 
-This is a **reference-only design donor**, not code intake.
+The KFB Cologne route is authored independently from a blank route. It may use streets where useful, but may also cross roofs, courtyards, alleys, ramps, bridges or explicit elevated structures around the Dom.
+
+For Slice C, **Option-C color/world design and a cool playable Track outrank exact OMS/OSM street fidelity**.
 
 ## 3 · Dom/Zentrum geography
 
@@ -217,11 +221,16 @@ Yes. Respect the following:
 1. **Public-repo coordination only.** The private Stunt Race repo is not a Claude dependency.
 2. Use the public Race v0.8 mirror listed in `SOURCE_PINS.json`; do not build a second controller.
 3. The Dom/Zentrum OSM data gate is already closed; use `DATA_READY.md` / `CLAUDE_CONTEXT.json` rather than inventing or refetching geography.
-3. No current TC-01 black-ribbon / dense terrain-zone visual strategy.
-4. No generic UI shell.
-5. No random Kenney prop scatter.
-6. Every donor must be shown/identified in isolation before integration.
-7. Option C first. Option A starts only after Georg's C gate.
+4. **Design-first:** Option-C world/Track design has priority over exact OMS/OSM street fidelity in this first proof.
+5. OSM anchors real Cologne features, but the Track centerline does not need to stay on mapped roads.
+6. Rooftop / alley / courtyard / ring-road / ramp / bridge / elevated Track segments are allowed when they improve the route.
+7. When the Track leaves the ground, use an explicit structure; do not raise terrain merely to support it.
+8. FILAMENT #02 is benchmark-only; do not derive or adapt its geometry.
+9. No current TC-01 black-ribbon / dense terrain-zone visual strategy.
+10. No generic UI shell.
+11. No random Kenney prop scatter.
+12. Every donor must be shown/identified in isolation before integration.
+13. Option C first. Option A starts only after Georg's C gate.
 
 ## 9 · Which design system?
 
