@@ -891,3 +891,32 @@ Run `35484127790`, public-proof job `106007210838`:
 `PUBLIC_VERIFIED = YES`.
 
 Exactly one next gate: Georg reviews the three actors and their phase-sync/weight/cadence on the public Stage before any consumer MotionProfile promotion.
+
+
+## 2026-09-20 · Cologne Race Option C → A · Claude Design public briefing
+
+### DECISION
+Prepare Claude Design from the public `georg-doc/kayfabizarro` repo rather than making the private Stunt Race repository a Claude dependency.
+
+### FILAMENT
+Verified reference-only donor:
+`KilledByAPixel/SP13KTRA@166ad838`, `FILAMENT / circuit index 1`.
+Decision: derive the route grammar only and re-proportion/re-author it for real Dom geography. No source/code/literal corner-table reuse.
+
+### DOM / OSM
+Current OSM City Lab lacks Dom/Zentrum. A checked-in Overpass query now defines the real-data intake gate. Final Dom Loop blockout must wait for a raw OSM export; authored fallback geometry may not be labelled OSM.
+
+### PUBLIC DONORS
+The briefing pins:
+- public Race v0.8 mirror;
+- current Vehicle Lab v4 sources;
+- KayKit City Builder vehicle assets;
+- current HUD Game v3 rules;
+- Kenney Racing Kit billboard/camera/flag/ramp assets;
+- KFB PDF/CardBuilder + Travel sky-card texture path;
+- OSM/OMS and Landmark style donors.
+
+### CLAUDE HANDOFF
+Claude returns playable `.dc.html` + standalone build + RETURN/SOURCE/TEST evidence + Stage metadata ready for Work/ChatGPT to commit and publish.
+
+No runtime implementation or public Stage is claimed by this briefing.
