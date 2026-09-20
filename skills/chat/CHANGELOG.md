@@ -835,3 +835,25 @@ Fixed candidate route:
 `https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/kaykit-motion-lab-v1/`
 
 At commit preparation this is **LOCAL 87/87 · PUBLIC PENDING**. No consumer profile promotion.
+
+
+## 2026-09-20 · TC-01 human visual rejection / WorldSurface pivot
+
+**HUMAN REVIEW:** Georg rejected the PUBLIC VERIFIED TC-01 visual Track/Terrain result.
+
+**Observed:** black-band Track read, terrain/mountains visibly poke through, close zoom insufficient, no coherent final KFB Track/world design language.
+
+**Keep:** one-world/terrain-owner principle, TinySkies/Travel source knowledge, Track→authored-terrain seam evidence, OSM/OMS donor work.
+
+**Do not promote:** dense 45-zone terrain strip + separate visual road ribbon as production Track.
+
+**New planning:** `KFB-Travel-Globe/site/terrain-corridor-tc01/RED_TEAM_WORLD_SURFACE_PIVOT.md`.
+
+**Next bounded proof:** same short route A/B/C:
+- host terrain alone;
+- direct existing-face Track grading/material mask;
+- locally refined SurfacePatch derived from the host polygons.
+
+The Track style proof must use continuous material masks, close zoom and no face-by-face colour noise.
+
+OSM follows after this gate: geographic/semantic truth → WorldSurface adapter → stylised OMS/KFB buildings/landmarks. TinySkies stays a spherical-world donor, not the only KFB topology.
