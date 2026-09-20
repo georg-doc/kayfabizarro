@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="color-scheme" content="dark">
+<title>KFB Storytelling Maps · T2 Media Standee</title>
+<style>
+:root{font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:#111015;color:#f5efe6;--panel:#1c1821;--line:#4d4353;--muted:#aaa0ad;--accent:#f0c94d;--good:#87d8a8}
+*{box-sizing:border-box}html,body{margin:0;min-height:100%;background:radial-gradient(circle at 50% -10%,#352b3e 0,#17141d 44%,#100e13 100%)}body{padding:env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left)}
+header{width:min(1180px,calc(100% - 24px));margin:0 auto;padding:16px 0 8px}.kicker{font-size:10px;letter-spacing:.16em;text-transform:uppercase;font-weight:900;color:#c9bdcd}h1{font-size:clamp(25px,5vw,42px);letter-spacing:-.04em;margin:4px 0 7px}header p{margin:0;max-width:850px;color:var(--muted);font-size:12px;line-height:1.45}
+.ab{width:min(1180px,calc(100% - 24px));margin:8px auto 16px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.panel{background:linear-gradient(180deg,#211d28,#17141b);border:1px solid var(--line);border-radius:16px;overflow:hidden;box-shadow:0 14px 30px #0006}
+.panel-head{display:flex;gap:10px;align-items:flex-start;padding:11px 12px;border-bottom:1px solid #3b3340}.tag{flex:none;width:30px;height:30px;border-radius:50%;display:grid;place-items:center;background:var(--accent);color:#241e27;font-weight:950}.panel h2{font-size:15px;margin:0 0 2px}.state{font-size:9px;letter-spacing:.09em;text-transform:uppercase;color:var(--good);font-weight:900}
+.view{height:440px;position:relative;overflow:hidden;background:radial-gradient(circle at 50% 30%,#403846,#1a171e 72%)}.view canvas{display:block;width:100%!important;height:100%!important;touch-action:none}
+.hud{position:absolute;left:10px;right:10px;bottom:10px;background:#0e0c10d9;border:1px solid #453c49;border-radius:8px;padding:7px 8px;font:9px/1.4 ui-monospace,SFMono-Regular,Menlo,monospace;color:#d9d1db;pointer-events:none;white-space:pre-wrap}
+.meta{padding:10px 12px 12px}.path{font:9px/1.45 ui-monospace,SFMono-Regular,Menlo,monospace;color:#c9bdcc;overflow-wrap:anywhere}.facts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:5px;margin-top:8px}.fact{border:1px solid #3f3743;border-radius:7px;padding:6px 7px;font-size:9px;color:var(--muted)}.fact strong{display:block;color:#eee6f1;font-size:9px;margin-bottom:1px}
+.actions{display:flex;gap:6px;flex-wrap:wrap;margin-top:9px}button{appearance:none;border:1px solid #786981;background:#eee4d6;color:#251f29;border-radius:8px;padding:7px 9px;font:800 10px/1 system-ui;cursor:pointer}button.primary{background:var(--accent);border-color:var(--accent)}button.active{background:#17131b;color:#f7efe6;border-color:#807287}
+footer{width:min(1180px,calc(100% - 24px));margin:0 auto 18px;padding-top:9px;border-top:1px solid #3b323f;color:#948a98;font-size:10px;line-height:1.45}
+@media(max-width:760px){.ab{grid-template-columns:1fr}.view{height:330px}header{padding-top:10px}}
+@media(max-height:540px) and (orientation:landscape){header{padding:5px 0 3px}h1{font-size:20px;margin:1px 0 3px}header p{font-size:9px}.ab{width:min(1180px,calc(100% - 10px));gap:6px;margin-top:2px}.view{height:230px}.panel-head{padding:6px 7px}.meta{padding:6px 7px}.facts{display:none}.path{font-size:7.5px}.actions{margin-top:4px}footer{display:none}}
+</style>
+<script type="importmap">
+{"imports":{
+  "three":"https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+  "three/addons/":"https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
+}}
+</script>
+</head>
+<body>
+<header>
+  <div class="kicker">KFB Storytelling Maps v1 · T2 · exact KayKit geometry</div>
+  <h1>Media Standee A/B</h1>
+  <p>Same real KayKit stand + same real KayKit player card in both panels. Only the card's original <code>red_knight</code> front-art material is swapped for a diagnostic media texture. No political content, no new card mesh.</p>
+</header>
+<main class="ab">
+  <section class="panel">
+    <div class="panel-head"><span class="tag">A</span><div><h2>Portrait</h2><div class="state">native card orientation</div></div></div>
+    <div class="view" id="view-portrait"><div class="hud" id="status-portrait">loading exact KayKit stand + card…</div></div>
+    <div class="meta">
+      <div class="path">playerstand_red.gltf + playercard_knight_red.gltf @ a6b9220a0b42d50a9de9804fad22e84dde2c322c</div>
+      <div class="facts">
+        <div class="fact"><strong>FRAME</strong><span id="frame-portrait">checking…</span></div>
+        <div class="fact"><strong>FRONT</strong><span id="front-portrait">checking…</span></div>
+      </div>
+      <div class="actions"><button class="primary active" data-media="portrait">FRONT: MEDIA</button><button data-reset="portrait">RESET VIEW</button></div>
+    </div>
+  </section>
+
+  <section class="panel">
+    <div class="panel-head"><span class="tag">B</span><div><h2>Landscape</h2><div class="state">same card rotated 90° + media remap</div></div></div>
+    <div class="view" id="view-landscape"><div class="hud" id="status-landscape">loading exact KayKit stand + card…</div></div>
+    <div class="meta">
+      <div class="path">same exact donors · geometry rotation only · no landscape replacement mesh</div>
+      <div class="facts">
+        <div class="fact"><strong>FRAME</strong><span id="frame-landscape">checking…</span></div>
+        <div class="fact"><strong>FRONT</strong><span id="front-landscape">checking…</span></div>
+      </div>
+      <div class="actions"><button class="primary active" data-media="landscape">FRONT: MEDIA</button><button data-reset="landscape">RESET VIEW</button></div>
+    </div>
+  </section>
+</main>
+<footer>
+  T2 scope: front material replacement + orientation only. T1 source proof remains separate. T3 motion, dice collision, maps and story content stay out of this slice.
+</footer>
+<script type="module" src="./src/main.js"></script>
+</body>
+</html>
