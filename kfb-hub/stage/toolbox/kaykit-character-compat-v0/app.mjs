@@ -2,7 +2,7 @@ import * as THREE from 'three';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 
-const MATRIX_URL = '/skills/chat/workflows/KAYKIT_CHARACTER_COMPAT_V0_2026-09-20/SOURCE_MATRIX.json';
+const MATRIX_URL = './SOURCE_MATRIX.json';
 
 const el = {
   stage: document.querySelector('#stage'),
