@@ -1,3 +1,21 @@
+## 2026-09-20 · World Atlas S14 · R02 room-authoring blueprint
+
+### CURRENT SLICE
+The accepted ToolBox S21 R02 treasure/dining room is now promoted into the existing `tools/world_atlas/`
+owner as S14. The S13.2 BSP generator remains the dungeon-layout owner; S14 is an isolated room authoring
+blueprint and does not yet add Raid/Combat or Tiny Treats.
+
+### EVIDENCE
+- 24/24 unique R02 KayKit Dungeon source models registry-resolved; no generated props;
+- 22/22 static contract PASS;
+- 15/15 real Chromium/editor PASS including prop-adjustment → recipe-patch → reload roundtrip;
+- Blender 4.0.2 imported 37 manifest instances / 39 objects and saved a valid `KFB_R02.blend`;
+- automated Ubuntu review render is frozen after two repair passes because EGL is missing after the save.
+
+### GATE
+Human review only: fixed Stage `https://kayfabizarro.pages.dev/kfb-hub/stage/minigames/dungeon-raid-v2/` plus preserved Blender file. Do not integrate S14 into the
+BSP generator or expand to Tiny Treats until this gate is resolved.
+
 ## 2026-09-19 · Hub briefings repair + separated generator lanes
 
 ### DECISION
