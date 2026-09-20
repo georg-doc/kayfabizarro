@@ -1,6 +1,6 @@
 # TEST REPORT · KFB ToolBox Home v1
 
-Status: STATIC CONTRACT PASS · PUBLIC BROWSER NOT RUN
+Status: STATIC CONTRACT PASS · PUBLIC ROUTE VISIBLE · HUMAN REVIEW OPEN
 Date: 2026-09-20
 Branch: `toolbox/toolbox-home-v1-2026-09-20`
 Stage target: https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/
@@ -27,9 +27,11 @@ Coverage:
 
 ## Public browser
 
-`NOT_RUN`.
+**PASS for route visibility and router content.**
 
-The external browser reader available in this chat could not access the existing `kayfabizarro.pages.dev` pages, so that failure is not treated as evidence that the deployed routes are down. No public-pass claim is made here.
+Opened the exact Cloudflare route in the KFB in-app browser on 2026-09-20. The page rendered as `KFB ToolBox · Stage`, showed the marker-owned ToolBox structure and all **15/15** named cards: 8 runnable/public cards, 3 integration gates and 4 source-only tools. The route did not fall back to a blank Hub.
+
+This proof does **not** promote the router to Live and does not claim that every cross-origin iframe preview completed. Georg's visual/mobile usefulness review remains open.
 
 ## Human gate
 
@@ -47,4 +49,8 @@ After Stage publication:
 - Cloudflare publication branch page: `a4123884bd4e7f411b3a8dfc380fbc92e32ad953` — GitHub fetch-back marker PASS;
 - publication manifest: `f83bf34528e0ece03b81a410efeb685350c048b9` — GitHub fetch-back marker PASS;
 - publication Hub head: `d683a3febe5f583d6fc5036943efd8c7368bdc99` — ToolBox top-link + fallback link fetch-back PASS;
-- public HTTP/browser: **UNKNOWN / NOT COUNTED** because the available environments could not resolve/access `kayfabizarro.pages.dev`.
+- public Cloudflare route visibility: **PASS** in the in-app browser on 2026-09-20;
+- rendered card inventory: **15/15**;
+- ToolBox Home title + three sections: **PASS**;
+- cross-origin iframe preview completeness: **NOT COUNTED**;
+- Georg visual/mobile acceptance: **OPEN**.
