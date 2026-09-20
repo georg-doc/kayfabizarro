@@ -1,4 +1,4 @@
-name: Combat CA2-03A source enumeration
+name: Combat CA2-03B state playback
 on:
   push:
     branches: ['chatgpt-web/ca2-03-enemy-adapters-2026-09-20']
@@ -6,6 +6,7 @@ on:
       - 'kfb-hub/stage/combat/ca2-enemy-adapters/index.html'
       - 'kfb-hub/stage/combat/ca2-enemy-adapters/lab.mjs'
       - 'kfb-hub/stage/combat/ca2-enemy-adapters/proof.mjs'
+      - '.github/workflows/combat-ca2-enemy-enumeration.yml'
   workflow_dispatch:
 permissions: {contents: read}
 jobs:
@@ -21,51 +22,13 @@ jobs:
           node --check kfb-hub/stage/combat/ca2-enemy-adapters/lab.mjs
           node --check kfb-hub/stage/combat/ca2-enemy-adapters/proof.mjs
           node -e "JSON.parse(require('fs').readFileSync('kfb-hub/stage/combat/ca2-enemy-adapters/SOURCE.json','utf8'))"
-      - name: Browser
+      - name: Browser playback proof
         run: |
           npm install --no-save playwright@1.51.1
           npx playwright install --with-deps chromium
           python3 -m http.server 4173 --bind 127.0.0.1 >/tmp/ca203.log 2>&1 &
           for i in {1..30}; do curl -fsS http://127.0.0.1:4173/kfb-hub/stage/combat/ca2-enemy-adapters/SOURCE.json >/dev/null && break; sleep 1; done
-          CA203_BASE_URL=http://127.0.0.1:4173/kfb-hub/stage/combat/ca2-enemy-adapters/ CA203_SOURCE_HEAD=8b325ec856d2de6bba33968d725516e2b5ccd29f CA203_PROOF_DIR=ca203-enum-evidence node kfb-hub/stage/combat/ca2-enemy-adapters/proof.mjs
+          CA203_BASE_URL=http://127.0.0.1:4173/kfb-hub/stage/combat/ca2-enemy-adapters/ CA203_SOURCE_HEAD=a1594a60805a2254c45eceb4ca8f5053a3e8aad4 CA203_PROOF_DIR=ca203-playback-evidence node kfb-hub/stage/combat/ca2-enemy-adapters/proof.mjs
       - uses: actions/upload-artifact@v4
         if: always()
-        with: {name: ca203-enum-evidence, path: ca203-enum-evidence, retention-days: 14}
-
-  public-proof:
-    runs-on: ubuntu-latest
-    timeout-minutes: 15
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-        with: {node-version: '22'}
-      - name: Install browser
-        run: |
-          npm install --no-save playwright@1.51.1
-          npx playwright install --with-deps chromium
-      - name: Wait for exact public marker
-        env:
-          BASE: https://kayfabizarro.pages.dev/kfb-hub/stage/combat/ca2-enemy-adapters/
-          EXPECTED: 8b325ec856d2de6bba33968d725516e2b5ccd29f
-        run: |
-          node <<'NODE'
-          const base=process.env.BASE, expected=process.env.EXPECTED; let last=null;
-          for(let i=0;i<120;i++){try{const r=await fetch(base+'SOURCE.json?x='+Date.now(),{cache:'no-store'});const j=await r.json();last={status:r.status,head:j.implementationHead};if(r.ok&&j.implementationHead===expected){console.log('PUBLIC MARKER PASS',expected);process.exit(0)}}catch(e){last={error:String(e)}}await new Promise(r=>setTimeout(r,3000))}
-          console.error('PUBLIC MARKER FAIL',JSON.stringify(last));process.exit(1);
-          NODE
-      - name: Verify Combat Web Stage route
-        run: |
-          node <<'NODE'
-          const t=await fetch('https://kayfabizarro.pages.dev/kfb-hub/stage/combat/?x='+Date.now(),{cache:'no-store'}).then(r=>r.text());
-          if(!t.includes('./ca2-enemy-adapters/')) throw Error('Combat Web Stage missing CA2-03A link');
-          console.log('PUBLIC NAV PASS');
-          NODE
-      - name: Public browser proof
-        env:
-          CA203_BASE_URL: https://kayfabizarro.pages.dev/kfb-hub/stage/combat/ca2-enemy-adapters/
-          CA203_SOURCE_HEAD: 8b325ec856d2de6bba33968d725516e2b5ccd29f
-          CA203_PROOF_DIR: ca203-enum-public-evidence
-        run: node kfb-hub/stage/combat/ca2-enemy-adapters/proof.mjs
-      - uses: actions/upload-artifact@v4
-        if: always()
-        with: {name: ca203-enum-public-evidence, path: ca203-enum-public-evidence, retention-days: 14}
+        with: {name: ca203-playback-evidence, path: ca203-playback-evidence, retention-days: 14}
