@@ -1,0 +1,23 @@
+{
+  "schema": "kfb.track-zone-color-map.v1",
+  "selection": {
+    "default": "random-per-start",
+    "query": ["palette", "seed"],
+    "futureSeedOwners": ["card", "zone", "track-editor"]
+  },
+  "roles": {
+    "world": ["bed", "bedDark", "bedLight", "shoulder", "shoulderHi", "shoulderLo", "structure", "structureLo", "skyHighDay", "skyMidDay", "skyLowDay", "skyHighDusk", "skyMidDusk", "skyLowDusk"],
+    "ui": ["cool", "warm", "hot", "panel", "ink"],
+    "arrays": ["buildingTones", "roofTones"]
+  },
+  "presets": [
+    {"id":"cologne-sunset","label":"Cologne Sunset","source":"Option C measured boards 01/02"},
+    {"id":"rhine-dusk","label":"Rhine Dusk","source":"Option C measured boards 01/02"},
+    {"id":"fractal-coral","label":"Fractal Coral","source":"Option C measured boards 01/02"}
+  ],
+  "import": {
+    "storageKey": "kfb-cologne-color-map",
+    "action": "save-and-reload",
+    "note": "Imported values override existing roles only. Runtime ownership does not change."
+  }
+}
