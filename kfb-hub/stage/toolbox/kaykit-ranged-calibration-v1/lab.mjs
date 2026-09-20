@@ -140,14 +140,14 @@ function cleanFor(lane,name){const src=rangedMap.get(name);if(!src)throw Error('
 function stopLane(l){try{l.mixer.stopAllAction()}catch{}l.action=null;l.markers=[];l.fired.clear()}
 function playCompare(name){
   currentMode='compare';currentClip=name;modeStamp.textContent=name;sourceGroup.visible=false;badgeL.style.display='block';badgeR.style.display='block';
-  for(const l of lanes){l.root.visible=true;l.arrow.visible=true;stopLane(l);const clip=cleanFor(l,name),a=l.mixer.clipAction(clip,l.figure);a.enabled=true;a.setEffectiveWeight(1);a.setLoop(name==='Ranged_1H_Aiming'||name==='Ranged_1H_Shooting'?THREE.LoopRepeat:THREE.LoopOnce,name==='Ranged_1H_Aiming'||name==='Ranged_1H_Shooting'?Infinity:1);a.clampWhenFinished=true;a.reset().play();l.action=a;l.markers=markerReport(rangedMap.get(name)).releaseTimes}
+  for(const l of lanes){l.root.visible=true;l.arrow.visible=true;stopLane(l);const clip=cleanFor(l,name),a=l.mixer.clipAction(clip,l.figure);a.enabled=true;a.setEffectiveWeight(1);a.setLoop(name==='Ranged_1H_Aiming'||name==='Ranged_1H_Shooting'?THREE.LoopRepeat:THREE.LoopOnce,name==='Ranged_1H_Aiming'||name==='Ranged_1H_Shooting'?Infinity:1);a.clampWhenFinished=true;a.reset().play();l.action=a;const mr=markerReport(rangedMap.get(name));l.markers=Number.isFinite(mr.primaryRelease)?[mr.primaryRelease]:mr.releaseTimes}
   clipSel.value=name;fitObjects(lanes.map(l=>l.root));renderReports();
 }
 function showSource(){
   currentMode='source';currentClip=null;modeStamp.textContent='SOURCE GUN · ISOLATED';for(const l of lanes){stopLane(l);l.root.visible=false;l.arrow.visible=false}sourceGroup.visible=true;badgeL.style.display='none';badgeR.style.display='none';fitObjects([sourceGroup]);renderReports();
 }
 function seekRelease(){
-  const name='Ranged_1H_Shoot',rep=markerReport(rangedMap.get(name)),t=rep.releaseTimes[0];
+  const name='Ranged_1H_Shoot',rep=markerReport(rangedMap.get(name)),t=rep.primaryRelease;
   if(!Number.isFinite(t))throw Error('release marker unavailable');
   playCompare(name);
   shotEvents=0;
@@ -184,7 +184,7 @@ function reportText(l){
 }
 function renderReports(){
   const shoot=markerReport(rangedMap.get('Ranged_1H_Shoot')),auto=markerReport(rangedMap.get('Ranged_1H_Shooting'));
-  clipsEl.textContent='CombatRanged clips '+inventory.length+'\n'+inventory.join('\n')+'\n\nShoot release '+JSON.stringify(shoot.releaseTimes)+' · '+shoot.releaseHow+'\nRecovery '+shoot.recoveryStart+'s · '+shoot.recoveryMethod+'\nAuto release '+JSON.stringify(auto.releaseTimes)+' · '+auto.releaseHow;
+  clipsEl.textContent='CombatRanged clips '+inventory.length+'\n'+inventory.join('\n')+'\n\nSingle-shot primary release '+shoot.primaryRelease+'s · '+shoot.releaseHow+'\nLater rotational peaks '+JSON.stringify(shoot.laterRotationalPeaks)+' · NOT projectile releases\nRecovery candidate '+shoot.recoveryStart+'s · '+shoot.recoveryMethod+'\nContinuous cadence candidates '+JSON.stringify(auto.releaseTimes)+' · '+auto.releaseHow;
   if(lanes.length){fbReport.textContent=reportText(lanes[0]);gothReport.textContent=reportText(lanes[1]);bindReport.textContent='FB '+JSON.stringify(lanes[0].bind)+'\nGoth '+JSON.stringify(lanes[1].bind)+'\nDelta '+JSON.stringify(bindDelta(lanes[0].bind,lanes[1].bind))}
 }
 function snapshot(){
