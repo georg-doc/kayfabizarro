@@ -67,21 +67,24 @@ Do not mix A and C before the first C gate.
 
 # 3 · Visual authority
 
-Georg supplies two images directly to Claude:
+Slice C has two exact Option-C authority boards already on public `kayfabizarro/main`:
 
-- `OPTION_C_VISUAL_AUTHORITY`
-- `OPTION_A_VISUAL_AUTHORITY`
+- `travel/wip/travel_globe_wsa/_inbox/KFB Racer Option C - ChatGPT Image 20. Sept. 2026, 05_06_22 (1).png` — blob `59fd27fcb5dae48bc159093427a3e688cc83b6a4`
+- `travel/wip/travel_globe_wsa/_inbox/KFB Racer Option C - ChatGPT Image 20. Sept. 2026, 05_06_22 (2).png` — blob `ac0bf0064c8af8235a49b97d3b7e5e8196ed5579`
 
-For Slice C:
-- sample color relationships from Option C;
-- reproduce its warm/cool hierarchy;
-- use its saturation and contrast as the visual authority;
-- do not invent a substitute palette.
+Before sampling or integration, open/show each exact board in isolation.
 
-For Slice A:
-- use the Option A board as its own literal palette/light authority.
+Together they are the binding Slice-C authority for:
+- color relationships;
+- warm/cool hierarchy;
+- saturation;
+- contrast;
+- lighting mood;
+- form language.
 
-No generic low-poly pastel fallback.
+Do not invent a substitute palette.
+
+Option A visual authority is deferred until after Georg reviews C. It is not required to start Slice C.
 
 ---
 
@@ -146,37 +149,42 @@ If a design-only seam cannot be wired cleanly, leave a declarative adapter hook 
 
 ---
 
-# 6 · Filament Level 2 / FILAMENT reference
+# 6 · FILAMENT #02 · benchmark only
 
-Verified reference-only donor:
+Exact original:
 
 ```text
 KilledByAPixel/SP13KTRA@166ad838
 code/levels.js
-code/skeleton.js
-FILAMENT / circuit index 1
+FILAMENT / circuit index 1 / human Track #02
+LICENSE = All rights reserved
 ```
 
-Decision:
+Read:
+`FILAMENT_REFERENCE.md`
 
-> **Derive the SHAPE / route grammar, then re-proportion it to real Dom geography.**
+The original is useful only as a **benchmark for high-level driving and composition qualities**:
 
-Allowed design grammar:
-- seven-anchor kidney family;
-- opening/start run through dense arches / tunnel;
-- tightening double-apex character;
-- smooth filleted turns;
-- arc-length route sampling;
-- eased elevation rhythm.
+- memorable opening/start beat;
+- one strong dense-arch / tunnel moment;
+- fast/open versus tight/technical contrast;
+- compression → release;
+- smooth low-frequency route rhythm;
+- readable Track edges at speed;
+- clear overhead silhouette.
 
-Do not copy:
-- original code;
-- literal original corner coordinates;
-- original numeric scale;
-- original meshes/materials/scenery;
-- original assets.
+The KFB Cologne route must be authored independently from a blank route.
 
-Re-author an independent KFB Dom Loop after real OSM geography is available.
+Do not copy, adapt or derive:
+- source code;
+- literal corner sequence;
+- corner coordinates;
+- original circuit geometry;
+- numeric world scale;
+- palette values;
+- meshes/materials/scenery/assets.
+
+The original warm/cool palette is **not** the KFB color donor. The pinned Option-C boards are the color/light/form authority.
 
 ---
 
@@ -249,6 +257,8 @@ Map data attribution:
 
 OSM supplies geographic/semantic truth only. The final world look is Option C / KFB.
 
+For Slice C, OSM is **orientation and context, not a mandatory road-following constraint**. The Track may use mapped streets where they help, but it may also cross roofs, courtyards, alleys, plazas, ramps, bridges or explicit elevated structures around the Dom.
+
 # 8 · Cologne world hierarchy
 
 ## Hero 1 · Kölner Dom
@@ -292,6 +302,10 @@ Do not replace it with a generic fantasy mosque.
 
 # 9 · Option C Track language
 
+Track design is the first product priority after the pinned Option-C visual authority.
+
+The first loop does **not** need to trace Cologne streets exactly. Favor a memorable playable composition first, while keeping the Dom / Rhine / HBF context recognisably Cologne.
+
 Track should feel:
 - very flowing;
 - broad;
@@ -319,6 +333,18 @@ Use:
 - hero ramps;
 - one clear tunnel beat;
 - low-frequency rhythm.
+
+Route freedom for pass 1:
+- part of the Kölner Ringe where useful;
+- narrow street / alley cuts;
+- rooftop or elevated Track;
+- block-to-block gaps;
+- plaza / courtyard crossings;
+- ramp / bridge reveals;
+- Rhine-side or Rhine-overlook segments;
+- explicit STRUCTURE pieces whenever the route leaves the ground.
+
+Do not raise terrain just to support an elevated Track.
 
 Avoid:
 - black asphalt band;
@@ -735,7 +761,7 @@ Keep each proof bounded:
 
 - one Dom Loop;
 - cached real OSM Dom/Zentrum dataset;
-- Filament-derived route grammar;
+- independently authored route benchmarked against FILAMENT #02 qualities;
 - one tunnel;
 - one visible Rhine segment;
 - Kölner Dom hero;
@@ -959,14 +985,14 @@ Do not:
 
 # 33 · Start sequence
 
-1. Load both visual authority boards.
+1. Open/show both pinned Option-C authority boards in isolation.
 2. Read `SOURCE_PINS.json`.
-3. Isolate/inspect Filament reference source; derive grammar only.
+3. Read `FILAMENT_REFERENCE.md`; inspect the pinned original only as a benchmark, never as geometry intake.
 4. Load the cached `dom-zentrum-v0/CLAUDE_CONTEXT.json`; use full `normalized.json` only where needed.
 5. Isolate Dom donor.
 6. Isolate one KayKit vehicle + current deformer.
 7. Isolate billboard + CCTV camera + real card pipeline.
-8. Block out independent Dom Loop using real geography + derived Filament rhythm.
+8. Author an original Dom Loop from blank: prioritize Option-C composition and Track fun; use OSM streets only where they improve the route.
 9. Prove clean Track/world surface and Close Orbit before adding decoration.
 10. Add Option C buildings / Dom / Rhine.
 11. Add vehicle VFX / HUD.
