@@ -32,3 +32,41 @@ jobs:
       - uses: actions/upload-artifact@v4
         if: always()
         with: {name: ca203-playback-evidence, path: ca203-playback-evidence, retention-days: 14}
+
+  public-proof:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: {node-version: '22'}
+      - name: Install browser
+        run: |
+          npm install --no-save playwright@1.51.1
+          npx playwright install --with-deps chromium
+      - name: Wait for exact public marker
+        env:
+          BASE: https://kayfabizarro.pages.dev/kfb-hub/stage/combat/ca2-enemy-adapters/
+          EXPECTED: a1594a60805a2254c45eceb4ca8f5053a3e8aad4
+        run: |
+          node <<'NODE'
+          const base=process.env.BASE,expected=process.env.EXPECTED;let last=null;
+          for(let i=0;i<120;i++){try{const r=await fetch(base+'SOURCE.json?x='+Date.now(),{cache:'no-store'});const j=await r.json();last={status:r.status,head:j.implementationHead};if(r.ok&&j.implementationHead===expected){console.log('PUBLIC MARKER PASS',expected);process.exit(0)}}catch(e){last={error:String(e)}}await new Promise(r=>setTimeout(r,3000))}
+          console.error('PUBLIC MARKER FAIL',JSON.stringify(last));process.exit(1);
+          NODE
+      - name: Verify Combat Web Stage route
+        run: |
+          node <<'NODE'
+          const t=await fetch('https://kayfabizarro.pages.dev/kfb-hub/stage/combat/?x='+Date.now(),{cache:'no-store'}).then(r=>r.text());
+          if(!t.includes('CA2-03B')||!t.includes('./ca2-enemy-adapters/')) throw Error('Combat Web Stage missing CA2-03B');
+          console.log('PUBLIC NAV PASS');
+          NODE
+      - name: Public playback proof
+        env:
+          CA203_BASE_URL: https://kayfabizarro.pages.dev/kfb-hub/stage/combat/ca2-enemy-adapters/
+          CA203_SOURCE_HEAD: a1594a60805a2254c45eceb4ca8f5053a3e8aad4
+          CA203_PROOF_DIR: ca203-playback-public-evidence
+        run: node kfb-hub/stage/combat/ca2-enemy-adapters/proof.mjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with: {name: ca203-playback-public-evidence, path: ca203-playback-public-evidence, retention-days: 14}
