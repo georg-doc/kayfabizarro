@@ -71,3 +71,34 @@ Therefore:
 Per KFB recovery rule, the Blender review-render gate is frozen after two failed repair passes.
 No third CI repair is attempted in this slice. See
 `tools/world_atlas/failure-recovery/S14_BLENDER_REVIEW_GATE_2026-09-20/`.
+
+
+## Public Cloudflare proof
+
+Status: **17/17 PASS · PUBLIC VERIFIED · HUMAN FORM GATE OPEN**
+
+- exact route: `https://kayfabizarro.pages.dev/kfb-hub/stage/minigames/dungeon-raid-v2/`
+- publication branch: `cloudflare-live@92d1fb91413457b3288db22dc7be8a487f853065`
+- GitHub Actions run: `35483284605`
+- job: `106004849935`
+- artifact: `10597095887`
+- artifact digest: `sha256:4a601dbbe67940fbed303c6d283bad7531fdc0438f67da3ae7fca239e9a43c51`
+- public screenshot SHA-256: `c150763042ac15096a9db2c1ac009e0e0ba6052ac8eb66607c165497d79555ec`
+- public report SHA-256: `08f0ac204c506e562e0e92abd9034d202ffff1022791795641d37d35106d4bf5`
+
+The public runner opened the exact Stage URL in Chromium, parsed the deployed `SOURCE.json`,
+confirmed implementation head `e2d9a1fa24d024eb89ad513dc3b97762c0fb460b` and tested head
+`da04e03378f79ca973a3768e0c934bc5372b1aa5`, then entered the embedded S14 room.
+
+Public observations:
+- HTTP 200;
+- R02 title and Stage marker present;
+- 41 room root children;
+- 21 visible props;
+- 0 technical room-check failures;
+- 4 intentional source-reference deviations still explicit;
+- live Blender manifest schema present with 37 visible instances;
+- 0 page/console errors;
+- 0 failed HTTP assets.
+
+This verifies publication/runtime delivery only. Human Form acceptance remains open.

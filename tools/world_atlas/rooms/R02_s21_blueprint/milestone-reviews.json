@@ -18,17 +18,19 @@
     "approvedAt": "",
     "evidence": [
       "S14 Chromium/editor 15/15 PASS: run 35482605744, job 106002993282",
-      "KFB_R02.blend built by Blender 4.0.2: 4,115,904 bytes; sha256 93e439b122d5c6bb35727c8df79c5611a32fb48f7416d164e0471c2421f3ebef"
+      "KFB_R02.blend built by Blender 4.0.2: 4,115,904 bytes; sha256 93e439b122d5c6bb35727c8df79c5611a32fb48f7416d164e0471c2421f3ebef",
+      "Exact Cloudflare Stage PUBLIC VERIFIED: 17/17 PASS, run 35483284605 / job 106004849935, cloudflare-live@92d1fb91413457b3288db22dc7be8a487f853065."
     ],
     "strangestElement": "Browser-authored world transforms are passed to Blender rather than rebuilding the room with Blender-side layout heuristics.",
-    "notes": "Human Form approval remains open because the automated Blender review render is blocked by runner EGL after the .blend save."
+    "notes": "Automated browser/public delivery proof is green. Human Form approval remains open because the preserved Blender .blend still needs local visual comparison; automated Ubuntu review rendering is frozen on EGL after the successful save."
   },
   "runtime": {
     "status": "pending",
     "approvedBy": "",
     "approvedAt": "",
     "evidence": [
-      "Browser authoring runtime 15/15 PASS; gameplay runtime not exercised."
+      "Browser authoring runtime 15/15 PASS; gameplay runtime not exercised.",
+      "Public authoring surface 17/17 PASS at the fixed Cloudflare Stage; gameplay runtime remains out of scope."
     ],
     "strangestElement": "None proposed; this slice does not add gameplay behavior.",
     "notes": "Gameplay navigation/collision remains outside this room-authoring blueprint."
