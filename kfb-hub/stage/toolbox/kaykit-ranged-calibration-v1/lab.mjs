@@ -192,7 +192,7 @@ function snapshot(){
   return{ready,error,mode:currentMode,currentClip,source:{modelPin:MODEL_PIN,modulePin:MODULE_PIN,assetPin:ASSET_PIN,gun:PATHS.gun,ranged:PATHS.ranged},inventory:[...inventory],required:[...REQUIRED],shotEvents,
     bind:lanes.length?{frizzlebob:lanes[0].bind,gothgirl:lanes[1].bind,delta:bindDelta(lanes[0].bind,lanes[1].bind)}:null,
     markers:{shoot,continuous:auto},
-    actors:Object.fromEntries(lanes.map(l=>[l.id,{weaponReport:JSON.parse(JSON.stringify(l.weapon.report)),muzzle:muzzlePose(l.weapon),actionTime:l.action?+l.action.time.toFixed(4):null,actionPaused:!!l.action?.paused}])),
+    actors:Object.fromEntries(lanes.map(l=>[l.id,{weaponReport:JSON.parse(JSON.stringify(l.weapon.report)),muzzle:muzzlePose(l.weapon),scheduledMarkers:[...l.markers],actionTime:l.action?+l.action.time.toFixed(4):null,actionPaused:!!l.action?.paused}])),
     scope:{worldMovement:false,physics:false,targetSelection:false,projectileSpawn:false,damage:false,rewards:false,audio:false,arenaSave:false}};
 }
 window.__KFB_RANGED_CALIBRATION__={version:'0.1-candidate',ready:false,error:null,showSource,play:playCompare,seekRelease,snapshot};
