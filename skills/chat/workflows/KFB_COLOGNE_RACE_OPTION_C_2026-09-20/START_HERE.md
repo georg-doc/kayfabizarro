@@ -5,14 +5,14 @@ Date: 2026-09-20
 Producer: **Claude Design**  
 Integration lead: **WSA / KFB**  
 Public coordination repo: `georg-doc/kayfabizarro`  
-Planning branch: `planning/cologne-race-option-c-claude-2026-09-20`
+Planning branch: `planning/cologne-race-option-c-claude-r3-2026-09-20`
 
 ## Outcome
 
 Create the first playable **Option C · Elastic Cartoon World** Cologne race-design candidate, then later repeat the same gameplay/world comparison as **Option A · Hybrid Default**.
 
 The first hero experience is a **race around the Kölner Dom**, using:
-- real Dom/Zentrum OSM geography once the export gate is satisfied;
+- real cached Dom/Zentrum OSM geography from `tools/osm-city-lab/data/dom-zentrum-v0/`;
 - an independently re-authored KFB route derived only from the verified **FILAMENT** route grammar;
 - current public KFB Race v0.8 movement donor;
 - current KFB vehicle-deformer assets;
@@ -25,10 +25,12 @@ The first hero experience is a **race around the Kölner Dom**, using:
 1. `skills/chat/START_HERE.md`
 2. `skills/chat/CHAT_GITHUB_KFB_STAGE_WORKFLOW.md`
 3. `skills/chat/FRESH_CHAT_SLICE_PROTOCOL.md`
-4. [FORM_ANSWERS.md](FORM_ANSWERS.md)
-5. [SOURCE_PINS.json](SOURCE_PINS.json)
-6. [CLAUDE_DESIGN_BRIEF.md](CLAUDE_DESIGN_BRIEF.md)
-7. [DOM_ZENTRUM_OVERPASS.ql](DOM_ZENTRUM_OVERPASS.ql)
+4. [DATA_READY.md](DATA_READY.md)
+5. [FORM_ANSWERS.md](FORM_ANSWERS.md)
+6. [SOURCE_PINS.json](SOURCE_PINS.json)
+7. [CLAUDE_DESIGN_BRIEF.md](CLAUDE_DESIGN_BRIEF.md)
+8. [RETURN_TEMPLATE.md](RETURN_TEMPLATE.md)
+9. [CLAUDE_START_PROMPT.md](CLAUDE_START_PROMPT.md)
 
 ## Visual authority
 
