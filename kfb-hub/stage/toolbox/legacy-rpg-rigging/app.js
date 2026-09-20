@@ -56,7 +56,7 @@ function initThree(){
   const renderer=new THREE.WebGLRenderer({antialias:true,alpha:false});renderer.setPixelRatio(Math.min(devicePixelRatio,2));renderer.outputColorSpace=THREE.SRGBColorSpace;renderer.shadowMap.enabled=true;stage.insertBefore(renderer.domElement,stage.firstChild);state.renderer=renderer;
   const controls=new OrbitControls(camera,renderer.domElement);controls.enableDamping=true;controls.target.set(0,1,0);state.controls=controls;
   const resize=()=>{const r=stage.getBoundingClientRect();renderer.setSize(r.width,r.height,false);camera.aspect=r.width/r.height;camera.updateProjectionMatrix();};new ResizeObserver(resize).observe(stage);resize();
-  const loop=()=>{requestAnimationFrame(loop);const dt=Math.min(1/20,state.clock.getDelta());state.mixer?.update(dt);state.eyes?.update(dt);controls.update();renderer.render(scene,camer);};loop();
+  const loop=()=>{requestAnimationFrame(loop);const dt=Math.min(1/20,state.clock.getDelta());state.mixer?.update(dt);state.eyes?.update(dt);controls.update();renderer.render(scene,camera);};loop();
 }
 function clearStageObject(){state.eyes?.dispose?.();state.eyes=null;state.faceHost?.dispose?.();state.faceHost=null;if(state.sourceNode)state.sourceNode.removeFromParent();state.sourceNode=null;if(state.actor?.root)state.actor.root.removeFromParent();state.actor=null;state.headPart=null;state.mixer=null;state.eyeVisible=false;$('#eyeRigBtn').disabled=true;$('#sourceEyesBtn').disabled=true;}
 function normalizeAndAdd(root){const box=new THREE.Box3().setFromObject(root),s=box.getSize(new THREE.Vector3()),c=box.getCenter(new THREE.Vector3());root.position.x-=c.x;root.position.z-=c.z;root.position.y-=box.min.y;const max=Math.max(s.x,s.y,s.z);if(max>0){const k=2.2/max;root.scale.multiplyScalar(k);}root.updateMatrixWorld(true);state.scene.add(root);frame(root);}
@@ -64,11 +64,11 @@ function frame(root){const box=new THREE.Box3().setFromObject(root);if(box.isEmp
 function viewVector(v){return v==='side'?new THREE.Vector3(1,.25,0).normalize():v==='three'?new THREE.Vector3(1,.3,1).normalize():v==='top'?new THREE.Vector3(.1,1,.1).normalize():new THREE.Vector3(0,.22,1).normalize();}
 
 async function isolate(item,tab){
-  state.selected=item;state.tab=tab;renderCatalog();clearStageObject();$('#loading').hidden=false;$('#stageMode').textContent='SOURCE';$('#stageObject').textContent=item.label;$('#sourcePath').textContent=entryPath(item,tab)?'embedded part';setBadge('SOURCE','candidate');
+  state.selected=item;state.tab=tab;renderCatalog();clearStageObject();$('#loading').hidden=false;$('#stageMode').textContent='SOURCE';$('#stageObject').textContent=item.label;$('#sourcePath').textContent=entryPath(item,tab)||'embedded part';setBadge('SOURCE','candidate');
   try{
     const p=entryPath(item,tab);if(!p)throw new Error('no exact source path');const g=await loader.loadAsync(sourceUrl(p));const root=g.scene.clone(true);
     if(tab==='heads'&&item.kind==='embedded'){const ch=state.catalog.characters.find(c=>c.id===item.character);let head=root.getObjectByName(ch.headNode);const group=new THREE.Group();group.name=item.id; if(head){head.removeFromParent();group.add(head);} for(const n of ch.headExtras||[]){const e=root.getObjectByName(n);if(e){e.removeFromParent();group.add(e);}}state.sourceNode=group;normalizeAndAdd(group);}
-    else if(tab==='accessories'&&item.kind==='embedded-head-gear'){const part=root.getObjectByName(item.node);if(!part)throw new Error('embedded source nod not found: '+item.node);part.removeFromParent();const group=new THREE.Group();group.name=item.id;group.add(part);state.sourceNode=group;normalizeAndAdd(group);}
+    else if(tab==='accessories'&&item.kind==='embedded-head-gear'){const part=root.getObjectByName(item.node);if(!part)throw new Error('embedded source node not found: '+item.node);part.removeFromParent();const group=new THREE.Group();group.name=item.id;group.add(part);state.sourceNode=group;normalizeAndAdd(group);}
     else {state.sourceNode=root;normalizeAndAdd(root);}
     $('#modeHint').textContent='Real source shown alone. Assemble only after inspection.';state.mode='source';syncModeButtons();
   }catch(e){console.error(e);$('#modeHint').textContent='SOURCE LOAD FAILED: '+e.message;}
@@ -81,7 +81,7 @@ async function assemble(){
     let headPart=actor.parts.Head?.node;if(head.kind==='asset'){const repl=await replaceHead({loader,character:actor,headUrl:sourceUrl(head.path),log:console.log});headPart=repl.headPart;} else if(head.character!==body.id){
       const sourceChar=state.catalog.characters.find(c=>c.id===head.character),g=await loader.loadAsync(sourceUrl(sourceChar.path)),tmp=g.scene;tmp.updateMatrixWorld(true);
       const h=tmp.getObjectByName(sourceChar.headNode), group=new THREE.Group(); group.name='kfb-cross-class-head';
-      const headWorld=h?.matrixWorld?.clone(), headInv=headWorld?.clone().invert(); const pieces=[];if(h)pieces.push(h); for(const n(of sourceChar.headExtras||[]){const e=tmp.getObjectByName(n);if(e)pieces.push(e);}
+      const headWorld=h?.matrixWorld?.clone(), headInv=headWorld?.clone().invert(); const pieces=[];if(h)pieces.push(h); for(const n of sourceChar.headExtras||[]){const e=tmp.getObjectByName(n);if(e)pieces.push(e);}
       const matrices=new Map(pieces.map(e=>[e,e.matrixWorld.clone()])); for(const e of pieces){e.removeFromParent();e.matrixAutoUpdate=false;e.matrix.identity();if(e!==h&&headInv)e.matrix.copy(headInv).multiply(matrices.get(e));e.matrixWorldNeedsUpdate=true;group.add(e);}
       actor.parts.Head.node.visible=false;for(const e of actor.extras)if(e.bone==='Head')e.node.visible=false;actor.headBone.add(group);actor.headReplacement=group;headPart=h||group;
     }
