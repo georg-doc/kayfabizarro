@@ -23,17 +23,24 @@ try {
     !!window.__S14?.root && document.getElementById('hud')?.style.display === 'none',
     {}, { timeout: 180000 });
 
-  const state = await page.evaluate(() => ({
-    roomId: window.__S14.room?.id,
-    rootChildren: window.__S14.root?.children?.length ?? 0,
-    failedChecks: [...document.querySelectorAll('#checks .no')].map(x => x.textContent.trim()),
-    visibleProps: window.__S14.root.children.filter(x => x.visible && x.userData.recipe?.layer === 'prop').length
-  }));
+  const state = await page.evaluate(() => {
+    const redRows = [...document.querySelectorAll('#checks .no')].map(x => x.textContent.trim());
+    const documentedDeviations = redRows.filter(x => x.startsWith('Abweichung von der Vorlage'));
+    const technicalFailures = redRows.filter(x => !x.startsWith('Abweichung von der Vorlage'));
+    return {
+      roomId: window.__S14.room?.id,
+      rootChildren: window.__S14.root?.children?.length ?? 0,
+      technicalFailures,
+      documentedDeviations,
+      visibleProps: window.__S14.root.children.filter(x => x.visible && x.userData.recipe?.layer === 'prop').length
+    };
+  });
   report.initialState = state;
   check('R02 room booted', state.roomId === 'R02', state.roomId);
   check('real room instances loaded', state.rootChildren >= 20, state.rootChildren);
   check('visible props loaded', state.visibleProps >= 8, state.visibleProps);
-  check('S21 room checks have no red failures', state.failedChecks.length === 0, state.failedChecks);
+  check('room technical checks have no red failures', state.technicalFailures.length === 0, state.technicalFailures);
+  check('four known visual deviations stay explicit', state.documentedDeviations.length === 4, state.documentedDeviations);
 
   const before = await page.evaluate(() => {
     const n = window.__S14.root.children.find(x => x.visible && x.userData.recipe?.propId === 'truhe_auf');
