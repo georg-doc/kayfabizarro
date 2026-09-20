@@ -27,5 +27,18 @@
   "publicVerification": {
     "status": "PENDING",
     "reason": "This session's direct HTTP viewer could not fetch kayfabizarro.pages.dev; no PUBLIC_VERIFIED claim is made until the exact routes are opened and v2 markers are visible."
+  },
+  "statusRefresh": {
+    "branch": "hub/toolbox-v2-status-refresh-2026-09-21",
+    "implementationHead": "ff3b71a386f370da80b2a19cfc242ec9c0a7b00a",
+    "checks": "18/18 PASS",
+    "auditedPublicationHead": "120159b1d7708b5bf580af63da4c503a6821a286",
+    "changes": [
+      "remove stale Hub UI v2 review gate after human acceptance",
+      "replace stale 15-card ToolBox references with current 17-card v2 route matrix",
+      "add ToolBox to Hub fallback and Stage router",
+      "preserve prominent Hub header ToolBox link",
+      "refresh ROUTE_AUDIT against current cloudflare-live tree"
+    ]
   }
 }

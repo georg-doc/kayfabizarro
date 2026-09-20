@@ -52,3 +52,26 @@ This proves source composition and current publication-tree presence/absence. It
 - direct public HTTP/browser verification from this session: **PENDING / TOOL ACCESS BLOCKED**
 
 Do not convert the publication-branch write into `PUBLIC_VERIFIED` until the exact Hub and ToolBox routes visibly show the v2 revision.
+
+
+## Status refresh · 2026-09-21
+
+Branch: `hub/toolbox-v2-status-refresh-2026-09-21`  
+Implementation checkpoint: `ff3b71a386f370da80b2a19cfc242ec9c0a7b00a`
+
+**18/18 PASS**
+
+Covered:
+- accepted Hub UI v2 Paper/Dark + hash router retained;
+- prominent ToolBox header + fallback link;
+- stale Hub UI v2 human gate removed after Georg acceptance;
+- stale 15-card ToolBox copy removed;
+- current ToolBox v2 status = 17 cards;
+- I1A WorldSurface briefing preserved;
+- Stage router contains a direct ToolBox v2 card;
+- ToolBox v2 still has 17 cards / 6 real public previews;
+- Hub and ToolBox inline JavaScript parse;
+- route audit = 6 public / 5 missing-or-blocked / 6 source-or-integration;
+- route audit rechecked against `cloudflare-live@120159b1d7708b5bf580af63da4c503a6821a286`.
+
+This is source/tree evidence. Public pages.dev verification remains a separate gate.
