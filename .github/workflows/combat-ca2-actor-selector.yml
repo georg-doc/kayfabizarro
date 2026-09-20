@@ -1,0 +1,51 @@
+name: Combat CA2 Actor Selector branch proof
+on:
+  push:
+    branches:
+      - 'chatgpt-web/ca2-01-actor-selector-2026-09-20'
+    paths:
+      - 'kfb-hub/stage/combat/**'
+      - '.github/workflows/combat-ca2-actor-selector.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  branch-proof:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Static syntax and JSON
+        run: |
+          node --check kfb-hub/stage/combat/ca2-actor-selector/selector.mjs
+          node --check kfb-hub/stage/combat/ca2-actor-selector/proof.mjs
+          node -e "JSON.parse(require('fs').readFileSync('kfb-hub/stage/combat/ca2-actor-selector/ACTOR_PROFILES.json','utf8'));JSON.parse(require('fs').readFileSync('kfb-hub/stage/combat/ca2-actor-selector/SOURCE.json','utf8'));console.log('JSON PASS')"
+      - name: Install Playwright Chromium
+        run: |
+          npm install --no-save playwright@1.51.1
+          npx playwright install --with-deps chromium
+      - name: Serve exact branch
+        run: |
+          python3 -m http.server 4173 --bind 127.0.0.1 >/tmp/ca2-http.log 2>&1 &
+          echo $! >/tmp/ca2-http.pid
+          for i in {1..30}; do
+            curl -fsS http://127.0.0.1:4173/kfb-hub/stage/combat/ca2-actor-selector/SOURCE.json >/dev/null && exit 0
+            sleep 1
+          done
+          cat /tmp/ca2-http.log
+          exit 1
+      - name: Browser proof
+        env:
+          CA2_BASE_URL: http://127.0.0.1:4173/kfb-hub/stage/combat/ca2-actor-selector/
+          CA2_SOURCE_HEAD: 4bf1176b2387f07966f18463a5887096a285a27a
+          CA2_PROOF_DIR: combat-ca2-selector-evidence
+        run: node kfb-hub/stage/combat/ca2-actor-selector/proof.mjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: combat-ca2-actor-selector-evidence
+          path: combat-ca2-selector-evidence
+          retention-days: 14
