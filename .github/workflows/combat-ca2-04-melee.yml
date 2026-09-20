@@ -1,0 +1,33 @@
+name: Combat CA2-04 branch melee browser proof
+on:
+  push:
+    branches: ['chatgpt-web/ca2-04-melee-stage-2026-09-20']
+    paths:
+      - 'kfb-hub/stage/combat/ca2-melee-lab/**'
+      - '.github/workflows/combat-ca2-04-melee.yml'
+  workflow_dispatch:
+permissions: {contents: read}
+jobs:
+  branch-proof:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: {node-version: '22'}
+      - name: Static
+        run: |
+          node --check kfb-hub/stage/combat/ca2-melee-lab/lab.mjs
+          node --check kfb-hub/stage/combat/ca2-melee-lab/contact.v1.js
+          node --check kfb-hub/stage/combat/ca2-melee-lab/proof.mjs
+          node -e "const f=require('fs');for(const p of ['SOURCE.json','MELEE_PROFILE.json','ACTION_MARKERS.json','ACTOR_COMPATIBILITY_MATRIX.json','LEGACY_CLIP_INVENTORY.json','VFX_SFX_MAP.json'])JSON.parse(f.readFileSync('kfb-hub/stage/combat/ca2-melee-lab/'+p,'utf8'))"
+      - name: Browser melee proof
+        run: |
+          npm install --no-save playwright@1.51.1
+          npx playwright install --with-deps chromium
+          python3 -m http.server 4173 --bind 127.0.0.1 >/tmp/ca204.log 2>&1 &
+          for i in {1..30}; do curl -fsS http://127.0.0.1:4173/kfb-hub/stage/combat/ca2-melee-lab/SOURCE.json >/dev/null && break; sleep 1; done
+          CA204_BASE_URL=http://127.0.0.1:4173/kfb-hub/stage/combat/ca2-melee-lab/ CA204_IMPLEMENTATION_HEAD=d00e8b1e2b78dc415e3435317a227e06ff1189f6 CA204_PROOF_DIR=ca204-melee-evidence node kfb-hub/stage/combat/ca2-melee-lab/proof.mjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with: {name: ca204-melee-evidence, path: ca204-melee-evidence, retention-days: 14}
