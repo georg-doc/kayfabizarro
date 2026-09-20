@@ -44,3 +44,22 @@
 - Browser/WebGL execution of P0.2: NOT YET CLAIMED.
 - Cloudflare public deployment: NOT YET VERIFIED.
 - Georg visual acceptance: OPEN.
+
+
+## 2026-09-20 · P0.2 experimental Stage packaging
+
+### DECISION
+- Publish an experimental Stage copy before further product integration.
+- Keep Live unchanged and preserve existing owners.
+
+### IMPLEMENTATION
+- Added `kfb-hub/stage/cartoon-map-board-p02/` as the experimental Stage package.
+- Stage build stamp: `p0.2-stage-exp-r1`.
+- KayKit runtime assets stay sourced from the central GitHub repository.
+- KFB Stage index gets a direct human-test card.
+
+### STATUS
+- Source package: IMPLEMENTED.
+- Public browser verification: OPEN.
+- Georg visual acceptance: OPEN.
+- Live: unchanged.

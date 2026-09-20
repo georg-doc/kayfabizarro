@@ -1,0 +1,20 @@
+{
+  "schema": "kfb.stage-source/0.1",
+  "project": "KFB Cartoon Map Board",
+  "slice": "P0.2 experimental Stage",
+  "sourceRepo": "georg-doc/kayfabizarro",
+  "sourceBase": "2ff8b350beefe02912bbff6eeeead3882e583d08",
+  "sourceIndexBlob": "aac77aea10aca23b4b70c52a9da84a85b3dbfa08",
+  "sourceAppBlob": "ec4ab3df7175bc2375e299f1e828982e05a1b8b4",
+  "storyBlob": "4a59e7106b5a98bad51894c475ee09f6246a5517",
+  "modifications": [
+    "Stage title/build stamp",
+    "KayKit GLTFs load from the central GitHub raw asset source because the lean Cloudflare branch does not carry the full BoardGameBits tree."
+  ],
+  "ownersPreserved": [
+    "OSM City Lab detailed city geometry",
+    "KFB Ink Canon card ink",
+    "KFB CardBuilder PDF/card rendering",
+    "central Asset Registry provenance"
+  ]
+}
