@@ -298,3 +298,28 @@ Status: **PUBLIC VERIFIED · HUMAN VISUAL/PHYSICS GATE OPEN · UNMERGED**.
 
 Exactly one next gate is Georg's isolated curtain review: weight/folds, idle wind, opening gather, closing, impact and fabric choice. Birthday is not reactivated. Aging, tieback/swag, card-breach/dissolve and Shader Pool research remain deferred.
 
+
+
+## 2026-09-20 · 2D Resident / DocCheck Project Island handoff
+
+The 2D Animation Studio now has a named consumer route rather than remaining a generic donor lane.
+
+WSA check-in:
+
+`workflows/2D_RESIDENT_ACTOR_WSA_2026-09-20/START_HERE.md`
+
+First prepared actor:
+
+**DocCheck Eumel · 2.5D Resident**
+
+Prepared consumers:
+
+- DocCheck Project Island with an exact pinned KayKit 3D environment;
+- KFB Resident Atlas through the existing Resident Scene Module seam;
+- one later named KFB game consumer after the Resident proof.
+
+The new `kfb.2d-actor-module/0.1-candidate` contract keeps world position, collision, camera, gameplay and persistence with the receiving consumer.
+
+A Doccy quadruped topology template is prepared, but no Doccy visual geometry is inferred without authoritative source art.
+
+Next technical gate: one browser-proven world-space `three2p5d` Eumel adapter. Do not index/promote the Resident candidate before that gate.
