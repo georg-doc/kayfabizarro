@@ -160,8 +160,8 @@ export async function boot(){
     const box=new THREE.Box3();
     for(const o of [v2.mesh,legacy.mesh,roads.group,dom.root])if(o.visible!==false)box.expandByObject(o);
     const s=box.getSize(new THREE.Vector3()),c=box.getCenter(new THREE.Vector3()),d=Math.max(1,s.length()),dir=new THREE.Vector3(1.05,.54,1).normalize();
-    camera.fov=49;camera.filmOffset=2;camera.up.set(.018,.9998,0);camera.updateProjectionMatrix();
-    const vf=THREE.MathUtils.degToRad(camera.fov),hf=2*Math.atan(Math.tan(vf/2)*camera.aspect),dist=d*.5/Math.sin(Math.min(vf,hf)/2)*.96;
+    camera.fov=46;camera.filmOffset=1.6;camera.up.set(.018,.9998,0);camera.updateProjectionMatrix();
+    const vf=THREE.MathUtils.degToRad(camera.fov),hf=2*Math.atan(Math.tan(vf/2)*camera.aspect),dist=d*.5/Math.sin(Math.min(vf,hf)/2)*.74;
     controls.target.copy(c);camera.position.copy(c).addScaledVector(dir,dist);camera.near=Math.max(.05,d/5000);camera.far=dist+d*12;camera.updateProjectionMatrix();controls.update();
   }
   function applyState(){
