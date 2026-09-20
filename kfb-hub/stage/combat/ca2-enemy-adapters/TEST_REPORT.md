@@ -1,20 +1,22 @@
 # CA2-03B · Test Report
 
-Status: **BRANCH VERIFIED**
+Status: **PUBLIC_VERIFIED**
 
-Runtime under test: `a1594a60805a2254c45eceb4ca8f5053a3e8aad4`.
+Runtime: `8e9b368305ca7ec76bdb9e4b4b89136ef527b2fe`
 
-Run `35493052845` · job `106031173581`: **109/109 PASS**.
+Workflow `35493474052`:
+- branch job `106032266047`: **109/109 PASS**
+- public job `106032265920`: **109/109 PASS**
+- public marker: PASS
+- Combat Web Stage navigation: PASS
+- delivered playback module body: PASS
+- failed resources: 0
+- page errors: 0
 
-For each of Idle / Move / Attack / Hit / Defeat:
-- exact clip name checked for all 3 actors;
-- deterministic frozen phase = 0.35;
-- skinned bounds finite;
-- diagonal-size ratio checked against rest pose;
-- root anchor unchanged;
-- grounding checked for non-attack states;
-- attack-state floor penetration bounded.
+For each of five states and three actors the proof checks exact clip, deterministic phase, finite skinned bounds, no collapse and stable world anchor. Non-attack states additionally check ground residual; attack states check bounded floor penetration.
 
-No failed resources. No page errors.
+Artifacts:
+- branch `10600470645` · `sha256:0a9cb18451fa7af3f1e4e10e3c5d59e73f4fa0bc05e58761bdbb6db43ab38713`
+- public `10600420826` · `sha256:99bf8505d9cb9a499751b88a888fab9271ccb80ad1bbd277574e198c19a49578`
 
-Artifact: `10599676961` · `sha256:8bc9e098a9439ace78c77da01c5f04fca63135e34fc4f2fa9d1ecb7a91a40233`.
+The earlier public timeout was a stale same-path JS delivery issue, not an actor-state failure. Versioning the module URL fixed the publication seam.

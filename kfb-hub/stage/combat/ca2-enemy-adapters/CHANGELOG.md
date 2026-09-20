@@ -1,15 +1,21 @@
 # CA2 Enemy Adapter · additive changelog
 
-## 2026-09-20 · CA2-03A source + clip enumeration
-PUBLIC_VERIFIED at the fixed Combat Stage. Exact Medium/Large clip inventories and first state map frozen.
+## 2026-09-20 · CA2-03A
+Exact Skeleton Warrior / Orc Brute / Avian Swordsman sources and Medium/Large clip inventories enumerated. Branch/public 32/32 PASS.
 
-## 2026-09-20 · CA2-03B state playback
+## 2026-09-20 · CA2-03B
 
 ### IMPLEMENTATION
-Three exact actors are shown together. Each owns one local mixer in the isolated Stage. Root/Hips position tracks are removed from imported clips so no clip becomes a second world-motion writer.
+Three exact actors visible together; one mixer each. Five-state map plays from exact rig-specific clips. Root/Hips position tracks are stripped, preserving external world-motion ownership.
 
-### TESTED RESULT
-Run `35493052845`: **109/109 PASS** on five deterministic state samples across Skeleton Warrior, Orc Brute and Avian Swordsman. World anchors remain stable; no rig collapse; grounding stays within the stated gate.
+### BRANCH
+Deterministic five-state proof: **109/109 PASS**.
+
+### PUBLICATION REPAIR
+First public marker/navigation passed but playback timed out because `lab.mjs` reused the same URL as CA2-03A and could remain stale at Cloudflare. Added a versioned module URL and an explicit public module-body assertion.
+
+### PUBLIC_VERIFIED
+Final workflow `35493474052`: branch/public **109/109 PASS**; marker/navigation/module-body PASS; zero failed resources/page errors.
 
 ### OPEN
-Public Cloudflare proof + Georg visual review. No Arena combat integration yet.
+Georg visual state-playback gate only. Arena combat integration remains WSA-owned.

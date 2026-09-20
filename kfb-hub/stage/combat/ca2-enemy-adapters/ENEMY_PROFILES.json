@@ -1,7 +1,7 @@
 {
   "schema": "kfb.combat.enemy-profile-set/0.1-candidate",
   "date": "2026-09-20",
-  "status": "ENUMERATED_NOT_ARENA_ENABLED",
+  "status": "PUBLIC_VERIFIED_STATE_PLAYBACK_HUMAN_OPEN",
   "profiles": [
     {
       "id": "skeleton-warrior",
@@ -21,7 +21,20 @@
       "capabilities": [
         "melee"
       ],
-      "arenaOwner": false
+      "arenaOwner": false,
+      "statePlayback": {
+        "status": "PUBLIC_VERIFIED",
+        "states": [
+          "idle",
+          "move",
+          "attack",
+          "hit",
+          "defeat"
+        ],
+        "rootMotion": "stripped-root-hips-position",
+        "oneMixer": true,
+        "run": 35493474052
+      }
     },
     {
       "id": "orc-brute",
@@ -41,7 +54,20 @@
       "capabilities": [
         "melee-body-proof"
       ],
-      "arenaOwner": false
+      "arenaOwner": false,
+      "statePlayback": {
+        "status": "PUBLIC_VERIFIED",
+        "states": [
+          "idle",
+          "move",
+          "attack",
+          "hit",
+          "defeat"
+        ],
+        "rootMotion": "stripped-root-hips-position",
+        "oneMixer": true,
+        "run": 35493474052
+      }
     },
     {
       "id": "avian-swordsman",
@@ -61,7 +87,20 @@
       "capabilities": [
         "comparison"
       ],
-      "arenaOwner": false
+      "arenaOwner": false,
+      "statePlayback": {
+        "status": "PUBLIC_VERIFIED",
+        "states": [
+          "idle",
+          "move",
+          "attack",
+          "hit",
+          "defeat"
+        ],
+        "rootMotion": "stripped-root-hips-position",
+        "oneMixer": true,
+        "run": 35493474052
+      }
     }
   ],
   "holds": [
@@ -73,5 +112,6 @@
       "id": "skeleton-mage",
       "reason": "magic/ranged outside first melee gate"
     }
-  ]
+  ],
+  "humanAcceptance": "PENDING_CA2_03B"
 }
