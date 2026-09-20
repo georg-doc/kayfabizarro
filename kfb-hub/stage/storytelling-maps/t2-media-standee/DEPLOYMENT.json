@@ -1,7 +1,7 @@
 {
   "schema": "kfb.public-mirror/0.2",
   "build": "KFB-STORYTELLING-MAPS-T2-MEDIA-STANDEE-20260920-R1",
-  "status": "PUBLICATION_COMMITTED_VERIFYING",
+  "status": "PUBLIC_VERIFIED_HUMAN_GATE_OPEN",
   "sourceRepo": "georg-doc/kayfabizarro",
   "sourceBranch": "stage/storytelling-maps-v1-t2-media-standee-2026-09-20",
   "sourceBase": "7583dc324d03f54276abae512b21a0296efc47a6",
@@ -13,5 +13,37 @@
   "humanAcceptance": "PENDING",
   "assetPin": "a6b9220a0b42d50a9de9804fad22e84dde2c322c",
   "publicationBranch": "cloudflare-live",
-  "publicationParent": "8ca2ae81d83d4f5e42a1b3d4fc38fcbc4bcb8710"
+  "publicationParent": "8ca2ae81d83d4f5e42a1b3d4fc38fcbc4bcb8710",
+  "sourceHead": "d8b8f2e6feb3be88b29a49dd83182c0cf669167d",
+  "sourcePr": 145,
+  "publicationCommit": "2eb9235f075e29b2eaced4ee76485d0c2ed4aeb4",
+  "publicVerified": true,
+  "publicWorkflowRun": 35523870018,
+  "publicWorkflowJob": 106112519588,
+  "publicBrowserChecks": "13/13 PASS",
+  "portrait": {
+    "ready": true,
+    "framePreserved": true,
+    "replacementBindings": 1,
+    "bounds": [
+      2.414,
+      3.55,
+      1.006
+    ]
+  },
+  "landscape": {
+    "ready": true,
+    "framePreserved": true,
+    "replacementBindings": 1,
+    "bounds": [
+      3.55,
+      3.467,
+      1.183
+    ]
+  },
+  "mediaToggle": "PASS",
+  "pageErrors": 0,
+  "failedHttpRequests": 0,
+  "evidenceArtifact": 10609178985,
+  "evidenceArtifactDigest": "sha256:e94c04a8de1eb0f6b7431e2790e64382a7e68904d5df76c7fdd1a54e3b6fbc7a"
 }
