@@ -30,7 +30,8 @@
     "eumel2p5dResidentBinding": "PREPARED_CANDIDATE",
     "residentAtlasCandidate": "PREPARED_NOT_INDEXED",
     "three2p5dAdapter": "IMPLEMENTATION_STATIC_PASS_BROWSER_PENDING",
-    "doccyQuadrupedTemplate": "TEMPLATE_ONLY_SOURCE_REQUIRED"
+    "doccyQuadrupedTemplate": "TEMPLATE_ONLY_SOURCE_REQUIRED",
+    "doccySourceIntake": "PREPARED_AWAITING_SOURCE"
   },
   "sourceAudit": {
     "gitBlobSha": "436143b019f0034c6d2d9183154cf613ff8c701e",
@@ -94,7 +95,8 @@
     "eumelResident": "consumers/eumel-resident/EUMEL_2P5D_RESIDENT_BINDING.v0.1.json",
     "residentCandidate": "tools/resident_atlas/modules/candidates/eumel-doccheck-project-island.module.json",
     "doccyTemplate": "templates/DOCCY_QUADRUPED_RIG_TEMPLATE.v0.1.json",
-    "wsaHandoff": "skills/chat/workflows/2D_RESIDENT_ACTOR_WSA_2026-09-20/START_HERE.md"
+    "wsaHandoff": "skills/chat/workflows/2D_RESIDENT_ACTOR_WSA_2026-09-20/START_HERE.md",
+    "doccySourceIntake": "_inbox/doccy-source/"
   },
   "three2p5dProof": {
     "path": "proofs/eumel-three2p5d-v1/",

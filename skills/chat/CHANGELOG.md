@@ -789,3 +789,105 @@ Aging, lower-third tieback/swag, card ripple/dissolve and Shader Pool / Texture 
 - introduced a candidate 2D actor module lifecycle/ownership contract;
 - kept world/collision/camera/gameplay with the receiving consumer;
 - prepared Doccy as a quadruped topology template only; authoritative source art is required before visual implementation.
+
+
+## 2026-09-20 · ToolBox KayKit Motion Lab v1 · local 87/87 Stage candidate
+
+### USER DIRECTION
+Hand the KayKit creator/KCL lessons into ToolBox / Animation Lab as proposals and already apply them to FrizzleBob Driver Graft, GothGirl and Black Knight / Rig_Large.
+
+### OWNER
+KFB ToolBox owns this bounded motion-authoring candidate. Animation Lab remains unpromoted until its own current SSOT is pinned. Travel/Race/Combat/Platformer retain movement, physics and gameplay state.
+
+### IMPLEMENTATION
+Tested source head `3ab2a439b013b816e843ea303e7015a26ee2aff8` implements:
+- exact Rig_Medium and Rig_Large animation libraries;
+- FrizzleBob via current `mountGraft(animation:'host')`;
+- GothGirl direct;
+- Black Knight direct / Large;
+- Root/Hips translation stripping;
+- foot-contact measurement;
+- naive vs phase-sync Walk→Run;
+- speed→timeScale;
+- hysteresis preview;
+- measured Walk/Run handoff-speed candidate.
+
+### LOCAL EVIDENCE
+Run `35480849313`, job `105998255165`: **87/87 PASS**, artifact `10595139102`, 0 failed resources, 0 page/console errors.
+
+Measured handoff:
+- Rig_Medium: ~1.108, tiny rate-window gap ~0.016, Walk ~1.80× / Run ~0.45×;
+- Rig_Large: ~1.811, rate windows overlap, Walk ~1.02× / Run ~0.97×.
+
+Black Knight exact tested inventory is only:
+`Death_A · Death_A_Pose · Hit_A · Idle_A · Idle_B · T-Pose · Running_A · Walking_A`.
+No Large Jump, Walking_B/C or Running_B is inferred.
+
+### ATTACHMENTS
+Source-pinned proposals only:
+- GothGirl microphone → handslot.r;
+- Black Knight Sword_Large → handslot.r;
+- Black Knight Shield_Large → handslot.l + measured donor push 0.55;
+- FrizzleBob weapon remains graft-reader ownership.
+
+### STAGE
+Fixed candidate route:
+`https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/kaykit-motion-lab-v1/`
+
+At commit preparation this is **LOCAL 87/87 · PUBLIC PENDING**. No consumer profile promotion.
+
+
+## 2026-09-20 · TC-01 human visual rejection / WorldSurface pivot
+
+**HUMAN REVIEW:** Georg rejected the PUBLIC VERIFIED TC-01 visual Track/Terrain result.
+
+**Observed:** black-band Track read, terrain/mountains visibly poke through, close zoom insufficient, no coherent final KFB Track/world design language.
+
+**Keep:** one-world/terrain-owner principle, TinySkies/Travel source knowledge, Track→authored-terrain seam evidence, OSM/OMS donor work.
+
+**Do not promote:** dense 45-zone terrain strip + separate visual road ribbon as production Track.
+
+**New planning:** `KFB-Travel-Globe/site/terrain-corridor-tc01/RED_TEAM_WORLD_SURFACE_PIVOT.md`.
+
+**Next bounded proof:** same short route A/B/C:
+- host terrain alone;
+- direct existing-face Track grading/material mask;
+- locally refined SurfacePatch derived from the host polygons.
+
+The Track style proof must use continuous material masks, close zoom and no face-by-face colour noise.
+
+OSM follows after this gate: geographic/semantic truth → WorldSurface adapter → stylised OMS/KFB buildings/landmarks. TinySkies stays a spherical-world donor, not the only KFB topology.
+
+
+## 2026-09-20 · ToolBox KayKit Motion Lab · public 87/87 PASS
+
+### IMPLEMENTATION
+ToolBox-owned Motion/Animation-Lab candidate for:
+- FrizzleBob · Driver Graft · Rig_Medium;
+- GothGirl · Rig_Medium;
+- Black Knight · Rig_Large.
+
+The exact tested runtime mirrors implementation head `3ab2a439b013b816e843ea303e7015a26ee2aff8`.
+
+### PUBLIC EVIDENCE
+Fixed Stage:
+`https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/kaykit-motion-lab-v1/`
+
+Run `35484127790`, public-proof job `106007210838`:
+- **87/87 PASS**;
+- artifact `10596912462`;
+- digest `sha256:d4638aba0e4bd02b690f19cb931c92f99cac020d0af05e5d1124f11003300ca4`;
+- FrizzleBob / GothGirl / Black Knight screenshots;
+- 0 failed resources;
+- 0 page/console errors.
+
+### FINDINGS
+- Medium shared motion facts: 25 bindable General+MovementBasic clips; candidate Walk/Run handoff ~1.108 with a small ~0.016 playback-window gap at the current technical clamp.
+- Large Black Knight: 8 bindable clips in the tested sets; Walk/Run handoff ~1.811 near native rates (~1.02× / ~0.97×); Running_A automatic slip remains high and needs visual review.
+- Running_B stays HOLD on Medium.
+- Large does not inherit Medium clips/timing.
+- Attachments remain source-pinned proposals, not accepted mounts.
+
+`PUBLIC_VERIFIED = YES`.
+
+Exactly one next gate: Georg reviews the three actors and their phase-sync/weight/cadence on the public Stage before any consumer MotionProfile promotion.

@@ -21,5 +21,11 @@
     "doccheckProjectIsland": "PENDING",
     "georgAcceptance": "PENDING"
   },
-  "ownerRule": "Package registration never promotes a consumer or visual PASS."
+  "ownerRule": "Package registration never promotes a consumer or visual PASS.",
+  "three2p5dImplementation": {
+    "revision": "52702836bf0740414e53abb5a3867af5981c195a",
+    "change": "Correct source-leg binding around measured sourceHip before targetHip placement; add deterministic public QA seam.",
+    "publicQaRun": 35480439344,
+    "publicQaStatus": "IN_PROGRESS_AT_PACKAGE_PIN_UPDATE"
+  }
 }

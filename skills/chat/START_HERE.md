@@ -323,3 +323,23 @@ The new `kfb.2d-actor-module/0.1-candidate` contract keeps world position, colli
 A Doccy quadruped topology template is prepared, but no Doccy visual geometry is inferred without authoritative source art.
 
 Next technical gate: one browser-proven world-space `three2p5d` Eumel adapter. Do not index/promote the Resident candidate before that gate.
+
+
+### 2026-09-20 · Current Track/Terrain state · visual reject, WorldSurface pivot
+
+TC-01 remains **technical evidence**, not an accepted visual foundation.
+
+Georg rejected the PUBLIC VERIFIED result because the Track reads as a black band, terrain pokes through, and the review camera cannot inspect the surface closely enough.
+
+Current planning source:
+`georg-doc/KFB-Travel-Globe/site/terrain-corridor-tc01/RED_TEAM_WORLD_SURFACE_PIVOT.md`
+on branch `wsa/track-terrain-corridor-tc01-2026-09-20`.
+
+Next gate is one A/B/C design/geometry proof:
+1. host terrain only;
+2. direct existing-face Track grading;
+3. locally refined SurfacePatch derived from the host polygons.
+
+Do not tune the existing TC-01 ribbon/zone composition forward. TinySkies/Travel remains one spherical WorldSurface donor; OSM remains geographic/semantic truth; OMS/Grotesque remains a stylised environment donor; Race retains driving/contact ownership.
+
+The wider KFB target may support Sphere / Plane / InnerSphere and later structure/tunnel/underwater/free-space routes, but do not build a mega-engine before Sphere + Plane share one proven TrackPatch contract.

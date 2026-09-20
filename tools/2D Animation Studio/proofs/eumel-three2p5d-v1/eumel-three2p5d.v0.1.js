@@ -30,6 +30,16 @@ function attachLayer(THREE,bone,layer,viewBox,scale,z){
   bone.group.add(mesh);
   return mesh;
 }
+function attachLayerFromSourcePivot(THREE,bone,layer,sourcePivot,viewBox,scale,z){
+  const mesh=makeTransparentPlane(THREE,layer,scale,z);
+  const cx=layer.bbox.x+layer.bbox.w/2,cy=layer.bbox.y+layer.bbox.h/2;
+  const center=svgPointToActorLocal(cx,cy,viewBox,scale);
+  const source=svgPointToActorLocal(sourcePivot[0],sourcePivot[1],viewBox,scale);
+  mesh.position.x=center.x-source.x;
+  mesh.position.y=center.y-source.y;
+  bone.group.add(mesh);
+  return mesh;
+}
 
 export async function mountEumelThree2p5D({
   THREE,parent,camera,svgUrl,bindUrl,worldHeight=2.0,
@@ -64,8 +74,10 @@ export async function mountEumelThree2p5D({
 
   const legABone=makeBone(THREE,actor,'leg-A-bone',{x:bind.legA.targetHip[0],y:bind.legA.targetHip[1]},viewBox,scale);
   const legBBone=makeBone(THREE,actor,'leg-B-bone',{x:bind.legB.targetHip[0],y:bind.legB.targetHip[1]},viewBox,scale);
-  attachLayer(THREE,legABone,layers.legA,viewBox,scale,-.018);
-  attachLayer(THREE,legBBone,layers.legB,viewBox,scale,-.017);
+  // The source pixels are authored around sourceHip; the bone itself lives at targetHip.
+  // This preserves the measured source shape while applying the neutral-bind correction around the correct anchor.
+  attachLayerFromSourcePivot(THREE,legABone,layers.legA,bind.legA.sourceHip,viewBox,scale,-.018);
+  attachLayerFromSourcePivot(THREE,legBBone,layers.legB,bind.legB.sourceHip,viewBox,scale,-.017);
   legABone.group.rotation.z=THREE.MathUtils.degToRad(-bind.legA.restCorrectionDeg);rememberBase(legABone.group);
   legBBone.group.rotation.z=THREE.MathUtils.degToRad(-bind.legB.restCorrectionDeg);rememberBase(legBBone.group);
 
@@ -117,9 +129,23 @@ export async function mountEumelThree2p5D({
   });
   eyeRig.setLife({on:true,wander:.45,tremor:.25});
 
-  let state='idle',time=0,mode=facingPolicy,baseRootY=root.position.y;
+  let state='idle',time=0,mode=facingPolicy;
   function setState(v){state=v||'idle';}
   function setFacingPolicy(v){mode=v;}
+  function diagnostics(){
+    const vec=n=>({x:+n.position.x.toFixed(5),y:+n.position.y.toFixed(5),z:+n.position.z.toFixed(5)});
+    return {
+      state,mode,time:+time.toFixed(3),
+      actor:vec(actor),
+      legA:{pivot:vec(legABone.group),rotation:+legABone.group.rotation.z.toFixed(5)},
+      legB:{pivot:vec(legBBone.group),rotation:+legBBone.group.rotation.z.toFixed(5)},
+      head:{pivot:vec(headBone.group),rotation:+headBone.group.rotation.z.toFixed(5)},
+      eyeA:{sx:+eyeA.eyeBone.group.scale.x.toFixed(5),sy:+eyeA.eyeBone.group.scale.y.toFixed(5),pupilSy:+eyeA.pupilBone.group.scale.y.toFixed(5)},
+      eyeB:{sx:+eyeB.eyeBone.group.scale.x.toFixed(5),sy:+eyeB.eyeBone.group.scale.y.toFixed(5),pupilSy:+eyeB.pupilBone.group.scale.y.toFixed(5)},
+      rootYaw:+root.rotation.y.toFixed(5),
+      shadow:{sx:+shadowMesh.scale.x.toFixed(5),sy:+shadowMesh.scale.y.toFixed(5)}
+    };
+  }
   function update(dt,{camera:cam=camera,velocity=0,gaze=null}={}){
     time+=dt;
     if(mode==='upright-yaw-billboard'){
@@ -157,5 +183,5 @@ export async function mountEumelThree2p5D({
     });
     root.removeFromParent();
   }
-  return {root,actor,eyeRig,setState,setFacingPolicy,update,dispose,meta:{scale,viewBox,worldHeight}};
+  return {root,actor,eyeRig,setState,setFacingPolicy,update,diagnostics,dispose,meta:{scale,viewBox,worldHeight}};
 }
