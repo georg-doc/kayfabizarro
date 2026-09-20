@@ -1,7 +1,7 @@
 {
   "schema": "kfb.wsa-2d-resident-handoff/0.1",
   "prepared": "2026-09-20",
-  "status": "HANDOFF_PREPARED_PHASE1_IMPLEMENTATION_STATIC_PASS",
+  "status": "HANDOFF_PREPARED_PHASE1_STATIC_PASS_GAME_READY_PACKAGE_REGISTERED",
   "sourceRepo": "georg-doc/kayfabizarro",
   "tool": "tools/2D Animation Studio/",
   "firstActor": "doccheck-eumel-2p5d",
@@ -17,10 +17,16 @@
     "one later named KFB game consumer"
   ],
   "futureTemplate": "Doccy quadruped cutout",
-  "nextGate": "Browser-test tools/2D Animation Studio/proofs/eumel-three2p5d-v1/ and decide accept/tune/reject before Resident index promotion.",
+  "nextGate": "Browser-test tools/2D Animation Studio/proofs/eumel-three2p5d-v1/ before Resident index promotion, Project Island build or named KFB game runtime integration.",
   "phase1Proof": {
     "path": "tools/2D Animation Studio/proofs/eumel-three2p5d-v1/",
     "staticSanity": "PASS",
     "browserQA": "PENDING"
+  },
+  "gameReady": {
+    "package": "game-ready/eumel-2p5d-actor/",
+    "manifest": "game-ready/eumel-2p5d-actor/GAME_ASSET_PACKAGE.json",
+    "catalog": "tools/game-dev-studio/catalog.json",
+    "status": "PACKAGE_METADATA_IMPLEMENTED_BROWSER_CONSUMER_HUMAN_GATES_OPEN"
   }
 }
