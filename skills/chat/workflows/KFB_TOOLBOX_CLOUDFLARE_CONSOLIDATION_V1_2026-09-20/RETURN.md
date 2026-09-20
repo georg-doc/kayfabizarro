@@ -66,3 +66,16 @@ Read-only source discovery confirmed current Room Study, Tiny Treats Bakery/Kitc
 ## ONE NEXT GATE
 
 Publish this exact candidate to the Cloudflare Stage path and perform the human ToolBox Home review. After that, the first functional integration slice is **3D scene-patch adapter: Resident Atlas → Dungeon S13.2**.
+
+
+## STAGE PUBLICATION ATTEMPT
+
+Lean publication files were copied additively to `cloudflare-live`:
+- ToolBox Home page commit: `a4123884bd4e7f411b3a8dfc380fbc92e32ad953`;
+- ToolBox status manifest commit: `f83bf34528e0ece03b81a410efeb685350c048b9`;
+- current publication Hub link commit / branch head: `d683a3febe5f583d6fc5036943efd8c7368bdc99`.
+
+Exact public route requested for proof:
+https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/
+
+Result: **PUBLIC PROOF UNKNOWN**. The external web reader rejected access to the Pages host and the execution container then failed DNS resolution. This is not counted as a site failure and not counted as a PASS. The Stage branch content itself was fetched back from GitHub after every write and contains the expected build marker.
