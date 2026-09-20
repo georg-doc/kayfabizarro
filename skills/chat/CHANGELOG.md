@@ -979,3 +979,18 @@ Travel branch `wsa/worldsurface-trackpatch-i1-2026-09-20@d9d9d93c286fa52551ee881
 ## 2026-09-21 · Hub/ToolBox v2 publication checkpoint
 
 Hub UI v2 + ToolBox v2 promotion merged at `dfbbb733b37a3923e4e5a80ff99f9f91209f3aaa`. The exact public files were copied to and read back from `cloudflare-live@cbbae810e6ddb8f282e702d0897bed8566361327`. Direct `kayfabizarro.pages.dev` browser verification is still pending because this session's HTTP viewer cannot access that host; no PUBLIC_VERIFIED claim is made yet.
+
+
+## 2026-09-21 · Hub/ToolBox v2 status consistency refresh
+
+### USER DIRECTION
+Keep the accepted Hub UI v2, use the same design language for ToolBox and make ToolBox prominent in the KFB Hub.
+
+### IMPLEMENTATION
+Retain the accepted Paper/Dark Hub + ToolBox v2 surfaces, remove stale “review Hub UI v2” and “15-card ToolBox” copy, add ToolBox to the Hub fallback and KFB Stage router, and refresh the ToolBox route audit against the current Cloudflare publication tree.
+
+### TESTED RESULT
+**18/18 source/tree checks PASS** on branch `hub/toolbox-v2-status-refresh-2026-09-21` at `ff3b71a386f370da80b2a19cfc242ec9c0a7b00a`. ToolBox truth remains 17 cards = 6 public previews + 5 missing/blocked + 6 source/integration gates. No fake preview is introduced.
+
+### PUBLICATION BOUNDARY
+GitHub/cloudflare-live branch state is not a public browser PASS. Exact `kayfabizarro.pages.dev` URLs must still show the v2 revision before a new PUBLIC_VERIFIED claim.

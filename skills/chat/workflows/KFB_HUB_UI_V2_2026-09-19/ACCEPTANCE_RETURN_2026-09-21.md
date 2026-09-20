@@ -50,3 +50,20 @@ Human test URLs remain:
 - `https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/`
 
 Do not label the new revision PUBLIC_VERIFIED until those exact URLs show the v2 markers.
+
+
+## Status consistency refresh · 2026-09-21
+
+After the initial v2 promotion, the canonical Hub still contained two stale routing strings: the already-accepted Hub UI v2 human gate and the original 15-card ToolBox review copy. A bounded refresh removes those stale states without redesigning either surface.
+
+Current ToolBox routing truth:
+- 17 cards total;
+- 6 exact public previews;
+- 5 missing/blocked routes;
+- 6 source/integration gates;
+- prominent direct ToolBox link in the canonical Hub header and fallback;
+- direct ToolBox v2 card in the KFB Stage router.
+
+Source checks: **18/18 PASS** at implementation checkpoint `ff3b71a386f370da80b2a19cfc242ec9c0a7b00a`.
+
+Public pages.dev verification remains separate; do not infer it from GitHub publication-branch state.
