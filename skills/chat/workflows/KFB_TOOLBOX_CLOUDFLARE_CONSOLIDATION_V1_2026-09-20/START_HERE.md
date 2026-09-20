@@ -61,3 +61,14 @@ The Hub and ToolBox router must:
 ## Acceptance
 
 A mobile user can open the ToolBox, reach each available tool in one tap, understand whether it is safe to use, and return to the Hub. No local file, GitHub raw URL or Claude WIP page is required for a normal tool run.
+
+
+## Current implementation slice · ToolBox Home v1
+
+- Branch: `toolbox/toolbox-home-v1-2026-09-20`
+- Target: `https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/`
+- Implementation: 15-card static router + status manifest + prominent KFB Hub link.
+- Static test: **32/32 PASS**.
+- Public browser: **PENDING**; do not call Live.
+- Return: [RETURN.md](RETURN.md)
+- Next gate: publish exact candidate to Stage, then human review; shared 3D editor remains Resident → Dungeon adapter work after that gate.
