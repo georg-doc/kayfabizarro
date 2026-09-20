@@ -62,8 +62,9 @@ try{
   check('bind delta finite',Object.values(snap.bind?.delta||{}).every(Number.isFinite),JSON.stringify(snap.bind?.delta));
   await page.screenshot({path:OUT+'/01-aim-compare.png',fullPage:true});
 
-  const release=snap.markers?.shoot?.releaseTimes?.[0];
-  check('Shoot release marker exists',Number.isFinite(release),JSON.stringify(snap.markers?.shoot));
+  const release=snap.markers?.shoot?.primaryRelease;
+  check('Shoot primary release marker exists',Number.isFinite(release),JSON.stringify(snap.markers?.shoot));
+  check('late single-shot peaks not promoted',Array.isArray(snap.markers?.shoot?.laterRotationalPeaks)&&snap.markers.shoot.laterRotationalPeaks.length>=1&&/not promoted/i.test(snap.markers.shoot.releasePolicy||''),JSON.stringify(snap.markers?.shoot));
   check('Shoot release marker inside clip',release>=0&&release<=snap.markers.shoot.duration,String(release));
   check('Shoot recovery marker exists',Number.isFinite(snap.markers?.shoot?.recoveryStart),JSON.stringify(snap.markers?.shoot));
   check('Shoot recovery after release',snap.markers.shoot.recoveryStart>=release,JSON.stringify(snap.markers.shoot));
@@ -76,6 +77,7 @@ try{
   check('Shoot clip active',flash.currentClip==='Ranged_1H_Shoot',flash.currentClip);
   check('release event reached both actors',flash.shotEvents===2,'shotEvents='+flash.shotEvents);
   for(const id of ['frizzlebob','gothgirl']){
+    check(id+' scheduled single release',Array.isArray(flash.actors[id]?.scheduledMarkers)&&flash.actors[id].scheduledMarkers.length===1&&Math.abs(flash.actors[id].scheduledMarkers[0]-release)<0.001,JSON.stringify(flash.actors[id]));
     check(id+' action paused at release',flash.actors[id]?.actionPaused===true,JSON.stringify(flash.actors[id]));
     check(id+' action time at release',Math.abs(flash.actors[id]?.actionTime-release)<0.002,JSON.stringify(flash.actors[id]));
   }

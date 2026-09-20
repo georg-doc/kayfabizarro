@@ -4,10 +4,10 @@
   "slice": "CA2-02",
   "owner": "KFB ToolBox / weapon-motion calibration",
   "consumer": "georg-doc/KFB-Combat-Arena / WSA",
-  "status": "BRANCH_BROWSER_PROOF_PENDING",
+  "status": "FINAL_BRANCH_BROWSER_PROOF_PENDING",
   "sourceRepo": "georg-doc/kayfabizarro",
   "sourceBranch": "chatgpt-web/ca2-02-ranged-calibration-2026-09-20",
-  "implementationHead": "016ea96b5761b7fd66f34df77f0874acb15ea716",
+  "implementationHead": "1640c13ea9d8417261eaa22746a2f5c66ea897d3",
   "baseMain": "52532aee17f85324a6d04ab53150216f00ac5d89",
   "donors": {
     "motionLab": {
@@ -48,5 +48,15 @@
   ],
   "publicVerified": false,
   "humanAcceptance": "PENDING",
-  "repairNote": "Release proof now uses deterministic measured release-frame seek instead of wall-clock FX timing."
+  "repairNote": "Deterministic release-frame seek plus explicit one-release scheduling for the single-shot clip.",
+  "singleShotPolicy": {
+    "clip": "Ranged_1H_Shoot",
+    "primaryReleaseSeconds": 0.15,
+    "laterRotationalPeaksSeconds": [
+      0.883
+    ],
+    "scheduledProjectileReleasesPerActor": [
+      0.15
+    ]
+  }
 }

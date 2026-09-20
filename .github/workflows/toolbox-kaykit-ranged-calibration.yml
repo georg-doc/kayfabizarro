@@ -40,7 +40,7 @@ jobs:
       - name: Browser proof
         env:
           KRC_BASE_URL: http://127.0.0.1:4173/kfb-hub/stage/toolbox/kaykit-ranged-calibration-v1/
-          KRC_SOURCE_HEAD: 016ea96b5761b7fd66f34df77f0874acb15ea716
+          KRC_SOURCE_HEAD: 1640c13ea9d8417261eaa22746a2f5c66ea897d3
           KRC_PROOF_DIR: kaykit-ranged-calibration-evidence
         run: node kfb-hub/stage/toolbox/kaykit-ranged-calibration-v1/proof.mjs
       - uses: actions/upload-artifact@v4
