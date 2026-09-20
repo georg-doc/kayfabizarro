@@ -1,0 +1,115 @@
+{
+  "schema": "kfb.whackman.source-donors/0.1",
+  "updated": "2026-09-20",
+  "status": "PLANNING_SOURCE_MAP",
+  "owner": "World Atlas / Dungeon Generator spatial and recipe owner",
+  "sources": {
+    "dungeon": [
+      {
+        "path": "tools/world_atlas/source/KayKit_Dungeon_Generator_S13_2.html",
+        "role": "layout/recipe owner"
+      },
+      {
+        "path": "tools/world_atlas/source/lib/dungeon-grid.js",
+        "role": "grid/layout donor"
+      },
+      {
+        "path": "tools/world_atlas/source/lib/dungeon-light.js",
+        "role": "lighting donor"
+      },
+      {
+        "pr": 126,
+        "role": "S14 room/editor proof; 15/15 local Chromium + 17/17 public recorded"
+      },
+      {
+        "pr": 120,
+        "role": "S21 in-place editor intake"
+      }
+    ],
+    "legacy": [
+      {
+        "path": "media/3D_Assets/KayKit Legacy/KayKit Character Animations 1.2 - legacy/Animations/gltf/KayKit_AnimatedCharacter_v1.2.glb",
+        "pin": "10a7fdce6b3a1ae22504ade71b7dbec5f25e0ff0",
+        "role": "6-bone / 30-clip Legacy rig + PrototypePete reference"
+      },
+      {
+        "path": "tools/resident_atlas_s6/lib/atlas.js",
+        "role": "legacyAssemble implementation truth"
+      },
+      {
+        "path": "media/3D_Assets/KayKit Legacy/Orc Warband - legacy/characters/gltf/character_orcA.gltf",
+        "role": "proven assembled Legacy enemy donor"
+      },
+      {
+        "path": "media/3D_Assets/KayKit Legacy/Orc Warband - legacy/characters/gltf/character_orcB.gltf",
+        "role": "second proven assembled Legacy donor"
+      }
+    ],
+    "eyeRig": [
+      {
+        "path": "tools/KFB-ToolBox/kfb-rigs-embed-v3/petstudio-v9/studio-v12/pet-eye-rig.v6.js",
+        "role": "EyeRig owner"
+      },
+      {
+        "path": "tools/KFB-ToolBox/_handover/EYE_RIG_BATCH_2026-09-18/START_HERE.md",
+        "role": "Batch EyeRig source/measurement contract",
+        "note": "Legacy remains a distinct gate after Medium/Large"
+      },
+      {
+        "pr": 104,
+        "role": "current Medium/Large batch evidence; explicitly no Legacy work in that slice"
+      }
+    ],
+    "pickups": [
+      {
+        "path": "media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE/Assets/gltf/donut.gltf",
+        "role": "special treat candidate"
+      },
+      {
+        "path": "media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE/Assets/gltf/donut_pink.gltf",
+        "role": "special treat candidate"
+      },
+      {
+        "path": "media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE/Assets/gltf/donut_chocolate.gltf",
+        "role": "special treat candidate"
+      },
+      {
+        "path": "registry/assets/v1/packs/tiny-treats-baked-goods-1-0-free.json",
+        "role": "registry/source truth"
+      }
+    ],
+    "optionalBits": [
+      {
+        "pr": 144,
+        "branch": "asset/kaykit-bits-bundle1-2026-09-20",
+        "head": "165726d086d9363f3dce5bee9432015da889e77d",
+        "role": "optional KayKit Bits source; only if exact WIP source is accessible"
+      }
+    ],
+    "externalReferences": [
+      {
+        "url": "https://github.com/butchler/Pacman-3D/tree/gh-pages",
+        "role": "movement/gameplay reference only",
+        "rule": "do not vendor/copy code before separate license/source pin"
+      },
+      {
+        "path": "skills/chat/workflows/KFB_STORYTELLING_MAPS_V1_2026-09-20/LIVING_MASTERPLAN.md",
+        "role": "Ludo Wala benchmark already synthesized into KFB source docs"
+      }
+    ],
+    "future": [
+      {
+        "path": "media/3D_Assets/KayKit_BlockBits_1.0_FREE",
+        "role": "future Voxel/BlockBits theme; out of v1"
+      },
+      {
+        "owner": "georg-doc/KFB-Combat-Arena",
+        "role": "future FPS/combat adapter; Combat retains combat ownership"
+      },
+      {
+        "owner": "tools/kfb-cartoon-map-board",
+        "role": "future Storytelling Map/tabletop view; waits for CardRig gate"
+      }
+    ]
+  }
+}

@@ -13,7 +13,7 @@ Final branch head: pinned in PR #113 after this metadata write.
 The existing WSA consolidation owner was refreshed rather than replaced.
 
 Prepared:
-- six-lane Living Integration Masterplan;
+- seven-lane Living Integration Masterplan;
 - mechanical branch census across kayfabizarro + Combat + Race + Travel;
 - existing Astra Integration 01 handoff;
 - current router/registry/masterplan/Hub routing;
@@ -27,6 +27,7 @@ Focus lanes:
 4. S21/S14 in-place editor → Resident/Dungeon → later Platformer/KFB World.
 5. KayKit + Tiny Treats → Scene/Zone recipes + rule-of-three prop groups.
 6. Storytelling Maps → responsive CardRig → world/zone/tactical/cut-scene consumers.
+7. WhackMan v1 → Dungeon-first maze-chase POC → reusable MazeGraph/Dungeon authoring seam.
 
 ## Actual coordination evidence
 
@@ -35,7 +36,7 @@ Focus lanes:
 - 61 open PRs mapped.
 - 18/18 selected focus refs found.
 - 0 open-PR head mismatches.
-- 6/6 unique curated integration lanes.
+- 7/7 unique curated integration lanes.
 - Dropbox S21 source folder found.
 - Dropbox current Tiny Treats/KayKit intake files found.
 - Game Development Studio skill loaded; no local game-dev execution surface available here.
@@ -59,6 +60,7 @@ Do not call the refreshed navigator live or use it as an acceptance surface unti
 - Editor: S14 human review, then Resident host before shared extraction.
 - Environment: pack discoverability + one registered SceneRecipe/prop-group proof.
 - Storytelling Maps: T2.1 / VL1 Responsive Rounded CardRig.
+- WhackMan: Claude Gate A/B/C — Dungeon donor identity, one real Legacy player/pursuer pair, then Legacy EyeRig.
 
 ## One next gate
 

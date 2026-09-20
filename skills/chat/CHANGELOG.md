@@ -974,3 +974,21 @@ Census: **4 repos · 243 branch refs · 61 open PRs · 18/18 focus refs found ·
 
 ### SOURCE / INTAKE
 Dropbox confirms the S21 RoomStudy editor export and current Tiny Treats/KayKit intake files. Game Development Studio skill loaded; no local `game-dev` execution surface exposed, so repository-native evidence remains the fallback. No sealed GDS run claimed.
+
+
+## 2026-09-20 · KFB WhackMan v1 Claude Design brief
+
+### USER DIRECTION
+Prepare a modular third-person/free-orbit KFB maze-chase POC from current sources, using the Dungeon Generator as the first spatial foundation. Primary visual sources are KayKit + Tiny Treats; Legacy actors are player/pursuer candidates; current EyeRig v6 is reused. Later FPS/Doom, BlockBits/Voxel, Boxel Blitz, Storytelling Maps/Ludo-Wala-like tabletop and DocCheck variants are roadmap, not v1 scope.
+
+### SOURCE FINDINGS
+No current in-repo Pac-Man/maze-chase runtime owner was found. The strongest internal spatial donor is World Atlas S13.2/S14. Tiny Treats Baked Goods contains exact donut sources. Legacy is a distinct six-bone / 30-clip architecture: PrototypePete is the skinned reference, while Orc Warband figures require the proven Resident Atlas `legacyAssemble()` path. Current Batch EyeRig explicitly sequences Legacy after Medium/Large, so Legacy EyeRig is a gate rather than an assumed capability.
+
+### BRIEFING
+Added `workflows/KFB_WHACKMAN_V1_2026-09-20/` with Claude Design brief + source map. Three stop gates precede the full game: real Dungeon donor identity; real Legacy player/pursuer motion; LegacyFaceHost + existing EyeRig v6. The first map is an original KFB dungeon maze, not a recreation of the classic Pac-Man board.
+
+### RESEARCH INPUT
+User-supplied Perplexity research is advisory only. Useful retained ideas: separate Input/Motor/Orbit camera, MazeGraph navigation independent of meshes, behaviorally distinct pursuers, and strong pickup/power-up readability. `butchler/Pacman-3D` is reference-only until a separate exact license/source review is pinned.
+
+### NEXT GATE
+Claude Design performs only Gate A/B/C and exports complete editable source/evidence before the broader WhackMan loop is promoted.

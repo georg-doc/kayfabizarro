@@ -124,6 +124,26 @@ Integration roles after VL1:
 
 Do not merge its future shot/timeline editor with the 3D placement editor merely because both are editors. Share only proven source/asset/transform seams.
 
+## Focus G · KFB WhackMan v1 · Dungeon-first maze-chase POC
+
+Owner for the first slice: existing World Atlas / Dungeon Generator spatial and recipe owner.
+
+Prepared brief:
+`skills/chat/workflows/KFB_WHACKMAN_V1_2026-09-20/CLAUDE_DESIGN_BRIEF.md`
+
+Purpose:
+- prove one playable 3D maze-chase mini-game from current Dungeon/KayKit/Tiny Treats/Legacy/EyeRig donors;
+- produce a reusable DungeonRecipe → MazeDefinition → MazeGraph seam;
+- use PrototypePete as the first skinned Legacy control and one proven Orc Warband assembly as the first pursuer;
+- prove a LegacyFaceHost → existing EyeRig v6 path before batching Legacy eyes;
+- keep third-person/free-orbit as v1 presentation;
+- leave FPS/Doom, BlockBits/Voxel, Boxel Blitz, Storytelling Maps/tabletop and DocCheck skins as later adapters.
+
+The mini-game is valuable only if its spatial/authoring result can feed the later Dungeon Raid instead of becoming a one-off clone.
+
+Exactly one current design gate:
+**Claude Design proves Dungeon donor identity + one real Legacy player/pursuer pair + Legacy EyeRig before completing the full maze-chase loop.**
+
 ## Cross-lane seams to prove
 
 1. World mode handoff: Walk / Drive / Fly and back.
@@ -143,6 +163,7 @@ Read the branch census, re-fetch every active input, then write the existing Ast
 - Track SurfacePatch after TC-01 visual rejection.
 - S14 human form/editor review; E1 stays frozen unless separately QA-proved.
 - Storytelling CardRig VL1.
+- WhackMan Gate A/B/C: Dungeon donor identity + Legacy actor truth + Legacy EyeRig.
 - KayKit Bits / Asset Librarian / Tiny Treats discoverability.
 
 ### W2 · coherent local world slice

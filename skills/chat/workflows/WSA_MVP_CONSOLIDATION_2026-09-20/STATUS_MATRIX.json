@@ -8,7 +8,7 @@
     "head": "6c1b02a3338c005127d45bc7bff3ecbb785f1342"
   },
   "stageTarget": "https://kayfabizarro.pages.dev/kfb-hub/stage/wsa-mvp-consolidation/",
-  "status": "PLANNING_REFRESHED_SOURCE_BRANCH_ONLY",
+  "status": "PLANNING_REFRESHED_SEVEN_LANES_SOURCE_BRANCH_ONLY",
   "focusLanes": [
     {
       "id": "combat-melee-raid",
@@ -72,6 +72,19 @@
         "PR#145 T2"
       ],
       "nextGate": "T2.1/VL1 Responsive Rounded CardRig"
+    },
+    {
+      "id": "whackman-dungeon-maze",
+      "owner": "World Atlas / Dungeon Generator spatial and recipe owner",
+      "inputs": [
+        "S13.2 Dungeon Generator",
+        "PR#126 S14",
+        "Resident Atlas legacyAssemble",
+        "EyeRig v6 / PR#104 boundary",
+        "Tiny Treats Baked Goods",
+        "optional PR#144 Bits"
+      ],
+      "nextGate": "Claude Design Gate A/B/C: Dungeon donor identity + Legacy actor pair + Legacy EyeRig"
     }
   ],
   "protectedBoundaries": [
