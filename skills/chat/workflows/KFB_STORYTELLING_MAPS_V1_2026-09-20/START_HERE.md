@@ -5,7 +5,7 @@ Date: 2026-09-20
 Owner: **KFB Cartoon Map Board presentation/story layer**
 Implementation home: `tools/kfb-cartoon-map-board/`
 Integration lead: **WSA / receiving consumer**
-Current slice: **T2 exact KayKit Media Standee A/B**
+Current slice: **T2.1 Responsive Rounded Card Rig + Claude Visual Lab prep**
 
 ## Product direction
 
@@ -22,12 +22,18 @@ The same runtime should evolve into:
 ## Read order
 
 1. `LIVING_MASTERPLAN.md`
-2. `LUDOWALA_BENCHMARK.md`
-3. `ODYSSEY_POC.md`
-4. `RECOVERY.md`
-5. tool-local tactical donor brief:
+2. `RECOVERY.md`
+3. `CARD_RIG_V1.md`
+4. `VISUAL_MOTION_SYSTEM_V1.md`
+5. `CLAUDE_DESIGN_BRIEF_VISUAL_LAB_V1.md`
+6. `KFB_TABLE_V6_DONOR_ANALYSIS.md`
+7. `GAMEPLAY_ARCHITECTURE_V1.md`
+8. `LUDOWALA_BENCHMARK.md`
+9. `ODYSSEY_POC.md`
+10. `WSA_PROP_RIG_PLANNING_NOTE.md`
+11. tool-local tactical donor brief:
    `tools/kfb-cartoon-map-board/docs/TACTICAL_GAME_MAP_V1_2026-09-20.md`
-6. KFB motion:
+12. KFB motion:
    `skills/kfb-cartoon-animation_v2.md`
 
 ## Current public baseline
@@ -115,5 +121,21 @@ Exactly one next gate remains:
 - digest: `sha256:e94c04a8de1eb0f6b7431e2790e64382a7e68904d5df76c7fdd1a54e3b6fbc7a`
 - runtime publication: `2eb9235f075e29b2eaced4ee76485d0c2ed4aeb4`
 
+## User design decision · 2026-09-20
+
+Portrait **and** Landscape remain first-class requirements.
+
+New hard rule:
+- media may never show rectangular corners in front of the physical card;
+- the motif must live on the rounded KayKit front-art surface;
+- arbitrary aspect ratios require corner-preserving mesh deformation, not ordinary non-uniform scaling.
+
+The technical T2 material-replacement PASS remains evidence, but it is **not** the final responsive-card visual contract.
+
+See:
+- `CARD_RIG_V1.md`
+- `VISUAL_MOTION_SYSTEM_V1.md`
+- `CLAUDE_DESIGN_BRIEF_VISUAL_LAB_V1.md`
+
 Exactly one next gate:
-**Georg compares Portrait vs Landscape and decides whether both remain first-class before T3 motion.**
+**VL1 / CardRig source proof — exact KayKit card, measured fixed-corner mesh deformation, zero visible square image corners from oblique views.**

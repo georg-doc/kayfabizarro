@@ -968,3 +968,26 @@ Exact T2 Cloudflare Stage `https://kayfabizarro.pages.dev/kfb-hub/stage/storytel
 
 ### HUMAN GATE
 Choose Portrait/Landscape standee policy before T3 motion. Live unchanged.
+
+
+## 2026-09-20 · Storytelling Maps responsive CardRig + visual-system contract
+
+### USER DECISION
+- Portrait and Landscape are both first-class standee orientations.
+- Media must never show square/rectangular corners outside the physical rounded card.
+- Responsive aspect changes must preserve KayKit rounded corners and frame proportions; plain non-uniform scale is rejected.
+
+### CURRENT CONTRACTS
+- `skills/chat/workflows/KFB_STORYTELLING_MAPS_V1_2026-09-20/CARD_RIG_V1.md`
+- `skills/chat/workflows/KFB_STORYTELLING_MAPS_V1_2026-09-20/VISUAL_MOTION_SYSTEM_V1.md`
+- `skills/chat/workflows/KFB_STORYTELLING_MAPS_V1_2026-09-20/WSA_PROP_RIG_PLANNING_NOTE.md`
+- `skills/chat/workflows/KFB_STORYTELLING_MAPS_V1_2026-09-20/CLAUDE_DESIGN_BRIEF_VISUAL_LAB_V1.md`
+
+### REUSE MAP
+Storytelling Maps routes palette/seed through existing Travel WorldContext/Palette modules, sky through the existing Skydome module, card/PDF through Viewer/CardBuilder, living-card treatments through Living Illustration, map reveal FX through existing Boxel/Travel/FX donors, and prop motion through the proven Resident Atlas/Rig_Legacy and CapsuleCarl procedural lanes where compatible.
+
+### WSA PLANNING
+Plan one shared PropActor adapter seam for standees and future EyeRig pencil/eraser props. Consumer games retain movement/physics/camera/persistence ownership.
+
+### NEXT GATE
+VL1 exact KayKit responsive CardRig proof only. No T3, Odyssey, Near East or editor mega-slice before that proof.

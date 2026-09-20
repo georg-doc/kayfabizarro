@@ -1,6 +1,6 @@
 # Recovery · KFB Storytelling Maps v1
 
-Status: **CURRENT EXPERIMENTAL RECOVERY · T2 PUBLIC_VERIFIED**
+Status: **CURRENT EXPERIMENTAL RECOVERY · T2 PUBLIC_VERIFIED · CARD RIG GATE**
 Date: 2026-09-20
 
 ## Owner
@@ -82,6 +82,23 @@ Do not:
 - ingest contemporary/political content for this technical gate;
 - auto-merge or promote Live.
 
+## Current user direction · 2026-09-20
+
+Portrait and Landscape are both required.
+
+T2 remains valid technical evidence for the front-material seam, but the visual contract is now stricter:
+
+- never render a visible rectangular motif plane;
+- media lives on the actual rounded front-art mesh;
+- arbitrary aspect ratios use corner-preserving mesh-space deformation;
+- rounded corners / border inset / thickness must survive all 3D views.
+
+New docs:
+- `CARD_RIG_V1.md`
+- `VISUAL_MOTION_SYSTEM_V1.md`
+- `WSA_PROP_RIG_PLANNING_NOTE.md`
+- `CLAUDE_DESIGN_BRIEF_VISUAL_LAB_V1.md`
+
 ## Exactly one next gate
 
-**Georg reviews Portrait vs Landscape in T2 and chooses the standee orientation policy before T3 motion.**
+**VL1 Responsive CardRig source proof. Do not start T3 motion until the exact KayKit card survives the responsive transformation without visible square media corners.**

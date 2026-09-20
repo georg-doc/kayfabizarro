@@ -396,3 +396,18 @@ Gameplay preparation is recorded in:
 The current rules kernel remains Freestyle; preserve/extend the historical `KFBStageContext` seam rather than creating a second map-game state. FrizzleCrits source/caller remains unresolved; use only the generic CriticProvider interface until pinned.
 
 Current human gate: Portrait vs Landscape policy before T3 motion.
+
+
+## 2026-09-20 · Storytelling Maps CardRig + Claude Visual Lab
+
+Georg's new hard visual rule: card media must never appear as a rectangular overlay with visible corners. Portrait and Landscape are both first-class; future controlled aspect ratios must deform the exact KayKit card mesh while preserving rounded corners, border inset and thickness.
+
+Current docs:
+- `skills/chat/workflows/KFB_STORYTELLING_MAPS_V1_2026-09-20/CARD_RIG_V1.md`
+- `skills/chat/workflows/KFB_STORYTELLING_MAPS_V1_2026-09-20/VISUAL_MOTION_SYSTEM_V1.md`
+- `skills/chat/workflows/KFB_STORYTELLING_MAPS_V1_2026-09-20/WSA_PROP_RIG_PLANNING_NOTE.md`
+- `skills/chat/workflows/KFB_STORYTELLING_MAPS_V1_2026-09-20/CLAUDE_DESIGN_BRIEF_VISUAL_LAB_V1.md`
+
+Reuse is mandatory: existing KFB palette/color-world modules, skydome, Card/PDF Viewer, Living Illustration, FX donors, Resident Atlas/Rig_Legacy, CapsuleCarl procedural actor seam and EyeRig must be inspected before replacements are invented.
+
+Current next gate: **VL1 responsive rounded CardRig source proof**. T3 motion remains blocked.

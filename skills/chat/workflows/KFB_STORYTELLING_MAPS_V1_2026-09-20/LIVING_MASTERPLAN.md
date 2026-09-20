@@ -396,9 +396,12 @@ Already PUBLIC_VERIFIED technical baseline.
 PUBLIC_VERIFIED and advanced by Georg to T2.
 
 **T2 · media standee**
-Exact KayKit card + stand; replace only media face; portrait/landscape.
+PUBLIC_VERIFIED technical seam: exact KayKit card + stand, front-material replacement, Portrait/Landscape.
 
-**T3 · standee motion**
+**T2.1 · Responsive Rounded Card Rig**
+Current design gate. Preserve the exact KayKit donor topology, front-art inset and rounded corners across controlled aspect ratios. No rectangular media planes, no stretched corners.
+
+**T3 · standee / prop motion**
 Hop / squash / wobble / recovery.
 
 **T4 · dice collision**
@@ -424,9 +427,11 @@ KFB World/Zone/Galaxy and named game cut-scenes.
 
 ## 16. Current next gate
 
-**T2 Media Standee A/B human review.**
+**T2.1 / VL1 Responsive Rounded Card Rig source proof.**
 
-Technical/public proof is green. Compare the exact KayKit card in portrait vs landscape. No Odyssey asset ingestion, Near East content, dice-to-standee impact or editor implementation before the A/B direction is chosen.
+Georg requires both Portrait and Landscape, plus controlled arbitrary aspect ratios. Technical T2 front-material swapping is green, but the next visual proof must show that rounded corners and the physical card edge remain coherent from front, 3/4 and grazing views.
+
+No T3 motion, Odyssey asset ingestion, Near East content, dice collision or editor implementation before that proof.
 
 
 ## T1 PUBLIC VERIFIED · 2026-09-20
@@ -496,3 +501,40 @@ Measured runtime A/B:
 Evidence: 13/13 browser PASS, 0 errors, 0 failed requests, desktop/media/original + mobile-landscape captures.
 
 This proves the adaptation seam, not Georg's visual choice between orientations.
+
+
+## 19. Responsive Card + visual-system direction · 2026-09-20
+
+### DECISION · card media
+A Storytelling Maps motif is never a rectangular overlay floating in front of a rounded card.
+
+The exact KayKit donor already separates `boardgame` frame and `red_knight` art primitives. The responsive family must deform those donor meshes while keeping the corner zones fixed. Ordinary non-uniform x/y scaling is not sufficient because it distorts the rounded corners.
+
+Current contract:
+`CARD_RIG_V1.md`.
+
+### DECISION · Portrait + Landscape
+Both are first-class requirements. The system should support a controlled aspect range with min/max size rather than two hardcoded meshes.
+
+### DECISION · visual reuse
+Before new visual code is written, Storytelling Maps reuses or adapts:
+- `world-context.js`, `world-palettes.js`, `color-worlds.js` for deterministic/color-card-derived palettes;
+- `skydome-shader.js` for sky;
+- KFB Deck Viewer/CardBuilder for PDF/card surfaces;
+- KFB Living Illustration Lab for card/image motion research;
+- Boxel Blitz FX foundation / dissolve/ripple donors and central `FX_Visual`;
+- current Map Board for independent geography pieces;
+- KFB Cartoon Animation / Resident Atlas / Rig_Legacy / CapsuleCarl procedural lane for prop motion.
+
+See `VISUAL_MOTION_SYSTEM_V1.md`.
+
+### DECISION · prop actors
+Media standees, later pencil/eraser/books/signs and EyeRig props should converge on a shared `PropActorProfile` seam.
+
+Rig_Legacy is promising because the measured legacy skeleton has six bones and no leg chain; CapsuleCarl proves a separate 0-bone procedural motion lane. Compatibility must be proven per prop — do not claim every legacy clip works automatically.
+
+### CLAUDE DESIGN
+The prepared Claude Design job is:
+`CLAUDE_DESIGN_BRIEF_VISUAL_LAB_V1.md`.
+
+It is intentionally bounded to **VL1 CardRig first**. Palette/skydome/map-reveal/PDF/prop-motion/Odyssey work is roadmap only until VL1 passes.
