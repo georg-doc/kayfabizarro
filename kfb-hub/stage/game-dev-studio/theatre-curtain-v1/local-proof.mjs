@@ -49,7 +49,7 @@ try{
 
  await page.click('#close');
  await page.waitForFunction(()=>window.__KFB_CURTAIN_V1__.snapshot().openProgress<.03,null,{timeout:12000});
- await page.waitForTimeout(350);
+ await page.waitForFunction(()=>window.__KFB_CURTAIN_V1__.snapshot().state==='closed-wind',null,{timeout:12000});
  snap=await page.evaluate(()=>window.__KFB_CURTAIN_V1__.snapshot());
  check('close returns curtain',snap.openProgress<.03,String(snap.openProgress));
  check('closed wind state',snap.state==='closed-wind',snap.state);
