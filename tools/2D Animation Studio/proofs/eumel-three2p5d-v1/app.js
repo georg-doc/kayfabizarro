@@ -21,14 +21,39 @@ try{
   worldHeight:2.0,facingPolicy:'upright-yaw-billboard',EyeRigClass:window.KFBEyeRig2D
  });
  status.textContent='IMPLEMENTATION LOADED';status.className='pass';
-}catch(e){status.textContent='FAIL';status.className='fail';$('#debug').textContent=e.stack||String(e);throw e}
+}catch(e){
+ window.__KFB_EUMEL_2P5D_ERROR__=String(e.stack||e);
+ status.textContent='FAIL';status.className='fail';$('#debug').textContent=e.stack||String(e);throw e
+}
 
 $('#facing').onchange=e=>actor.setFacingPolicy(e.target.value);
 $('#state').onchange=e=>actor.setState(e.target.value);
 $('#orbit').onchange=e=>controls.enabled=e.target.checked;
 $('#blink').onclick=()=>actor.eyeRig.blinkNow();
 $('#neutral').onclick=()=>{$('#state').value='neutral';actor.setState('neutral');actor.eyeRig.setGazeFollow(true);actor.eyeRig.pointTo(0,0)};
+function snapshot(){
+ const frame=actor.eyeRig.eyeFrame();
+ return {
+  ready:true,
+  state:$('#state').value,
+  facing:$('#facing').value,
+  worldHeight:actor.meta.worldHeight,
+  scale:+actor.meta.scale.toFixed(6),
+  eyeRadius:+frame.radius.toFixed(6),
+  diagnostics:actor.diagnostics(),
+  canvas:{width:renderer.domElement.width,height:renderer.domElement.height}
+ };
+}
+window.__KFB_EUMEL_2P5D__={
+ snapshot,
+ setState(v){$('#state').value=v;actor.setState(v);},
+ setFacing(v){$('#facing').value=v;actor.setFacingPolicy(v);},
+ blink(){actor.eyeRig.blinkNow();},
+ dispose(){ro.disconnect();actor.dispose();renderer.dispose();}
+};
+window.__KFB_EUMEL_2P5D_READY__=true;
+
 const ro=new ResizeObserver(()=>{const r=stage.getBoundingClientRect();renderer.setSize(Math.max(1,r.width),Math.max(1,r.height),false);camera.aspect=Math.max(.1,r.width/Math.max(1,r.height));camera.updateProjectionMatrix()});ro.observe(stage);
 let last=performance.now();
-function frame(now){const dt=Math.min(.05,(now-last)/1000);last=now;controls.update();actor.update(dt,{camera,velocity:$('#state').value==='walk'?1:0});renderer.render(scene,camera);$('#debug').textContent=JSON.stringify({state:$('#state').value,facing:$('#facing').value,worldHeight:actor.meta.worldHeight,scale:+actor.meta.scale.toFixed(5),root:[+actor.root.position.x.toFixed(3),+actor.root.position.y.toFixed(3),+actor.root.position.z.toFixed(3)],eyeFrame:{radius:+actor.eyeRig.eyeFrame().radius.toFixed(4)}},null,2);requestAnimationFrame(frame)}
+function frame(now){const dt=Math.min(.05,(now-last)/1000);last=now;controls.update();actor.update(dt,{camera,velocity:$('#state').value==='walk'?1:0});renderer.render(scene,camera);$('#debug').textContent=JSON.stringify(snapshot(),null,2);requestAnimationFrame(frame)}
 requestAnimationFrame(frame);
