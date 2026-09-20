@@ -17,7 +17,8 @@ Dann im Browser:
 
 | Seite | URL |
 |---|---|
-| Dungeon-Generator (jüngster Stand) | http://localhost:8080/KayKit_Dungeon_Generator_S13_2.html |\n| **R02 Room Blueprint · S14** | http://localhost:8080/KayKit_Dungeon_Room_Blueprint_S14.html |
+| Dungeon-Generator (jüngster Stand) | http://localhost:8080/KayKit_Dungeon_Generator_S13_2.html |
+| **R02 Room Blueprint · S14** | http://localhost:8080/KayKit_Dungeon_Room_Blueprint_S14.html |
 | Dungeon-Modell / Pack-Inventar | http://localhost:8080/KayKit_Dungeon_Model_S13.html |
 | Hex-Insel | http://localhost:8080/KayKit_Hex_Realm_S11.html |
 | Hex-Kacheltabelle | http://localhost:8080/KayKit_Hex_Tile_Model_S12.html |
