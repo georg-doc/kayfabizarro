@@ -1,0 +1,39 @@
+{
+  "schema": "kfb.game-asset-package.v0",
+  "packageId": "eumel-2p5d-actor",
+  "packageVersion": "0.1.0-candidate",
+  "created": "2026-09-20",
+  "status": "PACKAGE_METADATA_IMPLEMENTED_WORLDSPACE_BROWSER_QA_PENDING",
+  "canonicalSourcePolicy": "reference-only-no-source-copy",
+  "components": {
+    "actor": "actor/eumel/ACTOR_BINDING.json",
+    "sharedActorContract": "/tools/2D Animation Studio/contracts/kfb-2d-actor-module.v0.1-candidate.json",
+    "three2p5dProof": "/tools/2D Animation Studio/proofs/eumel-three2p5d-v1/",
+    "residentCandidate": "/tools/resident_atlas/modules/candidates/eumel-doccheck-project-island.module.json"
+  },
+  "manifests": {
+    "source": "manifests/SOURCE_MANIFEST.json",
+    "provenance": "manifests/PROVENANCE.json"
+  },
+  "qa": {
+    "static": "qa/STATIC_QA.json",
+    "consumerPlan": "qa/CONSUMER_TEST_PLAN.md"
+  },
+  "owners": {
+    "canonicalDocCheckArt": "georg-doc/doccheck / authoritative DocCheck artwork",
+    "shared2DAuthoring": "tools/2D Animation Studio",
+    "packageMetadata": "KFB Game Dev Studio / game-ready",
+    "residentPresentation": "Resident Atlas scene-module consumer when accepted",
+    "worldRuntime": "named receiving KFB/DocCheck consumer"
+  },
+  "acceptance": {
+    "sourceReview": "PASS",
+    "packageMetadata": "CREATED",
+    "three2p5dStaticQA": "PASS",
+    "three2p5dBrowserQA": "NOT_RUN",
+    "residentConsumerTest": "NOT_RUN",
+    "doccheckProjectIslandTest": "NOT_RUN",
+    "kfbGameConsumerTest": "NOT_RUN",
+    "humanAcceptance": "PENDING"
+  }
+}
