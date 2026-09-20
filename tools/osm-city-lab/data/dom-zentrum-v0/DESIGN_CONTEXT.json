@@ -1,15 +1,15 @@
 {
   "schema": "kfb.osm-city.design-context.v0",
   "id": "dom-zentrum-v0",
-  "generatedAt": "2026-09-20T03:24:53.326Z",
+  "generatedAt": "2026-09-20T03:27:51.311Z",
   "source": {
     "raw": "source.overpass.json",
     "normalized": "normalized.json",
     "scene": "../../scenes/dom-zentrum-v0.json",
     "provenance": "PROVENANCE.json",
-    "rawSha256": "adee7da1f71804cc52f5429a23584be50d32dbb00e84bf8a9462a4c8ea4ea2cd",
-    "osmBaseTimestamp": "2026-09-20T03:23:10Z",
-    "endpoint": "https://overpass-api.de/api/interpreter",
+    "rawSha256": "08af59fc2599d4364292db1821a9d00310849337dcd1df9be9260b6348066573",
+    "osmBaseTimestamp": "2026-07-28T02:16:18Z",
+    "endpoint": "https://overpass.kumi.systems/api/interpreter",
     "attribution": {
       "data": "© OpenStreetMap contributors",
       "license": "ODbL 1.0",
@@ -52,15 +52,15 @@
     }
   },
   "counts": {
-    "rawElements": 145967,
-    "roads": 5236,
-    "driveableRoads": 2523,
+    "rawElements": 144821,
+    "roads": 5030,
+    "driveableRoads": 2363,
     "buildings": 6351,
-    "landuse": 456,
-    "waterLines": 6,
-    "railwayWays": 665,
-    "namedAnchors": 4322,
-    "heroCandidates": 209
+    "landuse": 453,
+    "waterLines": 4,
+    "railwayWays": 662,
+    "namedAnchors": 4154,
+    "heroCandidates": 206
   },
   "heroCandidates": [
     {
@@ -78,22 +78,6 @@
       "local": {
         "x": -477.697,
         "z": 381.311
-      }
-    },
-    {
-      "id": "node/368244527",
-      "name": "Abwasser im Rhein",
-      "osm": {
-        "type": "node",
-        "id": 368244527,
-        "tags": {
-          "name": "Abwasser im Rhein",
-          "tourism": "attraction"
-        }
-      },
-      "local": {
-        "x": 259.516,
-        "z": 746.898
       }
     },
     {
@@ -407,8 +391,8 @@
         }
       },
       "local": {
-        "x": 504.865,
-        "z": -612.769
+        "x": 498.301,
+        "z": -613.075
       }
     },
     {
@@ -423,8 +407,8 @@
         }
       },
       "local": {
-        "x": 574.698,
-        "z": -606.402
+        "x": 573.057,
+        "z": -606.478
       }
     },
     {
@@ -571,8 +555,8 @@
         }
       },
       "local": {
-        "x": 266.235,
-        "z": -622.379
+        "x": 259.615,
+        "z": -622.431
       }
     },
     {
@@ -666,8 +650,8 @@
         }
       },
       "local": {
-        "x": 97.768,
-        "z": -735.504
+        "x": 98.112,
+        "z": -734.793
       }
     },
     {
@@ -681,8 +665,8 @@
         }
       },
       "local": {
-        "x": 235.804,
-        "z": -102.41
+        "x": 213.748,
+        "z": -102.844
       }
     },
     {
@@ -696,8 +680,8 @@
         }
       },
       "local": {
-        "x": 2126.464,
-        "z": -1212.742
+        "x": 2078.838,
+        "z": -1179.104
       }
     },
     {
@@ -711,8 +695,8 @@
         }
       },
       "local": {
-        "x": 741.523,
-        "z": -1855.8
+        "x": 694.479,
+        "z": -1753.696
       }
     },
     {
@@ -726,8 +710,8 @@
         }
       },
       "local": {
-        "x": 30921.157,
-        "z": -52987.984
+        "x": 30959.873,
+        "z": -53083.112
       }
     },
     {
@@ -741,8 +725,8 @@
         }
       },
       "local": {
-        "x": 24237.093,
-        "z": -41173.945
+        "x": 24413.459,
+        "z": -41487.112
       }
     },
     {
@@ -756,8 +740,8 @@
         }
       },
       "local": {
-        "x": -25431.66,
-        "z": 54859.461
+        "x": -25197.472,
+        "z": 54542.381
       }
     },
     {
@@ -771,8 +755,8 @@
         }
       },
       "local": {
-        "x": -10354.069,
-        "z": 32130.629
+        "x": -10372.404,
+        "z": 32013.611
       }
     },
     {
@@ -786,8 +770,8 @@
         }
       },
       "local": {
-        "x": 97.768,
-        "z": -735.504
+        "x": 98.112,
+        "z": -734.793
       }
     },
     {
@@ -801,8 +785,8 @@
         }
       },
       "local": {
-        "x": 235.804,
-        "z": -102.41
+        "x": 213.748,
+        "z": -102.844
       }
     },
     {
@@ -816,8 +800,8 @@
         }
       },
       "local": {
-        "x": -7647.948,
-        "z": 24689.05
+        "x": -7650.88,
+        "z": 24741.101
       }
     },
     {
@@ -1121,8 +1105,8 @@
         }
       },
       "local": {
-        "x": 211.812,
-        "z": -62.121
+        "x": 210.953,
+        "z": -62.052
       }
     },
     {
@@ -1304,8 +1288,8 @@
         }
       },
       "local": {
-        "x": 14917.088,
-        "z": -31077
+        "x": 14944.156,
+        "z": -31122.817
       }
     },
     {
@@ -1434,8 +1418,8 @@
         }
       },
       "local": {
-        "x": 1704.266,
-        "z": 9607.464
+        "x": 5611.696,
+        "z": 3005.725
       }
     },
     {
@@ -1817,21 +1801,6 @@
       }
     },
     {
-      "id": "node/14119254322",
-      "name": "Köln-Düsseldorfer Deutsche Rheinschiffahrt",
-      "osm": {
-        "type": "node",
-        "id": 14119254322,
-        "tags": {
-          "name": "Köln-Düsseldorfer Deutsche Rheinschiffahrt"
-        }
-      },
-      "local": {
-        "x": 2.637,
-        "z": -345.725
-      }
-    },
-    {
       "id": "way/4532022",
       "name": "Kölner Dom",
       "osm": {
@@ -1998,6 +1967,23 @@
       "local": {
         "x": -844.825,
         "z": -229.819
+      }
+    },
+    {
+      "id": "way/149608661",
+      "name": "Linke Rheinstrecke",
+      "osm": {
+        "type": "way",
+        "id": 149608661,
+        "tags": {
+          "name": "Linke Rheinstrecke",
+          "railway": "rail",
+          "operator": "DB InfraGO AG"
+        }
+      },
+      "local": {
+        "x": -1223.048,
+        "z": 956.147
       }
     },
     {
@@ -2198,23 +2184,6 @@
       }
     },
     {
-      "id": "way/1557416434",
-      "name": "Linke Rheinstrecke",
-      "osm": {
-        "type": "way",
-        "id": 1557416434,
-        "tags": {
-          "name": "Linke Rheinstrecke",
-          "railway": "rail",
-          "operator": "DB InfraGO AG"
-        }
-      },
-      "local": {
-        "x": -1065.611,
-        "z": 948.186
-      }
-    },
-    {
       "id": "relation/12553655",
       "name": "Linksrheinischer Jakobsweg",
       "osm": {
@@ -2225,8 +2194,8 @@
         }
       },
       "local": {
-        "x": 36312.99,
-        "z": -64528.137
+        "x": 36327.365,
+        "z": -64564.63
       }
     },
     {
@@ -2352,23 +2321,6 @@
       }
     },
     {
-      "id": "way/1548123205",
-      "name": "Parkplatz Hauptbahnhof Trankgasse",
-      "osm": {
-        "type": "way",
-        "id": 1548123205,
-        "tags": {
-          "name": "Parkplatz Hauptbahnhof Trankgasse",
-          "amenity": "parking",
-          "operator": "Contipark"
-        }
-      },
-      "local": {
-        "x": -115.15,
-        "z": 21.607
-      }
-    },
-    {
       "id": "node/5609642549",
       "name": "Radstation am Rheinufer",
       "osm": {
@@ -2413,8 +2365,8 @@
         }
       },
       "local": {
-        "x": 22656.904,
-        "z": 57340.175
+        "x": 22656.086,
+        "z": 57339.447
       }
     },
     {
@@ -2462,8 +2414,8 @@
         }
       },
       "local": {
-        "x": -525.813,
-        "z": 4501.241
+        "x": -525.902,
+        "z": 4500.992
       }
     },
     {
@@ -2478,8 +2430,8 @@
         }
       },
       "local": {
-        "x": 24587.764,
-        "z": -147872.982
+        "x": 25666.866,
+        "z": -148785.639
       }
     },
     {
@@ -2510,8 +2462,8 @@
         }
       },
       "local": {
-        "x": 50.264,
-        "z": 34.744
+        "x": 49.796,
+        "z": 35.564
       }
     },
     {
@@ -2606,8 +2558,8 @@
         }
       },
       "local": {
-        "x": -16597.385,
-        "z": 39948.018
+        "x": -16505.782,
+        "z": 39896.56
       }
     },
     {
@@ -2653,8 +2605,8 @@
         }
       },
       "local": {
-        "x": 431.243,
-        "z": -278.654
+        "x": 431.2,
+        "z": -278.409
       }
     },
     {
@@ -2668,8 +2620,8 @@
         }
       },
       "local": {
-        "x": 430.019,
-        "z": -337.428
+        "x": 430.023,
+        "z": -337.431
       }
     },
     {
@@ -2907,8 +2859,8 @@
         }
       },
       "local": {
-        "x": 19.138,
-        "z": 312.508
+        "x": 18.303,
+        "z": 312.428
       }
     },
     {
@@ -4407,11 +4359,11 @@
         "type": "way",
         "id": 28557531,
         "tags": {
-          "railway": "light_rail",
+          "railway": "tram",
           "operator": "KVB"
         }
       },
-      "class": "light_rail",
+      "class": "tram",
       "line": [
         {
           "x": -931.41,
@@ -9047,11 +8999,6 @@
           "nodeId": 1608590641
         },
         {
-          "x": 528.024,
-          "z": -51.396,
-          "nodeId": 14132762677
-        },
-        {
           "x": 491.851,
           "z": -51.185,
           "nodeId": 11002030183
@@ -9115,11 +9062,6 @@
           "x": 613.283,
           "z": -58.754,
           "nodeId": 1608443884
-        },
-        {
-          "x": 642.224,
-          "z": -60.168,
-          "nodeId": 14132762676
         },
         {
           "x": 645.233,
@@ -10187,11 +10129,6 @@
           "x": 1109.504,
           "z": -114.169,
           "nodeId": 1609001005
-        },
-        {
-          "x": 1045.659,
-          "z": -102.169,
-          "nodeId": 14132762693
         },
         {
           "x": 1037.452,
@@ -11622,19 +11559,9 @@
           "x": -771.428,
           "z": 857.026,
           "nodeId": 667700840
-        },
-        {
-          "x": -770.144,
-          "z": 855.913,
-          "nodeId": 664026657
-        },
-        {
-          "x": -767.247,
-          "z": 852.93,
-          "nodeId": 5359733376
         }
       ],
-      "lengthM": 55.16
+      "lengthM": 49.31
     },
     {
       "id": "way/149622155",
@@ -19558,6 +19485,11 @@
           "nodeId": 1629520120
         },
         {
+          "x": -630.285,
+          "z": 665.846,
+          "nodeId": 3555072730
+        },
+        {
           "x": -627.901,
           "z": 662.362,
           "nodeId": 4642395990
@@ -24805,6 +24737,36 @@
       "lengthM": 12.97
     },
     {
+      "id": "way/261155211",
+      "osm": {
+        "type": "way",
+        "id": 261155211,
+        "tags": {
+          "railway": "rail",
+          "operator": "DB Netz AG"
+        }
+      },
+      "class": "rail",
+      "line": [
+        {
+          "x": -771.428,
+          "z": 857.026,
+          "nodeId": 667700840
+        },
+        {
+          "x": -770.144,
+          "z": 855.913,
+          "nodeId": 664026657
+        },
+        {
+          "x": -767.247,
+          "z": 852.93,
+          "nodeId": 5359733376
+        }
+      ],
+      "lengthM": 5.86
+    },
+    {
       "id": "way/261155212",
       "osm": {
         "type": "way",
@@ -27114,16 +27076,6 @@
       "class": "rail",
       "line": [
         {
-          "x": -945.362,
-          "z": 926.501,
-          "nodeId": 1625731830
-        },
-        {
-          "x": -941.693,
-          "z": 925.288,
-          "nodeId": 3848712060
-        },
-        {
           "x": -939.315,
           "z": 924.508,
           "nodeId": 3425005032
@@ -27159,7 +27111,7 @@
           "nodeId": 1625731807
         }
       ],
-      "lengthM": 91.86
+      "lengthM": 85.49
     },
     {
       "id": "way/339960443",
@@ -27475,11 +27427,11 @@
         "type": "way",
         "id": 340136893,
         "tags": {
-          "railway": "light_rail",
+          "railway": "tram",
           "operator": "KVB"
         }
       },
-      "class": "light_rail",
+      "class": "tram",
       "line": [
         {
           "x": -923.084,
@@ -27585,11 +27537,11 @@
         "type": "way",
         "id": 340191554,
         "tags": {
-          "railway": "light_rail",
+          "railway": "tram",
           "operator": "KVB"
         }
       },
-      "class": "light_rail",
+      "class": "tram",
       "line": [
         {
           "x": -1005.109,
@@ -27857,9 +27809,19 @@
           "x": -945.362,
           "z": 926.501,
           "nodeId": 1625731830
+        },
+        {
+          "x": -941.693,
+          "z": 925.288,
+          "nodeId": 3848712060
+        },
+        {
+          "x": -939.315,
+          "z": 924.508,
+          "nodeId": 3425005032
         }
       ],
-      "lengthM": 200.1
+      "lengthM": 206.47
     },
     {
       "id": "way/370972796",
@@ -28541,11 +28503,11 @@
         "type": "way",
         "id": 406217838,
         "tags": {
-          "railway": "light_rail",
+          "railway": "tram",
           "operator": "KVB"
         }
       },
-      "class": "light_rail",
+      "class": "tram",
       "line": [
         {
           "x": -1114.126,
@@ -28681,11 +28643,11 @@
         "type": "way",
         "id": 406217875,
         "tags": {
-          "railway": "light_rail",
+          "railway": "tram",
           "operator": "KVB"
         }
       },
-      "class": "light_rail",
+      "class": "tram",
       "line": [
         {
           "x": -1005.109,
@@ -29189,11 +29151,11 @@
         "type": "way",
         "id": 408891074,
         "tags": {
-          "railway": "light_rail",
+          "railway": "tram",
           "operator": "KVB"
         }
       },
-      "class": "light_rail",
+      "class": "tram",
       "line": [
         {
           "x": -964.174,
@@ -35748,321 +35710,6 @@
         }
       ],
       "lengthM": 34.21
-    },
-    {
-      "id": "way/1551993541",
-      "osm": {
-        "type": "way",
-        "id": 1551993541,
-        "tags": {
-          "railway": "proposed",
-          "layer": "1"
-        }
-      },
-      "class": "proposed",
-      "line": [
-        {
-          "x": -335.109,
-          "z": 334.96,
-          "nodeId": 14118870359
-        },
-        {
-          "x": -320.814,
-          "z": 325.61,
-          "nodeId": 14118870357
-        },
-        {
-          "x": -308.861,
-          "z": 315.724,
-          "nodeId": 14118870356
-        },
-        {
-          "x": -287.131,
-          "z": 293.249,
-          "nodeId": 14118870355
-        },
-        {
-          "x": -274.197,
-          "z": 278.855,
-          "nodeId": 14118870348
-        },
-        {
-          "x": -251.856,
-          "z": 249.645,
-          "nodeId": 14118870354
-        },
-        {
-          "x": -223.876,
-          "z": 212.442,
-          "nodeId": 14118870353
-        },
-        {
-          "x": -154.687,
-          "z": 108.737,
-          "nodeId": 14118870352
-        },
-        {
-          "x": -132.248,
-          "z": 69.742,
-          "nodeId": 14118870351
-        },
-        {
-          "x": -126.23,
-          "z": 56.394,
-          "nodeId": 14118870350
-        },
-        {
-          "x": -120.976,
-          "z": 43.025,
-          "nodeId": 14118870349
-        }
-      ],
-      "lengthM": 365.19
-    },
-    {
-      "id": "way/1551993542",
-      "osm": {
-        "type": "way",
-        "id": 1551993542,
-        "tags": {
-          "railway": "proposed",
-          "layer": "1"
-        }
-      },
-      "class": "proposed",
-      "line": [
-        {
-          "x": -352.182,
-          "z": 346.727,
-          "nodeId": 14118870358
-        },
-        {
-          "x": -335.109,
-          "z": 334.96,
-          "nodeId": 14118870359
-        },
-        {
-          "x": -313.428,
-          "z": 313.42,
-          "nodeId": 14118870360
-        },
-        {
-          "x": -297.814,
-          "z": 296.911,
-          "nodeId": 14118870361
-        },
-        {
-          "x": -282.951,
-          "z": 279.323,
-          "nodeId": 14118870362
-        },
-        {
-          "x": -232.153,
-          "z": 206.431,
-          "nodeId": 14118870363
-        },
-        {
-          "x": -173.219,
-          "z": 118.054,
-          "nodeId": 14118870364
-        },
-        {
-          "x": -120.976,
-          "z": 43.025,
-          "nodeId": 14118870349
-        },
-        {
-          "x": -114.144,
-          "z": 33.207,
-          "nodeId": 14118870365
-        },
-        {
-          "x": -80.23,
-          "z": -1.135,
-          "nodeId": 14118870366
-        },
-        {
-          "x": -66.776,
-          "z": -12.323,
-          "nodeId": 14118870367
-        },
-        {
-          "x": -53.94,
-          "z": -20.327,
-          "nodeId": 14118870368
-        },
-        {
-          "x": -33.928,
-          "z": -30.446,
-          "nodeId": 14118870370
-        },
-        {
-          "x": -20.601,
-          "z": -36.212,
-          "nodeId": 14118870371
-        },
-        {
-          "x": -14.365,
-          "z": -38.55,
-          "nodeId": 14118870372
-        },
-        {
-          "x": -1.894,
-          "z": -42.101,
-          "nodeId": 14118870373
-        },
-        {
-          "x": 8.586,
-          "z": -44.183,
-          "nodeId": 14118870374
-        },
-        {
-          "x": 19.317,
-          "z": -45.997,
-          "nodeId": 14118870375
-        }
-      ],
-      "lengthM": 554.54
-    },
-    {
-      "id": "way/1553369229",
-      "osm": {
-        "type": "way",
-        "id": 1553369229,
-        "tags": {
-          "railway": "proposed",
-          "layer": "2"
-        }
-      },
-      "class": "proposed",
-      "line": [
-        {
-          "x": 1075.554,
-          "z": -102.113,
-          "nodeId": 14132762687
-        },
-        {
-          "x": 1023.017,
-          "z": -87.631,
-          "nodeId": 14132762661
-        },
-        {
-          "x": 995.921,
-          "z": -81.709,
-          "nodeId": 14132762662
-        },
-        {
-          "x": 860.79,
-          "z": -57.619,
-          "nodeId": 14132762663
-        },
-        {
-          "x": 840.049,
-          "z": -54.335,
-          "nodeId": 14132762664
-        },
-        {
-          "x": 799.225,
-          "z": -50.149,
-          "nodeId": 14132762665
-        },
-        {
-          "x": 753.317,
-          "z": -45.396,
-          "nodeId": 14132762666
-        },
-        {
-          "x": 729.805,
-          "z": -44.739,
-          "nodeId": 14132762667
-        },
-        {
-          "x": 698.759,
-          "z": -44.45,
-          "nodeId": 14132762668
-        },
-        {
-          "x": 644.952,
-          "z": -46.621,
-          "nodeId": 14132762669
-        },
-        {
-          "x": 542.319,
-          "z": -50.472,
-          "nodeId": 14132762670
-        }
-      ],
-      "lengthM": 538.81
-    },
-    {
-      "id": "way/1553369231",
-      "osm": {
-        "type": "way",
-        "id": 1553369231,
-        "tags": {
-          "railway": "proposed",
-          "layer": "2"
-        }
-      },
-      "class": "proposed",
-      "line": [
-        {
-          "x": 1119.758,
-          "z": -111.843,
-          "nodeId": 14132762673
-        },
-        {
-          "x": 1075.554,
-          "z": -102.113,
-          "nodeId": 14132762687
-        },
-        {
-          "x": 1045.919,
-          "z": -96.236,
-          "nodeId": 14132762686
-        },
-        {
-          "x": 859.99,
-          "z": -64.298,
-          "nodeId": 14132762685
-        },
-        {
-          "x": 840.708,
-          "z": -61.293,
-          "nodeId": 14132762684
-        },
-        {
-          "x": 815.028,
-          "z": -58.565,
-          "nodeId": 14132762683
-        },
-        {
-          "x": 779.185,
-          "z": -55.125,
-          "nodeId": 14132762682
-        },
-        {
-          "x": 739.4,
-          "z": -51.697,
-          "nodeId": 14132762681
-        },
-        {
-          "x": 712.493,
-          "z": -50.094,
-          "nodeId": 14132762680
-        },
-        {
-          "x": 681.167,
-          "z": -50.662,
-          "nodeId": 14132762679
-        },
-        {
-          "x": 603.94,
-          "z": -52.454,
-          "nodeId": 14132762678
-        }
-      ],
-      "lengthM": 520.94
     }
   ],
   "topology": {
@@ -36313,7 +35960,7 @@
       {
         "id": "way/23686361",
         "name": "Maximinenstraße",
-        "class": "tertiary",
+        "class": "secondary",
         "driveable": true,
         "bridge": null,
         "tunnel": "yes",
@@ -39029,6 +38676,15 @@
         "layer": null
       },
       {
+        "id": "way/381500729",
+        "name": "Tunisstraße",
+        "class": "primary",
+        "driveable": true,
+        "bridge": null,
+        "tunnel": null,
+        "layer": "-1"
+      },
+      {
         "id": "way/390780415",
         "name": null,
         "class": "footway",
@@ -40928,10 +40584,28 @@
         "layer": null
       },
       {
+        "id": "way/526775560",
+        "name": "Trankgasse",
+        "class": "residential",
+        "driveable": true,
+        "bridge": null,
+        "tunnel": "yes",
+        "layer": null
+      },
+      {
         "id": "way/527339622",
         "name": "Johannisstraße",
         "class": "service",
         "driveable": true,
+        "bridge": null,
+        "tunnel": "building_passage",
+        "layer": null
+      },
+      {
+        "id": "way/527349387",
+        "name": "Kostgasse",
+        "class": "service",
+        "driveable": false,
         "bridge": null,
         "tunnel": "building_passage",
         "layer": null
@@ -41835,6 +41509,15 @@
         "bridge": null,
         "tunnel": "building_passage",
         "layer": null
+      },
+      {
+        "id": "way/623090129",
+        "name": "Tunisstraße",
+        "class": "primary",
+        "driveable": true,
+        "bridge": null,
+        "tunnel": null,
+        "layer": "-1"
       },
       {
         "id": "way/625347794",
@@ -43504,42 +43187,6 @@
       {
         "id": "way/1510609014",
         "name": "Johannisstraße",
-        "class": "service",
-        "driveable": true,
-        "bridge": null,
-        "tunnel": "building_passage",
-        "layer": null
-      },
-      {
-        "id": "way/1546998425",
-        "name": null,
-        "class": "service",
-        "driveable": true,
-        "bridge": null,
-        "tunnel": "building_passage",
-        "layer": null
-      },
-      {
-        "id": "way/1548088661",
-        "name": null,
-        "class": "service",
-        "driveable": true,
-        "bridge": null,
-        "tunnel": "building_passage",
-        "layer": null
-      },
-      {
-        "id": "way/1552700144",
-        "name": null,
-        "class": "service",
-        "driveable": true,
-        "bridge": null,
-        "tunnel": "building_passage",
-        "layer": null
-      },
-      {
-        "id": "way/1553627504",
-        "name": null,
         "class": "service",
         "driveable": true,
         "bridge": null,
@@ -46940,42 +46587,6 @@
         "tunnel": null,
         "layer": "1",
         "lengthM": 14.8
-      },
-      {
-        "id": "way/1551993541",
-        "name": null,
-        "railway": "proposed",
-        "bridge": null,
-        "tunnel": null,
-        "layer": "1",
-        "lengthM": 365.19
-      },
-      {
-        "id": "way/1551993542",
-        "name": null,
-        "railway": "proposed",
-        "bridge": null,
-        "tunnel": null,
-        "layer": "1",
-        "lengthM": 554.54
-      },
-      {
-        "id": "way/1553369229",
-        "name": null,
-        "railway": "proposed",
-        "bridge": null,
-        "tunnel": null,
-        "layer": "2",
-        "lengthM": 538.81
-      },
-      {
-        "id": "way/1553369231",
-        "name": null,
-        "railway": "proposed",
-        "bridge": null,
-        "tunnel": null,
-        "layer": "2",
-        "lengthM": 520.94
       }
     ]
   },

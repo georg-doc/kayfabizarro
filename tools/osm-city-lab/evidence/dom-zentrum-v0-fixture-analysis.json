@@ -1,7 +1,7 @@
 {
   "schema": "kfb.osm-city.fixture-analysis.v0",
   "id": "dom-zentrum-v0",
-  "generatedAt": "2026-09-20T03:24:52.747Z",
+  "generatedAt": "2026-09-20T03:27:50.673Z",
   "bounds": {
     "min": {
       "x": -1139.826,
@@ -17,29 +17,29 @@
     }
   },
   "counts": {
-    "roads": 5236,
-    "driveableRoads": 2523,
+    "roads": 5030,
+    "driveableRoads": 2363,
     "buildings": 6351,
     "greenPolygons": 281,
-    "landuse": 456,
-    "intersections": 5227,
-    "driveRoadsAtEdge": 236,
+    "landuse": 453,
+    "intersections": 5042,
+    "driveRoadsAtEdge": 225,
     "greenPolygonsAtEdge": 33
   },
   "roadClasses": {
-    "primary": 207,
-    "tertiary": 152,
-    "residential": 1058,
-    "living_street": 36,
-    "pedestrian": 197,
-    "secondary_link": 55,
-    "secondary": 232,
-    "footway": 1526,
+    "primary": 218,
+    "tertiary": 91,
+    "residential": 929,
+    "living_street": 34,
+    "pedestrian": 199,
+    "secondary_link": 64,
+    "secondary": 255,
+    "footway": 1507,
     "steps": 536,
-    "path": 359,
-    "service": 772,
-    "primary_link": 19,
-    "tertiary_link": 20,
+    "path": 352,
+    "service": 743,
+    "primary_link": 17,
+    "tertiary_link": 18,
     "platform": 9,
     "unclassified": 2,
     "cycleway": 39,
@@ -52,27 +52,23 @@
   "topRoadNames": [
     {
       "name": "(unnamed)",
-      "count": 3159
+      "count": 3117
     },
     {
       "name": "Tunisstraße",
-      "count": 55
+      "count": 56
     },
     {
       "name": "Konrad-Adenauer-Ufer",
-      "count": 54
+      "count": 50
     },
     {
       "name": "Heumarkt",
-      "count": 48
-    },
-    {
-      "name": "Hansaring",
       "count": 46
     },
     {
-      "name": "Ebertplatz",
-      "count": 33
+      "name": "Hansaring",
+      "count": 37
     },
     {
       "name": "Turiner Straße",
@@ -80,43 +76,31 @@
     },
     {
       "name": "Auenweg",
-      "count": 32
+      "count": 33
     },
     {
-      "name": "Johannisstraße",
-      "count": 28
+      "name": "Ebertplatz",
+      "count": 32
     },
     {
       "name": "Gotenring",
       "count": 28
     },
     {
-      "name": "Komödienstraße",
-      "count": 27
-    },
-    {
       "name": "Cäcilienstraße",
       "count": 25
     },
     {
-      "name": "Gereonswall",
-      "count": 23
+      "name": "Komödienstraße",
+      "count": 25
     },
     {
       "name": "Mindener Straße",
       "count": 23
     },
     {
-      "name": "Deutzer Freiheit",
-      "count": 21
-    },
-    {
-      "name": "Eigelstein",
-      "count": 19
-    },
-    {
-      "name": "Theodor-Heuss-Ring",
-      "count": 19
+      "name": "Johannisstraße",
+      "count": 23
     },
     {
       "name": "Markmannsgasse",
@@ -131,15 +115,15 @@
       "count": 19
     },
     {
-      "name": "Helenenwallstraße",
-      "count": 19
+      "name": "Deutzer Freiheit",
+      "count": 18
     },
     {
       "name": "Maximinenstraße",
       "count": 18
     },
     {
-      "name": "Marzellenstraße",
+      "name": "Eigelstein",
       "count": 17
     },
     {
@@ -149,16 +133,32 @@
     {
       "name": "Glockengasse",
       "count": 16
+    },
+    {
+      "name": "Neuköllner Straße",
+      "count": 16
+    },
+    {
+      "name": "Theodor-Heuss-Ring",
+      "count": 16
+    },
+    {
+      "name": "Burgmauer",
+      "count": 15
+    },
+    {
+      "name": "Goldgasse",
+      "count": 15
     }
   ],
   "buildingKinds": [
     {
       "kind": "yes",
-      "count": 4015
+      "count": 4022
     },
     {
       "kind": "apartments",
-      "count": 1310
+      "count": 1305
     },
     {
       "kind": "terrace",
@@ -205,12 +205,12 @@
       "count": 22
     },
     {
-      "kind": "hotel",
+      "kind": "house",
       "count": 18
     },
     {
-      "kind": "house",
-      "count": 18
+      "kind": "hotel",
+      "count": 17
     },
     {
       "kind": "industrial",
@@ -229,7 +229,7 @@
       "count": 7
     },
     {
-      "kind": "parking",
+      "kind": "semidetached_house",
       "count": 7
     }
   ],

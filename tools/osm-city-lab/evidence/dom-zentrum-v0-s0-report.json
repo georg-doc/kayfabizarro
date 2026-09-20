@@ -1,9 +1,9 @@
 {
   "schema": "kfb.osm-city.s0-report.v0",
   "id": "dom-zentrum-v0",
-  "generatedAt": "2026-09-20T03:24:52.529Z",
-  "sourceSha256": "adee7da1f71804cc52f5429a23584be50d32dbb00e84bf8a9462a4c8ea4ea2cd",
-  "normalizedSha256": "53a0e72173bb570092476218a0b0706aa3f71725eae74baa5940057a6b2f8dba",
+  "generatedAt": "2026-09-20T03:27:50.504Z",
+  "sourceSha256": "08af59fc2599d4364292db1821a9d00310849337dcd1df9be9260b6348066573",
+  "normalizedSha256": "cac1eb56386f5236bf7cd9c9f5ef15bee0e8c57936cb413014d4540f1f5642d1",
   "deterministic": true,
   "bounds": {
     "min": {
@@ -27,15 +27,15 @@
     "clippedLineParts": 3,
     "clippedPolygons": 276,
     "elementCounts": {
-      "nodes": 124483,
-      "ways": 20982,
+      "nodes": 123649,
+      "ways": 20678,
       "relations": 90
     },
     "featureCounts": {
-      "roads": 5236,
+      "roads": 5030,
       "buildings": 6351,
-      "landuse": 456,
-      "waterLines": 6
+      "landuse": 453,
+      "waterLines": 4
     }
   },
   "gates": {
