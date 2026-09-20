@@ -891,3 +891,32 @@ Run `35484127790`, public-proof job `106007210838`:
 `PUBLIC_VERIFIED = YES`.
 
 Exactly one next gate: Georg reviews the three actors and their phase-sync/weight/cadence on the public Stage before any consumer MotionProfile promotion.
+
+
+## 2026-09-20 · Dom/Zentrum OSM export closes Claude Cologne data gate
+
+### DATA
+The reusable City Lab dataset `dom-zentrum-v0` is now cached on public `kayfabizarro/main`.
+
+Source:
+- bbox `50.9325,6.9460 → 50.9515,6.9785`;
+- OSM base timestamp `2026-09-20T03:20:04Z`;
+- raw source SHA-256 `8ab058da444eee7bd54c367aec770bbe10c4bef2ddda636cd95b886f5dca244c`;
+- © OpenStreetMap contributors · ODbL 1.0.
+
+Normalized result:
+- 145,967 raw elements;
+- 5,236 roads / 2,523 driveable;
+- 6,351 buildings;
+- 665 railway ways;
+- 456 landuse/surface polygons;
+- 6 water lines;
+- deterministic local-metre source/normalization gates PASS.
+
+### CLAUDE INTAKE
+`tools/osm-city-lab/data/dom-zentrum-v0/CLAUDE_CONTEXT.json` provides a smaller design-facing context with exact Dom/HBF/bridge/tunnel anchors, the Dom footprint, 70 nearby named driveable roads and 120 HBF-near rail geometries.
+
+### BRIEF
+The rebased Claude Design Option C→A briefing now treats OSM as READY. The only remaining external start input is Georg's two visual authority boards.
+
+No gameplay implementation or Stage publication is claimed by this data/briefing slice.
