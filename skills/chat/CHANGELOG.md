@@ -706,3 +706,43 @@ Do not rebuild the Track/Terrain slice to solve this publication issue and do no
 
 ### OSM NEXT
 The prepared OSM lane remains after the public/human TC-01 gate: `lat/lon → Globe normal/ENU → one short OSM road → same Travel terrain adapter → 3–5 building support pads → one exact landmark override`.
+
+
+## 2026-09-20 · TC-01 PUBLIC VERIFIED
+
+The publication blocker was traced to the actual Cloudflare owner branch.
+
+### PUBLICATION REPAIR
+Proven publication branch:
+`cloudflare-live`
+
+Publication commits:
+- `7fcc8607df09191ca0ec814ea95de0431e2193cc` — exact tested TC-01 package + required current Travel modules + Hub/Stage card
+- `ce455841ad1c90d6ea379f1b8ac97dd873a787bc` — public marker + Hub moved to PUBLIC VERIFIED / TEST NOW
+
+### FINAL CANONICAL PROOF
+QA PR #117 / run `35477984153` / attempt **3** / job `105992963433`:
+- exact deployment marker: **PASS**
+- marker status: `PUBLIC_VERIFIED_HUMAN_GATE_OPEN`
+- canonical Chromium: **13/13 PASS**
+- boot **946 ms**
+- page/script errors **0**
+- failed HTTP assets **0**
+- artifact `10595102217`
+- digest `sha256:c6702426c61e08982e1b7c1e881849bab410fb51520ce5e258ffc77108d7075d`
+
+### HUMAN STAGE
+`https://kayfabizarro.pages.dev/kfb-hub/stage/stunt-world/tinyskies-track-corridor-tc01/`
+
+### STATUS
+- implementation 15/15 PASS
+- Travel baseline PASS
+- Stage mirror PASS
+- Cloudflare PUBLIC VERIFIED
+- Georg acceptance OPEN
+- Live unchanged
+
+Exactly one human question:
+**Does the embedded Track read as part of the current TinySkies/Travel terrain instead of a ribbon floating above unrelated ground?**
+
+OSM integration remains the next bounded lane only after that human gate.
