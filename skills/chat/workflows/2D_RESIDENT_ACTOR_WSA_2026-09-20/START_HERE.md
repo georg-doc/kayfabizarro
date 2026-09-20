@@ -209,3 +209,28 @@ Close this preparation when:
 - the three2p5d adapter slice has a named branch/brief;
 - Doccy is recorded as source-required quadruped template only;
 - no runtime owner was silently replaced.
+
+
+## Phase 1 implementation checkpoint
+
+A concrete world-space proof is now implemented at:
+
+`tools/2D Animation Studio/proofs/eumel-three2p5d-v1/`
+
+Static sanity: **PASS**.
+
+The proof now attempts:
+
+- source-exact layer rasterization;
+- world-space z-layered Three.js planes;
+- measured neutral leg bind/hip anchors;
+- source shadow on a ground plane;
+- `upright-yaw-billboard` / `world-facing-upright`;
+- neutral/idle/look/walk/hop local states;
+- shared EyeRig semantics on Three.js wrapper groups.
+
+Current next gate is therefore narrower than the original brief:
+
+**real browser review of this exact proof page → accept / tune / reject**
+
+Do not build the Project Island or index the Resident candidate before that browser gate.

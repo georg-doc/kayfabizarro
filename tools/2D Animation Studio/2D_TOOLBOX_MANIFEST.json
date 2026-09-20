@@ -21,6 +21,12 @@
       "path": "shared/eye-rig/modifier-atlas/",
       "role": "source-first eye/face accessory inventory",
       "status": "SOURCE_INVENTORY_INCOMPLETE"
+    },
+    {
+      "id": "eumel-three2p5d-proof",
+      "path": "proofs/eumel-three2p5d-v1/",
+      "role": "world-space Three.js adapter proof for source-exact cutout actors",
+      "status": "STATIC_PASS_BROWSER_QA_PENDING"
     }
   ],
   "shared": [
@@ -35,6 +41,10 @@
     {
       "id": "actor-module-contract",
       "path": "contracts/kfb-2d-actor-module.v0.1-candidate.json"
+    },
+    {
+      "id": "three2p5d-svg-plane-stack",
+      "path": "shared/renderers/three2p5d/cutout-svg-plane-stack.v0.1.js"
     }
   ],
   "consumers": [
