@@ -1,7 +1,7 @@
 {
   "schema": "kfb.combat.weapon-profile-set/0.1-candidate",
   "date": "2026-09-20",
-  "status": "CA2_02B_PITCH_CANDIDATE",
+  "status": "CA2_02B_SECOND_PASS_CANDIDATE",
   "source": {
     "gun": {
       "repo": "georg-doc/kayfabizarro",
@@ -29,7 +29,7 @@
     "grip": {
       "eulerOrder": "YXZ",
       "eulerDeg": [
-        -19,
+        -12.5,
         77,
         0
       ],
@@ -46,12 +46,14 @@
         0
       ],
       "humanVisualDeltaDeg": [
-        -5,
+        1.5,
         0,
         0
       ],
-      "tuningReason": "Human visual gate: gun sat acceptably in fist but aimed too high; lower barrel toward forearm extension.",
-      "tuningScope": "rotation-only candidate"
+      "tuningReason": "First -5° trial moved muzzle the wrong way (+12.471° world pitch). Reverse with a small +1.5° X-Euler correction while preserving all other grip values.",
+      "tuningScope": "rotation-only second/last repair pass",
+      "failedFirstDeltaDeg": -5,
+      "failedFirstAimPitchDeg": 12.471
     },
     "muzzle": {
       "space": "weapon-holder-local",

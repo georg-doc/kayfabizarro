@@ -36,3 +36,15 @@ Keep the Studio grip base `[-14,77,0]`; apply one rotation-only visual correctio
 
 ### GATE
 Measure Aim world pitch and Release-frame pitch in-browser. Aim should be near horizontal; the Shoot clip may lift upward as recoil. No Arena ballistics or locomotion tuning in this slice.
+
+
+## 2026-09-20 · CA2-02b pitch repair pass 2
+
+### PASS 1 RESULT
+The `-5°` candidate was rejected by measurement: FrizzleBob Aim world pitch became `+12.471°`. This proved the mounted X-Euler sign was opposite to the visual assumption.
+
+### PASS 2 CANDIDATE
+Use a small `+1.5°` X-Euler delta from the Studio base, effective `[-12.5,77,0]`. Same value for FrizzleBob and GothGirl; no position/offset/yaw/roll/scale/muzzle/release changes.
+
+### STOP RULE
+This is the second and final repair pass for the same pitch gate. If it does not meet the near-horizontal Aim + upward Release criteria, freeze/export rather than continue tuning in this slice.

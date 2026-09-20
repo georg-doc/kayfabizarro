@@ -1,17 +1,19 @@
 # CA2-02b · Test Report
 
-Status: **PENDING**
+Status: **SECOND / FINAL PASS PENDING**
 
-Runtime candidate: `d32b71d800a8d5ffc7c58828b1544e6d47731143`
+Runtime candidate: `155becf16a467f125ee44958b2f2a295dbe27cd0`
 
-New checks added for the bounded human pitch correction:
+Pass 1 evidence:
+- `-5°` trial produced FrizzleBob Aim world pitch `+12.471°`;
+- therefore negative X Euler raises the mounted gun in this pose;
+- candidate was not published.
 
-- Studio base remains `[-14,77,0]`;
-- human delta is exactly `-5°`;
-- effective grip is `[-19,77,0]`;
-- both actors expose finite world muzzle pitch;
-- Aim is within ±3.5° of horizontal;
-- FB/GothGirl Aim pitches match within 0.15°;
-- Release frame remains `0.150 s`;
-- Release muzzle pitch must be at least 3.5° above that actor's Aim pitch, preserving visible recoil;
-- all previous source, grip, muzzle, single-release, reload, ownership and browser/resource checks remain active.
+Pass 2 checks:
+- Studio base `[-14,77,0]`;
+- delta exactly `+1.5°`;
+- effective grip `[-12.5,77,0]`;
+- both Aim muzzle pitches finite and within ±3.5°;
+- FB/GothGirl Aim pitches agree within 0.15°;
+- Release remains `0.150 s` and lifts ≥3.5° above Aim;
+- all previous source / grip / muzzle / single-release / reload / ownership / resource checks remain active.

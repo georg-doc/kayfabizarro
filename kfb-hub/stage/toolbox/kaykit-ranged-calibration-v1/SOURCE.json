@@ -4,10 +4,10 @@
   "slice": "CA2-02",
   "owner": "KFB ToolBox / weapon-motion calibration",
   "consumer": "georg-doc/KFB-Combat-Arena / WSA",
-  "status": "CA2_02B_BRANCH_PROOF_PENDING",
+  "status": "CA2_02B_SECOND_PASS_PROOF_PENDING",
   "sourceRepo": "georg-doc/kayfabizarro",
   "sourceBranch": "chatgpt-web/ca2-02-ranged-calibration-2026-09-20",
-  "implementationHead": "d32b71d800a8d5ffc7c58828b1544e6d47731143",
+  "implementationHead": "155becf16a467f125ee44958b2f2a295dbe27cd0",
   "baseMain": "52532aee17f85324a6d04ab53150216f00ac5d89",
   "donors": {
     "motionLab": {
@@ -68,15 +68,18 @@
   "previewFxRepair": "Deterministic release-frame now records the primary marker as already fired before the manual calibration FX, preventing duplicate preview FX; release schedule unchanged at [0.150].",
   "proofedBranchHead": "431723aa69316136aeeb0d7411d28846fe0d41da",
   "pitchTuning": {
-    "source": "Georg visual gate · screenshot 2026-09-20",
+    "source": "Georg visual gate + failed first pitch measurement",
     "studioBaseEulerDeg": [
       -14,
       77,
       0
     ],
-    "humanPitchDeltaDeg": -5,
+    "failedFirstDeltaDeg": -5,
+    "failedFirstAimPitchDeg": 12.471,
+    "measuredAxisConclusion": "negative X Euler raises muzzle in this mounted/animated frame",
+    "humanPitchDeltaDeg": 1.5,
     "effectiveEulerDeg": [
-      -19,
+      -12.5,
       77,
       0
     ],

@@ -32,8 +32,8 @@ try{
   check('no lab error',!snap.error,String(snap.error));
   check('source-first default',snap.mode==='source',snap.mode);
   check('Studio grip base retained',JSON.stringify(snap.gripTuning?.studioBaseEulerDeg)===JSON.stringify([-14,77,0]),JSON.stringify(snap.gripTuning));
-  check('human pitch delta',snap.gripTuning?.humanPitchDeltaDeg===-5,JSON.stringify(snap.gripTuning));
-  check('effective tuned grip',JSON.stringify(snap.gripTuning?.effectiveEulerDeg)===JSON.stringify([-19,77,0]),JSON.stringify(snap.gripTuning));
+  check('human pitch delta',snap.gripTuning?.humanPitchDeltaDeg===1.5,JSON.stringify(snap.gripTuning));
+  check('effective tuned grip',JSON.stringify(snap.gripTuning?.effectiveEulerDeg)===JSON.stringify([-12.5,77,0]),JSON.stringify(snap.gripTuning));
   check('exact model pin',snap.source.modelPin==='bdaea0648f27c0f16e0a737bfba237eb54dd4cbb',snap.source.modelPin);
   check('exact module pin',snap.source.modulePin==='bdaea0648f27c0f16e0a737bfba237eb54dd4cbb',snap.source.modulePin);
   check('exact asset pin',snap.source.assetPin==='11d7df978c63b9e375707bd8d9431b4c8358cda8',snap.source.assetPin);
