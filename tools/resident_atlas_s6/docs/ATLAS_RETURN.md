@@ -202,3 +202,29 @@ Canonical human review URL:
 `https://kayfabizarro.pages.dev/resident-atlas-s6/?resident=clown`
 
 Active review/publication links must not use githack/raw-CDN mirrors.
+
+
+## 2.5D cutout resident preparation · 2026-09-20
+
+A new **prepared candidate** exists for source-exact DocCheck Eumel as a 2.5D cutout Resident:
+
+`tools/resident_atlas/modules/candidates/eumel-doccheck-project-island.module.json`
+
+This is not an S6 cast promotion and is not in the module index.
+
+The candidate uses the 2D Animation Studio actor contract:
+
+`tools/2D Animation Studio/contracts/kfb-2d-actor-module.v0.1-candidate.json`
+
+Current gate:
+
+1. build/browser-test one world-space `three2p5d` adapter;
+2. mount Eumel through the existing Resident Scene Module seam;
+3. keep support/collision/camera with the consumer;
+4. only then decide whether to index/promote the module.
+
+The existing S33 Clown visual gate remains separate and unchanged.
+
+WSA integration brief:
+
+`skills/chat/workflows/2D_RESIDENT_ACTOR_WSA_2026-09-20/START_HERE.md`

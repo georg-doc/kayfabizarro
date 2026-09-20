@@ -1,0 +1,61 @@
+{
+  "schema": "kfb.2d-toolbox/0.1",
+  "updated": "2026-09-20",
+  "status": "CURRENT_TOOL_MANIFEST",
+  "root": "tools/2D Animation Studio/",
+  "tools": [
+    {
+      "id": "eumel-rig-lab",
+      "path": "labs/eumel-rig-lab/",
+      "role": "source-exact cutout rig authoring and motion calibration",
+      "status": "IMPLEMENTATION"
+    },
+    {
+      "id": "cross-render-eye-proof",
+      "path": "proofs/cross-render-eye-v1/",
+      "role": "shared 2D/3D EyeRig semantic proof",
+      "status": "STATIC_PASS_BROWSER_QA_PENDING"
+    },
+    {
+      "id": "eye-face-modifier-atlas",
+      "path": "shared/eye-rig/modifier-atlas/",
+      "role": "source-first eye/face accessory inventory",
+      "status": "SOURCE_INVENTORY_INCOMPLETE"
+    }
+  ],
+  "shared": [
+    {
+      "id": "eye-rig-protocol",
+      "path": "shared/eye-rig/eye-rig-protocol.v1.json"
+    },
+    {
+      "id": "bone2d",
+      "path": "shared/rig2d/bone2d.v1.js"
+    },
+    {
+      "id": "actor-module-contract",
+      "path": "contracts/kfb-2d-actor-module.v0.1-candidate.json"
+    }
+  ],
+  "consumers": [
+    {
+      "id": "doccheck-project-island-eumel",
+      "path": "consumers/eumel-resident/",
+      "status": "PREPARED_CANDIDATE"
+    },
+    {
+      "id": "resident-atlas-eumel",
+      "path": "tools/resident_atlas/modules/candidates/eumel-doccheck-project-island.module.json",
+      "status": "PREPARED_CANDIDATE"
+    },
+    {
+      "id": "doccy-quadruped",
+      "path": "templates/DOCCY_QUADRUPED_RIG_TEMPLATE.v0.1.json",
+      "status": "TEMPLATE_ONLY"
+    }
+  ],
+  "publication": {
+    "hub": "https://kayfabizarro.pages.dev/kfb-hub/2d-animation-studio.html",
+    "rule": "Human review links use KFB Cloudflare/Hub only after PUBLIC_VERIFIED."
+  }
+}

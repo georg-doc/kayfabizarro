@@ -779,3 +779,13 @@ Exactly one gate: review weight/folds, idle wind, gathering, closing, impact and
 
 Aging, lower-third tieback/swag, card ripple/dissolve and Shader Pool / Texture Cauldron work remain later slices.
 
+
+
+## 2026-09-20 · 2D Resident / Project Island routing
+
+- prepared `workflows/2D_RESIDENT_ACTOR_WSA_2026-09-20/` for WSA check-in;
+- named DocCheck Eumel as the first 2.5D Resident consumer proof;
+- defined DocCheck Project Island + Resident Atlas as prepared named consumers;
+- introduced a candidate 2D actor module lifecycle/ownership contract;
+- kept world/collision/camera/gameplay with the receiving consumer;
+- prepared Doccy as a quadruped topology template only; authoritative source art is required before visual implementation.

@@ -375,7 +375,7 @@
         "Travel/Combat/Race runtime movement owners"
       ],
       "relationshipToAnimationLab": "No supersession is claimed. 2D Animation Studio is the new pinned browser/tool lane for authored 2D/2.5D cutout rigs; the older Animation Lab node remains unresolved until explicitly reconciled.",
-      "note": "Established 2026-09-18. DocCheck Eumel is first lab. Source-exact 2D/cutout ownership remains here; ToolBox retains 3D EyeRig/FaceHost/FrankenStein ownership. Cross-render alignment shares semantic EyeRig controls and eyeFrame, not renderer geometry or whole-body tracks.",
+      "note": "2D Animation Studio remains the source-exact cutout authoring/presentation owner. Prepared consumer lane now includes Eumel 2.5D Resident/DocCheck Project Island and a source-required Doccy quadruped template. World/collision/camera/gameplay remain consumer-owned; Resident promotion waits for a browser-proven three2p5d adapter.",
       "toolboxBridge": "tools/KFB-ToolBox/docs/2D_ANIMATION_STUDIO_BRIDGE.md",
       "sharedEyeRigProtocol": "tools/2D Animation Studio/shared/eye-rig/eye-rig-protocol.v1.json",
       "sharedEyeRigBridge": "tools/2D Animation Studio/shared/eye-rig/toolbox-bridge.v1.json",
@@ -468,7 +468,19 @@
         "status": "FIXED",
         "error": "Cannot read properties of undefined (reading 'push')",
         "staleUnsupportedRecovery": true
-      }
+      },
+      "actorModuleContract": "tools/2D Animation Studio/contracts/kfb-2d-actor-module.v0.1-candidate.json",
+      "consumerMatrix": "tools/2D Animation Studio/docs/CONSUMER_MATRIX.md",
+      "toolboxManifest2D": "tools/2D Animation Studio/2D_TOOLBOX_MANIFEST.json",
+      "eumel2p5dResidentBinding": "tools/2D Animation Studio/consumers/eumel-resident/EUMEL_2P5D_RESIDENT_BINDING.v0.1.json",
+      "residentAtlasCandidate": "tools/resident_atlas/modules/candidates/eumel-doccheck-project-island.module.json",
+      "doccyQuadrupedTemplate": "tools/2D Animation Studio/templates/DOCCY_QUADRUPED_RIG_TEMPLATE.v0.1.json",
+      "wsaResidentHandoff": "skills/chat/workflows/2D_RESIDENT_ACTOR_WSA_2026-09-20/START_HERE.md",
+      "namedConsumers": [
+        "DocCheck Project Island",
+        "KFB Resident Atlas candidate",
+        "one later named KFB game consumer"
+      ]
     },
     {
       "id": "animation-lab",

@@ -65,3 +65,30 @@ Initial source-first scaffold:
 `shared/eye-rig/modifier-atlas/`
 
 Only source-resolved modifiers are promoted. Reported richer DocCheck rings/lids/eyewear remain pending until their authoritative source package is identified.
+
+
+## 2.5D resident / consumer lane
+
+Prepared contract:
+
+`contracts/kfb-2d-actor-module.v0.1-candidate.json`
+
+Consumer matrix:
+
+`docs/CONSUMER_MATRIX.md`
+
+First resident candidate:
+
+`consumers/eumel-resident/`
+
+WSA handoff:
+
+`skills/chat/workflows/2D_RESIDENT_ACTOR_WSA_2026-09-20/START_HERE.md`
+
+The first world-space target is Eumel on a DocCheck Project Island with exact pinned KayKit 3D scenery, then a Resident Atlas mount through the existing scene-module seam.
+
+Future quadruped topology:
+
+`templates/DOCCY_QUADRUPED_RIG_TEMPLATE.v0.1.json`
+
+Doccy remains template-only until authoritative source art is provided.
