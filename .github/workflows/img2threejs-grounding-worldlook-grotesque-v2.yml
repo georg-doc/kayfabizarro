@@ -1,0 +1,39 @@
+name: img2threejs Grounding World Look Grotesque v2
+on:
+  pull_request:
+    paths:
+      - 'tools/img2threejs/landmarks/pilot-09/**'
+      - 'tools/img2threejs/tests/check_grounding_worldlook_grotesque_v2.mjs'
+      - '.github/workflows/img2threejs-grounding-worldlook-grotesque-v2.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  proof:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Static/source proof
+        run: node tools/img2threejs/tests/check_grounding_worldlook_grotesque_v2.mjs
+      - name: Install browser
+        run: |
+          npm install --no-save playwright@1.51.1
+          npx playwright install --with-deps chromium
+      - name: Start local server
+        run: |
+          python3 -m http.server 4173 >/tmp/kfb-http.log 2>&1 &
+          sleep 2
+      - name: Browser screenshots
+        run: node tools/img2threejs/landmarks/pilot-09/browser-proof.mjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: grounding-worldlook-grotesque-v2-evidence
+          path: |
+            grounding-worldlook-grotesque-v2-evidence
+            tools/img2threejs/evidence/2026-09-20-grounding-worldlook-grotesque-v2
+          retention-days: 14
