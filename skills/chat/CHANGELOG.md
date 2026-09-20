@@ -1,3 +1,16 @@
+## 2026-09-20 · Inline 3D Edit Layer intake
+
+### SOURCE LOCATED / REVIEWED INTAKE
+Pin the new Claude Design S21 source at `tools/KFB-ToolBox/_inbox/KayKit Environment Atlas + Dungeon Generator + 3D scene editor TOOL (5)/KFB_Dungeon_RoomStudy_S21_EXPORT_2026-09-20/`. The source contains the object-attached TransformControls Mini-Editor, semantic part/group scope, snap/drop, local hand-correction cache and recipe-patch return.
+
+### REUSE DECISION
+Do not create another universal editor. Existing World Composer / Resident Prefab Lab remain broad authoring donors and ToolBox Stage / Scene Builder remains the product workspace. S21 is classified as the reusable **detail-edit donor**.
+
+Per the source contract, do not extract a shared `lib/edit-layer.js` from one use case. The next gate is one second-host proof in current Dungeon/World Atlas; only then extract the common core and adapt it separately to Resident composition/posing, Stage/Environment and Platformer authoring.
+
+### TESTED RESULT
+Source/contract audit: **20/20 PASS**. No new browser/public proof and no runtime code change.
+
 ## 2026-09-19 · Hub briefings repair + separated generator lanes
 
 ### DECISION
