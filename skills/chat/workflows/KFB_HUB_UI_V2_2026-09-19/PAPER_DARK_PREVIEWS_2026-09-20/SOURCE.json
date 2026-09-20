@@ -1,0 +1,23 @@
+{
+  "schema": "kfb.hub-ui-slice-source/0.1",
+  "date": "2026-09-20",
+  "owner": "KFB Production Hub",
+  "repository": "georg-doc/kayfabizarro",
+  "base_branch": "main",
+  "base_head": "a6b9220a0b42d50a9de9804fad22e84dde2c322c",
+  "branch": "work/kfb-hub-paper-dark-previews-2026-09-20",
+  "implementation_head": "0c609eaf8013b605238b29fd3597c037613ad453",
+  "runtime_owner": "kfb-hub/index.html",
+  "changed_runtime_files": [
+    "kfb-hub/index.html"
+  ],
+  "preview_source_rule": "derive and deduplicate current kayfabizarro.pages.dev targets from existing links + todos + briefings",
+  "snapshot_url_contract": "https://image.thum.io/get/width/960/crop/540/maxAge/1/allowJPG/noanimate/{TARGET_URL}",
+  "fallback": "lazy non-interactive iframe to the same public target if thumbnail loading fails",
+  "protected_boundaries": [
+    "Hub remains navigator, not project SSOT",
+    "No project/runtime ownership moved into Hub",
+    "No new project status truth introduced",
+    "No Live promotion"
+  ]
+}
