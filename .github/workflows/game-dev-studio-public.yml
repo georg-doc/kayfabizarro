@@ -1,25 +1,17 @@
 name: KFB Game Dev Studio public proof
 on:
   push:
-    branches:
-      - main
-      - world-atlas/dungeon-room-blueprint-s14-blender-2026-09-20
+    branches: [main]
     paths:
       - 'tools/game-dev-studio/catalog.json'
       - 'tools/game-dev-studio/index.html'
       - 'kfb-hub/free-roam/game-dev-studio/**'
-      - 'tools/world_atlas/source/KayKit_Dungeon_Room_Blueprint_S14.html'
-      - 'tools/world_atlas/source/lib/**'
-      - 'tools/world_atlas/blender/room_blueprint/**'
-      - 'tools/world_atlas/rooms/R02_s21_blueprint/**'
-      - '.github/scripts/world-atlas-dungeon-room-s14-smoke.mjs'
       - '.github/workflows/game-dev-studio-public.yml'
   workflow_dispatch:
 permissions:
   contents: read
 jobs:
   public-proof:
-    if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
     timeout-minutes: 12
     steps:
@@ -42,52 +34,3 @@ jobs:
           name: game-dev-studio-public-proof
           path: game-dev-studio-public-evidence
           retention-days: 30
-
-  world-atlas-room-proof:
-    if: github.ref == 'refs/heads/world-atlas/dungeon-room-blueprint-s14-blender-2026-09-20'
-    runs-on: ubuntu-latest
-    timeout-minutes: 24
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-        with:
-          node-version: '22'
-      - name: Install browser
-        run: |
-          npm install --no-save playwright@1.51.1
-          npx playwright install --with-deps chromium
-      - name: Start local repository server
-        run: |
-          python3 -m http.server 4173 --bind 127.0.0.1 > /tmp/kfb-s14-http.log 2>&1 &
-          echo $! > /tmp/kfb-s14-http.pid
-      - name: Browser + editor roundtrip + Blender manifest
-        run: node .github/scripts/world-atlas-dungeon-room-s14-smoke.mjs
-      - name: Install Blender
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y blender
-          blender --version
-      - name: Build R02 in Blender
-        run: |
-          mkdir -p artifacts/world-atlas-dungeon-room-s14/blender
-          blender --background \
-            --python tools/world_atlas/blender/room_blueprint/build_room_from_manifest.py -- \
-            artifacts/world-atlas-dungeon-room-s14/KFB_R02_blender_manifest.json \
-            --output artifacts/world-atlas-dungeon-room-s14/blender/KFB_R02.blend \
-            --render artifacts/world-atlas-dungeon-room-s14/blender/KFB_R02_review.png \
-            --export-glb artifacts/world-atlas-dungeon-room-s14/blender/KFB_R02.glb
-      - name: Validate Blender outputs
-        run: |
-          test -s artifacts/world-atlas-dungeon-room-s14/blender/KFB_R02.blend
-          test -s artifacts/world-atlas-dungeon-room-s14/blender/KFB_R02_review.png
-          test -s artifacts/world-atlas-dungeon-room-s14/blender/KFB_R02.glb
-          file artifacts/world-atlas-dungeon-room-s14/blender/KFB_R02_review.png
-          ls -lh artifacts/world-atlas-dungeon-room-s14/blender/
-      - name: Upload proof bundle
-        if: always()
-        uses: actions/upload-artifact@v4
-        with:
-          name: world-atlas-dungeon-room-s14-proof
-          path: artifacts/world-atlas-dungeon-room-s14/
-          retention-days: 30
-          if-no-files-found: warn
