@@ -1,0 +1,65 @@
+# TEST REPORT · KFB shared Scene Patch v1
+
+Date: 2026-09-20  
+Repository: `georg-doc/kayfabizarro`  
+Branch: `toolbox/scene-patch-adapter-v1-2026-09-20`  
+Tested head: `f3cb12d119a0e565b1d8b09a9eb2d667c6e8b218`  
+Workflow: `.github/workflows/scene-patch-resident-host-qa.yml`  
+Final run: **35538997214 · SUCCESS**
+
+## Final two-host result
+
+**42/42 browser assertions PASS · 0 page/console errors**
+
+### Resident Atlas · 20/20 PASS
+
+Job: `106153085670`  
+Artifact: `10613164419` · `scene-patch-resident-host-proof`  
+Digest: `sha256:98cd2c722dbe1b2de427e456112b901ed4f988984ebe6472da36782570eaa2e0`
+
+Proven in real Chromium/WebGL:
+- real `caveman-cave-camp` scene loads;
+- 10 Habitat/Prop objects register with stable IDs and exact source paths;
+- animated actor remains excluded from v1 editing;
+- shared editor toggles, selects and exposes object menu + compact patch dock;
+- move produces exactly one `kfb.scene-patch.v1` op;
+- local draft is written;
+- reset restores baseline;
+- import restores the moved transform;
+- wrong object source is rejected before mutation;
+- wrong host revision is rejected before mutation;
+- rejected imports leave transforms untouched;
+- undo/redo works.
+
+### Dungeon S13.2 · 22/22 PASS
+
+Job: `106153182304`  
+Artifact: `10614046695` · `scene-patch-dungeon-host-proof`  
+Digest: `sha256:6e68d6b297c2c94a2b2124c1811b309e4d0b224fe3867a7c3d7a355bee1f482c`
+
+Proven in real Chromium/WebGL:
+- current S13.2 generator boots and generates a real seeded dungeon;
+- at least one real KayKit candle/light prop is registered;
+- only `layer:candle` is editable;
+- structural generator objects remain read-only;
+- exact KayKit Dungeon registry paths stay attached to patch ops;
+- read-only structure cannot attach the gizmo;
+- move produces one Dungeon patch op;
+- original generator `placements` remain byte-for-byte unchanged by move and roundtrip;
+- reset restores baseline;
+- import restores the moved candle;
+- the existing light record follows the moved candle by the same +0.25 world-X delta;
+- wrong asset source and wrong host revision are rejected atomically;
+- rejected imports leave transforms untouched.
+
+## Repair history kept visible
+
+### Resident gate
+
+Run `35538219263` failed after the interaction checks because a rejected validation result exposed live Three.js nodes and could not be JSON-serialised. Repair removed live objects from the reject API. Runs `35538329685`, `35538452999`, and final run `35538997214` passed.
+
+### Dungeon gate
+
+First Dungeon run `35538696300` failed at boot with `SyntaxError: Unexpected reserved word`. Root cause: the first `Raycaster` occurrence belonged to S13.2's internal `rayProbe()`, not the UI picker; an overly broad replacement cut the original generator control section. Repair rebuilt the Dungeon host from exact `main@6c1b02a3338c005127d45bc7bff3ecbb785f1342`, preserved the original `rayProbe`, `regen`, controls and Recipe export, and replaced only the second UI-picker block. Final run `35538997214` passed.
+
+No third repair pass was used.
