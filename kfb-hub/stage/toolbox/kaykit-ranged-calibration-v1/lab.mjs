@@ -157,6 +157,7 @@ function seekRelease(){
     if(l.action){l.action.time=t;l.action.paused=true}
     l.update?.(0);
     updateArrow(l);
+    l.fired.add(t.toFixed(3));
     fx.fire(l.weapon.muzzle,'muzzle',l.weapon.report.forearm);
     shotEvents++;
   }
