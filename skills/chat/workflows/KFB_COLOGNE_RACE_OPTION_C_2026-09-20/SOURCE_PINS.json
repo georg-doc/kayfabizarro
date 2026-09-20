@@ -1,0 +1,169 @@
+{
+  "schema": "kfb.cologne-race-option-c-source-pins/1",
+  "date": "2026-09-20",
+  "status": "BRIEFING_SOURCE_PINS",
+  "coordination": {
+    "repository": "georg-doc/kayfabizarro",
+    "baseCommit": "53b828a29c71b9ee20635dc0133813e37697f961",
+    "planningBranch": "planning/cologne-race-option-c-claude-2026-09-20",
+    "intendedClaudeBranch": "claude/cologne-race-option-c-2026-09-20",
+    "intendedStageRoute": "/kfb-hub/stage/stunt-world/cologne-option-c/",
+    "privateRaceRepoRequiredByClaude": false
+  },
+  "filamentReferenceOnly": {
+    "repository": "KilledByAPixel/SP13KTRA",
+    "revision": "166ad838",
+    "levels": {
+      "path": "code/levels.js",
+      "blob": "75189173db4f1e15537992c34590f6d8f34ce9b8",
+      "circuit": "FILAMENT",
+      "index": 1
+    },
+    "skeleton": {
+      "path": "code/skeleton.js",
+      "blob": "447ab3566a07420a94a08080a90dc46d04af1dbd"
+    },
+    "allowedUse": "DERIVE_ROUTE_GRAMMAR_ONLY_AND_REAUTHOR_FOR_DOM_GEOGRAPHY",
+    "prohibited": [
+      "copy source code",
+      "copy literal corner-coordinate table",
+      "copy original meshes/materials/assets",
+      "reuse original kilo-unit world scale verbatim"
+    ]
+  },
+  "publicRaceBaseline": {
+    "host": {
+      "path": "kfb-hub/stunt-race/track-lab-v08/index.html",
+      "blob": "543cfe5e1d259cbc7a36af70bde200788fac4fb6"
+    },
+    "runtime": {
+      "path": "kfb-hub/stunt-race/track-lab/feel-lab-v08.mjs",
+      "blob": "84d71552ebe17b7332b18305bb111136ec746577"
+    },
+    "feel": {
+      "path": "kfb-hub/stunt-race/track-lab/RACE_FEEL_V08_CONFIG.json",
+      "blob": "38afec4b9eafab0934a82c5b751cca5e5d7c6f83"
+    },
+    "runtimeConfig": {
+      "path": "kfb-hub/stunt-race/track-lab/RACE_FLOW_RUNTIME_CONFIG.json",
+      "blob": "27ce5d67b1aaac1a7feb10eba154c116aea26ce1"
+    },
+    "flowRecipe": {
+      "path": "kfb-hub/stunt-race/FLOW_LOOP_RECIPE_A0.json",
+      "blob": "de9b372b90af0ff0cd2723c2fc2dac2771fd7648"
+    },
+    "rule": "REUSE_PUBLIC_OWNER_MIRROR_DO_NOT_CREATE_SECOND_CONTROLLER"
+  },
+  "osm": {
+    "existingCityLab": {
+      "path": "tools/osm-city-lab/README.md",
+      "blob": "0e7ed900d1e45f7e1e883ceec17aadd68d347971"
+    },
+    "existingCorridor": {
+      "path": "tools/osm-city-lab/docs/CORRIDOR_EHRENFELD_HUERTH.md",
+      "blob": "39c7505ebe6900525e6e5d25dd24dde463ae9fd5"
+    },
+    "domQuery": "skills/chat/workflows/KFB_COLOGNE_RACE_OPTION_C_2026-09-20/DOM_ZENTRUM_OVERPASS.ql",
+    "expectedRawExport": "skills/chat/workflows/KFB_COLOGNE_RACE_OPTION_C_2026-09-20/source/osm/dom-zentrum.overpass.json",
+    "rawExportStatus": "MISSING_UNTIL_OVERPASS_QUERY_IS_RUN",
+    "rule": "NO_AUTHORED_GEOMETRY_MAY_BE_LABELLED_OSM"
+  },
+  "landmarks": {
+    "profiles": {
+      "path": "tools/img2threejs/styles/landmark-style-profiles.v1.json",
+      "blob": "2ef3ecaaf81f52669913e27cae4882c03f64118f"
+    },
+    "candidates": {
+      "path": "tools/img2threejs/docs/GENIUS_LOCI_CANDIDATES_2026-09-19.md",
+      "blob": "c2f4116eedebb435029854e3e3d5fcd29f8e6454"
+    },
+    "cologneCathedralStatus": "DOM_V0_2_ACCEPTED_STYLE_NEEDS_MODULAR_GROTESQUE_MIGRATION"
+  },
+  "vehicles": {
+    "registrySourceCommit": "34cde3f8f752d481a03c9714f1c3b3a8b2c15c46",
+    "v4SourceList": {
+      "path": "tools/KFB-ToolBox/_inbox/KFB Vehicle Animation Lab v4/KFB_Vehicle_Lab_v4/lab-v7/registry-vehicles.v1.js",
+      "blob": "2a4a66d47aa12cc7d6a5c2888c02e2aedbb1dc0f"
+    },
+    "deformer": {
+      "path": "tools/KFB-ToolBox/_inbox/KFB Vehicle Animation Lab v4/KFB_Vehicle_Lab_v4/lab-v7/vehicle-cartoon-deformer.v2.js",
+      "blob": "ce82a6265abb501f90ee841f8f7e522bc5862299"
+    },
+    "kaykitPack": {
+      "path": "registry/assets/v1/packs/kaykit-city-builder-bits-1-0-free.json",
+      "blob": "c7e28545d4adc4ccff77467c18095deb12cbb0e6"
+    },
+    "firstSlice": [
+      "media/3D_Assets/KayKit_City_Builder_Bits_1.0_FREE/Assets/gltf/car_hatchback.gltf",
+      "media/3D_Assets/KayKit_City_Builder_Bits_1.0_FREE/Assets/gltf/car_sedan.gltf",
+      "media/3D_Assets/KayKit_City_Builder_Bits_1.0_FREE/Assets/gltf/car_stationwagon.gltf"
+    ]
+  },
+  "racingKit": {
+    "registry": {
+      "path": "registry/assets/v1/packs/kenney-racing-kit.json",
+      "blob": "2c7ab5974b3decaa772e47ef490272d1266e7b40"
+    },
+    "proofAssets": [
+      "media/3D_Assets/kenney_racing-kit/Models/GLTF format/billboard.glb",
+      "media/3D_Assets/kenney_racing-kit/Models/GLTF format/billboardDouble_exclusive.glb",
+      "media/3D_Assets/kenney_racing-kit/Models/GLTF format/camera_exclusive.glb",
+      "media/3D_Assets/kenney_racing-kit/Models/GLTF format/flagCheckers.glb",
+      "media/3D_Assets/kenney_racing-kit/Models/GLTF format/ramp.glb",
+      "media/3D_Assets/kenney_racing-kit/Models/GLTF format/roadRamp.glb",
+      "media/3D_Assets/kenney_racing-kit/Models/GLTF format/roadStart.glb"
+    ],
+    "rule": "ISOLATE_AND_ORIENT_EACH_USED_ASSET_BEFORE_SCENE_INTEGRATION"
+  },
+  "cards": {
+    "deckRegistry": {
+      "path": "media/kfb/index.json",
+      "blob": "af276a8b941a84a6b1856b9897dca196d1b7760a",
+      "schema": "kfb-deck-registry/v2"
+    },
+    "pdfContract": {
+      "path": "skills/SSOT_KFB_CardBuilder_PDF.md",
+      "blob": "122f6923fe78a58d0f188a5a0331d9d6ed270f4d"
+    },
+    "cropRuntime": {
+      "path": "overworld/overworld/card-art-2d.js",
+      "blob": "9485bdee2d8705a4d49db9616af3a797e76efa26"
+    },
+    "skyCardTexture": {
+      "path": "travel/wip/travel_globe_wsa/globe-v13/sky-cards.js",
+      "blob": "d822abf334831a129e6be935e3ea82fd4bad60ac"
+    },
+    "billboardPool": {
+      "KFB": [
+        "forget_utopia",
+        "ignore_dystopia",
+        "embrace_protopia"
+      ],
+      "MED": [
+        "medkayfab_cardiology",
+        "medkayfab_emergency_medicine",
+        "medkayfab_histology"
+      ]
+    },
+    "fallback": "CANONICAL_REAL_KFB_CARD_BACKSIDE_ONLY"
+  },
+  "hud": {
+    "source": {
+      "path": "kfb-hub/stage/stunt-world/hud-game-v3/SOURCE.json",
+      "blob": "affb1ba1d175351fa5d7b30474afb4c421f4dd83"
+    },
+    "rules": {
+      "tacho": "RETAIN",
+      "radio": "3 large icon controls + volume; no visible microtext",
+      "almanac": "real landscape cards; natural aspect; fan downward",
+      "minimap": "actual route only",
+      "genericDashboard": "PROHIBITED"
+    }
+  },
+  "visualAuthorities": {
+    "status": "USER_ATTACHES_TO_CLAUDE",
+    "optionCName": "OPTION_C_VISUAL_AUTHORITY",
+    "optionAName": "OPTION_A_VISUAL_AUTHORITY",
+    "samplingRule": "OPTION_C_BINDING_FOR_SLICE_C; OPTION_A_BINDING_ONLY_FOR_SECOND_SLICE"
+  }
+}
