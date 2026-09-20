@@ -177,3 +177,33 @@ Pending Georg review of weight/folds, idle movement, physical gathering, closing
 ### DEFERRED
 Aging decals/holes, tieback/swag variants, card breach/ripple/dissolve, production WebGPU backend and Shader Pool research.
 
+
+
+## 2026-09-20 · GDS-07 · Eumel 2.5D actor package
+
+### SOURCE
+- DocCheck Illustrator source and source-exact component SVG remain owned by the 2D Animation Studio source chain.
+- three2p5d proof implementation pinned to merge `25d0be9a0965542724e8ece40b2626f3f6b46994`.
+
+### CREATED
+- `game-ready/eumel-2p5d-actor/`;
+- package manifest, actor binding, source/provenance manifests, static QA and consumer test plan;
+- catalog registration as the second candidate package.
+
+### OWNER BOUNDARY
+Game Dev Studio packages metadata and handoff facts. 2D Animation Studio remains the actor authoring/presentation owner. Resident/DocCheck/KFB games retain their own world/runtime owners.
+
+### TESTED RESULT
+Metadata/source-reference sanity prepared; upstream three2p5d static sanity is PASS.
+
+### NOT TESTED
+- public/browser Eumel three2p5d proof;
+- Resident mount;
+- DocCheck Project Island;
+- named KFB game consumer.
+
+### UI BOUNDARY
+The current Game Dev Studio page still selects `catalog.packages[0]`. This turn does not redesign it or claim a public Eumel preview.
+
+### HUMAN
+Pending.
