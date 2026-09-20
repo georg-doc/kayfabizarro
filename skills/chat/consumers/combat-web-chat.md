@@ -1,7 +1,7 @@
 # Consumer · Combat Arena ChatGPT Web
 
 Status: CURRENT CONSUMER SYNC
-Updated: 2026-09-13
+Updated: 2026-09-20
 
 Project implementation SSOT: `georg-doc/KFB-Combat-Arena`
 Local chat entry: `ChatGPT_web/START_HERE.md`
@@ -36,3 +36,8 @@ Load only when relevant. Examples:
 ## Return rule
 
 Combat results belong in the Combat repo (`_inbox/`, `_handover/`, Return or project docs as contracted). Only cross-project routing/SOP decisions come back to `skills/chat/`.
+
+
+## Current CA2 pointer · 2026-09-20
+
+Load `COMBAT_ARENA_INTEGRATION_V3_KAYKIT_ACTORS_BRIEF.md` from the modular-minigame workflow. Small Web slices may produce source/profile/isolated-Stage evidence. WSA owns live Actor lifecycle, Player/Gunfight/Muzzle, real mob/reward integration, A2/sky consumer work and final acceptance. The v2 singular-Driver/two-enemy wording is superseded for player scope; the pair remains an adapter proof inside the existing three-enemy loop.
