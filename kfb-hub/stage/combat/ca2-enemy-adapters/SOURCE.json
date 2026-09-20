@@ -1,0 +1,93 @@
+{
+  "schema": "kfb.stage-source/0.1",
+  "product": "KFB Combat · CA2-03B Enemy State Playback",
+  "status": "PUBLIC_VERIFIED_CA2_03B",
+  "sourceRepo": "georg-doc/kayfabizarro",
+  "sourceBranch": "chatgpt-web/ca2-03-enemy-adapters-2026-09-20",
+  "implementationHead": "8e9b368305ca7ec76bdb9e4b4b89136ef527b2fe",
+  "modelPin": "891eadf01e218f5fc21387e64cea1fec8332c5b6",
+  "animationPin": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+  "actors": [
+    {
+      "id": "skeleton-warrior",
+      "rig": "Rig_Medium",
+      "path": "media/3D_Assets/KayKit_Skeletons/characters/gltf/Skeleton_Warrior.glb"
+    },
+    {
+      "id": "orc-brute",
+      "rig": "Rig_Large",
+      "path": "media/3D_Assets/KayKit_Mystery_Series6/2 - August 2025 - Orc Brute/OrcBrute.glb"
+    },
+    {
+      "id": "avian-swordsman",
+      "rig": "Rig_Medium",
+      "path": "media/3D_Assets/KayKit_Mystery_Series6/9 - March 2026 - Avian Swordsman/AvianSwordsman.glb"
+    }
+  ],
+  "animationSets": [
+    "General",
+    "MovementBasic",
+    "CombatMelee"
+  ],
+  "stageUrl": "https://kayfabizarro.pages.dev/kfb-hub/stage/combat/ca2-enemy-adapters/",
+  "publicVerified": true,
+  "humanAcceptance": "PENDING_CA2_03B",
+  "measurements": {
+    "skeleton-warrior": {
+      "bones": 23,
+      "height": 2.590462322352996,
+      "rig": "Rig_Medium"
+    },
+    "orc-brute": {
+      "bones": 23,
+      "height": 4.194394604340129,
+      "rig": "Rig_Large"
+    },
+    "avian-swordsman": {
+      "bones": 23,
+      "height": 2.3241792388642932,
+      "rig": "Rig_Medium"
+    }
+  },
+  "playback": {
+    "states": [
+      "idle",
+      "move",
+      "attack",
+      "hit",
+      "defeat"
+    ],
+    "deterministicProofPhase": 0.35,
+    "rootMotionPolicy": "strip root/hips position tracks",
+    "actorMixerPolicy": "one mixer per visible actor",
+    "weapons": "OFF",
+    "arenaOwnership": "NONE"
+  },
+  "branchProof": {
+    "run": 35493474052,
+    "job": 106032266047,
+    "checks": "109/109 PASS",
+    "artifactId": 10600470645,
+    "artifactDigest": "sha256:0a9cb18451fa7af3f1e4e10e3c5d59e73f4fa0bc05e58761bdbb6db43ab38713"
+  },
+  "publicRepair": {
+    "reason": "Cloudflare served stale same-path lab.mjs while SOURCE marker was current",
+    "fix": "versioned module URL ./lab.mjs?v=ca203b-playback",
+    "runtime": "8e9b368305ca7ec76bdb9e4b4b89136ef527b2fe"
+  },
+  "publicProof": {
+    "run": 35493474052,
+    "job": 106032265920,
+    "checks": "109/109 PASS",
+    "marker": "PASS",
+    "combatStageNavigation": "PASS",
+    "playbackModule": "PASS",
+    "artifactId": 10600420826,
+    "artifactDigest": "sha256:99bf8505d9cb9a499751b88a888fab9271ccb80ad1bbd277574e198c19a49578"
+  },
+  "publication": {
+    "branch": "cloudflare-live",
+    "proofedHead": "3b21c3c4a4871fc5ac2834c05d4a63c006d5fc60",
+    "stageUrl": "https://kayfabizarro.pages.dev/kfb-hub/stage/combat/ca2-enemy-adapters/"
+  }
+}

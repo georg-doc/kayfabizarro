@@ -1,0 +1,35 @@
+name: Combat CA2-03B Hub card QA
+on:
+  push:
+    branches: ['chatgpt-web/ca2-03-enemy-adapters-2026-09-20']
+    paths: ['.github/workflows/combat-ca2-hub-card-qa.yml']
+  workflow_dispatch:
+permissions: {contents: read}
+jobs:
+  public-hub-card:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Wait for public Hub + final source marker
+        run: |
+          node <<'NODE'
+          const hub='https://kayfabizarro.pages.dev/kfb-hub/';
+          const source='https://kayfabizarro.pages.dev/kfb-hub/stage/combat/ca2-enemy-adapters/SOURCE.json';
+          let last=null;
+          for(let i=0;i<120;i++){
+            try{
+              const [h,sr]=await Promise.all([
+                fetch(hub+'?qa='+Date.now(),{cache:'no-store'}).then(r=>r.text()),
+                fetch(source+'?qa='+Date.now(),{cache:'no-store'}).then(async r=>({ok:r.ok,json:await r.json()}))
+              ]);
+              last={hubCard:h.includes('Combat Arena CA2-03B · Enemy State Playback'),hubUrl:h.includes('https://kayfabizarro.pages.dev/kfb-hub/stage/combat/ca2-enemy-adapters/'),sourceStatus:sr.json?.status,sourceOk:sr.ok};
+              if(last.hubCard&&last.hubUrl&&sr.ok&&sr.json?.status==='PUBLIC_VERIFIED_CA2_03B'){
+                console.log('PUBLIC HUB CARD PASS',JSON.stringify(last));
+                process.exit(0);
+              }
+            }catch(e){last={error:String(e)}}
+            await new Promise(r=>setTimeout(r,3000));
+          }
+          console.error('PUBLIC HUB CARD FAIL',JSON.stringify(last));
+          process.exit(1);
+          NODE
