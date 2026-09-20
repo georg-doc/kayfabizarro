@@ -127,3 +127,16 @@ WSA can close this handoff when all of the following are explicit:
 ## ONE HUMAN REVIEW QUESTION
 
 **Is the Clown 3-club loop visually good enough in height, tempo, catches and arm motion to accept `juggle-cascade-v1` as the first reusable Resident Activity contract before WSA mounts it into the Platformer?**
+
+
+## 2026-09-20 · Incoming 2.5D cutout candidate
+
+Separate prepared handoff:
+
+`tools/KFB-ToolBox/_handover/2D_RESIDENT_ACTOR_WSA_2026-09-20/START_HERE.md`
+
+First candidate: source-exact DocCheck Eumel as a `2p5d-cutout-resident`.
+
+This addition does **not** change the current Clown S33 visual gate and does not promote Eumel into the Resident module index.
+
+WSA should first require a browser-proven world-space `three2p5d` adapter, then test one mount through the same scene-module lifecycle.
