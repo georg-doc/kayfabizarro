@@ -1,7 +1,7 @@
 {
   "schema": "kfb.wsa-2d-resident-handoff/0.1",
   "prepared": "2026-09-20",
-  "status": "HANDOFF_PREPARED",
+  "status": "HANDOFF_PREPARED_PHASE1_IMPLEMENTATION_STATIC_PASS",
   "sourceRepo": "georg-doc/kayfabizarro",
   "tool": "tools/2D Animation Studio/",
   "firstActor": "doccheck-eumel-2p5d",
@@ -17,5 +17,10 @@
     "one later named KFB game consumer"
   ],
   "futureTemplate": "Doccy quadruped cutout",
-  "nextGate": "Implement/browser-test one world-space three2p5d Eumel adapter before Resident index promotion."
+  "nextGate": "Browser-test tools/2D Animation Studio/proofs/eumel-three2p5d-v1/ and decide accept/tune/reject before Resident index promotion.",
+  "phase1Proof": {
+    "path": "tools/2D Animation Studio/proofs/eumel-three2p5d-v1/",
+    "staticSanity": "PASS",
+    "browserQA": "PENDING"
+  }
 }
