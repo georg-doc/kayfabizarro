@@ -1,0 +1,43 @@
+{
+  "schema": "kfb.world-atlas.inline-detail-editor-e1/0.1",
+  "date": "2026-09-20",
+  "status": "IMPLEMENTED_STATIC_PASS_BROWSER_OPEN",
+  "owner": "World Atlas / Dungeon S13.2",
+  "donor": {
+    "intakePr": 120,
+    "sourceRoot": "tools/KFB-ToolBox/_inbox/KayKit Environment Atlas + Dungeon Generator + 3D scene editor TOOL (5)/KFB_Dungeon_RoomStudy_S21_EXPORT_2026-09-20/",
+    "contract": "docs/EDITOR_LAYER.md",
+    "host": "KayKit_Room_Study_S21.html"
+  },
+  "implementation": {
+    "file": "tools/world_atlas/source/KayKit_Dungeon_Generator_S13_2.html",
+    "editableLayers": [
+      "torch",
+      "candle"
+    ],
+    "protectedLayers": [
+      "floor",
+      "wall",
+      "corner",
+      "stair",
+      "seams"
+    ],
+    "patchSchema": "kfb.dungeon-detail-patch/0.1",
+    "localScratch": "kfb-s132-detail-edits-v1"
+  },
+  "behavior": [
+    "click editable prop while Editor is enabled",
+    "move with 0.1 translation snap or rotate Y with 15 degree snap",
+    "candle may snap back to generated floor height",
+    "edited transform mutates current placement record for Recipe JSON export",
+    "local scratch restores the patch after a deterministic rebuild",
+    "stored patch is ignored when asset identity no longer matches"
+  ],
+  "tests": {
+    "staticContract": "20/20 PASS",
+    "browser": "NOT_RUN",
+    "publicStage": "NOT_PUBLISHED",
+    "georgAcceptance": "OPEN"
+  },
+  "nextGate": "Browser roundtrip only: seed A1 -> enable Editor -> select first editable detail -> move/rotate -> verify patch -> rebuild -> verify identical restored transform."
+}
