@@ -10,7 +10,8 @@
     "skills/chat/masterplan/KFB_META_TOWN_ADDENDUM_2026-09-14.md",
     "skills/chat/masterplan/KFB_META_NARRATION_ADDENDUM_2026-09-14.md",
     "skills/chat/masterplan/FRACTAL_CANVAS_NARRATORS_AND_PLAY_2026-09-14.md",
-    "skills/chat/masterplan/CHATTERBOX_TOURBUS_REUSE_2026-09-14.md"
+    "skills/chat/masterplan/CHATTERBOX_TOURBUS_REUSE_2026-09-14.md",
+    "skills/chat/masterplan/KFB_STORYTELLING_MAPS_V1_2026-09-20.md"
   ],
   "recoveryPath": "skills/chat/RECOVERY_PATH.md",
   "freshChatSliceProtocol": "skills/chat/FRESH_CHAT_SLICE_PROTOCOL.md",
@@ -31,6 +32,42 @@
     "EXPERIMENTAL"
   ],
   "entries": [
+    {
+      "id": "kfb-storytelling-maps-v1",
+      "kind": "workflow",
+      "status": "EXPERIMENTAL",
+      "version": "1.0",
+      "path": "skills/chat/workflows/KFB_STORYTELLING_MAPS_V1_2026-09-20/START_HERE.md",
+      "living": "skills/chat/workflows/KFB_STORYTELLING_MAPS_V1_2026-09-20/LIVING_MASTERPLAN.md",
+      "recovery": "skills/chat/workflows/KFB_STORYTELLING_MAPS_V1_2026-09-20/RECOVERY.md",
+      "benchmark": "skills/chat/workflows/KFB_STORYTELLING_MAPS_V1_2026-09-20/LUDOWALA_BENCHMARK.md",
+      "firstPoc": "skills/chat/workflows/KFB_STORYTELLING_MAPS_V1_2026-09-20/ODYSSEY_POC.md",
+      "implementationOwner": "tools/kfb-cartoon-map-board/",
+      "publicBaseline": "https://kayfabizarro.pages.dev/kfb-hub/stage/cartoon-map-board-p02/",
+      "candidateStage": "https://kayfabizarro.pages.dev/kfb-hub/stage/storytelling-maps/t1-donors/",
+      "loadWhen": [
+        "storytelling map",
+        "tactical map",
+        "cinematic map",
+        "world map",
+        "zone map",
+        "galaxy map",
+        "cut-scene map",
+        "Odyssey POC"
+      ],
+      "owns": [
+        "cross-slice Storytelling Maps direction",
+        "story/camera/timeline contracts",
+        "authoring-to-runtime manifest direction"
+      ],
+      "doesNotOwn": [
+        "OSM City Lab city geometry",
+        "KFB CardBuilder",
+        "asset registry",
+        "Race/Travel consumer physics"
+      ],
+      "note": "Umbrella product direction over the existing Cartoon Map Board owner. Current gate: T1 exact donor isolation."
+    },
     {
       "id": "fresh-chat-slice-protocol",
       "kind": "coordination",

@@ -356,3 +356,27 @@ It routes four separate, source-preserving work lanes:
 - [3D in-scene editor](workflows/KFB_INSCENE_EDITOR_MODULE_V1_2026-09-20/START_HERE.md) — adapters for Resident, Environment, Dungeon and Babel rather than a replacement editor.
 
 These briefs are planning/export instructions. They grant no Race/Combat runtime rewrite or automatic Live promotion.
+
+
+## 2026-09-20 · Cartoon Map Board tactical tabletop direction
+
+Current planning brief:
+
+`tools/kfb-cartoon-map-board/docs/TACTICAL_GAME_MAP_V1_2026-09-20.md`
+
+Direction: reuse exact KayKit BoardGameBits player stands, playercards and dice for a satirical/tabletop Map Board layer. The card donor exposes its artwork as a separate material primitive, enabling media/photo replacement without rebuilding the KayKit card frame. KayKit supplies colored D4/D6/D8/D20 but not D10/D12; the preferred external donor for the missing RPG dice / Cannon physics seam is `3d-dice/dice-box-threejs@6945e0068eae27f22acd26debdb70f6ef2fd6063`.
+
+Motion uses `skills/kfb-cartoon-animation_v2.md`. Next gate is source-isolated proof only: exact playerstand + playercard + D20 + 3d-dice donor shown separately before integration.
+
+
+## 2026-09-20 · KFB Storytelling Maps v1
+
+Current experimental entry:
+`skills/chat/workflows/KFB_STORYTELLING_MAPS_V1_2026-09-20/START_HERE.md`
+
+This evolves the existing Cartoon Map Board owner into a reusable cinematic/tactical/world-map authoring direction; it does not create a second map runtime. Read the living masterplan, Ludowala benchmark, Odyssey POC and scoped recovery there.
+
+Current gate: **T1 exact donor isolation** at the candidate Stage route
+`https://kayfabizarro.pages.dev/kfb-hub/stage/storytelling-maps/t1-donors/`.
+
+Game Development Studio is an optional later evidence/vendoring/performance helper; `game-dev` was unavailable in the current chat environment and repository-native checks continue. Build 3D Game Rooms is reserved for optional diorama/room cutaways, not ordinary map authoring.
