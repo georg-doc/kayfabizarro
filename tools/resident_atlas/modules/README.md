@@ -46,3 +46,26 @@ The Platformer owner creates the normal platform/solid. After its top-center anc
 - consumer-owned 4×4 grass support recommendation.
 
 No Platformer runtime file is modified by this slice.
+
+
+## Prepared 2.5D cutout resident lane
+
+Candidate only:
+
+`candidates/eumel-doccheck-project-island.module.json`
+
+This extends the **presentation class**, not the Resident runtime.
+
+The candidate references the 2D Animation Studio actor binding and keeps:
+
+- world transform;
+- support/collision;
+- camera;
+- gameplay;
+- persistence
+
+with the receiving consumer.
+
+It is intentionally **not** added to `index.json` until the world-space `three2p5d` adapter has a browser PASS and one Resident mount is tested.
+
+The current Clown module and its visual gate remain unchanged.
