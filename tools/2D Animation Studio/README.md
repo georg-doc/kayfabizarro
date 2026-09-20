@@ -92,3 +92,14 @@ Future quadruped topology:
 `templates/DOCCY_QUADRUPED_RIG_TEMPLATE.v0.1.json`
 
 Doccy remains template-only until authoritative source art is provided.
+
+
+## Current world-space proof
+
+`proofs/eumel-three2p5d-v1/`
+
+This is the first implementation of the prepared 2.5D consumer seam.
+
+It rasterizes source-exact SVG groups into world-space Three.js layers, applies the measured neutral bind, keeps explicit leg anchors and reuses the shared EyeRig semantics.
+
+Status: **STATIC PASS · BROWSER QA PENDING**.
