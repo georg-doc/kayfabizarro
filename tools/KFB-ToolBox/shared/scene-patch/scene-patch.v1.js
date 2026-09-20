@@ -164,7 +164,7 @@ export function makeScenePatchSession(opts = {}) {
     if (!doc || doc.schema !== SCENE_PATCH_SCHEMA) errors.push('SCHEMA_MISMATCH');
     if (doc?.host !== host) errors.push('HOST_MISMATCH');
     if (doc?.source?.assetId !== source.assetId || doc?.source?.sourceRef !== source.sourceRef) errors.push('HOST_SOURCE_MISMATCH');
-    if (source.revision && doc?.source?.revision && doc.source.revision !== source.revision) errors.push('HOST_REVISION_MISMATCH');
+    if (source.revision && doc?.source?.revision !== source.revision) errors.push('HOST_REVISION_MISMATCH');
     if (!Array.isArray(doc?.ops)) errors.push('OPS_NOT_ARRAY');
     const seen = new Set();
     for (const op of Array.isArray(doc?.ops) ? doc.ops : []) {
