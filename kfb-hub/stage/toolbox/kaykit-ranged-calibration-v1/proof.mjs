@@ -69,11 +69,16 @@ try{
   check('Shoot recovery after release',snap.markers.shoot.recoveryStart>=release,JSON.stringify(snap.markers.shoot));
   check('release method recorded',String(snap.markers?.shoot?.releaseHow||'').length>4,String(snap.markers?.shoot?.releaseHow));
 
-  await page.evaluate(()=>window.__KFB_RANGED_CALIBRATION__.play('Ranged_1H_Shoot'));
-  await page.waitForTimeout(Math.max(80,Math.round((release+0.035)*1000)));
+  const seeked=await page.evaluate(()=>window.__KFB_RANGED_CALIBRATION__.seekRelease());
+  check('release-frame seek',Math.abs(seeked-release)<0.001,'seeked='+seeked+' release='+release);
   const flash=await page.evaluate(()=>window.__KFB_RANGED_CALIBRATION__.snapshot());
+  check('release-frame mode',flash.mode==='release-frame',flash.mode);
   check('Shoot clip active',flash.currentClip==='Ranged_1H_Shoot',flash.currentClip);
-  check('release event reached both actors',flash.shotEvents>=2,'shotEvents='+flash.shotEvents);
+  check('release event reached both actors',flash.shotEvents===2,'shotEvents='+flash.shotEvents);
+  for(const id of ['frizzlebob','gothgirl']){
+    check(id+' action paused at release',flash.actors[id]?.actionPaused===true,JSON.stringify(flash.actors[id]));
+    check(id+' action time at release',Math.abs(flash.actors[id]?.actionTime-release)<0.002,JSON.stringify(flash.actors[id]));
+  }
   await page.screenshot({path:OUT+'/02-shoot-release.png',fullPage:true});
 
   await page.waitForTimeout(900);

@@ -7,7 +7,7 @@
   "status": "BRANCH_BROWSER_PROOF_PENDING",
   "sourceRepo": "georg-doc/kayfabizarro",
   "sourceBranch": "chatgpt-web/ca2-02-ranged-calibration-2026-09-20",
-  "implementationHead": "4fb8104761e0393c4698206a79b4cc0d0ced6378",
+  "implementationHead": "016ea96b5761b7fd66f34df77f0874acb15ea716",
   "baseMain": "52532aee17f85324a6d04ab53150216f00ac5d89",
   "donors": {
     "motionLab": {
@@ -47,5 +47,6 @@
     "Arena audio"
   ],
   "publicVerified": false,
-  "humanAcceptance": "PENDING"
+  "humanAcceptance": "PENDING",
+  "repairNote": "Release proof now uses deterministic measured release-frame seek instead of wall-clock FX timing."
 }
