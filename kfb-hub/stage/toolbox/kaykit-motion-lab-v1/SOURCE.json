@@ -2,7 +2,7 @@
   "schema": "kfb.stage-source/0.1",
   "product": "KFB ToolBox · KayKit Motion Lab v1",
   "owner": "KFB ToolBox / Motion authoring",
-  "status": "PUBLIC_STAGE_CANDIDATE_PROOF_PENDING",
+  "status": "PUBLIC_VERIFIED_HUMAN_OPEN",
   "sourceRepo": "georg-doc/kayfabizarro",
   "sourceBranch": "chatgpt-web/toolbox-kaykit-motion-profiles-2026-09-20",
   "sourceBranchHead": "3ab2a439b013b816e843ea303e7015a26ee2aff8",
@@ -25,5 +25,15 @@
     "blackknight"
   ],
   "stageUrl": "https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/kaykit-motion-lab-v1/",
-  "humanAcceptance": "PENDING"
+  "humanAcceptance": "PENDING",
+  "publicEvidence": {
+    "workflowRun": 35484127790,
+    "job": 106007210838,
+    "checks": "87/87 PASS",
+    "artifactId": 10596912462,
+    "artifactDigest": "sha256:d4638aba0e4bd02b690f19cb931c92f99cac020d0af05e5d1124f11003300ca4",
+    "failedResources": 0,
+    "pageConsoleErrors": 0,
+    "humanAcceptance": "PENDING"
+  }
 }
