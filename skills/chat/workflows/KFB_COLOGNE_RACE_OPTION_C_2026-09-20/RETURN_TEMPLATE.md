@@ -5,11 +5,12 @@ Status: **CLAUDE DESIGN HANDOFF TEMPLATE**
 ## Source
 
 - Claude build/export name:
-- Visual authority board C:
-- Visual authority board A:
+- Option-C authority board 01 path/blob:
+- Option-C authority board 02 path/blob:
+- Option A authority status: deferred until after Georg Option-C gate
 - OSM raw export:
 - OSM source timestamp / endpoint:
-- Filament reference pin:
+- FILAMENT #02 benchmark pin + license boundary:
 - Public Race baseline pin:
 - Vehicle assets used:
 - Vehicle deformer pin:
@@ -54,7 +55,7 @@ Confirm:
 
 - [ ] no second Race controller
 - [ ] no invented OSM labelled as OSM
-- [ ] no copied SP13KTRA source/data/assets
+- [ ] no copied/adapted/derived SP13KTRA circuit geometry, source, palette, data or assets
 - [ ] no fake KFB/MED cards
 - [ ] no TC-01 black-ribbon foundation
 - [ ] no generic replacement HUD
