@@ -356,3 +356,17 @@ It routes four separate, source-preserving work lanes:
 - [3D in-scene editor](workflows/KFB_INSCENE_EDITOR_MODULE_V1_2026-09-20/START_HERE.md) — adapters for Resident, Environment, Dungeon and Babel rather than a replacement editor.
 
 These briefs are planning/export instructions. They grant no Race/Combat runtime rewrite or automatic Live promotion.
+
+
+## 2026-09-20 · KFB Hub Paper/Dark preview candidate
+
+The existing KFB Production Hub owner has a bounded presentation candidate in Draft PR #141 on `work/kfb-hub-paper-dark-previews-2026-09-20`.
+
+Scope: hash-addressable filters (`#stage`, `#briefings`, etc.), explicit Paper/Dark theme and a visual Stage/Live gallery derived from the Hub's existing public targets. No second project registry or runtime owner is introduced.
+
+Evidence: **18/18 static PASS**; current derived inventory is **19 KFB public targets (8 Stage + 11 Live) and 4 DocCheck Live targets**.
+
+Status remains **STATIC PASS · STAGE/PUBLIC PENDING · HUMAN VISUAL GATE PENDING**. Do not describe the public Hub as updated until the exact Cloudflare route is opened and the candidate revision is visibly present.
+
+Return/evidence:
+`skills/chat/workflows/KFB_HUB_UI_V2_2026-09-19/PAPER_DARK_PREVIEWS_2026-09-20/`
