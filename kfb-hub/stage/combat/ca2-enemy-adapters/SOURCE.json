@@ -1,7 +1,7 @@
 {
   "schema": "kfb.stage-source/0.1",
   "product": "KFB Combat · CA2-03B Enemy State Playback",
-  "status": "CA2_03B_PUBLIC_REPAIR_PENDING",
+  "status": "PUBLIC_VERIFIED_CA2_03B",
   "sourceRepo": "georg-doc/kayfabizarro",
   "sourceBranch": "chatgpt-web/ca2-03-enemy-adapters-2026-09-20",
   "implementationHead": "8e9b368305ca7ec76bdb9e4b4b89136ef527b2fe",
@@ -30,7 +30,7 @@
     "CombatMelee"
   ],
   "stageUrl": "https://kayfabizarro.pages.dev/kfb-hub/stage/combat/ca2-enemy-adapters/",
-  "publicVerified": false,
+  "publicVerified": true,
   "humanAcceptance": "PENDING_CA2_03B",
   "measurements": {
     "skeleton-warrior": {
@@ -64,15 +64,30 @@
     "arenaOwnership": "NONE"
   },
   "branchProof": {
-    "run": 35493052845,
-    "job": 106031173581,
+    "run": 35493474052,
+    "job": 106032266047,
     "checks": "109/109 PASS",
-    "artifactId": 10599676961,
-    "artifactDigest": "sha256:8bc9e098a9439ace78c77da01c5f04fca63135e34fc4f2fa9d1ecb7a91a40233"
+    "artifactId": 10600470645,
+    "artifactDigest": "sha256:0a9cb18451fa7af3f1e4e10e3c5d59e73f4fa0bc05e58761bdbb6db43ab38713"
   },
   "publicRepair": {
     "reason": "Cloudflare served stale same-path lab.mjs while SOURCE marker was current",
     "fix": "versioned module URL ./lab.mjs?v=ca203b-playback",
     "runtime": "8e9b368305ca7ec76bdb9e4b4b89136ef527b2fe"
+  },
+  "publicProof": {
+    "run": 35493474052,
+    "job": 106032265920,
+    "checks": "109/109 PASS",
+    "marker": "PASS",
+    "combatStageNavigation": "PASS",
+    "playbackModule": "PASS",
+    "artifactId": 10600420826,
+    "artifactDigest": "sha256:99bf8505d9cb9a499751b88a888fab9271ccb80ad1bbd277574e198c19a49578"
+  },
+  "publication": {
+    "branch": "cloudflare-live",
+    "proofedHead": "3b21c3c4a4871fc5ac2834c05d4a63c006d5fc60",
+    "stageUrl": "https://kayfabizarro.pages.dev/kfb-hub/stage/combat/ca2-enemy-adapters/"
   }
 }
