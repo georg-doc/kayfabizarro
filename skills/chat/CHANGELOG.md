@@ -1,3 +1,11 @@
+## 2026-09-20 · Combat CA2 v3 · KayKit player family
+
+### DECISION
+FrizzleBob Driver Graft becomes the preferred Combat actor; GothGirl and Legacy FB remain explicit choices. Further Rig_Medium actors are catalogued but require asset, clip, face, ground and muzzle gates. Two enemy adapters remain a proof inside the existing three-enemy round.
+
+### BRIEFING
+Add one lead brief plus small Source Probe, Actor Selector/Profile, Ranged/Muzzle, Enemy Pair and Shared Spindle Sky briefs. WSA retains live integration and acceptance. Combat runtime is unchanged.
+
 ## 2026-09-19 · Hub briefings repair + separated generator lanes
 
 ### DECISION

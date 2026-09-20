@@ -1,5 +1,9 @@
 # KFB 3D Mini-Game Hub · Baukasten- und POC-Briefing
 
+## CURRENT OVERRIDE · 2026-09-20 · Combat CA2 v3
+
+KayKit/Rig_Medium ist die bevorzugte Arena-Spielerfamilie. FB Driver Graft ist Default; GothGirl und Legacy FB bleiben auswählbar. Fünf kleine Briefs trennen Source Probe, Selector/Profile, Ranged/Muzzle, Gegnerpaar und Shared Spindle Sky. WSA behält alle Live-Integrator-Nähte. Der v2-Brief bleibt Historie und darf den neuen Spielerfamilien-Scope nicht überschreiben.
+
 ## CURRENT CORRECTION · 2026-09-19 · Visible briefs, C0 recovery, Raid order
 
 The Hub now exposes a dedicated **Briefings** filter. “Today” remains intentionally compact; it is not the full briefing catalogue.
@@ -24,7 +28,7 @@ Die verbindliche Reihenfolge ist jetzt:
 2. [Asset Librarian × Tiny Treats · Discoverability Recon](../ASSET_LIBRARIAN_TINY_TREATS_RECON_V1_2026-09-19/START_HERE.md) — **P0-Gate für C0**. Charming Kitchen ist im Register, muss aber ohne Slug-Wissen gefunden werden. Librarian bleibt die eine Bibliothek; ToolBox/C0 sind Konsumenten.
 3. **C0 Baukasten** — erst danach den verständlichen, gemessenen Rollen-Katalog aus Registry/Librarian aufbauen; keine Parallelbibliothek.
 4. [Babel Tower S2b → Hex Platform Generator](./BABEL_HEX_PLATFORM_GENERATOR_V1_BRIEF.md) — **P1**. S2b-Quelle sichern, drei echte Hex-Verbindungen beweisen, dann einen kleinen Turm-Recipe-Generator.
-5. [Combat Arena Integration v2](./COMBAT_ARENA_INTEGRATION_V2_BRIEF.md) — vorbereitet, aber nicht vor Welt/Race/C0 starten.
+5. [Combat Arena Integration v3 · KayKit-Spielerfamilie](./COMBAT_ARENA_INTEGRATION_V3_KAYKIT_ACTORS_BRIEF.md) — vorbereitet, aber nicht vor Welt/Race/C0 starten.
 6. [Dungeon Generator v2](./DUNGEON_GENERATOR_V2_BRIEF.md) — Side Quest; vorhandenen stabilen Generator weiterbauen, nicht neu erfinden.
 
 Der allgemeine [Hex Terrain Generator v1](./HEX_TERRAIN_GENERATOR_V1_BRIEF.md) bleibt als Modulbibliotheks-Grundlage erhalten. Der neue Babel-Brief ist sein konkreter Plattform-/Turm-Consumer.

@@ -106,7 +106,7 @@
       "id": "kfb-modular-minigame-hub-2026-09-19",
       "kind": "workflow",
       "status": "CURRENT_REFERENCE",
-      "version": "1.0",
+      "version": "1.1",
       "path": "skills/chat/workflows/KFB_MODULAR_MINIGAME_HUB_2026-09-19/START_HERE.md",
       "recoveryIntake": "skills/chat/workflows/KFB_MODULAR_MINIGAME_HUB_2026-09-19/FAILURE_EXPORT_INTAKE.md",
       "loadWhen": [
@@ -116,7 +116,10 @@
         "Dungeon room POC",
         "KayKit Hex platformer",
         "Combat Arena platform level",
-        "ChatGPT Web comparison"
+        "ChatGPT Web comparison",
+        "Combat Arena KayKit player family",
+        "Rig_Medium actor selector",
+        "modular spindle sky"
       ],
       "owns": [
         "cross-slice briefing and sequence",
@@ -130,7 +133,7 @@
         "FrizzleBob actor contract",
         "automatic promotion or merge"
       ],
-      "note": "Starts with a visual measured catalog, then routes three independent POCs. The verified Claude failure export is evidence/donor only; its large island generator and automatic diorama are rejected."
+      "note": "Current Combat route is CA2 v3: KayKit player family plus five bounded Web briefs; WSA retains live integration. Existing catalog/generator routes remain."
     },
     {
       "id": "session-design-briefing",
