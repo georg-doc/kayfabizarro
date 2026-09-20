@@ -343,3 +343,16 @@ Next gate is one A/B/C design/geometry proof:
 Do not tune the existing TC-01 ribbon/zone composition forward. TinySkies/Travel remains one spherical WorldSurface donor; OSM remains geographic/semantic truth; OMS/Grotesque remains a stylised environment donor; Race retains driving/contact ownership.
 
 The wider KFB target may support Sphere / Plane / InnerSphere and later structure/tunnel/underwater/free-space routes, but do not build a mega-engine before Sphere + Plane share one proven TrackPatch contract.
+
+
+## 2026-09-20 · MVP world, combat, ToolBox and editor briefs
+
+The current short planning board is [KFB MVP Integration Board](workflows/KFB_MVP_INTEGRATION_BOARD_V1_2026-09-20/START_HERE.md).
+
+It routes four separate, source-preserving work lanes:
+- [World/Race/Audio/Traffic](workflows/KFB_WORLD_RACE_AUDIO_TRAFFIC_V1_2026-09-20/START_HERE.md) — existing Race engine + Travel/TinySkies seam, real Racer audio and visual traffic proof;
+- [Combat Arena Raid + Open World](workflows/KFB_COMBAT_RAID_OPEN_WORLD_SPRINT_V1_2026-09-20/START_HERE.md) — actor/EyeRig/ranged gates before melee/portal coupling;
+- [ToolBox Cloudflare consolidation](workflows/KFB_TOOLBOX_CLOUDFLARE_CONSOLIDATION_V1_2026-09-20/START_HERE.md) — direct tested tool routes, a compact router and never-empty publication contract;
+- [3D in-scene editor](workflows/KFB_INSCENE_EDITOR_MODULE_V1_2026-09-20/START_HERE.md) — adapters for Resident, Environment, Dungeon and Babel rather than a replacement editor.
+
+These briefs are planning/export instructions. They grant no Race/Combat runtime rewrite or automatic Live promotion.

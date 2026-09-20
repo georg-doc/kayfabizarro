@@ -921,3 +921,7 @@ A new source-head sampler reads each loaded actor's own face/head texture around
 
 ### NEXT
 Reload the EyeRig Stage and visually check only the lid colors on the four accepted Large actors.
+
+## 2026-09-20 · MVP integration board and bounded briefs
+
+Added a planning index plus four source-preserving briefings for World/Race/Audio/Traffic, Combat Raid/Open World, ToolBox Cloudflare consolidation and the shared in-scene editor. Each keeps the named runtime/tool owner, requires direct Cloudflare Stage proof, and explicitly blocks placeholder/parallel-engine work and automatic promotion.
