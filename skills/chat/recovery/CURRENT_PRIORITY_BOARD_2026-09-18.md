@@ -14,7 +14,7 @@ GitHub has advanced beyond several older entries below. Use this section first; 
 
 - **Free Roam Platformer POC** — Claude Design export brief prepared; candidate only, no overwrite of current Free Roam.
 - **Plant Prop Lab** — **P2 PREPARED**. Tiny Treats House Plants unpacked; Floate Design brief + mental model prepared. Allowed parallel work: external/browser authoring, recipes, patterns, prop-rig/EyeRig experiments and clean ZIP export. Do **not** write Travel/Free-Roam/Game-Dev runtime owners in parallel.
-- **img2threejs / 2D Animation Studio** — donor/tool lanes; integrate only through named consumers after their own evidence.
+- **img2threejs / 2D Animation Studio** — donor/tool lanes; integrate only through named consumers after their own evidence. **Prepared named consumer lane:** Eumel 2.5D → world-space adapter proof → Resident Atlas candidate → DocCheck Project Island; WSA brief at `skills/chat/workflows/2D_RESIDENT_ACTOR_WSA_2026-09-20/START_HERE.md`. This is prepared work, not a new P0 runtime owner.
 
 ### Astra
 
@@ -216,3 +216,16 @@ Order:
 The current Free Roam Platformer Claude export remains a candidate donor. Its earlier Project Island composition is structurally/visually rejected by the recovery rebrief; do not use it as an accepted integration base merely because it boots.
 
 **Publication rule:** active KFB review/Stage/Live links use Cloudflare/KFB Hub only, never githack/raw-CDN mirrors.
+
+
+## 2026-09-20 · 2D Resident actor preparation
+
+The prior rule “integrate only through named consumers” now has a bounded named path:
+
+`Eumel source-exact 2D → three2p5d adapter proof → Resident Scene Module candidate → DocCheck Project Island → one later named KFB game consumer`
+
+WSA brief:
+
+`skills/chat/workflows/2D_RESIDENT_ACTOR_WSA_2026-09-20/START_HERE.md`
+
+This preparation does not outrank the current runtime P0 gates and does not change the existing Clown Resident visual gate.
