@@ -234,3 +234,28 @@ Current next gate is therefore narrower than the original brief:
 **real browser review of this exact proof page → accept / tune / reject**
 
 Do not build the Project Island or index the Resident candidate before that browser gate.
+
+
+## Game Dev Studio package checkpoint
+
+Eumel is now also prepared as a Game Dev Studio candidate package:
+
+`game-ready/eumel-2p5d-actor/`
+
+Catalog:
+
+`tools/game-dev-studio/catalog.json`
+
+This makes the actor discoverable as a package/handoff input for future named KFB games without transferring runtime ownership.
+
+Current package status:
+
+- source/component pins: PASS;
+- package metadata: IMPLEMENTED;
+- three2p5d static sanity: PASS;
+- browser proof: PENDING;
+- Resident consumer: PREPARED / NOT INDEXED;
+- DocCheck Project Island: PREPARED / NOT BUILT;
+- named KFB game runtime: NOT SELECTED.
+
+The current Game Dev Studio public UI still presents `packages[0]`; this registration does not claim a public Eumel package preview.
