@@ -140,6 +140,8 @@ export async function mountEumelThree2p5D({
       legA:{pivot:vec(legABone.group),rotation:+legABone.group.rotation.z.toFixed(5)},
       legB:{pivot:vec(legBBone.group),rotation:+legBBone.group.rotation.z.toFixed(5)},
       head:{pivot:vec(headBone.group),rotation:+headBone.group.rotation.z.toFixed(5)},
+      eyeA:{sx:+eyeA.eyeBone.group.scale.x.toFixed(5),sy:+eyeA.eyeBone.group.scale.y.toFixed(5),pupilSy:+eyeA.pupilBone.group.scale.y.toFixed(5)},
+      eyeB:{sx:+eyeB.eyeBone.group.scale.x.toFixed(5),sy:+eyeB.eyeBone.group.scale.y.toFixed(5),pupilSy:+eyeB.pupilBone.group.scale.y.toFixed(5)},
       rootYaw:+root.rotation.y.toFixed(5),
       shadow:{sx:+shadowMesh.scale.x.toFixed(5),sy:+shadowMesh.scale.y.toFixed(5)}
     };
