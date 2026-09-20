@@ -4,15 +4,15 @@
   "sourceRepo": "georg-doc/kayfabizarro",
   "sourceBranch": "toolbox/eye-rig-batch-2026-09-18",
   "sourcePR": 104,
-  "sourceHead": "1416092e87018ce32507d4d91e1d13d39f62c1ac",
+  "sourceHead": "40c2f920a96ea00bf99593610a49a646b2e0873c",
   "returnHead": "af2827b60ced330e57bf4a7f553ad30dbf45b205",
-  "implementationCheckpoint": "c6608ab5c76509bb54ae6b4375b87ed338e61427",
-  "evidenceCheckpoint": "1416092e87018ce32507d4d91e1d13d39f62c1ac",
+  "implementationCheckpoint": "480c5770ef8ef391043b0b93ec3f51b04af7dfef",
+  "evidenceCheckpoint": "40c2f920a96ea00bf99593610a49a646b2e0873c",
   "stageRuntimeHead": "e3c4a79d959aa5a09bfb7d5cec67807b27170d6c",
   "mainRouterHead": "f7bdcf001abefd4b40cc722729eb3b406b041936",
   "expectedVisibleMarker": "Medium / Large class switch · PR #104",
-  "humanGate": "Reload Stage; Clown/other Medium actors and Large actors should load without the push exception; then continue Medium review or Monstrosity Large calibration",
-  "publicVerification": "Loader fix published; human reload/model-switch check next",
+  "humanGate": "Reload Stage and visually confirm the four accepted Large profiles plus actor-specific lid colors",
+  "publicVerification": "PENDING_LARGE_REVIEWED_LID_COLOR_PUBLICATION",
   "medium": {
     "actorCount": 27,
     "defaultStatus": "SET",
@@ -26,10 +26,10 @@
       "Demon Lord",
       "Orc Brute"
     ],
-    "firstActor": "Monstrosity",
-    "defaultStatus": "NOT_SET",
-    "promotionAction": "Set as Large default",
-    "applyToSelectedBeforePromotion": false,
+    "reviewedProfiles": "./data/rig-large-reviewed.v1.json",
+    "accepted": true,
+    "sharedClassDefault": false,
+    "lidColor": "AUTO_SOURCE_HEAD → EyeRig v6 darkened",
     "motions": [
       "Idle_A",
       "Walking_A",
@@ -38,12 +38,10 @@
     "jumpAvailable": false
   },
   "tests": {
-    "static": "84/84 PASS",
-    "focusedLarge": "15/15 PASS",
-    "syntax": "3/3 PASS",
+    "static": "95/95 PASS",
+    "syntax": "4/4 PASS",
     "sourceReadback": "PASS",
-    "stageReadback": "PASS",
-    "loaderFocused": "8/8 PASS"
+    "stageReadback": "PENDING"
   },
   "deferred": [
     "Legacy",
@@ -53,11 +51,16 @@
     "Vehicle EyeRig"
   ],
   "hubCard": "SYNCED_TO_LOADER_FIX",
-  "nextGate": "RELOAD_AND_CLICK_PREVIOUSLY_FAILING_ACTOR",
+  "nextGate": "GEORG_LARGE_LID_COLOR_VISUAL_CHECK",
   "loaderFix": {
     "status": "FIXED",
     "error": "Cannot read properties of undefined (reading 'push')",
     "cause": "single-material head with zero explicit geometry groups",
     "staleUnsupportedRecovery": true
+  },
+  "reviewedLargeSource": {
+    "path": "tools/KFB-ToolBox/_inbox/eye-rig-large.batch.json",
+    "mainCommit": "52532aee17f85324a6d04ab53150216f00ac5d89",
+    "blob": "f55db82d1a76ba9362df261cf66517859abbf953"
   }
 }

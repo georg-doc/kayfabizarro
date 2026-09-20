@@ -3,6 +3,7 @@ import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 import { mountKayKitEyes } from './lib/kaykit-eye-adapter.v1.js';
 import { prepareMediumActorCleanup } from './lib/medium-source-eye-cleanup.v1.js';
+import { sampleActorFaceColor } from './lib/face-color-sampler.v1.js';
 
 const DONOR_PIN = '5650b6c54d8789b20ea80abe857688173d506d3b';
 const DONOR_CDN = `https://cdn.jsdelivr.net/gh/georg-doc/kayfabizarro@${DONOR_PIN}/`;
@@ -22,6 +23,7 @@ const CLASS_CONFIG = {
     label:'Large',
     catalogUrl:'./data/rig-large-actors.v0.json',
     seedUrl:'./data/rig-large-default.v0.json',
+    reviewedUrl:'./data/rig-large-reviewed.v1.json',
     defaultActor:'monstrosity',
     generalUrl:ANIM_CDN+'media/3D_Assets/KayKit_Character_Animations_1.1/Animations/gltf/Rig_Large/Rig_Large_General.glb',
     moveUrl:ANIM_CDN+'media/3D_Assets/KayKit_Character_Animations_1.1/Animations/gltf/Rig_Large/Rig_Large_MovementBasic.glb',
@@ -91,7 +93,7 @@ function classEyeDefault() {
 function hasAcceptedClassDefault(rigClass=state.rigClass){ return !!state.classSeeds[rigClass]?.authoringDefault?.eye; }
 function applyAuthoringDefaultToProfile(profile=state.profile, { markSession=true }={}) {
   if (!profile) return null;
-  const d=classEyeDefault(), actorBase=profile.eye?.baseColor || profile.sourceFace?.faceColor || state.seed?.sourceFace?.faceColor;
+  const d=classEyeDefault(), actor=state.catalogs[profile.rigClass]?.find((a)=>a.id===profile.actorId), actorBase=profile.sourceFace?.faceColor || actor?.faceColor || null;
   profile.eye={
     ...(profile.eye||{}),
     anchor:{...(profile.eye?.anchor||{}),...(d.anchor||{})},
@@ -136,7 +138,7 @@ function makeActorProfile(actor) {
     pupilStyle:d.pupilStyle||'matte-cute',
     pupilSize:d.pupilSize??0.34, gloss:d.gloss??0.1, inset:d.inset??0.4,
     lidFit:d.lidFit??0.9, converge:d.converge??0.18, splay:d.splay??0,
-    baseColor:actor.faceColor||'#b58f83', lidColorMode:d.lidColorMode||'face-base-darkened',
+    baseColor:actor.faceColor||null, lidColorMode:d.lidColorMode||'face-base-darkened',
     trackingMode:d.trackingMode||'life', fixedGaze:clone(d.fixedGaze||[0,0]),
     oval:clone(d.oval||{w:1,h:1,d:1,tilt:0})
   };
@@ -151,6 +153,16 @@ function ensureProfile(actor) {
   const existing=state.profiles[actor.id];
   if(existing) return clone(existing);
   const p=makeActorProfile(actor); state.profiles[actor.id]=clone(p); return p;
+}
+function needsAutoFaceColor(profile){
+  if(!profile)return false;
+  const explicit=profile.sourceFace?.faceColor;
+  const source=profile.sourceFace?.faceColorSource;
+  const base=String(profile.eye?.baseColor||'').toLowerCase();
+  if(source==='catalog-explicit'&&explicit)return false;
+  if(source==='AUTO_SOURCE_HEAD'||source==='generic-fallback-unverified'||source==='runtime-head-texture-sample')return true;
+  if(!explicit)return true;
+  return base==='#b58f83';
 }
 function currentReviewState(actorId) {
   return state.profiles[actorId]?.reviewState || 'UNREVIEWED';
@@ -651,6 +663,20 @@ async function loadActor(actorId,{preserve=true}={}) {
     state.mixer=new THREE.AnimationMixer(figure);
     const eyes=await mountKayKitEyes({THREE,figure,sourceRef:sourceRef(),profile:state.profile,expressionContract:window.__EYE_RIG_CONTRACT,camera:window.__EYE_RIG_BATCH.camera,log});
     state.eyes=eyes;
+    if(needsAutoFaceColor(state.profile)){
+      const faceColor=sampleActorFaceColor({
+        THREE,figure,faceHost:eyes.faceHost,anchor:state.profile.eye?.anchor,
+        preferredHeadMesh:cleanup.report?.headMesh||state.profile.sourceFace?.headMesh,log
+      });
+      state.profile.evidence={...(state.profile.evidence||{}),faceColorSample:clone(faceColor)};
+      if(faceColor.status==='OK'){
+        state.profile.sourceFace.faceColor=faceColor.color;
+        state.profile.sourceFace.faceColorSource='runtime-head-texture-sample';
+        state.profile.eye.baseColor=faceColor.color;
+        eyes.setBaseColor(faceColor.color);
+        state.profiles[state.profile.actorId]=clone(state.profile);
+      }
+    }
     const measured=cleanup.measureOnFaceHost?.(eyes.faceHost); if(measured) recordMeasuredSuggestion(measured);
     state.hostReady=eyes.faceHost.status==='OK'; state.eyeReady=!!eyes.eyeFrame();
     gate('#gateHost',state.hostReady?'pass':'fail');gate('#gateEye',state.eyeReady?'pass':'fail');
@@ -748,12 +774,13 @@ function wireRuntimeControls(camera,controls,renderer) {
 }
 
 async function boot() {
-  const [seed,mediumSeed,mediumCatalog,largeSeed,largeCatalog,contract]=await Promise.all([
+  const [seed,mediumSeed,mediumCatalog,largeSeed,largeCatalog,largeReviewed,contract]=await Promise.all([
     fetch('./data/gothgirl.seed.json').then((r)=>{if(!r.ok)throw new Error(`seed ${r.status}`);return r.json();}),
     fetch(CLASS_CONFIG.Rig_Medium.seedUrl).then((r)=>{if(!r.ok)throw new Error(`medium seed ${r.status}`);return r.json();}),
     fetch(CLASS_CONFIG.Rig_Medium.catalogUrl).then((r)=>{if(!r.ok)throw new Error(`medium catalog ${r.status}`);return r.json();}),
     fetch(CLASS_CONFIG.Rig_Large.seedUrl).then((r)=>{if(!r.ok)throw new Error(`large seed ${r.status}`);return r.json();}),
     fetch(CLASS_CONFIG.Rig_Large.catalogUrl).then((r)=>{if(!r.ok)throw new Error(`large catalog ${r.status}`);return r.json();}),
+    fetch(CLASS_CONFIG.Rig_Large.reviewedUrl).then((r)=>{if(!r.ok)throw new Error(`large reviewed ${r.status}`);return r.json();}),
     fetch(CONTRACT_URL).then((r)=>{if(!r.ok)throw new Error(`contract ${r.status}`);return r.json();})
   ]);
   state.seed=seed;
@@ -764,9 +791,13 @@ async function boot() {
   const saved=readSaved();
   if(saved?.classDefault&&!saved?.classDefaults) state.classSeeds.Rig_Medium.authoringDefault=clone(saved.classDefault);
   for(const [k,v] of Object.entries(saved?.classDefaults||{})) if(state.classSeeds[k]&&v) state.classSeeds[k].authoringDefault=clone(v);
-  state.profiles=clone(saved?.profiles||{});
+  state.profiles={};
+  for(const p of largeReviewed?.profiles||[]) state.profiles[p.actorId]=clone(p);
+  Object.assign(state.profiles,clone(saved?.profiles||{}));
   if(saved?.profile?.actorId&&!state.profiles[saved.profile.actorId])state.profiles[saved.profile.actorId]=clone(saved.profile);
-  state.approvedProfiles=clone(saved?.approvedProfiles||{});
+  state.approvedProfiles={};
+  for(const p of largeReviewed?.profiles||[]) state.approvedProfiles[p.actorId]=clone(p);
+  Object.assign(state.approvedProfiles,clone(saved?.approvedProfiles||{}));
   if(saved?.approved?.actorId&&!state.approvedProfiles[saved.approved.actorId])state.approvedProfiles[saved.approved.actorId]=clone(saved.approved);
 
   state.rigClass=CLASS_CONFIG[saved?.currentRigClass]?saved.currentRigClass:'Rig_Medium';

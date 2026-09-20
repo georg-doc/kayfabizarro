@@ -34,8 +34,8 @@ jobs:
           const BASE='https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/eye-rig-batch/';
           const WANT={
             sourcePR:104,
-            sourceHead:'1416092e87018ce32507d4d91e1d13d39f62c1ac',
-            implementationCheckpoint:'c6608ab5c76509bb54ae6b4375b87ed338e61427'
+            sourceHead:'40c2f920a96ea00bf99593610a49a646b2e0873c',
+            implementationCheckpoint:'480c5770ef8ef391043b0b93ec3f51b04af7dfef'
           };
           const result={url:BASE,want:WANT,checks:[],errors:[],screenshots:[],status:'RUNNING'};
           const check=(name,pass,detail)=>{result.checks.push({name,pass:Boolean(pass),detail});if(!pass)throw Error(name+' :: '+JSON.stringify(detail))};
@@ -340,6 +340,14 @@ jobs:
             check('Large catalog 4',
               largeInitial.roster?.count===4 && await page.locator('#actorList [data-actor-id]').count()===4,
               {runtime:largeInitial.roster,dom:await page.locator('#actorList [data-actor-id]').count()});
+            check('Large reviewed profiles accepted',
+              ['monstrosity','black-knight','demon-lord','orc-brute'].every((id)=>largeInitial.profiles?.[id]?.reviewState==='ADJUSTED_APPROVED'),
+              Object.fromEntries(['monstrosity','black-knight','demon-lord','orc-brute'].map((id)=>[id,largeInitial.profiles?.[id]?.reviewState])));
+            check('Large lids use actor face colors',
+              largeInitial.profile?.sourceFace?.faceColorSource==='runtime-head-texture-sample' &&
+              largeInitial.profile?.eye?.baseColor &&
+              largeInitial.profile?.eye?.baseColor.toLowerCase()!=='#b58f83',
+              {source:largeInitial.profile?.sourceFace?.faceColorSource,color:largeInitial.profile?.eye?.baseColor});
             check('Large has no accepted default yet',
               largeInitial.classSeed?.status==='CALIBRATION_START_ONLY' && largeInitial.classSeed?.authoringDefault===null,
               largeInitial.classSeed);
