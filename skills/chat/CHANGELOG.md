@@ -921,3 +921,20 @@ A new source-head sampler reads each loaded actor's own face/head texture around
 
 ### NEXT
 Reload the EyeRig Stage and visually check only the lid colors on the four accepted Large actors.
+
+## 2026-09-20 · Racer engine audio pack → WSA
+
+### SOURCE
+Registered `media/3D_Assets/Audio/KFB Racer/` as a bounded Race-audio candidate source: **19 files total (5 WAV + 14 MP3)**. Added pack README, pinned asset manifest and source-integrity report. No binary audio asset was modified by the handoff.
+
+### HUMAN DECISION
+Preserved Georg's explicit preference for `Seamless_10–12_secon_#1-1789884544910.mp3` as the V8 idle donor. Other V8 load/rev and Steampunk renders remain candidates until individually listened/accepted.
+
+### OWNER / BOUNDARY
+Receiving implementation SSOT remains `georg-doc/KFB-Stunt-Car-Race` / WSA. Race owns physics and telemetry truth; Audio reads those signals only. Existing A6 input guard, A1 source-transfer history and RoadTrip/Jukebox ownership remain unchanged.
+
+### EVIDENCE
+Repository metadata checks: **19/19 source presence, 19/19 classification, 19/19 README filename references; 5 WAV + 14 MP3**. No runtime/browser/mix PASS is claimed.
+
+### NEXT GATE
+Integrate only preferred V8 idle #1 + one V8 load candidate through the existing one-AudioContext Race graph, then return a direct Cloudflare Stage driving/listening proof before adding rev or Steampunk layers.
