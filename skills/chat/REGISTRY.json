@@ -313,6 +313,36 @@
       "note": "Project SSOT. On 2026-09-17 Georg accepted the true-WebGL Track Lab direction after manual v0.5 freeplay. The Track Lab is an experimental accepted development lane, not yet a replacement for the production race runtime or its movement/camera/progress owners."
     },
     {
+      "id": "kfb-racer-engine-audio-pack-2026-09-20",
+      "kind": "workflow",
+      "status": "CURRENT_REFERENCE",
+      "version": "1.0",
+      "path": "skills/chat/workflows/KFB_RACER_ENGINE_AUDIO_PACK_2026-09-20/START_HERE.md",
+      "return": "skills/chat/workflows/KFB_RACER_ENGINE_AUDIO_PACK_2026-09-20/RETURN.md",
+      "assetManifest": "skills/chat/workflows/KFB_RACER_ENGINE_AUDIO_PACK_2026-09-20/ASSET_MANIFEST.json",
+      "sourceFolder": "media/3D_Assets/Audio/KFB Racer/",
+      "receivingProject": "stunt-car-race",
+      "loadWhen": [
+        "Race engine audio",
+        "V8 engine",
+        "Steampunk sci-fi engine",
+        "vehicle audio layers",
+        "WSA Race audio integration"
+      ],
+      "owns": [
+        "engine-audio source classification",
+        "candidate provenance and human-preference handoff",
+        "WSA integration brief"
+      ],
+      "doesNotOwn": [
+        "Race movement or physics",
+        "Race telemetry truth",
+        "runtime AudioContext ownership",
+        "automatic Stage or Live promotion"
+      ],
+      "note": "19 source assets at handoff: 5 WAV reference masters + 14 Suno MP3 renders. Seamless_10–12_secon_#1-1789884544910.mp3 is Georg's preferred V8 idle donor; remaining renders are candidates until separately accepted."
+    },
+    {
       "id": "wissens-pilli",
       "kind": "project",
       "status": "UNVERIFIED",
