@@ -1,0 +1,154 @@
+{
+  "schema": "kfb.toolbox-motion-profile-proposals/0.1",
+  "date": "2026-09-20",
+  "status": "PROPOSAL_NOT_CONSUMER_PROMOTED",
+  "shared": {
+    "semanticStates": [
+      "Idle",
+      "Walk",
+      "Run"
+    ],
+    "transition": {
+      "locomotionPhaseSync": true,
+      "preferredFoot": "left",
+      "crossfadeSeconds": 0.12,
+      "warpDuringCrossfade": true,
+      "note": "Candidate defaults derived from KCL-M1; actor-specific visual approval required."
+    },
+    "playback": {
+      "mapping": "desiredSpeed / measuredReferenceSpeed",
+      "clamp": [
+        0.45,
+        1.8
+      ],
+      "note": "Technical candidate only. Approved ranges must be actor/clip-specific."
+    },
+    "hysteresis": {
+      "enabled": true,
+      "note": "ToolBox may author/export threshold candidates; consumers still own actual state changes."
+    },
+    "eventMarkers": {
+      "phaseRelative": true,
+      "candidateNames": [
+        "footContactLeft",
+        "footContactRight",
+        "anticipation",
+        "contact",
+        "release",
+        "impact",
+        "recoveryStart"
+      ]
+    },
+    "ownerBoundary": {
+      "toolbox": [
+        "clip fit",
+        "markers",
+        "phase profile",
+        "crossfade",
+        "playback-rate candidate",
+        "attachment profile"
+      ],
+      "consumer": [
+        "world position",
+        "velocity",
+        "physics",
+        "gameplay state",
+        "damage",
+        "ammo",
+        "jump trajectory",
+        "interaction progress"
+      ]
+    }
+  },
+  "actors": {
+    "frizzlebob": {
+      "label": "FrizzleBob · Driver Graft",
+      "rigFamily": "Rig_Medium",
+      "adapter": "mountGraft(animation:'host')",
+      "mixerRoot": "graft.figure",
+      "frameOrder": [
+        "mixer.update(dt)",
+        "graft.update(dt,camera)",
+        "render"
+      ],
+      "locomotion": {
+        "idle": "Idle_A",
+        "walkPrimary": "Walking_A",
+        "walkAlternates": [
+          "Walking_B",
+          "Walking_C"
+        ],
+        "runPrimary": "Running_A",
+        "hold": [
+          "Running_B"
+        ],
+        "notes": [
+          "Remeasure on Driver host before exporting consumer speeds.",
+          "poseOverClip=false for locomotion proof."
+        ]
+      },
+      "attachment": {
+        "defaultVisible": false,
+        "owner": "existing graft reader",
+        "notes": [
+          "Do not reconstruct weapon attachment in Motion Lab.",
+          "Ranged profile is a later named slice."
+        ]
+      }
+    },
+    "gothgirl": {
+      "label": "GothGirl",
+      "rigFamily": "Rig_Medium",
+      "adapter": "direct GLB",
+      "locomotion": {
+        "idle": "Idle_A",
+        "walkPrimary": "Walking_A",
+        "walkAlternates": [
+          "Walking_B",
+          "Walking_C"
+        ],
+        "runPrimary": "Running_A",
+        "hold": [
+          "Running_B"
+        ],
+        "notes": [
+          "Remeasure on GothGirl itself; do not inherit ActionFigure speeds."
+        ]
+      },
+      "attachment": {
+        "proposal": "GothGirl_Microphone",
+        "bone": "handslot.r",
+        "status": "SOURCE_PINNED_VISUAL_TEST_REQUIRED"
+      },
+      "faceOwner": "existing ToolBox EyeRig slice; Motion Lab does not mount a second face owner"
+    },
+    "blackKnight": {
+      "label": "Black Knight",
+      "rigFamily": "Rig_Large",
+      "adapter": "direct GLB",
+      "locomotion": {
+        "idleCandidate": "Idle_A",
+        "walkCandidate": "Walking_A",
+        "runCandidate": "Running_A",
+        "runtimeRule": "Enumerate exact Rig_Large clip names first; only enable clips that exist and bind.",
+        "mediumProfileReuse": false,
+        "jump": "DISABLED_UNLESS_EXACT_LARGE_CLIP_PROVEN"
+      },
+      "attachments": [
+        {
+          "id": "BlackKnight_Sword_Large",
+          "bone": "handslot.r",
+          "transform": "identity candidate",
+          "status": "SOURCE_PINNED_VISUAL_TEST_REQUIRED"
+        },
+        {
+          "id": "BlackKnight_Shield_Large",
+          "bone": "handslot.l",
+          "localPush": 0.55,
+          "status": "MEASURED_DONOR_VISUAL_TEST_REQUIRED"
+        }
+      ]
+    }
+  },
+  "promotionRule": "No profile becomes a consumer default until exact actor browser proof + Georg visual acceptance."
+}
