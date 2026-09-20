@@ -1,0 +1,40 @@
+{
+  "schema": "kfb.asset-package-admission.v1",
+  "packageId": "kaykit-bits-bundle1-1.1",
+  "displayName": "KayKit Bits Bundle 1",
+  "sourceVersion": "1.1",
+  "creator": "Kay Lousberg",
+  "license": {
+    "id": "CC0-1.0",
+    "sourceFile": "License.txt"
+  },
+  "repositoryPath": "media/3D_Assets/KayKit_Bits_Bundle1/",
+  "packs": [
+    "City Builder Bits",
+    "Furniture Bits",
+    "Halloween Bits",
+    "Prototype Bits",
+    "Restaurant Bits",
+    "Space Base Bits"
+  ],
+  "admitted": {
+    "gltf": 628,
+    "bin": 628,
+    "glb": 3,
+    "png": 20,
+    "jpg": 22,
+    "txt": 1,
+    "totalSourceFiles": 1302
+  },
+  "omittedFromRepository": {
+    "fbx": 1259,
+    "obj": 720,
+    "mtl": 720,
+    "url": 4,
+    "ds_store": 1,
+    "redundantExportTextureCopies": 18,
+    "reason": "Browser/runtime package: keep GLTF/GLB payloads, paired BIN files, canonical textures/previews and the license. Do not vendor redundant authoring/export formats or their duplicate texture folders."
+  },
+  "duplicatePolicy": "Preserve this purchased bundle namespace intact. Asset Librarian may report byte-identical overlap with existing FREE packs, but no file is deleted or silently aliased in this admission.",
+  "status": "ADMITTED_ON_REVIEW_BRANCH"
+}
