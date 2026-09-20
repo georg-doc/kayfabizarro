@@ -26,11 +26,12 @@ The first hero experience is a **race around the Kölner Dom**, using:
 2. `skills/chat/CHAT_GITHUB_KFB_STAGE_WORKFLOW.md`
 3. `skills/chat/FRESH_CHAT_SLICE_PROTOCOL.md`
 4. [DATA_READY.md](DATA_READY.md)
-5. [FORM_ANSWERS.md](FORM_ANSWERS.md)
-6. [SOURCE_PINS.json](SOURCE_PINS.json)
-7. [CLAUDE_DESIGN_BRIEF.md](CLAUDE_DESIGN_BRIEF.md)
-8. [RETURN_TEMPLATE.md](RETURN_TEMPLATE.md)
-9. [CLAUDE_START_PROMPT.md](CLAUDE_START_PROMPT.md)
+5. [FILAMENT_REFERENCE.md](FILAMENT_REFERENCE.md)
+6. [FORM_ANSWERS.md](FORM_ANSWERS.md)
+7. [SOURCE_PINS.json](SOURCE_PINS.json)
+8. [CLAUDE_DESIGN_BRIEF.md](CLAUDE_DESIGN_BRIEF.md)
+9. [RETURN_TEMPLATE.md](RETURN_TEMPLATE.md)
+10. [CLAUDE_START_PROMPT.md](CLAUDE_START_PROMPT.md)
 
 ## Visual authority
 
@@ -72,6 +73,14 @@ Start with:
 See `DATA_READY.md` for counts, hero anchors, provenance and full-source paths.
 
 Claude must not query Overpass again for this slice unless Georg explicitly requests a data refresh.
+
+## Slice-C priority
+
+For the first design proof, **Track design and the pinned Option-C visual language outrank exact OMS/OSM street fidelity**.
+
+The route may use real streets where useful, but it may also cross roofs, courtyards, alleys, ramps, bridges or explicit elevated structures around the Dom. OSM anchors Cologne; it does not force the Track centerline to follow every road.
+
+Use `FILAMENT_REFERENCE.md` only as a benchmark for route tempo and memorable beats. The KFB route must be independently authored.
 
 ## One next gate
 
