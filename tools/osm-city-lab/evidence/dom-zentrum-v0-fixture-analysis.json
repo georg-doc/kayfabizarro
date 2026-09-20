@@ -1,0 +1,249 @@
+{
+  "schema": "kfb.osm-city.fixture-analysis.v0",
+  "id": "dom-zentrum-v0",
+  "generatedAt": "2026-09-20T03:19:33.528Z",
+  "bounds": {
+    "min": {
+      "x": -1139.826,
+      "z": -1057.535
+    },
+    "max": {
+      "x": 1139.826,
+      "z": 1057.535
+    },
+    "sizeM": {
+      "x": 2279.652,
+      "z": 2115.07
+    }
+  },
+  "counts": {
+    "roads": 5236,
+    "driveableRoads": 2523,
+    "buildings": 6351,
+    "greenPolygons": 281,
+    "landuse": 456,
+    "intersections": 5227,
+    "driveRoadsAtEdge": 236,
+    "greenPolygonsAtEdge": 33
+  },
+  "roadClasses": {
+    "primary": 207,
+    "tertiary": 152,
+    "residential": 1058,
+    "living_street": 36,
+    "pedestrian": 197,
+    "secondary_link": 55,
+    "secondary": 232,
+    "footway": 1526,
+    "steps": 536,
+    "path": 359,
+    "service": 772,
+    "primary_link": 19,
+    "tertiary_link": 20,
+    "platform": 9,
+    "unclassified": 2,
+    "cycleway": 39,
+    "track": 2,
+    "busway": 5,
+    "elevator": 5,
+    "bus_stop": 2,
+    "corridor": 3
+  },
+  "topRoadNames": [
+    {
+      "name": "(unnamed)",
+      "count": 3159
+    },
+    {
+      "name": "Tunisstraße",
+      "count": 55
+    },
+    {
+      "name": "Konrad-Adenauer-Ufer",
+      "count": 54
+    },
+    {
+      "name": "Heumarkt",
+      "count": 48
+    },
+    {
+      "name": "Hansaring",
+      "count": 46
+    },
+    {
+      "name": "Ebertplatz",
+      "count": 33
+    },
+    {
+      "name": "Turiner Straße",
+      "count": 33
+    },
+    {
+      "name": "Auenweg",
+      "count": 32
+    },
+    {
+      "name": "Johannisstraße",
+      "count": 28
+    },
+    {
+      "name": "Gotenring",
+      "count": 28
+    },
+    {
+      "name": "Komödienstraße",
+      "count": 27
+    },
+    {
+      "name": "Cäcilienstraße",
+      "count": 25
+    },
+    {
+      "name": "Gereonswall",
+      "count": 23
+    },
+    {
+      "name": "Mindener Straße",
+      "count": 23
+    },
+    {
+      "name": "Deutzer Freiheit",
+      "count": 21
+    },
+    {
+      "name": "Eigelstein",
+      "count": 19
+    },
+    {
+      "name": "Theodor-Heuss-Ring",
+      "count": 19
+    },
+    {
+      "name": "Markmannsgasse",
+      "count": 19
+    },
+    {
+      "name": "Trankgasse",
+      "count": 19
+    },
+    {
+      "name": "Hugo-Passage",
+      "count": 19
+    },
+    {
+      "name": "Helenenwallstraße",
+      "count": 19
+    },
+    {
+      "name": "Maximinenstraße",
+      "count": 18
+    },
+    {
+      "name": "Marzellenstraße",
+      "count": 17
+    },
+    {
+      "name": "Neumarkt",
+      "count": 17
+    },
+    {
+      "name": "Glockengasse",
+      "count": 16
+    }
+  ],
+  "buildingKinds": [
+    {
+      "kind": "yes",
+      "count": 4015
+    },
+    {
+      "kind": "apartments",
+      "count": 1310
+    },
+    {
+      "kind": "terrace",
+      "count": 325
+    },
+    {
+      "kind": "garage",
+      "count": 144
+    },
+    {
+      "kind": "office",
+      "count": 112
+    },
+    {
+      "kind": "roof",
+      "count": 68
+    },
+    {
+      "kind": "retail",
+      "count": 64
+    },
+    {
+      "kind": "school",
+      "count": 35
+    },
+    {
+      "kind": "church",
+      "count": 27
+    },
+    {
+      "kind": "service",
+      "count": 27
+    },
+    {
+      "kind": "garages",
+      "count": 23
+    },
+    {
+      "kind": "public",
+      "count": 22
+    },
+    {
+      "kind": "commercial",
+      "count": 22
+    },
+    {
+      "kind": "hotel",
+      "count": 18
+    },
+    {
+      "kind": "house",
+      "count": 18
+    },
+    {
+      "kind": "industrial",
+      "count": 13
+    },
+    {
+      "kind": "university",
+      "count": 10
+    },
+    {
+      "kind": "train_station",
+      "count": 10
+    },
+    {
+      "kind": "government",
+      "count": 7
+    },
+    {
+      "kind": "parking",
+      "count": 7
+    }
+  ],
+  "longestRoadPart": {
+    "sourceId": "way/34495262",
+    "name": "Deutzer Werft",
+    "rClass": "service",
+    "lengthM": 1076.64,
+    "driveable": true
+  },
+  "fixtureSignals": {
+    "residentialContext": true,
+    "intersection": true,
+    "accelerationCorridor": true,
+    "roadTerrainEdge": true
+  }
+}

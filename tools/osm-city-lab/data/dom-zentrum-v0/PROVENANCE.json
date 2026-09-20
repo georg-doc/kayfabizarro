@@ -1,0 +1,29 @@
+{
+  "schema": "kfb.osm-city.provenance.v0",
+  "id": "dom-zentrum-v0",
+  "status": "CACHED_SOURCE",
+  "bbox": {
+    "south": 50.9325,
+    "west": 6.946,
+    "north": 50.9515,
+    "east": 6.9785
+  },
+  "origin": {
+    "lat": 50.942,
+    "lon": 6.96225,
+    "altM": 0
+  },
+  "queryFile": "query.overpassql",
+  "endpoint": "https://overpass-api.de/api/interpreter",
+  "retrievedAt": "2026-09-20T03:19:28.920Z",
+  "osmBaseTimestamp": "2026-09-20T03:18:03Z",
+  "overpassGenerator": "Overpass API 0.7.62.11 87bfad18",
+  "sourceSha256": "53d70f8d3db918d20b97aeac860fb889129836adaa9616f3f411b69303124f5c",
+  "elementCount": 145967,
+  "attribution": {
+    "data": "© OpenStreetMap contributors",
+    "license": "ODbL 1.0",
+    "url": "https://www.openstreetmap.org/copyright"
+  },
+  "runtimePolicy": "consumer/viewer reads cached GitHub data; no repeated public Overpass calls"
+}
