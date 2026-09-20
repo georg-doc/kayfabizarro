@@ -19,29 +19,14 @@
     <div class="bar"><div><div class="stage">Stage · Playground</div><h1>Testen, ohne Live zu überschreiben.</h1><p>Hier liegen neue, klar markierte Kandidaten. Live bleibt der letzte akzeptierte Stand. Nach deinem Test prüfen wir den Rücklauf gemeinsam und entscheiden erst dann über die Übernahme.</p></div></div>
     <div class="actions"><a class="button primary" href="./vehicle-deformer-v2/">Vehicle Lab v2 starten</a><a class="button" href="../">Zurück zum Hub</a><a class="button" href="https://github.com/georg-doc/kayfabizarro/blob/main/skills/chat/STAGE_LIVE_WORKFLOW.md">So funktioniert Stage → Live</a></div>
   </header>
-    <article class="card">
-      <div class="top"><h2>Travel Globe × Track · TC-01</h2><span class="badge">Visual rejected</span></div>
-      <p>Technisch/browsergeprüfter Proof, aber Georg hat die sichtbare Lösung verworfen: schwarzes Band, Terrain-Durchstiche und unzureichende Nahinspektion. Der Track/Terrain-Seam bleibt Evidenz, nicht Produktionsdesign.</p>
-      <div class="facts"><span class="fact">Technical seam proven</span><span class="fact">Human visual reject</span><span class="fact">Live unchanged</span></div>
-      <div class="question"><b>Nächstes Gate:</b> A/B/C SurfacePatch-Proof mit bestehenden Host-Polygonen vs lokaler Verfeinerung, sauberem KFB Material/Licht und Close-Zoom.</div>
-      <div class="actions"><a class="button primary" href="https://github.com/georg-doc/KFB-Travel-Globe/blob/wsa/track-terrain-corridor-tc01-2026-09-20/site/terrain-corridor-tc01/RED_TEAM_WORLD_SURFACE_PIVOT.md">Red-Team Plan</a><a class="button" href="https://github.com/georg-doc/KFB-Travel-Globe/pull/31">Travel PR #31</a></div>
+  <section class="grid">\n    <article class="card">
+      <div class="top"><h2>Combat Arena · Web Stage</h2><span class="badge">Human gate</span></div>
+      <p>Feste Web-Slice-Oberfläche für Combat Arena v5. CA2-01 zeigt die echten FrizzleBob-Driver- und GothGirl-Quellen isoliert; Legacy bleibt source-only statt durch Ersatzgeometrie verfälscht zu werden.</p>
+      <div class="facts"><span class="fact">32/32 browser PASS</span><span class="fact">exact donors</span><span class="fact">Arena runtime untouched</span></div>
+      <div class="question"><b>Prüffrage:</b> Sind Driver Graft und GothGirl als Ausgangsfiguren plausibel, und ist die Gate-Darstellung verständlich genug für die nächsten CA2-Slices?</div>
+      <div class="actions"><a class="button primary" href="./combat/ca2-actor-selector/">CA2-01 öffnen</a><a class="button" href="./combat/">Combat Web Stage</a></div>
     </article>
-    <article class="card">
-      <div class="top"><h2>WSA MVP Consolidation</h2><span class="badge">Current handoff</span></div>
-      <p>Konsolidierter Integrationsstand für Travel/TinySkies, OSM/Grotesque, Race HUD v3, KCL Motion, Resident Module, EyeRig und Combat CA2. Getestete Source-/Browser-Inputs bleiben von Cloudflare- und Human-Gates getrennt.</p>
-      <div class="facts"><span class="fact">24/24 handoff PASS</span><span class="fact">7 core lanes</span><span class="fact">No runtime merge</span></div>
-      <div class="question"><b>Nächstes Gate:</b> WSA re-fetcht die aktuellen Heads und baut lokal genau einen kleinen MVP ohne Owner-Wechsel.</div>
-      <div class="actions"><a class="button primary" href="./wsa-mvp-consolidation/">Übersicht öffnen</a></div>
-    </article>
-
-  <section class="grid">
-    <article class="card">
-      <div class="top"><h2>Dungeon Generator · S14 R02 Room Blueprint</h2><span class="badge">Human gate</span></div>
-      <p>Die akzeptierte S21 Schatz-/Esskammer als isolierter World-Atlas-Raum: echte KayKit-Assets, In-place-3D-Editor und Blender-Manifest. Noch kein Raid/Combat und noch nicht in den BSP-Generator integriert.</p>
-      <div class="facts"><span class="fact">Browser 15/15 PASS</span><span class="fact">Blender .blend built</span><span class="fact">Review render blocked</span></div>
-      <div class="question"><b>Prüffrage:</b> Liest sich R02 als brauchbare KayKit-Raumblaupause, und ist der direkte Verschieben/Drehen→Recipe-Patch-Workflow so sinnvoll für weitere Räume?</div>
-      <div class="actions"><a class="button primary" href="./minigames/dungeon-raid-v2/">R02 öffnen</a><a class="button" href="https://github.com/georg-doc/kayfabizarro/pull/126">Draft PR #126</a></div>
-    </article>
+    
     <article class="card">
       <div class="top"><h2>Cartoon Vehicle Deformer Lab v2</h2><span class="badge">Human gate</span></div>
       <p>61 Bodenfahrzeuge, 23 Bewegungsfolgen und 10 Flug-Kandidaten. Fahren ist implementiert; der Flug-Tab ist eine ehrliche Vorschau ohne Flugbewegung.</p>
@@ -69,6 +54,20 @@
       <div class="facts"><span class="fact">26/26 browser PASS</span><span class="fact">v0.8 feel preserved</span><span class="fact">Stage only</span></div>
       <div class="question"><b>Prüffrage:</b> Fühlt sich S-T01 beim Fahren als richtige KFB-Grundskala an – besonders 14.4 STANDARD, 18.0 WIDE und die 21.6 HERO-Rampe?</div>
       <div class="actions"><a class="button primary" href="./stunt-world/track-ribbon-st01/">Öffnen</a><a class="button" href="https://github.com/georg-doc/KFB-Stunt-Car-Race/pull/14">Race PR #14</a></div>
+    </article>
+    <article class="card">
+      <div class="top"><h2>Travel Globe × Track · TC-01</h2><span class="badge">Visual rejected</span></div>
+      <p>Technisch/browsergeprüfter Proof, aber Georg hat die sichtbare Lösung verworfen: schwarzes Band, Terrain-Durchstiche und unzureichende Nahinspektion. Der bestehende Travel-Terrain-Owner bleibt als technischer Donor; die konkrete Track-Darstellung wird nicht weitergetuned.</p>
+      <div class="facts"><span class="fact">Technical seam proven</span><span class="fact">Human visual reject</span><span class="fact">Live unchanged</span></div>
+      <div class="question"><b>Nächstes Gate:</b> A/B/C SurfacePatch-Proof: Host-Polygone vs lokale Verfeinerung, mit sauberem KFB Track-Material/Licht und Close-Zoom.</div>
+      <div class="actions"><a class="button primary" href="https://github.com/georg-doc/KFB-Travel-Globe/blob/wsa/track-terrain-corridor-tc01-2026-09-20/site/terrain-corridor-tc01/RED_TEAM_WORLD_SURFACE_PIVOT.md">Red-Team Plan</a><a class="button" href="https://github.com/georg-doc/KFB-Travel-Globe/pull/31">Travel PR #31</a></div>
+    </article>
+    <article class="card">
+      <div class="top"><h2>Travel Globe · TinySkies Terrain Donor</h2><span class="badge">Public blocked</span></div>
+      <p>Source-first donor proof is technisch fertig: aktuelle Travel Globe Oberfläche links, dieselbe Welt mit der vorhandenen Travel-Terrain-Zone rechts. Der neue Cloudflare-Child-Pfad ist aber noch nicht publiziert; deshalb aktuell kein Human-Test-Link.</p>
+      <div class="facts"><span class="fact">Travel 12/12 PASS</span><span class="fact">Mirror 12/12 PASS</span><span class="fact">Cloudflare marker FAIL</span></div>
+      <div class="question"><b>Nächstes Gate:</b> Nur Cloudflare-Publikation des bereits getesteten Source-Pakets herstellen; Terrain/Track nicht neu bauen.</div>
+      <div class="actions"><a class="button primary" href="https://github.com/georg-doc/KFB-Travel-Globe/pull/30">Source PR #30</a><a class="button" href="https://github.com/georg-doc/kayfabizarro/pull/112">Public QA #112</a></div>
     </article>
     <article class="card">
       <div class="top"><h2>TinySkies × OSM × Grotesque</h2><span class="badge">Public proof blocked</span></div>

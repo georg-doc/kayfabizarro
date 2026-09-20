@@ -1,0 +1,42 @@
+{
+  "schema": "kfb.stage-source/0.1",
+  "product": "KFB Combat Arena · CA2-01 Actor Selector/Profile POC",
+  "owner": "georg-doc/KFB-Combat-Arena",
+  "status": "BRANCH_VERIFIED_PUBLIC_PENDING",
+  "sourceRepo": "georg-doc/kayfabizarro",
+  "sourceBranch": "chatgpt-web/ca2-01-actor-selector-2026-09-20",
+  "implementationHead": "64638a5818d7b7a75c0a96edd8777580669dcfa3",
+  "combatBaseline": "georg-doc/KFB-Combat-Arena@f6a59ad15b9ffcf3164b0ab013f223962b63f61f",
+  "ca2PlanningHead": "georg-doc/KFB-Combat-Arena@0d6e8a651b8b8e8140b67348e67748687b784193",
+  "hubBaseline": "georg-doc/kayfabizarro@53b828a29c71b9ee20635dc0133813e37697f961",
+  "motionLab": {
+    "stage": "https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/kaykit-motion-lab-v1/",
+    "sourceHead": "3ab2a439b013b816e843ea303e7015a26ee2aff8",
+    "assetPinReused": "bdaea0648f27c0f16e0a737bfba237eb54dd4cbb",
+    "publicChecks": "87/87 PASS",
+    "humanAcceptance": "PENDING"
+  },
+  "protectedOwners": [
+    "Arena Player world/root/ground",
+    "Arena Gunfight combat/release",
+    "Arena Host camera",
+    "Arena rewards/runflow"
+  ],
+  "stageUrl": "https://kayfabizarro.pages.dev/kfb-hub/stage/combat/ca2-actor-selector/",
+  "publicVerified": false,
+  "humanAcceptance": "PENDING",
+  "sourcePr": {
+    "number": 130,
+    "url": "https://github.com/georg-doc/kayfabizarro/pull/130",
+    "state": "DRAFT_OPEN"
+  },
+  "branchProof": {
+    "run": 35486077769,
+    "job": 106012591388,
+    "checks": "32/32 PASS",
+    "failedResources": 0,
+    "pageConsoleErrors": 0,
+    "artifactId": 10597264982,
+    "artifactDigest": "sha256:f7346d76719f7857c52cc2c31b7b4f626497d565671e11125d0a42f1f89f4350"
+  }
+}
