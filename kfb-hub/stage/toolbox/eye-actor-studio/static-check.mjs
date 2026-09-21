@@ -7,6 +7,7 @@ const clay=read('tools/KFB-ToolBox/eye-actor-studio-v1/clay-lid.v1.mjs');
 const hosts=read('tools/KFB-ToolBox/eye-actor-studio-v1/host-catalog.v1.mjs');
 const runtime=read('tools/KFB-ToolBox/eye-actor-studio-v1/host-runtime.v1.mjs');
 const staticHost=read('tools/KFB-ToolBox/eye-actor-studio-v1/static-facehost.v1.mjs');
+const ears=read('tools/KFB-ToolBox/eye-actor-studio-v1/rabbit-ears-style.v1.mjs');
 const style=read('skills/KFB_3D_CartoonStyle_v1.html');
 const checks=[];const ok=(n,c)=>{checks.push([n,!!c]);if(!c)throw Error('FAIL '+n);console.log('PASS',n)};
 
@@ -51,6 +52,12 @@ ok('Legacy assembly owner reused',runtime.includes('assembleLegacy'));
 ok('Legacy FaceHost owner reused',runtime.includes('buildLegacyFaceHost'));
 ok('Legacy head replacement owner reused',runtime.includes('replaceHead'));
 ok('static prop FaceHost isolated adapter',staticHost.includes('kfb.static-facehost/0.1-candidate'));
+ok('Rabbit ears reuse ears.v2 owner',ears.includes("from '../kfb-rigs-embed-v3/frizzlegraft-v1/ears.v2.js'"));
+ok('Rabbit ears smooth donor geometry',ears.includes('mergeVertices')&&ears.includes('smoothGeometry'));
+ok('Rabbit ears use Main and Main_Light donor zones',ears.includes("m.name==='Main'||m.name==='Main_Light'"));
+ok('Rabbit ears separate inner zone',ears.includes("kfb-inner-ear-zone"));
+ok('Rabbit ears preserve dangle update',ears.includes('update:dt=>base.update(dt)'));
+ok('Studio exposes ear donor A/B',idx.includes('id="earsMode"')&&app.includes('buildCartoonEars'));
 
 ok('mobile viewport',idx.includes('viewport-fit=cover'));
 ok('mobile CSS',idx.includes('@media(max-width:820px)'));
