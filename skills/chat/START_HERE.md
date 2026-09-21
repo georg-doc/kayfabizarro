@@ -380,3 +380,13 @@ Source/static inventory is valid (**26/26 PASS**): 4 Dungeon 1.0 bodies, 17 head
 Two browser-gate repair passes failed on proof synchronization, not a proven asset/assembly defect. The candidate is frozen and **must not be published as Stage yet**. Current recovery router: [KAYKIT_LEGACY_RPG_RIGGING_2026-09-21](workflows/KAYKIT_LEGACY_RPG_RIGGING_2026-09-21/START_HERE.md).
 
 Exactly one next gate: **KLR-SYNC-01 · deterministic Barbarian → Knight → Mage → Rogue actor-switch readiness proof**. No feature expansion before that gate.
+
+
+## 2026-09-21 · Card Zone v3 / Hex Project Islands recovery
+
+Current source-corrected entry:
+[Card Zone v3 · Hex Project Islands](workflows/KFB_CARD_ZONE_V3_HEX_PROJECT_ISLANDS_2026-09-21/START_HERE.md).
+
+Georg rejected ToolBox Bench v1/v1.1 as a reduced/failing replacement for the working `KFB Card Zone Lab v2`. The v2 Lab + Zonen Registry is now the product donor; Bench extraction modules are candidate evidence only. The primary implementation path is small GitHub-backed Web Chat slices. Claude Design is limited to a later source-exact visual composition gate; Work/Astra handles later cross-owner integration.
+
+Strictly load `skills/session-entry-use-what-works_v1.md` before this lane. First gate: **H0 working-v2 parity/source lock**, not a new generator.

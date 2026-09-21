@@ -1,0 +1,65 @@
+{
+  "schema": "kfb.card-zone-v3-hex-project-islands.source/0.1",
+  "date": "2026-09-21",
+  "status": "PLANNING_SOURCE_LOCK",
+  "repo": "georg-doc/kayfabizarro",
+  "baseline": "a22995d550a65fc65f540d90b278e3d2bb482de3",
+  "planningBranch": "planning/toolbox-card-zone-v3-hex-project-islands-2026-09-21",
+  "draftPr": 156,
+  "strictSkill": "skills/session-entry-use-what-works_v1.md",
+  "productBaseline": {
+    "status": "WORKING_DONOR",
+    "path": "tools/KFB-ToolBox/_inbox/cloud-design-worldbuilding-2026-09-18/card-zone-lab-v3/KFB Card Zone Lab v2.dc.html",
+    "observedBlob": "43eea82f8727d3581e50374d6263e48a28241d3b",
+    "observedBytes": 144800
+  },
+  "failedExtractions": [
+    {
+      "status": "ARCHIVED_FAILED_EXTRACTION",
+      "path": "tools/KFB-ToolBox/_inbox/KFB ToolBox Bench v1 - KFB Voxel Card Zone Lab 2 - Hex Assets Worldbuilding/kfb-toolbox-v1"
+    },
+    {
+      "status": "USER_REJECTED_FAILED_EXTRACTION_LOCAL_SHADER_FIX_ONLY",
+      "path": "tools/KFB-ToolBox/_inbox/kfb-toolbox-v1.1"
+    }
+  ],
+  "hexSources": [
+    {
+      "id": "kaykit-medieval-hexagon-pack-1-0-free",
+      "registry": "registry/assets/v1/packs/kaykit-medieval-hexagon-pack-1-0-free.json",
+      "assetCount": 240,
+      "root": "media/3D_Assets/KayKit_Medieval_Hexagon_Pack_1.0_FREE",
+      "sourceRevision": "378b209355b13304e3cff656ec0806ca5b89df28"
+    },
+    {
+      "id": "kaykit-medieval-builder-pack-1-0",
+      "registry": "registry/assets/v1/packs/kaykit-medieval-builder-pack-1-0.json",
+      "assetCount": 233,
+      "root": "media/3D_Assets/KayKit Medieval Builder Pack 1.0",
+      "sourceRevision": "378b209355b13304e3cff656ec0806ca5b89df28"
+    }
+  ],
+  "hexTruth": "tools/world_atlas/source/lib/hex-grid.js",
+  "movementDonor": "skills/chat/workflows/FREE_ROAM_PLATFORMER_POC_2026-09-18/CLAUDE_DESIGN_RECOVERY_REBRIEF.md",
+  "residentDonor": "tools/KFB-ToolBox/_handover/RESIDENT_SCENE_MODULES_WSA_2026-09-19/START_HERE.md",
+  "paletteDonor": {
+    "route": "https://kayfabizarro.pages.dev/kfb-hub/stage/stunt-world/cologne-option-c/",
+    "branch": "wsa/cologne-option-c-stage-2026-09-20",
+    "observedHead": "dbfbb1845772d88b4678a5dabdb83e54748c0cf4"
+  },
+  "spindleSky": {
+    "repo": "georg-doc/KFB-Combat-Arena",
+    "observedMain": "f6a59ad15b9ffcf3164b0ab013f223962b63f61f",
+    "files": [
+      "_handover/A2_CARDS/inputs/cards_4b/combat-arena-v4/himmel.v4.js",
+      "_handover/A2_CARDS/inputs/cards_4b/combat-arena-v4/skydome-shader.v4.js",
+      "_handover/A2_CARDS/inputs/cards_4b/combat-arena-v4/spindel.v4.js"
+    ],
+    "adapterBrief": "skills/chat/workflows/KFB_MODULAR_MINIGAME_HUB_2026-09-19/SPINDLE_SKY_MODULE_V1_BRIEF.md",
+    "adapterBriefBranch": "wsa/combat-ca2-kaykit-briefs-2026-09-20"
+  },
+  "futureStage": "https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/card-zone-v3/",
+  "currentGate": "H0_WORKING_V2_PARITY_SOURCE_LOCK",
+  "publicDeployment": "NOT_PERFORMED",
+  "georgAcceptance": "PRODUCT_DIRECTION_GIVEN_RUNTIME_NOT_BUILT"
+}

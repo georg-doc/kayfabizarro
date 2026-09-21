@@ -32,6 +32,35 @@
   ],
   "entries": [
     {
+      "id": "kfb-card-zone-v3-hex-project-islands-2026-09-21",
+      "kind": "workflow",
+      "status": "CURRENT_REFERENCE",
+      "version": "0.1",
+      "path": "skills/chat/workflows/KFB_CARD_ZONE_V3_HEX_PROJECT_ISLANDS_2026-09-21/START_HERE.md",
+      "loadWhen": [
+        "Card Zone Lab v3",
+        "Hex Project Islands",
+        "ToolBox project hub",
+        "Babel hex world",
+        "Chill Fun project platformer",
+        "Card Zone Bench recovery"
+      ],
+      "owns": [
+        "source-corrected Card Zone v2 → v3 build sequence",
+        "Hex Project Island local candidate contracts",
+        "provider split and recovery gates"
+      ],
+      "doesNotOwn": [
+        "Asset Registry identity",
+        "World Atlas hex-grid truth",
+        "Resident actor/activity truth",
+        "Combat Arena runtime",
+        "global movement or camera runtime",
+        "automatic merge or Live promotion"
+      ],
+      "note": "Working Card Zone Lab v2 is the product donor. ToolBox Bench v1/v1.1 are failed/reduced extraction evidence. H0 parity first; then exact KayKit Hex geometry, movement, project graph, residents and optional spindle/skydome in small gates."
+    },
+    {
       "id": "fresh-chat-slice-protocol",
       "kind": "coordination",
       "status": "CURRENT_REFERENCE",
