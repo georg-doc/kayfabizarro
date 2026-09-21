@@ -34,6 +34,7 @@ jobs:
           node --check tools/KFB-ToolBox/eye-actor-studio-v1/host-catalog.v1.mjs
           node --check tools/KFB-ToolBox/eye-actor-studio-v1/host-runtime.v1.mjs
           node --check tools/KFB-ToolBox/eye-actor-studio-v1/static-facehost.v1.mjs
+          node --check tools/KFB-ToolBox/eye-actor-studio-v1/rabbit-ears-style.v1.mjs
           node --check tools/KFB-ToolBox/legacy-rpg-rigging/lib/legacy-rig-adapter.v1.js
           node --check tools/KFB-ToolBox/legacy-rpg-rigging/lib/legacy-facehost.v1.js
           node --check kfb-hub/stage/toolbox/eye-actor-studio/app.mjs
