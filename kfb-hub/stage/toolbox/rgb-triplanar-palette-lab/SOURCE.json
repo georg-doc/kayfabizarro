@@ -1,0 +1,22 @@
+{
+  "schema": "kfb.stage-source/0.1",
+  "product": "KFB ToolBox · One RGB Texture / Triplanar Palette Lab",
+  "owner": "KFB ToolBox / material-surface compatibility lab",
+  "status": "IMPLEMENTATION_CANDIDATE",
+  "sourceRepo": "georg-doc/kayfabizarro",
+  "sourceBranch": "chatgpt-web/toolbox-rgb-triplanar-palette-2026-09-21",
+  "sourceBranchHead": "43d43f890f17c846232227c2cc153eb5aa28324a",
+  "assetPin": "28766cb9213e4d36160946edf2871c3f7ec798d0",
+  "surfaceDonor": {
+    "path": "media/3D_Assets/pet-surface.v1.js",
+    "blob": "ceffefe20ec46d82f6c0da0d6369be53f7ea4b24",
+    "reuse": "object-space triplanar weighting and XY/XZ/YZ sampling grammar"
+  },
+  "assets": [
+    "media/3D_Assets/KayKit_Furniture_Bits_1.0_FREE/Assets/gltf/armchair.gltf",
+    "media/3D_Assets/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/pencil_B_short.gltf",
+    "media/3D_Assets/KayKit_Mystery_Series6/GothGirl/characters/GothGirl.glb"
+  ],
+  "stageUrl": "https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/rgb-triplanar-palette-lab/",
+  "humanAcceptance": "PENDING"
+}
