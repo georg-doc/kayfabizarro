@@ -133,3 +133,22 @@ Large motion uses the actual Large animation library. Idle / Walk / Run are avai
 Georg's four reviewed Large profiles are now canonical per-character overrides in `data/rig-large-reviewed.v1.json`.
 
 Lid color no longer uses the common pink fallback for generic actors. The runtime samples each actor's source head/face texture and passes that base into EyeRig v6, which applies the existing darker-lid treatment.
+
+
+## Rig_Legacy · 17-head candidate batch
+
+Legacy is now available as a separate source-first lane under `legacy/`.
+
+Canonical candidate data:
+- `data/rig-legacy-heads.v0.json`
+- `data/rig-legacy-default.v0.json`
+- `data/rig-legacy-auto.v1.json`
+
+Technical evidence:
+- 17/17 profiles persisted;
+- 16 measured automatically;
+- Skull remains HUMAN_REQUIRED;
+- 247/247 generation browser PASS;
+- 215/215 persisted-profile browser PASS.
+
+This does not convert the 17 candidates into human-approved profiles. Review remains per head.

@@ -362,3 +362,23 @@ Tests: **95/95 PASS**; runtime-critical JS syntax **4/4 PASS**.
 Stage: `e9f97c594bce46607e95928dd349cf081c36783d`.
 
 Next: reload the Stage and visually check the four Large lid colors.
+
+
+## 2026-09-21 · Rig_Legacy Eye Batch 17/17
+
+Added the third EyeRig Batch family without changing Medium/Large owners:
+
+- 17 exact Legacy head identities;
+- source-first Legacy lane;
+- LegacyFaceHost measurement;
+- EyeRig v6 + EyeOval reuse;
+- 17 persisted per-head candidate profiles;
+- 16 automatic measurements;
+- Skull explicit HUMAN_REQUIRED fallback;
+- 247/247 generation browser PASS;
+- 215/215 persisted-profile browser PASS.
+
+No shared Legacy class default is inferred. No visual approval is automated.
+
+Next:
+`KLR-EYE-VIS-01`.
