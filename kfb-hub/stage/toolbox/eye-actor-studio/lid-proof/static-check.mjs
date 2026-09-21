@@ -23,7 +23,7 @@ ok('inner eyeball conforming surface',geo.includes("innerSurface:'eyeball-confor
 ok('eye-hugging rounded-pad outer surface',geo.includes("outerSurface:'rounded-eye-hugging-pad'"));
 ok('margin thickness measured',geo.includes('marginThickness'));
 ok('lower visible margin is sealed volume',geo.includes('Crisp eye-facing opening edge'));
-ok('side walls closed',geo.includes('canthi closure'));
+ok('side walls closed',geo.includes('Closed rounded canthi / side mass'));
 ok('no tube geometry',!geo.includes('TubeGeometry'));
 ok('no capsule geometry',!geo.includes('CapsuleGeometry'));
 ok('no old SphereGeometry lid shell',!geo.includes('SphereGeometry'));
