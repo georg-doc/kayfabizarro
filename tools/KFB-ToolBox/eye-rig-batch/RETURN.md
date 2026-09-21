@@ -549,3 +549,30 @@ Tests: **95/95 PASS**; runtime-critical JS syntax **4/4 PASS**.
 Stage: `e9f97c594bce46607e95928dd349cf081c36783d`.
 
 Next: reload the Stage and visually check the four Large lid colors.
+
+
+---
+
+## 2026-09-21 · Rig_Legacy Eye Batch 17/17
+
+Branch:
+`chatgpt-web/legacy-eye-batch-17-2026-09-21`
+
+Technical result:
+- 17/17 candidate profiles persisted;
+- 16 automatically measured;
+- Skull = HUMAN_REQUIRED fallback;
+- automatic measurement browser **247/247 PASS**;
+- persisted-profile browser **215/215 PASS**;
+- 0 resource/page/console errors.
+
+Canonical data:
+`data/rig-legacy-auto.v1.json`
+
+Full slice return:
+`docs/RIG_LEGACY_EYE_BATCH_2026-09-21.md`
+
+No Legacy profile is visually approved automatically.
+
+Next gate:
+**KLR-EYE-VIS-01 · human review of all 17 Legacy profiles; Skull manual placement required.**
