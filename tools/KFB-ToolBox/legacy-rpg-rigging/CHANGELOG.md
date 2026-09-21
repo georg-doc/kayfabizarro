@@ -38,3 +38,22 @@ Candidate classification:
 
 Exactly one next gate:
 `KLR-SYNC-01 · deterministic 4/4 actor-switch readiness proof`.
+
+
+## 2026-09-21 · KLR-SYNC-01 PASS
+
+Added an explicit request/ready lifecycle to Legacy actor assembly so rapid actor changes cannot accept stale async completions.
+
+Dedicated deterministic body-switch browser proof:
+**41/41 PASS**.
+
+The existing full browser/WebGL candidate proof then recovered to:
+**44/44 PASS**.
+
+Current technical state:
+`LOCAL_BROWSER_PASS`.
+
+Public Stage and human visual acceptance remain separate.
+
+Next gate:
+`KLR-KIT-01 · shared Legacy ActorRecipe + caller-seeded Character/Monster Randomizer`.
