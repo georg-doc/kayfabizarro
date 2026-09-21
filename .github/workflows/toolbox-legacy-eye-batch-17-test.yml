@@ -1,0 +1,53 @@
+name: ToolBox Legacy Eye Batch 17
+on:
+  push:
+    branches:
+      - chatgpt-web/legacy-eye-batch-17-2026-09-21
+    paths:
+      - 'tools/KFB-ToolBox/eye-rig-batch/**'
+      - '.github/workflows/toolbox-legacy-eye-batch-17-test.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  legacy-eye-batch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout: |
+            tools/KFB-ToolBox/eye-rig-batch
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Legacy EyeRig static contracts
+        run: |
+          node --experimental-vm-modules tools/KFB-ToolBox/eye-rig-batch/tests/legacy-eye-static-check.mjs
+          node --check tools/KFB-ToolBox/eye-rig-batch/legacy/app.js
+          node --check tools/KFB-ToolBox/eye-rig-batch/lib/legacy-eye-adapter.v1.js
+          node --check tools/KFB-ToolBox/eye-rig-batch/legacy/proof.mjs
+      - name: Install Playwright Chromium
+        run: |
+          npm install --no-save playwright@1.51.1
+          npx playwright install --with-deps chromium
+      - name: Start local ToolBox source
+        run: |
+          python3 -m http.server 4173 --bind 127.0.0.1 > /tmp/legacy-eye-http.log 2>&1 &
+          echo $! > /tmp/legacy-eye-http.pid
+          for i in {1..30}; do
+            if curl -fsS http://127.0.0.1:4173/tools/KFB-ToolBox/eye-rig-batch/legacy/ >/dev/null; then exit 0; fi
+            sleep 1
+          done
+          cat /tmp/legacy-eye-http.log
+          exit 1
+      - name: KLR-EYE-01 17-head browser proof
+        env:
+          KLR_EYE_PROOF_DIR: legacy-eye-batch-evidence
+        run: node tools/KFB-ToolBox/eye-rig-batch/legacy/proof.mjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: klr-eye-01-evidence
+          path: legacy-eye-batch-evidence
+          retention-days: 14
