@@ -5,6 +5,7 @@ export const ADAPTER_SCHEMA='kfb.legacy-eye-adapter/0.1-candidate';
 export const PROFILE_SCHEMA='kfb.eye-profile/0.1-candidate';
 
 const clone=(v)=>JSON.parse(JSON.stringify(v));
+function colorHex(THREE,value){try{return '#'+new THREE.Color(value).getHexString();}catch{return null;}}
 const NEUTRAL={lidUpper:0,lidLower:0,slant:0,pupil:'normal',gaze:'front'};
 
 function sourceRecord(actor,catalog){
@@ -125,7 +126,7 @@ export function mountLegacyEyeProfile({THREE,faceHost,profile,log=()=>{}}={}){
         faceHost:clone(faceHost.report),
         eyeFrame:f?{left:vec(f.left),right:vec(f.right),radius:+f.radius.toFixed(4),unit:+f.unit.toFixed(4),gen:f.gen}:null,
         anchor:clone(rig.anchor),
-        baseColor:'#'+rig.baseColor.getHexString(),
+        baseColor:colorHex(THREE,rig.baseColor),
         oval:clone(oval)
       };
     },
