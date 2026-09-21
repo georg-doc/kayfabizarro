@@ -52,26 +52,53 @@ function smoothGeometry(THREE,source,{iterations=2,strength=.13}={}){
   return g;
 }
 
-function makeInnerZone(THREE,outerGeo,color,{innerWidth=.60,innerLength=.80,depth=.92}={}){
-  const geo=outerGeo.clone();geo.computeBoundingBox();
-  const bb=geo.boundingBox,size=bb.getSize(new THREE.Vector3());
-  const mat=new THREE.MeshStandardMaterial({
-    color,roughness:.86,metalness:0,
-    polygonOffset:true,polygonOffsetFactor:-1,polygonOffsetUnits:-1
+function makeInnerZone(THREE,outerGeo,color,{innerWidth=.60,innerLength=.80}={}){
+  outerGeo.computeBoundingBox();
+  const bb=outerGeo.boundingBox,size=bb.getSize(new THREE.Vector3()),ctr=bb.getCenter(new THREE.Vector3());
+  const w=Math.max(.02,size.x*innerWidth);
+  const h=Math.max(.04,size.y*innerLength);
+  const half=w/2;
+  const shape=new THREE.Shape();
+  shape.moveTo(-half*.42,0);
+  shape.quadraticCurveTo(-half*.88,h*.08,-half*.94,h*.30);
+  shape.quadraticCurveTo(-half*.88,h*.62,-half*.48,h*.84);
+  shape.quadraticCurveTo(-half*.22,h*.98,0,h);
+  shape.quadraticCurveTo(half*.22,h*.98,half*.48,h*.84);
+  shape.quadraticCurveTo(half*.88,h*.62,half*.94,h*.30);
+  shape.quadraticCurveTo(half*.88,h*.08,half*.42,0);
+  shape.quadraticCurveTo(0,-h*.055,-half*.42,0);
+
+  const depth=Math.max(.006,Math.min(size.x,size.z)*.10);
+  const bevel=Math.max(.003,Math.min(w*.055,h*.025));
+  const geo=new THREE.ExtrudeGeometry(shape,{
+    depth,
+    steps:1,
+    curveSegments:18,
+    bevelEnabled:true,
+    bevelThickness:bevel*.65,
+    bevelSize:bevel,
+    bevelOffset:0,
+    bevelSegments:4
   });
+  geo.computeVertexNormals();
+
+  const mat=new THREE.MeshStandardMaterial({color,roughness:.86,metalness:0});
   const mesh=new THREE.Mesh(geo,mat);
   mesh.name='kfb-inner-ear-zone';
   mesh.userData.kfbEarStyleZone='inner';
-  mesh.scale.set(innerWidth,innerLength,depth);
-  mesh.position.y=size.y*(1-innerLength)*.42;
-  mesh.position.z=Math.max(.003,size.z*.06);
+  mesh.userData.kfbBaseInnerWidth=innerWidth;
+  mesh.position.set(
+    ctr.x,
+    bb.min.y+size.y*(1-innerLength)*.46,
+    bb.max.z-depth*.38
+  );
   mesh.castShadow=true;
   return mesh;
 }
 
 export async function buildCartoonEars({
   THREE,loader,host,place={},outerColor=null,innerColor=null,
-  innerWidth=.60,innerLength=.80,smoothIterations=2,smoothStrength=.13,log=()=>{}
+  innerWidth=.60,innerLength=.80,smoothIterations=4,smoothStrength=.16,log=()=>{}
 }={}){
   if(!THREE||!loader||!host)return {status:'UNSUPPORTED',reason:'missing THREE/loader/host'};
   const colors=await donorColors(THREE,loader);
@@ -100,7 +127,7 @@ export async function buildCartoonEars({
     outerColor:'#'+outer.getHexString(),
     innerColor:'#'+inner.getHexString(),
     outerMeshes:outerMeshes.length,innerZones:innerMeshes.length,
-    innerWidth,innerLength,smoothIterations,smoothStrength,
+    innerWidth,innerLength,smoothIterations,smoothStrength,innerGeometry:'rounded-extruded-panel',
     behaviorOwner:'kfb.ears/0.2'
   };
   log('Rabbit ears cartoon style · '+report.outerColor+' / '+report.innerColor+' · '+innerMeshes.length+' inner zones');
@@ -110,7 +137,7 @@ export async function buildCartoonEars({
     update:dt=>base.update(dt),
     setOuterColor(hex){outer.set(hex);for(const m of outerMeshes)m.material.color.copy(outer);report.outerColor='#'+outer.getHexString()},
     setInnerColor(hex){inner.set(hex);for(const m of innerMeshes)m.material.color.copy(inner);report.innerColor='#'+inner.getHexString()},
-    setInnerWidth(v){for(const m of innerMeshes)m.scale.x=v;report.innerWidth=v},
+    setInnerWidth(v){for(const m of innerMeshes)m.scale.x=v/(m.userData.kfbBaseInnerWidth||innerWidth);report.innerWidth=v},
     dispose(){
       for(const m of innerMeshes){m.geometry?.dispose?.();m.material?.dispose?.();}
       for(const m of outerMeshes)m.material?.dispose?.();
