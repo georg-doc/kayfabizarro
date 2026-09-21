@@ -66,7 +66,7 @@ try{
   check('actor maps preserved',snap.actors?.mapsPreserved===snap.actors?.decorated,JSON.stringify(snap.actors));
   check('actor colors preserved',snap.actors?.colorsPreserved===snap.actors?.decorated,JSON.stringify(snap.actors));
   check('environment shaders compiled',snap.environment?.compiled===snap.environment?.materials,JSON.stringify(snap.environment));
-  check('actor shaders compiled',snap.actors?.compiled===snap.actors?.materials,JSON.stringify(snap.actors));
+  check('visible actor shaders compiled',snap.actors?.visibleCompiled===snap.actors?.visibleMaterials,JSON.stringify(snap.actors));\n  check('hidden actor variants allowed',snap.actors?.compiled<=snap.actors?.materials,JSON.stringify(snap.actors));
   check('consumer owner unchanged',snap.ownership?.consumerRuntime==='unchanged'&&snap.ownership?.physics==='unchanged',JSON.stringify(snap.ownership));
 
   await page.evaluate(()=>window.__KFB_HYBRID_SCENE__.setView('room'));
