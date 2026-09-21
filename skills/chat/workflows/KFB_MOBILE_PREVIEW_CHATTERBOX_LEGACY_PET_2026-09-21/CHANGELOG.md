@@ -57,3 +57,38 @@ Cloudflare preview build for PR #158 failed at the implementation head. The inte
 
 Exactly one next gate:
 **TOY-CLAY-PUB-1 · publication-only recovery; no geometry changes.**
+
+
+## 2026-09-21 · Eye Actor Studio v0
+
+Implemented an additive ToolBox Eye Actor Studio over the existing EyeRig v6 + BrowRig v2 owners.
+
+Features:
+- optional four-part volumetric Clay Lids;
+- hard inner eye-facing rim;
+- thickness + curve authoring;
+- skeptical/aim/tired/angry/surprised pose shelf;
+- face > body > main colour resolver;
+- eye-shading preview;
+- under-eye shadow preview;
+- eyeFrame-anchored 3D sweat + soot emanata;
+- desktop/mobile authoring surface;
+- Claude Design v1 donor-first brief.
+
+Implementation head:
+`f6fcdfbf6ec086759b322d96c7a312dabc991c8a`.
+
+Test-only repair head / authoritative tested head:
+`2a79d398fad090aabf56d5a5d17f37fd97fa4df7`.
+
+Evidence:
+- **20/20 static PASS**;
+- **5/5 syntax PASS**;
+- **24/24 desktop/mobile WebGL PASS**;
+- 0 resource/page errors;
+- artifact `10621181776`.
+
+Cloudflare Stage remains **NOT PUBLIC_VERIFIED** because PR #158 Pages build fails.
+
+Next gate:
+**EAS-PUB-1 · publication-only recovery; no geometry retune.**

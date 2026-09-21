@@ -30,3 +30,34 @@ Do not solve a massing failure with texture, AO, UI framing or more geometry.
 ### Guardrail
 
 A technically green build can still fail the visual gate. Current City Grotesque and accepted landmark work remain valid donors; this Toy/Clay language is an additive candidate until visually accepted.
+
+
+## 2026-09-21 · Eye Actor Studio · stale debug-state browser race
+
+### Observed
+
+EAS-0 run `35557045766` passed the whole desktop EyeRig/Clay path but mobile reported:
+`four clay lids 0`.
+
+### Cause
+
+The Studio had already completed the synchronous mode rebuild and set DOM mode/ready to `clay`, while the browser test immediately read `window.__KFB_EYE_ACTOR_STUDIO__` before the next animation frame republished the diagnostic object.
+
+This was an observability race. It was not evidence that Clay geometry disappeared on mobile.
+
+### Repair
+
+Wait on the actual published diagnostic state:
+- `mode === clay`;
+- `clayLidCount === 4`.
+
+No geometry or runtime behavior changed.
+
+### Result
+
+Run `35557143481`:
+**20/20 static · 5/5 syntax · 24/24 browser PASS**.
+
+### Reusable rule
+
+A DOM ready marker and a frame-published diagnostic object are two different clocks. Browser evidence must wait for the state it intends to assert, not a nearby earlier marker.

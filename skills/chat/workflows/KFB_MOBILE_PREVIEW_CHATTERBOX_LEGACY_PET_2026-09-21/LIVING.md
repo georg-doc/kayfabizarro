@@ -413,3 +413,268 @@ Only after PUBLIC_VERIFIED should Georg make the first visual decision on:
 - Eiffel simplification;
 - Cathedral spire softness;
 - whether this grammar should become a preferred KFB prop/landmark authoring option.
+
+
+---
+
+## 2026-09-21 · Turn 003 · Eye Actor Studio / EyeRigging Machine
+
+### USER_DIRECTION
+
+Georg wants the existing EyeRig line promoted into a broader authoring idea:
+
+**Eye — including lids and brows — as actors.**
+
+The Studio should eventually be the common place to:
+- rig/calibrate eyes in batches;
+- author eye poses and reusable facial beats;
+- couple eye poses to existing body animation classes without taking over body movement;
+- switch between existing EyeRig shell lids and a thicker Claymation lid family;
+- debug eye/lid/brow materials and colour inheritance;
+- add eye-relative 3D emanata and impact marks;
+- prepare multiple host families: characters, Legacy actors, toaster/radio props, vehicles and living plants.
+
+Requested expression examples include skeptical blink, one-eye combat aim, tired eyes, dizzy/spiral eyes, heart eyes and oversized cartoon pupils with authored catchlights.
+
+### SOURCE_FACT · existing owners
+
+The new Studio does not create a second eye-control grammar.
+
+Existing owners/donors retained:
+- 3D eye behavior: `pet-eye-rig.v6.js`;
+- eyebrows: `brow-rig.v2.js`;
+- current batch calibration/profile lane: ToolBox EyeRig Batch;
+- renderer-neutral semantic vocabulary: `kfb.eye-rig.protocol/1`;
+- FrankenStein/ToolBox keeps actor/face composition;
+- receiving games keep body motion, combat, vehicle physics, gameplay and camera.
+
+Existing EyeRig v6 already provides:
+- two eyes and **four separate lid meshes**;
+- per-eye upper/lower lid values;
+- per-eye slant;
+- gaze, point target, kinetics and life;
+- stable `eyeFrame()` attachment seam.
+
+Existing BrowRig v2 already provides volumetric tube brows and presets including `skeptical`.
+
+### SOURCE_FACT · current geometric weakness
+
+EyeRig v6's lid behavior is strong, but its source lids are thin sphere-shell caps.
+
+That directly explains Georg's current visual concern:
+- technically functional;
+- visually close to a thin shell;
+- less like a hand-modelled clay/cartoon actor.
+
+The new Clay-Lid work therefore replaces **geometry only**, while reusing EyeRig v6 behavior/animation.
+
+### DECISION · Eye Actor layer
+
+Canonical six EyeRig expressions remain untouched.
+
+The new **Eye Actor Pose** layer is higher-level and may combine:
+- EyeRig lid arrays;
+- slant;
+- gaze/point target;
+- pupil state;
+- BrowRig preset;
+- optional temporary material/shadow state;
+- optional 3D emanata.
+
+First candidate pose shelf:
+- neutral;
+- skeptical blink;
+- combat aim left;
+- combat aim right;
+- tired;
+- angry;
+- surprised.
+
+Consumer body animation may request these poses, but the Eye Actor system never becomes the movement/gameplay owner.
+
+### DECISION · Clay Lids v0
+
+Clay Lids are an optional adapter over the existing four EyeRig lid meshes.
+
+Required grammar:
+- visible outer volume;
+- rounded exterior;
+- harder inner eyeball-facing rim;
+- upper/lower remain independent per eye;
+- slant remains controlled by EyeRig;
+- `curve` adds a candidate concave/convex opening shape;
+- pupil remains behind the inner rim.
+
+### DECISION · colour/material resolution
+
+Default inheritance contract:
+**face > body > main > explicit fallback**.
+
+For real batch hosts later:
+- use the same source texture/material family as the face;
+- match face texel scale;
+- do not invent a separate random lid texture;
+- expose source, measured face colour, selected resolver source and overrides in debug mode;
+- modal palette sampling is preferred for flat KayKit palette textures.
+
+Georg's direction is to move KFB colour toward KayKit palette logic plus the current Cologne world/look work rather than older washed-out pastel defaults.
+
+The spoken source label “Cologne Wastefax” is **not located as an exact current repo source** in this audit. No guessed palette is promoted. The later colour bridge must route through the existing World Color/Lighting Cohesion owner after the exact Cologne source is pinned.
+
+### DECISION · eye shading
+
+The first Studio candidate reduces the self-lit/overwhite appearance by giving sclera and pupil a more restrained PhysicalMaterial response:
+- off-white sclera;
+- higher roughness;
+- lower clearcoat than the old default;
+- normal shared scene key/fill lighting.
+
+This is a preview profile, not yet a global EyeRig material replacement.
+
+### DECISION · eye shadow / rings
+
+The first proof contains an optional **under-eye shadow preview** anchored from the eye frame.
+
+It is deliberately a preview geometry overlay. Final eye-ring/eye-bag work should become a bounded shader/material proof after the eye geometry is visually accepted.
+
+### DECISION · 3D emanata
+
+`eyeFrame()` becomes the proposed attachment seam for eye-relative comic marks.
+
+First authored 3D candidates:
+- one deformable-looking 3D sweat drop;
+- 3–4 matte black soot dots for impact/explosion-center language.
+
+This is presentation only. No generic tile/confetti particle system is introduced.
+
+Future candidates may include anger vein, surprise marks or question marks only when routed through existing KFB Emanata canon.
+
+### IMPLEMENTED · EAS-0
+
+Implementation head:
+`f6fcdfbf6ec086759b322d96c7a312dabc991c8a`.
+
+Test-only observability repair:
+`2a79d398fad090aabf56d5a5d17f37fd97fa4df7`.
+
+New ToolBox candidate:
+`tools/KFB-ToolBox/eye-actor-studio/`.
+
+Implemented modules:
+- `color-resolver.v0.mjs`;
+- `clay-lid-adapter.v0.mjs`;
+- `eye-materials.v0.mjs`;
+- `emanata3d.v0.mjs`;
+- `pose-library.v0.mjs`;
+- Eye Actor Contract and README.
+
+Stage-source lab:
+`kfb-hub/stage/toolbox/eye-actor-studio/`.
+
+The Studio defaults to the exact EyeRig v6 donor mode. Clay Lids are opt-in.
+
+### TESTED · source and browser
+
+First run `35557045766`:
+- **20/20 static PASS**;
+- **5/5 syntax PASS**;
+- desktop browser path passed through Clay/Skeptical;
+- mobile browser proof failed because the test read the previous published debug object one animation frame too early.
+
+Observed failure:
+`mobile four clay lids 0`.
+
+Proven cause:
+the DOM mode/ready marker was already `clay`, but `window.__KFB_EYE_ACTOR_STUDIO__` still contained the prior donor-frame debug state.
+
+Repair:
+the browser proof now waits for both DOM state **and** the published debug object to report `mode=clay` and `clayLidCount=4`.
+
+No runtime/model geometry changed in the repair.
+
+Authoritative run `35557143481`:
+- **20/20 static PASS**;
+- **5/5 syntax PASS**;
+- **24/24 desktop/mobile WebGL PASS**;
+- failed resources: **0**;
+- page/console errors: **0**.
+
+Browser viewports:
+- desktop 1440×900;
+- mobile 390×844.
+
+Observed browser facts:
+- exact EyeRig v6 donor starts first;
+- donor exposes 4 lids;
+- Clay mode exposes 4 Clay lids;
+- measured pupil clearance = **0.00232960000991822**;
+- skeptical pose produces asymmetric lid rotations;
+- body and main colour fallback paths both execute;
+- 3D sweat emanata state executes.
+
+Evidence artifact:
+- ID `10621181776`;
+- digest `sha256:8e88d042153bcc8b9eb9a77bcb1b2a69a7e3c66bd725aad221792dc795f9795e`;
+- 5 files: browser JSON plus desktop/mobile donor and Clay-Skeptical screenshots.
+
+### VISUAL REVIEW · assistant inspection, not Georg acceptance
+
+The screenshots establish:
+- donor EyeRig v6 is visibly distinct from Clay mode;
+- upper Clay lids have substantial rounded volume;
+- the hard inner occlusion rim is visible;
+- skeptical asymmetry reads clearly;
+- the 3D sweat drop reads as a small authored cartoon object rather than confetti;
+- sclera are off-white and visibly shaded by scene light.
+
+Open visual questions:
+- lower Clay lids currently read more like a strong rim/liner than a full clay pad;
+- pupil clearance is technically positive but visually tight;
+- BrowRig tube thickness vs much thicker Clay lids may need coordinated style tuning;
+- under-eye shadow/ring has not yet received a screenshot-based visual gate.
+
+### HOST ROADMAP · PROPOSAL
+
+Reuse the same Studio/profile line in this order:
+1. current Rig_Medium / Rig_Large batch profiles;
+2. LegacyFaceHost / Legacy characters;
+3. static props such as toaster and radio with measured face-plane anchors;
+4. vehicles with explicit front/headlight and rear/trunk eye anchors;
+5. plants / living props.
+
+Vehicle lights and physics remain vehicle/game-owned; Eye Actor is presentation/authoring only.
+
+### FUTURE EYE FX · PROPOSAL
+
+After Clay Lid acceptance:
+- spiral/dizzy pupil geometry;
+- heart pupils/heart eyes;
+- oversized SpongeBob-like pupil mode;
+- authored white drawn catchlight geometry combined with lighting-driven highlights;
+- final under-eye/eye-ring shader;
+- reusable animation-class trigger bindings.
+
+None of these is claimed implemented by EAS-0.
+
+### PUBLICATION STATUS
+
+Intended Stage:
+`https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/eye-actor-studio/`.
+
+Cloudflare Pages reports **BUILD FAILED** for PR #158 at the current stacked branch.
+
+Therefore:
+- source/browser candidate = tested;
+- ToolBox registration may be source/status only;
+- public Stage = **NOT PUBLIC_VERIFIED**;
+- human visual acceptance = **OPEN**.
+
+### NEXT GATE
+
+**EAS-PUB-1 · publication-only recovery.**
+
+Publish the already browser-proven Eye Actor Studio to the exact Cloudflare route without retuning EyeRig/Clay geometry.
+
+After PUBLIC_VERIFIED, the first human visual question is:
+
+**Do the Clay Lids read as expressive clay/cartoon forms with real volume while preserving a clean hard occlusion edge against the eyeball?**

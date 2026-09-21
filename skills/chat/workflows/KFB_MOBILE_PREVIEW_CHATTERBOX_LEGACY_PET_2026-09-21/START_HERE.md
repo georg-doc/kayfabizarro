@@ -207,3 +207,31 @@ Public status:
 
 Current next gate:
 **TOY-CLAY-PUB-1 · publication-only recovery, without changing the proven geometry.**
+
+
+## 2026-09-21 · Current side experiment · Eye Actor Studio v0
+
+The loose mobile/ideation lane now also carries a bounded ToolBox **Eye Actor Studio** candidate.
+
+Motto:
+**Eye — including lids & brows — as actors.**
+
+It reuses EyeRig v6, BrowRig v2 and the existing EyeRig Batch/profile line. EAS-0 adds:
+- optional volumetric Clay Lids on the same four lid transforms;
+- candidate Eye Actor poses including skeptical blink and one-eye combat aim;
+- face > body > main colour resolution;
+- restrained eye shading;
+- under-eye shadow preview;
+- eyeFrame-relative 3D sweat/soot emanata.
+
+Evidence at tested head `2a79d398fad090aabf56d5a5d17f37fd97fa4df7`:
+**20/20 static + 5/5 syntax + 24/24 desktop/mobile WebGL PASS**.
+
+Intended Stage:
+`https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/eye-actor-studio/`.
+
+Public state:
+**BLOCKED / NOT PUBLIC_VERIFIED** due the stacked PR's Cloudflare Pages build failure.
+
+Current next gate:
+**EAS-PUB-1 · publication recovery only.**
