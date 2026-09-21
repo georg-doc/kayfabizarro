@@ -90,6 +90,7 @@ If this is a replacement/fresh chat after context loss, use `RECOVERY_PATH.md` r
 - **2D Animation Studio — `CURRENT_TOOL` at `tools/2D Animation Studio/`; browser-first 2D/2.5D cutout rig authoring, first lab DocCheck Eumel**
 - Animation Lab — `UNVERIFIED` until current implementation SSOT/site is pinned
 - **KayKit Character Compatibility — `EXPERIMENTAL` ToolBox lane. KCC-0 = Draft PR #147 / 28-of-28 repository PASS; its Cloudflare Stage is `PUBLIC BLOCKED` after run 35528646651 returned the root page instead of the exact marker. KCC-1A = stacked Draft PR #148 / 43-of-43 contract + local-browser PASS for Race secondary-motion facts. Motion Lab, EyeRig v6 and the existing FrizzleBob graft remain owners; Rubber/Eraser remains `SOURCE_REQUIRED`.**
+- **KFB ToolBox · One RGB Texture / Triplanar Palette Lab — `PUBLIC VERIFIED · HUMAN GATE` on Draft PR #160. Exact Armchair, Pencil B short and GothGirl are shown source-left versus the same mesh using one shared RGB texture, object-space triplanar projection and three-color palette remap; public proof 41/41. Consumer/runtime ownership is unchanged. Entry: `../../tools/KFB-ToolBox/_handover/RGB_TRIPLANAR_PALETTE_LAB_2026-09-21/START_HERE.md`.**
 
 DocCheck UI convention for project surfaces: use `#cc0033` as a restrained accent for controls/links/active states; do not tint medical imagery.
 
