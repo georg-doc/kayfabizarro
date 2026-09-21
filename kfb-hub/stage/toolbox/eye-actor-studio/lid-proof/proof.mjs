@@ -58,6 +58,8 @@ function normalizeFigure(figure,targetHeight=3.2){
 
 function setView(v=currentView){
   currentView=v;
+  if(window.__KFB_UPPER_LID_PROOF__)window.__KFB_UPPER_LID_PROOF__.view=currentView;
+  document.documentElement.dataset.kfbUpperLidView=currentView;
   eye.getWorldPosition(eyeWorld);
   const r=eyeRadius*4.5;
   const dir={
