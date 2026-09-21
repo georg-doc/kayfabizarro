@@ -1019,3 +1019,16 @@ Web Chat/coding slices are the primary implementation path. Claude Design is res
 
 ### NEXT GATE
 H0: browser-prove the working Card Zone v2 parity matrix before changing world geometry.
+
+
+## 2026-09-22 · Card Zone v3 H0 source lock + real v2 fluid donor
+
+- Started bounded H0 on `chatgpt-web/card-zone-v3-h0-parity-2026-09-21`, stacked on planning PR #156.
+- Opened draft PR #161; no merge, Stage or Live promotion.
+- Source-locked the real Card Zone Lab v2 fluid shader from blob `43eea82f8727d3581e50374d6263e48a28241d3b`.
+- Added `tools/KFB-ToolBox/_handover/CARD_ZONE_V2_FLUID_SHADER_SOURCE_2026-09-22/` with source-exact GLSL, source palette, texture contract, source metadata, tests and Claude Storytelling Map integration brief.
+- Connector-native source comparison: **10/10 PASS**; Vertex GLSL 13/13 source lines and Fragment GLSL 31/31 source lines match.
+- Dropbox metadata corroborates the named 144800-byte v2 export; full Dropbox/GitHub byte equality was not claimed because Dropbox text extraction did not expose the full HTML.
+- Added `FEATURE_PARITY_V2.json`: required H0 features are source-verified, browser parity remains `NOT_RUN`.
+- H1 remains blocked until real browser screenshots/runtime parity close H0.
+- `game-dev` is unavailable in this runtime; repository-native checks used. No sealed GDS evidence required for this source-lock checkpoint.
