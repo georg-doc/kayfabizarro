@@ -189,3 +189,36 @@ The shared ToolBox layer must own only appearance/assembly selection. Consumer g
 Exactly one next gate:
 
 **KLR-KIT-01 · Legacy ActorRecipe + caller-seeded Character/Monster Randomizer core.**
+
+
+---
+
+## 2026-09-21 · KLR-KIT multi-recipe matrix PASS
+
+Evidence branch:
+`chatgpt-web/klr-kit-matrix-2026-09-21`
+
+Tested runtime/workflow head:
+`8197d8f1b6e1becc550b9eeb6d766b455a0b33ab`
+
+- **33/33 PASS** static/source
+- **16/16 PASS** ActorRecipe deterministic suite
+- **2/2 PASS** selector regression suite
+- **35/35 PASS** browser/WebGL recipe matrix
+- 0 failed resources
+- 0 page/console errors
+
+Proven browser sequence:
+
+`gate-16 → gate-75 → gate-33 → repeat gate-16`
+
+This proves alternate/default heads, headExtras ON/OFF, a real held weapon slot and same-seed recipe/key reconstruction through the existing Rig_Legacy assembly.
+
+Artifact:
+`10667035972`
+
+Digest:
+`sha256:fb050fb44ceea245bfc1db1b243b47e2b2b811659b0e8d719616fecbcd09f625`
+
+Next gate:
+**KLR-EYE-01 · Legacy Eye Batch 17/17 using the existing EyeRig v6 / Eye Batch owner.**
