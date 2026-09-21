@@ -8,7 +8,7 @@ import {makeLegacyEyeProfile,mountLegacyEyeProfile} from '../lib/legacy-eye-adap
 const $=(q)=>document.querySelector(q);
 const loader=new GLTFLoader();
 const state={
-  catalog:null,seed:null,selectedId:null,sourceSeen:new Set(),profiles:{},
+  catalog:null,seed:null,persisted:null,persistedById:new Map(),selectedId:null,sourceSeen:new Set(),profiles:{},
   sourceNode:null,actor:null,headPart:null,faceHost:null,eyes:null,mixer:null,
   scene:null,camera:null,renderer:null,controls:null,clock:new THREE.Clock()
 };
@@ -109,7 +109,7 @@ async function sourceIsolate(id=state.selectedId){
   }finally{setLoading(false);}
 }
 
-async function mountCandidate(id=state.selectedId){
+async function mountCandidate(id=state.selectedId,{profileOverride=null}={}){
   const actor=actorById(id);if(!actor)throw new Error('unknown Legacy head '+id);
   if(!state.sourceSeen.has(actor.id))throw new Error('source isolate required before EyeRig mount: '+actor.id);
   state.selectedId=id;clearStage();setLoading(true,'Assembling Rig_Legacy + measuring head…');setMode('assembling',actor);renderRoster();
@@ -129,8 +129,11 @@ async function mountCandidate(id=state.selectedId){
     if(faceHost.status!=='OK')throw new Error(faceHost.reason||'LegacyFaceHost unsupported');
     state.faceHost=faceHost;
     const measurement=measureLegacyEyeCandidates({THREE,headPart,faceHost});
-    const profile=makeLegacyEyeProfile({actor,catalog:state.catalog,seed:state.seed,faceHost,measurement});
-    profile.evidence.sourceIsolationPassed=true;
+    const generated=makeLegacyEyeProfile({actor,catalog:state.catalog,seed:state.seed,faceHost,measurement});
+    const profile=profileOverride?JSON.parse(JSON.stringify(profileOverride)):generated;
+    if(profile.actorId!==actor.id||profile.rigClass!=='Rig_Legacy'||profile.source?.path!==actor.sourcePath)throw new Error('persisted profile identity mismatch: '+actor.id);
+    profile.evidence={...(profile.evidence||{}),sourceIsolationPassed:true};
+    profile.faceHost=JSON.parse(JSON.stringify(faceHost.report));
 
     let cleanupCount=0;
     if(measurement.status==='MEASURED_CANDIDATE'){
@@ -161,27 +164,36 @@ function select(id){state.selectedId=id;renderRoster();return sourceIsolate(id);
 function nextUnmounted(){return state.catalog.actors.find((a)=>!state.profiles[a.id])||null;}
 
 async function boot(){
-  const [catalog,seed]=await Promise.all([
+  const [catalog,seed,persisted]=await Promise.all([
     fetch('../data/rig-legacy-heads.v0.json').then(r=>{if(!r.ok)throw new Error('legacy catalog '+r.status);return r.json();}),
-    fetch('../data/rig-legacy-default.v0.json').then(r=>{if(!r.ok)throw new Error('legacy seed '+r.status);return r.json();})
+    fetch('../data/rig-legacy-default.v0.json').then(r=>{if(!r.ok)throw new Error('legacy seed '+r.status);return r.json();}),
+    fetch('../data/rig-legacy-auto.v1.json').then(r=>{if(!r.ok)throw new Error('legacy persisted profiles '+r.status);return r.json();})
   ]);
-  state.catalog=catalog;state.seed=seed;state.selectedId=catalog.actors[0].id;
+  state.catalog=catalog;state.seed=seed;state.persisted=persisted;state.persistedById=new Map((persisted.profiles||[]).map(p=>[p.actorId,p]));state.selectedId=catalog.actors[0].id;
   initThree();renderRoster();updateProgress();
   $('#headList').onclick=(e)=>{const b=e.target.closest('[data-head]');if(b)select(b.dataset.head).catch(console.error);};
   $('#sourceBtn').onclick=()=>sourceIsolate().catch(console.error);
   $('#mountBtn').onclick=()=>mountCandidate().catch(console.error);
+  $('#persistedBtn').onclick=()=>window.__KLR_EYE_BATCH__.mountPersisted(state.selectedId).catch(console.error);
   $('#nextBtn').onclick=()=>{const a=nextUnmounted();if(a)select(a.id).catch(console.error);};
   $('#blinkBtn').onclick=()=>state.eyes?.blinkNow();
   window.__KLR_EYE_BATCH__={
     source:sourceIsolate,
     mount:mountCandidate,
+    mountPersisted:async(id)=>{
+      const profile=state.persistedById.get(id);
+      if(!profile)throw new Error('persisted profile missing: '+id);
+      return mountCandidate(id,{profileOverride:profile});
+    },
     select,
     profiles:()=>JSON.parse(JSON.stringify(state.profiles)),
+    persistedProfiles:()=>JSON.parse(JSON.stringify(state.persisted?.profiles||[])),
     report:()=>({
       rigClass:'Rig_Legacy',
       selectedId:state.selectedId,
       sourceSeen:[...state.sourceSeen],
       mounted:Object.keys(state.profiles),
+      persistedCount:state.persisted?.profiles?.length||0,
       profiles:JSON.parse(JSON.stringify(state.profiles)),
       mode:document.documentElement.dataset.legacyEyeMode||null
     })
