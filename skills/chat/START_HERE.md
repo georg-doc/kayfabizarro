@@ -385,3 +385,18 @@ Current router: [KAYKIT_LEGACY_RPG_RIGGING_2026-09-21](workflows/KAYKIT_LEGACY_R
 
 Exactly one next gate: **resume the KLR-KIT-01 three-seed browser matrix: `gate-16 → gate-75 → gate-33 → repeat gate-16`.** No Combat/WhackMan runtime integration or Legacy Stage publication before that matrix passes.
 
+
+
+## 2026-09-21 · Legacy Web Pet v0
+
+Sidequest candidate: Draft PR #157 / branch `chatgpt-web/legacy-web-pet-v0-2026-09-21`.
+
+One shared Legacy presentation runtime now exists for a KFB-Hub/Web embed and a Chrome MV3 extension candidate. The Web/Hub host is technically green at tested runtime head `f41c59a8178bf77266c0f776f2e20a7948ee6223`: **15/15 static + 12/12 WebGL PASS**, Rogue default, real Rig_Legacy actions, 3D shadow, exact Orc-Warband banner + two props, click SFX/VFX, right-click character picker, Mage switch, zero failed resources and zero page/console errors. The branch also contains a default KFB-Hub mount candidate with `?pet=0` opt-out; it is not merged or published.
+
+The MV3 extension source **builds**, but the arbitrary-page injection gate timed out twice before the pet `ready` marker. Explicit bundled-Chromium launch did not change that. Per the two-pass rule the extension gate is frozen; do not guess-fix it again in the same slice.
+
+Return and recovery live on PR #157 under `skills/chat/workflows/LEGACY_WEB_PET_V0_2026-09-21/`.
+
+Intended Stage `https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/legacy-web-pet/` is **NOT PUBLISHED / NOT PUBLIC_VERIFIED**.
+
+Exactly one next gate: **LWP-EXT-F1 · extension-load observability** — identify the first missing transition in `CONTENT_ENTRY → HOST_CREATED → FRAME_INSERTED → FRAME_LOADED | FRAME_ERROR → PET_READY` before changing runtime behavior.
