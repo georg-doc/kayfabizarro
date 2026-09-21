@@ -46,7 +46,7 @@ const actorGroup=new THREE.Group();actorGroup.name='EXACT_ACTOR_CAST';scene.add(
 const actorLoader=new GLTFLoader();
 const prepared={environment:[],actors:[]};
 const actorHandles={};
-let roomRoot=null,castFloor=null,currentLook='hybrid',currentView='integrated',strength=.34,scaleMul=.70,error=null;
+let roomRoot=null,castFloor=null,currentLook='hybrid',currentView='integrated',strength=.44,scaleMul=.55,error=null;
 
 function resize(){const r=stage.getBoundingClientRect();renderer.setSize(Math.max(1,r.width),Math.max(1,r.height),false);camera.aspect=Math.max(.2,r.width/Math.max(1,r.height));camera.updateProjectionMatrix()}
 addEventListener('resize',resize);resize();
@@ -60,19 +60,34 @@ function groundAndScale(root,targetHeight,x,z){
   return{s,height:box.getSize(new THREE.Vector3()).y};
 }
 
+function frameObjects(objects,dir=[1,.58,1],pad=1.28){
+  const box=new THREE.Box3();
+  for(const o of objects)if(o?.visible!==false)box.expandByObject(o);
+  const size=box.getSize(new THREE.Vector3()),center=box.getCenter(new THREE.Vector3());
+  if(!Number.isFinite(size.x)||box.isEmpty())return;
+  const aspect=Math.max(.25,camera.aspect||1);
+  const vfov=THREE.MathUtils.degToRad(camera.fov);
+  const hfov=2*Math.atan(Math.tan(vfov/2)*aspect);
+  const distV=size.y/(2*Math.tan(vfov/2));
+  const distH=size.x/(2*Math.tan(hfov/2));
+  const dist=Math.max(distV,distH,size.z*.72)*pad;
+  const d=new THREE.Vector3(...dir).normalize();
+  camera.position.copy(center).addScaledVector(d,dist);
+  camera.near=Math.max(.02,dist/100);camera.far=Math.max(120,dist*8);camera.updateProjectionMatrix();
+  controls.target.copy(center);controls.update();
+}
 function setView(view){
   currentView=view;
   if(view==='room'){
     roomRoot.visible=true;castFloor.visible=false;actorGroup.visible=false;
-    camera.position.set(25,16,25);controls.target.set(8,2.1,6.1);
+    frameObjects([roomRoot],[1,.62,1],1.18);
   }else if(view==='cast'){
     roomRoot.visible=false;castFloor.visible=true;actorGroup.visible=true;
-    camera.position.set(8,6.2,27);controls.target.set(8,1.35,16);
+    frameObjects([actorGroup,castFloor],[0,.16,1],1.12);
   }else{
     roomRoot.visible=true;castFloor.visible=true;actorGroup.visible=true;
-    camera.position.set(26,15.5,33);controls.target.set(8,2.2,7.5);
+    frameObjects([roomRoot,actorGroup,castFloor],[1,.58,1],1.20);
   }
-  controls.update();
   for(const b of document.querySelectorAll('[data-view]'))b.classList.toggle('active',b.dataset.view===view);
 }
 function setLook(look){
