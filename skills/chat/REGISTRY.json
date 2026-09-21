@@ -1,6 +1,6 @@
 {
   "schema": "kfb.chat-registry/0.1",
-  "updated": "2026-09-21",
+  "updated": "2026-09-22",
   "owner": "Georg / KFB",
   "router": "skills/chat/START_HERE.md",
   "livingMasterplan": "skills/chat/LIVING_MASTERPLAN.md",
@@ -565,8 +565,8 @@
       "sourcePack": "media/3D_Assets/KayKit Legacy/KayKit Dungeon Pack 1.0 2/",
       "intendedStage": "https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/legacy-rpg-rigging/",
       "publicVerified": false,
-      "tested": "Legacy base 29/29 static + 41/41 actor-switch + 44/44 browser; ActorRecipe 33/33 + 16/16; KLR-KIT-F1 2/2 selector + 21/21 isolated browser; KLR-KIT matrix 35/35 browser PASS",
-      "nextGate": "KLR-EYE-01 · Legacy Eye Batch 17/17 using existing EyeRig v6 / Eye Batch owner",
+      "tested": "Legacy base 29/29 static + 41/41 actor-switch + 44/44 browser; ActorRecipe 33/33 + 16/16; KLR-KIT F1 2/2 + 21/21; matrix 35/35 browser; KLR-EYE-01 24/24 + 247/247 generation and 30/30 + 215/215 persisted reconstruction",
+      "nextGate": "KLR-EYE-VIS-01 · visual review of all 17 Legacy heads; Skull manual placement or unsupported",
       "owns": [
         "Legacy RPG source catalog candidate",
         "Legacy authoring/calibration candidate",
@@ -579,7 +579,7 @@
         "Combat/Travel/Race/Town gameplay",
         "Pencil/CapsuleCarl/Eraser compatibility"
       ],
-      "note": "Legacy base and seeded ActorRecipe/randomizer matrix are locally browser-proven. Public Legacy Stage remains unverified; Combat/WhackMan consumer integration remains deferred until the 17/17 Legacy Eye Batch profile gate.",
+      "note": "Legacy actor kit/randomizer and 17/17 EyeRig profile layer are technically browser-proven. 16 profiles are MEASURED_CANDIDATE, Skull is HUMAN_REQUIRED. Cloudflare repository mirror is complete but exact pages.dev runtime verification from the current chat environment is pending. Combat/WhackMan integration remains deferred until visual review.",
       "currentBranchHead": "0fbf240150fd32274cf93305c8014262b72b860a",
       "baseTestedHead": "5b2fa78220ec4127c1b761c4d7f7a8304dfb11e9",
       "actorKit": {
@@ -590,10 +590,10 @@
           "later KFB games"
         ],
         "pureCore": "PASS",
-        "browserIntegration": "FROZEN_AFTER_TWO_PASSES",
+        "browserIntegration": "PASS_AFTER_F1_AND_MATRIX",
         "failedBranch": "chatgpt-web/klr-kit-01-failed-2026-09-21",
         "failedHead": "e3a06e3451637a8b447192113cab43f3ece84cd8",
-        "rootCause": "KLR-KIT edit-time String.replace replacement semantics collapsed $$('[data-mode]') to $('[data-mode]')",
+        "rootCause": "Historical KLR-KIT edit regression resolved by F1; three-seed matrix subsequently passed",
         "combatReceiver": {
           "implementationPR": 5,
           "implementationHead": "954f2db7484dc566e468e5ce89b0d95940d97537",
@@ -621,10 +621,37 @@
         "result": "33/33 static · 16/16 ActorRecipe · 2/2 selector · 35/35 browser PASS"
       },
       "eyeBatchNext": {
-        "id": "KLR-EYE-01",
-        "target": "17/17 Legacy head identities",
-        "owner": "existing EyeRig v6 / Eye Batch profile owner",
-        "publicVerified": false
+        "id": "KLR-EYE-VIS-01",
+        "technicalStatus": "PASS",
+        "owner": "KFB ToolBox / Rigging · Batch EyeRig Atlas; EyeRig v6 runtime retained",
+        "branch": "chatgpt-web/legacy-eye-batch-17-2026-09-21",
+        "draftPR": 162,
+        "currentHead": "7b1b52a60d64c9dc710514a59d1a7365f8a168e7",
+        "persistedTestedHead": "91cca48809fb8a86c8ea7a8326eb6637fa89a066",
+        "profiles": 17,
+        "measuredCandidates": 16,
+        "humanRequired": [
+          "skull"
+        ],
+        "generation": {
+          "run": 35661858046,
+          "job": 106538705766,
+          "static": "24/24 PASS",
+          "browser": "247/247 PASS",
+          "artifact": 10667124760,
+          "digest": "sha256:e95731117565bef97ef917d47bb2ff3529b64d01227223642db53ea401973f26"
+        },
+        "reconstruction": {
+          "run": 35662264764,
+          "job": 106539992446,
+          "static": "30/30 PASS",
+          "browser": "215/215 PASS",
+          "artifact": 10667790643,
+          "digest": "sha256:e7a8b41d8172c621aef3c1250d95c2e938db58cac761b83459fbe026cf8d8ba1"
+        },
+        "reviewRoute": "https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/eye-rig-batch/legacy/",
+        "publicVerified": false,
+        "humanAcceptance": "PENDING"
       }
     },
     {
