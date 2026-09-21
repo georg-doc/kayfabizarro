@@ -2,7 +2,7 @@
 
 Status: UNVERIFIED PROJECT INTAKE
 Kind: project
-Updated: 2026-09-13
+Updated: 2026-09-21
 
 ## Intended project path
 
@@ -19,6 +19,7 @@ Read first:
 - `BRIEFING_STUDIO_Wissens-Pilli_Preparation_v0.1.md`
 - `CONCEPT_Wissens-Pilli_WS0_SceneAssembly_v0.1.md`
 - `DocCheck_Interactive_Microlearning_Living_Doc_v0.9.md` only for targeted design/history lookup
+- `DocCheck_Interactive_Microlearning_Learning_Loops_Addendum_v1.0.md` for the current Adaptive Learning Loops / Loop Portals proposal
 
 The inbox is input/staging, not the project SSOT. Follow `skills/chat/INBOX_PROTOCOL.md`.
 
@@ -36,6 +37,16 @@ Current target qualities include:
 - calm editorial UI around one memorable interactive object.
 
 Current WS0 concept: frameless 16:9 learning embed with themed background, Wissens-Pilli presenter, 1..n learning cards/media and one obvious CTA at each beat.
+
+The current additive Learning Loops proposal extends this with:
+- adaptive loop compression instead of repeating whole lessons;
+- arbitrary entry through meaningful knowledge nodes;
+- reusable Loop Portals into connected learning rooms;
+- scheduled, contextual and exploratory recall;
+- relation-level weak-spot tracking;
+- a bounded Citric Acid Kitchen proof with Acetyl-CoA and NADH portal teasers.
+
+This remains a conceptual proposal until the learner runtime owner and implementation SSOT are explicitly established.
 
 ## Current actor/tool boundary
 
