@@ -236,3 +236,55 @@ This proves the GPT/mobile boot surface, not Georg visual acceptance of the lid 
 
 Next gate:
 **review the self-contained GPT site visually and tune the dual-lid shape only after Georg feedback.**
+
+
+---
+
+## 2026-09-21 · Lid Motion Lab · Slide / Sweep / Hybrid
+
+The self-contained GPT/mobile workbench now compares three motion architectures on the **same shared-shell Upper/Lower lid geometry**:
+
+- **Slide** — opening boundary moves; lid body stays mostly static.
+- **Sweep** — lid front body rotates/deforms around an Eye Slot local X hinge axis.
+- **Hybrid** — spherical sweep plus smaller boundary slide.
+
+New author controls:
+- `upperSweep`
+- `lowerSweep`
+- `hingeDepth`
+- `canthusLock`
+
+Default candidate:
+**Hybrid**
+
+Current defaults:
+- upper sweep: 44°
+- lower sweep: 30°
+- hinge depth: 0.025
+- canthus lock: 0.72
+
+Technical evidence:
+- tested head `6c25d5bf9a95571e41ad6402a6d18f3048b0e559`
+- workflow run `35645949968`
+- **34/34 browser PASS**
+- desktop 1280×820
+- mobile 390×844
+- real embedded Mannequin Medium remains 6675 vertices
+- Upper + Lower both present
+- Slide/Sweep/Hybrid state proven
+- Full Blink state proven in all three modes
+- Frog yaw 78° preserved in Hybrid
+- 0 external failed requests
+- 0 page errors
+- artifact `10660252892`
+- digest `sha256:8b46eccaa6e9b3b513315cde27b8b2160b814094925112be58e29c14d4fde17f`
+
+Assistant visual observation:
+- **Slide** closes reliably but reads most like a shutter / simple cover mechanism.
+- **Sweep** makes the lid bodies visibly travel around the globe and therefore gives more acting potential, but pure Sweep currently produces a more mechanical/offset seam at full closure.
+- **Hybrid** preserves the globe-hugging motion while using a smaller boundary shift to achieve a cleaner closure. It is the current best candidate to continue.
+
+This is not Georg acceptance.
+
+Next gate:
+**EAS1-MOTION-1 · Georg compares Slide / Sweep / Hybrid in the GPT site and selects the preferred motion basis before further expression tuning.**
