@@ -16,7 +16,7 @@ ok(cat.weapons.filter(w=>w.tier==='common').length===8,'eight common weapons');
 ok(cat.weapons.filter(w=>w.tier==='uncommon').length===8,'eight uncommon weapons');
 ok(cat.weapons.filter(w=>w.tier==='rare').length===8,'eight rare weapons');
 ok(cat.semantic.attack==='Attack(1h)' && cat.semantic.bow==='Shoot(2h)Bow','semantic combat mappings use real Legacy clip names');
-const app=read('app.js'), rig=read('lib/legacy-rig-adapter.v1.js'), face=read('lib/legacy-facehost.v1.js'), html=read('index.html');
+const app=read('app.js'), rig=read('lib/legacy-rig-adapter.v1.js'), face=read('lib/legacy-facehost.v1.js'), recipe=read('lib/legacy-actor-recipe.v1.js'), html=read('index.html');
 ok(app.includes("STORAGE='kfb.toolbox.legacy-rpg-rigging.v0'"),'isolated localStorage namespace');
 ok(app.includes('pet-eye-rig.v6.js'),'existing EyeRig v6 imported, not rewritten');
 ok(rig.includes("CORE_BONES=['Body','Head','armLeft','armRight']"),'exact legacy core assembly bone contract');
@@ -28,8 +28,11 @@ ok(html.includes('Source isolate') && html.includes('No placeholder geometry'),'
 ok(html.includes('Batch EyeRig v6'),'batch EyeRig authoring surface visible');
 ok(html.includes('Prop-rig bridge'),'future prop-rig bridge labelled');
 ok(!app.includes('localStorage.clear'),'never clears shared localStorage');
+ok(app.includes('legacy-actor-recipe.v1.js') && html.includes('seeded randomizer'),'Legacy ActorRecipe randomizer is wired into authoring surface');
+ok(recipe.includes("RECIPE_SCHEMA='kfb.legacy-actor-recipe/0.1-candidate'"),'Legacy ActorRecipe schema present');
+ok(recipe.includes('caller-owned rng') && !recipe.includes('Math.random'),'randomizer requires caller RNG and has no Math.random');
 ok(app.includes('assemblyGeneration:0') && app.includes('assemblyRequestToken:null'),'assembly generation/request state exists');
 ok(app.includes("markAssembly(request,'assembling')") && app.includes("markAssembly(request,'ready')"),'assembly exposes explicit assembling/ready lifecycle');
 ok(app.includes("if(!current())return"),'stale async assembly results are rejected');
-for(const f of ['app.js','lib/legacy-rig-adapter.v1.js','lib/legacy-facehost.v1.js']){try{new vm.SourceTextModule(read(f));ok(true,`${f} module parses`)}catch(e){console.error(e);ok(false,`${f} module parses`)}}
+for(const f of ['app.js','lib/legacy-rig-adapter.v1.js','lib/legacy-facehost.v1.js','lib/legacy-actor-recipe.v1.js']){try{new vm.SourceTextModule(read(f));ok(true,`${f} module parses`)}catch(e){console.error(e);ok(false,`${f} module parses`)}}
 console.log(`RESULT ${pass}/${pass+fail} PASS`);if(fail)process.exit(1);
