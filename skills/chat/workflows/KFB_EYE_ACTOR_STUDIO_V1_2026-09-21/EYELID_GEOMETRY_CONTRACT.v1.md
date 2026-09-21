@@ -332,3 +332,155 @@ No lower lid, brow, multi-eye cluster, emanata, ears or character-specific styli
 ### Human acceptance question
 
 > **Does this look like the same construction principle as the supplied reference: one thick, rounded upper-lid mass whose lower edge defines the eye opening?**
+
+
+## 15. Dual-Lid Construction · canonical build plan
+
+This section supersedes the earlier "build one upper lid first" sequence.
+
+The user clarified the simplest intended construction:
+
+> Start from one sphere/ellipsoid that fully surrounds the eyeball, make it slightly larger, split it through the eye-opening region into upper and lower halves, then round the resulting lid edges. This yields two real volumetric lids around the same eyeball.
+
+### 15.1 Shared source shell
+
+For each Eye Slot:
+
+1. Start from the **actual eyeball ellipsoid**.
+2. Create one **larger concentric shell volume** around it.
+3. The shell must fully enclose the eyeball in XYZ.
+4. Shell scale is derived from the eye dimensions, not guessed independently.
+5. This shell is the common source for both lids.
+
+Conceptually:
+
+`eyeball → slightly larger enclosing ellipsoid → split → upper lid + lower lid`
+
+Do not create upper and lower lids from unrelated primitives.
+
+### 15.2 Split into two lids
+
+Cut the enclosing shell with one eye-opening split surface.
+
+The split produces:
+
+- **Upper Lid volume**
+- **Lower Lid volume**
+
+Both inherit:
+- the same eye-centred coordinate system;
+- the same outer ellipsoid;
+- the same inner eye-conforming surface;
+- matching left/right canthi.
+
+The eye opening is the gap between the two split boundaries.
+
+### 15.3 Rounded cut edges
+
+The raw split edge must not remain razor-hard.
+
+Round/bevel the cut edge into a soft clay/cartoon margin while keeping:
+
+- real volume behind it;
+- a clean visible occlusion edge;
+- no tube/ridge object added on top;
+- no detached outline.
+
+The edge radius is part of the lid body itself.
+
+### 15.4 Upper / Lower independence
+
+After the shared construction is correct, Upper and Lower become independently controllable actors.
+
+Per lid:
+- `cover`
+- `slant`
+- `curve`
+- `thickness`
+- `roundness`
+
+The pair additionally supports:
+- linked blink;
+- independent upper/lower motion;
+- asymmetric left/right eye motion.
+
+### 15.5 Slant / concave / convex
+
+Do not deform the whole lid into a visor.
+
+Modify the **split boundary / opening curve**:
+
+- flat
+- slanted
+- concave
+- convex
+
+Then rebuild the local rounded edge around that boundary.
+
+The enclosing shell still hugs the eyeball.
+
+### 15.6 Blink
+
+Blinking means the two volumetric halves move their split boundaries toward each other around the eyeball.
+
+At full closure:
+- Upper and Lower meet or slightly overlap;
+- sclera/pupil are fully occluded;
+- the closed seam is the meeting of two real lid volumes.
+
+### 15.7 3D orientation
+
+The entire pair sits inside the Eye Slot transform.
+
+Thus the same two-lid construction must work unchanged for:
+- frontal eyes;
+- ±90° frog-side eyes;
+- Pitch/Yaw/Roll;
+- unequal eye sizes;
+- non-uniform W/H/D eye shapes.
+
+The lids are built in eye-local space first, then transformed with the complete Eye Actor.
+
+### 15.8 First proof — revised
+
+The first proof now contains exactly:
+
+- one real eyeball;
+- one real pupil;
+- **one Upper Lid and one Lower Lid built from the same enclosing shell**.
+
+Required states:
+1. neutral open;
+2. half blink;
+3. full closure;
+4. slant;
+5. concave opening;
+6. convex opening.
+
+Required views:
+- front;
+- 3/4;
+- side.
+
+No brows, ears, emanata, Hunky/Dory or multi-eye cluster until this pair passes.
+
+### 15.9 Hard visual acceptance rules
+
+A screenshot is an automatic FAIL if any of these are true:
+
+- either lid does not visibly overlap/occlude the eyeball;
+- lids float in front of the eye;
+- lids read as plates, visors, shelves, tubes or strokes;
+- upper and lower do not share the same eye-hugging parent shell;
+- the eye opening is not defined by the gap between the two real lid volumes;
+- side view does not show both lid bodies wrapping the eyeball;
+- full blink leaves pupil/sclera visible;
+- rounded edge is a separate decorative mesh instead of part of the lid volume.
+
+### 15.10 QA question
+
+The primary screenshot QA question is now:
+
+> **Do Upper and Lower visibly read as two rounded halves of one larger eye-hugging volume, with the eyeball physically occluded between them?**
+
+If no, the gate fails regardless of numerical tests.

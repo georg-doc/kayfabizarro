@@ -101,3 +101,19 @@ Next build is reduced to:
 **one real 3D eyeball + one upper volumetric lid + front/3/4/side + neutral/cover/slant/concave/convex.**
 
 No Full Studio UI until this passes.
+
+
+## 2026-09-21 · Dual-lid construction clarified
+
+User corrected the implementation strategy:
+
+- do not isolate one upper lid as the primary build model;
+- derive **Upper + Lower together** from one slightly larger eye-enclosing sphere/ellipsoid;
+- split that shared volume at the eye opening;
+- round the split edges;
+- then animate the two halves independently.
+
+This supersedes the earlier one-upper-lid-first build order.
+
+Primary QA is now visual/occlusion-first:
+**Do both lids read as two rounded halves of one eye-hugging volume and actually cover the eyeball?**
