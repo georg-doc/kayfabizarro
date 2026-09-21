@@ -362,3 +362,42 @@ Tests: **95/95 PASS**; runtime-critical JS syntax **4/4 PASS**.
 Stage: `e9f97c594bce46607e95928dd349cf081c36783d`.
 
 Next: reload the Stage and visually check the four Large lid colors.
+
+
+## 2026-09-22 · Rig_Legacy EyeRig 17/17 review-lane publication repair
+
+Source:
+- Draft PR #162
+- branch `chatgpt-web/legacy-eye-batch-17-2026-09-21`
+- branch head `7b1b52a60d64c9dc710514a59d1a7365f8a168e7`
+- persisted-profile tested head `91cca48809fb8a86c8ea7a8326eb6637fa89a066`
+
+Technical evidence:
+- 17/17 persisted profiles
+- 16 MEASURED_CANDIDATE
+- Skull HUMAN_REQUIRED
+- 24/24 static + 247/247 source-first browser/WebGL PASS
+- 30/30 static/profile + 215/215 persisted reconstruction browser/WebGL PASS
+- 0 failed resources / 0 page-console errors in both browser evidence runs
+
+The first publication attempt left only `legacy/index.html` on `cloudflare-live`.
+
+Recovered publication now includes exact PR #162 copies of:
+- `legacy/app.js`
+- `legacy/styles.css`
+- `lib/legacy-eye-adapter.v1.js`
+- `data/rig-legacy-heads.v0.json`
+- `data/rig-legacy-default.v0.json`
+- `data/rig-legacy-auto.v1.json`
+
+All six files were fetched back from `cloudflare-live`; their blob SHAs match the PR #162 source files.
+
+Intended direct review route:
+`https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/eye-rig-batch/legacy/`
+
+KFB Hub and ToolBox Home now link that exact route.
+
+**PUBLIC_VERIFIED remains false in this handoff** because the current chat runtime cannot resolve/open `pages.dev`; repository publication evidence is not promoted to a public browser PASS.
+
+Exactly one next gate:
+**KLR-EYE-VIS-01 · Georg Front + 3/4 review of all 17 heads; approve/adjust/reject, Skull manual or unsupported.**
