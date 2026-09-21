@@ -1001,3 +1001,15 @@ GitHub/cloudflare-live branch state is not a public browser PASS. Exact `kayfabi
 - exact Hub/Stage/ToolBox-audit files mirrored to `cloudflare-live@c2185ed4a59bbae0c3610cb35155af1ccb542c00`
 - publication-branch blob readback: PASS
 - direct pages.dev verification: PENDING because both available HTTP paths are blocked in this session; no new PUBLIC_VERIFIED claim.
+
+
+## 2026-09-21 · KLR-KIT-F1 selector regression PASS
+
+- Fresh branch: `chatgpt-web/klr-kit-f1-2026-09-21`, based on frozen KLR-KIT head `e3a06e3451637a8b447192113cab43f3ece84cd8`.
+- Runtime repair stayed bounded to the proven selector seam in Tool + Stage mirror: `$('[data-mode]') → $$('[data-mode]')`.
+- Tested head: `44d595bc60259f4a74da7043df13582f1b5ccd89`.
+- Run `35552848730`, job `106190694773`: **33/33 static + 16/16 ActorRecipe + 2/2 selector + 21/21 isolated browser PASS**.
+- Exact browser recipe: `gate-16 = Knight + Rogue Head C + no held item`; 30 clips/core parts retained; 0 failed resources; 0 page/console errors.
+- Artifact `10618729208`, digest `sha256:d2983c413b975f3d00bfbfb87564c5b90e16be4a99deb1bcd29369a4cb335c64`.
+- No F1 runtime was published to Cloudflare; Legacy public Stage remains unverified.
+- Next gate: resume only the KLR-KIT three-seed browser matrix `gate-16 → gate-75 → gate-33 → repeat gate-16`. Combat/WhackMan consumer integration remains deferred.
