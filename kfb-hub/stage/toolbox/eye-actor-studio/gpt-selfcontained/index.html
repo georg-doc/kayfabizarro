@@ -60,6 +60,7 @@ window.KFB_MANNEQUIN_MEDIUM_COMPACT={"schema":"kfb.compact-mesh/0.1","source":"m
 'use strict';
 var boot=document.getElementById('boot');boot.textContent='JS OK · starting WebGL…';boot.className='boot-ok';
 function fail(msg,e){console.error(e||msg);document.getElementById('status').textContent='ERROR · '+msg;boot.textContent='BOOT ERROR · '+msg;boot.className='boot-err';document.documentElement.dataset.kfbDualLidReady='error';}
+try{
 var canvas=document.getElementById('view'),stage=document.getElementById('stage');
 var gl=canvas.getContext('webgl',{antialias:true,alpha:false})||canvas.getContext('experimental-webgl',{antialias:true});
 if(!gl){fail('WebGL unavailable');return;}
