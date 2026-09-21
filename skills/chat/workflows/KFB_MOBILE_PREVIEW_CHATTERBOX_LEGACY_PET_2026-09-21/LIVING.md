@@ -218,3 +218,198 @@ Do only:
 - deterministic fixture strings from the existing static phrase donor;
 - screenshot + source revision;
 - no Legacy Web Pet runtime modification yet.
+
+
+---
+
+## 2026-09-21 · Turn 002 · Toy / Clay Form Language + first lab
+
+### USER_DIRECTION
+
+Georg wants a reliable KFB construction language for small props and landmarks that does not keep falling back to hard edges, thin technical parts and miniature-detail modelling.
+
+Target character:
+- Tiny Treats friendliness;
+- KayKit chunkiness;
+- clay / resin / toy softness;
+- collectible boardgame readability;
+- much more iconic than a literal miniature, but not reduced as far as Monopoly hotel pieces.
+
+Concrete first examples:
+- one rounded rectangular panel with three rounded cartoon buttons;
+- Eiffel Tower as a simplified soft toy landmark;
+- Cologne Cathedral as a simplified soft toy landmark.
+
+The rules, samples and future failure/postmortem learnings must persist additively on GitHub.
+
+### SOURCE_FACT · existing owners and donors
+
+The existing landmark authoring owner remains `tools/img2threejs/`.
+
+Current landmark state:
+- **City Grotesque remains the accepted landmark default**;
+- Soft Cubist remains an alternate/debug mode;
+- Cologne Cathedral v0.2 is prior accepted cartoon-abstraction/material evidence, not a Toy/Clay implementation;
+- the existing Eiffel Pilot 01 is intentionally much more detailed/lattice-like than this new direction;
+- the existing Living Toy World note already provides the broader north star: “the world as a breathing, living toy.”
+
+Tiny Treats Charming Kitchen 1.1 is an existing registered CC0 source pack. The chosen visible donor for this experiment is the real:
+`media/3D_Assets/Tiny_Treats_Charming_Kitchen_1.1_FREE/Assets/gltf/toaster.gltf`.
+
+Its source is shown in isolation before any derived procedural model.
+
+### DECISION · no new landmark owner
+
+The new work is a **ToolBox authoring donor**, not a replacement landmark/world runtime.
+
+- ToolBox owns the candidate primitive grammar and authoring lab.
+- `tools/img2threejs/` keeps landmark authoring ownership.
+- Registry / Asset Librarian keeps asset identity.
+- City Grotesque stays the default until a later explicit human decision changes it.
+
+### DECISION · KFB Toy / Clay Form Language v0
+
+North star:
+**build the soft toy icon of the object, not a miniature engineering reconstruction.**
+
+First-read geometry should be roughly 80–90% macro massing. A detail earns geometry only when it changes silhouette, identity or interaction.
+
+Preferred primitive family:
+- rounded slab / rounded box;
+- capsule and capsule beam;
+- rounded cylinder / squashed sphere;
+- smooth lathed taper or spire;
+- soft arch;
+- large raised/inset pill.
+
+A micro-bevel is not enough. Rounded-box default radius is approximately 14% of the smallest dimension, bounded by thickness.
+
+Material baseline:
+- metalness 0;
+- roughness about 0.8–0.9;
+- large clean colour blocks;
+- soft shadow;
+- no grime/texture pass before form acceptance.
+
+### DECISION · hard detail budgets
+
+v0 budgets are enforced in code:
+- panel: max 4 visible authored parts;
+- Eiffel: max 14;
+- Cologne Cathedral: max 16.
+
+General guidance:
+- XS prop: 1–4;
+- S prop: 3–6;
+- M landmark: 5–10 primary, up to 16 hero parts;
+- L hero landmark: 8–16 primary; extra secondary geometry requires a named reason.
+
+### IMPLEMENTED
+
+Implementation checkpoint:
+`8825d05caed888e8bc35cc3b49d0cf01da3664da`.
+
+Added reusable ToolBox modules:
+- `tools/KFB-ToolBox/toy-clay-form-lab/lib/kfb-toy-primitives.mjs`;
+- `tools/KFB-ToolBox/toy-clay-form-lab/lib/samples.mjs`.
+
+Shared geometry primitives currently use:
+- Three.js `RoundedBoxGeometry`;
+- `CapsuleGeometry` for soft beams;
+- `LatheGeometry` for smooth toy spires;
+- `TorusGeometry` for a soft arch cue.
+
+The authored samples deliberately contain no direct `BoxGeometry`.
+
+Stage-source lab:
+`kfb-hub/stage/toolbox/toy-clay-form-lab/`.
+
+The viewer starts on the **exact Tiny Treats toaster source**. Only after that donor is visible can the reviewer switch to Panel / Eiffel / Cologne.
+
+### TESTED · source / browser
+
+GitHub Actions run:
+`35555718144`.
+
+Static contracts:
+**15/15 PASS**.
+
+Desktop + mobile WebGL:
+**16/16 PASS**.
+
+Browser viewports:
+- desktop 1440 × 900;
+- mobile 390 × 844.
+
+Observed authored part counts:
+- Panel: **4/4**;
+- Eiffel: **13/14**;
+- Cologne Cathedral: **12/16**.
+
+Observed browser errors:
+- failed resources: **0** desktop / **0** mobile;
+- page/console errors: **0** desktop / **0** mobile.
+
+Evidence artifact:
+- ID `10619944311`;
+- digest `sha256:7ac890e848f40b3c5456c3512bb6864580b903431fd6a529380ad029ad7aaa34`;
+- 5 files, including desktop/mobile donor screenshots and desktop/mobile Cologne screenshots.
+
+### VISUAL REVIEW · assistant inspection, not Georg acceptance
+
+The isolated Tiny Treats toaster visibly proves the actual source object is being used.
+
+The Cologne candidate already reads substantially more like a toy/resin icon than the prior hard low-poly architecture direction:
+- broad rounded macro masses;
+- low part count;
+- simple colour zones;
+- clear twin-tower silhouette.
+
+Open visual issue:
+- the two spires still read relatively pointed compared with the softer body masses.
+
+This is deliberately left as an open human visual decision rather than auto-tuned after a green CI result.
+
+### POSTMORTEM RULE · persist failures additively
+
+New file:
+`POSTMORTEMS.md`.
+
+Current recurring failure pattern:
+hard 90-degree edges + thin supports + too many literal architectural parts + surface polish before massing.
+
+Repair order:
+1. delete secondary parts;
+2. enlarge macro masses;
+3. increase visible corner radius;
+4. thicken supports;
+5. restore only one missing iconic feature;
+6. material last.
+
+Do not repair a massing failure with texture, AO, UI framing or more geometry.
+
+### PUBLICATION STATUS
+
+Intended review route:
+`https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/toy-clay-form-lab/`.
+
+Cloudflare Pages reported **BUILD FAILED** for PR #158 at exact implementation head `8825d05...`.
+
+Therefore:
+- source/browser candidate = tested;
+- public Stage = **NOT PUBLIC_VERIFIED**;
+- human acceptance = **OPEN**.
+
+No alternate GitHub Pages / raw / githack link is substituted.
+
+### NEXT GATE
+
+**TOY-CLAY-PUB-1 · publication-only recovery.**
+
+Publish the already-tested source to the exact Cloudflare Stage route and open that URL successfully. Do not change model geometry during this gate.
+
+Only after PUBLIC_VERIFIED should Georg make the first visual decision on:
+- overall softness;
+- Eiffel simplification;
+- Cathedral spire softness;
+- whether this grammar should become a preferred KFB prop/landmark authoring option.
