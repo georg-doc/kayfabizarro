@@ -1,4 +1,4 @@
-export const UPPER_LID_SCHEMA='kfb.upper-lid-volume/0.2-candidate';
+export const UPPER_LID_SCHEMA='kfb.upper-lid-volume/0.3-candidate';
 
 const clamp=(v,a,b)=>Math.max(a,Math.min(b,v));
 const lerp=(a,b,t)=>a+(b-a)*t;
@@ -16,10 +16,10 @@ export function buildUpperLidVolumeGeometry(THREE,{
   thickness=.20,
   roundness=.72,
   bulge=.42,
-  clearance=.018,
-  lonMax=1.18,
-  lonSegments=52,
-  latSegments=16
+  clearance=.016,
+  lonMax=1.04,
+  lonSegments=56,
+  latSegments=18
 }={}){
   const R=radius;
   const innerR=R*(1+clearance);
@@ -28,20 +28,18 @@ export function buildUpperLidVolumeGeometry(THREE,{
   const round=clamp(roundness,0,1);
   const bul=clamp(bulge,0,1);
 
-  // Reference logic: compact upper-lid pad, not a hemisphere-to-pole cap.
-  // Neutral lower edge sits above the eye centre; more cover moves it down.
-  const baseMargin=lerp(.23,-.62,cover01);
+  // Reference: compact individual upper-lid pad. The lower edge is the eye opening.
+  const baseMargin=lerp(.24,-.58,cover01);
 
   const marginLat=(lon)=>{
     const side=clamp(lon/lonMax,-1,1);
     const centre=1-side*side;
-    return baseMargin + slant*.30*side + curve*.25*centre;
+    const endLift=.08*Math.pow(Math.abs(side),4);
+    return baseMargin + slant*.28*side + curve*.24*centre + endLift;
   };
 
-  const pos=[];
-  const idx=[];
-  const rows=latSegments+1;
-  const cols=lonSegments+1;
+  const pos=[],idx=[];
+  const rows=latSegments+1,cols=lonSegments+1;
   const outerIds=Array.from({length:cols},()=>Array(rows));
   const innerIds=Array.from({length:cols},()=>Array(rows));
 
@@ -54,10 +52,11 @@ export function buildUpperLidVolumeGeometry(THREE,{
     const sideSoft=Math.max(0,1-side*side);
     const low=marginLat(lon);
 
-    // Compact pad height. Sides taper shorter to create soft rounded canthi.
-    const centreSpan=.48 + round*.10;
-    const span=centreSpan*(.72+.28*sideSoft);
-    const high=clamp(low+span,-.05,1.12);
+    // Strong side taper creates rounded canthi instead of a rectangular visor.
+    const sideEnvelope=.26+.74*Math.pow(sideSoft,.62);
+    const centreSpan=.44 + round*.09;
+    const span=centreSpan*sideEnvelope;
+    const high=clamp(low+span,-.03,1.03);
 
     for(let i=0;i<=latSegments;i++){
       const v=i/latSegments;
@@ -70,34 +69,32 @@ export function buildUpperLidVolumeGeometry(THREE,{
       const radialLen=Math.hypot(ip[0],ip[1],ip[2])||1;
       const nx=ip[0]/radialLen,ny=ip[1]/radialLen,nz=ip[2]/radialLen;
 
-      // Thick clay body, kept substantial at the opening edge.
       const crown=Math.sin(Math.PI*v);
-      const bodyProfile=.92 + .18*crown*sideSoft;
-      const t=R*thick*bodyProfile;
+      // Substantial central body, naturally tapering into the side canthi.
+      const sideThickness=.30+.70*Math.pow(sideSoft,.52);
+      const verticalBody=.90+.16*crown;
+      const t=R*thick*sideThickness*verticalBody;
 
       let ox=ip[0]+nx*t;
       let oy=ip[1]+ny*t;
       let oz=ip[2]+nz*t;
 
-      // Soft molded fullness, but no giant hood/dome.
-      ox*=1+round*.018*sideSoft;
-      oy+=R*round*.018*crown*sideSoft;
-      oz+=R*bul*.055*(.35+.65*crown)*sideSoft;
-
-      // Slight front-plane coherence makes the body read as one pad rather than shell flakes.
-      const frontTarget=R*(1.015 + thick*.50 + bul*.035) - R*.08*side*side;
-      const blend=(.10+.12*round)*sideSoft;
-      oz=lerp(oz,frontTarget,blend);
+      // Only a gentle local clay fullness. No planar hood/shelf projection.
+      const localFullness=sideThickness*crown;
+      oy+=R*round*.018*localFullness;
+      oz+=R*bul*.045*(.30+.70*crown)*sideThickness;
 
       outerIds[j][i]=push([ox,oy,oz]);
     }
   }
 
+  // Outer clay surface.
   for(let j=0;j<lonSegments;j++)for(let i=0;i<latSegments;i++){
     const a=outerIds[j][i],b=outerIds[j+1][i],c=outerIds[j+1][i+1],d=outerIds[j][i+1];
     idx.push(a,b,d,b,c,d);
   }
 
+  // Inner surface follows the eyeball; reversed winding.
   for(let j=0;j<lonSegments;j++)for(let i=0;i<latSegments;i++){
     const a=innerIds[j][i],b=innerIds[j][i+1],c=innerIds[j+1][i+1],d=innerIds[j+1][i];
     idx.push(a,b,d,b,c,d);
@@ -107,7 +104,7 @@ export function buildUpperLidVolumeGeometry(THREE,{
     idx.push(outerA,innerA,outerB,outerB,innerA,innerB);
   }
 
-  // Real visible lower margin: part of the closed lid volume, not a separate line/tube.
+  // Crisp eye-facing opening edge, physically part of the closed lid volume.
   for(let j=0;j<lonSegments;j++){
     sealStrip(
       outerIds[j][0],outerIds[j+1][0],
@@ -115,7 +112,7 @@ export function buildUpperLidVolumeGeometry(THREE,{
     );
   }
 
-  // Upper/back edge closes the compact pad.
+  // Upper/back closure of the pad.
   for(let j=0;j<lonSegments;j++){
     sealStrip(
       outerIds[j+1][latSegments],outerIds[j][latSegments],
@@ -123,7 +120,7 @@ export function buildUpperLidVolumeGeometry(THREE,{
     );
   }
 
-  // Soft side/end mass / canthi closure.
+  // Closed rounded canthi / side mass.
   for(let i=0;i<latSegments;i++){
     sealStrip(
       outerIds[0][i+1],outerIds[0][i],
@@ -157,12 +154,12 @@ export function buildUpperLidVolumeGeometry(THREE,{
     schema:UPPER_LID_SCHEMA,
     closedVolume:true,
     realOcclusionMargin:true,
-    outerSurface:'compact-rounded-pad',
+    outerSurface:'rounded-eye-hugging-pad',
     innerSurface:'eyeball-conforming',
     cover:cover01,slant,curve,thickness:thick,roundness:round,bulge:bul,
     marginThickness,
     size:[boxSize.x,boxSize.y,boxSize.z],
-    designCorrection:'localized upper-lid mass; no hemisphere helmet'
+    designCorrection:'eye-hugging tapered clay pad; no helmet and no visor'
   };
   return g;
 }
