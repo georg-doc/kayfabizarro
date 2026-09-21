@@ -7,7 +7,7 @@ const OUT=process.env.KFB_PET_EVIDENCE||'legacy-web-pet-evidence/extension';
 await fs.mkdir(OUT,{recursive:true});
 const checks=[],errors=[],failed=[];const check=(n,c,e='')=>{checks.push({name:n,pass:!!c,extra:e});if(!c)throw Error('FAIL '+n+' '+e);console.log('PASS',n,e)};
 const profile=path.resolve('.tmp-kfb-pet-profile');
-const context=await chromium.launchPersistentContext(profile,{headless:false,viewport:{width:1360,height:820},args:[`--disable-extensions-except=${EXT}`,`--load-extension=${EXT}`,'--use-angle=swiftshader','--enable-unsafe-swiftshader']});
+const context=await chromium.launchPersistentContext(profile,{channel:'chromium',headless:true,viewport:{width:1360,height:820},args:[`--disable-extensions-except=${EXT}`,`--load-extension=${EXT}`,'--use-angle=swiftshader','--enable-unsafe-swiftshader']});
 try{
  const pages=context.pages();const page=pages[0]||await context.newPage();
  page.on('pageerror',e=>errors.push(String(e)));page.on('console',m=>{if(m.type()==='error')errors.push(m.text())});
