@@ -131,3 +131,17 @@ Authoritative head `87c4f4158b2be40dd9e617e54e85397234d0452d`, run `35630127930`
 **16/16 desktop/mobile browser PASS**, 0 external requests, 0 page errors.
 
 Artifact: `10653512609`.
+
+
+## 2026-09-21 · Lid motion architecture · Sweep / Slide / Hybrid
+
+User questioned the current cover-only motion: lids behave like shutters moving up/down and therefore may have limited expression range.
+
+Decision:
+- preserve `cover` as a style channel;
+- add spherical `sweep` around an Eye Slot local hinge axis;
+- keep canthi approximately anchored through deformation weights;
+- add `hingeDepth` and `canthusLock`;
+- compare Slide / Sweep / Hybrid in the same Studio.
+
+Recommended default to test: **Hybrid**.

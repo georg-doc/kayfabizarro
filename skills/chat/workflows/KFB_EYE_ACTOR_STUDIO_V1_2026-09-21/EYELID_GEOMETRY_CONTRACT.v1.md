@@ -484,3 +484,128 @@ The primary screenshot QA question is now:
 > **Do Upper and Lower visibly read as two rounded halves of one larger eye-hugging volume, with the eyeball physically occluded between them?**
 
 If no, the gate fails regardless of numerical tests.
+
+
+## 16. Lid motion architecture · spherical sweep / hinge
+
+The current self-contained demo primarily changes the opening boundary through `cover`. That is useful as a style parameter, but it should not be the only closure mechanism.
+
+### 16.1 Preferred default · spherical sweep
+
+Upper and Lower remain two volumetric halves of the shared eye-enclosing shell.
+
+Primary closure happens by **sweeping/rotating each lid around the eyeball**:
+
+- Upper sweeps downward over the globe.
+- Lower sweeps upward over the globe.
+- Both remain eye-hugging.
+- Their cut/opening margins move with the lid bodies.
+- The eyeball is occluded through real depth.
+
+This gives substantially more facial-performance range than linear cover alone.
+
+### 16.2 Hinge is an axis, not a single rear point
+
+Do not use one literal point where both lids meet behind the eye.
+
+Use an **Eye Slot local hinge axis**, approximately through the left/right canthi and near the eyeball centre.
+
+Candidate local axis:
+
+`local X axis through the eyeball / canthi`
+
+The axis may be offset slightly posteriorly through a `hingeDepth` parameter for a more mechanical/cartoon swing.
+
+This produces the visual idea of the lid being attached around the sides/back while avoiding a rigid plate swinging off the sphere.
+
+### 16.3 Canthus lock
+
+The inner and outer corners should remain visually attached.
+
+Therefore a lid should not behave as one completely rigid half-shell.
+
+Use a deformation weight:
+- strongest sweep through the central lid body;
+- reduced sweep near the two canthi;
+- canthi remain approximately locked to the Eye Slot.
+
+This preserves the clay/cartoon wrapped-eye read.
+
+### 16.4 Motion channels
+
+Per lid:
+
+- `sweep` — angular closure/opening around the globe;
+- `cover` — secondary local boundary offset;
+- `slant`;
+- `curve`;
+- `thickness`;
+- `roundness`;
+- `bulge`;
+- `hingeDepth`;
+- `canthusLock`.
+
+### 16.5 Style modes
+
+Keep three candidate styles in the Studio:
+
+#### Sweep
+Primary motion = spherical rotation over the eye.
+
+Best for:
+- normal blink;
+- sleepy;
+- skeptical;
+- angry;
+- targeting/squint.
+
+#### Slide
+Primary motion = opening boundary moves over a mostly static shell.
+
+Best for:
+- graphic/cartoon shutter look;
+- exaggerated stylized expressions.
+
+#### Hybrid · recommended default
+Spherical sweep plus smaller boundary deformation.
+
+This should provide the broadest acting range while preserving the shared-shell construction.
+
+### 16.6 Expression implications
+
+The sweep architecture enables:
+
+- **sleepy:** upper sweep downward, lower mostly static;
+- **skeptical:** asymmetric upper sweep + slant;
+- **squint:** Upper + Lower both sweep inward;
+- **angry:** inward sweep plus opposite slant;
+- **wide eye:** lids sweep away from opening;
+- **aim/focus:** one eye squints independently;
+- **blink:** linked Upper/Lower sweep to full closure.
+
+### 16.7 Eye Slot transforms
+
+All hinge/sweep math is defined in Eye Slot local space.
+
+Therefore the same motion remains valid when the complete Eye Actor is:
+- yawed sideways for frog eyes;
+- pitched;
+- rolled;
+- asymmetrically scaled;
+- used in 1–4-eye clusters.
+
+### 16.8 Next comparison gate
+
+Do not silently replace the current cover motion.
+
+Add an A/B/C comparison:
+
+1. `Slide`
+2. `Sweep`
+3. `Hybrid`
+
+Use the same eye, same lid geometry and same full-blink target.
+
+Human question:
+
+> **Which motion makes the lids feel like living clay actors rather than shutters, while still giving the best expressive range?**
