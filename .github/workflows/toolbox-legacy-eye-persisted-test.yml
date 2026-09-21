@@ -1,0 +1,57 @@
+name: ToolBox Legacy Eye Persisted Profiles
+on:
+  push:
+    branches:
+      - chatgpt-web/legacy-eye-batch-17-2026-09-21
+    paths:
+      - 'tools/KFB-ToolBox/eye-rig-batch/data/rig-legacy-auto.v1.json'
+      - 'tools/KFB-ToolBox/eye-rig-batch/data/rig-legacy-heads.v0.json'
+      - 'tools/KFB-ToolBox/eye-rig-batch/data/rig-legacy-default.v0.json'
+      - 'tools/KFB-ToolBox/eye-rig-batch/legacy/**'
+      - 'tools/KFB-ToolBox/eye-rig-batch/lib/legacy-eye-adapter.v1.js'
+      - 'tools/KFB-ToolBox/eye-rig-batch/tests/legacy-eye-static-check.mjs'
+      - '.github/workflows/toolbox-legacy-eye-persisted-test.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  persisted-profiles:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout: |
+            tools/KFB-ToolBox/eye-rig-batch
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Persisted profile contracts
+        run: |
+          node --experimental-vm-modules tools/KFB-ToolBox/eye-rig-batch/tests/legacy-eye-static-check.mjs
+          node --check tools/KFB-ToolBox/eye-rig-batch/legacy/app.js
+          node --check tools/KFB-ToolBox/eye-rig-batch/legacy/persisted-proof.mjs
+      - name: Install Playwright Chromium
+        run: |
+          npm install --no-save playwright@1.51.1
+          npx playwright install --with-deps chromium
+      - name: Start local ToolBox source
+        run: |
+          python3 -m http.server 4173 --bind 127.0.0.1 > /tmp/legacy-eye-persisted-http.log 2>&1 &
+          echo $! > /tmp/legacy-eye-persisted-http.pid
+          for i in {1..30}; do
+            if curl -fsS http://127.0.0.1:4173/tools/KFB-ToolBox/eye-rig-batch/legacy/ >/dev/null; then exit 0; fi
+            sleep 1
+          done
+          cat /tmp/legacy-eye-persisted-http.log
+          exit 1
+      - name: Mount all 17 saved profiles
+        env:
+          KLR_EYE_PERSISTED_DIR: legacy-eye-persisted-evidence
+        run: node tools/KFB-ToolBox/eye-rig-batch/legacy/persisted-proof.mjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: klr-eye-persisted-evidence
+          path: legacy-eye-persisted-evidence
+          retention-days: 14
