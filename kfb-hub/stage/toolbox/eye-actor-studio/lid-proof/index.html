@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en" data-kfb-upper-lid-ready="no">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>KFB Upper Lid Proof · EAS1-LID-1</title>
+<style>
+:root{font-family:system-ui,sans-serif;background:#d9dfdc;color:#292520}
+*{box-sizing:border-box}html,body{margin:0;height:100%;overflow:hidden}
+.app{height:100dvh;display:grid;grid-template-rows:auto minmax(0,1fr) auto}
+.bar,.foot{background:#f5efe4;padding:8px 10px;display:flex;gap:6px;align-items:center;flex-wrap:wrap}
+.bar{border-bottom:2px solid #2f2a26}.foot{border-top:1px solid #aaa094;justify-content:space-between}
+.brand{font-family:Georgia,serif;font-size:18px;font-weight:700;margin-right:5px}
+.tag,#status,#metrics{font-size:10px;color:#655e56}
+button,select,input{font:inherit;font-size:11px}
+button,select{background:#fffaf1;border:1px solid #93887d;border-radius:5px;padding:6px 8px;color:#302b27}
+label{font-size:10px;display:flex;align-items:center;gap:4px}
+.stage{min-height:0;position:relative}
+canvas{display:block;width:100%;height:100%;touch-action:none}
+.badge{position:absolute;left:8px;top:8px;background:#fffaf0dd;border:1px solid #a89f91;padding:5px 7px;font:10px ui-monospace,monospace}
+.range input{width:92px}
+@media(max-width:760px){
+ .bar{padding:6px;gap:4px}.brand{width:100%;font-size:16px}.range input{width:72px}
+ .foot{padding:6px 8px}.foot .long{display:none}
+}
+</style>
+<script type="importmap">{"imports":{"three":"https://unpkg.com/three@0.160.0/build/three.module.js","three/addons/":"https://unpkg.com/three@0.160.0/examples/jsm/"}}</script>
+</head>
+<body><main class="app">
+<header class="bar">
+<div class="brand">Upper Lid Proof <span class="tag">EAS1-LID-1</span></div>
+<select id="variant">
+<option value="reference">Reference open</option>
+<option value="cover">More cover</option>
+<option value="slant">Slant</option>
+<option value="concave">Concave</option>
+<option value="convex">Convex</option>
+</select>
+<button data-view="front">Front</button><button data-view="three">3/4</button><button data-view="side">Side</button>
+<select id="debug"><option value="natural">Natural</option><option value="translucent">Translucent volume</option><option value="wire">Wireframe</option></select>
+<label class="range">cover <input id="cover" type="range" min="0" max="1" step=".01" value=".16"></label>
+<label class="range">thickness <input id="thickness" type="range" min=".08" max=".42" step=".01" value=".24"></label>
+<label class="range">round <input id="roundness" type="range" min="0" max="1" step=".01" value=".72"></label>
+<label class="range">bulge <input id="bulge" type="range" min="0" max="1" step=".01" value=".42"></label>
+</header>
+<section id="stage" class="stage"><canvas id="view"></canvas><div class="badge">REAL HOST · REAL EYERIG V6 EYE · 1 NEW UPPER LID</div></section>
+<footer class="foot"><div><b id="title">Reference open</b><div id="metrics">—</div></div><div id="status">Booting exact source…</div><div class="tag long">No lower lid · no brow · no cluster · no ears</div></footer>
+</main>
+<script type="module" src="./proof.mjs"></script>
+</body></html>
