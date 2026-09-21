@@ -189,3 +189,35 @@ The shared ToolBox layer must own only appearance/assembly selection. Consumer g
 Exactly one next gate:
 
 **KLR-KIT-01 · Legacy ActorRecipe + caller-seeded Character/Monster Randomizer core.**
+
+
+---
+
+## 2026-09-21 · KLR-KIT-01 FROZEN AFTER TWO BROWSER PASSES
+
+Shared ActorRecipe/randomizer direction is retained, but its browser integration is frozen.
+
+Frozen candidate:
+- branch `chatgpt-web/klr-kit-01-failed-2026-09-21`
+- head `e3a06e3451637a8b447192113cab43f3ece84cd8`
+
+Pure/static evidence:
+- **33/33 PASS** static/source;
+- **16/16 PASS** ActorRecipe/determinism.
+
+Browser:
+- run `35550795805`: first seeded recipe timed out before Ready;
+- run `35551084074`: fail-fast isolated exact regression `$(...).forEach is not a function`.
+
+Proven cause:
+the KLR-KIT code-edit operation collapsed the existing `$$('[data-mode]')` collection selector to `$('[data-mode]')` through JavaScript replacement-string `$$` semantics.
+
+This does not invalidate the proven Legacy base at `5b2fa78220ec4127c1b761c4d7f7a8304dfb11e9`:
+- 41/41 KLR-SYNC;
+- 44/44 full Legacy browser/WebGL.
+
+Full KLR-KIT recovery:
+`tools/KFB-ToolBox/legacy-rpg-rigging/failure-recovery/KLR_KIT_01_FAILURE_RECOVERY_2026-09-21.md`
+
+Exactly one next gate:
+**KLR-KIT-F1 · fix only the selector helper seam and prove one `gate-16` recipe.**
