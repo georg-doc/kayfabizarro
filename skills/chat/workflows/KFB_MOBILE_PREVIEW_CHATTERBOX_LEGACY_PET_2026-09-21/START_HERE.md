@@ -175,3 +175,35 @@ Every substantive turn in this chat should append to:
 - `CHANGELOG.md` for GitHub checkpoints.
 
 Runtime work, tests, Stage publication and human acceptance must remain separately labelled.
+
+
+## 2026-09-21 · Current side experiment · Toy / Clay Form Lab v0
+
+Georg added a cross-cutting modelling question to this loose ideation lane: reliably produce soft, rounded Tiny-Treats/KayKit-adjacent props and iconically simplified landmarks rather than hard-edged or micro-detailed models.
+
+Current implementation candidate:
+- ToolBox authoring donor under `tools/KFB-ToolBox/toy-clay-form-lab/`;
+- exact Tiny Treats toaster isolated first;
+- rounded three-button panel;
+- Eiffel toy icon;
+- Cologne Cathedral toy icon;
+- rules in `TOY_CLAY_STYLE_RULES.md`;
+- additive failure learning in `POSTMORTEMS.md`.
+
+Tested implementation head:
+`8825d05caed888e8bc35cc3b49d0cf01da3664da`.
+
+Evidence:
+**15/15 static + 16/16 desktop/mobile WebGL PASS**, run `35555718144`.
+
+Boundary:
+City Grotesque remains the current landmark default; `tools/img2threejs/` remains landmark owner. This lab is a candidate authoring grammar only.
+
+Intended Stage:
+`https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/toy-clay-form-lab/`.
+
+Public status:
+**BLOCKED / NOT PUBLIC_VERIFIED** because Cloudflare Pages reported a build failure for PR #158 at the tested implementation head.
+
+Current next gate:
+**TOY-CLAY-PUB-1 · publication-only recovery, without changing the proven geometry.**
