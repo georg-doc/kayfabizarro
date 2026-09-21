@@ -389,4 +389,4 @@ Current source-corrected entry:
 
 Georg rejected ToolBox Bench v1/v1.1 as a reduced/failing replacement for the working `KFB Card Zone Lab v2`. The v2 Lab + Zonen Registry is now the product donor; Bench extraction modules are candidate evidence only. The primary implementation path is small GitHub-backed Web Chat slices. Claude Design is limited to a later source-exact visual composition gate; Work/Astra handles later cross-owner integration.
 
-Strictly load `skills/session-entry-use-what-works_v1.md` before this lane. First gate: **H0 working-v2 parity/source lock**, not a new generator.
+Strictly load `skills/session-entry-use-what-works_v1.md` before this lane. H0 is now active on draft PR **#161** (`chatgpt-web/card-zone-v3-h0-parity-2026-09-21`): the real v2 fluid shader donor is source-locked **10/10 PASS**, while browser parity/screenshots remain `NOT_RUN`. First gate remains **H0 working-v2 browser parity/source lock**; H1 and any new generator stay blocked.

@@ -50,3 +50,37 @@ These are **NOT_TESTED**, not implied by the planning PASS.
 
 H0 only:
 browser-prove the working Card Zone v2 parity/source baseline before any v3 geometry or generator work.
+
+
+---
+
+## H0 checkpoint · 2026-09-22
+
+Active draft PR: **#161**  
+Branch: `chatgpt-web/card-zone-v3-h0-parity-2026-09-21`
+
+Added `FEATURE_PARITY_V2.json` and the source-locked fluid handoff:
+`tools/KFB-ToolBox/_handover/CARD_ZONE_V2_FLUID_SHADER_SOURCE_2026-09-22/`.
+
+Fluid source extraction checks: **10/10 PASS**:
+- donor blob pin;
+- source palette 5/5;
+- Vertex GLSL verbatim 13 source lines;
+- Fragment GLSL verbatim 31 source lines;
+- two texture refs;
+- texture color-space/wrapping/anisotropy contract;
+- ShaderMaterial flags;
+- elapsed-seconds time update;
+- source foam state unchanged;
+- no Bench-only fluid-kind extension.
+
+H0 feature matrix:
+- 11 required feature rows: **SOURCE_VERIFIED**
+- browser parity: **NOT_RUN**
+- required screenshots: **0/4**
+- browser console/runtime proof: **NOT_RUN**
+- H1 allowed: **NO**
+
+`game-dev` is unavailable in this runtime. This checkpoint does not require sealed Game Development Studio evidence, so repository-native checks remain authoritative.
+
+No Stage or Live publication was attempted.
