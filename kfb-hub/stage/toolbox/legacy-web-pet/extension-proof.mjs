@@ -1,0 +1,35 @@
+import {chromium} from 'playwright';
+import fs from 'node:fs/promises';
+import path from 'node:path';
+const BASE=process.env.KFB_PET_BASE||'http://127.0.0.1:4173';
+const EXT=path.resolve(process.env.KFB_PET_EXTENSION||'extensions/kfb-legacy-web-pet/dist');
+const OUT=process.env.KFB_PET_EVIDENCE||'legacy-web-pet-evidence/extension';
+await fs.mkdir(OUT,{recursive:true});
+const checks=[],errors=[],failed=[];const check=(n,c,e='')=>{checks.push({name:n,pass:!!c,extra:e});if(!c)throw Error('FAIL '+n+' '+e);console.log('PASS',n,e)};
+const profile=path.resolve('.tmp-kfb-pet-profile');
+const context=await chromium.launchPersistentContext(profile,{headless:false,viewport:{width:1360,height:820},args:[`--disable-extensions-except=${EXT}`,`--load-extension=${EXT}`,'--use-angle=swiftshader','--enable-unsafe-swiftshader']});
+try{
+ const pages=context.pages();const page=pages[0]||await context.newPage();
+ page.on('pageerror',e=>errors.push(String(e)));page.on('console',m=>{if(m.type()==='error')errors.push(m.text())});
+ page.on('response',r=>{if(r.status()>=400)failed.push({status:r.status(),url:r.url()})});page.on('requestfailed',r=>failed.push({status:0,url:r.url(),error:r.failure()?.errorText}));
+ const res=await page.goto(BASE+'/kfb-hub/stage/toolbox/legacy-web-pet/test-page.html',{waitUntil:'domcontentloaded',timeout:60000});
+ check('plain page HTTP',res?.ok(),String(res?.status()));
+ check('no Hub mount script',await page.locator('script[src*="hub-mount"]').count()===0);
+ await page.waitForFunction(()=>document.documentElement.dataset.kfbLegacyWebPet==='ready',null,{timeout:120000});
+ check('extension injected pet',true);
+ check('extension default Rogue',await page.evaluate(()=>document.documentElement.dataset.kfbLegacyWebPetCharacter)==='rogue');
+ await page.locator('#ordinary').click();check('ordinary button survives overlay',await page.evaluate(()=>document.documentElement.dataset.ordinaryClicked)==='1');
+ const host=page.locator('#kfb-legacy-web-pet-host'),pet=host.locator('button.pet');
+ await pet.click();
+ await page.waitForFunction(()=>!!document.documentElement.dataset.kfbLegacyWebPetLastClip,null,{timeout:30000});
+ check('extension click action',true,await page.evaluate(()=>document.documentElement.dataset.kfbLegacyWebPetLastClip));
+ await pet.click({button:'right'});const select=host.locator('select');check('extension settings visible',await select.isVisible());
+ await select.selectOption('knight');
+ await page.waitForFunction(()=>document.documentElement.dataset.kfbLegacyWebPetCharacter==='knight',null,{timeout:120000});
+ check('extension character switch Knight',true);
+ await page.screenshot({path:OUT+'/extension-knight.png',fullPage:true});
+ check('no failed resources',failed.length===0,JSON.stringify(failed));
+ check('no page errors',errors.length===0,JSON.stringify(errors));
+ await fs.writeFile(OUT+'/extension.json',JSON.stringify({checks,failed,errors},null,2));
+ console.log('LEGACY_WEB_PET_EXTENSION_RESULT',checks.filter(x=>x.pass).length+'/'+checks.length,'PASS');
+}finally{await context.close()}
