@@ -1,0 +1,598 @@
+{
+  "sourceFile": "MedKayfab_Thinking_Traps - ADD web.pdf",
+  "deckTitle": "Thinking Traps: The Mental Muddle",
+  "deckType": "Medical Cognitive Bias",
+  "bundleSuggestion": "TBD",
+  "pageCount": 15,
+  "analysisVersion": 1.0,
+  "generatedAt": "2026-06-20T15:30:00",
+  "savedAt": "2026-06-20T15:45:00",
+  "extractionTool": "cowork_task_v3",
+  "RAF": false,
+  "gradingMode": "educational",
+  "deckFunction": [
+    "education",
+    "training"
+  ],
+  "seriesId": "medkayfab",
+  "cards": [
+    {
+      "cardNumber": 1,
+      "cardName": "Anchor-the-Heavy",
+      "grade": 1,
+      "power": "The First-Impression-Hook. Grabs the first piece of data and chains the Differential-Engine to it, ignoring everything else.",
+      "lore": "Tendency to rely too heavily on the first piece of information offered. Once dropped, the Mental-Ship stops moving.",
+      "gradeReason": "Name alone loads the behavior: anchor hard, miss everything after.",
+      "artworkPrompt": "Style: Gritty wrestling cartoon. Subject: Bear wrestler chained to anchor. Mood: Stubborn inertia."
+    },
+    {
+      "cardNumber": 2,
+      "cardName": "Premature-the-Closure",
+      "grade": 1,
+      "power": "The Final-Bell-Ringer. Rings the Victory-bell upon finding one possible answer, stopping the search for the Lethal-Reggie still in the ring.",
+      "lore": "Search-Satisfaction effect. The brain takes uncertainty and closes the case to save energy. The Good-Enough-Trap.",
+      "gradeReason": "Ring the bell too soon — immediate embodiment, zero explanation needed.",
+      "artworkPrompt": "Style: Medical wrestling arena. Subject: Referee ringing bell while monster hides behind ropes. Mood: Premature triumph."
+    },
+    {
+      "cardNumber": 3,
+      "cardName": "Framing-the-Phantom",
+      "grade": 2,
+      "power": "The Lens-Warp. Changes how Arena-Stats look. If triage drug-seekers vs. someone Behavioral-Moves instead of Sepsis-Signals.",
+      "lore": "Information is never neutral. The Frame dictates the Power-Move choices.",
+      "gradeReason": "Clear role but 'framing' needs context to click at a med-school table.",
+      "artworkPrompt": "Style: Surreal medical cartoon. Subject: Wrestler seen through distorting lens frame. Mood: Perception warped."
+    },
+    {
+      "cardNumber": 4,
+      "cardName": "Diagnostic-Momentum-the-Train",
+      "grade": 1,
+      "power": "The Unstoppable-Slide. Once a diagnosis is in the Chart-Scroll, Momentum keeps it going. No one wants to say the train is on the wrong track.",
+      "lore": "Labels stick. If the previous doctor wrote Pneumonia, everyone treats Pneumonia without re-evaluating the Heart-Fail.",
+      "gradeReason": "Train on wrong track = instant play cue. No one stops it.",
+      "artworkPrompt": "Style: Vintage medical cartoon. Subject: Runaway train labeled Pneumonia ignoring red flags. Mood: Unstoppable momentum."
+    },
+    {
+      "cardNumber": 5,
+      "cardName": "Availab-the-Recent",
+      "grade": 2,
+      "power": "The Flashback-Strike. Because you saw a Rare-Zebra yesterday, Availab makes you see that same Zebra in every Common-Horse today.",
+      "lore": "Things easy to remember are judged as being more likely than they actually are.",
+      "gradeReason": "Vivid concept but 'availability bias' needs prior knowledge to click.",
+      "artworkPrompt": "Style: Wrestling cartoon. Subject: Zebra ghost haunting horse stable. Mood: Recency obsession."
+    },
+    {
+      "cardNumber": 6,
+      "cardName": "Base-Rate-the-Neglecter",
+      "grade": 2,
+      "power": "The Probability-Blindness. Ignores Preval-the-Prior and focuses only on the High-Tech-Test, even if known for False-Alarms.",
+      "lore": "Failing to consider how common a disease is in the population. Statistical-Sabotage.",
+      "gradeReason": "Statistical concept — works at a med table but requires Bayesian groundwork.",
+      "artworkPrompt": "Style: Medical stats cartoon. Subject: Raccoon ignoring common odds chart, fixating on rare readout. Mood: Statistical blindness."
+    },
+    {
+      "cardNumber": 7,
+      "cardName": "Represent-the-Stereotype",
+      "grade": 2,
+      "power": "The Identity-Lock. If the wrestler doesn't Look like a heart-attack patient, Represent tells you it's impossible, ignoring the Troponin-Scream.",
+      "lore": "Judging a situation based on similarity to a Mental-Prototype rather than actual probability.",
+      "gradeReason": "Clear villain role, but representativeness heuristic needs a frame to land.",
+      "artworkPrompt": "Style: Medical wrestling cartoon. Subject: Bouncer blocking wrestler who does not look sick. Mood: Prototype prejudice."
+    },
+    {
+      "cardNumber": 8,
+      "cardName": "Recall-the-Vivid",
+      "grade": 2,
+      "power": "The Trauma-Filter. A single Lethal-Miss from the past becomes a permanent Mental-Scar, causing over-ordering of High-Tech-Scans for minor scuffs.",
+      "lore": "Emotional memory hijacks System-2-the-Thinker, leading to Defensive-Wrestling.",
+      "gradeReason": "Emotionally resonant but the play behavior (over-order) needs context to become performative.",
+      "artworkPrompt": "Style: Haunted medical cartoon. Subject: Doctor shadowed by ghost of past missed case. Mood: Trauma-driven over-caution."
+    },
+    {
+      "cardNumber": 9,
+      "cardName": "Confirma-the-Filter",
+      "grade": 1,
+      "power": "The Data-Sieve. Only lets Stats through that prove his current theory is right. He Crushes any Red-Flag-Reggie that says he is wrong.",
+      "lore": "The mind likes to be right. Actively avoids Cognitive-Dissonance by ignoring contradictory evidence.",
+      "gradeReason": "Sieve that blocks contradictory evidence — instantly embodiable villain move.",
+      "artworkPrompt": "Style: Wrestling cartoon. Subject: Rhino bouncer crushing papers labeled wrong diagnosis. Mood: Willful blindness."
+    },
+    {
+      "cardNumber": 10,
+      "cardName": "Cherry-the-Picker",
+      "grade": 1,
+      "power": "The Buffet-Move. Walks through the Lab-Labyrinth picking only the one abnormal result that fits the story, ignoring ten Normal-Baselines that disprove it.",
+      "lore": "Focus on a small subset of data to support a Pre-conceived-Match-Outcome.",
+      "gradeReason": "Cherry-picking at the lab buffet — you know exactly what to perform.",
+      "artworkPrompt": "Style: Cartoon cafeteria. Subject: Raccoon selectively picking single cherry from lab results buffet. Mood: Selective gleaning."
+    },
+    {
+      "cardNumber": 11,
+      "cardName": "Oversimpli-the-Smooth",
+      "grade": 2,
+      "power": "The Narrative-Flattening. Takes a complex Multi-System-Riot and forces it into a single Simple-Story, missing the Hidden-Secondary-Attack.",
+      "lore": "Missing Occam-the-Razor. Sometimes a wrestler really does have three different enemies at once.",
+      "gradeReason": "Strong concept, but the 'smooth' framing takes a beat to register as playable.",
+      "artworkPrompt": "Style: Medical wrestling cartoon. Subject: Steamroller flattening complex multi-villain arena into one flat story. Mood: Forced simplification."
+    },
+    {
+      "cardNumber": 12,
+      "cardName": "Backfire-the-Stubborn",
+      "grade": 1,
+      "power": "The Double-Down. When a Lab-Decoder proves the diagnosis wrong, Backfire becomes more convinced he is right, claiming the lab is Glitched.",
+      "lore": "Challenging a core belief activates maximum Ego-Shields, making the false belief stronger.",
+      "gradeReason": "Double-down on proven-wrong diagnosis — textbook villain play, no setup needed.",
+      "artworkPrompt": "Style: Wrestling cartoon. Subject: Bull wrestler doubling down after knockout, claiming referee cheated. Mood: Ego-fueled defiance."
+    },
+    {
+      "cardNumber": 13,
+      "cardName": "ZEBRA-the-Distraction",
+      "grade": 1,
+      "power": "The Exotic-Hunt. Spending all Value-Tokens hunting a 1-in-a-million Genetic-Glitch while the Common-Infection wins the match.",
+      "lore": "When you hear hoofbeats, think horses, not zebras. The allure of the Rare-Discovery trap.",
+      "gradeReason": "Chase the zebra while the horse wins — maximum clarity, immediately performative.",
+      "artworkPrompt": "Style: Safari medical cartoon. Subject: Doctor hunting zebra while ordinary horse charges behind. Mood: Exotic-over-common obsession."
+    },
+    {
+      "cardNumber": 14,
+      "cardName": "Sunk-Cost-the-Stayer",
+      "grade": 1,
+      "power": "The Investment-Trap. We've spent 3 hours and 5 scans on this Liver-Path, we can't stop now—even though the Lung-Path is the real fight.",
+      "lore": "Inability to abandon a failing strategy because of the Tokens already spent.",
+      "gradeReason": "Can't stop now — the sunk cost play is immediate and universally felt.",
+      "artworkPrompt": "Style: Medical wrestling cartoon. Subject: Bulldog refusing to leave wrong path despite gold coins spent. Mood: Investment trap."
+    },
+    {
+      "cardNumber": 15,
+      "cardName": "Blind-Spot-the-Expert",
+      "grade": 1,
+      "power": "The Knowledge-Shield. Pattern-Match confidence is so high they don't check Red-Flag-Reggies. I've seen this 100 times; I don't need the stats.",
+      "lore": "Experts are highly prone to Anchoring by trusting their System-1 far too much.",
+      "gradeReason": "I've seen this 100 times — the overconfident expert is instantly embodiable.",
+      "artworkPrompt": "Style: Medical wrestling. Subject: Crowned expert ignoring flashing alarms behind them. Mood: Overconfident blindness."
+    },
+    {
+      "cardNumber": 16,
+      "cardName": "Omission-the-Passive",
+      "grade": 2,
+      "power": "The Paralysis-Move. Fear of the Side-Effect-Saboteur drives No-Action, allowing the Primary-Antagonist to win.",
+      "lore": "Judging an Action that causes harm as worse than an Inaction that allows harm, even with the same outcome.",
+      "gradeReason": "Paralysis-by-fear is clear; the omission bias framing needs brief philosophical context.",
+      "artworkPrompt": "Style: Medical cartoon. Subject: Doctor frozen while monster attacks from behind. Mood: Inaction fear."
+    },
+    {
+      "cardNumber": 17,
+      "cardName": "Gambler-the-Fallacy",
+      "grade": 2,
+      "power": "The Sequence-Lie. The last three wrestlers had Muscle-Scuffs, so the next one must have something else. Assuming independent events are linked.",
+      "lore": "Misunderstanding probability. Every Match is a fresh Coin-Flip for the Diagnostic-Engine.",
+      "gradeReason": "Coin-flip framing is clear; the statistical independence concept needs a beat.",
+      "artworkPrompt": "Style: Casino wrestling cartoon. Subject: Chimp at roulette believing patterns in independent spins. Mood: False sequence belief."
+    },
+    {
+      "cardNumber": 18,
+      "cardName": "Hindsight-the-Historian",
+      "grade": 2,
+      "power": "The Review-Warp. After the Post-Mortem-Verdict, claims the answer was Obvious, making the original team look like Rookies.",
+      "lore": "Seeing the past as more predictable than it was. Prevents learning from real Uncertainty-Gaps.",
+      "gradeReason": "I-knew-it-all-along is vivid; the learning-prevention lore needs unpacking.",
+      "artworkPrompt": "Style: Historical wrestling cartoon. Subject: Goat in judge robes declaring obvious after scoreboard shown. Mood: Smug retrospection."
+    },
+    {
+      "cardNumber": 19,
+      "cardName": "Outcome-the-Judge",
+      "grade": 3,
+      "power": "The Results-Mask. If a Bad-Decision results in a Good-Outcome, it's judged a Great-Move, reinforcing Lethal-Habits.",
+      "lore": "A good outcome doesn't prove the process was sound. Sometimes you just get Lucky-Rolls.",
+      "gradeReason": "Explains a logical fallacy rather than inviting performance; works better as lecture than card.",
+      "artworkPrompt": "Style: Wrestling cartoon. Subject: Trophy handed to dog after lucky fall masked bad strategy. Mood: Outcome illusion."
+    },
+    {
+      "cardNumber": 20,
+      "cardName": "Triage-the-Tunnel",
+      "grade": 1,
+      "power": "The Pathway-Lock. Once Triage applies the Psych-Label, the Emergency-Team stops looking for Organic-Enemies, ignoring crashing Vitals-Stats.",
+      "lore": "Early categorization creates a Mental-Ghetto for the patient where new data is ignored.",
+      "gradeReason": "Label locks the case shut — immediately performative triage villain.",
+      "artworkPrompt": "Style: ER wrestling cartoon. Subject: Triage nurse slamming door labeled PSYCH on crashing patient. Mood: Category trap."
+    },
+    {
+      "cardNumber": 21,
+      "cardName": "Pause-the-Circuit-Breaker",
+      "grade": 1,
+      "power": "The Thinking-Reset. Forces the team to stop the System-1-Flash and ask: What else could this be?",
+      "lore": "Deliberate System-2 activation. Breaks the Momentum-Train before it hits the cliff.",
+      "gradeReason": "PAUSE. Ask: what else? The most immediately playable counter-move in the deck.",
+      "artworkPrompt": "Style: Action wrestling cartoon. Subject: Giant pause button slamming down on speeding train. Mood: Circuit-breaking relief."
+    },
+    {
+      "cardNumber": 22,
+      "cardName": "Checklist-the-Sentinel",
+      "grade": 1,
+      "power": "The Memory-Anchor. Doesn't allow the Brain-Bunker to skip steps. Every Red-Flag-Reggie must be checked.",
+      "lore": "Externalizing memory to prevent Focus-Tunneling. The Mechanical-Conscience of the team.",
+      "gradeReason": "Follow every box on the checklist — frictionless G1 play behavior.",
+      "artworkPrompt": "Style: Robot medical cartoon. Subject: Sentinel robot blocking skip on checklist clipboard. Mood: Systematic vigilance."
+    },
+    {
+      "cardNumber": 23,
+      "cardName": "Devil-the-Advocate",
+      "grade": 1,
+      "power": "The Theory-Smasher. Sole job is to Disprove the current diagnosis. Hunts for the One-Fact that breaks-Lock.",
+      "lore": "Falsification logic. If the theory survives the Advocate, it's a Strong-Hypothesis.",
+      "gradeReason": "Sole job: disprove. The most role-clear card in the hero half.",
+      "artworkPrompt": "Style: Courtroom wrestling cartoon. Subject: Devil advocate wrestler hunting single fact to crack the case. Mood: Adversarial clarity."
+    },
+    {
+      "cardNumber": 24,
+      "cardName": "Group-the-Think",
+      "grade": 2,
+      "power": "The Consensus-Crush. No one wants to disagree with the Lead-Wrestler, so everyone defaults to Attending-Logic together.",
+      "lore": "Social pressure overrides individual reasoning. The Collective-Blindness of the team.",
+      "gradeReason": "Clear villain but overlaps with Echo-the-Chamber; distinction needs context.",
+      "artworkPrompt": "Style: Medical wrestling cartoon. Subject: Team of penguins all nodding at wrong diagnosis on whiteboard. Mood: Collective blindness."
+    },
+    {
+      "cardNumber": 25,
+      "cardName": "Gestalt-the-Glance",
+      "grade": 2,
+      "power": "The 2-Second-Verdict. One look at the Wrestler's-Posture and Arena-Smell, and Gestalt knows the enemy. The Flash of the Thinking-Engine.",
+      "lore": "Highly efficient for Typical-Matches. Caveat: Becomes a Thinking-Trap if the Atypical-Trickster is in the ring.",
+      "gradeReason": "Expert pattern recognition is vivid; the dual-edged caveat makes embodiment conditional.",
+      "artworkPrompt": "Style: Wrestling expert cartoon. Subject: Cheetah clinician scanning arena in 2 seconds, labeling wrestler instantly. Mood: Expert speed."
+    },
+    {
+      "cardNumber": 26,
+      "cardName": "Rule-the-Thumber",
+      "grade": 2,
+      "power": "The Calculation-Shield. Uses Validated-Math to decide the Odds-of-the-End, protecting from Availability-Bias.",
+      "lore": "Externalized System-2. Pre-calculated-Logic for high-speed arenas.",
+      "gradeReason": "Clinical prediction rules are clear to med students; general audiences need the Wells context.",
+      "artworkPrompt": "Style: Medical math cartoon. Subject: Gorilla shielding team with giant validated calculator. Mood: Algorithmic protection."
+    },
+    {
+      "cardNumber": 27,
+      "cardName": "Red-Flag-the-Ranger",
+      "grade": 1,
+      "power": "The Safety-Search. Scans the Timeline specifically for Alarm-Signals. If found, halts the Simple-Story for High-Tech-Backup.",
+      "lore": "Prioritizing High-Morbidity-Exclusion over High-Probability-Inclusion.",
+      "gradeReason": "Scan specifically for red flags and halt — immediate safety-first behavior.",
+      "artworkPrompt": "Style: Ranger medical cartoon. Subject: Alert ranger scanning horizon for red warning signals, hand raised to halt team. Mood: Vigilant safety."
+    },
+    {
+      "cardNumber": 28,
+      "cardName": "Occam-the-Slicer",
+      "grade": 2,
+      "power": "The Unified-Field. Cuts through three Minor-Infections to show they are actually one Lupus-Lucy autoimmune war.",
+      "lore": "Entities should not be multiplied without necessity. Caveat: Don't let Slicer Smooth away a Dual-Diagnosis-war.",
+      "gradeReason": "Parsimony is clear; the caveat (don't oversimplify) complicates the play cue.",
+      "artworkPrompt": "Style: Medieval medical cartoon. Subject: Scalpel slicing three small enemies into one unified disease. Mood: Elegant simplification."
+    },
+    {
+      "cardNumber": 29,
+      "cardName": "Ambigu-the-Anxiety",
+      "grade": 2,
+      "power": "The Resource-Drain. Cannot stand not knowing 100%, so they order every Lab-Decoder, even if it won't change the match.",
+      "lore": "The Need-for-Certainty drives over-testing and Inciden-the-Oma hunts.",
+      "gradeReason": "Over-ordering from anxiety is clear; the incidentaloma consequence needs a moment.",
+      "artworkPrompt": "Style: Anxious cartoon. Subject: Squirrel ordering every lab test on menu out of uncertainty panic. Mood: Certainty anxiety."
+    },
+    {
+      "cardNumber": 30,
+      "cardName": "Wait-the-Watcher",
+      "grade": 1,
+      "power": "The Slow-Reveal. Reminds the team: Wait 2 hours, and the Enemy-Name-Tag will become visible.",
+      "lore": "Managing the Acute-vs-Chronic timeline. Sometimes the best Diagnostic-Move is Observation-and-Re-evaluation.",
+      "gradeReason": "Wait 2 hours and re-evaluate — counter-intuitive G1: doing nothing is the move.",
+      "artworkPrompt": "Style: Patient sloth cartoon. Subject: Sloth clinician watching hourglass while enemy slowly reveals itself. Mood: Strategic patience."
+    },
+    {
+      "cardNumber": 31,
+      "cardName": "Gestalt-the-Doubt",
+      "grade": 1,
+      "power": "The Gut-Churn. Even if Stats look Normal-Baseline, Doubt whispers: The wrestler doesn't look right. The Vigilance-Trigger.",
+      "lore": "Subconscious pattern recognition of Impending-Crash signals.",
+      "gradeReason": "Something's wrong even if stats say no — gut churn as play trigger is G1.",
+      "artworkPrompt": "Style: Intuition wrestling cartoon. Subject: Deer in clinical coat, gut glowing alarm red despite normal monitors. Mood: Expert unease."
+    },
+    {
+      "cardNumber": 32,
+      "cardName": "Probability-the-Cloud",
+      "grade": 2,
+      "power": "The Shifting-Mist. Shows that every diagnosis is just a Percentage-of-Certainty. New labs just shift the Mist.",
+      "lore": "Defeating Binary-Bias (Yes/No). Thinking in Likelihoods instead of Verdicts.",
+      "gradeReason": "Bayesian thinking is vivid as 'cloud'; the probabilistic framing needs statistical comfort.",
+      "artworkPrompt": "Style: Foggy medical cartoon. Subject: Clinician moving percentage cloud with each new lab result. Mood: Probabilistic reasoning."
+    },
+    {
+      "cardNumber": 33,
+      "cardName": "Hand-the-Off-Hole",
+      "grade": 1,
+      "power": "The Data-Gap. During the Tag-Team-Switch, the Vital-Stats and Red-Flags fall to the floor, leaving the new wrestler blind.",
+      "lore": "Information Decay during transitions. The Story-of-the-Match is lost in translation.",
+      "gradeReason": "Tag-team handoff where critical data falls to floor — instantly vivid and playable.",
+      "artworkPrompt": "Style: Tag-team wrestling cartoon. Subject: Papers labeled vitals falling through gap during wrestler handoff. Mood: Critical loss."
+    },
+    {
+      "cardNumber": 34,
+      "cardName": "Hierarchy-the-Halt",
+      "grade": 1,
+      "power": "The Silent-Witness. The Junior sees a monster, but because the Attending-Boss says Pneumonia, he keeps his mouth shut.",
+      "lore": "Social-Power overrides Logical-Truth. The Alpha-Aura prevents Course-Correction.",
+      "gradeReason": "Junior sees monster, stays silent — immediate embodiment of authority paralysis.",
+      "artworkPrompt": "Style: Hospital hierarchy cartoon. Subject: Junior clinician covering mouth while senior ignores monster behind him. Mood: Authority silencing."
+    },
+    {
+      "cardNumber": 35,
+      "cardName": "Echo-the-Chamber",
+      "grade": 2,
+      "power": "The Consensus-Trap. The Cardio-Clan thinks it's a Heart-Halt, so they stop looking for Lung-Drown, despite clear x-rays.",
+      "lore": "Reinforcement of shared biases within a group. The Team-Unity becomes a Thinking-Cage.",
+      "gradeReason": "Distinct from Group-the-Think; team reinforcing each other's error needs context to differentiate.",
+      "artworkPrompt": "Style: Medical clan cartoon. Subject: Cardiology team in identical uniforms all pointing at same wrong x-ray. Mood: Tribal groupthink."
+    },
+    {
+      "cardNumber": 36,
+      "cardName": "Patient-the-Voice-Ignore",
+      "grade": 2,
+      "power": "The Narrative-Exclusion. The wrestler says This pain is different, but the team ignores him for their Better-Story based on Old-Stats.",
+      "lore": "Failing to incorporate the Subjective-Experience into the Objective-Differential.",
+      "gradeReason": "Powerful concept; 'this pain is different' is vivid but the dismissal bias label needs linking.",
+      "artworkPrompt": "Style: ER wrestling cartoon. Subject: Patient shouting unheard while medical team consults chart. Mood: Dismissal and erasure."
+    },
+    {
+      "cardNumber": 37,
+      "cardName": "Flash-the-Intuition",
+      "grade": 1,
+      "power": "The Rapid-Reaction. Perfect for Sepsis-Storms where there is no time to think. The Instinct-of-the-Arena.",
+      "lore": "Pattern-matching based on Hard-Wired-Experience.",
+      "gradeReason": "Go fast, trust gut, no time — the most immediate cognitive mode play in the deck.",
+      "artworkPrompt": "Style: Lightning speed cartoon. Subject: Cheetah clinician acting in 0.2 seconds during sepsis storm. Mood: Instinctive speed."
+    },
+    {
+      "cardNumber": 38,
+      "cardName": "Thinker-the-Analytic",
+      "grade": 1,
+      "power": "The Deep-Dive. Slows down time to analyze every Stat-and-Lore detail when facing Mystery-Mayhem.",
+      "lore": "Rule-based reasoning. The Correction-Tape for Flash's mistakes.",
+      "gradeReason": "Slow down and analyze every stat — the opposite of Flash, equally clear.",
+      "artworkPrompt": "Style: Scholarly wrestling cartoon. Subject: Tortoise clinician in library chair reading every chart slowly. Mood: Deliberate analysis."
+    },
+    {
+      "cardNumber": 39,
+      "cardName": "Toggl-the-Switch",
+      "grade": 1,
+      "power": "The Strategic-Shift. Knowing when to use Flash (action) and when to call in the Thinker (analysis).",
+      "lore": "The Master-Heuristic. Recognizing the Complexity-Tier and choosing the right Thinking-Tool.",
+      "gradeReason": "When to be cheetah vs tortoise — the meta-move that governs the whole deck.",
+      "artworkPrompt": "Style: Chameleon cartoon. Subject: Chameleon clinician switching from cheetah mode to tortoise mode mid-arena. Mood: Adaptive mastery."
+    },
+    {
+      "cardNumber": 40,
+      "cardName": "Fatig-the-Decision-Drain",
+      "grade": 1,
+      "power": "The Mental-Exhaustion. As the Mental-Energy-Bar drains, the team drops Thinker and relies 100% on Flash, triggering Anchor-Traps.",
+      "lore": "Cognitive load exhaustion. The Prefrontal-Fortress runs out of Glucose-Fuel.",
+      "gradeReason": "After 12 hours you stop thinking — fatigue as villain is immediately felt by any clinician.",
+      "artworkPrompt": "Style: Exhausted wrestling cartoon. Subject: Depleted horse clinician defaulting to first guess after empty energy bar. Mood: Post-call dread."
+    },
+    {
+      "cardNumber": 41,
+      "cardName": "Disconfirm-the-Hunter",
+      "grade": 1,
+      "power": "The Hypothesis-Killer. Instead of trying to prove it's Pneumonia, the Hunter tries to prove it's NOT Heart Failure.",
+      "lore": "Science-logic. A theory is only strong if it survives an Attack-on-its-Logic.",
+      "gradeReason": "Try to disprove, not prove — scientific inversion as immediate play instruction.",
+      "artworkPrompt": "Style: Hunting cartoon. Subject: Tracker hunting evidence against current diagnosis with magnifying glass. Mood: Adversarial verification."
+    },
+    {
+      "cardNumber": 42,
+      "cardName": "Reflection-the-Mirror",
+      "grade": 1,
+      "power": "The Bias-Detector. Asks: Why do I think this is the answer? Am I anchoring? Am I tired?",
+      "lore": "Internalized Overseer. Creates a Gap between the Impulse and the Action.",
+      "gradeReason": "Ask yourself three questions — the most portable self-debiasing tool in the deck.",
+      "artworkPrompt": "Style: Mirror wrestling cartoon. Subject: Clinician staring into mirror-self, seeing bias chains reflected. Mood: Self-audit clarity."
+    },
+    {
+      "cardNumber": 43,
+      "cardName": "Outsider-the-Perspective",
+      "grade": 2,
+      "power": "The Blind-Spot-Viewer. Enters the ring and sees the Red-Flag-Reggie the team has been Anchored away from for 4 hours.",
+      "lore": "Breaking Groupthink and Context-Lock with a Neutral-Arena-View.",
+      "gradeReason": "Fresh eyes sees what team missed — clear but 'consultant logic' label needs bridging.",
+      "artworkPrompt": "Style: Consulting wrestling cartoon. Subject: Outside consultant walking in and immediately spotting obvious red flag. Mood: Fresh perspective."
+    },
+    {
+      "cardNumber": 44,
+      "cardName": "Probabil-the-Calibrator",
+      "grade": 2,
+      "power": "The Logic-Sharpening. Instead of I think it's cancer, says I am 70% sure. Leaves Mental-Space for the 30% that it's Infection-Ion.",
+      "lore": "Prevents Binary-Lockdown and keeps the Differential-Engine open.",
+      "gradeReason": "Percentage-speak is clear; calibration as a trainable skill needs prior Bayesian context.",
+      "artworkPrompt": "Style: Precision cartoon. Subject: Calibrator wrestler replacing binary yes/no with 70% confidence dial. Mood: Probabilistic precision."
+    },
+    {
+      "cardNumber": 45,
+      "cardName": "The Second-Diagnosis Secret",
+      "grade": 1,
+      "power": "The Dual-Strike. You found the UTI-Uprising, but missed the Heart-Halt because you stopped looking.",
+      "lore": "Slaying Prematur-the-Closure. Always ask: Is there a second match happening at the same time?",
+      "gradeReason": "Is there a second match? The simplest and most actionable question in clinical medicine.",
+      "artworkPrompt": "Style: Double-match wrestling cartoon. Subject: Clinician discovering two simultaneous fights in different arena corners. Mood: Double revelation."
+    },
+    {
+      "cardNumber": 46,
+      "cardName": "The Atypical-Trickster",
+      "grade": 2,
+      "power": "The Camouflage. Heart-Halt presents with Shoulder-Ache only. Pneumonia-Punk presents with only Confusion.",
+      "lore": "Biology doesn't read the Textbook-Scrolls. Exploits Pattern-Recognition-Bias.",
+      "gradeReason": "Atypical presentations are real; knowing which ones to watch for requires case experience.",
+      "artworkPrompt": "Style: Disguise cartoon. Subject: Heart failure monster dressed as shoulder pain, fooling textbook-reading clinician. Mood: Masked deception."
+    },
+    {
+      "cardNumber": 47,
+      "cardName": "The Negative-Data Nugget",
+      "grade": 2,
+      "power": "The Silence-Signal. The lack of a fever is the key to proving it's NOT Infection-Ian.",
+      "lore": "Learning to read the Absence-of-Stats. Sherlock Holmes logic: The dog that didn't bark.",
+      "gradeReason": "Dog-that-didn't-bark is iconic; negative data as diagnostic signal needs clinical habit.",
+      "artworkPrompt": "Style: Sherlock medical cartoon. Subject: Detective clinician spotlighting absent symptom in otherwise-noisy chart. Mood: Silence as signal."
+    },
+    {
+      "cardNumber": 48,
+      "cardName": "The Vitals-Anchor",
+      "grade": 1,
+      "power": "The Foundation-Guard. While the team argues over a Rare-Zebra, points to the Heart-Rate-140 and says: The wrestler is crashing NOW.",
+      "lore": "Prevents Intellectual-Distraction. Vitals are the ground truth of the arena.",
+      "gradeReason": "HR 140. Crashing NOW. The most urgent play cue in the deck.",
+      "artworkPrompt": "Style: Emergency cartoon. Subject: Robot guardian slamming hand on vitals monitor at 140 BPM while team debates. Mood: Ground-truth urgency."
+    },
+    {
+      "cardNumber": 49,
+      "cardName": "The Mortality-and-Morbidity Meeting",
+      "grade": 3,
+      "power": "The Lesson-Extractor. Gathering after the Final-Bell at the Mirror-of-Mistakes to identify which Thinking-Trap killed the wrestler.",
+      "lore": "Cultural De-Biasing. Turning Trauma into Tactics for the next match.",
+      "gradeReason": "Describes a systemic ritual rather than an in-moment play behavior; works as lore, not move.",
+      "artworkPrompt": "Style: Post-match cartoon. Subject: Medical team gathered around whiteboard dissecting lost case with magnifying glass. Mood: Reflective learning."
+    },
+    {
+      "cardNumber": 50,
+      "cardName": "The Safety-Net Discharge",
+      "grade": 2,
+      "power": "The Exit-Strategy. If your Chest-Arena starts to Drown, come back instantly.",
+      "lore": "Protecting against Prematur-the-Closure by making the patient part of the Monitoring-Squad.",
+      "gradeReason": "Clear debiasing tool; return precautions as uncertainty communication needs clinical framing.",
+      "artworkPrompt": "Style: Safety net cartoon. Subject: Clinician handing patient safety-net rope at discharge door. Mood: Cautious safety."
+    },
+    {
+      "cardNumber": 51,
+      "cardName": "The Second-Opinion Culture",
+      "grade": 3,
+      "power": "The Voice-Enabler. A culture where the Junior-Rookie can stop the Lead-Wrestler to correct the Nomogram.",
+      "lore": "Systemic De-Biasing. Reducing the power of Hierarchy-the-Halt.",
+      "gradeReason": "Describes an organizational culture rather than a player's individual move; institutional not performative.",
+      "artworkPrompt": "Style: Flat-hierarchy cartoon. Subject: Junior stopping senior match with red card, cheered by team. Mood: Psychological safety."
+    },
+    {
+      "cardNumber": 52,
+      "cardName": "The Diagnostic-Journal",
+      "grade": 3,
+      "power": "The Memory-Sharpening. Recording every Diagnostic-Guess and comparing it to the Final-Verdict to find the Glitch.",
+      "lore": "Calibration. Reducing Overconfidence-the-Ego through actual Stats-at-outcome.",
+      "gradeReason": "A habit to build over years — meaningful but describes practice, not a table-moment move.",
+      "artworkPrompt": "Style: Journal cartoon. Subject: Clinician comparing prediction journal to final diagnosis in lamplight. Mood: Deliberate calibration."
+    },
+    {
+      "cardNumber": 53,
+      "cardName": "The Thinking Attending (Doc FrizzleBob)",
+      "grade": 2,
+      "power": "The Cognitive-Coach.",
+      "lore": "What else could this be? Are you anchored? Don't trust your brain—it's trying to save energy, not the patient! Stay fluffy!",
+      "gradeReason": "FrizzleBob as meta-coach is charming; as a card it's more mascot than move.",
+      "artworkPrompt": "Style: FrizzleBob cartoon. Subject: Rabbit MC in doctor coat holding mirror-on-stick at bewildered team. Mood: Playful meta-coaching."
+    },
+    {
+      "cardNumber": 54,
+      "cardName": "Synthesis Quest 1: The Anchored Drunk",
+      "grade": 3,
+      "power": "QUEST: Identify the Bias-Trap (Anchor-the-Heavy) and use the Circuit-Breaker (Pause).",
+      "lore": "A wrestler arrives Confused-and-Vomiting, smelling like beer. System-1-Flash calls it Al-the-Alcoholic, ignoring the Subdural Crescent.",
+      "gradeReason": "Case vignette format is excellent pedagogy but a different game mode than card play.",
+      "artworkPrompt": "Style: ER case cartoon. Subject: Subdural shadow behind drunk-labeled patient, overlooked by anchored team. Mood: Diagnostic case tension."
+    },
+    {
+      "cardNumber": 55,
+      "cardName": "Synthesis Quest 2: The Zebra Chase",
+      "grade": 3,
+      "power": "QUEST: Identify the Bias-Trap (Availab-the-Recent) and restore the Grounding-Force (Base-Rate-the-Neglecter).",
+      "lore": "Young wrestler has a Joint-Ache. Team just read about Rare-Genetic-Zebra and orders a 5,000-Token scan.",
+      "gradeReason": "Well-constructed case; same format issue as Quest 1 — describes a scenario, doesn't invite play.",
+      "artworkPrompt": "Style: Medical case cartoon. Subject: Team chasing zebra from journal headline while horse stands unexamined. Mood: Recency-bias trap."
+    },
+    {
+      "cardNumber": 56,
+      "cardName": "Synthesis Quest 3: The Satisfied Search",
+      "grade": 3,
+      "power": "QUEST: Identify the Thinking-Error (Premature-the-Closure) and apply the Sentinel-Checklist for Total-Body-Inventory.",
+      "lore": "Trauma wrestler has a Broken-Arm. Team fixes it and sends him to the Waiting-Room, missing the fatal bleed.",
+      "gradeReason": "Devastating case (missed fatal bleed) but case-study format breaks the card-play frame.",
+      "artworkPrompt": "Style: Trauma case cartoon. Subject: Team celebrating fixed arm while hidden bleeding silhouette fades behind them. Mood: Tragic oversight."
+    }
+  ],
+  "cardCount": 56,
+  "gradeDistribution": {
+    "G1": 20,
+    "G2": 26,
+    "G3": 10
+  },
+  "overallScore": 8,
+  "verdict": "Thinking Traps is the sharpest medical education deck in the MedKayfab line—56 cards mapping every major cognitive bias and counter-strategy with the naming precision of a wrestling promoter on his best night. Anchor-the-Heavy, Backfire-the-Stubborn, Hierarchy-the-Halt: names that stick at 3am post-call when you need them most. Weak spot: the three Synthesis Quest cards are excellent pedagogy but break card-play format—they read as case vignettes, not moves. The villain/hero binary structure earns its keep. Table-ready: Yes.",
+  "blurb": "56 cards mapping every cognitive trap in clinical diagnosis—from Anchoring to Premature Closure—plus the counter-moves to break them. For med students and clinicians who learn best by playing.",
+  "viralScore": 7,
+  "qa": {
+    "readability": 9,
+    "artworkConsistency": 9,
+    "overall": 9
+  },
+  "coverQA": {
+    "coverVisual": "4 — Whimsical intro illustration with MedKayfab wrestling setup and card anatomy blueprint; informative and on-brand",
+    "coverTitle": "3 — 'The Thinking Trap / The Mental Muddle?' is clever but verbally crowded; loses punch",
+    "coverVibeMatch": "5 — Perfectly establishes wrestling-meets-medicine tone with FrizzleBob framing",
+    "coverOriginality": "4 — Card anatomy blueprint embedded in cover is a genuinely useful and original touch",
+    "coverViral": "3 — Educational rather than scroll-stopping; built for the med school hall, not TikTok",
+    "coverScore": 3.8,
+    "coverNote": "The cover functions better as an instruction insert than a traditional deck cover—it front-loads the card anatomy before you've touched a card. Strong inside-the-box value, weak shelf presence. For Gumroad the preview image should probably be a spread of the most striking villain cards instead."
+  },
+  "coverScore": 3.8,
+  "fontArtifactCount": 0,
+  "notes": "PDF: 15 pages (1 cover/intro + 14 card pages x 4 = 56 cards). No RAF dice boxes. All card text in clean readable fonts, zero decorative font artifacts. Deck structured as binary villain/hero architecture: cards 1-20 = cognitive bias villains (Thinking Traps), cards 21-52 = counter-strategy heroes, cards 53-56 = synthesis/meta cards including three Synthesis Quest case vignettes. Artwork consistently maintains medical-wrestling cartoon style throughout. Thematic overlap between Group-the-Think (card 24) and Echo-the-Chamber (card 35) — both address groupthink from slightly different angles (social pressure vs. specialty silo reinforcement); distinction should be clarified in play rules. The three Synthesis Quest cards are the structural standout: excellent clinical pedagogy but function as case cards rather than performative play cards—recommend separating into a Scenario Pack expansion.",
+  "topCards": [
+    "Pause-the-Circuit-Breaker",
+    "Devil-the-Advocate",
+    "Anchor-the-Heavy"
+  ],
+  "worstCards": [
+    "Synthesis Quest 3: The Satisfied Search",
+    "Outcome-the-Judge"
+  ],
+  "todos": {
+    "urgent": [
+      "Reformat the 3 Synthesis Quest cards into a proper Scenario Pack with separate play rules—their case-vignette format is incompatible with main deck play"
+    ],
+    "quickWins": [
+      "Add Counter: field to villain cards pointing to their hero nemesis (e.g., Anchor-the-Heavy counter: Pause-the-Circuit-Breaker)",
+      "Retitle cover to lead with deck name rather than subtitle question"
+    ],
+    "niceToHave": [
+      "Add mortality/error-rate stats to STAT line where known (e.g., Handoff Error responsible for 80% of serious errors)",
+      "Consider villain/hero color coding to make binary architecture visual at a glance",
+      "Resolve Group-the-Think / Echo-the-Chamber overlap with a note on the distinction"
+    ]
+  },
+  "hashtags": [
+    "#MedKayfab",
+    "#CognitiveBias",
+    "#MedicalEducation",
+    "#ThinkingTraps",
+    "#Kayfabizarro",
+    "#DiagnosticReasoning",
+    "#AnchoringBias",
+    "#MedStudents"
+  ],
+  "genre": "education",
+  "bundle": "EDUCATION",
+  "exhibitions": [
+    "classroom",
+    "conference",
+    "workshop"
+  ],
+  "channels": [
+    "Gumroad",
+    "Substack",
+    "Instagram"
+  ],
+  "marketingText": "MedKayfab: THINKING TRAPS – The Mental Muddle (Medical Mnemonics Cut & Play Comic)\n\n56 illustrated medical mnemonic cards to master the cognitive biases that wreck a diagnosis, the counter-moves that break them, and the dual-process thinking that tells you when to trust your gut and when your gut is the threat.\n\nThe opponent in this deck is not the disease. It is you. A confused patient comes in smelling of beer, and the first word in your head is \"drunk.\" You chart it, you move on, and the subdural bleed under that skull keeps growing while you treat a hangover. The disease never hid. Your own brain hid it from you, because the first answer was cheap and certainty feels like rest.\n\nMedKayfab Thinking Traps stages the war inside your own skull as a villain-versus-hero card match. Twenty biases work the crowd against you: Anchor-the-Heavy chains the diagnosis to the first fact and refuses to let it move, Premature-the-Closure rings the victory bell before the search is finished, Hierarchy-the-Halt makes the junior swallow the one objection that would have saved the case. Then the counter-roster steps in to break the hold. You do not memorize a list of fallacies here. You learn each one by its face, so you catch it mid-move, in your own head, at three in the morning.\n\nYOU'LL GET\n- 56 illustrated MedKayfab cards (14pp, 4 cards/page)\n- Full MedKayfab Freestyle rules (Quest Die mechanics)\n- S-Tier characters like Pause-the-Circuit-Breaker, Devil-the-Advocate, and Anchor-the-Heavy\n- Free lifetime updates as the cognitive science is refined\n- CC BY-NC-SA 4.0 licence, print, share, and adapt freely\n- PDF optimized for home printing (A4 / Letter)\n\nWhat's in the deck\nThe roster splits clean down the middle. On the villain half you meet Anchor-the-Heavy, who grabs the first piece of data and chains the workup to it, and ZEBRA-the-Distraction, who burns your whole budget hunting a one-in-a-million genetic glitch while the common infection quietly wins the match. On the hero half, Pause-the-Circuit-Breaker slams a stop button on the runaway momentum train and forces the only question that counts: what else could this be? Devil-the-Advocate takes the opposite job, hunting the single fact that breaks your favourite theory, because a diagnosis is only strong once it survives the attack on its own logic.\n\nHow it works\nEvery card is a cognitive anchor built for the moment your judgment is under load. You have the Character (the bias or the counter-move), the Visual (the scene), the Stat Block, the Lore (why the brain falls for it), and the Quest (the case where it shows up). Mechanism Flash is the brutal mode: name the trap and the counter that beats it in one sentence without looking, or the \"patient\" on the Stage walks out with the wrong diagnosis.\n\nHonest cognitive load\nThis is the meta deck. It is not a body system, it is the operator standing behind every body system, which is why it pairs with all of them. Best for medical students in their clinical years and residents in the high-error fields: emergency, internal medicine, and anywhere the first answer arrives fast and feels final. Three cards, the Synthesis Quests, run as full case vignettes rather than single moves, so treat them as a short scenario set tucked inside the deck. It pairs especially well with The Diagnostic Toolkit for the gear and The Differential Engine for the workup that Thinking Traps keeps honest.\n\nABOUT MEDKAYFAB\nMedKayfab is a narrative medical learning card game, 50 decks covering the full medical curriculum. Every card encodes a clinical mechanism as a character with a personality, a story, and a reasoning challenge. Built by a physician. Assembled with AI tools. Manually revised. Honest about its limitations. Free to use, share, and adapt under CC BY-NC-SA 4.0.\n\nPAY WHAT YOU WANT\nThis deck is Pay What You Want, including free. If you find it useful, a fair price is €5. If you are a student on a budget, enter €0, no questions asked. If you want to support more decks, anything above fair price is appreciated. CC BY-NC-SA 4.0, share freely, attribute honestly, never resell.\n\nDISCLAIMER\nMedKayfab is a learning companion, not a clinical reference. Content was created by a physician and reviewed to the best of our knowledge, but medicine evolves, guidelines change, and some mechanisms in here will be simplified or wrong. Always verify against current primary sources and clinical guidelines before applying anything to patient care. The Blödsinn! is the vehicle. The science is serious.\n\nStay fluffy. — Doc FrizzleBob",
+  "marketingEdition": "MED"
+}

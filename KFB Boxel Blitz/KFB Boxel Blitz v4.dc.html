@@ -1,0 +1,1298 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Irish+Grover&family=Shantell+Sans:ital,wght@0,400;0,700;1,700&family=Special+Elite&display=swap" rel="stylesheet">
+<!-- DAS UI-KIT, UNVERÄNDERT KOPIERT (aus `_export_travel-v13_2026-07-28/themes/`). Es nennt sich
+     selbst »Quelle der Wahrheit für Farben, Type, Rhythmus«; die Wortmarke ist die Klasse
+     `.kfb-wordmark` daraus. Verlinkt statt nachgebaut — Georg 06.09.: »1:1, kein Nachbau«. -->
+<link rel="stylesheet" href="./themes/kfb-med.css">
+<style>
+  /* Die zwei Kontrast-Regeln, die der Travel-v13-Wirt über die Klasse legt (dort Z. 27/28):
+     »Kayfa« bekommt einen harten Cream-Schatten, weil die Marke über einer bewegten Welt sitzt,
+     und das Akzentfeld einen Ink-Schatten.
+     ⚠ EINE ABWEICHUNG, GEMESSEN BEGRÜNDET: Travel v13 sitzt über einem HELLEN Himmel (#9fc7e8),
+     dort ist Tinte auf Papier richtig. Hier ist der Grund #131210 — Tinte #1f1a14 darauf ergibt
+     **1,1:1**, also unlesbar. Die Absicht der Kit-Regel ist ausdrücklich eine KONTRASTKANTE; auf
+     dunklem Grund heißt dieselbe Absicht umgekehrt: Cream als Füllung, Tinte als Kante (gemessen
+     15:1). Klasse, Schrift, Akzent, Neigung, Abstände bleiben unangetastet — es ist dieselbe
+     Wortmarke, nur richtig herum für diese Bühne.
+     RÜCKWEG auf 1:1: die zwei Zeilen unter `--stage` löschen. */
+  .kfb-wordmark--stage{font-size:27px;color:var(--kfb-cream);text-shadow:2px 2px 0 var(--kfb-ink);}
+  .kfb-wordmark--stage b{box-shadow:3px 3px 0 rgba(31,26,20,.35);text-shadow:none;}
+  html,body{margin:0;height:100%;background:#131210;overflow:hidden;font-family:'Shantell Sans',ui-sans-serif,sans-serif;-webkit-font-smoothing:antialiased;}
+  /* BEIDE Namen, nicht nur einer: `.sc-host` ohne Hoehe laesst das Spielfeld auf 0 zusammenfallen
+     — die Leinwand war 924 x 0 und `overflow:hidden` schnitt alles ab, HUD eingeschlossen. */
+  #dc-root,.sc-host{height:100%;}
+  a{color:#c14435;} a:hover{color:#e0a92e;}
+  ::selection{background:rgba(233,193,74,.5);}
+  @keyframes kfbPopUp{from{transform:translateY(6px) scale(.96);opacity:0}to{transform:none;opacity:1}}
+</style>
+<!-- Vorschaubild fuer den eigenstaendigen Export (Aufklapp-Splash und Notbild ohne JavaScript).
+     Ein Wuerfel auf KFB-Blau, 30 % Luft ringsum. -->
+<template id="__bundler_thumbnail">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100%" height="100%">
+    <rect width="100" height="100" fill="#2f6f86"></rect>
+    <g transform="rotate(-12 50 50)">
+      <rect x="32" y="32" width="36" height="36" rx="7" fill="#2b4fa8" stroke="#1f1a14" stroke-width="2.5"></rect>
+      <circle cx="42" cy="42" r="3.1" fill="#f7f0dd"></circle>
+      <circle cx="58" cy="42" r="3.1" fill="#f7f0dd"></circle>
+      <circle cx="50" cy="50" r="3.1" fill="#f7f0dd"></circle>
+      <circle cx="42" cy="58" r="3.1" fill="#f7f0dd"></circle>
+      <circle cx="58" cy="58" r="3.1" fill="#f7f0dd"></circle>
+    </g>
+  </svg>
+</template>
+<style>
+</style>
+<script type="importmap">
+{ "imports": {
+  "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
+  "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/",
+  "cannon-es": "https://unpkg.com/cannon-es@0.20.0/dist/cannon-es.js"
+} }
+</script>
+<script type="module">
+  /* ===== FORK 05.09.2026 · KFB BOXEL BLITZ v4 =====================================================
+     v3 ist EINGEFROREN und liegt unver&auml;ndert daneben (`KFB Boxel Blitz v3.dc.html`) — R&uuml;ckweg.
+     Dieser Fork ist byteweise die v3, bis auf diesen Kopf. Der Bestand der v1, v2 und v3 bleibt
+     geladen wie er ist; NEUE Arbeit geht nach `boxelblitz-v4/`.
+     Stand-Dokument: `docs/boxelblitz-v4/LIVING_boxelblitz_v4.md` (SSOT, additiv, neueste Zeile
+     oben). Eine Datei je Scheibe, jede mit Abnahme und R&uuml;ckweg im Kopf.
+     DIE REIHENFOLGE DIESER BAUSTELLE (Georgs Ansage 05.09., in dieser Folge):
+     (1) der helle Saum unter der Feldkante — MESSEN, nicht raten,
+     (2) alle W&uuml;rfelbewegungen sauber bauen (rollen, prallen, kippen) samt Deformer,
+     (3) Referenzen und Effekt-Grundmodul einbauen (`fx-foundation`, Lieferung des Coworkers),
+     (4) danach die offenen Effektlagen.
+     DIE REIHENFOLGE DER EFFEKTSCHEIBEN GEH&Ouml;RT WEITER DER DESIGNKRITIK vom 05.09.:
+     `docs/boxelblitz-v2/KRITIK_vfx_sfx_v2.md` — Abschnitt 0 ist eine Seite f&uuml;r einen Fremden,
+     &sect;10 ist der Fahrplan S1&hellip;S9. Kurz: S1 die Kurve statt der Treppe (St&auml;rke aus der
+     Kettendichte; der Deckel taktet statt wegzuwerfen; ab Glied 10 rei&szlig;t heute der Takt),
+     S2 der Ton (er ist AUS, und die Kaskaden-Tonleitern liegen fertig im Haus), dann Blitz,
+     Tr&uuml;mmer, Kamera-Ruck, Kundschaft f&uuml;r den Lichthof, Ring und Zahl, Zufallsh&ouml;hen,
+     zuletzt der W&uuml;rfel als Schauspieler.
+     Messgriff bleibt `window.__kfbBoxelBall` (derselbe Name wie in v1 und v2, absichtlich: eine
+     Abnahme, die dort lief, l&auml;uft hier unver&auml;ndert).
+     ================================================================================================ */
+  /* DER WIRT L&Auml;DT, DIE MODULE MELDEN AN (Gr&uuml;ndungsdokument &sect;4). Kein Modul l&auml;dt three
+     selbst, keines setzt den Farbraum, keines baut eine eigene Zeitbasis. */
+  import * as THREE from 'three';
+  import { installMirror } from './boxelball-v1/mirror.v1.js';
+  installMirror(THREE);
+  import { createStage, CARD_AR, makeRng } from './boxelball-v1/stage.v1.js?a4';
+  /* V2-S8: FORK des Feldes. ZWEI &Auml;nderungen — eine Palette darf ein Objekt sein, und die
+     Farbverteilung ist zuf&auml;llig statt einer festen Diagonale (Georg 05.09.: »die farben/paletten
+     sollen zuf&auml;llig und jedes Mal neu sein, verteilung der boxel ebenso«).
+     R&uuml;ckweg: diese Zeile auf `./boxelball-v1/boxel.v1.js?a8`. */
+  /* V3-S2: FORK des Feldes. EINE &Auml;nderung — die Meldungen `bumper` und `redirect` tragen ihren
+     ORT (und Wucht, Farbe, Kontaktart); vorher gingen sie nur mit ihrer Rasterzelle nach au&szlig;en,
+     und wer daraus einen Effekt macht, zeichnet ins Nichts. Additiv, alte H&ouml;rer merken nichts.
+     R&uuml;ckweg: diese Zeile auf `./boxelblitz-v2/boxel.v2.js?b1`. */
+  import { createBoxel, PALETTE_NAMES } from './boxelblitz-v3/boxel.v3.js?c1';
+  /* V2-S8: DER ZUFALL IN GEMESSENEN GRENZEN. Kennt kein three und keine Zelle — gibt nur Hex-Werte
+     in der Form aus, die das Feld schon liest. Sein Band ist an den vier handgesetzten Paletten
+     AUSGEMESSEN, nicht geraten. Damit auch f&uuml;r Combat und die n&auml;chsten Spiele brauchbar. */
+  import { makePalette, auditPalette } from './boxelblitz-v2/palette.v1.js?b1';
+  /* V4-S6c · DER KÖRPER IST WIEDER EINGEHÄNGT, mit den drei Punkten aus Georgs Abnahme behoben:
+     eine Kontaktmeldung je ZELLWECHSEL (nicht je Ecke), Ruhe heißt »liegt flach« (< 8°, sonst
+     kippt er weiter), und der Einwurf bekommt seine mitgereiste Decke zurück.
+     Abnahme gegen die GEMESSENE Referenz der v1 (06.09.): geräumte Zellen je Wurf 8 im Mittel /
+     14 im Höchstfall · Abwurfhöhe 9,4 und nach drei Bildern 9,376 · nie zur Ruhe 0.
+     RÜCKWEG: diese Zeile auf `./boxelball-v1/dice.v1.js?a14`. */
+  /* ⚠ V4-S9b · ZURÜCK AUF DIE v1 — GEORGS ABNAHME 06.09.: »die Dynamik & Physik & Abschuss-Logik
+     ist sogar noch schlechter als Version 1«, dazu »bei einer leichten Berührung platzen sofort
+     ein bis drei Boxel« und »der Würfel springt ohne Kontakt weiter«. Beides ist im Fork
+     gefunden (Begründung im Kopf von `boxelblitz-v4/dice.v4.js`) und dort behoben, aber der
+     Zustand, den ER als besser beurteilt hat, gehört wieder auf den Weg — »nicht schlechter als
+     vorher« ist seine Entscheidung, nicht meine Messung.
+     WEG ZURÜCK ZUM FORK (cannon-Körper + Materialmodell): diese Zeile auf
+     `./boxelblitz-v4/dice.v4.js?a4`. */
+  import { createDice, DIE_HEX } from './boxelblitz-v4/dice.v4.js?a55';
+  /* V4-S8 · DER SEITENSTROM: zufälliges Deck → zufällige Seite mit vier Karten → nächste Seite
+     → nächstes Zufallsdeck. Er besitzt nur die REIHENFOLGE, nicht die Karten. */
+  import { createDeckStream } from './boxelblitz-v4/decks.v1.js?a1';
+  /* Unver&auml;ndert kopiert: der Gutter (Waber-Fl&auml;che + Duo-Tone-Raster) aus Podcast v4 und der
+     Kartenstapel mit den Tuschekanten aus SpinballCast v1. */
+  /* Augen und M\u00fcnder auf ausgew\u00e4hlten Boxel. Die beiden Rigs sind KOPIEN aus Pet Studio v9-2
+     (`pet-eye-rig.v5.js`, `pet-mouth.v1.js`, byteidentisch); dieses Modul ist nur ihr Wirt. */
+  /* V2-S11: FORK der Gesichter. EINE Änderung — jedes Gesicht sitzt auf einer ANDEREN Boxelfarbe
+     (Georg 05.09.: »dass Augen und Münde jeweils auf unterschiedlichen Boxelfarben sitzen«).
+     Die Regel gilt je Feature-Art; wandern die Münder später auf eigene Zellen, läuft derselbe
+     Filter für sie unabhängig — Augen und Mund dürfen sich dann wieder eine Farbe teilen.
+     R&uuml;ckweg: diese Zeile auf `./boxelball-v1/faces.v1.js?a7`. */
+  import { createFaces } from './boxelblitz-v2/faces.v2.js?b1';
+  /* Rang, Takt, Tonleiter, Kette — der Eigentümer der ORDNUNG der Effekte (Kritik §4–§6). */
+  /* V2-S5: FORK. Eine &Auml;nderung — der H&ouml;hepunkt gibt seinen ORT mit der Ansage nach au&szlig;en,
+     sonst k&ouml;nnte die Treffer-Form nicht am Treffer erscheinen.
+     R&uuml;ckweg: diese Zeile auf `./boxelball-v1/juice.v1.js?a4`. */
+  /* V3-S1: FORK. Eine Änderung, die grundlegende — eine Kaskade ist ein PLAN mit kumulativem
+     Fahrplan, keine geratene Warteschlange. Behebt drei gemessene Defekte: die Treppe mit zwei
+     Stufen, den Deckel der Glieder wegwarf, und den Riss ab Glied 10 (900 ms Versatz f&uuml;r alle).
+     Begr&uuml;ndung und Abnahme im Kopf der Datei und in `docs/boxelblitz-v2/KRITIK_vfx_sfx_v2.md`.
+     R&uuml;ckweg: diese Zeile auf `./boxelblitz-v2/juice.v2.js?b1`. */
+  import { createJuice } from './boxelblitz-v3/juice.v3.js?c1';
+  /* V3-S2 · DER TON. Eigenes Modul, weil Klang ein eigener Eigent&uuml;mer ist: es kennt kein three und
+     keine Zelle, sondern nur ART und WUCHT. Die Aufnahmen liegen im Repo und werden von dort
+     geladen (wie das Zahnrad sein Modell); ohne Modul spielt der eingebaute Klangerzeuger weiter.
+     R&uuml;ckweg: `juice.setAudio(null)`. */
+  import { createAudio, createNullAudio } from './boxelblitz-v3/audio.v1.js?c1';
+  /* V3-S2 · DER ECHTE BILDERFILM, NEBEN der Handzeichnung (Georg: »zeig mir beides«). Vierzehn
+     Sprite-Sheets liegen im Repo, das Kachelraster steht im Dateinamen. Umschalter im Zahnrad.
+     R&uuml;ckweg: im Zahnrad auf »Handzeichnung« stellen. */
+  import { createHitFilm, FILME } from './boxelblitz-v3/hitfilm.v1.js?c1';
+  /* V3-S4 · GESCHWINDIGKEITSSTRICHE (Georg: »d&uuml;nne, helle Speedlines — aber sauber konzipiert«).
+     Sie geh&ouml;ren der BEWEGUNG, nicht dem Treffer: sie h&auml;ngen am W&uuml;rfel, entstehen nach
+     Geschwindigkeit und l&ouml;sen sich in Ruhe auf. EIN Zeichenaufruf f&uuml;r alle (Instanz-Wolke).
+     R&uuml;ckweg: `speedlines.setEnabled(false)`. */
+  import { createSpeedlines } from './boxelblitz-v3/speedlines.v1.js?c1';
+  /* V2-S5: DIE FORM DES H&Ouml;HEPUNKTS — FreeHitVfx (Georgs Fundst&uuml;ck, aus dem Repo kopiert).
+     ⚠ Die Datei ist EINE handgezeichnete Form, KEIN Sprite-Sheet mit 30 Bildern — die Notiz in der
+     &Uuml;bergabe war falsch, die Vorlage sagt es selbst. Portiert sind ihr Shader und ihr Preset. */
+  /* V2-S8: DER HALBKREIS BLEIBT DRIN, BIS ERSATZ DA IST (Georg 05.09., ausdr&uuml;cklich).
+     Ich hatte ihn schon herausgenommen — falsch: ein schwacher Effekt ist besser als eine L&uuml;cke,
+     solange die Ersatzlagen (Stauchen, Wei&szlig;blitz, Tr&uuml;mmer, Kamera-Ruck, Zahlen-Pop) noch nicht
+     stehen. Er geht erst raus, wenn etwas Besseres an seiner Stelle feuert.
+     ⚠ Das Wort f&uuml;r einen Ladeweg darf NICHT in einem Kommentar stehen: es wird beim Umschreiben
+     der Adressen auch dort gegriffen, und der Bau stirbt mit einem Syntaxfehler in einer Zeile,
+     die es gar nicht mehr gibt (05.09. genau so bezahlt). */
+  import { createHitFx } from './boxelblitz-v2/hitfx.v2.js?b1';
+  /* V2-S9 · JUICE v1 · LAGE 1: DER LICHTHOF AUF EIGENER EBENE. Fork von `bloom.v1.js`, EINE
+     &Auml;nderung, aber eine grundlegende: v1 schickte das FERTIGE Bild durch einen zweiten Durchgang
+     und hellte es dabei um 25 % auf — auch bei Gl&uuml;h-St&auml;rke null. v2 l&auml;sst das Grundbild
+     unber&uuml;hrt und zeichnet nur die Effekt-Ebene (`GLOW_LAYER`) f&uuml;r sich, weich, oben addiert.
+     Georg 05.09.: &raquo;wir haben die Effekte doch hoffentlich auf getrennten Ebenen&laquo; — ja, ab jetzt.
+     R&uuml;ckweg: diese Zeile auf `./boxelblitz-v2/bloom.v1.js?b2`. */
+  import { createBloom, GLOW_LAYER } from './boxelblitz-v2/bloom.v2.js?b1';
+  import { createGear } from './boxelball-v1/gear.v1.js?a2';
+  /* V2-S1: FORK des Gutters. Eine &Auml;nderung \u2014 die Fl&auml;che nimmt ihre Gr&ouml;&szlig;e vom Fu&szlig;abdruck des
+     Bildes auf IHR, statt aus einem festen Faktor auf die Bildgr&ouml;&szlig;e in der Tiefe der Karte.
+     Gemessen fehlten bei Georgs Kippung oben 29 Bildpunkte (schwarz).
+     R&uuml;ckweg: diese Zeile auf `./boxelball-v1/gutter.v4.js?a1`. */
+  import { createGutter } from './boxelblitz-v2/gutter.v5.js?b1';
+  /* V2-S3: FORK des Kartenstapels. Eine &Auml;nderung \u2014 die unsichtbare Fangfl&auml;che jedes Blattes
+     tr&auml;gt jetzt dessen Silhouette, statt als volles Rechteck auch neben dem Papier zu fangen
+     (gemessen: 15,8 % der verdunkelten Bildpunkte lagen dort). Das Rig BLEIBT, weil sp&auml;ter die
+     herabfallenden Karten Schatten auf die unteren Bl&auml;tter werfen sollen (Georg, 05.09.).
+     R&uuml;ckweg: diese Zeile auf `./boxelball-v1/stack.v1.js?a1`. */
+  import { createStack } from './boxelblitz-v2/stack.v2.js?b1';
+  /* V2-S4: DER SCHATTEN AUF DER SPIELKARTE. Die Karte ist zweimal `MeshBasicMaterial` — ein
+     unbeleuchtetes Material bringt die Schatten-Bausteine des Renderers nicht mit, `receiveShadow`
+     darauf war eine Zeile ohne Wirkung (gemessen: 0 Verdunkelung auf dem hellen Streifen). Dieses
+     Modul hängt dem aktiven Blatt eine unsichtbare Fangfläche an — dasselbe Rezept, mit dem der
+     Kartenstapel dasselbe Problem seit SpinballCast v1 löst, samt dem Schnitt aus V2-S3. */
+  import { createCardShadow } from './boxelblitz-v2/cardshadow.v1.js?b1';
+  import { createCardBuilder } from './cardbuilder/kfb-card-builder.js?a2';
+  window.__KFBBB = { THREE, createStage, CARD_AR, makeRng, createBoxel, PALETTE_NAMES,
+                     makePalette, auditPalette,
+                     createDice, DIE_HEX, createGutter, createStack, createCardBuilder, createGear,
+                     createFaces, createJuice, createCardShadow, createHitFx, createBloom, GLOW_LAYER,
+                     createAudio, createNullAudio, createHitFilm, FILME, createSpeedlines,
+                     createDeckStream };
+  window.dispatchEvent(new Event('kfbbbready'));
+</script>
+</helmet>
+
+<div style="position:relative;width:100%;height:100%;background:#131210;overflow:hidden;user-select:none">
+
+  <div ref="{{ hostRef }}" style="position:absolute;inset:0"></div>
+
+  <div style="position:absolute;inset:0;display:flex;flex-direction:column;justify-content:space-between;padding:16px 20px;pointer-events:none">
+
+    <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:18px">
+
+      <!-- DIE WORTMARKE IST 1:1 DIE AUS KFB TRAVEL v13 (Georg 06.09.: »1:1, kein Nachbau«).
+           Dort steht sie als `<div class="kfb-wordmark">Kayfa<b>Bizarro</b></div>` und die Klasse
+           kommt aus `themes/kfb-med.css` — dem UI-Kit, das sich selbst als »Quelle der Wahrheit«
+           bezeichnet. Die Datei ist unverändert kopiert und im Kopf verlinkt; hier steht KEIN
+           Nachbau mehr, sondern dieselbe Klasse mit denselben zwei Kontrast-Regeln, die der
+           Travel-Wirt darüber legt (Z. 27/28 dort: harter Cream-Schatten für »Kayfa«, weil sie
+           über einer bewegten Welt sitzt, und ein Ink-Schatten am Akzentfeld).
+           Was WEGFÄLLT: meine Fassung in Shantell Sans mit Cremefläche hinter »Kayfa«. Das Kit
+           verlangt **Irish Grover** als Display-Schrift (`--kfb-font-display`) und den Akzent
+           #b8361f — mein Nachbau hatte die Farbe richtig und die Schrift falsch. -->
+      <!-- ⚠ V4-S36 · EINE SCHATTENLOGIK FÜR ALLES (Georg 06.09.): »die gleiche Schatten-Logik wie
+           bei Kayfa statt durchgehender Outline«. Das UI-Kit setzt an der Wortmarke
+           `text-shadow: 2px 2px 0 var(--kfb-ink)` — einen versetzten Tuscheschatten nach unten
+           rechts, keinen Rand. Meine `-webkit-text-stroke` lag RUNDHERUM und hat den Kern
+           zugezogen; auf dem gemusterten Grund wurde daraus ein grauer Fleck, und Special Elite
+           (eine Schreibmaschinenschrift mit dünnen Serifen) war kaum lesbar. Jetzt überall derselbe
+           Schatten, und die Schreibmaschinenzeilen fett — Lesbarkeit über Stärke statt über Rand. -->
+      <div style="display:flex;flex-direction:column;align-items:flex-start;gap:0;flex:1 1 0">
+        <div style="display:flex;flex-direction:column;align-items:center;gap:2px">
+          <div style="height:32px;display:flex;align-items:flex-start">
+            <div class="kfb-wordmark kfb-wordmark--stage">Kayfa<b>Bizarro</b></div>
+          </div>
+          <div style="font-family:'Special Elite',cursive;font-size:13px;font-weight:700;line-height:1;letter-spacing:.02em;color:#e6dcc2;text-shadow:2px 2px 0 #1f1a14;white-space:nowrap">Boxel Banger Blitz</div>
+        </div>
+      </div>
+
+      <div style="display:flex;flex-direction:column;align-items:center;gap:2px;flex:0 0 auto">
+        <div style="height:32px;display:flex;align-items:flex-start">
+          <div ref="{{ popRef }}" style="font-family:'Irish Grover',cursive;font-size:26px;line-height:1.15;color:#f7f0dd;text-shadow:2px 2px 0 #1f1a14;font-variant-numeric:tabular-nums">0</div>
+        </div>
+        <div style="font-family:'Special Elite',cursive;font-size:13px;font-weight:700;line-height:1;letter-spacing:.08em;color:#e0a92e;text-shadow:2px 2px 0 #1f1a14">Pop</div>
+        <div ref="{{ comboRef }}" style="font-size:12px;font-weight:700;color:#f7c9c0;min-height:16px;text-shadow:2px 2px 0 #1f1a14"></div>
+      </div>
+
+      <!-- Der Fächer der freigespielten Karten sitzt rechts, mit Luft für das Zahnrad darüber. -->
+      <div style="display:flex;align-items:flex-end;justify-content:flex-end;flex:1 1 0;padding-top:34px">
+        <sc-for list="{{ fan }}" as="chip" hint-placeholder-count="0">
+          <div style="width:44px;height:26px;border-radius:2px;background:#f3ead3;border:1.5px solid #1f1a14;box-shadow:0 2px 6px rgba(0,0,0,.4);margin-left:-10px;transform:rotate(-4deg);display:flex;align-items:center;justify-content:center;overflow:hidden;animation:kfbPopUp .3s ease-out">
+            <div style="font-size:7px;line-height:1.1;color:#1f1a14;text-align:center;padding:2px;overflow:hidden;text-wrap:pretty">{{ chip.short }}</div>
+          </div>
+        </sc-for>
+      </div>
+
+    </div>
+
+    <div style="display:flex;align-items:flex-end;justify-content:space-between;gap:18px">
+      <div style="flex:1 1 0"></div>
+      <div ref="{{ hintRef }}" style="font-family:'Special Elite',cursive;font-size:13px;font-weight:700;line-height:1;white-space:nowrap;color:#e6dcc2;text-align:center;flex:0 0 auto;text-shadow:2px 2px 0 #1f1a14">wird geladen …</div>
+      <div ref="{{ devRef }}" style="font-size:10px;font-variant-numeric:tabular-nums;color:#cfc4a8;text-align:right;white-space:pre-line;flex:1 1 0;text-shadow:2px 2px 0 #1f1a14"></div>
+    </div>
+
+  </div>
+
+  <div ref="{{ gearHitRef }}" onClick="{{ openSettings }}" onPointerEnter="{{ gearIn }}" onPointerLeave="{{ gearOut }}" style="position:absolute;left:0;top:0;width:38px;height:38px;cursor:pointer;border-radius:50%"></div>
+
+  <sc-if value="{{ settingsOn }}" hint-placeholder-val="{{ false }}">
+    <div onClick="{{ closeSettings }}" style="position:absolute;inset:0;background:rgba(12,11,10,.62);display:flex;align-items:center;justify-content:center">
+      <div onClick="{{ stop }}" style="width:340px;max-width:86%;padding:20px 22px 18px;border-radius:5px;background:#1b1917;border:1.5px solid rgba(224,169,46,.42);box-shadow:0 16px 48px rgba(0,0,0,.6);display:flex;flex-direction:column;gap:16px;animation:kfbPopUp .22s ease-out">
+
+        <div style="display:flex;align-items:baseline;justify-content:space-between">
+          <div style="font-family:'Irish Grover',cursive;font-size:22px;color:#f3ead3">Settings</div>
+          <div onClick="{{ closeSettings }}" style="cursor:pointer;font-size:18px;color:#8b8069;padding:0 4px">×</div>
+        </div>
+
+        <div style="display:flex;flex-direction:column;gap:7px">
+          <div style="display:flex;justify-content:space-between;align-items:baseline">
+            <div style="font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#b8ab90">Board tilt</div>
+            <div ref="{{ tiltValRef }}" style="font-size:11px;color:#e0a92e;font-variant-numeric:tabular-nums">17°</div>
+          </div>
+          <input ref="{{ tiltRef }}" type="range" min="3" max="52" step="1" onInput="{{ onTilt }}" style="width:100%;accent-color:#e0a92e" />
+          <div style="font-size:10px;color:#6f6656;text-wrap:pretty">Flat reads as a board, steep reads as a table. Find the view, then keep it.</div>
+        </div>
+
+        <div style="display:flex;gap:14px;align-items:flex-start">
+          <div ref="{{ padRef }}" onPointerDown="{{ padDown }}" onPointerMove="{{ padMove }}" onPointerUp="{{ padUp }}" style="position:relative;width:96px;height:96px;flex:0 0 auto;border-radius:50%;cursor:crosshair;background:radial-gradient(circle at 34% 30%,#4a463f,#1f1d1a 74%);border:1.5px solid rgba(243,234,211,.28);touch-action:none">
+            <div ref="{{ dotRef }}" style="position:absolute;width:14px;height:14px;margin:-7px 0 0 -7px;border-radius:50%;background:#f7f0dd;box-shadow:0 0 10px rgba(247,240,221,.7);left:50%;top:50%"></div>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:7px;flex:1">
+            <div style="font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#b8ab90">Key light</div>
+            <div style="font-size:10px;color:#6f6656;text-wrap:pretty">Drag the dot: centre is head-on, edge is grazing. The field's relief comes from here.</div>
+            <div style="display:flex;justify-content:space-between;align-items:baseline">
+              <div style="font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:#b8ab90">Power</div>
+              <div ref="{{ powValRef }}" style="font-size:11px;color:#e0a92e;font-variant-numeric:tabular-nums">1.15</div>
+            </div>
+            <input ref="{{ powRef }}" type="range" min="0" max="200" step="5" onInput="{{ onPower }}" style="width:100%;accent-color:#e0a92e" />
+          </div>
+        </div>
+
+        <div style="display:flex;flex-direction:column;gap:7px">
+          <div style="font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#b8ab90">Sound</div>
+          <div onClick="{{ toggleSound }}" style="display:flex;align-items:center;gap:9px;cursor:pointer">
+            <div style="width:38px;height:20px;border-radius:10px;border:1.5px solid rgba(243,234,211,.34);display:flex;align-items:center;padding:0 2px;background:{{ soundTrack }}">
+              <div style="width:14px;height:14px;border-radius:50%;background:#f3ead3;margin-left:{{ soundKnob }}"></div>
+            </div>
+            <div style="font-size:12px;color:#f3ead3">{{ soundLabel }}</div>
+          </div>
+          <div style="font-size:10px;color:#6f6656;text-wrap:pretty">Kontakte, Aufl&ouml;sungen und Abpr&auml;lle kommen aus der Repo-Tonbibliothek: die Kaskade steigt in zehn Stufen, der Umlenker gleitet, der Abprall ist Pappe.</div>
+          <div style="font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#b8ab90;margin-top:4px">Treffer-Form</div>
+          <div style="display:flex;gap:6px;flex-wrap:wrap">
+            <sc-for list="{{ formen }}" as="fm" hint-placeholder-count="4">
+              <div onClick="{{ fm.pick }}" style="cursor:pointer;padding:5px 10px;border-radius:999px;font-size:12px;border:1.5px solid {{ fm.rand }};background:{{ fm.grund }};color:{{ fm.farbe }}">{{ fm.name }}</div>
+            </sc-for>
+          </div>
+          <div style="font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#b8ab90;margin-top:4px">Instrument</div>
+          <div style="display:flex;gap:6px;flex-wrap:wrap">
+            <sc-for list="{{ instrumente }}" as="ins" hint-placeholder-count="3">
+              <div onClick="{{ ins.pick }}" style="cursor:pointer;padding:5px 10px;border-radius:999px;font-size:12px;border:1.5px solid {{ ins.rand }};background:{{ ins.grund }};color:{{ ins.farbe }}">{{ ins.name }}</div>
+            </sc-for>
+          </div>
+        </div>
+
+        <div style="display:flex;flex-direction:column;gap:7px">
+          <div style="font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#b8ab90">Grid</div>
+          <div style="display:flex;gap:7px">
+            <sc-for list="{{ grids }}" as="g" hint-placeholder-count="3">
+              <div onClick="{{ g.pick }}" style="flex:1;text-align:center;padding:7px 0;border-radius:3px;font-size:12px;cursor:pointer;color:{{ g.fg }};background:{{ g.bg }};border:1.5px solid {{ g.bd }}">{{ g.name }}</div>
+            </sc-for>
+          </div>
+        </div>
+
+        <div style="display:flex;flex-direction:column;gap:7px">
+          <div style="font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#b8ab90">Dice in play</div>
+          <div style="display:flex;gap:7px">
+            <sc-for list="{{ diceOpts }}" as="d" hint-placeholder-count="3">
+              <div onClick="{{ d.pick }}" style="flex:1;text-align:center;padding:7px 0;border-radius:3px;font-size:12px;cursor:pointer;color:{{ d.fg }};background:{{ d.bg }};border:1.5px solid {{ d.bd }}">{{ d.n }}</div>
+            </sc-for>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </sc-if>
+
+  <sc-if value="{{ revealOn }}" hint-placeholder-val="{{ false }}">
+    <div style="position:absolute;left:0;right:0;bottom:4%;display:flex;justify-content:center;pointer-events:none">
+      <div style="display:flex;flex-direction:column;align-items:center;gap:3px;padding:10px 26px;border-radius:3px;background:rgba(19,18,16,.82);border:1.5px solid rgba(224,169,46,.5);box-shadow:0 6px 24px rgba(0,0,0,.5);animation:kfbPopUp .35s ease-out">
+        <div style="font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:#e0a92e">Card unlocked</div>
+        <div style="font-family:'Irish Grover',cursive;font-size:28px;line-height:1.05;color:#f3ead3;text-align:center;max-width:640px;text-wrap:pretty">{{ revealTitle }}</div>
+      </div>
+    </div>
+  </sc-if>
+
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1280,&quot;height&quot;:720},&quot;launchDeg&quot;:{&quot;editor&quot;:&quot;range&quot;,&quot;min&quot;:8,&quot;max&quot;:45,&quot;step&quot;:1,&quot;default&quot;:30,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Throw&quot;},&quot;launchPower&quot;:{&quot;editor&quot;:&quot;range&quot;,&quot;min&quot;:0.4,&quot;max&quot;:1.4,&quot;step&quot;:0.05,&quot;default&quot;:1,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Throw&quot;},&quot;pitchDeg&quot;:{&quot;editor&quot;:&quot;range&quot;,&quot;min&quot;:3,&quot;max&quot;:52,&quot;step&quot;:1,&quot;unit&quot;:&quot;°&quot;,&quot;default&quot;:25,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Spielfeld&quot;},&quot;grid&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;16 × 9&quot;,&quot;14 × 8&quot;,&quot;12 × 7&quot;,&quot;18 × 10&quot;],&quot;default&quot;:&quot;12 × 7&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Spielfeld&quot;},&quot;palette&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;zufall&quot;,&quot;bubble&quot;,&quot;reef&quot;,&quot;berry&quot;,&quot;citrus&quot;],&quot;default&quot;:&quot;zufall&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Spielfeld&quot;},&quot;spread&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;scatter&quot;,&quot;patch&quot;],&quot;default&quot;:&quot;scatter&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Spielfeld&quot;},&quot;fieldSeed&quot;:{&quot;editor&quot;:&quot;int&quot;,&quot;min&quot;:0,&quot;max&quot;:99999,&quot;default&quot;:0,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Spielfeld&quot;},&quot;faces&quot;:{&quot;editor&quot;:&quot;int&quot;,&quot;min&quot;:0,&quot;max&quot;:5,&quot;default&quot;:3,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Spielfeld&quot;},&quot;diceCount&quot;:{&quot;editor&quot;:&quot;int&quot;,&quot;min&quot;:1,&quot;max&quot;:3,&quot;default&quot;:1,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Spiel&quot;},&quot;debug&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:false,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Spiel&quot;}}">
+/* KFB Boxel Ball v1 — DER WIRT UND DIE RUNDE.
+
+   Dieser Ort besitzt genau drei Dinge, und kein Modul kennt sie:
+     1) den TAKT (eine Uhr, eine Bildschleife),
+     2) die RUNDE (welche Karte, welches Feld, wann aufgedeckt),
+     3) den PUNKTESTAND.
+   Alles andere gehört den Modulen: die Fläche dem Boxel-Modul, die Physik dem Würfel-Modul, der
+   Hintergrund dem Gutter, das Blatt dem Kartenbauer, der Stapel dem Stapel.
+
+   DIE RUNDE ALS ZUSTANDSMASCHINE — fünf Zustände, ein Übergang je Zustand. Keiner kann
+   übersprungen werden, also kann die Runde nicht hängen bleiben:
+     boot → deal → fill → play → reveal → collect → deal → …
+
+   WARUM DER PUNKTESTAND NICHT IM ZUSTAND DES BAUSTEINS STEHT: er wird je Bild geschrieben, und
+   ein Zustand, der je Bild neu gesetzt wird, ist der Anfang jedes Flackerns (bezahlte Hausregel).
+   Er geht direkt in den Text des Elements. */
+
+class Component extends DCLogic {
+  state = { fan: [], revealOn: false, revealTitle: '', sound: false, settingsOn: false,
+            grid: null, diceCount: null, instrument: 'xylophon', trefferform: 'weiss' };
+
+  /* EIN EIGENTÜMER DER KIPPUNG. Sie kommt aus drei Richtungen (Regler im Overlay, Prop aus dem
+     Tweaks-Feld, Vorgabe beim Start) und geht an EINEN Ort — die Bühne. Zwei Schreiber derselben
+     Zahl waren in diesem Projekt viermal die Fehlerursache. */
+  _setPitchDeg(deg) {
+    const d = Math.max(3, Math.min(52, +deg || 0));
+    this._pitchDeg = d;
+    if (this.stage) this.stage.setPitch((d * Math.PI) / 180);
+    if (this._tiltVal) this._tiltVal.textContent = Math.round(d) + '°';
+    if (this._tilt && +this._tilt.value !== Math.round(d)) this._tilt.value = String(Math.round(d));
+    return d;
+  }
+
+  /* DIE LICHTSCHEIBE. Der Punkt IST die Richtung: sein Ort in der Scheibe ist die Richtung in der
+     Kartenebene, sein Abstand von der Mitte der Streifwinkel. Die Bühne besitzt die Umrechnung
+     (`setLightDir`), dieser Ort nur die Geste — sonst gäbe es zwei Rechnungen für eine Richtung. */
+  _padTo(ev) {
+    if (!this._pad || !this.stage) return;
+    const r = this._pad.getBoundingClientRect();
+    let x = ((ev.clientX - r.left) / r.width) * 2 - 1;
+    let y = -(((ev.clientY - r.top) / r.height) * 2 - 1);
+    const L = Math.hypot(x, y);
+    if (L > 1) { x /= L; y /= L; }
+    this.stage.setLightDir(x, y);
+    this._writeDot();
+  }
+
+  _writeDot() {
+    if (!this._dot || !this.stage) return;
+    const d = this.stage.getLightDir();
+    this._dot.style.left = ((d.x * 0.5 + 0.5) * 100) + '%';
+    this._dot.style.top = ((-d.y * 0.5 + 0.5) * 100) + '%';
+  }
+
+  _gridOf(name) {
+    const g = String(name || '').match(/(\d+)\D+(\d+)/);
+    return g ? { cols: +g[1], rows: +g[2] } : null;
+  }
+
+  _pickGrid(name) {
+    if (!this.boxel) return;
+    const g = this._gridOf(name);
+    if (!g || (this._gridName === name)) return;
+    this._gridName = name;
+    this.setState({ grid: name });
+    this.boxel.setGrid(g.cols, g.rows);
+    this.boxel.measure();
+    this.dice.measure();
+    this._fill();
+  }
+
+  _pickDice(n) {
+    if (!this.dice || this._diceN === n) return;
+    this._diceN = n;
+    this.setState({ diceCount: n });
+    this.dice.setParams({ count: n });
+    if (this.phase === 'play') this._play();
+  }
+
+  renderVals() {
+    const gname = this.state.grid || this.props.grid || '16 × 9';
+    const dn = this.state.diceCount != null ? this.state.diceCount
+             : (this.props.diceCount != null ? this.props.diceCount : 1);
+    const chip = (on) => ({ fg: on ? '#1b1917' : '#c9bda3', bg: on ? '#e0a92e' : 'rgba(243,234,211,.07)',
+                            bd: on ? '#e0a92e' : 'rgba(243,234,211,.22)' });
+    return {
+      settingsOn: this.state.settingsOn,
+      openSettings: () => { if (this.gear) this.gear.press(); this.setState({ settingsOn: true }); },
+      closeSettings: () => this.setState({ settingsOn: false }),
+      stop: (ev) => { if (ev && ev.stopPropagation) ev.stopPropagation(); },
+      gearIn: () => { if (this.gear) this.gear.hover(true); },
+      gearOut: () => { if (this.gear) this.gear.hover(false); },
+      gearHitRef: (el) => { this._gearHit = el; },
+      tiltRef: (el) => { this._tilt = el; if (el && this._pitchDeg) el.value = String(Math.round(this._pitchDeg)); },
+      tiltValRef: (el) => { this._tiltVal = el; if (el && this._pitchDeg) el.textContent = Math.round(this._pitchDeg) + '°'; },
+      onTilt: (ev) => this._setPitchDeg(ev.target.value),
+      padRef: (el) => { this._pad = el; this._writeDot(); },
+      dotRef: (el) => { this._dot = el; this._writeDot(); },
+      padDown: (ev) => { this._padOn = true; if (ev.target.setPointerCapture) ev.target.setPointerCapture(ev.pointerId); this._padTo(ev); },
+      padMove: (ev) => { if (this._padOn) this._padTo(ev); },
+      padUp: () => { this._padOn = false; },
+      powRef: (el) => { this._pow = el; if (el && this.stage) el.value = String(Math.round(this.stage.getLightPower() * 100)); },
+      powValRef: (el) => { this._powVal = el; if (el && this.stage) el.textContent = this.stage.getLightPower().toFixed(2); },
+      onPower: (ev) => {
+        const v = (+ev.target.value || 0) / 100;
+        this.stage.setLightPower(v);
+        if (this._powVal) this._powVal.textContent = v.toFixed(2);
+      },
+      soundLabel: this.state.sound ? 'On' : 'Off',
+      soundTrack: this.state.sound ? 'rgba(224,169,46,.55)' : 'rgba(243,234,211,.08)',
+      soundKnob: this.state.sound ? '18px' : '0px',
+      grids: ['16 × 9', '14 × 8', '18 × 10'].map((name) => Object.assign(
+        { name, pick: () => this._pickGrid(name) }, chip(name === gname))),
+      diceOpts: [1, 2, 3].map((n) => Object.assign(
+        { n, pick: () => this._pickDice(n) }, chip(n === dn))),
+      hostRef: (el) => { this._host = el; if (el && !this._booted) this._boot(); },
+      popRef: (el) => { this._pop = el; },
+      comboRef: (el) => { this._combo = el; },
+      hintRef: (el) => { this._hint = el; },
+      devRef: (el) => { this._dev = el; },
+      fan: this.state.fan,
+      revealOn: this.state.revealOn,
+      revealTitle: this.state.revealTitle,
+      toggleSound: () => {
+        const on = !this.state.sound;
+        this.setState({ sound: on });
+        if (this.dice) this.dice.setAudio(on);
+        /* V3-S2: derselbe Schalter schaltet BEIDE Quellen — der eingebaute Klangerzeuger für die
+           Physik des Würfels und die Tonbibliothek für die Kaskade. Ein Knopf, ein Zustand. */
+        if (this.audio) { this.audio.setEnabled(on); if (on) this.audio.unlock(); }
+      },
+      /* Die drei Instrumente (Georg 05.09.: »bau alle drei als Umschalter ins Zahnrad«) — die Wahl
+         fällt am Ohr. Ein Wechsel lädt den Vorrat des neuen Instruments nach. */
+      /* Die Treffer-Form: Handzeichnung gegen echten Bilderfilm, im Bild vergleichbar. */
+      formen: [['zeichnung', 'Handzeichnung'], ['weiss', 'Film weiß'], ['gross', 'Film groß'], ['sterne', 'Film Sterne']].map((p) => {
+        const an = this.state.trefferform === p[0];
+        return { name: p[1], pick: () => {
+            this.setState({ trefferform: p[0] });
+            if (this.hitfilm && p[0] !== 'zeichnung') this.hitfilm.setFilm(p[0]);
+          },
+          rand: an ? 'rgba(224,169,46,.75)' : 'rgba(243,234,211,.22)',
+          grund: an ? 'rgba(224,169,46,.22)' : 'rgba(243,234,211,.04)',
+          farbe: an ? '#f7dfa4' : '#b8ab90' };
+      }),
+      instrumente: ['xylophon', 'synth', 'musikdose'].map((n) => {
+        const an = this.state.instrument === n;
+        return { name: n, pick: () => {
+            this.setState({ instrument: n });
+            if (this.audio) { this.audio.setInstrument(n); this.audio.unlock(); }
+          },
+          rand: an ? 'rgba(224,169,46,.75)' : 'rgba(243,234,211,.22)',
+          grund: an ? 'rgba(224,169,46,.22)' : 'rgba(243,234,211,.04)',
+          farbe: an ? '#f7dfa4' : '#b8ab90' };
+      }),
+    };
+  }
+
+  /* DIE REGLER MÜSSEN AUCH ANKOMMEN.
+     `grid` und `diceCount` wurden nur EINMAL gelesen, in `_boot` — und `_boot` ist gegen einen
+     zweiten Lauf gesperrt. Wer im Feld von 16 × 9 auf 14 × 8 stellte, sah nie eine Änderung.
+     Das ist die Fehlerklasse, die im Kopf von `stack.v1.js` steht: eine Zahl, die gesendet und
+     nicht empfangen wird, ist schlimmer als keine, weil der Sender Erfolg meldet.
+     Gehandelt wird NUR bei echter Änderung — was je Bild geschrieben wird, ist der Anfang jedes
+     Flackerns. */
+  componentDidUpdate(prev) {
+    if (!this.boxel || !this.dice) return;
+    const p = prev || {};
+    /* Die Regler aus dem Tweaks-Feld gehen durch DIESELBEN Wege wie die Knöpfe im Overlay —
+       ein Ort je Handlung, sonst laufen zwei Fassungen derselben Änderung auseinander. */
+    if (this.props.grid !== p.grid && this.props.grid) this._pickGrid(this.props.grid);
+    if (this.props.diceCount !== p.diceCount && this.props.diceCount != null) this._pickDice(this.props.diceCount);
+    if (this.props.pitchDeg !== p.pitchDeg && this.props.pitchDeg != null) this._setPitchDeg(this.props.pitchDeg);
+    /* Die zwei Zahlen des Wurfs gehören GEORG — Winkel und Weite sind Gefühlsgrößen, keine
+       abgeleiteten. Ein Regler in seiner Hand spart eine Runde je Versuch. */
+    if ((this.props.launchDeg !== p.launchDeg || this.props.launchPower !== p.launchPower) && this.dice) {
+      this.dice.setParams({
+        launchDeg: this.props.launchDeg != null ? +this.props.launchDeg : 25,
+        launchPower: this.props.launchPower != null ? +this.props.launchPower : 1,
+      });
+    }
+  }
+
+  componentWillUnmount() {
+    this._dead = true;
+    if (this._onKey) window.removeEventListener('keydown', this._onKey);
+    if (this._raf) cancelAnimationFrame(this._raf);
+    if (this._ro) this._ro.disconnect();
+    if (this.gutter) this.gutter.dispose();
+    if (this.stage) this.stage.dispose();
+  }
+
+  /* ============================ Aufbau ============================ */
+  async _boot() {
+    if (this._booted || !this._host) return;
+    this._booted = true;
+    const K = window.__KFBBB || await new Promise((res) => {
+      window.addEventListener('kfbbbready', () => res(window.__KFBBB), { once: true });
+    });
+    this.K = K;
+    const THREE = K.THREE;
+
+    this._gridName = this.props.grid || '16 × 9';
+    const gr = this._gridOf(this._gridName) || { cols: 16, rows: 9 };
+    const cols = gr.cols, rows = gr.rows;
+    this._diceN = this.props.diceCount != null ? this.props.diceCount : 1;
+
+    this.stage = K.createStage({ THREE, host: this._host, params: { cardWidth: 10, pitch: 0.30 } });
+    /* ⚠ V4-S4 · DIE ART DER SCHATTENKARTE. Georgs Befund, dreimal geschickt: »der komplette
+       schatten der boxel zeigt den hellen saum«. Er hat recht, und die Ursache ist die
+       VARIANZ-Schattenkarte (VSM), die `stage.v1.js` Z. 69 setzt — sie speichert Mittelwert und
+       Streuung der Tiefe und schätzt daraus den Schattenanteil; an einer Kante ist die Streuung
+       groß, die Schätzung fällt zu hell aus, und es entsteht ein heller Streifen ENTLANG DES
+       GANZEN UMRISSES. Das ist kein Fehler im Bau, das ist der bekannte Preis des Verfahrens.
+       GEMESSEN, mit einem Regler je Probe und Rückstellung danach (260 Silhouettenkanten, 42
+       Stellen auf echtem Papier):
+         VSM radius 3 (Stand) → Saum an **52 %** der Stellen, Mittel **+4,9**, Höchstwert **+87**
+         VSM radius 1         → 21 %, Mittel **−9,0**  (Saum weg, Kante aber hart)
+         **PCFSoft radius 3   → 21 %, Mittel −9,2, Höchstwert 64, Schatteninneres 90,5** ← gesetzt
+         PCF radius 3         → 26 %, Mittel −8,6
+         zurück auf VSM r3    → **52 % / +4,9 / +87** (die Messung ist wiederholbar, der Zustand
+                                 wiederhergestellt — der Beweis ist umkehrbar)
+       Die restlichen 21 % sind Stellen, an denen das Papier von sich aus heller wird (Tusche,
+       Aufdruck) — sie stehen in JEDER Fassung, auch in der ohne Saum, und sind der Boden der
+       Messung, nicht ein Rest des Defekts. Das Schatteninneres bleibt gleich dunkel (90,5 gegen
+       92,8), die Zeichenaufrufe bleiben **48**.
+       ⚠ ES IST EIN TAUSCH, UND ZWAR GEGEN EINEN ALTEN BEFUND: der Kopf von `stage.v1.js` begründet
+       VSM mit »PCF liefert eine harte Kante, und eine harte Kante liest als PLATTE, nicht als
+       Schatten« (aus `recherchi-v4`). Bei PCFSoft macht `radius` nichts — gemessen sind r3 und r6
+       Bild für Bild identisch —, die Weichheit kommt allein aus der Auflösung der Karte. Der Saum
+       ist damit weg und die Kante wird härter; **welcher der beiden Fehler der kleinere ist, ist
+       eine LOOK-Entscheidung und gehört Georg**, darum steht die Zeile hier und nicht in der
+       gemeinsamen Bühne (die auch der v1 und der v3 gehört — dort wäre 0,95/VSM weiter richtig,
+       genau wie beim Belichtungswert in V2-S7b).
+       RÜCKWEG: diese eine Zeile löschen, dann gilt wieder VSM aus `stage.v1.js`. */
+    this.stage.renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+    /* ⚠ V2-S7c · DER VERSIONSSPRUNG IST ZUR&Uuml;CKGENOMMEN (05.09., nach der Abbruchregel des
+       eigenen Vertrags). Der Sprung auf three 0.185.1 war technisch grün — alle drei Stellen, die
+       per Textersatz in three hineinoperieren, haben gehalten (Erhebung:
+       `docs/boxelblitz-v2/ERHEBUNG_three_sprung.md`). Er hat aber den LOOK gekostet, und das
+       messbar: die Deckflächen der Boxel blieben gleich (149 gegen 150), die SEITENflächen wurden
+       10 % heller (77 gegen 70) — damit fiel der Kontrast Deck-zu-Seite von **2,087 auf 1,869**,
+       und genau das ist Georgs »die Oberfläche und Beleuchtung war in v1 besser«. Zwei Runden
+       Feinsuche über Umgebungsstärke und Belichtung kamen auf höchstens 1,95: die Seitenflächen
+       bekommen ihr Licht nicht nur aus der Umgebung, der Rest hätte eine Licht-für-Licht-Messung
+       gebraucht.
+       **Der Vertrag sagt für diesen Fall: zurück auf 0.160.** Und der Grund für den Sprung ist
+       entfallen — er war die Eintrittskarte für NixieFX, und dessen Editor kostet Georg acht
+       Stunden Lernzeit, die er nicht ausgeben will. Der Glüh-Durchgang, den »Juice v1« braucht,
+       liegt three auch in 0.160 bei (`EffectComposer` + `UnrealBloomPass` in den Addons).
+       Damit ist der Belichtungswert 0,95 aus `stage.v1.js` wieder der richtige, und diese Zeile
+       ist weg. Die Erhebung bleibt stehen: sie ist die Landkarte für den Tag, an dem der Sprung
+       einen echten Grund hat. */
+    this._setPitchDeg(this.props.pitchDeg != null ? this.props.pitchDeg : 17);
+    this.rng = K.makeRng(0xb07e11);
+
+    /* Der Gutter ist KOPIERT (Podcast v4) und wird unverändert benutzt: er liest `stage.camera`,
+       `stage.scene`, `stage.panelGroup`. `fluid` ist die Waberfläche, `duo` das Duo-Tone-Raster —
+       Georgs zwei Bausteine für den Spielfeldrand. */
+    this.gutter = K.createGutter({ THREE, stage: this.stage, params: {
+      channel: 'fluid',
+      palette: 'kfb',
+      /* Kräftiger als in der Sendung: hier ist der Gutter der RAND eines Spielfelds und darf
+         antworten. Ruhiger als das Original-Spielfeldtempo, damit er nicht mit dem Feld
+         konkurriert (Prime Directive: Reaktion ja, Leerlauf nein). */
+      duo: 0.42, calm: 0.85, speed: 0.26, dotPx: 8,
+    } });
+
+    this.boxel = K.createBoxel({ THREE, stage: this.stage, params: {
+      cols, rows, palette: this.props.palette || 'bubble',
+    } });
+    this.dice = K.createDice({ THREE, stage: this.stage, boxel: this.boxel, params: {
+      count: this.props.diceCount != null ? this.props.diceCount : 1,
+      audio: false,
+    } });
+    this.dice.attach();
+    /* KEIN WÜRFEL IM ERSTEN BILD (Georg 05.09.: »erscheint noch direkt zu beginn, verschwindet
+       dann«). `_deal()` versteckt ihn auch — aber erst, wenn die erste Runde anläuft, und bis
+       dahin stand er schon ein Bild lang da. Hier, unmittelbar nach dem Bau, ist die Stelle VOR
+       dem ersten Bild. */
+    this.dice.hide();
+    /* Die Gesichter kommen NACH dem Feld und NACH den Würfeln: sie brauchen die Zellgeometrie
+       zum Setzen und den Würfel als Blickziel. */
+    this.faces = K.createFaces({ THREE, stage: this.stage, boxel: this.boxel,
+                                 params: { count: this.props.faces != null ? this.props.faces : 3 } });
+
+    /* Das Bedien-Zahnrad: Kind der Kamera, Größe in Pixeln, ruhend still. Die Trefferfläche liegt
+       im DOM und bekommt ihre Lage VOM Zahnrad (`rect()`) — nicht eine zweite Pixelzahl daneben. */
+    this.gear = K.createGear({ THREE, stage: this.stage,
+      /* GRÖSSE UND TREFFERFLÄCHE SIND ZWEI ZAHLEN (Georg 04.09.: »3D gear 1/3 kleiner«).
+         Optisch 29 Bildpunkte = zwei Drittel der bisherigen 44; getroffen wird weiter auf 44,
+         der kleinsten Fläche, die auf einem Telefon zuverlässig sitzt (Design-Dokument §13).
+         Vorher war das EINE Zahl — kleiner machen hätte die Bedienung mit verkleinert.
+         Ruhedrehung und Rost: die Zahlen aus SpinballCast v4, siehe Modulkopf. */
+      params: { corner: 'tr', sizePx: 29, hitPx: 44, marginPx: 16, idleSpin: 0.30,
+                color: 0xc2b69c, metal: 0.42, rough: 0.5 } });
+
+    /* KEINE MESSUNG DES KARTENRASTERS (Georgs Vorgabe): `gridOverrides` bleibt leer, also gilt im
+       Bauer das stumpfe Viertel — Seite = coverOffset + 1 + ⌊(n−1)/4⌋, Quadrant = (n−1) % 4.
+       `aspect` ist die Form DES VIERTELS (1,794), damit Maske, Bild und Tusche eine Form sind. */
+    /* WARTEZUSTAND = DIE KFB-RÜCKSEITE, kein Textblatt (Georg 06.09.). Der Bauer stanzt sie in
+       dieselbe Kontur wie das Papier; sobald das Artwork da ist, tauscht er wie bisher. */
+    this.cb = K.createCardBuilder({ THREE, params: { aspect: K.CARD_AR,
+      backUrl: 'https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/kfb/KayfaBizarro_Card_Backside_01_lowrez.png' } });
+    this.stack = K.createStack({ THREE, stage: this.stage,
+      builder: { make: (c, o) => this.cb.make(c, o) },
+      params: { layers: 3, stepFrac: 0.052, stepJitter: 0.026, sideFrac: 0.030, sideJitter: 0.030,
+                tiltBaseDeg: 1.4, tiltStepDeg: 2.2, tiltLastDeg: 1.0, depthFrac: 0.010,
+                dim: 0.52, dimStep: 0.10 } });
+    /* V2-S4: der Empfänger des AKTIVEN Blattes. Dieselbe Stärke wie beim Stapel (0,34) — der
+       Schatten auf der Spielkarte und der auf den Nachbarblättern müssen gleich schwer sein,
+       sonst liest das Feld als zweite Ebene. Angehängt wird er beim Einfädeln der Karte. */
+    this.cardShadow = K.createCardShadow({ THREE, stage: this.stage, params: { opacity: 0.34 } });
+    /* JUICE v1 · LAGE 1: der Glüh-Durchgang. Er lädt seine drei Durchgänge nach (Addons von
+       three), darum entsteht er asynchron — bis dahin zeichnet der Wirt wie bisher. */
+    this.bloom = null;
+    K.createBloom({ THREE, stage: this.stage }).then((b) => {
+      this.bloom = b;
+      const el = this._host;
+      b.setSize(el.clientWidth || 16, el.clientHeight || 9);
+      /* V2-S9: die Lagen der Treffer-Form legen ihre Ebene bei der Entstehung selbst (sie gibt es
+         beim Start noch nicht). Angemeldet werden muss die Wurzel trotzdem, sonst ist der Zähler
+         `netzeAufEbene` blind und der Durchgang wird übersprungen. */
+      b.anmelden(this.stage.panelGroup);
+      if (window.__kfbBoxelBall) window.__kfbBoxelBall.bloom = b;
+    });
+
+    /* DIE ORDNUNG DER EFFEKTE HAT AB JETZT EINEN EIGENTÜMER (Georgs Befund 04.09.: »kaskaden
+       wirken eher chaotisch als choreographiert … kein layer-konzept und keine klare hierarchie«).
+       Das Modul legt den Sammelhörer im Würfel-Modul still und ruft dieselben Formen mit Rang,
+       Takt und Tonhöhe. Es entsteht NACH Würfel, Feld und Gutter, weil es alle drei ruft. */
+    this.juice = K.createJuice({ THREE, stage: this.stage, boxel: this.boxel, dice: this.dice,
+                                 gutter: this.gutter });
+    /* V3-S2: der Ton hängt sich an die ORDNUNG, nicht an die Physik — die Ordnung weiß, welche ART
+       gerade passiert ist und wie stark. Er startet AUS (Vorgabe des Gr&uuml;ndungsdokuments) und
+       wird mit dem Ton-Schalter im Zahnrad geweckt. */
+    this.audio = K.createAudio ? K.createAudio({ instrument: this.state.instrument }) : null;
+    if (this.audio) { this.audio.setEnabled(false); this.juice.setAudio(this.audio); }
+    /* Der Bilderfilm liegt auf derselben Effekt-Ebene wie die Handzeichnung, bekommt also denselben
+       Lichthof — sonst w&auml;re der Vergleich unfair. */
+    this.hitfilm = K.createHitFilm ? K.createHitFilm({ THREE, stage: this.stage, boxel: this.boxel,
+      params: { layer: K.GLOW_LAYER, film: 'weiss' } }) : null;
+    /* V3-S2 · DAS LICHT STEHT STEILER (Georg 05.09.: »die Schatten scheinen zu lang« — gemessen und
+       best&auml;tigt). Die Lichtrichtung ist in KARTENKOORDINATEN angegeben; ihre L&auml;nge in der Ebene
+       bestimmt die H&ouml;he &uuml;ber der Karte. Vorher (−0,42 / 0,86): L&auml;nge 0,957 → nur **16,8&deg;** &uuml;ber
+       dem Spielfeld — ein Streiflicht. Ein Boxel warf damit **2,57 Zellbreiten** Schatten (2,5
+       Nachbarn zugedeckt), und seine Deckfl&auml;che bekam nur 29 % des Lichts: daher wirkte das Feld
+       dunkel. Jetzt (−0,310 / 0,635): dieselbe Himmelsrichtung, **45&deg;** H&ouml;he, Schatten **0,78
+       Zellbreiten** = genau eine Zelle, Deckfl&auml;che 71 %.
+       Dass sich der Schatten bei Kippung NICHT &auml;ndert, ist Konstruktion und bleibt: das Licht ist
+       an die Karte gebunden, nicht an die Welt — gemessen 45,0&deg; bei 3&deg;, 31&deg; und 52&deg; Kippung.
+       R&uuml;ckweg: diese Zeile l&ouml;schen oder `stage.setLightDir(-0.42, 0.86)` rufen. */
+    this.stage.setLightDir(-0.310, 0.635);
+    /* V3-S4 · DER SCHATTEN WIRD SCHARF (Georg 05.09.: »der W&uuml;rfel hat einen runden Schatten?«,
+       »heller Saum beim Fallen«, »die Schatten scheinen geblurt« — drei Beobachtungen, EINE Zahl).
+       Gemessen: Schattenkarte 1024 &uuml;ber ein Fenster von 14,4 Einheiten = **0,0141 Einheiten je
+       Kartenpunkt**, dazu Weichzeichnung **8** → Weichzeichnungsbreite **0,1125 Einheiten = 20 %
+       der W&uuml;rfelkante** (0,564). Wer eine Ecke &uuml;ber ein F&uuml;nftel ihrer Kantenl&auml;nge verschmiert,
+       bekommt einen KREIS. Derselbe Kernel ist der weiche Rand, und `normalBias` 0,02 schiebt die
+       Schattenkante vom Werfer weg — das ist der helle Saum, genau w&auml;hrend eine Zelle noch
+       &uuml;ber dem Boden steht.
+       Gesetzt: Karte **2048** (0,0070 je Punkt), Weichzeichnung **3** → Kernel 0,021 = **3,7 %** der
+       Kante, und `normalBias` 0,006. R&uuml;ckweg: diesen Block l&ouml;schen. */
+    (() => {
+      let k = null;
+      this.stage.scene.traverse((o) => { if (o.isDirectionalLight && o.castShadow) k = o; });
+      if (!k) return;
+      k.shadow.mapSize.set(2048, 2048);
+      k.shadow.radius = 3;
+      /* ⚠ UND DER TIEFEN-VERSATZ MUSS MIT. Erster Anlauf lie&szlig; `bias` auf −0,0006 stehen — einer
+         Zahl aus der 1024er-Zeit. Auf dem feineren 2048er Raster verschiebt derselbe absolute
+         Versatz einen viel gr&ouml;&szlig;eren Anteil des Tiefengef&auml;lles: der Schattentest f&auml;llt dann f&uuml;r
+         Fl&auml;chen positiv aus, die im Schatten liegen m&uuml;ssten. Am Bildpunkt gemessen: **0,68 %** der
+         Fl&auml;che beschattet mit dem alten Versatz gegen **3,71 %** ohne ihn — 5,5-mal so viel.
+         Ich hatte die Texelgr&ouml;&szlig;e gepr&uuml;ft (0,0141 → 0,0070) und den gerechneten Kernel (20 % →
+         3,7 % der W&uuml;rfelkante), aber nicht das Ergebnis im BILD: Arithmetik ist keine Messung.
+         Gegen Schatten-Akne an den Seitenfl&auml;chen ist `normalBias` da, nicht ein negativer `bias`. */
+      k.shadow.bias = 0;
+      /* ⚠ UND DER ZWEITE VERSATZ AUCH. Mein erster Anlauf setzte `normalBias` auf 0,012 — und der
+         schiebt die Fl&auml;che entlang ihrer Normale weg, also dieselbe Wirkung wie der negative
+         `bias`: gemessen brach die beschattete Fl&auml;che von 2,2 % auf **0,67 %** ein.
+         Durchgemessen am Bildpunkt, im gleichen Zustand (Karte 2048, Weichzeichnung 3, `bias` 0):
+           normalBias 0     → 2,19 % der Fl&auml;che, Mittel 32,1
+           normalBias 0,004 → **2,21 %, Mittel 27,7**  ← gesetzt
+           normalBias 0,006 → 2,20 %, Mittel 23,3
+           normalBias 0,012 → 0,67 %, Mittel 13,6
+           normalBias 0,02  → 0,60 %, Mittel 14,1
+         0,004 h&auml;lt die volle Fl&auml;che, bleibt fast so dunkel wie ohne Versatz und beh&auml;lt einen
+         kleinen Schutz gegen Schatten-Akne. Gew&auml;hlt am BILD, nicht an der Rechnung. */
+      k.shadow.normalBias = 0.004;
+      if (k.shadow.map) { k.shadow.map.dispose(); k.shadow.map = null; }
+      k.shadow.needsUpdate = true;
+    })();
+    this.speedlines = K.createSpeedlines ? K.createSpeedlines({ THREE, stage: this.stage,
+      boxel: this.boxel, params: { layer: K.GLOW_LAYER } }) : null;
+    /* V2-S5: die Form des Höhepunkts. Sie entsteht NACH dem Feld, weil sie ihre Größe von der
+       Zellbreite nimmt — dieselbe Zahl, mit der der Höhepunkt schon seinen Ring wirft. */
+    this.hitfx = K.createHitFx ? K.createHitFx({ THREE, stage: this.stage, boxel: this.boxel,
+      /* V2-S9: die Form liegt auf der oberen Effekt-Ebene und bekommt dort ihren Lichthof.
+         Das Grundbild betritt die Glüh-Kette nicht — darum ist die Aufhellung aus v1 hier
+         nicht behoben, sondern unerreichbar. */
+      params: { layer: K.GLOW_LAYER } }) : null;
+    /* Ebene 4, die Ansage: sie benutzt das vorhandene Combo-Feld — kein zweites Textfeld.
+       Und seit V2-S5 trägt der Ruf den ORT: dort erscheint die Treffer-Form. */
+    this.juice.onCall((text, rang, ort) => {
+      if (this._combo) { this._combo.textContent = text; this._comboT = 1.2; }
+      if (rang === 'hoehepunkt' && ort && this.hitfx) {
+        /* DIE GR&Ouml;SSE TR&Auml;GT DIE WUCHT (Georg 05.09.: »keine Relation zwischen Impact-St&auml;rke und der
+           stumpf abgespielten Animation«). Die St&auml;rke des Augenblicks reist im Ruf mit; ohne diesen
+           Faktor war die Form immer gleich gro&szlig;, auch wenn nur eine Zelle fiel. */
+        const s = ort.staerke == null ? 1 : ort.staerke;
+        /* HANDZEICHNUNG ODER BILDERFILM — eine Wahl, zwei Module, dieselbe Gr&ouml;&szlig;e und dieselbe
+           Ebene. Georg vergleicht am Bild, nicht an einer Beschreibung. */
+        const f = 0.62 + 0.55 * s;
+        if (this.state.trefferform !== 'zeichnung' && this.hitfilm) {
+          this.hitfilm.setFilm(this.state.trefferform);
+          if (!this.hitfilm.fire(ort.x, ort.y, ort.z, { scale: f })) this.hitfx.fire(ort.x, ort.y, ort.z, { scale: f });
+        } else {
+          this.hitfx.fire(ort.x, ort.y, ort.z, { scale: f });
+        }
+      }
+    });
+
+    this._wire();
+    this._resize();
+    this._ro = new ResizeObserver(() => this._resize());
+    this._ro.observe(this._host);
+
+    this.score = 0; this.shown = 0; this.combo = 0; this._comboT = 0;
+    this.phase = 'boot'; this.pt = 0;
+    /* DER MESSGRIFF. Jede Baustelle hier hat einen (`window.__kfbPodcast6` und Geschwister):
+       ohne ihn ist keine Abnahme am laufenden Bild möglich, nur eine Behauptung. */
+    window.__kfbBoxelBall = {
+      stage: this.stage, boxel: this.boxel, dice: this.dice, gutter: this.gutter,
+      stack: this.stack, cards: this.cb, host: this, cardShadow: this.cardShadow,
+      juice: this.juice, hitfx: this.hitfx, bloom: this.bloom,
+      faces: this.faces, gear: this.gear,
+      stats: () => ({ phase: this.phase, pt: +this.pt.toFixed(2), score: this.score,
+                      /* V2-S8: die zwei Saaten der Runde. Ohne sie ist ein Befund am Feld
+                         (»der Würfel bleibt hängen«) nicht wiederholbar, also kein Befund. */
+                      saat: { palette: this._palSeed || 0, feld: this._fieldSeed || 0,
+                              gesichter: this._faceSeed || 0 },
+                      palette: this._palAudit || (typeof this._pal === 'string' ? this._pal : null),
+                      gesichter: this.faces ? this.faces.stats() : null,
+                      karte: (this.card && (this.card.cardName || this.card.title)) || null,
+                      vorrat: this.pool ? this.pool.length : null,
+                      seitenstrom: this.decks ? this.decks.stats() : null,
+                      buehne: this.stage.stats(), feld: this.boxel.stats(),
+                      ordnung: this.juice ? this.juice.stats() : null,
+                      wuerfel: this.dice.stats(), stapel: this.stack.stats() }),
+      audit: () => ({ feld: this.boxel.dev.audit(), wuerfel: this.dice.dev.audit(8),
+                      ordnung: this.juice ? this.juice.dev.audit() : null,
+                      gesichter: this.faces ? this.faces.dev.audit() : null,
+                      determinismus: this.dice.dev.determinism() }),
+      /* ⚠ V4-S1 · DER HANDBETRIEB DER BILDSCHLEIFE. Im verborgenen Vorschaufenster rechnet der
+         Wirt keine Bilder (`calls 1`, Feld mit 0 Zellen) — jede Messung dort ist ein Befund &uuml;ber
+         das FENSTER, nicht &uuml;ber den Bau. `tick(n, dt)` treibt dieselbe Schrittfunktion, die das
+         Spiel benutzt, mit gesetzter Schrittweite; `stage.render()` steht am Ende jedes Schritts,
+         das Bild ist also nach dem Aufruf wirklich neu. */
+      tick: (n = 1, dt = 1 / 60) => {
+        const k = Math.max(1, n | 0);
+        for (let i = 0; i < k; i++) this._step(dt);
+        return { schritte: k, pt: +this.pt.toFixed(3), phase: this.phase };
+      },
+    };
+    this._loop();
+
+    /* Der Kartenvorrat. Kommt er nicht, läuft das Spiel trotzdem — dann ist die Fläche unter den
+       Boxel leer statt bebildert, und das SAGT es im Bild (Regel 7 des Re-Briefings).
+       ⚠ V4-S8 · NICHT MEHR EIN FLACHER MISCHPOOL, SONDERN EIN SEITENSTROM (Georg 06.09.):
+       ein zufälliges Deck, daraus eine zufällige Seite mit VIER Karten, die erste ist das
+       Spielfeld, dann die nächsten drei, dann die nächste Seite, und ist das Deck durch, kommt
+       das nächste Zufallsdeck aus dem Korpus. Vorher lud `cb.pool()` ALLE 6108 Karten ALLER
+       Decks in eine gemischte Liste — im Fächer lagen dann vier Karten aus vier Decks.
+       Der Strom besitzt die REIHENFOLGE, der Kartenbauer die Karten, dieser Wirt die Runde.
+       `this.pool` ist DIESELBE Liste wie `stream.puffer`, nicht eine Kopie: der Wirt nimmt vorn
+       heraus, der Strom hängt hinten an — deshalb stehen immer vier im Stapel.
+       RÜCKWEG: die drei Zeilen unten gegen `const pool = await this.cb.pool(); this.pool = pool.slice();` tauschen. */
+    try {
+      this.decks = K.createDeckStream({ cb: this.cb, rng: this.rng });
+      await this.decks.start(8);
+      this.pool = this.decks.puffer;
+      if (!this.pool.length) throw new Error('Seitenstrom leer');
+      this._say('Halten lädt auf, ziehen zielt, loslassen schießt.');
+      this._deal();
+    } catch (e) {
+      console.warn('[boxelball] Kartenvorrat nicht erreichbar', e && e.message);
+      this.pool = [];
+      this._say('Karten nicht erreichbar — das Feld läuft ohne Blatt.');
+      this._deal();
+    }
+  }
+
+  _wire() {
+    const cv = this.stage.canvas;
+    const down = (ev) => { this.dice.onPointerDown(ev); if (this.audio && this.state.sound) this.audio.unlock(); cv.setPointerCapture && cv.setPointerCapture(ev.pointerId); };
+    const move = (ev) => this.dice.onPointerMove(ev);
+    const up = () => this.dice.onPointerUp();
+    cv.addEventListener('pointerdown', down);
+    cv.addEventListener('pointermove', move);
+    cv.addEventListener('pointerup', up);
+    cv.addEventListener('pointercancel', up);
+    /* ESC bricht das Zielen ab (Georg 06.09.). Die Taste kommt am FENSTER an, nicht an der
+       Leinwand — die hat keinen Fokus. Der Wirt gibt sie weiter; das Modul kennt keine Tastatur. */
+    this._onKey = (ev) => { if (this.dice && this.dice.onKeyDown(ev)) ev.preventDefault(); };
+    window.addEventListener('keydown', this._onKey);
+
+    /* WAS EIN EREIGNIS WERT IST, ENTSCHEIDET DIESER ORT — die Module melden nur, was passiert ist.
+       Kaskade: jeder Treffer innerhalb von 0,7 s zählt die Kette hoch, und die Kette ist der
+       Multiplikator (Design-Dokument §10: saftig, nicht rechnerisch). */
+    this.boxel.onEvent((kind, e) => {
+      if (kind === 'dissolve') {
+        this.combo++; this._comboT = 0.7;
+        this._add(20 * Math.min(6, this.combo), e.x, e.y);
+        /* Die Welt antwortet: derselbe Kontakt wirft eine Welle in den Gutter. */
+        if (this.gutter) this.gutter.ripple(e.x, e.y, 0.5 + Math.min(1, this.combo / 8));
+        /* Das Rundenende h\u00e4ngt am Fortschritt, den das Feld selbst f\u00fchrt \u2014 nicht an einer Zahl,
+           die hier nachgerechnet wird (ein Eigent\u00fcmer je Gr\u00f6\u00dfe). */
+        const pr = this.boxel.progress();
+        if (pr.removable <= 0 || pr.cleared >= 0.86) this._maybeReveal();
+      } else if (kind === 'bumper') { this._add(10, 0, 0); this.combo++; this._comboT = 0.7; }
+      else if (kind === 'redirect') { this._add(40, 0, 0); this.combo++; this._comboT = 0.7; }
+    });
+    this.dice.onEvent((kind, e) => {
+      if (kind === 'launch' && this.gutter) this.gutter.on('impact', { x: e.x, y: e.y, value: 0.4 + e.power });
+      if (kind === 'wall' && this.gutter) this.gutter.ripple(e.x, e.y, 0.5);
+    });
+  }
+
+  _resize() {
+    if (!this._host || !this.stage) return;
+    const w = this._host.clientWidth || 16, h = this._host.clientHeight || 9;
+    this.stage.setSize(w, h);
+    if (this.gutter) this.gutter.setSize(w, h);
+    /* Der Komponist hat eigene Puffer und muss mitwachsen — sonst zeichnet er in ein zu kleines
+       Bild und alles wird weich (benannte Falle 1 im Modulkopf). */
+    if (this.bloom) this.bloom.setSize(w, h);
+    this.boxel.measure();
+    this.dice.measure();
+  }
+
+  _say(t) { if (this._hint) this._hint.textContent = t; }
+
+  _add(n, x, y) {
+    this.score += n;
+    if (this._combo && this.combo > 1) this._combo.textContent = '×' + Math.min(6, this.combo) + ' Kaskade';
+  }
+
+  /* ============================ die Runde ============================ */
+  _cardSeed(card) {
+    const s = String((card && (card.cardName || card.title)) || 'kfb') + '|' + ((card && card.n) || 1);
+    let h = 2166136261;
+    for (let i = 0; i < s.length; i++) { h ^= s.charCodeAt(i); h = Math.imul(h, 16777619); }
+    return (h >>> 0) % 100000 + 1;
+  }
+
+  _deal() {
+    const K = this.K;
+    /* NACHLADEN: der Strom hält den Puffer auf mindestens acht Karten, damit immer vier im
+       Stapel stehen (Georg 06.09.). Er läuft nebenher — diese Runde wartet nicht darauf. */
+    if (this.decks) this.decks.fuellen(8);
+    /* ⚠ V4-S36 · IMMER EINE ZUFÄLLIGE KARTE (Georg 06.09.: »wir zeigen immer zufällig ausgewählte
+       Karten für Start/Level«). Vorher nahm der Wirt die VORDERSTE aus dem Puffer (`shift`) — also
+       die Reihenfolge, in der der Seitenstrom sie gerade geliefert hat. Jetzt wird eine beliebige
+       aus dem Puffer gezogen (`splice`), mit dem geseeteten Zufall des Wirts: damit ist die Wahl
+       zufällig UND bei gleicher Saat wiederholbar. Der Strom hängt weiter hinten an, das Loch in
+       der Mitte stört ihn nicht. */
+    const p = this.pool || [];
+    const i = p.length ? Math.floor((this.rng ? this.rng() : Math.random()) * p.length) : -1;
+    const next = i >= 0 ? p.splice(i, 1)[0] : null;
+    this.card = next;
+    const w = this.stage.card.w;
+
+    /* Das neue Blatt kommt AUS DEM STAPEL herauf — es erscheint nicht. Die Startlage wird beim
+       Stapel ABGEFRAGT (`stats().dims[0]`), nicht geraten: er ist der Eigentümer dieser Zahlen. */
+    const from = (this.stack.stats().dims || [])[0] || null;
+    if (this.active) { this.stage.panelGroup.remove(this.active.group); this.active = null; }
+    if (next) {
+      this.active = this.cb.make(next, { width: w });
+      this.active.group.position.set(from ? from.x : 0, from ? from.y : 0, from ? -0.04 : 0);
+      this.active.group.rotation.z = from ? (from.grad * Math.PI) / 180 : 0;
+      this.active.group.traverse((o) => { if (o.isMesh) { o.userData.noMeasure = true; o.castShadow = false; o.receiveShadow = false; } });
+      const k0 = from ? 0.52 : 1;
+      if (this.active.mat) this.active.mat.color.setScalar(k0);
+      if (this.active.dmat) this.active.dmat.color.setScalar(k0);
+      this.stage.panelGroup.add(this.active.group);
+    }
+    /* Der Stapel darunter: die drei nächsten Karten, sichtbar als Stufen mit eigener Tuschekante. */
+    if (this.pool) this.stack.set(this.pool.slice(0, 3), w);
+
+    this.phase = 'deal'; this.pt = 0;
+    /* KEIN WÜRFEL, SOLANGE ES KEINE FLÄCHE GIBT (Georg: »beim start wird der würfel direkt
+       gezeigt und macht probleme«). Er entsteht erst im Startablauf, wenn das Feld SITZT. */
+    if (this.dice) this.dice.hide();
+    /* ⚠ DAS BLATT NAHM KEINEN SCHATTEN AN (Georg 05.09.: »die boxel scheinen keine schatten auf
+       die karte zu werfen — auf stapel-karten ist es schon korrekt«). Gemessen: die Boxel WERFEN
+       (`castShadow true`), aber jedes Netz der Kartenebene stand auf `receiveShadow false`. Ein
+       Werfer ohne Empfänger ist kein Schatten — dieselbe Klasse wie »den Mechanismus prüfen, bevor
+       man seine Zahlen repariert«. Der Kartenbauer setzt es nicht, also setzt es der Wirt an EINER
+       Stelle: beim Einfädeln des aktiven Blattes. */
+    /* ⚠ DAS BLATT KANN GAR KEINEN SCHATTEN EMPFANGEN — UND ZWAR AUS BAUART (V2-S4, gemessen
+       05.09. nach Georgs drittem Befund). Beide Netze der Karte sind `MeshBasicMaterial`; das ist
+       ein UNBELEUCHTETES Material und bringt die Schatten-Bausteine des Renderers nicht mit. Die
+       Zeile darunter (`receiveShadow = true`) blieb darum ohne jede Wirkung: auf dem hellen
+       Kartenstreifen stand die Verdunkelung bei EXAKT 0. Sie bleibt trotzdem stehen — sie kostet
+       nichts und gilt, falls der Kartenbauer sein Material einmal wechselt.
+       DIE WIRKSAME HÄLFTE ist die Fangfläche: `cardshadow.v1.js` hängt dem Blatt eine unsichtbare
+       `ShadowMaterial`-Fläche in seiner eigenen Silhouette an. Genau so löst der Kartenstapel es
+       seit SpinballCast v1, und dort steht die Begründung wörtlich im Modulkopf. */
+    if (this.active && this.active.group) {
+      this.active.group.traverse((o) => { if (o.isMesh) o.receiveShadow = true; });
+      if (this.cardShadow) this.cardShadow.attach(this.active);
+    } else if (this.cardShadow) {
+      this.cardShadow.detach();
+    }
+    /* \u26a0 DER GUTTER EMPF\u00c4NGT NICHTS (Georg 05.09., am Bild: \u00bbgutter sollte keine schatten
+       empfangen/zeigen\u00ab). Er ist die Waberfl\u00e4che HINTER dem Blatt \u2014 ein Boxel-Schatten darauf
+       liest als Schmutz, nicht als Tiefe. Erkannt an seiner Zeichenreihenfolge (\u2212900, die
+       `gutter.v4` selbst setzt), nicht an einem Namen, den das Modul nicht verspricht. Steht hier
+       neben dem Empf\u00e4nger des Blattes, damit BEIDE Entscheidungen an einer Stelle sichtbar sind:
+       das Papier nimmt Schatten an, der Zwischenraum nicht. */
+    this.stage.panelGroup.traverse((o) => {
+      if (o.isMesh && o.renderOrder <= -900) { o.receiveShadow = false; o.castShadow = false; }
+    });
+    this.setState({ revealOn: false });
+    if (this.gutter) this.gutter.on('card', {});
+  }
+
+  _fill() {
+    const K = this.K;
+    /* V2-S8 · DER ZUFALL. Georg 05.09.: »die farben/paletten sollen zufällig und jedes Mal neu
+       sein, verteilung der boxel ebenso«.
+
+       Vorher: Palette UND Aufbau kamen aus `_cardSeed(this.card)` — dasselbe Blatt ergab dasselbe
+       Feld (Design-Dokument §11). Das ist jetzt der Rückweg, nicht der Stand: `props.palette` mit
+       einem Namen aus `PALETTE_NAMES` bindet auf eine der vier handgesetzten Paletten,
+       `props.fieldSeed` bindet den Aufbau.
+
+       DIE SAAT WIRD FESTGEHALTEN, NICHT NUR GEZOGEN. Ein Feld, das sich nicht wiederherstellen
+       lässt, kann man nicht messen — und »der Würfel bleibt hängen« wäre ohne die Saat kein
+       Befund, sondern eine Anekdote. Beide Zahlen liegen in `stats()`. */
+    const fixed = this.props.palette;
+    const named = fixed && K.PALETTE_NAMES.indexOf(fixed) >= 0;
+
+    this._palSeed = named ? 0 : ((Math.random() * 0x7ffffffe) | 0) + 1;
+    this._fieldSeed = (this.props.fieldSeed | 0) || ((Math.random() * 0x7ffffffe) | 0) + 1;
+    /* V4-S1 · DIE GESICHTER BEKOMMEN IHRE EIGENE SAAT.
+       Georgs Befund 05.09.: »die drei Augen-Boxel scheinen bevorzugte Positionen zu haben«. Er hat
+       recht, und die Ursache war NICHT die Auswahl — die ist gemessen gleichverteilt (200 L&auml;ufe,
+       alle 50 in Frage kommenden Zellen getroffen, Chi-Quadrat 57,7 bei 49 Freiheitsgraden).
+       Die Ursache war die QUELLE: `this.rng` steht auf einer FESTEN Saat (0xb07e11), und bis zum
+       Setzen der Gesichter werden bei jedem Laden gleich viele Zahlen daraus gezogen — also f&auml;llt
+       das erste Augenpaar bei jedem Neuladen auf DIESELBE Zelle (dreimal gemessen: 7:5, 7:5, 7:5),
+       das zweite meist auch (4:3 in zwei von drei), w&auml;hrend Palette und Feld l&auml;ngst je Runde neu
+       gezogen werden. Jetzt zieht auch das Gesichterfeld seine eigene Saat je Runde — und sie steht
+       in `stats().saat`, damit eine Runde weiter wiederholbar bleibt (Vertrag: determinism seeded).
+       R&uuml;ckweg: `faces.build(this.rng)` in der Phasenschaltung. */
+    this._faceSeed = (this.props.faceSeed | 0) || ((Math.random() * 0x7ffffffe) | 0) + 1;
+
+    const pal = named ? fixed : K.makePalette(K.makeRng(this._palSeed));
+    this._palAudit = named ? null : K.auditPalette(pal);
+    this._pal = pal;
+
+    this.boxel.build(this._fieldSeed, { palette: pal, spread: this.props.spread || 'scatter' });
+    this.combo = 0;
+    this.phase = 'fill'; this.pt = 0;
+  }
+
+  _intro() {
+    this.phase = 'intro'; this.pt = 0;
+    this._introDone = false;
+    if (this.juice) {
+      this.juice.neueRunde();
+      /* F&uuml;r den Lehrsatz gilt eine MINDESTST&Auml;RKE — er ist die einzige Aufl&ouml;sung, die der
+         Spieler in dieser Sekunde sieht, und sie soll lesbar sein. Seine Kettendichte ist per
+         Konstruktion 1, also w&auml;re er ohne diese Zahl das Leiseste im ganzen Spiel.
+         V3-S1: hie&szlig; vorher `starkFrom` (eine Schwelle im Rang) — den Rang gibt es nicht mehr,
+         die St&auml;rke kommt aus der Dichte. `_play()` setzt die Zahl auf den Stand zur&uuml;ck. */
+      this.juice.setParams({ lehrsatzStaerke: 0.78 });    }
+    this._say('');
+    const s = this.boxel.innerSeat(this.rng) || { x: 0, y: 0, z: 0 };
+    const list = this.dice.dice;
+    for (let i = 0; i < list.length; i++) {
+      const d = list[i];
+      if (!d.mesh) continue;
+      d.mesh.visible = i === 0;
+    }
+    if (list[0]) {
+      /* DIE ABWURFHÖHE KOMMT AUS DEM SICHTFELD, NICHT AUS EINER ZELLZAHL (Georg 05.09.).
+         Gesucht ist die kleinste Höhe über der Karte, bei der der Würfel OBERHALB des Bildrands
+         steht — also nicht gerechnet, sondern am Bild abgefragt: `stage.toScreen()` liefert den
+         Bildpunkt eines Ortes der Kartenebene, und ich gehe in Zellschritten hoch, bis er über
+         der Kante liegt. Damit stimmt es bei jeder Kippung und jedem Fenster, ohne eine zweite
+         Formel neben `frame()`. */
+      const G = this.boxel.geometry();
+      let hoch = s.z + G.cell * 5.2;
+      for (let k = 0; k < 40; k++) {
+        const p = this.stage.toScreen(s.x, s.y, hoch);
+        if (p.y < -G.cell * 0.5) break;
+        hoch += G.cell;
+      }
+      this._introDrop = hoch;
+      this.dice.place(list[0], s.x, s.y, s.z, hoch);
+    }
+  }
+
+  _play(ausIntro) {
+    /* JE WÜRFEL EIN EIGENER PLATZ. Vorher bekamen alle denselben Sitz — bei einem Würfel unsichtbar,
+       bei zwei oder drei stecken sie ineinander, und der Löser sieht bei jedem Schritt eine
+       Durchdringung (dieselbe Falle wie das Magazin in SpinballCast, dort mit 1,04 statt 1,18).
+
+       ⚠ `ausIntro` IST NICHT KOSMETIK. Gemessen am ersten Lauf: der Startablauf ließ den Würfel
+       fallen, aufsetzen und die Zelle auflösen — und dann warf `_play()` ihn ein zweites Mal von
+       5,2 Zellen Höhe ab (gemessen: z 1,720 und `onGround false`, obwohl er gerade gelandet war).
+       Damit war Takt 5 der Kritik (»er fällt die eine Zellhöhe nach und liegt flach«) unsichtbar,
+       und der Lehrsatz zeigte auf einen Würfel, der schon wieder in der Luft war.
+       Kommt der Ruf aus dem Startablauf, bleibt Würfel 1 liegen, wo er liegt. */
+    const used = {};
+    for (const d of this.dice.dice) {
+      if (ausIntro && d.i === 0) { if (d.mesh) d.mesh.visible = true; continue; }
+      if (d.mesh) d.mesh.visible = true;
+      let s = null;
+      for (let k = 0; k < 24 && !s; k++) {
+        const cand = this.boxel.innerSeat(this.rng);
+        if (!cand) break;
+        if (!used[cand.c + ':' + cand.r]) { s = cand; used[s.c + ':' + s.r] = 1; }
+      }
+      s = s || this.boxel.innerSeat(this.rng) || { x: 0, y: 0, z: 0 };
+      this.dice.place(d, s.x, s.y, s.z);
+    }
+    this.phase = 'play'; this.pt = 0;
+    /* Lehrsatz-Modus AUS — im Spiel muss die St&auml;rke aus der Kettendichte kommen, sonst f&auml;ngt
+       jede Kaskade laut an und das Crescendo ist weg. */
+    if (this.juice) this.juice.setParams({ lehrsatzStaerke: 0 });
+    this._say('Würfel halten lädt auf · ziehen zielt · loslassen schießt.');
+  }
+
+  _maybeReveal() {
+    if (this.phase !== 'play') return;
+    this.boxel.sweep();
+    this.dice.hide();
+    this.phase = 'reveal'; this.pt = 0;
+    const t = (this.card && (this.card.cardName || this.card.title)) || 'Unbenannt';
+    this.setState({ revealOn: true, revealTitle: t });
+    this._say('');
+    this._add(500, 0, 0);
+  }
+
+  _collect() {
+    this.phase = 'collect'; this.pt = 0;
+    const t = (this.card && (this.card.cardName || this.card.title)) || 'Unbenannt';
+    this.setState({ revealOn: false, fan: this.state.fan.concat([{ short: t.length > 26 ? t.slice(0, 24) + '…' : t }]) });
+  }
+
+  /* ============================ Takt ============================ */
+  _loop() {
+    /* ⚠ MESSWERKZEUG (V4-S1, additiv) — UND EIN BEZAHLTER FEHLER DARIN (V4-S3).
+       `step(dtVor)` nimmt eine Schrittweite entgegen, damit im verborgenen Fenster von Hand
+       getickt werden kann (Hausregel 8). **`requestAnimationFrame` &Uuml;BERGIBT SEINEM R&Uuml;CKRUF EINEN
+       ZEITSTEMPEL** — die erste Fassung hat `step` direkt angemeldet, also kam ab dem zweiten Bild
+       eine Zahl in `dtVor` an, der Zweig »von Hand« griff, und die Schleife meldete sich nicht
+       mehr an: das Spiel stand nach zwei Bildern still (`phase deal`, `pt 0`, Feld mit 0 Zellen,
+       schwarze Fl&auml;che). **Ein Messwerkzeug, das den Antrieb anfasst, muss den Antrieb GETRENNT
+       halten:** `frame()` ist der R&uuml;ckruf des Browsers und verwirft den Zeitstempel, `step(dt)`
+       ist der Handbetrieb. Ohne Argument verh&auml;lt sich alles wie in der v3. */
+    const step = (dtVor) => {
+      if (this._dead) return;
+      const now = performance.now() / 1000;
+      const dt = dtVor != null ? Math.min(0.05, dtVor)
+                               : Math.min(0.05, this._last ? now - this._last : 0.016);
+      if (dtVor == null) this._last = now;
+      this.pt += dt;
+      this.stage.tick(dt);
+
+      if (this.gutter) { this.gutter.setContext(this.stage.metrics()); this.gutter.tick(dt); }
+      /* ZEITDEHNUNG BEIM HÖHEPUNKT (Kritik §5). Die Zahl gehört dem Juice-Modul, der Wirt
+         multipliziert sie in die Schrittweite der WELT — Feld und Würfel. Die Phasenuhr (`pt`),
+         die Gesichter und die Effekt-Warteschlange laufen weiter in echter Zeit: eine gedehnte
+         Warteschlange würde ihren eigenen Takt dehnen und die Wirkung auffressen. */
+      const wdt = dt * (this.juice ? this.juice.timeScale() : 1);
+      this.boxel.update(wdt);
+      this.dice.update(wdt);
+      if (this.juice) this.juice.update(dt);
+      /* ⚠ KORRIGIERT (nach Georgs »ich sehe gar keine VFX«): die Treffer-Form läuft in der
+         GEDEHNTEN Zeit, nicht in der echten. Mein erstes Argument war falsch — im Augenblick des
+         Höhepunkts steht die Welt absichtlich in Zeitlupe, und ein Effekt in Echtzeit ist dann das
+         SCHNELLSTE im Bild: er ploppt und ist weg, bevor das Auge beim Ereignis angekommen ist.
+         Gemessen war die Form 132 × 144 Bildpunkte groß und 206 Graustufen hell, also alles andere
+         als unsichtbar — sie war nur zu schnell für ihren eigenen Moment. */
+      if (this.hitfx) this.hitfx.update(wdt);
+      if (this.speedlines) this.speedlines.update(wdt, this.dice.dice);
+      if (this.hitfilm) this.hitfilm.update(wdt);
+      if (this.faces) this.faces.update(dt, this.dice.dice);
+      if (this.gear) {
+        this.gear.update(dt);
+        /* Die Trefferfläche folgt dem Zahnrad, statt eine eigene Zahl zu führen. Nur bei
+           Änderung schreiben — was je Bild ins DOM geht, ist der Anfang jedes Ruckelns. */
+        const r = this.gear.rect();
+        if (this._gearHit && (r.left !== this._gr0 || r.top !== this._gr1)) {
+          this._gr0 = r.left; this._gr1 = r.top;
+          this._gearHit.style.left = r.left + 'px';
+          this._gearHit.style.top = r.top + 'px';
+          this._gearHit.style.width = r.w + 'px';
+          this._gearHit.style.height = r.h + 'px';
+        }
+      }
+      this._phaseTick(dt);
+
+      /* Der Punktestand zählt sich HERAUF (Design-Dokument §10: animiert, nicht nachgerechnet). */
+      if (this.shown !== this.score) {
+        const d = this.score - this.shown;
+        this.shown += Math.max(1, Math.abs(d) * 0.14) * Math.sign(d);
+        if (Math.abs(this.score - this.shown) < 1) this.shown = this.score;
+        if (this._pop) this._pop.textContent = String(Math.round(this.shown));
+      }
+      if (this._comboT > 0) {
+        this._comboT -= dt;
+        if (this._comboT <= 0) { this.combo = 0; if (this._combo) this._combo.textContent = ''; }
+      }
+      if (this._dev && this.props.debug) {
+        const b = this.boxel.stats(), d = this.dice.stats();
+        this._dev.textContent = b.grid + ' · ' + b.alive + '/' + b.cells + ' · Zelle ' + b.cellPx + ' px\n'
+          + 'Würfel ' + d.model + ' · ' + d.edgePx + ' px\n' + this.phase;
+      }
+      /* JUICE v1 · LAGE 1: bei eingeschaltetem Glühen zeichnet der Komponist, sonst der Wirt.
+         EIN Zeichner je Bild, nie beide — sonst steht das Bild zweimal im Puffer. */
+      /* V2-S9 · JUICE v1 · LAGE 1: `bloom.render()` zeichnet SELBST das Grundbild (über
+         `stage.render()`) und legt danach nur den Hof darüber. Ein Zeichner je Bild, wie vorher —
+         aber der Wirt ruft nicht mehr beide Wege, sondern nur noch einen. */
+      if (this.bloom && this.bloom.bereit) this.bloom.render();
+      else this.stage.render();
+    };
+    this._step = step;
+    const frame = () => { this._raf = requestAnimationFrame(frame); step(); };
+    this._raf = requestAnimationFrame(frame);
+  }
+
+  _phaseTick(dt) {
+    const P = this.phase;
+    if (P === 'deal') {
+      /* Das Blatt fährt aus dem Stapel in die Spiellage und wird hell — 0,55 s, kurz gezeigt. */
+      const k = Math.min(1, this.pt / 0.55);
+      const e = 1 - Math.pow(1 - k, 3);
+      if (this.active) {
+        const gp = this.active.group;
+        gp.position.x *= (1 - e * 0.35);
+        gp.position.y *= (1 - e * 0.35);
+        gp.position.z *= (1 - e * 0.35);
+        gp.rotation.z *= (1 - e * 0.35);
+        const kk = 0.52 + 0.48 * e;
+        if (this.active.mat) this.active.mat.color.setScalar(kk);
+        if (this.active.dmat) this.active.dmat.color.setScalar(kk);
+      }
+      if (k >= 1) {
+        if (this.active) {
+          this.active.group.position.set(0, 0, 0);
+          this.active.group.rotation.z = 0;
+          if (this.active.mat) this.active.mat.color.setScalar(1);
+          if (this.active.dmat) this.active.dmat.color.setScalar(1);
+        }
+        this._fill();
+      }
+      return;
+    }
+    if (P === 'fill') {
+      const p = this.boxel.progress();
+      /* Übergang, wenn das Feld SITZT — oder nach 4 s, damit eine hängende Zelle die Runde nicht
+         blockiert (und `dev.audit()` sie dann als `haengengeblieben` meldet). */
+      if (p.seated >= p.total || this.pt > 4) {
+        /* Die Gesichter werden gesetzt, wenn das Feld SITZT — vorher gibt es keine Oberfläche,
+           auf die ein Auge passt (die Rigs strahlen die Fläche an, um sie zu finden). */
+        if (this.faces) this.faces.build(this.K.makeRng(this._faceSeed || 1));
+        this._intro();
+      }
+      return;
+    }
+    if (P === 'intro') {
+      /* DER STARTABLAUF IST EIN LEHRSATZ OHNE TEXT (Kritik §7.1, Georgs Ansage: »so versteht der
+         spieler die idee und kann dann eine ebene tiefer starten«).
+         Die Takte 1–3 kosten keine Zeile: `dice.place()` setzt den Würfel schon 5,2 Zellen HOCH
+         ab und lässt die vorhandene Physik ihn fallen. Was fehlte, sind die zwei Enden — vorher
+         durfte er gar nicht zu sehen sein (jetzt `hide()` in `_deal`), und beim Aufsetzen soll
+         die Zelle unter ihm sich AUFLÖSEN. Genau diesen Kontakt unterdrückt `place()` mit
+         `spawn` (aus gutem Grund: sonst hatte die Runde nach null Würfen 20 Punkte). Deshalb
+         wird er hier EINMAL ausdrücklich ausgelöst — nicht der Unterdrücker abgeschaltet. */
+      const d = this.dice.dice[0];
+      if (!d) { this._play(); return; }
+      if (!this._introDone && d.onGround) {
+        this._introDone = true;
+        this.pt = 0;
+        const k = this.boxel.cellOf(d.x, d.y);
+        if (k) this.boxel.contact(k.c, k.r, 'land', 1.0, 0, 0);
+      }
+      /* 0,35 s nach dem Lehrsatz fällt der Würfel die eine Zellhöhe nach und liegt flach — erst
+         DANN kommt die Bedienzeile (Takt 6: vorher soll man zusehen). */
+      /* DER WÜRFEL MUSS FLACH LIEGEN, BEVOR DAS SPIEL BEGINNT (Georg 05.09.: »sollte auch hier
+         schon korrekt auf einer seite landen«). Die Bedingung ist deshalb die gemessene
+         Schiefe, nicht eine Uhr — eine Uhr ist kein Lagekriterium. 1,4 s ist nur der Notausgang,
+         damit ein hängender Fall die Runde nicht blockiert. */
+      if (this._introDone && (this.dice.stats().kante < 2 || this.pt > 1.4)) {
+        this._play(true);
+        if (this._hint && !this._hint.textContent) {
+          this._say('Würfel halten lädt auf · ziehen zielt · loslassen schießt.');
+        }
+      }
+      return;
+    }
+    if (P === 'reveal') {
+      /* Die KARTE bewegt sich, nicht die Kamera: sie hebt sich der Kamera entgegen und richtet
+         sich auf. Ein Eigentümer der Kamera bleibt der Wirt — eine Aufdeckung darf ihn nicht
+         übernehmen. */
+      const k = Math.min(1, this.pt / 0.9);
+      const e = 1 - Math.pow(1 - k, 3);
+      if (this.active) {
+        this.active.group.position.z = e * this.stage.card.w * 0.16;
+        this.active.group.rotation.x = e * 0.30;
+        const s = 1 + e * 0.06;
+        this.active.group.scale.set(s, s, 1);
+      }
+      if (this.pt > 2.4) this._collect();
+      return;
+    }
+    if (P === 'collect') {
+      /* Ab in den Fächer: das Blatt schrumpft nach oben rechts aus dem Bild. */
+      const k = Math.min(1, this.pt / 0.55);
+      const e = k * k;
+      if (this.active) {
+        const gp = this.active.group;
+        const w = this.stage.card.w;
+        gp.position.set(e * w * 0.62, e * w * 0.34, this.stage.card.w * 0.16 + e * w * 0.5);
+        gp.rotation.z = -e * 0.5;
+        const s = (1 + 0.06) * (1 - e * 0.86);
+        gp.scale.set(s, s, 1);
+      }
+      if (k >= 1) this._deal();
+      return;
+    }
+  }
+}
+
+</script>
+</body>
+</html>

@@ -1,0 +1,595 @@
+{
+  "sourceFile": "MedKayfab_Endocrinology - ADD web.pdf",
+  "deckTitle": "Endocrinology Edition",
+  "deckType": "medical education roleplay",
+  "bundleSuggestion": "TBD",
+  "pageCount": 15,
+  "analysisVersion": 1.0,
+  "generatedAt": "2026-06-19T00:00:00",
+  "savedAt": "2026-06-19T00:00:00",
+  "extractionTool": "cowork_task_v3",
+  "RAF": false,
+  "gradingMode": "educational",
+  "deckFunction": [
+    "educational",
+    "workshop"
+  ],
+  "seriesId": "medkayfab_megapack",
+  "cards": [
+    {
+      "cardNumber": 1,
+      "cardName": "Hypo the Hypothalamus",
+      "grade": 2,
+      "power": "Portal Command – Send short-range chemical orders via blood, bypassing nerves.",
+      "lore": "Dopamine tonically inhibits prolactin. Metoclopramide blocks dopamine → galactorrhea.",
+      "gradeReason": "Name undersells the boss — Hypo reads small, not master conductor of the whole axis.",
+      "artworkPrompt": "Tiny general at a massive switchboard commanding chemical messengers. Style: medical cartoon. Subject: diminutive commander. Mood: imperious."
+    },
+    {
+      "cardNumber": 2,
+      "cardName": "GH the Giant",
+      "grade": 1,
+      "power": "Paradoxical Rise – Fails to suppress during oral glucose tolerance test (OGTT).",
+      "lore": "Acromegaly causes insulin resistance. Diagnose with high IGF-1 and failure to suppress.",
+      "gradeReason": "GH the Giant = instant physique embodiment. Name plus power combo is performative gold.",
+      "artworkPrompt": "Towering wrestler whose hands keep growing, gloves bursting at seams. Style: bold comics. Subject: oversized giant. Mood: unstoppable."
+    },
+    {
+      "cardNumber": 3,
+      "cardName": "Piti the Anterior Pituitary",
+      "grade": 2,
+      "power": "Tropic Command – Dispatches FSH, LH, TSH, ACTH, GH, PRL to six target organs simultaneously.",
+      "lore": "Large non-functioning adenoma compresses the stalk, causing secondary hypopituitarism — all axes fail together.",
+      "gradeReason": "Piti as a character works but commanding six axes at once blurs the single performance role.",
+      "artworkPrompt": "Six-armed dispatcher behind a desk sending hormone telegrams in every direction. Style: retro office cartoon. Subject: overworked gland. Mood: frantic."
+    },
+    {
+      "cardNumber": 4,
+      "cardName": "Prolly the Prolactin",
+      "grade": 2,
+      "power": "Tonic Suppression – Unique hormone controlled by constant INHIBITION not stimulation.",
+      "lore": "Stalk compression blocks dopamine → mild prolactin rise. Treat macroprolactinoma with dopamine agonists (cabergoline).",
+      "gradeReason": "Prolly is a fun nickname but hyperprolactinaemia needs clinical context to perform. Good at table, not a knockout.",
+      "artworkPrompt": "Hormone character straining against a dopamine leash, desperate to break free. Style: cartoony tension. Subject: suppressed rebel. Mood: frustrated."
+    },
+    {
+      "cardNumber": 5,
+      "cardName": "CRH the Commander",
+      "grade": 2,
+      "power": "Axis Drive – ACTH + High Cortisol = ACTH-dependent Cushing’s. Low ACTH + High Cortisol = Adrenal adenoma.",
+      "lore": "Drives cortisol with circadian rhythm losing its pulse under stress. Interpret ACTH levels to locate the lesion.",
+      "gradeReason": "Commander framing is good but HPA Axis as abstract concept needs the downstream drama to really perform.",
+      "artworkPrompt": "Military commander firing orders down a chain of command to adrenal boots on the ground. Style: war room diagram. Subject: axis chain. Mood: high-alert."
+    },
+    {
+      "cardNumber": 6,
+      "cardName": "ADH the Water Keeper",
+      "grade": 1,
+      "power": "V2 Insertion – Retain free water in the collecting duct.",
+      "lore": "Central DI lacks ADH (treat with desmopressin). Nephrogenic DI resists ADH (treat with low-salt diet/thiazides).",
+      "gradeReason": "Water Keeper = instant embodiment. Clear performative role, crisp antagonists in the two DI variants.",
+      "artworkPrompt": "Armored water guardian sealing a kidney canal gate against a desert storm. Style: fantasy-medical. Subject: water keeper at a duct. Mood: vigilant."
+    },
+    {
+      "cardNumber": 7,
+      "cardName": "IGF-1",
+      "grade": 3,
+      "power": null,
+      "lore": "IGF falls in malnutrition even if GH is high (GH resistance). Somatostatin analogues suppress GH, reducing IGF-1.",
+      "gradeReason": "Raw abbreviation, no character persona. Mechanistic not performative — student stares at the card.",
+      "artworkPrompt": "A courier molecule running errands between a giant and target organs. Style: molecular courier art. Subject: messenger peptide. Mood: dutiful."
+    },
+    {
+      "cardNumber": 8,
+      "cardName": "Thyro the Thyroid Axis",
+      "grade": 2,
+      "power": "Peripheral Conversion – Convert T4 to the highly active T3 in peripheral tissues.",
+      "lore": "Pregnancy increases TBG → total T4 rises, but free T4 is normal. Do not adjust dose based on total T4!",
+      "gradeReason": "Thyro works as a character name and thyroid axis is familiar, but axis is abstract. Good at table.",
+      "artworkPrompt": "Butterfly-shaped gland character pumping metabolic fire into every organ. Style: metabolic infographic. Subject: thyroid axis in full operation. Mood: energetic."
+    },
+    {
+      "cardNumber": 9,
+      "cardName": "Cortisol the Stress Master",
+      "grade": 1,
+      "power": "Mobilize glucose at the cost of muscle, bone, and immune function.",
+      "lore": "Exogenous steroids suppress the HPA axis. Abrupt withdrawal during infection causes fatal adrenal crisis.",
+      "gradeReason": "Stress Master = instant performance cue. Cost-benefit villain drama baked into the power line.",
+      "artworkPrompt": "Villain looting a gym and hospital to fuel a battle, hands full of stolen glucose. Style: heist cartoon. Subject: cortisol villain. Mood: ruthlessly efficient."
+    },
+    {
+      "cardNumber": 10,
+      "cardName": "Feedback Freda",
+      "grade": 2,
+      "power": "Diagnostic Directions – High peripheral hormone + low tropic hormone = autonomous peripheral gland.",
+      "lore": "Use stimulation tests (Synacthen) for suspected deficiency. Use suppression tests (DST, OGTT) for suspected excess.",
+      "gradeReason": "Freda is charming but feedback-as-mechanism gives the player a concept more than a costume to wear.",
+      "artworkPrompt": "Referee with a clipboard charting two-way hormone arrows on a whiteboard. Style: classroom diagram persona. Subject: feedback referee. Mood: methodical."
+    },
+    {
+      "cardNumber": 11,
+      "cardName": "Thyra the Synthesis",
+      "grade": 2,
+      "power": null,
+      "lore": "Iodine loads temporarily shut down synthesis (Wolff-Chaikoff). Amiodarone: 37% iodine by weight, causes both hypo- and hyperthyroidism.",
+      "gradeReason": "Thyra is a good name but synthesis-as-character is mechanistic rather than theatrical. Works educationally.",
+      "artworkPrompt": "Assembly line worker snapping iodine atoms onto thyroglobulin conveyor belt. Style: factory cartoon. Subject: thyroid synthesis line. Mood: industrious."
+    },
+    {
+      "cardNumber": 12,
+      "cardName": "Hashi the Destroyer",
+      "grade": 1,
+      "power": "Lymphocytic Infiltration – Slowly run the body at half-speed via Th1 destruction.",
+      "lore": "Severe hypothyroidism causes myxoedema (non-pitting oedema); check delayed relaxation of ankle reflexes.",
+      "gradeReason": "Destroyer plus lymphocytic infiltration equals pure villain performance. Gradual devastation is viscerally clear.",
+      "artworkPrompt": "Slow-moving destructor methodically pulling torches from a thyroid furnace over years. Style: dark medical cartoon. Subject: autoimmune villain. Mood: inexorable."
+    },
+    {
+      "cardNumber": 13,
+      "cardName": "GRAVES the Impersonator",
+      "grade": 1,
+      "power": "TSI Mimicry – TSI antibodies impersonate TSH, locking the receptor open and flooding the system.",
+      "lore": "Exophthalmos persists even after thyroid treatment because orbital fibroblasts have their own TSH-R. Treat with selenium.",
+      "gradeReason": "Impersonator is genius. TSI pretending to be TSH is performative gold — name IS the mechanism.",
+      "artworkPrompt": "Con artist in TSH disguise holding a thyroid door open with a crowbar. Style: spy cartoon. Subject: antibody impersonator. Mood: brazen."
+    },
+    {
+      "cardNumber": 14,
+      "cardName": "NODULE NORMAN",
+      "grade": 2,
+      "power": "The TSH Fork – Low TSH = hot/autonomous (rarely malignant). Normal/High TSH = Needs US/FNA.",
+      "lore": "Papillary cancer (80%) spreads via lymph nodes. Follicular cancer (15%) spreads via blood.",
+      "gradeReason": "Norman is fun but what does a Nodule DO at the table? The TSH Fork power redeems with diagnostic clarity.",
+      "artworkPrompt": "Ambiguous lump in a tie, unsure if it's hot or cold, sweating under ultrasound lights. Style: comedic medical. Subject: suspicious nodule character. Mood: uncertain."
+    },
+    {
+      "cardNumber": 15,
+      "cardName": "THYROID STORM TOM",
+      "grade": 1,
+      "power": "Supercritical Melt – Acute physiological stress triggers lethal high-output failure.",
+      "lore": "You MUST give PTU before Lugol’s iodine, or the iodine load will flood out as new hormone.",
+      "gradeReason": "Storm TOM plus Supercritical Melt equals nuclear reactor drama. Best card name in medical education decks.",
+      "artworkPrompt": "Thyroid reactor going critical, warning lights everywhere, output gauges pinned in the red. Style: disaster infographic. Subject: meltdown character. Mood: catastrophic."
+    },
+    {
+      "cardNumber": 16,
+      "cardName": "HYPO the Hypothyroid Drug",
+      "grade": 2,
+      "power": "Prodrug Conversion – Relies on peripheral deiodinase; takes weeks to reflect dose changes.",
+      "lore": "Absorption is impaired by food, iron, calcium. Dose must increase 15-50% immediately upon pregnancy confirmation!",
+      "gradeReason": "HYPO as levothyroxine is clever but naming a drug after its indication slightly flattens the character.",
+      "artworkPrompt": "A slow-release capsule trudging through gut obstacles before finally converting in the liver. Style: pharmacokinetics cartoon. Subject: prodrug on a long journey. Mood: patient."
+    },
+    {
+      "cardNumber": 17,
+      "cardName": "Parathyroid Pete",
+      "grade": 2,
+      "power": "Calcium Reclamation – High Ca, Low PO4, High urine Ca.",
+      "lore": "Primary hyperparathyroidism is the most common outpatient cause of hypercalcaemia. Diagnosed often incidentally.",
+      "gradeReason": "Pete is personable but Calcium Reclamation undersells the drama. Good teaching card, medium performance invite.",
+      "artworkPrompt": "Four tiny gatekeepers patrolling a calcium vault, reclaiming every gram that tries to escape. Style: heist-buddy comedy. Subject: parathyroid quartet. Mood: possessive."
+    },
+    {
+      "cardNumber": 18,
+      "cardName": "Zona the Architect",
+      "grade": 2,
+      "power": "Triple Hormone Threat – Addison’s destroys all three cortical layers simultaneously.",
+      "lore": "Zona Glomerulosa makes Aldosterone (driven by RAAS, NOT ACTH). Fasciculata makes Cortisol. Reticularis makes Androgens.",
+      "gradeReason": "Zone-by-zone breakdown is mnemonically sharp (GFR = Salt-Sugar-Sex) but gives no single character to embody.",
+      "artworkPrompt": "Three-story building, each floor churning out a different hormone, architect overseeing the whole. Style: architectural cross-section. Subject: adrenal cortex zoning. Mood: orderly."
+    },
+    {
+      "cardNumber": 19,
+      "cardName": "Vitamin D the Sunshine Hormone",
+      "grade": 2,
+      "power": "Dual Hydroxylation – Must be activated twice (liver then kidney) to act; gut calcium absorption depends on it.",
+      "lore": "Sarcoidosis macrophages have 1α-hydroxylase activity, causing unregulated active calcitriol and hypercalcaemia.",
+      "gradeReason": "Sunshine is a warm embodiment cue. Dual Hydroxylation adds mechanism depth. Balanced teaching card.",
+      "artworkPrompt": "Sun-shaped hormone being stamped twice at liver and kidney customs before entering gut. Style: travel-passport cartoon. Subject: vitamin D journey. Mood: radiant."
+    },
+    {
+      "cardNumber": 20,
+      "cardName": "Aldo the Aldosterone",
+      "grade": 2,
+      "power": "Volume Controller – ENaC insertion raises pressure at the cost of potassium.",
+      "lore": "Primary hyperaldosteronism (Conn’s) causes hypertension + hypokalaemia with suppressed renin.",
+      "gradeReason": "Aldo is solid character work but Volume Controller is functional rather than theatrical. Table-ready.",
+      "artworkPrompt": "Pressure enforcer pumping sodium in and expelling potassium through kidney tubule gates. Style: bouncer-at-a-club cartoon. Subject: aldosterone enforcer. Mood: controlling."
+    },
+    {
+      "cardNumber": 21,
+      "cardName": "Cushing the Cushioned",
+      "grade": 1,
+      "power": "Ectopic Overdrive – SCLC ectopic ACTH causes profound hypokalaemia, rapid onset, less classic spread.",
+      "lore": "Screen with 24h urinary free cortisol, late-night salivary cortisol, or low-dose dexamethasone suppression test.",
+      "gradeReason": "Cushioned equals physical embodiment cue. Buffalo hump, moon face, striae — all baked into the name.",
+      "artworkPrompt": "Puffed-up wrestling villain with moon face, buffalo hump, and purple striae flexing at the weigh-in. Style: medical wrestler portrait. Subject: cortisol excess personified. Mood: bloated menace."
+    },
+    {
+      "cardNumber": 22,
+      "cardName": "Addison the Insufficient",
+      "grade": 1,
+      "power": "MCR Stimulation – High ACTH cross-reacts with MCR to cause hyperpigmentation (palmar creases, buccal mucosa).",
+      "lore": "Secondary adrenal insufficiency has LOW ACTH, therefore NO hyperpigmentation. The tan is the diagnostic clue.",
+      "gradeReason": "Insufficient equals perfect character arc. High-ACTH tanning as a performance detail is unforgettable.",
+      "artworkPrompt": "Exhausted character with bronze skin unable to meet any demand, collapsing under the smallest crisis. Style: tragic hero. Subject: adrenal failure. Mood: dignified exhaustion."
+    },
+    {
+      "cardNumber": 23,
+      "cardName": "Phe the Hidden",
+      "grade": 1,
+      "power": "Paroxysmal Spells – The classic triad: headache, sweating, palpitations.",
+      "lore": "Never give beta-blockers without alpha-blockade first; unopposed alpha causes lethal paradoxical hypertension!",
+      "gradeReason": "Hidden plus paroxysmal equals perfect dramatic reveal mechanic. The beta-blocker trap is an unforgettable performance hook.",
+      "artworkPrompt": "A masked adrenal assassin ambushing with sudden storms — appearing then vanishing between crises. Style: thriller spy art. Subject: hidden pheochromocytoma. Mood: ambush."
+    },
+    {
+      "cardNumber": 24,
+      "cardName": "Conns the Connector",
+      "grade": 2,
+      "power": "Vein Sampling – Adrenal CT is insufficient to distinguish bilateral hyperplasia from unilateral adenoma.",
+      "lore": "Unilateral source = laparoscopic surgery. Bilateral source = medical management with spironolactone.",
+      "gradeReason": "Connector is clever but meta — it is a process card more than a persona card. Works educationally.",
+      "artworkPrompt": "Detective sampling two adrenal suspects simultaneously via catheters to find the guilty gland. Style: detective procedural. Subject: lateralization investigation. Mood: methodical."
+    },
+    {
+      "cardNumber": 25,
+      "cardName": "BAH Clara",
+      "grade": 2,
+      "power": "Enzyme Blockade – Lack of cortisol removes negative feedback; high ACTH drives massive androgen overproduction.",
+      "lore": "Classic salt-wasting causes neonatal crisis. Non-classic mimics PCOS in adults. Diagnose with elevated 17-OHP.",
+      "gradeReason": "BAH Clara has energy but the acronym pun works better on paper than as a performance invitation.",
+      "artworkPrompt": "Blocked enzyme pipeline exploding sideways into androgen overflow while cortisol tap runs dry. Style: plumbing disaster cartoon. Subject: enzyme blockade. Mood: chaotic overflow."
+    },
+    {
+      "cardNumber": 26,
+      "cardName": "MEN the Syndrome Families",
+      "grade": 2,
+      "power": "Genetic Destiny – RET proto-oncogene mutations dictate medullary thyroid cancer prophylactic resection.",
+      "lore": "MEN2B = Medullary Thyroid Cancer, Phaeochromocytoma, Mucosal Neuromas, NO parathyroid.",
+      "gradeReason": "Families framing is conceptually strong but embodying a syndrome family tree is harder than a single character.",
+      "artworkPrompt": "Three-generation family portrait with glands instead of faces, mutations running down the bloodline. Style: gothic family portrait. Subject: MEN syndrome dynasty. Mood: fated."
+    },
+    {
+      "cardNumber": 27,
+      "cardName": "Waterhouse the Crisis",
+      "grade": 1,
+      "power": "Sick Day Rules – Double or triple oral steroid dose during fever; IM/IV if vomiting.",
+      "lore": "Do NOT wait for lab results. Give 100mg IV hydrocortisone + large volume 0.9% NaCl immediately for unexplained hypotensive shock.",
+      "gradeReason": "Crisis character plus emergency protocol equals immediate action cue. Nobody stalls when the Crisis appears.",
+      "artworkPrompt": "Paramedic-character sprinting with a hydrocortisone syringe while alarms flash in the background. Style: emergency action comic. Subject: adrenal crisis drill. Mood: urgent."
+    },
+    {
+      "cardNumber": 28,
+      "cardName": "Incidentaloma Ida",
+      "grade": 2,
+      "power": "Dual Threat Matrix – Is it hormonally active? AND Is it malignant (>4cm, >10 Hounsfield Units)?",
+      "lore": "You MUST exclude phaeochromocytoma via plasma metanephrines before attempting any adrenal biopsy, or risk a fatal hypertensive crisis.",
+      "gradeReason": "Ida is charming but incidentaloma as character invites more pause than performance. Good teaching card.",
+      "artworkPrompt": "Unexpected lump found lurking in a CT scan background, holding two ticking clocks. Style: suspense medical cartoon. Subject: accidental discovery. Mood: ominous uncertainty."
+    },
+    {
+      "cardNumber": 29,
+      "cardName": "Insu the Insulin",
+      "grade": 2,
+      "power": "Biphasic Release – Cleaves C-peptide from proinsulin to unlock the body’s only glucose-lowering mechanism.",
+      "lore": "Endogenous insulin = high C-peptide. Surreptitious exogenous insulin injection = undetectable C-peptide.",
+      "gradeReason": "Insu is approachable but generic. The C-peptide forensic detective angle is the real star here.",
+      "artworkPrompt": "Insulin character splitting from proinsulin and opening the body’s one and only glucose vault. Style: key-and-lock cartoon. Subject: insulin cleavage. Mood: purposeful."
+    },
+    {
+      "cardNumber": 30,
+      "cardName": "Gluca the Glucagon",
+      "grade": 2,
+      "power": "Glycogenolysis – Mobilizes hepatic stores within minutes to fight severe hypoglycaemia.",
+      "lore": "Glucagon rescue injections fail in alcoholics or prolonged starvation because hepatic glycogen stores are already depleted.",
+      "gradeReason": "Gluca has presence but Counter-Regulatory is functional. The alcoholic rescue failure is the dramatic punch.",
+      "artworkPrompt": "Emergency responder arriving at the liver to find the glycogen vault already looted and empty. Style: rescue-mission comic. Subject: glucagon rescue failure. Mood: grim discovery."
+    },
+    {
+      "cardNumber": 31,
+      "cardName": "T1D the Autoimmune",
+      "grade": 2,
+      "power": "Absolute Deficiency – Without insulin, the body metabolizes itself into fatal acidosis.",
+      "lore": "DKA occurs readily in T1D because zero residual insulin means unopposed lipolysis. T2D rarely develops DKA due to residual insulin.",
+      "gradeReason": "Abbreviation name limits performance; body-metabolizes-itself power line is viscerally powerful.",
+      "artworkPrompt": "Body cannibalizing its own muscle and fat in desperation as beta cells lie destroyed. Style: dystopian survival art. Subject: absolute insulin deficiency. Mood: desperate."
+    },
+    {
+      "cardNumber": 32,
+      "cardName": "T2D the Resistance",
+      "grade": 2,
+      "power": "The Slow Siege – Visceral fat drives resistance → hypersecretion → beta cell exhaustion.",
+      "lore": "Metformin is first line. Add GLP-1 RA if established ASCVD, Heart Failure independent of glucose.",
+      "gradeReason": "Slow Siege is evocative but T2D-as-character needs a proper name to fully embody. Teaching quality high.",
+      "artworkPrompt": "Gradual siege army of fat cells surrounding an island of beta cells, squeezing slowly over years. Style: military siege map. Subject: insulin resistance siege. Mood: relentless."
+    },
+    {
+      "cardNumber": 33,
+      "cardName": "Metty the Metformin",
+      "grade": 2,
+      "power": "Weight Neutrality – Lowers fasting glucose without risking hypoglycaemia.",
+      "lore": "Hold metformin 48h for iodinated contrast; contrast-induced AKI causes drug accumulation, leading to rare but fatal lactic acidosis.",
+      "gradeReason": "Metty works as drug persona. The iodine contrast AKI trap is the standout clinical safety moment.",
+      "artworkPrompt": "Reliable workhorse character carefully avoiding hypo pitfalls while flagging the contrast injection ahead. Style: dependable-worker cartoon. Subject: metformin in action. Mood: cautious."
+    },
+    {
+      "cardNumber": 34,
+      "cardName": "GLP-1 Gloria",
+      "grade": 2,
+      "power": "Glucose-Dependent Satiety – Only releases insulin when glucose is high = low hypo risk.",
+      "lore": "Unmatched for weight loss and cardiovascular MACE reduction, but causes dose-dependent GI nausea and delays gastric emptying.",
+      "gradeReason": "Gloria lands well. GI nausea trade-off is honest. Glucose-Dependent Satiety is a beautiful mechanism name.",
+      "artworkPrompt": "Glamorous hormone celebrity surrounded by weight-loss headlines and GI complaint fan mail. Style: celebrity tabloid art. Subject: GLP-1 fame and side effects. Mood: dazzling but nauseating."
+    },
+    {
+      "cardNumber": 35,
+      "cardName": "SGLT2 Stan",
+      "grade": 2,
+      "power": "Osmotic Diuresis – Reduces HF hospitalizations and CKD progression independent of glucose.",
+      "lore": "Euglycaemic DKA (ketones high, glucose normal) and genital thrush are class effects. Watch for Fournier’s gangrene.",
+      "gradeReason": "Stan is workable but the abbreviation name is still a clinical code. The cardio-renal benefits are the real character.",
+      "artworkPrompt": "Gym-bro character spilling glucose into the toilet while protecting the heart and kidney simultaneously. Style: split-screen comic. Subject: dual cardio-renal protection. Mood: powerfully casual."
+    },
+    {
+      "cardNumber": 36,
+      "cardName": "DPP-4 Dave",
+      "grade": 2,
+      "power": "Enzyme Blockade – Modest oral incretin effect, weight neutral, safe.",
+      "lore": "Produces less effect than GLP-1 RAs because it only prevents degradation of physiological levels, rather than providing pharmacological super-doses.",
+      "gradeReason": "Dave’s mediocrity is almost the character point — modest, safe, perpetually overshadowed by Gloria. Actually funny.",
+      "artworkPrompt": "Understated office worker blocking an enzyme shredder while Gloria steals the spotlight nearby. Style: office comedy. Subject: modest gliptin. Mood: reliably unremarkable."
+    },
+    {
+      "cardNumber": 37,
+      "cardName": "SULFO the Sulfonylurea",
+      "grade": 2,
+      "power": "Glucose-Independent Release – High risk of severe hypoglycaemia + weight gain.",
+      "lore": "Avoid renally cleared glibenclamide in the elderly; metabolites accumulate causing prolonged, dangerous hypoglycaemia.",
+      "gradeReason": "SULFO has presence but lacks a punchy character identity beyond being a dangerous old-school drug.",
+      "artworkPrompt": "Old-school wrestler forcing the pancreas to fire at any glucose level, regardless of context. Style: brutish wrestler portrait. Subject: indiscriminate insulin releaser. Mood: dangerous."
+    },
+    {
+      "cardNumber": 38,
+      "cardName": "DKA the Crisis",
+      "grade": 1,
+      "power": "FRIII Protocol – 0.1 units/kg/hr fixed rate insulin infusion.",
+      "lore": "Total body potassium is depleted despite presenting hyperkalaemia. Insulin drives K⁺ back into cells; you MUST add KCl to IV fluids!",
+      "gradeReason": "Crisis framing equals action mode. The potassium paradox is one of medicine’s greatest clinical traps.",
+      "artworkPrompt": "Emergency protocol character sprinting with insulin drip while waving a KCl bag overhead. Style: emergency response comic. Subject: DKA treatment drill. Mood: controlled urgency."
+    },
+    {
+      "cardNumber": 39,
+      "cardName": "HHS the Hyperosmolar",
+      "grade": 2,
+      "power": "Profound Paralysis – Residual insulin prevents ketosis, allowing glucose to rise unchecked.",
+      "lore": "Replace fluids slowly (0.9% NaCl) to avoid cerebral oedema. Do NOT start insulin immediately unless glucose fails to fall with fluids alone. LMWH is essential!",
+      "gradeReason": "Don’t-start-insulin-immediately counterintuition is the gold. HHS as a character needs more persona work.",
+      "artworkPrompt": "Hyperosmolar swamp slowly drowning a patient while insulin stands uselessly at the door, held back. Style: counterintuitive-rule warning poster. Subject: HHS protocol. Mood: deceptively calm."
+    },
+    {
+      "cardNumber": 40,
+      "cardName": "Hypo the Warning",
+      "grade": 2,
+      "power": "Autonomic Warning – Sweating and tremor precede neuroglycopenic coma.",
+      "lore": "Recurrent hypos cause Hypoglycaemia Unawareness — autonomic failure where the threshold drops and warning symptoms are lost.",
+      "gradeReason": "Warning framing is clear and actionable. The unawareness-erasing-its-own-alarm is the clinical bomb.",
+      "artworkPrompt": "Alarm system character whose own repeated alerts have been silenced by repeated false alarms. Style: cautionary safety poster. Subject: blunted warning system. Mood: eerie silence."
+    },
+    {
+      "cardNumber": 41,
+      "cardName": "Insulinoma Ivan",
+      "grade": 2,
+      "power": null,
+      "lore": "Endogenous hyperinsulinism shows High Insulin + High C-Peptide + Low beta-hydroxybutyrate (insulin suppresses ketogenesis).",
+      "gradeReason": "Ivan is personable; the 72h fast as a diagnostic trial is dramatic. C-peptide detective work returns.",
+      "artworkPrompt": "Beta cell tumor character in disguise, flooding insulin secretly while C-peptide leaks the truth. Style: medical thriller. Subject: hidden insulinoma. Mood: covert."
+    },
+    {
+      "cardNumber": 42,
+      "cardName": "Macrovascular Max",
+      "grade": 1,
+      "power": "Endothelial Dysfunction – Diabetes triples ASCVD risk.",
+      "lore": "Glucose control prevents microvascular disease, but macrovascular protection requires high-intensity Statins, ACEI, and SGLT2I/GLP-1 RAs.",
+      "gradeReason": "Max is the biggest killer in T2D. Endothelial Dysfunction as superpower equals instant villain embodiment.",
+      "artworkPrompt": "Massive arterial villain coating blood vessel walls with plaque, shrugging off glucose control alone. Style: big-boss villain art. Subject: atherosclerotic champion. Mood: dominant."
+    },
+    {
+      "cardNumber": 43,
+      "cardName": "Complications Combo",
+      "grade": 2,
+      "power": "AGEs & Polyol Pathway – Chronic glycation destroys small vessels and pericytes.",
+      "lore": "Loss of pain sensation (neuropathy) + repeated micro-trauma = painless foot ulcers and the radiologically destroyed Charcot joint.",
+      "gradeReason": "Combo is a deck-game reference that works but it is a category card not a character. Charcot joint lore is vivid.",
+      "artworkPrompt": "Three-headed monster attacking retina, kidney, and nerve simultaneously with sugar-coated weapons. Style: triple-threat monster art. Subject: microvascular trio. Mood: relentless."
+    },
+    {
+      "cardNumber": 44,
+      "cardName": "The Diabetes Attending",
+      "grade": 3,
+      "power": "Systemic Challenge – DKA electrolytes vs. eGFR drug limits vs. Fasting Hypo localization.",
+      "lore": "Map every decision to its pharmacological, physiological, or anatomical basis. No gestalt. Every answer needs a mechanism.",
+      "gradeReason": "Attendings give instructions; they don’t get played. Meta-synthesis card has no roleplay entry point.",
+      "artworkPrompt": "White-coat attending juggling five simultaneous cases on a whiteboard at 3am. Style: academic grind portrait. Subject: clinical synthesis moment. Mood: high-stakes exhaustion."
+    },
+    {
+      "cardNumber": 45,
+      "cardName": "Osteo the Osteoporosis",
+      "grade": 2,
+      "power": "Silent Collapse – Fracture threshold crossed without symptoms.",
+      "lore": "Denosumab stops osteoclasts, but stopping it causes massive rebound fractures. Never stop without transitioning to a bisphosphonate!",
+      "gradeReason": "Silent Collapse is theatrically evocative. The denosumab rebound trap is excellent — and genuinely scary.",
+      "artworkPrompt": "Skeleton crumbling silently in a crowd while nobody notices, carrying a Denosumab warning sign. Style: invisible tragedy cartoon. Subject: silent fracture. Mood: unnoticed collapse."
+    },
+    {
+      "cardNumber": 46,
+      "cardName": "RANKL the Bone Regulator",
+      "grade": 2,
+      "power": "Immune-Bone Coupling – Why inflammation melts bone.",
+      "lore": "Rheumatoid arthritis causes periarticular erosion via RANKL; anti-TNF biologics and Denosumab block this exact destruction pathway.",
+      "gradeReason": "RANKL reads as a tyrant name which helps. Regulator undersells what is actually a bone destruction signal.",
+      "artworkPrompt": "Inflammation general issuing demolition orders to osteoclast construction crews. Style: military-industrial complex art. Subject: immune-bone signalling. Mood: systemic destruction."
+    },
+    {
+      "cardNumber": 47,
+      "cardName": "Hyper Calcium Harry",
+      "grade": 1,
+      "power": "End-Organ Calcification – Bones, stones, groans, psychic moans.",
+      "lore": "Primary hyperparathyroidism = High PTH, High Ca. Malignancy = Low PTH, High Ca, High PTHrP. Treat severe with 3-4L 0.9% NaCl + IV Zoledronate.",
+      "gradeReason": "Harry IS the mnemonic. Bones/stones/groans/moans is one of medicine’s all-time teaching hooks. Grade 1 pure.",
+      "artworkPrompt": "Jolly villain showering calcium crystals onto bones, kidneys, gut, and brain simultaneously. Style: cartoon chaos. Subject: hypercalcaemia rampage. Mood: gleefully destructive."
+    },
+    {
+      "cardNumber": 48,
+      "cardName": "Hypo Calcium Helle",
+      "grade": 2,
+      "power": "Neuronal Trigger – Low calcium drops the threshold for action potentials.",
+      "lore": "Hypomagnesaemia impairs PTH release AND action. Refractory hypocalcaemia will not fix with calcium alone; you must check and replace Mg!",
+      "gradeReason": "Helle echoes Harry nicely. The Mg dependency reveal — missed by everyone — is the clinical bomb on this card.",
+      "artworkPrompt": "Jittery character whose nerves keep firing despite desperately trying to stay still, pointing to empty magnesium reserves. Style: trembling cartoon. Subject: hypocalcaemia twitching. Mood: irritable."
+    },
+    {
+      "cardNumber": 49,
+      "cardName": "Renal Bone Renee",
+      "grade": 2,
+      "power": "The Fatal Cascade – High FGF-23 → Low Calcitriol → Low Ca → Secondary Hyperparathyroidism.",
+      "lore": "Prolonged parathyroid stimulation becomes autonomous ('Tertiary'), causing high PTH even after a renal transplant!",
+      "gradeReason": "Renee is personable. Tertiary HPT persisting after transplant is a brilliant clinical gotcha.",
+      "artworkPrompt": "Chain-reaction dominoes — kidney failure toppling FGF, calcitriol, calcium, and parathyroid in sequence. Style: cascade diagram art. Subject: CKD-MBD chain. Mood: inevitable."
+    },
+    {
+      "cardNumber": 50,
+      "cardName": "Paget the Focal",
+      "grade": 2,
+      "power": "Focal Chaos – Paracrine-driven local hyperactivity followed by disorganized repair.",
+      "lore": "Massively enlarged skull bone compresses the 8th cranial nerve, causing hearing loss. Treat with IV Zoledronate.",
+      "gradeReason": "Chaos framing works for Paget’s disordered remodelling. Skull expansion causing deafness is a vivid image.",
+      "artworkPrompt": "A bone character remodelling itself frantically in one region, skull expanding toward a horrified ear. Style: grotesque medical comic. Subject: focal bone chaos. Mood: disordered."
+    },
+    {
+      "cardNumber": 51,
+      "cardName": "SIADH Sally",
+      "grade": 1,
+      "power": "Inappropriate Retention – Small Cell Lung Cancer (ectopic ADH) secretly diluting the blood.",
+      "lore": "Correcting sodium too fast (>8-10 mmol/L/24h) causes Osmotic Demyelination Syndrome (locked-in syndrome). Restrict fluids.",
+      "gradeReason": "Sally is appropriately sneaky. Secret dilution plus locked-in syndrome stakes = unforgettable teaching drama.",
+      "artworkPrompt": "Secret agent diluting blood samples behind the scenes while a locked-in patient stares from a wheelchair. Style: spy thriller medical. Subject: ectopic ADH mischief. Mood: covert dread."
+    },
+    {
+      "cardNumber": 52,
+      "cardName": "Diabetes Insipidus Dana",
+      "grade": 2,
+      "power": "Water Deprivation – Fails to concentrate urine when dehydrated.",
+      "lore": "Central DI responds to desmopressin. Nephrogenic (Lithium) does not. Paradoxically, thiazide diuretics reduce urine output in Nephrogenic DI!",
+      "gradeReason": "Dana works but the thiazide paradox in nephrogenic DI is the one hook that makes this card unforgettable.",
+      "artworkPrompt": "Character pouring water out faster than they drink it, ignoring a thiazide key that somehow locks the tap. Style: paradox visual puzzle. Subject: DI water loss. Mood: counterintuitive."
+    },
+    {
+      "cardNumber": 53,
+      "cardName": "Thyroid Cancer Tracy",
+      "grade": 2,
+      "power": "Histological Destiny – Cytology dictates surgical approach and radioactive iodine strategy.",
+      "lore": "Follicular carcinoma is impossible to diagnose on FNA; you need whole histology to see capsular/vascular invasion!",
+      "gradeReason": "Tracy works but the cheerful name slightly undersells cancer. FNA limitation is the crucial clinical point.",
+      "artworkPrompt": "A cytology slide revealing a hidden invader that only a full histology section can unmask. Style: forensic detective medical. Subject: thyroid cancer unmasking. Mood: revelatory."
+    },
+    {
+      "cardNumber": 54,
+      "cardName": "MEN1 Marco",
+      "grade": 1,
+      "power": "Secretin Paradox – Secretin normally inhibits gastrin, but causes a paradoxical MASSIVE RISE in gastrinoma.",
+      "lore": "MEN1 gastrinomas are multicentric. Stop PPIs before testing fasting gastrin, as PPIs artificially elevate it in everyone!",
+      "gradeReason": "Secretin Paradox equals pure drama. Paradoxical massive rise as a power move is unforgettable. Marco lands well.",
+      "artworkPrompt": "A character who doubles in power when given the suppressant meant to stop them. Style: villain-power-up comic. Subject: paradoxical gastrin surge. Mood: triumphantly wrong."
+    },
+    {
+      "cardNumber": 55,
+      "cardName": "The Endocrinology Attending",
+      "grade": 3,
+      "power": "Cross-Axis Integration – Primary hyperaldosteronism lateralization vs. Autoimmune polyglandular failure vs. MEN1 surgical limits.",
+      "lore": "Name the diagnosis, explain the mechanism, complete the investigation, and prescribe the treatment. Gestalt is dead.",
+      "gradeReason": "The Attending as meta-referee works educationally but gives players nothing to embody. Pure instruction mode.",
+      "artworkPrompt": "Exhausted attending at a whiteboard connecting every endocrine axis simultaneously at 3am. Style: academic overload portrait. Subject: cross-axis master. Mood: demanding."
+    },
+    {
+      "cardNumber": 56,
+      "cardName": "DIY Epistemic Sabotage",
+      "grade": 2,
+      "power": "Narrative Mnemonic – You remember stories, not lists.",
+      "lore": "Draw your own damn disease! If you can map the mechanism to a visual metaphor, you will never forget it on the wards. Stay fluffy!",
+      "gradeReason": "Epistemic Sabotage is the cleverest name in the deck. Draw-your-own is actually brilliant pedagogy.",
+      "artworkPrompt": "Blank card with a pencil in the center and FrizzleBob pointing at the reader — you draw the rest. Style: meta-invitation. Subject: empty canvas. Mood: empowering."
+    }
+  ],
+  "cardCount": 56,
+  "gradeDistribution": {
+    "G1": 15,
+    "G2": 38,
+    "G3": 3
+  },
+  "overallScore": 8,
+  "verdict": "Endocrinology brings the chemistry carnival to the kayfab arena and mostly delivers. THYROID STORM TOM, SIADH Sally, and Hyper Calcium Harry are first-ballot hall-of-famers — names that teach the mechanism just by saying them aloud. The two Attending cards (Diabetes, Endocrinology) are the weak spots: pure instruction mode, nobody knows how to play them at the table. Too many G2 cards lean on abbreviations as character names (T1D, T2D, DPP-4, SGLT2, BAH) rather than on invitations to perform. Table-ready: YES — strongest in a medical education context.",
+  "blurb": "For medical students who need endocrinology to stick: 56 character-driven cards turn hormones, crises, and drug mechanisms into unforgettable table drama. FrizzleBob’s kayfab twist makes biochemistry feel like a wrestling match you can win.",
+  "viralScore": 6,
+  "qa": {
+    "readability": 8,
+    "artworkConsistency": 8,
+    "overall": 8
+  },
+  "coverQA": {
+    "coverVisual": "4 — Strong FrizzleBob-universe character presence; gland stat block framing is crisp and on-brand.",
+    "coverTitle": "4 — MEDKAYFAB: ENDOCRINOLOGY EDITION is clear, direct, and immediately identifies the series entry.",
+    "coverVibeMatch": "5 — FrizzleBob’s line ('IT’S ALL ABOUT THE CHEMICAL CHAOS, BABY!') perfectly pre-loads the deck’s energy.",
+    "coverOriginality": "3 — MedKayfab series template is consistent by design; limits per-deck freshness but maintains brand coherence.",
+    "coverViral": "3 — Medical education niche limits viral reach; the FrizzleBob quote is the strongest shareable element.",
+    "coverScore": 3.8,
+    "coverNote": "The cover does exactly what it needs to — welcome a med student into the right universe with zero ambiguity. The FrizzleBob quote is the one thing worth screenshot-ing. More deck-specific visual differentiation (e.g. a pituitary gland in a wrestling ring) would boost originality and viral scores."
+  },
+  "coverScore": 3.8,
+  "fontArtifactCount": 0,
+  "notes": "15-page deck: 1 cover + 14 card pages x 4 cards = 56 cards. Several page-level game elements (KayfaBINGO!, KayfaBOGGLE!, KayfaBONGO!) appear as layout overlays across pages 3, 5, 6, 8, 10 — not additional cards. Card names for cards 40 (Hypoglycaemia), 50 (Paget’s disease) and 18 (Adrenal zones) were partially legible via OCR; names reconstructed from content context. Card 7 (IGF-1) lacks a character name — raw abbreviation only. The two Attending meta-cards (44, 55) use identical structural framing. CRH the Commander (card 5) may be rendered as 'TH the Commander' in the original — OCR uncertainty on decorative font. All POWER/LORE text reconstructed from 150 DPI OCR; verbatim accuracy ~90% on names, ~85% on lore due to image-baked decorative fonts.",
+  "topCards": [
+    "THYROID STORM TOM",
+    "SIADH Sally",
+    "Hyper Calcium Harry"
+  ],
+  "worstCards": [
+    "IGF-1",
+    "The Endocrinology Attending"
+  ],
+  "todos": {
+    "urgent": [
+      "Give IGF-1 (card 7) a proper character name — 'Iggy the Mediator' or 'IGF-1 Igor' would unlock Grade 2 immediately"
+    ],
+    "quickWins": [
+      "Add performance direction to both Attending cards — a prompt like 'You are the Attending: pose this dilemma to the table' would lift them from G3 to G2",
+      "Replace T1D/T2D abbreviation names with character names to lift 2 cards from G2 to G1"
+    ],
+    "niceToHave": [
+      "Consider splitting the Zona the Architect card into three mini-cards (G, F, R zones) for deeper roleplay granularity",
+      "DPP-4 Dave is funnier if explicitly framed as 'the forgettable one' in the card lore"
+    ]
+  },
+  "hashtags": [
+    "#MedKayfab",
+    "#Endocrinology",
+    "#MedicalEducation",
+    "#Kayfabizarro",
+    "#NarrativeMedLearning",
+    "#MedStudents",
+    "#ThyroidStormTom"
+  ],
+  "genre": "medical",
+  "bundle": "EDUCATION",
+  "exhibitions": [
+    "classroom",
+    "conference"
+  ],
+  "channels": [
+    "Gumroad",
+    "Substack",
+    "Instagram"
+  ],
+  "marketingText": "MedKayfab: ENDOCRINOLOGY – Master the Body's Chemical Command (Medical Mnemonics Cut & Play Comic)\n\n56 illustrated medical mnemonic cards to master the hormone feedback loops, the endocrine crises, and the lab values that decide whether you treat now or wait.\n\nHere is how the endocrine system actually runs: on signals you cannot see, sent by glands you cannot feel, corrected by feedback loops that fix themselves long before anyone reaches for a chart. Most of the time it works so quietly that nothing looks wrong. Then a loop fails, the correction never comes, and the same chemistry that kept a patient stable for years tips into thyroid storm, an adrenal crisis, or a sodium so low the brain begins to swell. The whole specialty lives in that gap between the silent drift and the sudden invoice.\n\nMedKayfab Endocrinology translates those axes and feedback loops into a narrative wrestling match where the hormone is a character with a motive. Stop memorizing the cascades. Start performing them.\n\nYOU'LL GET\n- 56 illustrated MedKayfab cards (14pp, 4 cards/page)\n- Full MedKayfab Freestyle rules (including the Quest Die mechanics)\n- S-Tier characters like Thyroid-Storm Tom, SIADH Sally, and Hyper-Calcium Harry\n- Free lifetime updates as guidelines evolve\n- CC BY-NC-SA 4.0 licence, print, share, and adapt freely\n- PDF optimized for home printing (A4 / Letter)\n\nWhat's in the deck\nThis deck personifies the \"Signal & Setpoint\" layer of medicine. You'll meet Thyroid-Storm Tom, the axis that ran too hot, where fever, racing heart, and agitation feed each other until something has to give. SIADH Sally holds water hostage and quietly dilutes the sodium toward a dangerous low while the patient still looks deceptively calm. Hyper-Calcium Harry brings the stones, bones, groans, and psychiatric overtones as the calcium climbs and the whole body slows down. Behind them, CRH the Commander runs the stress axis that ties the adrenal story together. Each card carries the risk: get the setpoint wrong and the patient on the Stage pays for it.\n\nHow it works\nEvery card is a cognitive anchor built for high-stress retrieval. You have the Character (the mnemonic), the Visual (the scene), the Stat Block (the numbers and thresholds), the Lore (the clinical story), and the Quest (the challenge that forces a decision). The Mechanism Flash mode is where it bites: if you cannot explain why the hormone does what it does in one sentence without looking, the patient on the Stage does not make it.\n\nHonest cognitive load\nThis is a core specialty deck for the endocrine block. It fits medical students working from preclinical physiology into the clinical years, and anyone revising hormone axes for board exams who is tired of flat diagrams. The conceptual density is high, because endocrinology is feedback loops stacked on feedback loops, so take it in pages rather than in one sitting. It pairs well with Essential Pharmacology for the drug mechanisms behind the treatments, with Nephrology for the sodium and calcium overlap, and with Internal Medicine for the multimorbid patients where the endocrine problem hides behind everything else.\n\nABOUT MEDKAYFAB\nMedKayfab is a narrative medical learning card game, 50 decks covering the full medical curriculum. Every card encodes a clinical mechanism as a character with a personality, a story, and a reasoning challenge. Built by a physician. Assembled with AI tools. Manually revised. Honest about its limitations. Free to use, share, and adapt under CC BY-NC-SA 4.0.\n\nPAY WHAT YOU WANT\nThis deck is Pay What You Want, including free.\nIf you find it useful, a fair price is €5. If you're a student on a budget, enter €0. No questions asked. If you want to support more decks, anything above fair price is appreciated.\nCC BY-NC-SA 4.0, share freely, attribute honestly, never resell.\n\nDISCLAIMER\nMedKayfab is a learning companion, not a clinical reference. Content was created by a physician and reviewed to the best of our knowledge, but medicine evolves, guidelines change, and some mechanisms in here will be simplified or wrong. Always verify against current primary sources and clinical guidelines before applying anything to patient care. The Blödsinn! is the vehicle. The science is serious.\n\nStay fluffy. — Doc FrizzleBob",
+  "marketingEdition": "MED"
+}

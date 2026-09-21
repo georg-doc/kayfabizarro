@@ -1,0 +1,1183 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Irish+Grover&display=swap');
+@font-face { font-family: "BabyEliot"; src: url("fonts/Baby_Eliot.ttf"); }
+@font-face { font-family: "Fonteys"; src: url("fonts/FonteysPRO-Regular.otf"); font-weight: 400; }
+@font-face { font-family: "Fonteys"; src: url("fonts/FonteysPRO-Bold.otf"); font-weight: 700; }
+@font-face { font-family: "Fonteys"; src: url("fonts/FonteysPRO-Italic.otf"); font-weight: 400; font-style: italic; }
+html, body { margin: 0; padding: 0; height: 100%; overflow: hidden; background: #0a1420; }
+* { box-sizing: border-box; }
+@keyframes fb-bob { 0%, 100% { transform: rotate(-2deg) translateY(0); } 50% { transform: rotate(-1deg) translateY(-3px); } }
+@keyframes card-wiggle { 0% { transform: rotate(-3deg) scale(0.97); } 55% { transform: rotate(1.6deg) scale(1.01); } 100% { transform: rotate(-0.8deg) scale(1); } }
+@keyframes stamp-in { 0% { transform: rotate(8deg) scale(2.2); opacity: 0; } 100% { transform: rotate(-6deg) scale(1); opacity: 1; } }
+@keyframes drift { 0%, 100% { transform: translate(0, 0) rotate(4deg); } 50% { transform: translate(2px, -3px) rotate(6deg); } }
+@keyframes thinkdots { 0%, 100% { opacity: 0.25; } 50% { opacity: 1; } }
+input::placeholder, textarea::placeholder { color: #7d7364; font-style: italic; }
+* { scrollbar-width: thin; scrollbar-color: rgba(31,26,20,0.35) transparent; }
+::-webkit-scrollbar { width: 7px; height: 7px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: rgba(31,26,20,0.3); border-radius: 6px; }
+::-webkit-scrollbar-thumb:hover { background: rgba(31,26,20,0.5); }
+</style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="iceberg-data.js"></script>
+<script src="iceberg-scene.js"></script>
+<script src="atmo-engine.js"></script>
+<!-- code-referenced assets (set via JS src, not literal template src) — declared so the standalone bundler inlines them for offline -->
+<meta name="ext-resource-dependency" content="assets/dice/d6-1.svg">
+<meta name="ext-resource-dependency" content="assets/dice/d6-2.svg">
+<meta name="ext-resource-dependency" content="assets/dice/d6-3.svg">
+<meta name="ext-resource-dependency" content="assets/dice/d6-4.svg">
+<meta name="ext-resource-dependency" content="assets/dice/d6-5.svg">
+<meta name="ext-resource-dependency" content="assets/dice/d6-6.svg">
+<meta name="ext-resource-dependency" content="assets/mascot/avatar-psychedelic.png">
+<meta name="ext-resource-dependency" content="assets/mascot/avatar-cosmic-panic.png">
+<meta name="ext-resource-dependency" content="assets/mascot/avatar-weeping.png">
+</helmet>
+
+<div data-screen-label="Iceberg Explorer" style="position: fixed; inset: 0; background: #0a1420; overflow: hidden; font-family: Fonteys, serif; user-select: none;">
+
+  <template id="__bundler_thumbnail"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="#0a1420"/><rect y="46" width="100" height="54" fill="#1a3a4d"/><rect y="46" width="100" height="4" fill="#3e6a83"/><path d="M50 30 L61 46 L39 46 Z" fill="#ece1c0"/><path d="M39 46 L61 46 L57 60 L54 70 L50 78 L46 70 L43 60 Z" fill="#cdd8d9"/><path d="M43 60 L57 60 L54 70 L50 78 L46 70 Z" fill="#9fc0cf"/><circle cx="30" cy="66" r="1.6" fill="#cfe6ef"/><circle cx="70" cy="58" r="1.3" fill="#cfe6ef"/><circle cx="66" cy="74" r="1.8" fill="#cfe6ef"/><circle cx="34" cy="80" r="1.3" fill="#cfe6ef"/></svg></template>
+
+  <!-- 3D scene mount -->
+  <div ref="{{ setSceneRef }}" style="position: absolute; inset: 0;"></div>
+
+  <!-- entry-label overlay (managed per-frame) -->
+  <div ref="{{ setLabelsRef }}" style="position: absolute; inset: 0; overflow: hidden; pointer-events: none;"></div>
+
+  <!-- ============ LEFT RAIL: narrator + tiers + detail ============ -->
+  <div style="position: absolute; top: 14px; left: 16px; display: flex; flex-direction: column; gap: 10px; align-items: flex-start; pointer-events: none; z-index: 45;">
+    <div style="pointer-events: auto; width: 380px; box-sizing: border-box; background: {{ narratorBg }}; border: 2px solid #1f1a14; border-radius: 12px 5px 15px 7px / 6px 14px 5px 16px; padding: 8px 14px 7px; box-shadow: 3px 4px 0 rgba(31,26,20,0.35); transition: background 400ms ease;">
+      <sc-if value="{{ atSurface }}" hint-placeholder-val="{{ true }}">
+        <a href="https://kayfabizarro.pages.dev/" target="_blank" rel="noopener" title="Visit the KayfaBizarro hub" style="display: block; text-decoration: none; font-family: 'Irish Grover', cursive; font-size: 20px; color: #1f1a14; letter-spacing: 0.5px; line-height: 1.3; cursor: pointer;">FrizzleBob's Kayfa<span style="display: inline-block; background: #c2412c; color: #f3ead3; padding: 0 6px 1px; border-radius: 3px 8px 4px 9px / 7px 4px 9px 4px; transform: rotate(-2deg); margin: 0 1px;">Bizarro</span> Iceberg</a>
+        <div style="font-family: Fonteys, serif; font-style: italic; font-size: 12px; color: #3a342a; margin-top: 3px;">Enjoy conspiracy deep dives — {{ entryCount }} entries, zero truths guaranteed. <span style="opacity: 0.55;">Viewer discretion mandatory.</span></div>
+      </sc-if>
+      <sc-if value="{{ inTier }}" hint-placeholder-val="{{ false }}">
+        <div style="display: flex; align-items: baseline; gap: 8px;">
+          <div style="font-family: 'Irish Grover', cursive; font-size: 20px; color: #1f1a14; letter-spacing: 0.5px; line-height: 1.15;">{{ titleText }}</div>
+          <span ref="{{ setDepthChip }}" style="font-family: Fonteys, serif; font-size: 12px; color: #7d7364; white-space: nowrap; margin-left: auto;"></span>
+        </div>
+        <div style="font-family: Fonteys, serif; font-style: italic; font-size: 12px; color: #3a342a; margin-top: 2px;">{{ subtitleText }}</div>
+      </sc-if>
+    </div>
+    <div style="display: flex; gap: 12px; align-items: flex-start;">
+      <div style="pointer-events: auto; display: flex; flex-direction: column; gap: 4px; align-items: flex-start;">
+        <sc-for list="{{ tierButtons }}" as="t" hint-placeholder-count="7">
+          <button onClick="{{ t.go }}" title="{{ t.title }}" style="cursor: pointer; width: 30px; height: 30px; border: 2px solid {{ t.border }}; background: {{ t.bg }}; color: {{ t.fg }}; font-family: Fonteys, serif; font-weight: 700; font-size: 13px; border-radius: 4px 10px 5px 11px / 9px 5px 11px 5px; transform: rotate({{ t.rot }}deg); box-shadow: 2px 2px 0 rgba(0,0,0,0.4);" style-hover="transform: rotate(0deg) scale(1.12); background: {{ t.tint }}; color: #1f1a14; border-color: #1f1a14;">{{ t.n }}</button>
+        </sc-for>
+        <button onClick="{{ goSurface }}" title="Back to the surface" style="cursor: pointer; margin-top: 4px; width: 30px; height: 30px; font-family: Fonteys, serif; font-weight: 700; font-size: 15px; background: rgba(12,22,36,0.75); border: 1.5px solid rgba(243,234,211,0.9); color: #f3ead3; border-radius: 4px 10px 5px 11px / 9px 5px 11px 5px; transform: rotate(-2deg); box-shadow: 2px 2px 0 rgba(0,0,0,0.4);" style-hover="transform: rotate(0deg) scale(1.12);">↑</button>
+      </div>
+      <sc-if value="{{ hasSelection }}" hint-placeholder-val="{{ false }}">
+        <div style="pointer-events: auto; width: 338px; animation: card-wiggle 320ms cubic-bezier(0.34,1.4,0.64,1);">
+          <!-- detail window v4 — PAINT-REGEL (bindend): Der Scroller ist eine EIGENE, untransformierte,
+               composite-geförderte Ebene (translateZ(0)). KEIN transform/rotate auf dem Scroller oder
+               einem seiner VORFAHREN — Chrome malt sonst rotierte Kinder (Buttons/Stempel) beim Scrollen
+               nicht neu → Inhalt da, Pixel 'maskiert'. Rahmen (Border/Radius/Schatten) liegt außen, scrollt nie. -->
+          <div style="position: relative; background: #f3ead3; border: 3px solid #1f1a14; border-radius: 5px 13px 6px 16px / 15px 5px 12px 7px; box-shadow: 4px 5px 0 rgba(31,26,20,0.35); box-sizing: border-box; display: flex; flex-direction: column; overflow: hidden; max-height: calc(100vh - 215px);">
+            <button onClick="{{ closeDetail }}" title="close" style="position: absolute; top: 5px; right: 8px; z-index: 2; cursor: pointer; background: none; border: none; font-family: Fonteys, serif; font-size: 16px; color: #3a342a; padding: 0 2px; line-height: 1;" style-hover="color: #c2412c;">✗</button>
+            <div style="overflow-y: auto; min-height: 0; transform: translateZ(0); padding: 12px 16px;">
+            <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 6px; padding-right: 16px;">
+              <span style="font-family: Fonteys, serif; font-size: 12px; background: {{ selCatColor }}; color: #f3ead3; padding: 2px 7px; border: 1.5px solid rgba(31,26,20,0.85); border-radius: 3px 8px 3px 8px / 6px 3px 8px 3px; transform: rotate(-2deg); display: inline-block;">{{ selCatLabel }}</span>
+              <span style="font-family: Fonteys, serif; font-size: 12px; color: #3a342a;">Tier {{ selTier }}</span>
+            </div>
+            <div style="font-family: 'Irish Grover', cursive; font-size: 20px; line-height: 1.1; color: #1f1a14; margin-bottom: 8px;">{{ selName }}</div>
+            <sc-if value="{{ selHasImage }}" hint-placeholder-val="{{ false }}">
+              <!-- evidence slot: REDACTED base is always painted; the image sits on top and is revealed
+                   imperatively on load (opacity via ref — no state, no re-render, nothing can cover it) -->
+              <div style="position: relative; width: 100%; height: 96px; border: 2px solid #1f1a14; border-radius: 4px 10px 4px 10px / 8px 4px 10px 4px; box-shadow: 2px 3px 0 rgba(31,26,20,0.25); transform: rotate(-0.8deg); background: #ece1c0; background-image: repeating-linear-gradient(135deg, rgba(31,26,20,0.05) 0 6px, transparent 6px 12px); overflow: hidden; box-sizing: border-box;">
+                <div style="position: absolute; inset: 0; display: flex; align-items: center; justify-content: center;"><span style="font-family: 'Irish Grover', cursive; font-size: 15px; color: #b8361f; border: 2.5px solid #b8361f; padding: 1px 10px; transform: rotate(-3deg); border-radius: 4px 10px 4px 10px / 8px 4px 10px 4px;">REDACTED</span></div>
+                <img ref="{{ setEvidenceImg }}" alt="" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;"></img>
+              </div>
+              <a href="{{ selImgSource }}" target="_blank" rel="noopener" title="View source on Wikimedia Commons" style="font-family: Fonteys, serif; font-size: 10px; color: #7d7364; text-decoration: none; display: inline-block; margin: 3px 0 6px;" style-hover="color: #c2412c;">{{ selImgCredit }} ↗</a>
+            </sc-if>
+            <sc-if value="{{ selNoImage }}" hint-placeholder-val="{{ false }}">
+              <div style="width: 100%; height: 44px; border: 2px solid #1f1a14; border-radius: 4px 10px 4px 10px / 8px 4px 10px 4px; box-shadow: 2px 3px 0 rgba(31,26,20,0.25); transform: rotate(-0.8deg); background: #ece1c0; background-image: repeating-linear-gradient(135deg, rgba(31,26,20,0.05) 0 6px, transparent 6px 12px); display: flex; align-items: center; justify-content: center; box-sizing: border-box;">
+                <span style="font-family: 'Irish Grover', cursive; font-size: 15px; color: #b8361f; border: 2.5px solid #b8361f; padding: 1px 10px; transform: rotate(-3deg); border-radius: 4px 10px 4px 10px / 8px 4px 10px 4px;">REDACTED</span>
+              </div>
+              <span style="font-family: Fonteys, serif; font-size: 10px; color: #7d7364; font-style: italic; display: inline-block; margin: 3px 0 6px;">no verified image on file</span>
+            </sc-if>
+            <sc-if value="{{ selHasSummary }}" hint-placeholder-val="{{ false }}">
+              <div style="font-family: Fonteys, serif; font-size: 13px; line-height: 1.45; color: #3a342a; margin-bottom: 7px;">{{ selSummary }}</div>
+            </sc-if>
+            <div style="font-family: Fonteys, serif; font-style: italic; font-size: 13px; line-height: 1.45; color: #3a342a; border-top: 2px dashed rgba(31,26,20,0.3); padding-top: 8px;">&ldquo;{{ selQuip }}&rdquo;<span style="font-style: normal; font-size: 12px; color: #7d7364; white-space: nowrap;"> — FrizzleBob</span></div>
+            <div style="display: flex; align-items: center; justify-content: space-between; margin-top: 10px;">
+              <div title="FrizzleBob Absurdity Rating: {{ selDice }}/6" style="display: flex; align-items: center; gap: 6px;">
+                <img ref="{{ setDiceImg }}" alt="absurdity {{ selDice }} of 6" style="width: 26px; height: 26px; display: block; transform: rotate(-5deg);"></img>
+                <span style="font-family: Fonteys, serif; font-size: 11px; color: #7d7364;">absurdity</span>
+              </div>
+              <div onClick="{{ factCheck }}" title="FrizzleFactCheck — let FB pull the file on this one" style="cursor: pointer; font-family: 'Irish Grover', cursive; font-size: 15px; color: {{ selStatusColor }}; transform: rotate(-5deg); border: 2.5px solid {{ selStatusColor }}; padding: 2px 8px; border-radius: 4px 10px 4px 10px / 8px 4px 10px 4px; animation: stamp-in 240ms cubic-bezier(0.34,1.4,0.64,1) both;" style-hover="transform: rotate(0deg) scale(1.08);" style-active="transform: translateY(2px);">{{ selStatusLabel }}</div>
+            </div>
+            <sc-if value="{{ selHasRelated }}" hint-placeholder-val="{{ false }}">
+              <div style="margin-top: 10px; border-top: 2px dashed rgba(31,26,20,0.3); padding-top: 8px;">
+                <div style="font-family: Fonteys, serif; font-size: 11px; color: #7d7364; letter-spacing: 0.5px; margin-bottom: 5px;">good neighbours ☞</div>
+                <div style="display: flex; flex-wrap: wrap; gap: 5px;">
+                  <sc-for list="{{ selRelated }}" as="rl" hint-placeholder-count="0">
+                    <button onClick="{{ rl.go }}" title="{{ rl.title }}" style="cursor: pointer; font-family: Fonteys, serif; font-size: 12px; color: {{ rl.fg }}; background: {{ rl.bg }}; border: 1.5px {{ rl.borderStyle }} {{ rl.borderColor }}; padding: 3px 9px; border-radius: 3px 9px 3px 9px / 8px 3px 9px 3px; opacity: {{ rl.op }};" style-hover="border-color: #c2412c; color: #c2412c; opacity: 1;" style-active="transform: translateY(1px);">{{ rl.label }}</button>
+                  </sc-for>
+                </div>
+              </div>
+            </sc-if>
+            <div style="display: flex; gap: 6px; margin-top: 10px; padding-top: 8px; border-top: 2px dashed rgba(31,26,20,0.3);">
+              <button onClick="{{ factCheck }}" title="FrizzleFactCheck this conspiracy — FB pulls the file" style="cursor: pointer; flex: 1; font-family: Fonteys, serif; font-weight: 700; font-size: 12px; padding: 5px 6px; border: 1.5px solid rgba(31,26,20,0.85); background: #ece1c0; color: #1f1a14; border-radius: 3px 9px 4px 10px / 8px 4px 10px 5px; transform: rotate(-1deg); box-shadow: 2px 2px 0 rgba(31,26,20,0.25); white-space: nowrap;" style-hover="transform: rotate(0deg); background: #e9c14a;" style-active="transform: translateY(2px);">check</button>
+              <button onClick="{{ toggleBookmark }}" title="Bookmark this conspiracy — rides along in session &amp; export" style="cursor: pointer; flex: 1; font-family: Fonteys, serif; font-weight: 700; font-size: 12px; padding: 5px 6px; border: 1.5px solid rgba(31,26,20,0.85); background: {{ bookmarkBg }}; color: #1f1a14; border-radius: 3px 9px 4px 10px / 8px 4px 10px 5px; transform: rotate(0.5deg); box-shadow: 2px 2px 0 rgba(31,26,20,0.25); white-space: nowrap;" style-hover="transform: rotate(0deg);" style-active="transform: translateY(2px);"><span style="opacity: 0.9;">{{ bookmarkStar }}</span> save</button>
+              <button onClick="{{ loadRelated }}" title="Follow related conspiracies — FB grafts them onto the berg" style="cursor: pointer; flex: 1.3; font-family: Fonteys, serif; font-weight: 700; font-size: 12px; padding: 5px 6px; border: 1.5px solid rgba(31,26,20,0.85); background: #ece1c0; color: #1f1a14; border-radius: 3px 9px 4px 10px / 8px 4px 10px 5px; transform: rotate(-0.6deg); box-shadow: 2px 2px 0 rgba(31,26,20,0.25); white-space: nowrap;" style-hover="transform: rotate(0deg); background: #e9c14a;" style-active="transform: translateY(2px);">rabbit holes…</button>
+            </div>
+            </div>
+          </div>
+        </div>
+      </sc-if>
+      <sc-if value="{{ showBio }}" hint-placeholder-val="{{ false }}">
+        <div style="pointer-events: auto; width: 338px; animation: card-wiggle 320ms cubic-bezier(0.34,1.4,0.64,1) both;">
+          <div style="position: relative; background: #f3ead3; border: 3px solid #1f1a14; border-radius: 14px 6px 11px 5px / 5px 12px 6px 15px; box-shadow: 4px 5px 0 rgba(31,26,20,0.35); transform: rotate(0.6deg); max-height: calc(100vh - 175px); box-sizing: border-box; display: flex; flex-direction: column; overflow: hidden;">
+            <!-- fixed header: avatar never sits inside the scroll container -->
+            <div style="flex-shrink: 0; display: flex; gap: 12px; align-items: center; padding: 14px 16px 10px; position: relative; z-index: 2; background: #f3ead3;">
+              <img src="assets/mascot/avatar-smug.png" ref="{{ setBioImg }}" onClick="{{ cycleBioFace }}" title="Cycle FrizzleBob's moods" alt="Uncle FrizzleBob" style="width: 78px; height: 78px; border: 2px solid #1f1a14; border-radius: 50%; background: #e9c14a; flex-shrink: 0; cursor: pointer; display: block;" style-hover="transform: scale(1.04);"></img>
+              <div style="min-width: 0;">
+                <div style="font-family: 'Irish Grover', cursive; font-size: 20px; line-height: 1.1; color: #1f1a14;">Uncle FrizzleBob</div>
+                <div style="font-family: Fonteys, serif; font-style: italic; font-size: 12px; color: #3a342a; margin-top: 2px;">the Fixer — fixes fractured worldviews</div>
+              </div>
+              <button onClick="{{ closeBio }}" style="position: absolute; top: 4px; right: 8px; cursor: pointer; background: none; border: none; font-family: Fonteys, serif; font-size: 16px; color: #3a342a;" style-hover="color: #c2412c;">✗</button>
+            </div>
+            <!-- scrollable body -->
+            <div style="flex: 1; min-height: 0; overflow-y: auto; padding: 0 16px 12px;">
+            <div style="font-family: Fonteys, serif; font-style: italic; font-size: 13px; line-height: 1.45; color: #1f1a14; border-top: 2px dashed rgba(31,26,20,0.3); padding-top: 8px;">&ldquo;Reality's rigged. Academia's apologetic. Philosophy's on parole.&rdquo;</div>
+            <div style="font-family: Fonteys, serif; font-size: 13px; line-height: 1.5; color: #3a342a; margin-top: 8px;">Outlaw epistemologist. Reluctant subcontractor for institutions that deny hiring him. He doesn't solve problems — he exposes the fracture: submit your paradox, await the FrizzleFix, reboot the absurd. No doctrine survives contact. No sacred cow leaves intact.</div>
+            <div style="font-family: Fonteys, serif; font-size: 12px; line-height: 1.55; color: #3a342a; margin-top: 10px; border-top: 2px dashed rgba(31,26,20,0.3); padding-top: 8px;">
+              <div style="font-weight: 700; margin-bottom: 3px;">Selected work history</div>
+              <div>Men in Black — field fixer, 1954–present <span style="color: #7d7364;">(unofficial, denied, poorly redacted)</span></div>
+              <div>Operation Paperclip — post-event consultant, 1945 <span style="color: #7d7364;">(advised both sides to read a book; ignored)</span></div>
+              <div>Waterloo Asset Recovery — shadow analyst, 1815 <span style="color: #7d7364;">(witnessed the first central-bank psyop; still billing)</span></div>
+              <div>Göbekli Tepe Restoration Crew — 9600 BC <span style="color: #7d7364;">(told the team to label things; humanity never recovered)</span></div>
+            </div>
+            <a href="https://kayfabizarro.pages.dev/#cutplay" target="_blank" rel="noopener" style="display: inline-block; margin-top: 12px; text-decoration: none; cursor: pointer; font-family: Fonteys, serif; font-weight: 700; font-size: 12px; padding: 5px 12px; border: 1.5px solid rgba(31,26,20,0.85); background: #e9c14a; color: #1f1a14; border-radius: 3px 9px 4px 10px / 8px 4px 10px 5px; transform: rotate(-1deg); box-shadow: 2px 2px 0 rgba(31,26,20,0.25);" style-hover="transform: rotate(0deg);">Cut &amp; Play Comics</a>
+            <div style="font-family: Fonteys, serif; font-size: 12px; line-height: 1.5; color: #1f1a14; margin-top: 12px; border-top: 2px dashed rgba(31,26,20,0.3); padding-top: 8px;"><span style="font-family: 'Irish Grover', cursive; font-size: 15px;">Stay fluffy.</span><br>Uncle FrizzleBob <span style="color: #7d7364; font-style: italic;">(Worldview Fixer, Reality-Wrestler, Epistemic Outlaw)</span></div>
+            </div>
+          </div>
+        </div>
+      </sc-if>
+    </div>
+  </div>
+
+  <!-- ============ SEARCH + FILTERS (top right) ============ -->
+  <sc-if value="{{ chromeVisible }}" hint-placeholder-val="{{ true }}">
+    <div style="position: absolute; top: 14px; right: 16px; pointer-events: auto; display: flex; flex-direction: column; gap: 6px; align-items: flex-end; max-width: 460px; z-index: 30;">
+        <div style="display: flex; gap: 6px; align-items: stretch;">
+          <div style="position: relative; width: 230px; transform: rotate(0.6deg);">
+            <input value="{{ search }}" onInput="{{ onSearch }}" placeholder="search the depths…" style="width: 100%; height: 100%; box-sizing: border-box; background: #ece1c0; border: 1.5px solid rgba(31,26,20,0.85); border-radius: 4px 12px 6px 14px / 10px 5px 14px 7px; padding: 7px 12px; font-family: Fonteys, serif; font-size: 13px; color: #1f1a14; outline: none; box-shadow: 2px 3px 0 rgba(31,26,20,0.3);"></input>
+            <sc-if value="{{ hasResults }}" hint-placeholder-val="{{ false }}">
+              <div style="position: absolute; top: 40px; left: 0; right: 0; background: #f3ead3; border: 2px solid #1f1a14; border-radius: 7px 15px 5px 11px / 13px 6px 14px 5px; box-shadow: 4px 5px 0 rgba(31,26,20,0.4); overflow: hidden; max-height: 300px; overflow-y: auto; z-index: 5;">
+                <sc-for list="{{ searchResults }}" as="r" hint-placeholder-count="0">
+                  <div onClick="{{ r.go }}" style="display: flex; align-items: center; gap: 8px; padding: 7px 12px; cursor: pointer; border-bottom: 1px dashed rgba(31,26,20,0.25);" style-hover="background: rgba(233,193,74,0.35);">
+                    <span style="width: 9px; height: 9px; border-radius: 50%; background: {{ r.color }}; border: 1.5px solid #1f1a14; flex-shrink: 0;"></span>
+                    <span style="font-family: Fonteys, serif; font-size: 13px; color: #1f1a14; flex: 1;">{{ r.name }}</span>
+                    <span style="font-family: Fonteys, serif; font-size: 12px; color: #7d7364;">T{{ r.tier }}</span>
+                  </div>
+                </sc-for>
+              </div>
+            </sc-if>
+          </div>
+          <button onClick="{{ toggleFilters }}" title="Filter the depths" style="cursor: pointer; width: 38px; height: 38px; flex-shrink: 0; display: flex; align-items: center; justify-content: center; padding: 0; border: 1.5px solid rgba(31,26,20,0.85); border-radius: 4px 12px 6px 14px / 10px 5px 14px 7px; background: {{ filtersBtnBg }}; transform: rotate(0.8deg); box-shadow: 2px 3px 0 rgba(31,26,20,0.3);" style-hover="transform: rotate(0deg) scale(1.06);">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1f1a14" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M3.5 5 L20.5 5 L14 12.5 L14 18.5 L10 16 L10 12.5 Z" fill="{{ filterFunnelFill }}" opacity="{{ filterFunnelOp }}"></path>
+              <path d="M6.5 6.5 L17.5 17.5 M17.5 6.5 L6.5 17.5" opacity="{{ filterXOp }}"></path>
+            </svg>
+          </button>
+        </div>
+        <sc-if value="{{ filtersOpen }}" hint-placeholder-val="{{ false }}">
+        <div style="display: flex; flex-wrap: wrap; gap: 4px; justify-content: flex-end; align-items: center; background: rgba(12,22,36,0.55); padding: 8px; border-radius: 10px 5px 14px 6px / 5px 13px 18px 8px;">
+          <sc-for list="{{ catChips }}" as="c" hint-placeholder-count="4">
+            <button onClick="{{ c.toggle }}" style="cursor: pointer; font-family: Fonteys, serif; font-size: 12px; padding: 3px 8px; border: 1.5px solid rgba(31,26,20,0.85); border-radius: 3px 9px 4px 10px / 8px 4px 10px 5px; background: {{ c.bg }}; color: {{ c.fg }}; transform: rotate({{ c.rot }}deg); opacity: {{ c.op }};" style-hover="transform: rotate(0deg) scale(1.04);">{{ c.label }}</button>
+          </sc-for>
+          <sc-for list="{{ statusChips }}" as="s" hint-placeholder-count="4">
+            <button onClick="{{ s.toggle }}" style="cursor: pointer; font-family: Fonteys, serif; font-size: 12px; padding: 3px 8px; border: 1.5px dashed rgba(31,26,20,0.75); border-radius: 3px 9px 4px 10px / 8px 4px 10px 5px; background: {{ s.bg }}; color: {{ s.fg }}; transform: rotate({{ s.rot }}deg); opacity: {{ s.op }};" style-hover="transform: rotate(0deg) scale(1.04);">{{ s.label }}</button>
+          </sc-for>
+          <select value="{{ mask }}" onChange="{{ onMask }}" title="FrizzleBob's guide mode" style="cursor: pointer; font-family: Fonteys, serif; font-size: 12px; padding: 3px 5px; border: 1.5px solid rgba(31,26,20,0.85); background: #ece1c0; color: #1f1a14; border-radius: 4px 8px 4px 8px / 6px 4px 8px 4px;">
+            <option value="satirical">guide: satirical</option>
+            <option value="conspiratorial">guide: kayfabe</option>
+            <option value="analytical">guide: analytical</option>
+          </select>
+          <select value="{{ minDice }}" onChange="{{ onMinDice }}" style="cursor: pointer; font-family: Fonteys, serif; font-size: 12px; padding: 3px 5px; border: 1.5px solid rgba(31,26,20,0.85); background: #ece1c0; color: #1f1a14; border-radius: 4px 8px 4px 8px / 6px 4px 8px 4px;">
+            <option value="1">absurdity 1+</option>
+            <option value="2">absurdity 2+</option>
+            <option value="3">absurdity 3+</option>
+            <option value="4">absurdity 4+</option>
+            <option value="5">absurdity 5+</option>
+            <option value="6">absurdity 6 only</option>
+          </select>
+          <button onClick="{{ clearFilters }}" style="cursor: pointer; font-family: Fonteys, serif; font-size: 12px; padding: 3px 8px; border: none; background: none; color: #f3ead3; text-decoration: underline;">clear</button>
+        </div>
+        </sc-if>
+    </div>
+  </sc-if>
+
+  <!-- ============ FRIZZLEBOB COCKPIT ============ -->
+  <sc-if value="{{ cockpitVisible }}" hint-placeholder-val="{{ true }}">
+    <div ref="{{ setCockpitRef }}" style="position: absolute; right: 18px; bottom: 18px; width: 372px; z-index: 40;">
+      <div style="position: relative; background: #f3ead3; border: 3px solid #1f1a14; border-radius: 15px 7px 5px 13px / 6px 15px 12px 5px; box-shadow: 5px 6px 0 rgba(31,26,20,0.4); transform: rotate(-0.8deg);">
+        <!-- drag handle / header -->
+        <div onPointerDown="{{ onCockpitDrag }}" style="cursor: grab; display: flex; align-items: center; gap: 10px; padding: 10px 14px 8px; border-bottom: 2px solid #1f1a14; background: rgba(233,193,74,0.3); border-radius: 4px 12px 0 0 / 10px 4px 0 0;">
+          <img src="assets/mascot/avatar-smug.png" ref="{{ setFbImgA }}" onClick="{{ openBio }}" title="Who IS this rabbit?" alt="Uncle FrizzleBob" style="width: 46px; height: 46px; border: 2px solid #1f1a14; border-radius: 50%; background: #e9c14a; animation: fb-bob 4s ease-in-out infinite; flex-shrink: 0; cursor: pointer; display: block;"></img>
+          <div style="flex: 1; min-width: 0;">
+            <div style="font-family: 'Irish Grover', cursive; font-size: 17px; color: #1f1a14; line-height: 1.1;">Uncle FrizzleBob</div>
+            <div style="font-family: Fonteys, serif; font-style: italic; font-size: 12px; color: #3a342a; white-space: nowrap;">tour guide · {{ maskLabel }}</div>
+          </div>
+          <div style="display: flex; align-items: center; gap: 4px; flex-shrink: 0;">
+          <button onClick="{{ toggleTts }}" title="Toggle FrizzleBob's voice (browser TTS)" style="cursor: pointer; border: none; background: none; padding: 2px; display: flex; align-items: center;" style-hover="transform: scale(1.1) rotate(-2deg);">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1f1a14" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 10 L7.5 10 L12.5 5.5 L12.5 18.5 L7.5 14 L4 14 Z" fill="{{ ttsFill }}"></path>
+              <path d="M15.5 9.5 Q17.5 12 15.5 14.5" opacity="{{ ttsWaveOp }}"></path>
+              <path d="M18 7.5 Q21 12 18 16.5" opacity="{{ ttsWaveOp }}"></path>
+              <path d="M15.5 9.5 L20.5 14.5 M20.5 9.5 L15.5 14.5" opacity="{{ ttsXOp }}"></path>
+            </svg>
+          </button>
+          <button onClick="{{ toggleMusic }}" title="Toggle the atmo — depth-morphing underwater drone" style="cursor: pointer; border: none; background: none; padding: 2px; display: flex; align-items: center;" style-hover="transform: scale(1.1) rotate(2deg);">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1f1a14" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <ellipse cx="8" cy="17.2" rx="2.7" ry="2.1" fill="{{ musicFill }}"></ellipse>
+              <path d="M10.7 17.2 L10.7 5.8"></path>
+              <path d="M10.7 5.8 Q13.6 6.4 14 9.4"></path>
+              <path d="M15.5 9.5 L20.5 14.5 M20.5 9.5 L15.5 14.5" opacity="{{ musicXOp }}"></path>
+            </svg>
+          </button>
+          <button onClick="{{ exportTour }}" title="Export current tour + filters as JSON" style="cursor: pointer; font-family: Fonteys, serif; font-weight: 700; font-size: 17px; padding: 2px 3px; border: none; background: none; color: #1f1a14;" style-hover="transform: translateY(2px);">↓</button>
+          <button onClick="{{ importClick }}" title="Import a tour / dataset JSON" style="cursor: pointer; font-family: Fonteys, serif; font-weight: 700; font-size: 17px; padding: 2px 3px; border: none; background: none; color: #1f1a14;" style-hover="transform: translateY(-2px);">↑</button>
+          <button onClick="{{ minify }}" title="Minify — immersive mode" style="cursor: pointer; font-family: Fonteys, serif; font-weight: 700; font-size: 17px; padding: 2px 3px; border: none; background: none; color: #1f1a14;" style-hover="transform: translateY(2px);">▾</button>
+          </div>
+        </div>
+
+        <!-- chat log -->
+        <div ref="{{ setChatRef }}" style="height: clamp(90px, calc(100vh - 480px), 620px); overflow-y: auto; padding: 10px 14px; display: flex; flex-direction: column; gap: 8px; background-image: url('assets/paper-grain.svg');">
+          <sc-for list="{{ msgs }}" as="m" hint-placeholder-count="1">
+            <div style="align-self: {{ m.align }}; max-width: 86%; background: {{ m.bg }}; border: 1px solid rgba(31,26,20,0.55); border-radius: 4px 12px 5px 13px / 10px 5px 13px 6px; padding: 7px 11px; transform: rotate({{ m.rot }}deg); box-shadow: 2px 3px 0 rgba(31,26,20,0.2);">
+              <div style="font-family: Fonteys, serif; font-size: 13px; line-height: 1.4; color: #1f1a14; white-space: pre-wrap;">{{ m.rich }}</div>
+            </div>
+          </sc-for>
+          <sc-if value="{{ thinking }}" hint-placeholder-val="{{ false }}">
+            <div style="align-self: flex-start; font-family: Fonteys, serif; font-style: italic; font-size: 13px; color: #7d7364; animation: thinkdots 1s ease-in-out infinite;">FrizzleBob is adjusting his tinfoil…</div>
+          </sc-if>
+        </div>
+
+        <!-- tour controls -->
+        <div style="display: flex; align-items: center; gap: 6px; padding: 8px 14px; border-top: 2px dashed rgba(31,26,20,0.35);">
+          <button onClick="{{ prevStop }}" title="Previous stop" style="cursor: pointer; width: 34px; height: 30px; font-family: Fonteys, serif; font-weight: 700; font-size: 14px; border: 2px solid #1f1a14; background: #ece1c0; color: #1f1a14; border-radius: 4px 10px 5px 11px / 9px 5px 11px 5px; transform: rotate(-2deg); box-shadow: 2px 2px 0 rgba(31,26,20,0.3);" style-hover="transform: rotate(0deg);" style-active="transform: translateY(2px);">&lt;</button>
+          <button onClick="{{ togglePlay }}" title="FrizzleBob autopilot" style="cursor: pointer; flex: 0 0 44px; height: 34px; font-family: Fonteys, serif; font-weight: 700; font-size: 14px; border: 2px solid #1f1a14; background: {{ playBg }}; color: {{ playFg }}; border-radius: 4px 10px 5px 11px / 9px 5px 11px 5px; transform: rotate(1.5deg); box-shadow: 2px 3px 0 rgba(31,26,20,0.35);" style-hover="transform: rotate(0deg) scale(1.05);" style-active="transform: translateY(2px);">{{ playLabel }}</button>
+          <button onClick="{{ nextStop }}" title="Next stop" style="cursor: pointer; width: 34px; height: 30px; font-family: Fonteys, serif; font-weight: 700; font-size: 14px; border: 2px solid #1f1a14; background: #ece1c0; color: #1f1a14; border-radius: 4px 10px 5px 11px / 9px 5px 11px 5px; transform: rotate(2deg); box-shadow: 2px 2px 0 rgba(31,26,20,0.3);" style-hover="transform: rotate(0deg);" style-active="transform: translateY(2px);">&gt;</button>
+          <select value="{{ mode }}" onChange="{{ onMode }}" style="flex: 1; cursor: pointer; font-family: Fonteys, serif; font-size: 12px; padding: 5px 6px; border: 1.5px solid rgba(31,26,20,0.85); background: #ece1c0; color: #1f1a14; border-radius: 4px 8px 4px 8px / 6px 4px 8px 4px; transform: rotate(-0.5deg);">
+            <option value="curated">{{ curatedLabel }}</option>
+            <option value="lucky">{{ luckyLabel }}</option>
+            <option value="custom">{{ customLabel }}</option>
+          </select>
+        </div>
+
+        <!-- chat input + io -->
+        <div style="display: flex; align-items: center; gap: 6px; padding: 0 14px 12px;">
+          <input value="{{ input }}" onInput="{{ onInput }}" onKeyDown="{{ onInputKey }}" placeholder="ask FB… or say 'build me a tour of…'" style="flex: 1; background: #ece1c0; border: 1.5px solid rgba(31,26,20,0.85); border-radius: 4px 10px 5px 11px / 9px 5px 11px 5px; padding: 7px 10px; font-family: Fonteys, serif; font-size: 13px; color: #1f1a14; outline: none;"></input>
+          <button onClick="{{ sendChat }}" style="cursor: pointer; font-family: Fonteys, serif; font-weight: 700; font-size: 13px; padding: 7px 10px; border: 2px solid #1f1a14; background: #c2412c; color: #f3ead3; border-radius: 4px 10px 5px 11px / 9px 5px 11px 5px; transform: rotate(1deg); box-shadow: 2px 2px 0 rgba(31,26,20,0.3);" style-hover="transform: rotate(0deg);" style-active="transform: translateY(2px);">Send</button>
+        </div>
+      </div>
+    </div>
+  </sc-if>
+
+  <!-- ============ MINIFIED BADGE ============ -->
+  <sc-if value="{{ minified }}" hint-placeholder-val="{{ false }}">
+    <div style="position: absolute; right: 18px; bottom: 18px; z-index: 40; display: flex; align-items: flex-end; gap: 8px;">
+      <div ref="{{ setToastRef }}" style="max-width: 340px; margin-bottom: 4px; text-align: right; font-family: Fonteys, serif; font-size: 13px; line-height: 1.35; color: #f3ead3; text-shadow: 1px 2px 0 rgba(0,0,0,0.6); opacity: 0; transition: opacity 300ms;"></div>
+      <div style="display: flex; gap: 5px; margin-bottom: 4px;">
+        <button onClick="{{ prevStop }}" style="cursor: pointer; width: 30px; height: 28px; font-family: Fonteys, serif; font-weight: 700; font-size: 13px; border: 1.5px solid rgba(243,234,211,0.9); background: rgba(12,22,36,0.8); color: #f3ead3; border-radius: 4px 9px 4px 9px / 8px 4px 9px 4px;" style-hover="background: #1f1a14;">&lt;</button>
+        <button onClick="{{ togglePlay }}" style="cursor: pointer; width: 34px; height: 28px; font-family: Fonteys, serif; font-weight: 700; font-size: 13px; border: 1.5px solid rgba(243,234,211,0.9); background: {{ playMiniBg }}; color: #f3ead3; border-radius: 4px 9px 4px 9px / 8px 4px 9px 4px;" style-hover="background: #1f1a14;">{{ playLabel }}</button>
+        <button onClick="{{ nextStop }}" style="cursor: pointer; width: 30px; height: 28px; font-family: Fonteys, serif; font-weight: 700; font-size: 13px; border: 1.5px solid rgba(243,234,211,0.9); background: rgba(12,22,36,0.8); color: #f3ead3; border-radius: 4px 9px 4px 9px / 8px 4px 9px 4px;" style-hover="background: #1f1a14;">&gt;</button>
+      </div>
+      <button onClick="{{ unminify }}" title="Bring back the cockpit" style="cursor: pointer; width: 62px; height: 62px; border: 3px solid #f3ead3; background: #e9c14a; border-radius: 50%; padding: 0; overflow: hidden; box-shadow: 3px 4px 0 rgba(0,0,0,0.45); transform: rotate(-3deg); animation: fb-bob 4s ease-in-out infinite; flex-shrink: 0;" style-hover="transform: rotate(0deg) scale(1.06);">
+        <img src="assets/mascot/avatar-smug.png" ref="{{ setFbImgB }}" alt="Uncle FrizzleBob" style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%; display: block;"></img>
+      </button>
+    </div>
+  </sc-if>
+
+  <input ref="{{ setFileRef }}" type="file" accept=".json,application/json" onChange="{{ onImportFile }}" style="display: none;"></input>
+
+  <!-- hint strip -->
+  <div style="position: absolute; bottom: 12px; left: 16px; font-family: Fonteys, serif; font-size: 12px; color: rgba(243,234,211,0.35); z-index: 20; pointer-events: auto; cursor: default; transition: color 200ms;" style-hover="color: rgba(243,234,211,0.95); text-shadow: 1px 1px 0 rgba(12,22,36,0.85);">drag to dive &amp; orbit · scroll to zoom · W A S D · click an entry</div>
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{
+  &quot;$preview&quot;: { &quot;width&quot;: &quot;100%&quot;, &quot;height&quot;: &quot;100%&quot; },
+  &quot;fbMask&quot;: { &quot;editor&quot;: &quot;enum&quot;, &quot;default&quot;: &quot;satirical&quot;, &quot;options&quot;: [&quot;satirical&quot;, &quot;conspiratorial&quot;, &quot;analytical&quot;], &quot;tsType&quot;: &quot;\&quot;satirical\&quot; | \&quot;conspiratorial\&quot; | \&quot;analytical\&quot;&quot;, &quot;section&quot;: &quot;FrizzleBob&quot; },
+  &quot;autopilotSecs&quot;: { &quot;editor&quot;: &quot;range&quot;, &quot;default&quot;: 8, &quot;min&quot;: 3, &quot;max&quot;: 20, &quot;step&quot;: 1, &quot;unit&quot;: &quot;s&quot;, &quot;tsType&quot;: &quot;number&quot;, &quot;section&quot;: &quot;FrizzleBob&quot; }
+}">
+class Component extends DCLogic {
+  state = {
+    ready: false,
+    music: false,
+    selectedId: null,
+    minified: false,
+    playing: false,
+    mode: "curated",
+    tourIdx: -1,
+    customTour: [],
+    search: "",
+    activeCats: {},      // empty = all
+    activeStatuses: {},  // empty = all
+    minDice: 1,
+    msgs: [],
+    input: "",
+    thinking: false,
+    tts: false,
+    curTier: 0,
+    filtersOpen: false,
+    bookmarks: [],
+    loadingRelated: false,
+    factChecks: {},
+    showBio: false,
+    bioFace: 0,
+    maskOverride: null
+  };
+
+  // ---------- lifecycle ----------
+  componentDidMount() {
+    this._labelEls = {};
+    this._luckyOrder = null;
+    this._boot = setInterval(() => {
+      if (window.THREE && window.ICEBERG_DATA && window.IcebergScene && this._sceneEl) {
+        clearInterval(this._boot);
+        this._initScene();
+      }
+    }, 80);
+    this._keyHandler = (e) => {
+      if (e.target && (e.target.tagName === "INPUT" || e.target.tagName === "TEXTAREA" || e.target.tagName === "SELECT")) return;
+      if (e.key === "ArrowRight") this._next();
+      if (e.key === "ArrowLeft") this._prev();
+      if (e.key === " ") { e.preventDefault(); this._togglePlay(); }
+      const sc = this._scene;
+      if (!sc) return;
+      const k = e.key.toLowerCase();
+      if (k === "w" || e.key === "ArrowUp") { e.preventDefault(); sc.diveBy(48); }
+      if (k === "s" || e.key === "ArrowDown") { e.preventDefault(); sc.diveBy(-48); }
+      if (k === "a") sc.orbitBy(-0.18);
+      if (k === "d") sc.orbitBy(0.18);
+      if (e.key === "+" || e.key === "=") sc.zoomBy(-55);
+      if (e.key === "-" || e.key === "_") sc.zoomBy(55);
+    };
+    window.addEventListener("keydown", this._keyHandler);
+  }
+
+  componentWillUnmount() {
+    clearInterval(this._boot);
+    clearInterval(this._auto);
+    if (this._atmo) { this._atmo.dispose(); this._atmo = null; }
+    window.removeEventListener("keydown", this._keyHandler);
+    if (this._scene) this._scene.dispose();
+  }
+
+  _data() { return window.ICEBERG_DATA; }
+
+  // cool pastel tier tints — UI surfaces (narrator, tier buttons)
+  _tint(n) { return ["#f3ead3", "#eaf5f8", "#dbedf3", "#c8e2ec", "#b0d3e5", "#95c0da", "#7aabcd", "#6595bd"][n] || "#f3ead3"; }
+  // slightly lighter variants for node labels (legibility in the deep)
+  _labelTint(n) { return ["#f3ead3", "#eef7fa", "#e2f1f6", "#d2e9f1", "#c0deec", "#aed4e7", "#9ccae1", "#8ac0dc"][n] || "#f3ead3"; }
+
+  _initScene() {
+    const data = this._data();
+    this._scene = new window.IcebergScene(this._sceneEl, data, {
+      onFrame: (labels, depthInfo) => this._onFrame(labels, depthInfo),
+      onUserMove: () => {}
+    });
+    this._buildLabels(data);
+    this._bindPicking();
+    this.setState({ ready: true });
+    this._say("Welcome aboard, kid. " + data.entries.length + " alleged truths, seven tiers of nonsense, one rabbit with a submarine. Scroll down to dive — or press play and let ol' FrizzleBob drive. Stay fluffy.");
+  }
+
+  _makeLabel(e) {
+    const cats = this._data().cats;
+    const el = document.createElement("div");
+    el.style.cssText = "position:absolute;left:0;top:0;pointer-events:none;display:none;white-space:nowrap;transform:translate(-50%,-50%);";
+    const dot = document.createElement("span");
+    dot.style.cssText = "display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:6px;border:1.5px solid rgba(243,234,211,0.9);vertical-align:middle;background:" + (cats[e.cat] ? cats[e.cat].color : "#7d7364") + ";";
+    const txt = document.createElement("span");
+    txt.textContent = e.name;
+    txt.style.cssText = "font-family:BabyEliot,cursive;font-size:15px;color:#f3ead3;vertical-align:middle;text-shadow:-1.5px -1.5px 0 rgba(12,22,36,0.85),1.5px -1.5px 0 rgba(12,22,36,0.85),-1.5px 1.5px 0 rgba(12,22,36,0.85),1.5px 1.5px 0 rgba(12,22,36,0.85),-1.5px 0 0 rgba(12,22,36,0.85),1.5px 0 0 rgba(12,22,36,0.85),0 -1.5px 0 rgba(12,22,36,0.85),0 2px 0 rgba(12,22,36,0.9);";
+    el.appendChild(dot); el.appendChild(txt);
+    // no listeners here: labels are pointer-events:none; picking is deterministic via _pickAt
+    this._labelsEl.appendChild(el);
+    this._labelEls[e.id] = { el, txt, tier: e.tier };
+  }
+
+  _buildLabels(data) {
+    this._labelsEl.innerHTML = "";
+    this._labelEls = {};
+    data.entries.forEach((e) => this._makeLabel(e));
+  }
+
+  _visibleSet() {
+    const s = this.state;
+    const cats = Object.keys(s.activeCats).filter((k) => s.activeCats[k]);
+    const sts = Object.keys(s.activeStatuses).filter((k) => s.activeStatuses[k]);
+    if (!cats.length && !sts.length && s.minDice <= 1) return null;
+    const set = new Set();
+    this._data().entries.forEach((e) => {
+      if (cats.length && !cats.includes(e.cat)) return;
+      if (sts.length && !sts.includes(e.status)) return;
+      if (e.dice < s.minDice) return;
+      set.add(e.id);
+    });
+    return set;
+  }
+
+  _onFrame(labels, depthInfo) {
+    // atmo follows the dive (engine guards against same-tier calls; ramps are internal)
+    const atmoTier = depthInfo && typeof depthInfo.tier === "number" ? depthInfo.tier : 0;
+    this._lastTier = atmoTier;
+    if (this._atmo) this._atmo.setTier(atmoTier);
+    const vis = this._visCache;
+    const hiC = "#e9c14a";
+    // collect candidate entry labels (tier markers live in the narrator box)
+    const cand = [];
+    for (const l of labels) {
+      const rec = this._labelEls[l.id];
+      if (!rec || l.tierMarker) continue;
+      if (vis && !vis.has(l.id)) continue;
+      cand.push(l);
+    }
+    // declutter: selected > hovered > front-most/brightest wins; overlapping losers stay hidden.
+    // No two visible labels may stack, so every click target is unambiguous.
+    const selId = this.state.selectedId, hovId = this._hoverId;
+    cand.sort((a, b) => ((b.id === selId) - (a.id === selId)) || ((b.id === hovId) - (a.id === hovId)) || (b.o * b.s - a.o * a.s));
+    const placed = [];
+    const shown = new Set();
+    for (const l of cand) {
+      const rec = this._labelEls[l.id];
+      if (rec.w == null && rec.txt) rec.w = 22 + rec.txt.textContent.length * 7.4; // estimate until measured
+      const w = (rec.w || 90) * l.s;
+      let collide = false;
+      for (const p of placed) {
+        if (Math.abs(l.y - p.y) < 21 && Math.abs(l.x - p.x) < (w + p.w) * 0.41) { collide = true; break; }
+      }
+      if (collide) continue;
+      placed.push({ x: l.x, y: l.y, w });
+      shown.add(l.id);
+      rec.el.style.display = "block";
+      rec.el.style.opacity = l.o.toFixed(2);
+      const sel = l.id === selId;
+      rec.el.style.transform = "translate(-50%,-50%) scale(" + (l.s * (sel ? 1.25 : 1)).toFixed(2) + ")";
+      rec.el.style.left = l.x + "px";
+      rec.el.style.top = l.y + "px";
+      if (rec.txt) { rec.txt.style.color = (sel || rec._hover) ? hiC : this._labelTint(rec.tier); }
+      if (rec.wMeasured !== true && rec.el.offsetWidth > 0) { rec.w = rec.el.offsetWidth; rec.wMeasured = true; }
+    }
+    for (const id in this._labelEls) {
+      if (!shown.has(id)) this._labelEls[id].el.style.display = "none";
+    }
+    this._pickable = shown;
+    // depth chip + tier-driven FB expression
+    if (this._depthChipEl) {
+      this._depthChipEl.textContent = depthInfo.y > 4 ? "" : "−" + depthInfo.meters + " m";
+    }
+    if (depthInfo.tier !== this.state.curTier) this.setState({ curTier: depthInfo.tier });
+  }
+
+  // ---------- deterministic node picking ----------
+  // Labels are pointer-events:none (pure visuals). One handler on the scene
+  // container picks the node the user actually SEES: direct rect hits beat
+  // proximity, nearest label-center resolves overlaps — no DOM-stacking lottery.
+  _bindPicking() {
+    if (this._pickBound || !this._sceneEl) return;
+    this._pickBound = true;
+    this._sceneEl.addEventListener("click", (ev) => {
+      if (this._scene && this._scene.suppressClick) return; // that was a drag (view contract)
+      const id = this._pickAt(ev.clientX, ev.clientY);
+      if (id) this._select(id, true);
+    });
+    this._sceneEl.addEventListener("pointermove", (ev) => {
+      if (this._scene && this._scene.dragging) { this._applyHover(null); return; }
+      this._applyHover(this._pickAt(ev.clientX, ev.clientY));
+    });
+    this._sceneEl.addEventListener("pointerleave", () => this._applyHover(null));
+  }
+
+  _pickAt(cx, cy) {
+    if (!this._pickable) return null;
+    let best = null, bestScore = Infinity;
+    this._pickable.forEach((id) => {
+      const rec = this._labelEls[id];
+      if (!rec || rec.el.style.display === "none") return;
+      const r = rec.el.getBoundingClientRect();
+      const dx = cx - (r.left + r.width / 2), dy = cy - (r.top + r.height / 2);
+      const dist = Math.hypot(dx, dy * 2.2); // weight vertical: the text LINE you're on wins
+      const inside = cx >= r.left - 6 && cx <= r.right + 6 && cy >= r.top - 5 && cy <= r.bottom + 5;
+      if (!inside && dist > 46) return;
+      const score = dist - (inside ? 10000 : 0); // direct hit always beats proximity; nearest wins ties
+      if (score < bestScore) { bestScore = score; best = id; }
+    });
+    return best;
+  }
+
+  _applyHover(id) {
+    if (this._hoverId === id) return;
+    const old = this._hoverId && this._labelEls[this._hoverId];
+    if (old) { old._hover = false; old.el.style.zIndex = ""; }
+    this._hoverId = id;
+    const rec = id && this._labelEls[id];
+    if (rec) { rec._hover = true; rec.el.style.zIndex = "10"; }
+    if (this._sceneEl) this._sceneEl.style.cursor = id ? "pointer" : "";
+  }
+
+  // ---------- selection / tour ----------
+  _select(id, manual) {
+    const e = this._data().entries.find((x) => x.id === id);
+    if (!e) return;
+    this._scene.flyToEntry(id);
+    const tour = this._tour();
+    const idx = tour.indexOf(id);
+    this.setState({ selectedId: id, showBio: false, tourIdx: idx >= 0 ? idx : this.state.tourIdx }); // bio yields to the detail window
+    this._say(e.name + " — " + e.quip, true);
+    if (manual && this.state.playing) this._resetAutoTimer();
+  }
+
+  _tour() {
+    const s = this.state;
+    if (s.mode === "curated") return this._data().tours.curated;
+    if (s.mode === "custom") return s.customTour;
+    if (!this._luckyOrder) {
+      const ids = this._data().entries.map((e) => e.id);
+      for (let i = ids.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [ids[i], ids[j]] = [ids[j], ids[i]]; }
+      this._luckyOrder = ids;
+    }
+    return this._luckyOrder;
+  }
+
+  _next() {
+    const tour = this._tour();
+    if (!tour.length) { this._say("Your custom tour is empty, kid. Ask me to build one — say 'build me a tour of the weirdest space stuff'."); return; }
+    const idx = (this.state.tourIdx + 1) % tour.length;
+    this.setState({ tourIdx: idx });
+    this._select(tour[idx]);
+  }
+
+  _prev() {
+    const tour = this._tour();
+    if (!tour.length) return;
+    const idx = (this.state.tourIdx - 1 + tour.length) % tour.length;
+    this.setState({ tourIdx: idx });
+    this._select(tour[idx]);
+  }
+
+  _togglePlay() {
+    const playing = !this.state.playing;
+    this.setState({ playing });
+    clearInterval(this._auto);
+    if (playing) {
+      this._say(this.state.mode === "lucky" ? "Autopilot: CHAOS MODE. No refunds." : "Autopilot engaged. Hands inside the narrative at all times.");
+      this._next();
+      this._resetAutoTimer();
+    } else {
+      this._say("Autopilot off. Drift responsibly.");
+    }
+  }
+
+  _resetAutoTimer() {
+    clearInterval(this._auto);
+    const secs = this.props.autopilotSecs ?? 8;
+    this._auto = setInterval(() => this._next(), secs * 1000);
+  }
+
+  // ---------- FB voice ----------
+  // Mini rich-text: **bold** and *italic* in data/LLM strings → strong/em elements.
+  // Storage & TTS stay plain strings; enrichment happens only at render time.
+  _rich(text) {
+    if (text == null || typeof text !== "string" || text.indexOf("*") < 0) return text;
+    const parts = [];
+    let rest = text, k = 0;
+    const re = /\*\*([^*]+)\*\*|\*([^*\n]+)\*/;
+    while (rest.length) {
+      const m = rest.match(re);
+      if (!m) { parts.push(rest); break; }
+      if (m.index > 0) parts.push(rest.slice(0, m.index));
+      if (m[1] !== undefined) parts.push(React.createElement("strong", { key: "r" + k++, style: { color: "#1f1a14" } }, m[1]));
+      else parts.push(React.createElement("em", { key: "r" + k++ }, m[2]));
+      rest = rest.slice(m.index + m[0].length);
+    }
+    return parts;
+  }
+
+  _say(text, isTourStop) {
+    this.setState((s) => ({ msgs: [...s.msgs.slice(-30), { who: "fb", text }] }), () => this._scrollChat());
+    if (this._toastEl && this.state.minified) {
+      this._toastEl.textContent = text;
+      this._toastEl.style.opacity = "1";
+      clearTimeout(this._toastT);
+      this._toastT = setTimeout(() => { if (this._toastEl) this._toastEl.style.opacity = "0"; }, 5200);
+    }
+    if (this.state.tts && window.speechSynthesis) {
+      window.speechSynthesis.cancel();
+      const u = new SpeechSynthesisUtterance(String(text).replace(/\*/g, ""));
+      u.rate = 1.04; u.pitch = 1.25;
+      const vs = window.speechSynthesis.getVoices();
+      const v = vs.find((x) => /en[-_]/i.test(x.lang) && /male|daniel|fred|alex/i.test(x.name)) || vs.find((x) => /en[-_]/i.test(x.lang));
+      if (v) u.voice = v;
+      if (this._atmo) { this._atmo.duck(true); u.onend = u.onerror = () => { if (this._atmo) this._atmo.duck(false); }; }
+      window.speechSynthesis.speak(u);
+    }
+  }
+
+  _scrollChat() {
+    if (this._chatEl) this._chatEl.scrollTop = this._chatEl.scrollHeight;
+  }
+
+  _maskPrompt() {
+    const mask = this.state.maskOverride ?? this.props.fbMask ?? "satirical";
+    const base = "You are Uncle FrizzleBob, a yellow rogue cartoon rabbit, 'Professional Reality-Wrestler & Epistemiologic Outlaw', guiding a user through a 3D conspiracy-theory iceberg. FORMAT: use **double asterisks** to bold key names and verdicts, *single asterisks* for ironic emphasis — sparingly, max 2-3 per reply. IMPORTANT: you are satirical media literacy in a fur coat — never promote real conspiracies as true; mock them, contextualize them, note which are debunked, declassified-real, unclear, or art projects. Keep replies SHORT (1-3 sentences), punchy, wrestling-promo flavored. Sign off occasionally with 'Stay fluffy.'";
+    const masks = {
+      satirical: " Tone: maximum satire, MAD-magazine energy, dunk on everything lovingly.",
+      conspiratorial: " Tone: play the kayfabe — breathless conspiratorial whisper, but always wink so hard the audience knows it's a work. Never actually endorse.",
+      analytical: " Tone: dry, precise, sourcing-focused media analyst who happens to be a rabbit. Cite the epistemics: who claimed it, why it spread, what debunked it."
+    };
+    return base + (masks[mask] || masks.satirical);
+  }
+
+  async _sendChat() {
+    const text = this.state.input.trim();
+    if (!text || this.state.thinking) return;
+    this.setState((s) => ({ input: "", msgs: [...s.msgs.slice(-30), { who: "you", text }], thinking: true }), () => this._scrollChat());
+    const data = this._data();
+    const catalog = data.entries.map((e) => e.id + "|" + e.name + "|T" + e.tier + "|" + e.cat + "|" + e.status).join("\n");
+    const sys = this._maskPrompt() +
+      "\n\nTHE ICEBERG CATALOG (id|name|tier|category|status):\n" + catalog +
+      "\n\nIf (and only if) the user asks you to build/modify a tour, end your reply with a line exactly like: TOUR:[id1,id2,id3,...] using ids from the catalog, 5-15 stops, ordered shallow to deep for drama. Otherwise never output a TOUR line. If the user asks about a specific entry, you may end with GOTO:[id] to fly them there.";
+    let reply;
+    try {
+      if (!window.claude || !window.claude.complete) throw new Error("no-llm");
+      reply = await window.claude.complete({ system: sys, messages: [{ role: "user", content: text }], max_tokens: 600 });
+    } catch (err) {
+      reply = "My cosmic uplink just dropped, kid — too much interference (or too many questions per minute). Give it a moment and ask again. Meanwhile: tour modes, search, tier buttons. The truth is out there. It's mostly BLÖDSINN. Stay fluffy.";
+    }
+    // parse TOUR / GOTO directives
+    let clean = reply;
+    const tourM = reply.match(/TOUR:\s*\[([^\]]+)\]/i);
+    const gotoM = reply.match(/GOTO:\s*\[?([a-z0-9_-]+)\]?/i);
+    if (tourM) {
+      const ids = tourM[1].split(/[,\s"']+/).filter((id) => data.entries.some((e) => e.id === id));
+      clean = reply.replace(/TOUR:\s*\[[^\]]+\]/i, "").trim();
+      if (ids.length) {
+        this.setState({ customTour: ids, mode: "custom", tourIdx: -1 });
+        clean += "\n☞ Custom tour loaded: " + ids.length + " stops. Hit play.";
+      }
+    } else if (gotoM) {
+      clean = reply.replace(/GOTO:\s*\[?[a-z0-9_-]+\]?/i, "").trim();
+    }
+    this.setState({ thinking: false });
+    this._say(clean);
+    if (gotoM && data.entries.some((e) => e.id === gotoM[1])) this._select(gotoM[1]);
+  }
+
+  // ---------- bookmarks + load related ----------
+  _toggleBookmark(id) {
+    if (!id) return;
+    this.setState((st) => {
+      const has = st.bookmarks.includes(id);
+      return { bookmarks: has ? st.bookmarks.filter((x) => x !== id) : [...st.bookmarks, id] };
+    }, () => {
+      const on = this.state.bookmarks.includes(id);
+      const e = this._data().entries.find((x) => x.id === id);
+      this._say(on ? "Bookmarked \"" + (e ? e.name : id) + "\". It rides along in your export now." : "Bookmark pulled. It's off the record.");
+    });
+  }
+
+  async _loadRelated(id) {
+    const data = this._data();
+    const e = data.entries.find((x) => x.id === id);
+    if (!e || this.state.loadingRelated || this.state.thinking) return;
+    this.setState({ loadingRelated: true });
+    this._say("Digging up what's buried next to " + e.name + "…");
+    const cats = Object.keys(data.cats).join(", ");
+    const existing = data.entries.map((x) => x.name).join(", ");
+    const sys = this._maskPrompt() +
+      "\n\nTASK: The user is examining the conspiracy-iceberg entry \"" + e.name + "\" (tier " + e.tier + "/7, category " + e.cat + ", status " + e.status + "). Propose 5 genuinely RELATED entries that sit near it on a conspiracy iceberg — adjacent rabbit-holes, precursors, offshoots, or the theory it mutated into. Stay in your satirical-media-literacy lane; note plausibility honestly via the status field. Do NOT duplicate any existing entry: " + existing +
+      ".\n\nRespond with ONLY a JSON object, no prose, no markdown fences, of the form: {\"nodes\":[{\"id\":\"kebab-id\",\"name\":\"Short Name\",\"tier\":<1-7>,\"cat\":\"<one of: " + cats + ">\",\"dice\":<1-6 absurdity>,\"status\":\"<debunked|unclear|art|real>\",\"quip\":\"one short satirical FrizzleBob sentence\"}]}";
+    let reply;
+    try {
+      if (!window.claude || !window.claude.complete) throw new Error("no-llm");
+      reply = await window.claude.complete({ system: sys, messages: [{ role: "user", content: "Load related nodes for " + e.name }], max_tokens: 900 });
+    } catch (err) {
+      this.setState({ loadingRelated: false });
+      this._say("Uplink's jammed, kid — can't dig right now. Give it a beat and try again.");
+      return;
+    }
+    let obj = null;
+    try { const m = reply.match(/\{[\s\S]*\}/); obj = JSON.parse(m ? m[0] : reply); } catch (err) { obj = null; }
+    const nodes = obj && Array.isArray(obj.nodes) ? obj.nodes : [];
+    const added = [];
+    const addedObjs = [];
+    nodes.forEach((n) => {
+      if (!n || !n.name) return;
+      let nid = (n.id || n.name.toLowerCase().replace(/[^a-z0-9]+/g, "-")).replace(/^-+|-+$/g, "");
+      if (!nid || data.entries.some((x) => x.id === nid)) nid = (nid || "node") + "-" + Math.random().toString(36).slice(2, 5);
+      const obj2 = {
+        id: nid, name: String(n.name).slice(0, 60),
+        tier: Math.min(7, Math.max(1, parseInt(n.tier, 10) || e.tier)),
+        cat: data.cats[n.cat] ? n.cat : e.cat,
+        dice: Math.min(6, Math.max(1, parseInt(n.dice, 10) || 4)),
+        status: ["debunked", "unclear", "art", "real"].includes(n.status) ? n.status : "unclear",
+        quip: n.quip || "Freshly excavated. FrizzleBob reserves comment.",
+        related: [id],   // rabbit-hole nodes always link back to their origin
+        generated: true
+      };
+      data.entries.push(obj2);
+      added.push(nid);
+      addedObjs.push(obj2);
+    });
+    if (addedObjs.length && this._scene) {
+      this._scene.addEntries(addedObjs);
+      addedObjs.forEach((o) => this._makeLabel(o));
+    }
+    this.setState({ loadingRelated: false, customTour: [id, ...added], mode: "custom", tourIdx: 0 });
+    this._say(added.length
+      ? added.length + " related rabbit-holes grafted onto the berg next to " + e.name + ". A custom path is loaded — hit › or ▶ to walk it."
+      : "Nothing new surfaced, kid. The berg keeps its secrets this time.");
+  }
+
+  // ---------- ghost materialization (related-chip "+ name") ----------
+  // Ghost = related-ref without id ({ghost:true,name,tier?,cat?}). Click → LLM
+  // writes the full entry; offline → honest stub (marked generated, factcheckable).
+  async _materializeGhost(parentId, ghost) {
+    const data = this._data();
+    const parent = data.entries.find((x) => x.id === parentId);
+    if (!parent || this.state.loadingRelated || this.state.thinking) return;
+    const existing = data.entries.find((x) => x.name.toLowerCase() === String(ghost.name).toLowerCase());
+    if (existing) { this._replaceGhostRef(parent, ghost, existing.id); this._select(existing.id, true); return; }
+    this.setState({ loadingRelated: true });
+    this._say("Declassifying \"" + ghost.name + "\"… gimme a second, kid.");
+    const cats = Object.keys(data.cats).join(", ");
+    const sys = this._maskPrompt() +
+      "\n\nTASK: Materialize ONE conspiracy-iceberg entry named \"" + ghost.name + "\" (neighbour of \"" + parent.name + "\", tier hint " + (ghost.tier || parent.tier) + ", category hint " + (ghost.cat || parent.cat) + "). Stay in your satirical-media-literacy lane; classify honestly. Respond with ONLY a JSON object, no prose, no markdown fences: {\"node\":{\"id\":\"kebab-id\",\"name\":\"" + ghost.name + "\",\"tier\":<1-7>,\"cat\":\"<one of: " + cats + ">\",\"dice\":<1-6>,\"status\":\"<debunked|unclear|art|real>\",\"quip\":\"one short satirical FrizzleBob sentence\",\"summary\":\"3-4 factual sentences: names, dates, contradictions\",\"ghostNeighbour\":{\"name\":\"one related conspiracy NOT on this iceberg yet\",\"cat\":\"<one of: " + cats + ">\",\"tier\":<1-7>}}}";
+    let node = null;
+    try {
+      if (!window.claude || !window.claude.complete) throw new Error("no-llm");
+      const reply = await window.claude.complete({ system: sys, messages: [{ role: "user", content: "Materialize: " + ghost.name }], max_tokens: 700 });
+      const m = reply.match(/\{[\s\S]*\}/);
+      const obj = JSON.parse(m ? m[0] : reply);
+      node = obj && obj.node ? obj.node : null;
+    } catch (err) { node = null; }
+    let nid = ((node && node.id) || String(ghost.name).toLowerCase().replace(/[^a-z0-9]+/g, "-")).replace(/^-+|-+$/g, "") || "ghost";
+    if (data.entries.some((x) => x.id === nid)) nid = nid + "-" + Math.random().toString(36).slice(2, 5);
+    const entry = {
+      id: nid,
+      name: String((node && node.name) || ghost.name).slice(0, 60),
+      tier: Math.min(7, Math.max(1, parseInt(node && node.tier, 10) || ghost.tier || parent.tier)),
+      cat: (node && data.cats[node.cat]) ? node.cat : (data.cats[ghost.cat] ? ghost.cat : parent.cat),
+      dice: Math.min(6, Math.max(1, parseInt(node && node.dice, 10) || 4)),
+      status: (node && ["debunked", "unclear", "art", "real"].includes(node.status)) ? node.status : "unclear",
+      quip: (node && node.quip) || "Freshly declassified — the uplink was thin, so the file is too. Hit check for the full story, kid.",
+      generated: true
+    };
+    if (node && node.summary) entry.summary = String(node.summary);
+    // good neighbours for materialized nodes: parent link back + (if the LLM offered one) a fresh ghost bait
+    entry.related = [parentId];
+    const gn = node && node.ghostNeighbour;
+    if (gn && gn.name && !data.entries.some((x) => x.name.toLowerCase() === String(gn.name).toLowerCase())) {
+      entry.related.push({ ghost: true, name: String(gn.name).slice(0, 60), cat: data.cats[gn.cat] ? gn.cat : entry.cat, tier: Math.min(7, Math.max(1, parseInt(gn.tier, 10) || entry.tier)) });
+    }
+    data.entries.push(entry);
+    if (this._scene) { this._scene.addEntries([entry]); this._makeLabel(entry); }
+    this._replaceGhostRef(parent, ghost, nid);
+    this.setState({ loadingRelated: false });
+    this._select(nid, true);
+    this._say(node
+      ? "\"" + entry.name + "\" declassified and grafted next to " + parent.name + ". Down the hole we go."
+      : "Uplink's jammed — I grafted a stub for \"" + entry.name + "\". FactCheck it later for the full file.");
+  }
+
+  _replaceGhostRef(parent, ghost, realId) {
+    if (!Array.isArray(parent.related)) return;
+    let i = parent.related.indexOf(ghost);
+    if (i < 0) i = parent.related.findIndex((r) => r && r.ghost && r.name === ghost.name);
+    if (i >= 0) parent.related[i] = realId;
+  }
+
+  async _factCheck(id) {
+    const data = this._data();
+    const e = data.entries.find((x) => x.id === id);
+    if (!e || this.state.thinking || this.state.loadingRelated) return;
+    const cached = this.state.factChecks[id];
+    if (cached) { this._say("FrizzleFactCheck (from the file on " + e.name + "): " + cached); return; }
+    this.setState({ thinking: true });
+    this._say("FrizzleFactCheck engaged. Pulling the file on " + e.name + "…");
+    const sys = this._maskPrompt() +
+      "\n\nTASK: FrizzleFactCheck. Give a compact fact-check of the conspiracy-iceberg entry \"" + e.name + "\" (currently stamped: " + e.status + "). 3-4 short sentences: where it came from, why it spread, what the evidence actually says. Satirical in tone but factually careful — no new myths. Then, on a final separate line, output exactly STATUS:[debunked|unclear|art|real] with your honest classification (art = deliberate fiction/hoax-as-artwork; real = documented/declassified).";
+    let reply;
+    try {
+      if (!window.claude || !window.claude.complete) throw new Error("no-llm");
+      reply = await window.claude.complete({ system: sys, messages: [{ role: "user", content: "Fact-check: " + e.name }], max_tokens: 500 });
+    } catch (err) {
+      this.setState({ thinking: false });
+      this._say("Uplink's jammed — the file stays sealed for now, kid. Try again in a beat.");
+      return;
+    }
+    let clean = reply;
+    let note = "";
+    const m = reply.match(/STATUS:\s*\[?(debunked|unclear|art|real)\]?/i);
+    if (m) {
+      clean = reply.replace(/STATUS:\s*\[?(debunked|unclear|art|real)\]?/i, "").trim();
+      const ns = m[1].toLowerCase();
+      if (ns !== e.status) {
+        e.status = ns;
+        note = "\n☞ Reclassified — now stamped " + data.statuses[ns].label + ".";
+      }
+    }
+    this.setState((st) => ({ thinking: false, factChecks: { ...st.factChecks, [id]: clean } }));
+    this._say(clean + note);
+  }
+
+  // ---------- import / export ----------
+  _export() {
+    const s = this.state;
+    const generated = this._data().entries.filter((e) => e.generated).map((e) => { const o = { id: e.id, name: e.name, tier: e.tier, cat: e.cat, dice: e.dice, status: e.status, quip: e.quip, generated: true }; if (e.summary) o.summary = e.summary; if (e.related) o.related = e.related; if (e.image) o.image = e.image; return o; });
+    const payload = {
+      kayfabizarro_iceberg: 1,
+      exported: new Date().toISOString(),
+      mode: s.mode,
+      tour: s.mode === "custom" ? s.customTour : this._tour(),
+      bookmarks: s.bookmarks,
+      factChecks: s.factChecks,
+      entries: generated,
+      filters: { cats: s.activeCats, statuses: s.activeStatuses, minDice: s.minDice }
+    };
+    const blob = new Blob([JSON.stringify(payload, null, 2)], { type: "application/json" });
+    const a = document.createElement("a");
+    a.href = URL.createObjectURL(blob);
+    a.download = "frizzlebob-tour.json";
+    a.click();
+    URL.revokeObjectURL(a.href);
+    this._say("Tour exported. Distribute via dead drop only.");
+  }
+
+  _importFile(ev) {
+    const f = ev.target.files && ev.target.files[0];
+    if (!f) return;
+    const reader = new FileReader();
+    reader.onload = () => {
+      try {
+        const j = JSON.parse(reader.result);
+        const data = this._data();
+        let added = 0;
+        if (Array.isArray(j.entries)) {
+          j.entries.forEach((e) => {
+            if (e.id && e.name && !data.entries.some((x) => x.id === e.id)) {
+              data.entries.push({ tier: Math.min(7, Math.max(1, e.tier || 4)), cat: data.cats[e.cat] ? e.cat : "meta", dice: Math.min(6, Math.max(1, e.dice || 4)), status: ["debunked","unclear","art","real"].includes(e.status) ? e.status : "unclear", quip: e.quip || "New evidence. FrizzleBob has no comment. Yet.", ...e });
+              added++;
+            }
+          });
+          if (added && this._scene) {
+            this._scene.dispose();
+            this._sceneEl.innerHTML = "";
+            this._scene = new window.IcebergScene(this._sceneEl, data, { onFrame: (l, d) => this._onFrame(l, d), onUserMove: () => {} });
+            this._buildLabels(data);
+          }
+        }
+        const patch = {};
+        if (Array.isArray(j.tour)) {
+          patch.customTour = j.tour.filter((id) => data.entries.some((e) => e.id === id));
+          patch.mode = "custom";
+          patch.tourIdx = -1;
+        }
+        if (Array.isArray(j.bookmarks)) patch.bookmarks = j.bookmarks.filter((id) => data.entries.some((e) => e.id === id));
+        if (j.factChecks && typeof j.factChecks === "object") {
+          patch.factChecks = {};
+          Object.keys(j.factChecks).forEach((k) => { if (data.entries.some((e) => e.id === k) && typeof j.factChecks[k] === "string") patch.factChecks[k] = j.factChecks[k]; });
+        }
+        if (j.filters) {
+          patch.activeCats = j.filters.cats || {};
+          patch.activeStatuses = j.filters.statuses || {};
+          patch.minDice = j.filters.minDice || 1;
+        }
+        this.setState(patch);
+        this._say("Import complete: " + (patch.customTour ? patch.customTour.length + "-stop tour" : "no tour") + (added ? ", " + added + " new entries grafted onto the berg" : "") + (patch.bookmarks && patch.bookmarks.length ? ", " + patch.bookmarks.length + " bookmarks" : "") + ". The iceberg grows.");
+      } catch (e) {
+        this._say("That file is pure BLÖDSINN, kid. I need JSON — try exporting one first.");
+      }
+      ev.target.value = "";
+    };
+    reader.readAsText(f);
+  }
+
+  // ---------- cockpit drag ----------
+  _dragCockpit(ev) {
+    if (!this._cockpitEl || ev.target.tagName === "BUTTON" || ev.target.tagName === "IMG" && ev.target.alt !== "Uncle FrizzleBob") {}
+    if (ev.target.closest("button")) return;
+    ev.preventDefault();
+    const el = this._cockpitEl;
+    const rect = el.getBoundingClientRect();
+    const ox = ev.clientX - rect.left, oy = ev.clientY - rect.top;
+    el.style.left = rect.left + "px";
+    el.style.top = rect.top + "px";
+    el.style.bottom = "auto";
+    const move = (e) => {
+      el.style.left = Math.max(0, Math.min(window.innerWidth - rect.width, e.clientX - ox)) + "px";
+      el.style.top = Math.max(0, Math.min(window.innerHeight - 80, e.clientY - oy)) + "px";
+    };
+    const up = () => { window.removeEventListener("pointermove", move); window.removeEventListener("pointerup", up); };
+    window.addEventListener("pointermove", move);
+    window.addEventListener("pointerup", up);
+  }
+
+  _modeLabel(mode, name, len) {
+    const s = this.state;
+    if (s.mode === mode && s.tourIdx >= 0 && len) return name + " (" + (s.tourIdx + 1) + "/" + len + ")";
+    return name + " (" + len + ")";
+  }
+
+  // ---------- render ----------
+  renderVals() {
+    const s = this.state;
+    const data = window.ICEBERG_DATA || { cats: {}, statuses: {}, tiers: [], entries: [], tours: { curated: [] } };
+    this._visCache = window.ICEBERG_DATA ? this._visibleSet() : null;
+
+    // FB expression by depth
+    const t = s.curTier;
+    const fbFace = t >= 7 ? "assets/mascot/avatar-weeping.png" : t >= 5 ? "assets/mascot/avatar-cosmic-panic.png" : t >= 3 ? "assets/mascot/avatar-psychedelic.png" : "assets/mascot/avatar-smug.png";
+
+    // selection
+    const sel = data.entries.find((e) => e.id === s.selectedId);
+    const statusColors = { debunked: "#c2412c", unclear: "#6b4e7d", art: "#4f8a85", real: "#b8361f" };
+
+    // search
+    const q = s.search.trim().toLowerCase();
+    const searchResults = q ? data.entries.filter((e) => e.name.toLowerCase().includes(q) || e.quip.toLowerCase().includes(q)).slice(0, 9).map((e) => ({
+      name: e.name, tier: e.tier, color: data.cats[e.cat].color,
+      go: () => { this.setState({ search: "" }); this._select(e.id, true); }
+    })) : [];
+
+    const rots = [-2, 1.5, -1, 2, -1.5, 1, -2.5, 0.8, -0.6, 1.8];
+    const catKeys = Object.keys(data.cats);
+    const anyCat = !catKeys.some((k) => s.activeCats[k]);
+    const catChips = catKeys.map((k, i) => {
+      const on = !!s.activeCats[k];
+      return {
+        label: data.cats[k].label,
+        bg: on || anyCat ? data.cats[k].color : "#ece1c0",
+        fg: on || anyCat ? "#f3ead3" : "#7d7364",
+        op: on || anyCat ? 1 : 0.65,
+        rot: rots[i % rots.length],
+        toggle: () => this.setState((st) => ({ activeCats: { ...st.activeCats, [k]: !st.activeCats[k] } }))
+      };
+    });
+    const stKeys = Object.keys(data.statuses);
+    const anySt = !stKeys.some((k) => s.activeStatuses[k]);
+    const statusChips = stKeys.map((k, i) => {
+      const on = !!s.activeStatuses[k];
+      return {
+        label: data.statuses[k].label,
+        bg: on || anySt ? "rgba(236,225,192,0.95)" : "rgba(236,225,192,0.4)",
+        fg: on || anySt ? "#1f1a14" : "#7d7364",
+        op: on || anySt ? 1 : 0.6,
+        rot: rots[(i + 3) % rots.length],
+        toggle: () => this.setState((st) => ({ activeStatuses: { ...st.activeStatuses, [k]: !st.activeStatuses[k] } }))
+      };
+    });
+
+    const tierTints = [0, 1, 2, 3, 4, 5, 6, 7].map((n) => this._tint(n));
+    const tierButtons = data.tiers.map((tt, i) => ({
+      n: tt.n, title: "Tier " + tt.n + " — " + tt.title,
+      tint: tierTints[tt.n],
+      bg: s.curTier === tt.n ? tierTints[tt.n] : "rgba(12,22,36,0.6)",
+      fg: s.curTier === tt.n ? "#1f1a14" : "#f3ead3",
+      border: s.curTier === tt.n ? "#1f1a14" : "rgba(243,234,211,0.85)",
+      rot: rots[i % rots.length],
+      go: () => { if (this._scene) this._scene.goToAnchor("tier-" + tt.n); }
+    }));
+
+    const tour = window.ICEBERG_DATA ? this._tour() : [];
+    const msgs = s.msgs.map((m, i) => ({
+      rich: this._rich(m.text),
+      align: m.who === "you" ? "flex-end" : "flex-start",
+      bg: m.who === "you" ? "rgba(233,193,74,0.45)" : "#ece1c0",
+      font: m.who === "you" ? "Fonteys, serif" : "BabyEliot, cursive",
+      rot: rots[i % rots.length] * 0.5
+    }));
+
+    const maskLabels = { satirical: "satirical mask", conspiratorial: "kayfabe mask", analytical: "analyst mask" };
+
+    const curTierInfo = t > 0 ? data.tiers.find((x) => x.n === t) : null;
+
+    // selection v2: evidence image (redacted default) + related chips (docs/SCHEMA-v2.md §1/§2)
+    const selHasImage = !!(sel && sel.image && sel.image.src);
+    const relChips = [];
+    if (sel && Array.isArray(sel.related)) {
+      sel.related.forEach((r) => {
+        if (typeof r === "string") {
+          const tgt = data.entries.find((x) => x.id === r);
+          if (!tgt) return;
+          relChips.push({ label: tgt.name, title: "Dive to " + tgt.name + " (tier " + tgt.tier + ")", fg: "#1f1a14", bg: "#ece1c0", borderStyle: "solid", borderColor: "rgba(31,26,20,0.6)", op: 1, go: () => this._select(tgt.id, true) });
+        } else if (r && r.ghost && r.name) {
+          relChips.push({ label: "+ " + r.name, title: "Ghost node — FrizzleBob digs it up on click", fg: "#7d7364", bg: "transparent", borderStyle: "dashed", borderColor: "rgba(31,26,20,0.4)", op: 0.75, go: () => this._materializeGhost(sel.id, r) });
+        }
+      });
+    }
+
+    return {
+      entryCount: data.entries.length,
+      titleText: curTierInfo ? "Tier " + curTierInfo.n + " — " + curTierInfo.title : "The Conspiracy Iceberg",
+      subtitleText: curTierInfo ? curTierInfo.blurb : "a KayfaBizarro expedition — " + data.entries.length + " entries, zero truths guaranteed",
+      narratorBg: curTierInfo ? tierTints[curTierInfo.n] : "#f3ead3",
+      atSurface: !curTierInfo,
+      inTier: !!curTierInfo,
+      showBio: s.showBio,
+      openBio: () => this.setState({ showBio: true }),
+      closeBio: () => this.setState({ showBio: false }),
+      cycleBioFace: () => this.setState((st) => ({ bioFace: (st.bioFace + 1) % 4 })),
+      setBioImg: (el) => { if (el) el.src = ["assets/mascot/avatar-smug.png", "assets/mascot/avatar-psychedelic.png", "assets/mascot/avatar-cosmic-panic.png", "assets/mascot/avatar-weeping.png"][s.bioFace]; },
+      setFbImgA: (el) => { if (el) el.src = fbFace; },
+      setFbImgB: (el) => { if (el) el.src = fbFace; },
+      setDiceImg: (el) => { if (el) el.src = "assets/dice/d6-" + (sel ? Math.min(6, Math.max(1, sel.dice || 1)) : 1) + ".svg"; },
+      chromeVisible: !s.minified,
+      cockpitVisible: !s.minified,
+      minified: s.minified,
+      fbFace,
+      maskLabel: maskLabels[s.maskOverride ?? this.props.fbMask ?? "satirical"] || "satirical mask",
+      mask: s.maskOverride ?? this.props.fbMask ?? "satirical",
+      onMask: (e) => {
+        const m = e.target.value;
+        this.setState({ maskOverride: m });
+        const lines = { satirical: "Satirical mask on. Everything is material.", conspiratorial: "Kayfabe mask on. *whispers* They're listening. (They're not.) (Or ARE they.)", analytical: "Analyst mask on. Sources, spread, debunk. Dry as archive dust." };
+        this._say(lines[m] || lines.satirical);
+      },
+
+      // refs
+      setSceneRef: (el) => { this._sceneEl = el; },
+      setLabelsRef: (el) => { this._labelsEl = el; },
+      setChatRef: (el) => { this._chatEl = el; },
+      setCockpitRef: (el) => { this._cockpitEl = el; },
+      setDepthChip: (el) => { this._depthChipEl = el; },
+      setToastRef: (el) => { this._toastEl = el; },
+      setFileRef: (el) => { this._fileEl = el; },
+
+      // search
+      search: s.search,
+      onSearch: (e) => this.setState({ search: e.target.value }),
+      hasResults: searchResults.length > 0,
+      searchResults,
+
+      // filters
+      filtersOpen: s.filtersOpen,
+      toggleFilters: () => this.setState((st) => ({ filtersOpen: !st.filtersOpen })),
+      filtersBtnBg: (catKeys.some((k) => s.activeCats[k]) || stKeys.some((k) => s.activeStatuses[k]) || s.minDice > 1) ? "#e9c14a" : "#ece1c0",
+      filterFunnelFill: (catKeys.some((k) => s.activeCats[k]) || stKeys.some((k) => s.activeStatuses[k]) || s.minDice > 1) ? "#1f1a14" : "none",
+      filterFunnelOp: s.filtersOpen ? 0 : 1,
+      filterXOp: s.filtersOpen ? 1 : 0,
+      catChips, statusChips,
+      minDice: String(s.minDice),
+      onMinDice: (e) => this.setState({ minDice: +e.target.value }),
+      clearFilters: () => this.setState({ activeCats: {}, activeStatuses: {}, minDice: 1, search: "" }),
+
+      // tiers / depth
+      tierButtons,
+      goSurface: () => { if (this._scene) this._scene.goToAnchor("surface"); },
+
+      // selection card
+      hasSelection: !!sel && !s.showBio,
+      selName: sel ? sel.name : "",
+      selQuip: sel ? this._rich(sel.quip) : "",
+      selTier: sel ? sel.tier : "",
+      selDice: sel ? sel.dice : 1,
+      selCatLabel: sel ? data.cats[sel.cat].label : "",
+      selCatColor: sel ? data.cats[sel.cat].color : "#7d7364",
+      selStatusLabel: sel ? data.statuses[sel.status].label : "",
+      selStatusColor: sel ? statusColors[sel.status] : "#7d7364",
+      closeDetail: () => this.setState({ selectedId: null }),
+      selHasImage,
+      selNoImage: !!sel && !selHasImage,
+      setEvidenceImg: (el) => {
+        // imperative reveal: the REDACTED base stays painted; the image fades in on load.
+        // No state, no forceUpdate — a failed load simply keeps the stamp (honest default).
+        if (!el) return;
+        const src = sel && sel.image && sel.image.src ? sel.image.src : "";
+        if (!src || el.dataset.src === src) return;     // set once per src — ref fires every render
+        el.dataset.src = src;
+        el.style.opacity = "0";                          // opacity lives ONLY here — template style must not manage it, or React re-applies 0 on every re-render
+        el.onload = () => { el.style.opacity = "1"; };
+        el.onerror = () => { el.style.opacity = "0"; };
+        el.src = src;
+        if (el.complete && el.naturalWidth > 0) el.style.opacity = "1"; // cache hit — reveal immediately
+      },
+      selImgSource: sel && sel.image ? (sel.image.source || sel.image.src) : "#",
+      selImgCredit: sel && sel.image ? (sel.image.credit || "source") : "",
+      selHasSummary: !!(sel && sel.summary),
+      selSummary: sel ? this._rich(sel.summary || "") : "",
+      selHasRelated: relChips.length > 0,
+      selRelated: relChips,
+      bookmarkStar: sel && s.bookmarks.includes(sel.id) ? "★" : "☆",
+      bookmarkBg: sel && s.bookmarks.includes(sel.id) ? "#e9c14a" : "#ece1c0",
+      toggleBookmark: () => { if (sel) this._toggleBookmark(sel.id); },
+      loadRelated: () => { if (sel) this._loadRelated(sel.id); },
+      factCheck: () => { if (sel) this._factCheck(sel.id); },
+
+      // cockpit
+      msgs,
+      thinking: s.thinking,
+      onCockpitDrag: (e) => this._dragCockpit(e),
+      minify: () => this.setState({ minified: true }),
+      unminify: () => this.setState({ minified: false }),
+      toggleTts: () => {
+        const tts = !s.tts;
+        this.setState({ tts });
+        if (tts) this._say("Voice ON. You asked for this.");
+        else if (window.speechSynthesis) window.speechSynthesis.cancel();
+      },
+      ttsFill: s.tts ? "#1f1a14" : "none",
+      ttsWaveOp: s.tts ? 1 : 0,
+      ttsXOp: s.tts ? 0 : 0.55,
+      toggleMusic: () => {
+        const music = !s.music;
+        this.setState({ music });
+        if (music) {
+          if (!this._atmo && window.AtmoEngine) this._atmo = new window.AtmoEngine();
+          if (this._atmo) { this._atmo.setTier(this._lastTier || 0); this._atmo.start(); }
+          this._say("Atmo on. That hum? That's *pressure* — and the truth settling.");
+        } else if (this._atmo) {
+          this._atmo.stop();
+          this._say("Atmo off. Enjoy the silence. Silence is also a conspiracy.");
+        }
+      },
+      musicFill: s.music ? "#1f1a14" : "none",
+      musicXOp: s.music ? 0 : 0.55,
+
+      // tour
+      prevStop: () => this._prev(),
+      nextStop: () => this._next(),
+      togglePlay: () => this._togglePlay(),
+      playing: s.playing,
+      playLabel: s.playing ? "❚❚" : "▶",
+      playBg: s.playing ? "#c2412c" : "#e9c14a",
+      playFg: s.playing ? "#f3ead3" : "#1f1a14",
+      playMiniBg: s.playing ? "#c2412c" : "rgba(31,26,20,0.75)",
+      mode: s.mode,
+      onMode: (e) => { this.setState({ mode: e.target.value, tourIdx: -1 }); if (e.target.value === "lucky") this._luckyOrder = null; },
+      curatedLabel: this._modeLabel("curated", "Curated Descent", data.tours.curated.length),
+      luckyLabel: this._modeLabel("lucky", "I Feel Lucky", data.entries.length),
+      customLabel: this._modeLabel("custom", "Custom Tour", s.customTour.length),
+
+      // chat
+      input: s.input,
+      onInput: (e) => this.setState({ input: e.target.value }),
+      onInputKey: (e) => { if (e.key === "Enter") this._sendChat(); },
+      sendChat: () => this._sendChat(),
+
+      // io
+      exportTour: () => this._export(),
+      importClick: () => { if (this._fileEl) this._fileEl.click(); },
+      onImportFile: (e) => this._importFile(e)
+    };
+  }
+}
+
+</script>
+</body>
+</html>

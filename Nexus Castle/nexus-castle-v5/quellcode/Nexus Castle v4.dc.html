@@ -1,0 +1,3260 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Irish+Grover&family=Shantell+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+  <style>
+    html,body{margin:0;padding:0;height:100%;overflow:hidden}
+    body{background:#1c6c78;color:#4a3418;font-family:'Shantell Sans',system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+    a{color:#6b3f12;text-decoration:none}
+    a:hover{color:#4a2c0c}
+    ::selection{background:rgba(255,217,138,.35);color:#2a1c0c}
+    @keyframes nvBob{0%,100%{transform:translateY(0)}50%{transform:translateY(-4px)}}
+    @keyframes nvGlow{0%,100%{opacity:.55}50%{opacity:1}}
+    @keyframes nvIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+                *{scrollbar-width:thin;scrollbar-color:#8a6a3c rgba(90,66,30,.35)}
+    div::-webkit-scrollbar{width:12px;height:12px}
+    div::-webkit-scrollbar-track{background:rgba(90,66,30,.35);border:2px solid #241708;border-radius:0}
+    div::-webkit-scrollbar-thumb{background:linear-gradient(#c8a878,#9a7846);border:2px solid #241708;border-radius:0;box-shadow:inset 0 2px 0 rgba(255,255,255,.35),inset 0 -2px 0 rgba(0,0,0,.25)}
+    div::-webkit-scrollbar-thumb:hover{background:linear-gradient(#dcc094,#a8854e)}
+    div::-webkit-scrollbar-corner{background:transparent}
+    input[type=range]{-webkit-appearance:none;appearance:none;height:14px;background:linear-gradient(rgba(60,42,22,.9),rgba(92,68,38,.9));border:2px solid #241708;box-shadow:inset 0 2px 0 rgba(0,0,0,.4);outline:none;border-radius:0}
+    input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:16px;height:22px;background:linear-gradient(#e8c37a,#b8863c);border:2px solid #241708;border-radius:0;cursor:pointer;box-shadow:inset 0 2px 0 rgba(255,255,255,.4)}
+  </style>
+</helmet>
+<div ref="{{ stage }}" style="position:relative; height:100vh; overflow:hidden; background:#1c6c78; font-family:'Shantell Sans',system-ui,sans-serif; color:#4a3418;">
+
+  <canvas ref="{{ cv }}" style="position:absolute; inset:0; width:100%; height:100%; image-rendering:pixelated; cursor:grab;"></canvas>
+
+  <sc-if value="{{ loading }}" hint-placeholder-val="{{ true }}">
+    <div style="position:absolute; inset:0; display:grid; place-items:center; background:#14424a; z-index:20;">
+      <div style="text-align:center; padding:14px 22px; background:rgba(20,25,19,.88); border:1px solid rgba(240,226,196,.16); border-radius:6px; box-shadow:0 8px 22px rgba(0,0,0,.4); color:#f2ead8;">
+        <div style="font-size:17px;">Nexus Castle</div>
+        <div style="margin-top:4px; font-size:12px; color:#a9b09c;">{{ loadLabel }}</div>
+      </div>
+    </div>
+  </sc-if>
+
+  <div style="position:absolute; top:10px; left:10px; right:186px; display:flex; align-items:stretch; gap:7px; z-index:6; min-width:0;">
+    <div style="flex:none; padding:7px 13px 8px; background:rgba(20,25,19,.9); border:1px solid rgba(240,226,196,.18); border-radius:6px;">
+      <div style="font-weight:700; font-size:14px; line-height:1.15; letter-spacing:.2px; color:#f6efdc;">Nexus Castle</div>
+      <div style="font-size:11px; line-height:1.2; color:#a9b09c;">Your Living Knowledge World</div>
+    </div>
+    <div style="flex:0 1 auto; min-width:0; display:flex; align-items:center; padding:0 11px; background:rgba(20,25,19,.9); border:1px solid rgba(240,226,196,.18); border-radius:6px; font-size:11px; color:#a9b09c; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; font-variant-numeric:tabular-nums;">{{ statLine }}</div>
+    <div style="flex:none; position:relative;">
+      <button onClick="{{ toggleTod }}" title="Time of day: Day · Night · Cycle" style="height:100%; display:flex; align-items:center; gap:7px; padding:0 11px; border:1px solid rgba(240,226,196,.18); border-radius:6px; background:rgba(20,25,19,.9); color:#f2ead8; font-family:inherit; font-size:12px; font-variant-numeric:tabular-nums; cursor:pointer; white-space:nowrap;" style-hover="border-color:rgba(240,226,196,.44)">
+        <span>{{ clock }}</span>
+        <span style="font-size:10px; color:#8b9182;">{{ todModeLabel }}</span>
+      </button>
+      <sc-if value="{{ todOpen }}" hint-placeholder-val="{{ false }}">
+        <div style="position:absolute; left:0; top:calc(100% + 5px); display:flex; flex-direction:column; gap:3px; padding:4px; background:rgba(20,25,19,.94); border:1px solid rgba(240,226,196,.18); border-radius:6px; box-shadow:0 8px 22px rgba(0,0,0,.4); z-index:9;">
+          <sc-for list="{{ todModes }}" as="m" hint-placeholder-count="3">
+            <button onClick="{{ m.pick }}" style="min-width:86px; padding:5px 11px; border:1px solid rgba(240,226,196,.14); border-radius:4px; background:{{ m.bg }}; color:#f2ead8; font-family:inherit; font-size:11.5px; font-weight:600; line-height:1.1; text-align:left; cursor:pointer; white-space:nowrap;" style-hover="border-color:rgba(240,226,196,.5)">{{ m.label }}</button>
+          </sc-for>
+        </div>
+      </sc-if>
+    </div>
+    <sc-if value="{{ resShow }}" hint-placeholder-val="{{ false }}">
+      <div style="flex:none; display:flex; align-items:center; gap:12px; padding:0 12px; background:rgba(20,25,19,.9); border:1px solid rgba(240,226,196,.18); border-radius:6px; color:#f2ead8; font-size:12.5px; font-variant-numeric:tabular-nums; animation:nvIn .18s ease-out;">
+        <span title="raw artefacts" style="display:flex; align-items:center; gap:4px;"><img src="https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/2D_Assets/Tiny%20Swords%20(Free%20Pack)/UI%20Elements/UI%20Elements/Icons/Icon_02.png" alt="" style="width:32px; height:32px; display:block; image-rendering:pixelated;" />{{ resWood }}</span>
+        <span title="token budget" style="display:flex; align-items:center; gap:4px;"><img src="https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/2D_Assets/Tiny%20Swords%20(Free%20Pack)/UI%20Elements/UI%20Elements/Icons/Icon_03.png" alt="" style="width:32px; height:32px; display:block; image-rendering:pixelated;" />{{ resGold }}</span>
+        <span title="harvested sources" style="display:flex; align-items:center; gap:4px;"><img src="https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/2D_Assets/Tiny%20Swords%20(Free%20Pack)/UI%20Elements/UI%20Elements/Icons/Icon_04.png" alt="" style="width:32px; height:32px; display:block; image-rendering:pixelated;" />{{ resMeat }}</span>
+      </div>
+    </sc-if>
+  </div>
+
+  <sc-if value="{{ showUI }}" hint-placeholder-val="{{ true }}">
+  <div style="position:absolute; top:10px; right:10px; display:flex; gap:6px; z-index:7;">
+    <button onClick="{{ openLog }}" title="Artefact log" style="width:38px; height:38px; display:flex; align-items:center; justify-content:center; padding:0; border:1px solid rgba(240,226,196,.2); border-radius:6px; background:rgba(16,20,15,.86); cursor:pointer;" style-hover="background:rgba(240,226,196,.16); border-color:rgba(240,226,196,.44)"><img src="https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/2D_Assets/Tiny%20Swords%20(Free%20Pack)/UI%20Elements/UI%20Elements/Icons/Icon_11.png" alt="" style="width:32px; height:32px; display:block; image-rendering:pixelated;" /></button>
+    <button onClick="{{ openSettings }}" title="Settings" style="width:38px; height:38px; display:flex; align-items:center; justify-content:center; padding:0; border:1px solid rgba(240,226,196,.2); border-radius:6px; background:rgba(16,20,15,.86); cursor:pointer;" style-hover="background:rgba(240,226,196,.16); border-color:rgba(240,226,196,.44)"><img src="https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/2D_Assets/Tiny%20Swords%20(Free%20Pack)/UI%20Elements/UI%20Elements/Icons/Icon_10.png" alt="" style="width:32px; height:32px; display:block; image-rendering:pixelated;" /></button>
+    <button onClick="{{ toggleEdit }}" title="Map editor (E)" style="width:38px; height:38px; display:flex; align-items:center; justify-content:center; padding:0; border:1px solid rgba(240,226,196,.2); border-radius:6px; background:{{ editBg }}; cursor:pointer;" style-hover="background:rgba(240,226,196,.16); border-color:rgba(240,226,196,.44)"><img src="https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/2D_Assets/Tiny%20Swords%20(Free%20Pack)/UI%20Elements/UI%20Elements/Icons/Icon_01.png" alt="" style="width:32px; height:32px; display:block; image-rendering:pixelated;" /></button>
+    <button onClick="{{ toggleMin }}" title="Hide UI (Tab)" style="width:38px; height:38px; display:flex; align-items:center; justify-content:center; padding:0; border:1px solid rgba(240,226,196,.2); border-radius:6px; background:rgba(16,20,15,.86); cursor:pointer;" style-hover="background:rgba(240,226,196,.16); border-color:rgba(240,226,196,.44)"><img src="https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/2D_Assets/Tiny%20Swords%20(Free%20Pack)/UI%20Elements/UI%20Elements/Icons/Icon_09.png" alt="" style="width:32px; height:32px; display:block; image-rendering:pixelated;" /></button>
+  </div>
+
+  <sc-if value="{{ edit }}" hint-placeholder-val="{{ false }}">
+    <div style="position:absolute; left:10px; top:56px; width:min(300px,calc(100vw - 20px)); max-height:calc(100% - 120px); overflow-y:auto; box-sizing:border-box; padding:9px 10px 10px; background:rgba(20,25,19,.92); border:1px solid rgba(240,226,196,.18); border-radius:6px; box-shadow:0 8px 22px rgba(0,0,0,.4); color:#f2ead8; z-index:8;">
+      <div style="display:flex; align-items:baseline; gap:7px; margin-bottom:7px;">
+        <span style="font-size:12.5px; letter-spacing:.4px; color:#e3cda3;">Map editor</span>
+        <span style="flex:1;"></span>
+        <span style="font-size:10px; color:#8b9182;">MapConfig v1</span>
+      </div>
+      <div style="display:flex; flex-wrap:wrap; gap:5px; margin-bottom:8px;">
+        <sc-for list="{{ tools }}" as="t" hint-placeholder-count="9">
+          <button onClick="{{ t.pick }}" title="{{ t.label }}" style="flex:0 0 auto; padding:5px 9px; border:1px solid rgba(240,226,196,.2); border-radius:4px; background:{{ t.bg }}; color:#f2ead8; font-family:inherit; font-size:11.5px; line-height:1.1; cursor:pointer; white-space:nowrap;" style-hover="border-color:rgba(240,226,196,.5)">{{ t.label }}</button>
+        </sc-for>
+      </div>
+      <div style="font-size:11px; line-height:1.4; color:#a9b09c; margin-bottom:8px;">Links malen · rechts/Mitte ziehen zum Schwenken · Höhen und Requisiten sind Daten, Wege und Türen bleiben Regel. Baum/Busch/Stein: Klick setzt, Klick auf ein vorhandenes entfernt es.</div>
+      <div style="display:flex; flex-wrap:wrap; gap:5px; align-items:center; margin-bottom:8px;">
+        <button onClick="{{ undo }}" title="Zurück (Ctrl+Z)" style="padding:5px 9px; border:1px solid rgba(240,226,196,.2); border-radius:4px; background:rgba(16,20,15,.86); color:#f2ead8; font-family:inherit; font-size:11.5px; font-weight:600; line-height:1.1; cursor:pointer;" style-hover="background:rgba(240,226,196,.16)">&#8630; Undo {{ undoN }}</button>
+        <button onClick="{{ redo }}" title="Vor (Ctrl+Shift+Z)" style="padding:5px 9px; border:1px solid rgba(240,226,196,.2); border-radius:4px; background:rgba(16,20,15,.86); color:#f2ead8; font-family:inherit; font-size:11.5px; font-weight:600; line-height:1.1; cursor:pointer;" style-hover="background:rgba(240,226,196,.16)">Redo {{ redoN }} &#8631;</button>
+      </div>
+      <div style="display:flex; flex-wrap:wrap; gap:5px; align-items:center;">
+        <button onClick="{{ exportMap }}" style="padding:5px 9px; border:1px solid rgba(240,226,196,.2); border-radius:4px; background:rgba(16,20,15,.86); color:#f2ead8; font-family:inherit; font-size:11.5px; font-weight:600; line-height:1.1; cursor:pointer;" style-hover="background:rgba(240,226,196,.16)">Export</button>
+        <label style="padding:5px 9px; border:1px solid rgba(240,226,196,.2); border-radius:4px; background:rgba(16,20,15,.86); font-size:11.5px; font-weight:600; cursor:pointer;" style-hover="background:rgba(240,226,196,.16)">Import<input type="file" accept="application/json" onChange="{{ onImport }}" style="display:none;" /></label>
+        <span style="flex:1; min-width:0; font-size:11px; color:#c8e8ba; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">{{ edMsg }}</span>
+      </div>
+      <div style="margin-top:9px; padding-top:8px; border-top:1px solid rgba(240,226,196,.12);">
+        <div style="display:flex; align-items:baseline; gap:7px; margin-bottom:6px;">
+          <span style="font-size:11px; color:#a9b09c;">Fraktion</span>
+          <span style="flex:1;"></span>
+          <span style="font-size:10px; color:#8b9182; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; max-width:120px;">{{ facName }}</span>
+        </div>
+        <div style="display:flex; flex-wrap:wrap; gap:4px; margin-bottom:6px;">
+          <sc-for list="{{ facs }}" as="fa" hint-placeholder-count="10">
+            <button onClick="{{ fa.pick }}" title="{{ fa.name }}" style="flex:0 0 auto; display:flex; align-items:center; gap:5px; padding:4px 7px; border:1px solid {{ fa.border }}; border-radius:4px; background:{{ fa.bg }}; color:#f2ead8; font-family:inherit; font-size:11px; line-height:1.1; cursor:pointer; white-space:nowrap;" style-hover="border-color:rgba(240,226,196,.5)"><span style="width:8px; height:8px; border-radius:50%; background:{{ fa.tint }};"></span>{{ fa.short }}</button>
+          </sc-for>
+        </div>
+        <div style="display:flex; flex-wrap:wrap; gap:4px; margin-bottom:7px;">
+          <sc-for list="{{ facUnitList }}" as="fu" hint-placeholder-count="5">
+            <button onClick="{{ fu.pick }}" style="flex:0 0 auto; padding:4px 7px; border:1px solid rgba(240,226,196,.16); border-radius:4px; background:{{ fu.bg }}; color:#f2ead8; font-family:inherit; font-size:11px; line-height:1.1; cursor:pointer; white-space:nowrap;" style-hover="border-color:rgba(240,226,196,.5)">{{ fu.label }}</button>
+          </sc-for>
+        </div>
+        <div style="display:flex; align-items:center; gap:7px; margin-bottom:3px;">
+          <span style="font-size:11px; color:#a9b09c;">Revier</span>
+          <span style="flex:1;"></span>
+          <span style="font-size:11px; color:#f2ead8; font-variant-numeric:tabular-nums;">{{ revierLabel }}</span>
+        </div>
+        <input type="range" min="140" max="640" step="20" value="{{ revier }}" onInput="{{ onRevier }}" style="width:100%; margin:0 0 6px;" />
+        <div style="font-size:10.5px; color:#8b9182;">{{ facCount }}</div>
+      </div>
+
+      <div style="margin-top:9px; padding-top:8px; border-top:1px solid rgba(240,226,196,.12);">
+        <div style="display:flex; align-items:baseline; gap:7px; margin-bottom:6px;">
+          <span style="font-size:11px; color:#a9b09c;">Kader</span>
+          <span style="flex:1;"></span>
+          <span style="font-size:10px; color:#8b9182;">{{ kaderHint }}</span>
+        </div>
+        <sc-for list="{{ kader }}" as="k" hint-placeholder-count="0">
+          <div style="display:flex; align-items:center; gap:4px; margin-bottom:4px;">
+            <span style="flex:1; min-width:0; font-size:11px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">{{ k.name }}</span>
+            <button onClick="{{ k.nextUnit }}" title="Einheit weiterdrehen" style="flex:none; padding:4px 7px; border:1px solid rgba(240,226,196,.16); border-radius:4px; background:rgba(16,20,15,.86); color:#f2ead8; font-family:inherit; font-size:10.5px; line-height:1.1; cursor:pointer;" style-hover="border-color:rgba(240,226,196,.5)">{{ k.unit }}</button>
+            <button onClick="{{ k.nextColor }}" title="Fraktion weiterdrehen" style="flex:none; display:flex; align-items:center; gap:4px; padding:4px 7px; border:1px solid rgba(240,226,196,.16); border-radius:4px; background:rgba(16,20,15,.86); color:#f2ead8; font-family:inherit; font-size:10.5px; line-height:1.1; cursor:pointer;" style-hover="border-color:rgba(240,226,196,.5)"><span style="width:7px; height:7px; border-radius:50%; background:{{ k.tint }};"></span>{{ k.colorShort }}</button>
+          </div>
+        </sc-for>
+      </div>
+
+      <div style="margin-top:9px; padding-top:8px; border-top:1px solid rgba(240,226,196,.12);">
+        <div style="display:flex; align-items:baseline; gap:7px; margin-bottom:6px;">
+          <span style="font-size:11px; color:#a9b09c;">Karten-Slots</span>
+          <span style="flex:1;"></span>
+          <span style="font-size:10px; color:#8b9182;">{{ slotCount }}</span>
+        </div>
+        <div style="display:flex; gap:5px; margin-bottom:6px;">
+          <input value="{{ slotName }}" onChange="{{ onSlotName }}" placeholder="Name" style="flex:1; min-width:0; box-sizing:border-box; padding:5px 8px; border:1px solid rgba(240,226,196,.2); border-radius:4px; background:rgba(16,20,15,.86); color:#f2ead8; font-family:inherit; font-size:11.5px;" />
+          <button onClick="{{ slotSave }}" style="flex:none; padding:5px 9px; border:1px solid rgba(240,226,196,.2); border-radius:4px; background:rgba(16,20,15,.86); color:#f2ead8; font-family:inherit; font-size:11.5px; font-weight:600; line-height:1.1; cursor:pointer;" style-hover="background:rgba(240,226,196,.16)">Save</button>
+        </div>
+        <sc-for list="{{ slots }}" as="sl" hint-placeholder-count="0">
+          <div style="display:flex; align-items:center; gap:5px; margin-bottom:4px;">
+            <button onClick="{{ sl.load }}" style="flex:1; min-width:0; padding:5px 8px; border:1px solid rgba(240,226,196,.14); border-radius:4px; background:rgba(240,226,196,.06); color:#f2ead8; font-family:inherit; font-size:11.5px; line-height:1.1; text-align:left; cursor:pointer; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;" style-hover="background:rgba(240,226,196,.16)">{{ sl.name }}</button>
+            <button onClick="{{ sl.del }}" title="Slot löschen" style="flex:none; padding:5px 8px; border:1px solid rgba(240,226,196,.14); border-radius:4px; background:rgba(16,20,15,.86); color:#f2c4ba; font-family:inherit; font-size:11.5px; line-height:1.1; cursor:pointer;" style-hover="background:rgba(224,112,94,.2)">&times;</button>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </sc-if>
+
+  <div style="position:absolute; top:56px; right:10px; display:flex; flex-direction:column; align-items:flex-end; gap:6px; z-index:7;">
+    <button onClick="{{ toggleAlarm }}" title="{{ lampLabel }}" style="display:flex; align-items:center; gap:4px; padding:6px 8px; border:1px solid rgba(240,226,196,.18); border-radius:6px; background:rgba(16,20,15,.86); cursor:pointer;" style-hover="background:rgba(240,226,196,.16); border-color:rgba(240,226,196,.44)">
+      <span style="width:6px; height:6px; border-radius:50%; background:{{ lampRed }}; box-shadow:{{ lampGlow }};"></span>
+      <span style="width:6px; height:6px; border-radius:50%; background:{{ lampAmber }};"></span>
+      <span style="width:6px; height:6px; border-radius:50%; background:{{ lampGreen }};"></span>
+    </button>
+  </div>
+
+  <div style="position:absolute; top:100px; right:10px; width:min(300px,calc(100vw - 20px)); max-height:calc(100% - 156px); display:flex; flex-direction:column; gap:8px; z-index:6; pointer-events:none;">
+    <sc-if value="{{ alarmCard }}" hint-placeholder-val="{{ true }}">
+      <div style="flex:none; pointer-events:auto; box-sizing:border-box; padding:9px 11px 11px; border-left:3px solid #e0705e; background:rgba(20,25,19,.88); border:1px solid rgba(240,226,196,.16); border-radius:6px; box-shadow:0 8px 22px rgba(0,0,0,.4); color:#f2ead8; animation:nvIn .18s ease-out;">
+        <div style="display:flex; align-items:baseline; gap:7px; margin-bottom:5px;">
+          <span style="font-size:12.5px; letter-spacing:.4px; color:#e0705e;">Approval</span>
+          <span style="flex:1;"></span>
+          <span style="font-size:10.5px; color:#a9b09c;">crit {{ alarm.crit }}</span>
+          <button onClick="{{ closeAlarm }}" style="padding:2px 6px; border:1px solid rgba(240,226,196,.2); border-radius:4px; background:rgba(16,20,15,.86); color:#f2ead8; font-family:inherit; font-size:11px; cursor:pointer;" style-hover="background:rgba(240,226,196,.16)">&times;</button>
+        </div>
+        <div style="font-weight:600; font-size:12.5px; line-height:1.35;">{{ alarm.text }}</div>
+        <div style="font-size:11px; color:#a9b09c; margin:3px 0 9px;">{{ alarm.meta }}</div>
+        <div style="display:flex; gap:7px;">
+          <button onClick="{{ approve }}" style="flex:1; padding:5px 10px; border:1px solid rgba(240,226,196,.2); border-radius:4px; background:rgba(16,20,15,.86); color:#f2ead8; font-family:inherit; font-size:11.5px; font-weight:600; line-height:1.1; cursor:pointer; white-space:nowrap; border-color:rgba(127,191,106,.5); color:#c8e8ba;" style-hover="background:rgba(127,191,106,.2)">Approve</button>
+          <button onClick="{{ deny }}" style="flex:1; padding:5px 10px; border:1px solid rgba(240,226,196,.2); border-radius:4px; background:rgba(16,20,15,.86); color:#f2ead8; font-family:inherit; font-size:11.5px; font-weight:600; line-height:1.1; cursor:pointer; white-space:nowrap; border-color:rgba(224,112,94,.5); color:#f2c4ba;" style-hover="background:rgba(224,112,94,.2)">Deny</button>
+        </div>
+      </div>
+    </sc-if>
+
+    <sc-if value="{{ consoleOpen }}" hint-placeholder-val="{{ false }}">
+      <div style="flex:1 1 auto; min-height:0; pointer-events:auto; box-sizing:border-box; display:flex; flex-direction:column; background:rgba(20,25,19,.88); border:1px solid rgba(240,226,196,.16); border-radius:6px; box-shadow:0 8px 22px rgba(0,0,0,.4); color:#f2ead8;">
+        <div style="flex:none; display:flex; align-items:center; gap:4px; padding:7px 8px 6px; border-bottom:1px solid rgba(240,226,196,.12);">
+          <button onClick="{{ openLog }}" style="padding:5px 10px; border:1px solid rgba(240,226,196,.2); border-radius:4px; background:rgba(16,20,15,.86); color:#f2ead8; font-family:inherit; font-size:11.5px; font-weight:600; line-height:1.1; cursor:pointer; white-space:nowrap; background:{{ logTabBg }};" style-hover="background:rgba(240,226,196,.16); border-color:rgba(240,226,196,.4)">Log</button>
+          <button onClick="{{ openSettings }}" style="padding:5px 10px; border:1px solid rgba(240,226,196,.2); border-radius:4px; background:rgba(16,20,15,.86); color:#f2ead8; font-family:inherit; font-size:11.5px; font-weight:600; line-height:1.1; cursor:pointer; white-space:nowrap; background:{{ setTabBg }};" style-hover="background:rgba(240,226,196,.16); border-color:rgba(240,226,196,.4)">Settings</button>
+          <span style="flex:1;"></span>
+          <span style="font-size:10.5px; color:#a9b09c;">{{ feedCount }}</span>
+          <button onClick="{{ closeConsole }}" style="padding:5px 10px; border:1px solid rgba(240,226,196,.2); border-radius:4px; background:rgba(16,20,15,.86); color:#f2ead8; font-family:inherit; font-size:11.5px; font-weight:600; line-height:1.1; cursor:pointer; white-space:nowrap; padding:4px 8px;" style-hover="background:rgba(240,226,196,.16); border-color:rgba(240,226,196,.4)">&times;</button>
+        </div>
+
+        <sc-if value="{{ chronik }}" hint-placeholder-val="{{ true }}">
+          <div style="flex:1; min-height:0; overflow-y:auto; display:flex; flex-direction:column; gap:1px; padding:4px;">
+            <sc-for list="{{ feed }}" as="f" hint-placeholder-count="6">
+              <button onClick="{{ f.jump }}" style="display:block; width:100%; text-align:left; padding:6px 7px; border:0; border-left:2px solid {{ f.dot }}; border-radius:0 3px 3px 0; background:rgba(240,226,196,.04); cursor:pointer; font-family:inherit; color:#f2ead8;" style-hover="background:rgba(240,226,196,.12)">
+                <span style="display:flex; align-items:baseline; gap:6px;">
+                  <span style="font-weight:600; font-size:11.5px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; min-width:0;">{{ f.agent }}</span>
+                  <span style="font-size:10.5px; color:{{ f.actColor }}; white-space:nowrap;">{{ f.act }}</span>
+                  <span style="flex:1;"></span>
+                  <span style="font-size:10px; color:#8b9182; white-space:nowrap;">{{ f.time }}</span>
+                </span>
+                <span style="display:block; margin-top:2px; font-size:11px; line-height:1.35; color:#cfd4c4;">{{ f.text }}</span>
+                <span style="display:flex; align-items:center; gap:6px; margin-top:4px;">
+                  <span style="font-size:9.5px; letter-spacing:.4px; text-transform:uppercase; color:#8b9182;">{{ f.cat }}</span>
+                  <span style="flex:1; height:2px; background:rgba(240,226,196,.14); overflow:hidden;"><span style="display:block; height:2px; width:{{ f.critW }}; background:{{ f.critColor }};"></span></span>
+                  <span style="font-size:10px; color:{{ f.critColor }};">{{ f.crit }}</span>
+                </span>
+              </button>
+            </sc-for>
+          </div>
+        </sc-if>
+
+        <sc-if value="{{ council }}" hint-placeholder-val="{{ false }}">
+          <div style="flex:1; min-height:0; overflow-y:auto; padding:10px;">
+            <div style="font-size:10.5px; letter-spacing:.5px; text-transform:uppercase; color:#8b9182; margin-bottom:5px;">Event source</div>
+            <div style="display:flex; gap:5px; margin-bottom:14px;">
+              <button onClick="{{ pickNexus }}" style="flex:1; padding:5px 10px; border:1px solid rgba(240,226,196,.2); border-radius:4px; background:rgba(16,20,15,.86); color:#f2ead8; font-family:inherit; font-size:11.5px; font-weight:600; line-height:1.1; cursor:pointer; white-space:nowrap; background:{{ srcNexusBg }};" style-hover="background:rgba(240,226,196,.16); border-color:rgba(240,226,196,.4)">Artefacts</button>
+              <button onClick="{{ pickRss }}" style="flex:1; padding:5px 10px; border:1px solid rgba(240,226,196,.2); border-radius:4px; background:rgba(16,20,15,.86); color:#f2ead8; font-family:inherit; font-size:11.5px; font-weight:600; line-height:1.1; cursor:pointer; white-space:nowrap; background:{{ srcRssBg }};" style-hover="background:rgba(240,226,196,.16); border-color:rgba(240,226,196,.4)">RSS/LLM</button>
+              <button onClick="{{ pickScene }}" style="flex:1; padding:5px 10px; border:1px solid rgba(240,226,196,.2); border-radius:4px; background:rgba(16,20,15,.86); color:#f2ead8; font-family:inherit; font-size:11.5px; font-weight:600; line-height:1.1; cursor:pointer; white-space:nowrap; background:{{ srcSceneBg }};" style-hover="background:rgba(240,226,196,.16); border-color:rgba(240,226,196,.4)">Scenario</button>
+            </div>
+
+            <div style="display:flex; align-items:baseline; gap:8px; margin-bottom:3px;">
+              <span style="font-size:11px; color:#a9b09c;">Human &harr; Autonomy</span>
+              <span style="flex:1;"></span>
+              <span style="font-size:11.5px; font-weight:700; color:{{ autoColor }};">{{ autonomyLabel }}</span>
+            </div>
+            <input type="range" min="0" max="100" step="1" value="{{ autonomy }}" onInput="{{ onAutonomy }}" style="width:100%; margin:0 0 14px;">
+
+            <div style="display:flex; align-items:baseline; gap:8px; margin-bottom:3px;">
+              <span style="font-size:11px; color:#a9b09c;">Event pace</span>
+              <span style="flex:1;"></span>
+              <span style="font-size:11.5px; font-weight:700;">{{ tempoLabel }}</span>
+            </div>
+            <input type="range" min="0.25" max="4" step="0.25" value="{{ tempo }}" onInput="{{ onTempo }}" style="width:100%; margin:0 0 14px;">
+
+            <div style="display:flex; align-items:center; gap:8px; margin-bottom:3px;">
+              <span style="font-size:11px; color:#a9b09c;">Time of day</span>
+              <span style="flex:1;"></span>
+              <button onClick="{{ toggleClock }}" style="padding:5px 10px; border:1px solid rgba(240,226,196,.2); border-radius:4px; background:rgba(16,20,15,.86); color:#f2ead8; font-family:inherit; font-size:11.5px; font-weight:600; line-height:1.1; cursor:pointer; white-space:nowrap; padding:3px 8px;" style-hover="background:rgba(240,226,196,.16); border-color:rgba(240,226,196,.4)">{{ clockLabel }}</button>
+            </div>
+            <input type="range" min="0" max="23.9" step="0.1" value="{{ todValue }}" onInput="{{ onTod }}" style="width:100%; margin:0 0 12px;">
+
+            <div style="display:flex; align-items:center; gap:8px; margin-bottom:12px;">
+              <span style="font-size:11px; color:#a9b09c;">Leylines</span>
+              <span style="flex:1;"></span>
+              <button onClick="{{ toggleLeys }}" title="Leylines (L)" style="padding:3px 9px; border:1px solid rgba(240,226,196,.2); border-radius:4px; background:rgba(16,20,15,.86); color:#f2ead8; font-family:inherit; font-size:11.5px; font-weight:600; line-height:1.1; cursor:pointer; white-space:nowrap;" style-hover="background:rgba(240,226,196,.16); border-color:rgba(240,226,196,.4)">{{ leyLabel }}</button>
+            </div>
+
+            <div style="display:flex; align-items:center; gap:7px; margin-bottom:12px;">
+              <span style="font-size:11px; color:#a9b09c;">Party</span>
+              <button onClick="{{ fewer }}" style="padding:5px 10px; border:1px solid rgba(240,226,196,.2); border-radius:4px; background:rgba(16,20,15,.86); color:#f2ead8; font-family:inherit; font-size:11.5px; font-weight:600; line-height:1.1; cursor:pointer; white-space:nowrap; padding:3px 9px;" style-hover="background:rgba(240,226,196,.16); border-color:rgba(240,226,196,.4)">&minus;</button>
+              <span style="font-size:12px; font-weight:700; min-width:16px; text-align:center;">{{ count }}</span>
+              <button onClick="{{ more }}" style="padding:5px 10px; border:1px solid rgba(240,226,196,.2); border-radius:4px; background:rgba(16,20,15,.86); color:#f2ead8; font-family:inherit; font-size:11.5px; font-weight:600; line-height:1.1; cursor:pointer; white-space:nowrap; padding:3px 9px;" style-hover="background:rgba(240,226,196,.16); border-color:rgba(240,226,196,.4)">+</button>
+            </div>
+
+            <div style="display:flex; align-items:center; gap:7px;">
+              <span style="font-size:11px; color:#a9b09c; min-width:0; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; flex:1;">{{ trackLabel }}</span>
+              <button onClick="{{ toggleMusic }}" style="padding:5px 10px; border:1px solid rgba(240,226,196,.2); border-radius:4px; background:rgba(16,20,15,.86); color:#f2ead8; font-family:inherit; font-size:11.5px; font-weight:600; line-height:1.1; cursor:pointer; white-space:nowrap;" style-hover="background:rgba(240,226,196,.16); border-color:rgba(240,226,196,.4)">{{ playLabel }}</button>
+              <button onClick="{{ nextTrack }}" style="padding:5px 10px; border:1px solid rgba(240,226,196,.2); border-radius:4px; background:rgba(16,20,15,.86); color:#f2ead8; font-family:inherit; font-size:11.5px; font-weight:600; line-height:1.1; cursor:pointer; white-space:nowrap;" style-hover="background:rgba(240,226,196,.16); border-color:rgba(240,226,196,.4)">Skip</button>
+              <button onClick="{{ toggleSound }}" style="padding:5px 10px; border:1px solid rgba(240,226,196,.2); border-radius:4px; background:rgba(16,20,15,.86); color:#f2ead8; font-family:inherit; font-size:11.5px; font-weight:600; line-height:1.1; cursor:pointer; white-space:nowrap;" style-hover="background:rgba(240,226,196,.16); border-color:rgba(240,226,196,.4)">{{ soundLabel }}</button>
+            </div>
+          </div>
+        </sc-if>
+      </div>
+    </sc-if>
+  </div>
+
+  <sc-if value="{{ selB }}" hint-placeholder-val="{{ false }}">
+    <div style="position:absolute; left:10px; bottom:48px; width:min(250px,calc(100vw - 20px)); box-sizing:border-box; padding:9px 11px 11px; background:rgba(20,25,19,.88); border:1px solid rgba(240,226,196,.16); border-radius:6px; box-shadow:0 8px 22px rgba(0,0,0,.4); color:#f2ead8; z-index:5; animation:nvIn .18s ease-out;">
+      <div style="display:flex; align-items:baseline; gap:8px; margin-bottom:6px;">
+        <span style="font-size:14px;">{{ selB.label }}</span>
+        <span style="flex:1;"></span>
+        <button onClick="{{ clearB }}" style="padding:5px 10px; border:1px solid rgba(240,226,196,.2); border-radius:4px; background:rgba(16,20,15,.86); color:#f2ead8; font-family:inherit; font-size:11.5px; font-weight:600; line-height:1.1; cursor:pointer; white-space:nowrap; padding:3px 7px;" style-hover="background:rgba(240,226,196,.16); border-color:rgba(240,226,196,.4)">&times;</button>
+      </div>
+      <div style="display:grid; grid-template-columns:auto 1fr; gap:3px 10px; font-size:11px; color:#cfd4c4;">
+        <span style="color:#8b9182;">Role</span><span>{{ selB.sub }}</span>
+        <span style="color:#8b9182;">Activity</span><span>{{ selB.act }}</span>
+        <span style="color:#8b9182;">Present</span><span>{{ selB.here }}</span>
+        <span style="color:#8b9182;">Artefacts</span><span>{{ selB.arte }}</span>
+      </div>
+    </div>
+  </sc-if>
+
+  <sc-if value="{{ sel }}" hint-placeholder-val="{{ false }}">
+    <div style="position:absolute; left:10px; bottom:48px; width:min(250px,calc(100vw - 20px)); box-sizing:border-box; padding:9px 11px 11px; background:rgba(20,25,19,.88); border:1px solid rgba(240,226,196,.16); border-radius:6px; box-shadow:0 8px 22px rgba(0,0,0,.4); color:#f2ead8; z-index:5; animation:nvIn .18s ease-out;">
+      <div style="display:flex; align-items:center; gap:8px; margin-bottom:7px;">
+        <span style="flex:none; width:34px; height:34px; background-image:url({{ sel.sheet }}); background-size:{{ sel.bgSize }}; background-position:{{ sel.bgPos }}; background-repeat:no-repeat; image-rendering:pixelated;"></span>
+        <span style="min-width:0;">
+          <span style="display:block; font-size:14px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">{{ sel.name }}</span>
+          <span style="display:block; font-size:10.5px; color:#8b9182;">{{ sel.meta }}</span>
+        </span>
+        <span style="flex:1;"></span>
+        <button onClick="{{ clearSel }}" style="padding:5px 10px; border:1px solid rgba(240,226,196,.2); border-radius:4px; background:rgba(16,20,15,.86); color:#f2ead8; font-family:inherit; font-size:11.5px; font-weight:600; line-height:1.1; cursor:pointer; white-space:nowrap; padding:3px 7px;" style-hover="background:rgba(240,226,196,.16); border-color:rgba(240,226,196,.4)">&times;</button>
+      </div>
+      <div style="display:grid; grid-template-columns:auto 1fr; gap:3px 10px; font-size:11px; color:#cfd4c4;">
+        <span style="color:#8b9182;">Place</span><span>{{ sel.place }}</span>
+        <span style="color:#8b9182;">Status</span><span>{{ sel.status }}</span>
+        <span style="color:#8b9182;">Artefacts</span><span>{{ sel.arte }}</span>
+        <span style="color:#8b9182;">Last</span><span>{{ sel.last }}</span>
+      </div>
+    </div>
+  </sc-if>
+  </sc-if>
+
+  <div style="position:absolute; right:10px; bottom:10px; display:flex; align-items:center; gap:5px; z-index:6;">
+    <sc-if value="{{ minified }}" hint-placeholder-val="{{ false }}">
+      <button onClick="{{ toggleMin }}" title="Show UI (Tab)" style="width:38px; height:38px; display:flex; align-items:center; justify-content:center; padding:0; border:1px solid rgba(240,226,196,.2); border-radius:6px; background:rgba(16,20,15,.86); cursor:pointer;" style-hover="background:rgba(240,226,196,.16); border-color:rgba(240,226,196,.44)"><img src="https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/2D_Assets/Tiny%20Swords%20(Free%20Pack)/UI%20Elements/UI%20Elements/Icons/Icon_07.png" alt="" style="width:32px; height:32px; display:block; image-rendering:pixelated;" /></button>
+    </sc-if>
+    <button onClick="{{ zoomOut }}" style="padding:5px 10px; border:1px solid rgba(240,226,196,.2); border-radius:4px; background:rgba(16,20,15,.86); color:#f2ead8; font-family:inherit; font-size:11.5px; font-weight:600; line-height:1.1; cursor:pointer; white-space:nowrap; padding:4px 9px;" style-hover="background:rgba(240,226,196,.16); border-color:rgba(240,226,196,.4)">&minus;</button>
+    <button onClick="{{ zoomIn }}" style="padding:5px 10px; border:1px solid rgba(240,226,196,.2); border-radius:4px; background:rgba(16,20,15,.86); color:#f2ead8; font-family:inherit; font-size:11.5px; font-weight:600; line-height:1.1; cursor:pointer; white-space:nowrap; padding:4px 9px;" style-hover="background:rgba(240,226,196,.16); border-color:rgba(240,226,196,.4)">+</button>
+    <button onClick="{{ recenter }}" title="Focus village" style="width:38px; height:38px; display:flex; align-items:center; justify-content:center; padding:0; border:1px solid rgba(240,226,196,.2); border-radius:6px; background:rgba(16,20,15,.86); cursor:pointer;" style-hover="background:rgba(240,226,196,.16); border-color:rgba(240,226,196,.44)"><svg width="26" height="26" viewBox="0 0 24 24" style="fill:none; stroke-linecap:round; stroke-linejoin:round"><g style="stroke:#141a10; stroke-width:6.4"><circle cx="12" cy="12" r="6"/><path d="M12 2.4v3M12 18.6v3M2.4 12h3M18.6 12h3"/></g><g style="stroke:#f2ead8; stroke-width:3.2"><circle cx="12" cy="12" r="6"/><path d="M12 2.4v3M12 18.6v3M2.4 12h3M18.6 12h3"/></g><circle cx="12" cy="12" r="2.1" style="fill:#f2ead8; stroke:none"/></svg></button>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{
+  &quot;agentCount&quot;: { &quot;editor&quot;: &quot;int&quot;, &quot;default&quot;: 7, &quot;min&quot;: 3, &quot;max&quot;: 24, &quot;tsType&quot;: &quot;number&quot;, &quot;section&quot;: &quot;Dorf&quot; },
+  &quot;source&quot;: { &quot;editor&quot;: &quot;enum&quot;, &quot;options&quot;: [&quot;mock&quot;, &quot;rss&quot;, &quot;szenario&quot;], &quot;default&quot;: &quot;mock&quot;, &quot;tsType&quot;: &quot;string&quot;, &quot;section&quot;: &quot;Datenquelle&quot; },
+  &quot;autonomy&quot;: { &quot;editor&quot;: &quot;range&quot;, &quot;default&quot;: 35, &quot;min&quot;: 0, &quot;max&quot;: 100, &quot;step&quot;: 1, &quot;unit&quot;: &quot;%&quot;, &quot;tsType&quot;: &quot;number&quot;, &quot;section&quot;: &quot;Datenquelle&quot; },
+  &quot;tempo&quot;: { &quot;editor&quot;: &quot;range&quot;, &quot;default&quot;: 1, &quot;min&quot;: 0.25, &quot;max&quot;: 4, &quot;step&quot;: 0.25, &quot;unit&quot;: &quot;×&quot;, &quot;tsType&quot;: &quot;number&quot;, &quot;section&quot;: &quot;Datenquelle&quot; },
+  &quot;autoClock&quot;: { &quot;editor&quot;: &quot;boolean&quot;, &quot;default&quot;: true, &quot;tsType&quot;: &quot;boolean&quot;, &quot;section&quot;: &quot;Dorf&quot; },
+  &quot;nightMode&quot;: { &quot;editor&quot;: &quot;boolean&quot;, &quot;default&quot;: false, &quot;tsType&quot;: &quot;boolean&quot;, &quot;section&quot;: &quot;Dorf&quot; },
+  &quot;chronikOpen&quot;: { &quot;editor&quot;: &quot;boolean&quot;, &quot;default&quot;: false, &quot;tsType&quot;: &quot;boolean&quot;, &quot;section&quot;: &quot;Dorf&quot; }
+}">
+class Component extends DCLogic {
+  TS = 'https://raw.githubusercontent.com/georg-doc/lietz-nexus/main/client/public/assets/themes/tiny-swords-cc0/';
+  KFB = 'https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/';
+  UI = 'https://raw.githubusercontent.com/georg-doc/lietz-nexus/main/client/public/assets/themes/tiny-swords-cc0/UI/';
+
+  PACKS = {
+    ts:   'https://raw.githubusercontent.com/georg-doc/lietz-nexus/main/client/public/assets/themes/tiny-swords-cc0/',
+    free: 'https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/2D_Assets/Tiny%20Swords%20(Free%20Pack)/'
+  };
+  /** BAUKASTEN — jedes Blatt mit Pack, Pfad, Frame-Raster, Rolle.
+   *  autotile4x4 = Blob-Satz (Spalte/Zeile 3 = "single"), autotile3x3 = Shadow/Foam,
+   *  strip = eine Reihe Frames, single = ein Bild, tile = eine Kachel.
+   *  Ein spaeterer Editor kann diese Tabelle direkt auflisten. */
+  ATLAS = {
+    ground: { pack:'ts',   path:'Terrain/Ground/Tilemap_Flat.png', frame:[64,64], role:'autotile4x4', blocks:{ grass:0, sand:5 } },
+    shadow: { pack:'ts',   path:'Terrain/Ground/Shadows.png',      frame:[64,64], role:'autotile3x3' },
+    /* Steinplateau-Blatt aus dem Repo — hier nur noch für die Treppe (Zeile 7). */
+    elev:   { pack:'ts',   path:'Terrain/Ground/Tilemap_Elevation.png', frame:[64,64], role:'stairs' },
+    /* Echtes Terrain-Tileset, gemessen 576×384 = 9×6: Sp. 0–3 Flat-Gras (4×4-Blob),
+       Sp. 5–8 Z. 0–3 Elevated-GRAS (4×4-Blob), Sp. 5–8 Z. 4–5 Klippe (zwei Kacheln hoch). */
+    /* Guide: „Use different terrain colors … to make the different elevation layers more noticable."
+       Gemessene Grastöne: color1 184,185,88 · color2 147,186,79 · color3 116,179,99 · color4 150,159,100
+       · color5 99,164,134. Flat Ground im Projekt ist 121,168,99 ≈ color3 — also **nicht** color3 für
+       eine Stufe nehmen. Stufe 1 = color2, Stufe 2 = color1: nach oben wird es heller. */
+    terr:   { pack:'free', path:'Terrain/Tileset/Tilemap_color2.png', frame:[64,64], role:'terrain' },
+    terr2:  { pack:'free', path:'Terrain/Tileset/Tilemap_color1.png', frame:[64,64], role:'terrain' },
+    /* Shadow ist EIN 192-px-Stempel (wie Foam), kein Autotile. */
+    shstamp:{ pack:'free', path:'Terrain/Tileset/Shadow.png', role:'single' },
+    water:  { pack:'ts',   path:'Terrain/Water/Water.png',         frame:[64,64], role:'tile' },
+    foam:   { pack:'ts',   path:'Terrain/Water/Foam/Foam.png',     frame:[64,64], role:'autotile3x3', frames:8, fps:7 },
+    trees:  { pack:'ts',   path:'Resources/Trees/Tree.png',        frame:[192,192], role:'strip', frames:4 },
+    fire:   { pack:'free', path:'Particle%20FX/Fire_03.png',       frame:[64,64],  role:'strip', frames:12, fps:14 },
+    smoke:  { pack:'free', path:'Particle%20FX/Dust_02.png',       frame:[64,64],  role:'strip', frames:10, fps:11 },
+    boom:   { pack:'free', path:'Particle%20FX/Explosion_02.png',  frame:[192,192], role:'strip', frames:10, fps:16 },
+    splash: { pack:'free', path:'Particle%20FX/Water%20Splash.png',frame:[192,192], role:'strip', frames:9,  fps:12 },
+    wrock:  { pack:'free', path:'Terrain/Decorations/Rocks%20in%20the%20Water/Water%20Rocks_02.png', frame:[64,64], role:'strip', frames:16, fps:8 },
+    duck:   { pack:'free', path:'Terrain/Decorations/Rubber%20Duck/Rubber%20duck.png', frame:[32,32], role:'strip', frames:3, fps:4 },
+    cloudA: { pack:'free', path:'Terrain/Decorations/Clouds/Clouds_03.png', role:'single' },
+    cloudB: { pack:'free', path:'Terrain/Decorations/Clouds/Clouds_05.png', role:'single' },
+    cloudC: { pack:'free', path:'Terrain/Decorations/Clouds/Clouds_07.png', role:'single' },
+    /* Ressourcen (Free Pack, gemessen): Wood/Meat 64, Gold/Gold Stones 128, Sheep 128er-Strip. */
+    wood:   { pack:'free', path:'Terrain/Resources/Wood/Wood%20Resource/Wood%20Resource.png', role:'single' },
+    gold:   { pack:'free', path:'Terrain/Resources/Gold/Gold%20Resource/Gold_Resource.png', role:'single' },
+    meat:   { pack:'free', path:'Terrain/Resources/Meat/Meat%20Resource/Meat%20Resource.png', role:'single' },
+    vein:   { pack:'free', path:'Terrain/Resources/Gold/Gold%20Stones/Gold%20Stone%205.png', role:'single' },
+    veinS:  { pack:'free', path:'Terrain/Resources/Gold/Gold%20Stones/Gold%20Stone%203.png', role:'single' },
+    /* Abbaustufen. Gold Stone 1–6 sind sechs Größen derselben Ader (alle 128×128 gemessen),
+       Stump 1–4 sind die Reste eines gefällten Baums (192×256). Damit ist der Baustand sichtbar. */
+    gs1:    { pack:'free', path:'Terrain/Resources/Gold/Gold%20Stones/Gold%20Stone%201.png', role:'single' },
+    gs2:    { pack:'free', path:'Terrain/Resources/Gold/Gold%20Stones/Gold%20Stone%202.png', role:'single' },
+    gs3:    { pack:'free', path:'Terrain/Resources/Gold/Gold%20Stones/Gold%20Stone%203.png', role:'single' },
+    gs4:    { pack:'free', path:'Terrain/Resources/Gold/Gold%20Stones/Gold%20Stone%204.png', role:'single' },
+    gs5:    { pack:'free', path:'Terrain/Resources/Gold/Gold%20Stones/Gold%20Stone%205.png', role:'single' },
+    gs6:    { pack:'free', path:'Terrain/Resources/Gold/Gold%20Stones/Gold%20Stone%206.png', role:'single' },
+    st1:    { pack:'free', path:'Terrain/Resources/Wood/Trees/Stump%201.png', role:'single' },
+    st2:    { pack:'free', path:'Terrain/Resources/Wood/Trees/Stump%202.png', role:'single' },
+    st3:    { pack:'free', path:'Terrain/Resources/Wood/Trees/Stump%203.png', role:'single' },
+    st4:    { pack:'free', path:'Terrain/Resources/Wood/Trees/Stump%204.png', role:'single' },
+    sheep:  { pack:'free', path:'Terrain/Resources/Meat/Sheep/Sheep_Idle.png', frame:[128,128], role:'strip', frames:6, fps:6 }
+  };
+  /** Nexus-Metaphern: Holz = rohe Artefakte, Gold = Token-Budget, Fleisch = geerntete Datenquellen. */
+  RES = {
+    wood: { label: 'raw artefacts', icon: 'Icon_02' },
+    gold: { label: 'token budget',  icon: 'Icon_03' },
+    meat: { label: 'harvested sources', icon: 'Icon_04' }
+  };
+
+  /** Default 1 = jedes Tiny-Swords-Blatt wird in Originalgröße und Original-Relation gezeichnet
+   *  (Units 192, Lancer 320, Sheep/Gold 128, Wood/Meat 64, Gebäude = Blatthöhe).
+   *  Cartoon-Deformer, POI-Zoom und Größenklassen kommen später als eigene Ebene darüber. */
+  SCALE = 1;
+  /** Blattunterkante über dem Fusspunkt — gleich für JEDES Blatt, damit 192er und 320er auf
+   *  derselben Bodenlinie stehen. Kopfhöhe für Overlays (Namen, Blasen, Marken, Zeiger) ist
+   *  ebenfalls fix: TS-Frames sind grösstenteils Rand, die Figur darin ist immer gleich hoch. */
+  FOOT = 23;
+  HEAD = 130;
+  /** Weil die Blätter 1:1 gross sind, wird der Grundriss gestreckt: Autoren-Koordinaten × K.
+   *  Die Insel wächst entsprechend mit, damit nichts über die Küste hängt. */
+  LAYOUT_K = 1.6;
+  T = 64;              // Kachelgröße laut Tilemap-Guide
+  COLS = 48; ROWS = 34;
+  W = 3072; H = 2176;
+
+  EN = 'https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/2D_Assets/Tiny%20Swords%20(Enemy%20Pack)/Enemy%20Pack/Enemies/';
+  U10 = 'https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/2D_Assets/Tiny%20Swords%20(Update%20010)/';
+
+  /** FRAKTIONEN — jede Zeile GEMESSEN (Blatt/Frame/Frames), nichts geraten.
+   *  kind:'knight' nutzt die schon geladenen Nexus-Blätter (eine Farbe = eine Fraktion).
+   *  Sonst: units = [id, Name, Datei, Frame, Frames, ('grid', Spalten)] relativ zu base.
+   *  Enemy-Pack-Blätter sind Strips quadratischer Frames, Update-010-Blätter Raster.
+   *  Free-Pack-Schwarz fehlt hier bewusst: andere Blattform (Strips), Backlog. */
+  FACTIONS = [
+    { id: 'blue',   name: 'Nexus Blue',   short: 'Blue',   tint: '#6ab4f8', kind: 'knight', color: 'blue',   r: 320, camp: { label: 'House', base: 'U10', file: 'Factions/Knights/Buildings/House/House_Blue.png' } },
+    { id: 'red',    name: 'Nexus Red',    short: 'Red',    tint: '#f97362', kind: 'knight', color: 'red',    r: 320, camp: { label: 'House', base: 'U10', file: 'Factions/Knights/Buildings/House/House_Red.png' } },
+    { id: 'yellow', name: 'Nexus Yellow', short: 'Yellow', tint: '#f6b74a', kind: 'knight', color: 'yellow', r: 320, camp: { label: 'House', base: 'U10', file: 'Factions/Knights/Buildings/House/House_Yellow.png' } },
+    { id: 'purple', name: 'Nexus Purple', short: 'Purple', tint: '#a78bfa', kind: 'knight', color: 'purple', r: 320, camp: { label: 'House', base: 'U10', file: 'Factions/Knights/Buildings/House/House_Purple.png' } },
+    { id: 'raiders', name: 'Goblin Raiders', short: 'Raiders', tint: '#8fd04a', base: 'EN', r: 300,
+      camp: { label: 'Goblin Hut', file: 'Goblin Raiders/Goblin Hut/Goblin Hut.png', F: 256, n: 12, fps: 8 },
+      units: [
+        ['spear', 'Spear', 'Goblin Raiders/Spear Goblin/Spear Goblin_Idle.png', 256, 8],
+        ['torchg', 'Torch', 'Goblin Raiders/Torch Goblin/Torch Goblin_Idle.png', 192, 8],
+        ['rider', 'Pig Rider', 'Goblin Raiders/Pig Rider Spear Goblin/Pig Rider_Idle.png', 256, 8],
+        ['shaman', 'Shaman', 'Goblin Raiders/Hex Shaman/Hex Shaman_Idle.png', 192, 8],
+        ['pig', 'Pig', 'Goblin Raiders/Pig/Pig_Idle.png', 192, 10]
+      ] },
+    { id: 'fish', name: 'Pirate Fish', short: 'Fish', tint: '#4fd8c8', base: 'EN', water: true, r: 340,
+      camp: { label: 'Fish Hut', file: 'Pirate Fish/Fish Hut/Fish Hut.png', F: 192, n: 8, fps: 7 },
+      units: [
+        ['bombfish', 'Bomb Fish', 'Pirate Fish/Bomb Fish/Bomb Fish_Idle.png', 192, 8],
+        ['harpoon', 'Harpoon', 'Pirate Fish/Harpoon Shark/Harpoon Shark_Idle.png', 192, 8],
+        ['paddle', 'Paddle', 'Pirate Fish/Paddle Shark/Paddle Shark_Idle.png', 192, 8],
+        ['seahorse', 'Seahorse', 'Pirate Fish/Seahorse Boat/Seahorse Boat_Idle.png', 192, 8],
+        ['boat', 'Boat', 'Pirate Fish/Boat/Boat_Idle.png', 256, 8]
+      ] },
+    { id: 'caveborn', name: 'Caveborn', short: 'Cave', tint: '#c08a4a', base: 'EN', r: 300,
+      camp: { label: 'Cave', file: 'Caveborn/Cave/Cave_Idle.png', F: 192, n: 8, fps: 6 },
+      units: [
+        ['bear', 'Bear', 'Caveborn/Bear/Bear_Idle.png', 256, 8],
+        ['lizard', 'Lizard', 'Caveborn/Lizard/Lizard_Idle.png', 192, 7],
+        ['snake', 'Snake', 'Caveborn/Snake/Snake_Idle.png', 192, 8],
+        ['spider', 'Spider', 'Caveborn/Spider/Spider_Idle.png', 192, 8],
+        ['turtle', 'Turtle', 'Caveborn/Turtle/Turtle_Idle.png', 320, 10]
+      ] },
+    { id: 'gob010', name: 'Goblins 010', short: 'Gob010', tint: '#b2e04a', base: 'U10', r: 300,
+      camp: { label: 'Goblin House', file: 'Factions/Goblins/Buildings/Wood_House/Goblin_House.png' },
+      units: [
+        ['torch', 'Torch', 'Factions/Goblins/Troops/Torch/Red/Torch_Red.png', 192, 7, 'grid', 7],
+        ['tnt', 'TNT', 'Factions/Goblins/Troops/TNT/Red/TNT_Red.png', 192, 7, 'grid', 7],
+        ['barrel', 'Barrel', 'Factions/Goblins/Troops/Barrel/Red/Barrel_Red.png', 192, 4, 'grid', 4]
+      ] },
+    { id: 'wilds', name: 'Einzelgänger', short: 'Wilds', tint: '#e0705e', base: 'EN', r: 260,
+      camp: { label: 'Dead Tree', file: 'Root Troll/Dead Tree.png' },
+      units: [
+        ['troll', 'Troll', 'Troll/Troll_Idle.png', 384, 12],
+        ['minotaur', 'Minotaur', 'Minotaur/Minotaur_Idle.png', 320, 16],
+        ['gnoll', 'Gnoll', 'Gnoll/Gnoll_Idle.png', 192, 6],
+        ['gnome', 'Gnome', 'Gnome/Gnome_Idle.png', 192, 8],
+        ['panda', 'Panda', 'Panda/Panda_Idle.png', 256, 10],
+        ['skull', 'Skull', 'Skull/Skull_Idle.png', 192, 8],
+        ['thief', 'Thief', 'Thief/Thief_Idle.png', 192, 6]
+      ] },
+    { id: 'mine', name: 'Goldmine', short: 'Mine', tint: '#f6d24a', base: 'U10', r: 200,
+      camp: { label: 'Gold Mine', file: 'Resources/Gold Mine/GoldMine_Active.png' },
+      units: [
+        ['miner', 'Bergmann', 'Units/Blue%20Units/Pawn/Pawn_Idle%20Pickaxe.png', 192, 8, 'free'],
+        ['hauler', 'Träger', 'Units/Blue%20Units/Pawn/Pawn_Idle%20Gold.png', 192, 8, 'free']
+      ] }
+  ];
+
+  /** Zwei Blatt-Modelle: `grid` = ein Sheet mit Zeilen/Spalten (Update 010),
+   *  `strip` = getrennte Run-/Idle-Reihen (Free Pack). Alle Maße gemessen, nicht geraten. */
+  UNITS = {
+    warrior: { cols: 6, rows: 8, run: [6, 7, 8, 9, 10, 11] },
+    archer:  { cols: 8, rows: 7, run: [8, 9, 10, 11, 12, 13] },
+    pawn:    { cols: 6, rows: 6, run: [6, 7, 8, 9, 10, 11] },
+    lancer:  { strip: true, F: 320, runN: 6, idleN: 12, dir: 'Lancer', run: 'Lancer_Run', idle: 'Lancer_Idle' },
+    monk:    { strip: true, F: 192, runN: 4, idleN: 6,  dir: 'Monk',   run: 'Run',        idle: 'Idle' }
+  };
+  COLORS = ['blue', 'red', 'yellow', 'purple'];
+  /** Kader: jede Kombination Einheit+Farbe genau einmal, damit kein Held doppelt aussieht.
+   *  Lancer/Monk kommen aus dem Free Pack (Blätter gemessen: Lancer 320 px, Monk 192 px);
+   *  rotes Lancer-Blatt fehlt im Pack, deshalb Lancer nur blau/gelb/purpur. */
+  ROSTER = [
+    ['warrior', 'blue'], ['archer', 'red'], ['pawn', 'yellow'], ['lancer', 'purple'],
+    ['monk', 'blue'], ['pawn', 'red'], ['warrior', 'yellow'], ['archer', 'purple'],
+    ['lancer', 'blue'], ['warrior', 'red'], ['monk', 'yellow'], ['pawn', 'purple'],
+    ['archer', 'blue'], ['lancer', 'yellow'], ['monk', 'purple'], ['warrior', 'purple']
+  ];
+
+  PLAZA = { x: 960, y: 780 };
+
+  BUILDINGS = [
+    // R1: Tueren werden berechnet (eine Zellreihe unter dem Sockel), nicht von Hand gesetzt.
+    { id: 'bibliothek', act: 'read',    label: 'Library', sub: 'Repository · Docs',    img: 'Library', x: 450,  y: 620,  h: 210, needs: 'meat' },
+    { id: 'burg',       act: 'analyze', label: 'Castle', sub: 'AI assessment',         img: 'Castle',  x: 1340, y: 430,  h: 240, needs: 'gold' },
+    { id: 'schmiede',   act: 'write',   label: 'Forge', sub: 'Commits · PRs',        img: 'Forge',   x: 1500, y: 760,  h: 205, needs: 'wood' },
+    { id: 'arena',      act: 'command', label: 'Arena', sub: 'Deploys · CI',         img: 'Arena',   x: 1296, y: 1060, h: 200, needs: 'gold' },
+    { id: 'wachturm',   act: 'alert',   label: 'Watchtower', sub: 'Alerts · approval',     img: 'Tower',   x: 560,  y: 1060, h: 225, needs: 'meat' },
+    { id: 'taverne',    act: 'idle',    label: 'Tavern', sub: 'Party zone · Jukebox', img: 'Tavern',  x: 960,  y: 500,  h: 215, needs: 'wood' },
+    /* 7. Gebäude aus dem Free-Pack-Blatt (House3, gemessen 128×192): offener Stand = Eingang
+       für rohe Artefakte. Eigene Quelle, deshalb `src` statt `img`. */
+    { id: 'depot',      act: 'ingest',  label: 'Depot', sub: 'Raw artefacts · Ingest',
+      src: 'https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/2D_Assets/Tiny%20Swords%20(Free%20Pack)/Buildings/Blue%20Buildings/House3.png',
+      x: 780, y: 900, h: 176, needs: 'wood' }
+  ];
+
+  WP = [
+    { x: 960, y: 1230 }, { x: 960, y: 1040 }, { x: 960, y: 780 }, { x: 960, y: 640 },
+    { x: 700, y: 780 }, { x: 1220, y: 780 }, { x: 700, y: 560 }, { x: 1220, y: 560 },
+    { x: 700, y: 1040 }, { x: 1220, y: 1040 }
+  ];
+  /** Reines Netz (0..9). Die Stichwege zu den Tueren entstehen in componentDidMount (R2). */
+  EDGES = [[0,1],[1,2],[2,3],[2,4],[2,5],[1,8],[1,9],[3,6],[3,7],[4,6],[4,8],[5,7],[5,9]];
+  MAIN = new Set(['0-1', '1-2', '2-3']);
+
+  ACT = {
+    read:    { chip: 'reads',    color: '#7fd8ff' },
+    write:   { chip: 'forges',   color: '#8ef0a8' },
+    command: { chip: 'commands', color: '#c3b6ff' },
+    analyze: { chip: 'assesses', color: '#ffd98a' },
+    alert:   { chip: 'ALERT',    color: '#ff9b86' },
+    idle:    { chip: 'rests',    color: '#e3cda3' },
+    ingest:  { chip: 'stores',   color: '#d8c08c' }
+  };
+
+  POOL = {
+    nexus: {
+      names: ['Orchestrator', 'Code Smith', 'Deploy Warden', 'Audit Scout', 'Ticket Bailiff', 'Slack Herald', 'Repo Warden', 'Cost Bailiff', 'Release Runner', 'Doc Scribe', 'Lint Squire', 'Test Knight'],
+      items: [
+        { a: 'read',    c: 'Repository', t: 'reads src/agents/registry.ts', k: [.05, .3] },
+        { a: 'read',    c: 'Docs',       t: 'searches Notion "Nexus – 5 Aug"', k: [.05, .25] },
+        { a: 'read',    c: 'Ticket',     t: 'opens JIRA NX-482 "polling flaky"', k: [.15, .45] },
+        { a: 'write',   c: 'Repository', t: 'commit feat(feed): criticality badge', k: [.1, .4] },
+        { a: 'write',   c: 'Repository', t: 'PR #217 → main, 4 files changed', k: [.25, .6] },
+        { a: 'write',   c: 'Docs',       t: 'writes skill library entry "polling"', k: [.05, .3] },
+        { a: 'command', c: 'Deploy',     t: 'bun test — 214 passed', k: [.1, .35] },
+        { a: 'command', c: 'Deploy',     t: 'deploy staging eu-central-1', k: [.3, .65] },
+        { a: 'command', c: 'Deploy',     t: 'deploy PROD eu-central-1, Migration 0043', k: [.78, .96] },
+        { a: 'command', c: 'Connection', t: 'rotates GitHub app token', k: [.55, .9] },
+        { a: 'analyze', c: 'Assessment',  t: 'assesses artefact cluster "auth"', k: [.2, .55] },
+        { a: 'analyze', c: 'Assessment',  t: 'correlates slack thread with deploy failure', k: [.4, .8] },
+        { a: 'analyze', c: 'Cost',     t: 'token budget 78% spent this sprint', k: [.35, .7] },
+        { a: 'read',    c: 'Slack',      t: 'reads #incident-eu, 34 new messages', k: [.2, .6] },
+        { a: 'write',   c: 'Slack',      t: 'posts status change to #nexus-ops', k: [.1, .35] },
+        { a: 'command', c: 'Connection', t: 'polls external source: 12 new artefacts', k: [.05, .3] },
+        { a: 'analyze', c: 'Security', t: 'secret scan: candidate in .env.example', k: [.72, .95] },
+        { a: 'command', c: 'Deploy',     t: 'rollback release-2026.8.3 prepared', k: [.7, .93] }
+      ]
+    },
+    rss: {
+      names: ['Scout', 'arXiv Scout', 'Reddit Listener', 'HN Runner', 'Paper Squire', 'Trend Bailiff', 'Source Warden'],
+      items: [
+        { a: 'read',    c: 'arXiv',  t: 'fetches arXiv:2608.11234 "Sparse Agent Memory"', k: [.05, .3] },
+        { a: 'read',    c: 'Reddit', t: 'r/LocalLLaMA — 1.2k upvotes, new quant', k: [.05, .25] },
+        { a: 'read',    c: 'RSS',    t: 'polls 6 feeds, 41 new entries', k: [.05, .2] },
+        { a: 'analyze', c: 'LLM',    t: 'clusters 41 entries → 5 topics', k: [.15, .45] },
+        { a: 'analyze', c: 'LLM',    t: 'rates relevance for the Nexus roadmap', k: [.25, .6] },
+        { a: 'write',   c: 'Digest', t: 'writes daily digest, 7 paragraphs', k: [.1, .35] },
+        { a: 'write',   c: 'Digest', t: 'files skill note "retrieval ranking"', k: [.1, .3] },
+        { a: 'command', c: 'RSS',    t: 're-fetch feed, 429 rate limit', k: [.4, .7] },
+        { a: 'analyze', c: 'LLM',    t: 'hallucination suspected in summary', k: [.75, .95] },
+        { a: 'read',    c: 'HN',     t: 'reads comment thread "agent ops"', k: [.05, .25] },
+        { a: 'command', c: 'RSS',    t: 'source unreachable: paperswithcode', k: [.5, .8] }
+      ]
+    },
+    scene: {
+      names: ['Orchestrator', 'Code Smith', 'Deploy Warden', 'Audit Scout', 'Ticket Bailiff', 'Slack Herald', 'Repo Warden'],
+      script: [
+        { n: 'Ticket Bailiff',  a: 'read',    c: 'Ticket',     t: 'NX-501 escalated: checkout returns 502', k: .3 },
+        { n: 'Audit Scout', a: 'read',    c: 'Slack',      t: 'reads #incident-eu, 18 messages', k: .35 },
+        { n: 'Orchestrator', a: 'analyze', c: 'Assessment',  t: 'correlates 502 with deploy 2026.8.3', k: .55 },
+        { n: 'Repo Warden', a: 'read',    c: 'Repository', t: 'reads services/checkout/gateway.ts', k: .2 },
+        { n: 'Code Smith', a: 'write',   c: 'Repository', t: 'commit fix(checkout): Timeout 30s → 5s', k: .4 },
+        { n: 'Code Smith', a: 'command', c: 'Deploy',     t: 'bun test — 214 passed', k: .2 },
+        { n: 'Orchestrator', a: 'analyze', c: 'Assessment',  t: 'fix plausible, blast radius: payments', k: .6 },
+        { n: 'Deploy Warden',  a: 'command', c: 'Deploy',     t: 'request hotfix PROD eu-central-1', k: .88 },
+        { n: 'Slack Herald', a: 'write',   c: 'Slack',      t: 'posts status change to #nexus-ops', k: .15 },
+        { n: 'Audit Scout', a: 'analyze', c: 'Security', t: 'audit trail written, 3 approvals', k: .3 },
+        { n: 'Ticket Bailiff',  a: 'write',   c: 'Ticket',     t: 'NX-501 closed, MTTR 21 min', k: .1 }
+      ]
+    }
+  };
+
+  TRACKS = [
+    { t: 'Van Metronome', f: 'media/3D_Assets/Sounds/Van_Metronome_2026-07-17T163547.mp3' },
+    { t: 'Shepards Coaster', f: 'media/3D_Assets/Sounds/KFB_Shepards_Coaster-SONG-Bob_01_A.mp3' },
+    { t: 'Metronome v3', f: 'media/3D_Assets/Sounds/KFB Metronomes v3.mp3' },
+    { t: 'Van Freestyle', f: 'media/3D_Assets/Sounds/KFB_Van_Freestyle_v2-1.mp3' },
+    { t: 'Doorways 01 Nexus rug', f: 'media/3D_Assets/Sounds/Doorways%2001%20Nexus%20rug.mp3' },
+    { t: 'Doorways 01 Nexus van', f: 'media/3D_Assets/Sounds/Doorways%2001%20Nexus%20van.mp3' }
+  ];
+  SFX = { click: ['click_001.ogg', .6], select: ['confirmation_002.ogg', .6], confirm: ['confirmation_001.ogg', .7], back: ['back_001.ogg', .55], error: ['error_002.ogg', .55], toggle: ['click_004.ogg', .5] };
+
+  state = {
+    loading: true, loadLabel: '0 %', partyOpen: true, src: 'nexus', autonomy: 35, tempo: 1, autoClock: true, clockSpeed: 0.22, clock: '10:30 · Day', sound: false, hover: null, selB: null,
+    zoom: 1, count: 7, feed: [], agents: [], alarm: null, selId: null, playing: false, track: 0,
+    chronik: false, council: false, min: false, alarmOpen: false,
+    todMode: 'cycle', todOpen: false, slots: [], slotName: '', undoN: 0, redoN: 0, leys: true,
+    fac: 'raiders', facUnit: 'spear', revier: 300,
+    edit: false, tool: 'h1', edMsg: 'Werkzeug wählen'
+  };
+
+  feed = []; agents = []; img = {}; alarm = null; t = 0; el = {}; fxs = []; clouds = []; water = []; deco = [];
+
+  componentDidMount() {
+    const p = this.props || {};
+    this.setState({
+      src: p.source === 'rss' ? 'rss' : p.source === 'szenario' ? 'scene' : 'nexus',
+      autonomy: p.autonomy ?? 35, tempo: p.tempo ?? 1, autoClock: p.autoClock !== false,
+      todMode: p.autoClock !== false ? 'cycle' : 'fixed', slots: this.slotNames(),
+      count: p.agentCount ?? 7, chronik: !!p.chronikOpen
+    });
+    this.fxs = [];
+    this.tod = p.nightMode ? 22 : 10.5;   // Stunde 0..24
+    this.smokeT = 0; this.splashT = 0; this.fireT = 0;
+    this.cam = { x: this.PLAZA.x, y: this.PLAZA.y - 30 };
+    this.camTo = null; this.evTimer = 1.2; this.sceneIdx = 0;
+    // Wasserrand: Welt um 4 Kacheln je Seite groesser, Inhalt entsprechend verschoben,
+    // damit die Insel nirgends an den Weltrand stoesst (Guide: Wasser ist Ebene 0).
+    // Grundriss streckt sich mit den 1:1-Blättern (einmal pro Instanz).
+    if (!this._spread) {
+      this._spread = true;
+      const K = this.LAYOUT_K;
+      this.WP = this.WP.map(w => ({ x: Math.round(w.x * K), y: Math.round(w.y * K) }));
+      this.BUILDINGS.forEach(b => { b.x = Math.round(b.x * K); b.y = Math.round(b.y * K); });
+      this.PLAZA = { x: Math.round(this.PLAZA.x * K), y: Math.round(this.PLAZA.y * K) };
+    }
+    const MARGIN = 4 * 64;
+    this.W += MARGIN * 2; this.H += MARGIN * 2;
+    this.COLS += 8; this.ROWS += 8;
+    this.WP = this.WP.map(w => ({ x: w.x + MARGIN, y: w.y + MARGIN }));
+    this.BUILDINGS.forEach(b => { b.x += MARGIN; b.y += MARGIN; });
+    this.PLAZA = { x: this.PLAZA.x + MARGIN, y: this.PLAZA.y + MARGIN };
+    this.cam = { x: this.PLAZA.x, y: this.PLAZA.y - 30 };
+    const snap = v => Math.round((v - 32) / 64) * 64 + 32;
+    this.WP = this.WP.map(w => ({ x: snap(w.x), y: snap(w.y) }));
+    this.PLAZA = { x: snap(this.PLAZA.x), y: snap(this.PLAZA.y) };
+    // Türen und Stichwege entstehen erst, wenn die Blätter gemessen sind (siehe layoutDoors).
+    this.computeClaims();
+    this.buildAdj();
+    this.loadAssets();
+    this.uiTimer = setInterval(() => this.syncUI(), 260);
+    window.addEventListener('resize', this.onResize = () => this.fit());
+    window.addEventListener('keydown', this.onKey = e => {
+      if (e.key === 'Tab') { e.preventDefault(); this.setState({ min: !this.state.min }); this.sfx('toggle'); }
+      if (e.key === 'e' || e.key === 'E') { const on = !this.state.edit; this.setState({ edit: on, edMsg: on ? 'Werkzeug wählen' : '' }); this.sfx('toggle'); }
+      if (this.state.edit && (e.ctrlKey || e.metaKey) && (e.key === 'z' || e.key === 'Z')) { e.preventDefault(); if (e.shiftKey) this.edRedo(); else this.edUndo(); }
+      if (this.state.edit && (e.ctrlKey || e.metaKey) && (e.key === 'y' || e.key === 'Y')) { e.preventDefault(); this.edRedo(); }
+      if (e.key === 'l' || e.key === 'L') { this.setState({ leys: !this.state.leys }, () => this.buildWorld()); this.sfx('toggle'); }
+      if (e.key === 'Escape') this.setState({ chronik: false, council: false, sel: null, selB: null, edit: false, todOpen: false });
+    });
+  }
+
+  componentWillUnmount() {
+    cancelAnimationFrame(this.raf);
+    clearInterval(this.uiTimer);
+    window.removeEventListener('resize', this.onResize);
+    if (this.music) { this.music.pause(); this.music = null; }
+    if (this.el.cv) { this.el.cv.removeEventListener('mousedown', this.onDown); this.el.cv.removeEventListener('wheel', this.onWheel); this.el.cv.removeEventListener('mousemove', this.onHover); }
+    window.removeEventListener('mousemove', this.onMove);
+    window.removeEventListener('mouseup', this.onUp);
+  }
+
+  /* ---------------- Assets ---------------- */
+
+  load(key, url) {
+    return new Promise(res => {
+      const im = new Image();
+      im.crossOrigin = 'anonymous';
+      im.onload = () => { this.img[key] = im; this.done++; this.setState({ loadLabel: 'loading village … ' + Math.round(this.done / this.total * 100) + ' %' }); res(); };
+      im.onerror = () => { this.done++; res(); };
+      im.src = url;
+    });
+  }
+
+  buildAdj() {
+    this.adj = new Map();
+    for (const [a, b] of this.EDGES) {
+      if (!this.adj.has(a)) this.adj.set(a, []);
+      if (!this.adj.has(b)) this.adj.set(b, []);
+      this.adj.get(a).push(b); this.adj.get(b).push(a);
+    }
+  }
+
+  /** R1 + R2 — läuft NACH dem Messen, sonst liegt die Tür bei hohen Blättern unter dem Dach.
+   *  Tür = eine Zellreihe unter der Sockelunterkante (`y + 0.45h`), genau eine je Gebäude;
+   *  dazu ein Anfahrtspunkt darunter und eine Kante zum nächsten Netzpunkt. */
+  layoutDoors() {
+    const snap = v => Math.round((v - 32) / 64) * 64 + 32;
+    const T = this.T;
+    const say = m => (this.warn = this.warn || []).push(m);
+    // Begehbar heisst: Land, keine Stufe, keine Klippenwand. Gilt für Tür UND Anfahrt —
+    // beides sind abgeleitete Positionen, also beides prüfen (Bug #59/#60).
+    const walkable = (c, r) => !this.land || (!!(this.land[r] && this.land[r][c]) && !this.stepped(c, r));
+    // Die Tür folgt der GEMALTEN Höhe: von der Sockelreihe nach unten laufen, solange die Stufe
+    // anhält (Hof), dann eine Reihe Klippe, dann die Tür. `lift` ist damit überflüssig.
+    this.BUILDINGS.forEach(bd => {
+      const cx = Math.floor(bd.x / T);
+      const lvlAt = rr => (this.lvl && this.lvl[rr] && this.lvl[rr][cx]) || 0;
+      let r = Math.floor((bd.y + bd.h * .45 - 1) / T), steps = 0;
+      while (lvlAt(r + 1) > 0 && steps++ < 12) r++;
+      let doorR = lvlAt(r) > 0 ? r + 2 : r + 1;        // auf Höhe: Klippe dazwischen
+      let k = 0;
+      while (!walkable(cx, doorR) && k++ < 4) doorR++;  // Küste: weiter nach unten suchen
+      let dCx = cx;
+      if (!walkable(cx, doorR)) {
+        // Von unten geht es hier nicht. Statt einer Tür im Meer: nächste begehbare Zelle am Sockel
+        // suchen und den Fall MELDEN — Layout ist Autorenarbeit (R3-Prinzip).
+        let found = null;
+        for (let dr = 1; dr <= 4 && !found; dr++) for (const dc of [0, -1, 1, -2, 2]) {
+          if (walkable(cx + dc, r + dr)) { found = { c: cx + dc, r: r + dr }; break; }
+        }
+        if (found) { dCx = found.c; doorR = found.r; say('[R1] ' + bd.id + ': Eingang nicht von unten möglich — Ausweichzelle'); }
+        else { doorR = r; say('[R1] Tür von ' + bd.id + ' liegt im Wasser — Gebäude verschieben'); }
+      }
+      bd.door = { x: dCx * T + T / 2, y: doorR * T + T / 2 };
+    });
+    // Der Wegpunkt IST die Tür — er wird beim ersten Mal angelegt und danach **mitgeführt**.
+    // (Vorher stand hier ein `_stubsDone`-Ausstieg: die Tür wanderte, ihr Knoten blieb stehen.)
+    const net = this._netCount === undefined ? (this._netCount = this.WP.length) : this._netCount;
+    // Anfahrt liegt IMMER in der Türspalte, eine begehbare Zelle darunter — diagonal würde die
+    // Kante Tür→Anfahrt eine Ecke über Wasser schneiden.
+    for (const b of this.BUILDINGS) {
+      const dc = Math.floor(b.door.x / T), dr = Math.floor(b.door.y / T);
+      let ar = -1;
+      for (let k = 1; k <= 3 && ar < 0; k++) if (walkable(dc, dr + k)) ar = dr + k;
+      if (ar < 0 && walkable(dc, dr - 1)) ar = dr - 1;          // Notfall: von oben anfahren
+      if (ar < 0) { say('[R2] kein Anfahrtspunkt für ' + b.id); ar = dr + 1; }
+      const app = { x: b.door.x, y: ar * T + T / 2 };
+      if (b.wp === undefined) {
+        b.wp = this.WP.push({ x: b.door.x, y: b.door.y }) - 1;
+        b.wpApp = this.WP.push(app) - 1;
+        let best = 0, bd = Infinity;
+        for (let i = 0; i < net; i++) {
+          const d = Math.hypot(this.WP[i].x - app.x, this.WP[i].y - app.y);
+          if (d < bd) { bd = d; best = i; }
+        }
+        this.EDGES.push([b.wpApp, b.wp], [best, b.wpApp]);
+      } else {
+        this.WP[b.wp] = { x: b.door.x, y: b.door.y };
+        this.WP[b.wpApp] = app;
+      }
+    }
+    this.buildAdj();
+  }
+
+  /** Höhen-Maske aus `mapLvl` ableiten, OHNE zu zeichnen. Die Türen brauchen sie, und die
+   *  Sandmaske braucht die Türen — deshalb muss die Maske vor dem Malen fertig sein. */
+  deriveLvl() {
+    if (!this.mapLvl || !this.land) return;
+    const C = this.COLS, R = this.ROWS, T = this.T, lvl = [];
+    for (let r = 0; r < R; r++) {
+      lvl[r] = [];
+      for (let c = 0; c < C; c++) {
+        const v = (this.mapLvl[r] && this.mapLvl[r][c]) || 0;
+        lvl[r][c] = (this.land[r] && this.land[r][c]) ? v : 0;
+      }
+    }
+    this.lvl = lvl;
+    this.stairCols = new Set();
+    for (const b of this.BUILDINGS) {
+      const cx = Math.floor(b.x / T), rb = Math.floor((b.y + b.h * .45 - 1) / T);
+      if (lvl[rb] && lvl[rb][cx]) this.stairCols.add(cx);
+    }
+  }
+
+  /** R3 · Anspruchsflaechen aus der aktuellen Sockelhoehe; Schnitte sind ein Befund. */
+  computeClaims() {
+    this.BUILDINGS.forEach(b => {
+      const w = b.w || b.h * .84;                 // echte Blattbreite, sobald gemessen
+      b.claim = { x0: b.x - w / 2, x1: b.x + w / 2, y0: b.y - b.h * .55, y1: b.y + b.h * .45 + 96 };
+    });
+    this._foot = null;
+    for (let i = 0; i < this.BUILDINGS.length; i++) for (let j = i + 1; j < this.BUILDINGS.length; j++) {
+      const A = this.BUILDINGS[i].claim, B = this.BUILDINGS[j].claim;
+      if (A.x0 < B.x1 && B.x0 < A.x1 && A.y0 < B.y1 && B.y0 < A.y1)
+        console.warn('[R3] Claim-Schnitt:', this.BUILDINGS[i].id, 'x', this.BUILDINGS[j].id);
+    }
+  }
+
+  /** Inhaltsbox von Frame 0 messen (Alpha-Scan): TS-Frames sind grösstenteils Rand, und der Rand
+   *  ist je Blatt anders. Daraus kommen Fusslinie (`footPad`) und Kopfhöhe (`bodyH`) —
+   *  eine globale Konstante kann das nicht leisten (Lancer 122 px Rand, Warrior 56). */
+  scanSheet(im, F) {
+    const cv = document.createElement('canvas');
+    cv.width = F; cv.height = F;
+    const g = cv.getContext('2d');
+    g.drawImage(im, 0, 0, F, F, 0, 0, F, F);
+    const d = g.getImageData(0, 0, F, F).data;
+    let top = -1, bot = -1;
+    for (let y = 0; y < F; y++) for (let x = 0; x < F; x++) {
+      if (d[(y * F + x) * 4 + 3] > 8) { if (top < 0) top = y; bot = y; break; }
+    }
+    if (bot < 0) return { footPad: 0, bodyH: F };
+    return { footPad: F - 1 - bot, bodyH: bot - top };
+  }
+
+  measureUnits() {
+    for (const u of Object.keys(this.UNITS)) {
+      const spec = this.UNITS[u], F = spec.strip ? spec.F : 192;
+      const im = spec.strip ? this.img['i_' + u + '_blue'] : this.img['h_' + u + '_blue'];
+      if (im) Object.assign(spec, this.scanSheet(im, F));
+    }
+    this.pawnPad = this.img.p_empty ? this.scanSheet(this.img.p_empty, 192) : { footPad: 57, bodyH: 74 };
+  }
+
+  /** Native Blattgroesse eines ATLAS-Schluessels (Frame-Hoehe, sonst Bildhoehe). */
+  natH(key) {
+    const a = this.ATLAS[key], im = this.img[key];
+    if (!im) return 64;
+    return a && a.frame ? a.frame[1] : im.naturalHeight;
+  }
+
+  cap(s) { return s[0].toUpperCase() + s.slice(1); }
+
+  /** Free-Pack-Einheit: Run- und Idle-Blatt liegen getrennt im Farbordner. */
+  stripUrl(unit, color, which) {
+    const spec = this.UNITS[unit];
+    return this.PACKS.free + 'Units/' + this.cap(color) + '%20Units/' + spec.dir + '/' + spec[which] + '.png';
+  }
+
+  sheetUrl(unit, color) {
+    const cap = s => s[0].toUpperCase() + s.slice(1);
+    const U = cap(unit), C = cap(color);
+    const file = (unit === 'archer' && color === 'purple') ? 'Archer_Purlple' : U + '_' + C;
+    return this.TS + 'Factions/Knights/Troops/' + U + '/' + C + '/' + file + '.png';
+  }
+
+  async loadAssets() {
+    const jobs = [];
+    this.done = 0;
+    for (const b of this.BUILDINGS) jobs.push(['b_' + b.id, b.src || this.TS + 'BuildingsCustom/' + b.img + '.png']);
+    // Träger-Pawn (blau, Ambience): leer + drei Lasten, alle Blätter 1152×192 = 6 Frames.
+    jobs.push(['p_empty', this.PACKS.free + 'Units/Blue%20Units/Pawn/Pawn_Run.png']);
+    for (const r of ['Wood', 'Gold', 'Meat']) jobs.push(['p_' + r.toLowerCase(), this.PACKS.free + 'Units/Blue%20Units/Pawn/Pawn_Run%20' + r + '.png']);
+    for (const [k, a] of Object.entries(this.ATLAS)) jobs.push([k, this.PACKS[a.pack] + a.path]);
+    jobs.push(['pointer', this.UI + 'Pointers/01.png']);
+    jobs.push(['ribbonRed', this.UI + 'Ribbons/Ribbon_Red_3Slides.png']);
+    for (let i = 1; i <= 12; i++) jobs.push(['d' + i, this.TS + 'Deco/' + String(i).padStart(2, '0') + '.png']);
+    for (const u of Object.keys(this.UNITS)) for (const c of this.COLORS) {
+      const spec = this.UNITS[u];
+      if (!spec.strip) { jobs.push(['h_' + u + '_' + c, this.sheetUrl(u, c)]); continue; }
+      if (u === 'lancer' && c === 'red') continue;             // Blatt fehlt im Free Pack
+      jobs.push(['h_' + u + '_' + c, this.stripUrl(u, c, 'run')]);
+      jobs.push(['i_' + u + '_' + c, this.stripUrl(u, c, 'idle')]);
+    }
+    this.total = jobs.length;
+    await Promise.all(jobs.map(j => this.load(j[0], j[1])));
+    try { await document.fonts.ready; } catch (e) { /* Fonts optional */ }
+    // Blätter messen statt schätzen (F2): die Sockelhöhe ist die echte Blatthöhe.
+    for (const b of this.BUILDINGS) {
+      const im = this.img['b_' + b.id];
+      // Nicht mehr die rohe Blatthöhe: die im Register gesetzte Höhe ist die Absicht (Depot 176 …
+      // Burg 240) und hält alle Häuser in einem Band. Sonst bestimmt das Blatt die Hierarchie.
+      if (im) { b.hSheet = im.naturalHeight; b.w = b.h * (im.naturalWidth / im.naturalHeight); }
+    }
+    this.measureUnits();
+    this.layoutDoors();
+    this.computeClaims();
+    this.buildWorld();                  // erzeugt land + mapLvl + lvl
+    this._ley = null;                   // Netz steht erst nach dem zweiten Türlauf
+    this.layoutDoors();                 // jetzt mit `this.lvl`: Türen folgen der Höhe
+    this.computeClaims();
+    this.buildWorld();                  // und jetzt mit den richtigen Türen malen (Sandmaske!)
+    this.spawnAgents(this.state.count);
+    this.setState({ loading: false });
+    this.bindCanvas(); this.fit();
+    this.last = performance.now();
+    this.raf = requestAnimationFrame(ts => this.tick(ts));
+  }
+
+  /* ---------------- Welt: Tiles nach Tilemap-Guide ---------------- */
+
+  rngF(seed) { let s = seed; return () => { s |= 0; s = (s + 0x6D2B79F5) | 0; let t = Math.imul(s ^ (s >>> 15), 1 | s); t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t; return ((t ^ (t >>> 14)) >>> 0) / 4294967296; }; }
+
+  segDist(px, py, ax, ay, bx, by) {
+    const dx = bx - ax, dy = by - ay, l2 = dx * dx + dy * dy;
+    if (l2 === 0) return Math.hypot(px - ax, py - ay);
+    let t = ((px - ax) * dx + (py - ay) * dy) / l2;
+    t = Math.max(0, Math.min(1, t));
+    return Math.hypot(px - (ax + t * dx), py - (ay + t * dy));
+  }
+
+  /** Läuft die Strecke durch einen HAUSKÖRPER (nicht Vorplatz, nicht Türzone)? Gibt das Haus zurück. */
+  segCrossesClaim(s) {
+    if (!s.a || !s.b) return null;
+    const n = Math.max(2, Math.ceil(Math.hypot(s.b.x - s.a.x, s.b.y - s.a.y) / 24));
+    for (let k = 0; k <= n; k++) {
+      const x = s.a.x + (s.b.x - s.a.x) * k / n, y = s.a.y + (s.b.y - s.a.y) * k / n;
+      for (const b of this.BUILDINGS) {
+        if (!b.claim || !b.door) continue;
+        if (Math.hypot(x - b.door.x, y - b.door.y) < 104) continue;      // Türzone ist erlaubt
+        const cl = b.claim;
+        if (x > cl.x0 + 10 && x < cl.x1 - 10 && y > cl.y0 + 10 && y < cl.y1 - 88) return b;
+      }
+    }
+    return null;
+  }
+
+  segs() {
+    return this.EDGES.map(([a, b]) => ({
+      a: this.WP[a], b: this.WP[b],
+      main: this.MAIN.has(Math.min(a, b) + '-' + Math.max(a, b))
+    }));
+  }
+
+  /** 4-Bit-Blob-Autotile: liefert Spalte/Zeile im 4×4-Block. */
+  tileIdx(m, c, r) {
+    const at = (cc, rr) => (m[rr] && m[rr][cc]) ? 1 : 0;
+    const n = at(c, r - 1), s = at(c, r + 1), w = at(c - 1, r), e = at(c + 1, r);
+    const col = (w && e) ? 1 : (!w && e) ? 0 : (w && !e) ? 2 : 3;
+    const row = (n && s) ? 1 : (!n && s) ? 0 : (n && !s) ? 2 : 3;
+    return [col, row];
+  }
+  /** 4er-Index auf einen 3x3-Satz (Shadow, Foam) abbilden. */
+  to3(i) { return i === 0 ? 0 : i === 2 ? 2 : 1; }
+
+  /** Frame aus einem Strip zeichnen; x,y = Fusspunkt-Mitte (anchor 'center' zentriert). */
+  blit(g, key, i, x, y, h, anchor) {
+    const a = this.ATLAS[key], im = this.img[key];
+    if (!a || !im) return;
+    const fw = a.frame ? a.frame[0] : im.naturalWidth, fh = a.frame ? a.frame[1] : im.naturalHeight;
+    if (!h) h = fh * this.SCALE;                 // Default: Blatt in Originalgroesse
+    const w = h * (fw / fh);
+    g.drawImage(im, Math.max(0, i | 0) * fw, 0, fw, fh, x - w / 2, y - h * (anchor === 'center' ? .5 : 1), w, h);
+  }
+  /** Laufender Frame-Index; loop:false klemmt am letzten Frame. */
+  frameOf(key, t, loop) {
+    const a = this.ATLAS[key], n = a.frames || 1, i = Math.floor(t * (a.fps || 10));
+    return loop === false ? Math.min(n - 1, i) : i % n;
+  }
+  fxLife(type) { const a = this.ATLAS[type]; return (a.frames || 1) / (a.fps || 10); }
+  /** Vierter Parameter wird ignoriert: FX laufen in Blattgroesse (1:1), nicht skaliert. */
+  spawnFx(type, x, y) { this.fxs.push({ type, x, y, h: this.natH(type) * this.SCALE, t: 0 }); }
+
+  /** Fussabdruck je Gebaeude: Ellipse an der Basis. Haeuser sind fest — Helden laufen nicht durch. */
+  footprints() {
+    if (this._foot) return this._foot;
+    // Aus der GEMESSENEN Breite und der Sockellinie — Höhe ist kein Ersatz für Breite (Bug #51).
+    this._foot = this.BUILDINGS.map(b => {
+      const w = b.w || b.h * .84;
+      return { x: b.x, y: b.y + b.h * .45 - 26, rx: w * .34, ry: w * .12 };
+    });
+    // Schafe und Bäume sind Körper, keine Tapete: sonst laufen Helden mitten durch (und optisch
+    // UNTER) dem Schaf durch. Büsche und Steine bleiben begehbar — sie sind flach.
+    for (const s of this.sheep || []) this._foot.push({ x: s.x, y: s.y - 10, rx: 34, ry: 15 });
+    for (const d of this.deco || []) if (d.kind === 'tree') this._foot.push({ x: d.x, y: d.y - 6, rx: 26, ry: 12 });
+    this.buildFootGrid();
+    return this._foot;
+  }
+
+  /** Rasterindex über die Fussabdrücke.
+   *  Bis v4.4 waren das 12 Häuser, da war eine lineare Suche gleichgültig. Mit Schafen und ~450
+   *  Bäumen (v4.5) prüft jede bewegte Figur 460 Ellipsen — bei ~40 Figuren sind das 18 000
+   *  Prüfungen pro Frame, jede mit zwei `Math.hypot`. Das war das Ruckeln und das Einfrieren.
+   *  Mit 192-px-Zellen bleiben pro Abfrage eine Handvoll Kandidaten. */
+  FGRID = 192;
+  buildFootGrid() {
+    const G = this.FGRID, grid = new Map();
+    for (const p of this._foot) {
+      const c0 = Math.floor((p.x - p.rx) / G), c1 = Math.floor((p.x + p.rx) / G);
+      const r0 = Math.floor((p.y - p.ry) / G), r1 = Math.floor((p.y + p.ry) / G);
+      for (let r = r0; r <= r1; r++) for (let c = c0; c <= c1; c++) {
+        const k = c + ',' + r;
+        let a = grid.get(k); if (!a) { a = []; grid.set(k, a); }
+        a.push(p);
+      }
+    }
+    this._fgrid = grid;
+  }
+  /** > 1 = frei, <= 1 = im Haus. Gibt zusaetzlich die Normale fuer den Abprall zurueck. */
+  blockedBy(x, y) {
+    this.footprints();
+    const cell = this._fgrid.get(Math.floor(x / this.FGRID) + ',' + Math.floor(y / this.FGRID));
+    if (!cell) return null;
+    for (const p of cell) {
+      const nx = (x - p.x) / p.rx, ny = (y - p.y) / p.ry;
+      if (nx * nx + ny * ny < 1) return { nx: nx / (Math.hypot(nx, ny) || 1), ny: ny / (Math.hypot(nx, ny) || 1) };
+    }
+    return null;
+  }
+
+  /** Zelle gehört zur Höhenstufe: Plateau **oder** eine der zwei Klippenreihen darunter.
+   *  Dieselbe Prüfung benutzt die Sandmaske — sonst ist die Treppe Dekoration. */
+  /** Höhenstufe einer Zelle (0 = Flachland). */
+  level(c, r) { const m = this.lvl; return (m && m[r] && m[r][c]) || 0; }
+  /** Klippenzelle: darüber liegt eine höhere Stufe — die Wand ist keine Fläche. */
+  cliffCell(c, r) { return this.level(c, r - 1) > this.level(c, r); }
+  /** Gesperrt: Stufe oder Klippenwand, außer in der Treppenspalte. */
+  isStair(c) { return !!(this.stairCols && this.stairCols.has(c)); }
+  stepped(c, r) {
+    if (!this.lvl || this.isStair(c)) return false;
+    return this.level(c, r) > 0 || this.cliffCell(c, r);
+  }
+
+  /** Höhenstufe ist eine Grenze: hinauf geht es nur über die Treppe. Sockel (R4) gilt zusätzlich. */
+  blocked(nx, ny, ox, oy) {
+    const hit = this.blockedBy(nx, ny);
+    if (hit) return hit;
+    if (!this.elev) return null;
+    const T = this.T;
+    const cb = Math.floor(nx / T), rb = Math.floor(ny / T);
+    const ca = Math.floor(ox / T), ra = Math.floor(oy / T);
+    const bounce = () => {
+      const sx = Math.sign(nx - ox), sy = Math.sign(ny - oy);
+      return { nx: -sx || 0, ny: -sy || 0 };
+    };
+    if (this.isStair(cb) && this.isStair(ca)) return null;       // Treppe: hinauf und hinunter erlaubt
+    if (this.cliffCell(cb, rb)) return bounce();                 // Klippenwand ist keine Fläche
+    if (this.level(cb, rb) !== this.level(ca, ra)) return bounce();  // Stufenwechsel nur über die Treppe
+    return null;
+  }
+
+  buildWorld() {
+    const T = this.T, C = this.COLS, R = this.ROWS;
+    const rnd = this.rngF(1337);
+    // Insel-Maske (konvex, damit der 4×4-Autotile-Satz genügt)
+    const icx = C / 2 - .5, icy = R / 2 - .5, irx = C / 2 - 4.5, iry = R / 2 - 4.5;
+    const land = [];
+    for (let r = 0; r < R; r++) {
+      land[r] = [];
+      for (let c = 0; c < C; c++) {
+        const dx = (c - icx) / irx, dy = (r - icy) / iry;
+        land[r][c] = dx * dx + dy * dy < 1;
+      }
+    }
+    // Höhenstufe zuerst: die Sandmaske muss sie kennen, sonst laufen Wege in die Klippenwand.
+    const elev = [];
+    for (let r = 0; r < R; r++) { elev[r] = []; for (let c = 0; c < C; c++) elev[r][c] = false; }
+    // R6 · Höfe sind Sand. Und: kein Klotz — die Silhouette ist eine gewachsene Kuppe mit Kerbe
+    // und einem Arm nach Osten, dazu eine zweite Stufe hinter der Burg (Guide: Shadow/Elevated
+    // wiederholen, andere Farbvariante je Stufe).
+    const HOF = 2;
+    const mk = () => { const m = []; for (let r = 0; r < R; r++) { m[r] = []; for (let c = 0; c < C; c++) m[r][c] = false; } return m; };
+    const L1 = mk(), L2 = mk(), hof = mk();
+    const cas = this.BUILDINGS.find(b => b.id === 'burg');
+    // Höhen sind ab jetzt DATEN: `mapLvl` (0/1/2 je Zelle) wird einmal generiert und danach
+    // im Editor gemalt. Der Generator läuft nur, solange nichts gemalt oder importiert ist.
+    if (this.mapLvl) {
+      for (let r = 0; r < R; r++) for (let c = 0; c < C; c++) {
+        const v = (this.mapLvl[r] && this.mapLvl[r][c]) || 0;
+        if (v >= 1 && land[r] && land[r][c]) L1[r][c] = true;
+        if (v >= 2 && land[r] && land[r][c]) L2[r][c] = true;
+      }
+      const rBase0 = cas ? Math.floor((cas.y + cas.h * .45 - 1) / T) : -99;
+      for (let r = rBase0 + 1; r <= rBase0 + HOF; r++) for (let c = 0; c < C; c++)
+        if (L1[r] && L1[r][c] && L1[r][c - 1] && L1[r][c + 1]) hof[r][c] = true;
+    } else if (cas) {
+      const cc = Math.round((cas.x - T / 2) / T), rBase = Math.floor((cas.y + cas.h * .45 - 1) / T);
+      const rTop = rBase - 6, r1 = rBase + HOF;
+      // Breitenprofil statt Rechteck: oben eingezogen (gewachsene Kuppe), unten eine **durchgehende**
+      // Kante — sonst zerfällt die Klippe in ein Dutzend Mauerstücke und liest sich als Labyrinth.
+      const w1 = [3, 5, 6, 7, 7, 7, 7, 7, 7];
+      for (let i = 0; i <= r1 - rTop; i++) {
+        const r = rTop + i, hw = w1[Math.min(i, w1.length - 1)];
+        for (let c = cc - hw; c <= cc + hw; c++) if (land[r] && land[r][c]) L1[r][c] = true;
+      }
+      // Stufe 2: obere Terrasse hinter der Burg, zwei Reihen, ebenfalls oben eingezogen
+      const w2 = [2, 3];
+      for (let i = 0; i < w2.length; i++) {
+        const r = rTop + i;
+        for (let c = cc - w2[i]; c <= cc + w2[i]; c++) if (L1[r][c]) L2[r][c] = true;
+      }
+      for (let r = rBase + 1; r <= r1; r++) for (let c = cc - 6; c <= cc + 6; c++) {
+        if (L1[r][c] && L1[r][c - 1] && L1[r][c + 1]) hof[r][c] = true;
+      }
+    }
+    // Für Kollision und Deko zählt die Vereinigung beider Stufen.
+    const elevAll = mk();
+    for (let r = 0; r < R; r++) for (let c = 0; c < C; c++) elevAll[r][c] = L1[r][c] || L2[r][c];
+    for (let r = 0; r < R; r++) elev[r] = elevAll[r];
+    this.elev = elev;
+    // Höhen-INDEX statt Boolean-Vereinigung: 0 = Flachland, 1 = Plateau, 2 = obere Terrasse.
+    // Eine Vereinigung kann einen Stufenwechsel nicht sehen — dann ist jede zweite Klippe Deko.
+    const lvl = mk();
+    for (let r = 0; r < R; r++) for (let c = 0; c < C; c++) lvl[r][c] = L2[r][c] ? 2 : L1[r][c] ? 1 : 0;
+    this.lvl = lvl;
+    if (!this.mapLvl) this.mapLvl = lvl.map(row => row.slice());   // Generator-Ergebnis wird Ausgangskarte
+    // Treppenspalten: jede Spalte, in der ein Gebäude auf einer Stufe steht. Der Editor macht
+    // mehrere Bauten auf Höhe zum Normalfall — eine globale Spalte reicht dafür nicht.
+    this.stairCols = new Set();
+    for (const b of this.BUILDINGS) {
+      const cx = Math.floor(b.x / T), rb = Math.floor((b.y + b.h * .45 - 1) / T);
+      if ((lvl[rb] && lvl[rb][cx]) || 0) this.stairCols.add(cx);
+    }
+    this.L1 = L1; this.L2 = L2; this.hof = hof;
+    const onStep = (c, r) => this.stepped(c, r);
+    // Netzpunkte, die in der Höhenstufe liegen, weichen aus — aber nur auf **begehbare** Zellen
+    // (Land, keine Stufe, keine Klippe). Vorher lief die Suche nur gegen `onStep` und konnte einen
+    // Punkt von der Insel ins Meer schieben (Bug #61). Ausgewichen wird jedes Mal aus der
+    // AUSGANGSLAGE, sonst bleibt eine einmal verschobene Stelle für immer verschoben.
+    if (!this._wpBase) this._wpBase = this.WP.slice(0, this._netCount === undefined ? this.WP.length : this._netCount).map(w => ({ ...w }));
+    const okCell = (c, r) => !!(land[r] && land[r][c]) && !onStep(c, r);
+    for (let i = 0; i < this._wpBase.length; i++) {
+      const w0 = this._wpBase[i], c = Math.floor(w0.x / T), r0 = Math.floor(w0.y / T);
+      let r = r0, guard = 0;
+      while (!okCell(c, r) && guard++ < 14) r++;
+      if (!okCell(c, r)) { r = r0; guard = 0; while (!okCell(c, r) && guard++ < 14) r--; }
+      if (!okCell(c, r)) { (this.warn = this.warn || []).push('[R2] Netzpunkt ' + i + ' findet keine begehbare Zelle'); r = r0; }
+      this.WP[i] = { x: w0.x, y: r * T + T / 2 };
+    }
+
+    // Sand-Maske = Wege + Dorfplatz, auf das Kachelraster gerastert
+    const sand = [];
+    // Wege, die durch einen Hauskörper laufen, werden NICHT gemalt — ein Weg hinter dem Haus
+    // liest sich als Fehler. Gemeldet statt stumm verschoben (R2/R3).
+    const sg = this.segs().filter(s => {
+      const hit = this.segCrossesClaim(s);
+      if (hit) { (this.warn = this.warn || []).push('[R2] Weg läuft durch ' + hit.label + ' — Weg oder Haus versetzen'); return false; }
+      return true;
+    });
+    for (let r = 0; r < R; r++) {
+      sand[r] = [];
+      for (let c = 0; c < C; c++) {
+        const px = c * T + T / 2, py = r * T + T / 2;
+        let on = Math.hypot(px - this.PLAZA.x, (py - this.PLAZA.y) * 1.3) < 120 * this.LAYOUT_K;
+        if (!on) for (const s of sg) {
+          const hw = s.main ? 38 : 30;
+          if (this.segDist(px, py, s.a.x, s.a.y, s.b.x, s.b.y) < hw) { on = true; break; }
+        }
+        // Erdfeld vor jeder Tür: liegt auch dann, wenn der Stichweg an einer Stufe gekappt wird.
+        if (!on) for (const b of this.BUILDINGS) {
+          if (b.door && Math.hypot(px - b.door.x, (py - b.door.y - 22) * 1.2) < 62) { on = true; break; }
+        }
+        sand[r][c] = on && land[r][c] && !onStep(c, r);   // R2: der Weg endet an der Kante
+      }
+    }
+    this.land = land;
+    this.sandM = sand;
+    this.landInv = land.map(row => row.map(v => !v));
+
+    const cv = document.createElement('canvas');
+    cv.width = this.W; cv.height = this.H;
+    const g = cv.getContext('2d');
+    g.imageSmoothingEnabled = false;
+
+    // Flat Ground (grüner 4×4-Block, Spalten 0–3)
+    const gr = this.img.ground;
+    if (gr) for (let r = 0; r < R; r++) for (let c = 0; c < C; c++) {
+      if (!land[r][c]) continue;
+      const [tc, tr] = this.tileIdx(land, c, r);
+      g.drawImage(gr, tc * T, tr * T, T, T, c * T, r * T, T, T);
+    }
+    // Sand-Block (Spalten 5–8) für Wege und Platz
+    if (gr) for (let r = 0; r < R; r++) for (let c = 0; c < C; c++) {
+      if (!sand[r][c]) continue;
+      const [tc, tr] = this.tileIdx(sand, c, r);
+      g.drawImage(gr, (5 + tc) * T, tr * T, T, T, c * T, r * T, T, T);
+    }
+
+    // Ebenen 3–6 nach Guide: Shadow und Elevated wiederholen sich je Stufe.
+    // Shadow: derselbe Bereich wie die begehbare Oberseite, aber **genau eine Kachel tiefer**
+    // (Guide, S. 2) — die Überlappung der 192-px-Stempel macht den Verlauf.
+    const st = this.img.shstamp, el = this.img.elev;
+    const drawLevel = (m, sheet) => {
+      if (!sheet) return;
+      if (st) for (let r = 0; r < R; r++) for (let c = 0; c < C; c++) {
+        if (!m[r][c]) continue;
+        const bottom = !(m[r + 1] && m[r + 1][c]);
+        // Innen liegt der Stempel unter den Kacheln; sichtbar wird er unter der Klippe.
+        g.drawImage(st, c * T + T / 2 - 96, (r + 1) * T + T / 2 - 96, 192, 192);
+        // Eine Regel für alle Unterkanten: der Wurfschatten liegt auf Gras, nie auf Sand.
+        // Der Stempel ist 192 px = 3×3 Zellen, also wird die ganze Fläche geprüft — halb gesetzt
+        // wäre schlimmer als gar nicht (ein Streifen Dreck auf der Straße).
+        if (!bottom) continue;
+        let onSand = false;
+        for (let rr = r + 1; rr <= r + 3; rr++) for (let cc = c - 1; cc <= c + 1; cc++)
+          if (sand[rr] && sand[rr][cc]) onSand = true;
+        if (!onSand) g.drawImage(st, c * T + T / 2 - 96, (r + 2) * T + T / 2 - 96, 192, 192);
+      }
+      for (let r = 0; r < R; r++) for (let c = 0; c < C; c++) {
+        if (!m[r][c]) continue;
+        const [tc, tr] = this.tileIdx(m, c, r);
+        g.drawImage(sheet, (5 + tc) * T, tr * T, T, T, c * T, r * T, T, T);
+        if (m[r + 1] && m[r + 1][c]) continue;
+        // Die Klippe ist EINE Kachel hoch. Zeile 4 und 5 sind nicht Ober- und Unterteil, sondern
+        // die zwei Klippenarten aus dem Guide: 4 = zur Wiese darunter, 5 = direkt zum Wasser.
+        if (this.isStair(c) && el) g.drawImage(el, 3 * T, 7 * T, T, T, c * T, (r + 1) * T, T, T);
+        else {
+          const toWater = !(land[r + 2] && land[r + 2][c]);
+          g.drawImage(sheet, (5 + tc) * T, (toWater ? 5 : 4) * T, T, T, c * T, (r + 1) * T, T, T);
+        }
+      }
+    };
+    drawLevel(L1, this.img.terr);
+    // Hof: derselbe Sand-Block wie die Wege, aber auf der Oberseite der ersten Stufe.
+    if (gr) for (let r = 0; r < R; r++) for (let c = 0; c < C; c++) {
+      if (!hof[r][c]) continue;
+      const [tc, tr] = this.tileIdx(hof, c, r);
+      g.drawImage(gr, (5 + tc) * T, tr * T, T, T, c * T, r * T, T, T);
+    }
+    drawLevel(L2, this.img.terr2);
+
+    // Kein gemalter Brunnen — der Platz bleibt Terrain (TS-Packs haben kein Top-down-Rondell).
+
+    // Grasbüschel & Blumen (nur auf Gras, nie auf Sand)
+    const freeAt = (x, y) => {
+      const c = Math.floor(x / T), r = Math.floor(y / T);
+      if (!(land[r] && land[r][c]) || (sand[r] && sand[r][c])) return false;
+      // Plateau und Klippenfuß bleiben frei — Deko gehört nicht auf die Höhenstufe.
+      for (let d = 0; d <= 1; d++) if (elev[r - d] && elev[r - d][c]) return false;
+      // R3: Deko liegt ausserhalb der Anspruchsflaechen, nicht in einem Radius um die Mitte.
+      return this.BUILDINGS.every(b => x < b.claim.x0 - 12 || x > b.claim.x1 + 12 || y < b.claim.y0 - 12 || y > b.claim.y1 + 12);
+    };
+    for (let i = 0; i < 1000; i++) {
+      const x = rnd() * this.W, y = rnd() * this.H;
+      if (!freeAt(x, y)) continue;
+      g.strokeStyle = ['#2d5e22', '#1b4a15', '#3f7f30'][Math.floor(rnd() * 3)];
+      g.lineWidth = 1.6;
+      for (let b = 0; b < 3; b++) {
+        const bx = x + (rnd() - .5) * 9;
+        g.beginPath(); g.moveTo(bx, y); g.lineTo(bx + (rnd() - .5) * 6, y - (5 + rnd() * 8)); g.stroke();
+      }
+    }
+    for (let i = 0; i < 200; i++) {
+      const x = rnd() * this.W, y = rnd() * this.H;
+      if (!freeAt(x, y)) continue;
+      const col = ['#cc3333', '#ddcc33', '#4466cc', '#eeeedd', '#dd6699', '#ff8844'][Math.floor(rnd() * 6)];
+      for (let j = 0; j < 4; j++) {
+        const fx = x + (rnd() - .5) * 18, fy = y + (rnd() - .5) * 14;
+        g.strokeStyle = 'rgba(42,106,26,.7)'; g.lineWidth = 1.4;
+        g.beginPath(); g.moveTo(fx, fy + 2); g.lineTo(fx, fy + 7); g.stroke();
+        g.fillStyle = col; g.beginPath(); g.arc(fx, fy, 2.4, 0, 6.3); g.fill();
+      }
+    }
+    this.bg = cv;
+
+    // Schaum-Kacheln (animiert) an allen Wasserfeldern, die Land berühren
+    // Water Foam ist EIN 192-px-Stempel (3x3 Kacheln), mittig auf jede Land-Randkachel
+    // gesetzt; die Überlappungen bilden den durchgehenden Schaumkranz (Pixel-Frog-Guide).
+    this.foamCells = [];
+    for (let r = 0; r < R; r++) for (let c = 0; c < C; c++) {
+      if (!land[r][c]) continue;
+      let shore = false;
+      for (const [dc, dr] of [[0,-1],[0,1],[-1,0],[1,0],[-1,-1],[1,-1],[-1,1],[1,1]]) {
+        if (!(land[r + dr] && land[r + dr][c + dc])) { shore = true; break; }
+      }
+      if (shore) this.foamCells.push([c, r]);
+    }
+
+    // Wasser-Requisiten: Felsen und (absurderweise) eine Quietscheente
+    this.water = [];
+    for (let i = 0; i < 26; i++) {
+      const c = Math.floor(rnd() * C), r = Math.floor(rnd() * R);
+      if (land[r] && land[r][c]) continue;
+      let nearLand = false;
+      for (const [dc2, dr2] of [[0,-1],[0,1],[-1,0],[1,0]]) if (land[r + dr2] && land[r + dr2][c + dc2]) nearLand = true;
+      if (nearLand) continue;
+      this.water.push({ kind: i % 7 === 3 ? 'duck' : 'wrock', x: c * T + 32, y: r * T + 32, ph: rnd() * 4 });
+    }
+    // Wolken
+    this.clouds = [];
+    for (let i = 0; i < 7; i++) this.clouds.push({
+      key: ['cloudA', 'cloudB', 'cloudC'][i % 3],
+      x: rnd() * (this.W + 600) - 300, y: rnd() * this.H,
+      s: 260 + rnd() * 340, v: 5 + rnd() * 13, a: .9 + rnd() * .1
+    });
+
+    // Requisiten (Bäume, Büsche, Steine) — pro Frame tiefensortiert
+    this.deco = [];
+    const near = (x, y, list, d) => list.some(p => Math.hypot(p.x - x, p.y - y) < d);
+    const trees = [];
+    // Requisiten sind Karten-DATEN wie Höhen und Abbau-Orte: einmal erzeugt, danach gemalt oder
+    // importiert. Ohne das würfelt jeder Editor-Schritt den Wald neu und Gesetztes ist wieder weg.
+    if (this.mapDeco) { this.deco = this.mapDeco.map(d => ({ ...d })); } else {
+    for (let i = 0; i < 1600; i++) {
+      const x = 40 + rnd() * (this.W - 80), y = 60 + rnd() * (this.H - 90);
+      const c = Math.floor(x / T), r = Math.floor(y / T);
+      if (!(land[r] && land[r][c]) || (sand[r] && sand[r][c])) continue;
+      // Nie am Ufer: alle acht Nachbarn muessen Land sein, sonst steht der Baum im Wasser
+      let inland = true;
+      for (const [ddc, ddr] of [[0,-1],[0,1],[-1,0],[1,0],[-1,-1],[1,-1],[-1,1],[1,1]]) {
+        if (!(land[r + ddr] && land[r + ddr][c + ddc])) { inland = false; break; }
+      }
+      if (!inland) continue;
+      const dx = (c - icx) / irx, dy = (r - icy) / iry;
+      if (dx * dx + dy * dy < 0.55) continue;                 // Dorfmitte bleibt frei
+      if (!this.BUILDINGS.every(b => x < b.claim.x0 - 70 || x > b.claim.x1 + 70 || y < b.claim.y0 - 70 || y > b.claim.y1 + 70)) continue;
+      if (elev[r] && elev[r][c]) continue;                      // Bäume nicht auf die Höhenstufe
+      if (elev[r - 1] && elev[r - 1][c]) continue;               // und nicht an den Klippenfuß
+      if (near(x, y, trees, 120)) continue;
+      trees.push({ x, y });
+      this.deco.push({ kind: 'tree', x, y, f: Math.floor(rnd() * 4) });
+    }
+    for (let i = 0; i < 420; i++) {
+      const x = 40 + rnd() * (this.W - 80), y = 60 + rnd() * (this.H - 90);
+      if (!freeAt(x, y) || near(x, y, this.deco, 70)) continue;
+      const kind = rnd() < .6 ? 'bush' : 'rock';
+      const k = kind === 'bush' ? 1 + Math.floor(rnd() * 4) : 9 + Math.floor(rnd() * 4);
+      this.deco.push({ kind, x, y, key: 'd' + k, s: 0.8 + rnd() * 0.5 });
+    }
+    this.mapDeco = this.deco.map(d => ({ ...d }));
+    }
+    this._ley = null;                        // Netz kann gewandert sein
+    this.paintLeys(g);                       // Tusche gehört ins Weltbild, nicht in eine zweite Ebene
+    if (!this.res) this.initResources();     // Editor-Schritt baut Terrain neu, nicht die Wirtschaft
+  }
+
+  /* ---------------- Ressourcen: Holz = Artefakte, Gold = Token, Fleisch = Datenquellen ----------------
+     Modell: Abbau-Orte sind Stempel auf dem Raster, Träger sind Punkte mit Fuss (wie Units),
+     der Vorrat vor dem Haus ist eine Reihe 64-px-Sprites — nichts davon wird gemalt. */
+
+  /* Abbaustufen: ein Abbau-Ort hat einen Vorrat, und der Vorrat ist SICHTBAR.
+     Gold zählt von 6 herunter (sechs Steingrößen), Holz von 4 (Baum → Stumpf), Fleisch von 3
+     (die Schafe grasen nach). Leer heisst nicht weg: nach der Regenerationszeit füllt er auf. */
+  nodeMax(n) { return n.res === 'gold' ? 6 : n.res === 'wood' ? 4 : 3; }
+  nodeLeft(n) { return n.left === undefined ? this.nodeMax(n) : n.left; }
+  nodeSeed(n) { return (Math.round(n.x) * 7 + Math.round(n.y) * 13) % 997; }
+
+  /** Ein Träger holt eine Last: der Vorrat sinkt, bei 0 beginnt die Regeneration. */
+  mine(c) {
+    const n = (this.nodes || []).find(x => x === c.node) ||
+      (this.nodes || []).find(x => x.res === c.res && Math.hypot(x.x - c.x, x.y - c.y) < 80);
+    if (!n) return;
+    n.left = Math.max(0, this.nodeLeft(n) - 1);
+    if (n.left === 0) { n.regrow = 26 + Math.random() * 14; this.syncFelled(); }
+  }
+  regrowNodes(dt) {
+    for (const n of this.nodes || []) {
+      if (this.nodeLeft(n) > 0) continue;
+      n.regrow = (n.regrow === undefined ? 30 : n.regrow) - dt;
+      if (n.regrow <= 0) { n.left = this.nodeMax(n); n.regrow = undefined; this.syncFelled(); }
+    }
+  }
+
+  /** Goldader statt Einzelstein: der Hauptstein zeigt die Stufe, zwei kleinere stehen versetzt
+   *  daneben — mit dem Vorrat verschwinden erst die Beisteine, dann schrumpft der Hauptstein. */
+  drawVein(g, n) {
+    const lv = Math.ceil(this.nodeLeft(n));
+    if (lv <= 0) return;
+    const s = this.nodeSeed(n);
+    g.save();
+    g.fillStyle = 'rgba(112,84,46,.20)';
+    g.beginPath(); g.ellipse(n.x, n.y + 12, 62 - (6 - lv) * 5, 22 - (6 - lv) * 1.6, 0, 0, 6.3); g.fill();
+    g.restore();
+    const off = [[0, 0], [-40, 15], [36, 21]];
+    for (let k = 0; k < 3; k++) {
+      const step = lv - k * 2;
+      if (step < 1) break;
+      const o = off[k], wob = Math.sin((s + k * 97) * .017) * 9;
+      this.blit(g, 'gs' + Math.min(6, step), 0, n.x + o[0] + wob, n.y + o[1], 0, 'center');
+    }
+  }
+
+  /** Abbau-Ort zeichnen: Gold als Ader, ein abgeholzter Holzplatz als Stumpf, Fleisch sind die Schafe. */
+  drawNode(g, n) {
+    if (n.res === 'gold') { this.drawVein(g, n); return; }
+    if (n.res === 'wood' && this.nodeLeft(n) <= 0) {
+      const key = 'st' + (1 + this.nodeSeed(n) % 4);
+      this.blit(g, key, 0, n.x, n.y + 10, 0, 'center');
+    }
+  }
+  /** Ein abgeholzter Platz zeigt keinen Baum mehr — der Stumpf steht an seiner Stelle.
+   *  Lief je sichtbaren Baum je Frame über alle Abbau-Orte; meist ist kein Holzplatz leer,
+   *  darum steht der Ausstieg vor der Schleife. */
+  felledAt(p) {
+    if (!this._felled) return false;
+    for (const n of this._felled) {
+      if (Math.hypot(n.x - p.x, n.y - 34 - p.y) < 50) return true;
+    }
+    return false;
+  }
+  /** Liste der leeren Holzplätze — nur bei Änderung neu, nicht je Frame. */
+  syncFelled() {
+    const l = (this.nodes || []).filter(n => n.res === 'wood' && this.nodeLeft(n) <= 0);
+    this._felled = l.length ? l : null;
+  }
+
+  /** Gras, kein Sand, nicht am Ufer, ausserhalb aller Claims (R3). */
+  freeSpot(x, y) {
+    const T = this.T, c = Math.floor(x / T), r = Math.floor(y / T);
+    if (!(this.land[r] && this.land[r][c])) return false;
+    if (this.sandM[r] && this.sandM[r][c]) return false;
+    if (this.elev) for (let d = 0; d <= 1; d++) if (this.elev[r - d] && this.elev[r - d][c]) return false;
+    for (const [dc, dr] of [[0,-1],[0,1],[-1,0],[1,0]]) if (!(this.land[r + dr] && this.land[r + dr][c + dc])) return false;
+    return this.BUILDINGS.every(b => x < b.claim.x0 - 60 || x > b.claim.x1 + 60 || y < b.claim.y0 - 60 || y > b.claim.y1 + 60);
+  }
+
+  initResources() {
+    const rnd = this.rngF(4711);
+    this.nodes = [];
+    // Abbau-Orte sind Karten-DATEN: einmal generiert, danach gemalt oder importiert.
+    if (this.mapNodes) {
+      this.nodes = this.mapNodes.map(n => ({ ...n, vein: n.vein || (Math.random() < .5 ? 'vein' : 'veinS') }));
+      this.sheep = this.nodes.filter(n => n.res === 'meat').map(n => ({ x: n.x - 42, y: n.y - 18, ph: rnd() * 6, flip: rnd() < .5 }));
+      this.seedEconomy();
+      return;
+    }
+    // Holz: drei weit auseinander liegende Bäume werden Schlagplätze.
+    const trees = this.deco.filter(d => d.kind === 'tree');
+    for (const t of trees) {
+      if (this.nodes.length >= 3) break;
+      if (this.nodes.every(n => Math.hypot(n.x - t.x, n.y - t.y) > 430)) this.nodes.push({ res: 'wood', x: t.x, y: t.y + 34 });
+    }
+    // Gold: zwei Adern als 128-px-Stempel auf freiem Gras.
+    let tries = 0;
+    while (this.nodes.filter(n => n.res === 'gold').length < 2 && tries++ < 900) {
+      const x = 240 + rnd() * (this.W - 480), y = 240 + rnd() * (this.H - 480);
+      if (!this.freeSpot(x, y) || this.nodes.some(n => Math.hypot(n.x - x, n.y - y) < 300)) continue;
+      this.nodes.push({ res: 'gold', x, y, vein: rnd() < .5 ? 'vein' : 'veinS' });
+    }
+    // Datenquellen: eine Schafweide; zwei Schafe sind Ernteplätze.
+    this.sheep = []; tries = 0;
+    while (this.sheep.length < 6 && tries++ < 900) {
+      const x = 240 + rnd() * (this.W - 480), y = 240 + rnd() * (this.H - 480);
+      if (!this.freeSpot(x, y)) continue;
+      if (this.sheep.length && this.sheep.every(s => Math.hypot(s.x - x, s.y - y) > 260)) continue;   // eine Weide, nicht verstreut
+      if (this.sheep.some(s => Math.hypot(s.x - x, s.y - y) < 84)) continue;
+      this.sheep.push({ x, y, ph: rnd() * 6, flip: rnd() < .5 });
+    }
+    for (const s of this.sheep.slice(0, 2)) this.nodes.push({ res: 'meat', x: s.x + 42, y: s.y + 18 });
+    this.mapNodes = this.nodes.map(n => ({ res: n.res, x: n.x, y: n.y, vein: n.vein }));
+    this._foot = null;                    // Schafe sind Körper — der Fussabdruck-Satz ist veraltet
+    this.syncFelled();
+    this.seedEconomy();
+  }
+
+  /** Vorräte, Zähler und Träger — läuft beim ersten Aufbau und beim ausdrücklichen Zurücksetzen. */
+  seedEconomy() {
+    for (const b of this.BUILDINGS) b.stock = 0;
+    this.res = { wood: 0, gold: 0, meat: 0 };
+    this.resAt = -99; this.goldT = 8;
+    this.carriers = [];
+    for (let i = 0; i < 4; i++) this.spawnCarrier(i);
+  }
+
+  spawnCarrier(i) {
+    const res = ['wood', 'meat', 'gold', 'wood'][i % 4];
+    const pool = this.nodes.filter(n => n.res === res);
+    const node = pool[i % Math.max(1, pool.length)] || this.nodes[0];
+    if (!node) return;
+    const c = { res, node, x: node.x, y: node.y + 26, path: [], pi: 0, load: 0, wait: .4 + i * .5, ph: rnd0(), flip: false, to: 'node', moving: false };
+    this.carriers.push(c);
+    this.toNode(c);
+    function rnd0() { return Math.random() * 6; }
+  }
+
+  toNode(c) {
+    const same = this.nodes.filter(x => x.res === c.res);
+    // Ein leerer Abbau-Ort wird gemieden, solange ein voller da ist — sonst hackt der Träger Luft.
+    const open = same.filter(x => this.nodeLeft(x) > 0);
+    const n = this.pickOne(open.length ? open : same) || c.node;
+    if (!n) return;
+    c.node = n; c.load = 0; c.to = 'node'; c.pi = 0;
+    c.path = this.route({ x: c.x, y: c.y }, { x: n.x + (Math.random() - .5) * 44, y: n.y + 24 });
+  }
+
+  toHouse(c) {
+    const want = this.BUILDINGS.filter(b => b.needs === c.res);
+    const b = this.pickOne(want.filter(x => x.stock < 5)) || this.pickOne(want);
+    if (!b) { this.toNode(c); return; }
+    c.load = 1; c.to = 'house'; c.house = b; c.pi = 0;
+    c.path = this.route({ x: c.x, y: c.y }, { x: b.door.x + (Math.random() - .5) * 74, y: b.door.y + 30 });
+  }
+
+  updCarriers(dt) {
+    for (const c of this.carriers) {
+      if (c.wait > 0) { c.wait -= dt * this.state.tempo; c.moving = false; continue; }
+      if (c.pi >= c.path.length) {
+        if (c.to === 'node') { this.mine(c); c.wait = 1.2; this.spawnFx('smoke', c.x, c.y + 6, 46); this.toHouse(c); }
+        else {
+          if (c.house) { c.house.stock = Math.min(5, c.house.stock + 1); this.res[c.res]++; this.resAt = this.t; }
+          c.wait = .8; this.toNode(c);
+        }
+        continue;
+      }
+      const p = c.path[c.pi];
+      const dx = p.x - c.x, dy = p.y - c.y, d = Math.hypot(dx, dy);
+      if (d < 6) { c.pi++; continue; }
+      const sp = 68 * (.85 + (this.state.tempo - 1) * .1);
+      const nx = c.x + dx / d * sp * dt, ny = c.y + dy / d * sp * dt;
+      // Sockel/Klippe: NICHT als Ankunft zählen (sonst gibt es Phantom-Ernten), sondern neu zielen.
+      if (this.blocked(nx, ny, c.x, c.y)) {
+        c.wait = .35;
+        if (c.to === 'node') this.toNode(c); else this.toHouse(c);
+        continue;
+      }
+      c.x = nx; c.y = ny; c.moving = true;
+      c.flip = dx < -1 ? true : dx > 1 ? false : c.flip;
+    }
+    // Token-Budget wird verbraucht: die Burg zieht Gold aus ihrem Vorrat.
+    if ((this.goldT -= dt * this.state.tempo) <= 0) {
+      this.goldT = 6 + Math.random() * 5;
+      const b = this.BUILDINGS.find(x => x.id === 'burg');
+      if (b && b.stock > 0) {
+        b.stock--; this.res.gold = Math.max(0, this.res.gold - 1); this.resAt = this.t;
+        this.spawnFx('smoke', b.x + 18, b.y + 46, 46);
+      }
+    }
+  }
+
+  drawCarrier(g, c) {
+    const im = this.img[c.load ? 'p_' + c.res : 'p_empty']; if (!im) return;
+    const F = 192, disp = F * this.SCALE;        // Pawn-Blatt 1:1
+    const i = Math.floor(this.t * (c.moving ? 10 : 5) + c.ph) % 6;
+    const pad = (this.pawnPad ? this.pawnPad.footPad : 57) * this.SCALE;
+    g.save(); g.translate(c.x, c.y + pad - disp / 2);
+    if (c.flip) g.scale(-1, 1);
+    g.drawImage(im, i * F, 0, F, F, -disp / 2, -disp / 2, disp, disp);
+    g.restore();
+  }
+
+  /* ---------------- Leylines ----------------
+     Das Wegenetz als Energiebahn: eine ruhige, organisch schwingende Bahn und wandernde Funken
+     darauf. Farbe kommt vom Ziel-Gebäude (Aktivitätsfarbe), Kern ist weiss, Schein ist farbig —
+     keine schwarzen Outlines, damit es auf hellem Sand wie auf dunklem Gras lesbar bleibt.
+     Der Puls ist deutlich langsamer als der Schritt der Helden (Absicht: nicht hektisch). */
+
+  /** Wegpunkt-Index → Gebäude (Tür und Anfahrt). Einmal je Aufbau, nicht je Frame. */
+  leyMap() {
+    if (this._leyMap) return this._leyMap;
+    const m = {};
+    for (const b of this.BUILDINGS) { if (b.wp !== undefined) m[b.wp] = b; if (b.wpApp !== undefined) m[b.wpApp] = b; }
+    this._leyMap = m;
+    return m;
+  }
+  leyColor(ia, ib) {
+    const m = this.leyMap(), b = m[ia] || m[ib];
+    return b ? (this.ACT[b.act] ? this.ACT[b.act].color : '#e3cda3') : '#dfe8d8';
+  }
+  /* ---- Leylines, pragmatisch ----
+     Zwei Lehren aus v4.6: gefüllte Bänder sind FLÄCHEN (falsche Optik) und sie kosteten pro Frame
+     rund hundert Pfade mit additivem Mischen — das Bild wurde träge. Jetzt:
+     1. Die Linie ist **statisch** und wird EINMAL in eine eigene Ebene gebacken. Pro Frame ist sie
+        ein `drawImage` — derselbe Preis wie der Boden, unabhängig von der Zahl der Kanten.
+     2. Getuscht wird mit dem **Stift** (Strich mit wechselnder Breite in Teilstücken), nicht mit der
+        Feder. Dünn: Bauch 2,6 px, Ende 1,1 px.
+     3. **Tapering nur an echten Netzenden** (Grad 1: Türstiche, Sackgassen). Über eine Kreuzung läuft
+        die Linie in voller Breite durch — sonst wird jede Kreuzung blass und die Bahn zerfällt.
+     4. Bewegung sind zwei kleine Punkte je Kante. Keine Flächen, kein `lighter`, keine Gradienten. */
+
+  INK_PEN = 2.6;                 // Bauchbreite in Weltpixeln
+  INK_END = 1.1;                 // Breite an einem echten Netzende
+  INK_RUNIN = .34;               // Anteil der Kante, über den ein Ende ausläuft
+
+  leyDeg() {
+    const d = {};
+    for (const e of this.EDGES) { d[e[0]] = (d[e[0]] || 0) + 1; d[e[1]] = (d[e[1]] || 0) + 1; }
+    return d;
+  }
+  /** Auslenkung quer zur Strecke, zweistimmig, an den Enden null. Ohne Zeit: die Bahn steht. */
+  leyOff(u, seed, amp) {
+    return (Math.sin(u * 4.2 + seed) * .62 + Math.sin(u * 8.1 + seed * 1.7) * .38) * amp * Math.sin(u * Math.PI);
+  }
+
+  /** Punkte, Breiten und Farbe je Kante rechnen — und das Bild dazu backen. */
+  buildLeys() {
+    const deg = this.leyDeg();
+    const pen = this.INK_PEN, end = this.INK_END, RI = this.INK_RUNIN;
+    this._ley = [];
+    for (let i = 0; i < this.EDGES.length; i++) {
+      const ia = this.EDGES[i][0], ib = this.EDGES[i][1], a = this.WP[ia], b = this.WP[ib];
+      if (!a || !b) continue;
+      const dx = b.x - a.x, dy = b.y - a.y, L = Math.hypot(dx, dy) || 1;
+      const seed = ia * 1.7 + ib * .9, amp = Math.min(15, L * .05);
+      const endA = (deg[ia] || 0) <= 1, endB = (deg[ib] || 0) <= 1;
+      const N = Math.max(6, Math.round(L / 26));
+      const pts = [], wid = [];
+      for (let k = 0; k <= N; k++) {
+        const u = k / N, w = this.leyOff(u, seed, amp);
+        pts.push({ x: a.x + dx * u - dy / L * w, y: a.y + dy * u + dx / L * w });
+        // Voll durch die Kreuzung, schmal nur an einem echten Ende.
+        let fac = 1;
+        const ramp = x => end / pen + (1 - end / pen) * Math.pow(Math.min(1, x / RI), .7);
+        if (endA) fac = Math.min(fac, ramp(u));
+        if (endB) fac = Math.min(fac, ramp(1 - u));
+        wid.push(pen * fac);
+      }
+      this._ley.push({ pts, wid, col: this.leyColor(ia, ib), ph: (seed * .37) % 1 });
+    }
+  }
+
+  /** Tusche in die WELTGRAFIK malen. Eine eigene Ebene wäre ein zweiter Vollbild-Blit pro Frame —
+   *  gemessen 12–20 ms, also der halbe Frame. Die Bahn ist statisch, sie gehört ins Bild. */
+  paintLeys(g) {
+    if (!this.state.leys) return;
+    if (!this._ley) this.buildLeys();
+    g.save();
+    g.lineCap = 'round'; g.lineJoin = 'round';
+    for (const e of this._ley) {
+      // weicher Farbsaum, damit die Linie auf hellem Sand nicht verschwindet
+      g.globalAlpha = .22; g.strokeStyle = e.col;
+      for (let k = 1; k < e.pts.length; k++) {
+        g.lineWidth = (e.wid[k - 1] + e.wid[k]) * 1.6;
+        g.beginPath(); g.moveTo(e.pts[k - 1].x, e.pts[k - 1].y); g.lineTo(e.pts[k].x, e.pts[k].y); g.stroke();
+      }
+      // Tuschekern
+      g.globalAlpha = .62; g.strokeStyle = 'rgba(255,253,246,1)';
+      for (let k = 1; k < e.pts.length; k++) {
+        g.lineWidth = (e.wid[k - 1] + e.wid[k]) * .5;
+        g.beginPath(); g.moveTo(e.pts[k - 1].x, e.pts[k - 1].y); g.lineTo(e.pts[k].x, e.pts[k].y); g.stroke();
+      }
+    }
+    g.globalAlpha = 1;
+    g.restore();
+  }
+
+  /** Punkt bei Laufanteil u auf einer gebackenen Kante — ohne Sinus, nur Interpolation. */
+  leyAt(e, u) {
+    const n = e.pts.length - 1, x = Math.max(0, Math.min(.9999, u)) * n;
+    const k = Math.floor(x), t = x - k;
+    const p = e.pts[k], q = e.pts[Math.min(n, k + 1)];
+    return { x: p.x + (q.x - p.x) * t, y: p.y + (q.y - p.y) * t };
+  }
+
+  /** Pro Frame nur die Wanderpunkte — die Bahn selbst steckt im Weltbild. */
+  drawLeys(g) {
+    if (!this.state.leys || !this._ley) return;
+    const V = this.viewRect(60);
+    // Zwei Punkte je Kante, gefüllt und ohne Ring, deutlich schneller als vorher — die Linie soll
+    // als Bahn gelesen werden, nicht als Strich. Kein Gradient, kein `lighter`: das ist der Grund,
+    // warum das hier pro Frame nichts kostet.
+    for (const e of this._ley) {
+      for (let k = 0; k < 2; k++) {
+        const u = (this.t * .16 + e.ph + k * .5) % 1;
+        const p = this.leyAt(e, u);
+        if (p.x < V.x0 || p.x > V.x1 || p.y < V.y0 || p.y > V.y1) continue;
+        g.fillStyle = e.col;
+        g.beginPath(); g.arc(p.x, p.y, 5.2, 0, 6.3); g.fill();
+        g.fillStyle = '#fffdf4';
+        g.beginPath(); g.arc(p.x, p.y, 2.8, 0, 6.3); g.fill();
+      }
+    }
+  }
+
+  /** Schafe grasen und wandern langsam — ihr Abdruck wird nachgeführt, aber nur alle 0,5 s:
+   *  ein Rasteraufbau je Frame wäre teurer als die lineare Suche, die er ersetzt. */
+  syncSheepFeet() {
+    if (!this._foot || (this.t - (this._sheepAt || -9)) < .5) return;
+    this._sheepAt = this.t;
+    const n = this.BUILDINGS.length, sh = this.sheep || [];
+    for (let i = 0; i < sh.length; i++) {
+      const p = this._foot[n + i];
+      if (p) { p.x = sh[i].x; p.y = sh[i].y - 10; }
+    }
+    this.buildFootGrid();
+  }
+
+  drawSheep(g, s) {
+    const im = this.img.sheep; if (!im) return;
+    const F = 128, h = F * this.SCALE, i = Math.floor(this.t * 6 + s.ph) % 6;
+    g.save(); g.translate(s.x, s.y - h * .55);
+    if (s.flip) g.scale(-1, 1);
+    g.drawImage(im, i * F, 0, F, F, -h / 2, -h / 2, h, h);
+    g.restore();
+  }
+
+  /** Vorrat vor dem Haus: eine Reihe Sprites in der Türzone, gestempelt, nicht gemalt. */
+  drawStock(g, b) {
+    if (!b.stock) return;
+    // Anker ist die SOCKELLINIE, nicht die Tür: bei Häusern mit `lift` liegt die Tür eine
+    // Höhenstufe tiefer, der Vorrat stünde sonst an der Klippenwand (Bug #52).
+    const bx = b.x - 74, by = b.y + b.h * .45 + 18;
+    // Ein Erdfleck bindet den Stapel an den Boden — ohne ihn schwebt eine Reihe Sprites im Gras.
+    g.save();
+    g.fillStyle = 'rgba(120,92,52,.22)';
+    g.beginPath(); g.ellipse(bx + 30, by + 12, 62, 21, 0, 0, 6.3); g.fill();
+    g.restore();
+    // Versatz je Platz statt starres Raster: aus dem Index gerechnet, also jedes Bild gleich.
+    const off = [[0, 0], [30, 5], [58, -2], [12, 20], [44, 24], [72, 16]];
+    for (let i = 0; i < b.stock; i++) {
+      const o = off[i % off.length];
+      this.blit(g, b.needs, 0, bx + o[0], by + o[1], 0, 'center');   // 1:1 aus dem Blatt
+    }
+  }
+
+  /* ---------------- Helden & Ereignisse ---------------- */
+
+  bfs(a, b) {
+    if (a === b) return [a];
+    const seen = new Set([a]), q = [[a]];
+    while (q.length) {
+      const path = q.shift(), cur = path[path.length - 1];
+      for (const n of this.adj.get(cur) || []) {
+        if (n === b) return [...path, n];
+        if (!seen.has(n)) { seen.add(n); q.push([...path, n]); }
+      }
+    }
+    return [a, b];
+  }
+
+  nearestWp(p) {
+    let best = 0, bd = 1e9;
+    this.WP.forEach((w, i) => { const d = Math.hypot(w.x - p.x, w.y - p.y); if (d < bd) { bd = d; best = i; } });
+    return best;
+  }
+
+  route(from, to) {
+    const path = this.bfs(this.nearestWp(from), this.nearestWp(to)).map(i => this.WP[i]);
+    // Erster Wegpunkt darf nicht rueckwaerts fuehren: nur behalten, wenn er dem Ziel naeher ist.
+    const dTo = Math.hypot(to.x - from.x, to.y - from.y);
+    while (path.length > 1 && Math.hypot(to.x - path[0].x, to.y - path[0].y) > dTo) path.shift();
+    // Kollineare Zwischenpunkte fallen weg -> weniger Zickzack.
+    const out = [];
+    for (const p of path) {
+      const n = out.length;
+      if (n >= 2) {
+        const a = out[n - 2], b = out[n - 1];
+        const cross = (b.x - a.x) * (p.y - a.y) - (b.y - a.y) * (p.x - a.x);
+        if (Math.abs(cross) < 900) { out[n - 1] = p; continue; }
+      }
+      out.push(p);
+    }
+    out.push(to);
+    return out;
+  }
+
+  spawnAgents(n) {
+    const names = this.POOL[this.state.src === 'scene' ? 'scene' : this.state.src].names;
+    const units = Object.keys(this.UNITS);
+    const keep = this.agents.slice(0, n);
+    for (let i = keep.length; i < n; i++) {
+      const ang = (i / Math.max(4, n)) * 6.283;
+      const k = this.kader && this.kader[i];
+      const slot = k ? [k.unit, k.color] : this.ROSTER[i % this.ROSTER.length];
+      const x = this.PLAZA.x + Math.cos(ang) * 150, y = this.PLAZA.y + 40 + Math.sin(ang) * 95;
+      keep.push({
+        id: 'a' + i + '-' + Math.random().toString(36).slice(2, 6),
+        name: names[i % names.length], unit: slot[0], color: slot[1],
+        x, y, path: [], pi: 0, act: 'idle', place: 'taverne', status: 'idle',
+        work: 1 + Math.random() * 3, artefacts: 0, critSum: 0, last: 'waiting for artefacts', flip: false, ph: Math.random() * 6, moving: false
+      });
+    }
+    this.agents = keep;
+    if (this.state.selId && !keep.some(a => a.id === this.state.selId)) this.setState({ selId: null });
+  }
+
+  pickOne(arr) { return arr[Math.floor(Math.random() * arr.length)]; }
+
+  sendTo(ag, b, spread) {
+    let target = { x: b.door.x + (Math.random() - .5) * spread, y: b.door.y + 10 + Math.random() * 26 };
+    for (let g = 0; g < 8 && this.blockedBy(target.x, target.y); g++) target = { x: b.door.x + (Math.random() - .5) * spread, y: b.door.y + 24 + Math.random() * 30 };
+    ag.path = this.route({ x: ag.x, y: ag.y }, target);
+    ag.pi = 0;
+  }
+
+  emit() {
+    const src = this.state.src;
+    let ag, item, crit;
+    if (src === 'scene') {
+      const sc = this.POOL.scene.script;
+      const step = sc[this.sceneIdx % sc.length]; this.sceneIdx++;
+      ag = this.agents.find(a => a.name === step.n) || this.pickOne(this.agents);
+      item = step; crit = step.k;
+    } else {
+      const pool = this.POOL[src];
+      ag = this.pickOne(this.agents.filter(a => a.status !== 'waiting')) || this.pickOne(this.agents);
+      item = this.pickOne(pool.items);
+      crit = item.k[0] + Math.random() * (item.k[1] - item.k[0]);
+    }
+    if (!ag) return;
+
+    const autonomous = this.state.autonomy >= 70;
+    const critical = crit >= 0.75 && !this.alarm;
+    const act = critical && !autonomous ? 'alert' : item.a;
+    const b = this.BUILDINGS.find(x => x.act === act) || this.BUILDINGS[5];
+
+    ag.act = act; ag.place = b.id;
+    ag.status = critical && !autonomous ? 'waiting' : 'active';
+    ag.work = 1.8 + Math.random() * 2.6;
+    ag.artefacts++; ag.critSum += crit; ag.last = item.t;
+    this.sendTo(ag, b, b.id === 'taverne' ? 220 : 130);
+
+    const e = {
+      id: 'e' + this.feed.length + '-' + Math.random().toString(36).slice(2, 6),
+      agentId: ag.id, agent: ag.name, color: this.dot(ag.color),
+      act: this.ACT[item.a].chip, actKey: item.a, text: item.t, cat: item.c, crit, ts: Date.now(), badge: null
+    };
+    if (critical && autonomous) { e.badge = 'auto-approved'; e.badgeKind = 'auto'; }
+    if (critical && !autonomous) {
+      e.badge = 'approval needed'; e.badgeKind = 'wait';
+      this.alarm = { entryId: e.id, agentId: ag.id, agent: ag.name, text: item.t, cat: item.c, crit };
+      this.sfx('error');
+      // Karte oeffnet NICHT von selbst — die Ampel springt auf rot, der Rest bleibt ruhig.
+    }
+    this.feed.unshift(e);
+    if (this.feed.length > 120) this.feed.length = 120;
+  }
+
+  resolve(kind) {
+    if (!this.alarm) return;
+    const a = this.alarm;
+    const e = this.feed.find(f => f.id === a.entryId);
+    if (e) { e.badge = kind === 'ok' ? 'approved' : 'denied'; e.badgeKind = kind === 'ok' ? 'ok' : 'no'; }
+    const ag = this.agents.find(x => x.id === a.agentId);
+    if (ag) {
+      const b = this.BUILDINGS.find(x => x.act === (kind === 'ok' ? 'command' : 'idle'));
+      ag.status = 'active'; ag.act = kind === 'ok' ? 'command' : 'idle'; ag.place = b.id; ag.work = 2.6;
+      this.sendTo(ag, b, 150);
+    }
+    this.feed.unshift({
+      id: 'r' + Math.random().toString(36).slice(2, 7), agentId: a.agentId, agent: a.agent,
+      color: this.dot(ag ? ag.color : 'blue'), act: this.ACT.alert.chip, actKey: 'alert',
+      text: (kind === 'ok' ? 'approved: ' : 'denied: ') + a.text,
+      cat: 'Approval', crit: a.crit, ts: Date.now(),
+      badge: kind === 'ok' ? 'human decided' : 'stopped', badgeKind: kind === 'ok' ? 'ok' : 'no'
+    });
+    const tw = this.BUILDINGS.find(x => x.act === 'alert');
+    if (kind === 'no') {
+      this.spawnFx('boom', tw.x, tw.y - tw.h * .25, 200);
+      for (let i = 0; i < 5; i++) this.spawnFx('smoke', tw.x + (Math.random() - .5) * 130, tw.y - tw.h * .4, 80);
+    } else {
+      for (let i = 0; i < 3; i++) this.spawnFx('smoke', tw.x + (Math.random() - .5) * 90, tw.y - tw.h * .45, 70);
+    }
+    this.alarm = null;
+    this.sfx(kind === 'ok' ? 'confirm' : 'back');
+    this.syncUI(true);
+  }
+
+  /* ---------------- Loop ---------------- */
+
+  tick(ts) {
+    const dt = Math.min(.05, (ts - this.last) / 1000) || 0;
+    this.last = ts; this.t += dt;
+
+    this.evTimer -= dt * this.state.tempo;
+    if (this.evTimer <= 0) { this.emit(); this.evTimer = .7 + Math.random() * 1.5; }
+
+    for (const a of this.agents) {
+      if (a.bT > 0) {
+        a.bT -= dt;
+        const k = Math.max(0, a.bT / .46);
+        const push = 150 * k;
+        a.x += a.bx * push * dt; a.y += a.by * push * dt;
+        a.hop = Math.sin((1 - k) * Math.PI) * 16;
+        a.squash = 1 - Math.sin((1 - k) * Math.PI) * .18;
+        a.flip = a.bx < 0;
+        if (a.bT <= 0) {
+          a.hop = 0; a.squash = 1;
+          const t = a.bTarget;
+          if (t) { a.path = this.route({ x: a.x, y: a.y }, t); a.pi = 0; }
+          a.bTarget = null;
+        }
+        continue;
+      }
+      if (a.pi < a.path.length) {
+        const p = a.path[a.pi];
+        const dx = p.x - a.x, dy = p.y - a.y, d = Math.hypot(dx, dy);
+        if (d < 6) { a.pi++; }
+        else {
+          const sp = (a.status === 'waiting' ? 128 : 104) * (.85 + (this.state.tempo - 1) * .1);
+          const nx = a.x + dx / d * sp * dt, ny = a.y + dy / d * sp * dt;
+          const hit = this.blocked(nx, ny, a.x, a.y);
+          if (hit) {
+            // Cartoon-Abprall: zurueckfedern, kleiner Hopser, Staubwolke, dann neu routen
+            a.bT = .46; a.bx = hit.nx; a.by = hit.ny;
+            a.bTarget = a.path[a.path.length - 1];
+            a.path = []; a.pi = 0; a.moving = false;
+            this.spawnFx('smoke', nx, ny + 6, 54);   // Bug #39: 'dust' gibt es im ATLAS nicht
+            this.sfx('back');
+          } else {
+            a.x = nx; a.y = ny;
+            a.moving = true; a.flip = dx < -1 ? true : dx > 1 ? false : a.flip;
+          }
+        }
+      } else {
+        a.moving = false;
+        if (a.status !== 'waiting') {
+          a.work -= dt * this.state.tempo;
+          if (a.work <= 0 && a.place !== 'taverne') {
+            const b = this.BUILDINGS[5];
+            a.act = 'idle'; a.place = 'taverne'; a.status = 'idle'; a.work = 3;
+            this.sendTo(a, b, 260);
+          }
+        }
+      }
+    }
+
+    // Gespräche in der Party-Zone: Paare bilden, einander zuwenden
+    for (const a of this.agents) {
+      a.talkCd = Math.max(0, (a.talkCd || 0) - dt);
+      if (a.talkT > 0) { a.talkT -= dt; if (a.talkT <= 0 || a.moving) { a.talkTo = null; a.talkCd = 10 + Math.random() * 10; } }
+    }
+    if ((this.pairT = (this.pairT || 0) - dt) <= 0) {
+      this.pairT = 1.5;
+      let pairs = this.agents.filter(a => a.talkTo).length / 2;
+      const free = this.agents.filter(a => !a.moving && a.status !== 'waiting' && !a.talkTo && a.talkCd <= 0);
+      for (let i = 0; i < free.length && pairs < 2; i++) for (let j = i + 1; j < free.length && pairs < 2; j++) {
+        const p = free[i], q = free[j];
+        if (p.talkTo || q.talkTo) continue;
+        if (Math.hypot(p.x - q.x, p.y - q.y) < 90 && Math.random() < .5) {
+          const dur = 3 + Math.random() * 3;
+          p.talkTo = q; q.talkTo = p; p.talkT = dur; q.talkT = dur;
+          p.speaker = true; q.speaker = false;
+          pairs++;
+        }
+      }
+    }
+    for (const a of this.agents) if (a.talkTo && !a.moving) a.flip = a.talkTo.x < a.x;
+
+    if (this.camTo) {
+      this.cam.x += (this.camTo.x - this.cam.x) * Math.min(1, dt * 4.5);
+      this.cam.y += (this.camTo.y - this.cam.y) * Math.min(1, dt * 4.5);
+      if (Math.hypot(this.camTo.x - this.cam.x, this.camTo.y - this.cam.y) < 3) this.camTo = null;
+    }
+    this.syncSheepFeet();
+    this.regrowNodes(dt * this.state.tempo);
+    // Tageszeit
+    if (this.state.autoClock) { this.tod = (this.tod + dt * this.state.clockSpeed) % 24; }
+    // Wolken
+    for (const c of this.clouds) { c.x += c.v * dt; if (c.x > this.W + 340) c.x = -340; }
+    if (this.carriers) this.updCarriers(dt);
+    // FX altern
+    for (const x of this.fxs) x.t += dt;
+    this.fxs = this.fxs.filter(x => x.t < this.fxLife(x.type));
+    // Schmiede raucht, Ufer spritzt, Wachturm brennt beim Alarm
+    const forge = this.BUILDINGS.find(b => b.id === 'schmiede');
+    if ((this.smokeT -= dt) <= 0) { this.smokeT = 1.1 + Math.random(); this.spawnFx('smoke', forge.x + 8 + (Math.random() - .5) * 22, forge.y - 96, 58); }
+    if ((this.splashT -= dt) <= 0) {
+      this.splashT = 1.8 + Math.random() * 2.4;
+      const cell = this.foamCells[Math.floor(Math.random() * this.foamCells.length)];
+      if (cell) this.spawnFx('splash', cell[0] * this.T + 32 + (Math.random() - .5) * 90, cell[1] * this.T + 32 + (Math.random() - .5) * 90, 96);
+    }
+    // Kein Feuer am Wachturm mehr. Ein intaktes Haus brennt nicht, und Partikel hinter dem Dach
+    // erklären nichts — der Alarm steht in der Ampel und in der Approval-Karte. Die Brand-Frames
+    // des Packs gehören zu den beschädigten Fassungen; die kommen mit den Raids (v5).
+
+    this.render();
+    this.raf = requestAnimationFrame(t => this.tick(t));
+  }
+
+  /** Zoomleiter statt freiem Faktor: 1 ist der Default (Pixel 1:1), 0.5/2 sind ganzzahlig. */
+  ZOOMS = [.5, .75, 1, 1.5, 2, 3];
+  zoomStep(dir) {
+    let i = this.ZOOMS.indexOf(this.state.zoom);
+    if (i < 0) i = this.ZOOMS.reduce((best, z, k) => Math.abs(z - this.state.zoom) < Math.abs(this.ZOOMS[best] - this.state.zoom) ? k : best, 2);
+    const j = Math.max(0, Math.min(this.ZOOMS.length - 1, i + dir));
+    this.setState({ zoom: this.ZOOMS[j] });
+    this.sfx('click');
+  }
+
+  fit() {
+    const c = this.el.cv, host = this.el.stage;
+    if (!c || !host) return;
+    // dpr 2 bedeutet die VIERFACHE Füllfläche. Die Welt ist Pixel-Art mit ausgeschaltetem
+    // Glätten — der Gewinn an Schärfe ist minimal, der Preis pro Frame erheblich.
+    const dpr = Math.min(1.25, window.devicePixelRatio || 1);
+    this.cw = host.clientWidth; this.ch = host.clientHeight;
+    c.width = Math.max(1, Math.round(this.cw * dpr));
+    c.height = Math.max(1, Math.round(this.ch * dpr));
+    this.dpr = dpr;
+  }
+
+  /** Weltrechteck, das gerade im Bild ist (Transform: cw/2, ch/2+74, Zoom, −cam).
+   *  `pad` deckt hohe Sprites ab, deren Fusspunkt schon draussen liegt. */
+  viewRect(pad) {
+    const z = this.state.zoom, p = pad || 0;
+    return {
+      x0: this.cam.x - this.cw / 2 / z - p, x1: this.cam.x + this.cw / 2 / z + p,
+      y0: this.cam.y - (this.ch / 2 + 74) / z - p, y1: this.cam.y + (this.ch / 2 - 74) / z + p
+    };
+  }
+
+  render() {
+    const c = this.el.cv; if (!c) return;
+    if (!this.cw) this.fit();
+    const g = c.getContext('2d'), z = this.state.zoom, T = this.T;
+    const vw = this.cw / z / 2, vh = this.ch / z / 2;
+    this.cam.x = Math.max(Math.min(vw, this.W / 2), Math.min(this.cam.x, this.W - Math.min(vw, this.W / 2)));
+    this.cam.y = Math.max(Math.min(vh, this.H / 2), Math.min(this.cam.y, this.H - Math.min(vh, this.H / 2)));
+
+    g.setTransform(this.dpr, 0, 0, this.dpr, 0, 0);
+    g.imageSmoothingEnabled = false;
+    g.fillStyle = '#1c6c78'; g.fillRect(0, 0, this.cw, this.ch);
+    g.save();
+    g.translate(this.cw / 2, this.ch / 2 + 74); g.scale(z, z); g.translate(-this.cam.x, -this.cam.y);
+
+    // Sichtfenster: die Welt ist 3072×2176, das Bild zeigt einen Bruchteil. Ohne diese Grenze
+    // zeichnet jeder Frame ALLE Requisiten, Schaumkacheln und Figuren — das war der Grund für die
+    // Trägheit (gemessen: 413 drawImage pro Frame), nicht die Leylines.
+    const V = this.viewRect(430);
+    const inV = (x, y) => x > V.x0 && x < V.x1 && y > V.y0 && y < V.y1;
+    const sx = Math.max(0, Math.floor(V.x0)), sy = Math.max(0, Math.floor(V.y0));
+    const sw = Math.min(this.W, Math.ceil(V.x1)) - sx, sh = Math.min(this.H, Math.ceil(V.y1)) - sy;
+
+    // Wasser
+    const wt = this.img.water;
+    if (wt) {
+      if (!this.waterPat) this.waterPat = g.createPattern(wt, 'repeat');
+      g.fillStyle = this.waterPat || '#1c6c78';
+      g.fillRect(V.x0, V.y0, V.x1 - V.x0, V.y1 - V.y0);
+    }
+    // Schaum (8 Frames à 3×3 Kacheln)
+    const fm = this.img.foam;
+    if (fm && this.foamCells) {
+      const fr = Math.floor(this.t * 7) % 8;
+      for (const [cc, rr] of this.foamCells) {
+        if (!inV(cc * T, rr * T)) continue;
+        g.drawImage(fm, fr * 192, 0, 192, 192, cc * T - T, rr * T - T, 192, 192);
+      }
+    }
+    if (this.bg && sw > 0 && sh > 0) g.drawImage(this.bg, sx, sy, sw, sh, sx, sy, sw, sh);
+    this.drawLeys(g);                     // auf dem Boden, unter allem, was darauf steht
+
+    // Tiefensortierung nach Fuß-Y
+    const items = [];
+    for (const w of this.water) {
+      if (!inV(w.x, w.y)) continue;
+      const key = w.kind, h = key === 'duck' ? 34 : 62;
+      this.blit(g, key, this.frameOf(key, this.t + w.ph), w.x, w.y + (key === 'duck' ? Math.sin(this.t * 2 + w.ph) * 2 : 0), h, 'center');
+    }
+    for (const p of this.deco) if (inV(p.x, p.y)) items.push({ y: p.y, d: () => { if (p.kind === 'tree' && this.felledAt(p)) return; this.drawProp(g, p); } });
+    for (const x of this.fxs) if (inV(x.x, x.y)) items.push({ y: x.y + 40, d: () => this.blit(g, x.type, this.frameOf(x.type, x.t, false), x.x, x.y, x.h, 'center') });
+    for (const n of this.nodes || []) if (inV(n.x, n.y)) items.push({ y: n.y, d: () => this.drawNode(g, n) });
+    for (const s of this.sheep || []) if (inV(s.x, s.y)) items.push({ y: s.y, d: () => this.drawSheep(g, s) });
+    for (const b of this.BUILDINGS) if (inV(b.x, b.y)) items.push({ y: b.y + b.h * .45, d: () => { this.drawBuilding(g, b); this.drawStock(g, b); } });
+    for (const c of this.carriers || []) if (inV(c.x, c.y)) items.push({ y: c.y, d: () => this.drawCarrier(g, c) });
+    for (const c of this.mapCamps || []) if (inV(c.x, c.y)) items.push({ y: c.y, d: () => this.drawCamp(g, c) });
+    for (const u of this.funits || []) if (inV(u.x, u.y)) items.push({ y: u.y, d: () => this.drawFacUnit(g, u) });
+    for (const a of this.agents) if (inV(a.x, a.y)) items.push({ y: a.y, d: () => this.drawHero(g, a) });
+    items.sort((p, q) => p.y - q.y);
+    // (Die Liste wird je Frame neu gebaut; bei ~60 sichtbaren Posten ist das billiger als ein
+    //  dauerhafter Index, der bei jeder Bewegung umsortiert werden müsste.)
+    // Absicht: nur ein leiser Punkt am Ziel. Gezeichnete Laufwege sind raus —
+    // sie sprangen bei jeder Neuberechnung und dominierten das Bild (v3.9).
+    for (const a of this.agents) {
+      if (!a.path || a.pi >= a.path.length) continue;
+      const t = a.path[a.path.length - 1];
+      g.save();
+      g.globalAlpha = .3; g.fillStyle = this.ACT[a.act].color;
+      g.beginPath(); g.arc(t.x, t.y, 4, 0, 6.3); g.fill();
+      g.globalAlpha = .5; g.lineWidth = 1.2; g.strokeStyle = 'rgba(18,26,14,.7)';
+      g.beginPath(); g.arc(t.x, t.y, 4, 0, 6.3); g.stroke();
+      g.restore();
+    }
+    for (const it of items) it.d();
+    const hb = this.hoverKey, sb = this.state.selB;
+    for (const b of this.BUILDINGS) if (b.id === hb || b.id === sb) this.drawSign(g, b);
+
+    // Wolkenschatten-freie Wolkenschicht über der Welt
+    for (const c of this.clouds) {
+      const im = this.img[c.key]; if (!im) continue;
+      g.save(); g.globalAlpha = c.a;
+      g.drawImage(im, c.x - c.s / 2, c.y - c.s * .22, c.s, c.s * (im.naturalHeight / im.naturalWidth));
+      g.restore();
+    }
+    // Tageszeit: Tint + warme Fenster
+    const sky = this.skyOf(this.tod);
+    if (sky.a > .01) {
+      // Nur das Sichtfenster: ein Fill über 3072×2176 lief für jede Tageszeit ausser Mittag,
+      // also über die halbe Uhr — dieselbe Grenze wie beim Wasser.
+      g.fillStyle = 'rgba(' + sky.c + ',' + sky.a + ')';
+      g.fillRect(V.x0, V.y0, V.x1 - V.x0, V.y1 - V.y0);
+    }
+    if (sky.glow > .01) {
+      g.save(); g.globalCompositeOperation = 'lighter';
+      for (const b of this.BUILDINGS) {
+        if (!inV(b.x, b.y)) continue;      // additiver 500-px-Kreis je Haus — nicht für Häuser aus dem Bild
+        const rad = g.createRadialGradient(b.x, b.y + 20, 10, b.x, b.y + 20, 250);
+        rad.addColorStop(0, 'rgba(255,196,120,' + sky.glow + ')');
+        rad.addColorStop(1, 'rgba(255,196,120,0)');
+        g.fillStyle = rad; g.beginPath(); g.arc(b.x, b.y + 20, 250, 0, 6.3); g.fill();
+      }
+      g.restore();
+    }
+    if (this.state.edit) this.drawEditOverlay(g);
+    g.restore();
+  }
+
+  /** Editor-Overlay: Raster, Höhenmarken, Wegenetz, Abbau-Orte, Spawn — nur im Editor sichtbar. */
+  drawEditOverlay(g) {
+    const T = this.T;
+    g.save();
+    g.lineWidth = 1; g.strokeStyle = 'rgba(240,226,196,.14)';
+    for (let c = 0; c <= this.COLS; c++) { g.beginPath(); g.moveTo(c * T, 0); g.lineTo(c * T, this.H); g.stroke(); }
+    for (let r = 0; r <= this.ROWS; r++) { g.beginPath(); g.moveTo(0, r * T); g.lineTo(this.W, r * T); g.stroke(); }
+    if (this.lvl) for (let r = 0; r < this.ROWS; r++) for (let c = 0; c < this.COLS; c++) {
+      const v = this.lvl[r][c]; if (!v) continue;
+      g.fillStyle = v === 2 ? 'rgba(255,208,120,.20)' : 'rgba(120,200,255,.16)';
+      g.fillRect(c * T + 2, r * T + 2, T - 4, T - 4);
+    }
+    g.strokeStyle = 'rgba(126,200,255,.8)'; g.lineWidth = 3;
+    for (const [a, b] of this.EDGES) {
+      const p = this.WP[a], q = this.WP[b]; if (!p || !q) continue;
+      g.beginPath(); g.moveTo(p.x, p.y); g.lineTo(q.x, q.y); g.stroke();
+    }
+    this.WP.forEach((w, i) => {
+      g.fillStyle = i === this.edWp ? '#ffd98a' : '#7ec8ff';
+      g.beginPath(); g.arc(w.x, w.y, 8, 0, 6.3); g.fill();
+      g.strokeStyle = '#14180f'; g.lineWidth = 2; g.stroke();
+    });
+    for (const n of this.nodes || []) {
+      g.strokeStyle = n.res === 'gold' ? '#f6d24a' : n.res === 'wood' ? '#c08a4a' : '#f0908a';
+      g.lineWidth = 4;
+      g.beginPath(); g.arc(n.x, n.y, 22, 0, 6.3); g.stroke();
+    }
+    for (const b of this.BUILDINGS) {
+      g.strokeStyle = b === this.edSel ? '#ffd98a' : 'rgba(240,226,196,.5)';
+      g.lineWidth = b === this.edSel ? 4 : 2;
+      g.strokeRect(b.claim.x0, b.claim.y0, b.claim.x1 - b.claim.x0, b.claim.y1 - b.claim.y0);
+      g.fillStyle = '#f0908a';
+      g.beginPath(); g.arc(b.door.x, b.door.y, 7, 0, 6.3); g.fill();
+    }
+    for (const c of this.mapCamps || []) {
+      const fc = this.facOf(c.fac);
+      g.save();
+      g.setLineDash([12, 9]); g.strokeStyle = fc.tint; g.lineWidth = 3; g.globalAlpha = .8;
+      g.beginPath(); g.arc(c.x, c.y, c.r, 0, 6.3); g.stroke();
+      g.setLineDash([]); g.globalAlpha = 1;
+      g.fillStyle = fc.tint;
+      g.beginPath(); g.arc(c.x, c.y, 9, 0, 6.3); g.fill();
+      g.strokeStyle = '#14180f'; g.lineWidth = 2; g.stroke();
+      g.restore();
+    }
+    for (const u of this.funits || []) {
+      g.fillStyle = this.facOf(u.fac).tint;
+      g.beginPath(); g.arc(u.x, u.y, 5, 0, 6.3); g.fill();
+    }
+    g.strokeStyle = '#c8e8ba'; g.lineWidth = 4;
+    g.beginPath(); g.arc(this.PLAZA.x, this.PLAZA.y, 26, 0, 6.3); g.stroke();
+    g.restore();
+  }
+
+  SKY = [
+    { h: 0,  c: '14,22,58', a: .56, glow: .32 },
+    { h: 5,  c: '40,34,72',  a: .44, glow: .26 },
+    { h: 7,  c: '120,72,40', a: .22, glow: .12 },
+    { h: 10, c: '0,0,0',     a: 0,   glow: 0 },
+    { h: 17, c: '0,0,0',     a: 0,   glow: 0 },
+    { h: 19, c: '150,70,30', a: .26, glow: .16 },
+    { h: 21, c: '40,34,80',  a: .44, glow: .28 },
+    { h: 24, c: '14,22,58',  a: .56, glow: .32 }
+  ];
+  skyOf(h) {
+    const K = this.SKY;
+    let i = 0; while (i < K.length - 2 && K[i + 1].h <= h) i++;
+    const a = K[i], b = K[i + 1], t = Math.max(0, Math.min(1, (h - a.h) / (b.h - a.h || 1)));
+    const mix = (x, y) => x.split(',').map((v, k) => Math.round(+v + (+y.split(',')[k] - +v) * t)).join(',');
+    return { c: a.a === 0 && b.a === 0 ? '0,0,0' : mix(a.a ? a.c : b.c, b.a ? b.c : a.c), a: a.a + (b.a - a.a) * t, glow: a.glow + (b.glow - a.glow) * t };
+  }
+  clockLabel() {
+    const h = Math.floor(this.tod), m = Math.floor((this.tod - h) * 60);
+    const phase = this.tod < 6 ? 'Night' : this.tod < 9 ? 'Morning' : this.tod < 17 ? 'Day' : this.tod < 20 ? 'Evening' : 'Night';
+    return String(h).padStart(2, '0') + ':' + String(m).padStart(2, '0') + ' · ' + phase;
+  }
+
+  roundRect(g, x, y, w, h, r) {
+    g.beginPath();
+    g.moveTo(x + r, y); g.arcTo(x + w, y, x + w, y + h, r); g.arcTo(x + w, y + h, x, y + h, r);
+    g.arcTo(x, y + h, x, y, r); g.arcTo(x, y, x + w, y, r); g.closePath();
+  }
+
+  drawProp(g, p) {
+    if (p.kind === 'tree') {
+      const im = this.img.trees; if (!im) return;
+      const s = 192 * this.SCALE;                 // Baumblatt 1:1, keine Zufallsgroesse
+      g.drawImage(im, p.f * 192, 0, 192, 192, p.x - s / 2, p.y - s * .82, s, s);
+      return;
+    }
+    const im = this.img[p.key]; if (!im) return;
+    const w = im.naturalWidth * this.SCALE, h = im.naturalHeight * this.SCALE;
+    g.drawImage(im, p.x - w / 2, p.y - h * .7, w, h);
+  }
+
+  drawBuilding(g, b) {
+    const im = this.img['b_' + b.id];
+    if (!im) return;
+    const h = b.h, w = b.w || b.h * (im.naturalWidth / im.naturalHeight);
+    // Kein gemalter Schatten mehr: eine weiche Ellipse ist im Top-down-Pixelset immer falsch
+    // (wie Unit-Schatten und Brunnen). Lieber gar keinen als einen gemalten.
+    g.drawImage(im, Math.round(b.x - w / 2), Math.round(b.y - h * .55), Math.round(w), Math.round(h));
+    // Alarm wird nicht im Dorf beschriftet — die Ampel im HUD ist die einzige Anzeige.
+  }
+
+  drawSign(g, b) {
+    const alarmed = this.alarm && b.act === 'alert';
+    g.font = '700 20px "Shantell Sans", cursive';
+    const w1 = g.measureText(b.label).width;
+    g.font = '400 14px "Shantell Sans", cursive';
+    const w2 = g.measureText(b.sub).width;
+    const pw = Math.max(w1, w2) + 32, ph = 52;
+    const px = b.x - pw / 2, py = b.y + b.h * .42 + 10;
+    g.fillStyle = '#6b4e2e';
+    g.fillRect(px + 14, py + ph - 4, 5, 14); g.fillRect(px + pw - 19, py + ph - 4, 5, 14);
+    g.fillStyle = alarmed ? '#8a4a3a' : '#8b7a5a';
+    g.fillRect(px, py, pw, ph);
+    g.fillStyle = 'rgba(255,255,255,.14)'; g.fillRect(px, py, pw, 5);
+    g.strokeStyle = '#3a2a18'; g.lineWidth = 3; g.strokeRect(px, py, pw, ph);
+    g.textAlign = 'center';
+    g.fillStyle = '#fff3cf'; g.font = '700 20px "Shantell Sans", cursive';
+    g.fillText(b.label, b.x, py + 24);
+    g.fillStyle = alarmed ? '#ffd9cf' : '#e3cda3'; g.font = '400 14px "Shantell Sans", cursive';
+    g.fillText(b.sub, b.x, py + 42);
+    g.textAlign = 'left';
+  }
+
+  drawHero(g, a) {
+    const spec = this.UNITS[a.unit];
+    const strip = !!spec.strip;
+    const sheet = strip ? this.img[(a.moving ? 'h_' : 'i_') + a.unit + '_' + a.color] : this.img['h_' + a.unit + '_' + a.color];
+    const F = strip ? spec.F : 192, disp = F * this.SCALE;
+    let col, row;
+    if (strip) {
+      const n = a.moving ? spec.runN : spec.idleN;
+      col = Math.floor(this.t * (a.moving ? 11 : 7) + a.ph) % n; row = 0;
+    } else {
+      const i = Math.floor(this.t * (a.moving ? 11 : 7) + a.ph) % 6;
+      const idx = a.moving ? spec.run[i] : i;
+      col = idx % spec.cols; row = Math.floor(idx / spec.cols);
+    }
+    const sel = this.state.selId === a.id;
+    // Gemessene Werte statt globaler Konstanten: Füsse auf a.y, Kopf bei a.y − bodyH.
+    const footPad = (spec.footPad || 56) * this.SCALE, bodyH = (spec.bodyH || 90) * this.SCALE;
+    const headY = a.y - bodyH - (a.hop || 0);
+
+    if (sheet) {
+      g.save(); g.translate(a.x, a.y + footPad - disp / 2 - (a.hop || 0));
+      if (a.squash && a.squash !== 1) g.scale(2 - a.squash, a.squash);
+      if (a.flip) g.scale(-1, 1);
+      g.drawImage(sheet, col * F, row * F, F, F, -disp / 2, -disp / 2, disp, disp);
+      g.restore();
+    }
+    if (a.status === 'waiting') {
+      // Creme-Blase mit warmem Rand statt dunklem Block mit hartem Weiss — die schwarzen
+      // Zacken kamen von Füllung und Spitze in derselben dunklen Farbe.
+      // Wer nebenan auch wartet, wird angehoben: zwei Blasen überlagern sich nicht.
+      const p = .5 + .5 * Math.sin(this.t * 2.2);
+      let lift = 0;
+      for (const o of this.agents) {
+        if (o === a || o.status !== 'waiting') continue;
+        if (Math.abs(o.x - a.x) < 66 && Math.abs(o.y - a.y) < 90 && o.id < a.id) lift += 34;
+      }
+      const by = headY - 20 - p * 3 - lift;
+      g.save();
+      g.fillStyle = 'rgba(246,239,220,.96)'; g.strokeStyle = 'rgba(120,86,40,.75)'; g.lineWidth = 2;
+      g.beginPath(); g.roundRect(a.x - 12, by - 16, 24, 31, 9); g.fill(); g.stroke();
+      g.beginPath(); g.moveTo(a.x - 7, by + 13); g.lineTo(a.x + 1, by + 23); g.lineTo(a.x + 7, by + 13); g.closePath();
+      g.fillStyle = 'rgba(246,239,220,.96)'; g.fill();
+      g.strokeStyle = 'rgba(120,86,40,.55)'; g.lineWidth = 1.6; g.stroke();
+      g.fillStyle = '#b4331f'; g.font = '700 20px Shantell Sans, system-ui';
+      g.textAlign = 'center'; g.textBaseline = 'middle';
+      g.fillText('!', a.x, by);
+      g.restore();
+    }
+    if (sel) {
+      const pt = this.img.pointer;
+      const bob = Math.sin(this.t * 4) * 5;
+      if (pt) {
+        const pw = pt.naturalWidth * this.SCALE, phh = pt.naturalHeight * this.SCALE;
+        g.drawImage(pt, a.x - pw / 2, headY - 26 - phh + bob, pw, phh);
+      }
+    }
+
+    if (a.talkTo && !a.moving && a.speaker) {
+      const away = a.x >= a.talkTo.x ? 1 : -1;
+      const bx = a.x + away * 30, by = headY - 8;
+      const ph = Math.floor(this.t * 2 + a.ph) % 3;
+      g.fillStyle = 'rgba(232,214,170,.95)'; g.strokeStyle = 'rgba(36,23,8,.9)'; g.lineWidth = 2;
+      this.roundRect(g, bx - 20, by - 14, 40, 24, 6); g.fill(); g.stroke();
+      g.fillStyle = '#4a3418';
+      for (let i = 0; i <= ph; i++) { g.beginPath(); g.arc(bx - 9 + i * 9, by - 2, 2.4, 0, 6.3); g.fill(); }
+    }
+    const showName = sel || a.status === 'waiting' || a.moving || a.place !== 'taverne';
+    if (!showName) return;
+    const ac = this.ACT[a.act];
+    g.textAlign = 'center';
+    g.font = '700 17px "Shantell Sans", cursive';
+    g.lineWidth = 5; g.strokeStyle = 'rgba(20,14,6,.9)';
+    // Zwei Namen an derselben Stelle sind zwei unlesbare Namen. In v4.5 habe ich das nur für die
+    // Sprechblase behoben — das Label wird aber für JEDEN Helden gezeichnet, also stapelten sich
+    // dort weiter drei Zeilen übereinander. Wer einen Nachbarn mit kleinerer id neben sich hat,
+    // rückt um eine Doppelzeile nach oben; der Vordere behält seinen Platz.
+    let lift = 0;
+    for (const o of this.agents) {
+      if (o === a || o.id >= a.id) continue;
+      if (Math.abs(o.x - a.x) < 78 && Math.abs(o.y - a.y) < 44) lift += 38;
+    }
+    const ty = headY - 20 - lift;
+    g.strokeText(a.name, a.x, ty);
+    g.fillStyle = '#fff3cf'; g.fillText(a.name, a.x, ty);
+    g.font = '600 14px "Shantell Sans", cursive';
+    g.lineWidth = 4; g.strokeStyle = 'rgba(20,14,6,.9)';
+    g.strokeText(ac.chip, a.x, ty + 18);
+    g.fillStyle = ac.color; g.fillText(ac.chip, a.x, ty + 18);
+    g.textAlign = 'left';
+  }
+
+  /* ---------------- Fraktionen: Register, Blätter, Zeichnen ---------------- */
+
+  facOf(id) { return this.FACTIONS.find(x => x.id === id) || this.FACTIONS[0]; }
+  facBase(b) { return b === 'U10' ? this.U10 : b === 'free' ? this.PACKS.free : this.EN; }
+
+  /** Kader einer Fraktion. Ritterfarben greifen auf die bereits geladenen Nexus-Blätter zu,
+   *  fremde Fraktionen auf ihre eigenen. Was kein Blatt hat, erscheint nicht. */
+  facUnits(fc) {
+    if (fc.kind === 'knight') {
+      return Object.keys(this.UNITS)
+        .filter(u => !(u === 'lancer' && fc.color === 'red'))
+        .map(u => ({ id: u, label: this.cap(u) }));
+    }
+    return (fc.units || []).map(u => ({ id: u[0], label: u[1] }));
+  }
+
+  /** Ein Sprite-Steckbrief je Fraktion+Einheit, gemessen und gemerkt. */
+  facSprite(facId, unitId) {
+    const k = facId + ':' + unitId;
+    this._facSp = this._facSp || {};
+    if (this._facSp[k]) return this._facSp[k];
+    const fc = this.facOf(facId);
+    let sp = null;
+    if (fc.kind === 'knight') {
+      const spec = this.UNITS[unitId]; if (!spec) return null;
+      sp = spec.strip
+        ? { key: 'i_' + unitId + '_' + fc.color, F: spec.F, cols: spec.idleN, n: spec.idleN, row: 0, fps: 7 }
+        : { key: 'h_' + unitId + '_' + fc.color, F: 192, cols: spec.cols, n: 6, row: 0, fps: 7 };
+    } else {
+      const u = (fc.units || []).find(x => x[0] === unitId); if (!u) return null;
+      sp = { key: 'f_' + facId + '_' + unitId, F: u[3], cols: u[6] || u[4], n: u[4], row: 0, fps: 8,
+             url: this.facBase(u[5] === 'free' ? 'free' : fc.base) + u[2] };
+    }
+    this._facSp[k] = sp;
+    return sp;
+  }
+
+  /** Blätter erst laden, wenn eine Fraktion wirklich gebraucht wird — der Startladebalken
+   *  soll nicht um 30 Blätter länger werden. Eigener Lader, damit die Zählung sauber bleibt. */
+  facLoad(key, url) {
+    if (!key || !url || this.img[key]) return;
+    this._facPend = this._facPend || {};
+    if (this._facPend[key]) return;
+    this._facPend[key] = 1;
+    const im = new Image();
+    im.crossOrigin = 'anonymous';        // sonst ist der Alpha-Scan verboten (Bug #68)
+    im.onload = () => { this.img[key] = im; };
+    im.src = encodeURI(url);
+  }
+  facEnsure(fc) {
+    if (!fc) return;
+    if (fc.camp) this.facLoad('fc_' + fc.id, this.facBase(fc.camp.base || fc.base) + fc.camp.file);
+    for (const u of this.facUnits(fc)) {
+      const sp = this.facSprite(fc.id, u.id);
+      if (sp && sp.url) this.facLoad(sp.key, sp.url);
+    }
+  }
+  facEnsureAll() {
+    const ids = new Set([].concat((this.mapCamps || []).map(c => c.fac), (this.funits || []).map(u => u.fac)));
+    ids.forEach(id => this.facEnsure(this.facOf(id)));
+  }
+
+  /** Fusslinie messen, aber nie auf Kosten des Bildes: ein vergiftetes Blatt gibt einen Schätzwert. */
+  facPad(im, F) {
+    try { return this.scanSheet(im, F); }
+    catch (e) { return { footPad: Math.round(F * .28), bodyH: Math.round(F * .5) }; }
+  }
+
+  drawFacUnit(g, u) {
+    const sp = this.facSprite(u.fac, u.unit); if (!sp) return;
+    const im = this.img[sp.key]; if (!im) return;
+    const F = sp.F || im.naturalHeight;
+    if (!sp.pad) sp.pad = this.facPad(im, F);           // gemessen, nicht geraten
+    const i = Math.floor(this.t * sp.fps + (u.ph || 0)) % sp.n;
+    const cols = sp.cols || sp.n;
+    const col = i % cols, row = (sp.row || 0) + Math.floor(i / cols);
+    const disp = F * this.SCALE;
+    g.save();
+    g.translate(u.x, u.y + sp.pad.footPad * this.SCALE - disp / 2);
+    if (u.flip) g.scale(-1, 1);
+    g.drawImage(im, col * F, row * F, F, F, -disp / 2, -disp / 2, disp, disp);
+    g.restore();
+  }
+
+  drawCamp(g, c) {
+    const fc = this.facOf(c.fac); if (!fc || !fc.camp) return;
+    const im = this.img['fc_' + fc.id]; if (!im) return;
+    const F = fc.camp.F || 0;
+    if (F) {
+      if (!fc.camp.pad) fc.camp.pad = this.facPad(im, F);
+      const n = fc.camp.n || 1, i = Math.floor(this.t * (fc.camp.fps || 7)) % n, disp = F * this.SCALE;
+      g.save();
+      g.translate(c.x, c.y + fc.camp.pad.footPad * this.SCALE - disp / 2);
+      g.drawImage(im, i * F, 0, F, F, -disp / 2, -disp / 2, disp, disp);
+      g.restore();
+      return;
+    }
+    const w = im.naturalWidth * this.SCALE, h = im.naturalHeight * this.SCALE;
+    g.drawImage(im, Math.round(c.x - w / 2), Math.round(c.y - h), Math.round(w), Math.round(h));
+  }
+
+  /** Wasser statt Land: Pirate Fish braucht die Gegenprobe zu `snapWalkable()`. */
+  waterCell(c, r) { return c >= 0 && r >= 0 && c < this.COLS && r < this.ROWS && !!(this.land && this.land[r] && !this.land[r][c]); }
+  snapWater(p, rad) {
+    const T = this.T;
+    let c = Math.floor(p.x / T), r = Math.floor(p.y / T);
+    if (!this.waterCell(c, r)) {
+      let found = null;
+      for (let d = 1; d <= (rad || 3) && !found; d++)
+        for (let dr = -d; dr <= d && !found; dr++)
+          for (let dc = -d; dc <= d; dc++)
+            if (this.waterCell(c + dc, r + dr)) { found = { c: c + dc, r: r + dr }; break; }
+      if (!found) return null;
+      c = found.c; r = found.r;
+    }
+    return { x: c * T + T / 2, y: r * T + T / 2 };
+  }
+  /** Ein Schreibweg für beide Grundarten — die Fraktion sagt, welcher gilt. */
+  snapFac(p, fc, rad) { return fc.water ? this.snapWater(p, rad) : this.snapWalkable(p, rad); }
+
+  /** R5: Einheiten ohne Revier, Einheiten auf falschem Grund, Revier über einem Nexus-Claim. */
+  checkFacs() {
+    const say = m => (this.warn = this.warn || []).push(m);
+    let homeless = 0, wrong = 0;
+    for (const u of this.funits || []) {
+      const fc = this.facOf(u.fac);
+      if (!(this.mapCamps || []).some(c => c.fac === u.fac && Math.hypot(c.x - u.x, c.y - u.y) <= c.r)) homeless++;
+      const T = this.T, c = Math.floor(u.x / T), r = Math.floor(u.y / T);
+      if (fc.water ? !this.waterCell(c, r) : !this.walkableCell(c, r)) wrong++;
+    }
+    if (homeless) say('[R5] ' + homeless + ' Einheit(en) ausserhalb jedes Reviers');
+    if (wrong) say('[R5] ' + wrong + ' Einheit(en) auf falschem Grund');
+    for (const c of this.mapCamps || []) {
+      const fc = this.facOf(c.fac);
+      for (const b of this.BUILDINGS) {
+        const qx = Math.max(b.claim.x0, Math.min(c.x, b.claim.x1)), qy = Math.max(b.claim.y0, Math.min(c.y, b.claim.y1));
+        if (Math.hypot(qx - c.x, qy - c.y) < c.r) { say('[R5] Revier ' + fc.name + ' greift in ' + b.label); break; }
+      }
+    }
+  }
+
+  /** Kader je Held: Einheit oder Farbe weiterdrehen. Was kein Blatt hat, wird übersprungen. */
+  heroSheet(u, c) { const sp = this.UNITS[u]; return !!this.img[(sp && sp.strip ? 'i_' : 'h_') + u + '_' + c]; }
+  kaderStep(i, what) {
+    const a = this.agents[i]; if (!a) return;
+    const units = Object.keys(this.UNITS), cols = this.COLORS;
+    let u = a.unit, c = a.color, guard = 0;
+    do {
+      if (what === 'unit') u = units[(units.indexOf(u) + 1) % units.length];
+      else c = cols[(cols.indexOf(c) + 1) % cols.length];
+    } while (!this.heroSheet(u, c) && ++guard < 12);
+    a.unit = u; a.color = c;
+    (this.kader = this.kader || [])[i] = { unit: u, color: c };
+    this.syncUI(true);
+    this.edSay(a.name + ': ' + u + ' · ' + c);
+  }
+
+  /* ---------------- Karten-Editor ----------------
+     Datenform ist `MapConfig` v1 aus Agent-Quest (`client/src/editor/types/map.ts`):
+     version · world · terrain (Zellen-Map) · decorations · paths · buildings · npcs · spawn · settings.
+     Aufteilung nach Entscheid: **Terrain wird gemalt**, **Wege und Türen bleiben Regel** (R1/R2),
+     die Claim-Prüfung (R3) meldet Befunde statt stumm zu korrigieren. */
+
+  edTools = [
+    ['h0', 'Stufe 0'], ['h1', 'Stufe 1'], ['h2', 'Stufe 2'],
+    ['move', 'Gebäude'], ['wp', 'Wegpunkt'], ['nw', 'Holz'], ['ng', 'Gold'], ['nm', 'Schaf'], ['spawn', 'Spawn'],
+    ['dt', 'Baum'], ['db', 'Busch'], ['dr', 'Stein'],
+    ['fc', 'Lager'], ['fu', 'Einheit']
+  ];
+
+  freezeDeco() { this.mapDeco = this.deco.map(d => ({ ...d })); }
+
+  cellOf(p) { return { c: Math.floor(p.x / this.T), r: Math.floor(p.y / this.T) }; }
+
+  /** Ein Editor-Schritt auf der Welt; `drag` = true bei gezogenem Pinsel. */
+  edApply(p, drag) {
+    const t = this.state.tool, { c, r } = this.cellOf(p);
+    if (t[0] === 'h') {
+      const v = +t[1];
+      if (!this.mapLvl[r]) return;
+      for (const [dc, dr] of [[0,0],[1,0],[0,1],[1,1]]) {
+        const rr = r + dr, cc = c + dc;
+        if (this.mapLvl[rr] && this.land[rr] && this.land[rr][cc]) this.mapLvl[rr][cc] = v;
+      }
+      this.edDirty = true;
+      return;
+    }
+    if (drag) {
+      if (t === 'move' && this.edSel) {
+        const b = this.edSel;
+        b.x = Math.round((p.x - 32) / 64) * 64 + 32;
+        b.y = Math.round((p.y - 32) / 64) * 64 + 32;
+        this.edDirty = true;
+      }
+      return;
+    }
+    if (t === 'move') { this.edSel = this.buildingAt(p.x, p.y) || null; this.edSay(this.edSel ? this.edSel.label + ' gegriffen' : 'kein Gebäude hier'); return; }
+    if (t === 'wp') {
+      let near = -1, bd = 1e9;
+      this.WP.forEach((w, i) => { const d = Math.hypot(w.x - p.x, w.y - p.y); if (d < bd) { bd = d; near = i; } });
+      if (bd < 46) {
+        if (this.edWp === null || this.edWp === undefined) { this.edWp = near; this.edSay('Wegpunkt ' + near + ' gewählt'); }
+        else if (this.edWp === near) { this.edWp = null; this.edSay('Auswahl aufgehoben'); }
+        else { this.EDGES.push([this.edWp, near]); this.buildAdj(); this.edDo('Kante ' + this.edWp + '→' + near); this.edWp = null; this.edDirty = true; }
+      } else {
+        const q = this.snapWalkable(p);
+        if (!q) { this.edSay('hier nicht: Wasser oder Mauer'); return; }
+        const i = this.WP.push(q) - 1;
+        if (this.edWp !== null && this.edWp !== undefined) { this.EDGES.push([this.edWp, i]); this.buildAdj(); }
+        this.edWp = i; this.edDo('Wegpunkt ' + i + ' gesetzt'); this.edDirty = true;
+      }
+      return;
+    }
+    if (t === 'fc' || t === 'fu') {
+      const fc = this.facOf(this.state.fac);
+      this.mapCamps = this.mapCamps || []; this.funits = this.funits || [];
+      if (t === 'fc') {
+        const hit = this.mapCamps.findIndex(c => Math.hypot(c.x - p.x, c.y - p.y) < 70);
+        if (hit >= 0) {
+          const gone = this.mapCamps.splice(hit, 1)[0];
+          this.edDirty = true; this.edDo('Lager ' + this.facOf(gone.fac).name + ' entfernt'); return;
+        }
+        if (!fc.camp) { this.edSay('kein Bau im Pack: ' + fc.name); return; }
+        const q = this.snapFac(p, fc, 4);
+        if (!q) { this.edSay(fc.water ? 'hier nicht: kein Wasser' : 'hier nicht: Wasser oder Mauer'); return; }
+        const rr = this.state.revier;
+        this.mapCamps.push({ fac: fc.id, x: q.x, y: q.y, r: rr });
+        // Ein Lager kommt nicht allein: vier Einheiten aus dem eigenen Kader ins Revier.
+        const us = this.facUnits(fc);
+        for (let k = 0; k < 4 && us.length; k++) {
+          const ang = k / 4 * 6.283, d = rr * .42;
+          const pt = this.snapFac({ x: q.x + Math.cos(ang) * d, y: q.y + Math.sin(ang) * d }, fc, 3);
+          if (pt) this.funits.push({ fac: fc.id, unit: us[k % us.length].id, x: pt.x, y: pt.y, flip: Math.cos(ang) < 0, ph: Math.random() * 6 });
+        }
+        this.facEnsure(fc); this.edDirty = true;
+        this.edDo('Lager ' + fc.name + ' gesetzt');
+        return;
+      }
+      const hit = this.funits.findIndex(u => Math.hypot(u.x - p.x, u.y - p.y) < 44);
+      if (hit >= 0) { this.funits.splice(hit, 1); this.edDirty = true; this.edDo('Einheit entfernt'); return; }
+      const us = this.facUnits(fc);
+      if (!us.length) { this.edSay('kein Kader im Pack: ' + fc.name); return; }
+      const uid = us.some(u => u.id === this.state.facUnit) ? this.state.facUnit : us[0].id;
+      const q = this.snapFac(p, fc, 3);
+      if (!q) { this.edSay(fc.water ? 'hier nicht: kein Wasser' : 'hier nicht: Wasser oder Mauer'); return; }
+      this.funits.push({ fac: fc.id, unit: uid, x: q.x, y: q.y, flip: Math.random() < .5, ph: Math.random() * 6 });
+      this.facEnsure(fc); this.edDirty = true;
+      this.edDo(us.find(u => u.id === uid).label + ' gesetzt');
+      return;
+    }
+    if (t[0] === 'd') {
+      // Klick auf eine bestehende Requisite entfernt sie, sonst wird gesetzt — wie beim Abbau-Ort.
+      const hit = (this.deco || []).findIndex(d => Math.hypot(d.x - p.x, d.y - p.y) < (d.kind === 'tree' ? 46 : 26));
+      if (hit >= 0) {
+        const gone = this.deco.splice(hit, 1)[0];
+        this.freezeDeco(); this.edDirty = true;
+        this.edDo((gone.kind === 'tree' ? 'Baum' : gone.kind === 'bush' ? 'Busch' : 'Stein') + ' entfernt');
+        return;
+      }
+      const T = this.T, dc = Math.floor(p.x / T), dr = Math.floor(p.y / T);
+      if (!(this.land && this.land[dr] && this.land[dr][dc])) { this.edSay('hier nicht: Wasser'); return; }
+      const kind = t === 'dt' ? 'tree' : t === 'db' ? 'bush' : 'rock';
+      if (kind === 'tree') this.deco.push({ kind: 'tree', x: p.x, y: p.y, f: Math.floor(Math.random() * 4) });
+      else this.deco.push({
+        kind, x: p.x, y: p.y,
+        key: 'd' + (kind === 'bush' ? 1 + Math.floor(Math.random() * 4) : 9 + Math.floor(Math.random() * 4)),
+        s: 0.8 + Math.random() * 0.5
+      });
+      this.freezeDeco(); this.edDirty = true;
+      this.edDo((kind === 'tree' ? 'Baum' : kind === 'bush' ? 'Busch' : 'Stein') + ' gesetzt');
+      return;
+    }
+    if (t[0] === 'n') {
+      const res = t === 'nw' ? 'wood' : t === 'ng' ? 'gold' : 'meat';
+      const hit = (this.nodes || []).findIndex(n => Math.hypot(n.x - p.x, n.y - p.y) < 40);
+      if (hit >= 0) {
+        const gone = this.nodes.splice(hit, 1)[0];
+        this.mapNodes = this.nodes.map(n => ({ res: n.res, x: n.x, y: n.y, vein: n.vein }));
+        if (gone.res === 'meat') this.sheep = this.sheep.filter(sh => Math.hypot(sh.x + 42 - gone.x, sh.y + 18 - gone.y) > 8);
+        this.edDirty = true; this.edDo('Abbau-Ort entfernt'); return;
+      }
+      const q = this.snapWalkable(p);
+      if (!q) { this.edSay('hier nicht: Wasser oder Mauer'); return; }
+      this.nodes.push({ res, x: q.x, y: q.y, vein: Math.random() < .5 ? 'vein' : 'veinS' });
+      this.mapNodes = this.nodes.map(n => ({ res: n.res, x: n.x, y: n.y, vein: n.vein }));
+      if (res === 'meat') this.sheep.push({ x: q.x - 42, y: q.y - 18, ph: Math.random() * 6, flip: Math.random() < .5 });
+      this.edDirty = true;
+      this.edDo(res + '-Abbau gesetzt');
+      return;
+    }
+    if (t === 'spawn') {
+      const q = this.snapWalkable(p);
+      if (!q) { this.edSay('hier nicht: Wasser oder Mauer'); return; }
+      this.PLAZA = q;
+      this.edDo('Spawn gesetzt'); this.edDirty = true;
+    }
+  }
+
+  edSay(m) { this.setState({ edMsg: m }); }
+  /** Handlung, die den Neuaufbau überleben soll: `edCommit()` stellt sie vor den Befund. */
+  edDo(m) { this.edAct = m; this.edSay(m); }
+
+  /** Begehbar: Land, keine Höhenstufe, keine Klippenwand. Eine Prüfung für alle Knoten. */
+  walkableCell(c, r) { return !!(this.land && this.land[r] && this.land[r][c]) && !this.stepped(c, r); }
+
+  /** Welt-Punkt auf die nächste begehbare Zellmitte einrasten; `null` = hier geht es nicht.
+   *  Jeder Schreibweg des Editors läuft hierdurch — sonst prüft am Ende wieder nur einer. */
+  snapWalkable(p, rad) {
+    const T = this.T;
+    let c = Math.floor(p.x / T), r = Math.floor(p.y / T);
+    if (!this.walkableCell(c, r)) {
+      let found = null;
+      for (let d = 1; d <= (rad || 3) && !found; d++)
+        for (let dr = -d; dr <= d && !found; dr++)
+          for (let dc = -d; dc <= d; dc++)
+            if (this.walkableCell(c + dc, r + dr)) { found = { c: c + dc, r: r + dr }; break; }
+      if (!found) return null;
+      c = found.c; r = found.r;
+    }
+    return { x: c * T + T / 2, y: r * T + T / 2 };
+  }
+
+  /** Das GANZE Netz prüfen — jeder Knoten begehbar, jede Kante ohne Wasser und ohne Mauer.
+   *  Ohne das kann das Panel „ok" melden, während der Editor eine Straße übers Meer gelegt hat. */
+  checkGraph() {
+    const T = this.T, say = m => (this.warn = this.warn || []).push(m);
+    this.WP.forEach((w, i) => {
+      if (!this.walkableCell(Math.floor(w.x / T), Math.floor(w.y / T))) say('[R2] Wegpunkt ' + i + ' liegt im Wasser oder auf der Stufe');
+    });
+    (this.nodes || []).forEach((n, i) => {
+      if (!this.walkableCell(Math.floor(n.x / T), Math.floor(n.y / T))) say('[R2] Abbau-Ort ' + i + ' (' + n.res + ') liegt im Wasser oder auf der Stufe');
+    });
+    if (!this.walkableCell(Math.floor(this.PLAZA.x / T), Math.floor(this.PLAZA.y / T))) say('[R2] Spawn liegt im Wasser oder auf der Stufe');
+    for (const [a, b] of this.EDGES) {
+      const p = this.WP[a], q = this.WP[b];
+      if (!p || !q) continue;
+      const n = Math.max(2, Math.ceil(Math.hypot(q.x - p.x, q.y - p.y) / 32));
+      for (let k = 0; k <= n; k++) {
+        const x = p.x + (q.x - p.x) * k / n, y = p.y + (q.y - p.y) * k / n;
+        if (!this.walkableCell(Math.floor(x / T), Math.floor(y / T))) { say('[R2] Kante ' + a + '→' + b + ' kreuzt Wasser oder Mauer'); break; }
+      }
+    }
+  }
+
+  /** Nach einem Schritt: Terrain neu ableiten, Türen und Claims neu rechnen, Befunde melden. */
+  edCommit() {
+    if (!this.edDirty) return;
+    this.edDirty = false;
+    this._foot = null;
+    this._leyMap = null; this._ley = null;       // Türen und Netz können gewandert sein
+    this.warn = [];                     // Befunde sammeln, bevor irgendwer welche schreibt
+    this.deriveLvl();                   // Maske zuerst (ohne zu malen) …
+    this.layoutDoors();                 // … dann die Türen …
+    const old = console.warn;
+    console.warn = (...a) => { this.warn.push(a.join(' ')); old(...a); };
+    this.computeClaims();
+    console.warn = old;
+    this.buildWorld();                  // … und erst dann die Sandmaske und das Bild
+    this.checkGraph();                  // Netz zum Schluss prüfen: erst jetzt stehen Höhe und Land fest
+    this.checkDeco();                   // und die Requisiten, die jetzt nicht mehr von selbst wegwandern
+    this.checkFacs();                   // R5: Revier, Grundart, Übergriff auf einen Nexus-Claim
+    const act = this.edAct; this.edAct = null;
+    this.edSay(this.warn.length ? this.warn.length + ' Befund(e): ' + this.warn[0]
+      : act ? act + ' · ok' : 'ok — keine Befunde');
+  }
+
+  /** Requisiten prüfen. Seit sie Daten sind, korrigiert sie kein Neuaufbau mehr stumm —
+   *  wer die Höhe unter einen Baum malt, bekommt einen Befund statt eines verschwundenen Baums. */
+  checkDeco() {
+    const T = this.T; let bad = 0;
+    for (const d of this.deco || []) {
+      const c = Math.floor(d.x / T), r = Math.floor(d.y / T);
+      if (!(this.land && this.land[r] && this.land[r][c]) || this.stepped(c, r)) bad++;
+    }
+    if (bad) (this.warn = this.warn || []).push('[R4] ' + bad + ' Requisite(n) im Wasser oder an der Klippe');
+  }
+
+  /* ---- Undo: die Karte ist Daten, ein Schritt ist eine Kopie dieser Daten. 20 tief, Redo spiegelbildlich.
+     Ein Schritt = eine Maus-Gestik, ein Import oder ein geladener Slot — nicht jeder gemalte Pinselpunkt. */
+  edSnap() {
+    return {
+      lvl: (this.mapLvl || []).map(row => row.slice()),
+      b: this.BUILDINGS.map(b => ({ id: b.id, x: b.x, y: b.y })),
+      wp: this.WP.map(w => ({ x: w.x, y: w.y })),
+      eg: this.EDGES.map(e => e.slice()),
+      nodes: (this.mapNodes || []).map(n => ({ ...n })),
+      deco: (this.mapDeco || []).map(d => ({ ...d })),
+      camps: (this.mapCamps || []).map(c => ({ ...c })),
+      funits: (this.funits || []).map(u => ({ ...u })),
+      kader: (this.kader || []).map(k => (k ? { ...k } : null)),
+      plaza: { ...this.PLAZA }
+    };
+  }
+  edRestore(s) {
+    for (let r = 0; r < this.ROWS; r++) for (let c = 0; c < this.COLS; c++) this.mapLvl[r][c] = s.lvl[r] ? (s.lvl[r][c] || 0) : 0;
+    for (const p of s.b) { const b = this.BUILDINGS.find(x => x.id === p.id); if (b) { b.x = p.x; b.y = p.y; } }
+    this.WP = s.wp.map(w => ({ ...w }));
+    this.EDGES = s.eg.map(e => e.slice());
+    this.buildAdj();
+    this.mapNodes = s.nodes.map(n => ({ ...n }));
+    this.nodes = this.mapNodes.map(n => ({ ...n, vein: n.vein || 'vein' }));
+    this.sheep = this.nodes.filter(n => n.res === 'meat').map(n => ({ x: n.x - 42, y: n.y - 18, ph: Math.random() * 6, flip: false }));
+    this.mapDeco = s.deco.map(d => ({ ...d }));
+    this.mapCamps = (s.camps || []).map(c => ({ ...c }));
+    this.funits = (s.funits || []).map(u => ({ ...u }));
+    this.kader = (s.kader || []).map(k => (k ? { ...k } : null));
+    this.kader.forEach((k, i) => { if (k && this.agents[i]) { this.agents[i].unit = k.unit; this.agents[i].color = k.color; } });
+    this.facEnsureAll();
+    this.PLAZA = { ...s.plaza };
+    this.edWp = null; this.edSel = null;
+    this.edDirty = true; this.edCommit();
+  }
+  /** Vor der Gestik merken, danach nur behalten, wenn sich wirklich etwas geändert hat —
+   *  sonst füllt ein Klick auf leeren Grund den Stapel mit Schritten, die nichts tun. */
+  edBegin() { this.edPend = JSON.stringify(this.edSnap()); }
+  edEnd() {
+    if (!this.edPend) return;
+    if (JSON.stringify(this.edSnap()) !== this.edPend) {
+      this.undoS = this.undoS || []; this.redoS = [];
+      this.undoS.push(JSON.parse(this.edPend));
+      if (this.undoS.length > 20) this.undoS.shift();
+      this.setState({ undoN: this.undoS.length, redoN: 0 });
+    }
+    this.edPend = null;
+  }
+  edUndo() {
+    if (!this.undoS || !this.undoS.length) { this.edSay('nichts zurückzunehmen'); return; }
+    const cur = this.edSnap();
+    this.edRestore(this.undoS.pop());
+    (this.redoS = this.redoS || []).push(cur);
+    if (this.redoS.length > 20) this.redoS.shift();
+    this.setState({ undoN: this.undoS.length, redoN: this.redoS.length });
+    this.edTail('zurückgenommen · ' + this.undoS.length + ' übrig');
+  }
+  edRedo() {
+    if (!this.redoS || !this.redoS.length) { this.edSay('nichts wiederherzustellen'); return; }
+    const cur = this.edSnap();
+    this.edRestore(this.redoS.pop());
+    (this.undoS = this.undoS || []).push(cur);
+    this.setState({ undoN: this.undoS.length, redoN: this.redoS.length });
+    this.edTail('wiederhergestellt');
+  }
+  /** Lehre aus Bug #64: eine Meldung stellt sich VOR den Befund, sie überschreibt ihn nicht. */
+  edTail(msg) {
+    const w = this.warn || [];
+    this.edSay(msg + (w.length ? ' · ' + w.length + ' Befund(e): ' + w[0] : ' · ok'));
+  }
+
+  /* ---- Karten-Slots: dieselbe Serialisierung wie der Download, nur im localStorage. ---- */
+  SLOTKEY = 'nvMapSlots';
+  slotsRead() { try { return JSON.parse(localStorage.getItem(this.SLOTKEY) || '{}') || {}; } catch (e) { return {}; } }
+  slotsWrite(o) { try { localStorage.setItem(this.SLOTKEY, JSON.stringify(o)); } catch (e) { this.edSay('Speicher voll — Slot nicht geschrieben'); } }
+  slotNames() { return Object.keys(this.slotsRead()).sort(); }
+  slotSave(name) {
+    const n = String(name || '').trim() || 'Karte ' + (this.slotNames().length + 1);
+    const o = this.slotsRead();
+    o[n] = this.mapConfig(n);
+    this.slotsWrite(o);
+    this.setState({ slots: Object.keys(o).sort(), slotName: '' });
+    this.edSay('gespeichert: ' + n);
+  }
+  slotLoad(n) {
+    const cfg = this.slotsRead()[n];
+    if (!cfg) { this.edSay('Slot fehlt: ' + n); return; }
+    this.edBegin();
+    const r = this.applyConfig(cfg);
+    this.edEnd();
+    this.edTail('geladen: ' + n + (r.skipped ? ' · ' + r.skipped + ' übersprungen' : ''));
+  }
+  slotDel(n) {
+    const o = this.slotsRead(); delete o[n]; this.slotsWrite(o);
+    this.setState({ slots: Object.keys(o).sort() });
+    this.edSay('Slot gelöscht: ' + n);
+  }
+
+  /** Eine Serialisierung für alle Ausgänge: Download, Slot, später der Konverter. */
+  mapConfig(name) {
+    const T = this.T, terrain = {};
+    for (let r = 0; r < this.ROWS; r++) for (let c = 0; c < this.COLS; c++) {
+      const v = (this.mapLvl && this.mapLvl[r] && this.mapLvl[r][c]) || 0;
+      const landC = !!(this.land && this.land[r] && this.land[r][c]);
+      if (!landC && !v) continue;
+      terrain[c + ',' + r] = { tile: { set: v ? 'elevated-' + v : 'flat', frame: v }, walkable: landC && !this.stepped(c, r) };
+    }
+    const cfg = {
+      version: 1,
+      world: { width: this.COLS, height: this.ROWS },
+      baseTileset: 'tiny-swords-cc0',
+      terrain,
+      decorations: (this.mapDeco || this.deco || []).map((d, i) => ({ id: 'd' + i, kind: d.kind, textureKey: d.kind === 'tree' ? 'tree' : d.key, frame: d.f || 0, x: Math.round(d.x), y: Math.round(d.y), scale: d.s || 1 })),
+      paths: this.EDGES.map(([a, b], i) => ({ id: 'e' + i, points: [this.WP[a], this.WP[b]], width: 64, style: this.MAIN.has(Math.min(a, b) + '-' + Math.max(a, b)) ? 'main' : 'secondary' })),
+      buildings: this.BUILDINGS.map(b => ({ id: b.id, x: b.x, y: b.y })),
+      npcs: this.agents.map(a => ({ id: a.id, unit: a.unit, color: a.color, x: Math.round(a.x), y: Math.round(a.y), scale: 1, wanderRadius: 0 })),
+      spawn: { x: this.PLAZA.x, y: this.PLAZA.y },
+      // Erweiterung wie `nodes`: Fraktionen kommen in MapConfig v1 nicht vor.
+      camps: (this.mapCamps || []).map(c => ({ fac: c.fac, x: Math.round(c.x), y: Math.round(c.y), r: Math.round(c.r) })),
+      factionUnits: (this.funits || []).map(u => ({ fac: u.fac, unit: u.unit, x: Math.round(u.x), y: Math.round(u.y), flip: !!u.flip })),
+      nodes: (this.mapNodes || this.nodes || []).map(n => ({ res: n.res, x: Math.round(n.x), y: Math.round(n.y), left: n.left })),
+      settings: { heroScale: this.SCALE, theme: 'tiny-swords-cc0' },
+      meta: { createdAt: Date.now(), updatedAt: Date.now(), name: name || 'Nexus Castle' }
+    };
+    return cfg;
+  }
+
+  exportMap() {
+    const cfg = this.mapConfig();
+    const blob = new Blob([JSON.stringify(cfg, null, 1)], { type: 'application/json' });
+    const a = document.createElement('a');
+    a.href = URL.createObjectURL(blob); a.download = 'nexus-castle-map.json';
+    a.click(); URL.revokeObjectURL(a.href);
+    this.edSay('exportiert (MapConfig v1, ' + Object.keys(cfg.terrain).length + ' Zellen)');
+  }
+
+  importMap(text) {
+    let cfg;
+    try { cfg = JSON.parse(text); } catch (e) { this.edSay('kein gültiges JSON'); return; }
+    if (!cfg || !cfg.terrain) { this.edSay('kein MapConfig (terrain fehlt)'); return; }
+    this.edBegin();
+    const r = this.applyConfig(cfg);
+    this.edEnd();
+    this.edTail('importiert: ' + r.cells + ' Zellen' + (r.skipped ? ' · ' + r.skipped + ' übersprungen' : ''));
+  }
+
+  /** Eine Anwendung für Import und Slot. Jeder Schreibweg läuft durch `snapWalkable()` (Bug #63/#64). */
+  applyConfig(cfg) {
+    for (let r = 0; r < this.ROWS; r++) for (let c = 0; c < this.COLS; c++) this.mapLvl[r][c] = 0;
+    for (const [k, cell] of Object.entries(cfg.terrain)) {
+      const [c, r] = k.split(',').map(Number);
+      const f = cell && cell.tile ? (cell.tile.frame || 0) : 0;
+      if (this.mapLvl[r] && f) this.mapLvl[r][c] = Math.min(2, f);
+    }
+    if (Array.isArray(cfg.buildings)) for (const p of cfg.buildings) {
+      const b = this.BUILDINGS.find(x => x.id === p.id);
+      if (b) { b.x = p.x; b.y = p.y; }
+    }
+    if (Array.isArray(cfg.camps)) {
+      const keep = [];
+      for (const c of cfg.camps) {
+        const fc = this.facOf(c.fac);
+        const q = this.snapFac({ x: c.x, y: c.y }, fc, 6);
+        if (!q) { skipped++; continue; }
+        keep.push({ fac: fc.id, x: q.x, y: q.y, r: c.r || fc.r });
+      }
+      this.mapCamps = keep;
+    }
+    if (Array.isArray(cfg.factionUnits)) {
+      const keep = [];
+      for (const u of cfg.factionUnits) {
+        const fc = this.facOf(u.fac);
+        const q = this.snapFac({ x: u.x, y: u.y }, fc, 3);
+        if (!q) { skipped++; continue; }
+        keep.push({ fac: fc.id, unit: u.unit, x: q.x, y: q.y, flip: !!u.flip, ph: Math.random() * 6 });
+      }
+      this.funits = keep;
+    }
+    if (Array.isArray(cfg.npcs) && cfg.npcs.length) {
+      this.kader = cfg.npcs.map(n => (n.unit && n.color ? { unit: n.unit, color: n.color } : null));
+      this.kader.forEach((k, i) => { if (k && this.agents[i]) { this.agents[i].unit = k.unit; this.agents[i].color = k.color; } });
+    }
+    this.facEnsureAll();
+    if (Array.isArray(cfg.decorations)) {
+      this.mapDeco = cfg.decorations.map(d => {
+        const kind = d.kind || (d.textureKey === 'tree' ? 'tree' : 'bush');
+        return kind === 'tree'
+          ? { kind: 'tree', x: d.x, y: d.y, f: d.frame || 0 }
+          : { kind, x: d.x, y: d.y, key: d.textureKey || 'd1', s: d.scale || 1 };
+      });
+    }
+    // Höhen zuerst anwenden, dann Maske ableiten — erst danach ist `snapWalkable()` aussagekräftig.
+    this.deriveLvl();
+    let skipped = 0;   // gilt für Abbau-Orte, Spawn, Lager und Fraktions-Einheiten
+    if (Array.isArray(cfg.nodes) && cfg.nodes.length) {
+      const keep = [];
+      for (const n of cfg.nodes) {
+        const q = this.snapWalkable({ x: n.x, y: n.y });
+        if (!q) { skipped++; continue; }             // kein begehbarer Platz in Reichweite
+        keep.push({ res: n.res, x: q.x, y: q.y, vein: n.vein });
+      }
+      this.mapNodes = keep;
+      this.nodes = keep.map(n => ({ ...n, vein: n.vein || 'vein' }));
+      this.sheep = this.nodes.filter(n => n.res === 'meat').map(n => ({ x: n.x - 42, y: n.y - 18, ph: Math.random() * 6, flip: false }));
+    }
+    if (cfg.spawn) {
+      const q = this.snapWalkable({ x: cfg.spawn.x, y: cfg.spawn.y }, 6);
+      if (q) this.PLAZA = q; else skipped++;
+    }
+    this.edDirty = true; this.edCommit();
+    return { cells: Object.keys(cfg.terrain).length, skipped };
+  }
+
+  /* ---------------- Eingabe ---------------- */
+
+  bindCanvas() {
+    const c = this.el.cv; if (!c) return;
+    this.onDown = e => {
+      if (this.state.edit && e.button === 0) {
+        this.edDrag = true;
+        this.edBegin();
+        this.edApply(this.worldAt(e), false);
+        return;
+      }
+      this.drag = { x: e.clientX, y: e.clientY, cx: this.cam.x, cy: this.cam.y, moved: 0 }; this.camTo = null; c.style.cursor = 'grabbing';
+    };
+    this.onMove = e => {
+      if (this.edDrag) { this.edApply(this.worldAt(e), true); return; }
+      if (!this.drag) return;
+      const dx = e.clientX - this.drag.x, dy = e.clientY - this.drag.y;
+      this.drag.moved = Math.max(this.drag.moved, Math.hypot(dx, dy));
+      this.cam.x = this.drag.cx - dx / this.state.zoom;
+      this.cam.y = this.drag.cy - dy / this.state.zoom;
+    };
+    this.onUp = e => {
+      if (this.edDrag) { this.edDrag = false; this.edSel = null; this.edCommit(); this.edEnd(); return; }
+      if (!this.drag) return;
+      const m = this.drag.moved; this.drag = null; c.style.cursor = 'grab'; if (m < 4) this.hit(e);
+    };
+    this.onWheel = e => {
+      e.preventDefault();
+      if (this._wT && performance.now() - this._wT < 150) return;
+      this._wT = performance.now();
+      this.zoomStep(e.deltaY < 0 ? 1 : -1);
+    };
+    this.onHover = e => {
+      if (this.drag) return;
+      const p = this.worldAt(e);
+      const b = this.buildingAt(p.x, p.y);
+      const key = b ? b.id : null;
+      if (key !== this.hoverKey || b) {
+        this.hoverKey = key;
+        this.setState({ hover: b ? { label: b.label, sub: b.sub, act: this.ACT[b.act].chip, x: e.clientX, y: e.clientY } : null });
+      }
+      c.style.cursor = b ? 'pointer' : 'grab';
+    };
+    c.addEventListener('mousemove', this.onHover);
+    c.addEventListener('mousedown', this.onDown);
+    c.addEventListener('wheel', this.onWheel, { passive: false });
+    window.addEventListener('mousemove', this.onMove);
+    window.addEventListener('mouseup', this.onUp);
+  }
+
+  worldAt(e) {
+    const c = this.el.cv, r = c.getBoundingClientRect(), z = this.state.zoom;
+    return { x: (e.clientX - r.left - this.cw / 2) / z + this.cam.x, y: (e.clientY - r.top - this.ch / 2 - 74) / z + this.cam.y };
+  }
+  buildingAt(wx, wy) {
+    for (const b of this.BUILDINGS) {
+      const im = this.img['b_' + b.id]; if (!im) continue;
+      const w = im.naturalWidth / im.naturalHeight * b.h;
+      if (wx > b.x - w / 2 && wx < b.x + w / 2 && wy > b.y - b.h * .55 && wy < b.y + b.h * .45) return b;
+    }
+    return null;
+  }
+  hit(e) {
+    const c = this.el.cv, r = c.getBoundingClientRect(), z = this.state.zoom;
+    const wx = (e.clientX - r.left - this.cw / 2) / z + this.cam.x;
+    const wy = (e.clientY - r.top - this.ch / 2 - 74) / z + this.cam.y;
+    let best = null, bd = 1e9;
+    for (const a of this.agents) { const d = Math.hypot(a.x - wx, a.y - wy - 44); if (d < bd) { bd = d; best = a; } }
+    if (best && bd < 66) { this.setState({ selId: best.id, selB: null }); this.sfx('select'); return; }
+    const b = this.buildingAt(wx, wy);
+    if (b) { this.setState({ selB: b.id, selId: null }); this.sfx('select'); return; }
+    this.setState({ selId: null, selB: null });
+  }
+
+  /* ---------------- Ton ---------------- */
+
+  sfx(name) {
+    if (!this.state.sound) return;
+    const s = this.SFX[name]; if (!s) return;
+    try { const a = new Audio(this.KFB + 'media/3D_Assets/Audio/kenney_interface-sounds/' + s[0]); a.volume = s[1] * .7; a.play().catch(() => {}); } catch (err) {}
+  }
+
+  playTrack(i) {
+    const tr = this.TRACKS[i % this.TRACKS.length];
+    if (this.music) { this.music.pause(); this.music = null; }
+    const a = new Audio(this.KFB + tr.f.split('/').map(encodeURIComponent).join('/'));
+    a.loop = true; a.volume = .3;
+    a.play().then(() => this.setState({ playing: true })).catch(() => this.setState({ playing: false }));
+    this.music = a;
+  }
+
+  /* ---------------- UI ---------------- */
+
+  /** Der teuerste Frame ist der, in dem React dazwischenredet.
+   *  `syncUI` lief alle 260 ms und kopierte alle Agenten samt Position in den State — die Position
+   *  steht in der Liste aber nirgends. Jeder Tick war damit ein kompletter Neuaufbau des Baums,
+   *  viermal je Sekunde, mitten in der Renderschleife: das war das Ruckeln und das Einfrieren.
+   *  Jetzt wird ein Fingerabdruck aus dem gebildet, was die UI WIRKLICH zeigt. Gleich = kein setState. */
+  uiFingerprint() {
+    let s = this.clockLabel() + '|' + (this.alarm ? this.alarm.id + this.alarm.name : '-') + '|' + this.feed.length;
+    if (this.feed[0]) s += '|' + this.feed[0].id;
+    for (const a of this.agents) s += '|' + a.status + (a.moving ? 1 : 0) + (a.task || '') + a.unit + a.color + a.done;
+    return s;
+  }
+  syncUI(force) {
+    const fp = this.uiFingerprint();
+    if (!force && fp === this._uiFp) return;
+    this._uiFp = fp;
+    this.setState({
+      feed: this.feed.slice(0, 34).map(f => ({ ...f })),
+      agents: this.agents.map(a => ({ ...a })),
+      alarm: this.alarm ? { ...this.alarm } : null,
+      clock: this.clockLabel()
+    });
+  }
+
+  dot(c) { return { blue: '#6ab4f8', red: '#f97362', yellow: '#f6b74a', purple: '#a78bfa' }[c] || '#c9ae84'; }
+
+  avatar(a) {
+    const spec = this.UNITS[a.unit], F = 66;     // 66 = 192-px-Blatt auf 34-px-Kachel beschnitten
+    if (spec.strip) {
+      const f = Math.round(spec.F * (F / 192)), off = Math.round((f - 34) / 2);
+      return {
+        sheet: this.stripUrl(a.unit, a.color, 'idle'),
+        bgSize: (f * spec.idleN) + 'px ' + f + 'px',
+        bgPos: '-' + off + 'px -' + Math.max(0, off - 4) + 'px'
+      };
+    }
+    return { sheet: this.sheetUrl(a.unit, a.color), bgSize: (spec.cols * F) + 'px ' + (spec.rows * F) + 'px', bgPos: '-9px -7px' };
+  }
+
+  statusLabel(a) {
+    if (a.status === 'waiting') return 'awaiting approval';
+    if (a.moving) return 'walking';
+    if (a.status === 'active') return 'on duty';
+    return 'resting';
+  }
+
+  critColor(c) { return c >= .75 ? '#b4331f' : c >= .5 ? '#a06a10' : '#2f7a3a'; }
+  ACT_DARK = { read: '#1d6a8c', write: '#2f7a3a', command: '#4a3a9a', analyze: '#a06a10', alert: '#b4331f', idle: '#6b4a20' };
+
+  renderVals() {
+    const s = this.state;
+    const btn = on => this.UI + (on ? 'Buttons/Button_Blue_3Slides_Pressed.png' : 'Buttons/Button_Blue_3Slides.png');
+    const fmt = ts => new Date(ts).toLocaleTimeString('de-DE', { hour: '2-digit', minute: '2-digit' });
+    const auto = s.autonomy >= 70;
+    const selAg = this.agents.find(a => a.id === s.selId);
+    const bMap = {}; for (const b of this.BUILDINGS) bMap[b.id] = b;
+    const badge = k => ({
+      auto: { bg: 'rgba(126,116,196,.35)', fg: '#2b2560' },
+      wait: { bg: 'rgba(196,72,52,.42)', fg: '#4a1008' },
+      ok:   { bg: 'rgba(88,168,104,.4)', fg: '#1d4a26' },
+      no:   { bg: 'rgba(120,96,60,.4)', fg: '#4a3418' }
+    }[k] || { bg: 'rgba(120,96,60,.35)', fg: '#4a3418' });
+    const busy = this.agents.filter(a => a.status === 'active').length;
+
+    return {
+      loading: s.loading, loadLabel: s.loadLabel,
+      statLine: this.agents.length + ' heroes · ' + busy + ' on duty · ' + this.feed.length + ' artefacts',
+      // Ressourcen-Leiste blendet nur bei Änderung ein (3.8 s), danach ist der Kopf wieder ruhig.
+      resShow: !s.loading && !!this.res && (this.t - this.resAt) < 3.8,
+      resWood: this.res ? this.res.wood : 0,
+      resGold: this.res ? this.res.gold : 0,
+      resMeat: this.res ? this.res.meat : 0,
+      clock: s.clock,
+      cycleTime: () => {
+        const stops = [7.5, 12, 19, 22.5];
+        const next = stops.find(h => h > this.tod + .01);
+        this.tod = next === undefined ? stops[0] : next;
+        this.setState({ autoClock: false, todMode: 'fixed', clock: this.clockLabel() }); this.sfx('toggle');
+      },
+      clockLabel: s.autoClock ? 'clock on' : 'clock off',
+      toggleClock: () => { const on = !s.autoClock; this.setState({ autoClock: on, todMode: on ? 'cycle' : 'fixed' }); this.sfx('toggle'); },
+      todValue: Math.round(this.tod * 10) / 10,
+      onTod: e => { this.tod = +e.target.value; this.setState({ autoClock: false, todMode: 'fixed', clock: this.clockLabel() }); },
+      // Tageszeit festsetzen: zum Prüfen von Nacht-Sachen, ohne auf den Zyklus zu warten.
+      todOpen: !!s.todOpen,
+      todModeLabel: s.todMode === 'cycle' ? 'cycle' : s.todMode === 'day' ? 'day' : s.todMode === 'night' ? 'night' : 'fixed',
+      toggleTod: () => { this.setState({ todOpen: !s.todOpen }); this.sfx('click'); },
+      todModes: [['day', 'Day', 12], ['night', 'Night', 22], ['cycle', 'Cycle', null]].map(([id, label, h]) => ({
+        label,
+        bg: s.todMode === id ? 'rgba(240,226,196,.24)' : 'rgba(16,20,15,.86)',
+        pick: () => {
+          if (h !== null) this.tod = h;
+          this.setState({ todMode: id, autoClock: id === 'cycle', todOpen: false, clock: this.clockLabel() });
+          this.sfx('toggle');
+        }
+      })),
+      clockSpeed: s.clockSpeed,
+      onClockSpeed: e => this.setState({ clockSpeed: +e.target.value }),
+
+      hover: s.hover ? { label: s.hover.label, sub: s.hover.sub, act: s.hover.act, pos: 'left:' + (s.hover.x + 16) + 'px; top:' + (s.hover.y + 14) + 'px' } : null,
+
+      selB: (() => {
+        if (!s.selB) return null;
+        const b = this.BUILDINGS.find(x => x.id === s.selB); if (!b) return null;
+        const mine = this.feed.filter(e => e.actKey === b.act);
+        const crit = mine.length ? mine.reduce((a, e) => a + e.crit, 0) / mine.length : 0;
+        const here = this.agents.filter(a => a.place === b.id).map(a => a.name);
+        return {
+          label: b.label, sub: b.sub, act: this.ACT[b.act].chip,
+          count: String(mine.length),
+          critAvg: crit.toFixed(2), critColor: this.critColor(crit),
+          here: here.length ? here.join(', ') : 'nobody',
+          arte: mine.length + ' · crit ' + crit.toFixed(2),
+          last: mine.length ? mine[0].text : 'no artefact yet'
+        };
+      })(),
+      clearB: () => this.setState({ selB: null }),
+      council: s.council,
+      toggleCouncil: () => { this.setState({ council: !s.council }); this.sfx('click'); },
+      chronik: s.chronik,
+      chronikLabel: s.chronik ? 'Close log' : 'Log',
+      partyOpen: s.partyOpen,
+      partyLabel: s.partyOpen ? 'Party ' + this.agents.length : 'Party ' + this.agents.length + ' \u25b8',
+      togglePartyBar: () => { this.setState({ partyOpen: !s.partyOpen }); this.sfx('click'); },
+      toggleChronik: () => { this.setState({ chronik: !s.chronik }); this.sfx('click'); },
+
+      srcImg0: btn(s.src === 'nexus'), srcImg1: btn(s.src === 'rss'), srcImg2: btn(s.src === 'scene'),
+      pickNexus: () => { this.setState({ src: 'nexus' }); this.sfx('toggle'); },
+      pickRss: () => { this.setState({ src: 'rss' }); this.sfx('toggle'); },
+      pickScene: () => { this.sceneIdx = 0; this.setState({ src: 'scene' }); this.sfx('toggle'); },
+
+      autonomy: s.autonomy,
+      autonomyLabel: auto ? 'free hand' : s.autonomy + '%',
+      autoColor: auto ? '#4a3a9a' : '#a06a10',
+      onAutonomy: e => this.setState({ autonomy: +e.target.value }),
+      tempo: s.tempo, tempoLabel: s.tempo + '×',
+      onTempo: e => this.setState({ tempo: +e.target.value }),
+      count: s.count,
+      more: () => { const n = Math.min(24, s.count + 1); this.setState({ count: n }); this.spawnAgents(n); this.sfx('click'); },
+      fewer: () => { const n = Math.max(3, s.count - 1); this.setState({ count: n }); this.spawnAgents(n); this.sfx('click'); },
+      leyLabel: s.leys ? 'Leylines on' : 'Leylines off',
+      toggleLeys: () => { this.setState({ leys: !s.leys }, () => this.buildWorld()); this.sfx('toggle'); },
+      soundLabel: s.sound ? 'Sound on' : 'Sound off',
+      soundImg: btn(s.sound),
+      toggleSound: () => this.setState({ sound: !s.sound }),
+
+      edit: s.edit, edMsg: s.edMsg,
+      editBg: s.edit ? 'rgba(240,226,196,.22)' : 'rgba(16,20,15,.86)',
+      toggleEdit: () => { this.setState({ edit: !s.edit, edMsg: s.edit ? '' : 'Werkzeug wählen' }); this.sfx('toggle'); },
+      tools: this.edTools.map(([id, label]) => ({
+        id, label,
+        bg: s.tool === id ? 'rgba(240,226,196,.24)' : 'rgba(16,20,15,.86)',
+        pick: () => { this.setState({ tool: id, edMsg: label }); this.sfx('click'); }
+      })),
+      facName: this.facOf(s.fac).name,
+      facs: this.FACTIONS.map(fc => ({
+        name: fc.name, short: fc.short, tint: fc.tint,
+        bg: s.fac === fc.id ? 'rgba(240,226,196,.22)' : 'rgba(16,20,15,.86)',
+        border: s.fac === fc.id ? 'rgba(240,226,196,.5)' : 'rgba(240,226,196,.16)',
+        pick: () => {
+          const first = this.facUnits(fc)[0];
+          this.facEnsure(fc);
+          this.setState({ fac: fc.id, facUnit: first ? first.id : '', edMsg: fc.name });
+          this.sfx('click');
+        }
+      })),
+      facUnitList: this.facUnits(this.facOf(s.fac)).map(u => ({
+        label: u.label,
+        bg: s.facUnit === u.id ? 'rgba(240,226,196,.24)' : 'rgba(16,20,15,.86)',
+        pick: () => { this.setState({ facUnit: u.id, edMsg: u.label }); this.sfx('click'); }
+      })),
+      revier: s.revier, revierLabel: s.revier + ' px',
+      onRevier: e => this.setState({ revier: +e.target.value }),
+      facCount: (this.mapCamps || []).length + ' Lager · ' + (this.funits || []).length + ' Einheiten',
+      kaderHint: this.agents.length + ' Helden · Klick dreht weiter',
+      kader: s.agents.map((a, i) => ({
+        name: a.name, unit: a.unit, colorShort: a.color.slice(0, 3),
+        tint: this.dot(a.color),
+        nextUnit: () => this.kaderStep(i, 'unit'),
+        nextColor: () => this.kaderStep(i, 'color')
+      })),
+      undo: () => this.edUndo(), redo: () => this.edRedo(),
+      undoN: s.undoN || 0, redoN: s.redoN || 0,
+      slots: (s.slots || []).map(n => ({ name: n, load: () => this.slotLoad(n), del: () => this.slotDel(n) })),
+      slotCount: (s.slots || []).length ? (s.slots || []).length + ' gespeichert' : 'leer',
+      slotName: s.slotName || '',
+      onSlotName: e => this.setState({ slotName: e.target.value }),
+      slotSave: () => this.slotSave(s.slotName),
+      exportMap: () => this.exportMap(),
+      onImport: e => {
+        const f = e.target.files && e.target.files[0];
+        if (!f) return;
+        const rd = new FileReader();
+        rd.onload = () => this.importMap(String(rd.result));
+        rd.readAsText(f);
+      },
+
+      zoom: s.zoom, zoomLabel: s.zoom.toFixed(2) + '×',
+      zoomIn: () => this.zoomStep(1),
+      zoomOut: () => this.zoomStep(-1),
+      recenter: () => { this.camTo = { x: this.PLAZA.x, y: this.PLAZA.y - 20 }; this.sfx('click'); },
+
+      feedCount: this.feed.length + ' entries',
+      feed: s.feed.map(f => {
+        const bs = badge(f.badgeKind);
+        return {
+          ...f, time: fmt(f.ts), dot: f.color,
+          actColor: this.ACT_DARK[f.actKey] || this.ACT_DARK.idle,
+          crit: f.crit.toFixed(2), critW: Math.round(f.crit * 100) + '%', critColor: this.critColor(f.crit),
+          border: f.badgeKind === 'wait' ? '#a8331c' : 'rgba(96,66,30,.45)',
+          bg: f.badgeKind === 'wait' ? 'rgba(214,132,110,.4)' : 'rgba(158,124,76,.28)',
+          badgeBg: bs.bg, badgeFg: bs.fg,
+          jump: () => {
+            const ag = this.agents.find(a => a.id === f.agentId);
+            if (!ag) return;
+            this.camTo = { x: ag.x, y: ag.y - 30 };
+            this.setState({ selId: ag.id }); this.sfx('select');
+          }
+        };
+      }),
+
+      alarm: s.alarm ? { text: s.alarm.text, meta: s.alarm.agent + ' · ' + s.alarm.cat + ' · dial ' + s.autonomy + '%', crit: s.alarm.crit.toFixed(2) } : null,
+      approve: () => this.resolve('ok'),
+      deny: () => this.resolve('no'),
+
+      agents: s.agents.map(a => {
+        const av = this.avatar(a), on = a.id === s.selId;
+        return {
+          short: a.name.split('-')[0], sheet: av.sheet, bgSize: av.bgSize, bgPos: av.bgPos,
+          statusColor: a.status === 'waiting' ? '#b4331f' : a.status === 'active' ? '#2f7a3a' : '#8b7a5a',
+          border: on ? '#8a4a10' : 'rgba(96,66,30,.45)',
+          bg: on ? 'rgba(214,176,104,.55)' : 'rgba(158,124,76,.28)',
+          pick: () => { this.setState({ selId: a.id }); this.camTo = { x: a.x, y: a.y - 30 }; this.sfx('select'); }
+        };
+      }),
+
+      sel: selAg ? (() => {
+        const av = this.avatar(selAg), b = bMap[selAg.place] || bMap.taverne;
+        const crit = selAg.artefacts ? selAg.critSum / selAg.artefacts : 0;
+        return {
+          name: selAg.name, sheet: av.sheet, bgSize: av.bgSize, bgPos: av.bgPos,
+          meta: selAg.unit + ' · ' + (s.src === 'rss' ? 'RSS/LLM' : s.src === 'scene' ? 'Scenario' : 'Artefacts'),
+          place: b.label, status: this.statusLabel(selAg),
+          statusColor: selAg.status === 'waiting' ? '#b4331f' : selAg.status === 'active' ? '#2f7a3a' : '#6b4a20',
+          artefacts: String(selAg.artefacts), arte: selAg.artefacts + ' · crit ' + crit.toFixed(2), critAvg: crit.toFixed(2), critColor: this.critColor(crit),
+          last: selAg.last
+        };
+      })() : null,
+      clearSel: () => this.setState({ selId: null }),
+
+      playLabel: s.playing ? 'Pause' : 'Jukebox',
+      trackShort: this.TRACKS[s.track % this.TRACKS.length].t,
+      toggleMusic: () => {
+        if (this.music && s.playing) { this.music.pause(); this.setState({ playing: false }); return; }
+        if (this.music) { this.music.play().then(() => this.setState({ playing: true })).catch(() => {}); return; }
+        this.playTrack(s.track);
+      },
+      nextTrack: () => { const n = (s.track + 1) % this.TRACKS.length; this.setState({ track: n }); this.playTrack(n); },
+
+      showUI: !s.min,
+      minified: s.min,
+      toggleMin: () => { this.setState({ min: !s.min }); this.sfx('toggle'); },
+      consoleOpen: s.chronik || s.council,
+      openLog: () => { this.setState({ chronik: true, council: false, min: false }); this.sfx('click'); },
+      openSettings: () => { this.setState({ council: true, chronik: false, min: false }); this.sfx('click'); },
+      closeConsole: () => { this.setState({ chronik: false, council: false }); this.sfx('back'); },
+      logTabBg: s.chronik ? 'rgba(240,226,196,.18)' : 'rgba(240,226,196,.06)',
+      setTabBg: s.council ? 'rgba(240,226,196,.18)' : 'rgba(240,226,196,.06)',
+      srcNexusBg: s.src === 'nexus' ? 'rgba(240,226,196,.18)' : 'rgba(240,226,196,.06)',
+      srcRssBg: s.src === 'rss' ? 'rgba(240,226,196,.18)' : 'rgba(240,226,196,.06)',
+      srcSceneBg: s.src === 'scene' ? 'rgba(240,226,196,.18)' : 'rgba(240,226,196,.06)',
+      alarmCard: s.alarm && s.alarmOpen ? { text: s.alarm.text, meta: s.alarm.agent + ' · ' + s.alarm.cat + ' · dial ' + s.autonomy + '%', crit: s.alarm.crit.toFixed(2) } : null,
+      toggleAlarm: () => { this.setState({ alarmOpen: !s.alarmOpen, min: false }); this.sfx('click'); },
+      closeAlarm: () => { this.setState({ alarmOpen: false }); this.sfx('back'); },
+      lampRed: s.alarm ? '#f2705c' : 'rgba(224,112,94,.18)',
+      lampAmber: (!s.alarm && s.autonomy >= 60) ? '#e8b552' : 'rgba(232,181,82,.18)',
+      lampGreen: (!s.alarm && s.autonomy < 60) ? '#7fbf6a' : 'rgba(127,191,106,.18)',
+      lampGlow: s.alarm ? '0 0 8px rgba(242,112,92,.9)' : 'none',
+      lampLabel: s.alarm ? 'Approval' : 'Clear',
+      lampBg: s.alarm ? 'rgba(120,40,32,.9)' : 'rgba(16,20,15,.86)',
+      trackLabel: this.TRACKS[s.track % this.TRACKS.length].t,
+
+      stage: el => { if (el) this.el.stage = el; },
+      cv: el => { if (el) this.el.cv = el; }
+    };
+  }
+}
+</script>
+</body>
+</html>

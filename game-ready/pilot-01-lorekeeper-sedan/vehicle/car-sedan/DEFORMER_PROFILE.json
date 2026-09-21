@@ -1,0 +1,18 @@
+{
+  "schema": "kfb.deformer-profile-ref.v0",
+  "vehicleId": "car-sedan",
+  "profileId": "CAR_CHILL_LIGHT",
+  "source": {
+    "path": "tools/KFB-ToolBox/_inbox/KFB Cartoon Vehicle + Deformer Lab v1/WS1_Vehicles_Review_2026-09-18/lab-v7/deformer-profiles.json",
+    "blobSha": "2bb3615230e665462c5042a93fb6cbaeae4c2f75"
+  },
+  "status": "BROWSER_TESTED_NOT_HUMAN_ACCEPTED",
+  "snapshotPolicy": "reference-profile-not-duplicate-owner",
+  "evidence": {
+    "browserTestedOn": [
+      "car_hatchback",
+      "car_sedan"
+    ],
+    "box1ProfileAccepted": false
+  }
+}

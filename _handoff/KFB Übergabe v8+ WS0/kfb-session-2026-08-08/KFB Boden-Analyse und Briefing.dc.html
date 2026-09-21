@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Shantell+Sans:wght@400;600;700&family=Special+Elite&display=swap">
+<style>
+html,body{margin:0;background:#efe9db}
+a{color:#0e3d3c}a:hover{color:#000}
+</style>
+</helmet>
+<div style="background:#efe9db;color:#241d16;font-family:'Shantell Sans',system-ui,sans-serif;-webkit-font-smoothing:antialiased;padding:clamp(20px,4vw,52px)">
+<div style="max-width:1040px;margin:0 auto">
+
+<div style="font-family:'Courier New',monospace;font-size:12px;letter-spacing:2px;color:#6b6259">KFB OVERWORLD · BODEN · ANALYSE VOR DEM NÄCHSTEN BAU</div>
+<h1 style="font-family:'Special Elite',cursive;font-size:clamp(28px,5vw,44px);line-height:1.05;margin:8px 0 0;font-weight:400">Es ist keine Form.<br>Es ist ein Feld.</h1>
+<div style="font-size:clamp(16px,1.9vw,18px);line-height:1.6;margin-top:14px;color:#3a3129;max-width:800px">Sechs Anläufe, sechsmal derselbe Fehler. Das Referenzbild zeigt, welcher — und der Unterschied ist nicht graduell, sondern grundsätzlich: <strong>in diesem Bild wird keine einzige Form gezeichnet.</strong></div>
+
+<h2 style="font-family:'Special Elite',cursive;font-weight:400;font-size:clamp(21px,3vw,26px);margin:38px 0 6px">Vier Befunde aus dem Referenzbild</h2>
+<div style="height:2px;background:#241d16;margin-bottom:18px"></div>
+
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(258px,1fr));gap:14px">
+<div style="background:#e3ddcc;padding:17px 19px;border-top:5px solid #c43c3c">
+<div style="font-family:'Special Elite',cursive;font-size:17px">01 · Keine Umrisse</div>
+<div style="font-size:14.5px;line-height:1.6;margin-top:7px">Die Bandgrenzen sind <strong>Nebenprodukte</strong>: dort überschreitet ein Zahlenfeld eine Schwelle. Niemand hat sie gezeichnet, niemand hat entschieden, wo sie verlaufen. Deshalb haben sie keine wiedererkennbare Handschrift — meine Formen hatten immer eine.</div>
+</div>
+<div style="background:#e3ddcc;padding:17px 19px;border-top:5px solid #b8862a">
+<div style="font-family:'Special Elite',cursive;font-size:17px">02 · Schachtelung gratis</div>
+<div style="font-size:14.5px;line-height:1.6;margin-top:7px">Um jede Erhebung im Feld liegen die Höhenlinien zwangsläufig <strong>ineinander</strong>. Das ist der Ring-im-Ring-Effekt, und er entsteht ohne jede Anweisung. Meine Anwuchs-Massen konnten das nie — eingebaute Schachtelung sieht eingebaut aus.</div>
+</div>
+<div style="background:#e3ddcc;padding:17px 19px;border-top:5px solid #2f6f4f">
+<div style="font-family:'Special Elite',cursive;font-size:17px">03 · Kein Maßstab</div>
+<div style="font-size:14.5px;line-height:1.6;margin-top:7px">Große Schwünge oben links, enge Ringe in der Mitte, feine Kräusel am Rand — <strong>ohne Bruch dazwischen</strong>. Ein Fraktal hat keinen charakteristischen Maßstab. Meine drei Generationen waren drei erkennbare Stufen; das ist etwas anderes.</div>
+</div>
+<div style="background:#e3ddcc;padding:17px 19px;border-top:5px solid #47aba9">
+<div style="font-family:'Special Elite',cursive;font-size:17px">04 · Flach heißt Schwelle</div>
+<div style="font-size:14.5px;line-height:1.6;margin-top:7px">Die Farbe ist absolut flach, obwohl darunter ein <em>stetiges</em> Feld liegt. Die Flachheit kommt aus dem <strong>Quantisieren</strong>, nicht aus dem Füllen. Das ist Lozzis Schablone — nur dass die Schere kein Mensch führt.</div>
+</div>
+</div>
+
+<h2 style="font-family:'Special Elite',cursive;font-weight:400;font-size:clamp(21px,3vw,26px);margin:38px 0 6px">Meine Fehlerkette, eine Zeile pro Anlauf</h2>
+<div style="height:2px;background:#241d16;margin-bottom:14px"></div>
+<div style="font-size:clamp(15.5px,1.9vw,17px);line-height:1.6;max-width:820px;margin-bottom:16px">Jeder Anlauf hat den Befund des vorigen behoben und einen neuen erzeugt. Das Muster hätte mir spätestens beim vierten Mal auffallen müssen.</div>
+
+<sc-for list="{{ kette }}" as="k" hint-placeholder-count="7">
+<div style="display:grid;grid-template-columns:56px 116px 1fr;gap:14px;align-items:baseline;background:#e3ddcc;padding:11px 16px;margin-bottom:7px">
+<div style="font-family:'Courier New',monospace;font-size:12px;color:#6b6259">{{ k.nr }}</div>
+<div style="font-family:'Special Elite',cursive;font-size:15.5px">{{ k.name }}</div>
+<div style="font-size:14.5px;line-height:1.55">{{ k.text }}</div>
+</div>
+</sc-for>
+
+<div style="background:#241d16;color:#efe9db;padding:clamp(18px,3vw,26px);margin-top:16px">
+<div style="font-family:'Special Elite',cursive;font-size:clamp(19px,2.6vw,23px);color:#e8d38a;line-height:1.25">Der gemeinsame Nenner</div>
+<div style="font-size:clamp(15px,1.8vw,16.5px);line-height:1.65;margin-top:10px">Alle sechs Anläufe haben <strong style="color:#e8d38a">Objekte erzeugt und verteilt</strong>. Ein Objekt hat Umriss, Mittelpunkt und Größe — drei Eigenschaften, die man wiedererkennt, sobald zweihundert davon im Bild sind. Egal ob Oval, Gitterzelle, Zug oder Anwuchsmasse: sobald das Bild aus <em>Dingen</em> besteht, sieht man die Dinge.</div>
+<div style="font-size:clamp(15px,1.8vw,16.5px);line-height:1.65;margin-top:12px">Das Referenzbild besteht nicht aus Dingen. Es besteht aus <strong style="color:#e8d38a">einem stetigen Wertefeld über der ganzen Ebene</strong>, das in flache Stufen zerlegt ist. Es gibt kein zweites Etwas, das dem ersten ähneln könnte — deshalb ist da nichts zu erkennen.</div>
+</div>
+
+<h2 style="font-family:'Special Elite',cursive;font-weight:400;font-size:clamp(21px,3vw,26px);margin:38px 0 6px">Beleg statt Behauptung</h2>
+<div style="height:2px;background:#241d16;margin-bottom:14px"></div>
+<div style="font-size:clamp(15.5px,1.9vw,17px);line-height:1.6;max-width:820px"><strong>Kein Entwurf, kein Stil</strong> — nur der Nachweis, dass diese Bauart die vier Befunde erfüllt und dass keiner meiner sechs Anläufe sie strukturell erfüllen <em>konnte</em>. Die Schalter zeigen, was jeder Schritt beiträgt.</div>
+
+<div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:14px">
+<sc-for list="{{ schalter }}" as="s" hint-placeholder-count="7">
+<button onClick="{{ s.klick }}" style="font-family:'Courier New',monospace;font-size:12.5px;letter-spacing:.5px;padding:8px 12px;cursor:pointer;border:2px solid #241d16;background:{{ s.bg }};color:{{ s.fg }}">{{ s.label }}</button>
+</sc-for>
+<button onClick="{{ neuerKeim }}" style="font-family:'Courier New',monospace;font-size:12.5px;letter-spacing:.5px;padding:8px 12px;cursor:pointer;border:2px solid #241d16;background:transparent;color:#241d16">NEUER KEIM · {{ keim }}</button>
+</div>
+
+<div style="position:relative;width:100%;aspect-ratio:16 / 9;margin-top:12px;border:3px solid #241d16;background:#3d6141;overflow:hidden">
+<canvas id="kfb-feld-probe" style="position:absolute;inset:0;width:100%;height:100%;display:block"></canvas>
+</div>
+<div style="font-size:14px;color:#6b6259;margin-top:8px">Ziehen verschiebt die Welt. Es gibt keine Kachel und kein Objekt — nur eine Funktion, die zu jedem Weltpunkt eine Zahl liefert.</div>
+
+<h2 style="font-family:'Special Elite',cursive;font-weight:400;font-size:clamp(21px,3vw,26px);margin:38px 0 6px">Was aus den beiden Fremdgutachten bleibt</h2>
+<div style="height:2px;background:#241d16;margin-bottom:14px"></div>
+
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:14px">
+<div style="background:#e3ddcc;padding:17px 19px;border-left:5px solid #2f6f4f">
+<div style="font-family:'Special Elite',cursive;font-size:16.5px">Übernehmen</div>
+<div style="font-size:14.5px;line-height:1.6;margin-top:7px"><strong>»Das Terrain besteht nicht aus Objekten«</strong> — Fläche, Bereich, Kontur statt Objekt, Objekt, Objekt. Deckt sich mit meinem Befund und ist besser formuliert. <strong>Flow Field:</strong> alle großen Konturen einer Vorzugsrichtung unterordnen. <strong>80/15/5:</strong> ruhige Flächen, mittlere Abweichung, seltenes Bizarres — statt hundert gleichwertiger Kleinigkeiten. <strong>Krümmung mit Gedächtnis:</strong> lange in eine Richtung laufen, dann wechseln. <strong>Assets danach platzieren</strong>, nicht mitgenerieren. <strong>Terrain bekommt ein eigenes Tusche-Preset</strong> statt das Karten-Preset zu verbiegen.</div>
+</div>
+<div style="background:#e3ddcc;padding:17px 19px;border-left:5px solid #c43c3c">
+<div style="font-family:'Special Elite',cursive;font-size:16.5px">Nicht übernehmen</div>
+<div style="font-size:14.5px;line-height:1.6;margin-top:7px"><strong>Zwölf Biome</strong>, bevor eines überzeugt — zwölfmal derselbe Fehler statt einmal. <strong>Die Typdefinitionen:</strong> vierzig geratene Felder für ein System, das noch niemand hat laufen sehen, und der Runner ist reines JS ohne Bauschritt. <strong>Contour Repair als eigene Stufe:</strong> nachträgliches Glätten heilt keine Bauart, die schon Objekte erzeugt hat — es ist eine Regel für jeden Erzeuger, keine Stufe danach.</div>
+</div>
+<div style="background:#241d16;color:#efe9db;padding:17px 19px;border-left:5px solid #e8d38a">
+<div style="font-family:'Special Elite',cursive;font-size:16.5px;color:#e8d38a">Was in beiden fehlt</div>
+<div style="font-size:14.5px;line-height:1.6;margin-top:7px">Kein Wort über <strong style="color:#e8d38a">Kosten</strong>. Kein Kaltstart, kein Cache, nichts darüber, was passiert, wenn der Spieler läuft. Genau das hat das Reliefsystem umgebracht — sechsunddreißig Sekunden. Neun Stufen vor dem ersten Pixel sind als Backpipeline in Ordnung und zur Laufzeit tödlich. Deshalb steht die Kostenfrage im Briefing vor der Lösungsfrage.</div>
+</div>
+</div>
+
+<h2 style="font-family:'Special Elite',cursive;font-weight:400;font-size:clamp(21px,3vw,26px);margin:38px 0 6px">Briefing für ein externes Modell</h2>
+<div style="height:2px;background:#241d16;margin-bottom:14px"></div>
+<div style="font-size:clamp(15.5px,1.9vw,17px);line-height:1.6;max-width:820px;margin-bottom:14px"><strong>Lösungsoffen gehalten:</strong> es nennt Problem, Beweislage, harte Grenzen und Abnahme — aber <em>kein</em> Verfahren. Meine Felder-Diagnose steht als Vermutung darin, ausdrücklich angreifbar. Wer es liest, soll widersprechen dürfen.</div>
+
+<div style="background:#fbf8f0;border:2px solid #241d16;padding:clamp(16px,2.5vw,24px);font-family:'Courier New',monospace;font-size:13px;line-height:1.62;white-space:pre-wrap;overflow-x:auto">{{ briefing }}</div>
+
+<div style="margin-top:32px;text-align:center;font-family:'Special Elite',cursive;font-size:15px;color:#6b6259">Stay fluffy.</div>
+
+</div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1060,&quot;height&quot;:900}}">
+/* ══ PRÜFSTAND: FELD STATT FORM ═════════════════════════════════════════════════════════════
+   Kein Entwurf. Der Nachweis, dass eine feldbasierte Bauart die vier Befunde aus dem
+   Referenzbild erfüllt — und dass die sechs vorigen Anläufe sie strukturell nicht erfüllen
+   KONNTEN, egal wie gut ich sie parametrisiert hätte.
+
+   Der Unterschied in einem Satz: es gibt kein Objekt. Es gibt eine Funktion, die zu jedem
+   Weltpunkt eine Zahl liefert. Alles Sichtbare ist die Antwort auf »in welcher Stufe liegt
+   diese Zahl«. Damit existiert nichts, das wiederholt werden könnte.
+
+   Die drei Bausteine:
+     1  fbm     — Summe von Rauschen über Oktaven. Liefert Detail auf ALLEN Größenstufen
+                  gleichzeitig, ohne dass eine davon als »die eigentliche« hervorsticht.
+     2  Warp    — das Feld wird an einer Stelle abgefragt, die selbst aus einem Feld kommt.
+                  Das erzeugt die langen fließenden Schwünge und die Schachtelung. Ohne Warp
+                  sieht fbm aus wie Wolken; mit Warp sieht es aus wie das Referenzbild.
+     3  Stufen  — Quantisieren auf wenige Werte. Daher die flache Farbe: nicht gefüllt,
+                  sondern geschnitten. Lozzis Schablone ohne Schere.
+
+   Anisotropie: das Feld wird vor der Abfrage entlang einer Vorzugsrichtung gestaucht. Damit
+   sind die Bänder in eine Richtung gestreckt statt rundlich — die »directional deformation
+   statt radial« aus dem Fremdgutachten, in einer Zeile. */
+
+const ZELLE = 512;
+const STUFEN = ['#2f4a37','#3d6141','#4d7749','#5f8d52','#74a25e','#8fb96e','#aecd85'];
+const TUSCHE = '#182619';
+const LICHT  = '#cfe0a4';
+
+function rnd(seed){ let a=seed|0; return ()=>{ a=(a+0x6D2B79F5)|0;
+  let t=Math.imul(a^(a>>>15),1|a); t=(t+Math.imul(t^(t>>>7),61|t))^t;
+  return ((t^(t>>>14))>>>0)/4294967296; }; }
+
+const KETTE = [
+  {nr:'01', name:'Ovale',     text:'Überlagerte Ovale mit Verlaufsfüllung. Ergebnis: Tarnmuster — ein Verlauf, der auf jeder Form gleich liegt, ist ein Muster.'},
+  {nr:'02', name:'Wertleiter',text:'Ovale ohne Verlauf, dafür deckende Werte. Ergebnis: Pillen auf einem Hintergrund. Es fehlte die Lückenlosigkeit.'},
+  {nr:'03', name:'Schnitte',  text:'Scharen gewellter Trennlinien statt Flecken. Ergebnis: ein Gitter — zwei Familien paralleler Linien sind per Konstruktion eines.'},
+  {nr:'04', name:'Züge',      text:'Pinselzüge aus einer Hüllkurve. Ergebnis: Avocados — beide Kanten aus einer Funktion sind zwangsläufig symmetrisch.'},
+  {nr:'05', name:'Borsten',   text:'Züge aus vielen einzelnen Borsten. Ergebnis: Kapseln — parallele Borsten gleicher Länge mit runden Enden.'},
+  {nr:'06', name:'Anwuchs',   text:'Massen, die durch Anlagerung wachsen. Ergebnis: lesbare Kreise — gleicher Krümmungsradius am ganzen Rand.'},
+  {nr:'—',  name:'Befund',    text:'Sechsmal ein anderes Grundelement, sechsmal dasselbe Problem. Nicht die Wahl der Form war falsch, sondern Formen überhaupt zu erzeugen.'},
+];
+
+const SCHALTER = [
+  {key:'warp',   label:'VERZERRUNG'},
+  {key:'stufen', label:'STUFEN'},
+  {key:'anis',   label:'RICHTUNG'},
+  {key:'tusche', label:'GRENZTUSCHE'},
+  {key:'saum',   label:'LICHTSAUM'},
+  {key:'korn',   label:'KORN'},
+];
+
+const BRIEFING = `BRIEFING · PROZEDURALER CARTOON-BODEN FÜR EIN 2D-BROWSERSPIEL
+lösungsoffen — bitte widersprich, wo du eine bessere Diagnose hast
+
+════════════════════════════════════════════════════════════════════
+1 · WORUM ES GEHT
+
+Ein 2D-Spiel mit Draufsicht braucht einen Boden, über den sich eine
+Figur bewegt. Der Boden füllt den ganzen Bildschirm und ist ständig
+sichtbar — er wird stundenlang angesehen, nicht gestreift.
+
+Gesucht ist die BAUART, nicht ein fertiges Bild.
+
+════════════════════════════════════════════════════════════════════
+2 · WIE ES AUSSEHEN SOLL
+
+Handgemalte Cartoon-Hintergründe der Hanna-Barbera-Schule (Art Lozzi,
+Flintstones/Jonny Quest): flache Farbflächen mit harten Grenzen, keine
+Verläufe als Flächenfüllung, Farben dürfen falsch sein (lila Felsen,
+türkiser Schatten). Lozzi über sein Vorgehen: gemalt mit Pinsel und
+Farbe, mit Schablonen und Schwämmen. Sein Ziel in eigenen Worten:
+Monotonie vermeiden — "grün ist nicht einfach grün".
+
+Zweite Referenz, vom Auftraggeber eingebracht: ein psychedelisches
+Bandbild mit ineinandergeschachtelten, fließenden Farbstreifen, die
+über mehrere Größenordnungen feiner werden. Selbstähnlich, ohne
+erkennbares Grundelement, ohne Zacken.
+
+Was ausdrücklich NICHT gewollt ist: der Look von schnell erzeugter
+Indie-Grafik. Sichtbare Wiederholung, erkennbare Grundformen,
+gleichmäßig gestreute Kleinteile, weiche Verläufe, Konfetti.
+
+════════════════════════════════════════════════════════════════════
+3 · WAS BEREITS GESCHEITERT IST (Beweislage, neun Anläufe)
+
+Jeder Anlauf hat den Befund des vorigen behoben und einen neuen erzeugt:
+
+ 1  Überlagerte Ovale mit Verlaufsfüllung   -> Tarnmuster, Matsch
+ 2  Ovale ohne Verlauf, Wertleiter          -> Pillen auf Hintergrund
+ 3  Zwei Scharen gewellter Trennlinien      -> sichtbares Gitter
+ 4  Pinselzüge aus einer Hüllkurve          -> alle gleich, Avocado
+ 5  Züge aus parallelen Borsten             -> Kapseln, Keulen
+ 6  Anwuchs aus angelagerten Scheiben       -> Kreise bleiben lesbar
+ 7  Anwuchs in drei Größengenerationen      -> drei erkennbare Stufen,
+                                              also kein Fraktal
+ 8  Scheiben entlang der Bahn (Rückgrat)    -> Ausdehnung stimmt, aber die
+                                              Kontur bleibt Scheibenvereinigung:
+                                              Rechtecke statt Kreise
+ 9  BAND: gefüllte Fläche, deren Randabstand aus einer Summe von fünf Wellen
+    über der Bogenlänge kommt                -> TRÄGT. Kein charakteristischer
+                                              Krümmungsradius, kein Grundelement.
+    Entscheidend dabei: die Wellenlänge läuft in BANDBREITEN, nicht in
+    Objektlängen. Vorher war eine Welle bei langen Formen dreimal so lang wie
+    die Form breit — und las sich als Gerade.
+
+Der gemeinsame Nenner: alle sechs erzeugen OBJEKTE und verteilen sie.
+Ein Objekt hat Umriss, Mittelpunkt und Größe — drei Eigenschaften, die
+man wiedererkennt, sobald zweihundert davon im Bild sind.
+
+VERMUTUNG (angreifbar): Der Fehler liegt nicht in der Wahl der Form,
+sondern darin, überhaupt Formen zu erzeugen. Das Referenzbild enthält
+keine Objekte, sondern ein stetiges Wertefeld, das in flache Stufen
+zerlegt ist — es gibt kein zweites Etwas, das dem ersten ähneln könnte.
+
+Wenn du diese Diagnose für falsch hältst, sag es und begründe es.
+Wenn du sie teilst, sag trotzdem, wo sie an ihre Grenze kommt.
+
+════════════════════════════════════════════════════════════════════
+4 · HARTE GRENZEN (nicht verhandelbar)
+
+TECHNIK
+ · Browser, Canvas 2D. Kein Bauschritt, kein npm, kein TypeScript —
+   die Datei läuft so, wie sie geschrieben ist.
+ · WebGL ist erlaubt, muss dann aber ohne Fallback auskommen können
+   oder einen benennen.
+ · Deterministisch aus einem Keim: gleicher Keim, gleiches Bild.
+ · Unbegrenzte Welt, frei scrollbar. Keine sichtbare Kachelung.
+
+KOSTEN — der Punkt, an dem das Vorprojekt gestorben ist
+ · Ein früheres Reliefsystem brauchte 36 Sekunden Kaltstart. Das hat
+   es umgebracht.
+ · Erstes Bild: unter 400 ms.
+ · Laufendes Spiel: 60 fps bei durchgehendem Scrollen.
+ · Nenne die Kosten deines Vorschlags, BEVOR du ihn beschreibst.
+   Ein Vorschlag ohne Kostenaussage gilt als unfertig.
+
+BILDSPRACHE — jede dieser Regeln ist ein Durchfallgrund, kein Geschmack
+ · Kein Grundelement. Wenn ein Betrachter sagen kann "das sind alles Kreise /
+   Blätter / Zellen / Rechtecke", ist die Bauart durchgefallen. Der Test gilt
+   für jede Ebene ALLEIN, nicht nur fürs Gesamtbild.
+ · Keine Symmetrie aus einer Funktion. Links und rechts einer Form dürfen nie
+   aus derselben Funktion kommen — eine glatte Funktion über eine
+   Symmetrieachse ergibt zwangsläufig eine Linse.
+ · Keine Linien, die im Nichts enden. Jeder Strich hat Aufsatz und Auslauf.
+   Ein Band mit flachem Abschluss IST ein Rechteck.
+ · Keine runden Linienenden ohne Taper. Verstößt gegen die KFB-Ink-Outline-
+   Spezifikation. Die Strichstärke muss über die Bahn um mehr als Faktor zwei
+   wandern; gleichbleibende Stärke mit runder Kappe ist "dead line weight".
+ · Keine Linien aus Kreisen. Eine Tuschelinie als Scheibenkette zeigt eine
+   perlige Kante. Linien sind Striche, keine Massen.
+ · Keine Pixelgrafik im Terrain. Feldränder ja, Treppen nein: Bandgrenzen
+   entstehen aus Schwellen und müssen geschnitten aussehen, nicht skaliert.
+ · Kein Bevel im Bodenbild. Bevel und Emboss gehören zur Höhen- und
+   Ebenenlogik (Wurfschatten ZWISCHEN Terrain-Ebenen). In der Floor-Art einer
+   einzelnen Ebene machen sie aus Malerei eine Reliefkarte.
+ · Keine Verläufe als Flächenfüllung. Flach heißt deckend und geschnitten;
+   Verläufe nur für Wasser, Nebel, Tiefe.
+ · Kein gleichmäßiges Streuen. Der überwiegende Teil der Fläche ist ruhig,
+   das Auffällige selten. Hundert gleichwertige Kleinigkeiten sind ein
+   Durchfaller, auch wenn jede für sich gut ist.
+ · Keine Wellenlänge in Objektlängen — siehe Anlauf 9.
+
+SCHNITTSTELLE ZUM SPIEL
+ · Der Boden ist die sichtbare Schicht, nicht die spielende. Die
+   Kollision bleibt ein bestehendes Raster; der Boden darf nie
+   entscheiden, wo man stehen kann.
+ · Er soll aber Auskunft geben: zu jedem Weltpunkt Material,
+   Zugehörigkeit zu einem zusammenhängenden Bereich und Abstand zur
+   nächsten Materialgrenze. Daraus wird später die Platzierung von
+   Bäumen, Felsen und Bewuchs abgeleitet — Assets werden NACH dem
+   Boden gesetzt, nicht mit ihm erzeugt.
+ · Licht kommt von oben links; die Wurfschatten der Spielfiguren
+   fallen bereits so. Der Boden muss dieselbe Sonne haben.
+
+════════════════════════════════════════════════════════════════════
+5 · ABNAHME (so wird geprüft)
+
+ A  Zwanzig Keime nebeneinander: kein wiedererkennbares Grundelement.
+    Konkret — wenn ein Betrachter sagen kann "das sind alles Kreise" /
+    "... Blätter" / "... Zellen", ist der Vorschlag durchgefallen.
+ B  Weit scrollen: keine Stelle kommt zweimal vor, keine Naht.
+ C  Hinein- und herauszoomen: auf jeder Stufe Detail, kein Maßstab,
+    der als der "eigentliche" hervorsticht.
+ D  Flächen sind flach. Ein Verlauf über eine Fläche ist ein Fehler,
+    kein Stilmittel. (Ausnahmen: Wasser, Nebel, Tiefe.)
+ E  Ruhe: der überwiegende Teil der Fläche ist unaufgeregt, das
+    Auffällige ist selten. Hundert gleichwertige Kleinigkeiten sind
+    ein Durchfaller, auch wenn jede für sich gut ist.
+ F  Kaltstart und Bildrate wie unter 4 — gemessen, nicht geschätzt.
+ G  Ein Standbild neben der Lozzi-Referenz: gehört es in dieselbe
+    Familie oder nur in dieselbe Farbwelt?
+ H  JEDE Ebene einzeln eingeschaltet ansehen. Ein Grundelement, das im
+    Gesamtbild von anderen Ebenen kaschiert wird, ist trotzdem eines —
+    genau so sind in diesem Projekt fünf Bauarten durchgerutscht.
+
+════════════════════════════════════════════════════════════════════
+6 · WAS ICH VON DIR BRAUCHE
+
+ 1  Deine Diagnose. Stimmt "Objekte statt Feld", oder liegt es
+    woanders? Widerspruch ist ausdrücklich willkommen.
+ 2  Zwei bis drei GRUNDVERSCHIEDENE Bauarten, nicht Varianten einer.
+    Für jede: Grundidee in fünf Sätzen, Kosten, und was sie
+    strukturell NICHT kann.
+ 3  Für die aus deiner Sicht beste: so viel ausführbarer Code, dass
+    man sie sehen kann. Ein Bild sagt mehr als das Schema.
+ 4  Der Teil, den keine Bauart lösen wird — was am Ende von Hand
+    gezeichnet werden muss, damit es nicht generisch wird, und wie
+    wenig davon reicht.
+
+Keine Rezeptlisten für zwölf Landschaften. Keine Typdefinitionen für
+ein System, das noch niemand hat laufen sehen. Eine Bauart, die die
+Abnahme besteht, ist mehr wert als ein vollständiger Plan.`;
+
+class Component extends DCLogic {
+  state = {
+    keim: 11,
+    an:{warp:true,stufen:true,anis:true,tusche:true,saum:true,korn:true},
+  };
+
+  componentDidMount(){ requestAnimationFrame(()=>{ this.holen(); this.malen(); this.ziehen(); }); }
+  componentDidUpdate(){ this.holen(); this.malen(); this.ziehen(); }
+  holen(){ this.cv=document.getElementById('kfb-feld-probe'); return !!this.cv; }
+
+  /* Wertrauschen: glatt interpoliertes Gitter aus Hashwerten. Der Baustein, nicht das Bild. */
+  wert(x,y,k){
+    const gx=Math.floor(x), gy=Math.floor(y);
+    const fx=x-gx, fy=y-gy;
+    const ex=fx*fx*(3-2*fx), ey=fy*fy*(3-2*fy);
+    const h=(a,b)=>{
+      let v=(a|0)*374761393+(b|0)*668265263+(k|0)*2246822519+this.state.keim*3266489917;
+      v=(v^(v>>>13))>>>0; v=Math.imul(v,1274126177); return ((v^(v>>>16))>>>0)/4294967295;
+    };
+    const a=h(gx,gy), b=h(gx+1,gy), c=h(gx,gy+1), d=h(gx+1,gy+1);
+    const u=a+(b-a)*ex, w=c+(d-c)*ex;
+    return u+(w-u)*ey;
+  }
+
+  /* fbm: Summe über Oktaven. HIER kommt die Maßstabsfreiheit her — jede Oktave trägt halb so
+     viel bei und hat doppelt so feines Detail, also gibt es keine Stufe, die hervorsticht. */
+  fbm(x,y,k,okt){
+    let s=0, amp=1, sum=0;
+    for(let i=0;i<(okt||5);i++){
+      s+=amp*this.wert(x,y,k+i*17); sum+=amp;
+      amp*=0.5; x*=2.02; y*=2.02;
+    }
+    return s/sum;
+  }
+
+  /* Der eigentliche Trick. Das Feld wird nicht an (x,y) abgefragt, sondern an einer Stelle, die
+     selbst aus zwei Feldern kommt — und diese Verschiebung wird ein zweites Mal wiederholt.
+     Daraus entstehen die langen Schwünge, die Wirbel und die Schachtelung des Referenzbildes.
+     Ohne diesen Schritt sieht fbm aus wie Wolken. */
+  feld(wx,wy){
+    const an=this.state.an;
+    const S=1/760;
+    /* Anisotropie: vor der Abfrage entlang einer Vorzugsrichtung stauchen. Damit werden die
+       Bänder gestreckt statt rundlich — gerichtete statt radialer Verformung, in zwei Zeilen. */
+    let x=wx*S, y=wy*S;
+    if(an.anis){
+      const a=0.55, co=Math.cos(a), si=Math.sin(a);
+      const u=x*co+y*si, v=(-x*si+y*co)*2.6;
+      x=u*co-v*si; y=u*si+v*co;
+    }
+    if(!an.warp) return this.fbm(x,y,0,5);
+    const q1=this.fbm(x,y,0,4), q2=this.fbm(x+5.2,y+1.3,40,4);
+    const r1=this.fbm(x+2.1*q1+1.7, y+2.1*q2+9.2, 80,3);
+    const r2=this.fbm(x+2.1*q1+8.3, y+2.1*q2+2.8,120,3);
+    return this.fbm(x+2.4*r1, y+2.4*r2, 160, 7);
+  }
+
+  eimer(zx,zy){
+    const an=this.state.an;
+    const key=zx+','+zy+','+this.state.keim+','+SCHALTER.map(s=>an[s.key]?1:0).join('');
+    if(!this._c) this._c=new Map();
+    const da=this._c.get(key); if(da) return da;
+
+    const c=document.createElement('canvas'); c.width=c.height=ZELLE;
+    const x=c.getContext('2d');
+    const x0=zx*ZELLE, y0=zy*ZELLE;
+
+    /* In halber Auflösung rechnen und ohne Glättung hochziehen: die Bandgrenze bleibt hart wie
+       ein Scherenschnitt, und es kostet ein Viertel. */
+    const P=1, w=ZELLE;
+    const bild=x.createImageData(w,w), pix=bild.data;
+    const rgb=STUFEN.map(h=>[parseInt(h.slice(1,3),16),parseInt(h.slice(3,5),16),parseInt(h.slice(5,7),16)]);
+    const ti=[parseInt(TUSCHE.slice(1,3),16),parseInt(TUSCHE.slice(3,5),16),parseInt(TUSCHE.slice(5,7),16)];
+    const li=[parseInt(LICHT.slice(1,3),16),parseInt(LICHT.slice(3,5),16),parseInt(LICHT.slice(5,7),16)];
+    const N=STUFEN.length;
+
+    /* Feldwerte einmal je Rasterpunkt, mit einem Rand von 1 — die Nachbarn brauchen wir für
+       Grenze und Lichtrichtung, und zweimal rechnen wäre die Hälfte der Zeit. */
+    const F=new Float32Array((w+2)*(w+2));
+    for(let j=-1;j<=w;j++) for(let i=-1;i<=w;i++)
+      F[(j+1)*(w+2)+(i+1)] = this.feld(x0+i*P, y0+j*P);
+
+    for(let j=0;j<w;j++) for(let i=0;i<w;i++){
+      const v=F[(j+1)*(w+2)+(i+1)];
+      const stufe = an.stufen ? Math.max(0,Math.min(N-1,Math.floor(v*N))) : null;
+      let col;
+      if(stufe===null){
+        const g=Math.round(40+v*180); col=[g,Math.round(g*1.05),Math.round(g*0.8)];
+      } else col=rgb[stufe];
+
+      if(an.stufen && (an.tusche||an.saum)){
+        const nL=F[(j+1)*(w+2)+i],   nR=F[(j+1)*(w+2)+(i+2)];
+        const nO=F[j*(w+2)+(i+1)],   nU=F[(j+2)*(w+2)+(i+1)];
+        const s=q=>Math.max(0,Math.min(N-1,Math.floor(q*N)));
+        const sL=s(nL), sR=s(nR), sO=s(nO), sU=s(nU);
+        const grenze = sL!==stufe||sR!==stufe||sO!==stufe||sU!==stufe;
+        if(grenze){
+          /* Lichtsaum oben links, Tusche unten rechts — dieselbe Sonne wie die Wurfschatten
+             der Spielfiguren. Aus dem Vorzeichen des Gefälles, keine Extrarechnung. */
+          const obenLinks = (sL>stufe||sO>stufe);
+          if(an.saum && obenLinks) col=li;
+          else if(an.tusche) col=ti;
+          else if(an.saum) col=li;
+        }
+      }
+      const o=(j*w+i)*4;
+      pix[o]=col[0]; pix[o+1]=col[1]; pix[o+2]=col[2]; pix[o+3]=255;
+    }
+
+    const roh=document.createElement('canvas'); roh.width=roh.height=w;
+    roh.getContext('2d').putImageData(bild,0,0);
+    x.imageSmoothingEnabled=false;
+    x.drawImage(roh,0,0,ZELLE,ZELLE);
+
+    if(an.korn){
+      const R=rnd((zx*73856093)^(zy*19349663)^this.state.keim);
+      x.globalCompositeOperation='multiply';
+      for(let i=0;i<900;i++){
+        x.globalAlpha=0.03+R()*0.06;
+        x.fillStyle= R()<0.5 ? '#3a3428' : '#20241c';
+        x.beginPath(); x.arc(R()*ZELLE, R()*ZELLE, 0.6+R()*1.9, 0, 6.2832); x.fill();
+      }
+      x.globalCompositeOperation='source-over'; x.globalAlpha=1;
+    }
+
+    while(this._c.size>=40) this._c.delete(this._c.keys().next().value);
+    this._c.set(key,c);
+    return c;
+  }
+
+  malen(){
+    if(!this.cv && !this.holen()) return;
+    const b=this.cv.parentElement.getBoundingClientRect();
+    if(b.width<10){ requestAnimationFrame(()=>this.malen()); return; }
+    const dpr=Math.min(1.5,window.devicePixelRatio||1);
+    const W=Math.max(320,Math.round(b.width)), H=Math.max(180,Math.round(b.height));
+    this.cv.width=Math.round(W*dpr); this.cv.height=Math.round(H*dpr);
+    const x=this.cv.getContext('2d');
+    x.setTransform(dpr,0,0,dpr,0,0);
+    x.imageSmoothingEnabled=false;
+    const cam=this.cam||(this.cam={x:0,y:0});
+    for(let zy=Math.floor(cam.y/ZELLE); zy<=Math.floor((cam.y+H)/ZELLE); zy++)
+      for(let zx=Math.floor(cam.x/ZELLE); zx<=Math.floor((cam.x+W)/ZELLE); zx++)
+        x.drawImage(this.eimer(zx,zy), Math.round(zx*ZELLE-cam.x), Math.round(zy*ZELLE-cam.y));
+  }
+
+  ziehen(){
+    const el=this.cv && this.cv.parentElement;
+    if(!el || el._zieh) return;
+    el._zieh=true; el.style.cursor='grab';
+    let ab=null;
+    el.addEventListener('pointerdown', e=>{
+      ab={x:e.clientX,y:e.clientY,cx:this.cam.x,cy:this.cam.y};
+      el.setPointerCapture(e.pointerId); el.style.cursor='grabbing';
+    });
+    el.addEventListener('pointermove', e=>{
+      if(!ab) return;
+      this.cam.x=ab.cx-(e.clientX-ab.x); this.cam.y=ab.cy-(e.clientY-ab.y);
+      this.malen();
+    });
+    const los=()=>{ ab=null; el.style.cursor='grab'; };
+    el.addEventListener('pointerup',los); el.addEventListener('pointercancel',los);
+  }
+
+  renderVals(){
+    return {
+      keim: String(this.state.keim),
+      kette: KETTE,
+      briefing: BRIEFING,
+      schalter: SCHALTER.map(s=>({
+        label:s.label,
+        bg: this.state.an[s.key]?'#241d16':'transparent',
+        fg: this.state.an[s.key]?'#e8d38a':'#a49a86',
+        klick: ()=>{ const an=Object.assign({},this.state.an); an[s.key]=!an[s.key]; this.setState({an}); },
+      })),
+      neuerKeim: ()=>this.setState({keim:(this.state.keim*7+13)%997}),
+    };
+  }
+}
+</script>
+</body>
+</html>

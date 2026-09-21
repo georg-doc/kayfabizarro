@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  html,body{margin:0;padding:0;background:#14120f;}
+  a{color:#d8a24a;} a:hover{color:#f0c274;}
+  input[type=range]{accent-color:#d8a24a;}
+  ::-webkit-scrollbar{width:8px;height:8px;}
+  ::-webkit-scrollbar-thumb{background:#4a4038;border-radius:5px;}
+</style>
+<script type="importmap">
+{
+  "imports": {
+    "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
+    "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/"
+  }
+}
+</script>
+<script type="module">
+  import * as THREE from 'three';
+  import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+  import { RoomEnvironment } from 'three/addons/environments/RoomEnvironment.js';
+  window.__MB = { THREE, OrbitControls, RoomEnvironment };
+  window.dispatchEvent(new Event('mbready'));
+</script>
+</helmet>
+<div style="height:100vh;display:grid;grid-template-columns:342px 1fr;background:#14120f;color:#e8e0d4;font-family:'Barlow Condensed',system-ui,sans-serif;overflow:hidden">
+
+  <div style="display:flex;flex-direction:column;border-right:1px solid #2e2822;min-height:0">
+    <div style="padding:14px 14px 10px;display:flex;flex-direction:column;gap:10px;border-bottom:1px solid #2e2822">
+      <div style="display:flex;align-items:baseline;justify-content:space-between;gap:8px">
+        <div style="font-size:19px;font-weight:700;letter-spacing:0.04em;text-transform:uppercase">Textur-Browser</div>
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#8d8377">{{ shown }}/86</div>
+      </div>
+      <div style="font-size:13px;line-height:1.35;color:#9b9084;text-wrap:pretty">§5 — auf Armlänge nur <em style="color:#d8a24a;font-style:normal">Material</em> erkennbar, nicht Objekt. Klick legt die Textur auf den aktiven Würfel.</div>
+      <div style="display:flex;flex-wrap:wrap;gap:5px">
+        <sc-for list="{{ famChips }}" as="c" hint-placeholder-count="8">
+          <button onClick="{{ c.onClick }}" style="{{ c.style }}">{{ c.label }}</button>
+        </sc-for>
+      </div>
+      <div style="display:flex;gap:5px">
+        <sc-for list="{{ gradeChips }}" as="g" hint-placeholder-count="4">
+          <button onClick="{{ g.onClick }}" style="{{ g.style }}">{{ g.label }}</button>
+        </sc-for>
+      </div>
+    </div>
+
+    <div style="flex:1;overflow-y:auto;padding:10px;display:grid;grid-template-columns:repeat(3,1fr);grid-auto-rows:84px;gap:8px;align-content:start">
+      <sc-for list="{{ items }}" as="it" hint-placeholder-count="18">
+        <div onClick="{{ it.onClick }}" style="{{ it.cardStyle }}">
+          <div style="{{ it.thumbWrap }}" data-thumb="1">
+            <img src="{{ it.url }}" loading="lazy" alt="{{ it.id }}" style="width:100%;height:100%;object-fit:cover;display:block">
+            <div style="{{ it.dot }}"></div>
+            <div style="{{ it.slotTag }}">{{ it.slotLabel }}</div>
+          </div>
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:9px;line-height:1.25;color:#9b9084;padding:3px 4px 4px;word-break:break-all">{{ it.id }}</div>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+
+  <div style="position:relative;min-width:0;display:flex;flex-direction:column">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:1px;background:#2e2822;border-bottom:1px solid #2e2822">
+      <button onClick="{{ pickSlotA }}" style="{{ slotAStyle }}">
+        <span style="font-size:11px;letter-spacing:0.14em;opacity:0.7">SLOT A</span>
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:12px">{{ nameA }}</span>
+      </button>
+      <button onClick="{{ pickSlotB }}" style="{{ slotBStyle }}">
+        <span style="font-size:11px;letter-spacing:0.14em;opacity:0.7">SLOT B</span>
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:12px">{{ nameB }}</span>
+      </button>
+    </div>
+
+    <div style="flex:1;position:relative;min-height:0">
+      <canvas ref="{{ canvasRef }}" style="width:100%;height:100%;display:block"></canvas>
+
+      <div style="position:absolute;left:14px;top:12px;right:238px;display:flex;gap:6px;align-items:center">
+        <button onClick="{{ gradeJa }}" style="border:1px solid #4d7a45;background:#1d2b1b;color:#a8d49b;font-family:'Barlow Condensed',sans-serif;font-size:13px;font-weight:600;letter-spacing:0.08em;padding:6px 13px;border-radius:4px;cursor:pointer">JA</button>
+        <button onClick="{{ gradePruefen }}" style="border:1px solid #7d6a35;background:#2b2618;color:#ddc27a;font-family:'Barlow Condensed',sans-serif;font-size:13px;font-weight:600;letter-spacing:0.08em;padding:6px 13px;border-radius:4px;cursor:pointer">PRÜFEN</button>
+        <button onClick="{{ gradeNein }}" style="border:1px solid #7a4141;background:#2b1a1a;color:#e09a9a;font-family:'Barlow Condensed',sans-serif;font-size:13px;font-weight:600;letter-spacing:0.08em;padding:6px 13px;border-radius:4px;cursor:pointer">NEIN</button>
+        <div style="flex:1;min-width:0;font-family:'IBM Plex Mono',monospace;font-size:11px;color:#8d8377;padding-left:6px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">bewertet {{ activeName }}</div>
+      </div>
+
+      <div style="position:absolute;right:12px;top:12px;bottom:12px;width:214px;box-sizing:border-box;overflow-y:auto;display:flex;flex-direction:column;gap:11px;background:#1a1713e6;border:1px solid #2e2822;border-radius:6px;padding:12px;backdrop-filter:blur(6px)">
+        <div style="display:flex;gap:6px;align-items:center;flex-wrap:wrap">
+          <sc-for list="{{ tints }}" as="t" hint-placeholder-count="5">
+            <button onClick="{{ t.onClick }}" title="{{ t.label }}" style="{{ t.style }}"></button>
+          </sc-for>
+        </div>
+        <div style="display:flex;gap:5px;flex-wrap:wrap">
+          <button onClick="{{ toggleInk }}" style="{{ inkStyle }}">TUSCHE</button>
+          <button onClick="{{ toggleSpin }}" style="{{ spinStyle }}">DREHEN</button>
+          <button onClick="{{ doExport }}" style="border:1px solid #d8a24a;background:#2a2013;color:#f0c274;font-family:'Barlow Condensed',sans-serif;font-size:12px;font-weight:600;letter-spacing:0.09em;padding:4px 10px;border-radius:3px;cursor:pointer">EXPORT</button>
+        </div>
+        <label style="display:flex;flex-direction:column;gap:3px">
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:#9b9084;display:flex;justify-content:space-between;gap:8px;white-space:nowrap">FOTO-STÄRKE<span style="color:#d8a24a">{{ vPhoto }}</span></span>
+          <input type="range" min="0" max="1" step="0.02" value="{{ pPhoto }}" onChange="{{ setPhoto }}" style="width:100%">
+        </label>
+        <label style="display:flex;flex-direction:column;gap:3px">
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:#9b9084;display:flex;justify-content:space-between;gap:8px;white-space:nowrap">KACHELN/EINHEIT<span style="color:#d8a24a">{{ vScale }}</span></span>
+          <input type="range" min="0.05" max="2" step="0.05" value="{{ pScale }}" onChange="{{ setScale }}" style="width:100%">
+        </label>
+        <label style="display:flex;flex-direction:column;gap:3px">
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:#9b9084;display:flex;justify-content:space-between;gap:8px;white-space:nowrap">STOCHASTISCH<span style="color:#d8a24a">{{ vStoch }}</span></span>
+          <input type="range" min="0" max="1" step="0.02" value="{{ pStoch }}" onChange="{{ setStoch }}" style="width:100%">
+        </label>
+        <label style="display:flex;flex-direction:column;gap:3px">
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:#9b9084;display:flex;justify-content:space-between;gap:8px;white-space:nowrap">BEVEL (edge3)<span style="color:#d8a24a">{{ vEdge }}</span></span>
+          <input type="range" min="0" max="1.5" step="0.02" value="{{ pEdge }}" onChange="{{ setEdge }}" style="width:100%">
+        </label>
+        <label style="display:flex;flex-direction:column;gap:3px">
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:#9b9084;display:flex;justify-content:space-between;gap:8px;white-space:nowrap">FUGE TIEFE<span style="color:#d8a24a">{{ vSeam }}</span></span>
+          <input type="range" min="0" max="1" step="0.02" value="{{ pSeam }}" onChange="{{ setSeam }}" style="width:100%">
+        </label>
+        <label style="display:flex;flex-direction:column;gap:3px">
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:#9b9084;display:flex;justify-content:space-between;gap:8px;white-space:nowrap">FUGE BREITE<span style="color:#d8a24a">{{ vSeamW }}</span></span>
+          <input type="range" min="0" max="0.3" step="0.005" value="{{ pSeamW }}" onChange="{{ setSeamW }}" style="width:100%">
+        </label>
+        <label style="display:flex;flex-direction:column;gap:3px">
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:#9b9084;display:flex;justify-content:space-between;gap:8px;white-space:nowrap">WERT-BÄNDER<span style="color:#d8a24a">{{ vBand }}</span></span>
+          <input type="range" min="0" max="1" step="0.02" value="{{ pBand }}" onChange="{{ setBand }}" style="width:100%">
+        </label>
+        <label style="display:flex;flex-direction:column;gap:3px">
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:#9b9084;display:flex;justify-content:space-between;gap:8px;white-space:nowrap">SEITEN-STREIFEN<span style="color:#d8a24a">{{ vStripe }}</span></span>
+          <input type="range" min="0" max="0.8" step="0.02" value="{{ pStripe }}" onChange="{{ setStripe }}" style="width:100%">
+        </label>
+        <label style="display:flex;flex-direction:column;gap:3px">
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:#9b9084;display:flex;justify-content:space-between;gap:8px;white-space:nowrap">SCHRAFFUR<span style="color:#d8a24a">{{ vHatch }}</span></span>
+          <input type="range" min="0" max="0.9" step="0.02" value="{{ pHatch }}" onChange="{{ setHatch }}" style="width:100%">
+        </label>
+        <div style="display:flex;flex-direction:column;gap:3px">
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:#9b9084">AUFBAU</span>
+          <div style="display:flex;gap:4px;flex-wrap:wrap">
+            <sc-for list="{{ clusterChips }}" as="cl" hint-placeholder-count="3">
+              <button onClick="{{ cl.onClick }}" style="{{ cl.style }}">{{ cl.label }}</button>
+            </sc-for>
+          </div>
+          <button onClick="{{ toggleStack }}" style="{{ stackStyle }}">{{ stackLabel }}</button>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:3px">
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:#9b9084">PRESET</span>
+          <div style="display:flex;gap:4px;flex-wrap:wrap">
+            <sc-for list="{{ presetChips }}" as="pr" hint-placeholder-count="2">
+              <button onClick="{{ pr.onClick }}" style="{{ pr.style }}">{{ pr.label }}</button>
+            </sc-for>
+          </div>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:3px">
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:#9b9084">PROZEDURALE BASIS</span>
+          <div style="display:flex;gap:4px;flex-wrap:wrap">
+            <sc-for list="{{ matChips }}" as="m" hint-placeholder-count="6">
+              <button onClick="{{ m.onClick }}" style="{{ m.style }}">{{ m.label }}</button>
+            </sc-for>
+          </div>
+        </div>
+      </div>
+
+      <sc-if value="{{ exportOpen }}" hint-placeholder-val="{{ false }}">
+        <div style="position:absolute;inset:0;background:#0c0a08e0;display:flex;align-items:center;justify-content:center;padding:32px">
+          <div style="background:#1a1713;border:1px solid #3a332b;border-radius:8px;padding:16px;width:100%;max-width:720px;display:flex;flex-direction:column;gap:10px">
+            <div style="display:flex;justify-content:space-between;align-items:center">
+              <div style="font-size:17px;font-weight:700;letter-spacing:0.05em;text-transform:uppercase">Bewertung — {{ countJa }} × JA</div>
+              <button onClick="{{ closeExport }}" style="border:1px solid #3a332b;background:#221e19;color:#c9bfb1;font-family:'Barlow Condensed',sans-serif;font-size:13px;padding:5px 12px;border-radius:4px;cursor:pointer">SCHLIESSEN</button>
+            </div>
+            <textarea readonly style="width:100%;height:340px;background:#0f0d0b;border:1px solid #2e2822;border-radius:5px;color:#b9ae9f;font-family:'IBM Plex Mono',monospace;font-size:11px;line-height:1.5;padding:10px;resize:none;box-sizing:border-box">{{ exportText }}</textarea>
+            <div style="display:flex;gap:8px">
+              <button onClick="{{ copyExport }}" style="border:1px solid #d8a24a;background:#2a2013;color:#f0c274;font-family:'Barlow Condensed',sans-serif;font-size:13px;font-weight:600;letter-spacing:0.08em;padding:7px 14px;border-radius:4px;cursor:pointer">{{ copyLabel }}</button>
+              <div style="align-self:center;font-family:'IBM Plex Mono',monospace;font-size:10px;color:#8d8377">Bewertungen liegen lokal im Browser — Export ist die Übergabe.</div>
+            </div>
+          </div>
+        </div>
+      </sc-if>
+    </div>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{}">
+const FAMS = ['alle','Papier','Karton','Filz','Ton','Putz','Boden','Fels','Holz','Kachel','Metall','Overlay'];
+const GRADES = [['alle','alle'],['ja','JA'],['pruefen','PRÜFEN'],['nein','NEIN']];
+const MATS = [['karton','Karton'],['ton','Ton'],['filz','Filz'],['stein','Stein'],['papier','Papier'],['glatt','Glatt']];
+const TINTS = [['#c9b088','Sand'],['#8b9a6a','Moos'],['#b5714e','Ton'],['#9a958c','Grau'],['#8fa6b5','Eis']];
+const LS = 'kfb-tex-grades-v1';
+// Aufbauten, die je eine Frage beantworten:
+// wuerfel = liest die Textur pro Einzelwuerfel · saeule = laufen die Seitenstreifen ueber
+// gestapelte Zellen durch (1-3 hoch als EINE Saeule) · treppe = Stufen, die der Moving Floor
+// erlaubt und reine Wuerfel nicht.
+const LAYOUTS = {
+  wuerfel: [[-1.15,-1.15,1],[0,-1.15,1],[1.15,-1.15,1],[-1.15,0,1],[0,0,1],[1.15,0,1],[-1.15,1.15,1],[0,1.15,1],[1.15,1.15,1]],
+  saeule: [[-1,-1,2],[0,-1,1],[1,-1,3],[-1,0,1],[0,0,4],[1,0,2],[-1,1,3],[0,1,1],[1,1,2]],
+  treppe: [[-1,-1.5,4],[0,-1.5,4],[1,-1.5,4],[-1,-0.5,3],[0,-0.5,3],[1,-0.5,3],[-1,0.5,2],[0,0.5,2],[1,0.5,2],[-1,1.5,1],[0,1.5,1],[1,1.5,1]],
+};
+const MAXI = 36;
+// Presets: was der Regler-Satz beantwortet. "terrain" ist der Travel-v9-Zustand — glatte
+// Flaechen, Fassung, kaum Struktur; "struktur" zeigt die Textur, um sie zu beurteilen.
+const PRESETS = {
+  terrain: { photo: 0.18, scale: 0.5, stoch: 0.85, edge: 0.9, seam: 0, seamW: 0, band: 0.22, stripe: 0, hatch: 0 },
+  struktur: { photo: 0.62, scale: 0.28, stoch: 0.85, edge: 0.8, seam: 0.26, seamW: 0.07, band: 0.3, stripe: 0.26, hatch: 0.3 },
+};
+
+class Component extends DCLogic {
+  state = {
+    items: [], fam: 'alle', grade: 'alle', slot: 'A',
+    a: null, b: null, grades: {}, tint: '#c9b088', mat: 'stein',
+    photo: 0.62, scale: 0.28, stoch: 0.85, edge: 0.8, seam: 0.26, seamW: 0.07, band: 0.3,
+    stripe: 0.26, hatch: 0.3, cluster: 'saeule', stack: true, preset: 'struktur',
+    ink: true, spin: true, exportOpen: false, copied: false,
+  };
+
+  async componentDidMount() {
+    let grades = {};
+    try { grades = JSON.parse(localStorage.getItem(LS) || '{}'); } catch (e) {}
+    const cat = await (await fetch('./kfb-texture-catalog.json')).json();
+    const seeded = {};
+    cat.items.forEach((it) => { seeded[it.id] = grades[it.id] || it.grade; });
+    const a = cat.items.find((i) => i.id === 'Plaster001') || cat.items[0];
+    const b = cat.items.find((i) => i.id === 'Paper004') || cat.items[1];
+    this.setState({ items: cat.items, grades: seeded, a, b }, () => { this.assign('A', a); this.assign('B', b); });
+  }
+
+  componentWillUnmount() { this.stop = true; if (this.r) this.r.dispose(); window.removeEventListener('resize', this.onResize); }
+
+  canvasRef(el) {
+    if (!el || el === this.canvas) return;
+    this.canvas = el;
+    if (window.__MB) this.boot();
+    else window.addEventListener('mbready', () => this.boot(), { once: true });
+  }
+
+  async boot() {
+    if (this.booted) return;
+    if (!window.__MB) { window.addEventListener('mbready', () => this.boot(), { once: true }); return; }
+    this.booted = true;
+    window.__TB = this;
+    const { THREE, OrbitControls, RoomEnvironment } = window.__MB;
+    this.T = THREE;
+    const [M, ink] = await Promise.all([import('./kfb-box-material.js'), import('./kfb-ink-outline.js')]);
+    this.M = M;
+    this.texCache = new Map();
+
+    const r = this.r = new THREE.WebGLRenderer({ canvas: this.canvas, antialias: true });
+    r.setPixelRatio(Math.min(devicePixelRatio, 2));
+    r.outputColorSpace = THREE.SRGBColorSpace;
+    r.toneMapping = THREE.ACESFilmicToneMapping;
+    r.shadowMap.enabled = true; r.shadowMap.type = THREE.PCFSoftShadowMap;
+
+    const scene = this.scene = new THREE.Scene();
+    scene.background = new THREE.Color(0x14120f);
+    scene.fog = new THREE.Fog(0x14120f, 26, 70);
+    const cam = this.cam = new THREE.PerspectiveCamera(34, 1, 0.4, 200);
+    cam.position.set(1.5, 10.5, 27);
+    const ctr = this.ctr = new OrbitControls(cam, r.domElement);
+    ctr.target.set(0, 2.2, 0);
+    ctr.enableDamping = true; ctr.dampingFactor = 0.08;
+    ctr.maxPolarAngle = Math.PI * 0.49; ctr.minDistance = 4; ctr.maxDistance = 42;
+    ctr.autoRotate = this.state.spin; ctr.autoRotateSpeed = 0.55;
+
+    const pmrem = new THREE.PMREMGenerator(r);
+    scene.environment = pmrem.fromScene(new RoomEnvironment(), 0.04).texture;
+    scene.add(new THREE.HemisphereLight(0xffffff, 0x3a3530, 0.42));
+    const sun = new THREE.DirectionalLight(0xffffff, 2.1);
+    sun.position.set(9, 14, 8); sun.castShadow = true;
+    // Enger Shadow-Frustum + Normal-Bias: sonst wandert eine grobe Treppe ueber die Kanten,
+    // weil 1024 px auf 28 Einheiten verteilt schlicht zu wenig Aufloesung sind.
+    sun.shadow.mapSize.set(2048, 2048);
+    sun.shadow.normalBias = 0.035; sun.shadow.bias = -0.0004; sun.shadow.radius = 2;
+    const c = sun.shadow.camera; c.left = -9; c.right = 9; c.top = 9; c.bottom = -9; c.near = 1; c.far = 34;
+    c.updateProjectionMatrix();
+    scene.add(sun);
+    scene.add(new THREE.AmbientLight(0xffffff, 0.16));
+
+    const ground = new THREE.Mesh(new THREE.PlaneGeometry(60, 60), new THREE.MeshStandardMaterial({ color: 0x241f1a, roughness: 1 }));
+    ground.rotation.x = -Math.PI / 2; ground.receiveShadow = true; scene.add(ground);
+
+    const bevel = await this.loadTex('https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/KFB/edge3.jpg');
+    this.bevel = bevel;
+    const grain = await this.loadTex('https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/KFB/noise.png');
+    if (grain) grain.colorSpace = THREE.NoColorSpace;
+    this.slots = {};
+    ['A', 'B'].forEach((k) => {
+      const geo = M.makeBoxGeometry(THREE, MAXI, 1);
+      const mat = M.makeVariedBoxMaterial(THREE, {
+        edgeMap: bevel, edgeStrength: this.state.edge,
+        grainMap: grain, grain: grain ? 0.12 : 0,
+        photoMap: null, photoStrength: 0, photoScale: this.state.scale,
+        stochastic: this.state.stoch, seam: this.state.seam, seamWidth: this.state.seamW,
+        bands: 4, bandAmount: this.state.band, stripe: this.state.stripe, hatch: this.state.hatch,
+        roughness: 0.92,
+      });
+      const mesh = new THREE.InstancedMesh(geo, mat, MAXI);
+      mesh.castShadow = mesh.receiveShadow = true;
+      scene.add(mesh);
+      this.slots[k] = { mesh, mat, geo };
+    });
+    this.layout();
+
+    this.ink = await ink.createInkOutline(THREE, { renderer: r, scene, camera: cam });
+    this.ink.setParams({ strength: 0.7, thickness: 1.25 });
+    this.ink.setEnabled(this.state.ink);
+
+    this.onResize = () => {
+      const w = this.canvas.clientWidth || 1, h = this.canvas.clientHeight || 1;
+      r.setSize(w, h, false);
+      // Das Regler-Dock deckt rechts 226 px ab. Statt die Szene zu verschieben, rendern wir
+      // den linken Ausschnitt eines breiteren Bildes — die Wuerfel bleiben im freien Feld.
+      const full = w + 226;
+      cam.aspect = full / h;
+      cam.setViewOffset(full, h, 226, 0, w, h);
+      cam.updateProjectionMatrix();
+      if (this.ink) this.ink.setSize(w, h);
+    };
+    window.addEventListener('resize', this.onResize); this.onResize();
+
+    let last = performance.now();
+    const loop = () => {
+      if (this.stop || !this.canvas || !this.canvas.isConnected) return;
+      requestAnimationFrame(loop);
+      const now = performance.now(), dt = Math.min(0.05, (now - last) / 1000); last = now;
+      if (this.canvas.clientWidth !== this._w) { this._w = this.canvas.clientWidth; this.onResize(); }
+      this.ctr.update();
+      this.ink.render(dt);
+    };
+    loop();
+    const pend = this._pending; this._pending = null;
+    if (pend) Object.entries(pend).forEach(([k, it]) => this.assign(k, it));
+  }
+
+  loadTex(url) {
+    const T = this.T;
+    if (this.texCache.has(url)) return this.texCache.get(url);
+    const p = new Promise((res) => {
+      const L = new T.TextureLoader(); L.crossOrigin = 'anonymous';
+      L.load(url, (t) => {
+        t.wrapS = t.wrapT = T.RepeatWrapping; t.colorSpace = T.SRGBColorSpace; t.anisotropy = 8; res(t);
+      }, undefined, () => res(null));
+    });
+    this.texCache.set(url, p);
+    return p;
+  }
+
+  async assign(slot, item) {
+    if (!this.slots) { this._pending = Object.assign(this._pending || {}, { [slot]: item }); return; }
+    const tex = await this.loadTex(item.url);
+    const U = this.slots[slot].mat.userData.kfb;
+    U.uKfbPhoto.value = tex;
+    U.uKfbPhotoStr.value = tex ? this.state.photo : 0;
+  }
+
+  /**
+   * Aufbau als ECHTE Einzelwuerfel — so baut das Terrain auch. Bei stack=true teilen sich die
+   * Zellen einer Saeule eine Fassung ueber die volle Hoehe, sonst rahmt jede Zelle sich selbst.
+   */
+  layout() {
+    if (!this.slots) return;
+    const T = this.T, M = this.M, cols = LAYOUTS[this.state.cluster] || LAYOUTS.saeule;
+    const cells = [];
+    cols.forEach(([x, z, h], ci) => {
+      for (let y = 0; y < h; y++) cells.push({ x, z, y, id: ci + 1, index: y, height: h });
+    });
+    const d = new T.Object3D();
+    ['A', 'B'].forEach((k, i) => {
+      const { mesh, geo } = this.slots[k];
+      for (let j = 0; j < MAXI; j++) {
+        const c = cells[j];
+        if (c) { d.position.set(c.x + (i ? 3.2 : -3.2), c.y, c.z); d.scale.set(1, 1, 1); }
+        else { d.position.set(0, -80, 0); d.scale.set(0.0001, 0.0001, 0.0001); }
+        d.updateMatrix();
+        mesh.setMatrixAt(j, d.matrix);
+        M.writeVariation(geo, j, k, {
+          variation: 1, heightCells: 1, mat: M.matId(this.state.mat),
+          stack: c && this.state.stack ? { id: c.id + (i ? 100 : 0), index: c.index, height: c.height } : null,
+        });
+      }
+      mesh.instanceMatrix.needsUpdate = true;
+      mesh.count = Math.min(MAXI, cells.length);
+    });
+    this.applyTint();
+  }
+
+  applyPreset(name) {
+    const p = PRESETS[name];
+    if (!p) return;
+    this.live(Object.assign({ preset: name }, p));
+  }
+
+  applyTint() {
+    if (!this.slots) return;
+    const T = this.T, base = new T.Color(this.state.tint);
+    ['A', 'B'].forEach((k) => {
+      const m = this.slots[k].mesh;
+      Array.from({ length: MAXI }).forEach((_, j) => {
+        const c = base.clone().offsetHSL((this.M.rnd(k, j, 'h') - 0.5) * 0.03, 0, (this.M.rnd(k, j, 'l') - 0.5) * 0.06);
+        m.setColorAt(j, c);
+      });
+      m.instanceColor.needsUpdate = true;
+    });
+  }
+
+  live(patch) {
+    this.setState(patch, () => {
+      if (!this.slots) return;
+      const s = this.state;
+      ['A', 'B'].forEach((k) => {
+        const U = this.slots[k].mat.userData.kfb;
+        U.uKfbPhotoStr.value = U.uKfbPhoto.value ? s.photo : 0;
+        U.uKfbPhotoScale.value = s.scale;
+        U.uKfbStoch.value = s.stoch;
+        U.uKfbEdgeStr.value = s.edge;
+        U.uKfbSeam.value = s.seam;
+        U.uKfbSeamW.value = s.seamW;
+        U.uKfbBandAmt.value = s.band;
+        U.uKfbStripe.value = s.stripe;
+        U.uKfbHatch.value = s.hatch;
+      });
+      if (patch.mat) ['A', 'B'].forEach((k) => {
+        const g = this.slots[k].geo, am = g.getAttribute('aMat');
+        for (let j = 0; j < MAXI; j++) am.setX(j, this.M.matId(s.mat));
+        am.needsUpdate = true;
+      });
+      if (patch.cluster || patch.stack != null) this.layout();
+      if (patch.tint) this.applyTint();
+      if (this.ink) this.ink.setEnabled(s.ink);
+      if (this.ctr) this.ctr.autoRotate = s.spin;
+    });
+  }
+
+  setGrade(v) {
+    const it = this.state[this.state.slot.toLowerCase()];
+    if (!it) return;
+    const grades = Object.assign({}, this.state.grades, { [it.id]: v });
+    try { localStorage.setItem(LS, JSON.stringify(grades)); } catch (e) {}
+    this.setState({ grades });
+  }
+
+  pick(it) {
+    const slot = this.state.slot;
+    this.setState({ [slot.toLowerCase()]: it });
+    this.assign(slot, it);
+  }
+
+  filtered() {
+    const { items, fam, grade, grades } = this.state;
+    return items.filter((i) => (fam === 'alle' || i.family === fam) && (grade === 'alle' || (grades[i.id] || i.grade) === grade));
+  }
+
+  chip(active, extra) {
+    return 'border:1px solid ' + (active ? '#d8a24a' : '#3a332b') + ';background:' + (active ? '#2a2013' : '#1c1915')
+      + ';color:' + (active ? '#f0c274' : '#9b9084') + ";font-family:'Barlow Condensed',sans-serif;font-size:12px;font-weight:600;letter-spacing:0.06em;padding:3px 9px;border-radius:3px;cursor:pointer;text-transform:uppercase;" + (extra || '');
+  }
+
+  renderVals() {
+    const s = this.state;
+    const dotCol = { ja: '#7cc36a', pruefen: '#ddc27a', nein: '#c96a6a' };
+    const list = this.filtered().map((it) => {
+      const g = s.grades[it.id] || it.grade;
+      const inA = s.a && s.a.id === it.id, inB = s.b && s.b.id === it.id;
+      return {
+        id: it.id, url: it.url, onClick: () => this.pick(it),
+        cardStyle: 'display:flex;flex-direction:column;box-sizing:border-box;background:#1c1915;border:1px solid ' + ((inA || inB) ? '#d8a24a' : '#2a2520') + ';border-radius:4px;overflow:hidden;cursor:pointer',
+        thumbWrap: 'position:relative;height:62px;flex:0 0 62px;background:#0f0d0b',
+        dot: 'position:absolute;right:4px;top:4px;width:8px;height:8px;border-radius:50%;background:' + (dotCol[g] || '#6b635a') + ';box-shadow:0 0 0 2px #0f0d0bcc',
+        slotTag: (inA || inB)
+          ? "position:absolute;left:0;bottom:0;background:#d8a24a;color:#14120f;font-family:'IBM Plex Mono',monospace;font-size:9px;font-weight:500;padding:1px 4px"
+          : 'display:none',
+        slotLabel: inA ? 'A' : 'B',
+      };
+    });
+    const num = (v, d) => Number(v).toFixed(d);
+    const ja = Object.entries(s.grades).filter(([, v]) => v === 'ja');
+    const act = s[s.slot.toLowerCase()];
+    this._cref = this._cref || ((el) => this.canvasRef(el));
+    return {
+      canvasRef: this._cref,
+      items: list, shown: list.length,
+      famChips: FAMS.map((f) => ({ label: f, style: this.chip(s.fam === f), onClick: () => this.setState({ fam: f }) })),
+      gradeChips: GRADES.map(([v, l]) => ({ label: l, style: this.chip(s.grade === v, 'flex:1'), onClick: () => this.setState({ grade: v }) })),
+      matChips: MATS.map(([v, l]) => ({ label: l, style: this.chip(s.mat === v, 'padding:2px 7px;font-size:11px'), onClick: () => this.live({ mat: v }) })),
+      tints: TINTS.map(([c, l]) => ({ label: l, style: 'width:22px;height:22px;border-radius:50%;cursor:pointer;background:' + c + ';border:2px solid ' + (s.tint === c ? '#f0c274' : '#00000000'), onClick: () => this.live({ tint: c }) })),
+      nameA: s.a ? s.a.id : '—', nameB: s.b ? s.b.id : '—',
+      slotAStyle: 'display:flex;flex-direction:column;gap:2px;align-items:flex-start;padding:8px 14px;cursor:pointer;border:0;border-bottom:2px solid ' + (s.slot === 'A' ? '#d8a24a' : '#00000000') + ';background:' + (s.slot === 'A' ? '#211d18' : '#171512') + ";color:#e8e0d4;font-family:'Barlow Condensed',sans-serif",
+      slotBStyle: 'display:flex;flex-direction:column;gap:2px;align-items:flex-start;padding:8px 14px;cursor:pointer;border:0;border-bottom:2px solid ' + (s.slot === 'B' ? '#d8a24a' : '#00000000') + ';background:' + (s.slot === 'B' ? '#211d18' : '#171512') + ";color:#e8e0d4;font-family:'Barlow Condensed',sans-serif",
+      pickSlotA: () => this.setState({ slot: 'A' }), pickSlotB: () => this.setState({ slot: 'B' }),
+      gradeJa: () => this.setGrade('ja'), gradePruefen: () => this.setGrade('pruefen'), gradeNein: () => this.setGrade('nein'),
+      activeName: act ? act.id : '—',
+      inkStyle: this.chip(s.ink, 'padding:6px 12px'), spinStyle: this.chip(s.spin, 'padding:6px 12px'),
+      toggleInk: () => this.live({ ink: !s.ink }), toggleSpin: () => this.live({ spin: !s.spin }),
+      pPhoto: s.photo, pScale: s.scale, pStoch: s.stoch, pEdge: s.edge, pSeam: s.seam, pSeamW: s.seamW, pBand: s.band,
+      vPhoto: num(s.photo, 2), vScale: num(s.scale, 2), vStoch: num(s.stoch, 2), vEdge: num(s.edge, 2),
+      vSeam: num(s.seam, 2), vSeamW: num(s.seamW, 3), vBand: num(s.band, 2),
+      pStripe: s.stripe, vStripe: num(s.stripe, 2), setStripe: (e) => this.live({ stripe: +e.target.value }),
+      pHatch: s.hatch, vHatch: num(s.hatch, 2), setHatch: (e) => this.live({ hatch: +e.target.value }),
+      clusterChips: [['wuerfel', 'Würfel'], ['saeule', 'Säule'], ['treppe', 'Treppe']].map(([v, l]) => ({
+        label: l, style: this.chip(s.cluster === v, 'padding:2px 7px;font-size:11px'), onClick: () => this.live({ cluster: v }),
+      })),
+      presetChips: [['terrain', 'Terrain v9'], ['struktur', 'Struktur']].map(([v, l]) => ({
+        label: l, style: this.chip(s.preset === v, 'padding:2px 7px;font-size:11px'), onClick: () => this.applyPreset(v),
+      })),
+      stackStyle: this.chip(s.stack, 'padding:2px 7px;font-size:11px'),
+      stackLabel: s.stack ? 'Säulen gekoppelt' : 'Zellen einzeln',
+      toggleStack: () => this.live({ stack: !s.stack }),
+      setPhoto: (e) => this.live({ photo: +e.target.value }), setScale: (e) => this.live({ scale: +e.target.value }),
+      setStoch: (e) => this.live({ stoch: +e.target.value }), setEdge: (e) => this.live({ edge: +e.target.value }),
+      setSeam: (e) => this.live({ seam: +e.target.value }), setSeamW: (e) => this.live({ seamW: +e.target.value }),
+      setBand: (e) => this.live({ band: +e.target.value }),
+      exportOpen: s.exportOpen, countJa: ja.length,
+      exportText: JSON.stringify({
+        $schema: 'kfb-texture-catalog/0.1-verdict', updated: new Date().toISOString().slice(0, 10),
+        regler: { photoStrength: s.photo, photoScale: s.scale, stochastic: s.stoch, edgeStrength: s.edge, seam: s.seam, seamWidth: s.seamW, bandAmount: s.band, stripe: s.stripe, hatch: s.hatch, basis: s.mat, aufbau: s.cluster },
+        ja: s.items.filter((i) => (s.grades[i.id] || i.grade) === 'ja').map((i) => ({ id: i.id, family: i.family, url: i.url })),
+        pruefen: s.items.filter((i) => (s.grades[i.id] || i.grade) === 'pruefen').map((i) => i.id),
+        nein: s.items.filter((i) => (s.grades[i.id] || i.grade) === 'nein').map((i) => i.id),
+      }, null, 2),
+      doExport: () => this.setState({ exportOpen: true, copied: false }),
+      closeExport: () => this.setState({ exportOpen: false }),
+      copyLabel: s.copied ? 'KOPIERT' : 'IN ZWISCHENABLAGE',
+      copyExport: (e) => {
+        const ta = e.target.closest('div').parentElement.querySelector('textarea');
+        navigator.clipboard.writeText(ta.value).then(() => this.setState({ copied: true }));
+      },
+    };
+  }
+}
+</script>
+</body>
+</html>

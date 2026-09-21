@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>KFB Landmark Group Rig v1</title>
+<style>
+:root{font-family:system-ui,sans-serif;background:#d7e0e8;color:#302c33}*{box-sizing:border-box}body{margin:0}.app{height:100dvh;display:grid;grid-template-rows:auto 1fr auto}.bar{background:#f3eee5;border-bottom:2px solid #39343d;padding:11px 15px;display:flex;align-items:center;gap:8px;flex-wrap:wrap}.brand{font-size:14px;font-weight:800;margin-right:6px}.tag{display:block;font-size:10px;font-weight:400;color:#6b625e;letter-spacing:.08em}select,button,input[type=range]{font:inherit}select,button{font-size:12px;background:#fffaf2;color:#39343d;border:1px solid #a19795;border-radius:6px;padding:7px 9px}button{cursor:pointer}button:hover{background:#e4c78f}button:disabled{opacity:.45}.controls{display:flex;gap:5px;align-items:center;flex-wrap:wrap}.slider{display:flex;gap:5px;align-items:center;font-size:11px;color:#554f4e}.slider input{width:88px}.stage{min-height:0;position:relative}canvas{display:block;width:100%;height:100%;touch-action:none}.foot{background:#f3eee5;border-top:1px solid #b5afa5;padding:9px 15px;display:grid;gap:5px}.description{display:flex;gap:14px;align-items:baseline;flex-wrap:wrap}h1{font-family:Georgia,serif;font-size:21px;font-weight:500;margin:0}#note,#status,.small{font-size:11px;line-height:1.45;color:#555}.small a{color:#355e70}.error{color:#9a3228!important}.impact{font-weight:700;border-color:#b77a43;background:#ffe6bf}@media(max-width:780px){.brand{width:100%}.bar{gap:5px;padding:8px}.foot{padding:7px 9px}.description{gap:4px}.slider input{width:70px}}
+</style>
+<script type="importmap">{"imports":{"three":"https://unpkg.com/three@0.160.0/build/three.module.js","three/addons/":"https://unpkg.com/three@0.160.0/examples/jsm/"}}</script></head>
+<body><main class="app">
+<header class="bar">
+  <div class="brand">KFB LANDMARK GROUP RIG<span class="tag">V1 · SPASSKAYA / KREMLIN · LIVING TOY PREVIEW</span></div>
+  <select id="model" aria-label="Landmark"><option value="spasskaya">Spasskaya Tower</option><option value="kremlin-wall">Kremlin wall study</option></select>
+  <select id="shape" aria-label="Shape"><option value="base">Base</option><option value="city-grotesque" selected>City grotesque</option><option value="soft-cubist">Soft cubist</option></select>
+  <select id="rigMode" aria-label="Rig mode"><option value="grouped" selected>Grouped rig</option><option value="legacy">Legacy point deform</option></select>
+  <select id="palette" aria-label="Palette"><option value="city">OSM City palette</option><option value="natural">Natural materials</option><option value="colour">KFB colour study</option><option value="zones">Zone IDs</option></select>
+  <select id="vibe" aria-label="Vibe"><option value="idle">Idle breathe</option><option value="disco">Disco beat</option></select>
+  <span class="slider">BPM <input id="bpm" type="range" min="60" max="180" value="112"><b id="bpmValue">112</b></span>
+  <span class="slider">Vibe <input id="intensity" type="range" min="0" max="1" step=".05" value=".65"><b id="intensityValue">0.65</b></span>
+  <button id="impactL" class="impact">Impact ←</button><button id="impactR" class="impact">Impact →</button>
+  <span class="controls"><button data-view="oblique">Reset</button><button data-view="front">Front</button><button data-view="side">Side</button><button data-view="top">Top</button></span>
+  <label class="small"><input id="showRig" type="checkbox" checked> Rig anchors</label>
+  <label class="small"><input id="wire" type="checkbox"> Wire</label>
+  <label class="small"><input id="grid" type="checkbox"> Grid</label>
+  <button id="export">Export GLB</button>
+</header>
+<section id="stage" class="stage"><canvas id="view"></canvas></section>
+<footer class="foot">
+  <div class="description"><h1 id="title">Spasskaya Tower · Rig v1</h1><span id="note">Loading…</span></div>
+  <div id="status">Loading Three.js and City style…</div>
+  <div class="small">Yellow anchor helpers mark rigid clock attachments. Disco uses a synthetic beat envelope only; no audio engine or collision owner is created. Impact buttons preview a reaction signal, not a Race physics bounce. <a href="https://github.com/georg-doc/kayfabizarro/tree/main/tools/img2threejs/landmarks/pilot-04">Source / slice</a></div>
+</footer></main>
+<script type="module">
+const timer=setTimeout(()=>document.querySelector('#status').textContent='Still loading. Check access to unpkg.com.',12000);
+try{const {boot}=await import('./viewer.mjs');await boot();clearTimeout(timer);}
+catch(e){clearTimeout(timer);const s=document.querySelector('#status');s.textContent='Viewer could not start: '+e.message;s.classList.add('error');console.error(e);}
+</script></body></html>

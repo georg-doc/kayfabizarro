@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Scan · hex edge masks</title>
+<script type="importmap">
+{"imports":{
+ "three":"https://unpkg.com/three@0.184.0/build/three.module.js",
+ "three/addons/loaders/GLTFLoader.js":"https://unpkg.com/three@0.184.0/examples/jsm/loaders/GLTFLoader.js",
+ "three/addons/controls/OrbitControls.js":"https://unpkg.com/three@0.184.0/examples/jsm/controls/OrbitControls.js"
+}}
+</script>
+<style>body{background:#111;color:#ccc;font:12px monospace;padding:10px;white-space:pre-wrap}</style>
+</head>
+<body>
+<div id="out">scanning…</div>
+<script type="module">
+import { scanEdges } from '../lib/hex-grid.js';
+const L = 'ABCDEFGHIJKLM'.split('');
+const jobs = [
+  ...L.map((l) => ['hex_roads', `hex_road_${l}`]),
+  ...'ABCDEFGHIJKL'.split('').map((l) => ['hex_river', `hex_river_${l}`]),
+  ...'ABCDE'.split('').map((l) => ['hex_coast', `hex_coast_${l}`]),
+  ['hex_base', 'hex_grass'], ['hex_base', 'hex_water']
+];
+const out = {};
+for (const [p, n] of jobs) {
+  try { const r = await scanEdges(p, n); out[n] = { kinds: r.kinds, road: r.maskRoad, water: r.maskWater, grass: r.maskGrass, tris: r.triCount, c0: r.colours[0] }; }
+  catch (e) { out[n] = { error: e.message }; }
+  document.getElementById('out').textContent = `scanned ${Object.keys(out).length}/${jobs.length}`;
+}
+window.RESULT = out;
+document.getElementById('out').textContent = JSON.stringify(out, null, 1);
+</script>
+</body>
+</html>

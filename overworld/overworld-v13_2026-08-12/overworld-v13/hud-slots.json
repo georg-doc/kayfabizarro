@@ -1,0 +1,27 @@
+{
+  "version": "hud-v6.2",
+  "note": "Die Action-Bar liest DIESE Datei. Neuer Knopf = ein Eintrag, keine Code-Änderung. skin: d6 = die KFB-Würfel aus media/kfb/d6-1..6.svg | dice = dieselbe Würfelform mit der Karten-Tusche | paper = Tiny-Swords-9-Slice. Ein Slot darf skin einzeln überschreiben. Export: game.hudConfig().",
+  "skin": "d6",
+  "ambient": true,
+  "colors": {
+    "fluff": "#e0932f",
+    "kayfabe": "#8e4ec6",
+    "bizarro": "#1f9e8a",
+    "sig": "#b5502e",
+    "utility": "#b99a5c"
+  },
+  "moods": {
+    "heroic": "#e0932f",
+    "cynic": "#8e4ec6",
+    "absurd": "#1f9e8a"
+  },
+  "biomeMood": { "camp": "heroic", "wilds": "absurd", "cave": "cynic" },
+  "slots": [
+    { "id": "fluff",     "label": "Fluff",     "key": "1", "color": "fluff",   "action": "kayfabe",   "arg": 0 },
+    { "id": "kayfabe",   "label": "Kayfabe",   "key": "2", "color": "kayfabe", "action": "kayfabe",   "arg": 1 },
+    { "id": "bizarro",   "label": "Bizarro",   "key": "3", "color": "bizarro", "action": "kayfabe",   "arg": 2 },
+    { "id": "signature", "label": "Signature", "key": "4", "color": "sig",     "action": "signature", "arg": null },
+    { "id": "map",       "label": "Island",    "key": "5", "color": "utility", "action": "window",    "arg": "overview" },
+    { "id": "diary",     "label": "Diary",     "key": "6", "color": "utility", "action": "window",    "arg": "diary" }
+  ]
+}

@@ -1,0 +1,1190 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>KFB · Crazy-Cat Plant Prop Lab · S18</title>
+<style>
+  /* Schale aus ref/ui-split-shell.html (S13.4): der Betrachter ist das Werk, die Bedienung
+     ist Beiwerk. Drei Zustände — Leiste zu · Leiste auf · nur Ansicht. */
+  *{box-sizing:border-box}
+  body{margin:0;background:#120e18;color:#e6e0f0;font:13px/1.5 ui-sans-serif,system-ui,-apple-system,"Helvetica Neue",sans-serif}
+  a{color:#b79ae0}a:hover{color:#cdb8ee}
+
+  #app{display:grid;grid-template-columns:minmax(0,1fr) 0;grid-template-rows:38px minmax(0,1fr);height:100vh}
+  #app.panel{grid-template-columns:minmax(0,1fr) 366px}
+  aside{display:none}
+  #app.panel aside{display:block}
+  #app.clean{grid-template-columns:minmax(0,1fr);grid-template-rows:0 minmax(0,1fr)}
+  #app.clean header,#app.clean aside,#app.clean #pick,#app.clean #labels{display:none}
+  #app.clean #stage{grid-row:1/-1;grid-column:1/-1}
+  #exitClean{display:none;position:absolute;right:12px;top:12px;z-index:9;opacity:.3}
+  #exitClean:hover{opacity:1}
+  #app.clean #exitClean{display:block}
+
+  header{grid-column:1/-1;display:flex;align-items:center;gap:6px;padding:0 8px 0 0;
+    border-bottom:1px solid #2a2135;background:#171122;overflow:hidden}
+  #barwrap{position:relative;flex:1 1 auto;min-width:0;display:flex;align-items:center;padding:0 26px}
+  #bar{display:flex;align-items:center;gap:6px;flex:1 1 auto;min-width:0;flex-wrap:nowrap;
+    overflow-x:auto;overflow-y:hidden;scrollbar-width:none}
+  #bar::-webkit-scrollbar{display:none}
+  #bar>*{flex:0 0 auto}
+  #barwrap::before,#barwrap::after{content:"";position:absolute;top:0;bottom:0;width:38px;
+    pointer-events:none;opacity:0;transition:opacity .12s}
+  #barwrap::before{left:0;background:linear-gradient(270deg,#17112200,#171122)}
+  #barwrap::after{right:0;background:linear-gradient(90deg,#17112200,#171122)}
+  #barwrap[data-less="1"]::before,#barwrap[data-more="1"]::after{opacity:1}
+  #less,#more{display:none;position:absolute;font-size:13px;line-height:1;padding:0 7px}
+  #less{left:0}#more{right:0}
+  #barwrap[data-less="1"] #less,#barwrap[data-more="1"] #more{display:block}
+  .tail{display:flex;align-items:center;gap:6px;flex:0 0 auto;padding-left:7px;border-left:1px solid #2f2640}
+  h1{font:600 11px/1 ui-monospace,monospace;margin:0 4px 0 2px;color:#9385a8;letter-spacing:.04em}
+  .sep{width:1px;height:18px;background:#2f2640;margin:0 2px}
+  .spacer{flex:1 1 auto;min-width:6px}
+  button,select,input[type=text],input[type=number]{font:11px/1 inherit;height:26px;padding:0 8px;
+    background:#1e1729;color:#e6e0f0;border:1px solid #3b2f4d;border-radius:5px;cursor:pointer;
+    -webkit-appearance:none;appearance:none}
+  select{padding-right:21px;
+    background-image:linear-gradient(45deg,#00000000 50%,#9385a8 50%),linear-gradient(135deg,#9385a8 50%,#00000000 50%);
+    background-size:4px 4px,4px 4px;background-position:right 11px center,right 7px center;background-repeat:no-repeat}
+  input[type=text],input[type=number]{cursor:text;font-family:ui-monospace,monospace}
+  input[type=number]{width:74px}
+  button:hover,select:hover{background:#281f36}
+  button[aria-pressed="true"]{background:#7a5ea8;border-color:#9b7fd0;color:#140f1d}
+  .steps{display:flex;gap:0}
+  .steps button{border-radius:0;border-left-width:0}
+  .steps button:first-child{border-radius:5px 0 0 5px;border-left-width:1px}
+  .steps button:last-child{border-radius:0 5px 5px 0}
+  label.sl{display:flex;gap:6px;align-items:center;font:10px/1 ui-monospace,monospace;color:#8a7d9e}
+  /* Der Regler war auf feste 96 px gestellt. In einer schmalen Leiste (unter ~320 px) passt
+     Beschriftung + Regler + Zahl damit nicht mehr in die Rasterzelle und der Wert steht
+     ausserhalb. Feste Breite als WUNSCH, nicht als Zusicherung. */
+  input[type=range]{flex:1 1 60px;width:96px;min-width:36px;max-width:100%;accent-color:#9b7fd0}
+  label.sl > span{flex:0 0 auto;font-variant-numeric:tabular-nums}
+  input[type=checkbox]{accent-color:#9b7fd0}
+
+  #stage{position:relative;min-width:0;min-height:0}
+  canvas#c{display:block;width:100%;height:100%}
+  #pick{position:absolute;left:10px;bottom:10px;font:10px/1.55 ui-monospace,monospace;
+    background:#120e18e0;border:1px solid #3b2f4d;padding:6px 8px;border-radius:6px;max-width:56%}
+  #app.beweis #pick{display:none}
+  #labels{position:absolute;inset:0;pointer-events:none}
+  /* Sechs Bildunterschriften nebeneinander haben bei sechs Kompositionen auf einer Bühne
+     keinen Platz — gemessen kollidieren sie ab etwa 900 px Breite. Also: Nummernmarke am
+     Objekt, Text EINMAL als Legende. */
+  .lab{position:absolute;transform:translate(-50%,-100%);width:22px;height:22px;
+    border-radius:50%;display:grid;place-items:center;font:600 11px/1 ui-monospace,monospace;
+    background:#120e18e0;border:1px solid #7a5ea8;color:#ffd9a0}
+  #legend{position:absolute;left:10px;bottom:10px;display:none;gap:2px 14px;
+    grid-template-columns:1fr 1fr;font:10px/1.5 ui-monospace,monospace;color:#cfc4e2;
+    background:#120e18e0;border:1px solid #3b2f4d;border-radius:6px;padding:7px 9px;max-width:min(96%,760px)}
+  #app.beweis #legend{display:grid}
+  /* Nur Ansicht heisst nur Ansicht. Die Legende hat dieselbe Spezifität wie die
+     Beweis-Regel darüber und braucht deshalb die spätere Quellzeile, sonst bleibt der
+     Metakasten unten links im sonst leeren Bild stehen. */
+  #app.clean #legend,#app.clean #boot{display:none}
+  #legend b{color:#ffd9a0}
+  #legend div{display:flex;gap:6px}
+  #legend i{color:#8fd0a8;font-style:normal}
+  #board{position:absolute;inset:0;display:none;grid-template-columns:1fr 1fr;gap:10px;padding:10px;
+    background:#0d0a14;overflow:auto}
+  #app.board #board{display:grid}
+  .tile{position:relative;border:1px solid #2a2135;border-radius:8px;overflow:hidden;background:#15101f;min-height:180px}
+  .tile canvas{display:block;width:100%;height:auto}
+  .tile figcaption{position:absolute;left:0;right:0;bottom:0;padding:6px 8px;
+    font:10px/1.5 ui-monospace,monospace;background:#0d0a14cc;color:#d8cdea}
+  .tile figcaption b{color:#ffd9a0}
+
+  aside{border-left:1px solid #2a2135;background:#161020;overflow:auto;padding:0 0 30px}
+  @media (max-width:1100px){
+    #app.panel{grid-template-columns:minmax(0,1fr) 0}
+    #app.panel aside{position:fixed;right:0;top:38px;bottom:0;width:min(366px,94vw);z-index:20;
+      box-shadow:-16px 0 44px #08060cc0}
+    /* Die schwebende Leiste ist aus dem Grid-Fluss, #stage behält die volle Breite — also
+       müssen die Bühnen-Overlays die Leistenbreite selbst abziehen. Ohne das liegt die
+       halbe Erstbeweis-Legende unter der Leiste, und die Legende IST die Prüfvorlage. */
+    #app.panel #legend,#app.panel #pick{max-width:calc(100% - min(366px,94vw) - 20px)}
+    #app.panel #legend{grid-template-columns:1fr}
+  }
+  /* Quetschen ist keine Lösung: bei 420 px blieben der Legende 34 px. Unter 700 px mit
+     offener Leiste wird sie ausgeblendet — „☰" zu, Legende zurück. */
+  @media (max-width:700px){ #app.panel #legend{display:none} }
+  details{border-bottom:1px solid #221a2f}
+  summary{font:600 10px/1 ui-monospace,monospace;letter-spacing:.1em;text-transform:uppercase;
+    color:#8a7d9e;padding:11px 14px;cursor:pointer;list-style:none;display:flex;align-items:center;gap:7px}
+  summary::-webkit-details-marker{display:none}
+  summary::before{content:"+";font-size:12px;color:#6d6084;width:8px}
+  details[open]>summary::before{content:"\2013"}
+  details[open]>summary{color:#c9bcdd}
+  summary:hover{background:#1c1428}
+  .body{padding:0 14px 14px}
+  .row{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:6px 0}
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin:6px 0}
+  .mono{font:10px/1.6 ui-monospace,monospace;color:#c4b8d8;background:#0f0c16;border:1px solid #241c31;
+    border-radius:5px;padding:8px 9px;white-space:pre-wrap;word-break:break-word;max-height:260px;overflow:auto}
+  .kv{display:flex;justify-content:space-between;gap:10px;padding:3px 0;border-bottom:1px solid #241c31;font:10px/1.55 ui-monospace,monospace}
+  .kv span:last-child{color:#e0d6f2;text-align:right}
+  .kv.no span:last-child{color:#e0896f}
+  .kv.yes span:last-child{color:#8fd0a8}
+  /* Erklärtexte gehören nicht dauerhaft ins Bedienfeld. Sie sind einmal wichtig und danach
+     Rauschen, das die Regler auseinanderschiebt. Sie liegen deshalb hinter einem i in der
+     Abschnittszeile und öffnen als Popover über dem Abschnitt. */
+  .note{font-size:12px;color:#8d81a1;margin:6px 0;text-wrap:pretty}
+  summary{position:relative}
+  .i{width:15px;height:15px;flex:0 0 auto;padding:0;border-radius:50%;border:1px solid #453860;
+    background:#1e1729;color:#8a7d9e;font:600 9px/1 ui-monospace,monospace;display:grid;place-items:center;
+    margin-left:auto;cursor:help}
+  .i:hover{background:#2d2340;color:#d8cdea;border-color:#6d5a92}
+  .i[aria-expanded="true"]{background:#7a5ea8;border-color:#9b7fd0;color:#140f1d}
+  .tip{display:none;position:absolute;top:100%;left:10px;right:10px;z-index:30;
+    background:#1b1427;border:1px solid #4a3c66;border-radius:7px;padding:9px 11px;
+    box-shadow:0 14px 34px #08060cd0}
+  .tip[data-open="1"]{display:block}
+  .tip .note{margin:0}
+  .tip .note + .note{margin-top:7px}
+  /* Auswahlfelder müssen schrumpfen dürfen. Ohne min-width:0 hält ein langer Optionstext
+     die Spalte auf, das Raster wird breiter als die Leiste und der rechte Regler steht
+     ausserhalb — der Befund aus dem Fensterschnappschuss. */
+  label.sl{min-width:0}
+  label.sl select,label.sl input[type=text],label.sl input[type=number]{flex:1 1 auto;min-width:0;max-width:100%}
+  .grid2{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+  .grid2 > label.sl{overflow:hidden}
+  .row > label.sl{max-width:100%}
+  select{max-width:100%;text-overflow:ellipsis}
+  code{color:#b79ae0}
+  textarea{width:100%;height:150px;font:10px/1.5 ui-monospace,monospace;background:#0f0c16;color:#c4b8d8;
+    border:1px solid #241c31;border-radius:5px;padding:8px}
+  .sw{display:inline-flex;gap:3px;vertical-align:middle;margin-left:6px}
+  .sw i{width:11px;height:11px;border-radius:2px;display:block}
+  #boot{position:absolute;inset:0;display:grid;place-items:center;text-align:center;
+    background:#120e18;color:#8d81a1;font:11px/1.9 ui-monospace,monospace;z-index:5}
+</style>
+</head>
+<body>
+<div id="app" class="panel">
+  <header>
+    <div id="barwrap">
+    <button id="less" title="weiter links">‹</button>
+    <div id="bar">
+      <h1>S18</h1>
+      <span class="steps" id="views">
+        <button data-v="werk" aria-pressed="true">Werkbank</button>
+        <button data-v="beweis">Erstbeweis</button>
+        <button data-v="farbe">Farbtafel</button>
+      </span>
+      <div class="sep"></div>
+      <span class="steps" id="presets">
+        <button data-p="A">A normal</button>
+        <button data-p="B">B alien</button>
+        <button data-p="C">C Gruppe</button>
+        <button data-p="D">D Landmarke</button>
+        <button data-p="E">E lebend</button>
+      </span>
+      <label class="sl">Seed <input type="number" id="seed" value="1842" min="0" step="1"></label>
+      <button id="dice" title="neuer Seed">würfeln</button>
+      <button id="regen">Neu bauen</button>
+      <div class="sep"></div>
+      <span class="steps" id="living">
+        <button data-l="STATIC">STATIC</button>
+        <button data-l="AMBIENT" aria-pressed="true">AMBIENT</button>
+        <button data-l="AWARE">AWARE</button>
+      </span>
+      <div class="sep"></div>
+      <label class="sl">Licht <select id="mood"></select></label>
+      <div class="spacer"></div>
+    </div>
+    <button id="more" title="weiter rechts">›</button>
+    </div>
+    <div class="tail">
+      <button id="clean">Nur Ansicht</button>
+      <button id="panelBtn" aria-pressed="true" title="Leiste">☰</button>
+    </div>
+  </header>
+  <div id="stage">
+    <canvas id="c"></canvas>
+    <div id="labels"></div>
+    <div id="legend"></div>
+    <div id="board"></div>
+    <div id="pick">Zeiger bewegen = Blick · Klick auf eine Pflanze = Rückstoss</div>
+    <button id="exitClean" title="Escape">Ansicht verlassen</button>
+    <div id="boot">lade Quellen aus georg-doc/kayfabizarro …</div>
+  </div>
+  <aside>
+    <details open>
+      <summary>Quelle · Behälter und Pflanze</summary>
+      <div class="body">
+        <div class="grid2">
+          <label class="sl">Topf <select id="potFam"></select></label>
+          <label class="sl">Größe <select id="potSize"></select></label>
+          <label class="sl">Untersetzer <select id="saucer"><option value="1">ja</option><option value="0">nein</option></select></label>
+          <label class="sl">Töpfe <input type="range" id="potCount" min="1" max="5" value="1"><span id="potCountV">1</span></label>
+          <label class="sl">Pflanze <select id="plantSrc"></select></label>
+          <label class="sl">Anzahl <input type="range" id="plantCount" min="1" max="5" value="1"><span id="plantCountV">1</span></label>
+        </div>
+        <div class="row">
+          <label class="sl">Einsetztiefe <input type="range" id="insert" min="0" max="60" value="20"><span id="insertV">0.20</span></label>
+        </div>
+        <p class="note">Einsetztiefe als Anteil der Topfhöhe. Der Standard 0,20 ist gemessen:
+          <code>monstera_plant_large_potted</code> (3,680) minus <code>monstera_plant_large</code>
+          (Oberkante 2,880) = 0,800 Ursprung in einem 1,00 hohen Topf.</p>
+      </div>
+    </details>
+    <details open>
+      <summary>Maßstab · Crazy-Cat</summary>
+      <div class="body">
+        <div class="row" id="scaleCls"></div>
+        <div class="row">
+          <label class="sl">Faktor <input type="range" id="scale" min="20" max="2000" value="100"><span id="scaleV">1.00</span></label>
+        </div>
+        <p class="note">Maßstabsklasse ist Auskunft, der Faktor die Messgrösse. Eine Hauspflanze
+          darf als Landmarke stehen, ohne eine Baumart zu behaupten.</p>
+      </div>
+    </details>
+    <details open>
+      <summary>Muster · Topf</summary>
+      <div class="body">
+        <div class="grid2">
+          <label class="sl">Biom <select id="biome"></select></label>
+          <label class="sl">Palette <select id="pal"></select></label>
+        </div>
+        <div id="palSw" class="row"></div>
+        <div class="grid2">
+          <label class="sl">Leitmotiv <select id="lead"></select></label>
+          <label class="sl">Register <select id="regs">
+            <option value="0">aus dem Seed</option><option value="2">2</option>
+            <option value="3">3</option><option value="4">4</option><option value="5">5</option>
+          </select></label>
+        </div>
+        <div class="row">
+          <label class="sl">Maßstab <input type="range" id="density" min="3" max="14" value="7"><span id="densityV">7</span></label>
+          <label class="sl">Kontur <input type="range" id="outline" min="0" max="100" value="55"><span id="outlineV">0.55</span></label>
+        </div>
+        <div class="row">
+          <label class="sl">Wackel <input type="range" id="wobble" min="0" max="100" value="35"><span id="wobbleV">0.35</span></label>
+          <label class="sl">Abwechslung <input type="range" id="variance" min="0" max="100" value="45"><span id="varianceV">0.45</span></label>
+        </div>
+        <div class="row">
+          <label class="sl">Phase <input type="range" id="phase" min="0" max="100" value="0"><span id="phaseV">0.00</span></label>
+          <label class="sl"><input type="checkbox" id="invert"> Dunkler Grund</label>
+        </div>
+        <div class="row">
+          <label class="sl"><input type="checkbox" id="soil" checked> Erde innen</label>
+        </div>
+        <p class="note">Eine laute Stimme je Topf, nie am Fuss, alle Konturen in einer Stärke.
+          Das ist die Linie; Seed, Wackel und Abwechslung machen jeden Topf trotzdem zu einem eigenen.</p>
+        <div class="row">
+          <label class="sl"><input type="checkbox" id="rim" checked> Kantenband</label>
+          <span class="steps" id="proj">
+            <button data-j="cyl" aria-pressed="true">zylindrisch</button>
+            <button data-j="uv">UV-Canvas</button>
+          </span>
+        </div>
+        <div class="mono" id="patReport">—</div>
+      </div>
+    </details>
+    <details>
+      <summary>Proprig · Bewegung ohne Knochen</summary>
+      <div class="body">
+        <div class="row">
+          <label class="sl">Wiegen <input type="range" id="sway" min="0" max="200" value="50"><span id="swayV">0.50</span></label>
+          <label class="sl">Puls <input type="range" id="pulse" min="0" max="200" value="25"><span id="pulseV">0.25</span></label>
+        </div>
+        <div class="row">
+          <label class="sl">Wind x <input type="range" id="windX" min="-100" max="100" value="25"><span id="windXV">0.25</span></label>
+          <label class="sl">Wind z <input type="range" id="windZ" min="-100" max="100" value="0"><span id="windZV">0.00</span></label>
+        </div>
+        <div class="row">
+          <label class="sl">Nähe <input type="range" id="prox" min="0" max="200" value="60"><span id="proxV">0.60</span></label>
+          <button id="hit">Rückstoss</button>
+          <button id="pulseNow">Puls</button>
+        </div>
+        <div class="mono" id="rigReport">—</div>
+      </div>
+    </details>
+    <details>
+      <summary>Leben · bestehender EyeRig v6</summary>
+      <div class="body">
+        <div class="row">
+          <span class="steps" id="eyePlace">
+            <button data-e="pot" aria-pressed="true">Topf</button>
+            <button data-e="crown">Schopf</button>
+            <button data-e="float">vorgesetzt</button>
+          </span>
+        </div>
+        <div class="row">
+          <label class="sl">Augengröße <input type="range" id="ring" min="20" max="95" value="50"><span id="ringV">0.50</span></label>
+          <label class="sl">Spreizung <input type="range" id="splay" min="0" max="100" value="26"><span id="splayV">0.26</span></label>
+        </div>
+        <div class="row">
+          <label class="sl"><input type="checkbox" id="showHost"> Wirt zeigen</label>
+          <button id="blink">Blinzeln</button>
+          <select id="emote"><option value="">Miene…</option></select>
+        </div>
+        <p class="note">Kein zweites Augensystem: <code>pet-eye-rig.v6.js</code> wird über jsDelivr
+          geladen und bekommt einen gemessenen FaceHost. Eine Pflanze mit Augen ist damit
+          <b>AWARE</b>, kein Resident und keine Kampffigur.</p>
+        <div class="mono" id="eyeReport">—</div>
+      </div>
+    </details>
+    <details open>
+      <summary>Prüfungen</summary>
+      <div class="body"><div id="gates"></div></div>
+    </details>
+    <details>
+      <summary>Messwerte am Bau</summary>
+      <div class="body"><div class="mono" id="meas">—</div></div>
+    </details>
+    <details>
+      <summary>Rezept · Rundlauf</summary>
+      <div class="body">
+        <div class="row">
+          <button id="recExport">Rezept lesen</button>
+          <button id="recImport">Rezept bauen</button>
+          <button id="recCopy">kopieren</button>
+          <button id="recFile">.json laden</button>
+        </div>
+        <textarea id="recJson" spellcheck="false"></textarea>
+        <p class="note">Generate → Inspect → Adjust → Export → Re-import → Reproduce. Gleicher
+          Seed und gleiches Rezept ergeben dieselbe Komposition; der Rundlauf wird in den
+          Prüfungen mitgemessen.</p>
+      </div>
+    </details>
+    <details>
+      <summary>Übergabe · GameReadyPlantPackage (Kandidat)</summary>
+      <div class="body">
+        <div class="row"><button id="pkgBtn">Paket lesen</button></div>
+        <div class="mono" id="pkg">—</div>
+        <p class="note">Vorschlag, kein Katalogeintrag. Nichts wird in Game Dev Studio geschrieben.</p>
+      </div>
+    </details>
+    <details>
+      <summary>Quellen · exakte GitHub-Referenzen</summary>
+      <div class="body"><div class="mono" id="srcList">—</div></div>
+    </details>
+  </aside>
+</div>
+
+<script type="importmap">
+{ "imports": { "three": "https://unpkg.com/three@0.184.0/build/three.module.js",
+               "three/addons/": "https://unpkg.com/three@0.184.0/examples/jsm/" } }
+</script>
+<script type="module">
+import * as THREE from 'three';
+import { makeViewer, repairTextures, instance } from './src/kit-lab.js';
+import * as INV from './src/plant-inventory.js';
+import * as REC from './src/plant-recipe.js';
+import { PALETTES, PALETTE_NAMES, FAMILIES, FAMILY_NAMES, GLYPHS, GLYPH_NAMES, BIOMES, BIOME_NAMES, paletteForBiome, probeUV, roles } from './src/plant-pattern.js';
+import { makePropRig, LEVELS } from './src/plant-rig.js';
+import { mountEyes, PLACEMENTS } from './src/plant-eyes.js';
+import { installLight, makeStage, MOODS, MOOD_NAMES } from './src/plant-light.js';
+
+const $ = (id) => document.getElementById(id);
+const app = $('app'), stage = $('stage');
+const viewer = makeViewer($('c'), { fov: 30 });
+const light = installLight(viewer, { mood: 'day', radius: 6 });
+const ground = makeStage(6, 'day');
+viewer.scene.add(ground);
+
+const S = {
+  view: 'werk', preset: 'A', seed: 1842, mood: 'day', living: 'AMBIENT',
+  eyePlacement: 'pot', showHost: false,
+  potFam: 'A', potSize: 'large', saucer: true, potCount: 1,
+  plantSrc: 'tt:monstera', plantCount: 1, insert: 0.2,
+  scaleClass: 'TABLETOP', scale: 1,
+  style: { biome: 'frei', paletteId: 'terracotta', leitmotif: 'auto', registers: 0, family: null, projection: 'cyl', density: 7, bands: 4, phase: 0, accent: 0.25, outline: 0.55, wobble: 0.35, variance: 0.45, soil: true, rim: true, saucer: 'inherit', seed: 1842 },
+  rig: { sway: 0.5, pulse: 0.25, windX: 0.25, windZ: 0, prox: 0.6 },
+  eye: { ring: 0.50, splay: 0.26 }
+};
+
+let built = null, rig = null, eyes = null, current = null;   // aktuelle Komposition
+let proofs = [], labels = [];
+const clock = new THREE.Clock();
+
+/* Bauten werden GEREIHT, nicht parallel gestartet. Ein Klick während eines laufenden Baus
+   räumte sonst die Bühne, während der ältere Bau weiterlief und danach auf eine Box rahmte,
+   die es nicht mehr gibt — sichtbar als leere Bühne mit Horizont. Der Zähler `gen` macht
+   jeden überholten Bau zum Nichts. */
+let gen = 0, chain = Promise.resolve();
+function schedule(fn, label) {
+  const g = ++gen;
+  $('boot').textContent = label || 'baue …';
+  $('boot').style.display = 'grid';
+  chain = chain.then(async () => {
+    if (g !== gen) return;
+    try { await fn(); } catch (e) { $('boot').textContent = 'Bau fehlgeschlagen: ' + e.message; console.error(e); return; }
+    if (g === gen) $('boot').style.display = 'none';
+  });
+  return chain;
+}
+
+/* ---------------- Bedienelemente füllen ---------------- */
+$('mood').innerHTML = MOOD_NAMES.map((m) => `<option value="${m}">${MOODS[m].label}</option>`).join('');
+$('potFam').innerHTML = INV.POT_FAMILIES.map((f) => `<option value="${f}">Topf ${f}</option>`).join('');
+$('potSize').innerHTML = INV.POT_SIZES.map((s) => `<option value="${s}">${s}</option>`).join('');
+$('potSize').value = 'large';
+const PLANT_OPTS = [
+  ...Object.entries(INV.PLANT_FAMILIES).map(([k, v]) => [`tt:${k}`, `${k} · ${v.look}`]),
+  ...Object.keys(INV.ALIEN_FAMILIES).map((k) => [`qu:${k}`, `ALIEN ${k}`])
+];
+$('plantSrc').innerHTML = PLANT_OPTS.map(([v, l]) => `<option value="${v}">${l}</option>`).join('');
+$('plantSrc').value = 'tt:monstera';
+$('pal').innerHTML = PALETTE_NAMES.map((p) => `<option value="${p}">${PALETTES[p].label}</option>`).join('');
+$('biome').innerHTML = BIOME_NAMES.map((b) => `<option value="${b}">${BIOMES[b].label}</option>`).join('');
+$('lead').innerHTML = '<option value="auto">aus dem Seed</option>'
+  + GLYPH_NAMES.map((g) => `<option value="${g}">${GLYPHS[g].voice === 'laut' ? '▰' : '▭'} ${GLYPHS[g].label}</option>`).join('');
+$('lead').value = 'auto';
+$('scaleCls').innerHTML = Object.keys(INV.SCALE_CLASSES)
+  .map((k) => `<button data-sc="${k}"${k === 'TABLETOP' ? ' aria-pressed="true"' : ''}>${k}</button>`).join('');
+const ROLE_LABEL = { body: 'Körper', motif: 'Motiv', accent: 'Akzent', frame: 'Rahmen', soil: 'Erde' };
+const swatches = () => {
+  const R = roles(S.style.paletteId);
+  const cells = ['body', 'motif', 'accent', 'frame', 'soil']
+    .map((k) => `<i title="${ROLE_LABEL[k]} ${R[k]}" style="background:${R[k]}"></i>`).join('');
+  $('palSw').innerHTML = `<span class="sw">${cells}</span>
+    <span style="font:10px/1 ui-monospace,monospace;color:#8a7d9e">Harmonie: ${R.harmony} · Erde ${R.soil}</span>`;
+};
+swatches();
+
+/* ---------------- Rezept aus dem Zustand ---------------- */
+function inputsFromState(over = {}) {
+  const [kind, name] = S.plantSrc.split(':');
+  return Object.assign({
+    seed: S.seed, preset: S.preset,
+    potFamily: S.potFam, size: S.potSize, saucer: S.saucer,
+    cluster: S.potCount > 1, potCount: S.potCount,
+    plantCount: S.plantCount, insertDepth: S.insert,
+    alien: kind === 'qu', alienFamily: kind === 'qu' ? name : undefined,
+    plantFamily: kind === 'tt' ? name : undefined,
+    scaleClass: S.scaleClass, scale: S.scale,
+    style: Object.assign({}, S.style), living: S.living, eyePlacement: S.eyePlacement
+  }, over);
+}
+
+/* ---------------- Bau ---------------- */
+async function clearScene() {
+  for (const p of proofs) viewer.scene.remove(p.root);
+  proofs = [];
+  if (eyes) { eyes.dispose(); eyes = null; }
+  if (built) viewer.scene.remove(built.root);
+  built = null; rig = null;
+  $('labels').innerHTML = ''; labels = [];
+  $('legend').innerHTML = '';
+}
+
+async function buildFromRecipe(recipe, opts = {}) {
+  await clearScene();
+  current = recipe;
+  built = await REC.buildProp(recipe);
+  viewer.scene.add(built.root);
+  repairTextures(built.root);
+  rig = makePropRig({ plants: built.plants, squashes: built.squashes },
+    { seed: recipe.seed, level: S.living, sway: S.rig.sway, pulse: S.rig.pulse, windX: S.rig.windX, windZ: S.rig.windZ, proximity: S.rig.prox });
+  if (S.living === 'AWARE') await mountLiving();
+  fitStage(built.root);
+  if (!opts.keepCamera) viewer.frame(built.root, [1, 0.55, 1.35], 1.25);
+  renderReports();
+  return built;
+}
+
+async function mountLiving() {
+  if (!built) return;
+  if (eyes) { eyes.dispose(); eyes = null; }
+  const place = S.eyePlacement;
+  let parent, box, yaw = 0, hostNode = null, toParent = new THREE.Matrix4();
+  if (place === 'pot') {
+    /* Wirt in den UNVERDREHTEN Behälter hängen, nicht in `PotRoot`: der trägt die
+       Zufallsdrehung des Rezepts, und ein Gesicht würde damit in eine beliebige Richtung
+       blicken (gemessen an Vorgabe E: 137,5° vom Betrachter weg). */
+    const cg = built.root.getObjectByName('Container_0') || built.root;
+    const pot = cg.getObjectByName('Pot') || (cg.getObjectByName('PotRoot') || cg);
+    parent = cg;
+    hostNode = pot;
+    box = new THREE.Box3().setFromObject(pot);
+    toParent = new THREE.Matrix4().copy(parent.matrixWorld).invert();
+    box.applyMatrix4(toParent);
+  } else {
+    const p = built.plants[0];
+    if (!p) return;
+    parent = place === 'crown' ? p.crown : (built.overlay || built.root);
+    /* Der Kronen-Pivot trägt den Gier-Versatz der Pflanze — ausgleichen, damit das Gesicht
+       nach vorn zeigt und trotzdem mit dem Wiegen mitgeht. */
+    yaw = place === 'crown' ? -(p.pivot.userData.yaw || 0) : 0;
+    box = new THREE.Box3().setFromObject(p.node);
+    box.applyMatrix4(new THREE.Matrix4().copy(parent.matrixWorld).invert());
+  }
+  try {
+    /* Lidfarbe aus der Topfpalette: die Augen sind Teil des Props, nicht ein Aufkleber. */
+    const lid = new THREE.Color(PALETTES[S.style.paletteId].colors[place === 'pot' ? 1 : 0]).getHex();
+    eyes = await mountEyes({ parent, box, placement: place, opts: { showHost: S.showHost, ring: S.eye.ring, splay: S.eye.splay, baseColor: lid, yaw, node: hostNode, toParent } });
+    const em = eyes.report().emotesFromContract;
+    $('emote').innerHTML = `<option value="">Miene…</option>` + em.map((e) => `<option value="${e}">${e}</option>`).join('');
+  } catch (e) {
+    eyes = null;
+    $('eyeReport').textContent = 'EyeRig NICHT montiert: ' + e.message;
+  }
+  renderReports();
+}
+
+function fitStage(obj) {
+  const box = new THREE.Box3().setFromObject(obj);
+  const sz = box.getSize(new THREE.Vector3());
+  const r = Math.max(2.5, Math.max(sz.x, sz.z) * 0.95);
+  ground.scale.setScalar(r / 6);
+  light.setRadius(r);
+  light.set(S.mood);
+  ground.userData.setMood(S.mood);
+}
+
+/* ---------------- Erstbeweis: sechs Kompositionen in einer Reihe ---------------- */
+const PROOF_DEFS = [
+  { key: '1', title: 'original', sub: 'monstera_plant_large + pot_A_large, Pack-Optik',
+    inputs: { preset: 'A', seed: 1001, potFamily: 'A', size: 'large', plantFamily: 'monstera', plantCount: 1, saucer: true, scaleClass: 'TABLETOP', style: { family: 'plain', paletteId: 'terracotta', rim: false, accent: 0, projection: 'cyl' }, living: 'STATIC' } },
+  { key: '2', title: 'gemustert', sub: 'derselbe Topf, Talavera-Rauten, zylindrisch',
+    inputs: { preset: 'A', seed: 1001, potFamily: 'A', size: 'large', plantFamily: 'monstera', plantCount: 1, saucer: true, scaleClass: 'TABLETOP', style: { family: 'diamonds', paletteId: 'talavera', density: 7, bands: 4, accent: 0.28, outline: 0.65, rim: true, projection: 'cyl' }, living: 'STATIC' } },
+  { key: '3', title: 'alien im Tiny-Treats-Topf', sub: 'Tree_Spiral_2 auf Kantenradius skaliert',
+    inputs: { preset: 'B', seed: 2042, potFamily: 'C', size: 'large', alien: true, alienFamily: 'Tree_Spiral', plantCount: 1, saucer: false, scaleClass: 'TABLETOP', style: { family: 'zigzag', paletteId: 'jade', density: 6, bands: 4, accent: 0.22, outline: 0.6, rim: true, projection: 'cyl' }, living: 'STATIC' } },
+  { key: '4', title: 'Crazy-Cat-Landmarke', sub: 'LANDMARK · Faktor 12 — daneben dieselbe Komposition in Tischmaßstab',
+    companion: true, showHeight: 6.6,
+    inputs: { preset: 'D', seed: 3077, potFamily: 'B', size: 'large', plantFamily: 'monstera', plantCount: 1, saucer: false, scaleClass: 'LANDMARK', style: { family: 'bands', paletteId: 'chili', bands: 5, accent: 0.28, outline: 0.55, rim: true, projection: 'cyl' }, living: 'STATIC' } },
+  { key: '5', title: 'lebend · EyeRig v6', sub: 'AWARE · Augen am Topf, Blick folgt dem Zeiger',
+    inputs: { preset: 'E', seed: 4242, potFamily: 'D', size: 'large', plantFamily: 'zzplant', plantCount: 1, saucer: true, scaleClass: 'ROOM', style: { family: 'dots', paletteId: 'cobalt', density: 7, accent: 0.24, outline: 0.7, rim: true, projection: 'cyl' }, living: 'AWARE', eyePlacement: 'pot' } },
+  { key: '6', title: 'Seed 5150 · zweimal', sub: 'zwei unabhängige Bauten aus demselben Seed',
+    inputs: { preset: 'C', seed: 5150, cluster: true, potCount: 3, plantCount: 1, scaleClass: 'TABLETOP', living: 'AMBIENT' } }
+];
+
+let seedProof = null, studyBox = null;
+async function buildProofRow() {
+  await clearScene();
+  const gap = 1.2;
+  let x = 0;
+  const made = [];
+  for (const def of PROOF_DEFS) {
+    const rc = REC.generate(def.inputs);
+    const b = await REC.buildProp(rc);
+    repairTextures(b.root);
+    /* Ein Halter je Beweis: bei der Landmarke stehen ZWEI Bauten darin (Riese + gleiche
+       Komposition in Tischmaßstab). Ohne den Maßstabszeugen wäre der Riese nach der
+       Normierung von Beweis 1 nicht zu unterscheiden — die Crazy-Cat-Aussage ist das
+       VERHÄLTNIS, nicht die Zahl. */
+    const holder = new THREE.Group();
+    holder.name = 'Proof_' + def.key;
+    holder.add(b.root);
+    const extra = [];
+    if (def.companion) {
+      const rc2 = REC.generate(Object.assign({}, def.inputs, { scaleClass: 'TABLETOP', scale: 1 }));
+      const b2c = await REC.buildProp(rc2);
+      repairTextures(b2c.root);
+      const gsz = new THREE.Box3().setFromObject(b.root).getSize(new THREE.Vector3());
+      const ssz = new THREE.Box3().setFromObject(b2c.root).getSize(new THREE.Vector3());
+      b2c.root.position.set(gsz.x / 2 + ssz.x * 0.9, 0, gsz.z * 0.28);
+      holder.add(b2c.root);
+      extra.push(b2c);
+    }
+    holder.updateMatrixWorld(true);
+    const box = new THREE.Box3().setFromObject(holder);
+    const sz = box.getSize(new THREE.Vector3());
+    /* Die Landmarke ist 12×: die Reihe wird auf EINE Schauhöhe normiert, damit sechs
+       Kompositionen nebeneinander lesbar sind — der Faktor steht als Zahl im Etikett. */
+    const showScale = Math.min(1, (def.showHeight || 3.2) / Math.max(0.2, sz.y));
+    holder.scale.multiplyScalar(showScale);
+    holder.updateMatrixWorld(true);
+    const box2 = new THREE.Box3().setFromObject(holder);
+    const sz2 = box2.getSize(new THREE.Vector3());
+    x += sz2.x / 2;
+    holder.position.x = x - (box2.getCenter(new THREE.Vector3()).x - holder.position.x);
+    x += sz2.x / 2 + gap;
+    holder.updateMatrixWorld(true);
+    viewer.scene.add(holder);
+    const r = makePropRig({ plants: b.plants.concat(...extra.map((e) => e.plants)), squashes: b.squashes.concat(...extra.map((e) => e.squashes)) },
+      { seed: rc.seed, level: def.inputs.living || 'AMBIENT' });
+    let ey = null;
+    if (def.inputs.living === 'AWARE') {
+      const cg = b.root.getObjectByName('Container_0');
+      const pot = cg && (cg.getObjectByName('Pot') || cg.getObjectByName('PotRoot'));
+      if (cg && pot) {
+        const box3 = new THREE.Box3().setFromObject(pot);
+        box3.applyMatrix4(new THREE.Matrix4().copy(cg.matrixWorld).invert());
+        const lid = new THREE.Color(PALETTES[rc.style.paletteId].colors[1]).getHex();
+        const tp = new THREE.Matrix4().copy(cg.matrixWorld).invert();
+        try { ey = await mountEyes({ parent: cg, box: box3, placement: 'pot', opts: { baseColor: lid, node: pot, toParent: tp } }); } catch (e) { ey = null; }
+      }
+    }
+    made.push({ def, recipe: rc, built: b, extra, rig: r, eyes: ey, root: holder, showScale, height: sz2.y });
+  }
+  /* Beweis 6: derselbe Seed zweimal gebaut und verglichen — Rezepttext UND gebautes Weltmaß.
+     Gemessen werden ZWEI frische Bauten, nicht der Bau auf der Bühne: dessen Box trägt die
+     Schaunormierung des Halters und würde den Vergleich verfälschen. */
+  const a = REC.generate(PROOF_DEFS[5].inputs), bb = REC.generate(PROOF_DEFS[5].inputs);
+  const bx1 = await REC.buildProp(a), bx2 = await REC.buildProp(bb);
+  const szA = new THREE.Box3().setFromObject(bx1.root).getSize(new THREE.Vector3());
+  const szB = new THREE.Box3().setFromObject(bx2.root).getSize(new THREE.Vector3());
+  seedProof = {
+    recipeEqual: REC.serialize(a) === REC.serialize(bb),
+    sizeEqual: szA.distanceTo(szB) < 1e-9,
+    sizeA: +szA.y.toFixed(4), sizeB: +szB.y.toFixed(4),
+    idA: a.id, idB: bb.id
+  };
+  /* Der Vergleichsbau wird nach der Messung verworfen — die Bühne zeigt eine Reihe, keine Sieben. */
+  proofs = made;
+  /* Die Reihe wird auf ihre gemessene Mitte geschoben, nicht auf eine geschätzte: `x` steht
+     am Ende auf Gesamtbreite PLUS einer Lücke, die nicht mitzählt. */
+  const centre = (x - gap) / 2;
+  for (const m of proofs) { m.root.position.x -= centre; m.root.updateMatrixWorld(true); }
+  $('labels').innerHTML = proofs.map((m, i) => `<div class="lab" data-i="${i}">${m.def.key}</div>`).join('');
+  $('legend').innerHTML = proofs.map((m) =>
+    `<div><b>${m.def.key}</b><span><i>${m.def.title}</i> · ${m.def.sub}</span></div>`).join('');
+  labels = [...document.querySelectorAll('.lab')];
+  const box = new THREE.Box3();
+  for (const m of proofs) {
+    const b2 = new THREE.Box3().setFromObject(m.root);
+    /* Etikettenanker EINMAL messen: eine Box3 je Bild über 6 Kompositionen kostet mehr als
+       die ganze Bewegung zusammen. */
+    m.anchor = new THREE.Vector3(b2.getCenter(new THREE.Vector3()).x, b2.max.y, 0);
+    box.union(b2);
+  }
+  fitStageBox(box);
+  frameBox(box, 0.32, 0.86);
+  renderReports();
+}
+
+/* Rahmung wie in kit-lab.frame(), aber über eine BOX statt über ein Objekt — die sechs
+   Kompositionen sind sechs Wurzeln, keine gemeinsame Gruppe. */
+function frameBox(box, lift = 0.35, tighten = 0.95) {
+  const c = box.getCenter(new THREE.Vector3());
+  const sz = box.getSize(new THREE.Vector3());
+  const radius = sz.length() / 2;
+  const dist = (radius * 1.06) / Math.sin(THREE.MathUtils.degToRad(viewer.camera.fov / 2));
+  viewer.camera.position.set(c.x, c.y + sz.y * lift, dist * tighten);
+  viewer.controls.target.copy(c);
+  viewer.camera.near = Math.max(0.01, dist / 200);
+  viewer.camera.far = dist * 20;
+  viewer.camera.updateProjectionMatrix();
+  viewer.controls.minDistance = Math.max(0.05, radius * 0.1);
+  viewer.controls.maxDistance = dist * 4;
+  viewer.controls.update();
+}
+
+function fitStageBox(box) {
+  const sz = box.getSize(new THREE.Vector3());
+  const r = Math.max(4, Math.max(sz.x, sz.z) * 0.62);
+  ground.scale.setScalar(r / 6);
+  light.setRadius(r);
+  light.set(S.mood);
+  ground.userData.setMood(S.mood);
+}
+
+/* ---------------- Farbtafel: vier Lichtkalibrierungen, dieselbe Aufstellung ---------------- */
+/* Aufstellung der Farbtafel: fünf Tischexemplare mit fünf Palettefamilien plus EIN
+   überdimensioniertes Landschaftsexemplar. Die Maße sind bewusst angenähert — ein Exemplar
+   mit Faktor 12 (LANDMARK) macht die anderen fünf in einer 520-px-Kachel unlesbar; die
+   Landmarke selbst steht in Beweis 4. */
+const STUDY = [
+  { inputs: { seed: 7001, potFamily: 'A', size: 'large', plantFamily: 'monstera', plantCount: 1, saucer: true, scaleClass: 'TABLETOP', style: { family: 'plain', paletteId: 'terracotta', rim: false, accent: 0 }, living: 'STATIC' }, x: -6.2 },
+  { inputs: { seed: 7002, potFamily: 'C', size: 'large', alien: true, alienFamily: 'Tree_Blob', plantCount: 1, saucer: false, scaleClass: 'TABLETOP', style: { family: 'dots', paletteId: 'talavera', density: 7, accent: 0.26, outline: 0.7, rim: true }, living: 'STATIC' }, x: -3.4 },
+  { inputs: { seed: 7003, potFamily: 'B', size: 'large', plantFamily: 'sansevieria', plantCount: 1, saucer: true, scaleClass: 'TABLETOP', style: { family: 'zigzag', paletteId: 'chili', bands: 4, accent: 0.26, outline: 0.6, rim: true }, living: 'STATIC' }, x: -1.2 },
+  { inputs: { seed: 7004, potFamily: 'D', size: 'medium', plantFamily: 'cactus', plantCount: 3, saucer: false, scaleClass: 'TABLETOP', style: { family: 'scallops', paletteId: 'melon', density: 8, accent: 0.24, outline: 0.65, rim: true }, living: 'STATIC' }, x: 0.4 },
+  { inputs: { seed: 7005, potFamily: 'C', size: 'large', plantFamily: 'zzplant', plantCount: 1, saucer: true, scaleClass: 'TABLETOP', style: { family: 'sunray', paletteId: 'pumpkin', density: 10, accent: 0.22, outline: 0.55, rim: true }, living: 'STATIC' }, x: 2.2 },
+  { inputs: { seed: 7006, potFamily: 'B', size: 'large', plantFamily: 'yucca', plantCount: 1, saucer: false, scaleClass: 'GARDEN', scale: 2, style: { family: 'blocks', paletteId: 'ink', density: 6, bands: 4, accent: 0.24, outline: 0.5, rim: true }, living: 'STATIC' }, x: 6.2 }
+];
+
+async function buildStudy() {
+  await clearScene();
+  const made = [];
+  for (const it of STUDY) {
+    const rc = REC.generate(it.inputs);
+    const b = await REC.buildProp(rc);
+    repairTextures(b.root);
+    b.root.position.x = it.x;
+    viewer.scene.add(b.root);
+    made.push({ def: { key: '', title: '', sub: '' }, recipe: rc, built: b,
+      rig: makePropRig({ plants: b.plants, squashes: b.squashes }, { seed: rc.seed, level: 'AMBIENT' }), eyes: null, root: b.root });
+  }
+  proofs = made;
+  const box = new THREE.Box3();
+  for (const m of proofs) {
+    const b2 = new THREE.Box3().setFromObject(m.root);
+    m.anchor = new THREE.Vector3(b2.getCenter(new THREE.Vector3()).x, b2.max.y, 0);
+    box.union(b2);
+  }
+  studyBox = box;
+  fitStageBox(box);
+  frameBox(box, 0.3);
+  renderTiles();
+  renderReports();
+}
+
+/* Eine Stimmung je Kachel: Szene wird viermal in ein Renderziel gezeichnet und als Pixel
+   gelesen. WICHTIG (Lehre aus S13.2): `readRenderTargetPixels` liefert LINEARE Werte,
+   solange `rt.texture.colorSpace` nicht auf sRGB steht — 0x808080 kommt sonst als 11 zurück.
+   Und die Zeilen kommen von UNTEN, also beim Kopieren spiegeln. */
+function renderTiles() {
+  const bw = 520, bh = 330;
+  const boardEl = $('board');
+  boardEl.innerHTML = MOOD_NAMES.map((m) => `<figure class="tile" style="margin:0">
+    <canvas id="tile_${m}" width="${bw}" height="${bh}"></canvas>
+    <figcaption><b>${MOODS[m].label}</b> · Hemisphäre ${MOODS[m].hemi} · Key ${MOODS[m].keyInt} · Exposure ${MOODS[m].exposure}</figcaption></figure>`).join('');
+  const prev = S.mood;
+  const rt = new THREE.WebGLRenderTarget(bw, bh, { depthBuffer: true });
+  rt.texture.colorSpace = THREE.SRGBColorSpace;
+  /* Eigene Kamera je Kachel: die Bildhüllen unterscheiden sich (Bühne 924×500, Kachel
+     520×330). Die Orbitkamera zu leihen und nur `aspect` zu ändern schneidet die Reihe an
+     den Seiten ab — also wird die GEMESSENE Aufstellungsbox für dieses Seitenverhältnis
+     gerahmt: Abstand aus der halben Diagonale und dem horizontalen Öffnungswinkel. */
+  const cam = new THREE.PerspectiveCamera(viewer.camera.fov, bw / bh, 0.05, 4000);
+  const bx = studyBox || new THREE.Box3().setFromObject(viewer.scene);
+  const c = bx.getCenter(new THREE.Vector3()), sz = bx.getSize(new THREE.Vector3());
+  const vFov = THREE.MathUtils.degToRad(cam.fov);
+  const hFov = 2 * Math.atan(Math.tan(vFov / 2) * cam.aspect);
+  const dist = Math.max((sz.x / 2 + 0.4) / Math.tan(hFov / 2), (sz.y / 2 + 0.3) / Math.tan(vFov / 2));
+  cam.position.set(c.x, c.y + sz.y * 0.22, dist * 1.04);
+  cam.lookAt(c.x, c.y, 0);
+  cam.updateProjectionMatrix();
+  const buf = new Uint8Array(bw * bh * 4);
+  for (const m of MOOD_NAMES) {
+    light.set(m); ground.userData.setMood(m);
+    viewer.renderer.setRenderTarget(rt);
+    viewer.renderer.render(viewer.scene, cam);
+    viewer.renderer.readRenderTargetPixels(rt, 0, 0, bw, bh, buf);
+    viewer.renderer.setRenderTarget(null);
+    const cv = $('tile_' + m), cx = cv.getContext('2d');
+    const img = cx.createImageData(bw, bh);
+    for (let y = 0; y < bh; y++) {
+      const src = (bh - 1 - y) * bw * 4, dst = y * bw * 4;
+      img.data.set(buf.subarray(src, src + bw * 4), dst);
+    }
+    cx.putImageData(img, 0, 0);
+  }
+  rt.dispose();
+  light.set(prev); ground.userData.setMood(prev);
+}
+
+/* ---------------- Berichte / Prüfungen ---------------- */
+function renderReports() {
+  const rep = built ? built.report : (proofs[0] ? proofs[0].built.report : null);
+  if (!rep) return;
+  const pat = rep.pattern;
+  $('patReport').textContent = pat ? [
+    `Projektion  ${pat.projection === 'cyl' ? 'zylindrisch analytisch' : 'UV-Canvas'}`,
+    `Biom        ${pat.biome}${pat.paletteFromBiome ? ' → Palette gezogen' : ' · Palette von Hand'}: ${pat.palette} (${pat.harmony})`,
+    `Register    ${pat.registers} von höchstens ${pat.registerCap} (Umfang ${pat.circumference} / Höhe ${pat.height}, Verhältnis ${pat.aspect})`,
+    `Stapel      ${pat.stackLine}`,
+    ...pat.stack.map((b, i) => `  ${String(i).padStart(2)}  ${(b.lead ? '▰ FÜHRT' : '▭      ')} ${b.glyph.padEnd(12)} ${b.count == null ? '  —' : '×' + String(b.count).padStart(2)}  v ${b.span[0].toFixed(2)}–${b.span[1].toFixed(2)}`),
+    `Tore        eine laute Stimme: ${pat.gates.oneLoudVoice ? 'ja' : 'NEIN'} · nicht am Fuss: ${pat.gates.loudNotAtFoot ? 'ja' : 'NEIN'} · Zählung im Rahmen: ${pat.gates.countsInRange ? 'ja' : 'NEIN'} · keine Wiederholung nebenan: ${pat.gates.noAdjacentRepeat ? 'ja' : 'NEIN'}`,
+    `            heller Grund (≥2,6:1): ${pat.gates.groundReadsAsGround ? 'ja' : 'NEIN'} · Rahmen ist dunkelster Ton: ${pat.gates.frameIsDarkest ? 'ja' : 'NEIN'}`,
+    `Farbe       Grund↔Motiv ${pat.contrastGroundMotif}:1 · Motiv↔Rahmen ${pat.contrastMotifFrame}:1${pat.invert ? ' · umgekehrt' : ''}`,
+    `Hand        Wackel ${pat.wobble} · Abwechslung ${pat.variance} · Kontur ${pat.outline}`,
+    `UV gemessen u-Spanne ${pat.uv.uSpan} · v-Spanne ${pat.uv.vSpan}`,
+    `            r(Umfang) ${pat.uv.rCirc} · r(Höhe) ${pat.uv.rHeight} → zylindrisch abgewickelt: ${pat.uv.cylindrical ? 'ja' : 'NEIN'}`,
+    `Quelltextur unberührt: ${pat.sourceTextureTouched ? 'nein' : 'ja'}`
+  ].join('\n') : '—';
+  $('rigReport').textContent = rig ? JSON.stringify(rig.report(), null, 1) : '—';
+  $('eyeReport').textContent = eyes ? JSON.stringify(eyes.report(), null, 1)
+    : (S.living === 'AWARE' ? 'kein Rig montiert' : 'AWARE nicht aktiv');
+  $('meas').textContent = (rep.measurements || []).map((m) => {
+    if (m.kind === 'pot' || m.kind === 'saucer')
+      return `${m.kind.padEnd(7)} ${m.part.padEnd(18)} h ${m.height} · Kante r ${m.rimRadius} · innen ${m.innerFloor ?? '—'} · ${m.method}`;
+    return `${m.kind.padEnd(7)} ${m.part.padEnd(18)} roh ${m.raw.join('×')} · Faktor ${m.scale} · gesetzt ${m.fitted.join('×')} · Ursprung y ${m.originY} (Tiefe ${m.insertDepth})`;
+  }).join('\n') + (rep.notes && rep.notes.length ? '\n\nHINWEISE\n' + rep.notes.join('\n') : '');
+
+  const parts = (rep.measurements || []).length;
+  const loadFail = (rep.notes || []).filter((n) => /FEHLT/.test(n)).length;
+  const g = [];
+  const kv = (label, val, ok) => g.push(`<div class="kv ${ok === null ? '' : ok ? 'yes' : 'no'}"><span>${label}</span><span>${val}</span></div>`);
+  kv('Teile geladen / Fehlschläge', `${parts} / ${loadFail}`, loadFail === 0);
+  kv('Topfkante gemessen', (rep.measurements || []).filter((m) => m.kind === 'pot').map((m) => m.rimRadius).join(' · ') || '—', true);
+  kv('Erdhöhe gemessen', (rep.measurements || []).filter((m) => m.kind === 'pot').map((m) => m.method).join(' · ') || '—', null);
+  kv('Musterweg', pat ? (pat.projection === 'cyl' ? 'zylindrisch (tragend)' : 'UV-Canvas (Vergleich)') : '—', pat ? pat.projection === 'cyl' : null);
+  kv('UV zylindrisch?', pat ? (pat.uv.cylindrical ? 'ja' : `nein · r=${pat.uv.rCirc}`) : '—', pat ? !pat.uv.cylindrical ? false : true : null);
+  kv('EyeRig montiert', eyes ? `ja · ${eyes.report().placement} · r ${eyes.report().eyeRadius}` : (S.living === 'AWARE' ? 'NEIN' : 'nicht angefordert'), eyes ? true : (S.living === 'AWARE' ? false : null));
+  kv('Riglevel', rig ? rig.level : '—', null);
+  kv('Rig besitzt Weltbewegung', 'nein', true);
+  if (seedProof) {
+    kv('Seed-Rundlauf · Rezept gleich', seedProof.recipeEqual ? 'ja' : 'NEIN', seedProof.recipeEqual);
+    kv('Seed-Rundlauf · Weltmaß gleich', seedProof.sizeEqual ? `ja (${seedProof.sizeA})` : `NEIN ${seedProof.sizeA} ≠ ${seedProof.sizeB}`, seedProof.sizeEqual);
+  }
+  kv('Standfläche (x·z)', (rep.footprint.support || []).join(' × '), null);
+  kv('Freiraumradius', rep.footprint.clearanceRadius, null);
+  kv('Dreiecke (Quelle)', rep.tris, null);
+  $('gates').innerHTML = g.join('');
+
+  const srcs = current ? current.containers.flatMap((c) => [c.pot.src, c.saucer && c.saucer.src, ...c.plants.map((p) => p.src)].filter(Boolean)) : [];
+  $('srcList').textContent = [
+    'repo   georg-doc/kayfabizarro @ main',
+    'Tiny Treats  ' + INV.PACK.tt.path,
+    'Quaternius   ' + INV.PACK.qu.path,
+    'EyeRig v6    tools/KFB-ToolBox/kfb-rigs-embed-v3/petstudio-v9/studio-v12/pet-eye-rig.v6.js (jsDelivr)',
+    '',
+    'diese Komposition:',
+    ...[...new Set(srcs.map((s) => '  ' + s.path))]
+  ].join('\n');
+}
+
+/* ---------------- Zeiger: Blick + Nähe + Rückstoss ---------------- */
+const ray = new THREE.Raycaster();
+const ndc = new THREE.Vector2();
+stage.addEventListener('pointermove', (e) => {
+  const r = $('c').getBoundingClientRect();
+  const nx = ((e.clientX - r.left) / r.width) * 2 - 1;
+  const ny = -(((e.clientY - r.top) / r.height) * 2 - 1);
+  ndc.set(nx, ny);
+  if (eyes) eyes.setPointer(nx, ny);
+  for (const p of proofs) if (p.eyes) p.eyes.setPointer(nx, ny);
+  /* Nähe aus dem Zeiger: Richtung in der Bühnenebene + normierter Abstand zur Mitte. */
+  const d = Math.min(1, Math.hypot(nx, ny));
+  if (rig) rig.setProximityVector(nx, ny, d);
+});
+stage.addEventListener('pointerup', (e) => {
+  const r = $('c').getBoundingClientRect();
+  ndc.set(((e.clientX - r.left) / r.width) * 2 - 1, -(((e.clientY - r.top) / r.height) * 2 - 1));
+  ray.setFromCamera(ndc, viewer.camera);
+  const targets = built ? [built.root] : proofs.map((p) => p.root);
+  const hit = ray.intersectObjects(targets, true)[0];
+  if (!hit) return;
+  let o = hit.object, name = o.name;
+  while (o && !o.userData.recipe) { name = o.name || name; o = o.parent; }
+  const dir = new THREE.Vector3().subVectors(hit.point, viewer.camera.position).setY(0).normalize();
+  if (rig) rig.impact(dir.x, dir.z, 0.9);
+  for (const p of proofs) if (p.rig) p.rig.impact(dir.x, dir.z, 0.6);
+  if (eyes) eyes.blink();
+  $('pick').textContent = `${name} · Treffer ${hit.point.toArray().map((v) => v.toFixed(2)).join(' / ')} → Rückstoss`;
+});
+
+/* ---------------- eigene Schleife: Rig und Augen je Bild ----------------
+   Mit demselben Notnagel wie `makeViewer` in kit-lab.js: diese Vorschau parkt
+   requestAnimationFrame auch im sichtbaren Zustand (gemessen in S7.1/S11). Ohne Ersatztakt
+   stehen Wiegen, Blick und die Etiketten still, während das Bild weiter gezeichnet wird —
+   und genau das sah vorher wie „Etiketten kaputt" aus. */
+let lastStep = performance.now();
+function step(dt) {
+  lastStep = performance.now();
+  if (rig) rig.update(dt);
+  if (eyes) eyes.update(dt);
+  for (const p of proofs) { p.rig && p.rig.update(dt); p.eyes && p.eyes.update(dt); }
+  if (labels.length && proofs.length) {
+    const r = $('c').getBoundingClientRect();
+    for (const el of labels) {
+      const m = proofs[+el.dataset.i];
+      if (!m || !m.anchor) continue;
+      const v = m.anchor.clone().project(viewer.camera);
+      el.style.left = Math.max(16, Math.min(r.width - 16, (v.x * 0.5 + 0.5) * r.width)) + 'px';
+      el.style.top = Math.max(26, (-v.y * 0.5 + 0.5) * r.height - 8) + 'px';
+      el.style.opacity = v.z > 1 ? 0 : 1;
+    }
+  }
+}
+(function tick() {
+  requestAnimationFrame(tick);
+  step(clock.getDelta());
+})();
+setInterval(() => { if (performance.now() - lastStep > 400) { clock.getDelta(); step(0.12); viewer.draw(); } }, 140);
+
+/* ---------------- Schale ---------------- */
+$('panelBtn').onclick = (e) => {
+  const on = app.classList.toggle('panel');
+  e.currentTarget.setAttribute('aria-pressed', String(on));
+  requestAnimationFrame(() => viewer.resize());
+};
+const setClean = (on) => { app.classList.toggle('clean', on); requestAnimationFrame(() => viewer.resize()); };
+$('clean').onclick = () => setClean(true);
+$('exitClean').onclick = () => setClean(false);
+addEventListener('keydown', (e) => { if (e.key === 'Escape') setClean(false); });
+const bar = $('bar'), wrap = $('barwrap');
+const syncMore = () => {
+  wrap.dataset.less = bar.scrollLeft > 2 ? '1' : '0';
+  wrap.dataset.more = bar.scrollWidth - bar.clientWidth - bar.scrollLeft > 2 ? '1' : '0';
+};
+const nudge = (sign) => {
+  const max = bar.scrollWidth - bar.clientWidth;
+  const to = Math.max(0, Math.min(max, bar.scrollLeft + sign * Math.round(bar.clientWidth * 0.7)));
+  bar.scrollLeft = to; syncMore();
+};
+$('less').onclick = () => nudge(-1);
+$('more').onclick = () => nudge(1);
+bar.addEventListener('scroll', syncMore, { passive: true });
+new ResizeObserver(syncMore).observe(bar);
+syncMore();
+
+const group = (id, attr, fn) => {
+  $(id).onclick = (e) => {
+    const b = e.target.closest(`button[data-${attr}]`); if (!b) return;
+    for (const x of e.currentTarget.children) x.setAttribute('aria-pressed', String(x === b));
+    fn(b.dataset[attr]);
+  };
+};
+
+/* ---------------- Ansichten ---------------- */
+async function setView(v) {
+  S.view = v;
+  app.classList.toggle('board', v === 'farbe');
+  app.classList.toggle('beweis', v === 'beweis');
+  return schedule(async () => {
+    if (v === 'werk') await buildFromRecipe(REC.generate(inputsFromState()));
+    else if (v === 'beweis') await buildProofRow();
+    else await buildStudy();
+  }, v === 'beweis' ? 'baue Erstbeweis …' : v === 'farbe' ? 'baue Farbtafel …' : 'baue Komposition …');
+}
+group('views', 'v', setView);
+group('presets', 'p', async (p) => {
+  S.preset = p;
+  const I = REC.PRESETS[p].inputs;
+  S.living = I.living || 'AMBIENT';
+  S.scaleClass = I.scaleClass || 'TABLETOP';
+  S.scale = INV.SCALE_CLASSES[S.scaleClass].s;
+  S.potCount = I.potCount || 1;
+  S.plantCount = I.plantCount || 1;
+  S.potFam = I.potFamily || S.potFam;
+  S.potSize = I.size || 'large';
+  S.plantSrc = I.alien ? `qu:${I.alienFamily || 'Tree_Spiral'}` : `tt:${I.plantFamily || 'monstera'}`;
+  S.eyePlacement = I.eyePlacement || 'pot';
+  Object.assign(S.style, I.style || {});
+  syncControls();
+  for (const x of $('views').children) x.setAttribute('aria-pressed', String(x.dataset.v === 'werk'));
+  S.view = 'werk';
+  app.classList.remove('board', 'beweis');
+  schedule(() => buildFromRecipe(REC.generate(inputsFromState({ preset: p }))), 'baue Vorgabe ' + p + ' …');
+});
+group('living', 'l', (l) => {
+  S.living = l;
+  schedule(async () => {
+    if (rig) rig.setLevel(l === 'AWARE' ? 'AMBIENT' : l);
+    if (l === 'AWARE') await mountLiving();
+    else if (eyes) { eyes.dispose(); eyes = null; }
+    renderReports();
+  }, 'schalte ' + l + ' …');
+});
+/* Projektion wechseln ist kein Uniform-Wechsel: der UV-Weg braucht eine CanvasTexture als
+   `map`, der zylindrische einen Shader-Anbau. Also Neubau — aber nur der aktuellen Ansicht. */
+function rebuildAll(label) {
+  if (S.view === 'werk') return rebuild();
+  if (S.view === 'beweis') return schedule(() => buildProofRow(), label);
+  return schedule(() => buildStudy(), label);
+}
+group('proj', 'j', (j) => { S.style.projection = j; rebuildAll('wechsle Projektion …'); });
+group('eyePlace', 'e', (e) => {
+  S.eyePlacement = e;
+  if (S.living === 'AWARE') schedule(() => mountLiving(), 'setze Augen: ' + e + ' …');
+});
+$('scaleCls').onclick = async (e) => {
+  const b = e.target.closest('button[data-sc]'); if (!b) return;
+  for (const x of e.currentTarget.children) x.setAttribute('aria-pressed', String(x === b));
+  S.scaleClass = b.dataset.sc;
+  S.scale = INV.SCALE_CLASSES[S.scaleClass].s;
+  $('scale').value = Math.round(S.scale * 100); $('scaleV').textContent = S.scale.toFixed(2);
+  if (built) { built.root.scale.setScalar(S.scale); current.scale = S.scale; current.scaleClass = S.scaleClass; fitStage(built.root); viewer.frame(built.root, [1, 0.55, 1.35], 1.25); renderReports(); }
+};
+
+$('mood').onchange = () => { S.mood = $('mood').value; light.set(S.mood); ground.userData.setMood(S.mood); if (S.view === 'farbe') renderTiles(); };
+
+/* Muster live: kein Neubau, nur Uniforms (siehe plant-pattern.js) */
+function rebuildStyle() {
+  S.style.seed = S.seed;
+  /* `set()` liefert den FRISCHEN Bericht zurück. Ihn zu verwerfen war der Grund, warum das
+     Panel nach jeder Live-Änderung Tore und Kontrastwerte einer alten Komposition zeigte.
+     Und es muss der ERSTE sein: `styles` enthält pro Behälter Topf UND Untersetzer, und
+     der Bauzeit-Bericht (plant-recipe.js) nimmt `styles[0]`. Der letzte Rückgabewert liess
+     das Panel nach der ersten Interaktion stillschweigend den Untersetzer beschreiben —
+     Höhe 0,3 statt 1,0, zwei Register statt drei, fremder Stapel. */
+  const apply = (b) => {
+    let first = null;
+    for (const st of b.styles) { const r = st.set(S.style); if (first === null) first = r; }
+    if (first && b.report) b.report.pattern = first;
+  };
+  if (built) apply(built);
+  for (const p of proofs) apply(p.built);
+  if (current) current.style = Object.assign({}, S.style);
+  renderReports();
+}
+const bindRange = (id, key, scale, fmt, after) => {
+  const el = $(id), out = $(id + 'V');
+  el.oninput = () => {
+    const v = +el.value / scale;
+    out.textContent = fmt ? fmt(v) : v;
+    key(v);
+    after && after();
+  };
+};
+bindRange('density', (v) => { S.style.density = Math.round(v); }, 1, (v) => Math.round(v), rebuildStyle);
+bindRange('phase', (v) => { S.style.phase = v; }, 100, (v) => v.toFixed(2), rebuildStyle);
+bindRange('outline', (v) => { S.style.outline = v; }, 100, (v) => v.toFixed(2), rebuildStyle);
+bindRange('wobble', (v) => { S.style.wobble = v; }, 100, (v) => v.toFixed(2), rebuildStyle);
+bindRange('variance', (v) => { S.style.variance = v; }, 100, (v) => v.toFixed(2), rebuildStyle);
+bindRange('sway', (v) => { S.rig.sway = v; rig && rig.set({ sway: v }); }, 100, (v) => v.toFixed(2));
+bindRange('pulse', (v) => { S.rig.pulse = v; rig && rig.set({ pulse: v }); }, 100, (v) => v.toFixed(2));
+bindRange('windX', (v) => { S.rig.windX = v; rig && rig.setWind(v, S.rig.windZ); }, 100, (v) => v.toFixed(2));
+bindRange('windZ', (v) => { S.rig.windZ = v; rig && rig.setWind(S.rig.windX, v); }, 100, (v) => v.toFixed(2));
+bindRange('prox', (v) => { S.rig.prox = v; rig && rig.set({ proximity: v }); }, 100, (v) => v.toFixed(2));
+bindRange('ring', (v) => { S.eye.ring = v; }, 100, (v) => v.toFixed(2));
+bindRange('splay', (v) => { S.eye.splay = v; }, 100, (v) => v.toFixed(2));
+$('ring').onchange = () => { if (S.living === 'AWARE') mountLiving(); };
+$('splay').onchange = () => { if (S.living === 'AWARE') mountLiving(); };
+$('rim').onchange = () => { S.style.rim = $('rim').checked; rebuildStyle(); };
+$('soil').onchange = () => { S.style.soil = $('soil').checked; rebuildStyle(); };
+$('invert').onchange = () => { S.style.invert = $('invert').checked; rebuildStyle(); };
+/* Palette von Hand = Biomzwang aufheben. Wer wählt, meint es; das Biom schlägt dann nicht zurück. */
+$('pal').onchange = () => { S.style.paletteId = $('pal').value; S.style.paletteLocked = true; swatches(); rebuildStyle(); };
+$('biome').onchange = () => {
+  S.style.biome = $('biome').value; S.style.paletteLocked = false;
+  if (S.style.biome !== 'frei') S.style.paletteId = paletteForBiome(S.style.biome, S.seed);
+  $('pal').value = S.style.paletteId; swatches(); rebuildStyle();
+};
+$('lead').onchange = () => { S.style.leitmotif = $('lead').value; S.style.family = null; rebuildStyle(); };
+$('regs').onchange = () => { S.style.registers = +$('regs').value; rebuildStyle(); };
+$('showHost').onchange = () => { S.showHost = $('showHost').checked; if (eyes) eyes.setHostVisible(S.showHost); };
+$('blink').onclick = () => { eyes && eyes.blink(); };
+$('emote').onchange = () => { eyes && eyes.emote($('emote').value); };
+$('hit').onclick = () => { rig && rig.impact(1, 0.2, 1); };
+$('pulseNow').onclick = () => { rig && rig.pulseOnce(1); };
+
+const rebuild = () => {
+  S.style.seed = S.seed;
+  return schedule(() => buildFromRecipe(REC.generate(inputsFromState())), 'baue Komposition …');
+};
+$('seed').onchange = () => { S.seed = +$('seed').value || 1; };
+$('dice').onclick = () => { S.seed = Math.floor(Math.random() * 100000); $('seed').value = S.seed; rebuild(); };
+$('regen').onclick = () => {
+  if (S.view === 'beweis') schedule(() => buildProofRow(), 'baue Erstbeweis …');
+  else if (S.view === 'farbe') schedule(() => buildStudy(), 'baue Farbtafel …');
+  else rebuild();
+};
+$('potFam').onchange = () => { S.potFam = $('potFam').value; rebuild(); };
+$('potSize').onchange = () => { S.potSize = $('potSize').value; rebuild(); };
+$('saucer').onchange = () => { S.saucer = $('saucer').value === '1'; rebuild(); };
+$('plantSrc').onchange = () => { S.plantSrc = $('plantSrc').value; rebuild(); };
+$('potCount').oninput = () => { S.potCount = +$('potCount').value; $('potCountV').textContent = S.potCount; };
+$('potCount').onchange = rebuild;
+$('plantCount').oninput = () => { S.plantCount = +$('plantCount').value; $('plantCountV').textContent = S.plantCount; };
+$('plantCount').onchange = rebuild;
+$('insert').oninput = () => { S.insert = +$('insert').value / 100; $('insertV').textContent = S.insert.toFixed(2); };
+$('insert').onchange = rebuild;
+$('scale').oninput = () => {
+  S.scale = +$('scale').value / 100; $('scaleV').textContent = S.scale.toFixed(2);
+  if (built) { built.root.scale.setScalar(S.scale); current.scale = S.scale; }
+};
+$('scale').onchange = () => { if (built) { fitStage(built.root); renderReports(); } };
+
+$('recExport').onclick = () => { $('recJson').value = current ? REC.serialize(current) : ''; };
+$('recCopy').onclick = async () => {
+  $('recJson').value = current ? REC.serialize(current) : '';
+  try { await navigator.clipboard.writeText($('recJson').value); $('recCopy').textContent = 'kopiert'; setTimeout(() => ($('recCopy').textContent = 'kopieren'), 1200); } catch (e) { }
+};
+$('recImport').onclick = () => {
+  let rc;
+  try { rc = REC.parse($('recJson').value); }
+  catch (e) { $('pick').textContent = 'Rezept nicht lesbar: ' + e.message; return; }
+  S.seed = rc.seed; $('seed').value = rc.seed;
+  Object.assign(S.style, rc.style);
+  S.living = rc.rig.level; S.scaleClass = rc.scaleClass; S.scale = rc.scale;
+  syncControls();
+  app.classList.remove('board', 'beweis');
+  S.view = 'werk';
+  for (const x of $('views').children) x.setAttribute('aria-pressed', String(x.dataset.v === 'werk'));
+  schedule(() => buildFromRecipe(rc), 'baue aus Rezept …');
+};
+$('recFile').onclick = () => {
+  const i = document.createElement('input');
+  i.type = 'file'; i.accept = '.json,application/json';
+  i.onchange = async () => {
+    const f = i.files[0]; if (!f) return;
+    $('recJson').value = await f.text();
+    $('recImport').click();
+  };
+  i.click();
+};
+$('pkgBtn').onclick = () => {
+  if (!current || !built) return;
+  $('pkg').textContent = JSON.stringify(REC.gameReadyPackage(current, built, eyes), null, 1);
+};
+
+/* Die Notizen werden NACH dem Aufbau eingesammelt, nicht im Markup versteckt: so bleibt
+   der Text im Quelltext dort stehen, wo er erklärt, und ein neuer Absatz braucht keine
+   zweite Registrierung. */
+function foldNotes() {
+  for (const d of document.querySelectorAll('aside details')) {
+    const notes = [...d.querySelectorAll(':scope > .body > .note')];
+    if (!notes.length || d.querySelector(':scope > summary > .i')) continue;
+    const sum = d.querySelector(':scope > summary');
+    const tip = document.createElement('div');
+    tip.className = 'tip';
+    for (const n of notes) tip.appendChild(n);
+    /* In die SUMMARY, nicht ins details. Bei geschlossenem details liegen die übrigen
+       Kinder in einem Slot, dessen Ursprung erst an der Unterkante der Zeile beginnt —
+       jede gerechnete Position zählt die Zeilenhöhe dann doppelt und das Popover landet
+       auf der Überschrift des nächsten Abschnitts. Die summary ist offen wie zu normal
+       gelayoutet, also reicht top:100% und es wird gar nichts gerechnet. */
+    sum.appendChild(tip);
+    const btn = document.createElement('button');
+    btn.className = 'i'; btn.type = 'button'; btn.textContent = 'i';
+    btn.setAttribute('aria-expanded', 'false');
+    btn.title = 'Erläuterung';
+    btn.onclick = (e) => {
+      e.preventDefault(); e.stopPropagation();
+      const open = tip.dataset.open === '1';
+      for (const t of document.querySelectorAll('.tip[data-open="1"]')) {
+        t.dataset.open = '0';
+        t.parentElement.querySelector(':scope > summary > .i')?.setAttribute('aria-expanded', 'false');
+      }
+      if (!open) { tip.dataset.open = '1'; btn.setAttribute('aria-expanded', 'true'); }
+    };
+    sum.insertBefore(btn, tip);
+  }
+}
+foldNotes();
+addEventListener('pointerdown', (e) => {
+  if (e.target.closest('.tip') || e.target.closest('.i')) return;
+  for (const t of document.querySelectorAll('.tip[data-open="1"]')) {
+    t.dataset.open = '0';
+    t.parentElement.querySelector(':scope > summary > .i')?.setAttribute('aria-expanded', 'false');
+  }
+});
+
+function syncControls() {
+  $('seed').value = S.seed;
+  $('potFam').value = S.potFam; $('potSize').value = S.potSize;
+  $('saucer').value = S.saucer ? '1' : '0';
+  $('potCount').value = S.potCount; $('potCountV').textContent = S.potCount;
+  $('plantSrc').value = S.plantSrc;
+  $('plantCount').value = S.plantCount; $('plantCountV').textContent = S.plantCount;
+  $('insert').value = Math.round(S.insert * 100); $('insertV').textContent = S.insert.toFixed(2);
+  $('scale').value = Math.round(S.scale * 100); $('scaleV').textContent = S.scale.toFixed(2);
+  $('biome').value = S.style.biome || 'frei';
+  $('pal').value = S.style.paletteId;
+  $('lead').value = S.style.leitmotif || 'auto';
+  $('regs').value = String(S.style.registers || 0);
+  $('density').value = S.style.density; $('densityV').textContent = S.style.density;
+  $('phase').value = Math.round(S.style.phase * 100); $('phaseV').textContent = (+S.style.phase).toFixed(2);
+  const wb = S.style.wobble ?? 0.35, vr = S.style.variance ?? 0.45;
+  $('wobble').value = Math.round(wb * 100); $('wobbleV').textContent = wb.toFixed(2);
+  $('variance').value = Math.round(vr * 100); $('varianceV').textContent = vr.toFixed(2);
+  $('outline').value = Math.round((S.style.outline ?? 0.55) * 100); $('outlineV').textContent = (+(S.style.outline ?? 0.55)).toFixed(2);
+  $('soil').checked = S.style.soil !== false;
+  $('invert').checked = !!S.style.invert;
+  $('ring').value = Math.round(S.eye.ring * 100); $('ringV').textContent = S.eye.ring.toFixed(2);
+  $('splay').value = Math.round(S.eye.splay * 100); $('splayV').textContent = S.eye.splay.toFixed(2);
+  $('rim').checked = !!S.style.rim;
+  for (const x of $('living').children) x.setAttribute('aria-pressed', String(x.dataset.l === S.living));
+  for (const x of $('proj').children) x.setAttribute('aria-pressed', String(x.dataset.j === S.style.projection));
+  for (const x of $('eyePlace').children) x.setAttribute('aria-pressed', String(x.dataset.e === S.eyePlacement));
+  for (const x of $('scaleCls').children) x.setAttribute('aria-pressed', String(x.dataset.sc === S.scaleClass));
+  for (const x of $('presets').children) x.setAttribute('aria-pressed', String(x.dataset.p === S.preset));
+  swatches();
+}
+
+/* Prüfhaken: die Werkbank stellt ihre Bausteine bereit, damit Serienproben (10 Regenerationen,
+   Rundlauf) an DERSELBEN Rechnung messen wie die Oberfläche — nicht an einer Kopie. */
+window.KFB = {
+  REC, INV, S, schedule, buildFromRecipe, buildProofRow, buildStudy,
+  get built() { return built; }, get eyes() { return eyes; }, get rig() { return rig; },
+  get recipe() { return current; }, get seedProof() { return seedProof; }
+};
+
+/* ---------------- Kaltstart ---------------- */
+(async function boot() {
+  syncControls();
+  app.classList.add('beweis');
+  for (const x of $('views').children) x.setAttribute('aria-pressed', String(x.dataset.v === 'beweis'));
+  S.view = 'beweis';
+  await schedule(() => buildProofRow(), 'lade Quellen aus georg-doc/kayfabizarro …');
+})();
+</script>
+</body>
+</html>

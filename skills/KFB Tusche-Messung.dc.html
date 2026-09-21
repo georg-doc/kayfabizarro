@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
+<link href="https://fonts.googleapis.com/css2?family=Special+Elite&amp;family=Baloo+2:wght@600;800&amp;display=swap" rel="stylesheet">
+<style>
+  html, body { margin: 0; padding: 0; background: #d9cfb4; }
+  a { color: #b8361f; } a:hover { color: #7d2313; }
+</style>
+</helmet>
+<div style="min-height: 100vh; background: #d9cfb4; padding: 40px 34px 70px; font-family: 'Special Elite', Georgia, serif; color: #1f1a14; box-sizing: border-box;">
+
+  <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 24px; max-width: 1560px; margin: 0 auto 8px; flex-wrap: wrap;">
+    <div style="font-family: 'Baloo 2', system-ui, sans-serif; font-weight: 800; font-size: 34px; letter-spacing: -.01em;">Tusche gemessen — v11 · Akademie · Sky</div>
+    <div style="font-size: 13px; letter-spacing: .1em; text-transform: uppercase; opacity: .62;">KFB Travel v10 · Slice 2 · 2026-07-25</div>
+  </div>
+
+  <div style="max-width: 1080px; margin: 0 auto 30px; font-size: 15px; line-height: 1.62; text-wrap: pretty;">
+    Drei Kennzahlen aus der SSOT, gerechnet aus den echten Punktlisten der echten Module —
+    <b>Stützpunkte pro Kante</b> · <b>Federbreite</b> (in % der kleineren Seite, denn daran bemisst
+    sich <i>inkTail</i>) · <b>Band oder Strich</b>. Dazu eine vierte, die der Befund erzwungen hat:
+    <b>Bauchung</b> — die Spannweite der Kontur quer zur Kante, gemessen gegen den Extrempunkt-Rahmen
+    der Punktliste, damit sie ohne Kenntnis des Baurahmens prüfbar bleibt. Alle vier Fassungen
+    sind auf dieselbe Kartenbreite gerechnet, sonst vergleicht man Auflösungen statt Federn —
+    und geurteilt wird gegen <b>v11</b>, nicht gegen eine Absolutzahl.
+  </div>
+
+  <div ref="{{ cols }}" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(330px, 1fr)); gap: 22px; max-width: 1560px; margin: 0 auto;"></div>
+
+  <div style="max-width: 1080px; margin: 44px auto 0; border-top: 3px solid #1f1a14; padding-top: 22px;">
+    <div style="font-family: 'Baloo 2', system-ui, sans-serif; font-weight: 800; font-size: 24px; margin-bottom: 12px;">Was die Zahlen sagen</div>
+    <div ref="{{ verdict }}" style="font-size: 15px; line-height: 1.66; text-wrap: pretty;"></div>
+  </div>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1620,&quot;height&quot;:1500}}">
+// Messblatt zur Karten-Tusche. Es RECHNET, es behauptet nicht: die Konturen kommen aus dem
+// echten `terrain-v10/ink-tail.js`, die Aufrufstellen sind wörtlich aus den drei Fundorten
+// nachgezogen (v11 `rollercoaster-ride.v11.js` Z. 197/245/300 · `academy-deck.js` Z. 138-144 ·
+// `sky-cards.js` Z. 93-109). Kennzahlen aus `skills/SSOT_Card_Ink_Outline.md`.
+class Component extends DCLogic {
+  // Alle Fassungen auf DIESELBE Kartenbreite — sonst vergleicht man Auflösungen statt Federn.
+  static get W() { return 640; }
+
+  renderVals() {
+    return { cols: (el) => { this.colsEl = el; this.paint(); },
+             verdict: (el) => { this.verdictEl = el; this.paint(); } };
+  }
+
+  async componentDidMount() {
+    this.ink = await import('./terrain-v10/ink-tail.js');
+    this.paint();
+  }
+
+  // ---- die vier Fassungen. `build` liefert Punkte im Zielrahmen, `draw` malt sie.
+  cases() {
+    const { brushLoop, inkTail, inkHalfWidth, mulberry } = this.ink;
+    const W = Component.W, AR = 1.79, H = Math.round(W / AR);
+
+    // v11: Kontur wird bei der ECHTEN Zellgröße gebaut (720 breit, m = 11), bow = 1.4 × 0.14.
+    const v11 = (seed) => {
+      const w = 720, h = Math.round(w / AR), m = 11;
+      const p = brushLoop(m, m, w - m, h - m, seed, 1.4, 1.4 * 0.14);
+      return p.map((q) => [q[0] / w * W, q[1] / h * H]);
+    };
+    // Akademie heute: Referenzrahmen 1024, m = 14, bow = 1.4 (INK_BOW), dann normalisiert.
+    const aka = (seed, bow) => {
+      const w = 1024, h = Math.round(w / 1.79), m = 14;
+      const p = brushLoop(m, m, w - m, h - m, seed, 1.4, bow);
+      return p.map((q) => [q[0] / w * W, q[1] / h * H]);
+    };
+    // Sky heute: eigene Schleife, Schrittweite 34 px, Jitter ±4 px auf x UND y (dieselbe Zahl).
+    const sky = (seed) => {
+      const w = 720, h = Math.round(w / AR), m = 16, rnd = mulberry(seed), pts = [];
+      const cs = [[m, m], [w - m, m], [w - m, h - m], [m, h - m]];
+      for (let k = 0; k < 4; k++) {
+        const a = cs[k], b = cs[(k + 1) % 4];
+        const len = Math.hypot(b[0] - a[0], b[1] - a[1]), steps = Math.max(3, Math.round(len / 34));
+        for (let i = 0; i < steps; i++) {
+          const t = i / steps, jit = i === 0 ? 0 : (rnd() - 0.5) * 8;
+          pts.push([a[0] + (b[0] - a[0]) * t + jit, a[1] + (b[1] - a[1]) * t + jit]);
+        }
+      }
+      return pts.map((q) => [q[0] / w * W, q[1] / h * H]);
+    };
+
+    const band = (g, pts, seed) => inkTail(g, pts, W, H, seed);
+    const strich = (g, pts) => {
+      g.strokeStyle = '#1f1a14'; g.lineJoin = 'round'; g.lineCap = 'round';
+      g.lineWidth = 7 / 720 * W;   // Sky zeichnet bei 720 mit lineWidth 7
+      g.beginPath(); g.moveTo(pts[0][0], pts[0][1]);
+      for (let i = 1; i < pts.length; i++) g.lineTo(pts[i][0], pts[i][1]);
+      g.closePath(); g.stroke();
+    };
+
+    return [
+      { key: 'v11', title: 'v11 — die Referenz', sub: 'rollercoaster-ride.v11.js · brushLoop(…, 1.4, 1.4 × 0.14) + inkTail',
+        tone: '#3d6b4a', build: v11, draw: band, kind: 'Band', feather: 'inkTail',
+        call: 'wob 1,4 · bow 0,196 · m 11 · gebaut bei 720' },
+      { key: 'aka', title: 'Akademie — heute', sub: 'academy-deck.js · brushLoop(…, INK_WOB 1.4, INK_BOW 1.4) + inkTail',
+        tone: '#b8361f', build: (s) => aka(s, 1.4), draw: band, kind: 'Band', feather: 'inkTail',
+        call: 'wob 1,4 · bow 1,4 · m 14 · gebaut bei 1024' },
+      { key: 'sky', title: 'Sky — heute', sub: 'sky-cards.js · eigene Schleife + stroke(7)',
+        tone: '#b8361f', build: sky, draw: strich, kind: 'Strich', feather: 'lineWidth 7',
+        call: 'Schritt 34 px · Jitter ±4 px auf x UND y · m 16' },
+      { key: 'fix', title: 'Akademie mit v11-Bauchung', sub: 'derselbe Code, INK_BOW 1.4 → 0.196 — Vorschlag, nicht eingebaut',
+        tone: '#3d6b4a', build: (s) => aka(s, 1.4 * 0.14), draw: band, kind: 'Band', feather: 'inkTail',
+        call: 'wob 1,4 · bow 0,196 · m 14 · gebaut bei 1024' },
+    ];
+  }
+
+  // ---- Kennzahlen aus der Punktliste. Jeder Punkt wird der nächsten Sollkante zugeordnet;
+  // der Abstand dorthin IST die Bauchung, und die Zahl pro Kante ist die Stützpunktdichte.
+  measure(pts, c) {
+    const W = Component.W, H = Math.round(W / 1.79);
+    // **Bezugsrahmen sind die EXTREME der Punktwolke, nicht die Sollkante `m` der Quelle.**
+    // Gemessen wird also die Spannweite quer zur Kante (peak-to-peak), nicht der Abstand von der
+    // gedachten Geraden. Absicht: die Kennzahl muss allein aus der Kontur prüfbar sein — wer eine
+    // fremde Kartenkante nachmisst, kennt weder `m` noch den Baurahmen. Gegen die Sollkante
+    // gerechnet ist dieselbe Kontur systematisch kleiner (v11 0,29 % statt 0,44 %); beide Lesarten
+    // sind richtig, aber nur EINE darf in der Prüfliste stehen — sonst hat man wieder zwei
+    // Kennzahlen mit einem Namen, und genau das ist die Klasse, die dieser Slice nachträgt.
+    let x0 = 1e9, y0 = 1e9, x1 = -1e9, y1 = -1e9;
+    for (const p of pts) { x0 = Math.min(x0, p[0]); y0 = Math.min(y0, p[1]); x1 = Math.max(x1, p[0]); y1 = Math.max(y1, p[1]); }
+    const per = [[], [], [], []];
+    for (const p of pts) {
+      const d = [Math.abs(p[1] - y0), Math.abs(p[0] - x1), Math.abs(p[1] - y1), Math.abs(p[0] - x0)];
+      let k = 0; for (let i = 1; i < 4; i++) if (d[i] < d[k]) k = i;
+      per[k].push(d[k]);
+    }
+    const top = per[0];
+    const devMax = Math.max(...pts.map((p) => {
+      const d = [Math.abs(p[1] - y0), Math.abs(p[0] - x1), Math.abs(p[1] - y1), Math.abs(p[0] - x0)];
+      return Math.min(...d);
+    }));
+    // Federbreite: beim Band aus `inkHalfWidth` über alle Punkte, beim Strich die feste Linie.
+    // **Bezug ist die KLEINERE Seite**, nicht die Breite. Erster Anlauf rechnete gegen die Breite
+    // und flaggte v11 selbst als „ab" — die 1,6 % der SSOT gehören der Chip-Familie (`baseW`/W),
+    // `inkTail` bemisst sich an `min(W,H)`. Zwei Kennzahlen mit demselben Namen und verschiedenem
+    // Nenner: dieselbe Fehlerklasse wie „eine Zahl an zwei Orten", nur unauffälliger.
+    let fMean, fMax;
+    if (c.kind === 'Band') {
+      const half = this.ink.inkHalfWidth(pts, W, H, 7);
+      const ws = pts.map((_, i) => half(i) * 2);
+      fMean = ws.reduce((a, b) => a + b, 0) / ws.length; fMax = Math.max(...ws);
+    } else { fMean = fMax = 7 / 720 * W; }
+    return {
+      n: top.length, nTotal: pts.length,
+      featherPct: fMean / H * 100, featherMaxPct: fMax / H * 100,
+      bowPct: devMax / W * 100, bowPx: devMax,
+      kind: c.kind,
+    };
+  }
+
+  paint() {
+    if (!this.ink || !this.colsEl || !this.verdictEl || this.done) return;
+    this.done = true;
+    const W = Component.W, H = Math.round(W / 1.79), SEED = 41;
+    const cs = this.cases(), out = [];
+    const pad = 26, ZOOM = 3.4;
+
+    // Erst messen, dann urteilen — und das Urteil fällt gegen v11, nicht gegen eine Absolutzahl.
+    // v11 IST der Maßstab (Georgs Vorgabe), also darf keine Spalte gegen etwas anderes geflaggt
+    // werden. Der erste Anlauf flaggte v11 selbst als „ab": ein Maßstab, der durchfällt, ist keiner.
+    for (const c of cs) out.push({ c, m: this.measure(c.build(SEED), c), pts: c.build(SEED) });
+    const REF = out.find((o) => o.c.key === 'v11').m;
+    const rel = (x, r) => (r <= 1e-6 ? '—' : (x / r >= 1 ? '×' + (x / r).toFixed(1) : '÷' + (r / x).toFixed(1)));
+    const near = (x, r, tol) => Math.abs(x - r) <= r * tol;
+
+    for (const rec of out) {
+      const c = rec.c, m = rec.m, pts = rec.pts;
+
+      const box = document.createElement('div');
+      box.style.cssText = 'background:#efe6d0;border:3px solid #1f1a14;box-shadow:6px 6px 0 rgba(31,26,20,.28);padding:16px 16px 18px;display:flex;flex-direction:column;gap:12px;';
+
+      const head = document.createElement('div');
+      head.innerHTML = '<div style="font-family:\'Baloo 2\',system-ui,sans-serif;font-weight:800;font-size:19px;color:' + c.tone + ';line-height:1.2">' + c.title + '</div>'
+        + '<div style="font-size:11px;opacity:.66;margin-top:4px;line-height:1.45">' + c.sub + '</div>';
+      box.appendChild(head);
+
+      // 1) ganze Kontur
+      const cv = document.createElement('canvas');
+      cv.width = (W + pad * 2); cv.height = (H + pad * 2);
+      cv.style.cssText = 'width:100%;height:auto;display:block;background:#f7f0dd;border:1px solid rgba(31,26,20,.22)';
+      const g = cv.getContext('2d');
+      g.translate(pad, pad);
+      c.draw(g, pts, SEED);
+      box.appendChild(cv);
+
+      // 2) Lupe auf die Mitte der oberen Kante — dort zeigt sich Bauchung und Band-vs-Strich.
+      const zw = W + pad * 2, zh = 210;
+      const cz = document.createElement('canvas');
+      cz.width = zw; cz.height = zh;
+      cz.style.cssText = 'width:100%;height:auto;display:block;background:#f7f0dd;border:1px solid rgba(31,26,20,.22)';
+      const gz = cz.getContext('2d');
+      // Sollkante als dünne Hilfslinie: die Abweichung davon IST die Bauchung.
+      gz.save();
+      gz.translate(zw / 2 - W / 2 * ZOOM, zh * 0.52);
+      gz.scale(ZOOM, ZOOM);
+      gz.translate(0, -Math.min(...pts.map((p) => p[1])));
+      gz.strokeStyle = 'rgba(31,26,20,.26)'; gz.lineWidth = 0.6; gz.setLineDash([6, 5]);
+      gz.beginPath(); gz.moveTo(-40, Math.min(...pts.map((p) => p[1]))); gz.lineTo(W + 40, Math.min(...pts.map((p) => p[1]))); gz.stroke();
+      gz.setLineDash([]);
+      c.draw(gz, pts, SEED);
+      gz.restore();
+      box.appendChild(cz);
+      const cap = document.createElement('div');
+      cap.style.cssText = 'font-size:10px;letter-spacing:.09em;text-transform:uppercase;opacity:.5;margin-top:-6px';
+      cap.textContent = 'Lupe ' + ZOOM + '× · obere Kante · gestrichelt = Sollkante';
+      box.appendChild(cap);
+
+      // 3) die Zahlen
+      const isRef = c.key === 'v11';
+      const rows = [
+        ['Stützpunkte / lange Kante', String(m.n),
+          isRef ? 'Maßstab' : (near(m.n, REF.n, 0.25) ? 'gleich' : rel(m.n, REF.n) + ' · Abtastung')],
+        ['Federbreite  (% von min(B,H))', m.featherPct.toFixed(2) + ' %',
+          isRef ? 'Maßstab' : (near(m.featherPct, REF.featherPct, 0.12) ? 'gleich' : rel(m.featherPct, REF.featherPct))],
+        ['Feder maximal', m.featherMaxPct.toFixed(2) + ' %', ''],
+        ['Band oder Strich', m.kind, m.kind === 'Band' ? (isRef ? 'Maßstab' : 'gleich') : 'falsche Familie'],
+        ['Bauchung  (Spannweite quer zur Kante, % der Breite)', m.bowPct.toFixed(2) + ' %',
+          isRef ? 'Maßstab' : (near(m.bowPct, REF.bowPct, 0.4) ? 'gleich' : rel(m.bowPct, REF.bowPct))],
+      ];
+      const tbl = document.createElement('div');
+      tbl.style.cssText = 'display:grid;grid-template-columns:1fr auto auto;gap:4px 10px;font-size:12.5px;align-items:baseline';
+      for (const [k, v, flag] of rows) {
+        const a = document.createElement('div'); a.style.cssText = 'opacity:.72'; a.textContent = k;
+        const b = document.createElement('div'); b.style.cssText = 'font-weight:700;white-space:nowrap;font-family:\'Baloo 2\',system-ui,sans-serif'; b.textContent = v;
+        const d = document.createElement('div');
+        const good = flag === 'gleich' || flag === 'Maßstab';
+        d.style.cssText = 'font-size:10px;letter-spacing:.07em;text-transform:uppercase;white-space:nowrap;text-align:right;color:' + (good ? '#3d6b4a' : '#b8361f');
+        d.textContent = flag;
+        tbl.appendChild(a); tbl.appendChild(b); tbl.appendChild(d);
+      }
+      box.appendChild(tbl);
+
+      const call = document.createElement('div');
+      call.style.cssText = 'font-size:11px;opacity:.6;border-top:1px dashed rgba(31,26,20,.3);padding-top:8px;line-height:1.5';
+      call.textContent = c.call;
+      box.appendChild(call);
+
+      this.colsEl.appendChild(box);
+    }
+
+    // ---- das Urteil, aus den gerechneten Zahlen
+    const g = (k) => out.find((o) => o.c.key === k).m;
+    const v = g('v11'), a = g('aka'), s = g('sky'), f = g('fix');
+    const ratio = (a.bowPct / Math.max(1e-6, v.bowPct)).toFixed(1);
+    const co = 'font-size:13px;background:rgba(31,26,20,.08);padding:1px 4px';
+    this.verdictEl.innerHTML = [
+      '<p style="margin:0 0 12px"><b>Es sind zwei verschiedene Dinge, wie vermutet — aber der Akademie-Fehler sitzt woanders, als der Befund annahm.</b> '
+        + 'Die Akademie steht längst auf der richtigen Familie: Band, <i>inkTail</i>, Feder ' + a.featherPct.toFixed(2) + ' % gegen ' + v.featherPct.toFixed(2) + ' % bei v11 — dieselbe Feder. '
+        + 'Auch die Abtastung ist formneutral (' + a.n + ' Stützpunkte gegen ' + v.n + ', weil die Akademie bei 1024 statt 720 baut; die Wobble-Form hängt am Umfang, nicht an der Punktzahl). '
+        + '<b>Die drei SSOT-Kennzahlen sagen dreimal „gleich" — und trotzdem sieht man den Unterschied sofort.</b> Sie messen den Unterschied also nicht.</p>',
+      '<p style="margin:0 0 12px">Er steckt in einer vierten Zahl, die in der SSOT als Wert dokumentiert ist, aber nicht als Kennzahl: die <b>Bauchung</b>. '
+        + 'v11 ruft <code style="' + co + '">brushLoop(…, 1.4, 1.4 × 0.14)</code> — Amplitude <b>0,196</b>. '
+        + 'Die Akademie ruft <code style="' + co + '">INK_BOW = 1.4</code>, <b>siebenmal so viel</b>, und der Kommentar daneben sagt „Kanon aus v11: wobble 1.4". '
+        + 'Das stimmt für <i>wob</i> und ist für <i>bow</i> falsch — v11 hat nie 1,4 gebaucht. Gemessen weicht die Akademie-Kante ' + a.bowPct.toFixed(2) + ' % der Kartenbreite von der Geraden ab, v11 nur ' + v.bowPct.toFixed(2) + ' %: <b>Faktor ' + ratio + '</b>. '
+        + 'Genau das ist „Bend statt ink" — nicht die falsche Feder, sondern eine gerade Linie, die sich krümmt.</p>',
+      '<p style="margin:0 0 12px"><b>Sky ist der andere Fall und der gröbere.</b> Falsche Familie: gestrichene Polylinie statt Band, Feder fest bei ' + s.featherPct.toFixed(2) + ' % (' + rel(s.featherPct, v.featherPct) + ' gegen v11), '
+        + s.n + ' Stützpunkte, Bauchung ' + s.bowPct.toFixed(2) + ' % — und der Jitter wird auf x <i>und</i> y mit <b>derselben</b> Zahl addiert, die Kante zittert also diagonal statt quer zur Kante. '
+        + 'Hier hilft kein Parameter, hier hilft nur der Umzug auf <i>inkTail</i>.</p>',
+      '<p style="margin:0 0 12px"><b>Vorschlag, gemessen statt geraten:</b> <code style="' + co + '">INK_BOW</code> von 1,4 auf <b>0,196</b> — Spalte 4: Bauchung fällt auf ' + f.bowPct.toFixed(2) + ' %, '
+        + 'Feder, Familie und Abtastung bleiben unverändert. Dazu die Sky-Karten auf dieselbe <code style="' + co + '">brushLoop</code>/<code style="' + co + '">inkTail</code>-Kontur. '
+        + 'Eine Zahl und ein Umzug, keine Stil-Runde. <b>Am Runtime ist bis dahin nichts geändert.</b></p>',
+      '<p style="margin:0;padding-top:12px;border-top:1px dashed rgba(31,26,20,.35);opacity:.82">'
+        + '<b>Fürs Fehlerklassen-Register:</b> die SSOT hat <i>bow</i> als Wert (§Kanonische Werte: „wobble 1.4"), aber nicht als <b>Kennzahl</b> geführt — '
+        + 'und was nicht in der Prüfliste steht, wird beim Portieren zum Default. Hier ist genau das passiert: `wob` wurde übernommen, `bow` erfunden. '
+        + '<i>Eine Kennzahlenliste, die den sichtbaren Unterschied nicht enthält, bestätigt den Fehler.</i> Dieselbe Klasse wie die blinde Allokationsprüfung aus S51.</p>',
+    ].join('');
+  }
+}
+</script>
+</body>
+</html>

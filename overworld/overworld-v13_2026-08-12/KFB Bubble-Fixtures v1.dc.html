@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+<template id="__bundler_thumbnail">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="#47aba9"/><g font-family="Georgia,serif" text-anchor="middle"><text x="50" y="54" font-size="26" font-weight="700" fill="#f4ecd8">C1</text><text x="50" y="70" font-size="7" letter-spacing="1.4" fill="#14100c">FIXTURES</text></g></svg>
+</template>
+</head>
+<body>
+<x-dc>
+<helmet>
+<!-- KFB Bubble-Fixtures v1 (2026-08-12) — die Abnahme von Slice v13-C1.
+     Sie prüft `overworld-v13/bubble-layout.js` (bl-v1.0) gegen die zwölf **ausgerechneten**
+     Fixtures aus O7 des Cowork-Living-Docs: Zeilenzahl, Umbruchstellen, Zeiten.
+     Damit tritt der Slice gegen eine Erwartung an und nicht gegen einen Eindruck.
+
+     Die Erwartungswerte stehen HIER, nicht im Modul — ein Modul, das seine eigene Abnahme kennt,
+     prüft sich selbst. Und `wrapFill()` läuft mit als **Gegenprobe**: erscheint eine der roten
+     Varianten in der Ist-Spalte, ist noch das füllende Verfahren aktiv. -->
+<style>
+html,body{margin:0;background:#241f1a}
+*{box-sizing:border-box}
+a{color:#0e3d3c}a:hover{color:#000}
+</style>
+<script src="./overworld-v13/bubble-layout.js"></script>
+</helmet>
+
+<div style="min-height:100vh;padding:26px 30px 60px;font-family:Georgia,'Times New Roman',serif;color:#efe7d4;background:#241f1a">
+
+  <div style="display:flex;align-items:baseline;gap:16px;flex-wrap:wrap;border-bottom:2px solid #000;padding-bottom:12px">
+    <div style="font-size:22px;font-weight:700">Bubble-Fixtures <span style="color:#47aba9">C1</span></div>
+    <div style="font-size:13px;color:#b8ad95">fünfzehn ausgerechnete Fixtures gegen <span style="font-family:ui-monospace,Menlo,monospace">bubble-layout.js</span></div>
+    <div style="margin-left:auto;padding:5px 12px;border-radius:3px;font-family:ui-monospace,Menlo,monospace;font-size:13px;font-weight:700;background:{{ verdictBg }};color:#14100c">{{ verdict }}</div>
+  </div>
+
+  <div style="display:flex;gap:22px;flex-wrap:wrap;margin:14px 0 22px;font-family:ui-monospace,Menlo,monospace;font-size:12px;color:#a89b80">
+    <div>{{ moduleNote }}</div>
+    <div>Zeilen {{ linesScore }}</div>
+    <div>Umbruch {{ breakScore }}</div>
+    <div>Zeiten {{ timeScore }}</div>
+    <div>Überlauf {{ overflowScore }}</div>
+  </div>
+
+  <div style="display:flex;flex-direction:column;gap:10px">
+    <sc-for list="{{ rows }}" as="r" hint-placeholder-count="12">
+      <div style="display:grid;grid-template-columns:132px 1fr 1fr 150px;gap:16px;padding:11px 13px;background:#1b1712;border:1px solid #332d25;border-left:4px solid {{ r.mark }};border-radius:4px">
+        <div>
+          <div style="font-family:ui-monospace,Menlo,monospace;font-size:13px;font-weight:700">{{ r.id }}</div>
+          <div style="margin-top:3px;font-size:11.5px;color:#8a8069">{{ r.kind }}</div>
+          <div style="margin-top:5px;font-family:ui-monospace,Menlo,monospace;font-size:11px;color:#8a8069">{{ r.meta }}</div>
+        </div>
+        <div>
+          <div style="font-size:10.5px;letter-spacing:1px;text-transform:uppercase;color:#8a8069">Soll</div>
+          <div style="margin-top:4px;font-family:ui-monospace,Menlo,monospace;font-size:12.5px;line-height:1.55;white-space:pre-wrap;color:#b8ad95">{{ r.want }}</div>
+        </div>
+        <div>
+          <div style="font-size:10.5px;letter-spacing:1px;text-transform:uppercase;color:#8a8069">Ist</div>
+          <div style="margin-top:4px;font-family:ui-monospace,Menlo,monospace;font-size:12.5px;line-height:1.55;white-space:pre-wrap;color:#efe7d4">{{ r.got }}</div>
+          <div style="margin-top:5px;font-family:ui-monospace,Menlo,monospace;font-size:11px;line-height:1.5;color:#c9a25a">{{ r.notes }}</div>
+        </div>
+        <div>
+          <div style="font-family:ui-monospace,Menlo,monospace;font-size:12px;font-weight:700;color:{{ r.mark }}">{{ r.status }}</div>
+          <div style="margin-top:4px;font-family:ui-monospace,Menlo,monospace;font-size:11px;line-height:1.5;color:#8a8069">{{ r.timing }}</div>
+          <div style="margin-top:5px;font-family:ui-monospace,Menlo,monospace;font-size:11px;line-height:1.5;color:#8a8069">{{ r.boxNote }}</div>
+        </div>
+      </div>
+    </sc-for>
+  </div>
+
+  <div style="margin-top:26px;padding:16px 18px;background:#1b1712;border:1px solid #332d25;border-radius:4px">
+    <div style="font-size:15px;font-weight:700">Gegenprobe · füllend gegen ausgeglichen</div>
+    <div style="margin-top:4px;font-size:12.5px;color:#8a8069">Fünf von sechs mehrzeiligen Fällen brechen füllend schlecht, vier davon mit einer Ein-Wort-Restzeile. Steht links und rechts dasselbe, ist der Ausgleich nicht aktiv.</div>
+    <div style="margin-top:12px;display:flex;flex-direction:column;gap:8px">
+      <sc-for list="{{ proof }}" as="p" hint-placeholder-count="5">
+        <div style="display:grid;grid-template-columns:120px 1fr 1fr;gap:16px;padding:8px 10px;background:#241f19;border-radius:3px">
+          <div style="font-family:ui-monospace,Menlo,monospace;font-size:12.5px">{{ p.id }}</div>
+          <div style="font-family:ui-monospace,Menlo,monospace;font-size:12px;line-height:1.5;white-space:pre-wrap;color:#c98b7a">{{ p.fill }}</div>
+          <div style="font-family:ui-monospace,Menlo,monospace;font-size:12px;line-height:1.5;white-space:pre-wrap;color:#8fc48a">{{ p.bal }}</div>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+
+  <div style="margin-top:22px;padding:16px 18px;background:#1b1712;border:1px solid #332d25;border-radius:4px">
+    <div style="font-size:15px;font-weight:700">Eigener Satz</div>
+    <div style="margin-top:10px;display:flex;gap:10px;flex-wrap:wrap;align-items:center">
+      <input value="{{ probe }}" onInput="{{ onProbe }}" placeholder="Satz eingeben …" style="flex:1;min-width:260px;padding:8px 10px;font:14px Georgia,serif;color:#efe7d4;background:#0f0c09;border:1px solid #3c352c;border-radius:3px;outline:none" />
+      <select value="{{ probeKind }}" onChange="{{ onKind }}" style="padding:8px;font:13px ui-monospace,Menlo,monospace;color:#efe7d4;background:#0f0c09;border:1px solid #3c352c;border-radius:3px">
+        <sc-for list="{{ kinds }}" as="k" hint-placeholder-count="5">
+          <option value="{{ k }}">{{ k }}</option>
+        </sc-for>
+      </select>
+    </div>
+    <div style="margin-top:12px;display:flex;gap:26px;flex-wrap:wrap">
+      <div style="font-family:ui-monospace,Menlo,monospace;font-size:13px;line-height:1.6;white-space:pre-wrap;color:#efe7d4">{{ probeLines }}</div>
+      <div style="font-family:ui-monospace,Menlo,monospace;font-size:11.5px;line-height:1.7;color:#a89b80">{{ probeMeta }}</div>
+    </div>
+  </div>
+
+  <div style="margin-top:22px;font-size:12.5px;line-height:1.6;color:#8a8069;max-width:86ch">
+    Offen aus O6, hier sichtbar gemacht: für <b style="color:#b8ad95">Flüstern</b> war keine Zeilenlänge gesetzt. Die Fixtures sind mit <b style="color:#b8ad95">28</b> gerechnet, rechnerisch wären es <b style="color:#b8ad95">33</b> — kleinere Schrift legt mehr Zeichen in dieselbe Breite. Der Regler dafür liegt in den Tweaks; bei 33 wird <span style="font-family:ui-monospace,Menlo,monospace">whisper</span> einzeilig und weicht damit von der Erwartungstabelle ab. Das ist keine Abweichung des Umbruchs, sondern eine offene Setzung.
+  </div>
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1280,&quot;height&quot;:1000},
+ &quot;fluesterChars&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;28&quot;,&quot;33&quot;],&quot;default&quot;:&quot;28&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Offene Setzung&quot;}}">
+/* Abnahme C1. Erwartungswerte aus O7 (Cowork-Living-Doc) — abgeschrieben wäre falsch, deshalb
+   steht neben jeder Zahl, woraus sie kommt: Zeilen aus der Fixture-Tabelle, Zeiten aus »Zeiten je
+   Fixture« (schreiben Zeichen/34, halten 800+42·Zeichen gedeckelt 5000, Abgang 220, min 1200). */
+const FIX = [
+  {id:'greet',      kind:'rede',        text:"What's up, my fluffy hero?",              lines:1, total:2877},
+  {id:'stayfluffy', kind:'rede',        text:"Stay fluffy.",                            lines:1, total:1877, note:'prüft die Mindestbreite (7 Zeichen)'},
+  {id:'twowords',   kind:'rede',        text:"Freedom. Apparently.",                    lines:1, total:2448},
+  {id:'thought',    kind:'gedanke',     text:"I should have stayed in bed.",            lines:1, total:3020, note:'exakt 28 Zeichen — die Kante der Regel'},
+  {id:'pottymouth', kind:'ruf',         text:"BLÖDSINN!",                               lines:1, total:1663},
+  /* Schreibweise korrigiert (Georg, 12.8.): **KayfaBINGO**, zweiter Teil in Großbuchstaben.
+     Zeichenzahl bleibt 11, also bleiben Zeilen und Zeiten der O7-Tabelle unberührt. */
+  {id:'bingo',      kind:'ruf',         text:"KayfaBINGO!",                             lines:1, total:1806},
+  {id:'triplet',    kind:'kayfabulate', text:"Freedom is ultimately the greatest virtue.", lines:2, total:4019,
+    want:['Freedom is ultimately','the greatest virtue.']},
+  {id:'absurd',     kind:'rede',        text:"Freedom accidentally invents surveillance.", lines:2, total:4019,
+    want:['Freedom accidentally','invents surveillance.']},
+  {id:'historian',  kind:'rede',        text:"Methinks, our little hero has been here before.", lines:2, total:4376,
+    want:['Methinks, our little hero','has been here before.']},
+  {id:'whisper',    kind:'fluester',    text:"not so loud, the ditch listens",          lines:2, total:3162,
+    want:['not so loud, the','ditch listens']},
+  {id:'sandwich',   kind:'gedanke',     text:"This is either a trap or an extremely confident sandwich.", lines:3, total:5090,
+    want:['This is either a','trap or an extremely','confident sandwich.'], note:'Obergrenze 3 Zeilen · Haltedeckelung'},
+  /* C1b · Lettering (Spec §5). `emphasis` ist der Fall, der die Umbruchrechnung bricht: sobald ein
+     Wort fett ist, stimmt die Zeichenzahl nicht mehr als Länge. `trailoff` und `cutoff` prüfen die
+     Normalisierung — Zeichen bleiben, was sie bedeuten. */
+  {id:'emphasis',   kind:'rede',        text:"Das ist nicht dein *Königreich*.",     lines:2, total:3162,
+    want:['Das ist nicht','dein Königreich.'],
+    note:'30 SICHTBARE Zeichen (Markup zählt nicht) · das fette Wort steht nicht allein'},
+  {id:'trailoff',   kind:'rede',        text:"Ich dachte, du wärst ...",             lines:1, total:2591,
+    note:'»...« → »…«: 24 Zeichen werden 22, also auch 22 in der Zeit'},
+  {id:'cutoff',     kind:'rede',        text:"Ich wollte nur sagen, dass --",        lines:2, total:3091,
+    want:['Ich wollte nur','sagen, dass --'], note:'»--« bleibt »--« · 29 Zeichen, also zweizeilig'},
+  {id:'overflow',   kind:'rede',
+    text:"I have entered the graveyard to negotiate with a skeleton who has no interest in negotiation.",
+    lines:4, total:7661, overflow:true, note:'MUSS sichtbar scheitern; keine Satzgrenze → nicht teilbar'}
+];
+
+const PROOF = ['triplet','absurd','sandwich','whisper','historian'];
+
+class Component extends DCLogic {
+  componentWillUnmount(){ if(this.poll)clearInterval(this.poll); }
+  state = { probe:'Der König nimmt deine Geschichte an, aber nur die halbe.', probeKind:'rede' };
+
+  componentDidMount(){
+    /* **Im Standalone ist das Modul beim ersten Rendern noch nicht da** — dieses Blatt rechnet
+       alles in `renderVals`, also stand dort 0/15, obwohl nichts kaputt war. Nachziehen, bis es
+       geladen ist; dieselbe Klasse wie Naht 116 (»ein Guard auf ein noch nicht geladenes Modul ist
+       ein stiller Verzicht«). */
+    if(!window.OW_BLAYOUT){
+      let n=0;
+      this.poll=setInterval(()=>{
+        if(window.OW_BLAYOUT){clearInterval(this.poll);this.forceUpdate();
+          const q=this.check();
+          console.log('[bubble-fixtures] C1 ·',q.pass+'/'+q.n,'Fixtures (nachgeladen)');}
+        else if(++n>40)clearInterval(this.poll);
+      },200);
+      return;
+    }
+    const r = this.check();
+    console.log('[bubble-fixtures] C1 ·', r.pass+'/'+r.n, 'Fixtures ·',
+      'Zeilen', r.lines+'/'+r.n, '· Umbruch', r.breaks.pass+'/'+r.breaks.n,
+      '· Zeiten', r.times+'/'+r.n, '· Überlauf', r.of ? 'gemeldet' : 'NICHT gemeldet');
+    if(r.pass < r.n) console.warn('[bubble-fixtures] Abweichungen:', r.fails.join(' · '));
+  }
+
+  opts(){
+    const mc = +(this.props.fluesterChars ?? 28);
+    return k => (k === 'fluester' ? {maxChars:mc} : {});
+  }
+
+  check(){
+    const L = window.OW_BLAYOUT;
+    const out = {n:FIX.length, pass:0, lines:0, times:0, breaks:{n:0,pass:0}, of:false, fails:[], rows:[]};
+    if(!L) return out;
+    const o = this.opts();
+    for(const f of FIX){
+      const r = L.layout(f.text, f.kind, Object.assign({}, o(f.kind),
+        (window.OW_BUBBLE&&OW_BUBBLE.satz)?{}:{}));
+      const gotLines = r.overflow && r.lines.length > r.maxLines ? r.lines.length : r.lines.length;
+      const okLines = gotLines === f.lines;
+      const okTime  = r.times.total === f.total;
+      let okBreak = true;
+      if(f.want){ out.breaks.n++;
+        okBreak = f.want.length === r.lines.length && f.want.every((s,i)=>s === r.lines[i]);
+        if(okBreak) out.breaks.pass++; }
+      const okOver = f.overflow ? (r.overflow && r.reject === true) : !r.overflow;
+      if(f.overflow) out.of = r.overflow && r.reject === true;
+      if(okLines) out.lines++;
+      if(okTime)  out.times++;
+      const ok = okLines && okTime && okBreak && okOver;
+      if(ok) out.pass++;
+      else out.fails.push(f.id + (okLines?'':' Zeilen '+gotLines+'≠'+f.lines)
+        + (okTime?'':' Zeit '+r.times.total+'≠'+f.total)
+        + (okBreak?'':' Umbruch') + (okOver?'':' Überlauf'));
+      out.rows.push({f, r, ok, okLines, okTime, okBreak, okOver});
+    }
+    return out;
+  }
+
+  renderVals(){
+    const L = window.OW_BLAYOUT;
+    const res = this.check();
+    const rows = res.rows.map(({f,r,ok,okLines,okTime,okBreak,okOver})=>({
+      id:f.id, kind:f.kind + (r.isBox?' · Kasten':''),
+      /* **Die Spalte zeigt, was gerechnet wird.** Vorher stand hier `f.text.length` — also die
+         ROHEN Zeichen inklusive `*` und `...`, während Zeilen und Zeiten auf dem SICHTBAREN Text
+         rechnen. Zwei Zahlen für dieselbe Sache, auf dem Blatt, das Zahlen prüft. Jetzt beide,
+         und die sichtbare vorn. */
+      meta:(r.text?r.text.length:f.text.length)+' Zchn sichtbar'
+        +(r.text&&r.text.length!==f.text.length?' ('+f.text.length+' roh)':'')
+        +' · max '+r.maxChars+'/Zeile · '+r.maxLines+' Zeilen',
+      want:(f.want?f.want.join('\n'):f.text)+'\n— '+f.lines+' Zeilen · '+f.total+' ms'
+        + (f.note?'\n('+f.note+')':''),
+      got:r.lines.join('\n')+'\n— '+r.lines.length+' Zeilen · '+r.times.total+' ms',
+      notes:(r.notes||[]).join(' · '),
+      status:ok?'✓ stimmt':'✗ '+[okLines?'':'Zeilen',okTime?'':'Zeit',okBreak?'':'Umbruch',okOver?'':'Überlauf'].filter(Boolean).join(' '),
+      mark:ok?'#8fc48a':'#c98b7a',
+      timing:'schreiben '+r.times.write+' · halten '+r.times.hold+' · Abgang '+r.times.exit,
+      boxNote:'Kasten '+r.box.w+'×'+r.box.h+' px · Polster '+r.box.padX+'/'+r.box.padY
+        + (r.split?' · geteilt in 2 Blasen':'') + (r.reject?' · abgewiesen':'')
+    }));
+    const proof = PROOF.map(id=>{
+      const f = FIX.find(x=>x.id===id);
+      const o = this.opts()(f.kind);
+      const K = L ? (L.KINDS[f.kind]||L.KINDS.rede) : {chars:28};
+      const max = (o && o.maxChars) || K.chars;
+      return {id, fill:L?L.wrapFill(f.text,max).join('\n'):'', bal:L?L.wrapBalanced(f.text,max,K.lines).lines.join('\n'):''};
+    });
+    const pk = this.state.probeKind;
+    const pr = L ? L.layout(this.state.probe, pk, this.opts()(pk)) : null;
+    return {
+      rows, proof,
+      kinds: L ? Object.keys(L.KINDS) : ['rede'],
+      moduleNote: L ? L.version : 'bubble-layout.js fehlt',
+      verdict: res.pass === res.n ? 'C1 ✓ '+res.pass+'/'+res.n : 'C1 ✗ '+res.pass+'/'+res.n,
+      verdictBg: res.pass === res.n ? '#8fc48a' : '#e8d38a',
+      linesScore: res.lines+'/'+res.n,
+      breakScore: res.breaks.pass+'/'+res.breaks.n,
+      timeScore: res.times+'/'+res.n,
+      overflowScore: res.of ? 'gemeldet ✓' : 'nicht gemeldet ✗',
+      probe: this.state.probe, probeKind: pk,
+      probeLines: pr ? (pr.lines.join('\n') || '—') : '—',
+      probeMeta: pr ? [
+        pr.lines.length+' Zeilen · längste '+pr.cols+' Zchn (max '+pr.maxChars+')',
+        'Kasten '+pr.box.w+'×'+pr.box.h+' px · Schrift '+pr.box.fontPx+' px',
+        'schreiben '+pr.times.write+' ms · halten '+pr.times.hold+' ms · gesamt '+pr.times.total+' ms',
+        pr.overflow ? (pr.reject ? 'Überlauf ohne Satzgrenze → gekürzt werden, nicht gezeigt'
+                                 : 'Überlauf → zwei Blasen: »'+pr.split[0].lines.join(' ')+'« / »'+pr.split[1].lines.join(' ')+'«')
+                    : 'kein Überlauf',
+        (pr.notes||[]).join(' · ')
+      ].filter(Boolean).join('\n') : '',
+      onProbe: e=>this.setState({probe:e.target.value}),
+      onKind: e=>this.setState({probeKind:e.target.value})
+    };
+  }
+}
+</script>
+</body>
+</html>

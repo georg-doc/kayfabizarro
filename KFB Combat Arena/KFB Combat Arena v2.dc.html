@@ -1,0 +1,827 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bangers&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  html,body{margin:0;height:100%;background:#1a1712;overflow:hidden;font-family:'Space Grotesk',system-ui,sans-serif;-webkit-font-smoothing:antialiased;}
+  #dc-root,.sc-host{height:100%;}
+  a{color:#b8361f;} a:hover{color:#8a6a16;}
+  .blatt::-webkit-scrollbar{width:8px;} .blatt::-webkit-scrollbar-thumb{background:#cbbf9e;border-radius:4px;} .blatt{scrollbar-width:thin;}
+</style>
+<script type="importmap">
+{
+  "imports": {
+    "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
+    "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/"
+  }
+}
+</script>
+<script type="module">
+  import * as THREE from 'three';
+  import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
+  import { RoomEnvironment } from 'three/addons/environments/RoomEnvironment.js';
+  import * as SkeletonUtils from 'three/addons/utils/SkeletonUtils.js';
+  window.__ARENA2 = { THREE, GLTFLoader, RoomEnvironment, SkeletonUtils };
+  window.dispatchEvent(new Event('arena2ready'));
+</script>
+</helmet>
+
+<template id="__bundler_thumbnail"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400"><rect width="400" height="400" fill="#1a1712"/><rect x="60" y="150" width="280" height="150" fill="#f3ead3" stroke="#e9c14a" stroke-width="8" transform="rotate(-5 200 225)"/><rect x="165" y="95" width="70" height="70" rx="10" fill="#e9c14a" stroke="#1f1a14" stroke-width="7"/><circle cx="186" cy="124" r="10" fill="#f3ead3" stroke="#1f1a14" stroke-width="4"/><circle cx="216" cy="124" r="10" fill="#f3ead3" stroke="#1f1a14" stroke-width="4"/></svg></template>
+
+<div ref="{{ rootRef }}" style="position:absolute;inset:0;background:#1a1712;color:#f3ead3;overflow:hidden;">
+
+  <canvas ref="{{ canvasRef }}" style="position:absolute;inset:0;width:100%;height:100%;display:block;touch-action:none;"></canvas>
+
+  <!-- VORHANG: deckt das Bauen ab, bis Karte, Figur und Gegner gemessen und gesetzt sind. -->
+  <sc-if value="{{ vorhang }}" hint-placeholder-val="{{ true }}">
+    <div style="position:absolute;inset:0;z-index:20;background:#1a1712;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;">
+      <span style="font-family:'Bangers',cursive;font-size:clamp(20px,3vw,34px);letter-spacing:1.4px;color:#e9c14a;">KFB COMBAT ARENA v2</span>
+      <span style="font-size:13px;color:#cbbf9e;letter-spacing:.04em;">{{ ladeText }}</span>
+      <span style="width:180px;height:3px;background:#3a342a;overflow:hidden;"><span style="display:block;width:60%;height:3px;background:#e9c14a;"></span></span>
+    </div>
+  </sc-if>
+
+  <!-- Kopf: was das hier ist, ohne Panel-Apparat. Der Kritiker soll den Slice sofort lesen. -->
+  <div style="{{ kopfStyle }}">
+    <span style="font-family:'Bangers',cursive;font-size:clamp(17px,2.4vw,26px);letter-spacing:1.2px;color:#e9c14a;text-shadow:0 2px 0 #1a1712;">KFB COMBAT ARENA v2</span>
+    <span style="font-size:clamp(10px,1vw,12.5px);font-weight:700;color:#f3ead3;background:#b8361f;padding:2px 7px;">SLICE S3 · SCHUSS + KILL-KETTE</span>
+    <span style="font-size:clamp(10px,1vw,12px);color:#cbbf9e;">Fixture-Seed {{ seed }}</span>
+    <span style="margin-left:auto;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-size:clamp(10.5px,1vw,12.5px);font-weight:700;color:{{ statusCol }};">{{ status }}</span>
+    <!-- EIN Griff für alles Werkzeug. Georg 06.09.: »die ganzen Paletten und Button-Blöcke stören« —
+         das Bild ist die Arbeit, das Werkzeug ist Beiwerk. Standard: zu. -->
+    <button onClick="{{ onWerkzeug }}" style="{{ werkzeugKnopf }}" title="Maßstab, Prüfgriffe und Prüfblatt ein- oder ausblenden">{{ werkzeugText }}</button>
+  </div>
+
+  <!-- Bedienleiste: sechs Handgriffe, jeder erzeugt eine ZAHL im Prüfblatt.
+       Ort wandert mit der Breite (Georg arbeitet im Split-Screen): breit = unten links neben dem
+       Blatt, schmal = über dem Blatt, das dann als Bodenblatt liegt. -->
+  <sc-if value="{{ werkzeug }}" hint-placeholder-val="{{ true }}">
+  <div style="{{ leisteStyle }}">
+    <button onClick="{{ onKal }}" style="height:30px;padding:0 11px;border:1px solid #e9c14a;background:#e9c14a;color:#1f1a14;font-family:inherit;font-size:12px;font-weight:700;cursor:pointer;white-space:nowrap;">Kalibrieren</button>
+    <button onClick="{{ onFx }}" style="height:30px;padding:0 11px;border:1px solid #cbbf9e;background:rgba(26,23,18,.6);color:#f3ead3;font-family:inherit;font-size:12px;font-weight:600;cursor:pointer;white-space:nowrap;">FX booten</button>
+    <button onClick="{{ onTon }}" style="height:30px;padding:0 11px;border:1px solid #cbbf9e;background:rgba(26,23,18,.6);color:#f3ead3;font-family:inherit;font-size:12px;font-weight:600;cursor:pointer;white-space:nowrap;">Ton an</button>
+    <button onClick="{{ onTest }}" style="height:30px;padding:0 11px;border:1px solid #cbbf9e;background:rgba(26,23,18,.6);color:#f3ead3;font-family:inherit;font-size:12px;font-weight:600;cursor:pointer;white-space:nowrap;">Selbsttest</button>
+    <button onClick="{{ onMobs }}" style="height:30px;padding:0 11px;border:1px solid #cbbf9e;background:rgba(26,23,18,.6);color:#f3ead3;font-family:inherit;font-size:12px;font-weight:600;cursor:pointer;white-space:nowrap;" title="Boden C2: drei Gegner setzen, Mindestabstand 2,2 u">Gegner neu</button>
+    <button onClick="{{ onSchuss }}" style="height:30px;padding:0 11px;border:1px solid #cbbf9e;background:rgba(26,23,18,.6);color:#f3ead3;font-family:inherit;font-size:12px;font-weight:600;cursor:pointer;white-space:nowrap;" title="Boden C3: 14 Schüsse auf den nächsten Gegner, zählt Kills · Würfel · Pops">Schießprobe (C3)</button>
+    <button onClick="{{ onLauf }}" style="height:30px;padding:0 11px;border:1px solid #cbbf9e;background:rgba(26,23,18,.6);color:#f3ead3;font-family:inherit;font-size:12px;font-weight:600;cursor:pointer;white-space:nowrap;" title="Boden C1: 60 s geseedeter Random-Walk, zählt Kantenüberschreitungen">Lauftest (C1)</button>
+    <button onClick="{{ onPng }}" style="height:30px;padding:0 11px;border:1px solid #cbbf9e;background:rgba(26,23,18,.6);color:#f3ead3;font-family:inherit;font-size:12px;font-weight:600;cursor:pointer;white-space:nowrap;" title="Beleg für die Q&A-Schleife: ein Bild je Slice">Beleg-PNG (Q&amp;A)</button>
+    <button onClick="{{ onPanel }}" style="height:30px;padding:0 11px;border:1px solid #8a8578;background:rgba(26,23,18,.6);color:#cbbf9e;font-family:inherit;font-size:12px;font-weight:600;cursor:pointer;white-space:nowrap;">Prüfblatt</button>
+  </div>
+  </sc-if>
+
+  <!-- MASSSTAB-UMSCHALTER: Feldgröße, FB-Größe, Kameralage. Zum Entscheiden am Bild, nicht an Zahlen. -->
+  <sc-if value="{{ werkzeug }}" hint-placeholder-val="{{ true }}">
+  <div style="position:absolute;top:52px;left:14px;display:flex;flex-direction:column;gap:6px;align-items:flex-start;">
+    <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;">
+      <span style="font-size:10.5px;font-weight:700;letter-spacing:.08em;color:#cbbf9e;width:58px;">FLÄCHE</span>
+      <sc-for list="{{ feldBtns }}" as="b" hint-placeholder-count="3"><button onClick="{{ b.on }}" style="{{ b.style }}">{{ b.label }}</button></sc-for>
+    </div>
+    <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;">
+      <span style="font-size:10.5px;font-weight:700;letter-spacing:.08em;color:#cbbf9e;width:58px;">MOTIV</span>
+      <sc-for list="{{ motivBtns }}" as="b" hint-placeholder-count="3"><button onClick="{{ b.on }}" style="{{ b.style }}">{{ b.label }}</button></sc-for>
+    </div>
+    <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;">
+      <span style="font-size:10.5px;font-weight:700;letter-spacing:.08em;color:#cbbf9e;width:58px;">FB</span>
+      <sc-for list="{{ fbBtns }}" as="b" hint-placeholder-count="3"><button onClick="{{ b.on }}" style="{{ b.style }}">{{ b.label }}</button></sc-for>
+    </div>
+    <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;">
+      <span style="font-size:10.5px;font-weight:700;letter-spacing:.08em;color:#cbbf9e;width:58px;">KAMERA</span>
+      <sc-for list="{{ kamBtns }}" as="b" hint-placeholder-count="3"><button onClick="{{ b.on }}" style="{{ b.style }}">{{ b.label }}</button></sc-for>
+    </div>
+  </div>
+  </sc-if>
+
+  <!-- Bei geschlossenem Blatt bleibt EINE Zeile stehen: Bilanz und Status. Ein Prüfstand, dessen
+       Instrument man wegklappen kann, darf nicht stumm werden — und Georg will das Spiel sehen. -->
+  <sc-if value="{{ streifen }}" hint-placeholder-val="{{ false }}">
+    <div style="position:absolute;left:18px;right:18px;bottom:18px;display:flex;align-items:center;gap:10px;flex-wrap:wrap;background:rgba(26,23,18,.82);border-left:3px solid #e9c14a;padding:7px 11px;">
+      <span style="font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:11.5px;line-height:1.5;color:#f3ead3;">{{ bilanz }}</span>
+      <span style="font-size:11px;color:#cbbf9e;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">{{ torText }}</span>
+    </div>
+  </sc-if>
+
+  <!-- PRÜFBLATT: der Bodenkatalog steht IN der Seite, weil der Kritiker nur die Seite liest
+       (ENVIRONMENT.md, Rollenkanal). Zahl, Register und fälliger Slice je Zeile. -->
+  <sc-if value="{{ blatt }}" hint-placeholder-val="{{ true }}">
+    <div class="blatt" style="{{ blattStyle }}">
+      <div style="position:sticky;top:0;background:#f3ead3;padding:14px 0 10px;border-bottom:2px solid #1f1a14;">
+        <div style="display:flex;align-items:baseline;gap:8px;">
+          <span style="font-family:'Bangers',cursive;font-size:20px;letter-spacing:1px;color:#b8361f;">PRÜFBLATT</span>
+          <span style="font-size:11px;font-weight:700;color:#8a8578;">MASTERPLAN §5 · C1–C12</span>
+        </div>
+        <div style="font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:11.5px;line-height:1.6;color:#1f1a14;margin-top:6px;">{{ bilanz }}</div>
+        <div style="font-size:11.5px;line-height:1.55;color:#4a4437;margin-top:4px;text-wrap:pretty;">{{ torText }}</div>
+      </div>
+      <sc-for list="{{ rows }}" as="r" hint-placeholder-count="13">
+        <div style="display:grid;grid-template-columns:16px 36px minmax(0,1fr);gap:8px;padding:9px 0;border-bottom:1px dotted #ded2b4;align-items:start;">
+          <span style="font-size:14px;line-height:1.3;font-weight:700;color:{{ r.col }};">{{ r.glyph }}</span>
+          <span style="font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12px;font-weight:700;color:#1f1a14;">{{ r.id }}</span>
+          <div style="min-width:0;display:flex;flex-direction:column;gap:3px;">
+            <span style="font-size:12px;line-height:1.45;color:#3c372c;text-wrap:pretty;">{{ r.text }}</span>
+            <span style="font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:11.5px;line-height:1.5;color:{{ r.col }};word-break:break-word;">{{ r.wert }}</span>
+            <span style="font-size:10.5px;line-height:1.4;color:#8a8578;">{{ r.meta }}</span>
+          </div>
+        </div>
+      </sc-for>
+      <div style="font-size:11px;line-height:1.6;color:#8a8578;padding-top:12px;text-wrap:pretty;">
+        ○ heißt: das Modul, das diesen Boden erfüllt, ist noch nicht gebaut — der fällige Slice steht daneben.
+        Ein grüner Boden ohne Modul wäre die stille Fehlerklasse, gegen die dieser Katalog gebaut ist.
+      </div>
+
+      <!-- WIRT: die Zeilen des Wirts stehen im Blatt, nicht über dem Bild — im Split-Screen war die
+           Konsolenkachel abgeschnitten, und eine abgeschnittene Zahl ist keine Zahl. -->
+      <div style="margin-top:14px;border-top:2px solid #1f1a14;padding-top:10px;">
+        <div style="font-family:'Bangers',cursive;font-size:15px;letter-spacing:1px;color:#b8361f;margin-bottom:6px;">WIRT · ZEILEN</div>
+        <sc-for list="{{ zeilen }}" as="l" hint-placeholder-count="6">
+          <div style="font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:11px;line-height:1.6;color:#3c372c;padding:2px 0;border-bottom:1px dotted #ded2b4;word-break:break-word;">{{ l }}</div>
+        </sc-for>
+      </div>
+    </div>
+  </sc-if>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;breite&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[9,18,36],&quot;default&quot;:18,&quot;tsType&quot;:&quot;number&quot;,&quot;unit&quot;:&quot;u&quot;,&quot;section&quot;:&quot;Maßstab&quot;},&quot;motiv&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;karte&quot;,&quot;seite&quot;,&quot;seiten&quot;],&quot;default&quot;:&quot;karte&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Maßstab&quot;},&quot;fb&quot;:{&quot;editor&quot;:&quot;range&quot;,&quot;default&quot;:1.2,&quot;min&quot;:0.8,&quot;max&quot;:2,&quot;step&quot;:0.05,&quot;unit&quot;:&quot;u&quot;,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Maßstab&quot;},&quot;hintergrund&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;halftone&quot;,&quot;skydome&quot;,&quot;gradient&quot;],&quot;default&quot;:&quot;halftone&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Wirt&quot;},&quot;kamera&quot;:{&quot;editor&quot;:&quot;range&quot;,&quot;default&quot;:7.6,&quot;min&quot;:3,&quot;max&quot;:9,&quot;step&quot;:0.1,&quot;unit&quot;:&quot;u&quot;,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Wirt&quot;},&quot;neigung&quot;:{&quot;editor&quot;:&quot;range&quot;,&quot;default&quot;:37,&quot;min&quot;:10,&quot;max&quot;:60,&quot;step&quot;:1,&quot;unit&quot;:&quot;°&quot;,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Wirt&quot;},&quot;blatt&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:false,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Prüfwerkzeug&quot;}}">
+/**
+ * KFB Combat Arena v2 · Slice S0 — Wirt + Prüfwerkzeug, ohne Feature.
+ *
+ * Diese Klasse ist der INTEGRATOR: sie hält den Wirt (combat-arena-v2/host.v2.js), die
+ * Kalibrierszene (studio-v12/light.v1.js, importiert) und den Bodenkatalog
+ * (combat-arena-v2/floors.v2.js). Sie baut kein Spiel — M1…M9 kommen in S1…S5.
+ */
+class Component extends DCLogic {
+  state = {
+    rows: [], zeilen: ['bootet …'], status: 'bootet', statusCol: '#cbbf9e',
+    bilanz: '—', torText: 'noch nicht gemessen', blatt: true, seed: 20260906, narrow: false,
+    werkzeug: false,   // Georg 06.09.: »die ganzen Paletten und Button-Blöcke stören« — Standard zu
+    bereit: false, ladeText: 'Bühne wird gebaut …',
+    breite: 18, motiv: 'karte', fbU: 1.2, kam: 'schulter',   // Georgs Wahl 06.09. am Bild: EINE Karte auf 18 × 10,3 u
+    feldMass: { 9: '9 × 5,0 u', 18: '18 × 10,1 u', 36: '36 × 20,1 u' }
+  };
+
+  /* EIN Ort für den Slice-Namen. Er stand als Literal im Kopf-Etikett UND in `tor()` — und blieb
+     dort auf S0 stehen, während S1 ausgeliefert war. Wer nur die Seite liest (ENVIRONMENT.md), hielt
+     den Stand für S0. Beim nächsten Slice ist genau diese Zeile die Änderung. */
+  SLICE = 'S3';
+
+  COL = { pass: '#3f6b2e', fail: '#b8361f', wait: '#8a8578', part: '#8a6a16' };
+
+  canvasRef = (el) => { if (el) this._canvas = el; };
+  rootRef = (el) => { if (el) this._root = el; };
+
+  /* Zwei Lagen, EINE Schwelle: unter 860 px liegt das Prüfblatt als Bodenblatt, darüber steht es
+     als Spalte. Georg arbeitet im Split-Screen — bei 780 px hat die Spalte das Bild gefressen. */
+  lagen() {
+    const n = this.state.narrow;
+    return {
+      /* box-sizing: border-box ist Pflicht, nicht Geschmack — der Rahmen zählte zur Breite dazu
+         (424 statt 420), und der Kopf rechnete mit 420: Status lag 22 px hinter der Spalte. */
+      blattStyle: n
+        ? 'position:absolute;left:10px;right:10px;bottom:10px;height:58%;box-sizing:border-box;background:#f3ead3;color:#1f1a14;border:2px solid #1f1a14;box-shadow:0 -8px 24px rgba(0,0,0,.45);overflow-y:auto;padding:0 12px 14px;'
+        : 'position:absolute;top:14px;right:14px;bottom:14px;width:min(420px,42vw);box-sizing:border-box;background:#f3ead3;color:#1f1a14;border:2px solid #1f1a14;box-shadow:0 10px 30px rgba(0,0,0,.45);overflow-y:auto;padding:0 16px 18px;',
+      leisteStyle: !this.blattAuf()
+        ? 'position:absolute;left:18px;bottom:62px;display:flex;gap:6px;flex-wrap:wrap;'
+        : n
+          ? 'position:absolute;left:10px;right:10px;bottom:calc(58% + 16px);display:flex;gap:6px;flex-wrap:wrap;'
+          : 'position:absolute;left:18px;bottom:18px;display:flex;gap:6px;flex-wrap:wrap;max-width:calc(100% - min(420px,42vw) - 48px);',
+      /* Der Kopf lief unter das Blatt: Status (ΔE, AUSFALL) und Seed lagen hinter der opaken
+         Spalte — gemessen 06.09. bei 924 px, Blattkante x 486, Status x 817–910. */
+      kopfStyle: 'position:absolute;top:0;left:0;right:0;padding:10px 14px 22px;pointer-events:none;background:linear-gradient(180deg,rgba(26,23,18,.85),rgba(26,23,18,0));display:flex;align-items:baseline;gap:8px 12px;flex-wrap:wrap;'
+        + (n || !this.blattAuf() ? '' : 'padding-right:calc(min(420px,42vw) + 42px);')
+    };
+  }
+
+  componentDidMount() {
+    this.fehler = { n: 0, letzter: null };
+    const ce = console.error.bind(console);
+    console.error = (...a) => { this.fehler.n++; this.fehler.letzter = a.map((x) => (x && x.message) || String(x)).join(' '); ce(...a); };
+    this._onErr = (e) => { this.fehler.n++; this.fehler.letzter = e.message || 'window.error'; };
+    addEventListener('error', this._onErr);
+    this.t0 = performance.now();
+    this.boot();
+  }
+
+  componentWillUnmount() {
+    removeEventListener('error', this._onErr);
+    if (this._raf) cancelAnimationFrame(this._raf);
+    if (this._ro) this._ro.disconnect();
+    /* GAR NICHT entsorgen. Ein Canvas trägt genau einen WebGL-Kontext; wer den Wirt beim Unmount
+       entsorgt und ihn beim nächsten Mount wiederaufnimmt, rechnet mit einem toten Renderer weiter
+       (gemessen 06.09.: calls 0, Kamera auf Startposition, Kalibrierung ΔE 21,5 statt 4,0).
+       Der Wirt bleibt am Canvas hängen; die Schleife und der Beobachter werden neu gesetzt. */
+  }
+
+  log(s) { this._log = (this._log || []); this._log.unshift(s); if (this._log.length > 6) this._log.pop(); }
+
+  async warten() {
+    for (let i = 0; i < 140; i++) { if (window.__ARENA2) return window.__ARENA2; await new Promise((r) => setTimeout(r, 60)); }
+    throw new Error('three-Instanz kam nicht (importmap/Netz)');
+  }
+
+  async boot() {
+    try {
+      const dep = await this.warten();
+      const THREE = this.THREE = dep.THREE;
+      /* `?v=` ist Absicht: ein bearbeitetes Wirt-Modul wurde vom Browser aus dem Cache geliefert
+         (gemessen 06.09.: fov stand auf 34, obwohl 50 in der Datei stand). Ein Prüfstand, der eine
+         alte Datei misst, misst nichts. Zahl bei jeder Wirt-Änderung erhöhen. */
+      const H = await import('./combat-arena-v2/host.v2.js?v=s4-1');
+      this.F = await import('./combat-arena-v2/floors.v2.js?v=s3-3');
+      /* WIEDERAUFNAHME statt zweiter Wirt: ein zweiter WebGLRenderer auf DEMSELBEN Canvas nimmt
+         keinen neuen Kontext — nach einem Hot-Reload stand das Bild still (renderer.info.calls 0,
+         Kamera auf der Startposition, Standbild der letzten Kalibrierung). Also: gleicher Canvas →
+         gleicher Wirt, nur Schleife und Beobachter neu. Anderer Canvas → alten Wirt entsorgen. */
+      const alt = window.__CA2;
+      if (alt && alt.raf) cancelAnimationFrame(alt.raf);
+      let host;
+      if (alt && alt.host && !alt.host.tot && alt.canvas === this._canvas) { host = alt.host; this.log('[wirt] Wiederaufnahme nach Hot-Reload'); }
+      else { if (alt && alt.host) { try { alt.host.dispose(); } catch (e) {} } host = H.createHostV2({ THREE, canvas: this._canvas, deps: dep, background: this.props.hintergrund ?? 'halftone', log: (s) => this.log(s) }); }
+      this.host = host;
+      this.setState({ seed: host.SEED });
+      /* Diagnosegriff: der Prüfstand darf von außen befragt werden (Kritiker, Konsole, Messskript).
+         Kein Zustand hängt daran — nur ein Zeiger auf Wirt und Integrator. */
+      window.__CA2 = { host, comp: this, canvas: this._canvas, raf: 0 };
+
+      /* Kalibrierszene: die Karte als Vorgabe des Wirts (Rechteck 9 × 6,44 u), damit C8 eine Zahl
+         hat, bevor M1 existiert. Die Tusche-Kontur hängt M1 in S1 über field.attach() ein. */
+      const b = host.field.bounds();
+      if (!host.scene.getObjectByName('field-vorgabe')) this.szene(THREE, host, b);
+      host.cam.setze({ dist: this.props.kamera ?? 7.6, pitch: (this.props.neigung ?? 37) / 57.3 });
+      /* EIN Bild von Hand, bevor die Schleife greift: sonst zeigt der Canvas als erstes das
+         Standbild der letzten Kalibrierung (Referenzkugel groß, Karte nicht zu sehen) — kein
+         Ausfall, sieht aber genau wie einer aus. Verifier-Fund 06.09. */
+      host.cam.step(1 / 60);
+      host.renderer.render(host.scene, host.camera);
+
+      this._ro = new ResizeObserver(() => {
+        host.resize();
+        const w = (this._root || this._canvas).clientWidth;
+        const n = w < 860;
+        if (n !== this.state.narrow) this.setState({ narrow: n });
+      });
+      this._ro.observe(this._root || this._canvas);
+      host.resize();
+      this.setState({ narrow: (this._root || this._canvas).clientWidth < 860 });
+
+      this.lintRes = await host.lint();
+      this.log(this.lintRes.zeile);
+      this._prime = () => { host.fx.tonAn().then(() => this.messen()); removeEventListener('pointerdown', this._prime); };
+      addEventListener('pointerdown', this._prime, { once: true });
+
+      const loop = (now) => {
+        host.frameTick(now);
+        if (!this._lastM || now - this._lastM > 500) { this._lastM = now; this.messen(); }
+        this._raf = requestAnimationFrame(loop);
+        if (window.__CA2) window.__CA2.raf = this._raf;
+      };
+      this._raf = requestAnimationFrame(loop);
+      window.__CA2.raf = this._raf;
+      this.setState({ status: 'Wirt steht · ' + host.CAPABILITIES.length + ' Fähigkeiten', statusCol: '#e9c14a' });
+      setTimeout(() => this.kalibrieren(), 400);
+      /* FX-FOUNDATION BEIM START BOOTEN. Sie war verdrahtet, aber nie gebootet — gemessen 06.09.:
+         `fx.bereit false`, also KEIN Sprite, KEIN Treffer-Blitz, KEIN Mündungsfeuer, obwohl M5 die
+         Aufrufe macht. Georgs Frage »das ist zumindest nicht das Paket aus der Werkbank v13?« war
+         damit berechtigt: es lief nichts davon. Ton bleibt an der ersten Geste (Browser-Regel). */
+      setTimeout(() => this.fxBooten(), 700);
+      this.feldUndFigur(host).then(() => setTimeout(this.lauftest, 600)).catch((e) => { this.log('[maßstab] AUSFALL: ' + ((e && e.message) || e)); this.messen(); });
+    } catch (e) {
+      this.log('AUSFALL: ' + ((e && e.message) || e));
+      this.setState({ status: 'AUSFALL: ' + ((e && e.message) || e), statusCol: '#b8361f' });
+    }
+  }
+
+  /* Kalibrierszene: die Karte als Vorgabe des Wirts (Rechteck 9 × 6,44 u), damit C8 eine Zahl hat,
+     bevor M1 existiert. Die Tusche-Kontur hängt M1 in S1 über field.attach() ein. */
+  /* DER GELBE KREIS — und warum er weg muss, statt korrigiert zu werden.
+     Georg 06.09.: »der gelbe Kreis flackert und verschwindet immer wieder ohne Interaktion«.
+     Ursache, gemessen: der Ring lag EINMAL bei `floorY() + 0,03` — aber `floorY()` ist beweglich.
+     `arena-ring.v1.js` lässt das Blatt atmen (`float.amp` 0,035 u bei 5,2 s Periode), also wandert
+     der Boden um ±0,035 u AUF UND AB, während der Ring auf seiner Starthöhe stehen blieb: die halbe
+     Periode liegt er unter dem Papier und ist verdeckt, die andere darüber. Kein Shader-Problem,
+     kein Alpha-Problem — eine feste Höhe über einem bewegten Grund.
+     DAS BETRIFFT ALLES, WAS SPÄTER FLACH AUF DER KARTE LIEGT: AOE-Ringe, Trefferdecals, Schatten-
+     flecken, Zielmarker. Die Regel für S3 und später: solche Flächen werden KIND des Kartenknotens
+     (`ring.current`), nicht Kind der Szene — dann atmen sie mit. Wer sie in der Szene lässt, muss
+     ihre Höhe JEDES Bild aus `floorY()` nachziehen. Beides ist richtig; ein fester Wert ist es nie.
+     Der Ring selbst ist gestrichen (Georgs Entscheidung: »kann aus meiner Sicht aber weg«). */
+  szene(THREE, host, b) {
+    void THREE; void host; void b;
+  }
+
+  szeneAlt(THREE, host, b) {
+    /* Kein eigenes Papier mehr: das Blatt gehört dem Ring (arena-ring.v1.js), importiert statt
+       nachgebaut (Georg 06.09.: »wieso bauen wir etwas, das in v1 schon vorhanden ist«).
+       Hier bleibt nur die Start-Zone als Marke — sie ist Wirt-Sache, nicht Kartensache. */
+    const zone = new THREE.Mesh(new THREE.RingGeometry(0.34, 0.42, 48), new THREE.MeshBasicMaterial({ color: 0xe9c14a }));
+    zone.rotation.x = -Math.PI / 2; zone.position.y = host.field.floorY() + 0.03; zone.name = 'start-zone';
+    host.scene.add(zone);
+    this._zone = zone;
+  }
+
+  /** Ein Versprechen mit Frist — was länger braucht, hält die Bühne nicht auf. */
+  frist(p, ms, name) {
+    return Promise.race([p, new Promise((_, no) => setTimeout(() => no(new Error((name || 'Schritt') + ' braucht länger als ' + (ms / 1000) + ' s')), ms))]);
+  }
+
+  /* ── Feld (Ring aus v1) + FrizzleBob (Figur aus v1) ────────────────────────
+     Beide werden IMPORTIERT und im v2-Wirt angemeldet. Das ist Tor 2 für beide Module:
+     zweiter Wirt, dieselbe Datei. */
+  async feldUndFigur(host) {
+    /* AUFRÄUMEN VOR DEM BAUEN. Der Wirt wird nach einem Hot-Reload wiederaufgenommen (er lebt, sein
+       Canvas ist derselbe) — aber diese Methode baut Karte, Figur und Gegner NEU. Gemessen 06.09.:
+       die Szene trug danach zwei Sätze (`arena-ring`, `frizzlebob`, `mobs`, `start-zone` doppelt),
+       also doppelte Draw-Calls und zwei Figuren auf demselben Platz. Wer neu baut, räumt zuerst. */
+    for (const name of ['arena-ring', 'frizzlebob', 'mobs', 'start-zone', 'field-vorgabe']) {
+      let alt;
+      while ((alt = host.scene.getObjectByName(name))) {
+        alt.traverse((o) => { if (o.isMesh) { if (o.geometry) o.geometry.dispose(); const m = o.material; if (m) (Array.isArray(m) ? m : [m]).forEach((x) => x.dispose && x.dispose()); } });
+        (alt.parent || host.scene).remove(alt);
+      }
+    }
+    this.szene(this.THREE, host, host.field.bounds());   // die Start-Marke gehört dem Wirt, sie wird mit aufgeräumt und neu gesetzt
+    const [RingMod, FBMod, RigMod, MouthMod] = await Promise.all([
+      import('./combat-arena-v1/arena-ring.v1.js?v=s3-17'),
+      import('./combat-arena-v1/frizzlebob.v1.js'),
+      import('./studio-v3/pet-eye-rig.v5.js').catch(() => null),
+      import('./studio-v3/pet-mouth.v1.js').catch(() => null)
+    ]);
+    /* Fläche und Motiv sind ZWEI Props. Der alte `feld`-Prop trug beides in einem Wort und hat genau
+       das Missverständnis erzeugt, das Georg gemeldet hat. */
+    /* `Number(...)`: Enum-Props kommen als STRING aus dem Panel. Ohne Zwang verglich `s.breite === w`
+       '18' gegen 18 — kein FLÄCHE-Knopf leuchtete, und die Breite lag als Text im `userData` (jede
+       Rechnung `w + …` wäre stille Textverkettung). Gemessen vom Kritiker 06.09. */
+    /* EIN VORHANG, EIN AUFTRITT. Georg 06.09.: »der ganze Ladeprozess ist noch sehr buggy … erst
+       kommt die große Karte mit großem FrizzleBob, dann irgendwelche Sternchen, dann schrumpft das
+       auf die richtige Größe … teilweise 30 Sekunden und sehr unsauber«. Jeder dieser Schritte ist
+       für sich richtig (Papier sofort, Seite später, Figur nach der Messung skaliert, Gegner
+       einzeln geladen) — nur darf man beim Bauen nicht zusehen. Also: Bühne unsichtbar, bis alles
+       steht, und ein Vorhang mit Fortschritt davor. */
+    this.setState({ bereit: false, ladeText: 'Bühne wird gebaut …' });
+    const startB = Number(this.props.breite ?? 18), startM = this.props.motiv ?? 'karte';
+    this.setState({ breite: startB, motiv: startM });
+    this.setState({ ladeText: 'Karte …' });
+    const ring = this.ring = new RingMod.default();
+    ring.onFeld = () => { this.feldMelden(); this.setState({ feldMass: this.feldMass() }); };   // nachgemessen → Rand UND Beschriftung neu
+    await host.register(ring);
+    ring.mount(host.scene);
+    /* Der Grund von host.v1 (cremefarbene Scheibe 2,2 u + Schattenfänger) liegt bei y −0,004, das
+       Feld bei y 0 — beide fochten um dieselbe Tiefe: Georgs »weißer Kreis, der immer wieder
+       aufblinkt«. Wo ein Feld liegt, ist das Feld der Grund. */
+    host.ground.visible = false;
+    /* Zielgr\u00f6\u00dfe VOR `ready`: `mount()` baut sofort `newCard(0)` mit dem Vorgabewert, und ein zweiter
+       Bau danach ist nicht nur Arbeit umsonst \u2014 der erste Auftrag l\u00e4uft weiter und f\u00fcllte den
+       Artwork-Cache mit dem kleineren Schnitt (Kritiker 06.09.: 85 px/u im Startbild). Ein Bau, eine Gr\u00f6\u00dfe. */
+    ring.breite = startB; ring.motiv = startM; ring.modus = startM;
+    ring.group.visible = false;
+    await ring.ready;
+    this.feldMelden();
+    this.setState({ feldMass: this.feldMass() });
+
+    this.setState({ ladeText: 'FrizzleBob …' });
+    const fb = this.fb = new FBMod.default();
+    await host.register(fb, { eyeRigModule: RigMod, mouthModule: MouthMod });
+    fb.mount(host.scene);
+    fb.root.visible = false;
+    await fb.ready;
+    /* DIE GUN IST EIN ASSET, KEINE HALTUNG. Georg 06.09.: »es wird immer noch nicht character_gun
+       beim Schießen gezeigt« — richtig, ich hatte nur die `*_Gun`-CLIPS geschaltet. Die Figur hat
+       aber eine eigene Datei mit Gewehr (`SPEC.files.gun` → `Character_Gun.gltf`, lokal
+       `FrizzleBob_Yellow_Gun.gltf`), und `setVariant('gun')` lädt sie. FB ist ein Schütze, also
+       trägt er das Gewehr dauerhaft — ein Variantenwechsel je Schuss würde die Figur neu laden. */
+    /* MIT FRIST. Der Vorhang darf NIE an einem optionalen Asset hängen: hängt der Variantenwechsel
+       (Netz, Warteschlange, verdecktes Fenster), bliebe die Bühne für immer schwarz — gemessen 06.09.
+       im eigenen Prüffenster: »FrizzleBob …« ohne Ende. Sechs Sekunden, dann geht es ohne Gewehr
+       weiter, und das Log sagt warum. */
+    try { await this.frist(fb.setVariant('gun'), 6000, 'Gun-Variante'); this.log('[fb] Variante gun · Gewehr am Handknochen'); }
+    catch (e) { this.log('[fb] ohne Gewehr weiter: ' + ((e && e.message) || e)); }
+    /* M2 übernimmt den Körper. Der Wirt kennt weder Tempo noch Rand-Reaktion — die Naht ist
+       `field.contain()`: Rand gehört dem Feld, Reaktion dem Körper (CONTRACT §4). */
+    const PC = await import('./combat-arena-v2/player.v2.js?v=s4-7');
+    this.pc = new PC.default();
+    await host.register(this.pc);
+    /* M9 zuerst MESSEN, dann M2 damit füttern: die Clip-Rate war eine markierte Annahme
+       (`clipTempo` walk 1,9 · run 3,4). Jetzt kommt sie aus dem Standfuß-Drift. */
+    const LO = await import('./combat-arena-v2/locomotion.v2.js?v=s3-11');
+    this.loco = new LO.default();
+    await host.register(this.loco);
+    /* M3 (S2): Gegner. Sie hängen an derselben Naht wie der Spieler (`field.contain`), holen ihr
+       Tempo aus M9 und ihre Körper aus dem gemessenen Monster-Roster. */
+    const MB = await import('./combat-arena-v2/mobs.v2.js?v=s4-8');
+    this.mb = new MB.default();
+    await host.register(this.mb);
+    this.mb.mount(host.scene);
+    this.mb.gruppe.visible = false;
+    this.mb.setLoco(this.loco).setZiel(fb.root);   // die Wurzel hat `position`; der Controller trägt `pos`
+    /* Verlässt ein Körper das Spiel, ist der eingefrorene C12-Beweis überholt: sein Nenner nannte
+       vier Körper, während nur noch einer angemeldet war (Kritiker 06.09.). Beweis verwerfen —
+       C12 steht dann auf ○ bis zum nächsten Lauftest, statt eine falsche Zahl zu tragen. */
+    this.mb.onWeg = () => { this.locoBeweis = null; };
+    /* M5 + M6 (S3): Schuss, Kill-Kette, Würfel. Munition und Gegenfeuer sind importiert
+       (`kfb-weapon-dice`, `enemyShot` aus `kfb-combat-def`), gezählt wird hier. */
+    const GF = await import('./combat-arena-v2/gunfight.v2.js?v=s4-4');
+    this.gf = new GF.default();
+    await host.register(this.gf);
+    this.gf.mount(host.scene);
+    this.setState({ fbU: this.props.fb ?? 1.2 });
+    this.fbGroesse(this.props.fb ?? 1.2);
+    this.pc.bind(fb, this.state.fbU);
+    this.fbGroesse(this.state.fbU);   // zweiter Durchgang: jetzt gibt es den Controller, der den Fußversatz bekommt
+    this.vermessen();
+    /* Der Eye-Rig baut sein Gesicht nach `ready` fertig — beim ersten Versuch gibt es die Lidschalen
+       noch nicht. Also einmal jetzt und, wenn das leer läuft, einmal kurz danach. */
+    /* Bis zu fünf Anläufe: der Eye-Rig entsteht erst, wenn das Gesicht gebaut ist, und wann das ist,
+       gehört nicht in eine geratene Wartezeit (erster Versuch mit einem 900-ms-Timeout lief ins Leere
+       — gemessen 06.09.: Lider blieben hell). */
+    (() => { let n = 0; const tick = () => { if (this.lider() || ++n > 5) return; setTimeout(tick, 600); }; tick(); })();
+    this.setState({ ladeText: 'Gegner …' });
+    await this.mobsSetzen(3);
+    if (this.gf) this.gf.setKampf({ pc: this.pc, mb: this.mb, fb: this.fb, hoehe: this.state.fbU });
+    /* Vorhang auf: erst jetzt ist alles gemessen, skaliert und gesetzt. */
+    ring.group.visible = true; fb.root.visible = true; this.mb.gruppe.visible = true;
+    host.cam.step(1 / 60);
+    host.renderer.render(host.scene, host.camera);
+    this.setState({ bereit: true, ladeText: '' });
+    host.cam.folge(fb.root, 0.75);
+    this.kamera(this.state.kam);
+    this.log('[maßstab] Feld ' + ring.modus + ' · FB ' + (this.props.fb ?? 1.2) + ' u');
+  }
+
+  /* Das Feld dem Wirt als Spielfeld melden — der Rand gehört dem Feld (host.field), nicht dem Ring. */
+  feldMelden() {
+    const u = this.ring && this.ring.current && this.ring.current.userData;
+    if (!u) return;
+    const w = u.w / 2, d = u.d / 2;
+    this.host.field.attach([[-w, -d], [w, -d], [w, d], [-w, d]], this.ring.floorY(), 'arena-ring · ' + (u.modus || 'viertel'));
+    if (this._zone) this._zone.position.y = this.ring.floorY() + 0.03;
+  }
+
+  /* FB-Größe: die Figur wird GEMESSEN und dann skaliert — Kenneys Platformer-Hase bringt seine
+     eigene Höhe mit, und die ist nicht 1,05 u. */
+  fbGroesse(ziel) {
+    if (!this.fb || !this.fb.root) return;
+    const T = this.THREE;
+    this.fb.root.scale.setScalar(1);
+    this.fb.root.updateMatrixWorld(true);
+    /* NUR DER KÖRPER ZÄHLT, NICHT DAS ZUBEHÖR. Die Wurzel-Box enthält das Gewehr (und den
+       Face-Host): mit der Gun-Variante stand dort 4,29 statt 3,57, also skalierte ich FB auf
+       **0,98 u** statt 1,20 — 18 % zu klein, das Gewehr 6 cm unter der Karte, und alle abgeleiteten
+       Maße (Radius, Schutzzone, Kameradistanz, MOB-HÖHEN) rechneten weiter mit 1,2. Damit war Georgs
+       zweimal korrigierte Gegnergröße wieder verstellt (Gegner 0,97–1,07 gegen FB 0,98).
+       Die Regel steht wörtlich in `frizzlebob.v1.js`: »zum Boden zählt nur GESKINNTES; ein plain
+       Mesh ist Zubehör (Gewehr, Face-Host)«. Also messen wir genau das — und setzen die Figur so,
+       dass die Unterkante des KÖRPERS auf dem Boden liegt, nicht die der Gesamtbox. */
+    const box = new T.Box3();
+    let n = 0;
+    this.fb.root.traverse((o) => { if (o.isSkinnedMesh) { box.expandByObject(o); n++; } });
+    const ganz = new T.Box3().setFromObject(this.fb.root);
+    if (n === 0 || box.isEmpty()) box.copy(ganz);
+    const h = box.max.y - box.min.y || 1;
+    const s = ziel / h;
+    const boden = this.ring ? this.ring.floorY() : 0;
+    this.fb.root.scale.setScalar(s);
+    /* FUSSVERSATZ MESSEN UND WEITERGEBEN. Ein einmalig gesetztes `root.position.y` war toter Code:
+       `player.update()` schreibt die Wurzel in JEDEM Bild aus `pos` (Kritiker 06.09.: FB stand 4,9 cm
+       in der Karte, und weil das Blatt atmet, sank er ein und aus). Also: nach dem Skalieren die
+       geskinnte Box im Weltraum messen, den Versatz ausrechnen und dem Controller geben — der legt
+       ihn je Bild auf den lebenden Boden. */
+    this.fb.root.position.set(0, boden, 0);
+    this.fb.root.updateMatrixWorld(true);
+    const nach = new T.Box3();
+    this.fb.root.traverse((o) => { if (o.isSkinnedMesh) nach.expandByObject(o); });
+    const off = nach.isEmpty() ? 0 : +(boden - nach.min.y).toFixed(4);
+    this.fb.root.position.set(0, boden + off, 0);
+    if (this.pc && this.pc.setFussOffset) this.pc.setFussOffset(off);
+    this.fbHoehe = { roh: +h.toFixed(2), ganz: +(ganz.max.y - ganz.min.y).toFixed(2), ziel, faktor: +s.toFixed(3), meshes: n, fuss: off };
+    this.log('[fb] Körper ' + this.fbHoehe.roh + ' u (Wurzel mit Zubehör ' + this.fbHoehe.ganz + ') → ' + ziel + ' u (×' + this.fbHoehe.faktor + ') · ' + n + ' geskinnte Meshes');
+  }
+
+  /* Drei Kamera-Lagen, je aus der Feldbreite gerechnet — nicht geraten. */
+  kamera(modus) {
+    const host = this.host; if (!host) return;
+    const u = this.ring && this.ring.current ? this.ring.current.userData : { w: 9 };
+    /* Die Schulter-Lage hängt an FB, NICHT am Feld. Georg 06.09.: »bei 18 × 12,9 u wird mir immer
+       nur die page angezeigt« — die Distanz war feldskaliert (18 × 0,42 = 7,6 u), die Figur damit
+       ein Fleck auf viel Papier. Jetzt: Abstand aus der FB-Höhe (≈ 7 × Figurhöhe), also sieht die
+       Figur auf Karte und Seite gleich groß aus und der Vergleich zeigt nur den Untergrund. */
+    const fbH = (this.state && this.state.fbU) || 1.05;
+    const P = {
+      schulter: { dist: Math.max(3.2, fbH * 7), pitch: 37 / 57.3, hoehe: fbH * 0.7 },
+      halbtotale: { dist: u.w * 0.78, pitch: 45 / 57.3, hoehe: u.w * 0.06 },
+      draufsicht: { dist: u.w * 0.95, pitch: 58 / 57.3, hoehe: u.w * 0.08 }
+    }[modus] || {};
+    host.cam.setze({ dist: P.dist, pitch: P.pitch, hoehe: P.hoehe });
+    if (modus === 'schulter' && this.fb && this.fb.root) host.cam.folge(this.fb.root, P.hoehe);
+    else host.cam.folge(null);
+    if (modus !== 'schulter') host.cam.state.ziel.set(0, this.ring ? this.ring.floorY() + 0.4 : 0.4, 0);
+    this.setState({ kam: modus });
+  }
+
+  setBreite = (w) => this.baueFeld({ breite: w });
+  setMotiv = (m) => this.baueFeld({ motiv: m });
+
+  async baueFeld({ breite, motiv }) {
+    if (!this.ring) return;
+    const b = Number(breite != null ? breite : this.state.breite), m = motiv || this.state.motiv;
+    this.walkProbe = null; this.locoBeweis = null;   // andere Fläche, andere Aussage: C1 und C12 fallen auf ○ und werden neu gefahren
+    this.setState({ breite: b, motiv: m, status: 'Feld ' + b + ' u · ' + m + ' lädt …', statusCol: '#cbbf9e' });
+    await this.ring.setFeld({ breite: b, motiv: m });
+    this.feldMelden();
+    if (this.fb) this.fbGroesse(this.state.fbU);
+    if (this.pc) { this.pc.bind(this.fb, this.state.fbU); this.pc.reset(0, 0); }   // neues Feld, neuer Boden: der Körper muss neu aufsetzen
+    this.kamera(this.state.kam);
+    this.setState({ feldMass: this.feldMass(), status: 'Feld ' + b + ' u · ' + m, statusCol: '#e9c14a' });
+    this.lauftest();
+  }
+
+  setFb = (u) => {
+    this.setState({ fbU: u }, () => this.kamera(this.state.kam));
+    this.fbGroesse(u);
+    /* Radius und Clip-Tempo hängen an der Figurhöhe — also gilt der alte Lauftest nicht mehr.
+       Ein Messwert, der still von gestern ist, ist schlimmer als keiner. */
+    this.walkProbe = null; this.locoBeweis = null;
+    if (this.pc) { this.pc.bind(this.fb, u); this.vermessen(); this.lauftest(); } else this.messen();
+  };
+
+  /* ── Böden messen: eine Sonde, alle Zeilen, immer alle ───────────────────── */
+  messen() {
+    const host = this.host; if (!host || !this.F) return;
+    if (this._liderPflege) this._liderPflege();   // Lidfarbe gegen die Tint-Schicht halten (siehe `lider()`)
+    /* C12 misst den LAUFENDEN Zustand: Tempo und Rolle des Körpers gehören zum Messzeitpunkt,
+       nicht zum Anmeldezeitpunkt. Sonst steht im Boden das Tempo von vorhin. */
+    /* Die [loco]-Zeile zeigt den LEBENDEN Zustand; der Boden C12 liest den eingefrorenen Beweis
+       aus dem Lauftest. Zwei Fragen, zwei Zahlen — nicht eine, die beides sein soll. */
+    if (this.loco && this.pc && this.pc.aktiv) {
+      /* IMMER anmelden, auch im Stand. Die Schwelle »nur wenn er läuft« ließ die alte Registrierung
+         für immer stehen — die Zeile behauptete rutschende Füße an einer stillstehenden Figur
+         (Kritiker 06.09.). »Steht« ist ein Zustand und muss auch ankommen. */
+      this.loco.anmelden('FrizzleBob', { tempo: this.pc.tempo, rolle: this.pc._soll === 'run' ? 'run' : 'walk' });
+    }
+    const p = {
+      /* C2 liest die LEBENDE Probe: der Laufzeit-Abstand ist eine Zahl von jetzt, nicht vom Spawn. */
+      cal: this.cal, walk: this.walkProbe, spawn: (this.mb && this.mb.probe()) || this.spawnProbe,
+      kill: this.gf && this.gf.aktiv ? this.gf.probe() : null, loco: this.locoBeweis,
+      /* Ein verworfener Beweis ist nicht dasselbe wie ein fehlendes Modul — der Boden soll sagen,
+         WARUM er wartet: Clips nicht vermessen, oder Körper haben sich geändert. */
+      locoGrund: this.loco && this.loco.figurMass && !this.locoBeweis
+        ? 'Körper haben sich geändert (Kill oder neue Aufstellung) — Lauftest neu fahren' : null,
+      fx: this.fxProbe, save: this.saveProbe, lint: this.lintRes,
+      fehler: this.fehler, uptime: (performance.now() - this.t0) / 1000,
+      m: host.messung, bild: host.karteImBild(11), feldQuelle: host.field.quelle(),
+      figur: this.fb && this.fb.root ? host.figurImBild(this.fb.root) : null
+    };
+    const rows = this.F.bewerten(p);
+    const t = this.F.tor(rows, this.SLICE);
+    this.setState({
+      rows: rows.map((r) => Object.assign({}, r, { col: this.COL[r.zustand], meta: r.register + ' · fällig ' + r.slice + ' · ' + r.quelle })),
+      bilanz: this.F.zeile(rows), torText: t.text,
+      zeilen: [host.zeile(), this.pc ? this.pc.zeile() : '[player] lädt', this.gf ? this.gf.zeile() : '[gun] lädt', this.mb ? this.mb.zeile() : '[mobs] lädt', this.loco ? this.loco.zeile() : '[loco] lädt', this.ring ? this.ring.zeile() : '[ring] lädt', this.fbHoehe ? '[fb] ' + this.fbHoehe.ziel + ' u (Rohhöhe ' + this.fbHoehe.roh + ' ×' + this.fbHoehe.faktor + ') · ' + (this.fb && this.fb.current ? this.fb.current.name : '–') : '[fb] lädt', host.fx.zeile(), host.cam.zeile(), host.save.zeile()].concat(this._log || []).slice(0, 9)
+    });
+  }
+
+  /* ── Kalibrierung: Referenzkugel, Exposure-Suche, ΔE (CONTRACT B1 → Boden S0) ── */
+  kalibrieren = async () => {
+    const host = this.host; if (!host) return;
+    try {
+      const L = this._L || (this._L = await import('./studio-v12/light.v1.js'));
+      /* Feste Kalibrierpose, nicht die Spielkamera (Kritiker-Fund 06.09.: aus der Spielpose las die
+         Probe die Schattenseite der Kugel, ΔE 10,84 statt 4,4). B1 hängt jetzt an nichts, was C8 bewegt. */
+      const r = L.search({ THREE: this.THREE, renderer: host.renderer, scene: host.scene, camera: host.kalibrierPose(), at: new this.THREE.Vector3(0, 0.6, 0) });
+      this.cal = r.best;
+      this.log(L.zeile(r.best) + ' · ' + r.rows.length + ' Stufen');
+      this.setState({ status: r.best.pass ? 'kalibriert · ΔE ' + r.best.dE : 'Kalibrierung gefallen · ΔE ' + r.best.dE, statusCol: r.best.pass ? '#e9c14a' : '#b8361f' });
+    } catch (e) { this.log('[light] AUSFALL: ' + ((e && e.message) || e)); }
+    this.messen();
+  };
+
+  /* ── FX-Foundation booten und Boden C4 messen (EINBAU Schritt 6) ─────────── */
+  fxBooten = async () => {
+    const host = this.host; if (!host) return;
+    this.log('[fx] boote Foundation v13 …');
+    await host.fx.boot();
+    if (!host.fx.bereit) { this.fxProbe = { grund: host.fx.state }; this.log(host.fx.zeile()); return this.messen(); }
+    const V = this.THREE.Vector3;
+    const vor = host.fx.stats().live || 0;
+    let emittiert = 0;
+    for (let i = 0; i < 24; i++) {
+      const ok = host.fx.emit('burst', new V((i % 6) * 0.7 - 1.75, 0.45, Math.floor(i / 6) * 0.7 - 1.05), { size: 0.45, life: 0.5, color: 0xe9c14a });
+      if (ok) emittiert++;
+    }
+    await new Promise((r) => setTimeout(r, 80));
+    const mitte = host.fx.stats().live;
+    host.fx.aufraeumen();
+    await new Promise((r) => setTimeout(r, 180));
+    const nach = host.fx.stats().live;
+    this.fxProbe = { vor, emittiert, mitte, nach, wartems: 180, grund: null };
+    this.log('[fx] C4-Sonde · ' + emittiert + ' emittiert · lebend ' + mitte + ' → ' + nach);
+    this.messen();
+  };
+
+  tonAn = async () => { await this.host.fx.tonAn(); this.log(this.host.fx.zeile()); this.messen(); };
+
+  /* ── Selbsttest: Save-Roundtrip (C5) + Linter (C10) ─────────────────────── */
+  selbsttest = async () => {
+    const host = this.host; if (!host) return;
+    try {
+      const a = host.save.snapshot();
+      const text = JSON.stringify(a);
+      const b = host.save.load(text);
+      this.saveProbe = { diff: host.save.diff(a, b), felder: Object.keys(a).length, fehlend: host.save.fehlend() };
+      this.log('[save] Roundtrip · ' + this.saveProbe.felder + ' Felder · Diff ' + this.saveProbe.diff.length);
+    } catch (e) { this.saveProbe = { diff: ['AUSFALL: ' + ((e && e.message) || e)], felder: 0, fehlend: [] }; }
+    this.lintRes = await host.lint();
+    this.log(this.lintRes.zeile);
+    this.messen();
+  };
+
+  /* Lider zu hell (Georg 06.09.). Der Eye-Rig leitet die Lidfarbe aus der Grundfarbe der Figur ab
+     (`_lidColor`: Basis × 0,72) — bei FBs Kanon-Gelb #f2c93c bleibt das ein helles Gelb, und die
+     Lider verschwinden im Fell statt den Blick zu rahmen. Hier wird die FERTIGE Lidfarbe nachgedunkelt
+     (× 0,55), nicht die Grundfarbe geändert: der Körper soll seine Farbe behalten. */
+  /* AN DER QUELLE, NICHT AM ERGEBNIS. Erster Versuch war `material.color.multiplyScalar(0.55)` auf
+     die fertigen Lidschalen — und der Rig baut seine Materialien bei jeder Gesichtsänderung neu
+     (`build()`/`reskinLids()`), also war die Farbe nach kurzer Zeit wieder hell (gemessen 06.09.:
+     78620e nach dem Boot, trotz Nachdunkeln). Der Rig holt die Lidfarbe aus `lidSampler(u,v)` und
+     dämpft sie selbst mit ×0,72 — wer dort einen dunklen Ton hineingibt, gewinnt dauerhaft und
+     überlebt jeden Neubau. Der Körper behält seine Farbe; nur die Lider werden zur Fassung. */
+  lider(faktor) {
+    const f = faktor != null ? faktor : 0.42;
+    const rig = this.fb && this.fb.rig;
+    if (!rig) return null;
+    const T = this.THREE;
+    /* WICKELN, NICHT ERSETZEN. FrizzleBob setzt beim Gesichtsbau seinen EIGENEN `lidSampler` (er
+       liest die Körpertextur) — ein reines Überschreiben war nach dem nächsten Neubau wieder weg
+       (gemessen 06.09.: Lidfarbe zurück auf 866d11 trotz gesetztem Sampler). Also legen wir uns UM
+       den vorhandenen Sampler: er liefert weiter die Farbe der Stelle, wir dämpfen sie. Und weil der
+       Neubau danach noch einmal kommen kann, wird die Hülle mehrfach nachgezogen (`_liderWacht`). */
+    const basis = new T.Color(rig.baseColor != null ? rig.baseColor : 0xf2c93c);
+    const wickeln = () => {
+      const r = this.fb && this.fb.rig;
+      if (!r) return;
+      if (r.lidSampler && r.lidSampler.__gedaempft) return;
+      const alt = r.lidSampler;
+      const neu = (u, v) => {
+        let c = null;
+        if (alt) { try { c = alt(u, v); } catch (e) { c = null; } }
+        if (!c) c = basis.clone();
+        return c.clone ? c.clone().multiplyScalar(f) : new T.Color(c).multiplyScalar(f);
+      };
+      neu.__gedaempft = f;
+      r.lidSampler = neu;
+      if (r.reskinLids) r.reskinLids();
+    };
+    /* UND DIE FARBE ABSOLUT SETZEN. Der Sampler allein reichte nicht: FrizzleBob färbt nach dem
+       Gesichtsbau ALLE Materialien auf den Kanon-Ton ein (`_applyTint`, Ziel #f2c93c) — die Lider
+       kamen dadurch wieder hell zurück (gemessen 866d11, trotz gewickelten Samplers). Also wird der
+       Zielwert direkt auf die Lidschalen geschrieben, absolut statt multiplikativ (multiplikativ
+       stapelt sich bei jedem Nachziehen), und mehrfach nachgezogen, weil der Tint später noch kommt. */
+    const ziel = basis.clone().multiplyScalar(f);
+    const setzen = () => {
+      const r = this.fb && this.fb.rig;
+      if (!r || !r.eyes) return 0;
+      let n = 0;
+      for (const e of r.eyes) for (const teil of [e._up, e._lo]) {
+        if (!teil || !teil.material || !teil.material.color) continue;
+        if (!teil.material.color.equals(ziel)) { teil.material.color.copy(ziel); teil.material.needsUpdate = true; }
+        n++;
+      }
+      return n;
+    };
+    /* DAUERHAFT NACHZIEHEN, nicht acht Mal hoffen. Die Tint-Schicht von FrizzleBob färbt die
+       Lidmaterialien immer wieder auf den Kanon-Ton ein — gemessen 06.09.: nach acht Nachzügen stand
+       dort a48826, also war nach 3,2 s wieder jemand anders am Werk. Ein Zeitfenster hilft gegen so
+       etwas nicht; eine Pflege tut es. `messen()` läuft ohnehin zweimal je Sekunde und kostet nichts. */
+    this._liderPflege = setzen;
+    wickeln(); setzen();
+    const ist = rig.eyes && rig.eyes[0] && rig.eyes[0]._up ? rig.eyes[0]._up.material.color.getHexString() : '–';
+    this.log('[fb] Lidfarbe aus dem Sampler · Basis ' + basis.getHexString() + ' × ' + f + ' → ' + ist);
+    return rig.eyes ? rig.eyes.length * 2 : 1;
+  }
+
+  /* ── S2: Gegner setzen (Boden C2) ────────────────────────────────────────── */
+  mobsSetzen = async (n) => {
+    if (!this.mb) return;
+    this.setState({ status: 'Gegner laden …', statusCol: '#cbbf9e' });
+    this.mb.raeumen();
+    this.locoBeweis = null;   // andere Körper, anderer Nenner
+    const b = await this.mb.spawn(n || 3, this.state.fbU);
+    this.spawnProbe = this.mb.probe();
+    this.setState({ status: b.gesetzt + ' Gegner', statusCol: b.gesetzt === (n || 3) ? '#e9c14a' : '#b8361f' });
+    this.messen();
+    return b;
+  };
+
+  /* ── S1½: FB vermessen und M2 auf die gemessenen Werte stellen ──────────── */
+  vermessen() {
+    if (!this.loco || !this.fb) return;
+    const m = this.loco.messeFigur('FrizzleBob', this.fb, { skala: this.fb.root.scale.x, forwardZ: 1 });
+    if (m && this.pc) this.pc.setRef({ walk: m.clips.walk && m.clips.walk.tempo, run: m.clips.run && m.clips.run.tempo });
+    this.loco.anmelden('FrizzleBob', {
+      refWalk: (m && m.clips.walk && m.clips.walk.tempo) || null,
+      refRun: (m && m.clips.run && m.clips.run.tempo) || null,
+      tempo: this.pc ? this.pc.tempo : 0, rolle: 'walk', quelle: 'live gemessen (Standfuß-Drift)'
+    });
+    this.locoProbe = this.loco.probe();
+    this.messen();
+    return m;
+  }
+
+  /* ── Boden C1: 60 s geseedeter Lauf, ohne auf echte Zeit zu warten ───────── */
+  lauftest = () => {
+    if (!this.pc || !this.pc.aktiv) { this.log('[player] kein Körper — Lauftest nicht möglich'); return; }
+    this.walkProbe = this.pc.probe(60, 1 / 60);
+    /* Der Lauftest ist die einzige Stelle, an der der Körper sicher LÄUFT — also misst C12 hier
+       seinen Rutschfaktor mit, statt auf eine Taste zu warten (Mittel über 3601 Schritte). */
+    if (this.loco) {
+      this.loco.anmelden('FrizzleBob', { tempo: this.walkProbe.tempoMittel, rolle: 'run' });
+      /* BEWEIS EINFRIEREN. C12 fragt nicht »rutscht es jetzt« — im Stand rutscht nichts, und die
+         Zeile stand deshalb dauerhaft auf »alle stehen«. Der Boden gehört zum gemessenen LAUF,
+         genau wie C1: einmal gefahren, Zahl festgehalten, bei jeder Änderung neu gefahren. */
+      this.locoBeweis = this.loco.probe();
+    }
+    this.setState({ status: this.walkProbe.verstoesse === 0 ? 'C1 ✓ 0 Verstöße' : 'C1 ✗ ' + this.walkProbe.verstoesse, statusCol: this.walkProbe.verstoesse === 0 ? '#e9c14a' : '#b8361f' });
+    this.messen();
+  };
+
+  /* ── Beleg-PNG: ein Bild je Slice (MASTERPLAN §7.4) ─────────────────────── */
+  belegPng = () => {
+    const host = this.host; if (!host) return;
+    host.renderer.render(host.scene, host.camera);
+    const a = document.createElement('a');
+    a.href = host.renderer.domElement.toDataURL('image/png');
+    a.download = 'ca2-S0-seed' + host.SEED + '.png';
+    a.click();
+    this.log('[beleg] PNG ' + host.renderer.domElement.width + '×' + host.renderer.domElement.height);
+  };
+
+  panelToggle = () => { this._handbetrieb = true; this.setState((s) => ({ blatt: !s.blatt })); };
+
+  /* Der Regler soll das Blatt wirklich schalten: `blatt` war als Prop deklariert, aber nie gelesen —
+     Georg hat ihn ausgeschaltet und das Blatt stand weiter da. Solange niemand den Knopf gedrückt hat,
+     gilt der Regler; danach gilt die Hand. */
+  blattAuf() {
+    if (!this.state.werkzeug) return false;   // Werkzeug zu heißt: auch das Blatt ist zu
+    if (this._handbetrieb) return this.state.blatt;
+    return this.props.blatt ?? this.state.blatt;
+  }
+
+  /* Die Knopf-Beschriftung ist GEMESSEN, nicht getippt. Sie trug das alte Kartenverhältnis 1,397
+     (»18 × 12,9 u«), während das Feld längst auf dem Seitenwert 1,79 liegt — also stand eine falsche
+     Zahl genau dort, wo Georg am Bild entscheidet. Die aktive Reihe kommt aus dem Feld selbst, die
+     anderen aus demselben Verhältnis gerechnet. */
+  feldMass() {
+    const u = this.ring && this.ring.current && this.ring.current.userData;
+    const ar = u && u.d ? u.w / u.d : 745 / 416;
+    const mass = {};
+    for (const w of [9, 18, 36]) mass[w] = w + ' × ' + (w / ar).toFixed(1).replace('.', ',') + ' u';
+    return mass;
+  }
+
+  knopf(aktiv) {
+    return 'height:28px;padding:0 10px;border:1px solid ' + (aktiv ? '#e9c14a' : '#8a8578') + ';background:' + (aktiv ? '#e9c14a' : 'rgba(26,23,18,.6)')
+      + ';color:' + (aktiv ? '#1f1a14' : '#cbbf9e') + ';font-family:inherit;font-size:11.5px;font-weight:' + (aktiv ? '700' : '600') + ';cursor:pointer;white-space:nowrap;';
+  }
+
+  renderVals() {
+    const s = this.state;
+    return Object.assign(this.lagen(), {
+      canvasRef: this.canvasRef, rootRef: this.rootRef,
+      rows: s.rows, zeilen: s.zeilen, bilanz: s.bilanz, torText: s.torText,
+      /* Der Bilanzstreifen gehört zum Werkzeug, nicht zum Spiel: bei zugeklapptem Werkzeug bleibt nur
+         der Status im Kopf stehen — eine Zeile, kein Block. */
+      status: s.status, statusCol: s.statusCol, blatt: this.blattAuf(), streifen: s.werkzeug && !this.blattAuf(), seed: s.seed,
+      onKal: this.kalibrieren, onFx: this.fxBooten, onTon: this.tonAn,
+      onTest: this.selbsttest, onPng: this.belegPng, onPanel: this.panelToggle, onLauf: this.lauftest,
+      vorhang: !s.bereit, ladeText: s.ladeText,
+      werkzeug: s.werkzeug, werkzeugText: s.werkzeug ? 'Werkzeug zu' : 'Werkzeug',
+      werkzeugKnopf: 'height:24px;padding:0 9px;border:1px solid ' + (s.werkzeug ? '#e9c14a' : '#8a8578')
+        + ';background:' + (s.werkzeug ? '#e9c14a' : 'rgba(26,23,18,.55)') + ';color:' + (s.werkzeug ? '#1f1a14' : '#cbbf9e')
+        + ';font-family:inherit;font-size:11px;font-weight:700;cursor:pointer;white-space:nowrap;flex:0 0 auto;',
+      onWerkzeug: () => this.setState((x) => ({ werkzeug: !x.werkzeug, blatt: !x.werkzeug ? x.blatt : false })),
+      onMobs: () => this.mobsSetzen(3),
+      onSchuss: () => { if (!this.gf) return; this.killProbe = this.gf.schiessProbe(14); this.messen(); },
+      /* Der Maßstab-Umschalter: drei Reihen, damit Georg am Bild entscheidet statt an Zahlen. */
+      feldBtns: [9, 18, 36].map((w) => ({
+        label: (s.feldMass || {})[w] || w + ' u', on: () => this.setBreite(w), style: this.knopf(s.breite === w)
+      })),
+      motivBtns: [['karte', '1 Karte'], ['seite', '1 Seite · 4 Karten'], ['seiten', '4 Seiten · 16 Karten']].map(([id, label]) => ({
+        label, on: () => this.setMotiv(id), style: this.knopf(s.motiv === id)
+      })),
+      fbBtns: [1.05, 1.2, 1.4].map((u) => ({ label: u.toFixed(2).replace('.', ',') + ' u', on: () => this.setFb(u), style: this.knopf(Math.abs(s.fbU - u) < 0.01) })),
+      kamBtns: [['schulter', 'Schulter'], ['halbtotale', 'Halbtotale'], ['draufsicht', 'Draufsicht']].map(([id, label]) => ({
+        label, on: () => this.kamera(id), style: this.knopf(s.kam === id)
+      }))
+    });
+  }
+}
+</script>
+</body>
+</html>

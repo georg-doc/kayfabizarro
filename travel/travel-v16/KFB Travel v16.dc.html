@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>KFB Travel v16 — Landschaft · L1 Stufung</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
+<link href="https://fonts.googleapis.com/css2?family=Special+Elite&amp;family=Irish+Grover&amp;family=Baloo+2:wght@600;800&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="./themes/kfb-med.css">
+<!-- Die Bühnen-Regeln stehen in EINER Datei, die index.html genauso einbindet. Vorher lagen sie
+     inline in beiden Fassungen und waren eine Runde später uneinig (die Meta-Unterzeile nannte hier
+     noch L2d als letzten Slice, in index.html schon L3). Begründung im Kopf von kfb-shell.css. -->
+<link rel="stylesheet" href="./themes/kfb-shell.css">
+<script type="importmap">
+{ "imports": {
+  "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+  "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
+}}
+</script>
+<script>
+// Fehler-Horcher, BEVOR das Modul startet (aus v12 übernommen). Grund: ein `SCRIPT failed to load:`
+// ohne Namen verschluckt jeden künftigen echten Ladefehler — hier wird der Verursacher eingesammelt.
+window.__bootErrors = [];
+window.addEventListener('error', function (e) {
+  var t = e && e.target;
+  if (!t || t === window) return;   // JS-Ausnahmen laufen woanders, hier geht es um Ressourcen
+  var rec = {
+    tag: t.tagName || String(t),
+    src: t.src || t.href || '(leer)',
+    currentSrc: t.currentSrc || '',
+    type: t.type || '',
+    inHead: !!(t.parentNode && t.parentNode.nodeName === 'HEAD'),
+    when: Math.round(performance.now()) + ' ms',
+  };
+  window.__bootErrors.push(rec);
+  console.info('[boot-error]', rec.tag, rec.src, rec);
+}, true);
+</script>
+<script type="module" src="./terrain-v16/travel-poc.js"></script>
+</helmet>
+<template id="__bundler_thumbnail" data-bg-color="#9fc7e8">
+  <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><rect width="100" height="100" fill="#9fc7e8"></rect><rect x="18" y="20" width="30" height="18" rx="2" transform="rotate(-7 33 29)" fill="#efe6d0" stroke="#1f1a14" stroke-width="2"></rect><rect x="54" y="34" width="30" height="18" rx="2" transform="rotate(6 69 43)" fill="#efe6d0" stroke="#1f1a14" stroke-width="2"></rect><rect x="30" y="54" width="30" height="18" rx="2" transform="rotate(-3 45 63)" fill="#efe6d0" stroke="#1f1a14" stroke-width="2"></rect><rect x="0" y="82" width="100" height="18" fill="#6f8f5e"></rect></svg>
+</template>
+<div id="tv-stage">
+  <div id="tv-hud"></div>
+  <div id="tv-frame">
+    <div class="kfb-wordmark">Kayfa<b>Bizarro</b></div>
+    <!-- Leer: der Runner schreibt Titel und Unterzeile aus SHELL_META (travel-poc.js). Ein Text
+         an dieser Stelle müsste bei jedem Slice an zwei Orten gepflegt werden — genau das ist
+         einmal auseinandergelaufen. -->
+    <div id="tv-meta"></div>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic { renderVals() { return {}; } }
+</script>
+</body>
+</html>

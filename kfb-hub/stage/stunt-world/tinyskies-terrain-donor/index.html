@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>KFB · TinySkies / Travel Globe Terrain Donor</title>
+<style>
+html,body{margin:0;height:100%;overflow:hidden;background:#0d1220;color:#f5f2e8;font-family:Inter,system-ui,sans-serif}
+#view{position:fixed;inset:0}
+canvas{display:block;width:100%;height:100%}
+.top{position:fixed;top:18px;left:50%;transform:translateX(-50%);z-index:3;text-align:center;pointer-events:none}
+.kicker{font-size:11px;letter-spacing:.16em;text-transform:uppercase;font-weight:800;opacity:.78}
+h1{font-size:clamp(18px,2.5vw,30px);margin:5px 0 0;letter-spacing:-.03em}
+.labels{position:fixed;left:0;right:0;top:78px;display:grid;grid-template-columns:1fr 1fr;z-index:3;pointer-events:none}
+.label{text-align:center;font-weight:900;letter-spacing:.08em;font-size:12px;text-shadow:0 2px 12px #000}
+.label span{display:block;font-weight:500;letter-spacing:0;font-size:11px;opacity:.72;margin-top:3px}
+.bottom{position:fixed;left:50%;bottom:16px;transform:translateX(-50%);z-index:3;width:min(900px,calc(100% - 30px));text-align:center;pointer-events:none}
+#status{font-size:11px;font-weight:900;letter-spacing:.1em;text-transform:uppercase}
+#metrics{font-size:11px;opacity:.78;margin-top:4px}
+.hint{font-size:10px;opacity:.58;margin-top:5px}
+.split{position:fixed;top:110px;bottom:72px;left:50%;width:1px;background:rgba(255,255,255,.2);z-index:2;pointer-events:none}
+@media(max-width:720px){.labels{top:90px}.top{top:12px}.bottom{bottom:10px}.split{top:125px}}
+</style>
+<script type="importmap">
+{"imports":{
+  "three":"https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+  "three/addons/":"https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
+}}
+</script>
+</head>
+<body>
+<div id="view"></div>
+<div class="top">
+  <div class="kicker">Source-isolated donor proof · no Race track</div>
+  <h1>Current Travel Globe / TinySkies terrain</h1>
+</div>
+<div class="labels">
+  <div class="label">BASE GLOBE<span>current Travel surface, no authored zone</span></div>
+  <div class="label">EXISTING TRAVEL TERRAIN ZONE<span>same surface truth + current setTerrainZones()</span></div>
+</div>
+<div class="split"></div>
+<div class="bottom">
+  <div id="status">Loading current Travel donor…</div>
+  <div id="metrics"></div>
+  <div class="hint">Drag to rotate · wheel to zoom · this is the donor shown before Track integration.</div>
+</div>
+<script type="module" src="./terrain-donor.mjs"></script>
+</body>
+</html>

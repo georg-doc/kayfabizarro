@@ -1,0 +1,25 @@
+{
+  "schema": "kfb.stage-mirror/0.1",
+  "product": "KFB Race HUD 2D Interim v1",
+  "status": "PUBLIC_STAGE_CANDIDATE_PROOF_PENDING",
+  "implementationSSOT": "georg-doc/KFB-Stunt-Car-Race",
+  "racePR": 26,
+  "testedRuntimeHead": "bc5d87e605957ab8eaa83426d9ad67c5a9e0ff2c",
+  "raceCI": {
+    "run": 35466539022,
+    "static": "12/12 PASS",
+    "browser": "9/9 PASS",
+    "artifact": 10591387314,
+    "digest": "sha256:749970c8d4bab4e4d75fe39919b4d4e06b79d087f4ec417f14855acb6a9936ef"
+  },
+  "runtimeBlobs": {
+    "index.html": "71e041b4d2ec9c737db464d924ea78f59571abb4",
+    "hud-2d.css": "e641ffec357bc7a156fe11865e02a8c5a46ba336",
+    "hud-2d.mjs": "83948b879926ea2bc3e21e4fa84f3022980054ba"
+  },
+  "stageUrl": "https://kayfabizarro.pages.dev/kfb-hub/stage/stunt-world/hud-2d-v1/",
+  "host": "https://kayfabizarro.pages.dev/kfb-hub/stunt-race/track-lab-v08/",
+  "conceptDecision": "GEORG_ACCEPTED_CLEAN_RACER_HUD_DIRECTION",
+  "threeDIndustrialLane": "PARKED_PR_25",
+  "humanAcceptance": "STAGE_FREEPLAY_PENDING"
+}

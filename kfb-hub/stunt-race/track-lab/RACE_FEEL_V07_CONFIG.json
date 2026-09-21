@@ -1,0 +1,28 @@
+{
+  "schema": "kfb.stunt-race.feel-lab/0.1",
+  "revision": "2026-09-17.v07-feel.1",
+  "status": "RACE_LOCAL_FEEL_CANDIDATE",
+  "owner": "georg-doc/KFB-Stunt-Car-Race",
+  "feel": {
+    "driftMinSpeed": 8,
+    "driftSteerScale": 1.12,
+    "driftDampingScale": 0.42,
+    "driftKickScale": 0.015,
+    "driftYawGain": 1.05,
+    "driftRollGain": 0.018,
+    "accelPitchGain": 0.0075,
+    "lateralRollGain": 0.0028,
+    "railHeaveImpulse": 0.065,
+    "surfaceSpring": 34,
+    "surfaceDamping": 8.2,
+    "hoverBase": 0.055,
+    "hoverBob": 0.008,
+    "forceArrowScale": 0.18
+  },
+  "controls": {
+    "drift": "ShiftLeft|ShiftRight",
+    "physicsVectors": "KeyP",
+    "labPanel": "KeyH"
+  },
+  "notes": "Deployment mirror of Race-owned v0.7 KISS feel layer. Source authority remains georg-doc/KFB-Stunt-Car-Race. Shared A0 recipe is unchanged."
+}

@@ -1,0 +1,28 @@
+{
+  "$schema": "kfb-constructs/0.1",
+  "version": "0.1.0",
+  "updated": "2026-07-25",
+  "canonical": "Projekt Hex Assets Worldbuilding /constructs.json",
+  "note": "Voxel-Konstrukt-Blueprints. Daten, kein Code. Gebacken im selben Instancing wie das Terrain (gleicher Shader, Palette, Fog). Noch leer — Format-Entwurf steht, erste Eintraege in Slice 2 (King Tower).",
+  "cellSize": 1,
+  "colorRoles": [
+    "base",
+    "mid",
+    "glow",
+    "ink",
+    "panel"
+  ],
+  "textureRoles": [
+    "edge",
+    "brick"
+  ],
+  "blueprintFormat": {
+    "id": "string",
+    "label": "string",
+    "anchorRole": "anchor|satellite",
+    "grid": "[{x,y,z, box:[w,h,d], colorRole, texture, variationSeed}]",
+    "navigation": "{ walkable:[{x,z,w,d}], approach:[{from:'n|e|s|w', clearance:number}], circumnavigable:boolean }",
+    "footprintXZ": "[w,d]"
+  },
+  "blueprints": []
+}

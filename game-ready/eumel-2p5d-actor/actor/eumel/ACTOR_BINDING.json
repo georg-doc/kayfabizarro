@@ -1,0 +1,66 @@
+{
+  "schema": "kfb.game-ready-2p5d-actor-binding/0.1-candidate",
+  "actorId": "doccheck-eumel-2p5d",
+  "displayName": "DocCheck Eumel",
+  "status": "CANDIDATE",
+  "source": {
+    "illustratorBlobSha": "436143b019f0034c6d2d9183154cf613ff8c701e",
+    "componentSvg": "/tools/2D Animation Studio/labs/eumel-rig-lab/source-assets/EUMEL_SOURCE_COMPONENTS.svg",
+    "componentSvgBlobSha": "457bca8a76bd156ba627763098f0dcfc9a54edc1",
+    "neutralBind": "/tools/2D Animation Studio/labs/eumel-rig-lab/data/neutral_bind_pose.json",
+    "neutralBindBlobSha": "3f080dc26b74e3f2b9ae6283aff18a26347a0782"
+  },
+  "presentation": {
+    "rendererAdapter": "/tools/2D Animation Studio/proofs/eumel-three2p5d-v1/eumel-three2p5d.v0.1.js",
+    "implementationMerge": "52702836bf0740414e53abb5a3867af5981c195a",
+    "defaultFacing": "upright-yaw-billboard",
+    "allowedFacing": [
+      "upright-yaw-billboard",
+      "world-facing-upright"
+    ],
+    "worldUp": "+Y",
+    "localStates": [
+      "neutral",
+      "idle",
+      "look",
+      "walk",
+      "hop"
+    ],
+    "rootMotionPolicy": "PRESENTATION_ONLY_CONSUMER_OWNS_WORLD_TRANSLATION_AND_HEADING"
+  },
+  "face": {
+    "eyeProtocol": "kfb.eye-rig.protocol/1",
+    "eyeFrame": true,
+    "currentVisualBoundary": "2D/source-derived eye system; lid/blink fallback remains provisional until richer DocCheck modifiers are source-resolved."
+  },
+  "lifecycle": {
+    "mount": "mountEumelThree2p5D(...)",
+    "update": "handle.update(dt,ctx)",
+    "state": "handle.setState(state)",
+    "facing": "handle.setFacingPolicy(mode)",
+    "dispose": "handle.dispose()"
+  },
+  "consumerBoundary": {
+    "actorOwns": [
+      "local presentation",
+      "cutout bones",
+      "eye/face",
+      "secondary motion"
+    ],
+    "consumerOwns": [
+      "world position",
+      "heading",
+      "support/collision",
+      "navigation",
+      "camera",
+      "interaction",
+      "game state",
+      "persistence"
+    ]
+  },
+  "candidateConsumers": {
+    "doccheckProjectIsland": "georg-doc/doccheck/doc-animation/consumers/EUMEL_PROJECT_ISLAND_HANDOFF.md",
+    "residentAtlas": "/tools/resident_atlas/modules/candidates/eumel-doccheck-project-island.module.json",
+    "kfbGame": "NAMED_CONSUMER_REQUIRED_AFTER_RESIDENT_PROOF"
+  }
+}

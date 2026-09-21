@@ -1,0 +1,204 @@
+{
+  "schema": "kfb.vehicle-receiver-adapter.v0",
+  "adapterId": "car-sedan__fr-s04-02",
+  "status": "IMPLEMENTATION_READY_CONSUMER_RUN_NOT_EXECUTED",
+  "packageId": "pilot-01-lorekeeper-sedan",
+  "vehicleId": "car-sedan",
+  "receiver": {
+    "id": "fr-s04-02",
+    "publicPath": "/kfb-hub/free-roam/versions/fr-s04-02/",
+    "implementationOwner": "georg-doc/KFB-Stunt-Car-Race",
+    "testedSourceCommit": "a7a48a8c6e1589a18134aa619e2be22d79124c32",
+    "publicRun": 35367513758,
+    "publicChecksPassed": 62,
+    "currentFixtureVehicle": "kart-oobi",
+    "sedanMounted": false
+  },
+  "donorHardcodedGeometry": {
+    "chassisHalfExtents": [
+      0.75,
+      0.26,
+      1.3
+    ],
+    "chassisFullSize": [
+      1.5,
+      0.52,
+      2.6
+    ],
+    "wheelConnections": [
+      [
+        -0.85,
+        0,
+        1
+      ],
+      [
+        0.85,
+        0,
+        1
+      ],
+      [
+        -0.85,
+        0,
+        -1
+      ],
+      [
+        0.85,
+        0,
+        -1
+      ]
+    ],
+    "wheelRadius": 0.42,
+    "suspensionRestLength": 0.4,
+    "visualLength": 2.8,
+    "forwardAxis": 2,
+    "upAxis": 1,
+    "note": "Current FR-S04-02 kart fixture facts, not values to copy blindly to Sedan."
+  },
+  "sedanBaseline": {
+    "scalePolicy": "BOX1_BROAD_REGRESSION_BASELINE",
+    "scale": 4.370536190171623,
+    "visualDimensions": [
+      1.8312546636819098,
+      1.6118537469352945,
+      4.1
+    ],
+    "axes": {
+      "left": "+X",
+      "up": "+Y",
+      "forward": "+Z"
+    },
+    "bodyProxy": {
+      "center": [
+        0.000021524164242323063,
+        0.6068955303547339,
+        -0.01441604508327886
+      ],
+      "halfExtents": [
+        0.9155418533605878,
+        0.7380116212699677,
+        2.0499409528546666
+      ],
+      "fullSize": [
+        1.8310837067211756,
+        1.4760232425399353,
+        4.099881905709333
+      ],
+      "source": "COLLIDER_PROXY_SPEC.json",
+      "runtimeRepresentation": "Rapier cuboid may consume numeric halfExtents directly; GLB proxy remains separate Game Development Studio capability proof."
+    },
+    "wheelGeometry": {
+      "track": 1.538433940689417,
+      "wheelbase": 2.192187088154206,
+      "radius": 0.31598976654940836,
+      "width": 0.26747681483850333,
+      "source": "WHEEL_SOCKET_REPORT.json"
+    },
+    "wheels": [
+      {
+        "role": "front-left",
+        "node": "car_sedan_wheel_front_left",
+        "connection": [
+          0.7692086342084815,
+          0.04920104828080113,
+          1.0726135138725243
+        ],
+        "steer": true,
+        "spinAxis": "+X"
+      },
+      {
+        "role": "front-right",
+        "node": "car_sedan_wheel_front_right",
+        "connection": [
+          -0.7692253064809355,
+          0.04920104828080113,
+          1.0726135138725243
+        ],
+        "steer": true,
+        "spinAxis": "+X"
+      },
+      {
+        "role": "rear-left",
+        "node": "car_sedan_wheel_rear_left",
+        "connection": [
+          0.7692086342084815,
+          0.04920104828080113,
+          -1.1195735742816815
+        ],
+        "steer": false,
+        "spinAxis": "+X"
+      },
+      {
+        "role": "rear-right",
+        "node": "car_sedan_wheel_rear_right",
+        "connection": [
+          -0.7692253064809355,
+          0.04920104828080113,
+          -1.1195735742816815
+        ],
+        "steer": false,
+        "spinAxis": "+X"
+      }
+    ]
+  },
+  "visualAdapter": {
+    "replaceSyntheticWheelMeshes": true,
+    "useSourceWheelNodes": true,
+    "frontWheelPolicy": "wrap each front source wheel in a pivot at its authored centre; yaw pivot from authoritative current.steer; spin child around local X",
+    "rearWheelPolicy": "spin source node around local X",
+    "signedSpinPolicy": "advance from signed forward distance / source-derived runtime wheel radius so reverse spins backwards",
+    "bodyPosePolicy": "physical root pose remains receiver-owned; visual body follows that root only",
+    "deformerPolicy": "CAR_CHILL_LIGHT reads authoritative physics facts after base geometry binding; it never writes physical pose"
+  },
+  "physicsAdapter": {
+    "representation": "NUMERIC_PRIMITIVE_FIRST",
+    "chassis": "replace donor .75/.26/1.3 hardcode with package proxy halfExtents + centre offset; do not require a GLB collider for the first receiver probe",
+    "wheelConnections": "replace synthetic donor array with package wheel connection points",
+    "wheelRadius": "replace 0.42 with package runtime wheel radius",
+    "suspensionDirection": [
+      0,
+      -1,
+      0
+    ],
+    "axleDirection": [
+      -1,
+      0,
+      0
+    ],
+    "preserveInitially": [
+      "FR-S04-02 drive-intent semantics",
+      "engine/brake/grip/drift/boost/hop logic as comparison baseline",
+      "single Rapier physical pose owner"
+    ],
+    "mustRecomputeOrRetest": [
+      "mass / centre-of-mass / inertia; do not reuse kart inertia as a Sedan fact",
+      "suspension rest length and travel against Sedan wheel/body geometry",
+      "spawn/recovery clearance shape",
+      "camera chase/orbit clearances for 4.1 m visual length",
+      "stuck/recovery margins",
+      "handling thresholds affected by changed wheelbase/track/radius"
+    ]
+  },
+  "alternativeDiagnosticScale": {
+    "id": "FIT_DONOR_VISUAL_LENGTH",
+    "purpose": "diagnostic only if owner wants an isolated skin-size comparison before full geometry adaptation",
+    "targetLength": 2.8,
+    "status": "NOT_PACKAGE_BASELINE_DO_NOT_SILENTLY_USE"
+  },
+  "gates": [
+    "source/model loads at pinned revision",
+    "four source wheel nodes bind and animate",
+    "numeric body proxy is the only vehicle chassis collider",
+    "four suspension contacts use package geometry",
+    "forward/reverse/steering still function",
+    "drift/re-grip/boost/hop/landing still emit authoritative facts",
+    "no second pose writer",
+    "FR-S04-02 regression subset rerun with Sedan identity",
+    "human scale/handling review remains separate"
+  ],
+  "open": [
+    "mass/COM/inertia policy requires Race owner decision and test",
+    "suspension rest/travel requires owner test",
+    "seat anchor remains unavailable",
+    "binary chassis-proxy GLB still blocked in current Game Development Studio environment"
+  ]
+}

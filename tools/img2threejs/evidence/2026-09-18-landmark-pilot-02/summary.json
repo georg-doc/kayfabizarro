@@ -1,0 +1,39 @@
+{
+  "schema":"kfb.landmark-pilot-02.qa/0.1",
+  "evidenceClass":"NUMERICAL_AND_BINARY_EXPORT",
+  "browserRender":"NOT_VERIFIED",
+  "humanAcceptance":"PENDING",
+  "consumerIntegration":"NOT_RUN",
+  "passed":176,
+  "total":176,
+  "stats":{
+    "eiffel":{"triangles":6060,"parts":505,"materialMeshes":6,"bounds":{"min":[-62.5,0,-62.5],"max":[62.5,330,62.5],"size":[125,330,125]},"glbBytes":441220},
+    "giza":{"triangles":342,"parts":30,"materialMeshes":4,"bounds":{"min":[-284.25,0,-384.25],"max":[340.15,146.5,405.15],"size":[624.4,146.5,789.4]},"glbBytes":28136},
+    "stonehenge":{"triangles":1596,"parts":57,"materialMeshes":4,"bounds":{"min":[-15.176082604433255,0,-15.090718163454628],"max":[14.664851941845274,6.55,14.712789079535098],"size":[29.84093454627853,6.55,29.803507242989724]},"glbBytes":118548},
+    "pentagon":{"triangles":11384,"parts":952,"materialMeshes":4,"bounds":{"min":[-227.62384765683026,0,-239.2796273302076],"max":[227.6238476568303,23.5,195.28165982619993],"size":[455.24769531366053,23.5,434.5612871564075]},"glbBytes":823292},
+    "spasskaya":{"triangles":3496,"parts":264,"materialMeshes":5,"bounds":{"min":[-9.440000000000001,0,-9.44],"max":[9.44,71,9.44],"size":[18.880000000000003,71,18.88]},"glbBytes":255972},
+    "kremlin-wall":{"triangles":5008,"parts":390,"materialMeshes":6,"bounds":{"min":[-58.1,0,-9.44],"max":[58.1,71,9.44],"size":[116.2,71,18.88]},"glbBytes":365520}
+  },
+  "sha256":{
+    "builder.mjs":"3649d668257b03b444077ec170c3b5c895e7531af59b9ffe7af4e320b77c39f5",
+    "geometry.mjs":"8d17b0345bd28dc7a034d80003c56d035574c0335d0648d2e04c974c66e7b8ea",
+    "presentation.mjs":"ecc79555d156f224db9415e2e10ad5f757eb113f7386bb6fd93927c86a2fc934",
+    "viewer.mjs":"b8bbfda18f20f642b3ac30c314ce67d483cf070a82158bd0d3bb773c4eb577db",
+    "index.html":"b26f829b7be8e655bd4a68147d8df9bcf494af4fd0d3b4383cb721b98356f7c4"
+  },
+  "checksManifestSha256":"297752f9fa3f899d08e657ddaef389feadab9afe25235dca5a01e53d8a0936b7",
+  "independentGLBReimport":{
+    "test":"trimesh binary re-import, not browser/consumer",
+    "results":[
+      {"id":"pentagon","triangles":11384,"matches":true,"boundsMaxErrorM":0.000007324799042862651,"meshes":4},
+      {"id":"spasskaya","triangles":3496,"matches":true,"boundsMaxErrorM":0.0000004196167004977269,"meshes":5},
+      {"id":"kremlin-wall","triangles":5008,"matches":true,"boundsMaxErrorM":0.0000015258789076710855,"meshes":6}
+    ]
+  },
+  "browserProbe":{
+    "kind":"Chromium WebGL probe",
+    "url":"http://127.0.0.1:8774/tools/img2threejs/landmarks/pilot-02/",
+    "status":"BLOCKED_OR_FAILED",
+    "error":"Page.goto: net::ERR_BLOCKED_BY_ADMINISTRATOR before page entry. No new WebGL frame or interaction pass."
+  }
+}

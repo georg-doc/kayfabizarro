@@ -1,0 +1,50 @@
+{
+  "schema": "kfb.toolbox-home.source/2",
+  "date": "2026-09-21",
+  "owner": "KFB ToolBox / Hub integration",
+  "sourceBranch": "promote/hub-ui-v2-accepted-2026-09-21",
+  "implementationHead": "7b23009f1f863d1793421de72862b90e42f650a8",
+  "baseMain": "e95f7291cae15f5f0d5f441a5ddd6fecc4e0243c",
+  "designDonor": {
+    "pr": 141,
+    "branch": "work/kfb-hub-paper-dark-previews-2026-09-20",
+    "publicStage": "https://kayfabizarro.pages.dev/kfb-hub/stage/hub-ui-v2/",
+    "humanDecision": "ACCEPTED_BY_GEORG_2026-09-21"
+  },
+  "stageRoute": "https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/",
+  "status": "PUBLICATION_BRANCH_WRITTEN_BROWSER_VERIFY_PENDING",
+  "routeAudit": "ROUTE_AUDIT.json",
+  "retainedOwners": [
+    "Asset Registry/Librarian = asset identity",
+    "World Atlas = environment/dungeon authoring",
+    "Resident hosts = resident scene/runtime ownership",
+    "EyeRig/Motion/Combat/Race remain their existing owners",
+    "ToolBox Home = router only"
+  ],
+  "mainMergeHead": "dfaafac070747f9543b5eb5a635e2aaa74e57b83",
+  "publicationBranch": "cloudflare-live",
+  "publicationHead": "c2185ed4a59bbae0c3610cb35155af1ccb542c00",
+  "publicVerification": {
+    "status": "PENDING_TOOL_ACCESS_BLOCKED",
+    "attempts": [
+      "web viewer: hub URL inaccessible",
+      "web viewer: toolbox URL cache miss",
+      "direct urllib fetch: DNS resolution unavailable"
+    ],
+    "rule": "Do not claim PUBLIC_VERIFIED until the exact pages.dev routes show the v2 markers."
+  },
+  "statusRefresh": {
+    "branch": "hub/toolbox-v2-status-refresh-2026-09-21",
+    "implementationHead": "ff3b71a386f370da80b2a19cfc242ec9c0a7b00a",
+    "checks": "18/18 PASS",
+    "auditedPublicationHead": "120159b1d7708b5bf580af63da4c503a6821a286",
+    "changes": [
+      "remove stale Hub UI v2 review gate after human acceptance",
+      "replace stale 15-card ToolBox references with current 17-card v2 route matrix",
+      "add ToolBox to Hub fallback and Stage router",
+      "preserve prominent Hub header ToolBox link",
+      "refresh ROUTE_AUDIT against current cloudflare-live tree"
+    ]
+  },
+  "publicationFilesReadback": "PASS · kfb-hub/index.html + kfb-hub/stage/index.html + ROUTE_AUDIT.json match main blobs"
+}

@@ -1,0 +1,16 @@
+{
+  "schema": "kfb.asset-registry.config.v1",
+  "sourceRepo": "georg-doc/kayfabizarro",
+  "roots": [
+    "media/2D_Assets",
+    "media/3D_Assets"
+  ],
+  "excludePrefixes": [
+    "media/3D_Assets/CATALOG/"
+  ],
+  "packOverrides": "tools/asset_registry/overrides/packs.json",
+  "dependencyOverrides": "tools/asset_registry/overrides/dependencies.json",
+  "deckRegistry": "media/kfb/kfb-index.json",
+  "deckRoot": "media/kfb",
+  "output": "registry/assets/v1"
+}

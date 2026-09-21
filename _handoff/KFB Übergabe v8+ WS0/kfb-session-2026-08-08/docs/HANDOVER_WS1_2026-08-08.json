@@ -1,0 +1,465 @@
+{
+  "$schema": "kfb.handover/0.2",
+  "version": "0.2.0",
+  "updated": "2026-08-08",
+  "canonical": "docs/overworld-v8/HANDOVER_WS1_2026-08-08.json",
+  "workspace": {
+    "from": "WS0 (Design-Chat)",
+    "to": "WS1 (Asset Lab / Coworker)"
+  },
+  "session": {
+    "date": "2026-08-08",
+    "scope": "v8 Re-Home, Terrain-Floor-Art, Sternkarte, Boss-/Mob-Zuordnung, Übergabe",
+    "base": "KFB Overworld v8.dc.html"
+  },
+  "deliverables": [
+    {
+      "path": "KFB Boden-Konzept.dc.html",
+      "status": "AKTIV",
+      "kind": "generator",
+      "what": "Prozeduraler Cartoon-Boden. Neun schaltbare Ebenen, sechs Biome, Bandbauart.",
+      "layers": [
+        "zuege",
+        "schwamm",
+        "trocken",
+        "tusche",
+        "marken",
+        "papier",
+        "dreck",
+        "wabern",
+        "feld"
+      ],
+      "perf": {
+        "vollbildNeuMs": 264,
+        "groessteBlockadeMs": 254,
+        "vorherMs": 5146
+      }
+    },
+    {
+      "path": "KFB Boden-Analyse und Briefing.dc.html",
+      "status": "AKTIV",
+      "kind": "doc+poc",
+      "what": "Fehlerkette (9 Anläufe), Feldbänder-Prüfstand, lösungsoffenes Briefing für externe Modelle."
+    },
+    {
+      "path": "KFB Übergabe WS1.dc.html",
+      "status": "AKTIV",
+      "kind": "doc",
+      "what": "Menschenlesbares Übergabedokument. Diese JSON ist die maschinenlesbare Fassung."
+    },
+    {
+      "path": "KFB Mob Übersicht.dc.html",
+      "status": "AKTIV",
+      "kind": "katalog",
+      "what": "Einheitenkatalog. Bosszuordnung SSOT, Monk/Lancer ergänzt, Troll-Prüfhinweis."
+    },
+    {
+      "path": "KFB Boden-Werkstatt.dc.html",
+      "status": "SUPERSEDED",
+      "kind": "generator",
+      "supersededBy": "KFB Boden-Konzept.dc.html",
+      "what": "Vorläufer mit Oval-/Gitter-Bauart. Nur noch als Beleg der Fehlerkette."
+    }
+  ],
+  "terrain": {
+    "bauart": "band",
+    "prinzip": "Detail auf allen Groessenstufen aus einer Regel. Kein Grundelement, kein charakteristischer Kruemmungsradius.",
+    "flaeche": "Wertefeld ueber Weltkoordinaten, quantisiert auf flache Stufen (Feldbaender-Overlay).",
+    "kontur": "Randabstand aus Summe von fuenf Wellen ueber der Bogenlaenge. Wellenlaenge in BANDBREITEN, nicht in Objektlaengen.",
+    "licht": {
+      "richtung": "oben links",
+      "tusche": "unten rechts",
+      "saum": "oben links"
+    },
+    "kosten": {
+      "eimerMs": 254,
+      "zellePx": 460,
+      "backaufloesung": 0.5,
+      "backen": "asynchron, ein Eimer je Einzelbild, nie im Zeichenpfad"
+    },
+    "fehlerkette": [
+      {
+        "nr": 1,
+        "bauart": "Ovale mit Verlaufsfuellung",
+        "befund": "Tarnmuster"
+      },
+      {
+        "nr": 2,
+        "bauart": "Ovale mit Wertleiter",
+        "befund": "Pillen auf Hintergrund"
+      },
+      {
+        "nr": 3,
+        "bauart": "Scharen gewellter Trennlinien",
+        "befund": "sichtbares Gitter"
+      },
+      {
+        "nr": 4,
+        "bauart": "Zuege aus Huellkurve",
+        "befund": "Avocados, Symmetrie aus einer Funktion"
+      },
+      {
+        "nr": 5,
+        "bauart": "Zuege aus parallelen Borsten",
+        "befund": "Kapseln"
+      },
+      {
+        "nr": 6,
+        "bauart": "Anwuchs",
+        "befund": "lesbare Kreise, konstanter Kruemmungsradius"
+      },
+      {
+        "nr": 7,
+        "bauart": "Anwuchs in drei Generationen",
+        "befund": "drei erkennbare Stufen, kein Fraktal"
+      },
+      {
+        "nr": 8,
+        "bauart": "Rueckgrat aus Scheiben entlang der Bahn",
+        "befund": "Ausdehnung ok, Kontur bleibt Scheibenvereinigung: Rechtecke"
+      },
+      {
+        "nr": 9,
+        "bauart": "Band",
+        "befund": "TRAEGT"
+      }
+    ],
+    "antiPattern": [
+      "kein wiedererkennbares Grundelement (Test gilt fuer jede Ebene ALLEIN)",
+      "keine Symmetrie aus einer Funktion",
+      "keine Linien, die im Nichts enden",
+      "keine runden Linienenden ohne Taper (verletzt KFB-Ink-Outline-Spec)",
+      "keine Linien aus Kreisen",
+      "keine Pixelgrafik im Terrain",
+      "kein Bevel/Emboss in der Floor-Art (gehoert zur Hoehen-/Ebenenlogik)",
+      "keine Verlaeufe als Flaechenfuellung",
+      "kein gleichmaessiges Streuen (Ruhe ist Pflicht)",
+      "keine Wellenlaenge in Objektlaengen"
+    ],
+    "schichten": {
+      "floorArt": "die gemalte Flaeche EINER Terrain-Ebene. Flach. Keine Plastik.",
+      "layerHeight": "Wurfschatten und Kanten ZWISCHEN Ebenen. Hier gehoert Bevel hin.",
+      "feldraender": "Materialgrenzen. Tusche unten rechts, Lichtsaum oben links."
+    }
+  },
+  "karte": {
+    "form": "stern",
+    "zentrum": {
+      "was": "Marktplatz mit King Kayfabians Kastle (Turm)",
+      "kampf": false,
+      "funktion": [
+        "Haendler",
+        "Jukebox",
+        "Tagebuch",
+        "Kartenablage"
+      ]
+    },
+    "pfade": {
+      "anzahl": 6,
+      "verlauf": "folgt der Terrainlogik, nicht der Geometrie",
+      "regel": "Laufzeit je Pfad im selben Band (+/-15%), gemessen nicht geschaetzt"
+    },
+    "abseits": {
+      "begegnungen": "1-2 auf dem Weg zur Zone",
+      "gruppen": "2-3 Einheiten",
+      "haltung": "bei eigener Beschaeftigung, nicht als Wache postiert"
+    },
+    "kollision": "bleibt beim bestehenden land[]-Raster. Der Boden entscheidet NIE ueber Begehbarkeit."
+  },
+  "kartenzone": {
+    "outline": "Gummi-Outline mit KFB-Tusche, Staerke wandert, Enden laufen aus, keine runden Kappen. Sitzt auf der Bildebene.",
+    "gutter": "Fluid-Gutter zwischen Karte und Terrain, eigene duennere Tusche zum Terrain hin. Uebergang wird behauptet, nie ueberblendet.",
+    "eingang": "Holzbruecke (Tiny Sword) ueber den Gutter. Einziger Zugang.",
+    "wellen": [
+      {
+        "nr": 1,
+        "was": "Signatur-Mobs des Bioms"
+      },
+      {
+        "nr": 2,
+        "was": "Signatur-Mobs des Bioms, verstaerkt"
+      },
+      {
+        "nr": 3,
+        "was": "Boss"
+      }
+    ],
+    "sieg": "Kayfabe-Pop, grosser XP-Gewinn, Karte klappt zusammen, Gutter schliesst sich, Zone wandert ins Tagebuch."
+  },
+  "fraktionen": [
+    {
+      "zone": "Hof",
+      "group": "knights",
+      "boss": "pig",
+      "bossLabel": "Rosa Schwein",
+      "rolle": "Starter/Tutorial",
+      "wellen": [
+        "Peasants",
+        "Hofvieh",
+        "Eber"
+      ],
+      "wegrand": "streunende Peasants, Schafe",
+      "beschaeftigung": "ernten, tragen, ausbessern"
+    },
+    {
+      "zone": "Wildnis",
+      "group": "wilds",
+      "boss": "troll",
+      "bossLabel": "Troll",
+      "wellen": [
+        "wilde Kaempfer",
+        "Bogenschuetzen",
+        "Troll"
+      ],
+      "wegrand": "Zweier- und Dreiertrupps",
+      "beschaeftigung": "Holz schlagen, Feuerstellen, Beute zerlegen"
+    },
+    {
+      "zone": "Goblins",
+      "group": "goblins",
+      "boss": "hex_shaman",
+      "bossLabel": "Hex-Shaman",
+      "wellen": [
+        "Goblins",
+        "TNT-Goblins",
+        "Hex-Shaman"
+      ],
+      "wegrand": "Sprengtrupps mit Fackeln",
+      "beschaeftigung": "Haeuser und Tuerme sprengen und verbrennen"
+    },
+    {
+      "zone": "Verlies",
+      "group": "dungeon",
+      "boss": "minotaur",
+      "bossLabel": "Minotaurus",
+      "wellen": [
+        "Verlieswachen",
+        "Fernkaempfer",
+        "Minotaurus"
+      ],
+      "wegrand": "selten, immer paarweise",
+      "beschaeftigung": "patrouillieren, Fackeln wechseln"
+    },
+    {
+      "zone": "Lager",
+      "group": "camp",
+      "boss": "bear",
+      "bossLabel": "Baer",
+      "wellen": [
+        "Lagerwachen",
+        "Spaeher",
+        "Baer"
+      ],
+      "wegrand": "Wachfeuer mit 2-3",
+      "beschaeftigung": "Vorraete stapeln, Zelte richten, Feuer hueten"
+    },
+    {
+      "zone": "Wasser",
+      "group": "water",
+      "boss": "paddle_shark",
+      "bossLabel": "Paddle-Shark",
+      "wellen": [
+        "Harpunen-Hai",
+        "Ruderboote",
+        "Paddle-Shark"
+      ],
+      "wegrand": "Boote an der Halbinsel",
+      "beschaeftigung": "fischen, Boote festmachen, Fracht umschlagen"
+    }
+  ],
+  "bossInszenierung": {
+    "grosseSprites": [
+      "troll",
+      "minotaur",
+      "bear",
+      "turtle"
+    ],
+    "regel": "Nicht die Pixelgroesse traegt die Bedeutung, sondern die Inszenierung.",
+    "mittel": {
+      "vergroesserung": [
+        1.2,
+        1.35
+      ],
+      "kontaktschatten": "eigener, groesserer Radius",
+      "auftritt": "Moment vor Welle 3",
+      "kampf": "Selbstheilung als sichtbarer Effekt"
+    },
+    "warnung": "ueber 1.35x wird die Pixelkante sichtbar"
+  },
+  "lebendigeBiome": {
+    "zustaende": [
+      {
+        "nr": 1,
+        "name": "Beschaeftigung",
+        "was": "Taetigkeit aus dem Biom, in Schleife, mit Werkzeug. Kein Spielerbezug."
+      },
+      {
+        "nr": 2,
+        "name": "Neugier",
+        "was": "Spieler in Reichweite: unterbrechen, drehen, schauen. Noch kein Kampf."
+      },
+      {
+        "nr": 3,
+        "name": "Absicht",
+        "was": "Entscheidung nach Temperament: angreifen, rufen, fliehen, weiterarbeiten."
+      },
+      {
+        "nr": 4,
+        "name": "Gruppe",
+        "was": "2-3 teilen Ort und Taetigkeit. Reaktion VERSETZT, nie gleichzeitig."
+      }
+    ],
+    "zyklus": "Peasants bauen, Goblins sprengen und verbrennen. Ein Zustandszaehler je Gebaeude."
+  },
+  "kampfsystem": {
+    "vorhanden": [
+      "Level, XP, Level-Up (Cap 8)",
+      "Karten-Drops mit 5 Seltenheitsstufen",
+      "3 Faehigkeits-Slots auf Tasten 1-3",
+      "6 Effekt-Typen: freeze, distract, heal, bridge, meta, mark",
+      "Journey-Speicherung: Werte, Slots, Karten, Fortschritt",
+      "Kill-Streak: Zaehler, Squash, Streak-Poke",
+      "Teilchen, Blut, Erschuetterung (gore-Regler 0-3)",
+      "Todesanimation, Waffen-Trail, sichtbarer Stun"
+    ],
+    "fehlt": [
+      {
+        "nr": 1,
+        "was": "Projektile mit Standardpfeil als Rueckfall"
+      },
+      {
+        "nr": 2,
+        "was": "echte Statuseffekt-Liste",
+        "warum": "heute Einzelflags; ohne sie wird jeder Skill ein Sonderfall"
+      },
+      {
+        "nr": 3,
+        "was": "Trophaeensystem + Galerie"
+      },
+      {
+        "nr": 4,
+        "was": "Pop als verteilbare Waehrung"
+      },
+      {
+        "nr": 5,
+        "was": "Bingo, Bongo, Boggle (drei neue Werte)"
+      },
+      {
+        "nr": 6,
+        "was": "6 Slots statt 3"
+      },
+      {
+        "nr": 7,
+        "was": "Downed-State als Cut-Scene"
+      },
+      {
+        "nr": 8,
+        "was": "KLANG UEBERHAUPT",
+        "warum": "null Audiodateien im Repo. Ansager verdrahtet (combo, multiKill, eliteDown) und stumm.",
+        "schwere": "blockierend fuer alle Ton-Ideen"
+      }
+    ],
+    "kartenAlsLevel": {
+      "entschieden": "2026-08-08",
+      "regel": "Die Karte hat keine Macht. Sie ist der Beweis.",
+      "folge": "Karten sind das Levelsystem: 'ab X Karten oeffnet sich Y' ersetzt die Erfahrungskurve.",
+      "trophaee": "Wer eine Einheit erlegt, schaltet sie frei UND lernt ihren Skill. Die Trophaee IST der Skill.",
+      "offen": [
+        "Schwellentabelle fehlt",
+        "3 oder 6 Slots",
+        "NewGame+ beim Deckwechsel ja/nein"
+      ]
+    }
+  },
+  "slices": [
+    {
+      "id": "M1",
+      "name": "Boden in v8 einsetzen",
+      "abnahme": "erstes Bild <400ms, keine Blockade >250ms beim Laufen, 20 Keime ohne Grundelement"
+    },
+    {
+      "id": "M2",
+      "name": "Mob-Uebersicht berichtigen",
+      "status": "TEILWEISE ERLEDIGT",
+      "erledigt": [
+        "Bosszuordnung SSOT",
+        "Monk/Lancer ergaenzt",
+        "Gruppen an Fraktionstabelle angeglichen"
+      ],
+      "offen": [
+        "Troll-Sprite: Quelle geprueft und korrekt, Zuschnitt in der Uebersicht pruefen",
+        "Katalog OW_UNITS nachziehen"
+      ]
+    },
+    {
+      "id": "M3",
+      "name": "Sternkarte legen",
+      "abnahme": "6 gemessene Laufzeiten innerhalb +/-15%, kein Pfad ueber 40m gerade"
+    },
+    {
+      "id": "M4",
+      "name": "Kartenzone im Gelaende",
+      "abnahme": "Uebergang nirgends ueberblendet, Zone nur ueber die Bruecke betretbar"
+    },
+    {
+      "id": "M5",
+      "name": "Drei Wellen und der Boss",
+      "abnahme": "Bosssequenz nachweislich laenger als eine Mobwelle, Sieg schreibt ins Tagebuch"
+    },
+    {
+      "id": "M6",
+      "name": "Lebendige Biome",
+      "abnahme": "keine Einheit ohne Taetigkeit, Gruppe reagiert versetzt, zerstoertes Gebaeude steht nach Rueckkehr im Aufbau"
+    }
+  ],
+  "offeneEntscheidungen": [
+    {
+      "frage": "Wie stark darf der Boden wabern?",
+      "hinweis": "Ein Himmel wird gestreift, ein Boden stundenlang angesehen. Als Zahl festschreiben und messen."
+    },
+    {
+      "frage": "Terrain-Tusche als eigenes Preset",
+      "hinweis": "Karten-Preset nicht verbiegen. Eigene Federbreite, eigener Bogen, eigene Abnahmewerte."
+    },
+    {
+      "frage": "Marken von Hand",
+      "hinweis": "12-18 gezeichnete Marken, je Biom 3, schwarz auf transparent, ~64px. Der Code streut nur."
+    },
+    {
+      "frage": "Klangschicht",
+      "hinweis": "existiert nicht. Jede Ton-Idee steht auf nichts."
+    }
+  ],
+  "assetBefunde": [
+    {
+      "einheit": "troll",
+      "quelle": "Tiny Swords (Enemy Pack)/Enemy Pack/Enemies/Troll/Troll_Idle.png",
+      "gemessen": "4608x384, 12 Zellen a 384, gruener Troll mit Keule",
+      "befund": "Quelle KORREKT. Georgs Meldung 'kein Troll' zeigt auf den Zuschnitt in der Uebersicht, nicht auf das Asset."
+    },
+    {
+      "einheit": "monk",
+      "quelle": "Tiny Swords (Free Pack)/Units/Red Units/Monk/Idle.png",
+      "gemessen": "1152x192, 6 Zellen a 192",
+      "befund": "NICHT in Update 010. Liegt im Free Pack. Noch nicht im Katalog OW_UNITS."
+    },
+    {
+      "einheit": "lancer",
+      "quelle": "Tiny Swords (Free Pack)/Units/Red Units/Lancer/Lancer_Idle.png",
+      "gemessen": "3840x320, 12 Zellen a 320",
+      "befund": "NICHT in Update 010. Liegt im Free Pack. Noch nicht im Katalog OW_UNITS."
+    },
+    {
+      "einheit": "bear",
+      "quelle": "Enemy Pack/Enemies/Caveborn/Bear/",
+      "gemessen": "idle 2048x256 (8), run 1280x256 (5)",
+      "befund": "sauber. Ein gemeldeter Zuschnittfehler liess sich nicht bestaetigen."
+    }
+  ],
+  "regeln": [
+    "Assets IMMER per GitHub-RAW laden, nie relativ (./assets/...)",
+    "zone-registry.json / zone-index.json sind fremder Contract - hier nur lesen",
+    "Session-Export: Manifest, Veto-Fenster, nur Session-Dateien. Nie Voll-Zip.",
+    "Jede neue Schicht nennt ihre Kosten, BEVOR sie beschrieben wird. Referenz: 36s Kaltstart hat das Reliefsystem umgebracht."
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "sheet": "FrizzleBob_SpriteSheet_192.png",
+  "frameW": 192,
+  "frameH": 192,
+  "cols": 7,
+  "rows": 5,
+  "fps": 10,
+  "anchor": {
+    "x": 96,
+    "y": 170
+  },
+  "framesPerRow": [
+    7,
+    6,
+    6,
+    6,
+    6
+  ],
+  "states": {
+    "idle": 0,
+    "walk": 1,
+    "attack_wind": 2,
+    "attack_hit": 3,
+    "attack_recover": 4
+  }
+}

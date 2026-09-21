@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>KFB Asset Librarian v1.7</title>
+  <link rel="canonical" href="https://kayfabizarro.pages.dev/asset-librarian/">
+  <link rel="stylesheet" href="./styles.css">
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+        "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
+      }
+    }
+  </script>
+</head>
+<body>
+  <main class="app-shell">
+    <header class="topbar">
+      <div class="brand-block">
+        <div class="eyebrow">KFB · repo-truth production librarian</div>
+        <h1>KFB Asset Librarian <span>v1.7</span></h1>
+      </div>
+      <div class="top-actions">
+        <label class="registry-mode-control" title="Live reads the generated bot registry. Canonical reads reviewed registry files from main.">
+          <span>Registry</span>
+          <select id="registryModeSelect" aria-label="Registry source"><option value="live">Live</option><option value="canonical">Canonical</option></select>
+        </label>
+        <div class="status-stack" aria-live="polite">
+          <span id="registryStatus" class="pill">Registry loading…</span>
+          <span id="sourceCommit" class="commit"></span>
+        </div>
+        <button id="selectionButton" class="selection-button" type="button" aria-controls="selectionTray" aria-expanded="false">
+          Selection <span id="selectionCount" class="selection-count">0 selected</span>
+        </button>
+      </div>
+    </header>
+
+    <nav id="productionTabs" class="production-tabs" aria-label="Production library">
+      <button class="production-tab active" data-library-tab="assets" type="button">Assets</button>
+      <button class="production-tab" data-library-tab="actors" type="button">Actors</button>
+      <button class="production-tab" data-library-tab="rigs" type="button">Rigs</button>
+      <button class="production-tab" data-library-tab="motions" type="button">Motions</button>
+      <button class="production-tab" data-library-tab="fx" type="button">FX</button>
+    </nav>
+
+    <div id="assetWorkspace">
+      <section id="assetSearchShell" class="search-shell panel" aria-label="Asset search">
+        <div class="search-row">
+          <input id="searchInput" class="global-search" type="search" placeholder="Search assets — KayKit, BoardGameBits, GothGirl, tree, banner…" autocomplete="off" aria-label="Global search">
+          <select id="kindFilter" class="kind-filter" aria-label="Kind">
+            <option value="">All assets</option>
+            <option value="model-3d">3D</option>
+            <option value="image-2d">Images</option>
+            <option value="audio">Audio</option>
+          </select>
+          <select id="browseModeFilter" aria-label="Representation mode" title="Primary assets collapses alternate model formats and hides animation-source files from normal browsing.">
+            <option value="primary">Primary assets</option>
+            <option value="all">All representations</option>
+          </select>
+          <button id="searchButton" class="primary" type="button">Search</button>
+          <button id="kaykitPreset" class="quiet" type="button">KayKit</button>
+          <button id="filtersToggle" class="quiet" type="button" aria-expanded="false" aria-controls="advancedFilters">More filters</button>
+          <div class="view-toggle" aria-label="Result view">
+            <button id="galleryViewButton" class="quiet" type="button">Gallery</button>
+            <button id="listViewButton" class="quiet" type="button">List</button>
+          </div>
+        </div>
+
+        <div id="advancedFilters" class="advanced-filters" hidden>
+          <div class="filter-grid">
+            <label>Pack<select id="packFilter"><option value="">All packs</option></select></label>
+            <label>Collection<select id="collectionFilter"><option value="">All collections</option></select></label>
+            <details id="typeFilter" class="multi-filter"><summary>Type <span id="typeFilterSummary">All types</span></summary><div id="typeFilterOptions" class="multi-filter-options">
+              <label class="multi-check"><input type="checkbox" value="character"><span>Character</span></label>
+              <label class="multi-check"><input type="checkbox" value="weapon"><span>Weapon</span></label>
+              <label class="multi-check"><input type="checkbox" value="character-prop"><span>Character prop</span></label>
+              <label class="multi-check"><input type="checkbox" value="environment-prop"><span>Environment prop</span></label>
+              <label class="multi-check"><input type="checkbox" value="building"><span>Building / structure</span></label>
+              <label class="multi-check"><input type="checkbox" value="nature"><span>Nature / plant</span></label>
+              <label class="multi-check"><input type="checkbox" value="vehicle"><span>Vehicle</span></label>
+              <label class="multi-check"><input type="checkbox" value="banner-signage"><span>Banner / signage</span></label>
+              <label class="multi-check"><input type="checkbox" value="animation-source"><span>Animation source</span></label>
+              <label class="multi-check"><input type="checkbox" value="texture-image"><span>Texture / image</span></label>
+              <label class="multi-check"><input type="checkbox" value="audio"><span>Audio</span></label>
+              <label class="multi-check"><input type="checkbox" value="other-3d"><span>Other 3D</span></label>
+            </div></details>
+            <details id="formatFilter" class="multi-filter"><summary>Format <span id="formatFilterSummary">All formats</span></summary><div id="formatFilterOptions" class="multi-filter-options"><span class="small-note">Formats load with the catalog.</span></div></details>
+            <label>Dependencies<select id="dependencyFilter"><option value="">Any</option><option value="complete">Complete</option><option value="embedded">Embedded</option><option value="missing">Missing</option><option value="unresolved">Unresolved</option></select></label>
+            <label>Review queue<select id="problemFilter"><option value="">Any status</option><option value="any">Has review item</option><option value="DUPLICATE_NAME">Duplicate name</option><option value="MISSING_REFERENCED_FILE">Missing referenced file</option><option value="UNRESOLVED_FBX_DEPENDENCY">Unresolved FBX</option><option value="UNRESOLVED_MODEL_DEPENDENCY">Unresolved model</option></select></label>
+            <label>Rig<select id="rigFilter"><option value="">Any</option><option value="yes">Rigged</option><option value="no">Not rigged</option><option value="unknown">Unknown</option></select></label>
+            <label>Animation<select id="animatedFilter"><option value="">Any</option><option value="yes">Has embedded animation</option><option value="no">No embedded animation</option><option value="unknown">Unknown</option></select></label>
+            <label>Clip contains<input id="clipFilter" type="text" placeholder="walk, idle, attack…"></label>
+            <label>Joint contains<input id="jointFilter" type="text" placeholder="hip, hand, head…"></label>
+          </div>
+          <div class="filter-footer">
+            <span class="small-note"><strong>Primary assets</strong> collapses alternate model formats and keeps animation-source GLBs in the Motions/explicit Animation source view. Type is a workbench presentation filter, not Registry truth.</span>
+            <button id="resetButton" class="quiet" type="button">Reset filters</button>
+          </div>
+        </div>
+      </section>
+
+      <section id="metrics" class="metrics" aria-label="Registry summary"></section>
+
+      <section id="assetResults" class="results panel">
+        <div class="results-head">
+          <div><div class="eyebrow">registry matches</div><p id="resultMeta">Enter a query or choose filters.</p></div>
+          <button id="loadMoreButton" class="quiet" type="button" hidden>Show 120 more</button>
+        </div>
+        <div id="resultList" class="result-list gallery-view" aria-live="polite"></div>
+      </section>
+    </div>
+
+    <section id="resourceWorkspace" class="resource-workspace" hidden aria-label="Production resources">
+      <section class="resource-toolbar panel">
+        <input id="resourceSearch" class="global-search" type="search" placeholder="Search current production resources…" autocomplete="off">
+        <select id="resourceActorFilter" aria-label="Actor / scope"><option value="">All actors / scopes</option></select>
+        <select id="resourceStatusFilter" aria-label="Resource status">
+          <option value="">Any status</option>
+          <option value="AVAILABLE">Available</option>
+          <option value="CONFIGURED">Configured</option>
+          <option value="WIP">WIP</option>
+          <option value="WIP_CONFIG">WIP config</option>
+          <option value="DOCUMENTED_REFERENCE">Documented reference</option>
+        </select>
+      </section>
+      <section class="results panel resource-results">
+        <div class="results-head">
+          <div><div id="resourceEyebrow" class="eyebrow">production resources</div><p id="resourceMeta">Loading Resource Registry…</p></div>
+          <span id="resourceRevision" class="pill"></span>
+        </div>
+        <div id="resourceList" class="resource-list" aria-live="polite"></div>
+      </section>
+    </section>
+
+    <aside class="drawer detail-drawer" id="detailPanel" aria-label="Asset detail" aria-hidden="true">
+      <div class="drawer-head">
+        <div><div id="detailKind" class="eyebrow"></div><h2 id="detailName">Asset detail</h2></div>
+        <div class="drawer-actions"><button id="toggleSelection" class="quiet" type="button">Add</button><button id="detailClose" class="icon-button" type="button" aria-label="Close asset detail">×</button></div>
+      </div>
+      <div class="empty-state" id="emptyDetail"><strong>Select an asset</strong><span>Preview and source facts appear here.</span></div>
+      <div id="detailContent" hidden>
+        <div id="detailBadges" class="badges detail-badges"></div>
+        <div id="previewWrap" class="preview-wrap" hidden>
+          <div class="preview-toolbar"><strong id="previewTitle">Preview</strong><span id="previewStatus">Idle</span></div>
+          <div id="threeControls" class="preview-controls" hidden>
+            <button id="resetCamera" class="quiet small-button" type="button">Reset</button><button id="fitCamera" class="quiet small-button" type="button">Fit</button>
+            <label class="inline-check"><input id="wireframeToggle" type="checkbox"> Wireframe</label><label class="inline-check"><input id="autoplayToggle" type="checkbox" checked> Autoplay</label>
+            <label class="clip-control">Embedded clip <select id="clipSelect"><option value="">No embedded clips</option></select></label>
+          </div>
+          <canvas id="previewCanvas" hidden></canvas>
+          <div id="imagePreview" class="image-preview" hidden><img id="imagePreviewImg" alt="Selected asset preview"><div id="imageMeta" class="preview-meta"></div></div>
+          <div id="audioPreview" class="audio-preview" hidden><audio id="audioPlayer" controls preload="metadata"></audio><div id="audioMeta" class="preview-meta"></div></div>
+          <div id="dataPreview" class="data-preview" hidden>Metadata-only preview for this format.</div>
+        </div>
+        <div class="quick-actions"><button id="copyRaw" class="primary" type="button">Copy pinned RAW</button><a id="openRaw" class="button-link quiet" target="_blank" rel="noreferrer">Pinned RAW</a><button id="technicalToggle" class="quiet" type="button" aria-expanded="false" aria-controls="technicalDetails">Technical details</button></div>
+        <div id="technicalDetails" class="technical-details" aria-hidden="true">
+          <code id="detailPath" class="path-block"></code>
+          <div class="detail-actions"><button id="copyPath" class="quiet" type="button">Copy path</button><button id="copyAssetId" class="quiet" type="button">Copy asset ID</button><a id="openLatestRaw" class="button-link quiet" target="_blank" rel="noreferrer">Latest RAW</a></div>
+          <section class="fact-section identity-section"><h3>Identity</h3><div id="identityFacts" class="fact-grid"></div></section>
+          <section class="fact-section" id="rigSection"><h3>Rig / animation</h3><div id="rigFacts" class="fact-grid"></div><div id="rigWarnings" class="warning-box" hidden></div><div id="animationSources" class="animation-sources" hidden></div></section>
+          <section class="fact-section"><h3>Dependencies</h3><div id="dependencyFacts"></div></section>
+          <section class="fact-section"><h3>Provenance</h3><div id="provenanceFacts" class="fact-grid"></div></section>
+          <section class="fact-section"><h3>Review</h3><div id="problemFacts"></div></section>
+        </div>
+      </div>
+    </aside>
+
+    <aside class="drawer resource-detail-drawer" id="resourceDetailPanel" aria-label="Production resource detail" aria-hidden="true">
+      <div class="drawer-head">
+        <div><div id="resourceDetailKind" class="eyebrow"></div><h2 id="resourceDetailName">Resource</h2></div>
+        <button id="resourceDetailClose" class="icon-button" type="button" aria-label="Close resource detail">×</button>
+      </div>
+      <div id="resourceDetailBadges" class="badges detail-badges"></div>
+      <p id="resourceDetailSummary" class="resource-summary"></p>
+      <div id="resourcePreviewWrap" class="preview-wrap resource-preview-wrap" hidden>
+        <div class="preview-toolbar"><strong id="resourcePreviewTitle">Rig preview</strong><span id="resourcePreviewStatus">Idle</span></div>
+        <canvas id="resourcePreviewCanvas"></canvas>
+        <div id="resourcePreviewNote" class="preview-meta"></div>
+      </div>
+      <div id="resourcePrimaryAction" class="resource-primary-action"></div>
+      <details class="resource-tech"><summary>Evidence & technical facts</summary><pre id="resourceDetailJson"></pre></details>
+    </aside>
+
+    <aside id="selectionTray" class="drawer selection-drawer" aria-label="Selection tray" aria-hidden="true">
+      <div class="drawer-head"><div><div class="eyebrow">local candidate set</div><h2>Selection</h2></div><button id="selectionClose" class="icon-button" type="button" aria-label="Close selection tray">×</button></div>
+      <div class="selection-summary"><span id="selectionDrawerCount" class="pill">0 selected</span><button id="clearSelection" class="quiet" type="button" disabled>Clear</button></div>
+      <div id="trayItems" class="tray-items"><span class="small-note">No assets selected.</span></div>
+      <div class="handoff-stack"><label>Send to consumer<select id="consumerSelect"></select></label><div id="consumerBoundary" class="consumer-boundary"></div><div class="handoff-actions"><button id="copyHandoff" class="primary" type="button" disabled>Copy handoff JSON</button><button id="downloadHandoff" class="quiet" type="button" disabled>Download handoff JSON</button></div></div>
+    </aside>
+
+    <button id="drawerBackdrop" class="drawer-backdrop" type="button" aria-label="Close open panel" hidden></button>
+    <footer>Registry facts are source facts. <strong>Live</strong> reads the generated bot Registry; <strong>Canonical</strong> reads reviewed Registry files from main. Asset types are browsing heuristics only. Assets, resources and composition plans remain <strong>candidate-only</strong>; receiving owners validate runtime use. · <a href="/asset-librarian/">Permanent URL</a></footer>
+  </main>
+
+  <template id="resultTemplate">
+    <article class="result-card">
+      <label class="select-box" title="Select for handoff"><input type="checkbox" class="result-select"><span></span></label>
+      <button class="result-open" type="button"><div class="result-thumb" aria-hidden="true"><span class="thumb-label"></span></div><div class="result-copy"><div class="result-title"></div><div class="result-subtitle"></div><div class="badges result-badges"></div><div class="result-meta-line"></div><code class="result-path"></code></div></button>
+    </article>
+  </template>
+
+  <template id="resourceTemplate">
+    <article class="resource-card"><button class="resource-open" type="button"><div class="resource-card-head"><strong class="resource-title"></strong><span class="resource-kind"></span></div><div class="resource-card-meta"></div><div class="badges resource-badges"></div></button></article>
+  </template>
+
+  <script type="module" src="./app.js"></script>
+</body>
+</html>

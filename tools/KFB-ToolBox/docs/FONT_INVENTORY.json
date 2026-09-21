@@ -1,0 +1,80 @@
+{
+  "schema": "kfb.toolbox-font-inventory/1",
+  "updated": "2026-09-14",
+  "status": "SOURCE_DOCUMENT_INVENTORY_NOT_FULL_BUNDLE_AUDIT",
+  "evidence": {
+    "repository": "georg-doc/kayfabizarro",
+    "commit": "f4171ad205f423bf7eec00def72db784fe171246",
+    "path": "tools/KFB-ToolBox/KFB ToolBox (studio v17 - rigging v1 - animation v2)/WSA_2026-09-13/HOUSEKEEPING.md",
+    "blob": "ab532e78a43b2d22a2e2d54b5854e31835228b4d"
+  },
+  "reportedMissingLocalFileCount": 17,
+  "independentlyEnumeratedMissingFileCount": null,
+  "ui": {
+    "referenceFamily": "Roboto",
+    "weights": [
+      400,
+      500,
+      700
+    ],
+    "fallback": [
+      "system-ui",
+      "-apple-system",
+      "BlinkMacSystemFont",
+      "Segoe UI",
+      "sans-serif"
+    ],
+    "fontDisplay": "swap",
+    "brandFontsAllowed": false,
+    "userFontUploadRequired": false
+  },
+  "reportedReferenceGroups": [
+    {
+      "pattern": "fonts/FonteysPRO-*",
+      "status": "AUTHOR_REPORTED_MISSING",
+      "requiredForUI": false,
+      "exactUses": [],
+      "action": "REPLACE_UI_USES; AUDIT_OPTIONAL_ART_USES"
+    },
+    {
+      "pattern": "GeorgComic-*",
+      "status": "AUTHOR_REPORTED_MISSING",
+      "requiredForUI": false,
+      "exactUses": [],
+      "action": "REPLACE_UI_USES; AUDIT_OPTIONAL_ART_USES"
+    },
+    {
+      "pattern": "Bangers-Regular.ttf",
+      "status": "AUTHOR_REPORTED_MISSING",
+      "requiredForUI": false,
+      "exactUses": [],
+      "action": "REPLACE_UI_USES; AUDIT_OPTIONAL_ART_USES"
+    },
+    {
+      "pattern": "pottymouthbb_reg.otf",
+      "status": "AUTHOR_REPORTED_MISSING",
+      "requiredForUI": false,
+      "exactUses": [],
+      "action": "REPLACE_UI_USES; AUDIT_OPTIONAL_ART_USES"
+    },
+    {
+      "pattern": "GeorgStorybook-*",
+      "status": "AUTHOR_REPORTED_MISSING",
+      "requiredForUI": false,
+      "exactUses": [],
+      "action": "REPLACE_UI_USES; AUDIT_OPTIONAL_ART_USES"
+    },
+    {
+      "pattern": "GeorgGelPen-Regular.otf",
+      "status": "AUTHOR_REPORTED_MISSING",
+      "requiredForUI": false,
+      "exactUses": [],
+      "action": "REPLACE_UI_USES; AUDIT_OPTIONAL_ART_USES"
+    }
+  ],
+  "optionalUserSupply": [
+    "Fonteys PRO only after exact artwork use, cut and approved web-hosting route are identified"
+  ],
+  "fontBinariesIncluded": false,
+  "runtimeFontLoadTest": "NOT_TESTED"
+}

@@ -1,0 +1,61 @@
+{
+  "$schema": "kfb.motion-library/2",
+  "version": "2.0.0",
+  "canonical": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/motion-LIBRARY.json",
+  "updated": "2026-07-19",
+  "note": "KFB Pet Motion Library — Contract v2 (clips + face + triggers, Motion-Editor v2). motions unveraendert aus v1.2.0 (rundes-Koerper-Tuning). NEU: clips = Tempo der 8 Kenney-GLB-Clips; face = Mienenspiel (Emote-Vokabular aus SPRINT_mienenspiel.md, Drift+Zittern statt Auswahl, blink kommt weiter aus pet-LIBRARY.json eyeRig.blink — nicht doppeln); triggers = deklaratives Game-Event-Mapping (Fahrwerte j/c/a -> Gesicht VOR Koerper, FX interpunktieren). Runtime: pet-motion.v2.js + pet-face.v1.js + pet-fx.v1.js. Wer schreibt, zaehlt version hoch und setzt updated. Prime Directive: jede Motion ist Interpunktion, settlet in Ruhe; Zufall NUR auf Anforderung.",
+  "global": { "squashStretch": 1, "smoothTime": 0.07 },
+  "front": { "x": 0, "z": 1.1 },
+  "back": { "x": 0, "z": -1.3 },
+  "motions": {
+    "idle": { "breathe": 0.035, "period": 2.8, "sway": 0.012 },
+    "hop": { "height": 0.32, "dur": 0.64, "anticip": 0.16, "squash": 0.7, "stretch": 1.32, "land": 0.66, "rebound": 1.12 },
+    "powerJump": { "height": 1.08, "dur": 1.22, "anticip": 0.28, "squash": 0.55, "stretch": 1.52, "hang": 0.18, "land": 0.5, "rebound": 1.2 },
+    "locomotion": { "hops": 3, "height": 0.26, "hopDur": 0.44, "anticip": 0.12, "squash": 0.74, "stretch": 1.26, "land": 0.7 },
+    "loading": { "height": 0.17, "period": 0.52, "squash": 0.76, "stretch": 1.2 },
+    "transition": { "anticip": 0.3, "out": 0.44, "rise": 0.85, "shrink": 0.06, "spin": 0.7, "hold": 0.06, "in": 0.5 },
+    "turn": { "dur": 0.5, "overshoot": 0.2, "squash": 0.84 },
+    "celebrate": { "hops": 3, "height": 0.3, "dur": 1.7, "squash": 0.68, "stretch": 1.3 },
+    "reactPos": { "height": 0.24, "dur": 0.5, "squash": 0.8, "stretch": 1.28 },
+    "reactNeg": { "dur": 0.58, "squash": 0.46, "sink": 0.12 },
+    "secondary": { "amp": 1.0, "freq": 7.0, "damp": 7.5 }
+  },
+  "clips": {
+    "static": { "speed": 1 },
+    "idle": { "speed": 1 },
+    "walk": { "speed": 1 },
+    "run": { "speed": 1.1 },
+    "eat": { "speed": 1 },
+    "dance": { "speed": 1 },
+    "gesture-positive": { "speed": 1 },
+    "gesture-negative": { "speed": 1 }
+  },
+  "face": {
+    "emotes": {
+      "neutral":   { "lidUpper": -0.4,  "lidLower": 0,    "slant": 0,    "gaze": [0, 0] },
+      "happy":     { "lidUpper": 0,     "lidLower": 0.3,  "slant": 0,    "gaze": [0, 0] },
+      "angry":     { "lidUpper": 0.25,  "lidLower": 0.1,  "slant": -0.4, "gaze": [0, 0] },
+      "sad":       { "lidUpper": 0.15,  "lidLower": 0.05, "slant": 0.35, "gaze": [0, -0.85] },
+      "surprised": { "lidUpper": -0.2,  "lidLower": -0.1, "slant": 0,    "gaze": [0, 0] },
+      "thinking":  { "lidUpper": 0.4,   "lidLower": 0,    "slant": 0.05, "gaze": [0.9, 0.2] }
+    },
+    "drift": { "speed": 0.09, "tremor": 0.045, "tremorHz": 5.0, "pair": ["neutral", "thinking"] },
+    "react": { "smoothTime": 0.16, "hardTime": 0.03, "hold": 1.5 },
+    "mouth": {
+      "src": "FrizzelBob-Mouth_01 (GitHub raw, 12 Viseme + Smile/Neutral)",
+      "size": 0.44,
+      "dy": -0.52,
+      "rate": 1,
+      "restMap": { "neutral": "neutral", "happy": "smile", "angry": "s", "sad": "m", "surprised": "oh", "thinking": "woo" }
+    },
+    "note": "blink kommt aus pet-LIBRARY.json (eyeRig.blink) — nicht doppeln"
+  },
+  "triggers": {
+    "drop":   { "face": "surprised", "hard": true, "body": "impact", "fx": ["star", "dust"], "eye": "pop" },
+    "brake":  { "face": "sad", "body": "skid", "fx": ["dust"], "eye": "oval" },
+    "curveL": { "face": "gaze-out", "body": "lean" },
+    "curveR": { "face": "gaze-out", "body": "lean" },
+    "card":   { "face": "glance", "body": "bob", "eye": "pop-soft" },
+    "still":  { "face": "drift" }
+  }
+}

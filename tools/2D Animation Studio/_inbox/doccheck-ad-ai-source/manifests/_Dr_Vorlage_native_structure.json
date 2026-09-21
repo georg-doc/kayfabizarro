@@ -1,0 +1,156 @@
+{
+  "schema": "kfb.2d-animation-studio.source-audit/0.1",
+  "source": {
+    "originalPath": "tools/2D Animation Studio/_inbox/_Dr_Vorlage.ai",
+    "pinnedCopy": "tools/2D Animation Studio/_inbox/doccheck-ad-ai-source/sources/_Dr_Vorlage.ai",
+    "gitBlobSha": "436143b019f0034c6d2d9183154cf613ff8c701e",
+    "byteSize": 581313,
+    "format": "Adobe Illustrator with PDF-compatible content",
+    "pdfVersion": "1.6",
+    "creatorTool": "Adobe Illustrator 30.3 (Macintosh)",
+    "createDate": "2026-04-09T15:35:00+02:00",
+    "pageCount": 1,
+    "pagePt": [
+      131.798,
+      200.701
+    ],
+    "pageMm": [
+      46.495,
+      70.803
+    ],
+    "layerCountVisiblePdf": 1,
+    "layerNames": [
+      "Ebene 1"
+    ],
+    "hasVisibleTransparency": false,
+    "hasVisibleOverprint": true
+  },
+  "pdfVectorStructure": {
+    "topLevelDrawOrder": [
+      {
+        "pdfName": "Fm0",
+        "object": 9,
+        "role": "base_actor",
+        "bbox": [
+          -65.8994,
+          100.35,
+          65.8992,
+          -100.349
+        ],
+        "status": "SOURCE_DERIVED"
+      },
+      {
+        "pdfName": "Fm1",
+        "object": 10,
+        "role": "eye_whites_and_outlines",
+        "bbox": [
+          -23.143,
+          10.9134,
+          23.143,
+          -10.9134
+        ],
+        "status": "SOURCE_DERIVED"
+      },
+      {
+        "pdfName": "Fm2",
+        "object": 11,
+        "role": "pupils",
+        "bbox": [
+          -16.4816,
+          4.25197,
+          16.4816,
+          -4.25197
+        ],
+        "status": "SOURCE_DERIVED"
+      },
+      {
+        "pdfName": "Fm3",
+        "object": 12,
+        "role": "face_foreground_occlusion_mask",
+        "bbox": [
+          -41.7931,
+          -5.93715,
+          41.8781,
+          -53.4388
+        ],
+        "status": "INFERRED_FROM_DRAW_ORDER"
+      }
+    ],
+    "nested": [
+      {
+        "parent": "Fm0",
+        "pdfName": "Fm0",
+        "object": 22,
+        "role": "stethoscope",
+        "bbox": [
+          -19.8425,
+          52.0603,
+          19.8425,
+          -22.6772
+        ],
+        "status": "SOURCE_DERIVED"
+      }
+    ],
+    "pagePlacement": [
+      {
+        "group": "base_actor",
+        "matrix": [
+          1,
+          0,
+          0,
+          -1,
+          65.8992538,
+          100.3503799
+        ]
+      },
+      {
+        "group": "eye_whites_and_outlines",
+        "matrix": [
+          0.9612617,
+          -0.2756375,
+          -0.2756375,
+          -0.9612617,
+          55.6416054,
+          164.7832031
+        ]
+      },
+      {
+        "group": "pupils",
+        "matrix": [
+          0.9612617,
+          -0.2756375,
+          -0.2756375,
+          -0.9612617,
+          55.6416054,
+          164.7832031
+        ]
+      },
+      {
+        "group": "face_foreground_occlusion_mask",
+        "matrix": [
+          0.9272031,
+          -0.3745238,
+          -0.3745238,
+          -0.9272031,
+          50.2205124,
+          160.031311
+        ]
+      }
+    ],
+    "notableStrokeWidthsPt": [
+      5.669,
+      2.835,
+      2.126,
+      1.417,
+      1.134
+    ],
+    "note": "PDF-compatible vector content preserves exact Bézier anchor/control-point coordinates and draw order. Native Illustrator private data exists in three AIPrivateData blocks encoded with Illustrator roundtrip data; native hidden group names/AI-only constructs are not asserted until parsed or inspected in Illustrator."
+  },
+  "promotionBoundary": {
+    "exactNativeFilePreserved": true,
+    "extractedSvgStatus": "IMPLEMENTATION_FROM_PDF_VECTOR_CONTENT",
+    "nativeIllustratorGroupNamesFullyVerified": false,
+    "nativeAnchorCoordinatesAvailableFromPdfPaths": true,
+    "nextGate": "Visual browser comparison of extracted SVG against source render, then classify semantic parts and promote accepted modules."
+  }
+}

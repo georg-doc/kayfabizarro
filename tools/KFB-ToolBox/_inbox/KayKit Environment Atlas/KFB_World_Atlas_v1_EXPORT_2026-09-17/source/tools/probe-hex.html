@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Probe 3 · KayKit Medieval Hexagon Pack</title>
+<script type="importmap">
+{"imports":{
+ "three":"https://unpkg.com/three@0.184.0/build/three.module.js",
+ "three/addons/loaders/GLTFLoader.js":"https://unpkg.com/three@0.184.0/examples/jsm/loaders/GLTFLoader.js",
+ "three/addons/controls/OrbitControls.js":"https://unpkg.com/three@0.184.0/examples/jsm/controls/OrbitControls.js"
+}}
+</script>
+<style>body{background:#111;color:#ccc;font:12px monospace;padding:10px;white-space:pre-wrap}</style>
+</head>
+<body>
+<div id="out">probing…</div>
+<script type="module">
+import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
+import { PACKS } from '../lib/kit-lab.js';
+const loader = new GLTFLoader();
+const L = 'ABCDEFGHIJ'.split('');
+const cand = {};
+
+/* buildings use kind [+ letter] + colour, e.g. building_tower_A_blue, building_castle_blue */
+const letterKinds = ['tower', 'house', 'home', 'hut', 'wall', 'gate', 'watchtower', 'market', 'farm',
+  'ruins', 'construction', 'bridge', 'dock', 'port', 'harbor', 'archery', 'camp', 'tent', 'sheep',
+  'stable', 'mill', 'church', 'castle', 'keep', 'barracks', 'blacksmith', 'mine', 'lumbermill',
+  'watermill', 'windmill', 'well', 'tavern', 'quarry', 'statue', 'monument', 'siege', 'catapult'];
+cand.hex_bld_b = letterKinds.flatMap((k) => L.slice(0, 6).map((l) => `building_${k}_${l}_blue`));
+cand.hex_bld_n = ['building_ruins_A_neutral', 'building_ruins_B_neutral', 'building_quarry_A_neutral',
+  'building_mine_A_neutral', 'building_construction_A_neutral', 'building_bridge_A_neutral',
+  'building_wall_A_neutral', 'building_gate_A_neutral', 'building_tower_A_neutral',
+  'building_market_A_neutral', 'building_statue_A_neutral', 'building_camp_A_neutral',
+  ...letterKinds.slice(0, 20).map((k) => `building_${k}_neutral`)];
+
+/* waterless variants: which suffix/prefix scheme? */
+cand.hex_coastw = [...L.slice(0, 6).flatMap((l) => [`hex_coast_${l}_waterless`, `hex_coast_waterless_${l}`, `hex_coastWaterless_${l}`]),
+  'hex_coast_waterless', 'hex_coast_A'];
+cand.hex_riverw = [...L.flatMap((l) => [`hex_river_${l}_waterless`, `hex_river_waterless_${l}`, `hex_riverWaterless_${l}`]),
+  'hex_river_waterless', 'hex_river_A'];
+
+/* more base tiles / nature / props variants */
+cand.hex_base = ['hex_grass', 'hex_water', 'hex_grass_B', 'hex_water_B', 'hex_grass_C',
+  'hex_sand_A', 'hex_rock_A', 'hex_dirt_A', 'hex_snow_A', 'hex_forest_A'];
+cand.hex_nature = [
+  ...['tree_single', 'tree_group', 'trees', 'forest', 'rock_single', 'rock_group', 'rocks', 'hills',
+    'mountain', 'bush', 'bushes', 'flowers', 'reeds', 'grass', 'stump', 'log', 'cliff', 'waterfall',
+    'pine_single', 'pine_group'].flatMap((k) => L.map((l) => `${k}_${l}`)),
+  'tree_single_A', 'tree_single_B'];
+cand.hex_props = [
+  ...['crate', 'barrel', 'sack', 'target', 'tent', 'wheelbarrow', 'ladder', 'fence', 'banner', 'flag',
+    'sign', 'cart', 'wagon', 'bench', 'table', 'anvil', 'bucket', 'hay', 'log', 'planks', 'stones',
+    'chest', 'boat', 'stall', 'torch', 'lantern', 'statue', 'grave', 'bones', 'shield', 'sword',
+    'weapon_rack', 'straw', 'well', 'bridge', 'pier', 'dock'].flatMap((k) => [k, ...L.slice(0, 5).map((l) => `${k}_${l}`)]),
+  'barrels', 'crates', 'sacks', 'logs', 'targets'];
+
+const out = document.getElementById('out');
+const hits = {};
+async function probe(pack, name) {
+  const cfg = PACKS[pack];
+  try { await loader.loadAsync(cfg.base + encodeURIComponent(name) + cfg.ext); (hits[pack] = hits[pack] || []).push(name); }
+  catch (e) { /* miss */ }
+}
+let total = 0, done = 0;
+for (const p of Object.keys(cand)) total += new Set(cand[p]).size;
+for (const p of Object.keys(cand)) {
+  const names = [...new Set(cand[p])];
+  for (let i = 0; i < names.length; i += 14) {
+    await Promise.all(names.slice(i, i + 14).map((n) => probe(p, n)));
+    done += Math.min(14, names.length - i);
+    out.textContent = `probing ${done}/${total} … hits ${Object.values(hits).flat().length}`;
+  }
+}
+for (const k of Object.keys(hits)) hits[k].sort();
+window.RESULT = { hits, hitCount: Object.values(hits).flat().length, total };
+out.textContent = 'DONE\n' + JSON.stringify(window.RESULT, null, 1);
+</script>
+</body>
+</html>

@@ -1,0 +1,62 @@
+{
+  "schema": "kfb.audio-provenance.v1",
+  "collection": "KFB Birthday Radio · VOLE CC0",
+  "sourcePage": "https://vole.wtf/happy-birthday/",
+  "creator": "Tom Kincaid",
+  "publisher": "VOLE.wtf",
+  "license": "CC0 1.0 / Public Domain Dedication",
+  "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "attributionRequired": false,
+  "attributionSuggested": "Tom Kincaid · VOLE.wtf Happy Birthday collection",
+  "usageNote": "Six selected recordings from VOLE’s 20-version Happy Birthday collection. D6 face mapping is a KFB presentation choice, not source metadata.",
+  "tracks": [
+    {
+      "d6Face": 1,
+      "style": "Jazz Trio",
+      "file": "jazz-trio.mp3",
+      "bytes": 448887,
+      "sha256": "59b9b90320bfda1f321819d7fe958703ef087481001d5c821aa8b98f2fb38bcb",
+      "sourceUrl": "https://media.vole.wtf/happy-birthday/jazz-trio.mp3"
+    },
+    {
+      "d6Face": 2,
+      "style": "Church Organ",
+      "file": "church-organ.mp3",
+      "bytes": 577200,
+      "sha256": "ecd3ba1327f9245f46497624e4e7e2663505f66903d5e1c9ee1df0ba45d73059",
+      "sourceUrl": "https://media.vole.wtf/happy-birthday/church-organ.mp3"
+    },
+    {
+      "d6Face": 3,
+      "style": "Reggae",
+      "file": "reggae.mp3",
+      "bytes": 395388,
+      "sha256": "1a539ab21e599e0091d4aa6600de42492ef305205ba3b3a154d3520107c7c91a",
+      "sourceUrl": "https://media.vole.wtf/happy-birthday/reggae.mp3"
+    },
+    {
+      "d6Face": 4,
+      "style": "Drum’n’Bass",
+      "file": "drum-n-bass.mp3",
+      "bytes": 447633,
+      "sha256": "70ba3396be60e5c620a0de0c871d07376f3286a17e27c59fcb0313b8d36d2e5c",
+      "sourceUrl": "https://media.vole.wtf/happy-birthday/drum-n-bass.mp3"
+    },
+    {
+      "d6Face": 5,
+      "style": "8-bit",
+      "file": "8-bit.mp3",
+      "bytes": 236146,
+      "sha256": "60dd3fd372a71f6dace8061d898100d0ffb0797173173ad8d52793e3d4d0e9ca",
+      "sourceUrl": "https://media.vole.wtf/happy-birthday/8-bit.mp3"
+    },
+    {
+      "d6Face": 6,
+      "style": "Death Metal",
+      "file": "death-metal.mp3",
+      "bytes": 334784,
+      "sha256": "632fe355472b0dee9c62cdf2e704344dfa97aaa7d21561dcea67195fd953c42b",
+      "sourceUrl": "https://media.vole.wtf/happy-birthday/death-metal.mp3"
+    }
+  ]
+}

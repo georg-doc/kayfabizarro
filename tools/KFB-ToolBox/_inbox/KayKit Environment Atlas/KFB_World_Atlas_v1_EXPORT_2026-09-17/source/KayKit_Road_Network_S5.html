@@ -1,0 +1,254 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>KFB Kit Lab · S5 · Straßennetz-Löser</title>
+<script type="importmap">
+{"imports":{
+ "three":"https://unpkg.com/three@0.184.0/build/three.module.js",
+ "three/addons/controls/OrbitControls.js":"https://unpkg.com/three@0.184.0/examples/jsm/controls/OrbitControls.js",
+ "three/addons/loaders/GLTFLoader.js":"https://unpkg.com/three@0.184.0/examples/jsm/loaders/GLTFLoader.js"
+}}
+</script>
+<style>
+  *{box-sizing:border-box}
+  body{margin:0;background:#14130f;color:#f0ece2;font:13px/1.5 ui-sans-serif,system-ui,-apple-system,"Helvetica Neue",sans-serif}
+  a{color:#e8c84a}a:hover{color:#f3dd82}
+  #app{display:grid;grid-template-columns:minmax(0,1fr) 358px;grid-template-rows:auto minmax(0,1fr);height:100vh}
+  #app.collapsed{grid-template-columns:minmax(0,1fr) 0}
+  #app.collapsed aside{display:none}
+  header{grid-column:1/-1;display:flex;align-items:center;gap:12px;padding:10px 16px;border-bottom:1px solid #2c2a20;background:#1b1a13;flex-wrap:wrap}
+  h1{font-size:14px;margin:0;font-weight:650}
+  .tag{font:11px/1 ui-monospace,monospace;padding:4px 7px;border:1px solid #403d2c;border-radius:4px;color:#e8c84a}
+  .bar{margin-left:auto;display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+  button{font:12px/1 inherit;padding:7px 10px;background:#24221a;color:#f0ece2;border:1px solid #403d2c;border-radius:5px;cursor:pointer}
+  button:hover{background:#2f2c21}
+  button[aria-pressed="true"]{background:#c9a227;border-color:#e8c84a;color:#1a1710}
+  label.sl{display:flex;align-items:center;gap:6px;font:11px/1 ui-monospace,monospace;color:#b4ab8e}
+  input[type=range]{width:96px;accent-color:#e8c84a}
+  #stage{position:relative;min-width:0;min-height:0}
+  canvas{display:block;width:100%;height:100%}
+  #refimg{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;pointer-events:none;opacity:0}
+  #hud{position:absolute;left:12px;bottom:12px;font:11px/1.6 ui-monospace,monospace;color:#ded7c2;background:#14130fcc;border:1px solid #403d2c80;padding:8px 10px;border-radius:6px;max-width:64%}
+  #auditbox{position:absolute;left:12px;top:12px;font:11px/1.6 ui-monospace,monospace;padding:8px 10px;border-radius:6px;border:1px solid;max-width:56%}
+  .ok{background:#182412e6;border-color:#4d7a2e;color:#cfe9b4}
+  .bad{background:#2a1a12e6;border-color:#a2603a;color:#f5d3b8}
+  #pick{position:absolute;right:12px;top:12px;font:11px/1.6 ui-monospace,monospace;color:#f3ecd8;background:#14130fe6;border:1px solid #403d2c;padding:8px 10px;border-radius:6px;display:none}
+  #side{position:absolute;right:12px;bottom:12px;z-index:5}
+  aside{border-left:1px solid #2c2a20;background:#171610;overflow:auto;padding:14px}
+  aside h2{font-size:11px;letter-spacing:.09em;text-transform:uppercase;color:#9c9377;margin:18px 0 8px}
+  aside h2:first-child{margin-top:0}
+  .kv{display:flex;justify-content:space-between;gap:10px;padding:3px 0;border-bottom:1px solid #26241b;font:11px/1.5 ui-monospace,monospace}
+  .kv span:last-child{color:#eee7d2;text-align:right}
+  .note{font-size:12px;color:#a49b80}
+  table{width:100%;table-layout:fixed;border-collapse:collapse;font:11px/1.5 ui-monospace,monospace}
+  th,td{text-align:left;padding:3px 4px;border-bottom:1px solid #26241b}
+  th{color:#9c9377;font-weight:500}
+  th:first-child,td:first-child{max-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+  th:not(:first-child),td:not(:first-child){width:52px;text-align:right;color:#eee7d2}
+  .mono{font:11px/1.7 ui-monospace,monospace;color:#cfc7ad;white-space:pre}
+</style>
+</head>
+<body>
+<div id="app">
+  <header>
+    <h1>KFB Kit Lab · Sprint 5</h1>
+    <span class="tag">KayKit City Builder Bits · Straßen gelöst, nicht geraten</span>
+    <span class="tag" id="count">…</span>
+    <div class="bar">
+      <button id="mNet" aria-pressed="true">Netz</button>
+      <button id="mRoads" aria-pressed="false">nur Straßen</button>
+      <button id="conn" aria-pressed="false">Anschlüsse</button>
+      <button id="vTop">Draufsicht</button>
+      <button id="vGrid" aria-pressed="false">Raster</button>
+      <label class="sl">Referenz <input id="opa" type="range" min="0" max="100" value="0"></label>
+      <button id="exp">Recipe JSON</button>
+    </div>
+  </header>
+  <div id="stage">
+    <canvas id="c"></canvas>
+    <img id="refimg" src="uploads/Bildschirmfoto%202026-09-16%20um%2017.45.07.png" alt="Referenz: KayKit Straßen">
+    <div id="auditbox" class="ok">messe Anschlüsse…</div>
+    <div id="pick"></div>
+    <div id="hud">lade…</div>
+    <button id="side">Leiste ausblenden</button>
+  </div>
+  <aside>
+    <h2>Gemessene Anschlüsse</h2>
+    <div id="levels"></div>
+    <table><thead><tr><th>Teil</th><th>0°</th><th>90°</th><th>180°</th><th>270°</th></tr></thead><tbody id="conntable"></tbody></table>
+    <p class="note">Jede Kachel wird von oben abgetastet: Asphalt liegt tiefer als der Bordstein, also verrät das Höhenprofil, wo die Straße weitergehen darf. N = −Z, E = +X, S = +Z, W = −X. Nichts davon steht im Dateinamen.</p>
+    <h2>Netzprüfung</h2>
+    <div id="netaudit"></div>
+    <p class="note">Straßenmöbel stehen auf <b>Slots</b>, die aus der Kantenmessung folgen: die geschlossenen Seiten einer Kachel sind Bordstein, die offenen sind Fahrbahn. Keine getippten Requisiten-Koordinaten mehr — deshalb kann keine Bank mehr in der Fahrspur landen.</p>
+    <p class="note">Geprüft wird dreierlei: ob die Kanten der Kacheln zusammenpassen — und ob jede Requisite tatsächlich auf der Fläche unter ihr steht. Dafür schießt die Prüfung einen Strahl nach unten, sucht die Oberkante der Kachel darunter und vergleicht sie mit der Unterkante des Teils. Eine Kachel ist 0,10 hoch: bei y = 0 gesetzt verschwindet ein Mülleimer komplett im Pflaster. Und drittens, ob jedes Straßenmöbel auf Bordsteinhöhe (0,10) statt auf Asphalthöhe (0,07) steht — Bodenkontakt allein sagt nichts darüber, ob es die <em>richtige</em> Fläche ist.</p>
+    <h2>Karte</h2>
+    <div class="mono" id="mapview"></div>
+    <h2>Teileverbrauch</h2>
+    <div id="usage"></div>
+    <h2>Herkunft</h2>
+    <div class="kv"><span>repo</span><span>georg-doc/kayfabizarro</span></div>
+    <div class="kv"><span>pack</span><span>City Builder Bits 1.0 FREE</span></div>
+    <div class="kv"><span>lizenz</span><span>CC0 · Kay Lousberg</span></div>
+  </aside>
+</div>
+
+<script type="module">
+import * as THREE from 'three';
+import { buildScene, makeViewer, measure, measured, instance, auditWorld, auditGround, snapToSurface } from './lib/kit-lab.js';
+import { measureTable, solve, connectorMarkers, kerbSlots } from './lib/road-solver.js';
+import { MAP, blocks, furniture, traffic, scene as recipe } from './scenes/road-network.js';
+
+const hud = document.getElementById('hud');
+const V = makeViewer(document.getElementById('c'), { background: 0x17160f, fov: 26, mood: 'day' });
+const f2 = (v) => (Math.abs(v - Math.round(v)) < 0.005 ? String(Math.round(v)) : v.toFixed(2));
+
+const ROADS = ['road_straight', 'road_straight_crossing', 'road_corner', 'road_corner_curved', 'road_tsplit', 'road_junction'];
+const ref = await measure('city_kk', 'road_straight');
+const M = ref.size[0];
+
+hud.textContent = 'messe Anschlüsse der 6 Straßenteile…';
+const probe = async (name, rot) => {
+  const n = await instance('city_kk', name);
+  n.rotation.y = THREE.MathUtils.degToRad(rot);
+  n.position.set(0, 0, 0);
+  return n;
+};
+const { table, levels } = await measureTable(ROADS, probe, M);
+const { placements: roadPl, report } = solve(MAP, table, { pack: 'city_kk' });
+
+/* furniture positions come from the measured kerb slots, not from typed coordinates */
+const slots = kerbSlots(roadPl, table, M);
+const props = furniture(slots);
+const dressing = [...blocks, ...props, ...traffic];
+
+hud.textContent = `baue ${roadPl.length} Straßenteile + ${dressing.length} Bauteile…`;
+const roadsOnly = await buildScene(roadPl, null, { module: M });
+const full = await buildScene([...roadPl, ...dressing], (d, n) => { hud.textContent = `lade ${d}/${n}`; }, { module: M });
+
+let current = null;
+function swap(node) { if (current) V.scene.remove(current); current = node; V.scene.add(node); window.__lab = { V, current, M, table, report }; }
+swap(full);
+V.frame(full, [0.85, 0.72, 1], 1.04);
+
+const shadow = new THREE.Mesh(new THREE.PlaneGeometry(400, 400), new THREE.ShadowMaterial({ opacity: 0.3 }));
+shadow.rotation.x = -Math.PI / 2; shadow.position.y = -0.03; shadow.receiveShadow = true;
+V.scene.add(shadow);
+
+const markers = connectorMarkers(roadPl, table, M);
+markers.visible = false;
+V.scene.add(markers);
+
+/* ---- panels ---- */
+document.getElementById('levels').innerHTML = [
+  ['Asphalt-Höhe', f2(levels.asphalt)],
+  ['Bordstein-Höhe', f2(levels.kerb)],
+  ['Schwelle', f2(levels.threshold)],
+  ['Modul', `${f2(M)} × ${f2(ref.size[2])}`]
+].map(([k, v]) => `<div class="kv"><span>${k}</span><span>${v}</span></div>`).join('');
+
+document.getElementById('conntable').innerHTML = ROADS.map((name) => {
+  const cells = [0, 90, 180, 270].map((r) => table.find((t) => t.name === name && t.rot === r)?.key || '–');
+  return `<tr><td title="${name}">${name.replace('road_', '')}</td>${cells.map((c) => `<td>${c}</td>`).join('')}</tr>`;
+}).join('');
+
+const netClean = report.clean;
+const abox = document.getElementById('auditbox');
+
+const world = auditWorld(roadsOnly, M, { classify: () => 'edge', tolerance: 0.03 });
+/* Bauteile (Platten, Straßen, Gebäude mit eigener Basis) sind Standflächen, nicht Requisiten */
+const SURFACE = { isSurface: (a) => /:(base|road_|building_)/.test(a) };
+const snap = snapToSurface(full, SURFACE);
+const ground = auditGround(full, { ...SURFACE, tolerance: 0.015 });
+
+/* lateral gate: pavement furniture must stand on the KERB level, not on the asphalt band */
+const PAVEMENT = /:(streetlight|trafficlight_|bench|bush|firehydrant|trash_|box_|dumpster)/;
+const onRoad = ground.rows.filter((r) => PAVEMENT.test(r.a) && r.surface !== null && r.surface < levels.kerb - 0.005);
+const pavementCount = ground.rows.filter((r) => PAVEMENT.test(r.a)).length;
+
+document.getElementById('netaudit').innerHTML = [
+  ['Straßenkacheln', String(roadPl.length)],
+  ['Zellen ohne Teil', String(report.unmatched.length)],
+  ['offene Enden', String(report.dangling.length)],
+  ['Wunsch-Teil erfüllt', `${report.cells.filter((c) => c.prefHonoured).length}/${report.cells.length}`],
+  ['Kantenversatz (gemessen)', f2(world.worst)],
+  ['Requisiten mit Bodenkontakt', `${ground.checked - ground.bad.length}/${ground.checked}`],
+  ['ohne Fläche darunter', String(ground.unverified.length)],
+  ['Requisiten auf Bordstein', `${pavementCount - onRoad.length}/${pavementCount}`],
+  ['Requisiten auf Fahrbahn', String(onRoad.length)],
+  ['Slots aus Kantenmessung', `${props.length} von ${slots.length}`],
+  ['auf Fläche eingerastet', `${snap.moved.length} · max ${f2(snap.worst)}`],
+  ['größter Höhenfehler', f2(ground.worst)]
+].map(([k, v]) => `<div class="kv"><span>${k}</span><span>${v}</span></div>`).join('')
+  + (ground.bad.length
+    ? ground.bad.slice(0, 10).map((r) => `<div class="kv"><span>${r.a.split(':')[1]}</span><span>${r.gap < 0 ? 'versenkt' : 'schwebt'} ${f2(Math.abs(r.gap))}</span></div>`).join('')
+    : '');
+
+const allClean = netClean && ground.clean && onRoad.length === 0;
+abox.className = allClean ? 'ok' : 'bad';
+abox.textContent = allClean
+  ? `Netz gelöst · ${roadPl.length} Kacheln, 0 offene Enden · ${ground.checked} Requisiten gemessen · alle ${pavementCount} Straßenmöbel auf dem Bordstein, keines auf der Fahrbahn`
+  : [!netClean && `${report.unmatched.length} Zelle(n) ohne Teil, ${report.dangling.length} offene Enden`,
+     ground.bad.length && `${ground.bad.length} Requisite(n) versenkt/schwebend, max ${f2(ground.worst)}`,
+     ground.unverified.length && `${ground.unverified.length} Requisite(n) ohne Fläche darunter (ungeprüft)`,
+     onRoad.length && `${onRoad.length} Straßenmöbel auf der Fahrbahn`]
+    .filter(Boolean).join(' · ');
+
+document.getElementById('mapview').textContent = MAP.join('\n');
+document.getElementById('usage').innerHTML = Object.entries(report.used)
+  .sort((a, b) => b[1] - a[1])
+  .map(([k, v]) => `<div class="kv"><span>${k.replace('road_', '')}</span><span>${v}×</span></div>`).join('');
+document.getElementById('count').textContent = `${roadPl.length} Straßen + ${dressing.length} Bauteile`;
+window.__lab = { ...(window.__lab || {}), slots, props, ground, onRoad };
+hud.textContent = `Netz · ${roadPl.length} Straßenkacheln aus 6 Teilen gelöst · Modul ${f2(M)}`;
+
+/* ---- controls ---- */
+const bN = document.getElementById('mNet'), bR = document.getElementById('mRoads');
+bN.onclick = () => { swap(full); V.frame(full, [0.85, 0.72, 1], 1.04); bN.setAttribute('aria-pressed', 'true'); bR.setAttribute('aria-pressed', 'false'); };
+bR.onclick = () => { swap(roadsOnly); V.frame(roadsOnly, [0, 1, 0.0001], 1.04); bR.setAttribute('aria-pressed', 'true'); bN.setAttribute('aria-pressed', 'false'); };
+document.getElementById('conn').onclick = (e) => { markers.visible = !markers.visible; e.currentTarget.setAttribute('aria-pressed', String(markers.visible)); };
+document.getElementById('vTop').onclick = (e) => {
+  const on = e.currentTarget.getAttribute('aria-pressed') !== 'true';
+  V.frame(current, on ? [0, 1, 0.0001] : [0.85, 0.72, 1], 1.04);
+  e.currentTarget.setAttribute('aria-pressed', String(on));
+};
+document.getElementById('vGrid').onclick = (e) => { V.grid.visible = !V.grid.visible; e.currentTarget.setAttribute('aria-pressed', String(V.grid.visible)); };
+document.getElementById('opa').oninput = (e) => { document.getElementById('refimg').style.opacity = e.target.value / 100; };
+document.getElementById('side').onclick = (e) => {
+  const off = document.getElementById('app').classList.toggle('collapsed');
+  e.currentTarget.textContent = off ? 'Leiste einblenden' : 'Leiste ausblenden';
+  requestAnimationFrame(() => V.resize());
+};
+document.getElementById('exp').onclick = () => {
+  const doc = {
+    ...recipe, module: M, map: MAP, levels,
+    connectors: table.map(({ name, rot, key }) => ({ name, rot, open: key })),
+    audit: { network: { unmatched: report.unmatched, dangling: report.dangling }, world: { worst: world.worst }, ground: { worst: ground.worst, bad: ground.bad, unverified: ground.unverified, snapped: snap.moved, onRoad } },
+    kerbSlots: slots.length,
+    placements: [...roadPl, ...dressing]
+  };
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(new Blob([JSON.stringify(doc, null, 2)], { type: 'application/json' }));
+  a.download = recipe.id + '.scene-recipe.json'; a.click();
+};
+
+const ray = new THREE.Raycaster(); const ndc = new THREE.Vector2();
+document.getElementById('c').addEventListener('pointerdown', (e) => {
+  const r = e.currentTarget.getBoundingClientRect();
+  ndc.set(((e.clientX - r.left) / r.width) * 2 - 1, -((e.clientY - r.top) / r.height) * 2 + 1);
+  ray.setFromCamera(ndc, V.camera);
+  const hit = ray.intersectObject(current, true)[0];
+  const pick = document.getElementById('pick');
+  if (!hit) { pick.style.display = 'none'; return; }
+  let o = hit.object, rec = null;
+  while (o && !rec) { rec = o.userData.recipe; o = o.parent; }
+  if (!rec) { pick.style.display = 'none'; return; }
+  const name = rec.a.split(':')[1];
+  const entry = table.find((t) => t.name === name && t.rot === (rec.r || 0));
+  pick.style.display = 'block';
+  pick.textContent = `${name} · ${rec.r || 0}°` + (rec.m ? ` · Zelle [${rec.m.join(', ')}]` : '')
+    + (entry ? ` · offen ${entry.key}` : '') + (rec.mask ? ` · gebraucht ${rec.mask}` : '');
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,963 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Shantell+Sans:wght@400;600;700&family=Special+Elite&display=swap">
+<style>
+html,body{margin:0;background:#efe9db}
+a{color:#0e3d3c}a:hover{color:#000}
+</style>
+</helmet>
+<div style="background:#efe9db;color:#241d16;font-family:'Shantell Sans',system-ui,sans-serif;-webkit-font-smoothing:antialiased;padding:clamp(20px,4vw,52px)">
+<div style="max-width:1040px;margin:0 auto">
+
+<div style="font-family:'Courier New',monospace;font-size:12px;letter-spacing:2px;color:#6b6259">KFB OVERWORLD · BODEN · KONZEPTRUNDE</div>
+<h1 style="font-family:'Special Elite',cursive;font-size:clamp(28px,5vw,42px);line-height:1.05;margin:8px 0 0;font-weight:400">Der Zug ist die Form</h1>
+<div style="font-size:clamp(16px,1.9vw,18px);line-height:1.6;margin-top:14px;color:#3a3129;max-width:760px">Zwei Anläufe sind an derselben Krankheit gestorben: erst war alles ein Oval, dann war alles ein Gitter. Eine Konstruktion, überall wiederholt. Der dritte Anlauf hat kein Grundelement mehr, das sich wiederholen könnte.</div>
+
+<div style="background:#241d16;color:#efe9db;padding:clamp(18px,3vw,26px);margin-top:24px">
+<div style="font-family:'Special Elite',cursive;font-size:clamp(19px,2.6vw,23px);color:#e8d38a;line-height:1.25">Der Denkfehler: begrenzen statt ziehen</div>
+<div style="font-size:clamp(15px,1.8vw,16.5px);line-height:1.65;margin-top:12px">Auf die Frage, was Animationsstudenten an seinen Hanna-Barbera-Hintergründen erstaunt, antwortet Art Lozzi: die Hintergründe wurden mit Pinsel und Farbe gemalt — <strong style="color:#e8d38a">mit Schablonen und Schwämmen.</strong></div>
+<div style="font-size:clamp(15px,1.8vw,16.5px);line-height:1.65;margin-top:12px">Und zur Farbe, im selben Gespräch: <em>»grün ist nicht einfach grün. Da sind Dutzende anderer Töne drin — Blaugrüne, unzählige Schattierungen von Waldfarben.«</em> Sein eigenes Wort für das Ziel: <strong style="color:#e8d38a">Monotonie vermeiden.</strong></div>
+<div style="font-size:clamp(15px,1.8vw,16.5px);line-height:1.65;margin-top:14px;padding-top:14px;border-top:1px solid #4a4238">Ich habe daraus zuerst eine <em>Schablone</em> gebaut — Schnittlinien, die Felder begrenzen. Das war ein Gitter, und es hat Trockenpinsel und Lichtsaum mit erschlagen. <strong style="color:#e8d38a">Ein Maler begrenzt keine Fläche, er zieht.</strong> Ein breiter, getaperter Zug <em>ist</em> die Form: er hat Richtung, Länge und Schwung und kann per Konstruktion nie ein Raster ergeben. Der Schwamm bleibt, wofür er gedacht war — gebrochene Textur <em>innerhalb</em> der Fläche, nie ihre Begrenzung.</div>
+</div>
+
+<h2 style="font-family:'Special Elite',cursive;font-weight:400;font-size:clamp(21px,3vw,26px);margin:40px 0 6px">Das Ebenenmodell</h2>
+<div style="height:2px;background:#241d16;margin-bottom:18px"></div>
+<div style="font-size:clamp(15.5px,1.9vw,17px);line-height:1.65;max-width:820px;margin-bottom:20px">Sieben Ebenen, und jede hat eine <strong>andere Operation</strong> — nicht dieselbe mit anderen Zahlen. Das ist der Unterschied zur letzten Runde.</div>
+
+<sc-for list="{{ ebenen }}" as="e" hint-placeholder-count="7">
+<div style="display:grid;grid-template-columns:34px 1fr;gap:16px;align-items:start;background:#e3ddcc;padding:14px 18px;margin-bottom:10px;border-left:5px solid {{ e.farbe }}">
+<div style="font-family:'Courier New',monospace;font-size:13px;color:#6b6259;padding-top:3px">{{ e.nr }}</div>
+<div>
+<div style="display:flex;flex-wrap:wrap;gap:10px;align-items:baseline">
+<div style="font-family:'Special Elite',cursive;font-size:17px">{{ e.name }}</div>
+<div style="font-family:'Courier New',monospace;font-size:11.5px;color:#6b6259;letter-spacing:.6px">{{ e.modus }}</div>
+</div>
+<div style="font-size:14.5px;line-height:1.6;margin-top:4px">{{ e.text }}</div>
+</div>
+</div>
+</sc-for>
+
+<h2 style="font-family:'Special Elite',cursive;font-weight:400;font-size:clamp(21px,3vw,26px);margin:40px 0 6px">Sechs Biome, fünf Achsen</h2>
+<div style="height:2px;background:#241d16;margin-bottom:18px"></div>
+<div style="font-size:clamp(15.5px,1.9vw,17px);line-height:1.65;max-width:820px">Dein Vorwurf saß: die Biome waren Farbarrays auf identischer Geometrie. Jetzt unterscheiden sie sich auf <strong>fünf</strong> Achsen, und die Farbe ist nur eine davon. Zwei Biome mit derselben Palette sähen immer noch verschieden aus.</div>
+
+<div style="overflow-x:auto;margin-top:18px">
+<div style="display:grid;grid-template-columns:repeat(6,minmax(150px,1fr));gap:10px;min-width:920px">
+<sc-for list="{{ biomKarten }}" as="b" hint-placeholder-count="6">
+<div style="background:#e3ddcc;padding:14px 15px;border-top:5px solid {{ b.tint }}">
+<div style="font-family:'Special Elite',cursive;font-size:17px">{{ b.label }}</div>
+<div style="font-size:13.5px;line-height:1.55;margin-top:8px"><span style="color:#6b6259">Zug</span><br>{{ b.schnitt }}</div>
+<div style="font-size:13.5px;line-height:1.55;margin-top:6px"><span style="color:#6b6259">Schwamm</span><br>{{ b.schwamm }}</div>
+<div style="font-size:13.5px;line-height:1.55;margin-top:6px"><span style="color:#6b6259">Marke</span><br>{{ b.marke }}</div>
+<div style="font-size:13.5px;line-height:1.55;margin-top:6px"><span style="color:#6b6259">Wertspreizung</span><br>{{ b.spreizung }}</div>
+</div>
+</sc-for>
+</div>
+</div>
+
+<div style="display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-top:30px;padding:14px 16px;background:#e3ddcc;position:sticky;top:0;z-index:5;box-shadow:0 6px 16px rgba(63,58,49,.18)">
+<sc-for list="{{ biomKnoepfe }}" as="b" hint-placeholder-count="6">
+<button onClick="{{ b.klick }}" style="font-family:'Special Elite',cursive;font-size:15px;padding:7px 14px;cursor:pointer;border:2px solid #241d16;background:{{ b.bg }};color:{{ b.fg }}">{{ b.label }}</button>
+</sc-for>
+<div style="width:1px;height:26px;background:#c9c0ac"></div>
+<button onClick="{{ neuerKeim }}" style="font-family:'Special Elite',cursive;font-size:15px;padding:7px 14px;cursor:pointer;border:2px solid #241d16;background:transparent;color:#241d16">neuer Keim · {{ keim }}</button>
+</div>
+
+<div style="position:relative;width:100%;aspect-ratio:21 / 10;margin-top:14px;border:3px solid #241d16;background:#241d16;overflow:hidden">
+<canvas id="kfb-konzept-boden" style="position:absolute;inset:0;width:100%;height:100%"></canvas>
+</div>
+
+<div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:12px">
+<sc-for list="{{ schalter }}" as="s" hint-placeholder-count="7">
+<button onClick="{{ s.klick }}" style="font-family:'Courier New',monospace;font-size:12.5px;letter-spacing:.5px;padding:8px 12px;cursor:pointer;border:2px solid #241d16;background:{{ s.bg }};color:{{ s.fg }}">{{ s.label }}</button>
+</sc-for>
+</div>
+<div style="font-size:14px;color:#6b6259;margin-top:8px">Ziehen verschiebt die Welt. Es gibt keine Kachel — nichts wiederholt sich, egal wie weit du gehst.</div>
+
+<h2 style="font-family:'Special Elite',cursive;font-weight:400;font-size:clamp(21px,3vw,26px);margin:44px 0 6px">Wie Assets und Einheiten daran hängen</h2>
+<div style="height:2px;background:#241d16;margin-bottom:18px"></div>
+
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px">
+<div style="background:#e3ddcc;padding:18px 20px;border-top:5px solid #241d16">
+<div style="font-family:'Special Elite',cursive;font-size:17px">Das Feld ist die Auskunft</div>
+<div style="font-size:14.5px;line-height:1.6;margin-top:7px">Weil der Boden aus <strong>geschnittenen Feldern</strong> besteht und nicht aus gestreuten Flecken, weiß jeder Weltpunkt, in welchem Feld er liegt, welches Material das Feld trägt und wie weit die nächste Schnittkante entfernt ist. Das sind genau die drei Angaben, die eine Platzierung braucht — und sie fallen gratis an, sie müssen nicht nachträglich gerechnet werden.</div>
+</div>
+<div style="background:#e3ddcc;padding:18px 20px;border-top:5px solid #241d16">
+<div style="font-family:'Special Elite',cursive;font-size:17px">Assets stehen im Feld, nicht auf dem Boden</div>
+<div style="font-size:14.5px;line-height:1.6;margin-top:7px">Ein Baum fragt nach einem Feld mit Material <em>Erde</em>, Mindestabstand zur Schnittkante und einer Gruppe von zwei bis fünf. Ein Felsen sucht die <strong>Kante</strong>, weil dort in der Natur das Material wechselt. Damit hört das Streuen auf und die Bepflanzung fängt an — sie folgt der Form statt sie zu ignorieren.</div>
+</div>
+<div style="background:#e3ddcc;padding:18px 20px;border-top:5px solid #241d16">
+<div style="font-family:'Special Elite',cursive;font-size:17px">Einheiten laufen über Felder</div>
+<div style="font-size:14.5px;line-height:1.6;margin-top:7px">Das Feld trägt auch Begehbarkeit und Tempo — Sumpf bremst, Fels blockiert. <strong>Die Kollisionskarte bleibt aber das bestehende <code style="font-family:'Courier New',monospace;font-size:13px">land[]</code>-Raster.</strong> Der Boden ist die sichtbare Schicht, nicht die spielende; er darf niemals entscheiden, wo man steht. Das ist die Grenze, an der solche Systeme sonst zerbrechen.</div>
+</div>
+<div style="background:#241d16;color:#efe9db;padding:18px 20px;border-top:5px solid #e8d38a">
+<div style="font-family:'Special Elite',cursive;font-size:17px;color:#e8d38a">Der Kontaktschatten schließt den Kreis</div>
+<div style="font-size:14.5px;line-height:1.6;margin-top:7px">Ihr habt ihn schon — <code style="font-family:'Courier New',monospace;font-size:13px;color:#e8d38a">contact-shadow</code> misst die Standfläche eines Sprites. Auf einem gemalten Boden mit einer Sonne oben links wirft er endlich in <strong style="color:#e8d38a">dieselbe Richtung</strong> wie die Trockenpinselkante und der Lichtsaum. Pixelkunst auf gemaltem Grund funktioniert nur, wenn beide dieselbe Sonne haben.</div>
+</div>
+</div>
+
+<div style="background:#e3ddcc;padding:18px 22px;margin-top:22px;border-left:6px solid #c43c3c">
+<div style="font-family:'Special Elite',cursive;font-size:18px">Wo das hier ehrlich aufhört</div>
+<div style="font-size:clamp(15px,1.8vw,16.5px);line-height:1.65;margin-top:8px">Die Ebene <strong>Marken</strong> ist die einzige, die ich nicht erfinden kann, ohne dass sie generisch wird. Zug, Schwamm, Trockenpinsel, Tusche, Papier und Dreck sind <em>Verfahren</em> — die kann man aus der Technik ableiten. Ein Grasbüschel, ein Riss, eine Flechte sind <em>Zeichnungen</em>. Der Code sollte sie streuen, nicht ausdenken.</div>
+<div style="font-size:clamp(15px,1.8vw,16.5px);line-height:1.65;margin-top:10px"><strong>Was ich von dir bräuchte:</strong> ein Blatt mit zwölf bis achtzehn Marken, je Biom drei, schwarz auf transparent, in ungefähr 64 px. Mehr nicht. Alles andere unten läuft ohne dich.</div>
+</div>
+
+<div style="margin-top:32px;text-align:center;font-family:'Special Elite',cursive;font-size:15px;color:#6b6259">Stay fluffy.</div>
+
+</div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1060,&quot;height&quot;:900}}">
+/* ══ BODEN: SCHABLONE UND SCHWAMM ═══════════════════════════════════════════════════════════
+   Ersetzt den Oval-Generator vollständig.
+
+   Belegt statt behauptet: Art Lozzi über seine Hanna-Barbera-Hintergründe — gemalt »mit Pinsel
+   und Farbe, mit Schablonen und Schwämmen«. Das sind ZWEI Werkzeuge mit zwei Handschriften:
+
+     Schablone  harte geschnittene Kante · DECKENDE Fläche · eine Farbe je Feld
+     Schwamm    gebrochene Textur INNERHALB der Fläche · viele Töne einer Farbe
+
+   Der vorige Versuch hatte weder das eine noch das andere: halbtransparente Ovale übereinander.
+   Das ist Lasur, und Lasur wird Matsch.
+
+   Die Felder entstehen nicht als Flecken, sondern als SCHNITTE: zwei bis drei Scharen langer,
+   gewellter Trennlinien durchziehen die Welt und teilen sie in Felder — wie ein Scherenschnitt.
+   Deshalb gibt es keine schwebenden Formen mehr, sondern eine geteilte Fläche. Und deshalb weiß
+   jeder Punkt, in welchem Feld er liegt: das ist die Auskunft, die Assets und Einheiten brauchen.
+
+   Licht: oben links, wie überall (§21.2). */
+
+const ZELLE = 460;
+const SUB   = 0.5;   // Backaufloesung: halbe Kantenlaenge = ein Viertel der Kosten
+
+/* Sechs Biome auf FÜNF Achsen — Palette ist nur eine davon. Zwei Biome mit gleicher Palette
+   sähen immer noch verschieden aus, weil Schnittführung, Schwamm und Marken abweichen. */
+const BIOME = {
+  gras: {
+    label:'Gras', tint:'#7d9f4a',
+    schnitt:{scharen:2, winkel:[0.35,1.9], breite:[152,104], welle:[24,15], kurve:[0.0088,0.0158]},
+    werte:['#4e7139','#628544','#77974d','#8cae59','#a6c46a'],
+    fremd:['#5b6f8c','#3f9e8c'],
+    schwamm:{dichte:0.55, groesse:[5,13], lagen:2},
+    marke:'buschel', markenDichte:1.0,
+    trocken:0.7, akzent:'#e8c34a',
+  },
+  wildnis: {
+    label:'Wildnis', tint:'#4f6b34',
+    schnitt:{scharen:3, winkel:[0.9,2.5,0.1], breite:[96,78,142], welle:[32,21,15], kurve:[0.0186,0.0268,0.0104]},
+    werte:['#33471f','#3f5a29','#4f6b34','#5f7c3c','#75954a'],
+    fremd:['#6a4a8c','#2f7fa0'],
+    schwamm:{dichte:0.85, groesse:[4,10], lagen:3},
+    marke:'blatt', markenDichte:1.5,
+    trocken:1.0, akzent:'#d96a3c',
+  },
+  sand: {
+    label:'Sand', tint:'#d8bb7e',
+    schnitt:{scharen:2, winkel:[0.12,0.44], breite:[236,178], welle:[34,26], kurve:[0.0046,0.0071]},
+    werte:['#b7935c','#c8a66c','#d8bb7e','#e6cd94','#f3e0af'],
+    fremd:['#c2617a','#4fa3b0'],
+    schwamm:{dichte:0.30, groesse:[8,21], lagen:1},
+    marke:'strich', markenDichte:0.55,
+    trocken:1.25, akzent:'#6f9a52',
+  },
+  asche: {
+    label:'Asche', tint:'#655c54',
+    schnitt:{scharen:3, winkel:[1.25,2.9,0.6], breite:[104,86,72], welle:[9,7,5], kurve:[0.0062,0.0087,0.0054]},
+    werte:['#39353f','#4c4750','#655c54','#7c7168','#948779'],
+    fremd:['#8a4a6e','#e0622c'],
+    schwamm:{dichte:0.70, groesse:[3,8], lagen:3},
+    marke:'riss', markenDichte:1.15,
+    trocken:0.5, akzent:'#e0622c',
+  },
+  winter: {
+    label:'Winter', tint:'#c6d3dc',
+    schnitt:{scharen:2, winkel:[0.7,2.2], breite:[198,142], welle:[42,29], kurve:[0.0070,0.0103]},
+    werte:['#8fa2b8','#a8b8c8','#c6d3dc','#dde7ee','#f2f7fa'],
+    fremd:['#a58fc4','#d99b8a'],
+    schwamm:{dichte:0.22, groesse:[10,25], lagen:1},
+    marke:'kristall', markenDichte:0.35,
+    trocken:0.35, akzent:'#7fb8d4',
+  },
+  sumpf: {
+    label:'Sumpf', tint:'#47624c',
+    schnitt:{scharen:3, winkel:[1.6,1.35,2.8], breite:[128,116,94], welle:[46,38,25], kurve:[0.0228,0.0178,0.0128]},
+    werte:['#26383a','#334b40','#47624c','#587356','#6d8a5e'],
+    fremd:['#6a4f8c','#b06a4a'],
+    schwamm:{dichte:0.62, groesse:[6,16], lagen:2},
+    marke:'ring', markenDichte:0.9,
+    trocken:0.85, akzent:'#9fc44a',
+  },
+};
+
+const SCHALTER = [
+  {key:'zuege',   label:'ZÜGE'},
+  {key:'schwamm', label:'SCHWAMM'},
+  {key:'trocken', label:'TROCKENPINSEL'},
+  {key:'tusche',  label:'KFB-TUSCHE'},
+  {key:'marken',  label:'MARKEN'},
+  {key:'papier',  label:'PAPIER (Zahn)'},
+  {key:'dreck',   label:'DRECK & STAUB'},
+  {key:'wabern',  label:'WABERN (lebt)'},
+  {key:'feld',    label:'FELDBÄNDER (Overlay)'},
+];
+
+const EBENEN = [
+  {nr:'01', name:'Papier', modus:'MULTIPLIZIEREN · konstant', farbe:'#8a7f6a',
+   text:'Der Untergrund, kein Motiv. Papier mit Zahn bricht jede Kante und jede Farbe minimal auf — das ist der Unterschied zwischen gemalt und gerechnet. Ändert sich nie, über allem, sehr schwach.'},
+  {nr:'02', name:'Züge', modus:'DECKEND · lang, breit, getapert', farbe:'#c43c3c',
+   text:'Ersetzt die Schablone, die ein Gitter war. Ein Maler begrenzt keine Fläche, er zieht — und ein breiter getaperter Zug IST die Form. Vier Lagen von groß nach klein, dunkel nach hell, deckend. Eine Bahn kann per Konstruktion nie ein Raster ergeben.'},
+  {nr:'03', name:'Schwamm', modus:'GEBROCHEN · innerhalb der Fläche', farbe:'#b8862a',
+   text:'Getupfte, ungleichmäßige Auflage benachbarter Töne in derselben Fläche. Hier lebt Lozzis Satz »grün ist nicht einfach grün«. Der Schwamm deckt nie ganz — er lässt den Ton darunter fleckig durch.'},
+  {nr:'04', name:'Trockenpinsel', modus:'GEBROCHENER STRICH · an den Schnitten', farbe:'#2f6f4f',
+   text:'Dieselbe Bahn, in parallele Streifen zerlegt, von denen ein Drittel aussetzt. Breit, roh, ausgefranst, lang und geschichtet — eine Spur, kein Strich. Klebt an keiner Kante; sie zieht quer durch.'},
+  {nr:'05', name:'KFB-Tusche', modus:'MULTIPLIZIEREN + SCREEN · fraktal, getapert', farbe:'#e8c34a',
+   text:'Drei Größen derselben Bahn. Sie umrandet nichts — sie läuft bewusst NEBEN der Form, begleitet, verbindet Ebenen und schwingt. Helle, farbige Tusche liegt additiv auf, dunkle multiplizierend. Der Gegenpol zum Trockenpinsel: scharf gegen roh.'},
+  {nr:'06', name:'Marken', modus:'GESETZT · nicht erzeugt', farbe:'#47aba9',
+   text:'Büschel, Risse, Ringe, Kristalle. Je Biom ein eigenes Vokabular, in Gruppen gesetzt, mit Dichtegefälle. Diese Ebene gehört später auf ein gezeichnetes Blatt — der Code soll streuen, nicht erfinden.'},
+  {nr:'07', name:'Dreck & Staub', modus:'MULTIPLIZIEREN · körnig, formlos', farbe:'#6b6259',
+   text:'Rauschen gehört hierhin und nirgendwo sonst: als Korn über allem, nie als eigene Fläche. Mein voriger Versuch hat aus Rauschen Formen gemacht — das war der falsche Ort für das richtige Werkzeug.'},
+];
+
+function rnd(seed){ let a=seed|0; return ()=>{ a=(a+0x6D2B79F5)|0;
+  let t=Math.imul(a^(a>>>15),1|a); t=(t+Math.imul(t^(t>>>7),61|t))^t;
+  return ((t^(t>>>14))>>>0)/4294967296; }; }
+
+class Component extends DCLogic {
+  state = {
+    biom:'gras', keim:7,
+    an:{zuege:true,schwamm:true,trocken:true,tusche:true,marken:true,papier:true,dreck:true,wabern:true,feld:true},
+  };
+
+  componentDidMount(){
+    requestAnimationFrame(()=>{ this.holen(); this.malen(); this.ziehen(); });
+  }
+  componentDidUpdate(){ this._schlange=[]; this.holen(); this.malen(); this.ziehen(); }
+  componentWillUnmount(){ if(this._raf) cancelAnimationFrame(this._raf); }
+
+  holen(){ this.cv = document.getElementById('kfb-konzept-boden'); return !!this.cv; }
+
+  hash(a,b,c){
+    let h=(a|0)*374761393 + (b|0)*668265263 + (c|0)*2246822519 + this.state.keim*3266489917;
+    h=(h^(h>>>13))>>>0; h=Math.imul(h,1274126177); return (h^(h>>>16))>>>0;
+  }
+
+  /* ── DER ZUG IST DIE FORM ────────────────────────────────────────────────────────────────
+     Die Schablone ist raus. Sie war der Übeltäter, und die Ursache war schlimmer als sie aussah:
+     zwei bis drei Scharen PARALLELER Linien, die sich schneiden, sind per Konstruktion ein
+     GITTER. Die Wellen biegen es, aber die Topologie bleibt. Erst war alles ein Oval, dann war
+     alles ein Gitter — zweimal dieselbe Krankheit, eine Konstruktion überall wiederholt.
+
+     Der Denkfehler dahinter: ich habe Flächen BEGRENZT. Ein Maler begrenzt nicht, er ZIEHT.
+     Ein breiter, getaperter Zug IST die Form — er hat Richtung, Länge und Schwung und kann
+     niemals ein Raster ergeben. Alle Ebenen benutzen jetzt dieselbe Bahn:
+
+        Zug         breit, deckend, die Fläche selbst
+        Tusche      dünn, getapert, folgt der Bahn LOSE und versetzt — nie als Umriss
+        Trockenpinsel  breite Bahn, in ausgefranste Streifen zerlegt
+
+     Alle drei schöpfen aus einem gemeinsamen Schwungfeld. Deshalb ziehen sie in dieselbe
+     Richtung, ohne sich zu decken — das ist der Unterschied zwischen Eleganz und Chaos. */
+
+  /* Das Schwungfeld: groß, langsam, über die ganze Welt stetig. Es gibt es nur einmal, also
+     schwingt alles miteinander. 60er-Jahre-Schwung kommt nicht aus Zufall, sondern daraus,
+     dass alles derselben Kurve folgt. */
+  schwung(wx,wy){
+    return Math.sin(wx*0.00042 + 0.7) * 1.15
+         + Math.cos(wy*0.00051 - 0.3) * 0.95
+         + Math.sin((wx-wy)*0.00027) * 0.55;
+  }
+
+  /* Saatpunkte in einem Weltausschnitt — beliebig grob oder fein, immer ohne Wiederholung. */
+  saat(x0,y0,x1,y1, okt, jeEimer, art, rand){
+    const pad = rand||okt;
+    const out=[];
+    for(let gy=Math.floor((y0-pad)/okt); gy<=Math.floor((y1+pad)/okt); gy++)
+    for(let gx=Math.floor((x0-pad)/okt); gx<=Math.floor((x1+pad)/okt); gx++){
+      const s=this.hash(gx,gy,art), R=rnd(s);
+      const n=Math.max(1,Math.round(jeEimer*(0.6+R())));
+      for(let i=0;i<n;i++) out.push({x:(gx+R())*okt, y:(gy+R())*okt, keim:(s+i*2654435761)|0});
+    }
+    return out;
+  }
+
+  /* Die Bahn: vom Saatpunkt aus dem Schwungfeld folgen. Weil die Bahn integriert wird und nicht
+     gerechnet, bekommt sie die weichen langen Bögen, die eine Hand macht. */
+  bahn(p, laenge, abweichung, schritte, kruemmung){
+    const pts=[]; let px=p.x, py=p.y;
+    const d=laenge/schritte, k=kruemmung||0;
+    for(let i=0;i<=schritte;i++){
+      pts.push([px,py]);
+      const t=i/schritte;
+      const a=this.schwung(px,py)+abweichung + k*(t-0.5);
+      px+=Math.cos(a)*d; py+=Math.sin(a)*d;
+    }
+    return pts;
+  }
+
+  /* == SECHSTER ANLAUF: ANWUCHS STATT KONSTRUKTION =====================================
+     Oval, Gitter, Avocado, Kapsel, Keule, Kapsel. Der gemeinsame Nenner aller fuenf Versuche:
+     jede Form war KONVEX mit glattem Rand. Huellkurve, Borstenbuendel, Profil - egal wie
+     gebaut, das Ergebnis war immer eine geschlossene glatte Aussenlinie. Natuerliche Formen
+     sind nicht konvex: sie haben Lappen, Buchten und Einschnitte.
+
+     Anwuchs erzeugt genau das. Eine Masse waechst, indem sich Scheiben an ihrem bestehenden
+     Rand anlagern - jede neue an einer zufaelligen schon gesetzten, in einer Richtung, die
+     entlang der Zugrichtung bevorzugt wird. Der Rand ist dann die Vereinigung vieler Kreise
+     und wird von selbst fraktal: selbstaehnlich ueber die Groessenstufen, nie konvex, nie
+     wiederholt. Und ohne Zacken, weil an einem Kreis nichts spitz ist - genau Georgs Vorgabe.
+
+     Damit man keine Kreise sieht, ueberlappen sie stark (Abstand rund 0,55 Radius) und ihre
+     Groesse wandert. Die Richtungsvorliebe haelt den Schwung, das Wachstum macht die Form. */
+  zug(x, pts, breite, farbe, alpha, unwucht, keim){
+    const RF=rnd((keim|0)||12345);
+    const A=pts[0], B2=pts[pts.length-1];
+    const laenge=Math.hypot(B2[0]-A[0], B2[1]-A[1]) || breite;
+    const richt=Math.atan2(B2[1]-A[1], B2[0]-A[0]);
+
+    const r0=breite*0.19;
+
+    /* WURZEL DES PROBLEMS: die Masse wuchs als ZUFALLSWEG - jede Scheibe lagerte sich an eine
+       der zuletzt gesetzten an, in halb zufaelliger Richtung. Die Ausdehnung eines Zufallswegs
+       waechst mit der WURZEL der Schrittzahl, nicht mit der Schrittzahl. Deshalb spannte keine
+       Masse ihre verlangte Strecke, egal wie ich Schrittweite oder Anzahl gedreht habe: duenne
+       Tuschelinien blieben Punkte, und alle Massen wurden gleich rund.
+
+       Die Bahn lag die ganze Zeit vor: `pts` ist der gezeichnete Weg des Zuges. Statt ihn
+       wegzuwerfen und zu wuerfeln, wird das Rueckgrat DARAUF gesetzt - eine Kette einander
+       ueberlappender Scheiben entlang des Weges, mit wandernder Staerke. Die Ausdehnung ist
+       damit per Konstruktion die Weglaenge, und die Form ist ein Band, kein Ballon.
+
+       Die Lappen kommen danach: Anlagerungen an das Rueckgrat, die den Rand unregelmaessig und
+       nicht-konvex machen. Anwuchs bleibt also das Mittel fuer die KONTUR - er ist nur nicht
+       laenger fuer die AUSDEHNUNG zustaendig. */
+    /* ══ DIE KONTUR IST KEINE SCHEIBENVEREINIGUNG MEHR ══════════════════════════════════
+       Sieben Anlaeufe lang war die Silhouette immer die Vereinigung von Kreisen — erst grosse,
+       dann kleine, dann in drei Generationen. Damit liegt der Kruemmungsradius des Randes
+       ueberall zwischen etwa 0,3 und 2 mal Scheibenradius, also in einem Band von Faktor sieben.
+       Ein Rand mit nach unten BEGRENZTEM Kruemmungsradius wird vom Auge zwangslaeufig als
+       Kreiskette gelesen. Keine Verteilung, keine Groessenstreuung und keine Zahl kann das
+       heilen — solange die Kontur aus Scheiben besteht, sieht man Scheiben.
+
+       Jetzt ist der Zug ein BAND: eine gefuellte Flaeche, deren linke und rechte Kante als
+       Abstand von der Bahn definiert sind. Dieser Abstand kommt aus einer Summe von Wellen
+       ueber der Bogenlaenge — fuenf Frequenzen, jede halb so stark wie die vorige. Damit hat
+       der Rand Detail auf allen Groessenstufen und KEINEN charakteristischen Kruemmungsradius:
+       lange ruhige Strecken, breite Schultern, tiefe Einschnitte, alles aus derselben Regel.
+       Links und rechts haben eigene Wellen, also ist nichts symmetrisch.
+
+       Das ist dieselbe Einsicht wie beim Feld — Detail auf allen Stufen statt Bausteine —, nur
+       auf die Kontur angewandt statt auf die Flaeche. */
+    let gesamtWeg=0;
+    for(let i=1;i<pts.length;i++) gesamtWeg+=Math.hypot(pts[i][0]-pts[i-1][0], pts[i][1]-pts[i-1][1]);
+    const R2=Math.min(breite*0.5, Math.max(2, gesamtWeg*0.24));
+
+    /* Staerkeprofil laengs: asymmetrisch, Maximum wandert, Auslauf mal spitz mal stumpf. */
+    const gl=u=>u*u*(3-2*u);
+    const p0=0.22+RF()*0.5, pk=0.15+RF()*0.55, p1=RF()<0.45 ? 0.05+RF()*0.15 : 0.35+RF()*0.5;
+    const staerke=t=>{
+      const bb = t<pk ? p0+(1-p0)*gl(t/Math.max(0.001,pk))
+                      : 1+(p1-1)*gl((t-pk)/Math.max(0.001,1-pk));
+      return Math.max(0.14, bb);
+    };
+
+    /* Wellenspeicher fuer die Randfunktion. Ein Feld von Zufallswerten, an verschiedenen
+       Frequenzen weich abgetastet — dasselbe Prinzip wie das Wertrauschen der Bodenflaeche,
+       nur eindimensional entlang der Bahn. */
+    const G=[]; for(let i=0;i<296;i++) G.push(RF());
+    const nz=(u,fr,off)=>{
+      const xx=u*fr+off, i=((Math.floor(xx)%280)+280)%280, s=xx-Math.floor(xx);
+      return G[i]+(G[i+1]-G[i])*(s*s*(3-2*s));
+    };
+    const rand1=(t,o)=>0.5*nz(t,2.6,o)+0.25*nz(t,6.1,o+37)+0.125*nz(t,13.7,o+91)
+                     +0.0625*nz(t,29.3,o+143)+0.0625*nz(t,61.7,o+201);
+    const oL=RF()*200, oR=RF()*200;
+
+    /* Stuetzpunkte dicht genug, dass die Fuellung keine Ecken zeigt. */
+    const n=Math.max(48, Math.min(420, Math.round(gesamtWeg/3)));
+    const links=[], rechts=[];
+    let x0=1e9, y0=1e9, x1=-1e9, y1=-1e9;
+    const fasse=(px,py)=>{ if(px<x0)x0=px; if(px>x1)x1=px; if(py<y0)y0=py; if(py>y1)y1=py; };
+
+    /* Bahn auf n gleiche Abschnitte umtasten. */
+    const laengen=[0];
+    for(let i=1;i<pts.length;i++)
+      laengen.push(laengen[i-1]+Math.hypot(pts[i][0]-pts[i-1][0], pts[i][1]-pts[i-1][1]));
+    /* GLATT interpolieren, nicht linear. Vorher lag zwischen zwei Bahnpunkten eine GERADE —
+       bei Zuglaengen von 1300-2400 px und 41 Bahnpunkten also Segmente von 33-60 px, und das
+       Band erbt jede dieser Geraden samt Knick am Gelenk. Daher die Papierschnipsel-Optik:
+       das Grundelement war nur getauscht, Kreis gegen Rechteck.
+
+       Catmull-Rom laeuft durch alle Bahnpunkte und ist an jedem stetig differenzierbar — es
+       gibt keinen Knick und keine Gerade mehr, unabhaengig davon, wie grob die Bahn abgetastet
+       ist. Das behebt die Ursache statt die Stuetzpunktzahl hochzudrehen. */
+    const auf=u=>{
+      const ziel=u*gesamtWeg;
+      let i=1; while(i<laengen.length-1 && laengen[i]<ziel) i++;
+      const l0=laengen[i-1], l1=laengen[i], q=(l1-l0)>0.0001 ? (ziel-l0)/(l1-l0) : 0;
+      const g=k=>pts[Math.max(0,Math.min(pts.length-1,k))];
+      const p0=g(i-2), p1=g(i-1), p2=g(i), p3=g(i+1);
+      const q2=q*q, q3=q2*q;
+      const cr=(a,b,c,d)=>0.5*((2*b) + (-a+c)*q + (2*a-5*b+4*c-d)*q2 + (-a+3*b-3*c+d)*q3);
+      return [cr(p0[0],p1[0],p2[0],p3[0]), cr(p0[1],p1[1],p2[1],p3[1])];
+    };
+
+    for(let i=0;i<=n;i++){
+      const t=i/n;
+      const p=auf(t);
+      const q=auf(Math.min(1,t+1/n)), o=auf(Math.max(0,t-1/n));
+      const dx=q[0]-o[0], dy=q[1]-o[1], l=Math.hypot(dx,dy)||1;
+      const nx=-dy/l, ny=dx/l;
+      const st=staerke(t);
+      /* Die Randwellen liefen ueber die NORMIERTE Bahn (t von 0 bis 1). Ihre Wellenlaenge
+         skalierte damit mit der Zuglaenge statt mit der Bandbreite: bei einem 2400 px langen,
+         300 px breiten Zug ergibt die tiefste Oktave eine Welle von 900 px — und eine Welle,
+         die dreimal so lang ist wie das Band breit, liest sich als GERADE. Deshalb blieben die
+         Papierschnipsel, obwohl die Mittellinie laengst glatt war.
+         Jetzt laeuft die Welle in Bandbreiten: eine Ausbuchtung etwa alle zwei Breiten,
+         unabhaengig davon, wie lang der Zug ist. */
+      const u=t*gesamtWeg/Math.max(6,R2*2.2);
+      /* Enden schliessen: ein Band mit flachem Abschluss ist ein Rechteck. */
+      const ende=Math.min(1, Math.min(t,1-t)*14);
+      const wl=R2*st*ende*(0.30+1.30*rand1(u,oL));
+      const wr=R2*st*ende*(0.30+1.30*rand1(u,oR));
+      const lp=[p[0]+nx*wl, p[1]+ny*wl], rp=[p[0]-nx*wr, p[1]-ny*wr];
+      links.push(lp); rechts.push(rp); fasse(lp[0],lp[1]); fasse(rp[0],rp[1]);
+    }
+
+    const zeichne=(ctx)=>{
+      ctx.fillStyle=farbe;
+      ctx.beginPath();
+      ctx.moveTo(links[0][0], links[0][1]);
+      for(let i=1;i<links.length;i++) ctx.lineTo(links[i][0], links[i][1]);
+      for(let i=rechts.length-1;i>=0;i--) ctx.lineTo(rechts[i][0], rechts[i][1]);
+      ctx.closePath();
+      ctx.fill();
+    };
+
+    if(alpha==null || alpha>=0.995){ x.save(); zeichne(x); x.restore(); return; }
+
+    /* Bei Teildeckung duerfen sich die Scheiben nicht gegenseitig durchscheinen: erst deckend
+       auf eine Hilfsflaeche in Groesse der Masse, dann EINMAL mit der Deckung darueber. */
+    const bw=Math.ceil(x1-x0)+4, bh=Math.ceil(y1-y0)+4;
+    if(bw<2||bh<2||bw>ZELLE*2||bh>ZELLE*2){ x.save(); x.globalAlpha=alpha; zeichne(x); x.restore(); return; }
+    if(!this._pinsel) this._pinsel=document.createElement('canvas');
+    const pc=this._pinsel;
+    if(pc.width<bw) pc.width=bw;
+    if(pc.height<bh) pc.height=bh;
+    const px=pc.getContext('2d');
+    px.setTransform(1,0,0,1,0,0); px.clearRect(0,0,bw,bh);
+    px.setTransform(1,0,0,1,-x0+2,-y0+2);
+    zeichne(px);
+    px.setTransform(1,0,0,1,0,0);
+    x.save(); x.globalAlpha=alpha;
+    x.drawImage(pc, 0,0,bw,bh, x0-2, y0-2, bw, bh);
+    x.restore();
+  }
+
+  /* Die Tusche ist eine LINIE, keine Masse - sie darf nicht durch zug() laufen, sonst wird sie
+     zur Wurst. Eigener Strich mit wandernder Staerke, gezeichnet als Kurve durch die Bahn. */
+  tuscheZug(x, pts, breite, farbe, alpha, keim){
+    const RF=rnd((keim|0)||999);
+    const N=pts.length-1;
+    const f1=1.1+RF()*2.4, p1=RF()*6.28;
+    x.save(); if(alpha!=null) x.globalAlpha=alpha;
+    x.strokeStyle=farbe; x.lineCap='round'; x.lineJoin='round';
+    for(let i=1;i<=N;i++){
+      const t=i/N;
+      x.lineWidth=Math.max(0.6, breite*(0.45+0.55*Math.abs(Math.sin(t*f1+p1))));
+      x.beginPath();
+      x.moveTo(pts[i-1][0],pts[i-1][1]);
+      const m=[(pts[i-1][0]+pts[i][0])/2,(pts[i-1][1]+pts[i][1])/2];
+      x.quadraticCurveTo(pts[i-1][0],pts[i-1][1],m[0],m[1]);
+      x.lineTo(pts[i][0],pts[i][1]);
+      x.stroke();
+    }
+    x.restore();
+  }
+
+  /* Trockenpinsel: dieselbe Bahn, aber in parallele Streifen zerlegt, von denen die Hälfte
+     aussetzt. Breit, roh, ausgefranst — kein Strich, sondern eine Spur. */
+  trocken(x, start, laenge, breite, farbe, R){
+    const streifen=4+Math.round(R()*5);
+    x.save(); x.globalCompositeOperation='multiply'; x.lineCap='round';
+    for(let s=0;s<streifen;s++){
+      const off=((s+R()*0.7)/(streifen-1)-0.5)*breite;
+      /* eigene Bahn je Borste: eigener Winkel, eigene Krümmung, eigene Länge */
+      const pts=this.bahn(start, laenge*(0.7+R()*0.6), (R()-0.5)*1.1, 26, 0.9+R()*1.6);
+      const N=pts.length-1;
+      x.strokeStyle=farbe;
+      x.lineWidth=1.4+R()*3.4;
+      const t0=R()*0.3, t1=1-R()*0.3;             // eigener Anfang, eigenes Ende je Streifen
+      let auf=false;
+      x.beginPath();
+      for(let i=0;i<=N;i++){
+        const t=i/N;
+        if(t<t0||t>t1){ auf=false; continue; }
+        const p=pts[i], q=pts[Math.min(N,i+1)], o=pts[Math.max(0,i-1)];
+        const dx=q[0]-o[0], dy=q[1]-o[1], l=Math.hypot(dx,dy)||1;
+        const k=0.55+0.45*Math.sin(Math.PI*t);     // nie null — sonst kollabiert die Spur
+        const px=p[0]-dy/l*off*k, py=p[1]+dx/l*off*k;
+        if(R()<0.3){ auf=false; continue; }        // hier ist die Farbe alle
+        if(!auf){ x.moveTo(px,py); auf=true; } else x.lineTo(px,py);
+      }
+      x.globalAlpha=0.10+R()*0.26;
+      x.stroke();
+    }
+    x.restore();
+  }
+
+  papier(){
+    if(this._papier) return this._papier;
+    const N=256, c=document.createElement('canvas'); c.width=c.height=N;
+    const x=c.getContext('2d');
+    const d=x.createImageData(N,N), p=d.data;
+    for(let i=0;i<N*N;i++){
+      const v=236+((Math.random()*Math.random()*54)|0)-22;
+      p[i*4]=p[i*4+1]=p[i*4+2]=Math.max(200,Math.min(255,v)); p[i*4+3]=255;
+    }
+    x.putImageData(d,0,0);
+    x.globalAlpha=0.16; x.strokeStyle='#b9b0a0'; x.lineWidth=1;
+    for(let i=0;i<40;i++){
+      const y=Math.random()*N;
+      x.beginPath(); x.moveTo(0,y);
+      x.bezierCurveTo(N*0.3,y+(Math.random()-0.5)*5,N*0.7,y+(Math.random()-0.5)*5,N,y);
+      x.stroke();
+    }
+    x.globalAlpha=1; this._papier=c; return c;
+  }
+
+  /* Schwamm — jetzt größer und in der Form variabel: mal rund, mal langgezogen, mal zerrissen.
+     Ein Schwamm hat viele Seiten, und man dreht ihn zwischen den Abdrücken. */
+  tupfer(groesse, farbe, keim, art){
+    const key=groesse+'|'+farbe+'|'+art;
+    if(!this._tupfer) this._tupfer=new Map();
+    const da=this._tupfer.get(key); if(da) return da;
+    const R=rnd(keim||12345), s=groesse*2;
+    const c=document.createElement('canvas'); c.width=c.height=s;
+    const x=c.getContext('2d');
+    x.fillStyle=farbe;
+    const streck = art===1 ? 2.6 : art===2 ? 0.45 : 1;
+    const n=Math.round(groesse*2.4);
+    for(let i=0;i<n;i++){
+      const a=R()*6.283, r=Math.pow(R(),0.5)*groesse*0.95;
+      const rr=groesse*(0.09+R()*0.3);
+      x.globalAlpha=0.5+R()*0.5;
+      x.beginPath();
+      x.ellipse(s/2+Math.cos(a)*r*streck, s/2+Math.sin(a)*r/streck,
+                rr*(art===1?1.5:1), rr*(0.5+R()*0.8), R()*3, 0, 6.3);
+      x.fill();
+    }
+    x.globalCompositeOperation='destination-out';
+    for(let i=0;i<Math.round(groesse*1.5);i++){
+      const a=R()*6.283, r=Math.pow(R(),0.45)*groesse*0.95;
+      x.globalAlpha=0.4+R()*0.55;
+      x.beginPath();
+      x.ellipse(s/2+Math.cos(a)*r*streck, s/2+Math.sin(a)*r/streck,
+                groesse*(0.08+R()*0.26), groesse*(0.08+R()*0.26), R()*3,0,6.3);
+      x.fill();
+    }
+    x.globalCompositeOperation='source-over'; x.globalAlpha=1;
+    this._tupfer.set(key,c); return c;
+  }
+
+
+  /* ══ FELDBÄNDER ══ Overlay, keine Ersatzschicht.
+     Ein stetiges Wertefeld über der ganzen Welt, quantisiert auf wenige Stufen. Aus dem Feld
+     kommen die klaren geschachtelten Formen des Referenzbildes; aus den gemalten Ebenen
+     darunter kommt die Hand. Beides zusammen — das war der Fehler der letzten Runde, wo ich
+     das Feld als ERSATZ gebaut habe statt als Auflage.
+
+     Deshalb tont das Overlay nur (die Textur darunter bleibt sichtbar) und zeichnet die
+     Bandgrenzen als Tusche unten rechts und Lichtsaum oben links — dieselbe Sonne wie überall. */
+  fwert(x,y,k){
+    const gx=Math.floor(x), gy=Math.floor(y);
+    const fx=x-gx, fy=y-gy;
+    const ex=fx*fx*(3-2*fx), ey=fy*fy*(3-2*fy);
+    const h=(a,b)=>{
+      let v=(a|0)*374761393+(b|0)*668265263+(k|0)*2246822519+this.state.keim*3266489917;
+      v=(v^(v>>>13))>>>0; v=Math.imul(v,1274126177); return ((v^(v>>>16))>>>0)/4294967295;
+    };
+    const a=h(gx,gy), b=h(gx+1,gy), c=h(gx,gy+1), d=h(gx+1,gy+1);
+    const u=a+(b-a)*ex, w=c+(d-c)*ex;
+    return u+(w-u)*ey;
+  }
+
+  /* Summe über Oktaven: Detail auf ALLEN Größenstufen, keine sticht als die eigentliche hervor.
+     Das ist der Unterschied zu meinen drei Anwuchs-Generationen, die drei erkennbare Stufen
+     waren. */
+  ffbm(x,y,k,okt){
+    let s=0, amp=1, sum=0;
+    for(let i=0;i<okt;i++){ s+=amp*this.fwert(x,y,k+i*17); sum+=amp; amp*=0.5; x*=2.02; y*=2.02; }
+    return s/sum;
+  }
+
+  /* Der eigentliche Trick: das Feld wird nicht an (x,y) abgefragt, sondern an einer Stelle, die
+     selbst aus Feldern kommt. Daraus entstehen die langen Schwünge und die Schachtelung.
+     Grundmaßstab groß (ruhige Massen), viele Oktaven im Endfeld (feines Detail DARIN) —
+     die 80/15/5-Regel in zwei Zahlen. */
+  ffeld(wx,wy){
+    const S=1/760;
+    const a=0.55, co=Math.cos(a), si=Math.sin(a);
+    let x=wx*S, y=wy*S;
+    const u=x*co+y*si, v=(-x*si+y*co)*2.6;
+    x=u*co-v*si; y=u*si+v*co;
+    const q1=this.ffbm(x,y,0,4), q2=this.ffbm(x+5.2,y+1.3,40,4);
+    const r1=this.ffbm(x+2.1*q1+1.7, y+2.1*q2+9.2, 80,3);
+    const r2=this.ffbm(x+2.1*q1+8.3, y+2.1*q2+2.8,120,3);
+    return this.ffbm(x+2.4*r1, y+2.4*r2, 160, 7);
+  }
+
+  feldband(x, B, x0, y0){
+    const N=5, P=2, w=Math.ceil(ZELLE/P);
+    const F=new Float32Array((w+2)*(w+2));
+    for(let j=-1;j<=w;j++) for(let i=-1;i<=w;i++)
+      F[(j+1)*(w+2)+(i+1)] = this.ffeld(x0+i*P, y0+j*P);
+    const st=q=>Math.max(0,Math.min(N-1,Math.floor(q*N)));
+
+    const roh=document.createElement('canvas'); roh.width=roh.height=w;
+    const rx=roh.getContext('2d');
+    const bild=rx.createImageData(w,w), pix=bild.data;
+    /* Tönung je Stufe: dunkel nach hell, aber SCHWACH - die gemalte Textur soll durchkommen. */
+    const ton=[[24,32,20,86],[36,50,30,44],[0,0,0,0],[196,214,150,40],[226,238,178,74]];
+    const ti=[20,30,22,235], li=[214,232,166,215];
+    for(let j=0;j<w;j++) for(let i=0;i<w;i++){
+      const s=st(F[(j+1)*(w+2)+(i+1)]);
+      const sL=st(F[(j+1)*(w+2)+i]), sR=st(F[(j+1)*(w+2)+(i+2)]);
+      const sO=st(F[j*(w+2)+(i+1)]), sU=st(F[(j+2)*(w+2)+(i+1)]);
+      const grenze = sL!==s||sR!==s||sO!==s||sU!==s;
+      let c;
+      if(grenze) c = (sL>s||sO>s) ? li : ti;
+      else c = ton[s];
+      const o=(j*w+i)*4;
+      pix[o]=c[0]; pix[o+1]=c[1]; pix[o+2]=c[2]; pix[o+3]=c[3];
+    }
+    rx.putImageData(bild,0,0);
+    x.save(); x.imageSmoothingEnabled=false;
+    x.drawImage(roh, x0, y0, ZELLE, ZELLE);
+    x.restore();
+  }
+
+  eimer(zx,zy){
+    const an=this.state.an;
+    const key=zx+','+zy+','+this.state.keim+','+this.state.biom+','+
+      SCHALTER.map(s=>an[s.key]?1:0).join('');
+    if(!this._eimer) this._eimer=new Map();
+    const da=this._eimer.get(key); if(da) return da;
+
+    const B=BIOME[this.state.biom];
+    const c=document.createElement('canvas');
+    c.width=c.height=Math.round(ZELLE*SUB);
+    const x=c.getContext('2d');
+    const x0=zx*ZELLE, y0=zy*ZELLE;
+    x.setTransform(SUB,0,0,SUB,-x0*SUB,-y0*SUB);
+    const R0=rnd(this.hash(zx,zy,5));
+
+    x.fillStyle=B.werte[1]; x.fillRect(x0,y0,ZELLE,ZELLE);
+
+    /* ZÜGE — groß gedacht. Wenige, lange, breite Bahnen, die weit über den Ausschnitt
+       hinausreichen. Dunkel nach hell geschichtet, deckend. Das ist die Fläche. */
+    if(an.zuege){
+      const lagen=[
+        {okt:ZELLE*0.95, n:2, br:[300,470], len:[1300,2400], ton:0, streu:1.05},
+        {okt:ZELLE*0.75, n:1, br:[180,300], len:[900,1700],  ton:2, streu:1.35},
+        {okt:ZELLE*0.60, n:1, br:[90,180],  len:[600,1200],  ton:3, streu:1.7},
+        {okt:ZELLE*0.50, n:1, br:[40,90],   len:[380,780],   ton:4, streu:2.1},
+      ];
+      for(const L of lagen)
+        for(const p of this.saat(x0,y0,x0+ZELLE,y0+ZELLE, L.okt, L.n, 3+L.ton, 1400)){
+          const R=rnd(p.keim);
+          const len=L.len[0]+R()*(L.len[1]-L.len[0]);
+          const br=L.br[0]+R()*(L.br[1]-L.br[0]);
+          const pts=this.bahn({x:p.x-Math.cos(this.schwung(p.x,p.y))*len*0.5,
+                               y:p.y-Math.sin(this.schwung(p.x,p.y))*len*0.5},
+                              len, (R()-0.5)*L.streu, 40, (R()-0.5)*1.3);
+          const w=Math.abs(p.keim)%100;
+          const darf = L.ton>=3 && w<4;           // nur klein, nur selten
+          /* Ton wandert je Zug um eine Stufe: Nachbarn beruehren sich dann ueber eine
+             Wertdifferenz, und die Kante ist entschieden statt unentschieden. */
+          const stufe = Math.max(0, Math.min(B.werte.length-1, L.ton + ((p.keim>>5)%3) - 1));
+          const farbe = darf ? B.fremd[p.keim&1] : B.werte[stufe];
+          this.zug(x, pts, br, farbe, darf?0.55:1, 0.16+R()*0.2,
+                   [0.4+R()*0.5, 0.2+R()*0.55, R()<0.4 ? 0.03 : 0.3+R()*0.45]);
+        }
+    }
+
+    /* SCHWAMM — in die Fläche, größer und formvariabel. */
+    if(an.schwamm){
+      const R=rnd(this.hash(zx,zy,31));
+      const n=Math.round(ZELLE*ZELLE/1600*B.schwamm.dichte);
+      for(let i=0;i<n;i++){
+        const px=x0+R()*ZELLE, py=y0+R()*ZELLE;
+        const zu=Math.floor(R()*B.werte.length);
+        const g=Math.round((B.schwamm.groesse[0]+R()*(B.schwamm.groesse[1]-B.schwamm.groesse[0]))*2.1/4)*4;
+        const art=Math.floor(R()*3);
+        const t=this.tupfer(g, B.werte[zu], this.hash(g,zu,art), art);
+        x.save(); x.globalAlpha=0.28+R()*0.5;
+        x.translate(px,py); x.rotate(R()*6.283);
+        x.drawImage(t,-t.width/2,-t.height/2); x.restore();
+      }
+    }
+
+    /* TROCKENPINSEL — lange, breite, ausgefranste Spuren im Schwung. Nicht an Kanten geklebt. */
+    if(an.trocken){
+      for(const p of this.saat(x0,y0,x0+ZELLE,y0+ZELLE, ZELLE*0.8, 1, 61, 1100)){
+        const R=rnd(p.keim);
+        if(R()>0.55*B.trocken+0.25) continue;
+        const len=420+R()*760;
+        const start={x:p.x-Math.cos(this.schwung(p.x,p.y))*len*0.5,
+                     y:p.y-Math.sin(this.schwung(p.x,p.y))*len*0.5};
+        this.trocken(x, start, len, 60+R()*140, R()<0.5?B.werte[0]:B.werte[4], R);
+      }
+    }
+
+    /* TUSCHE — die KFB-Kontur, fraktal in drei Größen, getapert, und bewusst NEBEN der Form.
+       Sie umrandet nichts; sie begleitet, verbindet und schwingt. Helle, farbige Tusche liegt
+       additiv auf (screen), dunkle multiplizierend — beides aus derselben Bahn. */
+    if(an.tusche){
+      const lagen=[
+        {okt:ZELLE*0.9, br:[11,21], len:[420,900]},
+        {okt:ZELLE*0.6, br:[6,12],  len:[300,660]},
+        {okt:ZELLE*0.4, br:[3,6],   len:[190,430]},
+      ];
+      for(const L of lagen)
+        for(const p of this.saat(x0,y0,x0+ZELLE,y0+ZELLE, L.okt, 1, 83, 950)){
+          const R=rnd(p.keim);
+          const len=L.len[0]+R()*(L.len[1]-L.len[0]);
+          const hell=R()<0.42;
+          /* Der Versatz ist Absicht: die Linie läuft neben der Form, nicht auf ihr. */
+          const seit=(R()-0.5)*70;
+          const a0=this.schwung(p.x,p.y);
+          const pts=this.bahn({x:p.x-Math.cos(a0)*len*0.5-Math.sin(a0)*seit,
+                               y:p.y-Math.sin(a0)*len*0.5+Math.cos(a0)*seit},
+                              len, (R()-0.5)*3.4, 30, (R()-0.5)*2.6);
+          x.save();
+          x.globalCompositeOperation = hell ? 'screen' : 'multiply';
+          this.zug(x, pts, L.br[0]+R()*(L.br[1]-L.br[0]),
+                   hell ? B.akzent : B.werte[0], hell?0.5:0.62, 0.42+R()*0.4,
+                   [0.15+R()*0.4, 0.15+R()*0.5, 0.02+R()*0.12]);
+          x.restore();
+        }
+    }
+
+    if(an.marken){
+      const R=rnd(this.hash(zx,zy,101));
+      for(let g=0;g<Math.round(11*B.markenDichte);g++){
+        const nx=x0+R()*ZELLE, ny=y0+R()*ZELLE;
+        for(let i=0,k=2+Math.floor(R()*4);i<k;i++){
+          const a=R()*6.283, r=Math.pow(R(),0.6)*ZELLE*0.09;
+          this.marke(x,B,nx+Math.cos(a)*r,ny+Math.sin(a)*r,R,R()<0.18);
+        }
+      }
+    }
+
+    if(an.dreck){
+      const R=rnd(this.hash(zx,zy,199));
+      x.save(); x.globalCompositeOperation='multiply';
+      for(let i=0;i<240;i++){
+        x.globalAlpha=0.03+R()*0.07;
+        x.fillStyle=R()<0.5?'#4a4034':'#2a2620';
+        x.beginPath(); x.arc(x0+R()*ZELLE, y0+R()*ZELLE, 0.6+R()*2, 0, 6.3); x.fill();
+      }
+      x.restore();
+    }
+    if(an.papier){
+      x.save(); x.globalCompositeOperation='multiply'; x.globalAlpha=0.30;
+      x.fillStyle=x.createPattern(this.papier(),'repeat');
+      x.fillRect(x0,y0,ZELLE,ZELLE); x.restore();
+    }
+
+    if(an.feld) this.feldband(x, B, x0, y0);
+
+    while(this._eimer.size>=80) this._eimer.delete(this._eimer.keys().next().value);
+    this._eimer.set(key,c);
+    return c;
+  }
+
+  /* Marken nach der Dreierregel: drei Elemente, drei Längen, drei Ansätze, keine Symmetrie,
+     kein gemeinsames Zentrum. Vorläufig — diese Ebene gehört auf ein gezeichnetes Blatt. */
+  marke(x, B, px, py, R, gross){
+    const s=gross ? 15+R()*11 : 6+R()*7;
+    const tinte=B.werte[0];
+    x.save(); x.translate(px,py); x.rotate((R()-0.5)*0.45);
+    x.strokeStyle=tinte; x.fillStyle=tinte; x.lineCap='round';
+    x.globalAlpha=gross?0.62:0.44;
+    x.lineWidth=Math.max(1.1,s*0.13);
+    if(B.marke==='buschel'||B.marke==='blatt'){
+      const laenge=[1.0,0.56,0.79], stand=[-0.36,0.06,0.41], neigung=[-0.52,0.12,0.6];
+      const dreh=Math.floor(R()*3);
+      for(let j=0;j<3;j++){
+        const k=(j+dreh)%3, L=s*laenge[k]*(0.85+R()*0.3), fuss=s*stand[j];
+        const a=-1.57+neigung[k]+(R()-0.5)*0.22;
+        x.beginPath(); x.moveTo(fuss,0);
+        x.quadraticCurveTo(fuss+Math.cos(a)*L*0.34, Math.sin(a)*L*0.7,
+                           fuss+Math.cos(a-0.32)*L, Math.sin(a-0.32)*L);
+        x.stroke();
+      }
+      if(B.marke==='blatt'){
+        x.globalAlpha*=0.8;
+        x.beginPath(); x.ellipse(s*0.5,-s*0.15,s*0.28,s*0.14,-0.5,0,6.3); x.fill();
+      }
+    } else if(B.marke==='riss'){
+      x.beginPath(); x.moveTo(0,0);
+      let cx=0,cy=0;
+      for(let j=0;j<3;j++){ cx+=(R()-0.38)*s; cy+=(R()-0.5)*s*0.75;
+        x.quadraticCurveTo(cx-s*0.12,cy-s*0.08,cx,cy); }
+      x.stroke();
+    } else if(B.marke==='ring'){
+      x.beginPath(); x.ellipse(0,0,s*0.9,s*0.55,(R()-0.5)*0.6,0.4,5.6); x.stroke();
+      if(gross){ x.beginPath(); x.ellipse(s*0.14,-s*0.1,s*0.45,s*0.26,0.3,0.8,5.2); x.stroke(); }
+    } else if(B.marke==='kristall'){
+      const l=[1.0,0.58,0.8];
+      for(let j=0;j<3;j++){
+        const a=j*1.047+R()*0.5;
+        x.beginPath(); x.moveTo(0,0);
+        x.lineTo(Math.cos(a)*s*l[j], Math.sin(a)*s*l[j]); x.stroke();
+      }
+    } else {
+      x.beginPath(); x.moveTo(-s*0.9,0);
+      x.quadraticCurveTo(-s*0.2,-s*0.26, s*(0.55+R()*0.5), s*0.05); x.stroke();
+    }
+    x.restore();
+  }
+
+  /* Liefert den Eimer nur, wenn er schon gebacken ist - sonst legt er ihn in die Schlange. */
+  eimerWennDa(zx,zy){
+    const an=this.state.an;
+    const key=zx+','+zy+','+this.state.keim+','+this.state.biom+','+
+      SCHALTER.map(s=>an[s.key]?1:0).join('');
+    if(!this._eimer) this._eimer=new Map();
+    const da=this._eimer.get(key);
+    if(da) return da;
+    if(!this._schlange) this._schlange=[];
+    if(!this._schlange.some(e=>e.key===key)) this._schlange.push({key,zx,zy});
+    this.plan();
+    return null;
+  }
+
+  plan(){
+    if(this._laeuft || !this._schlange || !this._schlange.length) return;
+    this._laeuft=true;
+    requestAnimationFrame(()=>{
+      this._laeuft=false;
+      const e=this._schlange.shift();
+      if(!e) return;
+      this.eimer(e.zx,e.zy);          // backt und legt in den Cache
+      this.malen();
+      this.plan();
+    });
+  }
+
+  malen(){
+    if(!this.cv && !this.holen()) return;
+    const dpr=Math.min(2,window.devicePixelRatio||1);
+    const b=this.cv.parentElement.getBoundingClientRect();
+    if(b.width<10){ requestAnimationFrame(()=>this.malen()); return; }
+    const W=Math.max(320,Math.round(b.width)), H=Math.max(160,Math.round(b.height));
+    this.cv.width=Math.round(W*dpr); this.cv.height=Math.round(H*dpr);
+    const x=this.cv.getContext('2d');
+    x.setTransform(dpr,0,0,dpr,0,0);
+    const cam=this.cam||(this.cam={x:0,y:0});
+
+    const A=6;                                   // waagerechter Überstand > max. Amplitude
+    const ziel = this.state.an.wabern ? this.zwischen(W+2*A,H) : x;
+    if(ziel!==x){ ziel.setTransform(1,0,0,1,A,0); ziel.clearRect(-A,0,W+2*A,H); }
+    /* Die Schleife muss den Überstand MITZEICHNEN. Vorher deckte sie nur 0…W ab, der Streifen
+       daneben blieb leer — und genau dorthin greift die verschobene Scheibe. Der Überstand war
+       da, es stand nur nichts drin. */
+    const grund=BIOME[this.state.biom].werte[1];
+    for(let zy=Math.floor(cam.y/ZELLE); zy<=Math.floor((cam.y+H)/ZELLE); zy++)
+      for(let zx=Math.floor((cam.x-A)/ZELLE); zx<=Math.floor((cam.x+W+A)/ZELLE); zx++){
+        const px=Math.round(zx*ZELLE-cam.x), py=Math.round(zy*ZELLE-cam.y);
+        const e=this.eimerWennDa(zx,zy);
+        if(e) ziel.drawImage(e, px, py, ZELLE, ZELLE);
+        else { ziel.fillStyle=grund; ziel.fillRect(px,py,ZELLE,ZELLE); }
+      }
+
+    if(ziel!==x){
+      const t=(performance.now()-(this._t0||(this._t0=performance.now())))/1000;
+      const S=3;                                   // Scheibenhöhe
+      /* Erst das Bild UNVERZERRT auflegen, dann die versetzten Scheiben darüber. Ich habe drei
+         Runden lang versucht, die Randabdeckung exakt auszurechnen, und jedes Mal eine andere
+         Lücke erzeugt. Mit einer Grundlage darunter kann eine unbedeckte Spalte gar nicht mehr
+         auffallen — sie zeigt dann einfach das ungewaberte Bild. Billiger als die Rechnerei und
+         nicht kaputtzubekommen. */
+      x.clearRect(0,0,W,H);
+      x.drawImage(this._zw, A,0,W,H, 0,0,W,H);
+      for(let y=0;y<H;y+=S){
+        const dx = Math.sin(y*0.009 + t*0.38)*1.9 + Math.sin(y*0.004 - t*0.24)*1.4;
+        const oy = Math.max(0, y-1), oh = Math.min(H-oy, S+2);
+        /* GANZZAHLIG abtasten: bei gebrochener Quell-x interpoliert drawImage an der Kante und
+           zieht Transparenz von außerhalb herein — daher blieben die ersten zwei Spalten blass.
+           Bei ±3 px Amplitude ist die Stufung unsichtbar. */
+        x.drawImage(this._zw, Math.round(A-dx),oy,W,oh, 0,oy,W,oh);
+      }
+      if(!this._raf) this._raf=requestAnimationFrame(()=>{ this._raf=0; this.malen(); });
+    }
+  }
+
+  zwischen(Wz,H){
+    if(!this._zw){ this._zw=document.createElement('canvas'); }
+    if(this._zw.width!==Wz||this._zw.height!==H){ this._zw.width=Wz; this._zw.height=H; }
+    return this._zw.getContext('2d');
+  }
+
+  ziehen(){
+    const el=this.cv && this.cv.parentElement;
+    if(!el || el._kfbZiehen) return;
+    el._kfbZiehen=true; el.style.cursor='grab';
+    let ab=null;
+    el.addEventListener('pointerdown', e=>{
+      ab={x:e.clientX,y:e.clientY,cx:this.cam.x,cy:this.cam.y};
+      el.setPointerCapture(e.pointerId); el.style.cursor='grabbing';
+    });
+    el.addEventListener('pointermove', e=>{
+      if(!ab) return;
+      this.cam.x=ab.cx-(e.clientX-ab.x); this.cam.y=ab.cy-(e.clientY-ab.y);
+      this.malen();
+    });
+    const los=()=>{ ab=null; el.style.cursor='grab'; };
+    el.addEventListener('pointerup',los); el.addEventListener('pointercancel',los);
+  }
+
+  renderVals(){
+    const beschreibung={
+      gras:   {schnitt:'breite ruhige Züge, wenig Streuung', schwamm:'mittel, mittlere Tupfer, zwei Lagen', marke:'Büschel, Dreierregel', spreizung:'ruhig — fünf enge Grünstufen'},
+      wildnis:{schnitt:'kurze wilde Züge, starke Streuung',  schwamm:'dicht, kleine Tupfer, drei Lagen',    marke:'Blatt mit Fleck',      spreizung:'weit — Waldschatten bis Lichtgrün'},
+      sand:   {schnitt:'sehr lange flache Züge, kaum Kurve', schwamm:'sparsam, große Tupfer, eine Lage',    marke:'Windstrich',           spreizung:'weit, aber warm durchgehend'},
+      asche:  {schnitt:'kurze harte Züge, kantiger Schwung', schwamm:'dicht, winzige Tupfer, drei Lagen',   marke:'Riss',                 spreizung:'sehr weit — fast Schwarz bis Grau'},
+      winter: {schnitt:'weite lange Bögen, sehr ruhig',      schwamm:'sehr sparsam, sehr große Tupfer',     marke:'Kristall',             spreizung:'hell — vier Stufen im oberen Drittel'},
+      sumpf:  {schnitt:'verschlungene Züge, hohe Streuung',  schwamm:'mittel-dicht, breite Tupfer',         marke:'Ring',                 spreizung:'dunkel, kalt, enge Stufen'},
+    };
+    return {
+      keim: String(this.state.keim),
+      ebenen: EBENEN,
+      biomKarten: Object.keys(BIOME).map(k=>Object.assign(
+        {label:BIOME[k].label, tint:BIOME[k].tint}, beschreibung[k])),
+      biomKnoepfe: Object.keys(BIOME).map(k=>({
+        label:BIOME[k].label,
+        bg: this.state.biom===k?'#241d16':'transparent',
+        fg: this.state.biom===k?'#e8d38a':'#241d16',
+        klick: ()=>this.setState({biom:k}),
+      })),
+      schalter: SCHALTER.map(s=>({
+        label:s.label,
+        bg: this.state.an[s.key]?'#241d16':'transparent',
+        fg: this.state.an[s.key]?'#e8d38a':'#a49a86',
+        klick: ()=>{ const an=Object.assign({},this.state.an); an[s.key]=!an[s.key]; this.setState({an}); },
+      })),
+      neuerKeim: ()=>this.setState({keim:(this.state.keim*7+13)%997}),
+    };
+  }
+}
+</script>
+</body>
+</html>

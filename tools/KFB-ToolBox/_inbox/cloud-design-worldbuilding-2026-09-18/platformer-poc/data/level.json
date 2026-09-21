@@ -1,0 +1,74 @@
+{
+  "schema": "kfb.platformer-poc.level/1",
+  "name": "KFB Project Island · POC v0",
+  "note": "Alle Maße in ZELLEN. Eine Zelle ist die zur Laufzeit GEMESSENE Kantenlänge eines Modular-Platform-Würfels aus dem Pack — nicht 1.0 angenommen. cx/cz sind Mittelpunkte, w/d die Kachelzahl, y die Oberkante in Zellen.",
+  "spawn": { "platform": "hub", "offset": [0, 1.5] },
+  "killY": -14,
+  "tuning": {
+    "_note": "Alles in ZELLEN pro Sekunde. Gemessene Zelle = 2 Einheiten, Pack-Figur 2,06 hoch — also ist eine Zelle rund eine Figurenhöhe. Apex bei diesen Werten ~1,5 Zellen, Sprungweite im Lauf ~3 Zellen; danach sind die Lücken im Level bemessen.",
+    "gravity": 15,
+    "jumpSpeed": 6.7,
+    "walkSpeed": 1.6,
+    "runSpeed": 3.5,
+    "turnSpeed": 3.1,
+    "coyote": 0.14,
+    "jumpBuffer": 0.18,
+    "bouncePower": 13
+  },
+  "platforms": [
+    { "id": "hub", "title": "KFB Project Island", "theme": "grass", "cx": 0, "cz": 0, "w": 7, "d": 7, "y": 0,
+      "portal": "kfb-hub", "deco": { "tree": 2, "bush": 2, "grass": 5, "rock": 1 },
+      "pickups": [ { "kind": "Heart", "at": [2, 2] } ], "goalFlag": [-2.4, -2.4], "checkpoint": true },
+
+    { "id": "step_n", "theme": "dirt", "cx": 0, "cz": -6, "w": 2, "d": 2, "y": 0.8,
+      "pickups": [ { "kind": "Coin", "at": [0, 0] } ] },
+    { "id": "race", "title": "Stunt Race · BOX1", "theme": "grass", "cx": 0, "cz": -11, "w": 4, "d": 4, "y": 1.8,
+      "portal": "stunt-race", "deco": { "rock": 2, "grass": 3 },
+      "pickups": [ { "kind": "Gem_Pink", "at": [0, -1] } ],
+      "hazards": [ { "kind": "Hazard_Saw", "at": [1.4, 1.2] } ], "checkpoint": true },
+
+    { "id": "step_e", "theme": "dirt", "cx": 6, "cz": 0, "w": 2, "d": 2, "y": 0.6,
+      "pickups": [ { "kind": "Coin", "at": [0, 0] } ] },
+    { "id": "travel", "title": "World · Travel", "theme": "grass", "cx": 11.5, "cz": 0, "w": 5, "d": 5, "y": 1.4,
+      "portal": "world-travel", "deco": { "tree": 1, "bush": 2, "grass": 4 },
+      "pickups": [ { "kind": "Coin", "at": [-1, 1] }, { "kind": "Gem_Blue", "at": [1.2, -1.2] } ], "checkpoint": true },
+    { "id": "osm", "title": "OSM City Pilots", "theme": "dirt", "cx": 11.5, "cz": -7, "w": 3, "d": 3, "y": 2.2,
+      "portal": "osm-city", "deco": { "rock": 2 },
+      "pickups": [ { "kind": "Gem_Green", "at": [0, 0] } ] },
+
+    { "id": "step_s", "theme": "dirt", "cx": 0, "cz": 6, "w": 2, "d": 2, "y": 0.6,
+      "pickups": [ { "kind": "Coin", "at": [0, 0] } ] },
+    { "id": "freeroam", "title": "Free Roam · Drive", "theme": "grass", "cx": 0, "cz": 11, "w": 6, "d": 4, "y": 0.9,
+      "portal": "free-roam-drive", "deco": { "bush": 2, "grass": 4, "rock": 1 },
+      "pickups": [ { "kind": "Coin", "at": [-1.6, 0] }, { "kind": "Coin", "at": [1.6, 0] } ], "checkpoint": true },
+    { "id": "toolbox", "title": "ToolBox · Animation", "theme": "grass", "cx": 7, "cz": 10, "w": 4, "d": 4, "y": 1.5,
+      "portal": "toolbox", "deco": { "tree": 1, "grass": 3 },
+      "pickups": [ { "kind": "Thunder", "at": [0, 0] } ],
+      "hazards": [ { "kind": "Hazard_SpikeTrap", "at": [-1.2, 1.2] } ], "checkpoint": true },
+
+    { "id": "step_w", "theme": "dirt", "cx": -6, "cz": 0, "w": 2, "d": 2, "y": 1.2,
+      "pickups": [ { "kind": "Coin", "at": [0, 0] } ] },
+    { "id": "atlas", "title": "Resident Atlas", "theme": "grass", "cx": -11.5, "cz": 0, "w": 5, "d": 5, "y": 2.0,
+      "portal": "resident-atlas", "deco": { "tree": 1, "bush": 2, "grass": 4 },
+      "pickups": [ { "kind": "Gem_Blue", "at": [1.4, 1.4] } ], "checkpoint": true },
+    { "id": "worldatlas", "title": "World Atlas", "theme": "dirt", "cx": -11, "cz": 7.5, "w": 4, "d": 4, "y": 3.6,
+      "portal": "world-atlas", "deco": { "rock": 2, "grass": 2 },
+      "pickups": [ { "kind": "Gem_Green", "at": [0, 0] } ], "checkpoint": true },
+
+    { "id": "launch", "title": "Launch Pad", "theme": "dirt", "cx": -6, "cz": -7, "w": 3, "d": 3, "y": 1.0,
+      "bouncer": [0, 0], "deco": { "rock": 1 } },
+    { "id": "arena", "title": "Combat Arena", "theme": "dirt", "cx": -6, "cz": -12, "w": 5, "d": 5, "y": 6.5,
+      "portal": "combat-arena", "deco": { "rock": 3 },
+      "pickups": [ { "kind": "Star", "at": [0, 0] } ], "checkpoint": true },
+
+    { "id": "stone_sw", "theme": "dirt", "cx": -6, "cz": 5, "w": 2, "d": 2, "y": 2.6,
+      "pickups": [ { "kind": "Coin", "at": [0, 0] } ] },
+    { "id": "stone_ne", "theme": "dirt", "cx": 6, "cz": -5, "w": 2, "d": 2, "y": 1.6,
+      "pickups": [ { "kind": "Coin", "at": [0, 0] } ] },
+    { "id": "stone_se", "theme": "dirt", "cx": 4.5, "cz": 6, "w": 2, "d": 2, "y": 1.4,
+      "pickups": [ { "kind": "Coin", "at": [0, 0] } ] }
+  ],
+  "clouds": [
+    [-14, 6, -6], [9, 7, 9], [2, 9, -16], [-18, 5, 4], [16, 8, 2]
+  ]
+}

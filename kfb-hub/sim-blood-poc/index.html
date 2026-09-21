@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="color-scheme" content="light dark">
+  <title>SimBlood · Field Composer POC</title>
+  <link rel="stylesheet" href="./styles.css?v=20260918fov1">
+</head>
+<body>
+  <main class="app-shell">
+    <header class="topbar">
+      <div>
+        <div class="eyebrow">DocCheck · SimBlood</div>
+        <h1>Field Composer POC</h1>
+      </div>
+      <div class="status" id="status">NORMAL · seed 42</div>
+    </header>
+
+    <section class="presetbar" aria-label="Technische POC-Präparate">
+      <div class="preset-copy">
+        <strong>Technischer Präparat-Switch</strong>
+        <span>Visualisiert nur die Recipe-/Composer-Logik. Noch keine medizinisch validierten Presets.</span>
+      </div>
+      <div class="preset-buttons" id="presetButtons">
+        <button type="button" data-preset="normal" class="active">Normal</button>
+        <button type="button" data-preset="iron_deficiency">Eisenmangel · POC</button>
+        <button type="button" data-preset="tma">TMA · POC</button>
+      </div>
+    </section>
+
+    <section class="workspace">
+      <div class="scope-wrap">
+        <div class="scope" id="scope" aria-label="Simulierter peripherer Blutausstrich">
+          <canvas id="smearCanvas"></canvas>
+          <div class="scope-glass" aria-hidden="true"></div>
+          <div class="debug-label" id="debugLabel" hidden></div>
+        </div>
+        <p class="hint">Ziehen zum Verschieben · Mausrad zoomt am Cursor · Zwei-Finger-Pinch auf Touch · Zelle anklicken für Ground Truth</p>
+      </div>
+
+      <aside class="controls" aria-label="Mikroskop-Steuerung">
+        <section class="control-card">
+          <div class="label-row"><span>Vergrößerung</span><strong id="objectiveLabel">100×</strong></div>
+          <div class="segmented" role="group" aria-label="Vergrößerungs-Presets">
+            <button type="button" data-objective="40">40×</button>
+            <button type="button" data-objective="100" class="active">100×</button>
+          </div>
+        </section>
+
+        <section class="control-card">
+          <div class="label-row"><label for="focus">Fokus</label><strong id="focusLabel">0.0</strong></div>
+          <input id="focus" type="range" min="0" max="6" value="0" step="0.1">
+        </section>
+
+        <section class="control-card">
+          <div class="label-row"><span>WBC-Darstellung</span><strong>POC A/B</strong></div>
+          <div class="segmented asset-mode" role="group" aria-label="WBC-Darstellung">
+            <button type="button" data-wbc-mode="real" class="active">Reale Kandidaten</button>
+            <button type="button" data-wbc-mode="procedural">Prozedural</button>
+          </div>
+          <div class="microcopy">Neutrophile, Lymphozyten und Monozyten nutzen je drei austauschbare reale Kandidaten. Bei Ladefehlern bleibt der prozedurale Fallback aktiv.</div>
+        </section>
+
+        <section class="control-card compact-grid">
+          <button type="button" id="resetView">Ansicht zurücksetzen</button>
+          <button type="button" id="newSeed">Neue Probe</button>
+        </section>
+
+        <section class="control-card facts">
+          <div><span>RBC</span><strong id="rbcCount">—</strong></div>
+          <div><span>WBC</span><strong id="wbcCount">—</strong></div>
+          <div><span>PLT</span><strong id="pltCount">—</strong></div>
+        </section>
+
+        <section class="control-card legend" id="legend">
+          <strong>Aktuelles Recipe</strong>
+          <div id="recipeSummary">Normaler technischer Basis-Preset.</div>
+        </section>
+
+        <section class="note">
+          <strong>POC, kein validierter Befund.</strong>
+          <span>RBC/WBC/Thrombozyten sind getrennte, typisierte Objekte. Reale WBC-Kandidaten stammen aus dem offenen PBC-Datensatz, bleiben aber medizinisch unpromoted und werden nur als austauschbare POC-Donors verwendet.</span>
+        </section>
+      </aside>
+    </section>
+  </main>
+
+  <noscript><div class="noscript">SimBlood benötigt JavaScript für den interaktiven POC.</div></noscript>
+  <script src="./app.v2.js?v=20260918fov1"></script>
+</body>
+</html>

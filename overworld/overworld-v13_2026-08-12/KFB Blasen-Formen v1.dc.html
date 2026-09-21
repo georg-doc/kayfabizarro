@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+<template id="__bundler_thumbnail">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="#c8622a"/><g font-family="Georgia,serif" text-anchor="middle"><text x="50" y="54" font-size="26" font-weight="700" fill="#f4ecd8">C2</text><text x="50" y="70" font-size="7" letter-spacing="1.4" fill="#14100c">FORMEN</text></g></svg>
+</template>
+</head>
+<body>
+<x-dc>
+<helmet>
+<!-- KFB Blasen-Formen v1 (2026-08-12) — die Abnahme von Slice v13-C2.
+     Fünf Register nebeneinander, gezeichnet mit **denselben** Funktionen, die im Spiel laufen
+     (`OW_BUBBLE.formen`) und um **denselben** Textblock (`OW_BLAYOUT.layout`). Ein Messblatt, das
+     die Formen nachbaut, prüft seinen eigenen Nachbau — deshalb baut dieses hier nichts nach.
+
+     Georgs Befund vom 12.8. ist der Anlass: der Ruf war ein Rechteck mit Zähnen. Jetzt ist er ein
+     **Sternplatzer** — Spitzen strahlen radial nach außen, lang und kurz abwechselnd, und der
+     Zipfel ist eine gestreckte Spitze, die GERADE auf die Einheit zeigt. -->
+<style>
+html,body{margin:0;background:#241f1a}
+*{box-sizing:border-box}
+a{color:#0e3d3c}a:hover{color:#000}
+</style>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bangers&family=Special+Elite&family=Shantell+Sans:wght@400;600&display=swap">
+<!-- `card-ink-2d.js` liefert die **Kanon-Feder** für das Flüstern (`OW_CARD.canon`, Import über den
+     CDN-Kanal, deshalb `asset-source.js` davor). Fehlt sie, fällt die Blase auf einen gestrichelten
+     Strich zurück und sagt es in der Konsole — ein fehlender Kanon heißt dünnere Kante, nicht keine. -->
+<script src="./overworld-v13/asset-source.js"></script>
+<script src="./overworld-v13/card-ink-2d.js"></script>
+<script src="./overworld-v13/bubble-layout.js"></script>
+<script src="./overworld-v13/bubble-ts.js"></script>
+</helmet>
+
+<div style="min-height:100vh;padding:24px 28px 60px;font-family:Georgia,'Times New Roman',serif;color:#efe7d4;background:#241f1a">
+
+  <div style="display:flex;align-items:baseline;gap:16px;flex-wrap:wrap;border-bottom:2px solid #000;padding-bottom:12px">
+    <div style="font-size:22px;font-weight:700">Blasen-Formen <span style="color:#47aba9">C2</span></div>
+    <div style="font-size:13px;color:#b8ad95">fünf Register · Kontur legt sich um den Block</div>
+    <div style="margin-left:auto;font-family:ui-monospace,Menlo,monospace;font-size:12px;color:#e8d38a">{{ stamp }}</div>
+  </div>
+
+  <div style="margin:14px 0 18px;font-size:13px;line-height:1.6;color:#8a8069;max-width:92ch">
+Stand 12.8. Nacht: <b style="color:#b8ad95">eine ovale Grundform</b> für Wolke und Ruf — gebaut als <b style="color:#b8ad95">Superellipse (n = 3)</b> mit Polster 13/11 (Ruf) bzw. 12/10 (Wolke) und einer Mindestskalierung, damit die Blockecken sicher innen liegen. Zwei Fassungen davor sind gefallen: der Abstand zur <i>Rechteckkante</i> (springt an den Diagonalen — daher zwei waagerechte Hörner und die gewellte Kartoffel) und die Ellipse durch die Ecken (Halbmaß × √2: sitzt an den Ecken am Block, steht seitlich 41 % ab — 40 px links gegen 14 px oben). <b style="color:#b8ad95">Die Grundform ist die Harmonie, die Bögen sind die Handschrift.</b> Dazu: Pfeilbasis der Rede ein Viertel schmaler (13,5 px), Denk-Kreise <b style="color:#b8ad95">außerhalb</b> der Wolke, Kasten mit Feder-Jitter statt toter Linie, Mindestpolster 11/8 px. Die <b style="color:#b8ad95">Kante</b> zeichnet der KFB-Kanon auf einer Canvas-Ebene (<span style="font-family:ui-monospace,Menlo,monospace">inkRibbon2D</span>) — in Bildschirmfotos fehlt sie, im Browser ist sie da. Schrift, Winkel, Streuung liegen in den <b style="color:#b8ad95">Tweaks</b>.
+  </div>
+
+  <div style="display:flex;flex-wrap:wrap;gap:16px">
+    <sc-for list="{{ karten }}" as="k" hint-placeholder-count="5">
+      <div style="flex:1 1 340px;min-width:320px;background:#1b1712;border:1px solid #332d25;border-radius:5px;padding:12px 14px 14px">
+        <div style="display:flex;align-items:baseline;gap:10px">
+          <div style="font-size:16px;font-weight:700">{{ k.name }}</div>
+          <div style="font-family:ui-monospace,Menlo,monospace;font-size:11px;color:#8a8069">{{ k.art }}</div>
+          <div style="margin-left:auto;font-family:ui-monospace,Menlo,monospace;font-size:11px;color:#8a8069">{{ k.form }}</div>
+        </div>
+        <div style="margin-top:4px;font-size:12px;line-height:1.5;color:#8a8069">{{ k.regel }}</div>
+        <div ref="{{ k.mount }}" style="margin-top:10px;position:relative;height:290px;background:#7fa64e;border-radius:4px;overflow:hidden"></div>
+        <div style="margin-top:8px;font-family:ui-monospace,Menlo,monospace;font-size:11px;line-height:1.55;white-space:pre-wrap;color:#a89b80">{{ k.zahlen }}</div>
+      </div>
+    </sc-for>
+  </div>
+
+  <div style="margin-top:22px;padding:14px 16px;background:#1b1712;border:1px solid #332d25;border-radius:5px;font-size:12.5px;line-height:1.6;color:#8a8069;max-width:96ch">
+    <b style="color:#b8ad95">Was hier absichtlich fehlt:</b> Anker über dem Kopf, Ausweichen am Bildrand, Ablage mit vier Ankern und die zweite Blase im Bild. Das ist <b style="color:#b8ad95">C3</b> — die Zahlen dafür liegen schon als <span style="font-family:ui-monospace,Menlo,monospace">OW_BLAYOUT.PLACE</span> bereit (Anker +6 px, Zipfel max 22 px, Emanatum 4 px, höchstens zwei Blasen). Der grüne Grund steht hier nur, damit man das Papier gegen die Welt sieht; er ist keine Terrainprobe.
+    <div style="margin-top:8px"><b style="color:#b8ad95">Offen (O2):</b> Kayfabulate als Kasten — so steht es hier — oder als Blase mit doppelter Kontur.</div>
+    <div style="margin-top:8px"><b style="color:#b8ad95">Flüstern:</b> der Kanon v2 hat keine gestrichelte Variante (kein <span style="font-family:ui-monospace,Menlo,monospace">dashedPathD</span>, kein Preset <span style="font-family:ui-monospace,Menlo,monospace">card-dash</span>) — der alte Aufruf griff nach einer API, die es nicht gibt. Gelöst nach Georgs Weg: <b style="color:#b8ad95">Lücken als Maske über einer durchgängigen Kante</b>. Der Strich bleibt einer, er wird nur stellenweise nicht gezeigt — und dieselbe Maske liegt später über der Kanon-Feder, sobald die im SVG ankommt. <b style="color:#b8ad95">Ein Stil ist eine Maske über der Kante, keine zweite Kante.</b></div>
+  </div>
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1440,&quot;height&quot;:1100},
+ &quot;schrift&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;shantell&quot;,&quot;elite&quot;,&quot;courier&quot;],&quot;default&quot;:&quot;shantell&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Schrift&quot;},
+ &quot;winkel&quot;:{&quot;editor&quot;:&quot;range&quot;,&quot;min&quot;:0,&quot;max&quot;:360,&quot;step&quot;:5,&quot;default&quot;:90,&quot;unit&quot;:&quot;°&quot;,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Anker&quot;},
+ &quot;seed&quot;:{&quot;editor&quot;:&quot;int&quot;,&quot;min&quot;:1,&quot;max&quot;:99,&quot;default&quot;:7,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Anker&quot;}}">
+/* Abnahme C2. Alles Gezeichnete kommt aus `OW_BUBBLE.formen` und `OW_BLAYOUT.layout` —
+   dieses Blatt rechnet nur den Anker aus und hängt die Ergebnisse in die Bühne. */
+
+const M=30;                       // Rand um den Block, wie im Träger (KANON.M)
+const KARTEN=[
+  {name:'Rede',        typ:'speech',      text:"Methinks, our little hero has been here before.",
+   regel:'jittriges Rechteck, getaperter Pfeil, Fuß im mittleren Band'},
+  {name:'Gedanke',     typ:'thought',     text:"This is either a trap or an extremely confident sandwich.",
+   regel:'ovale Grundform, mit fetten Lappen nachgezeichnet · Kreise außerhalb'},
+  {name:'Ruf',         typ:'shout',       text:"KayfaBINGO!",
+   regel:'ovale Grundform mit 12–18 Zacken + Aufprall-Striche, Zipfel gestreckt'},
+  {name:'Flüstern',    typ:'whisper',     text:"not so loud, the ditch listens",
+   regel:'durchgängige Kante, Lücken aus einer Maske — nicht dasharray'},
+  {name:'Kayfabulate', typ:'kayfabulate', text:"Freedom is ultimately the greatest virtue.",
+   regel:'Kasten mit Feder-Jitter, kein Zipfel, höher — Erzählung in Special Elite'}
+];
+
+const INK='#1f1a14';
+class Component extends DCLogic {
+  /* **Bühnen als Klassenfeld, nicht in `componentDidMount`.** Die `ref`-Rückrufe der Karten feuern
+     VOR dem Mount: `this.b[k.typ]` lief dort in einen TypeError, der als `render error … {}`
+     gemeldet wurde — fünf Mal beim Aufbau, danach nie wieder. Ein leeres Fehlerobjekt ist keine
+     Erklärung; die Reihenfolge ist es. */
+  b = {};
+  componentDidMount(){
+    /* Die Kanon-Feder kommt asynchron (ES-Import über den CDN). **Einmal fragen reicht nicht:**
+       beim ersten `componentDidMount` ist `window.OW_CARD` noch nicht da (die Helmet-Kette läuft
+       noch), der Guard greift nicht, und danach fragt niemand mehr — das Flüstern blieb auf dem
+       Rückfall stehen, ohne dass etwas fehlschlug. Also nachziehen, bis es da ist.
+       *Ein Guard auf ein noch nicht geladenes Modul ist ein stiller Verzicht.* */
+    let n=0;
+    this.poll=setInterval(()=>{
+      if(window.OW_CARD && OW_CARD.ready){
+        clearInterval(this.poll);
+        OW_CARD.ready().then(()=>this.forceUpdate())
+          .catch(e=>console.warn('[blasen-formen] Kanon nicht erreichbar:', e && e.message));
+      }else if(++n>40)clearInterval(this.poll);
+    },200);
+    this.raf = requestAnimationFrame(t=>this.loop(t));
+  }
+  componentWillUnmount(){ cancelAnimationFrame(this.raf); if(this.poll)clearInterval(this.poll); }
+
+  winkel(){ return +(this.props.winkel ?? 90); }   // 90° = Anker unten (Einheit steht unter der Blase)
+  seed(){ return +(this.props.seed ?? 7); }
+
+  /* **Dieselbe Rechnung wie im Spiel** — `OW_BUBBLE.satz`. Ein Messblatt, das Umbruch und
+     Schriftgröße selbst rechnet, prüft seine eigene Rechnung. */
+  lay(k){
+    const B = window.OW_BUBBLE;
+    if(!B || !B.satz) return null;
+    const S = B.satz(k.text, k.typ, {schrift:(this.props.schrift ?? 'courier')});
+    return S.lay ? {art:S.art, l:S.lay, gesetzt:S.gesetzt, fam:S.fam, stil:S.stil} : null;
+  }
+
+  loop(t){
+    const B = window.OW_BUBBLE;
+    /* **Eine Kopfzeile, die einmal beim Mount gelesen wird, altert sofort.** Im Standalone sind die
+       Module beim ersten Rendern noch nicht da: die Karten zeichneten, die Zeile sagte »fehlt«.
+       Also einmal nachziehen, sobald beide stehen. */
+    if(B && window.OW_BLAYOUT && !this._gestempelt){ this._gestempelt=1; this.forceUpdate(); }
+    /* **Die Feder wird angefordert, bis sie da ist — aus der Schleife heraus.** Ein Intervall, das
+       beim Mount startet, ist genau einmal richtig; hier fragt der Zeichner selbst nach, solange er
+       ohne Kante zeichnet. Alle 2 s, nicht je Bild. */
+    if(window.OW_CARD && OW_CARD.ready && !OW_CARD.canon && t-(this._letzteFrage||0)>2000){
+      this._letzteFrage=t;
+      OW_CARD.ready().catch(e=>console.warn('[blasen-formen] Kanon nicht erreichbar:',e&&e.message));
+    }
+    if(B) for(const k of KARTEN){
+      const st = this.b[k.typ];
+      if(!st) continue;
+      /* Hausregel 8: **eine Kachel darf misslingen, die Bildschleife nicht.** Ohne diese Klammer
+         hat ein einziger Fehler in einer Form alle fünf Karten eingefroren — und eingefrorene
+         Karten sehen aus wie fertige Karten. */
+      try{
+      const q = this.lay(k);
+      if(!q) continue;
+      const w = q.l.box.w, hh = q.l.box.h;
+      // Anker: der Punkt, auf den der Zipfel zeigt — hier vom Regler, im Spiel der Kopf der Einheit
+      const a = this.winkel()*Math.PI/180;
+      const cx = M+w/2, cy = M+hh/2, R = Math.max(w,hh)*0.62+58;
+      const hlx = cx+Math.cos(a)*R, hly = cy+Math.sin(a)*R;
+      const paper = '#fbf6ea';
+      const F = B.formen;
+      let d;
+      if(q.art==='gedanke')      d = F.gedanke(M,w,hh,this.seed());
+      else if(q.art==='ruf')     d = F.ruf(M,w,hh,this.seed(),hlx,hly,B.KANON.arrow);
+      else if(q.art==='kayfabulate') d = F.kayfabulate(M,w,hh,this.seed());
+      else                       d = F.rede(M,w,hh,this.seed(),hlx,hly,B.KANON.arrow);
+
+      st.svg.setAttribute('width', w+2*M);
+      st.svg.setAttribute('height', hh+2*M);
+      st.path.setAttribute('d', d);
+      st.path.setAttribute('fill', paper);
+      /* **Die Kante kommt aus dem Kanon**, auf einer Canvas-Ebene über derselben Punktkette
+         (`kanonFeder`); Lücken beim Flüstern werden herausradiert. Gelingt das nicht, zeichnet
+         das SVG weiter — mit Maskenlücken, damit der Rückfall sichtbar dasselbe meint. */
+      st.dash.setAttribute('d','');
+      const fl = q.art==='fluester';
+      const gaps = fl ? F.lueckenGeo(d,13,6,B.KANON.line*3) : null;
+      const ok = F.kanonFeder(st.feder, w+2*M, hh+2*M, d, this.seed(), gaps, 'card');
+      if(ok){
+        st.path.setAttribute('stroke','none');
+        st.path.removeAttribute('mask');
+        st.gaps.innerHTML='';
+      }else{
+        st.path.setAttribute('stroke', INK);
+        st.path.setAttribute('stroke-width', q.art==='ruf' ? B.KANON.line*1.6 : B.KANON.line);
+        if(fl){ st.gaps.innerHTML=F.luecken(d,13,6,B.KANON.line*3);
+          st.path.setAttribute('mask','url(#'+st.maskId+')'); }
+        else { st.gaps.innerHTML=''; st.path.removeAttribute('mask'); }
+      }
+      st.federOk = ok;
+      st.dash.setAttribute('fill', INK);
+      if(q.art==='gedanke') F.denkzipfel(st.think,M,w,hh,hlx,hly,paper,B.KANON.line,t/1000);
+      else if(q.art==='ruf') F.aufprall(st.think,M,w,hh,this.seed(),hlx,hly);
+      else st.think.innerHTML='';
+
+      // Anker sichtbar machen: das ist der Punkt, an dem im Spiel der Kopf steht
+      st.dot.setAttribute('cx', hlx.toFixed(1));
+      st.dot.setAttribute('cy', hly.toFixed(1));
+
+      st.txt.setAttribute('style','position:absolute;display:flex;align-items:center;'+
+        'justify-content:center;'+q.stil);
+      /* **Randabstand messen statt schätzen** (Georg: »padding bei allen checken«): kleinster
+         Abstand von der **Schrift** zur gezeichneten Kontur — nicht vom Block. Der Block enthält
+         das Polster schon; von ihm aus gemessen ist der Rand der Rede definitionsgemäß 0, und die
+         Zahl sagt nichts. Gemessen wird also vom Textrechteck (Block minus Polster). */
+      const pts=F.punkteAus(d);
+      const tx0=M+q.l.box.padX, ty0=M+q.l.box.padY;
+      const tx1=M+w-q.l.box.padX, ty1=M+hh-q.l.box.padY;
+      let min=1e9;
+      for(const pt of pts){
+        const dxr=Math.max(tx0-pt[0], 0, pt[0]-tx1);
+        const dyr=Math.max(ty0-pt[1], 0, pt[1]-ty1);
+        const dist=Math.hypot(dxr,dyr);
+        if(dist<min)min=dist;
+      }
+      st.rand=Math.round(min);
+      st.txt.style.left = M+'px'; st.txt.style.top = M+'px';
+      st.txt.style.width = w+'px'; st.txt.style.height = hh+'px';
+      /* Der Ruf wird gesetzt, nicht getippt — derselbe Bogen wie im Träger (`bogenSatz`). */
+      const block=q.l.lines.join('\n');
+      if(q.art==='ruf'){
+        const html="<span style='display:inline-block;transform:rotate("+(((this.seed()%7)-3)*0.9).toFixed(1)+
+          "deg) skewX(-3deg)'>"+B.bogenSatz(block,this.seed(),15)+"</span>";
+        if(st.txt.innerHTML!==html)st.txt.innerHTML=html;
+      }else if(st.txt.textContent!==block) st.txt.textContent=block;
+      /* Der Wickel hat nur absolut gesetzte Kinder, also keine eigene Größe — ohne diese zwei
+         Zeilen greift `translate(-50%,-50%)` an einem 0×0-Kasten und die Blase rutscht in die Ecke. */
+      st.wrap.style.width = (w+2*M)+'px';
+      st.wrap.style.height = (hh+2*M)+'px';
+      st.wrap.style.transform = 'translate(-50%,-50%)';
+      }catch(e){
+        if(!this._loopWarn){this._loopWarn=1;
+          console.warn('[blasen-formen] Karte »'+k.name+'« zeichnet nicht:',e&&e.message);}
+      }
+    }
+    this.raf = requestAnimationFrame(n=>this.loop(n));
+  }
+
+  mount(k, el){
+    if(!el || this.b[k.typ]) return;
+    const wrap = document.createElement('div');
+    wrap.style.cssText = 'position:absolute;left:50%;top:50%;filter:drop-shadow(2px 3px 0 rgba(31,26,20,.18))';
+    wrap.innerHTML =
+      "<canvas class='feder' style='position:absolute;left:0;top:0;pointer-events:none'></canvas>"+
+      "<svg style='position:absolute;left:0;top:0;overflow:visible'>"+
+        "<defs><mask id='fl-"+k.typ+"' maskUnits='userSpaceOnUse' x='-40' y='-40' width='4000' height='4000'>"+
+          "<rect x='-40' y='-40' width='4000' height='4000' fill='#fff'></rect>"+
+          "<g class='mk-gaps'></g></mask></defs>"+
+        "<path class='out' stroke-linejoin='round'></path>"+
+        "<path class='dash'></path><g class='think'></g>"+
+        "<circle class='dot' r='3.5' fill='#c9422e'></circle>"+
+      "</svg>"+
+      "<div class='txt' style='position:absolute;display:flex;align-items:center;justify-content:center;"+
+        "text-align:center;white-space:pre;color:"+INK+"'></div>";
+    el.appendChild(wrap);
+    this.b[k.typ] = {wrap, svg:wrap.querySelector('svg'), path:wrap.querySelector('.out'),
+      dash:wrap.querySelector('.dash'), think:wrap.querySelector('.think'),
+      dot:wrap.querySelector('.dot'), txt:wrap.querySelector('.txt'),
+      gaps:wrap.querySelector('.mk-gaps'), maskId:'fl-'+k.typ,
+      feder:wrap.querySelector('.feder')};
+  }
+
+  renderVals(){
+    const B = window.OW_BUBBLE, L = window.OW_BLAYOUT;
+    return {
+      stamp: (B?B.version:'bubble-ts fehlt')+' · '+(L?L.version:'bubble-layout fehlt')
+        +' · Anker '+this.winkel()+'° · Streuung '+this.seed(),
+      karten: KARTEN.map(k=>{
+        const q = this.lay(k);
+        return {
+          name:k.name, art:(q?q.art:'—'), regel:k.regel,
+          form: q ? (q.art==='ruf'?'Sternplatzer':q.art==='gedanke'?'Wolke + Kreise'
+                    :q.art==='kayfabulate'?'Kasten':q.art==='fluester'?'Rechteck + Feder':'Rechteck') : '',
+          zahlen: q ? (q.l.lines.length+' Zeilen · längste '+q.l.cols+'/'+q.l.maxChars+' Zchn\n'
+            +'Block '+q.l.box.w+'×'+q.l.box.h+' px · Schrift '+q.gesetzt+' px · Polster '
+            +q.l.box.padX+'/'+q.l.box.padY+'\nRand bis Kontur '+((this.b[k.typ]&&this.b[k.typ].rand)!=null?this.b[k.typ].rand+' px':'…')
+            +' · Feder '+((window.OW_CARD&&OW_CARD.canon)?'Kanon':'SVG-Rückfall')
+            +'\n'+q.l.times.total+' ms gesamt'
+            +(q.l.overflow?' · ÜBERLAUF':'')) : '',
+          mount: el=>this.mount(k, el)
+        };
+      })
+    };
+  }
+}
+</script>
+</body>
+</html>
