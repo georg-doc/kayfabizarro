@@ -44,14 +44,14 @@
     "stageReadback": "PASS"
   },
   "deferred": [
-    "Legacy",
+    "Legacy human visual acceptance",
     "top/bottom eye contour",
     "Mouth Batch",
     "optional Nose/Brow",
     "Vehicle EyeRig"
   ],
   "hubCard": "SYNCED_TO_LARGE_4_ACCEPTED_LID_COLOR_CHECK",
-  "nextGate": "GEORG_LARGE_LID_COLOR_VISUAL_CHECK",
+  "nextGate": "Parallel human gates: existing Large lid-color review + KLR-EYE-VIS-01 Legacy 17-head visual review",
   "loaderFix": {
     "status": "FIXED",
     "error": "Cannot read properties of undefined (reading 'push')",
@@ -62,5 +62,23 @@
     "path": "tools/KFB-ToolBox/_inbox/eye-rig-large.batch.json",
     "mainCommit": "52532aee17f85324a6d04ab53150216f00ac5d89",
     "blob": "f55db82d1a76ba9362df261cf66517859abbf953"
+  },
+  "legacy": {
+    "route": "/kfb-hub/stage/toolbox/eye-rig-batch/legacy/",
+    "url": "https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/eye-rig-batch/legacy/",
+    "sourcePR": 162,
+    "sourceBranch": "chatgpt-web/legacy-eye-batch-17-2026-09-21",
+    "sourceHead": "7b1b52a60d64c9dc710514a59d1a7365f8a168e7",
+    "persistedTestedHead": "91cca48809fb8a86c8ea7a8326eb6637fa89a066",
+    "profileCount": 17,
+    "measuredCandidates": 16,
+    "humanRequired": [
+      "skull"
+    ],
+    "generation": "24/24 static + 247/247 browser PASS",
+    "reconstruction": "30/30 static + 215/215 browser PASS",
+    "publicationFiles": "index/app/styles/adapter + 3 data files read-back exact from PR #162",
+    "publicVerified": false,
+    "humanGate": "KLR-EYE-VIS-01 · Front + 3/4 review of all 17 heads"
   }
 }
