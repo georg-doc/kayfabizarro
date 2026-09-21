@@ -1,4 +1,4 @@
-export const UPPER_LID_SCHEMA='kfb.upper-lid-volume/0.1-candidate';
+export const UPPER_LID_SCHEMA='kfb.upper-lid-volume/0.2-candidate';
 
 const clamp=(v,a,b)=>Math.max(a,Math.min(b,v));
 const lerp=(a,b,t)=>a+(b-a)*t;
@@ -13,14 +13,13 @@ export function buildUpperLidVolumeGeometry(THREE,{
   cover=.16,
   slant=0,
   curve=0,
-  thickness=.24,
+  thickness=.20,
   roundness=.72,
   bulge=.42,
   clearance=.018,
-  lonMax=1.26,
-  topLat=1.34,
+  lonMax=1.18,
   lonSegments=52,
-  latSegments=18
+  latSegments=16
 }={}){
   const R=radius;
   const innerR=R*(1+clearance);
@@ -29,21 +28,20 @@ export function buildUpperLidVolumeGeometry(THREE,{
   const round=clamp(roundness,0,1);
   const bul=clamp(bulge,0,1);
 
-  // Neutral opening sits above eye centre. More cover drives the lower edge downward.
-  const baseMargin=lerp(.30,-.76,cover01);
+  // Reference logic: compact upper-lid pad, not a hemisphere-to-pole cap.
+  // Neutral lower edge sits above the eye centre; more cover moves it down.
+  const baseMargin=lerp(.23,-.62,cover01);
 
   const marginLat=(lon)=>{
     const side=clamp(lon/lonMax,-1,1);
     const centre=1-side*side;
-    return baseMargin + slant*.34*side + curve*.30*centre;
+    return baseMargin + slant*.30*side + curve*.25*centre;
   };
 
   const pos=[];
   const idx=[];
   const rows=latSegments+1;
   const cols=lonSegments+1;
-
-  // Store corresponding inner/outer vertex ids so every perimeter can be sealed.
   const outerIds=Array.from({length:cols},()=>Array(rows));
   const innerIds=Array.from({length:cols},()=>Array(rows));
 
@@ -52,13 +50,19 @@ export function buildUpperLidVolumeGeometry(THREE,{
   for(let j=0;j<=lonSegments;j++){
     const u=j/lonSegments;
     const lon=lerp(-lonMax,lonMax,u);
-    const side=Math.abs((lon/lonMax));
-    const sideSoft=1-side*side;
+    const side=Math.abs(lon/lonMax);
+    const sideSoft=Math.max(0,1-side*side);
     const low=marginLat(lon);
+
+    // Compact pad height. Sides taper shorter to create soft rounded canthi.
+    const centreSpan=.48 + round*.10;
+    const span=centreSpan*(.72+.28*sideSoft);
+    const high=clamp(low+span,-.05,1.12);
 
     for(let i=0;i<=latSegments;i++){
       const v=i/latSegments;
-      const lat=lerp(low,topLat,v);
+      const smooth=v*v*(3-2*v);
+      const lat=lerp(low,high,smooth);
 
       const ip=spherePoint(innerR,lat,lon);
       innerIds[j][i]=push(ip);
@@ -66,38 +70,34 @@ export function buildUpperLidVolumeGeometry(THREE,{
       const radialLen=Math.hypot(ip[0],ip[1],ip[2])||1;
       const nx=ip[0]/radialLen,ny=ip[1]/radialLen,nz=ip[2]/radialLen;
 
-      // Substantial body thickness remains visible even right at the eye-opening margin.
-      const bodyProfile=.88 + .32*Math.sin(Math.PI*(.12+.76*v))*Math.max(0,sideSoft);
+      // Thick clay body, kept substantial at the opening edge.
+      const crown=Math.sin(Math.PI*v);
+      const bodyProfile=.92 + .18*crown*sideSoft;
       const t=R*thick*bodyProfile;
 
       let ox=ip[0]+nx*t;
       let oy=ip[1]+ny*t;
       let oz=ip[2]+nz*t;
 
-      // The reference is a rounded hood/block, not a constant-radius spherical shell.
-      // Blend the front toward a broad soft hood envelope while preserving wrap at the sides.
-      const hoodZ=R*(1.035 + thick*.78 + bul*.11)
-        - R*(.18-.05*round)*side*side
-        - R*.055*(1-v)*(1-v);
-      const hoodBlend=(.34 + .36*round)*Math.max(.20,sideSoft);
-      oz=lerp(oz,hoodZ,hoodBlend);
+      // Soft molded fullness, but no giant hood/dome.
+      ox*=1+round*.018*sideSoft;
+      oy+=R*round*.018*crown*sideSoft;
+      oz+=R*bul*.055*(.35+.65*crown)*sideSoft;
 
-      // Slightly widen and crown the cap so it reads as facial/clay mass.
-      ox*=1+round*.045*Math.max(.2,sideSoft);
-      oy+=R*round*.055*(.25+.75*v)*Math.max(.15,sideSoft);
-      oz+=R*bul*.055*Math.max(0,sideSoft)*( .35 + .65*Math.sin(Math.PI*v) );
+      // Slight front-plane coherence makes the body read as one pad rather than shell flakes.
+      const frontTarget=R*(1.015 + thick*.50 + bul*.035) - R*.08*side*side;
+      const blend=(.10+.12*round)*sideSoft;
+      oz=lerp(oz,frontTarget,blend);
 
       outerIds[j][i]=push([ox,oy,oz]);
     }
   }
 
-  // Outer/front surface.
   for(let j=0;j<lonSegments;j++)for(let i=0;i<latSegments;i++){
     const a=outerIds[j][i],b=outerIds[j+1][i],c=outerIds[j+1][i+1],d=outerIds[j][i+1];
     idx.push(a,b,d,b,c,d);
   }
 
-  // Inner eyeball-conforming surface: reverse winding.
   for(let j=0;j<lonSegments;j++)for(let i=0;i<latSegments;i++){
     const a=innerIds[j][i],b=innerIds[j][i+1],c=innerIds[j+1][i+1],d=innerIds[j+1][i];
     idx.push(a,b,d,b,c,d);
@@ -107,7 +107,7 @@ export function buildUpperLidVolumeGeometry(THREE,{
     idx.push(outerA,innerA,outerB,outerB,innerA,innerB);
   }
 
-  // Lower visible margin: this is the real crisp eye-facing lid edge.
+  // Real visible lower margin: part of the closed lid volume, not a separate line/tube.
   for(let j=0;j<lonSegments;j++){
     sealStrip(
       outerIds[j][0],outerIds[j+1][0],
@@ -115,7 +115,7 @@ export function buildUpperLidVolumeGeometry(THREE,{
     );
   }
 
-  // Top/back perimeter.
+  // Upper/back edge closes the compact pad.
   for(let j=0;j<lonSegments;j++){
     sealStrip(
       outerIds[j+1][latSegments],outerIds[j][latSegments],
@@ -123,7 +123,7 @@ export function buildUpperLidVolumeGeometry(THREE,{
     );
   }
 
-  // Left/right side walls / canthi closure.
+  // Soft side/end mass / canthi closure.
   for(let i=0;i<latSegments;i++){
     sealStrip(
       outerIds[0][i+1],outerIds[0][i],
@@ -142,9 +142,8 @@ export function buildUpperLidVolumeGeometry(THREE,{
   g.computeBoundingBox();
   g.computeBoundingSphere();
 
-  // Useful proof metrics at the centre of the visible margin.
   const centreJ=Math.floor(lonSegments/2);
-  const oi=outerIds[centreJ][0]*3, ii=innerIds[centreJ][0]*3;
+  const oi=outerIds[centreJ][0]*3,ii=innerIds[centreJ][0]*3;
   const arr=g.attributes.position.array;
   const marginThickness=Math.hypot(
     arr[oi]-arr[ii],
@@ -152,14 +151,18 @@ export function buildUpperLidVolumeGeometry(THREE,{
     arr[oi+2]-arr[ii+2]
   );
 
+  const boxSize=g.boundingBox.getSize(new THREE.Vector3());
+
   g.userData={
     schema:UPPER_LID_SCHEMA,
     closedVolume:true,
     realOcclusionMargin:true,
-    outerSurface:'rounded-hood',
+    outerSurface:'compact-rounded-pad',
     innerSurface:'eyeball-conforming',
     cover:cover01,slant,curve,thickness:thick,roundness:round,bulge:bul,
-    marginThickness
+    marginThickness,
+    size:[boxSize.x,boxSize.y,boxSize.z],
+    designCorrection:'localized upper-lid mass; no hemisphere helmet'
   };
   return g;
 }
