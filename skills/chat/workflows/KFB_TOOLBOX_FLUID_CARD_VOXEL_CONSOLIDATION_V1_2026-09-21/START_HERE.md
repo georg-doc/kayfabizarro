@@ -1,5 +1,21 @@
 # KFB ToolBox · Fluid / Beam / Card / Seed / Voxel consolidation v1
 
+
+## CURRENT OVERRIDE · Card Zone v3 recovery · 2026-09-21
+
+Georg rejected ToolBox Bench v1/v1.1 as a **Schwundform / failed extraction** of the working Card Zone Lab v2. This document remains useful for auditing candidate fluid/beam/seed snippets, but **its Bench-centric canonicalization path is no longer the Card Zone product foundation**.
+
+Current recovery/build route:
+`skills/chat/workflows/KFB_CARD_ZONE_V3_HEX_PROJECT_ISLANDS_2026-09-21/START_HERE.md`
+
+Binding order:
+1. prove working Card Zone Lab v2 parity;
+2. preserve v2 as rollback/reference mode;
+3. build Hex Project Islands from exact KayKit Hex donors + existing `hex-grid.js`;
+4. treat Bench modules as candidates only where source/output parity is independently proven.
+
+Do not start F5 “canonical ToolBox bench” as a replacement for Card Zone v2.
+
 Status: **READY BRIEF · SOURCE INTAKE VERIFIED · NO MODULE PROMOTION YET**  
 Owner: KFB ToolBox for module packaging; receiving games keep their existing runtime owners.  
 Source intake: `tools/KFB-ToolBox/_inbox/KFB ToolBox Bench v1 - KFB Voxel Card Zone Lab 2 - Hex Assets Worldbuilding/kfb-toolbox-v1/`  

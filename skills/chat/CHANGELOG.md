@@ -1001,3 +1001,21 @@ GitHub/cloudflare-live branch state is not a public browser PASS. Exact `kayfabi
 - exact Hub/Stage/ToolBox-audit files mirrored to `cloudflare-live@c2185ed4a59bbae0c3610cb35155af1ccb542c00`
 - publication-branch blob readback: PASS
 - direct pages.dev verification: PENDING because both available HTTP paths are blocked in this session; no new PUBLIC_VERIFIED claim.
+
+
+## 2026-09-21 · Card Zone v3 / Hex Project Islands recovery
+
+### HUMAN CORRECTION
+Georg rejects Claude Design ToolBox Bench v1 and v1.1 as a reduced/failing replacement for the working `KFB Card Zone Lab v2`. The existing v1.1 shader post-mortem remains valid for the local shader regression but is incomplete as a product-level post-mortem.
+
+### SOURCE TRUTH
+The working donor is `tools/KFB-ToolBox/_inbox/cloud-design-worldbuilding-2026-09-18/card-zone-lab-v3/KFB Card Zone Lab v2.dc.html` plus Zonen Registry, terrain-v10, CardBuilder, zone data and docs. Bench v1/v1.1 are archived failed-extraction evidence; their modules require independent source/output parity before reuse.
+
+### PRODUCT DIRECTION
+Prepare Card Zone Lab v3 as an additive Hex Project-Island mode using the two exact KayKit Hex packs + existing `tools/world_atlas/source/lib/hex-grid.js`. Level 0 is a three-project-hex safe start; quick wins are one friendly assisted jump away; later levels include a Graveyard/history band, project color coding, graph-safe add/remove edits, one signature Resident per accepted hex and separately gated spindle/paternoster/skydome circulation.
+
+### PROVIDERS
+Web Chat/coding slices are the primary implementation path. Claude Design is reserved for one later source-exact visual grammar gate. Existing Work/WSA/Astra handles later integration after bounded slices return.
+
+### NEXT GATE
+H0: browser-prove the working Card Zone v2 parity matrix before changing world geometry.
