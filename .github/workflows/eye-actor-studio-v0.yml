@@ -1,0 +1,47 @@
+name: Eye Actor Studio v0
+on:
+  push:
+    branches:
+      - chatgpt-web/mobile-preview-chatterbox-legacy-pet-2026-09-21
+    paths:
+      - 'tools/KFB-ToolBox/eye-actor-studio/**'
+      - 'kfb-hub/stage/toolbox/eye-actor-studio/**'
+      - 'skills/chat/workflows/KFB_MOBILE_PREVIEW_CHATTERBOX_LEGACY_PET_2026-09-21/**EYE_ACTOR**'
+      - '.github/workflows/eye-actor-studio-v0.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  proof:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: {node-version: '22'}
+      - name: Static contracts
+        run: node kfb-hub/stage/toolbox/eye-actor-studio/static-check.mjs
+      - name: Syntax
+        run: |
+          node --check tools/KFB-ToolBox/eye-actor-studio/lib/clay-lid-adapter.v0.mjs
+          node --check tools/KFB-ToolBox/eye-actor-studio/lib/eye-materials.v0.mjs
+          node --check tools/KFB-ToolBox/eye-actor-studio/lib/emanata3d.v0.mjs
+          node --check tools/KFB-ToolBox/eye-actor-studio/lib/pose-library.v0.mjs
+          node --check kfb-hub/stage/toolbox/eye-actor-studio/viewer.mjs
+      - name: Install browser
+        run: |
+          npm install --no-save playwright@1.51.1
+          npx playwright install --with-deps chromium
+      - name: Start local repo server
+        run: |
+          python3 -m http.server 4173 --bind 127.0.0.1 >/tmp/kfb-eye-http.log 2>&1 &
+          for i in {1..30}; do curl -fsS http://127.0.0.1:4173/kfb-hub/stage/toolbox/eye-actor-studio/ >/dev/null && exit 0; sleep 1; done
+          cat /tmp/kfb-eye-http.log; exit 1
+      - name: Desktop + mobile browser proof
+        run: node kfb-hub/stage/toolbox/eye-actor-studio/browser-proof.mjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: eye-actor-studio-v0-evidence
+          path: eye-actor-evidence
+          retention-days: 14
