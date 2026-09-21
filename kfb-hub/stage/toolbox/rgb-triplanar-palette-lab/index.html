@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="kfb-build" content="KFB-RGB-TRI-01">
+<title>KFB ToolBox · One Texture Lab</title>
+<link rel="icon" href="data:,">
+<style>
+:root{font-family:Inter,system-ui,sans-serif;color-scheme:dark;background:#151718;color:#f1eadf}
+*{box-sizing:border-box}html,body{margin:0;width:100%;height:100%;overflow:hidden}body{background:#151718}
+#stage{position:fixed;inset:0;background:radial-gradient(circle at 50% 35%,#41423d 0,#242725 42%,#141616 100%)}
+canvas.webgl{display:block;width:100%;height:100%}
+.top{position:fixed;top:0;left:0;right:0;display:grid;grid-template-columns:1fr 1fr;pointer-events:none;padding:14px 18px;font-size:12px;letter-spacing:.08em;text-transform:uppercase;text-shadow:0 2px 8px #000}
+.top b:last-child{text-align:right}.top small{display:block;margin-top:4px;font-size:9px;font-weight:500;letter-spacing:.04em;color:#c7c0b5;text-transform:none}
+.controls{position:fixed;left:50%;bottom:14px;transform:translateX(-50%);display:flex;align-items:center;gap:8px;padding:8px 10px;border:1px solid #ffffff24;background:#171918e8;backdrop-filter:blur(8px);border-radius:7px;max-width:calc(100vw - 28px);white-space:nowrap}
+button,input{font:11px system-ui}button{color:#eee6d8;background:#272a28;border:1px solid #ffffff22;border-radius:5px;padding:6px 9px;cursor:pointer}button.active{border-color:#e2b263;background:#4a3823}input[type=color]{width:29px;height:27px;padding:1px;border:1px solid #ffffff26;background:#222;border-radius:4px}input[type=range]{width:100px}.scale{font:10px ui-monospace,monospace;color:#c4beb3}.sep{height:23px;width:1px;background:#ffffff1c}
+#maskWrap{position:fixed;right:14px;bottom:14px;width:108px;background:#111c;border:1px solid #ffffff28;padding:5px;border-radius:5px}#maskWrap canvas{display:block;width:96px;height:96px;image-rendering:auto}#maskWrap span{display:block;padding-top:4px;font:8px/1.2 ui-monospace,monospace;text-align:center;color:#d0c7b8}
+#status{position:fixed;left:14px;bottom:14px;font:9px/1.4 ui-monospace,monospace;color:#beb7aa;text-shadow:0 1px 5px #000;max-width:320px}
+#status strong{color:#f0d39a}.error{color:#ff9b8f!important}
+@media(max-width:760px){.controls{bottom:9px;gap:5px;padding:6px;flex-wrap:wrap;justify-content:center;width:calc(100vw - 20px)}#maskWrap{width:76px;right:10px;bottom:83px}#maskWrap canvas{width:64px;height:64px}#status{bottom:86px;max-width:210px}.top{padding:10px 12px;font-size:10px}.top small{font-size:8px}}
+</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"}}</script>
+</head>
+<body>
+<div id="stage"></div>
+<div class="top"><b>SOURCE<small>exact asset · original materials</small></b><b>ONE RGB TEXTURE<small>same mesh · triplanar palette remap</small></b></div>
+<div class="controls" aria-label="One texture lab controls">
+  <button data-asset="armchair" class="active">Armchair</button><button data-asset="pencil">Pencil</button><button data-asset="gothgirl">GothGirl</button>
+  <span class="sep"></span><input id="r" type="color" aria-label="Red channel color"><input id="g" type="color" aria-label="Green channel color"><input id="b" type="color" aria-label="Blue channel color">
+  <span class="sep"></span><span class="scale">scale <b id="scaleOut">1.35</b></span><input id="scale" type="range" min=".35" max="4" step=".05" value="1.35">
+</div>
+<div id="maskWrap"><div id="maskMount"></div><span>the single RGB texture</span></div>
+<div id="status">Loading exact donors…</div>
+<script type="module" src="./lab.mjs"></script>
+</body>
+</html>
