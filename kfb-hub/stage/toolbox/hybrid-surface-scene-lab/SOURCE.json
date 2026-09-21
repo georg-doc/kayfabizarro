@@ -1,0 +1,90 @@
+{
+  "schema": "kfb.stage-source/0.1",
+  "product": "KFB ToolBox · Hybrid Surface Scene Lab",
+  "owner": "KFB ToolBox / material-surface compatibility lab",
+  "status": "PUBLIC_VERIFIED_HUMAN_OPEN",
+  "sourceRepo": "georg-doc/kayfabizarro",
+  "sourceBranch": "chatgpt-web/toolbox-hybrid-surface-scene-2026-09-22",
+  "sourceBranchHead": "15f2f1714d62b606033b8624964e481c6d99d59f",
+  "inheritsFrom": {
+    "branch": "chatgpt-web/toolbox-rgb-triplanar-palette-2026-09-21",
+    "pr": 160,
+    "head": "7b1e71c30e6e890607135ba4e1b45c33976715ce"
+  },
+  "worldAtlasDonor": {
+    "pin": "bc1441eb8ff9a2df0e15e778b44b73f97eb63d76",
+    "kitLab": "tools/world_atlas/source/lib/kit-lab.js",
+    "kitLabBlob": "964d4187665f1786067ff5917de80df5f086fc91",
+    "recipe": "tools/world_atlas/source/scenes/dungeon-promo.js",
+    "recipeBlob": "2d2ba81b35d2277553470582ae93b30f6ec197ac",
+    "recipeId": "CQ-S1_KAYKIT_DUNGEON_PROMO"
+  },
+  "actorDonorPin": "bdaea0648f27c0f16e0a737bfba237eb54dd4cbb",
+  "actors": [
+    {
+      "id": "legacy",
+      "rig": "Rig_Legacy",
+      "path": "media/3D_Assets/KayKit Legacy/Orc Warband - legacy/characters/gltf/character_orcA.gltf",
+      "blob": "e74b886fa5f88c15cd300899cccf0e344be11ec5c"
+    },
+    {
+      "id": "medium",
+      "rig": "Rig_Medium",
+      "path": "media/3D_Assets/KayKit_Mystery_Series6/6 - December 2023 - Action Figure/character/gltf/ActionFigure.glb",
+      "blob": "4785276defdb929cb397954eb74b76aecb84486b"
+    },
+    {
+      "id": "gothgirl",
+      "rig": "Rig_Medium",
+      "path": "media/3D_Assets/KayKit_Mystery_Series6/GothGirl/characters/GothGirl.glb",
+      "blob": "b56f67e4ddb7db95ff54fef526148a49289f3915"
+    },
+    {
+      "id": "frizzlebob",
+      "rig": "Rig_Medium",
+      "adapter": "mountGraft",
+      "module": "tools/KFB-ToolBox/kfb-rigs-embed-v3/frizzlegraft-v1/graft-mount.v1.js",
+      "moduleBlob": "a84b2c92a00f7764088c4916030327eb04a91c5c",
+      "contract": "tools/KFB-ToolBox/kfb-rigs-embed-v3/contracts/kfb-pet-graft-driver.v4.json",
+      "contractBlob": "f202a1c2f1670ab6045176af6621c94041124e76"
+    },
+    {
+      "id": "large",
+      "rig": "Rig_Large",
+      "path": "media/3D_Assets/KayKit_Mystery_Series6/3 - September 2024 - Black Knight/characters/BlackKnight.glb",
+      "blob": "ce20440309951a9d85d246b6ff6b0fa399f6c9d8"
+    }
+  ],
+  "surfaceContract": {
+    "textureCount": 1,
+    "staticEnvironmentProjection": "world",
+    "movingActorProjection": "object",
+    "originalBaseColorAndMap": "preserved",
+    "defaultOverlayStrength": 0.44,
+    "defaultScaleMultiplier": 0.55
+  },
+  "stageUrl": "https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/hybrid-surface-scene-lab/",
+  "humanAcceptance": "PENDING",
+  "localEvidence": {
+    "workflowRun": 35667375807,
+    "job": 106556031458,
+    "checks": "41/41 PASS",
+    "artifactId": 10670015281,
+    "artifactDigest": "sha256:b2b86419528c62a741c77a420a3aa8de796b18aafa1033d7a9adb573b4d12317",
+    "failedResources": 0,
+    "pageConsoleErrors": 0
+  },
+  "currentResearchHead": "80cf34690d7969168cf565ef9ec8c42e244733d6",
+  "publicEvidence": {
+    "workflowRun": 35667847986,
+    "localJob": 106557473859,
+    "publicJob": 106557972250,
+    "localChecks": "41/41 PASS",
+    "publicChecks": "41/41 PASS",
+    "deployedSourceHead": "15f2f1714d62b606033b8624964e481c6d99d59f",
+    "artifactId": 10669766280,
+    "artifactDigest": "sha256:e15eeb4a4cf89a9cc829983cb79a8d7de1b2091615ba86fbeac3910c48504a8c",
+    "failedResources": 0,
+    "pageConsoleErrors": 0
+  }
+}
