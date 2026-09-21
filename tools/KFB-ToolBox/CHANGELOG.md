@@ -2,6 +2,30 @@
 
 Alte Einträge bleiben unverändert. Korrekturen als neue CORRECTION/SUPERSEDES-Einträge mit Bezug ergänzen. Aktuelle Momentaufnahme im MASTERPLAN/Return, Geschichte hier.
 
+
+## 2026-09-21 · One RGB Texture / Triplanar Palette Lab
+
+### SOURCE / IMPLEMENTATION
+Draft PR #160 on branch `chatgpt-web/toolbox-rgb-triplanar-palette-2026-09-21`.
+
+Built an additive source-vs-processed Stage on three exact real assets: KayKit Armchair, Pencil B short and GothGirl. The processed side uses one shared deterministic 256×256 RGB texture, object-space triplanar projection and RGB-channel → three-color palette remapping.
+
+The triplanar sampling grammar is reused from `media/3D_Assets/pet-surface.v1.js`; that donor was not replaced.
+
+### TESTED
+- branch browser: **41/41 PASS**
+- public Cloudflare Stage: **41/41 PASS**
+- 0 failed public resources
+- 0 public page/console errors
+- public run `35659617921`, job `106531991125`
+- evidence artifact `10666710542`
+
+### BOUNDARY
+Consumer runtime, actor/face/motion/physics owners and Asset Registry truth remain unchanged. PR #160 stays draft and unmerged.
+
+### NEXT
+Human visual review. If accepted, test a hybrid adapter that preserves selected original material zones while retaining the single shared triplanar brush field.
+
 ## 2026-09-21 · Fluid/Card/Voxel intake and Theatre Curtain route
 
 ### SOURCE VERIFIED

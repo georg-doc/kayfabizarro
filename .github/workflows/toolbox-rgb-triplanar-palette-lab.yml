@@ -1,0 +1,71 @@
+name: ToolBox RGB Triplanar Palette Lab proof
+on:
+  pull_request:
+    paths:
+      - 'kfb-hub/stage/toolbox/rgb-triplanar-palette-lab/**'
+      - '.github/workflows/toolbox-rgb-triplanar-palette-lab.yml'
+permissions:
+  contents: read
+jobs:
+  browser-proof:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Static syntax and source marker
+        run: |
+          node --check kfb-hub/stage/toolbox/rgb-triplanar-palette-lab/kfb-rgb-triplanar.v1.js
+          node --check kfb-hub/stage/toolbox/rgb-triplanar-palette-lab/lab.mjs
+          node --check kfb-hub/stage/toolbox/rgb-triplanar-palette-lab/proof.mjs
+          python3 -m json.tool kfb-hub/stage/toolbox/rgb-triplanar-palette-lab/SOURCE.json >/dev/null
+      - name: Install Playwright Chromium
+        run: |
+          npm install --no-save playwright@1.51.1
+          npx playwright install --with-deps chromium
+      - name: Serve candidate
+        run: |
+          python3 -m http.server 4173 --bind 127.0.0.1 > /tmp/rgbtri-http.log 2>&1 &
+          for i in {1..30}; do curl -fsS http://127.0.0.1:4173/kfb-hub/stage/toolbox/rgb-triplanar-palette-lab/ >/dev/null && exit 0; sleep 1; done
+          cat /tmp/rgbtri-http.log
+          exit 1
+      - name: Browser proof
+        env:
+          RGBTRI_BASE_URL: http://127.0.0.1:4173/kfb-hub/stage/toolbox/rgb-triplanar-palette-lab/
+          RGBTRI_PROOF_DIR: rgb-triplanar-evidence
+        run: node kfb-hub/stage/toolbox/rgb-triplanar-palette-lab/proof.mjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: toolbox-rgb-triplanar-evidence
+          path: rgb-triplanar-evidence
+          retention-days: 14
+
+  public-proof:
+    needs: browser-proof
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install Playwright Chromium
+        run: |
+          npm install --no-save playwright@1.51.1
+          npx playwright install --with-deps chromium
+      - name: Exact Cloudflare Stage proof
+        env:
+          RGBTRI_BASE_URL: https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/rgb-triplanar-palette-lab/
+          RGBTRI_PUBLIC: '1'
+          RGBTRI_SOURCE_HEAD: 43d43f890f17c846232227c2cc153eb5aa28324a
+          RGBTRI_PROOF_DIR: rgb-triplanar-public-evidence
+        run: node kfb-hub/stage/toolbox/rgb-triplanar-palette-lab/proof.mjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: toolbox-rgb-triplanar-public-evidence
+          path: rgb-triplanar-public-evidence
+          retention-days: 14
