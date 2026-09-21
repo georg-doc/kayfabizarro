@@ -1013,3 +1013,21 @@ GitHub/cloudflare-live branch state is not a public browser PASS. Exact `kayfabi
 - Artifact `10618729208`, digest `sha256:d2983c413b975f3d00bfbfb87564c5b90e16be4a99deb1bcd29369a4cb335c64`.
 - No F1 runtime was published to Cloudflare; Legacy public Stage remains unverified.
 - Next gate: resume only the KLR-KIT three-seed browser matrix `gate-16 → gate-75 → gate-33 → repeat gate-16`. Combat/WhackMan consumer integration remains deferred.
+
+
+## 2026-09-21 · Toy / Clay Form Lab v0
+
+### USER DIRECTION
+Persist a reusable modelling grammar for rounded Tiny-Treats/KayKit-adjacent props and soft, iconic landmarks. Preserve samples and future failure/postmortem learning additively.
+
+### IMPLEMENTED / TESTED
+ToolBox donor lab plus exact Tiny Treats toaster isolation, shared rounded/capsule/lathe primitives and Panel/Eiffel/Cologne benchmarks. Implementation head `8825d05caed888e8bc35cc3b49d0cf01da3664da`: **15/15 static + 16/16 desktop/mobile WebGL PASS**, 0 browser/resource errors. Evidence artifact `10619944311`.
+
+### OWNER BOUNDARY
+`tools/img2threejs/` remains landmark owner; City Grotesque remains default. Toy/Clay is an experimental authoring grammar until Georg accepts it visually.
+
+### PUBLICATION
+PR #158 Cloudflare preview build failed. Intended `/kfb-hub/stage/toolbox/toy-clay-form-lab/` is **NOT PUBLIC_VERIFIED**.
+
+### NEXT GATE
+`TOY-CLAY-PUB-1`: publication recovery only; no geometry retuning.

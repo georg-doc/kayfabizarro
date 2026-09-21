@@ -385,3 +385,36 @@ Current router: [KAYKIT_LEGACY_RPG_RIGGING_2026-09-21](workflows/KAYKIT_LEGACY_R
 
 Exactly one next gate: **resume the KLR-KIT-01 three-seed browser matrix: `gate-16 → gate-75 → gate-33 → repeat gate-16`.** No Combat/WhackMan runtime integration or Legacy Stage publication before that matrix passes.
 
+
+
+## 2026-09-21 · Toy / Clay Form Lab v0
+
+The mobile-preview ideation lane now contains an additive **KFB Toy / Clay Form Lab v0** under `tools/KFB-ToolBox/toy-clay-form-lab/`.
+
+Purpose: establish a reproducible rounded macro-form grammar for Tiny-Treats/KayKit-adjacent props and iconically simplified landmarks without creating a second landmark owner.
+
+Source-first gate:
+- exact Tiny Treats Charming Kitchen toaster is the default isolated donor;
+- generated benchmarks are a rounded three-button panel, simplified Eiffel and simplified Cologne Cathedral;
+- shared primitives use RoundedBox, Capsule Beam, Lathe Spire and Soft Arch geometry;
+- hard part budgets are enforced.
+
+Evidence at implementation head `8825d05caed888e8bc35cc3b49d0cf01da3664da`:
+- **15/15 static PASS**;
+- **16/16 desktop/mobile WebGL PASS**;
+- Panel 4/4, Eiffel 13/14, Cologne 12/16 parts;
+- 0 failed resources / 0 page errors;
+- artifact `10619944311`.
+
+Ownership remains unchanged:
+- `tools/img2threejs/` stays landmark authoring owner;
+- **City Grotesque remains the current landmark default**;
+- Registry / Asset Librarian keeps source identity.
+
+Intended Stage:
+`https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/toy-clay-form-lab/`.
+
+Cloudflare Pages reported **BUILD FAILED** for PR #158, so the Stage is **NOT PUBLIC_VERIFIED** and no alternate review URL is substituted.
+
+Exactly one next gate:
+**TOY-CLAY-PUB-1 · publication-only recovery; do not change proven geometry.**
