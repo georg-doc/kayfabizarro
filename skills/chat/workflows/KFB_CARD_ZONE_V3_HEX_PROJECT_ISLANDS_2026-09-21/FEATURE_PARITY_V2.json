@@ -1,0 +1,97 @@
+{
+  "schema": "kfb-card-zone-v3-h0-feature-parity/v1",
+  "date": "2026-09-22",
+  "owner": "KFB ToolBox Card-Zone / Project-Island consumer",
+  "repo": "georg-doc/kayfabizarro",
+  "branch": "chatgpt-web/card-zone-v3-h0-parity-2026-09-21",
+  "sourceDonor": {
+    "path": "tools/KFB-ToolBox/_inbox/cloud-design-worldbuilding-2026-09-18/card-zone-lab-v3/KFB Card Zone Lab v2.dc.html",
+    "blob": "43eea82f8727d3581e50374d6263e48a28241d3b"
+  },
+  "state": "H0_SOURCE_LOCK_IN_PROGRESS",
+  "browserParity": "NOT_RUN",
+  "features": [
+    {
+      "id": "render",
+      "label": "3D Card Zone scene boots/renders",
+      "source": "SOURCE_VERIFIED",
+      "browser": "NOT_RUN"
+    },
+    {
+      "id": "card_cube",
+      "label": "Card Cube interaction",
+      "source": "SOURCE_VERIFIED",
+      "browser": "NOT_RUN"
+    },
+    {
+      "id": "real_card_deck",
+      "label": "real card/deck content",
+      "source": "SOURCE_VERIFIED",
+      "browser": "NOT_RUN"
+    },
+    {
+      "id": "reveal",
+      "label": "card reveal animation",
+      "source": "SOURCE_VERIFIED",
+      "browser": "NOT_RUN"
+    },
+    {
+      "id": "sky_card_projection",
+      "label": "Sky Card / projection",
+      "source": "SOURCE_VERIFIED",
+      "browser": "NOT_RUN"
+    },
+    {
+      "id": "seed",
+      "label": "card-seeded world/palette/mode",
+      "source": "SOURCE_VERIFIED",
+      "browser": "NOT_RUN"
+    },
+    {
+      "id": "fluid_modes",
+      "label": "Wasser / Öl / Säure / Bubblegum / Schlacke",
+      "source": "SOURCE_VERIFIED",
+      "browser": "NOT_RUN"
+    },
+    {
+      "id": "river_flow",
+      "label": "river / narrative-flow direction",
+      "source": "SOURCE_VERIFIED",
+      "browser": "NOT_RUN"
+    },
+    {
+      "id": "registry_handoff",
+      "label": "Zonen-Registry handoff",
+      "source": "SOURCE_VERIFIED",
+      "browser": "NOT_RUN"
+    },
+    {
+      "id": "orbit",
+      "label": "camera/orbit interaction",
+      "source": "SOURCE_VERIFIED",
+      "browser": "NOT_RUN"
+    },
+    {
+      "id": "face_focus",
+      "label": "Face Focus",
+      "source": "SOURCE_VERIFIED",
+      "browser": "NOT_RUN"
+    }
+  ],
+  "extraEvidence": {
+    "fluidShaderSourceExport": {
+      "status": "PASS",
+      "checks": "10/10",
+      "handoff": "tools/KFB-ToolBox/_handover/CARD_ZONE_V2_FLUID_SHADER_SOURCE_2026-09-22/"
+    }
+  },
+  "requiredVisualEvidenceStillMissing": [
+    "overview screenshot",
+    "card/cube screenshot",
+    "Sky Card/projection screenshot",
+    "fluid/river screenshot",
+    "browser console/runtime check"
+  ],
+  "h1Allowed": false,
+  "reason": "H0 requires browser-visible v2 parity evidence before any hex build."
+}
