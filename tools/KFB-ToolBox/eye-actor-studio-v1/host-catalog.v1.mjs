@@ -1,6 +1,7 @@
 export const HOST_SCHEMA='kfb.eye-actor-host-catalog/0.1-candidate';
 
 export const STATIC_HOSTS=[
+  {id:'lab-placeholder',label:'Lab · neutral placeholder head',group:'Lab',kind:'placeholder'},
   {id:'legacy-prototype-pete',label:'Legacy · Prototype Pete · template',group:'Legacy · blank/template',kind:'legacy-template',default:true,path:'media/3D_Assets/KayKit Legacy/KayKit Character Animations 1.2 - legacy/Models/gltf/PrototypePete.gltf',headNode:'PrototypePete_head',bodyNode:'PrototypePete_body',rigClass:'Rig_Legacy'},
   {id:'mannequin-medium',label:'Modern · Mannequin Medium',group:'Modern · blank/template',kind:'modern',path:'media/3D_Assets/KayKit_Character_Animations_1.1/Mannequin Character/characters/Mannequin_Medium.glb',rigClass:'Rig_Medium'},
   {id:'mannequin-large',label:'Modern · Mannequin Large',group:'Modern · blank/template',kind:'modern',path:'media/3D_Assets/KayKit_Character_Animations_1.1/Mannequin Character/characters/Mannequin_Large.glb',rigClass:'Rig_Large'},
