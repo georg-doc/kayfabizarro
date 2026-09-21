@@ -20,7 +20,7 @@ ok('one upper lid only observable',proof.includes("upperLids:1")&&proof.includes
 ok('closed volume contract',geo.includes('closedVolume:true'));
 ok('real occlusion margin contract',geo.includes('realOcclusionMargin:true'));
 ok('inner eyeball conforming surface',geo.includes("innerSurface:'eyeball-conforming'"));
-ok('rounded hood outer surface',geo.includes("outerSurface:'rounded-hood'"));
+ok('compact rounded-pad outer surface',geo.includes("outerSurface:'compact-rounded-pad'"));
 ok('margin thickness measured',geo.includes('marginThickness'));
 ok('lower visible margin is sealed volume',geo.includes('Lower visible margin'));
 ok('side walls closed',geo.includes('canthi closure'));
