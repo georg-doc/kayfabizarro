@@ -117,3 +117,17 @@ This supersedes the earlier one-upper-lid-first build order.
 
 Primary QA is now visual/occlusion-first:
 **Do both lids read as two rounded halves of one eye-hugging volume and actually cover the eyeball?**
+
+
+## 2026-09-21 · GPT self-contained mobile site · 16/16 PASS
+
+Rejected the CDN/importmap GPT page after iOS/GPT showed `Booting…` and an empty stage.
+
+Built a single-file native-WebGL replacement with embedded real Mannequin Medium source geometry and the shared-shell Upper + Lower lid demo.
+
+A syntax defect in the first self-contained attempt (`catch` without `try`) was diagnosed from the browser timeout and repaired without changing eye/lid geometry.
+
+Authoritative head `87c4f4158b2be40dd9e617e54e85397234d0452d`, run `35630127930`:
+**16/16 desktop/mobile browser PASS**, 0 external requests, 0 page errors.
+
+Artifact: `10653512609`.
