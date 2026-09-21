@@ -63,3 +63,23 @@ Authoritative evidence at `64d16e754a3b149efa64f2b7f3045d42f32e4bca`:
 Assistant visual status for Ear v1: **CANDIDATE PASS**. Human acceptance remains open.
 
 Next: **EAS1-VIS-2**.
+
+
+## 2026-09-21 · REJECTED · mobile 2D fallback + wrong ear donor
+
+User review rejected the latest GPT mobile fallback:
+- no recognizable real KFB 3D asset;
+- software Canvas simulation substituted for the actual Studio;
+- lids read as tubes/lines rather than volumetric clay masses.
+
+Also corrected Rabbit Ear source:
+- previous Frizzlegraft/ears.v2-derived styling path was the wrong donor for the requested ear redesign;
+- correct donor is repo-exact `Rabbit ears by Poly by Google - 1bLq_k5vHMt.glb`.
+
+Action:
+- park ears;
+- add `EYELID_GEOMETRY_CONTRACT.v1.md`;
+- reduce next build to one real 3D eye + one upper volumetric lid proof.
+
+Next:
+`EAS1-LID-1`.

@@ -162,3 +162,38 @@ Intended:
 3. exact ears.v2 → Cartoon Ear v1 A/B.
 
 Do not start Hunky/Dory or promote Live before that visual gate.
+
+
+---
+
+## 2026-09-21 · CORRECTION / REJECTION
+
+The previous GPT mobile fallback is **REJECTED**.
+
+Reason:
+- it showed no real repository 3D asset;
+- it replaced the 3D Eye Actor system with software-2D drawing;
+- its eyelids read as tubes/strokes rather than volumetric cartoon/clay masses.
+
+This fallback is not evidence and must not be reused.
+
+The Rabbit Ear candidate documented earlier in this Return is also **REJECTED FOR DONOR MISMATCH**.
+
+Correct ear donor, now repo-pinned:
+`media/3D_Assets/KFB/Rabbit ears by Poly by Google - 1bLq_k5vHMt.glb`
+
+Registry source:
+- asset identity: repo-exact
+- blob: `2d792ab62fb899cc67da2f24afa7ed27f305755c`
+- pinned commit: `378b209355b13304e3cff656ec0806ca5b89df28`
+- size: 11,180 bytes
+
+The ear slice is parked until the Eye Studio lid gate passes.
+
+### Current next gate
+
+**EAS1-LID-1 · single real 3D eye + one real volumetric upper clay lid.**
+
+Human question:
+
+**Does the lid read as a thick clay/cartoon mass physically covering the eyeball, with a rounded outside and crisp eye-facing occlusion edge?**

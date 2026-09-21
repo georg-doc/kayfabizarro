@@ -595,3 +595,18 @@ No public/live claim until the exact route visibly contains the expected revisio
 Ask Georg:
 
 **Does the Studio now treat eyes as true independent actors — variable count, size, shape, 3D orientation, lids and gaze — while still feeling like one coherent KFB face system rather than cloned technical eye widgets?**
+
+
+## 2026-09-21 · CORRECTION · Eyelid geometry gate
+
+Before further Eye Actor Studio visual work, read:
+`EYELID_GEOMETRY_CONTRACT.v1.md`.
+
+The previous mobile-safe software Canvas fallback is **REJECTED** because it replaced real KFB 3D assets and volumetric lids with a 2D simulation.
+
+The previous tube/stroke-looking lid interpretation is also **REJECTED**.
+
+New mandatory sequence:
+**real host → real eyeball → one volumetric upper lid proof → lower lid/closure → slant/curve → asymmetry/frog → cluster**.
+
+Do not rebuild the whole UI first.

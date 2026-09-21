@@ -799,3 +799,21 @@ Current properties:
 **Assistant visual observation:** the prior intersections/tears are gone and the ear now reads as a clean toy/clay candidate. Georg visual acceptance is still required.
 
 **Reusable rule:** when the donor supplies the right identity/measurement/behavior but its topology fights the target visual language, preserve the donor seams and measurements; rebuild only the presentation shell instead of applying a third cosmetic topology patch.
+
+
+## 2026-09-21 · Correction · volumetric eyelids vs decorative strokes
+
+**Observed failure:** a mobile fallback represented eyelids as tube/stroke curves over a drawn eyeball.
+
+**Why this fails:** the intended KFB eyelid is a physical cartoon/clay volume that covers the eyeball. A line can describe the margin, but it cannot be the eyelid.
+
+**Correct form rule:**
+- thick rounded outer clay mass;
+- inner surface conforms to the eyeball;
+- crisp visible eye-facing margin;
+- closed side/end volume;
+- upper/lower independent;
+- blink sweeps real volume across the eye;
+- slant and concave/convex modify the opening edge without collapsing the volume.
+
+**Reusable rule:** when an animated facial part is supposed to occlude another 3D form, model the occluding volume first. Do not replace the object with its contour line.
