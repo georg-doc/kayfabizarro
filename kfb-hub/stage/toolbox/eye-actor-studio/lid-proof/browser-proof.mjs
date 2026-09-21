@@ -46,7 +46,7 @@ try{
     check(label+' exactly one visible eye',d.visibleEyes===1,String(d.visibleEyes));
     check(label+' exactly one upper lid',d.upperLids===1,String(d.upperLids));
     check(label+' no lower lid',d.lowerLids===0,String(d.lowerLids));
-    check(label+' upper lid schema',d.schema==='kfb.upper-lid-volume/0.1-candidate',d.schema);
+    check(label+' upper lid schema',d.schema==='kfb.upper-lid-volume/0.2-candidate',d.schema);
     check(label+' closed volume',d.closedVolume===true);
     check(label+' real occlusion margin',d.realOcclusionMargin===true);
     check(label+' positive visible margin thickness',d.marginThickness>.01,String(d.marginThickness));
