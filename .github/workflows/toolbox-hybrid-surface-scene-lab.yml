@@ -42,3 +42,30 @@ jobs:
           name: toolbox-hybrid-surface-scene-evidence
           path: hybrid-surface-scene-evidence
           retention-days: 14
+
+  public-proof:
+    needs: browser-proof
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install Playwright Chromium
+        run: |
+          npm install --no-save playwright@1.51.1
+          npx playwright install --with-deps chromium
+      - name: Exact Cloudflare Stage proof
+        env:
+          HYBRID_BASE_URL: https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/hybrid-surface-scene-lab/
+          HYBRID_PUBLIC: '1'
+          HYBRID_SOURCE_HEAD: 15f2f1714d62b606033b8624964e481c6d99d59f
+          HYBRID_PROOF_DIR: hybrid-surface-scene-public-evidence
+        run: node kfb-hub/stage/toolbox/hybrid-surface-scene-lab/proof.mjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: toolbox-hybrid-surface-scene-public-evidence
+          path: hybrid-surface-scene-public-evidence
+          retention-days: 14
