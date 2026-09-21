@@ -611,6 +611,50 @@
         "digest": "sha256:d2983c413b975f3d00bfbfb87564c5b90e16be4a99deb1bcd29369a4cb335c64",
         "result": "33/33 static · 16/16 ActorRecipe · 2/2 selector · 21/21 browser PASS"
       }
+    },
+    {
+      "id": "legacy-web-pet-v0",
+      "kind": "tool-candidate",
+      "status": "EXPERIMENTAL",
+      "repository": "georg-doc/kayfabizarro",
+      "branch": "chatgpt-web/legacy-web-pet-v0-2026-09-21",
+      "draftPR": 157,
+      "owner": "KFB ToolBox / Legacy Web Pet presentation adapter",
+      "intendedStage": "https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/legacy-web-pet/",
+      "publicVerified": false,
+      "humanAcceptance": "PENDING",
+      "testedRuntimeHead": "f41c59a8178bf77266c0f776f2e20a7948ee6223",
+      "tested": "15/15 static + MV3 build PASS + 12/12 Web/Hub WebGL PASS; extension arbitrary-page ready gate failed twice",
+      "webHost": {
+        "result": "PASS",
+        "defaultCharacter": "Rogue",
+        "camp": "exact Orc Warband banner + two hostname-stable Warband props",
+        "actions": "real Rig_Legacy clips + VFX + user-gesture SFX",
+        "settings": "right-click character picker"
+      },
+      "extension": {
+        "manifest": "MV3",
+        "build": "PASS",
+        "browserInjection": "FROZEN_AFTER_TWO_ATTEMPTS",
+        "runs": [
+          35553680781,
+          35553968462
+        ],
+        "unknownBoundary": "content-script load vs host/frame boot"
+      },
+      "artifact": {
+        "id": 10619267683,
+        "digest": "sha256:da9bdfa9e0dd03c83f4335e61963449b7d559fc91e892867dd2c98843f361bf3",
+        "note": "Web evidence only; validated extension ZIP was not produced because packaging was skipped after the failed injection gate."
+      },
+      "doesNotOwn": [
+        "Rig_Legacy animation source",
+        "Legacy actor identity",
+        "KFB Hub runtime ownership",
+        "LLM/chat runtime"
+      ],
+      "nextGate": "LWP-EXT-F1 · extension-load observability: CONTENT_ENTRY → HOST_CREATED → FRAME_INSERTED → FRAME_LOADED|FRAME_ERROR → PET_READY",
+      "note": "Web/Hub candidate is technically green but branch-only. Chrome extension build is source-valid; injection is unresolved and frozen after two attempts. No public Stage or canonical Hub mount."
     }
   ],
   "failureRecoveryTemplate": "skills/chat/templates/CLAUDE_DESIGN_FAILURE_RECOVERY_EXPORT.md"
