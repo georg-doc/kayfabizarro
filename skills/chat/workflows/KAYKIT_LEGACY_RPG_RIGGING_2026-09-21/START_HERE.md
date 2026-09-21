@@ -1,7 +1,7 @@
 # KFB ToolBox · KayKit Legacy RPG Rigging · Current Router
 
 **Date:** 2026-09-21  
-**Status:** LEGACY_BASE_LOCAL_BROWSER_PASS · KLR_KIT_F1_PASS · THREE_SEED_MATRIX_PENDING  
+**Status:** LEGACY_BASE_LOCAL_BROWSER_PASS · KLR_KIT_MATRIX_PASS · LEGACY_EYE_BATCH_NEXT  
 **Owner:** KFB ToolBox / Rigging  
 **Implementation branch:** `chatgpt-web/toolbox-legacy-rpg-rigging-2026-09-21`  
 **Draft PR:** #155  
@@ -145,6 +145,52 @@ with ready token `1:knight:rogue-c`, `RIG_LEGACY`, `ASSEMBLED`, 30 clips and all
 
 KLR-KIT-F1 resolves the selector-regression gate. It does **not** yet prove the full three-seed browser matrix.
 
+## KLR-KIT matrix · PASS
+
+Fresh bounded evidence slice:
+
+- branch `chatgpt-web/klr-kit-matrix-2026-09-21`;
+- F1 base `eedf34805bc869fedd8e94ecec9e914d2ea12d59`;
+- tested matrix head `8197d8f1b6e1becc550b9eeb6d766b455a0b33ab`;
+- Return: `KLR_KIT_MATRIX_RETURN.md`.
+
+No runtime code changed in this slice.
+
+Evidence:
+- **33/33 PASS** static/source;
+- **16/16 PASS** ActorRecipe deterministic suite;
+- **2/2 PASS** selector regression;
+- **35/35 PASS** browser/WebGL matrix;
+- 0 failed resources;
+- 0 page/console errors.
+
+Run:
+`35660231145`
+
+Job:
+`106533462704`
+
+Artifact:
+`10667035972`
+
+Digest:
+`sha256:fb050fb44ceea245bfc1db1b243b47e2b2b811659b0e8d719616fecbcd09f625`
+
+Browser sequence:
+
+`gate-16 → gate-75 → gate-33 → repeat gate-16`
+
+This proves:
+- alternate and default heads;
+- headExtras ON/OFF;
+- real held weapon slot;
+- exact recipe/UI identity;
+- same-seed recipe/key reconstruction;
+- three distinct starting recipe keys.
+
+The shared Legacy appearance Baukasten / Character+Monster randomizer core is now technically proven as a ToolBox candidate. Consumer integration remains separate.
+
+
 ## Consumer boundaries
 
 ### Combat Arena
@@ -190,17 +236,18 @@ Do not publish the frozen KLR-KIT integration candidate.
 
 ## Exactly one next gate
 
-**Resume the KLR-KIT-01 three-seed browser matrix**
+**KLR-EYE-01 · Legacy Eye Batch 17/17**
 
-Fresh bounded slice only:
+Reuse the existing EyeRig v6 / Eye Batch owner already used for Medium/Large.
 
-`gate-16 → gate-75 → gate-33 → repeat gate-16`
+Required first outcome:
 
-Require:
-- exact recipe/UI identity for each seed;
-- same-seed reconstruction for repeated `gate-16`;
-- at least two unique recipe keys across the three seeds;
-- 0 failed resources;
-- 0 page/console errors.
+- all 17 Legacy head identities are source-isolated and measured or explicitly classified;
+- one default EyeRig profile per Legacy head identity;
+- profiles stored as data, not hardcoded inside Combat/WhackMan;
+- no source geometry mutation;
+- browser batch proof that each profile mounts on its intended head;
+- eye tracking/blink/lids remain EyeRig-owned;
+- human visual approval remains separate from automated fit.
 
-Do not start Combat integration, WhackMan integration, public Legacy Stage, merge or Live promotion before this matrix passes.
+Do not start Combat ranged/melee integration before this 17/17 face-profile gate.
