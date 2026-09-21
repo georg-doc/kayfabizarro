@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>KFB Batch EyeRig Atlas · Rig_Legacy 17</title>
+  <link rel="stylesheet" href="../styles.css">
+  <link rel="stylesheet" href="./styles.css">
+  <script type="importmap">
+  {"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"}}
+  </script>
+</head>
+<body>
+<header class="legacy-top">
+  <div><span class="kicker">KFB TOOLBOX / BATCH EYERIG ATLAS</span><h1>Rig_Legacy · 17 Head Batch</h1></div>
+  <div class="legacy-status"><span id="bootBadge" class="badge">BOOTING</span><span id="progress">0/17 mounted</span></div>
+</header>
+<main class="legacy-layout">
+  <aside class="legacy-roster">
+    <div class="legacy-note">Exact KayKit Dungeon 1.0 head source first. Candidate EyeRig is mounted only after source isolation.</div>
+    <div id="headList"></div>
+  </aside>
+  <section class="legacy-stage-wrap">
+    <div class="legacy-toolbar">
+      <button id="sourceBtn">Source isolate</button>
+      <button id="mountBtn">Measure + mount EyeRig v6</button>
+      <button id="nextBtn">Next unmounted</button>
+      <button id="blinkBtn">Blink</button>
+    </div>
+    <div id="stage">
+      <div id="loading" hidden>Loading exact source…</div>
+      <div class="legacy-stage-label"><b id="stageMode">SOURCE</b><span id="stageObject">—</span></div>
+    </div>
+  </section>
+  <aside class="legacy-report">
+    <h2 id="headTitle">—</h2>
+    <dl>
+      <div><dt>Source</dt><dd id="sourcePath">—</dd></div>
+      <div><dt>Measurement</dt><dd id="measurementStatus">—</dd></div>
+      <div><dt>Profile</dt><dd id="profileStatus">—</dd></div>
+      <div><dt>Source eyes</dt><dd id="cleanupStatus">—</dd></div>
+    </dl>
+    <pre id="report">Booting…</pre>
+  </aside>
+</main>
+<footer class="legacy-footer">Owner retained: Batch EyeRig Atlas · EyeRig v6 · Legacy assembly/LegacyFaceHost donors · no source asset mutation</footer>
+<script type="module" src="./app.js"></script>
+</body>
+</html>
