@@ -116,9 +116,12 @@ export function setHybridParams(prepared,{scale,strength,matte}={}){
 }
 
 export function hybridStats(prepared){
-  let compiled=0,total=0;const textureUuids=new Set(),projections=new Set();
+  let compiled=0,total=0,visibleMaterials=0,visibleCompiled=0;const textureUuids=new Set(),projections=new Set();
   for(const rec of prepared.records)for(const m of asMats(rec.hybrid)){
-    const h=m?.userData?.kfbHybrid;if(!h)continue;total++;if(h.shaderCompiled)compiled++;textureUuids.add(h.sharedTextureUuid);projections.add(h.projection);
+    const h=m?.userData?.kfbHybrid;if(!h)continue;
+    total++;if(h.shaderCompiled)compiled++;
+    if(rec.node.visible!==false){visibleMaterials++;if(h.shaderCompiled)visibleCompiled++}
+    textureUuids.add(h.sharedTextureUuid);projections.add(h.projection);
   }
-  return{...prepared.stats,materials:total,compiled,textureUuids:[...textureUuids],projections:[...projections]};
+  return{...prepared.stats,materials:total,compiled,visibleMaterials,visibleCompiled,textureUuids:[...textureUuids],projections:[...projections]};
 }
