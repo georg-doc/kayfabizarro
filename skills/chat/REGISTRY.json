@@ -565,8 +565,8 @@
       "sourcePack": "media/3D_Assets/KayKit Legacy/KayKit Dungeon Pack 1.0 2/",
       "intendedStage": "https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/legacy-rpg-rigging/",
       "publicVerified": false,
-      "tested": "26/26 static PASS; browser gate frozen after runs 35543850991 and 35548588227",
-      "nextGate": "KLR-SYNC-01 · deterministic 4/4 actor-switch readiness proof",
+      "tested": "Legacy base: 29/29 static + 41/41 KLR-SYNC + 44/44 full browser/WebGL PASS; KLR-KIT pure core: 33/33 static + 16/16 recipe PASS; KLR-KIT browser integration frozen after two passes",
+      "nextGate": "KLR-KIT-F1 · restore selector helper seam + one gate-16 recipe",
       "owns": [
         "Legacy RPG source catalog candidate",
         "Legacy authoring/calibration candidate",
@@ -579,7 +579,29 @@
         "Combat/Travel/Race/Town gameplay",
         "Pencil/CapsuleCarl/Eraser compatibility"
       ],
-      "note": "Frozen browser-gate candidate after two proof-synchronization repair passes. Source/static inventory remains salvageable. Do not publish intended Stage before KLR-SYNC-01."
+      "note": "Legacy base is locally browser-proven. Shared ActorRecipe/randomizer pure core is deterministic and gameplay-neutral, but its browser integration is frozen after two passes on a proven edit regression. Do not publish the intended Legacy Stage or integrate into Combat/WhackMan before KLR-KIT-F1.",
+      "currentBranchHead": "0fbf240150fd32274cf93305c8014262b72b860a",
+      "baseTestedHead": "5b2fa78220ec4127c1b761c4d7f7a8304dfb11e9",
+      "actorKit": {
+        "schema": "kfb.legacy-actor-recipe/0.1-candidate",
+        "intent": [
+          "Combat Arena monsters/enemies",
+          "KFB WhackMan player/ghost presentation",
+          "later KFB games"
+        ],
+        "pureCore": "PASS",
+        "browserIntegration": "FROZEN_AFTER_TWO_PASSES",
+        "failedBranch": "chatgpt-web/klr-kit-01-failed-2026-09-21",
+        "failedHead": "e3a06e3451637a8b447192113cab43f3ece84cd8",
+        "rootCause": "KLR-KIT edit-time String.replace replacement semantics collapsed $$('[data-mode]') to $('[data-mode]')",
+        "combatReceiver": {
+          "implementationPR": 5,
+          "implementationHead": "954f2db7484dc566e468e5ce89b0d95940d97537",
+          "meleePR": 7,
+          "meleeHead": "6df5d4cd3b5e17bacb32438beac528a37c943bb0"
+        },
+        "whackMan": "Dropbox concept/research input only; no pinned GitHub runtime owner"
+      }
     }
   ],
   "failureRecoveryTemplate": "skills/chat/templates/CLAUDE_DESIGN_FAILURE_RECOVERY_EXPORT.md"
