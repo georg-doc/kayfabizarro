@@ -1013,3 +1013,16 @@ GitHub/cloudflare-live branch state is not a public browser PASS. Exact `kayfabi
 - Artifact `10618729208`, digest `sha256:d2983c413b975f3d00bfbfb87564c5b90e16be4a99deb1bcd29369a4cb335c64`.
 - No F1 runtime was published to Cloudflare; Legacy public Stage remains unverified.
 - Next gate: resume only the KLR-KIT three-seed browser matrix `gate-16 → gate-75 → gate-33 → repeat gate-16`. Combat/WhackMan consumer integration remains deferred.
+
+
+## 2026-09-21 · Legacy Web Pet v0 sidequest
+
+- Draft PR #157 / branch `chatgpt-web/legacy-web-pet-v0-2026-09-21`.
+- Shared Legacy Web Pet runtime built for ordinary Web/KFB Hub and a Chrome MV3 host.
+- Web candidate at tested head `f41c59a8178bf77266c0f776f2e20a7948ee6223`: **15/15 static + 12/12 WebGL PASS**.
+- Proven Web behavior: Rogue default, real Rig_Legacy actions, 3D shadow, exact Orc-Warband camp, click SFX/VFX, right-click settings, Mage switch, normal page link retained, 0 failed resources, 0 page/console errors.
+- MV3 source bundles successfully with local executable JS only.
+- Extension arbitrary-page `ready` gate timed out in runs `35553680781` and `35553968462`; explicit bundled-Chromium launch did not resolve it.
+- Per two-pass rule the extension gate is frozen. Artifact `10619267683`, digest `sha256:da9bdfa9e0dd03c83f4335e61963449b7d559fc91e892867dd2c98843f361bf3`, contains Web evidence only; validated extension ZIP packaging was skipped.
+- Branch-only Hub mount candidate uses `?pet=0` opt-out; canonical Hub and Cloudflare runtime remain unchanged.
+- Next gate: **LWP-EXT-F1 · extension-load observability only**.
