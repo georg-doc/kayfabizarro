@@ -369,3 +369,14 @@ Georg accepted the Paper/Dark Hub UI v2 Stage. Promotion is source-reconciled on
 ToolBox Home adopts the same Paper/Dark/hash/preview grammar at `/kfb-hub/stage/toolbox/` and is linked prominently from the Hub header. Its current route audit is honest: 6 public previews, 5 missing/blocked routes, 6 source/integration gates. Missing Cloudflare routes receive no fake preview.
 
 WorldSurface I1A is locally complete at `georg-doc/KFB-Travel-Globe@d9d9d93c286fa52551ee881292a4db426a4cb8fc`: 72/72 PASS; SurfacePatch C is the technical leader but Georg's B/C/neither visual gate remains open. No public I1A Stage is claimed.
+
+
+## 2026-09-21 · Legacy RPG Rigging Lab frozen browser gate
+
+ToolBox Legacy RPG Rigging is preserved on Draft PR #155 / branch `chatgpt-web/toolbox-legacy-rpg-rigging-2026-09-21`.
+
+Source/static inventory is valid (**26/26 PASS**): 4 Dungeon 1.0 bodies, 17 head choices, source body/clothing materials, 5 embedded head-gear/hair sources, 24 tiered weapons, additional Arrow/Quiver/Spellbook props, and the existing 6-bone / 30-clip Rig_Legacy donor. Resident Atlas inverse-bind assembly and EyeRig v6 remain the owners being reused.
+
+Two browser-gate repair passes failed on proof synchronization, not a proven asset/assembly defect. The candidate is frozen and **must not be published as Stage yet**. Current recovery router: [KAYKIT_LEGACY_RPG_RIGGING_2026-09-21](workflows/KAYKIT_LEGACY_RPG_RIGGING_2026-09-21/START_HERE.md).
+
+Exactly one next gate: **KLR-SYNC-01 · deterministic Barbarian → Knight → Mage → Rogue actor-switch readiness proof**. No feature expansion before that gate.
