@@ -104,3 +104,43 @@ The prior two failed runs remain useful regression history, not current gate sta
 
 Public Cloudflare proof:
 **NOT RUN / NOT PUBLIC_VERIFIED**.
+
+
+---
+
+## KLR-KIT-01 · frozen browser integration
+
+Frozen head:
+`e3a06e3451637a8b447192113cab43f3ece84cd8`
+
+### Pure/static
+
+Run `35551084074` contract phase:
+
+- **33/33 PASS** static/source;
+- **16/16 PASS** ActorRecipe deterministic contract;
+- syntax PASS.
+
+### Browser attempt 1
+
+Run `35550795805`:
+- HTTP PASS;
+- READY PASS;
+- randomizer UI PASS;
+- WebGL PASS;
+- first recipe did not reach Ready.
+
+### Browser attempt 2
+
+Run `35551084074`:
+- HTTP PASS;
+- READY PASS;
+- randomizer UI PASS;
+- WebGL PASS;
+- initial source isolate settled PASS;
+- first isolated alternate-head/no-weapon recipe failed with:
+  `$(...).forEach is not a function`.
+
+Root cause is the accidentally collapsed `$$` collection selector in `syncModeButtons()`.
+
+No third repair pass is run in this slice.
