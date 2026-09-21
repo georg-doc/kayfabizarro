@@ -2,7 +2,7 @@
   "schema": "kfb.stage-source/0.1",
   "product": "KFB ToolBox · Legacy RPG Rigging Lab",
   "owner": "KFB ToolBox / Rigging",
-  "status": "BRANCH_CANDIDATE",
+  "status": "FROZEN_BROWSER_GATE_AFTER_TWO_REPAIR_PASSES",
   "sourceRepo": "georg-doc/kayfabizarro",
   "sourceBranch": "chatgpt-web/toolbox-legacy-rpg-rigging-2026-09-21",
   "baseHead": "f47c584f088a4b506f5b1280f00317fb3e2329aa",
@@ -30,5 +30,22 @@
     "motions": 30
   },
   "noPlaceholderPolicy": true,
-  "humanAcceptance": "PENDING"
+  "humanAcceptance": "PENDING",
+  "implementationHead": "b9b150b971fcc3fdac087b617b73420fded01575",
+  "browserEvidence": {
+    "static": "26/26 PASS",
+    "runs": [
+      {
+        "run": 35543850991,
+        "result": "FAIL_PROOF_SYNC_TRANSIENT_MOTION_STATUS"
+      },
+      {
+        "run": 35548588227,
+        "result": "FAIL_PROOF_SYNC_STALE_ACTOR_IDENTITY"
+      }
+    ]
+  },
+  "publicVerified": false,
+  "failureRecovery": "tools/KFB-ToolBox/legacy-rpg-rigging/failure-recovery/FAILURE_RECOVERY_2026-09-21.md",
+  "nextGate": "KLR-SYNC-01 · deterministic 4/4 actor-switch readiness proof"
 }
