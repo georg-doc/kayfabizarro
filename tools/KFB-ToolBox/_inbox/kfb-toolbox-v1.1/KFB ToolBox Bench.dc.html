@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  html,body{margin:0;padding:0;background:#14120f;overflow:hidden;}
+  a{color:#d8a24a;} a:hover{color:#f0c274;}
+  input[type=range]{accent-color:#d8a24a;width:100%;}
+  ::-webkit-scrollbar{width:8px;} ::-webkit-scrollbar-thumb{background:#4a4038;border-radius:5px;}
+</style>
+<script type="importmap">
+{
+  "imports": {
+    "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
+    "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/"
+  }
+}
+</script>
+<script type="module">
+  import * as THREE from 'three';
+  import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+  window.__TB = { THREE, OrbitControls };
+  window.dispatchEvent(new Event('tbready'));
+</script>
+</helmet>
+<div style="position:fixed;inset:0;background:#14120f;color:#e8e0d4;font-family:'Barlow Condensed',system-ui,sans-serif">
+  <canvas ref="{{ canvasRef }}" style="position:absolute;inset:0;width:100%;height:100%;display:block"></canvas>
+
+  <div style="position:absolute;left:16px;top:14px;max-width:calc(100% - 300px);display:flex;flex-direction:column;gap:3px">
+    <div style="font-size:20px;font-weight:700;letter-spacing:0.05em;text-transform:uppercase">KFB ToolBox Bench</div>
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#8d8377">{{ status }}</div>
+  </div>
+
+  <div style="position:absolute;left:16px;bottom:16px;background:#1a1713e6;border:1px solid #2e2822;border-radius:6px;padding:10px 12px;backdrop-filter:blur(6px);min-width:260px">
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.14em;color:#d8a24a;margin-bottom:6px">MESSUNG · LAUFZEIT</div>
+    <div style="display:grid;grid-template-columns:auto auto;gap:2px 18px">
+      <sc-for list="{{ metrics }}" as="m" hint-placeholder-count="10">
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:#8d8377">{{ m.k }}</span>
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:#e8e0d4;text-align:right">{{ m.v }}</span>
+      </sc-for>
+    </div>
+  </div>
+
+  <div style="{{ dockStyle }}">
+    <button onClick="{{ toggleDock }}" style="{{ dockToggle }}">{{ dockIcon }}</button>
+    <sc-if value="{{ dockOpen }}" hint-placeholder-val="{{ true }}">
+      <div style="display:flex;flex-direction:column;gap:12px;overflow-y:auto;padding-right:2px">
+
+        <div style="display:flex;flex-direction:column;gap:5px">
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.1em;color:#9b9084">FÜLLUNG · kfb-fluid-v1</span>
+          <div style="display:flex;gap:4px;flex-wrap:wrap">
+            <sc-for list="{{ fluidChips }}" as="f" hint-placeholder-count="5">
+              <button onClick="{{ f.onClick }}" style="{{ f.style }}">{{ f.label }}</button>
+            </sc-for>
+          </div>
+          <label style="display:flex;flex-direction:column;gap:2px">
+            <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:#9b9084;display:flex;justify-content:space-between;gap:8px;white-space:nowrap">GRABEN (ZELLREIHEN)<span style="color:#d8a24a">{{ vRows }}</span></span>
+            <input type="range" min="2" max="7" step="1" value="{{ pRows }}" onChange="{{ setRows }}">
+          </label>
+          <button onClick="{{ toggleRiver }}" style="{{ riverStyle }}">{{ riverLabel }}</button>
+          <label style="display:flex;flex-direction:column;gap:2px">
+            <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:#9b9084;display:flex;justify-content:space-between;gap:8px">FLUSS-BREITE<span style="color:#d8a24a">{{ vRiverW }}</span></span>
+            <input type="range" min="2" max="6" step="1" value="{{ pRiverW }}" onChange="{{ setRiverW }}">
+          </label>
+          <button onClick="{{ toggleBubbles }}" style="{{ bubbleStyle }}">BLASEN</button>
+        </div>
+
+        <div style="height:1px;background:#2e2822"></div>
+
+        <div style="display:flex;flex-direction:column;gap:5px">
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.1em;color:#9b9084">ZONENBODEN</span>
+          <label style="display:flex;flex-direction:column;gap:2px">
+            <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:#9b9084;display:flex;justify-content:space-between;gap:8px">STUFEN<span style="color:#d8a24a">{{ vSteps }}</span></span>
+            <input type="range" min="0" max="1.5" step="0.05" value="{{ pSteps }}" onChange="{{ setSteps }}">
+          </label>
+          <label style="display:flex;flex-direction:column;gap:2px">
+            <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:#9b9084;display:flex;justify-content:space-between;gap:8px">ABGESENKT<span style="color:#d8a24a">{{ vSink }}</span></span>
+            <input type="range" min="0" max="2" step="0.5" value="{{ pSink }}" onChange="{{ setSink }}">
+          </label>
+        </div>
+
+        <div style="height:1px;background:#2e2822"></div>
+
+        <div style="display:flex;flex-direction:column;gap:5px">
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.1em;color:#9b9084">WELT · kfb-voxel-world-v1</span>
+          <div style="display:flex;gap:4px;flex-wrap:wrap">
+            <sc-for list="{{ modeChips }}" as="m" hint-placeholder-count="6">
+              <button onClick="{{ m.onClick }}" style="{{ m.style }}">{{ m.label }}</button>
+            </sc-for>
+          </div>
+          <label style="display:flex;flex-direction:column;gap:2px">
+            <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:#9b9084;display:flex;justify-content:space-between;gap:8px">HÖHE<span style="color:#d8a24a">{{ vHeight }}</span></span>
+            <input type="range" min="3" max="26" step="0.5" value="{{ pHeight }}" onChange="{{ setHeight }}">
+          </label>
+          <button onClick="{{ nextSeed }}" style="{{ plainBtn }}">nächster Seed</button>
+        </div>
+
+        <div style="height:1px;background:#2e2822"></div>
+
+        <div style="display:flex;flex-direction:column;gap:5px">
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.1em;color:#9b9084">BEAM · kfb-beam-v1</span>
+          <button onClick="{{ toggleBeam }}" style="{{ beamStyle }}">SCHLEIER</button>
+          <label style="display:flex;flex-direction:column;gap:2px">
+            <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:#9b9084;display:flex;justify-content:space-between;gap:8px">STÄRKE<span style="color:#d8a24a">{{ vGain }}</span></span>
+            <input type="range" min="0" max="1.6" step="0.04" value="{{ pGain }}" onChange="{{ setGain }}">
+          </label>
+          <button onClick="{{ toggleSpin }}" style="{{ spinStyle }}">DREHEN</button>
+        </div>
+
+        <div style="height:1px;background:#2e2822"></div>
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:9.5px;line-height:1.5;color:#6f665c">
+          Diese Bank mountet die ToolBox-Module direkt aus tools/KFB-ToolBox/. Der Zonenboden ist Demo-Code, kein Modul.
+        </div>
+      </div>
+    </sc-if>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{}">
+// KFB ToolBox Bench — mountet die Module WIRKLICH und weist die gemessenen Zahlen aus.
+// Kein Modul-Code steht hier: nur Kamera, Licht, ein Demo-Zonenboden und die Verdrahtung.
+const TB = './tools/KFB-ToolBox/';
+const CELL = 3, ZX = 8, ZZ = 4.5;
+const ZW = ZX * CELL, ZD = ZZ * CELL;
+const ZC = -CELL * 0.5;            // Z-Mitte: voxel-terrain legt Reihen auf (n+0.5)*CELL
+const SUB = CELL / 6;              // D6
+const MODES = ['tragic', 'comic', 'absurd', 'heroic', 'mystical', 'forbidden'];
+
+class Component extends DCLogic {
+  state = {
+    status: 'lädt three + ToolBox-Module …', dockOpen: true,
+    // Säure als Startfüllung: das ist die Füllung auf Georgs Lab-Screenshot, also der
+    // direkte Vergleich (Regel 3 — der Unterschied muss am selben Bild prüfbar sein).
+    fluid: 'saeure', rows: 3, river: true, riverW: 3, bubbles: true,
+    steps: 0.6, sink: 0,
+    mode: 'forbidden', height: 8, seed: 42,
+    beam: true, gain: 0.85, spin: true,
+    metrics: [],
+  };
+
+  componentWillUnmount() {
+    this.stop = true;
+    if (this.r) this.r.dispose();
+    window.removeEventListener('resize', this.onResize);
+  }
+
+  async boot() {
+    if (!this.canvas || this.booted) return;
+    if (!window.__TB) { window.addEventListener('tbready', () => this.boot(), { once: true }); return; }
+    this.booted = true;
+    window.__TBBENCH = this;          // Handle für Beweis-Screenshots
+    const { THREE, OrbitControls } = window.__TB;
+    const T = this.T = THREE;
+
+    const [FLUID, BEAM, VT, WC, SEED, BOX] = await Promise.all([
+      import(TB + 'kfb-fluid-v1/index.js'),
+      import(TB + 'kfb-beam-v1/kfb-beam.js'),
+      import(TB + 'kfb-voxel-world-v1/voxel-terrain.js'),
+      import(TB + 'kfb-voxel-world-v1/world-context.js'),
+      import(TB + 'kfb-seeds-v1/kfb-card-seed.js'),
+      // Die Wanne baut das Lab mit kfb-box-material. Ohne das Kit sieht der Graben anders aus.
+      import('./kfb-box-material.js'),
+    ]);
+    this.FLUID = FLUID; this.WC = WC; this.SEED = SEED; this.BOX = BOX;
+
+    const r = this.r = new T.WebGLRenderer({ canvas: this.canvas, antialias: true });
+    r.setPixelRatio(Math.min(devicePixelRatio, 2));
+    r.outputColorSpace = T.SRGBColorSpace;
+    r.toneMapping = T.ACESFilmicToneMapping;
+    r.toneMappingExposure = 0.95;
+
+    const scene = this.scene = new T.Scene();
+    const cam = this.cam = new T.PerspectiveCamera(40, 1, 0.5, 900);
+    cam.position.set(0, 46, 128);
+    const ctr = this.ctr = new OrbitControls(cam, r.domElement);
+    ctr.target.set(0, 6, ZC);
+    ctr.enableDamping = true; ctr.dampingFactor = 0.08;
+    ctr.maxPolarAngle = Math.PI * 0.495; ctr.minDistance = 24; ctr.maxDistance = 320;
+    ctr.autoRotate = this.state.spin; ctr.autoRotateSpeed = 0.3;
+
+    scene.add(new T.HemisphereLight(0xffe9cc, 0x2a2520, 0.5));
+    const sun = new T.DirectionalLight(0xfff2dc, 1.5);
+    sun.position.set(60, 90, 40);
+    scene.add(sun);
+    scene.add(new T.AmbientLight(0xffffff, 0.2));
+
+    // ---- Welt (kfb-voxel-world-v1)
+    const wc = this.wc = WC.makeWorldContext({ storyMode: this.state.mode, seeds: ['kfb-toolbox-bench', this.state.seed] });
+    wc.params.heightScale = this.state.height;
+    wc.params.motionAmplitude = 0.3;
+    wc.params.fogDensity = 0.0055;
+    const terrain = this.terrain = VT.createVoxelTerrain({
+      THREE: T, worldContext: wc, cell: CELL, chunkCells: 16, grid: 7, floor: -30, heightStep: SUB,
+    });
+    terrain.build(scene);
+    terrain.setPalette(wc.palette);
+    terrain.setFlow(1);
+    terrain.setMotionGain(0.55);
+    this.applySky();
+
+    // ---- Zonenboden (DEMO-Code, kein Modul: das Lab hat dafür seine eigene Zone)
+    this.buildZone();
+
+    // ---- Wasser (kfb-fluid-v1) — genau ein Aufruf
+    this.water = FLUID.mountFluidSystem({
+      THREE: T, scene, terrain, boxKit: BOX,
+      cell: CELL, halfX: ZW, halfZ: ZD, centerZ: ZC,
+      rows: this.state.rows, river: this.state.river, riverWidth: this.state.riverW,
+      seed: this.state.seed, fluid: this.state.fluid,
+      palette: wc.palette,
+      zoneTopAt: (x, z) => this.zoneTopAt(x, z),
+    });
+    this.water.layout(this.zoneCells);
+
+    // ---- Beam (kfb-beam-v1) gegen eine schwebende Karte
+    this.card = new T.Mesh(
+      new T.PlaneGeometry(ZW * 0.92, ZW * 0.92 * 9 / 16),
+      new T.MeshStandardMaterial({ color: 0xefe6d0, roughness: 0.9, side: T.DoubleSide }),
+    );
+    this.card.position.set(0, 34, ZC);
+    scene.add(this.card);
+    this.beam = BEAM.createBeam({ THREE: T, scene, gain: this.state.gain });
+
+    // ---- Seeds (kfb-seeds-v1) an einem synthetischen Pool: das Modul misst seine eigene Streuung
+    this.seeder = SEED.createCardSeeder({ WC, toCard: (c) => c });
+    this.seeder.buildBaseline(this.demoPool());
+    this.seedOut = this.seeder.resolve(0, ['kfb-toolbox-bench']);
+
+    const DOCK = 250;
+    this.onResize = () => {
+      const w = this.canvas.clientWidth || 1, h = this.canvas.clientHeight || 1;
+      r.setSize(w, h, false);
+      const pad = this.state.dockOpen ? DOCK : 0;
+      cam.aspect = (w + pad) / h;
+      cam.setViewOffset(w + pad, h, pad, 0, w, h);
+      cam.updateProjectionMatrix();
+    };
+    window.addEventListener('resize', this.onResize); this.onResize();
+
+    let last = performance.now(), acc = 0, frames = 0;
+    const loop = () => {
+      if (this.stop || !this.canvas || !this.canvas.isConnected) return;
+      requestAnimationFrame(loop);
+      const now = performance.now(), dt = Math.min(0.05, (now - last) / 1000); last = now;
+      if (this.canvas.clientWidth !== this._w) { this._w = this.canvas.clientWidth; this.onResize(); }
+      this.t = (this.t || 0) + dt;
+      this.terrain.update(dt, { energy: 0.45, beat: 0 });
+      this.water.update(this.t, this.state.bubbles ? dt : 0);
+      this.tickBeam(dt);
+      this.ctr.update();
+      this.r.render(this.scene, this.cam);
+      acc += dt; frames++;
+      if (acc > 0.5) { this.fps = Math.round(frames / acc); acc = 0; frames = 0; this.publish(); }
+    };
+    loop();
+    this.publish();
+  }
+
+  /** Synthetischer Pool: acht Karten mit klar verschiedener Wortwahl, damit die Basislinie streut. */
+  demoPool() {
+    const mk = (n, cardName, power, lore, role) => ({ cardNumber: n, n, cardName, power, lore, role, packId: 'bench' });
+    return [
+      mk(1, 'Aufmerksamkeit', 'zwingt jeden Blick auf ein Ziel', 'Was gesehen wird, wird wahr.', 'EMBRACE'),
+      mk(2, 'Furcht', 'lähmt den Gegner für eine Runde', 'Die Angst kam vor dem Monster.', 'FORGET'),
+      mk(3, 'Neugier', 'öffnet eine verschlossene Tür', 'Ein Kind fragt, ein Königreich fällt.', 'EMBRACE'),
+      mk(4, 'Trauer', 'senkt die Welt um eine Stufe', 'Wasser steigt, wo geweint wurde.', 'IGNORE'),
+      mk(5, 'Witz', 'dreht jeden Schaden in Lachen', 'Der Narr überlebt den König.', 'EMBRACE'),
+      mk(6, 'Chaos', 'würfelt das Feld neu', 'Ordnung ist nur eine Pause.', 'FORGET'),
+      mk(7, 'Wunder', 'lässt Unmögliches gelten', 'Am Rand der Karte beginnt die Karte.', 'MED'),
+      mk(8, 'Drohung', 'vergiftet das Wasser ringsum', 'Man riecht sie vor dem Sehen.', 'FORGET'),
+    ];
+  }
+
+  applySky() {
+    const T = this.T, wc = this.wc;
+    const sky = new T.Color(wc.palette[0][0], wc.palette[0][1], wc.palette[0][2]).lerp(new T.Color(0x0e0c0a), 0.55);
+    this.scene.background = sky;
+    this.terrain.setFog([sky.r, sky.g, sky.b], wc.params.fogDensity);
+  }
+
+  // ------------------------------------------------------------ Demo-Zonenboden
+  zoneCellList() {
+    const out = [];
+    for (let i = -ZX; i < ZX; i++) for (let j = -5; j <= 3; j++) {
+      out.push({ x: (i + 0.5) * CELL, z: (j + 0.5) * CELL });
+    }
+    return out;
+  }
+
+  zoneTopAt(x, z) {
+    const s = this.state;
+    const f = this.FLUID.fbm(x * 0.045 + 11, z * 0.045 - 5, 7788);
+    const n = (f - 0.5) / 0.18;                       // fbm clustert um 0.5 → strecken
+    const step = Math.round(Math.max(-2.5, Math.min(2.5, n)) * s.steps * 3);
+    return step * SUB - s.sink * CELL;
+  }
+
+  buildZone() {
+    const T = this.T;
+    this.zoneCells = this.zoneCellList();
+    const geo = new T.BoxGeometry(CELL, 1, CELL).translate(0, 0.5, 0);
+    const mesh = this.zoneMesh = new T.InstancedMesh(
+      geo, new T.MeshStandardMaterial({ roughness: 0.85, metalness: 0 }), this.zoneCells.length,
+    );
+    this.scene.add(mesh);
+    this.layoutZone();
+  }
+
+  layoutZone() {
+    const T = this.T, d = new T.Object3D(), col = new T.Color();
+    const base = -CELL * 5;
+    this.zoneCells.forEach((c, k) => {
+      const top = this.zoneTopAt(c.x, c.z);
+      c.top = top;
+      d.position.set(c.x, base, c.z); d.scale.set(1, top - base, 1); d.updateMatrix();
+      this.zoneMesh.setMatrixAt(k, d.matrix);
+      const dd = Math.max(Math.abs(c.x) / ZW, Math.abs(c.z - ZC) / ZD);
+      col.setRGB(0.88, 0.83, 0.71).offsetHSL(0, 0, dd > 0.84 ? -0.08 : 0);
+      this.zoneMesh.setColorAt(k, col);
+    });
+    this.zoneMesh.instanceMatrix.needsUpdate = true;
+    if (this.zoneMesh.instanceColor) this.zoneMesh.instanceColor.needsUpdate = true;
+  }
+
+  // ------------------------------------------------------------ Beam
+  tickBeam(dt) {
+    if (!this.beam) return;
+    const T = this.T;
+    const py = 0.35;
+    const ground = [
+      { x: -ZW, y: py, z: ZC - ZD }, { x: ZW, y: py, z: ZC - ZD },
+      { x: ZW, y: py, z: ZC + ZD }, { x: -ZW, y: py, z: ZC + ZD },
+    ];
+    const g = this.card;
+    g.updateMatrixWorld();
+    const w = ZW * 0.92, h = w * 9 / 16;
+    const target = [[-1, 1], [1, 1], [1, -1], [-1, -1]].map(([sx, sy]) =>
+      new T.Vector3(sx * w / 2, sy * h / 2, 0).applyMatrix4(g.matrixWorld));
+    const dist = this.cam.position.distanceTo(g.position);
+    this.beam.update({
+      ground, target, dt, time: this.t,
+      gain: this.state.gain * this.beam.distanceGain(dist),
+    });
+    this.beam.setVisible(this.state.beam);
+  }
+
+  // ------------------------------------------------------------ Messung
+  publish() {
+    if (!this.water) return;
+    const m = this.water.measure();
+    const b = this.beam ? this.beam.measure() : {};
+    const s = this.seeder ? this.seeder.measure() : {};
+    const rows = [
+      ['fps', this.fps != null ? this.fps : '—'],
+      ['graben-zellen', m.cells],
+      ['davon nass', m.wet],
+      ['davon fluss', m.river],
+      ['wasser-quads', m.quads],
+      ['wasserlinie y', m.waterLevel],
+      ['ebene y (Δ)', m.fluidY + '  (' + (m.fluidY - m.waterLevel).toFixed(3) + ')'],
+      ['strömung max', m.flowMax],
+      ['wasser-texturen', m.textures ? 'dudv+map geladen' : 'FEHLEN'],
+      ['wannen-material', m.basin],
+      ['ufer-kalibrierung', m.calibration != null ? m.calibration : '—'],
+      ['blasen-quellen', m.bubbles ? m.bubbles.sources : '—'],
+      ['beam-permutation', b.permutation || '—'],
+      ['seed-streuung', s.devSpread != null ? s.devSpread : '—'],
+      ['seed-modus', s.mode || '—'],
+    ];
+    this.setState({
+      metrics: rows.map(([k, v]) => ({ k, v: String(v) })),
+      status: this.wc.storyModeName + ' · Biome ' + this.wc.biome + ' · Seed ' + this.wc.seed
+        + ' · Module: fluid/beam/voxel-world/seeds',
+    });
+  }
+
+  set(patch) {
+    this.setState(patch, () => {
+      const s = this.state;
+      if (!this.r) return;
+      if (patch.fluid) this.water.setFluid(s.fluid);
+      if (patch.rows != null || patch.river != null || patch.riverW != null) {
+        this.water.set({ rows: s.rows, river: s.river, riverWidth: s.riverW });
+      }
+      if (patch.steps != null || patch.sink != null) { this.layoutZone(); this.water.layout(this.zoneCells); }
+      if (patch.mode || patch.height != null || patch.seed != null) this.rebuildWorld();
+      if (patch.gain != null && this.beam) this.beam.setGain(s.gain);
+      if (patch.spin != null) this.ctr.autoRotate = s.spin;
+      if (patch.dockOpen != null) this.onResize();
+      this.publish();
+    });
+  }
+
+  rebuildWorld() {
+    const s = this.state;
+    const wc = this.wc = this.WC.makeWorldContext({ storyMode: s.mode, seeds: ['kfb-toolbox-bench', s.seed] });
+    wc.params.heightScale = s.height;
+    wc.params.motionAmplitude = 0.3;
+    wc.params.fogDensity = 0.0055;
+    this.terrain.setWorldContext(wc);
+    this.terrain.setPalette(wc.palette);
+    this.applySky();
+    this.water.gutter.setPalette(wc.palette);
+    this.water.set({ seed: s.seed });
+    this.layoutZone();
+    this.water.layout(this.zoneCells);
+  }
+
+  chip(active, extra) {
+    return 'border:1px solid ' + (active ? '#d8a24a' : '#3a332b') + ';background:' + (active ? '#2a2013' : '#1c1915')
+      + ';color:' + (active ? '#f0c274' : '#9b9084') + ";font-family:'Barlow Condensed',sans-serif;font-size:11.5px;font-weight:600;letter-spacing:0.05em;padding:3px 8px;border-radius:3px;cursor:pointer;text-transform:uppercase;" + (extra || '');
+  }
+
+  renderVals() {
+    const s = this.state, num = (v, d) => Number(v).toFixed(d);
+    this._cref = this._cref || ((el) => { if (el && el !== this.canvas) { this.canvas = el; this.boot(); } });
+    const FL = [['wasser', 'Wasser'], ['oel', 'Öl'], ['saeure', 'Säure'], ['bubblegum', 'Bubblegum'], ['schlacke', 'Schlacke']];
+    return {
+      canvasRef: this._cref, status: s.status, dockOpen: s.dockOpen, metrics: s.metrics,
+      dockStyle: 'position:absolute;right:12px;top:12px;bottom:12px;width:' + (s.dockOpen ? '238px' : '38px')
+        + ';box-sizing:border-box;display:flex;flex-direction:column;gap:10px;background:#1a1713e6;border:1px solid #2e2822;border-radius:6px;padding:10px;backdrop-filter:blur(6px)',
+      dockToggle: this.chip(false, 'align-self:flex-end;padding:2px 7px'),
+      dockIcon: s.dockOpen ? '▸' : '◂',
+      toggleDock: () => this.set({ dockOpen: !s.dockOpen }),
+      plainBtn: this.chip(false, 'align-self:flex-start'),
+      fluidChips: FL.map(([k, label]) => ({ label, style: this.chip(s.fluid === k), onClick: () => this.set({ fluid: k }) })),
+      modeChips: MODES.map((k) => ({ label: k, style: this.chip(s.mode === k), onClick: () => this.set({ mode: k }) })),
+      pRows: s.rows, vRows: num(s.rows, 0), setRows: (e) => this.set({ rows: +e.target.value }),
+      riverStyle: this.chip(s.river, 'align-self:flex-start'),
+      riverLabel: s.river ? 'Fluss an' : 'Fluss aus',
+      toggleRiver: () => this.set({ river: !s.river }),
+      pRiverW: s.riverW, vRiverW: num(s.riverW, 0), setRiverW: (e) => this.set({ riverW: +e.target.value }),
+      bubbleStyle: this.chip(s.bubbles, 'align-self:flex-start'),
+      toggleBubbles: () => this.set({ bubbles: !s.bubbles }),
+      pSteps: s.steps, vSteps: num(s.steps, 2), setSteps: (e) => this.set({ steps: +e.target.value }),
+      pSink: s.sink, vSink: num(s.sink, 1), setSink: (e) => this.set({ sink: +e.target.value }),
+      pHeight: s.height, vHeight: num(s.height, 1), setHeight: (e) => this.set({ height: +e.target.value }),
+      nextSeed: () => this.set({ seed: (s.seed + 7) % 9973 }),
+      beamStyle: this.chip(s.beam, 'align-self:flex-start'),
+      toggleBeam: () => this.set({ beam: !s.beam }),
+      pGain: s.gain, vGain: num(s.gain, 2), setGain: (e) => this.set({ gain: +e.target.value }),
+      spinStyle: this.chip(s.spin, 'align-self:flex-start'),
+      toggleSpin: () => this.set({ spin: !s.spin }),
+    };
+  }
+}
+</script>
+</body>
+</html>
