@@ -1,7 +1,7 @@
 # KFB ToolBox · KayKit Legacy RPG Rigging · Current Router
 
 **Date:** 2026-09-21  
-**Status:** LEGACY_BASE_LOCAL_BROWSER_PASS · KLR_KIT_BROWSER_INTEGRATION_FROZEN  
+**Status:** LEGACY_BASE_LOCAL_BROWSER_PASS · KLR_KIT_F1_PASS · THREE_SEED_MATRIX_PENDING  
 **Owner:** KFB ToolBox / Rigging  
 **Implementation branch:** `chatgpt-web/toolbox-legacy-rpg-rigging-2026-09-21`  
 **Draft PR:** #155  
@@ -102,6 +102,49 @@ Full recovery:
 
 https://github.com/georg-doc/kayfabizarro/blob/chatgpt-web/toolbox-legacy-rpg-rigging-2026-09-21/tools/KFB-ToolBox/legacy-rpg-rigging/failure-recovery/KLR_KIT_01_FAILURE_RECOVERY_2026-09-21.md
 
+## KLR-KIT-F1 · PASS
+
+Fresh bounded recovery slice:
+
+- branch `chatgpt-web/klr-kit-f1-2026-09-21`;
+- base frozen candidate `e3a06e3451637a8b447192113cab43f3ece84cd8`;
+- tested head `44d595bc60259f4a74da7043df13582f1b5ccd89`;
+- Return: `KLR_KIT_F1_RETURN.md`.
+
+Runtime repair was exactly the proven selector seam:
+
+`$('[data-mode]') → $$('[data-mode]')`
+
+in Tool + Stage mirror.
+
+Evidence:
+- **33/33 PASS** static/source;
+- **16/16 PASS** ActorRecipe deterministic suite;
+- **2/2 PASS** focused selector regression;
+- **21/21 PASS** isolated browser/WebGL `gate-16`;
+- 0 failed resources;
+- 0 page/console errors.
+
+Run:
+`35552848730`
+
+Job:
+`106190694773`
+
+Artifact:
+`10618729208`
+
+Digest:
+`sha256:d2983c413b975f3d00bfbfb87564c5b90e16be4a99deb1bcd29369a4cb335c64`
+
+The isolated recipe proved:
+
+`Knight + Rogue Head C + no held item`
+
+with ready token `1:knight:rogue-c`, `RIG_LEGACY`, `ASSEMBLED`, 30 clips and all core parts retained.
+
+KLR-KIT-F1 resolves the selector-regression gate. It does **not** yet prove the full three-seed browser matrix.
+
 ## Consumer boundaries
 
 ### Combat Arena
@@ -147,14 +190,17 @@ Do not publish the frozen KLR-KIT integration candidate.
 
 ## Exactly one next gate
 
-**KLR-KIT-F1 · selector regression isolation**
+**Resume the KLR-KIT-01 three-seed browser matrix**
 
 Fresh bounded slice only:
 
-1. start from the frozen KLR-KIT candidate;
-2. restore only the collection selector seam;
-3. run static contracts;
-4. run exactly one browser recipe: `gate-16` = Knight + Rogue Head C + no held item;
-5. require Ready + exact recipe/body/head identity + zero browser errors.
+`gate-16 → gate-75 → gate-33 → repeat gate-16`
 
-Do not resume the three-seed matrix, Combat integration, WhackMan integration, merge or Live promotion before KLR-KIT-F1 passes.
+Require:
+- exact recipe/UI identity for each seed;
+- same-seed reconstruction for repeated `gate-16`;
+- at least two unique recipe keys across the three seeds;
+- 0 failed resources;
+- 0 page/console errors.
+
+Do not start Combat integration, WhackMan integration, public Legacy Stage, merge or Live promotion before this matrix passes.
