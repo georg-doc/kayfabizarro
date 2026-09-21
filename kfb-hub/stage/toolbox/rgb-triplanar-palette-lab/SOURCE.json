@@ -2,7 +2,7 @@
   "schema": "kfb.stage-source/0.1",
   "product": "KFB ToolBox · One RGB Texture / Triplanar Palette Lab",
   "owner": "KFB ToolBox / material-surface compatibility lab",
-  "status": "IMPLEMENTATION_CANDIDATE",
+  "status": "PUBLIC_VERIFIED_HUMAN_OPEN",
   "sourceRepo": "georg-doc/kayfabizarro",
   "sourceBranch": "chatgpt-web/toolbox-rgb-triplanar-palette-2026-09-21",
   "sourceBranchHead": "43d43f890f17c846232227c2cc153eb5aa28324a",
@@ -18,5 +18,23 @@
     "media/3D_Assets/KayKit_Mystery_Series6/GothGirl/characters/GothGirl.glb"
   ],
   "stageUrl": "https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/rgb-triplanar-palette-lab/",
-  "humanAcceptance": "PENDING"
+  "humanAcceptance": "PENDING",
+  "currentResearchHead": "c7f98ebe19e4401c00d516e45f4ec09fe896873d",
+  "branchEvidence": {
+    "workflowRun": 35659617921,
+    "job": 106531493296,
+    "checks": "41/41 PASS",
+    "failedResources": 0,
+    "pageConsoleErrors": 0
+  },
+  "publicEvidence": {
+    "workflowRun": 35659617921,
+    "job": 106531991125,
+    "checks": "41/41 PASS",
+    "artifactId": 10666710542,
+    "artifactDigest": "sha256:22017a3747e47c8e85904ba234e263e20f014f31f9de7a27f2a6938a7ebb976d",
+    "deployedSourceHead": "43d43f890f17c846232227c2cc153eb5aa28324a",
+    "failedResources": 0,
+    "pageConsoleErrors": 0
+  }
 }
