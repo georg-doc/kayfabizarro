@@ -2,10 +2,10 @@
   "schema": "kfb.stage-source/0.1",
   "product": "KFB ToolBox · Hybrid Surface Scene Lab",
   "owner": "KFB ToolBox / material-surface compatibility lab",
-  "status": "IMPLEMENTATION_CANDIDATE",
+  "status": "LOCAL_BROWSER_VERIFIED_PUBLICATION_PENDING",
   "sourceRepo": "georg-doc/kayfabizarro",
   "sourceBranch": "chatgpt-web/toolbox-hybrid-surface-scene-2026-09-22",
-  "sourceBranchHead": "793e683eae1ae0cd5ff233c5af64ab7017fea1e5",
+  "sourceBranchHead": "15f2f1714d62b606033b8624964e481c6d99d59f",
   "inheritsFrom": {
     "branch": "chatgpt-web/toolbox-rgb-triplanar-palette-2026-09-21",
     "pr": 160,
@@ -64,5 +64,14 @@
     "defaultScaleMultiplier": 0.55
   },
   "stageUrl": "https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/hybrid-surface-scene-lab/",
-  "humanAcceptance": "PENDING"
+  "humanAcceptance": "PENDING",
+  "localEvidence": {
+    "workflowRun": 35667375807,
+    "job": 106556031458,
+    "checks": "41/41 PASS",
+    "artifactId": 10670015281,
+    "artifactDigest": "sha256:b2b86419528c62a741c77a420a3aa8de796b18aafa1033d7a9adb573b4d12317",
+    "failedResources": 0,
+    "pageConsoleErrors": 0
+  }
 }
