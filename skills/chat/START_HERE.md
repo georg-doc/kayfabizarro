@@ -68,6 +68,7 @@ If this is a replacement/fresh chat after context loss, use `RECOVERY_PATH.md` r
 - `PRODUCTION_SOP.md` — provider-neutral production method
 - `EVIDENCE_AND_STATUS.md` — claim / proof vocabulary
 - `CHANGELOG.md` — additive history of this router
+- `workflows/KFB_OPEN_PROCESS_CENSUS_2026-09-22/START_HERE.md` — current four-repo open-PR/process census; distinguishes active work, human gates, frozen recovery and close candidates without auto-closing anything
 - `adapters/chatgpt-astra.md` — ChatGPT/Astra operating layer
 - `adapters/claude-design.md` — Claude Design operating layer
 - `workflows/` — reusable task workflows
@@ -404,3 +405,16 @@ Return and recovery live on PR #157 under `skills/chat/workflows/LEGACY_WEB_PET_
 Intended Stage `https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/legacy-web-pet/` is **NOT PUBLISHED / NOT PUBLIC_VERIFIED**.
 
 Exactly one next gate: **LWP-EXT-F1 · extension-load observability** — identify the first missing transition in `CONTENT_ENTRY → HOST_CREATED → FRAME_INSERTED → FRAME_LOADED | FRAME_ERROR → PET_READY` before changing runtime behavior.
+
+
+## 2026-09-22 · Open-process census / housekeeping
+
+The current cross-repo housekeeping snapshot lives at [KFB Open Process Census](workflows/KFB_OPEN_PROCESS_CENSUS_2026-09-22/START_HERE.md).
+
+At the recorded check the four main KFB repositories carried **72 open PRs**: **22 CURRENT**, **16 HUMAN_GATE**, **12 FROZEN_RECOVERY**, and **22 SUPERSEDED_CLOSE_CANDIDATE**. GitHub Actions had **0 queued** and **0 in-progress** runs across all four repositories. The census is classification-only: it closes, merges and promotes nothing automatically.
+
+Important current routing from that census:
+- Card Zone #161 remains builder-owned; Georg is not required to produce four manual parity screenshots.
+- Legacy EyeRig #162 is the current visual gate; frozen KLR-KIT history remains separately preserved in #155.
+- Combat routes through CA2 base #5 + current melee/contact #7, while #9 stays SOURCE HOLD for weapon identity.
+- Cologne Option C Stage #142 is the current Claude-build intake; new bridge/cylinder/arch defects are a bounded repair backlog, not a redesign mandate.
