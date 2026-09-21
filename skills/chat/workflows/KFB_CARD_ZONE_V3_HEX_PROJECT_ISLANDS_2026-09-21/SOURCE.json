@@ -1,7 +1,7 @@
 {
   "schema": "kfb.card-zone-v3-hex-project-islands.source/0.1",
-  "date": "2026-09-21",
-  "status": "PLANNING_SOURCE_LOCK",
+  "date": "2026-09-22",
+  "status": "H0_SOURCE_LOCK_IN_PROGRESS",
   "repo": "georg-doc/kayfabizarro",
   "baseline": "a22995d550a65fc65f540d90b278e3d2bb482de3",
   "planningBranch": "planning/toolbox-card-zone-v3-hex-project-islands-2026-09-21",
@@ -59,7 +59,17 @@
     "adapterBriefBranch": "wsa/combat-ca2-kaykit-briefs-2026-09-20"
   },
   "futureStage": "https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/card-zone-v3/",
-  "currentGate": "H0_WORKING_V2_PARITY_SOURCE_LOCK",
+  "currentGate": "H0_WORKING_V2_BROWSER_PARITY",
   "publicDeployment": "NOT_PERFORMED",
-  "georgAcceptance": "PRODUCT_DIRECTION_GIVEN_RUNTIME_NOT_BUILT"
+  "georgAcceptance": "PRODUCT_DIRECTION_GIVEN_RUNTIME_NOT_BUILT",
+  "h0": {
+    "branch": "chatgpt-web/card-zone-v3-h0-parity-2026-09-21",
+    "draftPr": 161,
+    "featureParity": "skills/chat/workflows/KFB_CARD_ZONE_V3_HEX_PROJECT_ISLANDS_2026-09-21/FEATURE_PARITY_V2.json",
+    "fluidSourceHandoff": "tools/KFB-ToolBox/_handover/CARD_ZONE_V2_FLUID_SHADER_SOURCE_2026-09-22/",
+    "fluidSourceChecks": "10/10 PASS",
+    "browserParity": "NOT_RUN",
+    "screenshots": "0/4",
+    "h1Allowed": false
+  }
 }
