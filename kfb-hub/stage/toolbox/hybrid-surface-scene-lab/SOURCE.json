@@ -21,19 +21,47 @@
   },
   "actorDonorPin": "bdaea0648f27c0f16e0a737bfba237eb54dd4cbb",
   "actors": [
-    {"id":"legacy","rig":"Rig_Legacy","path":"media/3D_Assets/KayKit Legacy/Orc Warband - legacy/characters/gltf/character_orcA.gltf","blob":"e74b886fa5f88c15cd300899cccf0e344be11ec5c"},
-    {"id":"medium","rig":"Rig_Medium","path":"media/3D_Assets/KayKit_Mystery_Series6/6 - December 2023 - Action Figure/character/gltf/ActionFigure.glb","blob":"4785276defdb929cb397954eb74b76aecb84486b"},
-    {"id":"gothgirl","rig":"Rig_Medium","path":"media/3D_Assets/KayKit_Mystery_Series6/GothGirl/characters/GothGirl.glb","blob":"b56f67e4ddb7db95ff54fef526148a49289f3915"},
-    {"id":"frizzlebob","rig":"Rig_Medium","adapter":"mountGraft","module":"tools/KFB-ToolBox/kfb-rigs-embed-v3/frizzlegraft-v1/graft-mount.v1.js","moduleBlob":"a84b2c92a00f7764088c4916030327eb04a91c5c","contract":"tools/KFB-ToolBox/kfb-rigs-embed-v3/contracts/kfb-pet-graft-driver.v4.json","contractBlob":"f202a1c2f1670ab6045176af6621c94041124e76"},
-    {"id":"large","rig":"Rig_Large","path":"media/3D_Assets/KayKit_Mystery_Series6/3 - September 2024 - Black Knight/characters/BlackKnight.glb","blob":"ce20440309951a9d85d246b6ff6b0fa399f6c9d8"}
+    {
+      "id": "legacy",
+      "rig": "Rig_Legacy",
+      "path": "media/3D_Assets/KayKit Legacy/Orc Warband - legacy/characters/gltf/character_orcA.gltf",
+      "blob": "e74b886fa5f88c15cd300899cccf0e344be11ec5c"
+    },
+    {
+      "id": "medium",
+      "rig": "Rig_Medium",
+      "path": "media/3D_Assets/KayKit_Mystery_Series6/6 - December 2023 - Action Figure/character/gltf/ActionFigure.glb",
+      "blob": "4785276defdb929cb397954eb74b76aecb84486b"
+    },
+    {
+      "id": "gothgirl",
+      "rig": "Rig_Medium",
+      "path": "media/3D_Assets/KayKit_Mystery_Series6/GothGirl/characters/GothGirl.glb",
+      "blob": "b56f67e4ddb7db95ff54fef526148a49289f3915"
+    },
+    {
+      "id": "frizzlebob",
+      "rig": "Rig_Medium",
+      "adapter": "mountGraft",
+      "module": "tools/KFB-ToolBox/kfb-rigs-embed-v3/frizzlegraft-v1/graft-mount.v1.js",
+      "moduleBlob": "a84b2c92a00f7764088c4916030327eb04a91c5c",
+      "contract": "tools/KFB-ToolBox/kfb-rigs-embed-v3/contracts/kfb-pet-graft-driver.v4.json",
+      "contractBlob": "f202a1c2f1670ab6045176af6621c94041124e76"
+    },
+    {
+      "id": "large",
+      "rig": "Rig_Large",
+      "path": "media/3D_Assets/KayKit_Mystery_Series6/3 - September 2024 - Black Knight/characters/BlackKnight.glb",
+      "blob": "ce20440309951a9d85d246b6ff6b0fa399f6c9d8"
+    }
   ],
   "surfaceContract": {
     "textureCount": 1,
     "staticEnvironmentProjection": "world",
     "movingActorProjection": "object",
     "originalBaseColorAndMap": "preserved",
-    "defaultOverlayStrength": 0.34,
-    "defaultScaleMultiplier": 0.70
+    "defaultOverlayStrength": 0.44,
+    "defaultScaleMultiplier": 0.55
   },
   "stageUrl": "https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/hybrid-surface-scene-lab/",
   "humanAcceptance": "PENDING"
