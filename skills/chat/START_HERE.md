@@ -371,19 +371,23 @@ ToolBox Home adopts the same Paper/Dark/hash/preview grammar at `/kfb-hub/stage/
 WorldSurface I1A is locally complete at `georg-doc/KFB-Travel-Globe@d9d9d93c286fa52551ee881292a4db426a4cb8fc`: 72/72 PASS; SurfacePatch C is the technical leader but Georg's B/C/neither visual gate remains open. No public I1A Stage is claimed.
 
 
-## 2026-09-21 · Legacy RPG Rigging base PASS + Actor Kit F1 PASS
+## 2026-09-21 · Legacy Actor Kit matrix PASS · Eye Batch next
 
-ToolBox Legacy RPG Rigging remains on Draft PR #155 / branch `chatgpt-web/toolbox-legacy-rpg-rigging-2026-09-21`.
+ToolBox Legacy RPG Rigging remains on Draft PR #155, with current evidence on bounded follow-up branches.
 
 The **Legacy base is browser-proven** at `5b2fa78220ec4127c1b761c4d7f7a8304dfb11e9`: **29/29 static · 41/41 KLR-SYNC · 44/44 full browser/WebGL PASS**, with zero failed resources and zero page/console errors. Source roster remains 4 Dungeon 1.0 bodies, 17 heads, source body/clothing materials, 5 head-gear/hair entries, 24 tiered weapons, Arrow/Quiver/Spellbook props and the existing 6-bone / 30-clip Rig_Legacy donor. Resident Atlas inverse-bind assembly and EyeRig v6 remain reused owners.
 
 KLR-KIT-01 provides the caller-seeded `kfb.legacy-actor-recipe/0.1-candidate` appearance core with **33/33 static + 16/16 deterministic recipe PASS**, no `Math.random()` and explicit rejection of gameplay/AI/stat fields.
 
-The earlier browser integration regression is now isolated and resolved by **KLR-KIT-F1** on branch `chatgpt-web/klr-kit-f1-2026-09-21`. Tested head `44d595bc60259f4a74da7043df13582f1b5ccd89`: **2/2 selector + 21/21 isolated browser/WebGL PASS**. Exact recipe `gate-16 = Knight + Rogue Head C + no held item`; ready token, recipe/UI identity, 30 clips and core parts all matched; zero failed resources and zero browser errors. Run `35552848730`, artifact `10618729208`.
+KLR-KIT-F1 resolved the selector regression at tested head `44d595bc60259f4a74da7043df13582f1b5ccd89`: **2/2 selector + 21/21 isolated browser/WebGL PASS**.
+
+The deferred multi-recipe matrix is now also green on branch `chatgpt-web/klr-kit-matrix-2026-09-21`, tested head `8197d8f1b6e1becc550b9eeb6d766b455a0b33ab`: **35/35 browser/WebGL PASS** for `gate-16 → gate-75 → gate-33 → repeat gate-16`, including alternate/default heads, headExtras ON/OFF, a real Sword rare held slot, exact recipe/UI identity and exact same-seed recipe/key reconstruction. Zero failed resources and zero page/console errors. Run `35660231145`, artifact `10667035972`.
+
+The shared Legacy appearance Baukasten / Character+Monster randomizer is therefore technically proven as a ToolBox candidate; Combat and WhackMan consumer logic remains separate.
 
 Current router: [KAYKIT_LEGACY_RPG_RIGGING_2026-09-21](workflows/KAYKIT_LEGACY_RPG_RIGGING_2026-09-21/START_HERE.md).
 
-Exactly one next gate: **resume the KLR-KIT-01 three-seed browser matrix: `gate-16 → gate-75 → gate-33 → repeat gate-16`.** No Combat/WhackMan runtime integration or Legacy Stage publication before that matrix passes.
+Exactly one next gate: **KLR-EYE-01 · Legacy Eye Batch 17/17** using the existing EyeRig v6 / Medium-Large Eye Batch profile owner. Combat ranged/melee integration waits until that face-profile gate is complete.
 
 
 
