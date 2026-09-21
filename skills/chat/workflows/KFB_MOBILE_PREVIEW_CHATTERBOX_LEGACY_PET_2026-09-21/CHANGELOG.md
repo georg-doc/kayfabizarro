@@ -92,3 +92,30 @@ Cloudflare Stage remains **NOT PUBLIC_VERIFIED** because PR #158 Pages build fai
 
 Next gate:
 **EAS-PUB-1 · publication-only recovery; no geometry retune.**
+
+
+## 2026-09-21 · Eye Actor Studio v1 build brief
+
+Prepared a fresh implementation brief that explicitly builds the Studio before Hunky/Dory or other consumers.
+
+New core architecture:
+- Eye Cluster with 1–4 Eye Slots;
+- per-eye XYZ position;
+- per-eye overall size and W/H/D shape;
+- per-eye Pitch/Yaw/Roll + quaternion;
+- asymmetric pair support;
+- frog-side orientation fixture;
+- 3-eye and 4-eye fixtures;
+- acting scope for all/selected/primary/custom eye sets.
+
+Source facts preserved:
+- EyeRig v6 remains two-eye behavior donor;
+- its `splay` is mirrored Yaw only;
+- EyeOval v1 remains existing symmetric W/H/D + tilt donor;
+- EyeRig Batch remains profile owner;
+- BrowRig v2 remains pair-oriented and must not be silently generalized.
+
+Hunky/Dory are parked behind Studio v1 acceptance; faceless Medium template head remains `SOURCE_REQUIRED`.
+
+Next gate:
+**EAS1-A · donor reconstruction from current main.**

@@ -678,3 +678,90 @@ Publish the already browser-proven Eye Actor Studio to the exact Cloudflare rout
 After PUBLIC_VERIFIED, the first human visual question is:
 
 **Do the Clay Lids read as expressive clay/cartoon forms with real volume while preserving a clean hard occlusion edge against the eyeball?**
+
+
+---
+
+## 2026-09-21 · Turn 004 · Studio first + arbitrary Eye Cluster
+
+### USER_DIRECTION
+
+Georg confirms Hunky/Dory as a later Eye Actor use case, but wants to **build the Eye Actor Studio first**.
+
+Additional core requirements:
+- each eye can rotate in all 3 axes;
+- strongly side-mounted frog-like eyes must be possible;
+- two eyes may have different size/shape and be asymmetric;
+- 3 or 4 eyes must also be representable.
+
+### SOURCE_FACT
+
+EyeRig v6 is explicitly pair-based:
+- constructs two eyes;
+- exposes `eyes[0]` and `eyes[1]`;
+- `eyeFrame()` returns left/right;
+- current `splay` is only mirrored Y-axis outward rotation up to 45°.
+
+Its source comment explicitly leaves top/bottom orientation for later.
+
+Existing `eyeoval.v1.js` already safely applies W/H/D scale and mirrored tilt without forking EyeRig, but uses one shared W/H/D for the pair.
+
+### DECISION
+
+Studio v1 will use a candidate **Eye Cluster / Eye Slot** authoring layer:
+- eye count 1–4;
+- per-eye position;
+- per-eye size;
+- per-eye W/H/D;
+- per-eye Pitch/Yaw/Roll;
+- quaternion;
+- per-eye acting/material scope.
+
+Two equal frontal eyes become a preset, not an architecture assumption.
+
+Existing EyeRig v6 remains the exact behavior donor; no global protocol/schema promotion is authorized by this planning turn.
+
+### BUILD BRIEF
+
+Fresh-chat build brief:
+`skills/chat/workflows/KFB_EYE_ACTOR_STUDIO_V1_2026-09-21/START_HERE.md`
+
+Companion architecture:
+`EYE_CLUSTER_CONTRACT.v0.md`
+
+Hunky/Dory parked:
+`DEFERRED_HUNKY_DORY.md`
+
+The fresh implementation branch must be created from then-current `main`, not from this stacked ideation branch.
+
+### REQUIRED STUDIO FIXTURES
+
+- equal frontal pair;
+- unequal asymmetric pair;
+- frog-side pair;
+- one eye;
+- three eyes;
+- four eyes.
+
+For 3–4 eyes, acting must have explicit scope:
+- all;
+- selected;
+- primary pair;
+- custom selection.
+
+BrowRig v2 remains pair-oriented; automatic 3/4-eye brow generation must report unsupported rather than invent a layout.
+
+### HUNKY / DORY
+
+Deferred until Studio v1 acceptance.
+
+Their eventual Eye Stalk chain is proposed as:
+`measured stalk root → dangle/secondary stalk → Eye Slot anchor → Eye Actor`.
+
+Final eye count is not fixed yet.
+
+The user-described faceless Medium template head remains `SOURCE_REQUIRED`: current repo search did not uniquely identify the intended object.
+
+### NEXT GATE
+
+**EAS1-A · donor reconstruction on a fresh branch from current main.**
