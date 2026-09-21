@@ -93,9 +93,9 @@
     "Rigging Lab v1",
     "Animation Lab v2 / v3 intake",
     "Fluid / Card / Beam / Seed / Voxel Lab",
-    "Eye Actor Studio v1 · GPT workbench / Stage pending"
+    "Eye Actor Studio v1 · GPT workbench · LOCAL 114/114 · PUBLIC not verified"
   ],
   "rule": "No preview is shown unless an exact public route is present/proven. Missing/blocked routes link to source or PR only.",
-  "auditedAt": "2026-09-21T11:25:00+02:00",
-  "note": "Eye Actor Studio v1 PR #159 is locally browser-proven and has a GPT/sandbox workbench mirror, but its Cloudflare route is not PUBLIC_VERIFIED. No fake preview is shown."
+  "auditedAt": "2026-09-21T13:26:00+02:00",
+  "note": "Eye Actor Studio v1 PR #159 is source-first and locally proven at 51/51 static + 10/10 syntax + 53/53 browser. Host matrix and Rabbit Ear A/B are included. Cloudflare Stage remains NOT PUBLIC_VERIFIED; no fake public preview is shown."
 }
