@@ -167,7 +167,7 @@ async function randomizeFromSeed(){
   });
   return applyActorRecipe(recipe,{seed});
 }
-function syncModeButtons(){$('[data-mode]').forEach(b=>b.classList.toggle('active',b.dataset.mode===state.mode));}
+function syncModeButtons(){$$('[data-mode]').forEach(b=>b.classList.toggle('active',b.dataset.mode===state.mode));}
 function setMode(m){if(m==='sheet'){state.mode='sheet';syncModeButtons();$('#packSheet').hidden=false;state.renderer.domElement.style.display='none';$('#stageMode').textContent='PACK SHEET';return;}$('#packSheet').hidden=true;state.renderer.domElement.style.display='block';if(m==='source'){isolate(state.catalog.characters.find(c=>c.id===$('#bodySelect').value),'characters');return;}if(!state.actor){assemble();return;}state.mode=m;syncModeButtons();if(m==='eyes'&&!state.eyes)mountEyes();$('#stageMode').textContent=m.toUpperCase();}
 
 function wire(){
