@@ -98,8 +98,8 @@ try{
   await page.screenshot({path:OUT+'/integrated-hybrid-832.png',fullPage:true});
 
   const finalSnap=await page.evaluate(()=>window.__KFB_HYBRID_SCENE__.snapshot());
-  check('hybrid default strength retained',Math.abs(finalSnap.strength-.34)<.001,String(finalSnap.strength));
-  check('larger pattern retained',Math.abs(finalSnap.scaleMul-.70)<.001,String(finalSnap.scaleMul));
+  check('hybrid default strength retained',Math.abs(finalSnap.strength-.44)<.001,String(finalSnap.strength));
+  check('larger pattern retained',Math.abs(finalSnap.scaleMul-.55)<.001,String(finalSnap.scaleMul));
   check('no failed HTTP/resources',failed.length===0,JSON.stringify(failed));
   check('no page/console errors',errors.length===0,JSON.stringify(errors));
 
