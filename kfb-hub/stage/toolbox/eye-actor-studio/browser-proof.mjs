@@ -29,6 +29,24 @@ try{
 
   await page.screenshot({path:OUT+'/'+label+'-prototype-source.png'});
 
+  await page.selectOption('#earsMode','donor');
+  await page.waitForFunction(()=>window.__KFB_EYE_ACTOR_STUDIO_V1__?.ears?.mode==='donor'&&window.__KFB_EYE_ACTOR_STUDIO_V1__?.ears?.report,null,{timeout:60000});
+  let ears=await page.evaluate(()=>window.__KFB_EYE_ACTOR_STUDIO_V1__.ears);
+  check(label+' ears v2 donor',ears.report?.sides?.length===2,JSON.stringify(ears.report));
+  await page.screenshot({path:OUT+'/'+label+'-ears-donor.png'});
+
+  await page.selectOption('#earsMode','cartoon');
+  await page.waitForFunction(()=>window.__KFB_EYE_ACTOR_STUDIO_V1__?.ears?.report?.schema==='kfb.rabbit-ear-style/0.1-candidate',null,{timeout:60000});
+  ears=await page.evaluate(()=>window.__KFB_EYE_ACTOR_STUDIO_V1__.ears);
+  check(label+' cartoon ears two outer meshes',ears.report.outerMeshes===2,String(ears.report.outerMeshes));
+  check(label+' cartoon ears two inner zones',ears.report.innerZones===2,String(ears.report.innerZones));
+  check(label+' cartoon ears keep dangle owner',ears.report.behaviorOwner==='kfb.ears/0.2',ears.report.behaviorOwner);
+  check(label+' cartoon ears separate colors',ears.report.outerColor!==ears.report.innerColor,JSON.stringify([ears.report.outerColor,ears.report.innerColor]));
+  await page.screenshot({path:OUT+'/'+label+'-ears-cartoon.png'});
+
+  await page.selectOption('#earsMode','none');
+  await page.waitForFunction(()=>window.__KFB_EYE_ACTOR_STUDIO_V1__?.ears?.mode==='none');
+
   await page.selectOption('#mode','cluster');await page.waitForTimeout(120);
   state=await page.evaluate(()=>window.__KFB_EYE_ACTOR_STUDIO_V1__);
   check(label+' cluster count 2',state.cluster?.count===2,String(state.cluster?.count));
@@ -103,6 +121,35 @@ try{
   check(label+' no page errors',errors.length===0,JSON.stringify(errors));
   await page.close();
  }
+
+ {
+  const page=await browser.newPage({viewport:{width:1100,height:800}}),errors=[],failed=[];
+  page.on('pageerror',e=>errors.push(String(e)));
+  page.on('console',m=>{if(m.type()==='error')errors.push(m.text())});
+  page.on('response',r=>{if(r.status()>=400)failed.push({status:r.status(),url:r.url()})});
+  page.on('requestfailed',r=>failed.push({status:0,url:r.url(),error:r.failure()?.errorText}));
+
+  const res=await page.goto(BASE+'/skills/KFB_3D_CartoonStyle_v1.html',{waitUntil:'domcontentloaded',timeout:60000});
+  check('CartoonStyle HTML HTTP',res?.ok(),String(res?.status()));
+  await page.waitForFunction(()=>document.documentElement.dataset.kfbCartoonStyleReady==='yes'&&window.__KFB_CARTOON_STYLE__?.ready,null,{timeout:60000});
+  let s=await page.evaluate(()=>window.__KFB_CARTOON_STYLE__);
+  check('CartoonStyle exact donor first',s.id==='donor'&&s.meta?.src?.includes('toaster.gltf'),JSON.stringify(s));
+
+  await page.selectOption('#sample','do-panel');
+  await page.waitForFunction(()=>window.__KFB_CARTOON_STYLE__?.id==='do-panel');
+  s=await page.evaluate(()=>window.__KFB_CARTOON_STYLE__);
+  check('CartoonStyle DO sample',s.id==='do-panel'&&s.stats.meshes===4,JSON.stringify(s.stats));
+
+  await page.selectOption('#sample','dont-landmark');
+  await page.waitForFunction(()=>window.__KFB_CARTOON_STYLE__?.id==='dont-landmark');
+  check('CartoonStyle DONT sample',await page.evaluate(()=>window.__KFB_CARTOON_STYLE__.id)==='dont-landmark');
+  await page.screenshot({path:OUT+'/cartoon-style-dont-landmark.png'});
+
+  check('CartoonStyle no failed resources',failed.length===0,JSON.stringify(failed));
+  check('CartoonStyle no page errors',errors.length===0,JSON.stringify(errors));
+  await page.close();
+ }
+
  await fs.writeFile(OUT+'/browser.json',JSON.stringify({checks},null,2));
  console.log('KFB_EAS1_BROWSER_RESULT',checks.filter(x=>x.pass).length+'/'+checks.length,'PASS');
 }finally{await browser.close()}
