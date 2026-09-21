@@ -97,3 +97,22 @@ Briefs:
 - `../../skills/chat/workflows/KFB_TOOLBOX_FLUID_CARD_VOXEL_CONSOLIDATION_V1_2026-09-21/START_HERE.md`
 - `../../skills/chat/workflows/KFB_THEATRE_CURTAIN_CORE_V2_2026-09-21/START_HERE.md`
 - `../../skills/chat/workflows/KFB_PLAYABLE_MVP_CONSOLIDATION_V1_2026-09-21/START_HERE.md`
+
+
+## CURRENT ADDITIVE · Eye Actor Studio v1 build brief · 2026-09-21
+
+A fresh implementation brief is prepared at:
+`../../skills/chat/workflows/KFB_EYE_ACTOR_STUDIO_V1_2026-09-21/START_HERE.md`.
+
+Studio-first scope:
+- exact EyeRig v6 + BrowRig v2 + EyeOval v1 donors;
+- Eye Cluster authoring with 1–4 eyes;
+- per-eye size / W-H-D shape;
+- per-eye Pitch / Yaw / Roll;
+- asymmetric pair and frog-side proof;
+- Clay Lid / pose / material / emanata authoring;
+- one existing Batch actor only after the neutral Studio is stable.
+
+Hunky/Dory, Legacy, props, vehicles and plants remain consumers after Studio acceptance.
+
+This is a **source/build brief**, not a public ToolBox route yet.

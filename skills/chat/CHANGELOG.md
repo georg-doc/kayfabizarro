@@ -1031,3 +1031,21 @@ PR #158 Cloudflare preview build failed. Intended `/kfb-hub/stage/toolbox/toy-cl
 
 ### NEXT GATE
 `TOY-CLAY-PUB-1`: publication recovery only; no geometry retuning.
+
+
+## 2026-09-21 · Eye Actor Studio v1 preparation
+
+### USER DIRECTION
+Build the Eye Actor Studio before Hunky/Dory. Studio must support full per-eye Pitch/Yaw/Roll, unequal/asymmetric eye size and shape, and 1–4 eyes.
+
+### SOURCE FACT
+EyeRig v6 is pair-based and its current splay is mirrored Yaw only. EyeOval v1 already proves safe W/H/D scaling and mirrored tilt but applies one shared shape to the pair.
+
+### BRIEFING
+Added `workflows/KFB_EYE_ACTOR_STUDIO_V1_2026-09-21/` with a fresh-chat build brief, Eye Cluster contract, deferred Hunky/Dory note and preparation Return.
+
+### BOUNDARY
+No global EyeRig/profile schema is changed by this preparation. Hunky/Dory and the unpinned faceless Medium template head remain deferred.
+
+### NEXT
+`EAS1-A`: reconstruct exact donors on a new branch from current main.

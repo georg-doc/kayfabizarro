@@ -611,6 +611,40 @@
         "digest": "sha256:d2983c413b975f3d00bfbfb87564c5b90e16be4a99deb1bcd29369a4cb335c64",
         "result": "33/33 static · 16/16 ActorRecipe · 2/2 selector · 21/21 browser PASS"
       }
+    },
+    {
+      "id": "kfb-eye-actor-studio-v1-2026-09-21",
+      "kind": "workflow",
+      "status": "CURRENT_REFERENCE",
+      "version": "1.0-prep",
+      "path": "skills/chat/workflows/KFB_EYE_ACTOR_STUDIO_V1_2026-09-21/START_HERE.md",
+      "owner": "KFB ToolBox / Rigging · existing EyeRig authoring line",
+      "loadWhen": [
+        "Eye Actor Studio",
+        "EyeRig authoring",
+        "Clay eyelids",
+        "asymmetric eyes",
+        "3-axis eye orientation",
+        "three or four eyes",
+        "eye cluster"
+      ],
+      "owns": [
+        "bounded Eye Actor Studio v1 build brief",
+        "candidate Eye Cluster authoring contract",
+        "Studio fixtures and human gate"
+      ],
+      "doesNotOwn": [
+        "EyeRig v6 canonical behavior",
+        "EyeRig Batch profile truth",
+        "BrowRig v2",
+        "body animation",
+        "consumer gameplay",
+        "Hunky/Dory implementation before Studio acceptance"
+      ],
+      "intendedStage": "https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/eye-actor-studio/",
+      "executionBranch": "chatgpt-web/toolbox-eye-actor-studio-v1-2026-09-21",
+      "nextGate": "EAS1-A · donor reconstruction from then-current main",
+      "note": "Studio-first brief. Eye Cluster supports 1–4 variable-size eyes with per-eye XYZ shape and Pitch/Yaw/Roll. Implementation has not begun on the fresh branch."
     }
   ],
   "failureRecoveryTemplate": "skills/chat/templates/CLAUDE_DESIGN_FAILURE_RECOVERY_EXPORT.md"

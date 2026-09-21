@@ -115,3 +115,17 @@ No consumer movement/physics owner changed. Animation Lab remains an unpromoted 
 
 ### NEXT
 Human three-actor motion review. Attachment proposals remain a separate visible gate.
+
+
+## 2026-09-21 · Eye Actor Studio v1 preparation
+
+Prepared the Studio-first build contract. Eye Cluster v0 explicitly allows 1–4 Eye Slots with per-eye position, size, W/H/D shape and full Pitch/Yaw/Roll. Two equal frontal eyes are now a preset rather than an architectural assumption.
+
+Retained donors/owners:
+- EyeRig v6;
+- EyeOval v1;
+- BrowRig v2;
+- EyeRig Batch;
+- shared semantic eye protocol.
+
+Hunky/Dory and other hosts remain deferred until Studio v1 visual acceptance.

@@ -418,3 +418,29 @@ Cloudflare Pages reported **BUILD FAILED** for PR #158, so the Stage is **NOT PU
 
 Exactly one next gate:
 **TOY-CLAY-PUB-1 · publication-only recovery; do not change proven geometry.**
+
+
+## 2026-09-21 · Eye Actor Studio v1 · build brief
+
+Current fresh-chat build brief:
+`workflows/KFB_EYE_ACTOR_STUDIO_V1_2026-09-21/START_HERE.md`.
+
+Build the **Studio first** on a new branch from then-current main.
+
+Core requirement is no longer a fixed symmetrical eye pair. The Studio candidate authoring model is an **Eye Cluster** with **1–4 Eye Slots**, each independently controlling:
+- position;
+- overall size;
+- width / height / depth;
+- Pitch / Yaw / Roll;
+- quaternion;
+- local acting/material scope.
+
+Required fixtures include unequal/asymmetric pair, frog-side pair, one eye, three eyes and four eyes.
+
+Existing owners remain EyeRig v6, EyeOval v1, BrowRig v2 and EyeRig Batch. Hunky/Dory are explicitly deferred until Studio v1 human acceptance.
+
+Intended Stage:
+`https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/eye-actor-studio/`.
+
+Next gate:
+**EAS1-A · donor reconstruction from current main.**
