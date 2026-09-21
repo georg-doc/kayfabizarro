@@ -565,8 +565,8 @@
       "sourcePack": "media/3D_Assets/KayKit Legacy/KayKit Dungeon Pack 1.0 2/",
       "intendedStage": "https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/legacy-rpg-rigging/",
       "publicVerified": false,
-      "tested": "Legacy base: 29/29 static + 41/41 KLR-SYNC + 44/44 full browser/WebGL PASS; KLR-KIT pure core: 33/33 static + 16/16 recipe PASS; KLR-KIT browser integration frozen after two passes",
-      "nextGate": "KLR-KIT-F1 · restore selector helper seam + one gate-16 recipe",
+      "tested": "Legacy base 29/29 static + 41/41 actor-switch + 44/44 browser; ActorRecipe 33/33 + 16/16; KLR-KIT-F1 2/2 selector + 21/21 isolated browser PASS",
+      "nextGate": "Resume KLR-KIT-01 three-seed browser matrix: gate-16 → gate-75 → gate-33 → repeat gate-16",
       "owns": [
         "Legacy RPG source catalog candidate",
         "Legacy authoring/calibration candidate",
@@ -579,7 +579,7 @@
         "Combat/Travel/Race/Town gameplay",
         "Pencil/CapsuleCarl/Eraser compatibility"
       ],
-      "note": "Legacy base is locally browser-proven. Shared ActorRecipe/randomizer pure core is deterministic and gameplay-neutral, but its browser integration is frozen after two passes on a proven edit regression. Do not publish the intended Legacy Stage or integrate into Combat/WhackMan before KLR-KIT-F1.",
+      "note": "Legacy base is locally browser-proven. KLR-KIT-F1 resolved the selector regression on an isolated branch. Public Legacy Stage remains unverified; Combat/WhackMan consumer integration remains blocked until the three-seed matrix passes.",
       "currentBranchHead": "0fbf240150fd32274cf93305c8014262b72b860a",
       "baseTestedHead": "5b2fa78220ec4127c1b761c4d7f7a8304dfb11e9",
       "actorKit": {
@@ -601,6 +601,15 @@
           "meleeHead": "6df5d4cd3b5e17bacb32438beac528a37c943bb0"
         },
         "whackMan": "Dropbox concept/research input only; no pinned GitHub runtime owner"
+      },
+      "klrKitF1": {
+        "branch": "chatgpt-web/klr-kit-f1-2026-09-21",
+        "testedHead": "44d595bc60259f4a74da7043df13582f1b5ccd89",
+        "run": 35552848730,
+        "job": 106190694773,
+        "artifact": 10618729208,
+        "digest": "sha256:d2983c413b975f3d00bfbfb87564c5b90e16be4a99deb1bcd29369a4cb335c64",
+        "result": "33/33 static · 16/16 ActorRecipe · 2/2 selector · 21/21 browser PASS"
       }
     }
   ],
