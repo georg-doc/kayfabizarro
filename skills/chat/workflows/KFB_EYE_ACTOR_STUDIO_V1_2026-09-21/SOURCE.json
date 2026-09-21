@@ -1,30 +1,32 @@
 {
-  "schema": "kfb.eye-actor-studio-v1-source/0.1",
+  "schema": "kfb.eye-actor-studio-v1-source/0.2",
   "date": "2026-09-21",
-  "status": "TECHNICAL_BROWSER_PASS_GPT_WORKBENCH_READY_PUBLIC_STAGE_OPEN",
+  "status": "TECHNICAL_BROWSER_PASS_GPT_WORKBENCH_READY_PUBLIC_NOT_VERIFIED_HUMAN_GATE_OPEN",
   "repo": "georg-doc/kayfabizarro",
   "branch": "chatgpt-web/toolbox-eye-actor-studio-v1-2026-09-21",
+  "draftPR": 159,
   "baseMain": "66d6d96b5e8f6ef8fb06a0888baa70d822fb9a69",
-  "testedHead": "cfead6b064a36075f3c360217ed42c92b065bec3",
+  "testedHead": "64d16e754a3b149efa64f2b7f3045d42f32e4bca",
   "owner": "KFB ToolBox / Rigging · existing EyeRig authoring line",
-  "donors": {
-    "eyeRigV6": {
-      "path": "tools/KFB-ToolBox/kfb-rigs-embed-v3/petstudio-v9/studio-v12/pet-eye-rig.v6.js",
-      "blob": "853bcf5fb090dd6564fda8bc83d0b4cb527e6b26"
-    },
-    "browRigV2": {
-      "path": "tools/KFB-ToolBox/kfb-rigs-embed-v3/petstudio-v9/studio-v12/brow-rig.v2.js",
-      "blob": "ccc91a7f48adbf999ed33ca1708bbe5d1c738d0f"
-    },
-    "eyeOvalV1": {
-      "path": "tools/KFB-ToolBox/kfb-rigs-embed-v3/frizzlegraft-v1/eyeoval.v1.js"
-    }
+  "retainedOwners": {
+    "eyeRigV6": "tools/KFB-ToolBox/kfb-rigs-embed-v3/petstudio-v9/studio-v12/pet-eye-rig.v6.js",
+    "browRigV2": "tools/KFB-ToolBox/kfb-rigs-embed-v3/petstudio-v9/studio-v12/brow-rig.v2.js",
+    "eyeOvalV1": "tools/KFB-ToolBox/kfb-rigs-embed-v3/frizzlegraft-v1/eyeoval.v1.js",
+    "earBehavior": "tools/KFB-ToolBox/kfb-rigs-embed-v3/frizzlegraft-v1/ears.v2.js",
+    "legacyAssembly": "tools/KFB-ToolBox/legacy-rpg-rigging/lib/legacy-rig-adapter.v1.js",
+    "legacyFaceHost": "tools/KFB-ToolBox/legacy-rpg-rigging/lib/legacy-facehost.v1.js",
+    "mediumCatalog": "tools/KFB-ToolBox/eye-rig-batch/data/rig-medium-actors.v0.json",
+    "largeCatalog": "tools/KFB-ToolBox/eye-rig-batch/data/rig-large-reviewed.v1.json"
   },
-  "implementation": {
-    "cluster": "tools/KFB-ToolBox/eye-actor-studio-v1/eye-cluster.v1.mjs",
+  "studio": {
+    "stageSource": "kfb-hub/stage/toolbox/eye-actor-studio/",
+    "eyeCluster": "tools/KFB-ToolBox/eye-actor-studio-v1/eye-cluster.v1.mjs",
     "clayLid": "tools/KFB-ToolBox/eye-actor-studio-v1/clay-lid.v1.mjs",
     "poses": "tools/KFB-ToolBox/eye-actor-studio-v1/poses.v1.mjs",
-    "stageSource": "kfb-hub/stage/toolbox/eye-actor-studio/",
+    "hostCatalog": "tools/KFB-ToolBox/eye-actor-studio-v1/host-catalog.v1.mjs",
+    "hostRuntime": "tools/KFB-ToolBox/eye-actor-studio-v1/host-runtime.v1.mjs",
+    "staticFaceHost": "tools/KFB-ToolBox/eye-actor-studio-v1/static-facehost.v1.mjs",
+    "rabbitEarStyle": "tools/KFB-ToolBox/eye-actor-studio-v1/rabbit-ears-style.v1.mjs",
     "presets": [
       "pair-frontal",
       "pair-asymmetric",
@@ -47,41 +49,84 @@
       "lid state"
     ]
   },
+  "hosts": {
+    "default": "legacy-prototype-pete",
+    "exactDefaultPath": "media/3D_Assets/KayKit Legacy/KayKit Character Animations 1.2 - legacy/Models/gltf/PrototypePete.gltf",
+    "proven": [
+      "Mannequin Medium",
+      "GothGirl / Rig_Medium",
+      "Orc Brute / reviewed Rig_Large",
+      "Legacy Skeleton Warrior",
+      "Legacy Jack / pumpkin",
+      "Legacy Dungeon modular Knight + Rogue Head C",
+      "Pencil B short",
+      "Rubber / Eraser"
+    ],
+    "availableFamilies": [
+      "Legacy template PrototypePete",
+      "Legacy Dungeon modular bodies + 17 heads",
+      "Legacy Skeletons",
+      "Legacy Spooktober Jack/Witch",
+      "Legacy Orc Warband",
+      "Rig_Medium owner catalog",
+      "Rig_Large reviewed owner catalog",
+      "Mannequin Medium/Large",
+      "Pencil short/long",
+      "Rubber/Eraser"
+    ]
+  },
+  "rabbitEars": {
+    "donor": "tools/KFB-ToolBox/kfb-rigs-embed-v3/frizzlegraft-v1/ears.v2.js",
+    "behaviorOwner": "kfb.ears/0.2",
+    "candidate": "tools/KFB-ToolBox/eye-actor-studio-v1/rabbit-ears-style.v1.mjs",
+    "outerGeometry": "donor-measured rounded extruded toy/clay panel",
+    "innerGeometry": "rounded extruded inner-ear panel",
+    "outerColor": "#f2c93a",
+    "innerColor": "#e7b772",
+    "colorSource": "FrizzleBob_Yellow.gltf · Main / Main_Light",
+    "visualRepairHistory": [
+      "candidate 0: scaled duplicate inner mesh intersected at root",
+      "repair 1: independent inner panel fixed overlap, donor outer topology still faceted/torn at tip",
+      "repair 2: measured donor dimensions drive a clean rounded outer shell; ears.v2 keeps placement/pivot/dangle"
+    ],
+    "assistantVisualStatus": "CANDIDATE_PASS",
+    "humanAccepted": false
+  },
+  "cartoonStyle": {
+    "skill": "skills/KFB_3D_CartoonStyle_v1.md",
+    "interactive": "skills/KFB_3D_CartoonStyle_v1.html",
+    "status": "EXPERIMENTAL",
+    "donor": "Tiny Treats Charming Kitchen toaster",
+    "wsaAdditive": true
+  },
   "evidence": {
-    "workflowRun": 35582435688,
-    "job": 106278127789,
-    "static": "20/20 PASS",
-    "syntax": "4/4 PASS",
-    "browser": "22/22 PASS",
+    "workflowRun": 35591372998,
+    "job": 106306286669,
+    "static": "51/51 PASS",
+    "syntax": "10/10 PASS",
+    "browser": "53/53 PASS",
     "viewports": [
       "1440x900",
       "390x844"
     ],
     "failedResources": 0,
     "pageErrors": 0,
-    "artifactId": 10630529454,
-    "artifactDigest": "sha256:17267649b1bf41192a6e8233c8f6d23dc5e162021fad97965b30dc98e44bcbb0"
+    "artifactId": 10634917298,
+    "artifactDigest": "sha256:18f9de169f5b3c6a3c6863a6e5de2b96d6506ef082e9ca4e30e4c93e5fdcc81b"
   },
   "gptWorkbench": {
     "status": "READY_IN_CURRENT_CHAT",
-    "note": "Single-file sandbox mirror for rapid iteration. It is not KFB PUBLIC_VERIFIED or donor acceptance evidence."
+    "note": "Sandbox/GPT workbench is the rapid iteration surface. It is not KFB PUBLIC_VERIFIED."
   },
   "intendedStage": "https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/eye-actor-studio/",
   "publicVerified": false,
   "humanAccepted": false,
-  "openVisual": [
-    "Clay lids on extreme frog orientation read rim/wedge-like",
-    "human review of eye-cluster coherence",
-    "real Batch actor not yet integrated"
+  "unresolved": [
+    "Georg visual acceptance of Eye Cluster + Clay lids",
+    "Georg visual acceptance of Rabbit Ear Style v1",
+    "material resolver face > body > main not yet wired across all host types",
+    "final UV/texel-scale debug for textured faces",
+    "Hunky/Dory remain deferred"
   ],
-  "deferred": [
-    "Hunky",
-    "Dory",
-    "Legacy Buddies",
-    "props",
-    "vehicles",
-    "plants",
-    "special pupil FX"
-  ],
-  "nextGate": "EAS1-VIS-1 · Georg visual review in GPT workbench; no Cloudflare dependency"
+  "nextGate": "EAS1-VIS-2 · Georg visual review of current GPT Studio: host picker + Eye Cluster + Clay lids + Rabbit Ear A/B"
 }

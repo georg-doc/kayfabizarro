@@ -758,3 +758,44 @@ Each remains a separate donor-first visual gate.
 **DRAFT / EXPERIMENTAL.**
 
 This file is a reusable production reference but is not yet a promoted immutable visual canon. Georg's visible acceptance of representative examples is required before stronger canon language.
+
+
+## 2026-09-21 · Rabbit ears · two-pass visual repair
+
+**Donor:** `tools/KFB-ToolBox/kfb-rigs-embed-v3/frizzlegraft-v1/ears.v2.js`  
+**Color donor:** `FrizzleBob_Yellow.gltf` · `Main` / `Main_Light`.
+
+### Candidate 0 · technical green, visual fail
+
+**Observed:** the new inner-ear zone was made by scaling a duplicate of the complete donor ear mesh. It visibly intersected and opened near the root.
+
+**Cause:** a full 3D shell was used where a distinct inset/cartoon material zone was required.
+
+**Repair:** build the inner ear as its own rounded, shallow extruded panel.
+
+**General rule:** a color/material zone should not be implemented as a scaled duplicate of an irregular shell when the intended read is a clean inset.
+
+### Repair 1 · inner zone fixed, outer donor topology still failed
+
+**Observed:** the independent inner panel was clean, but the right ear still showed faceted/torn-looking topology near the tip.
+
+**Cause:** the legacy donor topology itself was being asked to provide the new smooth toy/clay silhouette. Smoothing cannot reliably turn a structurally awkward source mesh into a clean new design language.
+
+**Repair:** stop patching the old topology. Keep donor-derived measurements and the proven `ears.v2` host placement/pivot/dangle behavior, but rebuild only the visible outer shell as one continuous rounded extruded cartoon form.
+
+### Repair 2 · current candidate
+
+Current properties:
+- donor-measured dimensions;
+- one continuous rounded outer shell;
+- broad visible rim;
+- separate rounded inner zone;
+- outer `Main`: **#f2c93a**;
+- inner `Main_Light`: **#e7b772**;
+- `ears.v2` remains behavior owner.
+
+**Technical evidence:** 51/51 static + 10/10 syntax + 53/53 browser PASS on run `35591372998`.
+
+**Assistant visual observation:** the prior intersections/tears are gone and the ear now reads as a clean toy/clay candidate. Georg visual acceptance is still required.
+
+**Reusable rule:** when the donor supplies the right identity/measurement/behavior but its topology fights the target visual language, preserve the donor seams and measurements; rebuild only the presentation shell instead of applying a third cosmetic topology patch.
