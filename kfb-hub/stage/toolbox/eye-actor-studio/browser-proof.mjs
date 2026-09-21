@@ -77,10 +77,17 @@ try{
     state=await selectHost(page,'legacy-jack');
     check('desktop Legacy Jack pumpkin',state.host?.sourcePath?.includes('character_jack.gltf'),state.host?.sourcePath);
 
-    await page.selectOption('#legacyBody','knight');
-    await page.selectOption('#legacyHead','rogue-c');
     state=await selectHost(page,'legacy-dungeon-modular');
+    check('desktop Legacy modular opens',state.host?.rigClass==='Rig_Legacy',JSON.stringify(state.host));
+
+    await page.selectOption('#legacyBody','knight');
+    await page.waitForFunction(()=>document.documentElement.dataset.kfbEyeHostReady==='yes'&&window.__KFB_EYE_ACTOR_STUDIO_V1__?.host?.sourcePath?.includes('character_knight.gltf'),null,{timeout:60000});
+    state=await page.evaluate(()=>window.__KFB_EYE_ACTOR_STUDIO_V1__);
     check('desktop Legacy modular body',state.host?.sourcePath?.includes('character_knight.gltf'),state.host?.sourcePath);
+
+    await page.selectOption('#legacyHead','rogue-c');
+    await page.waitForFunction(()=>document.documentElement.dataset.kfbEyeHostReady==='yes'&&window.__KFB_EYE_ACTOR_STUDIO_V1__?.host?.legacyHead?.id==='rogue-c',null,{timeout:60000});
+    state=await page.evaluate(()=>window.__KFB_EYE_ACTOR_STUDIO_V1__);
     check('desktop Legacy modular alternate head',state.host?.legacyHead?.id==='rogue-c',JSON.stringify(state.host?.legacyHead));
 
     state=await selectHost(page,'prop-pencil-short');
