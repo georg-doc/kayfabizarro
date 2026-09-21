@@ -245,3 +245,90 @@ The first human question is only:
 > **Does one upper eyelid read as a real thick clay/cartoon mass covering the eyeball, with a soft rounded outside and a crisp eye-facing occlusion edge?**
 
 Nothing else advances until that is yes.
+
+
+## 14. User visual reference · Upper Lid · 2026-09-21
+
+The user supplied a visual reference in the current chat showing the intended **upper eyelid construction**.
+
+This reference overrides any prior interpretation that produced tubes, strokes, thin shell rims or decorative arcs.
+
+### Reference read
+
+The upper lid is one **closed, thick, rounded cap/block of soft facial material** sitting over the upper part of the eyeball.
+
+The key shape logic is:
+
+1. **One continuous outer mass**
+   - full 3D volume;
+   - broad rounded top/front surface;
+   - rounded left/right side mass;
+   - visibly thicker than a shell.
+
+2. **One lower opening boundary**
+   - the visible lid edge is simply where this volume ends and the eyeball becomes visible;
+   - it is **not** a second tube, spline, ridge or outline object;
+   - it may be horizontal, slanted, concave or convex.
+
+3. **The boundary cuts through a thick mass**
+   - changing slant/curve changes the lower contour;
+   - it must not collapse the upper mass into a ribbon;
+   - thickness above the opening remains obvious.
+
+4. **Real occlusion**
+   - the lid body sits in front of the eyeball;
+   - sclera/pupil disappear behind the lid through normal depth;
+   - no painted masking trick.
+
+5. **Rounded clay/cartoon exterior**
+   - exterior edges are softened;
+   - top corners and side transitions are broad and rounded;
+   - the form should read as molded/clay facial tissue, not hard-surface geometry.
+
+### Correct mental model
+
+Do **not** think:
+`sphere + line`
+
+Do **not** think:
+`sphere + thin spherical shell`
+
+Think:
+
+`eyeball behind a thick rounded facial cap whose lower cutout defines the eye opening`
+
+### Parameterization implied by the reference
+
+For the first upper-lid proof, expose only:
+
+- `cover` — vertical amount of eyeball covered;
+- `slant` — angle of lower opening edge;
+- `curve` — concave ↔ flat ↔ convex opening edge;
+- `thickness` — depth/body thickness of the lid mass;
+- `roundness` — softness of outer cap corners;
+- `bulge` — central outward fullness.
+
+Do not add more controls until this six-parameter model visually matches the reference.
+
+### First build target
+
+One real 3D eyeball.
+One upper lid only.
+
+Required views:
+- front;
+- 3/4;
+- side.
+
+Required variants:
+- neutral/open;
+- more covered;
+- slanted;
+- concave;
+- convex.
+
+No lower lid, brow, multi-eye cluster, emanata, ears or character-specific styling in this proof.
+
+### Human acceptance question
+
+> **Does this look like the same construction principle as the supplied reference: one thick, rounded upper-lid mass whose lower edge defines the eye opening?**

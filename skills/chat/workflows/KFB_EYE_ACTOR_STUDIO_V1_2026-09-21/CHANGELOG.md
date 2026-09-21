@@ -83,3 +83,21 @@ Action:
 
 Next:
 `EAS1-LID-1`.
+
+
+## 2026-09-21 · Upper-lid visual reference pinned
+
+User supplied the missing visual reference for the upper eyelid.
+
+Interpretation locked:
+- one closed thick rounded upper-lid mass;
+- no tube/stroke/ridge;
+- no thin shell as the Clay target;
+- the visible lower edge is the end/cut boundary of that mass;
+- slant / concave / convex modify this opening boundary while preserving the mass;
+- real depth occlusion hides eyeball/pupil.
+
+Next build is reduced to:
+**one real 3D eyeball + one upper volumetric lid + front/3/4/side + neutral/cover/slant/concave/convex.**
+
+No Full Studio UI until this passes.
