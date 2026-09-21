@@ -1,0 +1,374 @@
+{
+  "schema": "kfb.eye-rig-actor-catalog/0.1-candidate",
+  "owner": "KFB ToolBox / Rigging · Batch EyeRig Atlas",
+  "rigClass": "Rig_Legacy",
+  "headCount": 17,
+  "source": {
+    "repo": "georg-doc/kayfabizarro",
+    "partsRevision": "eb48f50489b9e4903ec1e3d2fb1837605ce7d792",
+    "rigRevision": "10a7fdce6b3a1ae22504ade71b7dbec5f25e0ff0",
+    "rigPath": "media/3D_Assets/KayKit Legacy/KayKit Character Animations 1.2 - legacy/Animations/gltf/KayKit_AnimatedCharacter_v1.2.glb",
+    "legacyRuntimeRevision": "44d595bc60259f4a74da7043df13582f1b5ccd89",
+    "license": "CC0"
+  },
+  "revisionPolicy": "Head source paths + Dungeon parts revision + Rig_Legacy revision are exact; Legacy assembly/FaceHost reused from the browser-proven KLR-KIT-F1 runtime.",
+  "bodies": {
+    "barbarian": {
+      "id": "barbarian",
+      "label": "Barbarian",
+      "path": "media/3D_Assets/KayKit Legacy/KayKit Dungeon Pack 1.0 2/Models/Characters/gltf/character_barbarian.gltf",
+      "bodyNode": "character_barbarianBody",
+      "headNode": "character_barbarianHead",
+      "leftArmNode": "character_barbarianArmLeft",
+      "rightArmNode": "character_barbarianArmRight",
+      "headExtras": [
+        "character_barbarianHat"
+      ]
+    },
+    "knight": {
+      "id": "knight",
+      "label": "Knight",
+      "path": "media/3D_Assets/KayKit Legacy/KayKit Dungeon Pack 1.0 2/Models/Characters/gltf/character_knight.gltf",
+      "bodyNode": "character_knightBody",
+      "headNode": "character_knightHead",
+      "leftArmNode": "character_knightArmLeft",
+      "rightArmNode": "character_knightArmRight",
+      "headExtras": [
+        "character_knightHelmet"
+      ]
+    },
+    "mage": {
+      "id": "mage",
+      "label": "Mage",
+      "path": "media/3D_Assets/KayKit Legacy/KayKit Dungeon Pack 1.0 2/Models/Characters/gltf/character_mage.gltf",
+      "bodyNode": "character_mageBody",
+      "headNode": "character_mageHead",
+      "leftArmNode": "character_mageArnLeft",
+      "rightArmNode": "character_mageArmRight",
+      "headExtras": [
+        "character_mageHat",
+        "character_mageHair"
+      ]
+    },
+    "rogue": {
+      "id": "rogue",
+      "label": "Rogue",
+      "path": "media/3D_Assets/KayKit Legacy/KayKit Dungeon Pack 1.0 2/Models/Characters/gltf/character_rogue.gltf",
+      "bodyNode": "character_rogueBody",
+      "headNode": "character_rogueHead",
+      "leftArmNode": "character_rogueArmLeft",
+      "rightArmNode": "character_rogueArmRight",
+      "headExtras": [
+        "character_rogueHair"
+      ]
+    }
+  },
+  "actors": [
+    {
+      "id": "barbarian-default",
+      "label": "Barbarian · default",
+      "initials": "B·D",
+      "kind": "embedded",
+      "hostBodyId": "barbarian",
+      "sourcePath": "media/3D_Assets/KayKit Legacy/KayKit Dungeon Pack 1.0 2/Models/Characters/gltf/character_barbarian.gltf",
+      "sourceNode": "character_barbarianHead",
+      "assetPath": null,
+      "sourceRevision": "eb48f50489b9e4903ec1e3d2fb1837605ce7d792",
+      "rigClass": "Rig_Legacy",
+      "jointCount": 6,
+      "reviewGroup": "legacy",
+      "cleanup": {
+        "mode": "legacy-black-material-pair-nondestructive"
+      },
+      "provenance": "KayKit Dungeon Pack 1.0 / Legacy modular head source"
+    },
+    {
+      "id": "barbarian-a",
+      "label": "Barbarian Head A",
+      "initials": "BHA",
+      "kind": "asset",
+      "hostBodyId": "barbarian",
+      "sourcePath": "media/3D_Assets/KayKit Legacy/KayKit Dungeon Pack 1.0 2/Models/Characters/gltf/extra heads/barbarianHeadA.gltf.glb",
+      "sourceNode": null,
+      "assetPath": "media/3D_Assets/KayKit Legacy/KayKit Dungeon Pack 1.0 2/Models/Characters/gltf/extra heads/barbarianHeadA.gltf.glb",
+      "sourceRevision": "eb48f50489b9e4903ec1e3d2fb1837605ce7d792",
+      "rigClass": "Rig_Legacy",
+      "jointCount": 6,
+      "reviewGroup": "legacy",
+      "cleanup": {
+        "mode": "legacy-black-material-pair-nondestructive"
+      },
+      "provenance": "KayKit Dungeon Pack 1.0 / Legacy modular head source"
+    },
+    {
+      "id": "barbarian-b",
+      "label": "Barbarian Head B",
+      "initials": "BHB",
+      "kind": "asset",
+      "hostBodyId": "barbarian",
+      "sourcePath": "media/3D_Assets/KayKit Legacy/KayKit Dungeon Pack 1.0 2/Models/Characters/gltf/extra heads/barbarianHeadB.gltf.glb",
+      "sourceNode": null,
+      "assetPath": "media/3D_Assets/KayKit Legacy/KayKit Dungeon Pack 1.0 2/Models/Characters/gltf/extra heads/barbarianHeadB.gltf.glb",
+      "sourceRevision": "eb48f50489b9e4903ec1e3d2fb1837605ce7d792",
+      "rigClass": "Rig_Legacy",
+      "jointCount": 6,
+      "reviewGroup": "legacy",
+      "cleanup": {
+        "mode": "legacy-black-material-pair-nondestructive"
+      },
+      "provenance": "KayKit Dungeon Pack 1.0 / Legacy modular head source"
+    },
+    {
+      "id": "barbarian-c",
+      "label": "Barbarian Head C",
+      "initials": "BHC",
+      "kind": "asset",
+      "hostBodyId": "barbarian",
+      "sourcePath": "media/3D_Assets/KayKit Legacy/KayKit Dungeon Pack 1.0 2/Models/Characters/gltf/extra heads/barbarianHeadC.gltf.glb",
+      "sourceNode": null,
+      "assetPath": "media/3D_Assets/KayKit Legacy/KayKit Dungeon Pack 1.0 2/Models/Characters/gltf/extra heads/barbarianHeadC.gltf.glb",
+      "sourceRevision": "eb48f50489b9e4903ec1e3d2fb1837605ce7d792",
+      "rigClass": "Rig_Legacy",
+      "jointCount": 6,
+      "reviewGroup": "legacy",
+      "cleanup": {
+        "mode": "legacy-black-material-pair-nondestructive"
+      },
+      "provenance": "KayKit Dungeon Pack 1.0 / Legacy modular head source"
+    },
+    {
+      "id": "knight-default",
+      "label": "Knight · default",
+      "initials": "K·D",
+      "kind": "embedded",
+      "hostBodyId": "knight",
+      "sourcePath": "media/3D_Assets/KayKit Legacy/KayKit Dungeon Pack 1.0 2/Models/Characters/gltf/character_knight.gltf",
+      "sourceNode": "character_knightHead",
+      "assetPath": null,
+      "sourceRevision": "eb48f50489b9e4903ec1e3d2fb1837605ce7d792",
+      "rigClass": "Rig_Legacy",
+      "jointCount": 6,
+      "reviewGroup": "legacy",
+      "cleanup": {
+        "mode": "legacy-black-material-pair-nondestructive"
+      },
+      "provenance": "KayKit Dungeon Pack 1.0 / Legacy modular head source"
+    },
+    {
+      "id": "knight-a",
+      "label": "Knight Head A",
+      "initials": "KHA",
+      "kind": "asset",
+      "hostBodyId": "knight",
+      "sourcePath": "media/3D_Assets/KayKit Legacy/KayKit Dungeon Pack 1.0 2/Models/Characters/gltf/extra heads/knightHeadA.gltf.glb",
+      "sourceNode": null,
+      "assetPath": "media/3D_Assets/KayKit Legacy/KayKit Dungeon Pack 1.0 2/Models/Characters/gltf/extra heads/knightHeadA.gltf.glb",
+      "sourceRevision": "eb48f50489b9e4903ec1e3d2fb1837605ce7d792",
+      "rigClass": "Rig_Legacy",
+      "jointCount": 6,
+      "reviewGroup": "legacy",
+      "cleanup": {
+        "mode": "legacy-black-material-pair-nondestructive"
+      },
+      "provenance": "KayKit Dungeon Pack 1.0 / Legacy modular head source"
+    },
+    {
+      "id": "knight-b",
+      "label": "Knight Head B",
+      "initials": "KHB",
+      "kind": "asset",
+      "hostBodyId": "knight",
+      "sourcePath": "media/3D_Assets/KayKit Legacy/KayKit Dungeon Pack 1.0 2/Models/Characters/gltf/extra heads/knightHeadB.gltf.glb",
+      "sourceNode": null,
+      "assetPath": "media/3D_Assets/KayKit Legacy/KayKit Dungeon Pack 1.0 2/Models/Characters/gltf/extra heads/knightHeadB.gltf.glb",
+      "sourceRevision": "eb48f50489b9e4903ec1e3d2fb1837605ce7d792",
+      "rigClass": "Rig_Legacy",
+      "jointCount": 6,
+      "reviewGroup": "legacy",
+      "cleanup": {
+        "mode": "legacy-black-material-pair-nondestructive"
+      },
+      "provenance": "KayKit Dungeon Pack 1.0 / Legacy modular head source"
+    },
+    {
+      "id": "knight-c",
+      "label": "Knight Head C",
+      "initials": "KHC",
+      "kind": "asset",
+      "hostBodyId": "knight",
+      "sourcePath": "media/3D_Assets/KayKit Legacy/KayKit Dungeon Pack 1.0 2/Models/Characters/gltf/extra heads/knightHeadC.gltf.glb",
+      "sourceNode": null,
+      "assetPath": "media/3D_Assets/KayKit Legacy/KayKit Dungeon Pack 1.0 2/Models/Characters/gltf/extra heads/knightHeadC.gltf.glb",
+      "sourceRevision": "eb48f50489b9e4903ec1e3d2fb1837605ce7d792",
+      "rigClass": "Rig_Legacy",
+      "jointCount": 6,
+      "reviewGroup": "legacy",
+      "cleanup": {
+        "mode": "legacy-black-material-pair-nondestructive"
+      },
+      "provenance": "KayKit Dungeon Pack 1.0 / Legacy modular head source"
+    },
+    {
+      "id": "mage-default",
+      "label": "Mage · default",
+      "initials": "M·D",
+      "kind": "embedded",
+      "hostBodyId": "mage",
+      "sourcePath": "media/3D_Assets/KayKit Legacy/KayKit Dungeon Pack 1.0 2/Models/Characters/gltf/character_mage.gltf",
+      "sourceNode": "character_mageHead",
+      "assetPath": null,
+      "sourceRevision": "eb48f50489b9e4903ec1e3d2fb1837605ce7d792",
+      "rigClass": "Rig_Legacy",
+      "jointCount": 6,
+      "reviewGroup": "legacy",
+      "cleanup": {
+        "mode": "legacy-black-material-pair-nondestructive"
+      },
+      "provenance": "KayKit Dungeon Pack 1.0 / Legacy modular head source"
+    },
+    {
+      "id": "mage-a",
+      "label": "Mage Head A",
+      "initials": "MHA",
+      "kind": "asset",
+      "hostBodyId": "mage",
+      "sourcePath": "media/3D_Assets/KayKit Legacy/KayKit Dungeon Pack 1.0 2/Models/Characters/gltf/extra heads/mageHeadA.gltf",
+      "sourceNode": null,
+      "assetPath": "media/3D_Assets/KayKit Legacy/KayKit Dungeon Pack 1.0 2/Models/Characters/gltf/extra heads/mageHeadA.gltf",
+      "sourceRevision": "eb48f50489b9e4903ec1e3d2fb1837605ce7d792",
+      "rigClass": "Rig_Legacy",
+      "jointCount": 6,
+      "reviewGroup": "legacy",
+      "cleanup": {
+        "mode": "legacy-black-material-pair-nondestructive"
+      },
+      "provenance": "KayKit Dungeon Pack 1.0 / Legacy modular head source"
+    },
+    {
+      "id": "mage-b",
+      "label": "Mage Head B",
+      "initials": "MHB",
+      "kind": "asset",
+      "hostBodyId": "mage",
+      "sourcePath": "media/3D_Assets/KayKit Legacy/KayKit Dungeon Pack 1.0 2/Models/Characters/gltf/extra heads/mageHeadB.gltf",
+      "sourceNode": null,
+      "assetPath": "media/3D_Assets/KayKit Legacy/KayKit Dungeon Pack 1.0 2/Models/Characters/gltf/extra heads/mageHeadB.gltf",
+      "sourceRevision": "eb48f50489b9e4903ec1e3d2fb1837605ce7d792",
+      "rigClass": "Rig_Legacy",
+      "jointCount": 6,
+      "reviewGroup": "legacy",
+      "cleanup": {
+        "mode": "legacy-black-material-pair-nondestructive"
+      },
+      "provenance": "KayKit Dungeon Pack 1.0 / Legacy modular head source"
+    },
+    {
+      "id": "mage-c",
+      "label": "Mage Head C",
+      "initials": "MHC",
+      "kind": "asset",
+      "hostBodyId": "mage",
+      "sourcePath": "media/3D_Assets/KayKit Legacy/KayKit Dungeon Pack 1.0 2/Models/Characters/gltf/extra heads/mageHeadC.gltf",
+      "sourceNode": null,
+      "assetPath": "media/3D_Assets/KayKit Legacy/KayKit Dungeon Pack 1.0 2/Models/Characters/gltf/extra heads/mageHeadC.gltf",
+      "sourceRevision": "eb48f50489b9e4903ec1e3d2fb1837605ce7d792",
+      "rigClass": "Rig_Legacy",
+      "jointCount": 6,
+      "reviewGroup": "legacy",
+      "cleanup": {
+        "mode": "legacy-black-material-pair-nondestructive"
+      },
+      "provenance": "KayKit Dungeon Pack 1.0 / Legacy modular head source"
+    },
+    {
+      "id": "rogue-default",
+      "label": "Rogue · default",
+      "initials": "R·D",
+      "kind": "embedded",
+      "hostBodyId": "rogue",
+      "sourcePath": "media/3D_Assets/KayKit Legacy/KayKit Dungeon Pack 1.0 2/Models/Characters/gltf/character_rogue.gltf",
+      "sourceNode": "character_rogueHead",
+      "assetPath": null,
+      "sourceRevision": "eb48f50489b9e4903ec1e3d2fb1837605ce7d792",
+      "rigClass": "Rig_Legacy",
+      "jointCount": 6,
+      "reviewGroup": "legacy",
+      "cleanup": {
+        "mode": "legacy-black-material-pair-nondestructive"
+      },
+      "provenance": "KayKit Dungeon Pack 1.0 / Legacy modular head source"
+    },
+    {
+      "id": "rogue-a",
+      "label": "Rogue Head A",
+      "initials": "RHA",
+      "kind": "asset",
+      "hostBodyId": "rogue",
+      "sourcePath": "media/3D_Assets/KayKit Legacy/KayKit Dungeon Pack 1.0 2/Models/Characters/gltf/extra heads/rogueHeadA.gltf",
+      "sourceNode": null,
+      "assetPath": "media/3D_Assets/KayKit Legacy/KayKit Dungeon Pack 1.0 2/Models/Characters/gltf/extra heads/rogueHeadA.gltf",
+      "sourceRevision": "eb48f50489b9e4903ec1e3d2fb1837605ce7d792",
+      "rigClass": "Rig_Legacy",
+      "jointCount": 6,
+      "reviewGroup": "legacy",
+      "cleanup": {
+        "mode": "legacy-black-material-pair-nondestructive"
+      },
+      "provenance": "KayKit Dungeon Pack 1.0 / Legacy modular head source"
+    },
+    {
+      "id": "rogue-b",
+      "label": "Rogue Head B",
+      "initials": "RHB",
+      "kind": "asset",
+      "hostBodyId": "rogue",
+      "sourcePath": "media/3D_Assets/KayKit Legacy/KayKit Dungeon Pack 1.0 2/Models/Characters/gltf/extra heads/rogueHeadB.gltf",
+      "sourceNode": null,
+      "assetPath": "media/3D_Assets/KayKit Legacy/KayKit Dungeon Pack 1.0 2/Models/Characters/gltf/extra heads/rogueHeadB.gltf",
+      "sourceRevision": "eb48f50489b9e4903ec1e3d2fb1837605ce7d792",
+      "rigClass": "Rig_Legacy",
+      "jointCount": 6,
+      "reviewGroup": "legacy",
+      "cleanup": {
+        "mode": "legacy-black-material-pair-nondestructive"
+      },
+      "provenance": "KayKit Dungeon Pack 1.0 / Legacy modular head source"
+    },
+    {
+      "id": "rogue-c",
+      "label": "Rogue Head C",
+      "initials": "RHC",
+      "kind": "asset",
+      "hostBodyId": "rogue",
+      "sourcePath": "media/3D_Assets/KayKit Legacy/KayKit Dungeon Pack 1.0 2/Models/Characters/gltf/extra heads/rogueHeadC.gltf",
+      "sourceNode": null,
+      "assetPath": "media/3D_Assets/KayKit Legacy/KayKit Dungeon Pack 1.0 2/Models/Characters/gltf/extra heads/rogueHeadC.gltf",
+      "sourceRevision": "eb48f50489b9e4903ec1e3d2fb1837605ce7d792",
+      "rigClass": "Rig_Legacy",
+      "jointCount": 6,
+      "reviewGroup": "legacy",
+      "cleanup": {
+        "mode": "legacy-black-material-pair-nondestructive"
+      },
+      "provenance": "KayKit Dungeon Pack 1.0 / Legacy modular head source"
+    },
+    {
+      "id": "skull",
+      "label": "Skull",
+      "initials": "S",
+      "kind": "asset",
+      "hostBodyId": "rogue",
+      "sourcePath": "media/3D_Assets/KayKit Legacy/KayKit Dungeon Pack 1.0 2/Models/Characters/gltf/extra heads/skull.gltf.glb",
+      "sourceNode": null,
+      "assetPath": "media/3D_Assets/KayKit Legacy/KayKit Dungeon Pack 1.0 2/Models/Characters/gltf/extra heads/skull.gltf.glb",
+      "sourceRevision": "eb48f50489b9e4903ec1e3d2fb1837605ce7d792",
+      "rigClass": "Rig_Legacy",
+      "jointCount": 6,
+      "reviewGroup": "legacy",
+      "cleanup": {
+        "mode": "legacy-black-material-pair-nondestructive"
+      },
+      "provenance": "KayKit Dungeon Pack 1.0 / Legacy modular head source"
+    }
+  ]
+}
