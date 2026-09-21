@@ -1,0 +1,68 @@
+{
+  "schema": "kfb-card-zone-v2-fluid-source/v1",
+  "date": "2026-09-22",
+  "owner": "KFB ToolBox Card-Zone / Project-Island consumer",
+  "repo": "georg-doc/kayfabizarro",
+  "workingBranch": "chatgpt-web/card-zone-v3-h0-parity-2026-09-21",
+  "stackedBase": {
+    "branch": "planning/toolbox-card-zone-v3-hex-project-islands-2026-09-21",
+    "headAtSliceStart": "ee0f9bb6d738c538e042f799e5fb6f9b20893a01"
+  },
+  "observedMainAtSliceStart": "bc1441eb8ff9a2df0e15e778b44b73f97eb63d76",
+  "donor": {
+    "path": "tools/KFB-ToolBox/_inbox/cloud-design-worldbuilding-2026-09-18/card-zone-lab-v3/KFB Card Zone Lab v2.dc.html",
+    "blob": "43eea82f8727d3581e50374d6263e48a28241d3b",
+    "role": "WORKING_PRODUCT_DONOR",
+    "sourceSeams": {
+      "fluids": "252-258",
+      "loadTex": "487-496",
+      "frameTime": "473",
+      "buildFluidSurface": "1010-1114",
+      "layoutFluid": "1118-1204",
+      "waterY": "712-733",
+      "riverPath": "772-786",
+      "riverTopAt": "810-828",
+      "riverHalf": "840",
+      "bankTopAt": "862+"
+    }
+  },
+  "exportedModule": "tools/KFB-ToolBox/_handover/CARD_ZONE_V2_FLUID_SHADER_SOURCE_2026-09-22/card-zone-v2-fluid-source.js",
+  "textureSources": [
+    {
+      "path": "media/3D_Assets/KFB/waterdudv.jpg",
+      "role": "dudv",
+      "colorSpace": "NoColorSpace",
+      "wrapping": "RepeatWrapping",
+      "anisotropy": 8
+    },
+    {
+      "path": "media/3D_Assets/KFB/water.jpg",
+      "role": "structure",
+      "colorSpace": "sRGB",
+      "wrapping": "RepeatWrapping",
+      "anisotropy": 8
+    }
+  ],
+  "benchPolicy": {
+    "paths": [
+      "tools/KFB-ToolBox/_inbox/KFB ToolBox Bench v1 - KFB Voxel Card Zone Lab 2 - Hex Assets Worldbuilding/kfb-toolbox-v1/",
+      "tools/KFB-ToolBox/_inbox/kfb-toolbox-v1.1/"
+    ],
+    "role": "FAILED_EXTRACTION_EVIDENCE_ONLY",
+    "sourceForThisExport": false
+  },
+  "dropboxCorroboration": {
+    "path": "/CLAUDE/KFB Card Viewer + Crda Zones + Combat Mech + Voxel World + Hex Assets Worldbuilding(5)/export/card-zone-lab-v3/KFB Card Zone Lab v2.dc.html",
+    "fileId": "id:KeQLaY5-IIAAAAAAAAbtow",
+    "observedSizeBytes": 144800,
+    "fullContentEqualityChecked": false,
+    "note": "Dropbox extraction did not expose the full HTML; metadata corroborates the named export and size only."
+  },
+  "verification": {
+    "sourceChecksPassed": 10,
+    "sourceChecksTotal": 10,
+    "browserVisual": "NOT_RUN",
+    "stage": "NONE",
+    "live": "NONE"
+  }
+}
