@@ -1,0 +1,11 @@
+{
+  "manifest_version":3,
+  "name":"KFB Legacy Web Pet",
+  "version":"0.1.0",
+  "description":"A KayKit Legacy character that walks, hops and camps on ordinary web pages.",
+  "permissions":["storage"],
+  "host_permissions":["https://raw.githubusercontent.com/*"],
+  "content_scripts":[{"matches":["<all_urls>"],"js":["content.js"],"run_at":"document_idle"}],
+  "web_accessible_resources":[{"resources":["frame.html","frame.js"],"matches":["<all_urls>"]}],
+  "content_security_policy":{"extension_pages":"script-src 'self'; object-src 'self'; connect-src https://raw.githubusercontent.com"}
+}
