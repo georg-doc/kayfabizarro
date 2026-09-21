@@ -546,3 +546,25 @@ Tests: **95/95 PASS**; runtime-critical JS syntax **4/4 PASS**.
 Stage: `e9f97c594bce46607e95928dd349cf081c36783d`.
 
 Next: reload the Stage and visually check the four Large lid colors.
+
+
+---
+
+## 2026-09-21 · Rig_Legacy 17-head batch
+
+Measurement run `35661858046` / job `106538705766`:
+- **24/24 static PASS**
+- **247/247 browser/WebGL PASS**
+- 17/17 source isolate + mount
+- 16 measured / 1 HUMAN_REQUIRED
+- artifact `10667124760`
+- digest `sha256:e95731117565bef97ef917d47bb2ff3529b64d01227223642db53ea401973f26`
+
+Persisted run `35662264764` / job `106539992446`:
+- **30/30 static/profile PASS**
+- **215/215 browser/WebGL PASS**
+- 17/17 persisted profiles reload and mount
+- artifact `10667790643`
+- digest `sha256:e7a8b41d8172c621aef3c1250d95c2e938db58cac761b83459fbe026cf8d8ba1`
+
+No public Stage proof in this slice yet.
