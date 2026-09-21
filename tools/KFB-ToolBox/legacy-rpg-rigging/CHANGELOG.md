@@ -57,3 +57,27 @@ Public Stage and human visual acceptance remain separate.
 
 Next gate:
 `KLR-KIT-01 · shared Legacy ActorRecipe + caller-seeded Character/Monster Randomizer`.
+
+
+## 2026-09-21 · KLR-KIT-01 pure core + frozen browser integration
+
+Added candidate:
+- strict LegacyActorRecipe;
+- caller-seeded randomizer;
+- no Math.random;
+- gameplay-field rejection;
+- Seed → Recipe authoring UI.
+
+Evidence:
+- **33/33 static PASS**
+- **16/16 ActorRecipe PASS**
+
+After two browser attempts, integration is frozen.
+
+Exact cause: the code-edit replacement collapsed an existing `$$('[data-mode]')` selector helper into `$('[data-mode]')`, causing `$(...).forEach is not a function` during seeded assembly.
+
+Frozen snapshot:
+`chatgpt-web/klr-kit-01-failed-2026-09-21@e3a06e3451637a8b447192113cab43f3ece84cd8`.
+
+Next gate:
+`KLR-KIT-F1 · one selector seam + one gate-16 browser recipe`.
