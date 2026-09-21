@@ -126,7 +126,8 @@
   },
   "visualReview": {
     "status": "LARGE_ACCEPTED_LID_COLOR_VISUAL_CHECK",
-    "nextGate": "Reload Stage and check that the four Large actors keep Georg's accepted profiles and no longer share the pink lid fallback."
+    "nextGate": "Reload Stage and check that the four Large actors keep Georg's accepted profiles and no longer share the pink lid fallback.",
+    "legacy": "KLR-EYE-VIS-01 · Front + 3/4 approve/adjust/reject all 17; Skull manual or unsupported"
   },
   "currentEvidenceHead": "40c2f920a96ea00bf99593610a49a646b2e0873c",
   "calibrationCheckpoint": "6f7d7988849cf0c74a6551a33ee422d8584c87c2",
@@ -255,5 +256,39 @@
     "sampler": "tools/KFB-ToolBox/eye-rig-batch/lib/face-color-sampler.v1.js",
     "behavior": "sample actor head/face texture near eye host; EyeRig v6 darkens sampled base",
     "gothGirl": "explicit face color remains authoritative"
+  },
+  "legacyEyeBatch": {
+    "status": "TECHNICAL_PASS_REVIEW_LANE_PUBLISHED_TO_BRANCH",
+    "route": "/kfb-hub/stage/toolbox/eye-rig-batch/legacy/",
+    "url": "https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/eye-rig-batch/legacy/",
+    "sourcePR": 162,
+    "sourceBranch": "chatgpt-web/legacy-eye-batch-17-2026-09-21",
+    "sourceHead": "7b1b52a60d64c9dc710514a59d1a7365f8a168e7",
+    "persistedTestedHead": "91cca48809fb8a86c8ea7a8326eb6637fa89a066",
+    "catalog": "./data/rig-legacy-heads.v0.json",
+    "seed": "./data/rig-legacy-default.v0.json",
+    "profiles": "./data/rig-legacy-auto.v1.json",
+    "profileCount": 17,
+    "measuredCandidates": 16,
+    "humanRequired": [
+      "skull"
+    ],
+    "sourceFirstEvidence": {
+      "run": 35661858046,
+      "checks": "24/24 static + 247/247 browser PASS",
+      "artifact": 10667124760,
+      "digest": "sha256:e95731117565bef97ef917d47bb2ff3529b64d01227223642db53ea401973f26"
+    },
+    "persistedEvidence": {
+      "run": 35662264764,
+      "checks": "30/30 static + 215/215 browser PASS",
+      "artifact": 10667790643,
+      "digest": "sha256:e7a8b41d8172c621aef3c1250d95c2e938db58cac761b83459fbe026cf8d8ba1"
+    },
+    "publicationBranch": "cloudflare-live",
+    "publicationHeadAtMetadataUpdate": null,
+    "repositoryReadback": "PASS · six previously missing Legacy lane dependencies copied exact from PR #162",
+    "publicVerified": false,
+    "nextGate": "KLR-EYE-VIS-01"
   }
 }
