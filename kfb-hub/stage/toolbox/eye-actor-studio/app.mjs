@@ -7,6 +7,8 @@ import {applyOval} from '../../../../tools/KFB-ToolBox/kfb-rigs-embed-v3/frizzle
 import {EyeCluster} from '../../../../tools/KFB-ToolBox/eye-actor-studio-v1/eye-cluster.v1.mjs';
 import {loadHostCatalog} from '../../../../tools/KFB-ToolBox/eye-actor-studio-v1/host-catalog.v1.mjs';
 import {HostRuntime} from '../../../../tools/KFB-ToolBox/eye-actor-studio-v1/host-runtime.v1.mjs';
+import {buildEars} from '../../../../tools/KFB-ToolBox/kfb-rigs-embed-v3/frizzlegraft-v1/ears.v2.js';
+import {buildCartoonEars,measuredFrizzleEarColors} from '../../../../tools/KFB-ToolBox/eye-actor-studio-v1/rabbit-ears-style.v1.mjs';
 
 const $=s=>document.querySelector(s),stage=$('#stage'),canvas=$('#view');
 const scene=new THREE.Scene();scene.background=new THREE.Color('#d8dfdc');
@@ -29,6 +31,7 @@ const loader=new GLTFLoader();
 
 let bundle=null,hostRuntime=null,activeHost=null,activeHostDef=null;
 let donorRig=null,donorBrow=null,cluster=null;
+let earApi=null,earMode='none';
 let mode='source',preset='pair-frontal',currentView='three';
 let hostLoadToken=0,lastHostId=null;
 let frameState={center:new THREE.Vector3(0,1.5,0),radius:2};
@@ -41,6 +44,48 @@ function disposeDonor(){
 }
 function disposeCluster(){
   cluster?.dispose?.();cluster=null;
+}
+function disposeEars(){
+  earApi?.dispose?.();earApi=null;
+}
+async function rebuildEars(){
+  disposeEars();
+  earMode=$('#earsMode').value;
+  const cartoon=earMode==='cartoon';
+  $('#earOuter').disabled=!cartoon;
+  $('#earInner').disabled=!cartoon;
+  $('#earInnerWidth').disabled=!cartoon;
+  if(earMode==='none'||!activeHost?.faceHost){
+    $('#earStatus').textContent='ears.v2 behavior owner · no ears mounted';
+    publish();return;
+  }
+  try{
+    if(earMode==='donor'){
+      earApi=await buildEars({THREE,loader,host:activeHost.faceHost,log});
+      const measured=await measuredFrizzleEarColors({THREE,loader});
+      $('#earOuter').value=measured.outer;
+      $('#earInner').value=measured.inner;
+      $('#earStatus').textContent='EXACT ears.v2 donor · '+earApi.report.tris+' tris · dangle owner unchanged';
+    }else{
+      earApi=await buildCartoonEars({
+        THREE,loader,host:activeHost.faceHost,
+        innerWidth:+$('#earInnerWidth').value,
+        log
+      });
+      if(earApi.status!=='OK')throw Error(earApi.reason||'cartoon ears unsupported');
+      $('#earOuter').value=earApi.report.outerColor;
+      $('#earInner').value=earApi.report.innerColor;
+      $('#earInnerWidth').value=earApi.report.innerWidth;
+      $('#earInnerWidthOut').textContent=Number(earApi.report.innerWidth).toFixed(2);
+      $('#earStatus').textContent='CARTOON v1 · rounded donor mesh · wide rim · Main / Main_Light zones';
+    }
+    publish();
+  }catch(e){
+    console.error(e);
+    earApi=null;
+    $('#earStatus').textContent='EAR UNSUPPORTED · '+e.message;
+    publish();
+  }
 }
 function faceColorInt(hex){
   const s=String(hex||'#d7a17d').replace('#','');
@@ -218,7 +263,7 @@ async function loadHost(id){
   $('#hostStatus').textContent='Loading exact source…';
   $('#hostSource').textContent=def.path||def.ownerCatalog||'Lab placeholder';
 
-  disposeDonor();disposeCluster();
+  disposeEars();disposeDonor();disposeCluster();
   try{
     const result=await hostRuntime.load(def,activeLegacyOptions());
     if(token!==hostLoadToken)return;
@@ -227,6 +272,7 @@ async function loadHost(id){
     $('#legacyModular').hidden=!modular;
     ensureCluster();
     applyMode();
+    await rebuildEars();
     setView(currentView);
     const rep=result.report;
     $('#hostStatus').className='source-line ok';
@@ -273,7 +319,8 @@ function publish(){
     host:hostRuntime?.report||null,
     hostId:lastHostId,
     donor:{eyeRig:'v6',browRig:'v2',eyeOval:'v1'},
-    cluster:cluster?.report?.()||null
+    cluster:cluster?.report?.()||null,
+    ears:{mode:earMode,report:earApi?.report||null}
   };
 }
 
@@ -294,6 +341,10 @@ $('#plus').onclick=()=>{if(mode==='cluster'&&cluster){cluster.addEye();syncUI();
 $('#reset').onclick=()=>{if(mode==='cluster'&&cluster){cluster.setPreset(preset);syncUI();publish();}};
 $('#debug').onchange=e=>{if(cluster){cluster.setDebug(e.target.value);syncUI();publish();}};
 $('#emanata').onchange=e=>{if(cluster){cluster.setEmanata(e.target.value);syncUI();publish();}};
+$('#earsMode').onchange=()=>rebuildEars();
+$('#earOuter').oninput=e=>{if(earMode==='cartoon'&&earApi?.setOuterColor){earApi.setOuterColor(e.target.value);publish();}};
+$('#earInner').oninput=e=>{if(earMode==='cartoon'&&earApi?.setInnerColor){earApi.setInnerColor(e.target.value);publish();}};
+$('#earInnerWidth').oninput=e=>{if(earMode==='cartoon'&&earApi?.setInnerWidth){earApi.setInnerWidth(+e.target.value);$('#earInnerWidthOut').textContent=(+e.target.value).toFixed(2);publish();}};
 $('#lidMode').onchange=e=>{if(mode==='cluster'&&cluster){cluster.updateSlot(cluster.selected,{lidMode:e.target.value});syncUI();publish();}};
 $('#lidThickness').oninput=e=>{if(mode==='cluster'&&cluster){cluster.updateSlot(cluster.selected,{lidThickness:+e.target.value});syncUI();publish();}};
 $('#lidCurve').oninput=e=>{if(mode==='cluster'&&cluster){cluster.updateSlot(cluster.selected,{lidCurve:+e.target.value});syncUI();publish();}};
@@ -328,6 +379,6 @@ boot().catch(e=>{
 const clock=new THREE.Clock();
 renderer.setAnimationLoop(()=>{
   const dt=Math.min(.05,clock.getDelta());
-  donorRig?.update?.(dt);donorBrow?.sync?.();
+  donorRig?.update?.(dt);donorBrow?.sync?.();earApi?.update?.(dt);
   orbit.update();renderer.render(scene,camera);publish();
 });
