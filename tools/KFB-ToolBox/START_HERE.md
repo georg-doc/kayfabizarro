@@ -78,6 +78,23 @@ This is additive to Stage-First and does not promote Animation Lab to a separate
 Current gate: Georg reviews the three actors' Idle → Walk → Run / phase-sync result and the Medium-vs-Large motion feel. Attachments remain proposals until their own visible gate.
 
 
+## CURRENT ADDITIVE · One RGB Texture / Triplanar Palette Lab · 2026-09-21
+
+A public-verified material/surface compatibility candidate now proves the same exact real mesh in two views: original source materials on the left, one shared RGB brush texture with object-space triplanar projection and three-color palette remap on the right.
+
+Handoff:
+`_handover/RGB_TRIPLANAR_PALETTE_LAB_2026-09-21/START_HERE.md`
+
+Draft PR: **#160**
+
+Public Stage:
+`https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/rgb-triplanar-palette-lab/`
+
+Evidence: **41/41 public browser PASS**, 0 failed resources, 0 page/console errors.
+
+The candidate reuses `media/3D_Assets/pet-surface.v1.js` triplanar grammar and does not replace that donor or any consumer runtime/material owner. Current gate: Georg judges whether the common painted surface language is useful. A hybrid zone-preserving adapter is next only if that visual gate passes.
+
+
 ## CURRENT ADDITIVE · ToolBox Home v2 · 2026-09-21
 
 ToolBox has one prominent Stage router at:
