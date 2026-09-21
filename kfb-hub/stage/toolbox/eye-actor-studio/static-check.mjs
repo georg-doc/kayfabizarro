@@ -53,7 +53,7 @@ ok('Legacy FaceHost owner reused',runtime.includes('buildLegacyFaceHost'));
 ok('Legacy head replacement owner reused',runtime.includes('replaceHead'));
 ok('static prop FaceHost isolated adapter',staticHost.includes('kfb.static-facehost/0.1-candidate'));
 ok('Rabbit ears reuse ears.v2 owner',ears.includes("from '../kfb-rigs-embed-v3/frizzlegraft-v1/ears.v2.js'"));
-ok('Rabbit ears smooth donor geometry',ears.includes('mergeVertices')&&ears.includes('smoothGeometry'));
+ok('Rabbit ears rounded measured outer shell',ears.includes('makeOuterCartoonGeometry')&&ears.includes('donor-measured-rounded-panel'));
 ok('Rabbit ears use Main and Main_Light donor zones',ears.includes("m.name==='Main'||m.name==='Main_Light'"));
 ok('Rabbit ears separate inner zone',ears.includes("kfb-inner-ear-zone"));
 ok('Rabbit ears preserve dangle update',ears.includes('update:dt=>base.update(dt)'));
