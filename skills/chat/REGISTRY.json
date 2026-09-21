@@ -565,8 +565,8 @@
       "sourcePack": "media/3D_Assets/KayKit Legacy/KayKit Dungeon Pack 1.0 2/",
       "intendedStage": "https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/legacy-rpg-rigging/",
       "publicVerified": false,
-      "tested": "Legacy base 29/29 static + 41/41 actor-switch + 44/44 browser; ActorRecipe 33/33 + 16/16; KLR-KIT-F1 2/2 selector + 21/21 isolated browser PASS",
-      "nextGate": "Resume KLR-KIT-01 three-seed browser matrix: gate-16 → gate-75 → gate-33 → repeat gate-16",
+      "tested": "Legacy base 29/29 static + 41/41 actor-switch + 44/44 browser; ActorRecipe 33/33 + 16/16; KLR-KIT-F1 2/2 selector + 21/21 isolated browser; KLR-KIT matrix 35/35 browser PASS",
+      "nextGate": "KLR-EYE-01 · Legacy Eye Batch 17/17 using existing EyeRig v6 / Eye Batch owner",
       "owns": [
         "Legacy RPG source catalog candidate",
         "Legacy authoring/calibration candidate",
@@ -579,7 +579,7 @@
         "Combat/Travel/Race/Town gameplay",
         "Pencil/CapsuleCarl/Eraser compatibility"
       ],
-      "note": "Legacy base is locally browser-proven. KLR-KIT-F1 resolved the selector regression on an isolated branch. Public Legacy Stage remains unverified; Combat/WhackMan consumer integration remains blocked until the three-seed matrix passes.",
+      "note": "Legacy base and seeded ActorRecipe/randomizer matrix are locally browser-proven. Public Legacy Stage remains unverified; Combat/WhackMan consumer integration remains deferred until the 17/17 Legacy Eye Batch profile gate.",
       "currentBranchHead": "0fbf240150fd32274cf93305c8014262b72b860a",
       "baseTestedHead": "5b2fa78220ec4127c1b761c4d7f7a8304dfb11e9",
       "actorKit": {
@@ -610,6 +610,21 @@
         "artifact": 10618729208,
         "digest": "sha256:d2983c413b975f3d00bfbfb87564c5b90e16be4a99deb1bcd29369a4cb335c64",
         "result": "33/33 static · 16/16 ActorRecipe · 2/2 selector · 21/21 browser PASS"
+      },
+      "klrKitMatrix": {
+        "branch": "chatgpt-web/klr-kit-matrix-2026-09-21",
+        "testedHead": "8197d8f1b6e1becc550b9eeb6d766b455a0b33ab",
+        "run": 35660231145,
+        "job": 106533462704,
+        "artifact": 10667035972,
+        "digest": "sha256:fb050fb44ceea245bfc1db1b243b47e2b2b811659b0e8d719616fecbcd09f625",
+        "result": "33/33 static · 16/16 ActorRecipe · 2/2 selector · 35/35 browser PASS"
+      },
+      "eyeBatchNext": {
+        "id": "KLR-EYE-01",
+        "target": "17/17 Legacy head identities",
+        "owner": "existing EyeRig v6 / Eye Batch profile owner",
+        "publicVerified": false
       }
     },
     {
