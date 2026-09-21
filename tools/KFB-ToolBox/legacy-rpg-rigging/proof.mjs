@@ -58,7 +58,7 @@ try{
     await page.locator('#bodySelect').dispatchEvent('change');
     await page.click('#assembleBtn');
     await page.waitForFunction(()=>document.querySelector('#rigStatus')?.textContent==='RIG_LEGACY',null,{timeout:120000});
-    await page.waitForFunction(()=>/30 native legacy clips/.test(document.querySelector('#motionStatus')?.textContent||''),null,{timeout:30000});
+    await page.waitForFunction(()=>document.querySelector('#stageMode')?.textContent==='ASSEMBLED' && /native Rig_Legacy/.test(document.querySelector('#motionStatus')?.textContent||''),null,{timeout:30000});
     const snap=await page.evaluate(()=>({
       rig:document.querySelector('#rigStatus')?.textContent,
       mode:document.querySelector('#stageMode')?.textContent,
@@ -69,8 +69,9 @@ try{
     check(id+' rig',snap.rig==='RIG_LEGACY',snap.rig);
     check(id+' assembled',snap.mode==='ASSEMBLED',snap.mode);
     check(id+' source identity',new RegExp(id,'i').test(snap.object),snap.object);
-    check(id+' 30 clips',/30 native legacy clips/.test(snap.motion),snap.motion);
-    check(id+' core parts',/"placed"/.test(snap.report)&&!/"missing": \[\s*"/.test(snap.report),snap.report.slice(0,180));
+    check(id+' native motion active',/native Rig_Legacy/.test(snap.motion),snap.motion);
+    check(id+' 30 clips',/"clips": 30/.test(snap.report),snap.report.slice(0,220));
+    check(id+' core parts',/"placed"/.test(snap.report)&&!/"missing": \[\s*"/.test(snap.report),snap.report.slice(0,220));
     assembled[id]=snap;
   }
 
