@@ -53,12 +53,14 @@ try{
 
     await page.screenshot({path:OUT+'/'+label+'-reference-front.png'});
 
-    await page.click('[data-view="three"]');await page.waitForTimeout(180);
+    await page.click('[data-view="three"]');
+    await page.waitForFunction(()=>document.documentElement.dataset.kfbUpperLidView==='three'&&window.__KFB_UPPER_LID_PROOF__?.view==='three');
     d=await page.evaluate(()=>window.__KFB_UPPER_LID_PROOF__);
     check(label+' 3/4 view state',d.view==='three',d.view);
     await page.screenshot({path:OUT+'/'+label+'-reference-three.png'});
 
-    await page.click('[data-view="side"]');await page.waitForTimeout(180);
+    await page.click('[data-view="side"]');
+    await page.waitForFunction(()=>document.documentElement.dataset.kfbUpperLidView==='side'&&window.__KFB_UPPER_LID_PROOF__?.view==='side');
     d=await page.evaluate(()=>window.__KFB_UPPER_LID_PROOF__);
     check(label+' side view state',d.view==='side',d.view);
     await page.screenshot({path:OUT+'/'+label+'-reference-side.png'});
