@@ -1,7 +1,7 @@
 # KFB ToolBox · KayKit Legacy RPG Rigging · Current Router
 
 **Date:** 2026-09-21  
-**Status:** LEGACY_BASE_LOCAL_BROWSER_PASS · KLR_KIT_MATRIX_PASS · LEGACY_EYE_BATCH_NEXT  
+**Status:** LEGACY_BASE_LOCAL_BROWSER_PASS · KLR_KIT_MATRIX_PASS · KLR_EYE_01_TECHNICAL_PASS · VISUAL_REVIEW_NEXT  
 **Owner:** KFB ToolBox / Rigging  
 **Implementation branch:** `chatgpt-web/toolbox-legacy-rpg-rigging-2026-09-21`  
 **Draft PR:** #155  
@@ -224,6 +224,68 @@ This is concept/research input only.
 
 ToolBox must not create WhackMan Maze, PlayerMotor, Ghost AI, score, pickups or power-up ownership.
 
+## KLR-EYE-01 · TECHNICAL PASS
+
+Draft PR:
+`#162 · feat(toolbox): Rig_Legacy EyeRig batch 17/17`
+
+Branch:
+`chatgpt-web/legacy-eye-batch-17-2026-09-21`
+
+Current branch head:
+`7b1b52a60d64c9dc710514a59d1a7365f8a168e7`
+
+Authoritative persisted-profile tested head:
+`91cca48809fb8a86c8ea7a8326eb6637fa89a066`
+
+Result:
+
+- **17/17 persisted Legacy head profiles**;
+- **16 MEASURED_CANDIDATE**;
+- **1 HUMAN_REQUIRED: Skull**;
+- EyeRig v6 remains eye runtime owner;
+- EyeOval remains shape helper;
+- existing `kfb.eye-profile/0.1-candidate` + `kfb.eye-profile-batch/0.2-candidate` reused;
+- source GLTF/GLB unchanged;
+- no shared Rig_Legacy class default invented.
+
+Automatic source-first generation:
+
+- run `35661858046`;
+- job `106538705766`;
+- **24/24 static PASS**;
+- **247/247 browser/WebGL PASS**;
+- 17/17 exact source isolate → assemble → measure/classify → EyeRig v6 mount;
+- 0 failed resources;
+- 0 page/console errors;
+- artifact `10667124760`;
+- digest `sha256:e95731117565bef97ef917d47bb2ff3529b64d01227223642db53ea401973f26`.
+
+Persisted-profile reconstruction:
+
+- run `35662264764`;
+- job `106539992446`;
+- **30/30 static/profile PASS**;
+- **215/215 browser/WebGL PASS**;
+- 17/17 saved profiles reloaded/remounted;
+- exact saved actor/source/anchor/status/face-color identity;
+- EyeRig eyeFrame present 17/17;
+- 0 failed resources;
+- 0 page/console errors;
+- artifact `10667790643`;
+- digest `sha256:e7a8b41d8172c621aef3c1250d95c2e938db58cac761b83459fbe026cf8d8ba1`.
+
+Full Return:
+
+`tools/KFB-ToolBox/eye-rig-batch/docs/RIG_LEGACY_EYE_BATCH_2026-09-21.md`
+
+Cloudflare publication branch now contains the complete Legacy review-lane file set under:
+
+`/kfb-hub/stage/toolbox/eye-rig-batch/legacy/`
+
+Public `pages.dev` runtime verification from this chat environment is still pending because DNS/Web fetch is unavailable here. Do not convert repository publication evidence into Georg visual approval.
+
+
 ## Stage status
 
 Intended route:
@@ -236,18 +298,17 @@ Do not publish the frozen KLR-KIT integration candidate.
 
 ## Exactly one next gate
 
-**KLR-EYE-01 · Legacy Eye Batch 17/17**
+**KLR-EYE-VIS-01 · 17-head human visual review**
 
-Reuse the existing EyeRig v6 / Eye Batch owner already used for Medium/Large.
+Direct intended review route:
 
-Required first outcome:
+`https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/eye-rig-batch/legacy/`
 
-- all 17 Legacy head identities are source-isolated and measured or explicitly classified;
-- one default EyeRig profile per Legacy head identity;
-- profiles stored as data, not hardcoded inside Combat/WhackMan;
-- no source geometry mutation;
-- browser batch proof that each profile mounts on its intended head;
-- eye tracking/blink/lids remain EyeRig-owned;
-- human visual approval remains separate from automated fit.
+Review all 17 heads in Front + 3/4:
 
-Do not start Combat ranged/melee integration before this 17/17 face-profile gate.
+- approve / adjust / reject per profile;
+- verify EyeRig placement separately from source-eye cleanup;
+- Skull must receive manual placement or remain unsupported;
+- only accepted/adjusted profiles become Combat-ready.
+
+Combat ranged/melee integration starts only after this visual profile gate.
