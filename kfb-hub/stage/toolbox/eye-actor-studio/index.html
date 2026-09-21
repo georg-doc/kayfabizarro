@@ -46,6 +46,13 @@ main{min-height:0;display:grid;grid-template-columns:270px minmax(0,1fr) 320px}.
 <div class="group"><h2>Slots</h2><div id="slots" class="slot-list"></div></div>
 <div class="group"><h2>View</h2><div class="toolbar"><button data-view="front">Front</button><button data-view="three">3/4</button><button data-view="side">Side</button><button data-view="top">Top</button></div></div>
 <div class="group"><h2>Debug</h2><select id="debug"><option value="natural">Natural materials</option><option value="zones">Material zones</option></select><select id="emanata"><option value="none">No emanata</option><option value="sweat">3D sweat</option><option value="soot">Soot dots</option></select></div>
+<div class="group"><h2>Rabbit ears · donor A/B</h2>
+<div class="stack"><select id="earsMode"><option value="none">No rabbit ears</option><option value="donor">Exact ears.v2 donor</option><option value="cartoon">Cartoon style v1</option></select></div>
+<div class="row"><label>outer</label><input id="earOuter" type="color" value="#f2c83c"><output></output></div>
+<div class="row"><label>inner</label><input id="earInner" type="color" value="#e6b671"><output></output></div>
+<div class="row"><label>inner width</label><input id="earInnerWidth" type="range" min=".42" max=".78" step=".01" value=".60"><output id="earInnerWidthOut">.60</output></div>
+<div id="earStatus" class="source-line">ears.v2 behavior owner · no ears mounted</div>
+</div>
 <div class="group"><h2>Architecture</h2><div class="tiny">Source identity stays with Legacy RPG / EyeRig Batch catalogs. EyeRig v6 remains behavior donor. Eye Cluster is companion authoring state.</div></div>
 </aside>
 <section class="stage" id="stage"><canvas id="view"></canvas><div class="host-badge" id="hostBadge">Source loading…</div><div class="hud"><span id="status">Booting…</span><span id="orient">—</span></div></section>
