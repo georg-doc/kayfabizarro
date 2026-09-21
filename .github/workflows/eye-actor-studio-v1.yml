@@ -5,7 +5,12 @@ on:
       - chatgpt-web/toolbox-eye-actor-studio-v1-2026-09-21
     paths:
       - 'tools/KFB-ToolBox/eye-actor-studio-v1/**'
+      - 'tools/KFB-ToolBox/legacy-rpg-rigging/lib/**'
+      - 'tools/KFB-ToolBox/legacy-rpg-rigging/data/catalog.v1.json'
+      - 'tools/KFB-ToolBox/eye-rig-batch/data/**'
       - 'kfb-hub/stage/toolbox/eye-actor-studio/**'
+      - 'skills/KFB_3D_CartoonStyle_v1.md'
+      - 'skills/KFB_3D_CartoonStyle_v1.html'
       - '.github/workflows/eye-actor-studio-v1.yml'
       - 'skills/chat/workflows/KFB_EYE_ACTOR_STUDIO_V1_2026-09-21/**'
   workflow_dispatch:
@@ -14,7 +19,7 @@ permissions:
 jobs:
   proof:
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 20
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -26,6 +31,11 @@ jobs:
           node --check tools/KFB-ToolBox/eye-actor-studio-v1/clay-lid.v1.mjs
           node --check tools/KFB-ToolBox/eye-actor-studio-v1/poses.v1.mjs
           node --check tools/KFB-ToolBox/eye-actor-studio-v1/eye-cluster.v1.mjs
+          node --check tools/KFB-ToolBox/eye-actor-studio-v1/host-catalog.v1.mjs
+          node --check tools/KFB-ToolBox/eye-actor-studio-v1/host-runtime.v1.mjs
+          node --check tools/KFB-ToolBox/eye-actor-studio-v1/static-facehost.v1.mjs
+          node --check tools/KFB-ToolBox/legacy-rpg-rigging/lib/legacy-rig-adapter.v1.js
+          node --check tools/KFB-ToolBox/legacy-rpg-rigging/lib/legacy-facehost.v1.js
           node --check kfb-hub/stage/toolbox/eye-actor-studio/app.mjs
       - name: Install browser
         run: |
