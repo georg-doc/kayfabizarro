@@ -1,4 +1,3 @@
-import {mergeVertices} from 'three/addons/utils/BufferGeometryUtils.js';
 import {buildEars} from '../kfb-rigs-embed-v3/frizzlegraft-v1/ears.v2.js';
 
 export const SCHEMA='kfb.rabbit-ear-style/0.1-candidate';
@@ -22,34 +21,47 @@ async function donorColors(THREE,loader){
   };
 }
 
-function smoothGeometry(THREE,source,{iterations=2,strength=.13}={}){
-  let g=mergeVertices(source.clone(),1e-4);
-  if(!g.index)g=g.toNonIndexed();
-  if(!g.index){g.computeVertexNormals();return g;}
-  const pos=g.attributes.position;
-  const n=pos.count,adj=Array.from({length:n},()=>new Set());
-  const ix=g.index;
-  for(let i=0;i<ix.count;i+=3){
-    const a=ix.getX(i),b=ix.getX(i+1),c=ix.getX(i+2);
-    adj[a].add(b).add(c);adj[b].add(a).add(c);adj[c].add(a).add(b);
-  }
-  let cur=Float32Array.from(pos.array);
-  for(let it=0;it<iterations;it++){
-    const next=Float32Array.from(cur);
-    for(let i=0;i<n;i++){
-      const ns=adj[i];if(!ns.size)continue;
-      let ax=0,ay=0,az=0;
-      for(const j of ns){ax+=cur[j*3];ay+=cur[j*3+1];az+=cur[j*3+2];}
-      ax/=ns.size;ay/=ns.size;az/=ns.size;
-      next[i*3]=cur[i*3]+(ax-cur[i*3])*strength;
-      next[i*3+1]=cur[i*3+1]+(ay-cur[i*3+1])*strength*.45;
-      next[i*3+2]=cur[i*3+2]+(az-cur[i*3+2])*strength;
-    }
-    cur=next;
-  }
-  pos.array.set(cur);pos.needsUpdate=true;
-  g.computeVertexNormals();g.computeBoundingBox();g.computeBoundingSphere();
-  return g;
+function makeOuterCartoonGeometry(THREE,source){
+  source.computeBoundingBox();
+  const bb=source.boundingBox;
+  const size=bb.getSize(new THREE.Vector3());
+  const w=Math.max(.04,size.x*1.08);
+  const h=Math.max(.08,size.y);
+  const depth=Math.max(.025,size.z*.88,w*.18);
+  const half=w/2;
+
+  // One continuous toy/clay silhouette: narrower grown-in base, broad soft body, round tip.
+  const shape=new THREE.Shape();
+  shape.moveTo(-half*.30,0);
+  shape.quadraticCurveTo(-half*.54,h*.07,-half*.57,h*.24);
+  shape.quadraticCurveTo(-half*.58,h*.54,-half*.40,h*.78);
+  shape.quadraticCurveTo(-half*.22,h*.98,0,h);
+  shape.quadraticCurveTo( half*.22,h*.98, half*.40,h*.78);
+  shape.quadraticCurveTo( half*.58,h*.54, half*.57,h*.24);
+  shape.quadraticCurveTo( half*.54,h*.07, half*.30,0);
+  shape.quadraticCurveTo(0,-h*.035,-half*.30,0);
+
+  const bevel=Math.max(.004,Math.min(w*.055,h*.022,depth*.22));
+  const geo=new THREE.ExtrudeGeometry(shape,{
+    depth,
+    steps:1,
+    curveSegments:24,
+    bevelEnabled:true,
+    bevelThickness:bevel*.85,
+    bevelSize:bevel,
+    bevelOffset:0,
+    bevelSegments:5
+  });
+  geo.translate(0,0,-depth/2);
+  geo.computeVertexNormals();
+  geo.computeBoundingBox();
+  geo.computeBoundingSphere();
+  geo.userData={
+    kfbRabbitEarOuter:true,
+    sourceSize:[size.x,size.y,size.z],
+    style:'donor-measured-rounded-panel'
+  };
+  return geo;
 }
 
 function makeInnerZone(THREE,outerGeo,color,{innerWidth=.60,innerLength=.80}={}){
@@ -98,7 +110,7 @@ function makeInnerZone(THREE,outerGeo,color,{innerWidth=.60,innerLength=.80}={})
 
 export async function buildCartoonEars({
   THREE,loader,host,place={},outerColor=null,innerColor=null,
-  innerWidth=.60,innerLength=.80,smoothIterations=4,smoothStrength=.16,log=()=>{}
+  innerWidth=.60,innerLength=.80,log=()=>{}
 }={}){
   if(!THREE||!loader||!host)return {status:'UNSUPPORTED',reason:'missing THREE/loader/host'};
   const colors=await donorColors(THREE,loader);
@@ -114,7 +126,7 @@ export async function buildCartoonEars({
     if(!o.isMesh||!/^ear[LR]$/.test(o.name||''))return;
     outerMeshes.push(o);
     const old=o.geometry;
-    const rounded=smoothGeometry(THREE,old,{iterations:smoothIterations,strength:smoothStrength});
+    const rounded=makeOuterCartoonGeometry(THREE,old);
     o.geometry=rounded;old.dispose();
     o.material=o.material.clone();
     o.material.color.copy(outer);o.material.roughness=.84;o.material.metalness=0;o.material.flatShading=false;o.material.needsUpdate=true;
@@ -127,7 +139,7 @@ export async function buildCartoonEars({
     outerColor:'#'+outer.getHexString(),
     innerColor:'#'+inner.getHexString(),
     outerMeshes:outerMeshes.length,innerZones:innerMeshes.length,
-    innerWidth,innerLength,smoothIterations,smoothStrength,innerGeometry:'rounded-extruded-panel',
+    innerWidth,innerLength,outerGeometry:'donor-measured-rounded-panel',innerGeometry:'rounded-extruded-panel',
     behaviorOwner:'kfb.ears/0.2'
   };
   log('Rabbit ears cartoon style · '+report.outerColor+' / '+report.innerColor+' · '+innerMeshes.length+' inner zones');
