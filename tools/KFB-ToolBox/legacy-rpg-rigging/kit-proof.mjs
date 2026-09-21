@@ -26,7 +26,11 @@ try{
   check('randomizer UI exists',await page.locator('#recipeSeed').count()===1&&await page.locator('#randomizeBtn').count()===1);
   check('WebGL canvas',await page.locator('#stage canvas').count()===1);
 
-  const seeds=['arena-legacy-001','whackman-ghost-001','kfb-kit-001'];
+  await page.waitForFunction(()=>document.querySelector('#loading')?.hidden===true,null,{timeout:60000});
+  check('initial source isolate settled',await page.locator('#loading').evaluate(el=>el.hidden===true));
+
+  // Pass-2 diagnostic matrix: alternate head/no weapon → embedded head/no weapon → simple sword.
+  const seeds=['gate-16','gate-75','gate-33'];
   const recipes={};
   let previousReady='';
 
@@ -37,11 +41,18 @@ try{
     await page.waitForFunction(
       ({seed,prev})=>{
         const d=document.documentElement.dataset;
-        return d.recipeSeed===seed&&d.assemblyState==='ready'&&d.assemblyReady&&d.assemblyReady!==prev;
+        return d.recipeSeed===seed&&d.assemblyRequest&&d.assemblyRequest!==prev&&(d.assemblyState==='ready'||d.assemblyState==='error');
       },
       {seed,prev:previousReady},
       {timeout:120000}
     );
+    const state=await page.evaluate(()=>({
+      assemblyState:document.documentElement.dataset.assemblyState,
+      assemblyRequest:document.documentElement.dataset.assemblyRequest,
+      assemblyReady:document.documentElement.dataset.assemblyReady,
+      report:document.querySelector('#assemblyReport')?.textContent||''
+    }));
+    check(seed+' assembly state',state.assemblyState==='ready',state.report.slice(0,600));
     const report=JSON.parse(await page.locator('#recipeReport').textContent());
     const selected=await page.evaluate(()=>({
       body:document.querySelector('#bodySelect')?.value,
@@ -71,11 +82,13 @@ try{
   await page.waitForFunction(
     ({seed,prev})=>{
       const d=document.documentElement.dataset;
-      return d.recipeSeed===seed&&d.assemblyState==='ready'&&d.assemblyReady&&d.assemblyReady!==prev;
+      return d.recipeSeed===seed&&d.assemblyRequest&&d.assemblyRequest!==prev&&(d.assemblyState==='ready'||d.assemblyState==='error');
     },
     {seed,prev:previousReady},
     {timeout:120000}
   );
+  const repeatState=await page.evaluate(()=>({state:document.documentElement.dataset.assemblyState,report:document.querySelector('#assemblyReport')?.textContent||''}));
+  check('repeat seed assembly state',repeatState.state==='ready',repeatState.report.slice(0,600));
   const repeated=JSON.parse(await page.locator('#recipeReport').textContent());
   check('same seed reconstructs same recipe',JSON.stringify(repeated.recipe)===JSON.stringify(first.recipe));
   check('same seed reconstructs same key',repeated.key===first.key,repeated.key);
