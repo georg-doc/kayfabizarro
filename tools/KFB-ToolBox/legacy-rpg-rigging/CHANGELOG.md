@@ -57,3 +57,21 @@ Public Stage and human visual acceptance remain separate.
 
 Next gate:
 `KLR-KIT-01 · shared Legacy ActorRecipe + caller-seeded Character/Monster Randomizer`.
+
+
+## 2026-09-21 · KLR-KIT multi-recipe matrix PASS
+
+The repaired F1 runtime completed the deferred seeded recipe matrix without further runtime changes.
+
+Browser/WebGL:
+**35/35 PASS**
+
+Sequence:
+`gate-16 → gate-75 → gate-33 → repeat gate-16`.
+
+Repeat seed reconstructed the exact recipe and recipe key. Three starting seeds produced three distinct recipes. Zero failed resources and zero page/console errors.
+
+The Baukasten/randomizer gate is complete enough to move to the requested face layer.
+
+Next:
+`KLR-EYE-01 · Legacy Eye Batch 17/17`.
