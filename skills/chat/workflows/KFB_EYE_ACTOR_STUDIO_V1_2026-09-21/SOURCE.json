@@ -1,0 +1,87 @@
+{
+  "schema": "kfb.eye-actor-studio-v1-source/0.1",
+  "date": "2026-09-21",
+  "status": "TECHNICAL_BROWSER_PASS_GPT_WORKBENCH_READY_PUBLIC_STAGE_OPEN",
+  "repo": "georg-doc/kayfabizarro",
+  "branch": "chatgpt-web/toolbox-eye-actor-studio-v1-2026-09-21",
+  "baseMain": "66d6d96b5e8f6ef8fb06a0888baa70d822fb9a69",
+  "testedHead": "cfead6b064a36075f3c360217ed42c92b065bec3",
+  "owner": "KFB ToolBox / Rigging · existing EyeRig authoring line",
+  "donors": {
+    "eyeRigV6": {
+      "path": "tools/KFB-ToolBox/kfb-rigs-embed-v3/petstudio-v9/studio-v12/pet-eye-rig.v6.js",
+      "blob": "853bcf5fb090dd6564fda8bc83d0b4cb527e6b26"
+    },
+    "browRigV2": {
+      "path": "tools/KFB-ToolBox/kfb-rigs-embed-v3/petstudio-v9/studio-v12/brow-rig.v2.js",
+      "blob": "ccc91a7f48adbf999ed33ca1708bbe5d1c738d0f"
+    },
+    "eyeOvalV1": {
+      "path": "tools/KFB-ToolBox/kfb-rigs-embed-v3/frizzlegraft-v1/eyeoval.v1.js"
+    }
+  },
+  "implementation": {
+    "cluster": "tools/KFB-ToolBox/eye-actor-studio-v1/eye-cluster.v1.mjs",
+    "clayLid": "tools/KFB-ToolBox/eye-actor-studio-v1/clay-lid.v1.mjs",
+    "poses": "tools/KFB-ToolBox/eye-actor-studio-v1/poses.v1.mjs",
+    "stageSource": "kfb-hub/stage/toolbox/eye-actor-studio/",
+    "presets": [
+      "pair-frontal",
+      "pair-asymmetric",
+      "pair-frog-side",
+      "single-eye",
+      "three-eye",
+      "four-eye"
+    ],
+    "eyeCount": [
+      1,
+      4
+    ],
+    "perEye": [
+      "position XYZ",
+      "size",
+      "shape W/H/D",
+      "Pitch/Yaw/Roll",
+      "quaternion",
+      "gaze",
+      "lid state"
+    ]
+  },
+  "evidence": {
+    "workflowRun": 35582435688,
+    "job": 106278127789,
+    "static": "20/20 PASS",
+    "syntax": "4/4 PASS",
+    "browser": "22/22 PASS",
+    "viewports": [
+      "1440x900",
+      "390x844"
+    ],
+    "failedResources": 0,
+    "pageErrors": 0,
+    "artifactId": 10630529454,
+    "artifactDigest": "sha256:17267649b1bf41192a6e8233c8f6d23dc5e162021fad97965b30dc98e44bcbb0"
+  },
+  "gptWorkbench": {
+    "status": "READY_IN_CURRENT_CHAT",
+    "note": "Single-file sandbox mirror for rapid iteration. It is not KFB PUBLIC_VERIFIED or donor acceptance evidence."
+  },
+  "intendedStage": "https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/eye-actor-studio/",
+  "publicVerified": false,
+  "humanAccepted": false,
+  "openVisual": [
+    "Clay lids on extreme frog orientation read rim/wedge-like",
+    "human review of eye-cluster coherence",
+    "real Batch actor not yet integrated"
+  ],
+  "deferred": [
+    "Hunky",
+    "Dory",
+    "Legacy Buddies",
+    "props",
+    "vehicles",
+    "plants",
+    "special pupil FX"
+  ],
+  "nextGate": "EAS1-VIS-1 · Georg visual review in GPT workbench; no Cloudflare dependency"
+}

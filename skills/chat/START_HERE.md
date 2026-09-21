@@ -400,3 +400,19 @@ Return and recovery live on PR #157 under `skills/chat/workflows/LEGACY_WEB_PET_
 Intended Stage `https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/legacy-web-pet/` is **NOT PUBLISHED / NOT PUBLIC_VERIFIED**.
 
 Exactly one next gate: **LWP-EXT-F1 · extension-load observability** — identify the first missing transition in `CONTENT_ENTRY → HOST_CREATED → FRAME_INSERTED → FRAME_LOADED | FRAME_ERROR → PET_READY` before changing runtime behavior.
+
+## 2026-09-21 · Eye Actor Studio v1 · working candidate
+
+Draft PR #159 on branch chatgpt-web/toolbox-eye-actor-studio-v1-2026-09-21.
+
+Fresh candidate from main@66d6d96b5e8f6ef8fb06a0888baa70d822fb9a69. It reuses exact EyeRig v6, BrowRig v2 and EyeOval v1 donors and adds a Studio-local Eye Cluster for 1–4 independent eyes.
+
+Per-eye authoring now includes XYZ position, overall size, W/H/D, Pitch/Yaw/Roll, quaternion export, local gaze and Clay/shell lids.
+
+Evidence at cfead6b064a36075f3c360217ed42c92b065bec3: 20/20 static + 4/4 syntax + 22/22 desktop/mobile WebGL PASS, 0 failed resources/errors.
+
+A standalone GPT/sandbox workbench mirror is ready in the current chat for rapid iteration. It is not PUBLIC_VERIFIED.
+
+Intended Stage: https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/eye-actor-studio/
+
+Current next gate: EAS1-VIS-1 · Georg visual review in GPT workbench.

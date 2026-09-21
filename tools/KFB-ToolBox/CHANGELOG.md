@@ -115,3 +115,20 @@ No consumer movement/physics owner changed. Animation Lab remains an unpromoted 
 
 ### NEXT
 Human three-actor motion review. Attachment proposals remain a separate visible gate.
+
+## 2026-09-21 · Eye Actor Studio v1
+
+### IMPLEMENTATION
+PR #159 adds a Studio-local Eye Cluster over existing EyeRig owners. 1–4 eyes can be independently placed, sized, non-uniformly shaped and rotated in Pitch/Yaw/Roll.
+
+### TESTED
+20/20 static + 4/4 syntax + 22/22 desktop/mobile WebGL PASS at cfead6b064a36075f3c360217ed42c92b065bec3.
+
+### WORKBENCH
+A single-file GPT/sandbox mirror exists for immediate design iteration. It is not a public acceptance route.
+
+### OPEN
+Clay-lid massing at extreme frog orientation remains visually open. Hunky/Dory stay deferred.
+
+### NEXT
+EAS1-VIS-1 human visual review.

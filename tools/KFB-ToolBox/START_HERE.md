@@ -97,3 +97,17 @@ Briefs:
 - `../../skills/chat/workflows/KFB_TOOLBOX_FLUID_CARD_VOXEL_CONSOLIDATION_V1_2026-09-21/START_HERE.md`
 - `../../skills/chat/workflows/KFB_THEATRE_CURTAIN_CORE_V2_2026-09-21/START_HERE.md`
 - `../../skills/chat/workflows/KFB_PLAYABLE_MVP_CONSOLIDATION_V1_2026-09-21/START_HERE.md`
+
+## CURRENT ADDITIVE · Eye Actor Studio v1 · 2026-09-21
+
+Draft PR #159 is a working ToolBox candidate, not yet a current public tool.
+
+Features: exact EyeRig v6/BrowRig v2/EyeOval v1 donor mode; Eye Cluster 1–4; per-eye XYZ, size, W/H/D, Pitch/Yaw/Roll; asymmetric/frog/three/four-eye fixtures; Clay lids; scoped acting.
+
+Evidence: 20/20 static · 4/4 syntax · 22/22 desktop/mobile WebGL PASS at cfead6b064a36075f3c360217ed42c92b065bec3.
+
+A GPT/sandbox mirror is available in the active chat for fast iteration. Cloudflare is not required for this design loop.
+
+Intended Stage remains https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/eye-actor-studio/ and is not PUBLIC_VERIFIED.
+
+Current gate: EAS1-VIS-1.

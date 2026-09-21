@@ -655,6 +655,25 @@
       ],
       "nextGate": "LWP-EXT-F1 · extension-load observability: CONTENT_ENTRY → HOST_CREATED → FRAME_INSERTED → FRAME_LOADED|FRAME_ERROR → PET_READY",
       "note": "Web/Hub candidate is technically green but branch-only. Chrome extension build is source-valid; injection is unresolved and frozen after two attempts. No public Stage or canonical Hub mount."
+    },
+    {
+      "id": "eye-actor-studio-v1",
+      "kind": "tool-candidate",
+      "status": "EXPERIMENTAL",
+      "version": "1",
+      "repository": "georg-doc/kayfabizarro",
+      "path": "tools/KFB-ToolBox/eye-actor-studio-v1/",
+      "branch": "chatgpt-web/toolbox-eye-actor-studio-v1-2026-09-21",
+      "draftPR": 159,
+      "owner": "KFB ToolBox / Rigging · existing EyeRig authoring line",
+      "testedHead": "cfead6b064a36075f3c360217ed42c92b065bec3",
+      "tested": "20/20 static + 4/4 syntax + 22/22 desktop/mobile WebGL PASS",
+      "gptWorkbench": "READY_IN_CURRENT_CHAT_ONLY",
+      "intendedStage": "https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/eye-actor-studio/",
+      "publicVerified": false,
+      "humanAccepted": false,
+      "nextGate": "EAS1-VIS-1 · Georg visual review in GPT workbench",
+      "note": "Eye Cluster supports 1–4 independent eyes with per-eye XYZ, size, W/H/D and Pitch/Yaw/Roll. GPT sandbox mirror is an iteration surface, not KFB Stage."
     }
   ],
   "failureRecoveryTemplate": "skills/chat/templates/CLAUDE_DESIGN_FAILURE_RECOVERY_EXPORT.md"

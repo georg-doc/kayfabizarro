@@ -1026,3 +1026,17 @@ GitHub/cloudflare-live branch state is not a public browser PASS. Exact `kayfabi
 - Per two-pass rule the extension gate is frozen. Artifact `10619267683`, digest `sha256:da9bdfa9e0dd03c83f4335e61963449b7d559fc91e892867dd2c98843f361bf3`, contains Web evidence only; validated extension ZIP packaging was skipped.
 - Branch-only Hub mount candidate uses `?pet=0` opt-out; canonical Hub and Cloudflare runtime remain unchanged.
 - Next gate: **LWP-EXT-F1 · extension-load observability only**.
+
+## 2026-09-21 · Eye Actor Studio v1 working candidate
+
+### IMPLEMENTED
+Fresh PR #159 adds exact donor mode plus Eye Cluster 1–4, per-eye size/shape and Pitch/Yaw/Roll, asymmetric/frog/single/three/four-eye fixtures, Clay lids, scoped pose shelf and GPT workbench mirror.
+
+### TESTED
+cfead6b064a36075f3c360217ed42c92b065bec3: 20/20 static + 4/4 syntax + 22/22 desktop/mobile WebGL PASS; 0 failed resources/page errors.
+
+### EVIDENCE BOUNDARY
+GPT sandbox mirror is for rapid iteration only. Intended Cloudflare Stage remains not PUBLIC_VERIFIED. Clay lids in the extreme frog fixture remain visually heavy/rim-like and are left open for Georg review.
+
+### NEXT
+EAS1-VIS-1 · visual review in GPT workbench before Cloudflare publication or Hunky/Dory integration.
