@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="kfb-build" content="KFB-HYBRID-SURFACE-SCENE-01">
+<title>KFB ToolBox · Hybrid Surface Scene Lab</title>
+<link rel="icon" href="data:,">
+<style>
+:root{font-family:Inter,system-ui,sans-serif;color-scheme:dark;background:#151718;color:#efe9de}
+*{box-sizing:border-box}html,body{margin:0;width:100%;height:100%;overflow:hidden}body{background:#151718}
+#stage{position:fixed;inset:0;background:radial-gradient(circle at 48% 34%,#49443a 0,#2b2b27 45%,#151718 100%)}
+canvas.webgl{display:block;width:100%;height:100%}
+header{position:fixed;left:0;right:0;top:0;z-index:5;display:flex;align-items:center;gap:12px;padding:10px 14px;background:linear-gradient(#121313e8,#121313a8,transparent);pointer-events:none}
+header .title{font-weight:800;font-size:13px;letter-spacing:.04em}
+header .sub{font:10px/1.35 ui-monospace,monospace;color:#c8c0b5}
+.controls{position:fixed;left:50%;bottom:12px;z-index:6;transform:translateX(-50%);display:flex;align-items:center;gap:6px;flex-wrap:wrap;justify-content:center;width:min(920px,calc(100vw - 20px));padding:7px 8px;border:1px solid #ffffff24;background:#151718e8;backdrop-filter:blur(8px);border-radius:7px}
+button,input{font:11px system-ui}button{cursor:pointer;padding:6px 9px;border-radius:5px;border:1px solid #ffffff26;background:#282a28;color:#eee7db}button.active{background:#5a4930;border-color:#d0ad72}
+label{display:flex;gap:6px;align-items:center;font:10px ui-monospace,monospace;color:#c8c0b5}input[type=range]{width:92px}
+.sep{width:1px;height:24px;background:#ffffff22;margin:0 2px}
+#legend{position:fixed;left:12px;bottom:58px;z-index:5;font:9px/1.45 ui-monospace,monospace;background:#101212c4;border:1px solid #ffffff1c;border-radius:5px;padding:7px 8px;color:#cfc6b8;max-width:420px}
+#legend b{color:#f2d9a6}
+#status{position:fixed;right:12px;bottom:58px;z-index:5;font:9px/1.45 ui-monospace,monospace;text-align:right;color:#cfc6b8;text-shadow:0 1px 4px #000;max-width:360px}
+#status strong{color:#f2d9a6}.error{color:#ff9a8d!important}
+#mask{position:fixed;right:12px;top:46px;z-index:4;width:72px;padding:4px;background:#111b;border:1px solid #ffffff22;border-radius:5px}
+#mask canvas{display:block;width:62px;height:62px}#mask span{display:block;text-align:center;font:7px ui-monospace,monospace;color:#c7bbaa;margin-top:3px}
+@media(max-width:760px){
+ header{padding:8px 10px}.controls{bottom:8px}.sep{display:none}#legend{display:none}#status{left:10px;right:auto;text-align:left;bottom:86px;max-width:230px}#mask{width:58px;right:8px;top:42px}#mask canvas{width:48px;height:48px}
+}
+</style>
+<script type="importmap">
+{"imports":{
+  "three":"https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+  "three/addons/":"https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
+}}
+</script>
+</head>
+<body>
+<div id="stage"></div>
+<header><div class="title">KFB ToolBox · Hybrid Surface Scene Lab</div><div class="sub">REAL ASSETS · Dungeon room + Legacy / Medium / Large / GothGirl / FrizzleBob</div></header>
+<div id="mask"><div id="maskMount"></div><span>one shared RGB brush texture</span></div>
+<div id="legend"><b>Exact source cast</b><br>Legacy Orc A · ActionFigure / Rig_Medium · GothGirl / Rig_Medium · FrizzleBob Driver Graft · Black Knight / Rig_Large<br><b>Exact room donor</b> · World Atlas Dungeon promo recipe, KayKit Dungeon 1.1</div>
+<div id="status">Loading exact donors…</div>
+<div class="controls">
+  <button data-view="integrated" class="active">Dungeon + Cast</button>
+  <button data-view="room">Room only</button>
+  <button data-view="cast">Cast only</button>
+  <span class="sep"></span>
+  <button data-look="original">Original</button>
+  <button data-look="hybrid" class="active">Hybrid overlay</button>
+  <span class="sep"></span>
+  <label>Overlay <b id="strengthOut">0.34</b><input id="strength" type="range" min="0" max=".75" step=".01" value=".34"></label>
+  <label>Pattern <b id="scaleOut">L</b><input id="scale" type="range" min=".45" max="1.6" step=".05" value=".70"></label>
+</div>
+<script type="module" src="./lab.mjs"></script>
+</body>
+</html>
