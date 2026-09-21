@@ -125,3 +125,23 @@ macro mass first, visible rounding, toy thickness, few color zones, matte/satin 
 WSA should extend it additively with measured examples and problem→cause→repair→evidence entries.
 
 Current Eye Actor Studio v1 is the first active consumer for Clay lids and Rabbit Ear Style v1. Tool ownership remains unchanged.
+
+
+## CURRENT ADDITIVE · Eye Actor Studio host/ears evidence · 2026-09-21
+
+Current tested runtime head:
+`64d16e754a3b149efa64f2b7f3045d42f32e4bca`
+
+Evidence:
+**51/51 static · 10/10 syntax · 53/53 browser PASS**.
+
+Source-first Studio defaults to Legacy PrototypePete and consumes the existing Medium/Large/Legacy catalogs rather than creating a second roster.
+
+Rabbit Ear Style v1 is a presentation adapter only:
+- exact `ears.v2` remains geometry-measurement/placement/pivot/dangle donor;
+- current Cartoon shell is donor-dimension-driven and rounded;
+- separate inner zone;
+- FrizzleBob `Main` / `Main_Light` colour defaults;
+- Georg visual acceptance still open.
+
+Next gate: `EAS1-VIS-2`.
