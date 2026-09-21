@@ -45,7 +45,7 @@ jobs:
       - name: Chrome extension arbitrary-page proof
         env:
           KFB_PET_EVIDENCE: legacy-web-pet-evidence/extension
-        run: xvfb-run -a node kfb-hub/stage/toolbox/legacy-web-pet/extension-proof.mjs
+        run: node kfb-hub/stage/toolbox/legacy-web-pet/extension-proof.mjs
       - name: Package extension
         run: |
           cd extensions/kfb-legacy-web-pet/dist
