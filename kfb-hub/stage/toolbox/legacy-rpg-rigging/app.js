@@ -3,6 +3,7 @@ import {GLTFLoader} from 'three/addons/loaders/GLTFLoader.js';
 import {OrbitControls} from 'three/addons/controls/OrbitControls.js';
 import {assembleLegacy,replaceHead,mountHeldProp,playClip} from './lib/legacy-rig-adapter.v1.js';
 import {buildLegacyFaceHost,measureLegacyEyeCandidates,setLegacySourceEyeVisibility} from './lib/legacy-facehost.v1.js';
+import {createSeededRng,randomLegacyActorRecipe,recipeKey,validateLegacyActorRecipe} from './lib/legacy-actor-recipe.v1.js';
 import {EyeRig} from 'https://cdn.jsdelivr.net/gh/georg-doc/kayfabizarro@5650b6c54d8789b20ea80abe857688173d506d3b/tools/KFB-ToolBox/kfb-rigs-embed-v3/petstudio-v9/studio-v12/pet-eye-rig.v6.js';
 
 const $=q=>document.querySelector(q), $$=q=>[...document.querySelectorAll(q)];
@@ -19,7 +20,7 @@ const PACK_SHEET=url(SOURCE_PIN,'media/3D_Assets/KayKit Legacy/KayKit Dungeon Pa
 const STORAGE='kfb.toolbox.legacy-rpg-rigging.v0';
 const EXPR={neutral:{lidUpper:0,lidLower:0,slant:0,pupil:'normal',gaze:'front'},happy:{lidUpper:.22,lidLower:.08,slant:-.14,pupil:'normal',gaze:'front'},angry:{lidUpper:.32,lidLower:.05,slant:.34,pupil:'normal',gaze:'front'},sad:{lidUpper:.2,lidLower:.12,slant:-.3,pupil:'normal',gaze:'down'},surprised:{lidUpper:-.18,lidLower:-.12,slant:0,pupil:'wide',gaze:'front'},thinking:{lidUpper:.3,lidLower:.05,slant:.12,pupil:'normal',gaze:'away'}};
 
-const state={catalog:null,tab:'characters',mode:'source',selected:null,sourceNode:null,actor:null,headPart:null,faceHost:null,eyes:null,mixer:null,scene:null,camera:null,renderer:null,controls:null,clock:new THREE.Clock(),profiles:{},reviews:{},eyeVisible:false,sourceEyesVisible:true,currentMotion:null,assemblyGeneration:0,assemblyRequestToken:null,assemblyReadyToken:null};
+const state={catalog:null,tab:'characters',mode:'source',selected:null,sourceNode:null,actor:null,headPart:null,faceHost:null,eyes:null,mixer:null,scene:null,camera:null,renderer:null,controls:null,clock:new THREE.Clock(),profiles:{},reviews:{},eyeVisible:false,sourceEyesVisible:true,currentMotion:null,assemblyGeneration:0,assemblyRequestToken:null,assemblyReadyToken:null,lastRecipe:null};
 function loadSaved(){try{const x=JSON.parse(localStorage.getItem(STORAGE)||'{}');state.profiles=x.profiles||{};state.reviews=x.reviews||{};}catch{}}
 function save(){localStorage.setItem(STORAGE,JSON.stringify({profiles:state.profiles,reviews:state.reviews}));}
 function setBadge(text,kind='candidate'){$('#rigStatus').textContent=text;$('#rigStatus').className='badge '+kind;}
@@ -142,12 +143,37 @@ function playMotion(name){if(!state.actor||!state.mixer)return;const clip=playCl
 function eyeParam(k,v){const head=state.catalog.heads.find(h=>h.id===$('#headSelect').value),p=profileFor(head.id);if(k==='inset')p.eye.inset=v;else p.eye.anchor[k]=v;p.status='ADJUSTED_CANDIDATE';save();bindEyeUi(p);if(state.eyes){if(k==='inset'){state.eyes.rig.inset=v;state.eyes.rig.build();}else state.eyes.rig.setAnchor({[k]:v});}}
 function review(status){const id=$('#headSelect').value,p=profileFor(id);p.status=status;state.reviews[id]=status;save();updateReviewProgress();setBadge(status,status.includes('APPROVED')?'ok':'candidate');}
 function nextHead(){const hs=state.catalog.heads;const i=hs.findIndex(h=>!state.reviews[h.id]);if(i>=0){$('#headSelect').value=hs[i].id;assemble();}}
-function syncModeButtons(){$$('[data-mode]').forEach(b=>b.classList.toggle('active',b.dataset.mode===state.mode));}
+async function applyActorRecipe(recipe,{seed='external'}={}){
+  const valid=validateLegacyActorRecipe(state.catalog,recipe);
+  if(!valid.ok)throw new Error('Recipe rejected: '+valid.errors.join('; '));
+  $('#bodySelect').value=recipe.bodyId;
+  $('#headSelect').value=recipe.headId;
+  $('#headExtrasToggle').checked=recipe.headExtras;
+  $('#rightWeapon').value=recipe.held.right||'';
+  $('#leftWeapon').value=recipe.held.left||'';
+  state.lastRecipe=recipe;
+  const key=recipeKey(recipe);
+  document.documentElement.dataset.recipeKey=key;
+  document.documentElement.dataset.recipeSeed=String(seed);
+  $('#recipeReport').textContent=JSON.stringify({seed,key,recipe},null,2);
+  await assemble();
+  return recipe;
+}
+async function randomizeFromSeed(){
+  const seed=$('#recipeSeed').value.trim()||'legacy-001';
+  const recipe=randomLegacyActorRecipe(state.catalog,{
+    rng:createSeededRng(seed),
+    includeProps:$('#randomIncludeProps').checked
+  });
+  return applyActorRecipe(recipe,{seed});
+}
+function syncModeButtons(){$('[data-mode]').forEach(b=>b.classList.toggle('active',b.dataset.mode===state.mode));}
 function setMode(m){if(m==='sheet'){state.mode='sheet';syncModeButtons();$('#packSheet').hidden=false;state.renderer.domElement.style.display='none';$('#stageMode').textContent='PACK SHEET';return;}$('#packSheet').hidden=true;state.renderer.domElement.style.display='block';if(m==='source'){isolate(state.catalog.characters.find(c=>c.id===$('#bodySelect').value),'characters');return;}if(!state.actor){assemble();return;}state.mode=m;syncModeButtons();if(m==='eyes'&&!state.eyes)mountEyes();$('#stageMode').textContent=m.toUpperCase();}
 
 function wire(){
   $$('[data-tab]').forEach(b=>b.onclick=()=>{state.tab=b.dataset.tab;$$('[data-tab]').forEach(x=>x.classList.toggle('active',x===b));renderCatalog();});$('#search').oninput=renderCatalog;
   $$('[data-mode]').forEach(b=>b.onclick=()=>setMode(b.dataset.mode));$$('[data-view]').forEach(b=>b.onclick=()=>{state.currentView=b.dataset.view;$$('[data-view]').forEach(x=>x.classList.toggle('active',x===b));frame(state.actor?.root||state.sourceNode);});$('#frameBtn').onclick=()=>frame(state.actor?.root||state.sourceNode);
+  $('#randomizeBtn').onclick=randomizeFromSeed;
   $('#assembleBtn').onclick=assemble;$('#bodySelect').onchange=()=>{const preferred=state.catalog.heads.find(h=>h.character===$('#bodySelect').value&&h.kind==='embedded');if(preferred)$('#headSelect').value=preferred.id;};$('#headSelect').onchange=()=>{if(state.actor)assemble();};$('#headExtrasToggle').onchange=()=>{if(state.actor)assemble();};
   $('#rightWeapon').onchange=applyWeapons;$('#leftWeapon').onchange=applyWeapons;$('#weaponScale').oninput=applyWeapons;$('#weaponRoll').oninput=applyWeapons;
   $$('[data-motion]').forEach(b=>b.onclick=()=>playMotion(b.dataset.motion));$('#motionAll').onchange=e=>{if(e.target.value)playMotion(e.target.value);};
