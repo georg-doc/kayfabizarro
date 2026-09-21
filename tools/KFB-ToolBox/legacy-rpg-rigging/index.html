@@ -56,6 +56,13 @@
 
   <aside class="editor pane">
     <div class="pane-head"><div><span class="kicker">ASSEMBLY</span><h2>Character recipe</h2></div><span id="rigStatus" class="badge candidate">SOURCE</span></div>
+    <details open><summary>Baukasten / seeded randomizer</summary>
+      <label>Seed<input id="recipeSeed" class="text-input" type="text" value="legacy-001" spellcheck="false"></label>
+      <label class="check"><input id="randomIncludeProps" type="checkbox"> Include Arrow / Quiver / Spell Book in held-item pool</label>
+      <button id="randomizeBtn" class="wide">Build deterministic recipe</button>
+      <pre id="recipeReport">No generated recipe yet.</pre>
+      <div class="micro">Same catalog + same seed = same appearance recipe. Games may inject their own RNG instead; Combat/WhackMan gameplay state is not stored here.</div>
+    </details>
     <details open><summary>Body + head</summary>
       <label>Body<select id="bodySelect"></select></label>
       <label>Head<select id="headSelect"></select></label>
