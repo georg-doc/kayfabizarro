@@ -104,3 +104,33 @@ The prior two failed runs remain useful regression history, not current gate sta
 
 Public Cloudflare proof:
 **NOT RUN / NOT PUBLIC_VERIFIED**.
+
+
+---
+
+## KLR-KIT multi-recipe browser matrix
+
+Branch:
+`chatgpt-web/klr-kit-matrix-2026-09-21`
+
+Head:
+`8197d8f1b6e1becc550b9eeb6d766b455a0b33ab`
+
+Run:
+`35660231145`
+
+Job:
+`106533462704`
+
+Results:
+
+- static/source **33/33 PASS**
+- ActorRecipe **16/16 PASS**
+- selector regression **2/2 PASS**
+- browser/WebGL **35/35 PASS**
+- 0 failed resources
+- 0 page/console errors
+
+Artifact `10667035972`, digest `sha256:fb050fb44ceea245bfc1db1b243b47e2b2b811659b0e8d719616fecbcd09f625`.
+
+No public Stage test was run.
