@@ -145,3 +145,29 @@ Decision:
 - compare Slide / Sweep / Hybrid in the same Studio.
 
 Recommended default to test: **Hybrid**.
+
+
+## 2026-09-21 · Lid Motion Lab · 34/34 PASS
+
+Added `Slide | Sweep | Hybrid` to the self-contained GPT/mobile Eye Actor workbench without changing the source host or creating a second lid stack.
+
+Sweep architecture:
+- Eye-local X hinge axis;
+- optional posterior `hingeDepth`;
+- per-vertex sweep weighting;
+- `canthusLock` reduces motion at the lid ends;
+- Upper and Lower have separate maximum sweep angles.
+
+Authoritative head:
+`6c25d5bf9a95571e41ad6402a6d18f3048b0e559`
+
+Run:
+`35645949968`
+
+Result:
+**34/34 desktop/mobile browser PASS**, 0 external requests, 0 page errors.
+
+Artifact:
+`10660252892`.
+
+Assistant visual comparison currently favors **Hybrid** over pure Slide or pure Sweep, but Georg visual selection remains the gate.
