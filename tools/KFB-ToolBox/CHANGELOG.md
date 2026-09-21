@@ -153,3 +153,12 @@ Eye Actor Studio consumes existing owner catalogs instead of creating a characte
 Added a candidate style adapter over exact `ears.v2`: smoother outer geometry, wider visible rim and separate inner-ear zone. Dangle/feder behavior remains `ears.v2` owned. Outer/inner default colors are measured from FrizzleBob Yellow `Main` / `Main_Light`.
 
 No canonical ear owner or global palette was replaced.
+
+
+## 2026-09-21 · Eye Actor Studio source-host + Rabbit Ear candidate
+
+Technical/browser proof at `64d16e754a3b149efa64f2b7f3045d42f32e4bca`: **51/51 static + 10/10 syntax + 53/53 browser PASS**.
+
+Source host matrix proves PrototypePete, Mannequin Medium, GothGirl, Orc Brute, Legacy Skeleton, Jack/pumpkin, Dungeon modular body/head, Pencil and Eraser.
+
+Rabbit Ear candidate preserves `ears.v2` behavior and rebuilds only the visible presentation shell after two bounded visual repairs. Current assistant visual status: CANDIDATE PASS; human review remains open.
