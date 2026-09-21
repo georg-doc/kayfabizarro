@@ -197,3 +197,42 @@ The ear slice is parked until the Eye Studio lid gate passes.
 Human question:
 
 **Does the lid read as a thick clay/cartoon mass physically covering the eyeball, with a rounded outside and crisp eye-facing occlusion edge?**
+
+
+---
+
+## 2026-09-21 · GPT self-contained mobile recovery
+
+The prior GPT HTML that depended on external Three.js scripts is **REJECTED** as a mobile work surface: iOS/GPT showed HTML/CSS but stayed at `Booting…` with an empty stage.
+
+The replacement is:
+`kfb-hub/stage/toolbox/eye-actor-studio/gpt-selfcontained/index.html`
+
+Properties:
+- classic inline JavaScript only;
+- native WebGL;
+- no CDN;
+- no importmap;
+- no module loader;
+- no iframe;
+- exact `Mannequin_Medium.glb` source compacted and embedded into the HTML;
+- 6675 real source vertices / 20748 indices;
+- Upper + Lower lids generated from one larger eye-enclosing shell;
+- Neutral / Half / Full Blink / Skeptical / Slant / Concave / Convex / Frog;
+- mobile-first controls.
+
+Authoritative test:
+- head `87c4f4158b2be40dd9e617e54e85397234d0452d`
+- workflow run `35630127930`
+- **16/16 browser PASS**
+- desktop 1280×820
+- mobile 390×844
+- 0 external failed requests
+- 0 page errors
+- artifact `10653512609`
+- digest `sha256:71e93057a3b5f38b7c295f5f97ba722020c4c889c6d1f32a90ceb5e33294497d`
+
+This proves the GPT/mobile boot surface, not Georg visual acceptance of the lid shape.
+
+Next gate:
+**review the self-contained GPT site visually and tune the dual-lid shape only after Georg feedback.**
