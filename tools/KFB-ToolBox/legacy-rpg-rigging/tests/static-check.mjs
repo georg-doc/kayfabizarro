@@ -28,5 +28,8 @@ ok(html.includes('Source isolate') && html.includes('No placeholder geometry'),'
 ok(html.includes('Batch EyeRig v6'),'batch EyeRig authoring surface visible');
 ok(html.includes('Prop-rig bridge'),'future prop-rig bridge labelled');
 ok(!app.includes('localStorage.clear'),'never clears shared localStorage');
+ok(app.includes('assemblyGeneration:0') && app.includes('assemblyRequestToken:null'),'assembly generation/request state exists');
+ok(app.includes("markAssembly(request,'assembling')") && app.includes("markAssembly(request,'ready')"),'assembly exposes explicit assembling/ready lifecycle');
+ok(app.includes("if(!current())return"),'stale async assembly results are rejected');
 for(const f of ['app.js','lib/legacy-rig-adapter.v1.js','lib/legacy-facehost.v1.js']){try{new vm.SourceTextModule(read(f));ok(true,`${f} module parses`)}catch(e){console.error(e);ok(false,`${f} module parses`)}}
 console.log(`RESULT ${pass}/${pass+fail} PASS`);if(fail)process.exit(1);
