@@ -1026,3 +1026,13 @@ GitHub/cloudflare-live branch state is not a public browser PASS. Exact `kayfabi
 - Per two-pass rule the extension gate is frozen. Artifact `10619267683`, digest `sha256:da9bdfa9e0dd03c83f4335e61963449b7d559fc91e892867dd2c98843f361bf3`, contains Web evidence only; validated extension ZIP packaging was skipped.
 - Branch-only Hub mount candidate uses `?pet=0` opt-out; canonical Hub and Cloudflare runtime remain unchanged.
 - Next gate: **LWP-EXT-F1 · extension-load observability only**.
+
+
+## 2026-09-22 · Open-process census
+
+- Added `workflows/KFB_OPEN_PROCESS_CENSUS_2026-09-22/` from current `main@bc1441eb8ff9a2df0e15e778b44b73f97eb63d76` rather than extending divergent consolidation PR #113 (36 ahead / 46 behind at check).
+- Enumerated **72 open PRs** across kayfabizarro / Combat / Travel / Race and classified them as **22 CURRENT / 16 HUMAN_GATE / 12 FROZEN_RECOVERY / 22 SUPERSEDED_CLOSE_CANDIDATE**.
+- Verified **0 queued / 0 in-progress** GitHub Actions across those four repositories; no abandoned chat has a hidden workflow still running.
+- Classification is non-destructive: no PR closed, no merge, no Live promotion.
+- Dropbox corroborated the complete Cologne Option C Claude export read-only. Its current Stage intake is PR #142; Georg-reported bridge-surface penetration, stray cylinders and segmented arch seams are recorded as the next bounded repair backlog rather than a new design foundation.
+- Optional `game-dev` CLI checked once and unavailable; repository-native evidence used.
