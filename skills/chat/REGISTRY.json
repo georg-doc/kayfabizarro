@@ -674,6 +674,40 @@
       "humanAccepted": false,
       "nextGate": "EAS1-VIS-1 · Georg visual review in GPT workbench",
       "note": "Eye Cluster supports 1–4 independent eyes with per-eye XYZ, size, W/H/D and Pitch/Yaw/Roll. GPT sandbox mirror is an iteration surface, not KFB Stage."
+    },
+    {
+      "id": "kfb-3d-cartoon-style-v1",
+      "kind": "skill",
+      "status": "EXPERIMENTAL",
+      "version": "1-draft",
+      "path": "skills/KFB_3D_CartoonStyle_v1.md",
+      "interactive": "skills/KFB_3D_CartoonStyle_v1.html",
+      "owner": "Shared KFB visual reference / Georg",
+      "loadWhen": [
+        "3D cartoon prop",
+        "Tiny Treats style",
+        "KayKit style",
+        "rounded cartoon asset",
+        "toy or clay form language",
+        "landmark abstraction",
+        "rabbit ears",
+        "cartoon facial accessory"
+      ],
+      "owns": [
+        "reusable visual heuristics",
+        "DO/DONT teaching examples",
+        "additive problem-cause-repair-evidence log"
+      ],
+      "doesNotOwn": [
+        "Asset Librarian source identity",
+        "World or Landmark runtime",
+        "character or rig runtime",
+        "renderer",
+        "gameplay",
+        "automatic visual canon promotion"
+      ],
+      "wsa": "Expand additively: pin exact donor → isolate source → DO/DONT → measure → observed problem → cause → repair → browser evidence → only then generalize.",
+      "note": "Interactive HTML includes a hidden machine-readable LLM briefing with onboarding and source links. Draft remains EXPERIMENTAL until representative Georg visual gates are accepted."
     }
   ],
   "failureRecoveryTemplate": "skills/chat/templates/CLAUDE_DESIGN_FAILURE_RECOVERY_EXPORT.md"

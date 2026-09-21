@@ -132,3 +132,24 @@ Clay-lid massing at extreme frog orientation remains visually open. Hunky/Dory s
 
 ### NEXT
 EAS1-VIS-1 human visual review.
+
+
+## 2026-09-21 · CartoonStyle skill + Eye Actor host/ear expansion
+
+### STYLE REFERENCE
+Added the interactive KFB 3D CartoonStyle draft as a shared source-first DO/DON'T reference with hidden LLM/WSA briefing.
+
+### EYE ACTOR HOSTS
+Eye Actor Studio consumes existing owner catalogs instead of creating a character library:
+- PrototypePete Legacy template default;
+- modern Mannequin Medium/Large;
+- 27 Medium owner candidates;
+- four reviewed Large profiles;
+- Legacy Skeletons, Jack/Witch, Orc Warband;
+- Dungeon modular bodies + 17 heads;
+- Pencil short/long and Eraser props.
+
+### RABBIT EARS
+Added a candidate style adapter over exact `ears.v2`: smoother outer geometry, wider visible rim and separate inner-ear zone. Dangle/feder behavior remains `ears.v2` owned. Outer/inner default colors are measured from FrizzleBob Yellow `Main` / `Main_Light`.
+
+No canonical ear owner or global palette was replaced.

@@ -111,3 +111,17 @@ A GPT/sandbox mirror is available in the active chat for fast iteration. Cloudfl
 Intended Stage remains https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/eye-actor-studio/ and is not PUBLIC_VERIFIED.
 
 Current gate: EAS1-VIS-1.
+
+
+## CURRENT ADDITIVE · KFB 3D CartoonStyle v1 draft · 2026-09-21
+
+For rounded/cartoon 3D asset work read:
+- `../../skills/KFB_3D_CartoonStyle_v1.md`
+- `../../skills/KFB_3D_CartoonStyle_v1.html`
+
+This is the current experimental Tiny-Treats/KayKit-adjacent form-language notebook:
+macro mass first, visible rounding, toy thickness, few color zones, matte/satin shading and donor-first DO/DON'T proof.
+
+WSA should extend it additively with measured examples and problem→cause→repair→evidence entries.
+
+Current Eye Actor Studio v1 is the first active consumer for Clay lids and Rabbit Ear Style v1. Tool ownership remains unchanged.

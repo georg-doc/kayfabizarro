@@ -416,3 +416,22 @@ A standalone GPT/sandbox workbench mirror is ready in the current chat for rapid
 Intended Stage: https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/eye-actor-studio/
 
 Current next gate: EAS1-VIS-1 · Georg visual review in GPT workbench.
+
+
+## 2026-09-21 · KFB 3D CartoonStyle v1 · skill draft
+
+Shared experimental visual reference:
+- `skills/KFB_3D_CartoonStyle_v1.md`
+- interactive teaching viewer: `skills/KFB_3D_CartoonStyle_v1.html`
+
+Use it for Tiny-Treats/KayKit-adjacent props, rounded toy/clay massing, landmark abstraction and cartoon facial/accessory parts.
+
+Core rule:
+**Big shape first. Round by default. Detail last.**
+
+The viewer starts from an exact Tiny Treats toaster donor and contains explicit DO/DON'T samples. Its hidden LLM briefing routes agents through the normal KFB chat/workflow sources.
+
+WSA rule:
+append source-backed examples and failure→cause→repair→evidence learnings. Do not rewrite old failures and do not promote the draft to immutable canon without Georg visual acceptance.
+
+The skill does not replace Asset Librarian, img2threejs, ToolBox rigs or any consumer runtime.

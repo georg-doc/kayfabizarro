@@ -1040,3 +1040,18 @@ GPT sandbox mirror is for rapid iteration only. Intended Cloudflare Stage remain
 
 ### NEXT
 EAS1-VIS-1 · visual review in GPT workbench before Cloudflare publication or Hunky/Dory integration.
+
+
+## 2026-09-21 · KFB 3D CartoonStyle v1 draft
+
+### USER DIRECTION
+Turn the Tiny Treats / KayKit rounded toy/clay rules into a reusable skill plus an interactive 3D DO/DON'T viewer. Keep the LLM/WSA production briefing hidden in the HTML and grow problems/solutions additively.
+
+### IMPLEMENTED
+Expanded `skills/KFB_3D_CartoonStyle_v1.md` with measured candidate defaults, DO/DON'T rules, repair order, additive problem log and WSA elaboration contract. Added `skills/KFB_3D_CartoonStyle_v1.html` with an exact Tiny Treats toaster donor and procedural teaching comparisons.
+
+### ROUTING
+Registered as `EXPERIMENTAL`. It is a shared visual reference only, not an asset/runtime/renderer owner.
+
+### CURRENT CONSUMER
+Eye Actor Studio v1 now uses the same language for Clay lids and the candidate FrizzleBob rabbit-ear style adapter.
