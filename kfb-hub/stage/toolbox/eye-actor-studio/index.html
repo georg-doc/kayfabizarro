@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en" data-kfb-eye-actor-ready="no"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>KFB Eye Actor Studio</title>
+<style>
+:root{font-family:system-ui,sans-serif;background:#d8dfdc;color:#2f2b28}*{box-sizing:border-box}html,body{margin:0;height:100%;overflow:hidden}.app{height:100dvh;display:grid;grid-template-rows:auto minmax(0,1fr) auto}.bar,.foot{background:#f4efe5;border-color:#413c37;padding:9px 11px;display:flex;gap:7px;align-items:center;flex-wrap:wrap}.bar{border-bottom:2px solid #413c37}.foot{border-top:1px solid #aaa096;justify-content:space-between}.brand{font-weight:850;font-size:13px}.tag,#status,#resolver{font-size:10px;color:#655f58}.stage{min-height:0}canvas{width:100%;height:100%;display:block;touch-action:none}select,button,input{font:inherit}select,button{font-size:11px;background:#fffaf1;border:1px solid #92887e;border-radius:7px;padding:6px 8px;color:#352f2b}.range{display:flex;align-items:center;gap:4px;font-size:10px}.range input{width:92px}.debug{font-size:10px}.foot strong{font-size:12px}@media(max-width:650px){.bar{padding:6px}.brand{width:100%}.range input{width:76px}.foot{padding:5px 7px}.foot .long{display:none}}
+</style>
+<script type="importmap">{"imports":{"three":"https://unpkg.com/three@0.160.0/build/three.module.js","three/addons/":"https://unpkg.com/three@0.160.0/examples/jsm/"}}</script></head>
+<body><main class="app"><header class="bar">
+<div class="brand">KFB EYE ACTOR STUDIO <span class="tag">EAS-0 · Eye incl. lids & brows as actors</span></div>
+<select id="mode"><option value="donor" selected>EyeRig v6 donor</option><option value="clay">Clay lids candidate</option></select>
+<select id="pose"><option value="neutral">Neutral</option><option value="skeptical">Skeptical blink</option><option value="aimLeft">Aim left</option><option value="aimRight">Aim right</option><option value="tired">Tired</option><option value="angry">Angry</option><option value="surprised">Surprised</option></select>
+<label class="range">thick <input id="thickness" type="range" min="0.04" max="0.22" step="0.01" value="0.11"></label>
+<label class="range">curve <input id="curve" type="range" min="-1" max="1" step="0.1" value="0"></label>
+<select id="debug"><option value="natural">Natural</option><option value="zones">Zones</option></select>
+<select id="emanata"><option value="none">No emanata</option><option value="sweat">Sweat 3D</option><option value="soot">Soot dots</option></select>
+<select id="colorCase"><option value="face">Color: face</option><option value="body">Color fallback: body</option><option value="main">Color fallback: main</option></select>
+<button id="blink">Blink</button>
+<label class="debug"><input id="shadow" type="checkbox"> eye shadow</label>
+</header><section id="stage" class="stage"><canvas id="view"></canvas></section>
+<footer class="foot"><div><strong id="title">Exact EyeRig v6 donor</strong><div id="resolver">resolver…</div></div><div id="status">Booting…</div><div class="tag long">EyeRig v6 + BrowRig v2 remain the owners. Clay geometry is an optional adapter, not a fork.</div></footer>
+</main><script type="module" src="./viewer.mjs"></script></body></html>

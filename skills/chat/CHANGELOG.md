@@ -1013,3 +1013,39 @@ GitHub/cloudflare-live branch state is not a public browser PASS. Exact `kayfabi
 - Artifact `10618729208`, digest `sha256:d2983c413b975f3d00bfbfb87564c5b90e16be4a99deb1bcd29369a4cb335c64`.
 - No F1 runtime was published to Cloudflare; Legacy public Stage remains unverified.
 - Next gate: resume only the KLR-KIT three-seed browser matrix `gate-16 → gate-75 → gate-33 → repeat gate-16`. Combat/WhackMan consumer integration remains deferred.
+
+
+## 2026-09-21 · Toy / Clay Form Lab v0
+
+### USER DIRECTION
+Persist a reusable modelling grammar for rounded Tiny-Treats/KayKit-adjacent props and soft, iconic landmarks. Preserve samples and future failure/postmortem learning additively.
+
+### IMPLEMENTED / TESTED
+ToolBox donor lab plus exact Tiny Treats toaster isolation, shared rounded/capsule/lathe primitives and Panel/Eiffel/Cologne benchmarks. Implementation head `8825d05caed888e8bc35cc3b49d0cf01da3664da`: **15/15 static + 16/16 desktop/mobile WebGL PASS**, 0 browser/resource errors. Evidence artifact `10619944311`.
+
+### OWNER BOUNDARY
+`tools/img2threejs/` remains landmark owner; City Grotesque remains default. Toy/Clay is an experimental authoring grammar until Georg accepts it visually.
+
+### PUBLICATION
+PR #158 Cloudflare preview build failed. Intended `/kfb-hub/stage/toolbox/toy-clay-form-lab/` is **NOT PUBLIC_VERIFIED**.
+
+### NEXT GATE
+`TOY-CLAY-PUB-1`: publication recovery only; no geometry retuning.
+
+
+## 2026-09-21 · Eye Actor Studio v1 preparation
+
+### USER DIRECTION
+Build the Eye Actor Studio before Hunky/Dory. Studio must support full per-eye Pitch/Yaw/Roll, unequal/asymmetric eye size and shape, and 1–4 eyes.
+
+### SOURCE FACT
+EyeRig v6 is pair-based and its current splay is mirrored Yaw only. EyeOval v1 already proves safe W/H/D scaling and mirrored tilt but applies one shared shape to the pair.
+
+### BRIEFING
+Added `workflows/KFB_EYE_ACTOR_STUDIO_V1_2026-09-21/` with a fresh-chat build brief, Eye Cluster contract, deferred Hunky/Dory note and preparation Return.
+
+### BOUNDARY
+No global EyeRig/profile schema is changed by this preparation. Hunky/Dory and the unpinned faceless Medium template head remain deferred.
+
+### NEXT
+`EAS1-A`: reconstruct exact donors on a new branch from current main.

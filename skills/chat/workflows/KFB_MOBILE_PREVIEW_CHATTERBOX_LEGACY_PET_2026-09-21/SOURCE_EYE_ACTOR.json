@@ -1,0 +1,67 @@
+{
+  "schema": "kfb.eye-actor-studio-source/0.1",
+  "date": "2026-09-21",
+  "status": "TESTED_BROWSER_PUBLIC_BLOCKED",
+  "owner": "KFB ToolBox / existing EyeRig authoring line",
+  "repo": "georg-doc/kayfabizarro",
+  "branch": "chatgpt-web/mobile-preview-chatterbox-legacy-pet-2026-09-21",
+  "draftPR": 158,
+  "implementationHead": "f6fcdfbf6ec086759b322d96c7a312dabc991c8a",
+  "testedHead": "2a79d398fad090aabf56d5a5d17f37fd97fa4df7",
+  "currentMainObserved": "ce514192d2647a8e4882a7f3f010665a4a3964e7",
+  "stackedBranchBehindMainBy": 5,
+  "intendedStage": "https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/eye-actor-studio/",
+  "publicVerified": false,
+  "donors": {
+    "eyeRigV6": "tools/KFB-ToolBox/kfb-rigs-embed-v3/petstudio-v9/studio-v12/pet-eye-rig.v6.js",
+    "eyeRigV6Blob": "853bcf5fb090dd6564fda8bc83d0b4cb527e6b26",
+    "browRigV2": "tools/KFB-ToolBox/kfb-rigs-embed-v3/petstudio-v9/studio-v12/brow-rig.v2.js",
+    "browRigV2Blob": "ccc91a7f48adbf999ed33ca1708bbe5d1c738d0f",
+    "sharedProtocol": "tools/2D Animation Studio/shared/eye-rig/eye-rig-protocol.v1.json",
+    "sharedProtocolBlob": "9c9a383e35439b2bbc741efbd616b8f0391f6d08",
+    "batchBrief": "tools/KFB-ToolBox/_handover/EYE_RIG_BATCH_2026-09-18/START_HERE.md",
+    "graftContract": "tools/KFB-ToolBox/kfb-rigs-embed-v3/contracts/kfb-pet-graft-driver.v4.json",
+    "graftContractBlob": "f202a1c2f1670ab6045176af6621c94041124e76"
+  },
+  "implemented": [
+    "optional volumetric Clay Lid geometry on existing four EyeRig lid meshes",
+    "hard inner occlusion rim",
+    "thickness + curve controls",
+    "candidate Eye Actor pose shelf",
+    "face > body > main colour resolver",
+    "sclera/pupil shading preview",
+    "under-eye shadow preview",
+    "eyeFrame-anchored 3D sweat and soot emanata"
+  ],
+  "evidence": {
+    "firstRun": {
+      "id": 35557045766,
+      "result": "FAIL_TEST_OBSERVABILITY_RACE",
+      "geometryChanged": false
+    },
+    "authoritativeRun": 35557143481,
+    "job": 106202863950,
+    "static": "20/20 PASS",
+    "syntax": "5/5 PASS",
+    "browser": "24/24 PASS",
+    "viewports": [
+      "1440x900",
+      "390x844"
+    ],
+    "failedResources": 0,
+    "pageErrors": 0,
+    "pupilClearance": 0.00232960000991822,
+    "artifactId": 10621181776,
+    "artifactDigest": "sha256:8e88d042153bcc8b9eb9a77bcb1b2a69a7e3c66bd725aad221792dc795f9795e"
+  },
+  "unresolved": [
+    "Cloudflare publication",
+    "human visual acceptance",
+    "lower lid clay-pad massing",
+    "real Batch actor host adapter",
+    "final under-eye shader",
+    "special pupil/heart/spiral geometry",
+    "exact Cologne colour/look source pin"
+  ],
+  "nextGate": "EAS-PUB-1 · publication-only recovery; no geometry retune"
+}

@@ -1,0 +1,90 @@
+{
+  "schema": "kfb.toy-clay-form-lab-source/0.1",
+  "date": "2026-09-21",
+  "status": "TESTED_LOCAL_BROWSER_PUBLIC_BLOCKED",
+  "owner": "KFB ToolBox authoring donor; tools/img2threejs remains landmark owner",
+  "repo": "georg-doc/kayfabizarro",
+  "branch": "chatgpt-web/mobile-preview-chatterbox-legacy-pet-2026-09-21",
+  "draftPR": 158,
+  "implementationHead": "8825d05caed888e8bc35cc3b49d0cf01da3664da",
+  "currentEvidenceBranchHead": "39e66901366de98a1741541f7fd106eb1ea707e3",
+  "intendedStage": "https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/toy-clay-form-lab/",
+  "publicVerified": false,
+  "donors": {
+    "tinyTreatsToaster": {
+      "path": "media/3D_Assets/Tiny_Treats_Charming_Kitchen_1.1_FREE/Assets/gltf/toaster.gltf",
+      "blob": "46e86f8d214f800e4bd26bb63abc5373e2c8c171",
+      "licensePath": "media/3D_Assets/Tiny_Treats_Charming_Kitchen_1.1_FREE/License.txt",
+      "licenseBlob": "c4370cb82dd60896281e23f61ecd5140eda99438",
+      "license": "CC0",
+      "role": "isolated visible style donor"
+    },
+    "currentLandmarkOwner": {
+      "path": "tools/img2threejs/README.md",
+      "blob": "6ff80043dd612e47f585bf34f369d61deebff1fb",
+      "fact": "City Grotesque current landmark default; Soft Cubist alternate/debug"
+    },
+    "eiffelPrior": {
+      "path": "tools/img2threejs/landmarks/pilot-01/geometry.mjs",
+      "blob": "39b2e511e58e270499391027c267dab0e4a1f395",
+      "role": "prior detailed Eiffel source/reference; not copied into toy sample"
+    },
+    "colognePrior": {
+      "path": "tools/img2threejs/prototypes/koelner-dom/v0.2/index.html",
+      "blob": "c0a3fd9d01b137f7819b3c90e5247a88686599aa",
+      "role": "prior accepted cartoon abstraction/material evidence; not replaced"
+    },
+    "softCubistPrior": {
+      "path": "tools/img2threejs/landmarks/pilot-03/deform.mjs",
+      "blob": "7a68ac7742cf117074af3a5e5d12ef98791ad377",
+      "role": "existing rounded landmark comparison donor"
+    }
+  },
+  "implementation": {
+    "primitives": "tools/KFB-ToolBox/toy-clay-form-lab/lib/kfb-toy-primitives.mjs",
+    "samples": [
+      "panel",
+      "eiffel",
+      "cologne"
+    ],
+    "viewer": "kfb-hub/stage/toolbox/toy-clay-form-lab/",
+    "styleRules": "skills/chat/workflows/KFB_MOBILE_PREVIEW_CHATTERBOX_LEGACY_PET_2026-09-21/TOY_CLAY_STYLE_RULES.md",
+    "postmortems": "skills/chat/workflows/KFB_MOBILE_PREVIEW_CHATTERBOX_LEGACY_PET_2026-09-21/POSTMORTEMS.md",
+    "partBudgets": {
+      "panel": 4,
+      "eiffel": 14,
+      "cologne": 16
+    }
+  },
+  "evidence": {
+    "workflowRun": 35555718144,
+    "job": 106198862183,
+    "static": "15/15 PASS",
+    "browser": "16/16 PASS",
+    "viewports": [
+      "1440x900",
+      "390x844"
+    ],
+    "observedParts": {
+      "panel": 4,
+      "eiffel": 13,
+      "cologne": 12
+    },
+    "failedResources": 0,
+    "pageErrors": 0,
+    "artifactId": 10619944311,
+    "artifactDigest": "sha256:7ac890e848f40b3c5456c3512bb6864580b903431fd6a529380ad029ad7aaa34",
+    "screenshots": [
+      "desktop-donor-toaster.png",
+      "desktop-cologne.png",
+      "mobile-donor-toaster.png",
+      "mobile-cologne.png"
+    ]
+  },
+  "publication": {
+    "cloudflarePRComment": 5754680104,
+    "status": "BUILD_FAILED",
+    "note": "No alternate human test link is substituted."
+  },
+  "nextGate": "TOY-CLAY-PUB-1 · publication-only recovery; no model geometry changes"
+}
