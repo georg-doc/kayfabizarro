@@ -1,6 +1,6 @@
 {
   "schema": "kfb.chat-registry/0.1",
-  "updated": "2026-09-20",
+  "updated": "2026-09-21",
   "owner": "Georg / KFB",
   "router": "skills/chat/START_HERE.md",
   "livingMasterplan": "skills/chat/LIVING_MASTERPLAN.md",
@@ -552,6 +552,34 @@
         "FBX without Blender"
       ],
       "note": "Source-version audit, read-only probes and integration proposals. WaterBowser is Georg's new model selection; no conversion, runtime promotion, owner change or replacement ChatterBox master. Prefer verified newer donor versions over uploaded v10 snapshots."
+    },
+    {
+      "id": "legacy-rpg-rigging-lab",
+      "kind": "tool-candidate",
+      "status": "EXPERIMENTAL",
+      "path": "skills/chat/workflows/KAYKIT_LEGACY_RPG_RIGGING_2026-09-21/START_HERE.md",
+      "repository": "georg-doc/kayfabizarro",
+      "branch": "chatgpt-web/toolbox-legacy-rpg-rigging-2026-09-21",
+      "draftPR": 155,
+      "owner": "KFB ToolBox / Rigging",
+      "sourcePack": "media/3D_Assets/KayKit Legacy/KayKit Dungeon Pack 1.0 2/",
+      "intendedStage": "https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/legacy-rpg-rigging/",
+      "publicVerified": false,
+      "tested": "26/26 static PASS; browser gate frozen after runs 35543850991 and 35548588227",
+      "nextGate": "KLR-SYNC-01 · deterministic 4/4 actor-switch readiness proof",
+      "owns": [
+        "Legacy RPG source catalog candidate",
+        "Legacy authoring/calibration candidate",
+        "LegacyFaceHost candidate"
+      ],
+      "doesNotOwn": [
+        "EyeRig v6 runtime",
+        "Rig_Medium/Rig_Large motion",
+        "Resident Atlas runtime",
+        "Combat/Travel/Race/Town gameplay",
+        "Pencil/CapsuleCarl/Eraser compatibility"
+      ],
+      "note": "Frozen browser-gate candidate after two proof-synchronization repair passes. Source/static inventory remains salvageable. Do not publish intended Stage before KLR-SYNC-01."
     }
   ],
   "failureRecoveryTemplate": "skills/chat/templates/CLAUDE_DESIGN_FAILURE_RECOVERY_EXPORT.md"
