@@ -31,6 +31,7 @@ main{min-height:0;display:grid;grid-template-columns:285px minmax(0,1fr) 285px}.
 <aside class="panel">
 <div class="group"><h2>Boot / source</h2><div id="boot" class="tiny">INLINE JS BOOTING…</div><div id="source" class="tiny"></div></div>
 <div class="group"><h2>Dual lids · shared shell</h2>
+<div class="row"><label>motion</label><select id="motionMode"><option value="slide">Slide</option><option value="sweep">Sweep</option><option value="hybrid" selected>Hybrid</option></select><output></output></div>
 <div class="row"><label>upper cover</label><input id="upperCover" type="range" min="0" max="1" step=".01"><output id="upperCoverOut"></output></div>
 <div class="row"><label>lower cover</label><input id="lowerCover" type="range" min="0" max="1" step=".01"><output id="lowerCoverOut"></output></div>
 <div class="row"><label>blink</label><input id="blink" type="range" min="0" max="1" step=".01"><output id="blinkOut"></output></div>
@@ -38,6 +39,10 @@ main{min-height:0;display:grid;grid-template-columns:285px minmax(0,1fr) 285px}.
 <div class="row"><label>curve</label><input id="curve" type="range" min="-1" max="1" step=".01"><output id="curveOut"></output></div>
 <div class="row"><label>thickness</label><input id="thickness" type="range" min=".03" max=".16" step=".005"><output id="thicknessOut"></output></div>
 <div class="row"><label>round edge</label><input id="roundness" type="range" min="0" max="1" step=".01"><output id="roundnessOut"></output></div>
+<div class="row"><label>upper sweep</label><input id="upperSweep" type="range" min="0" max="65" step="1"><output id="upperSweepOut"></output></div>
+<div class="row"><label>lower sweep</label><input id="lowerSweep" type="range" min="0" max="55" step="1"><output id="lowerSweepOut"></output></div>
+<div class="row"><label>hinge depth</label><input id="hingeDepth" type="range" min="0" max=".10" step=".005"><output id="hingeDepthOut"></output></div>
+<div class="row"><label>canthus lock</label><input id="canthusLock" type="range" min="0" max="1" step=".01"><output id="canthusLockOut"></output></div>
 </div>
 <div class="group"><h2>Views</h2><div class="toolbar"><button data-view="front">Front</button><button data-view="three">3/4</button><button data-view="side">Side</button><button data-view="top">Top</button></div><div class="tiny">Drag the 3D stage to orbit.</div></div>
 </aside>
@@ -50,7 +55,7 @@ main{min-height:0;display:grid;grid-template-columns:285px minmax(0,1fr) 285px}.
 <div class="row"><label>gaze X</label><input id="gazeX" type="range" min="-1" max="1" step=".01"><output id="gazeXOut"></output></div>
 <div class="row"><label>gaze Y</label><input id="gazeY" type="range" min="-1" max="1" step=".01"><output id="gazeYOut"></output></div>
 </div>
-<div class="group"><h2>QA</h2><div class="tiny">Upper + Lower are generated from one larger eye-enclosing ellipsoid. The visible eye opening is the gap between the two real shell halves. Full blink must hide pupil/sclera.</div></div>
+<div class="group"><h2>QA</h2><div class="tiny">Upper + Lower are generated from one larger eye-enclosing ellipsoid. Compare <b>Slide / Sweep / Hybrid</b> with the same lid geometry. Sweep rotates the front lid body around an eye-local X hinge while canthi remain increasingly anchored.</div></div>
 <div class="group"><h2>Export</h2><button id="copyJson">Copy JSON</button><pre id="json" class="json"></pre></div>
 </aside>
 </main></div>
@@ -88,11 +93,69 @@ var hostMesh=mesh(hostPos,hostNor,hostIdx);
 function sphere(segU,segV){var p=[],n=[],ix=[];for(var y=0;y<=segV;y++){var v=y/segV,lat=-Math.PI/2+Math.PI*v,cl=Math.cos(lat),sl=Math.sin(lat);for(var x=0;x<=segU;x++){var u=x/segU,lon=-Math.PI+Math.PI*2*u,co=Math.cos(lon),so=Math.sin(lon);p.push(so*cl,sl,co*cl);n.push(so*cl,sl,co*cl);}}for(y=0;y<segV;y++)for(x=0;x<segU;x++){var a=y*(segU+1)+x,b=a+segU+1;ix.push(a,b,a+1,a+1,b,b+1);}return mesh(new Float32Array(p),new Float32Array(n),new Uint16Array(ix));}
 var sphereMesh=sphere(36,24);
 
-function lidMesh(upper,p){var R=.225,clr=.006,t=p.thickness;var rin=R+clr,rout=R+t;var U=64,V=18,pv=[],nv=[],ix=[],cols=U+1,rows=V+1,outer=[],inner=[];function id(a){return a;}function point(rad,lat,lon){var cl=Math.cos(lat);return[rad*Math.sin(lon)*cl,rad*Math.sin(lat),rad*Math.cos(lon)*cl];}
-function margin(lon){var side=Math.sin(lon),front=Math.max(0,Math.cos(lon)),center=front*(1-side*side);var uc=Math.min(.98,p.upperCover+p.blink*.82),lc=Math.min(.98,p.lowerCover+p.blink*.82);return upper?(0.34-uc*.88+p.slant*.22*side*front+p.curve*.18*center):(-0.34+lc*.88+p.slant*.18*side*front+p.curve*.12*center);}
-for(var j=0;j<=U;j++){var lon=-Math.PI+2*Math.PI*j/U;outer[j]=[];inner[j]=[];var m=margin(lon);for(var k=0;k<=V;k++){var q=k/V,lat=upper?(m+(Math.PI/2-m)*q):(-Math.PI/2+(m+Math.PI/2)*q);var dist=upper?q:1-q;var bevel=.45+.55*Math.min(1,dist/.24);var rr=rin+(rout-rin)*(bevel*(.86+.14*p.roundness));var ip=point(rin,lat,lon),op=point(rr,lat,lon);var oi=pv.length/3;pv.push(op[0],op[1],op[2]);nv.push(op[0]/rr,op[1]/rr,op[2]/rr);outer[j][k]=oi;var ii=pv.length/3;pv.push(ip[0],ip[1],ip[2]);nv.push(-ip[0]/rin,-ip[1]/rin,-ip[2]/rin);inner[j][k]=ii;}}
-function quad(a,b,c,d){ix.push(a,b,d,b,c,d);}for(j=0;j<U;j++)for(k=0;k<V;k++){quad(outer[j][k],outer[j+1][k],outer[j+1][k+1],outer[j][k+1]);quad(inner[j][k+1],inner[j+1][k+1],inner[j+1][k],inner[j][k]);}
-function strip(a,b,c,d){ix.push(a,c,b,b,c,d);}var edge=upper?0:V;for(j=0;j<U;j++)strip(outer[j][edge],outer[j+1][edge],inner[j][edge],inner[j+1][edge]);var far=upper?V:0;for(j=0;j<U;j++)strip(outer[j+1][far],outer[j][far],inner[j+1][far],inner[j][far]);return mesh(new Float32Array(pv),new Float32Array(nv),new Uint16Array(ix));}
+function lidMesh(upper,p){
+var R=.225,clr=.006,t=p.thickness,rin=R+clr,rout=R+t;
+var U=64,V=18,pv=[],nv=[],ix=[],outer=[],inner=[];
+var mode=p.motionMode||'hybrid';
+var slideMix=mode==='slide'?1:(mode==='hybrid'?.30:0);
+var sweepMix=mode==='sweep'?1:(mode==='hybrid'?.72:0);
+var upperSweep=(p.upperSweep||0)*Math.PI/180*p.blink*sweepMix;
+var lowerSweep=-(p.lowerSweep||0)*Math.PI/180*p.blink*sweepMix;
+var sweepAngle=upper?upperSweep:lowerSweep;
+var lock=Math.max(0,Math.min(1,p.canthusLock||0));
+var hingeDepth=Math.max(0,p.hingeDepth||0);
+
+function point(rad,lat,lon){var cl=Math.cos(lat);return[rad*Math.sin(lon)*cl,rad*Math.sin(lat),rad*Math.cos(lon)*cl];}
+function rotateXPoint(v,a){
+  if(!a)return v;
+  var y=v[1],z=v[2]+hingeDepth,c=Math.cos(a),s=Math.sin(a);
+  return[v[0],c*y-s*z,s*y+c*z-hingeDepth];
+}
+function rotateXNormal(v,a){
+  if(!a)return v;
+  var c=Math.cos(a),s=Math.sin(a);
+  return[v[0],c*v[1]-s*v[2],s*v[1]+c*v[2]];
+}
+function weight(lon){
+  var front=Math.max(0,Math.cos(lon));
+  var central=Math.pow(front,1.35);
+  return(1-lock)+lock*central;
+}
+function margin(lon){
+  var side=Math.sin(lon),front=Math.max(0,Math.cos(lon)),center=front*(1-side*side);
+  var uc=Math.min(.98,p.upperCover+p.blink*.82*slideMix);
+  var lc=Math.min(.98,p.lowerCover+p.blink*.82*slideMix);
+  return upper
+    ?(0.34-uc*.88+p.slant*.22*side*front+p.curve*.18*center)
+    :(-0.34+lc*.88+p.slant*.18*side*front+p.curve*.12*center);
+}
+for(var j=0;j<=U;j++){
+  var lon=-Math.PI+2*Math.PI*j/U;outer[j]=[];inner[j]=[];
+  var m=margin(lon),w=weight(lon),a=sweepAngle*w;
+  for(var k=0;k<=V;k++){
+    var q=k/V,lat=upper?(m+(Math.PI/2-m)*q):(-Math.PI/2+(m+Math.PI/2)*q);
+    var dist=upper?q:1-q,bevel=.45+.55*Math.min(1,dist/.24);
+    var rr=rin+(rout-rin)*(bevel*(.86+.14*p.roundness));
+    var ip=rotateXPoint(point(rin,lat,lon),a);
+    var op0=point(rr,lat,lon),op=rotateXPoint(op0,a);
+    var on=rotateXNormal([op0[0]/rr,op0[1]/rr,op0[2]/rr],a);
+    var in0=point(rin,lat,lon),inn=rotateXNormal([-in0[0]/rin,-in0[1]/rin,-in0[2]/rin],a);
+    var oi=pv.length/3;pv.push(op[0],op[1],op[2]);nv.push(on[0],on[1],on[2]);outer[j][k]=oi;
+    var ii=pv.length/3;pv.push(ip[0],ip[1],ip[2]);nv.push(inn[0],inn[1],inn[2]);inner[j][k]=ii;
+  }
+}
+function quad(a,b,c,d){ix.push(a,b,d,b,c,d);}
+for(j=0;j<U;j++)for(k=0;k<V;k++){
+  quad(outer[j][k],outer[j+1][k],outer[j+1][k+1],outer[j][k+1]);
+  quad(inner[j][k+1],inner[j+1][k+1],inner[j+1][k],inner[j][k]);
+}
+function strip(a,b,c,d){ix.push(a,c,b,b,c,d);}
+var edge=upper?0:V;
+for(j=0;j<U;j++)strip(outer[j][edge],outer[j+1][edge],inner[j][edge],inner[j+1][edge]);
+var far=upper?V:0;
+for(j=0;j<U;j++)strip(outer[j+1][far],outer[j][far],inner[j+1][far],inner[j][far]);
+return mesh(new Float32Array(pv),new Float32Array(nv),new Uint16Array(ix));
+}
 
 function I(){return[1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,1];}
 function mul(a,b){var o=new Array(16),r,c,k;for(c=0;c<4;c++)for(r=0;r<4;r++){var s=0;for(k=0;k<4;k++)s+=a[k*4+r]*b[c*4+k];o[c*4+r]=s;}return o;}
@@ -102,7 +165,7 @@ function persp(fovy,asp,n,f){var q=1/Math.tan(fovy/2),nf=1/(n-f),m=[q/asp,0,0,0,
 function norm(v){var l=Math.hypot(v[0],v[1],v[2])||1;return[v[0]/l,v[1]/l,v[2]/l];}function cross(a,b){return[a[1]*b[2]-a[2]*b[1],a[2]*b[0]-a[0]*b[2],a[0]*b[1]-a[1]*b[0]];}function dot(a,b){return a[0]*b[0]+a[1]*b[1]+a[2]*b[2];}
 function look(eye,tar,up){var z=norm([eye[0]-tar[0],eye[1]-tar[1],eye[2]-tar[2]]),x=norm(cross(up,z)),y=cross(z,x);return[x[0],y[0],z[0],0,x[1],y[1],z[1],0,x[2],y[2],z[2],0,-dot(x,eye),-dot(y,eye),-dot(z,eye),1];}
 
-var params={upperCover:.12,lowerCover:.05,blink:0,slant:0,curve:0,thickness:.055,roundness:.78,eyeYaw:0,eyePitch:0,eyeRoll:0,gazeX:0,gazeY:0};
+var params={motionMode:'hybrid',upperCover:.12,lowerCover:.05,blink:0,slant:0,curve:0,thickness:.055,roundness:.78,upperSweep:44,lowerSweep:30,hingeDepth:.025,canthusLock:.72,eyeYaw:0,eyePitch:0,eyeRoll:0,gazeX:0,gazeY:0};
 var presets={neutral:{upperCover:.12,lowerCover:.05,blink:0,slant:0,curve:0,eyeYaw:0,eyePitch:0,eyeRoll:0},half:{upperCover:.12,lowerCover:.05,blink:.48,slant:0,curve:0,eyeYaw:0,eyePitch:0,eyeRoll:0},full:{upperCover:.12,lowerCover:.05,blink:1,slant:0,curve:0,eyeYaw:0,eyePitch:0,eyeRoll:0},skeptical:{upperCover:.28,lowerCover:.04,blink:.14,slant:.42,curve:.10,eyeYaw:0,eyePitch:0,eyeRoll:0},slant:{upperCover:.16,lowerCover:.07,blink:0,slant:.68,curve:0,eyeYaw:0,eyePitch:0,eyeRoll:0},concave:{upperCover:.16,lowerCover:.07,blink:0,slant:0,curve:-.85,eyeYaw:0,eyePitch:0,eyeRoll:0},convex:{upperCover:.16,lowerCover:.07,blink:0,slant:0,curve:.85,eyeYaw:0,eyePitch:0,eyeRoll:0},frog:{upperCover:.12,lowerCover:.05,blink:0,slant:0,curve:0,eyeYaw:78,eyePitch:0,eyeRoll:8}};
 var lids=[null,null],camYaw=0,camPitch=.05,camDist=4.6,target=[0,1.75,.35],drag=false,lx=0,ly=0;
 function rebuildLids(){if(lids[0]){}lids[0]=lidMesh(true,params);lids[1]=lidMesh(false,params);}
@@ -112,11 +175,11 @@ function eyeModel(side){var yaw=params.eyeYaw*Math.PI/180*side,pitch=params.eyeP
 function render(){resize();gl.viewport(0,0,canvas.width,canvas.height);gl.enable(gl.DEPTH_TEST);gl.clearColor(.835,.87,.855,1);gl.clear(gl.COLOR_BUFFER_BIT|gl.DEPTH_BUFFER_BIT);var debug=document.getElementById('debug').value,alpha=debug==='translucent'?.58:1;if(alpha<1){gl.enable(gl.BLEND);gl.blendFunc(gl.SRC_ALPHA,gl.ONE_MINUS_SRC_ALPHA);}else gl.disable(gl.BLEND);
 draw(hostMesh,I(),[.80,.72,.64],1);
 for(var side=-1;side<=1;side+=2){var em=eyeModel(side);draw(sphereMesh,mul(em,S(.225,.235,.215)),[.94,.93,.90],1);var gx=params.gazeX*.045,gy=params.gazeY*.035;draw(sphereMesh,mul(em,mul(T(gx,gy,.205),S(.078,.078,.032))),[.04,.035,.03],1);var uc=debug==='zones'?[.79,.39,.32]:[.80,.72,.64],lc=debug==='zones'?[.34,.68,.48]:[.80,.72,.64];draw(lids[0],em,uc,alpha);draw(lids[1],em,lc,alpha);}
-document.getElementById('metrics').textContent='host '+host.vertexCount+' verts · upper+lower shared-shell lids · blink '+params.blink.toFixed(2);window.__KFB_DUAL_LID_SELFCONTAINED__={ready:true,hostVertices:host.vertexCount,upper:true,lower:true,params:Object.assign({},params)};}
+document.getElementById('metrics').textContent='host '+host.vertexCount+' verts · '+params.motionMode.toUpperCase()+' · blink '+params.blink.toFixed(2)+' · hinge '+params.hingeDepth.toFixed(3);window.__KFB_DUAL_LID_SELFCONTAINED__={ready:true,hostVertices:host.vertexCount,upper:true,lower:true,motionMode:params.motionMode,params:Object.assign({},params)};}
 function resize(){var r=stage.getBoundingClientRect(),d=Math.min(devicePixelRatio||1,2),w=Math.max(1,Math.floor(r.width*d)),h=Math.max(1,Math.floor(r.height*d));if(canvas.width!==w||canvas.height!==h){canvas.width=w;canvas.height=h;}}
-function sync(){['upperCover','lowerCover','blink','slant','curve','thickness','roundness','eyeYaw','eyePitch','eyeRoll','gazeX','gazeY'].forEach(function(id){var e=document.getElementById(id),o=document.getElementById(id+'Out');e.value=params[id];o.textContent=(id.indexOf('Yaw')>0||id.indexOf('Pitch')>0||id.indexOf('Roll')>0)?Math.round(params[id]):(+params[id]).toFixed(2);});document.getElementById('json').textContent=JSON.stringify({schema:'kfb.eye-dual-lid/0.2-selfcontained',source:host.source,construction:'one larger eye-enclosing shell split into upper and lower',params:params},null,2);}
+function sync(){['upperCover','lowerCover','blink','slant','curve','thickness','roundness','upperSweep','lowerSweep','hingeDepth','canthusLock','eyeYaw','eyePitch','eyeRoll','gazeX','gazeY'].forEach(function(id){var e=document.getElementById(id),o=document.getElementById(id+'Out');e.value=params[id];o.textContent=(id.indexOf('Yaw')>0||id.indexOf('Pitch')>0||id.indexOf('Roll')>0||id.indexOf('Sweep')>0)?Math.round(params[id]):(+params[id]).toFixed(2);});document.getElementById('motionMode').value=params.motionMode;document.getElementById('json').textContent=JSON.stringify({schema:'kfb.eye-dual-lid/0.3-motion-lab',source:host.source,construction:'one larger eye-enclosing shell split into upper and lower',motionMode:params.motionMode,params:params},null,2);}
 function applyPreset(n){Object.assign(params,presets[n]||presets.neutral);rebuildLids();sync();render();}
-['upperCover','lowerCover','blink','slant','curve','thickness','roundness','eyeYaw','eyePitch','eyeRoll','gazeX','gazeY'].forEach(function(id){document.getElementById(id).addEventListener('input',function(e){params[id]=+e.target.value;rebuildLids();sync();render();});});
+['upperCover','lowerCover','blink','slant','curve','thickness','roundness','upperSweep','lowerSweep','hingeDepth','canthusLock','eyeYaw','eyePitch','eyeRoll','gazeX','gazeY'].forEach(function(id){document.getElementById(id).addEventListener('input',function(e){params[id]=+e.target.value;rebuildLids();sync();render();});});document.getElementById('motionMode').addEventListener('change',function(e){params.motionMode=e.target.value;rebuildLids();sync();render();});
 document.getElementById('preset').addEventListener('change',function(e){applyPreset(e.target.value);});document.getElementById('debug').addEventListener('change',render);document.getElementById('blinkBtn').addEventListener('click',function(){var old=params.blink;params.blink=1;rebuildLids();sync();render();setTimeout(function(){params.blink=old;rebuildLids();sync();render();},180);});document.getElementById('copyJson').addEventListener('click',function(){if(navigator.clipboard)navigator.clipboard.writeText(document.getElementById('json').textContent);});
 document.querySelectorAll('[data-view]').forEach(function(b){b.addEventListener('click',function(){var v=b.dataset.view;if(v==='front'){camYaw=0;camPitch=.05;}else if(v==='three'){camYaw=-.65;camPitch=.18;}else if(v==='side'){camYaw=-Math.PI/2;camPitch=.05;}else{camYaw=0;camPitch=1.25;}render();});});
 canvas.addEventListener('pointerdown',function(e){drag=true;lx=e.clientX;ly=e.clientY;canvas.setPointerCapture(e.pointerId);});canvas.addEventListener('pointermove',function(e){if(!drag)return;camYaw+=(e.clientX-lx)*.008;camPitch=Math.max(-1.3,Math.min(1.3,camPitch+(e.clientY-ly)*.008));lx=e.clientX;ly=e.clientY;render();});canvas.addEventListener('pointerup',function(){drag=false;});canvas.addEventListener('pointercancel',function(){drag=false;});window.addEventListener('resize',render);
