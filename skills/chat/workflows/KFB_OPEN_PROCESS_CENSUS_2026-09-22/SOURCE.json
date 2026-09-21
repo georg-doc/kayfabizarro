@@ -1,0 +1,36 @@
+{
+  "schema": "kfb.open-process-census-source/1",
+  "date": "2026-09-22",
+  "repo": "georg-doc/kayfabizarro",
+  "branch": "chatgpt-web/open-process-census-2026-09-22",
+  "sourceMain": "bc1441eb8ff9a2df0e15e778b44b73f97eb63d76",
+  "priorConsolidation": {
+    "pr": 113,
+    "branch": "orchestration/wsa-mvp-consolidation-2026-09-20",
+    "headAtCheck": "73ac08330d65f910de76c978e875189f26e989d5",
+    "compareToMain": {
+      "ahead": 36,
+      "behind": 46,
+      "status": "diverged"
+    }
+  },
+  "openPrCounts": {
+    "georg-doc/kayfabizarro": 46,
+    "georg-doc/KFB-Combat-Arena": 7,
+    "georg-doc/KFB-Travel-Globe": 4,
+    "georg-doc/KFB-Stunt-Car-Race": 15,
+    "total": 72
+  },
+  "activeActionsAtCheck": {
+    "queued": 0,
+    "inProgress": 0
+  },
+  "dropbox": {
+    "mutation": "NONE",
+    "cologneOptionCFolder": "/CLAUDE/KFB Stunt Car Race/_inbox/KFB Cologne Race Option C",
+    "return": "/CLAUDE/KFB Stunt Car Race/_inbox/KFB Cologne Race Option C/KFB_COLOGNE_OPTION_C_EXPORT/RETURN.md",
+    "testReport": "/CLAUDE/KFB Stunt Car Race/_inbox/KFB Cologne Race Option C/KFB_COLOGNE_OPTION_C_EXPORT/TEST_REPORT.md"
+  },
+  "gameDevelopmentStudio": "GAME_DEV_CLI_UNAVAILABLE · OPTIONAL FALLBACK USED",
+  "machineCensus": "OPEN_PROCESS_CENSUS.json"
+}
