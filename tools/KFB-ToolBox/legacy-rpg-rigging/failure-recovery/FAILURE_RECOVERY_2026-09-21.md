@@ -204,3 +204,28 @@ Required gate:
 **4/4 body switches PASS in a dedicated minimal browser proof**.
 
 Only after KLR-SYNC-01 passes may the full browser proof resume. Do not publish Cloudflare Stage before that.
+
+
+---
+
+## Resolution · 2026-09-21
+
+The failure export above remains immutable historical evidence for the two failed synchronization attempts.
+
+The blocker was resolved additively on head:
+
+`5b2fa78220ec4127c1b761c4d7f7a8304dfb11e9`
+
+Results:
+
+- KLR-SYNC-01: **41/41 PASS** · run `35550320886`;
+- full Legacy browser/WebGL proof: **44/44 PASS** · run `35550320883`;
+- 0 failed browser resources;
+- 0 page/console errors.
+
+The candidate is therefore no longer technically frozen by KLR-SYNC-01.
+
+This does **not** imply Cloudflare publication or Georg visual acceptance.
+
+Successor gate:
+**KLR-KIT-01 · reusable Legacy ActorRecipe + caller-seeded randomizer core.**
