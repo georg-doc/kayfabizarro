@@ -1055,3 +1055,22 @@ Registered as `EXPERIMENTAL`. It is a shared visual reference only, not an asset
 
 ### CURRENT CONSUMER
 Eye Actor Studio v1 now uses the same language for Clay lids and the candidate FrizzleBob rabbit-ear style adapter.
+
+
+## 2026-09-21 · Eye Actor Studio v1 · host matrix + Rabbit Ear A/B
+
+### IMPLEMENTED
+Eye Actor Studio now consumes existing source owners for PrototypePete, modern Mannequins, Medium/Large profiles, Legacy Skeleton/Jack/Dungeon modular and Pencil/Eraser. Added exact ears.v2 vs Cartoon Ear v1 A/B and wired the experimental KFB 3D CartoonStyle skill/viewer.
+
+### RABBIT EAR POSTMORTEM
+Candidate 0 used a scaled duplicate donor shell for the inner zone and visibly intersected. Repair 1 introduced an independent rounded inner panel but left donor-topology tearing at the tip. Repair 2 preserved ears.v2 measurements/pivot/dangle but rebuilt only the visible shell from donor dimensions as one rounded cartoon form. No third repair pass.
+
+### EVIDENCE
+Head `64d16e754a3b149efa64f2b7f3045d42f32e4bca`:
+**51/51 static + 10/10 syntax + 53/53 browser PASS**, 0 resource/page errors, artifact `10634917298`.
+
+### STATUS
+Assistant visual candidate PASS for ears; Georg acceptance open. Stage not PUBLIC_VERIFIED.
+
+### NEXT
+`EAS1-VIS-2` human review in GPT Studio.

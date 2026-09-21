@@ -435,3 +435,36 @@ WSA rule:
 append source-backed examples and failure→cause→repair→evidence learnings. Do not rewrite old failures and do not promote the draft to immutable canon without Georg visual acceptance.
 
 The skill does not replace Asset Librarian, img2threejs, ToolBox rigs or any consumer runtime.
+
+
+## 2026-09-21 · Eye Actor Studio v1 · source-host + Rabbit Ear update
+
+Draft PR #159 / branch `chatgpt-web/toolbox-eye-actor-studio-v1-2026-09-21`.
+
+Authoritative runtime/browser head:
+`64d16e754a3b149efa64f2b7f3045d42f32e4bca`.
+
+Evidence:
+- **51/51 static PASS**
+- **10/10 syntax PASS**
+- **53/53 desktop/mobile browser PASS**
+- 0 resource/page errors
+- artifact `10634917298`
+
+The Studio now starts **source-only** on exact Legacy PrototypePete and can switch to existing owner-backed hosts: Mannequin Medium/Large, Medium catalog, reviewed Large profiles, Legacy Skeleton/Jack/Dungeon modular, Pencil and Eraser.
+
+Rabbit-ear review is A/B:
+- exact `ears.v2` donor;
+- Cartoon Style v1 candidate.
+
+The candidate retains `ears.v2` placement/pivot/dangle, uses donor-measured rounded outer geometry, a separate inner-ear zone and FrizzleBob `Main` / `Main_Light` colours. Two bounded visual repairs were used; current assistant status is CANDIDATE PASS, not human acceptance.
+
+The experimental `skills/KFB_3D_CartoonStyle_v1.md` + interactive HTML is the additive style notebook for these failures/repairs.
+
+Intended Stage remains:
+`https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/eye-actor-studio/`
+
+**PUBLIC_VERIFIED: NO.**
+
+Exactly one next gate:
+**EAS1-VIS-2 · Georg visual review in the GPT Studio of host → eyes/Clay lids → exact-vs-cartoon ears.**

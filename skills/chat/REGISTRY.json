@@ -666,14 +666,17 @@
       "branch": "chatgpt-web/toolbox-eye-actor-studio-v1-2026-09-21",
       "draftPR": 159,
       "owner": "KFB ToolBox / Rigging · existing EyeRig authoring line",
-      "testedHead": "cfead6b064a36075f3c360217ed42c92b065bec3",
-      "tested": "20/20 static + 4/4 syntax + 22/22 desktop/mobile WebGL PASS",
+      "testedHead": "64d16e754a3b149efa64f2b7f3045d42f32e4bca",
+      "tested": "51/51 static + 10/10 syntax + 53/53 desktop/mobile browser PASS",
       "gptWorkbench": "READY_IN_CURRENT_CHAT_ONLY",
       "intendedStage": "https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/eye-actor-studio/",
       "publicVerified": false,
       "humanAccepted": false,
-      "nextGate": "EAS1-VIS-1 · Georg visual review in GPT workbench",
-      "note": "Eye Cluster supports 1–4 independent eyes with per-eye XYZ, size, W/H/D and Pitch/Yaw/Roll. GPT sandbox mirror is an iteration surface, not KFB Stage."
+      "nextGate": "EAS1-VIS-2 · Georg visual review in GPT Studio: hosts + Eye Cluster/Clay lids + Rabbit Ear A/B",
+      "note": "Technical/browser candidate is green and source-first. Rabbit Ear v1 passed assistant visual inspection after two bounded repairs; Georg acceptance remains open. GPT sandbox is the rapid iteration surface, not KFB Stage.",
+      "hostMatrix": "PrototypePete default + Mannequin Medium + Medium/Large owner catalogs + Legacy Skeleton/Jack/Dungeon modular + Pencil/Eraser proven",
+      "rabbitEars": "exact ears.v2 donor A/B with Cartoon Style v1 candidate; ears.v2 retains pivot/placement/dangle",
+      "cartoonStyle": "skills/KFB_3D_CartoonStyle_v1.md + interactive HTML"
     },
     {
       "id": "kfb-3d-cartoon-style-v1",
