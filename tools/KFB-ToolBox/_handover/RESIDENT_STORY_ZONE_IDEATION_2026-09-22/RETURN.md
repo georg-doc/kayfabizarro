@@ -117,7 +117,7 @@ No implementation or public result is claimed.
 - first Social Attention distance/interruptibility rules in a real host scale;
 - exact first Gift Intent source set per Resident and handoff animation capabilities;
 - gift state/provenance seam without inventing a second inventory owner;
-- exact player Gift Backpack save owner and first slot count;
+- exact first Gift Backpack slot count;
 - exact Bubble choice adapter from canonical Calls into ChatterBox/Triplet context;
 - standalone extraction/attachment proof for Protagonist A/B backpack sibling meshes;
 - GiftInventoryItem persistence concept is decided: Session / Journey / Fractal Almanac; exact storage adapter remains implementation detail;
