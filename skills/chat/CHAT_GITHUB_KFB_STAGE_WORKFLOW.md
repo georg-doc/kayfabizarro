@@ -95,3 +95,23 @@ If `game-dev` is unavailable, do not repeatedly complain and do not block ordina
 ## 8. Stop/recovery rule
 
 After two repair attempts without progress on the same gate, freeze the candidate and use the failure-recovery export. Preserve source and evidence; do not spend the remaining quota polishing the wrong fork.
+
+
+## 9. Gate proportionality / budget rule
+
+Before spending another repair pass on a defect, apply `GATE_PROPORTIONALITY_TOKEN_BUDGET_PROTOCOL.md`.
+
+A failing optional actor, attachment, animation, shader preset, axis assumption or decorative asset does **not** block an MVP unless that exact item is the named acceptance target.
+
+Use:
+
+- `CORE_BLOCKER`
+- `ACCEPTANCE_BLOCKER`
+- `MINOR / QUARANTINABLE`
+- `COSMETIC / DEFERRED`
+
+For minor/quarantinable defects: one diagnostic pass maximum, then quarantine/defer and continue the core loop.
+
+If Georg can resolve an ambiguity in one answer or screenshot, ask instead of spending multiple repair turns.
+
+Work/WSA budget is reserved for cross-repo integration, packaging, deployment and hard runtime seams — not prolonged optional-asset diagnosis or repeated parameter tuning.
