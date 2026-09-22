@@ -121,6 +121,42 @@ Section 26 adds:
 - source-backed Backpack donors including Orc, Hoarder and sibling-mesh candidates from Hiker and Protagonist A/B;
 - user correction: **Goth Girl + Elisa setting**, not “Crossgirl”; Elisa is context, not invented KayKit source.
 
+## Shared Social / Gift Contract v0
+
+The smallest shared data contract is now shaped and checked.
+
+Read:
+
+- `SOCIAL_GIFT_DATA_CONTRACT_v0.json`
+- `SOCIAL_GIFT_FIXTURES_v0.json`
+- `SOCIAL_GIFT_CONTRACT_CHECK.md`
+- `LIVING_CONCEPT.md` §27
+
+v0 defines exactly eight records:
+
+`ActivityState · PerceptionCandidate · Motive · SocialPair · EncounterBit · PlayerCall · GiftInventoryItem · MemoryReceipt`
+
+The three deterministic fixtures are:
+
+- `RR-GIFT-01` Resident→Resident;
+- `RP-GIFT-01` Resident→Player Bubble Call + Backpack;
+- `PR-GIFT-01` Player→Resident re-gift with preserved provenance.
+
+Static evidence:
+- JSON parse **2/2 PASS**;
+- record types **8/8 present**;
+- fixtures **3/3 present**;
+- invariants **12 recorded**.
+
+This is **not** a runtime PASS.
+
 ## One next gate
 
-Define the smallest shared data contract that can serve both **two-Resident Gift Loop** and the next **Resident→player Bubble Gift + Backpack** proof, without implementing a second dialogue or inventory owner.
+Resolve only the **receiving owners/seams** needed before implementation:
+
+1. authoritative Save/Persistence owner for `GiftInventoryItem`;
+2. canonical player/actor IDs in the first host;
+3. current ChatterBox caller/adapter seam for bounded Encounter context;
+4. easiest real food gift for visible carry/handoff.
+
+Do not add runtime code before these four owner facts are pinned.
