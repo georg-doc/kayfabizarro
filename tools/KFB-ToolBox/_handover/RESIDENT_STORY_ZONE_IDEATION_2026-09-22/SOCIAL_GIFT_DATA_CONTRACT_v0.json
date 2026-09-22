@@ -21,7 +21,9 @@
         "boggle",
         "bloedsinn"
       ]
-    }
+    },
+    "persistenceConcept": "Fractal Almanac / Journey Memory / Session save layer",
+    "firstGiftAsset": "media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE/Assets/gltf/donut_pink.gltf"
   },
   "invariants": [
     "Perception creates candidates; it does not start movement, dialogue, combat or transfer.",
@@ -285,5 +287,23 @@
     "full transcript memory",
     "automatic ideological/personality scoring",
     "asset duplication"
-  ]
+  ],
+  "decisions": {
+    "persistenceOwnerConcept": {
+      "status": "USER_DECISION_2026-09-22",
+      "owner": "Session / Journey / Fractal Almanac persistence layer",
+      "scope": "GiftInventoryItem persistence + related Lean Memory / journey event receipts",
+      "note": "Concept owner is decided. Exact runtime storage adapter / serialization implementation remains a later technical integration detail and must reuse the current save/session owner rather than create a new one."
+    },
+    "firstVisibleGift": {
+      "status": "USER_DECISION_2026-09-22",
+      "assetRef": "media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE/Assets/gltf/donut_pink.gltf",
+      "displayName": "pink donut",
+      "note": "Selected as the first visible gift prop candidate for the social gift proof."
+    },
+    "humanGateSimplification": {
+      "status": "DECISION",
+      "note": "Canonical host actor/player IDs and the exact ChatterBox caller/adapter seam are implementation-resolved integration details, not questions that must be answered by Georg before concept progression."
+    }
+  }
 }
