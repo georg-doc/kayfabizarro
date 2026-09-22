@@ -1,0 +1,71 @@
+name: ToolBox Hybrid Surface Seam Lab proof
+on:
+  pull_request:
+    paths:
+      - 'kfb-hub/stage/toolbox/hybrid-surface-seam-lab/**'
+      - '.github/workflows/toolbox-hybrid-surface-seam-lab.yml'
+permissions:
+  contents: read
+jobs:
+  browser-proof:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Syntax and source marker
+        run: |
+          node --check kfb-hub/stage/toolbox/hybrid-surface-seam-lab/tileable-brush.v1.js
+          node --check kfb-hub/stage/toolbox/hybrid-surface-seam-lab/lab.mjs
+          node --check kfb-hub/stage/toolbox/hybrid-surface-seam-lab/proof.mjs
+          python3 -m json.tool kfb-hub/stage/toolbox/hybrid-surface-seam-lab/SOURCE.json >/dev/null
+      - name: Install Chromium
+        run: |
+          npm install --no-save playwright@1.51.1
+          npx playwright install --with-deps chromium
+      - name: Serve candidate
+        run: |
+          python3 -m http.server 4173 --bind 127.0.0.1 >/tmp/seam-http.log 2>&1 &
+          for i in {1..30}; do curl -fsS http://127.0.0.1:4173/kfb-hub/stage/toolbox/hybrid-surface-seam-lab/ >/dev/null && exit 0; sleep 1; done
+          cat /tmp/seam-http.log
+          exit 1
+      - name: Browser seam proof
+        env:
+          SEAM_BASE_URL: http://127.0.0.1:4173/kfb-hub/stage/toolbox/hybrid-surface-seam-lab/
+          SEAM_PROOF_DIR: hybrid-seam-evidence
+        run: node kfb-hub/stage/toolbox/hybrid-surface-seam-lab/proof.mjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: toolbox-hybrid-seam-evidence
+          path: hybrid-seam-evidence
+          retention-days: 14
+
+  public-proof:
+    needs: browser-proof
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install Chromium
+        run: |
+          npm install --no-save playwright@1.51.1
+          npx playwright install --with-deps chromium
+      - name: Exact Cloudflare seam proof
+        env:
+          SEAM_BASE_URL: https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/hybrid-surface-seam-lab/
+          SEAM_PUBLIC: '1'
+          SEAM_SOURCE_HEAD: 8a64b33a917417402b6932fc152ec9f3bcf32fb1
+          SEAM_PROOF_DIR: hybrid-seam-public-evidence
+        run: node kfb-hub/stage/toolbox/hybrid-surface-seam-lab/proof.mjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: toolbox-hybrid-seam-public-evidence
+          path: hybrid-seam-public-evidence
+          retention-days: 14

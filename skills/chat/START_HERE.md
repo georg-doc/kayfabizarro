@@ -426,3 +426,15 @@ Recovery entry: [Hybrid Surface v2 failure recovery](../../tools/KFB-ToolBox/_ha
 Proven salvage includes the exact donor scene, one-texture + procedural 3D grain architecture, source roughness/metalness preservation, and measured head-size scaling (Legacy shorter than Medium; Large taller). These are not yet a visually accepted house style.
 
 Exactly one next gate: **actor material compile census diagnostic**. Identify the five unexplained records before changing shader/proof behavior. The public v1 Stage remains the only human test surface; OSM/Race environment work stays downstream.
+
+
+## 2026-09-22 · Hybrid Surface Seam Lab public gate
+
+Georg's visible repeat-line feedback produced a separate seam-only proof on Draft PR #171. Source inspection proved the inherited RGB brush canvas was non-periodic even though the texture used `RepeatWrapping`; measured opposite-edge mismatch was Δmax **136**. The new toroidal brush generator wraps strokes/blobs and normalizes opposite pixel edges to Δmax **0 / Δmean 0**.
+
+Public Stage:
+`https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/hybrid-surface-seam-lab/`
+
+Public browser proof: **17/17 PASS**, exact Dungeon + five exact actors, zero failed resources and zero page/console errors. Handoff: `../../tools/KFB-ToolBox/_handover/HYBRID_SURFACE_SEAM_LAB_2026-09-22/START_HERE.md`.
+
+This is a seam-only human gate. The separate frozen Hybrid v2 Black Knight compile-census issue remains unresolved; OSM/Race environment promotion stays downstream.

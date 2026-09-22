@@ -1,3 +1,20 @@
+## 2026-09-22 · Seam-only Hybrid macro public proof
+
+### USER FEEDBACK
+Georg reported a visible line on a broad flat wall and asked whether seamless textures should still be a problem.
+
+### PROVEN SOURCE CAUSE
+The predecessor RGB brush generator painted a random non-periodic canvas and only then enabled `RepeatWrapping`. Opposite RGB borders measured Δmax **136** / Δmean **42.755859375**.
+
+### FIX / PUBLIC RESULT
+Draft PR #171 adds toroidal 3×3 stroke/blob wrapping plus explicit opposite-edge normalization. New edge metric is Δmax **0** / Δmean **0**. Exact Cloudflare Stage browser proof is **17/17 PASS**, with the exact Dungeon and five exact actors, 0 failed resources and 0 page/console errors.
+
+### BOUNDARY
+No Hybrid v2 material math, head-size scale, source roughness behavior or consumer owner changed. The frozen Black Knight compile-census issue remains separate.
+
+### NEXT
+Georg compares Legacy non-tileable ↔ Tileable macro on the public Seam close-up Stage.
+
 ## 2026-09-22 · Hybrid Surface v2 implementation frozen
 
 ### IMPLEMENTATION

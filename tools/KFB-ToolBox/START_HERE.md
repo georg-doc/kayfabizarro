@@ -78,6 +78,23 @@ This is additive to Stage-First and does not promote Animation Lab to a separate
 Current gate: Georg reviews the three actors' Idle → Walk → Run / phase-sync result and the Medium-vs-Large motion feel. Attachments remain proposals until their own visible gate.
 
 
+## CURRENT ADDITIVE · Hybrid Surface Seam Lab · 2026-09-22
+
+Public-verified seam-only A/B:
+`https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/hybrid-surface-seam-lab/`
+
+Handoff:
+`_handover/HYBRID_SURFACE_SEAM_LAB_2026-09-22/START_HERE.md`
+
+Draft PR: **#171**
+
+The predecessor RGB brush canvas was proven non-tileable: `RepeatWrapping` repeated opposite edges with Δmax **136**. The new toroidal generator produces exact opposite-edge continuity: Δmax **0**, Δmean **0**. Public Cloudflare browser proof: **17/17 PASS**, 0 failed resources, 0 page/console errors.
+
+Human gate: Georg toggles `Legacy non-tileable` ↔ `Tileable macro` in `Seam close-up`.
+
+This does not resolve or hide the separate frozen Hybrid v2 Black Knight compile-census issue.
+
+
 ## CURRENT ADDITIVE · Hybrid Surface v2 / KFB 3D style · 2026-09-22
 
 **CURRENT CORRECTION:** the v2 implementation candidate is now **FROZEN FAILED / FAILURE RECOVERY**. Do not continue styling or publish a v2 Stage.
