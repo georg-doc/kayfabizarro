@@ -143,12 +143,12 @@ Do not build a general World Editor, autonomous NPC system or separate social-co
 
 At the latest checkpoint:
 
-- current `main`: `3f6f713d89ddc9e2665f838e1aa24fa79231a30c`;
+- `main` moved repeatedly during this ideation session; do not trust an embedded historical main SHA as merge truth;
 - this concept branch is based on an earlier main history and has continued additively;
 - Draft PR #174 currently reports **mergeable: false** against the moved main base.
 
 This does not block ideation/document persistence.
 
-Before any merge/promotion, reconcile the branch against the then-current main and re-run the exact-file/head checks.
+Before any merge/promotion, fetch the then-current `main`, reconcile the branch against it, and re-run the exact-file/head checks.
 
 Do not auto-rebase or auto-merge during the current ideation gate.
