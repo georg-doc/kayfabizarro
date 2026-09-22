@@ -714,6 +714,49 @@ It must not become a separate world truth.
 
 Not first-slice scope.
 
+## 27A · Storytelling / Tactical Map donor
+
+Read:
+
+`STORYTELLING_MAP_WORLD_DONOR_2026-09-22.md`
+
+Current StoryMap source:
+
+`tools/KFB-ToolBox/_inbox/KFB StoryMap v1/`
+
+Do not turn StoryMap into another World runtime.
+
+Carry forward these proven concepts:
+
+- canonical geography separate from presentation transforms;
+- reversible raise / stand-up / slide / rotate / explode / assemble actions;
+- semantic camera roles: Flat / Table / Flyover / Pop-up;
+- Ink vs physical Shadow as representation profiles;
+- one map-derived raster reused for land/water/adjacency;
+- D6 `cell/6` stepped relief as a donor for `terraceLevel 0..5`;
+- coast-distance terracing as stylised fallback only, never factual elevation;
+- radial ripple as an existing first Surface-FX donor;
+- BoardGameBits / Domino / card standees as a reusable World Toy Props vocabulary.
+
+Important current water status:
+
+- source-locked shader integration is programmatically wired;
+- the visual result is still reported too flat/wrong;
+- do **not** promote the current StoryMap water look into World canon.
+
+Long-term relationship:
+
+`World Recipe / stable zone IDs`
+→ World view
+→ Tactical view
+→ Story view
+
+The Tactical/Story manifest may own camera beats, reveals, captions and temporary presentation transforms.
+
+It must reference World IDs rather than fork routes, portals, zones or persistent state.
+
+A later bounded proof may render the **same tiny fixture** as playable World and physical Tactical board, but that is not part of the first World Authoring slice.
+
 ## 28 · UX direction
 
 The world is the primary interface.
