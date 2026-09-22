@@ -910,3 +910,158 @@ Recommended first tangible fixture:
 **Park Bench micro-scene** before the Forge micro-story.
 
 No implementation, public route or runtime promotion has happened in this checkpoint.
+
+
+---
+
+# 20 · Activity Stations, role slots and semantic sockets
+
+## PROPOSAL · object-side affordances instead of actor-specific scripting
+
+A useful next abstraction is an **Activity Station**.
+
+The scene object or place exposes the affordance; the Resident binds into it.
+
+Examples:
+
+### Bench station
+
+- seat anchor;
+- facing direction;
+- optional hand/rest anchors;
+- compatible sit/idle activity tag;
+- conversation radius;
+- look-at target;
+- stand-up / leave anchor.
+
+### Anvil station
+
+- worker stand anchor;
+- anvil impact target;
+- hammer attachment role;
+- approved work-loop activity tag;
+- optional left/right-hand requirement;
+- SFX hook;
+- spark/VFX anchor;
+- pause/look/talk/resume beats.
+
+### Mine entrance station
+
+- approach anchor;
+- entry/exit anchor;
+- local path endpoint;
+- cargo/ore role;
+- wait/work beat;
+- optional host transition hook if the mine is an instanced interior.
+
+This means the Story Zone does not need to hard-code "Blacksmith Bob plays clip 17 at x/y/z".
+
+Instead:
+
+```
+Resident capability / role
+      ↕
+Activity adapter
+      ↕
+Activity Station / semantic sockets
+```
+
+The station describes what the place offers.
+The actor profile describes what the Resident can do.
+The adapter resolves the compatible motion/attachment details.
+
+This should stay lightweight and source-driven. It is not a general gameplay ability system.
+
+## PROPOSAL · concrete cast vs role slots
+
+A Story Zone can support two authoring forms.
+
+### Concrete cast
+
+The Park Bench fixture can explicitly place GothGirl.
+
+This is simplest and best for the first proof.
+
+### Role slot
+
+A reusable Forge template could declare:
+
+- `role.blacksmith`
+- `role.miner`
+
+with capability constraints rather than fixed character names.
+
+Possible constraints:
+
+- supported rig family;
+- required activity tag;
+- required attachment compatibility;
+- optional preferred Resident IDs;
+- optional dialogue/deck role.
+
+At placement time Georg may bind a specific Resident to the role.
+
+This allows one authored micro-story to be reused without turning every Resident into a generic interchangeable NPC. Identity, personality, deck and memory remain actor-owned.
+
+## PROPOSAL · semantic sockets
+
+The same nested hierarchy can expose named sockets/anchors such as:
+
+- `seat`
+- `stand`
+- `lookAt`
+- `handTarget.left`
+- `handTarget.right`
+- `workTarget`
+- `pickup`
+- `dropoff`
+- `entry`
+- `exit`
+- `conversation`
+- `fx`
+- `sound`
+
+These are authoring anchors, not universal physics or AI rules.
+
+They make drag-and-drop authoring much more practical because the editor can snap meaningful things to meaningful places.
+
+## Why this matters for Georg's editor
+
+It creates a scalable workflow:
+
+1. place an anvil from Asset Librarian;
+2. add/inspect an Anvil Station profile;
+3. drag a Resident into the worker role;
+4. choose/validate an approved work activity;
+5. place or adjust the semantic anchors directly with gizmos;
+6. preview the beat loop;
+7. add a ChatterBox reaction at a pause/notice beat;
+8. save the whole group as a reusable Story Zone.
+
+The same authoring language can later work for:
+
+- benches;
+- market stalls;
+- musical instruments;
+- workbenches;
+- mining nodes;
+- doors/portals;
+- campfires;
+- chess tables;
+- jukeboxes;
+- vehicles;
+- combat-free performance spaces.
+
+This is a stronger reuse seam than writing character-specific scripts for every vignette.
+
+## PROPOSAL · editor scopes as breadcrumb navigation
+
+The nested group model should likely be presented as a short breadcrumb / scope path rather than a permanently expanded full scene tree.
+
+Example:
+
+`World / Market Zone / Forge / Blacksmith / Face / EyeRig`
+
+Georg can move upward or downward in scope while keeping the 3D scene dominant.
+
+This matches the existing anti-dashboard direction and makes the same tool usable from tiny rig edits to large scene placement.
