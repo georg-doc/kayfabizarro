@@ -43,4 +43,5 @@ jobs:
         with:
           name: KFB_HYBRID_SURFACE_V2_FAILURE_RECOVERY_2026-09-22_r1
           path: KFB_HYBRID_SURFACE_V2_FAILURE_RECOVERY_2026-09-22_r1
+          include-hidden-files: true
           retention-days: 30
