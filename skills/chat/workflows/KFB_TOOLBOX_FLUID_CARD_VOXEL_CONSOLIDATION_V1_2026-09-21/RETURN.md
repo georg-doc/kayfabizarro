@@ -126,3 +126,19 @@ Final bounded diff from the F1 start base contains exactly **7 documentation/sou
 
 Combined F1 acceptance evidence: **74/74 PASS** (66 source/owner + 8 handoff integrity).  
 The existing KFB Hub and ToolBox Home already route to this same consolidation brief, so no router/Hub code change was necessary or appropriate in this source-only slice.
+
+## F1.5 return · exact source Stage
+
+- Repository: `georg-doc/kayfabizarro`
+- Branch: `toolbox/card-zone-lab-f1-5-source-stage-2026-09-22`
+- Draft PR: `#172` (unmerged)
+- Implementation/test head: `16efcfb7754a1adc0f5f2647a086ccc6d2c3460b`
+- Stage: `https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/card-zone-lab-v2-source/`
+- Donor app: blob `e7bb09e49b2a885eb076e8c43c0ff561a9cebb72`, SHA-256 `a619d3a867064ec033a149f400da708b57e8e05d24e44b709d18dd8c7a62284b`
+- Evidence: **32/32 local Chromium/WebGL PASS**, five screenshots, zero unexpected page/console errors and zero failed app requests.
+
+The 26-file export is copied byte-for-byte; `index.html` is the same donor app. Added files are only Stage provenance/proof automation and evidence. No module extraction, placeholder, second runtime or owner transfer occurred.
+
+Exactly one next gate: Georg reviews the direct Cloudflare Stage for fluid/foam fidelity, reveal/beam behavior and Card Cube face interaction. F2 resumes only after that human gate.
+
+The later Hex World/God Mode/global cartoon-clay direction is persisted separately in `HEX_WORLD_GOD_MODE_ARCHITECTURE_OUTLOOK.md`; it is not implemented here.

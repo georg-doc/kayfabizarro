@@ -1,5 +1,12 @@
 # CHANGELOG · KFB ToolBox Fluid / Card / Voxel consolidation
 
+## 2026-09-22 · F1.5 exact Card Zone source Stage
+
+- Published the unchanged 26-file `card-zone-lab-v2-full_2026-09-22` export at the isolated ToolBox Stage route.
+- Added deterministic source/browser proof: 32/32 local Chromium/WebGL PASS with five screenshots.
+- Preserved DudV fluid/no-grey-foam source behavior, CardStack/reveal, Sky Card/beams and Card Cube Canvas/HTML faces.
+- Added the Hex World/God Mode/cartoon-clay direction as proposal-only architecture outlook; no world runtime was built.
+
 ## 2026-09-22 · F1 source census refresh
 
 - started a fresh bounded source-only branch from `main@1ff35a63cbc6608d9d2f7a79ce5d6f0f17c55ac5`;

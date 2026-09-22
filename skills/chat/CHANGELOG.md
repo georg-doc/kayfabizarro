@@ -1,3 +1,10 @@
+## 2026-09-22 · ToolBox Card Zone F1.5 exact source Stage
+
+- Added the unchanged 26-file 2026-09-22 Card Zone Lab v2 source under one isolated ToolBox Stage route.
+- 32/32 local Chromium/WebGL checks prove DudV/water without grey-foam regression, CardStack/reveal, Sky Card/beams and Card Cube Canvas/HTML faces.
+- Draft PR #172 remains unmerged; direct Cloudflare human review is the next gate.
+- Persisted Hex World/God Mode/global cartoon-clay as a separate architecture outlook only.
+
 ## 2026-09-20 · KCC-1A FrizzleBob Race secondary-motion facts
 
 ### SUPERSEDES · PUBLICATION STATUS ONLY

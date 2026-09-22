@@ -1,6 +1,6 @@
 {
   "schema": "kfb.toolbox-route-audit/2",
-  "audited": "2026-09-21",
+  "audited": "2026-09-22",
   "publicationBranch": {
     "repo": "georg-doc/kayfabizarro",
     "ref": "cloudflare-live",
@@ -9,10 +9,10 @@
   },
   "toolboxRoute": "https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/",
   "counts": {
-    "publicPreview": 7,
+    "publicPreview": 8,
     "missingOrBlocked": 5,
-    "sourceOrIntegration": 7,
-    "totalCards": 19
+    "sourceOrIntegration": 8,
+    "totalCards": 21
   },
   "publicPreview": [
     {
@@ -50,6 +50,12 @@
       "url": "https://kayfabizarro.pages.dev/kfb-hub/stage/game-dev-studio/theatre-curtain-v1/",
       "publicationPath": "kfb-hub/stage/game-dev-studio/theatre-curtain-v1/index.html",
       "evidence": "25/25 public browser PASS at tested head 3bdfdd2e9de648871102d91c89612a5b7ee3c4ab"
+    },
+    {
+      "id": "card-zone-lab-v2-source",
+      "url": "https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/card-zone-lab-v2-source/",
+      "publicationPath": "kfb-hub/stage/toolbox/card-zone-lab-v2-source/index.html",
+      "evidence": "32/32 local Chromium/WebGL PASS; public proof pending publication readback"
     }
   ],
   "missingOrBlocked": [
@@ -86,15 +92,16 @@
     }
   ],
   "sourceOrIntegration": [
+    "Legacy EyeRig 17/17",
+    "Legacy Web Pet v0",
     "3D In-scene Editor",
     "Tiny Treats Rooms & Prop Groups",
     "Living Plant / Prop Lab",
     "FrankenStein Studio v17",
     "Rigging Lab v1",
-    "Animation Lab v2 / v3 intake",
-    "Fluid / Card / Beam / Seed / Voxel Lab"
+    "Animation Lab v2 / v3 intake"
   ],
   "rule": "No preview is shown unless an exact public route is present/proven. Missing/blocked routes link to source or PR only.",
-  "auditedAt": "2026-09-21T02:10:00+02:00",
-  "note": "Theatre Curtain v1 is a previously public-verified route. The new Fluid/Card/Voxel intake remains source-only until its owner and runtime gates pass. Public verification of this router revision is a separate gate."
+  "auditedAt": "2026-09-22T04:00:00+02:00",
+  "note": "Card Zone F1.5 exposes the exact source only; it does not promote extracted modules. Public verification of this router revision is a separate gate."
 }

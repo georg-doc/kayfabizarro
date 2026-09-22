@@ -59,5 +59,13 @@
     "routerCounts": "7 public / 5 missing-or-blocked / 7 source-or-integration / 19 total",
     "boundary": "Planning/router refresh only. Fluid/Card/Voxel candidates are not promoted; Theatre Curtain v1 remains at its existing human gate."
   },
+  "cardZoneF1_5": {
+    "pullRequest": 172,
+    "route": "https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/card-zone-lab-v2-source/",
+    "marker": "KFB_CARD_ZONE_LAB_V2_SOURCE_2026_09_22",
+    "implementationTestHead": "16efcfb7754a1adc0f5f2647a086ccc6d2c3460b",
+    "proof": "32/32 local Chromium/WebGL PASS",
+    "boundary": "Exact source isolation only; no extracted module promotion or runtime-owner change."
+  },
   "publicationFilesReadback": "PASS · kfb-hub/index.html + kfb-hub/stage/index.html + ROUTE_AUDIT.json match main blobs"
 }

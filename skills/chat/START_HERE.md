@@ -75,6 +75,7 @@ If this is a replacement/fresh chat after context loss, use `RECOVERY_PATH.md` r
 - `workflows/KFB_PLAYABLE_MVP_CONSOLIDATION_V1_2026-09-21/START_HERE.md` — lock-first WSA/Astra playable loop
 - `workflows/KFB_THEATRE_CURTAIN_CORE_V2_2026-09-21/START_HERE.md` — reusable cutscene/loading/instance transition seam
 - `workflows/KFB_TOOLBOX_FLUID_CARD_VOXEL_CONSOLIDATION_V1_2026-09-21/START_HERE.md` — verified intake, source census and bounded module proofs
+- F1.5 direct gate: `https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/card-zone-lab-v2-source/` — unchanged 2026-09-22 Card Zone source, 32/32 local Chromium/WebGL PASS, Draft PR #172
 - `tool-nodes/` — current tool/project entry cards
 - `consumers/` — project/chat-specific sync adapters without copied skill bodies
 
