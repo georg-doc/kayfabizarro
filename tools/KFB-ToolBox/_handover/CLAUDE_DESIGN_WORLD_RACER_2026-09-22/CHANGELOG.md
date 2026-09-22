@@ -149,3 +149,30 @@ Georg also clarified terminology: **Claude Design** is the only intended Design 
 
 Curtain human direction was persisted in Theatre Curtain Core v2 and Playable MVP:
 keep the current physical cloth foundation, refine lower-third tieback/swag + cord, repair strong-bend crease/line artifacts, then consider aged fabric/burn wear and optional hanging KFB 3D wordmark.
+
+
+## Spindle Sky + Lead Work routing delta · 2026-09-22
+
+World preflight and Claude World brief now classify the existing Combat card-funnel / Spindle Sky as a reusable Environment Element donor.
+
+Source:
+`georg-doc/KFB-Combat-Arena:wsa/ca2-kaykit-prep-2026-09-20`
+→ `_handover/CA2_KAYKIT_ACTORS_2026-09-20/prompts/SKY_01_SPINDLE_MODULE.md`
+
+Donor family:
+- `himmel.v4.js`;
+- `spindel.v4.js`;
+- `skydome-shader.v4.js`.
+
+Intended extraction remains:
+`kfb.environment.spindle-sky/0.1-candidate`.
+
+It is not part of the Surface Adapter and must not retain private Combat-field coupling.
+
+Cross-project coordination is routed back to:
+`skills/chat/workflows/KFB_LEAD_WORK_CHECKIN_2026-09-22/START_HERE.md`
+
+Combat ranged-first Work plan:
+`skills/chat/workflows/KFB_LEAD_WORK_CHECKIN_2026-09-22/COMBAT_RANGED_MVP.md`
+
+No World, Racer or Combat runtime was modified by this documentation delta.
