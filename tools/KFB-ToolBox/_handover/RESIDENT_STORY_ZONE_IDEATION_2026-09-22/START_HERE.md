@@ -150,13 +150,18 @@ Static evidence:
 
 This is **not** a runtime PASS.
 
+## Current product decisions after contract v0
+
+- **Persistence concept:** Session / Journey / Fractal Almanac owns Gift Inventory + provenance + Lean Memory journey records. Exact storage adapter remains implementation detail.
+- **First gift:** Tiny Treats pink donut:
+  `media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE/Assets/gltf/donut_pink.gltf`
+- **Not a Georg gate:** canonical host actor/player IDs and exact ChatterBox caller/adapter seam. The implementer must recover these from the chosen current host/owner.
+
 ## One next gate
 
-Resolve only the **receiving owners/seams** needed before implementation:
+Choose and then prove the **first visible social gift encounter** with the pink donut.
 
-1. authoritative Save/Persistence owner for `GiftInventoryItem`;
-2. canonical player/actor IDs in the first host;
-3. current ChatterBox caller/adapter seam for bounded Encounter context;
-4. easiest real food gift for visible carry/handoff.
+Recommended smallest proof:
+`Orc → player` or `Orc → Lore Keeper` → short Bubble/Banter → offer → accept → `TRANSFER_COMMIT` → Almanac/Journey provenance → release/resume.
 
-Do not add runtime code before these four owner facts are pinned.
+No need to ask Georg for internal IDs or caller-function names before that build slice is prepared.
