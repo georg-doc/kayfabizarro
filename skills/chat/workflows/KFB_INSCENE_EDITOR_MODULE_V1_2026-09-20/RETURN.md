@@ -79,3 +79,28 @@ Publish an isolated Cloudflare Stage candidate and let Georg test one Resident p
 **select → move → reset → import → undo/redo**.
 
 Only after that human gate should Tiny Treats room/groups and Resident pose/diorama work start on this shared seam.
+
+
+## Stage mirror + publication checkpoint · 2026-09-22
+
+The isolated two-host Stage package is built from the already-tested source, not a replacement runtime.
+
+- Stage mirror source head: `caf438438007a992d9f65db1fb70d407c4b2dbb9`
+- Stage mirror workflow run: `35539447295` · **SUCCESS**
+- Stage mirror browser assertions: **13/13 PASS**
+- Stage mirror artifact: `10613569458` · `scene-patch-stage-mirror-proof`
+- Artifact digest: `sha256:9cdd04a2abbf53fae64c75ab17c7e3216ad0ad0fad2804ecdaa6c8d93baef4a8`
+- Browser/page errors: **0**
+
+Exact tested mirror files were copied atomically to the publication branch:
+- `cloudflare-live` candidate content commit: `2c2de267b9413b262d51152408e616751c1e8e85`
+- current Hub link commit / publication head at checkpoint: `f0c269904de722b86260e1657928e9a1936127b4`
+
+Human/public target:
+`https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/scene-patch-v1/`
+
+Public QA attempt 1 (`35671642443`) failed at the public child-route gate after the isolated mirror had passed. The exact publication Git ref and all three Scene-Patch markers were fetched back and remain correct. A single retry (attempt 2) is currently the final allowed public-sync pass; until it completes, public status is **PENDING / NOT CLAIMED**.
+
+Main has advanced substantially since this bounded branch was created. Do not auto-merge the old branch over newer main work; reconcile through its draft PR after the human/public gate.
+
+Next ToolBox recon/user direction is persisted separately in GitHub issue **#167** so Card Zone / Texture Browser / Voxel-look / Legacy EyeRig / Cologne work cannot be lost or accidentally folded into this Scene-Patch slice.
