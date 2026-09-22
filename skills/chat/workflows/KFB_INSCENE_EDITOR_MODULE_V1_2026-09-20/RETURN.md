@@ -1,7 +1,7 @@
 # RETURN · KFB shared 3D Scene-Patch Adapter v1
 
 Date: 2026-09-20  
-Status: **TWO-HOST BROWSER PASS · STAGE/HUMAN GATE NEXT**  
+Status: **PUBLIC_VERIFIED · TWO-HOST HUMAN GATE NEXT**  
 Owner: ToolBox shared editor/patch module; receiving host keeps scene/runtime ownership  
 Repository: `georg-doc/kayfabizarro`  
 Branch: `toolbox/scene-patch-adapter-v1-2026-09-20`  
@@ -75,8 +75,11 @@ S21 Room Study and S38 source lines were checked read-only. No Dropbox files wer
 
 ## Exactly one next gate
 
-Publish an isolated Cloudflare Stage candidate and let Georg test one Resident prop and one Dungeon candle with:
+Georg tests the now-public isolated Stage candidate with one Resident prop and one Dungeon candle:
 **select → move → reset → import → undo/redo**.
+
+Direct human route:
+https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/scene-patch-v1/
 
 Only after that human gate should Tiny Treats room/groups and Resident pose/diorama work start on this shared seam.
 
@@ -104,3 +107,25 @@ Public QA attempt 1 (`35671642443`) failed at the public child-route gate after 
 Main has advanced substantially since this bounded branch was created. Do not auto-merge the old branch over newer main work; reconcile through its draft PR after the human/public gate.
 
 Next ToolBox recon/user direction is persisted separately in GitHub issue **#167** so Card Zone / Texture Browser / Voxel-look / Legacy EyeRig / Cologne work cannot be lost or accidentally folded into this Scene-Patch slice.
+
+
+## Public Cloudflare proof · final
+
+Public QA run `35671642443`, **attempt 2: SUCCESS**.
+
+- exact public route: https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/scene-patch-v1/
+- public assertions: **13/13 PASS**
+- public Resident host: loaded + source identity + editor activation PASS
+- public Dungeon host: generated real candle set + source identity + editor activation PASS
+- KFB Hub: HTTP PASS + direct Scene Patch link PASS
+- page/console errors: **0**
+- public proof artifact: `10671626183` · `scene-patch-public-proof`
+- artifact digest: `sha256:356dbf12428252b54040e50a4077767e0cac3234c74982adbdaf4ca28a4bb2cf`
+- artifact contents: report + Resident screenshot + Dungeon screenshot + public evidence file set
+
+Attempt 1 is retained as publication-sync history; it does not invalidate the later successful proof. No Live promotion or main merge is implied by PUBLIC_VERIFIED.
+
+Current publication branch checkpoint:
+`cloudflare-live@f0c269904de722b86260e1657928e9a1936127b4`.
+
+The implementation branch is intentionally not auto-merged because current `main` has advanced substantially since the bounded slice began. Reconciliation belongs in the draft PR, not in this human gate.
