@@ -1,0 +1,20 @@
+{
+  "schema": "kfb.stage-source/0.1",
+  "product": "KFB ToolBox · Tileable Macro Seam Lab",
+  "owner": "KFB ToolBox / material-surface compatibility lab",
+  "status": "IMPLEMENTATION_CANDIDATE",
+  "sourceRepo": "georg-doc/kayfabizarro",
+  "sourceBranch": "chatgpt-web/toolbox-tileable-macro-seam-2026-09-22",
+  "sourceBranchHead": "PENDING",
+  "cause": "prior RGB brush bitmap was non-tileable; RepeatWrapping alone repeats mismatched edges",
+  "scope": "seam-only; macro texture generator change only",
+  "donors": {
+    "v1RgbBrushRuntime": "15f2f1714d62b606033b8624964e481c6d99d59f",
+    "frozenV2Material": "7cbad52b55fb9ec2300aa4b25ca92b0997ce448a",
+    "worldAtlas": "bc1441eb8ff9a2df0e15e778b44b73f97eb63d76",
+    "actors": "bdaea0648f27c0f16e0a737bfba237eb54dd4cbb"
+  },
+  "exactScene": "World Atlas Dungeon promo + GothGirl + FrizzleBob Driver Graft",
+  "stageUrl": "https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/tileable-macro-seam-lab/",
+  "humanAcceptance": "PENDING"
+}
