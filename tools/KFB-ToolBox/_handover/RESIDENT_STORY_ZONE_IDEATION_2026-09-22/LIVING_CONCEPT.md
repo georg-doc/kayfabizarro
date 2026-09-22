@@ -1913,3 +1913,317 @@ Lore Keeper finds Card POI
 This would connect Story Zone activity, POI discovery, social attention, ChatterBox and memory in one readable loop.
 
 Do not require this full sequence for the first Lore Keeper visual/activity gate.
+
+
+---
+
+# 24 · Food Gifts, absurd promises and reaction library
+
+## USER DIRECTION · 2026-09-22
+
+Food props should become a major practical basis for the Gift Drive.
+
+Use real source-backed props from the existing KFB asset corpus, especially:
+
+- KayKit food / restaurant props;
+- Tiny Treats Baked Goods;
+- Tiny Treats Bakery Interior;
+- Tiny Treats Charming Kitchen;
+- Tiny Treats Pleasant Picnic;
+- later other verified restaurant / diner / food packs already discoverable through Asset Librarian.
+
+Current repo source evidence already includes concrete examples such as:
+
+- `media/3D_Assets/KayKit_Restaurant_Bits_1.0_FREE/Assets/gltf/food_burger.gltf`;
+- `food_stew.gltf`;
+- `food_dinner.gltf`;
+- ingredient props such as bun, ham, onion, steak, cheese, potato and carrot;
+- Tiny Treats Baked Goods / Bakery / Kitchen / Picnic pack trees.
+
+This is source-location evidence, not yet a curated Gift Catalog.
+
+Asset Registry / Librarian remains the owner of exact identity and discoverability.
+
+## Comedic direction
+
+The Gift Drive should support **absurd framing, bizarre taste claims and exaggerated promised effects**.
+
+The gift is physically real and source-backed.
+The claimed effect is social/performance content.
+
+These are deliberately different layers.
+
+Example concept directions, not fixed verbatim lines:
+
+- an Orc gives the bald Lore Keeper an ominously branded donut and confidently claims it is a completely reliable hair-loss remedy;
+- a Skeleton gives Goth Girl a wrapped present promising to improve her gloomy attitude; the present produces a cartoon blast / jack-in-the-box style gag, briefly blackening her face with soot and setting tiny harmless flames flickering on her hair;
+- after a short beat of mutual stunned silence, both Residents collapse into shared laughter, potentially escalating into exaggerated floor-rolling laugh animation with tear emanata.
+
+The comedy comes from the contrast:
+
+**abrasive social tone + genuine gift impulse + absurd promise + visible cartoon consequence + immediate shared enjoyment.**
+
+## PROPOSAL · separate four gift layers
+
+### Physical gift
+
+Real object identity.
+
+Examples:
+
+- donut / pastry;
+- bread;
+- cake;
+- burger;
+- stew / meal;
+- fruit / ingredient;
+- wrapped present;
+- Card;
+- small prop / token.
+
+### Claimed effect
+
+ChatterBox / authored framing.
+
+Possible claim families:
+
+- beauty;
+- mood;
+- wisdom;
+- courage;
+- health;
+- luck;
+- social prestige;
+- philosophical enlightenment;
+- anti-gloom;
+- deliberately bizarre pseudo-remedy.
+
+These claims are comic world-performance, not hidden gameplay-stat truth.
+
+### Local gag outcome
+
+What actually happens visibly.
+
+Examples:
+
+- nothing;
+- delighted reaction;
+- disgust;
+- tiny sparkle;
+- soot face;
+- tiny hair flames;
+- singe smoke;
+- comic recoil;
+- coughing / sputtering;
+- crying;
+- laugh fit;
+- mock offense;
+- delayed bafflement.
+
+### Social aftermath
+
+What happens between Residents:
+
+- insult;
+- counter-insult;
+- gratitude;
+- mock gratitude;
+- counter-gift;
+- shared laughter;
+- challenge;
+- repair beat;
+- later callback.
+
+This separation lets one physical prop support many social stories.
+
+## PROPOSAL · reusable Gift Gag grammar
+
+```
+NOTICE
+→ APPROACH
+→ BANTER
+→ CLAIM / HYPE
+→ OFFER_GIFT
+→ ACCEPT / OPEN / CONSUME
+→ GAG_OUTCOME
+→ SHOCK_BEAT
+→ REACTION_PAIR
+→ LAUGH / REPAIR / CALLBACK
+→ RESUME
+```
+
+The short **SHOCK_BEAT** is important.
+
+For cartoon gift gags, a brief freeze / mutual stare before laughter can carry much of the timing.
+
+## PROPOSAL · triggerable Reaction Library
+
+The social system needs a reusable semantic Reaction Library.
+
+The library should be triggerable by meaning, while the Animation/Motion owner resolves the exact clip.
+
+### Micro reactions
+
+- glance;
+- head turn;
+- double-take;
+- nod;
+- shrug;
+- eye-roll;
+- head tilt;
+- small recoil;
+- suspicious inspect;
+- smug pause.
+
+### Social reactions
+
+- laugh small;
+- laugh big;
+- point-and-laugh;
+- mock offense;
+- embarrassed laugh;
+- sarcastic bow;
+- gratitude gesture;
+- playful refusal;
+- gift accept;
+- show object;
+- boast.
+
+### Emotional reactions
+
+- cry / weep;
+- cartoon sob;
+- laugh-cry;
+- baffled freeze;
+- shocked freeze;
+- gloomy slump;
+- proud pose;
+- relieved settle.
+
+### Gag / impact reactions
+
+- soot-face reaction;
+- singe / tiny-flame panic;
+- pat-out-hair;
+- cough / sputter;
+- startle jump;
+- stumble;
+- light knockdown;
+- dazed spin;
+- belly-laugh fold;
+- roll-on-floor laughter.
+
+### Repair reactions
+
+- help-up;
+- shoulder slap;
+- rough side-hug;
+- shared toast;
+- mutual laugh settle;
+- walk off together;
+- return to activity.
+
+### Object reactions
+
+- inspect gift;
+- unwrap;
+- sniff;
+- nibble / eat;
+- place down;
+- pocket / stash;
+- display proudly;
+- hide awkwardly.
+
+## PROPOSAL · semantic reaction triggers
+
+Candidate event vocabulary:
+
+- `gift.offered`
+- `gift.accepted`
+- `gift.opened`
+- `gift.consumed`
+- `gift.gag.soot`
+- `gift.gag.flame`
+- `gift.gag.recoil`
+- `social.shock`
+- `social.sharedLaugh`
+- `social.mockOffense`
+- `social.helpUp`
+- `emotion.cry`
+- `emotion.laughCry`
+
+ChatterBox may request / bias a semantic reaction.
+
+It does not directly author skeletal motion.
+
+## PROPOSAL · reaction duration classes
+
+Avoid one giant reaction state machine.
+
+Start with:
+
+- `INSTANT` — glance, blink, tiny recoil;
+- `SHORT` — shrug, laugh burst, inspect, cough;
+- `BIT` — unwrap → gag → shock → laughter;
+- `RECOVERABLE_LOOP` — crying, laughing, singed idle, embarrassed idle.
+
+A higher-priority non-interruptible Bit can temporarily suspend ordinary activity and then return control.
+
+## PROPOSAL · Emanata / comic VFX
+
+Lightweight presentation cues may include:
+
+- laugh tears;
+- tiny flames;
+- soot;
+- smoke curl;
+- sweat drops;
+- confusion glyph;
+- aroma/stink lines;
+- sparkle;
+- cartoon burst.
+
+These are social/comic presentation cues, not Combat VFX ownership.
+
+## Lean Memory
+
+Gift gags are strong Lean Memory candidates because they produce durable shared history.
+
+Useful compact facts:
+
+- giver;
+- recipient;
+- source-backed gift identity;
+- absurd claim family / small callback tag;
+- visible gag outcome;
+- witnesses;
+- whether the gift was kept / displayed;
+- whether both laughed / argued / fought afterward.
+
+Do not store the full generated transcript.
+
+## Build-order guardrail
+
+Do not make the full explosive-present gag a dependency for Lore Keeper LK-L1.
+
+Recommended progression:
+
+1. Lore Keeper basic activity;
+2. simple source-backed food handoff;
+3. one absurd claim;
+4. one receiver reaction;
+5. one shared laugh;
+6. later one full multi-step cartoon gift gag;
+7. later still crying / floor-roll / multi-clip reaction chains.
+
+## Open source / animation questions
+
+Before implementation:
+
+- curate the exact first food Gift Catalog from Asset Librarian;
+- prove exact carry/handoff compatibility for the selected actors;
+- inventory existing laugh / cry / surprise / inspect / gift-accept clips;
+- decide which missing reactions require additive authored clips;
+- decide whether soot/singe is a temporary material/decal/VFX state or another existing presentation seam.
+
+No missing clip is to be invented as already present.
