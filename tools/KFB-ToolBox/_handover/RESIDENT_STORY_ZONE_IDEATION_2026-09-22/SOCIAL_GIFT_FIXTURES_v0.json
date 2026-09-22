@@ -1,0 +1,336 @@
+{
+  "schema": "kfb.social-gift-fixtures.v0",
+  "status": "PROPOSAL_ONLY_NOT_RUNTIME",
+  "contractRef": "SOCIAL_GIFT_DATA_CONTRACT_v0.json",
+  "note": "Deterministic documentation fixtures. They demonstrate record relationships only and do not claim runtime implementation, navigation, animation or save ownership.",
+  "fixtures": [
+    {
+      "id": "RR-GIFT-01",
+      "purpose": "Resident→Resident gift loop",
+      "records": {
+        "activityStates": [
+          {
+            "actorId": "resident.orc-brute",
+            "activityId": "ambient-idle",
+            "phase": "pause",
+            "interruptible": true,
+            "priorityClass": "ordinary",
+            "resumeToken": "ambient-idle.pause"
+          },
+          {
+            "actorId": "resident.lorekeeper",
+            "activityId": "study-at-lectern",
+            "phase": "reading",
+            "interruptible": true,
+            "priorityClass": "ordinary",
+            "resumeToken": "lectern.reading",
+            "stationRef": "station.desk"
+          }
+        ],
+        "perceptionCandidate": {
+          "candidateId": "pc.rr.01",
+          "targetId": "resident.lorekeeper",
+          "kind": "RESIDENT",
+          "band": "ENGAGE",
+          "visible": true,
+          "reachableHint": "likely",
+          "reasonTags": [
+            "pending-gift",
+            "buddy-banter"
+          ],
+          "observedAt": "tick:100"
+        },
+        "motive": {
+          "motiveId": "m.rr.01",
+          "kind": "GIFT",
+          "initiatorId": "resident.orc-brute",
+          "targetId": "resident.lorekeeper",
+          "sourceCandidateId": "pc.rr.01",
+          "priorityBand": "P2_GIFT",
+          "reasonTags": [
+            "pending-gift",
+            "target-eligible"
+          ],
+          "giftIntentRef": "gift-intent.orc.food.01",
+          "memoryRefs": [],
+          "seedRef": "KFB-SOCIAL-001"
+        },
+        "socialPair": {
+          "pairId": "pair.rr.01",
+          "initiatorId": "resident.orc-brute",
+          "partnerId": "resident.lorekeeper",
+          "motiveId": "m.rr.01",
+          "state": "ENGAGED",
+          "createdAt": "tick:101"
+        },
+        "encounterBit": {
+          "encounterId": "enc.rr.01",
+          "pairId": "pair.rr.01",
+          "kind": "GIFT",
+          "state": "RESOLVED",
+          "participants": [
+            "resident.orc-brute",
+            "resident.lorekeeper"
+          ],
+          "giftRef": "media/3D_Assets/KayKit_Restaurant_Bits_1.0_FREE/Assets/gltf/food_burger.gltf",
+          "beats": [
+            "ACKNOWLEDGE",
+            "BANTER",
+            "OFFER",
+            "ACCEPT",
+            "REACT",
+            "RELEASE"
+          ],
+          "currentBeat": "RELEASE",
+          "reactionRequests": [
+            "social.sharedLaugh"
+          ],
+          "transferState": "COMMITTED"
+        },
+        "memoryReceipt": {
+          "memoryId": "mem.rr.01",
+          "eventType": "gift-transfer",
+          "participants": [
+            "resident.orc-brute",
+            "resident.lorekeeper"
+          ],
+          "recordedAt": "tick:110",
+          "zoneRef": "zone.archive-study",
+          "encounterRef": "enc.rr.01",
+          "objectRef": "gift.foodburger.rr.01",
+          "outcome": "accepted",
+          "callbackTags": [
+            "food-gift",
+            "buddy-banter"
+          ],
+          "witnesses": [],
+          "sourceRefs": [
+            "media/3D_Assets/KayKit_Restaurant_Bits_1.0_FREE/Assets/gltf/food_burger.gltf"
+          ]
+        }
+      }
+    },
+    {
+      "id": "RP-GIFT-01",
+      "purpose": "Resident→Player Bubble gift and Backpack commit",
+      "records": {
+        "activityState": {
+          "actorId": "resident.orc-brute",
+          "activityId": "ambient-idle",
+          "phase": "pause",
+          "interruptible": true,
+          "priorityClass": "ordinary",
+          "resumeToken": "ambient-idle.pause"
+        },
+        "perceptionCandidate": {
+          "candidateId": "pc.rp.01",
+          "targetId": "player.main",
+          "kind": "PLAYER",
+          "band": "ENGAGE",
+          "visible": true,
+          "reachableHint": "likely",
+          "reasonTags": [
+            "pending-gift"
+          ],
+          "observedAt": "tick:200"
+        },
+        "motive": {
+          "motiveId": "m.rp.01",
+          "kind": "GIFT",
+          "initiatorId": "resident.orc-brute",
+          "targetId": "player.main",
+          "sourceCandidateId": "pc.rp.01",
+          "priorityBand": "P2_GIFT",
+          "reasonTags": [
+            "pending-gift",
+            "player-eligible"
+          ],
+          "giftIntentRef": "gift-intent.orc.food.01",
+          "memoryRefs": [],
+          "seedRef": "KFB-SOCIAL-002"
+        },
+        "socialPair": {
+          "pairId": "pair.rp.01",
+          "initiatorId": "resident.orc-brute",
+          "partnerId": "player.main",
+          "motiveId": "m.rp.01",
+          "state": "ENGAGED",
+          "createdAt": "tick:201"
+        },
+        "encounterBit": {
+          "encounterId": "enc.rp.01",
+          "pairId": "pair.rp.01",
+          "kind": "PLAYER_GIFT_CONVERSATION",
+          "state": "RESOLVED",
+          "participants": [
+            "resident.orc-brute",
+            "player.main"
+          ],
+          "giftRef": "media/3D_Assets/KayKit_Restaurant_Bits_1.0_FREE/Assets/gltf/food_burger.gltf",
+          "beats": [
+            "OPEN",
+            "PLAYER_CHOICE",
+            "NPC_REPLY",
+            "GIFT_OFFER",
+            "ACCEPT",
+            "REACT",
+            "RELEASE"
+          ],
+          "currentBeat": "RELEASE",
+          "chatterContextRef": "chatter.rp.01",
+          "reactionRequests": [
+            "social.sharedLaugh"
+          ],
+          "transferState": "COMMITTED"
+        },
+        "playerCall": {
+          "callId": "call.rp.01",
+          "encounterId": "enc.rp.01",
+          "playerId": "player.main",
+          "call": "boggle",
+          "label": "KayfaBOGGLE",
+          "selectedAt": "tick:204",
+          "tripletRef": "triplet.rp.01",
+          "sourceBubbleRef": "bubble.player-choice.01"
+        },
+        "giftInventoryItem": {
+          "instanceId": "gift.foodburger.rp.01",
+          "assetRef": "media/3D_Assets/KayKit_Restaurant_Bits_1.0_FREE/Assets/gltf/food_burger.gltf",
+          "kind": "food",
+          "state": "carried",
+          "visualProfileRef": "gift-carry.default-small",
+          "provenance": {
+            "fromActorId": "resident.orc-brute",
+            "eventRef": "mem.rp.01",
+            "acquiredInZone": "zone.archive-study",
+            "originalSourceRef": "media/3D_Assets/KayKit_Restaurant_Bits_1.0_FREE/Assets/gltf/food_burger.gltf",
+            "priorOwners": [
+              "resident.orc-brute",
+              "player.main"
+            ]
+          }
+        },
+        "memoryReceipt": {
+          "memoryId": "mem.rp.01",
+          "eventType": "gift-transfer",
+          "participants": [
+            "resident.orc-brute",
+            "player.main"
+          ],
+          "recordedAt": "tick:210",
+          "zoneRef": "zone.archive-study",
+          "encounterRef": "enc.rp.01",
+          "objectRef": "gift.foodburger.rp.01",
+          "playerCallRef": "call.rp.01",
+          "outcome": "accepted",
+          "callbackTags": [
+            "player-gift",
+            "boggle",
+            "food-gift"
+          ],
+          "witnesses": [],
+          "sourceRefs": [
+            "media/3D_Assets/KayKit_Restaurant_Bits_1.0_FREE/Assets/gltf/food_burger.gltf"
+          ]
+        }
+      }
+    },
+    {
+      "id": "PR-GIFT-01",
+      "purpose": "Player re-gifts the RP-GIFT-01 object while preserving original provenance",
+      "dependsOn": "RP-GIFT-01",
+      "records": {
+        "carriedBefore": {
+          "instanceId": "gift.foodburger.rp.01",
+          "assetRef": "media/3D_Assets/KayKit_Restaurant_Bits_1.0_FREE/Assets/gltf/food_burger.gltf",
+          "kind": "food",
+          "state": "carried",
+          "provenance": {
+            "fromActorId": "resident.orc-brute",
+            "eventRef": "mem.rp.01",
+            "acquiredInZone": "zone.archive-study",
+            "originalSourceRef": "media/3D_Assets/KayKit_Restaurant_Bits_1.0_FREE/Assets/gltf/food_burger.gltf",
+            "priorOwners": [
+              "resident.orc-brute",
+              "player.main"
+            ]
+          }
+        },
+        "socialPair": {
+          "pairId": "pair.pr.01",
+          "initiatorId": "player.main",
+          "partnerId": "resident.goth-girl",
+          "motiveId": "m.pr.01",
+          "state": "ENGAGED",
+          "createdAt": "tick:300"
+        },
+        "encounterBit": {
+          "encounterId": "enc.pr.01",
+          "pairId": "pair.pr.01",
+          "kind": "PLAYER_GIFT_CONVERSATION",
+          "state": "RESOLVED",
+          "participants": [
+            "player.main",
+            "resident.goth-girl"
+          ],
+          "giftRef": "media/3D_Assets/KayKit_Restaurant_Bits_1.0_FREE/Assets/gltf/food_burger.gltf",
+          "beats": [
+            "OPEN",
+            "GIFT_OFFER",
+            "NPC_REPLY",
+            "ACCEPT",
+            "REACT",
+            "RELEASE"
+          ],
+          "currentBeat": "RELEASE",
+          "reactionRequests": [
+            "social.mockOffense",
+            "social.sharedLaugh"
+          ],
+          "transferState": "COMMITTED"
+        },
+        "transferredAfter": {
+          "instanceId": "gift.foodburger.rp.01",
+          "assetRef": "media/3D_Assets/KayKit_Restaurant_Bits_1.0_FREE/Assets/gltf/food_burger.gltf",
+          "kind": "food",
+          "state": "transferred",
+          "provenance": {
+            "fromActorId": "player.main",
+            "eventRef": "mem.pr.01",
+            "acquiredInZone": "zone.party-place",
+            "originalSourceRef": "media/3D_Assets/KayKit_Restaurant_Bits_1.0_FREE/Assets/gltf/food_burger.gltf",
+            "priorOwners": [
+              "resident.orc-brute",
+              "player.main",
+              "resident.goth-girl"
+            ]
+          }
+        },
+        "memoryReceipt": {
+          "memoryId": "mem.pr.01",
+          "eventType": "gift-transfer",
+          "participants": [
+            "player.main",
+            "resident.goth-girl"
+          ],
+          "recordedAt": "tick:310",
+          "zoneRef": "zone.party-place",
+          "encounterRef": "enc.pr.01",
+          "objectRef": "gift.foodburger.rp.01",
+          "outcome": "accepted",
+          "callbackTags": [
+            "regift",
+            "original-orc-gift",
+            "shared-laugh"
+          ],
+          "witnesses": [],
+          "sourceRefs": [
+            "media/3D_Assets/KayKit_Restaurant_Bits_1.0_FREE/Assets/gltf/food_burger.gltf",
+            "mem.rp.01"
+          ]
+        }
+      },
+      "invariant": "originalSourceRef remains unchanged and priorOwners records the social chain"
+    }
+  ]
+}
