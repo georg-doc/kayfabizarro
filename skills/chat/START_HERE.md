@@ -1,7 +1,7 @@
 # KFB Chat Production Router
 
 Status: CURRENT ROUTER v0.3
-Date: 2026-09-19
+Date: 2026-09-23
 Owner: Georg / KFB
 
 This folder is the current LLM production routing layer for ChatGPT/Astra and Claude Design.
@@ -83,6 +83,7 @@ If this is a replacement/fresh chat after context loss, use `RECOVERY_PATH.md` r
 
 ## Current first-class nodes
 
+- **WorldBuilder v1 preflight — `WB1-P0 COMPLETE / REVALIDATED`** at `tools/KFB-ToolBox/world-building-preflight/SOURCE_REUSE_MATRIX.md`; current evidence in `TEST_REPORT.md`; exactly one next gate is `WB1-P1` WhackMan Environment Profile isolation. No P2/Stage was started.
 - Asset Librarian
 - FrankenStein Studio v16
 - Travel Globe
