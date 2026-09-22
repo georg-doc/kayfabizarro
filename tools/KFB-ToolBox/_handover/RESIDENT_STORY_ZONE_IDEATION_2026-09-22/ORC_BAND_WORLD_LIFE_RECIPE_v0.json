@@ -1,0 +1,361 @@
+{
+  "schema": "kfb.world-life-scene.v0",
+  "status": "PROPOSAL_ONLY_NOT_RUNTIME",
+  "id": "world-life.orc-band.v0",
+  "title": "Orc Band · Funky War Jam",
+  "purpose": "Bounded World-Life scenic-loop proof for a multi-resident autonomous-feeling scene with proximity audio, social interruption, optional Combat handoff and clean resume.",
+  "ownerBoundary": {
+    "composition": "ToolBox / Story Zone / World-Life scene recipe",
+    "actorSources": "Resident Atlas / Asset Registry",
+    "motion": "current Motion/Animation owners",
+    "dialogue": "ChatterBox / Bubble owner",
+    "navigation": "receiving WorldBuilder/world host",
+    "audio": "receiving host/audio owner; spatialization may reuse existing KFB WebAudio panner donor",
+    "combat": "Combat owner only",
+    "persistence": "Session / Journey / Fractal Almanac for meaningful events only"
+  },
+  "worldBuilderPrerequisite": {
+    "status": "BLOCKED_UNTIL_WB1_P0_P2_GREEN",
+    "ssot": "tools/KFB-ToolBox/_handover/WORLD_BUILDER_V1_2026-09-22/START_HERE.md",
+    "note": "This recipe may be prepared now but must not be treated as Claude Design runtime input until WorldBuilder P0-P2 are green and a CLAUDE_DESIGN_INPUT is produced."
+  },
+  "cast": [
+    {
+      "id": "band.legacy",
+      "role": "hype-vocal-or-aux",
+      "sourceRef": "media/3D_Assets/KayKit Legacy/Orc Warband - legacy/characters/gltf/character_orcA.gltf",
+      "rigProfile": "Rig_Legacy assembled donor",
+      "sourceStatus": "SOURCE_VERIFIED_ADAPTER_REQUIRED",
+      "props": [
+        {
+          "ref": "media/3D_Assets/KayKit_Mystery_Series6/GothGirl/assets/gltf/GothGirl_Microphone.gltf",
+          "use": "optional vocal mic",
+          "status": "SOURCE_VERIFIED_CROSS_PACK_POSE_NOT_PROVEN"
+        },
+        {
+          "ref": "media/3D_Assets/KayKit_Mystery_Series6/6 - December 2025 - Toy Soldier/gltf/ToySoldier_Trumpet.gltf",
+          "use": "optional trumpet",
+          "status": "SOURCE_VERIFIED_PLAY_POSE_NOT_PROVEN"
+        }
+      ],
+      "firstProofFallback": "body-bounce / hype / simple gesture without mouth-instrument dependency"
+    },
+    {
+      "id": "band.medium",
+      "role": "lead-guitar",
+      "sourceRef": "media/3D_Assets/KayKit_Mystery_Series6/1 - July 2023 - Orc Raider/character/OrcRaider.glb",
+      "rigProfile": "Rig_Medium",
+      "sourceStatus": "SOURCE_VERIFIED",
+      "propOptions": [
+        "media/3D_Assets/KayKit_Mixed_Bag_1_FREE/Assets/gltf/guitar_A.gltf",
+        "media/3D_Assets/KayKit_Mixed_Bag_1_FREE/Assets/gltf/guitar_B.gltf"
+      ],
+      "motionAdapter": "reuse Animatronic measured hold + procedural strum pattern after electric-guitar isolated proof",
+      "adapterStatus": "DONOR_ARCHITECTURE_PROVEN_EXACT_ELECTRIC_PROFILE_PENDING"
+    },
+    {
+      "id": "band.large",
+      "role": "war-drum-anchor",
+      "sourceRef": "media/3D_Assets/KayKit_Mystery_Series6/2 - August 2025 - Orc Brute/OrcBrute.glb",
+      "rigProfile": "Rig_Large",
+      "sourceStatus": "SOURCE_VERIFIED",
+      "props": [
+        {
+          "ref": "media/3D_Assets/KayKit_Mystery_Series6/1 - July 2023 - Orc Raider/assets/gltf/Orc_Wardrum.gltf.glb",
+          "scaleProfile": "Resident Atlas Large donor uses 2x"
+        },
+        {
+          "ref": "media/3D_Assets/KayKit_Mystery_Series6/1 - July 2023 - Orc Raider/assets/gltf/Orc_WardrumStick.gltf.glb",
+          "scaleProfile": "Resident Atlas Large donor uses 2x"
+        }
+      ],
+      "motionAdapter": "procedural percussion strike candidate",
+      "adapterStatus": "NO_DRUM_CLIP_EXACT_STRIKE_NOT_YET_PROVEN"
+    }
+  ],
+  "sceneAnchors": [
+    {
+      "id": "spot.large.drum",
+      "kind": "performance",
+      "semanticSockets": [
+        "stand",
+        "workTarget",
+        "sound",
+        "conversation"
+      ]
+    },
+    {
+      "id": "spot.medium.guitar",
+      "kind": "performance",
+      "semanticSockets": [
+        "stand",
+        "sound",
+        "conversation"
+      ]
+    },
+    {
+      "id": "spot.legacy.front",
+      "kind": "performance",
+      "semanticSockets": [
+        "stand",
+        "sound",
+        "conversation"
+      ]
+    },
+    {
+      "id": "band.center",
+      "kind": "group",
+      "semanticSockets": [
+        "lookAt",
+        "conversation",
+        "combat-return"
+      ]
+    },
+    {
+      "id": "offica.spawn.giftbox",
+      "kind": "spawn",
+      "semanticSockets": [
+        "spawn",
+        "exit"
+      ]
+    },
+    {
+      "id": "offica.patrol.path",
+      "kind": "path",
+      "semanticSockets": [
+        "entry",
+        "patrol",
+        "inspect",
+        "exit"
+      ]
+    }
+  ],
+  "bandStateMachine": {
+    "states": [
+      "SETUP_IDLE",
+      "JAM",
+      "BANTER",
+      "INTERRUPTED",
+      "KAYFABE_SCRAP_REQUEST",
+      "POST_SCRAP",
+      "RESUME_JAM"
+    ],
+    "default": "JAM",
+    "transitions": [
+      {
+        "from": "SETUP_IDLE",
+        "to": "JAM",
+        "on": "scene.ready"
+      },
+      {
+        "from": "JAM",
+        "to": "BANTER",
+        "on": "social.banter-window"
+      },
+      {
+        "from": "BANTER",
+        "to": "JAM",
+        "on": "beat.complete"
+      },
+      {
+        "from": "JAM",
+        "to": "INTERRUPTED",
+        "on": "offica.enforcement"
+      },
+      {
+        "from": "INTERRUPTED",
+        "to": "KAYFABE_SCRAP_REQUEST",
+        "on": "heat.challenge",
+        "optional": true
+      },
+      {
+        "from": "KAYFABE_SCRAP_REQUEST",
+        "to": "POST_SCRAP",
+        "on": "combat.social-complete"
+      },
+      {
+        "from": "INTERRUPTED",
+        "to": "RESUME_JAM",
+        "on": "offica.withdraw",
+        "optional": true
+      },
+      {
+        "from": "POST_SCRAP",
+        "to": "RESUME_JAM",
+        "on": "repair.complete"
+      },
+      {
+        "from": "RESUME_JAM",
+        "to": "JAM",
+        "on": "music.resume"
+      }
+    ]
+  },
+  "audio": {
+    "semanticStems": [
+      "band.drums",
+      "band.guitar",
+      "band.hype"
+    ],
+    "optionalStingers": [
+      "band.argument",
+      "band.resume"
+    ],
+    "sourcePolicy": "Georg may later supply Suno MP3/WAV files; filenames are not hardcoded in this concept.",
+    "spatialPolicy": "Use host audio owner; reuse KFB HRTF/inverse-distance panner pattern if compatible; do not create a second AudioContext.",
+    "distanceRead": [
+      {
+        "band": "FAR",
+        "mix": "drums dominant / directional hint"
+      },
+      {
+        "band": "MID",
+        "mix": "drums + guitar readable"
+      },
+      {
+        "band": "NEAR",
+        "mix": "full jam + hype/chatter"
+      }
+    ],
+    "exactDistances": "HOST_SCALE_TUNING_REQUIRED"
+  },
+  "officaDoppeldenk": {
+    "id": "resident.offica-doppeldenk",
+    "sourceActor": "media/3D_Assets/KayKit_Mystery_Series6/6 - December 2025 - Toy Soldier/ToySoldier.glb",
+    "sourceRole": "Toy Soldier / Nussknacker",
+    "personality": "rule/order fetish; suspicious of subversive activity; bureaucratic spoilsport; grumpy when authority is not respected",
+    "spawn": {
+      "donor": "Resident Atlas authored gift-box reveal",
+      "donorDurationSeconds": 4.8,
+      "sourceStates": [
+        "media/3D_Assets/KayKit_Mystery_Series6/6 - December 2025 - Toy Soldier/gltf/Present_Base.gltf",
+        "media/3D_Assets/KayKit_Mystery_Series6/6 - December 2025 - Toy Soldier/gltf/Present_UnwrappedBase.gltf"
+      ],
+      "runtimePolicy": "first proof deterministic debug/forced spawn; later seeded chance + cooldown + maxOneActive"
+    },
+    "patrol": {
+      "motionCandidates": [
+        "Walking_A",
+        "Walking_B",
+        "Idle_A",
+        "Idle_B",
+        "Waving",
+        "Interact"
+      ],
+      "hostOwnsPathing": true,
+      "pattern": [
+        "SPAWN_REVEAL",
+        "PATROL",
+        "NOTICE_POI_OR_VIOLATION",
+        "APPROACH",
+        "INSPECT",
+        "ENFORCE",
+        "CITATION_OR_WARNING",
+        "OPTIONAL_KAYFABE_SCRAP",
+        "GRUMBLE_WITHDRAW",
+        "RESUME_PATROL_OR_EXIT"
+      ]
+    },
+    "authorityProps": [
+      {
+        "ref": "media/3D_Assets/KayKit_Mystery_Series6/6 - December 2025 - Toy Soldier/gltf/ToySoldier_Rifle.gltf",
+        "status": "VERIFIED"
+      },
+      {
+        "ref": "media/3D_Assets/KayKit_Mystery_Series6/6 - December 2025 - Toy Soldier/gltf/ToySoldier_Trumpet.gltf",
+        "status": "VERIFIED_PLAYING_NOT_PROVEN"
+      }
+    ],
+    "enforcementTopics": [
+      "performance permit",
+      "location permit",
+      "noise / volume rule",
+      "unauthorized gathering",
+      "suspiciously subversive jam",
+      "absurd procedural paperwork"
+    ],
+    "citation": {
+      "kind": "SOCIAL_CITATION",
+      "firstProof": "bubble/semantic receipt only; no physical ticket asset required",
+      "playerResponseReuse": [
+        "bingo",
+        "bongo",
+        "boggle",
+        "bloedsinn"
+      ],
+      "outcomes": [
+        "accept",
+        "question",
+        "mock",
+        "reject",
+        "escalate"
+      ],
+      "persistence": "meaningful citation encounter may write Almanac/Lean Memory receipt"
+    },
+    "fightPolicy": {
+      "trigger": "host-approved KAYFABE_SCRAP_REQUEST",
+      "worldBuilderMustNotImplementCombat": true,
+      "desiredNarrative": "three Orcs may collectively rough him up; after social-combat completion the band laughs/resumes while Offica exits grumbling and feeling insufficiently respected",
+      "relationshipRule": "no permanent hostile-state implication"
+    }
+  },
+  "reusablePatrolPattern": {
+    "id": "kfb.patrol-resident.v0",
+    "purpose": "Generalizable semantic patrol pattern for Residents and later mobs",
+    "hostOwnsNavigation": true,
+    "phases": [
+      "SPAWN",
+      "PATROL",
+      "NOTICE",
+      "APPROACH",
+      "INSPECT",
+      "INTERACT_OR_ENFORCE",
+      "RESOLVE",
+      "RESUME_OR_EXIT"
+    ],
+    "extensibleTo": [
+      "guards",
+      "mobs",
+      "inspectors",
+      "vendors",
+      "questless ambient residents"
+    ]
+  },
+  "firstProofScope": {
+    "include": [
+      "three Orcs visible in one authored local scene",
+      "war drum visible",
+      "one electric guitar candidate visible",
+      "Legacy Orc as hype/front role without trumpet dependency",
+      "simple synchronized jam readability",
+      "spatial audio placeholder/stem contract",
+      "forced Offica gift-box reveal",
+      "short patrol path",
+      "one bureaucratic interruption",
+      "clean scene resume"
+    ],
+    "defer": [
+      "random spawn tuning",
+      "final Suno audio",
+      "trumpet-to-mouth pose",
+      "full three-rig combat choreography",
+      "physical citation ticket",
+      "audience NPCs",
+      "Fishing scene",
+      "general mob AI",
+      "world procedural placement"
+    ]
+  },
+  "acceptance": [
+    "Donor actors/props are shown in isolation before integrated scene.",
+    "All three Orc generations remain visibly distinct and correctly scaled.",
+    "No invented Drumming/Guitar/Trumpet clip name is used.",
+    "Band loop reads as intentional performance even with fallback adapters.",
+    "Approach audio gives directional/proximity information without a second AudioContext.",
+    "Offica reveal visibly reuses the Resident Atlas present-state donor.",
+    "Offica can patrol a host-owned authored path.",
+    "Band can be interrupted and resume without resetting the world.",
+    "Combat handoff, if enabled, is requested from Combat owner rather than implemented inside WorldBuilder.",
+    "No Fishing or unrelated VFX/Keys scope is pulled into this proof."
+  ]
+}
