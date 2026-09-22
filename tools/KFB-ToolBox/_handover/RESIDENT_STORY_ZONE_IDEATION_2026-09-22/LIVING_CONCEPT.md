@@ -3184,3 +3184,352 @@ Before implementation:
 - save owner for Gift Inventory;
 - whether displayed gifts leave Backpack or remain referenced;
 - Backpack donor extraction for sibling-mesh-only sources such as Protagonists/Hiker.
+
+
+---
+
+# 27 · Shared Social / Gift Data Contract v0
+
+## STATUS
+
+**PROPOSAL ONLY · DATA CONTRACT SHAPED · NO RUNTIME IMPLEMENTATION**
+
+Machine-readable contract:
+
+`SOCIAL_GIFT_DATA_CONTRACT_v0.json`
+
+Deterministic documentation fixtures:
+
+`SOCIAL_GIFT_FIXTURES_v0.json`
+
+The contract is intentionally small enough to serve the first three proofs:
+
+1. `RR-GIFT-01` — Resident → Resident;
+2. `RP-GIFT-01` — Resident → Player + Bubble Call + Backpack;
+3. `PR-GIFT-01` — Player → Resident re-gift with preserved provenance.
+
+## Source alignment
+
+The contract reuses existing ideas rather than creating parallel owners.
+
+### Scene authoring
+
+`kfb.scene-patch.v1` remains the transform/edit patch seam.
+
+The social contract does not serialize scene transforms or become a second scene graph.
+
+### ChatterBox / semantic generation
+
+The existing NIE adapter hook already establishes:
+
+- bounded request context;
+- fallback;
+- deadline;
+- response text;
+- semantic `tell`;
+- bubble/emote/timing hints.
+
+The social contract therefore carries only references/context needed to ask ChatterBox.
+
+It does not duplicate a second prompt/response protocol.
+
+### Lean Memory
+
+The existing MomentReceipt direction already establishes:
+
+> store compact reconstructible facts and refs rather than whole runtime dumps.
+
+`MemoryReceipt` in this contract follows the same principle.
+
+No full conversation transcript is required for durable memory.
+
+## The eight v0 record types
+
+### 1 · ActivityState
+
+Answers:
+
+**What is the actor doing, and may social logic interrupt now?**
+
+Minimum:
+
+- actor;
+- activity;
+- phase;
+- interruptible;
+- priority class;
+- optional resume token;
+- optional Activity Station ref.
+
+This keeps Activity owner truth visible.
+
+### 2 · PerceptionCandidate
+
+Answers:
+
+**What did this actor notice?**
+
+It does not command behaviour.
+
+A candidate can be:
+
+- Resident;
+- player;
+- Card/prop POI;
+- Station;
+- direct request;
+- host event.
+
+It carries attention band and visibility/reachability hints.
+
+### 3 · Motive
+
+Answers:
+
+**Why would the actor act on that candidate?**
+
+v0 motives remain deliberately small:
+
+- RESPOND;
+- GIFT;
+- CALLBACK;
+- SHOW;
+- BANTER;
+- SHARED_ACTIVITY;
+- CHALLENGE;
+- INSPECT_POI;
+- CONTINUE.
+
+Selection uses explicit priority/reason tags before any opaque utility score.
+
+### 4 · SocialPair
+
+Answers:
+
+**Who has reserved whom for this one encounter?**
+
+This is a short-lived reservation, not relationship ownership.
+
+It prevents social pile-ups and gives approach/abort one shared context.
+
+### 5 · EncounterBit
+
+Answers:
+
+**What bounded social thing are these participants currently doing?**
+
+Examples:
+
+- GIFT;
+- GIFT_GAG;
+- BANTER;
+- SHOW;
+- CALLBACK;
+- PLAYER_GIFT_CONVERSATION;
+- KAYFABE_CHALLENGE.
+
+The Bit owns semantic beats only.
+
+Navigation, animation, inventory save and combat remain external owners.
+
+### 6 · PlayerCall
+
+Answers:
+
+**Which in-world social move did the player choose?**
+
+Current canonical choices:
+
+| ID | Player-facing label |
+|---|---|
+| `bingo` | KayfaBINGO |
+| `bongo` | KayfaBONGO |
+| `boggle` | KayfaBOGGLE |
+| `bloedsinn` | BLÖDSINN! |
+
+The `bloedsinn` ID was rechecked against the canonical glossary / runner source before this contract was retained.
+
+### 7 · GiftInventoryItem
+
+Answers:
+
+**Which transferable social object does the player currently carry, and where did it come from?**
+
+Carries:
+
+- unique instance ID;
+- canonical source ref;
+- object kind;
+- current state;
+- optional visual/carry profile;
+- provenance.
+
+No model binary is copied into the inventory.
+
+### 8 · MemoryReceipt
+
+Answers:
+
+**What socially meaningful event is worth remembering later?**
+
+Carries only compact semantic facts:
+
+- participants;
+- time/tick;
+- Zone;
+- encounter;
+- object;
+- player Call where relevant;
+- outcome;
+- callback tags;
+- actual witnesses;
+- source refs.
+
+Not every line of Banter becomes Memory.
+
+## Hard commit points
+
+The most important contract feature is that transitions are explicit.
+
+### SOCIAL RESERVATION
+
+`SocialPair = RESERVED`
+
+No approach before the target is reserved/available.
+
+### PLAYER CHOICE
+
+Create `PlayerCall`.
+
+The call is an event; it is not hidden in a transcript string.
+
+### GIFT ACCEPTED
+
+`transferState = ACCEPTED`
+
+Still no ownership mutation yet.
+
+### TRANSFER_COMMIT
+
+Only here does the receiving Save/Inventory owner mutate object ownership.
+
+This must happen once.
+
+Before commit:
+the giver still owns the gift.
+
+After commit:
+rollback requires a new explicit event.
+
+### MEMORY COMMIT
+
+Write a compact `MemoryReceipt` only after a meaningful completion/commit.
+
+### RELEASE
+
+Release the pair and resume/reselect Activity.
+
+## Abort semantics
+
+A good social system must fail cleanly.
+
+Abort conditions include:
+
+- target becomes busy;
+- target walks away;
+- player walks away;
+- path unavailable;
+- reservation timeout;
+- host event interrupts;
+- interaction deliberately declined.
+
+Before `TRANSFER_COMMIT`:
+no gift changes owner.
+
+An aborted encounter normally writes no durable memory unless the abort itself becomes a meaningful authored event.
+
+Late generated ChatterBox output may not resurrect a released encounter.
+
+## Fixture chain
+
+### RR-GIFT-01
+
+Two Residents.
+
+Demonstrates:
+
+- ordinary Activities;
+- perception;
+- GIFT motive;
+- Pair Lock;
+- bounded Gift Encounter;
+- one transfer commit;
+- one Memory receipt;
+- resume.
+
+### RP-GIFT-01
+
+Resident and player.
+
+Demonstrates:
+
+- player as social target;
+- one Bubble Call;
+- one NPC response context;
+- one Gift transfer;
+- one Backpack item;
+- provenance;
+- one Memory receipt.
+
+The current fixture uses real source evidence:
+
+`KayKit_Restaurant_Bits_1.0_FREE/.../food_burger.gltf`
+
+as documentation input.
+
+That does not yet prove handoff animation/scale suitability.
+
+### PR-GIFT-01
+
+Player gives the same gift onward to Goth Girl.
+
+Demonstrates the crucial social-object invariant:
+
+**ownership may change; origin history does not disappear.**
+
+The original asset reference remains the same.
+
+The provenance chain grows:
+
+`Orc → Player → Goth Girl`
+
+and can later feed ChatterBox callbacks.
+
+## Why v0 stops here
+
+Do not add yet:
+
+- general AI framework;
+- arbitrary utility scoring;
+- crowd scheduler;
+- quest logic;
+- weight/equipment stats;
+- full inventory UI;
+- combat implementation;
+- reaction animation authoring;
+- world pathfinder;
+- transcript memory;
+- automatic personality/ideology model.
+
+The contract earns expansion only when one of the three fixtures genuinely cannot be represented.
+
+## Next implementation-facing question
+
+Before code, verify only:
+
+1. which existing Save/Persistence owner should hold `GiftInventoryItem`;
+2. which host actor/player IDs are canonical in the first receiving world;
+3. which current ChatterBox caller can consume the bounded Encounter context;
+4. which one source-backed food gift is easiest to carry/handoff visibly.
+
+Everything else can remain v0.
