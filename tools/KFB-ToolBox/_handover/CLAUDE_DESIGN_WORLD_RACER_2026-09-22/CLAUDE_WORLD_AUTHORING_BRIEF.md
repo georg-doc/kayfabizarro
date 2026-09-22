@@ -606,6 +606,58 @@ The world document/editor must not depend on TinySkies aesthetics.
 
 Local flat/Hex worlds must remain possible.
 
+## 23A · Combat Spindle Sky donor
+
+The Combat Arena already contains a distinctive KFB environment donor that may later be useful in World, Race and instance spaces.
+
+Current source/planning owner:
+
+`georg-doc/KFB-Combat-Arena`
+→ `wsa/ca2-kaykit-prep-2026-09-20`
+→ `_handover/CA2_KAYKIT_ACTORS_2026-09-20/prompts/SKY_01_SPINDLE_MODULE.md`
+
+Donor family:
+
+- `himmel.v4.js` — cylindrical interior sky carrying six KFB card motifs plus lower card funnel;
+- `spindel.v4.js` — upper closure/dome and optional vortex/lava throat surfaces;
+- `skydome-shader.v4.js` — procedural/static sky families plus an independent psychedelic spiral overlay.
+
+Treat this as a **reusable Environment / World Element**, not as permanent Combat-only geometry.
+
+Do not import the current tightly coupled Combat donor directly into World.
+
+The existing Combat planning seam is the correct first extraction target:
+
+`kfb.environment.spindle-sky/0.1-candidate`
+
+Host remains owner of:
+
+- scene;
+- camera;
+- renderer;
+- clock;
+- fog;
+- gameplay/world state.
+
+Spindle module owns only its meshes/materials/presets and update/dispose lifecycle.
+
+Possible later consumers:
+
+- Combat Arena background;
+- Race special zone / sky tunnel;
+- World portal/biome/surreal region;
+- Story/Tactical spectacle.
+
+Before any consumer integration:
+
+1. show the exact current Combat donor in isolation;
+2. prove the standalone extraction visually;
+3. preserve real card orientation/readability;
+4. verify upper/lower closure and camera/far-plane behaviour;
+5. keep optional throat/lake/glow as accessories rather than mandatory World terrain.
+
+Do not make the Spindle Sky part of the core Surface Adapter. It is an Environment Element layered on top of a world surface.
+
 ## 24 · WhackMan lessons
 
 ### MazeGraph
