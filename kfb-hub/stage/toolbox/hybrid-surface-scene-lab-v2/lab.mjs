@@ -521,6 +521,11 @@ function setCensusFrustum(materialUuid,value){
   return null;
 }
 
+function isDescendantOf(node,root){
+  for(let n=node;n;n=n.parent)if(n===root)return true;
+  return false;
+}
+
 function actorMaterialCensus(){
   const rows=[];
   for(const [actorId,h] of Object.entries(actorHandles)){
@@ -553,12 +558,18 @@ function actorMaterialCensus(){
           materialName:material?.name||'',
           materialUuid:material?.uuid||null,
           materialVisible:material?.visible!==false,
+          activeMaterialIsArray:Array.isArray(rec.node.material),
+          activeMaterialUuids:(Array.isArray(rec.node.material)?rec.node.material:[rec.node.material]).filter(Boolean).map(m=>m.uuid),
+          hybridIsActive:(Array.isArray(rec.node.material)?rec.node.material:[rec.node.material]).includes(material),
           decorated:!!meta,
           compiled,
           submitted,
           submitCount:renderSubmissions.get(material?.uuid)||0,
           drawReferenced:referenced,
           effectiveVisible:effectiveVisible(rec.node),
+          attachedToActorRoot:isDescendantOf(rec.node,h.root),
+          attachedToScene:isDescendantOf(rec.node,scene),
+          parentName:rec.node.parent?.name||'',
           frustumCulled:rec.node.frustumCulled,
           layerMask:rec.node.layers?.mask??null,
           cameraLayerMask:camera.layers?.mask??null,
