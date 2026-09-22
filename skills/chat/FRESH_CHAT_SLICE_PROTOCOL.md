@@ -26,6 +26,23 @@ Write down five lines before implementation:
 
 A module/POC stays a candidate until its receiving owner explicitly accepts it. Do not turn “while here” ideas into hidden extra scope; record them as `DEFERRED` or `PROPOSAL`.
 
+## 2A. Gate proportionality before repair
+
+Before spending a second turn/pass on any discovered defect, apply `GATE_PROPORTIONALITY_TOKEN_BUDGET_PROTOCOL.md`.
+
+Classify it:
+
+- `CORE_BLOCKER`
+- `ACCEPTANCE_BLOCKER`
+- `MINOR / QUARANTINABLE`
+- `COSMETIC / DEFERRED`
+
+A minor actor/asset/axis/attachment/shader issue must not become an MVP blocker unless that exact item is the named acceptance target.
+
+If Georg can resolve the ambiguity faster than another diagnostic pass, ask him.
+
+For `MINOR / QUARANTINABLE`: one diagnostic pass maximum, then quarantine/defer and continue the core slice.
+
 ## 3. Work additively
 
 - Use a reviewable branch/PR when that project's contract calls for one.
