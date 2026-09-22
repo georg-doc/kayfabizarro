@@ -1,10 +1,12 @@
 # KFB Lead Work · consolidation / architecture check-in · 2026-09-22
 
-Status: **CURRENT LEAD WORK ONBOARDING · CONTROL PLANE / CROSS-REPO CONSOLIDATION**  
+Status: **SUPERSEDED FOR ROUTINE CONTROL-PLANE USE · HISTORICAL HANDOFF / WORK ESCALATION REFERENCE**  
 Owner: existing KFB Lead / WSA integration lead  
 No new universal runtime owner.
 
-This briefing is for returning to the original KFB Lead Work chat.
+This briefing originally routed routine cross-project coordination into Work/WSA. That default is superseded by `../KFB_WEB_FIRST_EXECUTION_V1_2026-09-22/START_HERE.md`.
+
+Routine lead/status/check-in work now belongs in Web/GitHub. Use Work only through an explicit Work Escalation Card when Web + Claude Design + local preview cannot finish the required action.
 
 The recent ToolBox conversation accumulated useful architecture work, but ToolBox must not remain the accidental cross-project Work owner.
 
