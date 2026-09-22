@@ -117,6 +117,32 @@ Useful architectural lessons:
 - presentation offsets must not overwrite saved canonical world positions.
 - static current maze != future endless procedural room system.
 
+### WhackMan environment / lighting donor
+
+Georg explicitly considers the current WhackMan Dungeon lighting direction production-worthy enough to reuse as a donor.
+
+The current source supports that classification:
+
+- `wm-boot.js`: ACES tone mapping, dark dusk background, depth fog, weak cool Hemisphere/Directional world light;
+- `wm-gate-b.js`: mounted-torch source positions from measured flame points, visible additive glow, physical decay, a pool of at most six actual nearby PointLights, independent flicker phases and two-frequency flame/light modulation;
+- `wm-gate-c.js`: continuous local-visibility light following the player, default off so the baseline dusk remains unchanged;
+- `wm-boot.js`: matte material calibration that suppresses the unwanted plastic-varnish look.
+
+Classification:
+
+**PRODUCTION-WORTHY DONOR CANDIDATE FOR DUNGEON / TOOLBOX / WORLD ENVIRONMENT PROFILES · NOT YET A SHARED MODULE**
+
+Extract the behaviour rather than copying WhackMan game ownership.
+
+Target reusable concerns:
+
+- dusk/environment light profile;
+- torch pool + flicker;
+- local visibility / Dungeon sight-radius control;
+- matte material profile.
+
+Do not move WhackMan movement, MazeGraph, pickup or combat ownership with it.
+
 Known warning:
 
 Gate B adds a separate generated garden/decor placement layer. Its own session backlog reports unreliable grounding for some decoration. This supports moving authored props to the shared in-scene editor rather than adding more coordinate heuristics.
