@@ -8,6 +8,8 @@ Status: **PERSISTED / PREPARED · IMPLEMENTATION NOT STARTED**
 Repository: `georg-doc/kayfabizarro`  
 Owner: **KFB ToolBox / material-surface compatibility lab**, with cross-project visual coordination only  
 Branch: `chatgpt-web/kfb-3d-style-surface-scale-2026-09-22`  
+Draft PR: **#165** · `https://github.com/georg-doc/kayfabizarro/pull/165`  
+Pre-Return PR head: `1f03a668ce82a3945450b5ee47451baa368f2f6a`  
 Base: current `main` at slice start `4c838cd0ea4b878f749a01a5c65ace2c308f90a8`
 
 ## Outcome
@@ -51,7 +53,7 @@ Public runtime evidence remains **41/41 PASS** at the recorded tested/deployed s
 ## Evidence
 
 Documentation/source routing checks: **9/9 PASS**.  
-See `TEST_REPORT.md`.
+See `TEST_REPORT.md`. The exact final branch head is fetched from PR #165 at handoff time because the commit that writes this Return necessarily advances the branch.
 
 ## Dropbox
 
