@@ -41,6 +41,7 @@ No Live promotion was performed.
 - `CHANGELOG.md`
 - `RETURN.md`
 - `WORLD_ARCHITECTURE_RED_TEAM_2026-09-22.md` — proposal/research only; no new runtime owner
+- `STORYTELLING_MAP_WORLD_DONOR_2026-09-22.md` — Story/Tactical representation donor, D6 relief, toys, water caveat and Curtain boundary
 
 Central ToolBox handover index updated:
 
@@ -129,6 +130,45 @@ Research recommendation:
 - first architecture stress test, if Georg accepts the proposal: same tiny recipe on Flat + Sphere + Torus.
 
 The current implementation gate below is **not silently replaced** by this proposal.
+
+## Storytelling / Tactical representation delta · 2026-09-22
+
+Current StoryMap intake reviewed:
+
+`tools/KFB-ToolBox/_inbox/KFB StoryMap v1/`
+
+Important classification:
+
+- broad Europe source = OpenPlanetData country-boundary GeoJSON, not OSM-Europe;
+- OSM remains the local/city semantic source lane;
+- StoryMap does not become a second World runtime.
+
+Recommended relationship:
+
+`World Recipe / stable zone IDs / routes / portals / event state`
+→ playable World view
+→ Tactical tabletop/meta-navigation view
+→ Storytelling physical/animated view.
+
+Strong reusable evidence:
+
+- canonical geography is separate from reversible presentation transforms;
+- Flat/Table/Flyover/Pop-up camera-role vocabulary;
+- Ink vs physical Shadow edge presentations;
+- one map-derived raster reused across map analysis;
+- D6 `cell/6` height quantization and coast-distance stepped relief as a stylised terrace donor;
+- existing radial ripple as the first Surface-FX donor;
+- BoardGameBits and World Atlas Domino S9 as a future shared World Toy Props vocabulary.
+
+Do not promote:
+
+- coast-distance relief as factual elevation;
+- current StoryMap water appearance;
+- StoryMap as a second OSM or World owner.
+
+Current StoryMap water integration is source-correct programmatically, but the human-visible result remains unresolved/too flat. Reuse the wet-mask / geometry / flow separation only until a new visible water gate passes.
+
+Theatre Curtain remains a separate Game Dev Studio transition owner. Current v1 technical foundation is kept, while the next human visual refinement is lower-third tieback/swag + optional cord and repair of strong-bend crease/line artifacts before aged/burned fabric polish.
 
 ## Tests / evidence for this packaging slice
 
