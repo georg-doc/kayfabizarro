@@ -114,6 +114,7 @@ scene.add(actorGroup);
 const actorLoader=new GLTFLoader();
 const prepared={environment:[],actors:[]};
 const actorHandles={};
+const renderSubmissions=new Map();
 let roomRoot=null,castFloor=null;
 let currentLook='hybrid';
 let currentView='integrated';
@@ -227,6 +228,16 @@ function prepareActorSurfaces(){
     });
     h.prep=prep;
     prepared.actors.push(prep);
+
+    for(const rec of prep.records){
+      if(rec.node.userData.kfbCensusHookInstalled)continue;
+      const prior=rec.node.onBeforeRender;
+      rec.node.onBeforeRender=function(renderer,scene,camera,geometry,material,group){
+        renderSubmissions.set(material.uuid,(renderSubmissions.get(material.uuid)||0)+1);
+        if(prior)prior.call(this,renderer,scene,camera,geometry,material,group);
+      };
+      rec.node.userData.kfbCensusHookInstalled=true;
+    }
   }
 }
 
@@ -470,6 +481,111 @@ async function buildActors(){
   select.value=isolatedActor;
 }
 
+function objectPath(node,stop){
+  const parts=[];let n=node;
+  while(n&&n!==stop){parts.push(n.name||n.type||'(unnamed)');n=n.parent}
+  if(stop)parts.push(stop.name||stop.type||'(root)');
+  return parts.reverse().join('/');
+}
+
+function effectiveVisible(node){
+  for(let n=node;n;n=n.parent)if(n.visible===false)return false;
+  return true;
+}
+
+function materialDrawReferenced(node,index,total){
+  const g=node.geometry;
+  if(!g)return false;
+  const pos=g.attributes?.position?.count||0;
+  if(pos<=0)return false;
+  const drawCount=g.drawRange?.count;
+  if(drawCount===0)return false;
+  const groups=g.groups||[];
+  if(total<=1)return true;
+  if(!groups.length)return index===0;
+  return groups.some(group=>(group.materialIndex??0)===index && group.count>0);
+}
+
+function setCensusFrustum(materialUuid,value){
+  for(const h of Object.values(actorHandles)){
+    for(const rec of h.prep?.records||[]){
+      const mats=Array.isArray(rec.hybrid)?rec.hybrid:[rec.hybrid];
+      for(const material of mats){
+        if(material?.uuid!==materialUuid)continue;
+        const prior=rec.node.frustumCulled;
+        rec.node.frustumCulled=!!value;
+        return {materialUuid,nodeName:rec.node.name||'',prior,current:rec.node.frustumCulled};
+      }
+    }
+  }
+  return null;
+}
+
+function isDescendantOf(node,root){
+  for(let n=node;n;n=n.parent)if(n===root)return true;
+  return false;
+}
+
+function actorMaterialCensus(){
+  const rows=[];
+  for(const [actorId,h] of Object.entries(actorHandles)){
+    for(const rec of h.prep?.records||[]){
+      const mats=Array.isArray(rec.hybrid)?rec.hybrid:[rec.hybrid];
+      mats.forEach((material,materialIndex)=>{
+        const meta=material?.userData?.kfbHybridV2||null;
+        const groups=(rec.node.geometry?.groups||[]).map(g=>({start:g.start,count:g.count,materialIndex:g.materialIndex??0}));
+        const referenced=materialDrawReferenced(rec.node,materialIndex,mats.length);
+        const submitted=(renderSubmissions.get(material?.uuid)||0)>0;
+        const compiled=!!meta?.shaderCompiled;
+        let classification='PRESERVED_SPECIAL';
+        if(meta){
+          if(!referenced)classification='UNUSED_MATERIAL_SLOT';
+          else if(!effectiveVisible(rec.node))classification='HIDDEN_BY_VISIBILITY_CHAIN';
+          else if(submitted&&compiled)classification='RENDERED_AND_COMPILED';
+          else if(submitted&&!compiled)classification='SUBMITTED_WITHOUT_COMPILE_MARKER';
+          else classification='NOT_SUBMITTED_BY_RENDERER';
+        }
+        rows.push({
+          actorId,
+          actorLabel:h.spec.label,
+          nodeName:rec.node.name||'',
+          objectPath:objectPath(rec.node,h.root),
+          nodeType:rec.node.type,
+          isSkinnedMesh:!!rec.node.isSkinnedMesh,
+          materialIndex,
+          materialCount:mats.length,
+          materialIsArray:Array.isArray(rec.hybrid),
+          materialName:material?.name||'',
+          materialUuid:material?.uuid||null,
+          materialVisible:material?.visible!==false,
+          activeMaterialIsArray:Array.isArray(rec.node.material),
+          activeMaterialUuids:(Array.isArray(rec.node.material)?rec.node.material:[rec.node.material]).filter(Boolean).map(m=>m.uuid),
+          hybridIsActive:(Array.isArray(rec.node.material)?rec.node.material:[rec.node.material]).includes(material),
+          decorated:!!meta,
+          compiled,
+          submitted,
+          submitCount:renderSubmissions.get(material?.uuid)||0,
+          drawReferenced:referenced,
+          effectiveVisible:effectiveVisible(rec.node),
+          attachedToActorRoot:isDescendantOf(rec.node,h.root),
+          attachedToScene:isDescendantOf(rec.node,scene),
+          parentName:rec.node.parent?.name||'',
+          frustumCulled:rec.node.frustumCulled,
+          layerMask:rec.node.layers?.mask??null,
+          cameraLayerMask:camera.layers?.mask??null,
+          renderOrder:rec.node.renderOrder,
+          vertexCount:rec.node.geometry?.attributes?.position?.count||0,
+          indexCount:rec.node.geometry?.index?.count??null,
+          drawRange:rec.node.geometry?.drawRange?{start:rec.node.geometry.drawRange.start,count:rec.node.geometry.drawRange.count}:null,
+          groups,
+          classification
+        });
+      });
+    }
+  }
+  return rows;
+}
+
 function actorSnapshot(){
   return Object.fromEntries(Object.entries(actorHandles).map(([id,h])=>{
     let meshes=0,skinned=0,maps=0;
@@ -496,6 +612,9 @@ window.__KFB_HYBRID_V2__={
   brushDonorUrl:BRUSH_DONOR_URL,
   sources:SOURCES,
   setLook,setView,setIsolatedActor,
+  resetRenderSubmissions:()=>renderSubmissions.clear(),
+  setCensusFrustum,
+  materialCensus:actorMaterialCensus,
   setStrength:v=>{
     strength=THREE.MathUtils.clamp(Number(v),0,.9);
     document.getElementById('strength').value=String(strength);
