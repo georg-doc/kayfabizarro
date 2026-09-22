@@ -1,0 +1,46 @@
+name: ToolBox Hybrid Surface v2 recovery export
+on:
+  pull_request:
+    paths:
+      - 'tools/KFB-ToolBox/_handover/HYBRID_SURFACE_V2_FAILURE_RECOVERY_2026-09-22/**'
+      - '.github/workflows/toolbox-hybrid-surface-v2-recovery-export.yml'
+permissions:
+  contents: read
+jobs:
+  package-recovery:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Assemble exact frozen source + recovery docs
+        run: |
+          set -euo pipefail
+          FROZEN=7cbad52b55fb9ec2300aa4b25ca92b0997ce448a
+          OUT=KFB_HYBRID_SURFACE_V2_FAILURE_RECOVERY_2026-09-22_r1
+          mkdir -p "$OUT/source/.github/workflows"
+          mkdir -p "$OUT/source/kfb-hub/stage/toolbox/hybrid-surface-scene-lab-v2"
+          mkdir -p "$OUT/docs"
+          mkdir -p "$OUT/evidence"
+
+          git show "$FROZEN:.github/workflows/toolbox-hybrid-surface-v2.yml" > "$OUT/source/.github/workflows/toolbox-hybrid-surface-v2.yml"
+          for f in index.html hybrid-surface.v2.js lab.mjs proof.mjs SOURCE.json; do
+            git show "$FROZEN:kfb-hub/stage/toolbox/hybrid-surface-scene-lab-v2/$f" > "$OUT/source/kfb-hub/stage/toolbox/hybrid-surface-scene-lab-v2/$f"
+          done
+
+          cp tools/KFB-ToolBox/_handover/HYBRID_SURFACE_V2_FAILURE_RECOVERY_2026-09-22/*.md "$OUT/docs/"
+          cp tools/KFB-ToolBox/_handover/HYBRID_SURFACE_V2_FAILURE_RECOVERY_2026-09-22/EXPORT_MANIFEST.json "$OUT/"
+          cp tools/KFB-ToolBox/_handover/HYBRID_SURFACE_V2_FAILURE_RECOVERY_2026-09-22/evidence/*.md "$OUT/evidence/"
+
+          printf '%s\n' "$FROZEN" > "$OUT/FROZEN_RUNTIME_HEAD.txt"
+          (
+            cd "$OUT"
+            find . -type f ! -name CHECKSUMS.sha256 -print0 | sort -z | xargs -0 sha256sum > CHECKSUMS.sha256
+          )
+          find "$OUT" -type f -print | sort
+      - uses: actions/upload-artifact@v4
+        with:
+          name: KFB_HYBRID_SURFACE_V2_FAILURE_RECOVERY_2026-09-22_r1
+          path: KFB_HYBRID_SURFACE_V2_FAILURE_RECOVERY_2026-09-22_r1
+          retention-days: 30
