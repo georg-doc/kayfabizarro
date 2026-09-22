@@ -64,22 +64,24 @@ Do **not** build the general World Editor first.
 
 First concrete fixture, when implementation is explicitly started:
 
-**Park Bench micro-scene**
+**Lore Keeper · Open-Air Study Story Zone**
 
-- one real Resident;
-- one real bench;
-- tree;
-- flower;
-- lamp;
-- sitting/idle activity;
-- one ChatterBox interaction;
+- real Lore Keeper Resident;
+- writing lectern / study station;
+- books / RPG archive props;
+- optional bookshelf;
+- backpack retained;
+- compact open-air scenery that stays portable;
+- LK-L1 study/read/think + one contextual ChatterBox interaction;
+- then LK-L2 Desk ↔ Shelf path;
+- only later LK-L3 book/Card POI discovery and collect/archive loop;
 - save/reload;
 - nested group edit;
 - portable Story Zone recipe.
 
-Second proof only after that:
+The earlier Park Bench fixture remains useful as a later minimal regression fixture, but is no longer first.
 
-**Forge micro-story** with two Residents, work station, one authored path, ore handoff/local state and situated dialogue.
+Parallel concept lane now also includes the **Kayfabe Social Conflict Loop**: buddy banter → optional provocation/challenge → optional host-approved social melee → explicit help-up/laugh/reconciliation → resume activity. Bond, temporary Kayfabe Heat and topic stance remain distinct; ChatterBox never becomes Combat owner.
 
 ## How to continue ideation
 
@@ -98,4 +100,4 @@ Do not rewrite old entries to make the history cleaner.
 
 ## One next gate
 
-Continue the ideation session and sharpen **Story Zone authoring semantics / first Park Bench fixture**, without implementing a runtime until Georg explicitly switches from brainstorming to build.
+Continue the ideation session and sharpen **Lore Keeper Story Zone authoring semantics + Kayfabe social interaction semantics**, without implementing a runtime until Georg explicitly switches from brainstorming to build.
