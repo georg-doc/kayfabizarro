@@ -13,7 +13,7 @@ export const ENEMIES=Object.freeze([
     roles:Object.freeze({idle:'Idle_A',walk:'Walking_A',attack:'Melee_Unarmed_Attack_Punch_A',hit:'Hit_A',death:'Death_A'})
   }),
   Object.freeze({
-    id:'ca2_skeleton_mage',name:'Skeleton Mage',ready:true,air:false,rig:'Rig_Medium',forwardZ:1,
+    id:'ca2_skeleton_mage',name:'Skeleton Mage',ready:false,hold:'C_MVP_MAGE_ADAPTER',air:false,rig:'Rig_Medium',forwardZ:1,
     file:'media/3D_Assets/KayKit_Skeletons/characters/gltf/Skeleton_Mage.glb',
     path:'KayKit_Skeletons/characters/gltf/Skeleton_Mage.glb',
     modelBlob:'7fcc7e425741699d01bf9c2d4d64b795acee1355',

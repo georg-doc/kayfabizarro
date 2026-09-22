@@ -108,7 +108,7 @@ export default class Gunfight {
 
   async init(ctx) {
     this.THREE = ctx.three; this.field = ctx.field; this.input = ctx.input; this.fx = ctx.fx;
-    this.time = ctx.time; this.rng = ctx.rng; this.cam = ctx.cam; this.assets = ctx.assets; this.loader = ctx.gltfLoader;
+    this.time = ctx.time; this.rng = ctx.rng; this.cam = ctx.cam; this.camera = ctx.camera; this.assets = ctx.assets; this.loader = ctx.gltfLoader;
     this.log = (s) => (ctx.log || console.info)('[gun] ' + s);
     const T = this.THREE;
 
@@ -357,21 +357,34 @@ export default class Gunfight {
     const shot=this._offen,t=shot.target=this._remainingTarget(shot.target);
     if((this.pc.stunRemaining||0)>0 || shot.epoch!==(this.input.state.resetEpoch||0)){this.cancelShot();return;}
     shot.age+=dt;
-    if(shot.age>2){this.cancelShot();this.onAimFailure?.();return;}
+    if(shot.age>2){
+      const gate=this._shotGate||{stage:shot.stage,age:+shot.age.toFixed(3)};
+      this.log('Release-Gate Timeout · '+JSON.stringify(gate));
+      this.cancelShot();this.onAimFailure?.();return;
+    }
     if(!t.point)t._combatBounds=this._boundsFor(t);
     this.zielAuftrag=t;this.zielMob=t.point?null:t;this.aimLife=1.6;
-    const b=this._targetDirection(t);this.aimTarget=t;this.pc.blickAuf?.(b,.8);
+    const b=this._targetDirection(t);this.aimTarget=t;
     const facing=Math.sin(this.pc._blick||0)*b.x+Math.cos(this.pc._blick||0)*b.z;
     if(shot.stage==='aim') {
       const barrel=this._gunDirection();
-      if(facing<Math.cos(.06) || (!shot.warm && !this.pc.gunReady?.()) || !barrel || (barrel.x*b.x+barrel.z*b.z)/Math.max(.001,Math.hypot(barrel.x,barrel.z))<.985)return;
+      /* Der Driver-Graft hält den echten Lauf in der Zielpose leicht seitlich zum Körper. Nicht die
+         Schranke lockern: den Körper um genau diesen gemessenen Laufversatz korrigieren, bis der
+         Lauf selbst die bestehende 0,985-Schranke erfüllt. */
+      const aimDist=Math.hypot(t.pos.x-this.pc.pos.x,t.pos.z-this.pc.pos.z);
+      this.pc.blickAuf?.(barrel&&aimDist>=.08?this._bodyAimForBarrel(b,barrel):b,.8);
+      const ready=shot.warm||!!this.pc.gunReady?.();
+      const barrelDot=barrel?(barrel.x*b.x+barrel.z*b.z)/Math.max(.001,Math.hypot(barrel.x,barrel.z)):null;
+      this._shotGate={stage:'aim',target:t.point?'point':(t.e?.id||'actor'),age:+shot.age.toFixed(3),facing:+facing.toFixed(4),ready,hasBarrel:!!barrel,barrelDot:barrelDot==null?null:+barrelDot.toFixed(4)};
+      if(!ready || !barrel || barrelDot<.985)return;
       const mark=this.pc.schuss();if(!mark){this.cancelShot();return;}
-      Object.assign(shot,{stage:'fire',...mark});
+      Object.assign(shot,{stage:'fire',aimReady:true,...mark});
+      this._shotGate={stage:'fire',clip:mark.clip,marker:mark.marker};
     } else {
       if(this.fb.action!==shot.action){this.pc.prepareGun();shot.stage='aim';shot.warm=false;return;}
       if(shot.action.time<shot.marker)return;
       // The pose is ready and its marker has been crossed. One call owns projectile, flash and SFX.
-      if(facing<Math.cos(.10)){this.pc.prepareGun();shot.stage='aim';shot.warm=false;return;}
+      if(!shot.aimReady){this.pc.prepareGun();shot.stage='aim';shot.warm=false;return;}
       const from=this._gunSpitze(b);
       const lead=t.point?null:intercept(this.THREE,from,t._combatBounds.getCenter(new this.THREE.Vector3()),t.vel);
       const aimPoint=lead?lead.point:t.pos.clone();
@@ -380,6 +393,7 @@ export default class Gunfight {
       const dx=aimPoint.x-from.x,dz=aimPoint.z-from.z,d=Math.hypot(dx,dz);
       this.lastShot={clip:shot.clip,marker:shot.marker,time:shot.action.time,origin:from.toArray(),target:t.pos.toArray()};
       this._offen=null;this._kalt=SPEC.spieler.takt;this.zielAuftrag=null;
+      this._shotGate={stage:'released',clip:shot.clip,marker:shot.marker,time:+shot.action.time.toFixed(4)};
       this._abgang({x:dx/d,z:dz/d,aimPoint,flight:lead?.time,target:t.point?null:t});
     }
   }
@@ -441,10 +455,29 @@ export default class Gunfight {
   _gunDirection() {
     const w=this.fb?.weapon, donor=w?.muzzle;
     if(donor?.getWorldPosition){
+      /* Der Donor hat die Laufachse bereits aus der sichtbaren Geometrie gemessen. Die Verbindung
+         Halter-Ursprung → Mündung ist NICHT dieselbe Achse: ein quer versetztes Modell erzeugte im
+         echten Driver-Graft 0,9788 statt der geforderten 0,985 und blockierte damit jeden Release.
+         Deshalb die gemessene lokale Achse ohne Queranteil in den Raum drehen. */
+      const axis=w.report?.barrelAxis,holder=w.holder;
+      if(holder && /^(x|y|z)$/.test(axis||'')){
+        this.fb?.root?.updateMatrixWorld(true);
+        const d=new this.THREE.Vector3(),local=donor.position?.[axis]||0;d[axis]=local<0?-1:1;
+        return d.transformDirection(holder.matrixWorld);
+      }
       const tip=donor.getWorldPosition(new this.THREE.Vector3()),base=(w.holder||w.mountBone||w.bone)?.getWorldPosition?.(new this.THREE.Vector3());
       if(base){const d=tip.sub(base);if(d.lengthSq()>1e-6)return d.normalize();}
     }
     const gun=this._gunNode();return gun?new this.THREE.Vector3(0,0,1).transformDirection(gun.matrixWorld):null;
+  }
+
+  _bodyAimForBarrel(target,barrel) {
+    const body=this.pc?._blick||0,barrelYaw=Math.atan2(barrel.x,barrel.z);
+    let offset=barrelYaw-body;
+    while(offset>Math.PI)offset-=Math.PI*2;
+    while(offset<-Math.PI)offset+=Math.PI*2;
+    const targetYaw=Math.atan2(target.x,target.z)-offset;
+    return{x:Math.sin(targetYaw),z:Math.cos(targetYaw)};
   }
 
   /* ── Gegenfeuer: WÜRFELWURF aus dem Kanon ─────────────────────────────────────
@@ -796,12 +829,13 @@ export default class Gunfight {
    */
   probe() {
     const z = this.zaehler;
+    const targets=(this.mb?.lebende?.()||[]).map(m=>{const p=this._boundsFor(m).getCenter(new this.THREE.Vector3());if(this.camera)p.project(this.camera);return{id:m.e?.id||'enemy',ndc:[+p.x.toFixed(4),+p.y.toFixed(4)]};});
     return {
       kills: z.kills, wuerfel: z.wuerfel, pops: z.pops,
       schuesse: z.schuesse, treffer: z.treffer, mobSchuesse: z.mobSchuesse, bisse: z.bisse,
       gesammelt: this.gesammelt || 0, liegend: this.pickups.length, fliegend: this.schuesse.length,
       hp: this.hp, gesichtMin: this.gesichtMin != null ? +this.gesichtMin.toFixed(3) : null,
-      zone: +(this.fbHoehe * SPEC.schutzzone).toFixed(3)
+      zone: +(this.fbHoehe * SPEC.schutzzone).toFixed(3), shotGate:this._shotGate||null,targets
     };
   }
 

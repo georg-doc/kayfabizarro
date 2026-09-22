@@ -1,5 +1,5 @@
 // Picking and combat share the current visible body, including its animated offsets.
-import {Sphere} from '../vendor/three.module.js';
+import {Sphere,Box3,Vector3} from '../vendor/three.module.js';
 function visibleMeshes(root){
  const meshes=[];
  root?.updateWorldMatrix(true,true);
@@ -20,7 +20,18 @@ export function pickEnemy(raycaster,mobs){
  const owners=new Map(),meshes=[];
  for(const m of mobs){if(m.tot||m.weg)continue;for(const o of visibleMeshes(m.root)){owners.set(o,m);meshes.push(o);}}
  const hit=raycaster.intersectObjects(meshes,false)[0];
- return hit?{mob:owners.get(hit.object),point:hit.point.clone()}:null;
+ if(hit)return{mob:owners.get(hit.object),point:hit.point.clone()};
+ // Some imported skinned KayKit meshes do not answer Three's triangle raycast although their
+ // current visible bounds are finite. Picking and combat already share `enemyBounds`; use that
+ // measured body as the semantic fallback instead of turning a visible actor click into floor aim.
+ let best=null,bestD=Infinity;
+ for(const m of mobs){
+  if(m.tot||m.weg)continue;
+  if(!m.pos||![m.pos.x,m.pos.y,m.pos.z].every(Number.isFinite))continue;
+  const point=raycaster.ray.intersectBox(enemyBounds({Box3,Vector3},m),new Vector3());
+  if(point){const d=raycaster.ray.origin.distanceToSquared(point);if(d<bestD){bestD=d;best={mob:m,point:point.clone()};}}
+ }
+ return best;
 }
 export function enemyBounds(T,mob){
  const box=new T.Box3();

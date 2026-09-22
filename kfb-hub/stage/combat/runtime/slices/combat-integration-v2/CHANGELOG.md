@@ -1,5 +1,16 @@
 # Combat Integration V2 · Additive Changelog
 
+## 2026-09-22 · C-MVP-A-R2 minimum playable loop
+
+- Corrected the gate from all-actor parity to the smallest playable Combat loop.
+- Kept Skeleton Mage in the verified catalog but quarantined it from the MVP runtime as `C_MVP_MAGE_ADAPTER`.
+- Traced the release stop to the real graft barrel dot (`0.9788-0.9793`) never reaching the unchanged `0.985` gate.
+- Consumed the donor's measured barrel axis and compensated its live yaw through player aiming; no threshold weakening or guessed muzzle.
+- Added semantic visible-body bounds picking for imported skinned actors whose triangle raycast does not answer.
+- Raised the full suite to **74/74 PASS** and rebuilt the 218-file package.
+- Real-browser proof: 5 shots, 3 hits, 1 Warrior kill, 1 reward die, 1 Pop, 3 coin drops, Card Clear and Next-card respawn.
+- Public Stage remains unchanged until the exact pushed package is verified and opened at the fixed URL.
+
 ## 2026-09-22 · C-MVP-A-R1 finite actor repair
 
 - Proved both exact KayKit source GLBs and every visible source part have finite bounds.

@@ -1,14 +1,14 @@
-# RETURN · C-MVP-A
+# RETURN · C-MVP-A-R2
 
-Status: **EXACT PACKAGE COMPLETE · BROWSER FAIL · NOT DEPLOYED**
+Status: **EXACT 218-FILE CANDIDATE · LOCAL REAL-BROWSER PASS · PUBLICATION PENDING**
 
-- Source implementation: `georg-doc/KFB-Combat-Arena#5@954f2db7484dc566e468e5ce89b0d95940d97537`
-- Combat handoff head: `2aea7c85f0e1f2ea333a92c5ce98bbcd16bdcfb3`
-- Package branch: `stage/combat-ca2-pr5-c-mvp-a-2026-09-22`
-- Runtime: 215/215 exact Git blob identities
-- Repository tests: 68/68 PASS; re-home 172/66 PASS
-- Browser: FAIL — missing Driver EyeRig/Mouth forwarding and non-finite enemy positions
-- Public route: not deployed; not PUBLIC_VERIFIED
-- Scope kept: no Combat runtime code, Legacy, melee or Spindle changes
+- Source: `georg-doc/KFB-Combat-Arena#5@cfe3f03f543e662c8461259af38ec41a22b353c8`
+- Validated implementation: `f6ccdcbcca9fde9a234794c8583dbec9b685b4cf`
+- Candidate branch: `stage/combat-ca2-pr5-c-mvp-a-2026-09-22`
+- Tests: **74/74 PASS**
+- Re-home: **172 preserved / 66 verified donors / routes PASS**
+- Browser core loop: **FrizzleBob → Warrior → Shoot → Hit ×3 → Kill → Reward → Run Clear → Respawn**
+- Skeleton Mage: **HOLD / excluded from MVP pool**
+- Public route: not yet deployed or PUBLIC_VERIFIED
 
-One next gate: Georg decides whether this exact failing build may be exposed on the fixed Stage route as a reproducible failure surface.
+One next gate: publish this exact candidate to the protected Combat Stage, open the fixed Cloudflare URL and hand it to Georg for freeplay.

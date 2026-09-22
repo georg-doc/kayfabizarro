@@ -1,39 +1,55 @@
 {
   "schema": "kfb.combat-stage-source/1",
-  "stage": "C-MVP-A-R1",
-  "status": "R1_PARTIAL_FINITE_ACTORS_PASS_RELEASE_TARGETING_FAIL_CANDIDATE_ONLY",
+  "stage": "C-MVP-A-R2",
+  "status": "WARRIOR_CORE_LOOP_PASS_CANDIDATE_READY_FOR_PROTECTED_PUBLICATION",
   "source": {
     "repository": "georg-doc/KFB-Combat-Arena",
     "pr": 5,
     "branch": "chatgpt-web/combat-arena-integration-v2-2026-09-19",
-    "implementationCommit": "954f2db7484dc566e468e5ce89b0d95940d97537",
-    "r1Head": "4a9842acddd27b227ee48afed0be02b9303a0b94",
+    "handoffHead": "cfe3f03f543e662c8461259af38ec41a22b353c8",
+    "validatedImplementation": "f6ccdcbcca9fde9a234794c8583dbec9b685b4cf",
     "runtimePath": "dist/"
   },
   "packaging": {
     "repository": "georg-doc/kayfabizarro",
     "branch": "stage/combat-ca2-pr5-c-mvp-a-2026-09-22",
-    "files": 217,
-    "byteIdentity": "217/217: 205 preserved exact blobs + 12 changed/new exact dist blobs"
+    "files": 218,
+    "identity": "exact rebuilt R2 portable package"
   },
   "public": {
     "url": "https://kayfabizarro.pages.dev/kfb-hub/stage/combat/",
     "status": "NOT_DEPLOYED",
-    "reason": "R1 remains browser-partial; cloudflare-live and fixed Combat Stage intentionally unchanged"
+    "reason": "protected publication awaits candidate checkpoint and exact URL proof"
   },
   "browser": {
-    "status": "R1_PARTIAL",
-    "passes": [
-      "outer graft rig + mouth + 2 eye actors / 8 visible eye meshes + gun",
-      "Mage and Warrior finite alone and together",
-      "Idle and keyboard Walk movement",
-      "audio 22/22",
-      "desktop and 390x844 narrow layout",
-      "0 app/console errors"
+    "status": "LOCAL_REAL_BROWSER_PASS",
+    "coreLoop": [
+      "FrizzleBob Driver",
+      "Skeleton Warrior",
+      "aim",
+      "shoot",
+      "hit x3",
+      "kill",
+      "reward",
+      "run clear",
+      "next-card respawn"
     ],
-    "blocker": "real target clicks enter Idle_Gun but record 0 shots / 0 hits / 0 kills",
-    "nextGate": "C-MVP-A-R2 release/targeting root-cause only"
+    "counters": {
+      "shots": 5,
+      "hits": 3,
+      "kills": 1,
+      "rewardDice": 1,
+      "pop": 1
+    },
+    "errors": 0
   },
+  "holds": [
+    "Skeleton Mage adapter",
+    "Legacy actor",
+    "melee",
+    "Spindle Sky",
+    "additional enemies"
+  ],
   "ownership": {
     "movementGround": "Player.v2",
     "playerPresentationMixer": "DriverCA2",
@@ -43,13 +59,5 @@
     "enemyLifecycle": "MobBrain",
     "rewardsRunFlow": "existing Arena"
   },
-  "excluded": [
-    "Legacy actor",
-    "melee",
-    "new Combat features",
-    "Spindle Sky",
-    "visual polish",
-    "new architecture"
-  ],
   "updatedAt": "2026-09-22"
 }

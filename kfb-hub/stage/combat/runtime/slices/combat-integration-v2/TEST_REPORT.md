@@ -1,6 +1,6 @@
 # Combat Arena Integration V2 · Test Report
 
-Status: **71/71 PASS · R1 BROWSER PARTIAL · RELEASE/TARGETING R2 REQUIRED**
+Status: **74/74 PASS · R2 LOCAL REAL-BROWSER CORE LOOP PASS · PUBLICATION PENDING**
 Branch: `chatgpt-web/combat-arena-integration-v2-2026-09-19`  
 PR: #5  
 Validated handoff parent: `95971ff0f817ef9d1280f1f235e10d0b2adc89b8`
@@ -46,20 +46,16 @@ The route is not present in current `georg-doc/kayfabizarro@main`. An exact mirr
 
 Those binaries are present in the private Combat repository and the Dropbox recovery mirror. Two independent connector transfer paths were attempted and both hit the same binary boundary. Per KFB recovery protocol, the candidate was preserved and `FAILURE_RECOVERY_STAGE_PACKAGING.md` was created. No incomplete Stage package, replacement font, or VFX fallback was committed.
 
-## Not yet proven
+## Remaining proof boundary
 
-The automated PASS does **not** prove:
+The local exact package now has a real-browser `BROWSER_CORE_LOOP_PASS` for Driver → Warrior → release/hit/kill/reward/clear/respawn. R1 already proved desktop/narrow layout and 22/22 audio. Still not claimed:
 
-- visible FrizzleBob Idle → move → shoot → hit → respawn in a real browser;
-- actor / eyes / weapon / muzzle attachment persistence after respawn;
-- both Skeleton actors visually showing the intended states;
-- desktop + narrow viewport behavior;
-- before/after performance measurements;
-- audio behavior;
 - a direct Cloudflare Stage revision;
-- Georg visual/freeplay acceptance.
+- before/after public performance comparison;
+- Georg visual/freeplay acceptance;
+- Skeleton Mage, which is explicitly HOLD and not part of the MVP gate.
 
-No `PUBLIC_VERIFIED`, `BROWSER_PASS` or `HUMAN_ACCEPTED` claim is made.
+No `PUBLIC_VERIFIED` or `HUMAN_ACCEPTED` claim is made yet.
 
 ## Environment note
 
@@ -67,8 +63,8 @@ The optional Game Development Studio `game-dev` CLI was checked once in the curr
 
 `GAME_DEV_CLI_UNAVAILABLE · OPTIONAL FALLBACK USED`
 
-## Next gate
+## R2 evidence and next gate
 
-R1 adds three focused regressions and the complete suite passes **71/71**. The rebuilt portable package contains **217 files**; re-home reports **172 preserved runtime / 66 verified donor files / routes PASS / public-local paths NONE**.
+R2 adds focused regressions for measured graft barrel direction, transverse muzzle offset, yaw compensation, semantic visible-body picking and Mage quarantine. The complete local suite passes **74/74**; the portable package contains **218 files**.
 
-Real-browser evidence is recorded in `C_MVP_A_R1_BROWSER_REPAIR_2026-09-22.md`: face and finite enemy transforms pass, but release/targeting remains failed with 0 shots/0 hits. Exactly one C-MVP-A-R2 may diagnose that existing path. No feature slice and no publication starts here.
+Real-browser evidence in `C_MVP_A_R2_CORE_LOOP_2026-09-22.md` proves release, three Warrior hits, kill, reward, Run Clear and next-card respawn. The only next gate is exact Stage publication plus Georg freeplay; no feature slice starts here.

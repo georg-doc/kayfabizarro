@@ -1,6 +1,6 @@
 # RETURN · Combat Arena Integration V2
 
-Status: **C-MVP-A-R1 PARTIAL · FINITE ACTORS PASS · RELEASE/TARGETING FAIL · NOT PUBLISHED**
+Status: **C-MVP-A-R2 LOCAL BROWSER PASS · WARRIOR CORE LOOP PASS · MAGE HOLD · PUBLICATION PENDING**
 
 ## Exact handoff
 
@@ -8,7 +8,7 @@ Status: **C-MVP-A-R1 PARTIAL · FINITE ACTORS PASS · RELEASE/TARGETING FAIL · 
 - Branch: `chatgpt-web/combat-arena-integration-v2-2026-09-19`
 - PR: **#5** · draft · open · not merged
 - Base: `main@f6a59ad15b9ffcf3164b0ab013f223962b63f61f`
-- Validated handoff parent before this metadata-only Return refresh: `95971ff0f817ef9d1280f1f235e10d0b2adc89b8`
+- Validated R2 implementation head before this metadata-only Return refresh: `f6ccdcbcca9fde9a234794c8583dbec9b685b4cf`
 - Bounded project Stage route: `/slices/combat-integration-v2/`
 - Planned public KFB Stage URL: `https://kayfabizarro.pages.dev/kfb-hub/stage/combat/`
 - Public route status: **NOT PUBLISHED / NOT VERIFIED**
@@ -19,22 +19,19 @@ Status: **C-MVP-A-R1 PARTIAL · FINITE ACTORS PASS · RELEASE/TARGETING FAIL · 
 - `Player.v2` remains the only movement/ground owner.
 - `DriverCA2` owns one player `AnimationMixer`; face remains graft-owned.
 - Existing Gunfight consumes the graft muzzle anchor when present.
-- Exactly two verified KayKit Skeleton adapters are admitted:
-  - Skeleton Warrior
-  - Skeleton Mage
+- Both verified KayKit Skeleton adapters remain catalogued. The current MVP runtime admits only Skeleton Warrior; Skeleton Mage is `HOLD · C_MVP_MAGE_ADAPTER`.
 - `MobBrain` remains spawn/movement/enemy-mixer owner.
 - Existing Gunfight, Rewards and RunFlow contracts remain owners of their state.
 - Neutral instance/portal fields are carried through the bounded Slice contract only; no World/Travel/Dungeon runtime was changed.
 
 ## Evidence
 
-GitHub Actions for validated handoff parent `95971ff0f817ef9d1280f1f235e10d0b2adc89b8`:
+GitHub Actions for validated R2 implementation `f6ccdcbcca9fde9a234794c8583dbec9b685b4cf`:
 
-- run **35524287323**
-- job **106113636457**
-- `npm test`: **68/68 PASS**
-- CA2-specific: **8/8 PASS**
-- portable build: **215 files**
+- run **35766345655**
+- job **106876741414**
+- repository suite: **74/74 PASS**
+- portable build: **218 files**
 - re-home: **172 preserved runtime files / 66 verified donor files / routes PASS**
 
 Evidence/handoff files:
@@ -46,40 +43,27 @@ Evidence/handoff files:
 - `CHANGELOG.md`
 - `FAILURE_RECOVERY_STAGE_PACKAGING.md`
 
-## Browser / screenshot proof
+## Browser proof
 
-No real-browser state capture or screenshot proof exists in this handoff. The required sequence is written in `STATE_SEQUENCE.md` and remains entirely **PENDING**. Automated ownership/contract tests are not being promoted to visual proof.
+R1 proved the actor/face/audio/viewport baseline. R2 then used real pointer input against the exact local package and proved release, three Warrior hits, kill, reward, clear and next-card respawn. Exact counters and marker timing are recorded in `C_MVP_A_R2_CORE_LOOP_2026-09-22.md`. Public Cloudflare proof remains pending until this exact revision is deployed.
 
 ## Stage / Hub packaging result
 
-An exact public mirror was investigated using the established `kfb-hub/stage/<project>/runtime/` pattern.
+The earlier binary-transfer boundary is resolved on the dedicated candidate branch; the existing exact package was preserved while the browser repair ran. R2 now produces an exact **218-file** package. It is not called public or live until that revision is copied to the protected publication branch and the fixed Cloudflare route is opened successfully.
 
-- private runtime scope inspected: **180 blobs**
-- exact blobs already reusable in current public `kayfabizarro`: **83**
-- blobs requiring transfer: **97**
-- hard binary boundary: **20** required blobs
-  - **19** local WOFF2 files referenced by the Arena document
-  - **1** `assets/vfx/kfb-combat-atlas_4x3.png`
-
-Two independent transfer paths were exhausted. The binaries remain safely present in the private Combat repository and Dropbox recovery mirror, but this chat environment cannot bridge their byte payload into the public Git blob writer. The full WSA/local recovery procedure and exact blob list are in `FAILURE_RECOVERY_STAGE_PACKAGING.md`.
-
-A broken public mirror, replacement font set, VFX fallback, generic UI or second runtime owner was **not** introduced. Because there is no valid direct Cloudflare Combat Stage surface yet, the KFB Hub was not given a fake human-test link.
+No broken mirror, replacement font set, VFX fallback, generic UI or second runtime owner was introduced.
 
 ## Unresolved
 
-- exact public Stage mirror and Hub pointer;
+- exact R2 public Stage revision and Hub marker;
 - Cloudflare revision proof;
-- browser actor/attachment/mixer lifecycle;
-- Skeleton visual lifecycle;
-- desktop + narrow viewport proof;
 - performance before/after;
-- audio proof;
 - Georg freeplay/visual gate.
 
-## One next gate
+## R2 browser outcome
 
-The exact KayKit sources are finite. R1 repaired the real cause: missing enemy `forwardZ` poisoned the first actor's live rotation and then pair separation. Mage and Warrior now remain finite alone and together. The outer graft already owns a real rig, mouth, two eyes/eight visible eye meshes and gun; the inner legacy warnings required no second owner and no repair.
+The bounded R2 pass found the release stop at the real graft barrel alignment (`0.9788-0.9793` against `0.985`). Gunfight now consumes the donor's measured barrel axis and turns the body by the live weapon yaw instead of weakening the release gate. Semantic picking falls back to the same finite visible body bounds used by combat when a skinned mesh does not answer triangle raycast.
 
-The repaired local browser run still records `0` shots, hits and kills after a real target click and reports `Waffe noch nicht bereit - erneut zielen`. Per the explicit gate, R1 stops PARTIAL. See `C_MVP_A_R1_BROWSER_REPAIR_2026-09-22.md`.
+The local exact package records **5 shots / 3 hits / 1 Warrior kill / 1 reward die / 1 Pop**, then visible `Card cleared`; `Next card` returns phase to `play`, player HP to `100`, and spawns one fresh Warrior at HP `3`. See `C_MVP_A_R2_CORE_LOOP_2026-09-22.md`.
 
-Exactly one next gate: **C-MVP-A-R2 · release/targeting root-cause only**. Do not start C-MVP-B, Legacy, melee or Spindle. Do not publish until that real browser sequence passes.
+Exactly one next gate: **publish the exact R2 package to the protected Combat Stage, verify the fixed Cloudflare URL, then Georg freeplay.** No Legacy, melee, Mage work or Spindle.
