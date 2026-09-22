@@ -36,6 +36,12 @@ The initial concept captures:
 - Gift Drive makes giving source-backed props/food/Cards a recurring positive motive without creating a new economy;
 - gift + insult/banter are deliberately compatible, with provenance/callbacks retained in Lean Memory;
 - simple motive ordering preferred before any complex utility AI;
+- Food gifts now have a source-backed candidate lane using existing KayKit Restaurant Bits and Tiny Treats Baked Goods/Bakery/Kitchen/Picnic sources;
+- absurd claimed effects are separated from physical gift identity and actual gag outcome;
+- Reaction Library semantics now cover micro/social/emotional/gag/repair/object reactions;
+- targeted source search found partial laugh-face / surprised-eye evidence but no clearly named full-body Laugh/Cry clip, so body Laugh/Cry remains an animation inventory/authoring gate;
+- Minimal Resident Decision Loop v0 now defines interruptibility, perception candidates, small motives, deterministic selection, Pair Lock, host-owned approach, bounded Encounter Bits, explicit transfer commit, compact memory and resume;
+- first technical proof is exactly two Residents + one real food gift, no Combat/crowd/utility-AI dependency;
 - Park Bench retained only as a later minimal/regression fixture.
 
 ## Files created so far
@@ -91,6 +97,8 @@ No implementation or public result is claimed.
 - first Social Attention distance/interruptibility rules in a real host scale;
 - exact first Gift Intent source set per Resident and handoff animation capabilities;
 - gift state/provenance seam without inventing a second inventory owner;
+- exact first Decision Loop v0 data contract for ActivityState / Perception / Motive / SocialPair / EncounterBit;
+- exact inventory of reusable full-body laugh/cry/surprise/inspect/gift-accept clips across relevant rig families;
 - exact semantic seam from ChatterBox social cue → host social state → optional Combat owner → repair beat;
 - current 3D ChatterBox invocation/output contract;
 - exact Asset Librarian insertion/search seam;
@@ -101,6 +109,6 @@ No implementation or public result is claimed.
 
 ## One next gate
 
-**Continue ideation around the Lore Keeper fixture plus the smallest Social Attention → Gift/Banter encounter semantics.**
+**Define the smallest Decision Loop v0 data contract for the two-Resident / one-real-food-gift proof.**
 
 Do not build a general World Editor, autonomous NPC system or separate social-combat engine yet.
