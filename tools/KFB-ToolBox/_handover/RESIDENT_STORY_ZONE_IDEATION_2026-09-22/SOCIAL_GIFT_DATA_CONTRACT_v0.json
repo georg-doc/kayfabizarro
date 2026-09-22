@@ -1,0 +1,289 @@
+{
+  "schema": "kfb.social-gift-contract.v0",
+  "status": "PROPOSAL_ONLY_NOT_RUNTIME",
+  "date": "2026-09-22",
+  "owner": "KFB ToolBox / shared social-story authoring seam",
+  "purpose": "Small shared record contract for Resident↔Resident and Resident↔Player gift/social proofs without replacing ChatterBox, navigation, animation, inventory/save, combat or world owners.",
+  "references": {
+    "scenePatch": "kfb.scene-patch.v1",
+    "chatterSemanticHook": "overworld/docs/NIE_ADAPTER_HOOK.md",
+    "memoryDonor": "MomentReceipt · Lean Memory core",
+    "playerCalls": {
+      "labels": [
+        "KayfaBINGO",
+        "KayfaBONGO",
+        "KayfaBOGGLE",
+        "BLÖDSINN!"
+      ],
+      "ids": [
+        "bingo",
+        "bongo",
+        "boggle",
+        "bloedsinn"
+      ]
+    }
+  },
+  "invariants": [
+    "Perception creates candidates; it does not start movement, dialogue, combat or transfer.",
+    "A running Activity declares whether it is interruptible and how it may resume.",
+    "Only one selected motive is active for one initiator at a time in v0.",
+    "A SocialPair reservation must exist before an NPC begins a targeted social approach.",
+    "Navigation/path execution remains host-owned; social logic requests an approach but never teleports.",
+    "ChatterBox may provide text/register/tell/reaction hints but never writes movement, bones, inventory truth, damage or persistent rewards.",
+    "Gift ownership changes exactly once at TRANSFER_COMMIT.",
+    "GiftInventoryItem stores source refs and state only; it never duplicates asset binaries.",
+    "MemoryReceipt is written only after a meaningful completed or committed event and stores no full transcript.",
+    "Visual backpack mesh/profile is presentation and is not inventory truth.",
+    "Bond/familiarity, temporary Kayfabe Heat and topic stance remain independent concepts.",
+    "Abort paths release SocialPair and restore or replace the prior Activity without half-mutated gift state."
+  ],
+  "records": {
+    "ActivityState": {
+      "required": [
+        "actorId",
+        "activityId",
+        "phase",
+        "interruptible",
+        "priorityClass"
+      ],
+      "fields": {
+        "actorId": "stable actor/player id",
+        "activityId": "owner-defined activity id",
+        "phase": "current semantic phase",
+        "interruptible": "boolean",
+        "priorityClass": "ordinary | important | host_locked",
+        "resumeToken": "optional opaque host/activity token",
+        "stationRef": "optional Activity Station ref"
+      }
+    },
+    "PerceptionCandidate": {
+      "required": [
+        "candidateId",
+        "targetId",
+        "kind",
+        "band",
+        "visible"
+      ],
+      "fields": {
+        "candidateId": "stable event/candidate id for this evaluation",
+        "targetId": "resident/player/poi id",
+        "kind": "RESIDENT | PLAYER | GIFT_TARGET | CARD_POI | PROP_POI | ACTIVITY_STATION | DIRECT_SOCIAL_REQUEST | HOST_EVENT",
+        "band": "NOTICE | ENGAGE | PERSONAL",
+        "visible": "boolean",
+        "reachableHint": "unknown | likely | blocked",
+        "reasonTags": "small string array, e.g. pending-gift, callback, card-relevance",
+        "observedAt": "simulation tick or host time ref"
+      }
+    },
+    "Motive": {
+      "required": [
+        "motiveId",
+        "kind",
+        "initiatorId",
+        "targetId",
+        "sourceCandidateId",
+        "priorityBand"
+      ],
+      "fields": {
+        "motiveId": "stable id for selected/evaluated motive",
+        "kind": "RESPOND | GIFT | CALLBACK | SHOW | BANTER | SHARED_ACTIVITY | CHALLENGE | INSPECT_POI | CONTINUE",
+        "initiatorId": "actor id",
+        "targetId": "resident/player/poi id",
+        "sourceCandidateId": "PerceptionCandidate.candidateId",
+        "priorityBand": "small explicit ordinal/category, not opaque utility score",
+        "reasonTags": "why the motive exists",
+        "giftIntentRef": "optional pending gift intent ref",
+        "memoryRefs": "optional compact relevant memory refs",
+        "seedRef": "optional deterministic tie-break seed"
+      }
+    },
+    "SocialPair": {
+      "required": [
+        "pairId",
+        "initiatorId",
+        "partnerId",
+        "motiveId",
+        "state"
+      ],
+      "fields": {
+        "pairId": "stable encounter reservation id",
+        "initiatorId": "resident/player actor id",
+        "partnerId": "resident/player actor id",
+        "motiveId": "selected Motive id",
+        "state": "RESERVED | APPROACHING | ENGAGED | RELEASING | RELEASED",
+        "createdAt": "tick/time ref",
+        "expiresAt": "optional reservation timeout",
+        "abortReason": "optional path/busy/declined/host event reason"
+      }
+    },
+    "EncounterBit": {
+      "required": [
+        "encounterId",
+        "pairId",
+        "kind",
+        "state",
+        "participants",
+        "beats"
+      ],
+      "fields": {
+        "encounterId": "stable encounter id",
+        "pairId": "SocialPair id",
+        "kind": "GIFT | GIFT_GAG | BANTER | SHOW | CALLBACK | PLAYER_GIFT_CONVERSATION | KAYFABE_CHALLENGE",
+        "state": "OPEN | RUNNING | WAITING_PLAYER | RESOLVED | ABORTED | RELEASED",
+        "participants": "actor/player ids",
+        "giftRef": "optional canonical asset/card/token ref",
+        "cardRef": "optional canonical card ref",
+        "topicRef": "optional local topic/card/event ref",
+        "beats": "small ordered semantic beat ids",
+        "currentBeat": "current semantic beat",
+        "chatterContextRef": "optional bounded ChatterBox/NIE-style context ref",
+        "reactionRequests": "semantic reaction ids, never clip/bone instructions",
+        "transferState": "NONE | OFFERED | ACCEPTED | COMMITTED | DECLINED | DEFERRED"
+      }
+    },
+    "PlayerCall": {
+      "required": [
+        "callId",
+        "encounterId",
+        "playerId",
+        "call",
+        "selectedAt"
+      ],
+      "fields": {
+        "callId": "stable call event id",
+        "encounterId": "EncounterBit id",
+        "playerId": "player id",
+        "call": "bingo | bongo | boggle | bloedsinn",
+        "label": "canonical player-facing label",
+        "selectedAt": "tick/time ref",
+        "tripletRef": "optional triplet/response option ref",
+        "sourceBubbleRef": "optional bubble/presenter ref"
+      }
+    },
+    "GiftInventoryItem": {
+      "required": [
+        "instanceId",
+        "assetRef",
+        "kind",
+        "state",
+        "provenance"
+      ],
+      "fields": {
+        "instanceId": "unique transferable social-object instance id",
+        "assetRef": "canonical source asset/card/token ref",
+        "kind": "food | prop | card | token",
+        "state": "carried | displayed | offered | transferred",
+        "visualProfileRef": "optional display/carry profile ref",
+        "provenance": {
+          "fromActorId": "giver id",
+          "eventRef": "MemoryReceipt or encounter ref",
+          "acquiredInZone": "zone/world ref",
+          "originalSourceRef": "canonical source ref",
+          "priorOwners": "ordered compact actor/player id list"
+        }
+      }
+    },
+    "MemoryReceipt": {
+      "required": [
+        "memoryId",
+        "eventType",
+        "participants",
+        "recordedAt",
+        "outcome"
+      ],
+      "fields": {
+        "memoryId": "stable receipt id",
+        "eventType": "gift-transfer | gift-gag | social-callback | kayfabe-scrap | help-up | player-call | shared-activity",
+        "participants": "actor/player ids",
+        "recordedAt": "tick/time ref",
+        "zoneRef": "optional zone/world ref",
+        "encounterRef": "optional EncounterBit id",
+        "objectRef": "optional gift/card/prop instance ref",
+        "playerCallRef": "optional PlayerCall id",
+        "outcome": "small semantic result",
+        "callbackTags": "small reusable tags, not transcript text",
+        "witnesses": "ids only when actually perceived/known",
+        "sourceRefs": "optional pinned contract/build/source refs"
+      }
+    }
+  },
+  "commitPoints": {
+    "socialReservation": "SocialPair.state = RESERVED",
+    "playerChoice": "PlayerCall record created",
+    "giftAccepted": "EncounterBit.transferState = ACCEPTED",
+    "transferCommit": "EncounterBit.transferState = COMMITTED and GiftInventoryItem/provenance state update occurs atomically from the receiving save owner",
+    "memoryCommit": "MemoryReceipt created after meaningful completion/commit",
+    "release": "SocialPair transitions to RELEASED and activity resumes/reselects"
+  },
+  "abortRules": [
+    "Before TRANSFER_COMMIT, giver retains gift state.",
+    "After TRANSFER_COMMIT, abort cannot silently return the gift; any reversal is a new explicit event.",
+    "Path failure, target-busy, timeout or player walk-away releases SocialPair.",
+    "An aborted encounter does not create durable MemoryReceipt unless the abort itself is intentionally meaningful.",
+    "Late ChatterBox/LLM output does not reopen a released encounter."
+  ],
+  "proofFixtures": {
+    "residentResident": {
+      "name": "RR-GIFT-01",
+      "actors": 2,
+      "gifts": 1,
+      "requiredPath": [
+        "ActivityState",
+        "PerceptionCandidate",
+        "Motive:GIFT",
+        "SocialPair",
+        "EncounterBit:GIFT",
+        "TRANSFER_COMMIT",
+        "MemoryReceipt",
+        "RESUME"
+      ]
+    },
+    "residentPlayer": {
+      "name": "RP-GIFT-01",
+      "actors": 1,
+      "player": 1,
+      "gifts": 1,
+      "requiredPath": [
+        "ActivityState",
+        "PerceptionCandidate:PLAYER",
+        "Motive:GIFT",
+        "SocialPair",
+        "EncounterBit:PLAYER_GIFT_CONVERSATION",
+        "PlayerCall",
+        "TRANSFER_COMMIT",
+        "GiftInventoryItem",
+        "MemoryReceipt",
+        "RELEASE"
+      ]
+    },
+    "playerRegift": {
+      "name": "PR-GIFT-01",
+      "player": 1,
+      "recipientResidents": 1,
+      "requiredPath": [
+        "GiftInventoryItem:carried",
+        "EncounterBit:PLAYER_GIFT_CONVERSATION",
+        "PlayerCall?",
+        "TRANSFER_COMMIT",
+        "GiftInventoryItem:transferred",
+        "MemoryReceipt"
+      ],
+      "invariant": "original provenance remains readable after ownership changes"
+    }
+  },
+  "explicitlyOutOfScopeV0": [
+    "general utility AI",
+    "GOAP/behaviour-tree framework",
+    "crowd scheduling beyond Pair Lock",
+    "quest system",
+    "economy/currency",
+    "weight/encumbrance",
+    "full inventory UI",
+    "combat implementation",
+    "animation clip authoring",
+    "world navigation implementation",
+    "full transcript memory",
+    "automatic ideological/personality scoring",
+    "asset duplication"
+  ]
+}
