@@ -24,3 +24,14 @@
 - public QA attempt 1 failed at public child-route readiness; source/publication Git state was re-read and remained correct;
 - exactly one public-sync retry is allowed; no visual/runtime rebuild and no automatic Live promotion;
 - captured the subsequent ToolBox consolidation direction separately as GitHub issue #167 rather than mixing it into this old branch.
+
+
+## 2026-09-22 · public verified
+
+- public QA run `35671642443` attempt 2 succeeded without changing the Scene-Patch runtime;
+- exact `kayfabizarro.pages.dev` Stage root, Resident host and Dungeon host all loaded with the expected build/source markers;
+- public assertions **13/13 PASS**, 0 page/console errors;
+- public proof artifact `10671626183`, digest `sha256:356dbf12428252b54040e50a4077767e0cac3234c74982adbdaf4ca28a4bb2cf`;
+- Stage is now PUBLIC_VERIFIED and linked from the KFB Hub;
+- exactly one gate remains: Georg's Resident-prop + Dungeon-candle interaction review;
+- no automatic main merge and no Live promotion.
