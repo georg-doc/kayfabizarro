@@ -63,3 +63,24 @@ Run `35538219263` failed after the interaction checks because a rejected validat
 First Dungeon run `35538696300` failed at boot with `SyntaxError: Unexpected reserved word`. Root cause: the first `Raycaster` occurrence belonged to S13.2's internal `rayProbe()`, not the UI picker; an overly broad replacement cut the original generator control section. Repair rebuilt the Dungeon host from exact `main@6c1b02a3338c005127d45bc7bff3ecbb785f1342`, preserved the original `rayProbe`, `regen`, controls and Recipe export, and replaced only the second UI-picker block. Final run `35538997214` passed.
 
 No third repair pass was used.
+
+
+## Isolated Stage mirror proof · 2026-09-22
+
+Workflow: `.github/workflows/scene-patch-stage-mirror-qa.yml`  
+Run: `35539447295` · **SUCCESS**  
+Job: `106154340023`  
+Artifact: `10613569458` · `scene-patch-stage-mirror-proof`  
+Digest: `sha256:9cdd04a2abbf53fae64c75ab17c7e3216ad0ad0fad2804ecdaa6c8d93baef4a8`
+
+Result: **13/13 PASS · 0 page/console errors**.
+
+The mirror proves the packaged root plus both embedded hosts from the exact Stage tree, including build markers, source identities and editor activation. This is additional to the 42/42 host tests; it does not inflate them into a single count.
+
+## Public publication gate
+
+Publication branch files were fetch-back verified at `cloudflare-live@f0c269904de722b86260e1657928e9a1936127b4`.
+
+Attempt 1: run `35671642443` / attempt 1 — **FAIL** at public child-route readiness; artifact `10671785860`, digest `sha256:75167671838e59b0ed51b2e2badb4560c9af90091c7fe8024bfd55ffc0419ef5`. No Stage-mirror regression was observed. Public PASS is not claimed.
+
+Attempt 2 is the final public-sync retry allowed by this slice. If it fails, the candidate remains preserved as **42/42 host PASS + 13/13 Stage-mirror PASS / PUBLIC BLOCKED**.
