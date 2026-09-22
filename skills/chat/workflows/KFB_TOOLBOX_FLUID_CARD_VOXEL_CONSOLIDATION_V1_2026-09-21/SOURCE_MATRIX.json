@@ -1,0 +1,463 @@
+{
+  "schema": "kfb.toolbox-source-matrix/1",
+  "date": "2026-09-22",
+  "slice": "F1_SOURCE_CENSUS_REFRESH",
+  "repository": "georg-doc/kayfabizarro",
+  "branch": "toolbox/fluid-card-voxel-f1-source-census-2026-09-22",
+  "baseMain": "1ff35a63cbc6608d9d2f7a79ce5d6f0f17c55ac5",
+  "scope": "Source census and duplicate/owner decisions only. No runtime, Stage, asset or Dropbox mutation.",
+  "actionSemantics": {
+    "PROMOTE": "Candidate may become a new canonical ToolBox module after its named gate.",
+    "ADAPT": "Reuse an existing owner/source through a consumer seam; do not create a competing owner.",
+    "KEEP_INTAKE": "Retain as donor/evidence/source candidate; no canonical or public-runtime claim.",
+    "REJECT_DUPLICATE": "Do not promote as a competing source. Retain forensic/history files in place."
+  },
+  "decisions": [
+    {
+      "id": "card-zone-v2-full-2026-09-22",
+      "role": "current 1:1 Card Zone source application",
+      "ref": "main",
+      "path": "tools/KFB-ToolBox/_inbox/KFB Card Zone Lab v2/card-zone-lab-v2-full_2026-09-22/KFB Card Zone Lab v2.dc.html",
+      "gitBlob": "e7bb09e49b2a885eb076e8c43c0ff561a9cebb72",
+      "bytes": 145369,
+      "owner": "Card Zone source donor; ToolBox may package proven seams only",
+      "action": "KEEP_INTAKE",
+      "rationale": "Newest unchanged 1:1 export and binding donor truth after two failed rewrite/extraction rounds. Must be shown in isolation before any further module cut.",
+      "nextGate": "Publish the unmodified full source as an isolated Stage proof and verify fluid path, CardStack/reveal, Sky Card/beam and Card Cube."
+    },
+    {
+      "id": "card-zone-v3-historical-app",
+      "role": "older Card Zone source copy",
+      "ref": "main",
+      "path": "tools/KFB-ToolBox/_inbox/cloud-design-worldbuilding-2026-09-18/card-zone-lab-v3/KFB Card Zone Lab v2.dc.html",
+      "gitBlob": "43eea82f8727d3581e50374d6263e48a28241d3b",
+      "bytes": 144800,
+      "owner": "historical intake only",
+      "action": "REJECT_DUPLICATE",
+      "rationale": "Superseded by the 2026-09-22 1:1 export. Useful only for method-equivalence evidence; not a competing current source.",
+      "supersededBy": "card-zone-v2-full-2026-09-22"
+    },
+    {
+      "id": "fluid-v1-first-extraction",
+      "role": "first rewritten fluid module",
+      "ref": "main",
+      "path": "tools/KFB-ToolBox/_inbox/KFB ToolBox Bench v1 - KFB Voxel Card Zone Lab 2 - Hex Assets Worldbuilding/kfb-toolbox-v1/tools/KFB-ToolBox/kfb-fluid-v1/",
+      "keyBlobs": {
+        "shader": "56c6b077d125a028d1950de24b2a131c646a44f8",
+        "field": "05ae71d94567d7fd55496ebe0f761f30253879b0",
+        "gutter": "26348b226f491e26c4179399c7db6a13a8520fc7"
+      },
+      "owner": "forensic failed extraction",
+      "action": "REJECT_DUPLICATE",
+      "rationale": "Documented wrong shader path: dead foam re-enabled, required textures omitted, basin material changed. Never use as fidelity donor."
+    },
+    {
+      "id": "fluid-v1-1-repair",
+      "role": "repaired but not independently reconciled extraction",
+      "ref": "main",
+      "path": "tools/KFB-ToolBox/_inbox/kfb-toolbox-v1.1/tools/KFB-ToolBox/kfb-fluid-v1/",
+      "keyBlobs": {
+        "shader": "61cb424471febff6b660d05c476e3bfac1392eaf",
+        "field": "05ae71d94567d7fd55496ebe0f761f30253879b0",
+        "gutter": "a517e00662b6e20178b915865a53798f8039076d"
+      },
+      "owner": "forensic repair history",
+      "action": "REJECT_DUPLICATE",
+      "rationale": "Repair addressed known fluid defects, but the 2026-09-22 extraction postmortem invalidates the rewrite workflow and source-locked v2 now supersedes it."
+    },
+    {
+      "id": "fluid-v2-source-locked",
+      "role": "source-exact Card Zone fluid seam",
+      "ref": "main",
+      "path": "tools/KFB-ToolBox/_inbox/KFB StoryMap v1/kfb-fluid-v2/card-zone-v2-fluid-source.js",
+      "gitBlob": "97e3e0813cb5693a64863482ab96a601e88f5104",
+      "bytes": 7950,
+      "owner": "Card Zone fluid donor seam; consumer keeps world/water ownership",
+      "action": "ADAPT",
+      "rationale": "GLSL and loader contract are copied from the real donor. F1 proves current 2026-09-22 buildFluidSurface/layoutFluid blocks are byte-identical to its older pinned donor block. Provenance metadata should be refreshed before canonical packaging.",
+      "nextGate": "Use this as the F2 comparison candidate, never fluid-v1/v1.1."
+    },
+    {
+      "id": "beam-v1-extraction",
+      "role": "projector/Sky-Card beam extraction candidate",
+      "ref": "main",
+      "path": "tools/KFB-ToolBox/_inbox/KFB ToolBox Bench v1 - KFB Voxel Card Zone Lab 2 - Hex Assets Worldbuilding/kfb-toolbox-v1/tools/KFB-ToolBox/kfb-beam-v1/kfb-beam.js",
+      "gitBlob": "738ec8f5300fed24e8387a3ff01ab94fe8ae44a2",
+      "bytes": 8530,
+      "owner": "Card Zone projection source remains donor truth",
+      "action": "KEEP_INTAKE",
+      "rationale": "Card Zone buildProjection/updateProjection are unchanged in the newest full source, but this extracted wrapper has not received independent source-isolation proof.",
+      "nextGate": "Compare against exact Card Zone beam on a real current CardRig/Sky Card."
+    },
+    {
+      "id": "cardstack-v1-extraction",
+      "role": "deck/reveal/Sky-Card behavior extraction candidate",
+      "ref": "main",
+      "path": "tools/KFB-ToolBox/_inbox/KFB ToolBox Bench v1 - KFB Voxel Card Zone Lab 2 - Hex Assets Worldbuilding/kfb-toolbox-v1/tools/KFB-ToolBox/kfb-cardstack-v1/kfb-card-stack.js",
+      "gitBlob": "2a6c9389c9ef011b5f81c300143055fe2ffa8341",
+      "bytes": 12009,
+      "owner": "Card Zone stack/reveal behavior donor; Storytelling Maps owns current physical CardRig",
+      "action": "KEEP_INTAKE",
+      "rationale": "Module was explicitly NOT_TESTED. Source methods are unchanged in the newest full Lab, but wrapper fidelity and current CardRig integration remain unproven.",
+      "nextGate": "F3 proof using current responsive rounded CardRig."
+    },
+    {
+      "id": "seeds-v1-extraction",
+      "role": "card-to-world seed extraction candidate",
+      "ref": "main",
+      "path": "tools/KFB-ToolBox/_inbox/KFB ToolBox Bench v1 - KFB Voxel Card Zone Lab 2 - Hex Assets Worldbuilding/kfb-toolbox-v1/tools/KFB-ToolBox/kfb-seeds-v1/kfb-card-seed.js",
+      "gitBlob": "a5dbeee995d681ee5a4f1736bfb38beddf0a3bbb",
+      "bytes": 7542,
+      "owner": "ToolBox bridge candidate; palette/biome owners remain external",
+      "action": "KEEP_INTAKE",
+      "rationale": "Newest Card Zone seed methods are unchanged, but the extraction still needs a real KFB card plus owner-safe palette/biome output proof.",
+      "nextGate": "F4 deterministic real-card contract."
+    },
+    {
+      "id": "voxel-world-v1-mirror",
+      "role": "terrain-v10 mirror packaged as a module",
+      "ref": "main",
+      "path": "tools/KFB-ToolBox/_inbox/KFB ToolBox Bench v1 - KFB Voxel Card Zone Lab 2 - Hex Assets Worldbuilding/kfb-toolbox-v1/tools/KFB-ToolBox/kfb-voxel-world-v1/",
+      "keyBlobs": {
+        "voxelTerrain": "e9a90b19389ec5ba0e3d465bf533eb2a56eba713",
+        "worldContext": "478e8cb4a53ea15e5c51833fa30554224e581815",
+        "edge3": "1e105dce9dd2cb2321833214040442fa8027eeca"
+      },
+      "owner": "no independent owner; exact mirror of current Card Zone terrain files/assets",
+      "action": "REJECT_DUPLICATE",
+      "rationale": "All three key blobs equal the 2026-09-22 Card Zone terrain-v10/asset blobs. Do not create a second voxel/terrain owner."
+    },
+    {
+      "id": "voxel-zone-s2-full",
+      "role": "1:1 voxel visual/material composition donor",
+      "ref": "main",
+      "path": "tools/KFB-ToolBox/_inbox/KFB Voxel Zone S2/voxel-zone-s2-full_2026-09-22/KFB Voxel Zone S2.dc.html",
+      "gitBlob": "90cc902cbc329b287caaf1a42a996a62f9c0a77a",
+      "bytes": 24962,
+      "owner": "visual-authoring donor only",
+      "action": "KEEP_INTAKE",
+      "rationale": "Exact source for the visually interesting seam between edge3/Travel-v9-style voxels and the procedural KFB box material. It does not own Hex grid, Travel terrain, characters or gameplay.",
+      "nextGate": "Isolate this exact look beside one real KayKit Hex tile before any Hex/character adaptation."
+    },
+    {
+      "id": "voxel-zone-s2-water",
+      "role": "Voxel Zone S2 shoreline/water treatment",
+      "ref": "main",
+      "path": "tools/KFB-ToolBox/_inbox/KFB Voxel Zone S2/voxel-zone-s2-full_2026-09-22/KFB Voxel Zone S2.dc.html",
+      "gitBlob": "90cc902cbc329b287caaf1a42a996a62f9c0a77a",
+      "owner": "Voxel Zone visual donor only",
+      "action": "KEEP_INTAKE",
+      "rationale": "Distinct from Card Zone fluid: MeshStandard water.jpg + waternormals.jpg with height-DataTexture shoreline foam. Preserve as a separate use-case donor, not a replacement shader."
+    },
+    {
+      "id": "texture-browser-full",
+      "role": "1:1 texture contact-sheet and A/B visual browser",
+      "ref": "main",
+      "path": "tools/KFB-ToolBox/_inbox/KFB Textur-Browser/texturbrowser-full_2026-09-22/KFB Textur-Browser.dc.html",
+      "gitBlob": "2e796cc99b3c412181a3ec3e808c1782f03048cd",
+      "bytes": 32344,
+      "owner": "ToolBox visual authoring candidate; Asset Librarian remains asset/provenance owner",
+      "action": "KEEP_INTAKE",
+      "rationale": "Exact current app with 86-texture contact sheet, A/B voxel preview, local rating and JSON export. Needs its own direct Stage proof before a public ToolBox tile."
+    },
+    {
+      "id": "texture-catalog-86",
+      "role": "Texture Browser working catalogue",
+      "ref": "main",
+      "path": "tools/KFB-ToolBox/_inbox/KFB Textur-Browser/texturbrowser-full_2026-09-22/kfb-texture-catalog.json",
+      "gitBlob": "591eae1b00f901f18d7fe5b5d32394994afae9bb",
+      "bytes": 20544,
+      "owner": "Texture Browser authoring data; Registry remains source/provenance truth",
+      "action": "KEEP_INTAKE",
+      "rationale": "Useful curated authoring catalogue, but not a replacement Registry shard."
+    },
+    {
+      "id": "kfb-box-material-canonical",
+      "role": "canonical KFB voxel/box material implementation",
+      "ref": "main",
+      "path": "skills/kfb-box-material.js",
+      "gitBlob": "3689661afa8f1b371ebcc40bfed994450c37cfa0",
+      "owner": "KFB material skill/source",
+      "action": "ADAPT",
+      "rationale": "Existing canonical file. Card Zone, Texture Browser and Voxel Zone S2 copies are byte-identical; future ToolBox consumers should import/reuse the owner rather than promote copies."
+    },
+    {
+      "id": "kfb-ink-outline-screen-space",
+      "role": "screen-space voxel preview outline donor",
+      "ref": "main",
+      "path": "tools/KFB-ToolBox/_inbox/KFB Voxel Zone S2/voxel-zone-s2-full_2026-09-22/kfb-ink-outline.js",
+      "gitBlob": "2e6edfba77d0c362b405aff252c2a2464dbb0640",
+      "bytes": 9684,
+      "owner": "Voxel/Texture visual donor; distinct from card ink canon",
+      "action": "KEEP_INTAKE",
+      "rationale": "Exact shared blob in Voxel Zone S2, Texture Browser and older worldbuilding intake. It is not the same owner or purpose as skills/kfb-ink-canon.js."
+    },
+    {
+      "id": "kfb-card-builder-canonical",
+      "role": "canonical cut-and-play card content builder",
+      "ref": "main",
+      "path": "skills/kfb-card-builder.js",
+      "gitBlob": "88e1fb33f188648495e6bd8cc6450f19eaaea0cb",
+      "owner": "KFB card content/ink source",
+      "action": "ADAPT",
+      "rationale": "Existing canonical file and byte-identical to the 2026-09-22 Card Zone export copy. Current Card Zone buildCard additionally pins kfb-index.json before index.json; preserve that consumer wiring."
+    },
+    {
+      "id": "kfb-card-ink-canonical",
+      "role": "canonical KFB card/panel ink",
+      "ref": "main",
+      "path": "skills/kfb-ink-canon.js",
+      "gitBlob": "55ce6da2805386bd6373d81d064a37fc7e0efacb",
+      "owner": "KFB Card Ink SSOT",
+      "action": "ADAPT",
+      "rationale": "Existing canonical file and byte-identical to Card Zone copy. Do not substitute screen-space voxel outline for card ink."
+    },
+    {
+      "id": "kfb-card-format-canonical",
+      "role": "canonical cut-and-play card aspect/fit",
+      "ref": "main",
+      "path": "skills/kfb-card-format.js",
+      "gitBlob": "8a40d8d48a706982675f1388f0fec19b12d9dd16",
+      "owner": "KFB card format owner",
+      "action": "ADAPT",
+      "rationale": "Existing canonical file and byte-identical to Card Zone copy."
+    },
+    {
+      "id": "storytelling-responsive-cardrig-v1",
+      "role": "current physical rounded 3D card geometry contract",
+      "ref": "stage/storytelling-maps-v1-t2-media-standee-2026-09-20",
+      "path": "skills/chat/workflows/KFB_STORYTELLING_MAPS_V1_2026-09-20/CARD_RIG_V1.md",
+      "gitBlob": "366a16e9ad16ade38ea8067f8b0e8f048e3680bf",
+      "owner": "KFB Storytelling Maps / Cartoon Map Board presentation layer",
+      "action": "ADAPT",
+      "rationale": "Current contract for responsive rounded KayKit physical card geometry. Card Zone supplies stack/reveal/beam behavior; it must not displace this newer CardRig owner."
+    },
+    {
+      "id": "storytelling-t2-card-donor-seam",
+      "role": "technical real KayKit card/stand material-binding evidence",
+      "ref": "stage/storytelling-maps-v1-t2-media-standee-2026-09-20",
+      "path": "kfb-hub/stage/storytelling-maps/t2-media-standee/src/main.js",
+      "gitBlob": "c4d9a126d6d314578fbe8e1b2f364443a6f93471",
+      "owner": "Storytelling Maps technical evidence",
+      "action": "ADAPT",
+      "rationale": "Proven donor seam for exact KayKit stand/playercard and reversible front-art material binding; final geometry still governed by CARD_RIG_V1."
+    },
+    {
+      "id": "travel-world-palettes",
+      "role": "named KFB world palette owner",
+      "ref": "main",
+      "path": "travel/travel-v16/terrain-v16/world-palettes.js",
+      "gitBlob": "f6121ae41f00804a321592f60cdefb78206e76c6",
+      "owner": "Travel visual/world palette owner",
+      "action": "ADAPT",
+      "rationale": "Existing palette owner. F4 may bridge card seeds into it; ToolBox must not invent a new competing palette authority."
+    },
+    {
+      "id": "card-zone-world-context",
+      "role": "deterministic story-mode/card seed context",
+      "ref": "main",
+      "path": "tools/KFB-ToolBox/_inbox/KFB Card Zone Lab v2/card-zone-lab-v2-full_2026-09-22/terrain-v10/world-context.js",
+      "gitBlob": "478e8cb4a53ea15e5c51833fa30554224e581815",
+      "bytes": 16175,
+      "owner": "stable Card Zone/world-context donor; receiving world keeps palette/terrain ownership",
+      "action": "ADAPT",
+      "rationale": "Same blob appears across Card Zone v3, Voxel World v1 and Voxel Zone S2. Use one pinned source in F4 rather than copying multiple mirrors."
+    },
+    {
+      "id": "zone-index-biome-catalog",
+      "role": "older hand-curated biome/adjacency/connectors catalogue",
+      "ref": "main",
+      "path": "tools/KFB-ToolBox/_inbox/cloud-design-worldbuilding-2026-09-18/card-zone-lab-v3/zone-index.json",
+      "gitBlob": "fa2b34a3aa104f02eb4443241c884b92240c89a4",
+      "bytes": 7803,
+      "owner": "intake biome catalogue candidate only",
+      "action": "KEEP_INTAKE",
+      "rationale": "Useful biome structure, but not established as the current palette owner. F4 may bridge selected biome semantics without promoting this entire file as world truth."
+    },
+    {
+      "id": "kfb-texture-assets-registry",
+      "role": "canonical KFB shader/material texture assets",
+      "ref": "main",
+      "path": "registry/assets/v1/packs/kfb.json",
+      "gitBlob": "5e7d5125596801ece8c855740b784d6ac0f96bba",
+      "owner": "Asset Registry/Librarian",
+      "action": "ADAPT",
+      "assets": {
+        "edge3": {
+          "path": "media/3D_Assets/KFB/edge3.jpg",
+          "gitBlob": "1e105dce9dd2cb2321833214040442fa8027eeca",
+          "bytes": 2543
+        },
+        "noise": {
+          "path": "media/3D_Assets/KFB/noise.png",
+          "gitBlob": "6b532d0de909d17c2d4ecbbca9539735df7c852d",
+          "bytes": 247564
+        },
+        "water": {
+          "path": "media/3D_Assets/KFB/water.jpg",
+          "gitBlob": "1a38c9362bc437dac530ac9f57afbfab4ce7370c",
+          "bytes": 80203
+        },
+        "waterDudv": {
+          "path": "media/3D_Assets/KFB/waterdudv.jpg",
+          "gitBlob": "eed18430a01d8c725757abe6b5cbc242f16e83ee",
+          "bytes": 177925
+        },
+        "waterNormals": {
+          "path": "media/3D_Assets/KFB/waternormals.jpg",
+          "gitBlob": "9dfe03ce483a02fff31c35421094c53a333097bc",
+          "bytes": 248813
+        }
+      },
+      "rationale": "Registry is the asset/provenance truth. ToolBox and source applications consume these exact SourceRefs; do not copy assets into a new module owner."
+    },
+    {
+      "id": "card-zone-asset-repo-mirror",
+      "role": "export-local asset repository mirror",
+      "ref": "main",
+      "path": "tools/KFB-ToolBox/_inbox/KFB Card Zone Lab v2/card-zone-lab-v2-full_2026-09-22/asset-repo.json",
+      "gitBlob": "19783f3e51fbc313624aaf8f968a219c203c6f21",
+      "bytes": 335472,
+      "owner": "immutable source-export support only",
+      "action": "REJECT_DUPLICATE",
+      "rationale": "Retain inside the 1:1 proof export, but do not promote it as another ToolBox asset catalogue. Registry/Librarian remains identity/discovery truth."
+    },
+    {
+      "id": "dc-support-mirrors",
+      "role": "Design Component runtime support copied with source exports",
+      "ref": "main",
+      "path": "tools/KFB-ToolBox/_inbox/KFB Card Zone Lab v2/card-zone-lab-v2-full_2026-09-22/support.js",
+      "gitBlob": "6ca00e36551a5e172311990a3eaebffb581d3d0b",
+      "bytes": 64222,
+      "owner": "source-export environment, not ToolBox product logic",
+      "action": "REJECT_DUPLICATE",
+      "rationale": "Same blob accompanies Card Zone, Texture Browser and Voxel Zone S2. Keep where immutable source proof needs it; never promote it as a KFB feature module."
+    },
+    {
+      "id": "storymap-edge3-mismatch",
+      "role": "StoryMap-local edge texture copy",
+      "ref": "main",
+      "path": "tools/KFB-ToolBox/_inbox/KFB StoryMap v1/kfb-voxel-world-v1/edge3.jpg",
+      "gitBlob": "76c5d373c3aa1c4ea90c0a1354ff6d6593e803e3",
+      "bytes": 8314,
+      "owner": "StoryMap intake artifact only",
+      "action": "REJECT_DUPLICATE",
+      "rationale": "Does not match canonical Registry edge3 blob 1e105dce.../2543 bytes. Do not use as the generic KFB edge3 source without separate provenance."
+    },
+    {
+      "id": "tinyskies-travel-water-reference",
+      "role": "macro-world ocean/coast/atmosphere reference",
+      "ref": "2659a5cc987d7e4a4c5aa7e79c86a1626ad75df6",
+      "path": "dannylimanseta/tinyskies client/src/game/ + current KFB Travel ports",
+      "owner": "KFB Travel remains receiver/world/terrain/water owner; TinySkies is donor/benchmark only",
+      "action": "ADAPT",
+      "rationale": "Use only for F2 use-case comparison: ocean/coast/shallow-deep water/foam/sky/fog/light. It must not replace Card Zone channel/moat fluid or become a second KFB runtime."
+    }
+  ],
+  "equivalenceEvidence": {
+    "cardZoneOldBlob": "43eea82f8727d3581e50374d6263e48a28241d3b",
+    "cardZoneCurrentBlob": "e7bb09e49b2a885eb076e8c43c0ff561a9cebb72",
+    "byteIdenticalMethods": [
+      "loadTex",
+      "buildWorld",
+      "applyCarve",
+      "buildMoat",
+      "waterY",
+      "riverPath",
+      "riverField",
+      "riverCells",
+      "layoutMoat",
+      "buildFluidSurface",
+      "layoutFluid",
+      "buildProjection",
+      "updateProjection",
+      "faceTexture",
+      "buildCardCube",
+      "refreshArtFace",
+      "prepReveal",
+      "poseCard",
+      "setCardSide",
+      "buildStack",
+      "tickReveal",
+      "tickCard",
+      "seedCard",
+      "triplet",
+      "buildBaseline",
+      "dev",
+      "seedMode",
+      "seedSignature",
+      "applySeed"
+    ],
+    "changedMethods": [
+      {
+        "name": "buildCard",
+        "currentChange": "Current full source explicitly passes media/kfb/kfb-index.json first, then media/kfb/index.json fallback to createCardBuilder."
+      }
+    ],
+    "conclusion": "Fluid, Beam, Card Cube, CardStack/reveal and seed source blocks used for reconciliation are unchanged. Current card content bootstrap is newer and must use the 2026-09-22 buildCard wiring."
+  },
+  "waterUseCases": [
+    {
+      "id": "card-zone-flow-fluid",
+      "source": "card-zone-v2-full-2026-09-22",
+      "textureInputs": [
+        "waterdudv.jpg",
+        "water.jpg"
+      ],
+      "material": "ShaderMaterial",
+      "foam": "constructively off in current source via float u = 0.5",
+      "purpose": "moats/channels/rivers/flow vectors around Card Zones"
+    },
+    {
+      "id": "voxel-zone-s2-shore-water",
+      "source": "voxel-zone-s2-full",
+      "textureInputs": [
+        "water.jpg",
+        "waternormals.jpg"
+      ],
+      "material": "MeshStandardMaterial + onBeforeCompile height DataTexture",
+      "foam": "height-relative shoreline foam is active",
+      "purpose": "voxel-zone open water/shoreline visual treatment"
+    },
+    {
+      "id": "travel-tinyskies-macro-water",
+      "source": "tinyskies-travel-water-reference",
+      "textureInputs": [],
+      "material": "receiver-owned/current Travel implementation",
+      "foam": "compare in F2",
+      "purpose": "macro ocean/coast/shallow-deep water and atmosphere"
+    }
+  ],
+  "protectedOwners": [
+    "Asset Registry/Librarian = asset identity and provenance",
+    "Storytelling Maps CardRig = current physical responsive rounded 3D card geometry",
+    "skills/kfb-card-builder.js + skills/kfb-ink-canon.js + skills/kfb-card-format.js = card content/ink/format",
+    "skills/kfb-box-material.js = existing KFB voxel/box material implementation",
+    "Travel = macro world/terrain/water runtime and named world palette owner",
+    "Hex/Dungeon/character consumers keep their grid, collision, rig, movement and gameplay ownership"
+  ],
+  "dropboxCrossCheck": {
+    "mode": "read-only",
+    "cardZone": {
+      "path": "/CLAUDE/KFB Card Zone Lab v2/card-zone-lab-v2-full_2026-09-22/KFB Card Zone Lab v2.dc.html",
+      "bytes": 145369
+    },
+    "textureBrowser": {
+      "path": "/CLAUDE/KFB Textur-Browser/texturbrowser-full_2026-09-22/KFB Textur-Browser.dc.html",
+      "bytes": 32344
+    },
+    "voxelZoneS2": {
+      "path": "/CLAUDE/KFB Voxel Zone S2/voxel-zone-s2-full_2026-09-22/KFB Voxel Zone S2.dc.html",
+      "bytes": 24962
+    },
+    "note": "Sizes match the current GitHub intake entries. Multiple older Card Zone copies remain provenance/history only. No Dropbox mutation was performed."
+  },
+  "summary": {
+    "decisionCount": 28,
+    "byAction": {
+      "KEEP_INTAKE": 10,
+      "REJECT_DUPLICATE": 7,
+      "ADAPT": 11
+    }
+  }
+}
