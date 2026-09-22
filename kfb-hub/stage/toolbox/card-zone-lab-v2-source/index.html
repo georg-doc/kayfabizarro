@@ -1,0 +1,2585 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  html,body{margin:0;padding:0;background:#14120f;overflow:hidden;}
+  a{color:#d8a24a;} a:hover{color:#f0c274;}
+  input[type=range]{accent-color:#d8a24a;width:100%;}
+  ::-webkit-scrollbar{width:8px;} ::-webkit-scrollbar-thumb{background:#4a4038;border-radius:5px;}
+</style>
+<script type="importmap">
+{
+  "imports": {
+    "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
+    "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/"
+  }
+}
+</script>
+<script type="module">
+  import * as THREE from 'three';
+  import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+  import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
+  import { RoundedBoxGeometry } from 'three/addons/geometries/RoundedBoxGeometry.js';
+  window.__CZ = { THREE, OrbitControls, GLTFLoader, RoundedBoxGeometry };
+  window.dispatchEvent(new Event('czready'));
+</script>
+</helmet>
+<div style="position:fixed;inset:0;background:#14120f;color:#e8e0d4;font-family:'Barlow Condensed',system-ui,sans-serif">
+  <canvas ref="{{ canvasRef }}" style="position:absolute;inset:0;width:100%;height:100%;display:block"></canvas>
+
+  <div style="position:absolute;left:16px;top:14px;max-width:calc(100% - 300px)">
+    <div style="font-size:20px;font-weight:700;letter-spacing:0.05em;text-transform:uppercase">Card Zone Lab</div>
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#8d8377;margin-top:3px">{{ status }}</div>
+  </div>
+
+  <sc-if value="{{ focusOn }}" hint-placeholder-val="{{ false }}">
+    <div ref="{{ panelRef }}" style="position:absolute;left:0;top:0;width:0;height:0;opacity:0;overflow:hidden;background:#efe6d0;color:#2a2118;font-family:'Barlow Condensed',system-ui,sans-serif;display:flex;flex-direction:column">
+      <div style="display:flex;align-items:center;justify-content:space-between;gap:10px;padding:12px 16px;border-bottom:1px solid #2a211826;flex:none">
+        <div style="display:flex;flex-direction:column">
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.16em;text-transform:uppercase;color:#6d6152">{{ focusKind }}</span>
+          <span style="font-size:19px;font-weight:700;line-height:1.1">{{ cardName }}</span>
+        </div>
+        <button onClick="{{ closeFocus }}" style="border:1px solid #2a211840;background:#2a21180d;color:#2a2118;font-family:'Barlow Condensed',sans-serif;font-size:12px;font-weight:600;letter-spacing:0.1em;padding:5px 12px;border-radius:3px;cursor:pointer">ZURÜCK</button>
+      </div>
+
+      <sc-if value="{{ isArt }}" hint-placeholder-val="{{ true }}">
+        <div onWheel="{{ onWheel }}" onPointerDown="{{ onPanStart }}" onPointerMove="{{ onPanMove }}" onPointerUp="{{ onPanEnd }}" style="flex:1;position:relative;overflow:hidden;background:#ded3ba;cursor:grab;min-height:0">
+          <canvas ref="{{ artRef }}" style="{{ artStyle }}"></canvas>
+          <div style="position:absolute;left:12px;bottom:10px;display:flex;gap:6px;align-items:center;background:#efe6d0e6;border:1px solid #2a211826;border-radius:3px;padding:4px 8px">
+            <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:#6d6152">{{ zoomLabel }}</span>
+            <button onClick="{{ zoomOut }}" style="{{ zoomBtn }}">−</button>
+            <button onClick="{{ zoomIn }}" style="{{ zoomBtn }}">+</button>
+            <button onClick="{{ zoomReset }}" style="{{ zoomBtn }}">RESET</button>
+          </div>
+        </div>
+      </sc-if>
+
+      <sc-if value="{{ isChat }}" hint-placeholder-val="{{ false }}">
+        <div style="flex:1;display:flex;flex-direction:column;min-height:0">
+          <div style="flex:1;overflow-y:auto;padding:14px 16px;display:flex;flex-direction:column;gap:9px">
+            <sc-for list="{{ chatLines }}" as="m" hint-placeholder-count="2">
+              <div style="{{ m.wrap }}"><div style="{{ m.bubble }}">{{ m.t }}</div></div>
+            </sc-for>
+          </div>
+          <div style="display:flex;gap:8px;align-items:flex-end;padding:12px 16px;border-top:1px solid #2a211826;flex:none">
+            <textarea value="{{ draft }}" onChange="{{ onDraft }}" onKeyDown="{{ onDraftKey }}" placeholder="Sprich mit der Karte …" rows="1" style="flex:1;resize:none;background:#fffaf0;border:1px solid #2a211830;border-radius:4px;color:#2a2118;font-family:'Barlow Condensed',sans-serif;font-size:15px;line-height:1.35;padding:9px 11px;box-sizing:border-box;max-height:90px"></textarea>
+            <button onClick="{{ onSend }}" title="{{ sendTitle }}" style="{{ sendStyle }}">{{ sendIcon }}</button>
+          </div>
+        </div>
+      </sc-if>
+
+      <sc-if value="{{ isText }}" hint-placeholder-val="{{ false }}">
+        <div style="flex:1;overflow-y:auto;padding:16px;display:flex;flex-direction:column;gap:15px;min-height:0">
+          <sc-for list="{{ blocks }}" as="b" hint-placeholder-count="3">
+            <div style="display:flex;flex-direction:column;gap:4px">
+              <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:#6d6152">{{ b.k }}</span>
+              <span style="font-size:16px;line-height:1.42;text-wrap:pretty">{{ b.v }}</span>
+            </div>
+          </sc-for>
+        </div>
+      </sc-if>
+    </div>
+  </sc-if>
+
+  <div style="{{ dockStyle }}">
+    <button onClick="{{ toggleDock }}" style="{{ dockToggle }}">{{ dockIcon }}</button>
+    <sc-if value="{{ dockOpen }}" hint-placeholder-val="{{ true }}">
+      <div style="display:flex;flex-direction:column;gap:12px;overflow-y:auto;padding-right:2px">
+
+        <div style="display:flex;flex-direction:column;gap:5px">
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.1em;color:#9b9084">KARTE</span>
+          <div style="font-size:14px;line-height:1.2">{{ cardName }}</div>
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:#8d8377">{{ cardMeta }}</div>
+          <div style="display:flex;gap:4px;flex-wrap:wrap;margin-top:2px">
+            <sc-for list="{{ statusChips }}" as="s" hint-placeholder-count="4">
+              <button onClick="{{ s.onClick }}" style="{{ s.style }}">{{ s.label }}</button>
+            </sc-for>
+          </div>
+          <div style="display:flex;gap:4px;flex-wrap:wrap">
+            <button onClick="{{ toggleReveal }}" style="{{ revealStyle }}">{{ revealLabel }}</button>
+            <button onClick="{{ toggleAuto }}" style="{{ autoStyle }}">auto bei Annäherung</button>
+          </div>
+          <label style="display:flex;flex-direction:column;gap:2px">
+            <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:#9b9084;display:flex;justify-content:space-between;gap:8px;white-space:nowrap">DECK (STUFEN)<span style="color:#d8a24a">{{ vDeck }}</span></span>
+            <input type="range" min="1" max="6" step="1" value="{{ pDeck }}" onChange="{{ setDeck }}">
+          </label>
+          <button onClick="{{ nextCard }}" style="{{ plainBtn }}">nächste Karte</button>
+          <button onClick="{{ toggleSeed }}" style="{{ seedStyle }}">{{ seedLabel }}</button>
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:9.5px;line-height:1.45;color:#8d8377">{{ seedInfo }}</div>
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:9.5px;line-height:1.45;color:#6f665c">{{ seedDerived }}</div>
+        </div>
+
+        <div style="height:1px;background:#2e2822"></div>
+
+        <div style="display:flex;flex-direction:column;gap:5px">
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.1em;color:#9b9084">PROJEKTION</span>
+          <div style="display:flex;gap:4px;flex-wrap:wrap">
+            <sc-for list="{{ projChips }}" as="p" hint-placeholder-count="3">
+              <button onClick="{{ p.onClick }}" style="{{ p.style }}">{{ p.label }}</button>
+            </sc-for>
+          </div>
+          <label style="display:flex;flex-direction:column;gap:2px">
+            <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:#9b9084;display:flex;justify-content:space-between;gap:8px">RAUM-ECKEN<span style="color:#d8a24a">{{ vRect }}</span></span>
+            <input type="range" min="0.4" max="1" step="0.02" value="{{ pRect }}" onChange="{{ setRect }}">
+          </label>
+          <label style="display:flex;flex-direction:column;gap:2px">
+            <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:#9b9084;display:flex;justify-content:space-between;gap:8px">VERSATZ X<span style="color:#d8a24a">{{ vOff }}</span></span>
+            <input type="range" min="-0.6" max="0.6" step="0.02" value="{{ pOff }}" onChange="{{ setOff }}">
+          </label>
+          <label style="display:flex;flex-direction:column;gap:2px">
+            <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:#9b9084;display:flex;justify-content:space-between;gap:8px">HOLO<span style="color:#d8a24a">{{ vHolo }}</span></span>
+            <input type="range" min="0" max="1.6" step="0.04" value="{{ pHolo }}" onChange="{{ setHolo }}">
+          </label>
+        </div>
+
+        <div style="height:1px;background:#2e2822"></div>
+
+        <div style="display:flex;flex-direction:column;gap:5px">
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.1em;color:#9b9084">GRABEN</span>
+          <div style="display:flex;gap:4px;flex-wrap:wrap">
+            <sc-for list="{{ fluidChips }}" as="f" hint-placeholder-count="5">
+              <button onClick="{{ f.onClick }}" style="{{ f.style }}">{{ f.label }}</button>
+            </sc-for>
+          </div>
+          <label style="display:flex;flex-direction:column;gap:2px">
+            <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:#9b9084;display:flex;justify-content:space-between;gap:8px">BREITE (ZELLEN)<span style="color:#d8a24a">{{ vMoat }}</span></span>
+            <input type="range" min="2" max="7" step="1" value="{{ pMoat }}" onChange="{{ setMoat }}">
+          </label>
+          <button onClick="{{ toggleRiver }}" style="{{ riverStyle }}">{{ riverLabel }}</button>
+          <label style="display:flex;flex-direction:column;gap:2px">
+            <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:#9b9084;display:flex;justify-content:space-between;gap:8px">FLUSS-BREITE<span style="color:#d8a24a">{{ vRiverW }}</span></span>
+            <input type="range" min="2" max="6" step="1" value="{{ pRiverW }}" onChange="{{ setRiverW }}">
+          </label>
+        </div>
+
+        <div style="height:1px;background:#2e2822"></div>
+
+        <div style="display:flex;flex-direction:column;gap:5px">
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.1em;color:#9b9084">ZONEN-BODEN</span>
+          <label style="display:flex;flex-direction:column;gap:2px">
+            <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:#9b9084;display:flex;justify-content:space-between;gap:8px">STUFEN<span style="color:#d8a24a">{{ vSteps }}</span></span>
+            <input type="range" min="0" max="1.5" step="0.05" value="{{ pSteps }}" onChange="{{ setSteps }}">
+          </label>
+          <label style="display:flex;flex-direction:column;gap:2px">
+            <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:#9b9084;display:flex;justify-content:space-between;gap:8px">ABGESENKT<span style="color:#d8a24a">{{ vSink }}</span></span>
+            <input type="range" min="0" max="2" step="0.5" value="{{ pSink }}" onChange="{{ setSink }}">
+          </label>
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.1em;color:#9b9084;margin-top:4px">ZONE-COLLAGE</span>
+          <div style="display:flex;gap:4px;flex-wrap:wrap">
+            <sc-for list="{{ texChips }}" as="t" hint-placeholder-count="9">
+              <button onClick="{{ t.onClick }}" style="{{ t.style }}">{{ t.label }}</button>
+            </sc-for>
+          </div>
+          <label style="display:flex;flex-direction:column;gap:2px">
+            <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:#9b9084;display:flex;justify-content:space-between;gap:8px">ABNUTZUNG<span style="color:#d8a24a">{{ vWear }}</span></span>
+            <input type="range" min="0" max="1" step="0.02" value="{{ pWear }}" onChange="{{ setWear }}">
+          </label>
+          <label style="display:flex;flex-direction:column;gap:2px">
+            <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:#9b9084;display:flex;justify-content:space-between;gap:8px">KACHELN/EINHEIT<span style="color:#d8a24a">{{ vScale }}</span></span>
+            <input type="range" min="0.02" max="0.4" step="0.01" value="{{ pScale }}" onChange="{{ setScale }}">
+          </label>
+        </div>
+
+        <div style="height:1px;background:#2e2822"></div>
+
+        <div style="display:flex;flex-direction:column;gap:5px">
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.1em;color:#9b9084">TERRAIN (v10)</span>
+          <label style="display:flex;flex-direction:column;gap:2px">
+            <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:#9b9084;display:flex;justify-content:space-between;gap:8px">HÖHE<span style="color:#d8a24a">{{ vHeight }}</span></span>
+            <input type="range" min="3" max="26" step="0.5" value="{{ pHeight }}" onChange="{{ setHeight }}">
+          </label>
+          <label style="display:flex;flex-direction:column;gap:2px">
+            <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:#9b9084;display:flex;justify-content:space-between;gap:8px">HUB<span style="color:#d8a24a">{{ vAmp }}</span></span>
+            <input type="range" min="0" max="1" step="0.02" value="{{ pAmp }}" onChange="{{ setAmp }}">
+          </label>
+          <label style="display:flex;flex-direction:column;gap:2px">
+            <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:#9b9084;display:flex;justify-content:space-between;gap:8px">TEMPO<span style="color:#d8a24a">{{ vTempo }}</span></span>
+            <input type="range" min="0.1" max="1.4" step="0.02" value="{{ pTempo }}" onChange="{{ setTempo }}">
+          </label>
+          <button onClick="{{ toggleFlow }}" style="{{ flowStyle }}">{{ flowLabel }}</button>
+        </div>
+
+        <div style="height:1px;background:#2e2822"></div>
+
+        <div style="display:flex;gap:4px;flex-wrap:wrap">
+          <button onClick="{{ toggleSpin }}" style="{{ spinStyle }}">DREHEN</button>
+          <button onClick="{{ toggleBeam }}" style="{{ beamStyle }}">BEAM</button>
+          <button onClick="{{ toggleSound }}" style="{{ soundStyle }}">DRONE</button>
+          <button onClick="{{ toggleFx }}" style="{{ fxStyle }}">BLASEN</button>
+        </div>
+      </div>
+    </sc-if>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{}">
+const CELL = 3, ZX = 8, ZZ = 4.5;              // Zone = 16x9 Zellen, das Kartenformat
+const ZW = ZX * CELL, ZD = ZZ * CELL;          // 48 x 27 Welt-Einheiten
+// Z-MITTE der Zone. voxel-terrain legt seine Reihen auf (n+0.5)*CELL; neun Reihen lassen sich
+// darauf nur symmetrisch um -CELL/2 legen. Alles hier rechnet deshalb gegen ZC statt gegen 0 —
+// dann stossen Graben und Terrain Kante an Kante, ohne Ueberhang und ohne Ritze.
+const ZC = -CELL * 0.5;
+// D6: sechs Hoehenstufen pro Cube. Terrain UND Zone rasten darauf ein, damit Uebergaenge
+// modelliert werden koennen statt in ganzen Cubes zu springen.
+const SUB = CELL / 6;
+// Anti-Flacker-Abstand der Wasserebene zum Boden darunter. MUSS kleiner als eine Hoehenstufe sein:
+// mit CELL*0.3 (= 0.9 > SUB) lag die Ebene bis zu zwei Stufen ueber der Zelle, die sie fuellt —
+// also als schwebender Film ueber dem trockenen Sand statt in der Mulde.
+const WMARGIN = SUB * 0.4;
+// Wasserstand der Zone. Modulweit, weil die Wanne ihn braucht, BEVOR die Oberflaeche gebaut ist.
+const WATER_Y = -CELL * 0.75;
+// Papierton des Wuerfels: Flaechen UND Koerper tragen ihn, damit keine Kante als Rahmen liest.
+const PAPER = '#efe6d0';
+const RAW = 'https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/';
+const TEXBASE = RAW + 'Textures/';
+const FURN = RAW + 'kenney_furniture-kit/Models/GLTF%20format/';
+const COLLAGE = [
+  ['Tape005', 'Tape'], ['RoadLines019B', 'Linien'], ['ScrewSet001', 'Schrauben'],
+  ['PaintedMetal017', 'Blech'], ['rusty_metal_04', 'Rost'], ['Cardboard003', 'Karton'],
+  ['Chipboard007', 'Pappe'], ['whitewashed_brick', 'Kalk'], ['Leaking018A', 'Leck'],
+];
+const FLUIDS = {
+  wasser: { label: 'Wasser', col: [0.16, 0.42, 0.50] },
+  oel: { label: 'Öl', col: [0.07, 0.06, 0.05] },
+  saeure: { label: 'Säure', col: [0.46, 0.72, 0.14] },
+  bubblegum: { label: 'Bubblegum', col: [0.88, 0.42, 0.62] },
+  schlacke: { label: 'Schlacke', col: [0.30, 0.27, 0.25] },
+};
+const STATUS = {
+  neu: { label: 'neu', col: [0.58, 0.55, 0.50] },
+  besucht: { label: 'besucht', col: [0.34, 0.50, 0.66] },
+  absolviert: { label: 'absolviert', col: [0.40, 0.72, 0.36] },
+  wiederholen: { label: 'wiederholen', col: [0.82, 0.70, 0.34] },
+};
+// Projektoren: erst mal der Pappkarton aus dem Furniture-Kit. Deck-spezifisch austauschbar.
+// CARD CUBE (Mechanik aus KFB Cube Academy v1): sechs Flaechen SIND das Interface.
+const ZONE_TOP = 0;                            // Oberkante des Plateaus (Stufen variieren darum)
+// PHYSISCHE Karte vs. PROJEKTION: auf dem Plateau liegt ein echtes Kartendeck in Handgroesse,
+// im Himmel haengt die Projektion in Zonengroesse. Beim Aufdecken waechst die Karte von der
+// einen in die andere — deshalb kollidiert das Deck auch nicht mit Wuerfel und Sockel.
+const PHYS = 0.36;                             // Kantenmass des echten Blattes, Anteil der Projektion
+const DECK_X = -0.40, DECK_Z = 0.55;           // Deckplatz auf dem Plateau, Anteil von ZW / ZD
+const CARD_T = 0.115;                          // Dicke eines Blattes im Stapel
+const CUBE_D = 6;
+const FACE_N = [[1, 0, 0], [-1, 0, 0], [0, 1, 0], [0, -1, 0], [0, 0, 1], [0, 0, -1]];
+const FACE_UP = [[0, 1, 0], [0, 1, 0], [0, 0, -1], [0, 0, 1], [0, 1, 0], [0, 1, 0]];
+const FACE_KIND = ['art', 'titel', 'power', 'lore', 'verwandt', 'chat'];
+const PROJECTORS = [
+  { id: 'cube', label: 'Card Cube', cube: true, h: CUBE_D },
+  { id: 'offen', label: 'Karton offen', url: FURN + 'cardboardBoxOpen.glb', h: 5.5 },
+  { id: 'zu', label: 'Karton zu', url: FURN + 'cardboardBoxClosed.glb', h: 5.5 },
+  { id: 'obelisk', label: 'Obelisk', repo: 'statue_obelisk', h: 9 },
+];
+
+function h2(a, b, s) { let h = (s ^ Math.imul(a | 0, 374761393) ^ Math.imul(b | 0, 668265263)) >>> 0; h = Math.imul(h ^ (h >>> 13), 1274126177) >>> 0; return ((h ^ (h >>> 16)) >>> 0) / 4294967296; }
+function vnoise(x, z, s) {
+  const x0 = Math.floor(x), z0 = Math.floor(z), fx = x - x0, fz = z - z0;
+  const u = fx * fx * (3 - 2 * fx), w = fz * fz * (3 - 2 * fz);
+  const a = h2(x0, z0, s), b = h2(x0 + 1, z0, s), c = h2(x0, z0 + 1, s), d = h2(x0 + 1, z0 + 1, s);
+  return (a * (1 - u) + b * u) * (1 - w) + (c * (1 - u) + d * u) * w;
+}
+function fbm(x, z, s) { let sum = 0, amp = 0.5, f = 1, n = 0; for (let i = 0; i < 4; i++) { sum += vnoise(x * f, z * f, s + i * 977) * amp; n += amp; amp *= 0.5; f *= 2.03; } return sum / n; }
+
+class Component extends DCLogic {
+  state = {
+    status: 'lädt three + Terrain v10 …', dockOpen: true,
+    cardName: '—', cardMeta: '', zoneStatus: 'neu',
+    reveal: 'verdeckt', autoReveal: true, deck: 3,
+    fluid: 'wasser', moat: 3, tex: 'Cardboard003', wear: 0.55, scale: 0.09,
+    proj: 'cube', rect: 1, off: 0, holo: 0.85, steps: 0.6, sink: 0,
+    height: 8, amp: 0.3, tempo: 0.45, flow: 1,
+    seedRules: true, seedInfo: '', mode: 'heroic',
+    river: true, riverW: 3,
+    focus: null, zoom: 1, panX: 0, panY: 0, chat: [], draft: '', typing: false,
+    sound: false, fx: true,
+    spin: true, beam: true,
+  };
+
+  componentWillUnmount() {
+    this.stop = true;
+    if (this.r) this.r.dispose();
+    // Ohne close() laeuft die Drone weiter, auch wenn die Szene weg ist.
+    if (this.audio) { try { this.audio.ac.close(); } catch (e) {} this.audio = null; }
+    window.removeEventListener('resize', this.onResize);
+  }
+
+  async boot() {
+    if (!this.canvas || this.booted) return;
+    if (!window.__CZ) { window.addEventListener('czready', () => this.boot(), { once: true }); return; }
+    this.booted = true;
+    window.__CZLAB = this;
+    const { THREE, OrbitControls, GLTFLoader, RoundedBoxGeometry } = window.__CZ;
+    const T = this.T = THREE;
+    this.GLTFLoader = GLTFLoader;
+    this.RoundedBox = RoundedBoxGeometry;
+    const [M, VT, WC] = await Promise.all([
+      import('./kfb-box-material.js'),
+      import('./terrain-v10/voxel-terrain.js'), import('./terrain-v10/world-context.js'),
+    ]);
+    this.M = M; this.WC = WC;
+    this.texCache = new Map();
+
+    const r = this.r = new T.WebGLRenderer({ canvas: this.canvas, antialias: true, preserveDrawingBuffer: true });
+    r.setPixelRatio(Math.min(devicePixelRatio, 2));
+    r.outputColorSpace = T.SRGBColorSpace;
+    r.toneMapping = T.ACESFilmicToneMapping;
+    r.toneMappingExposure = 0.95;
+
+    const scene = this.scene = new T.Scene();
+    const cam = this.cam = new T.PerspectiveCamera(40, 1, 0.5, 900);
+    cam.position.set(0, 44, 132);
+    const ctr = this.ctr = new OrbitControls(cam, r.domElement);
+    ctr.target.set(0, 10, 0);
+    ctr.enableDamping = true; ctr.dampingFactor = 0.08;
+    ctr.maxPolarAngle = Math.PI * 0.495; ctr.minDistance = 24; ctr.maxDistance = 320;
+    ctr.autoRotate = this.state.spin; ctr.autoRotateSpeed = 0.3;
+    // Kamera bewegen = Fokus loslassen: der Wuerfel darf danach wieder taumeln.
+    // KEIN 'start'-Listener: pointerdown setzte den Fokus, und OrbitControls' 'start' loeschte ihn
+    // im selben Zug — der Klick kam nie an. Der Fokus fällt jetzt erst, wenn wirklich GEZOGEN wird.
+
+    // Terrain v10 rechnet sein Licht SELBST im Shader (Lambert + Ambient + Fog). Die Lampen hier
+    // sind nur fuer Zone, Graben, Projektor und Karte da — deshalb kein Shadowmap-Aufwand.
+    scene.add(new T.HemisphereLight(0xffe9cc, 0x2a2520, 0.5));
+    const sun = new T.DirectionalLight(0xfff2dc, 1.5);
+    sun.position.set(60, 90, 40);
+    scene.add(sun);
+    scene.add(new T.AmbientLight(0xffffff, 0.2));
+
+    this.bevel = await this.loadTex(RAW + 'KFB/edge3.jpg');
+    this.grain = await this.loadTex(RAW + 'KFB/noise.png', false);
+
+    this.buildWorld(VT);
+    this.buildZone();
+    this.buildMoat();
+    this.buildFluidSurface();
+    this.buildBubbles();
+    this.buildProjection();
+    await this.buildCard();
+    await this.loadProjector();
+
+    // KEINE Screen-Space-Tusche in dieser Szene. Ein Sobel ueber ein dichtes Voxel-Feld feuert an
+    // jeder Zellkante und legt ein Schraffur-Raster ueber alles. Die KFB-Kante wird aus dem
+    // Ink-Kanon abgeleitet (cardbuilder/kfb-ink-canon.js) — gezeichnete Kontur pro Objekt,
+    // nicht gefiltertes Bild. Bis dahin rendert die Bank direkt.
+    const DOCK = 250;
+    this.onResize = () => {
+      const w = this.canvas.clientWidth || 1, h = this.canvas.clientHeight || 1;
+      r.setSize(w, h, false);
+      const pad = this.state.dockOpen ? DOCK : 0;
+      cam.aspect = (w + pad) / h;
+      cam.setViewOffset(w + pad, h, pad, 0, w, h);
+      cam.updateProjectionMatrix();
+    };
+    window.addEventListener('resize', this.onResize); this.onResize();
+    // Sicherheitsnetz: die Kamera wird IMMER wieder freigegeben, egal wo der Zug endet.
+    // Audio-Kontext erst bei der ersten Geste: vorher blockt der Browser ihn.
+    const wake = () => { this.initAudio(); if (this.audio && this.audio.ac.state === 'suspended') this.audio.ac.resume(); };
+    window.addEventListener('pointerdown', wake);
+    window.addEventListener('keydown', wake);
+    // Esc verlaesst den Face-Focus — dieselbe Geste wie in Cube Academy v1.
+    window.addEventListener('keydown', (ev) => {
+      if (ev.key === 'Escape' && this.state.focus != null) this.exitFocus();
+    });
+    const release = () => { this.ctr.enabled = true; };
+    window.addEventListener('pointerup', release);
+    window.addEventListener('pointercancel', release);
+    window.addEventListener('blur', release);
+
+    // Klick auf eine Flaeche = diese Flaeche zur Kamera. Kein Doppelklick-Zoom (noch nicht):
+    // erst muss die Drehung sitzen, dann kommt das Hineinzoomen auf Cursorposition.
+    let down = null;
+    // Fuer den ZUG zaehlt der ganze Wuerfel (auch die gerundete Schulter), fuer den KLICK nur die
+    // Flaechen. Vorher traf nur die Flaeche, ein Griff an der Kante tat also nichts.
+    const rayAt = (ev) => {
+      const r = this.canvas.getBoundingClientRect();
+      const p = new T.Vector2(((ev.clientX - r.left) / r.width) * 2 - 1, -((ev.clientY - r.top) / r.height) * 2 + 1);
+      const rc = new T.Raycaster(); rc.setFromCamera(p, cam);
+      return rc;
+    };
+    const hitCubeAny = (ev) => (this.cube ? rayAt(ev).intersectObject(this.cube, true)[0] || null : null);
+    const hitCube = (ev) => (this.cubeFaces ? rayAt(ev).intersectObjects(this.cubeFaces, false)[0] || null : null);
+    // CAPTURE-Phase + stopImmediatePropagation: OrbitControls hoert auf DEMSELBEN Element und hat
+    // den Zug sonst schon aufgenommen, bevor `enabled = false` greift — dann drehen Kamera und
+    // Wuerfel gleichzeitig. So sieht OrbitControls das Ereignis nie.
+    this.canvas.addEventListener('pointerdown', (ev) => {
+      const onCube = !!hitCubeAny(ev);
+      down = { x: ev.clientX, y: ev.clientY, px: ev.clientX, py: ev.clientY, drag: false, onCube };
+      if (onCube) {
+        this.ctr.enabled = false;
+        // Pointer einfangen: endet der Zug ausserhalb des Canvas (ueber dem Dock, aus dem Fenster,
+        // per OS-Abbruch), kommt sonst kein pointerup an und die Kamera bleibt fuer immer gesperrt.
+        try { this.canvas.setPointerCapture(ev.pointerId); } catch (e) {}
+        ev.stopImmediatePropagation(); ev.preventDefault();
+      }
+    }, { capture: true });
+    this.canvas.addEventListener('pointermove', (ev) => {
+      if (!down) return;
+      if (Math.abs(ev.clientX - down.x) + Math.abs(ev.clientY - down.y) > 5) {
+        down.drag = true;
+        this.focusedSlot = null;      // echtes Ziehen loest den Fokus, ein Klick nicht
+      }
+      if (down.onCube && down.drag && this.cube) {
+        const dx = (ev.clientX - down.px) * 0.008, dy = (ev.clientY - down.py) * 0.008;
+        down.px = ev.clientX; down.py = ev.clientY;
+        this.manualCube = true;
+        // Um die KAMERA-Achsen drehen, nicht um Welt-X/Y: sonst stimmt oben/unten nur zufaellig,
+        // naemlich genau dann, wenn die Kamera frontal steht.
+        const right = new T.Vector3().setFromMatrixColumn(cam.matrixWorld, 0).normalize();
+        const up = new T.Vector3().setFromMatrixColumn(cam.matrixWorld, 1).normalize();
+        const qx = new T.Quaternion().setFromAxisAngle(up, dx);
+        const qy = new T.Quaternion().setFromAxisAngle(right, dy);
+        this.cube.quaternion.premultiply(qy.multiply(qx));
+      }
+    });
+    this.canvas.addEventListener('pointerup', (ev) => {
+      const d0 = down; down = null;
+      this.ctr.enabled = true;
+      if (!d0 || d0.drag || !this.cubeFaces) return;
+      this.manualCube = false;       // Klick gibt die Automatik wieder frei
+      const r = this.canvas.getBoundingClientRect();
+      const p = new T.Vector2(((ev.clientX - r.left) / r.width) * 2 - 1, -((ev.clientY - r.top) / r.height) * 2 + 1);
+      const rc = new T.Raycaster(); rc.setFromCamera(p, cam);
+      const hit = rc.intersectObjects(this.cubeFaces, false)[0];
+      if (!hit) return;
+      const slot = hit.object.userData.slot;
+      // ZWEITER KLICK auf die schon vorne stehende Flaeche geht in den Face-Focus. Der erste
+      // Klick dreht nur — sonst kaeme man beim Drehen ungewollt in den Vollbild-Modus.
+      if (slot === this.focusedSlot && this.state.focus == null) { this.enterFocus(slot); return; }
+      this.focusedSlot = slot;
+      this.setState({ status: 'Fläche: ' + FACE_KIND[slot] + ' — nochmal klicken für Vollbild' });
+    });
+
+    let last = performance.now();
+    const loop = () => {
+      if (this.stop || !this.canvas || !this.canvas.isConnected) return;
+      requestAnimationFrame(loop);
+      const now = performance.now(), dt = Math.min(0.05, (now - last) / 1000); last = now;
+      if (this.canvas.clientWidth !== this._w) { this._w = this.canvas.clientWidth; this.onResize(); }
+      this.t = (this.t || 0) + dt;
+      // Tempo statt Beat: die Bank hat keine Musik, also fahren wir energy/beat ruhig und konstant.
+      this.terrain.update(dt, { energy: this.state.tempo, beat: 0 });
+      if (this.moatMat) this.moatMat.userData.kfb.uKfbTime.value = this.t;
+      if (this.fluidU) this.fluidU.uTime.value = this.t;
+      if (this.holoU) this.holoU.uTime.value = this.t;
+      this.lastDt = dt;
+      this.tickBubbles(dt);
+      this.tickAudio();
+      this.tickFocus(dt);
+      this.tickCube(dt);
+      if (this.card) { this.tickCard(dt); this.updateProjection(); }
+      this.ctr.update();
+      this.r.render(this.scene, this.cam);
+    };
+    loop();
+  }
+
+  loadTex(url, srgb = true) {
+    const T = this.T;
+    if (this.texCache.has(url)) return this.texCache.get(url);
+    const p = new Promise((res) => {
+      const L = new T.TextureLoader(); L.crossOrigin = 'anonymous';
+      L.load(url, (t) => { t.wrapS = t.wrapT = T.RepeatWrapping; t.colorSpace = srgb ? T.SRGBColorSpace : T.NoColorSpace; t.anisotropy = 8; res(t); }, undefined, () => res(null));
+    });
+    this.texCache.set(url, p);
+    return p;
+  }
+
+  /** Welt aus der Karte: makeWorldContext liefert Palette, Biome und Terrain-Parameter. */
+  buildWorld(VT) {
+    const T = this.T, s = this.state;
+    const wc = this.wc = this.WC.makeWorldContext({ cardTriplet: { current: this.cardData || null }, storyMode: 'heroic', seeds: ['card-zone-lab'] });
+    wc.params.heightScale = s.height;
+    wc.params.motionAmplitude = s.amp;
+    wc.params.fogDensity = 0.0055;
+    const terrain = this.terrain = VT.createVoxelTerrain({
+      THREE: T, worldContext: wc, cell: CELL, chunkCells: 16, grid: 7, floor: -30,
+      heightStep: SUB,   // D6: sechs Stufen pro Cube
+    });
+    terrain.build(this.scene);
+    terrain.setPalette(wc.palette);
+    terrain.setFlow(s.flow);
+    terrain.setMotionGain(0.55);
+    this.applyCarve();
+    const sky = new T.Color(wc.palette[0][0], wc.palette[0][1], wc.palette[0][2]).lerp(new T.Color(0x0e0c0a), 0.55);
+    this.scene.background = sky;
+    terrain.setFog([sky.r, sky.g, sky.b], wc.params.fogDensity);
+    this.setState({ status: wc.storyModeName + ' · Biome ' + wc.biome + ' · Seed ' + wc.seed });
+  }
+
+  /** Carve + Ruhezone in EINEM Aufruf: kein Cube in der Zone, und der Hub rampt am Ufer aus. */
+  applyCarve() {
+    // Der Carve muss MINDESTENS so weit reichen wie der breiteste Grabenring, sonst steht Terrain
+    // im Graben und die Fluessigkeit spannt sich ueber ein Loch. w = moat*(0.5..1.75) → maxW.
+    // Der Ring ist PRO ACHSE bemessen (Chebyshev: d = max(|x|/ZW, |z|/ZD)), also muss der Carve
+    // das auch sein. Ein gemeinsames Pad aus ZW stanzt die kurze Achse um zweieinhalb Zellreihen
+    // zu weit aus — dort fehlte dem Graben die Aussenwand und man sah ins Leere.
+    const reach = this.reach();
+    const hx = reach.x, hz = reach.z;
+    this.terrain.setCarve({ x: 0, z: ZC, hx, hz });
+    // Der Fluss stanzt seinen Lauf mit derselben Mechanik — Rechteck und Pfad gelten gleichzeitig.
+    if (this.terrain.setCarvePath) {
+      this.terrain.setCarvePath(this.state.river ? this.riverPath() : null, this.riverHalf() * 2);
+    }
+    // Die Ruhezone des Shaders ist RUND, die Card Zone ist ein Rechteck. Ein Kreis mit Radius
+    // aus ZW laesst die Welle auf der langen Achse direkt am Plateau wieder voll aufschlagen.
+    // Drei Kreise entlang X nähern das Rechteck an: r deckt die kurze Achse, die Mittelpunkte
+    // wandern nach aussen. Ergebnis: auf beiden Achsen rampt der Hub ueber dem Graben aus.
+    // r so waehlen, dass die ECKE des Rechtecks noch im vollruhigen Kern (d <= r*0.55) liegt —
+    // sonst zuckt genau die Ecke, wo das Auge hinsieht.
+    const cx = Math.max(0, hx - hz * 0.6);
+    const r = Math.hypot(hx - cx, hz) / 0.55;
+    this.terrain.setZones([
+      { x: -cx, z: ZC, r, amt: 1 },
+      { x: 0, z: ZC, r, amt: 1 },
+      { x: cx, z: ZC, r, amt: 1 },
+    ]);
+  }
+
+  zoneCellList() {
+    const out = [];
+    // 16 x 9 Zellen auf dem TERRAIN-Raster: Spalten (i+0.5)*CELL, Reihen ebenso, Mitte bei ZC.
+    for (let i = -ZX; i < ZX; i++) for (let j = -5; j <= 3; j++) {
+      const x = (i + 0.5) * CELL, z = (j + 0.5) * CELL;
+      const d = Math.max(Math.abs(x) / ZW, Math.abs(z - ZC) / ZD);
+      out.push({ x, z, edge: d > 0.84 });
+    }
+    return out;
+  }
+
+  buildZone() {
+    const T = this.T, M = this.M, s = this.state;
+    this.zoneCells = this.zoneCellList();
+    const mat = this.zoneMat = M.makeVariedBoxMaterial(T, {
+      // edgeMap 0: die Bevel-Kachel liegt EINMAL PRO ZELLE und zeichnet damit genau das Raster,
+      // das ueber der Zone lag. Plastizitaet kommt hier aus Licht und Kantenhoehe.
+      edgeMap: null, edgeStrength: 0, grainMap: this.grain, grain: 0.1,
+      photoMap: null, photoStrength: 0, photoScale: s.scale, stochastic: 0.85,
+      // KEINE prozedurale Fuge auf dem Zonenboden: sie rahmt jede Zelle ein und liest als
+      // quadratisches Raster ueber der ganzen Flaeche. Struktur kommt aus der Collage.
+      seam: 0, seamWidth: 0, stripe: 0, hatch: 0, bands: 4, bandAmount: 0.18, roughness: 0.8,
+    });
+    const geo = M.makeBoxGeometry(T, this.zoneCells.length, CELL);
+    const mesh = this.zoneMesh = new T.InstancedMesh(geo, mat, this.zoneCells.length);
+    this.zoneGeo = geo;
+    this.scene.add(mesh);
+    this.layoutZone();
+    this.applyZoneLook();
+  }
+
+  /**
+   * Zonenboden mit STUFEN: leichte, ganzzellige Hoehenunterschiede statt Tischplatte. `sink`
+   * senkt die ganze Flaeche auf Basisniveau — so kann eine Karte abgelegt statt gebeamt werden.
+   */
+  /**
+   * HOEHENABFRAGE der Zone, analog terrain.groundHeightAt — die EINE Rechnung, aus der sowohl die
+   * Zellen als auch alles, was auf ihnen steht, ihre Hoehe zieht. Vorher ankerten Deck, Sockel und
+   * liegende Karte an der Konstante ZONE_TOP: sobald Stufen oder Absenkung den Boden verschoben,
+   * schwebten sie.
+   */
+  zoneTopAt(x, z) {
+    const s = this.state;
+    // Vier gemittelte Oktaven liegen um 0.5 herum (gemessen 0.44..0.79), also muss das Rauschen
+    // VOR dem Runden auf +-1 gestreckt werden — sonst rundet der halbe Reglerweg auf 0 und die
+    // Flaeche bleibt brettlflach. 0.18 ist der gemessene halbe Hub.
+    const n = (fbm(x * 0.045 + 11, z * 0.045 - 5, 7788) - 0.5) / 0.18;
+    // In SECHSTELN, nicht in ganzen Cubes: bei Stufen 0.6 sind das feine Abtreppungen,
+    // erst am Reglerende ganze Cube-Sprünge.
+    const step = Math.round(Math.max(-2.5, Math.min(2.5, n)) * s.steps * 3);
+    return step * SUB - s.sink * CELL;
+  }
+
+  /** Ruhehoehen der Aufbauten aus der tatsaechlichen Zonenhoehe an ihrer Stelle. */
+  anchorTops() {
+    const xDeck = ZW * DECK_X, zDeck = ZC + ZD * DECK_Z;
+    // BAUTEN STEHEN AUF DEM TROCKENEN: liegt die Zelle unter dem Wasser, wird der Anker auf eine
+    // Stufe ueber der Ebene gehoben, statt das Wasser abzusenken. Sonst entscheidet die Zufalls-
+    // hoehe einer einzigen Zelle darueber, ob es in der Zone ueberhaupt Wasser gibt.
+    const dry = this.waterY() + SUB;
+    this.topCenter = Math.max(this.zoneTopAt(this.projX || 0, ZC), dry);
+    this.topDeck = Math.max(this.zoneTopAt(xDeck, zDeck), dry);
+    this.cubeBaseY = this.topCenter + CUBE_D * 1.05;
+    if (this.baseOffY != null) this.baseBaseY = this.topCenter + this.baseOffY;
+    if (this.projOffY != null) this.projBaseY = this.topCenter + this.projOffY;
+  }
+
+  layoutZone() {
+    if (!this.zoneMesh) return;
+    const T = this.T, M = this.M, s = this.state;
+    const d = new T.Object3D();
+    this.zoneCells.forEach((c, k) => {
+      const top = this.zoneTopAt(c.x, c.z);
+      c.top = top;
+      // Basis tief genug, dass auch die letzte Absenk-Raste voll durchgeht (kein Clamp).
+      const base = -CELL * 5;
+      d.position.set(c.x, base, c.z); d.scale.set(1, top - base, 1); d.updateMatrix();
+      this.zoneMesh.setMatrixAt(k, d.matrix);
+      M.writeVariation(this.zoneGeo, k, 'zone', { variation: 0.4, heightCells: 2, mat: M.matId('karton') });
+    });
+    this.zoneMesh.instanceMatrix.needsUpdate = true;
+    this.anchorTops();
+  }
+
+  /** Grabenbecken: dunkle Wanne UNTER der Fluessigkeit. Farbe macht die Oberflaeche, nicht der Cube. */
+  buildMoat() {
+    const T = this.T, M = this.M;
+    const mat = this.moatMat = M.makeVariedBoxMaterial(T, {
+      edgeMap: null, edgeStrength: 0, grain: 0,
+      seam: 0, seamWidth: 0, stripe: 0.12, hatch: 0, bands: 3, bandAmount: 0.14, roughness: 0.95,
+    });
+    // Kapazitaet fuer den breitesten Ring (Regler bis 0.45) — die Instanzzahl bleibt konstant,
+    // ungenutzte Zellen werden auf 0 skaliert.
+    this.moatMesh = new T.InstancedMesh(M.makeBoxGeometry(T, 2400, CELL), mat, 2400);
+    this.moatGeo = this.moatMesh.geometry;
+    this.scene.add(this.moatMesh);
+    this.layoutMoat();
+  }
+
+  /**
+   * Der Carve ist ein RECHTECK, der Wassergraben ist UNREGELMAESSIG — also kann der Ring das Loch
+   * nicht allein fuellen. Deshalb belegt dieses Mesh den GANZEN ausgestanzten Bereich: innen die
+   * Wanne (u = 0..1), aussen `bank`-Zellen auf Terrainhoehe, die den Boden nahtlos weiterfuehren.
+   * Die Unregelmaessigkeit steckt dann in der Wasserlinie, nicht in Loechern im Boden.
+   */
+  /**
+   * Reichweite des Graben-Meshes, PRO ACHSE — und genau daran haengt auch der Carve.
+   * Auf X liegen Graben- und Terrain-Raster deckungsgleich: exakte Ringkante, sauberer Stoss.
+   * Auf Z sind sie einen halben Cube versetzt (Terrain: (n+0.5)*CELL, hier: n*CELL), also darf
+   * die aeusserste Reihe eine halbe Zelle ueberstehen und sich mit dem Terrain ueberlappen —
+   * Ueberlappung ist unsichtbar, eine Ritze nicht.
+   */
+  /**
+   * Grabenbreite in ZELLEN, nicht als Bruchteil der Zonenkante. Ein Bruchteil ergab auf der
+   * kurzen Achse eine einzige Reihe — und ein einreihiger Graben ist aus jedem schraegen
+   * Blickwinkel von seiner eigenen Wand verdeckt. `moat` zaehlt jetzt Reihen: die aeusserste
+   * ist das Ufer, alle davor sind Boden.
+   */
+  reach() {
+    const w = Math.max(2, Math.round(this.state.moat));
+    return { x: ZW + w * CELL + CELL * 0.1, z: ZD + w * CELL + CELL * 0.1, rows: w };
+  }
+
+  /**
+   * Die WANNE ist gleichmaessig breit (pro Achse), damit ihre Aussenkante genau auf dem Carve-
+   * Rechteck liegt — dann stoesst das v10-Terrain direkt an das Ufer und es braucht keine
+   * Fuellzellen. Unregelmaessig ist nur, was unregelmaessig sein soll: die WASSERLINIE (im
+   * Fluid-Shader) und die Tiefe der Wanne.
+   */
+  moatRing() {
+    const s = this.state, out = [];
+    const reach = this.reach();
+    const iMax = Math.ceil((reach.x + CELL) / CELL), jMax = Math.ceil((reach.z + CELL) / CELL);
+    for (let i = -iMax; i <= iMax; i++) {
+      for (let j = -jMax; j <= jMax; j++) {
+        const x = (i + 0.5) * CELL, z = (j + 0.5) * CELL;
+        if (Math.abs(x) > reach.x || Math.abs(z - ZC) > reach.z) continue;
+        const d = Math.max(Math.abs(x) / ZW, Math.abs(z - ZC) / ZD);
+        if (d <= 1) continue;
+        // RINGINDEX IN ZELLEN, nicht normiert: bei einem 1-Zellen-Graben gibt es kein "u
+        // zwischen 0.34 und 0.62". Ring 0 liegt am Plateau, der letzte Ring ist das Ufer.
+        const dxC = (Math.abs(x) - ZW) / CELL, dzC = (Math.abs(z - ZC) - ZD) / CELL;
+        const ring = Math.max(0, Math.floor(Math.max(dxC, dzC)));
+        const last = reach.rows - 1;
+        out.push({ x, z, ring, last, u: last > 0 ? ring / last : 0 });
+      }
+    }
+    return out;
+  }
+
+  /**
+   * EIN Niveau-Modell fuer die ganze Zone. Der Wasserstand ist KEINE Konstante — er haengt am
+   * tiefsten Punkt des Zonenbodens:
+   *
+   *   Zonenboden, tiefste Zelle   ──────────────  zoneFloorMin
+   *   Wasserlinie                 ─ ─ ─ ─ ─ ─ ─   0.5 Zellen darunter
+   *   Wannenboden                 ______________   noch eine halbe Zelle tiefer
+   *   Aussenufer                  auf Terrainhoehe, aber NIE unter der Wasserlinie
+   *
+   * Mit der festen Konstante lief die Insel bei jeder Absenkung unter Wasser, und das Ufer
+   * lag absichtlich unter der Oberflaeche — beides war der Grund, dass die Zone schwamm
+   * statt aus dem Wasser zu ragen.
+   */
+  waterY() {
+    const tops = (this.zoneCells || []).map((c) => this.zoneTopAt(c.x, c.z)).sort((a, b) => a - b);
+    if (!tops.length) return -CELL * 0.5;
+    const min = tops[0], max = tops[tops.length - 1];
+    // FLACHER BODEN = KEIN WASSER IN DER ZONE. Ohne Mulden gibt es nichts zu fluten, also liegt
+    // die Ebene unter dem tiefsten Punkt und die Insel bleibt ganz trocken.
+    if (max - min < CELL * 0.5) return min - CELL * 0.5;
+    // BEZUG IST DER HAEUFIGSTE BODEN, nicht ein Quantil. Die Tops rasten auf SUB, ein Quantil
+    // liegt deshalb oft genau auf dem Hauptniveau — dann flutet der Hauptboden selbst. Der Modus
+    // ist per Definition "das Bodenniveau der Zone": eine halbe Stufe darunter liegt die Ebene,
+    // damit ist der Hauptboden trocken und nur echte Mulden (mindestens eine Stufe tiefer) fuellen.
+    const hist = new Map();
+    tops.forEach((y) => { const k = Math.round(y / SUB); hist.set(k, (hist.get(k) || 0) + 1); });
+    let mode = Math.round(tops[Math.floor(tops.length / 2)] / SUB), best = -1;
+    hist.forEach((n, k) => { if (n > best) { best = n; mode = k; } });
+    // Anderthalb Stufen unter dem Modus: die Stufen ab zwei Schritten unter dem Hauptboden fluten
+    // (rund ein Sechstel der Zone), der Hauptboden bleibt trocken. KEIN Anker-Clamp mehr — er
+    // machte die Ebene von der Zufallshoehe des Decks abhaengig: stand es in einer Mulde, sank das
+    // Wasser unter ALLE Mulden und das Zonen-Wasser war praktisch abgeschaltet. Die Bauten heben
+    // sich stattdessen selbst ueber die Ebene (anchorTops), das ist die Richtung, die haelt.
+    return Math.min(mode * SUB - SUB * 1.5, ZONE_TOP - SUB);
+  }
+
+  /**
+   * UFER ALS HOEHENFELD. Vorher war das Ufer EINE Reihe auf gekappter Terrainhoehe — ein Rahmen,
+   * der pro Achse gleich breit war, weil er am Ringindex hing. Jetzt ist die Uferhoehe eine
+   * Funktion des Ortes:
+   *
+   *   dC = Abstand nach aussen ab Plateaukante, in Zellen (0 … rows)
+   *   Uferbeginn = rows * (0.25 … 0.8), aus einem Rauschen ENTLANG der Kante
+   *   Hoehe      = Wannenboden → Terrainhoehe, ueberblendet, auf SUB (CELL/6) gerastet
+   *
+   * Weil der Uferbeginn pro Ort wandert, steigt das Ufer an einer Stelle ueber drei Reihen flach
+   * an (Sandbank, Bucht) und an der naechsten in einer Reihe steil (Steilkante). Die Wasserlinie
+   * schneidet dieses Feld — der Uferverlauf entsteht also, statt gezeichnet zu werden.
+   *
+   * Und das ist die BASIS FUER FLUESSE (narrative flows): ersetzt man dC durch den Abstand zu
+   * einer Polyline, ist derselbe Code ein Flussufer. Nichts anderes muss sich aendern.
+   */
+  /**
+   * BOGENLAENGE am Zonenrand, umlaufend und monoton: 0 an der Ecke (-ZW, +ZD), dann im Uhrzeigersinn
+   * ueber alle vier Seiten. Damit hat JEDER Randpunkt genau einen Parameter — auch sein Spiegelbild
+   * bekommt einen anderen. Vorher lief das Rauschen ueber eine achsenparallele Koordinate, die
+   * unter Spiegelung unveraendert bleibt: das Ufer war auf beiden Achsen deckungsgleich und las
+   * als gezeichneter Rahmen. Bogenlaenge ist ausserdem genau der Parameter, den eine POLYLINE
+   * spaeter liefert — der Flussfall braucht dann nur eine andere Kurve, nicht andere Mathematik.
+   */
+  perimS(x, z) {
+    const cz = z - ZC;
+    const dx = Math.abs(x) - ZW, dz = Math.abs(cz) - ZD;
+    const cx = Math.max(-ZW, Math.min(ZW, x)), ccz = Math.max(-ZD, Math.min(ZD, cz));
+    if (dx > dz) return x > 0 ? 2 * ZW + (ZD - ccz) : 4 * ZW + 2 * ZD + (ccz + ZD);
+    return cz > 0 ? (cx + ZW) : 2 * ZW + 2 * ZD + (ZW - cx);
+  }
+
+  /**
+   * FLUSSLAUF als Polyline. Die Kurve wandert aus dem Graben nach aussen und maeandert; ihre Form
+   * kommt aus demselben Rauschen wie das Ufer, damit Fluss und Zone dieselbe Handschrift haben.
+   * Startpunkt ist die Zonenkante, Endpunkt weit draussen — spaeter ist das die naechste Zone.
+   */
+  riverPath() {
+    if (this._river && this._river.seed === (this.wc && this.wc.seed)) return this._river.pts;
+    const seed = (this.wc && this.wc.seed) || 7;
+    const dir = (seed % 2) ? 1 : -1;
+    const pts = [];
+    const x0 = dir * (ZW + CELL * 0.5), z0 = ZC + (((seed >>> 3) % 5) - 2) * CELL;
+    for (let i = 0; i <= 9; i++) {
+      const t = i / 9;
+      const x = x0 + dir * t * CELL * 22;
+      const z = z0 + (fbm(t * 2.6 + 3.1, seed % 17, 5501) - 0.5) * CELL * 9 + t * CELL * 4 * dir;
+      pts.push([x, z]);
+    }
+    this._river = { seed: this.wc && this.wc.seed, pts };
+    return pts;
+  }
+
+  /** Abstand zum Flusslauf und Bogenlaenge darauf — dieselben zwei Zahlen, die perimS fuer die Zone liefert. */
+  riverField(x, z) {
+    const pts = this.riverPath();
+    let best = Infinity, s = 0, acc = 0, L = 0;
+    for (let i = 0; i < pts.length - 1; i++) {
+      const ax = pts[i][0], az = pts[i][1], bx = pts[i + 1][0], bz = pts[i + 1][1];
+      const dx = bx - ax, dz = bz - az, l2 = dx * dx + dz * dz, l = Math.sqrt(l2);
+      let t = l2 > 0 ? ((x - ax) * dx + (z - az) * dz) / l2 : 0;
+      t = t < 0 ? 0 : t > 1 ? 1 : t;
+      const px = ax + dx * t - x, pz = az + dz * t - z;
+      const d = Math.sqrt(px * px + pz * pz);
+      if (d < best) { best = d; s = acc + l * t; }
+      acc += l; L += l;
+    }
+    return { d: best, s, L, pts };
+  }
+
+  /**
+   * FLUSSUFER — und hier zahlt sich das Feld aus: dieselbe Rechnung wie am Zonenufer, nur mit
+   * Abstand-zur-Kurve statt Abstand-zum-Rechteck und Bogenlaenge ENTLANG der Kurve statt am
+   * Umfang. Kein zweites Hoehenmodell, keine zweite Wasserlogik.
+   */
+  riverTopAt(x, z, wy, bottom) {
+    const f = this.riverField(x, z);
+    const halfC = Math.max(1.2, this.riverHalf() / CELL);
+    const dC = Math.max(0, f.d / CELL - halfC * 0.35);      // innerhalb des Bettes: 0 = Grund
+    const rows = halfC;
+    const spread = (v) => Math.max(0, Math.min(1, (v - 0.5) * 3.4 + 0.5));
+    // Nicht periodisch abtasten: eine offene Kurve hat keine Naht, die sich schliessen muss.
+    const n1 = fbm(f.s / (CELL * 2.5) + 21.7, 6.4, 8123);
+    const n2 = fbm(f.s / (CELL * 5.5) - 8.2, 19.1, 3391);
+    const shore = -0.2 + spread(n1) * (rows + 0.8);
+    const slope = 0.4 + n2 * 1.5;
+    const t = Math.max(0, Math.min(1, (dC - (shore - slope * 0.5)) / slope));
+    const ease = t * t * (3 - 2 * t);
+    const gh = this.terrain ? this.terrain.groundHeightAt(x, z) : 0;
+    const target = Math.max(wy + CELL * 0.2, gh);
+    const top = Math.round((bottom + (target - bottom) * ease) / SUB) * SUB;
+    const wet = wy - WMARGIN - SUB;
+    return top < wy && top > wet ? wet : top;
+  }
+
+  /**
+   * Zellen des Flussbettes: alles im Carve-Streifen der Kurve, das NICHT schon zum Graben gehoert.
+   * Sie landen im selben Mesh und in derselben Wasserlogik wie der Graben — ein Fluss ist in
+   * dieser Architektur nichts anderes als ein Graben mit offener Kurve.
+   */
+  /**
+   * EIN Radius fuer Carve und Bett. Vorher war das Bett um eine halbe Zelle breiter als der Carve:
+   * im Zwischenband stand ein Flusscube UND ein Terraincube, und ihre Oberseiten stritten im
+   * Tiefenpuffer (die flackernden Deckflaechen am Fluss). Dieselbe Zahl an beiden Stellen.
+   */
+  riverHalf() { return this.state.riverW * CELL * 0.5 + CELL * 0.5; }
+
+  riverCells() {
+    if (!this.state.river) return [];
+    const out = [], reach = this.reach();
+    const half = this.riverHalf();
+    const pts = this.riverPath();
+    let x0 = Infinity, x1 = -Infinity, z0 = Infinity, z1 = -Infinity;
+    pts.forEach(([x, z]) => { x0 = Math.min(x0, x); x1 = Math.max(x1, x); z0 = Math.min(z0, z); z1 = Math.max(z1, z); });
+    const iA = Math.floor((x0 - half) / CELL), iB = Math.ceil((x1 + half) / CELL);
+    const jA = Math.floor((z0 - half) / CELL), jB = Math.ceil((z1 + half) / CELL);
+    for (let i = iA; i <= iB; i++) {
+      for (let j = jA; j <= jB; j++) {
+        const x = (i + 0.5) * CELL, z = (j + 0.5) * CELL;
+        if (Math.abs(x) <= reach.x && Math.abs(z - ZC) <= reach.z) continue;   // gehoert dem Graben
+        if (this.riverField(x, z).d > half) continue;
+        out.push({ x, z, ring: 1, river: true });
+      }
+    }
+    return out;
+  }
+
+  bankTopAt(x, z, wy, bottom) {
+    const rows = this.reach().rows;
+    const dxC = (Math.abs(x) - ZW) / CELL, dzC = (Math.abs(z - ZC) - ZD) / CELL;
+    const dC = Math.max(0, Math.max(dxC, dzC));
+    // Das Rauschen wird auf einem KREIS abgetastet, dessen Umfang der Bogenlaenge entspricht:
+    // dadurch ist es periodisch (kein Sprung an der Naht bei s = 0) und gleichzeitig fuer jede
+    // Umfangsposition anders. Radius so gewaehlt, dass ein Merkmal 2-3 Zellen lang ist — mit dem
+    // vorherigen Wert (geklemmt auf 1.2) lagen nur zwei Lappen auf 150 Einheiten Umfang, das
+    // Rauschen war damit zu grossraeumig fuer Buchten und Sandbaenke.
+    const L = 4 * (ZW + ZD);
+    const a = 2 * Math.PI * this.perimS(x, z) / L;
+    const R = L / (CELL * 2.5 * 2 * Math.PI);
+    const n1 = fbm(Math.cos(a) * R + 11.5, Math.sin(a) * R + 4.2, 8123);
+    const n2 = fbm(Math.cos(a) * R * 0.55 + 40.7, Math.sin(a) * R * 0.55 - 17.3, 3391);
+    // DIE WASSERLINIE IST DER PARAMETER, nicht ein Nebenprodukt. Vorher endete die Rampe immer
+    // bei dC = rows; das Rauschen aenderte nur die Steilheit, also blieb der wy-Durchgang
+    // konstruktiv in derselben Zellreihe und die Uferlinie war ein Rechteck. Jetzt wandert die
+    // Kreuzung selbst ueber den ganzen Graben (0.6 … rows): unter 1 ragt eine Landzunge bis an
+    // das Plateau, ueber rows-1 schneidet eine Bucht bis ins Terrain.
+    // fbm mittelt vier Oktaven und clustert damit um 0.5 — der nominelle Bereich wurde nie
+    // ausgeschoepft, die Streuung blieb unter einer Rasterweite und die Quantisierung schluckte
+    // sie weg. Kontrastkurve auf den echten Bereich, und die Basis reicht ueber den Graben hinaus:
+    // unter 1 eine Landzunge am Plateau, ueber rows eine Bucht, die ins Terrain schneidet.
+    const spread = (v) => Math.max(0, Math.min(1, (v - 0.5) * 3.4 + 0.5));
+    const shore = -0.3 + spread(n1) * (rows + 0.9);
+    const slope = 0.5 + n2 * 1.8;                       // ueber wie viele Zellen das Ufer ansteigt
+    const t = Math.max(0, Math.min(1, (dC - (shore - slope * 0.5)) / slope));
+    const ease = t * t * (3 - 2 * t);
+    const gh = this.terrain ? this.terrain.groundHeightAt(x, z) : 0;
+    // ZIEL IST DIE TERRAINHOEHE, ohne Deckel. Der alte Deckel (wy + CELL*1.1) griff bei fast
+    // jeder Zelle, also war das Ufer-Ziel praktisch immer der Deckel und nie das Terrain: ein
+    // gleichmaessig hohes Band mit rechteckiger Aussenkante, fuenf Einheiten unter dem Nachbarn
+    // — der "gezeichnete Rahmen", nur eine Reihe weiter aussen. Der Deckel sollte einen Wall im
+    // Graben verhindern; das leistet jetzt die Rampe selbst, die ueber mehrere Zellen ansteigt.
+    const target = Math.max(wy + CELL * 0.2, gh);
+    const top = Math.round((bottom + (target - bottom) * ease) / SUB) * SUB;
+    // EINE Wahrheit fuer "nass": liegt die Zelle unter der Wasserlinie, muss sie auch unter der
+    // Anti-Flacker-Schwelle des Fluid-Netzes liegen (fluidY - CELL*0.3), sonst gilt sie als nass,
+    // bekommt aber kein Quad — das sind die dunklen Loecher in der Flaeche. Die Schwelle selbst
+    // bleibt, sie schuetzt vor dem Zucken gegen fast koplanare Deckflaechen.
+    const wet = wy - WMARGIN - SUB;
+    return top < wy && top > wet ? wet : top;
+  }
+
+  /**
+   * KALIBRIERUNG statt Handabstimmung. Das Terrain nimmt dieselben Palettenstops, multipliziert sie
+   * aber in seinem eigenen Shader mit Helligkeitsspreizung, Saettigungs-Jitter und der Kanten-Textur
+   * und beleuchtet ungetonemappt; die Graben-Cubes tragen die Stops als reine Instanzfarbe. Deshalb
+   * rendert das Ufer 2,4-fach heller als das Terrain, das es fortsetzen soll. Der Faktor wird hier
+   * AUS DEN ECHTEN UNIFORMS und dem Mittelwert der Kantenkachel gelesen, nicht geraten — dreht
+   * jemand an setColorParams, wandert das Ufer mit.
+   */
+  bankCalib() {
+    if (this.calib != null) return this.calib;
+    let U = null;
+    (this.terrain && this.terrain.group ? this.terrain.group.children : []).forEach((c) => {
+      if (!U && c.material && c.material.uniforms && c.material.uniforms.uBrightMin) U = c.material.uniforms;
+    });
+    const bright = U ? U.uBrightMin.value + 0.5 * U.uBrightRange.value : 0.83;
+    const light = U ? U.uAmbient.value + 0.62 * U.uLightInt.value : 0.98;
+    let edge = 0.62;
+    const img = this.bevel && this.bevel.image;
+    if (img && img.width) {
+      const cv = document.createElement('canvas'); cv.width = cv.height = 32;
+      const cx = cv.getContext('2d'); cx.drawImage(img, 0, 0, 32, 32);
+      const d = cx.getImageData(0, 0, 32, 32).data;
+      let s = 0; for (let i = 0; i < d.length; i += 4) s += (d[i] + d[i + 1] + d[i + 2]) / 765;
+      edge = s / (d.length / 4);
+    }
+    // Der Graben rendert getonemappt (MeshStandardMaterial), das Terrain nicht — ACES nimmt
+    // Mitteltoene um etwa ein Sechstel zurueck, das steckt im Faktor mit drin.
+    this.calib = bright * edge * light * 1.18;
+    return this.calib;
+  }
+
+  layoutMoat() {
+    const T = this.T, M = this.M;
+    this.moatCells = this.moatRing().concat(this.riverCells());
+    const wy = this.waterY();
+    const d = new T.Object3D(), col = new T.Color();
+    const n = this.moatMesh.count;
+    for (let k = 0; k < n; k++) {
+      const c = this.moatCells[k];
+      if (!c) { d.position.set(0, -900, 0); d.scale.set(0.001, 0.001, 0.001); }
+      else {
+        // Echte Wanne in drei Abschnitten: von der Zonenkante (y=0) hinunter, Boden, und am
+        // Aussenufer hoch auf die Terrainhoehe an genau dieser Stelle. Sonst schwebt die
+        // Fluessigkeit ueber einer Luecke, statt in einem Graben zu liegen.
+        // Flache Wanne: eine Zelle tief, nicht mehr. Aussen auf Terrainhoehe, aber gedeckelt,
+        // damit kein Turm im Graben steht — "keine extremen Hoehenunterschiede" gilt auch hier.
+        // Boden fest, Tiefe nur in D6-Stufen variiert — so liegt JEDE Bodenzelle sicher unter
+        // dem Wasserstand, statt vom Rauschen abzuhaengen (sonst ist der Ring gefleckt).
+        const bottom = wy - CELL * 0.5 - Math.round(h2(Math.round(c.x), Math.round(c.z), 5150) * 2) * SUB;
+        // EIN Aufruf statt der Ring-Fallunterscheidung: das Feld entscheidet, wie weit die
+        // Wanne reicht und wo das Ufer ansteigt. Die innerste Reihe bleibt garantiert Boden,
+        // damit direkt an der Plateaukante immer Wasser liegt und kein Strand am Fuss klebt.
+        const top = c.river ? this.riverTopAt(c.x, c.z, wy, bottom)
+          : c.ring === 0 ? bottom : this.bankTopAt(c.x, c.z, wy, bottom);
+        c.top = top;                                              // die Wasserflaeche liest das zurueck
+        c.dry = top > wy - WMARGIN;                               // dieselbe Schwelle wie das Netz
+        d.position.set(c.x, -CELL * 3.6, c.z); d.scale.set(1, top + CELL * 3.6, 1);
+      }
+      d.updateMatrix();
+      this.moatMesh.setMatrixAt(k, d.matrix);
+      M.writeVariation(this.moatGeo, k, 'moat', { variation: 0.5, heightCells: 2, mat: M.matId('stein') });
+      // Nur die Wanne ist dunkel. Das Ufer nimmt die Weltpalette, sonst rahmt ein schwarzer
+      // Ring die Zone ein — das Terrain daneben hat gar keine Instanzfarbe, es schattiert im
+      // eigenen Shader aus derselben Palette.
+      const pal = (this.wc && this.wc.palette) || [[0.2, 0.16, 0.13], [0.5, 0.36, 0.24], [0.8, 0.68, 0.5]];
+      // Die FARBE folgt jetzt der HOEHE, nicht dem Ringindex: alles ueber der Wasserlinie ist
+      // Strand, alles darunter Wannenboden. Sonst laege ein Sandband an der Ringgrenze, obwohl
+      // das Ufer im Feld ganz woanders ansteigt.
+      if (c && c.dry) {
+        // Sand an der Wasserlinie, Terrainton am Aussenrand — nicht umgekehrt. Vorher zog die
+        // Farbe nach aussen Richtung pal[2] (fast der hellste Stop), waehrend das Terrain daneben
+        // gar keine Instanzfarbe hat und in seinem eigenen Shader dunkler ausschattiert: heller
+        // Streifen an der Naht. Jetzt laeuft das Ufer in den Terrainton, die Naht verschwindet.
+        const gh = this.terrain ? this.terrain.groundHeightAt(c.x, c.z) : 0;
+        const k = Math.min(1, Math.max(0, (c.top - wy) / Math.max(CELL * 0.5, gh - wy)));
+        col.setRGB(pal[2][0], pal[2][1], pal[2][2]).lerp(new T.Color(pal[1][0], pal[1][1], pal[1][2]), 0.35 + k * 0.65);
+        // Saettigungs-Jitter wie im Terrain-Shader (Richtung Luma), dann der Kalibrierfaktor.
+        const lum = col.r * 0.299 + col.g * 0.587 + col.b * 0.114;
+        col.lerp(new T.Color(lum, lum, lum), 0.11);
+        col.multiplyScalar(this.bankCalib());
+      } else {
+        col.setRGB(0.13, 0.11, 0.10);
+      }
+      if (c) col.offsetHSL(0, 0, (h2(Math.round(c.x), Math.round(c.z), 71) - 0.5) * 0.05);
+      this.moatMesh.setColorAt(k, col);
+    }
+    this.moatMesh.instanceMatrix.needsUpdate = true;
+    this.moatMesh.instanceColor.needsUpdate = true;
+    this.layoutFluid();
+    this.applyCarve();
+    this.setState({ status: this.state.status });
+  }
+
+  /**
+   * FLUESSIGKEIT als echte Oberflaeche: eine Ebene, im Shader auf den Graben-Ring beschnitten
+   * (dieselbe Chebyshev-Metrik + dasselbe Rauschen wie die Zellen). dudv-Verzerrung, driftende
+   * Normalen, Schaum am Ufer. Kein Level-Trick, keine gefaerbten Cubes.
+   */
+  /**
+   * WASSER AUF DEM ZELLRASTER, nicht als grosse Ebene: ein Quad pro Graben-Zelle, gezeigt nur
+   * dort, wo der Wannenboden unter dem Wasserstand liegt. Damit schliesst die Oberflaeche
+   * zwangsweise buendig mit den Cubes ab — und die Wasserlinie folgt dem Raster, wie es die
+   * Voxel-Sprache verlangt.
+   */
+  buildFluidSurface() {
+    const T = this.T, f = FLUIDS[this.state.fluid];
+    const geo = new T.BufferGeometry();   // wird in layoutFluid als EIN Netz gebaut
+    const U = this.fluidU = {
+      uTime: { value: 0 }, uCol: { value: new T.Color(f.col[0], f.col[1], f.col[2]) },
+      uMoat: { value: this.state.moat }, uZ: { value: new T.Vector2(ZW, ZD) },
+      uDudv: { value: null }, uMap: { value: null }, uHasMap: { value: 0 },
+    };
+    this.loadTex(RAW + 'KFB/waterdudv.jpg', false).then((t) => { if (t) U.uDudv.value = t; });
+    // water.jpg ist die Basis aus Zone S1 — die Struktur der Fluessigkeit kommt aus ihr,
+    // die Farbe aus der Fuellung. Ohne Map bleibt der rein prozedurale Fallback.
+    this.loadTex(RAW + 'KFB/water.jpg', true).then((t) => { if (t) { U.uMap.value = t; U.uHasMap.value = 1; } });
+    const mat = new T.ShaderMaterial({
+      uniforms: U, transparent: true, side: T.DoubleSide, depthWrite: false,
+      // Tiefen-Versatz als zweite Sicherung: selbst wenn eine Deckflaeche der Ebene sehr nahe
+      // kommt, gewinnt die Ebene eindeutig statt zu flackern.
+      polygonOffset: true, polygonOffsetFactor: -2, polygonOffsetUnits: -4,
+      // Ein rohes ShaderMaterial bekommt KEIN automatisches Instancing: ohne instanceMatrix
+      // liegen alle Quads uebereinander im Ursprung (und teilen einen Textur-Lookup).
+      vertexShader: [
+        'attribute vec2 aFlow;',
+        'varying vec3 vW;',
+        'varying vec2 vFlow;',
+        'void main(){',
+        '  vec4 p = vec4(position, 1.0);',
+        '  #ifdef USE_INSTANCING',
+        '    p = instanceMatrix * p;',
+        '  #endif',
+        '  vec4 wp = modelMatrix * p;',
+        '  vW = wp.xyz;',
+        '  vFlow = aFlow;',
+        '  gl_Position = projectionMatrix * viewMatrix * wp;',
+        '}',
+      ].join('\n'),
+      fragmentShader: [
+        'uniform float uTime, uMoat, uHasMap; uniform vec3 uCol; uniform vec2 uZ;',
+        'uniform sampler2D uDudv, uMap;',
+        'varying vec3 vW;',
+        'varying vec2 vFlow;',
+        'float hh(vec2 p){ return fract(sin(dot(p, vec2(127.1,311.7))) * 43758.5453); }',
+        'float nz(vec2 p){ vec2 i = floor(p), f = fract(p); f = f*f*(3.0-2.0*f);',
+        '  return mix(mix(hh(i), hh(i+vec2(1,0)), f.x), mix(hh(i+vec2(0,1)), hh(i+vec2(1,1)), f.x), f.y); }',
+        'void main(){',
+        // Kein Beschnitt mehr im Shader: WELCHE Zelle Wasser traegt, entscheidet die Geometrie
+        // (nur Zellen, deren Wannenboden unter dem Wasserstand liegt). Dadurch ist die Kante
+        // zwangsweise buendig mit den Cubes.
+        '  float u = 0.5;',
+        // STROEMUNG: Stillwasser (Graben, Teiche) treibt wie bisher isotrop, Flusszellen tragen
+        // eine Richtung als Attribut — das Muster wandert dann laengs des Laufs, statt zu wabern.
+        '  float fl = length(vFlow);',
+        '  vec2 drift = mix(vec2(uTime * 0.02, uTime * 0.015), vFlow * uTime * 0.16, min(fl, 1.0));',
+        '  vec2 duv = (texture2D(uDudv, vW.xz * 0.02 + drift).rg - 0.5) * 0.6;',
+        '  vec2 adv = mix(vec2(uTime * 0.25, -uTime * 0.18), vFlow * uTime * 1.6, min(fl, 1.0));',
+        '  float wave = nz(vW.xz * 0.09 + duv * 4.0 + adv);',
+        '  float wave2 = nz(vW.xz * 0.31 + duv * 8.0 - adv * 1.5);',
+        // Laengsstreifen nur im Fluss: quer zur Richtung gestaucht, laengs gestreckt.
+        '  if (fl > 0.01) {',
+        '    vec2 n2d = normalize(vFlow), t2d = vec2(-n2d.y, n2d.x);',
+        '    float across = dot(vW.xz, t2d), along = dot(vW.xz, n2d);',
+        '    float streak = nz(vec2(across * 0.5, along * 0.08 - uTime * 1.1));',
+        '    wave = mix(wave, streak, 0.55);',
+        '  }',
+        // water.jpg (Basis aus Zone S1): ihre Struktur traegt das Bild, die Fuellung nur die
+        // Farbe — deshalb entsaettigt und als Multiplikator, nicht als Farbquelle.
+        '  vec3 mp = texture2D(uMap, vW.xz * 0.035 + duv * 0.5 + vec2(uTime * 0.012, -uTime * 0.009)).rgb;',
+        '  float ml = dot(mp, vec3(0.299, 0.587, 0.114));',
+        '  float tex = mix(1.0, 0.55 + ml * 0.9, uHasMap);',
+        '  vec3 col = uCol * (0.55 + wave * 0.75) * tex + vec3(0.06, 0.07, 0.08) * wave2;',
+        // Schaum an beiden Ufern: dort, wo die Fluessigkeit den Rand beruehrt, bricht sie auf.
+        '  float shore = min(smoothstep(0.0, 0.22, u), smoothstep(1.0, 0.78, u));',
+        '  float foam = smoothstep(0.55, 0.95, wave2) * (1.0 - shore);',
+        '  col += vec3(0.7, 0.72, 0.7) * foam * 0.5;',
+        '  float a = 0.72 + foam * 0.28;',
+        '  gl_FragColor = vec4(col, a);',
+        '}',
+      ].join('\n'),
+    });
+    this.fluidY = WATER_Y;
+    // Lochboden: das Sockelloch ist eine Oeffnung IM Plateau, kein Brunnen. Vorher stand dort
+    // Wasser auf fester Hoehe (das blaue Quadrat), darunter schwarzes Nichts. Jetzt eine Scheibe
+    // in Zonenfarbe, die mit dem Sockel ein- und ausfaehrt.
+    const cap = this.holeCap = new T.Mesh(
+      new T.CircleGeometry(CUBE_D * 0.5, 24),
+      new T.MeshStandardMaterial({ color: 0xcbbfa4, roughness: 0.95, transparent: true }),
+    );
+    cap.rotation.x = -Math.PI / 2;
+    cap.receiveShadow = true;
+    this.scene.add(cap);
+    // PFUETZE IM LOCH, keine Brunnen-Logik: eine eigene kleine Ebene knapp ueber dem Lochboden,
+    // die mit dem Sockel ein- und ausfaehrt. Steht das Loch spaeter hoeher im Zonenterrain,
+    // stimmt sie weiter — sie haengt am Boden des Lochs, nicht am Wasserstand der Zone.
+    const pud = this.holePuddle = new T.Mesh(
+      new T.CircleGeometry(CUBE_D * 0.44, 24),
+      new T.MeshStandardMaterial({
+        color: new T.Color(f.col[0], f.col[1], f.col[2]), roughness: 0.18, metalness: 0.15,
+        transparent: true, opacity: 0.86,
+      }),
+    );
+    pud.rotation.x = -Math.PI / 2;
+    this.scene.add(pud);
+    this.fluid = new T.Mesh(geo, mat);
+    this.fluid.renderOrder = 1;
+    this.fluid.frustumCulled = false;
+    this.scene.add(this.fluid);
+    this.layoutFluid();
+  }
+
+  /** Ein Wasser-Quad pro Graben-Zelle, deren Boden unter dem Wasserstand liegt. */
+  layoutFluid() {
+    if (!this.fluid || !this.moatCells) return;
+    // ZWEI HOEHEN, ein Modell: waterLevel klassifiziert (nass/trocken, auf dem SUB-Raster),
+    // fluidY ist die GEZEICHNETE Ebene und liegt eine Viertelstufe darunter — damit liegt sie
+    // NIE auf dem Raster der Cube-Oberseiten und kann mit keiner Deckflaeche koplanar werden.
+    // Genau das war das Flackern: beide Hoehen waren Vielfache von SUB, also traf die Ebene
+    // Deckflaechen exakt und der Tiefenpuffer stritt (sichtbar als Schraffur).
+    this.waterLevel = this.waterY();
+    this.fluidY = this.waterLevel - SUB * 0.25;
+    // EIN NETZ statt Instanz-Quads. Kachel-Quads stossen Kante an Kante: bei transparentem
+    // Wasser reisst dort sub-pixelweise der dunkle Wannenboden durch (die "Luecken"), und
+    // Ueberlappen ist keine Loesung — dann blendet die Ueberdeckung doppelt und die Naehte
+    // lesen als helles Raster. Ein durchgehendes Netz teilt echte Eckpunkte: dieselbe
+    // Koordinate aus derselben Formel, also gar keine Kante zum Reissen.
+    const T = this.T, h = CELL / 2;
+    const pos = [], idx = [], flow = [];
+    const quad = (cx, cy, cz, s, fx, fz) => {
+      const b = pos.length / 3, e = h * s;
+      pos.push(cx - e, cy, cz - e, cx + e, cy, cz - e, cx + e, cy, cz + e, cx - e, cy, cz + e);
+      for (let v = 0; v < 4; v++) flow.push(fx || 0, fz || 0);
+      idx.push(b, b + 2, b + 1, b, b + 3, b + 2);
+    };
+    /**
+     * Stroemung = Tangente des Laufs, STAERKE aber als Rampe ueber den Abstand zum Lauf — auch
+     * fuer Graben-Zellen. Vorher trug der Graben strikt 0 und der Fluss strikt 1: an der Muendung
+     * schaltete die Animation hart um, das war der sichtbare Bruch. Jetzt laeuft die Richtung ueber
+     * ein paar Zellen aus, der Graben beruhigt sich also zum Stillwasser hin.
+     */
+    const flowAt = (c) => {
+      if (!this.state.river) return [0, 0];
+      const f = this.riverField(c.x, c.z), pts = f.pts;
+      const half = this.riverHalf();
+      const amt = Math.max(0, Math.min(1, 1 - (f.d - half) / (CELL * 3.5)));
+      if (amt <= 0.001) return [0, 0];
+      let acc = 0;
+      for (let i = 0; i < pts.length - 1; i++) {
+        const dx = pts[i + 1][0] - pts[i][0], dz = pts[i + 1][1] - pts[i][1];
+        const l = Math.sqrt(dx * dx + dz * dz);
+        if (f.s <= acc + l || i === pts.length - 2) return [dx / l * amt, dz / l * amt];
+        acc += l;
+      }
+      return [0, 0];
+    };
+    // Zellkoordinaten auf das Raster runden, bevor die Ecken entstehen: schon 1e-6 Abweichung
+    // zwischen zwei Nachbarzellen ergibt einen sichtbaren Riss.
+    const snap = (v) => Math.round(v / h) * h;
+    // EINE Wasserebene fuer Graben UND Zone (KISS): was darunter liegt, fuellt sich. Die Zone
+    // bekommt damit Teiche, Kanaele und Durchfluesse aus ihren eigenen Stufen und Absenkungen,
+    // ohne ein zweites Niveau-Modell. Mindestabstand zum Boden: liegt ein Rampen-Cube fast genau
+    // auf dem Wasserstand, flackert die Flaeche gegen seine Deckflaeche (das blaue Zucken).
+    const wet = (c) => c && c.top != null && c.top < this.waterLevel - WMARGIN;
+    // Die Blasen lesen genau DIESE Liste — dieselbe Quelle wie das Netz, also kann keine Blase
+    // im Trockenen aufsteigen.
+    const wetOut = this.wetCells = [];
+    const key = (x, z) => Math.round(x / CELL) + ':' + Math.round(z / CELL);
+    const zone = this.zoneCells || [];
+    zone.forEach((c) => { c.top = this.zoneTopAt(c.x, c.z); });
+    const wetSet = new Set();
+    this.moatCells.concat(zone).forEach((c) => { if (wet(c)) wetSet.add(key(c.x, c.z)); });
+    this.moatCells.forEach((c) => {
+      if (!wet(c)) return;
+      const fv = flowAt(c);
+      quad(snap(c.x), this.fluidY, snap(c.z), 1, fv[0], fv[1]);
+      wetOut.push(c);
+    });
+    // NACHBARSCHAFTSPRUEFUNG nur in der Zone: eine einzelne tiefe Zelle mitten im Plateau liest
+    // als Fleck, nicht als Teich. Wasser braucht mindestens einen nassen Nachbarn — der Graben
+    // selbst zaehlt mit, damit ein Kanal an der Kante zur Muendung wird.
+    zone.forEach((c) => {
+      if (!wet(c)) return;
+      const n = [[CELL, 0], [-CELL, 0], [0, CELL], [0, -CELL]]
+        .filter(([dx, dz]) => wetSet.has(key(c.x + dx, c.z + dz))).length;
+      if (n === 0) return;
+      quad(snap(c.x), this.fluidY, snap(c.z), 1);
+      wetOut.push(c);
+    });
+    // KEIN Wasser im Sockelloch. Es lag auf fester Hoehe 0.75 — also je nach Stufen und
+    // Absenkung UEBER dem Zonenboden, und damit als blaues Quadrat im Wuerfel. Wasser steht
+    // in dieser Architektur ausschliesslich UNTER dem Zonenboden, im Graben. Das Loch bekommt
+    // stattdessen einen festen Boden (siehe holeCap), sonst gaehnt dort schwarzes Nichts.
+    const g = this.fluid.geometry;
+    g.setAttribute('position', new T.Float32BufferAttribute(pos, 3));
+    g.setAttribute('aFlow', new T.Float32BufferAttribute(flow, 2));
+    g.setIndex(idx);
+    g.computeVertexNormals();
+    g.computeBoundingSphere();
+  }
+
+  /**
+   * PROJEKTION statt Kegel: ein 16:9-Rechteck am Projektor, dessen vier Ecken mit den vier
+   * Ecken der Karte verbunden sind — vier duenne Linien plus vier wabernde Holo-Flaechen.
+   */
+  buildProjection() {
+    const T = this.T;
+    // Kein Holo-Kegel, keine Linien: ein SCHLEIER. Vier Bahnen, die von den Zonenecken zu den
+    // Kartenecken laufen, im Vertex-Shader mit Rauschen ausgebeult und nach oben aufgeloest.
+    // Das passt zu Papier und Tusche — harte Glaskanten passen nicht.
+    const SU = 12, SV = 16;
+    const verts = 4 * SU * SV * 6;
+    const pos = new Float32Array(verts * 3), side = new Float32Array(verts), uvs = new Float32Array(verts * 2);
+    let o = 0;
+    for (let s4 = 0; s4 < 4; s4++) {
+      for (let i = 0; i < SU; i++) {
+        for (let j = 0; j < SV; j++) {
+          const u0 = i / SU, u1 = (i + 1) / SU, v0 = j / SV, v1 = (j + 1) / SV;
+          [[u0, v0], [u1, v0], [u1, v1], [u0, v0], [u1, v1], [u0, v1]].forEach(([u, v]) => {
+            uvs[o * 2] = u; uvs[o * 2 + 1] = v; side[o] = s4; o++;
+          });
+        }
+      }
+    }
+    const geo = this.holoGeo = new T.BufferGeometry();
+    geo.setAttribute('position', new T.BufferAttribute(pos, 3));   // wird im Shader berechnet
+    geo.setAttribute('uv', new T.BufferAttribute(uvs, 2));
+    geo.setAttribute('aSide', new T.BufferAttribute(side, 1));
+    const U = this.holoU = {
+      uTime: { value: 0 }, uGain: { value: this.state.holo },
+      uCol: { value: new T.Color(0xffd9a8) }, uCol2: { value: new T.Color(0x8fd0ff) },
+      uG: { value: [new T.Vector3(), new T.Vector3(), new T.Vector3(), new T.Vector3()] },
+      uC: { value: [new T.Vector3(), new T.Vector3(), new T.Vector3(), new T.Vector3()] },
+    };
+    const mat = new T.ShaderMaterial({
+      uniforms: U, transparent: true, depthWrite: false, side: T.DoubleSide, blending: T.AdditiveBlending,
+      vertexShader: [
+        'attribute float aSide;',
+        'uniform vec3 uG[4]; uniform vec3 uC[4]; uniform float uTime;',
+        'varying vec2 vUv; varying float vWarp;',
+        'float hh(vec2 p){ return fract(sin(dot(p, vec2(127.1,311.7))) * 43758.5453); }',
+        'float nz(vec2 p){ vec2 i = floor(p), f = fract(p); f = f*f*(3.0-2.0*f);',
+        '  return mix(mix(hh(i), hh(i+vec2(1,0)), f.x), mix(hh(i+vec2(0,1)), hh(i+vec2(1,1)), f.x), f.y); }',
+        'void main(){',
+        '  int s = int(aSide + 0.5);',
+        '  int t = s + 1; if (t > 3) t = 0;',
+        '  vec3 g0 = uG[s], g1 = uG[t], c0 = uC[s], c1 = uC[t];',
+        '  vUv = uv;',
+        '  vec3 lo = mix(g0, g1, uv.x), hi = mix(c0, c1, uv.x);',
+        '  vec3 p = mix(lo, hi, uv.y);',
+        // Ausbeulen quer zur Bahn, staerker in der Mitte der Hoehe: der Schleier atmet.
+        '  vec3 along = normalize(g1 - g0 + 0.0001);',
+        '  vec3 nrm = normalize(cross(along, vec3(0.0, 1.0, 0.0)));',
+        '  float belly = sin(uv.y * 3.14159);',
+        '  float w = nz(vec2(uv.x * 3.0 + float(s) * 4.0, uv.y * 2.2 - uTime * 0.22)) - 0.5;',
+        '  float w2 = nz(vec2(uv.x * 7.0 - float(s) * 2.0, uv.y * 5.0 + uTime * 0.35)) - 0.5;',
+        '  vWarp = w;',
+        '  p += nrm * (w * 5.5 + w2 * 1.8) * belly;',
+        '  p.y += (w2 * 1.2) * belly;',
+        '  gl_Position = projectionMatrix * modelViewMatrix * vec4(p, 1.0);',
+        '}',
+      ].join('\n'),
+      fragmentShader: [
+        'uniform float uTime, uGain; uniform vec3 uCol, uCol2;',
+        'varying vec2 vUv; varying float vWarp;',
+        'float hh(vec2 p){ return fract(sin(dot(p, vec2(127.1,311.7))) * 43758.5453); }',
+        'float nz(vec2 p){ vec2 i = floor(p), f = fract(p); f = f*f*(3.0-2.0*f);',
+        '  return mix(mix(hh(i), hh(i+vec2(1,0)), f.x), mix(hh(i+vec2(0,1)), hh(i+vec2(1,1)), f.x), f.y); }',
+        'float fb(vec2 p){ return nz(p) * 0.6 + nz(p * 2.3 + 7.0) * 0.28 + nz(p * 5.1 - 3.0) * 0.12; }',
+        'void main(){',
+        '  float v = vUv.y;',
+        // Aufsteigende Schwaden statt Scanlines: zwei gegenlaeufige Rauschfelder, nach oben
+        // ausgedünnt. Keine geraden Kanten, kein Raster.
+        '  float f1 = fb(vec2(vUv.x * 4.0, v * 2.4 - uTime * 0.5));',
+        '  float f2 = fb(vec2(vUv.x * 9.0 + 3.0, v * 5.5 - uTime * 0.9));',
+        '  float body = smoothstep(0.28, 0.85, f1 * 0.65 + f2 * 0.45);',
+        '  float rise = smoothstep(0.0, 0.18, v) * (1.0 - smoothstep(0.45, 1.0, v) * 0.8);',
+        '  float edge = smoothstep(0.0, 0.16, vUv.x) * smoothstep(1.0, 0.84, vUv.x);',
+        '  float a = body * rise * (0.07 + edge * 0.26);',
+        '  vec3 c = mix(uCol, uCol2, smoothstep(0.1, 0.9, v) * 0.7 + vWarp * 0.3);',
+        '  gl_FragColor = vec4(c * (0.7 + body * 0.8), a * uGain);',
+        '}',
+      ].join('\n'),
+    });
+    this.holo = new T.Mesh(geo, mat);
+    this.holo.frustumCulled = false;
+    this.holo.renderOrder = 3;
+    this.scene.add(this.holo);
+  }
+
+  /** Nur noch die acht Eckpunkte fuellen — die Flaeche baut der Vertex-Shader daraus. */
+  updateProjection() {
+    if (!this.holo || !this.card) return;
+    const s = this.state, T = this.T;
+    const py = 0.35, gx = ZW * s.rect, gz = ZD * s.rect;
+    const G = this.holoU.uG.value, C = this.holoU.uC.value;
+    G[0].set(-gx, py, ZC - gz); G[1].set(gx, py, ZC - gz);
+    G[2].set(gx, py, ZC + gz); G[3].set(-gx, py, ZC + gz);
+    // Ecken aus der WELTMATRIX der Karte, nicht aus Position + Groesse: sonst laeuft die
+    // Beam-Flaeche der Drehung nicht mit und haengt schief an einer gedrehten Karte.
+    const cw = this.card.width, ch = this.card.height, g = this.card.group;
+    g.updateMatrixWorld();
+    const raw = [[-1, 1], [1, 1], [1, -1], [-1, -1]].map(([sx, sy]) =>
+      new T.Vector3(sx * cw / 2, sy * ch / 2, 0).applyMatrix4(g.matrixWorld));
+    // ZYKLUS-ERHALTENDE ZUORDNUNG: die Karte ist eine senkrechte Flaeche, ihre vier Ecken fallen
+    // in XZ auf nur ZWEI Punkte — eine Ecke-fuer-Ecke-Suche kann oben und unten dort nicht
+    // unterscheiden und kippt bei ~90 Grad in eine Schleife. Stattdessen werden nur die acht
+    // Zuordnungen geprueft, die den Eckenumlauf erhalten (4 Versaetze x 2 Richtungen); die mit
+    // der kleinsten Gesamtdistanz gewinnt. Eine Verdrehung ist damit konstruktiv unmoeglich.
+    const cost = (perm) => {
+      let c = 0;
+      for (let k = 0; k < 4; k++) {
+        const p = raw[perm[k]], gp = G[k];
+        c += (p.x - gp.x) * (p.x - gp.x) + (p.z - gp.z) * (p.z - gp.z);
+      }
+      return c;
+    };
+    let bestPerm = [0, 1, 2, 3], bestCost = Infinity;
+    for (let dir = 0; dir < 2; dir++) {
+      for (let sh = 0; sh < 4; sh++) {
+        const perm = [0, 1, 2, 3].map((k) => (dir ? (sh - k + 8) % 4 : (sh + k) % 4));
+        const c = cost(perm);
+        if (c < bestCost) { bestCost = c; bestPerm = perm; }
+      }
+    }
+    // HYSTERESE: Rund um die Diagonale liegen zwei Zuordnungen fast gleichauf, und die Kosten
+    // rauschen mit jedem Grad Drehung — der Gewinner wechselt dann im Sekundentakt hin und her,
+    // das ist das Springen. Die gebrauchte Zuordnung bleibt deshalb, bis eine andere DEUTLICH
+    // besser ist (30 %). Der Wechsel selbst wird unten ueberblendet.
+    if (!this.holoPerm) this.holoPerm = bestPerm;
+    else if (bestCost < cost(this.holoPerm) * 0.7) this.holoPerm = bestPerm;
+    const perm = this.holoPerm;
+    // Die Eckpunkte laufen ihren Zielen nachher: eine Umschaltung gleitet dann ueber ~0.2 s
+    // statt zu schnappen, und schnelle Kamerafahrten bekommen dieselbe Daempfung.
+    if (!this.holoInit) {
+      for (let k = 0; k < 4; k++) C[k].copy(raw[perm[k]]);
+      this.holoInit = true;
+    } else {
+      const a = 1 - Math.pow(0.0001, this.lastDt || 0.016);
+      for (let k = 0; k < 4; k++) C[k].lerp(raw[perm[k]], a);
+    }
+    // Aus der Naehe darf der Schleier die Karte nicht ueberdecken: Deckkraft faellt mit der
+    // Distanz zur Karte auf 0, statt vor dem Blatt zu haengen.
+    const near = this.cam.position.distanceTo(g.position);
+    // Der Schleier gehoert zur AUFGEDECKTEN Karte: er baut sich mit dem Aufklappen auf (p²).
+    const rp = this.rev == null ? 1 : this.rev * this.rev;
+    this.holoU.uGain.value = s.holo * Math.min(1, Math.max(0, (near - 26) / 34)) * rp;
+    this.holo.visible = s.beam;
+    if (this.projector) this.projector.position.x = this.projX || 0;
+  }
+
+  /** Eine Flaeche des Card Cube als Canvas-Textur — dieselbe Idee wie in Cube Academy v1. */
+  faceTexture(kind, card) {
+    const T = this.T;
+    const S = 512, c = document.createElement('canvas'); c.width = c.height = S;
+    const g = c.getContext('2d');
+    // GRUND AUS DER WELTPALETTE, nicht schwarz: 74 % jeder Wuerfelseite ist diese Flaeche, also
+    // entscheidet sie, ob der Wuerfel zum Terrain gehoert. Darueber die Collage-Textur als
+    // Gebrauchsspur, dann dunkle Tusche als Schrift.
+    const pal = (this.wc && this.wc.palette) || [[0.2, 0.16, 0.13], [0.5, 0.36, 0.24], [0.8, 0.68, 0.5]];
+    const q = (v) => Math.max(0, Math.min(255, Math.round(v * 255)));
+    const dark = 'rgb(' + q(pal[0][0] + 0.1) + ',' + q(pal[0][1] + 0.08) + ',' + q(pal[0][2] + 0.06) + ')';
+    // ALLE Seiten auf PAPIER, nicht auf Palettenfarbe: der Wuerfel ist ein Blatt-Objekt, und der
+    // Koerper traegt dieselbe Farbe — damit ist kein Uebergang zwischen Flaeche und Kante zu sehen.
+    g.fillStyle = PAPER; g.fillRect(0, 0, S, S);
+    // edge3 als weiche Fassung, aber INVERTIERT eingesetzt: die Kachel ist innen hell und aussen
+    // dunkel — direkt multipliziert sass der Schatten als Fleck in der Flaechenmitte. Jetzt liegt
+    // ein leichter Randabfall an, wie ihn ein gepresstes Blatt hat.
+    // edge3 INVERTIERT: die Kachel ist am Rand hell und in der Mitte dunkel, direkt multipliziert
+    // saesse der Schatten als Fleck in der Flaechenmitte. Einmal invertiert (difference gegen
+    // Weiss) und gecacht, dann multiplikativ — das ergibt die dunkle Fassung aus der echten Textur.
+    if (this.bevel && this.bevel.image && this.bevel.image.width) {
+      if (!this._bevelInv) {
+        const b = document.createElement('canvas');
+        b.width = this.bevel.image.width; b.height = this.bevel.image.height;
+        const bg = b.getContext('2d');
+        bg.fillStyle = '#fff'; bg.fillRect(0, 0, b.width, b.height);
+        bg.globalCompositeOperation = 'difference';
+        bg.drawImage(this.bevel.image, 0, 0);
+        // Die invertierte Kachel ist AUCH in der Mitte dunkel (edge3-Mitte 194 → invertiert 61),
+        // multipliziert zieht sie deshalb die ganze Flaeche herunter statt nur den Rand. Innen
+        // wieder auf Weiss ziehen: dann traegt nur das aeussere Band die Fassung.
+        bg.globalCompositeOperation = 'screen';
+        const wg = bg.createRadialGradient(b.width / 2, b.height / 2, 0, b.width / 2, b.height / 2, b.width * 0.62);
+        wg.addColorStop(0, '#ffffff'); wg.addColorStop(0.72, '#ffffff'); wg.addColorStop(1, '#000000');
+        bg.fillStyle = wg; bg.fillRect(0, 0, b.width, b.height);
+        this._bevelInv = b;
+      }
+      g.globalAlpha = 0.5; g.globalCompositeOperation = 'multiply';
+      g.drawImage(this._bevelInv, 0, 0, S, S);
+      g.globalAlpha = 1; g.globalCompositeOperation = 'source-over';
+    }
+    if (this.wearImg && this.wearImg.width) {
+      g.globalAlpha = 0.14; g.globalCompositeOperation = 'multiply';
+      g.drawImage(this.wearImg, 0, 0, S, S);
+      g.globalAlpha = 1; g.globalCompositeOperation = 'source-over';
+    }
+    // KEIN Rahmen: die Wuerfelseiten liest man an Licht und Schatten, nicht an einer Linie.
+    if (kind === 'art') {
+      // PAPIER als Grund: die meisten Karten sind cremefarben, also wirkt die Flaeche wie ein
+      // Blatt, das auf dem Wuerfel liegt — nicht wie ein Bild in einem farbigen Rahmen.
+      g.fillStyle = '#efe6d0'; g.fillRect(0, 0, S, S);
+      if (this.wearImg && this.wearImg.width) {
+        g.globalAlpha = 0.22; g.globalCompositeOperation = 'multiply';
+        g.drawImage(this.wearImg, 0, 0, S, S);
+        g.globalAlpha = 1; g.globalCompositeOperation = 'source-over';
+      }
+      // EIGENE Kopie, nicht die Textur der Sky-Card: der CardBuilder wirft seine Blatt-Textur
+      // weg, sobald das PDF-Artwork ankommt (dispose) — eine geteilte Referenz waere danach tot.
+      // Ausserdem letterboxen: die Karte ist 16:9, die Wuerfelflaeche quadratisch.
+      const src = this.card && this.card.mat && this.card.mat.map && this.card.mat.map.image;
+      if (src && src.width) {
+        const k = Math.min(S / src.width, S / src.height), dw = src.width * k, dh = src.height * k;
+        g.imageSmoothingQuality = 'high';
+        g.drawImage(src, (S - dw) / 2, (S - dh) / 2, dw, dh);
+      }
+      const t0 = new T.CanvasTexture(c);
+      t0.colorSpace = T.SRGBColorSpace; t0.anisotropy = 4;
+      return t0;
+    }
+    const label = (t) => { g.fillStyle = dark; g.font = '500 20px "IBM Plex Mono", monospace'; g.fillText(t, 34, 56); };
+    const wrap = (txt, x, y, w, lh, size, col) => {
+      g.fillStyle = col; g.font = size + 'px "Barlow Condensed", sans-serif';
+      const words = String(txt || '').split(/\s+/); let line = '', yy = y;
+      words.forEach((wd) => {
+        const test = line ? line + ' ' + wd : wd;
+        if (g.measureText(test).width > w) { g.fillText(line, x, yy); line = wd; yy += lh; } else line = test;
+      });
+      g.fillText(line, x, yy);
+      return yy;
+    };
+    const name = (card && (card.t || card.name)) || 'Karte';
+    const ink = 'rgb(' + q(pal[0][0] * 0.7) + ',' + q(pal[0][1] * 0.7) + ',' + q(pal[0][2] * 0.7) + ')';
+    const paper = 'rgba(247,240,221,0.72)';
+    if (kind === 'titel') {
+      label('TITEL');
+      wrap(name, 34, 130, S - 68, 46, '700 42', ink);
+      g.fillStyle = dark; g.font = '500 20px "IBM Plex Mono", monospace';
+      g.fillText('DECK ' + ((card && card.packId) || '—').toUpperCase(), 34, S - 60);
+    } else if (kind === 'power') {
+      label('POWER');
+      wrap((card && card.p) || 'kein Power-Text', 34, 130, S - 68, 34, '600 28', ink);
+    } else if (kind === 'lore') {
+      label('LORE');
+      wrap((card && card.l) || 'kein Lore-Text', 34, 130, S - 68, 30, '400 24', ink);
+    } else if (kind === 'verwandt') {
+      label('VERWANDT · TAGS');
+      const tags = ['#protopia', '#agency', '#attention', '#fear', '#curiosity'];
+      let y = 130;
+      tags.forEach((t2, i) => {
+        g.fillStyle = i < 2 ? paper : 'rgba(247,240,221,0.34)'; g.fillRect(34, y - 26, 240, 36);
+        g.strokeStyle = ink; g.lineWidth = i < 2 ? 2 : 1; g.strokeRect(34, y - 26, 240, 36);
+        g.fillStyle = ink; g.font = '600 22px "Barlow Condensed", sans-serif';
+        g.fillText(t2, 46, y); y += 52;
+      });
+      g.lineWidth = 1;
+      g.fillStyle = dark; g.font = '400 18px "IBM Plex Mono", monospace';
+      g.fillText('Tag-Klick: eine Ebene nach innen', 34, S - 44);
+    } else {
+      label('CHAT');
+      // Sprechblasen auf dem Papier, weicher Schatten, kein Kasten. Voice first: das Mikrofon
+      // ist der Primaerknopf, Senden erscheint erst, wenn getippt wird (Icon-Tausch).
+      const bubble = (txt, x, y, w, mine) => {
+        const lines = [];
+        g.font = '400 22px "Barlow Condensed", sans-serif';
+        String(txt).split(/\s+/).forEach((wd) => {
+          const last = lines[lines.length - 1];
+          if (last && g.measureText(last + ' ' + wd).width < w - 34) lines[lines.length - 1] = last + ' ' + wd;
+          else lines.push(wd);
+        });
+        const h = 22 + lines.length * 27;
+        g.save();
+        g.shadowColor = 'rgba(40,30,18,0.30)'; g.shadowBlur = 12; g.shadowOffsetY = 4;
+        g.fillStyle = mine ? 'rgba(216,162,74,0.30)' : 'rgba(255,252,244,0.88)';
+        const rr = 14;
+        g.beginPath();
+        g.moveTo(x + rr, y); g.arcTo(x + w, y, x + w, y + h, rr); g.arcTo(x + w, y + h, x, y + h, rr);
+        g.arcTo(x, y + h, x, y, rr); g.arcTo(x, y, x + w, y, rr); g.closePath(); g.fill();
+        g.restore();
+        g.fillStyle = ink;
+        lines.forEach((l, i) => g.fillText(l, x + 17, y + 34 + i * 27));
+        return y + h + 14;
+      };
+      let y = 96;
+      y = bubble('Frag mich zu dieser Karte — oder sag ein Stichwort, dann dreh ich den Würfel zur passenden Fläche.', 30, y, S - 130, false);
+      y = bubble('Was macht Aufmerksamkeit hier stark?', 118, y, S - 148, true);
+      // Eingabe: nur eine Linie, kein Kasten — der Knopf traegt die Funktion.
+      g.strokeStyle = 'rgba(60,48,30,0.35)'; g.lineWidth = 2;
+      g.beginPath(); g.moveTo(30, S - 52); g.lineTo(S - 96, S - 52); g.stroke();
+      g.fillStyle = 'rgba(60,48,30,0.55)'; g.font = '400 22px "Barlow Condensed", sans-serif';
+      g.fillText('Sprich oder tippe …', 34, S - 62);
+      g.save();
+      g.shadowColor = 'rgba(40,30,18,0.35)'; g.shadowBlur = 10; g.shadowOffsetY = 3;
+      g.fillStyle = '#c2452f'; g.beginPath(); g.arc(S - 60, S - 60, 26, 0, Math.PI * 2); g.fill();
+      g.restore();
+      // Mikrofon-Glyphe (Voice first)
+      g.fillStyle = '#f7f0dd';
+      g.beginPath(); g.roundRect ? g.roundRect(S - 66, S - 74, 12, 20, 6) : g.rect(S - 66, S - 74, 12, 20); g.fill();
+      g.strokeStyle = '#f7f0dd'; g.lineWidth = 2.5;
+      g.beginPath(); g.arc(S - 60, S - 56, 10, 0, Math.PI); g.stroke();
+      g.beginPath(); g.moveTo(S - 60, S - 46); g.lineTo(S - 60, S - 40); g.stroke();
+      g.lineWidth = 1;
+    }
+    const t = new T.CanvasTexture(c);
+    t.colorSpace = T.SRGBColorSpace; t.anisotropy = 4;
+    return t;
+  }
+
+  /** Der Würfel: dunkler Koerper, sechs Content-Flaechen, taumelnd und selbst-ausrichtend. */
+  buildCardCube() {
+    // Die Flaeche darf nur so weit reichen wie die FLACHE Seite des gerundeten Koerpers
+    // (CUBE_D - 2*Radius), sonst steht sie ueber die Schulter und bildet selbst die Silhouette:
+    // der Wuerfel liest dann wieder eckig und an jeder Kante steht eine helle Lippe ab.
+    const T = this.T, half = CUBE_D / 2, RAD = CUBE_D * 0.055, pane = CUBE_D - 2 * RAD - 0.06;
+    const grp = new T.Group();
+    // Leicht gerundete Kanten (nicht so weich wie der Academy-Wuerfel) und ein Koerper, der zu
+    // den Terrain-Cubes passt: Weltpalette + Collage-Textur + Bevel-Maske, kein Schwarz.
+    const pal = (this.wc && this.wc.palette) || [[0.2, 0.16, 0.13], [0.5, 0.36, 0.24], [0.8, 0.68, 0.5]];
+    const geo = this.RoundedBox ? new this.RoundedBox(CUBE_D, CUBE_D, CUBE_D, 3, RAD)
+      : new T.BoxGeometry(CUBE_D, CUBE_D, CUBE_D);
+    // Koerperfarbe = Flaechengrund, nur eine Spur HELLER: dann liest die Kante als helle Fuge
+    // statt als dunkler Rahmen. Vorher stand ein brauner Rand um jede Flaeche.
+    const bodyMat = new T.MeshStandardMaterial({
+      color: new T.Color(PAPER), roughness: 0.82, metalness: 0.02,
+      bumpMap: this.grain, bumpScale: 0.1,
+    });
+    this.loadTex(TEXBASE + 'Cardboard003/Cardboard003_diffuse.jpg').then((t2) => {
+      if (!t2) return;
+      // Dieselbe Textur traegt die Gebrauchsspur auf den Flaechen — Wuerfelkoerper und
+      // Content-Flaechen sollen aus einem Stueck aussehen.
+      this.wearImg = t2.image;
+      this.cubeFaces.forEach((f, i) => {
+        if (f.material.map) f.material.map.dispose();
+        f.material.map = this.faceTexture(FACE_KIND[i], this.cardRaw);
+        f.material.needsUpdate = true;
+      });
+    });
+    const body = new T.Mesh(geo, bodyMat);
+    grp.add(body);
+    this.cubeFaces = [];
+    for (let i = 0; i < 6; i++) {
+      const n = new T.Vector3(...FACE_N[i]), up = new T.Vector3(...FACE_UP[i]);
+      const right = new T.Vector3().crossVectors(up, n).normalize();
+      const mesh = new T.Mesh(
+        new T.PlaneGeometry(pane, pane),
+        // BELEUCHTETE Flaechen: ein unbeleuchtetes Basic-Material haelt seine Helligkeit, waehrend
+        // die gerundete Schulter mit der Sonne abschattet — genau das ergab den hellen bzw.
+        // dunklen Ring um jede Flaeche. Gleiches Material = kein Helligkeitssprung an der Kante.
+        new T.MeshStandardMaterial({ map: this.faceTexture(FACE_KIND[i], this.cardRaw), roughness: 0.85, metalness: 0 }),
+      );
+      mesh.quaternion.setFromRotationMatrix(new T.Matrix4().makeBasis(right, up, n));
+      mesh.position.copy(n).multiplyScalar(half + 0.02);
+      mesh.userData.slot = i;
+      grp.add(mesh);
+      this.cubeFaces.push(mesh);
+    }
+    // Hoch genug ueber dem Loch, dass der Wuerfel FREI rotieren kann: die Raumdiagonale ist
+    // CUBE_D*sqrt(3)/2 vom Mittelpunkt, darunter schneidet eine Ecke beim Drehen in den Sockel.
+    this.cube = grp;
+    this.anchorTops();
+    grp.position.set(this.projX || 0, this.cubeBaseY, ZC);
+    this.cubeTarget = null;
+    this.cubeIdle = 0;
+    // EINTRITTS-POSE: die Karte schaut den Spieler an. Mit Identitaets-Rotation zeigt eine
+    // beliebige Flaeche nach vorn, und das Idle-Snapping richtet nur achsenbuendig aus, nie
+    // gezielt auf die Art-Flaeche.
+    grp.quaternion.copy(this.faceToCamera(0));
+    this.scene.add(grp);
+  }
+
+  /** Art-Flaeche neu zeichnen (nach Artwork-Eingang oder Kartenwechsel). */
+  refreshArtFace() {
+    if (!this.cubeFaces || !this.cubeFaces[0]) return;
+    const m = this.cubeFaces[0].material;
+    if (m.map) m.map.dispose();
+    m.map = this.faceTexture('art', this.cardRaw);
+    m.needsUpdate = true;
+  }
+
+  /** Naechste achsenbuendige Orientierung (Idle-Ausrichtung, 1:1 aus Cube Academy). */
+  snapQuat(q) {
+    const T = this.T;
+    const e = new T.Matrix4().makeRotationFromQuaternion(q).elements;
+    const snap = (x, y, z) => {
+      const ax = Math.abs(x), ay = Math.abs(y), az = Math.abs(z);
+      if (ax >= ay && ax >= az) return new T.Vector3(Math.sign(x) || 1, 0, 0);
+      if (ay >= az) return new T.Vector3(0, Math.sign(y) || 1, 0);
+      return new T.Vector3(0, 0, Math.sign(z) || 1);
+    };
+    const X = snap(e[0], e[1], e[2]), Z = snap(e[8], e[9], e[10]);
+    const Y = new T.Vector3().crossVectors(Z, X);
+    return new T.Quaternion().setFromRotationMatrix(new T.Matrix4().makeBasis(X, Y, Z));
+  }
+
+  /**
+   * FACE-FOCUS. Die Canvas-Textur einer Wuerfelflaeche ist 512 px und nicht anfassbar — fuer den
+   * PDF-Zoom und ein echtes Chat-UI braucht es HTML. Also: Kamera achsenbuendig auf die Flaeche
+   * fahren, bis sie das Bild fuellt, und dann genau ueber ihrer projizierten Flaeche ein HTML-Panel
+   * einblenden. Der Wuerfel bleibt stehen, wo er steht — das Panel liegt auf der echten Flaeche,
+   * es ersetzt sie nicht.
+   */
+  enterFocus(slot) {
+    if (!this.cube) return;
+    const T = this.T;
+    this.camSave = { pos: this.cam.position.clone(), tgt: this.ctr.target.clone(), spin: this.state.spin };
+    this.focusedSlot = slot;
+    this.manualCube = false;
+    this.ctr.enabled = false;
+    this.ctr.autoRotate = false;
+    this.focusP = 0;
+    // OrbitControls.update() klemmt den Radius auf minDistance — AUCH bei enabled = false, und
+    // die Zeile laeuft jeden Frame in der Render-Schleife. Mit minDistance 24 konnte die
+    // Fokus-Kamera ihre Zieldistanz (rund 10) nie erreichen: die Flaeche fuellte 40 % statt 80 %.
+    this.minSave = this.ctr.minDistance;
+    // Abstand so, dass die Flaeche knapp 80 % der Bildhoehe fuellt.
+    const half = CUBE_D * 0.5;
+    const d = (half / Math.tan((this.cam.fov * Math.PI / 180) / 2)) / 0.8;
+    const c = this.cube.getWorldPosition(new T.Vector3());
+    const n = new T.Vector3(...FACE_N[slot]).applyQuaternion(this.cube.quaternion).normalize();
+    this.ctr.minDistance = Math.min(this.minSave, d * 0.85);
+    this.focusCam = { from: this.cam.position.clone(), to: c.clone().add(n.multiplyScalar(d)), tFrom: this.ctr.target.clone(), tTo: c.clone() };
+    this.setState({ focus: slot, zoom: 1, panX: 0, panY: 0 });
+  }
+
+  exitFocus() {
+    this.artEl = null;
+    if (this.camSave) {
+      this.focusCam = { from: this.cam.position.clone(), to: this.camSave.pos.clone(), tFrom: this.ctr.target.clone(), tTo: this.camSave.tgt.clone() };
+      this.focusP = 0; this.leaving = true;
+    }
+    this.setState({ focus: null });
+  }
+
+  tickFocus(dt) {
+    const T = this.T;
+    // ZWEI GETRENNTE DINGE: der Kamera-Flug laeuft einmal ab, die Panel-Nachfuehrung laeuft
+    // solange der Fokus steht. Vorher steckten beide hinter demselben `if (!focusCam) return` —
+    // also fror das Rechteck genau in dem Moment ein, in dem die Kamera ankam, und der pendelnde
+    // Wuerfel lief darunter weg.
+    if (this.focusCam) {
+      this.focusP = Math.min(1, (this.focusP || 0) + dt / 0.55);
+      const e = this.focusP * this.focusP * (3 - 2 * this.focusP);
+      this.cam.position.lerpVectors(this.focusCam.from, this.focusCam.to, e);
+      this.ctr.target.lerpVectors(this.focusCam.tFrom, this.focusCam.tTo, e);
+      if (this.focusP >= 1) {
+        this.focusCam = null;
+        if (this.leaving) {
+          this.leaving = false;
+          this.ctr.enabled = true;
+          this.ctr.autoRotate = this.state.spin;
+          if (this.minSave != null) this.ctr.minDistance = this.minSave;
+        }
+      }
+    }
+    // Eigener Ueberblend-Wert, unabhaengig vom Flug: er steigt, solange der Fokus steht, und
+    // faellt beim Verlassen — das Panel blendet damit sauber ein und aus.
+    const want = this.state.focus != null ? 1 : 0;
+    this.fade = Math.max(0, Math.min(1, (this.fade || 0) + (want ? dt / 0.4 : -dt / 0.25)));
+    const e = this.fade;
+    // Das Panel folgt der PROJIZIERTEN Flaeche, es wird nicht separat platziert — dreht der
+    // Wuerfel noch nach, sitzt es weiter richtig. Direkt am Element, nicht ueber setState:
+    // ein Zustandswechsel pro Frame waere ein kompletter Re-Render.
+    if (this.panelEl && this.state.focus != null && this.cubeFaces) {
+      const f = this.cubeFaces[this.state.focus];
+      const r = this.canvas.getBoundingClientRect();
+      const box = { x0: 1e9, y0: 1e9, x1: -1e9, y1: -1e9 };
+      f.updateMatrixWorld();
+      [[-1, -1], [1, -1], [1, 1], [-1, 1]].forEach(([sx, sy]) => {
+        const p = new T.Vector3(sx * CUBE_D * 0.5, sy * CUBE_D * 0.5, 0).applyMatrix4(f.matrixWorld).project(this.cam);
+        const x = (p.x * 0.5 + 0.5) * r.width, y = (-p.y * 0.5 + 0.5) * r.height;
+        box.x0 = Math.min(box.x0, x); box.x1 = Math.max(box.x1, x);
+        box.y0 = Math.min(box.y0, y); box.y1 = Math.max(box.y1, y);
+      });
+      const st = this.panelEl.style;
+      st.left = box.x0 + 'px'; st.top = box.y0 + 'px';
+      st.width = Math.max(0, box.x1 - box.x0) + 'px';
+      st.height = Math.max(0, box.y1 - box.y0) + 'px';
+      st.opacity = String(e);
+      st.pointerEvents = e > 0.9 ? 'auto' : 'none';
+    }
+  }
+
+  /** Art-Flaeche im Vollbild: die ECHTE Kartentextur, nicht die 512er Wuerfelkachel. */
+  drawFocusArt(el) {
+    if (!el || el === this.artEl) return;
+    this.artEl = el;
+    const rec = this.card;
+    const src = rec && ((rec.decal && rec.decal.material.map) || (rec.sheet && rec.sheet.material.map));
+    const img = src && src.image;
+    if (!img || !img.width) return;
+    el.width = img.width; el.height = img.height;
+    el.getContext('2d').drawImage(img, 0, 0);
+  }
+
+  /**
+   * BLASEN im Graben. Keine Partikel-Textur, keine Sprites: kleine Kugeln, die aus nassen Zellen
+   * aufsteigen und an der Oberflaeche verschwinden. Sie starten nur da, wo wirklich Wasser ist —
+   * die Liste kommt aus demselben Nass-Test wie das Fluid-Netz, also kann keine Blase im Trockenen
+   * stehen. Wie stark es blubbert, haengt an der Fuellung: Saeure (gas) sprudelt, Schlacke (fest)
+   * gibt kaum etwas her.
+   */
+  buildBubbles() {
+    const T = this.T, N = 90;
+    const mat = new T.MeshStandardMaterial({
+      color: 0xffffff, roughness: 0.1, metalness: 0, transparent: true, opacity: 0.5,
+      depthWrite: false,
+    });
+    this.bubbleMat = mat;
+    const m = this.bubbles = new T.InstancedMesh(new T.SphereGeometry(1, 8, 6), mat, N);
+    m.frustumCulled = false;
+    m.instanceMatrix.setUsage(T.DynamicDrawUsage);
+    this.bubbleState = Array.from({ length: N }, () => ({ life: -Math.random() * 4 }));
+    this.scene.add(m);
+  }
+
+  tickBubbles(dt) {
+    if (!this.bubbles) return;
+    const T = this.T, s = this.state;
+    const cells = this.wetCells || [];
+    const kind = FLUIDS[s.fluid].kind;
+    const rate = s.fx ? (kind === 2 ? 1.9 : kind === 3 ? 0.35 : 1) : 0;
+    this.bubbles.visible = rate > 0 && cells.length > 0;
+    if (!this.bubbles.visible) return;
+    const d = new T.Object3D();
+    this.bubbleState.forEach((b, i) => {
+      b.life -= dt;
+      if (b.life <= 0) {
+        // Neu setzen: zufaellige nasse Zelle, zufaellige Stelle darin, Steiggeschwindigkeit und
+        // Groesse gestreut — sonst pulsiert der ganze Graben im Gleichtakt.
+        const c = cells[(Math.random() * cells.length) | 0];
+        b.x = c.x + (Math.random() - 0.5) * CELL * 0.8;
+        b.z = c.z + (Math.random() - 0.5) * CELL * 0.8;
+        b.y0 = Math.max(c.top + 0.05, this.fluidY - CELL * 1.2);
+        b.r = 0.07 + Math.random() * 0.13;
+        b.spd = (0.5 + Math.random() * 0.9) * rate;
+        b.life = Math.max(0.25, (this.fluidY - b.y0) / b.spd);
+        b.t = 0;
+        b.wait = Math.random() * (2.6 / rate);
+      }
+      if (b.wait > 0) { b.wait -= dt; d.scale.setScalar(0.0001); d.position.set(0, -900, 0); }
+      else {
+        b.t = (b.t || 0) + dt;
+        const y = b.y0 + b.t * b.spd;
+        const up = Math.max(0, Math.min(1, (this.fluidY - y) / 0.4));   // dicht unter der Oberflaeche platzen
+        d.position.set(b.x + Math.sin(b.t * 3 + i) * 0.06, Math.min(y, this.fluidY - 0.02), b.z);
+        d.scale.setScalar(b.r * (0.5 + up * 0.5));
+        if (y >= this.fluidY) b.life = 0;
+      }
+      d.updateMatrix();
+      this.bubbles.setMatrixAt(i, d.matrix);
+    });
+    this.bubbles.instanceMatrix.needsUpdate = true;
+    const f = FLUIDS[s.fluid];
+    this.bubbleMat.color.setRGB(0.6 + f.col[0] * 0.4, 0.6 + f.col[1] * 0.4, 0.6 + f.col[2] * 0.4);
+  }
+
+  /**
+   * DRONE bei Annaeherung. Synthetisiert, keine Datei: zwei leicht verstimmte Saegezaehne durch
+   * einen Tiefpass (der Grundton der Zone) plus gefiltertes Rauschen (das Wasser). Die Lautstaerke
+   * haengt am Abstand zur Zone, der Filter oeffnet dabei mit — nah wird es praesenter, nicht nur
+   * lauter. Start erst bei der ersten Nutzergeste, sonst blockt der Browser den Kontext.
+   */
+  initAudio() {
+    if (this.audio || !this.state.sound) return;
+    const AC = window.AudioContext || window.webkitAudioContext;
+    if (!AC) return;
+    const ac = new AC();
+    const out = ac.createGain(); out.gain.value = 0; out.connect(ac.destination);
+    const lp = ac.createBiquadFilter(); lp.type = 'lowpass'; lp.frequency.value = 320; lp.Q.value = 0.7;
+    lp.connect(out);
+    const o1 = ac.createOscillator(), o2 = ac.createOscillator();
+    o1.type = o2.type = 'sawtooth';
+    o1.frequency.value = 55; o2.frequency.value = 55 * 1.007;      // Schwebung statt Chorus-Effekt
+    const g1 = ac.createGain(); g1.gain.value = 0.35;
+    o1.connect(g1); o2.connect(g1); g1.connect(lp);
+    // Rauschen aus einem Sekunden-Buffer, in Schleife — billiger als ein ScriptProcessor.
+    const buf = ac.createBuffer(1, ac.sampleRate, ac.sampleRate);
+    const ch = buf.getChannelData(0);
+    for (let i = 0; i < ch.length; i++) ch[i] = (Math.random() * 2 - 1) * 0.5;
+    const noise = ac.createBufferSource(); noise.buffer = buf; noise.loop = true;
+    const bp = ac.createBiquadFilter(); bp.type = 'bandpass'; bp.frequency.value = 640; bp.Q.value = 0.9;
+    const ng = this.noiseGain = ac.createGain(); ng.gain.value = 0.16;
+    noise.connect(bp); bp.connect(ng); ng.connect(out);
+    // Langsamer LFO auf dem Filter: die Drone atmet, statt als Sinuston stehenzubleiben.
+    const lfo = ac.createOscillator(); lfo.frequency.value = 0.07;
+    const lg = ac.createGain(); lg.gain.value = 90;
+    lfo.connect(lg); lg.connect(lp.frequency);
+    [o1, o2, lfo].forEach((n) => n.start());
+    noise.start();
+    this.audio = { ac, out, lp, o1, o2 };
+  }
+
+  tickAudio() {
+    const a = this.audio;
+    if (!a) return;
+    if (!this.state.sound) { a.out.gain.value += (0 - a.out.gain.value) * 0.08; return; }
+    const T = this.T;
+    const c = new T.Vector3(0, ZONE_TOP, ZC);
+    const d = this.cam.position.distanceTo(c);
+    // 130 Einheiten = still, 34 = voll. Dieselben Schwellen wie die Karten-Beruhigung, damit
+    // Bild und Ton denselben Moment meinen.
+    const near = Math.max(0, Math.min(1, (130 - d) / 96));
+    const g = near * near * 0.5;
+    a.out.gain.value += (g - a.out.gain.value) * 0.06;
+    a.lp.frequency.value += (260 + near * 900 - a.lp.frequency.value) * 0.05;
+    if (this.noiseGain) {
+      const wet = (this.wetCells || []).length > 0 ? 1 : 0.25;
+      this.noiseGain.gain.value += (0.05 + near * 0.2 * wet - this.noiseGain.gain.value) * 0.05;
+    }
+    // Grundton folgt der Fuellung: Saeure zischt hoeher, Schlacke brummt tiefer.
+    const k = FLUIDS[this.state.fluid].kind;
+    const base = k === 2 ? 68 : k === 3 ? 44 : 55;
+    a.o1.frequency.value += (base - a.o1.frequency.value) * 0.02;
+    a.o2.frequency.value += (base * 1.007 - a.o2.frequency.value) * 0.02;
+  }
+
+  /** Inhalt der Text-Flaechen — dieselben Felder, die auch die Wuerfelkachel zeigt, nur lesbar. */
+  focusBlocks() {
+    const c = this.cardRaw || {}, s = this.state;
+    if (s.focus === 1) return [
+      { k: 'Titel', v: c.title || c.t || '—' },
+      { k: 'Deck', v: c.deck || c.packId || '—' },
+      { k: 'Rolle', v: c.role || '—' },
+      { k: 'Nummer', v: c.n != null ? '#' + c.n : '—' },
+    ];
+    if (s.focus === 2) return [{ k: 'Power', v: c.power || c.p || '—' }];
+    if (s.focus === 3) return [{ k: 'Lore', v: c.lore || c.l || '—' }];
+    if (s.focus === 4) {
+      const pool = this.pool || [], i = this.cardIdx || 0;
+      const near = [1, 2, 3].map((d) => pool[(i + d) % Math.max(1, pool.length)]).filter(Boolean);
+      return [{ k: 'Tags', v: (c.tags || []).join(' · ') || '—' }]
+        .concat(near.map((n, k) => ({ k: 'Verwandt ' + (k + 1), v: (n.title || n.t || '—') + (n.deck ? ' · ' + n.deck : '') })));
+    }
+    return [];
+  }
+
+  async sendChat() {
+    const text = (this.state.draft || '').trim();
+    if (!text) return;
+    const card = this.cardRaw || {};
+    const msgs = (this.state.chat || []).concat([{ me: true, t: text }]);
+    this.setState({ chat: msgs, draft: '', typing: true });
+    const ask = 'Du BIST die Karte "' + (card.title || card.t || 'unbenannt') + '"'
+      + (card.power ? ' (Power: ' + card.power + ')' : '')
+      + (card.lore ? ' (Lore: ' + card.lore + ')' : '')
+      + '. Antworte in ihrer Stimme, hoechstens drei Saetze, deutsch.\n\n' + text;
+    let answer = '';
+    try {
+      if (window.claude && window.claude.complete) answer = await window.claude.complete(ask);
+    } catch (e) { answer = ''; }
+    this.setState({
+      chat: msgs.concat([{ me: false, t: answer || 'Ich hoere dich, aber meine Stimme liegt noch im Deck.' }]),
+      typing: false,
+    });
+  }
+
+  /** Flaeche i zur Kamera drehen — Rollwinkel so, dass ihr "oben" oben bleibt. */
+  faceToCamera(i) {
+    const T = this.T;
+    // Zwei verkettete setFromUnitVectors kippen um, sobald der zweite Vektor fast antiparallel
+    // liegt (dann waehlt three eine beliebige 180-Grad-Achse und dreht die Flaeche nach HINTEN).
+    // Deshalb direkt aus Basen: Ziel-Basis (rechts, oben, Normale) gegen die lokale Flaechenbasis.
+    const dir = this.cam.position.clone().sub(this.cube.position).normalize();
+    const right = new T.Vector3().crossVectors(new T.Vector3(0, 1, 0), dir).normalize();
+    if (!isFinite(right.x) || right.lengthSq() < 1e-6) right.set(1, 0, 0);
+    const up = new T.Vector3().crossVectors(dir, right).normalize();
+    const world = new T.Matrix4().makeBasis(right, up, dir);
+    const fN = new T.Vector3(...FACE_N[i]), fU = new T.Vector3(...FACE_UP[i]);
+    const fR = new T.Vector3().crossVectors(fU, fN).normalize();
+    const local = new T.Matrix4().makeBasis(fR, fU, fN).transpose();   // orthonormal → transponiert = invers
+    return new T.Quaternion().setFromRotationMatrix(world.multiply(local));
+  }
+
+  tickCube(dt) {
+    if (!this.cube) return;
+    const T = this.T;
+    // FOKUS ist ein ZUSTAND, kein Einmal-Ziel: eine angeklickte Flaeche bleibt vorn, bis der
+    // Nutzer die Kamera bewegt. Ein Ziel-Quaternion allein wurde beim Erreichen geloescht,
+    // danach drehte der Taumel die Wahl sofort wieder weg.
+    // Von Hand gedreht = Hand behaelt die Kontrolle: kein Taumeln, kein Zurueckstellen. Sonst
+    // zieht die Auto-Ausrichtung jede Drehung sofort zurueck (und die Kamera-Autorotation
+    // verschiebt zusaetzlich das Ziel, was es im Spiel so nicht gibt).
+    if (this.manualCube) return;
+    if (this.focusedSlot != null) {
+      this.cube.quaternion.slerp(this.faceToCamera(this.focusedSlot), 1 - Math.pow(0.02, dt));
+      return;
+    }
+    // DISTANZ statt Uhr — dieselbe Logik wie bei der Sky-Card: aus der Ferne taumelt der Wuerfel
+    // um eine gekippte Achse und zeigt alle sechs Flaechen, bei Annaeherung dreht er die
+    // Art-Flaeche zum Spieler und bleibt dort. Eine Idle-Uhr lief genau einmal ab und fror den
+    // Wuerfel danach auf der zufaellig naechsten Achse ein.
+    const dist = this.cam.position.distanceTo(this.cube.position);
+    const far = Math.min(1, Math.max(0, (dist - 30) / 40));
+    if (far > 0.02) {
+      const q = new T.Quaternion().setFromAxisAngle(new T.Vector3(0.35, 1, 0.5).normalize(), dt * 0.3 * far);
+      this.cube.quaternion.multiply(q);
+    }
+    if (far < 0.6) this.cube.quaternion.slerp(this.faceToCamera(0), (1 - Math.pow(0.25, dt)) * (1 - far / 0.6));
+    // Pendeln PLUS Einfahrtiefe: tickCube schreibt y jeden Frame, also muss der Versatz aus
+    // dem Aufdecken hier drin stecken — sonst hebt das Pendeln das Einfahren sofort wieder auf.
+    this.cube.position.y = (this.cubeBaseY != null ? this.cubeBaseY : CUBE_D * 1.05) + Math.sin(this.t * 0.7) * 0.3 + (this.cubeSink || 0);
+  }
+
+  async loadProjector() {
+    const T = this.T;
+    const p = PROJECTORS.find((x) => x.id === this.state.proj) || PROJECTORS[0];
+    if (this.cube) { this.scene.remove(this.cube); this.cube = null; this.cubeFaces = null; }
+    if (p.cube) {
+      if (this.projector) { this.scene.remove(this.projector); this.projector = null; }
+      this.buildCardCube();
+      await this.loadBase();
+      // Wuerfel und Sockel entstehen NACH der ersten Pose — ohne diesen Aufruf stehen sie
+      // ausgefahren da, obwohl die Zone noch verdeckt ist.
+      if (this.pivot) this.poseCard(this.rev || 0);
+      return;
+    }
+    let url = p.url;
+    if (!url && p.repo) {
+      try {
+        const repo = await (await fetch('./asset-repo.json')).json();
+        const a = (repo.assets || []).find((x) => x.name === p.repo);
+        if (a) url = a.ghUrl || (repo.rawBase + a.pack + '/' + a.name + '.glb');
+      } catch (e) { /* fällt unten auf den Platzhalter */ }
+    }
+    if (this.projector) { this.scene.remove(this.projector); this.projector = null; }
+    let obj = null;
+    if (url) {
+      obj = await new Promise((res) => new this.GLTFLoader().load(url, (g) => res(g.scene), undefined, () => res(null)));
+    }
+    if (!obj) {
+      // Platzhalter, damit der Beam immer einen Fuss hat, auch wenn das GLB fehlt.
+      obj = new T.Mesh(new T.BoxGeometry(4, 4, 4), new T.MeshStandardMaterial({ color: 0x9a8a76, roughness: 0.8 }));
+    }
+    const box = new T.Box3().setFromObject(obj);
+    const size = new T.Vector3(); box.getSize(size);
+    const k = p.h / Math.max(0.001, size.y);
+    obj.scale.setScalar(k);
+    // 0.05 ueber der Zonenkante: bodengleich platziert z-fightet die Unterseite mit dem Plateau
+    // und flackert bei jeder Kamerabewegung.
+    this.projOffY = -box.min.y * k + 0.05;
+    this.anchorTops();
+    obj.position.set(this.projX || 0, this.projBaseY, ZC);
+    obj.traverse((n) => { if (n.isMesh) n.castShadow = true; });
+    this.projector = obj;
+    this.scene.add(obj);
+    if (this.pivot) this.poseCard(this.rev || 0);
+  }
+
+  /** Steinsockel unter dem Wuerfel — das Hexagon-Tile aus dem Kit, wie in Cube Academy. */
+  async loadBase() {
+    const T = this.T;
+    if (this.base) return;
+    try {
+      const repo = await (await fetch('./asset-repo.json')).json();
+      const a = (repo.assets || []).find((x) => x.name === 'hole' && x.pack === 'GLB_pirate')
+        || (repo.assets || []).find((x) => x.name === 'stone' && x.pack === 'GLB_hexagon_kit');
+      if (!a) return;
+      const url = a.ghUrl || (repo.rawBase + a.pack + '/' + a.name + '.glb');
+      const obj = await new Promise((res) => new this.GLTFLoader().load(url, (g) => res(g.scene), undefined, () => res(null)));
+      if (!obj) return;
+      const box = new T.Box3().setFromObject(obj), size = new T.Vector3(); box.getSize(size);
+      const k = (CUBE_D * 1.9) / Math.max(0.001, size.x);   // Sockel deutlich breiter als der Wuerfel
+      obj.scale.setScalar(k);
+      this.base = obj;
+      this.baseOffY = -box.min.y * k + 0.06;
+      this.anchorTops();
+      obj.position.set(this.projX || 0, this.baseBaseY, ZC);
+      this.scene.add(obj);
+      // INNENBODEN MESSEN, nicht schaetzen: das GLB ist ein geschlossener Hex-Trichter, kein
+      // Durchloch. Ein Strahl von oben liefert die Hoehe, auf der Pfuetze und Cap liegen muessen —
+      // an baseBaseY gehaengt lagen sie unter der Geometrie und waren unsichtbar.
+      obj.updateMatrixWorld(true);
+      const rc = new T.Raycaster();
+      rc.set(new T.Vector3(this.projX || 0, this.baseBaseY + 40, ZC), new T.Vector3(0, -1, 0));
+      const hit = rc.intersectObject(obj, true)[0];
+      this.holeFloorOff = hit ? hit.point.y - this.baseBaseY : 0.06;
+      // Die Innenwand ist vom Licht abgewandt und bekommt fast nur Ambient — sie las als
+      // schwarzes Nichts. Ein Hauch Eigenleuchten in Zonenfarbe macht die Mulde lesbar.
+      obj.traverse((n) => {
+        if (n.isMesh && n.material && n.material.emissive) {
+          n.material.emissive = new T.Color(0x4a3a2c);
+          n.material.emissiveIntensity = 0.55;
+        }
+      });
+    } catch (e) { /* ohne Sockel schwebt der Wuerfel eben frei */ }
+  }
+
+  async applyZoneLook() {
+    const T = this.T, s = this.state, U = this.zoneMat.userData.kfb;
+    const tex = await this.loadTex(TEXBASE + s.tex + '/' + s.tex + '_diffuse.jpg');
+    U.uKfbPhoto.value = tex;
+    U.uKfbPhotoStr.value = tex ? 0.22 + s.wear * 0.55 : 0;
+    U.uKfbPhotoScale.value = s.scale;
+    U.uKfbGrain.value = 0.04 + s.wear * 0.2;
+    U.uKfbSeam.value = 0;   // Abnutzung darf die Fuge NICHT wiederbringen — sie ist das Zellraster
+    U.uKfbSeamW.value = 0;
+    this.zoneMat.roughness = 0.5 + s.wear * 0.45;
+    const st = STATUS[s.zoneStatus], col = new T.Color();
+    const paper = new T.Color(0.90, 0.85, 0.74).lerp(new T.Color(0.40, 0.32, 0.25), s.wear * 0.7);
+    const rim = new T.Color(st.col[0], st.col[1], st.col[2]);
+    this.zoneCells.forEach((c, k) => {
+      col.copy(c.edge ? paper.clone().lerp(rim, 0.7) : paper);
+      col.offsetHSL(0, 0, (h2(Math.round(c.x), Math.round(c.z), 17) - 0.5) * 0.05);
+      this.zoneMesh.setColorAt(k, col);
+    });
+    this.zoneMesh.instanceColor.needsUpdate = true;
+  }
+
+  set(patch) {
+    this.setState(patch, () => {
+      const s = this.state;
+      if (!this.r) return;
+      if (patch.height != null || patch.amp != null) {
+        this.wc.params.heightScale = s.height;
+        this.wc.params.motionAmplitude = s.amp;
+        this.terrain.setWorldContext(this.wc);
+      }
+      if (patch.flow != null) this.terrain.setFlow(s.flow);
+      if (patch.moat != null) { this.layoutMoat(); this.fluidU.uMoat.value = s.moat; }
+      if (patch.river != null || patch.riverW != null) { this._river = null; this.layoutMoat(); }
+      if (patch.fluid) {
+        const f = FLUIDS[s.fluid];
+        this.fluidU.uCol.value.setRGB(f.col[0], f.col[1], f.col[2]);
+        if (this.holePuddle) this.holePuddle.material.color.setRGB(f.col[0], f.col[1], f.col[2]);
+      }
+      // Zonenhoehe geaendert = Deck neu setzen: seine Blatt-Matrizen sind gebacken und wissen
+      // sonst nichts von der neuen Oberkante.
+      // Stufen und Absenkung verschieben den Zonenboden — und damit die Wasserlinie, den
+      // Wannenboden und das Ufer. Ohne layoutMoat() bleibt die Wanne stehen, wo sie gebaut wurde,
+      // und das Wasser sinkt unter ihren Boden (der Graben lief trocken).
+      if (patch.steps != null || patch.sink != null) { this.layoutZone(); this.layoutMoat(); this.buildStack(); this.poseCard(this.rev || 0); }
+      if (patch.tex != null || patch.wear != null || patch.scale != null || patch.zoneStatus) this.applyZoneLook();
+      if (patch.steps != null || patch.sink != null) this.layoutFluid();
+      if (patch.holo != null) this.holoU.uGain.value = s.holo;
+      if (patch.deck != null) { this.buildStack(); this.poseCard(this.rev || 0); }
+      if (patch.off != null) { this.projX = s.off * ZW; }
+      if (patch.proj) this.loadProjector();
+      if (patch.spin != null) this.ctr.autoRotate = s.spin;
+      if (patch.dockOpen != null) this.onResize();
+    });
+  }
+
+  /**
+   * AUFDECKEN. Die verdeckte Karte liegt FLACH auf dem Zonenboden, Rueckseite nach oben, und
+   * klappt um ihre Unterkante auf. Drei Zutaten, die es glaubhaft machen:
+   *   1. Scharnier statt Mittelachse — der Pivot sitzt auf der Unterkante (siehe placeCard).
+   *   2. Das Blatt BIEGT sich beim Aufklappen: der obere Rand haengt nach, weil Papier Gewicht hat.
+   *      Dafuer bekommen Blatt, Tusche und Rueckseite ein Segment-Raster und einen Bend-Uniform.
+   *   3. Erst wenn die Karte oben steht, erscheinen Wuerfel und Sockel — die Zone oeffnet sich MIT ihr.
+   */
+  prepReveal(rec) {
+    const T = this.T;
+    const bend = this.bendU = { uBend: { value: 0 } };
+    const seg = (m) => {
+      if (m.geometry) m.geometry.dispose();
+      m.geometry = new T.PlaneGeometry(rec.width, rec.height, 14, 10);
+    };
+    const patch = (mat) => {
+      mat.onBeforeCompile = (sh) => {
+        Object.assign(sh.uniforms, bend);
+        sh.vertexShader = sh.vertexShader
+          .replace('void main() {', 'uniform float uBend;\nvoid main() {')
+          .replace('#include <begin_vertex>', [
+            '#include <begin_vertex>',
+            // uv.y ist 0 an der Unterkante (Scharnier) und 1 oben: quadratisch heisst,
+            // die Biegung sitzt oben und das Scharnier bleibt ruhig.
+            'float bw = uv.y * uv.y;',
+            'transformed.z -= uBend * bw;',
+            'transformed.y -= uBend * bw * 0.3;',
+          ].join('\n'));
+      };
+      mat.needsUpdate = true;
+    };
+    seg(rec.sheet); seg(rec.decal);
+    patch(rec.mat); patch(rec.dmat);
+    // Rueckseite: eigenes Blatt, um 180 Grad gedreht, auf derselben Silhouette wie die Vorderseite.
+    const bmat = this.backMat = new T.MeshBasicMaterial({
+      map: this.backTex || null, color: this.backTex ? 0xffffff : 0xcdbf9e,
+      alphaMap: rec.mat.alphaMap, alphaTest: 0.5, toneMapped: false, side: T.FrontSide,
+    });
+    patch(bmat);
+    const bgeo = new T.PlaneGeometry(rec.width, rec.height, 14, 10);
+    // Sichtbar ist die Rueckseite NUR im flachen Zustand — aufgerichtet schaut man auf die
+    // Vorderseite. Flach liegt die Karte mit ihrer OBERKANTE zum Spieler (das Scharnier ist die
+    // hintere Unterkante), also stuende die Rueckseite dort auf dem Kopf. u UND v gedreht ist
+    // eine 180-Grad-Drehung in der Flaeche — keine Spiegelung, die Schrift bleibt lesbar.
+    const uv = bgeo.getAttribute('uv');
+    for (let i = 0; i < uv.count; i++) { uv.setX(i, 1 - uv.getX(i)); uv.setY(i, 1 - uv.getY(i)); }
+    uv.needsUpdate = true;
+    const back = this.backMesh = new T.Mesh(bgeo, bmat);
+    back.rotation.y = Math.PI;
+    back.position.z = -0.06;
+    back.frustumCulled = false;
+    rec.group.add(back);
+    this.rev = 0; this.revDir = 0;
+    this.buildStack();
+    this.poseCard(0);
+    this.setState({ reveal: 'verdeckt' });
+  }
+
+  /** Eine Funktion, ein Zustand: p 0 = flach und verdeckt, 1 = oben und offen. */
+  poseCard(p) {
+    if (!this.pivot || !this.card) return;
+    const ease = (x) => x * x * (3 - 2 * x);
+    const h = this.card.height;
+    const flip = ease(Math.min(1, p / 0.6));
+    const rise = ease(Math.max(0, (p - 0.42) / 0.58));
+    // Skalierung mitfuehren: das Blatt liegt in Handgroesse auf dem Deck und wird auf dem Weg
+    // nach oben zur Projektion. h ist die Projektionshoehe, gerechnet wird mit h*scale.
+    const sc = PHYS + (1 - PHYS) * rise;
+    const xDeck = ZW * DECK_X, zDeck = ZC + ZD * DECK_Z;
+    const yDeck = (this.topDeck != null ? this.topDeck : ZONE_TOP) + 0.3 + (this.stackH || 0);
+    this.pivot.scale.setScalar(sc);
+    this.pivot.rotation.set(Math.PI / 2 * (1 - flip), 0, 0);
+    this.pivot.position.set(
+      xDeck * (1 - rise),
+      yDeck + (this.cardY - h / 2 - yDeck) * rise,
+      (zDeck - h * PHYS / 2) + (ZC - (zDeck - h * PHYS / 2)) * rise,
+    );
+    this.bendU.uBend.value = Math.sin(Math.PI * Math.min(1, p / 0.6)) * h * 0.16 * (1 - rise * 0.7);
+    // EIN-/AUSFAHREN statt Ein-/Ausblenden: unter der Plateaukante ist alles im Boden verborgen,
+    // also braucht es keinen Sichtbarkeits-Sprung — und nichts sticht durch die liegende Karte.
+    // GESTAFFELTE EINSAETZE statt eines gemeinsamen Fensters: vorher fuhren Sockel, Loch,
+    // Wuerfel und Projektor auf demselben `open` los und kamen gleichzeitig an — das las als
+    // ein Ruck. Jedes Teil hat jetzt sein eigenes Fenster, in Reihenfolge der Buehne:
+    // Sockel (Grund) → Loch → Projektor → Wuerfel (Hauptdarsteller zuletzt).
+    const win = (a, b) => ease(Math.min(1, Math.max(0, (p - a) / (b - a))));
+    const upBase = win(0.14, 0.46), upCap = win(0.18, 0.5), upProj = win(0.22, 0.56), upCube = win(0.26, 0.66);
+    this.cubeSink = -(1 - upCube) * CUBE_D * 2.8;
+    if (this.cube) this.cube.position.y = this.cubeBaseY + this.cubeSink;
+    if (this.base) this.base.position.y = this.baseBaseY - (1 - upBase) * (CUBE_D * 1.4);
+    if (this.holeCap) {
+      const floor = (this.baseBaseY || 0) + (this.holeFloorOff != null ? this.holeFloorOff : 0.06);
+      this.holeCap.position.set(this.projX || 0, floor + 0.02 - (1 - upCap) * (CUBE_D * 1.4), ZC);
+      // Deckkraft statt Sichtbarkeits-Sprung — ein harter Wechsel auf halber Fahrt blitzt.
+      this.holeCap.material.opacity = Math.min(1, upCap * 3);
+      this.holeCap.visible = upCap > 0.02;
+      if (this.holePuddle) {
+        // Nie unter der grossen Ebene: zwei Wasseroberflaechen verschiedener Hoehe an derselben
+        // Stelle widersprechen sich, und die groessere verdeckt die kleinere einfach.
+        const py = Math.max(this.holeCap.position.y + 0.05, (this.fluidY || -1e9) + 0.04);
+        this.holePuddle.position.set(this.holeCap.position.x, py, ZC);
+        this.holePuddle.material.opacity = 0.86 * Math.min(1, upCap * 3);
+        this.holePuddle.visible = this.holeCap.visible;
+      }
+    }
+    if (this.projector) this.projector.position.y = this.projBaseY - (1 - upProj) * (CUBE_D * 2.2);
+    // Das Wasser im Loch wird SEHR FRUEH gesetzt, waehrend der Sockel noch tief im Boden steckt:
+    // der Umbau des Fluid-Netzes ist ein Sprung, und der darf nur passieren, solange ihn niemand
+    // sehen kann. Vorher lag die Schwelle bei 0.6 — mitten im sichtbaren Aufbau.
+    const wantHole = p > 0.05;
+    if (this.holeOpen !== wantHole) { this.holeOpen = wantHole; this.layoutFluid(); }
+    // Das oberste Deckblatt ruecktt nach, sobald das echte Blatt abhebt — es schiebt sich aus dem
+    // Stapel heraus statt aufzuploppen.
+    if (this.stackTop) {
+      const fill = ease(Math.min(1, Math.max(0, (rise - 0.04) / 0.26)));
+      this.stackTop.visible = fill > 0.01;
+      this.stackTop.position.y = this.stackTopY - (1 - fill) * SUB * 0.9;
+      this.stackTop.material.opacity = fill;
+    }
+    this.setCardSide();
+  }
+
+  /**
+   * Vorder- oder Rueckseite, nie beide. Entschieden wird am WELT-NORMALEN-Vorzeichen: der
+   * Wechsel passiert dadurch genau dann, wenn das Blatt von der Kante zu sehen ist — sichtbar
+   * ist er nie. Vorher lagen Blatt und Rueckseite gleichzeitig da: das las als zweite Karte.
+   */
+  setCardSide() {
+    const T = this.T, rec = this.card;
+    if (!rec || !this.backMesh) return;
+    rec.group.updateMatrixWorld();
+    const n = new T.Vector3(0, 0, 1).applyQuaternion(rec.group.getWorldQuaternion(new T.Quaternion()));
+    const toCam = this.cam.position.clone().sub(rec.group.getWorldPosition(new T.Vector3()));
+    const front = n.dot(toCam) > 0;
+    rec.sheet.visible = front; rec.decal.visible = front;
+    this.backMesh.visible = !front;
+  }
+
+  /**
+   * DAS DECK. Cartoon-realistisch heisst hier: gleiche Blaetter, aber jedes einen Hauch versetzt
+   * und verdreht — die Unregelmaessigkeit sitzt in den Raendern, nicht in der Form. Die Hoehe
+   * zaehlt in D6-Stufen wie das Terrain, damit 1 bis 6 Stufen verschieden dicke Decks ergeben.
+   */
+  buildStack() {
+    const T = this.T, s = this.state;
+    if (this.stack) { this.scene.remove(this.stack); this.stack.geometry.dispose(); this.stack = null; }
+    if (this.stackTop) { this.scene.remove(this.stackTop); this.stackTop = null; }
+    if (!this.card) return;
+    const w = this.card.width * PHYS, h = this.card.height * PHYS;
+    const cards = Math.max(1, Math.round(s.deck * SUB / CARD_T));
+    this.stackH = cards * CARD_T * 0.97;
+    const geo = new T.BoxGeometry(w, CARD_T, h);
+    const mat = new T.MeshStandardMaterial({ color: 0xe4d7b8, roughness: 0.95, metalness: 0 });
+    const mesh = this.stack = new T.InstancedMesh(geo, mat, cards);
+    mesh.castShadow = mesh.receiveShadow = true;
+    const d = new T.Object3D(), col = new T.Color();
+    const xDeck = ZW * DECK_X, zDeck = ZC + ZD * DECK_Z;
+    for (let i = 0; i < cards; i++) {
+      const r1 = (Math.sin(i * 12.9898) * 43758.5453) % 1, r2 = (Math.sin(i * 78.233) * 43758.5453) % 1;
+      // Jedes fuenfte Blatt steht deutlicher heraus — sonst liest der Stapel als ein Block.
+      const out = (i % 5 === 2) ? 2.4 : 1;
+      d.position.set(xDeck + r1 * 0.5 * out, (this.topDeck != null ? this.topDeck : ZONE_TOP) + 0.3 + i * CARD_T * 0.97, zDeck + r2 * 0.5 * out);
+      d.rotation.set(0, r1 * 0.05 * out, 0);
+      d.updateMatrix();
+      mesh.setMatrixAt(i, d.matrix);
+      col.setRGB(0.90 + r2 * 0.09, 0.86 + r1 * 0.08, 0.74 + r2 * 0.10);
+      mesh.setColorAt(i, col);
+    }
+    mesh.instanceMatrix.needsUpdate = true; mesh.instanceColor.needsUpdate = true;
+    this.scene.add(mesh);
+    // Oberstes Blatt: die KFB-Rueckseite. Sie liegt frei, sobald die aufgedeckte Karte weg ist.
+    const tgeo = new T.PlaneGeometry(w, h);
+    const top = this.stackTop = new T.Mesh(tgeo, new T.MeshStandardMaterial({
+      map: this.backTex || null, color: this.backTex ? 0xffffff : 0xd8cba8, roughness: 0.9,
+      transparent: true, opacity: 0,
+    }));
+    top.rotation.x = -Math.PI / 2;
+    this.stackTopY = (this.topDeck != null ? this.topDeck : ZONE_TOP) + 0.3 + this.stackH + 0.02;
+    top.position.set(xDeck, this.stackTopY, zDeck);
+    top.visible = false;
+    this.scene.add(top);
+  }
+
+  tickReveal(dt) {
+    if (this.revDir === 0) return;
+    this.rev = Math.min(1, Math.max(0, this.rev + this.revDir * dt / 1.7));
+    this.poseCard(this.rev);
+    if (this.rev === 0 || this.rev === 1) {
+      this.revDir = 0;
+      this.setState({ reveal: this.rev === 1 ? 'offen' : 'verdeckt' });
+    }
+  }
+
+  /**
+   * ZERO-G: die Sky-Card driftet auf drei Achsen und dreht sich traege zur Kamera, damit sie
+   * immer lesbar bleibt. Bei ANNAEHERUNG nimmt beides ab — aus der Naehe soll sie ruhig stehen.
+   */
+  tickCard(dt) {
+    const T = this.T, g = this.pivot;
+    // Aufdecken bei Annaeherung: wer zur Zone fliegt, loest sie aus. Kein Knopf im Spiel.
+    if (this.state.autoReveal && this.rev === 0 && this.revDir === 0
+        && this.cam.position.distanceTo(new T.Vector3(0, ZONE_TOP, ZC)) < 62) this.revDir = 1;
+    if (this.rev < 1) { this.tickReveal(dt); return; }
+    this.tickReveal(dt);
+    const dist = this.cam.position.distanceTo(g.position);
+    const calm = Math.min(1, Math.max(0, (dist - 34) / 46));      // 0 = nah und ruhig, 1 = fern und driftend
+    const t2 = this.t;
+    g.position.set(
+      Math.sin(t2 * 0.23) * 2.2 * calm,
+      this.cardY - this.card.height / 2 + Math.sin(t2 * 0.31 + 1.2) * 1.5 * calm,
+      ZC + Math.sin(t2 * 0.17 + 2.4) * 1.8 * calm,
+    );
+    // Blick zur Kamera, aber nur der Gierwinkel und stark gedaempft: kein Nachzieh-Effekt.
+    const dir = this.cam.position.clone().sub(g.position); dir.y = 0;
+    const yaw = Math.atan2(dir.x, dir.z);
+    const q = new T.Quaternion().setFromEuler(new T.Euler(
+      Math.sin(t2 * 0.27) * 0.045 * calm, yaw, Math.sin(t2 * 0.19 + 0.7) * 0.05 * calm,
+    ));
+    g.quaternion.slerp(q, 1 - Math.pow(0.35, dt));
+    this.setCardSide();
+  }
+
+  async buildCard() {
+    const T = this.T;
+    this.cardY = 34;
+    try {
+      const mod = await import('./cardbuilder/kfb-card-builder.js');
+      // REGISTRY-QUELLE: `kfb-index.json` traegt die gemessenen `cardGrid`-Zahlen (sechs pro Deck,
+      // inkl. gapX/gapY), `index.json` ist der aeltere Deploy-Stand ohne sie. Erst die Quelle, dann
+      // der Fallback — so schneidet der Builder richtig, ohne dass eine Zahl in JS landet
+      // (SSOT_KFB_CardBuilder_PDF §4: cardGrid gehoert ausschliesslich ins Manifest).
+      const KFB_IDX = 'https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/kfb/';
+      const cb = this.cb = mod.createCardBuilder({
+        THREE: T, indexUrl: KFB_IDX + 'kfb-index.json', localIndex: KFB_IDX + 'index.json',
+      });
+      this.pool = (await cb.pool()) || [];
+      this.buildBaseline();
+      // UEBERGABE AUS DER REGISTRY: liegt dort eine Karte an, startet das Lab mit ihrer Zone statt
+      // mit der ersten des Pools. Der Schluessel wird danach verworfen — ein Reload soll nicht
+      // ewig auf derselben Zone haengen.
+      try {
+        const raw = localStorage.getItem('kfb-zone-open');
+        if (raw) {
+          localStorage.removeItem('kfb-zone-open');
+          const want = JSON.parse(raw);
+          const i = this.pool.findIndex((c) => c.packId === want.packId && c.n === want.n);
+          if (i >= 0) this.cardIdx = i;
+        }
+      } catch (e) {}
+      // Kartenrueckseite fuer die kommende Aufdeck-Animation vorladen (lowrez reicht in 3D).
+      this.loadTex('https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/kfb/KayfaBizarro_Card_Backside_01_lowrez.png')
+        .then((t2) => {
+          this.backTex = t2;
+          if (this.backMat && t2) { this.backMat.map = t2; this.backMat.color.set(0xffffff); this.backMat.needsUpdate = true; }
+          if (this.stackTop && t2) { this.stackTop.material.map = t2; this.stackTop.material.color.set(0xffffff); this.stackTop.material.needsUpdate = true; }
+        });
+      this.cardIdx = 0;
+      this.placeCard();
+    } catch (e) {
+      this.setState({ cardName: 'CardBuilder nicht erreichbar', cardMeta: String(e).slice(0, 60) });
+    }
+  }
+
+  placeCard() {
+    if (!this.pool || !this.pool.length) return;
+    const card = this.pool[this.cardIdx % this.pool.length];
+    if (this.pivot) { this.scene.remove(this.pivot); this.card.dispose && this.card.dispose(); }
+    const rec = this.cb.make(card, {
+      width: ZW * 0.92,
+      // Wenn der PDF-Quadrant landet, tauscht der Builder seine Blatt-Textur aus — die
+      // Wuerfelflaeche muss danach neu gezeichnet werden, sonst zeigt sie das Textblatt weiter.
+      onArt: () => this.refreshArtFace(),
+    });
+    // SCHARNIER: die Karte haengt in einem Pivot, dessen Ursprung auf ihrer UNTERKANTE liegt.
+    // Nur so klappt sie um die Kante auf statt um ihre Mitte zu kippen.
+    const pivot = this.pivot = new this.T.Group();
+    rec.group.position.set(0, rec.height / 2, 0);
+    pivot.add(rec.group);
+    this.scene.add(pivot);
+    this.card = rec;
+    this.prepReveal(rec);
+    this.cardRaw = card;
+    // FELDNAMEN: der Pool liefert n/title/power/lore/role, cardSemanticVector erwartet
+    // cardNumber/cardName/power/lore + Rolle. Vorher stand hier die Kompaktform (t/p/l/g) —
+    // damit war der Vektor leer und Biome, Palette und Seed haben sich pro Karte NIE geaendert.
+    this.cardData = this.seedCard(card);
+    if (this.cubeFaces) this.cubeFaces.forEach((f, i) => {
+      if (f.material.map) f.material.map.dispose();
+      f.material.map = this.faceTexture(FACE_KIND[i], card);
+      f.material.needsUpdate = true;
+    });
+    // Neue Karte = neue Eintritts-Pose: wieder die Art-Flaeche nach vorn.
+    if (this.cube) this.focusedSlot = 0;   // neue Karte = Art-Flaeche vorn, bis der Nutzer dreht
+    this.setState({
+      cardName: card.t || card.title || card.name || ('Karte ' + card.n),
+      cardMeta: [card.packId, card.n != null ? '#' + card.n : '', card.role, rec.artState].filter(Boolean).join(' · '),
+    });
+    this.applySeed();
+  }
+
+  /** Pool-Karte → Feldnamen, die world-context.js liest. */
+  seedCard(c) {
+    if (!c) return null;
+    return {
+      cardNumber: c.n, cardName: c.title || c.t || c.name,
+      power: c.power || c.p || '', lore: c.lore || c.l || '',
+      gradeReason: c.deck || '', role: c.role,
+    };
+  }
+
+  /** Der Drei-Schlag: die aktuelle Karte dominiert, die zwei naechsten biegen die Welt. */
+  triplet() {
+    const p = this.pool || [];
+    if (!p.length) return { current: null };
+    const i = this.cardIdx || 0;
+    return {
+      current: this.seedCard(p[i % p.length]),
+      next: this.seedCard(p[(i + 1) % p.length]),
+      nextNext: this.seedCard(p[(i + 2) % p.length]),
+    };
+  }
+
+  /**
+   * KARTEN-SEED STEUERT DIE ZONE. Kein eigenes Regelwerk: der Vektor kommt aus
+   * cardSemanticVector (8 Dimensionen, deterministisch aus Titel/Power/Lore + Deck-Rolle),
+   * die Zone liest ihn nur aus. Gleiche Karte → gleiche Zone, immer.
+   */
+  /**
+   * BASISLINIE aus dem ganzen Pool. Ohne sie gewinnt immer dieselbe Dimension: `power` ist in
+   * jedem Kartentext hoch (die Lexika teilen sich Alltagsverben), also waere jede Zone `heroic`.
+   * Entscheidend ist nicht, welche Dimension GROSS ist, sondern welche fuer DIESE Karte
+   * AUFFAELLIG ist — deshalb der Abstand zum Mittel, nicht der Rohwert.
+   */
+  buildBaseline() {
+    const p = this.pool || [];
+    if (!p.length || !this.WC.cardSemanticVector) return;
+    const sum = {}; let n = 0;
+    p.forEach((c) => {
+      const cd = this.seedCard(c);
+      const v = this.WC.cardSemanticVector(cd, cd.role);
+      Object.keys(v).forEach((k) => { sum[k] = (sum[k] || 0) + v[k]; });
+      n++;
+    });
+    const mean = {}; Object.keys(sum).forEach((k) => { mean[k] = sum[k] / n; });
+    this.baseline = mean;
+  }
+
+  /** Abstand zum Pool-Mittel, auf 0..1 gespreizt. 0.5 = durchschnittlich. */
+  dev(k) {
+    const v = (this.wc && this.wc.vector) || {}, m = this.baseline || {};
+    const x = v[k] || 0, mu = m[k] != null ? m[k] : 0.35;
+    return Math.max(0, Math.min(1, 0.5 + (x - mu) * 2.6));
+  }
+
+  seedMode() {
+    return [['tragic', this.dev('melancholy')], ['comic', this.dev('humor')], ['absurd', this.dev('chaos')],
+      ['heroic', this.dev('power')], ['mystical', this.dev('wonder')], ['forbidden', this.dev('threat')]]
+      .sort((a, b) => b[1] - a[1])[0][0];
+  }
+
+  seedSignature() {
+    // SIGNATUR-SEED AUS DER KARTENIDENTITAET, nicht aus wc.seed: wc.seed haengt via joinSeeds am
+    // Story-Modus, und der wird erst aus dem Vektor abgeleitet — waehrend der Ableitung steht dort
+    // noch der Modus der VORHERIGEN Karte. Damit war die Texturwahl von der Vorgeschichte abhaengig.
+    const c = this.cardRaw || {};
+    const seed = this.WC.joinSeeds
+      ? this.WC.joinSeeds('kfb-card-zone', String(c.packId || 'ø'), String(c.n != null ? c.n : 0))
+      : h2(c.n || 0, 7, 0x5EED) * 4294967296;
+    const g = (k) => this.dev(k);
+    const cl = (x) => Math.max(0, Math.min(1, x));
+    // Abnutzung ist die Protopia/Dystopia-Achse: Bedrohung und Schwermut machen dreckig,
+    // Staunen und Humor machen sauber. Die Deck-Rolle steckt via ROLE_BIAS schon im Vektor.
+    const wear = cl(0.42 + g('threat') * 0.5 + g('melancholy') * 0.3 + g('chaos') * 0.16 - g('wonder') * 0.42 - g('humor') * 0.3);
+    const fluid = [['saeure', g('threat')], ['oel', g('melancholy')], ['wasser', g('wonder')],
+      ['bubblegum', g('humor')], ['schlacke', g('chaos')]].sort((a, b) => b[1] - a[1])[0][0];
+    const CLEAN = ['Cardboard003', 'Chipboard007', 'whitewashed_brick'];
+    const DIRTY = ['rusty_metal_04', 'PaintedMetal017', 'Leaking018A', 'Tape005', 'RoadLines019B', 'ScrewSet001'];
+    const bank = wear < 0.45 ? CLEAN : DIRTY;
+    const p = (this.wc && this.wc.params) || {};
+    return {
+      fluid, wear: +wear.toFixed(2), tex: bank[(seed >>> 7) % bank.length],
+      moat: 2 + Math.round(g('chaos') * 3),
+      steps: +(0.25 + g('chaos') * 1.05).toFixed(2),
+      sink: Math.round(g('threat') * 2),
+      deck: 1 + Math.round(g('lore') * 5),
+      // heightScale und motionAmplitude NICHT hier: sie kommen aus wc.params und die haengen
+      // am Modus. rebuildWorld setzt sie aus dem endgueltigen Kontext.
+    };
+  }
+
+  applySeed() {
+    if (!this.terrain || !this.WC) return;
+    // Zwei Durchgaenge: der Vektor haengt nicht am Modus, die PALETTE aber schon — also erst
+    // den Vektor holen, daraus den Story-Modus, dann die Welt endgueltig bauen.
+    this.wc = this.WC.makeWorldContext({ cardTriplet: this.triplet(), storyMode: this.state.mode, seeds: ['card-zone-lab'] });
+    const mode = this.seedMode();
+    const sig = this.seedSignature();
+    const top = ['power', 'lore', 'chaos', 'wonder', 'threat', 'humor', 'melancholy']
+      .map((k) => [k, this.dev(k)]).sort((a, b) => b[1] - a[1]).slice(0, 2)
+      .map(([k, x]) => k + ' ' + x.toFixed(2)).join(' · ');
+    const patch = Object.assign({ mode, seedInfo: top }, this.state.seedRules ? sig : {});
+    this.setState(patch, () => this.rebuildWorld());
+  }
+
+  /** Welt neu aus dem aktuellen Kontext — Terrain, Palette, Himmel, Zone, Graben, Deck. */
+  rebuildWorld() {
+    const T = this.T, s = this.state;
+    const wc = this.wc = this.WC.makeWorldContext({ cardTriplet: this.triplet(), storyMode: s.mode, seeds: ['card-zone-lab'] });
+    // Hoehe und Hub kommen unter Seed-Herrschaft aus dem ENDGUELTIGEN Kontext (sie sind
+    // modus-abhaengig), sonst vom Regler.
+    const seeded = s.seedRules;
+    const hs = seeded ? +(wc.params.heightScale != null ? wc.params.heightScale : 8).toFixed(1) : s.height;
+    const ma = seeded ? +(wc.params.motionAmplitude != null ? wc.params.motionAmplitude : 0.3).toFixed(2) : s.amp;
+    wc.params.heightScale = hs;
+    wc.params.motionAmplitude = ma;
+    wc.params.fogDensity = 0.0055;
+    if (seeded && (hs !== s.height || ma !== s.amp)) this.state.height = hs, this.state.amp = ma;
+    this.terrain.setWorldContext(wc);
+    this.terrain.setPalette(wc.palette);
+    const sky = new T.Color(wc.palette[0][0], wc.palette[0][1], wc.palette[0][2]).lerp(new T.Color(0x0e0c0a), 0.55);
+    this.scene.background = sky;
+    this.terrain.setFog([sky.r, sky.g, sky.b], wc.params.fogDensity);
+    this.applyCarve();
+    const f = FLUIDS[s.fluid];
+    if (this.fluidU) { this.fluidU.uCol.value.setRGB(f.col[0], f.col[1], f.col[2]); this.fluidU.uMoat.value = s.moat; }
+    if (this.holePuddle) this.holePuddle.material.color.setRGB(f.col[0], f.col[1], f.col[2]);
+    this.layoutZone(); this.layoutMoat(); this.layoutFluid(); this.applyZoneLook();
+    this.buildStack(); this.poseCard(this.rev || 0);
+    this.setState({ status: wc.storyModeName + ' · Biome ' + wc.biome + ' · Seed ' + wc.seed, height: hs, amp: ma });
+  }
+
+  chip(active, extra) {
+    return 'border:1px solid ' + (active ? '#d8a24a' : '#3a332b') + ';background:' + (active ? '#2a2013' : '#1c1915')
+      + ';color:' + (active ? '#f0c274' : '#9b9084') + ";font-family:'Barlow Condensed',sans-serif;font-size:11.5px;font-weight:600;letter-spacing:0.05em;padding:3px 8px;border-radius:3px;cursor:pointer;text-transform:uppercase;" + (extra || '');
+  }
+
+  renderVals() {
+    const s = this.state, num = (v, d) => Number(v).toFixed(d);
+    this._cref = this._cref || ((el) => { if (el && el !== this.canvas) { this.canvas = el; this.boot(); } });
+    return {
+      canvasRef: this._cref, status: s.status, dockOpen: s.dockOpen,
+      dockStyle: 'position:absolute;right:12px;top:12px;bottom:12px;width:' + (s.dockOpen ? '238px' : '38px')
+        + ';box-sizing:border-box;display:flex;flex-direction:column;gap:10px;background:#1a1713e6;border:1px solid #2e2822;border-radius:6px;padding:10px;backdrop-filter:blur(6px)',
+      dockToggle: this.chip(false, 'align-self:flex-end;padding:2px 7px'),
+      dockIcon: s.dockOpen ? '▸' : '◂',
+      toggleDock: () => this.set({ dockOpen: !s.dockOpen }),
+      plainBtn: this.chip(false, 'align-self:flex-start'),
+      cardName: s.cardName, cardMeta: s.cardMeta,
+      nextCard: () => { this.cardIdx = (this.cardIdx || 0) + 1; this.placeCard(); },
+      seedStyle: this.chip(s.seedRules, 'align-self:flex-start'),
+      seedLabel: s.seedRules ? 'Seed steuert Zone' : 'Regler frei',
+      toggleSeed: () => { this.setState({ seedRules: !s.seedRules }, () => { if (this.state.seedRules) this.applySeed(); }); },
+      seedInfo: s.seedInfo ? s.seedInfo + ' → ' + s.mode : '—',
+      seedDerived: s.seedRules
+        ? [FLUIDS[s.fluid].label, 'Abnutzung ' + (+s.wear).toFixed(2), 'Graben ' + s.moat, 'Stufen ' + (+s.steps).toFixed(2), 'Deck ' + s.deck].join(' · ')
+        : 'Regler überschreiben den Seed',
+      pDeck: s.deck, vDeck: (+s.deck).toFixed(0), setDeck: (e) => this.set({ deck: +e.target.value }),
+      revealLabel: s.reveal === 'offen' ? 'zudecken' : s.reveal === 'verdeckt' ? 'aufdecken' : '…',
+      revealStyle: this.chip(s.reveal === 'offen', 'align-self:flex-start'),
+      toggleReveal: () => { if (this.revDir !== 0) return; this.revDir = this.rev >= 1 ? -1 : 1; this.setState({ reveal: 'läuft' }); },
+      autoStyle: this.chip(s.autoReveal, 'align-self:flex-start'),
+      toggleAuto: () => this.set({ autoReveal: !s.autoReveal }),
+      statusChips: Object.keys(STATUS).map((k) => ({ label: STATUS[k].label, style: this.chip(s.zoneStatus === k), onClick: () => this.set({ zoneStatus: k }) })),
+      projChips: PROJECTORS.map((p) => ({ label: p.label, style: this.chip(s.proj === p.id), onClick: () => this.set({ proj: p.id }) })),
+      fluidChips: Object.keys(FLUIDS).map((k) => ({ label: FLUIDS[k].label, style: this.chip(s.fluid === k), onClick: () => this.set({ fluid: k }) })),
+      texChips: COLLAGE.map(([id, label]) => ({ label, style: this.chip(s.tex === id), onClick: () => this.set({ tex: id }) })),
+      pRect: s.rect, vRect: num(s.rect, 2), setRect: (e) => this.set({ rect: +e.target.value }),
+      pOff: s.off, vOff: num(s.off, 2), setOff: (e) => this.set({ off: +e.target.value }),
+      pHolo: s.holo, vHolo: num(s.holo, 2), setHolo: (e) => this.set({ holo: +e.target.value }),
+      pSteps: s.steps, vSteps: num(s.steps, 2), setSteps: (e) => this.set({ steps: +e.target.value }),
+      pSink: s.sink, vSink: num(s.sink, 1), setSink: (e) => this.set({ sink: +e.target.value }),
+      pMoat: s.moat, vMoat: num(s.moat, 0), setMoat: (e) => this.set({ moat: +e.target.value }),
+      soundStyle: this.chip(s.sound), fxStyle: this.chip(s.fx),
+      toggleSound: () => this.setState({ sound: !s.sound }, () => { if (this.state.sound) this.initAudio(); }),
+      toggleFx: () => this.setState({ fx: !s.fx }),
+      focusOn: s.focus != null,
+      focusKind: s.focus != null ? FACE_KIND[s.focus] : '',
+      isArt: s.focus === 0, isChat: s.focus === 5, isText: s.focus != null && s.focus > 0 && s.focus < 5,
+      panelRef: this._pref = this._pref || ((el) => { this.panelEl = el; }),
+      artRef: this._aref = this._aref || ((el) => this.drawFocusArt(el)),
+      closeFocus: () => this.exitFocus(),
+      // PDF-ZOOM: die echte Kartentextur in einem Canvas, per CSS transformiert. Ein Canvas statt
+      // <img>, weil die Textur des CardBuilders selbst ein Canvas ist — kein Umweg ueber DataURL.
+      artStyle: 'position:absolute;left:50%;top:50%;max-width:none;transform-origin:center;'
+        + 'transform:translate(-50%,-50%) translate(' + s.panX + 'px,' + s.panY + 'px) scale(' + s.zoom + ');'
+        + 'height:' + (100 * 0.98) + '%;image-rendering:auto',
+      zoomLabel: 'ZOOM ' + Math.round(s.zoom * 100) + '%',
+      zoomBtn: "border:1px solid #2a211840;background:#2a21180d;color:#2a2118;font-family:'IBM Plex Mono',monospace;font-size:10px;padding:2px 7px;border-radius:2px;cursor:pointer",
+      zoomIn: () => this.setState({ zoom: Math.min(6, s.zoom * 1.35) }),
+      zoomOut: () => this.setState({ zoom: Math.max(0.6, s.zoom / 1.35) }),
+      zoomReset: () => this.setState({ zoom: 1, panX: 0, panY: 0 }),
+      onWheel: (e) => {
+        e.preventDefault();
+        this.setState({ zoom: Math.max(0.6, Math.min(6, s.zoom * (e.deltaY < 0 ? 1.12 : 0.89))) });
+      },
+      onPanStart: (e) => { this.pan = { x: e.clientX, y: e.clientY, px: s.panX, py: s.panY }; e.currentTarget.setPointerCapture(e.pointerId); },
+      onPanMove: (e) => {
+        if (!this.pan) return;
+        this.setState({ panX: this.pan.px + (e.clientX - this.pan.x), panY: this.pan.py + (e.clientY - this.pan.y) });
+      },
+      onPanEnd: () => { this.pan = null; },
+      chatLines: (s.chat || []).concat(s.typing ? [{ me: false, t: '…' }] : []).map((m) => ({
+        t: m.t,
+        wrap: 'display:flex;justify-content:' + (m.me ? 'flex-end' : 'flex-start'),
+        // Sprechblasen mit Schatten auf dem Papier-Grund, keine helle Box — wie im Cube-Academy-UI.
+        bubble: 'max-width:78%;padding:8px 12px;border-radius:' + (m.me ? '12px 12px 3px 12px' : '12px 12px 12px 3px')
+          + ';background:' + (m.me ? '#2a2118' : '#fffaf0') + ';color:' + (m.me ? '#efe6d0' : '#2a2118')
+          + ';font-size:15px;line-height:1.4;box-shadow:0 2px 6px #2a211826;text-wrap:pretty',
+      })),
+      draft: s.draft,
+      onDraft: (e) => this.setState({ draft: e.target.value }),
+      onDraftKey: (e) => { if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); this.sendChat(); } },
+      onSend: () => { if ((s.draft || '').trim()) this.sendChat(); },
+      // VOICE FIRST: ohne Text steht das Mikrofon, mit Text wird daraus Senden.
+      sendIcon: (s.draft || '').trim() ? '➤' : '🎙',
+      sendTitle: (s.draft || '').trim() ? 'Senden' : 'Sprechen',
+      sendStyle: 'flex:none;width:38px;height:38px;border-radius:50%;cursor:pointer;border:1px solid #2a211840;'
+        + 'background:' + ((s.draft || '').trim() ? '#2a2118' : '#2a21180d') + ';color:' + ((s.draft || '').trim() ? '#efe6d0' : '#2a2118')
+        + ';font-size:15px;display:flex;align-items:center;justify-content:center',
+      blocks: this.focusBlocks(),
+      riverStyle: this.chip(s.river, 'align-self:flex-start'),
+      riverLabel: s.river ? 'Fluss an' : 'Fluss aus',
+      toggleRiver: () => this.set({ river: !s.river }),
+      pRiverW: s.riverW, vRiverW: num(s.riverW, 0), setRiverW: (e) => this.set({ riverW: +e.target.value }),
+      pWear: s.wear, vWear: num(s.wear, 2), setWear: (e) => this.set({ wear: +e.target.value }),
+      pScale: s.scale, vScale: num(s.scale, 2), setScale: (e) => this.set({ scale: +e.target.value }),
+      pHeight: s.height, vHeight: num(s.height, 1), setHeight: (e) => this.set({ height: +e.target.value }),
+      pAmp: s.amp, vAmp: num(s.amp, 2), setAmp: (e) => this.set({ amp: +e.target.value }),
+      pTempo: s.tempo, vTempo: num(s.tempo, 2), setTempo: (e) => this.set({ tempo: +e.target.value }),
+      flowStyle: this.chip(!!s.flow), flowLabel: s.flow ? 'Flow-Welle' : 'Dancefloor',
+      toggleFlow: () => this.set({ flow: s.flow ? 0 : 1 }),
+      spinStyle: this.chip(s.spin), beamStyle: this.chip(s.beam),
+      toggleSpin: () => this.set({ spin: !s.spin }),
+      toggleBeam: () => this.set({ beam: !s.beam }),
+    };
+  }
+}
+</script>
+</body>
+</html>

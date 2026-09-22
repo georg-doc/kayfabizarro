@@ -1,0 +1,55 @@
+name: ToolBox Card Zone Lab v2 source-isolation QA
+
+on:
+  push:
+    branches: ['toolbox/card-zone-lab-f1-5-source-stage-2026-09-22']
+    paths:
+      - 'kfb-hub/stage/toolbox/card-zone-lab-v2-source/**'
+      - '.github/workflows/toolbox-card-zone-lab-v2-source-stage.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  source-isolation:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout: |
+            kfb-hub/stage/toolbox/card-zone-lab-v2-source
+            tools/KFB-ToolBox/_inbox/KFB Card Zone Lab v2/card-zone-lab-v2-full_2026-09-22
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Install Chromium
+        run: |
+          npm install --no-save playwright@1.62.1
+          npx playwright install --with-deps chromium
+
+      - name: Start repository server
+        run: |
+          python3 -m http.server 4173 --bind 127.0.0.1 > /tmp/kfb-card-zone-source-stage.log 2>&1 &
+          for i in $(seq 1 30); do
+            curl -fsS http://127.0.0.1:4173/kfb-hub/stage/toolbox/card-zone-lab-v2-source/SOURCE.json >/dev/null && exit 0
+            sleep 1
+          done
+          cat /tmp/kfb-card-zone-source-stage.log
+          exit 1
+
+      - name: Browser proof · exact 2026-09-22 source
+        env:
+          KFB_CARD_ZONE_BASE_URL: http://127.0.0.1:4173/kfb-hub/stage/toolbox/card-zone-lab-v2-source/
+          KFB_CARD_ZONE_PROOF_DIR: card-zone-lab-v2-source-proof
+        run: node kfb-hub/stage/toolbox/card-zone-lab-v2-source/proof.mjs
+
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: toolbox-card-zone-lab-v2-source-proof
+          path: card-zone-lab-v2-source-proof
+          retention-days: 90
