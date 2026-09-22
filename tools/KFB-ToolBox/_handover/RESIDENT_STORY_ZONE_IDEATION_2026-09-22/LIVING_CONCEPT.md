@@ -2227,3 +2227,517 @@ Before implementation:
 - decide whether soot/singe is a temporary material/decal/VFX state or another existing presentation seam.
 
 No missing clip is to be invented as already present.
+
+
+---
+
+# 25 · Minimal Resident Decision Loop v0
+
+## GOAL
+
+Define the smallest understandable NPC decision loop that can later drive:
+
+- ordinary resident activity;
+- Social Attention;
+- Gift Drive;
+- buddy banter;
+- Card / prop POIs;
+- reaction clips;
+- optional Kayfabe escalation;
+- Lean Memory callbacks.
+
+This is deliberately **not** a general utility-AI / behaviour-tree / GOAP framework.
+
+The first implementation should be inspectable in a debugger and explain why a Resident chose an action.
+
+## Core idea
+
+Residents do not continuously "think about everything".
+
+They mostly execute their current Activity.
+
+They reconsider only when:
+
+- an Activity reaches an interruptible beat;
+- a meaningful perception event occurs;
+- another Resident directly engages them;
+- a current interaction completes / aborts;
+- a high-priority host event requires it.
+
+Conceptual loop:
+
+```
+CURRENT_ACTIVITY
+   ↓
+PERCEIVE
+   ↓
+NOTICE candidates
+   ↓
+CAN_INTERRUPT?
+   ├─ no  → remember candidate briefly → CURRENT_ACTIVITY
+   └─ yes
+        ↓
+GENERATE small motive set
+        ↓
+SELECT one motive + target
+        ↓
+CLAIM / RESERVE social interaction
+        ↓
+APPROACH or ORIENT
+        ↓
+ENCOUNTER BIT
+        ↓
+REACTION / CONSEQUENCE
+        ↓
+LEAN MEMORY receipt if meaningful
+        ↓
+COOLDOWN / RELEASE
+        ↓
+RESUME prior activity or choose next local activity
+```
+
+## 25.1 · Activity reports interruptibility
+
+Every running Activity should expose only the minimum needed social seam.
+
+Conceptually:
+
+```js
+activityState = {
+  id: "study-at-lectern",
+  phase: "reading",
+  interruptible: true,
+  resumeToken: "lectern.reading",
+  priorityClass: "ordinary"
+}
+```
+
+Examples:
+
+### Interruptible
+
+- idle;
+- reading pause;
+- wandering;
+- shelf inspection finished;
+- standing at market stall;
+- ordinary social idle.
+
+### Temporarily non-interruptible
+
+- mid-handoff;
+- opening present;
+- current gag Bit;
+- help-up;
+- knockdown/recovery;
+- important path transition;
+- host-owned combat exchange;
+- critical animation/contact phase.
+
+This prevents a Resident from abandoning a gift halfway between two hands because somebody else entered NOTICE range.
+
+## 25.2 · Perception produces candidates, not commands
+
+Perception should produce a compact list.
+
+Possible candidate kinds:
+
+- `RESIDENT`
+- `GIFT_TARGET`
+- `CARD_POI`
+- `PROP_POI`
+- `ACTIVITY_STATION`
+- `DIRECT_SOCIAL_REQUEST`
+- `HOST_EVENT`
+
+A perception record may contain:
+
+```js
+{
+  targetId,
+  kind,
+  band: "NOTICE | ENGAGE | PERSONAL",
+  visible,
+  reachableHint,
+  reasonTags
+}
+```
+
+Perception does not decide the action.
+
+## 25.3 · Small motive set
+
+For the first version, generate only a few semantic motives.
+
+Suggested starter motives:
+
+- `RESPOND` — another Resident explicitly approached / addressed me;
+- `GIFT` — I have a pending Gift Intent compatible with this Resident;
+- `CALLBACK` — Lean Memory offers one relevant shared-history callback;
+- `SHOW` — I want to show a Card / object;
+- `BANTER` — lightweight buddy interaction;
+- `SHARED_ACTIVITY` — a nearby Station can take both;
+- `CHALLENGE` — Kayfabe escalation is contextually allowed;
+- `INSPECT_POI` — Card / prop / local object;
+- `CONTINUE` — do nothing socially.
+
+Do not start with dozens of motives.
+
+## 25.4 · Simple selection before utility AI
+
+First implementation should use an explicit priority ladder plus small character biases, not an opaque floating-point score soup.
+
+Starter ordering:
+
+1. host-required / direct response;
+2. finish / repair an already-open social encounter;
+3. pending Gift Intent with an eligible visible target;
+4. relevant remembered callback;
+5. show / discuss current Card or object;
+6. shared Activity opportunity;
+7. ordinary banter;
+8. optional challenge;
+9. local non-social POI;
+10. continue current Activity.
+
+This is not final canon.
+
+Individual Residents may later alter the ordering or add a small bias.
+
+Example:
+
+- Lore Keeper may prefer Card / archive POIs;
+- Orc may prefer gift + banter;
+- Clown may prefer performance / provocation;
+- Goth Girl may have a higher threshold for interruption.
+
+But the system should still be able to print:
+
+> selected GIFT because pending gift exists, target eligible, actor interruptible, target free.
+
+## 25.5 · Seeded tie-break, not chaotic randomness
+
+If two candidates are otherwise equivalent:
+
+- use a small seeded tie-break;
+- preserve replay/debug value;
+- avoid choosing a completely different social life every frame.
+
+Randomness should create variation, not erase causality.
+
+## 25.6 · Pair Lock / Social Reservation
+
+Before walking toward another Resident, attempt a lightweight social reservation.
+
+Conceptual state:
+
+```js
+socialPair = {
+  initiator: "resident.orc",
+  partner: "resident.lorekeeper",
+  motive: "GIFT",
+  state: "RESERVED | APPROACHING | ENGAGED | RELEASING"
+}
+```
+
+Purpose:
+
+- prevent five Residents simultaneously trying to hand the same target a sandwich;
+- prevent both actors starting incompatible interactions;
+- provide one shared encounter context;
+- make abort/release deterministic.
+
+A target may refuse / defer if currently non-interruptible.
+
+No permanent ownership is implied.
+
+## 25.7 · Approach is host-owned navigation
+
+Social logic requests:
+
+`APPROACH(targetId, desiredBand = PERSONAL)`
+
+The world/navigation owner determines the actual path.
+
+The social system must handle:
+
+- path unavailable;
+- target moved away;
+- target became busy;
+- timeout;
+- actor became non-interruptible through host event.
+
+On failure:
+
+`RELEASE → optional short cooldown → RESUME`
+
+Do not teleport actors to complete social logic.
+
+## 25.8 · Encounter Bit
+
+Once both Residents are in valid range and available, run one bounded Encounter Bit.
+
+A Bit has:
+
+- motive;
+- initiator;
+- partner;
+- optional object/Card;
+- a short beat list;
+- semantic reaction requests;
+- abort/release condition.
+
+### Minimal Gift Bit
+
+```
+ACKNOWLEDGE
+→ optional BANTER
+→ OFFER
+→ ACCEPT / DEFER
+→ REACT
+→ RELEASE
+```
+
+### Gift Gag Bit
+
+```
+ACKNOWLEDGE
+→ BANTER
+→ CLAIM / HYPE
+→ OFFER
+→ OPEN / CONSUME
+→ GAG_OUTCOME
+→ SHOCK_BEAT
+→ SHARED_REACTION
+→ RELEASE
+```
+
+### Banter Bit
+
+```
+ACKNOWLEDGE
+→ JAB
+→ COUNTER
+→ LAUGH / SHRUG / WALK_OFF
+→ RELEASE
+```
+
+### Kayfabe challenge Bit
+
+```
+ACKNOWLEDGE
+→ JAB
+→ COUNTER
+→ CHALLENGE
+→ host decides whether social melee can start
+```
+
+If host rejects combat:
+
+`mock disappointment / laugh / release`
+
+If host accepts:
+
+Combat owner takes the physical exchange and returns a completion result to the social encounter.
+
+## 25.9 · ChatterBox position in the loop
+
+ChatterBox receives a bounded Encounter Context.
+
+Suggested fields:
+
+```js
+{
+  initiator,
+  partner,
+  motive,
+  currentBeat,
+  giftRef,
+  cardRef,
+  zoneId,
+  bond,
+  heat,
+  topicRef,
+  relevantMemoryRefs,
+  reactionState
+}
+```
+
+ChatterBox may provide:
+
+- utterance;
+- register / bubble presentation;
+- jab/counter intent;
+- absurd gift claim;
+- semantic reaction suggestion.
+
+It does not decide:
+
+- navigation coordinates;
+- skeletal animation;
+- inventory mutation;
+- combat damage;
+- persistent reward;
+- relationship truth.
+
+A deterministic authored fallback should remain available if generated dialogue is late or unavailable.
+
+## 25.10 · Reaction resolution
+
+Encounter code emits semantic reactions.
+
+Example:
+
+`REACTION("social.sharedLaugh", intensity="BIG")`
+
+The Reaction/Motion adapter resolves:
+
+1. exact approved clip if available;
+2. smaller compatible clip;
+3. safe fallback gesture;
+4. no physical reaction, if unsupported.
+
+Missing `ROLL_ON_FLOOR_LAUGH` must not invent a fake clip.
+
+The semantic event can still exist while animation evidence remains pending.
+
+## 25.11 · Gift transfer is an explicit commit point
+
+Do not mutate gift ownership when the approach starts.
+
+Transfer only at a clear beat:
+
+`gift.accepted → TRANSFER_COMMIT`
+
+Before that:
+
+- giver still owns / represents the gift;
+- abort returns to giver state.
+
+After commit:
+
+- provenance receipt is written;
+- recipient may carry / display / place according to receiving owner;
+- giver's Gift Intent resolves / cools down.
+
+This prevents half-completed social interactions from corrupting state.
+
+## 25.12 · Meaningful Memory receipt
+
+Only after the Bit completes should it decide whether an event is memorable.
+
+Examples worth storing:
+
+- actual gift transfer;
+- first meeting;
+- funny gag outcome;
+- fight + help-up;
+- major Card disagreement;
+- promise;
+- unusual shared activity.
+
+Ordinary greeting or repeated ambient banter need not become durable memory.
+
+Minimal receipt:
+
+```json
+{
+  "event": "gift-transfer",
+  "participants": ["giver", "recipient"],
+  "objectRef": "gift-ref",
+  "zone": "zone-id",
+  "outcome": "accepted",
+  "callbackTags": ["absurd-claim", "shared-laugh"]
+}
+```
+
+Witnesses are added only through actual perception / host evidence.
+
+## 25.13 · Cooldowns and anti-loop rules
+
+After an encounter:
+
+- per-pair social cooldown;
+- Gift Intent cooldown / completion;
+- short target reacquisition block;
+- no immediate reciprocal gift unless explicitly authored;
+- do not re-trigger the same memory callback continuously;
+- Resident returns to prior `resumeToken` where possible.
+
+This prevents two NPCs from oscillating forever between:
+
+`gift → gift → gift → gift`
+
+## 25.14 · Minimal state machine
+
+Candidate implementation state vocabulary:
+
+```
+ACTIVITY
+NOTICE
+EVALUATE
+RESERVE
+APPROACH
+ENGAGE
+REACT
+COMMIT
+RELEASE
+RESUME
+```
+
+Optional later states should not be added until one real Resident pair proves a need.
+
+## 25.15 · First deterministic proof
+
+Do not test the whole Town.
+
+Use exactly two Residents and one gift.
+
+Recommended conceptual fixture:
+
+- giver: one Resident with one real food Gift Intent;
+- recipient: Lore Keeper or another already-proven Resident;
+- both start in ordinary Activities;
+- recipient enters NOTICE / ENGAGE range;
+- giver becomes interruptible;
+- motive selector chooses GIFT;
+- Pair Lock succeeds;
+- host path reaches PERSONAL range;
+- short Banter;
+- handoff commit;
+- one receiver Reaction;
+- one shared laugh or settle beat;
+- Memory receipt;
+- both resume prior Activities.
+
+Acceptance questions:
+
+- Can the system explain why GIFT won?
+- Does the giver wait for an interruptible beat?
+- Can approach abort safely?
+- Does transfer happen only once?
+- Do both Residents resume?
+- Does the same seed reproduce the same tie-break?
+- Is only one compact memory receipt written?
+
+If these pass, add absurd claim / gag outcome next.
+
+Do not add Combat, crowds or complex utility scoring to the first proof.
+
+## 25.16 · Debug visibility
+
+For authoring/testing, expose a compact optional debug readout per Resident:
+
+```
+Activity: study-at-lectern / interruptible
+Noticed: Orc @ ENGAGE
+Motives: GIFT, BANTER, CONTINUE
+Selected: GIFT
+Pair: reserved with Orc
+Beat: APPROACH
+Memory: none yet
+```
+
+This should be a ToolBox/debug affordance, not permanent player-facing HUD.
+
+The goal is to make emergent-looking behaviour **explainable and authorable**.
