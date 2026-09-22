@@ -78,6 +78,19 @@ This is additive to Stage-First and does not promote Animation Lab to a separate
 Current gate: Georg reviews the three actors' Idle → Walk → Run / phase-sync result and the Medium-vs-Large motion feel. Attachments remain proposals until their own visible gate.
 
 
+## CURRENT ADDITIVE · Hybrid Surface v2 / KFB 3D style · 2026-09-22
+
+The public real-asset Hybrid Surface predecessor remains a ToolBox material-compatibility proof; Georg's review is now persisted as the next bounded gate.
+
+Handoff:
+`_handover/HYBRID_SURFACE_V2_2026-09-22/START_HERE.md`
+
+Cross-project visual standard:
+`../../skills/chat/masterplan/KFB_3D_STYLE_SURFACE_SCALE_2026-09-22.md`
+
+Next changes are narrowly: stronger clay/grain materiality, seam reduction, preserve source roughness/specular character instead of globally matting every material, and head-size-based mixed-rig scaling. After that visual gate, the same standard proceeds to a real OSM/Race environment slice; ToolBox does not take World/OSM/Race ownership.
+
+
 ## CURRENT ADDITIVE · ToolBox Home v2 · 2026-09-21
 
 ToolBox has one prominent Stage router at:
