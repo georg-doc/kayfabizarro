@@ -61,6 +61,26 @@ The publication bridge must:
 
 A PR, green CI run or GitHub Pages preview does not replace step 3.
 
+## 4A. Local preview before public Stage
+
+For browser/game/3D development, use the current local-preview contract before public publication:
+
+`skills/chat/workflows/KFB_WEB_FIRST_EXECUTION_V1_2026-09-22/LOCAL_PREVIEW_FIRST.md`
+
+A localhost preview is a valid development/human-review state:
+
+`LOCAL REVIEW · NOT PUBLIC`
+
+Preferred iteration loop:
+
+`branch → CI → local HTTP preview → Georg review → Web/Claude repair`
+
+Do not use Cloudflare as the normal debug-refresh loop.
+
+Only move to KFB Stage when the candidate is worth shared/public acceptance review.
+
+Local preview does not replace the final public Stage gate when a slice requires `PUBLIC_VERIFIED`.
+
 ## 5. Keep Hub and main current
 
 Every new current brief, Stage candidate, human gate or Georg to-do updates:
