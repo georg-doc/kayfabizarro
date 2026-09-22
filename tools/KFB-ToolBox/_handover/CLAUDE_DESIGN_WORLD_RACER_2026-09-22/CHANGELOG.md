@@ -176,3 +176,35 @@ Combat ranged-first Work plan:
 `skills/chat/workflows/KFB_LEAD_WORK_CHECKIN_2026-09-22/COMBAT_RANGED_MVP.md`
 
 No World, Racer or Combat runtime was modified by this documentation delta.
+
+
+## Racer HUD / Billboards / RTECH-01 delta · 2026-09-23
+
+Added two separate Racer gates:
+
+- `RACER_CLAUDE_HUD_BILLBOARDS_ADDENDUM_2026-09-23.md`
+- `RACER_TECH_GATE_RTECH_01_2026-09-23.md`
+
+Claude Design lane:
+- keep the current HUD redesign;
+- move layout/look into a compact HUD theme/token seam;
+- prove real Kenney billboard variants in isolation;
+- reuse existing Racer PDF.js/Card rendering for roadside KFB content;
+- allow cover/detail crop for drive-by boards;
+- keep collage-loop/public-domain content as later optional provenance-tracked work.
+
+Web technical lane:
+- recurring tunnel/dark-surface sightline;
+- vehicle/track grounding;
+- engine/audio wiring;
+- trail/speedline overlap/folding.
+
+Trail finding:
+current Option-C custom trails store long world-space ribbons with per-sample right vectors derived from yaw only. The source-faithful Travel/TinySkies contrail donor instead derives ribbon width from the 3D trail tangent × camera vector and transforms vehicle-local anchors through the full world matrix. This is a concrete donor difference to test before any quaternion tuning.
+
+Vehicle grounding finding:
+current Option-C uses a pitch/roll lift heuristic. Do not continue coefficient tuning blindly; compare against existing wheel/contact/grounding donors and use measured support/contact geometry.
+
+Resident Story Zone PR #174 remains planning-only and currently non-mergeable until reconciled with newer main. It is recorded as a Hub TODO, not promoted to runtime truth.
+
+Hub source now includes current Racer technical/Claude gates and PR #174 reconcile TODO on both main and cloudflare-live source branches. Public Pages fetch could not be verified from this chat environment; no PUBLIC_VERIFIED claim is made for this metadata update.
