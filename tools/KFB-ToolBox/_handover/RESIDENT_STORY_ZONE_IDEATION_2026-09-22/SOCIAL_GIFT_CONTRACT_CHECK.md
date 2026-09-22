@@ -68,11 +68,32 @@ The social contract does not contain scene-transform ownership.
 
 The fixture gift points to:
 
-`media/3D_Assets/KayKit_Restaurant_Bits_1.0_FREE/Assets/gltf/food_burger.gltf`
+`media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE/Assets/gltf/donut_pink.gltf`
 
-Repo source presence is confirmed.
+Repo source presence is confirmed. The same asset is also referenced by an existing KFB Cologne Race donor as `donut_pink`.
 
 This proves identity/source existence only, **not** carry scale, attachment, handoff animation or visual acceptance.
+
+### Persistence concept decision
+
+Georg selected the existing **Session / Journey / Fractal Almanac** layer as the conceptual persistence home for:
+
+- GiftInventoryItem state;
+- gift provenance;
+- related Lean Memory / Journey event receipts.
+
+This aligns with existing source direction describing the Fractal Almanac as collection, Journey Memory, Replay Library and Save metaphor.
+
+The exact current storage adapter / serialization implementation is still a technical integration detail. This decision does **not** create a new save owner.
+
+### Human-gate simplification
+
+The following are no longer questions for Georg:
+
+- exact canonical player/actor IDs in the first host;
+- exact current ChatterBox caller/adapter seam.
+
+Those must be resolved by the implementation owner from the selected host and existing ChatterBox code.
 
 ## Important non-claims
 
