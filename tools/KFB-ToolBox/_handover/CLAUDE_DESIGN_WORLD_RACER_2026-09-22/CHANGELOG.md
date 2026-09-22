@@ -94,3 +94,30 @@ consolidate Hex, WhackMan and S22 failure evidence into one authoring-first worl
 Claude World / Environment authoring may start at donor parity + Source Object Inspector.
 
 No automatic expansion to OSM city scale, infinite Hex worlds or Babel endless mode before the first small authored-world human gate.
+
+
+## World architecture Red Team · 2026-09-22
+
+Georg added two directions that are now persisted without promoting them to runtime canon:
+
+1. **WhackMan Dungeon environment donor** — current cool dusk + warm flickering torch pool + depth fog + scalable local visibility + matte material calibration is considered production-worthy enough for reuse research in Dungeon Generator / ToolBox / World.
+2. **World geometry Red Team** — avoid committing KFB to Sphere vs Hex vs Voxel as one universal geometry. Research a portable World Recipe with replaceable Surface Adapters and a hybrid continuous-terrain + semantic-Hex + local-volumetric architecture.
+
+Added:
+
+- `WORLD_ARCHITECTURE_RED_TEAM_2026-09-22.md`
+
+External donor families named for source review before new infrastructure is invented:
+
+- ProceduralTerrains;
+- three-hex-map;
+- Uber H3;
+- OSM2World;
+- terranian;
+- hello-terrain;
+- godot_voxel;
+- mathsteroids / Three.js parametric surfaces.
+
+These are research donors only. No external dependency or license is accepted by this note.
+
+Current implementation gate remains unchanged until Georg explicitly accepts the Surface Adapter proposal.
