@@ -81,7 +81,7 @@ First concrete fixture, when implementation is explicitly started:
 
 The earlier Park Bench fixture remains useful as a later minimal regression fixture, but is no longer first.
 
-Parallel concept lane now also includes: **Social Attention + Gift Drive**, a source-backed food-gift/gag lane, a semantic Reaction Library, and the **Kayfabe Social Conflict Loop**. Buddy banter, absurd gift framing and optional host-approved social melee remain separate from Bond; explicit repair/reconciliation closes social escalation. ChatterBox never becomes Navigation, Animation, Inventory or Combat owner.
+Parallel concept lane now also includes: **Social Attention + Gift Drive**, source-backed food-gift/gag framing, a semantic Reaction Library, **player-facing Triplet/Bubble gift conversations**, a bounded Gift Backpack with provenance, and the **Kayfabe Social Conflict Loop**. Backpack mesh/profile is presentation; Gift Inventory is state; Lean Memory preserves the history. ChatterBox never becomes Navigation, Animation, Inventory, Save or Combat owner.
 
 ## How to continue ideation
 
@@ -104,10 +104,23 @@ Section 25 of `LIVING_CONCEPT.md` now defines **Minimal Resident Decision Loop v
 
 `ACTIVITY → PERCEIVE → NOTICE → CAN_INTERRUPT? → MOTIVES → SELECT → RESERVE → APPROACH → ENCOUNTER → REACT/COMMIT → MEMORY → RELEASE → RESUME`
 
-First proposed proof uses exactly two Residents + one real food gift. No Combat/crowd/utility-AI dependency.
+First proposed runtime proof uses exactly two Residents + one real food gift. The next player-facing proof uses one Resident + player + one canonical Bubble Call + one gift commit into the bounded Backpack. No Combat/crowd/utility-AI dependency.
 
 Reaction note: current targeted source search found partial face/eye reaction evidence, but no clearly named full-body Laugh/Cry clip. Treat those as animation inventory/authoring work until proven.
 
+## Player gift / Backpack extension
+
+Section 26 adds:
+
+- canonical player Calls: `KayfaBINGO · KayfaBONGO · KayfaBOGGLE · BLÖDSINN!`;
+- one- or two-turn in-world Bubble microconversations;
+- gifts as social-completion rewards rather than right-answer prizes;
+- bounded `PLAYER_GIFT_BACKPACK` with provenance;
+- re-gifting to Residents through the same social grammar;
+- visual Backpack profiles kept separate from inventory state;
+- source-backed Backpack donors including Orc, Hoarder and sibling-mesh candidates from Hiker and Protagonist A/B;
+- user correction: **Goth Girl + Elisa setting**, not “Crossgirl”; Elisa is context, not invented KayKit source.
+
 ## One next gate
 
-Continue ideation from the **two-Resident / one-food-gift Decision Loop v0 fixture** and define only the smallest first motive/encounter data contract before implementation.
+Define the smallest shared data contract that can serve both **two-Resident Gift Loop** and the next **Resident→player Bubble Gift + Backpack** proof, without implementing a second dialogue or inventory owner.
