@@ -1,3 +1,17 @@
+## 2026-09-22 · Hybrid Surface review → cross-project 3D style contract
+
+### HUMAN REVIEW
+Georg reviewed the real-asset Hybrid Surface proof. Direction is promising, but v1 is not the final house look: a visible seam remains; the visual change reads too much as de-glossing; Black Knight armour and GothGirl hair should retain useful source shine; and the target should add stronger broad surface variation plus fine clay/grain materiality.
+
+### SCALE DECISION
+Mixed-rig cast scale must not normalize full body height. Primary calibration is measured head size / an accepted head proxy. Legacy therefore remains shorter than Medium when head scale is matched; Large remains a large body class rather than being collapsed to Medium height.
+
+### MODELLING / ENVIRONMENT DECISION
+Cartoon anatomy becomes the cross-project visible geometry direction: rounded/bowed silhouettes, bend/lean/taper/twist, broader readable masses and fewer tiny hard facets. Existing OSM City Lab CARTOON mode is retained as compatible donor work; source footprint/collision stays unchanged. The style/material process is required later for Hürth/Ehrenfeld/Köln, the Hürth↔Ehrenfeld corridor, RaceTrack Cologne / Cologne Option C with its existing color-map owner, terrain/vegetation and real landmark donors. The user-named Wreckman POC remains a future target, but repository search did not resolve its exact owner; do not substitute WhackMan.
+
+### ROUTING
+Added the additive standard `masterplan/KFB_3D_STYLE_SURFACE_SCALE_2026-09-22.md` and the bounded next brief `workflows/KFB_HYBRID_SURFACE_V2_2026-09-22/START_HERE.md`. No runtime owner or consumer is promoted.
+
 ## 2026-09-20 · KCC-1A FrizzleBob Race secondary-motion facts
 
 ### SUPERSEDES · PUBLICATION STATUS ONLY
