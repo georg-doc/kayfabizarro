@@ -32,12 +32,14 @@ Then read:
 For Racer:
 
 8. [CLAUDE_RACER_BRIEF.md](CLAUDE_RACER_BRIEF.md)
+9. [RACER_CLAUDE_HUD_BILLBOARDS_ADDENDUM_2026-09-23.md](RACER_CLAUDE_HUD_BILLBOARDS_ADDENDUM_2026-09-23.md) — current HUD token/layout + roadside billboard visual authoring addendum
+10. [RACER_TECH_GATE_RTECH_01_2026-09-23.md](RACER_TECH_GATE_RTECH_01_2026-09-23.md) — separate Fresh Web technical gate; Claude must not debug these runtime seams
 
 For World / Environment:
 
-9. [CLAUDE_WORLD_AUTHORING_BRIEF.md](CLAUDE_WORLD_AUTHORING_BRIEF.md)
-10. [WORLD_ARCHITECTURE_RED_TEAM_2026-09-22.md](WORLD_ARCHITECTURE_RED_TEAM_2026-09-22.md) — proposal/research only; surface geometry must not silently become a new owner
-11. [STORYTELLING_MAP_WORLD_DONOR_2026-09-22.md](STORYTELLING_MAP_WORLD_DONOR_2026-09-22.md) — Story/Tactical representation, D6 relief, toys, water caveat and Curtain boundary
+11. [CLAUDE_WORLD_AUTHORING_BRIEF.md](CLAUDE_WORLD_AUTHORING_BRIEF.md)
+12. [WORLD_ARCHITECTURE_RED_TEAM_2026-09-22.md](WORLD_ARCHITECTURE_RED_TEAM_2026-09-22.md) — proposal/research only; surface geometry must not silently become a new owner
+13. [STORYTELLING_MAP_WORLD_DONOR_2026-09-22.md](STORYTELLING_MAP_WORLD_DONOR_2026-09-22.md) — Story/Tactical representation, D6 relief, toys, water caveat and Curtain boundary
 
 ## Current primary inputs on main
 
