@@ -72,3 +72,36 @@ Documentation only. No runtime change, browser test, Stage deployment or public 
 
 ### IMPLEMENTATION STATUS
 Documentation/ideation only. No NPC AI, ChatterBox runtime, Melee integration, Story Zone runtime or public Stage result was built in this checkpoint.
+
+
+## 2026-09-22 · Social Attention + Gift Drive
+
+### USER DIRECTION
+- Model NPC-to-NPC notice/engagement somewhat like MMO aggro: another Resident entering range can become a social Point of Interest.
+- Proximity is not automatically hostile; it can trigger greeting, banter, gifting, showing an object/Card, shared activity or challenge.
+- Giving things should be a major social motive: every Resident may have something they would like to give another Resident.
+- Gifts can be props, food, Cards or other real source-backed objects.
+- Gift-giving may happen simultaneously with insults, mockery, provocation and rough buddy-banter.
+- A Resident visibly carrying a signature prop may eventually give that object or an equivalent gift-state to another Resident.
+
+### SOURCE ALIGNMENT
+- Existing Town direction already includes Market giving/trading.
+- Existing Town direction already treats gift provenance as meaningful state.
+- No new economy/currency or second inventory owner is introduced.
+
+### PROPOSAL
+- Add `SOCIAL_ATTENTION_RADIUS` / staged perception bands: FAR → NOTICE → ENGAGE → PERSONAL.
+- Another Resident becomes a candidate social POI rather than an automatic interaction.
+- Add lightweight per-Resident **Gift Intents**, source-backed through Asset Registry/Librarian.
+- Allow gift sources from carried signature props, local-world items or already-proven activity-produced items.
+- Social grammar may include:
+  `NOTICE → APPROACH → BANTER → OFFER_GIFT → REACT → optional COUNTER-GIFT / CHALLENGE / SCRAP → REPAIR → RESUME`.
+- Gift and insult are intentionally compatible.
+- Prefer simple ordered social motives before any complex utility AI.
+- Reuse Activity Station / semantic-socket grammar for handoff, show-item, accept, help-up and walk-together beats.
+- Store compact gift provenance + Lean Memory event receipts; no full-transcript or omniscient-memory model.
+- Do not reduce gifts to numeric friendship points; use them to create callbacks, visible props, return-gift motives and shared history.
+- Add cooldown/one-pending-intent rules to avoid gift spam and infinite reciprocal loops.
+
+### IMPLEMENTATION STATUS
+Documentation/ideation only. No social perception runtime, navigation AI, inventory/economy system, gift transfer runtime or browser Stage was built.
