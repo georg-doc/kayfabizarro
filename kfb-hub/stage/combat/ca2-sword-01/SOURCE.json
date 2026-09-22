@@ -1,7 +1,7 @@
 {
   "schema": "kfb.stage-source/0.1",
   "id": "CA2-SWORD-01-VIS",
-  "status": "STAGE_MIRROR_SOURCE_PINNED_HUMAN_GATE_PENDING",
+  "status": "PUBLIC_PROOF_FAILED_X2_RECOVERY_EXPORTED",
   "route": "https://kayfabizarro.pages.dev/kfb-hub/stage/combat/ca2-sword-01/",
   "owner": {
     "repo": "georg-doc/KFB-Combat-Arena",
@@ -35,6 +35,32 @@
       "portableRoutes": "PASS"
     }
   },
-  "humanAcceptance": "PENDING",
-  "liveVerification": "PENDING"
+  "humanAcceptance": "BLOCKED_BY_PUBLICATION",
+  "liveVerification": "FAILED_X2_NOT_PUBLIC_VERIFIED",
+  "publication": {
+    "branch": "cloudflare-live",
+    "attemptedHead": "aded73787d96b2a540cd928006b33d2b95cfca4e",
+    "routeState": "CLOUDFLARE_CHILD_ROUTE_FALLBACK",
+    "failureRecovery": "kfb-hub/stage/combat/ca2-sword-01/failure-recovery/RECOVERY.md",
+    "qa": {
+      "run": 35672704030,
+      "attempts": [
+        {
+          "attempt": 1,
+          "job": 106572514291,
+          "artifact": 10672111627,
+          "digest": "sha256:88ac37958f69941f08da4509e17286241d70a42e51201c60b2e2afd458f09611",
+          "result": "SOURCE.json HTTP 200 but Hub fallback HTML; JSON parse failed"
+        },
+        {
+          "attempt": 2,
+          "job": 106573050384,
+          "artifact": 10671063958,
+          "digest": "sha256:6f9acb36520341b3cb6e2a73a88e500fb2b2f7cacb564edd4b19624bcd4c27d7",
+          "result": "same fallback HTML / JSON parse failure"
+        }
+      ],
+      "stoppedAfterTwoAttempts": true
+    }
+  }
 }
