@@ -1,0 +1,36 @@
+{
+  "schema": "kfb.combat-stage-source/1",
+  "stage": "C-MVP-A",
+  "status": "PACKAGING_IN_PROGRESS",
+  "source": {
+    "repository": "georg-doc/KFB-Combat-Arena",
+    "pr": 5,
+    "branch": "chatgpt-web/combat-arena-integration-v2-2026-09-19",
+    "commit": "954f2db7484dc566e468e5ce89b0d95940d97537",
+    "runtimePath": "dist/"
+  },
+  "public": {
+    "url": "https://kayfabizarro.pages.dev/kfb-hub/stage/combat/",
+    "route": "kfb-hub/stage/combat/",
+    "runtime": "kfb-hub/stage/combat/runtime/"
+  },
+  "ownership": {
+    "movementGround": "Player.v2",
+    "playerPresentationMixer": "DriverCA2",
+    "muzzle": "graft-muzzle -> Gunfight",
+    "gunfight": "Gunfight",
+    "enemyLifecycle": "MobBrain",
+    "rewardsRunFlow": "existing Arena"
+  },
+  "scope": [
+    "exact packaging",
+    "browser baseline"
+  ],
+  "excluded": [
+    "Legacy actor",
+    "melee",
+    "new combat code",
+    "Spindle Sky"
+  ],
+  "createdAt": "2026-09-22"
+}
