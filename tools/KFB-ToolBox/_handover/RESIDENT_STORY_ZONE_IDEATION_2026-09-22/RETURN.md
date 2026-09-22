@@ -66,6 +66,10 @@ The initial concept captures:
 - `ACCESS_PROP_CANDIDATES_v0.json`
 - `VFX_CANDIDATE_LANE_v0.json`
 - `ACCESS_VFX_SOURCE_CHECK.md`
+- `ORC_BAND_WORLD_LIFE_START_HERE.md`
+- `ORC_BAND_DONOR_CHECK.md`
+- `ORC_BAND_WORLD_LIFE_RECIPE_v0.json`
+- `ORC_BAND_WORLD_BUILDER_POC_BRIEF.md`
 - this `RETURN.md`
 
 ## Sources actually reviewed
@@ -97,6 +101,13 @@ This checkpoint is documentation/ideation only.
 - VFX linked handoff inspected: **132 candidates / 91 FX_Visual**
 - existing `kfb-vfx.js` donor reuse path: **SOURCE VERIFIED**
 - curated `media/3D_Assets/KFB/` snapshot enumerated: **140 entries**
+- Orc Band user handoff inspected: **211 candidates**
+- exact Orc/WarDrum/electric-guitar/mic/trumpet sources: **SOURCE VERIFIED**
+- Toy Soldier reveal donor: **SOURCE/RECIPE VERIFIED**
+- shared Guitar-playing clip: **NOT PRESENT / PROCEDURAL DONOR USED**
+- Rig_Large drum clip: **NOT PRESENT / AUTHORING ADAPTER REQUIRED**
+- trumpet-to-mouth play clip: **NOT PROVEN / DEFERRED**
+- Orc Band runtime/browser/Stage: **NOT BUILT / NOT RUN**
 - branch creation: PASS
 - first concept commit: PASS and exact branch head verified
 - recovery entry commit: PASS and exact branch head/file verified
@@ -127,6 +138,12 @@ No implementation or public result is claimed.
 - first gold/silver key material/source proof;
 - first AccessProp runtime consumer/target proof;
 - first isolated VFX donor proof for muzzle/slash/impact/blood/world cue;
+- exact held-electric-guitar profile on Orc Raider;
+- exact procedural War Drum strike adapter on Rig_Large;
+- Legacy microphone/trumpet mouth-performance proof;
+- final Suno Orc Band stems and world-scale spatial-audio tuning;
+- Offica seeded spawn cadence / cooldown after forced-spawn proof;
+- optional Combat-owner handoff and return for the Orc Band interruption;
 - gift state/provenance seam without inventing a second inventory owner;
 - exact first Gift Backpack slot count;
 - exact Bubble choice adapter from canonical Calls into ChatterBox/Triplet context;
@@ -141,6 +158,15 @@ No implementation or public result is claimed.
 - candidate VFX families include muzzle, slash/sweep, impact, electric/blitz, blood, explosion, fire/smoke, dirt/scorch and access/world cues;
 - historical donor rejection of blood is preserved; current user direction reopens stylized blood FX as a candidate;
 - `media/3D_Assets/KFB/` is recorded as Georg's curated future donor shortlist, not a second registry;
+- Orc Band World-Life packet is now prepared as a future WorldBuilder fixture;
+- cast is pinned to Legacy Orc A + Rig_Medium Orc Raider + Rig_Large Orc Brute;
+- real War Drum / stick and electric guitar A/B source candidates are pinned;
+- current source truth says no shared guitar-playing clip and no Rig_Large drum clip, so performance adapters are procedural/authoring candidates rather than invented animation names;
+- Offica Doppeldenk now concretely consumes the Toy Soldier/Nutcracker donor and Resident Atlas 4.8 s gift-box reveal;
+- Offica patrol generalizes into `kfb.patrol-resident.v0` while navigation remains host-owned;
+- spatial audio direction now references an existing KFB WebAudio HRTF/inverse-distance donor and real technical drum/guitar stems;
+- current Town Offica characterization is reused rather than reinvented;
+- old Performance Suite War-Drum-source gap is superseded additively by current Resident Atlas/source evidence;
 - exact inventory of reusable full-body laugh/cry/surprise/inspect/gift-accept clips across relevant rig families;
 - exact semantic seam from ChatterBox social cue → host social state → optional Combat owner → repair beat;
 - current 3D ChatterBox invocation/output contract;
@@ -152,7 +178,7 @@ No implementation or public result is claimed.
 
 ## One next gate
 
-**Prepare the bounded implementation slice for Orc → Player → pink donut. Keep Keys and VFX deferred as separate future lanes.**
+**Current execution gate is the WorldBuilder prerequisite sequence WB1-P0 → P1 → P2. After that, consume the prepared Orc Band packet in WB1-P3 as the preferred first World-Life fixture. The Orc→Player pink-donut proof remains the first player-social proof and is not replaced by the band.**
 
 Do not build a general World Editor, autonomous NPC system or separate social-combat engine yet.
 
