@@ -32,6 +32,10 @@ The initial concept captures:
 - Kayfabe buddy-banter / optional social-melee / explicit repair loop;
 - Bond, temporary Heat and topic stance kept separate;
 - Lean Memory callbacks based on witnessed/participated social events rather than omniscient knowledge;
+- Social Attention / proximity bands turn other Residents into candidate social POIs;
+- Gift Drive makes giving source-backed props/food/Cards a recurring positive motive without creating a new economy;
+- gift + insult/banter are deliberately compatible, with provenance/callbacks retained in Lean Memory;
+- simple motive ordering preferred before any complex utility AI;
 - Park Bench retained only as a later minimal/regression fixture.
 
 ## Files created so far
@@ -84,6 +88,9 @@ No implementation or public result is claimed.
 - exact candidate schema after real source capability alignment;
 - exact current Lore Keeper/lectern/bookshelf/RPG prop source identities and usable animation clips;
 - smallest host-approved post-fight repair Activity set;
+- first Social Attention distance/interruptibility rules in a real host scale;
+- exact first Gift Intent source set per Resident and handoff animation capabilities;
+- gift state/provenance seam without inventing a second inventory owner;
 - exact semantic seam from ChatterBox social cue → host social state → optional Combat owner → repair beat;
 - current 3D ChatterBox invocation/output contract;
 - exact Asset Librarian insertion/search seam;
@@ -94,6 +101,6 @@ No implementation or public result is claimed.
 
 ## One next gate
 
-**Continue ideation around the Lore Keeper fixture and Kayfabe social interaction semantics.**
+**Continue ideation around the Lore Keeper fixture plus the smallest Social Attention → Gift/Banter encounter semantics.**
 
 Do not build a general World Editor, autonomous NPC system or separate social-combat engine yet.
