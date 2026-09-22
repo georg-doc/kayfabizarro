@@ -53,6 +53,7 @@ If this is a replacement/fresh chat after context loss, use `RECOVERY_PATH.md` r
 
 - `LIVING_MASTERPLAN.md` — durable cross-project lead plan and sequence
 - `masterplan/` — scoped masterplan addenda, referenced from `REGISTRY.json`
+- `masterplan/KFB_3D_STYLE_SURFACE_SCALE_2026-09-22.md` — cross-project 3D surface, cross-rig scale and environment cartoon-modelling standard; visual coordination only, no runtime owner
 - `meta/KFB_META_COMPENDIUM_v1.md` — cross-module meta index; routing/reference only
 - `town/START_HERE.md` + `town/LIVING_KFB_TOWN.md` — current KFB Town ideation home
 - `RECOVERY_PATH.md` — deterministic recovery after chat/context failure
@@ -407,3 +408,10 @@ Return and recovery live on PR #157 under `skills/chat/workflows/LEGACY_WEB_PET_
 Intended Stage `https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/legacy-web-pet/` is **NOT PUBLISHED / NOT PUBLIC_VERIFIED**.
 
 Exactly one next gate: **LWP-EXT-F1 · extension-load observability** — identify the first missing transition in `CONTENT_ENTRY → HOST_CREATED → FRAME_INSERTED → FRAME_LOADED | FRAME_ERROR → PET_READY` before changing runtime behavior.
+
+
+## 2026-09-22 · KFB 3D surface / scale / environment art direction
+
+Georg's reviewed Hybrid Surface findings are persisted at [KFB 3D Art Direction · Surface, Scale and Environment Standard](masterplan/KFB_3D_STYLE_SURFACE_SCALE_2026-09-22.md). Core decisions: stronger clay/grain materiality; visible seam is a real defect; preserve source roughness/specular character rather than globally matting hair/armour; mixed Rig_Legacy/Rig_Medium/Rig_Large scenes calibrate from measured head size rather than total height; and the same shape/surface language must later continue through OSM Hürth/Ehrenfeld/Köln, RaceTrack Cologne, terrain/vegetation and real landmark donors.
+
+The next bounded implementation is [Hybrid Surface Scene Lab v2](workflows/KFB_HYBRID_SURFACE_V2_2026-09-22/START_HERE.md) on the same exact real Dungeon + five-actor donor set. Environment consumer work is explicitly next after that visual gate; no World/OSM/Race runtime ownership moves here.
