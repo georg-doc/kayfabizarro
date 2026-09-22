@@ -1,6 +1,6 @@
 # KFB World Building Preflight · Fresh Web/GitHub Chat · 2026-09-22
 
-Status: **PREPARED EXECUTION BRIEF · PRE-FLOW/CLAUDE TECHNICAL PREFLIGHT · NO PRODUCT OWNER CHANGE**
+Status: **PREPARED EXECUTION BRIEF · PRE-CLAUDE-DESIGN TECHNICAL PREFLIGHT · NO PRODUCT OWNER CHANGE**
 
 Repository:
 `georg-doc/kayfabizarro`
@@ -17,7 +17,7 @@ Named branch:
 Intended Stage route:
 `https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/world-building-preflight/`
 
-This chat prepares technical evidence for the later Claude/Flow Design World/Environment authoring lane.
+This chat prepares technical evidence for the later Claude Design World/Environment authoring lane.
 
 It does **not** build the final KFB World.
 
@@ -108,7 +108,7 @@ After two failed repair passes on the same visible gate:
 
 # 2 · Goal of this preflight
 
-Reduce uncertainty before Claude/Flow Design spends scarce authoring context.
+Reduce uncertainty before Claude Design spends scarce authoring context.
 
 We want to answer three technical questions only:
 
@@ -132,7 +132,7 @@ Prove the lighting/material behaviour outside WhackMan gameplay.
 
 If these three questions are answered, stop.
 
-The later Claude/Flow Design briefing can then be sharpened from evidence rather than speculation.
+The later Claude Design briefing can then be sharpened from evidence rather than speculation.
 
 ---
 
@@ -215,6 +215,32 @@ Confirm the actual source behaviour for:
 - flicker;
 - local visibility;
 - material mattification.
+
+### Storytelling Map / Tactical representation donor
+
+Use current main intake:
+
+`tools/KFB-ToolBox/_inbox/KFB StoryMap v1/`
+
+Read only:
+
+- `START_HERE.md`
+- `POSTMORTEM-2026-09-22.md`
+- relevant `docs/SMA1-GATE.md` sections for canonical transforms, voxel view, water and BoardGameBits;
+- exact `sma1-map-animator.js` functions needed for ripple / D6 terracing / canonical reset.
+
+Classify separately:
+
+- canonical geography vs presentation-transform separation;
+- D6 coast-distance terrace proof;
+- one map-owned wet-mask truth;
+- ripple as reusable Surface-FX donor;
+- Ink/Shadow representation modes;
+- BoardGameBits / Domino as World Toy Props.
+
+Do **not** promote the current StoryMap water appearance. It remains visually unresolved.
+
+Do not make StoryMap a second World or OSM owner.
 
 ### OSM
 
@@ -467,6 +493,8 @@ Do not import the Race controller.
 
 ## Surface FX
 
+Reuse the current StoryMap/Travel ripple semantics before inventing a new effect system.
+
 Implement one low-cost expanding colour field/ring.
 
 Same event data on all three surfaces.
@@ -605,9 +633,9 @@ Persist details in GitHub docs.
 
 If P0–P2 pass, create:
 
-`tools/KFB-ToolBox/world-building-preflight/FLOW_DESIGN_INPUT.md`
+`tools/KFB-ToolBox/world-building-preflight/CLAUDE_DESIGN_INPUT.md`
 
-This is the compact input for the later Claude/Flow Design project.
+This is the compact input for the later Claude Design project.
 
 It should contain only proven facts:
 
@@ -620,7 +648,7 @@ It should contain only proven facts:
 - unresolved visual questions for Design;
 - things Design must NOT rebuild.
 
-The later Flow/Claude chat should not need to replay this technical investigation.
+The later Claude Design chat should not need to replay this technical investigation.
 
 ---
 
