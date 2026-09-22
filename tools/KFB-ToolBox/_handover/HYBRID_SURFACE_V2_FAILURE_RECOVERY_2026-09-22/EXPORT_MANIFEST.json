@@ -1,0 +1,118 @@
+{
+  "schema": "kfb.failure-recovery-export/1",
+  "project": "KFB Hybrid Surface Scene Lab v2",
+  "exportRevision": "2026-09-22-r1",
+  "status": "ARCHIVED_FAILED_CANDIDATE",
+  "repository": "georg-doc/kayfabizarro",
+  "branch": "chatgpt-web/toolbox-hybrid-surface-v2-2026-09-22",
+  "pullRequest": 166,
+  "frozenRuntimeHead": "7cbad52b55fb9ec2300aa4b25ca92b0997ce448a",
+  "entrypoints": [
+    "kfb-hub/stage/toolbox/hybrid-surface-scene-lab-v2/index.html"
+  ],
+  "sourceFiles": [
+    {
+      "path": ".github/workflows/toolbox-hybrid-surface-v2.yml",
+      "blob": "3c0838e01c2186dc77b097a3f974ac28bb263992",
+      "bytes": 1813
+    },
+    {
+      "path": "kfb-hub/stage/toolbox/hybrid-surface-scene-lab-v2/index.html",
+      "blob": "0e4029063e2d6a0bbaeb8a51b39b137ccc73cb2f",
+      "bytes": 4785
+    },
+    {
+      "path": "kfb-hub/stage/toolbox/hybrid-surface-scene-lab-v2/hybrid-surface.v2.js",
+      "blob": "13480031b312d43766076c1d0086679ec74bc843",
+      "bytes": 10390
+    },
+    {
+      "path": "kfb-hub/stage/toolbox/hybrid-surface-scene-lab-v2/lab.mjs",
+      "blob": "c1767e1a1181e989ab2b7c54eb85964cbeec2a58",
+      "bytes": 21781
+    },
+    {
+      "path": "kfb-hub/stage/toolbox/hybrid-surface-scene-lab-v2/proof.mjs",
+      "blob": "5606c93c23a50de59737a220505d03ea62e77c54",
+      "bytes": 10378
+    },
+    {
+      "path": "kfb-hub/stage/toolbox/hybrid-surface-scene-lab-v2/SOURCE.json",
+      "blob": "1afdbb186944003a8ad0d682efa5e86c0008ec16",
+      "bytes": 2090
+    }
+  ],
+  "buildOutputs": [],
+  "dataFiles": [],
+  "assetRefs": [
+    {
+      "role": "World Atlas Dungeon loader",
+      "path": "tools/world_atlas/source/lib/kit-lab.js",
+      "pin": "bc1441eb8ff9a2df0e15e778b44b73f97eb63d76",
+      "blob": "964d4187665f1786067ff5917de80df5f086fc91",
+      "included": false
+    },
+    {
+      "role": "World Atlas Dungeon recipe",
+      "path": "tools/world_atlas/source/scenes/dungeon-promo.js",
+      "pin": "bc1441eb8ff9a2df0e15e778b44b73f97eb63d76",
+      "blob": "2d2ba81b35d2277553470582ae93b30f6ec197ac",
+      "included": false
+    },
+    {
+      "role": "actor donor pin",
+      "pin": "bdaea0648f27c0f16e0a737bfba237eb54dd4cbb",
+      "included": false
+    },
+    {
+      "role": "RGB brush generator donor",
+      "pin": "15f2f1714d62b606033b8624964e481c6d99d59f",
+      "path": "kfb-hub/stage/toolbox/rgb-triplanar-palette-lab/kfb-rgb-triplanar.v1.js",
+      "included": false
+    }
+  ],
+  "externalDependencies": [
+    "three@0.160.0 via jsDelivr",
+    "Playwright 1.51.1 for proof workflow",
+    "GitHub/raw/jsDelivr exact-pinned KFB donors"
+  ],
+  "browserStateExports": [],
+  "evidence": [
+    {
+      "run": 35671624437,
+      "job": 106569164335,
+      "result": "FAIL",
+      "gate": "Legacy head proxy lookup"
+    },
+    {
+      "run": 35671823766,
+      "job": 106569756919,
+      "result": "FAIL",
+      "gate": "snapshot source pin exposure"
+    },
+    {
+      "run": 35672017517,
+      "job": 106570357717,
+      "result": "FAIL",
+      "gate": "actor shader compile census 58/63"
+    },
+    {
+      "run": 35672227722,
+      "job": 106571025025,
+      "result": "FAIL",
+      "gate": "same actor shader compile census 58/63 after visibility repair"
+    }
+  ],
+  "missing": [
+    "No v2 public Stage deployment.",
+    "No v2 screenshot artifact: Run 4 stopped before screenshot section.",
+    "No exact identity list for the five decorated actor materials whose compile marker was not observed.",
+    "No Georg visual acceptance.",
+    "No OSM/Race/environment integration."
+  ],
+  "start": {
+    "command": "python3 -m http.server 4173 --bind 127.0.0.1",
+    "url": "http://127.0.0.1:4173/kfb-hub/stage/toolbox/hybrid-surface-scene-lab-v2/",
+    "notes": "Use only for frozen-candidate diagnosis. Do not present as accepted/public v2 Stage."
+  }
+}

@@ -5,6 +5,18 @@ Date: 2026-09-22
 Coordinator: Georg / KFB  
 Runtime ownership: **unchanged**. This file coordinates visual rules across existing owners; it is not a renderer, game runtime, Asset Registry, World/OSM, Race, ToolBox or actor owner.
 
+## CURRENT OVERRIDE · Hybrid Surface v2 implementation status
+
+Draft PR #166 produced a real v2 candidate, but it is now **FROZEN FAILED** under the two-pass recovery rule.
+
+Frozen runtime/code head:
+`7cbad52b55fb9ec2300aa4b25ca92b0997ce448a`
+
+Recovery:
+`tools/KFB-ToolBox/_handover/HYBRID_SURFACE_V2_FAILURE_RECOVERY_2026-09-22/START_HERE.md`
+
+The measured head-size scale result is retained as evidence, but v2 surface/seam/clay visual acceptance was not reached. The immediate next gate is only an actor material compile-census diagnostic. The Environment Style Lab remains downstream and must not start from this failed candidate.
+
 ## 1. Why this exists
 
 The public Hybrid Surface Scene proof established that one shared surface field can be applied to exact KFB/KayKit source assets while retaining their original base colors/maps. Georg's visual review adds three production-critical corrections that must survive chat resets:

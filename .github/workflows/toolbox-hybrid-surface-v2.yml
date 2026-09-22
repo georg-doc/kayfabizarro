@@ -1,0 +1,43 @@
+name: ToolBox Hybrid Surface v2 proof
+# Frozen after two failed repair passes on the same compile-census gate.
+# Manual dispatch only; do not burn CI on every recovery-documentation commit.
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  browser-proof:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Static syntax and manifest
+        run: |
+          node --check kfb-hub/stage/toolbox/hybrid-surface-scene-lab-v2/hybrid-surface.v2.js
+          node --check kfb-hub/stage/toolbox/hybrid-surface-scene-lab-v2/lab.mjs
+          node --check kfb-hub/stage/toolbox/hybrid-surface-scene-lab-v2/proof.mjs
+          python3 -m json.tool kfb-hub/stage/toolbox/hybrid-surface-scene-lab-v2/SOURCE.json >/dev/null
+      - name: Install Playwright Chromium
+        run: |
+          npm install --no-save playwright@1.51.1
+          npx playwright install --with-deps chromium
+      - name: Serve candidate
+        run: |
+          python3 -m http.server 4173 --bind 127.0.0.1 >/tmp/hybrid-v2-http.log 2>&1 &
+          for i in {1..30}; do curl -fsS http://127.0.0.1:4173/kfb-hub/stage/toolbox/hybrid-surface-scene-lab-v2/ >/dev/null && exit 0; sleep 1; done
+          cat /tmp/hybrid-v2-http.log
+          exit 1
+      - name: Browser proof
+        env:
+          HYBRID_V2_BASE_URL: http://127.0.0.1:4173/kfb-hub/stage/toolbox/hybrid-surface-scene-lab-v2/
+          HYBRID_V2_PROOF_DIR: hybrid-surface-v2-evidence
+        run: node kfb-hub/stage/toolbox/hybrid-surface-scene-lab-v2/proof.mjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: toolbox-hybrid-surface-v2-evidence
+          path: hybrid-surface-v2-evidence
+          retention-days: 14

@@ -80,16 +80,25 @@ Current gate: Georg reviews the three actors' Idle → Walk → Run / phase-sync
 
 ## CURRENT ADDITIVE · Hybrid Surface v2 / KFB 3D style · 2026-09-22
 
-The public real-asset Hybrid Surface predecessor remains a ToolBox material-compatibility proof; Georg's review is now persisted as the next bounded gate.
+**CURRENT CORRECTION:** the v2 implementation candidate is now **FROZEN FAILED / FAILURE RECOVERY**. Do not continue styling or publish a v2 Stage.
 
-Handoff:
-`_handover/HYBRID_SURFACE_V2_2026-09-22/START_HERE.md`
+Failure recovery:
+`_handover/HYBRID_SURFACE_V2_FAILURE_RECOVERY_2026-09-22/START_HERE.md`
 
-Cross-project visual standard:
+Frozen runtime/code head:
+`7cbad52b55fb9ec2300aa4b25ca92b0997ce448a`
+
+Draft PR: **#166**
+
+The candidate successfully measured head-size scaling and preserved source material properties, but the same actor shader compile-census gate remained **58/63** after two repair passes. Per the KFB stop rule it is frozen.
+
+The public v1 Hybrid Surface Stage remains the current human-visible baseline:
+`https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/hybrid-surface-scene-lab/`
+
+Exactly one next gate: identify and classify the five unexplained decorated actor material records. No clay/grain/seam tuning and no OSM/Race continuation until that diagnostic passes.
+
+Cross-project art-direction standard remains:
 `../../skills/chat/masterplan/KFB_3D_STYLE_SURFACE_SCALE_2026-09-22.md`
-
-Next changes are narrowly: stronger clay/grain materiality, seam reduction, preserve source roughness/specular character instead of globally matting every material, and head-size-based mixed-rig scaling. After that visual gate, the same standard proceeds to a real OSM/Race environment slice; ToolBox does not take World/OSM/Race ownership.
-
 
 ## CURRENT ADDITIVE · ToolBox Home v2 · 2026-09-21
 

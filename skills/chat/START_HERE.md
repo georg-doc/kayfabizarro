@@ -415,3 +415,14 @@ Exactly one next gate: **LWP-EXT-F1 · extension-load observability** — identi
 Georg's reviewed Hybrid Surface findings are persisted at [KFB 3D Art Direction · Surface, Scale and Environment Standard](masterplan/KFB_3D_STYLE_SURFACE_SCALE_2026-09-22.md). Core decisions: stronger clay/grain materiality; visible seam is a real defect; preserve source roughness/specular character rather than globally matting hair/armour; mixed Rig_Legacy/Rig_Medium/Rig_Large scenes calibrate from measured head size rather than total height; and the same shape/surface language must later continue through OSM Hürth/Ehrenfeld/Köln, RaceTrack Cologne, terrain/vegetation and real landmark donors.
 
 The next bounded implementation is [Hybrid Surface Scene Lab v2](workflows/KFB_HYBRID_SURFACE_V2_2026-09-22/START_HERE.md) on the same exact real Dungeon + five-actor donor set. Environment consumer work is explicitly next after that visual gate; no World/OSM/Race runtime ownership moves here.
+
+
+## 2026-09-22 · Hybrid Surface v2 failure recovery
+
+Hybrid Surface v2 implementation on Draft PR #166 is **FROZEN FAILED**, not a Stage candidate. The same actor shader compile-census gate remained `58/63` after two repair passes. Frozen runtime/code head: `7cbad52b55fb9ec2300aa4b25ca92b0997ce448a`.
+
+Recovery entry: [Hybrid Surface v2 failure recovery](../../tools/KFB-ToolBox/_handover/HYBRID_SURFACE_V2_FAILURE_RECOVERY_2026-09-22/START_HERE.md).
+
+Proven salvage includes the exact donor scene, one-texture + procedural 3D grain architecture, source roughness/metalness preservation, and measured head-size scaling (Legacy shorter than Medium; Large taller). These are not yet a visually accepted house style.
+
+Exactly one next gate: **actor material compile census diagnostic**. Identify the five unexplained records before changing shader/proof behavior. The public v1 Stage remains the only human test surface; OSM/Race environment work stays downstream.
