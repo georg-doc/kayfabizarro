@@ -1,0 +1,37 @@
+{
+  "schema": "kfb.card-zone-source-stage/1",
+  "marker": "KFB_CARD_ZONE_LAB_V2_SOURCE_2026_09_22",
+  "status": "F1.5_SOURCE_ISOLATION_CANDIDATE",
+  "repository": "georg-doc/kayfabizarro",
+  "branch": "toolbox/card-zone-lab-f1-5-source-stage-2026-09-22",
+  "pullRequest": 172,
+  "baseMain": "2fc46f9cca0af68ab98c46d812eae5261a9f8901",
+  "implementationTestHead": "16efcfb7754a1adc0f5f2647a086ccc6d2c3460b",
+  "source": {
+    "path": "tools/KFB-ToolBox/_inbox/KFB Card Zone Lab v2/card-zone-lab-v2-full_2026-09-22/KFB Card Zone Lab v2.dc.html",
+    "gitBlob": "e7bb09e49b2a885eb076e8c43c0ff561a9cebb72",
+    "sha256": "a619d3a867064ec033a149f400da708b57e8e05d24e44b709d18dd8c7a62284b",
+    "bytes": 145369
+  },
+  "stage": {
+    "route": "https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/card-zone-lab-v2-source/",
+    "entry": "kfb-hub/stage/toolbox/card-zone-lab-v2-source/index.html",
+    "entryIsByteIdenticalToSource": true,
+    "sourceTreeCopiedWithoutEdits": true,
+    "addedEvidenceFiles": [
+      "SOURCE.json",
+      "proof.mjs"
+    ]
+  },
+  "protectedOwners": [
+    "Card Zone remains the source donor; this route does not extract modules",
+    "Storytelling Maps keeps responsive CardRig ownership",
+    "Asset Registry/Librarian keeps asset identity and provenance",
+    "Travel keeps macro world, terrain, water and named palette ownership",
+    "Hex, Dungeon and character consumers keep grid, collision, rig, movement and gameplay ownership"
+  ],
+  "localProof": "32/32 Chromium/WebGL PASS",
+  "publicVerifiedHead": null,
+  "publicProofRun": "PENDING_PUBLICATION",
+  "humanAcceptance": "OPEN"
+}

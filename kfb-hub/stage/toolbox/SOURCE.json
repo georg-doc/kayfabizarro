@@ -21,11 +21,51 @@
     "EyeRig/Motion/Combat/Race remain their existing owners",
     "ToolBox Home = router only"
   ],
-  "mainMergeHead": "dfbbb733b37a3923e4e5a80ff99f9f91209f3aaa",
+  "mainMergeHead": "dfaafac070747f9543b5eb5a635e2aaa74e57b83",
   "publicationBranch": "cloudflare-live",
-  "publicationHead": "cbbae810e6ddb8f282e702d0897bed8566361327",
+  "publicationHead": "c2185ed4a59bbae0c3610cb35155af1ccb542c00",
   "publicVerification": {
-    "status": "PENDING",
-    "reason": "This session's direct HTTP viewer could not fetch kayfabizarro.pages.dev; no PUBLIC_VERIFIED claim is made until the exact routes are opened and v2 markers are visible."
-  }
+    "status": "PENDING_TOOL_ACCESS_BLOCKED",
+    "attempts": [
+      "web viewer: hub URL inaccessible",
+      "web viewer: toolbox URL cache miss",
+      "direct urllib fetch: DNS resolution unavailable"
+    ],
+    "rule": "Do not claim PUBLIC_VERIFIED until the exact pages.dev routes show the v2 markers."
+  },
+  "statusRefresh": {
+    "branch": "hub/toolbox-v2-status-refresh-2026-09-21",
+    "implementationHead": "ff3b71a386f370da80b2a19cfc242ec9c0a7b00a",
+    "checks": "18/18 PASS",
+    "auditedPublicationHead": "120159b1d7708b5bf580af63da4c503a6821a286",
+    "changes": [
+      "remove stale Hub UI v2 review gate after human acceptance",
+      "replace stale 15-card ToolBox references with current 17-card v2 route matrix",
+      "add ToolBox to Hub fallback and Stage router",
+      "preserve prominent Hub header ToolBox link",
+      "refresh ROUTE_AUDIT against current cloudflare-live tree"
+    ]
+  },
+  "currentPlanningDelta": {
+    "date": "2026-09-21",
+    "baseMain": "2dbc965fbe8149318a502fde250ecb1acec65f10",
+    "verifiedIntake": "tools/KFB-ToolBox/_inbox/KFB ToolBox Bench v1 - KFB Voxel Card Zone Lab 2 - Hex Assets Worldbuilding/kfb-toolbox-v1/",
+    "verifiedFileCount": 23,
+    "briefs": [
+      "skills/chat/workflows/KFB_TOOLBOX_FLUID_CARD_VOXEL_CONSOLIDATION_V1_2026-09-21/START_HERE.md",
+      "skills/chat/workflows/KFB_THEATRE_CURTAIN_CORE_V2_2026-09-21/START_HERE.md",
+      "skills/chat/workflows/KFB_PLAYABLE_MVP_CONSOLIDATION_V1_2026-09-21/START_HERE.md"
+    ],
+    "routerCounts": "7 public / 5 missing-or-blocked / 7 source-or-integration / 19 total",
+    "boundary": "Planning/router refresh only. Fluid/Card/Voxel candidates are not promoted; Theatre Curtain v1 remains at its existing human gate."
+  },
+  "cardZoneF1_5": {
+    "pullRequest": 172,
+    "route": "https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/card-zone-lab-v2-source/",
+    "marker": "KFB_CARD_ZONE_LAB_V2_SOURCE_2026_09_22",
+    "implementationTestHead": "16efcfb7754a1adc0f5f2647a086ccc6d2c3460b",
+    "proof": "32/32 local Chromium/WebGL PASS",
+    "boundary": "Exact source isolation only; no extracted module promotion or runtime-owner change."
+  },
+  "publicationFilesReadback": "PASS · kfb-hub/index.html + kfb-hub/stage/index.html + ROUTE_AUDIT.json match main blobs"
 }
