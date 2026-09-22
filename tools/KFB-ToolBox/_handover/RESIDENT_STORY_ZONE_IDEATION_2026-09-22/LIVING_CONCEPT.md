@@ -3533,3 +3533,96 @@ Before code, verify only:
 4. which one source-backed food gift is easiest to carry/handoff visibly.
 
 Everything else can remain v0.
+
+
+---
+
+# 28 · Persistence decision and first pink-donut gift
+
+## USER DECISION · persistence home
+
+Gift Inventory persistence should live with the existing **Session / Journey / Fractal Almanac** direction.
+
+This means the same broad journey-memory layer is the conceptual home for:
+
+- the player's current transferable Gift Inventory;
+- gift provenance;
+- Lean Memory receipts;
+- remembered social encounters;
+- later Journey / Almanac reconstruction.
+
+Existing source direction already describes the Fractal Almanac as:
+
+- collection;
+- Journey Memory;
+- Story / Replay layer;
+- Save metaphor.
+
+Therefore do **not** create a separate "gift save system".
+
+The exact runtime storage adapter remains an implementation detail to resolve against the current Session/Journey save owner.
+
+## USER DECISION · first visible gift
+
+Replace the temporary burger fixture with:
+
+**Tiny Treats · pink donut**
+
+Exact source:
+
+`media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE/Assets/gltf/donut_pink.gltf`
+
+The asset is already present in Registry/source evidence and has also been used by an existing KFB donor as `donut_pink`.
+
+This becomes the first preferred visible gift candidate for:
+
+- Resident → Resident;
+- Resident → Player;
+- Player → Resident re-gift.
+
+The three v0 documentation fixtures now reference this source.
+
+## Why the pink donut is a good first gift
+
+It is:
+
+- visually readable;
+- small enough for a simple carry/handoff test;
+- already source-backed;
+- compatible with the absurd gift-claim direction;
+- especially suitable for the earlier Orc → Lore Keeper miracle-donut concept.
+
+The first proof does **not** need the full "hair-loss miracle" gag.
+
+A minimal first handoff can simply prove:
+
+`offer → accept → transfer → Backpack → provenance → re-gift`
+
+The bizarre claim / reaction layer can be added after the object transfer itself works.
+
+## CORRECTION · technical questions removed from Georg's gate
+
+Two previously listed open questions are **not** product decisions Georg needs to answer:
+
+- exact canonical player/actor IDs in the selected host;
+- exact current ChatterBox caller/adapter function.
+
+These are implementation integration details.
+
+The implementation owner must recover them from the chosen current host and ChatterBox code.
+
+Do not return these as abstract technical questions to Georg unless a concrete conflict requires a product choice.
+
+## Human-readable next question
+
+The next useful product-level question is no longer:
+
+> Which internal actor ID / caller seam should we use?
+
+It is simply:
+
+> **Which first social gift encounter do we want to see working?**
+
+Current suggested proof remains:
+
+**Orc → player / Lore Keeper with pink donut**, using one short Bubble exchange and one successful gift handoff.
