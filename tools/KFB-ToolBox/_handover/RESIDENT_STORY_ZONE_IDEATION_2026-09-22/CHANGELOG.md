@@ -34,3 +34,13 @@ Confirmed this concept must reuse rather than replace:
 
 ### IMPLEMENTATION STATUS
 Documentation only. No runtime change, browser test, Stage deployment or public verification.
+
+
+## 2026-09-22 · Activity Stations extension
+
+### PROPOSAL
+- Add **Activity Stations** as object/place-side affordances: bench seat, anvil work target, mine entry, pickup/dropoff, conversation and SFX/VFX anchors.
+- Bind Residents through capability/activity adapters instead of scripting character-specific coordinates/clips into every scene.
+- Allow Story Zones to use either a concrete cast or reusable role slots such as `role.blacksmith` / `role.miner`.
+- Add semantic sockets/anchors for drag-and-drop authoring.
+- Prefer breadcrumb scope navigation for nested editing so the scene remains visually dominant.
