@@ -1,5 +1,31 @@
 # KFB ToolBox · additives Changelog
 
+## 2026-09-22 · Tileable Macro Seam Lab · public 17/17
+
+### PROVEN CAUSE
+The shared RGB brush bitmap used by the earlier surface proof was not tileable. Random strokes/blobs were authored once and then repeated via `RepeatWrapping`; opposite edges did not match.
+
+### IMPLEMENTATION
+Draft PR #173 adds a seam-only periodic/toroidal RGB brush generator. It retains the exact frozen Hybrid v2 material, clay/grain logic, source roughness behavior, measured head-scale factors and real Dungeon/GothGirl/FrizzleBob donors.
+
+### TESTED
+- local browser: **17/17 PASS**
+- public Cloudflare browser: **17/17 PASS**
+- edge discontinuity average: **14.242 → 1.375**
+- 0 failed public resources
+- 0 page/console errors
+- public run `35677711287`
+- public job `106588167104`
+- public artifact `10673323485`
+- KFB Hub + ToolBox public link proof run `35678440295`: PASS
+
+### PUBLIC STAGE
+`https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/tileable-macro-seam-lab/`
+
+### BOUNDARY / NEXT
+This is a human seam-review gate only. No Hybrid v2 promotion, no Black Knight census repair, and no OSM/Race integration is implied. Georg decides whether the visible seam is acceptably gone.
+
+
 ## 2026-09-22 · Hybrid Surface v2 review persistence
 
 ### HUMAN REVIEW
