@@ -73,6 +73,28 @@ Text is optional, minimal and host-provided. One kicker, one title, one short de
 
 Do not run these in parallel against shared consumer files.
 
+## Georg visual direction · 2026-09-22
+
+Human review does **not** reject the v1 cloth foundation.
+
+Product decision:
+
+**KEEP Theatre Curtain v1/Core v2 as the universal KFB transition module. Do not restart or replace it.**
+
+The current isolated curtain is **not yet visually accepted as finished**.
+
+Required refinement before MVP consumer integration:
+
+1. add a recognisable theatre **lower-third tieback / swag** opening preset rather than relying only on top-rail side gathering;
+2. preferably show a physical cord/tieback mechanism;
+3. investigate and remove unnatural line/crease artifacts that appear under strong bending/gathering;
+4. preserve the existing cloth/Verlet foundation while repairing these visual defects;
+5. only after geometry/motion is clean, explore an older/worn theatre fabric treatment;
+6. restrained burn/wear holes are later surface detail, never a mask for cloth artifacts;
+7. an optional hanging/swaying KFB 3D wordmark may live in front as a separate stage object; Curtain Core does not own the wordmark runtime.
+
+The lower-third tieback/swag was already listed as deferred in v1 Return. It is now an explicit human-requested refinement.
+
 ## Acceptance
 
 - existing v1 visual/physics gate remains explicit;
