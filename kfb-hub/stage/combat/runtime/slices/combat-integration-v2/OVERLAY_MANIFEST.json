@@ -1,0 +1,37 @@
+{
+  "schema": "kfb.combat-ca2-overlay/1",
+  "slice": "combat-integration-v2",
+  "baseCommit": "f6a59ad15b9ffcf3164b0ab013f223962b63f61f",
+  "note": "Exact intentional overlays only; RECOVERED_SOURCE_MANIFEST remains immutable.",
+  "files": [
+    {
+      "path": "index.html",
+      "baseSha256": "77bb20260e93bb45b73472cb5a531ec7e67ce7f58bc6fe9b5215c65e869e029a",
+      "gitBlobSha": "93ab360e0f0e931dfc1cbce9e5ea8d93a1100631"
+    },
+    {
+      "path": "combat-arena-v2/mobs.v2.js",
+      "baseSha256": "bb8e0a09110ea26a4d202979e8c9ce3eed3632b66eb046764c1f50bad76d89c7",
+      "gitBlobSha": "556f508522c1f826f98ec1891604ca8d7c158a58"
+    },
+    {
+      "path": "combat-arena-v2/gunfight.v2.js",
+      "baseSha256": "90fdfb768665ebc555c762addc0eb4b80e570f188371a739fdb4409625392987",
+      "gitBlobSha": "4a571a225e2a7bb2f631463566c1888b9c30bbf1"
+    },
+    {
+      "path": "combat-arena-v2/kaykit-enemy-source.v2.js",
+      "gitBlobSha": "9cf8a34082d96d05d32f1a814aebf0eeea28da2f"
+    },
+    {
+      "path": "combat-arena-v4/targeting.v4a.js",
+      "baseSha256": "6b89c31899a8e32c777d12352bcb62d692e4044d6cd591a9608a7f53a70e3a4f",
+      "gitBlobSha": "0ae5c265b2e08eb6cfbc5143668caee4d3f984a9"
+    },
+    {
+      "path": "tools/build.py",
+      "baseSha256": "1851469a2aeef1f6231b8d7a4faff93d0747e29e99adf55c5810b3f18a7dd8ee",
+      "gitBlobSha": "03a2f8b6e1e2dc94a788d2f1ac67a792c017cda6"
+    }
+  ]
+}

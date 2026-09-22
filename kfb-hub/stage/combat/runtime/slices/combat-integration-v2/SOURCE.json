@@ -1,0 +1,82 @@
+{
+  "schema": "kfb.combat-integration-v2-source/1",
+  "status": "C_MVP_A_R2_LOCAL_BROWSER_PASS_WARRIOR_CORE_LOOP_MAGE_HOLD_PUBLICATION_PENDING",
+  "repository": "georg-doc/KFB-Combat-Arena",
+  "branch": "chatgpt-web/combat-arena-integration-v2-2026-09-19",
+  "pr": 5,
+  "base": {
+    "branch": "main",
+    "commit": "f6a59ad15b9ffcf3164b0ab013f223962b63f61f",
+    "recoveredRuntime": "5A/A1",
+    "recoverySource": {
+      "kind": "chatgpt-site-recovered-source-hash",
+      "sourceHash": "bd01a150d26d572017365a2288c179bdfd830079",
+      "gameplayCommit": "eac7cf8b93e94f9d430e066472aed4059315dea0",
+      "siteVersion": 9,
+      "siteURL": "https://kfb-combat-arena-v4.frizzlebob.chatgpt.site/",
+      "verifiedAt": "2026-09-13",
+      "note": "sourceHash is recovery provenance, not a Git commit in georg-doc/kayfabizarro"
+    }
+  },
+  "validatedImplementationHead": "f6ccdcbcca9fde9a234794c8583dbec9b685b4cf",
+  "validatedWorkflowRun": 35766345655,
+  "owners": {
+    "combatState": "KFB-Combat-Arena existing runtime",
+    "movementGround": "combat-arena-v2/player.v2.js",
+    "playerAnimationMixer": "combat-arena-v2/frizzlebob-driver-adapter.v2.js",
+    "face": "kayfabizarro graft-mount.v1",
+    "gunfight": "combat-arena-v2/gunfight.v2.js",
+    "mobLifecycle": "combat-arena-v2/mobs.v2.js",
+    "rewards": "existing Arena Rewards/RunFlow"
+  },
+  "driver": {
+    "repo": "georg-doc/kayfabizarro",
+    "donorCommit": "bdad1806842d733e6217457fe81cd8b6259569e0",
+    "assetCommit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+    "pet": "graft-driver",
+    "animationMode": "host",
+    "reader": "tools/KFB-ToolBox/kfb-rigs-embed-v3/frizzlegraft-v1/graft-mount.v1.js",
+    "contract": "tools/KFB-ToolBox/kfb-rigs-embed-v3/contracts/kfb-pet-graft-driver.v4.json"
+  },
+  "enemies": {
+    "repo": "georg-doc/kayfabizarro",
+    "modelCommit": "378b209355b13304e3cff656ec0806ca5b89df28",
+    "animationCommit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+    "roster": [
+      {
+        "id": "ca2_skeleton_warrior",
+        "path": "media/3D_Assets/KayKit_Skeletons/characters/gltf/Skeleton_Warrior.glb",
+        "blob": "575da270ed4e7e6a40eae60f056640542c2fa645"
+      },
+      {
+        "id": "ca2_skeleton_mage",
+        "path": "media/3D_Assets/KayKit_Skeletons/characters/gltf/Skeleton_Mage.glb",
+        "blob": "7fcc7e425741699d01bf9c2d4d64b795acee1355",
+        "status": "HOLD_C_MVP_MAGE_ADAPTER"
+      }
+    ]
+  },
+  "stage": {
+    "projectPath": "/slices/combat-integration-v2/",
+    "plannedPublicUrl": "https://kayfabizarro.pages.dev/kfb-hub/stage/combat/",
+    "publicStatus": "R2_LOCAL_BROWSER_PASS_DEPLOYMENT_PENDING",
+    "publicMirrorPresentOnKayfabizarroMain": false,
+    "candidateBranch": "stage/combat-ca2-pr5-c-mvp-a-2026-09-22",
+    "candidateHead": "906c9e93f36664b685ac21cd894ccd1b96981ff2",
+    "packageFiles": 218,
+    "packageIdentity": "R2 exact 218-file package built and CI-validated from f6ccdcbcca9fde9a234794c8583dbec9b685b4cf; protected publication pending",
+    "blocker": null
+  },
+  "notes": [
+    "Dropbox contains a later CA2 v3 planning mirror, but it is not the GitHub implementation SSOT for this V2 slice.",
+    "game-dev CLI was unavailable in the current ChatGPT environment; repository-native CI is the evidence baseline.",
+    "No incomplete public mirror or replacement font/VFX fallback was introduced.",
+    "The prior 19-font plus VFX-atlas binary transport blocker is resolved on the bounded publication branch.",
+    "C-MVP-A-R1 changed finite actor admission/isolation and graft-owned face evidence; R2 changes only measured barrel aiming, semantic actor picking and the one-Warrior MVP roster gate.",
+    "Exact Mage and Warrior source GLBs and all visible parts have finite bounds; no source mesh fallback was used.",
+    "Outer graft rig, mouth, two eye actors/eight visible eye meshes and gun are proven in the real browser; no second face owner was introduced.",
+    "R2 local browser evidence proves release, three Warrior hits, kill, reward, clear and next-card respawn.",
+    "Skeleton Mage is retained as verified catalog content but excluded from the MVP runtime under HOLD_C_MVP_MAGE_ADAPTER.",
+    "cloudflare-live and the fixed Combat Stage were not advanced before exact pushed-package verification."
+  ]
+}

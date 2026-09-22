@@ -1,0 +1,391 @@
+{
+  "version": "2.5.1",
+  "updated": "2026-09-06",
+  "canonical": "modules/kfb-combat-sfx.v2.json",
+  "_note": "Combat-SFX v2 · Rev. 4 (2.9.2026) · IndieSFX S050C Arcade Shooter (Mark Sheeky, gekauft, Lizenz in Text/Licence.pdf) als EINE Stimme fuer den Kampf. Rueckfall: Classic Arcade SFX (Sprung). Kenney nur noch fuer Foley, das ein Arcade-Kit nicht kennt (Schritte, Wasser, Landen). · Rev. 5 (v7): Oberflaechen wood/stone (Props), kinetic.earth/bone materialgetrennt (Kenney Impact statt Panzerwand).",
+  "_modell": "WET = vom Designer mit Raum gemischt → alles, was am SPIELER haengt (eigene Launches, UI, Loops, Tod): der Spieler ist der Raum. DRY = ohne Raum → alles, was in der WELT steht (Einschlaege, Gegner-Launches); der Raum kommt aus kfb-sfx-layers (Distanz-Tiefpass + Panorama). Zwei Raeume uebereinander waeren Matsch. MONO wird nicht gebraucht: Panorama macht der Panner.",
+  "_kaskade": "Ein Treffer des Spielers loest bis zu drei Cues: confirm.hit (UI, immer, prio 4) → impact.<energie>.<oberflaeche> (Welt, dry, prio 1–2) → bei Kill aftermath.kill.* (prio 3). Prioritaet 4-in-90-ms: bei Dauerfeuer ueberlebt die Bestaetigung, der Welt-Einschlag wird verdraengt — Overwatch-Regel: der Spieler hoert zuerst, was IHN betrifft. Gegner-Spawn ist STUMM (2.9.: „Activate\" nach jedem Abschuss las sich als Dauer-Xylophon, auch in der Pause).",
+  "_lautheit": "kfb-sfx-layers normalisiert jeden Puffer beim Laden auf -16 dBFS (RMS der lautesten 30 % Fenster, Korrektur 0,25–4×). Drei Kits, ein Pegel — das ist der Unterschied zwischen Bibliothek und Mix.",
+  "_repo_luecke": "DryStereo fehlt im Repo A–D (26 von 110 Dateien: Activate … Dramatic, darunter alle Beam*Loop und ArcadeEnemyShot). Diese Cues nutzen Wet. Nach dem Upload: nur Pfad tauschen.",
+  "_verified": "52 Dateien per HEAD gegen jsDelivr geprueft, 0 fehlend (2.9.2026). · Rev. 5: 8 neue Zellen, Kenney-Impact-Pfade nach Pack-Namensschema, noch nicht per HEAD geprueft.",
+  "_rules": {
+    "cap_polyphony": 3,
+    "fenster_ms": 120,
+    "distanz": "Pegel linear auf 12 % bei 55 u, Tiefpass 20 kHz → ~900 Hz, Panorama ±0,8",
+    "regel": "hoechstens 3 Cues in 120 ms; Einschlaege 70 ms Debounce je Zelle; Salve = ein Launch-Ton (2.9., Georg: doppelt/dreifach)"
+  },
+  "_buses": {
+    "sfx": 1,
+    "player": 1,
+    "enemy": 0.85,
+    "world": 0.9,
+    "ui": 1,
+    "music": 1
+  },
+  "cues": {
+    "launch.acid": {
+      "bus": "player",
+      "prio": 2,
+      "pitch": 0.07,
+      "layers": [
+        {
+          "role": "attack",
+          "files": [
+            "assets/audio/d8eb4ac9373f.wav",
+            "assets/audio/1046d74c26de.wav"
+          ],
+          "gain": 0.55
+        }
+      ]
+    },
+    "launch.enemy": {
+      "bus": "enemy",
+      "prio": 1,
+      "pitch": 0.08,
+      "layers": [
+        {
+          "role": "attack",
+          "files": [
+            "assets/audio/ab67b703c20b.wav"
+          ],
+          "gain": 0.4
+        }
+      ]
+    },
+    "impact.kinetic.bone": {
+      "bus": "world",
+      "prio": 1,
+      "pitch": 0.06,
+      "layers": [
+        {
+          "role": "attack",
+          "files": [
+            "assets/audio/9e037b68a624.ogg",
+            "assets/audio/a65fd115d7c3.ogg",
+            "assets/audio/767e3e7b6b32.ogg",
+            "assets/audio/ebbe82327b1e.ogg",
+            "assets/audio/52ad9c864030.ogg"
+          ],
+          "gain": 0.5,
+          "rate": 1.15
+        }
+      ],
+      "debounce_ms": 70
+    },
+    "impact.kinetic.water": {
+      "bus": "world",
+      "prio": 1,
+      "layers": [
+        {
+          "role": "attack",
+          "files": [
+            "assets/audio/d05664953e81.ogg",
+            "assets/audio/9a24494a566d.ogg",
+            "assets/audio/95827703e7ff.ogg",
+            "assets/audio/3407d78b3f48.ogg",
+            "assets/audio/a73eac63e240.ogg"
+          ],
+          "gain": 0.45,
+          "rate": 0.8
+        }
+      ],
+      "debounce_ms": 70
+    },
+    "confirm.hit": {
+      "bus": "ui",
+      "prio": 4,
+      "spatial": false,
+      "pitch": 0.02,
+      "gainVar": 0.5,
+      "debounce_ms": 120,
+      "layers": [
+        {
+          "role": "attack",
+          "files": [
+            "assets/audio/8b23ee0776b6.wav"
+          ],
+          "gain": 0.13
+        }
+      ]
+    },
+    "aftermath.boom": {
+      "bus": "world",
+      "prio": 3,
+      "pitch": 0.03,
+      "duck": {
+        "bus": "player",
+        "db": -4,
+        "ms": 180
+      },
+      "layers": [
+        {
+          "role": "attack",
+          "files": [
+            "assets/audio/5752d2861877.wav",
+            "assets/audio/642c78f05442.wav"
+          ],
+          "gain": 0.7
+        },
+        {
+          "role": "body",
+          "files": [
+            "assets/audio/9d6e20d258fc.wav"
+          ],
+          "gain": 0.4,
+          "delayMs": 30
+        }
+      ]
+    },
+    "locomotion.land": {
+      "bus": "player",
+      "prio": 2,
+      "layers": [
+        {
+          "role": "attack",
+          "files": [
+            "assets/audio/d05664953e81.ogg",
+            "assets/audio/9a24494a566d.ogg",
+            "assets/audio/95827703e7ff.ogg",
+            "assets/audio/3407d78b3f48.ogg",
+            "assets/audio/a73eac63e240.ogg"
+          ],
+          "gain": 0.5
+        }
+      ]
+    },
+    "locomotion.jump": {
+      "bus": "player",
+      "prio": 1,
+      "layers": [
+        {
+          "role": "attack",
+          "files": [
+            "assets/audio/155af9952d23.wav",
+            "assets/audio/4988da82fa51.wav"
+          ],
+          "gain": 0.3
+        }
+      ]
+    },
+    "locomotion.die": {
+      "bus": "player",
+      "prio": 5,
+      "spatial": false,
+      "duck": {
+        "bus": "sfx",
+        "db": -8,
+        "ms": 1200
+      },
+      "layers": [
+        {
+          "role": "attack",
+          "files": [
+            "assets/audio/6f3fc9838611.wav"
+          ],
+          "gain": 0.6
+        }
+      ]
+    },
+    "ui.select": {
+      "bus": "ui",
+      "prio": 2,
+      "spatial": false,
+      "layers": [
+        {
+          "role": "attack",
+          "files": [
+            "assets/audio/7561583b55fe.wav"
+          ],
+          "gain": 0.3
+        }
+      ]
+    },
+    "launch.dice": {
+      "bus": "player",
+      "prio": 3,
+      "pitch": 0.05,
+      "layers": [
+        {
+          "role": "attack",
+          "files": [
+            "assets/audio/03a41be702f1.wav"
+          ],
+          "gain": 0.45
+        }
+      ]
+    },
+    "dice.bounce": {
+      "bus": "world",
+      "prio": 2,
+      "pitch": 0.05,
+      "layers": [
+        {
+          "role": "attack",
+          "files": [
+            "assets/audio/4e4e926666ae.wav",
+            "assets/audio/cc42a312d667.wav"
+          ],
+          "gain": 0.35
+        }
+      ]
+    },
+    "dice.pickup": {
+      "bus": "ui",
+      "prio": 3,
+      "pitch": 0.05,
+      "layers": [
+        {
+          "role": "attack",
+          "files": [
+            "assets/audio/9af1f7a8aa8c.wav"
+          ],
+          "gain": 0.5
+        }
+      ]
+    },
+    "impact.wet.ink": {
+      "bus": "world",
+      "prio": 2,
+      "pitch": 0.05,
+      "layers": [
+        {
+          "role": "attack",
+          "files": [
+            "assets/audio/a45a1f8a2c0e.wav",
+            "assets/audio/0edc2d0e4cb5.wav"
+          ],
+          "gain": 0.45
+        }
+      ]
+    },
+    "cartoon.slam": {
+      "bus": "player",
+      "prio": 3,
+      "pitch": 0.05,
+      "layers": [
+        {
+          "role": "attack",
+          "files": [
+            "assets/audio/0edc2d0e4cb5.wav"
+          ],
+          "gain": 0.6
+        }
+      ]
+    },
+    "pickup.heal": {
+      "bus": "player",
+      "prio": 3,
+      "pitch": 0.05,
+      "layers": [
+        {
+          "role": "attack",
+          "files": [
+            "assets/audio/9af1f7a8aa8c.wav"
+          ],
+          "gain": 0.6,
+          "rate": 1.3
+        }
+      ]
+    },
+    "pickup.coin": {
+      "bus": "player",
+      "prio": 3,
+      "pitch": 0.05,
+      "layers": [
+        {
+          "role": "attack",
+          "files": [
+            "assets/audio/9af1f7a8aa8c.wav"
+          ],
+          "gain": 0.35,
+          "rate": 1.8
+        }
+      ]
+    },
+    "pickup.hurt": {
+      "bus": "player",
+      "prio": 3,
+      "pitch": 0.06,
+      "layers": [
+        {
+          "role": "attack",
+          "files": [
+            "assets/audio/9e037b68a624.ogg",
+            "assets/audio/a65fd115d7c3.ogg",
+            "assets/audio/767e3e7b6b32.ogg",
+            "assets/audio/ebbe82327b1e.ogg",
+            "assets/audio/52ad9c864030.ogg"
+          ],
+          "gain": 0.6,
+          "rate": 0.7
+        }
+      ],
+      "debounce_ms": 70
+    },
+    "pickup.stun": {
+      "bus": "player",
+      "prio": 3,
+      "pitch": 0.05,
+      "layers": [
+        {
+          "role": "attack",
+          "files": [
+            "assets/audio/0edc2d0e4cb5.wav"
+          ],
+          "gain": 0.45,
+          "rate": 1.35
+        }
+      ]
+    },
+    "skull.bounce": {
+      "bus": "player",
+      "prio": 3,
+      "pitch": 0.06,
+      "layers": [
+        {
+          "role": "attack",
+          "files": [
+            "assets/audio/9e037b68a624.ogg",
+            "assets/audio/a65fd115d7c3.ogg",
+            "assets/audio/767e3e7b6b32.ogg",
+            "assets/audio/ebbe82327b1e.ogg",
+            "assets/audio/52ad9c864030.ogg"
+          ],
+          "gain": 0.3,
+          "rate": 1.65
+        }
+      ],
+      "debounce_ms": 70
+    },
+    "pickup.splash": {
+      "bus": "player",
+      "prio": 3,
+      "pitch": 0.08,
+      "layers": [
+        {
+          "role": "attack",
+          "files": [
+            "assets/audio/0edc2d0e4cb5.wav"
+          ],
+          "gain": 0.5,
+          "rate": 0.85
+        }
+      ]
+    },
+    "pickup.smoke": {
+      "bus": "player",
+      "prio": 3,
+      "pitch": 0.05,
+      "layers": [
+        {
+          "role": "attack",
+          "files": [
+            "assets/audio/0edc2d0e4cb5.wav"
+          ],
+          "gain": 0.35,
+          "rate": 1.15
+        }
+      ]
+    }
+  }
+}

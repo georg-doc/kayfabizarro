@@ -1,0 +1,63 @@
+{
+  "schema": "kfb.combat-stage-source/1",
+  "stage": "C-MVP-A-R2",
+  "status": "WARRIOR_CORE_LOOP_PASS_CANDIDATE_READY_FOR_PROTECTED_PUBLICATION",
+  "source": {
+    "repository": "georg-doc/KFB-Combat-Arena",
+    "pr": 5,
+    "branch": "chatgpt-web/combat-arena-integration-v2-2026-09-19",
+    "handoffHead": "cfe3f03f543e662c8461259af38ec41a22b353c8",
+    "validatedImplementation": "f6ccdcbcca9fde9a234794c8583dbec9b685b4cf",
+    "runtimePath": "dist/"
+  },
+  "packaging": {
+    "repository": "georg-doc/kayfabizarro",
+    "branch": "stage/combat-ca2-pr5-c-mvp-a-2026-09-22",
+    "files": 218,
+    "identity": "exact rebuilt R2 portable package"
+  },
+  "public": {
+    "url": "https://kayfabizarro.pages.dev/kfb-hub/stage/combat/",
+    "status": "NOT_DEPLOYED",
+    "reason": "protected publication awaits candidate checkpoint and exact URL proof"
+  },
+  "browser": {
+    "status": "LOCAL_REAL_BROWSER_PASS",
+    "coreLoop": [
+      "FrizzleBob Driver",
+      "Skeleton Warrior",
+      "aim",
+      "shoot",
+      "hit x3",
+      "kill",
+      "reward",
+      "run clear",
+      "next-card respawn"
+    ],
+    "counters": {
+      "shots": 5,
+      "hits": 3,
+      "kills": 1,
+      "rewardDice": 1,
+      "pop": 1
+    },
+    "errors": 0
+  },
+  "holds": [
+    "Skeleton Mage adapter",
+    "Legacy actor",
+    "melee",
+    "Spindle Sky",
+    "additional enemies"
+  ],
+  "ownership": {
+    "movementGround": "Player.v2",
+    "playerPresentationMixer": "DriverCA2",
+    "face": "graft-mount.v1",
+    "muzzle": "graft-muzzle -> Gunfight",
+    "gunfight": "Gunfight",
+    "enemyLifecycle": "MobBrain",
+    "rewardsRunFlow": "existing Arena"
+  },
+  "updatedAt": "2026-09-22"
+}
