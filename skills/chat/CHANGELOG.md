@@ -1187,3 +1187,27 @@ KFB Hub current TODOs/briefings now include:
 The stale active `KFB Lead Work · CURRENT LEAD` card was removed from the active briefing list; routine lead work is Web-first and Work/WSA remains escalation-only.
 
 Hub source was written to both current `main` and `cloudflare-live`. Public browser verification from this chat was unavailable because the external fetch surface rejected the Pages URL; no unsupported PUBLIC_VERIFIED claim is made for this documentation-only update.
+
+
+## 2026-09-23 · WorldBuilder WB1-P0 revalidated
+
+Completed the bounded WorldBuilder v1 P0 source/reuse/license gate on `chatgpt-web/world-building-preflight-2026-09-22`.
+
+Persisted:
+- `tools/KFB-ToolBox/world-building-preflight/SOURCE_REUSE_MATRIX.md` — current internal donor classifications, protected owners, external pins/licenses and explicit exclusions;
+- `tools/KFB-ToolBox/world-building-preflight/TEST_REPORT.md` — current revalidation evidence and evidence boundary;
+- `tools/KFB-ToolBox/world-building-preflight/CHANGELOG.md` — additive project history.
+
+Revalidation result:
+- Travel current head unchanged;
+- Combat Spindle planning head unchanged;
+- 8 external research donors rechecked;
+- only `ZyFou/ProceduralTerrains` advanced and was re-pinned to `f58a8ddb81d1fbb526a41282a9a7e9c05c2d2070`;
+- its MIT license blob remains unchanged;
+- Terranian still has no repository-root license file and remains `DO_NOT_IMPORT`;
+- runtime files changed: 0;
+- browser/gameplay/Cloudflare tests: 0 / not applicable to P0.
+
+Production Router, ToolBox handover index and KFB Hub source now route **WB1-P1 WhackMan Environment Profile isolation** as the one next WorldBuilder gate. WB1-P2 FLAT/SPHERE/TORUS remains HOLD until P1 is committed and verified.
+
+No Stage or Live promotion was performed.
