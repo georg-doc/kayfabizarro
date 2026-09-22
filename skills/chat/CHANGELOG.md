@@ -1061,3 +1061,49 @@ Pencil/Brush weapon-class and special impact-VFX ideas remain deferred; they may
 ### ROUTING
 
 Central Combat node now points to the Combat repo's `CA2_NOW_NEXT.md`. The KFB Hub P0 Combat card points to that source/recovery gate rather than the superseded monolithic CA2-04 prompt. No unverified Sword-01 Cloudflare link was added.
+
+## 2026-09-22 · Combat CA2-SWORD-01 public publication gate frozen
+
+### IMPLEMENTATION STATUS
+
+Combat implementation remains green on `georg-doc/KFB-Combat-Arena` PR #7.
+
+- final handoff head: `f773dbeb0cfa09fa7e1bd72a4323130b2c0eff06`
+- final CI run `35673541360` / job `106575115480`
+- **98/98 tests PASS**
+- portable build **234 files**
+- re-home **172 preserved / 66 verified / routes PASS**
+- exact current candidate: Skeleton Warrior + `Skeleton_Blade.gltf` + real `Melee_1H_Attack_Chop` + non-overlap spacing + swept contact + `AttackLedger`
+
+No productive PR #5 melee promotion occurred.
+
+### PUBLICATION RESULT
+
+The Sword-01 Stage wrapper was added to the KFB Hub publication tree and pinned to the exact tested Combat runtime. Public verification then failed twice.
+
+QA run: `35672704030`
+
+- attempt 1: job `106572514291` · artifact `10672111627` · digest `sha256:88ac37958f69941f08da4509e17286241d70a42e51201c60b2e2afd458f09611`
+- attempt 2: job `106573050384` · artifact `10671063958` · digest `sha256:6f9acb36520341b3cb6e2a73a88e500fb2b2f7cacb564edd4b19624bcd4c27d7`
+
+Both attempts received HTTP 200 for the exact `SOURCE.json` child route but the body was the KFB Hub fallback HTML rather than the pinned JSON marker. WebGL boot was therefore not reached and no screenshot or human visual PASS exists.
+
+Classification: **CLOUDFLARE_CHILD_ROUTE_FALLBACK · PUBLICATION_BOUNDARY_UNKNOWN**.
+
+Per the two-pass rule:
+- candidate preserved;
+- no third publication repair in this slice;
+- automatic Sword-01 public QA frozen;
+- Combat runtime not modified for a publication-layer failure.
+
+Canonical recovery:
+`kfb-hub/stage/combat/ca2-sword-01/failure-recovery/RECOVERY.md`
+
+### ROUTING
+
+- central Combat node now points to PR #7 head `f773dbeb...` and the frozen public-gate state;
+- KFB Hub card is marked **implementation green / public route blocked** and points to the recovery record rather than the invalid child route;
+- next gate is **CA2-SWORD-01-PUB-F1 · publication observability only**;
+- only after the exact public `SOURCE.json` marker is served may public browser QA and the Blade visual gate resume.
+
+No merge. No Live promotion.
