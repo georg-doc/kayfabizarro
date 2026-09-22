@@ -44,6 +44,7 @@ If this is a replacement/fresh chat after context loss, use `RECOVERY_PATH.md` r
 - Human-facing KFB preview/Stage/Live links use `kayfabizarro.pages.dev` / KFB Hub; do not publish active review links through GitHub Pages, githack or raw-CDN mirrors.
 - A timeout is `UNKNOWN`, never success: verify the exact branch head, workflow/deployment and public URL before retrying or claiming completion.
 - After two repair passes without progress on the same gate, stop and export. Preserve the failed candidate and route through the failure-recovery template instead of spending a third pass on the same foundation.
+- **Gate severity must be proportional to product impact.** Optional actors/assets/axes/attachments/shaders may not block an MVP unless they are the named acceptance target. Apply `GATE_PROPORTIONALITY_TOKEN_BUDGET_PROTOCOL.md`: ask Georg when cheap clarification beats another diagnostic pass; quarantine minor issues; protect Work/Claude budget.
 
 ## Status vocabulary
 
@@ -58,6 +59,7 @@ If this is a replacement/fresh chat after context loss, use `RECOVERY_PATH.md` r
 - `RECOVERY_PATH.md` — deterministic recovery after chat/context failure
 - `FRESH_CHAT_SLICE_PROTOCOL.md` — bounded cold-start work and compact next-day review packet
 - `CHAT_GITHUB_KFB_STAGE_WORKFLOW.md` — binding Chat → GitHub → Cloudflare Stage → Hub delivery and timeout recovery
+- `GATE_PROPORTIONALITY_TOKEN_BUDGET_PROTOCOL.md` — binding cross-project rule preventing minor details from consuming MVP / Work / Claude budget
 - `WEB_PROJECT_FOLDER_INSTRUCTIONS.md` — copy-ready instruction text for Web project folders
 - `templates/CLAUDE_DESIGN_FAILURE_RECOVERY_EXPORT.md` — stop/export/post-mortem template after repeated visual or kit failures
 - `ANTI_SLOP_VISUAL_BRIEF_GUARDRAILS.md` — mandatory donor-first and every-pixel-pays-rent rules for visual briefs
