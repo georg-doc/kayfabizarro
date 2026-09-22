@@ -1,0 +1,40 @@
+{
+  "schema": "kfb.stage-source/0.1",
+  "id": "CA2-SWORD-01-VIS",
+  "status": "STAGE_MIRROR_SOURCE_PINNED_HUMAN_GATE_PENDING",
+  "route": "https://kayfabizarro.pages.dev/kfb-hub/stage/combat/ca2-sword-01/",
+  "owner": {
+    "repo": "georg-doc/KFB-Combat-Arena",
+    "pr": 7,
+    "branch": "chatgpt-web/ca2-04-melee-vfx-sfx-2026-09-20",
+    "head": "c04f0fffeb8cd90b48d70a2787c9ef1ca75ee725"
+  },
+  "runtime": {
+    "kind": "thin-stage-wrapper",
+    "lab": "slices/ca2-melee-lab/lab.mjs",
+    "load": "https://cdn.jsdelivr.net/gh/georg-doc/KFB-Combat-Arena@c04f0fffeb8cd90b48d70a2787c9ef1ca75ee725/slices/ca2-melee-lab/lab.mjs",
+    "note": "No Combat runtime code is copied into kayfabizarro; the Stage wrapper loads the exact tested PR7 lab."
+  },
+  "gate": [
+    "exact Skeleton Blade visible",
+    "right-hand mount plausible",
+    "actor bodies non-overlapping",
+    "real Melee_1H_Attack_Chop reads as a weapon strike"
+  ],
+  "implementationEvidence": {
+    "run": 35671057535,
+    "job": 106567374272,
+    "tests": {
+      "passed": 98,
+      "failed": 0
+    },
+    "portableBuildFiles": 234,
+    "rehome": {
+      "preservedRuntimeFiles": 172,
+      "verifiedDonorFiles": 66,
+      "portableRoutes": "PASS"
+    }
+  },
+  "humanAcceptance": "PENDING",
+  "liveVerification": "PENDING"
+}
