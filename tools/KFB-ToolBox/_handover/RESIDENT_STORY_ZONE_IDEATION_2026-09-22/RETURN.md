@@ -120,7 +120,9 @@ No implementation or public result is claimed.
 - exact player Gift Backpack save owner and first slot count;
 - exact Bubble choice adapter from canonical Calls into ChatterBox/Triplet context;
 - standalone extraction/attachment proof for Protagonist A/B backpack sibling meshes;
-- receiving owner resolution for GiftInventoryItem persistence, canonical host actor/player IDs, ChatterBox caller seam and first visible food handoff;
+- GiftInventoryItem persistence concept is decided: Session / Journey / Fractal Almanac; exact storage adapter remains implementation detail;
+- canonical host actor/player IDs and ChatterBox caller seam are implementation-resolved details, not Georg gates;
+- first visible food gift is decided: Tiny Treats `donut_pink.gltf`;
 - exact inventory of reusable full-body laugh/cry/surprise/inspect/gift-accept clips across relevant rig families;
 - exact semantic seam from ChatterBox social cue → host social state → optional Combat owner → repair beat;
 - current 3D ChatterBox invocation/output contract;
@@ -132,6 +134,21 @@ No implementation or public result is claimed.
 
 ## One next gate
 
-**Resolve the four receiving owner/seam facts before any runtime implementation: persistence owner, host actor/player IDs, ChatterBox caller seam, and first visible food-handoff asset.**
+**Choose and prove the first visible pink-donut social gift encounter. Recommended smallest player-facing proof: Orc → player → one Bubble Call → offer/accept → TRANSFER_COMMIT → Almanac/Journey provenance → release/resume.**
 
 Do not build a general World Editor, autonomous NPC system or separate social-combat engine yet.
+
+
+## Branch divergence note
+
+At the latest checkpoint:
+
+- current `main`: `3f6f713d89ddc9e2665f838e1aa24fa79231a30c`;
+- this concept branch is based on an earlier main history and has continued additively;
+- Draft PR #174 currently reports **mergeable: false** against the moved main base.
+
+This does not block ideation/document persistence.
+
+Before any merge/promotion, reconcile the branch against the then-current main and re-run the exact-file/head checks.
+
+Do not auto-rebase or auto-merge during the current ideation gate.
