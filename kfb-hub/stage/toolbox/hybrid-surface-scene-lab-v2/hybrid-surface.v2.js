@@ -172,7 +172,7 @@ float kfbGrain(vec3 p){
 {
   vec3 kfbRP=kfbSurfaceP();
   float kfbRG=kfbGrain(kfbRP);
-  float kfbRoughMul=mix(0.94,1.12,kfbRG);
+  float kfbRoughMul=mix(0.90,1.22,kfbRG);
   float kfbTarget=clamp(roughnessFactor*kfbRoughMul,0.02,1.0);
   roughnessFactor=mix(roughnessFactor,kfbTarget,clamp(uKfbRoughnessStrength*uKfbSurfaceStrength,0.0,1.0));
 }`
