@@ -1,0 +1,44 @@
+{
+  "schema": "kfb.stage-source/0.1",
+  "product": "KFB ToolBox · Hybrid Surface Scene Lab v2",
+  "owner": "KFB ToolBox / material-surface compatibility lab",
+  "status": "IMPLEMENTATION_CANDIDATE",
+  "sourceRepo": "georg-doc/kayfabizarro",
+  "sourceBranch": "chatgpt-web/toolbox-hybrid-surface-v2-2026-09-22",
+  "sourceBranchHead": "PENDING",
+  "predecessor": {
+    "draftPr": 164,
+    "publicStage": "https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/hybrid-surface-scene-lab/",
+    "testedRuntimeHead": "15f2f1714d62b606033b8624964e481c6d99d59f",
+    "publicChecks": "41/41 PASS"
+  },
+  "styleContract": "skills/chat/masterplan/KFB_3D_STYLE_SURFACE_SCALE_2026-09-22.md",
+  "executionBrief": "skills/chat/workflows/KFB_HYBRID_SURFACE_V2_2026-09-22/START_HERE.md",
+  "worldAtlasDonor": {
+    "pin": "bc1441eb8ff9a2df0e15e778b44b73f97eb63d76",
+    "kitLab": "tools/world_atlas/source/lib/kit-lab.js",
+    "kitLabBlob": "964d4187665f1786067ff5917de80df5f086fc91",
+    "recipe": "tools/world_atlas/source/scenes/dungeon-promo.js",
+    "recipeBlob": "2d2ba81b35d2277553470582ae93b30f6ec197ac",
+    "recipeId": "CQ-S1_KAYKIT_DUNGEON_PROMO"
+  },
+  "actorDonorPin": "bdaea0648f27c0f16e0a737bfba237eb54dd4cbb",
+  "surfaceContract": {
+    "textureCount": 1,
+    "macroTexture": "shared predecessor RGB brush texture",
+    "microSurface": "procedural 3D clay grain; no second texture",
+    "triplanarBlendExponent": 1.18,
+    "sourceBaseColorAndMap": "preserved",
+    "sourceRoughnessAndMetalness": "preserved at material base; shader modulation only",
+    "staticEnvironmentProjection": "world",
+    "movingActorProjection": "object"
+  },
+  "scaleContract": {
+    "primaryAnchor": "measured head size",
+    "headMetric": "cube-root of exact matched head-mesh bounding-box volume",
+    "reference": "median source-head metric of ActionFigure + GothGirl + FrizzleBob Driver (Rig_Medium)",
+    "totalHeightNormalization": false
+  },
+  "stageUrl": "https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/hybrid-surface-scene-lab-v2/",
+  "humanAcceptance": "PENDING"
+}
