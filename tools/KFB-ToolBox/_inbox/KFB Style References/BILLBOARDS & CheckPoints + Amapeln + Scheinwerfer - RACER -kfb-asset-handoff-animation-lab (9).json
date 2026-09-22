@@ -1,0 +1,570 @@
+{
+  "schema": "kfb.asset-handoff.v1",
+  "sourceRepo": "georg-doc/kayfabizarro",
+  "sourceCommit": "fd52a9c4d571b7d918aac9f826adbfb56ef1d028",
+  "consumer": {
+    "consumerId": "animation-lab",
+    "displayName": "Animation Lab",
+    "selectionStatus": "candidate-only",
+    "allowedKinds": [
+      "model-3d"
+    ],
+    "usefulFacts": [
+      "rigFacts.hasSkin",
+      "rigFacts.jointCount",
+      "rigFacts.jointNames",
+      "rigFacts.animationCount",
+      "rigFacts.animationClips",
+      "rigFacts.skeletonSignatures"
+    ],
+    "requiredDownstreamValidation": [
+      "visual playback",
+      "pose/orientation",
+      "retarget compatibility when applicable"
+    ],
+    "ownerBoundary": "The Asset Librarian may recommend candidates but does not declare animation compatibility."
+  },
+  "selectionStatus": "candidate-only",
+  "suitabilityDecision": "owned-by-receiving-consumer",
+  "assets": [
+    {
+      "assetId": "media/3D_Assets/kenney_racing-kit/Models/GLTF format/billboard.glb",
+      "name": "billboard",
+      "path": "media/3D_Assets/kenney_racing-kit/Models/GLTF format/billboard.glb",
+      "kind": "model-3d",
+      "format": "glb",
+      "sizeBytes": 14520,
+      "packId": "kenney-racing-kit",
+      "collectionPath": "Models",
+      "dependencyStatus": "embedded",
+      "source": {
+        "blobSha": "2523e0d39ef44d692b77f315eecddbd687dcf4da",
+        "commit": "fd52a9c4d571b7d918aac9f826adbfb56ef1d028",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_racing-kit/Models/GLTF%20format/billboard.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/fd52a9c4d571b7d918aac9f826adbfb56ef1d028/media/3D_Assets/kenney_racing-kit/Models/GLTF%20format/billboard.glb",
+        "repo": "georg-doc/kayfabizarro"
+      },
+      "relations": {
+        "dependencies": []
+      },
+      "rigFacts": {
+        "animationClips": [],
+        "animationCount": 0,
+        "hasSkin": false,
+        "jointCount": 0,
+        "jointNames": [],
+        "namedJointCount": 0,
+        "parseStatus": "ok",
+        "provenance": "file-explicit",
+        "skeletonSignatures": [],
+        "skinCount": 0,
+        "skinnedMeshNodeCount": 0,
+        "skins": []
+      },
+      "consumerKindAllowed": true
+    },
+    {
+      "assetId": "media/3D_Assets/kenney_racing-kit/Models/GLTF format/billboardDouble_exclusive.glb",
+      "name": "billboardDouble_exclusive",
+      "path": "media/3D_Assets/kenney_racing-kit/Models/GLTF format/billboardDouble_exclusive.glb",
+      "kind": "model-3d",
+      "format": "glb",
+      "sizeBytes": 14688,
+      "packId": "kenney-racing-kit",
+      "collectionPath": "Models",
+      "dependencyStatus": "embedded",
+      "source": {
+        "blobSha": "39276466223b6110567a900a6a8806105c25eff0",
+        "commit": "fd52a9c4d571b7d918aac9f826adbfb56ef1d028",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_racing-kit/Models/GLTF%20format/billboardDouble_exclusive.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/fd52a9c4d571b7d918aac9f826adbfb56ef1d028/media/3D_Assets/kenney_racing-kit/Models/GLTF%20format/billboardDouble_exclusive.glb",
+        "repo": "georg-doc/kayfabizarro"
+      },
+      "relations": {
+        "dependencies": []
+      },
+      "rigFacts": {
+        "animationClips": [],
+        "animationCount": 0,
+        "hasSkin": false,
+        "jointCount": 0,
+        "jointNames": [],
+        "namedJointCount": 0,
+        "parseStatus": "ok",
+        "provenance": "file-explicit",
+        "skeletonSignatures": [],
+        "skinCount": 0,
+        "skinnedMeshNodeCount": 0,
+        "skins": []
+      },
+      "consumerKindAllowed": true
+    },
+    {
+      "assetId": "media/3D_Assets/kenney_racing-kit/Models/GLTF format/billboardLow.glb",
+      "name": "billboardLow",
+      "path": "media/3D_Assets/kenney_racing-kit/Models/GLTF format/billboardLow.glb",
+      "kind": "model-3d",
+      "format": "glb",
+      "sizeBytes": 14528,
+      "packId": "kenney-racing-kit",
+      "collectionPath": "Models",
+      "dependencyStatus": "embedded",
+      "source": {
+        "blobSha": "c95a5b7d579ba14112a4e3c93785c9af236f76f1",
+        "commit": "fd52a9c4d571b7d918aac9f826adbfb56ef1d028",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_racing-kit/Models/GLTF%20format/billboardLow.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/fd52a9c4d571b7d918aac9f826adbfb56ef1d028/media/3D_Assets/kenney_racing-kit/Models/GLTF%20format/billboardLow.glb",
+        "repo": "georg-doc/kayfabizarro"
+      },
+      "relations": {
+        "dependencies": []
+      },
+      "rigFacts": {
+        "animationClips": [],
+        "animationCount": 0,
+        "hasSkin": false,
+        "jointCount": 0,
+        "jointNames": [],
+        "namedJointCount": 0,
+        "parseStatus": "ok",
+        "provenance": "file-explicit",
+        "skeletonSignatures": [],
+        "skinCount": 0,
+        "skinnedMeshNodeCount": 0,
+        "skins": []
+      },
+      "consumerKindAllowed": true
+    },
+    {
+      "assetId": "media/3D_Assets/kenney_racing-kit/Models/GLTF format/billboardLower.glb",
+      "name": "billboardLower",
+      "path": "media/3D_Assets/kenney_racing-kit/Models/GLTF format/billboardLower.glb",
+      "kind": "model-3d",
+      "format": "glb",
+      "sizeBytes": 12512,
+      "packId": "kenney-racing-kit",
+      "collectionPath": "Models",
+      "dependencyStatus": "embedded",
+      "source": {
+        "blobSha": "84963a43c3bea344c4adac77e611c42ea1fda088",
+        "commit": "fd52a9c4d571b7d918aac9f826adbfb56ef1d028",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_racing-kit/Models/GLTF%20format/billboardLower.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/fd52a9c4d571b7d918aac9f826adbfb56ef1d028/media/3D_Assets/kenney_racing-kit/Models/GLTF%20format/billboardLower.glb",
+        "repo": "georg-doc/kayfabizarro"
+      },
+      "relations": {
+        "dependencies": []
+      },
+      "rigFacts": {
+        "animationClips": [],
+        "animationCount": 0,
+        "hasSkin": false,
+        "jointCount": 0,
+        "jointNames": [],
+        "namedJointCount": 0,
+        "parseStatus": "ok",
+        "provenance": "file-explicit",
+        "skeletonSignatures": [],
+        "skinCount": 0,
+        "skinnedMeshNodeCount": 0,
+        "skins": []
+      },
+      "consumerKindAllowed": true
+    },
+    {
+      "assetId": "media/3D_Assets/kenney_racing-kit/Models/GLTF format/lightColored.glb",
+      "name": "lightColored",
+      "path": "media/3D_Assets/kenney_racing-kit/Models/GLTF format/lightColored.glb",
+      "kind": "model-3d",
+      "format": "glb",
+      "sizeBytes": 18656,
+      "packId": "kenney-racing-kit",
+      "collectionPath": "Models",
+      "dependencyStatus": "embedded",
+      "source": {
+        "blobSha": "c963451c14621c191ab71fcdc3610b6502603c9c",
+        "commit": "fd52a9c4d571b7d918aac9f826adbfb56ef1d028",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_racing-kit/Models/GLTF%20format/lightColored.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/fd52a9c4d571b7d918aac9f826adbfb56ef1d028/media/3D_Assets/kenney_racing-kit/Models/GLTF%20format/lightColored.glb",
+        "repo": "georg-doc/kayfabizarro"
+      },
+      "relations": {
+        "dependencies": []
+      },
+      "rigFacts": {
+        "animationClips": [],
+        "animationCount": 0,
+        "hasSkin": false,
+        "jointCount": 0,
+        "jointNames": [],
+        "namedJointCount": 0,
+        "parseStatus": "ok",
+        "provenance": "file-explicit",
+        "skeletonSignatures": [],
+        "skinCount": 0,
+        "skinnedMeshNodeCount": 0,
+        "skins": []
+      },
+      "consumerKindAllowed": true
+    },
+    {
+      "assetId": "media/3D_Assets/kenney_racing-kit/Models/GLTF format/lightPost_exclusive.glb",
+      "name": "lightPost_exclusive",
+      "path": "media/3D_Assets/kenney_racing-kit/Models/GLTF format/lightPost_exclusive.glb",
+      "kind": "model-3d",
+      "format": "glb",
+      "sizeBytes": 16824,
+      "packId": "kenney-racing-kit",
+      "collectionPath": "Models",
+      "dependencyStatus": "embedded",
+      "source": {
+        "blobSha": "e6fc33751b693dd2ff08ac43f834b93a88679401",
+        "commit": "fd52a9c4d571b7d918aac9f826adbfb56ef1d028",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_racing-kit/Models/GLTF%20format/lightPost_exclusive.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/fd52a9c4d571b7d918aac9f826adbfb56ef1d028/media/3D_Assets/kenney_racing-kit/Models/GLTF%20format/lightPost_exclusive.glb",
+        "repo": "georg-doc/kayfabizarro"
+      },
+      "relations": {
+        "dependencies": []
+      },
+      "rigFacts": {
+        "animationClips": [],
+        "animationCount": 0,
+        "hasSkin": false,
+        "jointCount": 0,
+        "jointNames": [],
+        "namedJointCount": 0,
+        "parseStatus": "ok",
+        "provenance": "file-explicit",
+        "skeletonSignatures": [],
+        "skinCount": 0,
+        "skinnedMeshNodeCount": 0,
+        "skins": []
+      },
+      "consumerKindAllowed": true
+    },
+    {
+      "assetId": "media/3D_Assets/kenney_racing-kit/Models/GLTF format/lightPostLarge.glb",
+      "name": "lightPostLarge",
+      "path": "media/3D_Assets/kenney_racing-kit/Models/GLTF format/lightPostLarge.glb",
+      "kind": "model-3d",
+      "format": "glb",
+      "sizeBytes": 23536,
+      "packId": "kenney-racing-kit",
+      "collectionPath": "Models",
+      "dependencyStatus": "embedded",
+      "source": {
+        "blobSha": "a2196af56b6a761ae54ae8510d2cd3a8db5d3f8c",
+        "commit": "fd52a9c4d571b7d918aac9f826adbfb56ef1d028",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_racing-kit/Models/GLTF%20format/lightPostLarge.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/fd52a9c4d571b7d918aac9f826adbfb56ef1d028/media/3D_Assets/kenney_racing-kit/Models/GLTF%20format/lightPostLarge.glb",
+        "repo": "georg-doc/kayfabizarro"
+      },
+      "relations": {
+        "dependencies": []
+      },
+      "rigFacts": {
+        "animationClips": [],
+        "animationCount": 0,
+        "hasSkin": false,
+        "jointCount": 0,
+        "jointNames": [],
+        "namedJointCount": 0,
+        "parseStatus": "ok",
+        "provenance": "file-explicit",
+        "skeletonSignatures": [],
+        "skinCount": 0,
+        "skinnedMeshNodeCount": 0,
+        "skins": []
+      },
+      "consumerKindAllowed": true
+    },
+    {
+      "assetId": "media/3D_Assets/kenney_racing-kit/Models/GLTF format/lightPostModern.glb",
+      "name": "lightPostModern",
+      "path": "media/3D_Assets/kenney_racing-kit/Models/GLTF format/lightPostModern.glb",
+      "kind": "model-3d",
+      "format": "glb",
+      "sizeBytes": 16584,
+      "packId": "kenney-racing-kit",
+      "collectionPath": "Models",
+      "dependencyStatus": "embedded",
+      "source": {
+        "blobSha": "a6e08652b25a9bd62fe20392bddc840fa944c6f5",
+        "commit": "fd52a9c4d571b7d918aac9f826adbfb56ef1d028",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_racing-kit/Models/GLTF%20format/lightPostModern.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/fd52a9c4d571b7d918aac9f826adbfb56ef1d028/media/3D_Assets/kenney_racing-kit/Models/GLTF%20format/lightPostModern.glb",
+        "repo": "georg-doc/kayfabizarro"
+      },
+      "relations": {
+        "dependencies": []
+      },
+      "rigFacts": {
+        "animationClips": [],
+        "animationCount": 0,
+        "hasSkin": false,
+        "jointCount": 0,
+        "jointNames": [],
+        "namedJointCount": 0,
+        "parseStatus": "ok",
+        "provenance": "file-explicit",
+        "skeletonSignatures": [],
+        "skinCount": 0,
+        "skinnedMeshNodeCount": 0,
+        "skins": []
+      },
+      "consumerKindAllowed": true
+    },
+    {
+      "assetId": "media/3D_Assets/kenney_racing-kit/Models/GLTF format/lightRed.glb",
+      "name": "lightRed",
+      "path": "media/3D_Assets/kenney_racing-kit/Models/GLTF format/lightRed.glb",
+      "kind": "model-3d",
+      "format": "glb",
+      "sizeBytes": 19700,
+      "packId": "kenney-racing-kit",
+      "collectionPath": "Models",
+      "dependencyStatus": "embedded",
+      "source": {
+        "blobSha": "3ba7e16ee60e8e28c796c9f7492035b606d16f22",
+        "commit": "fd52a9c4d571b7d918aac9f826adbfb56ef1d028",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_racing-kit/Models/GLTF%20format/lightRed.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/fd52a9c4d571b7d918aac9f826adbfb56ef1d028/media/3D_Assets/kenney_racing-kit/Models/GLTF%20format/lightRed.glb",
+        "repo": "georg-doc/kayfabizarro"
+      },
+      "relations": {
+        "dependencies": []
+      },
+      "rigFacts": {
+        "animationClips": [],
+        "animationCount": 0,
+        "hasSkin": false,
+        "jointCount": 0,
+        "jointNames": [],
+        "namedJointCount": 0,
+        "parseStatus": "ok",
+        "provenance": "file-explicit",
+        "skeletonSignatures": [],
+        "skinCount": 0,
+        "skinnedMeshNodeCount": 0,
+        "skins": []
+      },
+      "consumerKindAllowed": true
+    },
+    {
+      "assetId": "media/3D_Assets/kenney_racing-kit/Models/GLTF format/lightRedDouble.glb",
+      "name": "lightRedDouble",
+      "path": "media/3D_Assets/kenney_racing-kit/Models/GLTF format/lightRedDouble.glb",
+      "kind": "model-3d",
+      "format": "glb",
+      "sizeBytes": 31440,
+      "packId": "kenney-racing-kit",
+      "collectionPath": "Models",
+      "dependencyStatus": "embedded",
+      "source": {
+        "blobSha": "4aa24687da1f542404fb73e610f3f0b999bd46b6",
+        "commit": "fd52a9c4d571b7d918aac9f826adbfb56ef1d028",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_racing-kit/Models/GLTF%20format/lightRedDouble.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/fd52a9c4d571b7d918aac9f826adbfb56ef1d028/media/3D_Assets/kenney_racing-kit/Models/GLTF%20format/lightRedDouble.glb",
+        "repo": "georg-doc/kayfabizarro"
+      },
+      "relations": {
+        "dependencies": []
+      },
+      "rigFacts": {
+        "animationClips": [],
+        "animationCount": 0,
+        "hasSkin": false,
+        "jointCount": 0,
+        "jointNames": [],
+        "namedJointCount": 0,
+        "parseStatus": "ok",
+        "provenance": "file-explicit",
+        "skeletonSignatures": [],
+        "skinCount": 0,
+        "skinnedMeshNodeCount": 0,
+        "skins": []
+      },
+      "consumerKindAllowed": true
+    },
+    {
+      "assetId": "media/3D_Assets/kenney_racing-kit/Models/GLTF format/overhead.glb",
+      "name": "overhead",
+      "path": "media/3D_Assets/kenney_racing-kit/Models/GLTF format/overhead.glb",
+      "kind": "model-3d",
+      "format": "glb",
+      "sizeBytes": 9188,
+      "packId": "kenney-racing-kit",
+      "collectionPath": "Models",
+      "dependencyStatus": "embedded",
+      "source": {
+        "blobSha": "5da3826da6130ecefb24ad408f7a2836204ba542",
+        "commit": "fd52a9c4d571b7d918aac9f826adbfb56ef1d028",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_racing-kit/Models/GLTF%20format/overhead.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/fd52a9c4d571b7d918aac9f826adbfb56ef1d028/media/3D_Assets/kenney_racing-kit/Models/GLTF%20format/overhead.glb",
+        "repo": "georg-doc/kayfabizarro"
+      },
+      "relations": {
+        "dependencies": []
+      },
+      "rigFacts": {
+        "animationClips": [],
+        "animationCount": 0,
+        "hasSkin": false,
+        "jointCount": 0,
+        "jointNames": [],
+        "namedJointCount": 0,
+        "parseStatus": "ok",
+        "provenance": "file-explicit",
+        "skeletonSignatures": [],
+        "skinCount": 0,
+        "skinnedMeshNodeCount": 0,
+        "skins": []
+      },
+      "consumerKindAllowed": true
+    },
+    {
+      "assetId": "media/3D_Assets/kenney_racing-kit/Models/GLTF format/overheadLights.glb",
+      "name": "overheadLights",
+      "path": "media/3D_Assets/kenney_racing-kit/Models/GLTF format/overheadLights.glb",
+      "kind": "model-3d",
+      "format": "glb",
+      "sizeBytes": 26068,
+      "packId": "kenney-racing-kit",
+      "collectionPath": "Models",
+      "dependencyStatus": "embedded",
+      "source": {
+        "blobSha": "e8ce547d2a67e686222ef0261999bf9774e26836",
+        "commit": "fd52a9c4d571b7d918aac9f826adbfb56ef1d028",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_racing-kit/Models/GLTF%20format/overheadLights.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/fd52a9c4d571b7d918aac9f826adbfb56ef1d028/media/3D_Assets/kenney_racing-kit/Models/GLTF%20format/overheadLights.glb",
+        "repo": "georg-doc/kayfabizarro"
+      },
+      "relations": {
+        "dependencies": []
+      },
+      "rigFacts": {
+        "animationClips": [],
+        "animationCount": 0,
+        "hasSkin": false,
+        "jointCount": 0,
+        "jointNames": [],
+        "namedJointCount": 0,
+        "parseStatus": "ok",
+        "provenance": "file-explicit",
+        "skeletonSignatures": [],
+        "skinCount": 0,
+        "skinnedMeshNodeCount": 0,
+        "skins": []
+      },
+      "consumerKindAllowed": true
+    },
+    {
+      "assetId": "media/3D_Assets/kenney_racing-kit/Models/GLTF format/bannerTowerRed.glb",
+      "name": "bannerTowerRed",
+      "path": "media/3D_Assets/kenney_racing-kit/Models/GLTF format/bannerTowerRed.glb",
+      "kind": "model-3d",
+      "format": "glb",
+      "sizeBytes": 33992,
+      "packId": "kenney-racing-kit",
+      "collectionPath": "Models",
+      "dependencyStatus": "embedded",
+      "source": {
+        "blobSha": "3b14817c91e0069dea753ce4bdfc1ca7eca2a892",
+        "commit": "fd52a9c4d571b7d918aac9f826adbfb56ef1d028",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_racing-kit/Models/GLTF%20format/bannerTowerRed.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/fd52a9c4d571b7d918aac9f826adbfb56ef1d028/media/3D_Assets/kenney_racing-kit/Models/GLTF%20format/bannerTowerRed.glb",
+        "repo": "georg-doc/kayfabizarro"
+      },
+      "relations": {
+        "dependencies": []
+      },
+      "rigFacts": {
+        "animationClips": [],
+        "animationCount": 0,
+        "hasSkin": false,
+        "jointCount": 0,
+        "jointNames": [],
+        "namedJointCount": 0,
+        "parseStatus": "ok",
+        "provenance": "file-explicit",
+        "skeletonSignatures": [],
+        "skinCount": 0,
+        "skinnedMeshNodeCount": 0,
+        "skins": []
+      },
+      "consumerKindAllowed": true
+    },
+    {
+      "assetId": "media/3D_Assets/kenney_racing-kit/Models/GLTF format/bannerTowerGreen.glb",
+      "name": "bannerTowerGreen",
+      "path": "media/3D_Assets/kenney_racing-kit/Models/GLTF format/bannerTowerGreen.glb",
+      "kind": "model-3d",
+      "format": "glb",
+      "sizeBytes": 34000,
+      "packId": "kenney-racing-kit",
+      "collectionPath": "Models",
+      "dependencyStatus": "embedded",
+      "source": {
+        "blobSha": "30b5da85b7751fdd7a6202c3440f7d90f1b414c4",
+        "commit": "fd52a9c4d571b7d918aac9f826adbfb56ef1d028",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/kenney_racing-kit/Models/GLTF%20format/bannerTowerGreen.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/fd52a9c4d571b7d918aac9f826adbfb56ef1d028/media/3D_Assets/kenney_racing-kit/Models/GLTF%20format/bannerTowerGreen.glb",
+        "repo": "georg-doc/kayfabizarro"
+      },
+      "relations": {
+        "dependencies": []
+      },
+      "rigFacts": {
+        "animationClips": [],
+        "animationCount": 0,
+        "hasSkin": false,
+        "jointCount": 0,
+        "jointNames": [],
+        "namedJointCount": 0,
+        "parseStatus": "ok",
+        "provenance": "file-explicit",
+        "skeletonSignatures": [],
+        "skinCount": 0,
+        "skinnedMeshNodeCount": 0,
+        "skins": []
+      },
+      "consumerKindAllowed": true
+    },
+    {
+      "assetId": "media/3D_Assets/KFB/Billboard by Poly by Google - 3ALIEkWNbgR.glb",
+      "name": "Billboard by Poly by Google - 3ALIEkWNbgR",
+      "path": "media/3D_Assets/KFB/Billboard by Poly by Google - 3ALIEkWNbgR.glb",
+      "kind": "model-3d",
+      "format": "glb",
+      "sizeBytes": 66696,
+      "packId": "kfb",
+      "dependencyStatus": "embedded",
+      "source": {
+        "blobSha": "520a08735dc4759ba8707f618ace282037526a6f",
+        "commit": "fd52a9c4d571b7d918aac9f826adbfb56ef1d028",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/KFB/Billboard%20by%20Poly%20by%20Google%20-%203ALIEkWNbgR.glb",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/fd52a9c4d571b7d918aac9f826adbfb56ef1d028/media/3D_Assets/KFB/Billboard%20by%20Poly%20by%20Google%20-%203ALIEkWNbgR.glb",
+        "repo": "georg-doc/kayfabizarro"
+      },
+      "relations": {
+        "dependencies": []
+      },
+      "rigFacts": {
+        "animationClips": [],
+        "animationCount": 0,
+        "hasSkin": false,
+        "jointCount": 0,
+        "jointNames": [],
+        "namedJointCount": 0,
+        "parseStatus": "ok",
+        "provenance": "file-explicit",
+        "skeletonSignatures": [],
+        "skinCount": 0,
+        "skinnedMeshNodeCount": 0,
+        "skins": []
+      },
+      "consumerKindAllowed": true
+    }
+  ]
+}
