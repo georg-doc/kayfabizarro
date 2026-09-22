@@ -1,0 +1,452 @@
+{
+ "source": "kfb-hub/index.html @ georg-doc/kayfabizarro main, 2026-09-18",
+ "hub": "https://kayfabizarro.pages.dev/kfb-hub/",
+ "tiles": [
+  {
+   "section": "Recovery & coordination",
+   "title": "Current Lead Checkpoint",
+   "badge": "RECOVERY",
+   "kind": "recovery",
+   "url": "https://github.com/georg-doc/kayfabizarro/blob/main/skills/chat/recovery/CURRENT_LEAD_CHECKPOINT_2026-09-18.md",
+   "desc": "Current 18 Sep cross-project cursor for ToolBox Stage-First, Travel Ground, Atlas, Stunt and other active lanes."
+  },
+  {
+   "section": "Recovery & coordination",
+   "title": "Travel / World Builder Recovery",
+   "badge": "CURRENT",
+   "kind": "recovery",
+   "url": "https://kayfabizarro.pages.dev/kfb-hub/travel-world.html",
+   "desc": "Current WB0 runtime recovery: four-type Ground Movement Lab, FrizzleBob Bee Mech donor, /world/ POC boundary, Combat/Stunt donors and next browser gate."
+  },
+  {
+   "section": "Recovery & coordination",
+   "title": "Recovery Path",
+   "badge": "RECOVERY",
+   "kind": "recovery",
+   "url": "https://github.com/georg-doc/kayfabizarro/blob/main/skills/chat/RECOVERY_PATH.md",
+   "desc": "Provider-neutral recovery contract. Fresh chats recover from GitHub instead of transcript reconstruction."
+  },
+  {
+   "section": "Recovery & coordination",
+   "title": "Current Priority Board",
+   "badge": "CURRENT",
+   "kind": "recovery",
+   "url": "https://github.com/georg-doc/kayfabizarro/blob/main/skills/chat/recovery/CURRENT_PRIORITY_BOARD_2026-09-18.md",
+   "desc": "Immediate execution order: Ground 8, ToolBox Stage-First intake/promotion, Atlas QA, Travel Pilot 01 and later gameplay proofs."
+  },
+  {
+   "section": "Recovery & coordination",
+   "title": "Production Router · START HERE",
+   "badge": "ROUTER",
+   "kind": "recovery",
+   "url": "https://github.com/georg-doc/kayfabizarro/blob/main/skills/chat/START_HERE.md",
+   "desc": "Central production routing entry for current skills, tools, projects and evidence discipline."
+  },
+  {
+   "section": "Recovery & coordination",
+   "title": "Registry",
+   "badge": "INDEX",
+   "kind": "recovery",
+   "url": "https://github.com/georg-doc/kayfabizarro/blob/main/skills/chat/REGISTRY.json",
+   "desc": "Machine-readable routing index for current tools, projects and references."
+  },
+  {
+   "section": "Recovery & coordination",
+   "title": "Living Masterplan",
+   "badge": "REFERENCE",
+   "kind": "recovery",
+   "url": "https://github.com/georg-doc/kayfabizarro/blob/main/skills/chat/LIVING_MASTERPLAN.md",
+   "desc": "Cross-project lead sequence and durable decisions. Read when sequencing matters."
+  },
+  {
+   "section": "Live tools & workbenches",
+   "title": "KFB Asset Librarian",
+   "badge": "LIVE",
+   "kind": "live",
+   "url": "https://kayfabizarro.pages.dev/asset-librarian/",
+   "desc": "Permanent asset discovery, preview, Town Workbench, rigs, motions and candidate handoffs."
+  },
+  {
+   "section": "Live tools & workbenches",
+   "title": "WB0 Ground Movement Lab",
+   "badge": "LIVE",
+   "kind": "live",
+   "url": "https://kayfabizarro.pages.dev/travel/wip/travel_globe_wsa/world-builder/?wb0=1&ground=8",
+   "desc": "Current Ground=8 human gate: Fernando, Mech landing, Monstrosity cadence and click-preserving orbit."
+  },
+  {
+   "section": "Live tools & workbenches",
+   "title": "Asset Librarian source",
+   "badge": "SOURCE",
+   "kind": "tools",
+   "url": null,
+   "desc": "Implementation source and local documentation for the Librarian."
+  },
+  {
+   "section": "Live tools & workbenches",
+   "title": "Asset Librarian chat-break postmortem",
+   "badge": "RECOVERY",
+   "kind": "recovery",
+   "url": "https://github.com/georg-doc/kayfabizarro/blob/main/tools/asset_registry/librarian/POSTMORTEM_CHAT_BREAK_2026-09-15.md",
+   "desc": "Recovered v1.6/v1.7 state, test evidence and documentation drift after the aborted chat."
+  },
+  {
+   "section": "Live tools & workbenches",
+   "title": "Asset Librarian · Recovery / Docs",
+   "badge": "RECOVERY",
+   "kind": "recovery",
+   "url": "https://github.com/georg-doc/kayfabizarro/blob/main/tools/asset_registry/librarian/ONBOARDING_FRESH_CHAT_2026-09-15.md",
+   "desc": "Recover current Librarian source, reconcile stale docs/deploy evidence, then serve one named current consumer. Birthday is no longer active scope."
+  },
+  {
+   "section": "Live tools & workbenches",
+   "title": "KFB ToolBox · START HERE",
+   "badge": "TOOL",
+   "kind": "tools",
+   "url": "https://github.com/georg-doc/kayfabizarro/blob/main/tools/KFB-ToolBox/START_HERE.md",
+   "desc": "Current ToolBox routing. Stage-First v1 source is received; promote through the owner repo without redesign or duplicate assets."
+  },
+  {
+   "section": "Live tools & workbenches",
+   "title": "Resident Atlas S6",
+   "badge": "CANDIDATE",
+   "kind": "live",
+   "url": "https://kayfabizarro.pages.dev/resident-atlas-s6/",
+   "desc": "21-resident candidate Atlas promoted additively from the reviewed Claude export; original inbox source is preserved."
+  },
+  {
+   "section": "Live tools & workbenches",
+   "title": "World Atlas · Kit Lab",
+   "badge": "CANDIDATE",
+   "kind": "live",
+   "url": "https://kayfabizarro.pages.dev/world-atlas/",
+   "desc": "Environment workbench with Hex, Road, Forest and Dungeon Generator S13.2 donors. Not a second Travel runtime."
+  },
+  {
+   "section": "Live tools & workbenches",
+   "title": "Rig Embed v3",
+   "badge": "DONOR",
+   "kind": "tools",
+   "url": null,
+   "desc": "Current reusable Graft/Carl embed donor package; not a standalone authoring tool."
+  },
+  {
+   "section": "Live tools & workbenches",
+   "title": "ToolBox · Stage-First v1 Intake",
+   "badge": "CURRENT INTAKE",
+   "kind": "tools",
+   "url": "https://github.com/georg-doc/kayfabizarro/blob/main/tools/KFB-ToolBox/_handover/STAGE_FIRST_V1_INTAKE_2026-09-18/START_HERE.md",
+   "desc": "Reviewed intake/promotion contract for the complete Stage-First export currently transported via the Stunt Race inbox."
+  },
+  {
+   "section": "KFB Town & meta",
+   "title": "KFB Town · START HERE",
+   "badge": "START",
+   "kind": "town",
+   "url": "https://github.com/georg-doc/kayfabizarro/blob/main/skills/chat/town/START_HERE.md",
+   "desc": "Current Town entry. Routes to Session Card and the active living sections."
+  },
+  {
+   "section": "KFB Town & meta",
+   "title": "Town Session Card",
+   "badge": "CURRENT",
+   "kind": "town",
+   "url": "https://github.com/georg-doc/kayfabizarro/blob/main/skills/chat/town/SESSION_CARD.md",
+   "desc": "Compact current Town state: show stage, Workbench, Travel handoff and open seams."
+  },
+  {
+   "section": "KFB Town & meta",
+   "title": "World Color & Lighting Cohesion · TBD",
+   "badge": "TBD",
+   "kind": "town",
+   "url": "https://github.com/georg-doc/kayfabizarro/blob/main/skills/chat/masterplan/WORLD_COLOR_LIGHTING_COHESION_TBD_2026-09-15.md",
+   "desc": "Travel-owned look-cohesion handoff: shared world light/color response, small asset calibration, mood presets, color grading last."
+  },
+  {
+   "section": "KFB Town & meta",
+   "title": "World Audio & Soundscape Cohesion · TBD",
+   "badge": "TBD",
+   "kind": "town",
+   "url": "https://github.com/georg-doc/kayfabizarro/blob/main/skills/chat/town/references/TOWN_TRAVEL_AUDIO_SOUNDSCAPE_TBD_2026-09-15.md",
+   "desc": "Global bed, local ambience, diegetic music, SFX/TTS priority and ducking direction; consume the existing Travel audio architecture."
+  },
+  {
+   "section": "KFB Town & meta",
+   "title": "Post-r022 Archetypes + Revelation",
+   "badge": "REFERENCE",
+   "kind": "town",
+   "url": "https://github.com/georg-doc/kayfabizarro/blob/main/skills/chat/town/references/TOWN_POST_R022_ARCHETYPES_BIRTHDAY_RADIO_2026-09-15.md",
+   "desc": "FrizzleBob Herald/Guide, Offica and Revelation concepts remain reference. Birthday-radio execution is archived; audio assets remain provenance."
+  },
+  {
+   "section": "KFB Town & meta",
+   "title": "Town Living Document",
+   "badge": "LIVING",
+   "kind": "town",
+   "url": "https://github.com/georg-doc/kayfabizarro/blob/main/skills/chat/town/LIVING_KFB_TOWN.md",
+   "desc": "Additive Town decisions, ideation and current sections 12–13."
+  },
+  {
+   "section": "KFB Town & meta",
+   "title": "Town r016 source notes",
+   "badge": "EVIDENCE",
+   "kind": "town",
+   "url": "https://github.com/georg-doc/kayfabizarro/blob/main/skills/chat/town/references/TOWN_S001_R016_SOURCES.md",
+   "desc": "Source/status boundaries for the current Town session."
+  },
+  {
+   "section": "KFB Town & meta",
+   "title": "Infinite Canvas / Narrators / Play",
+   "badge": "REFERENCE",
+   "kind": "town",
+   "url": "https://github.com/georg-doc/kayfabizarro/blob/main/skills/chat/masterplan/FRACTAL_CANVAS_NARRATORS_AND_PLAY_2026-09-14.md",
+   "desc": "Fractal design, player closure, narrator reuse, D6 references and future play directions."
+  },
+  {
+   "section": "Archived / rejected history",
+   "title": "ToolBox UX / Birthday / Town Cinema addendum",
+   "badge": "ARCHIVED",
+   "kind": "history",
+   "url": "https://github.com/georg-doc/kayfabizarro/blob/main/skills/chat/masterplan/TOOLBOX_UX_TOWN_BIRTHDAY_2026-09-15.md",
+   "desc": "Birthday execution is failed/outdated. Retained only for ToolBox UX observations, generic Pet-Select provenance and Makerspace/cinema donor ideas."
+  },
+  {
+   "section": "KFB Town & meta",
+   "title": "ChatterBox + Tourbus reuse",
+   "badge": "ADDENDUM",
+   "kind": "town",
+   "url": "https://github.com/georg-doc/kayfabizarro/blob/main/skills/chat/masterplan/CHATTERBOX_TOURBUS_REUSE_2026-09-14.md",
+   "desc": "NPC/mob chatter donors, Triplets, WaterBowser and Town/Tourbus reuse boundaries."
+  },
+  {
+   "section": "KFB Town & meta",
+   "title": "Canon Home Map",
+   "badge": "INDEX",
+   "kind": "town",
+   "url": "https://github.com/georg-doc/kayfabizarro/blob/main/skills/chat/meta/CANON_HOME_MAP.json",
+   "desc": "Located sources vs unresolved authoring homes. Routing index, not replacement canon."
+  },
+  {
+   "section": "KFB Town & meta",
+   "title": "Meta Compendium v1",
+   "badge": "REFERENCE",
+   "kind": "town",
+   "url": "https://github.com/georg-doc/kayfabizarro/blob/main/skills/chat/meta/KFB_META_COMPENDIUM_v1.md",
+   "desc": "Cross-module conceptual index and drift map."
+  },
+  {
+   "section": "Project SSOTs & previews",
+   "title": "Travel Globe · repository",
+   "badge": "SSOT",
+   "kind": "projects",
+   "url": "https://github.com/georg-doc/KFB-Travel-Globe",
+   "desc": "Travel implementation SSOT: world, terrain, sky, movement and current MVP work."
+  },
+  {
+   "section": "Project SSOTs & previews",
+   "title": "Travel Globe · public WIP",
+   "badge": "LIVE",
+   "kind": "live",
+   "url": "https://kayfabizarro.pages.dev/travel/wip/travel_globe_wsa/",
+   "desc": "Public Travel preview; not a substitute for the project SSOT."
+  },
+  {
+   "section": "Project SSOTs & previews",
+   "title": "Combat Arena · repository",
+   "badge": "SSOT",
+   "kind": "projects",
+   "url": "https://github.com/georg-doc/KFB-Combat-Arena",
+   "desc": "Combat implementation SSOT."
+  },
+  {
+   "section": "Project SSOTs & previews",
+   "title": "Combat Arena · public WIP",
+   "badge": "LIVE",
+   "kind": "live",
+   "url": "https://kfb-combat-arena.pages.dev/",
+   "desc": "Playable Combat Arena WIP."
+  },
+  {
+   "section": "Live tools & workbenches",
+   "title": "Race Track Environment Lab",
+   "badge": "HUMAN REVIEW",
+   "kind": "live",
+   "url": "https://kayfabizarro.pages.dev/kfb-hub/stunt-race/track-environment-lab/?world=facility&seed=KFB-1842",
+   "desc": "A/B environment donor on the accepted v0.8 driving host. Public browser/mobile evidence is green; Georg visual acceptance remains pending."
+  },
+  {
+   "section": "Project SSOTs & previews",
+   "title": "Stunt Car Race · repository",
+   "badge": "SSOT",
+   "kind": "projects",
+   "url": "https://github.com/georg-doc/KFB-Stunt-Car-Race",
+   "desc": "Stunt Car Race implementation SSOT and donor recovery intake."
+  },
+  {
+   "section": "Project SSOTs & previews",
+   "title": "DocCheck · Doc Animation",
+   "badge": "SSOT",
+   "kind": "projects",
+   "url": "https://github.com/georg-doc/doccheck/tree/main/doc-animation",
+   "desc": "DocCheck animation-module SSOT. Current first module: measured Eumel 2D rig with clean/guide SVG assets and additive changelog."
+  },
+  {
+   "section": "Project SSOTs & previews",
+   "title": "Doc Animation · Eumel recovery",
+   "badge": "LIVE",
+   "kind": "live",
+   "url": "https://kayfabizarro.pages.dev/kfb-hub/doc-animation.html",
+   "desc": "Human entry page for the Eumel rig, vector sheets, measurements and QA boundaries."
+  },
+  {
+   "section": "Project SSOTs & previews",
+   "title": "Kayfabizarro main repository",
+   "badge": "SOURCE",
+   "kind": "projects",
+   "url": "https://github.com/georg-doc/kayfabizarro",
+   "desc": "Shared source, assets, tools, router and public site material."
+  },
+  {
+   "section": "Project SSOTs & previews",
+   "title": "KFB public surface",
+   "badge": "LIVE",
+   "kind": "live",
+   "url": "https://kayfabizarro.pages.dev/#kfb",
+   "desc": "Published KFB public surface."
+  },
+  {
+   "section": "Project SSOTs & previews",
+   "title": "Cut & Play public surface",
+   "badge": "LIVE",
+   "kind": "live",
+   "url": "https://kayfabizarro.pages.dev/#cutplay",
+   "desc": "Published Cut & Play surface."
+  },
+  {
+   "section": "Archived / rejected history",
+   "title": "Birthday 2026 execution slice",
+   "badge": "FAIL / ARCHIVED",
+   "kind": "history",
+   "url": "https://github.com/georg-doc/kayfabizarro/blob/main/tools/KFB-ToolBox/_handover/BIRTHDAY_STARTSCREEN_2026-09-15/START_HERE.md",
+   "desc": "Whole Birthday lane is FAIL / OUTDATED / ARCHIVED HISTORY: Character Select, ToolBox consumer handoff, Travel/Astra execution and Birthday-specific QA/juice are not current work."
+  },
+  {
+   "section": "Core production skills",
+   "title": "Session Design Briefing",
+   "badge": "SKILL",
+   "kind": "skills",
+   "url": "https://github.com/georg-doc/kayfabizarro/blob/main/skills/session-design-briefing.md",
+   "desc": "Design-session method and evidence discipline."
+  },
+  {
+   "section": "Core production skills",
+   "title": "Use What Works",
+   "badge": "SKILL",
+   "kind": "skills",
+   "url": "https://github.com/georg-doc/kayfabizarro/blob/main/skills/session-entry-use-what-works_v1.md",
+   "desc": "Reuse donor behavior before rebuilding; name the seam and prove it survived."
+  },
+  {
+   "section": "Core production skills",
+   "title": "KFB Cartoon Animation v2",
+   "badge": "SKILL",
+   "kind": "skills",
+   "url": "https://github.com/georg-doc/kayfabizarro/blob/main/skills/kfb-cartoon-animation_v2.md",
+   "desc": "Shared cartoon-motion and acting reference."
+  },
+  {
+   "section": "Core production skills",
+   "title": "Production SOP",
+   "badge": "SOP",
+   "kind": "skills",
+   "url": "https://github.com/georg-doc/kayfabizarro/blob/main/skills/chat/PRODUCTION_SOP.md",
+   "desc": "Provider-neutral production workflow."
+  },
+  {
+   "section": "Core production skills",
+   "title": "Evidence & Status",
+   "badge": "SOP",
+   "kind": "skills",
+   "url": "https://github.com/georg-doc/kayfabizarro/blob/main/skills/chat/EVIDENCE_AND_STATUS.md",
+   "desc": "How to distinguish proposal, implementation, tested result and acceptance."
+  },
+  {
+   "section": "Core production skills",
+   "title": "Sync Protocol",
+   "badge": "SOP",
+   "kind": "skills",
+   "url": "https://github.com/georg-doc/kayfabizarro/blob/main/skills/chat/SYNC_PROTOCOL.md",
+   "desc": "How active chats synchronize through GitHub state."
+  },
+  {
+   "section": "Core production skills",
+   "title": "Inbox Protocol",
+   "badge": "SOP",
+   "kind": "skills",
+   "url": "https://github.com/georg-doc/kayfabizarro/blob/main/skills/chat/INBOX_PROTOCOL.md",
+   "desc": "Shared intake/staging rules; inbox location never becomes implementation ownership."
+  }
+ ],
+ "nextActions": [
+  {
+   "title": "Visually approve Race Environment A/B",
+   "owner": "Stunt Race / Environment",
+   "url": "https://kayfabizarro.pages.dev/kfb-hub/stunt-race/track-environment-lab/?world=facility&seed=KFB-1842",
+   "note": "Public deployment and browser/mobile checks are green. Compare Toy Race Facility vs Surreal Open Track on the accepted v0.8 host: place identity, track readability, clutter, road intersections and whether the same road genuinely feels like a different world."
+  },
+  {
+   "title": "Run SimBlood physician asset review",
+   "owner": "DocCheck / SimBlood",
+   "url": "https://kayfabizarro.pages.dev/kfb-hub/sim-blood-medical-review/",
+   "note": "Review the provenance-blinded morphology shortlist and mark Canonical Anchor / Accepted Variant / Hold / Reject. This is the current human gate before approved WBC localization and the RBC/platelet proof."
+  },
+  {
+   "title": "Run the Ground 8 human gate",
+   "owner": "Travel / World",
+   "url": "https://kayfabizarro.pages.dev/travel/wip/travel_globe_wsa/world-builder/?wb0=1&ground=8",
+   "note": "Fernando forward; Mech W→Space→LAND without glide; Monstrosity walk/run cadence; LMB click vs orbit drag; RMB look; no Card-Ground regression."
+  },
+  {
+   "title": "Promote ToolBox Stage-First v1",
+   "owner": "ToolBox",
+   "url": null,
+   "note": "Use the complete received source. No redesign. Resolve existing GitHub assets, pin moving refs, publish a browser candidate, then test Actor→Face→Pose→Motion→Voice→Stage→Save/Reload/Import."
+  },
+  {
+   "title": "Browser-QA Resident + World Atlas candidates",
+   "owner": "Atlas",
+   "url": null,
+   "note": "Open the promoted Resident S6 and World/Kit Lab sites and verify real browser loading before any Travel consumer claim."
+  },
+  {
+   "title": "Build Travel Atlas Pilot 01 after gates",
+   "owner": "Travel / Atlas",
+   "url": "https://github.com/georg-doc/KFB-Travel-Globe/blob/main/_handover/WORLD_BUILDER_GOD_MODE_2026-09-17/ATLAS_PILOT_01_LOREKEEPER_HEX_THRESHOLD_2026-09-17.md",
+   "note": "Lorekeeper + Tome/lectern + Staff + seven-cell Hex threshold + Travel ROAD. Compare visible, terrain-seated and no-visible Hex at one spherical anchor."
+  },
+  {
+   "title": "Reconcile Asset Librarian docs with current source",
+   "owner": "Infrastructure",
+   "url": null,
+   "note": "Implementation is ahead of README/manifest/Return. Reconcile version/deploy evidence without rebuilding the Librarian; use an active ToolBox/Atlas/Travel consumer instead of Birthday."
+  },
+  {
+   "title": "Add interaction + narrow Combat donor",
+   "owner": "Travel / Gameplay",
+   "url": null,
+   "note": "Only after Pilot 01: walk there → select/interact → visible response → one bounded Combat action/target → return to free exploration."
+  },
+  {
+   "title": "Prove one walkable dungeon interior",
+   "owner": "Travel / Dungeon",
+   "url": "https://kayfabizarro.pages.dev/world-atlas/",
+   "note": "Later: entrance → room/corridor → exit. Travel must prove wall collision, floor/level support, door clearance, camera and return point."
+  },
+  {
+   "title": "Keep look + soundscape calibration as independent TBDs",
+   "owner": "World cohesion",
+   "url": null,
+   "note": "World color/light and soundscape remain useful non-Birthday design tracks. Do not tie their validity to the failed Birthday slice."
+  }
+ ]
+}

@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shantell+Sans:ital,wght@0,400;0,500;0,600;0,700;1,600&family=Nunito+Sans:wght@400;600;700;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; }
+  html, body { margin: 0; }
+  body { background: #100c06; font-family: 'Nunito Sans', sans-serif; }
+  a { color: #e0b44e; text-decoration: none; }
+  a:hover { color: #f4d17e; }
+  @keyframes petBob { 0%,100%{ transform: translateY(0) } 50%{ transform: translateY(-6px) } }
+  @keyframes petDrop { 0%{ transform: translateY(-170px) scaleX(.82) scaleY(1.18); opacity: 0 } 55%{ opacity: 1 } 74%{ transform: translateY(8px) scaleX(1.18) scaleY(.8) } 87%{ transform: translateY(-4px) scaleX(.96) scaleY(1.05) } 100%{ transform: translateY(0) scaleX(1) scaleY(1); opacity: 1 } }
+  @keyframes dieRoll { 0%{ transform: translateY(-130px) rotate(-240deg); opacity: 0 } 55%{ opacity: 1 } 78%{ transform: translateY(6px) rotate(6deg) } 100%{ transform: translateY(0) rotate(0); opacity: 1 } }
+  @keyframes eyeDart { 0%,38%{ transform: translate(0,0) } 48%,66%{ transform: translate(3px,-2px) } 78%,100%{ transform: translate(-2px,1px) } }
+  @keyframes bob2 { 0%,100%{ transform: translateY(0) } 50%{ transform: translateY(-5px) } }
+</style>
+</helmet>
+
+<div style="max-width: 1040px; margin: 0 auto; padding: 30px 24px 48px;">
+
+  <!-- HUD -->
+  <div style="display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; margin-bottom: 14px;">
+    <div>
+      <div style="font: 700 11px 'Space Mono', monospace; letter-spacing: 0.24em; color: #7a6b4c; text-transform: uppercase;">Uncle FrizzleBob's Bizarro-Hex &middot; Bühne</div>
+      <div style="font: 700 30px 'Shantell Sans', cursive; color: #f3ead8; line-height: 1;">Hex-Flow &mdash; du bist hier</div>
+    </div>
+    <div style="display: flex; gap: 8px; align-items: center;">
+      <span style="font: 700 11px 'Space Mono'; color: #241c14; background: #d8a94e; padding: 5px 11px; border-radius: 3px; border: 1.6px solid #241c14;">Wellpappe-Wildnis</span>
+      <span style="font: 700 11px 'Space Mono'; color: #f3ead8; background: #3a2c18; padding: 5px 11px; border-radius: 3px; border: 1.6px solid #241c14;">Ebene: MID</span>
+    </div>
+  </div>
+
+  <!-- GAME SCREEN -->
+  <div style="position: relative; background: radial-gradient(680px 460px at 50% 34%, #2c2416 0%, #1a1409 55%, #120d06 100%); border: 2.5px solid #3a2f22; border-radius: 10px; box-shadow: 8px 12px 0 rgba(0,0,0,0.45), inset 0 0 90px rgba(0,0,0,0.5); overflow: hidden;">
+
+    <!-- tilt-shift bands -->
+    <div style="position: absolute; left: 0; right: 0; top: 0; height: 80px; background: linear-gradient(180deg, rgba(10,7,3,0.55), rgba(10,7,3,0)); pointer-events: none; z-index: 20;"></div>
+    <div style="position: absolute; left: 0; right: 0; bottom: 0; height: 90px; background: linear-gradient(0deg, rgba(10,7,3,0.6), rgba(10,7,3,0)); pointer-events: none; z-index: 20;"></div>
+
+    <!-- FB GM bubble -->
+    <sc-if value="{{ showGM }}" hint-placeholder-val="{{ true }}"><div style="position: absolute; left: 50%; top: 20px; transform: translateX(-50%) rotate(-0.6deg); z-index: 22; display: flex; align-items: flex-end; gap: 10px;">
+      <div style="width: 46px; height: 46px; border-radius: 12px; background: linear-gradient(160deg,#f0bd45,#c8871f); border: 2px solid #241c14; box-shadow: 2px 3px 0 rgba(0,0,0,0.3); position: relative; flex: none;">
+        <div style="position: absolute; left: 9px; top: 15px; width: 11px; height: 11px; border-radius: 50%; background: #fff;"><div style="position: absolute; left: 3px; top: 3px; width: 5px; height: 5px; border-radius: 50%; background: #1a140c;"></div></div>
+        <div style="position: absolute; right: 9px; top: 15px; width: 11px; height: 11px; border-radius: 50%; background: #fff;"><div style="position: absolute; left: 3px; top: 3px; width: 5px; height: 5px; border-radius: 50%; background: #1a140c;"></div></div>
+      </div>
+      <div style="position: relative; max-width: 440px; background: #e8dcbe; border: 2px solid #241c14; border-radius: 4px; padding: 10px 15px; box-shadow: 3px 4px 0 rgba(0,0,0,0.3);">
+        <div style="position: absolute; top: -9px; left: 12px; font: 700 9px 'Space Mono'; color: #241c14; background: #e0b44e; padding: 2px 6px; border: 1.4px solid #241c14; border-radius: 2px;">FRIZZLEBOB</div>
+        <div style="font: 600 14px/1.4 'Shantell Sans', cursive; color: #3a2c18; font-style: italic;">{{ gmText }}</div>
+      </div>
+    </div></sc-if>
+
+    <!-- SCENE (fan of neighbors + central player hex) -->
+    <div style="position: relative; width: 940px; height: 610px; margin: 0 auto;">
+
+      <!-- neighbor door: UP-LEFT -->
+      <div style="position: absolute; left: 116px; top: 150px; width: 190px; z-index: 3; cursor: pointer; animation: bob2 3.4s ease-in-out infinite;" style-hover="transform: translateY(-8px); filter: brightness(1.08);">
+        <div style="position: relative; width: 190px; height: 166px;">
+          <div style="position: absolute; left: 16px; right: 16px; bottom: -4px; height: 22px; background: radial-gradient(ellipse at center, rgba(0,0,0,0.5), transparent 72%); filter: blur(5px);"></div>
+          <div style="position: absolute; inset: 0; transform: translateY(15px); clip-path: polygon(25% 0%,75% 0%,100% 50%,75% 100%,25% 100%,0% 50%); background: #7a3c24;"></div>
+          <div style="position: absolute; inset: 0; clip-path: polygon(25% 0%,75% 0%,100% 50%,75% 100%,25% 100%,0% 50%); background: #b25a38 url('tex/Clay002.png') center/cover; box-shadow: inset 0 2px 0 rgba(255,255,255,0.5), inset 0 -18px 26px rgba(60,26,14,0.55);"></div>
+          <div style="position: absolute; left: 52px; top: 6px; width: 88px; height: 116px; background: # efe4c8; transform: rotate(-6deg);"></div>
+          <div style="position: absolute; left: 52px; top: 6px; width: 88px; height: 118px; background: #f2e8cf; border: 2px solid #241c14; border-radius: 3px; transform: rotate(-6deg); box-shadow: 2px 4px 0 rgba(0,0,0,0.35);">
+            <div style="position: absolute; top: -8px; left: 50%; transform: translateX(-50%) rotate(3deg); width: 40px; height: 15px; background: rgba(220,200,150,0.8); border: 1px solid rgba(90,66,32,0.4);"></div>
+            <div style="height: 66px; margin: 8px 8px 0; background: repeating-linear-gradient(45deg,#c98a5a,#c98a5a 5px,#b8794a 5px,#b8794a 10px); border: 1.5px solid #241c14;"></div>
+            <div style="font: 700 10px/1.15 'Shantell Sans'; color: #2a2013; padding: 6px 8px 0; text-align: center;">Schere im Gebüsch</div>
+          </div>
+        </div>
+        <div style="text-align: center; margin-top: 12px;"><span style="font: 700 11px 'Space Mono'; color: #241c14; background: #d8c398; padding: 3px 10px; border-radius: 12px; border: 1.4px solid #241c14;">→ Tür 1</span></div>
+      </div>
+
+      <!-- neighbor door: UP -->
+      <div style="position: absolute; left: 375px; top: 26px; width: 190px; z-index: 3; cursor: pointer; animation: bob2 3.0s ease-in-out infinite;" style-hover="transform: translateY(-8px); filter: brightness(1.08);">
+        <div style="position: relative; width: 190px; height: 166px;">
+          <div style="position: absolute; left: 16px; right: 16px; bottom: -4px; height: 22px; background: radial-gradient(ellipse at center, rgba(0,0,0,0.5), transparent 72%); filter: blur(5px);"></div>
+          <div style="position: absolute; inset: 0; transform: translateY(15px); clip-path: polygon(25% 0%,75% 0%,100% 50%,75% 100%,25% 100%,0% 50%); background: #274a5a;"></div>
+          <div style="position: absolute; inset: 0; clip-path: polygon(25% 0%,75% 0%,100% 50%,75% 100%,25% 100%,0% 50%); background: #3f6f86 url('tex/PaintedWood007B.png') center/cover; box-shadow: inset 0 2px 0 rgba(255,255,255,0.5), inset 0 -18px 26px rgba(20,40,52,0.55);"></div>
+          <div style="position: absolute; left: 52px; top: 6px; width: 88px; height: 118px; background: #f2e8cf; border: 2px solid #241c14; border-radius: 3px; transform: rotate(1.5deg); box-shadow: 2px 4px 0 rgba(0,0,0,0.35);">
+            <div style="position: absolute; top: -8px; left: 50%; transform: translateX(-50%) rotate(-2deg); width: 40px; height: 15px; background: rgba(220,200,150,0.8); border: 1px solid rgba(90,66,32,0.4);"></div>
+            <div style="height: 66px; margin: 8px 8px 0; background: repeating-linear-gradient(45deg,#6ea6bc,#6ea6bc 5px,#5b93a9 5px,#5b93a9 10px); border: 1.5px solid #241c14;"></div>
+            <div style="font: 700 10px/1.15 'Shantell Sans'; color: #2a2013; padding: 6px 8px 0; text-align: center;">Der Karton-Fluss</div>
+          </div>
+        </div>
+        <div style="text-align: center; margin-top: 12px;"><span style="font: 700 11px 'Space Mono'; color: #241c14; background: #d8c398; padding: 3px 10px; border-radius: 12px; border: 1.4px solid #241c14;">→ Tür 2</span></div>
+      </div>
+
+      <!-- neighbor door: UP-RIGHT -->
+      <div style="position: absolute; left: 634px; top: 150px; width: 190px; z-index: 3; cursor: pointer; animation: bob2 3.7s ease-in-out infinite;" style-hover="transform: translateY(-8px); filter: brightness(1.08);">
+        <div style="position: relative; width: 190px; height: 166px;">
+          <div style="position: absolute; left: 16px; right: 16px; bottom: -4px; height: 22px; background: radial-gradient(ellipse at center, rgba(0,0,0,0.5), transparent 72%); filter: blur(5px);"></div>
+          <div style="position: absolute; inset: 0; transform: translateY(15px); clip-path: polygon(25% 0%,75% 0%,100% 50%,75% 100%,25% 100%,0% 50%); background: #444d24;"></div>
+          <div style="position: absolute; inset: 0; clip-path: polygon(25% 0%,75% 0%,100% 50%,75% 100%,25% 100%,0% 50%); background: #6f7a3e url('tex/forest_ground_05.png') center/cover; box-shadow: inset 0 2px 0 rgba(255,255,255,0.5), inset 0 -18px 26px rgba(34,40,18,0.55);"></div>
+          <div style="position: absolute; left: 52px; top: 6px; width: 88px; height: 118px; background: #f2e8cf; border: 2px solid #241c14; border-radius: 3px; transform: rotate(6deg); box-shadow: 2px 4px 0 rgba(0,0,0,0.35);">
+            <div style="position: absolute; top: -8px; left: 50%; transform: translateX(-50%) rotate(4deg); width: 40px; height: 15px; background: rgba(220,200,150,0.8); border: 1px solid rgba(90,66,32,0.4);"></div>
+            <div style="height: 66px; margin: 8px 8px 0; background: repeating-linear-gradient(45deg,#7f9a4e,#7f9a4e 5px,#6d8641 5px,#6d8641 10px); border: 1.5px solid #241c14;"></div>
+            <div style="font: 700 10px/1.15 'Shantell Sans'; color: #2a2013; padding: 6px 8px 0; text-align: center;">Der knisternde Wald</div>
+          </div>
+        </div>
+        <div style="text-align: center; margin-top: 12px;"><span style="font: 700 11px 'Space Mono'; color: #241c14; background: #d8c398; padding: 3px 10px; border-radius: 12px; border: 1.4px solid #241c14;">→ Tür 3</span></div>
+      </div>
+
+      <!-- CENTRAL PLAYER HEX -->
+      <div style="position: absolute; left: 280px; top: 244px; width: 380px; height: 330px; z-index: 6;">
+        <div style="position: absolute; left: 30px; right: 30px; bottom: -10px; height: 42px; background: radial-gradient(ellipse at center, rgba(0,0,0,0.6), transparent 72%); filter: blur(9px);"></div>
+        <div style="position: absolute; inset: 0; transform: translateY(20px); clip-path: polygon(25% 0%,75% 0%,100% 50%,75% 100%,25% 100%,0% 50%); background: {{ floorSlabStyle }};"></div>
+        <div style="{{ floorFaceStyle }}"></div>
+        <div style="position: absolute; inset: 0; clip-path: polygon(25% 0%,75% 0%,100% 50%,75% 100%,25% 100%,0% 50%); overflow: hidden;">
+          <div style="position: absolute; left: 40%; top: 46%; width: 150%; height: 60px; transform: translateY(-50%) rotate(-34deg); background: #cbb48a url('tex/patterned_paving_02.png') center/cover; border-top: 3px dashed #241c14; border-bottom: 3px dashed #241c14; opacity: 0.92;"></div>
+        </div>
+        <div style="position: absolute; inset: 0; clip-path: polygon(25% 0%,75% 0%,100% 50%,75% 100%,25% 100%,0% 50%); box-shadow: inset 0 3px 0 rgba(255,255,255,0.5), inset 0 -26px 40px rgba(60,42,16,0.5); pointer-events: none;"></div>
+
+        <!-- TREE (back-left) -->
+        <div style="position: absolute; left: 34px; top: 58px; z-index: 5;">
+          <div style="position: absolute; left: 50%; bottom: -6px; transform: translateX(-50%); width: 54px; height: 16px; background: radial-gradient(ellipse at center, rgba(0,0,0,0.45), transparent 70%); filter: blur(4px);"></div>
+          <div style="position: absolute; left: 50%; bottom: 0; transform: translateX(-50%); width: 14px; height: 30px; background: linear-gradient(90deg,#6b4a28,#8a6338); border: 2px solid #241c14; border-radius: 3px;"></div>
+          <div style="position: relative; width: 72px; height: 62px; background: #5f7a34 url('tex/forest_ground_05.png') center/cover; border: 2px solid #241c14; border-radius: 48% 52% 46% 54%; box-shadow: inset 0 4px 0 rgba(255,255,255,0.3), inset 0 -12px 16px rgba(30,44,14,0.5), 2px 3px 0 rgba(0,0,0,0.25); margin-bottom: 24px;"></div>
+        </div>
+
+        <!-- HOUSE (back-right) -->
+        <div style="position: absolute; left: 232px; top: 46px; z-index: 5;">
+          <div style="position: absolute; left: 50%; bottom: -6px; transform: translateX(-50%); width: 92px; height: 20px; background: radial-gradient(ellipse at center, rgba(0,0,0,0.45), transparent 70%); filter: blur(5px);"></div>
+          <div style="width: 96px;">
+            <div style="width: 0; height: 0; border-left: 52px solid transparent; border-right: 52px solid transparent; border-bottom: 32px solid #3f6f86; margin: 0 auto; filter: drop-shadow(0 -1px 0 #274a5a);"></div>
+            <div style="width: 82px; height: 54px; margin: -1px auto 0; background: #c9a06a url('tex/Cardboard001.png') center/cover; border: 2px solid #241c14; border-top: 0; position: relative; box-shadow: 3px 4px 0 rgba(0,0,0,0.3);">
+              <div style="position: absolute; left: 50%; bottom: 0; transform: translateX(-50%); width: 20px; height: 30px; background: #4a3626; border: 1.5px solid #241c14; border-bottom: 0;"></div>
+              <div style="position: absolute; left: 11px; top: 9px; width: 14px; height: 14px; background: #ecdcae; border: 1.5px solid #241c14;"></div>
+              <div style="position: absolute; right: 11px; top: 9px; width: 14px; height: 14px; background: #ecdcae; border: 1.5px solid #241c14;"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- CUBE-PET PLAYER (front-center) -->
+        <div style="position: absolute; left: 138px; top: 150px; z-index: 8;">
+          <div style="position: absolute; left: 50%; bottom: -12px; transform: translateX(-50%); width: 96px; height: 26px; background: radial-gradient(ellipse at center, rgba(0,0,0,0.5), transparent 70%); filter: blur(5px);"></div>
+          <div style="animation: petDrop 1s cubic-bezier(.2,.7,.3,1) both;">
+            <div style="animation: petBob 2.6s ease-in-out infinite; transform-origin: 50% 100%; position: relative; width: 100px; height: 108px;">
+              <div style="position: absolute; left: 26px; top: -18px; width: 15px; height: 36px; background: #e6ae33; border: 2px solid #241c14; border-radius: 8px 8px 4px 4px;"></div>
+              <div style="position: absolute; right: 26px; top: -18px; width: 15px; height: 36px; background: #e6ae33; border: 2px solid #241c14; border-radius: 8px 8px 4px 4px;"></div>
+              <div style="position: absolute; left: 8px; top: 14px; width: 84px; height: 80px; border-radius: 22px; background: linear-gradient(158deg,#f2c04a,#cf8f27); border: 2px solid #241c14; box-shadow: inset 0 9px 12px rgba(255,255,255,0.38), inset 0 -16px 20px rgba(120,70,10,0.42), 2px 4px 0 rgba(0,0,0,0.25);">
+                <div style="position: absolute; left: 15px; top: 22px; width: 26px; height: 26px; border-radius: 50%; background: #fff; border: 1.5px solid #b89a5a; box-shadow: inset 0 -3px 4px rgba(0,0,0,0.15);">
+                  <div style="position: absolute; left: 7px; top: 6px; width: 12px; height: 12px; border-radius: 50%; background: #1a140c; animation: eyeDart 5s ease-in-out infinite;"><div style="position: absolute; left: 2px; top: 1px; width: 4px; height: 4px; border-radius: 50%; background: #fff;"></div></div>
+                </div>
+                <div style="position: absolute; right: 15px; top: 22px; width: 26px; height: 26px; border-radius: 50%; background: #fff; border: 1.5px solid #b89a5a; box-shadow: inset 0 -3px 4px rgba(0,0,0,0.15);">
+                  <div style="position: absolute; left: 7px; top: 6px; width: 12px; height: 12px; border-radius: 50%; background: #1a140c; animation: eyeDart 5s ease-in-out infinite;"><div style="position: absolute; left: 2px; top: 1px; width: 4px; height: 4px; border-radius: 50%; background: #fff;"></div></div>
+                </div>
+                <div style="position: absolute; left: 50%; top: 50px; transform: translateX(-50%); width: 0; height: 0; border-left: 5px solid transparent; border-right: 5px solid transparent; border-top: 7px solid #a35a3a;"></div>
+                <div style="position: absolute; left: 50%; top: 57px; transform: translateX(-50%); width: 18px; height: 9px; border: 2px solid #a35a3a; border-top: 0; border-radius: 0 0 10px 10px;"></div>
+              </div>
+              <div style="position: absolute; left: 22px; bottom: 0; width: 20px; height: 13px; background: #cf8f27; border: 2px solid #241c14; border-radius: 8px;"></div>
+              <div style="position: absolute; right: 22px; bottom: 0; width: 20px; height: 13px; background: #cf8f27; border: 2px solid #241c14; border-radius: 8px;"></div>
+            </div>
+          </div>
+          <div style="text-align: center; margin-top: 6px;"><span style="font: 700 10px 'Space Mono'; color: #241c14; background: #e0b44e; padding: 2px 8px; border-radius: 10px; border: 1.4px solid #241c14; box-shadow: 1px 1px 0 #241c14;">★ DU</span></div>
+        </div>
+
+        <!-- DICE (front-right) -->
+        <div style="position: absolute; left: 262px; top: 200px; z-index: 8;">
+          <div style="position: absolute; left: 50%; bottom: -8px; transform: translateX(-50%); width: 54px; height: 16px; background: radial-gradient(ellipse at center, rgba(0,0,0,0.45), transparent 70%); filter: blur(3px);"></div>
+          <div style="width: 52px; height: 52px; border-radius: 13px; background: linear-gradient(158deg,#f6eedd,#cabf9f); border: 2px solid #241c14; box-shadow: inset 0 7px 9px rgba(255,255,255,0.55), inset 0 -11px 13px rgba(90,74,44,0.35), 2px 3px 0 rgba(0,0,0,0.25); position: relative; animation: dieRoll 1s cubic-bezier(.2,.7,.3,1) both;">
+            <sc-for list="{{ pips }}" as="pip" hint-placeholder-count="4"><div style="{{ pip }}"></div></sc-for>
+          </div>
+          <div style="text-align: center; margin-top: 6px;"><span style="font: 700 9px 'Space Mono'; color: #f3ead8; background: #3a2c18; padding: 2px 7px; border-radius: 9px; border: 1.4px solid #241c14;">STORY-ROLL {{ rollText }}</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- META BAR (die 3 weiteren Hex-Seiten) -->
+  <div style="display: grid; grid-template-columns: 1fr 1.2fr 1fr; gap: 14px; margin-top: 16px;">
+    <!-- ACTOR -->
+    <div style="background: #201a12; border: 2px solid #3a2f22; border-radius: 6px; padding: 14px 16px; box-shadow: 4px 6px 0 rgba(0,0,0,0.35); display: flex; align-items: center; gap: 12px;">
+      <div style="width: 40px; height: 40px; border-radius: 11px; background: linear-gradient(158deg,#f2c04a,#cf8f27); border: 2px solid #241c14; position: relative; flex: none;">
+        <div style="position: absolute; left: 8px; top: 13px; width: 10px; height: 10px; border-radius: 50%; background: #fff;"><div style="position: absolute; left: 3px; top: 3px; width: 4px; height: 4px; border-radius: 50%; background: #1a140c;"></div></div>
+        <div style="position: absolute; right: 8px; top: 13px; width: 10px; height: 10px; border-radius: 50%; background: #fff;"><div style="position: absolute; left: 3px; top: 3px; width: 4px; height: 4px; border-radius: 50%; background: #1a140c;"></div></div>
+      </div>
+      <div>
+        <div style="font: 700 9px 'Space Mono'; letter-spacing: 0.14em; color: #7a6b4c;">ACTOR</div>
+        <div style="font: 600 15px 'Shantell Sans'; color: #f3ead8;">Bunny &middot; „FrizzleBob"</div>
+        <div style="font: 400 11px 'Nunito Sans'; color: #8f8168;">aktiver Spieler-Char</div>
+      </div>
+    </div>
+    <!-- QUEST -->
+    <div style="background: #201a12; border: 2px solid #3a2f22; border-radius: 6px; padding: 14px 16px; box-shadow: 4px 6px 0 rgba(0,0,0,0.35);">
+      <div style="display: flex; justify-content: space-between; align-items: baseline;">
+        <div style="font: 700 9px 'Space Mono'; letter-spacing: 0.14em; color: #7a6b4c;">QUEST</div>
+        <div style="font: 700 11px 'Space Mono'; color: #d8c398;">1 / 3</div>
+      </div>
+      <div style="font: 600 15px 'Shantell Sans'; color: #f3ead8; margin: 2px 0 8px;">Sammle 3 Papierschnipsel</div>
+      <div style="height: 12px; background: #14100a; border: 1.5px solid #3a2f22; border-radius: 7px; overflow: hidden;">
+        <div style="width: 33%; height: 100%; background: repeating-linear-gradient(45deg,#e0b44e,#e0b44e 6px,#c99a35 6px,#c99a35 12px);"></div>
+      </div>
+    </div>
+    <!-- BACK / ADMIN -->
+    <div style="background: #201a12; border: 2px solid #3a2f22; border-radius: 6px; padding: 14px 16px; box-shadow: 4px 6px 0 rgba(0,0,0,0.35);">
+      <div style="font: 700 9px 'Space Mono'; letter-spacing: 0.14em; color: #7a6b4c; margin-bottom: 9px;">BACK / ADMIN</div>
+      <div style="display: flex; gap: 8px;">
+        <div style="flex: 1; text-align: center; cursor: pointer; font: 700 12px 'Nunito Sans'; color: #f3ead8; background: #2c2416; border: 1.6px solid #4a3d29; border-radius: 5px; padding: 8px 4px;" style-hover="background: #3a2f1c; border-color: #e0b44e;">↩ Zurück</div>
+        <div style="flex: 1; text-align: center; cursor: pointer; font: 700 12px 'Nunito Sans'; color: #f3ead8; background: #2c2416; border: 1.6px solid #4a3d29; border-radius: 5px; padding: 8px 4px;" style-hover="background: #3a2f1c; border-color: #e0b44e;">▤ Floor</div>
+        <div style="flex: 1; text-align: center; cursor: pointer; font: 700 12px 'Nunito Sans'; color: #f3ead8; background: #2c2416; border: 1.6px solid #4a3d29; border-radius: 5px; padding: 8px 4px;" style-hover="background: #3a2f1c; border-color: #e0b44e;">✕ Exit</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- footnote -->
+  <div style="margin-top: 14px; font: 400 12px/1.5 'Nunito Sans'; color: #7a6b4c; text-align: center;">6 Hex-Seiten = <b style="color:#b3a488;">3 Scene-Card-Türen</b> (Nachbarn) · <b style="color:#b3a488;">Actor</b> · <b style="color:#b3a488;">Quest</b> · <b style="color:#b3a488;">Back/Admin</b>. Der Pet-Würfel <b style="color:#b3a488;">ist</b> der Story-Roll. Beispiel-Bühne — Cube-Pet &amp; Props sind Mock-Massing für den Toon/Clay-Look-Dev.</div>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1040,&quot;height&quot;:940},&quot;floor&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;wellpappe&quot;,&quot;ton&quot;,&quot;holzsteg&quot;,&quot;stein&quot;],&quot;default&quot;:&quot;wellpappe&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Bühne&quot;},&quot;roll&quot;:{&quot;editor&quot;:&quot;range&quot;,&quot;default&quot;:4,&quot;min&quot;:1,&quot;max&quot;:6,&quot;step&quot;:1,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Bühne&quot;},&quot;showGM&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Bühne&quot;},&quot;gmText&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;Drei Türen, drei Lügen. Welche knackst du zuerst, Bagage?&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Bühne&quot;}}">
+class Component extends DCLogic {
+  renderVals() {
+    const p = this.props || {};
+    const clip = 'polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%)';
+    const floors = {
+      wellpappe: { tex: 'tex/CardboardSet001.png', base: '#b5895a', slab: '#7d5a34', ao: 'rgba(60,42,16,0.5)' },
+      ton:       { tex: 'tex/Clay002.png', base: '#b25a38', slab: '#7a3c24', ao: 'rgba(60,26,14,0.5)' },
+      holzsteg:  { tex: 'tex/PaintedWood007B.png', base: '#3f6f86', slab: '#274a5a', ao: 'rgba(18,38,50,0.5)' },
+      stein:     { tex: 'tex/marble_rock_02.png', base: '#8f8a80', slab: '#5c5850', ao: 'rgba(30,28,24,0.5)' }
+    };
+    const fl = floors[p.floor] || floors.wellpappe;
+
+    const roll = Math.max(1, Math.min(6, Math.round(p.roll ?? 4)));
+    const P = { tl:{l:11,t:11}, tr:{l:33,t:11}, ml:{l:11,t:22}, mr:{l:33,t:22}, c:{l:22,t:22}, bl:{l:11,t:33}, br:{l:33,t:33} };
+    const layouts = {
+      1: ['c'], 2: ['tl','br'], 3: ['tl','c','br'],
+      4: ['tl','tr','bl','br'], 5: ['tl','tr','c','bl','br'], 6: ['tl','tr','ml','mr','bl','br']
+    };
+    const pips = layouts[roll].map(k => ({
+      position: 'absolute', left: P[k].l + 'px', top: P[k].t + 'px',
+      width: '8px', height: '8px', borderRadius: '50%',
+      background: '#1a140c', boxShadow: 'inset 0 1px 1px rgba(0,0,0,0.6)'
+    }));
+
+    return {
+      showGM: p.showGM ?? true,
+      gmText: p.gmText ?? 'Drei Türen, drei Lügen. Welche knackst du zuerst, Bagage?',
+      rollText: '= ' + roll,
+      pips,
+      floorSlabStyle: fl.slab,
+      floorFaceStyle: {
+        position: 'absolute', inset: '0', clipPath: clip,
+        backgroundColor: fl.base,
+        backgroundImage: 'url("' + fl.tex + '")',
+        backgroundSize: 'cover', backgroundPosition: 'center'
+      }
+    };
+  }
+}
+</script>
+</body>
+</html>
