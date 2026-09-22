@@ -55,6 +55,14 @@ Public runtime evidence remains **41/41 PASS** at the recorded tested/deployed s
 Documentation/source routing checks: **9/9 PASS**.  
 See `TEST_REPORT.md`. The exact final branch head is fetched from PR #165 at handoff time because the commit that writes this Return necessarily advances the branch.
 
+## Hub publication mirror
+
+The existing public KFB Hub / ToolBox metadata mirror on `cloudflare-live` was updated additively:
+- KFB Hub metadata commit `499f55d54cf65b43b143eb137556ed4d3e1e9a71`;
+- ToolBox router metadata commit `eac6856caa90114aa531a83d45d5ba2aaacccaee`.
+
+The exact public Hybrid v1 Stage itself was already public-verified in the predecessor workflow. For these new Hub-text changes, direct `kayfabizarro.pages.dev` retrieval was unavailable from this chat's web viewer, so propagation of the updated Hub wording is **UNVERIFIED** and is not claimed as live.
+
 ## Dropbox
 
 Dropbox was searched read-only. Multiple plausible historical ToolBox mirrors exist, so no write was made without an exact destination. No Dropbox source was treated as newer than GitHub.
