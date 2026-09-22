@@ -2,10 +2,10 @@
   "schema": "kfb.stage-source/0.1",
   "product": "KFB ToolBox · Hybrid Surface Scene Lab v2",
   "owner": "KFB ToolBox / material-surface compatibility lab",
-  "status": "IMPLEMENTATION_CANDIDATE",
+  "status": "ARCHIVED_FAILED_CANDIDATE",
   "sourceRepo": "georg-doc/kayfabizarro",
   "sourceBranch": "chatgpt-web/toolbox-hybrid-surface-v2-2026-09-22",
-  "sourceBranchHead": "e26cea7d71eef41c11f35969a6a06e45709bbd90",
+  "sourceBranchHead": "7cbad52b55fb9ec2300aa4b25ca92b0997ce448a",
   "predecessor": {
     "draftPr": 164,
     "publicStage": "https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/hybrid-surface-scene-lab/",
@@ -39,6 +39,22 @@
     "reference": "median source-head metric of ActionFigure + GothGirl + FrizzleBob Driver (Rig_Medium)",
     "totalHeightNormalization": false
   },
-  "stageUrl": "https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/hybrid-surface-scene-lab-v2/",
-  "humanAcceptance": "PENDING"
+  "stageUrl": null,
+  "humanAcceptance": "NOT_REACHED",
+  "frozenRuntimeHead": "7cbad52b55fb9ec2300aa4b25ca92b0997ce448a",
+  "failureRecovery": "tools/KFB-ToolBox/_handover/HYBRID_SURFACE_V2_FAILURE_RECOVERY_2026-09-22/START_HERE.md",
+  "failure": {
+    "gate": "visible actor shaders compiled",
+    "run3": {
+      "run": 35672017517,
+      "job": 106570357717,
+      "observed": "58 compiled / 63 proof-counted visible"
+    },
+    "run4": {
+      "run": 35672227722,
+      "job": 106571025025,
+      "observed": "58 compiled / 63 effectively visible after ancestor-visibility repair"
+    },
+    "stopRule": "TRIGGERED_AFTER_TWO_FAILED_REPAIR_PASSES"
+  }
 }
