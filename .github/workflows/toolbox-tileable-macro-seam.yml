@@ -1,0 +1,44 @@
+name: ToolBox Tileable Macro Seam proof
+on:
+  pull_request:
+    paths:
+      - 'kfb-hub/stage/toolbox/tileable-macro-seam-lab/**'
+      - '.github/workflows/toolbox-tileable-macro-seam.yml'
+permissions:
+  contents: read
+jobs:
+  browser-proof:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Static syntax and manifest
+        run: |
+          node --check kfb-hub/stage/toolbox/tileable-macro-seam-lab/tileable-rgb-brush.v1.js
+          node --check kfb-hub/stage/toolbox/tileable-macro-seam-lab/lab.mjs
+          node --check kfb-hub/stage/toolbox/tileable-macro-seam-lab/proof.mjs
+          python3 -m json.tool kfb-hub/stage/toolbox/tileable-macro-seam-lab/SOURCE.json >/dev/null
+      - name: Install Chromium
+        run: |
+          npm install --no-save playwright@1.51.1
+          npx playwright install --with-deps chromium
+      - name: Serve
+        run: |
+          python3 -m http.server 4173 --bind 127.0.0.1 >/tmp/seam-http.log 2>&1 &
+          for i in {1..30}; do curl -fsS http://127.0.0.1:4173/kfb-hub/stage/toolbox/tileable-macro-seam-lab/ >/dev/null && exit 0; sleep 1; done
+          cat /tmp/seam-http.log
+          exit 1
+      - name: Browser proof
+        env:
+          SEAM_BASE_URL: http://127.0.0.1:4173/kfb-hub/stage/toolbox/tileable-macro-seam-lab/
+          SEAM_OUT: tileable-macro-seam-evidence
+        run: node kfb-hub/stage/toolbox/tileable-macro-seam-lab/proof.mjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: toolbox-tileable-macro-seam-evidence
+          path: tileable-macro-seam-evidence
+          retention-days: 14
