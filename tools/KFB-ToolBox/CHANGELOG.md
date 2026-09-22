@@ -1,5 +1,22 @@
 # KFB ToolBox · additives Changelog
 
+## 2026-09-22 · Hybrid Surface v2 frozen after compile-census repeat
+
+### IMPLEMENTATION
+A bounded v2 candidate added softer triplanar macro treatment, procedural 3D clay/grain without a second texture, source roughness/metalness preservation, exact donor isolation views and measured head-size cross-rig scaling.
+
+### PROVEN RESULTS BEFORE FAILURE
+Exact Dungeon + five actor donors load; all head proxies resolve; all final head metrics normalize to the measured Medium reference. Resulting total heights include Legacy **1.685**, Medium reference **2.322** and Black Knight **3.678**. One shared texture and source material preservation checks pass.
+
+### FAILURE / STOP
+Runs `35672017517` and `35672227722` both fail the same actor shader compile-census gate at **58 compiled / 63 proof-counted visible decorated materials**, including after ancestor-visibility accounting. Per the two-pass rule the candidate is frozen at runtime/code head `7cbad52b55fb9ec2300aa4b25ca92b0997ce448a`.
+
+### RECOVERY
+`_handover/HYBRID_SURFACE_V2_FAILURE_RECOVERY_2026-09-22/START_HERE.md`
+
+No v2 public Stage or Georg visual acceptance is claimed. Next gate is diagnostic census only; OSM/Race remains deferred.
+
+
 ## 2026-09-22 · Hybrid Surface v2 review persistence
 
 ### HUMAN REVIEW
