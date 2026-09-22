@@ -105,3 +105,61 @@ Documentation/ideation only. No NPC AI, ChatterBox runtime, Melee integration, S
 
 ### IMPLEMENTATION STATUS
 Documentation/ideation only. No social perception runtime, navigation AI, inventory/economy system, gift transfer runtime or browser Stage was built.
+
+
+## 2026-09-22 · Food Gifts + Reaction Library + Decision Loop v0
+
+### USER DIRECTION
+- Use KayKit food props and Tiny Treats food/venue packs as a major practical Gift Drive source.
+- Gift framing may include bizarre taste claims and absurd promised effects rather than fixed repeated lines.
+- Example concept directions include an Orc offering Lore Keeper an ominous miracle donut for baldness and a Skeleton giving Goth Girl a mood-improving present that produces a cartoon soot/flame gag followed by shared floor-rolling laughter.
+- Add triggerable reaction concepts including laughter, crying and other short/emotional/cartoon reactions.
+- Prioritize the **minimal technical Resident decision loop** before a per-character gift taxonomy.
+
+### SOURCE EVIDENCE
+- Repo source contains Tiny Treats Baked Goods, Bakery Interior, Charming Kitchen and Pleasant Picnic pack trees.
+- Repo source contains KayKit Restaurant Bits food assets including `food_burger.gltf`, `food_stew.gltf`, `food_dinner.gltf` and multiple ingredient props.
+- Targeted repo search found a documented **laugh face tile** for the Action Figure head and semantic `surprised` EyeRig state evidence.
+- Targeted repo search did **not** locate a clearly named full-body `Laugh` or `Cry` animation clip. Laugh/Cry body reactions remain an explicit animation inventory/authoring gate rather than a claimed capability.
+
+### PROPOSAL · Food / Reaction
+- Separate gift object, claimed effect, visible gag outcome and social aftermath.
+- Add Gift Gag grammar:
+  `NOTICE → APPROACH → BANTER → CLAIM/HYPE → OFFER → ACCEPT/OPEN → GAG → SHOCK_BEAT → REACTION_PAIR → REPAIR/CALLBACK → RESUME`.
+- Add semantic Reaction Library categories: micro, social, emotional, gag/impact, repair and object reactions.
+- Add semantic triggers such as `gift.gag.soot`, `social.sharedLaugh`, `emotion.cry`.
+- Motion/Animation owner resolves exact clips; missing reactions fall back or remain visually unsupported rather than inventing animation evidence.
+
+### PROPOSAL · Minimal Resident Decision Loop v0
+- Residents remain in their current Activity most of the time and reconsider only at interruptible beats or meaningful events.
+- Core loop:
+  `ACTIVITY → PERCEIVE → NOTICE → CAN_INTERRUPT? → MOTIVES → SELECT → RESERVE → APPROACH → ENCOUNTER → REACT/COMMIT → MEMORY → RELEASE → RESUME`.
+- First motive set remains small: RESPOND, GIFT, CALLBACK, SHOW, BANTER, SHARED_ACTIVITY, CHALLENGE, INSPECT_POI, CONTINUE.
+- Use explicit priority + small per-character biases before any opaque utility-score system.
+- Add seeded tie-breaks for reproducible variation.
+- Add a Pair Lock / Social Reservation so crowds do not simultaneously target one Resident.
+- Host navigation owns physical approach; social logic must abort safely if path/target/availability changes.
+- Gift ownership changes only at explicit `TRANSFER_COMMIT`.
+- Durable Lean Memory is written only after meaningful completed Bits.
+- Per-pair cooldowns / reacquisition blocks prevent infinite gift or banter loops.
+- Debug authoring should expose why a motive was selected.
+
+### FIRST TECHNICAL PROOF
+Exactly two Residents + one real food gift:
+1. ordinary Activities;
+2. recipient enters Social Attention;
+3. giver reaches interruptible beat;
+4. GIFT selected and explained;
+5. Pair Lock;
+6. host-owned approach;
+7. short banter;
+8. single transfer commit;
+9. one receiver reaction;
+10. shared settle/laugh;
+11. one compact Memory receipt;
+12. both resume.
+
+No Combat, crowd AI or complex utility scoring in this first proof.
+
+### IMPLEMENTATION STATUS
+Documentation/ideation only. No Resident decision runtime, Reaction Library runtime, food handoff runtime, animation authoring or public Stage proof was built.
