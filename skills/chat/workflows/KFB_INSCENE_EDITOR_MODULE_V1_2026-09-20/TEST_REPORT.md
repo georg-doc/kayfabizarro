@@ -84,3 +84,36 @@ Publication branch files were fetch-back verified at `cloudflare-live@f0c269904d
 Attempt 1: run `35671642443` / attempt 1 — **FAIL** at public child-route readiness; artifact `10671785860`, digest `sha256:75167671838e59b0ed51b2e2badb4560c9af90091c7fe8024bfd55ffc0419ef5`. No Stage-mirror regression was observed. Public PASS is not claimed.
 
 Attempt 2 is the final public-sync retry allowed by this slice. If it fails, the candidate remains preserved as **42/42 host PASS + 13/13 Stage-mirror PASS / PUBLIC BLOCKED**.
+
+
+## Final public result
+
+Run: `35671642443` · attempt 2 · **SUCCESS**  
+Job: `106570350236`  
+Artifact: `10671626183` · `scene-patch-public-proof`  
+Digest: `sha256:356dbf12428252b54040e50a4077767e0cac3234c74982adbdaf4ca28a4bb2cf`
+
+**13/13 public browser assertions PASS · 0 page/console errors**
+
+Proven on the exact Cloudflare URLs:
+- root returns HTTP 200;
+- root build marker = `KFB_SCENE_PATCH_V1_2026_09_20`;
+- Resident frame is public and its adapter registers 10 editable Habitat/Prop records;
+- Resident source ref is exact;
+- Resident editor opens;
+- Dungeon frame is public;
+- Dungeon adapter registers only generated `candle` records as editable;
+- Dungeon source ref is exact;
+- Dungeon editor opens;
+- KFB Hub returns HTTP 200;
+- KFB Hub links the Scene Patch Stage;
+- final browser/page error list is empty.
+
+Direct route:
+https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/scene-patch-v1/
+
+Evidence ladder for this slice is therefore:
+- **42/42** real two-host implementation browser assertions;
+- **13/13** isolated Stage-mirror browser assertions;
+- **13/13** real public Cloudflare browser assertions;
+- human visual/interaction acceptance: **OPEN**.
