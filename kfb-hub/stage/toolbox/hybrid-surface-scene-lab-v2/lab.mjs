@@ -154,7 +154,7 @@ function measureHeadProxy(root,spec){
   const box=new THREE.Box3().makeEmpty();
   const names=[];
   root.traverse(node=>{
-    if(!node.isMesh||!re.test(node.name||''))return;
+    if(!re.test(node.name||''))return;
     names.push(node.name);
     node.updateMatrixWorld(true);
     box.expandByObject(node,true);
