@@ -37,6 +37,7 @@ For World / Environment:
 
 9. [CLAUDE_WORLD_AUTHORING_BRIEF.md](CLAUDE_WORLD_AUTHORING_BRIEF.md)
 10. [WORLD_ARCHITECTURE_RED_TEAM_2026-09-22.md](WORLD_ARCHITECTURE_RED_TEAM_2026-09-22.md) — proposal/research only; surface geometry must not silently become a new owner
+11. [STORYTELLING_MAP_WORLD_DONOR_2026-09-22.md](STORYTELLING_MAP_WORLD_DONOR_2026-09-22.md) — Story/Tactical representation, D6 relief, toys, water caveat and Curtain boundary
 
 ## Current primary inputs on main
 
