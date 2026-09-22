@@ -1,0 +1,1058 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>KFB Kit Lab · S21 · Raumstudie Dungeon</title>
+<script type="importmap">
+{"imports":{
+ "three":"https://unpkg.com/three@0.184.0/build/three.module.js",
+ "three/addons/controls/OrbitControls.js":"https://unpkg.com/three@0.184.0/examples/jsm/controls/OrbitControls.js",
+ "three/addons/loaders/GLTFLoader.js":"https://unpkg.com/three@0.184.0/examples/jsm/loaders/GLTFLoader.js",
+ "three/addons/controls/TransformControls.js":"https://unpkg.com/three@0.184.0/examples/jsm/controls/TransformControls.js"
+}}
+</script>
+<style>
+  *{box-sizing:border-box}
+  body{margin:0;background:#120e18;color:#e6e0f0;font:13px/1.5 ui-sans-serif,system-ui,-apple-system,"Helvetica Neue",sans-serif}
+  a{color:#b79ae0;text-decoration:none}a:hover{color:#cdb8ee}
+  #app{display:grid;grid-template-columns:minmax(0,1fr) 0;grid-template-rows:38px minmax(0,1fr);height:100vh}
+  #app.panel{grid-template-columns:minmax(0,1fr) 360px}
+  aside{display:none}
+  #app.panel aside{display:block}
+  #app.clean{grid-template-columns:minmax(0,1fr);grid-template-rows:0 minmax(0,1fr)}
+  #app.clean header,#app.clean aside,#app.clean #pick,#app.clean #groups{display:none}
+  #app.clean #stage{grid-row:1/-1;grid-column:1/-1}
+  #exitClean{display:none;position:absolute;right:12px;top:12px;z-index:9;opacity:.35}
+  #exitClean:hover{opacity:1}
+  #app.clean #exitClean{display:block}
+  header{grid-column:1/-1;display:flex;align-items:center;gap:6px;padding:0 8px 0 0;
+    border-bottom:1px solid #2a2135;background:#171122;overflow:hidden}
+  #barwrap{position:relative;flex:1 1 auto;min-width:0;display:flex;align-items:center;padding:0 26px}
+  #bar{display:flex;align-items:center;gap:6px;flex:1 1 auto;min-width:0;flex-wrap:nowrap;
+    overflow-x:auto;overflow-y:hidden;scrollbar-width:none}
+  #bar::-webkit-scrollbar{display:none}
+  #bar>*{flex:0 0 auto}
+  #barwrap::before,#barwrap::after{content:"";position:absolute;top:0;bottom:0;width:38px;
+    pointer-events:none;opacity:0;transition:opacity .12s}
+  #barwrap::before{left:0;background:linear-gradient(270deg,#17112200,#171122)}
+  #barwrap::after{right:0;background:linear-gradient(90deg,#17112200,#171122)}
+  #barwrap[data-less="1"]::before,#barwrap[data-more="1"]::after{opacity:1}
+  #less,#more{display:none;position:absolute;font-size:13px;padding:0 7px}
+  #less{left:0}#more{right:0}
+  #barwrap[data-less="1"] #less,#barwrap[data-more="1"] #more{display:block}
+  .tail{display:flex;align-items:center;gap:6px;flex:0 0 auto;padding-left:7px;border-left:1px solid #2f2640}
+  h1{font:600 11px/1 ui-monospace,monospace;margin:0 4px 0 2px;color:#9385a8;letter-spacing:.04em}
+  .sep{width:1px;height:18px;background:#2f2640;margin:0 2px}
+  button,select{font:11px/1 inherit;height:26px;padding:0 8px;background:#1e1729;color:#e6e0f0;
+    border:1px solid #3b2f4d;border-radius:5px;cursor:pointer;-webkit-appearance:none;appearance:none}
+  select{padding-right:21px;
+    background-image:linear-gradient(45deg,#00000000 50%,#9385a8 50%),linear-gradient(135deg,#9385a8 50%,#00000000 50%);
+    background-size:4px 4px,4px 4px;background-position:right 11px center,right 7px center;background-repeat:no-repeat}
+  button:hover,select:hover{background:#281f36}
+  /* Gedrückt: heller Text auf dunklerem Violett. Die dunkle Schrift der älteren Seiten kommt auf
+     11 px nur auf rund 3:1 — auf den Gruppenknöpfen über der Szene ist das zu wenig. */
+  button[aria-pressed="true"]{background:#5d3f93;border-color:#9b7fd0;color:#f6f1ff}
+  button:disabled{opacity:.4;cursor:default}
+  .steps{display:flex;gap:0}
+  .steps button{border-radius:0;border-left-width:0}
+  .steps button:first-child{border-radius:5px 0 0 5px;border-left-width:1px}
+  .steps button:last-child{border-radius:0 5px 5px 0}
+  label.sl{display:flex;gap:6px;align-items:center;font:10px/1 ui-monospace,monospace;color:#8a7d9e}
+  #stage{position:relative;min-width:0;min-height:0}
+  canvas{display:block;width:100%;height:100%}
+  #hud{position:absolute;left:0;right:0;top:0;bottom:0;display:grid;place-items:center;
+    font:11px/1.8 ui-monospace,monospace;color:#8d81a1;pointer-events:none;text-align:center}
+  #pick{position:absolute;left:10px;bottom:10px;font:10px/1.55 ui-monospace,monospace;
+    background:#120e18e0;border:1px solid #3b2f4d;padding:6px 8px;border-radius:6px;max-width:54%}
+  /* Vorlage: daneben (halbe Breite) oder darüber (halbdurchsichtig, zum Decken prüfen). */
+  #ref{position:absolute;left:0;top:0;height:100%;width:50%;object-fit:cover;object-position:left center;
+    border-right:1px solid #3b2f4d;pointer-events:none;z-index:3}
+  /* Deckungsmodus: Vorlage und Bild müssen DASSELBE Seitenverhältnis haben. Die Vorlage ist
+     16:9, das Canvas nicht — ohne diesen Zwang legt `object-fit` einen Letterbox-Rand dazu und
+     verschiebt die Überlagerung ein zweites Mal. */
+  #stage.cmp #c, #ref.ueber{position:absolute;inset:0;margin:auto;width:auto;height:auto;
+    max-width:100%;max-height:100%;aspect-ratio:16/9}
+  #ref.ueber{opacity:.45;object-fit:fill;border:0;z-index:3}
+  /* Das Werkzeug gehört ANS OBJEKT, nicht in die Kopfzeile: im Betrieb (und erst recht im
+     Stream) ist der Weg zur Leiste der teuerste Teil jeder Korrektur. */
+  #objmenu{position:absolute;z-index:6;display:flex;gap:3px;padding:3px;border-radius:7px;
+    background:#120e18e8;border:1px solid #4a3a63;box-shadow:0 6px 18px #05030a80;transform:translate(-50%,0)}
+  #objmenu button{width:28px;height:28px;padding:0;font-size:13px;line-height:1}
+  #groups{position:absolute;right:10px;bottom:10px;display:flex;flex-wrap:wrap;gap:6px;
+    justify-content:flex-end;max-width:60%}
+  #groups button{background:#171122e0}
+  aside{border-left:1px solid #2a2135;background:#161020;overflow:auto;padding:0 0 24px}
+  @media (max-width:1100px){
+    #app.panel{grid-template-columns:minmax(0,1fr) 0}
+    #app.panel aside{position:fixed;right:0;top:38px;bottom:0;width:min(360px,94vw);z-index:20;
+      box-shadow:-16px 0 44px #08060cc0}
+  }
+  details{border-bottom:1px solid #221a2f}
+  summary{font:600 10px/1 ui-monospace,monospace;letter-spacing:.1em;text-transform:uppercase;
+    color:#8a7d9e;padding:11px 14px;cursor:pointer;list-style:none;display:flex;align-items:center;gap:7px}
+  summary::-webkit-details-marker{display:none}
+  summary::before{content:"+";font-size:12px;color:#6d6084;width:8px}
+  details[open]>summary::before{content:"\2013"}
+  details[open]>summary{color:#c9bcdd}
+  summary:hover{background:#1c1428}
+  .body{padding:0 14px 14px}
+  .kv{display:flex;justify-content:space-between;gap:10px;padding:3px 0;border-bottom:1px solid #241c31;
+    font:10px/1.55 ui-monospace,monospace}
+  .kv span:last-child{color:#e0d6f2;text-align:right}
+  .kv.no span:last-child{color:#e0896f}
+  .kv.yes span:last-child{color:#8fd0a8}
+  .mono{font:10px/1.6 ui-monospace,monospace;color:#c4b8d8;background:#0f0c16;border:1px solid #241c31;
+    border-radius:5px;padding:8px 9px;white-space:pre-wrap;word-break:break-word;max-height:240px;overflow:auto}
+  .note{font-size:12px;color:#8d81a1;margin:6px 0;text-wrap:pretty}
+  .tools{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin-top:8px}
+  code{color:#b79ae0;font:10px ui-monospace,monospace}
+</style>
+</head>
+<body>
+<div id="app">
+  <header>
+    <div id="barwrap">
+      <button id="less" title="weiter links">‹</button>
+      <div id="bar">
+        <h1>S21</h1>
+        <span class="steps" id="rooms"></span>
+        <div class="sep"></div>
+        <label class="sl">Licht <select id="mood">
+          <option value="promo">Promo</option><option value="torch">Fackeln</option><option value="night">Nacht</option>
+        </select></label>
+        <div class="sep"></div>
+        <button id="sound" aria-pressed="false" title="WebAudio — synthetisch, kein Pack hat Ton">Ton</button>
+        <div class="sep"></div>
+        <span class="steps" id="edit">
+          <button id="editOn" aria-pressed="false" title="Objekte anfassen und verschieben">Editor</button>
+          <button id="editMove" aria-pressed="true" disabled>Verschieben</button>
+          <button id="editRot" aria-pressed="false" disabled>Drehen</button>
+          <button id="editScope" aria-pressed="false" disabled title="Ganze Bedeutungsgruppe statt Einzelteil">Gruppe</button>
+          <button id="editSnap" aria-pressed="true" disabled title="Raster 0,1 / 15°">Raster</button>
+          <button id="editFloor" disabled title="Unterkante auf den Boden">Absetzen</button>
+          <button id="editUnstick" disabled title="Aus Wand/Requisit herausschieben, kein Ineinanderstecken">Kollisionsfrei</button>
+        </span>
+        <button id="vorlage" aria-pressed="false" title="Promobild daneben / darüber">Vorlage</button>
+        <button id="gridBtn" aria-pressed="false">Raster</button>
+        <button id="reset">Kamera</button>
+      </div>
+      <button id="more" title="weiter rechts">›</button>
+    </div>
+    <div class="tail">
+      <button id="clean">Nur Ansicht</button>
+      <button id="panelBtn" aria-pressed="false" title="Leiste">☰</button>
+    </div>
+  </header>
+  <div id="stage">
+    <canvas id="c"></canvas>
+    <div id="hud">lade Bauteile …</div>
+    <div id="pick">Objekt anklicken — eine Gruppe schaltet um, mit Ton und Effekt</div>
+    <img id="ref" alt="Vorlage" style="display:none">
+    <div id="objmenu" hidden>
+      <button data-m="translate" title="Verschieben (g)">✥</button>
+      <button data-m="rotate" title="Drehen (r)">⟳</button>
+      <button data-m="floor" title="Absetzen">⬓</button>
+      <button data-m="scope" title="Gruppe statt Einzelteil">⛓</button>
+      <button data-m="close" title="Auswahl aufheben (Esc)">✕</button>
+    </div>
+    <div id="groups"></div>
+    <button id="exitClean" title="Escape">Ansicht verlassen</button>
+  </div>
+  <aside>
+    <details open>
+      <summary>Gruppen</summary>
+      <div class="body"><p class="note">Dieselben Schalter wie unten rechts im Bild — und dieselben,
+        die ein Klick ins Objekt auslöst. Zustandswechsel lösen Ton und Effekt aus, nicht der Dauerzustand.</p>
+        <div id="groupPanel"></div></div>
+    </details>
+    <details open>
+      <summary>Stand</summary>
+      <div class="body"><div id="facts"></div></div>
+    </details>
+    <details>
+      <summary>Prüfungen</summary>
+      <div class="body"><div id="checks"></div></div>
+    </details>
+    <details id="patchBox">
+      <summary>Editor · geänderte Positionen</summary>
+      <div class="body">
+        <p class="note">Anfassen im Bild, hier fällt der Rezept-Ausschnitt heraus. Einsetzen in
+          <code>lib/room-recipes.js</code> — der Editor schreibt die Datei nicht selbst, damit das
+          Rezept die Quelle bleibt und nicht der Zufall der letzten Maus.</p>
+        <div class="mono" id="patch">— noch nichts verschoben</div>
+        <div class="tools"><button id="copyPatch">Patch kopieren</button><button id="resetPatch">Alles zurück</button></div>
+        <p class="note">Rohe Ablage (dieser Raum) unabhängig vom Rezept-Format — zum Sichern oder auf einer anderen Maschine wieder einspielen.</p>
+        <div class="tools"><button id="exportAblage">Ablage exportieren</button><button id="importAblage">Ablage importieren</button></div>
+      </div>
+    </details>
+    <details>
+      <summary>Rezept · exakte Teile</summary>
+      <div class="body"><p class="note">Jede Zeile ist ein registrierter Pfad im
+        <code>kaykit-dungeon-pack-1-1-free-2</code>. Keine Ersatzgeometrie.</p>
+        <div class="mono" id="recipe"></div>
+        <div class="tools"><button id="copyRecipe">Rezept kopieren</button></div></div>
+    </details>
+    <details>
+      <summary>Neue Bauteile · gemessen</summary>
+      <div class="body"><p class="note">Die Teile, von denen <code>dungeon-grid.js</code> behauptet,
+        es gebe sie nicht — plus die 1.1-Neuzugänge. Hier gemessen, damit die Platzierungsregel aus
+        Zahlen folgt und nicht aus einer Vermutung.</p>
+        <div id="bench"></div></div>
+    </details>
+    <details>
+      <summary>Dungeon-Spur · Plan</summary>
+      <div class="body" id="spur"></div>
+    </details>
+  </aside>
+</div>
+
+<script type="module">
+import * as THREE from 'three';
+import { TransformControls } from 'three/addons/controls/TransformControls.js';
+import { makeViewer, loadAsset, measure, buildScene, repairTextures } from './lib/kit-lab.js';
+import { collectTris, planScan, wallFrame, cornerFrame, nodeFrame, stairFrame } from './lib/dungeon-grid.js';
+import { makeLightRig, measureFlame } from './lib/dungeon-light.js';
+import { ROOMS, buildRoom } from './lib/room-recipes.js';
+import { makeAudio, makeVfx } from './lib/room-fx.js';
+
+const hud = document.getElementById('hud');
+const f2 = (v) => (v == null ? '—' : (+v).toFixed(2).replace('.', ','));
+const V = makeViewer(document.getElementById('c'), { fov: 26, background: 0x191026 });
+
+/* ---------- Bauteile: nur was WIRKLICH lädt, darf gebaut werden ---------- */
+const WALLS = ['wall', 'wall_half', 'wall_cracked', 'wall_broken', 'wall_doorway', 'wall_doorway_scaffold',
+  'wall_gated', 'wall_shelves', 'wall_scaffold', 'wall_pillar', 'wall_corner', 'wall_corner_small',
+  'wall_window_closed', 'wall_window_closed_scaffold', 'wall_window_open', 'wall_window_open_scaffold'];
+const BENCH = ['wall_endcap', 'wall_half_endcap', 'wall_Tsplit', 'wall_crossing', 'wall_sloped',
+  'ceiling_tile', 'stairs_modular_center', 'stairs_long'];
+const fromRooms = new Set(['sword_shield', 'sword_shield_gold']);
+for (const r of ROOMS) {
+  fromRooms.add(r.boden.standard);
+  if (r.ecke) fromRooms.add(r.ecke);
+  if (r.enden) fromRooms.add(r.enden);
+  if (r.tTeil) fromRooms.add(r.tTeil);
+  for (const s of (r.boden.sonder || [])) fromRooms.add(s.part);
+  for (const b of (r.bloecke || [])) for (const p of Object.values(b.teile)) fromRooms.add(p);
+  for (const w of r.waende) fromRooms.add(w.part);
+  for (const p of r.props) fromRooms.add(p.part);
+}
+const CAND = [...new Set([...WALLS, ...BENCH, 'torch_mounted', ...fromRooms])];
+
+const box = {};
+let done = 0, next = 0;
+async function worker() {
+  while (next < CAND.length) {
+    const name = CAND[next++];
+    try { const m = await measure('dungeon', name); box[name] = { min: m.min, max: m.max, size: m.size }; }
+    catch (e) { /* nicht im freien Pack */ }
+    hud.textContent = `messe Bauteile ${++done}/${CAND.length}`;
+  }
+}
+await Promise.all([worker(), worker(), worker(), worker()]);
+const MISSING = CAND.filter((n) => !box[n]);
+
+/* ---------- Rahmen aus der Geometrie ---------- */
+const frame = {};
+for (const name of WALLS.filter((n) => box[n])) {
+  const scan = planScan(collectTris(await loadAsset('dungeon', name)), 72);
+  frame[name] = /corner/.test(name) ? cornerFrame(scan) : wallFrame(scan);
+}
+/* KNOTENTEILE GEMESSEN (S22). Endstück, T und Kreuz bekommen denselben Rahmen wie die Ecke:
+   Gelenk auf den Gitterpunkt, Arme für die Drehung, Armweite für die Frage, ob die Nachbarfuge
+   halbiert werden muss. Die Bezugsgrösse ist die gemessene Plattendicke der geraden Wand — ohne
+   sie zählt beim Endstück die verjüngte Flanke als Arm. Vorgemessen in
+   `tools/probe-wall-nodes.html`; hier läuft dieselbe Rechnung, damit kein Zahlenpaar
+   abgeschrieben wird. */
+const NODES = ['wall_endcap', 'wall_Tsplit', 'wall_crossing', 'wall_half_endcap'];
+const node = {};
+const plattenDicke = frame.wall ? frame.wall.plateThick : 1;
+for (const name of NODES.filter((n) => box[n])) {
+  node[name] = nodeFrame(planScan(collectTris(await loadAsset('dungeon', name)), 72), plattenDicke);
+}
+/* FENSTERBANK GEMESSEN. Die Vorlage stellt Münzstapel in eine Wandnische — dafür braucht es die
+   Höhe der waagerechten Fläche IM Fenster, nicht die Oberkante des Bauteils. Gescannt werden die
+   waagerechten Dreiecke im mittleren Drittel der Laufachse; die höchste davon unter der halben
+   Wandhöhe ist die Bank. Geschätzte Höhen waren in diesem Projekt schon dreimal der Fehler. */
+const SILL = {}, SILLTIEFE = {};
+for (const name of WALLS.filter((n) => /window/.test(n) && box[n])) {
+  const tris = collectTris(await loadAsset('dungeon', name));
+  const f = frame[name];
+  const ri = f.runAxis === 'x' ? 0 : 2;      // entlang der Wand
+  const ti = ri === 0 ? 2 : 0;               // quer zur Wand = Nischentiefe
+  const lo = box[name].min[ri] + box[name].size[ri] * 0.3, hi = box[name].max[ri] - box[name].size[ri] * 0.3;
+  const flach = [];
+  for (const t of tris) {
+    const mid = (t[0][ri] + t[1][ri] + t[2][ri]) / 3;
+    if (mid < lo || mid > hi) continue;
+    const ys = [t[0][1], t[1][1], t[2][1]];
+    if (Math.max(...ys) - Math.min(...ys) > 0.03) continue;
+    const y = ys[0];
+    if (y > box[name].size[1] * 0.18 && y < box[name].size[1] * 0.62) flach.push({ y, t });
+  }
+  if (!flach.length) continue;
+  const best = Math.max(...flach.map((x) => x.y));
+  SILL[name] = best;
+  /* Nicht nur WIE HOCH die Bank liegt, sondern WIE TIEF sie reicht. Ohne diese Spanne wird die
+     Requisite wie eine Wandrequisite vor die Wandfläche gesetzt — und steht dann in der Luft
+     VOR dem Rahmen statt im Einschub. */
+  let von = Infinity, bis = -Infinity;
+  for (const x of flach) {
+    if (Math.abs(x.y - best) > 0.02) continue;
+    for (const v of x.t) { von = Math.min(von, v[ti]); bis = Math.max(bis, v[ti]); }
+  }
+  if (isFinite(von)) SILLTIEFE[name] = { von, bis, mitte: (von + bis) / 2, achse: ti };
+}
+
+const MOD = box.floor_tile_large ? Math.max(box.floor_tile_large.size[0], box.floor_tile_large.size[2]) : 4;
+const WALL_H = box.wall ? box.wall.size[1] : 4;
+const WALL_THICK = box.wall ? frame.wall.plateThick : 1;
+/* Ebenenabstand ist der gemessene Treppenhub, NICHT die Wandhöhe (S13.2-Lehre,
+   docs/HANDOFF_dungeon_S13.md: „4,05 — gemessener Hub, nicht die Wandhöhe angenommen").
+   stairs_wood ist nur geladen, wenn ein Rezept es referenziert (fromRooms-Sammlung). */
+let HUB = WALL_H;
+if (box.stairs_wood) {
+  try {
+    const sf = stairFrame(planScan(collectTris(await loadAsset('dungeon', 'stairs_wood')), 72), []);
+    if (sf.hub > 0.5) HUB = sf.hub;
+  } catch (e) { /* Hub-Messung fehlgeschlagen — WALL_H bleibt Ersatzwert */ }
+}
+const kit = { MOD, HUB, WALL_H, WALL_THICK, box, frame, node, sill: SILL, sillTiefe: SILLTIEFE };
+
+/* Flammenpunkt gemessen — die Boxmitte wäre der Griff (S13.3). */
+const FLAME = {};
+for (const n of ['torch_mounted', 'candle_lit', 'candle_triple', 'candle_melted']) {
+  if (!box[n]) continue;
+  FLAME[n] = measureFlame(collectTris(await loadAsset('dungeon', n)));
+}
+const rig = makeLightRig(V, { budget: 14, shadowed: 0, mood: 'promo' });
+rig.setMood('promo');
+
+const audio = makeAudio();
+const vfx = makeVfx(V.scene);
+
+/* ---------- Zustand ---------- */
+let raum = ROOMS[0], root = null, built = null, zustand = new Map(), lastPick = null, tuerBlaetter = [];
+let kameraStand = null;
+
+function groupList() { return raum.gruppen || []; }
+function initStates() {
+  zustand = new Map();
+  for (const g of groupList()) zustand.set(g.id, g.schalter ? (g.start !== false) : g.start);
+}
+
+function applyGroups() {
+  if (!root) return;
+  for (const o of tuerBlaetter) o.visible = zustand.get('tuer') !== 'auf';
+  for (const n of root.children) {
+    const rec = n.userData.recipe;
+    if (!rec || !rec.g) continue;
+    const st = zustand.get(rec.g);
+    n.visible = typeof st === 'boolean' ? st : (!rec.zs || rec.zs === st);
+  }
+}
+
+function groupNode(gid) {
+  if (!root) return null;
+  for (const n of root.children) {
+    const rec = n.userData.recipe;
+    if (rec && rec.g === gid && n.visible) return n;
+  }
+  return null;
+}
+
+function schalte(gid, ziel) {
+  const g = groupList().find((x) => x.id === gid);
+  if (!g) return;
+  let neu;
+  if (g.schalter) neu = ziel !== undefined ? ziel : !zustand.get(gid);
+  else {
+    const st = g.zustaende.map((z) => z[0]);
+    neu = ziel !== undefined ? ziel : st[(st.indexOf(zustand.get(gid)) + 1) % st.length];
+  }
+  zustand.set(gid, neu);
+  applyGroups();
+  renderGroupUI();
+  /* Ereignis, nicht Dauerzustand: Ton und Effekt hängen am Wechsel. */
+  const key = typeof neu === 'boolean' ? (neu ? 'an' : 'aus') : neu;
+  const node = groupNode(gid);
+  const p = node ? new THREE.Box3().setFromObject(node).getCenter(new THREE.Vector3()) : null;
+  if (g.sfx && g.sfx[key]) audio.play(g.sfx[key]); else audio.play('klick');
+  if (g.vfx && g.vfx[key] && p) {
+    /* Ursprung tiefer als die Box-Mitte: der Goldhaufen liegt im UNTEREN Teil der offenen Truhe,
+       Mitte + feste Anhebung sass über dem Gold statt darin (Georgs Befund). */
+    if (g.vfx[key] === 'funken') { vfx.funken([p.x, p.y - 0.15, p.z]); vfx.glut([p.x, p.y - 0.25, p.z]); }
+    if (g.vfx[key] === 'welle') vfx.welle([p.x, 0, p.z]);
+  }
+}
+
+function renderGroupUI() {
+  const mk = (g) => {
+    const st = zustand.get(g.id);
+    const label = g.schalter ? g.titel
+      : `${g.titel}: ${(g.zustaende.find((z) => z[0] === st) || ['', st])[1]}`;
+    return `<button data-g="${g.id}" aria-pressed="${g.schalter ? String(!!st) : 'false'}">${label}</button>`;
+  };
+  document.getElementById('groups').innerHTML = groupList().map(mk).join('');
+  document.getElementById('groupPanel').innerHTML =
+    `<div class="tools">${groupList().map(mk).join('')}</div>`;
+}
+document.addEventListener('click', (e) => {
+  const b = e.target.closest('button[data-g]');
+  if (b) schalte(b.dataset.g);
+});
+
+/* ---------- Bauen ---------- */
+async function bauen(keepCam) {
+  const cam = keepCam ? [V.camera.position.clone(), V.controls.target.clone()] : null;
+  hud.style.display = 'grid';
+  hud.textContent = 'baue ' + raum.titel + ' …';
+  vfx.alleWeg();
+  if (root) { V.scene.remove(root); root.traverse((o) => { if (o.isMesh) o.geometry?.dispose?.(); }); }
+  built = buildRoom(raum, kit);
+  root = await buildScene(built.placements, (a, b) => { hud.textContent = `baue ${a}/${b}`; },
+    { module: MOD, concurrency: 6 });
+  repairTextures(root);
+  /* Das Türblatt steckt IM Modell wall_doorway. Im GENERATOR muss es raus, weil man durch die
+     Fuge läuft. In einem Diorama ist die Tür ein Bauteil: sie bleibt, und Auf/Zu ist eine
+     Gruppe. Das war Georgs Befund am schwarzen Loch im Durchgang (Post mortem pm2). */
+  tuerBlaetter = [];
+  for (const n of root.children) {
+    const nm = n.userData.recipe?.tuerblatt;
+    if (!nm) continue;
+    n.traverse((o) => { if (o.name === nm) tuerBlaetter.push(o); });
+  }
+  const blatt = tuerBlaetter.length;
+  /* Deckel aufklappen: das Bauteil bringt ihn als eigenes Mesh mit (chest_gold_lid), Scharnier
+     im Pivot. Gedreht wird das PACKTEIL, nichts nachgebaut. */
+  let deckel = 0;
+  for (const n of root.children) {
+    const w = n.userData.recipe?.deckel;
+    if (w == null) continue;
+    n.traverse((o) => {
+      if (!o.isMesh || !/_lid$/.test(o.name)) return;
+      o.rotation.x = THREE.MathUtils.degToRad(w);
+      deckel++;
+    });
+  }
+  V.scene.add(root);
+  rig.markLevels(root);
+  rig.matteMaterials(root);
+  /* Teile mit eigener Flamme auf die Leuchtkörper-Ebene: kein Punktlicht bläst sie aus.
+     Anders als S13.2 wird die Flamme hier NICHT aus dem Netz gelöst — das steht in den Prüfungen. */
+  const fix = rig.markFixtures(root, (rec) => /_lit$|candle/.test(rec.a.split(':')[1]));
+  const lights = [];
+  const v = new THREE.Vector3();
+  for (const n of root.children) {
+    const rec = n.userData.recipe;
+    const nm = rec ? rec.a.split(':')[1] : null;
+    if (!nm || !FLAME[nm] || !rec.flamme) continue;
+    v.set(FLAME[nm][0], FLAME[nm][1], FLAME[nm][2]);
+    n.localToWorld(v);
+    lights.push({ p: [v.x, v.y, v.z], level: 0, part: nm, r: 0.95, selfLit: nm !== 'torch_mounted' });
+  }
+  rig.bind(lights);
+  rig.fitShadow(root);
+  initStates();
+  applyGroups();
+  renderGroupUI();
+  if (cam) { V.camera.position.copy(cam[0]); V.controls.target.copy(cam[1]); V.controls.update(); }
+  else setzeKamera();
+  hud.style.display = 'none';
+  /* Ändert sich die Puffergrösse (Leiste auf, Vergleichsmodus, Fenster), muss der Fit neu
+     laufen — er rechnet auf camera.aspect. */
+  V.onResize = () => { if (root) setzeKamera(); };
+  const wieder = ablageAnwenden();
+  if (wieder) built.notes.push(`Editor: ${wieder} Handkorrektur${wieder === 1 ? '' : 'en'} aus der Ablage wiederhergestellt`);
+  window.__S21 = { V, root, built, kit, box, frame, THREE };
+  bericht(blatt, lights.length, fix, deckel);
+}
+
+/* ---------- Bericht ---------- */
+function bericht(blatt, lichter, fix, deckel) {
+  const pl = built.placements;
+  const n = (l) => pl.filter((p) => p.layer === l).length;
+  document.getElementById('facts').innerHTML = [
+    ['Raum', `${raum.id} · ${raum.w}×${raum.h} Zellen nach Bild ${raum.quelle.toUpperCase()}`],
+    ['Modul (floor_tile_large)', f2(MOD)],
+    ['Wandhöhe / Platte', `${f2(WALL_H)} / ${f2(WALL_THICK)}`],
+    ['Böden · Wände · Ecken', `${n('floor')} · ${n('wall')} · ${n('corner')}`],
+    ['Knoten', `${built.knoten.filter((k) => k.art === 'ecke' && k.part).length} Ecke · ${built.knoten.filter((k) => k.art === 't' && k.part).length} T · ${built.knoten.filter((k) => k.art === 'kreuz' && k.part).length} Kreuz · ${n('endcap')} Endstück`],
+    ['Requisiten', `${pl.filter((p) => p.layer === 'prop').length} (${pl.filter((p) => p.propKind === 'wall').length} an der Wand)`],
+    ['Lichtquellen', `${lichter} · ${n('torch')} Wandfackel${n('torch') === 1 ? '' : 'n'}`],
+    ['Teile im Pack gefunden', `${CAND.length - MISSING.length}/${CAND.length}`]
+  ].map(([k, v2]) => `<div class="kv"><span>${k}</span><span>${v2}</span></div>`).join('');
+
+  /* Bodenkontakt: gebaut wird auf −min.y, die Prüfung liest die GERENDERTE Box zurück. */
+  root.updateMatrixWorld(true);
+  let schwebend = 0, worst = 0;
+  /* Ausgeschlossen wird über die ROLLE der Platzierung, nicht über den Teilenamen: eine
+     Requisite auf der Fensterbank steht nicht auf dem Boden, und ein Name sagt darüber nichts. */
+  for (const nd of root.children) {
+    const rec = nd.userData.recipe;
+    if (!rec || rec.layer !== 'prop' || rec.propKind === 'wall' || rec.propKind === 'bank') continue;
+    if (raum.props.some((p) => p.part === rec.a.split(':')[1] && (p.auf || typeof p.y === 'string'))) continue;
+    const b = new THREE.Box3().setFromObject(nd);
+    const d = Math.abs(b.min.y);
+    worst = Math.max(worst, d);
+    if (d > 0.02) schwebend++;
+  }
+  /* Durchdringung nur unter Requisiten: Wandteile und Eckschenkel verschneiden sich konstruktiv
+     (S13.3), das ist hier nicht die Frage. Zwei Zustände derselben Gruppe zählen nicht gegeneinander. */
+  const props = root.children.filter((nd) => nd.userData.recipe?.layer === 'prop' && nd.userData.recipe.propKind !== 'wall');
+  const boxes = props.map((nd) => new THREE.Box3().setFromObject(nd));
+  let pen = 0, worstPen = 0, paare = 0;
+  for (let i = 0; i < props.length; i++) for (let j = i + 1; j < props.length; j++) {
+    const a = props[i].userData.recipe, b2 = props[j].userData.recipe;
+    if (a.g && a.g === b2.g && a.zs && b2.zs && a.zs !== b2.zs) continue;
+    /* Was AUF etwas steht, berührt seine Unterlage — das ist Kontakt, keine Durchdringung.
+       (Gemessen: die Flasche auf dem Fass meldete 0,07, weil die gerenderte Hülle des Fasses
+       minimal über der gemessenen Box liegt.) */
+    if ((a.auf && a.auf === b2.propId) || (b2.auf && b2.auf === a.propId)) continue;
+    paare++;
+    const A = boxes[i], B = boxes[j];
+    const ov = Math.min(
+      Math.min(A.max.x, B.max.x) - Math.max(A.min.x, B.min.x),
+      Math.min(A.max.y, B.max.y) - Math.max(A.min.y, B.min.y),
+      Math.min(A.max.z, B.max.z) - Math.max(A.min.z, B.min.z));
+    if (ov > 0.02) { pen++; worstPen = Math.max(worstPen, ov); }
+  }
+  const waende = root.children.filter((nd) => {
+    const r2 = nd.userData.recipe;
+    return r2 && (r2.layer === 'wall' || r2.layer === 'corner') && !/corner/.test(r2.a.split(':')[1]);
+  });
+  const wBoxes = waende.map((nd) => new THREE.Box3().setFromObject(nd));
+  let wPen = 0, worstW = 0, wWorst = '';
+  props.forEach((nd, i) => {
+    /* Eine Requisite IN der Nische steckt zwangsläufig in der AABB des Wandteils — das ist kein
+       Fehler, sondern der Zweck des Einschubs. Geprüft werden nur Teile, die im Raum stehen. */
+    if (!nd.visible || nd.userData.recipe.propKind === 'bank') return;
+    for (let k2 = 0; k2 < waende.length; k2++) {
+      const A = boxes[i], B = wBoxes[k2];
+      const ov = Math.min(
+        Math.min(A.max.x, B.max.x) - Math.max(A.min.x, B.min.x),
+        Math.min(A.max.y, B.max.y) - Math.max(A.min.y, B.min.y),
+        Math.min(A.max.z, B.max.z) - Math.max(A.min.z, B.min.z));
+      if (ov > 0.03) {
+        wPen++;
+        if (ov > worstW) { worstW = ov; wWorst = nd.userData.recipe.a.split(':')[1] + ' × ' + (waende[k2].userData.recipe.seam || 'Wand'); }
+      }
+    }
+  });
+  /* Blickfang: steht das Ziel der Komposition frei? Ein Strahl von der Kamera auf drei Punkte
+     der Truhe — trifft er vorher etwas anderes, ist der Zweck des Raums verdeckt, und keine
+     andere Prüfung merkt es. */
+  let frei = null;
+  /* Das Ziel der Komposition steht im REZEPT (`blickfang`), nicht im Code: in R02 ist es die
+     Truhe, in R07 der Hort in der Mitte. */
+  const zielIds = raum.blickfang || ['truhe_auf', 'truhe_zu'];
+  const ziel = zielIds.map((id) => root.children.find((nd) => nd.userData.recipe?.propId === id && nd.visible)).find(Boolean);
+  if (ziel) {
+    /* Gezielt wird auf ECHTE OBERFLÄCHENPUNKTE, nicht auf die Bounding-Box: bei einer offenen
+       Truhe ist die Boxmitte oben LUFT, der Strahl läuft daran vorbei und trifft die Wand
+       dahinter — die erste Fassung meldete deshalb „verdeckt durch banner_yellow", obwohl nichts
+       davorstand. Jetzt Stichproben aus der Geometrie. */
+    const punkte = [];
+    ziel.updateMatrixWorld(true);
+    ziel.traverse((o) => {
+      if (!o.isMesh || !o.geometry?.attributes?.position) return;
+      const pa = o.geometry.attributes.position;
+      const schritt = Math.max(1, Math.floor(pa.count / 12));
+      for (let i = 0; i < pa.count; i += schritt) {
+        punkte.push(new THREE.Vector3(pa.getX(i), pa.getY(i), pa.getZ(i)).applyMatrix4(o.matrixWorld));
+      }
+    });
+    const sichtbar = root.children.filter((nd) => nd.visible);
+    const ray2 = new THREE.Raycaster();
+    let verdeckt = 0, wer = '';
+    for (const p of punkte) {
+      const dir2 = p.clone().sub(V.camera.position);
+      const weite = dir2.length();
+      ray2.set(V.camera.position, dir2.normalize());
+      ray2.far = weite - 0.02;
+      const hit = ray2.intersectObjects(sichtbar, true)[0];
+      let o = hit && hit.object, rec2 = null;
+      while (o && !rec2) { rec2 = o.userData.recipe; o = o.parent; }
+      if (rec2 && !zielIds.includes(rec2.propId)) { verdeckt++; wer = rec2.a.split(':')[1]; }
+    }
+    frei = { anteil: punkte.length ? verdeckt / punkte.length : 1, n: punkte.length, wer };
+  }
+  const row = (k, v2, ok) => `<div class="kv ${ok === undefined ? '' : ok ? 'yes' : 'no'}"><span>${k}</span><span>${v2}</span></div>`;
+  document.getElementById('checks').innerHTML = [
+    row('Bodenkontakt gemessen', schwebend === 0 ? `alle ${props.length} stehen · max ${f2(worst)}` : `${schwebend} schweben · max ${f2(worst)}`, schwebend === 0),
+    row('Durchdringungen Requisiten', pen === 0 ? `0 von ${paare} Paaren` : `${pen} · max ${f2(worstPen)}`, pen === 0),
+    row('Requisite steckt in der Wand', wPen === 0 ? '0 · Abstand gegen die gemessene Wandfläche geklemmt' : wPen + ' · max ' + f2(worstW) + ' (' + wWorst + ')', wPen === 0),
+    row('Truhendeckel aufgeklappt', deckel ? `${deckel}× *_lid gedreht — eigenes Mesh im Bauteil, keine Eigengeometrie` : (raum.props.some((p) => p.deckel != null) ? 'kein Deckel-Mesh gefunden' : 'kein Deckel im Rezept'), deckel > 0 || !raum.props.some((p) => p.deckel != null)),
+    row('Türblatt vorhanden (Vorlage: Tür zu)', `${blatt}× Türblatt · Gruppe Tür`, blatt > 0),
+    /* Auskunft, kein Gate: in einem Bühnendiorama endet der Wandzug frei (R02). Wo das Rezept
+       ein Endstück vorsieht (R07), wird es gesetzt und HIER gezählt — das ist der Unterschied
+       zwischen „gewollt offen" und „vergessen". */
+    row('Freie Wandenden', built.freeEnds.length === 0 ? 'keine'
+      : `${built.freeEnds.length} · ${built.freeEnds.filter((f3) => f3.part).length} mit ${raum.enden || 'Endstück'} geschlossen${built.freeEnds.some((f3) => !f3.part) ? ' · Rest gewollt offen (Bühne statt Grundriss)' : ''}`),
+    row('Fehlende Namen', MISSING.length === 0 ? 'keiner' : MISSING.join(' · '), MISSING.length === 0),
+    row('Flamme aus dem Netz gelöst', `nein — S21 nutzt nur die Ebenenmaske (${fix} Leuchtkörper). Der Texel-Split steht in S13.2 und ist hier nicht übernommen`),
+    row('Lichtstimmung', `${rig.mood.label} · Fackel ${rig.mood.torch} cd · Reichweite ${rig.mood.reach}`),
+    row('Blickfang frei (Ziel der Komposition)', frei
+      ? `${Math.round((1 - frei.anteil) * 100)} % der ${frei.n} Oberflächenpunkte sichtbar${frei.anteil > 0.15 ? ' · grösster Verdecker ' + frei.wer : ''}`
+      : 'kein Ziel sichtbar', frei ? frei.anteil <= 0.15 : false),
+    row('Eckteil', built.eckTeil + ' · Schenkel ' + f2(built.eckSchenkel)),
+    row('Deckungsprobe · Silhouette', kameraStand
+      ? `Nachbau ${kameraStand.breite} × ${kameraStand.hoehe} · Vorlage ${raum.kamera.zielBreite} × ${raum.kamera.zielHoehe} · Kamerahöhe ${kameraStand.ey} gelöst`
+      : '—', kameraStand ? Math.abs(kameraStand.breite - raum.kamera.zielBreite) < 0.02
+        && Math.abs(kameraStand.hoehe - raum.kamera.zielHoehe) < 0.035 : false),
+    row('Rest der Deckung', 'Höhe bleibt ~0,02 über der Vorlage: deren Silhouette enthält die Sockelplatte (floor_foundation_*), die hier fehlt. Flacher stellen löst das nicht — unterhalb dieses Winkels bestimmt die Wandhöhe die Silhouette, nicht die Bodentiefe.'),
+    ...(raum.abweichungen || []).map((t) => row('Abweichung von der Vorlage', t, false)),
+    ...built.notes.map((t) => row('Notiz', t))
+  ].join('');
+
+  document.getElementById('recipe').textContent = built.placements
+    .map((p) => `${p.layer.padEnd(6)} ${p.a.split(':')[1].padEnd(30)} p ${p.p.map((x) => x.toFixed(2)).join(' ')}  r ${p.r}${p.g ? '  g:' + p.g + (p.zs ? '/' + p.zs : '') : ''}`)
+    .join('\n');
+}
+
+document.getElementById('copyRecipe').onclick = () => {
+  navigator.clipboard?.writeText(JSON.stringify({
+    id: raum.id, pack: 'kaykit-dungeon-pack-1-1-free-2', licence: 'CC0 · Kay Lousberg',
+    metrics: { MOD, WALL_H, WALL_THICK }, placements: built.placements
+  }, null, 2));
+};
+
+/* ---------- Werkbank: die Teile, die S13.2 nicht kennt ---------- */
+document.getElementById('bench').innerHTML = Object.entries(SILL)
+  .map(([n, y]) => `<div class="kv yes"><span>${n} · Bank</span><span>y ${f2(y)} · Tiefe ${SILLTIEFE[n] ? f2(SILLTIEFE[n].von) + '…' + f2(SILLTIEFE[n].bis) : '—'}</span></div>`).join('')
+  + Object.entries(node).map(([n, nf]) => {
+    const sch = Math.max(...nf.arms.map(([ax, az]) => (ax
+      ? (ax > 0 ? box[n].max[0] - nf.joint[0] : nf.joint[0] - box[n].min[0])
+      : (az > 0 ? box[n].max[2] - nf.joint[1] : nf.joint[1] - box[n].min[2]))), 0);
+    return `<div class="kv yes"><span>${n} · Knoten</span><span>${nf.arms.length} Arm${nf.arms.length === 1 ? '' : 'e'} · Gelenk ${f2(nf.joint[0])} / ${f2(nf.joint[1])} · Weite ${f2(sch)} → Nachbarmodul ${sch > MOD / 4 + 0.05 ? 'halbieren' : 'ganz'}</span></div>`;
+  }).join('')
+  + BENCH.map((n) => {
+  const b = box[n];
+  return `<div class="kv ${b ? 'yes' : 'no'}"><span>${n}</span><span>${b ? `${f2(b.size[0])} × ${f2(b.size[1])} × ${f2(b.size[2])}` : 'nicht im Pack'}</span></div>`;
+}).join('') + `<p class="note">Alle geladen heisst: der Kommentar in <code>dungeon-grid.js</code>
+  („kein wall_end, kein T, kein Kreuz") gilt für 1.1 nicht mehr. <b>S22:</b> die Platzierungsregel
+  für Endstück, T und Kreuz ist jetzt gemessen statt vermutet — Gelenk auf den Gitterpunkt, Arme
+  geben die Drehung, Armweite entscheidet über das Nachbarmodul. Das Endstück kragt nach aussen
+  aus (Weite 0,00), T und Kreuz fressen eine halbe Fuge wie die Ecke. Vorprobe:
+  <code>tools/probe-wall-nodes.html</code>.</p>`;
+
+document.getElementById('spur').innerHTML = `
+  <p class="note">Dein Weg durch den Dungeon, gegen den vorhandenen Bestand gelesen.
+  Grün heisst: mit dem freien Pack baubar.</p>
+  ${[['Eingang · Steintreppe ins Gewölbe', 'stairs_wide + stairs_walled + wall_doorway', 1],
+     ['Kellergewölbe', 'R07-Grammatik · floor_dirt_large + Schutt', 1],
+     ['Korridore', 'S13.2-Generator, ein Modul breit', 1],
+     ['Orks beim Essen', 'Raum baubar (Tafel = R02-Gruppe) — die Orks fehlen: eigenes Charakterpack', 0],
+     ['Thronsaal · Dark Knight', 'Raum baubar (Banner, Säulen, Podest aus floor_foundation) — Rig, Schild und Zweihänder fehlen: Charakter- und Waffenpack', 0],
+     ['Schatzkammer', 'R02 + Bild S05 · vollständig baubar', 1],
+     ['Rückkehr-Naht', 'wall_doorway als Portalrahmen · Vorbild Bild S06', 1]]
+    .map(([a, b, ok]) => `<div class="kv ${ok ? 'yes' : 'no'}"><span>${a}</span><span>${b}</span></div>`).join('')}
+  <p class="note">Nächster Schritt in dieser Reihenfolge: die beiden gebauten Räume über eine
+  Treppe und einen Korridor verbinden — das ist ein drittes Rezept, kein zweiter Generator.</p>`;
+
+/* ---------- Bedienung ---------- */
+document.getElementById('rooms').innerHTML = ROOMS
+  .map((r, i) => `<button data-r="${i}" aria-pressed="${i === 0}">${r.id} ${r.titel}</button>`).join('');
+document.getElementById('rooms').onclick = async (e) => {
+  const b = e.target.closest('button[data-r]');
+  if (!b) return;
+  for (const x of e.currentTarget.children) x.setAttribute('aria-pressed', String(x === b));
+  raum = ROOMS[+b.dataset.r];
+  await bauen(false);
+};
+document.getElementById('mood').onchange = (e) => { rig.setMood(e.target.value); };
+document.getElementById('sound').onclick = (e) => {
+  const on = e.currentTarget.getAttribute('aria-pressed') !== 'true';
+  e.currentTarget.setAttribute('aria-pressed', String(on));
+  audio.setAn(on);
+  if (on) audio.play('klick');
+};
+const refImg = document.getElementById('ref');
+let refMode = 0;
+document.getElementById('vorlage').onclick = (e) => {
+  refMode = (refMode + 1) % 3;
+  refImg.src = raum.vorlage || '';
+  refImg.style.display = refMode ? 'block' : 'none';
+  refImg.classList.toggle('ueber', refMode === 2);
+  document.getElementById('stage').classList.toggle('cmp', refMode === 2);
+  /* Erst muss das Layout stehen (das Canvas wechselt auf 16:9), dann darf gefittet werden —
+     ein Fit im selben Frame rechnet noch mit dem alten Seitenverhältnis. */
+  setTimeout(() => { V.resize(); setzeKamera(); }, 90);
+  e.currentTarget.setAttribute('aria-pressed', String(!!refMode));
+  e.currentTarget.textContent = ['Vorlage', 'Vorlage daneben', 'Vorlage darüber'][refMode];
+};
+document.getElementById('gridBtn').onclick = (e) => {
+  V.grid.visible = !V.grid.visible;
+  e.currentTarget.setAttribute('aria-pressed', String(V.grid.visible));
+};
+/* Die Deckungsprobe ist der Zweck dieser Seite, also muss das Motiv das Bild FÜLLEN.
+   `V.frame()` rechnet die Distanz aus dem Radius der Bounding-SPHÄRE — bei einem flachen,
+   breiten Diorama (14 × 4 × 14) ist die Raumdiagonale fast doppelt so gross wie die sichtbare
+   Silhouette, und das Motiv füllte gemessen 53 % der Breite. Dazu wurde das Orbit-Ziel nach dem
+   Rahmen versetzt, ohne die Kamera nachzuziehen: das Bild rutschte 22 px aus der Mitte.
+   Beides ersetzt durch eine Messung an der PROJEKTION: Ziel zuerst, Kamera auf Ziel + Richtung,
+   dann Distanz iterativ aus der Bildfüllung der acht Boxecken. */
+function setzeKamera() {
+  const k = raum.kamera || {};
+  if (k.fov) { V.camera.fov = k.fov; V.camera.updateProjectionMatrix(); }
+  const box3 = new THREE.Box3().setFromObject(root);
+  const mitte = box3.getCenter(new THREE.Vector3());
+  const ecken = [];
+  for (const x of [box3.min.x, box3.max.x]) for (const y of [box3.min.y, box3.max.y])
+    for (const z of [box3.min.z, box3.max.z]) ecken.push(new THREE.Vector3(x, y, z));
+  const zb = k.zielBreite ?? 0.92;
+  const zh = k.zielHoehe ?? null;
+  const zv = k.zielVersatz ?? [0, 0];
+  const v = new THREE.Vector3();
+  const rechts = new THREE.Vector3(), hoch = new THREE.Vector3();
+
+  /* Ein Durchgang bei fester Kamerahöhe: Distanz aus der BREITE (nicht aus max(b,h) — die
+     Vorlage ist flacher als das Canvas) und Ziel aus dem Bildversatz. */
+  const setzen = (ey) => {
+    const dir = new THREE.Vector3((k.dir || [1, 0.5, 1])[0], ey, (k.dir || [1, 0.5, 1])[2]).normalize();
+    const ziel = mitte.clone();
+    let dist = box3.getSize(new THREE.Vector3()).length();
+    let breite = 0, hoehe = 0;
+    for (let i = 0; i < 8; i++) {
+      V.camera.position.copy(ziel).addScaledVector(dir, dist);
+      V.camera.lookAt(ziel);
+      V.camera.near = Math.max(0.01, dist / 200);
+      V.camera.far = dist * 20;
+      V.camera.updateProjectionMatrix();
+      V.camera.updateMatrixWorld(true);
+      let x0 = Infinity, x1 = -Infinity, y0 = Infinity, y1 = -Infinity;
+      for (const e of ecken) {
+        v.copy(e).project(V.camera);
+        x0 = Math.min(x0, v.x); x1 = Math.max(x1, v.x);
+        y0 = Math.min(y0, v.y); y1 = Math.max(y1, v.y);
+      }
+      breite = (x1 - x0) / 2; hoehe = (y1 - y0) / 2;
+      const halbH = Math.tan((V.camera.fov * Math.PI) / 360) * dist;
+      const halbB = halbH * V.camera.aspect;
+      rechts.setFromMatrixColumn(V.camera.matrixWorld, 0);
+      hoch.setFromMatrixColumn(V.camera.matrixWorld, 1);
+      ziel.addScaledVector(rechts, ((x0 + x1) / 2 - zv[0]) * halbB)
+        .addScaledVector(hoch, ((y0 + y1) / 2 - zv[1]) * halbH);
+      if (Math.abs(breite - zb) < 0.006) break;
+      dist *= breite / zb;
+    }
+    return { ziel, dist, breite, hoehe };
+  };
+
+  /* Die Kamerahöhe ist KEIN Geschmack: sie folgt aus dem Verhältnis Höhe/Breite der Silhouette
+     in der Vorlage (0,57 / 0,72). Flacher Winkel → flachere Silhouette. Gelöst statt geraten. */
+  let ey = (k.dir || [1, 0.5, 1])[1];
+  let r = setzen(ey);
+  if (zh) {
+    for (let s = 0; s < 8; s++) {
+      if (Math.abs(r.hoehe - zh) < 0.008) break;
+      ey = Math.max(0.12, Math.min(6, ey * Math.pow(zh / Math.max(0.05, r.hoehe), 0.8)));
+      r = setzen(ey);
+    }
+  }
+  V.controls.target.copy(r.ziel);
+  V.controls.minDistance = r.dist * 0.2;
+  V.controls.maxDistance = r.dist * 6;
+  V.controls.update();
+  V.draw();
+  kameraStand = { ey: +ey.toFixed(3), breite: +r.breite.toFixed(3), hoehe: +r.hoehe.toFixed(3) };
+}
+document.getElementById('reset').onclick = () => setzeKamera();
+
+const app = document.getElementById('app');
+document.getElementById('panelBtn').onclick = (e) => {
+  const on = app.classList.toggle('panel');
+  e.currentTarget.setAttribute('aria-pressed', String(on));
+  requestAnimationFrame(() => V.resize());
+};
+const setClean = (on) => { app.classList.toggle('clean', on); requestAnimationFrame(() => V.resize()); };
+document.getElementById('clean').onclick = () => setClean(true);
+document.getElementById('exitClean').onclick = () => setClean(false);
+addEventListener('keydown', (e) => { if (e.key === 'Escape') setClean(false); });
+
+const bar = document.getElementById('bar'), wrap = document.getElementById('barwrap');
+const syncMore = () => {
+  wrap.dataset.less = bar.scrollLeft > 2 ? '1' : '0';
+  wrap.dataset.more = bar.scrollWidth - bar.clientWidth - bar.scrollLeft > 2 ? '1' : '0';
+};
+const nudge = (s) => { bar.scrollLeft += s * Math.round(bar.clientWidth * 0.7); syncMore(); };
+document.getElementById('less').onclick = () => nudge(-1);
+document.getElementById('more').onclick = () => nudge(1);
+bar.addEventListener('scroll', syncMore, { passive: true });
+new ResizeObserver(syncMore).observe(bar);
+syncMore();
+
+/* ---------------- Mini-Editor ----------------
+   Zweck: die letzten Zentimeter macht die Hand schneller als die Rechnung. Der Editor verschiebt
+   NUR die Szene und schreibt einen Rezept-Ausschnitt — die Datei bleibt die Quelle.
+   Zwei Reichweiten: Einzelteil oder ganze Bedeutungsgruppe (Gruppe greift am Schwerpunkt an und
+   gibt Verschiebung und Drehung an alle ihre Teile weiter). */
+const gizmo = new TransformControls(V.camera, V.renderer.domElement);
+const gizmoHelper = gizmo.getHelper ? gizmo.getHelper() : gizmo;
+V.scene.add(gizmoHelper);
+gizmo.addEventListener('dragging-changed', (e) => { V.controls.enabled = !e.value; });
+const pivot = new THREE.Object3D();
+V.scene.add(pivot);
+let editAn = false, editScope = 'teil', auswahl = [], letzteMatrix = new THREE.Matrix4();
+const geaendert = new Map();
+
+function patchZeile(nd) {
+  const rec = nd.userData.recipe;
+  const nm = rec.a.split(':')[1];
+  const y = nd.position.y;
+  const basis = (raum.props.find((p) => p.id && p.id === rec.propId) || {});
+  const rot = Math.round(THREE.MathUtils.radToDeg(nd.rotation.y) * 10) / 10;
+  return `{ part: '${nm}',${rec.propId ? " id: '" + rec.propId + "'," : ''} pos: [${nd.position.x.toFixed(2)}, ${nd.position.z.toFixed(2)}], rot: ${((rot % 360) + 360) % 360}${basis.auf ? ", auf: '" + basis.auf + "'" : ''}${y > 0.05 && !basis.auf ? ' /* y ' + y.toFixed(2) + ' */' : ''} }`;
+}
+function patchZeigen() {
+  const el = document.getElementById('patch');
+  if (!geaendert.size) { el.textContent = '— noch nichts verschoben'; return; }
+  el.textContent = [...geaendert.values()].map(patchZeile).join(',\n');
+}
+document.getElementById('copyPatch').onclick = () =>
+  navigator.clipboard?.writeText(document.getElementById('patch').textContent);
+document.getElementById('resetPatch').onclick = async () => {
+  geaendert.clear();
+  const alle = ablageLesen();
+  delete alle[raum.id];
+  localStorage.setItem(SPEICHER, JSON.stringify(alle));
+  patchZeigen();
+  await bauen(true);
+};
+document.getElementById('exportAblage').onclick = () =>
+  navigator.clipboard?.writeText(JSON.stringify(ablageLesen()[raum.id] || {}, null, 2));
+document.getElementById('importAblage').onclick = async () => {
+  const text = window.prompt('Ablage-JSON für ' + raum.id + ' einfügen:');
+  if (!text) return;
+  let eintrag;
+  try { eintrag = JSON.parse(text); } catch (e) { alert('Kein gueltiges JSON: ' + e.message); return; }
+  const alle = ablageLesen();
+  alle[raum.id] = eintrag;
+  localStorage.setItem(SPEICHER, JSON.stringify(alle));
+  geaendert.clear();
+  await bauen(true);
+};
+
+const objmenu = document.getElementById('objmenu');
+function menuStellen() {
+  if (!auswahl.length) { objmenu.hidden = true; return; }
+  const b = new THREE.Box3();
+  for (const x of auswahl) b.expandByObject(x);
+  const c = b.getCenter(new THREE.Vector3());
+  const p = new THREE.Vector3(c.x, b.max.y, c.z).project(V.camera);
+  const r = V.renderer.domElement.getBoundingClientRect();
+  const s = document.getElementById('stage').getBoundingClientRect();
+  objmenu.hidden = false;
+  objmenu.style.left = (r.left - s.left + (p.x * 0.5 + 0.5) * r.width) + 'px';
+  objmenu.style.top = Math.max(4, r.top - s.top + (-p.y * 0.5 + 0.5) * r.height - 42) + 'px';
+}
+objmenu.onclick = (e) => {
+  const m = e.target.closest('button')?.dataset.m;
+  if (m === 'translate' || m === 'rotate') { gizmo.setMode(m); setPressed('editMove', m === 'translate'); setPressed('editRot', m === 'rotate'); }
+  if (m === 'floor') document.getElementById('editFloor').click();
+  if (m === 'scope') document.getElementById('editScope').click();
+  if (m === 'close') { gizmo.detach(); auswahl = []; objmenu.hidden = true; }
+};
+
+/* Handarbeit überlebt den Reload. Abgelegt wird je Raum und Platzierungsindex; ändert sich das
+   Rezept, passt der Teilename nicht mehr und der Eintrag fällt weg. Der Editor bleibt damit ein
+   Vorschlag an das Rezept, keine zweite Wahrheit. */
+const SPEICHER = 'kfb-s21-editor';
+function ablageLesen() { try { return JSON.parse(localStorage.getItem(SPEICHER) || '{}'); } catch (e) { return {}; } }
+function ablageSchreiben() {
+  const alle = ablageLesen();
+  const eintrag = {};
+  for (const nd of geaendert.values()) {
+    const i = root.children.indexOf(nd);
+    if (i < 0) continue;
+    eintrag[i] = { teil: nd.userData.recipe.a, p: nd.position.toArray().map((v) => +v.toFixed(3)), r: +nd.rotation.y.toFixed(4) };
+  }
+  alle[raum.id] = eintrag;
+  localStorage.setItem(SPEICHER, JSON.stringify(alle));
+}
+function ablageAnwenden() {
+  const eintrag = ablageLesen()[raum.id];
+  if (!eintrag) return 0;
+  let n = 0;
+  for (const [i, v] of Object.entries(eintrag)) {
+    const nd = root.children[+i];
+    if (!nd || !nd.userData.recipe || nd.userData.recipe.a !== v.teil) continue;
+    nd.position.fromArray(v.p);
+    nd.rotation.y = v.r;
+    nd.updateMatrixWorld(true);
+    geaendert.set(nd.uuid, nd);
+    n++;
+  }
+  patchZeigen();
+  return n;
+}
+
+function auswaehlen(nd) {
+  const rec = nd && nd.userData.recipe;
+  auswahl = !rec ? []
+    : editScope === 'gruppe' && rec.g
+      ? root.children.filter((x) => x.visible && x.userData.recipe?.g === rec.g)
+      : [nd];
+  if (!auswahl.length) { gizmo.detach(); return; }
+  if (auswahl.length === 1) { gizmo.attach(auswahl[0]); }
+  else {
+    const b = new THREE.Box3();
+    for (const x of auswahl) b.expandByObject(x);
+    pivot.position.copy(b.getCenter(new THREE.Vector3()));
+    pivot.rotation.set(0, 0, 0);
+    pivot.updateMatrixWorld(true);
+    letzteMatrix.copy(pivot.matrixWorld).invert();
+    gizmo.attach(pivot);
+  }
+  document.getElementById('pick').innerHTML = auswahl.length === 1
+    ? `<b>${auswahl[0].userData.recipe.a.split(':')[1]}</b> · Editor · ${gizmo.mode === 'rotate' ? 'drehen' : 'verschieben'}`
+    : `<b>${auswahl.length} Teile</b> · Gruppe ${nd.userData.recipe.g} · ${gizmo.mode === 'rotate' ? 'drehen' : 'verschieben'}`;
+  menuStellen();
+}
+gizmo.addEventListener('objectChange', () => {
+  if (auswahl.length > 1) {
+    /* Delta des Pivots auf alle Teile geben: Position und Drehung um den Schwerpunkt. */
+    pivot.updateMatrixWorld(true);
+    const delta = new THREE.Matrix4().multiplyMatrices(pivot.matrixWorld, letzteMatrix);
+    for (const x of auswahl) { x.applyMatrix4(delta); x.updateMatrixWorld(true); }
+    letzteMatrix.copy(pivot.matrixWorld).invert();
+  }
+  for (const x of auswahl) if (x.userData.recipe) geaendert.set(x.uuid, x);
+  patchZeigen();
+  ablageSchreiben();
+  menuStellen();
+});
+
+const editKnoepfe = ['editMove', 'editRot', 'editScope', 'editSnap', 'editFloor', 'editUnstick'];
+function editModus(an) {
+  editAn = an;
+  document.getElementById('editOn').setAttribute('aria-pressed', String(an));
+  for (const id of editKnoepfe) document.getElementById(id).disabled = !an;
+  if (!an) { gizmo.detach(); auswahl = []; objmenu.hidden = true; }
+  gizmoHelper.visible = an;
+  document.getElementById('pick').textContent = an
+    ? 'Editor: Objekt anklicken, Pfeile ziehen. Escape hebt die Auswahl auf.'
+    : 'Objekt anklicken — eine Gruppe schaltet um, mit Ton und Effekt';
+}
+document.getElementById('editOn').onclick = () => editModus(!editAn);
+document.getElementById('editMove').onclick = () => { gizmo.setMode('translate'); setPressed('editMove', true); setPressed('editRot', false); };
+document.getElementById('editRot').onclick = () => { gizmo.setMode('rotate'); setPressed('editRot', true); setPressed('editMove', false); };
+document.getElementById('editScope').onclick = (e) => {
+  editScope = editScope === 'teil' ? 'gruppe' : 'teil';
+  e.currentTarget.setAttribute('aria-pressed', String(editScope === 'gruppe'));
+  gizmo.detach(); auswahl = [];
+};
+document.getElementById('editSnap').onclick = (e) => {
+  const an = e.currentTarget.getAttribute('aria-pressed') !== 'true';
+  e.currentTarget.setAttribute('aria-pressed', String(an));
+  gizmo.setTranslationSnap(an ? 0.1 : null);
+  gizmo.setRotationSnap(an ? THREE.MathUtils.degToRad(15) : null);
+};
+document.getElementById('editFloor').onclick = () => {
+  for (const x of auswahl) {
+    const b = new THREE.Box3().setFromObject(x);
+    x.position.y -= b.min.y;
+    x.updateMatrixWorld(true);
+    geaendert.set(x.uuid, x);
+  }
+  patchZeigen();
+  ablageSchreiben();
+  menuStellen();
+};
+/* Kollisionsfrei: AUF ANFRAGE wie "Absetzen", kein Physik-Constraint während des Ziehens (das
+   würde gegen das Gizmo kaempfen). Nur Wand/Ecke/Endstück/Requisit zählen als Hindernis — der
+   Boden selbst überlappt naturgemäss alles und würde sofort "Kollision" melden. Schiebt entlang
+   der Achse mit der KLEINEREN Überlappung, mehrere Durchgänge, wie der Entzerrer im Rezept-Bau. */
+ document.getElementById('editUnstick').onclick = () => {
+  const HINDERNIS = new Set(['wall', 'corner', 'endcap', 'prop']);
+  const andere = () => root.children.filter((n) => n.visible && n.userData.recipe && HINDERNIS.has(n.userData.recipe.layer) && !auswahl.includes(n));
+  for (const x of auswahl) {
+    for (let pass = 0; pass < 6; pass++) {
+      x.updateMatrixWorld(true);
+      const bx = new THREE.Box3().setFromObject(x);
+      let bewegt = false;
+      for (const o of andere()) {
+        const bo = new THREE.Box3().setFromObject(o);
+        const oy = Math.min(bx.max.y, bo.max.y) - Math.max(bx.min.y, bo.min.y);
+        if (oy <= 0.01) continue;
+        const ox = Math.min(bx.max.x, bo.max.x) - Math.max(bx.min.x, bo.min.x);
+        const oz = Math.min(bx.max.z, bo.max.z) - Math.max(bx.min.z, bo.min.z);
+        if (ox <= 0.01 || oz <= 0.01) continue;
+        const cx = (bx.min.x + bx.max.x) / 2, cz = (bx.min.z + bx.max.z) / 2;
+        const ocx = (bo.min.x + bo.max.x) / 2, ocz = (bo.min.z + bo.max.z) / 2;
+        if (ox < oz) x.position.x += (Math.sign(cx - ocx) || 1) * (ox + 0.03);
+        else x.position.z += (Math.sign(cz - ocz) || 1) * (oz + 0.03);
+        x.updateMatrixWorld(true);
+        bewegt = true;
+      }
+      if (!bewegt) break;
+    }
+    geaendert.set(x.uuid, x);
+  }
+  patchZeigen();
+  ablageSchreiben();
+  menuStellen();
+};
+function setPressed(id, v) { document.getElementById(id).setAttribute('aria-pressed', String(v)); }
+gizmo.setTranslationSnap(0.1);
+gizmo.setRotationSnap(THREE.MathUtils.degToRad(15));
+addEventListener('keydown', (e) => {
+  if (!editAn) return;
+  if (e.key === 'g') document.getElementById('editMove').click();
+  if (e.key === 'r') document.getElementById('editRot').click();
+  if (e.key === 'Escape') { gizmo.detach(); auswahl = []; }
+});
+
+/* Klick ins Objekt: dieselbe Schaltung wie der Knopf. Auf `pointerup`, damit Orbitieren nicht
+   ungewollt schaltet. */
+const ray = new THREE.Raycaster();
+const canvas = document.getElementById('c');
+let downAt = null;
+canvas.addEventListener('pointerdown', (e) => { downAt = [e.clientX, e.clientY]; });
+canvas.addEventListener('pointerup', (e) => {
+  if (!downAt || Math.hypot(e.clientX - downAt[0], e.clientY - downAt[1]) > 4 || !root) return;
+  const r = canvas.getBoundingClientRect();
+  ray.setFromCamera(new THREE.Vector2(((e.clientX - r.left) / r.width) * 2 - 1,
+    -((e.clientY - r.top) / r.height) * 2 + 1), V.camera);
+  /* NUR SICHTBARES ANFASSEN. three.js raycastet auch unsichtbare Objekte (dieselbe Lehre wie
+     beim Türblatt in S13.2: „nicht verstecken, entfernen"). Ohne diesen Filter greift ein Klick
+     auf die offene Truhe die GESCHLOSSENE, die unsichtbar an derselben Stelle steht — gezogen
+     wird dann an einem Teil, das niemand sieht, und die Ablage merkt sich die falsche Zeile. */
+  const treffer = ray.intersectObjects(root.children.filter((n) => n.visible), true);
+  const hit = treffer.find((t) => { let o2 = t.object; while (o2) { if (!o2.visible) return false; o2 = o2.parent; } return true; });
+  if (!hit) { if (editAn) { gizmo.detach(); auswahl = []; objmenu.hidden = true; } return; }
+  let o = hit.object, rec = null, o0 = null;
+  while (o && !rec) { rec = o.userData.recipe; o0 = o; o = o.parent; }
+  if (!rec) return;
+  lastPick = rec;
+  if (editAn) { auswaehlen(o0); return; }
+  document.getElementById('pick').innerHTML =
+    `<b>${rec.a.split(':')[1]}</b> · ${rec.layer}${rec.g ? ` · Gruppe <b>${rec.g}</b>${rec.zs ? ' / ' + rec.zs : ''}` : ' · keine Gruppe'}`;
+  if (rec.g) schalte(rec.g);
+});
+
+/* Licht und Effekte hängen am Herzschlag des Betrachters, NICHT an einer eigenen rAF-Schleife:
+   diese Vorschau drosselt rAF auf null Bilder, und dann stünden Punktlichter und Funken still,
+   während das Bild weitergezeichnet wird (gemessener Befund). `onFrame` bedient beide
+   Betriebsarten — rAF und Intervall-Notnagel. */
+/* Der Herzschlag hängt an ZWEI unabhängigen Quellen, weil jede einzelne in dieser Vorschau
+   ausfallen kann: `requestAnimationFrame` wird bis auf null Bilder gedrosselt, und der Haken in
+   `kit-lab.js` hilft nur, wenn dort die neue Fassung läuft. Ein Intervall ohne Bedingung ist die
+   Rückfallebene; `pulsUhr` verhindert, dass beide Quellen denselben Takt doppelt zählen. */
+let pulsUhr = performance.now();
+function herzschlag() {
+  const jetzt = performance.now();
+  const dt = (jetzt - pulsUhr) / 1000;
+  if (dt < 0.012) return;                       // höchstens ~80 Takte je Sekunde
+  pulsUhr = jetzt;
+  rig.update(jetzt / 1000);
+  vfx.tick(Math.min(0.1, dt));
+}
+V.onFrame = () => { herzschlag(); if (auswahl.length) menuStellen(); };
+setInterval(herzschlag, 40);
+(function schlag() { requestAnimationFrame(schlag); herzschlag(); })();
+
+await bauen(false);
+</script>
+</body>
+</html>
