@@ -29,6 +29,23 @@ One small playable loop under a fixed KFB Stage URL:
 - Transitions: Theatre Curtain v1 donor; Core v2 adapter only after its visual gate.
 - Fluids/beam/voxel/seeds: current 2026-09-21 ToolBox intake; candidates, not yet production owners.
 
+## Curtain human direction · 2026-09-22
+
+Theatre Curtain remains part of the MVP transition requirement.
+
+Current human direction:
+
+- keep the existing physical cloth foundation;
+- do not replace it with CSS/SVG/video;
+- current isolated curtain is not yet the finished visual gate;
+- before MVP integration, refine the opening toward a recognisable lower-third theatre tieback/swag;
+- investigate the unnatural crease/line artifacts seen during strong cloth bending;
+- optional cord/tieback should explain the gather physically;
+- worn/aged fabric and restrained burn-hole treatment are later polish after geometry/motion is clean;
+- optional hanging KFB 3D wordmark may be layered in front as a separate stage object.
+
+This is a refinement of the current Game Dev Studio curtain owner, not a new MVP transition runtime.
+
 ## Lock before Astra
 
 The WSA lead writes one new integration lock with exact refs and classifies every input `READY`, `WAITING_HUMAN`, `WAITING_CLAUDE`, `BLOCKED` or `HOLD`.
