@@ -1,3 +1,20 @@
+## 2026-09-22 · Hybrid Surface v2 implementation frozen
+
+### IMPLEMENTATION
+Draft PR #166 implemented the prepared real-asset v2 direction: softer shared-texture triplanar macro variation, procedural 3D clay grain, source roughness/metalness preservation and measured head-size cross-rig calibration.
+
+### MEASURED RESULT
+All five exact head proxies normalize to the common measured Medium reference. The resulting total heights are Legacy Orc A **1.685**, ActionFigure **2.322**, GothGirl **2.036**, FrizzleBob Driver **2.606**, Black Knight **3.678**.
+
+### FAILURE / STOP
+Two consecutive repair passes on the same actor shader compile-census gate both end at **58 compiled / 63 proof-counted visible decorated materials** (runs `35672017517` and `35672227722`). Per the global two-pass rule, the candidate is frozen at runtime head `7cbad52b55fb9ec2300aa4b25ca92b0997ce448a`.
+
+### RECOVERY
+Full recovery export:
+`tools/KFB-ToolBox/_handover/HYBRID_SURFACE_V2_FAILURE_RECOVERY_2026-09-22/`
+
+No v2 public Stage and no visual acceptance. One next gate: exact actor-material compile census only. Environment work stays deferred.
+
 ## 2026-09-22 · Hybrid Surface review → cross-project 3D style contract
 
 ### HUMAN REVIEW
