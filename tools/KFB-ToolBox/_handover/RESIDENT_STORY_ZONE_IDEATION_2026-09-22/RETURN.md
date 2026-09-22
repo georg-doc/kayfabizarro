@@ -42,6 +42,13 @@ The initial concept captures:
 - targeted source search found partial laugh-face / surprised-eye evidence but no clearly named full-body Laugh/Cry clip, so body Laugh/Cry remains an animation inventory/authoring gate;
 - Minimal Resident Decision Loop v0 now defines interruptibility, perception candidates, small motives, deterministic selection, Pair Lock, host-owned approach, bounded Encounter Bits, explicit transfer commit, compact memory and resume;
 - first technical proof is exactly two Residents + one real food gift, no Combat/crowd/utility-AI dependency;
+- player-facing Gift Conversations use the canonical KayfaBINGO/KayfaBONGO/KayfaBOGGLE/BLÖDSINN! call family;
+- one- or two-turn Bubble microconversations may resolve into a gift without a hidden correct answer;
+- bounded player Gift Backpack stores transferable social objects with provenance while Lean Memory stores their history;
+- re-gifting is part of the same social loop rather than a separate inventory/quest system;
+- source-backed Backpack donors now include Orc and Hoarder files plus Hiker and Protagonist A/B sibling-mesh candidates;
+- Protagonist A/B are confirmed Rig_Medium actors with backpack sibling meshes; standalone extraction remains an authoring gate;
+- user correction recorded as **Goth Girl + Elisa setting**, not Crossgirl; Elisa is receiving context, not invented KayKit asset;
 - Park Bench retained only as a later minimal/regression fixture.
 
 ## Files created so far
@@ -97,7 +104,10 @@ No implementation or public result is claimed.
 - first Social Attention distance/interruptibility rules in a real host scale;
 - exact first Gift Intent source set per Resident and handoff animation capabilities;
 - gift state/provenance seam without inventing a second inventory owner;
-- exact first Decision Loop v0 data contract for ActivityState / Perception / Motive / SocialPair / EncounterBit;
+- exact player Gift Backpack save owner and first slot count;
+- exact Bubble choice adapter from canonical Calls into ChatterBox/Triplet context;
+- standalone extraction/attachment proof for Protagonist A/B backpack sibling meshes;
+- exact first shared data contract for ActivityState / Perception / Motive / SocialPair / EncounterBit / PlayerCall / GiftInventoryItem / MemoryReceipt;
 - exact inventory of reusable full-body laugh/cry/surprise/inspect/gift-accept clips across relevant rig families;
 - exact semantic seam from ChatterBox social cue → host social state → optional Combat owner → repair beat;
 - current 3D ChatterBox invocation/output contract;
@@ -109,6 +119,6 @@ No implementation or public result is claimed.
 
 ## One next gate
 
-**Define the smallest Decision Loop v0 data contract for the two-Resident / one-real-food-gift proof.**
+**Define the smallest shared data contract for both the two-Resident gift proof and the Resident→player Bubble Gift + Backpack proof.**
 
 Do not build a general World Editor, autonomous NPC system or separate social-combat engine yet.
