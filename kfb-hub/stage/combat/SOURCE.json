@@ -1,7 +1,7 @@
 {
   "schema": "kfb.combat-stage-source/1",
   "stage": "C-MVP-A-R2",
-  "status": "WARRIOR_CORE_LOOP_PASS_CANDIDATE_READY_FOR_PROTECTED_PUBLICATION",
+  "status": "PUBLIC_VERIFIED_WARRIOR_CORE_LOOP",
   "source": {
     "repository": "georg-doc/KFB-Combat-Arena",
     "pr": 5,
@@ -18,11 +18,12 @@
   },
   "public": {
     "url": "https://kayfabizarro.pages.dev/kfb-hub/stage/combat/",
-    "status": "NOT_DEPLOYED",
-    "reason": "protected publication awaits candidate checkpoint and exact URL proof"
+    "status": "PUBLIC_VERIFIED",
+    "runtimePublicationHead": "99482c56d79d43ddf3ae2f5689d646710a0f1957",
+    "proof": "3 shots / 3 hits / 1 kill / reward / clear / respawn / 0 runtime errors"
   },
   "browser": {
-    "status": "LOCAL_REAL_BROWSER_PASS",
+    "status": "PUBLIC_REAL_BROWSER_PASS",
     "coreLoop": [
       "FrizzleBob Driver",
       "Skeleton Warrior",
@@ -41,7 +42,9 @@
       "rewardDice": 1,
       "pop": 1
     },
-    "errors": 0
+    "errors": 0,
+    "blocker": null,
+    "nextGate": "Georg freeplay; Mage remains HOLD"
   },
   "holds": [
     "Skeleton Mage adapter",
