@@ -1157,3 +1157,33 @@ Added:
 Routine Lead Work control-plane onboarding is superseded for normal check-ins. Before any Work session the missing capability must be named explicitly; if Web + Claude Design + local preview can finish the task, Work must not be used.
 
 Combat C-MVP-A is the motivating evidence: private binary packaging, real browser automation and final public verification were Work-value; optional Mage diagnosis, face-log investigation, forward-axis repair, weapon-axis/release repair, ordinary tests/docs and Hub maintenance were not.
+
+
+## 2026-09-22 · Private Source / Public Hub + current Hub cards
+
+Reviewed the existing private `georg-doc/KFB-Stunt-Car-Race` repository as a possible local development host.
+
+Facts:
+- Race repo is private and already local for Georg;
+- GitHub-reported size is ~881 MB;
+- public `georg-doc/kayfabizarro` is ~1.86 GB.
+
+Decision:
+- do not turn the Race repo into a universal KFB monorepo;
+- keep it Race-owned and optionally use it as a local Race/3D preview host;
+- prefer private implementation repos for future substantial runtime/source work;
+- keep the public KFB Hub as a sanitized, LLM-readable control surface;
+- external/public-only LLMs consume public briefs/contracts/previews rather than forcing private source public.
+
+Added architecture brief:
+`skills/chat/workflows/KFB_PRIVATE_SOURCE_PUBLIC_HUB_V1_2026-09-22/START_HERE.md`.
+
+KFB Hub current TODOs/briefings now include:
+- WorldBuilder v1 · WB1-P0 Web-first start;
+- Combat Character Presentation v1 · feet / Walk / Shift-Run / foot sync / 3D shadow;
+- Web-first Execution v1 / Portable Preview;
+- Private Source / Public Hub architecture.
+
+The stale active `KFB Lead Work · CURRENT LEAD` card was removed from the active briefing list; routine lead work is Web-first and Work/WSA remains escalation-only.
+
+Hub source was written to both current `main` and `cloudflare-live`. Public browser verification from this chat was unavailable because the external fetch surface rejected the Pages URL; no unsupported PUBLIC_VERIFIED claim is made for this documentation-only update.
