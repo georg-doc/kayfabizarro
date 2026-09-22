@@ -163,3 +163,59 @@ No Combat, crowd AI or complex utility scoring in this first proof.
 
 ### IMPLEMENTATION STATUS
 Documentation/ideation only. No Resident decision runtime, Reaction Library runtime, food handoff runtime, animation authoring or public Stage proof was built.
+
+
+## 2026-09-22 · Player Gift Conversations + Backpack Inventory
+
+### USER DIRECTION
+- Extend Gift Drive to NPC→player and player→NPC.
+- NPC gifts should usually resolve through a short in-world Monkey-Island-like conversation rather than a detached reward popup.
+- Use Triplets / ChatterBox and the existing call family: KayfaBINGO / KayfaBOGGLE / KayfaBONGO / BLÖDSINN!.
+- One or two player choices are enough before a gift offer.
+- Player receives an early visible Backpack with deliberately limited capacity.
+- Gifts in the Backpack can later be re-gifted to Residents.
+- Backpack acts as a social-memory inventory metaphor, not a survival/weight system.
+- User correction: intended scene reference is **Goth Girl + Elisa**, not “Crossgirl”.
+- Protagonist A/B backpack designs are desired presentation candidates for the Elisa-oriented setting with Goth Girl.
+
+### SOURCE ALIGNMENT
+- Canonical labels confirmed in current Overworld/KFB sources:
+  `KayfaBINGO · KayfaBONGO · KayfaBOGGLE · BLÖDSINN!`;
+  IDs remain `bingo/bongo/boggle`.
+- Current S38 donor evidence confirms Protagonist_A and Protagonist_B as Rig_Medium figures with visible backpack sibling meshes.
+- Protagonist backpack meshes are source-backed inside the character files, while free-standing promo backpacks are Blender-separated copies, not normal standalone source files.
+- Additional current backpack donors include Orc Backpack, Hoarder Backpack and Hiker_Backpack sibling mesh.
+- Goth Girl remains a source-backed Resident.
+- Elisa is treated as receiving setting/context in this concept; no KayKit Elisa actor/source is invented.
+
+### PROPOSAL
+- Player Bubble Calls are conversation moves, not a right/wrong quiz.
+- Typical player gift flow:
+  `NPC NOTICE → Triplet → PLAYER_CALL → NPC_REPLY → optional PLAYER_CALL → GIFT_OFFER → ACCEPT/DEFER → TRANSFER_COMMIT → BACKPACK → MEMORY → RELEASE`.
+- Gift normally rewards social completion/engagement, not one “correct” Call.
+- Backpack visual profile and Gift Inventory remain separate.
+- Gift Inventory records canonical source ref + provenance; it never duplicates model binaries.
+- Inventory and Lean Memory remain separate:
+  inventory = what player currently carries;
+  memory = what happened around it.
+- Re-gifting preserves provenance and creates new recipient callbacks.
+- Limited capacity should create curation / circulation, not grind.
+- Protagonist A/B backpack sibling meshes become visual donor candidates requiring their own extraction/attachment proof before use as selectable standalone player backpacks.
+
+### FIRST PLAYER-FACING PROOF
+After the basic two-NPC gift proof:
+1. one Resident notices player;
+2. one real food Gift Intent;
+3. Bubble opens;
+4. one canonical player Call;
+5. one NPC reply;
+6. gift offered and accepted;
+7. exactly one TRANSFER_COMMIT;
+8. Backpack displays one item reference + provenance;
+9. exactly one Lean Memory receipt;
+10. interaction releases to world control.
+
+Second proof: player gives the same object to another Resident while origin provenance remains readable.
+
+### IMPLEMENTATION STATUS
+Documentation/ideation only. No player dialogue UI, Backpack inventory runtime, backpack extraction, save integration or public Stage proof was built.
