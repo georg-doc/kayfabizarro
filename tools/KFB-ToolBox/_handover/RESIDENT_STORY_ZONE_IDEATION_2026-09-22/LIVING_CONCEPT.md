@@ -1065,3 +1065,458 @@ Example:
 Georg can move upward or downward in scope while keeping the 3D scene dominant.
 
 This matches the existing anti-dashboard direction and makes the same tool usable from tiny rig edits to large scene placement.
+
+
+---
+
+# 21 · Lore Keeper first Story Zone fixture
+
+## USER DIRECTION · 2026-09-22
+
+Georg selects the **Lore Keeper** as the first concrete Story Zone authoring fixture, replacing the previously proposed Park Bench fixture as the first proof.
+
+The Park Bench remains a useful later minimal fixture, but it is no longer first.
+
+The Lore Keeper already has a stronger narrative/activity identity:
+
+- wise / archival Resident;
+- writing lectern / study desk;
+- backpack;
+- books / RPG props;
+- possible bookshelf;
+- possible KFB Cards as discoverable Points of Interest;
+- potential carrying / placing activity;
+- potential roaming around a small open-air study area.
+
+The intended first scene is an **open-air study / archive nook** that reads clearly as the Lore Keeper's place but remains portable enough to mount into different later environments.
+
+## PROPOSAL · Open-Air Study Story Zone
+
+Working structure:
+
+```
+lorekeeper-zone
+├─ scenery.study-spot
+│  ├─ local ground / subtle area marker
+│  ├─ optional tree / shade
+│  ├─ optional lamp / lantern
+│  └─ restrained decorative archive props
+├─ station.desk
+│  ├─ lectern / writing desk
+│  ├─ stand anchor
+│  ├─ look/read target
+│  └─ stack / place anchors
+├─ station.shelf
+│  ├─ bookshelf
+│  ├─ approach anchor
+│  └─ inspect/place anchors
+├─ poi.cluster
+│  ├─ poi.book.*
+│  └─ poi.card.*
+└─ resident.lorekeeper
+   ├─ actor/profile refs
+   ├─ backpack
+   └─ activity bindings
+```
+
+The environment should be suggestive rather than architecturally locked.
+
+Do not begin with a full enclosed library.
+Do not make the first proof dependent on one exact building.
+
+## Proposed activity progression
+
+### LK-L1 · Study loop
+
+Smallest readable proof:
+
+- stand at lectern;
+- read / inspect / think;
+- notice player;
+- one contextual ChatterBox response;
+- resume study.
+
+No carrying, path network or inventory mutation required.
+
+### LK-L2 · Desk ↔ Shelf loop
+
+Add exactly one short authored path:
+
+- leave desk;
+- walk to shelf;
+- inspect / place / retrieve;
+- return to desk;
+- resume.
+
+This is the first useful two-station Story Zone proof.
+
+### LK-L3 · POI discovery loop
+
+Only after L1/L2 are stable:
+
+- books or KFB Cards appear / are authored as local POIs;
+- Lore Keeper notices a valid nearby POI;
+- walks to it through host navigation/path logic;
+- inspects / collects it;
+- returns to desk, shelf or stack;
+- performs a placement / archive beat;
+- may comment through ChatterBox.
+
+The first version may use authored deterministic POI choices rather than a general search AI.
+
+## Book / pencil detail level
+
+A pencil-in-hand writing loop is attractive but may be too fine-grained for the first gate.
+
+Preferred order:
+
+1. strong readable lectern pose;
+2. simple read/inspect/think activity;
+3. book interaction;
+4. only then pencil/precise hand interaction if the real source, attachment and motion evidence supports it.
+
+Do not burn the first Story Zone gate on tiny prop alignment.
+
+## KFB Cards as POIs
+
+KFB Cards are especially suitable because they connect:
+
+- visual world object;
+- Card/deck identity;
+- ChatterBox context;
+- Lore Keeper interpretation;
+- Lean Memory / observed event;
+- future player collection or archive logic.
+
+The Zone must distinguish:
+
+- card visibly present;
+- card noticed by Lore Keeper;
+- card discussed;
+- card moved/archived;
+- card owned by player.
+
+These are not the same state.
+
+## Why Lore Keeper is a strong first fixture
+
+It proves more of the intended system than a passive bench scene while remaining bounded:
+
+- one named Resident;
+- one strong Activity Station;
+- optional second Station;
+- one short path;
+- props with semantic meaning;
+- Points of Interest;
+- situated ChatterBox;
+- local state;
+- Lean Memory hooks;
+- portable local-coordinate composition.
+
+It therefore becomes the current first Story Zone proof candidate.
+
+---
+
+# 22 · Kayfabe Social Conflict Loop
+
+## USER DIRECTION · 2026-09-22
+
+KFB Residents are fundamentally **chill & fun / best-buddy characters**.
+
+That does not mean they avoid intense disagreement.
+
+Within the wrestling/Kayfabe spirit they may:
+
+- tease;
+- roast;
+- insult each other affectionately;
+- provoke;
+- argue intensely;
+- challenge one another;
+- escalate into cartoon fights / melee;
+- knock each other down;
+- then immediately restore the social bond:
+  - help the other up;
+  - laugh about the fight;
+  - share a drink / go somewhere together;
+  - or simply resume their ordinary day.
+
+The conflict is part of the relationship, not proof that the relationship has collapsed.
+
+This aligns with the current Town rule:
+
+> Chill & fun is the social baseline; friendship allows substantial differences of opinion.
+
+The new direction extends that rule into embodied NPC action.
+
+## Satirical purpose
+
+The social loop can carry a recurring satirical idea:
+
+**opinion, current conflict and personal identity are not the same thing.**
+
+The Town can deliberately exaggerate the modern mistake of treating disagreement as total personal enmity, then undercut it through cartoon Kayfabe behaviour.
+
+Two Residents may argue as if civilization depends on the issue, stage a ridiculous brawl, then help each other up and continue as friends.
+
+The joke should come from:
+
+- concrete personalities;
+- actual disagreement;
+- remembered history;
+- status/play/rivalry;
+- physical escalation;
+- fast relational repair;
+
+not from generic "AI NPC says random insult" banter.
+
+## PROPOSAL · keep social dimensions orthogonal
+
+Do not collapse NPC relationships into one `friend ↔ enemy` scalar.
+
+Keep at least these concepts distinguishable:
+
+### Bond / familiarity
+
+Relatively stable social relationship.
+
+Examples:
+
+- close buddy;
+- familiar neighbour;
+- playful rival;
+- newer acquaintance.
+
+### Kayfabe Heat
+
+Short-lived current escalation.
+
+Heat may rise because of:
+
+- provocation;
+- disagreement;
+- Card interpretation;
+- competition;
+- performance;
+- embarrassment;
+- remembered prior encounter.
+
+High Heat does **not** automatically reduce Bond.
+
+### Topic stance / interpretation
+
+Issue-specific position or interpretation.
+
+A Resident can strongly disagree with another while still liking them.
+
+Do not convert a collection of issue stances into a hidden totalizing ideology/personality label.
+
+### Current activity / scene context
+
+A fight in the Boxel Ring, a market argument and an Archive debate are not the same social event even if the same two Residents participate.
+
+## PROPOSAL · social encounter grammar
+
+A reusable encounter can follow:
+
+```
+MEET
+  → ACKNOWLEDGE
+  → BANTER
+  → TEASE / COUNTER
+  → optional PROVOKE
+  → optional CHALLENGE
+  → optional KAYFABE FIGHT
+  → KNOCKDOWN / BREAK
+  → REPAIR
+  → SHARED LAUGH / HELP-UP / DRINK / WALK-OFF
+  → RESUME OWN ACTIVITIES
+```
+
+Every step is optional.
+
+Most encounters should not automatically become fights.
+
+Silence, a one-line jab, a laugh, a shrug, or simply walking away remain valid outcomes.
+
+## PROPOSAL · escalation is a host-approved activity
+
+ChatterBox may produce semantic social cues such as:
+
+- `TEASE`
+- `COUNTER`
+- `CHALLENGE`
+- `BACK_OFF`
+- `LAUGH`
+- `MAKE_UP`
+- `HELP_UP`
+- `INVITE_SHARED_ACTIVITY`
+
+It does not directly start Combat or write damage.
+
+If an encounter reaches a fight beat:
+
+- Combat/Melee owner supplies actual combat mechanics;
+- the Story/Social layer supplies context and requested Kayfabe encounter mode;
+- the receiving host decides whether combat is permitted here;
+- post-fight repair remains a separate social beat.
+
+This prevents ChatterBox from becoming a combat owner.
+
+## PROPOSAL · Kayfabe fight contract
+
+A future non-lethal NPC-vs-NPC social fight should be distinguishable from hostile combat.
+
+Possible semantic mode:
+
+`KAYFABE_SCRAP`
+
+Intended properties:
+
+- cartoon / performative;
+- bounded;
+- no permanent hostility implied;
+- clear stop/knockdown condition;
+- recovery beat;
+- no automatic loot/reward;
+- no irreversible social damage;
+- reusable with current Melee owner when that seam exists.
+
+This is a concept, not a current Combat API.
+
+## PROPOSAL · repair beat is mandatory after social-combat completion
+
+For a Kayfabe social fight, "fight ended" is not the final beat.
+
+The authored encounter should explicitly resolve into one of:
+
+- help-up;
+- mutual laugh;
+- shoulder slap;
+- shared drink / tavern walk;
+- boast + friendly counter-boast;
+- return to work;
+- separate amicably.
+
+The point is visible restoration of the social frame.
+
+## PROPOSAL · destructive events use the same worldview
+
+The same "conflict without permanent social collapse" logic can extend to world destruction.
+
+For suitable residents:
+
+- Stunt Race destroys scenery;
+- Residents react theatrically;
+- rebuilding becomes an activity opportunity;
+- some characters may even be disappointed when nothing dramatic happened;
+- damage creates visible work / play rather than only punishment.
+
+Do not make universal destruction enthusiasm mandatory for every character.
+
+Treat it as personality/role-dependent situated response.
+
+## Buddy Banter through ChatterBox
+
+ChatterBox should receive enough context to avoid generic insult generation.
+
+Useful inputs:
+
+- both Resident identities;
+- relationship/familiarity;
+- current Heat;
+- current activity;
+- current Card / claim / object of disagreement;
+- remembered previous encounters;
+- who won / lost a prior scrap;
+- recent help / gift / embarrassment;
+- location;
+- audience presence.
+
+Possible result:
+
+- jab;
+- counter-jab;
+- callback;
+- challenge;
+- de-escalation;
+- reconciliation line.
+
+The system should prefer callbacks grounded in actual remembered events over generic insult templates.
+
+## Lean Memory extension
+
+Lean Memory should store compact event receipts, not full transcripts.
+
+Possible social-memory event:
+
+```json
+{
+  "event": "kayfabe-social-encounter",
+  "participants": ["resident.a", "resident.b"],
+  "zone": "archive-courtyard",
+  "topicRef": "card-or-local-topic-id",
+  "beats": ["banter", "challenge", "scrap", "help-up"],
+  "outcome": "reconciled",
+  "witnesses": ["resident.c"],
+  "notableCallback": "optional-small-reference"
+}
+```
+
+Future ChatterBox calls may use this to produce:
+
+- "last time you flattened me over that card...";
+- recurring rivalry;
+- callback jokes;
+- increasing familiarity;
+- knowledge of what the other Resident has actually said, shown or done.
+
+Do not store every ambient line.
+
+Do not infer omniscient shared knowledge.
+
+A Resident knows an event only if they:
+
+- participated;
+- witnessed it;
+- were later told about it through an explicit information path;
+- or received it from another already-defined knowledge source.
+
+## Cards as social knowledge
+
+Over time Residents may learn:
+
+- which Cards another Resident likes;
+- which interpretations they repeat;
+- which Cards caused previous arguments;
+- which Cards they exchanged or discussed;
+- which topics reliably generate playful Heat.
+
+This can feed signature decks and ChatterBox without turning Cards into personality scores.
+
+## PROPOSAL · social state example
+
+Two Residents can therefore simultaneously have:
+
+- **Bond:** close friends;
+- **Heat:** very high;
+- **Topic stance:** strongly opposed;
+- **Current activity:** arguing;
+- **Next possible beat:** fight;
+- **Long-term relationship:** unchanged or even enriched by the remembered shared event.
+
+That separation is the core of the intended satire.
+
+## Narrative rule
+
+The Town should not preach the thesis in explanatory dialogue.
+
+Show it through behaviour:
+
+- vicious-sounding argument;
+- ridiculous escalation;
+- slapstick combat;
+- immediate help-up;
+- affectionate callback later.
+
+The system earns the satirical point by letting the player observe the contradiction.
