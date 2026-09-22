@@ -1,9 +1,8 @@
 name: ToolBox Hybrid Surface v2 proof
+# Frozen after two failed repair passes on the same compile-census gate.
+# Manual dispatch only; do not burn CI on every recovery-documentation commit.
 on:
-  pull_request:
-    paths:
-      - 'kfb-hub/stage/toolbox/hybrid-surface-scene-lab-v2/**'
-      - '.github/workflows/toolbox-hybrid-surface-v2.yml'
+  workflow_dispatch:
 permissions:
   contents: read
 jobs:
