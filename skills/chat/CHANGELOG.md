@@ -1,3 +1,25 @@
+## 2026-09-22 · Tileable Macro Seam public proof
+
+### CAUSE
+The surface seam was traced to a non-tileable RGB brush bitmap. `RepeatWrapping` repeated mismatched bitmap edges; it did not make the texture seamless.
+
+### IMPLEMENTATION
+Draft PR #173 changes only the macro texture generator to periodic/toroidal authoring and keeps the frozen Hybrid v2 material, procedural grain, source roughness behavior, measured head-scale factors and exact real donors unchanged.
+
+### TESTED / PUBLIC
+- local browser **17/17 PASS**
+- public Cloudflare browser **17/17 PASS**
+- edge discontinuity average **14.242 → 1.375**
+- 0 failed resources
+- 0 page/console errors
+- public run `35677711287`, public job `106588167104`
+- Hub/ToolBox public route proof `35678440295`: PASS
+
+Stage: `https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/tileable-macro-seam-lab/`
+
+### NEXT
+Georg visual seam review only. Do not promote Hybrid v2 or begin OSM/Race integration from this technical PASS.
+
 ## 2026-09-22 · Hybrid Surface review → cross-project 3D style contract
 
 ### HUMAN REVIEW
