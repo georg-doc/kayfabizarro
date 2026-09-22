@@ -3626,3 +3626,464 @@ It is simply:
 Current suggested proof remains:
 
 **Orc → player / Lore Keeper with pink donut**, using one short Bubble exchange and one successful gift handoff.
+
+
+---
+
+# 29 · First Player Proof · Orc → Player → Pink Donut
+
+## DECISION · 2026-09-22
+
+The first player-facing social gift proof is:
+
+**Orc → Player with the Tiny Treats pink donut**
+
+Exact gift source:
+
+`media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE/Assets/gltf/donut_pink.gltf`
+
+The Lore Keeper remains the first Story Zone / Activity proof.
+
+This Player Proof is separate and intentionally small.
+
+## Proof goal
+
+Prove one complete player-facing social-object loop without requiring Combat, crowd AI or general quest logic:
+
+```
+Orc notices player
+→ short in-world Bubble exchange
+→ player chooses one canonical Call
+→ Orc replies
+→ pink donut becomes visible offer
+→ player accepts
+→ TRANSFER_COMMIT
+→ donut enters bounded Backpack inventory
+→ Session / Journey / Fractal Almanac records provenance + Lean Memory
+→ interaction releases
+→ world control resumes
+```
+
+Canonical player Calls remain:
+
+- KayfaBINGO
+- KayfaBONGO
+- KayfaBOGGLE
+- BLÖDSINN!
+
+The gift is not a reward for one hidden correct answer.
+
+## Minimal acceptance
+
+The first proof should visibly answer:
+
+- Did the Orc notice and address the player?
+- Was the interaction shown in-world rather than a detached quest window?
+- Could the player make one real Bubble Call?
+- Did exactly one donut transfer occur?
+- Does the Backpack contain one source-backed item instance afterward?
+- Is the giver/source/provenance visible in the Session/Journey/Fractal Almanac state?
+- Can the encounter close and restore world control cleanly?
+
+The full miracle-hair-loss gag is optional after the transfer path works.
+
+---
+
+# 30 · Access Props / Keys
+
+## USER DIRECTION · 2026-09-22
+
+KFB should support **physical keys / access props** for entry into:
+
+- mini-games;
+- Card decks / deck content;
+- worlds;
+- dungeons;
+- portals;
+- events / scenes;
+- other bounded content modules.
+
+The inspiration is the readable physical access-token idea familiar from Mythic/keystone-style dungeon access.
+
+Do **not** copy the exact WoW economy, difficulty system or progression structure.
+
+The KFB value is:
+
+> access should be represented by a thing the player can actually possess, inspect and remember.
+
+## Source-backed current candidates
+
+Verified current source geometry:
+
+### KayKit Dungeon key
+
+`media/3D_Assets/KayKit_Dungeon_Pack_1.1_FREE 2/Assets/gltf/key.gltf`
+
+### KayKit keyring
+
+`media/3D_Assets/KayKit_Dungeon_Pack_1.1_FREE 2/Assets/gltf/keyring.gltf`
+
+### KayKit hanging keyring
+
+`media/3D_Assets/KayKit_Dungeon_Pack_1.1_FREE 2/Assets/gltf/keyring_hanging.gltf`
+
+### Sci-Fi keycard
+
+`media/3D_Assets/SciFI_Ultimate Space Kit_Quaternius/Items/GLTF/Pickup_KeyCard.gltf`
+
+The linked VFX+KEYS+ASSETS handoff contains these source-backed candidates.
+
+## Gold / Silver direction
+
+Georg explicitly wants:
+
+- **silver key**
+- **gold key**
+- **keyrings**
+
+The current inspected source/handoff proves the key geometry and keyrings.
+
+It does **not yet prove separate gold-key and silver-key source files**.
+
+Therefore:
+
+- gold/silver are accepted **presentation/access-tier directions**;
+- exact material/palette/source implementation remains a donor proof;
+- do not silently invent separate KayKit files.
+
+A later visual proof may show that one source key can legitimately support gold/silver material profiles, or may find separate real donors.
+
+## PROPOSAL · AccessPropItem
+
+Access Props should be additive to the existing Backpack / Almanac model.
+
+Conceptually:
+
+```json
+{
+  "instanceId": "access-prop-instance",
+  "assetRef": "canonical-key-source",
+  "accessRefs": ["dungeon.foo", "deck.bar"],
+  "presentationProfileRef": "optional-gold-or-silver-profile",
+  "provenanceRef": "almanac-receipt",
+  "state": "carried",
+  "transferPolicy": "bearer | bound | consumable | undecided",
+  "usePolicy": "reusable | consume-on-use | charge-based | undecided"
+}
+```
+
+The physical prop is visible.
+
+The receiving game/world/deck owner still owns actual access truth.
+
+## Bearer-token possibility
+
+One attractive KFB interpretation is physical bearer access:
+
+- whoever carries the key can enter;
+- giving the key away may also give away access;
+- the Almanac remembers who found / gave / used it.
+
+This remains a proposal, not a universal rule.
+
+Some keys may later be:
+
+- reusable;
+- consumed;
+- bound to player;
+- temporary;
+- linked to one generated dungeon/world seed.
+
+Do not decide all of these globally before one key proof exists.
+
+## Keyrings
+
+Keyrings should be treated primarily as:
+
+- collection/display props;
+- grouped access presentation;
+- possible world pickup / wall prop.
+
+They must not duplicate access grants simply because multiple visible keys exist on one ring.
+
+## Machine-readable candidate file
+
+See:
+
+`ACCESS_PROP_CANDIDATES_v0.json`
+
+## Important scope guard
+
+Keys are **not** a dependency of the first Orc → Player pink-donut proof.
+
+They are the next inventory/access lane after the gift loop proves physical-object persistence.
+
+---
+
+# 31 · Combat + World VFX candidate lane
+
+## USER DIRECTION · 2026-09-22
+
+Georg wants to explore selected VFX for later Combat and World use, especially:
+
+- muzzle flash / Mündungsfeuer;
+- electric / lightning-like effects;
+- slice / sweep / slash effects;
+- blood impact FX;
+- hit impacts;
+- explosions;
+- smoke / fire;
+- world / portal / unlock effects.
+
+This should not require Georg to become a 2D/3D VFX specialist.
+
+The ToolBox should expose reusable, semantic effect recipes rather than asking the user to hand-build particle systems.
+
+## Strong existing donor discovered
+
+Do **not** build a second VFX runtime first.
+
+Current repo already contains:
+
+`tools/KFB-ToolBox/_inbox/cloud-design-worldbuilding-2026-09-18/donor-bank/modules/kfb-vfx.js`
+
+with design notes:
+
+`tools/KFB-ToolBox/_inbox/cloud-design-worldbuilding-2026-09-18/donor-bank/docs/VFX_DESIGN_v10.md`
+
+This donor already implements a useful architecture:
+
+- one pooled quad renderer;
+- Brackeys masks;
+- camera / ground / surface / velocity orientations;
+- flipbooks;
+- decals;
+- surface × energy impact recipes;
+- semantic host events.
+
+Most importantly:
+
+**the donor renders VFX but does not decide what was hit.**
+
+Physics, damage, camera, sound and target movement remain host responsibilities.
+
+This is the correct ownership direction.
+
+## Linked handoff evidence
+
+Source:
+
+`tools/KFB-ToolBox/_inbox/KFB Style References/VFX + KEYS + ASSETS - kfb-asset-handoff-animation-lab (9).json`
+
+Current inspected handoff:
+
+- 132 total candidate assets;
+- 91 `FX_Visual` assets;
+- selection status = candidate-only.
+
+The PNG FX are marked `consumerKindAllowed=false` for that **Animation Lab** consumer because it expects 3D model kinds.
+
+That does **not** mean the FX are unusable.
+
+It means:
+
+> send the PNGs to the existing/dedicated VFX consumer, not through Animation Lab.
+
+## Source-backed candidate families
+
+### Muzzle
+
+Available:
+
+- `muzzle_01..05`
+- alpha and opaque variants.
+
+Existing donor already uses narrow/wide muzzle roles.
+
+### Melee slash / sweep
+
+Available:
+
+- `slash_01..04`
+- alpha and opaque variants.
+
+Candidate presentation:
+
+- weapon-local arc;
+- short camera/surface-aligned sweep.
+
+Melee owner still decides swing/contact.
+
+### Impact
+
+Available:
+
+- `big_hit_6x5`
+- `impact_white_6x4`
+- scratch/scorch textures.
+
+Existing donor already uses hit/white/scorch roles.
+
+### Electric / Blitz
+
+Available candidate material includes:
+
+- `electric_ring_6x5`
+- magic masks;
+- light streaks;
+- light/glow particles.
+
+The selected handoff did not expose a file literally named "lightning bolt".
+
+However the existing `kfb-vfx.js` donor already has a semantic **bolt** role based on Brackeys masks / procedural fallback.
+
+Therefore "Blitz" should first reuse/prove that donor path rather than invent another lightning system.
+
+### Fire / smoke / world
+
+Available:
+
+- fire;
+- flame;
+- smoke;
+- dirt;
+- circles;
+- magic;
+- light;
+- charge;
+- fire ring / fire point;
+- dithered fire.
+
+These can later serve:
+
+- fires;
+- destruction aftermath;
+- portals;
+- magic;
+- environmental activity;
+- access-key unlock cues.
+
+### Explosion
+
+`explosion_6x5` exists as source.
+
+Historical donor v10 deliberately did not use it because of its baked color / presentation policy.
+
+Keep it as a later visual-test option, not an automatic default.
+
+## CORRECTION / new direction · Blood FX
+
+Historical `VFX_DESIGN_v10.md` explicitly rejected:
+
+`blood_impact_6x5`
+
+with the old rationale:
+
+> no blood in KFB.
+
+Georg now explicitly reopens **blood FX** as a Combat candidate.
+
+This is an additive current direction change.
+
+Do **not** rewrite the historical donor document as if it always allowed blood.
+
+Instead:
+
+- preserve the old decision as historical evidence;
+- add stylized blood impact as a new optional candidate;
+- require visual/human review before promoting it to Combat canon.
+
+Candidate source:
+
+`media/3D_Assets/FX_Visual/brackeys_vfx_bundle/predrawn/blood_impact_6x5.png`
+
+## PROPOSAL · semantic VFX triggers
+
+Consumers should ask for meaning, not filenames:
+
+- `combat.weapon.muzzle`
+- `combat.melee.slash`
+- `combat.hit.impact`
+- `combat.hit.blood`
+- `combat.hit.electric`
+- `world.explosion`
+- `world.fire`
+- `world.smoke`
+- `world.dirt`
+- `world.scorch`
+- `access.unlock`
+- `access.portal`
+
+The VFX adapter/recipe resolves the actual texture/flipbook.
+
+## First later VFX proofs
+
+Keep them isolated and cheap:
+
+1. one real weapon muzzle socket → muzzle flash;
+2. one real sword swing → one slash/sweep;
+3. one host-supplied hit point → one impact;
+4. same hit → optional blood toggle/human gate;
+5. one static world fire/smoke emitter;
+6. one key/access unlock → ring/glow cue.
+
+No full Combat rewrite.
+
+## Machine-readable candidate file
+
+See:
+
+`VFX_CANDIDATE_LANE_v0.json`
+
+## Scope guard
+
+VFX are **not** a dependency of the first Orc → Player pink-donut proof.
+
+---
+
+# 32 · Curated KFB asset pool for later reuse
+
+## USER DIRECTION · 2026-09-22
+
+Treat:
+
+`media/3D_Assets/KFB/`
+
+as a user-curated pool of selected future props/assets.
+
+At the inspected current `main` snapshot, the directory enumerated **140 entries**.
+
+Examples include:
+
+- Book;
+- popcorn;
+- bread;
+- burger / cheeseburger;
+- donut;
+- cupcake / ice cream / candy;
+- flowers / mushrooms / crops;
+- vehicles;
+- robots / mechs;
+- aliens / ghosts / skeletons;
+- signs / boards;
+- game / carnival props;
+- assorted characters and scenery.
+
+This folder is useful as a **future donor shortlist**.
+
+It is not automatically:
+
+- the canonical Asset Registry;
+- proof of rig compatibility;
+- proof of scale;
+- proof of license/provenance suitability for every downstream use;
+- proof that every object belongs in KFB Town.
+
+Before using an item in a production slice:
+
+1. find it through Registry/Librarian or exact source path;
+2. inspect the source object in isolation;
+3. check scale / pivot / materials / animation where relevant;
+4. only then integrate it.
+
+This keeps the user-curated selection valuable without creating a second asset database.
