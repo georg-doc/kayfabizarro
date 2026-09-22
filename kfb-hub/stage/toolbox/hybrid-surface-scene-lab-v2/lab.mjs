@@ -506,6 +506,21 @@ function materialDrawReferenced(node,index,total){
   return groups.some(group=>(group.materialIndex??0)===index && group.count>0);
 }
 
+function setCensusFrustum(materialUuid,value){
+  for(const h of Object.values(actorHandles)){
+    for(const rec of h.prep?.records||[]){
+      const mats=Array.isArray(rec.hybrid)?rec.hybrid:[rec.hybrid];
+      for(const material of mats){
+        if(material?.uuid!==materialUuid)continue;
+        const prior=rec.node.frustumCulled;
+        rec.node.frustumCulled=!!value;
+        return {materialUuid,nodeName:rec.node.name||'',prior,current:rec.node.frustumCulled};
+      }
+    }
+  }
+  return null;
+}
+
 function actorMaterialCensus(){
   const rows=[];
   for(const [actorId,h] of Object.entries(actorHandles)){
@@ -544,6 +559,8 @@ function actorMaterialCensus(){
           drawReferenced:referenced,
           effectiveVisible:effectiveVisible(rec.node),
           frustumCulled:rec.node.frustumCulled,
+          layerMask:rec.node.layers?.mask??null,
+          cameraLayerMask:camera.layers?.mask??null,
           renderOrder:rec.node.renderOrder,
           vertexCount:rec.node.geometry?.attributes?.position?.count||0,
           indexCount:rec.node.geometry?.index?.count??null,
@@ -584,6 +601,7 @@ window.__KFB_HYBRID_V2__={
   sources:SOURCES,
   setLook,setView,setIsolatedActor,
   resetRenderSubmissions:()=>renderSubmissions.clear(),
+  setCensusFrustum,
   materialCensus:actorMaterialCensus,
   setStrength:v=>{
     strength=THREE.MathUtils.clamp(Number(v),0,.9);
