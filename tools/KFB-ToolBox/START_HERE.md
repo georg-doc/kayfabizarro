@@ -97,3 +97,9 @@ Briefs:
 - `../../skills/chat/workflows/KFB_TOOLBOX_FLUID_CARD_VOXEL_CONSOLIDATION_V1_2026-09-21/START_HERE.md`
 - `../../skills/chat/workflows/KFB_THEATRE_CURTAIN_CORE_V2_2026-09-21/START_HERE.md`
 - `../../skills/chat/workflows/KFB_PLAYABLE_MVP_CONSOLIDATION_V1_2026-09-21/START_HERE.md`
+
+## CURRENT ADDITIVE · Card Zone F1.5 exact source Stage · 2026-09-22
+
+Draft PR #172 publishes the unchanged 2026-09-22 Card Zone Lab v2 source at `https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/card-zone-lab-v2-source/`. Public Chromium/WebGL proof is 32/32 PASS. The direct Stage remains a human gate; it does not promote extracted modules or create a second runtime.
+
+The later Hex World/God Mode/cartoon-clay direction is proposal-only in the consolidation workflow; it is not part of F1.5.

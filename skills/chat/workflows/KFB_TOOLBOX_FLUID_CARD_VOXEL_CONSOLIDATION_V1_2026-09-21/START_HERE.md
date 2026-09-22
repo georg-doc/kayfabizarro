@@ -1,6 +1,6 @@
 # KFB ToolBox · Fluid / Beam / Card / Seed / Voxel consolidation v1
 
-Status: **READY BRIEF · SOURCE INTAKE VERIFIED · NO MODULE PROMOTION YET**  
+Status: **F1 COMPLETE · SOURCE MATRIX VERIFIED · NO MODULE PROMOTION**  
 Owner: KFB ToolBox for module packaging; receiving games keep their existing runtime owners.  
 Source intake: `tools/KFB-ToolBox/_inbox/KFB ToolBox Bench v1 - KFB Voxel Card Zone Lab 2 - Hex Assets Worldbuilding/kfb-toolbox-v1/`  
 Pinned intake commit: `georg-doc/kayfabizarro@2dbc965fbe8149318a502fde250ecb1acec65f10`
@@ -86,3 +86,41 @@ Only after F1–F4: promote accepted modules, replace the Lab-inline copies with
 - exactly one next gate.
 
 No automatic Live promotion. A source URL loading is not proof that the donor design is actually used.
+
+
+## 2026-09-22 · F1 completion checkpoint
+
+F1 is complete on `toolbox/fluid-card-voxel-f1-source-census-2026-09-22`.
+
+Read next:
+- [SOURCE_MATRIX.json](SOURCE_MATRIX.json) — 28 source/owner decisions;
+- [TEST_REPORT.md](TEST_REPORT.md) — 66/66 relevant source assertions PASS;
+- [RETURN.md](RETURN.md) — owner boundaries and next gate;
+- [SOURCE.json](SOURCE.json) — exact refs/blobs and read-only Dropbox cross-check.
+
+### F1 corrections to the original 2026-09-21 assumptions
+
+- current Card Zone donor truth is the full 1:1 2026-09-22 export, not the extracted Bench modules;
+- `kfb-fluid-v1` / v1.1 are rejected as current promotion candidates;
+- StoryMap `kfb-fluid-v2/card-zone-v2-fluid-source.js` is the preferred source-locked seam for later F2 comparison;
+- current physical card geometry belongs to Storytelling Maps `CARD_RIG_V1.md`; Card Zone owns stack/reveal/beam behavior only for this reconciliation;
+- `skills/kfb-box-material.js` and the canonical card builder/ink/format files already exist and their export copies are exact duplicates;
+- Voxel Zone S2 is a separate 1:1 visual donor and carries a different shoreline-water treatment from the Card Zone DudV/flow shader.
+
+### Inserted gate before the original F2
+
+**F1.5 · Card Zone source-isolation proof**
+
+Before comparing/adapting extracted modules, publish the unmodified 2026-09-22 Card Zone full source in one isolated ToolBox Stage candidate and prove the source object itself: DudV fluid path, CardStack/reveal, Sky Card/beam and Card Cube/HTML-canvas face source.
+
+After F1.5, continue the original F2–F5 sequence using the corrected owner/source matrix.
+
+## 2026-09-22 · F1.5 source Stage
+
+F1.5 is implemented on Draft PR #172. The isolated Stage is a byte-identical publication of the full 26-file 2026-09-22 source export; no module was extracted and no runtime owner changed.
+
+Technical evidence: **32/32 public Chromium/WebGL PASS** for DudV + water map with source foam off, CardStack/reveal, Sky Card + both beam sources, and six Card Cube CanvasTexture faces plus the existing HTML focus face.
+
+Direct human gate: `https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/card-zone-lab-v2-source/`
+
+Separate later proposal: [HEX_WORLD_GOD_MODE_ARCHITECTURE_OUTLOOK.md](HEX_WORLD_GOD_MODE_ARCHITECTURE_OUTLOOK.md). It is not F1.5 implementation scope.

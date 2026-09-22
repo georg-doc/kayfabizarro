@@ -94,3 +94,10 @@ Actual static/local-browser gates:
 - the public Theatre Curtain URL opened successfully and exposed its real cloth controls, four fabric choices and CPU Verlet/WebGL status.
 
 Public proof of this router revision remains a separate publication gate. Existing Theatre Curtain evidence is not evidence that this refreshed ToolBox page has deployed.
+
+## Card Zone F1.5 router delta · 2026-09-22
+
+- ToolBox roster: 21 cards = 8 public previews, 5 missing/blocked and 8 source/integration gates.
+- Direct Card Zone exact-source route added under Open now.
+- Stage source proof: **32/32 public Chromium/WebGL PASS** at publication head `757f04d…`.
+- No extracted module is promoted; human fidelity review remains open.

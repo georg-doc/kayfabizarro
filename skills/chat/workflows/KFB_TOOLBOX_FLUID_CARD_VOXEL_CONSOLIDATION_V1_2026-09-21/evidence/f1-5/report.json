@@ -1,0 +1,262 @@
+{
+  "schema": "kfb.card-zone-source-proof/1",
+  "baseUrl": "https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/card-zone-lab-v2-source/",
+  "checks": [
+    {
+      "name": "source export contains 26 files",
+      "pass": true,
+      "detail": 26
+    },
+    {
+      "name": "Stage source-tree roster is unchanged",
+      "pass": true,
+      "detail": {
+        "sourceFiles": 26,
+        "copiedFiles": 26
+      }
+    },
+    {
+      "name": "Stage index is byte-identical to 2026-09-22 source",
+      "pass": true,
+      "detail": "a619d3a867064ec033a149f400da708b57e8e05d24e44b709d18dd8c7a62284b"
+    },
+    {
+      "name": "Named Stage app is byte-identical to source",
+      "pass": true,
+      "detail": "a619d3a867064ec033a149f400da708b57e8e05d24e44b709d18dd8c7a62284b"
+    },
+    {
+      "name": "Inbox source still matches pinned SHA-256",
+      "pass": true,
+      "detail": "a619d3a867064ec033a149f400da708b57e8e05d24e44b709d18dd8c7a62284b"
+    },
+    {
+      "name": "All 26 copied source files are byte-identical",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "Donor loads original DudV texture",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "Donor loads original water map",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "Donor keeps constructive foam-off constant",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "Donor has no invented uFoam control",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "Donor includes CardStack + reveal methods",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "Donor includes projector beam methods",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "Donor includes Card Cube canvas-face source",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "SOURCE marker HTTP 200",
+      "pass": true,
+      "detail": 200
+    },
+    {
+      "name": "SOURCE marker exact",
+      "pass": true,
+      "detail": "KFB_CARD_ZONE_LAB_V2_SOURCE_2026_09_22"
+    },
+    {
+      "name": "SOURCE marker pins donor blob",
+      "pass": true,
+      "detail": "e7bb09e49b2a885eb076e8c43c0ff561a9cebb72"
+    },
+    {
+      "name": "Stage route HTTP 200",
+      "pass": true,
+      "detail": 200
+    },
+    {
+      "name": "WebGL source object is running",
+      "pass": true,
+      "detail": {
+        "renderer": true,
+        "sceneChildren": 15,
+        "fluidShader": true,
+        "fluidVertices": 744,
+        "dudvLoaded": true,
+        "mapLoaded": true,
+        "hasMap": 1,
+        "fragment": "uniform float uTime, uMoat, uHasMap; uniform vec3 uCol; uniform vec2 uZ;\nuniform sampler2D uDudv, uMap;\nvarying vec3 vW;\nvarying vec2 vFlow;\nfloat hh(vec2 p){ return fract(sin(dot(p, vec2(127.1,311.7))) * 43758.5453); }\nfloat nz(vec2 p){ vec2 i = floor(p), f = fract(p); f = f*f*(3.0-2.0*f);\n  return mix(mix(hh(i), hh(i+vec2(1,0)), f.x), mix(hh(i+vec2(0,1)), hh(i+vec2(1,1)), f.x), f.y); }\nvoid main(){\n  float u = 0.5;\n  float fl = length(vFlow);\n  vec2 drift = mix(vec2(uTime * 0.02, uTime * 0.015), vFlow * uTime * 0.16, min(fl, 1.0));\n  vec2 duv = (texture2D(uDudv, vW.xz * 0.02 + drift).rg - 0.5) * 0.6;\n  vec2 adv = mix(vec2(uTime * 0.25, -uTime * 0.18), vFlow * uTime * 1.6, min(fl, 1.0));\n  float wave = nz(vW.xz * 0.09 + duv * 4.0 + adv);\n  float wave2 = nz(vW.xz * 0.31 + duv * 8.0 - adv * 1.5);\n  if (fl > 0.01) {\n    vec2 n2d = normalize(vFlow), t2d = vec2(-n2d.y, n2d.x);\n    float across = dot(vW.xz, t2d), along = dot(vW.xz, n2d);\n    float streak = nz(vec2(across * 0.5, along * 0.08 - uTime * 1.1));\n    wave = mix(wave, streak, 0.55);\n  }\n  vec3 mp = texture2D(uMap, vW.xz * 0.035 + duv * 0.5 + vec2(uTime * 0.012, -uTime * 0.009)).rgb;\n  float ml = dot(mp, vec3(0.299, 0.587, 0.114));\n  float tex = mix(1.0, 0.55 + ml * 0.9, uHasMap);\n  vec3 col = uCol * (0.55 + wave * 0.75) * tex + vec3(0.06, 0.07, 0.08) * wave2;\n  float shore = min(smoothstep(0.0, 0.22, u), smoothstep(1.0, 0.78, u));\n  float foam = smoothstep(0.55, 0.95, wave2) * (1.0 - shore);\n  col += vec3(0.7, 0.72, 0.7) * foam * 0.5;\n  float a = 0.72 + foam * 0.28;\n  gl_FragColor = vec4(col, a);\n}",
+        "stackCount": 17,
+        "stackIsInstanced": true,
+        "reveal": 0,
+        "revealLabel": "verdeckt",
+        "card": true,
+        "beam": true,
+        "beamVisible": true,
+        "beamCorners": 4,
+        "cubeFaces": 6,
+        "canvasFaces": 6,
+        "pool": 6321
+      }
+    },
+    {
+      "name": "Original fluid is a populated ShaderMaterial",
+      "pass": true,
+      "detail": {
+        "fluidShader": true,
+        "fluidVertices": 744
+      }
+    },
+    {
+      "name": "Original DudV + water map are loaded",
+      "pass": true,
+      "detail": {
+        "dudvLoaded": true,
+        "mapLoaded": true,
+        "hasMap": 1
+      }
+    },
+    {
+      "name": "Browser shader keeps foam constructively off",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "Real CardStack is mounted closed",
+      "pass": true,
+      "detail": {
+        "stackCount": 17,
+        "reveal": 0,
+        "revealLabel": "verdeckt"
+      }
+    },
+    {
+      "name": "Real card pool is active",
+      "pass": true,
+      "detail": {
+        "card": true,
+        "pool": 6321
+      }
+    },
+    {
+      "name": "Projector beam source object is mounted",
+      "pass": true,
+      "detail": {
+        "beam": true,
+        "beamVisible": true,
+        "beamCorners": 4
+      }
+    },
+    {
+      "name": "Card Cube has six canvas-textured faces",
+      "pass": true,
+      "detail": {
+        "cubeFaces": 6,
+        "canvasFaces": 6
+      }
+    },
+    {
+      "name": "DudV fluid time advances in browser",
+      "pass": true,
+      "detail": {
+        "before": 0,
+        "after": 0.05009999996423722
+      }
+    },
+    {
+      "name": "CardStack reveal reaches real open Sky Card",
+      "pass": true,
+      "detail": {
+        "reveal": 1,
+        "label": "offen",
+        "cardScale": 1,
+        "cardY": 27.655172413793103,
+        "stackTopVisible": true,
+        "cubeVisible": true,
+        "projectorVisible": false,
+        "beamVisible": true,
+        "beamGain": 0.85,
+        "beamPermutation": [
+          3,
+          2,
+          1,
+          0
+        ]
+      }
+    },
+    {
+      "name": "Sky Card beam is live with Card Cube after reveal",
+      "pass": true,
+      "detail": {
+        "reveal": 1,
+        "label": "offen",
+        "cardScale": 1,
+        "cardY": 27.655172413793103,
+        "stackTopVisible": true,
+        "cubeVisible": true,
+        "projectorVisible": false,
+        "beamVisible": true,
+        "beamGain": 0.85,
+        "beamPermutation": [
+          3,
+          2,
+          1,
+          0
+        ]
+      }
+    },
+    {
+      "name": "Original physical projector + beam source is live",
+      "pass": true,
+      "detail": {
+        "visible": true,
+        "beamVisible": true,
+        "beamGain": 0.85
+      }
+    },
+    {
+      "name": "Card Cube HTML face focus opens from source object",
+      "pass": true,
+      "detail": {
+        "opacity": 0.99825,
+        "width": 207.5,
+        "height": 207.109375,
+        "left": 490.65625,
+        "top": 387.484375
+      }
+    },
+    {
+      "name": "Mobile viewport keeps the live source canvas",
+      "pass": true,
+      "detail": {
+        "canvasWidth": 390,
+        "canvasHeight": 844,
+        "reveal": "offen"
+      }
+    },
+    {
+      "name": "No unexpected page/console errors",
+      "pass": true,
+      "detail": []
+    }
+  ],
+  "browserErrors": [],
+  "allowedDonorMessages": [],
+  "observedFailedRequests": []
+}

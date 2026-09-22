@@ -1,3 +1,10 @@
+## 2026-09-22 · ToolBox Card Zone F1.5 exact source Stage
+
+- Added the unchanged 26-file 2026-09-22 Card Zone Lab v2 source under one isolated ToolBox Stage route.
+- 32/32 public Chromium/WebGL checks prove DudV/water without grey-foam regression, CardStack/reveal, Sky Card/beams and Card Cube Canvas/HTML faces.
+- Draft PR #172 remains unmerged; direct Cloudflare human review is the next gate.
+- Persisted Hex World/God Mode/global cartoon-clay as a separate architecture outlook only.
+
 ## 2026-09-20 · KCC-1A FrizzleBob Race secondary-motion facts
 
 ### SUPERSEDES · PUBLICATION STATUS ONLY
@@ -1107,3 +1114,18 @@ Canonical recovery:
 - only after the exact public `SOURCE.json` marker is served may public browser QA and the Blade visual gate resume.
 
 No merge. No Live promotion.
+
+## 2026-09-22 · ToolBox Fluid/Card/Voxel F1 source census
+
+- Fresh source-only branch: `toolbox/fluid-card-voxel-f1-source-census-2026-09-22` from `main@1ff35a63cbc6608d9d2f7a79ce5d6f0f17c55ac5`.
+- Added `SOURCE_MATRIX.json`: **28 decisions = 11 ADAPT / 10 KEEP_INTAKE / 7 REJECT_DUPLICATE / 0 PROMOTE**.
+- The 2026-09-22 full 1:1 Card Zone export is the current donor truth; older `card-zone-lab-v3` is historical.
+- Old → current Card Zone comparison: **29 named methods byte-identical**; only audited `buildCard` changed, now explicitly preferring `media/kfb/kfb-index.json`.
+- `kfb-fluid-v1` and v1.1 are rejected as current implementation candidates; StoryMap `kfb-fluid-v2` remains the source-locked fluid seam for later comparison.
+- `kfb-voxel-world-v1` is rejected as a separate terrain owner because its key blobs mirror the current source; the new 1:1 Voxel Zone S2 remains the visual-language donor.
+- Texture Browser remains an exact authoring intake; Asset Registry/Librarian remains asset truth.
+- Existing canonical owners preserved: `skills/kfb-box-material.js`, KFB card builder/ink/format, Storytelling Maps Responsive CardRig, Travel world palettes/water, Registry assets.
+- Three water jobs explicitly separated: Card Zone DudV flow; Voxel S2 shoreline water; Travel/TinySkies macro ocean/coast.
+- **66/66 relevant source/owner assertions PASS**. A main-drift sentinel triggered during the audit; follow-up 3/3 proved the new delta was Combat-only.
+- F1 changed no runtime, Stage, asset or Dropbox state.
+- Exactly one next gate: **F1.5 source-isolate the unmodified 2026-09-22 Card Zone full app before any new extraction.**
