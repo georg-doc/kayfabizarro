@@ -1,0 +1,107 @@
+{
+  "schema": "kfb.access-prop-candidates.v0",
+  "status": "CONCEPT_CANDIDATES_ONLY",
+  "date": "2026-09-22",
+  "purpose": "Physical access props for mini-games, card decks, worlds, dungeons and other KFB destinations; inspired by keystone/key access logic but not a second currency or hidden entitlement system.",
+  "persistenceConcept": "Session / Journey / Fractal Almanac + bounded Backpack state",
+  "sourceFacts": [
+    {
+      "id": "kaykit-key",
+      "sourceRef": "media/3D_Assets/KayKit_Dungeon_Pack_1.1_FREE 2/Assets/gltf/key.gltf",
+      "sourceStatus": "VERIFIED_SOURCE_PRESENT",
+      "roleCandidates": [
+        "single-key",
+        "door-access",
+        "dungeon-access",
+        "mini-game-access",
+        "deck-access",
+        "world-access"
+      ]
+    },
+    {
+      "id": "kaykit-keyring",
+      "sourceRef": "media/3D_Assets/KayKit_Dungeon_Pack_1.1_FREE 2/Assets/gltf/keyring.gltf",
+      "sourceStatus": "VERIFIED_SOURCE_PRESENT",
+      "roleCandidates": [
+        "multi-key-display",
+        "bundle-access-prop",
+        "collection-visual"
+      ]
+    },
+    {
+      "id": "kaykit-keyring-hanging",
+      "sourceRef": "media/3D_Assets/KayKit_Dungeon_Pack_1.1_FREE 2/Assets/gltf/keyring_hanging.gltf",
+      "sourceStatus": "VERIFIED_SOURCE_PRESENT",
+      "roleCandidates": [
+        "world-prop",
+        "pickup-source",
+        "door-or-station-key-display"
+      ]
+    },
+    {
+      "id": "scifi-keycard",
+      "sourceRef": "media/3D_Assets/SciFI_Ultimate Space Kit_Quaternius/Items/GLTF/Pickup_KeyCard.gltf",
+      "sourceStatus": "VERIFIED_SOURCE_PRESENT",
+      "roleCandidates": [
+        "sci-fi-access",
+        "world-access",
+        "facility-access",
+        "mini-game-access"
+      ]
+    }
+  ],
+  "requestedPresentationVariants": [
+    {
+      "id": "silver-key",
+      "userDirection": true,
+      "sourceStatus": "EXACT_SOURCE_VARIANT_NOT_YET_PROVEN",
+      "note": "Treat as presentation/access-tier concept until a source-backed silver material/palette or separate donor is visually proven."
+    },
+    {
+      "id": "gold-key",
+      "userDirection": true,
+      "sourceStatus": "EXACT_SOURCE_VARIANT_NOT_YET_PROVEN",
+      "note": "Treat as presentation/access-tier concept until a source-backed gold material/palette or separate donor is visually proven."
+    },
+    {
+      "id": "keyring",
+      "userDirection": true,
+      "sourceStatus": "SOURCE_GEOMETRY_VERIFIED"
+    }
+  ],
+  "proposedRecord": {
+    "AccessPropItem": {
+      "instanceId": "unique physical access-prop instance",
+      "assetRef": "canonical source ref",
+      "accessRefs": [
+        "mini-game | card-deck | world | dungeon | portal | event | scene"
+      ],
+      "presentationProfileRef": "optional silver/gold/etc profile ref",
+      "provenanceRef": "Almanac / Journey receipt ref",
+      "state": "carried | displayed | offered | transferred | consumed",
+      "transferPolicy": "bearer | bound | consumable | undecided",
+      "usePolicy": "reusable | consume-on-use | charge-based | undecided",
+      "optionalTier": "presentation/access tier only; semantics belong to receiving game owner",
+      "optionalInstanceSeed": "for future dungeon/world variant binding if a host needs it"
+    }
+  },
+  "proposedRules": [
+    "Access truth belongs to the receiving mini-game/world/dungeon/deck owner; the prop carries/refers to that grant but does not own destination runtime.",
+    "Physical key/keycard should remain visible and inspectable rather than becoming an invisible unlock flag whenever practical.",
+    "The Almanac records where/how the access prop was acquired and used.",
+    "Keyrings are presentation/grouping devices; they must not duplicate grant truth.",
+    "Gold/silver must not be claimed as separate KayKit key source files until visually/source proven.",
+    "Access props may later be gifted/found/rewarded, but transfer semantics are a product choice per prop."
+  ],
+  "candidateTargets": [
+    "mini-game",
+    "card-deck",
+    "world",
+    "dungeon",
+    "portal",
+    "event",
+    "scene"
+  ],
+  "inspirationNote": "Borrow the readable physical-access-token idea from Mythic/keystone-style dungeon access, not its exact difficulty/economy system.",
+  "notFirstProofDependency": true
+}
