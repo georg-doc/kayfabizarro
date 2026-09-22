@@ -1,0 +1,27 @@
+{
+  "schema": "kfb.stage-source/0.1",
+  "product": "KFB ToolBox · Hybrid Surface Seam Lab",
+  "owner": "KFB ToolBox / material-surface compatibility lab",
+  "status": "IMPLEMENTATION_CANDIDATE",
+  "sourceRepo": "georg-doc/kayfabizarro",
+  "sourceBranch": "chatgpt-web/toolbox-hybrid-seamless-macro-2026-09-22",
+  "sourceBranchHead": "PENDING",
+  "sourceScreenshotFeedback": "2026-09-22 · visible line on broad flat wall",
+  "provenCause": "legacy createRgbBrushTexture paints a non-periodic canvas then uses RepeatWrapping; opposite edges do not match",
+  "fix": "toroidal wrapped strokes/blobs plus explicit opposite-edge normalization",
+  "frozenV2RuntimeDonor": "7cbad52b55fb9ec2300aa4b25ca92b0997ce448a",
+  "worldAtlasDonor": {
+    "pin": "bc1441eb8ff9a2df0e15e778b44b73f97eb63d76",
+    "recipeId": "CQ-S1_KAYKIT_DUNGEON_PROMO"
+  },
+  "actorDonorPin": "bdaea0648f27c0f16e0a737bfba237eb54dd4cbb",
+  "scopeBoundary": {
+    "surfaceShaderMath": "unchanged from frozen v2",
+    "clayGrain": "unchanged",
+    "headScale": "unchanged",
+    "consumerOwners": "unchanged",
+    "compileCensusIssue": "not resolved by this seam-only slice"
+  },
+  "stageUrl": "https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/hybrid-surface-seam-lab/",
+  "humanAcceptance": "PENDING"
+}
