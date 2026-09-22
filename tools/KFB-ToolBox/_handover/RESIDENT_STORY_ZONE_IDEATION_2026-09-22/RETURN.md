@@ -48,6 +48,11 @@ The initial concept captures:
 - re-gifting is part of the same social loop rather than a separate inventory/quest system;
 - source-backed Backpack donors now include Orc and Hoarder files plus Hiker and Protagonist A/B sibling-mesh candidates;
 - Protagonist A/B are confirmed Rig_Medium actors with backpack sibling meshes; standalone extraction remains an authoring gate;
+- shared social/gift contract v0 now exists as machine-readable JSON;
+- v0 defines 8 shared records and 3 deterministic proof fixtures;
+- explicit commit points now cover reservation, PlayerCall, accept, TRANSFER_COMMIT, memory commit and release;
+- abort semantics prevent half-mutated gift ownership;
+- contract aligns to `kfb.scene-patch.v1`, existing NIE adapter hook and MomentReceipt lean-memory direction;
 - user correction recorded as **Goth Girl + Elisa setting**, not Crossgirl; Elisa is receiving context, not invented KayKit asset;
 - Park Bench retained only as a later minimal/regression fixture.
 
@@ -55,6 +60,9 @@ The initial concept captures:
 
 - `tools/KFB-ToolBox/_handover/RESIDENT_STORY_ZONE_IDEATION_2026-09-22/LIVING_CONCEPT.md`
 - `tools/KFB-ToolBox/_handover/RESIDENT_STORY_ZONE_IDEATION_2026-09-22/START_HERE.md`
+- `SOCIAL_GIFT_DATA_CONTRACT_v0.json`
+- `SOCIAL_GIFT_FIXTURES_v0.json`
+- `SOCIAL_GIFT_CONTRACT_CHECK.md`
 - this `RETURN.md`
 
 ## Sources actually reviewed
@@ -76,6 +84,11 @@ Current GitHub versions of:
 This checkpoint is documentation/ideation only.
 
 - source retrieval: PASS
+- social gift contract JSON parse: **1/1 PASS**
+- social gift fixtures JSON parse: **1/1 PASS**
+- v0 record types present: **8/8 PASS**
+- deterministic fixtures present: **3/3 PASS**
+- contract invariants recorded: **12**
 - branch creation: PASS
 - first concept commit: PASS and exact branch head verified
 - recovery entry commit: PASS and exact branch head/file verified
@@ -107,7 +120,7 @@ No implementation or public result is claimed.
 - exact player Gift Backpack save owner and first slot count;
 - exact Bubble choice adapter from canonical Calls into ChatterBox/Triplet context;
 - standalone extraction/attachment proof for Protagonist A/B backpack sibling meshes;
-- exact first shared data contract for ActivityState / Perception / Motive / SocialPair / EncounterBit / PlayerCall / GiftInventoryItem / MemoryReceipt;
+- receiving owner resolution for GiftInventoryItem persistence, canonical host actor/player IDs, ChatterBox caller seam and first visible food handoff;
 - exact inventory of reusable full-body laugh/cry/surprise/inspect/gift-accept clips across relevant rig families;
 - exact semantic seam from ChatterBox social cue → host social state → optional Combat owner → repair beat;
 - current 3D ChatterBox invocation/output contract;
@@ -119,6 +132,6 @@ No implementation or public result is claimed.
 
 ## One next gate
 
-**Define the smallest shared data contract for both the two-Resident gift proof and the Resident→player Bubble Gift + Backpack proof.**
+**Resolve the four receiving owner/seam facts before any runtime implementation: persistence owner, host actor/player IDs, ChatterBox caller seam, and first visible food-handoff asset.**
 
 Do not build a general World Editor, autonomous NPC system or separate social-combat engine yet.
