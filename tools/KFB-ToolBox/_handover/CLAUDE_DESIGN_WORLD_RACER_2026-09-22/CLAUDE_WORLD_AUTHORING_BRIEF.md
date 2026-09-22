@@ -626,6 +626,33 @@ Do not let presentation bounce rewrite saved world positions.
 
 The specific module remains donor code and requires its own consumer proof before general reuse.
 
+## 24A · WhackMan Environment Profile donor
+
+Georg considers the current WhackMan Dungeon lighting/material direction worth carrying into production.
+
+Treat it as a named donor candidate, not as WhackMan ownership spreading into World.
+
+Inspect and preserve the actual source behaviour from:
+
+- `wm-boot.js` — dusk/fog/cool-world-light setup and matte material calibration;
+- `wm-gate-b.js` — measured mounted-torch source points, additive glow, pooled nearby PointLights, physical falloff and independent flicker;
+- `wm-gate-c.js` — continuous local player visibility light / Dungeon sight-radius control.
+
+Target extraction direction:
+
+`DUNGEON_DUSK_TORCH_PROFILE`
+
+Potential consumers later:
+
+- Dungeon Generator;
+- Room/Scene authoring;
+- ToolBox environment previews;
+- special World zones.
+
+Keep Environment Profile state separate from movement, topology, combat and WhackMan gameplay state.
+
+Do not blindly force WhackMan's exact roughness/specular values onto all KFB assets. Preserve the purpose — suppressing the unwanted plastic-varnish read — and prove the resulting source materials visually.
+
 ## 25 · Babel future gameplay
 
 Babel already proves:
@@ -711,6 +738,48 @@ Avoid:
 - generic editor chrome.
 
 Every visible control must pay rent.
+
+## 28A · Surface architecture Red Team
+
+Before expanding from the small authoring proof into a larger world, read:
+
+`WORLD_ARCHITECTURE_RED_TEAM_2026-09-22.md`
+
+Its status is **PROPOSAL / RESEARCH**, not implementation canon.
+
+The important challenge is:
+
+**do not hard-wire World Recipe to one global geometry such as Sphere, visible Hex or Voxel.**
+
+Research direction:
+
+- portable logical/world recipe;
+- replaceable Surface Adapter;
+- continuous macro terrain for Race/OSM;
+- semantic/local visible Hex;
+- local volumetric chunks only where caves/destruction need them;
+- shared Environment Profiles;
+- shared shader/data Surface FX.
+
+Recommended architecture spike, only after donor parity + Source Object Inspector + shared authoring seam:
+
+render the same tiny recipe on:
+
+1. FLAT
+2. SPHERE
+3. TORUS
+
+with the same:
+
+- seven real Hex cells;
+- short OSM/local-metre road spline;
+- one prop;
+- one expanding terrain-colour/Surface-FX event;
+- one Environment profile.
+
+Do not implement Möbius/hollow worlds before this orientable Flat/Sphere/Torus boundary works.
+
+This spike may be inserted before the larger 12–24-cell expansion, but do not silently replace the current execution gates without Georg's explicit acceptance of the architecture proposal.
 
 ## 29 · First delivery sequence
 
