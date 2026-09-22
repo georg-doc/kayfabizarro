@@ -1,5 +1,17 @@
 # KFB ToolBox · additives Changelog
 
+## 2026-09-22 · Hybrid Surface v2 review persistence
+
+### HUMAN REVIEW
+The real-asset Hybrid Surface direction is retained, but v1 is not final. Persisted issues: visible seam, too much of the benefit coming from de-glossing, lost useful armour/hair shine, and insufficient clay/grain materiality.
+
+### DECISION
+v2 preserves original maps/base colors and source roughness/specular character, then adds stronger macro paint variation + fine clay/grain tooth without starting from a manual material exception matrix. Mixed-rig cast scale is measured from head size, not equalized total height.
+
+### NEXT
+Use the exact same Dungeon + Legacy/Medium/GothGirl/FrizzleBob/Large donor set for Hybrid Surface Scene Lab v2. After acceptance, continue the same art-direction contract onto one exact OSM/Race environment slice. No consumer owner changes.
+
+
 Alte Einträge bleiben unverändert. Korrekturen als neue CORRECTION/SUPERSEDES-Einträge mit Bezug ergänzen. Aktuelle Momentaufnahme im MASTERPLAN/Return, Geschichte hier.
 
 ## 2026-09-21 · Fluid/Card/Voxel intake and Theatre Curtain route
