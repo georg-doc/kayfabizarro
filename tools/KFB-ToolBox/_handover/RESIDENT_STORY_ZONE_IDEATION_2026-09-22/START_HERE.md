@@ -81,7 +81,7 @@ First concrete fixture, when implementation is explicitly started:
 
 The earlier Park Bench fixture remains useful as a later minimal regression fixture, but is no longer first.
 
-Parallel concept lane now also includes the **Kayfabe Social Conflict Loop**: buddy banter → optional provocation/challenge → optional host-approved social melee → explicit help-up/laugh/reconciliation → resume activity. Bond, temporary Kayfabe Heat and topic stance remain distinct; ChatterBox never becomes Combat owner.
+Parallel concept lane now also includes: **Social Attention + Gift Drive**, a source-backed food-gift/gag lane, a semantic Reaction Library, and the **Kayfabe Social Conflict Loop**. Buddy banter, absurd gift framing and optional host-approved social melee remain separate from Bond; explicit repair/reconciliation closes social escalation. ChatterBox never becomes Navigation, Animation, Inventory or Combat owner.
 
 ## How to continue ideation
 
@@ -98,6 +98,16 @@ Use status labels:
 
 Do not rewrite old entries to make the history cleaner.
 
+## Current technical concept gate
+
+Section 25 of `LIVING_CONCEPT.md` now defines **Minimal Resident Decision Loop v0**:
+
+`ACTIVITY → PERCEIVE → NOTICE → CAN_INTERRUPT? → MOTIVES → SELECT → RESERVE → APPROACH → ENCOUNTER → REACT/COMMIT → MEMORY → RELEASE → RESUME`
+
+First proposed proof uses exactly two Residents + one real food gift. No Combat/crowd/utility-AI dependency.
+
+Reaction note: current targeted source search found partial face/eye reaction evidence, but no clearly named full-body Laugh/Cry clip. Treat those as animation inventory/authoring work until proven.
+
 ## One next gate
 
-Continue the ideation session and sharpen **Lore Keeper Story Zone authoring semantics + Kayfabe social interaction semantics**, without implementing a runtime until Georg explicitly switches from brainstorming to build.
+Continue ideation from the **two-Resident / one-food-gift Decision Loop v0 fixture** and define only the smallest first motive/encounter data contract before implementation.
