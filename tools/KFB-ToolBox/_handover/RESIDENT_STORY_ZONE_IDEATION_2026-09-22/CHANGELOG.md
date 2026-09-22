@@ -275,3 +275,32 @@ Gift ownership changes only at `TRANSFER_COMMIT`.
 Contract/documentation only.
 
 No social runtime, navigation, ChatterBox integration, Bubble UI, animation, Backpack attachment, inventory/save persistence, browser test or Cloudflare Stage result is claimed.
+
+
+## 2026-09-22 · Almanac persistence + pink donut
+
+### USER DECISION
+- Gift Inventory persistence belongs conceptually to the existing **Session / Journey / Fractal Almanac** layer together with journey events and Lean Memory.
+- Do not create a separate gift-save system.
+- First visible Gift proof uses **Tiny Treats `donut_pink.gltf`**, replacing the temporary burger fixture.
+- Exact source:
+  `media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE/Assets/gltf/donut_pink.gltf`.
+
+### SOURCE ALIGNMENT
+- Existing KFB source describes Fractal Almanac as collection, Journey Memory, Replay/Story layer and Save metaphor.
+- `donut_pink.gltf` is Registry/source-backed and already referenced by an existing KFB donor.
+
+### CONTRACT UPDATE
+- `SOCIAL_GIFT_DATA_CONTRACT_v0.json` now records the persistence concept decision and first gift asset.
+- all three `SOCIAL_GIFT_FIXTURES_v0.json` fixtures now use the pink donut.
+- contract evidence updated accordingly.
+
+### HUMAN-GATE SIMPLIFICATION
+The following are implementation details, not questions Georg must answer:
+- canonical host actor/player IDs;
+- exact ChatterBox caller/adapter seam.
+
+Implementation must recover these from the chosen host and existing ChatterBox owner.
+
+### IMPLEMENTATION STATUS
+No runtime implementation, visual carry/handoff proof, browser test or public Stage result was built.
