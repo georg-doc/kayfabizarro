@@ -23,3 +23,27 @@ Local sync cursor should live in the Combat repo rather than duplicating central
 ## Current caution
 
 Do not infer the active Combat slice from this central node. Combat's own current GitHub state is authoritative and may advance independently.
+
+
+## Current recovery pointer · 2026-09-22
+
+Combat implementation truth remains in `georg-doc/KFB-Combat-Arena`.
+
+Current bounded lane:
+
+- PR #7 · branch `chatgpt-web/ca2-04-melee-vfx-sfx-2026-09-20`
+- current branch head at handoff: `c04f0fffeb8cd90b48d70a2787c9ef1ca75ee725`
+- recovery/orientation file: `slices/ca2-melee-lab/CA2_NOW_NEXT.md`
+- Return: `slices/ca2-melee-lab/RETURN.md`
+- current result: **CA2-SWORD-01 IMPLEMENTED · Rig_Medium · CI PASS · VISUAL ACCEPTANCE PENDING**
+- final-head CI: **98/98 tests PASS · portable build 234 files · re-home 172 preserved / 66 verified / routes PASS**
+- current weapon candidate: exact Skeleton Warrior + exact `Skeleton_Blade.gltf` + real `Melee_1H_Attack_Chop` + existing swept contact / AttackLedger
+- directional axes: **DEFERRED_MINOR**, not a blocker
+- productive PR #5 Skeleton attack remains the old unarmed punch until human visual acceptance
+- no Sword-01 Cloudflare route is public-verified; do not invent or advertise one
+
+Exactly one next gate:
+
+> **CA2-SWORD-01-VIS** — verify Blade mount, non-overlap spacing and readable real 1H strike. If accepted, continue to consequence wiring, then Legacy, then Rig_Large/2H.
+
+Deferred context for Legacy, Black Knight Large/2H, the human-rejected shield attachment, Pencil/Brush and later weapon profiles is preserved in `slices/ca2-melee-lab/DEFERRED_RIG_WEAPON_NOTES.md` in the Combat repository.
