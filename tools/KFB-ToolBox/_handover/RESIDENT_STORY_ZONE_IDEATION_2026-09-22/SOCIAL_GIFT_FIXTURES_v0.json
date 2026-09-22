@@ -2,7 +2,7 @@
   "schema": "kfb.social-gift-fixtures.v0",
   "status": "PROPOSAL_ONLY_NOT_RUNTIME",
   "contractRef": "SOCIAL_GIFT_DATA_CONTRACT_v0.json",
-  "note": "Deterministic documentation fixtures. They demonstrate record relationships only and do not claim runtime implementation, navigation, animation or save ownership.",
+  "note": "Deterministic documentation fixtures. They demonstrate record relationships only and do not claim runtime implementation, navigation, animation or save ownership. First visible gift candidate updated by user decision to the source-backed Tiny Treats pink donut.",
   "fixtures": [
     {
       "id": "RR-GIFT-01",
@@ -72,7 +72,7 @@
             "resident.orc-brute",
             "resident.lorekeeper"
           ],
-          "giftRef": "media/3D_Assets/KayKit_Restaurant_Bits_1.0_FREE/Assets/gltf/food_burger.gltf",
+          "giftRef": "media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE/Assets/gltf/donut_pink.gltf",
           "beats": [
             "ACKNOWLEDGE",
             "BANTER",
@@ -97,7 +97,7 @@
           "recordedAt": "tick:110",
           "zoneRef": "zone.archive-study",
           "encounterRef": "enc.rr.01",
-          "objectRef": "gift.foodburger.rr.01",
+          "objectRef": "gift.pinkdonut.rr.01",
           "outcome": "accepted",
           "callbackTags": [
             "food-gift",
@@ -105,7 +105,7 @@
           ],
           "witnesses": [],
           "sourceRefs": [
-            "media/3D_Assets/KayKit_Restaurant_Bits_1.0_FREE/Assets/gltf/food_burger.gltf"
+            "media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE/Assets/gltf/donut_pink.gltf"
           ]
         }
       }
@@ -166,7 +166,7 @@
             "resident.orc-brute",
             "player.main"
           ],
-          "giftRef": "media/3D_Assets/KayKit_Restaurant_Bits_1.0_FREE/Assets/gltf/food_burger.gltf",
+          "giftRef": "media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE/Assets/gltf/donut_pink.gltf",
           "beats": [
             "OPEN",
             "PLAYER_CHOICE",
@@ -194,8 +194,8 @@
           "sourceBubbleRef": "bubble.player-choice.01"
         },
         "giftInventoryItem": {
-          "instanceId": "gift.foodburger.rp.01",
-          "assetRef": "media/3D_Assets/KayKit_Restaurant_Bits_1.0_FREE/Assets/gltf/food_burger.gltf",
+          "instanceId": "gift.pinkdonut.rp.01",
+          "assetRef": "media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE/Assets/gltf/donut_pink.gltf",
           "kind": "food",
           "state": "carried",
           "visualProfileRef": "gift-carry.default-small",
@@ -203,7 +203,7 @@
             "fromActorId": "resident.orc-brute",
             "eventRef": "mem.rp.01",
             "acquiredInZone": "zone.archive-study",
-            "originalSourceRef": "media/3D_Assets/KayKit_Restaurant_Bits_1.0_FREE/Assets/gltf/food_burger.gltf",
+            "originalSourceRef": "media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE/Assets/gltf/donut_pink.gltf",
             "priorOwners": [
               "resident.orc-brute",
               "player.main"
@@ -220,7 +220,7 @@
           "recordedAt": "tick:210",
           "zoneRef": "zone.archive-study",
           "encounterRef": "enc.rp.01",
-          "objectRef": "gift.foodburger.rp.01",
+          "objectRef": "gift.pinkdonut.rp.01",
           "playerCallRef": "call.rp.01",
           "outcome": "accepted",
           "callbackTags": [
@@ -230,7 +230,7 @@
           ],
           "witnesses": [],
           "sourceRefs": [
-            "media/3D_Assets/KayKit_Restaurant_Bits_1.0_FREE/Assets/gltf/food_burger.gltf"
+            "media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE/Assets/gltf/donut_pink.gltf"
           ]
         }
       }
@@ -241,15 +241,15 @@
       "dependsOn": "RP-GIFT-01",
       "records": {
         "carriedBefore": {
-          "instanceId": "gift.foodburger.rp.01",
-          "assetRef": "media/3D_Assets/KayKit_Restaurant_Bits_1.0_FREE/Assets/gltf/food_burger.gltf",
+          "instanceId": "gift.pinkdonut.rp.01",
+          "assetRef": "media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE/Assets/gltf/donut_pink.gltf",
           "kind": "food",
           "state": "carried",
           "provenance": {
             "fromActorId": "resident.orc-brute",
             "eventRef": "mem.rp.01",
             "acquiredInZone": "zone.archive-study",
-            "originalSourceRef": "media/3D_Assets/KayKit_Restaurant_Bits_1.0_FREE/Assets/gltf/food_burger.gltf",
+            "originalSourceRef": "media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE/Assets/gltf/donut_pink.gltf",
             "priorOwners": [
               "resident.orc-brute",
               "player.main"
@@ -273,7 +273,7 @@
             "player.main",
             "resident.goth-girl"
           ],
-          "giftRef": "media/3D_Assets/KayKit_Restaurant_Bits_1.0_FREE/Assets/gltf/food_burger.gltf",
+          "giftRef": "media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE/Assets/gltf/donut_pink.gltf",
           "beats": [
             "OPEN",
             "GIFT_OFFER",
@@ -290,15 +290,15 @@
           "transferState": "COMMITTED"
         },
         "transferredAfter": {
-          "instanceId": "gift.foodburger.rp.01",
-          "assetRef": "media/3D_Assets/KayKit_Restaurant_Bits_1.0_FREE/Assets/gltf/food_burger.gltf",
+          "instanceId": "gift.pinkdonut.rp.01",
+          "assetRef": "media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE/Assets/gltf/donut_pink.gltf",
           "kind": "food",
           "state": "transferred",
           "provenance": {
             "fromActorId": "player.main",
             "eventRef": "mem.pr.01",
             "acquiredInZone": "zone.party-place",
-            "originalSourceRef": "media/3D_Assets/KayKit_Restaurant_Bits_1.0_FREE/Assets/gltf/food_burger.gltf",
+            "originalSourceRef": "media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE/Assets/gltf/donut_pink.gltf",
             "priorOwners": [
               "resident.orc-brute",
               "player.main",
@@ -316,7 +316,7 @@
           "recordedAt": "tick:310",
           "zoneRef": "zone.party-place",
           "encounterRef": "enc.pr.01",
-          "objectRef": "gift.foodburger.rp.01",
+          "objectRef": "gift.pinkdonut.rp.01",
           "outcome": "accepted",
           "callbackTags": [
             "regift",
@@ -325,7 +325,7 @@
           ],
           "witnesses": [],
           "sourceRefs": [
-            "media/3D_Assets/KayKit_Restaurant_Bits_1.0_FREE/Assets/gltf/food_burger.gltf",
+            "media/3D_Assets/Tiny_Treats_Baked_Goods_1.0_FREE/Assets/gltf/donut_pink.gltf",
             "mem.rp.01"
           ]
         }
