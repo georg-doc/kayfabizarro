@@ -549,6 +549,7 @@ function actorMaterialCensus(){
           isSkinnedMesh:!!rec.node.isSkinnedMesh,
           materialIndex,
           materialCount:mats.length,
+          materialIsArray:Array.isArray(rec.hybrid),
           materialName:material?.name||'',
           materialUuid:material?.uuid||null,
           materialVisible:material?.visible!==false,
