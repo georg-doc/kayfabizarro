@@ -5,7 +5,7 @@
   "status": "IMPLEMENTATION_CANDIDATE",
   "sourceRepo": "georg-doc/kayfabizarro",
   "sourceBranch": "chatgpt-web/toolbox-hybrid-seamless-macro-2026-09-22",
-  "sourceBranchHead": "13f642d4c9d037a17f5867acc44c59c9cac44117",
+  "sourceBranchHead": "8a64b33a917417402b6932fc152ec9f3bcf32fb1",
   "sourceScreenshotFeedback": "2026-09-22 · visible line on broad flat wall",
   "provenCause": "legacy createRgbBrushTexture paints a non-periodic canvas then uses RepeatWrapping; opposite edges do not match",
   "fix": "toroidal wrapped strokes/blobs plus explicit opposite-edge normalization",
@@ -23,5 +23,10 @@
     "compileCensusIssue": "not resolved by this seam-only slice"
   },
   "stageUrl": "https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/hybrid-surface-seam-lab/",
-  "humanAcceptance": "PENDING"
+  "humanAcceptance": "PENDING",
+  "selfContainedMaterialModule": {
+    "path": "kfb-hub/stage/toolbox/hybrid-surface-seam-lab/hybrid-surface.v2.js",
+    "blob": "13480031b312d43766076c1d0086679ec74bc843",
+    "sourceFrozenHead": "7cbad52b55fb9ec2300aa4b25ca92b0997ce448a"
+  }
 }
