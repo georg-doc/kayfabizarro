@@ -105,7 +105,7 @@ Prepared fresh Web/GitHub chat:
 
 `tools/KFB-ToolBox/_handover/WORLD_BUILDING_PREFLIGHT_WEBCHAT_2026-09-22/START_HERE.md`
 
-Use it to reduce technical uncertainty before spending Claude/Flow Design context.
+Use it to reduce technical uncertainty before spending Claude Design context.
 
 It is deliberately bounded to small persisted gates:
 
@@ -113,4 +113,4 @@ It is deliberately bounded to small persisted gates:
 - P1 isolated WhackMan Environment Profile;
 - P2 same tiny recipe on FLAT / SPHERE / TORUS.
 
-The preflight does not replace this Claude Design brief. Its final `FLOW_DESIGN_INPUT.md`, if produced and verified, becomes additional evidence for a later sharpened design briefing.
+The preflight does not replace this Claude Design brief. Its final `CLAUDE_DESIGN_INPUT.md`, if produced and verified, becomes additional evidence for a later sharpened design briefing.
