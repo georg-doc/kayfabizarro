@@ -239,3 +239,64 @@ Prepare the bounded implementation slice for **Orc → Player → pink donut** u
 Do not ask Georg for internal actor IDs or caller-function names unless a concrete product conflict appears.
 
 Do not pull Keys or VFX into that proof except as explicitly deferred future lanes.
+
+
+## Orc Band World-Life packet
+
+Prepared future WorldBuilder fixture:
+
+- `ORC_BAND_WORLD_LIFE_START_HERE.md`
+- `ORC_BAND_DONOR_CHECK.md`
+- `ORC_BAND_WORLD_LIFE_RECIPE_v0.json`
+- `ORC_BAND_WORLD_BUILDER_POC_BRIEF.md`
+
+### Current scene direction
+
+**Orc Band · Funky War Jam**
+
+- Legacy Orc A → front/hype fallback;
+- Orc Raider / Rig_Medium → electric guitar A/B;
+- Orc Brute / Rig_Large → real War Drum + stick;
+- final music may use Georg/Suno stems;
+- technical spatial-audio proof can use current source-backed drum/guitar stems;
+- approaching band should be audible directionally before full visual reveal.
+
+### Offica Doppeldenk
+
+Reuse current Toy Soldier/Nutcracker donor.
+
+- Resident Atlas 4.8 s gift-box reveal;
+- then host-owned patrol;
+- inspect / interrupt / absurd bureaucracy;
+- citation/warning via existing Bubble social system;
+- optional Kayfabe Combat request;
+- Offica exits grumbling;
+- band resumes.
+
+This concretizes the already-documented Town role of Offica as bureaucratic Threshold Guardian.
+
+### Source limits
+
+- no shared Guitar-playing clip;
+- Animatronic guitar uses procedural/measured donor logic;
+- no Rig_Large drum clip;
+- no proven trumpet-to-mouth play clip;
+- do not block first scene proof on trumpet/microphone performance.
+
+### WorldBuilder prerequisite
+
+Current WorldBuilder SSOT requires:
+
+`WB1-P0 → WB1-P1 → WB1-P2 → WB1-P3 Claude input`
+
+before Claude Design authoring.
+
+Therefore this packet is **prepared, not yet an executable Claude order**.
+
+Do not spend Claude tokens rediscovering the donors once WorldBuilder reaches P3.
+
+## One next gate
+
+For this concept lane: stop expanding the Orc Band packet.
+
+Project execution gate remains the current WorldBuilder prerequisite sequence. Once WB1-P0–P2 are green, consume `ORC_BAND_WORLD_LIFE_START_HERE.md` as the preferred first World-Life fixture.
