@@ -216,6 +216,46 @@ Confirm the actual source behaviour for:
 - local visibility;
 - material mattification.
 
+### Spindle Sky / card funnel donor
+
+Use the existing Combat planning source rather than rebuilding the effect.
+
+Current Combat planning branch:
+
+`georg-doc/KFB-Combat-Arena:wsa/ca2-kaykit-prep-2026-09-20`
+
+Read:
+
+- `_handover/CA2_KAYKIT_ACTORS_2026-09-20/prompts/SKY_01_SPINDLE_MODULE.md`
+- donor `himmel.v4.js`
+- donor `spindel.v4.js`
+- donor `skydome-shader.v4.js`
+
+Useful existing behaviour:
+
+- cylindrical interior sky carrying real KFB card motifs;
+- lower card funnel/trichter;
+- upper spindle/dome closure;
+- optional vortex/lava throat surface;
+- separate psychedelic/hypno spiral overlay;
+- palette/story-sky hooks;
+- measured camera/far-plane and closure diagnostics;
+- existing lifecycle clues `mount/update/dispose`.
+
+Classify it as a **reusable Environment / World Element donor**, not Combat-only scenery.
+
+Do not integrate it into Race or World in P0.
+
+Do not couple a new module to Combat private fields.
+
+The existing Combat brief already proposes a standalone candidate:
+
+`kfb.environment.spindle-sky/0.1-candidate`
+
+with host-owned scene/camera/renderer/clock/fog/gameplay.
+
+P0 should decide only whether that extraction remains the correct modular seam and what exact donor revisions to pin.
+
 ### Storytelling Map / Tactical representation donor
 
 Use current main intake:
