@@ -458,4 +458,4 @@ Working authoring grammar:
 
 `EyeRig → Face → Head/Graft → Resident → Activity → Scene → Story Zone → World placement`
 
-First proposed implementation fixture, only after explicit build approval: **Park Bench micro-scene**; Forge micro-story follows later. Current World Building / Surface Adapter preflight remains separate and must be consumed rather than duplicated.
+Current first implementation fixture, only after explicit build approval: **Lore Keeper · Open-Air Study Story Zone** with staged LK-L1 study → LK-L2 Desk/Shelf → LK-L3 book/Card POI discovery. Park Bench remains a later minimal regression fixture. Social ideation now also includes a Kayfabe buddy-banter → optional social-melee → explicit repair loop, with Bond / temporary Heat / topic stance kept separate. Current World Building / Surface Adapter preflight remains separate and must be consumed rather than duplicated.
