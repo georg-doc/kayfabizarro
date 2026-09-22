@@ -2,7 +2,7 @@
   "schema": "kfb.stage-source/0.1",
   "product": "KFB ToolBox · Hybrid Surface Seam Lab",
   "owner": "KFB ToolBox / material-surface compatibility lab",
-  "status": "IMPLEMENTATION_CANDIDATE",
+  "status": "PUBLIC_VERIFIED_HUMAN_OPEN",
   "sourceRepo": "georg-doc/kayfabizarro",
   "sourceBranch": "chatgpt-web/toolbox-hybrid-seamless-macro-2026-09-22",
   "sourceBranchHead": "8a64b33a917417402b6932fc152ec9f3bcf32fb1",
@@ -28,5 +28,24 @@
     "path": "kfb-hub/stage/toolbox/hybrid-surface-seam-lab/hybrid-surface.v2.js",
     "blob": "13480031b312d43766076c1d0086679ec74bc843",
     "sourceFrozenHead": "7cbad52b55fb9ec2300aa4b25ca92b0997ce448a"
+  },
+  "currentResearchHead": "fa07441f3d6cfd310623a514dc1ec40cce9e1ada",
+  "localEvidence": {
+    "workflowRun": 35675898799,
+    "job": 106582254628,
+    "checks": "17/17 PASS",
+    "failedResources": 0,
+    "pageConsoleErrors": 0
+  },
+  "publicEvidence": {
+    "workflowRun": 35676178615,
+    "localJob": 106583077082,
+    "publicJob": 106583528203,
+    "checks": "17/17 PASS",
+    "deployedSourceHead": "8a64b33a917417402b6932fc152ec9f3bcf32fb1",
+    "artifactId": 10673850312,
+    "artifactDigest": "sha256:0fe0a8e6a407e5a84e24a8751e2729ba5a83891b0e3b2a233d1fa451ab736509",
+    "failedResources": 0,
+    "pageConsoleErrors": 0
   }
 }
