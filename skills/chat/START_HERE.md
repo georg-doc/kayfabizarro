@@ -442,3 +442,20 @@ Prepared Combat companion:
 `skills/chat/workflows/KFB_LEAD_WORK_CHECKIN_2026-09-22/COMBAT_RANGED_MVP.md`
 
 First Combat consolidation is ranged-first and does not depend on melee.
+
+
+## 2026-09-22 · Resident Story Zones ideation
+
+Planning/recovery home for Georg's current Resident/NPC + ChatterBox + World Authoring ideation:
+
+`tools/KFB-ToolBox/_handover/RESIDENT_STORY_ZONE_IDEATION_2026-09-22/START_HERE.md`
+
+Current status: **LIVING CONCEPT · NO RUNTIME BUILD · NO PUBLIC STAGE CLAIM**.
+
+The concept reuses existing owners rather than creating a new NPC/world stack: Resident Atlas for actor composition, Asset Librarian/Registry for source identity, shared `kfb.scene-patch.v1` for in-scene transform patches, ChatterBox for situated speech, Motion/EyeRig/face owners for specialist profiles, and the receiving World/Travel/Hex/Dungeon host for placement, navigation, collision, camera and persistence.
+
+Working authoring grammar:
+
+`EyeRig → Face → Head/Graft → Resident → Activity → Scene → Story Zone → World placement`
+
+Current first implementation fixture, only after explicit build approval: **Lore Keeper · Open-Air Study Story Zone** with staged LK-L1 study → LK-L2 Desk/Shelf → LK-L3 book/Card POI discovery. Park Bench remains a later minimal regression fixture. Social ideation now also includes Social Attention / proximity-based NPC noticing, a source-backed Gift Drive, food-gift/gag framing from real KayKit/Tiny Treats props, a semantic Reaction Library, and a Kayfabe buddy-banter → optional social-melee → explicit repair loop. Bond / temporary Heat / topic stance stay separate; gifts add shared history rather than numeric friendship. Current technical concept gate is now **Shared Social / Gift Data Contract v0** on top of Minimal Resident Decision Loop v0. Machine-readable records cover ActivityState, PerceptionCandidate, Motive, SocialPair, EncounterBit, PlayerCall, GiftInventoryItem and MemoryReceipt; deterministic fixtures cover Resident→Resident, Resident→Player and player re-gift. Static shape check is 2/2 JSON parse, 8/8 records, 3/3 fixtures, 12 invariants. Player-facing extension retains short in-world KayfaBINGO/KayfaBONGO/KayfaBOGGLE/BLÖDSINN! Bubble calls, bounded provenance-aware Backpack and re-gifting. Protagonist A/B backpack sibling meshes remain donor candidates for the Goth Girl + Elisa setting; Elisa remains receiving context, not an invented KayKit actor. Current World Building / Surface Adapter preflight remains separate and must be consumed rather than duplicated.
