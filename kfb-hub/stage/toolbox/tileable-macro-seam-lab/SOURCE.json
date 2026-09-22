@@ -2,7 +2,7 @@
   "schema": "kfb.stage-source/0.1",
   "product": "KFB ToolBox · Tileable Macro Seam Lab",
   "owner": "KFB ToolBox / material-surface compatibility lab",
-  "status": "LOCAL_BROWSER_VERIFIED_PUBLICATION_PENDING",
+  "status": "PUBLIC_VERIFIED_HUMAN_OPEN",
   "sourceRepo": "georg-doc/kayfabizarro",
   "sourceBranch": "chatgpt-web/toolbox-tileable-macro-seam-2026-09-22",
   "sourceBranchHead": "5a7c57e77c81546e71e6f30404a84f02ddbf7cf5",
@@ -27,5 +27,18 @@
     "pageConsoleErrors": 0,
     "edgeScoreOld": 14.242192864614392,
     "edgeScoreTileable": 1.374768868108358
+  },
+  "currentResearchHead": "92485b08a410729bc4532f3529e2f0afc0286b12",
+  "publicEvidence": {
+    "workflowRun": 35677711287,
+    "localJob": 106587599579,
+    "publicJob": 106588167104,
+    "localChecks": "17/17 PASS",
+    "publicChecks": "17/17 PASS",
+    "deployedSourceHead": "5a7c57e77c81546e71e6f30404a84f02ddbf7cf5",
+    "artifactId": 10673323485,
+    "artifactDigest": "sha256:862e85d95cc0d3050e22cf856b5ba473b5ed34206b19d4fcb071a8880e6aad71",
+    "failedResources": 0,
+    "pageConsoleErrors": 0
   }
 }
