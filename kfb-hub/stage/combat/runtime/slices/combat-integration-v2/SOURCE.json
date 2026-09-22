@@ -1,6 +1,6 @@
 {
   "schema": "kfb.combat-integration-v2-source/1",
-  "status": "SOURCE_VERIFIED_CI_PASS_PUBLIC_STAGE_BLOCKED_BROWSER_PENDING",
+  "status": "C_MVP_A_R1_PARTIAL_FINITE_ACTORS_PASS_RELEASE_TARGETING_FAIL_NOT_PUBLISHED",
   "repository": "georg-doc/KFB-Combat-Arena",
   "branch": "chatgpt-web/combat-arena-integration-v2-2026-09-19",
   "pr": 5,
@@ -58,13 +58,22 @@
   "stage": {
     "projectPath": "/slices/combat-integration-v2/",
     "plannedPublicUrl": "https://kayfabizarro.pages.dev/kfb-hub/stage/combat/",
-    "publicStatus": "PACKAGING_BLOCKED_BINARY_TRANSPORT",
+    "publicStatus": "R1_CANDIDATE_PRESERVED_NOT_DEPLOYED",
     "publicMirrorPresentOnKayfabizarroMain": false,
-    "blocker": "exact mirror requires 19 local WOFF2 blobs plus assets/vfx/kfb-combat-atlas_4x3.png; sources are present in private GitHub/Dropbox but current connectors cannot bridge their binary bytes into a public Git blob write"
+    "candidateBranch": "stage/combat-ca2-pr5-c-mvp-a-2026-09-22",
+    "candidateHead": "906c9e93f36664b685ac21cd894ccd1b96981ff2",
+    "packageFiles": 217,
+    "packageIdentity": "R1 exact package rebuilt locally; publication branch intentionally unchanged",
+    "blocker": "after finite actor repair, real target clicks enter Idle_Gun but record 0 shots, 0 hits and 0 kills; isolate release/targeting in C-MVP-A-R2"
   },
   "notes": [
     "Dropbox contains a later CA2 v3 planning mirror, but it is not the GitHub implementation SSOT for this V2 slice.",
     "game-dev CLI was unavailable in the current ChatGPT environment; repository-native CI is the evidence baseline.",
-    "No incomplete public mirror or replacement font/VFX fallback was introduced."
+    "No incomplete public mirror or replacement font/VFX fallback was introduced.",
+    "The prior 19-font plus VFX-atlas binary transport blocker is resolved on the bounded publication branch.",
+    "C-MVP-A packaging changed no Combat runtime file; C-MVP-A-R1 changes only finite actor admission/isolation and graft-owned face evidence.",
+    "Exact Mage and Warrior source GLBs and all visible parts have finite bounds; no source mesh fallback was used.",
+    "Outer graft rig, mouth, two eye actors/eight visible eye meshes and gun are proven in the real browser; no second face owner was introduced.",
+    "cloudflare-live and the fixed Combat Stage were not advanced because R1 remains browser-partial."
   ]
 }

@@ -1,6 +1,18 @@
 # Failure Recovery · CA2 Public Stage Packaging
 
-Status: **PRESERVED · STOP AFTER TWO FAILED TRANSFER PATHS**
+Status: **BINARY TRANSFER RECOVERED · R1 CANDIDATE PRESERVED · NOT PUBLISHED**
+
+## 2026-09-22 recovery update
+
+The binary transfer boundary is resolved without replacing any asset:
+
+- all 215 portable runtime files were written as exact Git blobs to `georg-doc/kayfabizarro`;
+- candidate branch: `stage/combat-ca2-pr5-c-mvp-a-2026-09-22`;
+- candidate head after Hub metadata: `906c9e93f36664b685ac21cd894ccd1b96981ff2`;
+- 215/215 packaged file blob SHAs match the rebuilt local `dist/`;
+- the 19 WOFF2 files and Combat VFX atlas retain their exact source blob identities.
+
+The new blocker is not packaging. R1 disproved the initial face diagnosis, repaired the missing `forwardZ` transform root cause, and preserved the finite-actor candidate. The remaining real-browser blocker is release/targeting: real target clicks reach `Idle_Gun` but record 0 shots/0 hits. See `C_MVP_A_R1_BROWSER_REPAIR_2026-09-22.md`. The protected publication branch remains unchanged.
 
 This export is for the next binary-capable WSA/local handoff. It does not change Combat runtime ownership.
 

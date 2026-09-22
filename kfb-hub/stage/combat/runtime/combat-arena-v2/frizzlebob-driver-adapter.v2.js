@@ -19,7 +19,9 @@ export default class DriverCA2{
   if(!pet)throw Error('MISSING_ASSET: graft-driver');
   this.g=await G.mountGraft({THREE:this.T,loader:this.loader,parent:this.root,pet,lib:lib.lib||{},camera:this.camera,animation:'host',poseOverClip:'auto',log:this.log});
   this.figure=this.g.figure;this.rig=this.g.rig;this.mouth=this.g.mouth;this.weapon=this.g.weapon||null;
-  if(!this.figure)throw Error('MISSING_ASSET: graft figure');this.mixer=new this.T.AnimationMixer(this.figure);
+  if(!this.figure)throw Error('MISSING_ASSET: graft figure');
+  const face=this.faceEvidence();this.log('[face-proof] outer graft built · rig '+face.rig+' · mouth '+face.mouth+' · eyes '+face.eyeActors+' · eye meshes '+face.eyeMeshes);
+  this.mixer=new this.T.AnimationMixer(this.figure);
   for(const cat of['General','MovementBasic','CombatRanged'])await this.loadCategory(cat);
   for(const[k,v]of Object.entries(MAP)){const x=this.exact.get(v[1]);if(!x)throw Error('MISSING_ASSET: '+k+' -> '+v[1]);this.alias.set(k,{name:k,clip:x.clip,dur:x.dur,source:v[0],donorName:v[1],status:v[2]});}
   this.clips=Object.fromEntries(this.alias);this.play('Idle');return this.report();
@@ -37,7 +39,16 @@ export default class DriverCA2{
  async setVariant(){return'driver-graft';}
  pulseGun(){return !!this.weapon?.muzzle;}
  shotExpression(){if(!this.rig?.applyEmote)return false;this.rig.applyEmote({lidUpper:.18,lidLower:.04,slant:-.20,gaze:'front',rest:'angry'});return true;}
- update(dt,c){if(this.mixer)this.mixer.update(dt);if(this.g&&this.g.update)this.g.update(dt,c||this.camera);}
- report(){return{source:SOURCE,mixerOwner:'DriverCA2',groundOwner:'Player.v2',faceOwner:'graft-mount.v1',clipCount:this.exact.size,states:Object.fromEntries([...this.alias].map(([k,v])=>[k,{clip:v.donorName,set:v.source,status:v.status}])),mount:this.g&&this.g.report||null};}
+ update(dt,c){
+  if(this.mixer)this.mixer.update(dt);if(this.g&&this.g.update)this.g.update(dt,c||this.camera);
+  if(!this._faceRuntimeLogged&&this.root?.visible){const f=this.faceEvidence();if(f.visibleEyeMeshes>0){this.log('[face-proof] runtime visible · rig '+f.rig+' · mouth '+f.mouth+' · eyes '+f.eyeActors+' · visible eye meshes '+f.visibleEyeMeshes);this._faceRuntimeLogged=true;}}
+ }
+ faceEvidence(){
+  const rig=this.g?.rig,mouth=this.g?.mouth,eyes=Array.isArray(rig?.eyes)?rig.eyes:[];let eyeMeshes=0,visibleEyeMeshes=0;
+  const visible=o=>{for(let n=o;n;n=n.parent)if(n.visible===false)return false;return true;};
+  for(const eye of eyes)eye?.traverse?.(o=>{if(o.isMesh){eyeMeshes++;if(visible(o))visibleEyeMeshes++;}});
+  return{rig:!!rig,mouth:!!mouth,eyeActors:eyes.length,eyeMeshes,visibleEyeMeshes};
+ }
+ report(){return{source:SOURCE,mixerOwner:'DriverCA2',groundOwner:'Player.v2',faceOwner:'graft-mount.v1',face:this.faceEvidence(),clipCount:this.exact.size,states:Object.fromEntries([...this.alias].map(([k,v])=>[k,{clip:v.donorName,set:v.source,status:v.status}])),mount:this.g&&this.g.report||null};}
  dispose(){if(this.mixer)this.mixer.stopAllAction();if(this.g&&this.g.dispose)this.g.dispose();if(this.root&&this.root.parent)this.root.parent.remove(this.root);}
 }

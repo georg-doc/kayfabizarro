@@ -69,6 +69,35 @@ export const SPEC = {
   ausgeschlossen: ['q_skull']
 };
 
+const finite3 = (v) => !!v && Number.isFinite(v.x) && Number.isFinite(v.y) && Number.isFinite(v.z);
+const finiteBox = (b) => !!b && finite3(b.min) && finite3(b.max) && !b.isEmpty();
+
+/** Misst ausschließlich sichtbare Mesh-Geometrie. Ein defektes Netz wird mit Namen abgewiesen;
+    es gibt weder einen Zahlen-Fallback noch einen geratenen Maßstab. */
+export function visibleFiniteBounds(T, root, actor = 'actor') {
+  root.updateMatrixWorld(true);
+  const box = new T.Box3().makeEmpty(), nodes = [];
+  root.traverseVisible((node) => {
+    if (!node.isMesh && !node.isSkinnedMesh) return;
+    const geometry = node.geometry;
+    if (!geometry || !geometry.getAttribute('position')) return;
+    const part = new T.Box3();
+    if (node.isSkinnedMesh) {
+      node.computeBoundingBox();
+      if (node.boundingBox) part.copy(node.boundingBox);
+    } else {
+      if (!geometry.boundingBox) geometry.computeBoundingBox();
+      if (geometry.boundingBox) part.copy(geometry.boundingBox);
+    }
+    part.applyMatrix4(node.matrixWorld);
+    const name = node.name || node.type || 'unnamed-mesh';
+    if (!finiteBox(part)) throw new Error('NON_FINITE_BOUNDS: ' + actor + ' / ' + name);
+    nodes.push(name); box.union(part);
+  });
+  if (!nodes.length || !finiteBox(box)) throw new Error('NON_FINITE_BOUNDS: ' + actor + ' / no visible finite geometry');
+  return { box, nodes };
+}
+
 export default class MobBrain {
   /* ZUSTAND ALS KLASSENFELDER, nicht am Ende von `init()`. `zeile()` und `probe()` laufen bei jedem
      Rendern — auch während `init()` noch auf den Roster-Import wartet. Dritter Fall derselben Sorte
@@ -159,6 +188,10 @@ export default class MobBrain {
                       rollen: rollen.map((e) => e.id), pool: pool.length };
     for (let i = 0; i < anz; i++) {
       const e = rollen[i];
+      if (!Number.isFinite(e && e.forwardZ) || e.forwardZ === 0) {
+        this.log('Actor verworfen: ' + (e && e.id || 'unknown') + ' — NON_FINITE_DESCRIPTOR: forwardZ');
+        continue;
+      }
       /* EINE GRÖSSE, GEMESSEN AM KÖRPER — nicht an Hörnern. Georg 06.09.: »das liegt vermutlich an
          Hörnern etc., die eine unterschiedliche Skalierung ergeben, wenn wir nicht Body oder Augen
          für die Skalierung nutzen«. Genau so: die Gesamtbox enthält Hörner, Ohren, Schwänze und
@@ -175,8 +208,15 @@ export default class MobBrain {
       catch (err) { this.log('Modell nicht ladbar: ' + e.name + ' — ' + ((err && err.message) || err)); continue; }
       const wurzel = gltf.scene;
       /* Höhe MESSEN, dann skalieren — die Rohhöhe im Roster ist die Modellhöhe, nicht die Welthöhe. */
-      wurzel.updateMatrixWorld(true);
-      const ganz = new T.Box3().setFromObject(wurzel);
+      let sourceMeasure = null;
+      try {
+        sourceMeasure = this.visualSource ? visibleFiniteBounds(T, wurzel, e.id) : { box: new T.Box3().setFromObject(wurzel), nodes: [] };
+        if (!finiteBox(sourceMeasure.box)) throw new Error('NON_FINITE_BOUNDS: ' + e.id + ' / root');
+      } catch (err) {
+        this.log('Actor verworfen: ' + e.id + ' — ' + ((err && err.message) || err));
+        continue;
+      }
+      const ganz = sourceMeasure.box;
       /* ÜBER DIE BREITE NORMIEREN, NICHT ÜBER DIE HÖHE. Zweiter Anlauf an Georgs Diagnose: `Body` ist
          bei den Cube-Monstern ein KNOCHEN, kein Mesh (steht so in `kfb-stride-measure.js`) — mein
          Namensfilter fand also nichts und fiel auf die Gesamtbox zurück, und die Unterschiede blieben.
@@ -199,9 +239,17 @@ export default class MobBrain {
          und q_tree bei 1,42 u — größer als FB, weil es das größte Modell IST.
          RÜCKWEG auf Normierung: `const s = zielB / brRoh`.
          Merksatz: eine Gruppe skaliert man mit EINER Zahl. */
-      const brRoh = Math.max(ganz.max.x - ganz.min.x, ganz.max.z - ganz.min.z) || 1;
-      const rohH = Math.max(0.001, ganz.max.y - ganz.min.y);
+      const brRoh = Math.max(ganz.max.x - ganz.min.x, ganz.max.z - ganz.min.z);
+      const rohH = ganz.max.y - ganz.min.y;
+      if (!Number.isFinite(brRoh) || brRoh <= 0 || !Number.isFinite(rohH) || rohH <= 0 || !Number.isFinite(zielH)) {
+        this.log('Actor verworfen: ' + e.id + ' — NON_FINITE_SCALE_INPUT');
+        continue;
+      }
       const s = this.visualSource ? (zielH / rohH) : (SPEC.hoehe.global * (H / 1.2));
+      if (!Number.isFinite(s) || s <= 0) {
+        this.log('Actor verworfen: ' + e.id + ' — NON_FINITE_SCALE');
+        continue;
+      }
       void brRoh; void zielB;
       const halter = new T.Group();
       halter.name = 'mob-' + e.id + '-' + i;
@@ -242,21 +290,32 @@ export default class MobBrain {
         } catch (err) { this.log('Look-Schicht AUSFALL: ' + ((err && err.message) || err)); }
       }
       wurzel.traverse((o) => { if (o.isMesh) { o.castShadow = true; o.receiveShadow = true; } });
-      this.gruppe.add(halter);
-
       const mixer = new T.AnimationMixer(wurzel);
       /* RADIUS AUS DER GEMESSENEN BREITE. `0,3 × Höhe` war geraten und zu klein: die Rumpfbreiten
          liegen bei 1,02–1,23 u, der halbe Körper also bei 0,5–0,6 u — mit 0,3 steckten die Modelle
          ineinander, während die Rechnung »Abstand gewahrt« sagte. */
-      wurzel.updateMatrixWorld(true);
-      const skaliert = new T.Box3().setFromObject(wurzel);
-      const rGemessen = Math.max(0.12, Math.max(skaliert.max.x - skaliert.min.x, skaliert.max.z - skaliert.min.z) * 0.5);
+      let scaledMeasure = null;
+      try {
+        scaledMeasure = this.visualSource ? visibleFiniteBounds(T, wurzel, e.id + ' scaled') : { box: new T.Box3().setFromObject(wurzel), nodes: [] };
+        if (!finiteBox(scaledMeasure.box)) throw new Error('NON_FINITE_BOUNDS: ' + e.id + ' / scaled root');
+      } catch (err) {
+        this.log('Actor verworfen: ' + e.id + ' — ' + ((err && err.message) || err));
+        continue;
+      }
+      const skaliert = scaledMeasure.box;
+      const rGemessen = Math.max(skaliert.max.x - skaliert.min.x, skaliert.max.z - skaliert.min.z) * 0.5;
+      const measuredHeight = skaliert.max.y - skaliert.min.y;
+      if (!Number.isFinite(rGemessen) || rGemessen <= 0 || !Number.isFinite(measuredHeight) || measuredHeight <= 0) {
+        this.log('Actor verworfen: ' + e.id + ' — NON_FINITE_SCALED_MEASURE');
+        continue;
+      }
       const clips = {};
       for (const c of gltf.animations || []) clips[c.name] = c;
       const walkName = this.roleClip(e, 'walk');
       const idleName = this.roleClip(e, 'idle');
       const mob = {
-        e, root: halter, mixer, clips, radius: rGemessen, hoehe: +(skaliert.max.y - skaliert.min.y).toFixed(3), skala: +s.toFixed(4),
+        e, root: halter, mixer, clips, radius: rGemessen, hoehe: +measuredHeight.toFixed(3), skala: +s.toFixed(4),
+        sourceNodes: sourceMeasure.nodes.slice(),
         pos: halter.position.clone(), vel: new T.Vector3(), blick: 0,
         dir: this.rng() * Math.PI * 2, dirBis: SPEC.friede.halten[0] + this.rng() * (SPEC.friede.halten[1] - SPEC.friede.halten[0]),
         aktion: null, rolle: null, tempo: 0, gefallen: 0,
@@ -268,6 +327,7 @@ export default class MobBrain {
          ist eine Entscheidung, keine Messung (steht so in `schrittmass.json`). */
       mob.maxTempo = mob.refWalk ? +(mob.refWalk * SPEC.rateZiel).toFixed(3)
         : +((mob.takt ? mob.takt.takt : 1.8) * SPEC.taktTempo).toFixed(3);
+      this.gruppe.add(halter);
       this.mobs.push(mob);
       this._spiele(mob, 'idle');
       bericht.gesetzt++;
@@ -308,7 +368,20 @@ export default class MobBrain {
    * Geschoben (`_trennen`) werden weiter ALLE Körper — eine Leiche soll nicht in FB stecken — aber
    * GEMESSEN wird nur, was lebt.
    */
-  lebende() { return (this.mobs || []).filter((m) => !m.tot && !m.weg); }
+  _finiteActor(m) {
+    return !!m && finite3(m.pos) && Number.isFinite(m.radius) && m.radius > 0
+      && Number.isFinite(m.hoehe) && m.hoehe > 0 && Number.isFinite(m.e && m.e.forwardZ)
+      && Number.isFinite(m.root && m.root.rotation.y);
+  }
+
+  _quarantine(m, reason = 'NON_FINITE_RUNTIME_TRANSFORM') {
+    if (!m || m.invalid) return;
+    m.invalid = reason; m.tempo = 0;
+    if (m.root) m.root.visible = false;
+    if (this.log) this.log('Actor isoliert: ' + (m.e && m.e.id || 'unknown') + ' — ' + reason);
+  }
+
+  lebende() { return (this.mobs || []).filter((m) => !m.tot && !m.weg && !m.invalid && this._finiteActor(m)); }
 
   /** Kleinster Abstand zwischen allen Paaren UND zum Spieler — die Zahl für C2. */
   _minAbstand() {
@@ -338,8 +411,9 @@ export default class MobBrain {
     if (!this.mobs.length) return;
     if (this.time && this.time.state.phase !== 'play') { for (const m of this.mobs) m.mixer.update(dt); return; }
     const zx = this.ziel ? this.ziel.position.x : 0, zz = this.ziel ? this.ziel.position.z : 0;
-    for(const m of this.mobs){m._motionStart=m.pos.clone();}
+    for(const m of this.mobs){if(m.tot||m.weg)continue;if(this._finiteActor(m))m._motionStart=m.pos.clone();else this._quarantine(m);}
     for (const m of this.mobs) {
+      if (m.invalid || !this._finiteActor(m)) { this._quarantine(m); continue; }
       // Death owns the body. Walk/idle must never replace its last pose.
       if (m.tot || m.weg) { m.tempo = 0; if (!m.weg) m.mixer.update(dt); continue; }
       if ((m.powerStun || 0) > 0) { m.tempo = 0; continue; }
@@ -425,7 +499,7 @@ export default class MobBrain {
       if (this.loco) this.loco.anmelden(m.e.name, { tempo: m.tempo, rolle: 'walk' });
     }
     this._trennen();
-    for(const m of this.mobs){(m.vel ||= m.pos.clone()).copy(m.pos).sub(m._motionStart).divideScalar(Math.max(dt,1e-6));}
+    for(const m of this.mobs){if(!m.invalid)(m.vel ||= m.pos.clone()).copy(m.pos).sub(m._motionStart).divideScalar(Math.max(dt,1e-6));}
   }
 
   /**
@@ -447,7 +521,7 @@ export default class MobBrain {
       let bewegt = false;
       for (let i = 0; i < this.mobs.length; i++) for (let j = i + 1; j < this.mobs.length; j++) {
         const a = this.mobs[i], b = this.mobs[j];
-        if (a.tot || a.weg || b.tot || b.weg) continue;
+        if (a.tot || a.weg || a.invalid || b.tot || b.weg || b.invalid || !this._finiteActor(a) || !this._finiteActor(b)) continue;
         const soll = a.radius + b.radius + luft;
         let dx = b.pos.x - a.pos.x, dz = b.pos.z - a.pos.z;
         let d = Math.hypot(dx, dz);
@@ -468,7 +542,7 @@ export default class MobBrain {
       if (!bewegt) break;
     }
     for (const m of this.mobs) {
-      if(m.tot || m.weg)continue;
+      if(m.tot || m.weg || m.invalid || !this._finiteActor(m))continue;
       const c = this.field.contain(m.pos, m.radius);
       if (c.push.x || c.push.z) {
         m.pos.x += c.push.x; m.pos.z += c.push.z;

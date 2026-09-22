@@ -1,45 +1,43 @@
 {
   "schema": "kfb.combat-stage-source/1",
-  "stage": "C-MVP-A",
-  "status": "EXACT_PACKAGE_BROWSER_FAIL_PUBLICATION_BLOCKED",
+  "stage": "C-MVP-A-R1",
+  "status": "R1_PARTIAL_FINITE_ACTORS_PASS_RELEASE_TARGETING_FAIL_CANDIDATE_ONLY",
   "source": {
     "repository": "georg-doc/KFB-Combat-Arena",
     "pr": 5,
     "branch": "chatgpt-web/combat-arena-integration-v2-2026-09-19",
     "implementationCommit": "954f2db7484dc566e468e5ce89b0d95940d97537",
-    "handoffHead": "2aea7c85f0e1f2ea333a92c5ce98bbcd16bdcfb3",
+    "r1Head": "4a9842acddd27b227ee48afed0be02b9303a0b94",
     "runtimePath": "dist/"
   },
   "packaging": {
     "repository": "georg-doc/kayfabizarro",
     "branch": "stage/combat-ca2-pr5-c-mvp-a-2026-09-22",
-    "runtimeCommit": "5ef336ad34b5adf0ad75163ae6adf11910f39f73",
-    "files": 215,
-    "byteIdentity": "215/215 VERIFIED_BY_GIT_BLOB_SHA"
+    "files": 217,
+    "byteIdentity": "217/217: 205 preserved exact blobs + 12 changed/new exact dist blobs"
   },
   "public": {
     "url": "https://kayfabizarro.pages.dev/kfb-hub/stage/combat/",
     "status": "NOT_DEPLOYED",
-    "reason": "protected publication gate rejected browser-failing candidate pending explicit post-failure human authorization"
+    "reason": "R1 remains browser-partial; cloudflare-live and fixed Combat Stage intentionally unchanged"
   },
   "browser": {
-    "status": "FAIL",
-    "blockers": [
-      "DriverCA2 does not forward EyeRig/Mouth modules",
-      "Skeleton Mage bounds/scale become non-finite and contaminate both enemy positions",
-      "14 Fire-probe shots produced 0 hits / 0 kills"
-    ],
+    "status": "R1_PARTIAL",
     "passes": [
-      "Idle",
+      "outer graft rig + mouth + 2 eye actors / 8 visible eye meshes + gun",
+      "Mage and Warrior finite alone and together",
+      "Idle and keyboard Walk movement",
       "audio 22/22",
-      "desktop layout",
-      "390x844 narrow layout",
+      "desktop and 390x844 narrow layout",
       "0 app/console errors"
-    ]
+    ],
+    "blocker": "real target clicks enter Idle_Gun but record 0 shots / 0 hits / 0 kills",
+    "nextGate": "C-MVP-A-R2 release/targeting root-cause only"
   },
   "ownership": {
     "movementGround": "Player.v2",
     "playerPresentationMixer": "DriverCA2",
+    "face": "graft-mount.v1",
     "muzzle": "graft-muzzle -> Gunfight",
     "gunfight": "Gunfight",
     "enemyLifecycle": "MobBrain",
@@ -48,8 +46,10 @@
   "excluded": [
     "Legacy actor",
     "melee",
-    "new combat code",
-    "Spindle Sky"
+    "new Combat features",
+    "Spindle Sky",
+    "visual polish",
+    "new architecture"
   ],
   "updatedAt": "2026-09-22"
 }

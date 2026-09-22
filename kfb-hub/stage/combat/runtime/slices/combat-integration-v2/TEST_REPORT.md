@@ -1,6 +1,6 @@
 # Combat Arena Integration V2 · Test Report
 
-Status: **CI_PASS · PUBLIC_STAGE/BROWSER/PERFORMANCE/HUMAN GATES PENDING**  
+Status: **71/71 PASS · R1 BROWSER PARTIAL · RELEASE/TARGETING R2 REQUIRED**
 Branch: `chatgpt-web/combat-arena-integration-v2-2026-09-19`  
 PR: #5  
 Validated handoff parent: `95971ff0f817ef9d1280f1f235e10d0b2adc89b8`
@@ -69,4 +69,6 @@ The optional Game Development Studio `game-dev` CLI was checked once in the curr
 
 ## Next gate
 
-Use a binary-capable checkout/WSA surface to mirror the exact 180-file runtime into `kayfabizarro/kfb-hub/stage/combat/runtime/`, add the Hub Stage pointer, then open the exact Cloudflare route and collect real-browser state/attachment, viewport and performance evidence.
+R1 adds three focused regressions and the complete suite passes **71/71**. The rebuilt portable package contains **217 files**; re-home reports **172 preserved runtime / 66 verified donor files / routes PASS / public-local paths NONE**.
+
+Real-browser evidence is recorded in `C_MVP_A_R1_BROWSER_REPAIR_2026-09-22.md`: face and finite enemy transforms pass, but release/targeting remains failed with 0 shots/0 hits. Exactly one C-MVP-A-R2 may diagnose that existing path. No feature slice and no publication starts here.

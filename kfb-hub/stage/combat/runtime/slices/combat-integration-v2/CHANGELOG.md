@@ -1,5 +1,25 @@
 # Combat Integration V2 · Additive Changelog
 
+## 2026-09-22 · C-MVP-A-R1 finite actor repair
+
+- Proved both exact KayKit source GLBs and every visible source part have finite bounds.
+- Traced the failure to missing `forwardZ` in the CA2 actor descriptors: the first admitted actor acquired a non-finite rotation and then contaminated pair separation.
+- Added strict visible-geometry bounds, finite scale/transform gates, delayed admission and invalid-actor quarantine; no guessed scale fallback.
+- Added graft-owned face evidence and proved outer rig, mouth, two eyes/eight visible eye meshes and gun without introducing another face owner.
+- Raised the full suite from 68 to 71 passing tests; rebuilt the 217-file exact package.
+- Real-browser recheck passes enemy transforms, face, desktop/narrow viewport and 22/22 audio, but release/targeting still records 0 shots/0 hits after a real target click.
+- Classified R1 as PARTIAL, preserved the candidate, left `cloudflare-live` and the fixed Combat Stage unchanged, and selected exactly one R2 release/targeting gate.
+
+## 2026-09-22 · C-MVP-A exact packaging + browser baseline
+
+- Reconfirmed PR #5 source lock at `954f2db7484dc566e468e5ce89b0d95940d97537`.
+- Re-ran 68/68 repository tests, 215-file portable build and 172/66 re-home verification.
+- Packaged all 215 exact runtime blobs on `georg-doc/kayfabizarro:stage/combat-ca2-pr5-c-mvp-a-2026-09-22`.
+- Resolved the previous binary transport blocker without replacing fonts or VFX.
+- Captured a real-browser baseline and found two runtime blockers: missing Driver EyeRig/Mouth forwarding and non-finite KayKit enemy positions.
+- Kept every Combat owner and runtime file unchanged.
+- Did not claim `PUBLIC_VERIFIED`, did not start C-MVP-B, Legacy, melee or Spindle.
+
 ## 2026-09-20 · Final handoff metadata
 
 - Validated handoff parent `95971ff0f817ef9d1280f1f235e10d0b2adc89b8`.

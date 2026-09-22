@@ -1,6 +1,6 @@
 # RETURN · Combat Arena Integration V2
 
-Status: **CI_PASS · PUBLIC_STAGE_BLOCKED · BROWSER/HUMAN_PENDING**
+Status: **C-MVP-A-R1 PARTIAL · FINITE ACTORS PASS · RELEASE/TARGETING FAIL · NOT PUBLISHED**
 
 ## Exact handoff
 
@@ -78,4 +78,8 @@ A broken public mirror, replacement font set, VFX fallback, generic UI or second
 
 ## One next gate
 
-On a binary-capable WSA/local checkout, mirror the exact Combat runtime to `kayfabizarro/kfb-hub/stage/combat/runtime/`, update the Hub Stage card, and verify `https://kayfabizarro.pages.dev/kfb-hub/stage/combat/` before any further combat feature work.
+The exact KayKit sources are finite. R1 repaired the real cause: missing enemy `forwardZ` poisoned the first actor's live rotation and then pair separation. Mage and Warrior now remain finite alone and together. The outer graft already owns a real rig, mouth, two eyes/eight visible eye meshes and gun; the inner legacy warnings required no second owner and no repair.
+
+The repaired local browser run still records `0` shots, hits and kills after a real target click and reports `Waffe noch nicht bereit - erneut zielen`. Per the explicit gate, R1 stops PARTIAL. See `C_MVP_A_R1_BROWSER_REPAIR_2026-09-22.md`.
+
+Exactly one next gate: **C-MVP-A-R2 · release/targeting root-cause only**. Do not start C-MVP-B, Legacy, melee or Spindle. Do not publish until that real browser sequence passes.
