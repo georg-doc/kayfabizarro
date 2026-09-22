@@ -1131,3 +1131,29 @@ No merge. No Live promotion.
 
 **KLR-EYE-VIS-01** — human Legacy EyeRig review. Knight default + Rogue default must pass before `CA2-LEGACY-01R`.
 
+
+
+## 2026-09-22 · Web-first / Work-escalation-only reset
+
+Georg rejected the cost pattern where Work/WSA quota was consumed by routine debugging, optional-asset repair, axis investigation and maintenance before a playable result existed.
+
+New binding default:
+
+`skills/chat/workflows/KFB_WEB_FIRST_EXECUTION_V1_2026-09-22/START_HERE.md`
+
+Execution split:
+
+- Web/GitHub = normal production, planning, code, tests, debugging, changelogs, Hub metadata;
+- Claude Design = visual/interactive 3D authoring;
+- local HTTP preview = normal rapid human review loop;
+- Work/WSA = explicit capability escalation only;
+- Cloudflare = milestone/public acceptance surface, not routine debugging.
+
+Added:
+
+- `WORK_ESCALATION_CARD.md`
+- `LOCAL_PREVIEW_FIRST.md`
+
+Routine Lead Work control-plane onboarding is superseded for normal check-ins. Before any Work session the missing capability must be named explicitly; if Web + Claude Design + local preview can finish the task, Work must not be used.
+
+Combat C-MVP-A is the motivating evidence: private binary packaging, real browser automation and final public verification were Work-value; optional Mage diagnosis, face-log investigation, forward-axis repair, weapon-axis/release repair, ordinary tests/docs and Hub maintenance were not.
