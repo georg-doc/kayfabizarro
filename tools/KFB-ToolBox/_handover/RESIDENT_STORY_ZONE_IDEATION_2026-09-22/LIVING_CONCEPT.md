@@ -2741,3 +2741,446 @@ Memory: none yet
 This should be a ToolBox/debug affordance, not permanent player-facing HUD.
 
 The goal is to make emergent-looking behaviour **explainable and authorable**.
+
+
+---
+
+# 26 · Player Gift Conversations and Backpack Inventory
+
+## USER DIRECTION · 2026-09-22
+
+Gift Drive extends from NPC↔NPC to **NPC↔player**.
+
+Residents may actively want to give the player something.
+
+The gift should usually be connected to a short in-world conversation rather than appearing as a detached reward popup.
+
+Preferred interaction:
+
+- Monkey-Island-like selectable replies;
+- ChatterBox / Triplet conversation;
+- speech bubbles remain in-world where possible;
+- one or two short conversational turns are enough;
+- once the exchange meaningfully resolves, the Resident may offer the gift;
+- the player receives an early visible Backpack;
+- the Backpack carries a deliberately limited Gift Inventory;
+- objects received from Residents may later be given to other Residents through the same social conversation grammar.
+
+The result is a circulation of **social objects with provenance**, not one-way loot.
+
+## Existing call terminology
+
+Current KFB source defines the canonical player-facing labels:
+
+- **KayfaBINGO**
+- **KayfaBONGO**
+- **KayfaBOGGLE**
+- **BLÖDSINN!**
+
+Internal IDs remain:
+
+- `bingo`
+- `bongo`
+- `boggle`
+
+Georg's shorthand "Bingo / Boggle / Bongo" refers to this existing call family.
+
+Do not silently restore obsolete player-facing spellings.
+
+## PROPOSAL · player Bubble Calls
+
+The player answers inside the scene through a compact bubble choice rather than a detached dialogue screen.
+
+Minimal first call set:
+
+- `KayfaBINGO`
+- `KayfaBOGGLE`
+- `KayfaBONGO`
+- `BLÖDSINN!`
+
+These are **conversation moves**, not four quiz answers.
+
+### KayfaBINGO
+
+The current idea/beat landed enough to continue.
+
+### KayfaBOGGLE
+
+The player signals confusion / asks for clarification.
+
+The Resident may answer one short question or reframe.
+
+### KayfaBONGO
+
+The player challenges an overly mechanical / abstract framing and pushes it toward a concrete story beat.
+
+### BLÖDSINN!
+
+The player rejects the premise / calls nonsense / breaks the frame.
+
+That may produce:
+
+- mock offense;
+- counter-banter;
+- a reframe;
+- laughter;
+- a different gift framing;
+- an early conversation end.
+
+No call should automatically be the hidden "correct" choice.
+
+## PROPOSAL · one- or two-turn microconversation
+
+```
+NPC notices PLAYER
+→ NPC opens with Triplet / gift-related premise
+→ PLAYER_CALL_1
+→ NPC response
+→ optional PLAYER_CALL_2
+→ NPC resolution
+→ GIFT_OFFER
+→ player ACCEPT / DEFER / DECLINE
+→ TRANSFER_COMMIT if accepted
+→ Backpack update
+→ Lean Memory receipt
+→ reaction / release / resume
+```
+
+Ordinary gift conversation should stay short.
+
+Support:
+
+- one-call quick exchange;
+- two-call richer exchange;
+- early `BLÖDSINN!`;
+- defer / walk away;
+- later callback.
+
+Do not turn every social gift into a quest dialogue tree.
+
+## PROPOSAL · gift rewards engagement, not correctness
+
+The gift is normally a reward for **participating in / resolving the social beat**, not for choosing a single correct button.
+
+Possible outcomes:
+
+- all reasonable branches still give the gift;
+- one branch delays it;
+- one branch changes the gift or the gag framing;
+- `BLÖDSINN!` may delight a particular Resident;
+- prior Lean Memory may change what gets offered.
+
+This keeps Monkey-Island-style interaction playful rather than test-like.
+
+## Player as social target
+
+Extend Decision Loop v0:
+
+```
+Resident notices PLAYER
+→ candidate social motive
+→ GIFT / BANTER / SHOW / CALLBACK / INVITE
+→ approach / call out
+→ Bubble Conversation
+```
+
+The player lives in the same social world.
+
+Do not create a second "quest NPC" dialogue runtime.
+
+## PROPOSAL · Player Encounter Bit
+
+Candidate player-facing state flow:
+
+```
+OPEN
+→ PLAYER_CHOICE
+→ NPC_REPLY
+→ optional PLAYER_CHOICE
+→ RESOLVE
+→ GIFT_OFFER
+→ TRANSFER_COMMIT
+→ REACTION
+→ MEMORY
+→ RELEASE
+```
+
+Bounded context example:
+
+```js
+{
+  speaker: "resident.orc",
+  listener: "player",
+  motive: "GIFT",
+  beat: "PLAYER_CHOICE",
+  tripletRef: "optional",
+  playerCall: "boggle",
+  giftRef: "canonical-gift-ref",
+  relevantMemoryRefs: []
+}
+```
+
+ChatterBox may select/generate the response inside this bounded context.
+
+## In-world presentation
+
+Preferred presentation:
+
+- NPC bubble anchored to speaker;
+- compact player-choice bubble / strip / fan nearby;
+- scene remains visible;
+- no full-screen dialogue takeover for ordinary encounters;
+- ChatterBox / bubble owner remains presentation owner.
+
+Exact controls for mouse/touch/controller remain a later UI gate.
+
+## PROPOSAL · Backpack as visible inventory metaphor
+
+The player's Backpack has two roles:
+
+1. **visible avatar presentation / backpack profile**
+2. **entry point / metaphor for a bounded Gift Inventory**
+
+Do not encode inventory truth inside a mesh.
+
+The 3D Backpack is presentation.
+Gift Inventory is state.
+
+## Source-backed Backpack donors
+
+Current source evidence supports several useful backpack forms.
+
+### Orc Backpack
+
+Canonical Resident Atlas asset:
+
+`media/3D_Assets/KayKit_Mystery_Series6/1 - July 2023 - Orc Raider/assets/gltf/Orc_Backpack.gltf.glb`
+
+### Hoarder Backpack
+
+Current repo source:
+
+`media/3D_Assets/KayKit_Mystery_Series6/8 - February 2026 - Hoarder/gltf/Hoarder_Backpack.gltf`
+
+The Hoarder character also carries the same backpack family as a sibling mesh.
+
+### Hiker Backpack
+
+Current S38 donor evidence:
+
+`Hiker_Backpack` exists as a modular sibling mesh on the Hiker character.
+
+It is not a separate normal pack asset file.
+
+### Protagonist A + Protagonist B backpacks
+
+Current S38 donor evidence confirms:
+
+- `Protagonist_A.glb`
+- `Protagonist_B.glb`
+- both are Rig_Medium;
+- both visibly carry backpack sibling meshes;
+- the two backpack meshes are almost identical in measured vertex count;
+- the free-standing backpacks seen in the promo are Blender-separated copies, not separate source files.
+
+These are therefore **valid visual Backpack donors**, but extraction into reusable standalone player-backpack assets is a separate authoring/provenance task.
+
+## USER CORRECTION · Goth Girl + Elisa setting
+
+Georg clarified the intended setting reference as:
+
+**Goth Girl + Elisa**
+
+The two Protagonist backpack designs are useful visual candidates for the Elisa-oriented setting with Goth Girl.
+
+Do not misname this as "Crossgirl".
+
+Do not infer that Elisa is herself a KayKit source character.
+
+Goth Girl remains the source-backed KFB Resident.
+
+The Elisa setting is a receiving scene/context; its exact player/avatar source remains owned by that lane.
+
+## PROPOSAL · Backpack Profile / Skin layer
+
+Use a profile concept rather than baking inventory state into one donor:
+
+```json
+{
+  "profile": "player-backpack-profile",
+  "visualDonor": "protagonist-a-backpack",
+  "attachmentProfile": "rig-medium-back",
+  "inventoryRef": "player-gift-backpack"
+}
+```
+
+Possible future visual donors:
+
+- Protagonist A backpack;
+- Protagonist B backpack;
+- Hoarder Backpack;
+- Hiker Backpack;
+- Orc Backpack;
+- other source-proven variants.
+
+Each donor needs its own visible/source gate before becoming selectable.
+
+## PROPOSAL · Bounded Gift Inventory
+
+Working concept:
+
+`PLAYER_GIFT_BACKPACK`
+
+The player carries a deliberately small number of social objects.
+
+Exact slot count remains open until UX/play proof.
+
+Candidate record:
+
+```json
+{
+  "instanceId": "gift-instance-id",
+  "assetRef": "canonical-source-ref",
+  "kind": "food | prop | card | token",
+  "provenance": {
+    "from": "resident.orc",
+    "eventRef": "social-event-id",
+    "zone": "archive",
+    "reasonTag": "gift"
+  },
+  "state": "carried | displayed | offered | transferred"
+}
+```
+
+Backpack stores references/state, never duplicate model binaries.
+
+## Inventory vs Lean Memory
+
+Keep them linked but distinct.
+
+### Inventory asks
+
+**What transferable social objects does the player currently carry?**
+
+### Lean Memory asks
+
+**What meaningful event happened around this object?**
+
+Example:
+
+Inventory:
+- one food gift.
+
+Lean Memory:
+- who gave it;
+- what absurd promise came with it;
+- which Call the player used;
+- who witnessed the exchange;
+- whether it later changed hands.
+
+An item may leave Inventory while its memory remains.
+
+## PROPOSAL · player re-gifting
+
+A Backpack item can become a player-originated Gift Intent.
+
+```
+player approaches Resident
+→ social Bubble interaction
+→ player Call / gift branch
+→ choose eligible Backpack item
+→ NPC banter / reaction
+→ TRANSFER_COMMIT
+→ item leaves player inventory
+→ recipient provenance updates
+→ Lean Memory receipt
+```
+
+The recipient may later:
+
+- carry it;
+- display it;
+- re-gift it;
+- mock it;
+- remember it;
+- use it in ChatterBox callbacks.
+
+This creates a circulating social ecology.
+
+## Triplets + gifting
+
+Gift interaction should not collapse into:
+
+> "Hello, here is item X."
+
+The Triplet / call exchange provides the social framing.
+
+A simple gift may therefore become:
+
+```
+NPC premise / Triplet
+→ player Call
+→ NPC counter / clarification
+→ gift reveal
+→ accept / defer
+→ handoff
+→ reaction
+```
+
+The same physical gift can acquire different remembered meaning from the conversation around it.
+
+## PROPOSAL · Backpack capacity creates curation, not grind
+
+Limited capacity is useful if it creates choices:
+
+- keep a funny/significant object;
+- display it elsewhere;
+- give it onward;
+- decline another gift;
+- replace a low-meaning item.
+
+Do not turn this into weight management or survival inventory.
+
+The Backpack is a **social-memory inventory** first.
+
+## PROPOSAL · first player-facing proof
+
+After the two-NPC Decision Loop proof, use one Resident + player.
+
+Exactly:
+
+1. Resident notices player;
+2. Resident has one real source-backed food Gift Intent;
+3. Bubble opens;
+4. player chooses one canonical Call;
+5. Resident responds once;
+6. Resident offers gift;
+7. player accepts;
+8. one `TRANSFER_COMMIT`;
+9. Backpack shows one item reference + provenance;
+10. one Lean Memory receipt;
+11. conversation closes;
+12. world control resumes.
+
+Second proof:
+
+- player gives the same object to a different Resident;
+- original provenance remains readable;
+- inventory loses the object;
+- new recipient gets a social callback opportunity.
+
+No full quest system required.
+
+## Open gates
+
+Before implementation:
+
+- exact player/avatar owner for the receiving world;
+- exact first Backpack visual donor;
+- attachment compatibility per rig/player avatar;
+- first slot count;
+- Bubble choice presentation on desktop/mobile;
+- exact Triplet/ChatterBox player-call adapter;
+- save owner for Gift Inventory;
+- whether displayed gifts leave Backpack or remain referenced;
+- Backpack donor extraction for sibling-mesh-only sources such as Protagonists/Hiker.
