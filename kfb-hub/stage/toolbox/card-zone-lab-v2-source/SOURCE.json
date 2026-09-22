@@ -1,7 +1,7 @@
 {
   "schema": "kfb.card-zone-source-stage/1",
   "marker": "KFB_CARD_ZONE_LAB_V2_SOURCE_2026_09_22",
-  "status": "F1.5_SOURCE_ISOLATION_CANDIDATE",
+  "status": "PUBLIC_TECH_PASS_HUMAN_GATE_OPEN",
   "repository": "georg-doc/kayfabizarro",
   "branch": "toolbox/card-zone-lab-f1-5-source-stage-2026-09-22",
   "pullRequest": 172,
@@ -31,7 +31,7 @@
     "Hex, Dungeon and character consumers keep grid, collision, rig, movement and gameplay ownership"
   ],
   "localProof": "32/32 Chromium/WebGL PASS",
-  "publicVerifiedHead": null,
-  "publicProofRun": "PENDING_PUBLICATION",
+  "publicVerifiedHead": "757f04d346848ccd2d41565fa17d064254f180ec",
+  "publicProofRun": "32/32 Chromium/WebGL PASS against exact Cloudflare route",
   "humanAcceptance": "OPEN"
 }

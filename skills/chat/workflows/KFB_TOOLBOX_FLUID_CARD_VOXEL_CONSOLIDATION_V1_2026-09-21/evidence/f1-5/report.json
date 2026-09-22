@@ -1,6 +1,6 @@
 {
   "schema": "kfb.card-zone-source-proof/1",
-  "baseUrl": "http://127.0.0.1:4173/kfb-hub/stage/toolbox/card-zone-lab-v2-source/",
+  "baseUrl": "https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/card-zone-lab-v2-source/",
   "checks": [
     {
       "name": "source export contains 26 files",
@@ -176,7 +176,7 @@
       "pass": true,
       "detail": {
         "before": 0,
-        "after": 0.05
+        "after": 0.05009999996423722
       }
     },
     {
@@ -234,11 +234,11 @@
       "name": "Card Cube HTML face focus opens from source object",
       "pass": true,
       "detail": {
-        "opacity": 1,
-        "width": 211,
-        "height": 210.59375,
-        "left": 488.90625,
-        "top": 385.53125
+        "opacity": 0.99825,
+        "width": 207.5,
+        "height": 207.109375,
+        "left": 490.65625,
+        "top": 387.484375
       }
     },
     {
@@ -257,8 +257,6 @@
     }
   ],
   "browserErrors": [],
-  "allowedDonorMessages": [
-    "Failed to load resource: the server responded with a status of 404 (File not found) · http://127.0.0.1:4173/favicon.ico"
-  ],
+  "allowedDonorMessages": [],
   "observedFailedRequests": []
 }

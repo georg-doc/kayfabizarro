@@ -3,7 +3,7 @@
 ## 2026-09-22 · F1.5 exact Card Zone source Stage
 
 - Published the unchanged 26-file `card-zone-lab-v2-full_2026-09-22` export at the isolated ToolBox Stage route.
-- Added deterministic source/browser proof: 32/32 local Chromium/WebGL PASS with five screenshots.
+- Added deterministic source/browser proof: 32/32 public Chromium/WebGL PASS with five screenshots.
 - Preserved DudV fluid/no-grey-foam source behavior, CardStack/reveal, Sky Card/beams and Card Cube Canvas/HTML faces.
 - Added the Hex World/God Mode/cartoon-clay direction as proposal-only architecture outlook; no world runtime was built.
 

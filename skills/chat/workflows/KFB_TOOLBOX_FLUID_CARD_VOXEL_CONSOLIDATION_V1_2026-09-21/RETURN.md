@@ -135,7 +135,8 @@ The existing KFB Hub and ToolBox Home already route to this same consolidation b
 - Implementation/test head: `16efcfb7754a1adc0f5f2647a086ccc6d2c3460b`
 - Stage: `https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/card-zone-lab-v2-source/`
 - Donor app: blob `e7bb09e49b2a885eb076e8c43c0ff561a9cebb72`, SHA-256 `a619d3a867064ec033a149f400da708b57e8e05d24e44b709d18dd8c7a62284b`
-- Evidence: **32/32 local Chromium/WebGL PASS**, five screenshots, zero unexpected page/console errors and zero failed app requests.
+- Publication head: `757f04d346848ccd2d41565fa17d064254f180ec`
+- Evidence: **32/32 public Chromium/WebGL PASS**, five screenshots, zero unexpected page/console errors and zero failed app requests.
 
 The 26-file export is copied byte-for-byte; `index.html` is the same donor app. Added files are only Stage provenance/proof automation and evidence. No module extraction, placeholder, second runtime or owner transfer occurred.
 

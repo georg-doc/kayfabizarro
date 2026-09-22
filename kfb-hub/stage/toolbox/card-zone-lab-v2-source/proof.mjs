@@ -158,7 +158,7 @@ try {
   await page.screenshot({ path: path.join(PROOF_DIR, 'desktop-water-stack-closed.png'), fullPage: true });
 
   const timeBefore = await page.evaluate(() => window.__CZLAB.fluidU.uTime.value);
-  await page.waitForTimeout(350);
+  await page.waitForFunction((before) => window.__CZLAB?.fluidU?.uTime?.value > before, timeBefore, { timeout: 5000 });
   const timeAfter = await page.evaluate(() => window.__CZLAB.fluidU.uTime.value);
   check('DudV fluid time advances in browser', timeAfter > timeBefore, { before: timeBefore, after: timeAfter });
 

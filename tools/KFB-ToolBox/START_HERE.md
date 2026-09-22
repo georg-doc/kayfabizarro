@@ -100,6 +100,6 @@ Briefs:
 
 ## CURRENT ADDITIVE · Card Zone F1.5 exact source Stage · 2026-09-22
 
-Draft PR #172 publishes the unchanged 2026-09-22 Card Zone Lab v2 source at `https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/card-zone-lab-v2-source/`. Local Chromium/WebGL proof is 32/32 PASS. The direct Stage remains a human gate; it does not promote extracted modules or create a second runtime.
+Draft PR #172 publishes the unchanged 2026-09-22 Card Zone Lab v2 source at `https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/card-zone-lab-v2-source/`. Public Chromium/WebGL proof is 32/32 PASS. The direct Stage remains a human gate; it does not promote extracted modules or create a second runtime.
 
 The later Hex World/God Mode/cartoon-clay direction is proposal-only in the consolidation workflow; it is not part of F1.5.

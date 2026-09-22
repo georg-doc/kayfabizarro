@@ -119,7 +119,7 @@ After F1.5, continue the original F2–F5 sequence using the corrected owner/sou
 
 F1.5 is implemented on Draft PR #172. The isolated Stage is a byte-identical publication of the full 26-file 2026-09-22 source export; no module was extracted and no runtime owner changed.
 
-Technical evidence: **32/32 local Chromium/WebGL PASS** for DudV + water map with source foam off, CardStack/reveal, Sky Card + both beam sources, and six Card Cube CanvasTexture faces plus the existing HTML focus face.
+Technical evidence: **32/32 public Chromium/WebGL PASS** for DudV + water map with source foam off, CardStack/reveal, Sky Card + both beam sources, and six Card Cube CanvasTexture faces plus the existing HTML focus face.
 
 Direct human gate: `https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/card-zone-lab-v2-source/`
 

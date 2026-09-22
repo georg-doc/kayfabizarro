@@ -4,7 +4,7 @@ Alte Einträge bleiben unverändert. Korrekturen als neue CORRECTION/SUPERSEDES-
 
 ## 2026-09-22 · Card Zone F1.5 source Stage
 
-Published the exact 26-file Card Zone Lab v2 source as an isolated ToolBox Stage candidate. Source/browser proof is 32/32 local PASS for DudV fluid, CardStack/reveal, Sky Card/beams and Card Cube Canvas/HTML faces. No module promotion, placeholder or second runtime.
+Published the exact 26-file Card Zone Lab v2 source as an isolated ToolBox Stage candidate. Source/browser proof is 32/32 public PASS for DudV fluid, CardStack/reveal, Sky Card/beams and Card Cube Canvas/HTML faces. No module promotion, placeholder or second runtime.
 
 ## 2026-09-21 · Fluid/Card/Voxel intake and Theatre Curtain route
 

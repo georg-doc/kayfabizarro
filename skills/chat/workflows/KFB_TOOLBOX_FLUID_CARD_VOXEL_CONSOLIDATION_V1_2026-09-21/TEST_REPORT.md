@@ -88,9 +88,9 @@ The separate drift sentinel that intentionally detected a moving `main` remains 
 
 ## F1.5 · isolated source Stage candidate
 
-Local route: `http://127.0.0.1:4173/kfb-hub/stage/toolbox/card-zone-lab-v2-source/`
+Public route: `https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/card-zone-lab-v2-source/`
 
-**32/32 PASS** with Chromium/WebGL:
+**32/32 public PASS** with Chromium/WebGL:
 
 - all 26 donor files and both Stage entry copies are byte-identical to the pinned 2026-09-22 export;
 - original DudV + water map load and animate; the source shader keeps foam constructively off;
@@ -99,4 +99,4 @@ Local route: `http://127.0.0.1:4173/kfb-hub/stage/toolbox/card-zone-lab-v2-sourc
 - the Card Cube supplies six 512×512 CanvasTexture faces and its HTML focus face opens;
 - desktop and 390×844 mobile canvases render without unexpected console/page errors or failed app requests.
 
-Evidence: `evidence/f1-5/report.json` plus five screenshots in the same directory. Public Cloudflare proof remains the human/publication gate.
+Evidence: `evidence/f1-5/report.json` plus five public-route screenshots in the same directory. Technical publication passed; human fidelity acceptance remains open.

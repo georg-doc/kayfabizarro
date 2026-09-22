@@ -99,5 +99,5 @@ Public proof of this router revision remains a separate publication gate. Existi
 
 - ToolBox roster: 21 cards = 8 public previews, 5 missing/blocked and 8 source/integration gates.
 - Direct Card Zone exact-source route added under Open now.
-- Stage source proof: **32/32 local Chromium/WebGL PASS**.
-- No extracted module is promoted; public router/route readback remains the publication gate.
+- Stage source proof: **32/32 public Chromium/WebGL PASS** at publication head `757f04d…`.
+- No extracted module is promoted; human fidelity review remains open.

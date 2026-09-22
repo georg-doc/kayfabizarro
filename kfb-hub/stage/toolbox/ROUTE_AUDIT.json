@@ -4,7 +4,7 @@
   "publicationBranch": {
     "repo": "georg-doc/kayfabizarro",
     "ref": "cloudflare-live",
-    "head": "120159b1d7708b5bf580af63da4c503a6821a286",
+    "head": "757f04d346848ccd2d41565fa17d064254f180ec",
     "treeChecked": true
   },
   "toolboxRoute": "https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/",
@@ -55,7 +55,7 @@
       "id": "card-zone-lab-v2-source",
       "url": "https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/card-zone-lab-v2-source/",
       "publicationPath": "kfb-hub/stage/toolbox/card-zone-lab-v2-source/index.html",
-      "evidence": "32/32 local Chromium/WebGL PASS; public proof pending publication readback"
+      "evidence": "32/32 Chromium/WebGL PASS against exact Cloudflare route"
     }
   ],
   "missingOrBlocked": [
@@ -103,5 +103,5 @@
   ],
   "rule": "No preview is shown unless an exact public route is present/proven. Missing/blocked routes link to source or PR only.",
   "auditedAt": "2026-09-22T04:00:00+02:00",
-  "note": "Card Zone F1.5 exposes the exact source only; it does not promote extracted modules. Public verification of this router revision is a separate gate."
+  "note": "Card Zone F1.5 exact route and source object are public-verified. Human fidelity acceptance remains open; no extracted module is promoted."
 }
