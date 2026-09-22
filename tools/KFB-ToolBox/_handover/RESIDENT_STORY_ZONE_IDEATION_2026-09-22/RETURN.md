@@ -63,6 +63,9 @@ The initial concept captures:
 - `SOCIAL_GIFT_DATA_CONTRACT_v0.json`
 - `SOCIAL_GIFT_FIXTURES_v0.json`
 - `SOCIAL_GIFT_CONTRACT_CHECK.md`
+- `ACCESS_PROP_CANDIDATES_v0.json`
+- `VFX_CANDIDATE_LANE_v0.json`
+- `ACCESS_VFX_SOURCE_CHECK.md`
 - this `RETURN.md`
 
 ## Sources actually reviewed
@@ -89,6 +92,11 @@ This checkpoint is documentation/ideation only.
 - v0 record types present: **8/8 PASS**
 - deterministic fixtures present: **3/3 PASS**
 - contract invariants recorded: **12**
+- Access key/keyring/keycard exact source check: **PASS**
+- gold/silver separate source variants: **NOT PROVEN / DEFERRED**
+- VFX linked handoff inspected: **132 candidates / 91 FX_Visual**
+- existing `kfb-vfx.js` donor reuse path: **SOURCE VERIFIED**
+- curated `media/3D_Assets/KFB/` snapshot enumerated: **140 entries**
 - branch creation: PASS
 - first concept commit: PASS and exact branch head verified
 - recovery entry commit: PASS and exact branch head/file verified
@@ -116,6 +124,9 @@ No implementation or public result is claimed.
 - smallest host-approved post-fight repair Activity set;
 - first Social Attention distance/interruptibility rules in a real host scale;
 - exact first Gift Intent source set per Resident and handoff animation capabilities;
+- first gold/silver key material/source proof;
+- first AccessProp runtime consumer/target proof;
+- first isolated VFX donor proof for muzzle/slash/impact/blood/world cue;
 - gift state/provenance seam without inventing a second inventory owner;
 - exact first Gift Backpack slot count;
 - exact Bubble choice adapter from canonical Calls into ChatterBox/Triplet context;
@@ -123,6 +134,13 @@ No implementation or public result is claimed.
 - GiftInventoryItem persistence concept is decided: Session / Journey / Fractal Almanac; exact storage adapter remains implementation detail;
 - canonical host actor/player IDs and ChatterBox caller seam are implementation-resolved details, not Georg gates;
 - first visible food gift is decided: Tiny Treats `donut_pink.gltf`;
+- first Player Proof is decided: **Orc → Player → pink donut**;
+- Access Props / Keys are now an additive physical-access lane for mini-games, decks, worlds, dungeons, portals/events/scenes;
+- exact key/keyring/keycard source candidates are pinned; gold/silver remain desired visual/access variants with source proof pending;
+- VFX candidate lane now reuses the existing `kfb-vfx.js` donor rather than inventing a second VFX runtime;
+- candidate VFX families include muzzle, slash/sweep, impact, electric/blitz, blood, explosion, fire/smoke, dirt/scorch and access/world cues;
+- historical donor rejection of blood is preserved; current user direction reopens stylized blood FX as a candidate;
+- `media/3D_Assets/KFB/` is recorded as Georg's curated future donor shortlist, not a second registry;
 - exact inventory of reusable full-body laugh/cry/surprise/inspect/gift-accept clips across relevant rig families;
 - exact semantic seam from ChatterBox social cue → host social state → optional Combat owner → repair beat;
 - current 3D ChatterBox invocation/output contract;
@@ -134,7 +152,7 @@ No implementation or public result is claimed.
 
 ## One next gate
 
-**Choose and prove the first visible pink-donut social gift encounter. Recommended smallest player-facing proof: Orc → player → one Bubble Call → offer/accept → TRANSFER_COMMIT → Almanac/Journey provenance → release/resume.**
+**Prepare the bounded implementation slice for Orc → Player → pink donut. Keep Keys and VFX deferred as separate future lanes.**
 
 Do not build a general World Editor, autonomous NPC system or separate social-combat engine yet.
 
