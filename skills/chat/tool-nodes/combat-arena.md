@@ -57,3 +57,33 @@ Exactly one next gate:
 After publication is restored, the human visual gate remains Blade mount + body clearance + readable real 1H strike. Only after that may consequence wiring proceed, followed by Legacy and then Rig_Large/2H.
 
 Deferred context for Legacy, Black Knight Large/2H, the human-rejected shield attachment, Pencil/Brush and later weapon profiles is preserved in `slices/ca2-melee-lab/DEFERRED_RIG_WEAPON_NOTES.md` in the Combat repository.
+
+## CA2-LEGACY-00 handoff · 2026-09-22
+
+A new bounded source/readiness lane is stacked on the preserved PR #7 melee work:
+
+- Draft PR #10 · branch `chatgpt-web/ca2-legacy-00-readiness-2026-09-22`
+- final head: `663f0610eb960f322d67b078f1302d0c6178d1c2`
+- final CI: run `35678737011` / job `106590778036`
+- **106/106 tests PASS**
+- portable build **241 files**
+- re-home **172 preserved runtime / 66 verified donor files / routes PASS**
+- no Arena runtime file changed
+- no new Stage route was created
+
+Pinned Legacy readiness:
+
+- 4 bodies · 17 heads · 24 weapons · 6-bone / 30-clip `Rig_Legacy`
+- first ranged source candidate: **Rogue + common Crossbow + `Shoot(2h)`**
+- first melee source candidate: **Knight + common Sword + `Attack(1h)`**
+- Medium clips are forbidden on Legacy; PR #7 contact core remains the later melee consumer
+- ToolBox keeps appearance/assembly/EyeRig ownership; Arena keeps movement, targeting, damage, enemy lifecycle and rewards
+
+The Sword-01 Cloudflare failure remains a separate frozen publication issue. CA2-LEGACY-00 does not reopen or modify it.
+
+Exactly one next gate for the Legacy lane:
+
+> **KLR-EYE-VIS-01** — human Front + 3/4 review of the 17 Legacy heads. Knight default and Rogue default must be accepted/adjusted before runtime integration; Skull may remain unsupported.
+
+After that gate, start **CA2-LEGACY-01R** only.
+

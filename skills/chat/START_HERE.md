@@ -407,3 +407,14 @@ Return and recovery live on PR #157 under `skills/chat/workflows/LEGACY_WEB_PET_
 Intended Stage `https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/legacy-web-pet/` is **NOT PUBLISHED / NOT PUBLIC_VERIFIED**.
 
 Exactly one next gate: **LWP-EXT-F1 · extension-load observability** — identify the first missing transition in `CONTENT_ENTRY → HOST_CREATED → FRAME_INSERTED → FRAME_LOADED | FRAME_ERROR → PET_READY` before changing runtime behavior.
+
+## 2026-09-22 · Combat CA2-LEGACY-00 readiness
+
+Combat Arena Draft PR #10 is the new bounded Legacy readiness lane, stacked on the preserved PR #7 melee source. Final head `663f0610eb960f322d67b078f1302d0c6178d1c2` is CI-green at **106/106**, portable build **241 files**, re-home **172 preserved / 66 verified / routes PASS**.
+
+This slice changes no Arena runtime. It pins the proven ToolBox Legacy donor as 4 bodies / 17 heads / 24 weapons / 6-bone 30-clip `Rig_Legacy`, then selects exactly two source candidates: **Rogue + common Crossbow + `Shoot(2h)`** for first ranged proof and **Knight + common Sword + `Attack(1h)`** for first melee proof. ToolBox remains appearance/EyeRig owner; Arena remains gameplay/combat owner.
+
+No new Stage route is claimed. Sword-01's frozen Cloudflare child-route failure remains separate.
+
+Exactly one next gate is **KLR-EYE-VIS-01** at the existing Legacy EyeRig review surface. Knight default and Rogue default must be human accepted/adjusted before `CA2-LEGACY-01R` starts; Skull may remain unsupported.
+

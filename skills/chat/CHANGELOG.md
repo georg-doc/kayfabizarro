@@ -1107,3 +1107,27 @@ Canonical recovery:
 - only after the exact public `SOURCE.json` marker is served may public browser QA and the Blade visual gate resume.
 
 No merge. No Live promotion.
+
+## 2026-09-22 · Combat Arena CA2-LEGACY-00
+
+### CURRENT RESULT
+
+- new Combat Draft PR #10 · `chatgpt-web/ca2-legacy-00-readiness-2026-09-22`
+- final head `663f0610eb960f322d67b078f1302d0c6178d1c2`
+- final CI `35678737011 / 106590778036` · **106/106 PASS**
+- portable build **241 files**
+- re-home **172 preserved runtime / 66 verified donor files / routes PASS**
+- runtime unchanged; no Stage published
+
+### SOURCE CLASSIFICATION
+
+- Legacy donor: 4 bodies · 17 heads · 24 weapons · 6 joints · 30 native clips
+- first ranged source candidate: Rogue + common Crossbow + `Shoot(2h)`
+- first melee source candidate: Knight + common Sword + `Attack(1h)`
+- no cross-rig clip fallback; no silent Combat promotion
+- Sword-01 public failure remains frozen independently
+
+### NEXT GATE
+
+**KLR-EYE-VIS-01** — human Legacy EyeRig review. Knight default + Rogue default must pass before `CA2-LEGACY-01R`.
+
