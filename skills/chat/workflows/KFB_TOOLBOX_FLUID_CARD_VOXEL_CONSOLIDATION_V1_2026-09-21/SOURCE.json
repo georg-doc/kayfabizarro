@@ -1,0 +1,127 @@
+{
+  "schema": "kfb.toolbox-fluid-card-voxel-f1-source/1",
+  "date": "2026-09-22",
+  "repository": "georg-doc/kayfabizarro",
+  "branch": "toolbox/fluid-card-voxel-f1-source-census-2026-09-22",
+  "branchBaseAtStart": "1ff35a63cbc6608d9d2f7a79ce5d6f0f17c55ac5",
+  "currentMainAtAudit": "6c1120980d0b7385eb812e008286dc2d9296a598",
+  "owner": "KFB ToolBox source reconciliation only; receiving runtimes keep their owners",
+  "runtimeMutation": false,
+  "stageMutation": false,
+  "matrix": {
+    "path": "skills/chat/workflows/KFB_TOOLBOX_FLUID_CARD_VOXEL_CONSOLIDATION_V1_2026-09-21/SOURCE_MATRIX.json",
+    "firstCommit": "61834eab0a0a7356d4e7d52a5f79609e814deb17",
+    "blob": "aab3a75f70960b0308b6006e51ca10ee246e02b9",
+    "decisionCount": 28,
+    "actions": {
+      "ADAPT": 11,
+      "KEEP_INTAKE": 10,
+      "REJECT_DUPLICATE": 7,
+      "PROMOTE": 0
+    }
+  },
+  "primarySources": [
+    {
+      "id": "card-zone-1to1",
+      "ref": "main",
+      "path": "tools/KFB-ToolBox/_inbox/KFB Card Zone Lab v2/card-zone-lab-v2-full_2026-09-22/",
+      "appBlob": "e7bb09e49b2a885eb076e8c43c0ff561a9cebb72"
+    },
+    {
+      "id": "texture-browser-1to1",
+      "ref": "main",
+      "path": "tools/KFB-ToolBox/_inbox/KFB Textur-Browser/texturbrowser-full_2026-09-22/",
+      "appBlob": "2e796cc99b3c412181a3ec3e808c1782f03048cd"
+    },
+    {
+      "id": "voxel-zone-s2-1to1",
+      "ref": "main",
+      "path": "tools/KFB-ToolBox/_inbox/KFB Voxel Zone S2/voxel-zone-s2-full_2026-09-22/",
+      "appBlob": "90cc902cbc329b287caaf1a42a996a62f9c0a77a"
+    },
+    {
+      "id": "source-locked-fluid-v2",
+      "ref": "main",
+      "path": "tools/KFB-ToolBox/_inbox/KFB StoryMap v1/kfb-fluid-v2/card-zone-v2-fluid-source.js",
+      "blob": "97e3e0813cb5693a64863482ab96a601e88f5104"
+    },
+    {
+      "id": "responsive-cardrig-v1",
+      "ref": "stage/storytelling-maps-v1-t2-media-standee-2026-09-20",
+      "path": "skills/chat/workflows/KFB_STORYTELLING_MAPS_V1_2026-09-20/CARD_RIG_V1.md",
+      "blob": "366a16e9ad16ade38ea8067f8b0e8f048e3680bf"
+    },
+    {
+      "id": "box-material-owner",
+      "ref": "main",
+      "path": "skills/kfb-box-material.js",
+      "blob": "3689661afa8f1b371ebcc40bfed994450c37cfa0"
+    },
+    {
+      "id": "card-builder-owner",
+      "ref": "main",
+      "path": "skills/kfb-card-builder.js",
+      "blob": "88e1fb33f188648495e6bd8cc6450f19eaaea0cb"
+    },
+    {
+      "id": "card-ink-owner",
+      "ref": "main",
+      "path": "skills/kfb-ink-canon.js",
+      "blob": "55ce6da2805386bd6373d81d064a37fc7e0efacb"
+    },
+    {
+      "id": "card-format-owner",
+      "ref": "main",
+      "path": "skills/kfb-card-format.js",
+      "blob": "8a40d8d48a706982675f1388f0fec19b12d9dd16"
+    },
+    {
+      "id": "world-palette-owner",
+      "ref": "main",
+      "path": "travel/travel-v16/terrain-v16/world-palettes.js",
+      "blob": "f6121ae41f00804a321592f60cdefb78206e76c6"
+    },
+    {
+      "id": "asset-registry-owner",
+      "ref": "main",
+      "path": "registry/assets/v1/packs/kfb.json",
+      "blob": "5e7d5125596801ece8c855740b784d6ac0f96bba"
+    }
+  ],
+  "methodComparison": {
+    "oldCardZoneBlob": "43eea82f8727d3581e50374d6263e48a28241d3b",
+    "currentCardZoneBlob": "e7bb09e49b2a885eb076e8c43c0ff561a9cebb72",
+    "byteIdenticalNamedMethods": 29,
+    "onlyNamedChange": "buildCard: current source explicitly prioritizes media/kfb/kfb-index.json then index.json fallback",
+    "implication": "Existing source-locked fluid-v2 remains a valid shader seam; current card bootstrap must follow the new buildCard wiring."
+  },
+  "evidence": {
+    "sourceOwnerAssertions": "66/66 PASS",
+    "browserAssertions": "0 by F1 scope",
+    "driftSentinel": "TRIGGERED once; resolved as Combat-only main drift",
+    "mainDriftFiles": [
+      ".github/workflows/ca2-sword01-cloudflare-qa.yml",
+      "kfb-hub/stage/combat/ca2-sword-01/SOURCE.json",
+      "kfb-hub/stage/combat/ca2-sword-01/failure-recovery/RECOVERY.md"
+    ]
+  },
+  "dropbox": {
+    "mode": "read-only",
+    "verifiedNamesAndSizes": [
+      {
+        "path": "/CLAUDE/KFB Card Zone Lab v2/card-zone-lab-v2-full_2026-09-22/KFB Card Zone Lab v2.dc.html",
+        "bytes": 145369
+      },
+      {
+        "path": "/CLAUDE/KFB Textur-Browser/texturbrowser-full_2026-09-22/KFB Textur-Browser.dc.html",
+        "bytes": 32344
+      },
+      {
+        "path": "/CLAUDE/KFB Voxel Zone S2/voxel-zone-s2-full_2026-09-22/KFB Voxel Zone S2.dc.html",
+        "bytes": 24962
+      }
+    ],
+    "mutation": false
+  },
+  "issue": 167
+}
