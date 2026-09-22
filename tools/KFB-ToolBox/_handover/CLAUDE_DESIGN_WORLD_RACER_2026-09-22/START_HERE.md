@@ -36,6 +36,7 @@ For Racer:
 For World / Environment:
 
 9. [CLAUDE_WORLD_AUTHORING_BRIEF.md](CLAUDE_WORLD_AUTHORING_BRIEF.md)
+10. [WORLD_ARCHITECTURE_RED_TEAM_2026-09-22.md](WORLD_ARCHITECTURE_RED_TEAM_2026-09-22.md) — proposal/research only; surface geometry must not silently become a new owner
 
 ## Current primary inputs on main
 
