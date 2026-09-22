@@ -352,3 +352,59 @@ Added:
 
 ### IMPLEMENTATION STATUS
 No Access runtime, key skin/material proof, VFX integration, blood visual approval, Combat changes, Player Proof runtime or public Stage was built in this checkpoint.
+
+
+## 2026-09-23 · Orc Band World-Life + Offica patrol
+
+### USER DIRECTION
+- Add a recurring **Orc Band** World-Life / Resident Scene as comic relief.
+- Use three Orc generations:
+  - Legacy small Orc;
+  - Rig_Medium Orc Raider;
+  - Rig_Large Orc Brute.
+- Large Orc anchors real War Drum + stick.
+- Medium Orc plays one of the real Mixed Bag electric guitars.
+- Legacy Orc acts as front/hype performer first; microphone/trumpet remain optional later.
+- Final music may be Georg/Suno audio; approaching the scene should provide directional/proximity audio information.
+- **Offica Doppeldenk** uses the Toy Soldier/Nutcracker donor, repeatedly spawns from the existing present reveal, patrols, suspects misbehavior/subversion, interrupts the band over absurd permits/noise/order rules, may issue citations, may trigger a Kayfabe scrap, then exits grumbling while the band resumes.
+- The patrol pattern should later generalize to mobs/guards/other ambient Residents.
+- Fishing remains outside this packet.
+
+### SOURCE ALIGNMENT
+- New user handoff inspected: 211 candidate assets.
+- Legacy Orc A, Orc Raider, Orc Brute, War Drum, WardrumStick, electric guitar A/B, GothGirl microphone and Toy Soldier trumpet are source-backed.
+- Current Resident Atlas proves the Toy Soldier 4.8 s present reveal, rifle/trumpet props and the Orc Brute war-drum scale profile.
+- No shared Guitar clip exists; current Animatronic guitar donor is measured/procedural.
+- Rig_Large has no drum-strike clip.
+- No trumpet-playing / horn-to-mouth clip was proven.
+- Medium locomotion sources prove Walking_A/B/C and suitable interaction/hit/melee candidates for Toy Soldier patrol.
+- Existing KFB WebAudio donor proves HRTF/inverse-distance positional source logic.
+- Existing source-backed drum/guitar stems can be used for technical spatial-audio proof before final Suno music.
+- Existing Town source already defines Offica Doppeldenk as a bureaucratic Threshold Guardian. The new scene instantiates that direction rather than replacing it.
+- Historical Performance Suite said War Drum source was unresolved; current Resident Atlas/source evidence resolves that old open item additively.
+
+### FILES ADDED
+- `ORC_BAND_DONOR_CHECK.md`
+- `ORC_BAND_WORLD_LIFE_RECIPE_v0.json`
+- `ORC_BAND_WORLD_BUILDER_POC_BRIEF.md`
+- `ORC_BAND_WORLD_LIFE_START_HERE.md`
+- Living Concept §§33–36.
+
+### PREPARED BUILD LADDER
+- OB-P0 source objects isolated;
+- OB-P1 static trio;
+- OB-P2 performance readability;
+- OB-P3 spatial audio;
+- OB-P4 forced Offica reveal/patrol/interruption/resume;
+- OB-P5 seeded random spawn + citation;
+- OB-P6 optional Combat handoff.
+
+### WORLDBUILDER BOUNDARY
+Current WorldBuilder SSOT still requires WB1-P0 → P1 → P2 before Claude input/build.
+
+The Orc Band packet is therefore **PREPARED FUTURE FIXTURE**, not a current Claude build order.
+
+### IMPLEMENTATION STATUS
+Documentation / donor recovery / recipe / future implementation brief only.
+
+No Orc Band runtime, Offica patrol runtime, spatial-audio integration, Combat handoff, browser test or public Stage was built.
