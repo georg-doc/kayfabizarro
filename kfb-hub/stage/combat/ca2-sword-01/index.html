@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="kfb-stage" content="CA2-SWORD-01-VIS">
+<meta name="kfb-combat-head" content="c04f0fffeb8cd90b48d70a2787c9ef1ca75ee725">
+<title>CA2-SWORD-01 · Skeleton Blade visual gate</title>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.160.1/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.160.1/examples/jsm/"}}</script>
+<style>
+:root{--paper:#f3ead3;--paper2:#ece1c0;--ink:#1f1a14;--mute:#6f6450;--red:#b8361f;--teal:#2f7a72}
+*{box-sizing:border-box}html,body{margin:0;width:100%;height:100%;overflow:hidden;background:#111;color:var(--ink);font:14px/1.35 ui-monospace,Menlo,Consolas,monospace}
+#stage{position:absolute;inset:0}canvas{display:block;width:100%;height:100%}
+.panel{position:absolute;left:14px;top:14px;width:min(390px,calc(100vw - 28px));max-height:calc(100vh - 28px);overflow:auto;background:rgba(243,234,211,.94);border:2px solid var(--ink);box-shadow:5px 5px 0 rgba(0,0,0,.3);padding:12px;transform:rotate(-.25deg)}
+h1{font:700 20px/1.05 Georgia,serif;margin:0 0 4px}p{margin:5px 0}.small{font-size:11px;color:var(--mute)}.status{padding:6px 8px;border-left:5px solid var(--teal);background:var(--paper2);margin:8px 0;white-space:pre-wrap}
+.row{display:flex;flex-wrap:wrap;gap:6px;margin:7px 0}button{font:inherit;background:var(--paper);color:var(--ink);border:2px solid var(--ink);padding:5px 8px;cursor:pointer;box-shadow:2px 2px 0 rgba(31,26,20,.2)}button.active{background:var(--ink);color:var(--paper)}button.hit{background:var(--red);color:#fff}
+input[type=range]{width:100%}.readout{white-space:pre-wrap;background:rgba(255,255,255,.35);padding:7px;border-top:1px solid rgba(31,26,20,.3);font-size:11px}
+label{display:inline-flex;gap:5px;align-items:center}
+@media(max-width:650px){.panel{top:auto;bottom:8px;left:8px;width:calc(100vw - 16px);max-height:48vh}.readout{display:none}}
+</style>
+</head>
+<body data-kfb-stage="ca2-sword-01-vis" data-combat-head="c04f0fffeb8cd90b48d70a2787c9ef1ca75ee725">
+<div id="stage"></div>
+<section class="panel" aria-label="CA2-SWORD-01 visual gate">
+  <h1>CA2-SWORD-01 · Skeleton Blade</h1>
+  <p class="small">Rig_Medium only · exact Combat PR #7 candidate · visual gate: mount, body clearance, readable 1H strike.</p>
+  <p class="small">Source head: <code>c04f0fff</code> · axes deferred · no production promotion from this page.</p>
+  <div id="status" class="status">loading exact sources…</div>
+  <div class="row" id="modes">
+    <button data-mode="weapon" class="active">1 · Blade isolated</button>
+    <button data-mode="mount">2 · Hand mount</button>
+    <button data-mode="spacing">3 · Spacing attack</button>
+    <button data-mode="forced">4 · Forced collision</button>
+  </div>
+  <div class="row">
+    <button id="play">Replay attack</button>
+    <button id="pause">Pause</button>
+    <button id="slow">Slow ×0.25</button>
+    <button id="cameraMode">Camera · Orbit</button>
+    <button id="miss">Force miss</button>
+  </div>
+  <label>Scrub <input id="scrub" type="range" min="0" max="1" step="0.001" value="0"></label>
+  <div class="row">
+    <label><input id="showMarkers" type="checkbox" checked> markers</label>
+    <label><input id="showHurt" type="checkbox" checked> hurt capsule</label>
+    <label><input id="showSweep" type="checkbox" checked> swept path</label>
+  </div>
+  <div id="facts" class="readout"></div>
+</section>
+<script>
+window.__KFB_STAGE_SOURCE__={
+  id:"CA2-SWORD-01-VIS",
+  repo:"georg-doc/KFB-Combat-Arena",
+  head:"c04f0fffeb8cd90b48d70a2787c9ef1ca75ee725",
+  pr:7,
+  lab:"slices/ca2-melee-lab/lab.mjs"
+};
+</script>
+<script type="module" src="https://cdn.jsdelivr.net/gh/georg-doc/KFB-Combat-Arena@c04f0fffeb8cd90b48d70a2787c9ef1ca75ee725/slices/ca2-melee-lab/lab.mjs"></script>
+</body>
+</html>
