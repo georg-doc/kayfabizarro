@@ -58,6 +58,7 @@ If this is a replacement/fresh chat after context loss, use `RECOVERY_PATH.md` r
 - `town/START_HERE.md` + `town/LIVING_KFB_TOWN.md` — current KFB Town ideation home
 - `RECOVERY_PATH.md` — deterministic recovery after chat/context failure
 - `FRESH_CHAT_SLICE_PROTOCOL.md` — bounded cold-start work and compact next-day review packet
+- `workflows/KFB_WEB_FIRST_EXECUTION_V1_2026-09-22/START_HERE.md` — **CURRENT DEFAULT EXECUTION LANE**: Web/GitHub + Claude Design + local preview first; Work/WSA only by explicit capability escalation
 - `CHAT_GITHUB_KFB_STAGE_WORKFLOW.md` — binding Chat → GitHub → Cloudflare Stage → Hub delivery and timeout recovery
 - `GATE_PROPORTIONALITY_TOKEN_BUDGET_PROTOCOL.md` — binding cross-project rule preventing minor details from consuming MVP / Work / Claude budget
 - `WEB_PROJECT_FOLDER_INSTRUCTIONS.md` — copy-ready instruction text for Web project folders
@@ -442,3 +443,27 @@ Prepared Combat companion:
 `skills/chat/workflows/KFB_LEAD_WORK_CHECKIN_2026-09-22/COMBAT_RANGED_MVP.md`
 
 First Combat consolidation is ranged-first and does not depend on melee.
+
+
+## 2026-09-22 · Web-first / Work-escalation-only reset
+
+Routine KFB lead/control-plane work no longer defaults to Work/WSA.
+
+Current execution default:
+
+`skills/chat/workflows/KFB_WEB_FIRST_EXECUTION_V1_2026-09-22/START_HERE.md`
+
+Use:
+
+- Web/GitHub for normal production, source work, planning, code, tests, debugging, changelogs and Hub metadata;
+- Claude Design for visual/interactive 3D authoring;
+- local HTTP preview for the normal human edit-review loop;
+- Work/WSA only when an explicit capability gap remains after those three lanes.
+
+Before using Work, fill:
+`workflows/KFB_WEB_FIRST_EXECUTION_V1_2026-09-22/WORK_ESCALATION_CARD.md`.
+
+For browser/game/3D slices use:
+`workflows/KFB_WEB_FIRST_EXECUTION_V1_2026-09-22/LOCAL_PREVIEW_FIRST.md`.
+
+Cloudflare Stage is a milestone/public acceptance surface, not the normal debugging loop.
