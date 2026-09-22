@@ -1,7 +1,7 @@
 import * as THREE from 'three';
 import {GLTFLoader} from 'three/addons/loaders/GLTFLoader.js';
 import {OrbitControls} from 'three/addons/controls/OrbitControls.js';
-import {prepareHybridV2Object,setHybridV2Mode,setHybridV2Params,hybridV2Stats} from '../hybrid-surface-scene-lab-v2/hybrid-surface.v2.js';
+import {prepareHybridV2Object,setHybridV2Mode,setHybridV2Params,hybridV2Stats} from './hybrid-surface.v2.js';
 import {createTileableRgbBrushTexture,measureTileEdges} from './tileable-brush.v1.js';
 
 const V1_RUNTIME_PIN='15f2f1714d62b606033b8624964e481c6d99d59f';
