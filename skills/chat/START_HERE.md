@@ -418,3 +418,25 @@ No new Stage route is claimed. Sword-01's frozen Cloudflare child-route failure 
 
 Exactly one next gate is **KLR-EYE-VIS-01** at the existing Legacy EyeRig review surface. Knight default and Rogue default must be human accepted/adjusted before `CA2-LEGACY-01R` starts; Skull may remain unsupported.
 
+
+
+## 2026-09-22 · KFB Lead Work check-in reset
+
+Cross-project consolidation returns to the existing KFB Lead / WSA Work lane rather than letting ToolBox become the accidental integration owner.
+
+Current onboarding:
+
+`skills/chat/workflows/KFB_LEAD_WORK_CHECKIN_2026-09-22/START_HERE.md`
+
+Use Lead Work for:
+- exact GitHub check-ins and status matrices;
+- architecture/integration locks;
+- sequencing accepted Web/Claude results;
+- hard cross-repo implementation seams.
+
+Keep source census, isolated donor proofs and calibration in bounded Web slices; keep visual/interactive authoring in Claude Design.
+
+Prepared Combat companion:
+`skills/chat/workflows/KFB_LEAD_WORK_CHECKIN_2026-09-22/COMBAT_RANGED_MVP.md`
+
+First Combat consolidation is ranged-first and does not depend on melee.
