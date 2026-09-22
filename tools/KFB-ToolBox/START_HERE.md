@@ -78,6 +78,30 @@ This is additive to Stage-First and does not promote Animation Lab to a separate
 Current gate: Georg reviews the three actors' Idle → Walk → Run / phase-sync result and the Medium-vs-Large motion feel. Attachments remain proposals until their own visible gate.
 
 
+## CURRENT ADDITIVE · Tileable Macro Seam Lab · 2026-09-22
+
+The visible wall seam has a public-verified seam-only candidate.
+
+Handoff:
+`_handover/TILEABLE_MACRO_SEAM_2026-09-22/RETURN.md`
+
+Draft PR: **#173**
+
+Public Stage:
+`https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/tileable-macro-seam-lab/`
+
+Evidence:
+- local browser **17/17 PASS**;
+- public Cloudflare browser **17/17 PASS**;
+- 0 failed resources;
+- 0 page/console errors;
+- Hub and ToolBox public link proof PASS.
+
+Proven cause: the old RGB brush image was not tileable; `RepeatWrapping` repeated mismatched edge pixels. The new generator authors the texture periodically/toroidally. Measured edge discontinuity drops from average **14.242 → 1.375**.
+
+Current gate: Georg compares `Old repeat` versus `Tileable macro` in the wall seam close-up. This does not unfreeze the separate Hybrid v2 Black Knight compile-census issue and does not promote OSM/Race consumers.
+
+
 ## CURRENT ADDITIVE · Hybrid Surface v2 / KFB 3D style · 2026-09-22
 
 The public real-asset Hybrid Surface predecessor remains a ToolBox material-compatibility proof; Georg's review is now persisted as the next bounded gate.

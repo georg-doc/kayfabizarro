@@ -415,3 +415,12 @@ Exactly one next gate: **LWP-EXT-F1 · extension-load observability** — identi
 Georg's reviewed Hybrid Surface findings are persisted at [KFB 3D Art Direction · Surface, Scale and Environment Standard](masterplan/KFB_3D_STYLE_SURFACE_SCALE_2026-09-22.md). Core decisions: stronger clay/grain materiality; visible seam is a real defect; preserve source roughness/specular character rather than globally matting hair/armour; mixed Rig_Legacy/Rig_Medium/Rig_Large scenes calibrate from measured head size rather than total height; and the same shape/surface language must later continue through OSM Hürth/Ehrenfeld/Köln, RaceTrack Cologne, terrain/vegetation and real landmark donors.
 
 The next bounded implementation is [Hybrid Surface Scene Lab v2](workflows/KFB_HYBRID_SURFACE_V2_2026-09-22/START_HERE.md) on the same exact real Dungeon + five-actor donor set. Environment consumer work is explicitly next after that visual gate; no World/OSM/Race runtime ownership moves here.
+
+
+## 2026-09-22 · Tileable Macro Seam Lab public gate
+
+The visible Hybrid Surface wall seam now has a bounded public seam-only proof on Draft PR #173. The old RGB brush bitmap was demonstrably non-tileable; `RepeatWrapping` merely repeated mismatched edges. The new periodic/toroidal generator reduces measured edge discontinuity from average **14.242 → 1.375** while preserving the frozen v2 material, grain, roughness and measured scale rules.
+
+Public Stage: `https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/tileable-macro-seam-lab/`
+
+Public Cloudflare browser proof: **17/17 PASS**, 0 failed resources, 0 page/console errors. KFB Hub and ToolBox both publicly expose the route. Human gate only: Georg compares `Old repeat` ↔ `Tileable macro` on the wall seam. This does not unfreeze the separate Hybrid v2 Black Knight compile-census issue and does not start OSM/Race work.

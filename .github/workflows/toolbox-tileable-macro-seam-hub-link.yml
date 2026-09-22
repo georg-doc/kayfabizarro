@@ -1,0 +1,33 @@
+name: ToolBox Tileable Macro Seam Hub link proof
+on:
+  pull_request:
+    paths:
+      - '.github/workflows/toolbox-tileable-macro-seam-hub-link.yml'
+permissions:
+  contents: read
+jobs:
+  hub-link:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Wait for public KFB Hub links
+        run: |
+          node - <<'NODE'
+          const targets=[
+            ['https://kayfabizarro.pages.dev/kfb-hub/','tileable-macro-seam-lab'],
+            ['https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/','tileable-macro-seam-lab']
+          ];
+          for(const [url,needle] of targets){
+            let last=null,ok=false;
+            for(let i=0;i<120;i++){
+              try{
+                const r=await fetch(url+'?proof='+Date.now(),{cache:'no-store'});
+                const text=await r.text();
+                last={status:r.status,hasNeedle:text.includes(needle),length:text.length};
+                if(r.ok&&text.includes(needle)){console.log('PASS',url,needle);ok=true;break}
+              }catch(e){last={error:String(e)}}
+              await new Promise(r=>setTimeout(r,3000));
+            }
+            if(!ok){console.error('FAIL',url,last);process.exit(1)}
+          }
+          NODE
