@@ -165,3 +165,77 @@ Recommended smallest proof:
 `Orc → player` or `Orc → Lore Keeper` → short Bubble/Banter → offer → accept → `TRANSFER_COMMIT` → Almanac/Journey provenance → release/resume.
 
 No need to ask Georg for internal IDs or caller-function names before that build slice is prepared.
+
+
+## Access Props + VFX extensions
+
+New additive candidate files:
+
+- `ACCESS_PROP_CANDIDATES_v0.json`
+- `VFX_CANDIDATE_LANE_v0.json`
+- `ACCESS_VFX_SOURCE_CHECK.md`
+
+### Access Props
+
+Current verified source candidates:
+
+- KayKit `key.gltf`
+- KayKit `keyring.gltf`
+- KayKit `keyring_hanging.gltf`
+- Quaternius `Pickup_KeyCard.gltf`
+
+Gold/silver are desired access/presentation variants but **separate source files are not yet proven**.
+
+Keys may later grant physical access to mini-games, decks, worlds, dungeons, portals/events/scenes while remaining visible Backpack/Almanac objects.
+
+Do not make keys a second currency or a hidden entitlement database.
+
+### VFX
+
+Reuse first:
+
+`tools/KFB-ToolBox/_inbox/cloud-design-worldbuilding-2026-09-18/donor-bank/modules/kfb-vfx.js`
+
+Do not build a second VFX runtime before proving that donor cannot serve the needed effect.
+
+Current candidate families include:
+
+- muzzle;
+- melee slash/sweep;
+- impact;
+- electric/blitz;
+- blood;
+- explosion;
+- fire/smoke;
+- dirt/scorch;
+- world/access unlock cues.
+
+Historical donor v10 excluded blood; current user direction explicitly reopens stylized blood FX as a candidate. Preserve both facts.
+
+### Curated later asset pool
+
+`media/3D_Assets/KFB/`
+
+is Georg's curated future donor shortlist, not a replacement Asset Registry.
+
+## First Player Proof · selected
+
+**DECISION:** first Player Proof is now:
+
+`Orc → Player → pink donut`
+
+Target path:
+
+`notice → Bubble Call → NPC reply → offer → accept → TRANSFER_COMMIT → Backpack → Fractal Almanac provenance → release/resume`
+
+Lore Keeper remains the first Story Zone / Activity proof.
+
+Keys and VFX are **not** dependencies of this first Player Proof.
+
+## One next gate
+
+Prepare the bounded implementation slice for **Orc → Player → pink donut** using the current host/player/ChatterBox owners recovered by the implementer.
+
+Do not ask Georg for internal actor IDs or caller-function names unless a concrete product conflict appears.
+
+Do not pull Keys or VFX into that proof except as explicitly deferred future lanes.
