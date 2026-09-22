@@ -40,6 +40,7 @@ No Live promotion was performed.
 - `CLAUDE_WORLD_AUTHORING_BRIEF.md`
 - `CHANGELOG.md`
 - `RETURN.md`
+- `WORLD_ARCHITECTURE_RED_TEAM_2026-09-22.md` — proposal/research only; no new runtime owner
 
 Central ToolBox handover index updated:
 
@@ -101,6 +102,33 @@ The combined Hex + WhackMan + S22 evidence changes the authoring order to:
 For difficult/asymmetric objects this replaces repeated coordinate-guessing.
 
 The World Authoring brief therefore starts with a compact Source Object Inspector and reuses the proven S21/S22 editor interaction rather than beginning with another generator.
+
+## 2026-09-22 research delta · Environment + world geometry
+
+Georg identified the current WhackMan Dungeon presentation as a useful production donor direction.
+
+Persisted donor candidate:
+
+- cool dusk world light;
+- warm flickering mounted-torch lights with a small nearest-light pool;
+- depth fog;
+- continuous local visibility/sight-radius control;
+- matte material calibration that suppresses the plastic-varnish read.
+
+This is now routed as an Environment Profile candidate for Dungeon Generator / ToolBox / special World zones. It does not promote WhackMan gameplay ownership.
+
+A separate Red-Team proposal now evaluates World geometry as a replaceable Surface Adapter rather than choosing Sphere vs visible Hex vs Voxel as one universal world.
+
+Research recommendation:
+
+- keep Travel Sphere as proven donor;
+- preserve Hex as semantic/local build layer;
+- use smooth continuous macro terrain for Race/OSM;
+- reserve volumetric/Voxel chunks for caves/destruction;
+- keep shader/data-driven Surface FX separate from topology;
+- first architecture stress test, if Georg accepts the proposal: same tiny recipe on Flat + Sphere + Torus.
+
+The current implementation gate below is **not silently replaced** by this proposal.
 
 ## Tests / evidence for this packaging slice
 
