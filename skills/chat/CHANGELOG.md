@@ -1026,3 +1026,38 @@ GitHub/cloudflare-live branch state is not a public browser PASS. Exact `kayfabi
 - Per two-pass rule the extension gate is frozen. Artifact `10619267683`, digest `sha256:da9bdfa9e0dd03c83f4335e61963449b7d559fc91e892867dd2c98843f361bf3`, contains Web evidence only; validated extension ZIP packaging was skipped.
 - Branch-only Hub mount candidate uses `?pet=0` opt-out; canonical Hub and Cloudflare runtime remain unchanged.
 - Next gate: **LWP-EXT-F1 · extension-load observability only**.
+
+
+## 2026-09-22 · Combat Arena CA2-SWORD-01
+
+### CURRENT RESULT
+
+Combat PR #7 has advanced from the axe-orientation investigation to a bounded **Rig_Medium sword-first candidate**.
+
+Implementation owner remains `georg-doc/KFB-Combat-Arena`.
+
+- branch: `chatgpt-web/ca2-04-melee-vfx-sfx-2026-09-20`
+- handoff head: `c04f0fffeb8cd90b48d70a2787c9ef1ca75ee725`
+- exact actor: Skeleton Warrior
+- exact weapon: `Skeleton_Blade.gltf`
+- exact real attack clip: `Melee_1H_Attack_Chop`
+- existing non-overlap spacing / swept contact / `AttackLedger` retained
+- final-head CI: **98/98 PASS**
+- portable build: **234 files**
+- re-home: **172 preserved / 66 verified / routes PASS**
+
+### DECISION
+
+Directional axe work is `DEFERRED_MINOR` and no longer blocks Combat.
+
+Current next gate is **CA2-SWORD-01-VIS** only: Blade mount, body clearance and readable real 1H strike. Productive PR #5 still keeps its old unarmed Skeleton attack until the human visual gate passes.
+
+Legacy remains a separate consumer using its own 6-bone rig and real Legacy clips. Rig_Large is also separate; current Large CombatMelee source contains real `Melee_2H_Attack`, `Melee_2H_Idle` and `Melee_2H_Slam` clips.
+
+Black Knight shield placement is recorded as **HUMAN_REJECTED_ATTACHMENT**: Resident Atlas remains attachment owner and must fix/prove the outside-left-hand placement before Combat consumes a promoted transform.
+
+Pencil/Brush weapon-class and special impact-VFX ideas remain deferred; they may reuse the same contact core later.
+
+### ROUTING
+
+Central Combat node now points to the Combat repo's `CA2_NOW_NEXT.md`. The KFB Hub P0 Combat card points to that source/recovery gate rather than the superseded monolithic CA2-04 prompt. No unverified Sword-01 Cloudflare link was added.
