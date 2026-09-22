@@ -516,6 +516,7 @@ window.__KFB_HYBRID_V2__={
   },
   snapshot:()=>({
     ready:window.__KFB_HYBRID_V2__.ready,error,
+    sourcePins:{world:WORLD_PIN,actors:ACTOR_PIN,brushDonor:V1_RUNTIME_PIN},
     look:currentLook,view:currentView,isolatedActor,
     strength,macroFactor,grainStrength,roughnessStrength,
     sharedTexture:{uuid:brush.texture.uuid,size:brush.size,seed:brush.seed},
