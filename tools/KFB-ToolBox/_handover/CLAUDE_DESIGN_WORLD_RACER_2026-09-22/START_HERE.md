@@ -97,3 +97,20 @@ At a coherent checkpoint export the **complete editable source/state**, exact so
 Georg uploads the Session Cut manually. Web/WSA then reconciles GitHub/Stage.
 
 Do not rely on Claude chat history as the archive.
+
+
+## Optional technical preflight before World / Environment design
+
+Prepared fresh Web/GitHub chat:
+
+`tools/KFB-ToolBox/_handover/WORLD_BUILDING_PREFLIGHT_WEBCHAT_2026-09-22/START_HERE.md`
+
+Use it to reduce technical uncertainty before spending Claude/Flow Design context.
+
+It is deliberately bounded to small persisted gates:
+
+- P0 source/reuse/license matrix;
+- P1 isolated WhackMan Environment Profile;
+- P2 same tiny recipe on FLAT / SPHERE / TORUS.
+
+The preflight does not replace this Claude Design brief. Its final `FLOW_DESIGN_INPUT.md`, if produced and verified, becomes additional evidence for a later sharpened design briefing.
