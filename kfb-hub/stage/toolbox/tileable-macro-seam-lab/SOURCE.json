@@ -1,0 +1,31 @@
+{
+  "schema": "kfb.stage-source/0.1",
+  "product": "KFB ToolBox · Tileable Macro Seam Lab",
+  "owner": "KFB ToolBox / material-surface compatibility lab",
+  "status": "LOCAL_BROWSER_VERIFIED_PUBLICATION_PENDING",
+  "sourceRepo": "georg-doc/kayfabizarro",
+  "sourceBranch": "chatgpt-web/toolbox-tileable-macro-seam-2026-09-22",
+  "sourceBranchHead": "5a7c57e77c81546e71e6f30404a84f02ddbf7cf5",
+  "cause": "prior RGB brush bitmap was non-tileable; RepeatWrapping alone repeats mismatched edges",
+  "scope": "seam-only; macro texture generator change only",
+  "donors": {
+    "v1RgbBrushRuntime": "15f2f1714d62b606033b8624964e481c6d99d59f",
+    "frozenV2Material": "7cbad52b55fb9ec2300aa4b25ca92b0997ce448a",
+    "worldAtlas": "bc1441eb8ff9a2df0e15e778b44b73f97eb63d76",
+    "actors": "bdaea0648f27c0f16e0a737bfba237eb54dd4cbb"
+  },
+  "exactScene": "World Atlas Dungeon promo + GothGirl + FrizzleBob Driver Graft",
+  "stageUrl": "https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/tileable-macro-seam-lab/",
+  "humanAcceptance": "PENDING",
+  "localEvidence": {
+    "workflowRun": 35676780027,
+    "job": 106584849995,
+    "checks": "17/17 PASS",
+    "artifactId": 10672902748,
+    "artifactDigest": "sha256:f447a439217a00fb295ac0fccd88b8b611ca718d732bd6ee09a46945dfe34133",
+    "failedResources": 0,
+    "pageConsoleErrors": 0,
+    "edgeScoreOld": 14.242192864614392,
+    "edgeScoreTileable": 1.374768868108358
+  }
+}
