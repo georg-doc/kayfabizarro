@@ -8,7 +8,7 @@
 - repo: `georg-doc/kayfabizarro`
 - branch: `chatgpt-web/resident-story-zone-concept-2026-09-22`
 - base main at slice start: `d68e5b55a9c9c08fe2483d46f3d0ea7dc190b8cb`
-- PR: not yet opened at this checkpoint
+- Draft PR: `#174` · `https://github.com/georg-doc/kayfabizarro/pull/174`
 - Stage route reserved: `https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/resident-story-zones/`
 - Stage status: **NOT BUILT · NOT DEPLOYED · NOT PUBLIC_VERIFIED**
 
