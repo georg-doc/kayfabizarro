@@ -14,7 +14,7 @@
 
 ## Outcome
 
-Created a durable ideation/recovery home for Georg's Resident/NPC + ChatterBox + World Builder authoring concept.
+Created a durable ideation/recovery home for Georg's Resident/NPC + ChatterBox + World Builder authoring concept. Current first concrete fixture is now **Lore Keeper · Open-Air Study Story Zone**; the social layer now includes a proposed **Kayfabe Social Conflict Loop**.
 
 The initial concept captures:
 
@@ -26,8 +26,13 @@ The initial concept captures:
 - ChatterBox as situated dialogue/reaction rather than movement/animation owner;
 - portable local-coordinate scenes mountable into future Flat/Sphere/Torus/Hex/Dungeon hosts;
 - base recipe + `kfb.scene-patch.v1` edits rather than flattened scene dumps;
-- Park Bench micro-scene as the smallest proposed first proof;
-- Forge micro-story as the next complexity step.
+- Lore Keeper open-air study/archive nook as the current first proof;
+- staged LK-L1 study → LK-L2 Desk/Shelf → LK-L3 book/Card POI discovery progression;
+- Activity Stations and semantic sockets;
+- Kayfabe buddy-banter / optional social-melee / explicit repair loop;
+- Bond, temporary Heat and topic stance kept separate;
+- Lean Memory callbacks based on witnessed/participated social events rather than omniscient knowledge;
+- Park Bench retained only as a later minimal/regression fixture.
 
 ## Files created so far
 
@@ -77,6 +82,9 @@ No implementation or public result is claimed.
 
 - final naming of Story Zone / Scene Module;
 - exact candidate schema after real source capability alignment;
+- exact current Lore Keeper/lectern/bookshelf/RPG prop source identities and usable animation clips;
+- smallest host-approved post-fight repair Activity set;
+- exact semantic seam from ChatterBox social cue → host social state → optional Combat owner → repair beat;
 - current 3D ChatterBox invocation/output contract;
 - exact Asset Librarian insertion/search seam;
 - path representation across different world surfaces;
@@ -86,6 +94,6 @@ No implementation or public result is claimed.
 
 ## One next gate
 
-**Continue ideation around the Park Bench fixture and authoring semantics.**
+**Continue ideation around the Lore Keeper fixture and Kayfabe social interaction semantics.**
 
-Do not build a general World Editor or autonomous NPC system yet.
+Do not build a general World Editor, autonomous NPC system or separate social-combat engine yet.
