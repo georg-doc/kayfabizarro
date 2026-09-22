@@ -1,0 +1,70 @@
+{
+  "schema": "kfb.combat-integration-v2-source/1",
+  "status": "SOURCE_VERIFIED_CI_PASS_PUBLIC_STAGE_BLOCKED_BROWSER_PENDING",
+  "repository": "georg-doc/KFB-Combat-Arena",
+  "branch": "chatgpt-web/combat-arena-integration-v2-2026-09-19",
+  "pr": 5,
+  "base": {
+    "branch": "main",
+    "commit": "f6a59ad15b9ffcf3164b0ab013f223962b63f61f",
+    "recoveredRuntime": "5A/A1",
+    "recoverySource": {
+      "kind": "chatgpt-site-recovered-source-hash",
+      "sourceHash": "bd01a150d26d572017365a2288c179bdfd830079",
+      "gameplayCommit": "eac7cf8b93e94f9d430e066472aed4059315dea0",
+      "siteVersion": 9,
+      "siteURL": "https://kfb-combat-arena-v4.frizzlebob.chatgpt.site/",
+      "verifiedAt": "2026-09-13",
+      "note": "sourceHash is recovery provenance, not a Git commit in georg-doc/kayfabizarro"
+    }
+  },
+  "implementationHeadBeforeEvidence": "6bd36e7a2da090d240ab520de9c280ac73fe12cb",
+  "evidenceHead": "ebcbde06d931e71a410d5f68bd7ade4eae8984dc",
+  "owners": {
+    "combatState": "KFB-Combat-Arena existing runtime",
+    "movementGround": "combat-arena-v2/player.v2.js",
+    "playerAnimationMixer": "combat-arena-v2/frizzlebob-driver-adapter.v2.js",
+    "face": "kayfabizarro graft-mount.v1",
+    "gunfight": "combat-arena-v2/gunfight.v2.js",
+    "mobLifecycle": "combat-arena-v2/mobs.v2.js",
+    "rewards": "existing Arena Rewards/RunFlow"
+  },
+  "driver": {
+    "repo": "georg-doc/kayfabizarro",
+    "donorCommit": "bdad1806842d733e6217457fe81cd8b6259569e0",
+    "assetCommit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+    "pet": "graft-driver",
+    "animationMode": "host",
+    "reader": "tools/KFB-ToolBox/kfb-rigs-embed-v3/frizzlegraft-v1/graft-mount.v1.js",
+    "contract": "tools/KFB-ToolBox/kfb-rigs-embed-v3/contracts/kfb-pet-graft-driver.v4.json"
+  },
+  "enemies": {
+    "repo": "georg-doc/kayfabizarro",
+    "modelCommit": "378b209355b13304e3cff656ec0806ca5b89df28",
+    "animationCommit": "11d7df978c63b9e375707bd8d9431b4c8358cda8",
+    "roster": [
+      {
+        "id": "ca2_skeleton_warrior",
+        "path": "media/3D_Assets/KayKit_Skeletons/characters/gltf/Skeleton_Warrior.glb",
+        "blob": "575da270ed4e7e6a40eae60f056640542c2fa645"
+      },
+      {
+        "id": "ca2_skeleton_mage",
+        "path": "media/3D_Assets/KayKit_Skeletons/characters/gltf/Skeleton_Mage.glb",
+        "blob": "7fcc7e425741699d01bf9c2d4d64b795acee1355"
+      }
+    ]
+  },
+  "stage": {
+    "projectPath": "/slices/combat-integration-v2/",
+    "plannedPublicUrl": "https://kayfabizarro.pages.dev/kfb-hub/stage/combat/",
+    "publicStatus": "PACKAGING_BLOCKED_BINARY_TRANSPORT",
+    "publicMirrorPresentOnKayfabizarroMain": false,
+    "blocker": "exact mirror requires 19 local WOFF2 blobs plus assets/vfx/kfb-combat-atlas_4x3.png; sources are present in private GitHub/Dropbox but current connectors cannot bridge their binary bytes into a public Git blob write"
+  },
+  "notes": [
+    "Dropbox contains a later CA2 v3 planning mirror, but it is not the GitHub implementation SSOT for this V2 slice.",
+    "game-dev CLI was unavailable in the current ChatGPT environment; repository-native CI is the evidence baseline.",
+    "No incomplete public mirror or replacement font/VFX fallback was introduced."
+  ]
+}

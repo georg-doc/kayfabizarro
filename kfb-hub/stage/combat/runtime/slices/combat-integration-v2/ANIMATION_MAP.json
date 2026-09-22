@@ -1,0 +1,52 @@
+{
+  "schema": "kfb.combat-animation-map/1",
+  "slice": "combat-integration-v2",
+  "player": {
+    "actor": "frizzlebob-driver",
+    "rig": "Rig_Medium",
+    "mixerOwner": "DriverCA2",
+    "groundOwner": "Player.v2",
+    "faceOwner": "graft-mount.v1",
+    "states": {
+      "Idle": {"set":"General","clip":"Idle_A","status":"FOUND_EXACT"},
+      "Walk": {"set":"MovementBasic","clip":"Walking_A","status":"FOUND_EXACT"},
+      "Run": {"set":"MovementBasic","clip":"Running_A","status":"FOUND_EXACT"},
+      "Jump": {"set":"MovementBasic","clip":"Jump_Start","status":"FOUND_EXACT"},
+      "Jump_Idle": {"set":"MovementBasic","clip":"Jump_Idle","status":"FOUND_EXACT"},
+      "Jump_Land": {"set":"MovementBasic","clip":"Jump_Land","status":"FOUND_EXACT"},
+      "Idle_Gun": {"set":"CombatRanged","clip":"Ranged_1H_Aiming","status":"FOUND_EXACT"},
+      "Walk_Gun": {"set":"MovementBasic","clip":"Walking_A","status":"NEUTRAL_FALLBACK"},
+      "Run_Gun": {"set":"MovementBasic","clip":"Running_A","status":"NEUTRAL_FALLBACK"},
+      "Idle_Shoot": {"set":"CombatRanged","clip":"Ranged_1H_Shoot","status":"FOUND_EXACT"},
+      "Run_Shoot": {"set":"CombatRanged","clip":"Ranged_1H_Shoot","status":"NEUTRAL_FALLBACK"},
+      "HitReact": {"set":"General","clip":"Hit_A","status":"FOUND_EXACT"},
+      "Death": {"set":"General","clip":"Death_A","status":"FOUND_EXACT"}
+    }
+  },
+  "enemies": [
+    {
+      "id":"ca2_skeleton_warrior",
+      "rig":"Rig_Medium",
+      "states":{
+        "idle":{"set":"General","clip":"Idle_A","status":"FOUND_EXACT"},
+        "move":{"set":"MovementBasic","clip":"Walking_A","status":"FOUND_EXACT"},
+        "attack":{"set":"CombatMelee","clip":"Melee_Unarmed_Attack_Punch_A","status":"FOUND_EXACT"},
+        "hit":{"set":"General","clip":"Hit_A","status":"FOUND_EXACT"},
+        "defeat":{"set":"General","clip":"Death_A","status":"FOUND_EXACT"}
+      }
+    },
+    {
+      "id":"ca2_skeleton_mage",
+      "rig":"Rig_Medium",
+      "states":{
+        "idle":{"set":"General","clip":"Idle_A","status":"FOUND_EXACT"},
+        "move":{"set":"MovementBasic","clip":"Walking_A","status":"FOUND_EXACT"},
+        "attack":{"set":"CombatRanged","clip":"Ranged_Magic_Shoot","status":"FOUND_EXACT"},
+        "hit":{"set":"General","clip":"Hit_A","status":"FOUND_EXACT"},
+        "defeat":{"set":"General","clip":"Death_A","status":"FOUND_EXACT"}
+      }
+    }
+  ],
+  "browserProof": "PENDING",
+  "humanVisualAcceptance": "PENDING"
+}

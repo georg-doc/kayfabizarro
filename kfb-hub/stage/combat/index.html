@@ -1,20 +1,25 @@
 <!doctype html>
-<html lang="en">
+<html lang="de">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>KFB Combat · Web Stage</title>
-<link rel="icon" href="data:,">
-<style>
-:root{font-family:Inter,system-ui,sans-serif;color-scheme:dark;background:#11161b;color:#eee7da;--line:#ffffff20;--gold:#e5be6b;--rust:#a75f3e;--muted:#9faeb4}
-*{box-sizing:border-box}body{margin:0;min-height:100vh;background:#11161b;color:#eee7da}main{width:min(1000px,calc(100% - 28px));margin:auto;padding:28px 0 56px}header{display:flex;justify-content:space-between;gap:24px;align-items:end;border-bottom:1px solid var(--line);padding-bottom:16px}.eyebrow{font:700 10px ui-monospace,monospace;letter-spacing:.13em;color:var(--gold)}h1{font-size:28px;margin:5px 0 4px}.sub{color:var(--muted);font-size:13px;max-width:680px}.status{font:700 10px ui-monospace,monospace;border:1px solid var(--line);padding:5px 7px;border-radius:999px;white-space:nowrap}.slice{display:grid;grid-template-columns:150px 1fr auto;gap:16px;align-items:center;padding:17px 0;border-bottom:1px solid var(--line)}.id{font:800 12px ui-monospace,monospace;color:var(--gold)}.slice h2{font-size:16px;margin:0 0 4px}.slice p{font-size:12px;color:var(--muted);margin:0}.button{display:inline-block;text-decoration:none;background:var(--rust);color:#fff4e7;border:1px solid #d88c69;border-radius:6px;padding:8px 11px;font-size:12px;font-weight:800}.hold{opacity:.55}.machine{margin-top:20px;border-top:1px solid var(--line);padding-top:14px;color:var(--muted);font:11px/1.5 ui-monospace,monospace}.machine summary{cursor:pointer;color:#c8d2d5}.machine a{color:#e5be6b}@media(max-width:700px){header{align-items:start;flex-direction:column}.slice{grid-template-columns:1fr}.button{justify-self:start}}
-</style>
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="kfb-stage" content="C-MVP-A">
+<meta name="kfb-source-repo" content="georg-doc/KFB-Combat-Arena">
+<meta name="kfb-source-pr" content="5">
+<meta name="kfb-source-head" content="954f2db7484dc566e468e5ce89b0d95940d97537">
+<title>KFB Combat Arena · CA2 Stage</title>
+<style>html,body,iframe{width:100%;height:100%;margin:0;border:0;display:block;background:#111}iframe{position:fixed;inset:0}</style>
 </head>
-<body><main>
-<header><div><div class="eyebrow">KFB HUB · COMBAT WEB LEAD</div><h1>Combat Arena · Web Stage</h1><div class="sub">Stable review surface for bounded Web slices. Combat Arena remains the implementation SSOT; this page only links isolated evidence and does not own Arena runtime.</div></div><div class="status">CA2 · HUMAN GATES</div></header>
-<section class="slice"><div class="id">CA2-01</div><div><h2>Actor Selector + Profile POC</h2><p>Isolated FrizzleBob Driver Graft / GothGirl source view plus explicit Legacy source-only state and five-gate profile status. No world movement, physics, combat, rewards or Arena save state.</p></div><a class="button" href="./ca2-actor-selector/">Open Stage</a></section>
-<section class="slice hold"><div class="id">CA2-02</div><div><h2>Ranged weapon + muzzle calibration</h2><p>Pending CA2-00 source report. Separate ToolBox calibration; Arena Player/Gunfight integration stays with WSA.</p></div><span class="status">HOLD</span></section>
-<section class="slice"><div class="id">CA2-03B</div><div><h2>Enemy state playback</h2><p>Skeleton Warrior, Orc Brute and Avian Swordsman play the verified Idle → Move → Attack → Hit → Defeat maps with separate mixers and stable world anchors. No Arena mob runtime.</p></div><a class="button" href="./ca2-enemy-adapters/">Open Stage</a></section>
-<section class="slice hold"><div class="id">SKY-01</div><div><h2>Spindle sky module</h2><p>Separate shared visual candidate; geometry/material ownership only.</p></div><span class="status">PREPARED</span></section>
-<details class="machine"><summary>LLM / handoff references</summary><p>Project SSOT: <a href="https://github.com/georg-doc/KFB-Combat-Arena">georg-doc/KFB-Combat-Arena</a><br>Planning PR: <a href="https://github.com/georg-doc/KFB-Combat-Arena/pull/6">Arena PR #6</a><br>Hub planning PR: <a href="https://github.com/georg-doc/kayfabizarro/pull/128">Hub PR #128</a><br>Current public Arena: <a href="https://kfb-combat-arena.pages.dev/">kfb-combat-arena.pages.dev</a><br>Web Stage plan: <a href="./MASTERPLAN.md">MASTERPLAN.md</a> · <a href="./CHANGELOG.md">CHANGELOG.md</a><br>Current slice return: <a href="./ca2-actor-selector/RETURN.md">CA2-01 RETURN.md</a></p></details>
-</main></body></html>
+<body>
+<iframe id="combat" title="KFB Combat Arena CA2 · PR #5" allow="autoplay; fullscreen" src="./runtime/slices/combat-integration-v2/"></iframe>
+<script>
+window.KFB_STAGE_SOURCE=Object.freeze({
+ stage:"C-MVP-A",
+ repository:"georg-doc/KFB-Combat-Arena",
+ pr:5,
+ branch:"chatgpt-web/combat-arena-integration-v2-2026-09-19",
+ commit:"954f2db7484dc566e468e5ce89b0d95940d97537"
+});
+</script>
+</body>
+</html>

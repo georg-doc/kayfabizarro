@@ -1,0 +1,28 @@
+{
+  "schema": "kfb.combat-ca2-overlay/1",
+  "slice": "combat-integration-v2",
+  "baseCommit": "f6a59ad15b9ffcf3164b0ab013f223962b63f61f",
+  "note": "Exact intentional overlays only; RECOVERED_SOURCE_MANIFEST remains immutable.",
+  "files": [
+    {
+      "path": "index.html",
+      "baseSha256": "77bb20260e93bb45b73472cb5a531ec7e67ce7f58bc6fe9b5215c65e869e029a",
+      "gitBlobSha": "957a44a20f6652ac460d621b037e6bbfde6a0e2a"
+    },
+    {
+      "path": "combat-arena-v2/mobs.v2.js",
+      "baseSha256": "bb8e0a09110ea26a4d202979e8c9ce3eed3632b66eb046764c1f50bad76d89c7",
+      "gitBlobSha": "e00db31ca01e7f8e5836c9186f516e68d9e95fb0"
+    },
+    {
+      "path": "combat-arena-v2/gunfight.v2.js",
+      "baseSha256": "90fdfb768665ebc555c762addc0eb4b80e570f188371a739fdb4409625392987",
+      "gitBlobSha": "b5121e5669b2ce8406aa843567bd7ad090836d97"
+    },
+    {
+      "path": "tools/build.py",
+      "baseSha256": "1851469a2aeef1f6231b8d7a4faff93d0747e29e99adf55c5810b3f18a7dd8ee",
+      "gitBlobSha": "03a2f8b6e1e2dc94a788d2f1ac67a792c017cda6"
+    }
+  ]
+}

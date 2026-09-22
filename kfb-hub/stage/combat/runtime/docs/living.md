@@ -1,0 +1,47 @@
+# Combat Arena · Living Integration Plan
+
+## Aktueller Stand · 13.09.2026
+
+**IMPLEMENTATION:** Wiederaufnahme mit CA0 Re-home. Vollständige Sites-Quelle 5A/A1 gesichert, Git-Historie erhalten. Gameplay unverändert; v4 ist weiterhin der Name der alten privaten URL.
+
+**TESTED RESULT:** 60 vorhandene Node-Tests am 13.09. erneut bestanden. Sites Version 9/source bd01a15/deployment succeeded abgeglichen. Aktuelle Re-home-Prüfungen separat unter `_handover/C0_REENTRY/VALIDATION.json`.
+
+**SOURCE VERIFIED:** echte Owner Map erstellt. Aktiver Actor ist `frizzlebob.v1.js` + Yellow_Gun + EyeRig v5 + PetMouth v1. `_groundKeep` und Player-Fußkorrektur sind gekoppelt. Die RunFlow-Verlustphase heißt `verloren`. Kill gibt ein Basis-Pop, Drop ist jetzt ein Prop plus 1–3 Coins; jede eingesammelte Coin gibt +1 Pop.
+
+**UNRESOLVED:** Welcher externe Stand genau mit „v13 FB“ gemeint ist. Aktuelle Actor-Identität ist trotzdem geklärt. Driver Graft/139-Clips-Nachweise gelten bisher für das Lab.
+
+## Produktionsmodus
+
+WSA: Lead, Owner-/Schnittstellenentscheidungen, Review, Integration, Abnahme. ChatGPT Web: konkret beauftragte Recon-/Spec-/Test-/Implementations-Slices; Ergebnisse in eigenem Branch oder `_inbox/ChatGPT_web/`. Claude Design: gemessene visuelle/Animation-/Waffen-/FX-Lab-Pakete. Keine neue automatische Arbeit, kein pauschal gestarteter Web-Sprint.
+
+GitHub ist die gemeinsame Implementation-Quelle. Cloudflare liefert denselben Stand spielbar aus und stellt `/build/`, `/docs/`, `/slices/`, `/source/` bereit. Die alte Sites-Fassung bleibt Rückfallstand. Privates Repo bedeutet nicht automatisch private Cloudflare-Preview; aktuelle Zugriffs-/Deploymentdetails gehören ins Re-home-Ergebnis.
+
+## Prioritäten / Schnittstellen
+
+1. CA0 Source und spielbare Bereitstellung abschließen; C0-Web Review gegen echte Quelle.
+2. A2 vorbereitete Kartenmodule prüfen und in eigenem Branch integrieren. Kein v5b-Deltapaket als vollständige Runtime ausgeben. Surface/Koordinaten, Frist/Jobs, Flood-Fairness, Phasen und Lifecycle gemeinsam testen.
+3. C1 Driver-Actor getrennt integrieren; danach C2 Combat-Profil. Boden-/Transformvertrag gemeinsam mit A2 vorab festlegen. Keine Vermischung der beiden Slice-Nummern.
+4. C3 Kenney-Blaster bei Lab-Rückgabe; C4 Auswahlrad und C5 getesteter Roster; C6 gesonderter Kandidat und Promotion.
+5. Portal-Loot/Anker, danach VFX/SFX-Juice einschließlich Performance. Kein volles Gear-System; sechs einfache Aktions-/Waffenplätze bleiben Ziel.
+
+## Rückgabe und Abnahme
+
+Jeder Auftrag nennt Basisrevision, erlaubte Dateien/Schnittstelle, Out-of-scope, reproduzierbaren Start, echte Tests und nächsten offenen Punkt. Ein neuer Prüfbericht macht eine historische Messung nicht aktuell. Browser/GPU/Audio getrennt. Kleine PRs bleiben reviewbar; Main wird nach Integration veröffentlicht, Slice-Branches können Vorschauen liefern.
+
+## Chronik
+
+- 09.09.: A1 Controls/Props implementiert, 60 Funktionstests. A2 aufgeschoben. Masterplan 1.1 und Stunt-Konzeptbriefing veröffentlicht.
+- 12.09.: Web-Briefing vorgeschlagen, C0 stoppte wegen fehlender vollständiger GitHub-Quelle. Original unverändert in `_inbox/ChatGPT_web/2026-09-12-fresh-chat/`.
+- 13.09.: Recovered bd01a15 gegen Sites-Version 9 verifiziert. 60 Tests erneut grün. Owner-/A2-Quellprüfungen beauftragt; keine Actor-/Kartenänderung. Produktionsmodus auf GitHub/Cloudflare ausgerichtet.
+
+- 13.09. CA0-Quellen erfolgreich nach georg-doc/KFB-Combat-Arena übertragen; GitHub-CI erfolgreich auf 12c327e. Lokaler Browser-Kaltstart zeigt Arena, Karten, FB, drei Gegner und Controls. Werkstatt-Startseite visuell geprüft. Keine vollständige Gameplay-/GPU-/Hörabnahme. Cloudflare-App-Zugriff auf genau dieses Repo von Georg bestätigt.
+
+- 13.09. Veröffentlichung erfolgreich: https://kfb-combat-arena.pages.dev/ und /docs/. Erster Cloudflare-Deploy c29cad2c auf 6b6997b; Build-Seite stimmt mit GitHub überein. Browser-Kaltstart der veröffentlichten Arena sichtbar geprüft. Aktuelle Revision jeweils unter /build/. Automatische main-Deployments aktiviert, private Sites-Fassung unverändert.
+
+## Neuer Eingang · Arena-Waffen-Playtest · 13.09.2026
+
+**DECISION:** Race-Briefing auf Georgs ausdrückliche Bestätigung für Combat Arena adaptiert. Paket: `_handover/WEAPON_PLAYTEST_ARENA_2026-09-13/`. Ziel ist eine gemeinsame Abnahme von C1-Actor und C2-Aim/Release auf der vorhandenen Arena. A2 bleibt separater Kartenmerge; kein zweiter Gameplay-Controller. C3-Waffenvariante erst nach gemessener Erstabnahme; Doppelarbeit vermeiden.
+
+**TESTED RESULT:** 18/18 Originaldateien gegen Manifest (SHA256 + Bytezahl) geprüft. **SOURCE VERIFIED:** vier gepinnte Studio-v16-Dokumente gelesen. Diese beschreiben das `weapon`-Feld als noch zu ergänzenden Eingang; Beispielwerte sind Platzhalter. **UNTESTED:** neue Runtime-/Browser-/Hörabnahme. Keine Gameplay-Änderung und kein automatisch gestarteter Sprint. Web-W0-Review und Studio-Messrückgabe sind konkret vorbereitet.
+
+Gemeinsamer manueller Eingang: übergeordneter Arena-Ordner `_inbox/`. Repo-Inbox = ausgewählte unveränderte Kopien; öffentliche Werkstatt = ausgewählte adaptierte Unterlagen. Kein Hintergrundmonitor.

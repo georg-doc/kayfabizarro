@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="kfb-slice" content="combat-integration-v2">
+<title>KFB Combat Arena · Integration V2</title>
+<style>html,body,iframe{width:100%;height:100%;margin:0;border:0;display:block;background:#111}iframe{position:fixed;inset:0}</style>
+</head>
+<body>
+<iframe id="arena" title="KFB Combat Arena Integration V2" allow="autoplay; fullscreen"></iframe>
+<script type="module">
+import {readContract,arenaQuery} from './contract.v1.js';
+const contract=readContract(location.search);
+window.KFB_CA2_INSTANCE_CONTRACT=contract;
+document.getElementById('arena').src='../../?'+arenaQuery(contract);
+</script>
+</body>
+</html>

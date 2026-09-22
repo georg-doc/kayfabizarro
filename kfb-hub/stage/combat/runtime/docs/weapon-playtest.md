@@ -1,0 +1,70 @@
+# Combat Arena · Waffen-Playtest
+
+Stand: 13.09.2026 · **ADAPTIERT / IMPLEMENTATION OFFEN**
+
+Georg hat die Übernahme des eingegangenen Race-Briefings **für Combat Arena** bestätigt. Ziel ist ein spielbarer Waffen-Playtest auf der vorhandenen Arena: FB bewegt sich, richtet sich zum aktuellen Klickziel aus und schießt sichtbar aus der ausgerichteten Mündung. Kalibrierung, Animation, Projektil und Effekte müssen zusammenpassen. Das ist ein Abnahmeziel für C1/C2, kein neuer Arena-Nachbau und kein Ersatz für A2.
+
+## Verbindliche Arbeitsbasis
+
+- Implementation: `georg-doc/KFB-Combat-Arena`, geprüfte Intake-Basis `af41a214f9c3f8fc0ae70c503448c2e690372f1d`.
+- Runtime: `index.html`, 5A/A1 · Props & Play. Gameplay-Herkunft `eac7cf8b93e94f9d430e066472aed4059315dea0`; vollständige Recovery `bd01a150d26d572017365a2288c179bdfd830079`.
+- Aktiver Actor: `combat-arena-v1/frizzlebob.v1.js`, `assets/models/FrizzleBob_Yellow_Gun.gltf`, EyeRig v5 und PetMouth v1. Der Driver ist noch nicht integriert; „v13 FB“ bleibt als externe Quellenbezeichnung offen.
+- Start: `WSA_START.md`, Living Plan und `_handover/C0_REENTRY/OWNER_MAP.md`. Dateinummern sind keine Versionsauswahl.
+- Dieses Paket bereitet Arbeit vor. Die darin enthaltenen Aufträge starten erst, wenn Georg/WSA den jeweiligen Slice zuweist. Race und Studio werden durch diese Adaption nicht verändert.
+
+## Was aus dem Eingang übernommen wird
+
+Studio kalibriert die Waffenbefestigung und exportiert gemessene Daten; Lab und Arena konsumieren sie. Ein erster, bekannter Blaster wird vollständig geprüft, bevor Varianten folgen. Kalibrieransicht und aufgeräumte Spielansicht sollen später ohne Neuladen wechseln können. In der Arena bleiben HP, Score, Controls und die sechs einfachen Ausrüstungsplätze sinnvoll sichtbar; Studio-Werkzeuge gehören nicht in den normalen Spielablauf.
+
+Character_Gun ist der **erste Referenzkandidat**, nicht schon ein abgenommener Austausch der aktuellen Gun. Der bestehende C3-Kenney-Auftrag bleibt nachgeordnet; doppelte Waffen-Slices sind vor Umsetzung zusammenzuführen.
+
+## Eigentumsgrenzen der Arena
+
+| Verantwortung | Bestehender Ort / Eingriffsgrenze |
+|---|---|
+| Weltposition, Bewegung, Drehen, Rand, Fußkorrektur | `player.v2.js` mit Field des Wirts. Kein zweiter Controller im Actor. |
+| Körperanimation | Actor-Mixer; Clipwahl ist heute teilweise im Player. C1/C2 trennen diese Kopplung bewusst. |
+| Gesicht | Ein bestehender Face-Owner; kein zusätzliches EyeRig oder Mund beim Graft. |
+| Zielen, Schussfreigabe, Projektil, Treffer, Schaden | `gunfight.v2.js`; vorhandene Logik adaptieren. |
+| Kamera/Input | Wirt, insbesondere `host.v2.js`; Rechtsziehen bleibt Kamerageste. |
+| Tod, Drops, Pickup, Powerups, Pop | `rewards.v4a.js` / `powerups.v5a.js` und bestehender RunFlow. |
+
+Die derzeitige doppelte Bodenkorrektur (`_groundKeep` im Actor plus Player-Fußkorrektur) muss beim Graft auf einen Owner reduziert werden. Lab-Rootmotion darf niemals die Arena-Weltwurzel bewegen. Die Verlustphase heißt tatsächlich `verloren`; Pause wird zusätzlich über den Zeitstatus geführt.
+
+## Studio-Eingang: was noch fehlt
+
+Die geprüften v16-Unterlagen beschreiben `weapon` in `kfb.pets/1` als **zu ergänzendes Feld**. Das eingegangene Beispiel enthält `MEASURE`, `CALIBRATE` und `PROPOSAL`. Es ist kein verwendbarer, numerisch kalibrierter Export. Benötigt werden:
+
+1. Gepinnte Actor-/Waffenquelle mit allen abhängigen Dateien und tatsächlichen Bone-Namen.
+2. Literal aus der Referenz gelesener Waffen-Transform; keine geschätzten Euler-Werte.
+3. Einmal gemessene Bind-Korrektur: `inverse(FistR.bindWorldQuaternion) * handslotr.bindWorldQuaternion`, inklusive Bezugssystem, Bind-Pose und Quaternionskonvention. `FistR` / `handslotr` sind Referenzannahmen und am konkreten Export zu bestätigen.
+4. Sechs Kalibrierwerte: Position in Bone-Längen, yaw/pitch/roll in Grad samt festgelegter Euler-Reihenfolge. „Wie Referenz“ setzt die sechs Benutzer-Offsets auf null und erhält Referenztransform/Bind-Korrektur. Bone-Längen-Normalisierung darf nicht mit Karten- oder Studiomaßstab verwechselt werden.
+5. Gemessene Mündungsposition und Vorwärtsachse im ausdrücklich benannten lokalen Raum; zwei tatsächlich gerenderte, benannte Clips einschließlich Schussmoment und Übergang.
+6. Export → Import → Reset-Nachweis und Aussage, ob `weapon` bereits implementiert wurde. Neue gemeinsame Felder erst mit Studio-Verantwortlichen vereinbaren.
+
+`WeaponSocket`, `GripAnchor`, `Muzzle` und `AimAxis` sind Vorschläge für Laufzeit-Hilfen, kein freigegebenes neues Persistenzschema. Zuerst Bind-/Gripfehler, echte Handbewegung und ungeeignete Clips unterscheiden; keine Sammlung von Clip-spezifischen Reparatur-Offsets.
+
+## Schussgefühl und Integration
+
+Der neueste Zielklick ersetzt ein wartendes Ziel; keine alte Klick-Warteschlange abarbeiten. Schnelle Klicks werden im Rahmen der dokumentierten Feuerrate verarbeitet, mit nachvollziehbarer Freigabe. Hit-Animation darf die Steuerung nicht heimlich sperren. Ein späterer echter Stun braucht einen eigenen, sichtbaren Zustand.
+
+Ein einziger Release löst Projektil, Mündungs-VFX und Start-SFX aus. Mündungsposition und Achse werden nach der aktuellen Pose im selben Frame bestimmt. Die bestehende Kopplung an `gunReady`, Action-Zeit/Marker und Gun-Node/+Z wird vor Änderung gemessen. Kein Projektil aus einer noch abgewandten Gun, kein Rückdrehen zwischen Zielwechseln.
+
+Für die Aim-Entscheidung kurze Messung von A (echte Mündungsachse), B (Konvergenz Mündung → Ziel) und C (kontrolliertes Drehen mit begrenzter Konvergenz). Ein Modell begründet auswählen; keine drei dauerhaften Systeme bauen. Grenzen bei nahen Zielen, Zielwechsel und 180° dokumentieren. Freies Zielen auf die Karte bleibt erhalten. Beim A2-Merge Surface-/Koordinatenvertrag verwenden; dieses Paket erfindet keine geneigten Kartenflächen.
+
+## Gameplay, das erhalten bleiben muss
+
+- Bewegung, Shift, Sprung/Space, Slam/F und Pause; Sprung kann einen wartenden Slam abbrechen.
+- Aktuelle Zielwahl, Fehlschuss-Weiterbewegung und Treffer-/Kill-Kette.
+- Ein Kill: +1 Pop, verzögerter Prop-Drop und 1–3 Coins. Jede eingesammelte Coin: +1 Pop. Keine doppelten Rewards durch Animationsevents.
+- Nach Card Clear weiterhin schießen und einsammeln.
+- Kalibrier-/UI-Wechsel ohne Weltreset, Verlust von Pickups, zusätzliche Input-Listener oder zweiten Mixer; Pause konsistent behandeln.
+- KFB-Default-Gun: roter Körper/Mündung, hellerer roter vorderer Lauf, teal-farbene Akzente. Im Studio mit Materialzonen umsetzen, ohne Texturvariation pauschal zu übermalen.
+
+## Umfang und Reihenfolge
+
+A2-Kartenmerge bleibt separat. Studio-Kalibrierung kann als eigenständige Rückgabe vorbereitet werden. Arena-Integration verbindet anschließend C1-Actor und C2-Schussvertrag in kleinen prüfbaren Änderungen; beide dürfen nicht unkoordiniert dieselben Player-/Combat-Dateien bearbeiten. Ein zweiter Blaster folgt erst nach bestandener Erstabnahme.
+
+Nicht enthalten: Portal-Gun, neues Inventar, Reload-System, allgemeines Waffenframework, große Animationsgraphen, neue KI, Race-Fahrphysik oder umfassender VFX-Ausbau. Diese Ziele bleiben im Masterplan.
+
+Rückgaben, Prüfmatrix und Quellen: die benachbarten Dateien `SPRINTS_UND_ABNAHME.md`, `STARTPROMPT_WEB.md` und `INTAKE.md`. Alle neuen Laufzeitkriterien sind bislang **UNTESTED**.

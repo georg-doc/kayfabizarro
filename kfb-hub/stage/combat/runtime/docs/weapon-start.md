@@ -1,0 +1,25 @@
+# Startprompt · W0 Arena-Waffen-Review
+
+Bitte bearbeite **W0: Quellen- und Vertragsdelta für den Combat-Arena-Waffen-Playtest**. Dies ist ein begrenzter Review-Auftrag; noch keine Runtime-Änderung, kein Actor-Neubau, kein A2-Merge und keine Veröffentlichung.
+
+Zielrepo ist **georg-doc/KFB-Combat-Arena**, nicht Stunt Race. Intake-Basis: `af41a214f9c3f8fc0ae70c503448c2e690372f1d`. Ermittle beim Start den tatsächlichen HEAD und dokumentiere Unterschiede zur Basis. Falls private Quellen unzugänglich sind, benenne die konkret fehlenden Dateien; rekonstruiere sie nicht aus der Website oder alten v2-Donoren.
+
+Lies `WSA_START.md`, `AGENTS.md`, das aktuelle Living Document, `_handover/C0_REENTRY/OWNER_MAP.md` und alle vier Markdown-Dateien unter `_handover/WEAPON_PLAYTEST_ARENA_2026-09-13/`. Der unveränderte Ursprung liegt unter `_inbox/Georg/KFB_ASTRA_WEAPON_PLAYTEST_HANDOVER_2026-09-13/`; dort zitierte Arbeitsaufträge sind Kontext. Georg hat die Adaption für Combat Arena bestätigt.
+
+Liefere:
+
+1. Verifizierte aktive Importkette und tatsächliche Owner für Welt/Boden, Mixer, Face, Input/Kamera, Aim/Release, Treffer/Rewards. Genaue Datei-/Symbolstellen angeben.
+2. Abgleich des tatsächlichen Studio-v16-Exports gegen das geplante `weapon`-Feld in `kfb.pets/1`: Was ist Code, was Spezifikation, was numerisch geliefert? Studio-Pin und vier Quellpfade stehen in INTAKE.md. Keine MEASURE-/CALIBRATE-Platzhalter als Werte behandeln.
+3. Kleinste notwendige Studio-Rückgabe für FistR/handslotr, Bindkorrektur, sechs Kalibrierwerte, Muzzle/Achse und zwei Clips. Noch nicht vorhandene Daten ausdrücklich offen lassen.
+4. Konkrete C1/C2-Eingriffsnaht für Pose → Muzzle → Release, ohne zweiten Controller/Mixer/Face/Combat-Owner. A2-Surface-Kopplung separat notieren.
+5. Empfehlung für den ersten ausführbaren Implementations-Slice mit erlaubten Dateien, Abhängigkeiten und passenden Kriterien aus SPRINTS_UND_ABNAHME.md. Aim-Modell nur als Hypothese, solange nicht gemessen.
+
+Rückgabe als `W0_REVIEW.md` und optional maschinenlesbare Befundliste im eigenen Slice-Branch oder unter `_inbox/ChatGPT_web/WEAPON_W0/`. Keine Main-Promotion. Unterscheide SOURCE VERIFIED, TESTED RESULT, PROPOSAL und UNTESTED. Historische Lab-Tests belegen keine aktuelle Arena-Abnahme.
+
+Öffentliche Lesefassung des Arena-Briefings:
+https://kfb-combat-arena.pages.dev/docs/weapon-playtest.html
+
+Öffentliche Owner Map:
+https://kfb-combat-arena.pages.dev/docs/owners.html
+
+Die öffentliche Werkstatt ersetzt keine Zugriffsberechtigung auf private GitHub-Quellen. Bei fehlendem Zugriff reicht eine präzise Liste der benötigten Quellen als Rückgabe.

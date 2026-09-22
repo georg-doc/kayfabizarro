@@ -1,0 +1,876 @@
+{
+  "schema": "kfb.combat-stage-runtime-manifest/1",
+  "source": {
+    "repository": "georg-doc/KFB-Combat-Arena",
+    "pr": 5,
+    "commit": "954f2db7484dc566e468e5ce89b0d95940d97537"
+  },
+  "build": {
+    "files": 215,
+    "command": "python3 tools/build.py",
+    "repositoryTests": "68/68 PASS",
+    "rehome": "172 preserved / 66 verified / routes PASS"
+  },
+  "files": [
+    {
+      "path": "404.html",
+      "blob": "fc1fbc942ca71bd42d2792bfe247757de783c802"
+    },
+    {
+      "path": "assets/4a/Coin.glb",
+      "blob": "47960d1081c5ed2941de450e63b6332d5122083a"
+    },
+    {
+      "path": "assets/4a/SMOKE-LICENSE.txt",
+      "blob": "673e1aa6c275c73d3b77114c3fdcbdb34cc79e78"
+    },
+    {
+      "path": "assets/4a/Skull.gltf",
+      "blob": "f79568e11ba4c34e9e8117dbcd903e2600615c95"
+    },
+    {
+      "path": "assets/4a/smoke/01.png",
+      "blob": "fdcd87d126b0fe4a0f7cdf7a47537639be41b2a3"
+    },
+    {
+      "path": "assets/4a/smoke/02.png",
+      "blob": "5f02ec5c6a84de0ce424920e22bdc21583524865"
+    },
+    {
+      "path": "assets/4a/smoke/03.png",
+      "blob": "09ad142a01ae855ec6262c338769cf876471005c"
+    },
+    {
+      "path": "assets/4a/smoke/04.png",
+      "blob": "062297aa3ec25640c14b5faaee36e99fefb4eb66"
+    },
+    {
+      "path": "assets/4a/smoke/05.png",
+      "blob": "94cbe64ec0e8902fae696016524a50de5118a20f"
+    },
+    {
+      "path": "assets/4a/smoke/06.png",
+      "blob": "9f732604ecece0e31df3ece00b0f95efcd4f881d"
+    },
+    {
+      "path": "assets/4a/smoke/07.png",
+      "blob": "ebfd502ecccf88aa87ed2e56fe9cca41ee61af37"
+    },
+    {
+      "path": "assets/4a/smoke/08.png",
+      "blob": "96d55f72ef8ba625101d593f5c4e7bbe22ba9dca"
+    },
+    {
+      "path": "assets/4a/smoke/09.png",
+      "blob": "7ad4ab78f39ca9a9fe0311346628c00a0ccf86d4"
+    },
+    {
+      "path": "assets/4a/smoke/10.png",
+      "blob": "54de37ed03335a1ea71a01a57fec0845d4ffc4f9"
+    },
+    {
+      "path": "assets/4a/smoke/11.png",
+      "blob": "8e3347b058309fec6b89b23214d1dfde8adee461"
+    },
+    {
+      "path": "assets/4a/smoke/12.png",
+      "blob": "db8f3000dc63f8f84754c97fceb36a49b444a92a"
+    },
+    {
+      "path": "assets/4a/smoke/13.png",
+      "blob": "3a3392b16e27e2e8ccc40cbd3336b1238b38732c"
+    },
+    {
+      "path": "assets/4a/smoke/14.png",
+      "blob": "c6fcca2c554045bb6c5496e30f1159c9e2e057ea"
+    },
+    {
+      "path": "assets/4a/smoke/15.png",
+      "blob": "083552caf538a41aca779b7d2eb186081961d0cf"
+    },
+    {
+      "path": "assets/4a/smoke/16.png",
+      "blob": "1f4252f0c3166678e0a91dbce6b5c932fcb589f4"
+    },
+    {
+      "path": "assets/5a/README.md",
+      "blob": "ddcb140fc909622755e2d4bb9cf7cb58d63f49a2"
+    },
+    {
+      "path": "assets/5a/chest/chest_gold.bin",
+      "blob": "c364ca5bc0cc4804d5b5b943edc8bd338cf91e5b"
+    },
+    {
+      "path": "assets/5a/chest/dungeon_texture.png",
+      "blob": "1bd3e9d4678f2a9cb54ede0494b9eefb6191036e"
+    },
+    {
+      "path": "assets/5a/chest/model.gltf",
+      "blob": "8d51d4cd8d0f3dd3a8603efb9bbe4875ad71c390"
+    },
+    {
+      "path": "assets/5a/healing-potion/bottle_A_labeled_green.bin",
+      "blob": "d5d21320f1205cc5e341118bd6490fb589ffdebc"
+    },
+    {
+      "path": "assets/5a/healing-potion/dungeon_texture.png",
+      "blob": "1bd3e9d4678f2a9cb54ede0494b9eefb6191036e"
+    },
+    {
+      "path": "assets/5a/healing-potion/model.gltf",
+      "blob": "ea9f0306e31791350dbb3cd5f96dd85aedeafa00"
+    },
+    {
+      "path": "assets/5a/knife/knife.bin",
+      "blob": "c583364771d50e0a1995aa0ee98e5cee24f95d40"
+    },
+    {
+      "path": "assets/5a/knife/model.gltf",
+      "blob": "d40753cf75f8b4df638130960ed9be92d27bc8fc"
+    },
+    {
+      "path": "assets/5a/knife/tools_bits_texture.png",
+      "blob": "58cf2b3fa0eabf381a66f8f1c99b8313317f4007"
+    },
+    {
+      "path": "assets/5a/licenses/KayKit_Adventurers_2.0_FREE_License.txt",
+      "blob": "f6062e1a4ab833ee21b22707247717b83ac7c682"
+    },
+    {
+      "path": "assets/5a/licenses/KayKit_Dungeon_Pack_1.1_FREE_2_License.txt",
+      "blob": "cc31633c167cd2add73a1fb345a31057dd94c3a0"
+    },
+    {
+      "path": "assets/5a/manifest.json",
+      "blob": "753154253494ddeb4327bdce54da50958707ddb2"
+    },
+    {
+      "path": "assets/5a/pencil_A_long/model.gltf",
+      "blob": "0b634a084bbbf6459b26292d11da8a0d39396549"
+    },
+    {
+      "path": "assets/5a/pencil_A_long/pencil_A_long.bin",
+      "blob": "2a6be8ee5242ccbb1aebe54c2ac64a97bc083b7a"
+    },
+    {
+      "path": "assets/5a/pencil_A_long/tools_bits_texture.png",
+      "blob": "58cf2b3fa0eabf381a66f8f1c99b8313317f4007"
+    },
+    {
+      "path": "assets/5a/pencil_A_short/model.gltf",
+      "blob": "ddd37ab5a0abfdf20eb4f747a7e78c0d36b796cb"
+    },
+    {
+      "path": "assets/5a/pencil_A_short/pencil_A_short.bin",
+      "blob": "15a2a4c02d29fa42d3b63bf0eb8196821d3c40b7"
+    },
+    {
+      "path": "assets/5a/pencil_A_short/tools_bits_texture.png",
+      "blob": "58cf2b3fa0eabf381a66f8f1c99b8313317f4007"
+    },
+    {
+      "path": "assets/5a/pencil_B_long/model.gltf",
+      "blob": "d8e2b2ab3c7de3199ab04b3d3f141b2316445b47"
+    },
+    {
+      "path": "assets/5a/pencil_B_long/pencil_B_long.bin",
+      "blob": "63fdef5770d745bde02bf0974e4c30258a19c164"
+    },
+    {
+      "path": "assets/5a/pencil_B_long/tools_bits_texture.png",
+      "blob": "58cf2b3fa0eabf381a66f8f1c99b8313317f4007"
+    },
+    {
+      "path": "assets/5a/pencil_B_short/model.gltf",
+      "blob": "894df7034c960ae96ac855ef4829e763fc28c7be"
+    },
+    {
+      "path": "assets/5a/pencil_B_short/pencil_B_short.bin",
+      "blob": "bf9ed5b68c9f1e035b0b68f8bb8a317862864d45"
+    },
+    {
+      "path": "assets/5a/pencil_B_short/tools_bits_texture.png",
+      "blob": "58cf2b3fa0eabf381a66f8f1c99b8313317f4007"
+    },
+    {
+      "path": "assets/5a/smoke-bomb/model.gltf",
+      "blob": "1fee7ed3a0948ba14645345a4ff0518c5fd30e77"
+    },
+    {
+      "path": "assets/5a/smoke-bomb/rogue_texture.png",
+      "blob": "4b04827ce382cc7c5dbe2f52bdc8d25dc522c3ef"
+    },
+    {
+      "path": "assets/5a/smoke-bomb/smokebomb.bin",
+      "blob": "203e5a0ef260d8207f477c5ddcc6640e130bfb7e"
+    },
+    {
+      "path": "assets/5a/water-bomb/model.gltf",
+      "blob": "63588316a11202e425c5f22153871cd2306b21a1"
+    },
+    {
+      "path": "assets/audio/03a41be702f1.wav",
+      "blob": "054f81b00f157dbf5d74d7e1ad92106d76d60fe4"
+    },
+    {
+      "path": "assets/audio/0edc2d0e4cb5.wav",
+      "blob": "a9e4cb6b72d60bc412c45d74e4521bcd0cbc5b67"
+    },
+    {
+      "path": "assets/audio/1046d74c26de.wav",
+      "blob": "3116730605f6a1fc061b8943946e2398d9bf0156"
+    },
+    {
+      "path": "assets/audio/155af9952d23.wav",
+      "blob": "193ca8c00d82ee50dbeaf7bbb48a3e13a3ef3fd8"
+    },
+    {
+      "path": "assets/audio/3407d78b3f48.ogg",
+      "blob": "417cacc126afeeb18da7cc5067b6b60d9978000f"
+    },
+    {
+      "path": "assets/audio/4988da82fa51.wav",
+      "blob": "52016c0ae613b992873b1edde7acf3fa82cb4d79"
+    },
+    {
+      "path": "assets/audio/4e4e926666ae.wav",
+      "blob": "2f158b361cc06e7e3a4a23ac91a994dbf34fda17"
+    },
+    {
+      "path": "assets/audio/52ad9c864030.ogg",
+      "blob": "b7a35ebf0e26072e27315ebf53a4ffb48a15e494"
+    },
+    {
+      "path": "assets/audio/5752d2861877.wav",
+      "blob": "6a498aed0bc417caf635df88d78c62fa95d39995"
+    },
+    {
+      "path": "assets/audio/642c78f05442.wav",
+      "blob": "0b6d5ec7683e6625dc982097484821cb4a564a74"
+    },
+    {
+      "path": "assets/audio/6f3fc9838611.wav",
+      "blob": "1c869cef0408e632f906a1b2c3c47d33feccc0af"
+    },
+    {
+      "path": "assets/audio/7561583b55fe.wav",
+      "blob": "0ff7a09c9ea1bac44eb867c16087c408ae505af7"
+    },
+    {
+      "path": "assets/audio/767e3e7b6b32.ogg",
+      "blob": "c27596a65dce07db55a3456ab8bf9b6561375d83"
+    },
+    {
+      "path": "assets/audio/8b23ee0776b6.wav",
+      "blob": "2c3ef1a3d76806ee7e8740d03f55657c14682bb3"
+    },
+    {
+      "path": "assets/audio/95827703e7ff.ogg",
+      "blob": "4748c691d2687d9ca74757aca424023eb7f5ecdf"
+    },
+    {
+      "path": "assets/audio/9a24494a566d.ogg",
+      "blob": "d7fbb0fcbcad9f9eda0dc81db113bbb03f3ebae6"
+    },
+    {
+      "path": "assets/audio/9af1f7a8aa8c.wav",
+      "blob": "e90e9437d143c9d692ed658fb5a0696e0c29fbc2"
+    },
+    {
+      "path": "assets/audio/9d6e20d258fc.wav",
+      "blob": "b8b60b3e03fa124ead7f9ece7375876580057548"
+    },
+    {
+      "path": "assets/audio/9e037b68a624.ogg",
+      "blob": "4bf6be62febf1de5f13b8bf33151118d8bb56c34"
+    },
+    {
+      "path": "assets/audio/a45a1f8a2c0e.wav",
+      "blob": "a57b10225410af77b77266d25703754c48a6d235"
+    },
+    {
+      "path": "assets/audio/a65fd115d7c3.ogg",
+      "blob": "2184d0504732b25db5dd8b9c69867aaa36ab8f61"
+    },
+    {
+      "path": "assets/audio/a73eac63e240.ogg",
+      "blob": "c42b1d52554e1056da37e3a2410e91733d970e02"
+    },
+    {
+      "path": "assets/audio/ab67b703c20b.wav",
+      "blob": "bd82b2c9e5c50d2132a254b9f48ef0ad5acbec86"
+    },
+    {
+      "path": "assets/audio/cc42a312d667.wav",
+      "blob": "ee293c3f21f007bd7d69c36b0c45dc982fd6fb17"
+    },
+    {
+      "path": "assets/audio/d05664953e81.ogg",
+      "blob": "1c321ef698c367144d0d55b52d7a680a4b8e5958"
+    },
+    {
+      "path": "assets/audio/d8eb4ac9373f.wav",
+      "blob": "a712db5aa67a3f5f85d6cf745128fab1efe72c3e"
+    },
+    {
+      "path": "assets/audio/ebbe82327b1e.ogg",
+      "blob": "88359d14164c6df85d8f31b6227d49b274d208e3"
+    },
+    {
+      "path": "assets/models/FrizzleBob_Yellow.gltf",
+      "blob": "e0a757ece30accabc4c61f1ad11751b15bd06974"
+    },
+    {
+      "path": "assets/models/FrizzleBob_Yellow_Gun.gltf",
+      "blob": "03ac3d99014b63d718a8b9310d9b2d724227826f"
+    },
+    {
+      "path": "assets/vfx/kfb-combat-atlas_4x3.png",
+      "blob": "3a66d1011d096ebb429d006b475ca0b2caa310c8"
+    },
+    {
+      "path": "build/build.json",
+      "blob": "57578624734c96d6e06da59d9f536ba16c8a1222"
+    },
+    {
+      "path": "build/index.html",
+      "blob": "1aa6f1338b0e1a6e2631f59aacd112a8a59e36a5"
+    },
+    {
+      "path": "bundle/1a08ede4-7f12-45db-b64d-bb625f763cc2.woff2",
+      "blob": "d4a9723bdaaff046f491e5ca8685300e0e50621b"
+    },
+    {
+      "path": "bundle/213b6865-5972-4709-af79-b272aebdde1b.woff2",
+      "blob": "d702c5a3aea0f2ec488e6a1f301d101010eb0335"
+    },
+    {
+      "path": "bundle/2286e04e-872b-4898-8812-734aa4c28de1.js",
+      "blob": "fb4e099c05623afac0779278631c0712676e2b65"
+    },
+    {
+      "path": "bundle/2c64f14d-cb5d-4a05-b4e9-c4383255b90f.woff2",
+      "blob": "56f045cce6643de71270bffae6005644f2a14d0f"
+    },
+    {
+      "path": "bundle/30ece64f-b2a2-4038-9518-98475a5da90c.woff2",
+      "blob": "05c7748811f4d448bcbd0d19c573083912b6e79f"
+    },
+    {
+      "path": "bundle/31af4eea-b8aa-4e5b-943e-d410655892c2.woff2",
+      "blob": "a80e8e90abb9621beb5b66ddd2242085730a85f2"
+    },
+    {
+      "path": "bundle/36b252b2-b8e6-4e99-b4ea-b878e5679677.js",
+      "blob": "9f467cace439d574903ae9d7aa6ef1068552c2f6"
+    },
+    {
+      "path": "bundle/5959e90a-e439-4a0a-83cb-b7da62c02d6e.js",
+      "blob": "7775aa48c286ea925fd1f09e7ab57ee7f37f75f4"
+    },
+    {
+      "path": "bundle/6b9896bf-3679-43b9-a598-50a55d10a6c2.woff2",
+      "blob": "fb78ce670561dbd311edd0ebde88fa879d4bd720"
+    },
+    {
+      "path": "bundle/6c28316c-b99c-473c-9699-6b62d617613c.woff2",
+      "blob": "0d422e9090e781ed783cf61fcab42650ce3173a5"
+    },
+    {
+      "path": "bundle/6e20df58-6e4d-4c8e-b911-1c110d893890.woff2",
+      "blob": "c3c28a8b5e8b79a0cb95e980bfbe5eb64d274328"
+    },
+    {
+      "path": "bundle/822fc644-3ef1-4af3-b59c-dc345210ddbf.woff2",
+      "blob": "5dda7d666d505077ba7006b7fea78426faaab6f5"
+    },
+    {
+      "path": "bundle/8e7ee9e3-a234-40ec-a78a-16a0d2dbad6d.woff2",
+      "blob": "a0fadcfcb265537b275875c510df4ad41f9ef31f"
+    },
+    {
+      "path": "bundle/9286f4bc-9a53-4990-a5c0-99d9117b2654.woff2",
+      "blob": "079ee850dbfde3ca697a161e434dfbe109a3c5b4"
+    },
+    {
+      "path": "bundle/93844524-584e-4738-8f2d-595f6dd938a5.woff2",
+      "blob": "948d9ebacadf77c76752842fcc7a6b28485c84af"
+    },
+    {
+      "path": "bundle/a20ea22c-73d2-4b77-a794-ff0d752f2cef.woff2",
+      "blob": "54671c3dacaee0bffaea44c02b545cd3ca0e014f"
+    },
+    {
+      "path": "bundle/a5abc2dc-9648-486c-b395-6bf9f18a9905.woff2",
+      "blob": "e3aa61ccdd2ae7bd4b119f4f73285b44fff5c768"
+    },
+    {
+      "path": "bundle/b0bc1363-cf50-45bc-a681-ccf866261344.woff2",
+      "blob": "2c695ef939d2444a86d96b12dd8381a5094f5f6d"
+    },
+    {
+      "path": "bundle/b6d3f555-40f9-440e-8653-7439d71a0084.woff2",
+      "blob": "7b0e76a5c9bdfdb5ccc8c9ab44780b5ff788c6db"
+    },
+    {
+      "path": "bundle/df2b85b6-10ac-4330-88e0-6006ce2e1cad.woff2",
+      "blob": "a2540b713b4d9cc32851a16f8e6ad1de75ebb7f4"
+    },
+    {
+      "path": "bundle/f3204fd6-5a98-4a16-b366-4d4922d521fa.woff2",
+      "blob": "f99b2f4861a832aa4945903196276dd267c3cc4e"
+    },
+    {
+      "path": "bundle/f6616f21-5739-4e37-9c12-89d69aaf17c8.woff2",
+      "blob": "05f2af2d50d21865c709391f1e2cd1024bc4af87"
+    },
+    {
+      "path": "cardbuilder/demo.js",
+      "blob": "54f9be978ac8216de9dc89403affd4c8b853d71e"
+    },
+    {
+      "path": "cardbuilder/kfb-card-builder.js",
+      "blob": "1abb631983c9052f91e0796ba3fd56b0682405de"
+    },
+    {
+      "path": "cardbuilder/kfb-card-format.js",
+      "blob": "210f48f19e0bec06574ff7bf676b54282a84523e"
+    },
+    {
+      "path": "cardbuilder/kfb-ink-canon.js",
+      "blob": "21acfa71212b932725ae2d9646028859f8b7649e"
+    },
+    {
+      "path": "combat-arena-v1/arena-ring.v1.js",
+      "blob": "4a066fa1ead6d771ec3052d57e6f6b40befc414a"
+    },
+    {
+      "path": "combat-arena-v1/cartoon-deform.v1.js",
+      "blob": "16d0cd053b4320132b1151ce411546bc6730fe3d"
+    },
+    {
+      "path": "combat-arena-v1/enemies.v1.js",
+      "blob": "ba6d1399d598cd0bad3ab471937ead70d65f3f8f"
+    },
+    {
+      "path": "combat-arena-v1/fight.v1.js",
+      "blob": "dd9095adaa9aff9e4b119d8e9476111f8d2f3e3e"
+    },
+    {
+      "path": "combat-arena-v1/frizzlebob.v1.js",
+      "blob": "89339f7c518b39a9ec6d519373912a31cc95fd5a"
+    },
+    {
+      "path": "combat-arena-v1/host.v1.js",
+      "blob": "5ff34cb0d48c987cad91f04c8ab1325edac41d48"
+    },
+    {
+      "path": "combat-arena-v1/proof-strip.v1.js",
+      "blob": "0553f9bb9b3c30f246d0200d2a325b4ca2d86201"
+    },
+    {
+      "path": "combat-arena-v1/vfx-sfx.v1.js",
+      "blob": "b700209f7750d9e87f4a71486356894e88a066f4"
+    },
+    {
+      "path": "combat-arena-v2/floors.v2.js",
+      "blob": "8d72fc503f70d05afb2876e8598e657d1266d556"
+    },
+    {
+      "path": "combat-arena-v2/frizzlebob-driver-adapter.v2.js",
+      "blob": "2f721439df3428f8ae52aceeebbeef1fdb0def7b"
+    },
+    {
+      "path": "combat-arena-v2/gunfight.v2.js",
+      "blob": "b5121e5669b2ce8406aa843567bd7ad090836d97"
+    },
+    {
+      "path": "combat-arena-v2/host.v2.js",
+      "blob": "696ecbe489219f03a2604a62737a48f4b046aba1"
+    },
+    {
+      "path": "combat-arena-v2/kaykit-enemy-source.v2.js",
+      "blob": "5786cbb4769e04ac146cb8084d0bd982e9186556"
+    },
+    {
+      "path": "combat-arena-v2/locomotion.v2.js",
+      "blob": "d6897cb3c6563a47ad918460c5dec975931f2760"
+    },
+    {
+      "path": "combat-arena-v2/mobs.v2.js",
+      "blob": "e00db31ca01e7f8e5836c9186f516e68d9e95fb0"
+    },
+    {
+      "path": "combat-arena-v2/player.v2.js",
+      "blob": "0947923f178bc5f2187086e99c5a1fc3601a44c7"
+    },
+    {
+      "path": "combat-arena-v3/beat.v3.js",
+      "blob": "b8b70405d498f840c35c718a02137a9b20a3ceec"
+    },
+    {
+      "path": "combat-arena-v3/clipmarks.v3.js",
+      "blob": "0e6f0fe3b5ea335592aa4cced0a4a7f0d7e2979b"
+    },
+    {
+      "path": "combat-arena-v3/flood.v3.js",
+      "blob": "3a4502973167709a5fea6e19a5e28f8dff1bcec1"
+    },
+    {
+      "path": "combat-arena-v3/gear.v3.js",
+      "blob": "0db6a7b65c528c273f884aee1a68dc2b5f30e980"
+    },
+    {
+      "path": "combat-arena-v3/gutter-naht.v3.js",
+      "blob": "f1dcbf02a8cc5ca3e2d33de345cac7cf51254fe8"
+    },
+    {
+      "path": "combat-arena-v3/gutter.v3.js",
+      "blob": "c0e25df80d9eb498e27ca24478b31d92db691789"
+    },
+    {
+      "path": "combat-arena-v3/gutter.v5.js",
+      "blob": "d60f9fc1071ad7845fab2f87f94713e3f3db40e6"
+    },
+    {
+      "path": "combat-arena-v3/himmel.v3.js",
+      "blob": "957750826ac5e100bcf925abaffe63ce5a5fc9d2"
+    },
+    {
+      "path": "combat-arena-v3/runflow.v3.js",
+      "blob": "7f08e2742523c568f69968a64a84b7cbfef6dd4d"
+    },
+    {
+      "path": "combat-arena-v3/skydome-shader.js",
+      "blob": "1fc0b8c1efb88794480ecfb2b7c7adcbf56d36fb"
+    },
+    {
+      "path": "combat-arena-v3/spuck.v3.js",
+      "blob": "26b2bb9b0e1446c592a55a891fb6b43135953dbc"
+    },
+    {
+      "path": "combat-arena-v3/zensur.v3.js",
+      "blob": "d5585b942d08d5d95a370eefb73df44c006445f2"
+    },
+    {
+      "path": "combat-arena-v4/actions.v5a.js",
+      "blob": "121223283ec2475c3476a343bf18dda8472cb900"
+    },
+    {
+      "path": "combat-arena-v4/controls.v5a.js",
+      "blob": "0b07f4cc7a825c8bf8623ca36110f876c06332b4"
+    },
+    {
+      "path": "combat-arena-v4/fun.v4.js",
+      "blob": "9bdb00840a531734bda6e4e48d93032942620bad"
+    },
+    {
+      "path": "combat-arena-v4/gun-look.v4a.js",
+      "blob": "ec6023c303e3a334f5590cb19920550d416d36d5"
+    },
+    {
+      "path": "combat-arena-v4/powerups.v5a.js",
+      "blob": "2f4850c82202946c5bcb589c54ea64c233c68b44"
+    },
+    {
+      "path": "combat-arena-v4/rewards.v4a.js",
+      "blob": "4bce64cc366009c11e49d3a89650ae2c0e142f16"
+    },
+    {
+      "path": "combat-arena-v4/slam.v4a.js",
+      "blob": "884254f9224cd4273278d88bf06a3651996ade39"
+    },
+    {
+      "path": "combat-arena-v4/targeting.v4a.js",
+      "blob": "c718f24c13648f77f2bd53933dd730e4f0348bc3"
+    },
+    {
+      "path": "docs/a2.html",
+      "blob": "e1d483b53d31b591c17727d99617ac6daf07d7ac"
+    },
+    {
+      "path": "docs/a2.md",
+      "blob": "ff2eab361ad3f6e832690bad49061f24e8bd52a6"
+    },
+    {
+      "path": "docs/c0.html",
+      "blob": "00c7ceb0d49922137c05d3077ebdeb1787b8f7eb"
+    },
+    {
+      "path": "docs/c0.md",
+      "blob": "e6affd2685863477447abe2d065910a9e3192c57"
+    },
+    {
+      "path": "docs/c1.html",
+      "blob": "692a8ae8cdb0f452b34d0629b012342ee8125431"
+    },
+    {
+      "path": "docs/c1.md",
+      "blob": "feb26a433b28ca8fd0f03bf1d195e8cae5cef541"
+    },
+    {
+      "path": "docs/c2.html",
+      "blob": "e63f4f6d05972a6ae38e18d907de029ff114343b"
+    },
+    {
+      "path": "docs/c2.md",
+      "blob": "37c6fd448ecf7e5d61e65659b5b009f4f4ab9dfe"
+    },
+    {
+      "path": "docs/index.html",
+      "blob": "f8fead431292aceee7eda0464824d7d6cec68643"
+    },
+    {
+      "path": "docs/lab.html",
+      "blob": "88f67467bd894998350cbd70fe8d4533667a99ec"
+    },
+    {
+      "path": "docs/lab.md",
+      "blob": "c0d34b3305164bb76b6af902d480d336a8d0bc68"
+    },
+    {
+      "path": "docs/living.html",
+      "blob": "4ed1f57b29be6ee328561b11a6a76a2d88e15f83"
+    },
+    {
+      "path": "docs/living.md",
+      "blob": "a3078de4740f132aac2474562744d7fca11a3338"
+    },
+    {
+      "path": "docs/owners.html",
+      "blob": "439297c6eb7802a8fdf41913b7afffe5ea0b0651"
+    },
+    {
+      "path": "docs/owners.md",
+      "blob": "da5845acb2bb2cba565b4a87c1cc15d79ba87e26"
+    },
+    {
+      "path": "docs/portal.css",
+      "blob": "bbb9b1389b862d70058763090c7707398d0cf6a0"
+    },
+    {
+      "path": "docs/weapon-acceptance.html",
+      "blob": "5ab19d79ffdf66212d4b51856d7b567a12208717"
+    },
+    {
+      "path": "docs/weapon-acceptance.md",
+      "blob": "6f7688411fb1550876be856901d99f9d89fc1e53"
+    },
+    {
+      "path": "docs/weapon-intake.html",
+      "blob": "96a67acfff4b3d2ae04e6abdff81956a7b225a53"
+    },
+    {
+      "path": "docs/weapon-intake.md",
+      "blob": "568b49d0d4cf95498a079a1dca8f20bd8bd8992b"
+    },
+    {
+      "path": "docs/weapon-playtest.html",
+      "blob": "a481a9f2b66a6ec149198eb4aa8e9f2e5e49bcb1"
+    },
+    {
+      "path": "docs/weapon-playtest.md",
+      "blob": "d86c9d7c3289a57ce230d194e92582d38955328d"
+    },
+    {
+      "path": "docs/weapon-start.html",
+      "blob": "c2a5cc7fd07dc9e5ea66ee6598b10267aadd4c55"
+    },
+    {
+      "path": "docs/weapon-start.md",
+      "blob": "859ae1f9af71dfadf30aebf0d8008a6f43b189d7"
+    },
+    {
+      "path": "docs/web-start.html",
+      "blob": "73eff7e1413efc8f8ce04beff457de735a91f80f"
+    },
+    {
+      "path": "docs/web-start.md",
+      "blob": "bcd2db2fe8a94ba234a5ed3e06b310fc77e02e4a"
+    },
+    {
+      "path": "index.html",
+      "blob": "957a44a20f6652ac460d621b037e6bbfde6a0e2a"
+    },
+    {
+      "path": "modules/kfb-arena-sfx.v4.json",
+      "blob": "b09861e7b438239d56a146f5472cfef08232c217"
+    },
+    {
+      "path": "modules/kfb-combat-atlas.js",
+      "blob": "f51bae7aefbf578f39b0e40fe87cc61a29a51b6a"
+    },
+    {
+      "path": "modules/kfb-combat-cues.js",
+      "blob": "ef612cdec4fd369c0e62cc4daac34aa2126095b4"
+    },
+    {
+      "path": "modules/kfb-combat-def.js",
+      "blob": "00a3be25eaf8528cfc97d82d748cf5f2ac489b9f"
+    },
+    {
+      "path": "modules/kfb-combat-sfx.v2.json",
+      "blob": "029fe31a0357b4c5e5b143fe68454dee18c0853f"
+    },
+    {
+      "path": "modules/kfb-fx-flame.js",
+      "blob": "03c492de881f5cc7c60ef3059e915bcb7919dbdb"
+    },
+    {
+      "path": "modules/kfb-fx-sprites.js",
+      "blob": "df009798a09780ecd7d0341d1346aae69f517752"
+    },
+    {
+      "path": "modules/kfb-fx-trails.js",
+      "blob": "1589475df73ffe9135c9b11a14cbb9febae5d4c7"
+    },
+    {
+      "path": "modules/kfb-hit-response.js",
+      "blob": "996aaed9a86967b05c273cbe133bef300f66b348"
+    },
+    {
+      "path": "modules/kfb-mech-audio.js",
+      "blob": "fb2605c7bb7f65646d9f771709e04e7d22a21d48"
+    },
+    {
+      "path": "modules/kfb-mob-locomotion.js",
+      "blob": "9144f1922d95f4eea613fb0b0b659dc35123caf0"
+    },
+    {
+      "path": "modules/kfb-monster-look.js",
+      "blob": "54bba856063e7a56ed0c41431c1b53b04aa0c800"
+    },
+    {
+      "path": "modules/kfb-monster-roster.js",
+      "blob": "48586e56e3b43d3e4b608e15cce53059f56c770d"
+    },
+    {
+      "path": "modules/kfb-pet-look.js",
+      "blob": "8a51a517fae3e3550e7801ca7f8662233d658c2a"
+    },
+    {
+      "path": "modules/kfb-pet-roster.js",
+      "blob": "73d1df7a132f2782fe18c9d75e9544dbd97d0118"
+    },
+    {
+      "path": "modules/kfb-sfx-layers.js",
+      "blob": "dd38b2c34617942d47d1ef1fb0af1933db8b1a23"
+    },
+    {
+      "path": "modules/kfb-stride-measure.js",
+      "blob": "2498ca26fe2b2428837ea31e53d106804d46bba6"
+    },
+    {
+      "path": "modules/kfb-vfx-recipes.js",
+      "blob": "5b1ac585517d50617295e46cc4618b4108a4a7ad"
+    },
+    {
+      "path": "modules/kfb-weapon-dice.js",
+      "blob": "ce46b54cb9dfd3330e8680378bc984da5d38b64b"
+    },
+    {
+      "path": "modules/kfb-weapon-eyeball.js",
+      "blob": "7f002d655c986f7ce48131bcc7c5ff287fbe871c"
+    },
+    {
+      "path": "modules/schrittmass.json",
+      "blob": "c345aa7ad7f8d7d14a17655b174136abe7bf2503"
+    },
+    {
+      "path": "podcast-v1/stage.v1.js",
+      "blob": "484c7fa4d64be8727992d29c271df8e2814abc14"
+    },
+    {
+      "path": "slices/combat-integration-v2/ANIMATION_MAP.json",
+      "blob": "4f5e68c151835e0b3d9ff6115b5cbd1797f6259b"
+    },
+    {
+      "path": "slices/combat-integration-v2/CHANGELOG.md",
+      "blob": "f456345bf6a8b9df6ae149ef621bf94f1040d244"
+    },
+    {
+      "path": "slices/combat-integration-v2/FAILURE_RECOVERY_STAGE_PACKAGING.md",
+      "blob": "191a36a2643548bfd7a4bdf7b01b5b126491a04d"
+    },
+    {
+      "path": "slices/combat-integration-v2/OVERLAY_MANIFEST.json",
+      "blob": "091ee22a38cfe822dedaa2157b7a51b408e086cd"
+    },
+    {
+      "path": "slices/combat-integration-v2/RETURN.md",
+      "blob": "a549cd6536f94d0f2c091d4be1fc521e63b8cc3e"
+    },
+    {
+      "path": "slices/combat-integration-v2/SOURCE.json",
+      "blob": "a155537a51fa9f414e4f593a07e2fbc00349c411"
+    },
+    {
+      "path": "slices/combat-integration-v2/STATE_SEQUENCE.md",
+      "blob": "3462e4b4142319655040220281c53c237cd43340"
+    },
+    {
+      "path": "slices/combat-integration-v2/TEST_REPORT.md",
+      "blob": "73a312f126b977da4eb6070de407403c45969c2f"
+    },
+    {
+      "path": "slices/combat-integration-v2/contract.v1.js",
+      "blob": "f941b8d5da58981dcf5014c5a81277eccddb9b3b"
+    },
+    {
+      "path": "slices/combat-integration-v2/index.html",
+      "blob": "7161c2ba3853ded518aca737cb1e5c271528b129"
+    },
+    {
+      "path": "slices/index.html",
+      "blob": "c808aef7ddceae4034bd69e249d907b15abd3727"
+    },
+    {
+      "path": "source/index.html",
+      "blob": "2ecc30e583cc944ffd1790b5a9b60472de837e50"
+    },
+    {
+      "path": "studio-v3/pet-eye-rig.v5.js",
+      "blob": "7e420705f441bfded36e607b648cbb0052892afd"
+    },
+    {
+      "path": "studio-v3/pet-library.v6.js",
+      "blob": "96ccdae5deac1a40b147bcd067d0c919c627b2d1"
+    },
+    {
+      "path": "studio-v3/pet-mouth.v1.js",
+      "blob": "d18c95cc5d8f24ee2825e84ef3f8c37f045baffc"
+    },
+    {
+      "path": "support-v4.js",
+      "blob": "7775aa48c286ea925fd1f09e7ab57ee7f37f75f4"
+    },
+    {
+      "path": "themes/kfb-med.css",
+      "blob": "f4eb17f856d7dbed4e5cc7babf44510de5d3efe6"
+    },
+    {
+      "path": "vendor/addons/environments/RoomEnvironment.js",
+      "blob": "f51f72b2294bcd7f2627aab7acb5fafaacfd9ec4"
+    },
+    {
+      "path": "vendor/addons/loaders/GLTFLoader.js",
+      "blob": "440ecb714846d41bcce840bec05eb9dcb5513793"
+    },
+    {
+      "path": "vendor/addons/utils/BufferGeometryUtils.js",
+      "blob": "087878da3e5f593f586ea421da522fc0a8244c85"
+    },
+    {
+      "path": "vendor/addons/utils/SkeletonUtils.js",
+      "blob": "f14195ca5ec048c6347c9a28705656cd638511b9"
+    },
+    {
+      "path": "vendor/babel.min.js",
+      "blob": "5f3df9a1c08ef682198afc3eb5a3bdc0a26faf3a"
+    },
+    {
+      "path": "vendor/three.module.js",
+      "blob": "a6cb13841a8affe71fa0eea52b4ddbeca61bf8a6"
+    }
+  ]
+}

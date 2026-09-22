@@ -1,0 +1,704 @@
+{
+  "quelle": "KFB Academy 02 Locomotion",
+  "verfahren": "Standfuss-Drift im Clip · modules/kfb-stride-measure.js v1",
+  "werkzeugTor": "stride-measure: 5/5 bestanden, 1 nicht messbar",
+  "gemessen": "2026-09-05",
+  "einheit": "Welteinheiten (u) und u/s, Roster-Skala eingerechnet",
+  "refSpeedAlt": 3,
+  "hinweis": "kfb-mob-locomotion liest `modelle[<id>].walk.tempo` als refSpeed je Körper. Fehlt ein Eintrag, gilt weiter der gekoppelte Vorgabewert.",
+  "modelle": {
+    "q_alien": {
+      "walkHub": {
+        "hub": 0.2122,
+        "takt": 1.846,
+        "dauer": 0.5417,
+        "quelle": "Knoten Body",
+        "grund": "ohne Beine"
+      },
+      "skala": 0.6184,
+      "rohH": 2.07,
+      "pack": "monster",
+      "beine": 0
+    },
+    "q_alien_tall": {
+      "walkHub": {
+        "hub": 0.2122,
+        "takt": 1.846,
+        "dauer": 0.5417,
+        "quelle": "Knoten Body",
+        "grund": "ohne Beine"
+      },
+      "skala": 0.6185,
+      "rohH": 2.118,
+      "pack": "monster",
+      "beine": 0
+    },
+    "q_cactus": {
+      "walkHub": {
+        "hub": 0.2132,
+        "takt": 1.846,
+        "dauer": 0.5417,
+        "quelle": "Knoten Body",
+        "grund": "ohne Beine"
+      },
+      "skala": 0.6216,
+      "rohH": 2.236,
+      "pack": "monster",
+      "beine": 0
+    },
+    "q_chicken": {
+      "walkHub": {
+        "hub": 0.2113,
+        "takt": 1.846,
+        "dauer": 0.5417,
+        "quelle": "Knoten Body",
+        "grund": "ohne Beine"
+      },
+      "skala": 0.6159,
+      "rohH": 1.624,
+      "pack": "monster",
+      "beine": 0
+    },
+    "q_crab": {
+      "walkHub": {
+        "hub": 0.2132,
+        "takt": 1.846,
+        "dauer": 0.5417,
+        "quelle": "Knoten Body",
+        "grund": "ohne Beine"
+      },
+      "skala": 0.6214,
+      "rohH": 1.577,
+      "pack": "monster",
+      "beine": 0
+    },
+    "q_cyclops": {
+      "walkHub": {
+        "hub": 0.2127,
+        "takt": 1.846,
+        "dauer": 0.5417,
+        "quelle": "Knoten Body",
+        "grund": "ohne Beine"
+      },
+      "skala": 0.6199,
+      "rohH": 1.678,
+      "pack": "monster",
+      "beine": 0
+    },
+    "q_deer": {
+      "walkHub": {
+        "hub": 0.2119,
+        "takt": 1.846,
+        "dauer": 0.5417,
+        "quelle": "Knoten Body",
+        "grund": "ohne Beine"
+      },
+      "skala": 0.6175,
+      "rohH": 1.911,
+      "pack": "monster",
+      "beine": 0
+    },
+    "q_demon": {
+      "walkHub": {
+        "hub": 0.2136,
+        "takt": 1.846,
+        "dauer": 0.5417,
+        "quelle": "Knoten Body",
+        "grund": "ohne Beine"
+      },
+      "skala": 0.6227,
+      "rohH": 1.638,
+      "pack": "monster",
+      "beine": 0
+    },
+    "q_ghost": {
+      "walkHub": {
+        "hub": 0.212,
+        "takt": 1.846,
+        "dauer": 0.5417,
+        "quelle": "Knoten Body",
+        "grund": "ohne Beine"
+      },
+      "skala": 0.6179,
+      "rohH": 1.408,
+      "pack": "monster",
+      "beine": 0
+    },
+    "q_greendemon": {
+      "walkHub": {
+        "hub": 0.2135,
+        "takt": 1.846,
+        "dauer": 0.5417,
+        "quelle": "Knoten Body",
+        "grund": "ohne Beine"
+      },
+      "skala": 0.6224,
+      "rohH": 1.639,
+      "pack": "monster",
+      "beine": 0
+    },
+    "q_mushroom": {
+      "walkHub": {
+        "hub": 0.2127,
+        "takt": 1.846,
+        "dauer": 0.5417,
+        "quelle": "Knoten Body",
+        "grund": "ohne Beine"
+      },
+      "skala": 0.6199,
+      "rohH": 2.081,
+      "pack": "monster",
+      "beine": 0
+    },
+    "q_panda": {
+      "walkHub": {
+        "hub": 0.2119,
+        "takt": 1.846,
+        "dauer": 0.5417,
+        "quelle": "Knoten Body",
+        "grund": "ohne Beine"
+      },
+      "skala": 0.6176,
+      "rohH": 1.652,
+      "pack": "monster",
+      "beine": 0
+    },
+    "q_penguin": {
+      "walkHub": {
+        "hub": 0.2113,
+        "takt": 1.846,
+        "dauer": 0.5417,
+        "quelle": "Knoten Body",
+        "grund": "ohne Beine"
+      },
+      "skala": 0.6159,
+      "rohH": 1.624,
+      "pack": "monster",
+      "beine": 0
+    },
+    "q_pig": {
+      "walkHub": {
+        "hub": 0.2115,
+        "takt": 1.846,
+        "dauer": 0.5417,
+        "quelle": "Knoten Body",
+        "grund": "ohne Beine"
+      },
+      "skala": 0.6165,
+      "rohH": 1.654,
+      "pack": "monster",
+      "beine": 0
+    },
+    "q_skull": {
+      "walkHub": {
+        "hub": 0.2133,
+        "takt": 1.846,
+        "dauer": 0.5417,
+        "quelle": "Knoten Body",
+        "grund": "ohne Beine"
+      },
+      "skala": 0.6216,
+      "rohH": 1.56,
+      "pack": "monster",
+      "beine": 0
+    },
+    "q_tree": {
+      "walkHub": {
+        "hub": 0.2124,
+        "takt": 1.846,
+        "dauer": 0.5417,
+        "quelle": "Knoten Body",
+        "grund": "ohne Beine"
+      },
+      "skala": 0.6192,
+      "rohH": 2.859,
+      "pack": "monster",
+      "beine": 0
+    },
+    "q_yeti": {
+      "walkHub": {
+        "hub": 0.2127,
+        "takt": 1.846,
+        "dauer": 0.5417,
+        "quelle": "Knoten Body",
+        "grund": "ohne Beine"
+      },
+      "skala": 0.6201,
+      "rohH": 1.677,
+      "pack": "monster",
+      "beine": 0
+    },
+    "p_bunny": {
+      "walk": {
+        "tempo": 1.0284,
+        "strecke": 0.5142,
+        "dauer": 0.5,
+        "kontakt": 0.5,
+        "rohTempo": 1.8293
+      },
+      "run": {
+        "tempo": 4.1279,
+        "strecke": 1.032,
+        "dauer": 0.25,
+        "kontakt": 0.084,
+        "rohTempo": 7.3426
+      },
+      "skala": 0.5622,
+      "rohH": 2.01,
+      "pack": "pets",
+      "beine": 4
+    },
+    "p_cat": {
+      "walk": {
+        "tempo": 1.027,
+        "strecke": 0.5135,
+        "dauer": 0.5,
+        "kontakt": 0.5,
+        "rohTempo": 1.8293
+      },
+      "run": {
+        "tempo": 4.1222,
+        "strecke": 1.0305,
+        "dauer": 0.25,
+        "kontakt": 0.084,
+        "rohTempo": 7.3426
+      },
+      "skala": 0.5614,
+      "rohH": 1.71,
+      "pack": "pets",
+      "beine": 4
+    },
+    "p_fox": {
+      "walk": {
+        "tempo": 1.0305,
+        "strecke": 0.5153,
+        "dauer": 0.5,
+        "kontakt": 0.5,
+        "rohTempo": 1.8293
+      },
+      "run": {
+        "tempo": 4.1365,
+        "strecke": 1.0341,
+        "dauer": 0.25,
+        "kontakt": 0.084,
+        "rohTempo": 7.3426
+      },
+      "skala": 0.5634,
+      "rohH": 1.686,
+      "pack": "pets",
+      "beine": 4
+    },
+    "p_tiger": {
+      "walk": {
+        "tempo": 1.027,
+        "strecke": 0.5135,
+        "dauer": 0.5,
+        "kontakt": 0.5,
+        "rohTempo": 1.8293
+      },
+      "run": {
+        "tempo": 4.1222,
+        "strecke": 1.0305,
+        "dauer": 0.25,
+        "kontakt": 0.084,
+        "rohTempo": 7.3426
+      },
+      "skala": 0.5614,
+      "rohH": 1.71,
+      "pack": "pets",
+      "beine": 4
+    },
+    "p_lion": {
+      "walk": {
+        "tempo": 1.0268,
+        "strecke": 0.5134,
+        "dauer": 0.5,
+        "kontakt": 0.5,
+        "rohTempo": 1.8293
+      },
+      "run": {
+        "tempo": 4.1217,
+        "strecke": 1.0304,
+        "dauer": 0.25,
+        "kontakt": 0.084,
+        "rohTempo": 7.3426
+      },
+      "skala": 0.5613,
+      "rohH": 1.746,
+      "pack": "pets",
+      "beine": 4
+    },
+    "p_penguin": {
+      "walk": {
+        "tempo": 1.0212,
+        "strecke": 0.5106,
+        "dauer": 0.5,
+        "kontakt": 0.5,
+        "rohTempo": 1.8293
+      },
+      "skala": 0.5583,
+      "rohH": 1.594,
+      "pack": "pets",
+      "beine": 2
+    },
+    "p_panda": {
+      "walk": {
+        "tempo": 1.0235,
+        "strecke": 0.5118,
+        "dauer": 0.5,
+        "kontakt": 0.5,
+        "rohTempo": 1.8293
+      },
+      "run": {
+        "tempo": 4.1084,
+        "strecke": 1.0271,
+        "dauer": 0.25,
+        "kontakt": 0.084,
+        "rohTempo": 7.3426
+      },
+      "skala": 0.5595,
+      "rohH": 1.501,
+      "pack": "pets",
+      "beine": 4
+    },
+    "p_koala": {
+      "walk": {
+        "tempo": 1.0254,
+        "strecke": 0.5127,
+        "dauer": 0.5,
+        "kontakt": 0.5,
+        "rohTempo": 1.8293
+      },
+      "run": {
+        "tempo": 4.116,
+        "strecke": 1.029,
+        "dauer": 0.25,
+        "kontakt": 0.084,
+        "rohTempo": 7.3426
+      },
+      "skala": 0.5606,
+      "rohH": 1.463,
+      "pack": "pets",
+      "beine": 4
+    },
+    "p_deer": {
+      "walk": {
+        "tempo": 1.0189,
+        "strecke": 0.5095,
+        "dauer": 0.5,
+        "kontakt": 0.5,
+        "rohTempo": 1.8293
+      },
+      "run": {
+        "tempo": 4.0899,
+        "strecke": 1.0225,
+        "dauer": 0.25,
+        "kontakt": 0.084,
+        "rohTempo": 7.3426
+      },
+      "skala": 0.557,
+      "rohH": 1.993,
+      "pack": "pets",
+      "beine": 4
+    },
+    "p_monkey": {
+      "walk": {
+        "tempo": 1.0226,
+        "strecke": 0.5113,
+        "dauer": 0.5,
+        "kontakt": 0.5,
+        "rohTempo": 1.8293
+      },
+      "run": {
+        "tempo": 4.1046,
+        "strecke": 1.0261,
+        "dauer": 0.25,
+        "kontakt": 0.084,
+        "rohTempo": 7.3426
+      },
+      "skala": 0.559,
+      "rohH": 1.61,
+      "pack": "pets",
+      "beine": 4
+    },
+    "p_pig": {
+      "walk": {
+        "tempo": 1.016,
+        "strecke": 0.508,
+        "dauer": 0.5,
+        "kontakt": 0.5,
+        "rohTempo": 1.8293
+      },
+      "run": {
+        "tempo": 4.0781,
+        "strecke": 1.0195,
+        "dauer": 0.25,
+        "kontakt": 0.084,
+        "rohTempo": 7.3426
+      },
+      "skala": 0.5554,
+      "rohH": 1.584,
+      "pack": "pets",
+      "beine": 4
+    },
+    "p_hog": {
+      "walk": {
+        "tempo": 1.0258,
+        "strecke": 0.5129,
+        "dauer": 0.5,
+        "kontakt": 0.5,
+        "rohTempo": 1.8293
+      },
+      "run": {
+        "tempo": 4.1175,
+        "strecke": 1.0294,
+        "dauer": 0.25,
+        "kontakt": 0.084,
+        "rohTempo": 7.3426
+      },
+      "skala": 0.5608,
+      "rohH": 1.516,
+      "pack": "pets",
+      "beine": 4
+    },
+    "p_cow": {
+      "walk": {
+        "tempo": 1.0211,
+        "strecke": 0.5105,
+        "dauer": 0.5,
+        "kontakt": 0.5,
+        "rohTempo": 1.8293
+      },
+      "run": {
+        "tempo": 4.0985,
+        "strecke": 1.0246,
+        "dauer": 0.25,
+        "kontakt": 0.084,
+        "rohTempo": 7.3426
+      },
+      "skala": 0.5582,
+      "rohH": 1.612,
+      "pack": "pets",
+      "beine": 4
+    },
+    "p_polar": {
+      "walk": {
+        "tempo": 1.0235,
+        "strecke": 0.5118,
+        "dauer": 0.5,
+        "kontakt": 0.5,
+        "rohTempo": 1.8293
+      },
+      "run": {
+        "tempo": 4.1084,
+        "strecke": 1.0271,
+        "dauer": 0.25,
+        "kontakt": 0.084,
+        "rohTempo": 7.3426
+      },
+      "skala": 0.5595,
+      "rohH": 1.501,
+      "pack": "pets",
+      "beine": 4
+    },
+    "p_beaver": {
+      "walk": {
+        "tempo": 1.0235,
+        "strecke": 0.5118,
+        "dauer": 0.5,
+        "kontakt": 0.5,
+        "rohTempo": 1.8293
+      },
+      "run": {
+        "tempo": 4.1084,
+        "strecke": 1.0271,
+        "dauer": 0.25,
+        "kontakt": 0.084,
+        "rohTempo": 7.3426
+      },
+      "skala": 0.5595,
+      "rohH": 1.501,
+      "pack": "pets",
+      "beine": 4
+    },
+    "p_giraffe": {
+      "walk": {
+        "tempo": 1.0247,
+        "strecke": 0.5124,
+        "dauer": 0.5,
+        "kontakt": 0.5,
+        "rohTempo": 1.8293
+      },
+      "run": {
+        "tempo": 4.1131,
+        "strecke": 1.0283,
+        "dauer": 0.25,
+        "kontakt": 0.084,
+        "rohTempo": 7.3426
+      },
+      "skala": 0.5602,
+      "rohH": 1.714,
+      "pack": "pets",
+      "beine": 4
+    },
+    "p_chick": {
+      "walk": {
+        "tempo": 1.0212,
+        "strecke": 0.5106,
+        "dauer": 0.5,
+        "kontakt": 0.5,
+        "rohTempo": 1.8293
+      },
+      "skala": 0.5583,
+      "rohH": 1.594,
+      "pack": "pets",
+      "beine": 2
+    },
+    "p_fish": {
+      "walkHub": {
+        "hub": 0.0552,
+        "takt": 2,
+        "dauer": 0.5,
+        "quelle": "Knoten body",
+        "grund": "ohne Beine"
+      },
+      "runHub": {
+        "hub": 0.0887,
+        "takt": 4,
+        "dauer": 0.25,
+        "quelle": "Knoten body",
+        "grund": "ohne Beine"
+      },
+      "skala": 0.559,
+      "rohH": 1.628,
+      "pack": "pets",
+      "beine": 0
+    },
+    "p_parrot": {
+      "walk": {
+        "tempo": 1.0228,
+        "strecke": 0.5114,
+        "dauer": 0.5,
+        "kontakt": 0.5,
+        "rohTempo": 1.8293
+      },
+      "skala": 0.5591,
+      "rohH": 1.681,
+      "pack": "pets",
+      "beine": 2
+    },
+    "p_bee": {
+      "walk": {
+        "tempo": 1.0214,
+        "strecke": 0.5107,
+        "dauer": 0.5,
+        "kontakt": 0.5,
+        "rohTempo": 1.8293
+      },
+      "run": {
+        "tempo": 4.0997,
+        "strecke": 1.0249,
+        "dauer": 0.25,
+        "kontakt": 0.084,
+        "rohTempo": 7.3426
+      },
+      "skala": 0.5583,
+      "rohH": 2.024,
+      "pack": "pets",
+      "beine": 4
+    },
+    "p_crab": {
+      "walk": {
+        "tempo": 1.0225,
+        "strecke": 0.5112,
+        "dauer": 0.5,
+        "kontakt": 0.5,
+        "rohTempo": 1.8293
+      },
+      "run": {
+        "tempo": 4.1042,
+        "strecke": 1.026,
+        "dauer": 0.25,
+        "kontakt": 0.084,
+        "rohTempo": 7.3426
+      },
+      "skala": 0.559,
+      "rohH": 1.431,
+      "pack": "pets",
+      "beine": 4
+    },
+    "p_caterpillar": {
+      "walk": {
+        "tempo": 1.0264,
+        "strecke": 0.5132,
+        "dauer": 0.5,
+        "kontakt": 0.5,
+        "rohTempo": 1.8293
+      },
+      "run": {
+        "tempo": 4.1199,
+        "strecke": 1.03,
+        "dauer": 0.25,
+        "kontakt": 0.084,
+        "rohTempo": 7.3426
+      },
+      "skala": 0.5611,
+      "rohH": 1.747,
+      "pack": "pets",
+      "beine": 4
+    },
+    "p_elephant": {
+      "walk": {
+        "tempo": 1.0225,
+        "strecke": 0.5112,
+        "dauer": 0.5,
+        "kontakt": 0.5,
+        "rohTempo": 1.8293
+      },
+      "run": {
+        "tempo": 4.1042,
+        "strecke": 1.026,
+        "dauer": 0.25,
+        "kontakt": 0.084,
+        "rohTempo": 7.3426
+      },
+      "skala": 0.559,
+      "rohH": 1.431,
+      "pack": "pets",
+      "beine": 4
+    },
+    "p_dog": {
+      "walk": {
+        "tempo": 1.016,
+        "strecke": 0.508,
+        "dauer": 0.5,
+        "kontakt": 0.5,
+        "rohTempo": 1.8293
+      },
+      "run": {
+        "tempo": 4.0781,
+        "strecke": 1.0195,
+        "dauer": 0.25,
+        "kontakt": 0.084,
+        "rohTempo": 7.3426
+      },
+      "skala": 0.5554,
+      "rohH": 1.584,
+      "pack": "pets",
+      "beine": 4
+    }
+  },
+  "befund": {
+    "gemessen": "41 von 45 Modellen liefern einen Eintrag",
+    "mitSchrittmass": 23,
+    "ohneBeine": 18,
+    "ohneEintrag": "4 Cube-Monster (die Flieger) haben keinen Walk-Clip, also auch keinen Eintrag",
+    "rohTempoWalk": [
+      1.8293
+    ],
+    "spanneWelt": 1.014,
+    "mittelWelt": 1.0234,
+    "deutung": "Alle 23 Modelle mit Beinen teilen EINEN Walk-Clip: rohTempo ist auf vier Stellen identisch (1.8293 Modelleinheiten/s). Die Welt-Tempi unterscheiden sich nur ueber die Roster-Skala, Spanne Faktor 1,01. Ein einziger refSpeed von rund 1,02 u/s waere fuer die Pets also richtig — die alte Kopplung mit 3,0 u/s lag um Faktor 2,9 daneben. Je Modell geschrieben wird trotzdem, weil die Datei festhaelt, was GEMESSEN wurde, nicht was daraus folgt.",
+    "nichtGemessen": "Die 17 beinlosen Cube-Monster haben kein Schrittmass (walkHub statt walk). Ihr Hub kommt aus EINEM Clip (rohHub 0,3431), ihr Takt ist 1,846/s. Fuer sie ist die Clip-Rate eine Entscheidung, keine Messung."
+  }
+}

@@ -1,0 +1,56 @@
+<!doctype html><html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>A2 · Kartenmerge · KFB</title><link rel="stylesheet" href="/docs/portal.css"></head><body><main><nav><a href="/">Spielen</a><a href="/docs/">Überblick</a><a href="/slices/">Slices</a><a href="/source/">Quellen</a><a href="/build/">Build</a></nav><p class="eyebrow">Projektunterlage</p><h1>A2 · Kartenmerge</h1><p><a href="a2.md">Markdown öffnen / im Chat mitgeben</a> · <a href="https://github.com/georg-doc/KFB-Combat-Arena/blob/954f2db7484dc566e468e5ce89b0d95940d97537/_handover/A2_CARDS/BRIEFING.md">Gepinnte Quelle in GitHub</a></p><pre># A2 · Kartenbasis integrieren — Arbeitsbrief für Web-Slice
+
+Stand: 13.09.2026. Heute: lokale Quellen und frühere Belege gelesen; keine Tests wiederholt, kein Merge, keine Laufzeit-, GPU- oder Hörabnahme. Dieser Auftrag wird erst nach bestätigter C0-Source-Recovery und gepinnter Arena-Basis aktiviert. Ein paralleler Actor-Graft darf nicht dieselben Integrator-/Player-Dateien bearbeiten; Reihenfolge und Besitz vor Beginn beim Lead klären.
+
+## Ziel und Grenze
+
+Die tatsächliche WSA-5A-Arena erhält den 4B-Kartenkörper mit Spindel und die v5b-Karten-/Ink-/Frist-Verbesserungen, ohne Controls, responsive Schüsse, Nachspiel nach Clear oder Pickup-&amp;-Use zurückzusetzen. Kein Neubau auf v2, kein Portal, kein Studio-Actor-Graft, keine neuen Gameplay-Features. Ein spielbarer A2-Kandidat mit belastbaren Tests geht an WSA zurück; Produktiv-Deploy separat.
+
+## Quellen zusammensetzen
+
+Exakte Ordner und SHA-256 aller kleinen Donorpakete stehen in `INPUTS.json`. Reihenfolge: gepinnte vollständige 5A-Basis → 4B-Strukturmodule → v5b-Basis → neueres Kompat-Delta → separat geprüfter Flood-Fairness-Kandidat. Das ist eine Quellenreihenfolge für Staging und Diff, keine Aufforderung, alle Dateien blind über die Spielbasis zu kopieren.
+
+- `KFB Combat Arena 5A (WSA)/`: historische vollständige WSA-Basis; zunächst gegen tatsächlich wiedergewonnene Sites-Quelle abgleichen. Spielstand im bisherigen Nachweis eac7cf8. Site-Titel v4 ist keine Quellversions-ID.
+- `KFB Combat Arena 4B (WS0)/session-cut_v4b_2026-09-09/`: insbesondere `kartenkoerper.v4`, `spindel.v4`, `himmel.v4`, `skydome-shader.v4` und zugehörige Integrator-Anschlüsse.
+- `KFB Combat Arena v5b (WS0)/v5b_2026-09-09/`: ausdrücklich nur Session-Cut, kein vollständiger Laufzeitbaum. Zensur, Builder, Frist, Lauf, Dokumente.
+- `KFB Kompat v5b (WSA-Tests)/v5b-kompat_2026-09-09/`: überschreibt gleichnamige Basisdateien. Ring-R2, Flood-R1, Kartenraum, aktualisierter Vertrag, Builder-/Host-Deltas, Browser-JS-Runner.
+- `Planung v5/KOMPAT_WSA_v5b_Eingangskontrolle_2026-09-09/`: ergänzende Prüfer, historische TAP/JSON-Belege und `candidate/flood-fair-batches.diff` + vollständige Kandidatendatei.
+
+Die HTML-Integratoren sind Referenzen für konkrete Einbaunähte, keine vollständigen Standalone-Exporte. Importbaum einschließlich `podcast-v1/stage.v1.js`, Cardbuilder-Support und Three prüfen. Bestehende WSA-`host.v2.js` mit Aktionsregister/Textfokus behalten; keine WS0-Hostkopie darüberlegen.
+
+## Fünf verbindliche Nähte
+
+1. **Ink-Aufruf und Bildtakt.** `Zensur.radieren(x,z,r)` liefert Anzahl entfernter Flecken, entfernt sofort aus der Liste und meldet jede Radierung an Flood. Dirty-Canvas höchstens einmal je sichtbarem Bild flushen; `frei/entfernen` verwerfen alte Arbeit. WSA-Tests mit unveränderten Erwartungen erhalten. Ein Three, eine Uhr, eine Bildschleife. Integrator vor Render genau einmal treiben. Bestehende WS0-Reihenfolge ist feste Schritte → `vorRender` (auch Flood) → Canvas-Flush → Render; dadurch liest Flood die Canvas-Quelle einen Frame später. Diese Quellreihenfolge im echten Bild prüfen, insbesondere Ink-Wiederauftauchen nach Radierung; nicht ungeprüft als unsichtbar abnicken.
+2. **Welt/Karte.** `fun.v4`-Reveal, Rewards und Powerups reichen Weltpositionen. Jeden solchen Weg genau einmal über `kr.radierenWelt(pos,r)` führen; lokale Zensur-Aufrufe bleiben lokal. Welt-Radius wird durch uniforme Skalierung geteilt. Alle Reveal- und Spawnwege inventarisieren, keine Mischkoordinaten.
+3. **Ring/Builder/Frist gemeinsam.** Ring v4, v5b-Builder und `frist.v5.js` sind eine Einheit; Ring injiziert Frist. Ring-R2 legt jobgebundene Frist vor `cb.make()` an, weil `onStart` synchron feuern kann. Generationsprüfung verhindert verspätete alte Jobs. `combat-arena-v5/` in statischen Build aufnehmen. Builder-Delta nur auf seinen exakten Ausgangshash anwenden, sonst manuell diffen.
+4. **Phasen/Pause.** Tatsächlich wiedergefundene WSA-Runde: `ruesten/countdown/play/cleared/verloren`, separate Uhr `play/paused`, `settingsOn`. Frühere WSA-Zusammenfassungen nannten fälschlich `lost`; die aktuelle Owner Map korrigiert dies. Keine pauschale Umbenennung. Neue Feindtinte nur `play &amp;&amp; !settingsOn &amp;&amp; time.phase != paused &amp;&amp; !document.hidden`. Clear: weiter schießen, radieren und Loot sammeln erlaubt. Sichtbare Spielpause und versteckter Tab sind verschieden: Fristen pausieren bei hidden, nicht automatisch bei sichtbarer Spielpause. PageUp/PageDown nur freie Kamera und kein Textfokus; F bleibt Slam, Q/E Seitwärts.
+5. **Oberfläche/Lebensdauer.** Pickups verwenden `kr.hoehe(wx,wz,0.24)` und eigene Bodenkontakt-/Sprungregeln statt absoluter y=0.24. `oberflaeche` liefert valid/y/normal/cardId/generation/innen/spielbar/unterseite. Keine Karte/außerhalb → kein erfundener Boden. Aktueller Kartenraum unterstützt Translation, Y-Drehung, uniforme Skalierung und Atemhub; Neigung/nicht-uniform abgelehnt. Kein Portal-Raycast, kein Rampen-/Wallride-Support. `cardId` ist aktuell Knotenuuid, nicht persistente Deck-Karten-ID.
+
+## Bekannter Flood-Blocker und Kandidat
+
+Kompat-Flood `ded7324f2f7d29898461dcb844913d320acaff5688aeceea8e1aa0cfe3046a56` verbessert einmalige Pakete, kann unter Dauerfeuer aber warten lassen: acht aktive Kreise, neunter wartet; wiederholter enthaltener Treffer setzt `_erasePasses` auf drei zurück. Historischer Gegenbeweis: neunter Kreis nach 300 echten `_pass()`-Aufrufen noch nie als Uniform gerendert; kein Echtzeit-/GPU-Messwert.
+
+Kandidatsha `e81c57f640c8636b5d40b6dd92242a788cc43e12b86f18a91e04c28f44dc9cf7`: aktiven Stapel nach erstem Pass einfrieren; spätere Treffer in nächste Gruppe; drei volle Pässe pro angenommener Gruppe, weiterhin acht Uniformplätze, 64 Wartende, keine zusätzlichen Vollbildpässe pro Klick. Historischer Test: neunter Kreis bei Pass 4. Patch und Dauertest zusammen übernehmen, Original-Gegenbeweis erhalten.
+
+Weiter offen: 73. nicht zusammenfassbarer Auftrag wird abgelehnt; Zensur verarbeitet Flood-`false` bisher nicht. Kein Verlustfreiheitsversprechen bei beliebiger Last. Allgemeiner Fleckenbestand noch unbeschränkt. Verhalten bei überlasteter Schlange im Merge sichtbar messen und ehrlich dokumentieren; Batching ersetzt keine Bestandsgrenze.
+
+## Evidenz sauber trennen
+
+- WS0 meldete zuletzt 20 Browser-JS-Prüfungen bestanden, zwei offen; echte 2D-Canvas-Pixel, kein GPU-Ergebnis. Früherer Abschnitt nennt 15; Nachtrag ist neuer.
+- WSA-Lauf vom 09.09.: Manifest 24/24; 60 bestehende Node-Tests bestanden, aber nur Zensur-Import des Performance-Tests ersetzt. Rest prüfte weiterhin 5A, keinen A2-Gesamtmerge.
+- 14 zusätzliche Tests bestanden; enthalten absichtlich den bestätigenden Original-Fehlertest sowie Kandidatenfälle, Ring mit Builder-Attrappe und Frist mit synthetischem Sichtbarkeitsgeber.
+- Keine historische WSA-GPU-/Browser-/Hörabnahme. Heute nur Quellenlesung.
+- Runner vorhanden, aber noch nicht portabel: `paths.mjs` und `prepare.py` enthalten feste Dropbox-Pfade. `KFB_WSA_ROOT` verlegt nur WSA, nicht die beiden Donorpakete. Vor Web/CI-Ausführung Pfadauflösung und Node &gt;=22.15-`registerHooks`-Voraussetzung explizit portieren; Belege von 09.09. nicht überschreiben.
+
+## Dokumentwidersprüche
+
+Alter v5b-Handover behauptet noch, fun-Reveal sei bereits kartenlokal und Oberflächen-API fehle. Aktualisierter Vertrag enthält ebenfalls einen stehengebliebenen Absatz „Nicht existent“. Diese Stellen sind historisch überholt: gelieferter `kartenraum.v5.js` und spätere Vertragsabschnitte beschreiben den tatsächlich vorhandenen Weltadapter. Nicht aus alten Textfragmenten erneut falsche Annahmen implementieren; Widerspruch im Rückgabeprotokoll sichtbar korrigieren.
+
+## Abnahme und Rückgabe
+
+1. Pinned Startcommit + vollständiger Import-/Buildbaum; Liste geänderter Dateien und Owner. Keine fehlenden Module, keine zweite Update-/Animationsschleife.
+2. Portierte unveränderte Basistests plus Kartenraum-, Frist-, Ring- und Fairness-Tests laufen lassen; neue Belege mit eigenem Datum/Commit. Bestehende Tests des echten zusammengesetzten Spiels ergänzen, Importtausch allein reicht nicht.
+3. Spielabnahme separat: DPR 1/2, Ruhe und Kampf, wiederholter Slam/Jump/rasche Zielwechsel, drei Skull-Kills plus Bombenreveal, Schießen/Sammeln nach Clear, Pickup-Höhe über mehreren Etagen, zehn Kartenwechsel, Settings/Pause, Tab 60s versteckt vor Start/in Queue/im Render. Alte Jobs dürfen keine neue Karte überschreiben; keine Retry-/Catchup-Stürme.
+4. Performance-Budgets aus altem Vertrag sind Ziele, keine heutige Messung: JS p99 ≤8ms bei drei Kills, kein &gt;50ms Frame durch betroffene Module; Canvas max ein Neuaufbau/Bild. Umgebung, Laufdauer, Zähler, Schlangenüberläufe und p95/p99 dokumentieren. Tonabnahme eigener Status.
+5. Rückgabe an WSA: Sourcecommit/Diff, Quellmanifest, Tests tatsächlich ausgeführt vs offen, kurze Spiel-/Sicht-/Tonbelege, Abweichungen und Blocker, Rückweg. Erst dann nächste Produktentscheidung zu Actor-Graft bzw. Portal. Nicht „A2 fertig“ melden, wenn lediglich Donormodule kopiert wurden.
+</pre><footer class="small">KFB Combat Arena · WIP · 954f2db7484d</footer></main></body></html>
