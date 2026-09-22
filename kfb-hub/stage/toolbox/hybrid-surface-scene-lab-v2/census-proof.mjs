@@ -53,6 +53,7 @@ try{
     let forcedFrustum=null;
 
     if(!row.materialVisible)classification='MATERIAL_VISIBLE_FALSE';
+    else if(row.materialIsArray&&row.materialCount===1&&(row.groups||[]).length===0)classification='ARRAY_MATERIAL_WITHOUT_GROUPS_NOT_SUBMITTED_BY_THREE';
     else if(!row.drawReferenced)classification='UNUSED_MATERIAL_SLOT';
     else if(!row.effectiveVisible)classification='HIDDEN_BY_VISIBILITY_CHAIN';
     else if(row.submitted&&row.compiled)classification='RENDERED_AND_COMPILED_WHEN_ISOLATED';
@@ -77,7 +78,7 @@ try{
     classified.push(out);
     console.log('CENSUS_RECORD',JSON.stringify({
       actorId:out.actorId,nodeName:out.nodeName,objectPath:out.objectPath,
-      materialIndex:out.materialIndex,materialName:out.materialName,materialUuid:out.materialUuid,
+      materialIndex:out.materialIndex,materialCount:out.materialCount,materialIsArray:out.materialIsArray,materialName:out.materialName,materialUuid:out.materialUuid,
       materialVisible:out.materialVisible,drawReferenced:out.drawReferenced,indexCount:out.indexCount,vertexCount:out.vertexCount,
       effectiveVisible:out.effectiveVisible,submitted:out.submitted,compiled:out.compiled,
       layerMask:out.layerMask,cameraLayerMask:out.cameraLayerMask,
@@ -86,8 +87,9 @@ try{
   }
 
   const unresolved=classified.filter(r=>['NOT_SUBMITTED_EVEN_WITH_FRUSTUM_DISABLED','SUBMITTED_WITHOUT_COMPILE_MARKER'].includes(r.diagnosticClassification));
+  const expectedClassifications=new Set(['MATERIAL_VISIBLE_FALSE','ARRAY_MATERIAL_WITHOUT_GROUPS_NOT_SUBMITTED_BY_THREE','UNUSED_MATERIAL_SLOT','HIDDEN_BY_VISIBILITY_CHAIN','RENDERED_AND_COMPILED_WHEN_ISOLATED','EMPTY_GEOMETRY','CAMERA_LAYER_EXCLUDED','FRUSTUM_CULLED_IN_NORMAL_VIEW']);
   note('all five baseline records named',classified.length===5&&classified.every(r=>r.actorId&&r.objectPath&&r.materialUuid),JSON.stringify(classified,null,2));
-  note('all five evidence-classified without shader changes',classified.length===5&&unresolved.length===0,JSON.stringify(unresolved,null,2));
+  note('all five evidence-classified without shader changes',classified.length===5&&unresolved.length===0&&classified.every(r=>expectedClassifications.has(r.diagnosticClassification)),JSON.stringify({unresolved,classified},null,2));
 
   await page.evaluate(()=>{window.__KFB_HYBRID_V2__.setView('cast');window.__KFB_HYBRID_V2__.setLook('hybrid')});
   await page.waitForTimeout(250);
