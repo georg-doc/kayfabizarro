@@ -118,3 +118,11 @@ Publish the **unmodified 2026-09-22 full Card Zone source** in one isolated Tool
 4. Card Cube + its existing HTML/canvas face source object.
 
 Only after that source proof should module extraction/comparison resume.
+
+
+## Handoff integrity
+
+Final bounded diff from the F1 start base contains exactly **7 documentation/source-matrix files** and **0 runtime files**. Handoff checks: **8/8 PASS**.
+
+Combined F1 acceptance evidence: **74/74 PASS** (66 source/owner + 8 handoff integrity).  
+The existing KFB Hub and ToolBox Home already route to this same consolidation brief, so no router/Hub code change was necessary or appropriate in this source-only slice.
