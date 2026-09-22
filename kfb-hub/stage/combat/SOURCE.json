@@ -1,12 +1,13 @@
 {
   "schema": "kfb.combat-stage-source/1",
   "stage": "C-MVP-A",
-  "status": "PACKAGED_CANDIDATE_BROWSER_PENDING",
+  "status": "EXACT_PACKAGE_BROWSER_FAIL_PUBLICATION_BLOCKED",
   "source": {
     "repository": "georg-doc/KFB-Combat-Arena",
     "pr": 5,
     "branch": "chatgpt-web/combat-arena-integration-v2-2026-09-19",
-    "commit": "954f2db7484dc566e468e5ce89b0d95940d97537",
+    "implementationCommit": "954f2db7484dc566e468e5ce89b0d95940d97537",
+    "handoffHead": "2aea7c85f0e1f2ea333a92c5ce98bbcd16bdcfb3",
     "runtimePath": "dist/"
   },
   "packaging": {
@@ -14,11 +15,27 @@
     "branch": "stage/combat-ca2-pr5-c-mvp-a-2026-09-22",
     "runtimeCommit": "5ef336ad34b5adf0ad75163ae6adf11910f39f73",
     "files": 215,
-    "byteIdentity": "VERIFIED_BY_GIT_BLOB_SHA"
+    "byteIdentity": "215/215 VERIFIED_BY_GIT_BLOB_SHA"
   },
   "public": {
     "url": "https://kayfabizarro.pages.dev/kfb-hub/stage/combat/",
-    "status": "NOT_DEPLOYED"
+    "status": "NOT_DEPLOYED",
+    "reason": "protected publication gate rejected browser-failing candidate pending explicit post-failure human authorization"
+  },
+  "browser": {
+    "status": "FAIL",
+    "blockers": [
+      "DriverCA2 does not forward EyeRig/Mouth modules",
+      "Skeleton Mage bounds/scale become non-finite and contaminate both enemy positions",
+      "14 Fire-probe shots produced 0 hits / 0 kills"
+    ],
+    "passes": [
+      "Idle",
+      "audio 22/22",
+      "desktop layout",
+      "390x844 narrow layout",
+      "0 app/console errors"
+    ]
   },
   "ownership": {
     "movementGround": "Player.v2",
@@ -28,10 +45,6 @@
     "enemyLifecycle": "MobBrain",
     "rewardsRunFlow": "existing Arena"
   },
-  "scope": [
-    "exact packaging",
-    "browser baseline"
-  ],
   "excluded": [
     "Legacy actor",
     "melee",
