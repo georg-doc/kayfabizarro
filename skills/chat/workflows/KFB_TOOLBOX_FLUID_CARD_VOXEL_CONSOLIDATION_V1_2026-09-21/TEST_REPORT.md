@@ -70,3 +70,18 @@ No F1 source or workflow path was touched.
 - Dropbox mutation: **none**
 
 F1 is a source-truth gate, not a visual acceptance gate.
+
+
+## Handoff integrity
+
+**8/8 PASS**
+
+- exactly seven intended changed files since the F1 start base;
+- changed-file set matches the planned workflow/matrix/changelog files;
+- zero runtime paths changed;
+- workflow START_HERE, RETURN and SOURCE_MATRIX present;
+- KFB Hub still routes to this consolidation brief;
+- ToolBox Home still routes to this consolidation brief.
+
+Combined F1 acceptance evidence: **74/74 PASS** = 66 source/owner assertions + 8 handoff-integrity assertions.  
+The separate drift sentinel that intentionally detected a moving `main` remains recorded as a finding, not counted as an acceptance assertion.
