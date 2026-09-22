@@ -1,5 +1,23 @@
 # KFB ToolBox · additives Changelog
 
+## 2026-09-22 · Hybrid Surface seamless macro
+
+### PROVEN CAUSE
+The shared RGB brush generator was not tileable. It painted a random canvas once and then enabled `RepeatWrapping`; opposite borders differed by Δmax **136**.
+
+### FIX
+PR #171 adds a toroidal brush generator: strokes/blobs are wrapped across the tile neighborhood and opposite pixel edges are normalized explicitly. New edge metrics: Δmax **0**, Δmean **0**.
+
+### PUBLIC RESULT
+Cloudflare Seam Lab: **17/17 PASS**, exact Dungeon + five real actors, 0 failed resources, 0 page/console errors.
+
+### BOUNDARY
+Frozen Hybrid v2 material math/head scale/source roughness behavior is unchanged. The separate Black Knight compile-census issue remains unresolved.
+
+### NEXT
+Georg visually compares Legacy non-tileable ↔ Tileable macro in the public Seam close-up.
+
+
 ## 2026-09-22 · Hybrid Surface v2 frozen after compile-census repeat
 
 ### IMPLEMENTATION
