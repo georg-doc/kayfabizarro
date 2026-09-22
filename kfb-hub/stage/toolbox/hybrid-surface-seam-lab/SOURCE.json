@@ -5,7 +5,7 @@
   "status": "IMPLEMENTATION_CANDIDATE",
   "sourceRepo": "georg-doc/kayfabizarro",
   "sourceBranch": "chatgpt-web/toolbox-hybrid-seamless-macro-2026-09-22",
-  "sourceBranchHead": "PENDING",
+  "sourceBranchHead": "13f642d4c9d037a17f5867acc44c59c9cac44117",
   "sourceScreenshotFeedback": "2026-09-22 · visible line on broad flat wall",
   "provenCause": "legacy createRgbBrushTexture paints a non-periodic canvas then uses RepeatWrapping; opposite edges do not match",
   "fix": "toroidal wrapped strokes/blobs plus explicit opposite-edge normalization",
