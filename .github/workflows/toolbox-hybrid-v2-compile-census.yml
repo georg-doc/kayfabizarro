@@ -1,0 +1,43 @@
+name: ToolBox Hybrid v2 compile census
+on:
+  pull_request:
+    paths:
+      - 'kfb-hub/stage/toolbox/hybrid-surface-scene-lab-v2/lab.mjs'
+      - 'kfb-hub/stage/toolbox/hybrid-surface-scene-lab-v2/census-proof.mjs'
+      - '.github/workflows/toolbox-hybrid-v2-compile-census.yml'
+permissions:
+  contents: read
+jobs:
+  census:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Syntax
+        run: |
+          node --check kfb-hub/stage/toolbox/hybrid-surface-scene-lab-v2/lab.mjs
+          node --check kfb-hub/stage/toolbox/hybrid-surface-scene-lab-v2/census-proof.mjs
+      - name: Install Chromium
+        run: |
+          npm install --no-save playwright@1.51.1
+          npx playwright install --with-deps chromium
+      - name: Serve diagnostic
+        run: |
+          python3 -m http.server 4173 --bind 127.0.0.1 >/tmp/census-http.log 2>&1 &
+          for i in {1..30}; do curl -fsS http://127.0.0.1:4173/kfb-hub/stage/toolbox/hybrid-surface-scene-lab-v2/ >/dev/null && exit 0; sleep 1; done
+          cat /tmp/census-http.log
+          exit 1
+      - name: Actor material compile census
+        env:
+          CENSUS_BASE_URL: http://127.0.0.1:4173/kfb-hub/stage/toolbox/hybrid-surface-scene-lab-v2/
+          CENSUS_OUT: hybrid-v2-census-evidence
+        run: node kfb-hub/stage/toolbox/hybrid-surface-scene-lab-v2/census-proof.mjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: toolbox-hybrid-v2-compile-census
+          path: hybrid-v2-census-evidence
+          retention-days: 14
