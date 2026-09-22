@@ -304,3 +304,51 @@ Implementation must recover these from the chosen host and existing ChatterBox o
 
 ### IMPLEMENTATION STATUS
 No runtime implementation, visual carry/handoff proof, browser test or public Stage result was built.
+
+
+## 2026-09-22 · Player Proof + Access Props + VFX lane
+
+### DECISION · first Player Proof
+- First player-facing proof is **Orc → Player with Tiny Treats pink donut**.
+- Lore Keeper remains the first Story Zone / Activity proof.
+- Player proof target:
+  `notice → Bubble Call → NPC reply → offer → accept → TRANSFER_COMMIT → Backpack → Fractal Almanac provenance → release/resume`.
+- Full miracle-hair-loss gag remains optional after transfer path works.
+
+### USER DIRECTION · Access Props / Keys
+- Add physical access props for mini-games, Card decks, worlds, dungeons, portals/events/scenes.
+- Inspiration: Mythic/keystone-style readable physical access token, not WoW's exact economy/difficulty system.
+- Source-backed current candidates:
+  - KayKit `key.gltf`;
+  - KayKit `keyring.gltf`;
+  - KayKit `keyring_hanging.gltf`;
+  - Quaternius `Pickup_KeyCard.gltf`.
+- Gold and silver keys are desired presentation/access-tier directions.
+- Exact separate gold/silver source files were **not proven** in the inspected source/handoff.
+- Keys live conceptually in the same Backpack + Session/Journey/Fractal Almanac persistence universe.
+- Machine-readable candidates: `ACCESS_PROP_CANDIDATES_v0.json`.
+
+### USER DIRECTION · VFX
+- Explore selected later Combat/World FX for muzzle flash, electric/blitz, slice/sweeps, blood, impacts, explosions, smoke/fire and access/world effects.
+- Linked handoff contains 132 candidate assets, including 91 `FX_Visual` source assets.
+- Existing `kfb-vfx.js` donor discovered and retained as first reuse path.
+- Historical `VFX_DESIGN_v10.md` rejected `blood_impact_6x5` because the old design said no blood in KFB.
+- Georg now explicitly reopens blood FX as a current candidate. Preserve this as an additive correction rather than rewriting historical donor evidence.
+- Machine-readable lane: `VFX_CANDIDATE_LANE_v0.json`.
+
+### SOURCE EVIDENCE
+Added:
+- `ACCESS_VFX_SOURCE_CHECK.md`
+- exact key/keyring/keycard source verification;
+- exact requested FX family verification;
+- donor ownership check;
+- blood-direction history/correction;
+- current curated `media/3D_Assets/KFB/` snapshot note.
+
+### CURATED KFB POOL
+- `media/3D_Assets/KFB/` is recorded as Georg's future donor shortlist.
+- Inspected current snapshot enumerated 140 entries.
+- This is not a second registry or blanket compatibility/provenance approval.
+
+### IMPLEMENTATION STATUS
+No Access runtime, key skin/material proof, VFX integration, blood visual approval, Combat changes, Player Proof runtime or public Stage was built in this checkpoint.
