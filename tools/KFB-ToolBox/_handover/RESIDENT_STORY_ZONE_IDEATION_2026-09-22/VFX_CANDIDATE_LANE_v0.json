@@ -1,0 +1,210 @@
+{
+  "schema": "kfb.vfx-candidate-lane.v0",
+  "status": "SOURCE_ALIGNED_CANDIDATES_ONLY",
+  "date": "2026-09-22",
+  "purpose": "Reuse the existing KFB VFX donor and curated FX texture sources for later combat/world presentation without creating a second combat, physics or hit-detection owner.",
+  "sources": {
+    "selectedHandoff": "tools/KFB-ToolBox/_inbox/KFB Style References/VFX + KEYS + ASSETS - kfb-asset-handoff-animation-lab (9).json",
+    "handoffStatus": "candidate-only",
+    "handoffAssetCount": 132,
+    "handoffFxVisualCount": 91,
+    "donorModule": "tools/KFB-ToolBox/_inbox/cloud-design-worldbuilding-2026-09-18/donor-bank/modules/kfb-vfx.js",
+    "donorDesign": "tools/KFB-ToolBox/_inbox/cloud-design-worldbuilding-2026-09-18/donor-bank/docs/VFX_DESIGN_v10.md",
+    "fxBase": "media/3D_Assets/FX_Visual/brackeys_vfx_bundle/"
+  },
+  "donorFacts": [
+    "Existing donor renders; it does not decide what was hit.",
+    "Existing donor uses one quad pool, four orientations (camera, ground, surface, velocity) and flipbooks for primary punctuation.",
+    "Existing donor already separates host physics/combat from presentation and emits optional shake/hitstop/cue/react events.",
+    "Existing donor already has muzzle, impact, electric, smoke, dirt, scorch, tracer, slash/flame-style atlas roles and predrawn hit/electric flipbooks."
+  ],
+  "handoffCompatibilityNote": "The linked asset handoff was generated for Animation Lab with allowedKinds=model-3d. The FX PNGs are source-present but consumerKindAllowed=false for that consumer. This is not a rejection of the FX themselves; they require the existing/dedicated VFX consumer rather than Animation Lab.",
+  "candidateFamilies": [
+    {
+      "id": "combat.muzzle",
+      "intent": "muzzle flash / Mündungsfeuer",
+      "sourcePatterns": [
+        "particles/alpha/muzzle_01_a.png .. muzzle_05_a.png",
+        "particles/opague/muzzle_01.png .. muzzle_05.png"
+      ],
+      "existingDonorRoles": [
+        "cone",
+        "wide"
+      ],
+      "renderModeCandidates": [
+        "weapon-local quad",
+        "velocity-oriented quad"
+      ],
+      "runtimeOwner": "Combat/Ranged host emits fire event; VFX only presents"
+    },
+    {
+      "id": "combat.melee-slash",
+      "intent": "slice / sweep / slash punctuation",
+      "sourcePatterns": [
+        "particles/alpha/slash_01_a.png .. slash_04_a.png",
+        "particles/opague/slash_01.png .. slash_04.png"
+      ],
+      "existingDonorRoles": [
+        "slash"
+      ],
+      "renderModeCandidates": [
+        "weapon-local arc quad",
+        "camera/surface aligned quad"
+      ],
+      "runtimeOwner": "Melee owner decides swing/contact; VFX only presents"
+    },
+    {
+      "id": "combat.impact",
+      "intent": "hit punctuation",
+      "sourcePatterns": [
+        "predrawn/big_hit_6x5.png",
+        "predrawn/impact_white_6x4.png",
+        "particles/alpha/scratch_01_a.png",
+        "particles/alpha/scorch_01_a.png"
+      ],
+      "existingDonorRoles": [
+        "hit",
+        "white",
+        "scorch"
+      ],
+      "renderModeCandidates": [
+        "flipbook billboard",
+        "surface decal",
+        "secondary particles"
+      ],
+      "runtimeOwner": "Combat host supplies hit position/surface/energy"
+    },
+    {
+      "id": "combat.blood",
+      "intent": "stylized blood impact",
+      "sourcePatterns": [
+        "predrawn/blood_impact_6x5.png"
+      ],
+      "existingDonorStatus": "HISTORICALLY_EXCLUDED_BY_VFX_DESIGN_v10",
+      "currentUserDirection": "REOPEN_AS_CANDIDATE",
+      "note": "VFX_DESIGN_v10 explicitly said blood_impact was not used because there was no blood in KFB. Georg now explicitly wants blood FX as a candidate. Preserve that as an additive direction change; do not silently rewrite the historical donor decision.",
+      "renderModeCandidates": [
+        "short flipbook billboard",
+        "optional stylized surface splat only if later approved"
+      ],
+      "runtimeOwner": "Combat host decides damage/hit; VFX only presents"
+    },
+    {
+      "id": "combat.electric",
+      "intent": "Blitz / electric hit / shield / energy punctuation",
+      "sourcePatterns": [
+        "predrawn/electric_ring_6x5.png",
+        "particles/alpha/magic_01_a.png",
+        "particles/alpha/magic_02_a.png",
+        "predrawn/lightstreaks_6x5.png"
+      ],
+      "existingDonorRoles": [
+        "bolt",
+        "ering",
+        "trace"
+      ],
+      "renderModeCandidates": [
+        "flipbook ring",
+        "target-local bolt/spark quad",
+        "beam/tracer presentation"
+      ],
+      "note": "No separate lightning-bolt asset was identified in the selected handoff by name; the existing donor already synthesizes/uses an electric bolt role from Brackeys masks."
+    },
+    {
+      "id": "world.fire-smoke",
+      "intent": "fire, flames, smoke, ambient hazards and aftermath",
+      "sourcePatterns": [
+        "predrawn/fire_point_6x5.png",
+        "predrawn/fire_ring_6x5.png",
+        "predrawn/dithered_fire_6x5.png",
+        "particles/alpha/fire_*_a.png",
+        "particles/alpha/flame_*_a.png",
+        "particles/alpha/smoke_*_a.png"
+      ],
+      "renderModeCandidates": [
+        "billboard particles",
+        "short flipbook",
+        "world-local emitter"
+      ],
+      "runtimeOwner": "World/scene host owns hazard/state; VFX presents"
+    },
+    {
+      "id": "world.explosion",
+      "intent": "cartoon explosion / destruction punctuation",
+      "sourcePatterns": [
+        "predrawn/explosion_6x5.png"
+      ],
+      "existingDonorStatus": "AVAILABLE_SOURCE_BUT_NOT_USED_IN_V10_DONOR",
+      "donorReason": "historical donor preferred weapon-owned color and smaller punctuation",
+      "currentStatus": "OPTION_FOR_LATER_VISUAL_TEST"
+    },
+    {
+      "id": "world.magic-access",
+      "intent": "portal, access unlock, key/deck/world activation, magic/world cues",
+      "sourcePatterns": [
+        "predrawn/electric_ring_6x5.png",
+        "predrawn/charge_7x6.png",
+        "particles/alpha/magic_01_a.png",
+        "particles/alpha/magic_02_a.png",
+        "particles/alpha/light_01_a.png .. light_03_a.png",
+        "particles/alpha/circle_*_a.png"
+      ],
+      "renderModeCandidates": [
+        "ring",
+        "glow",
+        "charge",
+        "portal/activation billboard"
+      ],
+      "runtimeOwner": "Access/world owner decides unlock; VFX presents"
+    },
+    {
+      "id": "world.dirt-scorch",
+      "intent": "ground hits, stunt destruction, landing, persistent aftermath",
+      "sourcePatterns": [
+        "particles/alpha/dirt_*_a.png",
+        "particles/alpha/scorch_*_a.png"
+      ],
+      "existingDonorRoles": [
+        "dirt",
+        "puff",
+        "scorch"
+      ],
+      "renderModeCandidates": [
+        "ground quad",
+        "surface decal",
+        "short particle burst"
+      ]
+    }
+  ],
+  "proposedSemanticTriggers": [
+    "combat.weapon.muzzle",
+    "combat.melee.slash",
+    "combat.hit.impact",
+    "combat.hit.blood",
+    "combat.hit.electric",
+    "world.explosion",
+    "world.fire",
+    "world.smoke",
+    "world.dirt",
+    "world.scorch",
+    "access.unlock",
+    "access.portal"
+  ],
+  "proposedGuardrails": [
+    "Reuse kfb-vfx.js before building another renderer.",
+    "VFX never decides hit, damage, knockback, access or world state.",
+    "Treat blood as a new current candidate direction, not as already accepted visual canon.",
+    "Preview candidate textures/effects in isolation before integrating them into Combat or World.",
+    "Prefer semantic recipes/triggers so Combat/World code does not hardcode texture filenames everywhere.",
+    "Do not route 2D FX PNGs through Animation Lab just because the handoff filename says animation-lab.",
+    "Keep first pink-donut Player Proof independent from VFX work."
+  ],
+  "firstFutureProofs": [
+    "Ranged: one real weapon muzzle socket -> muzzle_01/02 style flash only.",
+    "Melee: one real sword swing -> slash_01 style sweep only.",
+    "Hit: one host-supplied hit point -> impact_white or big_hit flipbook.",
+    "Blood option: same hit event -> blood_impact flipbook behind a visual toggle/human gate.",
+    "World: one static fire/smoke emitter and one access.unlock ring/glow cue."
+  ],
+  "implementationStatus": "NOT_BUILT_NOT_PUBLIC_VERIFIED"
+}
