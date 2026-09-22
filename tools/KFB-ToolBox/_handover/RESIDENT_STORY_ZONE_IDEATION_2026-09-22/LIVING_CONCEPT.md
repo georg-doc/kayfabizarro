@@ -1520,3 +1520,396 @@ Show it through behaviour:
 - affectionate callback later.
 
 The system earns the satirical point by letting the player observe the contradiction.
+
+
+---
+
+# 23 · Social Attention and Gift Drive
+
+## USER DIRECTION · 2026-09-22
+
+NPC-to-NPC interaction should be able to start from **proximity / attention range** in a way analogous to how creatures in MMORPGs acquire aggro at a certain distance.
+
+For KFB this is not automatically hostile aggro.
+
+Another Resident entering range can become a **Social Point of Interest**.
+
+One of the most common positive motives should be:
+
+> **I have something I would like to give you.**
+
+Each Resident may carry or have access to one or more suitable gift items:
+
+- signature prop;
+- food;
+- useful object;
+- funny object;
+- Card-related object;
+- small personal token;
+- other real placeable/transferable prop supported by source truth.
+
+The gift exchange may occur while the Residents simultaneously:
+
+- tease one another;
+- exchange insults;
+- mock each other;
+- provoke;
+- argue;
+- recall prior scraps;
+- or otherwise behave with rough buddy-banter.
+
+The social meaning is intentionally paradoxical:
+
+**the behaviour can sound hostile while the underlying action is generous.**
+
+This is a first-class expression of the KFB chill & fun / best-buddy baseline.
+
+## Existing Town alignment
+
+This extends already documented Town directions rather than inventing a separate economy:
+
+- Market activity already includes **giving and trading**.
+- Gift provenance is already considered meaningful enough to travel with session/import state.
+- Social POP and buddy relationships already exist as separate concepts.
+
+This concept does not create a new currency or general inventory owner.
+
+## PROPOSAL · Social Attention Radius
+
+Use the useful shape of MMO aggro without importing hostile semantics.
+
+Working concept:
+
+`SOCIAL_ATTENTION_RADIUS`
+
+When another Resident enters the relevant range, the actor may:
+
+1. perceive the other Resident;
+2. decide whether they are currently interruptible;
+3. evaluate possible social motives;
+4. optionally orient / approach;
+5. begin a social encounter.
+
+A Resident entering range is therefore a candidate, not an automatic trigger.
+
+Possible modifiers:
+
+- line of sight;
+- current activity interruptibility;
+- relationship / familiarity;
+- current Kayfabe Heat;
+- pending gift intent;
+- remembered unresolved social beat;
+- role / Zone context;
+- current Card/topic relevance;
+- recent interaction cooldown;
+- other higher-priority local POIs.
+
+Do not start with a complex utility-AI score.
+
+The first implementation can use a small ordered rule set.
+
+## PROPOSAL · perception bands
+
+A simple staged model may be clearer than one magic radius:
+
+### FAR / IGNORE
+
+Resident is present in world but irrelevant to this actor's current loop.
+
+### NOTICE
+
+Resident becomes a candidate social POI.
+
+Possible behaviour:
+
+- glance;
+- head turn;
+- short ambient recognition;
+- continue current task.
+
+### ENGAGE
+
+Actor may leave an interruptible activity and approach.
+
+Possible motives:
+
+- greet;
+- gift;
+- banter;
+- ask/respond;
+- show Card/object;
+- invite to shared activity.
+
+### PERSONAL
+
+Close enough for handoff / detailed interaction / challenge / help-up.
+
+The exact distances belong to the host/world scale and should not be frozen globally in this concept.
+
+## PROPOSAL · Gift Drive
+
+Each Resident may expose a lightweight set of **Gift Intents**.
+
+Candidate shape:
+
+```json
+{
+  "resident": "resident.lorekeeper",
+  "giftIntents": [
+    {
+      "giftRef": "canonical-asset-or-card-ref",
+      "kind": "prop | food | card | token",
+      "preferredRecipientTags": ["optional"],
+      "reasonTag": "signature | useful | joke | callback | gratitude",
+      "repeat": "once | cooldown | renewable"
+    }
+  ]
+}
+```
+
+This is conceptual only.
+
+The actual source object remains Asset Registry / Librarian owned.
+
+The social layer owns the **intent to offer**, not the canonical item identity.
+
+## Gift source modes
+
+A gift may be:
+
+### Carried signature gift
+
+Already visually carried / attached / represented by the Resident.
+
+Example:
+a Resident visibly carries a suitable prop and decides to give that prop or a gift-token equivalent to another Resident.
+
+### Local-world gift
+
+A nearby world prop / food / Card becomes the offered object.
+
+### Activity-produced gift
+
+The Resident creates or obtains an item through a visible activity.
+
+Example:
+
+- baker → food;
+- blacksmith → crafted prop;
+- Lore Keeper → Card / book / archive token;
+- gardener → flower;
+- musician → perhaps a music-related token/prop.
+
+Do not fabricate production systems before the visible activity exists.
+
+## PROPOSAL · Gift Encounter grammar
+
+A gift can be one motive inside the social encounter:
+
+```
+NOTICE_OTHER
+  → HAS_GIFT_INTENT?
+       yes → APPROACH
+             → ACKNOWLEDGE
+             → BANTER / INSULT / TEASE
+             → OFFER_GIFT
+             → ACCEPT / REACT
+             → optional COUNTER-GIFT
+             → optional continued BANTER
+             → optional CHALLENGE / SCRAP
+             → REPAIR / LAUGH
+             → RESUME
+       no  → other social motive / continue activity
+```
+
+Important:
+
+**Gift and insult are not mutually exclusive branches.**
+
+A Resident may say something cutting while physically handing over something generous.
+
+This tension is desirable KFB tone.
+
+## PROPOSAL · recipient as Point of Interest
+
+Another Resident can therefore become a POI for reasons such as:
+
+- "I want to give them this";
+- "I owe them something";
+- "I want to show them this Card";
+- "I have a callback from our previous encounter";
+- "I want to tease them";
+- "I want to challenge them";
+- "we have a shared activity available nearby".
+
+This gives NPC roaming a readable motive.
+
+Instead of wandering randomly, a Resident may visibly cross the scene because a social target became relevant.
+
+## PROPOSAL · target selection without fake complexity
+
+First version should use simple priority rules such as:
+
+1. finish non-interruptible beat;
+2. urgent local interaction;
+3. pending gift to a visible eligible Resident;
+4. respond to direct social approach;
+5. remembered callback opportunity;
+6. interesting local Card/prop POI;
+7. ordinary activity loop.
+
+This is only a starter ordering, not a global AI canon.
+
+Different Residents can later weight these motives differently.
+
+## PROPOSAL · Gift Handoff Station / semantic sockets
+
+A social handoff should use the same Activity Station grammar as physical world activities.
+
+Possible social sockets:
+
+- `approach.from`
+- `face.partner`
+- `handoff.giver`
+- `handoff.receiver`
+- `show.item`
+- `accept.item`
+- `reject/playful`
+- `helpUp`
+- `walkTogether.exit`
+
+The actor/motion owner resolves the actual animations.
+
+The social layer requests a semantic handoff.
+
+## PROPOSAL · Gift state and provenance
+
+A gift event should distinguish at least:
+
+- offered;
+- accepted;
+- rejected / deferred;
+- transferred;
+- displayed / placed later.
+
+A transfer should record compact provenance:
+
+- giver;
+- recipient;
+- gift source ref;
+- encounter / Zone;
+- optional reason;
+- date/session/event id as defined by the existing save owner.
+
+This matches the existing Town direction that **gift provenance matters**.
+
+Do not clone a canonical asset merely because ownership changes.
+
+Runtime representation may be a reference/state transition rather than binary duplication.
+
+## Lean Memory
+
+Gift events are strong candidates for Lean Memory because they are socially meaningful and useful for callbacks.
+
+Example:
+
+```json
+{
+  "event": "gift-transfer",
+  "giver": "resident.a",
+  "recipient": "resident.b",
+  "giftRef": "canonical-gift-ref",
+  "zone": "market",
+  "context": "buddy-banter",
+  "outcome": "accepted",
+  "witnesses": ["resident.c"]
+}
+```
+
+Later ChatterBox may reference:
+
+- who gave whom what;
+- whether it was appreciated;
+- whether the gift followed an insult or fight;
+- whether the recipient later carries/displays it;
+- whether another Resident witnessed it.
+
+Again: no omniscience.
+
+## PROPOSAL · gifts can deepen, not quantify, relationships
+
+Do not make "gift = +10 friendship".
+
+The meaningful result is qualitative memory and new interaction material.
+
+Possible effects:
+
+- unlock callback;
+- make a prop visible in the recipient's place;
+- create a future return-gift motive;
+- create teasing material;
+- create gratitude or mock-gratitude;
+- create a shared Card/lore reference;
+- create a new local activity.
+
+Bond can remain stable while the shared history becomes richer.
+
+## PROPOSAL · asymmetry and failed handoffs are useful
+
+Not every gift needs a clean sentimental success.
+
+Examples:
+
+- recipient mocks the gift but keeps it;
+- recipient immediately offers something worse in return;
+- recipient says the object is hideous and proudly displays it later;
+- two Residents argue about who is doing whom the favour;
+- a gift triggers a Kayfabe challenge;
+- recipient is busy and the giver waits / follows / tries later.
+
+The action remains generous even when the language is abrasive.
+
+## PROPOSAL · avoid gift spam
+
+Because every Resident may have something they want to give, guard against constant exchange loops.
+
+Possible simple controls:
+
+- one pending gift intent at a time;
+- recipient cooldown;
+- per-pair gift history;
+- only interrupt selected activities;
+- no immediate reciprocal infinite loop;
+- rare / meaningful signature gifts stay one-time or long-cooldown;
+- ambient social encounters may remain only banter.
+
+The goal is **motivated social motion**, not a perpetual item conveyor belt.
+
+## Relationship to Lore Keeper first fixture
+
+The Lore Keeper can become the first bounded proof of this later without making LK-L1 depend on it.
+
+Possible later Lore Keeper gift:
+
+- Card;
+- book;
+- archive token;
+- found prop.
+
+Example future sequence:
+
+```
+Lore Keeper finds Card POI
+→ archives / interprets it
+→ later notices another Resident
+→ approaches because of pending Gift Intent
+→ insults their taste
+→ hands them the Card anyway
+→ recipient reacts
+→ Lean Memory stores the exchange
+```
+
+This would connect Story Zone activity, POI discovery, social attention, ChatterBox and memory in one readable loop.
+
+Do not require this full sequence for the first Lore Keeper visual/activity gate.
