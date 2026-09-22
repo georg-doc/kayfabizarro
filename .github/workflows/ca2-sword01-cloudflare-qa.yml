@@ -1,0 +1,130 @@
+name: CA2 Sword-01 Cloudflare QA
+
+on:
+  push:
+    branches: [cloudflare-live]
+    paths:
+      - 'kfb-hub/stage/combat/ca2-sword-01/**'
+      - 'kfb-hub/index.html'
+      - '.github/workflows/ca2-sword01-cloudflare-qa.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  public-proof:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Install Playwright Chromium
+        run: |
+          npm install --no-save playwright@1.51.1
+          npx playwright install --with-deps chromium
+
+      - name: Open exact Cloudflare Sword-01 route
+        run: |
+          mkdir -p ca2-sword01-public-proof
+          cat > ca2-sword01-public-proof/check.mjs <<'JS'
+          import fs from 'node:fs';
+          import { chromium } from 'playwright';
+
+          const url='https://kayfabizarro.pages.dev/kfb-hub/stage/combat/ca2-sword-01/';
+          const sourceUrl=url+'SOURCE.json';
+          const expectedHead='c04f0fffeb8cd90b48d70a2787c9ef1ca75ee725';
+          const report={url,sourceUrl,checks:[],errors:[],httpErrors:[]};
+          const check=(name,pass,detail=null)=>{
+            report.checks.push({name,pass:!!pass,detail});
+            if(!pass) process.exitCode=1;
+          };
+
+          const browser=await chromium.launch({
+            headless:true,
+            args:['--use-angle=swiftshader','--enable-unsafe-swiftshader']
+          });
+          const page=await browser.newPage({viewport:{width:1440,height:900}});
+          page.on('pageerror',e=>report.errors.push('pageerror: '+String(e)));
+          page.on('console',m=>{if(m.type()==='error'&&!/favicon/i.test(m.text()))report.errors.push('console: '+m.text())});
+          page.on('response',r=>{if(r.status()>=400&&!/favicon/i.test(r.url()))report.httpErrors.push({status:r.status(),url:r.url()})});
+
+          try{
+            const markerResponse=await page.request.get(sourceUrl,{timeout:60000});
+            check('SOURCE.json HTTP',markerResponse.ok(),markerResponse.status());
+            const marker=await markerResponse.json();
+            report.marker=marker;
+            check('marker id',marker.id==='CA2-SWORD-01-VIS',marker.id);
+            check('marker owner head',marker.owner?.head===expectedHead,marker.owner?.head);
+            check('marker human gate pending',marker.humanAcceptance==='PENDING',marker.humanAcceptance);
+
+            const response=await page.goto(url,{waitUntil:'domcontentloaded',timeout:90000});
+            check('Stage HTTP response',!!response&&response.ok(),response?.status());
+            check('Stage title',await page.title()==='CA2-SWORD-01 · Skeleton Blade visual gate',await page.title());
+
+            await page.waitForFunction(()=>window.__KFB_CA204__?.ready===true,{}, {timeout:180000});
+            const boot=await page.evaluate(()=>({
+              stage:window.__KFB_STAGE_SOURCE__,
+              snap:window.__KFB_CA204__.snapshot()
+            }));
+            report.boot=boot;
+            check('Stage source head',boot.stage?.head===expectedHead,boot.stage?.head);
+            check('exact Skeleton Blade',/Skeleton_Blade\.gltf$/.test(boot.snap?.source?.bladePath||''),boot.snap?.source?.bladePath);
+            check('weapon id skeleton-blade',boot.snap?.actor?.weaponId==='skeleton-blade',boot.snap?.actor?.weaponId);
+            check('right hand slot resolves',/handslot.*r/i.test(boot.snap?.actor?.handBone||''),boot.snap?.actor?.handBone);
+            check('one Skeleton mixer',boot.snap?.actor?.skeletonMixer===1,boot.snap?.actor?.skeletonMixer);
+            check('one Driver mixer',boot.snap?.actor?.driverMixer===1,boot.snap?.actor?.driverMixer);
+            check('axes deferred',boot.snap?.weaponOrientation?.axesDeferred===true,boot.snap?.weaponOrientation);
+            check('non-overlap gap positive',Number(boot.snap?.spacing?.actualGap)>.05,boot.snap?.spacing?.actualGap);
+            check('forced contact not visual acceptance',boot.snap?.scope?.forcedContactIsVisualAcceptance===false,boot.snap?.scope);
+            check('productive punch mapping preserved',boot.snap?.scope?.currentPr5PunchMappingPreserved===true,boot.snap?.scope);
+
+            await page.screenshot({path:'ca2-sword01-public-proof/01-blade-isolated.png',fullPage:true});
+
+            await page.evaluate(()=>window.__KFB_CA204__.setMode('mount'));
+            await page.waitForTimeout(300);
+            await page.screenshot({path:'ca2-sword01-public-proof/02-hand-mount.png',fullPage:true});
+
+            const strike=await page.evaluate(()=>{
+              window.__KFB_CA204__.setMode('spacing');
+              const s=window.__KFB_CA204__.snapshot();
+              const p=Number.isFinite(s?.markers?.peak)?s.markers.peak:
+                      Number.isFinite(s?.markers?.nominalContact)?s.markers.nominalContact:.5;
+              window.__KFB_CA204__.scrub(p);
+              return {p,snap:window.__KFB_CA204__.snapshot()};
+            });
+            report.strike=strike;
+            check('spacing mode non-forced',strike.snap?.placementMode==='spacing',strike.snap?.placementMode);
+            check('spacing remains non-overlap',Number(strike.snap?.spacing?.actualGap)>.05,strike.snap?.spacing?.actualGap);
+            await page.waitForTimeout(300);
+            await page.screenshot({path:'ca2-sword01-public-proof/03-strike-pose.png',fullPage:true});
+
+            check('no page/script errors',report.errors.length===0,report.errors);
+            check('no failed HTTP assets',report.httpErrors.length===0,report.httpErrors);
+          }catch(e){
+            report.errors.push(String(e?.stack||e));
+            process.exitCode=1;
+          }finally{
+            report.status=process.exitCode?'FAIL':'PASS';
+            fs.writeFileSync('ca2-sword01-public-proof/report.json',JSON.stringify(report,null,2)+'\n');
+            console.log(JSON.stringify({
+              status:report.status,
+              checks:report.checks.filter(x=>x.pass).length+'/'+report.checks.length,
+              errors:report.errors.length,
+              httpErrors:report.httpErrors.length,
+              spacingGap:report.boot?.snap?.spacing?.actualGap ?? null,
+              strikeP:report.strike?.p ?? null
+            },null,2));
+            await browser.close();
+          }
+          JS
+          node ca2-sword01-public-proof/check.mjs
+
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: ca2-sword01-cloudflare-proof
+          path: ca2-sword01-public-proof
+          retention-days: 90
