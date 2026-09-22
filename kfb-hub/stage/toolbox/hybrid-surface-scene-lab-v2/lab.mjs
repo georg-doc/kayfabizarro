@@ -536,6 +536,7 @@ function actorMaterialCensus(){
           materialCount:mats.length,
           materialName:material?.name||'',
           materialUuid:material?.uuid||null,
+          materialVisible:material?.visible!==false,
           decorated:!!meta,
           compiled,
           submitted,
@@ -545,6 +546,7 @@ function actorMaterialCensus(){
           frustumCulled:rec.node.frustumCulled,
           renderOrder:rec.node.renderOrder,
           vertexCount:rec.node.geometry?.attributes?.position?.count||0,
+          indexCount:rec.node.geometry?.index?.count??null,
           drawRange:rec.node.geometry?.drawRange?{start:rec.node.geometry.drawRange.start,count:rec.node.geometry.drawRange.count}:null,
           groups,
           classification
