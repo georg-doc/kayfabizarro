@@ -248,13 +248,17 @@ export function setHybridV2Params(prepared,{macroScale,grainScale,strength,grain
 export function hybridV2Stats(prepared){
   let compiled=0,total=0,visibleMaterials=0,visibleCompiled=0;
   const textureUuids=new Set(),projections=new Set(),sourceRoughness=[],hybridBaseRoughness=[];
+  const effectivelyVisible=node=>{
+    for(let n=node;n;n=n.parent)if(n.visible===false)return false;
+    return true;
+  };
 
   for(const rec of prepared.records)for(const m of asMats(rec.hybrid)){
     const h=m?.userData?.kfbHybridV2;
     if(!h)continue;
     total++;
     if(h.shaderCompiled)compiled++;
-    if(rec.node.visible!==false){visibleMaterials++;if(h.shaderCompiled)visibleCompiled++}
+    if(effectivelyVisible(rec.node)){visibleMaterials++;if(h.shaderCompiled)visibleCompiled++}
     textureUuids.add(h.sharedTextureUuid);
     projections.add(h.projection);
     if(Number.isFinite(h.sourceRoughness))sourceRoughness.push(h.sourceRoughness);
