@@ -121,3 +121,31 @@ External donor families named for source review before new infrastructure is inv
 These are research donors only. No external dependency or license is accepted by this note.
 
 Current implementation gate remains unchanged until Georg explicitly accepts the Surface Adapter proposal.
+
+
+## Storytelling Map / Tactical donor delta · 2026-09-22
+
+Reviewed current main intake:
+
+`tools/KFB-ToolBox/_inbox/KFB StoryMap v1/`
+
+Added:
+
+`STORYTELLING_MAP_WORLD_DONOR_2026-09-22.md`
+
+Key cross-project findings:
+
+- StoryMap's strongest reusable contract is canonical geography vs reversible presentation transform.
+- Current Europe source is OpenPlanetData country-boundary GeoJSON; OSM remains the local/city lane.
+- D6 `cell/6` relief + map raster + coast-distance terraces are useful World Authoring donors, but current relief is not factual elevation.
+- StoryMap's map-owned wet mask is reusable architecture; the current water look is explicitly NOT accepted/promoted because the visible shader result remains unresolved.
+- Current radial ripple is a first Surface-FX donor for the World preflight.
+- Ink/Shadow are representation profiles, not playable-world geometry requirements.
+- BoardGameBits, responsive card/standee work and the existing World Atlas Domino S9 donor form a future shared World Toy Props vocabulary.
+- Tactical/Story Map should consume World Recipe IDs as another representation, not become another World owner.
+- Theatre Curtain remains separate Game Dev Studio transition ownership.
+
+Georg also clarified terminology: **Claude Design** is the only intended Design product name here; obsolete "Flow Design" wording was removed from the current World preflight/handoff.
+
+Curtain human direction was persisted in Theatre Curtain Core v2 and Playable MVP:
+keep the current physical cloth foundation, refine lower-third tieback/swag + cord, repair strong-bend crease/line artifacts, then consider aged fabric/burn wear and optional hanging KFB 3D wordmark.
