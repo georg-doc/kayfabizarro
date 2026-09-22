@@ -219,3 +219,59 @@ Second proof: player gives the same object to another Resident while origin prov
 
 ### IMPLEMENTATION STATUS
 Documentation/ideation only. No player dialogue UI, Backpack inventory runtime, backpack extraction, save integration or public Stage proof was built.
+
+
+## 2026-09-22 · Shared Social / Gift Data Contract v0
+
+### CONTRACT SHAPED
+Added:
+- `SOCIAL_GIFT_DATA_CONTRACT_v0.json`
+- `SOCIAL_GIFT_FIXTURES_v0.json`
+- `SOCIAL_GIFT_CONTRACT_CHECK.md`
+- Living Concept §27 commentary.
+
+### V0 RECORDS
+Exactly eight shared record types:
+- ActivityState
+- PerceptionCandidate
+- Motive
+- SocialPair
+- EncounterBit
+- PlayerCall
+- GiftInventoryItem
+- MemoryReceipt
+
+### COMMIT POINTS
+The contract makes these explicit:
+- SocialPair reservation;
+- PlayerCall creation;
+- gift accepted;
+- `TRANSFER_COMMIT`;
+- MemoryReceipt commit;
+- release/resume.
+
+Gift ownership changes only at `TRANSFER_COMMIT`.
+
+### SOURCE ALIGNMENT
+- `kfb.scene-patch.v1` remains scene-transform owner.
+- `NIE_ADAPTER_HOOK.md` remains bounded semantic-generation contract donor.
+- existing MomentReceipt direction remains Lean Memory architecture donor.
+- canonical Calls verified, including `bloedsinn → BLÖDSINN!`.
+- first fixture gift points to real KayKit Restaurant Bits `food_burger.gltf`.
+
+### FIXTURES
+- `RR-GIFT-01` Resident→Resident;
+- `RP-GIFT-01` Resident→Player Bubble Call + Backpack;
+- `PR-GIFT-01` Player→Resident re-gift preserving provenance.
+
+### STATIC EVIDENCE
+- contract JSON parse **1/1 PASS**;
+- fixture JSON parse **1/1 PASS**;
+- records **8/8 present**;
+- fixtures **3/3 present**;
+- invariants **12 recorded**.
+
+### IMPLEMENTATION STATUS
+Contract/documentation only.
+
+No social runtime, navigation, ChatterBox integration, Bubble UI, animation, Backpack attachment, inventory/save persistence, browser test or Cloudflare Stage result is claimed.
