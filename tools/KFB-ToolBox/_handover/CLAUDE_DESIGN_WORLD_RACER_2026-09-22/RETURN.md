@@ -170,6 +170,40 @@ Current StoryMap water integration is source-correct programmatically, but the h
 
 Theatre Curtain remains a separate Game Dev Studio transition owner. Current v1 technical foundation is kept, while the next human visual refinement is lower-third tieback/swag + optional cord and repair of strong-bend crease/line artifacts before aged/burned fabric polish.
 
+## Lead Work / Spindle delta · 2026-09-22
+
+Cross-project coordination is returned to the original KFB Lead / WSA Work lane.
+
+Current Lead Work onboarding:
+
+`skills/chat/workflows/KFB_LEAD_WORK_CHECKIN_2026-09-22/START_HERE.md`
+
+Prepared Combat ranged-first companion:
+
+`skills/chat/workflows/KFB_LEAD_WORK_CHECKIN_2026-09-22/COMBAT_RANGED_MVP.md`
+
+World/Claude brief remains the same design brief and was extended only with the existing Combat Spindle Sky as a reusable Environment Element donor.
+
+Current extraction source:
+
+`georg-doc/KFB-Combat-Arena:wsa/ca2-kaykit-prep-2026-09-20`
+→ `prompts/SKY_01_SPINDLE_MODULE.md`
+
+Target candidate remains:
+
+`kfb.environment.spindle-sky/0.1-candidate`
+
+Spindle Sky is not a Surface Adapter and does not become a World owner.
+
+Recommended Combat sequencing now preserved:
+
+1. Work C-MVP-A: exact existing CA2 PR #5 Stage packaging + browser baseline;
+2. Web/ToolBox + human gate: Legacy Rogue EyeRig + Crossbow two-hand/muzzle fit;
+3. Work C-MVP-C: Legacy Rogue consumes existing Arena Gunfight;
+4. melee remains later and separate.
+
+No runtime implementation changed in this documentation delta.
+
 ## Tests / evidence for this packaging slice
 
 This is a documentation persistence slice.
