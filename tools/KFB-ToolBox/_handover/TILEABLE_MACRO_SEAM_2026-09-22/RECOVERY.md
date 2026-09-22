@@ -1,6 +1,6 @@
 # RECOVERY · Tileable Macro Seam Lab · 2026-09-22
 
-Status: **LOCAL BROWSER VERIFIED · PUBLIC / HUMAN GATE PENDING**
+Status: **PUBLIC VERIFIED · HUMAN VISUAL GATE OPEN**
 
 Repo: `georg-doc/kayfabizarro`  
 Branch: `chatgpt-web/toolbox-tileable-macro-seam-2026-09-22`  
@@ -21,24 +21,36 @@ Only the macro texture generator changes:
 
 ## Evidence
 
-Workflow run `35676780027` · job `106584849995`: **17/17 PASS**.
+Local proof: workflow `35676780027`, job `106584849995`: **17/17 PASS**.
+
+Public proof: workflow `35677711287`, public job `106588167104`: **17/17 PASS**.
+Exact Cloudflare marker observed:
+`5a7c57e77c81546e71e6f30404a84f02ddbf7cf5`
+
+Public artifact:
+- id `10673323485`
+- digest `sha256:862e85d95cc0d3050e22cf856b5ba473b5ed34206b19d4fcb071a8880e6aad71`
 
 Edge/local discontinuity score:
 - old average: **14.242**
 - tileable average: **1.375**
+- X: `14.582 → 1.027`
+- Y: `13.903 → 1.723`
 
-X ratio: `14.582 → 1.027`  
-Y ratio: `13.903 → 1.723`
+Public browser: HTTP 200, 0 failed resources, 0 page/console errors.
 
-Artifact: `10672902748`  
-Digest: `sha256:f447a439217a00fb295ac0fccd88b8b611ca718d732bd6ee09a46945dfe34133`
+KFB Hub routing proof: workflow `35678440295` PASS. Both public pages contain `tileable-macro-seam-lab`:
+- `https://kayfabizarro.pages.dev/kfb-hub/`
+- `https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/`
 
-No failed resources and no page/console errors.
+## Public Stage
+
+`https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/tileable-macro-seam-lab/`
 
 ## Boundary
 
-This is not yet a public Stage and not Georg-accepted. Do not merge or promote to v2 consumers.
+This is still a human review candidate. Do not merge or promote into Hybrid v2 consumers yet. The Black Knight compile-census recovery remains a separate frozen issue.
 
 ## Next gate
 
-Publish the exact candidate to the fixed Cloudflare Stage route and visually compare **Old repeat ↔ Tileable macro** on the wall seam. No additional shader/style changes before that review.
+Georg visually compares **Old repeat ↔ Tileable macro** on the wall seam. No additional shader/style changes before that review.
