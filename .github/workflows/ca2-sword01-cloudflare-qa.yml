@@ -1,12 +1,8 @@
 name: CA2 Sword-01 Cloudflare QA
 
+# Frozen after two identical public-route failures.
+# Re-enable only after CA2-SWORD-01-PUB-F1 proves SOURCE.json is not Hub fallback HTML.
 on:
-  push:
-    branches: [cloudflare-live]
-    paths:
-      - 'kfb-hub/stage/combat/ca2-sword-01/**'
-      - 'kfb-hub/index.html'
-      - '.github/workflows/ca2-sword01-cloudflare-qa.yml'
   workflow_dispatch:
 
 permissions:
