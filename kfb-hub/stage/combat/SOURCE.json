@@ -1,7 +1,7 @@
 {
   "schema": "kfb.combat-stage-source/1",
   "stage": "C-MVP-A",
-  "status": "PACKAGING_IN_PROGRESS",
+  "status": "PACKAGED_CANDIDATE_BROWSER_PENDING",
   "source": {
     "repository": "georg-doc/KFB-Combat-Arena",
     "pr": 5,
@@ -9,10 +9,16 @@
     "commit": "954f2db7484dc566e468e5ce89b0d95940d97537",
     "runtimePath": "dist/"
   },
+  "packaging": {
+    "repository": "georg-doc/kayfabizarro",
+    "branch": "stage/combat-ca2-pr5-c-mvp-a-2026-09-22",
+    "runtimeCommit": "5ef336ad34b5adf0ad75163ae6adf11910f39f73",
+    "files": 215,
+    "byteIdentity": "VERIFIED_BY_GIT_BLOB_SHA"
+  },
   "public": {
     "url": "https://kayfabizarro.pages.dev/kfb-hub/stage/combat/",
-    "route": "kfb-hub/stage/combat/",
-    "runtime": "kfb-hub/stage/combat/runtime/"
+    "status": "NOT_DEPLOYED"
   },
   "ownership": {
     "movementGround": "Player.v2",
@@ -32,5 +38,5 @@
     "new combat code",
     "Spindle Sky"
   ],
-  "createdAt": "2026-09-22"
+  "updatedAt": "2026-09-22"
 }

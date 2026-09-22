@@ -1,8 +1,10 @@
 {
   "schema": "kfb.combat-stage-runtime-manifest/1",
+  "status": "EXACT_BUILD_BYTES",
   "source": {
     "repository": "georg-doc/KFB-Combat-Arena",
     "pr": 5,
+    "branch": "chatgpt-web/combat-arena-integration-v2-2026-09-19",
     "commit": "954f2db7484dc566e468e5ce89b0d95940d97537"
   },
   "build": {
@@ -690,7 +692,7 @@
     },
     {
       "path": "index.html",
-      "blob": "957a44a20f6652ac460d621b037e6bbfde6a0e2a"
+      "blob": "0265ab20d1a0797e9e89595a8fa13a8deb5c37ac"
     },
     {
       "path": "modules/kfb-arena-sfx.v4.json",
@@ -866,11 +868,11 @@
     },
     {
       "path": "vendor/babel.min.js",
-      "blob": "5f3df9a1c08ef682198afc3eb5a3bdc0a26faf3a"
+      "blob": "8830ea360e6bc7ec272015f86b113cda88f2765d"
     },
     {
       "path": "vendor/three.module.js",
-      "blob": "a6cb13841a8affe71fa0eea52b4ddbeca61bf8a6"
+      "blob": "0bcc7a286da2c115853ceec9deea19923e10ddc1"
     }
   ]
 }
