@@ -442,3 +442,20 @@ Prepared Combat companion:
 `skills/chat/workflows/KFB_LEAD_WORK_CHECKIN_2026-09-22/COMBAT_RANGED_MVP.md`
 
 First Combat consolidation is ranged-first and does not depend on melee.
+
+
+## 2026-09-22 · Resident Story Zones ideation
+
+Planning/recovery home for Georg's current Resident/NPC + ChatterBox + World Authoring ideation:
+
+`tools/KFB-ToolBox/_handover/RESIDENT_STORY_ZONE_IDEATION_2026-09-22/START_HERE.md`
+
+Current status: **LIVING CONCEPT · NO RUNTIME BUILD · NO PUBLIC STAGE CLAIM**.
+
+The concept reuses existing owners rather than creating a new NPC/world stack: Resident Atlas for actor composition, Asset Librarian/Registry for source identity, shared `kfb.scene-patch.v1` for in-scene transform patches, ChatterBox for situated speech, Motion/EyeRig/face owners for specialist profiles, and the receiving World/Travel/Hex/Dungeon host for placement, navigation, collision, camera and persistence.
+
+Working authoring grammar:
+
+`EyeRig → Face → Head/Graft → Resident → Activity → Scene → Story Zone → World placement`
+
+First proposed implementation fixture, only after explicit build approval: **Park Bench micro-scene**; Forge micro-story follows later. Current World Building / Surface Adapter preflight remains separate and must be consumed rather than duplicated.
