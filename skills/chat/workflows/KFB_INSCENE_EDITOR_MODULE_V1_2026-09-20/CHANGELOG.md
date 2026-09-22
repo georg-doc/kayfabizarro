@@ -13,3 +13,14 @@
 - rebuilt the host from exact main and replaced only the actual UI picker;
 - final two-host run `35538997214`: Resident **20/20**, Dungeon **22/22**, combined **42/42 PASS**, 0 browser errors;
 - no Tiny Treats, actor posing, Recipe bake-back or Live promotion in this slice.
+
+
+## 2026-09-22 · isolated Stage + public gate
+
+- packaged the already-tested Resident + Dungeon hosts under `kfb-hub/stage/toolbox/scene-patch-v1/` with shared modules copied from the same candidate;
+- isolated Stage mirror run `35539447295`: **13/13 PASS**, 0 browser errors;
+- atomically copied the 13 tested mirror blobs to `cloudflare-live` at `2c2de267b9413b262d51152408e616751c1e8e85`;
+- patched the current publication Hub in place at `f0c269904de722b86260e1657928e9a1936127b4` with direct Scene Patch review links;
+- public QA attempt 1 failed at public child-route readiness; source/publication Git state was re-read and remained correct;
+- exactly one public-sync retry is allowed; no visual/runtime rebuild and no automatic Live promotion;
+- captured the subsequent ToolBox consolidation direction separately as GitHub issue #167 rather than mixing it into this old branch.
