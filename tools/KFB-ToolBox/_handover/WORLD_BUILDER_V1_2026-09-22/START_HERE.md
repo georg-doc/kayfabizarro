@@ -7,15 +7,34 @@ Owner: existing KFB World / Travel / ToolBox owners; no new universal runtime ow
 
 Create the first coherent KFB WorldBuilder v1 authoring candidate that is visually useful, editable, saveable and locally reviewable without requiring Work/WSA or Cloudflare for normal iteration.
 
+## Current gate status
+
+### WB1-P0 status · COMPLETE on PR #175
+
+P0 is complete/revalidated on Draft PR #175:
+
+- branch: `chatgpt-web/world-building-preflight-2026-09-22`
+- exact head: `17fd31a907b4346fddef7501490f738c251c2a37`
+- evidence: 22/22 bounded source/provenance/license checks
+- runtime/browser/gameplay tests: 0 by design
+
+Current `main` has advanced beyond the P0 base, so PR #175 currently needs reconciliation before any merge.
+
+**Do not rerun P0.**
+
+The next implementation gate is WB1-P1 after additive reconciliation of the P0 branch with current main.
+
+PR #176 is a separate post-WB1-P2 ToolBox Fractal Authoring planning lane. It does not block P1.
+
 ## Execution order
 
-### WB1-P0 · Fresh Web preflight
+### WB1-P0 · COMPLETE / do not rerun
 
-Use the existing bounded preflight:
+Historical P0 brief:
 
 `tools/KFB-ToolBox/_handover/WORLD_BUILDING_PREFLIGHT_WEBCHAT_2026-09-22/START_HERE.md`
 
-Do P0 only first:
+P0 is already complete on PR #175. Keep its results; do not execute these bullets again:
 - read `WHACKMAN_WORLDDESIGN_LAB_DONOR_2026-09-23.md`;
 - source/reuse/license matrix;
 - exact internal donors;
@@ -28,9 +47,23 @@ Commit and stop.
 
 Fresh Web continuation or fresh replacement chat.
 
+Before implementation:
+1. re-read current main;
+2. reconcile the completed P0 branch additively against current main;
+3. preserve P0 evidence/history;
+4. then implement P1 only.
+
 Isolate the WhackMan-derived dusk/torch/fog/local-visibility/matte profile.
 
 Reuse the original WhackMan source as truth and the already isolated `WORLDDESIGN_LAB_2026-09-23/deliverables/wd-light.js` as implementation evidence. Do not rebuild the lighting comparison from prose.
+
+Binding P1 architecture rule from the WorldDesign Lab:
+
+**Material and light remain orthogonal.**
+
+Environment Profile owns light/fog/torch/local-visibility/exposure behavior.
+Material/shader style remains a separate `MaterialProfileRef`.
+A reversible `WHACKMAN_MATTE_CANDIDATE` may be tested, but must not become a hardwired global material policy inside the Environment Profile schema.
 
 No World Editor yet.
 
