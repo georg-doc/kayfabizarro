@@ -50,6 +50,13 @@ If this is a replacement/fresh chat after context loss, use `RECOVERY_PATH.md` r
 
 `CURRENT_CANON` · `CURRENT_TOOL` · `CURRENT_REFERENCE` · `CURRENT_PROJECT_SSOT` · `LEGACY_REFERENCE` · `SUPERSEDED` · `ARCHIVED_HISTORY` · `UNVERIFIED` · `EXPERIMENTAL`
 
+## Human-readable communication
+
+For Georg-facing status, reviews and handoffs, apply:
+`HUMAN_READABLE_STATUS.md`
+
+Plain-language meaning comes first; technical labels and SHAs are supporting detail.
+
 ## Core docs
 
 - `LIVING_MASTERPLAN.md` — durable cross-project lead plan and sequence
