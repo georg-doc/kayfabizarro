@@ -10,9 +10,9 @@ Draft PR: **#186**
 
 - canonical source: `WB1_TERRAIN_SCENE_01_SOURCE.html`
 - zero-install review copy: `WB1_TERRAIN_SCENE_01_REVIEW.html`
-- verified source blob: `ff0df7f88d596526a19271a18031c1301b36afe6`
-- review-copy commit before this report: `b57e7c73023396bed5184771a1b927d7f05e0450`
-- review blob: `c9c4eaf433472a9f14ebb1f435d978e97c1c7306`
+- verified source blob: `60a8ca090b92fd8ff0d1ed77a70aea23f3d3e031`
+- review-sync commit before this report update: `d4715f6fa3082d1c12d60e67cb82ed828a2b467e`
+- review blob: `b7b0648b16134ad5570f3f6329f84f4e926f0932`
 
 ## Reused owners / donors
 
@@ -89,7 +89,8 @@ Checks include:
 - review blob exists;
 - review module parses;
 - review runtime logic is byte-equivalent to the canonical source after removing only the review title/comment;
-- embedded self-test harness remains present and the file is explicitly marked local/not-public.
+- embedded self-test harness remains present and the file is explicitly marked local/not-public;
+- the exact pinned ZyFou MIT notice is present in both source and review.
 
 ## Repair pass
 
