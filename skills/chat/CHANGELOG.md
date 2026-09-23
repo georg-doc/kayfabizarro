@@ -1264,3 +1264,52 @@ Exactly one next gate: **RSTAB-1 HUMAN GEOMETRY GATE**.
 - no RSTAB-2 implementation, no Race merge and no product Live promotion occurred.
 
 Exactly one next gate remains **RSTAB-1 HUMAN GEOMETRY GATE**. Only human ACCEPT advances to RSTAB-2.
+
+
+## Travel Mode Bridge v1 preparation · 2026-09-23
+
+Georg approved a separate prework lane for seamless Travel modes while WorldBuilder P1/P2 and Racer stabilization continue independently.
+
+New handoff:
+
+`tools/KFB-ToolBox/_handover/TRAVEL_MODE_BRIDGE_V1_2026-09-23/`
+
+Current private Travel source reviewed:
+`georg-doc/KFB-Travel-Globe@8614282aab2ced43bb5dda9fcf7abadf9768100a`.
+
+Key finding:
+most foundational architecture already exists and must be reused rather than rebuilt.
+
+- Flight movement remains `travel/globe-v13/carpet.js`, source-faithful to TinySkies with declared KFB extensions.
+- Ground movement remains the WB0 Ground owner.
+- `site/world-builder/runtime-mode.js` already proves one-active-writer GROUND↔FLIGHT handoff via `resetFromFlight()`, `toFlightPose()` and `carpet.teleportTo()`.
+- `travel/terrain-planets-v1/card-carrier.js` is the canonical first flight vehicle: animated/subdivided 3D KFB card with thickness, bending/waves, edge curl, banking/pitch springs, surface-sampled planted seat and passenger clipping.
+- Do not substitute the rigid Frankenstein/Studio reference card.
+- Studio `cardrider.v1.js` remains useful measurement/pose evidence only; its old Surf presentation is explicitly rejected/broken history.
+- Travel Ground `movement-lab.js` already supplies real modern KayKit actors; first bounded rider fixture is ActionFigure / Rig_Medium.
+- ToolBox Motion Lab PR #127 remains motion/cadence evidence only; passenger presentation must not become a second world-movement owner.
+
+Long-term transition direction recorded:
+
+`GROUND → MOUNTING_FLIGHT → FLIGHT → LANDING → GROUND`
+
+with future:
+
+`FLIGHT → MOUNTING_DRIVE → DRIVE`.
+
+Input concept:
+single Space remains immediate Ground jump; a second fresh Space in a human-reviewed bounded window may request Flight. Do not delay the single jump to wait for a double tap.
+
+Landing concept:
+intentional descent + valid support + low AGL + safe handoff. Ordinary low flight must not force an automatic landing.
+
+WorldBuilder consumption remains HOLD until WB1-P2 Surface Adapter evidence is ready.
+
+First execution gate:
+**TMB-0 source lock + source/reuse matrix + minimal mobility transition contract only. No runtime implementation.**
+
+Review policy:
+zero-install clickable human review or bounded KFB Stage where necessary; no assumed Python/CLI/local-server setup and no Work/WSA by default.
+
+Racer observation added separately:
+`RSTAB-CYLINDER-GROUND-01` records Georg's report that some Cologne track/support cylinders appear above or below their intended support surface. It remains in Racer stabilization and does not alter Travel/World architecture.
