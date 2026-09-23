@@ -1,6 +1,35 @@
 # ToolBox · Resident Set Portability Gate · 2026-09-23
 
-Status: **CURRENT P0 BEFORE CLAUDE DESIGN**
+Status: **CURRENT P0 BEFORE CLAUDE DESIGN · CONTINUE IN CURRENT TOOLBOX CHAT · NO NEW CHAT REQUIRED**
+
+## Texture issue · already solved for ChatGPT review transport
+
+Do **not** reopen the texture investigation here.
+
+Verified global guidance lives on PR #186 / head:
+`e0a9327bcc6406ec3e093f57b14ec81569988406`
+
+Document:
+`skills/chat/workflows/KFB_WEB_FIRST_EXECUTION_V1_2026-09-22/CHATGPT_HTML_TEXTURE_PREVIEW_LIMITATION_2026-09-23.md`
+
+Human-verified review adapter:
+`fetch → Blob → createImageBitmap → THREE.Texture`
+with `THREE.TextureLoader` fallback, sRGB color space and `flipY = false` for glTF-style color maps.
+
+Georg confirmed the Caveman texture is visible in the ChatGPT attachment after this repair.
+
+Therefore this ToolBox gate **consumes that verified review-host adapter** where an explicit source texture must be shown. It does not research ChatGPT texture decoding again.
+
+The Resident-set gate now exists mainly to expose the **other** transport/integration failures:
+- model/source resolution;
+- multi-part assembly;
+- actor count;
+- pose preservation;
+- ground contact;
+- prop placement;
+- prop attachment;
+- animation binding;
+- export/reload fidelity.
 
 ## Why this gate exists
 
@@ -26,7 +55,7 @@ But URL correctness alone is not enough. We must prove that a complete known-goo
 
 Do not start with isolated characters.
 
-Before Claude Design ToolBox integration, prove complete Resident Atlas combinations.
+Before Claude Design ToolBox integration, prove complete Resident Atlas combinations **using the already verified texture adapter where needed**.
 
 ### Set A · Goth Girl
 
@@ -154,3 +183,4 @@ No Claude Design.
 No combined ToolBox rebuild.
 No Cloudflare.
 No Work.
+No new chat required for this continuation.
