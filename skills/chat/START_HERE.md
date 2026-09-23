@@ -906,3 +906,20 @@ Current key decisions:
 - current 3D cartoon-form-language direction is captured without pretending the missing parallel-chat export was recovered.
 
 After context loss, start from that handoff rather than older dated status blocks below.
+
+
+## 2026-09-23 · KFB Elastic Grotesque Clay · Hürth 01
+
+A bounded 3D form-language proof now lives at [KFB Elastic Grotesque Clay v1 · Hürth 01](workflows/KFB_ELASTIC_GROTESQUE_CLAY_V1_2026-09-23/START_HERE.md).
+
+- owner stays **OSM City Lab presentation / KFB ToolBox authoring**; no new world or movement owner;
+- 22 real Hürth OSM buildings are shown as CLEAN, exact current City-Lab GROTESQUE, and the new continuous rounded ELASTIC GROTESQUE CLAY candidate;
+- source isolation is built in before composition review;
+- browser evidence at tested implementation head `1db61b9c882e178000cf700a7d5f4d18ec03eba0`: **16/16 PASS**, 3/3 WebGL2, zero page/console errors;
+- evidence run `35904415847`, artifact `10769948842`;
+- Draft PR #194 remains unmerged;
+- no Cloudflare/public Stage is claimed; the current gate is Georg's direct visual review.
+
+Control-plane note: PR #193 now points to #194 as the richer current form-language lane; the older “parallel export missing” snapshot is superseded.
+
+Exactly one Hürth gate: **human visual decision — continue / tune / reject the Elastic grammar.**
