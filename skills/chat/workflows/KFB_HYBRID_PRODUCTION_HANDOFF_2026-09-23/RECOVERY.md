@@ -126,3 +126,29 @@ Prepared VFX-first Web slice:
 
 VFX-01 is prepared but does not block ToolBox.
 It may run in a separate bounded Webchat.
+
+
+## Resident performance recovery
+
+ORB authoring:
+PR #195 @ `39b7781f96a962dfd9ddd8777c5951f37d36ffe0`
+
+Current truth:
+- leader accepted;
+- guitarist accepted;
+- drummer v1–v4 rejected;
+- v5 restored baseline only.
+
+Next:
+`RESIDENT_PERFORMANCE_NEXT_2026-09-23.md`
+
+ORB-D1:
+same-rig KayKit melee reference review before any new drummer animation.
+
+DANCE-D1:
+Rig_Medium source-audition + one authored groove may proceed in parallel.
+
+Animation prompt audit:
+`ANIMATION_LIVING_V13_AUDIT_2026-09-23.md`
+
+Do not use the supplied v1.3 document as canonical rig/script truth.
