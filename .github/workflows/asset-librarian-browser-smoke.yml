@@ -74,6 +74,7 @@ jobs:
           node --check tools/asset_registry/librarian/town-workbench.js
           node --check tools/asset_registry/librarian/framing3d.js
           node --check tools/asset_registry/librarian/preview3d.js
+          node --check tools/asset_registry/librarian/texture-fallback.js
           node --check .github/scripts/asset-librarian-v1.3-resources-smoke.mjs
           node --check .github/scripts/asset-librarian-v1.4-live-rigs-smoke.mjs
           node --check .github/scripts/asset-librarian-v1.5-animation-framing-smoke.mjs
