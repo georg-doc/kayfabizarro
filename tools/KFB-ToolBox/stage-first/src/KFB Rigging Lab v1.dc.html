@@ -1,0 +1,1201 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="_ds/doccheck-group-design-system-a5295f37-5367-4f36-87fe-7234486c8b92/colors_and_type.css">
+<!-- Die Schriftdateien des Systems liegen als .ttf im Quellordner. In diesem Projekt gilt »keine
+     Binärdateien«, darum kommen Roboto und Roboto Slab vom Schriftdienst — gleiche Familien,
+     gleiche Schnitte, und die @font-face-Zeilen der Token-Datei laufen ins Leere, ohne zu schaden. -->
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;0,900;1,400&family=Roboto+Slab:wght@300..900&display=swap">
+<script src="_ds/doccheck-group-design-system-a5295f37-5367-4f36-87fe-7234486c8b92/_ds_bundle.js"></script>
+<style>
+  html,body{margin:0;height:100%;background:var(--color-bg);color:var(--color-fg);overflow:hidden;}
+  #dc-root,.sc-host{height:100%;}
+  a{color:var(--color-link);text-decoration:none;} a:hover{color:var(--color-link-hover);}
+  button{font-family:var(--font-sans);-webkit-tap-highlight-color:transparent;}
+  .lab-sc{scrollbar-width:thin;scrollbar-color:var(--dc-medium-grey) transparent;}
+  .lab-sc::-webkit-scrollbar{width:8px;height:8px;}
+  .lab-sc::-webkit-scrollbar-thumb{background:var(--dc-medium-grey);border-radius:4px;}
+  .lab-sc::-webkit-scrollbar-track{background:transparent;}
+  /* Der Griff wird über `accent-color` gefärbt, nicht über `::-webkit-slider-thumb`: die Engine
+     entprefixt `-webkit-appearance` beim Parsen, dann greift die Pseudo-Regel nicht und es bleibt
+     der graue Systemkreis stehen (gemessen). `accent-color` ist Standard und tut es überall. */
+  input[type=range].lab-scrub{width:100%;height:18px;margin:0;cursor:pointer;display:block;accent-color:var(--dc-red);}
+</style>
+<script type="importmap">
+{
+  "imports": {
+    "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
+    "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/"
+  }
+}
+</script>
+<script type="module">
+  import * as THREE from 'three';
+  import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+  import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
+  window.__KFB3D = window.__KFB3D || { THREE, OrbitControls, GLTFLoader, version: THREE.REVISION };
+  window.dispatchEvent(new Event('kfb3dready'));
+</script>
+</helmet>
+<template id="__bundler_thumbnail"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400"><rect width="400" height="400" fill="#17181a"/><rect x="150" y="96" width="100" height="208" rx="50" fill="#d99a4e"/><circle cx="178" cy="168" r="13" fill="#17181a"/><circle cx="222" cy="168" r="13" fill="#17181a"/></svg></template>
+
+<div data-screen-label="Rig Bench" style="position:absolute;inset:0;display:flex;flex-direction:column;background:var(--color-bg);min-width:0;min-height:0;">
+
+  <div style="flex:0 0 52px;display:flex;align-items:center;gap:20px;padding:0 20px;background:var(--dc-red);min-width:0;">
+    <div style="display:flex;align-items:baseline;gap:10px;flex:0 0 auto;">
+      <span style="font-family:var(--font-slab);font-weight:700;font-size:20px;line-height:1;color:#fff;">Rigging Lab</span>
+      <span style="font-size:13px;line-height:1;font-weight:700;color:#fff;">CapsuleCarl</span>
+    </div>
+    <div style="display:flex;gap:5px;flex:0 0 auto;">
+      <sc-for list="{{ toolButtons }}" as="t" hint-placeholder-count="4">
+        <button onClick="{{ t.on }}" title="{{ t.title }}" style="{{ t.style }}">{{ t.label }}</button>
+      </sc-for>
+    </div>
+    <div style="font-size:12px;line-height:1.2;color:var(--dc-red-15);overflow:hidden;text-overflow:ellipsis;white-space:nowrap;min-width:0;">{{ status }}</div>
+    <div style="margin-left:auto;display:flex;align-items:center;gap:5px;flex:0 0 auto;">
+      <button onClick="{{ onInfo }}" title="Show the measurement stamp: recess depth, residual, repainted sheet" style="{{ infoStyle }}">i</button>
+      <button onClick="{{ onResetAll }}" title="Every slider back to the measured values" style="{{ resetStyle }}">Reset all</button>
+      <a href="{{ saveHref }}" download="{{ saveName }}" title="Downloads the rig as a kfb.pets/1 file — the form the studio imports" style="{{ saveStyle }}">Save setting</a>
+      <input type="file" accept="application/json,.json" ref="{{ fileRef }}" onChange="{{ onImportFile }}" style="display:none;">
+      <button onClick="{{ onImportClick }}" title="Loads a kfb.pets/1 file (e.g. from the Studio) — capsule-carl entries translate back via fromPets1, anything else is refused, not guessed" style="{{ importStyle }}">Load\u2026</button>
+    </div>
+  </div>
+
+  <div style="flex:1 1 auto;position:relative;display:flex;min-height:0;min-width:0;">
+
+    <div ref="{{ stageRef }}" style="position:relative;flex:1 1 auto;min-width:0;min-height:0;overflow:hidden;background:var(--dc-bg-grey);">
+      <sc-if value="{{ showStamp }}" hint-placeholder-val="{{ false }}">
+        <div style="position:absolute;left:20px;bottom:52px;width:max-content;max-width:calc(100% - 40px);padding:5px 10px;background:var(--dc-white);border:1px solid var(--color-border);font-family:var(--font-mono);font-size:12px;line-height:1.4;color:var(--color-fg-subtle);pointer-events:none;text-wrap:pretty;">{{ stampLine }}</div>
+      </sc-if>
+      <div style="position:absolute;right:20px;bottom:20px;display:flex;gap:5px;align-items:center;">
+        <sc-for list="{{ views }}" as="v" hint-placeholder-count="6">
+          <button onClick="{{ v.on }}" title="{{ v.title }}" style="{{ v.style }}">{{ v.label }}</button>
+        </sc-for>
+      </div>
+      <sc-if value="{{ showError }}" hint-placeholder-val="{{ false }}">
+        <div style="position:absolute;left:20px;top:20px;max-width:72%;padding:10px 20px;background:var(--color-error-bg);border-bottom:2px solid var(--dc-red);font-size:13px;line-height:1.5;color:var(--color-fg);">{{ errorText }}</div>
+      </sc-if>
+    </div>
+
+    <div class="lab-sc" style="flex:0 0 auto;width:340px;max-width:46%;min-width:236px;display:flex;flex-direction:column;background:var(--color-surface);border-left:1px solid var(--color-border);overflow-y:auto;overflow-x:hidden;min-height:0;box-sizing:border-box;">
+
+      <div style="display:flex;align-items:center;gap:10px;padding:14px 20px 8px;">
+        <span style="font-size:12px;line-height:1.2;font-weight:700;color:var(--color-fg-subtle);">Eyes</span>
+        <button onClick="{{ onResetEyes }}" title="Back to the values read off Carl's own pupil islands" style="{{ sectionResetStyle }}">Reset</button>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:10px;padding:0 20px 20px;">
+        <sc-for list="{{ eyeRows }}" as="r" hint-placeholder-count="10">
+          <div style="display:flex;flex-direction:column;gap:2px;">
+            <div style="display:flex;align-items:baseline;gap:10px;">
+              <span style="font-size:12px;line-height:1.2;color:var(--color-fg-subtle);">{{ r.label }}</span>
+              <span style="margin-left:auto;font-family:var(--font-mono);font-size:12px;line-height:1.2;color:var(--color-fg-subtle);">{{ r.read }}</span>
+            </div>
+            <input class="lab-scrub" type="range" min="{{ r.min }}" max="{{ r.max }}" step="{{ r.step }}" value="{{ r.value }}" onChange="{{ r.on }}">
+          </div>
+        </sc-for>
+      </div>
+
+      <div style="display:flex;flex-direction:column;gap:8px;padding:0 20px 14px;">
+        <span style="font-size:12px;line-height:1.3;color:var(--color-fg-subtle);">Colour per part — the field reads and takes #rrggbb, the swatches are the binding brand tones</span>
+        <sc-if value="{{ eyeShadeNote }}" hint-placeholder-val="{{ false }}">
+          <span style="font-size:11px;line-height:1.3;color:var(--color-fg-subtle);">{{ eyeShadeNote }}</span>
+        </sc-if>
+        <sc-for list="{{ eyeColorRows }}" as="c" hint-placeholder-count="4">
+          <div onClick="{{ c.on }}" title="{{ c.title }}" style="{{ c.style }}">
+            <span style="flex:1 1 auto;min-width:0;font-size:12px;line-height:1.2;color:var(--color-fg-subtle);overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">{{ c.label }}</span>
+            <span style="width:18px;height:18px;border-radius:50%;background:{{ c.swatch }};border:1px solid var(--dc-medium-grey);flex:0 0 auto;"></span>
+            <input value="{{ c.hex }}" onChange="{{ c.onHex }}" placeholder="#rrggbb" spellcheck="false" style="{{ c.inputStyle }}">
+            <button onClick="{{ c.onCopy }}" title="{{ c.copyTitle }}" style="{{ c.copyStyle }}">{{ c.copyLabel }}</button>
+            <button onClick="{{ c.onOrig }}" title="{{ c.origTitle }}" style="{{ c.origStyle }}">{{ c.origLabel }}</button>
+          </div>
+        </sc-for>
+      </div>
+      <sc-if value="{{ eyeSel }}" hint-placeholder-val="{{ false }}">
+        <div style="display:flex;flex-wrap:wrap;gap:8px;align-items:center;padding:0 20px 20px;">
+          <sc-for list="{{ eyePalette }}" as="p" hint-placeholder-count="6">
+            <button onClick="{{ p.on }}" title="{{ p.title }}" style="{{ p.style }}"></button>
+          </sc-for>
+        </div>
+      </sc-if>
+
+      <div style="display:flex;align-items:center;gap:10px;padding:14px 20px 8px;border-top:2px solid var(--color-border);">
+        <span style="font-size:12px;line-height:1.2;font-weight:700;color:var(--color-fg-subtle);">Brows</span>
+        <button onClick="{{ onResetBrow }}" title="Back to the shape measured off Carl's own brows" style="{{ sectionResetStyle }}">Reset</button>
+      </div>
+      <div style="display:flex;flex-wrap:wrap;gap:5px;padding:0 20px 10px;">
+        <sc-for list="{{ browMods }}" as="b" hint-placeholder-count="3">
+          <button onClick="{{ b.on }}" title="{{ b.title }}" style="{{ b.style }}">{{ b.label }}</button>
+        </sc-for>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:10px;padding:0 20px 14px;">
+        <sc-for list="{{ browPartRows }}" as="r" hint-placeholder-count="5">
+          <div style="display:flex;flex-direction:column;gap:2px;">
+            <div style="display:flex;align-items:baseline;gap:10px;">
+              <span style="font-size:12px;line-height:1.2;color:var(--color-fg-subtle);">{{ r.label }}</span>
+              <span style="margin-left:auto;font-family:var(--font-mono);font-size:12px;line-height:1.2;color:var(--color-fg-subtle);">{{ r.read }}</span>
+            </div>
+            <input class="lab-scrub" type="range" min="{{ r.min }}" max="{{ r.max }}" step="{{ r.step }}" value="{{ r.value }}" onChange="{{ r.on }}">
+          </div>
+        </sc-for>
+      </div>
+
+      <div style="display:flex;align-items:center;gap:10px;padding:14px 20px 8px;border-top:2px solid var(--color-border);">
+        <span style="font-size:12px;line-height:1.2;font-weight:700;color:var(--color-fg-subtle);">Nose</span>
+        <button onClick="{{ onResetNose }}" title="Back to our nose, original island hidden" style="{{ sectionResetStyle }}">Reset</button>
+      </div>
+      <div style="display:flex;flex-wrap:wrap;gap:5px;padding:0 20px 10px;">
+        <sc-for list="{{ noseMods }}" as="n" hint-placeholder-count="2">
+          <button onClick="{{ n.on }}" title="{{ n.title }}" style="{{ n.style }}">{{ n.label }}</button>
+        </sc-for>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:10px;padding:0 20px 14px;">
+        <sc-for list="{{ nosePartRows }}" as="r" hint-placeholder-count="5">
+          <div style="display:flex;flex-direction:column;gap:2px;">
+            <div style="display:flex;align-items:baseline;gap:10px;">
+              <span style="font-size:12px;line-height:1.2;color:var(--color-fg-subtle);">{{ r.label }}</span>
+              <span style="margin-left:auto;font-family:var(--font-mono);font-size:12px;line-height:1.2;color:var(--color-fg-subtle);">{{ r.read }}</span>
+            </div>
+            <input class="lab-scrub" type="range" min="{{ r.min }}" max="{{ r.max }}" step="{{ r.step }}" value="{{ r.value }}" onChange="{{ r.on }}">
+          </div>
+        </sc-for>
+      </div>
+
+      <div style="display:flex;align-items:center;gap:10px;padding:14px 20px 8px;border-top:2px solid var(--color-border);">
+        <span style="font-size:12px;line-height:1.2;font-weight:700;color:var(--color-fg-subtle);">Moustache</span>
+      </div>
+      <div style="display:flex;flex-wrap:wrap;gap:5px;padding:0 20px 10px;">
+        <sc-for list="{{ stacheToggle }}" as="t" hint-placeholder-count="1">
+          <button onClick="{{ t.on }}" title="{{ t.title }}" style="{{ t.style }}">{{ t.label }}</button>
+        </sc-for>
+        <sc-for list="{{ stacheForms }}" as="f" hint-placeholder-count="2">
+          <button onClick="{{ f.on }}" title="{{ f.title }}" style="{{ f.style }}">{{ f.label }}</button>
+        </sc-for>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:8px;padding:0 20px 10px;">
+        <sc-for list="{{ stacheColorRows }}" as="c" hint-placeholder-count="1">
+          <div title="{{ c.title }}" style="{{ c.style }}">
+            <span style="flex:1 1 auto;min-width:0;font-size:12px;line-height:1.2;color:var(--color-fg-subtle);overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">{{ c.label }}</span>
+            <span style="width:18px;height:18px;border-radius:50%;background:{{ c.swatch }};border:1px solid var(--dc-medium-grey);flex:0 0 auto;"></span>
+            <input value="{{ c.hex }}" onChange="{{ c.onHex }}" placeholder="#rrggbb" spellcheck="false" style="{{ c.inputStyle }}">
+            <button onClick="{{ c.onCopy }}" title="{{ c.copyTitle }}" style="{{ c.copyStyle }}">{{ c.copyLabel }}</button>
+            <button onClick="{{ c.onOrig }}" title="{{ c.origTitle }}" style="{{ c.origStyle }}">{{ c.origLabel }}</button>
+          </div>
+        </sc-for>
+      </div>
+      <div style="display:flex;flex-wrap:wrap;gap:8px;align-items:center;padding:0 20px 14px;">
+        <sc-for list="{{ stachePalette }}" as="p" hint-placeholder-count="6">
+          <button onClick="{{ p.on }}" title="{{ p.title }}" style="{{ p.style }}"></button>
+        </sc-for>
+      </div>
+
+      <div style="display:flex;align-items:center;gap:10px;padding:14px 20px 8px;border-top:2px solid var(--color-border);">
+        <span style="font-size:12px;line-height:1.2;font-weight:700;color:var(--color-fg-subtle);">Mouth</span>
+        <button onClick="{{ onResetMouth }}" title="Back to the module's own defaults" style="{{ sectionResetStyle }}">Reset</button>
+      </div>
+      <div style="display:flex;flex-wrap:wrap;gap:5px;padding:0 20px 10px;">
+        <sc-for list="{{ mouthSets }}" as="m" hint-placeholder-count="3">
+          <button onClick="{{ m.on }}" title="{{ m.title }}" style="{{ m.style }}">{{ m.label }}</button>
+        </sc-for>
+      </div>
+      <div style="display:flex;flex-wrap:wrap;gap:5px;padding:0 20px 14px;">
+        <sc-for list="{{ visemes }}" as="v" hint-placeholder-count="5">
+          <button onClick="{{ v.on }}" title="Shows this shape so size and height can be judged" style="{{ v.style }}">{{ v.label }}</button>
+        </sc-for>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:10px;padding:0 20px 20px;">
+        <sc-for list="{{ mouthRows }}" as="r" hint-placeholder-count="6">
+          <div style="display:flex;flex-direction:column;gap:2px;">
+            <div style="display:flex;align-items:baseline;gap:10px;">
+              <span style="font-size:12px;line-height:1.2;color:var(--color-fg-subtle);">{{ r.label }}</span>
+              <span style="margin-left:auto;font-family:var(--font-mono);font-size:12px;line-height:1.2;color:var(--color-fg-subtle);">{{ r.read }}</span>
+            </div>
+            <input class="lab-scrub" type="range" min="{{ r.min }}" max="{{ r.max }}" step="{{ r.step }}" value="{{ r.value }}" onChange="{{ r.on }}">
+          </div>
+        </sc-for>
+      </div>
+
+      <div style="display:flex;align-items:center;gap:10px;padding:14px 20px 8px;border-top:2px solid var(--color-border);">
+        <span style="font-size:12px;line-height:1.2;font-weight:700;color:var(--color-fg-subtle);">Zones</span>
+        <button onClick="{{ onResetZones }}" title="Visibility and colour back to the start state" style="{{ sectionResetStyle }}">Reset</button>
+        <button onClick="{{ onPaint }}" title="Carl has a mouth PAINTED into his image sheet. On: that region is painted over in the measured colour. Off: the original sheet." style="{{ paintStyle }}">{{ paintLabel }}</button>
+        <span style="margin-left:auto;font-family:var(--font-mono);font-size:12px;line-height:1.2;color:var(--color-fg-subtle);">{{ zoneCount }}</span>
+      </div>
+      <div style="display:flex;flex-direction:column;">
+        <sc-for list="{{ zoneRows }}" as="z" hint-placeholder-count="21">
+          <div onClick="{{ z.on }}" onMouseEnter="{{ z.enter }}" onMouseLeave="{{ z.leave }}" title="{{ z.title }}" style="{{ z.style }}">
+            <span style="font-family:var(--font-mono);font-size:12px;color:var(--color-fg-subtle);flex:0 0 20px;">{{ z.num }}</span>
+            <span style="width:10px;height:10px;border-radius:50%;background:{{ z.swatch }};border:1px solid var(--dc-medium-grey);flex:0 0 auto;"></span>
+            <span style="flex:1 1 auto;min-width:0;font-size:13px;line-height:1.3;color:{{ z.ink }};overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">{{ z.label }}</span>
+            <input type="color" value="{{ z.pick }}" onInput="{{ z.onPickLive }}" onChange="{{ z.onPick }}" title="{{ z.pickTitle }}" style="width:26px;height:20px;padding:1px;box-sizing:border-box;background:var(--dc-white);border:1px solid var(--dc-grey);border-radius:var(--radius-sm);cursor:pointer;flex:0 0 auto;">
+            <button onClick="{{ z.toggle }}" title="Show or hide this zone" style="{{ z.eyeStyle }}">{{ z.eyeLabel }}</button>
+          </div>
+        </sc-for>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:10px;padding:14px 20px 20px;border-top:2px solid var(--color-border);">
+        <span style="font-size:12px;line-height:1.3;color:var(--color-fg-subtle);">{{ selLabel }}</span>
+        <div style="display:flex;flex-wrap:wrap;gap:8px;align-items:center;">
+          <sc-for list="{{ palette }}" as="p" hint-placeholder-count="7">
+            <button onClick="{{ p.on }}" title="{{ p.title }}" style="{{ p.style }}">{{ p.label }}</button>
+          </sc-for>
+        </div>
+        <sc-if value="{{ finishOn }}" hint-placeholder-val="{{ false }}">
+          <div style="display:flex;flex-direction:column;gap:6px;">
+            <span style="font-size:12px;line-height:1.3;color:var(--color-fg-subtle);">Surface — the five finishes from the Studio's own table, written onto this island's material</span>
+            <div style="display:flex;flex-wrap:wrap;gap:5px;">
+              <sc-for list="{{ finishBtns }}" as="f" hint-placeholder-count="6">
+                <button onClick="{{ f.on }}" title="{{ f.title }}" style="{{ f.style }}">{{ f.label }}</button>
+              </sc-for>
+            </div>
+            <span style="font-family:var(--font-mono);font-size:12px;line-height:1.2;color:var(--color-fg-subtle);">{{ finishRead }}</span>
+          </div>
+        </sc-if>
+        <sc-if value="{{ finishMissing }}" hint-placeholder-val="{{ false }}">
+          <span style="font-size:11px;line-height:1.3;color:var(--color-fg-subtle);">{{ finishMissing }}</span>
+        </sc-if>
+        <sc-for list="{{ zoneColorRows }}" as="c" hint-placeholder-count="1">
+          <div title="{{ c.title }}" style="{{ c.style }}">
+            <span style="flex:1 1 auto;min-width:0;font-size:12px;line-height:1.2;color:var(--color-fg-subtle);overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">{{ c.label }}</span>
+            <span style="width:18px;height:18px;border-radius:50%;background:{{ c.swatch }};border:1px solid var(--dc-medium-grey);flex:0 0 auto;"></span>
+            <input value="{{ c.hex }}" onChange="{{ c.onHex }}" placeholder="#rrggbb" spellcheck="false" style="{{ c.inputStyle }}">
+            <button onClick="{{ c.onCopy }}" title="{{ c.copyTitle }}" style="{{ c.copyStyle }}">{{ c.copyLabel }}</button>
+            <button onClick="{{ c.onOrig }}" title="{{ c.origTitle }}" style="{{ c.origStyle }}">{{ c.origLabel }}</button>
+          </div>
+        </sc-for>
+      </div>
+
+    </div>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;accent&quot;:{&quot;editor&quot;:&quot;color&quot;,&quot;default&quot;:&quot;#c03&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;options&quot;:[&quot;#c03&quot;,&quot;#9c3&quot;,&quot;#3ae&quot;,&quot;#b3d&quot;],&quot;section&quot;:&quot;Look&quot;},&quot;stageBg&quot;:{&quot;editor&quot;:&quot;color&quot;,&quot;default&quot;:&quot;#eeeeee&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;options&quot;:[&quot;#eeeeee&quot;,&quot;#ffffff&quot;,&quot;#f6f6f6&quot;,&quot;#222222&quot;],&quot;section&quot;:&quot;Look&quot;},&quot;startView&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;default&quot;:&quot;front&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;options&quot;:[&quot;front&quot;,&quot;q34&quot;,&quot;side&quot;,&quot;eyes&quot;,&quot;mouth&quot;,&quot;mouthlow&quot;],&quot;section&quot;:&quot;Look&quot;}}">
+/* KFB Animation Lab v6 · Rig-Werkbank für EINE Figur.
+   Auftrag B, Fassung A (Georg, 13.09.): Carl fertig machen — Regler für Augen, Mund und Zonen,
+   Zurücksetzen, gespeicherte Einstellung. Kein Katalog, keine Clips, keine Messblätter: die
+   Trennung von Messwerkzeug und Rigging-Werkzeug ist die Lehre aus v4 und 16B.
+
+   Hier wird NICHTS gerechnet, was schon gemessen ist. Angeschlossen werden:
+     lab-v2/sources.js · lab-v2/audit.js · lab-v4/carlrig.js
+     petstudio-v9/studio-v12/{pet-eye-rig.v6,brow-rig.v2,pet-nose.v2,pet-moustache.v1}
+     petstudio-v9/studio-v3/pet-mouth.v1
+   Der Ladeweg, die Heil-Zahlen und die Kamera-Vorgaben sind 1:1 aus `carl-proof.html`
+   übernommen (dort belegt: tiefste Einsenkung 0,1865 u → Restabweichung 0 u). */
+
+/* Hochgestuft, weil der gemessene Mund-Ansatz sich geändert hat: eine gespeicherte Einstellung aus
+   der Zeit der flachen Delle (size 0,534 · dy 0) würde den Fix stumm überschreiben. Der alte
+   Schlüssel bleibt liegen, er wird nur nicht mehr gelesen. */
+const KEY = 'kfb.carl.rig.v6.3';
+
+/* Gemessen, nicht geerbt: abgelesen an Carls eigener Pupillen-Insel (#14/#15) im C0-Katalog.
+   EyeRigs eigene Vorgaben sind auf FrizzleBobs Kopf geeicht und machen hier Kugelaugen. */
+const EYE_DEF = { dx: 0.164, dy: 0.317, ring: 0.13, track: 0.04, pupilSize: 0.40, lidFit: 0.92, gloss: 0.90, lashLength: 0.45, lashDensity: 7, lashWidth: 1 };
+const EYE_META = [
+  ['dx', 'Spacing', 0, 0.45, 0.002], ['dy', 'Height', 0, 0.6, 0.002],
+  ['ring', 'Eye size', 0.04, 0.34, 0.005], ['track', 'Tracking', 0, 0.2, 0.005],
+  ['pupilSize', 'Pupil', 0.1, 0.9, 0.01], ['lidFit', 'Lid fit', 0.5, 1.2, 0.01],
+  ['gloss', 'Gloss', 0, 1, 0.02], ['lashLength', 'Lash length', 0, 1, 0.02],
+  ['lashDensity', 'Lash count', 0, 14, 1], ['lashWidth', 'Lash width', 0.5, 2, 0.1],
+];
+const ANCHOR_KEYS = ['dx', 'dy', 'ring', 'track'];
+const LASH_KEYS = { lashLength: 'length', lashDensity: 'density', lashWidth: 'width' };
+
+/* Startzustand der Zonen, 1:1 aus dem Beweis-Blatt: die Teile IN der alten Mundhöhle werden
+   gemessen (partsInsideBoxes), 6/7/8 und Carls eigene Pupillen 15/16 sind gesetzt — sie liegen
+   unter dem montierten Gesicht. Alle bleiben einschaltbar. */
+const HIDE_START = [5, 6, 7, 13, 14];
+/* Farben aus dem DocCheck-System (R12): Rot und Grün als Marken-Paar, dazu die Graustufen-Leiter
+   und zwei Töne der Zweitpalette, die auf Carls Orange überhaupt unterscheidbar sind. */
+const PALETTE = [
+  [null, 'Tex', 'The zone gets its original image back'],
+  ['#c03', '', 'DC red'], ['#9c3', '', 'DC green'], ['#f80', '', 'Orange'],
+  ['#3ae', '', 'Ocean blue'], ['#888', '', 'Icon grey'], ['#222', '', 'Light black'],
+];
+
+class Component extends DCLogic {
+  state = {
+    ready: false, err: '', view: 'front', face: true, stache: true, wire: false,
+    eye: Object.assign({}, EYE_DEF), mouth: {}, mouthSet: 'male', viseme: '',
+    zones: [], sel: -1, zoneCount: '', paint: true, stamp: false,
+    browMod: 'block', stacheForm: 'tube', noseMod: 'ours', brow: {}, nose: {},
+    /* Farbwahl (Georgs Bestellung, 13.09. spät): vier Ziele am Augen-Rig, eines am Bart, eines je
+       Zone. `hexDraft` hält den GETIPPTEN Text — »#c0« ist kein Farbwert und darf das Modell nicht
+       färben; erst ein vollständiges #rrggbb wird angewandt. */
+    eyeCol: { ball: null, lid: null, lash: null, pupil: null }, eyeSel: '', stacheCol: null,
+    hexDraft: {}, copied: '',
+    /* Vierter Brauen-Stand und dritter Nasen-Stand: derselbe Graft-Weg, den das Studio benutzt,
+       hier am Spender selbst als Kontrollprobe (siehe `mountFaceGraft`). `wobble` ist »jedes Rig
+       ist ein Schauspieler« (Georg, 13.09. spät) — ein Nachlauf-Ausschlag, der bei 0 exakt starr
+       ist (Prime Directive: Kopf still = Teil still). */
+    graft: {}, noseGraft: {}, graftNote: '',
+  };
+
+  /* Georgs Regel (13.09. spät): Lid-Vorgabe ist -1 dunklere, Wimper-Vorgabe -2 dunklere Stufe der
+     Körperfarbe, in OKLCH (perzeptuell gleichmäßig) — nicht `multiplyScalar` auf sRGB. Carl hat
+     keine einzelne »Körperfarbe« wie ein Pet-Eintrag; die gewählte Zonenfarbe der Körperzone
+     (Zone 1) ist der nächste Ersatz, sonst der gemessene Grundton. Beide Ziele bleiben
+     überschreibbar — das ist die VORGABE, kein Zwang. */
+  baseSkinColour() { const z0 = (this.state.zones || [])[0]; return (z0 && z0.color) || '#d99a4e'; }
+
+  /* Die vier Farbziele des Augen-Rigs, GEMESSEN am Modul statt geraten: `pet-eye-rig.v6.js` baut je
+     Auge eine Gruppe [Augapfel, Pupillen-Pivot, Lider]. Augapfel (`matW`) und Pupille (`matP`)
+     teilen je EIN Material über beide Augen; das Lid bekommt eins je Auge, weil seine Farbe aus der
+     Haut abgetastet wird; die Wimpern hängen als Gruppe unter dem OBERLID und haben ein eigenes
+     Material (Basisfarbe × 0,5). `setLashes` kennt keine Farbe — darum wird hier das Material
+     gefärbt und die Vendor-Datei nicht angefasst. */
+  eyeMats() {
+    const r = this.face && this.face.eyeRig;
+    if (!r || !r.eyes || !r.eyes.length) return null;
+    const out = { ball: [], pupil: [], lid: [], lash: [] };
+    for (const e of r.eyes) {
+      const sc = e.children && e.children[0];
+      if (sc && sc.isMesh && sc.material) out.ball.push(sc.material);
+      if (e._puMesh && e._puMesh.material) out.pupil.push(e._puMesh.material);
+      if (e._up && e._up.material) out.lid.push(e._up.material);
+      if (e._lo && e._lo.material) out.lid.push(e._lo.material);
+      if (e._up) e._up.traverse((m) => { if (m.isMesh && m !== e._up && m.material) out.lash.push(m.material); });
+    }
+    return out;
+  }
+  /* ⚠ Jeder Regler-Zug am Auge ruft `build()` und baut FRISCHE Materialien — eine einmal gesetzte
+     Farbe wäre danach still weg. Das Modul zählt seine Bauten in `gen`; die Bildschleife vergleicht
+     und legt die Farben nach jedem Neubau wieder auf. */
+  applyEyeColors() {
+    const r = this.face && this.face.eyeRig; if (!r) return;
+    const mats = this.eyeMats(); if (!mats) return;
+    const c = this.state.eyeCol || {};
+    ['ball', 'pupil'].forEach((k) => {
+      if (!c[k]) return;
+      mats[k].forEach((m) => { if (m && m.color) { m.color.set(c[k]); m.needsUpdate = true; } });
+    });
+    /* Lid/Wimper sind KEINE »leer = Modul entscheidet«-Felder mehr: ohne Überschreibung gilt die
+       Formel -1/-2 (siehe `baseSkinColour`), nicht mehr der abgetastete Hautton bzw. autoColor×0,5
+       des Moduls. */
+    if (this.SHADE) {
+      const base = this.baseSkinColour();
+      const lid = c.lid || this.SHADE(base, -1), lash = c.lash || this.SHADE(base, -2);
+      mats.lid.forEach((m) => { if (m && m.color) { m.color.set(lid); m.needsUpdate = true; } });
+      mats.lash.forEach((m) => { if (m && m.color) { m.color.set(lash); m.needsUpdate = true; } });
+    }
+    this._eyeGen = r.gen;
+  }
+  setEyeColor(k, hex) {
+    const eyeCol = { ...(this.state.eyeCol || {}), [k]: hex || null };
+    this.setState({ eyeCol }, () => { this.applyEyeColors(); this.persist(); });
+  }
+  setStacheColor(hex) {
+    if (this.face && this.face.moustache) this.face.moustache.set({ color: hex || null });
+    this.setState({ stacheCol: hex || null }, () => this.persist());
+  }
+
+  /* Eine Farbwahl, drei Griffe, an jeder Stelle dieselbe Zeile: Feld liest und nimmt `#rrggbb`,
+     `Copy` legt den Wert in die Ablage, `Orig` gibt die Modul- bzw. Bildtafel-Farbe zurück. */
+  hexRow({ id, label, cur, title, apply, origLabel, origTitle, selected, onSelect }) {
+    const draft = this.state.hexDraft || {};
+    const shown = draft[id] != null ? draft[id] : (cur || '');
+    const copied = this.state.copied === id;
+    const accent = this.props.accent || '#c03';
+    return {
+      label, title: title || '', hex: shown,
+      swatch: cur || 'var(--dc-bg-grey)',
+      style: 'display:flex;align-items:center;gap:8px;min-width:0;box-sizing:border-box;padding:2px 0 2px 6px;border-left:2px solid ' + (selected ? accent : 'transparent') + ';' + (onSelect ? 'cursor:pointer;' : ''),
+      inputStyle: 'width:84px;flex:0 0 auto;box-sizing:border-box;padding:3px 5px;background:var(--dc-white);border:1px solid var(--dc-grey);border-radius:var(--radius-sm);font-family:var(--font-mono);font-size:12px;line-height:1.2;color:var(--color-fg);',
+      copyLabel: copied ? 'Copied' : 'Copy',
+      copyTitle: cur ? 'Puts ' + cur + ' on the clipboard' : 'Nothing to copy — no colour set',
+      copyStyle: 'height:22px;padding:0 8px;background:' + (copied ? 'var(--dc-green)' : 'var(--dc-white)') + ';border:1px solid ' + (copied ? 'var(--dc-green)' : 'var(--dc-grey)') + ';border-radius:var(--radius-sm);color:#000;font-size:11px;font-weight:700;line-height:1;cursor:pointer;flex:0 0 auto;',
+      origLabel: origLabel || 'Orig', origTitle: origTitle || '',
+      origStyle: 'height:22px;padding:0 8px;background:' + (cur ? 'var(--dc-white)' : 'var(--dc-bg-grey)') + ';border:1px solid ' + (cur ? 'var(--dc-grey)' : 'var(--dc-bg-grey)') + ';border-radius:var(--radius-sm);color:var(--color-fg-subtle);font-size:11px;font-weight:700;line-height:1;cursor:pointer;flex:0 0 auto;',
+      on: onSelect || (() => {}),
+      onHex: (e) => {
+        let v = String(e.target.value || '').trim().toLowerCase();
+        if (v && v[0] !== '#') v = '#' + v;
+        this.setState({ hexDraft: { ...draft, [id]: v } });
+        if (/^#[0-9a-f]{6}$/.test(v)) apply(v);
+      },
+      onCopy: () => {
+        if (!cur) return;
+        const done = () => {
+          if (!this._mounted) return;
+          this.setState({ copied: id });
+          setTimeout(() => { if (this._mounted) this.setState({ copied: '' }); }, 1200);
+        };
+        if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(cur).then(done, done);
+        else done();
+      },
+      onOrig: () => { this.setState({ hexDraft: { ...draft, [id]: '' } }); apply(null); },
+    };
+  }
+
+  /* Drei Brauen-Stände. `line` und `tube` sind die zwei Stände, die `brow-rig.v2.js` selbst kennt
+     (Bändchen gegen gedeckelten Schlauch). `block` ist KEIN dritter Zeichenstand — es ist Carls
+     EIGENE Brauen-Insel, sichtbar geschaltet und über `PartRig` bewegbar (R18). */
+  browParams(mod) {
+    const B = this.BROW; if (!B || mod === 'block') return null;
+    const base = { enabled: true, points: B.pointsFor('neutral'), thickness: 1, length: 0.6,
+      taper: 0.85, height: 0.3, mask: 0.35, round: 1, cap: 0.8, color: null,
+      tiltLeft: 0, tiltRight: 0, bendLeft: 0, bendRight: 0 };
+    return mod === 'line' ? { ...base, solid: false, even: false } : { ...base, solid: true, even: false };
+  }
+  applyBrow(mod) {
+    if (mod === 'block' && !this.origBrow) return false;
+    const p = this.browParams(mod);
+    if (this.face && this.face.browRig) this.face.browRig.set(p ? p : { enabled: false });
+    if (this.origBrow) this.origBrow.set({ enabled: mod === 'block' });
+    if (this.browGraft) this.browGraft.set({ enabled: mod === 'graft' });
+    if (mod === 'graft') this.mountFaceGraft('brow');
+    return true;
+  }
+  applyNose(mod) {
+    if (mod === 'original' && !this.origNose) return false;
+    if (this.face.noseRig) this.face.noseRig.set({ enabled: mod === 'ours' });
+    if (this.origNose) this.origNose.set({ enabled: mod === 'original' });
+    if (this.noseGraft) this.noseGraft.set({ enabled: mod === 'graft' });
+    if (mod === 'graft') this.mountFaceGraft('nose');
+    return true;
+  }
+
+  /* KONTROLLPROBE für den Graft-Weg, hier am Spender selbst (Georg wollte die Option in beiden
+     Häusern, für Braue UND Nase). Ein Spender-Fetch trägt beide Teile — `loadDonorFace` lädt
+     einmal, egal welches Teil zuerst gewählt wird. */
+  async mountFaceGraft(which) {
+    if (this._graftBusy || !this.BG || !this.face || !this.face.eyeRig) return;
+    if ((which === 'brow' && this.browGraft) || (which === 'nose' && this.noseGraft)) return;
+    this._graftBusy = true;
+    try {
+      const K = window.__KFB3D;
+      const donor = this._donor || (this._donor = await this.BG.loadDonorFace({
+        THREE: this.THREE, loader: new K.GLTFLoader(), url: this._donorUrl }));
+      if (!donor.ok) { this.setState({ graftNote: 'donor: ' + donor.report.status }); return; }
+      const getEyeFrame = () => this.face && this.face.eyeRig && this.face.eyeRig.eyeFrame();
+      if (which === 'brow' && donor.brow && !this.browGraft) {
+        this.browGraft = new this.BG.BrowGraft({ THREE: this.THREE, donor: donor.brow, getEyeFrame,
+          params: { ...this.BG.BROW_DEFAULTS, ...(this.state.graft || {}), enabled: true } });
+      }
+      if (which === 'nose' && donor.nose && !this.noseGraft) {
+        this.noseGraft = new this.BG.NoseGraft({ THREE: this.THREE, donor: donor.nose, getEyeFrame,
+          params: { ...this.BG.NOSE_DEFAULTS, ...(this.state.noseGraft || {}), enabled: true } });
+      }
+      this.setState({ graftNote: '' });
+    } catch (e) {
+      this.setState({ graftNote: String((e && e.message) || e) });
+    } finally { this._graftBusy = false; }
+  }
+  setGraft(k, v) {
+    const graft = { ...(this.state.graft || {}), [k]: v };
+    if (this.browGraft) this.browGraft.set({ [k]: v });
+    this.setState({ graft }, () => this.persist());
+  }
+  setNoseGraft(k, v) {
+    const noseGraft = { ...(this.state.noseGraft || {}), [k]: v };
+    if (this.noseGraft) this.noseGraft.set({ [k]: v });
+    this.setState({ noseGraft }, () => this.persist());
+  }
+  /* Original-Teil an oder aus heißt: Zone sichtbar oder nicht. Die Liste bleibt die Wahrheit. */
+  showIslands(islands, show) {
+    if (!islands || !islands.length || !this.state.zones.length) return;
+    const zones = this.state.zones.map((z, i) => (islands.indexOf(i) >= 0 ? { ...z, hidden: !show } : z));
+    islands.forEach((i) => this.CR.setZoneStyle(this.parts[i], { hidden: !show, color: zones[i].color }));
+    this.setState({ zones }, () => this.persist());
+  }
+  setPart(which, k, v) {
+    const rig = which === 'brow' ? this.origBrow : this.origNose;
+    const cur = { ...(this.state[which] || {}), [k]: v };
+    if (rig) rig.set({ [k]: v });
+    this.setState({ [which]: cur }, () => this.persist());
+  }
+
+  /* Übermalte Bildtafel an oder aus. Sie hängt an der Körperzone, und `setZoneStyle` gibt bei
+     `color: null` die ORIGINAL-Tafel zurück — deshalb wird sie nach jedem Zonen-Griff neu gesetzt. */
+  applyPaint(on) {
+    const p = this.parts && this.parts[0], map = this.clean && this.clean.map;
+    if (!p || !map) return;
+    const z = this.state.zones[0];
+    if (z && z.color) return;                       // Fläche statt Tafel: nichts zu übermalen
+    p.mesh.material.map = on ? map : (p.mesh.userData.origMap || null);
+    p.mesh.material.needsUpdate = true;
+  }
+
+  /* Die angeklickte Zone wird mit einer KONTUR markiert, nicht mit Farbe (Georg, 13.09.).
+     Eigenleuchten war der zweite Fehlversuch: es färbt das ganze Teil um und verfälscht damit
+     genau die Farbe, die man gerade beurteilt — an Carls Orange wurde ein blauer Pfeil violett.
+     Die Kontur ist `EdgesGeometry` als Kind des Netzes: sie folgt jeder Verschiebung des Rigs,
+     verdeckt nichts, und `depthTest:false` macht sie auch hinter dem Körper sichtbar. */
+  mark(i, level) {
+    const p = this.parts && this.parts[i]; if (!p) return;
+    const T = this.THREE, accent = this.props.accent || '#c03';
+    if (level > 0 && !p._outline) {
+      const ls = new T.LineSegments(
+        new T.EdgesGeometry(p.mesh.geometry, 20),
+        new T.LineBasicMaterial({ color: accent, transparent: true, depthTest: false, depthWrite: false }));
+      ls.renderOrder = 99; ls.raycast = () => {}; ls.frustumCulled = false;
+      p.mesh.add(ls); p._outline = ls;
+    }
+    if (!p._outline) return;
+    p._outline.visible = level > 0;
+    p._outline.material.color.set(accent);
+    p._outline.material.opacity = level >= 1 ? 1 : 0.5;
+  }
+  select(i) {
+    const prev = this.state.sel;
+    if (prev >= 0 && prev !== i) this.mark(prev, 0);
+    const nx = prev === i ? -1 : i;
+    this.mark(i, nx === i ? 1 : 0);
+    this.setState({ sel: nx });
+  }
+
+  componentDidMount() {
+    this._mounted = true;
+    const go = () => this.boot().catch((e) => this.setState({ err: String(e && e.message || e) }));
+    if (window.__KFB3D) go(); else window.addEventListener('kfb3dready', go, { once: true });
+  }
+
+  componentWillUnmount() {
+    this._mounted = false;
+    if (this._raf) cancelAnimationFrame(this._raf);
+    if (this._ro) this._ro.disconnect();
+    if (this.renderer) { this.renderer.dispose(); const c = this.renderer.domElement; if (c && c.parentNode) c.parentNode.removeChild(c); }
+  }
+
+  saved() { try { return JSON.parse(localStorage.getItem(KEY) || 'null') || null; } catch (e) { return null; } }
+  /* Bidirektionale Kompatibilität (Georg 13.09. spät): ein `kfb.pets/1`-Export aus dem Studio
+     lädt hier wieder ein, über `fromPets1` — dieselbe Übersetzung rückwärts. Ein Pet, das nicht
+     `capsule-carl` ist, wird ABGEWIESEN, nicht geraten: die Übersetzung kennt nur diese eine
+     Figur, und ein anderes Pet in dieser Form zu erzwingen wäre Erfindung, keine Übersetzung.
+     Angewandt wird über einen Neustart der Seite — derselbe Weg, den `boot()` für die gespeicherte
+     Einstellung ohnehin geht, kein zweiter Anwende-Pfad, der getrennt geprüft werden müsste. */
+  importFile(file) {
+    const rd = new FileReader();
+    rd.onload = () => {
+      let doc; try { doc = JSON.parse(rd.result); } catch (e) { this.setState({ err: 'Not valid JSON: ' + e.message }); return; }
+      if (doc.$schema !== 'kfb.pets/1') { this.setState({ err: 'Not a kfb.pets/1 file ($schema missing or different)' }); return; }
+      const pet = (doc.pets || [])[0];
+      if (!pet || pet.id !== 'capsule-carl') { this.setState({ err: 'kfb.pets/1 file has no capsule-carl entry — refused, not guessed' }); return; }
+      if (!this.CC) { this.setState({ err: 'carl-contract.v1.js not loaded — cannot translate back' }); return; }
+      const rich = this.CC.fromPets1(doc);
+      /* ⚠ `fromPets1` gibt die REICHE Form zurück (wie der Export-Beleg, mit `islands`/`donor` als
+         Dokumentation) — die gespeicherte SITZUNG ist aber FLACH (`browMod` als eigenes Feld,
+         `brow` nur die Regler-Werte ohne Inseln). Diese Übersetzung gehört hierhin, nicht in das
+         geteilte Modul: sie ist Eigenheit dieser Werkbank, nicht der Vertragsform. */
+      const stripDonor = (o) => { if (!o) return {}; const c = { ...o }; delete c.donor; return c; };
+      const stripIslands = (o) => { if (!o) return {}; const c = { ...o }; delete c.islands; return c; };
+      const rb = rich.brow || {}, rn = rich.nose || {};
+      const flat = {
+        eye: rich.eye, mouth: rich.mouth, mouthSet: rich.mouthSet,
+        stache: !!(rich.moustache && rich.moustache.enabled),
+        stacheForm: (rich.moustache && rich.moustache.form) || 'tube',
+        stacheCol: (rich.moustache && rich.moustache.color) || null,
+        eyeCol: rich.eyeColors || { ball: null, lid: null, lash: null, pupil: null },
+        browMod: rb.mod || 'tube',
+        brow: stripIslands(rb.original),
+        graft: stripDonor(rb.graft),
+        noseMod: rn.mod || 'ours',
+        nose: stripIslands(rn.original),
+        noseGraft: stripDonor(rn.graft),
+        zones: (rich.zones || []).map((z) => ({ hidden: !!z.hidden, color: z.color || null, finish: z.finish || null })),
+      };
+      try { localStorage.setItem(KEY, JSON.stringify(flat)); } catch (e) { this.setState({ err: String((e && e.message) || e) }); return; }
+      location.reload();
+    };
+    rd.readAsText(file);
+  }
+  persist() {
+    const s = this.state;
+    try { localStorage.setItem(KEY, JSON.stringify({ eye: s.eye, mouth: s.mouth, mouthSet: s.mouthSet, stache: s.stache, browMod: s.browMod, stacheForm: s.stacheForm, noseMod: s.noseMod, brow: s.brow, nose: s.nose, zones: s.zones, eyeCol: s.eyeCol, stacheCol: s.stacheCol, graft: s.graft, noseGraft: s.noseGraft })); } catch (e) { void e; }
+  }
+
+  async boot() {
+    const K = window.__KFB3D, THREE = K.THREE;
+    const host = this.stageEl; if (!host) return;
+    const [S, AU, CR, TC, ZN, EYE, BROW, NOSE, STACHE, MOUTH, BB, CC, BG, AC] = await Promise.all([
+      import('./lab-v2/sources.js'), import('./lab-v2/audit.js'), import('./lab-v4/carlrig.js'),
+      import('./lab-v6/texclean.js'), import('./lab-v6/zonenames.v4.js'),
+      import('./petstudio-v9/studio-v12/pet-eye-rig.v6.js'),
+      /* Braue und Bart aus lab-v6: Unterklassen mit gedeckeltem Schlauch (inkform.v1). Die
+         Vendor-Module bleiben unberührt und werden von den Unterklassen selbst geladen. */
+      import('./lab-v6/brow.v3.js'),
+      import('./petstudio-v9/studio-v12/pet-nose.v2.js'),
+      import('./lab-v6/stache.v3.js'),
+      import('./petstudio-v9/studio-v3/pet-mouth.v1.js'),
+      import('./lab-v6/partrig.v1.js'),
+      import('./lab-v6/carl-contract.v1.js'),
+      import('./lab-v6/facegraft.v1.js'),
+      import('./frizzlegraft-v1/actor-color.v1.js'),
+    ]);
+    this.CR = CR; this.MOUTH = MOUTH; this.BROW = BROW; this.PR = BB; this.THREE = THREE; this.CC = CC; this.BG = BG; this.SHADE = AC.shade;
+
+    const renderer = this.renderer = new THREE.WebGLRenderer({ antialias: true });
+    renderer.setPixelRatio(Math.min(devicePixelRatio, 2));
+    host.appendChild(renderer.domElement);
+    Object.assign(renderer.domElement.style, { display: 'block', width: '100%', height: '100%' });
+    const scene = this.scene = new THREE.Scene();
+    scene.background = new THREE.Color(this.props.stageBg || '#eeeeee');
+    const camera = this.camera = new THREE.PerspectiveCamera(30, 1, 0.02, 80);
+    const controls = this.controls = new K.OrbitControls(camera, renderer.domElement);
+    controls.enableDamping = true;
+    scene.add(new THREE.HemisphereLight(0xffffff, 0x5f5a52, 1.0));
+    const key = new THREE.DirectionalLight(0xffffff, 1.5); key.position.set(2.5, 3.5, 3); scene.add(key);
+    const rim = new THREE.DirectionalLight(0xffffff, 0.6); rim.position.set(-2.5, 1.5, -2); scene.add(rim);
+
+    const fit = () => { const w = host.clientWidth, h = host.clientHeight; if (!w || !h) return; renderer.setSize(w, h, false); camera.aspect = w / h; camera.updateProjectionMatrix(); };
+    this._ro = new ResizeObserver(fit); this._ro.observe(host); fit();
+
+    const clock = new THREE.Clock();
+    const loop = () => {
+      this._raf = requestAnimationFrame(loop);
+      const dt = Math.min(clock.getDelta(), 0.05);
+      if (this._dirty) { this._dirty = false; this.flush(); }
+      const f = this.face;
+      /* ⚠ Ohne diesen Tick bleiben die Lider zu: build() setzt sie in Bauform (volle
+         Kugelabdeckung), erst update(dt) dreht sie in die Ruhelage. Das war der Fehler in v4/16B. */
+      if (f) {
+        if (f.eyeRig && f.eyeRig.update) f.eyeRig.update(dt);
+        /* Nach jedem Neubau des Augen-Rigs liegen frische Materialien da — gesetzte Farben werden
+           hier wieder aufgelegt, sobald der Bauzähler des Moduls springt. */
+        if (f.eyeRig && f.eyeRig.gen !== this._eyeGen) this.applyEyeColors();
+        if (f.browRig && f.browRig.sync) f.browRig.sync();
+        if (this.browGraft) this.browGraft.sync(dt);
+        if (f.noseRig && f.noseRig.sync) f.noseRig.sync();
+        if (this.noseGraft) this.noseGraft.sync(dt);
+        if (f.moustache && f.moustache.sync) f.moustache.sync();
+        if (f.mouth && f.mouth.update) f.mouth.update(dt);
+      }
+      controls.update(); renderer.render(scene, camera);
+    };
+    loop();
+
+    /* 14.09. · Studio-Parität: die Oberflächen-Tabelle kommt aus dem Studio-Modul, nicht als zweite
+       Kopie. Fällt der Import aus, fehlt genau der Abschnitt »Surface« und es steht im Feld. */
+    try { this.MZ = await import('./frizzlegraft-v1/matzones.v1.js'); }
+    catch (e) { this.MZ = null; console.warn('[matzones] fehlt:', e && e.message); }
+    const hostDef = S.HOSTS.find((h) => h.key === 'carl');
+    this._donorUrl = S.url(hostDef.path);   // derselbe gepinnte Pfad, aus dem auch der Graft-Spender kommt
+    const res = await AU.auditModel({ THREE, loader: new K.GLTFLoader(), url: S.url(hostDef.path), label: hostDef.label, path: hostDef.path, log: () => {} });
+    if (res.status === 'LOAD_FAILED') { this.setState({ err: 'load failed: ' + res.error }); return; }
+
+    const parts = this.parts = CR.splitIslands({ THREE, mesh: res.meshes[0] });
+    const body = parts[0]; body.mesh.name = 'body';
+    const grp = this.group = new THREE.Group();
+    parts.forEach((p) => grp.add(p.mesh));
+    scene.add(grp);
+
+    const heal = this.heal = CR.flattenRecesses({ THREE, part: body, minInset: 0.0015, minPoints: 4, grow: 3 });
+    const inCavity = CR.partsInsideBoxes({ THREE, parts, boxesLocal: heal.holeBoxesLocal, excludeIsland: body.island });
+
+    /* Der zweite Mund ist AUFGEMALT (Georg, 13.09.): das Netz ist glatt, die Bildtafel zeigt weiter
+       Zähne und Lippen. Also wird die gemessene Mundregion in der Tafel übermalt — dieselbe Methode
+       wie bei `driver_texture_kfb.png`, nur zur Laufzeit. Die Datei bleibt unberührt. */
+    const clean = TC.paintOverRegion({ THREE, mesh: body.mesh, boxesLocal: heal.boxesLocal });
+    this.clean = clean;
+    this._deepRecess = heal.flattened.slice().sort((a, b) => b.maxInset - a.maxInset)[0] || null;
+
+    let sv = this.saved();
+    /* v17 spät — »unser json carl«: die KANONISCHE `kfb.pets/1`-Datei (dieselbe Form, die auch
+       Studio liest) ist der Default, übersetzt über `fromPets1` — derselbe Weg wie der
+       `Load…`-Knopf, kein zweiter Ladepfad. Nur wenn noch KEINE Sitzung im Browser liegt — die
+       Sitzung gewinnt gegen den Anhang, der Anhang ist der Anfang. */
+    if (!sv) {
+      try {
+        const r = await fetch('./petstudio-v9/kfb-pet-capsule-carl.json', { cache: 'no-store' });
+        if (r.ok) { const doc = await r.json(); sv = this.CC.fromPets1(doc); }
+      } catch (e) { void e; }
+    }
+    const zones = parts.map((p, i) => ({ hidden: HIDE_START.indexOf(i) >= 0 || inCavity.indexOf(i) >= 0, color: null }));
+    this._zoneStart = zones.map((z) => ({ hidden: z.hidden, color: z.color }));
+    const eye = Object.assign({}, EYE_DEF, (sv && sv.eye) || {});
+    const mouthDef = {}; MOUTH.MOUTH_META.forEach(([k]) => { mouthDef[k] = MOUTH.MOUTH_DEFAULTS[k]; });
+    /* Der Mund-Decal wird GEMESSEN angesetzt, nicht geerbt: `MOUTH_DEFAULTS` (size 0,44 · dy −0,52)
+       sind auf FrizzleBobs Schnauze geeicht und legen auf Carl ein halbes Gesicht. Die eben
+       eingeebnete Mulde weiß, wo und wie breit der Mund ist — dieselbe Klasse Ablesung wie beim
+       Augenanker. Rechnung in PetMouths eigenen Einheiten (refit): U = halbe Body-Höhe,
+       dy = (Muldenmitte − Body-Mitte) / U, Breite = U · size · Bildseitenverhältnis (274/169). */
+    /* ⚠ `heal.flattened` ist nach PUNKTZAHL sortiert, nicht nach Tiefe. `flattened[0]` war hier eine
+       0,005 u flache Delle über 0,866 u Breite — die halbe Vorderseite. Darum kam der Mund 0,866 u
+       breit und auf Bauchhöhe heraus. Genommen wird die TIEFSTE Mulde: das ist die im Post mortem
+       belegte, 0,1865 u. */
+    const fl = heal.flattened.slice().sort((a, b) => b.maxInset - a.maxInset)[0];
+    if (fl) {
+      const bb = body.mesh.geometry.boundingBox;
+      const U = (bb.max.y - bb.min.y) / 2 || 1, cy = (bb.max.y + bb.min.y) / 2;
+      const clamp = (v, a, b) => Math.max(a, Math.min(b, v));
+      /* Die Höhe kommt aus Carls EIGENEN Zähnen, wenn er welche in der Mulde hat: sie sind die
+         Einrichtung des Mundes und liegen genauer als die Hüllkiste der Mulde, die nach unten
+         ausläuft. Nur Inseln, die auch waagerecht im Mund liegen — sonst zieht ein Teil an der
+         Wange den Anker weg. */
+      const tb = new THREE.Box3(); let nTeeth = 0;
+      inCavity.forEach((i) => {
+        parts[i].mesh.geometry.computeBoundingBox();
+        const c = parts[i].mesh.geometry.boundingBox.getCenter(new THREE.Vector3());
+        if (Math.abs(c.x) <= fl.size[0] / 2 && Math.abs(c.y - fl.centre[1]) <= fl.size[1]) { tb.expandByPoint(c); nTeeth++; }
+      });
+      const anchorY = nTeeth ? tb.getCenter(new THREE.Vector3()).y : fl.centre[1];
+      mouthDef.dy = +clamp((anchorY - cy) / U, -1, 0.15).toFixed(3);
+      mouthDef.size = +clamp(fl.size[0] / (U * 1.621), 0.15, 0.9).toFixed(3);
+      this._mouthSeed = { size: mouthDef.size, dy: mouthDef.dy, recessInset: fl.maxInset, recessWidth: fl.size[0], teeth: nTeeth, anchorY: +anchorY.toFixed(3) };
+    }
+    this._mouthStart = mouthDef;
+    const mouth = Object.assign({}, mouthDef, (sv && sv.mouth) || {});
+
+    /* Der »block«-Stand IST Carls eigene Braue, nicht ihre Annäherung (R18). Gefunden wird nach
+       LAGE, nicht nach Namen; dieselbe Regel wie bei den Zonennamen. Dasselbe Modul rigged die
+       Original-Nase — es weiß nichts über Anatomie, nur über Inseln und Spiegelung, und ist damit
+       auch der Griff für den FB-Driver-Graft. Muss VOR den Zonennamen laufen: die Namen »Brow« und
+       »Nose« kommen aus genau dieser Messung. */
+    const eyeY = (heal.capsule.capCentres[0] + heal.capsule.capCentres[1]) / 2 + eye.dy;
+    this._faceParts = BB.findFaceParts({ THREE, parts, eyeAnchor: { y: eyeY, ring: eye.ring }, hullR: heal.capsule.r });
+    this.origBrow = this._faceParts.brows.length ? new BB.PartRig({ THREE, parts, islands: this._faceParts.brows, label: 'brow' }) : null;
+    this.origNose = this._faceParts.nose != null ? new BB.PartRig({ THREE, parts, islands: [this._faceParts.nose], label: 'nose' }) : null;
+    this.PARTMETA = BB.META;
+
+    /* Die Namen brauchen die vermessene Mundmulde UND den Augenanker, sonst heißen Carls Pupillen
+       »tooth« — die Ausblende-Kiste ist gepolstert und fängt sie mit. */
+    this._names = ZN.nameIslands({ THREE, parts, capsule: heal.capsule, inCavity,
+      brows: this._faceParts ? this._faceParts.brows : [], nose: this._faceParts ? this._faceParts.nose : null,
+      mouth: fl ? { y: this._mouthSeed ? this._mouthSeed.anchorY : fl.centre[1], halfWidth: fl.size[0] / 2, halfHeight: fl.size[1] / 2 } : null,
+      eyeAnchor: { dx: eye.dx, y: (heal.capsule.capCentres[0] + heal.capsule.capCentres[1]) / 2 + eye.dy } });
+    /* `red` ist Carls Satz (Georg, 13.09.). male und female sind für FrizzleBobs gelbes Gesicht
+       gezeichnet und verschwinden auf Carls Orange fast — Beleg 03-v6-10-visemes.png. */
+    const mouthSet = (sv && sv.mouthSet) || 'red';
+    const stache = sv && 'stache' in sv ? !!sv.stache : true;
+    const browMod = (sv && sv.browMod) || (this.origBrow ? 'block' : 'tube');
+    const stacheForm = (sv && sv.stacheForm) || 'tube';
+    const noseMod = (sv && sv.noseMod) || 'ours';
+    const eyeCol = { ball: null, lid: null, lash: null, pupil: null, ...((sv && sv.eyeCol) || {}) };
+    const stacheCol = (sv && sv.stacheCol) || null;
+    const brow = { ...BB.DEFAULTS, ...((sv && sv.brow) || {}) };
+    const nose = { ...BB.DEFAULTS, ...((sv && sv.nose) || {}) };
+    /* Sichtbarkeit gehört der Zonenliste — sonst streiten zwei Besitzer um dasselbe Netz. Wer
+       `block` wählt, macht die Brauen-Inseln sichtbar, und die Liste sagt das auch.
+       ⚠ Die Faltung muss auf den ENDGÜLTIGEN Stand gehen, nicht auf den Startstand: eine
+       gespeicherte Einstellung überschreibt ihn sonst, und dann stehen zwei Nasen übereinander
+       (gemessen: origNose.enabled false, mesh.visible true). Der gewählte Modus ist der Besitzer. */
+    const zoneState = (sv && sv.zones && sv.zones.length === zones.length) ? sv.zones.map((z) => ({ ...z })) : zones;
+    this._faceParts.brows.forEach((i) => { zoneState[i].hidden = browMod !== 'block'; });
+    if (this._faceParts.nose != null) zoneState[this._faceParts.nose].hidden = noseMod !== 'original';
+
+    this.face = CR.buildFace({ THREE, partsGroup: grp, mods: { eye: EYE, brow: BROW, nose: NOSE, stache: STACHE, mouth: MOUTH }, opts: {
+      mouthSet, eyeAnchor: { dx: eye.dx, dy: eye.dy, ring: eye.ring, track: eye.track },
+      lidFit: eye.lidFit, pupilSize: eye.pupilSize, gloss: eye.gloss,
+      lashes: { length: eye.lashLength, density: eye.lashDensity, width: eye.lashWidth },
+    } });
+    if (this.origBrow) this.origBrow.set({ ...brow, enabled: browMod === 'block' });
+    if (this.origNose) this.origNose.set({ ...nose, enabled: noseMod === 'original' });
+    this.applyBrow(browMod);
+    if (this.face.noseRig) this.face.noseRig.set({ enabled: noseMod === 'ours' });
+    if (this.face.moustache) this.face.moustache.set({ enabled: stache, solid: stacheForm !== 'line', color: stacheCol });
+    if (this.face.mouth) this.face.mouth.setParams(mouth);
+
+    zoneState.forEach((z, i) => CR.setZoneStyle(parts[i], { hidden: z.hidden, color: z.color }));
+    /* Eine gespeicherte Oberfläche muss beim Start auch am Material stehen — derselbe Fehler wie
+       bei der Farbwahl: im Feld sichtbar, am Material nicht gesetzt. */
+    zoneState.forEach((z, i) => {
+      const f = z && z.finish && this.MZ ? (this.MZ.FINISHES || {})[z.finish] : null;
+      const p = parts[i]; if (!f || !p) return;
+      const m = p.mesh.material;
+      if (!p.mesh.userData.kfbMatStart) p.mesh.userData.kfbMatStart = { rough: m.roughness, metal: m.metalness };
+      m.roughness = f.rough; m.metalness = f.metal; m.needsUpdate = true;
+    });
+    parts.forEach((p) => { if (p.mesh.material.emissive) { p.mesh.material.emissive.set(0x000000); p.mesh.material.emissiveIntensity = 0; } });
+    if (clean.map) { parts[0].mesh.material.map = clean.map; parts[0].mesh.material.needsUpdate = true; }
+
+    /* Ein benannter Handgriff wie `__proof` im Beweis-Blatt: von hier aus lässt sich der Stand
+       ablesen, ohne die Oberfläche zu bedienen — für Abnahmebilder und für die Fehlersuche. */
+    window.__rig = { parts, face: this.face, heal, clean, names: this._names, view: (n) => this.view(n),
+      faceParts: this._faceParts, origBrow: this.origBrow, origNose: this.origNose,
+      report: () => ({ heal: { residualMax: heal.residualMax, verticesMoved: heal.verticesMoved }, paint: clean.report,
+        face: this.face.report, mouthSeed: this._mouthSeed,
+        mouthMap: !!(this.face.mouth && this.face.mouth.mesh && this.face.mouth.mesh.material.map) }) };
+
+    const box = new THREE.Box3().setFromObject(grp);
+    this._size = box.getSize(new THREE.Vector3());
+    this._target = box.getCenter(new THREE.Vector3());
+    this.setState({ ready: true, eye, mouth, mouthSet, stache, browMod, stacheForm, noseMod, brow, nose,
+      eyeCol, stacheCol,
+      zones: zoneState, zoneCount: parts.length + ' zones' }, () => {
+        this.view(this.props.startView || 'front');
+        /* ⚠ Gemessen: eine gespeicherte Farbwahl stand im Feld, aber nicht am Material — die
+           Bildschleife hatte ihren Bauzähler schon beim ersten leeren Durchlauf gemerkt und danach
+           nie wieder verglichen. Die Wiederherstellung gehört darum hierher, wo der Stand steht. */
+        this.applyEyeColors();
+      });
+  }
+
+  /* Kamera-Vorgaben 1:1 aus carl-proof.html — getunte Zahlen werden nicht "verbessert". */
+  view(name) {
+    if (!this.camera || !this._size) return;
+    const h = Math.max(this._size.y, 0.6), t = this._target;
+    /* Auch hier die TIEFSTE Mulde, nicht `flattened[0]`: mit der flachen Delle zielte die
+       Mund-Kamera auf den Bauch und stand dabei so nah, dass die vordere Schnittebene die Kapsel
+       aufschnitt — das Bild war ein schwarzer Balken. */
+    const oc = (this._deepRecess && this._deepRecess.centre) || [0, 1.06, 0.45];
+    const my = (this._mouthSeed && this._mouthSeed.anchorY) || oc[1];
+    const P = {
+      front: { p: [0, t.y + h * 0.12, h * 1.9], t: [0, t.y, 0] },
+      q34: { p: [h * 1.1, t.y + h * 0.3, h * 1.4], t: [0, t.y, 0] },
+      side: { p: [h * 1.9, t.y + h * 0.1, 0.02], t: [0, t.y, 0] },
+      eyes: { p: [0, 1.34, 1.05], t: [0, 1.32, 0.25] },
+      mouth: { p: [oc[0], my + 0.06, 1.45], t: [oc[0], my, oc[2]] },
+      mouthlow: { p: [oc[0], my - 0.42, 1.15], t: [oc[0], my, oc[2]] },
+    };
+    const v = P[name] || P.front;
+    this.camera.position.set(v.p[0], v.p[1], v.p[2]);
+    this.controls.target.set(v.t[0], v.t[1], v.t[2]);
+    this.camera.updateProjectionMatrix(); this.controls.update();
+    this.setState({ view: name });
+  }
+
+  /* Ein Regler-Zug darf das Rig nicht je Ereignis neu bauen: setAnchor/setEye/setLashes rufen
+     jeweils build(). Die Änderungen sammeln sich darum und werden EINMAL je Bild angewandt. */
+  queue(kind, patch) {
+    this._q = this._q || { anchor: {}, eye: {}, lashes: {}, mouth: {} };
+    Object.assign(this._q[kind], patch);
+    this._dirty = true;
+  }
+  flush() {
+    const q = this._q, f = this.face; if (!q || !f) return;
+    this._q = { anchor: {}, eye: {}, lashes: {}, mouth: {} };
+    if (f.eyeRig) {
+      if (Object.keys(q.anchor).length) f.eyeRig.setAnchor(q.anchor);
+      if (Object.keys(q.eye).length) f.eyeRig.setEye(q.eye);
+      if (Object.keys(q.lashes).length) f.eyeRig.setLashes(q.lashes);
+    }
+    if (f.mouth && Object.keys(q.mouth).length) f.mouth.setParams(q.mouth);
+    if (this.state.viseme && f.mouth) f.mouth.setViseme(this.state.viseme);
+    /* Jeder dieser drei Setter hat gerade `build()` gerufen und frische Materialien gebaut. Die
+       gesetzten Farben werden HIER wieder aufgelegt, nicht erst im nächsten Bild: in einem
+       verborgenen Fenster steht die Bildschleife (`document.hidden`), die Farbe wäre dann weg. */
+    if (f.eyeRig) this.applyEyeColors();
+  }
+
+  setEye(k, v) {
+    const eye = Object.assign({}, this.state.eye); eye[k] = v;
+    if (ANCHOR_KEYS.indexOf(k) >= 0) this.queue('anchor', { [k]: v });
+    else if (LASH_KEYS[k]) this.queue('lashes', { length: eye.lashLength, density: eye.lashDensity, width: eye.lashWidth });
+    else this.queue('eye', { [k]: v });
+    this.setState({ eye }, () => this.persist());
+  }
+  setMouth(k, v) {
+    const mouth = Object.assign({}, this.state.mouth); mouth[k] = v;
+    this.queue('mouth', { [k]: v });
+    this.setState({ mouth }, () => this.persist());
+  }
+  setZone(i, patch) {
+    const zones = this.state.zones.map((z, j) => (j === i ? Object.assign({}, z, patch) : z));
+    if (this.parts && this.parts[i]) this.CR.setZoneStyle(this.parts[i], { hidden: zones[i].hidden, color: zones[i].color });
+    this.setState({ zones }, () => { if (i === 0) this.applyPaint(this.state.paint); if (this.state.sel === i) this.mark(i, 1); this.persist(); });
+  }
+
+  resetEyes() {
+    const eye = Object.assign({}, EYE_DEF);
+    this.queue('anchor', { dx: eye.dx, dy: eye.dy, ring: eye.ring, track: eye.track });
+    this.queue('eye', { pupilSize: eye.pupilSize, lidFit: eye.lidFit, gloss: eye.gloss });
+    this.queue('lashes', { length: eye.lashLength, density: eye.lashDensity, width: eye.lashWidth });
+    /* Die Farben gehören zum Stand des Rigs, also gehen sie mit zurück. Der Neubau durch den Anker
+       oben liefert die Modul-Farben von selbst; `_eyeGen` wird nur zurückgesetzt, damit nichts
+       Altes wieder aufgelegt wird. */
+    this._eyeGen = -1;
+    this.setState({ eye, eyeCol: { ball: null, lid: null, lash: null, pupil: null }, eyeSel: '', hexDraft: {} }, () => this.persist());
+  }
+  resetMouth() {
+    const mouth = Object.assign({}, this._mouthStart || {});
+    this.queue('mouth', mouth);
+    this.setState({ mouth, mouthSet: 'red', viseme: '' }, () => { if (this.face && this.face.mouth) this.face.mouth.setSet('red'); this.persist(); });
+  }
+  /* 14.09. · OBERFLÄCHE JE ZONE (Studio v17, Abschnitt »Material zones«). Im Studio malt `matzones`
+     in EINEN Atlas, weil beim Graft alle Zonen eine Textur teilen. Hier hat jede Insel ihr EIGENES
+     Material (`splitIslands` klont es) — Rauheit und Metall gehen also direkt dorthin. Dieselbe
+     Tabelle, kürzerer Weg, kein zweiter Wahrheitsort. Der Anfangszustand wird beim ersten Griff
+     gesichert, damit »Orig« die Werte der Datei zurückgibt und nicht eine schöne Zahl. */
+  setZoneFinish(i, key) {
+    const p = this.parts && this.parts[i]; if (!p) return;
+    const F = (this.MZ && this.MZ.FINISHES) || null;
+    const mat = p.mesh.material;
+    if (!p.mesh.userData.kfbMatStart) p.mesh.userData.kfbMatStart = { rough: mat.roughness, metal: mat.metalness };
+    const st = p.mesh.userData.kfbMatStart;
+    const f = key && F ? F[key] : null;
+    mat.roughness = f ? f.rough : st.rough;
+    mat.metalness = f ? f.metal : st.metal;
+    mat.needsUpdate = true;
+    const zones = this.state.zones.map((z, j) => (j === i ? Object.assign({}, z, { finish: f ? key : null }) : z));
+    this.setState({ zones }, () => this.persist());
+  }
+  /* Der Farbwähler zieht LIVE am Material und schreibt erst beim Loslassen in Zustand und Sitzung —
+     `onInput` feuert bei jedem Mausschritt, und jeder Schritt hätte in Georgs Sitzung geschrieben. */
+  /* Die Materialfarbe einer Zone als `#rrggbb` — der Rückfall für den Wähler, wenn keine Farbe
+     gesetzt ist. Liest, schreibt nichts. */
+  zoneMatHex(i) {
+    const p = this.parts && this.parts[i];
+    const c = p && p.mesh.material && p.mesh.material.color;
+    return c ? '#' + c.getHexString() : '#cccccc';
+  }
+  zonePickLive(i, hex) {
+    const p = this.parts && this.parts[i], z = this.state.zones[i];
+    if (!p || !z) return;
+    this.CR.setZoneStyle(p, { hidden: z.hidden, color: hex });
+  }
+  resetZones() {
+    const zones = (this._zoneStart || []).map((z) => ({ hidden: z.hidden, color: z.color, finish: null }));
+    zones.forEach((z, i) => {
+      this.CR.setZoneStyle(this.parts[i], { hidden: z.hidden, color: z.color });
+      const st = this.parts[i].mesh.userData.kfbMatStart;
+      if (st) { const m = this.parts[i].mesh.material; m.roughness = st.rough; m.metalness = st.metal; m.needsUpdate = true; }
+    });
+    this.setState({ zones }, () => this.persist());
+  }
+
+  renderVals() {
+    const s = this.state, accent = this.props.accent || '#c03';
+    /* Alles aus den Tokens des DocCheck Design Systems (R12). Zwei Dinge bleiben bewusst eigen:
+       die 3D-Bühne (neutrales --dc-bg-grey, sonst sieht man das Modell nicht) und die Zahlenspalten
+       in --font-mono, weil sich Messwerte ohne feste Laufweite nicht vergleichen lassen. */
+    const tool = (on) => 'height:30px;padding:0 10px;display:flex;align-items:center;gap:5px;background:' + (on ? 'var(--dc-white)' : 'transparent') + ';border:1px solid ' + (on ? 'var(--dc-white)' : 'rgba(255,255,255,.55)') + ';border-radius:var(--radius);color:' + (on ? 'var(--dc-red)' : '#fff') + ';font-size:13px;font-weight:700;line-height:1;cursor:pointer;white-space:nowrap;';
+    const mini = (on) => 'height:26px;min-width:26px;padding:0 8px;background:' + (on ? 'var(--dc-red)' : 'var(--dc-white)') + ';border:1px solid ' + (on ? 'var(--dc-red)' : 'var(--dc-grey)') + ';border-radius:var(--radius-sm);color:' + (on ? '#fff' : 'var(--color-fg-subtle)') + ';font-size:12px;font-weight:700;line-height:1;cursor:pointer;';
+    const chip = (on) => 'height:26px;padding:0 12px;background:' + (on ? 'var(--dc-red)' : 'var(--dc-bg-grey)') + ';border:0;border-radius:var(--radius-pill);color:' + (on ? '#fff' : 'var(--color-fg)') + ';font-size:12px;font-weight:700;line-height:1;cursor:pointer;white-space:nowrap;flex:0 0 auto;';
+    const num = (v, st) => (st >= 1 ? String(Math.round(v)) : v.toFixed(st >= 0.01 ? 2 : 3));
+    /* Kurzschreibweise auf lang: die Systemfelder tragen `#c03`, das Hex-Feld will sechs Stellen.
+       Ohne diese Angleichung leuchtet der Ring am Systemfeld nicht, obwohl dieselbe Farbe steht. */
+    const exp = (h) => { if (!h) return ''; let v = String(h).trim().toLowerCase(); if (v[0] !== '#') v = '#' + v; if (v.length === 4) v = '#' + v[1] + v[1] + v[2] + v[2] + v[3] + v[3]; return v; };
+    const swatches = (apply, curCol) => PALETTE.slice(1).map(([col, , title]) => ({
+      title: title + ' · ' + col, on: () => apply(col),
+      style: 'width:24px;height:24px;background:' + col + ';border:2px solid ' + (exp(curCol) === exp(col) ? 'var(--dc-red)' : 'var(--dc-grey)') + ';border-radius:50%;cursor:pointer;flex:0 0 auto;padding:0;',
+    }));
+
+    const eyeRows = EYE_META.map(([k, label, min, max, st]) => ({
+      label, min, max, step: st, value: s.eye[k], read: num(s.eye[k], st),
+      on: (e) => this.setEye(k, parseFloat(e.target.value)),
+    }));
+    const META = this.MOUTH ? this.MOUTH.MOUTH_META : [];
+    const mouthRows = META.map(([k, label, min, max, st]) => ({
+      label: label, min, max, step: st, value: s.mouth[k] != null ? s.mouth[k] : min, read: num(s.mouth[k] != null ? s.mouth[k] : min, st),
+      on: (e) => this.setMouth(k, parseFloat(e.target.value)),
+    }));
+    const mouthSets = ['male', 'female', 'red'].map((id) => ({
+      label: id, title: 'Decal set ' + id, style: chip(s.mouthSet === id),
+      on: () => { if (this.face && this.face.mouth) this.face.mouth.setSet(id); this.setState({ mouthSet: id }, () => this.persist()); },
+    }));
+    const vis = (this.MOUTH ? this.MOUTH.VISEME_IDS : []).map((id) => ({
+      label: id, style: chip(s.viseme === id),
+      on: () => { const nx = s.viseme === id ? '' : id; if (this.face && this.face.mouth) { if (nx) this.face.mouth.setViseme(nx); else this.face.mouth.setTex(this.face.mouth.rest); } this.setState({ viseme: nx }); },
+    }));
+
+    const EYE_TARGETS = [['ball', 'Eyeball'], ['lid', 'Lid'], ['lash', 'Lash'], ['pupil', 'Pupil']];
+    const eyeColorRows = EYE_TARGETS.map(([k, label]) => this.hexRow({
+      id: 'eye.' + k, label, cur: (s.eyeCol || {})[k], selected: s.eyeSel === k,
+      title: k === 'lid' ? 'Default: -1 shade of the body colour (OKLCH) — Orig clears the override, not a rebuild'
+        : k === 'lash' ? 'Default: -2 shade of the body colour (OKLCH), own material under the upper lid'
+        : 'Set on the material — the vendor module is untouched',
+      apply: (hex) => this.setEyeColor(k, hex),
+      origTitle: (k === 'lid' || k === 'lash') ? 'Back to the -1/-2 shade default' : 'Back to the colour the module builds',
+      onSelect: () => this.setState({ eyeSel: k }),
+    }));
+    const eyePalette = s.eyeSel ? swatches((c) => this.setEyeColor(s.eyeSel, c), (s.eyeCol || {})[s.eyeSel]) : [];
+
+    const names = this._names || [];
+    const zoneRows = s.zones.map((z, i) => ({
+      num: String(i + 1).padStart(2, '0'),
+      label: (names[i] && names[i].label) || 'zone ' + (i + 1),
+      title: names[i] ? names[i].label + ' — named by rule: ' + names[i].rule + ' · size ' + names[i].size.join(' × ') + ' u' : '',
+      swatch: z.color || 'var(--dc-medium-grey)',
+      /* Ausgeblendete Zone: gedämpft, aber lesbar. `--color-fg-muted` (#888) wären 3,5:1 bei 13px
+         — das ist eine Bedienbeschriftung, keine Dekoration (R14). */
+      ink: z.hidden ? 'var(--color-fg-subtle)' : 'var(--color-fg)',
+      eyeLabel: z.hidden ? 'Off' : 'On',
+      eyeStyle: 'margin-left:auto;height:22px;padding:0 8px;background:' + (z.hidden ? 'var(--dc-bg-grey)' : 'transparent') + ';border:1px solid ' + (z.hidden ? 'var(--dc-bg-grey)' : 'var(--dc-grey)') + ';border-radius:var(--radius-sm);color:' + (z.hidden ? 'var(--color-fg-subtle)' : 'var(--color-fg)') + ';font-size:11px;font-weight:700;line-height:1;cursor:pointer;flex:0 0 auto;',
+      /* Der Abschneider war hier: width:100% PLUS Polster ohne border-box = 20px zu breit,
+         gemessen 328 gegen 307 Spaltenbreite. */
+      style: 'display:flex;align-items:center;gap:10px;width:100%;box-sizing:border-box;min-width:0;padding:5px 20px;background:' + (s.sel === i ? 'var(--dc-table-grey)' : 'transparent') + ';border-bottom:1px solid var(--color-border);border-left:2px solid ' + (s.sel === i ? accent : 'transparent') + ';cursor:pointer;',
+      on: () => this.select(i),
+      enter: () => { if (s.sel !== i) this.mark(i, 0.5); },
+      leave: () => { if (s.sel !== i) this.mark(i, 0); },
+      toggle: () => this.setZone(i, { hidden: !z.hidden }),
+      /* Der Wähler zeigt die gesetzte Farbe; steht die Zone auf Originaltafel, zeigt er deren
+         Materialfarbe — ein Wähler, der bei »Tex« schwarz anzeigt, lügt über den Zustand. */
+      pick: z.color || this.zoneMatHex(i),
+      pickTitle: 'Colour picker for this zone — drag shows live, release writes it down',
+      onPickLive: (e) => this.zonePickLive(i, e.target.value),
+      onPick: (e) => this.setZone(i, { color: e.target.value }),
+    }));
+    const cur = s.zones[s.sel] || { color: null };
+    const FIN = (this.MZ && this.MZ.FINISHES) || null;
+    const finMat = s.sel >= 0 && this.parts && this.parts[s.sel] ? this.parts[s.sel].mesh.material : null;
+    const finishOn = s.sel >= 0 && !!FIN;
+    const finishMissing = s.sel >= 0 && !FIN && s.ready ? 'Surface off — matzones.v1.js did not load, so there is no finish table to read.' : '';
+    const finBtn = (act) => 'height:24px;padding:0 10px;background:' + (act ? 'var(--dc-red)' : 'var(--dc-bg-grey)') + ';border:1px solid ' + (act ? 'var(--dc-red)' : 'var(--dc-grey)') + ';border-radius:var(--radius-sm);color:' + (act ? '#fff' : 'var(--color-fg)') + ';font-size:12px;font-weight:700;line-height:1;cursor:pointer;flex:0 0 auto;';
+    const finishBtns = !finishOn ? [] : [{ key: null, label: 'Orig', title: 'Back to the roughness and metalness the file delivered' }]
+      .concat(Object.keys(FIN).map((k) => ({ key: k, label: FIN[k].label, title: 'rough ' + FIN[k].rough.toFixed(2) + ' · metal ' + FIN[k].metal.toFixed(2) })))
+      .map((f) => ({ label: f.label, title: f.title, style: finBtn((cur.finish || null) === f.key), on: () => this.setZoneFinish(s.sel, f.key) }));
+    /* Gelesen vom Material, nicht aus der Tabelle — sonst berichtet die Zeile, was gewollt war. */
+    const finishRead = finMat ? 'rough ' + Number(finMat.roughness).toFixed(2) + ' · metal ' + Number(finMat.metalness).toFixed(2) + (cur.finish ? ' · ' + cur.finish : ' · file') : '';
+    const palette = s.sel < 0 ? [] : PALETTE.map(([col, label, title]) => ({
+      label: label || '', title,
+      /* Farbfelder sind im DocCheck-System Kreise; das »Tex«-Feld ist ein Knopf, weil es keine
+         Farbe ist, sondern die Bildtafel zurückgibt. */
+      style: label
+        ? 'height:24px;padding:0 10px;background:var(--dc-bg-grey);border:2px solid ' + (cur.color ? 'transparent' : 'var(--dc-red)') + ';border-radius:var(--radius-sm);color:var(--color-fg);font-size:12px;font-weight:700;line-height:1;cursor:pointer;flex:0 0 auto;'
+        : 'width:24px;height:24px;background:' + col + ';border:2px solid ' + (exp(cur.color) === exp(col) ? 'var(--dc-red)' : 'var(--dc-grey)') + ';border-radius:50%;cursor:pointer;flex:0 0 auto;padding:0;',
+      on: () => this.setZone(s.sel, { color: col }),
+    }));
+    const zoneColorRows = s.sel < 0 ? [] : [this.hexRow({
+      id: 'zone.' + s.sel, label: 'Free choice', cur: cur.color,
+      title: 'Hangs on the same handle as the swatches: setZoneStyle(part, {color})',
+      apply: (hex) => this.setZone(s.sel, { color: hex }),
+      origLabel: 'Tex', origTitle: 'The zone gets its original image sheet back',
+    })];
+
+    const toolButtons = [
+      { label: 'Face', title: 'Eyes, brows, nose, moustache and mouth on or off', style: tool(s.face), on: () => { this.CR.setFaceVisible(this.face, !s.face); this.setState({ face: !s.face }); } },
+      { label: 'Wire', title: 'Wireframe over every zone', style: tool(s.wire), on: () => { const nx = !s.wire; (this.parts || []).forEach((p) => { p.mesh.material.wireframe = nx; p.mesh.material.needsUpdate = true; }); this.setState({ wire: nx }); } },
+    ];
+    const views = [['front', 'Front'], ['q34', '3/4'], ['side', 'Side'], ['eyes', 'Eyes'], ['mouth', 'Mouth'], ['mouthlow', 'Below']]
+      .map(([k, label]) => ({ label, title: 'Camera preset ' + label, style: mini(s.view === k), on: () => this.view(k) }));
+
+    const fp = this._faceParts || { brows: [], nose: null };
+    const ob = this.origBrow, on_ = this.origNose, gr = this._donor;
+    const browMods = [['line', 'line'], ['tube', 'tube'], ['block', 'block'], ['graft', 'graft']].map(([id, label]) => ({
+      label, style: chip(s.browMod === id),
+      title: id === 'block'
+        ? (ob ? 'Carl\u2019s OWN brow islands ' + ob.measured().map((m) => m.island).join(' + ') + ' (' + ob.measured()[0].size.join(' \u00d7 ') + ' u), shown and rigged \u2014 not redrawn' : 'no brow islands found on this figure')
+        : id === 'graft'
+        ? ('The SAME geometry, taken the donor route and placed by eyeFrame() \u2014 the control probe for the graft that puts Carl\u2019s brow on FrizzleBob in the studio.'
+          + (gr && gr.report && gr.report.brow ? ' Donor islands ' + gr.report.brow.islands.join(' + ') + ' \u00b7 pair ' + gr.report.brow.pairWidth + ' u' : '')
+          + (this.browGraft && this.browGraft.last && this.browGraft.last.scale ? ' \u00b7 placed at scale ' + this.browGraft.last.scale : '')
+          + (s.graftNote ? ' \u00b7 ' + s.graftNote : ''))
+        : (id === 'line' ? 'Drawn: flat ribbon \u2014 disappears in profile' : 'Drawn: tube, capped at the mask'),
+      on: () => {
+        if (!this.applyBrow(id)) return;
+        this.showIslands(fp.brows, id === 'block');
+        this.setState({ browMod: id }, () => this.persist());
+      },
+    }));
+    const noseMods = [['ours', 'ours'], ['original', 'original'], ['graft', 'graft']].map(([id, label]) => ({
+      label, style: chip(s.noseMod === id),
+      title: id === 'original'
+        ? (on_ ? 'Carl\u2019s OWN nose island ' + on_.measured()[0].island + ' (' + on_.measured()[0].size.join(' \u00d7 ') + ' u), shown and rigged' : 'no nose island found on this figure')
+        : id === 'graft'
+        ? ('The SAME geometry, taken the donor route and placed by eyeFrame() + a raycast on the host surface \u2014 the control probe for the graft that puts Carl\u2019s nose on a foreign head.'
+          + (gr && gr.report && gr.report.nose ? ' Donor island ' + gr.report.nose.island + ' \u00b7 size ' + gr.report.nose.size.join('\u00d7') + 'u' : '')
+          + (this.noseGraft && this.noseGraft.last && this.noseGraft.last.scale ? ' \u00b7 placed at scale ' + this.noseGraft.last.scale : '')
+          + (s.graftNote ? ' \u00b7 ' + s.graftNote : ''))
+        : 'The NoseRig knob from PetStudio',
+      on: () => {
+        if (!this.applyNose(id)) return;
+        if (fp.nose != null) this.showIslands([fp.nose], id === 'original');
+        this.setState({ noseMod: id }, () => this.persist());
+      },
+    }));
+    const partRows = (which, rig) => (rig ? (this.PARTMETA || []).map(([k, label, min, max, st]) => {
+      const v = (s[which] && s[which][k] != null) ? s[which][k] : rig.params[k];
+      return { label, min, max, step: st, value: v, read: num(v, st),
+        on: (e) => this.setPart(which, k, parseFloat(e.target.value)) };
+    }) : []);
+    const browPartRows = s.browMod === 'block' ? partRows('brow', ob)
+      : s.browMod === 'graft' ? ((this.BG && this.BG.BROW_META) || []).map(([k, label, min, max, st]) => {
+        const D = this.BG.BROW_DEFAULTS;
+        const v = (s.graft && s.graft[k] != null) ? s.graft[k] : D[k];
+        return { label, min, max, step: st, value: v, read: num(v, st),
+          on: (e) => this.setGraft(k, parseFloat(e.target.value)) };
+      }) : [];
+    const nosePartRows = s.noseMod === 'original' ? partRows('nose', on_)
+      : s.noseMod === 'graft' ? ((this.BG && this.BG.NOSE_META) || []).map(([k, label, min, max, st]) => {
+        const D = this.BG.NOSE_DEFAULTS;
+        const v = (s.noseGraft && s.noseGraft[k] != null) ? s.noseGraft[k] : D[k];
+        return { label, min, max, step: st, value: v, read: num(v, st),
+          on: (e) => this.setNoseGraft(k, parseFloat(e.target.value)) };
+      }) : [];
+    const stacheForms = [['line', 'line'], ['tube', 'tube']].map(([id, label]) => ({
+      label, style: chip(s.stacheForm === id),
+      title: id === 'tube' ? 'Tube with one even radius \u2014 both halves measurably the same width' : 'The old flat ribbon (left and right differ)',
+      on: () => { if (this.face && this.face.moustache) this.face.moustache.set({ solid: id !== 'line' }); this.setState({ stacheForm: id }, () => this.persist()); },
+    }));
+    /* »Walrus« und »Paint« standen in der Kopfzeile (Georg, 13.09. spät): beides sind keine
+       Werkzeuge, sondern Eigenschaften eines Teils. Sie stehen jetzt in ihrem eigenen Abschnitt —
+       der Bart bei den Bart-Formen, die übermalte Bildtafel bei den Zonen. */
+    const stacheToggle = [{
+      label: s.stache ? 'Walrus on' : 'Walrus off', style: chip(s.stache),
+      title: 'The moustache is off in the module by default',
+      on: () => { const nx = !s.stache; if (this.face && this.face.moustache) this.face.moustache.set({ enabled: nx }); this.setState({ stache: nx }, () => this.persist()); },
+    }];
+    const stacheColorRows = [this.hexRow({
+      id: 'stache', label: 'Colour', cur: s.stacheCol,
+      title: 'MoustacheRig.set({color}) — the module knows this field',
+      apply: (hex) => this.setStacheColor(hex),
+      origTitle: 'Back to the automatic tone (28 % of the base colour)',
+    })];
+    const stachePalette = swatches((c) => this.setStacheColor(c), s.stacheCol);
+
+    const rigDoc = { schema: 'kfb.carl.rig/6', figure: 'CapsuleCarl', eye: s.eye,
+      mouth: s.mouth, mouthSet: s.mouthSet, moustache: { enabled: s.stache, form: s.stacheForm, color: s.stacheCol },
+      eyeColors: s.eyeCol,
+      brow: { mod: s.browMod, drawn: this.browParams(s.browMod), original: ob ? { islands: ob.measured(), ...s.brow } : null,
+        graft: s.browMod === 'graft' ? { ...(this.BG ? this.BG.BROW_DEFAULTS : {}), ...(s.graft || {}), donor: gr && gr.report ? gr.report.brow : null } : null },
+      nose: { mod: s.noseMod, original: on_ ? { islands: on_.measured(), ...s.nose } : null,
+        graft: s.noseMod === 'graft' ? { ...(this.BG ? this.BG.NOSE_DEFAULTS : {}), ...(s.noseGraft || {}), donor: gr && gr.report ? gr.report.nose : null } : null },
+      zones: s.zones };
+    /* Georgs Entscheidung 13.09.: ÜBERSETZEN, nicht zweigleisig fahren. Heraus geht darum
+       `kfb.pets/1` — dieselbe Form, die das Studio liest; die Index-Zonen sind dabei zu benannten
+       Feldern aufgelöst (`lab-v6/carl-contract.v1.js`, FIELD_MAP). Ein Export-Pfad, eine Form. */
+    const payload = JSON.stringify(this.CC ? this.CC.toPets1(rigDoc, { names, measured: this._mouthSeed }) : rigDoc, null, 2);
+    const h = this.heal;
+
+    return {
+      stageRef: (el) => { this.stageEl = el; },
+      status: s.err ? '' : s.ready ? '' : 'Loading Carl …',
+      showError: !!s.err, errorText: s.err,
+      stampLine: h ? 'mouth flattened · residual ' + h.residualMax + ' u'
+        + (s.paint && this.clean && this.clean.report.status === 'OK' ? ' · sheet repainted, ' + this.clean.report.triangles + ' tris in ' + this.clean.report.colour : '')
+        + ' · file untouched' : '',
+      finishOn, finishBtns, finishRead, finishMissing,
+      toolButtons, views, eyeRows, mouthRows, mouthSets, visemes: vis, zoneRows, palette,
+      eyeColorRows, eyePalette, eyeSel: !!s.eyeSel, zoneColorRows, stacheColorRows, stachePalette, stacheToggle,
+      eyeShadeNote: this.SHADE ? ('Lid/lash default: -1/-2 shade of ' + this.baseSkinColour() + ' — override with the fields above') : '',
+      paintLabel: s.paint ? 'Paint on' : 'Paint off',
+      paintStyle: 'height:22px;padding:0 10px;background:' + (s.paint ? 'var(--dc-red)' : 'var(--dc-bg-grey)') + ';border:0;border-radius:var(--radius-pill);color:' + (s.paint ? '#fff' : 'var(--color-fg)') + ';font-size:11px;font-weight:700;line-height:1;cursor:pointer;flex:0 0 auto;',
+      onPaint: () => { const nx = !s.paint; this.setState({ paint: nx }, () => this.applyPaint(nx)); },
+      browMods, stacheForms, noseMods, browPartRows, nosePartRows, showStamp: s.stamp,
+      hasBrowRig: !!ob, hasNoseRig: !!on_,
+      infoStyle: 'width:30px;height:30px;display:flex;align-items:center;justify-content:center;background:'
+        + (s.stamp ? 'var(--dc-white)' : 'transparent') + ';border:1px solid ' + (s.stamp ? 'var(--dc-white)' : 'rgba(255,255,255,.55)')
+        + ';border-radius:var(--radius);color:' + (s.stamp ? 'var(--dc-red)' : '#fff') + ';font-family:var(--font-slab);font-size:15px;font-weight:700;line-height:1;cursor:pointer;',
+      onInfo: () => this.setState({ stamp: !s.stamp }),
+      onResetBrow: () => {
+        if (ob) ob.reset();
+        if (this.browGraft) this.browGraft.reset();
+        this.applyBrow('block'); this.showIslands(fp.brows, true);
+        this.setState({ browMod: 'block', brow: {}, graft: {} }, () => this.persist());
+      },
+      onResetNose: () => {
+        if (on_) on_.reset();
+        if (this.noseGraft) this.noseGraft.reset();
+        if (this.face.noseRig) this.face.noseRig.set({ enabled: true });
+        if (fp.nose != null) this.showIslands([fp.nose], false);
+        this.setState({ noseMod: 'ours', nose: {}, noseGraft: {} }, () => this.persist());
+      },
+      zoneCount: s.zoneCount,
+      selLabel: s.sel < 0 ? 'Pick a zone in the list — it lights up on the model' : 'Colour of ' + ((names[s.sel] && names[s.sel].label) || ('zone ' + (s.sel + 1))),
+      resetStyle: tool(false),
+      /* Primärknopf ist im System grün. Die Schrift darauf ist hier SCHWARZ, nicht das weiße
+         `.dc-btn` — weiß auf #9c3 sind 1,9:1 und auf einem Werkzeugknopf nicht lesbar. Schwarz auf
+         #9c3 sind 10,5:1, und #000 ist ohnehin die Textfarbe des Systems (R12). */
+      saveStyle: 'height:30px;padding:0 12px;display:flex;align-items:center;background:var(--dc-green);border:0;border-radius:var(--radius);color:#000;font-size:13px;font-weight:700;line-height:1;cursor:pointer;white-space:nowrap;text-decoration:none;',
+      sectionResetStyle: 'height:18px;padding:0;background:transparent;border:0;color:var(--color-link);font-size:12px;font-weight:400;line-height:1;cursor:pointer;',
+      saveHref: 'data:application/json;charset=utf-8,' + encodeURIComponent(payload),
+      saveName: 'kfb-pet-capsule-carl.json',
+      fileRef: (el) => { this.fileEl = el; },
+      onImportClick: () => { if (this.fileEl) this.fileEl.click(); },
+      onImportFile: (e) => { const f = e.target.files && e.target.files[0]; if (f) this.importFile(f); e.target.value = ''; },
+      importStyle: 'height:30px;padding:0 12px;display:flex;align-items:center;background:transparent;border:1px solid var(--dc-white);border-radius:var(--radius);color:#fff;font-size:13px;font-weight:700;line-height:1;cursor:pointer;white-space:nowrap;',
+      onResetAll: () => { this.resetEyes(); this.resetMouth(); this.resetZones(); },
+      onResetEyes: () => this.resetEyes(),
+      onResetMouth: () => this.resetMouth(),
+      onResetZones: () => this.resetZones(),
+    };
+  }
+}
+</script>
+</body>
+</html>
