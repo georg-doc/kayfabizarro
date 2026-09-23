@@ -165,3 +165,19 @@ Place this in the project's Return/Handover, not only in chat prose. For intake-
 ## Recovery success criterion
 
 A fresh authorized chat should be able to continue correctly from GitHub without receiving a transcript dump from Georg.
+
+
+## 2026-09-23 · Hybrid Production Handoff recovery
+
+For current cross-lane recovery after the completed/aborted Web chats, read first:
+
+1. `skills/chat/workflows/KFB_HYBRID_PRODUCTION_HANDOFF_2026-09-23/RECOVERY.md`
+2. `skills/chat/workflows/KFB_HYBRID_PRODUCTION_HANDOFF_2026-09-23/CURRENT_STATE.md`
+3. exactly one owner PR/Return.
+
+Do not reconstruct the prior long chats.
+
+Operational lead:
+Claude Coworker.
+
+Periodic Web Lead / WSA preparation happens only after the Coworker milestone/check-in or when an owner/capability conflict appears.
