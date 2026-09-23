@@ -255,3 +255,36 @@ After WEDGE ACCEPT:
    - rectangle breakup may be downstream of frame-to-frame hard-clamp emitter jumps.
 
 No RSTAB-2 implementation has started yet.
+
+## TARCH-0 architecture reset · Chat artifact review
+
+Current Race candidate:
+- Draft PR **#33**
+- branch `chat/racer-tarch0-sp13ktra-2026-09-23`
+- current handoff head `6c72e66678599d303c16c825255d2cd04bac9c7e`
+- runtime-tested head `b37cbad1038e669a0c9929d25789d54d0283b0fc`
+- CI `35817990559 / 107043574054 · SUCCESS`
+- **7 active architecture tests · 0 skipped**
+
+The old RSTAB-1 tunnel/ground foundation is archived after two failed human repair passes. No pass 3.
+
+TARCH reimplements the observed SP13KTRA architecture independently:
+- one continuous road/causeway;
+- world ground outside/below the complete banked road/wall envelope;
+- dense arch scenery over that same road;
+- no tunnel shell, ground-cut wall or invert inside the tunnel path.
+
+SP13KTRA source/assets are **not copied**; donor license is All Rights Reserved.
+
+Human review method:
+1. R1 isolated HTML artifact directly in ChatGPT;
+2. R2 integrated Racer HTML only after R1 ACCEPT;
+3. optional R3 one local integration correction.
+
+Cloudflare / Pages are deferred until after human visual acceptance. They are no longer part of iterative QA.
+
+Recovery / review protocol:
+`georg-doc/KFB-Stunt-Car-Race#33 → _handover/RACER_MVP_STABILIZATION_2026-09-23/TARCH-0/CHAT_ARTIFACT_REVIEW_PROTOCOL.md`
+
+Exactly one next gate:
+**TARCH-0 HUMAN ARCHITECTURE GATE · R1 CHAT HTML**.
