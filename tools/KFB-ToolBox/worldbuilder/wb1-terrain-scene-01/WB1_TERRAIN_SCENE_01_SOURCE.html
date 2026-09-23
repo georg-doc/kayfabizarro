@@ -311,16 +311,62 @@ grid.position.y=.01;scene.add(grid);
 const worldRoot=new THREE.Group();scene.add(worldRoot);
 const previewRoot=new THREE.Group();scene.add(previewRoot);
 const loader=new GLTFLoader();
-let terrain=null,mode='actor',selected=null,currentMixer=null,clock=new THREE.Clock(),actorSourceReady=false,propSourceReady=false,sceneLoadToken=0;
+let terrain=null,mode='actor',selected=null,currentMixer=null,clock=new THREE.Clock(),actorSourceReady=false,propSourceReady=false,sceneLoadToken=0,gizmoSpace='world';
 const sceneObjects=new Map();
+const viewer={camera,scene,controls};
 
-const gizmo=new TransformControls(camera,renderer.domElement);
-const gizmoHelper=gizmo.getHelper?gizmo.getHelper():gizmo;
-scene.add(gizmoHelper);
-gizmoHelper.visible=false;
-gizmo.addEventListener('dragging-changed',e=>{controls.enabled=!e.value});
-gizmo.setTranslationSnap(.1);
-gizmo.setRotationSnap(THREE.MathUtils.degToRad(15));
+function recordForNode(node){
+  const id=node&&node.userData&&node.userData.sceneObjectId;
+  return id?sceneDoc.objects.find(o=>o.id===id)||null:null;
+}
+function setSelectionUi(node,rec){
+  selected=node||null;
+  const r=rec||recordForNode(node);
+  if(!selected)E('pick').textContent='Click actor or landmark to select.';
+  else E('pick').innerHTML='<b>'+r.name+'</b> · '+r.kind+' · '+EDIT.mode+' · '+gizmoSpace+' axes';
+  refreshAddButtons();
+}
+function syncEditorUi(){
+  if(!E('objmenu'))return;
+  E('objmenu').querySelectorAll('button').forEach(btn=>{
+    const m=btn.dataset.m;
+    btn.classList.toggle('active',m===EDIT.mode||(m==='space'&&gizmoSpace==='local'));
+  });
+  E('snap').classList.toggle('active',EDIT.snap);
+  if(selected)setSelectionUi(selected);
+}
+function onEditorPick(node,rec){setSelectionUi(node,rec);syncEditorUi()}
+function onEditorChange(nodes){
+  for(const node of nodes)updateRecordFromRoot(node);
+  if(nodes.length===1)selected=nodes[0];
+  refreshDoc();
+  syncEditorUi();
+}
+function onEditorMenu(action){
+  if(action==='floor'){
+    const result=EDIT.drop();
+    const msg=result.length?result.map(r=>r.refused?(r.id+': '+r.refused):(r.id+': dropped '+r.moved+' to '+r.on)).join(' · '):'nothing selected';
+    status(msg,result.length?'ok':'');
+  }
+  if(action==='space'){
+    gizmoSpace=gizmoSpace==='world'?'local':'world';
+    EDIT.gizmo.setSpace(gizmoSpace);
+    syncEditorUi();
+    status('gizmo axes · '+gizmoSpace,'ok');
+  }
+}
+const EDIT=makeEditLayer(viewer,renderer.domElement,{
+  getRoot:()=>worldRoot,
+  recordOf:recordForNode,
+  menu:E('objmenu'),
+  gridStep:.05,
+  angleStep:15,
+  onPick:onEditorPick,
+  onChange:onEditorChange,
+  onMenu:onEditorMenu
+});
+EDIT.onChange(syncEditorUi);
+EDIT.setOn(false);
 
 function bounds(o,precise=true){o.updateWorldMatrix(true,true);return new THREE.Box3().setFromObject(o,precise)}
 function fitObject(o,fit){
@@ -475,12 +521,13 @@ function makeRoot(record){
   root.position.set(Number(p[0])||0,p[1]==null?0:(Number(p[1])||0),Number(p[2])||0);
   root.userData.needsInitialGround=p[1]==null;
   root.rotation.fromArray((record.transform.rotation||[0,0,0]).concat(['XYZ']).slice(0,4));
+  root.scale.fromArray(record.transform.scale||[1,1,1]);
   worldRoot.add(root);sceneObjects.set(record.id,root);return root;
 }
 async function buildSceneObjects(token){
   resetMixer();
   for(const root of sceneObjects.values())worldRoot.remove(root);
-  sceneObjects.clear();selected=null;gizmo.detach();gizmoHelper.visible=false;
+  sceneObjects.clear();selected=null;EDIT.clear();
   for(const rec of sceneDoc.objects){
     if(token!==sceneLoadToken)return;
     const root=makeRoot(rec);
@@ -506,6 +553,7 @@ function updateRecordFromRoot(root){
   if(!rec)return;
   rec.transform.position=root.position.toArray().map(v=>+v.toFixed(4));
   rec.transform.rotation=[root.rotation.x,root.rotation.y,root.rotation.z].map(v=>+v.toFixed(5));
+  rec.transform.scale=root.scale.toArray().map(v=>+v.toFixed(4));
 }
 function updateAllRecords(){for(const root of sceneObjects.values())updateRecordFromRoot(root)}
 function refreshDoc(){
@@ -518,35 +566,13 @@ function refreshAddButtons(){
   E('remove').disabled=!selected;
 }
 function selectRoot(root){
-  selected=root||null;
-  if(!selected){gizmo.detach();gizmoHelper.visible=false;E('pick').textContent='Click actor or landmark to select.'}
-  else{
-    gizmo.attach(selected);gizmoHelper.visible=true;
-    E('pick').innerHTML='<b>'+selected.name+'</b> · '+selected.userData.kind+' · '+(gizmo.mode==='rotate'?'rotate':'move');
-  }
-  refreshAddButtons();
+  if(!root){EDIT.clear();setSelectionUi(null);return null}
+  EDIT.setOn(true);
+  EDIT.select(root);
+  setSelectionUi(root,recordForNode(root));
+  syncEditorUi();
+  return root;
 }
-gizmo.addEventListener('objectChange',()=>{
-  if(!selected)return;
-  updateRecordFromRoot(selected);refreshDoc();
-});
-
-const ray=new THREE.Raycaster(),mouse=new THREE.Vector2();
-let downAt=null;
-renderer.domElement.addEventListener('pointerdown',e=>{downAt=[e.clientX,e.clientY]});
-renderer.domElement.addEventListener('pointerup',e=>{
-  if(mode!=='scene'||!downAt||Math.hypot(e.clientX-downAt[0],e.clientY-downAt[1])>4)return;
-  const r=renderer.domElement.getBoundingClientRect();
-  mouse.set(((e.clientX-r.left)/r.width)*2-1,-((e.clientY-r.top)/r.height)*2+1);
-  ray.setFromCamera(mouse,camera);
-  const targets=[];
-  for(const root of sceneObjects.values())targets.push(root);
-  const hits=ray.intersectObjects(targets,true);
-  if(!hits.length){selectRoot(null);return}
-  let o=hits[0].object;
-  while(o&&o.parent&&!o.userData.sceneObjectId)o=o.parent;
-  if(o&&o.userData.sceneObjectId)selectRoot(o);
-});
 
 function sourceFacts(kind){
   if(kind==='actor'){
