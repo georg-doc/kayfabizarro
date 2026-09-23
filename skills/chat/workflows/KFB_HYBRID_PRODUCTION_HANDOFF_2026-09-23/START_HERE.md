@@ -122,3 +122,37 @@ This explicitly preserves the effective Racer-style small commits while avoiding
 Coworker finishes the current ToolBox Source-Safe Integration as an internal multi-step build and returns the **full coherent ToolBox milestone**, not a Goth-Girl-only human gate.
 
 After that Coworker performs a current-lane check-in and proposes exactly one next MVP.
+
+
+## Opus 5.5 Coworker migration
+
+Recommended for the current load-bearing Coworker chat:
+
+`COWORKER_OPUS55_MODEL_SWITCH.md`
+
+Keep the same chat.
+Checkpoint current local/worktree state first.
+Then switch model and recover from GitHub + local workspace rather than re-deriving from chat memory.
+
+## Performance animation pilot
+
+For authored instrument/prop mechanics read:
+
+`PERFORMANCE_ANIMATION_PILOT.md`
+
+This is a candidate addendum on top of:
+- `skills/cartoon-motion_v1.md`;
+- `skills/kfb-cartoon-animation_v2.md`.
+
+First validation:
+Warband drummer / Rig_Large.
+
+## Coworker ↔ WSA sync
+
+Prepared bridge:
+`COWORKER_WSA_SYNC_BRIDGE.md`
+
+GitHub is the synchronization bus.
+There is no assumed hidden chat-to-chat shared state.
+
+Do not start WSA yet unless Coworker returns a CLOSED packet with a named WSA-only capability.
