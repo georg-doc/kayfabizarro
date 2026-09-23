@@ -54,3 +54,21 @@ Coworker completes Source-Safe ToolBox Integration 01 to its full coherent miles
 Then Coworker returns one current-state check-in + one next MVP proposal.
 
 No WSA before that unless an explicit capability gap appears.
+
+
+## Control-plane identity
+
+Repo:
+`georg-doc/kayfabizarro`
+
+Branch:
+`chatgpt-web/kfb-hybrid-production-handoff-2026-09-23`
+
+Draft PR:
+`#193`
+
+Current handoff head before this metadata write:
+`87016f0f5923835bd698bbce439e67bf6d063349`
+
+Base:
+`main@dca52479dad9c176acde6e7c7167dc133bf50bdd`
