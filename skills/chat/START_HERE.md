@@ -522,6 +522,46 @@ Cloudflare source commit: `77e4bd44aac0d0ce720c5b0149eedb3eef62ac36`. Hub source
 Public verification is **UNKNOWN / PENDING** because this execution environment cannot resolve/access `pages.dev`. Local HTTP is only a developer fallback; do not present it as the human acceptance link. RSTAB-2 remains blocked until human ACCEPT.
 
 
+
+## 2026-09-23 · Racer RSTAB-1 human FAIL → WEDGE pass 2
+
+Current Racer owner remains `georg-doc/KFB-Stunt-Car-Race`.
+
+The first zero-install RSTAB-1 human gate failed:
+- at least two brown wedges remain in the first tunnel;
+- first hard curve remains extremely jerky/unstable;
+- Tail/Speedline ribbons overlap and break into rectangular pieces in that phase;
+- vehicle floats above the track at rest, including visible front-wheel lift, and can jump/land above or inside the track.
+
+Current WEDGE pass 2:
+- exact brown cut transitions localized to **99→100** and **133→134**;
+- both are inside TUNNEL and have rendered shell geometry;
+- shell now owns those two transition segments; brown cut wall/invert is not emitted there;
+- historical mouth **90→91** remains ground-owned;
+- Race runtime/test candidate `a9dd49995d32423e101a67f2e591c2b069583252`;
+- GitHub runs `35814096388` + `35814091421`: SUCCESS;
+- current test file: **6 active / 0 skipped**;
+- current Race PR #32 branch handoff head: `841d0cbd2f55561dd63897036ae3890ce6a246fa`.
+
+This is the second and final WEDGE repair pass on this foundation. Same-gate failure again => STOP + full failure-recovery export; no pass 3.
+
+Zero-install Stage:
+`https://kayfabizarro.pages.dev/kfb-hub/stage/stunt-world/cologne-option-c-rstab1/`
+
+Stage source:
+- kayfabizarro Draft PR #178 head `df82e1fa31213d21c13af1f39f369608078633a3`;
+- Cloudflare route source `ad0036c465e7c5a87c3cfcc0d49cfb2cf3378de0`;
+- Hub metadata `cloudflare-live@f904c318172848078b9d7f58e2b186c5fda03e7d` / `main@db3a651698d4f829ebc1f7be543ab1b51dc20494`.
+
+Public verification remains **UNKNOWN / PENDING** because this execution environment cannot resolve/access `pages.dev`.
+
+After WEDGE ACCEPT, sequence is locked:
+1. vehicle support/orientation/landing;
+2. hard-curve stability with global v0.8 FLOW/FEEL preserved;
+3. trail/speedline continuity recheck after stable motion.
+
+Do not start curve/trail tuning before the WEDGE human recheck.
+
 ## 2026-09-23 · Travel Mode Bridge v1 · TMB-0 complete
 
 Coordination brief:
