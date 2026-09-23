@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#17150f">
-<title>KFB ToolBox · WB1 Terrain Scene 01 · Shared Editor Review</title>
+<title>KFB ToolBox · WB1 Terrain Scene 01 · Uniform Scale R3 Review</title>
 <style>
 :root{
   --bg:#17150f;--panel:rgba(26,23,17,.95);--panel2:#211e17;--line:#554d3d;
@@ -46,6 +46,9 @@ h1{font-size:15px;letter-spacing:.06em;margin:0 0 2px}
   background:#14130fee;border:1px solid #4a4433;box-shadow:0 6px 18px #05030a80;transform:translate(-50%,0)}
 #objmenu button{width:28px;height:28px;padding:0;font-size:13px;line-height:1;border-radius:5px}
 #objmenu button.active{border-color:var(--accent);color:#ffe2a7}
+#objmenu .scale-pair{display:flex;gap:1px;border:1px solid var(--line);border-radius:5px;overflow:hidden}
+#objmenu .scale-pair button{width:23px;border:0;border-radius:0;background:#2a261d}
+#objmenu .scale-pair button+button{border-left:1px solid var(--line)}
 #objmenu[hidden]{display:none}
 @media(max-width:900px){
   #app{grid-template-columns:minmax(240px,280px) 1fr}
@@ -60,7 +63,7 @@ h1{font-size:15px;letter-spacing:.06em;margin:0 0 2px}
 </style>
 </head>
 <body>
-<!-- REVIEW COPY · source blob 0114d186759866f42bdc99a6d4bc662494701c50 · edit-layer blob c97b3537f71e939176f3ae5ce7ae83feabb7918f · local review only · not public -->
+<!-- REVIEW COPY · source blob d550d5bf8ce93dbcc17b4687dbda1afcb4f3a223 · edit-layer blob c15a200ba8615d55f9d3ae26616e0a8ceba8dc01 · local review only · not public -->
 <div id="app">
   <aside id="side">
     <h1>KFB TOOLBOX · WORLDBUILDER</h1>
@@ -90,7 +93,7 @@ h1{font-size:15px;letter-spacing:.06em;margin:0 0 2px}
       <div class="row">
         <button id="snap" class="active">Snap 0.05 / 15°</button>
       </div>
-      <div class="source">Object menu: ✥ move · ⟳ rotate · ⤢ scale · ⬓ drop · ⊹ world/local · ✕ close</div>
+      <div class="source">Object menu: ✥ move · ⟳ rotate · −/+ uniform size · ⬓ drop · ⊹ world/local · ✕ close · S = free scale gizmo</div>
       <div class="row" style="margin-top:6px">
         <button id="addActor" disabled>Add Caveman</button>
         <button id="addProp" disabled>Add Boulder</button>
@@ -118,7 +121,7 @@ h1{font-size:15px;letter-spacing:.06em;margin:0 0 2px}
       <h2>Owner boundaries</h2>
       <div class="source">
         <b>Terrain donor:</b> ZyFou/ProceduralTerrains@f58a8ddb81d1fbb526a41282a9a7e9c05c2d2070 · MIT<br>
-        <b>Scene edit owner:</b> ToolBox <code>lib/edit-layer.js</code> · exact S7 donor blob c97b3537… · S21/S22 lineage<br>
+        <b>Scene edit owner:</b> ToolBox <code>lib/edit-layer.js</code> · accepted S7 base c97b3537… · R3 uniform-scale candidate c15a200b…<br>
         <b>Resident donor:</b> Resident Atlas Caveman · Rig_Medium · Melee_Unarmed_Idle<br>
         <b>WorldBuilder owns:</b> terrain settings + source references + transforms only
       </div>
@@ -131,7 +134,7 @@ h1{font-size:15px;letter-spacing:.06em;margin:0 0 2px}
     <div id="objmenu" hidden>
       <button data-m="translate" title="Move (g)">✥</button>
       <button data-m="rotate" title="Rotate (r)">⟳</button>
-      <button data-m="scale" title="Scale (s)">⤢</button>
+      <span class="scale-pair" title="Uniform size · S keeps the free scale gizmo"><button data-m="scale-down" title="Smaller ×0.8">−</button><button data-m="scale-up" title="Larger ×1.25">+</button></span>
       <button data-m="floor" title="Drop onto the visible surface below">⬓</button>
       <button data-m="space" title="World / local axes">⊹</button>
       <button data-m="close" title="Clear selection (Esc)">✕</button>
@@ -186,7 +189,7 @@ import * as THREE from 'three';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 import { TransformControls } from 'three/addons/controls/TransformControls.js';
-/* BEGIN BUNDLED TOOLBOX EDIT LAYER · blob c97b3537f71e939176f3ae5ce7ae83feabb7918f */
+/* BEGIN BUNDLED TOOLBOX EDIT LAYER · blob c15a200ba8615d55f9d3ae26616e0a8ceba8dc01 */
 /* KFB · Editor-Schicht
    Zweiter Einbau des Mini-Editors aus `KayKit_Room_Study_S21.html`. Genau dafür sieht
    docs/EDITOR_LAYER.md vor, dass aus dem Block eine Bibliothek wird — „nicht vorher: eine
@@ -281,6 +284,39 @@ function makeEditLayer(viewer, canvas, opts = {}) {
     },
     setScope(s) { scope = s; E.clear(); notify(); },
     setSnap(v) { snap = v; applySnap(); notify(); },
+
+    /* Uniforme Größenänderung als schnelle Autoren-Geste. Der freie Scale-Gizmo bleibt separat
+       erhalten. Standard 1.25 / 0.8 sind inverse Faktoren: kleiner → größer kehrt exakt zur
+       Ausgangsgröße zurück. Nicht-uniforme Proportionen bleiben erhalten, weil alle Achsen mit
+       demselben Faktor multipliziert werden. */
+    scaleBy(factor) {
+      const requested = Number(factor);
+      if (!Number.isFinite(requested) || requested <= 0 || !sel.length) return [];
+      const minScale = Math.max(1e-4, Number(opts.minScale ?? 0.05));
+      const maxScale = Math.max(minScale, Number(opts.maxScale ?? 20));
+      const out = [];
+      for (const x of sel) {
+        const before = x.scale.clone();
+        const abs = [Math.abs(before.x), Math.abs(before.y), Math.abs(before.z)];
+        const lo = Math.max(1e-6, Math.min(...abs));
+        const hi = Math.max(...abs);
+        let applied = requested;
+        if (requested < 1 && lo * requested < minScale) applied = minScale / lo;
+        if (requested > 1 && hi * requested > maxScale) applied = maxScale / hi;
+        x.scale.multiplyScalar(applied);
+        x.updateMatrixWorld(true);
+        out.push({
+          id: recordOf(x)?.id,
+          factor: +applied.toFixed(6),
+          before: before.toArray().map((v) => +v.toFixed(4)),
+          after: x.scale.toArray().map((v) => +v.toFixed(4))
+        });
+      }
+      opts.onChange?.(sel);
+      E.follow();
+      notify();
+      return out;
+    },
 
     /* ---- Leihgabe: Puppe und Bone-Posing hängen an DEMSELBEN Anfasser ---- */
     borrow(obj, m, onDrag, label) {
@@ -417,6 +453,8 @@ function makeEditLayer(viewer, canvas, opts = {}) {
     const m = e.target.closest('button')?.dataset.m;
     if (!m) return;
     if (m === 'translate' || m === 'rotate' || m === 'scale') E.setMode(m);
+    else if (m === 'scale-down') E.scaleBy(1 / (opts.scaleFactor ?? 1.25));
+    else if (m === 'scale-up') E.scaleBy(opts.scaleFactor ?? 1.25);
     else if (m === 'floor') opts.onMenu?.('floor');
     else if (m === 'scope') E.setScope(scope === 'teil' ? 'gruppe' : 'teil');
     else if (m === 'close') E.clear();
@@ -465,7 +503,7 @@ const DEFAULT_DOC={
   terrain:{seed:43129,height:2.6,macroScale:3.2,detail:0.55},
   sources:{
     terrain:{repo:'ZyFou/ProceduralTerrains',commit:ZYFOU_COMMIT,license:'MIT',files:['src/engine/terrain/noise/cpuNoise.js','src/engine/terrain/noise/seedDomain.js']},
-    sceneEdit:{owner:'KFB ToolBox',module:'tools/KFB-ToolBox/lib/edit-layer.js',donorBlob:'c97b3537f71e939176f3ae5ce7ae83feabb7918f',lineage:['Dungeon Room Study S21/S22','Resident Atlas S7'],interaction:['object-menu','pointerup-select','translate','rotate','scale','drop','world-local','snap']},
+    sceneEdit:{owner:'KFB ToolBox',module:'tools/KFB-ToolBox/lib/edit-layer.js',baseDonorBlob:'c97b3537f71e939176f3ae5ce7ae83feabb7918f',moduleBlob:'c15a200ba8615d55f9d3ae26616e0a8ceba8dc01',lineage:['Dungeon Room Study S21/S22','Resident Atlas S7','ToolBox R3 uniform-scale extension'],interaction:['object-menu','pointerup-select','translate','rotate','scale-gizmo','uniform-scale-down','uniform-scale-up','drop','world-local','snap']},
     resident:{owner:'KFB Resident Atlas',residentId:'caveman',donorPath:'tools/resident_atlas/scenes/caveman-cave-camp.json'}
   },
   objects:[
@@ -855,7 +893,7 @@ async function showScene(){
   applyTerrainUI(sceneDoc.terrain);buildTerrain();
   sceneLoadToken++;await buildSceneObjects(sceneLoadToken);
   camera.position.set(10,7.2,11.5);controls.target.set(0,.5,0);controls.update();
-  status('scene ready · object menu: move / rotate / scale / drop / world-local / close · save / reload','ok');
+  status('scene ready · object menu: move / rotate / smaller / larger / drop / world-local / close · S free scale · save / reload','ok');
 }
 function updateReviewUnlock(){E('viewScene').disabled=!(actorSourceReady&&propSourceReady)}
 
@@ -969,6 +1007,9 @@ async function runSelfTest(){
   const a=terrainHeightAt(-4,-4),b=terrainHeightAt(4,4);ok('terrain varies',!near(a,b,1e-4),a+' / '+b);
   const prop=sceneObjects.get(PROP.id);selectRoot(prop);
   ok('object-attached mini menu opens',EDIT.node===prop&&!E('objmenu').hidden);
+  const baseUniform=prop.scale.x;
+  EDIT.scaleBy(.8);ok('uniform smaller scales prop',near(prop.scale.x,baseUniform*.8));
+  EDIT.scaleBy(1.25);ok('uniform larger reverses smaller',near(prop.scale.x,baseUniform));
   EDIT.setMode('scale');prop.scale.setScalar(1.15);prop.position.x+=1.2;prop.position.z-=.7;prop.rotation.y+=THREE.MathUtils.degToRad(15);updateRecordFromRoot(prop);
   const dropReport=EDIT.drop();ok('shared drop reports a surface',dropReport.length===1&&!dropReport[0].refused);
   onEditorMenu('space');ok('world/local toggle reaches gizmo',gizmoSpace==='local');onEditorMenu('space');
