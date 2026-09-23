@@ -166,6 +166,82 @@ Georg accepted the repaired local HTML candidate:
 Human result: **WB1-TERRAIN-SCENE-01 R1 FUNCTIONAL FOUNDATION ACCEPTED**.
 
 Next requested slice: replace the local WorldBuilder transform UI with the newer shared Dungeon/Resident inline 3D Edit Layer donor (object-attached mini-menu including move / rotate / scale / drop / world-local / close), while preserving the accepted terrain, texture and persistence foundation.
+## Shared Inline 3D Editor · R2 candidate
+
+After the accepted R1 functional foundation, WorldBuilder now consumes the promoted shared ToolBox edit layer instead of owning a second local TransformControls/picking implementation.
+
+Exact promoted module:
+`tools/KFB-ToolBox/lib/edit-layer.js`
+
+Exact Git blob:
+`c97b3537f71e939176f3ae5ce7ae83feabb7918f`
+
+This is byte-identical to the existing Resident Atlas S7 / Rig-Werkstatt donor, itself extracted from Dungeon Room Study S21/S22. No reimplementation was introduced.
+
+WorldBuilder adapter now exposes the S7 object-attached mini-menu:
+
+- ✥ move;
+- ⟳ rotate;
+- ⤢ scale;
+- ⬓ drop to visible surface below;
+- ⊹ world/local axes;
+- ✕ close selection;
+- shared snap: 0.05 units / 15°.
+
+Scale is now part of the WorldBuilder scene transform and survives save/reload.
+
+### Static / integration contract
+**32/32 PASS**
+
+Checks cover:
+- exact shared donor blob;
+- canonical Source and bundled Review module syntax;
+- Review normalization back to canonical Source;
+- current Source/edit-layer markers;
+- one-gizmo donor contract;
+- pointerup selection with 4 px drag threshold;
+- visible-only picking;
+- all six mini-menu controls;
+- shared drop path;
+- world/local gizmo-space toggle;
+- scale load / persistence / reload assertion;
+- removal of the old local TransformControls owner, local ray picker and obsolete side-button handlers;
+- editor disabled in source-object views and enabled in Scene Editor;
+- object-attached menu follows camera;
+- close-selection state sync;
+- embedded self-test expanded to **20 assertions**.
+
+### Exact pinned runtime source paths
+**4/4 PASS**
+
+- Caveman actor;
+- Boulder prop;
+- Rig_Medium CombatMelee animation file;
+- `caveman_texture.png`.
+
+### Shared module identity
+**1/1 PASS** — promoted ToolBox file is byte-identical to donor blob `c97b3537…`.
+
+### Browser / visual
+Embedded browser self-test: **20 assertions prepared / 0 executed** in this connector-only gate.
+
+Automated browser runtime tests: **0**.  
+Screenshots: **0**.
+
+No browser PASS or human mini-menu PASS is claimed yet.
+
+### Current human gate
+
+Open the new shared-editor review and verify:
+
+1. click Caveman / Boulder → compact menu appears at the object;
+2. ✥ move;
+3. ⟳ rotate;
+4. ⤢ scale;
+5. ⬓ drop;
+6. ⊹ toggles world/local axes;
+7. ✕ clears selection;
+8. Save → change transform → Reload restores position / rotation / scale.
 ## Publication
 
 Cloudflare: **HOLD · NOT PUBLISHED**.  
