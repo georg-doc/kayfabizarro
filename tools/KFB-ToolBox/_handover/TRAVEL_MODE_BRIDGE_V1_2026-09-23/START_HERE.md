@@ -56,8 +56,9 @@ TMB-1E final:
 TMB-2 current:
 - Travel Draft PR #38;
 - branch `chatgpt-web/travel-mode-bridge-tmb2-double-space-2026-09-23`;
-- Return head `f7d65faff02cfe21bf82ee06150efc94068d150a`;
-- final review head `ff148d317d1b2a1cbc4f16fb1841d948ac9187c7`;
+- current Recovery / handoff head `1976c6c813161013b7c97bf5de55f71575a175ef`;
+- verified pre-Recovery runtime/review head `f7d65faff02cfe21bf82ee06150efc94068d150a`;
+- review implementation head `ff148d317d1b2a1cbc4f16fb1841d948ac9187c7`;
 - pure timing adapter: `site/world-builder/mode-intent.js`, blob `d9d50463decf16f53ac339e160e7de693d6497d4`;
 - first fresh Space still queues the existing Ground jump immediately;
 - Ground then reports the fresh tap upward and still capture-claims/stops the event;
@@ -65,8 +66,9 @@ TMB-2 current:
 - WB0 routes that request only through existing `setLocomotion('FLIGHT') → runtime-mode.js`;
 - no new movement, camera or global keyboard owner;
 - human timing candidates: **240 / 320 / 400 ms**; initial candidate 320 ms is not canonical;
-- CI `35873967992 / 107224966389`: **119/119 PASS · build PASS · verify PASS**;
-- CI artifact `10756465783` · digest `sha256:083b53e95488ddedd4daea2fa4b2ec15749973d14db6d2c32ed318dd40f953bd`;
+- latest verified runtime/review CI `35874165486 / 107225646882`: **119/119 PASS · build PASS · verify PASS**;
+- CI artifact `10756131259` · digest `sha256:0c00158e6673e6e5a2157d13a0f5dc4d9d522cde83959d10739734cf1d63b43f`;
+- timeout sanity proved `ff148d… → f7d65f…` and `f7d65f… → 1976c6…` touch only TMB-2 Return/recovery documentation after the green review implementation;
 - human review: `site/travel-mode-bridge/tmb2/TMB2_DOUBLE_SPACE_TIMING_REVIEW.html`, blob `da89cd187388ea429ab73a853eb7ae5d56f5914d`;
 - TMB-3 landing remains HOLD.
 
