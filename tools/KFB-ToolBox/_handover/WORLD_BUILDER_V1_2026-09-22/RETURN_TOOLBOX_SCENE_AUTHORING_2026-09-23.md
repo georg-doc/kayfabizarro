@@ -20,6 +20,23 @@ Georg has accepted:
 
 Human result: **WB1 SHARED INLINE EDITOR R2 ACCEPTED**.
 
+## Georg follow-up direction · accepted foundation → next terrain authoring
+
+Georg confirms the current WB1 scene-authoring foundation works and is acceptable.
+
+Clarifications / future direction:
+- the object-attached inline editor is the correct transform direction;
+- do not drift back to a separate WorldBuilder transform/picking implementation;
+- the newer shared editor already provides free Scale, and the current R3 candidate adds only the convenient uniform `−/+` size gesture;
+- a future global ToolBox editor version should remain modular and be consumed through `tools/KFB-ToolBox/lib/edit-layer.js`;
+- later UI cleanup should reduce/collapse redundant side-panel editor explanation/controls because object transforms live inline at the selected object;
+- the next functional terrain-authoring idea is continuous **Terrain Sculpting**: Raise/Lower soft hills and depressions by brush radius/strength, not voxel/hex terrain.
+
+Prepared planning SSOT:
+`tools/KFB-ToolBox/_handover/WORLD_BUILDER_V1_2026-09-22/WB2_TERRAIN_SCULPTING_PROPOSAL_2026-09-23.md`
+
+WB2 runtime is **not started** in this Return. It keeps the procedural base reversible and proposes a persisted additive sculpt-stroke layer.
+
 ## Current R3 request
 
 Add a simple global uniform-size gesture so a source prop can become a quick size variant, e.g. Boulder → small rock / pebble or larger rock, without removing the accepted free Scale gizmo.
