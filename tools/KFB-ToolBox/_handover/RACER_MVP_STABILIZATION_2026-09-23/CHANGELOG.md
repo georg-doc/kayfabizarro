@@ -117,3 +117,26 @@ Exactly one next gate:
 
 Exactly one next gate:
 **TARCH-0 R2 · integrated Racer Chat HTML human review**.
+
+
+## 2026-09-23 · R2 TUNE → R3 Track Edge + Banking
+
+- R2 retained the TARCH architecture direction but returned TUNE;
+- saw-tooth edge artifacts were proven to come from the chat-review painter path, not the runtime TARCH Ground Void;
+- runtime Ground Void architecture therefore remains unchanged;
+- actual runtime banking sign corrected in `cologne-route.v1.js`: `-curv*26` → `curv*26`;
+- gain/cap/smoothing, route topology and widths unchanged;
+- R3 banking regression added;
+- runtime/test head `5f1ec224a96af7444f0c86ebbcf178dc70d35b72`;
+- GitHub runs `35859446787` and `35859451138`: SUCCESS;
+- **11/11 PASS · 0 fail · 0 skipped**;
+- R3 chat review uses verified `threejs-focus-review-v1`;
+- review-only road/shoulder/wall/ground edges changed to continuous polygons;
+- hard-bend / bank-side camera presets and inside/outside guide added;
+- R3 artifact SHA-256 `980b245478a28f9e39dcf284ece6caaf9e013a65a766f9c0fb51121e48e2d88b`;
+- Race PR #33 current docs head `59fa2a4235e7705a495bbd724d92a315befe1628`;
+- Cloudflare remains deferred;
+- grounding, clamp/jitter, trails and jump/landing remain later.
+
+Exactly one next gate:
+**R3 · TRACK EDGE + BANKING CHAT HTML HUMAN REVIEW**.
