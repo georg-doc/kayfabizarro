@@ -140,3 +140,21 @@ Exactly one next gate:
 
 Exactly one next gate:
 **R3 · TRACK EDGE + BANKING CHAT HTML HUMAN REVIEW**.
+
+
+## 2026-09-23 · R3 review fail → R3b harness repair
+
+- R3 human review showed arch frames while the track largely disappeared in CHASE;
+- sanity confirmed runtime road, Ground ShapeGeometry and corrected banking were still present;
+- failure localized to the chat review renderer, not runtime;
+- root cause: one long road/shoulder/wall review polygon was discarded when any vertex moved behind the camera;
+- R3b restores road/shoulder/walls to short per-segment review quads;
+- continuous city-ground review edge is retained to preserve the R2 saw-tooth cleanup;
+- corrected banking remains unchanged;
+- no runtime file changed for R3b;
+- R3b artifact `KFB_Racer_TARCH0_R3b_track_edge_banking_review.html`;
+- SHA-256 `100310fbc4794f317ce572d403142ee464e6b2a57a4e32a5a84382294b03fd3b`;
+- Race PR #33 current docs head `308ed3b7e464f573b85d004f13fbf9e0642c818c`.
+
+Exactly one next gate:
+**R3b · TRACK EDGE + BANKING CHAT HTML HUMAN RECHECK**.
