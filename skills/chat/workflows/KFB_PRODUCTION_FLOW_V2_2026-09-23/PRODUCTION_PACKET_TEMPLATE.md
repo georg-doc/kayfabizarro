@@ -3,6 +3,17 @@
 Status: TEMPLATE
 Purpose: one closed handoff for Coworker / Claude Design / WSA
 
+## 0 · Packet status
+
+Evaluate against:
+`CLOSED_PACKET_CRITERIA.md`
+
+Status:
+`OPEN_SOURCE | OPEN_MEASUREMENT | OPEN_OWNER | OPEN_PRODUCT_DECISION | CLOSED | CLOSED_WITH_HUMAN_GATE`
+
+Productive Claude/Coworker/WSA execution starts only from:
+`CLOSED` or `CLOSED_WITH_HUMAN_GATE`.
+
 ## Für Georg
 
 Dieses Paket soll verhindern, dass ein neues Tool wieder bei null anfängt.
@@ -177,3 +188,18 @@ Then:
 - tests;
 - changed files;
 - unresolved items.
+
+
+## Recipient guesswork check
+
+Before handoff answer YES/NO:
+
+- Can the recipient identify every required source without searching?
+- Can the recipient execute without estimating missing measurements?
+- Are accepted components explicitly locked?
+- Is the one seam named?
+- Is the one coherent outcome named?
+- Are remaining human decisions explicit rather than omitted?
+
+If any required execution answer is NO:
+the packet is not CLOSED.
