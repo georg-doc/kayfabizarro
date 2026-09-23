@@ -512,3 +512,20 @@ Current router:
 `tools/KFB-ToolBox/_handover/RACER_MVP_STABILIZATION_2026-09-23/START_HERE.md`.
 
 Exactly one next gate: **RSTAB-1 HUMAN GEOMETRY GATE** — visible tunnel/ground-cut + support review. Only human ACCEPT advances to RSTAB-2.
+
+
+## 2026-09-23 · WorldBuilder v1 · WB1-P1 accepted
+
+WB1-P1 Environment Profile is **COMPLETE / HUMAN SCOPE PASS** on Draft PR #177.
+
+Evidence:
+- frozen accepted runtime: `a48729460c28edc2ae95abbfcdef66fe52a84f50`;
+- public Stage: `https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/world-builder-p1-review/`;
+- public browser run `35807858806`: PASS;
+- source object rendered, `consoleErrors=0`, integrated pool `6/6`, `FogExp2 0.019`, Local Visibility exercised, SOURCE→MATTE→SOURCE restored;
+- Georg accepted the bounded P1 behavior.
+
+Human caveat: the review scene's primary light placement and torch staging/spacing are **not production lighting canon**.
+
+Exactly one next WorldBuilder gate: **WB1-P2 · same tiny logical recipe on FLAT / SPHERE / TORUS.**
+P2 was not started in the P1 handoff.
