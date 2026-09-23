@@ -1,4 +1,4 @@
-# ChatGPT attached HTML previews · external texture limitation
+# ChatGPT attached HTML previews · WebGL texture preview limitation
 
 Status: **OBSERVED HOST-SURFACE LIMITATION · SOURCE ASSET NOT INVALIDATED**  
 Date: 2026-09-23  
@@ -10,13 +10,13 @@ Georg reports a recurring pattern across ChatGPT-delivered HTML/3D previews:
 
 - geometry loads;
 - actor/object identity is otherwise correct;
-- external or separately declared texture maps may be missing in the rendered preview.
+- texture maps may be missing in the rendered preview — including textures already embedded inside a valid GLB.
 
 This has now been observed again on the WorldBuilder WB1 Caveman review.
 
 Do **not** infer from this symptom that the source GLB/GLTF, Resident Atlas entry or asset pack has no valid texture.
 
-The host/root cause is not yet proven. Treat it as a ChatGPT-review-surface limitation until a specific asset-side failure is measured.
+The host/root cause is not yet proven. Current evidence is compatible with a sandbox/browser-path problem during image decode, Blob/ImageBitmap handling or WebGL texture upload rather than an asset-side absence. Treat it as a ChatGPT-review-surface limitation until a specific asset-side failure is measured.
 
 ## Source-first rule
 
@@ -47,11 +47,27 @@ This is a review-host adapter. It must not mutate the Registry, source asset, Re
 
 ### Caveman
 
-Resident Atlas source declares:
+Exact binary inspection of:
+
+`media/3D_Assets/KayKit_Mystery_Series6/8 - February 2025 - Caveman/characters/Caveman.glb`
+@ `891eadf01e218f5fc21387e64cea1fec8332c5b6`
+
+proves the source GLB itself is valid GLB 2.0 and already contains:
+- material `caveman`;
+- `pbrMetallicRoughness.baseColorTexture.index = 0`;
+- texture 0 → image 0;
+- image `caveman_texture`;
+- MIME `image/png`;
+- embedded `bufferView = 6`;
+- no external image URI is required for that embedded texture.
+
+Therefore the untextured ChatGPT review symptom cannot be explained simply by a missing external PNG path.
+
+Resident Atlas also exposes the exact source texture as:
 
 `media/3D_Assets/KayKit_Mystery_Series6/8 - February 2025 - Caveman/assets/gltf/caveman_texture.png`
 
-The WB1 review now binds that exact texture explicitly in the ChatGPT review host.
+The WB1 R1 review binds that exact texture explicitly as a host-adapter fallback.
 
 ### Orc Raider
 
