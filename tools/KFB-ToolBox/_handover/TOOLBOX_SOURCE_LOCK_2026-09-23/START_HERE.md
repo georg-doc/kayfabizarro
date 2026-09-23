@@ -5,6 +5,29 @@ Status: **CURRENT CORRECTION · CLAUDE ROUND 1 = REJECTED FOUNDATION · NO FURTH
 Owner remains:
 `georg-doc/kayfabizarro/tools/KFB-ToolBox/`
 
+
+## Current override · Resident-set portability first
+
+The earlier isolated-source review is now **second**, not first.
+
+Repeated human review across the current ChatGPT HTML previews shows a shared transport failure class: models/textures/poses/attachments can be lost when a known-good source is reconstructed into a review file.
+
+Read first:
+`RESIDENT_SET_PORTABILITY_GATE.md`
+
+Current P0:
+**TB-RESIDENT-PORTABILITY-01**
+
+Use three complete Resident Atlas donor sets:
+- Goth Girl;
+- Orc Warband;
+- Animatronic.
+
+Prove donor → review import → export/reload before returning to FrizzleBob lineage/roster review.
+
+Rule:
+**when a working compound Resident set exists, the set is the donor. Do not rebuild it from its individual assets merely to make a preview.**
+
 ## What went wrong
 
 The first Stage-First Claude round reused the desired UI shape, but loaded the wrong character truth.
