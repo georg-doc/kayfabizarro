@@ -154,6 +154,18 @@ No browser PASS, visual PASS, or live/public claim is made.
 10. Reload saved and confirm the edited Character Y is restored.
 11. Continue editing.
 
+## Human R1 re-review · PASS
+
+Georg accepted the repaired local HTML candidate:
+
+- Caveman texture: **PASS**;
+- Character green Y transform: **PASS**;
+- Character Y save/reload: **PASS**;
+- palette / field-of-view layout: **PASS**.
+
+Human result: **WB1-TERRAIN-SCENE-01 R1 FUNCTIONAL FOUNDATION ACCEPTED**.
+
+Next requested slice: replace the local WorldBuilder transform UI with the newer shared Dungeon/Resident inline 3D Edit Layer donor (object-attached mini-menu including move / rotate / scale / drop / world-local / close), while preserving the accepted terrain, texture and persistence foundation.
 ## Publication
 
 Cloudflare: **HOLD · NOT PUBLISHED**.  
