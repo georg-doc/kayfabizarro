@@ -1,6 +1,6 @@
 {
-  "schema": "kfb.elastic-grotesque-clay.huerth01.source/0.1",
-  "status": "BRANCH_CANDIDATE_CHAT_REVIEW_NOT_PUBLIC",
+  "schema": "kfb.elastic-grotesque-clay.huerth01.source/0.2",
+  "status": "BRANCH_CANDIDATE_V2_CHAT_REVIEW_NOT_PUBLIC",
   "baseCommit": "dca52479dad9c176acde6e7c7167dc133bf50bdd",
   "osm": {
     "dataset": "tools/osm-city-lab/data/huerth-v0/normalized.json",
@@ -61,5 +61,17 @@
     "movementOwnerCreated": false,
     "terrainOwnerCreated": false,
     "celShadingRequired": false
+  },
+  "acceptedStyleBenchmark": {
+    "decision": "GEORG_ACCEPTED_SHAPE_DIRECTION_COLOR_EXPANSION_REQUESTED",
+    "image": "skills/chat/workflows/KFB_ELASTIC_GROTESQUE_CLAY_V1_2026-09-23/benchmark/KFB_EGC_STYLE_BENCHMARK_2026-09-23.jpg",
+    "contract": "skills/chat/workflows/KFB_ELASTIC_GROTESQUE_CLAY_V1_2026-09-23/STYLE_BENCHMARK.md"
+  },
+  "elasticV2": {
+    "groupWarp": "COHERENT_LOW_FREQUENCY_FIELD",
+    "facadeDetails": "IRREGULAR_2_3_WINDOWS_NO_FRAME_PLUS_ONE_DOOR",
+    "roadSurface": "CONTINUOUS_CATMULL_ROM_RIBBON",
+    "palette": "KFB_WONKY_90S_CLAY_V1",
+    "futureEnterableDoors": "DEFERRED_ASSETREF_REQUIRED"
   }
 }
