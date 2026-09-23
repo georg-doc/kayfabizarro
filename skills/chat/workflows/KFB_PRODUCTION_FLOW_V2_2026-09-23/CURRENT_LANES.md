@@ -212,3 +212,64 @@ Curtain D0 and ToolBox source/Resident consolidation.
 
 After A/C are stable:
 prepare one coherent ToolBox/WorldBuilder Production Packet for Claude Design rather than another chain of micro briefs.
+
+
+## Current override · Blender / WB2 / Racer R3d
+
+This block supersedes older snapshot lines above where they differ.
+
+### Blender MCP
+
+PR:
+`georg-doc/kayfabizarro#192`
+
+Head:
+`b49fb6e1adde070d658e1cc21dadb3294164cb29`
+
+Status:
+- Clown JUG-P1 authored in Blender 5.2.2 LTS through Blender MCP;
+- reproducible script;
+- GLB export;
+- Preview GIF;
+- numerical deformed-mesh clearance checks;
+- Georg visual PASS ~80 %;
+- browser/three.js playback not yet tested.
+
+Current authoring continuation:
+Orc Warband performance is actively being built in Blender.
+
+Production rule:
+use `BLENDER_MCP_PRODUCTION_ONBOARDING.md`; do not restart the current Warband scene.
+
+### WorldBuilder
+
+Current WB2 PR:
+`#190`
+
+Head:
+`8922d4b1329fbd47b8754db9dd04ca6b9eb0ee9e`
+
+Status:
+- terrain sculpt implementation candidate;
+- 24/24 sculpt math/geometry PASS;
+- 33/33 source/review contract PASS;
+- human Chat HTML review pending.
+
+WB1/R2 shared editor remains accepted.
+
+### Racer
+
+PR #33 current head at latest check:
+`382047219b394de61074031d6968e3fabe86ed7c`
+
+R3d architecture cleanup code is present on the current branch:
+- one closed volumetric track/barrier profile;
+- duplicate wall/cap/lane-band owners removed;
+- complete underside;
+- thick rounded TARCH frames;
+- deep ground follows actual void contour.
+
+Important:
+Racer Return/PR body still partly describes R3c; refresh current R3d evidence before a human gate.
+
+Blender remains a **possible visual-mesh compiler fallback/A-B**, not the Racer route/contact owner.
