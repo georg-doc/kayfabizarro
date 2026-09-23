@@ -1,6 +1,6 @@
 # KFB Racer MVP Stabilization · 2026-09-23
 
-Status: **TARCH-0 R1 ACCEPTED · R2 TUNE · R3 REVIEW-HARNESS FAIL · R3b HUMAN RECHECK PENDING · CLOUDFLARE DEFERRED**  
+Status: **TARCH-0 R1 ACCEPTED · R2/R3/R3b TUNE · R3c TRACK-BODY/ROUNDED-FRAMES CHAT-HTML PENDING · CLOUDFLARE DEFERRED**  
 Runtime owner: `georg-doc/KFB-Stunt-Car-Race`  
 Visual authoring source: `KFB Cologne Race Option C-3/` pinned at Race `main@cc80f4a1c6c509db9668df79fd53b13cee093a9d`.  
 Goal: **one actually playable full-lap Racer MVP before further visual/feature expansion.**
@@ -182,6 +182,66 @@ Race PR #33 current docs head:
 
 Exactly one current gate:
 **R3b · TRACK EDGE + BANKING CHAT HTML HUMAN RECHECK**
+
+
+### R3c · closed track body + rounded frames
+
+R3b human review remained **TUNE**:
+- brown ground/track still read as interpenetrating in several angles;
+- flat bands made curve anatomy ambiguous;
+- underside looked unfinished;
+- TARCH frames showed overlap/gap seams and read too technical.
+
+Use What Works:
+- Dropbox owner/donor evidence:
+  `/CLAUDE/KFB Stunt Car Race/KFB Cologne Race Option C-3/docs/MODULES_AND_DONORS.md`;
+- project-owned visual donor:
+  `cologne-landmarks.v1.js`;
+- proven donor strategy: continuous smooth `TubeGeometry` instead of segmented BoxGeometry chains.
+
+Runtime/test head:
+`b48ba46bb23e656cad968cb347bde7aa4bd445c4`
+
+Track:
+- one cyclic closed `track-body`;
+- road + shoulders + side skirts + full underside in one cross-section;
+- old primary flat road/shoulder ribbons removed;
+- old partial `structure-soffit` / underside skirts removed.
+
+Supports:
+- tested RSTAB-1 `structurePillarSpan()` salvaged;
+- support tops use local banked soffit;
+- former hotspots 166/179/187 covered;
+- support cylinders use 14 radial segments.
+
+TARCH frames:
+- old post/post/lintel BoxGeometry composition removed;
+- one continuous `CurvePath` per portal;
+- rounded `QuadraticBezierCurve3` corners;
+- one smooth `TubeGeometry` mesh per frame;
+- tube radius 0.48 m;
+- corner radius 1.15 m;
+- bases remain on wall seam `u=1.30`.
+
+CI:
+- `35874800062 / 107227822852`: SUCCESS
+- `35874807681 / 107227851828`: SUCCESS
+- **17/17 PASS · 0 fail · 0 skipped**
+
+Race PR #33 current docs head:
+`f8f29f7b742e0b18fd9887398cd6bb4b7c320a32`
+
+R3c artifact:
+`KFB_Racer_TARCH0_R3c_track_body_rounded_frames_review.html`
+
+SHA-256:
+`36a363efd5412b41f9b8bea26998e32a16a1965b9335000ed8b82d6f795ff0f0`
+
+Exactly one current gate:
+**R3c · TRACK BODY + ROUNDED FRAMES CHAT HTML HUMAN REVIEW**
+
+Still later:
+vehicle grounding/contact → hard-clamp/jitter → trails/speedlines → jump/landing.
 
 ## Current checkpoint · RSTAB-1 · 2026-09-23
 
