@@ -111,3 +111,38 @@ No new persistence schema is needed.
 ### FIRST PRODUCTIVE CANDIDATE
 ToolBox remains the preferred first coherent Production Packet after source/Resident consolidation.
 No implementation started by this alignment.
+
+
+## 2026-09-23 · First CLOSED ToolBox production packet
+
+### RESULT
+Created:
+`packets/TOOLBOX_SOURCE_SAFE_INTEGRATION_01.md`
+
+Status:
+`CLOSED_WITH_HUMAN_GATE`
+
+The packet pins:
+- exact Stage-First visual donor by Dropbox file id/revision/content hash;
+- exact Studio v18 roster source by Dropbox file id/revision/content hash;
+- later saved `kfb.pets/1.2.9` state by Dropbox file id/revision/content hash;
+- current FrizzleBob Driver Graft blobs;
+- EyeRig / Medium-Large / Legacy profile owners;
+- accepted WorldBuilder R2 shared editor commit/blob;
+- existing `kfb.scene-patch.v1`;
+- exact Resident Atlas source commit/blobs/pins;
+- Goth Girl, Orc Warband and Animatronic recipe facts.
+
+### EXECUTOR
+Preferred first executor:
+**Claude Coworker**
+
+Added paste-ready start:
+`packets/TOOLBOX_SOURCE_SAFE_INTEGRATION_01_COWORKER_START.md`
+
+### HUMAN POLICY
+No micro-gates during source/adaptor work.
+Coworker returns one coherent clickable ToolBox review artifact.
+
+### WSA
+No WSA-only capability identified.
