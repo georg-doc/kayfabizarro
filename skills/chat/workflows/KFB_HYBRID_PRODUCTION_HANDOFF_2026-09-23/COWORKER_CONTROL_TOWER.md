@@ -151,3 +151,47 @@ Every actual Georg gate:
 
 After any Coworker context loss:
 read this file + CURRENT_STATE + exactly one owner PR.
+
+
+## Model recommendation
+
+Current recommended Coworker model:
+**Claude Opus 5.5**
+
+Reason:
+this control-tower role is dominated by:
+- long-running source reconciliation;
+- multi-tool work;
+- agentic coding;
+- subagent coordination;
+- cross-file integration.
+
+Switch in the same chat only after the model-switch checkpoint:
+`COWORKER_OPUS55_MODEL_SWITCH.md`
+
+Do not treat model capability as permission to widen scope.
+
+## Performance-animation routing
+
+When a Blender/Warband issue is not merely “cartoon timing” but a physical task such as:
+- drumming;
+- guitar strumming;
+- juggling;
+- hammering;
+- prop contact;
+
+load:
+`PERFORMANCE_ANIMATION_PILOT.md`
+
+Use contact-first mechanics + beat/event sidecar rather than repeated visual guessing.
+
+The pilot remains candidate-only until Warband + one second action family prove it.
+
+## WSA synchronization
+
+Use:
+`COWORKER_WSA_SYNC_BRIDGE.md`
+
+Coworker remains the current-state writer.
+WSA writes execution Returns only.
+Web Lead reconciles after a meaningful milestone.
