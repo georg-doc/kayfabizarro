@@ -1247,3 +1247,20 @@ Exactly one next gate: **RSTAB-1 · static geometry intrusions — ground wedges
 - current C-3 browser/Cloudflare visual acceptance remains pending.
 
 Exactly one next gate: **RSTAB-1 HUMAN GEOMETRY GATE**.
+
+
+## 2026-09-23 · Racer RSTAB-1 zero-install human gate
+
+- Race Draft PR #32 remains the runtime owner; technical geometry tests stay **5/5 PASS** with runtime-tested head `e9c72a404aff63d46762d9101a727a9e7f94a6b0`;
+- current Race handoff branch head after metadata sync: `d712a17904f532c2eca9f120d24924073eae0f3c`;
+- kayfabizarro Draft PR #178 adds the isolated Stage mirror `kfb-hub/stage/stunt-world/cologne-option-c-rstab1/`;
+- C-3 `lab-v9` Stage parity: **20/20 filenames + blob SHAs identical**;
+- Stage source branch `stage/racer-rstab1-review-2026-09-23@13191b0f600878f96b06db8142d8d7393411a67d`;
+- Cloudflare route source commit `77e4bd44aac0d0ce720c5b0149eedb3eef62ac36`;
+- Cloudflare Hub metadata commit `a075934bb5f8628535b673459b0b9ddcc0af5312`;
+- intended human route: `https://kayfabizarro.pages.dev/kfb-hub/stage/stunt-world/cologne-option-c-rstab1/`;
+- public verification remains **UNKNOWN / PENDING** because both Web fetch and container DNS cannot access `pages.dev` in this environment;
+- Hub and router now point the Racer human gate to the Pages route; local HTTP is developer fallback only;
+- no RSTAB-2 implementation, no Race merge and no product Live promotion occurred.
+
+Exactly one next gate remains **RSTAB-1 HUMAN GEOMETRY GATE**. Only human ACCEPT advances to RSTAB-2.
