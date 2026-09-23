@@ -14,8 +14,12 @@
 > Current gate: **WB2-TERRAIN-SCULPT-01 · RAISE/LOWER HEIGHTFIELD BRUSH**.
 > Shared editor owner: `tools/KFB-ToolBox/lib/edit-layer.js` · accepted R2 base `c97b3537f71e939176f3ae5ce7ae83feabb7918f` · R3 candidate `c15a200ba8615d55f9d3ae26616e0a8ceba8dc01`.
 > Proposal: `SHARED_EDITOR_UNIFORM_SCALE_PROPOSAL_2026-09-23.md`.
-> Next terrain-authoring planning is ready at `WB2_TERRAIN_SCULPTING_PROPOSAL_2026-09-23.md`: non-destructive continuous-heightfield Raise/Lower brush; no voxel/hex terrain; runtime starts only after R3 PASS or explicit reprioritization.
+> WB2 terrain-authoring brief: `WB2_TERRAIN_SCULPTING_PROPOSAL_2026-09-23.md`. Runtime candidate is now implemented on stacked Draft PR #190; R3 is optional/non-blocking.
 > R3 remains an optional/non-blocking shared-editor convenience candidate: **26/26 + 4/4 + 1/1 PASS**, no human R3 claim. WB2 is now reprioritized by Georg. Cloudflare remains HOLD.
+> WB2 implementation: branch `chatgpt-web/worldbuilder-wb2-terrain-sculpt-2026-09-23` · stacked Draft PR **#190**.
+> WB2 candidate: `worldbuilder/wb2-terrain-sculpt-01/WB2_TERRAIN_SCULPT_01_SOURCE.html` + `WB2_TERRAIN_SCULPT_01_REVIEW.html` + `terrain-sculpt.js`.
+> WB2 evidence: **24/24** sculpt math/geometry + **33/33** Source/Review contract + **4/4** exact runtime sources; embedded browser self-test **28 prepared / 0 executed**.
+> WB2 Return: `RETURN_WB2_TERRAIN_SCULPT_2026-09-23.md`. Exactly one next gate: Georg Chat-HTML terrain-shape review.
 > The older `WB1-TERRAIN-EDITOR-01` wording is superseded where it omits the Resident/animation seam.
 
 Status: **PREPARED · WEB FIRST · CLAUDE DESIGN AFTER TECHNICAL PREFLIGHT · WORK ESCALATION ONLY**
