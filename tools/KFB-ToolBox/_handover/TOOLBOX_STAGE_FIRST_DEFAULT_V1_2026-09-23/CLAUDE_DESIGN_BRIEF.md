@@ -1,14 +1,17 @@
 # Claude Design · KFB ToolBox Stage-First Default · 2026-09-23
 
-> **HOLD · DO NOT CONTINUE ROUND 1**
+> **HOLD · DO NOT CONTINUE**
 >
-> Georg rejected the first build because it used the old Cube Bunny as FrizzleBob, lost saved Cube-Pet configuration, and did not use the full current Studio actor source.
+> The Round-1 build remains rejected.
 >
-> Read first:
-> `tools/KFB-ToolBox/_handover/TOOLBOX_SOURCE_LOCK_2026-09-23/START_HERE.md`
+> A newer gate now comes first:
+> `tools/KFB-ToolBox/_handover/TOOLBOX_SOURCE_LOCK_2026-09-23/RESIDENT_SET_PORTABILITY_GATE.md`
 >
-> Do **not** repair the current Round-1 file. Preserve/export it as failed evidence.
-> The next gate is source review only: real Driver Graft alone, saved Cube-Pets alone, actual Studio roster. No new consolidated UI until Georg accepts those sources.
+> Before any Claude Design ToolBox integration, complete **TB-RESIDENT-PORTABILITY-01**:
+> Goth Girl + Orc Warband + Animatronic must survive donor → review import → export/reload with models, textures, pose, grounding, props/attachments, actor count and animation intact.
+>
+> After that: FrizzleBob lineage + full roster review.
+> Only then may this Stage-First Claude brief resume.
 
 Use this together with:
 `START_HERE.md`
