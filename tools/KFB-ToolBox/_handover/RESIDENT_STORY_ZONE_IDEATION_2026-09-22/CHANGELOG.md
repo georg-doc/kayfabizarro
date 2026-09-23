@@ -510,3 +510,58 @@ Concept only. No BPM/loop metadata, visualizer runtime, audio trim/crossfade edi
 
 ### STATUS
 Concept/donor pinning only. No Tourbus runtime, band branding/deformation, driving, loop metadata or public Stage built in this checkpoint.
+
+
+## 2026-09-23 · Billboard / Media Residency lane
+
+### RECOVERED PRIOR DIRECTION
+Dropbox history §39 already defined the **Satirical Roadside Media Layer** with the principle:
+**“Die Straße selbst sendet.”**
+
+Recovered elements include:
+- modular retro billboard family;
+- ad-busting / satire;
+- layered hidden reveal;
+- clickable/conversational hero billboards;
+- embedded short video/broadcast;
+- distance audio;
+- Almanac memory;
+- CCTV/media props as lightweight personalities.
+
+### CURRENT SOURCE ALIGNMENT
+- Racer addendum already defines source-backed billboard reuse plus `FIT_CARD / COVER_CROP / DETAIL_CROP / COLLAGE_LOOP`.
+- Option C-2 already proves `buildBillboard()` + `renderCardQuarter()` with real Kenney billboard source, PDF.js and CanvasTexture.
+- Current billboard handoff proves nine physical donors across Kenney and KFB/Poly.
+
+### NEW MODULARIZATION
+Added machine-readable:
+`BILLBOARD_MEDIA_SCENE_v0.json`
+
+Content modes:
+- `CARD_PDF`
+- `TRIPLET`
+- `COLLAGE_LOOP`
+- `HERO_INTERACTIVE`
+
+### CHATTERBOX / TRIPLET
+- Billboard may bind a media/sponsor persona and a signature slogan/Triplet pool.
+- Suggested grammar: billboard POV → SHOW IT → SPIN IT → SELL IT.
+- Keep one stable seeded message per encounter/visit; avoid random text spam.
+- ChatterBox remains content owner; billboard adapter only renders/presents.
+
+### FIRST PROOF
+`BBS-01`:
+one verified billboard + clean procedural terrain + 2–3 rocks + measured CanvasTexture plane + switchable Card/Triplet/Collage content.
+
+No video, async LLM, Almanac runtime or multi-billboard world required.
+
+### SCENE LAB CORRECTION
+The current black/debug terrain base is explicitly rejected as presentation.
+Future review templates must use no visible underside or a thin matching terrain skirt.
+
+### DROPBOX
+Read-only search/fetch used to recover the older roadside-media concept.
+No Dropbox files were mutated.
+
+### IMPLEMENTATION STATUS
+Concept/source recovery only. No Billboard runtime or new Scene Lab built in this checkpoint.
