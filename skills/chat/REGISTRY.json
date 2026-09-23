@@ -1,6 +1,6 @@
 {
   "schema": "kfb.chat-registry/0.1",
-  "updated": "2026-09-22",
+  "updated": "2026-09-24",
   "owner": "Georg / KFB",
   "router": "skills/chat/START_HERE.md",
   "livingMasterplan": "skills/chat/LIVING_MASTERPLAN.md",
@@ -697,6 +697,37 @@
       ],
       "nextGate": "LWP-EXT-F1 · extension-load observability: CONTENT_ENTRY → HOST_CREATED → FRAME_INSERTED → FRAME_LOADED|FRAME_ERROR → PET_READY",
       "note": "Web/Hub candidate is technically green but branch-only. Chrome extension build is source-valid; injection is unresolved and frozen after two attempts. No public Stage or canonical Hub mount."
+    },
+    {
+      "id": "elastic-grotesque-clay-huerth01",
+      "kind": "workflow",
+      "status": "CURRENT_REFERENCE",
+      "path": "skills/chat/workflows/KFB_ELASTIC_GROTESQUE_CLAY_V1_2026-09-23/START_HERE.md",
+      "leadOverride": "skills/chat/workflows/KFB_ELASTIC_GROTESQUE_CLAY_V1_2026-09-23/LEAD_OVERRIDE_2026-09-24.md",
+      "return": "skills/chat/workflows/KFB_ELASTIC_GROTESQUE_CLAY_V1_2026-09-23/RETURN.md",
+      "repository": "georg-doc/kayfabizarro",
+      "branch": "chatgpt-web/elastic-grotesque-clay-huerth01-2026-09-23",
+      "draftPR": 194,
+      "owner": "OSM City Lab presentation / KFB ToolBox authoring",
+      "testedRuntimeHead": "0c59e92d9d8688f5a88cd309ae8891dcd174c2fc",
+      "tested": "21/21 browser PASS · 3/3 WebGL2 · 0 page/console errors · run 35909757979",
+      "currentCandidate": "ELASTIC_GROUP_WARP_V2",
+      "currentPalette": "KFB_WONKY_90S_CLAY_V1",
+      "currentGate": "GEORG HUMAN VISUAL REVIEW · HÜRTH 01 V2 ACTUAL FORM LANGUAGE",
+      "antiRegression": [
+        "old City-Lab GROTESQUE is comparison evidence only",
+        "Hürth 01 V1 is superseded by V2 for continuation",
+        "do not return to box extrusion, stacked cubist offsets, generic low-poly, Gothic dressing or random per-building deformation"
+      ],
+      "reviewPackaging": "single-file self-contained chat preview; no iframe/CDN/runtime fetch",
+      "doesNotOwn": [
+        "OSM source truth",
+        "S2 collision/export",
+        "Race/Travel/WorldBuilder movement or world ownership",
+        "landmark ownership",
+        "vehicle deformer ownership"
+      ],
+      "note": "For Hürth/KFB 3D form-language work, read PR #194 latest head plus the Lead Override before changing direction. Main may lag this unmerged bounded slice."
     }
   ],
   "failureRecoveryTemplate": "skills/chat/templates/CLAUDE_DESIGN_FAILURE_RECOVERY_EXPORT.md"
