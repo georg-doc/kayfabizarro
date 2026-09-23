@@ -165,3 +165,31 @@ No product implementation in that review.
 
 After alignment:
 choose one first coherent Production Packet and route it to Coworker or Claude Design.
+
+
+## Coworker alignment result
+
+### Für Georg
+Coworker bestätigt den neuen Ablauf grundsätzlich.
+
+Sein wichtigster Einwand war richtig:
+„geschlossenes Produktionspaket“ musste eindeutig definiert werden.
+
+Das ist jetzt erledigt:
+Ein Paket gilt nur als geschlossen, wenn Claude/Coworker nichts suchen, schätzen oder erraten müssen.
+
+### Added
+- `CLOSED_PACKET_CRITERIA.md`
+- `EDITOR_SCALE_CONTRACT_NOTE.md`
+
+### Important correction
+Scale ist keine offene Speicher-/Datenfrage:
+`kfb.scene-patch.v1` speichert Scale bereits.
+
+Historisch fehlte Scale nur als sichtbare Bediengeste im S21-Menü.
+
+### Production recommendation
+Preferred first coherent packet:
+**ToolBox**, after its real sources/Resident sets are consolidated.
+
+No product implementation was started by this alignment.
