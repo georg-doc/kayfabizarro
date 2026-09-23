@@ -58,3 +58,23 @@ Every GitHub write was followed by branch-head and file readback.
 
 ### NEXT
 Use WS0 first in REVIEW mode on one current PR; then prepare one Web-aligned integration proposal before authorizing a productive Coworker slice.
+
+
+## 2026-09-23 · Hub hygiene + human-readable communication
+
+### USER DIRECTION
+Georg wants technical agent language translated back into short, clear language he can act on. The Hub also contains too many old/current-looking briefings and can misroute future chats.
+
+### COMMUNICATION
+Added global `skills/chat/HUMAN_READABLE_STATUS.md`.
+Coworker and Web-facing handoffs now lead with a short plain-language explanation; technical labels/SHAs are secondary.
+
+### HUB CLEANUP
+Hub TODOs reduced from 36 to 8 active items.
+Default current Briefings reduced to an explicit 6-item allowlist.
+Older briefing cards are retained as reference but show `REFERENCE · VERIFY CURRENT`; copied stale prompts carry an execution warning.
+Dated 18 Sep quick links were replaced by current WorldBuilder #186, Travel #37, Racer #33, ToolBox #185 and Production Router links.
+
+### EVIDENCE
+Hub JavaScript syntax compile check: PASS.
+Cloudflare publication: not run.
