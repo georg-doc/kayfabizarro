@@ -3,6 +3,43 @@
 Alte Einträge bleiben unverändert. Korrekturen als neue CORRECTION/SUPERSEDES-Einträge mit Bezug ergänzen. Aktuelle Momentaufnahme im MASTERPLAN/Return, Geschichte hier.
 
 
+## 2026-09-23 · WorldBuilder accepted foundation → WB2 Terrain Sculpt planning
+
+### HUMAN DIRECTION
+Georg confirms the current WB1 scene-authoring foundation works and is acceptable.
+
+The shared inline editor remains the selected-object owner. Do not fork another WorldBuilder transform layer. Current shared module:
+`tools/KFB-ToolBox/lib/edit-layer.js`
+
+R2 accepted capabilities already include free Scale. R3 remains the separate small candidate for uniform `−/+ Size`.
+
+### UI FOLLOW-UP
+Later authoring UX may collapse/reduce side-panel scene-edit explanation/controls because Move/Rotate/Scale/Drop are owned by the object-attached inline menu. Preserve FOV and keep only genuinely scene-level controls.
+
+### WB2 PROPOSAL
+Added:
+`tools/KFB-ToolBox/_handover/WORLD_BUILDER_V1_2026-09-22/WB2_TERRAIN_SCULPTING_PROPOSAL_2026-09-23.md`
+
+First terrain sculpt gate:
+- continuous heightfield only;
+- Raise / Lower;
+- radius / strength;
+- smooth radial falloff;
+- drag strokes;
+- Undo / Clear;
+- Save / Reload;
+- normal recompute;
+- no voxel / hex / tile terrain;
+- procedural base remains reversible;
+- coexist with shared `edit-layer.js`, no second picker.
+
+### WSA
+The WB2 proposal is routed into the WSA/Lead check-in as future-sprint intake. Runtime implementation remains Web-first and starts after the current R3 gate or explicit reprioritization.
+
+### NEXT
+Current immediate human gate remains the small R3 uniform-size review. After PASS, proceed to **WB2-TERRAIN-SCULPT-01**.
+
+
 ## 2026-09-23 · Shared Inline Editor · R2 HUMAN PASS → R3 Uniform Scale Proposal
 
 ### HUMAN PASS
