@@ -51,11 +51,35 @@ jobs:
           const page = await browser.newPage({viewport:{width:1440,height:900}});
           const pageErrors = [];
           const requestFailures = [];
+          const consoleMessages = [];
+          const badResponses = [];
           page.on('pageerror', e => pageErrors.push(String(e)));
           page.on('requestfailed', r => requestFailures.push(r.url()+' :: '+(r.failure()?.errorText||'failed')));
+          page.on('console', m => consoleMessages.push(m.type()+': '+m.text()));
+          page.on('response', r => { if (r.status() >= 400) badResponses.push(r.status()+' '+r.url()); });
 
           await page.goto(process.env.URL,{waitUntil:'domcontentloaded',timeout:120000});
-          await page.waitForFunction(() => window.__WB1_P2?.snapshot?.().sourceIsolationRendered === true,{timeout:120000});
+          let sourceReady = false;
+          try {
+            await page.waitForFunction(() => window.__WB1_P2?.snapshot?.().sourceIsolationRendered === true,{timeout:30000});
+            sourceReady = true;
+          } catch {}
+          const boot = await page.evaluate(() => ({
+            status: document.getElementById('status')?.textContent || null,
+            report: document.getElementById('report')?.textContent || null,
+            assetProof: document.getElementById('asset-proof')?.textContent || null,
+            transport: window.__WB1_P2_STAGE_TRANSPORT || null,
+            hasApi: !!window.__WB1_P2,
+            snapshot: window.__WB1_P2?.snapshot?.() || null,
+            surfaceDisabled: document.getElementById('surface')?.disabled ?? null
+          }));
+          await page.screenshot({path:'wb1-p2-stage-evidence/00-boot-diagnostic.png',fullPage:true});
+          console.log('BOOT',JSON.stringify(boot));
+          console.log('BOOT_CONSOLE',JSON.stringify(consoleMessages));
+          console.log('BOOT_PAGE_ERRORS',JSON.stringify(pageErrors));
+          console.log('BOOT_REQUEST_FAILURES',JSON.stringify(requestFailures));
+          console.log('BOOT_BAD_RESPONSES',JSON.stringify(badResponses));
+          if (!sourceReady) throw new Error('SOURCE_BOOT_NOT_READY '+JSON.stringify(boot));
 
           const source = await page.evaluate(() => window.__WB1_P2.snapshot());
           assert.equal(source.proof,'SOURCE');
