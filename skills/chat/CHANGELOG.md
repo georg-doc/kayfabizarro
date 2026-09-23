@@ -1448,3 +1448,21 @@ Exactly one next gate:
 
 Exactly one current Racer gate:
 **TARCH-0 R2 · integrated Racer Chat HTML human review**.
+
+
+## Travel Mode Bridge v1 · TMB-1E scale / capacity review prepared · 2026-09-23
+
+Georg accepted the current animated CardCarrier direction and contact behavior as basically correct, but the current Surf rider reads too small relative to the card.
+
+Prepared review brief:
+`tools/KFB-ToolBox/_handover/TRAVEL_MODE_BRIDGE_V1_2026-09-23/TMB1_SCALE_CAPACITY_REVIEW_2026-09-23.md`
+
+Bounded next review:
+- keep CardCarrier geometry/thickness unchanged;
+- compare current rider vs approximately 1.8× and 2.0× presentation scale;
+- preserve a clear Surf/Ride pose;
+- build a separate three-character capacity comparison using one Legacy Warband Orc, one Orc Brute/Large-class center anchor and one XL/Large-class source-backed character;
+- HTML-first review using the existing review-template pool;
+- `design-3d_v1` + `session-design-briefing` are recommended review helpers; `kfb-frankensteining_v1` / `cartoon-motion_v1` load only when their seam is actually needed.
+
+TMB-2 Double-Space remains HOLD. Card thickness redesign, Studio v17 implementation, transition logic and party-flight gameplay remain DEFERRED.
