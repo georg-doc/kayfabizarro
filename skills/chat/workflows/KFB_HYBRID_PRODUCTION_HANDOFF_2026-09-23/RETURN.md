@@ -172,3 +172,26 @@ Not yet the active implementation gate.
 ### Coworker
 The exact paste-ready sequence now lives in:
 `COWORKER_OPUS55_SEQUENCE.md`
+
+
+## Resident animation check-in
+
+### Für Georg
+Der Warband-Trommler wird jetzt nicht weiter frei per IK verbogen.
+
+Nächster Trommler-Schritt:
+erst echte Rig_Large-Kampfbewegungen am Orc Brute anschauen, eine auswählen und danach Trommel/Brute an deren natürlichen Schlag anpassen.
+
+Leader + Gitarrist bleiben akzeptiert.
+
+Parallel kann jetzt der erste Dance-Slice starten:
+Rig_Medium, GothGirl + Orc Raider, erst Source-Audition, dann ein sauberer eigener Groove.
+
+### Files
+- `ANIMATION_LIVING_V13_AUDIT_2026-09-23.md`
+- `RESIDENT_PERFORMANCE_NEXT_2026-09-23.md`
+- updated `PERFORMANCE_ANIMATION_PILOT.md`
+
+### Important
+The supplied external Living Document v1.3 is not canonical.
+Useful ideas were salvaged; incorrect rig/threshold/runtime assumptions were rejected.
