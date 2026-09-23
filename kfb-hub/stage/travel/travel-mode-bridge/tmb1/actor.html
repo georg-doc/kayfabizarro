@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>KFB Travel Mode Bridge · TMB-1 · ActionFigure Source Proof</title>
+<style>
+html,body{margin:0;width:100%;height:100%;overflow:hidden;background:#e5e8e5;color:#171717;font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+canvas{display:block;width:100%;height:100%}
+#proof{position:fixed;left:16px;top:14px;z-index:2;max-width:min(680px,calc(100vw - 32px));font-size:12px;line-height:1.35;pointer-events:none;text-shadow:0 1px 0 rgba(255,255,255,.8)}
+#proof strong{display:block;font-size:14px}
+#proof [data-state="fail"]{font-weight:800}
+</style>
+<script type="importmap">
+{"imports":{
+  "three":"https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+  "three/addons/":"https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
+}}
+</script>
+</head>
+<body>
+<aside id="proof" aria-live="polite">
+<strong>Travel Mode Bridge · TMB-1 · ActionFigure alone</strong>
+<span id="proof-state">Loading exact ActionFigure Rig_Medium source…</span>
+</aside>
+<canvas id="view" aria-label="Exact ActionFigure Rig_Medium source proof"></canvas>
+<script type="module" src="./actor-source-proof.js"></script>
+</body>
+</html>

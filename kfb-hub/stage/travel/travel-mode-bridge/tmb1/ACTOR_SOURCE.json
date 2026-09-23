@@ -1,0 +1,34 @@
+{
+  "schema": "kfb.stage.travel-mode-bridge-tmb1-actor/0.1",
+  "revision": "TMB1-ACTOR-ONLY-01",
+  "status": "TECHNICAL_PASS_VISUAL_REVIEW_PENDING",
+  "owner": "georg-doc/KFB-Travel-Globe",
+  "travel": {
+    "branch": "chatgpt-web/travel-mode-bridge-tmb1-actor-2026-09-23",
+    "draftPR": 34,
+    "head": "77ab93f31b00a93c668143d9cb916ed70cf0da3a",
+    "stackedBasePR": 33,
+    "stackedBaseHead": "397e84f47e66bf760944af81fb2a17e11da1f04d",
+    "ciRun": 35816830191,
+    "ciConclusion": "success"
+  },
+  "sourceObject": {
+    "repository": "georg-doc/kayfabizarro",
+    "commit": "10a7fdce6b3a1ae22504ade71b7dbec5f25e0ff0",
+    "path": "media/3D_Assets/KayKit_Mystery_Series6/6 - December 2023 - Action Figure/character/gltf/ActionFigure.glb",
+    "blob": "4785276defdb929cb397954eb74b76aecb84486b",
+    "rigFamily": "Rig_Medium"
+  },
+  "stageFiles": {
+    "htmlBlob": "cfe051ea7c772f69af4abce5a743b6ee6b87da34",
+    "runtimeBlob": "68a85e4c779b7846229e89351b68f6728043e75e"
+  },
+  "route": "/kfb-hub/stage/travel/travel-mode-bridge/tmb1/actor.html",
+  "publicUrl": "https://kayfabizarro.pages.dev/kfb-hub/stage/travel/travel-mode-bridge/tmb1/actor.html",
+  "phase": "ACTOR_ONLY",
+  "cardCarrierPresent": false,
+  "passengerMounted": false,
+  "animationMixerCreated": false,
+  "humanAcceptance": "PENDING",
+  "livePromotion": false
+}
