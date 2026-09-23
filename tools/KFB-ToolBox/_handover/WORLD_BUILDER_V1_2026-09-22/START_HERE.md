@@ -3,28 +3,29 @@
 Status: **PREPARED · WEB FIRST · CLAUDE DESIGN AFTER TECHNICAL PREFLIGHT · WORK ESCALATION ONLY**
 Owner: existing KFB World / Travel / ToolBox owners; no new universal runtime owner.
 
-## CURRENT OVERRIDE · WB1-P2 HUMAN FAIL · 2026-09-23
+## CURRENT OVERRIDE · TERRAIN-FIRST RESET · 2026-09-23
 
-- WB1-P0: COMPLETE on PR #175.
-- WB1-P1: COMPLETE / HUMAN SCOPE PASS on PR #177.
-- WB1-P2: **TECHNICAL PASS · HUMAN FAIL** on Draft PR #180.
-- Current P2 branch: `chatgpt-web/world-builder-p2-surface-adapter-2026-09-23`
-- Human-fail checkpoint: `c35bc76486891973a8f64b18f153b44468770ff0`
-- Accepted technical runtime remains `0599cc04d2db72ed33c49fb98a30898290a00a68`.
+The FLAT/SPHERE/TORUS Hex projection proof is retained only as research evidence.
 
-Human review found that center-frame-only rigid placement is not visually sufficient on curved surfaces:
-- Hex cells overlap/intersect instead of reading as one coherent attached patch;
-- route reads as a separate debug strip, not an integrated road;
-- prop support/contact must be rechecked after repair;
-- Ripple is only debug presentation, not final Surface-FX look.
+Georg rejected the visible P2 composition and the follow-up P2R1 repair direction because it drifted away from the intended WorldBuilder product.
 
-**Exactly one current gate: WB1-P2R1 · Surface Conformance Repair.**
+**Current direction: CONTINUOUS PROCEDURAL TERRAIN + PRODUCTIVE SCENE EDITOR.**
 
-Fresh-chat brief:
-`WB1_P2R1_FRESH_WEB_START.md`
+Read:
+`TERRAIN_FIRST_RESET_2026-09-23.md`
 
-Preserve P2's proven logical recipe and Surface Adapter math.
-Do not start P3 / Claude Design until P2R1 is human-accepted.
+Next gate:
+**WB1-TERRAIN-EDITOR-01**
+
+Primary external terrain/editor donor:
+`ZyFou/ProceduralTerrains@f58a8ddb81d1fbb526a41282a9a7e9c05c2d2070` · MIT.
+
+Use existing KFB S21/S22 / Scene Patch interaction donors for object editing.
+
+Hex remains optional local/semantic content. It is not the macro ground.
+
+WB1-P2/P2R1 does not block the Scene Editor.
+P3/Claude mega-authoring remains HOLD until the first useful terrain Scene Editor exists.
 
 ## Product goal
 
