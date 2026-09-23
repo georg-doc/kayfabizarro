@@ -1,5 +1,17 @@
 # KFB WorldBuilder v1 · Web-first execution · 2026-09-22
 
+> **CURRENT CORRECTION · 2026-09-23**
+>
+> WorldBuilder is the ToolBox scene-building surface, not an isolated terrain demo.
+> Read first:
+> `TOOLBOX_SCENE_AUTHORING_CORRECTION_2026-09-23.md`
+>
+> Fresh-chat execution:
+> `TOOLBOX_SCENE_AUTHORING_FRESH_WEB_START_2026-09-23.md`
+>
+> Current gate: **WB1-TERRAIN-SCENE-01** — continuous terrain + one real Resident Atlas actor + one existing compatible clip + prop placement + save/reload.
+> The older `WB1-TERRAIN-EDITOR-01` wording is superseded where it omits the Resident/animation seam.
+
 Status: **PREPARED · WEB FIRST · CLAUDE DESIGN AFTER TECHNICAL PREFLIGHT · WORK ESCALATION ONLY**
 Owner: existing KFB World / Travel / ToolBox owners; no new universal runtime owner.
 
