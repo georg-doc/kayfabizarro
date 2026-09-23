@@ -835,3 +835,11 @@ Still blocked:
 vehicle grounding/contact → hard-clamp/jitter → trails/speedlines → jump/landing.
 
 Cloudflare remains deferred.
+
+
+## 2026-09-23 · Blender MCP animation lane (POC)
+
+Handover: `tools/KFB-ToolBox/_handover/BLENDER_MCP_ANIMATION_POC_2026-09-23/START_HERE.md`
+Status: POC · Georg visual PASS ~80 % · candidate authoring method, no new runtime owner.
+Next gate: **JUG-P2 · GLB playback in an existing three.js consumer.**
+Candidate next Blender lane: KayfaBizarros Orc Band (ORB-P1), after Georg's briefing.
