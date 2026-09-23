@@ -1,6 +1,6 @@
 # KFB Racer MVP Stabilization · 2026-09-23
 
-Status: **RSTAB-1 TECHNICAL PASS · ZERO-INSTALL HUMAN GEOMETRY GATE · PUBLIC VERIFY PENDING · NO RSTAB-2**  
+Status: **RSTAB-1 HUMAN FAIL · WEDGE PASS 2 RECHECK · PUBLIC VERIFY PENDING · NO RSTAB-2**  
 Runtime owner: `georg-doc/KFB-Stunt-Car-Race`  
 Visual authoring source: `KFB Cologne Race Option C-3/` pinned at Race `main@cc80f4a1c6c509db9668df79fd53b13cee093a9d`.  
 Goal: **one actually playable full-lap Racer MVP before further visual/feature expansion.**
@@ -43,6 +43,37 @@ ID to carry in the showstopper/evidence matrix:
 `RSTAB-CYLINDER-GROUND-01`
 
 ## Current checkpoint · RSTAB-1 · 2026-09-23
+
+
+### Human gate fail → WEDGE pass 2
+
+Georg's first zero-install review failed on WEDGE:
+- at least two brown ground wedges remain in the first tunnel section;
+- first hard curve still has extreme jerk/instability;
+- Tail/Speedline ribbons overlap and break into rectangular pieces in the same phase;
+- vehicle floats above the track at rest, with front wheels visibly raised; jump/landing can happen above or inside the track.
+
+Pass 2 localizes the remaining brown cut ownership to exactly:
+- route **99→100**
+- route **133→134**
+
+Both are TUNNEL shell/cut transition segments. The tunnel shell now owns them; brown cut wall/invert is not emitted there. Historical mouth **90→91** remains ground-owned.
+
+Race runtime/test candidate:
+`a9dd49995d32423e101a67f2e591c2b069583252`
+
+Checks:
+- `35814096388` SUCCESS
+- `35814091421` SUCCESS
+- 6 active test blocks, 0 skipped
+
+This is WEDGE repair pass **2**. Same-gate failure again => STOP + full failure-recovery export; no pass 3.
+
+After WEDGE ACCEPT the locked order is:
+1. vehicle support/orientation/landing;
+2. hard-curve stability while preserving v0.8 FLOW/FEEL;
+3. trail/speedline continuity recheck after stable motion.
+
 
 
 ### Zero-install review route
