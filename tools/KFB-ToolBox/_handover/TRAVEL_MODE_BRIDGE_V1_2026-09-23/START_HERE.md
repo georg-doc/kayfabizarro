@@ -1,6 +1,6 @@
 # KFB Travel Mode Bridge v1 · Ground ↔ Animated Card Flight · 2026-09-23
 
-Status: **TMB-1 SOURCE-FIRST SEQUENCE COMPLETE · TECHNICAL/PUBLIC PASS · GEORG SURF HUMAN REVIEW PENDING · TMB-2 HOLD**
+Status: **TMB-1E HTML REVIEW READY · TECHNICAL / CI PASS · GEORG SCALE/CAPACITY REVIEW PENDING · TMB-2 HOLD**
 
 Implementation owner:
 `georg-doc/KFB-Travel-Globe`
@@ -38,14 +38,25 @@ Current human finding:
 - current rider reads too small relative to the card;
 - test rider at roughly 1.8×–2.0× current presentation scale;
 - keep a clear Surf / Ride pose;
-- compare one Legacy Warband Orc + one Orc Brute / Large-class + one XL / Large-class character on the same card;
+- compare **Legacy Orc A + Orc Brute / Rig_Large + Legacy Orc B** on the same unchanged card;
+- “Large Rick” is resolved as **Large Rig**, not a separate XL actor;
 - card thickness may read heavy but is DEFERRED for this comparison.
 
-Prepared review brief:
+TMB-1E implementation:
+- Travel Draft PR #37;
+- branch `chatgpt-web/travel-mode-bridge-tmb1e-scale-capacity-2026-09-23`;
+- current handoff head `5110f3617246d05278e0435b3b1e0a99c33e62e5`;
+- technical test head `33b4a5bf9904d3e9e86c99f6efd5cbdde8448641`;
+- CI run `35823280576` / job `107059518887`: **99/99 PASS · build PASS · verify PASS**;
+- Surf scale HTML and three-Orc capacity HTML are ready for Chat review;
+- Travel Return: `TMB1E_RETURN.md`;
+- no Cloudflare publication for this iteration.
+
+Review brief:
 `TMB1_SCALE_CAPACITY_REVIEW_2026-09-23.md`
 
 Exactly one next gate:
-**TMB-1E · HTML-first Surf scale + three-character capacity comparison.**
+**GEORG HUMAN HTML REVIEW · choose rider scale and judge three-Orc card capacity.**
 
 TMB-2 Double-Space remains HOLD until Georg resolves the TMB-1E visual scale/capacity gate.
 
