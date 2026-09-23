@@ -1,0 +1,65 @@
+{
+  "schema": "kfb.stage.travel-mode-bridge-tmb1-surf/0.1",
+  "revision": "TMB1-SURF-S33-01",
+  "status": "TECHNICAL_PASS_VISUAL_REVIEW_PENDING",
+  "owner": "georg-doc/KFB-Travel-Globe",
+  "travel": {
+    "branch": "chatgpt-web/travel-mode-bridge-tmb1-surf-2026-09-23",
+    "draftPR": 36,
+    "head": "2333c78fdaa1a1e2e14b697f2283abcbcacfe3dc",
+    "stackedBasePR": 35,
+    "stackedBaseHead": "2b4e5969a19fa55aa75951d0ac2f1be5400a596b",
+    "ciRun": 35820040140,
+    "ciConclusion": "success"
+  },
+  "sources": {
+    "carrier": {
+      "repository": "georg-doc/KFB-Travel-Globe",
+      "path": "travel/terrain-planets-v1/card-carrier.js",
+      "blob": "2eef4db5aa38fffc8e9c23457815e3be12fc3bd8"
+    },
+    "actor": {
+      "repository": "georg-doc/kayfabizarro",
+      "commit": "10a7fdce6b3a1ae22504ade71b7dbec5f25e0ff0",
+      "path": "media/3D_Assets/KayKit_Mystery_Series6/6 - December 2023 - Action Figure/character/gltf/ActionFigure.glb",
+      "blob": "4785276defdb929cb397954eb74b76aecb84486b",
+      "rigFamily": "Rig_Medium"
+    },
+    "cardArtwork": {
+      "repository": "georg-doc/kayfabizarro",
+      "commit": "852f9d2cd1be228898316b205063855c95308c9a",
+      "blob": "36da589c1227dc796097d71bd0fd30a539905b1f"
+    },
+    "poseRig": {
+      "repository": "georg-doc/kayfabizarro",
+      "commit": "d81c0ddc4607ef427501a43726cfeafa9c82b694",
+      "path": "skills/KFB PetStudio/KFB FrankenStein Studio 16/KFB-v16/petstudio-v9/studio-v13/pose-rig.v1.js",
+      "blob": "a418fe550d66afea51dd95cf3229a13a343e1957"
+    }
+  },
+  "surfPreset": {
+    "hip": 16,
+    "knee": 30,
+    "toe": 0,
+    "spread": 17,
+    "lean": 7,
+    "stagger": 24,
+    "hands": "surf"
+  },
+  "retainedMount": {
+    "groundBodyHeight": 0.022,
+    "actorScale": 0.3789375002829705,
+    "mountYawDegrees": 180
+  },
+  "stageFiles": {
+    "htmlBlob": "8448b0cabe7e6135970fe9d3fcab01dee221abeb",
+    "runtimeBlob": "deabf7da8a358e5e837f01b778f9599661fc317f",
+    "poseRigBlob": "a418fe550d66afea51dd95cf3229a13a343e1957"
+  },
+  "route": "/kfb-hub/stage/travel/travel-mode-bridge/tmb1/surf.html",
+  "publicUrl": "https://kayfabizarro.pages.dev/kfb-hub/stage/travel/travel-mode-bridge/tmb1/surf.html",
+  "phase": "SURF_PRESENTATION_CANDIDATE",
+  "transitionImplemented": false,
+  "humanAcceptance": "PENDING",
+  "livePromotion": false
+}
