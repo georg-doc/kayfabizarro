@@ -562,32 +562,36 @@ After WEDGE ACCEPT, sequence is locked:
 
 Do not start curve/trail tuning before the WEDGE human recheck.
 
-## 2026-09-23 · Travel Mode Bridge v1 · TMB-0 complete
+## 2026-09-23 · Travel Mode Bridge v1 · TMB-1D complete · TMB-1E next
 
 Coordination brief:
 
 `tools/KFB-ToolBox/_handover/TRAVEL_MODE_BRIDGE_V1_2026-09-23/START_HERE.md`
 
+Prepared next review:
+
+`tools/KFB-ToolBox/_handover/TRAVEL_MODE_BRIDGE_V1_2026-09-23/TMB1_SCALE_CAPACITY_REVIEW_2026-09-23.md`
+
 Travel owner remains private `georg-doc/KFB-Travel-Globe`.
 
-TMB-0 is complete on Draft PR #32:
+Completed source-first sequence:
+- A · exact animated CardCarrier alone → public 18/18 PASS;
+- B · exact ActionFigure Rig_Medium alone → public 22/22 PASS;
+- C · neutral measured mount → public 41/41 PASS;
+- D · exact S33 Surf candidate → public 52/52 PASS;
+- current Travel Surf Draft PR #36 head `88382c111acf32f6b934c15ce7b6b1f6d4d15283`.
 
-- branch `chatgpt-web/travel-mode-bridge-v1-2026-09-23`;
-- head `048499315581d2b9916a4d3fcbaba5f3adef719c`;
-- source/boundary audit **12/12 PASS · 0 FAIL**;
-- **0 runtime files changed**;
-- source matrix, minimal mobility transition contract, additive changelog and Return are under `_handover/TRAVEL_MODE_BRIDGE_V1_2026-09-23/`.
+Georg human finding:
+- card/contact good;
+- rider too small;
+- test roughly 1.8×–2.0× rider presentation;
+- keep Surf/Ride pose;
+- compare Legacy Warband Orc + Orc Brute/Large + one XL/Large-class character on the same card;
+- card-thickness change deferred.
 
-Locked direction remains:
-- `carpet.js` owns Flight movement;
-- WB0 Ground owns Ground movement;
-- existing `runtime-mode.js` is the handoff foundation;
-- exact animated `card-carrier.js` is the first Flight vehicle;
-- Studio/Frankenstein `cardrider.v1.js` is measurement/pose donor only, never the vehicle.
+Exactly one next gate: **TMB-1E · HTML-first Surf scale + three-character capacity comparison.**
 
-Exactly one next gate: **TMB-1 · isolated exact animated CardCarrier + one real ActionFigure Rig_Medium passenger**, source-object-first: card alone → actor alone → neutral measured mount → Surf presentation candidate.
-
-TMB-2 Double-Space, TMB-3 landing, WorldBuilder consumption, Racer/Drive integration and Cloudflare runtime publication remain **NOT STARTED / HOLD**.
+TMB-2 Double-Space, TMB-3 landing, WorldBuilder consumption and Drive integration remain **HOLD** until TMB-1E human scale/capacity review is resolved.
 
 Racer stabilization separately carries `RSTAB-CYLINDER-GROUND-01` for track/support cylinders that appear above or below their intended support surface.
 
