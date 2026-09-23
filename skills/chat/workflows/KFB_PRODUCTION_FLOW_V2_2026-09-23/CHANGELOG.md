@@ -80,3 +80,34 @@ Product runtime tests run by this process slice: 0.
 Hub JS syntax: PASS.
 Cloudflare: 0.
 Live promotion: 0.
+
+
+## 2026-09-23 · Coworker alignment review
+
+### RESULT
+Coworker agrees with the coherent-artifact production model and identifies one important requirement:
+a Production Packet must have an explicit CLOSED definition so the recipient does not need to guess/search.
+
+### ADOPTED
+Added:
+- `CLOSED_PACKET_CRITERIA.md`;
+- packet status vocabulary;
+- zero-required-guessing handoff rule.
+
+### SCALE CORRECTION
+Coworker described Scale as an additive contract gap.
+
+GitHub verification clarifies:
+- `kfb.scene-patch.v1` already contains `scale:[1,1,1]`;
+- old S21 `EDITOR_LAYER.md` lacks Scale only in its visible interaction grammar;
+- WorldBuilder R2 free Scale is already human accepted;
+- R3 uniform smaller/larger is optional convenience.
+
+Added:
+`EDITOR_SCALE_CONTRACT_NOTE.md`
+
+No new persistence schema is needed.
+
+### FIRST PRODUCTIVE CANDIDATE
+ToolBox remains the preferred first coherent Production Packet after source/Resident consolidation.
+No implementation started by this alignment.
