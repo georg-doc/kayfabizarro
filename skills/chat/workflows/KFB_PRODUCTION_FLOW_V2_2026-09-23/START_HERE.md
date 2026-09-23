@@ -107,6 +107,14 @@ Before productive Claude/Coworker work, prepare one small packet.
 Use:
 `PRODUCTION_PACKET_TEMPLATE.md`
 
+A packet is executable only when it passes:
+`CLOSED_PACKET_CRITERIA.md`
+
+Default rule:
+**zero required guessing for the recipient.**
+
+This does not mean copying whole source trees. Immutable refs + compact evidence are preferred.
+
 It contains:
 - exact target outcome;
 - exact donors;
@@ -320,3 +328,15 @@ KFB production can move from one accepted functional source to a coherent editab
 - dozens of Georg micro-gates;
 - unnecessary WSA;
 - losing state when a chat ends.
+
+
+## Shared editor scale clarification
+
+Read:
+`EDITOR_SCALE_CONTRACT_NOTE.md`
+
+Do not create a new transform/persistence schema for Scale.
+
+`kfb.scene-patch.v1` already contains position / rotation / scale.
+
+The historical S21 gap was the visible Scale interaction, not the patch schema.
