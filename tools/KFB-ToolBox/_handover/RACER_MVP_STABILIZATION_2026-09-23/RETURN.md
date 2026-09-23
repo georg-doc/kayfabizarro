@@ -331,3 +331,44 @@ Cloudflare remains deferred.
 
 Exactly one next gate:
 **TARCH-0 R2 · integrated Racer Chat HTML human review**.
+
+
+## R2 TUNE → R3 track-edge/banking review
+
+R2 integrated TARCH review returned **TUNE**.
+
+Source split:
+- saw-tooth edge = chat-review painter artifact, not Runtime Ground Void;
+- banking direction = real runtime sign issue.
+
+Runtime change:
+`cologne-route.v1.js`
+`bank = clamp(curv * 26)`
+
+Unchanged:
+- bank gain/cap/smoothing;
+- route topology;
+- widths;
+- TARCH Ground Void architecture.
+
+Runtime/test head:
+`5f1ec224a96af7444f0c86ebbcf178dc70d35b72`
+
+CI:
+- `35859446787 / 107175757847`: SUCCESS
+- `35859451138 / 107175774059`: SUCCESS
+- **11/11 PASS · 0 fail · 0 skipped**
+
+R3 review:
+`KFB_Racer_TARCH0_R3_track_edge_banking_review.html`
+
+SHA-256:
+`980b245478a28f9e39dcf284ece6caaf9e013a65a766f9c0fb51121e48e2d88b`
+
+Race Draft PR #33 current docs head:
+`59fa2a4235e7705a495bbd724d92a315befe1628`
+
+Exactly one next gate:
+**R3 · TRACK EDGE + BANKING CHAT HTML HUMAN REVIEW**
+
+Cloudflare remains deferred. Grounding, jitter, trails and jump/landing remain later.
