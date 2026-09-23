@@ -1,11 +1,11 @@
 # RETURN · KFB Elastic Grotesque Clay v1 · Hürth 01
 
-Date: 2026-09-23
-Status: **IMPLEMENTED · 16/16 BROWSER PASS · CHAT HTML READY · HUMAN VISUAL REVIEW PENDING · NOT PUBLIC**
+Date: 2026-09-23  
+Status: **V2 IMPLEMENTED · 21/21 BROWSER PASS · BENCHMARK PINNED · GEORG V2 3D REVIEW PENDING · NOT PUBLIC**
 
 ## Slice
 
-**Goal:** prove a reusable rounded/wonky KFB architecture language on one real Hürth OSM fixture before Blender-MCP production generalization.
+**Goal:** translate Georg's accepted wonky/clay neighbourhood benchmark into real reusable 3D geometry on a pinned Hürth OSM fixture.
 
 **Owner:** existing **OSM City Lab presentation / KFB ToolBox authoring**.
 
@@ -17,43 +17,100 @@ Receiving Race / Travel / WorldBuilder owners remain unchanged.
 - branch: `chatgpt-web/elastic-grotesque-clay-huerth01-2026-09-23`
 - Draft PR: **#194**
 - base: `main@dca52479dad9c176acde6e7c7167dc133bf50bdd`
-- browser-tested implementation head: `1db61b9c882e178000cf700a7d5f4d18ec03eba0`
+- v2 browser-tested runtime/source head: `0c59e92d9d8688f5a88cd309ae8891dcd174c2fc`
+- accepted benchmark image added later on same branch; current handoff head must be read from PR #194
 - no merge
 - no Live promotion
 
-## What is implemented
+## Georg benchmark decision
 
-A three-panel comparison on the same real source fixture:
+Georg accepted the generated clay-neighbourhood image as the **shape / facade-detail / handmade-model benchmark**.
 
-1. **CLEAN OSM**
-   - current footprint + current source height;
-   - source-object isolation reference.
+Pinned repository reference:
+- `STYLE_BENCHMARK.md`
+- `benchmark/KFB_EGC_STYLE_BENCHMARK_2026-09-23.jpg`
+- Git blob `d6dcb90770d83513204a6ea96fd56a60c7c3a296`
+- 640 × 360 JPEG review derivative
+- SHA-256 `cb6de7beca127a84eb47722eb6229a4348f6a1e9ed66a6cb3af80664ff744621`
 
-2. **CURRENT GROTESQUE**
-   - imports and executes the existing City Lab `cartoon-city.js` donor;
-   - uses the exact current `kfb-city-v0.json` Grotesque preset;
-   - equal neutral camera in this comparison so geometry is not confused with the historical 76° Grotesque lens.
+Accepted direction:
+- stronger coherent group deformation;
+- rounded/bowed/leaning building masses;
+- sparse irregular tall/narrow windows;
+- varied door size;
+- smooth continuous street/curb language;
+- matte clay/model feel.
 
-3. **ELASTIC GROTESQUE CLAY**
-   - rounded source footprint;
-   - continuous smooth lean / bend / belly / taper / twist;
-   - small coherent block-level pull;
-   - semantic roof cap using the source roof hint;
-   - windows and door treated as protected detail objects rather than melted into the shell;
-   - matte/high-roughness clay/model presentation.
+Requested tuning:
+- more explicit cartoon / offbeat 90s-animation palette.
 
-The dropdown focuses each real building in all three panels.
-`ISOLATE SOURCE` hides all other building masses so the actual source object can be compared before composition.
+## V2 implemented 3D result
+
+The same real OSM source fixture is still available as CLEAN / CURRENT GROTESQUE / ELASTIC.
+
+### ELASTIC GROUP WARP V2
+
+Actual 3D geometry now uses a low-frequency block field shared by neighbouring buildings.
+
+The field drives:
+- lean;
+- bend;
+- roof-plane slope;
+- block pull.
+
+Building-local seeded channels remain secondary:
+- belly;
+- taper;
+- small twist.
+
+This creates a correlated wonky street rather than independently distorted boxes.
+
+### Facade details
+
+Default generated facade:
+- one varied door;
+- 2–3 visible windows;
+- tall/narrow window proportion;
+- irregular placement;
+- no floor-grid assumption;
+- safe distance from door;
+- no bright white frame.
+
+Window and door colors are selected from the shared palette family.
+
+### Roads / curbs / paths
+
+The Hürth 01 visual proof no longer builds roads as visible rectangular segments.
+
+V2 uses:
+- centripetal Catmull-Rom centerline interpolation;
+- one continuous road ribbon;
+- separate continuous curb ribbon;
+- separate path ribbon;
+- explicit vertical layer separation;
+- depth-write/polygon-offset presentation handling to reduce z-fighting / bright overlap seams.
+
+OSM centerline/source truth remains unchanged.
+
+### Cartoon clay palette
+
+Candidate:
+`KFB_WONKY_90S_CLAY_V1`
+
+Systemic zones:
+`walls / roofs / doors / windows / ground / curb / road / path / sky`
+
+Variation is deterministic within one palette family rather than one-off per-object recoloring.
 
 ## Source truth
 
 - Hürth normalized source: `tools/osm-city-lab/data/huerth-v0/normalized.json`
 - pinned source blob: `936a5d990d2f394ae2bccbb4607d0821ca67a191`
 - source spec blob: `9ec4c53f07b78113def073f649a8b4a014ada38e`
-- fixture: 22 real OSM buildings
-- browser context: 49 real nearby road parts
+- fixture: **22 real OSM buildings**
+- browser context: **49 real nearby road parts**
 
-Current Grotesque donor:
+Current Grotesque donor remains:
 - `tools/osm-city-lab/src/style/cartoon-city.js`
 - blob `d08c19fc45d98546b7ef2803f2ddbcb73b7f6782`
 
@@ -64,76 +121,71 @@ Current City style:
 ## Protected boundaries retained
 
 - OSM IDs unchanged.
-- OSM footprints unchanged as source truth.
-- source heights unchanged.
+- OSM footprints/source heights unchanged.
 - S2/collision/export geometry unchanged.
 - no movement owner created.
 - no terrain owner created.
 - no landmark owner replaced.
 - no vehicle-deformer ownership moved.
-- no source GLB edited.
-- no Cel/outline dependency introduced.
-
-## Changed files
-
-Implementation:
-- `tools/osm-city-lab/experiments/elastic-grotesque-clay-huerth01/index.html`
-- `tools/osm-city-lab/experiments/elastic-grotesque-clay-huerth01/viewer.mjs`
-- `tools/osm-city-lab/experiments/elastic-grotesque-clay-huerth01/elastic-grotesque-clay.mjs`
-- `tools/osm-city-lab/experiments/elastic-grotesque-clay-huerth01/SOURCE.json`
-
-Evidence:
-- `tools/osm-city-lab/qa/elastic-grotesque-clay-huerth01.mjs`
-- `.github/workflows/osm-elastic-grotesque-clay-huerth01.yml`
-
-Briefing:
-- `skills/chat/workflows/KFB_ELASTIC_GROTESQUE_CLAY_V1_2026-09-23/START_HERE.md`
-- `skills/chat/workflows/KFB_ELASTIC_GROTESQUE_CLAY_V1_2026-09-23/STYLE_CONTRACT.md`
-- this Return / Test Report / additive changelog.
+- no source GLB destructively edited.
+- no Cel/outline dependency required.
 
 ## Tests / visible evidence
 
-- GitHub browser run `35904415847`: **16/16 PASS**
-- 3/3 WebGL2 contexts PASS
+Current v2 browser proof:
+- run `35909757979`
+- tested head `0c59e92d9d8688f5a88cd309ae8891dcd174c2fc`
+- **21/21 PASS**
+- **3/3 WebGL2**
 - page/console errors: **0**
-- evidence artifact `10769948842`
-- digest `sha256:fa8823edeeec10c6e25cb11b08c15d85a205e6ecb17c6c66c9c8f1236e71c9a9`
-- block screenshot + isolated-source screenshot saved in artifact
-- companion chat HTML: **11/11 bounded static checks PASS**
+- artifact `10772592799`
+- digest `sha256:14033aea95c75d006d3333347809a1a147256ba31dd28bda5505570d6572aedf`
 
-## What is deliberately still open
+Artifact:
+- `01-block-comparison.png`
+- `02-isolated-source-comparison.png`
+- `report.json`
 
-- **Visual acceptance:** automated tests cannot decide whether the degree of roundness/bend/belly/roof deformation is the right KFB look.
-- **Clay microtexture:** this POC currently proves rounded volume, matte/high-roughness surface and model-like lighting. It does not yet fake fingerprints, sculpt/tool marks or a final clay normal/bump layer.
-- **Detail grammar:** the candidate protects windows/door, but this first proof does not yet define the full façade module library.
-- **Asset classes:** billboard and vehicle shape-style adapters remain the next later examples; they are not hidden scope in Hürth 01.
-- **Blender MCP:** no Geometry-Nodes/Blender compiler is promoted until the form language passes the human visual gate.
+The screenshots visibly show:
+- CLEAN remains undeformed source massing;
+- CURRENT GROTESQUE remains stacked/faceted comparison evidence;
+- ELASTIC V2 is one continuous rounded/bowed volume;
+- the ELASTIC block uses the new systemic palette and smooth road language.
+
+## Future enterable-building seam · DEFERRED
+
+Georg proposed selected buildings with real KayKit door props and later enterable/interior instances.
+
+This is recorded, not implemented.
+
+Next later source-first sequence:
+1. locate exact KayKit door AssetRefs;
+2. isolate the exact source door;
+3. verify whether real open/close animation exists;
+4. mount only on selected buildings;
+5. define portal/instance enter/return seam.
+
+Do not replace this with a generic generated door asset.
 
 ## Stage/publication
 
 Cloudflare Stage: **NOT PUBLISHED**.
-This checkpoint intentionally uses the direct chat HTML + repository browser evidence first.
+
+This checkpoint stays chat/repository review first. No Live claim.
 
 ## Exactly one next gate
 
-**GEORG HUMAN VISUAL GATE · HÜRth 01**
+**GEORG HUMAN VISUAL GATE · HÜRTH 01 V2 ACTUAL 3D**
 
-Compare especially:
-- the whole block;
-- isolated `way/371401492`;
-- CLEAN → CURRENT GROTESQUE → ELASTIC.
+Review the actual v2 3D geometry, especially:
+- whole-block group warp;
+- isolated source building;
+- irregular facade details;
+- smooth road/curb ribbons;
+- new cartoon clay palette;
+- absence of the prior bright overlap/segment artifacts.
 
-Decision needed:
-**continue this Elastic grammar / tune its intensity / reject the foundation.**
+Decision:
+**accept the v2 3D translation / tune it once / reject the translation.**
 
-Only after that gate should the accepted grammar become a Blender-MCP / Geometry-Nodes production recipe.
-
-
-## Handoff sync
-
-Also updated on this same Draft branch:
-- `skills/chat/START_HERE.md` — routes to this current human gate;
-- `skills/chat/CHANGELOG.md` — additive cross-project record;
-- `kfb-hub/index.html` — visible Hürth 01 review card, explicitly NOT PUBLIC.
-
-Hub source sanity: **1/1 inline-script syntax PASS** and the new card ID is present.
+If accepted, the next production slice is the **Blender-MCP / Geometry-Nodes compiler recipe** for this exact accepted grammar.
