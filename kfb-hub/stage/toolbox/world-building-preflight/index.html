@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="kfb-stage-runtime" content="49cc790f60029066bdbcfa9ac8328aa9de7e26e1">
+<title>KFB WorldBuilder v1 · WB1-P2 Surface Adapter Review</title>
+<style>
+html,body{margin:0;height:100%;background:#14111b;color:#e9e4db;font:13px/1.35 system-ui,-apple-system,sans-serif;overflow:hidden}#view{width:100%;height:100%;display:block}.bar{position:fixed;top:12px;left:12px;right:12px;display:flex;align-items:center;gap:8px;flex-wrap:wrap;padding:8px 10px;background:rgba(12,10,16,.84);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.14);border-radius:7px}.bar b{font-size:12px;letter-spacing:.05em}.bar select,.bar button{font:inherit;background:#23202b;color:#eee;border:1px solid #55505d;border-radius:4px;padding:5px 8px}.bar select:disabled{opacity:.35}.status{color:#ffcb85}.revision{font:10px/1 ui-monospace,SFMono-Regular,Menlo,monospace;color:#aaa3b1}.report{position:fixed;left:12px;bottom:12px;max-width:calc(100% - 44px);padding:7px 9px;background:rgba(12,10,16,.82);border-radius:5px;font:11px/1.35 ui-monospace,SFMono-Regular,Menlo,monospace;white-space:pre-wrap}.asset{position:fixed;right:12px;bottom:12px;max-width:42%;text-align:right;font:10px/1.3 ui-monospace,SFMono-Regular,Menlo,monospace;color:#c8c1b5}
+</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.184.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.184.0/examples/jsm/"}}</script>
+</head>
+<body>
+<canvas id="view"></canvas>
+<div class="bar">
+  <b>WB1-P2 · STAGE 49CC790</b><span class="revision">same recipe · FLAT / SPHERE / TORUS</span><span class="status" id="status">BOOT · SOURCE PROP FIRST</span>
+  <label>Surface <select id="surface" disabled><option value="">choose…</option><option>FLAT</option><option>SPHERE</option><option>TORUS</option></select></label>
+  <button id="fx">FX ripple</button>
+</div>
+<div class="report" id="report">stage review · frozen runtime 49cc790f60029066bdbcfa9ac8328aa9de7e26e1</div>
+<div class="asset" id="asset-proof">real prop source pending</div>
+<script type="module">
+const RUNTIME_HEAD='49cc790f60029066bdbcfa9ac8328aa9de7e26e1';
+const RUNTIME_URL='https://cdn.jsdelivr.net/gh/georg-doc/kayfabizarro@49cc790f60029066bdbcfa9ac8328aa9de7e26e1/tools/KFB-ToolBox/world-building-preflight/surface-adapter/demo.mjs';
+window.__WB1_P2_STAGE_TRANSPORT={runtimeHead:RUNTIME_HEAD,runtimeUrl:RUNTIME_URL,route:'https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/world-building-preflight/'};
+try { await import(RUNTIME_URL); }
+catch (error) {
+  const text=String(error && (error.stack || error.message) || error);
+  document.getElementById('status').textContent='STAGE TRANSPORT FAILED';
+  document.getElementById('report').textContent=text;
+  document.getElementById('asset-proof').textContent='runtime='+RUNTIME_HEAD.slice(0,12)+'… · transport failure';
+  console.error('[WB1_P2_STAGE transport]',error);
+}
+</script>
+</body>
+</html>
