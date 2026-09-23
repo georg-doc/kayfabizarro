@@ -1,0 +1,615 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#17150f">
+<title>KFB ToolBox · WB1 Terrain Scene 01</title>
+<style>
+:root{
+  --bg:#17150f;--panel:rgba(26,23,17,.95);--panel2:#211e17;--line:#554d3d;
+  --text:#f2eadb;--muted:#b7aa91;--accent:#e3b466;--ok:#8fc58a;--bad:#e48d7e;
+}
+*{box-sizing:border-box}
+html,body{margin:0;width:100%;height:100%;overflow:hidden;background:var(--bg);color:var(--text);font:14px system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+button,input{font:inherit}
+button{border:1px solid var(--line);background:#2a261d;color:var(--text);border-radius:8px;padding:8px 10px;font-weight:650;cursor:pointer}
+button:hover{border-color:#82755c}
+button[disabled]{opacity:.42;cursor:not-allowed}
+button.active{border-color:var(--accent);color:#ffe2a7}
+input{border:1px solid var(--line);background:#15130f;color:var(--text);border-radius:7px;padding:6px 7px;width:78px}
+#app{position:fixed;inset:0;display:grid;grid-template-columns:320px 1fr}
+#side{position:relative;z-index:12;background:var(--panel);border-right:1px solid var(--line);padding:14px;overflow:auto}
+#stage{position:relative;min-width:0}
+canvas{display:block;width:100%;height:100%;touch-action:none}
+h1{font-size:15px;letter-spacing:.06em;margin:0 0 2px}
+.kicker{color:var(--muted);font-size:11px;margin-bottom:12px}
+.section{border-top:1px solid rgba(255,255,255,.09);padding-top:11px;margin-top:11px}
+.section h2{font-size:10px;text-transform:uppercase;letter-spacing:.12em;color:var(--muted);margin:0 0 8px}
+.row{display:flex;gap:6px;flex-wrap:wrap;align-items:center}
+.field{display:grid;grid-template-columns:1fr auto;gap:8px;align-items:center;margin:6px 0;color:var(--muted);font-size:11px}
+.source{font:10px ui-monospace,SFMono-Regular,Menlo,monospace;color:var(--muted);overflow-wrap:anywhere;margin-top:6px;line-height:1.35}
+.source b{color:var(--text);font-family:inherit}
+#status{position:absolute;z-index:9;left:14px;top:14px;background:rgba(20,18,13,.88);border:1px solid var(--line);border-radius:9px;padding:8px 10px;color:var(--muted);font-size:11px;pointer-events:none}
+#status.ok{color:var(--ok)}
+#status.bad{color:var(--bad)}
+#hint{position:absolute;z-index:9;left:14px;right:14px;bottom:14px;text-align:center;pointer-events:none}
+#hint span{display:inline-block;background:rgba(20,18,13,.88);border:1px solid var(--line);border-radius:9px;padding:7px 10px;color:var(--muted);font-size:11px}
+#pick{margin-top:8px;padding:8px;border:1px solid var(--line);border-radius:8px;background:#181610;color:var(--muted);font-size:11px;min-height:36px}
+#pick b{color:var(--text)}
+.badge{display:inline-block;padding:3px 6px;border:1px solid var(--line);border-radius:999px;color:var(--muted);font-size:10px}
+.badge.ok{border-color:#587a55;color:var(--ok)}
+#doc{white-space:pre-wrap;max-height:170px;overflow:auto;background:#13110d;border:1px solid var(--line);border-radius:8px;padding:8px;font:10px ui-monospace,SFMono-Regular,Menlo,monospace;color:#cfc2aa}
+#selftest{display:none}
+@media(max-width:820px){
+  #app{grid-template-columns:1fr}
+  #side{position:absolute;left:8px;top:8px;bottom:8px;width:min(330px,calc(100vw - 16px));border:1px solid var(--line);border-radius:12px;max-height:52vh}
+  #stage{grid-column:1;grid-row:1}
+  #status{left:auto;right:12px}
+}
+</style>
+</head>
+<body>
+<div id="app">
+  <aside id="side">
+    <h1>KFB TOOLBOX · WORLDBUILDER</h1>
+    <div class="kicker">WB1-TERRAIN-SCENE-01 · local review · not public</div>
+
+    <div class="section">
+      <h2>Review order</h2>
+      <div class="row">
+        <button id="viewActor" class="active">1 · Source actor</button>
+        <button id="viewProp">2 · Source prop</button>
+        <button id="viewScene" disabled>3 · Scene editor</button>
+      </div>
+      <div id="sourceFacts" class="source"></div>
+    </div>
+
+    <div id="terrainPanel" class="section" hidden>
+      <h2>Terrain · ZyFou-derived deterministic noise</h2>
+      <div class="field"><label for="seed">Seed</label><input id="seed" type="number" step="1" value="43129"></div>
+      <div class="field"><label for="height">Height</label><input id="height" type="number" min="0" max="8" step=".1" value="2.6"></div>
+      <div class="field"><label for="macro">Macro scale</label><input id="macro" type="number" min=".5" max="8" step=".1" value="3.2"></div>
+      <div class="field"><label for="detail">Detail</label><input id="detail" type="number" min=".1" max="2" step=".05" value=".55"></div>
+      <div class="row"><button id="regen">Regenerate</button><span id="terrainSig" class="badge"></span></div>
+    </div>
+
+    <div id="editPanel" class="section" hidden>
+      <h2>Scene editing · S21/S22 seam</h2>
+      <div class="row">
+        <button id="move" class="active">Move</button>
+        <button id="rotate">Rotate</button>
+        <button id="snap" class="active">Snap</button>
+        <button id="drop">Drop to terrain</button>
+      </div>
+      <div class="row" style="margin-top:6px">
+        <button id="addActor" disabled>Add Caveman</button>
+        <button id="addProp" disabled>Add Boulder</button>
+        <button id="remove" disabled>Remove selected</button>
+      </div>
+      <div id="pick">Click actor or landmark to select.</div>
+    </div>
+
+    <div id="savePanel" class="section" hidden>
+      <h2>Scene document</h2>
+      <div class="row">
+        <button id="save">Save</button>
+        <button id="reload">Reload saved</button>
+        <button id="resetScene">Reset fixture</button>
+      </div>
+      <div class="row" style="margin-top:6px">
+        <button id="exportDoc">Copy JSON</button>
+        <button id="importDoc">Import JSON</button>
+      </div>
+      <div id="saveState" class="source">No local save yet.</div>
+      <div id="doc"></div>
+    </div>
+
+    <div class="section">
+      <h2>Owner boundaries</h2>
+      <div class="source">
+        <b>Terrain donor:</b> ZyFou/ProceduralTerrains@f58a8ddb81d1fbb526a41282a9a7e9c05c2d2070 · MIT<br>
+        <b>Scene edit donor:</b> KFB S21/S22 TransformControls + local patch storage<br>
+        <b>Resident donor:</b> Resident Atlas Caveman · Rig_Medium · Melee_Unarmed_Idle<br>
+        <b>WorldBuilder owns:</b> terrain settings + source references + transforms only
+      </div>
+    </div>
+    <div id="selftest" class="section"></div>
+  </aside>
+  <main id="stage">
+    <div id="status">loading engine…</div>
+    <div id="hint"><span>Source isolation must be reviewed before the composed scene unlocks.</span></div>
+  </main>
+</div>
+
+<script type="importmap">
+{"imports":{
+  "three":"https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+  "three/addons/":"https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
+}}
+</script>
+<script type="module">
+/*
+  WB1-TERRAIN-SCENE-01
+  Reuse seams:
+  - ZyFou/ProceduralTerrains cpuNoise.js + seedDomain.js subset, pinned f58a8d... (MIT).
+  - KFB S21/S22 editor interaction: TransformControls, click select, snap, drop, localStorage.
+  - KFB Resident Atlas Caveman scene contract: exact actor, Rig_Medium, Melee_Unarmed_Idle,
+    fit height 2.2, evaluate pose before ground contact.
+  No model or animation bytes are embedded in the scene document.
+*/
+import * as THREE from 'three';
+import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+import { TransformControls } from 'three/addons/controls/TransformControls.js';
+import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
+
+const ASSET_COMMIT='891eadf01e218f5fc21387e64cea1fec8332c5b6';
+const ANIM_COMMIT='aa16a777a970f23d3f11fb3c23dc40718b04fa88';
+const ZYFOU_COMMIT='f58a8ddb81d1fbb526a41282a9a7e9c05c2d2070';
+const STORAGE_KEY='kfb-wb1-terrain-scene-01';
+const ACTOR={
+  id:'resident-caveman',
+  kind:'resident',
+  name:'Caveman',
+  residentId:'caveman',
+  rigFamily:'Rig_Medium',
+  path:'media/3D_Assets/KayKit_Mystery_Series6/8 - February 2025 - Caveman/characters/Caveman.glb',
+  commit:ASSET_COMMIT,
+  fit:{height:2.2},
+  clip:{
+    name:'Melee_Unarmed_Idle',
+    path:'media/3D_Assets/KayKit_Character_Animations_1.1/Animations/gltf/Rig_Medium/Rig_Medium_CombatMelee.glb',
+    commit:ANIM_COMMIT
+  }
+};
+const PROP={
+  id:'landmark-boulder',
+  kind:'prop',
+  name:'Boulder · Rock_3_E_Color1',
+  path:'media/3D_Assets/KayKit_Forest_Nature_Pack_1.0_FREE/Assets/gltf/Rock_3_E_Color1.gltf',
+  commit:ASSET_COMMIT,
+  fit:{max:1.35}
+};
+const DEFAULT_DOC={
+  format:'kfb-worldbuilder-scene',
+  version:1,
+  id:'wb1-terrain-scene-01',
+  terrain:{seed:43129,height:2.6,macroScale:3.2,detail:0.55},
+  sources:{
+    terrain:{repo:'ZyFou/ProceduralTerrains',commit:ZYFOU_COMMIT,license:'MIT',files:['src/engine/terrain/noise/cpuNoise.js','src/engine/terrain/noise/seedDomain.js']},
+    sceneEdit:{owner:'KFB S21/S22',interaction:['TransformControls','click-select','snap','drop','localStorage']},
+    resident:{owner:'KFB Resident Atlas',residentId:'caveman',donorPath:'tools/resident_atlas/scenes/caveman-cave-camp.json'}
+  },
+  objects:[
+    {
+      id:ACTOR.id,kind:ACTOR.kind,name:ACTOR.name,
+      source:{path:ACTOR.path,commit:ACTOR.commit},
+      resident:{id:ACTOR.residentId,rigFamily:ACTOR.rigFamily,clip:{name:ACTOR.clip.name,path:ACTOR.clip.path,commit:ACTOR.clip.commit}},
+      transform:{position:[-2.2,0,0.2],rotation:[0,0.35,0]}
+    },
+    {
+      id:PROP.id,kind:PROP.kind,name:PROP.name,
+      source:{path:PROP.path,commit:PROP.commit},
+      transform:{position:[2.2,0,-0.6],rotation:[0,-0.45,0]}
+    }
+  ]
+};
+const deepClone=v=>JSON.parse(JSON.stringify(v));
+let sceneDoc=deepClone(DEFAULT_DOC);
+const E=id=>document.getElementById(id);
+const enc=p=>p.split('/').map(encodeURIComponent).join('/');
+const raw=(p,c)=>'https://raw.githubusercontent.com/georg-doc/kayfabizarro/'+c+'/'+enc(p);
+const status=(t,k='')=>{E('status').textContent=t;E('status').className=k};
+const near=(a,b,e=1e-3)=>Math.abs(a-b)<=e;
+
+/* ---- ZyFou/ProceduralTerrains pinned MIT subset: cpuNoise.js + seedDomain.js ---- */
+function fract(v){return v-Math.floor(v)}
+function hash12(px,py){
+  let p3x=fract(px*0.1031),p3y=fract(py*0.1031),p3z=p3x;
+  const d=p3x*(p3y+33.33)+p3y*(p3z+33.33)+p3z*(p3x+33.33);
+  p3x+=d;p3y+=d;
+  return fract((p3x+p3y)*(p3z+d));
+}
+function vnoise2(px,py){
+  const ix=Math.floor(px),iy=Math.floor(py),fx=px-ix,fy=py-iy;
+  const ux=fx*fx*fx*(fx*(fx*6-15)+10),uy=fy*fy*fy*(fy*(fy*6-15)+10);
+  const a=hash12(ix,iy),b=hash12(ix+1,iy),c=hash12(ix,iy+1),d=hash12(ix+1,iy+1);
+  const top=a+(b-a)*ux,bot=c+(d-c)*ux;
+  return top+(bot-top)*uy;
+}
+function rot2(x,y){return [0.80*x+0.60*y,-0.60*x+0.80*y]}
+function fbm2(px,py,octaves,pers,lac){
+  let amp=.5,sum=0,norm=0,x=px,y=py;
+  const n=Math.max(1,Math.min(9,octaves|0));
+  for(let i=0;i<n;i++){
+    sum+=amp*vnoise2(x,y);norm+=amp;amp*=pers;
+    const r=rot2(x,y);x=r[0]*lac;y=r[1]*lac;
+  }
+  return sum/Math.max(norm,1e-4);
+}
+function seedDomainOffset(value){
+  const numeric=Number(value);if(!Number.isFinite(numeric))return 0;
+  const seed=Math.trunc(numeric);if(seed===0)return 0;
+  let hash=seed>>>0;
+  hash=Math.imul(hash^(hash>>>16),0x7feb352d);
+  hash=Math.imul(hash^(hash>>>15),0x846ca68b);
+  hash=(hash^(hash>>>16))>>>0;
+  return Math.fround((hash/0x100000000)*2048-1024);
+}
+/* ---- end pinned donor subset ---- */
+
+const renderer=new THREE.WebGLRenderer({antialias:true});
+renderer.setPixelRatio(Math.min(devicePixelRatio,2));
+renderer.outputColorSpace=THREE.SRGBColorSpace;
+renderer.shadowMap.enabled=true;
+E('stage').prepend(renderer.domElement);
+
+const scene=new THREE.Scene();
+scene.background=new THREE.Color(0x8e887a);
+scene.fog=new THREE.Fog(0x8e887a,22,45);
+const camera=new THREE.PerspectiveCamera(42,1,.05,100);
+camera.position.set(9,7,11);
+const controls=new OrbitControls(camera,renderer.domElement);
+controls.enableDamping=true;
+controls.target.set(0,1,0);
+controls.maxPolarAngle=Math.PI*.49;
+controls.minDistance=2;
+controls.maxDistance=32;
+scene.add(new THREE.HemisphereLight(0xfff2d6,0x323832,2.4));
+const sun=new THREE.DirectionalLight(0xffe6b3,2.8);
+sun.position.set(8,13,7);sun.castShadow=true;scene.add(sun);
+const grid=new THREE.GridHelper(12,24,0xe3b466,0x6a6253);
+grid.position.y=.01;scene.add(grid);
+
+const worldRoot=new THREE.Group();scene.add(worldRoot);
+const previewRoot=new THREE.Group();scene.add(previewRoot);
+const loader=new GLTFLoader();
+let terrain=null,mode='actor',selected=null,currentMixer=null,clock=new THREE.Clock(),visitedActor=true,visitedProp=false,sceneLoadToken=0;
+const sceneObjects=new Map();
+
+const gizmo=new TransformControls(camera,renderer.domElement);
+const gizmoHelper=gizmo.getHelper?gizmo.getHelper():gizmo;
+scene.add(gizmoHelper);
+gizmoHelper.visible=false;
+gizmo.addEventListener('dragging-changed',e=>{controls.enabled=!e.value});
+gizmo.setTranslationSnap(.1);
+gizmo.setRotationSnap(THREE.MathUtils.degToRad(15));
+
+function bounds(o,precise=true){o.updateWorldMatrix(true,true);return new THREE.Box3().setFromObject(o,precise)}
+function fitObject(o,fit){
+  const b=bounds(o,false),s=new THREE.Vector3();b.getSize(s);
+  let k=1;
+  if(fit&&fit.height)k=fit.height/Math.max(s.y,1e-6);
+  if(fit&&fit.max)k=fit.max/Math.max(s.x,s.y,s.z,1e-6);
+  o.scale.multiplyScalar(k);o.updateWorldMatrix(true,true);
+}
+function groundModelLocal(model){
+  const b=bounds(model,true);
+  if(Number.isFinite(b.min.y)){model.position.y-=b.min.y;model.updateWorldMatrix(true,true)}
+}
+function setCameraForObject(obj){
+  const b=bounds(obj,true),c=b.getCenter(new THREE.Vector3()),s=b.getSize(new THREE.Vector3());
+  const r=Math.max(s.x,s.y,s.z,1);
+  controls.target.copy(c);
+  camera.position.set(c.x+r*2.1,c.y+r*1.15,c.z+r*2.4);
+  controls.update();
+}
+function clearGroup(g){
+  while(g.children.length)g.remove(g.children[0]);
+}
+function disposeTerrain(){
+  if(terrain){worldRoot.remove(terrain);terrain.geometry.dispose();terrain.material.dispose();terrain=null}
+}
+function resetMixer(){
+  if(currentMixer){try{currentMixer.stopAllAction()}catch{}currentMixer=null}
+}
+async function loadActorModel(animated=true){
+  const gltf=await loader.loadAsync(raw(ACTOR.path,ACTOR.commit));
+  const model=gltf.scene;fitObject(model,ACTOR.fit);
+  if(animated){
+    const ag=await loader.loadAsync(raw(ACTOR.clip.path,ACTOR.clip.commit));
+    const clip=ag.animations.find(c=>c.name===ACTOR.clip.name);
+    if(!clip)throw Error('Resident clip not found: '+ACTOR.clip.name);
+    currentMixer=new THREE.AnimationMixer(model);
+    currentMixer.clipAction(clip).play();
+    currentMixer.setTime(0);
+    model.userData.clip=clip.name;
+  }
+  groundModelLocal(model);
+  model.traverse(n=>{if(n.isMesh){n.castShadow=true;n.receiveShadow=true}});
+  return model;
+}
+async function loadPropModel(){
+  const gltf=await loader.loadAsync(raw(PROP.path,PROP.commit));
+  const model=gltf.scene;fitObject(model,PROP.fit);groundModelLocal(model);
+  model.traverse(n=>{if(n.isMesh){n.castShadow=true;n.receiveShadow=true}});
+  return model;
+}
+
+function terrainSettingsFromUI(){
+  return {
+    seed:Math.trunc(Number(E('seed').value)||0),
+    height:Math.max(0,Number(E('height').value)||0),
+    macroScale:Math.max(.25,Number(E('macro').value)||3.2),
+    detail:Math.max(.05,Number(E('detail').value)||.55)
+  };
+}
+function applyTerrainUI(t){
+  E('seed').value=t.seed;E('height').value=t.height;E('macro').value=t.macroScale;E('detail').value=t.detail;
+}
+function terrainHeightAt(x,z,t=sceneDoc.terrain){
+  const ox=seedDomainOffset(t.seed),oz=seedDomainOffset(t.seed^0x51f15e);
+  const macro=fbm2((x+ox)*(.13/t.macroScale),(z+oz)*(.13/t.macroScale),5,.5,2.0);
+  const fine=fbm2((x-ox*.37)*(.55*t.detail),(z+oz*.29)*(.55*t.detail),3,.5,2.13);
+  return (macro-.5)*t.height+(fine-.5)*t.height*.18;
+}
+function terrainSignature(){
+  const pts=[[-4,-4],[-2,3],[0,0],[3,-2],[4,4]];
+  return pts.map(p=>terrainHeightAt(p[0],p[1]).toFixed(3)).join(' · ');
+}
+function buildTerrain(){
+  disposeTerrain();
+  const g=new THREE.PlaneGeometry(18,18,80,80);g.rotateX(-Math.PI/2);
+  const pos=g.attributes.position;
+  const colors=[];
+  const cLow=new THREE.Color(0x65705b),cMid=new THREE.Color(0x7d7659),cHigh=new THREE.Color(0xa58e67),c=new THREE.Color();
+  for(let i=0;i<pos.count;i++){
+    const x=pos.getX(i),z=pos.getZ(i),y=terrainHeightAt(x,z);
+    pos.setY(i,y);
+    const q=Math.max(0,Math.min(1,(y/Math.max(sceneDoc.terrain.height,1)+.5)));
+    if(q<.5)c.copy(cLow).lerp(cMid,q*2);else c.copy(cMid).lerp(cHigh,(q-.5)*2);
+    colors.push(c.r,c.g,c.b);
+  }
+  g.setAttribute('color',new THREE.Float32BufferAttribute(colors,3));g.computeVertexNormals();
+  const m=new THREE.MeshStandardMaterial({vertexColors:true,roughness:1,metalness:0});
+  terrain=new THREE.Mesh(g,m);terrain.receiveShadow=true;terrain.name='Continuous terrain';
+  worldRoot.add(terrain);
+  E('terrainSig').textContent=terrainSignature();
+}
+
+function makeRoot(record){
+  const root=new THREE.Group();
+  root.name=record.name;root.userData.sceneObjectId=record.id;root.userData.kind=record.kind;
+  root.position.fromArray(record.transform.position||[0,0,0]);
+  root.rotation.fromArray((record.transform.rotation||[0,0,0]).concat(['XYZ']).slice(0,4));
+  worldRoot.add(root);sceneObjects.set(record.id,root);return root;
+}
+async function buildSceneObjects(token){
+  resetMixer();
+  for(const root of sceneObjects.values())worldRoot.remove(root);
+  sceneObjects.clear();selected=null;gizmo.detach();gizmoHelper.visible=false;
+  for(const rec of sceneDoc.objects){
+    if(token!==sceneLoadToken)return;
+    const root=makeRoot(rec);
+    const model=rec.kind==='resident'?await loadActorModel(true):await loadPropModel();
+    if(token!==sceneLoadToken)return;
+    root.add(model);
+    root.userData.model=model;
+    root.userData.groundLock=rec.kind==='resident';
+    if(rec.kind==='resident')groundModelLocal(model);
+    dropRoot(root);
+  }
+  refreshAddButtons();refreshDoc();
+}
+function dropRoot(root){
+  if(!root)return;
+  root.position.y=terrainHeightAt(root.position.x,root.position.z);
+  root.updateMatrixWorld(true);
+}
+function snapAllToTerrain(){
+  for(const root of sceneObjects.values())dropRoot(root);
+}
+function updateRecordFromRoot(root){
+  const rec=sceneDoc.objects.find(o=>o.id===root.userData.sceneObjectId);
+  if(!rec)return;
+  rec.transform.position=root.position.toArray().map(v=>+v.toFixed(4));
+  rec.transform.rotation=[root.rotation.x,root.rotation.y,root.rotation.z].map(v=>+v.toFixed(5));
+}
+function updateAllRecords(){for(const root of sceneObjects.values())updateRecordFromRoot(root)}
+function refreshDoc(){
+  updateAllRecords();
+  E('doc').textContent=JSON.stringify(sceneDoc,null,2);
+}
+function refreshAddButtons(){
+  E('addActor').disabled=sceneDoc.objects.some(o=>o.id===ACTOR.id);
+  E('addProp').disabled=sceneDoc.objects.some(o=>o.id===PROP.id);
+  E('remove').disabled=!selected;
+}
+function selectRoot(root){
+  selected=root||null;
+  if(!selected){gizmo.detach();gizmoHelper.visible=false;E('pick').textContent='Click actor or landmark to select.'}
+  else{
+    gizmo.attach(selected);gizmoHelper.visible=true;
+    E('pick').innerHTML='<b>'+selected.name+'</b> · '+selected.userData.kind+' · '+(gizmo.mode==='rotate'?'rotate':'move');
+  }
+  refreshAddButtons();
+}
+gizmo.addEventListener('objectChange',()=>{
+  if(!selected)return;
+  if(selected.userData.groundLock)dropRoot(selected);
+  updateRecordFromRoot(selected);refreshDoc();
+});
+
+const ray=new THREE.Raycaster(),mouse=new THREE.Vector2();
+let downAt=null;
+renderer.domElement.addEventListener('pointerdown',e=>{downAt=[e.clientX,e.clientY]});
+renderer.domElement.addEventListener('pointerup',e=>{
+  if(mode!=='scene'||!downAt||Math.hypot(e.clientX-downAt[0],e.clientY-downAt[1])>4)return;
+  const r=renderer.domElement.getBoundingClientRect();
+  mouse.set(((e.clientX-r.left)/r.width)*2-1,-((e.clientY-r.top)/r.height)*2+1);
+  ray.setFromCamera(mouse,camera);
+  const targets=[];
+  for(const root of sceneObjects.values())targets.push(root);
+  const hits=ray.intersectObjects(targets,true);
+  if(!hits.length){selectRoot(null);return}
+  let o=hits[0].object;
+  while(o&&o.parent&&!o.userData.sceneObjectId)o=o.parent;
+  if(o&&o.userData.sceneObjectId)selectRoot(o);
+});
+
+function sourceFacts(kind){
+  if(kind==='actor'){
+    return '<b>Exact Resident Atlas source</b><br>'+ACTOR.path+'<br>@ '+ACTOR.commit.slice(0,12)+'<br><b>Rig:</b> '+ACTOR.rigFamily+' · <b>clip:</b> '+ACTOR.clip.name+' @ '+ACTOR.clip.commit.slice(0,12);
+  }
+  return '<b>Exact source landmark</b><br>'+PROP.path+'<br>@ '+PROP.commit.slice(0,12)+'<br><b>Staging:</b> whole authored asset · fit max 1.35';
+}
+function setPanels(sceneMode){
+  E('terrainPanel').hidden=!sceneMode;E('editPanel').hidden=!sceneMode;E('savePanel').hidden=!sceneMode;
+  E('hint').style.display=sceneMode?'none':'block';
+}
+async function showActor(){
+  mode='actor';visitedActor=true;resetMixer();selectRoot(null);clearGroup(previewRoot);worldRoot.visible=false;previewRoot.visible=true;grid.visible=true;setPanels(false);
+  E('viewActor').classList.add('active');E('viewProp').classList.remove('active');E('viewScene').classList.remove('active');
+  E('sourceFacts').innerHTML=sourceFacts('actor');
+  status('loading exact Caveman source…');
+  const model=await loadActorModel(true);previewRoot.add(model);setCameraForObject(model);status('source actor loaded · '+ACTOR.clip.name,'ok');
+  updateReviewUnlock();
+}
+async function showProp(){
+  mode='prop';visitedProp=true;resetMixer();selectRoot(null);clearGroup(previewRoot);worldRoot.visible=false;previewRoot.visible=true;grid.visible=true;setPanels(false);
+  E('viewActor').classList.remove('active');E('viewProp').classList.add('active');E('viewScene').classList.remove('active');
+  E('sourceFacts').innerHTML=sourceFacts('prop');
+  status('loading exact Boulder source…');
+  const model=await loadPropModel();previewRoot.add(model);setCameraForObject(model);status('source prop loaded','ok');
+  updateReviewUnlock();
+}
+async function showScene(){
+  if(!visitedActor||!visitedProp)return;
+  mode='scene';resetMixer();clearGroup(previewRoot);previewRoot.visible=false;worldRoot.visible=true;grid.visible=false;setPanels(true);
+  E('viewActor').classList.remove('active');E('viewProp').classList.remove('active');E('viewScene').classList.add('active');
+  E('sourceFacts').innerHTML='<b>Composed scene</b><br>Only source references + transforms are stored. No asset bytes or animation libraries are copied.';
+  status('building terrain + source objects…');
+  applyTerrainUI(sceneDoc.terrain);buildTerrain();
+  sceneLoadToken++;await buildSceneObjects(sceneLoadToken);
+  camera.position.set(10,7.2,11.5);controls.target.set(0,.5,0);controls.update();
+  status('scene ready · select / move / rotate / drop / save / reload','ok');
+}
+function updateReviewUnlock(){E('viewScene').disabled=!(visitedActor&&visitedProp)}
+
+function addActor(){
+  if(sceneDoc.objects.some(o=>o.id===ACTOR.id))return;
+  sceneDoc.objects.push(deepClone(DEFAULT_DOC.objects[0]));rebuildSceneAfterDocChange();
+}
+function addProp(){
+  if(sceneDoc.objects.some(o=>o.id===PROP.id))return;
+  sceneDoc.objects.push(deepClone(DEFAULT_DOC.objects[1]));rebuildSceneAfterDocChange();
+}
+async function rebuildSceneAfterDocChange(){sceneLoadToken++;buildTerrain();await buildSceneObjects(sceneLoadToken)}
+async function removeSelected(){
+  if(!selected)return;
+  const id=selected.userData.sceneObjectId;
+  sceneDoc.objects=sceneDoc.objects.filter(o=>o.id!==id);selectRoot(null);await rebuildSceneAfterDocChange();
+}
+function regenerate(){
+  sceneDoc.terrain=terrainSettingsFromUI();buildTerrain();snapAllToTerrain();refreshDoc();status('terrain regenerated from seed '+sceneDoc.terrain.seed,'ok');
+}
+function saveDoc(){
+  updateAllRecords();sceneDoc.savedAt=new Date().toISOString();
+  localStorage.setItem(STORAGE_KEY,JSON.stringify(sceneDoc));
+  E('saveState').textContent='Saved locally · '+sceneDoc.savedAt;refreshDoc();status('scene saved','ok');
+}
+async function reloadDoc(){
+  const rawDoc=localStorage.getItem(STORAGE_KEY);
+  if(!rawDoc){status('no saved scene found','bad');return false}
+  const d=JSON.parse(rawDoc);
+  if(d.format!=='kfb-worldbuilder-scene'||d.id!=='wb1-terrain-scene-01')throw Error('Unexpected scene document');
+  sceneDoc=d;applyTerrainUI(sceneDoc.terrain);await rebuildSceneAfterDocChange();
+  E('saveState').textContent='Reloaded saved scene · '+(sceneDoc.savedAt||'no timestamp');status('saved scene reloaded · continue editing','ok');return true;
+}
+async function resetFixture(){
+  sceneDoc=deepClone(DEFAULT_DOC);localStorage.removeItem(STORAGE_KEY);applyTerrainUI(sceneDoc.terrain);await rebuildSceneAfterDocChange();
+  E('saveState').textContent='Fixture reset · no local save.';status('fixture reset','ok');
+}
+async function exportDoc(){
+  refreshDoc();const text=JSON.stringify(sceneDoc,null,2);
+  try{await navigator.clipboard.writeText(text);status('scene JSON copied','ok')}catch{window.prompt('Copy scene JSON:',text)}
+}
+async function importDoc(){
+  const text=window.prompt('Paste kfb-worldbuilder-scene JSON:');if(!text)return;
+  const d=JSON.parse(text);if(d.format!=='kfb-worldbuilder-scene')throw Error('Wrong scene document format');
+  sceneDoc=d;applyTerrainUI(sceneDoc.terrain);await rebuildSceneAfterDocChange();status('scene JSON imported','ok');
+}
+
+E('viewActor').onclick=()=>showActor().catch(fail);
+E('viewProp').onclick=()=>showProp().catch(fail);
+E('viewScene').onclick=()=>showScene().catch(fail);
+E('move').onclick=()=>{gizmo.setMode('translate');E('move').classList.add('active');E('rotate').classList.remove('active');if(selected)selectRoot(selected)};
+E('rotate').onclick=()=>{gizmo.setMode('rotate');E('rotate').classList.add('active');E('move').classList.remove('active');if(selected)selectRoot(selected)};
+E('snap').onclick=e=>{
+  const on=!e.currentTarget.classList.contains('active');e.currentTarget.classList.toggle('active',on);
+  gizmo.setTranslationSnap(on?.1:null);gizmo.setRotationSnap(on?THREE.MathUtils.degToRad(15):null);
+};
+E('drop').onclick=()=>{if(selected){dropRoot(selected);updateRecordFromRoot(selected);refreshDoc();status('selected object dropped to terrain','ok')}};
+E('addActor').onclick=()=>addActor().catch(fail);
+E('addProp').onclick=()=>addProp().catch(fail);
+E('remove').onclick=()=>removeSelected().catch(fail);
+E('regen').onclick=regenerate;
+E('save').onclick=saveDoc;
+E('reload').onclick=()=>reloadDoc().catch(fail);
+E('resetScene').onclick=()=>resetFixture().catch(fail);
+E('exportDoc').onclick=()=>exportDoc().catch(fail);
+E('importDoc').onclick=()=>importDoc().catch(fail);
+addEventListener('keydown',e=>{
+  if(mode!=='scene')return;
+  if(e.key==='g')E('move').click();
+  if(e.key==='r')E('rotate').click();
+  if(e.key==='Escape')selectRoot(null);
+});
+
+function resize(){
+  const r=E('stage').getBoundingClientRect();camera.aspect=Math.max(.1,r.width/r.height);camera.updateProjectionMatrix();renderer.setSize(r.width,r.height,false);
+}
+addEventListener('resize',resize);resize();
+renderer.setAnimationLoop(()=>{
+  const dt=Math.min(clock.getDelta(),.05);
+  if(currentMixer)currentMixer.update(dt);
+  if(mode==='actor'&&previewRoot.children[0])groundModelLocal(previewRoot.children[0]);
+  if(mode==='scene'){
+    const actorRoot=sceneObjects.get(ACTOR.id);
+    if(actorRoot&&actorRoot.userData.model){
+      groundModelLocal(actorRoot.userData.model);
+      if(actorRoot.userData.groundLock)dropRoot(actorRoot);
+    }
+  }
+  controls.update();renderer.render(scene,camera);
+});
+
+function fail(err){
+  console.error(err);status('ERROR · '+(err&&err.message?err.message:String(err)),'bad');
+  E('selftest').style.display='block';E('selftest').textContent=String(err&&err.stack?err.stack:err);
+}
+
+async function runSelfTest(){
+  const report=[];const ok=(name,cond,extra='')=>{if(!cond)throw Error('SELFTEST FAIL · '+name+(extra?' · '+extra:''));report.push('PASS · '+name)};
+  localStorage.removeItem(STORAGE_KEY);
+  await showActor();ok('exact actor source visible',previewRoot.children.length===1&&mode==='actor');
+  ok('actor clip bound',currentMixer&&previewRoot.children[0].userData.clip===ACTOR.clip.name);
+  await showProp();ok('exact prop source visible',previewRoot.children.length===1&&mode==='prop');
+  ok('scene gate unlocked',!E('viewScene').disabled);
+  await showScene();ok('continuous terrain mesh exists',terrain&&terrain.geometry.attributes.position.count>1000);
+  ok('resident loaded',sceneObjects.has(ACTOR.id));
+  ok('prop loaded',sceneObjects.has(PROP.id));
+  const a=terrainHeightAt(-4,-4),b=terrainHeightAt(4,4);ok('terrain varies',!near(a,b,1e-4),a+' / '+b);
+  const prop=sceneObjects.get(PROP.id);selectRoot(prop);
+  prop.position.x+=1.2;prop.position.z-=.7;prop.rotation.y+=THREE.MathUtils.degToRad(15);dropRoot(prop);updateRecordFromRoot(prop);
+  const before=deepClone(sceneDoc.objects.find(o=>o.id===PROP.id).transform);saveDoc();
+  prop.position.set(99,99,99);prop.rotation.y=0;updateRecordFromRoot(prop);
+  await reloadDoc();
+  const after=sceneDoc.objects.find(o=>o.id===PROP.id).transform;
+  ok('save/reload restores x',near(before.position[0],after.position[0]));
+  ok('save/reload restores z',near(before.position[2],after.position[2]));
+  ok('save/reload restores rotation',near(before.rotation[1],after.rotation[1]));
+  ok('scene document stores references not bytes',JSON.stringify(sceneDoc).length<12000&&sceneDoc.objects.every(o=>o.source&&o.source.path&&o.source.commit));
+  document.body.dataset.selftest='PASS';
+  document.body.dataset.selftestCount=report.length+'/'+report.length;
+  E('selftest').style.display='block';E('selftest').textContent=report.join('\n');
+  status('SELFTEST '+report.length+'/'+report.length+' PASS','ok');
+}
+try{
+  refreshDoc();
+  await showActor();
+  if(new URLSearchParams(location.search).get('selftest')==='1')await runSelfTest();
+}catch(err){document.body.dataset.selftest='FAIL';fail(err)}
+</script>
+</body>
+</html>
