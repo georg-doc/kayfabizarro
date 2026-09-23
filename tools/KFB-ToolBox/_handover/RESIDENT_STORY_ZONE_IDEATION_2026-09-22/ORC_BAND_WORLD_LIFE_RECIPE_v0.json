@@ -23,7 +23,7 @@
     {
       "id": "band.legacy",
       "role": "hype-vocal-or-aux",
-      "sourceRef": "media/3D_Assets/KayKit Legacy/Orc Warband - legacy/characters/gltf/character_orcA.gltf",
+      "sourceRef": "media/3D_Assets/KayKit Legacy/Orc Warband - legacy/characters/gltf/character_orcB.gltf",
       "rigProfile": "Rig_Legacy assembled donor",
       "sourceStatus": "SOURCE_VERIFIED_ADAPTER_REQUIRED",
       "props": [
@@ -40,9 +40,9 @@
       ],
       "firstProofFallback": "body-bounce / hype / simple gesture without mouth-instrument dependency",
       "visualChoice": {
-        "direction": "Legacy Orc with black ponytail / dark topknot",
-        "exactSourceId": "PENDING_VISUAL_SOURCE_ISOLATION",
-        "note": "Current text-source evidence proves character_orcA and character_orcB plus two visual variants described as scar/topknot, but does not reliably map the requested black-ponytail look to A or B. Select by isolated visual proof before integration."
+        "direction": "black ponytail / dark topknot Legacy Orc",
+        "exactSourceId": "character_orcB.gltf",
+        "status": "USER_CONFIRMED_SOURCE"
       },
       "performanceAdapter": {
         "id": "legacy-bounce-squash-v0",
@@ -62,7 +62,9 @@
         "pitchPolicy": "Do not drive jump height directly from raw full-mix pitch. Pitch/spectral features may later bias rare accents only after a stable analysis proof.",
         "micProp": "Microphone may remain simply held in hand for v0; no lip-sync or mouth-to-mic animation required.",
         "legs": "No dedicated leg animation required for first proof."
-      }
+      },
+      "sourceCommit": "e0037d79af9f0546c73cee02e361f78f7d662df2",
+      "sourceBlob": "2dfd0bf6661bb207516053758a26baf5cb6407f1"
     },
     {
       "id": "band.medium",
@@ -393,5 +395,36 @@
     "arrangement": "open-field street-corner jam around a surreal stone formation / campfire-like focal object",
     "environmentRule": "Crazy-cat/open-landscape staging first; no architecture dependency.",
     "spatialMotion": "Legacy frontman may hop within a small authored local performance radius while Medium/Large remain anchored to instrument stations."
+  },
+  "bandIdentity": {
+    "name": "The KayfaBizarros",
+    "status": "USER_SELECTED",
+    "signatureTrack": "Permitless Funk / Rubbish Groove 2min A extend 01.mp3"
+  },
+  "tourBus": {
+    "id": "the-kayfabizarros-tourbus",
+    "role": "recurring band transport / road-trip landmark / later world-life arrival-departure prop",
+    "sourceRef": "media/3D_Assets/Frankensteining/Truck Armored by Quaternius - VvX8nmoCN5.glb",
+    "userPinnedCommit": "e0037d79af9f0546c73cee02e361f78f7d662df2",
+    "userPinnedBlob": "1e25be955339b6e6c46b51ae337a51da2f1f62c5",
+    "registryStatus": "repo-exact model-3d GLB, embedded dependencies, 754248 bytes",
+    "existingVehicleDonor": {
+      "status": "VERIFIED_EXISTING_DONOR",
+      "owner": "KFB Vehicle Animation / Cartoon Vehicle Deformer Lab",
+      "fixtureId": "truck-armored",
+      "note": "Reuse the existing vehicle/deformer owner before adding band-specific cartoon deformation or presentation."
+    },
+    "firstUsePolicy": "Static scenic/tour landmark first. Driving/rigging/deformation are later vehicle-owner gates.",
+    "presentationCandidates": [
+      "band signage/branding",
+      "roof luggage/props",
+      "cassette/music motifs",
+      "stage/awning later"
+    ],
+    "nonGoals": [
+      "new vehicle physics",
+      "new vehicle rig",
+      "Tourbus driving in first Orc Band scene"
+    ]
   }
 }
