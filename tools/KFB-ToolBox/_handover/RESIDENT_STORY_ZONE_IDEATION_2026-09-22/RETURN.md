@@ -70,6 +70,7 @@ The initial concept captures:
 - `ORC_BAND_DONOR_CHECK.md`
 - `ORC_BAND_WORLD_LIFE_RECIPE_v0.json`
 - `ORC_BAND_WORLD_BUILDER_POC_BRIEF.md`
+- `MUSIC_COLLECTIBLE_JUKEBOX_v0.json`
 - this `RETURN.md`
 
 ## Sources actually reviewed
@@ -108,6 +109,8 @@ This checkpoint is documentation/ideation only.
 - Rig_Large drum clip: **NOT PRESENT / AUTHORING ADAPTER REQUIRED**
 - trumpet-to-mouth play clip: **NOT PROVEN / DEFERRED**
 - Orc Band runtime/browser/Stage: **NOT BUILT / NOT RUN**
+- Music Collectible / Backpack HUD / visualizer runtime: **NOT BUILT / NOT RUN**
+- MP3 audible review in this chat: **NOT AVAILABLE THROUGH GITHUB CONNECTOR**
 - branch creation: PASS
 - first concept commit: PASS and exact branch head verified
 - recovery entry commit: PASS and exact branch head/file verified
@@ -142,6 +145,11 @@ No implementation or public result is claimed.
 - exact procedural War Drum strike adapter on Rig_Large;
 - Legacy microphone/trumpet mouth-performance proof;
 - final Suno Orc Band stems and world-scale spatial-audio tuning;
+- selected canonical Orc Band track after human listening;
+- per-track BPM/loop/beat-offset metadata for the selected track;
+- 20-slot Backpack HUD runtime and its save owner adapter;
+- Track Unlock / Almanac persistence adapter and Jukebox catalog promotion;
+- full-mix visualizer proof before any paid stem download;
 - Offica seeded spawn cadence / cooldown after forced-spawn proof;
 - optional Combat-owner handoff and return for the Orc Band interruption;
 - gift state/provenance seam without inventing a second inventory owner;
@@ -159,6 +167,14 @@ No implementation or public result is claimed.
 - historical donor rejection of blood is preserved; current user direction reopens stylized blood FX as a candidate;
 - `media/3D_Assets/KFB/` is recorded as Georg's curated future donor shortlist, not a second registry;
 - Orc Band World-Life packet is now prepared as a future WorldBuilder fixture;
+- Music Collectible / Jukebox lane now separates track unlocks from physical cassette artifacts;
+- unlocked tracks persist in Session/Journey/Fractal Almanac and do not consume the 20 physical Backpack slots;
+- proposed Backpack HUD is a compact icon + 4×5 / 20-slot overlay for physical transferable/access objects;
+- current canonical Jukebox/Music Bus is reused for on-foot/dungeon/flight/vehicle/Race playback rather than creating a second radio engine;
+- live Band audio is spatial/diegetic while personal Radio is global; v0 ducks/fades Radio near live performance zones;
+- current audio donor already exposes beat/level/pulse/bpm, enough for a no-stems first Orc Band visualizer;
+- six current Orc Band track files are recorded as candidates, not canonical Jukebox entries;
+- current KFB pool includes a Car Radio with tape player plus multiple cassette/tape donors; exact Michael-Fuchs duplicate pair is noted;
 - cast is pinned to Legacy Orc A + Rig_Medium Orc Raider + Rig_Large Orc Brute;
 - real War Drum / stick and electric guitar A/B source candidates are pinned;
 - current source truth says no shared guitar-playing clip and no Rig_Large drum clip, so performance adapters are procedural/authoring candidates rather than invented animation names;
@@ -178,7 +194,7 @@ No implementation or public result is claimed.
 
 ## One next gate
 
-**Current execution gate is the WorldBuilder prerequisite sequence WB1-P0 → P1 → P2. After that, consume the prepared Orc Band packet in WB1-P3 as the preferred first World-Life fixture. The Orc→Player pink-donut proof remains the first player-social proof and is not replaced by the band.**
+**Current execution gate remains WorldBuilder WB1-P1 → P2 after completed P0. Music/HUD/Jukebox work is prepared but deferred. After P1/P2, the Orc Band packet may consume one selected track for its first World-Life/music visualizer proof. The Orc→Player pink-donut proof remains the first player-social proof.**
 
 Do not build a general World Editor, autonomous NPC system or separate social-combat engine yet.
 
