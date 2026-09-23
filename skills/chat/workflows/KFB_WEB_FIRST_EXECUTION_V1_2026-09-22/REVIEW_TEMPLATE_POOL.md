@@ -173,6 +173,38 @@ Do **not** force `threejs-focus-review-v1` onto an editor.
 
 When a WorldBuilder/ToolBox/editor review format is human-accepted and archived, register it as a separate verified donor in `review-templates/REGISTRY.json`.
 
+## Skill routing for review slices
+
+The review harness and the domain skill are separate layers:
+
+- the **review harness** decides how Georg inspects the candidate;
+- the **domain skill** helps the producing chat build or diagnose the subject correctly;
+- project owner / branch / Return / Stage rules still come from the project SSOT and Chat→GitHub workflow.
+
+Do not create a new general “review HTML skill” while this pool and the Web-first review contract already own that workflow. Load the smallest useful domain stack instead.
+
+| Review focus | Default helper | Load additionally only when needed |
+|---|---|---|
+| 3D source object, GLB loading, scale, camera, light, material | `skills/design-3d_v1.md` | `skills/design-3d_3d-reference_v1.md` for deeper GLB/scale/failure diagnosis |
+| Direct Claude Design 3D paste / one-file instruction surface | `skills/design-3d_combined_for-design_v1.md` | do not also load base + reference unless the combined file is insufficient |
+| Visual proof, comparison discipline, screenshots / measurable evidence | `skills/session-design-briefing.md` | project-specific evidence contract if stricter |
+| Mounts, attachments, donor-part fitting, multi-character fit / contact | `skills/kfb-frankensteining_v1.md` | `design-3d_v1` for browser scene construction |
+| Character/object motion, pose, squash/stretch, follow-through, eye/idle behavior | `skills/cartoon-motion_v1.md` | construction skill only for the scene shell |
+| Cartoon prop / landmark form and material language | `skills/KFB_3D_CartoonStyle_v1.md` | only when look/style itself is the acceptance target |
+| End-of-slice packaging / slim export | `skills/session-export_v1.md` | only at export/handoff time, not during every iteration |
+
+### Default minimal stacks
+
+**3D inspection:** `threejs-focus-review-v1 + design-3d_v1 + session-design-briefing`.
+
+**Character mount / fit:** add `kfb-frankensteining_v1`.
+
+**Pose / motion review:** add `cartoon-motion_v1`.
+
+**Claude Design handoff:** prefer `design-3d_combined_for-design_v1.md` as the single pasted 3D instruction file.
+
+The rule is **load on demand, not all at once**. A skill may improve construction or diagnosis, but it never becomes a second runtime owner and never overrides a verified donor or project contract.
+
 ## Review lifecycle
 
 `implementation head → generate artifact from exact head → chat review → human feedback → source repair → regenerate`
