@@ -590,3 +590,35 @@ Exactly one next gate: **TMB-1 · isolated exact animated CardCarrier + one real
 TMB-2 Double-Space, TMB-3 landing, WorldBuilder consumption, Racer/Drive integration and Cloudflare runtime publication remain **NOT STARTED / HOLD**.
 
 Racer stabilization separately carries `RSTAB-CYLINDER-GROUND-01` for track/support cylinders that appear above or below their intended support surface.
+
+
+## 2026-09-23 · ToolBox / WorldBuilder / Orc Band current routing
+
+### ToolBox
+Current consolidation brief:
+`tools/KFB-ToolBox/_handover/TOOLBOX_STAGE_FIRST_DEFAULT_V1_2026-09-23/START_HERE.md`
+
+Direction:
+- Stage-First Concept is the candidate default ToolBox UI;
+- Claude Design composes existing owners, it does not rebuild EyeRig/Graft/Motion/Scene Editor;
+- Web rehomes the Session Cut and generates zero-install HTML review;
+- current v0.5 ZIP is intake/provenance, not wholesale promotion.
+
+### WorldBuilder
+Current product gate:
+`WB1-TERRAIN-EDITOR-01`
+
+Brief:
+`tools/KFB-ToolBox/_handover/WORLD_BUILDER_V1_2026-09-22/TERRAIN_FIRST_FRESH_WEB_START.md`
+
+After Web HTML Human PASS only:
+`TERRAIN_EDITOR_CLAUDE_DESIGN_AFTER_WEB_2026-09-23.md`
+
+### KayfaBizarros Orc Band
+Current ideation/POC handoff:
+`tools/KFB-ToolBox/_handover/KAYFABIZARROS_ORC_BAND_POC_2026-09-23/START_HERE.md`
+
+First gate:
+exact Orc B bandleader + source-backed drummer/wardrum + existing camp/scenery + `Rubbish Groove 2min A extend 01.mp3`, one shared beat clock, one HTML review.
+
+All three lanes use HTML-first review. Cloudflare is milestone-only.
