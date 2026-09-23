@@ -74,3 +74,23 @@ Exactly one next gate remains **RSTAB-1 HUMAN GEOMETRY GATE**.
 - intended review URL unchanged: `https://kayfabizarro.pages.dev/kfb-hub/stage/stunt-world/cologne-option-c-rstab1/`;
 - public verification remains UNKNOWN/PENDING due pages.dev access/DNS failure in this environment;
 - downstream order after WEDGE ACCEPT: vehicle support/orientation/landing → hard-curve stability → trail continuity recheck.
+
+
+## 2026-09-23 · TARCH-0 architecture reset + Chat artifact QA
+
+- old RSTAB-1 tunnel/ground foundation archived after two failed human repair passes; no WEDGE pass 3;
+- new Race Draft PR #33: `chat/racer-tarch0-sp13ktra-2026-09-23`;
+- current handoff head `6c72e66678599d303c16c825255d2cd04bac9c7e`;
+- runtime-tested TARCH integration `b37cbad1038e669a0c9929d25789d54d0283b0fc`;
+- GitHub Actions `35817990559 / 107043574054`: SUCCESS;
+- architecture regression: **7 active / 0 skipped**;
+- donor principle: `KilledByAPixel/SP13KTRA@166ad838b9a067f85100eaff7876522f7cfe9feb`;
+- donor license All Rights Reserved; no donor code/assets copied;
+- KFB tunnel architecture now uses one continuous road/causeway, broad ground exclusion and dense arch scenery;
+- rejected runtime owners removed from the tunnel path: `TUNNEL_SHELL`, `tunnel-shell`, `ground-cut-wall-*`, `ground-cut-invert`;
+- human visual QA moved to attached ChatGPT HTML artifacts: R1 isolated → R2 integrated → optional R3 correction;
+- Cloudflare / Pages deferred until after human visual acceptance;
+- no vehicle grounding, hard-curve or trail work started.
+
+Exactly one next gate:
+**TARCH-0 HUMAN ARCHITECTURE GATE · R1 CHAT HTML**.
