@@ -1,0 +1,452 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>KFB Hub</title>
+<style>
+  :root{--bg:#f5f2ea;--card:#fffdf8;--ink:#23201b;--mute:#6f685c;--line:#e2dccf;
+    --look:#b4541c;--run:#2f6f8f;--can:#4f7a34;--wait:#8a8172;--warn:#9a6a00;--bad:#a3342a;}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);font:14px/1.45 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+  header{position:sticky;top:0;z-index:5;display:flex;flex-wrap:wrap;align-items:center;gap:.5rem 1rem;
+    padding:.6rem 1rem;background:#26221c;color:#f3efe6}
+  header h1{font-size:1rem;margin:0;font-weight:650;letter-spacing:.01em}
+  .src{padding:.1rem .5rem;border-radius:99px;font-size:.78rem;font-weight:600;background:#3d372e}
+  .src.live{background:#2e6b3f}.src.canon{background:#2f5f7a}.src.embedded{background:#8a6212}
+  header .meta{font-size:.8rem;color:#cfc7b8}
+  header .spacer{flex:1}
+  nav.jump{display:flex;gap:.2rem}
+  nav.jump a{color:#f3efe6;text-decoration:none;font-size:.85rem;padding:.2rem .55rem;border-radius:6px}
+  nav.jump a:hover{background:#3d372e}
+  header input[type=search]{width:12rem;max-width:40vw;background:#3d372e;color:#f3efe6;border:1px solid #57503f;border-radius:6px;padding:.25rem .5rem;font-size:.82rem}
+  header input[type=search]::placeholder{color:#b8ae9c}
+  h2.section{font-size:1.05rem;margin:1.4rem 0 .6rem;padding-top:.4rem;border-top:1px solid var(--line)}
+  h2.section:first-child{border-top:0;margin-top:.2rem}
+  .tools{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:.75rem}
+  @media (max-width:1100px){.tools{grid-template-columns:repeat(2,minmax(0,1fr))}}
+  @media (max-width:640px){.tools{grid-template-columns:1fr}}
+  .tgroup h3{font-size:.82rem;text-transform:uppercase;letter-spacing:.06em;margin:.2rem 0 .5rem;color:var(--mute)}
+  .tool{display:block;background:var(--card);border:1px solid var(--line);border-radius:8px;padding:.55rem .7rem;margin-bottom:.5rem;color:inherit;text-decoration:none}
+  .tool:hover{box-shadow:0 1px 6px rgba(0,0,0,.08)}
+  .tool strong{display:block;font-size:.92rem}
+  .tool span.w{display:block;color:#3b362e;font-size:.84rem;margin:.15rem 0 .3rem}
+  .tool.off{opacity:.55;pointer-events:none}
+  .hidden-by-search{display:none !important}
+  header button{background:#3d372e;color:#f3efe6;border:1px solid #57503f;border-radius:6px;padding:.25rem .6rem;cursor:pointer;font:inherit;font-size:.8rem}
+  .banner{margin:.6rem 1rem 0;padding:.5rem .75rem;border-radius:8px;background:#fbefcf;color:#5b4300;border:1px solid #edd79a;font-size:.85rem}
+  .banner[hidden]{display:none}
+  main{padding:.75rem 1rem 2rem;max-width:1500px;margin:0 auto}
+  .buckets{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:.75rem}
+  @media (max-width:1100px){.buckets{grid-template-columns:repeat(2,minmax(0,1fr))}}
+  @media (max-width:640px){.buckets{grid-template-columns:1fr}}
+  section.bucket h2{font-size:.82rem;text-transform:uppercase;letter-spacing:.06em;margin:.2rem 0 .5rem;display:flex;gap:.4rem;align-items:center}
+  section.bucket h2 .n{background:var(--line);border-radius:99px;padding:0 .45rem;font-size:.75rem}
+  section.bucket h2 .dot{width:.6rem;height:.6rem;border-radius:50%}
+  .LOOK_AT .dot{background:var(--look)}.RUNNING .dot{background:var(--run)}.CAN_START .dot{background:var(--can)}.WAITING .dot{background:var(--wait)}
+  .hint{color:var(--mute);font-size:.78rem;margin:-.3rem 0 .5rem}
+  .card{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--wait);border-radius:8px;padding:.6rem .7rem;margin-bottom:.55rem;cursor:pointer}
+  .LOOK_AT .card{border-left-color:var(--look)}.RUNNING .card{border-left-color:var(--run)}.CAN_START .card{border-left-color:var(--can)}
+  .card:hover{box-shadow:0 1px 6px rgba(0,0,0,.08)}
+  .card h3{font-size:.95rem;margin:0 0 .2rem}
+  .card p{margin:0 0 .35rem;color:#3b362e}
+  .card .who{font-size:.76rem;color:var(--mute)}
+  .card .you{font-size:.84rem;margin:.3rem 0 0;padding:.3rem .45rem;background:#f4eee2;border-radius:6px}
+  .tags{display:flex;flex-wrap:wrap;gap:.3rem;margin-top:.35rem}
+  .tag{font-size:.72rem;border-radius:99px;padding:.05rem .45rem;background:#eee7da;color:#5a5245}
+  .tag.warn{background:#fbefcf;color:#6b4d00}.tag.bad{background:#f6d9d5;color:#7c2219}
+  .card .actions{margin-top:.45rem;display:flex;gap:.4rem;flex-wrap:wrap}
+  .btn{font:inherit;font-size:.8rem;border-radius:6px;border:1px solid #cfc6b4;background:#fff;padding:.25rem .6rem;cursor:pointer}
+  .btn.primary{background:#2f5a3a;color:#fff;border-color:#2f5a3a}
+  .empty{color:var(--mute);font-size:.84rem;padding:.4rem 0}
+  .lower{display:grid;grid-template-columns:1fr 1fr;gap:.75rem;margin-top:1rem}
+  @media (max-width:900px){.lower{grid-template-columns:1fr}}
+  .panel{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:.7rem .8rem}
+  .panel h2{font-size:.82rem;text-transform:uppercase;letter-spacing:.06em;margin:0 0 .5rem}
+  .panel ul{margin:0;padding-left:1.1rem}
+  .panel a{color:#2f5f7a}
+  details summary{cursor:pointer;font-weight:600}
+  label{display:block;font-size:.8rem;color:var(--mute);margin-top:.45rem}
+  input,textarea{width:100%;font:inherit;font-size:.85rem;padding:.3rem .45rem;border:1px solid #d8d0c0;border-radius:6px;background:#fff}
+  textarea{min-height:9rem;font-family:ui-monospace,Menlo,monospace;font-size:.78rem}
+  aside#drawer{position:fixed;top:0;right:0;height:100%;width:min(460px,100%);background:#fffdf8;border-left:1px solid var(--line);
+    box-shadow:-4px 0 18px rgba(0,0,0,.12);transform:translateX(105%);transition:transform .18s ease;z-index:10;overflow:auto;padding:1rem}
+  aside#drawer.open{transform:none}
+  aside#drawer h2{margin:.2rem 0 .4rem;font-size:1.05rem}
+  aside#drawer .close{float:right}
+  dl.tech{display:grid;grid-template-columns:auto 1fr;gap:.2rem .7rem;font-size:.8rem;margin:.4rem 0}
+  dl.tech dt{color:var(--mute)} dl.tech dd{margin:0;word-break:break-all}
+  code{font-family:ui-monospace,Menlo,monospace;font-size:.78rem}
+  #toast{position:fixed;left:50%;bottom:1.2rem;transform:translateX(-50%);background:#26221c;color:#fff;padding:.4rem .8rem;border-radius:8px;font-size:.85rem;opacity:0;transition:opacity .2s;z-index:20;pointer-events:none}
+  #toast.show{opacity:1}
+</style>
+</head>
+<body>
+<header>
+  <h1>KFB Hub</h1>
+  <nav class="jump"><a href="#jetzt">Jetzt</a><a href="#werkzeuge">Werkzeuge</a><a href="#archiv">Archiv</a></nav>
+  <input id="search" type="search" placeholder="Suchen …" aria-label="Suchen">
+  <span id="srcBadge" class="src">lädt …</span>
+  <span id="stand" class="meta"></span>
+  <span class="spacer"></span>
+  <span id="commit" class="meta"></span>
+  <button id="reload" type="button" title="Jetzt nach neuem Stand schauen">Neu laden</button>
+</header>
+<div id="staleBanner" class="banner" hidden></div>
+<div id="srcBanner" class="banner" hidden></div>
+<main>
+  <h2 class="section" id="jetzt">Jetzt</h2>
+  <div class="buckets">
+    <section class="bucket LOOK_AT"><h2><span class="dot"></span>Schau dir das an <span class="n" id="n-LOOK_AT">0</span></h2>
+      <div class="hint">Hier brauchst du eine Entscheidung.</div><div id="b-LOOK_AT"></div></section>
+    <section class="bucket RUNNING"><h2><span class="dot"></span>Läuft gerade <span class="n" id="n-RUNNING">0</span></h2>
+      <div class="hint">Daran wird gerade gebaut. Du musst nichts tun.</div><div id="b-RUNNING"></div></section>
+    <section class="bucket CAN_START"><h2><span class="dot"></span>Kannst du parallel starten <span class="n" id="n-CAN_START">0</span></h2>
+      <div class="hint">Fertige Startnachrichten. Kopieren, einfügen, fertig.</div><div id="b-CAN_START"></div></section>
+    <section class="bucket WAITING"><h2><span class="dot"></span>Wartet <span class="n" id="n-WAITING">0</span></h2>
+      <div class="hint">Geparkt oder hängt von etwas anderem ab.</div><div id="b-WAITING"></div></section>
+  </div>
+
+  <h2 class="section" id="werkzeuge">Werkzeuge</h2>
+  <div class="hint">Nur was sich wirklich öffnen lässt. Die Liste prüft sich bei jedem Abgleich selbst.</div>
+  <div class="tools" id="tools"></div>
+
+  <h2 class="section" id="archiv">Archiv und für Chats</h2>
+  <div class="lower">
+    <div class="panel">
+      <h2>Archiv</h2>
+      <ul id="archive"></ul>
+      <h2 style="margin-top:.9rem">WSA</h2>
+      <div id="wsa"></div>
+      <h2 style="margin-top:.9rem">Probleme beim letzten Abgleich</h2>
+      <div id="problems"></div>
+      <h2 style="margin-top:.9rem">Arbeitsregeln</h2>
+      <ul id="standards"></ul>
+    </div>
+    <div class="panel">
+      <details id="launcher">
+        <summary>Neuen Web-Chat vorbereiten</summary>
+        <label>Projekt<input id="lf-project" placeholder="z. B. Racer-Anatomie"></label>
+        <label>Repo<input id="lf-repo" value="georg-doc/kayfabizarro"></label>
+        <label>Ziel (PR oder Basis)<input id="lf-pr" placeholder="z. B. Draft-PR #193 oder main"></label>
+        <label>Genau ein Ergebnis<input id="lf-outcome" placeholder="Was soll am Ende klickbar da sein?"></label>
+        <label>Vorlagen, die unverändert benutzt werden<input id="lf-donors" placeholder="Dateien / Module"></label>
+        <label>Name der Review-Datei<input id="lf-review" placeholder="z. B. RACER_ANATOMY_01_REVIEW.html"></label>
+        <label>Startnachricht<textarea id="lf-out" readonly></textarea></label>
+        <div class="actions" style="margin-top:.4rem"><button class="btn primary" id="lf-copy" type="button">Startnachricht kopieren</button></div>
+      </details>
+    </div>
+  </div>
+</main>
+
+<aside id="drawer" aria-hidden="true">
+  <button class="btn close" id="drawerClose" type="button">Schließen</button>
+  <div id="drawerBody"></div>
+</aside>
+<div id="toast" role="status" aria-live="polite"></div>
+
+<script id="embedded-registry" type="application/json">/*__EMBEDDED_REGISTRY__*/</script>
+<script>
+(function(){
+'use strict';
+var REPO = 'georg-doc/kayfabizarro';
+var SOURCES = [
+  {id:'live', label:'Live', badge:'live', base:'https://raw.githubusercontent.com/'+REPO+'/bot/production-desk-update/registry/production/v1'},
+  {id:'canon', label:'Hauptstand', badge:'canon', base:'https://raw.githubusercontent.com/'+REPO+'/main/registry/production/v1'}
+];
+var POLL_MS = 75000;
+var FILES = ['lanes','briefings','reviews','standards','wsa','tools','problems'];
+var BUCKETS = ['LOOK_AT','RUNNING','CAN_START','WAITING'];
+var FRESH = {
+  MOVED:{t:'Neue Arbeit seit letztem Eintrag',c:'warn'},
+  LAST_KNOWN:{t:'Zuletzt bekannt · nicht automatisch geprüft',c:'warn'},
+  UNVERIFIED:{t:'Nicht geprüft',c:'bad'}
+};
+var state = {reg:null, source:null, byId:{}};
+
+function $(id){return document.getElementById(id);}
+function el(tag, cls, text){var n=document.createElement(tag); if(cls) n.className=cls; if(text!=null) n.textContent=text; return n;}
+function short(s){return s ? String(s).slice(0,7) : '–';}
+function toast(msg){var t=$('toast'); t.textContent=msg; t.classList.add('show'); clearTimeout(toast._t); toast._t=setTimeout(function(){t.classList.remove('show');},1800);}
+function ago(iso){
+  if(!iso) return 'unbekannt';
+  var ms = Date.now() - Date.parse(iso); if(!isFinite(ms)) return 'unbekannt';
+  var m = Math.round(ms/60000);
+  if(m < 1) return 'gerade eben'; if(m < 60) return 'vor '+m+' Min.';
+  var h = Math.round(m/60); if(h < 48) return 'vor '+h+' Std.';
+  return 'vor '+Math.round(h/24)+' Tagen';
+}
+
+function embedded(){
+  try{
+    var raw = $('embedded-registry').textContent.trim();
+    if(!raw || raw.indexOf('__EMBEDDED_REGISTRY__')>=0) return null;
+    return JSON.parse(raw);
+  }catch(e){ return null; }
+}
+
+function fetchJSON(url){
+  return fetch(url,{cache:'no-store'}).then(function(r){ if(!r.ok) throw new Error(r.status+' '+url); return r.json(); });
+}
+function loadFrom(src){
+  return fetchJSON(src.base+'/manifest.json').then(function(manifest){
+    return Promise.all(FILES.map(function(f){ return fetchJSON(src.base+'/'+f+'.json'); })).then(function(parts){
+      var reg = {manifest:manifest};
+      FILES.forEach(function(f,i){ reg[f]=parts[i]; });
+      return reg;
+    });
+  });
+}
+function loadBest(i){
+  i = i||0;
+  if(i >= SOURCES.length){
+    var e = embedded();
+    return Promise.resolve(e ? {reg:e, source:{id:'embedded', label:'Eingebauter Stand', badge:'embedded'}} : null);
+  }
+  return loadFrom(SOURCES[i]).then(function(reg){ return {reg:reg, source:SOURCES[i]}; })
+    .catch(function(){ return loadBest(i+1); });
+}
+
+function renderHeader(){
+  var m = state.reg.manifest, s = state.source;
+  var b = $('srcBadge'); b.className = 'src '+s.badge; b.textContent = s.label;
+  $('stand').textContent = 'Stand: '+ago(m.checkedAt || m.generatedAt);
+  $('commit').textContent = 'Quelle '+short(m.sourceCommit);
+  var hours = (Date.now()-Date.parse(m.checkedAt||m.generatedAt))/3600000;
+  var sb = $('staleBanner');
+  if(isFinite(hours) && hours > (m.staleAfterHours||8)){
+    sb.hidden=false; sb.textContent='Achtung: Dieser Stand ist älter als '+(m.staleAfterHours||8)+' Stunden. Einiges kann sich inzwischen geändert haben.';
+  } else sb.hidden=true;
+  var srcb = $('srcBanner');
+  if(s.id==='embedded'){
+    srcb.hidden=false;
+    srcb.textContent='Du siehst den eingebauten Stand. Die automatische Aktualisierung läuft erst, wenn sie einmal freigegeben ist. Die Übersicht schaut trotzdem regelmäßig nach.';
+  } else if(s.id==='canon'){
+    srcb.hidden=false; srcb.textContent='Du siehst den Hauptstand. Der Live-Abgleich ist gerade nicht erreichbar.';
+  } else srcb.hidden=true;
+}
+
+function tagsFor(l){
+  var box = el('div','tags');
+  if(FRESH[l.freshness]) box.appendChild(el('span','tag '+FRESH[l.freshness].c, FRESH[l.freshness].t));
+  if(l.brief && !l.brief.exists) box.appendChild(el('span','tag bad','Startnachricht fehlt'));
+  return box;
+}
+
+function card(l){
+  var c = el('div','card'); c.tabIndex=0; c.dataset.lane=l.id;
+  c.appendChild(el('h3',null,l.title));
+  if(l.what) c.appendChild(el('p',null,l.what));
+  c.appendChild(el('div','who',l.provider));
+  if(l.bucket==='WAITING' && l.waitingFor) c.appendChild(el('div','you','Wartet auf: '+l.waitingFor));
+  else if(l.yourAction) c.appendChild(el('div','you','Für dich: '+l.yourAction));
+  var t = tagsFor(l); if(t.childNodes.length) c.appendChild(t);
+  var acts = el('div','actions');
+  if(l.brief && l.brief.exists && l.brief.pasteReady){
+    var cp = el('button','btn primary','Startnachricht kopieren'); cp.type='button';
+    cp.addEventListener('click',function(ev){ ev.stopPropagation(); copyBrief(l); });
+    acts.appendChild(cp);
+  }
+  var d = el('button','btn','Details'); d.type='button';
+  d.addEventListener('click',function(ev){ ev.stopPropagation(); openDrawer(l.id); });
+  acts.appendChild(d); c.appendChild(acts);
+  c.addEventListener('click',function(){ openDrawer(l.id); });
+  c.addEventListener('keydown',function(ev){ if(ev.key==='Enter') openDrawer(l.id); });
+  return c;
+}
+
+function renderBuckets(){
+  var lanes = (state.reg.lanes && state.reg.lanes.lanes) || [];
+  state.byId = {};
+  BUCKETS.forEach(function(b){
+    var box = $('b-'+b); box.textContent='';
+    var list = lanes.filter(function(l){ return l.bucket===b && l.freshness!=='CLOSED'; });
+    $('n-'+b).textContent = list.length;
+    if(!list.length) box.appendChild(el('div','empty', b==='LOOK_AT' ? 'Gerade nichts zu entscheiden.' : 'Nichts.'));
+    list.forEach(function(l){ state.byId[l.id]=l; box.appendChild(card(l)); });
+  });
+}
+
+function renderTools(){
+  var t = state.reg.tools || {tools:[], archive:[]};
+  var box = $('tools'); box.textContent='';
+  var groups = [];
+  (t.tools||[]).forEach(function(x){ if(groups.indexOf(x.group)<0) groups.push(x.group); });
+  groups.forEach(function(g){
+    var col = el('div','tgroup'); col.appendChild(el('h3',null,g));
+    (t.tools||[]).filter(function(x){ return x.group===g; }).forEach(function(x){
+      var a = el('a','tool'+(x.available?'':' off')); a.dataset.tool=x.id;
+      if(x.available){ a.href=x.url; a.target='_blank'; a.rel='noopener'; }
+      a.appendChild(el('strong',null,x.title));
+      if(x.what) a.appendChild(el('span','w',x.what));
+      var tags = el('div','tags'); tags.appendChild(el('span','tag'+(x.available?'':' bad'), x.available ? x.status : 'Gerade nicht erreichbar'));
+      a.appendChild(tags); col.appendChild(a);
+    });
+    box.appendChild(col);
+  });
+  var ar = $('archive'); ar.textContent='';
+  (t.archive||[]).forEach(function(x){
+    var li = el('li');
+    if(x.available){ var a=el('a',null,x.label); a.href=x.url; a.target='_blank'; a.rel='noopener'; li.appendChild(a); }
+    else li.appendChild(el('span','who',x.label+' (gerade nicht erreichbar)'));
+    ar.appendChild(li);
+  });
+  applySearch();
+}
+
+function applySearch(){
+  var q = ($('search').value||'').trim().toLowerCase();
+  var nodes = document.querySelectorAll('.card, .tool');
+  for(var i=0;i<nodes.length;i++){
+    var n = nodes[i];
+    n.classList.toggle('hidden-by-search', !!q && n.textContent.toLowerCase().indexOf(q) < 0);
+  }
+}
+
+function renderLower(){
+  var w = state.reg.wsa || {};
+  $('wsa').textContent = w.text || (w.state==='NOT_NEEDED' ? 'Gerade nicht nötig.' : 'Unbekannt.');
+  var p = (state.reg.problems && state.reg.problems.problems) || [];
+  var pb = $('problems'); pb.textContent='';
+  if(!p.length) pb.appendChild(el('div','empty','Keine.'));
+  else { var ul=el('ul'); p.forEach(function(x){ ul.appendChild(el('li',null,(x.lane?x.lane+': ':'')+x.detail)); }); pb.appendChild(ul); }
+  var st = $('standards'); st.textContent='';
+  ((state.reg.standards && state.reg.standards.standards)||[]).forEach(function(s){
+    var li=el('li'), a=el('a',null,s.label); a.href=s.url; a.target='_blank'; a.rel='noopener'; li.appendChild(a); st.appendChild(li);
+  });
+}
+
+function openDrawer(id){
+  var l = state.byId[id]; if(!l) return;
+  var body = $('drawerBody'); body.textContent='';
+  body.appendChild(el('h2',null,l.title));
+  if(l.what) body.appendChild(el('p',null,l.what));
+  if(l.bucket==='WAITING' && l.waitingFor) body.appendChild(el('p','you','Wartet auf: '+l.waitingFor));
+  else if(l.yourAction) body.appendChild(el('p','you','Für dich: '+l.yourAction));
+  if(l.questions && l.questions.length){
+    body.appendChild(el('strong',null,'Fragen an dich'));
+    var ol=el('ol'); l.questions.forEach(function(q){ ol.appendChild(el('li',null,q)); }); body.appendChild(ol);
+  }
+  if(l.freshnessNote) body.appendChild(el('p','who',l.freshnessNote));
+  if(l.brief && l.brief.exists && l.brief.pasteReady){
+    var cp=el('button','btn primary','Startnachricht kopieren'); cp.type='button';
+    cp.addEventListener('click',function(){ copyBrief(l); }); body.appendChild(cp);
+  }
+  var det = el('details'); det.appendChild(el('summary',null,'Technische Details (für Chats)'));
+  var dl = el('dl','tech');
+  function row(k,v,href){ dl.appendChild(el('dt',null,k)); var dd=el('dd'); if(href){ var a=el('a',null,v); a.href=href; a.target='_blank'; a.rel='noopener'; dd.appendChild(a);} else dd.textContent=v; dl.appendChild(dd); }
+  row('Wer', l.provider||'–');
+  row('Repo', l.repo||'–');
+  if(l.pr) row('PR', '#'+l.pr, l.prUrl);
+  if(l.branch) row('Branch', l.branch);
+  row('Stand (Head)', short(l.head));
+  if(l.headDate) row('Zeit', l.headDate);
+  row('Status', l.freshness);
+  if(l.brief){ row(l.brief.label, l.brief.path, l.brief.url); row('Blob', short(l.brief.blob)); }
+  det.appendChild(dl); body.appendChild(det);
+  var ta = el('textarea'); ta.id='manualCopy'; ta.hidden=true; ta.readOnly=true; body.appendChild(ta);
+  $('drawer').classList.add('open'); $('drawer').setAttribute('aria-hidden','false');
+}
+function closeDrawer(){ $('drawer').classList.remove('open'); $('drawer').setAttribute('aria-hidden','true'); }
+
+function writeClipboard(text){
+  if(navigator.clipboard && navigator.clipboard.writeText){
+    return navigator.clipboard.writeText(text).catch(function(){ return legacyCopy(text); });
+  }
+  return legacyCopy(text);
+}
+function legacyCopy(text){
+  return new Promise(function(res,rej){
+    var ta=document.createElement('textarea'); ta.value=text; ta.style.position='fixed'; ta.style.opacity='0';
+    document.body.appendChild(ta); ta.select();
+    var ok=false; try{ ok=document.execCommand('copy'); }catch(e){}
+    document.body.removeChild(ta); ok?res():rej(new Error('copy blocked'));
+  });
+}
+function showManual(text){
+  var ta=$('manualCopy'); if(!ta) return; ta.hidden=false; ta.value=text; ta.focus(); ta.select();
+}
+function copyBrief(l){
+  var fallback = 'Bitte lies diese Datei vollständig und arbeite genau danach:\n'+l.brief.url;
+  fetch(l.brief.rawUrl,{cache:'no-store'})
+    .then(function(r){ if(!r.ok) throw new Error(r.status); return r.text(); })
+    .then(function(text){ return {text:text, full:true}; })
+    .catch(function(){ return {text:fallback, full:false}; })
+    .then(function(res){
+      return writeClipboard(res.text).then(function(){
+        toast(res.full ? 'Startnachricht kopiert' : 'Link zur Startnachricht kopiert');
+      }).catch(function(){
+        if(!$('drawer').classList.contains('open')) openDrawer(l.id);
+        showManual(res.text); toast('Bitte markierten Text selbst kopieren');
+      });
+    });
+}
+
+function launcherText(){
+  function v(id,def){ var x=$(id).value.trim(); return x||def; }
+  return [
+    '@GitHub',
+    'Neuer begrenzter Web-Slice: '+v('lf-project','<Projekt>'),
+    '',
+    'Lies zuerst den aktuellen Einstieg:',
+    'skills/chat/workflows/KFB_HYBRID_PRODUCTION_HANDOFF_2026-09-23/START_HERE.md',
+    '',
+    'Regeln:',
+    '- GitHub gewinnt: bei Widerspruch gilt der aktuelle Repo-Stand, nicht der Chatverlauf.',
+    '- Owner-Repo: '+v('lf-repo','georg-doc/kayfabizarro')+' · Ziel: '+v('lf-pr','<PR oder Basis>'),
+    '- Genau ein Ergebnis: '+v('lf-outcome','<Ergebnis>'),
+    '- Diese Vorlagen unverändert benutzen: '+v('lf-donors','<Vorlagen>'),
+    '- Nichts außerhalb dieses Umfangs ändern, keine neuen Zuständigkeiten erfinden.',
+    '- Review-Datei '+v('lf-review','<NAME>_REVIEW.html')+' direkt klickbar hier im Chat UND dauerhaft in GitHub ablegen.',
+    '- Zwei erfolglose Reparaturversuche am selben Punkt: STOP und melden.',
+    '- Kein Cloudflare-Debug-Loop.'
+  ].join('\n');
+}
+function wireLauncher(){
+  ['lf-project','lf-repo','lf-pr','lf-outcome','lf-donors','lf-review'].forEach(function(id){
+    $(id).addEventListener('input',function(){ $('lf-out').value=launcherText(); });
+  });
+  $('lf-out').value = launcherText();
+  $('lf-copy').addEventListener('click',function(){
+    writeClipboard(launcherText()).then(function(){ toast('Startnachricht kopiert'); })
+      .catch(function(){ var ta=$('lf-out'); ta.focus(); ta.select(); toast('Bitte markierten Text selbst kopieren'); });
+  });
+}
+
+function render(){ renderHeader(); renderBuckets(); renderTools(); renderLower(); }
+
+function apply(res){
+  if(!res){
+    $('srcBadge').className='src embedded'; $('srcBadge').textContent='Kein Stand';
+    var b=$('srcBanner'); b.hidden=false; b.textContent='Es konnte kein Stand geladen werden.';
+    return;
+  }
+  state.reg = res.reg; state.source = res.source; render();
+}
+
+function poll(){
+  loadBest(0).then(function(res){
+    if(!res){ if(!state.reg) apply(null); return; }
+    var cur = state.reg && state.reg.manifest, nxt = res.reg.manifest;
+    var changed = !cur || res.source.id!==state.source.id || cur.contentHash!==nxt.contentHash ||
+                  cur.checkedAt!==nxt.checkedAt;
+    if(changed){ apply(res); if(cur && cur.contentHash!==nxt.contentHash) toast('Neuer Stand geladen'); }
+    else renderHeader();
+  });
+}
+
+$('reload').addEventListener('click', poll);
+$('search').addEventListener('input', applySearch);
+document.addEventListener('keydown',function(e){ if(e.key==='/' && document.activeElement!==$('search') && !/INPUT|TEXTAREA/.test((document.activeElement||{}).tagName||'')){ e.preventDefault(); $('search').focus(); } });
+$('drawerClose').addEventListener('click', closeDrawer);
+document.addEventListener('keydown',function(e){ if(e.key==='Escape') closeDrawer(); });
+wireLauncher();
+var first = embedded();
+if(first) apply({reg:first, source:{id:'embedded', label:'Eingebauter Stand', badge:'embedded'}});
+poll();
+setInterval(poll, POLL_MS);
+window.KFBProductionDesk = {poll:poll, state:state, sources:SOURCES, launcherText:launcherText};
+})();
+</script>
+</body>
+</html>
