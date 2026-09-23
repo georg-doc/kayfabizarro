@@ -1,6 +1,6 @@
 # KFB 3D Cartoon Form Language · Current Direction · 2026-09-23
 
-Status: **CURRENT DIRECTION SNAPSHOT · NOT A CLAIMED EXPORT OF THE OTHER LIVE CHAT**
+Status: **CURRENT CONTROL-PLANE SYNTHESIS · SOURCE-BACKED HÜRTH POC #194 ACTIVE**
 
 ## Why this file exists
 
@@ -9,13 +9,17 @@ Georg has a parallel 3D-form-language chat developing a KFB visual language arou
 - **Rocko's Modern Life** — skew, asymmetry, bent/bowed geometry, graphic silhouette;
 - **Wallace & Gromit / Aardman** — clay mass, hand-made surface, tactile volume.
 
-The exact new parallel-chat export was not found as a separate current GitHub check-in at this recovery point.
+The parallel form-language chat has now produced a durable source-backed GitHub lane:
 
-This file therefore records only:
-1. current Georg direction from the active conversation;
-2. already-verifiable KFB GitHub style sources.
+- Draft PR **#194** — `KFB Elastic Grotesque Clay v1 · Hürth 01`;
+- branch `chatgpt-web/elastic-grotesque-clay-huerth01-2026-09-23`;
+- browser-tested implementation head `1db61b9c882e178000cf700a7d5f4d18ec03eba0`;
+- current branch head `2db8f327e2580c745aa2d14ee9866a15925eb64d`;
+- **16/16 browser assertions PASS**, **3/3 WebGL2**, zero page/console errors;
+- human visual gate pending;
+- no Cloudflare/public Stage.
 
-It does not pretend to reproduce missing source material.
+This file remains the control-plane synthesis. PR #194 owns the richer implementation/source evidence for the current architecture proof.
 
 ## Existing verified KFB sources
 
@@ -129,11 +133,17 @@ translate flat/extruded building masses into skewed/bowed/rounded KFB building a
 Continue the already-proven principle:
 rounded continuous structural curves instead of visible BoxGeometry chains.
 
-## Open item
+## Current implementation carrier
 
-When the parallel form-language chat produces its actual GitHub Return/skill update:
-- compare it against this snapshot;
-- keep its verified measurements/examples;
-- supersede this file where richer source exists.
+Use:
+`skills/chat/workflows/KFB_ELASTIC_GROTESQUE_CLAY_V1_2026-09-23/`
 
-Do not reconstruct that missing chat from memory.
+Current gate:
+**GEORG HUMAN VISUAL REVIEW · HÜRTH 01**.
+
+Until that decision:
+- do not generalize the grammar into Blender Geometry Nodes;
+- do not promote it as the global default;
+- do not change OSM, collision, terrain, landmark or vehicle owners.
+
+After the human decision, fold only accepted measurements/rules back into the broader KFB form-language guidance.
