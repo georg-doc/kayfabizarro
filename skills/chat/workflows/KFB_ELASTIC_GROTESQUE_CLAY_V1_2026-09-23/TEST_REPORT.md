@@ -1,23 +1,23 @@
 # TEST REPORT · KFB Elastic Grotesque Clay v1 · Hürth 01
 
-Date: 2026-09-23
-Status: **BROWSER PASS · HUMAN VISUAL REVIEW PENDING**
-Implementation tested head: `1db61b9c882e178000cf700a7d5f4d18ec03eba0`
+Date: 2026-09-23  
+Status: **V2 BROWSER PASS · 21/21 · HUMAN 3D REVIEW PENDING**
+Implementation tested head: `0c59e92d9d8688f5a88cd309ae8891dcd174c2fc`
 
-## Browser / WebGL evidence
+## Current V2 browser / WebGL evidence
 
 Workflow:
 `OSM Elastic Grotesque Clay · Hürth 01`
 
-Successful run:
-- run: `35904415847`
-- head: `1db61b9c882e178000cf700a7d5f4d18ec03eba0`
+Successful v2 run:
+- run: `35909757979`
+- head: `0c59e92d9d8688f5a88cd309ae8891dcd174c2fc`
 - result: **SUCCESS**
-- browser assertions: **16/16 PASS**
-- artifact: `10769948842`
-- artifact digest: `sha256:fa8823edeeec10c6e25cb11b08c15d85a205e6ecb17c6c66c9c8f1236e71c9a9`
+- browser assertions: **21/21 PASS**
+- artifact: `10772592799`
+- artifact digest: `sha256:14033aea95c75d006d3333347809a1a147256ba31dd28bda5505570d6572aedf`
 
-Proven in Chromium/Playwright with SwiftShader:
+Proven in Chromium/Playwright:
 - source city = `huerth-v0`;
 - 22/22 pinned real OSM building IDs loaded;
 - 49 nearby real road parts used as context;
@@ -25,52 +25,57 @@ Proven in Chromium/Playwright with SwiftShader:
 - all three canvases booted WebGL2;
 - current Grotesque path reports donor `src/style/cartoon-city.js`;
 - elastic path reports no collision mutation;
+- `elasticStyleVersion = ELASTIC_GROUP_WARP_V2`;
+- `elasticGroupWarp = COHERENT_LOW_FREQUENCY_FIELD`;
+- `elasticDetails = IRREGULAR_2_3_WINDOWS_NO_FRAME_PLUS_ONE_DOOR`;
+- `elasticRoadSurface = CONTINUOUS_CATMULL_ROM_RIBBON`;
+- `elasticPalette = KFB_WONKY_90S_CLAY_V1`;
 - full block = 22 visible buildings in every panel;
-- isolated source `way/371401492` = exactly 1 visible building in every panel;
+- isolated source = exactly 1 visible building in every panel;
 - returning from isolation restores 22 in every panel;
-- page/console errors = 0.
+- page/console errors = **0**.
 
-Screenshots in the evidence artifact:
+Screenshots:
 - `01-block-comparison.png`
 - `02-isolated-source-comparison.png`
 - `report.json`
 
-## Recovery history
+## Visual evidence boundary
 
-Run `35903709243` failed by timeout before useful failure diagnostics.
-Run `35904140456` added diagnostics and proved the actual cause:
+The browser PASS proves actual 3D/WebGL execution and the declared source/owner invariants.
 
-`pageerror: SyntaxError: Invalid or unexpected token`
+It does not decide taste.
 
-Root cause:
-a literal `\\n` was accidentally written between `isolate()` and `visibleCount()` while adding evidence observability.
+Georg has accepted the **reference benchmark image** for form direction. The newly implemented 3D v2 translation still requires his visual acceptance.
 
-Repair:
-commit `1db61b9c882e178000cf700a7d5f4d18ec03eba0` replaced that one invalid token seam with an actual newline. No form/deformer parameters changed in the repair.
+## Benchmark byte proof
 
-The next run passed. This is one runtime repair pass, not a visual retune.
+Repository benchmark:
+`benchmark/KFB_EGC_STYLE_BENCHMARK_2026-09-23.jpg`
 
-## Chat artifact static checks
+- Git blob: `d6dcb90770d83513204a6ea96fd56a60c7c3a296`
+- dimensions: **640 × 360**
+- local derivative SHA-256: `cb6de7beca127a84eb47722eb6229a4348f6a1e9ed66a6cb3af80664ff744621`
 
-The companion standalone chat HTML was checked separately:
-- title present;
-- 3 comparison canvases;
-- exact-current-Grotesque donor marker present;
-- current Grotesque preset values present;
-- 22 building records;
-- 22 unique OSM building IDs;
-- 22/22 closed footprints;
-- finite positive heights;
-- 13 embedded nearby road slices for the zero-install chat artifact;
-- five named road families present;
-- extracted inline JavaScript: `node --check` PASS.
+## Prior v1 evidence / recovery history
 
-Result: **11/11 bounded static checks PASS**.
+Previous accepted technical proof before v2:
+- head `1db61b9c882e178000cf700a7d5f4d18ec03eba0`
+- run `35904415847`
+- **16/16 PASS**
+- artifact `10769948842`
+- digest `sha256:fa8823edeeec10c6e25cb11b08c15d85a205e6ecb17c6c66c9c8f1236e71c9a9`
 
-## Evidence boundary
+Earlier diagnostic history remains valid:
+- first evidence attempt timed out;
+- diagnostic pass isolated one invalid literal `\\n`;
+- one syntax repair fixed that instrumentation seam;
+- no visual/deformer parameter was changed by that repair.
 
-Automated PASS proves boot, source fixture, WebGL contexts, comparison modes, source isolation and absence of browser errors.
+## Current unresolved test
 
-It does **not** prove that the Elastic Grotesque Clay look is aesthetically accepted. That remains Georg's visual gate.
+Only one current acceptance question remains:
+
+**Does the v2 actual 3D result visually reproduce the accepted benchmark direction closely enough to promote this grammar into the Blender-MCP / Geometry-Nodes production recipe?**
 
 No Cloudflare/public Stage proof is claimed in this slice.
