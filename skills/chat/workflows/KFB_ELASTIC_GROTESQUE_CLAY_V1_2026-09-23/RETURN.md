@@ -127,3 +127,13 @@ Decision needed:
 **continue this Elastic grammar / tune its intensity / reject the foundation.**
 
 Only after that gate should the accepted grammar become a Blender-MCP / Geometry-Nodes production recipe.
+
+
+## Handoff sync
+
+Also updated on this same Draft branch:
+- `skills/chat/START_HERE.md` — routes to this current human gate;
+- `skills/chat/CHANGELOG.md` — additive cross-project record;
+- `kfb-hub/index.html` — visible Hürth 01 review card, explicitly NOT PUBLIC.
+
+Hub source sanity: **1/1 inline-script syntax PASS** and the new card ID is present.
