@@ -126,6 +126,21 @@ No guessed automatic car-eye placement in the first consolidation slice.
 - `RETURN.md`
 - `CHANGELOG.md`
 
+## Changed files · this slice
+
+1. `tools/KFB-ToolBox/_handover/TOOLBOX_FRACTAL_AUTHORING_POST_WB1_P2_2026-09-23/START_HERE.md`
+2. `tools/KFB-ToolBox/_handover/TOOLBOX_FRACTAL_AUTHORING_POST_WB1_P2_2026-09-23/CURRENT_STATE.md`
+3. `tools/KFB-ToolBox/_handover/TOOLBOX_FRACTAL_AUTHORING_POST_WB1_P2_2026-09-23/FRACTAL_AUTHORING_CONTRACT_v0.json`
+4. `tools/KFB-ToolBox/_handover/TOOLBOX_FRACTAL_AUTHORING_POST_WB1_P2_2026-09-23/CLAUDE_DESIGN_BRIEF.md`
+5. `tools/KFB-ToolBox/_handover/TOOLBOX_FRACTAL_AUTHORING_POST_WB1_P2_2026-09-23/RETURN.md`
+6. `tools/KFB-ToolBox/_handover/TOOLBOX_FRACTAL_AUTHORING_POST_WB1_P2_2026-09-23/CHANGELOG.md`
+7. `tools/KFB-ToolBox/START_HERE.md`
+8. `tools/KFB-ToolBox/_handover/README.md`
+9. `skills/chat/START_HERE.md`
+10. `kfb-hub/index.html`
+
+No runtime source file was modified.
+
 ## Tests / evidence
 
 - current GitHub source reads: PASS;
