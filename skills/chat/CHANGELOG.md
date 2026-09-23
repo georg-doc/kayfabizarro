@@ -1404,3 +1404,24 @@ The current Tourbus model decision remains WaterBowser; the historical Armored T
 
 No Work/WSA is required for any of these first gates.
 Cloudflare is not the normal iteration surface.
+
+
+## 2026-09-23 · Racer TARCH-0 · Chat-artifact visual review
+
+- Race Draft PR #33 is the current tunnel-architecture candidate;
+- branch `chat/racer-tarch0-sp13ktra-2026-09-23`;
+- current handoff/docs head `45fa80d0449efecf6a9ecfb69386c6cb4f9ba1fd`;
+- runtime-tested TARCH integration `b37cbad1038e669a0c9929d25789d54d0283b0fc`;
+- CI `35817990559 / 107043574054`: SUCCESS;
+- architecture regression: **7 active / 0 skipped**;
+- old RSTAB-1 tunnel/ground foundation remains archived after two human-failed repair passes;
+- SP13KTRA is used only as observed architecture donor; its All-Rights-Reserved code/assets are not copied;
+- visual iteration now uses attached ChatGPT HTML artifacts:
+  1. R1 isolated architecture proof;
+  2. R2 integrated Racer proof after R1 ACCEPT;
+  3. optional R3 one local integration correction;
+- Cloudflare / Pages are deferred until after human visual acceptance and are no longer part of active iterative QA;
+- KFB Hub main source routes Racer to the TARCH-0 Chat-HTML gate; `cloudflare-live` was intentionally not touched.
+
+Exactly one next gate:
+**TARCH-0 HUMAN ARCHITECTURE GATE · R1 CHAT HTML**.
