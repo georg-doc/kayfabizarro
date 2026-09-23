@@ -4,7 +4,7 @@
   "source": {
     "repo": "georg-doc/kayfabizarro",
     "branch": "chatgpt-web/kfb-hybrid-production-handoff-2026-09-23",
-    "head": "bafa409391ab1be8350894a254803b2142cdb271",
+    "head": "704aa2f1835a74c2c154f3110a6177996853ddfc",
     "note": "Seed snapshot; Coworker must re-fetch exact branch/pr heads before rendering."
   },
   "now": [
@@ -23,12 +23,12 @@
       "id": "warband-blender",
       "priority": "P0",
       "owner": "Blender MCP",
-      "state": "ACTIVE_AUTHORING",
+      "state": "PARTIAL_HUMAN",
       "repo": "georg-doc/kayfabizarro",
-      "pr": 192,
-      "head": "b49fb6e1adde070d658e1cc21dadb3294164cb29",
-      "summary": "Warband performance authoring continues in Blender; newer v4 candidate exists outside GitHub Return.",
-      "humanGate": "Next meaningful performance checkpoint."
+      "pr": 195,
+      "head": "39b7781f96a962dfd9ddd8777c5951f37d36ffe0",
+      "summary": "Leader + guitarist accepted; drummer v1–v4 failed; v5 restored baseline. ORB-D1 same-rig melee reference pick next.",
+      "humanGate": "Pick drummer source motion after local Rig_Large reference review."
     },
     {
       "id": "worldbuilder-wb2",
@@ -109,6 +109,12 @@
       "provider": "Coworker + Claude Design + Blender",
       "state": "PLANNING_ONLY",
       "brief": "WORLDBUILDER_GOD_MODE_V0.md"
+    },
+    {
+      "id": "dance-d1",
+      "provider": "Blender MCP + Coworker",
+      "state": "CAN_START_IN_PARALLEL",
+      "brief": "RESIDENT_PERFORMANCE_NEXT_2026-09-23.md"
     }
   ],
   "wsa": {
