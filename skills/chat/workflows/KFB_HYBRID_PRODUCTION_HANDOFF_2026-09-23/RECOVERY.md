@@ -75,3 +75,30 @@ Current handoff head before this metadata write:
 
 Base:
 `main@dca52479dad9c176acde6e7c7167dc133bf50bdd`
+
+
+## Model / animation / WSA recovery
+
+Coworker model-switch guidance:
+`COWORKER_OPUS55_MODEL_SWITCH.md`
+
+Recommendation:
+same Coworker chat → checkpoint local/worktree state → switch to Opus 5.5 → re-read GitHub handoff → continue existing build.
+
+Performance animation candidate:
+`PERFORMANCE_ANIMATION_PILOT.md`
+
+Purpose:
+task mechanics + contact frames + beat grid + Blender Action/NLA export + runtime event sidecar.
+
+First validation:
+Warband drummer.
+
+Coworker ↔ WSA:
+`COWORKER_WSA_SYNC_BRIDGE.md`
+
+No hidden cross-chat sync is assumed.
+GitHub is the shared bus.
+
+Current WSA recommendation:
+**NOT YET NEEDED** unless Coworker identifies a concrete unavailable local/multi-repo capability.
