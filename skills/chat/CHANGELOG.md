@@ -1588,3 +1588,33 @@ Missing Chat-host texture decode is non-fatal and reports `HOST_TEXTURE_LIMITATI
 Current gate: **GEORG HUMAN RE-REVIEW · Repair Pass 2 Capacity HTML**.
 
 This is the second repair pass on this gate. Same-gate failure again => STOP and failure-recovery export. No Repair Pass 3. TMB-2 remains HOLD.
+
+
+## 2026-09-23 · TMB-1E HUMAN_ACCEPTED · TMB-2 active
+
+Georg accepted the final TMB-1E Repair Pass 2 Capacity HTML directly in ChatGPT.
+
+Accepted Travel state:
+- commit `603f2a9e8fb2c8efd1008ed67607cf7a712de0bd`;
+- `ActionFigure / Rig_Medium · Orc Brute / Rig_Large · Warband Orc B / Rig_Legacy`;
+- rider/capacity relation at **2.0× candidate**;
+- exact animated CardCarrier unchanged;
+- native rig-class proportions preserved;
+- modern-source Chat attachment texture adapter human-passed;
+- card-thickness redesign and Studio v17 Surf pose remain deferred.
+
+TMB-1E is closed as HUMAN_ACCEPTED but PR #37 remains Draft / not merged / not public.
+
+Current gate:
+**TMB-2 · Ground → Flight Double-Space intent / ownership handoff proof.**
+
+Binding contract:
+- first fresh Space triggers Ground jump immediately;
+- second fresh Space in a bounded review window emits `REQUEST_FLIGHT`;
+- first jump is never delayed;
+- exactly one active movement owner and one active camera owner;
+- reuse existing `site/world-builder/runtime-mode.js`;
+- double-tap timing is a TMB-2 human-review parameter;
+- TMB-3 landing remains HOLD.
+
+No merge or Live promotion authorized.
