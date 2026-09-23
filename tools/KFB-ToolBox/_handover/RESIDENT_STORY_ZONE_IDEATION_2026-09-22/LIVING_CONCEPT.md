@@ -5329,3 +5329,362 @@ parked armored Tourbus
 ```
 
 This is a portable World-Life fixture, not a fixed Town-only scene.
+
+
+---
+
+# 43 · Billboard / Media Residency Scenes
+
+## USER DIRECTION · 2026-09-23
+
+After the Orc Band, KFB should support a second lightweight World-Life / Residency Scene family built around **physical signs, billboards and media surfaces**.
+
+These scenes combine:
+
+- one real 3D sign / billboard donor;
+- a small scenic environment cluster;
+- dynamic Canvas/Video content;
+- Cards / PDF fragments;
+- ChatterBox / signature Triplets;
+- optional layered reveal / interactive media persona;
+- optional Almanac memory.
+
+This is related to Residents, but it is **not an NPC scene**.
+
+Working term:
+
+**Media Residency Scene / Billboard Node**
+
+## Recovered prior concept
+
+Dropbox history confirms an earlier explicit design:
+
+> **Die Straße selbst sendet.**
+
+The prior **Satirical Roadside Media Layer** already proposed:
+
+- Route-66 / motel / drive-in style billboard families;
+- absurd product advertising;
+- surveillance / conspiracy claims;
+- corporate/government slogans;
+- layered hidden meanings;
+- clickable/conversational hero billboards;
+- embedded short video/broadcasts;
+- distance-based audio;
+- Almanac capture;
+- CCTV/media props as lightweight personalities.
+
+This new lane is therefore a continuation / modularization of an existing KFB direction.
+
+## Existing Racer donor
+
+Current Racer addendum already defines:
+
+- real Kenney billboard family;
+- source-isolation gate;
+- `FIT_CARD`;
+- `COVER_CROP`;
+- `DETAIL_CROP`;
+- later `COLLAGE_LOOP`.
+
+Existing Option C-2 code already proves:
+
+`buildBillboard()`
+
+and:
+
+`renderCardQuarter()`
+
+with:
+
+- real Kenney `billboard.glb`;
+- PDF.js;
+- actual Card/PDF source;
+- CanvasTexture applied to a measured board plane.
+
+Do not rebuild this path.
+
+## Source-backed physical billboard family
+
+Current handoff proves:
+
+- `billboard.glb`
+- `billboardDouble_exclusive.glb`
+- `billboardLow.glb`
+- `billboardLower.glb`
+- `overhead.glb`
+- `overheadLights.glb`
+- `bannerTowerRed.glb`
+- `bannerTowerGreen.glb`
+- separate KFB Poly billboard donor.
+
+The first scene needs only one donor.
+
+## Scenic setup
+
+A Billboard Media Scene can be a very small portable diorama:
+
+```
+clean procedural terrain patch
++ 2–3 rocks / weeds / small scenic props
++ one billboard
++ optional local lamp / CCTV
++ dynamic content surface
+```
+
+This is intentionally compatible with the same chat-review / inline-scene-lab workflow as Resident scenes.
+
+### Terrain correction
+
+The visible black/debug base in the current KayfaBizarros Scene Lab is **not** an intended art direction.
+
+Future Scene Lab templates should use:
+
+- no visible underside; or
+- a very thin terrain skirt matching local terrain colour/material.
+
+Never a black cylindrical debug wall behind the landscape.
+
+## Content mode A · CARD / PDF
+
+Reuse the current real PDF/Card path.
+
+Modes:
+
+- `FIT_CARD` — full Card;
+- `COVER_CROP` — fill the sign while cropping;
+- `DETAIL_CROP` — deliberate fragment.
+
+Do not stretch portrait artwork into a landscape billboard.
+
+## Content mode B · TRIPLET
+
+A billboard may bind a **signature slogan / Triplet pool**.
+
+The billboard is treated as a media/sponsor persona rather than a body NPC.
+
+Possible grammar:
+
+```
+BILLBOARD POV / MEDIA PERSONA
+→ SHOW IT
+→ SPIN IT
+→ SELL IT
+```
+
+The three beats may appear as:
+
+- sequential typography;
+- flip panels;
+- timed text replacement;
+- layered type;
+- animated slide/cut transitions.
+
+### Relation to ChatterBox
+
+ChatterBox remains content owner.
+
+The billboard supplies bounded context:
+
+- billboard/media persona;
+- location;
+- active Card / cluster;
+- local event;
+- campaign/signature deck;
+- seed;
+- interaction state.
+
+Content priority stays conceptually aligned with existing ChatterBox reuse:
+
+`bound Card/context → immediate local situation → media persona → local history/callback → broader content`
+
+The billboard adapter renders text.
+
+It does not invent a second language engine.
+
+## Signature Triplet pools
+
+Like Residents, important billboard/media personas may have:
+
+- favorite slogans;
+- signature Triplets;
+- recurring claims;
+- rotating campaign fragments;
+- callback lines after prior player encounters.
+
+Do not generate a completely unrelated slogan every few seconds.
+
+Preferred behaviour:
+
+- one stable seeded message per encounter/visit;
+- slow scheduled rotation when ambient;
+- explicit change after player interaction or world event.
+
+This keeps billboard identity recognizable.
+
+## Content mode C · COLLAGE LOOP
+
+This is the continuation of the older HyperNormalisation / cut-up direction.
+
+Possible layers:
+
+- KFB stills;
+- Card fragments;
+- poster fragments;
+- screenshots;
+- typography;
+- logos/icons;
+- short video snippets;
+- graphic masks;
+- paper/cutout textures.
+
+Visual grammar:
+
+- torn / irregular alpha edges;
+- 2–4 overlapping layers;
+- slow crossfades;
+- occasional hard cut;
+- subtle scale/pan/parallax;
+- large readable type;
+- deliberately imperfect collage rhythm.
+
+The first proof does **not** need video.
+
+A strong v0 can already use:
+
+`2–4 still layers + type cards + ripped masks + timed crossfades`
+
+Any external media source needs provenance.
+
+## Content mode D · HERO INTERACTIVE
+
+A small number of Hero Billboards can become interactive media entities.
+
+States:
+
+```
+DEFAULT
+→ INSPECT
+→ REVEAL
+→ optional CHAT
+→ ALMANAC
+```
+
+Possible actions:
+
+- reveal hidden underlayer;
+- start short Bubble conversation;
+- Social Call;
+- show Card / deck;
+- play video/broadcast;
+- FrizzleBob comment;
+- save encounter/interpretation.
+
+Do not turn every billboard into a chat NPC.
+
+## Layered reveal
+
+Recovered earlier semantic model:
+
+```
+DEFAULT VIEW
+→ advertisement / propaganda / claim
+
+INSPECT / CHAT / MODIFIED VISION
+→ alternative interpretation / underlayer / system message / fact layer
+
+ALMANAC
+→ saved Card / interpretation / encounter
+```
+
+This makes the sign a small **epistemic object**, not only scenery.
+
+## Audio distance lane
+
+Later Billboard scenes may use:
+
+```
+FAR
+→ hum / broadcast smear
+
+MID
+→ jingle / announcer fragment
+
+NEAR
+→ clear voice / sting / interaction cue
+```
+
+This reuses the same general spatial-audio philosophy as the Orc Band.
+
+Audio is optional and must not block the visual first proof.
+
+## First Billboard Scene proof · BBS-01
+
+Keep it smaller than the Orc Band:
+
+1. isolate one real Kenney billboard donor;
+2. clean mini terrain patch;
+3. 2–3 rocks / scenic props;
+4. one measured CanvasTexture screen;
+5. switch between:
+   - CARD/PDF;
+   - TRIPLET;
+   - COLLAGE LOOP;
+6. no video;
+7. no async LLM;
+8. no Almanac runtime;
+9. no multi-billboard road system.
+
+This proof is attractive because it exercises the Scene Lab/template with almost no skinned-character complexity.
+
+## Second proof · BBS-02
+
+Add:
+
+- one billboard-specific signature Triplet pool;
+- seeded SHOW/SPIN/SELL sequence;
+- Inspect → hidden layer;
+- optional short ChatterBox interaction;
+- optional Almanac receipt.
+
+## Third proof · BBS-03
+
+Add:
+
+- torn-edge collage masks;
+- still / poster / Card fragment pool;
+- slow crossfades;
+- optional short video/broadcast;
+- provenance metadata.
+
+## Initial content pool
+
+The older KFB concept proposed roughly 12 initial variants:
+
+- 3 absurd product/lifestyle ads;
+- 3 conspiracy/surveillance claims;
+- 2 cheerful government/corporate slogans;
+- 2 KFB-internal ads;
+- 1 collage/video board;
+- 1 Hero interactive board.
+
+This remains a useful later content target, not a first-build requirement.
+
+## Machine-readable proposal
+
+See:
+
+`BILLBOARD_MEDIA_SCENE_v0.json`
+
+## Relationship to current central model/texture repair
+
+Do **not** use this Billboard lane to work around the global asset-loading issues currently being fixed centrally.
+
+The Billboard scene should consume the repaired/common loader once available.
+
+Planning this scene now is safe because:
+
+- physical billboard donors are already known;
+- the PDF/Card renderer already exists;
+- ChatterBox/Triplet ownership is already defined;
+- the new work is mostly composition and presentation.
