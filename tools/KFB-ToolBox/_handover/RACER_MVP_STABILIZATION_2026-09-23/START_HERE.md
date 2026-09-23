@@ -1,6 +1,6 @@
 # KFB Racer MVP Stabilization · 2026-09-23
 
-Status: **TARCH-0 TECHNICAL PASS · R1 CHAT-HTML HUMAN GATE · CLOUDFLARE DEFERRED**  
+Status: **TARCH-0 R1 HUMAN ACCEPTED · R2 INTEGRATED CHAT-HTML PENDING · CLOUDFLARE DEFERRED**  
 Runtime owner: `georg-doc/KFB-Stunt-Car-Race`  
 Visual authoring source: `KFB Cologne Race Option C-3/` pinned at Race `main@cc80f4a1c6c509db9668df79fd53b13cee093a9d`.  
 Goal: **one actually playable full-lap Racer MVP before further visual/feature expansion.**
@@ -75,6 +75,38 @@ Review protocol lives in Race PR #33:
 `_handover/RACER_MVP_STABILIZATION_2026-09-23/TARCH-0/CHAT_ARTIFACT_REVIEW_PROTOCOL.md`
 
 Exactly one next gate: **TARCH-0 HUMAN ARCHITECTURE GATE · R1 CHAT HTML**.
+
+
+### R1 accepted · R2 prepared
+
+R1 isolated TARCH HTML is **GEORG ACCEPTED**.
+
+Accepted artifact owner:
+`georg-doc/KFB-Stunt-Car-Race#33`
+
+Accepted artifact:
+`_handover/RACER_MVP_STABILIZATION_2026-09-23/TARCH-0/review/KFB_Racer_TARCH0_R1_review.html`
+
+Acceptance evidence:
+`review/R1_ACCEPTED.md`
+
+The accepted harness is registered centrally as:
+`threejs-focus-review-v1`
+
+Pool:
+`skills/chat/workflows/KFB_WEB_FIRST_EXECUTION_V1_2026-09-22/REVIEW_TEMPLATE_POOL.md`
+
+R2 integrated Chat HTML is prepared from the same runtime geometry:
+`b37cbad1038e669a0c9929d25789d54d0283b0fc`
+
+R2 recovery marker:
+`review/R2_PREPARED.md`
+
+Expected R2 artifact:
+`KFB_Racer_TARCH0_R2_integrated_review.html`
+
+Exactly one current gate:
+**TARCH-0 R2 · integrated Racer Chat HTML human review**.
 
 ## Current checkpoint · RSTAB-1 · 2026-09-23
 
