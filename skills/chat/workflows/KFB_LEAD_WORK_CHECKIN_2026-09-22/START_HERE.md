@@ -10,6 +10,15 @@ Routine lead/status/check-in work now belongs in Web/GitHub. Use Work only throu
 
 The recent ToolBox conversation accumulated useful architecture work, but ToolBox must not remain the accidental cross-project Work owner.
 
+## ChatGPT 3D attachment texture rule
+
+WSA/Work must not classify a grey/untextured model in a ChatGPT-attached HTML as an asset failure by itself. WB1 proved a valid GLB with an embedded PNG can render without that texture in the attachment host.
+
+Use the shared human-verified review adapter first:
+`fetch → Blob → createImageBitmap → THREE.Texture`, then `THREE.TextureLoader` fallback, exact donor texture pin, sRGB, glTF `flipY = false`.
+
+This is review-host presentation only. Do not rewrite the source GLB/GLTF, Registry, Resident Atlas or consumer runtime unless a separate runtime gate proves an asset/runtime defect.
+
 ## Role split
 
 ### Fresh Web/GitHub chats
@@ -61,7 +70,9 @@ Always read current GitHub versions of:
 2. `skills/chat/CHAT_GITHUB_KFB_STAGE_WORKFLOW.md`
 3. `skills/chat/FRESH_CHAT_SLICE_PROTOCOL.md`
 4. `skills/chat/LIVING_MASTERPLAN.md`
-5. `skills/chat/workflows/KFB_PLAYABLE_MVP_CONSOLIDATION_V1_2026-09-21/START_HERE.md`
+5. `skills/chat/workflows/KFB_WEB_FIRST_EXECUTION_V1_2026-09-22/START_HERE.md`
+6. `skills/chat/workflows/KFB_WEB_FIRST_EXECUTION_V1_2026-09-22/CHATGPT_HTML_TEXTURE_PREVIEW_LIMITATION_2026-09-23.md` when any ChatGPT-attached 3D HTML is used.
+7. `skills/chat/workflows/KFB_PLAYABLE_MVP_CONSOLIDATION_V1_2026-09-21/START_HERE.md`
 
 Then current World lane:
 
