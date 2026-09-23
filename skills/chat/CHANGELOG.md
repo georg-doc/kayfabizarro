@@ -1331,3 +1331,28 @@ Racer observation added separately:
 - Intended review route remains `https://kayfabizarro.pages.dev/kfb-hub/stage/stunt-world/cologne-option-c-rstab1/`; public verification is still UNKNOWN/PENDING due pages.dev access/DNS failure in this environment.
 - This is WEDGE repair pass 2. Same-gate failure again triggers the two-pass failure-recovery export; no pass 3.
 - After WEDGE ACCEPT: vehicle support/orientation/landing → hard-curve stability → trail continuity recheck after stable motion.
+
+
+## Travel Mode Bridge v1 · TMB-0 complete · 2026-09-23
+
+TMB-0 source/seam mapping completed in the private Travel owner without runtime changes.
+
+- repository: `georg-doc/KFB-Travel-Globe`;
+- Draft PR #32;
+- branch `chatgpt-web/travel-mode-bridge-v1-2026-09-23`;
+- exact head `048499315581d2b9916a4d3fcbaba5f3adef719c`;
+- source/boundary audit **12/12 PASS · 0 FAIL**;
+- **0 runtime files changed**;
+- deliverables: `SOURCE_REUSE_MATRIX.md`, `MOBILITY_TRANSITION_CONTRACT_v0.md`, additive `CHANGELOG.md`, `RETURN.md` under Travel `_handover/TRAVEL_MODE_BRIDGE_V1_2026-09-23/`.
+
+Confirmed owner boundaries:
+- Ground remains the existing WB0 Ground movement owner;
+- Flight remains `travel/globe-v13/carpet.js`;
+- existing `site/world-builder/runtime-mode.js` remains the Ground↔Flight handoff foundation;
+- exact animated `travel/terrain-planets-v1/card-carrier.js` is the first Flight vehicle;
+- Studio/Frankenstein `cardrider.v1.js` remains measurement/pose donor only;
+- Motion Lab PR #127 remains rig/presentation donor only.
+
+No Cloudflare publication or browser/runtime gate applies to TMB-0 because the slice explicitly forbade runtime implementation and Stage publication.
+
+Exactly one next gate: **TMB-1 · isolated exact animated CardCarrier + one real ActionFigure Rig_Medium passenger, source-object-first.**
