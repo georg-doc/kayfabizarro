@@ -9,6 +9,10 @@ Repository image target:
 
 `benchmark/KFB_EGC_STYLE_BENCHMARK_2026-09-23.jpg`
 
+Pinned repository derivative: **640 × 360 JPEG**  
+Git blob: `d6dcb90770d83513204a6ea96fd56a60c7c3a296`  
+SHA-256: `cb6de7beca127a84eb47722eb6229a4348f6a1e9ed66a6cb3af80664ff744621`
+
 This image is the visual benchmark for the **shape / facade-detail / handmade-model direction** of KFB Elastic Grotesque Clay.
 
 Georg's acceptance:
