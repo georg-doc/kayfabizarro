@@ -1724,3 +1724,18 @@ Single Space remains immediate Ground jump. The same second Ground-owned Space m
 
 Exactly one next gate:
 **R3c · TRACK BODY + ROUNDED FRAMES CHAT HTML HUMAN REVIEW**.
+
+
+## 2026-09-23 · Blender MCP Animation POC · Clown 3-club cascade (JUG-P1)
+
+### TESTED RESULT
+Claude (Cowork) posed and animated the KayKit Clown (Rig_Medium) directly in Blender 5.2.2 via the Blender MCP connector: three KayKit juggling pins, 3-club cascade, 48 f @ 24 fps. Pins follow the Resident Atlas identity rule at `handslot.*` (scale 1, grip in the fist); orientation comes only from arm pose + wrist twist. Clearance against deformed head/hat/body ≥ 0.103 over all frames; pin–pin ≥ 0.063. Script reproduces the result from the clean scene. GLB exports (4 clips). Browser playback not tested.
+
+### HUMAN VISUAL PASS
+Georg: believable within cartoon logic, ~80 %, usable as-is incl. Resident scenery; fine-tune later.
+
+### PROPOSAL
+Use the Blender MCP lane for pose/animation authoring in future slices instead of rebuilding motion via Claude Design HTML per slice.
+
+Handover: `tools/KFB-ToolBox/_handover/BLENDER_MCP_ANIMATION_POC_2026-09-23/START_HERE.md`
+Next gate: **JUG-P2 · GLB playback in an existing three.js consumer, human HTML review.**

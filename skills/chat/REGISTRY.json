@@ -697,6 +697,19 @@
       ],
       "nextGate": "LWP-EXT-F1 · extension-load observability: CONTENT_ENTRY → HOST_CREATED → FRAME_INSERTED → FRAME_LOADED|FRAME_ERROR → PET_READY",
       "note": "Web/Hub candidate is technically green but branch-only. Chrome extension build is source-valid; injection is unresolved and frozen after two attempts. No public Stage or canonical Hub mount."
+    },
+    {
+      "id": "blender-mcp-animation-poc",
+      "kind": "tool-candidate",
+      "status": "EXPERIMENTAL",
+      "repository": "georg-doc/kayfabizarro",
+      "branch": "claude/blender-mcp-animation-poc-2026-09-23",
+      "owner": "KFB ToolBox / Blender MCP authoring lane (POC)",
+      "handover": "tools/KFB-ToolBox/_handover/BLENDER_MCP_ANIMATION_POC_2026-09-23/START_HERE.md",
+      "humanAcceptance": "GEORG VISUAL PASS ~80% (viewport GIF), fine-tune pending",
+      "tested": "numerical clearance on deformed meshes 48/48 frames; scripted reproduction identical; GLB export OK; browser playback NOT tested",
+      "doesNotOwn": ["Animation Lab runtime", "Resident Atlas placement", "Asset Librarian truth", "KayKit source assets"],
+      "nextGate": "JUG-P2 · GLB playback in an existing three.js consumer, human HTML review"
     }
   ],
   "failureRecoveryTemplate": "skills/chat/templates/CLAUDE_DESIGN_FAILURE_RECOVERY_EXPORT.md"
