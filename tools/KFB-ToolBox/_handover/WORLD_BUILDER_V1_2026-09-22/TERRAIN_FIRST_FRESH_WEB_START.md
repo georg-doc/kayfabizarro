@@ -74,4 +74,22 @@ Human gate:
 
 Georg can generate terrain, place/edit a real object, save/reload and continue editing.
 
-Return one zero-install browser/Stage candidate and STOP.
+## Review transport
+
+Do **not** deploy this iteration to Cloudflare.
+
+After the first useful implementation checkpoint:
+
+1. commit the exact source to the named GitHub branch;
+2. fetch/read back the exact head;
+3. generate one zero-install `WB1_TERRAIN_EDITOR_01_REVIEW.html` from that exact head;
+4. bundle/in-line JS/CSS so Georg does not need Python, Terminal, Node, GitHub Desktop or a local server;
+5. use only pinned remote asset URLs where binary assets are needed;
+6. return the HTML artifact directly in chat;
+7. wait for Georg's visual/product feedback.
+
+After feedback, repair the branch and regenerate the HTML artifact.
+
+Cloudflare/Hub publication happens only after Georg says the candidate is worth a public milestone.
+
+Return the GitHub head + the generated HTML review artifact and STOP.
