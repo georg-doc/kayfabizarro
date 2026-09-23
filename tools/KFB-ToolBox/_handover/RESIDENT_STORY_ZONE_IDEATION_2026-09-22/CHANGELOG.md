@@ -447,3 +447,34 @@ Added:
 
 ### IMPLEMENTATION STATUS
 Concept/source alignment only. No new Jukebox catalog promotion, Backpack HUD runtime, track-unlock persistence, loop editing, audio listening analysis, stems, visualizer runtime or public Stage was built.
+
+
+## 2026-09-23 · Permitless Funk selected + Legacy bounce
+
+### USER DECISION
+- **Rubbish Groove 2min A extend 01.mp3** is the current human-selected Orc Band signature-style candidate.
+- Working identity: **Permitless Funk**.
+- Small Legacy frontman should use the black-ponytail/dark-topknot visual variant.
+- Legacy frontman should bounce/squash/stretch energetically around the scene while holding the microphone.
+- Scene composition may centre around a surreal stone/campfire-like focal formation in open landscape.
+
+### SOURCE BOUNDARY
+- Current text evidence proves Legacy `character_orcA.gltf` and `character_orcB.gltf`, but does not reliably map the black-ponytail look to A or B.
+- Exact donor identity remains a visual source-isolation gate; do not guess.
+
+### PERFORMANCE PROPOSAL
+- Beat/BPM controls bounce cadence.
+- Pulse/onset controls jump height and stronger accents.
+- Overall level controls groove/squash amplitude.
+- Phrase/bar position seeds rare high hops, lateral hops, freezes and hype gestures.
+- Do not drive jump height directly from raw full-mix pitch in v0.
+- Large Brute remains beat-grid War Drum anchor.
+- Medium Orc uses measured/procedural electric-guitar hold/strum donor.
+- Trio deliberately uses different phase/weight so it reads as three musicians, not synchronized robots.
+- First visualizer remains **NO STEMS REQUIRED**.
+
+### ROADTRIP SIBLING
+A second Permitless-Funk-family track may add open-road/cruising atmosphere for free-roam RoadTrip Radio use without becoming race/final-lap music.
+
+### IMPLEMENTATION STATUS
+Concept only. No BPM/loop metadata, visualizer runtime, audio trim/crossfade edit, Legacy visual source proof or stems were produced.
