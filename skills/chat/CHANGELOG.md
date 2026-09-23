@@ -1232,3 +1232,18 @@ WorldBuilder START/Fresh Web prompt and KFB Hub were advanced to P1. Cloudflare-
 - Hub now routes current Racer work to RSTAB-1 and marks the older Cologne Stage as historical / not C-3 proof.
 
 Exactly one next gate: **RSTAB-1 · static geometry intrusions — ground wedges + support pillars.**
+
+
+## 2026-09-23 · Racer RSTAB-1 technical PASS
+
+- Race Draft PR #32 / `chat/racer-rstab1-geometry-2026-09-23`, stacked on RSTAB-0 PR #31;
+- exact runtime + bounded-CI candidate head `e9c72a404aff63d46762d9101a727a9e7f94a6b0`;
+- ground-cut/tunnel-shell seam now uses the actual banked 14-facet rendered shell with independent left/right cut edges, 10-point blend and 0.03 m hole-side clearance;
+- old later `SLEW_M` seam mutation removed;
+- all 54 structure supports preserved and terminated at local banked soffit endpoints;
+- old support rule reproduces penetrations 166 / 179 / 187; repaired rule yields 0;
+- GitHub Actions run 35807766171 / job 107012285119: **5/5 PASS · 0 FAIL**;
+- route and v0.8 FLOW/FEEL unchanged; no RSTAB-2 work started;
+- current C-3 browser/Cloudflare visual acceptance remains pending.
+
+Exactly one next gate: **RSTAB-1 HUMAN GEOMETRY GATE**.
