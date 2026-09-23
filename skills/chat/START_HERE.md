@@ -520,3 +520,26 @@ Zero-install human gate is now packaged as kayfabizarro Draft PR #178 with **20/
 Cloudflare source commit: `77e4bd44aac0d0ce720c5b0149eedb3eef62ac36`. Hub source: `a075934bb5f8628535b673459b0b9ddcc0af5312`; main Hub metadata: `fd7680034171f9a327936e9ee7fa2a3cc1f6b4dc`.
 
 Public verification is **UNKNOWN / PENDING** because this execution environment cannot resolve/access `pages.dev`. Local HTTP is only a developer fallback; do not present it as the human acceptance link. RSTAB-2 remains blocked until human ACCEPT.
+
+
+## 2026-09-23 · Travel Mode Bridge v1
+
+Prepared bounded Web-first mobility prework:
+
+`tools/KFB-ToolBox/_handover/TRAVEL_MODE_BRIDGE_V1_2026-09-23/START_HERE.md`
+
+Owner remains private `georg-doc/KFB-Travel-Globe`.
+
+Source-backed direction:
+- preserve `carpet.js` as the Flight movement owner;
+- preserve WB0 Ground as the Ground movement owner;
+- reuse the existing `runtime-mode.js` Ground↔Flight bridge;
+- reuse the exact animated `card-carrier.js` as the first flight vehicle;
+- Studio/Frankenstein `cardrider.v1.js` is measurement/pose evidence only, not the vehicle;
+- prepare a KayKit Rig_Medium passenger seam, then double-Space mount and intentional landing in later gates.
+
+TMB-0 is source/seam mapping only. No runtime implementation, WorldBuilder integration, Racer integration, Work/WSA or Cloudflare debugging.
+
+WorldBuilder consumption remains HOLD until its Surface Adapter gate is ready.
+
+Racer stabilization separately carries `RSTAB-CYLINDER-GROUND-01` for track/support cylinders that appear above or below their intended support surface.
