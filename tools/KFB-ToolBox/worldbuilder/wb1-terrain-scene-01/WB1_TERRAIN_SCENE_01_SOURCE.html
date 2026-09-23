@@ -264,7 +264,7 @@ grid.position.y=.01;scene.add(grid);
 const worldRoot=new THREE.Group();scene.add(worldRoot);
 const previewRoot=new THREE.Group();scene.add(previewRoot);
 const loader=new GLTFLoader();
-let terrain=null,mode='actor',selected=null,currentMixer=null,clock=new THREE.Clock(),visitedActor=true,visitedProp=false,sceneLoadToken=0;
+let terrain=null,mode='actor',selected=null,currentMixer=null,clock=new THREE.Clock(),actorSourceReady=false,propSourceReady=false,sceneLoadToken=0;
 const sceneObjects=new Map();
 
 const gizmo=new TransformControls(camera,renderer.domElement);
@@ -285,7 +285,11 @@ function fitObject(o,fit){
 }
 function groundModelLocal(model){
   const b=bounds(model,true);
-  if(Number.isFinite(b.min.y)){model.position.y-=b.min.y;model.updateWorldMatrix(true,true)}
+  const parentY=model.parent?model.parent.getWorldPosition(new THREE.Vector3()).y:0;
+  if(Number.isFinite(b.min.y)&&Number.isFinite(parentY)){
+    model.position.y+=parentY-b.min.y;
+    model.updateWorldMatrix(true,true);
+  }
 }
 function setCameraForObject(obj){
   const b=bounds(obj,true),c=b.getCenter(new THREE.Vector3()),s=b.getSize(new THREE.Vector3());
@@ -458,23 +462,23 @@ function setPanels(sceneMode){
   E('hint').style.display=sceneMode?'none':'block';
 }
 async function showActor(){
-  mode='actor';visitedActor=true;resetMixer();selectRoot(null);clearGroup(previewRoot);worldRoot.visible=false;previewRoot.visible=true;grid.visible=true;setPanels(false);
+  mode='actor';actorSourceReady=false;updateReviewUnlock();resetMixer();selectRoot(null);clearGroup(previewRoot);worldRoot.visible=false;previewRoot.visible=true;grid.visible=true;setPanels(false);
   E('viewActor').classList.add('active');E('viewProp').classList.remove('active');E('viewScene').classList.remove('active');
   E('sourceFacts').innerHTML=sourceFacts('actor');
   status('loading exact Caveman source…');
-  const model=await loadActorModel(true);previewRoot.add(model);setCameraForObject(model);status('source actor loaded · '+ACTOR.clip.name,'ok');
+  const model=await loadActorModel(true);previewRoot.add(model);setCameraForObject(model);actorSourceReady=true;status('source actor loaded · '+ACTOR.clip.name,'ok');
   updateReviewUnlock();
 }
 async function showProp(){
-  mode='prop';visitedProp=true;resetMixer();selectRoot(null);clearGroup(previewRoot);worldRoot.visible=false;previewRoot.visible=true;grid.visible=true;setPanels(false);
+  mode='prop';propSourceReady=false;updateReviewUnlock();resetMixer();selectRoot(null);clearGroup(previewRoot);worldRoot.visible=false;previewRoot.visible=true;grid.visible=true;setPanels(false);
   E('viewActor').classList.remove('active');E('viewProp').classList.add('active');E('viewScene').classList.remove('active');
   E('sourceFacts').innerHTML=sourceFacts('prop');
   status('loading exact Boulder source…');
-  const model=await loadPropModel();previewRoot.add(model);setCameraForObject(model);status('source prop loaded','ok');
+  const model=await loadPropModel();previewRoot.add(model);setCameraForObject(model);propSourceReady=true;status('source prop loaded','ok');
   updateReviewUnlock();
 }
 async function showScene(){
-  if(!visitedActor||!visitedProp)return;
+  if(!actorSourceReady||!propSourceReady)return;
   mode='scene';resetMixer();clearGroup(previewRoot);previewRoot.visible=false;worldRoot.visible=true;grid.visible=false;setPanels(true);
   E('viewActor').classList.remove('active');E('viewProp').classList.remove('active');E('viewScene').classList.add('active');
   E('sourceFacts').innerHTML='<b>Composed scene</b><br>Only source references + transforms are stored. No asset bytes or animation libraries are copied.';
@@ -484,7 +488,7 @@ async function showScene(){
   camera.position.set(10,7.2,11.5);controls.target.set(0,.5,0);controls.update();
   status('scene ready · select / move / rotate / drop / save / reload','ok');
 }
-function updateReviewUnlock(){E('viewScene').disabled=!(visitedActor&&visitedProp)}
+function updateReviewUnlock(){E('viewScene').disabled=!(actorSourceReady&&propSourceReady)}
 
 function addActor(){
   if(sceneDoc.objects.some(o=>o.id===ACTOR.id))return;
