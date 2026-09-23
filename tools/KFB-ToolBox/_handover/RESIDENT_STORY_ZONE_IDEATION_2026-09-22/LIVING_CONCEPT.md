@@ -4923,3 +4923,254 @@ full mix
 ```
 
 Do not pull all six candidate tracks into the animation proof.
+
+
+---
+
+# 41 · Permitless Funk signature + Legacy bounce choreography
+
+## USER DECISION · 2026-09-23
+
+Current best Orc Band signature-style candidate:
+
+**Permitless Funk**
+
+Source file:
+
+`media/3D_Assets/Sounds/KFB RoadTrip JukeBox v2/Rubbish Groove 2min A extend 01.mp3`
+
+Georg reports this version best matches the intended warm, slightly dirty, relaxed 70s electro-funk signature style.
+
+Status:
+
+**HUMAN_SELECTED_SIGNATURE_CANDIDATE**
+
+It is not yet promoted to the canonical Jukebox catalog.
+
+Promotion still needs:
+
+- BPM;
+- downbeat/beat offset;
+- loop start/end;
+- fade/crossfade metadata;
+- first visualizer proof.
+
+## Scene composition refinement
+
+The Orc Band should initially read as an open-landscape **street-corner jam without a literal street**.
+
+Working focal composition:
+
+- three Orcs arranged around a surreal stone formation / campfire-like centre;
+- Crazy-Cat / open-field world staging;
+- no building dependency;
+- portable Story Zone / World-Life fixture;
+- easy later relocation into market, roadside, dungeon courtyard or festival.
+
+The central object is a scenic/focal prop, not a gameplay owner.
+
+## Legacy frontman · user-selected visual direction
+
+Use the small Legacy Orc with the **black ponytail / dark topknot**.
+
+Current text/source evidence proves two Legacy Orc source files:
+
+- `character_orcA.gltf`
+- `character_orcB.gltf`
+
+and current Atlas history describes two visual variants including a topknot.
+
+The text evidence does **not** reliably identify which filename is the exact black-ponytail variant.
+
+Therefore:
+
+**exact A/B identity remains a SOURCE-ISOLATION VISUAL GATE.**
+
+Do not guess.
+
+## PROPOSAL · Legacy Bounce / Squash performance
+
+The Legacy frontman becomes the most mobile member of the trio.
+
+He may hold the microphone continuously.
+
+He does **not** need:
+
+- lip-sync;
+- microphone-to-mouth precision;
+- detailed leg animation;
+- a conventional humanoid dance clip.
+
+Instead use a cheap, readable cartoon performance:
+
+```
+BEAT
+→ squash
+→ launch
+→ airborne stretch
+→ peak
+→ fall
+→ landing squash
+→ recover
+```
+
+The Legacy proportions make this especially suitable because leg articulation is visually less important than whole-body timing.
+
+## Timing mapping
+
+Do not map raw musical pitch directly to jump height in v0.
+
+A full mixed track contains overlapping bass, guitar, percussion and synth material; raw pitch would create unstable/jittery jumping.
+
+Preferred mapping:
+
+### Beat / BPM
+
+Controls:
+
+- jump frequency;
+- launch/landing timing;
+- regular bounce cadence.
+
+### Pulse / onset strength
+
+Controls:
+
+- jump height;
+- extra squash;
+- stronger landing;
+- rare double-hop;
+- stronger head bob.
+
+### Overall level / energy
+
+Controls:
+
+- body groove amplitude;
+- squash/stretch amount within safe limits;
+- lateral wandering radius / enthusiasm.
+
+### Phrase / bar position
+
+Seed small variations:
+
+- sideways hop;
+- quarter turn;
+- high hop;
+- tiny fast double bounce;
+- microphone flourish;
+- head shake;
+- freeze / smug beat;
+- rejoin groove.
+
+This prevents mechanical repetition across the two-minute track.
+
+## Root motion vs skeleton motion
+
+For v0, most of the Legacy dance can be implemented at the **performance root/group**:
+
+- vertical translation;
+- subtle lateral hop;
+- Y rotation;
+- non-uniform squash/stretch.
+
+This is cheaper and more robust than forcing a complex Legacy leg/foot dance.
+
+If a usable Legacy clip improves upper-body life, it may layer additively.
+
+Do not make one necessary for the first proof.
+
+## Squash / stretch guardrails
+
+Keep character identity readable.
+
+Suggested conceptual limits, to tune visually rather than freeze globally:
+
+- landing squash: slightly wider + shorter;
+- airborne stretch: slightly narrower + taller;
+- head/hair should remain attached coherently;
+- microphone prop remains stable enough to read;
+- no jelly deformation that destroys Orc silhouette.
+
+The effect should read as **cartoon bounce**, not elastic-body simulation.
+
+## Large Orc Brute · groove refinement
+
+Large Brute remains the War Drum anchor.
+
+Preferred first musical mapping:
+
+- alternating L/R strikes on the beat grid;
+- not every detected transient becomes a strike;
+- use a stable quarter-note or half/eighth hybrid pattern derived from known BPM;
+- `pulse` may add accented hit amplitude / shoulder recoil;
+- rare bar-level flourish may trigger a double hit.
+
+Head/upper-body movement may lag slightly behind hand strikes for weight.
+
+## Medium Orc · funky guitar refinement
+
+Medium Orc remains the electric-guitar performer.
+
+Even if the source prop visually reads as guitar rather than bass, his movement may carry a **funk-bass-like pocket**:
+
+- small knee/body groove;
+- shoulder rocking;
+- procedural strum on subdivisions;
+- accented downbeats;
+- occasional held/rest beat instead of constant sawing.
+
+Reuse the measured Animatronic guitar-hold / procedural-strum architecture.
+
+Do not invent a source `Funk Guitar` animation clip.
+
+## Trio anti-robot rule
+
+All three share one musical clock.
+
+They should not share identical animation phase.
+
+Example:
+
+- Brute = slightly behind beat / heavy;
+- Medium = tight subdivision / groove;
+- Legacy = slightly ahead / energetic bounce.
+
+The visual read should be:
+
+**same music, three personalities.**
+
+## First Permitless Funk visualizer proof
+
+```
+Rubbish Groove / Permitless Funk
+→ BPM + beat-offset metadata
+→ one shared music clock
+→ Large Brute drum beat
+→ Medium Orc guitar strum/body groove
+→ Legacy black-ponytail Orc bounce/squash
+→ seeded bar-level variation
+→ player can watch/dance
+→ demo-tape reward later
+```
+
+No stems required for this first pass.
+
+## Road-trip sibling track direction
+
+A second Orc Band track may deliberately keep the **Permitless Funk** identity while adding more:
+
+- open-road forward motion;
+- dusty/warm road-trip atmosphere;
+- horizon / travel feeling;
+- cruising rather than race urgency;
+- more spacious arrangement;
+- still danceable;
+- still suitable as a repeating exploration track.
+
+This sibling should work both:
+
+- as an Orc Band live performance;
+- and as a free-roam RoadTrip Radio track.
+
+It should **not** sound like Racer final-lap music.
