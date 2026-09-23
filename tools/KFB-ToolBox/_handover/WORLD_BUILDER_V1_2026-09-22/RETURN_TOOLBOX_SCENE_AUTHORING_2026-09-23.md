@@ -26,8 +26,10 @@ Branch:
 Draft PR:
 `#186`
 
-Verified pre-Return branch head:
-`8138f873509d47b3af144108b9de5525a2f89cb9`
+Verified pre-Return branch head after implementation, evidence, changelog, router, Hub and local START updates:
+`549c8e0912f9fe626d4d68eb5ddcd2948be05798`
+
+The exact final head after this Return refresh is read back and reported in the chat handoff.
 
 Current canonical source blob:
 `a0ae15e822ef8283abafcf84483498814b1be3b8`
