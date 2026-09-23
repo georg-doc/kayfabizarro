@@ -881,16 +881,24 @@ vehicle grounding/contact → hard-clamp/jitter → trails/speedlines → jump/l
 Cloudflare remains deferred.
 
 
-## 2026-09-23 · KFB Elastic Grotesque Clay · Hürth 01
+## 2026-09-23 · KFB Elastic Grotesque Clay · Hürth 01 · V2
 
-A bounded 3D form-language proof now lives at [KFB Elastic Grotesque Clay v1 · Hürth 01](workflows/KFB_ELASTIC_GROTESQUE_CLAY_V1_2026-09-23/START_HERE.md).
+Current bounded 3D form-language slice:
+[KFB Elastic Grotesque Clay v1 · Hürth 01](workflows/KFB_ELASTIC_GROTESQUE_CLAY_V1_2026-09-23/START_HERE.md).
 
-- owner stays **OSM City Lab presentation / KFB ToolBox authoring**; no new world or movement owner;
-- 22 real Hürth OSM buildings are shown as CLEAN, exact current City-Lab GROTESQUE, and the new continuous rounded ELASTIC GROTESQUE CLAY candidate;
-- source isolation is built in before composition review;
-- browser evidence at tested implementation head `1db61b9c882e178000cf700a7d5f4d18ec03eba0`: **16/16 PASS**, 3/3 WebGL2, zero page/console errors;
-- evidence run `35904415847`, artifact `10769948842`, digest `sha256:fa8823edeeec10c6e25cb11b08c15d85a205e6ecb17c6c66c9c8f1236e71c9a9`;
+Georg has accepted the pinned clay-neighbourhood benchmark for **shape / facade detail / handmade-model direction**. The real 3D translation is now v2:
+
+- owner stays **OSM City Lab presentation / KFB ToolBox authoring**;
+- 22 real Hürth OSM buildings remain the source fixture;
+- exact current City-Lab GROTESQUE remains the comparison donor;
+- ELASTIC V2 adds a coherent low-frequency group warp, non-parallel roof planes, rounded/bowed continuous volumes, 2–3 irregular tall windows without bright frames, varied doors, continuous curved road/curb ribbons and the systemic `KFB_WONKY_90S_CLAY_V1` palette;
+- OSM/S2/collision truth and movement/world owners remain unchanged;
+- accepted benchmark image is pinned in the workflow folder, Git blob `d6dcb90770d83513204a6ea96fd56a60c7c3a296`;
+- v2 browser proof: run `35909757979`, **21/21 PASS**, 3/3 WebGL2, 0 page/console errors, artifact `10772592799`, digest `sha256:14033aea95c75d006d3333347809a1a147256ba31dd28bda5505570d6572aedf`;
 - Draft PR #194 remains unmerged;
-- no Cloudflare/public Stage is claimed; the current gate is Georg's direct chat-HTML visual review.
+- Cloudflare/public Stage remains **NOT PUBLISHED**.
 
-Exactly one next gate: **Hürth 01 human visual decision — continue / tune / reject the Elastic grammar.**
+Future selected enterable buildings with exact source-backed KayKit door props are recorded as **DEFERRED / AssetRef required**, not part of this gate.
+
+Exactly one next gate:
+**Georg human review of the actual Hürth 01 v2 3D translation.** If accepted, turn this exact grammar into the Blender-MCP / Geometry-Nodes production recipe.
