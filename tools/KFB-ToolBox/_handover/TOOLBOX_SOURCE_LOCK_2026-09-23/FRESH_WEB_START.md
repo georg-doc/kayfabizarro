@@ -1,4 +1,8 @@
-# Paste-ready · KFB ToolBox Resident Set Portability · Fresh Web Chat · 2026-09-23
+# KFB ToolBox Resident Set Portability · optional recovery handoff · 2026-09-23
+
+> **DO NOT START A NEW CHAT FOR THE CURRENT CONTINUATION.**
+>
+> Georg explicitly wants the current ToolBox chat to continue without another fresh-chat restart. Use this file only if recovery is later genuinely required.
 
 @GitHub @Dropbox
 
@@ -25,8 +29,7 @@ Do **not** continue or repair the rejected Claude Round-1 ToolBox.
 
 Do **not** start with isolated actors.
 
-The repeated ChatGPT/HTML failures are now treated as one transport problem:
-model + textures + pose + prop attachment + multi-actor state must survive the review/export boundary together.
+The repeated ChatGPT/HTML failures are treated as one transport problem. The texture-display workaround itself is already verified globally on PR #186; consume that fix instead of reopening it. The remaining review checks model/source resolution, pose, prop attachment, multi-actor state and export/reload.
 
 ## One task only · TB-RESIDENT-PORTABILITY-01
 
