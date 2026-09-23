@@ -102,3 +102,27 @@ GitHub is the shared bus.
 
 Current WSA recommendation:
 **NOT YET NEEDED** unless Coworker identifies a concrete unavailable local/multi-repo capability.
+
+
+## Production Desk / Review / FX recovery
+
+After Coworker switches to Opus 5.5:
+
+1. recover current local ToolBox work;
+2. build Production Desk v0 from the checked-in snapshot;
+3. resume ToolBox Source-Safe Integration.
+
+Production Desk files:
+- `PRODUCTION_DESK_V0_BRIEF.md`
+- `PRODUCTION_DESK_STATE.json`
+- `COWORKER_PRODUCTION_DESK_START.md`
+
+Shared 3D review setup:
+`REVIEW_SCENE_BASE_V1.md`
+
+Prepared VFX-first Web slice:
+- `VFX_SFX_CONSOLIDATION_01.md`
+- `VFX_SFX_WEBCHAT_START.md`
+
+VFX-01 is prepared but does not block ToolBox.
+It may run in a separate bounded Webchat.
