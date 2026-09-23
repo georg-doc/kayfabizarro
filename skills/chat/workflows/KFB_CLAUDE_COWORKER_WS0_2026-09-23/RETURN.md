@@ -164,3 +164,142 @@ Der Hub wurde in der GitHub-Quelle aufgeräumt:
 
 ### Next
 Use the cleaner Hub source after merge; publication can wait for the next meaningful batch.
+
+
+## CURRENT CORRECTION · Recovery / Coworker proof / WSA setup
+
+### Für Georg
+
+Der Coworker-Pilot hat inzwischen zwei Dinge sinnvoll bewiesen:
+
+1. Er kann einen laufenden PR günstig und brauchbar prüfen, ohne riesige Diffs komplett einzulesen.
+2. Er kann aus bestehenden Modulen einen Integrationsvorschlag machen, ohne sofort Code zu schreiben oder einen neuen Owner zu erfinden.
+
+Der nächste logische Schritt ist **nicht WSA**, sondern erst dein WorldBuilder-R2-Test. Wenn der klappt, kann Coworker die erste kleine echte ToolBox-Integration übernehmen.
+
+WSA ist vorbereitet, aber bleibt Reserve für den Moment, an dem wirklich lokale/mehrere-Repos-Fähigkeiten nötig sind.
+
+### New recovery
+
+Long-chat recovery:
+`RECOVERY.md`
+
+Future WSA/Work workshop setup:
+`WSA_INTEGRATION_WORKSHOP_SETUP.md`
+
+### Coworker proof
+
+Review proof:
+**PASS FOR CONTINUED USE**
+
+WorldBuilder PR #186 review:
+- no blocker found;
+- static vs. human/browser proof separated correctly;
+- shared editor ownership understood;
+- host persistence boundary identified;
+- token-light path worked.
+
+Integration-planning proof:
+**USEFUL · WEB-ALIGNED DIRECTION**
+
+Correction retained:
+do not create a new transform schema.
+
+Existing:
+`kfb.scene-patch.v1`
+already carries position / rotation / scale.
+
+### Current Travel state
+
+PR #37:
+**HUMAN ACCEPTED · TMB-1E CLOSED**
+
+Accepted head:
+`603f2a9e8fb2c8efd1008ed67607cf7a712de0bd`
+
+Next:
+**TMB-2 · Ground → Flight Double-Space handoff proof**
+
+### Current coordination branch
+
+Branch:
+`chatgpt-web/claude-coworker-ws0-onboarding-2026-09-23`
+
+Checkpoint before this Return update:
+`9ce479a406b516d73748094082001d1dd254e05f`
+
+Important:
+current `main` has moved ahead in parallel.
+
+Latest checked main:
+`dd555d61ef7b6deb813d16270b9ed7d37ea24973`
+
+Before merge/rebase:
+refresh main and reconcile intentionally, especially Hub/router/changelog changes.
+
+### Hub working source
+
+Current branch-only cleanup:
+- 8 TODOs;
+- 4 active KFB P0 items;
+- 6 default current Briefings;
+- stale briefing warning;
+- current quick links;
+- Travel advanced to TMB-2.
+
+Hub JS syntax:
+**PASS**
+
+Public Hub:
+unchanged / not republished.
+
+### WSA strategy
+
+Prepared setup:
+`WSA_INTEGRATION_WORKSHOP_SETUP.md`
+
+Default:
+- Web = lead/reconciliation;
+- Coworker = review + bounded integration;
+- Claude Design = visual authoring;
+- WSA = only named unavailable/impractical capability.
+
+Georg reports currently refreshed Claude capacity. Use it for suitable Coworker/Design work while available, but recheck actual quota/capacity at workshop start.
+
+### Publication / tests
+
+Runtime product tests added by this coordination slice:
+**0**
+
+Hub JS syntax check:
+**PASS**
+
+Cloudflare:
+**0**
+
+WSA/Work runs:
+**0**
+
+Merge:
+**NO**
+
+### Exactly one next coordination gate
+
+**WorldBuilder R2 human check.**
+
+In plain language:
+open the current WorldBuilder review and test:
+- select an object;
+- move it;
+- rotate it;
+- scale it;
+- save;
+- reload;
+- verify the transform remains;
+- check the small menu does not cover the scene.
+
+If PASS:
+issue the first productive Coworker Slice Card for ToolBox consuming the accepted shared editor.
+
+If not:
+repair WorldBuilder first; do not spread the editor into ToolBox.
