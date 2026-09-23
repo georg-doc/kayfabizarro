@@ -25,8 +25,9 @@ export function brushWeight(distance, radius) {
   const d = Math.max(0, finite(distance, 0));
   if (d >= r) return 0;
   const t = clamp(d / r, 0, 1);
-  const q = 1 - t * t;
-  return q * q;
+  // 1 - quintic smoothstep: value, first derivative and second derivative
+  // all meet the zero outside-kernel continuously at t=1 (C2 boundary).
+  return 1 - t * t * t * (t * (t * 6 - 15) + 10);
 }
 
 export function makeStroke(mode, radius, strength) {
