@@ -208,3 +208,25 @@ current Option-C uses a pitch/roll lift heuristic. Do not continue coefficient t
 Resident Story Zone PR #174 remains planning-only and currently non-mergeable until reconciled with newer main. It is recorded as a Hub TODO, not promoted to runtime truth.
 
 Hub source now includes current Racer technical/Claude gates and PR #174 reconcile TODO on both main and cloudflare-live source branches. Public Pages fetch could not be verified from this chat environment; no PUBLIC_VERIFIED claim is made for this metadata update.
+
+
+## WorldDesign Lab donor delta · 2026-09-23
+
+New internal donor intake reviewed:
+
+`tools/KFB-ToolBox/_inbox/KFB World Design Setup (1)/WORLDDESIGN_LAB_2026-09-23/`
+
+Georg clarified origin:
+**WhackMan project lineage, not a new ToolBox project.**
+
+WorldBuilder/Claude World may consume:
+- `wd-light.js` as already-isolated WhackMan light comparison evidence;
+- `wd-look.js` as Look Profile/preset donor;
+- `wd-view.js` as Bank/Welt comparison + McCloud-layer donor;
+- natural/voxel terrain only as look-test donors;
+- existing sky donor switchboard.
+
+The Lab does not own World Recipe, Surface Adapter, OSM, structural authoring or global ink canon.
+
+Detailed classification:
+`../WORLD_BUILDER_V1_2026-09-22/WHACKMAN_WORLDDESIGN_LAB_DONOR_2026-09-23.md`
