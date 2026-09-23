@@ -196,6 +196,43 @@ Read only:
 
 Do not rebuild Hex logic.
 
+### WhackMan-origin WorldDesign Lab
+
+Use:
+
+`tools/KFB-ToolBox/_inbox/KFB World Design Setup (1)/WORLDDESIGN_LAB_2026-09-23/`
+
+Ownership:
+
+**WHACKMAN-ORIGIN INTERNAL DONOR · NOT A NEW TOOLBOX PROJECT**
+
+Read only:
+
+- `README.md`
+- `docs/WORLDDESIGN_LAB_HANDOVER.md`
+- `deliverables/wd-light.js`
+- `deliverables/wd-look.js`
+- `deliverables/wd-view.js`
+- `deliverables/wd-terrain.js`
+- `deliverables/wd-voxel.js`
+- exact extra modules only if needed for the current gate.
+
+Classify useful pieces separately:
+
+- `wd-light.js` → ADAPT for P1 Environment Profile;
+- `wd-look.js` → ADAPT / Look Profile donor;
+- `wd-view.js` → ADAPT / comparison-bank + layer presentation donor;
+- `wd-terrain.js` → RESEARCH/ADAPT for look testing only, not world truth;
+- `wd-voxel.js` → REUSE PATTERN from Voxel Zone S2 owner, not a new voxel owner;
+- `wd-sky.js` → donor switchboard only, no new sky ownership;
+- `wd-ink.js` deltas → owner-candidate changes only after human acceptance.
+
+Important:
+
+- the Lab's `WELT` mode is a mixed look-test scene, **not a World Recipe**;
+- its natural/voxel terrain does **not** replace the FLAT/SPHERE/TORUS Surface Adapter proof;
+- its current standalone limitation is a bundling issue, not a reason to use Work.
+
 ### WhackMan
 
 Use:
