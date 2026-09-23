@@ -4,8 +4,8 @@
   "source": {
     "repo": "georg-doc/kayfabizarro",
     "branch": "chatgpt-web/kfb-hybrid-production-handoff-2026-09-23",
-    "head": "18e60920eec27662d6039a0013104af2626783e9",
-    "note": "Refresh exact branch head before Coworker builds artifact."
+    "head": "fa7e4579f8fb0e4c0bc07f7efe70ff4d238f5439",
+    "note": "Snapshot inputs refreshed on PR #193 before this state-file commit; Coworker must re-fetch exact heads before rendering."
   },
   "now": [
     {
@@ -102,5 +102,15 @@
   "wsa": {
     "state": "NOT_NEEDED",
     "reason": "No current CLOSED packet names a capability unavailable to Coworker/Web/Blender."
+  },
+  "desk": {
+    "state": "PREPARED_BUILD",
+    "brief": "PRODUCTION_DESK_V0_BRIEF.md",
+    "artifact": "KFB_PRODUCTION_DESK_V0.html"
+  },
+  "reviewBase": {
+    "id": "threejs-focus-review-v1",
+    "extension": "REVIEW_SCENE_BASE_V1.md",
+    "policy": "direct chat + durable GitHub/CI artifact"
   }
 }
