@@ -1,21 +1,22 @@
 # WB1-P1 · Environment Profile · Test Report
 
-Status: **CANDIDATE · STATIC TESTS PASS · BROWSER / VISIBLE PROOF BLOCKED**
+Status: **PASS FOR WB1-P1 SCOPE · AUTOMATED PUBLIC BROWSER PASS · HUMAN SCOPE PASS · LIGHTING COMPOSITION NOT CANON**
 Date: 2026-09-23
 Repository: `georg-doc/kayfabizarro`
 Branch: `chatgpt-web/world-builder-p1-environment-profile-2026-09-23`
 Implementation checkpoint: `bbf9a8ead0750dcb69be68d4d1a2a7136bd25ceb`
+Frozen review runtime: `a48729460c28edc2ae95abbfcdef66fe52a84f50`
+Public proof run: `35807858806`
 
 ## Scope
 
 This report covers WB1-P1 only: the isolated WhackMan-derived Environment Profile candidate under
 `tools/KFB-ToolBox/world-building-preflight/environment-profile/`.
 
-It does **not** start WB1-P2, does not create a WorldBuilder UI and does not publish Cloudflare Stage.
+It does **not** start WB1-P2 and does not accept the review scene's exact light placement, torch spacing
+or final composition as production lighting canon.
 
 ## Repository-native tests actually run
-
-Command:
 
 ```bash
 node test/profile-core.test.mjs
@@ -38,53 +39,99 @@ Result: **8/8 PASS**, plus **4/4 syntax checks PASS**.
 | 7 | runtime source contains no WhackMan movement / MazeGraph dependency markers | PASS |
 | 8 | source-truth P1 calibration retained: exposure 1.0, fog .019, decay 2, range 18, local 46 / decay 1.6 | PASS |
 
-## Source-object-first contract
+## Source-object-first proof
 
-The demo is coded to begin in **SOURCE TORCH** mode using the real
-`torch_mounted.gltf` donor. It imports the existing owner functions `collectTris()` and
-`measureFlame()`, measures the flame point from the loaded source geometry, and keeps the
-ENVIRONMENT button disabled until the source object has rendered for multiple animation frames.
+The review begins in **SOURCE TORCH** mode using the real `torch_mounted.gltf` donor, imports the
+existing Dungeon-owner `collectTris()` and `measureFlame()` functions, measures the source flame
+point and unlocks the Environment proof only after the source object has rendered.
 
-This is an implementation contract only at this stage. The required visible proof was **not observed**
-because the browser transport was blocked before page load.
+Public Stage:
+`https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/world-builder-p1-review/`
 
-## Browser / visual gate
+Observed automated marker:
+`SOURCE OBJECT RENDERED · ENVIRONMENT PROOF UNLOCKED`
 
-Two bounded browser attempts were made with system Chromium:
+## Historical blocked transport
 
-1. Local HTTP: `http://127.0.0.1:4176/`
-2. Same local files through an intercepted test origin: `https://wb1p1.test/index.html`
+Two earlier browser attempts from the restricted chat container stopped before page load with
+`net::ERR_BLOCKED_BY_ADMINISTRATOR`.
 
-Both stopped **before application code or HTML loaded** with:
+That blocker was resolved by using the permitted zero-install KFB Stage transport. The P1 runtime was
+not changed to solve transport.
 
-`net::ERR_BLOCKED_BY_ADMINISTRATOR`
+## Public automated browser proof
 
-Per the KFB two-repair-pass rule, no third attempt was made.
+GitHub Actions run `35807858806`: **PASS**.
 
-Actual browser evidence:
-- successful page loads: **0**
-- application console assertions executed: **0**
-- verified console-error count: **UNKNOWN**
-- source-object visible proof: **NOT OBSERVED**
-- screenshot count: **0**
-- interactive control tests: **0**
-- Cloudflare publication: **0 / prohibited by this slice**
+Observed on the exact Cloudflare route:
 
-The browser failure is therefore a test-transport blocker, not evidence of a runtime failure and not evidence of runtime success.
+- exact Stage marker `WB1-P1 · STAGE A487294`: PASS;
+- source isolation rendered: **true**;
+- source `consoleErrors=0`;
+- integrated proof state: **ENVIRONMENT**;
+- DUSK `FogExp2` density: **0.019**;
+- active torch pool: **6 / 6**;
+- Local Visibility tested to **1.00**;
+- material switched to MATTE and restored to `SOURCE_MATERIAL`;
+- page errors: **0**;
+- failed HTTP requests: **0**;
+- screenshot artifact: `wb1-p1-stage-review-evidence`, artifact ID `10728163540`.
+
+Representative automated snapshots:
+
+```text
+SOURCE:
+sourceIsolationRendered=true
+consoleErrors=0
+activePool=0/6
+materialRef=SOURCE_MATERIAL
+
+INTEGRATED:
+proof=ENVIRONMENT
+activePool=6/6
+fogType=FogExp2
+fogDensity=0.019
+localVisibility=1
+consoleErrors=0
+materialRef=SOURCE_MATERIAL
+```
+
+## Human review · Georg · 2026-09-23
+
+**PASS for the intended WB1-P1 scope.**
+
+Accepted:
+- source-object-first review behavior;
+- Environment Profile separation and controls;
+- DAY/DUSK switching;
+- torch profile/flicker mechanism;
+- Local Visibility mechanism;
+- reversible SOURCE ↔ MATTE CANDIDATE behavior;
+- the candidate is sufficient for what P1 is meant to prove now.
+
+Explicit non-canon caveat from human review:
+
+The review scene does **not** represent the eventual production lighting situation. In particular,
+the current primary light setup and the staging/spacing of the torches are not accepted as final
+lighting composition. They are a deliberately small proof arrangement and must not be promoted as
+a World/scene lighting template.
+
+This caveat does **not** block WB1-P1 because final scene lighting composition was not the gate target.
 
 ## Optional Game Development Studio
 
 `game-dev` was unavailable in the execution environment. Sealed Game Development Studio evidence is
-not required by WB1-P1, so the slice used repository-native tests as the documented fallback.
+not required by WB1-P1, so repository-native + public browser evidence is sufficient for this gate.
 
 ## Gate result
 
-WB1-P1 is **not complete** because the required source-object visual proof, zero-console-error browser
-assertion and screenshot could not be observed.
+**WB1-P1 COMPLETE for its bounded Environment Profile proof.**
 
-Exactly one next gate:
+No runtime repair follows from the human note. Final production light placement, torch staging and
+scene-specific lighting composition remain future authoring concerns rather than Environment Profile
+contract truth.
 
-**WB1-P1 Browser Verify · run the persisted Portable Preview outside the restricted browser container,
-verify SOURCE TORCH first, then ENVIRONMENT; capture visible proof + console result.**
+Exactly one next gate after this STOP:
 
-WB1-P2 remains HOLD.
+**WB1-P2 · prove the same tiny logical recipe across FLAT / SPHERE / TORUS without creating a second
+world, terrain, movement or camera owner.**
