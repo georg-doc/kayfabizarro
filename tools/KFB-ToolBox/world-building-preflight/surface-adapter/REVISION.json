@@ -2,7 +2,7 @@
   "slice": "WB1-P2",
   "schema": "kfb.surface-adapter/0.1-candidate",
   "branch": "chatgpt-web/world-builder-p2-surface-adapter-2026-09-23",
-  "baseMain": "ce47fba26fbf0997d01b66466eb2ee3d2120cad3",
+  "baseMain": "852f9d2cd1be228898316b205063855c95308c9a",
   "validatedAssetPin": "64b06628402c14d52a3bf976473214b7e86d697e",
   "acceptedP1Runtime": "a48729460c28edc2ae95abbfcdef66fe52a84f50",
   "recipeId": "wb1-p2-seven-hex-route-target-ripple-v1",
@@ -10,8 +10,38 @@
   "expectedMarker": "SOURCE OBJECT RENDERED · SURFACE PROOF UNLOCKED",
   "staticTests": "8/8 PASS",
   "syntaxChecks": "3/3 PASS",
-  "browserStatus": "PENDING",
+  "browserStatus": "PASS",
   "publicStatus": "NOT YET PUBLISHED",
   "p3Started": false,
-  "nextGate": "WB1-P2 technical browser proof, then Georg human review"
+  "nextGate": "Georg Human Review of WB1-P2 on exact Stage; then evidence/Return only and STOP.",
+  "acceptedRuntime": "0599cc04d2db72ed33c49fb98a30898290a00a68",
+  "staticRun": 35815116764,
+  "browserRun": 35815317560,
+  "stageRoute": "https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/world-building-preflight/",
+  "sourceMarker": "SOURCE OBJECT RENDERED · SURFACE PROOF UNLOCKED",
+  "surfaceProof": {
+    "flat": "PASS",
+    "sphere": "PASS",
+    "torus": "PASS",
+    "recipeFingerprintUnchanged": true,
+    "cellCount": 7,
+    "localFrames": "finite normalized orthogonal handedness +1",
+    "consoleErrors": 0,
+    "pageErrors": 0,
+    "failedHttpRequests": 0
+  },
+  "repair": {
+    "cause": "P2 harness called existing Hex buildNetwork owner with naked cells array instead of chain object {id,cells}.",
+    "fix": "buildNetwork([{id:'wb1-p2-road',cells:chain}])",
+    "ownerChanged": false,
+    "runtimeRepairCommit": "0599cc04d2db72ed33c49fb98a30898290a00a68"
+  },
+  "screenshotArtifact": {
+    "name": "wb1-p2-stage-evidence",
+    "id": 10731296741,
+    "fileCount": 5,
+    "digest": "sha256:93f1325571fe7896945116422ce50a8b161ae3695034e6a30500940a9cd8633e"
+  },
+  "status": "WB1-P2 TECHNICAL PASS · HUMAN REVIEW PENDING",
+  "humanReview": "PENDING"
 }
