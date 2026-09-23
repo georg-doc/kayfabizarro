@@ -25,8 +25,15 @@ Alte Einträge bleiben unverändert. Korrekturen als neue CORRECTION/SUPERSEDES-
 - embedded browser self-test: **15 assertions prepared / 0 executed**;
 - automated browser runtime: **0**; screenshots: **0**.
 
+### HUMAN RE-REVIEW
+Georg opened the repaired R1 ChatGPT attachment and confirmed the Caveman texture is now visible.
+
+**TEXTURE_VISIBLE_IN_CHAT_ATTACHMENT · PASS**
+
+The successful review-host adapter is now documented globally for Web/WSA/other chats. The source asset/Resident Atlas remain unchanged.
+
 ### NEXT
-Georg re-reviews the same local `WB1_TERRAIN_SCENE_01_REVIEW.html`, specifically texture, Character Y movement/save-reload and unobstructed field of view. Claude Design, Orc Band, Cloudflare and Live remain HOLD.
+Georg re-reviews the same local `WB1_TERRAIN_SCENE_01_REVIEW.html` for Character Y movement, unobstructed field of view and Character-Y save/reload. Texture is already HUMAN PASS. Claude Design, Orc Band, Cloudflare and Live remain HOLD.
 ## 2026-09-23 · WB1-TERRAIN-SCENE-01 local review candidate
 
 ### IMPLEMENTATION
