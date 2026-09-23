@@ -1,6 +1,6 @@
 # KFB Travel Mode Bridge v1 · TMB-1E Scale / Capacity Review · 2026-09-23
 
-**Status:** REPAIR PASS 2 · TECHNICAL / CI PASS · GEORG HUMAN RE-REVIEW PENDING · NOT PUBLIC  
+**Status:** HUMAN_ACCEPTED · TMB-1E CLOSED · TMB-2 NEXT · NOT MERGED · NOT PUBLIC  
 **Owner:** `georg-doc/KFB-Travel-Globe`  
 **Coordination / Review owner:** `georg-doc/kayfabizarro`  
 **Base Travel candidate:** Draft PR #36 · `chatgpt-web/travel-mode-bridge-tmb1-surf-2026-09-23@88382c111acf32f6b934c15ce7b6b1f6d4d15283`  
@@ -341,3 +341,34 @@ Exactly one next gate:
 This is the second repair pass on the same gate. If the same gate still fails, stop and create the failure-recovery export. Do not perform Repair Pass 3.
 
 TMB-2 remains HOLD.
+
+
+## Human acceptance · TMB-1E closed
+
+Georg opened the final Repair Pass 2 Capacity HTML directly in ChatGPT and accepted it.
+
+Accepted visible state:
+- ActionFigure / `Rig_Medium`;
+- Orc Brute / `Rig_Large`;
+- Warband Orc B / `Rig_Legacy`;
+- exact animated CardCarrier unchanged;
+- Capacity reviewed at the **2.0× rider-size candidate**;
+- human-verified Chat attachment texture adapter working for the modern textured sources.
+
+Accepted direction carried into TMB-2:
+- current single-rider mount presentation = **2.0× candidate**;
+- native Medium/Large/Legacy proportions remain preserved;
+- CardCarrier geometry and thickness remain unchanged;
+- stronger Studio v17 Surf pose remains later presentation polish;
+- card-thickness redesign remains deferred.
+
+Travel acceptance commit:
+`603f2a9e8fb2c8efd1008ed67607cf7a712de0bd`
+
+No merge or Live promotion is implied.
+
+Exactly one next gate:
+
+**TMB-2 · Ground → Flight Double-Space intent / ownership handoff proof.**
+
+TMB-3 landing remains HOLD.
