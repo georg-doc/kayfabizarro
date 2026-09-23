@@ -98,7 +98,7 @@ async function loadTileTemplates(){
 
 function verifyHexOwner(){
   const chain=[[-1,0],[0,0],[1,0]];
-  const net=buildNetwork([chain]);
+  const net=buildNetwork([{id:'wb1-p2-road',cells:chain}]);
   const expected=new Map(RECIPE.cells.slice(0,3).map(c=>[`${c.col},${c.row}`,c]));
   for(const [key,c] of expected){
     const wanted=net.mask.get(key); const solved=solveHexTile(wanted,'road');
