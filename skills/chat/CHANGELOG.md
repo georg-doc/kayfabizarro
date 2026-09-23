@@ -1313,3 +1313,21 @@ zero-install clickable human review or bounded KFB Stage where necessary; no ass
 
 Racer observation added separately:
 `RSTAB-CYLINDER-GROUND-01` records Georg's report that some Cologne track/support cylinders appear above or below their intended support surface. It remains in Racer stabilization and does not alter Travel/World architecture.
+
+
+## 2026-09-23 · Racer RSTAB-1 human FAIL → WEDGE pass 2
+
+- First zero-install RSTAB-1 human gate failed on at least two remaining brown tunnel wedges.
+- Human also reports three downstream blockers: vehicle floating/front-wheel lift and bad landing/contact; extreme jerk at the first hard curve; Tail/Speedline rectangles breaking apart in the same unstable phase.
+- WEDGE pass 2 localizes exactly two shell/cut transition segments: **99→100** and **133→134**.
+- Both are inside the rendered TUNNEL run; shell now owns them and brown ground-cut wall/invert is not emitted there.
+- Historical mouth **90→91** remains ground-owned.
+- Race runtime/test candidate: `a9dd49995d32423e101a67f2e591c2b069583252`.
+- GitHub runs `35814096388` and `35814091421`: SUCCESS.
+- Test file: **6 active / 0 skipped**.
+- Race Draft PR #32 remains open/draft; current handoff head `841d0cbd2f55561dd63897036ae3890ce6a246fa`.
+- kayfabizarro Draft PR #178 Stage source head `df82e1fa31213d21c13af1f39f369608078633a3`.
+- Cloudflare route source `ad0036c465e7c5a87c3cfcc0d49cfb2cf3378de0`; Hub metadata `cloudflare-live@f904c318172848078b9d7f58e2b186c5fda03e7d`.
+- Intended review route remains `https://kayfabizarro.pages.dev/kfb-hub/stage/stunt-world/cologne-option-c-rstab1/`; public verification is still UNKNOWN/PENDING due pages.dev access/DNS failure in this environment.
+- This is WEDGE repair pass 2. Same-gate failure again triggers the two-pass failure-recovery export; no pass 3.
+- After WEDGE ACCEPT: vehicle support/orientation/landing → hard-curve stability → trail continuity recheck after stable motion.
