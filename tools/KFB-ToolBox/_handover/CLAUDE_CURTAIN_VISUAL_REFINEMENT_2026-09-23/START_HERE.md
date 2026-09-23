@@ -10,10 +10,12 @@ Do not refine or repair it.
 
 Read first:
 
-1. `DONOR_LOCK_USE_WHAT_WORKS.md`
-2. `REJECTED_OUTPUT_RECOVERY_2026-09-23.md`
-3. `CLAUDE_RECOVERY_PROMPT.md`
-4. `skills/session-entry-use-what-works_v1.md`
+1. `SANITY_RECOVERY_WSA_HANDOFF_2026-09-23.md`
+2. `DONOR_LOCK_USE_WHAT_WORKS.md`
+3. `REJECTED_OUTPUT_RECOVERY_2026-09-23.md`
+4. `CLAUDE_RECOVERY_PROMPT.md`
+5. `skills/session-entry-use-what-works_v1.md`
+6. `skills/chat/workflows/KFB_DESIGN_DONOR_LOCK_V1_2026-09-23/START_HERE.md`
 
 The next Claude gate is **not visual refinement**.
 
@@ -126,3 +128,18 @@ Claude returns an editable visual refinement proposal using the v1 donor:
 - explanation of any required minimal geometry/presentation changes.
 
 Human visual approval comes before consumer integration.
+
+
+## Global process escalation
+
+This Curtain failure now feeds a global cross-project rule.
+
+Measurement/source template:
+
+`skills/chat/workflows/KFB_DESIGN_DONOR_LOCK_V1_2026-09-23/MEASUREMENT_EVIDENCE_TEMPLATE.md`
+
+WSA Lead handoff:
+
+`skills/chat/masterplan/WSA_LEAD_HANDOFF_DESIGN_DONOR_LOCK_2026-09-23.md`
+
+Curtain remains at D0 only: exact donor unchanged, then STOP for Georg.
