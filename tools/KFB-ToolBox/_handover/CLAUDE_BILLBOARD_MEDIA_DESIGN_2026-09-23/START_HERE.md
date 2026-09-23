@@ -1,9 +1,29 @@
 # START HERE · Claude Billboard / Media Residency Design · 2026-09-23
 
-**Status:** PREPARED CLAUDE DESIGN SLICE · NO RUNTIME BUILD  
+**Status:** RECOVERY ONLY · CURRENT CLAUDE OUTPUT REJECTED · EXACT BILLBOARD/CARD DONOR PROOF REQUIRED FIRST  
 **Owner:** KFB ToolBox / Billboard Media Scene presentation  
 **Branch:** `chatgpt-web/claude-billboard-media-design-2026-09-23`  
 **Base:** `main@8b2b8ec901f27307a8cf0f4097e030020cdf196c`
+
+## CURRENT STATUS · REJECTED CLAUDE OUTPUT
+
+The first Claude Billboard result is **REJECTED · HARD FAIL**.
+
+Do not repair it.
+
+Read first:
+
+1. `DONOR_LOCK_USE_WHAT_WORKS.md`
+2. `REJECTED_OUTPUT_RECOVERY_2026-09-23.md`
+3. `CLAUDE_RECOVERY_PROMPT.md`
+4. `skills/session-entry-use-what-works_v1.md`
+5. `skills/chat/ANTI_SLOP_VISUAL_BRIEF_GUARDRAILS.md`
+
+Exactly one next gate:
+
+> show the real Kenney billboard + real KFB Card through the existing Racer renderer, with minimal UI and front/3/4 proof.
+
+No Triplet/Collage/Hero design before Georg confirms B0.
 
 ## Outcome
 
