@@ -346,3 +346,37 @@ The 23-file `KFB ToolBox Bench v1 - KFB Voxel Card Zone Lab 2 - Hex Assets World
 The existing public Theatre Curtain v1 is registered as the mandatory donor for a reusable cutscene/loading/instance-transition core. It owns cloth and transition state only; Race, Travel, Combat, Dungeon and Story hosts retain renderer, camera, gameplay, loading, audio, routing and persistence.
 
 The next cross-repo target is one playable Stage loop rather than simultaneous lane merging: coherent world → walk/drive → sound → one Resident/Card interaction → one portal activity → preserved return. Cheap source census and isolated proofs precede one WSA/Astra integration lock.
+
+
+## 2026-09-23 · Global Design Donor Lock
+
+Cross-project process decision:
+
+When a working donor/template already exists, **source reproduction precedes design**.
+
+Mandatory workflow:
+
+`skills/chat/workflows/KFB_DESIGN_DONOR_LOCK_V1_2026-09-23/START_HERE.md`
+
+Measurement/source packet:
+
+`skills/chat/workflows/KFB_DESIGN_DONOR_LOCK_V1_2026-09-23/MEASUREMENT_EVIDENCE_TEMPLATE.md`
+
+WSA Lead intake:
+
+`skills/chat/masterplan/WSA_LEAD_HANDOFF_DESIGN_DONOR_LOCK_2026-09-23.md`
+
+Required gate order:
+
+`D0 donor unchanged → D1 measurements/source outputs → D2 fork/seam → D3 one delta → D4 side-by-side proof → D5 Georg human gate`
+
+This applies to Claude Design, Web and WSA/Work.
+
+A source-class substitution such as working 3D/runtime donor → SVG/CSS/Canvas/flat mock is prohibited unless Georg explicitly changes the product direction.
+
+Measurements/anchors/axes/scales/timings/material paths are durable project assets and must be reused from source evidence rather than repeatedly re-estimated from screenshots.
+
+The 2026-09-23 Theatre Curtain Claude reconstruction is the motivating incident; the rule is global.
+
+After two failed recovery passes on the same donor gate:
+STOP, preserve the candidate and return a full failure-recovery export.
