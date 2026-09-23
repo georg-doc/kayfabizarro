@@ -1,0 +1,75 @@
+{
+  "slice": "WB1-P1",
+  "schema": "kfb.environment-profile/1",
+  "repository": "georg-doc/kayfabizarro",
+  "branch": "chatgpt-web/world-builder-p1-environment-profile-2026-09-23",
+  "coordinationMain": "fa5275ff2d881461f57bcfcaac45e4155e2862d9",
+  "implementationHead": "bbf9a8ead0750dcb69be68d4d1a2a7136bd25ceb",
+  "donorBehavior": {
+    "whackmanBoot": {
+      "path": "tools/KFB-ToolBox/_inbox/KFB WhackMan v1-1/WHACKMAN_SESSION_2026-09-22/wm-boot.js",
+      "blob": "02f078720a28bb6ea59c2ad09453121ff97cd9d1"
+    },
+    "whackmanTorch": {
+      "path": "tools/KFB-ToolBox/_inbox/KFB WhackMan v1-1/WHACKMAN_SESSION_2026-09-22/wm-gate-b.js",
+      "blob": "785dd0906e8ce714e148980e3bc9fce74aced36c"
+    },
+    "whackmanLocalVisibility": {
+      "path": "tools/KFB-ToolBox/_inbox/KFB WhackMan v1-1/WHACKMAN_SESSION_2026-09-22/wm-gate-c.js",
+      "blob": "79116eef1922b49b1faf4a464c03158d12bbcf34"
+    },
+    "worldDesignLightAdapter": {
+      "path": "tools/KFB-ToolBox/_inbox/KFB World Design Setup (1)/WORLDDESIGN_LAB_2026-09-23/deliverables/wd-light.js",
+      "blob": "dfa04d9db909a3dcda20f862b8813bd16a6d186f"
+    }
+  },
+  "ownerFunctions": {
+    "collectTris": {
+      "path": "tools/world_atlas/source/lib/dungeon-grid.js",
+      "blob": "5f4006341d86129e10935960d31fcc1c1d3b48bf"
+    },
+    "measureFlame": {
+      "path": "tools/world_atlas/source/lib/dungeon-light.js",
+      "blob": "be66b8d48ab0382f4417e5a0da8d1aeac1bb9d0c"
+    }
+  },
+  "sourceObject": {
+    "identity": "KayKit Dungeon Pack 1.1 FREE / torch_mounted",
+    "gltf": {
+      "path": "media/3D_Assets/KayKit_Dungeon_Pack_1.1_FREE 2/Assets/gltf/torch_mounted.gltf",
+      "blob": "39d1f2a745693a10053fe429763f3bf04a0cd64e"
+    },
+    "bin": {
+      "path": "media/3D_Assets/KayKit_Dungeon_Pack_1.1_FREE 2/Assets/gltf/torch_mounted.bin",
+      "blob": "340d96372a7f8bc56af61c6befd61dc197e5b121"
+    },
+    "texture": {
+      "path": "media/3D_Assets/KayKit_Dungeon_Pack_1.1_FREE 2/Assets/gltf/dungeon_texture.png",
+      "blob": "1bd3e9d4678f2a9cb54ede0494b9eefb6191036e"
+    },
+    "license": "CC0 · Kay Lousberg",
+    "proofContract": "The demo starts in SOURCE TORCH mode. ENVIRONMENT is disabled until the real source object has rendered for multiple animation frames."
+  },
+  "neutralSample": {
+    "identity": "KayKit Dungeon Pack 1.1 FREE / wall",
+    "gltf": {
+      "path": "media/3D_Assets/KayKit_Dungeon_Pack_1.1_FREE 2/Assets/gltf/wall.gltf",
+      "blob": "98e6ffb83df6f276d1d22ead7c252b9244dc5fa1"
+    },
+    "bin": {
+      "path": "media/3D_Assets/KayKit_Dungeon_Pack_1.1_FREE 2/Assets/gltf/wall.bin",
+      "blob": "37cd95006b10ce7f6c783b0b379cc7a1d7a10fce"
+    },
+    "textureSharedWithTorch": "1bd3e9d4678f2a9cb54ede0494b9eefb6191036e"
+  },
+  "intentionalDeltasFromWorldDesignLab": [
+    "P1 exposure is 1.0 from final wm-boot.js source truth; wd-light.js lab default 0.98 is not frozen into the shared candidate.",
+    "P1 local visibility uses wm-gate-c.js source truth: max intensity 46, range 26, decay 1.6; wd-light.js lab calibration 14/variable range/decay 2 is not promoted.",
+    "Material calibration is a separate reversible MaterialProfileRef and is not embedded in the Environment Profile."
+  ],
+  "exclusions": [
+    "WhackMan movement, MazeGraph, pursuers, pickups, combat and camera/game state",
+    "WorldDesign Lab macro/Derek/material banks",
+    "Surface Adapter / FLAT-SPHERE-TORUS work"
+  ]
+}
