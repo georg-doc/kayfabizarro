@@ -207,3 +207,62 @@ Older briefings remain reference-only in default current views.
 
 Hub JavaScript syntax:
 **PASS**
+
+
+## 2026-09-23 · Production Desk auto-sync + WorldBuilder God Mode
+
+### ASSET LIBRARIAN DONOR VERIFIED
+The Asset Librarian really does use automatic GitHub synchronization:
+- `.github/workflows/asset-registry.yml` rebuilds on relevant source pushes;
+- generated output goes to `bot/asset-registry-update`;
+- Librarian LIVE mode reads the bot branch;
+- `app.js` polls the live manifest every 90 seconds and reloads when `sourceCommit` changes.
+
+### PRODUCTION DESK AUTO-SYNC
+Added:
+`PRODUCTION_DESK_AUTOSYNC_V1.md`
+
+Planned reuse:
+`source changes → generated registry → bot/production-desk-update → LIVE/CANONICAL Desk polling`.
+
+Same-repo automation can use normal GitHub Actions.
+
+Cross-private-repo Travel/Racer requires:
+- GitHub App/fine-grained token; or
+- owner-repo status dispatch.
+
+Until configured:
+external repo cards must say LAST_KNOWN / VERIFY_CURRENT.
+
+### WORLDBUILDER GOD MODE
+Added:
+`WORLDBUILDER_GOD_MODE_V0.md`
+
+Two-scale direction:
+- Travel/TinySkies Globe Overview for world navigation;
+- existing WorldBuilder WB2 for local terrain/scene authoring.
+
+Consumers:
+- Asset Librarian;
+- OSM/form-language lane;
+- Resident Atlas;
+- Racer route/visual module;
+- Card Zones;
+- Blender-authored scene assets;
+- shared in-place editor.
+
+No new mega-owner.
+
+### COWORKER MASTER SEQUENCE
+Added:
+`COWORKER_OPUS55_SEQUENCE.md`
+
+Order:
+1. Opus 4.8 checkpoint;
+2. same-chat Opus 5.5 recovery;
+3. Production Desk + same-repo autosync;
+4. resume ToolBox coherent milestone;
+5. current-lane check-in;
+6. select exactly one next MVP.
+
+VFX Webchat and Blender Warband may continue in parallel.
