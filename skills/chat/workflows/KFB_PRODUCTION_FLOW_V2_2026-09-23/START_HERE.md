@@ -340,3 +340,27 @@ Do not create a new transform/persistence schema for Scale.
 `kfb.scene-patch.v1` already contains position / rotation / scale.
 
 The historical S21 gap was the visible Scale interaction, not the patch schema.
+
+
+## Blender MCP hybrid authoring lane
+
+Blender MCP is now a proven **candidate production authoring lane**, not only a fallback.
+
+Read:
+`BLENDER_MCP_PRODUCTION_ONBOARDING.md`
+
+Current proof:
+PR #192 · Clown 3-club cascade · Georg visual PASS ~80 % · reproducible Blender script + GLB + GIF + measurements.
+
+Use Blender for:
+- pose/animation;
+- prop/instrument rigging;
+- batch authoring after one fixture is proven;
+- precision volumetric mesh work where browser geometry repeatedly fails.
+
+Blender does not become gameplay/runtime/physics owner.
+
+For the already-running Orc Warband session use:
+`BLENDER_MCP_WARBAND_CONTINUE_PROMPT.md`
+
+Do not restart that session merely to apply this onboarding.
