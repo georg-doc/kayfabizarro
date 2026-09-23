@@ -37,7 +37,7 @@ Fresh Web briefing:
 `tools/KFB-ToolBox/_handover/TOOLBOX_SOURCE_LOCK_2026-09-23/FRESH_WEB_START.md`
 
 Current documentation checkpoint before this Return update:
-`b970d7f9afca9f32a11786aa506982d4aab9959a`
+`913c026bd2c18a0e2bd76f26cc73fa8974b1a1a4`
 
 ## Changed files
 
@@ -88,3 +88,18 @@ Build `TOOLBOX_RESIDENT_SET_PORTABILITY_REVIEW.html` using complete Goth Girl, O
 For each: donor → import → export/reload.
 
 Stop for Georg before FrizzleBob/roster or Claude Design.
+
+
+## 2026-09-23 correction · texture fix already verified
+
+Verified upstream source:
+PR #186 / `e0a9327bcc6406ec3e093f57b14ec81569988406`.
+
+The ChatGPT attachment texture workaround is already human-verified with Caveman and is **consumed**, not reopened, by this ToolBox lane.
+
+Current execution stays in the **current ToolBox chat**. No new fresh chat is required.
+
+Resident-set fixtures remain the next useful check for the remaining problems:
+model/source resolution, multi-part assembly, pose, grounding, prop attachment, animation and export/reload fidelity.
+
+`FRESH_WEB_START.md` is now recovery-only.
