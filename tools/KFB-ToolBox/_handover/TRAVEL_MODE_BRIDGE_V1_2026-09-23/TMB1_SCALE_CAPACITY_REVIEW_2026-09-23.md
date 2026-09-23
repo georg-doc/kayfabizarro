@@ -1,6 +1,6 @@
 # KFB Travel Mode Bridge v1 · TMB-1E Scale / Capacity Review · 2026-09-23
 
-**Status:** REPAIR PASS 1 · TECHNICAL / CI PASS · GEORG HUMAN RE-REVIEW PENDING · NOT PUBLIC  
+**Status:** REPAIR PASS 2 · TECHNICAL / CI PASS · GEORG HUMAN RE-REVIEW PENDING · NOT PUBLIC  
 **Owner:** `georg-doc/KFB-Travel-Globe`  
 **Coordination / Review owner:** `georg-doc/kayfabizarro`  
 **Base Travel candidate:** Draft PR #36 · `chatgpt-web/travel-mode-bridge-tmb1-surf-2026-09-23@88382c111acf32f6b934c15ce7b6b1f6d4d15283`  
@@ -283,5 +283,61 @@ The repaired capacity review uses the **2.0× rider-size candidate** while prese
 Exactly one next gate remains:
 
 **GEORG HUMAN RE-REVIEW · repaired three-rig Capacity HTML.**
+
+TMB-2 remains HOLD.
+
+
+## Repair Pass 2 · reuse verified Chat texture host adapter
+
+Repair Pass 1 was opened directly in the ChatGPT attachment host and failed with:
+
+`FAILED: ActionFigure embedded texture missing`
+
+The review then showed nothing because TMB-1E incorrectly treated the already documented ChatGPT HTML texture-host limitation as a fatal source error.
+
+The existing verified fix is reused from:
+
+`georg-doc/kayfabizarro@chatgpt-web/worldbuilder-toolbox-scene-authoring-2026-09-23`
+
+Shared note:
+`skills/chat/workflows/KFB_WEB_FIRST_EXECUTION_V1_2026-09-22/CHATGPT_HTML_TEXTURE_PREVIEW_LIMITATION_2026-09-23.md`
+
+Note blob:
+`384588a322fad83f7549d5d55969b7513e5b7dda`
+
+Prior human evidence:
+`TEXTURE_VISIBLE_IN_CHAT_ATTACHMENT · PASS`
+
+Review-host adapter:
+`fetch → Blob → createImageBitmap → THREE.Texture`
+with `TextureLoader` fallback, sRGB, `flipY=false`, exact pinned source maps and review-only cloned materials.
+
+Exact maps:
+- ActionFigure body `actionfigure_texture.png` · blob `2ca1cc9ef3c2621fb15ef44febc3e9805938a287`;
+- ActionFigure face atlas `actionfigure_faces.png` · blob `625f0b01e4c0431bfcc38f118b9d629ecfb4e1a4`;
+- Orc Brute `orcbrute_texture_A.png` · blob `cb5ff752ffa2f0f538d04c5c45e96925ff7f2b6b`.
+
+ActionFigure keeps its source material split: face materials receive the face atlas; other materials receive the body map. Existing texture transforms are preserved.
+
+Warband Orc B remains source-authored through its named Legacy materials; no replacement texture is invented.
+
+Missing embedded maps in the Chat attachment host are **not fatal**. If the explicit source-map adapter itself fails in that host, the review reports `HOST_TEXTURE_LIMITATION` but keeps the source geometry/material scene visible.
+
+Travel Draft PR #37:
+- Repair 2 implementation `d6e147e3a753babc935f94743a62097dd61bcc3a`;
+- technical head `3bfba40c5168fdf288944497b87885e50555d010`;
+- Return handoff `a30fddd0cc629d90413c73afaf6755bfe1eb2005`;
+- CI `35863095347 / 107187870055`;
+- **103 PASS · 0 FAIL · 0 skipped**;
+- build PASS;
+- verify PASS;
+- artifact `10750629040`;
+- digest `sha256:72a7047c570df23667d2da20f1f8ec836d33328e208008f6196a709117626b04`.
+
+Exactly one next gate:
+
+**GEORG HUMAN RE-REVIEW · Repair Pass 2 three-rig Capacity HTML.**
+
+This is the second repair pass on the same gate. If the same gate still fails, stop and create the failure-recovery export. Do not perform Repair Pass 3.
 
 TMB-2 remains HOLD.
