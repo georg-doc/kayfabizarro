@@ -58,46 +58,52 @@
     },
     {
       "id": "worldbuilder-wb2",
-      "bucket": "LOOK_AT",
-      "title": "WorldBuilder: Gelände formen",
-      "what": "Gelände anheben und absenken, mit Pinselgröße, Stärke, Rückgängig und Speichern/Laden.",
-      "provider": "Web-Chat",
-      "yourAction": "Ausprobieren und sagen: passt, nachbessern oder verwerfen.",
+      "bucket": "CAN_START",
+      "title": "Gelände formen: Pinselgröße mit dem Mausrad",
+      "what": "Gelände formen hast du angenommen. Kleine Ergänzung: Im Formen-Modus ändert das Mausrad die Pinselgröße.",
+      "provider": "WorldBuilder-Chat",
+      "yourAction": "Startnachricht kopieren und in den WorldBuilder-Chat einfügen.",
       "waitingFor": "",
-      "questions": [
-        "Lässt sich das Gelände so formen, wie du es dir vorstellst?",
-        "Funktionieren Rückgängig und Speichern/Laden zuverlässig?"
-      ],
+      "questions": [],
       "repo": "georg-doc/kayfabizarro",
       "pr": 190,
       "branch": "chatgpt-web/worldbuilder-wb2-terrain-sculpt-2026-09-23",
-      "expectedHead": "8922d4b1329fbd47b8754db9dd04ca6b9eb0ee9e",
+      "expectedHead": "5a98e674184ea4694a5ad7d696d8cc84c1618bdf",
       "review": {
-        "label": "Öffnen",
+        "label": "Angenommene Fassung ansehen",
         "path": "kfb-hub/pruefen/gelaende-formen/index.html",
         "sourceRef": "PR #190 @8922d4b1 · tools/KFB-ToolBox/worldbuilder/wb2-terrain-sculpt-01/WB2_TERRAIN_SCULPT_01_REVIEW.html"
+      },
+      "brief": {
+        "label": "Startnachricht",
+        "path": "tools/KFB-ToolBox/_handover/WORLD_BUILDER_V1_2026-09-22/HUMAN_RESULT_WB2_2026-09-24.md",
+        "ref": "chatgpt-web/worldbuilder-wb2-terrain-sculpt-2026-09-23",
+        "pasteReady": true
       }
     },
     {
       "id": "huerth-form-language",
-      "bucket": "LOOK_AT",
-      "title": "Hürth: neuer Cartoon-Look für Gebäude",
-      "what": "22 echte Hürth-Gebäude im Vergleich: schlicht, bisheriger Grotesk-Look und der neue Look aus weicher Knete.",
-      "provider": "Web-Chat",
-      "yourAction": "Anschauen und entscheiden: weitermachen, nachbessern oder verwerfen.",
+      "bucket": "CAN_START",
+      "title": "Hürth-Look nachbessern",
+      "what": "Deine Rückmeldung: Die Knete-Fassung hat Details verloren. Versetzte Fenster, verschieden große Türen und Farben wie bei Rockos modernem Leben müssen bleiben.",
+      "provider": "Formsprache-Chat",
+      "yourAction": "Startnachricht kopieren und in den Formsprache-Chat einfügen.",
       "waitingFor": "",
-      "questions": [
-        "Fühlt sich der neue Knete-Look nach KFB an?",
-        "Weitermachen, nachbessern oder verwerfen?"
-      ],
+      "questions": [],
       "repo": "georg-doc/kayfabizarro",
       "pr": 194,
       "branch": "chatgpt-web/elastic-grotesque-clay-huerth01-2026-09-23",
-      "expectedHead": "00fe0ecc1ce5312ef02a8129f1cf0d324cca3eb1",
+      "expectedHead": "7ad083b0c4b2855308d4e9987fa7f2bdd009eebd",
       "review": {
-        "label": "Öffnen",
+        "label": "Bisherige Fassung ansehen",
         "path": "kfb-hub/pruefen/huerth-look/index.html",
         "sourceRef": "PR #194 @00fe0ecc · skills/chat/workflows/KFB_ELASTIC_GROTESQUE_CLAY_V1_2026-09-23/HUERTH01_REVIEW.html"
+      },
+      "brief": {
+        "label": "Startnachricht",
+        "path": "skills/chat/workflows/KFB_ELASTIC_GROTESQUE_CLAY_V1_2026-09-23/HUMAN_RESULT_HUERTH01_2026-09-24.md",
+        "ref": "chatgpt-web/elastic-grotesque-clay-huerth01-2026-09-23",
+        "pasteReady": true
       }
     },
     {
