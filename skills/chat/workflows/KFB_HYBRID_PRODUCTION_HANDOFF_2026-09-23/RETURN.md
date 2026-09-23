@@ -58,3 +58,21 @@ unchanged.
 
 After that:
 Coworker issues one next-MVP proposal.
+
+
+## Control-plane identity
+
+Repo:
+`georg-doc/kayfabizarro`
+
+Branch:
+`chatgpt-web/kfb-hybrid-production-handoff-2026-09-23`
+
+Draft PR:
+`#193`
+
+Current handoff head before this metadata write:
+`87016f0f5923835bd698bbce439e67bf6d063349`
+
+Base:
+`main@dca52479dad9c176acde6e7c7167dc133bf50bdd`
