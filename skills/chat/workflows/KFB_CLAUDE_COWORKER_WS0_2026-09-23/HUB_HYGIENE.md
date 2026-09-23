@@ -81,3 +81,17 @@ Do not delete source/history unless Georg explicitly asks.
 GitHub Hub source may be cleaned immediately.
 
 Public Hub publication is batched with the next meaningful accepted publication cycle.
+
+
+## Hub is not the delivery surface
+
+The Hub helps Georg find current projects and gates.
+
+It must **not** be the only way to reach a current human review.
+
+Whenever a chat asks Georg to inspect a specific HTML:
+- that chat must attach/provide the direct clickable review artifact;
+- the Hub may point to the project/PR for context;
+- Georg must not need to search the Hub, ToolBox preview catalogue or GitHub tree to locate the review file.
+
+For one-off zero-install reviews, Chat is the delivery surface; Hub is navigation.
