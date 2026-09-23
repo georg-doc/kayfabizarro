@@ -219,7 +219,7 @@
     "note": "Do not download stems for all six candidates."
   },
   "firstProof": {
-    "trackSelection": "choose 1 of six Orc candidates after human listening",
+    "trackSelection": "Rubbish Groove 2min A extend 01.mp3",
     "steps": [
       "register candidate track with bpm/loop metadata sidecar",
       "play live spatial band version",
@@ -229,7 +229,8 @@
       "track unlock commits to Almanac music collection",
       "same track becomes selectable on global Radio/Jukebox",
       "cassette visual is optional/display-oriented and does not consume a Backpack slot"
-    ]
+    ],
+    "trackSelectionStatus": "HUMAN_SELECTED_SIGNATURE_CANDIDATE"
   },
   "explicitNonGoals": [
     "new audio engine",
@@ -240,5 +241,16 @@
     "currency system redesign",
     "music NFT/ownership mechanics",
     "blocking WorldBuilder P1/P2 on this music lane"
-  ]
+  ],
+  "signatureSelection": {
+    "status": "HUMAN_SELECTED_SIGNATURE_CANDIDATE",
+    "title": "Permitless Funk",
+    "file": "media/3D_Assets/Sounds/KFB RoadTrip JukeBox v2/Rubbish Groove 2min A extend 01.mp3",
+    "selectionReason": "Georg reports this version best matches the intended warm, dirty, relaxed 70s electro-funk Orc Band signature style.",
+    "promotionNeeds": [
+      "audible loop/BPM/downbeat authoring",
+      "runtime catalog metadata",
+      "first music-visualizer proof"
+    ]
+  }
 }
