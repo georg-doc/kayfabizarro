@@ -1,6 +1,6 @@
 # RETURN · KFB WorldBuilder v1 · WB1-P2 Surface Adapter · 2026-09-23
 
-Status: **TECHNICAL PASS · PUBLIC BROWSER PASS · HUMAN REVIEW PENDING · P3 HOLD**
+Status: **TECHNICAL PASS · PUBLIC BROWSER PASS · HUMAN FAIL · P3 HOLD**
 
 ## Repository / branch / PR
 
@@ -91,6 +91,13 @@ Evidence artifact:
 
 ## Human review
 
+**Result: FAIL for visible surface integration.**
+
+Georg's review found that the proof components do not yet read as one coherent surface-attached world composition. Rigid Hex tiles overlap/intersect on curvature, the route reads as a separate debug strip rather than an integrated road, and the FX reads as a debug ring.
+
+See:
+`HUMAN_REVIEW_2026-09-23.md`
+
 Direct Stage:
 
 `https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/world-building-preflight/`
@@ -109,13 +116,19 @@ This is not a visual-style or final-world-lighting gate. It proves the Surface A
 ## Publication boundary
 
 - exact Cloudflare Stage: technically verified
-- Georg visual acceptance: **PENDING**
+- Georg visual acceptance: **FAIL · surface conformance**
 - PR merge: **not performed**
 - Live product promotion: **not performed**
 - WB1-P3 / Claude Design: **not started**
 
 ## Exactly one next gate
 
-**Georg Human Review of WB1-P2 on the exact Stage URL.**
+**WB1-P2R1 · Surface Conformance Repair.**
 
-After PASS: update evidence/Return only, then STOP. Do not start WB1-P3 in the same gate.
+Preserve the proven recipe/data/addressing math. Repair only the visible surface attachment seam:
+- surface-conforming Hex patch instead of center-frame-only rigid overlap;
+- surface-aligned route ribbon instead of debug TubeGeometry;
+- measured prop support/contact;
+- keep Ripple as explicitly labelled debug FX unless its surface projection is geometrically wrong.
+
+Do not start WB1-P3.
