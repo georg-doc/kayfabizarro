@@ -7,8 +7,9 @@ Receiving consumers remain Race / Travel / WorldBuilder. No new movement, collis
 
 ## LEAD ROUTING OVERRIDE · 2026-09-24
 
-For Hürth / KFB 3D form-language continuation, read:
-`LEAD_OVERRIDE_2026-09-24.md`
+For Hürth / KFB 3D form-language continuation, read in this order:
+1. `CHAT_RECOVERY_CURRENT.md`
+2. `LEAD_OVERRIDE_2026-09-24.md`
 
 **PR #194 V2 is the current bounded slice.** Main and older City-Lab/Grotesque documents may lag this unmerged work.
 
@@ -18,7 +19,7 @@ Anti-regression:
 - ELASTIC `ELASTIC_GROUP_WARP_V2` = current candidate;
 - do not revert to box extrusion, stacked cubist offsets, generic low-poly, Gothic dressing, or random independent building distortion.
 
-Human chat review packaging must be **single-file/self-contained**: no iframe, CDN, runtime fetch, or cross-origin module chain.
+Human chat review must preserve the **actual V2 visual truth**. The simplified self-contained Canvas mirror is REJECTED AS VISUAL AUTHORITY. Do not rebuild the renderer just to avoid iframe/CDN restrictions. Prefer the real V2 browser evidence/screenshots; use a self-contained file only when it packages the canonical renderer without visual substitution.
 
 ## Goal
 
