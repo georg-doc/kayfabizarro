@@ -790,3 +790,24 @@ Still blocked until after R3b:
 vehicle grounding/contact → hard-clamp/jitter → trails/speedlines → jump/landing.
 
 Cloudflare remains deferred.
+
+
+## 2026-09-23 · Claude Theatre Curtain visual refinement
+
+Prepared design-only slice:
+
+`tools/KFB-ToolBox/_handover/CLAUDE_CURTAIN_VISUAL_REFINEMENT_2026-09-23/START_HERE.md`
+
+Draft PR #189.
+
+Mandatory donor remains Theatre Curtain v1/Core v2.
+
+Claude visual focus only:
+- cartoonier rod/rail/end caps/brackets;
+- larger simplified rings/hooks;
+- readable side-pull choreography;
+- lower-third tieback/swag;
+- cleanup of strong-gather crease/line artifacts.
+
+No new cloth engine, no consumer integration, no public Stage claim.
+Human visual review is the next gate.
