@@ -2,6 +2,28 @@
 
 Alte Einträge bleiben unverändert. Korrekturen als neue CORRECTION/SUPERSEDES-Einträge mit Bezug ergänzen. Aktuelle Momentaufnahme im MASTERPLAN/Return, Geschichte hier.
 
+## 2026-09-23 · Cross-chat 3D preview portability failure
+
+### HUMAN OBSERVATION
+Across three current ChatGPT HTML-preview lanes, Georg reports roughly ten repeated failures of the same class: missing models, missing textures/maps, replacement/fallback geometry, lost pose/grounding and lost prop attachments.
+
+### EXISTING RULE CONFIRMED
+The current browser-3D skill already requires canonical RAW asset URLs and explicitly rejects relative `./assets/...` paths for standalone export. The repeated failures show that asset-URL correctness alone is not enough for compound scenes.
+
+### DECISION
+Stop using isolated rebuilt objects as the next ToolBox gate. Use complete known-good Resident Atlas combinations as transport fixtures.
+
+### CURRENT P0
+`TB-RESIDENT-PORTABILITY-01`:
+- Goth Girl;
+- Orc Warband;
+- Animatronic.
+
+Each must survive donor → review import → export/reload with model identity, textures, pose, grounding, prop placement/attachment, actor count and animation intact.
+
+### SEQUENCE
+Only after this passes: FrizzleBob lineage review → full Studio roster → Stage-First ToolBox integration → Claude Design refinement.
+
 ## 2026-09-23 · ToolBox source review brief finalized
 
 ### SOURCE CORRECTION
