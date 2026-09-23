@@ -2,13 +2,25 @@
 
 ## Result
 
-Claude Round 1 is frozen as a rejected foundation. No repair is requested on that file.
+The next ToolBox gate has been tightened again after Georg's current HTML-preview review.
 
-The problem is now pinned to source drift:
-- old Cube Bunny was presented as current FrizzleBob;
-- Stage-First bundled `kfb.pets/1.2.7` is older than later saved user state `1.2.9`;
-- current FrizzleBob identity remains Driver Graft;
-- full current Studio roster must be recovered from source, not rebuilt from the mockup.
+The recurring failure is now treated as one **3D preview portability problem**, not a set of isolated model bugs.
+
+Current P0:
+
+`TB-RESIDENT-PORTABILITY-01`
+
+Instead of single actors, three complete known-good Resident Atlas sets must survive:
+
+1. Goth Girl;
+2. Orc Warband;
+3. Animatronic.
+
+Each must preserve model identity, textures/materials, pose, grounding, props/attachments, actor count and animation through:
+
+`Resident Atlas donor → ToolBox/review import → export/reload`
+
+The earlier FrizzleBob-lineage / roster source review remains necessary, but it now comes **after** this transport gate.
 
 ## Repository state
 
@@ -39,14 +51,19 @@ Evidence / Hub checkpoint before this Return:
 
 ## Evidence actually checked
 
-- 3 Cube-Pet config states compared: 1.2.7 / 1.2.8 / 1.2.9.
-- Bunny difference verified: later saved state adds measured body/pad/ground data.
-- Penguin difference verified: eye/mouth/body values differ.
-- current FrizzleBob Driver Graft owner paths verified.
-- existing Studio full-roster correction verified.
-- Georg screenshot reviewed: wrong Cube-Bunny identity and incomplete roster are visible.
+- Georg reports roughly ten repeated HTML-preview failures across the current parallel chats.
+- Current screenshots show the same class directly: intended source actors/assets missing and replaced by source-missing markers/placeholders in one preview; other previews require texture-repair fallback.
+- Existing `skills/design-3d_combined_for-design_v1.md` already requires canonical RAW URLs and identifies relative asset paths as standalone-export bugs.
+- Resident Atlas source policy already stores exact source path/revision and canonical RAW runtime URLs.
+- Three compound fixtures were selected from current Atlas truth:
+  - Goth Girl — pose-first seated grounding;
+  - Orc Warband — Legacy assembly + multi-actor + attachments;
+  - Animatronic — multi-actor + texture variant + guitars/complex prop relation.
 
-No browser/runtime test was run in this recovery slice because the next gate is intentionally source-only.
+Runtime/browser tests in this documentation slice:
+**0**
+
+The next Web chat performs the portability runtime proof.
 
 ## Publication
 
@@ -56,18 +73,16 @@ No Work/WSA.
 
 ## Unresolved
 
-The later saved `kfb.pets/1.2.9` is proven newer than the bundled 1.2.7, but is not automatically promoted to canonical.
-The exact full Studio actor roster still needs one source-review artifact.
+- Root causes of all historical preview failures are not yet claimed to be identical; the next gate measures them through the same known-good fixtures.
+- FrizzleBob lineage and complete Studio roster review remain queued after portability.
+- Claude Design stays blocked until the compound sets transport cleanly.
 
 ## Next gate
 
-**TB-SOURCE-LOCK-01**
+**TB-RESIDENT-PORTABILITY-01**
 
-Show separately:
-1. current FrizzleBob Driver Graft;
-2. later saved Cube Bunny;
-3. legacy Combat Platformer FrizzleBob;
-4. several later saved Cube-Pets;
-5. actual Studio actor roster.
+Build `TOOLBOX_RESIDENT_SET_PORTABILITY_REVIEW.html` using complete Goth Girl, Orc Warband and Animatronic donors.
 
-Stop for Georg approval before another combined ToolBox build.
+For each: donor → import → export/reload.
+
+Stop for Georg before FrizzleBob/roster or Claude Design.
