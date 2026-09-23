@@ -102,16 +102,31 @@ source/Resident-set consolidation before another broad Claude Design session.
 
 ### Travel
 PR #38
-Head:
-`1976c6c813161013b7c97bf5de55f71575a175ef`
 
-Technical:
-**119 PASS**
+Accepted runtime default:
+`bf0f94362ec8724cc80a4695830622837242ced9`
 
-Human gate:
-choose double-Space window 240 / 320 / 400 ms.
+Accepted review/test head:
+`73f6cad995278dd71d961ac8542c1f812c37cfbc`
 
-TMB-1E visuals are already accepted and must not be reopened.
+Human result:
+**TMB-2 ACCEPTED · 400 ms**
+
+Post-decision CI:
+- `35893561660 / 107291754820`;
+- **119/119 PASS**;
+- build PASS;
+- verify PASS.
+
+Behavior:
+- single Space = immediate Ground jump;
+- second fresh Space within 400 ms = Flight request;
+- no same-event Flight action leak.
+
+No active Travel human gate.
+
+TMB-3 intentional landing:
+**HOLD until Georg explicitly opens it.**
 
 ### Racer
 PR #33
