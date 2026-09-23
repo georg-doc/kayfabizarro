@@ -14,6 +14,7 @@
 > Current gate: **WB1-TERRAIN-SCENE-01 · R3 UNIFORM-SCALE HUMAN REVIEW**.
 > Shared editor owner: `tools/KFB-ToolBox/lib/edit-layer.js` · accepted R2 base `c97b3537f71e939176f3ae5ce7ae83feabb7918f` · R3 candidate `c15a200ba8615d55f9d3ae26616e0a8ceba8dc01`.
 > Proposal: `SHARED_EDITOR_UNIFORM_SCALE_PROPOSAL_2026-09-23.md`.
+> Next terrain-authoring planning is ready at `WB2_TERRAIN_SCULPTING_PROPOSAL_2026-09-23.md`: non-destructive continuous-heightfield Raise/Lower brush; no voxel/hex terrain; runtime starts only after R3 PASS or explicit reprioritization.
 > R3 evidence: **26/26 + 4/4 + 1/1 PASS**; embedded browser self-test **22 prepared / 0 executed**. Cloudflare remains HOLD.
 > The older `WB1-TERRAIN-EDITOR-01` wording is superseded where it omits the Resident/animation seam.
 
