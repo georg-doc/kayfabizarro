@@ -1,6 +1,6 @@
 # RETURN · WB1-TERRAIN-SCENE-01 · local HTML review candidate · 2026-09-23
 
-Status: **R1 HUMAN FEEDBACK REPAIRED · EVIDENCE PASS · HUMAN HTML RE-REVIEW PENDING**
+Status: **R1 TEXTURE HUMAN PASS · Y/FOV/SAVE RE-REVIEW PENDING**
 
 ## Result
 
@@ -101,6 +101,22 @@ Repaired candidate:
 
 Shared host limitation note:
 `skills/chat/workflows/KFB_WEB_FIRST_EXECUTION_V1_2026-09-22/CHATGPT_HTML_TEXTURE_PREVIEW_LIMITATION_2026-09-23.md`
+
+## R1 human re-review result
+
+Georg opened the repaired R1 HTML directly from the ChatGPT attachment and confirmed:
+
+**TEXTURE_VISIBLE_IN_CHAT_ATTACHMENT · PASS**
+
+This validates the exact review-host adapter used by WB1:
+`fetch → Blob → createImageBitmap → THREE.Texture` with `TextureLoader` fallback, exact source texture pin, sRGB and glTF `flipY = false`.
+
+The source GLB/Resident Atlas remain unchanged.
+
+Still pending:
+- Character green Y handle;
+- palette/control area vs 3D field of view;
+- save/reload preserving authored Character Y.
 ## Tests / evidence actually recorded
 
 Canonical `TEST_REPORT.md`:
@@ -142,7 +158,7 @@ Direct Stage URL:
 Live:
 **not promoted**
 
-The required acceptance surface for this iteration is the repo-contained local HTML review artifact. Direct chat-file materialization was not available in this session.
+The R1 review artifact was materialized directly into ChatGPT, opened by Georg, and used for the texture human gate.
 
 ## Unresolved / review watchpoint
 
@@ -154,7 +170,7 @@ That is a review watchpoint, not a claimed arbitrary-orientation PASS.
 
 ## One next gate
 
-**Georg human HTML re-review of the repaired `WB1_TERRAIN_SCENE_01_REVIEW.html` — texture, Character Y, palette/FOV, then save/reload.**
+**Georg human HTML re-review of the repaired `WB1_TERRAIN_SCENE_01_REVIEW.html` — Character Y, palette/FOV, then save/reload. Texture is already HUMAN PASS.**
 
 STOP there.
 
