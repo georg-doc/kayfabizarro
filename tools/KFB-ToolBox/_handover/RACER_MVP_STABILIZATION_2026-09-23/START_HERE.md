@@ -5,6 +5,43 @@ Runtime owner: `georg-doc/KFB-Stunt-Car-Race`
 Visual authoring source: `KFB Cologne Race Option C-3/` pinned at Race `main@cc80f4a1c6c509db9668df79fd53b13cee093a9d`.  
 Goal: **one actually playable full-lap Racer MVP before further visual/feature expansion.**
 
+## New human geometry observation · 2026-09-23
+
+### RSTAB-CYLINDER-GROUND-01 · track/support cylinders float or penetrate ground
+
+Georg reports that some cylindrical track/support elements in the current Cologne Race Track are visibly:
+
+- above the intended ground/support surface; or
+- partially buried below it.
+
+Classification:
+
+**RSTAB-1 GEOMETRY / SUPPORT-CONTACT OBSERVATION**
+
+This belongs in the existing Racer stabilization lane, not Travel Mode Bridge or WorldBuilder.
+
+Required Racer-chat handling:
+
+1. identify the exact cylinder/support source object(s);
+2. measure their local bounds, pivot and world transform;
+3. identify the intended support surface at each instance;
+4. distinguish optional decoration from structural support;
+5. compare visual extent vs any collision extent;
+6. repair the placement/support seam for the proven affected family only.
+
+Do not:
+- apply one global Y offset to every cylinder;
+- infer that all cylinders share the same pivot/error;
+- reopen Race physics unless the measured object actually affects collision/contact.
+
+If the cylinders belong to the same support family already touched by RSTAB-1, include them in the current HUMAN GEOMETRY GATE before RSTAB-2.
+
+If they are a separate optional prop family, classify proportionally after source identification.
+
+ID to carry in the showstopper/evidence matrix:
+
+`RSTAB-CYLINDER-GROUND-01`
+
 ## Current checkpoint · RSTAB-1 · 2026-09-23
 
 
