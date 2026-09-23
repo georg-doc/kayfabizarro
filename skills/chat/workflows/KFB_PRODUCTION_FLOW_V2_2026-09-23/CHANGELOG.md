@@ -191,3 +191,35 @@ Productive Blender slices return:
 ### CURRENT LANE REFRESH
 WorldBuilder WB2 now lives on PR #190.
 Racer PR #33 has advanced beyond R3c into R3d architecture-cleanup code; current PR body/Return may lag and must be refreshed before human review.
+
+
+## 2026-09-23 · Travel TMB-2 closed at 400 ms
+
+### HUMAN DECISION
+Georg selected **400 ms** as the default Ground double-Space window.
+
+### RUNTIME
+Travel PR #38:
+- first Space remains immediate Ground jump;
+- second fresh Space within 400 ms emits `REQUEST_FLIGHT`;
+- same second Ground-owned Space does not leak into a Flight-owned Space action.
+
+Accepted runtime commit:
+`bf0f94362ec8724cc80a4695830622837242ced9`
+
+Accepted review/test head:
+`73f6cad995278dd71d961ac8542c1f812c37cfbc`
+
+### EVIDENCE
+GitHub Actions:
+- run `35893561660`;
+- job `107291754820`;
+- **119/119 PASS**;
+- build PASS;
+- verify PASS;
+- artifact `10766056654`.
+
+### ROUTING
+TMB-2 is closed.
+TMB-3 intentional landing remains HOLD until Georg explicitly opens it.
+Travel is removed from the active Today human-gate list.
