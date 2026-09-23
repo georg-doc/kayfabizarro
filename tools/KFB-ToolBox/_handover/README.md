@@ -40,6 +40,9 @@ Purpose:
 reuse the existing Travel/TinySkies Flight owner, existing Ground↔Flight runtime bridge and exact animated Travel CardCarrier; prepare one KayKit Rig_Medium passenger seam plus later double-Space mount / intentional landing transition.
 
 Status:
-**PREPARED · TMB-0 SOURCE/SEAM MAP NEXT · NO RUNTIME IMPLEMENTATION YET**
+**TMB-0 COMPLETE · Travel Draft PR #32 @ `048499315581d2b9916a4d3fcbaba5f3adef719c` · 12/12 PASS · 0 runtime files changed**
+
+Current next gate:
+**TMB-1 · exact animated Travel CardCarrier + one real ActionFigure Rig_Medium passenger, isolated source-object-first proof.**
 
 WorldBuilder integration remains HOLD until its Surface Adapter gate is ready for consumption. The rigid Frankenstein/Studio reference card is measurement evidence only and is not the flight vehicle.
