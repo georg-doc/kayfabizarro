@@ -1530,3 +1530,23 @@ Repair rules:
 Current gate: **GEORG HUMAN RE-REVIEW · repaired three-rig Capacity HTML**.
 
 TMB-2 remains HOLD.
+
+
+## 2026-09-23 · Racer R3 review fail → R3b harness repair
+
+- R3 human review showed arch frames while the track largely disappeared in CHASE;
+- runtime sanity confirmed road owner, Ground ShapeGeometry and corrected banking remained present;
+- failure localized to chat review renderer, not runtime;
+- root cause: one long road/shoulder/wall projected polygon was discarded when any vertex crossed behind the review camera;
+- R3b restores road/shoulder/walls to short per-segment review quads;
+- continuous city-ground review edge retained to preserve R2 saw-tooth cleanup;
+- no runtime file changed for R3b;
+- Race Draft PR #33 current docs head `308ed3b7e464f573b85d004f13fbf9e0642c818c`;
+- runtime/test head remains `5f1ec224a96af7444f0c86ebbcf178dc70d35b72`;
+- CI remains **11/11 PASS · 0 fail · 0 skipped**;
+- R3b artifact `KFB_Racer_TARCH0_R3b_track_edge_banking_review.html`;
+- SHA-256 `100310fbc4794f317ce572d403142ee464e6b2a57a4e32a5a84382294b03fd3b`;
+- Cloudflare remains deferred.
+
+Exactly one next gate:
+**R3b · TRACK EDGE + BANKING CHAT HTML HUMAN RECHECK**.
