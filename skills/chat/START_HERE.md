@@ -728,8 +728,11 @@ Current first gate: **WB1-TERRAIN-SCENE-01**.
 Current implementation state on Draft PR #186:
 - canonical source: `tools/KFB-ToolBox/worldbuilder/wb1-terrain-scene-01/WB1_TERRAIN_SCENE_01_SOURCE.html`;
 - local review artifact: `tools/KFB-ToolBox/worldbuilder/wb1-terrain-scene-01/WB1_TERRAIN_SCENE_01_REVIEW.html`;
-- evidence: **21/21** source/static logic + **3/3** exact donor paths + **5/5** review parity;
-- browser/visual acceptance: **PENDING HUMAN REVIEW**; no automated browser PASS claimed;
+- R1 human feedback repaired: explicit Resident Atlas Caveman texture binding, Character Y authoring/save-reload, non-overlay narrow layout;
+- evidence: **26/26** repaired source/static contract + **4/4** exact actor/prop/animation/texture paths + **5/5** review parity;
+- embedded browser self-test: **15 assertions prepared / 0 executed**;
+- recurring ChatGPT attachment-host texture issue is documented at `workflows/KFB_WEB_FIRST_EXECUTION_V1_2026-09-22/CHATGPT_HTML_TEXTURE_PREVIEW_LIMITATION_2026-09-23.md`;
+- browser/visual acceptance: **PENDING HUMAN RE-REVIEW**; no automated browser PASS claimed;
 - Cloudflare: **HOLD · NOT PUBLISHED**.
 
-Exactly one next WorldBuilder gate: Georg reviews the local HTML candidate. Claude Design and Orc Band integration remain HOLD until that gate.
+Exactly one next WorldBuilder gate: Georg re-reviews the repaired local HTML candidate for texture, Character Y, unobstructed FOV and save/reload. Claude Design and Orc Band integration remain HOLD until that gate.
