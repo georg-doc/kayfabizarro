@@ -70,3 +70,41 @@ Use `CLAUDE_RECOVERY_PROMPT.md`.
 No visual refinement is allowed until Georg confirms the real donor is visibly back.
 
 If preserving the failed Claude project matters, export it first through `CLAUDE_FAILURE_RECOVERY_EXPORT_REQUEST.md`.
+
+
+## Global design-process handoff
+
+This incident now has a cross-project recovery/template layer.
+
+Global workflow:
+`skills/chat/workflows/KFB_DESIGN_DONOR_LOCK_V1_2026-09-23/START_HERE.md`
+
+Measurement/source evidence template:
+`skills/chat/workflows/KFB_DESIGN_DONOR_LOCK_V1_2026-09-23/MEASUREMENT_EVIDENCE_TEMPLATE.md`
+
+WSA Lead handoff:
+`skills/chat/masterplan/WSA_LEAD_HANDOFF_DESIGN_DONOR_LOCK_2026-09-23.md`
+
+Curtain-specific sanity/recovery:
+`SANITY_RECOVERY_WSA_HANDOFF_2026-09-23.md`
+
+The global rule is now routed from:
+- central `skills/chat/START_HERE.md`;
+- Web-first workflow;
+- `skills/chat/RECOVERY_PATH.md`;
+- `skills/chat/LIVING_MASTERPLAN.md`.
+
+## Sanity result
+
+No lost/unknown GitHub write was found at the reported interruption point.
+
+The last recovery writes were already present and branch/PR heads matched.
+The chat stopped after successful repository writes before the global WSA/template handoff was complete.
+
+## Exact current next gate
+
+**Curtain D0 donor restore only.**
+
+Show unchanged Theatre Curtain v1 and STOP for Georg.
+
+No visual redesign is currently authorized.
