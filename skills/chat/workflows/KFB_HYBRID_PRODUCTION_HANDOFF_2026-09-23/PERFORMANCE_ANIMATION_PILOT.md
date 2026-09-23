@@ -350,3 +350,50 @@ Promote/merge into the existing animation skill only after:
 
 Until then:
 **candidate production addendum**.
+
+
+## Research references
+
+External references used for this candidate addendum:
+
+### Blender 5.2 LTS
+
+glTF 2.0 animation export:
+https://docs.blender.org/manual/en/5.2/addons/scene_gltf2.html
+
+Relevant production facts:
+- named Actions can export as glTF animations;
+- Actions must be active or stashed to NLA as required by the chosen export mode;
+- NLA Tracks can be exported as independent animations;
+- object transforms / pose bones / shape keys are supported;
+- non-animation runtime semantics should not be assumed to export as clip events.
+
+NLA:
+https://docs.blender.org/manual/en/5.2/editors/nla/introduction.html
+https://docs.blender.org/manual/en/5.2/editors/nla/strips.html
+
+Bake Action:
+https://docs.blender.org/manual/en/5.2/editors/nla/editing/strip.html
+
+Production implication:
+constraints/IK may be useful for authoring contact, but runtime export should be verified/baked rather than assumed.
+
+### Drumming mechanics
+
+Yamaha · snare drum basics:
+https://hub.yamaha.com/music-educators/instruments/perc/snare-drum-basics-pedagogy/
+
+Yamaha · stick grip:
+https://hub.yamaha.com/music-educators/instruments/perc/a-guide-to-proper-stick-grips/
+
+Vic Firth · rebound stroke:
+https://ae.vicfirth.com/wp-content/uploads/FA-Drumset-Lessons-1-2.pdf
+
+Useful abstractions retained:
+- relaxed fulcrum;
+- wrist-led stroke;
+- arm support for larger/slower/heavier strokes;
+- real target contact;
+- natural rebound after contact.
+
+These are mechanics references, not mandates to reproduce a realistic human drummer literally on a stylized Orc.
