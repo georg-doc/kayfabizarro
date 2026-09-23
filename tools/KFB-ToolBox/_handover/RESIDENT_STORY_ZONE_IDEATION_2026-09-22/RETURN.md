@@ -148,7 +148,7 @@ No implementation or public result is claimed.
 - exact procedural War Drum strike adapter on Rig_Large;
 - Legacy microphone/trumpet mouth-performance proof;
 - final Suno Orc Band stems and world-scale spatial-audio tuning;
-- selected canonical Orc Band track after human listening;
+- canonical Jukebox promotion of the already human-selected Orc Band signature candidate;
 - per-track BPM/loop/beat-offset metadata for the selected track;
 - 20-slot Backpack HUD runtime and its save owner adapter;
 - Track Unlock / Almanac persistence adapter and Jukebox catalog promotion;
@@ -170,6 +170,10 @@ No implementation or public result is claimed.
 - historical donor rejection of blood is preserved; current user direction reopens stylized blood FX as a candidate;
 - `media/3D_Assets/KFB/` is recorded as Georg's curated future donor shortlist, not a second registry;
 - Orc Band World-Life packet is now prepared as a future WorldBuilder fixture;
+- band identity is now **The KayfaBizarros**;
+- exact bouncing bandleader is pinned to `character_orcB.gltf` at user-pinned commit `e0037d79...`;
+- exact Tourbus donor is pinned to `Truck Armored by Quaternius - VvX8nmoCN5.glb`;
+- Tourbus first use is parked scenic landmark only; later driving/deformation stays with the existing Vehicle / Cartoon Vehicle Deformer owner;
 - Music Collectible / Jukebox lane now separates track unlocks from physical cassette artifacts;
 - **Permitless Funk** is now the human-selected Orc Band signature-style candidate, using `Rubbish Groove 2min A extend 01.mp3`;
 - Legacy frontman direction is now black-ponytail/dark-topknot Orc with beat-synced root bounce + squash/stretch + seeded hype variation;
@@ -183,7 +187,7 @@ No implementation or public result is claimed.
 - current audio donor already exposes beat/level/pulse/bpm, enough for a no-stems first Orc Band visualizer;
 - six current Orc Band track files are recorded as candidates, not canonical Jukebox entries;
 - current KFB pool includes a Car Radio with tape player plus multiple cassette/tape donors; exact Michael-Fuchs duplicate pair is noted;
-- cast is pinned to Legacy Orc A + Rig_Medium Orc Raider + Rig_Large Orc Brute;
+- cast is pinned to Legacy `character_orcB` bandleader + Rig_Medium Orc Raider + Rig_Large Orc Brute;
 - real War Drum / stick and electric guitar A/B source candidates are pinned;
 - current source truth says no shared guitar-playing clip and no Rig_Large drum clip, so performance adapters are procedural/authoring candidates rather than invented animation names;
 - Offica Doppeldenk now concretely consumes the Toy Soldier/Nutcracker donor and Resident Atlas 4.8 s gift-box reveal;
