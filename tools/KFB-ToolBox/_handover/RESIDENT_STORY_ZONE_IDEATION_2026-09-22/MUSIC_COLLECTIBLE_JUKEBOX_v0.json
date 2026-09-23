@@ -29,7 +29,8 @@
     "newCandidateFolder": {
       "path": "media/3D_Assets/Sounds/KFB RoadTrip JukeBox v2/",
       "currentInventoryCount": 26,
-      "status": "SOURCE_PRESENT_NOT_ALL_PROMOTED_TO_CANONICAL_JUKEBOX"
+      "status": "SOURCE_PRESENT_CURRENT_MAIN",
+      "note": "The RoadTrip JukeBox v2 folder and the selected Rubbish Groove source are present in the repository. Do not copy binaries into a second music store."
     },
     "candidateOrcTracks": [
       "Lazy Pocket Groove.mp3",
@@ -246,11 +247,18 @@
     "status": "HUMAN_SELECTED_SIGNATURE_CANDIDATE",
     "title": "Permitless Funk",
     "file": "media/3D_Assets/Sounds/KFB RoadTrip JukeBox v2/Rubbish Groove 2min A extend 01.mp3",
+    "sourceBlob": "368eb5ae8fafcfba1cce3ba3f80488378fe056b0",
+    "sizeBytes": 3034265,
+    "sourceStatus": "VERIFIED_PRESENT_ON_CURRENT_MAIN",
     "selectionReason": "Georg reports this version best matches the intended warm, dirty, relaxed 70s electro-funk Orc Band signature style.",
     "promotionNeeds": [
       "audible loop/BPM/downbeat authoring",
       "runtime catalog metadata",
       "first music-visualizer proof"
     ]
+  },
+  "bandIdentity": {
+    "name": "The KayfaBizarros",
+    "status": "USER_SELECTED"
   }
 }
