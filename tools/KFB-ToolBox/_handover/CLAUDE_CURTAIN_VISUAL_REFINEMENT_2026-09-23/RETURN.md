@@ -88,6 +88,9 @@ WSA Lead handoff:
 Curtain-specific sanity/recovery:
 `SANITY_RECOVERY_WSA_HANDOFF_2026-09-23.md`
 
+Copy-paste WSA Lead chat entry:
+`WSA_LEAD_CHAT_HANDOFF_PROMPT.md`
+
 The global rule is now routed from:
 - central `skills/chat/START_HERE.md`;
 - Web-first workflow;
