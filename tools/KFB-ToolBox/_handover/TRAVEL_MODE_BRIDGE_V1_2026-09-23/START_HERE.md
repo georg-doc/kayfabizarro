@@ -36,29 +36,33 @@ TMB-1 result:
 Current human finding:
 - CardCarrier direction/contact accepted as good;
 - current rider reads too small relative to the card;
-- test rider at roughly 1.8×–2.0× current presentation scale;
-- keep a clear Surf / Ride pose;
-- compare **Legacy Orc A + Orc Brute / Rig_Large + Legacy Orc B** on the same unchanged card;
-- “Large Rick” is resolved as **Large Rig**, not a separate XL actor;
-- card thickness may read heavy but is DEFERRED for this comparison.
+- Surf scale study remains CURRENT / 1.8× / 2.0× using the same exact Rig_Medium ActionFigure intentionally;
+- first capacity interpretation `Legacy Orc A + Brute + Legacy Orc B` was HUMAN_REJECTED;
+- corrected capacity trio is **ActionFigure / Rig_Medium + Orc Brute / Rig_Large + Warband Orc B / Rig_Legacy**;
+- first capacity download also hit a real GLTFLoader embedded-buffer failure;
+- card thickness remains DEFERRED.
 
-TMB-1E implementation:
+TMB-1E Repair Pass 1:
 - Travel Draft PR #37;
 - branch `chatgpt-web/travel-mode-bridge-tmb1e-scale-capacity-2026-09-23`;
-- current handoff head `5110f3617246d05278e0435b3b1e0a99c33e62e5`;
-- technical test head `33b4a5bf9904d3e9e86c99f6efd5cbdde8448641`;
-- CI run `35823280576` / job `107059518887`: **99/99 PASS · build PASS · verify PASS**;
-- Surf scale HTML and three-Orc capacity HTML are ready for Chat review;
+- current handoff head `658e95af4963b25c7d3224d4b1d7fb2e43880896`;
+- repair implementation `360836ce494f76ea4c1b3133d566bd3b39e14970`;
+- repair evidence head `bb8541267723ba9d980650735c5dcc437e36736d`;
+- CI run `35860054421` / job `107177777296`: **102/102 PASS · build PASS · verify PASS**;
+- repaired capacity uses real Medium + Large + Legacy source objects at the 2.0× rider candidate;
+- ActionFigure + Orc Brute embedded textures are runtime-audited;
+- Legacy Orc B reuses the Resident-Atlas six-bone assembly and source named materials;
+- Legacy embedded data is packed in-memory as GLB before parse, bypassing the failed nested data-URI loader path;
 - Travel Return: `TMB1E_RETURN.md`;
-- no Cloudflare publication for this iteration.
+- no Cloudflare publication for this repair iteration.
 
 Review brief:
 `TMB1_SCALE_CAPACITY_REVIEW_2026-09-23.md`
 
 Exactly one next gate:
-**GEORG HUMAN HTML REVIEW · choose rider scale and judge three-Orc card capacity.**
+**GEORG HUMAN RE-REVIEW · repaired three-rig Capacity HTML.**
 
-TMB-2 Double-Space remains HOLD until Georg resolves the TMB-1E visual scale/capacity gate.
+TMB-2 Double-Space remains HOLD until Georg resolves the repaired TMB-1E capacity gate.
 
 Goal:
 
