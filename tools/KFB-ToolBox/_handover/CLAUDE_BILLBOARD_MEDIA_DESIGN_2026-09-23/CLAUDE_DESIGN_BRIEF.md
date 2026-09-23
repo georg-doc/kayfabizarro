@@ -1,5 +1,39 @@
 # Claude Design Brief · Billboard / Media Residency Scene
 
+## GATE B0 · EXACT BILLBOARD + CARD SOURCE PROOF
+
+**STOP. Do not design yet.**
+
+The prior Claude result is rejected.
+
+Before any Media Residency styling, use the working Racer donor exactly:
+
+- `tools/KFB-ToolBox/_inbox/KFB Cologne Race Option C-2/lab-v9/cologne-props.v1.js`
+- `renderCardQuarter(pick)`
+- `buildBillboard(THREE, GLTFLoader, route, frac)`
+- real `billboard.glb`
+- real KFB PDF/Card via `media/kfb/index.json`
+
+First visible output:
+- real physical billboard;
+- real Card visible on its measured content plane;
+- front;
+- 3/4 left;
+- 3/4 right;
+- nearly no UI.
+
+If the Card fails, stop with `SOURCE CARD FAILED` and the exact error.
+
+No placeholder Card.
+No measurement dashboard.
+No debug-panel wall.
+No Triplet.
+No Collage.
+No Reveal.
+
+Stop after B0 and wait for Georg.
+
+
 ## Design task
 
 Create a compact, reusable KFB roadside-media diorama that visually proves one physical billboard can host several dynamic content styles without becoming generic UI.
