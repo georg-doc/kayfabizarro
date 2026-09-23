@@ -5,6 +5,10 @@ Alte Einträge bleiben unverändert. Korrekturen als neue CORRECTION/SUPERSEDES-
 
 ## 2026-09-23 · WorldBuilder accepted foundation → WB2 Terrain Sculpt planning
 
+### REPRIORITIZATION
+Georg explicitly moved the next functional gate to **WB2-TERRAIN-SCULPT-01** after accepting the current WB1 foundation. R3 uniform `−/+` size remains optional/non-blocking and may be reviewed/promoted separately.
+
+
 ### HUMAN DIRECTION
 Georg confirms the current WB1 scene-authoring foundation works and is acceptable.
 
@@ -37,7 +41,7 @@ First terrain sculpt gate:
 The WB2 proposal is routed into the WSA/Lead check-in as future-sprint intake. Runtime implementation remains Web-first and starts after the current R3 gate or explicit reprioritization.
 
 ### NEXT
-Current immediate human gate remains the small R3 uniform-size review. After PASS, proceed to **WB2-TERRAIN-SCULPT-01**.
+**WB2-TERRAIN-SCULPT-01** is current. Build an isolated Raise/Lower heightfield brush proof on a new bounded branch and return one Chat HTML. R3 uniform size remains optional/non-blocking.
 
 
 ## 2026-09-23 · Shared Inline Editor · R2 HUMAN PASS → R3 Uniform Scale Proposal
