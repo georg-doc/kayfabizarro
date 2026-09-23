@@ -585,7 +585,7 @@ function setPanels(sceneMode){
   E('hint').style.display=sceneMode?'none':'block';
 }
 async function showActor(){
-  mode='actor';actorSourceReady=false;updateReviewUnlock();resetMixer();selectRoot(null);clearGroup(previewRoot);worldRoot.visible=false;previewRoot.visible=true;grid.visible=true;setPanels(false);
+  mode='actor';actorSourceReady=false;updateReviewUnlock();resetMixer();EDIT.setOn(false);selectRoot(null);clearGroup(previewRoot);worldRoot.visible=false;previewRoot.visible=true;grid.visible=true;setPanels(false);
   E('viewActor').classList.add('active');E('viewProp').classList.remove('active');E('viewScene').classList.remove('active');
   E('sourceFacts').innerHTML=sourceFacts('actor');
   status('loading exact Caveman source…');
@@ -595,7 +595,7 @@ async function showActor(){
   updateReviewUnlock();
 }
 async function showProp(){
-  mode='prop';propSourceReady=false;updateReviewUnlock();resetMixer();selectRoot(null);clearGroup(previewRoot);worldRoot.visible=false;previewRoot.visible=true;grid.visible=true;setPanels(false);
+  mode='prop';propSourceReady=false;updateReviewUnlock();resetMixer();EDIT.setOn(false);selectRoot(null);clearGroup(previewRoot);worldRoot.visible=false;previewRoot.visible=true;grid.visible=true;setPanels(false);
   E('viewActor').classList.remove('active');E('viewProp').classList.add('active');E('viewScene').classList.remove('active');
   E('sourceFacts').innerHTML=sourceFacts('prop');
   status('loading exact Boulder source…');
@@ -604,14 +604,14 @@ async function showProp(){
 }
 async function showScene(){
   if(!actorSourceReady||!propSourceReady)return;
-  mode='scene';resetMixer();clearGroup(previewRoot);previewRoot.visible=false;worldRoot.visible=true;grid.visible=false;setPanels(true);
+  mode='scene';resetMixer();clearGroup(previewRoot);previewRoot.visible=false;worldRoot.visible=true;grid.visible=false;setPanels(true);EDIT.setOn(true);syncEditorUi();
   E('viewActor').classList.remove('active');E('viewProp').classList.remove('active');E('viewScene').classList.add('active');
   E('sourceFacts').innerHTML='<b>Composed scene</b><br>Only source references + transforms are stored. No asset bytes or animation libraries are copied.';
   status('building terrain + source objects…');
   applyTerrainUI(sceneDoc.terrain);buildTerrain();
   sceneLoadToken++;await buildSceneObjects(sceneLoadToken);
   camera.position.set(10,7.2,11.5);controls.target.set(0,.5,0);controls.update();
-  status('scene ready · select / move / rotate / drop / save / reload','ok');
+  status('scene ready · object menu: move / rotate / scale / drop / world-local / close · save / reload','ok');
 }
 function updateReviewUnlock(){E('viewScene').disabled=!(actorSourceReady&&propSourceReady)}
 
@@ -662,13 +662,11 @@ async function importDoc(){
 E('viewActor').onclick=()=>showActor().catch(fail);
 E('viewProp').onclick=()=>showProp().catch(fail);
 E('viewScene').onclick=()=>showScene().catch(fail);
-E('move').onclick=()=>{gizmo.setMode('translate');E('move').classList.add('active');E('rotate').classList.remove('active');if(selected)selectRoot(selected)};
-E('rotate').onclick=()=>{gizmo.setMode('rotate');E('rotate').classList.add('active');E('move').classList.remove('active');if(selected)selectRoot(selected)};
-E('snap').onclick=e=>{
-  const on=!e.currentTarget.classList.contains('active');e.currentTarget.classList.toggle('active',on);
-  gizmo.setTranslationSnap(on?.1:null);gizmo.setRotationSnap(on?THREE.MathUtils.degToRad(15):null);
+E('snap').onclick=()=>{
+  EDIT.setSnap(!EDIT.snap);
+  syncEditorUi();
+  status(EDIT.snap?'snap on · 0.05 / 15°':'snap off · continuous','ok');
 };
-E('drop').onclick=()=>{if(selected){dropRoot(selected);updateRecordFromRoot(selected);refreshDoc();status('selected object dropped to terrain','ok')}};
 E('addActor').onclick=()=>addActor().catch(fail);
 E('addProp').onclick=()=>addProp().catch(fail);
 E('remove').onclick=()=>removeSelected().catch(fail);
@@ -680,9 +678,11 @@ E('exportDoc').onclick=()=>exportDoc().catch(fail);
 E('importDoc').onclick=()=>importDoc().catch(fail);
 addEventListener('keydown',e=>{
   if(mode!=='scene')return;
-  if(e.key==='g')E('move').click();
-  if(e.key==='r')E('rotate').click();
+  if(e.key==='g')EDIT.setMode('translate');
+  if(e.key==='r')EDIT.setMode('rotate');
+  if(e.key==='s')EDIT.setMode('scale');
   if(e.key==='Escape')selectRoot(null);
+  syncEditorUi();
 });
 
 function resize(){
@@ -699,7 +699,7 @@ renderer.setAnimationLoop(()=>{
       groundModelLocal(actorRoot.userData.model);
     }
   }
-  controls.update();renderer.render(scene,camera);
+  EDIT.follow();controls.update();renderer.render(scene,camera);
 });
 
 function fail(err){
@@ -716,6 +716,7 @@ async function runSelfTest(){
   await showProp();ok('exact prop source visible',previewRoot.children.length===1&&mode==='prop');
   ok('scene gate unlocked',!E('viewScene').disabled);
   await showScene();ok('continuous terrain mesh exists',terrain&&terrain.geometry.attributes.position.count>1000);
+  ok('shared ToolBox edit layer is active',EDIT.on&&EDIT.gizmo&&E('objmenu'));
   ok('resident loaded',sceneObjects.has(ACTOR.id));
   ok('prop loaded',sceneObjects.has(PROP.id));
   const actor=sceneObjects.get(ACTOR.id),actorY=actor.position.y+1.1;
@@ -723,7 +724,10 @@ async function runSelfTest(){
   ok('resident Y transform is editable',near(sceneDoc.objects.find(o=>o.id===ACTOR.id).transform.position[1],actorY));
   const a=terrainHeightAt(-4,-4),b=terrainHeightAt(4,4);ok('terrain varies',!near(a,b,1e-4),a+' / '+b);
   const prop=sceneObjects.get(PROP.id);selectRoot(prop);
-  prop.position.x+=1.2;prop.position.z-=.7;prop.rotation.y+=THREE.MathUtils.degToRad(15);dropRoot(prop);updateRecordFromRoot(prop);
+  ok('object-attached mini menu opens',EDIT.node===prop&&!E('objmenu').hidden);
+  EDIT.setMode('scale');prop.scale.setScalar(1.15);prop.position.x+=1.2;prop.position.z-=.7;prop.rotation.y+=THREE.MathUtils.degToRad(15);updateRecordFromRoot(prop);
+  const dropReport=EDIT.drop();ok('shared drop reports a surface',dropReport.length===1&&!dropReport[0].refused);
+  onEditorMenu('space');ok('world/local toggle reaches gizmo',gizmoSpace==='local');onEditorMenu('space');
   const before=deepClone(sceneDoc.objects.find(o=>o.id===PROP.id).transform);saveDoc();
   prop.position.set(99,99,99);prop.rotation.y=0;updateRecordFromRoot(prop);
   await reloadDoc();
@@ -731,6 +735,7 @@ async function runSelfTest(){
   ok('save/reload restores x',near(before.position[0],after.position[0]));
   ok('save/reload restores z',near(before.position[2],after.position[2]));
   ok('save/reload restores rotation',near(before.rotation[1],after.rotation[1]));
+  ok('save/reload restores scale',near(before.scale[0],after.scale[0])&&near(sceneObjects.get(PROP.id).scale.x,before.scale[0]));
   ok('save/reload restores resident Y',near(sceneObjects.get(ACTOR.id).position.y,actorY));
   ok('scene document stores references not bytes',JSON.stringify(sceneDoc).length<12000&&sceneDoc.objects.every(o=>o.source&&o.source.path&&o.source.commit));
   document.body.dataset.selftest='PASS';
