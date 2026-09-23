@@ -113,17 +113,28 @@ Do not add generic dashboards, fake product chrome, decorative metrics or unrela
 
 ## Known ChatGPT attachment-host texture limitation
 
-For zero-install HTML files opened directly from ChatGPT, a recurring human-observed failure is: geometry loads, but an external or separately declared texture does not render.
+For zero-install HTML files opened directly from ChatGPT, a recurring human-observed failure is: geometry loads, but the texture does not render. This can affect **textures already embedded inside a valid GLB**, not only external/sidecar maps.
 
 Binding note:
 `CHATGPT_HTML_TEXTURE_PREVIEW_LIMITATION_2026-09-23.md`
 
+Human-verified WB1 fallback:
+- keep the exact source GLB/GLTF unchanged;
+- pin the exact donor texture path + immutable commit;
+- try `fetch → Blob → createImageBitmap → THREE.Texture`;
+- fall back to `THREE.TextureLoader`;
+- use sRGB for color maps and glTF `flipY = false`;
+- clone/bind review-only materials only;
+- preserve source diagnostics visibly.
+
+Georg confirmed the WB1 R1 Caveman texture is visible in the ChatGPT attachment after this adapter. Verified review blob:
+`dd6379815295adf07bdf0132210e1f7e6c9a3b49`.
+
 Rules:
 - do not treat a missing ChatGPT-preview texture as proof that the source asset is untextured;
 - inspect and reuse the exact donor texture/skin/atlas binding;
-- where the donor already declares a sidecar texture, a review-host adapter may fetch and bind that exact source explicitly;
 - keep source object, Registry, Resident Atlas and game runtime unchanged;
-- if the texture still fails only in the attachment host, mark `HOST_TEXTURE_LIMITATION` rather than inventing replacement material.
+- if the adapter still fails only in the attachment host, mark `HOST_TEXTURE_LIMITATION` rather than inventing replacement material.
 ## Focus profiles
 
 The same verified donor can be adapted into bounded focus profiles.
