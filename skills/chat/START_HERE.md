@@ -715,3 +715,17 @@ Current ToolBox recovery:
 `tools/KFB-ToolBox/_handover/TOOLBOX_SOURCE_LOCK_2026-09-23/START_HERE.md`
 
 Do not continue or repair Claude Round 1. Current FrizzleBob remains the Driver Graft via `mountGraft()`; legacy Cube-Pets remain separate actors. Exactly one next gate: **TB-SOURCE-LOCK-01 · isolated source review**.
+
+
+## 2026-09-23 · Browser 3D preview portability
+
+Repeated current ChatGPT HTML-review failures show that loading an individual model URL is not enough proof for a compound KFB scene.
+
+For ToolBox/Resident/WorldBuilder 3D review work:
+- use canonical RAW asset URLs, never relative `./assets/...` transport;
+- when a known-good Resident Atlas combination exists, use the complete Resident set as donor;
+- prove model identity, textures, pose, grounding, prop placement/attachment, actor count and animation across donor → review import → export/reload;
+- never replace a missing model with a primitive/sign and still call the review valid.
+
+Current ToolBox gate:
+`tools/KFB-ToolBox/_handover/TOOLBOX_SOURCE_LOCK_2026-09-23/RESIDENT_SET_PORTABILITY_GATE.md`
