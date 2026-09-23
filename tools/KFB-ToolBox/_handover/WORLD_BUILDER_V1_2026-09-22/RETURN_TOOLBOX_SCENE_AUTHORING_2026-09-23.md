@@ -1,19 +1,16 @@
-# RETURN · WB1-TERRAIN-SCENE-01 · local HTML review candidate · 2026-09-23
+# RETURN · WB1-TERRAIN-SCENE-01 · shared inline editor R2 · 2026-09-23
 
-Status: **R1 TEXTURE HUMAN PASS · Y/FOV/SAVE RE-REVIEW PENDING**
+Status: **R1 FUNCTIONAL FOUNDATION · GEORG HUMAN PASS · R2 SHARED EDITOR HUMAN REVIEW PENDING**
 
 ## Result
 
-WorldBuilder is now implemented as the bounded ToolBox scene-building surface requested by the current correction:
+R1 is accepted by Georg:
+- Caveman texture: PASS;
+- Character green Y transform: PASS;
+- Character Y save/reload: PASS;
+- palette/FOV layout: PASS.
 
-- continuous procedural terrain;
-- one real Resident Atlas actor;
-- one real source-backed prop / landmark;
-- one existing compatible animation clip;
-- select / move / rotate / snap / drop;
-- save / reload / continue editing.
-
-No second Resident Atlas, Animation Lab or universal runtime owner was introduced.
+WorldBuilder has now advanced to the requested newer inline editor without replacing terrain, Resident Atlas, animation or scene-document ownership.
 
 ## Repository
 
@@ -26,152 +23,146 @@ Branch:
 Draft PR:
 `#186`
 
-Verified pre-Return branch head after implementation, evidence, changelog, router, Hub and local START updates:
-`549c8e0912f9fe626d4d68eb5ddcd2948be05798`
+Verified pre-Return branch head after implementation, evidence, changelog, routers, Hub and PR metadata:
+`478d71cc57fd0745922f3c4af8f4be595852f175`
 
-The exact final head after this Return refresh is read back and reported in the chat handoff.
+The exact final head after this Return write is read back and reported in chat.
 
-Current canonical source blob:
-`a0ae15e822ef8283abafcf84483498814b1be3b8`
+PR state:
+- draft: yes;
+- merged: no;
+- auto-merge: not enabled;
+- changed files before this Return refresh: 20.
 
-Current zero-install review blob:
-`dd6379815295adf07bdf0132210e1f7e6c9a3b49`
+## Shared inline editor owner
 
-Review-sync checkpoint for the repaired candidate:
-`f3dfe50f4832ef7c2f36833cf983a699f6811fc0`
+Promoted ToolBox module:
+`tools/KFB-ToolBox/lib/edit-layer.js`
 
-## Candidate files
+Exact promoted Git blob:
+`c97b3537f71e939176f3ae5ce7ae83feabb7918f`
 
-- `tools/KFB-ToolBox/worldbuilder/wb1-terrain-scene-01/WB1_TERRAIN_SCENE_01_SOURCE.html`
-- `tools/KFB-ToolBox/worldbuilder/wb1-terrain-scene-01/WB1_TERRAIN_SCENE_01_REVIEW.html`
-- `tools/KFB-ToolBox/worldbuilder/wb1-terrain-scene-01/TEST_REPORT.md`
+That blob is byte-identical to the existing Resident Atlas S7 / Rig-Werkstatt donor. Its lineage is:
 
-The review declares the exact current source blob and is the same bounded WorldBuilder runtime prepared for visual review, not a second implementation owner.
+`Dungeon Room Study S21/S22 → Resident Atlas S7 second integration/extraction → ToolBox third-host promotion → WorldBuilder`
 
-## Reused owners / exact sources
+The donor Housekeeping explicitly marked `lib/edit-layer.js` as the ToolBox candidate for the third integration. No second local TransformControls/picking owner was created.
 
-Terrain donor:
-- `ZyFou/ProceduralTerrains@f58a8ddb81d1fbb526a41282a9a7e9c05c2d2070`
-- MIT
-- bounded reuse from `src/engine/terrain/noise/cpuNoise.js` and `seedDomain.js`
-- exact pinned MIT notice is carried in source and review.
+Current mini-menu:
+- ✥ move;
+- ⟳ rotate;
+- ⤢ scale;
+- ⬓ drop to the visible surface below;
+- ⊹ world/local axes;
+- ✕ clear selection;
+- snap: 0.05 units / 15°.
 
-Resident fixture:
-- Resident Atlas id: `caveman`
-- exact actor: `media/3D_Assets/KayKit_Mystery_Series6/8 - February 2025 - Caveman/characters/Caveman.glb`
-- asset pin: `891eadf01e218f5fc21387e64cea1fec8332c5b6`
-- rig: `Rig_Medium`
+One shared TransformControls instance remains the editor owner.
 
-Existing compatible clip:
-- `Melee_Unarmed_Idle`
-- `media/3D_Assets/KayKit_Character_Animations_1.1/Animations/gltf/Rig_Medium/Rig_Medium_CombatMelee.glb`
-- animation pin: `aa16a777a970f23d3f11fb3c23dc40718b04fa88`
+## WorldBuilder adapter
 
-Prop / landmark:
-- `media/3D_Assets/KayKit_Forest_Nature_Pack_1.0_FREE/Assets/gltf/Rock_3_E_Color1.gltf`
-- asset pin: `891eadf01e218f5fc21387e64cea1fec8332c5b6`
+Canonical Source:
+`tools/KFB-ToolBox/worldbuilder/wb1-terrain-scene-01/WB1_TERRAIN_SCENE_01_SOURCE.html`
 
-## Source-object-first gate
+Source blob:
+`0114d186759866f42bdc99a6d4bc662494701c50`
 
-The review enforces this order:
+Standalone Chat review:
+`tools/KFB-ToolBox/worldbuilder/wb1-terrain-scene-01/WB1_TERRAIN_SCENE_01_REVIEW.html`
 
-1. load and inspect **Source actor** in isolation;
-2. load and inspect **Source prop** in isolation;
-3. unlock **Scene editor** only after both source loads actually succeeded;
-4. compose on continuous terrain and test editing / persistence.
+Review blob:
+`099de70c7c57bfe17fc77ef80af7f4b5941aa452`
 
-One bounded repair pass before the review candidate corrected:
-- posed Caveman grounding from implicit world-Y grounding to parent / terrain Y;
-- Scene Editor unlock from “tab visited” to “source loaded successfully”.
+The canonical Source imports the promoted ToolBox module. The zero-install Review embeds that exact module blob and normalizes back to the canonical Source.
 
-## R1 human feedback and repair
+WorldBuilder still owns only:
+- terrain settings;
+- source references;
+- authored object transforms;
+- scene Save/Reload document.
 
-Georg's first HTML review found:
-- Caveman texture missing in the ChatGPT preview;
-- Character green Y-axis movement snapping back / not moving vertically;
-- palette/sidebar covering the 3D field of view.
+Scale is now persisted alongside position and rotation.
 
-Repaired candidate:
-- binds the exact Resident Atlas `caveman_texture.png` source explicitly; no replacement material;
-- tries fetch/Blob/ImageBitmap first with TextureLoader fallback for the ChatGPT attachment host;
-- keeps actor model grounding inside the Character root but stops forcing the root itself to terrain Y during gizmo changes / animation frames;
-- uses one-shot ground-on-spawn for new fixture objects, then preserves authored numeric Y through save/reload;
-- keeps `Drop to terrain` as the explicit re-ground action;
-- uses non-overlay responsive grid rows for narrow previews.
+## Preserved exact runtime sources
 
-Shared host limitation note:
-`skills/chat/workflows/KFB_WEB_FIRST_EXECUTION_V1_2026-09-22/CHATGPT_HTML_TEXTURE_PREVIEW_LIMITATION_2026-09-23.md`
+Terrain:
+`ZyFou/ProceduralTerrains@f58a8ddb81d1fbb526a41282a9a7e9c05c2d2070` · MIT
 
-## R1 human re-review result
+Resident:
+`Caveman.glb@891eadf01e218f5fc21387e64cea1fec8332c5b6` · Rig_Medium
 
-Georg opened the repaired R1 HTML directly from the ChatGPT attachment and confirmed:
+Texture:
+`caveman_texture.png@891eadf01e218f5fc21387e64cea1fec8332c5b6`
 
-**TEXTURE_VISIBLE_IN_CHAT_ATTACHMENT · PASS**
+Animation:
+`Rig_Medium_CombatMelee.glb@aa16a777a970f23d3f11fb3c23dc40718b04fa88 · Melee_Unarmed_Idle`
 
-This validates the exact review-host adapter used by WB1:
-`fetch → Blob → createImageBitmap → THREE.Texture` with `TextureLoader` fallback, exact source texture pin, sRGB and glTF `flipY = false`.
+Prop:
+`Rock_3_E_Color1.gltf@891eadf01e218f5fc21387e64cea1fec8332c5b6`
 
-The source GLB/Resident Atlas remain unchanged.
-
-Still pending:
-- Character green Y handle;
-- palette/control area vs 3D field of view;
-- save/reload preserving authored Character Y.
 ## Tests / evidence actually recorded
 
-Canonical `TEST_REPORT.md`:
+R1 human review:
+**4/4 requested human findings PASS**.
 
-- repaired source/static contract: **26/26 PASS**;
-- exact pinned actor/prop/animation/texture paths: **4/4 PASS**;
-- review-copy integrity / parity: **5/5 PASS**;
-- embedded browser self-test: **15 assertions prepared / 0 executed**;
-- automated browser runtime: **0**;
-- screenshots: **0**.
+R2 shared-editor static/integration contract:
+**32/32 PASS**.
 
-The embedded `?selftest=1` browser harness now contains 15 assertions, including texture binding and Character Y edit/save-reload, but was not executed in this connector-only gate.
+Exact pinned actor/prop/animation/texture paths:
+**4/4 PASS**.
 
-No browser PASS, visual PASS, Stage PASS or Live claim is made.
+Promoted shared-module identity:
+**1/1 PASS** — ToolBox module blob equals donor blob `c97b3537…`.
 
-## Current handoff surfaces
+Embedded browser self-test:
+**20 assertions prepared / 0 executed**.
 
-Implementation / evidence:
-- `tools/KFB-ToolBox/worldbuilder/wb1-terrain-scene-01/WB1_TERRAIN_SCENE_01_SOURCE.html`
-- `tools/KFB-ToolBox/worldbuilder/wb1-terrain-scene-01/WB1_TERRAIN_SCENE_01_REVIEW.html`
-- `tools/KFB-ToolBox/worldbuilder/wb1-terrain-scene-01/TEST_REPORT.md`
+Automated browser runtime tests:
+**0**.
 
-Routing / metadata:
-- `tools/KFB-ToolBox/CHANGELOG.md`
-- `skills/chat/START_HERE.md`
-- `kfb-hub/index.html`
-- this Return
+Screenshots:
+**0**.
 
-The earlier correction, source-check and fresh-chat briefing documents remain preserved for provenance.
+No browser PASS and no R2 mini-menu human PASS are claimed.
+
+Canonical evidence:
+`tools/KFB-ToolBox/worldbuilder/wb1-terrain-scene-01/TEST_REPORT.md`
+
+## Metadata updated in the same handoff
+
+- `tools/KFB-ToolBox/TOOLBOX_MANIFEST.json` — shared module registered;
+- `tools/KFB-ToolBox/START_HERE.md` — shared layer routed;
+- `tools/KFB-ToolBox/CHANGELOG.md` — additive R1 PASS → R2 entry;
+- `tools/KFB-ToolBox/_handover/WORLD_BUILDER_V1_2026-09-22/START_HERE.md` — R2 current gate;
+- `skills/chat/START_HERE.md` — central router;
+- `kfb-hub/index.html` — R2 review + Claude HOLD cards;
+- Draft PR #186 body — R2 status/evidence.
 
 ## Publication
 
 Cloudflare:
-**HOLD · NOT PUBLISHED**
+**HOLD · NOT PUBLISHED for this iteration**
 
 Direct Stage URL:
-**none for this gate by design**
+**none**
 
 Live:
 **not promoted**
 
-The R1 review artifact was materialized directly into ChatGPT, opened by Georg, and used for the texture human gate.
+Human acceptance surface:
+the chat-delivered standalone `WB1_TERRAIN_SCENE_01_REVIEW.html`.
 
-## Unresolved / review watchpoint
+## Unresolved
 
-The current fixture uses yaw-only rotations and its resident grounding is repaired for the terrain / parent world height.
+- R2 mini-menu has not yet been human-reviewed;
+- embedded 20-assertion browser self-test has not been executed in this connector-only session;
+- broader WorldBuilder asset palette / environment / Claude Design work remains outside this gate;
+- Orc Band integration remains later.
 
-If pitch or roll is deliberately introduced during the review, inspect ground contact carefully: the current `dropRoot()` samples terrain below the object root and does not yet prove a precise transformed lower-bound solve for arbitrary pitch / roll.
+## Exactly one next gate
 
-That is a review watchpoint, not a claimed arbitrary-orientation PASS.
+**Georg human review of the shared inline-editor R2 Chat HTML:**
 
-## One next gate
+select Caveman and Boulder → verify object-attached menu → Move / Rotate / Scale / Drop / World-Local / Close → Save → change transform → Reload → verify position / rotation / scale restored.
 
-**Georg human HTML re-review of the repaired `WB1_TERRAIN_SCENE_01_REVIEW.html` — Character Y, palette/FOV, then save/reload. Texture is already HUMAN PASS.**
-
-STOP there.
-
-Claude Design, Orc Band integration, broader terrain modes, Cloudflare publication and Live promotion remain HOLD until this human gate.
+STOP there. No merge, Cloudflare promotion, Live promotion, Claude Design or Orc Band integration before this human result.
