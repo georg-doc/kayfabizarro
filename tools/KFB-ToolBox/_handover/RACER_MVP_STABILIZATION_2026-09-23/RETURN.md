@@ -288,3 +288,46 @@ Recovery / review protocol:
 
 Exactly one next gate:
 **TARCH-0 HUMAN ARCHITECTURE GATE · R1 CHAT HTML**.
+
+
+## TARCH R1 accepted · R2 integrated review prepared
+
+R1 isolated architecture review is **GEORG ACCEPTED**.
+
+Accepted artifact:
+`georg-doc/KFB-Stunt-Car-Race#33 → _handover/RACER_MVP_STABILIZATION_2026-09-23/TARCH-0/review/KFB_Racer_TARCH0_R1_review.html`
+
+Acceptance evidence:
+`review/R1_ACCEPTED.md`
+
+The accepted harness is now the first verified donor in the shared Web-First review pool:
+
+`skills/chat/workflows/KFB_WEB_FIRST_EXECUTION_V1_2026-09-22/REVIEW_TEMPLATE_POOL.md`
+
+Registry:
+`skills/chat/workflows/KFB_WEB_FIRST_EXECUTION_V1_2026-09-22/review-templates/REGISTRY.json`
+
+Donor ID:
+`threejs-focus-review-v1`
+
+Current Race PR #33 branch head after R2 recovery marker:
+`6e37fa689441946a1e063af939b16cf0cbb54ce1`
+
+R2:
+- filename `KFB_Racer_TARCH0_R2_integrated_review.html`;
+- generated SHA-256 `bc5a97f5239c66f54e8cb53bfd21fef0326a7c3f40f524419ddce60cce3b5fc4`;
+- size `18179 bytes`;
+- source geometry `b37cbad1038e669a0c9929d25789d54d0283b0fc`;
+- status **PREPARED · HUMAN REVIEW PENDING**.
+
+R2 reuses the accepted R1 review chrome and adds only:
+- longer C-3 entry/tunnel/exit context;
+- CHASE-like entry/inside/exit views;
+- city ground / TARCH void / deep ground;
+- supported TARCH frames;
+- optional pinned OSM context.
+
+Cloudflare remains deferred.
+
+Exactly one next gate:
+**TARCH-0 R2 · integrated Racer Chat HTML human review**.
