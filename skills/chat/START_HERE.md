@@ -467,3 +467,22 @@ For browser/game/3D slices use:
 `workflows/KFB_WEB_FIRST_EXECUTION_V1_2026-09-22/LOCAL_PREVIEW_FIRST.md`.
 
 Cloudflare Stage is a milestone/public acceptance surface, not the normal debugging loop.
+
+
+## 2026-09-23 · Racer MVP Stabilization · RSTAB-0 mapped
+
+Current Racer stabilization owner remains `georg-doc/KFB-Stunt-Car-Race`.
+
+Newest Claude source is pinned to `KFB Cologne Race Option C-3/` at Race `main@cc80f4a1c6c509db9668df79fd53b13cee093a9d`.
+
+RSTAB-0 is preserved on Race Draft PR #31 / `chat/racer-rstab0-audit-2026-09-23`; verified handoff head `58d837a5b858bdf7af178bcf0bb578d6ab018ff4`. It changes no Racer runtime.
+
+Deterministic P0 map:
+- ground wedge: ground-cut ↔ tunnel-shell seam, current visible mesh must be identified on the reproduced frame;
+- hard bend: route index 176 / 29.4% / s≈589 m / radius ≈35.3 m, outside the preserved v0.8 full-speed ordinary-steer envelope;
+- support pillars: 54/54 generated supports scanned, road penetrations at indices 166 / 179 / 187; normal `auditRoute()` excludes `structure-*`.
+
+Current router:
+`tools/KFB-ToolBox/_handover/RACER_MVP_STABILIZATION_2026-09-23/START_HERE.md`.
+
+Exactly one next gate: **RSTAB-1 · static geometry intrusions — ground wedges + support pillars.** No global FLOW/FEEL or curve tuning before that gate is clear.
