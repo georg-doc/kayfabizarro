@@ -2,6 +2,20 @@
 
 Alte Einträge bleiben unverändert. Korrekturen als neue CORRECTION/SUPERSEDES-Einträge mit Bezug ergänzen. Aktuelle Momentaufnahme im MASTERPLAN/Return, Geschichte hier.
 
+## 2026-09-23 · ToolBox source-lock correction after Claude Round 1
+
+### HUMAN REVIEW FAIL
+The first Stage-First Claude build kept the desired shell but used the old Cube Bunny as FrizzleBob, did not preserve later saved Cube-Pet configuration, and did not expose the full current Studio actor source.
+
+### SOURCE EVIDENCE
+Compared three `kfb.pets/1` states: Stage-First bundle 1.2.7, current GitHub 1.2.8, later user-saved Dropbox 1.2.9. The later file contains measured Bunny body/pad/ground data absent from 1.2.7 and additional tuning differences such as Penguin eye/mouth/body values.
+
+### CORRECTION
+Current FrizzleBob remains the Driver Graft through `mountGraft()` + `kfb-pet-graft-driver.v4.json`. The Claude Round-1 file is frozen as a rejected foundation. Next gate is an isolated source review before any further consolidation.
+
+### NEXT
+`TB-SOURCE-LOCK-01` — show real Driver Graft, later saved Cube-Pets and actual Studio roster separately, then ask Georg to confirm sources.
+
 ## 2026-09-21 · Fluid/Card/Voxel intake and Theatre Curtain route
 
 ### SOURCE VERIFIED
