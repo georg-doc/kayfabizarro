@@ -328,6 +328,9 @@ function setSelectionUi(node,rec){
 }
 function syncEditorUi(){
   if(!E('objmenu'))return;
+  const active=EDIT.selection;
+  if(!active.length&&selected)setSelectionUi(null);
+  else if(active.length===1&&selected!==active[0])setSelectionUi(active[0],recordForNode(active[0]));
   E('objmenu').querySelectorAll('button').forEach(btn=>{
     const m=btn.dataset.m;
     btn.classList.toggle('active',m===EDIT.mode||(m==='space'&&gizmoSpace==='local'));
