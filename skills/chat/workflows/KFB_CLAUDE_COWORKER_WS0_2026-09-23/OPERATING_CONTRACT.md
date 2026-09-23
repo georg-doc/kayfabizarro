@@ -135,3 +135,16 @@ Default behavior:
 - one task, one owner, one next gate.
 
 Do not load every skill or every project status unless the task truly spans them.
+
+
+## Human-readable handoff
+
+For Georg-facing replies apply:
+`skills/chat/HUMAN_READABLE_STATUS.md`
+
+Lead with:
+- what changed;
+- what Georg should check/decide;
+- next action.
+
+Do not use internal status labels as the explanation.
