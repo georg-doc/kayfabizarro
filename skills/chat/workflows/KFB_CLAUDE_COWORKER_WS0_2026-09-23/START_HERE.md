@@ -5,6 +5,13 @@ Owner: `skills/chat/workflows/KFB_CLAUDE_COWORKER_WS0_2026-09-23/`
 Production authority: **existing project owners + Web Lead**
 Cloudflare: **OUT OF LOOP by default**
 
+## Communication with Georg
+
+Read:
+`skills/chat/HUMAN_READABLE_STATUS.md`
+
+User-facing replies start with a short plain-language **Für Georg** translation. Technical status names, schemas and SHAs come second only when useful.
+
 ## Purpose
 
 Claude Coworker is a parallel technical production lane for KFB.
