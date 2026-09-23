@@ -122,7 +122,7 @@ Direct Stage URL:
 Live:
 **not promoted**
 
-The required acceptance surface for this iteration is the chat-delivered local HTML review artifact.
+The required acceptance surface for this iteration is the repo-contained local HTML review artifact. Direct chat-file materialization was not available in this session.
 
 ## Unresolved / review watchpoint
 
