@@ -190,20 +190,35 @@
   },
   "sharedModules": {
     "inline3dEditLayer": {
-      "status": "PROMOTED_SHARED_MODULE_CANDIDATE",
+      "status": "R2_HUMAN_ACCEPTED_R3_UNIFORM_SCALE_CANDIDATE",
       "path": "tools/KFB-ToolBox/lib/edit-layer.js",
-      "blob": "c97b3537f71e939176f3ae5ce7ae83feabb7918f",
+      "acceptedBaseBlob": "c97b3537f71e939176f3ae5ce7ae83feabb7918f",
+      "blob": "c15a200ba8615d55f9d3ae26616e0a8ceba8dc01",
       "lineage": [
         "Dungeon Room Study S21/S22",
-        "Resident Atlas S7 Rig-Werkstatt"
+        "Resident Atlas S7 Rig-Werkstatt",
+        "ToolBox promotion",
+        "WorldBuilder R2 accepted host"
       ],
       "thirdHost": "WorldBuilder WB1-TERRAIN-SCENE-01",
-      "ownerBoundary": "selected-object authoring only; no terrain, movement, collision-runtime or asset ownership",
+      "r2HumanAccepted": true,
+      "proposal": "tools/KFB-ToolBox/_handover/WORLD_BUILDER_V1_2026-09-22/SHARED_EDITOR_UNIFORM_SCALE_PROPOSAL_2026-09-23.md",
+      "ownerBoundary": "selected-object authoring only; no terrain, movement, collision-runtime, source asset or host persistence ownership",
+      "defaults": {
+        "translationSnap": 0.05,
+        "rotationSnapDeg": 15,
+        "uniformScaleUp": 1.25,
+        "uniformScaleDown": 0.8,
+        "minScale": 0.05,
+        "maxScale": 20
+      },
       "capabilities": [
         "pointerup-visible-picking",
         "translate",
         "rotate",
-        "scale",
+        "free-scale-gizmo",
+        "uniform-scale-down",
+        "uniform-scale-up",
         "drop-to-visible-surface",
         "world-local-gizmo-space",
         "snap",
