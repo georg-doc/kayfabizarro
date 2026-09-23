@@ -364,3 +364,25 @@ For the already-running Orc Warband session use:
 `BLENDER_MCP_WARBAND_CONTINUE_PROMPT.md`
 
 Do not restart that session merely to apply this onboarding.
+
+
+## Human-gate artifact persistence
+
+Direct clickable chat delivery remains mandatory.
+
+Additionally, any HTML that is the **actual human acceptance gate** must be recoverable after chat loss by at least one durable source:
+- committed review HTML in the owner repo; or
+- retained CI artifact with exact run/artifact id.
+
+A marker + hash alone is not ideal recovery.
+
+The review marker should record:
+- artifact filename;
+- source/runtime head;
+- SHA-256;
+- durable storage location;
+- human result.
+
+This does not require Cloudflare.
+
+Project-specific small implementation commits remain welcome when they reduce failure risk. The production-flow rule is about reducing unnecessary **human** micro-gates, not forbidding small technical checkpoints.
