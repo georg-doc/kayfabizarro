@@ -789,3 +789,49 @@ Still blocked until after R3b:
 vehicle grounding/contact → hard-clamp/jitter → trails/speedlines → jump/landing.
 
 Cloudflare remains deferred.
+
+
+## 2026-09-23 · Racer R3c · Closed Track Body + Rounded Frames
+
+Current Racer lane:
+- Race Draft PR **#33**
+- branch `chat/racer-tarch0-sp13ktra-2026-09-23`
+- current Race docs head `f8f29f7b742e0b18fd9887398cd6bb4b7c320a32`
+- runtime/test head `b48ba46bb23e656cad968cb347bde7aa4bd445c4`
+
+R3b result:
+**TUNE**
+
+Use What Works:
+- Dropbox C-3 owner/donor evidence re-read;
+- project-owned `cologne-landmarks.v1.js` reused as the rounded structural geometry donor;
+- proven strategy: continuous smooth TubeGeometry instead of hard BoxGeometry chains.
+
+R3c runtime:
+- one cyclic closed `track-body`;
+- road + shoulders + side skirts + complete underside;
+- old primary flat road/shoulder ribbons removed;
+- old partial structure soffit/skirts removed;
+- tested RSTAB-1 banked support endpoint helper restored;
+- structure support cylinders use 14 radial segments;
+- TARCH portals are one continuous rounded CurvePath/TubeGeometry mesh each;
+- BoxGeometry post/post/lintel frames removed.
+
+CI:
+- `35874800062 / 107227822852`: SUCCESS
+- `35874807681 / 107227851828`: SUCCESS
+- **17/17 PASS · 0 fail · 0 skipped**
+
+Review:
+`KFB_Racer_TARCH0_R3c_track_body_rounded_frames_review.html`
+
+SHA-256:
+`36a363efd5412b41f9b8bea26998e32a16a1965b9335000ed8b82d6f795ff0f0`
+
+Exactly one next gate:
+**R3c · TRACK BODY + ROUNDED FRAMES CHAT HTML HUMAN REVIEW**
+
+Still blocked:
+vehicle grounding/contact → hard-clamp/jitter → trails/speedlines → jump/landing.
+
+Cloudflare remains deferred.
