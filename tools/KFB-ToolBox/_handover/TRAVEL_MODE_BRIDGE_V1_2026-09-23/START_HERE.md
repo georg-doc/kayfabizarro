@@ -1,6 +1,6 @@
 # KFB Travel Mode Bridge v1 · Ground ↔ Animated Card Flight · 2026-09-23
 
-Status: **PREPARED · FRESH WEB PREWORK · TRAVEL-OWNED FLIGHT · NO WORK/WSA · NO WORLDBUILDER INTEGRATION YET**
+Status: **TMB-0 COMPLETE · SOURCE/SEAM MAP ONLY · TRAVEL DRAFT PR #32 · NO RUNTIME IMPLEMENTATION**
 
 Implementation owner:
 `georg-doc/KFB-Travel-Globe`
@@ -11,8 +11,20 @@ Current Travel main at preparation:
 Coordination / public brief owner:
 `georg-doc/kayfabizarro`
 
-Named future branch:
+Current TMB branch:
 `chatgpt-web/travel-mode-bridge-v1-2026-09-23`
+
+TMB-0 result:
+- Draft PR #32;
+- head `048499315581d2b9916a4d3fcbaba5f3adef719c`;
+- source/boundary audit **12/12 PASS · 0 FAIL**;
+- **0 runtime files changed**;
+- Travel Return: `_handover/TRAVEL_MODE_BRIDGE_V1_2026-09-23/RETURN.md`;
+- source matrix: `_handover/TRAVEL_MODE_BRIDGE_V1_2026-09-23/SOURCE_REUSE_MATRIX.md`;
+- transition contract: `_handover/TRAVEL_MODE_BRIDGE_V1_2026-09-23/MOBILITY_TRANSITION_CONTRACT_v0.md`.
+
+Exactly one next gate:
+**TMB-1 · isolated exact animated CardCarrier + one real ActionFigure Rig_Medium passenger.**
 
 Goal:
 
