@@ -63,7 +63,8 @@ function makeViewer(canvas,mode){
   function frame(target=defaultTarget,dist=215,pitch=.55,yaw=.72){controls.target.copy(target);camera.position.set(target.x+Math.sin(yaw)*Math.cos(pitch)*dist,target.y+Math.sin(pitch)*dist,target.z+Math.cos(yaw)*Math.cos(pitch)*dist);camera.lookAt(target);controls.update();}
   function focus(b){const c=centroid(b.footprint);frame(new THREE.Vector3(c.x,b.heightM*.42,c.z),58+Math.max(0,b.heightM-10)*2,.42,.72);}
   function reset(){frame(defaultTarget,215,.55,.72);}
-  function isolate(id,on){for(const [bid,g] of buildingRoots)g.visible=!on||bid===id;}\n  function visibleCount(){let n=0;for(const g of buildingRoots.values())if(g.visible)n++;return n;}
+  function isolate(id,on){for(const [bid,g] of buildingRoots)g.visible=!on||bid===id;}
+  function visibleCount(){let n=0;for(const g of buildingRoots.values())if(g.visible)n++;return n;}
   function resize(){const r=canvas.getBoundingClientRect();renderer.setSize(Math.max(1,r.width),Math.max(1,r.height),false);camera.aspect=Math.max(1,r.width)/Math.max(1,r.height);camera.updateProjectionMatrix();}
   new ResizeObserver(resize).observe(canvas);resize();reset();
   (function loop(){requestAnimationFrame(loop);controls.update();renderer.render(scene,camera);})();
