@@ -285,3 +285,68 @@ Important:
 Racer Return/PR body still partly describes R3c; refresh current R3d evidence before a human gate.
 
 Blender remains a **possible visual-mesh compiler fallback/A-B**, not the Racer route/contact owner.
+
+
+## Racer current override · R3d
+
+This block supersedes older Racer R3c snapshot lines above.
+
+Repo:
+`georg-doc/KFB-Stunt-Car-Race`
+
+PR:
+`#33`
+
+Branch:
+`chat/racer-tarch0-sp13ktra-2026-09-23`
+
+Current docs/recovery head:
+`05b3cf357b022d75ff4f7433f5ee51ed474f9b49`
+
+Runtime/test head:
+`dad35bdf0f3e19fdc2c5902e154140353db590f9`
+
+Technical state:
+**24/24 PASS · 0 fail · 0 skipped**
+
+R3d now owns:
+- one 12-point closed track/barrier body;
+- road + shoulder + inner barrier + thick cap + outer barrier + lower side body + full underside;
+- 4× denser presentation mesh while route/physics samples stay unchanged;
+- no legacy `track-wall-*`;
+- no separate cap ribbons;
+- no flat decorative lane-band ribbons;
+- 0.96 m TARCH frame radius;
+- 14 radial segments;
+- frame base at barrier cap `u=1.39 / lift=1.265`;
+- deep ground as void-contour ShapeGeometry rather than rectangular PlaneGeometry.
+
+Current human gate:
+**R3d · Track / Barrier / Ground Layer review**
+
+Ask Georg only:
+- smooth barrier silhouette?
+- stripe artifacts gone?
+- barrier reads volumetric?
+- thick frames seated cleanly?
+- underside reads as one body?
+- deep ground reads clean?
+- banking still correct?
+
+If PASS:
+next real runtime gate is **Vehicle Grounding / Contact**.
+
+Do not start clamp/jitter, trails/speedlines or jump/landing before Grounding/Contact.
+
+### Review artifact recovery note
+
+GitHub currently persists:
+- `R3d_PREPARED.md`;
+- expected review filename;
+- SHA-256 `d2e147d3abcd005769867bf523bcac1a49cc3eff9491511875c80b37c287a018`;
+- exact runtime head;
+- regeneration instructions.
+
+The HTML itself is **not** currently in the GitHub tree and no CI artifact exists for the two R3d runs.
+
+Future Racer human-gate HTML must be persisted in GitHub or a retained CI artifact in addition to direct chat delivery.
