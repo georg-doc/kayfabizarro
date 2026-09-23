@@ -193,3 +193,36 @@ Preferred first coherent packet:
 **ToolBox**, after its real sources/Resident sets are consolidated.
 
 No product implementation was started by this alignment.
+
+
+## First productive packet prepared
+
+### Für Georg
+Das erste echte geschlossene Paket ist jetzt vorbereitet.
+
+Es ist die ToolBox:
+nicht als neuer Design-Versuch, sondern als source-sichere funktionale Konsolidierung.
+
+Coworker bekommt:
+- die echte Stage-First-Vorlage;
+- den echten Studio-Figurenbestand;
+- den aktuellen FrizzleBob;
+- deine gespeicherten Cube-Pets;
+- drei komplette Resident-Sets;
+- den bereits akzeptierten gemeinsamen Editor;
+- Save/Reload-Vertrag.
+
+Er soll daraus **eine** zusammenhängende ToolBox-HTML bauen.
+
+### Packet
+`packets/TOOLBOX_SOURCE_SAFE_INTEGRATION_01.md`
+
+Status:
+`CLOSED_WITH_HUMAN_GATE`
+
+### Coworker start
+`packets/TOOLBOX_SOURCE_SAFE_INTEGRATION_01_COWORKER_START.md`
+
+### WSA
+No capability gap identified.
+Coworker first.
