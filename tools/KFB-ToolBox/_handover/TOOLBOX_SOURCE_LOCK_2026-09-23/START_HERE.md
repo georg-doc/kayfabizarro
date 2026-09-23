@@ -114,12 +114,15 @@ Only after that source gate passes may the Stage-First shell be connected to tho
 **TB-SOURCE-LOCK-01 · isolated source review before any further consolidation.**
 
 
-## Fresh Web execution
+## Current execution
 
-Use:
-`FRESH_WEB_START.md`
+Continue in the **current ToolBox chat**. Do not start another chat merely for the texture workaround or Resident-set gate.
 
-The source review now distinguishes three FrizzleBob lineages explicitly:
+`FRESH_WEB_START.md` is recovery-only if this chat later becomes unusable.
+
+Consume the globally verified ChatGPT texture-review adapter from PR #186 / `e0a9327bcc6406ec3e093f57b14ec81569988406`; do not reopen that diagnosis.
+
+The source review later distinguishes three FrizzleBob lineages explicitly:
 
 - `FrizzleBob · Driver Graft` — current default;
 - `FrizzleBob · Cube-Pet` — legacy Pet/Patch Studio actor with its own saved config;
