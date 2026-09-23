@@ -168,6 +168,11 @@ No implementation or public result is claimed.
 - `media/3D_Assets/KFB/` is recorded as Georg's curated future donor shortlist, not a second registry;
 - Orc Band World-Life packet is now prepared as a future WorldBuilder fixture;
 - Music Collectible / Jukebox lane now separates track unlocks from physical cassette artifacts;
+- **Permitless Funk** is now the human-selected Orc Band signature-style candidate, using `Rubbish Groove 2min A extend 01.mp3`;
+- Legacy frontman direction is now black-ponytail/dark-topknot Orc with beat-synced root bounce + squash/stretch + seeded hype variation;
+- exact `character_orcA` vs `character_orcB` mapping for the requested black-ponytail look remains a visual source-isolation gate;
+- first visualizer remains full-mix beat/level/pulse driven; no stems required for v0;
+- a RoadTrip sibling track is desired in the same Permitless-Funk family, with more open-road/cruising atmosphere and no Race/final-lap urgency;
 - unlocked tracks persist in Session/Journey/Fractal Almanac and do not consume the 20 physical Backpack slots;
 - proposed Backpack HUD is a compact icon + 4×5 / 20-slot overlay for physical transferable/access objects;
 - current canonical Jukebox/Music Bus is reused for on-foot/dungeon/flight/vehicle/Race playback rather than creating a second radio engine;
