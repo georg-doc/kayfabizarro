@@ -1,0 +1,1313 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#17150f">
+<title>KFB ToolBox · WB2 Terrain Sculpt 01 · Review</title>
+<style>
+:root{
+  --bg:#17150f;--panel:rgba(26,23,17,.95);--panel2:#211e17;--line:#554d3d;
+  --text:#f2eadb;--muted:#b7aa91;--accent:#e3b466;--ok:#8fc58a;--bad:#e48d7e;
+}
+*{box-sizing:border-box}
+html,body{margin:0;width:100%;height:100%;overflow:hidden;background:var(--bg);color:var(--text);font:14px system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+button,input{font:inherit}
+button{border:1px solid var(--line);background:#2a261d;color:var(--text);border-radius:8px;padding:8px 10px;font-weight:650;cursor:pointer}
+button:hover{border-color:#82755c}
+button[disabled]{opacity:.42;cursor:not-allowed}
+button.active{border-color:var(--accent);color:#ffe2a7}
+input{border:1px solid var(--line);background:#15130f;color:var(--text);border-radius:7px;padding:6px 7px;width:78px}
+#app{position:fixed;inset:0;display:grid;grid-template-columns:320px 1fr}
+#side{position:relative;z-index:12;background:var(--panel);border-right:1px solid var(--line);padding:14px;overflow:auto}
+#stage{position:relative;min-width:0}
+canvas{display:block;width:100%;height:100%;touch-action:none}
+h1{font-size:15px;letter-spacing:.06em;margin:0 0 2px}
+.kicker{color:var(--muted);font-size:11px;margin-bottom:12px}
+.section{border-top:1px solid rgba(255,255,255,.09);padding-top:11px;margin-top:11px}
+.section h2{font-size:10px;text-transform:uppercase;letter-spacing:.12em;color:var(--muted);margin:0 0 8px}
+.row{display:flex;gap:6px;flex-wrap:wrap;align-items:center}
+.field{display:grid;grid-template-columns:1fr auto;gap:8px;align-items:center;margin:6px 0;color:var(--muted);font-size:11px}
+.source{font:10px ui-monospace,SFMono-Regular,Menlo,monospace;color:var(--muted);overflow-wrap:anywhere;margin-top:6px;line-height:1.35}
+.source b{color:var(--text);font-family:inherit}
+#status{position:absolute;z-index:9;left:14px;top:14px;background:rgba(20,18,13,.88);border:1px solid var(--line);border-radius:9px;padding:8px 10px;color:var(--muted);font-size:11px;pointer-events:none}
+#status.ok{color:var(--ok)}
+#status.bad{color:var(--bad)}
+#hint{position:absolute;z-index:9;left:14px;right:14px;bottom:14px;text-align:center;pointer-events:none}
+#hint span{display:inline-block;background:rgba(20,18,13,.88);border:1px solid var(--line);border-radius:9px;padding:7px 10px;color:var(--muted);font-size:11px}
+#pick{margin-top:8px;padding:8px;border:1px solid var(--line);border-radius:8px;background:#181610;color:var(--muted);font-size:11px;min-height:36px}
+#pick b{color:var(--text)}
+.badge{display:inline-block;padding:3px 6px;border:1px solid var(--line);border-radius:999px;color:var(--muted);font-size:10px}
+.badge.ok{border-color:#587a55;color:var(--ok)}
+#doc{white-space:pre-wrap;max-height:170px;overflow:auto;background:#13110d;border:1px solid var(--line);border-radius:8px;padding:8px;font:10px ui-monospace,SFMono-Regular,Menlo,monospace;color:#cfc2aa}
+#selftest{display:none}
+/* Shared ToolBox inline 3D edit layer · exact S7 object-menu grammar. */
+#objmenu{position:absolute;z-index:10;display:flex;gap:3px;padding:3px;border-radius:7px;
+  background:#14130fee;border:1px solid #4a4433;box-shadow:0 6px 18px #05030a80;transform:translate(-50%,0)}
+#objmenu button{width:28px;height:28px;padding:0;font-size:13px;line-height:1;border-radius:5px}
+#objmenu button.active{border-color:var(--accent);color:#ffe2a7}
+#objmenu .scale-pair{display:flex;gap:1px;border:1px solid var(--line);border-radius:5px;overflow:hidden}
+#objmenu .scale-pair button{width:23px;border:0;border-radius:0;background:#2a261d}
+#objmenu .scale-pair button+button{border-left:1px solid var(--line)}
+#objmenu[hidden]{display:none}
+@media(max-width:900px){
+  #app{grid-template-columns:minmax(240px,280px) 1fr}
+}
+@media(max-width:620px){
+  #app{grid-template-columns:1fr;grid-template-rows:minmax(180px,38vh) 1fr}
+  #side{position:relative;left:auto;top:auto;bottom:auto;width:auto;max-height:none;border-right:0;border-bottom:1px solid var(--line);border-radius:0;padding:10px 12px}
+  #stage{grid-column:1;grid-row:2;min-height:0}
+  #status{left:10px;right:auto;top:10px}
+  #hint{left:10px;right:10px;bottom:10px}
+}
+</style>
+</head>
+<body>
+<!-- REVIEW COPY · source blob 188d5b46e34407c3800edeb2b896d3cf0cf93925 · edit-layer blob c15a200ba8615d55f9d3ae26616e0a8ceba8dc01 · sculpt blob 182f7c42b709a00547a16cfe0040d5d636bdb680 · local review only · not public -->
+<div id="app">
+  <aside id="side">
+    <h1>KFB TOOLBOX · WORLDBUILDER</h1>
+    <div class="kicker">WB2-TERRAIN-SCULPT-01 · local review · not public</div>
+
+    <div class="section">
+      <h2>Review order</h2>
+      <div class="row">
+        <button id="viewActor" class="active">1 · Source actor</button>
+        <button id="viewProp">2 · Source prop</button>
+        <button id="viewScene" disabled>3 · Scene editor</button>
+      </div>
+      <div id="sourceFacts" class="source"></div>
+    </div>
+
+    <div id="terrainPanel" class="section" hidden>
+      <h2>Terrain · ZyFou-derived deterministic noise</h2>
+      <div class="field"><label for="seed">Seed</label><input id="seed" type="number" step="1" value="43129"></div>
+      <div class="field"><label for="height">Height</label><input id="height" type="number" min="0" max="8" step=".1" value="2.6"></div>
+      <div class="field"><label for="macro">Macro scale</label><input id="macro" type="number" min=".5" max="8" step=".1" value="3.2"></div>
+      <div class="field"><label for="detail">Detail</label><input id="detail" type="number" min=".1" max="2" step=".05" value=".55"></div>
+      <div class="row"><button id="regen">Regenerate</button><span id="terrainSig" class="badge"></span></div>
+      <div class="section" style="margin-top:10px;padding-top:9px">
+        <h2>Terrain sculpt · continuous heightfield</h2>
+        <div class="row">
+          <button id="sculptObject" class="active">Object edit</button>
+          <button id="sculptRaise">Raise</button>
+          <button id="sculptLower">Lower</button>
+        </div>
+        <div class="field"><label for="sculptRadius">Brush radius</label><input id="sculptRadius" type="number" min=".45" max="5" step=".05" value="1.25"></div>
+        <div class="field"><label for="sculptStrength">Strength / dab</label><input id="sculptStrength" type="number" min=".01" max=".8" step=".01" value=".12"></div>
+        <div class="row"><button id="sculptUndo">Undo stroke</button><button id="sculptClear">Clear sculpt</button><span id="sculptCount" class="badge">0 strokes</span></div>
+        <div class="source">Drag on terrain in Raise/Lower mode. Soft radial falloff; procedural base remains reversible.</div>
+      </div>
+    </div>
+
+    <div id="editPanel" class="section" hidden>
+      <h2>Inline 3D editor · shared ToolBox layer</h2>
+      <div class="row">
+        <button id="snap" class="active">Snap 0.05 / 15°</button>
+      </div>
+      <div class="source">Object menu: ✥ move · ⟳ rotate · −/+ uniform size · ⬓ drop · ⊹ world/local · ✕ close · S = free scale gizmo</div>
+      <div class="row" style="margin-top:6px">
+        <button id="addActor" disabled>Add Caveman</button>
+        <button id="addProp" disabled>Add Boulder</button>
+        <button id="remove" disabled>Remove selected</button>
+      </div>
+      <div id="pick">Click actor or landmark to select.</div>
+    </div>
+
+    <div id="savePanel" class="section" hidden>
+      <h2>Scene document</h2>
+      <div class="row">
+        <button id="save">Save</button>
+        <button id="reload">Reload saved</button>
+        <button id="resetScene">Reset fixture</button>
+      </div>
+      <div class="row" style="margin-top:6px">
+        <button id="exportDoc">Copy JSON</button>
+        <button id="importDoc">Import JSON</button>
+      </div>
+      <div id="saveState" class="source">No local save yet.</div>
+      <div id="doc"></div>
+    </div>
+
+    <div class="section">
+      <h2>Owner boundaries</h2>
+      <div class="source">
+        <b>Terrain donor:</b> ZyFou/ProceduralTerrains@f58a8ddb81d1fbb526a41282a9a7e9c05c2d2070 · MIT<br>
+        <b>Scene edit owner:</b> ToolBox <code>lib/edit-layer.js</code> · accepted S7 base c97b3537… · R3 uniform-scale candidate c15a200b…<br>
+        <b>Resident donor:</b> Resident Atlas Caveman · Rig_Medium · Melee_Unarmed_Idle<br>
+        <b>WorldBuilder owns:</b> terrain settings + sculpt strokes + source references + transforms
+      </div>
+    </div>
+    <div id="selftest" class="section"></div>
+  </aside>
+  <main id="stage">
+    <div id="status">loading engine…</div>
+    <div id="hint"><span>Source isolation must be reviewed before the composed scene unlocks.</span></div>
+    <div id="objmenu" hidden>
+      <button data-m="translate" title="Move (g)">✥</button>
+      <button data-m="rotate" title="Rotate (r)">⟳</button>
+      <span class="scale-pair" title="Uniform size · S keeps the free scale gizmo"><button data-m="scale-down" title="Smaller ×0.8">−</button><button data-m="scale-up" title="Larger ×1.25">+</button></span>
+      <button data-m="floor" title="Drop onto the visible surface below">⬓</button>
+      <button data-m="space" title="World / local axes">⊹</button>
+      <button data-m="close" title="Clear selection (Esc)">✕</button>
+    </div>
+  </main>
+</div>
+
+<script type="importmap">
+{"imports":{
+  "three":"https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+  "three/addons/":"https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
+}}
+</script>
+<script type="module">
+/*
+  WB2-TERRAIN-SCULPT-01
+  Reuse seams:
+  - ZyFou/ProceduralTerrains cpuNoise.js + seedDomain.js subset, pinned f58a8d... (MIT).
+  - Shared ToolBox lib/edit-layer.js, exact donor from Resident Atlas S7, itself extracted from S21/S22.
+  - KFB Resident Atlas Caveman scene contract: exact actor, Rig_Medium, Melee_Unarmed_Idle,
+    fit height 2.2, evaluate pose before ground contact.
+  No model or animation bytes are embedded in the scene document. Terrain sculpt persists compact stroke data over the reversible procedural base.
+*/
+/*
+ * Third-party notice for the adapted ProceduralTerrains subset above/below.
+ * Source: ZyFou/ProceduralTerrains@f58a8ddb81d1fbb526a41282a9a7e9c05c2d2070
+ *
+ * MIT License
+ * 
+ * Copyright (c) 2026 ZyFou
+ * 
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, 
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ * 
+ * The above copyright notice and this permission notice shall be included in all
+ * copies or substantial portions of the Software.
+ * 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+ * SOFTWARE.
+ * 
+ */
+import * as THREE from 'three';
+import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
+import { TransformControls } from 'three/addons/controls/TransformControls.js';
+/* BEGIN BUNDLED TOOLBOX EDIT LAYER · blob c15a200ba8615d55f9d3ae26616e0a8ceba8dc01 */
+/* KFB · Editor-Schicht
+   Zweiter Einbau des Mini-Editors aus `KayKit_Room_Study_S21.html`. Genau dafür sieht
+   docs/EDITOR_LAYER.md vor, dass aus dem Block eine Bibliothek wird — „nicht vorher: eine
+   Bibliothek aus einem einzigen Anwendungsfall ist geraten, nicht abgeleitet."
+
+   Übernommen und nicht neu erfunden:
+   · Auswahl auf `pointerup` mit 4-px-Schwelle. Auf `pointerdown` klaut der Raycast die ersten
+     Frames jedes Orbit-Drags — und, hier teurer: ein Anfasser-Pfeil steht neben dem Objekt in
+     der LUFT, der Strahl trifft dort nichts, und „nichts getroffen" löste die Auswahl. Der
+     Anfasser verschwand im Moment des Zugreifens.
+   · Picking nur auf SICHTBARES. three.js raycastet auch unsichtbare Objekte.
+   · Ein Werkzeugmenü AM OBJEKT, höchstens sechs Felder, jedes eine Geste.
+   · Raster beim Verschieben und Drehen.
+   · Zwei Reichweiten, nie mehr: Einzelteil und Bedeutungsgruppe.
+
+   Bewusst abweichend vom Raum-Standard: Rasterschritt 0,05 statt 0,1. Dort ist die Bezugsgröße
+   ein Raummodul von 4 Einheiten, hier eine Figur von rund 2,3 — 0,1 wären 4 % der Figurenhöhe
+   und damit für ein Mikrofon in der Hand zu grob. Die Winkelrasterung bleibt bei 15°.
+
+   EIN Anfasser für alles. Wer ihn braucht (Puppe, Bone-Posing), LEIHT ihn sich über `borrow`.
+   Zwei TransformControls auf demselben Canvas erzeugen genau die Klasse von Fehlern, die diese
+   Datei beseitigen soll. */
+
+
+const _b = new THREE.Box3();
+const _v = new THREE.Vector3();
+
+function makeEditLayer(viewer, canvas, opts = {}) {
+  const getRoot = opts.getRoot || (() => null);
+  const recordOf = opts.recordOf || ((n) => n.userData.entry);
+  const groupOf = opts.groupOf || (() => null);
+  const menu = opts.menu || null;
+
+  const gizmo = new TransformControls(viewer.camera, canvas);
+  const helper = gizmo.getHelper ? gizmo.getHelper() : gizmo;
+  helper.visible = false;
+  viewer.scene.add(helper);
+  const pivot = new THREE.Object3D();
+  pivot.name = 'edit-pivot';
+  viewer.scene.add(pivot);
+  gizmo.addEventListener('dragging-changed', (e) => { viewer.controls.enabled = !e.value; });
+
+  const listeners = new Set();
+  const claims = [];
+  const ray = new THREE.Raycaster();
+  const ndc = new THREE.Vector2();
+  let on = false, snap = true, scope = 'teil', mode = 'translate';
+  let sel = [], borrowed = null, lastM = new THREE.Matrix4(), downAt = null;
+
+  const notify = () => listeners.forEach((f) => f());
+  const applySnap = () => {
+    gizmo.setTranslationSnap(snap ? (opts.gridStep ?? 0.05) : null);
+    gizmo.setRotationSnap(snap ? THREE.MathUtils.degToRad(opts.angleStep ?? 15) : null);
+  };
+  applySnap();
+
+  function collectVisible(o, out) {
+    if (!o.visible) return out;
+    if (o.isMesh || o.isSkinnedMesh) out.push(o);
+    for (const c of o.children) collectVisible(c, out);
+    return out;
+  }
+  function nodeOf(obj) {
+    let o = obj;
+    while (o && !recordOf(o)) o = o.parent;
+    return o || null;
+  }
+
+  const E = {
+    gizmo, helper,
+    get on() { return on; },
+    get mode() { return mode; },
+    get scope() { return scope; },
+    get snap() { return snap; },
+    get selection() { return sel.slice(); },
+    get node() { return sel.length === 1 ? sel[0] : null; },
+    onChange(f) { listeners.add(f); },
+    /* Ein Mitbewerber um denselben Klick meldet sich hier an statt einen eigenen Listener in der
+       Capture-Phase aufzumachen. Erste Funktion, die `true` liefert, hat den Klick. */
+    addClaim(f) { claims.push(f); },
+    busy() { return !!(gizmo.dragging || gizmo.axis); },
+
+    setOn(v) {
+      on = v;
+      if (!on) E.clear();
+      helper.visible = on && (sel.length > 0 || !!borrowed);
+      notify();
+    },
+    setMode(m) {
+      mode = m;
+      gizmo.setMode(m);
+      notify();
+    },
+    setScope(s) { scope = s; E.clear(); notify(); },
+    setSnap(v) { snap = v; applySnap(); notify(); },
+
+    /* Uniforme Größenänderung als schnelle Autoren-Geste. Der freie Scale-Gizmo bleibt separat
+       erhalten. Standard 1.25 / 0.8 sind inverse Faktoren: kleiner → größer kehrt exakt zur
+       Ausgangsgröße zurück. Nicht-uniforme Proportionen bleiben erhalten, weil alle Achsen mit
+       demselben Faktor multipliziert werden. */
+    scaleBy(factor) {
+      const requested = Number(factor);
+      if (!Number.isFinite(requested) || requested <= 0 || !sel.length) return [];
+      const minScale = Math.max(1e-4, Number(opts.minScale ?? 0.05));
+      const maxScale = Math.max(minScale, Number(opts.maxScale ?? 20));
+      const out = [];
+      for (const x of sel) {
+        const before = x.scale.clone();
+        const abs = [Math.abs(before.x), Math.abs(before.y), Math.abs(before.z)];
+        const lo = Math.max(1e-6, Math.min(...abs));
+        const hi = Math.max(...abs);
+        let applied = requested;
+        if (requested < 1 && lo * requested < minScale) applied = minScale / lo;
+        if (requested > 1 && hi * requested > maxScale) applied = maxScale / hi;
+        x.scale.multiplyScalar(applied);
+        x.updateMatrixWorld(true);
+        out.push({
+          id: recordOf(x)?.id,
+          factor: +applied.toFixed(6),
+          before: before.toArray().map((v) => +v.toFixed(4)),
+          after: x.scale.toArray().map((v) => +v.toFixed(4))
+        });
+      }
+      opts.onChange?.(sel);
+      E.follow();
+      notify();
+      return out;
+    },
+
+    /* ---- Leihgabe: Puppe und Bone-Posing hängen an DEMSELBEN Anfasser ---- */
+    borrow(obj, m, onDrag, label) {
+      E.clear(true);
+      borrowed = { obj, onDrag, label: label || obj.name };
+      mode = m;
+      gizmo.setMode(m);
+      gizmo.attach(obj);
+      helper.visible = true;
+      notify();
+      return borrowed;
+    },
+    release() {
+      borrowed = null;
+      gizmo.detach();
+      helper.visible = false;
+      notify();
+    },
+    get borrowed() { return borrowed; },
+
+    select(node) {
+      borrowed = null;
+      const rec = node && recordOf(node);
+      const root = getRoot();
+      sel = !rec ? []
+        : (scope === 'gruppe' && groupOf(rec) && root)
+          ? root.children.filter((x) => x.visible && recordOf(x) && groupOf(recordOf(x)) === groupOf(rec))
+          : [node];
+      if (!sel.length) { gizmo.detach(); helper.visible = false; notify(); return null; }
+      if (sel.length === 1) gizmo.attach(sel[0]);
+      else {
+        _b.makeEmpty();
+        for (const x of sel) _b.expandByObject(x);
+        pivot.position.copy(_b.getCenter(_v));
+        pivot.rotation.set(0, 0, 0);
+        pivot.updateMatrixWorld(true);
+        lastM.copy(pivot.matrixWorld).invert();
+        gizmo.attach(pivot);
+      }
+      gizmo.setMode(mode);
+      helper.visible = true;
+      E.follow();
+      notify();
+      return sel[0];
+    },
+    clear(keepMenu) {
+      sel = [];
+      borrowed = null;
+      gizmo.detach();
+      helper.visible = false;
+      if (menu && !keepMenu) menu.hidden = true;
+      notify();
+    },
+
+    /* Absetzen: senkrecht nach unten gegen alles Sichtbare, das NICHT zur Auswahl gehört. Ohne
+       Treffer ist der Boden die Fläche — das ist eine Aussage, keine Notlösung. */
+    drop() {
+      const root = getRoot();
+      const out = [];
+      for (const x of sel) {
+        if (x.userData.attachedTo) { out.push({ id: recordOf(x)?.id, refused: `hängt an ${x.userData.attachedTo}` }); continue; }
+        _b.setFromObject(x);
+        const c = _b.getCenter(new THREE.Vector3());
+        let y = 0, onWhat = 'Boden y=0';
+        if (root) {
+          const targets = collectVisible(root, []).filter((m) => { let p = m; while (p) { if (p === x) return false; p = p.parent; } return true; });
+          const r = new THREE.Raycaster(new THREE.Vector3(c.x, _b.min.y - 0.001, c.z), new THREE.Vector3(0, -1, 0), 0, 400);
+          const hit = r.intersectObjects(targets, false)[0];
+          if (hit) { y = hit.point.y; onWhat = hit.object.name || 'unbenannte Fläche'; }
+        }
+        const moved = y - _b.min.y;
+        x.position.y += moved;
+        x.updateMatrixWorld(true);
+        out.push({ id: recordOf(x)?.id, moved: +moved.toFixed(4), to: +y.toFixed(4), on: onWhat });
+      }
+      if (sel.length) { opts.onChange?.(sel); E.follow(); notify(); }
+      return out;
+    },
+
+    /* Das Menü folgt der Auswahl beim Drehen der Kamera — deshalb pro Frame, nicht pro Klick. */
+    follow() {
+      if (!menu) return;
+      const target = borrowed ? [borrowed.obj] : sel;
+      if (!on || !target.length) { menu.hidden = true; return; }
+      _b.makeEmpty();
+      for (const x of target) _b.expandByObject(x);
+      if (_b.isEmpty()) { menu.hidden = true; return; }
+      const c = _b.getCenter(_v).clone();
+      const p = new THREE.Vector3(c.x, _b.max.y, c.z).project(viewer.camera);
+      const r = canvas.getBoundingClientRect();
+      const host = menu.offsetParent ? menu.offsetParent.getBoundingClientRect() : r;
+      menu.hidden = false;
+      menu.style.left = (r.left - host.left + (p.x * 0.5 + 0.5) * r.width) + 'px';
+      menu.style.top = Math.max(4, r.top - host.top + (-p.y * 0.5 + 0.5) * r.height - 42) + 'px';
+    }
+  };
+
+  gizmo.addEventListener('objectChange', () => {
+    if (borrowed) { borrowed.onDrag?.(); E.follow(); notify(); return; }
+    if (sel.length > 1) {
+      pivot.updateMatrixWorld(true);
+      const delta = new THREE.Matrix4().multiplyMatrices(pivot.matrixWorld, lastM);
+      for (const x of sel) { x.applyMatrix4(delta); x.updateMatrixWorld(true); }
+      lastM.copy(pivot.matrixWorld).invert();
+    }
+    opts.onChange?.(sel);
+    E.follow();
+    notify();
+  });
+
+  canvas.addEventListener('pointerdown', (e) => { downAt = [e.clientX, e.clientY]; });
+  canvas.addEventListener('pointerup', (e) => {
+    const d = downAt;
+    downAt = null;
+    if (!d) return;
+    if (Math.hypot(e.clientX - d[0], e.clientY - d[1]) > 4) return; // Orbit-Drag ist keine Auswahl
+    if (gizmo.dragging || gizmo.axis) return;                       // Griff an der eigenen Achse auch nicht
+    const r = canvas.getBoundingClientRect();
+    ndc.set(((e.clientX - r.left) / r.width) * 2 - 1, -((e.clientY - r.top) / r.height) * 2 + 1);
+    ray.setFromCamera(ndc, viewer.camera);
+    for (const c of claims) if (c(ray, e)) return;
+    const root = getRoot();
+    const hit = root ? ray.intersectObjects(collectVisible(root, []), false)[0] : null;
+    const node = hit ? nodeOf(hit.object) : null;
+    /* Auch bei AUSGESCHALTETEM Editor wird gemeldet, was getroffen wurde — die Auskunftskarte
+       (Pfad, Rolle, Maße) ist kein Editierwerkzeug und darf nicht am Editor hängen. */
+    if (!on) { opts.onPick?.(node, node ? recordOf(node) : null); return; }
+    if (!node) { E.clear(); opts.onPick?.(null, null); return; }
+    E.select(node);
+    opts.onPick?.(node, recordOf(node));
+  });
+
+  if (menu) menu.addEventListener('click', (e) => {
+    const m = e.target.closest('button')?.dataset.m;
+    if (!m) return;
+    if (m === 'translate' || m === 'rotate' || m === 'scale') E.setMode(m);
+    else if (m === 'scale-down') E.scaleBy(1 / (opts.scaleFactor ?? 1.25));
+    else if (m === 'scale-up') E.scaleBy(opts.scaleFactor ?? 1.25);
+    else if (m === 'floor') opts.onMenu?.('floor');
+    else if (m === 'scope') E.setScope(scope === 'teil' ? 'gruppe' : 'teil');
+    else if (m === 'close') E.clear();
+    else opts.onMenu?.(m);
+  });
+
+  return E;
+}
+
+/* END BUNDLED TOOLBOX EDIT LAYER */
+/* BEGIN BUNDLED WORLDBUILDER TERRAIN SCULPT · blob 182f7c42b709a00547a16cfe0040d5d636bdb680 */
+/* KFB WorldBuilder · WB2 continuous terrain sculpt layer
+   Owner: WorldBuilder terrain authoring.
+   Scope: deterministic additive heightfield strokes only.
+   No object picking, TransformControls, voxel/hex topology, CSG or runtime ownership. */
+
+const SCULPT_VERSION = 1;
+const SCULPT_FALLOFF = 'smooth-c2';
+
+const finite = (v, fallback = 0) => Number.isFinite(Number(v)) ? Number(v) : fallback;
+const clamp = (v, lo, hi) => Math.max(lo, Math.min(hi, v));
+
+function ensureSculpt(terrain) {
+  if (!terrain || typeof terrain !== 'object') throw new Error('terrain state required');
+  if (!terrain.sculpt || typeof terrain.sculpt !== 'object') {
+    terrain.sculpt = { version: SCULPT_VERSION, strokes: [] };
+  }
+  terrain.sculpt.version = SCULPT_VERSION;
+  if (!Array.isArray(terrain.sculpt.strokes)) terrain.sculpt.strokes = [];
+  terrain.sculpt.strokes = terrain.sculpt.strokes.map(normalizeStroke).filter(Boolean);
+  return terrain.sculpt;
+}
+
+function brushWeight(distance, radius) {
+  const r = Math.max(1e-6, finite(radius, 1));
+  const d = Math.max(0, finite(distance, 0));
+  if (d >= r) return 0;
+  const t = clamp(d / r, 0, 1);
+  // 1 - quintic smoothstep: value, first derivative and second derivative
+  // all meet the zero outside-kernel continuously at t=1 (C2 boundary).
+  return 1 - t * t * t * (t * (t * 6 - 15) + 10);
+}
+
+function makeStroke(mode, radius, strength) {
+  const m = mode === 'lower' ? 'lower' : 'raise';
+  return {
+    mode: m,
+    radius: Math.max(0.05, finite(radius, 1.25)),
+    strength: Math.max(0.001, finite(strength, 0.12)),
+    falloff: SCULPT_FALLOFF,
+    points: []
+  };
+}
+
+function normalizeStroke(input) {
+  if (!input || typeof input !== 'object') return null;
+  const stroke = makeStroke(input.mode, input.radius, input.strength);
+  if (Array.isArray(input.points)) {
+    for (const p of input.points) {
+      if (!Array.isArray(p) || p.length < 2) continue;
+      const x = Number(p[0]), z = Number(p[1]);
+      if (Number.isFinite(x) && Number.isFinite(z)) stroke.points.push([+x.toFixed(4), +z.toFixed(4)]);
+    }
+  }
+  return stroke;
+}
+
+function pointSpacing(radius, gridStep = 0.225) {
+  return Math.max(Math.max(0.01, finite(gridStep, 0.225)) * 0.5, Math.max(0.05, finite(radius, 1)) * 0.18);
+}
+
+function addStrokePoint(stroke, x, z, minSpacing = 0) {
+  if (!stroke || !Array.isArray(stroke.points)) return false;
+  const px = finite(x, NaN), pz = finite(z, NaN);
+  if (!Number.isFinite(px) || !Number.isFinite(pz)) return false;
+  const last = stroke.points[stroke.points.length - 1];
+  if (last && Math.hypot(px - last[0], pz - last[1]) < Math.max(0, finite(minSpacing, 0))) return false;
+  stroke.points.push([+px.toFixed(4), +pz.toFixed(4)]);
+  return true;
+}
+
+function dabDeltaAt(x, z, mode, cx, cz, radius, strength) {
+  const d = Math.hypot(finite(x) - finite(cx), finite(z) - finite(cz));
+  const w = brushWeight(d, radius);
+  if (!w) return 0;
+  const sign = mode === 'lower' ? -1 : 1;
+  return sign * Math.max(0, finite(strength, 0)) * w;
+}
+
+function strokeDeltaAt(x, z, stroke) {
+  if (!stroke || !Array.isArray(stroke.points)) return 0;
+  let sum = 0;
+  for (const p of stroke.points) {
+    sum += dabDeltaAt(x, z, stroke.mode, p[0], p[1], stroke.radius, stroke.strength);
+  }
+  return sum;
+}
+
+function sculptDeltaAt(x, z, sculpt) {
+  if (!sculpt || !Array.isArray(sculpt.strokes)) return 0;
+  let sum = 0;
+  for (const stroke of sculpt.strokes) sum += strokeDeltaAt(x, z, stroke);
+  return sum;
+}
+
+function applyDabToGeometry(geometry, mode, cx, cz, radius, strength) {
+  const pos = geometry?.attributes?.position;
+  if (!pos) return 0;
+  let changed = 0;
+  for (let i = 0; i < pos.count; i++) {
+    const x = pos.getX(i), z = pos.getZ(i);
+    const dy = dabDeltaAt(x, z, mode, cx, cz, radius, strength);
+    if (!dy) continue;
+    pos.setY(i, pos.getY(i) + dy);
+    changed++;
+  }
+  if (changed) pos.needsUpdate = true;
+  return changed;
+}
+
+function strokeCount(sculpt) {
+  return Array.isArray(sculpt?.strokes) ? sculpt.strokes.length : 0;
+}
+
+/* END BUNDLED WORLDBUILDER TERRAIN SCULPT */
+
+const ASSET_COMMIT='891eadf01e218f5fc21387e64cea1fec8332c5b6';
+const ANIM_COMMIT='aa16a777a970f23d3f11fb3c23dc40718b04fa88';
+const ZYFOU_COMMIT='f58a8ddb81d1fbb526a41282a9a7e9c05c2d2070';
+const STORAGE_KEY='kfb-wb2-terrain-sculpt-01';
+const ACTOR={
+  id:'resident-caveman',
+  kind:'resident',
+  name:'Caveman',
+  residentId:'caveman',
+  rigFamily:'Rig_Medium',
+  path:'media/3D_Assets/KayKit_Mystery_Series6/8 - February 2025 - Caveman/characters/Caveman.glb',
+  commit:ASSET_COMMIT,
+  fit:{height:2.2},
+  texture:{
+    path:'media/3D_Assets/KayKit_Mystery_Series6/8 - February 2025 - Caveman/assets/gltf/caveman_texture.png',
+    commit:ASSET_COMMIT
+  },
+  clip:{
+    name:'Melee_Unarmed_Idle',
+    path:'media/3D_Assets/KayKit_Character_Animations_1.1/Animations/gltf/Rig_Medium/Rig_Medium_CombatMelee.glb',
+    commit:ANIM_COMMIT
+  }
+};
+const PROP={
+  id:'landmark-boulder',
+  kind:'prop',
+  name:'Boulder · Rock_3_E_Color1',
+  path:'media/3D_Assets/KayKit_Forest_Nature_Pack_1.0_FREE/Assets/gltf/Rock_3_E_Color1.gltf',
+  commit:ASSET_COMMIT,
+  fit:{max:1.35}
+};
+const DEFAULT_DOC={
+  format:'kfb-worldbuilder-scene',
+  version:1,
+  id:'wb2-terrain-sculpt-01',
+  terrain:{seed:43129,height:2.6,macroScale:3.2,detail:0.55,sculpt:{version:1,strokes:[]}},
+  sources:{
+    terrain:{repo:'ZyFou/ProceduralTerrains',commit:ZYFOU_COMMIT,license:'MIT',files:['src/engine/terrain/noise/cpuNoise.js','src/engine/terrain/noise/seedDomain.js']},
+    terrainSculpt:{owner:'KFB WorldBuilder',module:'tools/KFB-ToolBox/worldbuilder/wb2-terrain-sculpt-01/terrain-sculpt.js',version:1,interaction:['raise','lower','radius','strength','undo','clear','stroke-save-reload']},
+    sceneEdit:{owner:'KFB ToolBox',module:'tools/KFB-ToolBox/lib/edit-layer.js',baseDonorBlob:'c97b3537f71e939176f3ae5ce7ae83feabb7918f',moduleBlob:'c15a200ba8615d55f9d3ae26616e0a8ceba8dc01',lineage:['Dungeon Room Study S21/S22','Resident Atlas S7','ToolBox R3 uniform-scale extension'],interaction:['object-menu','pointerup-select','translate','rotate','scale-gizmo','uniform-scale-down','uniform-scale-up','drop','world-local','snap']},
+    resident:{owner:'KFB Resident Atlas',residentId:'caveman',donorPath:'tools/resident_atlas/scenes/caveman-cave-camp.json'}
+  },
+  objects:[
+    {
+      id:ACTOR.id,kind:ACTOR.kind,name:ACTOR.name,
+      source:{path:ACTOR.path,commit:ACTOR.commit},
+      resident:{id:ACTOR.residentId,rigFamily:ACTOR.rigFamily,texture:{path:ACTOR.texture.path,commit:ACTOR.texture.commit},clip:{name:ACTOR.clip.name,path:ACTOR.clip.path,commit:ACTOR.clip.commit}},
+      transform:{position:[-2.2,null,0.2],rotation:[0,0.35,0],scale:[1,1,1]}
+    },
+    {
+      id:PROP.id,kind:PROP.kind,name:PROP.name,
+      source:{path:PROP.path,commit:PROP.commit},
+      transform:{position:[2.2,null,-0.6],rotation:[0,-0.45,0],scale:[1,1,1]}
+    }
+  ]
+};
+const deepClone=v=>JSON.parse(JSON.stringify(v));
+let sceneDoc=deepClone(DEFAULT_DOC);
+const E=id=>document.getElementById(id);
+const enc=p=>p.split('/').map(encodeURIComponent).join('/');
+const raw=(p,c)=>'https://raw.githubusercontent.com/georg-doc/kayfabizarro/'+c+'/'+enc(p);
+const status=(t,k='')=>{E('status').textContent=t;E('status').className=k};
+const near=(a,b,e=1e-3)=>Math.abs(a-b)<=e;
+
+/* ---- ZyFou/ProceduralTerrains pinned MIT subset: cpuNoise.js + seedDomain.js ---- */
+function fract(v){return v-Math.floor(v)}
+function hash12(px,py){
+  let p3x=fract(px*0.1031),p3y=fract(py*0.1031),p3z=p3x;
+  const d=p3x*(p3y+33.33)+p3y*(p3z+33.33)+p3z*(p3x+33.33);
+  p3x+=d;p3y+=d;
+  return fract((p3x+p3y)*(p3z+d));
+}
+function vnoise2(px,py){
+  const ix=Math.floor(px),iy=Math.floor(py),fx=px-ix,fy=py-iy;
+  const ux=fx*fx*fx*(fx*(fx*6-15)+10),uy=fy*fy*fy*(fy*(fy*6-15)+10);
+  const a=hash12(ix,iy),b=hash12(ix+1,iy),c=hash12(ix,iy+1),d=hash12(ix+1,iy+1);
+  const top=a+(b-a)*ux,bot=c+(d-c)*ux;
+  return top+(bot-top)*uy;
+}
+function rot2(x,y){return [0.80*x+0.60*y,-0.60*x+0.80*y]}
+function fbm2(px,py,octaves,pers,lac){
+  let amp=.5,sum=0,norm=0,x=px,y=py;
+  const n=Math.max(1,Math.min(9,octaves|0));
+  for(let i=0;i<n;i++){
+    sum+=amp*vnoise2(x,y);norm+=amp;amp*=pers;
+    const r=rot2(x,y);x=r[0]*lac;y=r[1]*lac;
+  }
+  return sum/Math.max(norm,1e-4);
+}
+function seedDomainOffset(value){
+  const numeric=Number(value);if(!Number.isFinite(numeric))return 0;
+  const seed=Math.trunc(numeric);if(seed===0)return 0;
+  let hash=seed>>>0;
+  hash=Math.imul(hash^(hash>>>16),0x7feb352d);
+  hash=Math.imul(hash^(hash>>>15),0x846ca68b);
+  hash=(hash^(hash>>>16))>>>0;
+  return Math.fround((hash/0x100000000)*2048-1024);
+}
+/* ---- end pinned donor subset ---- */
+
+const renderer=new THREE.WebGLRenderer({antialias:true});
+renderer.setPixelRatio(Math.min(devicePixelRatio,2));
+renderer.outputColorSpace=THREE.SRGBColorSpace;
+renderer.shadowMap.enabled=true;
+E('stage').prepend(renderer.domElement);
+
+const scene=new THREE.Scene();
+scene.background=new THREE.Color(0x8e887a);
+scene.fog=new THREE.Fog(0x8e887a,22,45);
+const camera=new THREE.PerspectiveCamera(42,1,.05,100);
+camera.position.set(9,7,11);
+const controls=new OrbitControls(camera,renderer.domElement);
+controls.enableDamping=true;
+controls.target.set(0,1,0);
+controls.maxPolarAngle=Math.PI*.49;
+controls.minDistance=2;
+controls.maxDistance=32;
+scene.add(new THREE.HemisphereLight(0xfff2d6,0x323832,2.4));
+const sun=new THREE.DirectionalLight(0xffe6b3,2.8);
+sun.position.set(8,13,7);sun.castShadow=true;scene.add(sun);
+const grid=new THREE.GridHelper(12,24,0xe3b466,0x6a6253);
+grid.position.y=.01;scene.add(grid);
+
+const worldRoot=new THREE.Group();scene.add(worldRoot);
+const previewRoot=new THREE.Group();scene.add(previewRoot);
+const loader=new GLTFLoader();
+let terrain=null,mode='actor',selected=null,currentMixer=null,clock=new THREE.Clock(),actorSourceReady=false,propSourceReady=false,sceneLoadToken=0,gizmoSpace='world',sculptMode='off',sculptStroke=null,sculptPointerId=null;
+const sceneObjects=new Map();
+const viewer={camera,scene,controls};
+
+function recordForNode(node){
+  const id=node&&node.userData&&node.userData.sceneObjectId;
+  return id?sceneDoc.objects.find(o=>o.id===id)||null:null;
+}
+function setSelectionUi(node,rec){
+  selected=node||null;
+  const r=rec||recordForNode(node);
+  if(!selected)E('pick').textContent='Click actor or landmark to select.';
+  else E('pick').innerHTML='<b>'+r.name+'</b> · '+r.kind+' · '+EDIT.mode+' · '+gizmoSpace+' axes';
+  refreshAddButtons();
+}
+function syncEditorUi(){
+  if(!E('objmenu'))return;
+  const active=EDIT.selection;
+  if(!active.length&&selected)setSelectionUi(null);
+  else if(active.length===1&&selected!==active[0])setSelectionUi(active[0],recordForNode(active[0]));
+  E('objmenu').querySelectorAll('button').forEach(btn=>{
+    const m=btn.dataset.m;
+    btn.classList.toggle('active',m===EDIT.mode||(m==='space'&&gizmoSpace==='local'));
+  });
+  E('snap').classList.toggle('active',EDIT.snap);
+  if(selected)setSelectionUi(selected);
+}
+function onEditorPick(node,rec){setSelectionUi(node,rec);syncEditorUi()}
+function onEditorChange(nodes){
+  for(const node of nodes)updateRecordFromRoot(node);
+  if(nodes.length===1)selected=nodes[0];
+  refreshDoc();
+  syncEditorUi();
+}
+function onEditorMenu(action){
+  if(action==='floor'){
+    const result=EDIT.drop();
+    const msg=result.length?result.map(r=>r.refused?(r.id+': '+r.refused):(r.id+': dropped '+r.moved+' to '+r.on)).join(' · '):'nothing selected';
+    status(msg,result.length?'ok':'');
+  }
+  if(action==='space'){
+    gizmoSpace=gizmoSpace==='world'?'local':'world';
+    EDIT.gizmo.setSpace(gizmoSpace);
+    syncEditorUi();
+    status('gizmo axes · '+gizmoSpace,'ok');
+  }
+}
+const EDIT=makeEditLayer(viewer,renderer.domElement,{
+  getRoot:()=>worldRoot,
+  recordOf:recordForNode,
+  menu:E('objmenu'),
+  gridStep:.05,
+  angleStep:15,
+  onPick:onEditorPick,
+  onChange:onEditorChange,
+  onMenu:onEditorMenu
+});
+EDIT.onChange(syncEditorUi);
+EDIT.setOn(false);
+
+const sculptRay=new THREE.Raycaster();
+const sculptNdc=new THREE.Vector2();
+const sculptCursor=new THREE.Mesh(
+  new THREE.RingGeometry(.96,1.04,64),
+  new THREE.MeshBasicMaterial({color:0xffd27a,transparent:true,opacity:.9,side:THREE.DoubleSide,depthTest:false})
+);
+sculptCursor.rotation.x=-Math.PI/2;
+sculptCursor.visible=false;
+sculptCursor.renderOrder=50;
+scene.add(sculptCursor);
+
+function sculptState(){return ensureSculpt(sceneDoc.terrain)}
+function brushRadius(){return Math.max(.45,Math.min(5,Number(E('sculptRadius').value)||1.25))}
+function brushStrength(){return Math.max(.01,Math.min(.8,Number(E('sculptStrength').value)||.12))}
+function updateSculptUi(){
+  const s=sculptState();
+  E('sculptObject').classList.toggle('active',sculptMode==='off');
+  E('sculptRaise').classList.toggle('active',sculptMode==='raise');
+  E('sculptLower').classList.toggle('active',sculptMode==='lower');
+  E('sculptCount').textContent=strokeCount(s)+' strokes';
+}
+function setSculptMode(next){
+  sculptMode=next==='raise'||next==='lower'?next:'off';
+  sculptStroke=null;sculptPointerId=null;sculptCursor.visible=false;
+  if(sculptMode==='off'){
+    if(mode==='scene')EDIT.setOn(true);
+  }else{
+    EDIT.clear();setSelectionUi(null);EDIT.setOn(false);
+  }
+  controls.enabled=true;
+  updateSculptUi();
+}
+function terrainHitFromEvent(e){
+  if(!terrain||mode!=='scene')return null;
+  const r=renderer.domElement.getBoundingClientRect();
+  sculptNdc.set(((e.clientX-r.left)/r.width)*2-1,-((e.clientY-r.top)/r.height)*2+1);
+  sculptRay.setFromCamera(sculptNdc,camera);
+  return sculptRay.intersectObject(terrain,false)[0]||null;
+}
+function showBrushAt(hit){
+  if(!hit||sculptMode==='off'){sculptCursor.visible=false;return}
+  sculptCursor.visible=true;
+  sculptCursor.position.copy(hit.point);sculptCursor.position.y+=.035;
+  sculptCursor.scale.setScalar(brushRadius());
+}
+function refreshTerrainAppearance(){
+  if(!terrain)return;
+  const g=terrain.geometry,pos=g.attributes.position,col=g.attributes.color;
+  const low=new THREE.Color(0x65705b),mid=new THREE.Color(0x7d7659),high=new THREE.Color(0xa58e67),cc=new THREE.Color();
+  for(let i=0;i<pos.count;i++){
+    const y=pos.getY(i);
+    const q=Math.max(0,Math.min(1,(y/Math.max(sceneDoc.terrain.height,1)+.5)));
+    if(q<.5)cc.copy(low).lerp(mid,q*2);else cc.copy(mid).lerp(high,(q-.5)*2);
+    col.setXYZ(i,cc.r,cc.g,cc.b);
+  }
+  col.needsUpdate=true;
+  g.computeVertexNormals();
+  g.attributes.normal.needsUpdate=true;
+}
+function applyCurrentSculptPoint(hit){
+  if(!sculptStroke||!hit||!terrain)return false;
+  const spacing=pointSpacing(sculptStroke.radius,18/80);
+  if(!addStrokePoint(sculptStroke,hit.point.x,hit.point.z,spacing))return false;
+  applyDabToGeometry(terrain.geometry,sculptStroke.mode,hit.point.x,hit.point.z,sculptStroke.radius,sculptStroke.strength);
+  refreshTerrainAppearance();showBrushAt(hit);
+  return true;
+}
+function beginSculpt(e){
+  if(sculptMode==='off'||mode!=='scene')return;
+  const hit=terrainHitFromEvent(e);if(!hit)return;
+  e.preventDefault();e.stopImmediatePropagation();
+  sculptPointerId=e.pointerId;
+  try{renderer.domElement.setPointerCapture(e.pointerId)}catch{}
+  controls.enabled=false;
+  sculptStroke=makeStroke(sculptMode,brushRadius(),brushStrength());
+  applyCurrentSculptPoint(hit);
+}
+function moveSculpt(e){
+  if(sculptMode==='off'||mode!=='scene')return;
+  const hit=terrainHitFromEvent(e);showBrushAt(hit);
+  if(sculptPointerId===e.pointerId&&sculptStroke&&hit){
+    e.preventDefault();e.stopImmediatePropagation();applyCurrentSculptPoint(hit);
+  }
+}
+function finishSculpt(e,cancel=false){
+  if(sculptPointerId!==e.pointerId)return;
+  e.preventDefault();e.stopImmediatePropagation();
+  try{renderer.domElement.releasePointerCapture(e.pointerId)}catch{}
+  controls.enabled=true;
+  if(cancel){buildTerrain()}
+  else if(sculptStroke&&sculptStroke.points.length){
+    sculptState().strokes.push(sculptStroke);
+    refreshDoc();
+    status(sculptStroke.mode+' sculpt stroke · '+sculptStroke.points.length+' dabs','ok');
+  }
+  sculptStroke=null;sculptPointerId=null;updateSculptUi();
+}
+renderer.domElement.addEventListener('pointerdown',beginSculpt,{capture:true});
+renderer.domElement.addEventListener('pointermove',moveSculpt,{capture:true});
+renderer.domElement.addEventListener('pointerup',(e)=>finishSculpt(e,false),{capture:true});
+renderer.domElement.addEventListener('pointercancel',(e)=>finishSculpt(e,true),{capture:true});
+renderer.domElement.addEventListener('pointerleave',()=>{if(sculptPointerId==null)sculptCursor.visible=false});
+
+function bounds(o,precise=true){o.updateWorldMatrix(true,true);return new THREE.Box3().setFromObject(o,precise)}
+function fitObject(o,fit){
+  const b=bounds(o,false),s=new THREE.Vector3();b.getSize(s);
+  let k=1;
+  if(fit&&fit.height)k=fit.height/Math.max(s.y,1e-6);
+  if(fit&&fit.max)k=fit.max/Math.max(s.x,s.y,s.z,1e-6);
+  o.scale.multiplyScalar(k);o.updateWorldMatrix(true,true);
+}
+function groundModelLocal(model){
+  const b=bounds(model,true);
+  const parentY=model.parent?model.parent.getWorldPosition(new THREE.Vector3()).y:0;
+  if(Number.isFinite(b.min.y)&&Number.isFinite(parentY)){
+    model.position.y+=parentY-b.min.y;
+    model.updateWorldMatrix(true,true);
+  }
+}
+function setCameraForObject(obj){
+  const b=bounds(obj,true),c=b.getCenter(new THREE.Vector3()),s=b.getSize(new THREE.Vector3());
+  const r=Math.max(s.x,s.y,s.z,1);
+  controls.target.copy(c);
+  camera.position.set(c.x+r*2.1,c.y+r*1.15,c.z+r*2.4);
+  controls.update();
+}
+function clearGroup(g){
+  while(g.children.length)g.remove(g.children[0]);
+}
+function disposeTerrain(){
+  if(terrain){worldRoot.remove(terrain);terrain.geometry.dispose();terrain.material.dispose();terrain=null}
+}
+function resetMixer(){
+  if(currentMixer){try{currentMixer.stopAllAction()}catch{}currentMixer=null}
+}
+const explicitTextureCache=new Map();
+async function loadExplicitTexture(path,commit){
+  const url=raw(path,commit);
+  if(!explicitTextureCache.has(url)){
+    explicitTextureCache.set(url,(async()=>{
+      let tex=null;
+      if(typeof fetch==='function'&&typeof createImageBitmap==='function'){
+        try{
+          const response=await fetch(url,{mode:'cors'});
+          if(!response.ok)throw Error('HTTP '+response.status);
+          const bitmap=await createImageBitmap(await response.blob());
+          tex=new THREE.Texture(bitmap);tex.needsUpdate=true;
+        }catch(err){console.warn('explicit texture fetch/ImageBitmap failed; trying TextureLoader',url,err)}
+      }
+      if(!tex){
+        const tl=new THREE.TextureLoader();tl.setCrossOrigin('anonymous');
+        tex=await tl.loadAsync(url);
+      }
+      tex.colorSpace=THREE.SRGBColorSpace;
+      tex.flipY=false;
+      tex.magFilter=THREE.NearestFilter;
+      tex.minFilter=THREE.LinearMipmapLinearFilter;
+      tex.needsUpdate=true;
+      return tex;
+    })());
+  }
+  return explicitTextureCache.get(url);
+}
+async function applyExplicitTexture(node,textureRef){
+  if(!textureRef?.path)return 0;
+  const tex=await loadExplicitTexture(textureRef.path,textureRef.commit||ASSET_COMMIT);
+  let applied=0;
+  node.traverse(o=>{
+    if(!(o.isMesh||o.isSkinnedMesh)||!o.material)return;
+    const wasArray=Array.isArray(o.material);
+    const mats=(wasArray?o.material:[o.material]).filter(Boolean).map(m=>{
+      const n=m.clone();
+      n.map=tex;
+      n.needsUpdate=true;
+      applied++;
+      return n;
+    });
+    if(mats.length)o.material=wasArray?mats:mats[0];
+  });
+  node.userData.sourceTexture=textureRef.path;
+  node.userData.sourceTextureApplied=applied;
+  return applied;
+}
+async function loadActorModel(animated=true){
+  const gltf=await loader.loadAsync(raw(ACTOR.path,ACTOR.commit));
+  const model=gltf.scene;fitObject(model,ACTOR.fit);
+  try{await applyExplicitTexture(model,ACTOR.texture)}
+  catch(err){model.userData.sourceTextureError=String(err?.message||err);console.warn('explicit Caveman texture unavailable in this host',err)}
+  if(animated){
+    const ag=await loader.loadAsync(raw(ACTOR.clip.path,ACTOR.clip.commit));
+    const clip=ag.animations.find(c=>c.name===ACTOR.clip.name);
+    if(!clip)throw Error('Resident clip not found: '+ACTOR.clip.name);
+    currentMixer=new THREE.AnimationMixer(model);
+    currentMixer.clipAction(clip).play();
+    currentMixer.setTime(0);
+    model.userData.clip=clip.name;
+  }
+  groundModelLocal(model);
+  model.traverse(n=>{if(n.isMesh){n.castShadow=true;n.receiveShadow=true}});
+  return model;
+}
+async function loadPropModel(){
+  const gltf=await loader.loadAsync(raw(PROP.path,PROP.commit));
+  const model=gltf.scene;fitObject(model,PROP.fit);groundModelLocal(model);
+  model.traverse(n=>{if(n.isMesh){n.castShadow=true;n.receiveShadow=true}});
+  return model;
+}
+
+function terrainSettingsFromUI(){
+  const sculpt=deepClone(sculptState());
+  return {
+    seed:Math.trunc(Number(E('seed').value)||0),
+    height:Math.max(0,Number(E('height').value)||0),
+    macroScale:Math.max(.25,Number(E('macro').value)||3.2),
+    detail:Math.max(.05,Number(E('detail').value)||.55),
+    sculpt
+  };
+}
+function applyTerrainUI(t){
+  ensureSculpt(t);
+  E('seed').value=t.seed;E('height').value=t.height;E('macro').value=t.macroScale;E('detail').value=t.detail;
+  updateSculptUi();
+}
+function terrainHeightAt(x,z,t=sceneDoc.terrain){
+  const ox=seedDomainOffset(t.seed),oz=seedDomainOffset(t.seed^0x51f15e);
+  const macro=fbm2((x+ox)*(.13/t.macroScale),(z+oz)*(.13/t.macroScale),5,.5,2.0);
+  const fine=fbm2((x-ox*.37)*(.55*t.detail),(z+oz*.29)*(.55*t.detail),3,.5,2.13);
+  const base=(macro-.5)*t.height+(fine-.5)*t.height*.18;
+  return base+sculptDeltaAt(x,z,t.sculpt);
+}
+function terrainSignature(){
+  const pts=[[-4,-4],[-2,3],[0,0],[3,-2],[4,4]];
+  return pts.map(p=>terrainHeightAt(p[0],p[1]).toFixed(3)).join(' · ');
+}
+function buildTerrain(){
+  ensureSculpt(sceneDoc.terrain);
+  disposeTerrain();
+  const g=new THREE.PlaneGeometry(18,18,80,80);g.rotateX(-Math.PI/2);
+  const pos=g.attributes.position;
+  const colors=[];
+  const cLow=new THREE.Color(0x65705b),cMid=new THREE.Color(0x7d7659),cHigh=new THREE.Color(0xa58e67),c=new THREE.Color();
+  for(let i=0;i<pos.count;i++){
+    const x=pos.getX(i),z=pos.getZ(i),y=terrainHeightAt(x,z);
+    pos.setY(i,y);
+    const q=Math.max(0,Math.min(1,(y/Math.max(sceneDoc.terrain.height,1)+.5)));
+    if(q<.5)c.copy(cLow).lerp(cMid,q*2);else c.copy(cMid).lerp(cHigh,(q-.5)*2);
+    colors.push(c.r,c.g,c.b);
+  }
+  g.setAttribute('color',new THREE.Float32BufferAttribute(colors,3));g.computeVertexNormals();
+  const m=new THREE.MeshStandardMaterial({vertexColors:true,roughness:1,metalness:0});
+  terrain=new THREE.Mesh(g,m);terrain.receiveShadow=true;terrain.name='Continuous terrain';
+  worldRoot.add(terrain);
+  E('terrainSig').textContent=terrainSignature();
+  updateSculptUi();
+}
+
+function makeRoot(record){
+  const root=new THREE.Group();
+  root.name=record.name;root.userData.sceneObjectId=record.id;root.userData.kind=record.kind;
+  const p=record.transform.position||[0,0,0];
+  root.position.set(Number(p[0])||0,p[1]==null?0:(Number(p[1])||0),Number(p[2])||0);
+  root.userData.needsInitialGround=p[1]==null;
+  root.rotation.fromArray((record.transform.rotation||[0,0,0]).concat(['XYZ']).slice(0,4));
+  root.scale.fromArray(record.transform.scale||[1,1,1]);
+  worldRoot.add(root);sceneObjects.set(record.id,root);return root;
+}
+async function buildSceneObjects(token){
+  resetMixer();
+  for(const root of sceneObjects.values())worldRoot.remove(root);
+  sceneObjects.clear();selected=null;EDIT.clear();
+  for(const rec of sceneDoc.objects){
+    if(token!==sceneLoadToken)return;
+    const root=makeRoot(rec);
+    const model=rec.kind==='resident'?await loadActorModel(true):await loadPropModel();
+    if(token!==sceneLoadToken)return;
+    root.add(model);
+    root.userData.model=model;
+    if(rec.kind==='resident')groundModelLocal(model);
+    if(root.userData.needsInitialGround){dropRoot(root);root.userData.needsInitialGround=false;updateRecordFromRoot(root)}
+  }
+  refreshAddButtons();refreshDoc();
+}
+function dropRoot(root){
+  if(!root)return;
+  root.position.y=terrainHeightAt(root.position.x,root.position.z);
+  root.updateMatrixWorld(true);
+}
+function snapAllToTerrain(){
+  for(const root of sceneObjects.values())dropRoot(root);
+}
+function updateRecordFromRoot(root){
+  const rec=sceneDoc.objects.find(o=>o.id===root.userData.sceneObjectId);
+  if(!rec)return;
+  rec.transform.position=root.position.toArray().map(v=>+v.toFixed(4));
+  rec.transform.rotation=[root.rotation.x,root.rotation.y,root.rotation.z].map(v=>+v.toFixed(5));
+  rec.transform.scale=root.scale.toArray().map(v=>+v.toFixed(4));
+}
+function updateAllRecords(){for(const root of sceneObjects.values())updateRecordFromRoot(root)}
+function refreshDoc(){
+  updateAllRecords();
+  E('doc').textContent=JSON.stringify(sceneDoc,null,2);
+}
+function refreshAddButtons(){
+  E('addActor').disabled=sceneDoc.objects.some(o=>o.id===ACTOR.id);
+  E('addProp').disabled=sceneDoc.objects.some(o=>o.id===PROP.id);
+  E('remove').disabled=!selected;
+}
+function selectRoot(root){
+  if(sculptMode!=='off')return null;
+  if(!root){EDIT.clear();setSelectionUi(null);return null}
+  EDIT.setOn(true);
+  EDIT.select(root);
+  setSelectionUi(root,recordForNode(root));
+  syncEditorUi();
+  return root;
+}
+
+function sourceFacts(kind){
+  if(kind==='actor'){
+    return '<b>Exact Resident Atlas source</b><br>'+ACTOR.path+'<br>@ '+ACTOR.commit.slice(0,12)+'<br><b>Texture:</b> '+ACTOR.texture.path+'<br><b>Rig:</b> '+ACTOR.rigFamily+' · <b>clip:</b> '+ACTOR.clip.name+' @ '+ACTOR.clip.commit.slice(0,12);
+  }
+  return '<b>Exact source landmark</b><br>'+PROP.path+'<br>@ '+PROP.commit.slice(0,12)+'<br><b>Staging:</b> whole authored asset · fit max 1.35';
+}
+function setPanels(sceneMode){
+  E('terrainPanel').hidden=!sceneMode;E('editPanel').hidden=!sceneMode;E('savePanel').hidden=!sceneMode;
+  E('hint').style.display=sceneMode?'none':'block';
+}
+async function showActor(){
+  mode='actor';setSculptMode('off');actorSourceReady=false;updateReviewUnlock();resetMixer();EDIT.setOn(false);selectRoot(null);clearGroup(previewRoot);worldRoot.visible=false;previewRoot.visible=true;grid.visible=true;setPanels(false);
+  E('viewActor').classList.add('active');E('viewProp').classList.remove('active');E('viewScene').classList.remove('active');
+  E('sourceFacts').innerHTML=sourceFacts('actor');
+  status('loading exact Caveman source…');
+  const model=await loadActorModel(true);previewRoot.add(model);setCameraForObject(model);actorSourceReady=true;
+  const textureState=model.userData.sourceTextureApplied?' · texture bound':' · texture host fallback unavailable';
+  status('source actor loaded · '+ACTOR.clip.name+textureState,model.userData.sourceTextureApplied?'ok':'bad');
+  updateReviewUnlock();
+}
+async function showProp(){
+  mode='prop';setSculptMode('off');propSourceReady=false;updateReviewUnlock();resetMixer();EDIT.setOn(false);selectRoot(null);clearGroup(previewRoot);worldRoot.visible=false;previewRoot.visible=true;grid.visible=true;setPanels(false);
+  E('viewActor').classList.remove('active');E('viewProp').classList.add('active');E('viewScene').classList.remove('active');
+  E('sourceFacts').innerHTML=sourceFacts('prop');
+  status('loading exact Boulder source…');
+  const model=await loadPropModel();previewRoot.add(model);setCameraForObject(model);propSourceReady=true;status('source prop loaded','ok');
+  updateReviewUnlock();
+}
+async function showScene(){
+  if(!actorSourceReady||!propSourceReady)return;
+  mode='scene';resetMixer();clearGroup(previewRoot);previewRoot.visible=false;worldRoot.visible=true;grid.visible=false;setPanels(true);setSculptMode('off');syncEditorUi();
+  E('viewActor').classList.remove('active');E('viewProp').classList.remove('active');E('viewScene').classList.add('active');
+  E('sourceFacts').innerHTML='<b>Composed scene</b><br>Only source references + transforms are stored. No asset bytes or animation libraries are copied.';
+  status('building terrain + source objects…');
+  applyTerrainUI(sceneDoc.terrain);buildTerrain();
+  sceneLoadToken++;await buildSceneObjects(sceneLoadToken);
+  camera.position.set(10,7.2,11.5);controls.target.set(0,.5,0);controls.update();
+  status('scene ready · Object edit or Raise/Lower terrain sculpt · save / reload','ok');
+}
+function updateReviewUnlock(){E('viewScene').disabled=!(actorSourceReady&&propSourceReady)}
+
+function addActor(){
+  if(sceneDoc.objects.some(o=>o.id===ACTOR.id))return;
+  sceneDoc.objects.push(deepClone(DEFAULT_DOC.objects[0]));rebuildSceneAfterDocChange();
+}
+function addProp(){
+  if(sceneDoc.objects.some(o=>o.id===PROP.id))return;
+  sceneDoc.objects.push(deepClone(DEFAULT_DOC.objects[1]));rebuildSceneAfterDocChange();
+}
+async function rebuildSceneAfterDocChange(){sceneLoadToken++;buildTerrain();await buildSceneObjects(sceneLoadToken)}
+async function removeSelected(){
+  if(!selected)return;
+  const id=selected.userData.sceneObjectId;
+  sceneDoc.objects=sceneDoc.objects.filter(o=>o.id!==id);selectRoot(null);await rebuildSceneAfterDocChange();
+}
+function regenerate(){
+  sceneDoc.terrain=terrainSettingsFromUI();buildTerrain();snapAllToTerrain();refreshDoc();status('terrain regenerated from seed '+sceneDoc.terrain.seed,'ok');
+}
+function undoSculpt(){
+  const s=sculptState();
+  if(!s.strokes.length){status('no sculpt stroke to undo','');return false}
+  s.strokes.pop();buildTerrain();refreshDoc();status('last sculpt stroke undone','ok');return true;
+}
+function clearSculpt(){
+  const s=sculptState();
+  if(!s.strokes.length){status('sculpt layer already clear','');return false}
+  s.strokes=[];buildTerrain();refreshDoc();status('sculpt layer cleared · procedural base restored','ok');return true;
+}
+function saveDoc(){
+  updateAllRecords();sceneDoc.savedAt=new Date().toISOString();
+  localStorage.setItem(STORAGE_KEY,JSON.stringify(sceneDoc));
+  E('saveState').textContent='Saved locally · '+sceneDoc.savedAt;refreshDoc();status('scene saved','ok');
+}
+async function reloadDoc(){
+  const rawDoc=localStorage.getItem(STORAGE_KEY);
+  if(!rawDoc){status('no saved scene found','bad');return false}
+  const d=JSON.parse(rawDoc);
+  if(d.format!=='kfb-worldbuilder-scene'||d.id!=='wb2-terrain-sculpt-01')throw Error('Unexpected scene document');
+  sceneDoc=d;ensureSculpt(sceneDoc.terrain);applyTerrainUI(sceneDoc.terrain);await rebuildSceneAfterDocChange();
+  E('saveState').textContent='Reloaded saved scene · '+(sceneDoc.savedAt||'no timestamp');status('saved scene reloaded · continue editing','ok');return true;
+}
+async function resetFixture(){
+  sceneDoc=deepClone(DEFAULT_DOC);localStorage.removeItem(STORAGE_KEY);applyTerrainUI(sceneDoc.terrain);await rebuildSceneAfterDocChange();
+  E('saveState').textContent='Fixture reset · no local save.';status('fixture reset','ok');
+}
+async function exportDoc(){
+  refreshDoc();const text=JSON.stringify(sceneDoc,null,2);
+  try{await navigator.clipboard.writeText(text);status('scene JSON copied','ok')}catch{window.prompt('Copy scene JSON:',text)}
+}
+async function importDoc(){
+  const text=window.prompt('Paste kfb-worldbuilder-scene JSON:');if(!text)return;
+  const d=JSON.parse(text);if(d.format!=='kfb-worldbuilder-scene')throw Error('Wrong scene document format');
+  sceneDoc=d;ensureSculpt(sceneDoc.terrain);applyTerrainUI(sceneDoc.terrain);await rebuildSceneAfterDocChange();status('scene JSON imported','ok');
+}
+
+E('viewActor').onclick=()=>showActor().catch(fail);
+E('viewProp').onclick=()=>showProp().catch(fail);
+E('viewScene').onclick=()=>showScene().catch(fail);
+E('snap').onclick=()=>{
+  EDIT.setSnap(!EDIT.snap);
+  syncEditorUi();
+  status(EDIT.snap?'snap on · 0.05 / 15°':'snap off · continuous','ok');
+};
+E('addActor').onclick=()=>addActor().catch(fail);
+E('addProp').onclick=()=>addProp().catch(fail);
+E('remove').onclick=()=>removeSelected().catch(fail);
+E('sculptObject').onclick=()=>setSculptMode('off');
+E('sculptRaise').onclick=()=>setSculptMode('raise');
+E('sculptLower').onclick=()=>setSculptMode('lower');
+E('sculptUndo').onclick=undoSculpt;
+E('sculptClear').onclick=clearSculpt;
+E('sculptRadius').onchange=()=>{showBrushAt(null);updateSculptUi()};
+E('sculptStrength').onchange=updateSculptUi;
+E('regen').onclick=regenerate;
+E('save').onclick=saveDoc;
+E('reload').onclick=()=>reloadDoc().catch(fail);
+E('resetScene').onclick=()=>resetFixture().catch(fail);
+E('exportDoc').onclick=()=>exportDoc().catch(fail);
+E('importDoc').onclick=()=>importDoc().catch(fail);
+addEventListener('keydown',e=>{
+  if(mode!=='scene')return;
+  if(e.key==='Escape'&&sculptMode!=='off'){setSculptMode('off');return}
+  if(sculptMode!=='off')return;
+  if(e.key==='g')EDIT.setMode('translate');
+  if(e.key==='r')EDIT.setMode('rotate');
+  if(e.key==='s')EDIT.setMode('scale');
+  if(e.key==='Escape')selectRoot(null);
+  syncEditorUi();
+});
+
+function resize(){
+  const r=E('stage').getBoundingClientRect();camera.aspect=Math.max(.1,r.width/r.height);camera.updateProjectionMatrix();renderer.setSize(r.width,r.height,false);
+}
+addEventListener('resize',resize);resize();
+renderer.setAnimationLoop(()=>{
+  const dt=Math.min(clock.getDelta(),.05);
+  if(currentMixer)currentMixer.update(dt);
+  if(mode==='actor'&&previewRoot.children[0])groundModelLocal(previewRoot.children[0]);
+  if(mode==='scene'){
+    const actorRoot=sceneObjects.get(ACTOR.id);
+    if(actorRoot&&actorRoot.userData.model){
+      groundModelLocal(actorRoot.userData.model);
+    }
+  }
+  EDIT.follow();controls.update();renderer.render(scene,camera);
+});
+
+function fail(err){
+  console.error(err);status('ERROR · '+(err&&err.message?err.message:String(err)),'bad');
+  E('selftest').style.display='block';E('selftest').textContent=String(err&&err.stack?err.stack:err);
+}
+
+async function runSelfTest(){
+  const report=[];const ok=(name,cond,extra='')=>{if(!cond)throw Error('SELFTEST FAIL · '+name+(extra?' · '+extra:''));report.push('PASS · '+name)};
+  localStorage.removeItem(STORAGE_KEY);
+  await showActor();ok('exact actor source visible',previewRoot.children.length===1&&mode==='actor');
+  ok('actor clip bound',currentMixer&&previewRoot.children[0].userData.clip===ACTOR.clip.name);
+  ok('explicit actor texture bound',previewRoot.children[0].userData.sourceTexture===ACTOR.texture.path&&previewRoot.children[0].userData.sourceTextureApplied>0);
+  await showProp();ok('exact prop source visible',previewRoot.children.length===1&&mode==='prop');
+  ok('scene gate unlocked',!E('viewScene').disabled);
+  await showScene();ok('continuous terrain mesh exists',terrain&&terrain.geometry.attributes.position.count>1000);
+  ok('shared ToolBox edit layer is active',EDIT.on&&EDIT.gizmo&&E('objmenu'));
+  ok('resident loaded',sceneObjects.has(ACTOR.id));
+  ok('prop loaded',sceneObjects.has(PROP.id));
+  const actor=sceneObjects.get(ACTOR.id),actorY=actor.position.y+1.1;
+  actor.position.y=actorY;updateRecordFromRoot(actor);
+  ok('resident Y transform is editable',near(sceneDoc.objects.find(o=>o.id===ACTOR.id).transform.position[1],actorY));
+  const a=terrainHeightAt(-4,-4),b=terrainHeightAt(4,4);ok('terrain varies',!near(a,b,1e-4),a+' / '+b);
+  const sculpt=sculptState();sculpt.strokes=[];buildTerrain();
+  const baseCenter=terrainHeightAt(0,0),edgeWeight=brushWeight(1.2,1.2);
+  const raise=makeStroke('raise',1.2,.2);addStrokePoint(raise,0,0,0);sculpt.strokes.push(raise);buildTerrain();
+  const raisedCenter=terrainHeightAt(0,0);
+  ok('raise stroke increases terrain',raisedCenter>baseCenter+.15);
+  ok('smooth brush reaches zero at radius',near(edgeWeight,0,1e-9));
+  const lowBase=terrainHeightAt(3,0);
+  const lower=makeStroke('lower',1.1,.16);addStrokePoint(lower,3,0,0);sculpt.strokes.push(lower);buildTerrain();
+  ok('lower stroke decreases terrain',terrainHeightAt(3,0)<lowBase-.1);
+  const sculptSavedHeight=terrainHeightAt(0,0),sculptSavedCount=strokeCount(sculpt);saveDoc();
+  sculpt.strokes=[];buildTerrain();ok('clear restores procedural base in test',terrainHeightAt(0,0)<sculptSavedHeight-.15);
+  await reloadDoc();
+  ok('save/reload restores sculpt strokes',strokeCount(sculptState())===sculptSavedCount&&near(terrainHeightAt(0,0),sculptSavedHeight,1e-4));
+  undoSculpt();ok('undo removes one sculpt stroke',strokeCount(sculptState())===sculptSavedCount-1);
+  clearSculpt();
+  const prop=sceneObjects.get(PROP.id);selectRoot(prop);
+  ok('object-attached mini menu opens',EDIT.node===prop&&!E('objmenu').hidden);
+  const baseUniform=prop.scale.x;
+  EDIT.scaleBy(.8);ok('uniform smaller scales prop',near(prop.scale.x,baseUniform*.8));
+  EDIT.scaleBy(1.25);ok('uniform larger reverses smaller',near(prop.scale.x,baseUniform));
+  EDIT.setMode('scale');prop.scale.setScalar(1.15);prop.position.x+=1.2;prop.position.z-=.7;prop.rotation.y+=THREE.MathUtils.degToRad(15);updateRecordFromRoot(prop);
+  const dropReport=EDIT.drop();ok('shared drop reports a surface',dropReport.length===1&&!dropReport[0].refused);
+  onEditorMenu('space');ok('world/local toggle reaches gizmo',gizmoSpace==='local');onEditorMenu('space');
+  const before=deepClone(sceneDoc.objects.find(o=>o.id===PROP.id).transform);saveDoc();
+  prop.position.set(99,99,99);prop.rotation.y=0;updateRecordFromRoot(prop);
+  await reloadDoc();
+  const after=sceneDoc.objects.find(o=>o.id===PROP.id).transform;
+  ok('save/reload restores x',near(before.position[0],after.position[0]));
+  ok('save/reload restores z',near(before.position[2],after.position[2]));
+  ok('save/reload restores rotation',near(before.rotation[1],after.rotation[1]));
+  ok('save/reload restores scale',near(before.scale[0],after.scale[0])&&near(sceneObjects.get(PROP.id).scale.x,before.scale[0]));
+  ok('save/reload restores resident Y',near(sceneObjects.get(ACTOR.id).position.y,actorY));
+  ok('scene document stores references not bytes',JSON.stringify(sceneDoc).length<12000&&sceneDoc.objects.every(o=>o.source&&o.source.path&&o.source.commit));
+  document.body.dataset.selftest='PASS';
+  document.body.dataset.selftestCount=report.length+'/'+report.length;
+  E('selftest').style.display='block';E('selftest').textContent=report.join('\n');
+  status('SELFTEST '+report.length+'/'+report.length+' PASS','ok');
+}
+try{
+  refreshDoc();
+  await showActor();
+  if(new URLSearchParams(location.search).get('selftest')==='1')await runSelfTest();
+}catch(err){document.body.dataset.selftest='FAIL';fail(err)}
+</script>
+</body>
+</html>
