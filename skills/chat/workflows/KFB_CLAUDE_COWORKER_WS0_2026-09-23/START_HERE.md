@@ -123,3 +123,15 @@ WS0 is complete when Claude Coworker can take one current PR and:
 3. optionally execute one explicitly authorized mini-slice;
 4. return a reusable zero-install Review HTML when visual;
 5. leave exact GitHub evidence without Cloudflare.
+
+
+## Recovery and future WSA workshop
+
+Long-chat recovery:
+`RECOVERY.md`
+
+Prepared setup for the next real WSA/Work integration workshop:
+`WSA_INTEGRATION_WORKSHOP_SETUP.md`
+
+Use Coworker/Web first for ordinary review and bounded integration.
+Escalate to WSA only when the Slice Card names a capability that Coworker/Web cannot reasonably provide.
