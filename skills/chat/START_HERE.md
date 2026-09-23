@@ -879,3 +879,30 @@ Still blocked:
 vehicle grounding/contact → hard-clamp/jitter → trails/speedlines → jump/landing.
 
 Cloudflare remains deferred.
+
+
+## 2026-09-23 · Hybrid Production Handoff
+
+**CURRENT CROSS-LANE HANDOFF CANDIDATE**
+
+Use:
+`skills/chat/workflows/KFB_HYBRID_PRODUCTION_HANDOFF_2026-09-23/START_HERE.md`
+
+This is the short operational recovery point after the long Web Lead / Ideation / Travel / Racer chat closures.
+
+Current role split:
+- Coworker = day-to-day Web/integration control tower;
+- Blender MCP = 3D authoring;
+- Claude Design = donor-locked visual/design integration;
+- Web Lead = periodic reconciliation;
+- WSA/Work = later capability escalation only.
+
+Current key decisions:
+- ToolBox Coworker build continues to full coherent milestone; internal vertical slice is not a Georg gate;
+- Travel TMB-2 accepted at 400 ms;
+- Racer R3d = TUNE, Anatomy Foundation next, Vehicle Grounding HOLD;
+- current Warband continues in Blender;
+- Curtain/Billboard donor-recovery prompts are ready;
+- current 3D cartoon-form-language direction is captured without pretending the missing parallel-chat export was recovered.
+
+After context loss, start from that handoff rather than older dated status blocks below.
