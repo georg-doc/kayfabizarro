@@ -165,3 +165,36 @@ Place this in the project's Return/Handover, not only in chat prose. For intake-
 ## Recovery success criterion
 
 A fresh authorized chat should be able to continue correctly from GitHub without receiving a transcript dump from Georg.
+
+
+## Donor-based design recovery
+
+If the interrupted/replacement chat was working from an existing visual/runtime donor, read before rebuilding:
+
+`skills/chat/workflows/KFB_DESIGN_DONOR_LOCK_V1_2026-09-23/START_HERE.md`
+
+and the slice's measurement packet.
+
+Recovery must determine separately:
+
+1. exact donor repo/ref/head/file;
+2. whether D0 unchanged donor proof exists;
+3. whether measurements/source outputs were persisted;
+4. whether the current candidate was actually forked from donor or from a failed reconstruction;
+5. last accepted human delta.
+
+If the current candidate was built from a failed reconstruction:
+do not continue repairing it.
+Return to the donor.
+
+For geometry/rig/material/timing work, measurements must survive chat replacement through:
+
+`skills/chat/workflows/KFB_DESIGN_DONOR_LOCK_V1_2026-09-23/MEASUREMENT_EVIDENCE_TEMPLATE.md`
+
+A fresh chat must not re-estimate known values from screenshots.
+
+WSA Lead guard:
+
+`skills/chat/masterplan/WSA_LEAD_HANDOFF_DESIGN_DONOR_LOCK_2026-09-23.md`
+
+WSA should return `DESIGN_DONOR_PACKET_INCOMPLETE` rather than silently filling missing donor/measurement evidence.
