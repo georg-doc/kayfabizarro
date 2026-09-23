@@ -522,24 +522,31 @@ Cloudflare source commit: `77e4bd44aac0d0ce720c5b0149eedb3eef62ac36`. Hub source
 Public verification is **UNKNOWN / PENDING** because this execution environment cannot resolve/access `pages.dev`. Local HTTP is only a developer fallback; do not present it as the human acceptance link. RSTAB-2 remains blocked until human ACCEPT.
 
 
-## 2026-09-23 · Travel Mode Bridge v1
+## 2026-09-23 · Travel Mode Bridge v1 · TMB-0 complete
 
-Prepared bounded Web-first mobility prework:
+Coordination brief:
 
 `tools/KFB-ToolBox/_handover/TRAVEL_MODE_BRIDGE_V1_2026-09-23/START_HERE.md`
 
-Owner remains private `georg-doc/KFB-Travel-Globe`.
+Travel owner remains private `georg-doc/KFB-Travel-Globe`.
 
-Source-backed direction:
-- preserve `carpet.js` as the Flight movement owner;
-- preserve WB0 Ground as the Ground movement owner;
-- reuse the existing `runtime-mode.js` Ground↔Flight bridge;
-- reuse the exact animated `card-carrier.js` as the first flight vehicle;
-- Studio/Frankenstein `cardrider.v1.js` is measurement/pose evidence only, not the vehicle;
-- prepare a KayKit Rig_Medium passenger seam, then double-Space mount and intentional landing in later gates.
+TMB-0 is complete on Draft PR #32:
 
-TMB-0 is source/seam mapping only. No runtime implementation, WorldBuilder integration, Racer integration, Work/WSA or Cloudflare debugging.
+- branch `chatgpt-web/travel-mode-bridge-v1-2026-09-23`;
+- head `048499315581d2b9916a4d3fcbaba5f3adef719c`;
+- source/boundary audit **12/12 PASS · 0 FAIL**;
+- **0 runtime files changed**;
+- source matrix, minimal mobility transition contract, additive changelog and Return are under `_handover/TRAVEL_MODE_BRIDGE_V1_2026-09-23/`.
 
-WorldBuilder consumption remains HOLD until its Surface Adapter gate is ready.
+Locked direction remains:
+- `carpet.js` owns Flight movement;
+- WB0 Ground owns Ground movement;
+- existing `runtime-mode.js` is the handoff foundation;
+- exact animated `card-carrier.js` is the first Flight vehicle;
+- Studio/Frankenstein `cardrider.v1.js` is measurement/pose donor only, never the vehicle.
+
+Exactly one next gate: **TMB-1 · isolated exact animated CardCarrier + one real ActionFigure Rig_Medium passenger**, source-object-first: card alone → actor alone → neutral measured mount → Surf presentation candidate.
+
+TMB-2 Double-Space, TMB-3 landing, WorldBuilder consumption, Racer/Drive integration and Cloudflare runtime publication remain **NOT STARTED / HOLD**.
 
 Racer stabilization separately carries `RSTAB-CYLINDER-GROUND-01` for track/support cylinders that appear above or below their intended support surface.
