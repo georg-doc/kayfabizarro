@@ -900,5 +900,14 @@ Georg has accepted the pinned clay-neighbourhood benchmark for **shape / facade 
 
 Future selected enterable buildings with exact source-backed KayKit door props are recorded as **DEFERRED / AssetRef required**, not part of this gate.
 
+Current recovery cursor:
+`workflows/KFB_ELASTIC_GROTESQUE_CLAY_V1_2026-09-23/CHAT_RECOVERY_CURRENT.md`
+
+Anti-regression update · 2026-09-24:
+- simplified self-contained Canvas mirror = **REJECTED AS VISUAL AUTHORITY**;
+- do not tune/generalize from that mirror;
+- use actual tested V2 runtime/evidence only;
+- old generic GROTESQUE and Hürth 01 V1 remain comparison/history only.
+
 Exactly one next gate:
-**Georg human review of the actual Hürth 01 v2 3D translation.** If accepted, turn this exact grammar into the Blender-MCP / Geometry-Nodes production recipe.
+**Georg human review of the ACTUAL Hürth 01 v2 Three.js result.** If accepted, turn this exact grammar into the Blender-MCP / Geometry-Nodes production recipe.
