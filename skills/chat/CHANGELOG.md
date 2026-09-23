@@ -1466,3 +1466,35 @@ Bounded next review:
 - `design-3d_v1` + `session-design-briefing` are recommended review helpers; `kfb-frankensteining_v1` / `cartoon-motion_v1` load only when their seam is actually needed.
 
 TMB-2 Double-Space remains HOLD. Card thickness redesign, Studio v17 implementation, transition logic and party-flight gameplay remain DEFERRED.
+
+
+## 2026-09-23 · Review skill routing + TMB-1E HTML candidate
+
+### Shared review skill routing
+
+`KFB_WEB_FIRST_EXECUTION_V1_2026-09-22/REVIEW_TEMPLATE_POOL.md` now records a small load-on-demand skill map instead of introducing a second general Review HTML skill.
+
+Default:
+- `threejs-focus-review-v1 + design-3d_v1 + session-design-briefing`;
+- add `kfb-frankensteining_v1` for donor fit / mount / contact;
+- add `cartoon-motion_v1` when pose or motion itself is the gate;
+- Claude Design direct-paste 3D workflows prefer `design-3d_combined_for-design_v1.md`;
+- style-specific `KFB_3D_CartoonStyle_v1.md` and `session-export_v1.md` remain on-demand only.
+
+The review harness owns inspection presentation only. Domain skills do not become runtime owners and do not override project SSOTs or verified donors.
+
+### TMB-1E implementation
+
+Travel Draft PR #37 now contains the HTML-first rider-scale and card-capacity reviews.
+
+- branch: `chatgpt-web/travel-mode-bridge-tmb1e-scale-capacity-2026-09-23`;
+- handoff head after Return: `5110f3617246d05278e0435b3b1e0a99c33e62e5`;
+- technical test head: `33b4a5bf9904d3e9e86c99f6efd5cbdde8448641`;
+- CI `35823280576 / 107059518887`: **99 PASS · 0 FAIL · 0 skipped**;
+- build PASS; verify PASS.
+
+Review A compares the exact Surf rider at current, 1.8× and 2.0× presentation scale on the unchanged exact CardCarrier.
+
+Review B is source-object-first for `Legacy Orc A · Orc Brute / Rig_Large · Legacy Orc B`, then places the same three source families together on the unchanged card using one shared review-space scale. The earlier “Large Rick” wording is superseded as speech-to-text for **Large Rig**; no substitute fourth/XL actor is introduced.
+
+Cloudflare remains deferred for this iteration. Current gate is **GEORG HUMAN HTML REVIEW**. TMB-2 remains HOLD.
