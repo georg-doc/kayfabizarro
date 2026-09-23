@@ -879,3 +879,18 @@ Still blocked:
 vehicle grounding/contact → hard-clamp/jitter → trails/speedlines → jump/landing.
 
 Cloudflare remains deferred.
+
+
+## 2026-09-23 · KFB Elastic Grotesque Clay · Hürth 01
+
+A bounded 3D form-language proof now lives at [KFB Elastic Grotesque Clay v1 · Hürth 01](workflows/KFB_ELASTIC_GROTESQUE_CLAY_V1_2026-09-23/START_HERE.md).
+
+- owner stays **OSM City Lab presentation / KFB ToolBox authoring**; no new world or movement owner;
+- 22 real Hürth OSM buildings are shown as CLEAN, exact current City-Lab GROTESQUE, and the new continuous rounded ELASTIC GROTESQUE CLAY candidate;
+- source isolation is built in before composition review;
+- browser evidence at tested implementation head `1db61b9c882e178000cf700a7d5f4d18ec03eba0`: **16/16 PASS**, 3/3 WebGL2, zero page/console errors;
+- evidence run `35904415847`, artifact `10769948842`, digest `sha256:fa8823edeeec10c6e25cb11b08c15d85a205e6ecb17c6c66c9c8f1236e71c9a9`;
+- Draft PR #194 remains unmerged;
+- no Cloudflare/public Stage is claimed; the current gate is Georg's direct chat-HTML visual review.
+
+Exactly one next gate: **Hürth 01 human visual decision — continue / tune / reject the Elastic grammar.**
