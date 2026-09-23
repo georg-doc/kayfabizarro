@@ -96,3 +96,48 @@ No current coordination gate requires sealed Game Development Studio evidence, s
 ### NEXT GATE
 Unchanged:
 **Coworker finishes complete ToolBox Source-Safe Integration 01 and returns one coherent review artifact.**
+
+
+## 2026-09-23 · Opus 5.5 / performance animation / WSA sync
+
+### COWORKER MODEL
+Prepared same-chat Opus 5.5 migration with one pre-switch local/worktree checkpoint.
+
+Added:
+`COWORKER_OPUS55_MODEL_SWITCH.md`
+
+No fresh Coworker chat is required.
+
+### PERFORMANCE ANIMATION
+Existing cartoon-motion skills are retained.
+
+Added candidate addendum:
+`PERFORMANCE_ANIMATION_PILOT.md`
+
+New production layer:
+- task mechanics;
+- contact-first authoring;
+- body-chain model;
+- beat/contact contract;
+- Blender Action/NLA export;
+- runtime event sidecar.
+
+First validation:
+Warband drummer.
+
+External references:
+Blender 5.2 glTF/NLA/Bake Action + Yamaha/Vic Firth drumming mechanics.
+
+### WSA SYNC
+Added:
+`COWORKER_WSA_SYNC_BRIDGE.md`
+
+GitHub is the shared synchronization bus.
+No hidden chat-to-chat shared state is assumed.
+
+Coworker writes current production state.
+WSA writes workshop execution Returns.
+Web Lead reconciles after meaningful milestones.
+
+Current recommendation:
+**WSA NOT YET NEEDED**.
