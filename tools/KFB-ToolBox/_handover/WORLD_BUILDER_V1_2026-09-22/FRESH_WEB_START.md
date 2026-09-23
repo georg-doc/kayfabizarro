@@ -2,9 +2,9 @@
 
 ## CURRENT RESUME OVERRIDE · 2026-09-23
 
-WB1-P1 code already exists on Draft PR #177. The implementation/static gate is green (**8/8 tests + 4/4 syntax**); the browser evidence gate is blocked after two pre-load navigation failures (`ERR_BLOCKED_BY_ADMINISTRATOR`).
+WB1-P1 is **COMPLETE / HUMAN SCOPE PASS** on Draft PR #177. Public Stage/browser evidence is green and Georg accepted the Environment Profile proof.
 
-Do **not** restart P0 or rebuild P1. Open `WB1_P1_FAILURE_RECOVERY_2026-09-23.md` and do exactly one gate: **WB1-P1 Browser Verify**. P2 remains HOLD.
+Do **not** restart P0 or P1. Preserve the explicit caveat that the P1 review light placement / torch spacing is not final production lighting. The next fresh-chat gate is **WB1-P2 only: same tiny logical recipe on FLAT / SPHERE / TORUS**.
 
 @GitHub
 
@@ -24,7 +24,7 @@ GitHub state overrides chat memory.
 
 WB1-P0 is already complete on Draft PR #175. **Do not rerun P0.**
 
-Do **WB1-P1 Browser Verify only**; do not rebuild the preserved P1 candidate.
+Do **WB1-P2 only**. WB1-P1 is accepted evidence; do not rebuild it.
 
 Before implementation:
 - fetch current `main`;
