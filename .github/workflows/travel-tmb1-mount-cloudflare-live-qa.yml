@@ -1,0 +1,176 @@
+name: Travel TMB-1 Neutral Mount Cloudflare QA
+
+on:
+  push:
+    branches: ['cloudflare-live']
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  public-proof:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Install Playwright Chromium
+        run: |
+          npm install --no-save playwright@1.51.1
+          npx playwright install --with-deps chromium
+
+      - name: Verify exact TMB-1 neutral measured mount Stage
+        run: |
+          mkdir -p tmb1-mount-public-proof
+          cat > tmb1-mount-public-proof/check.mjs <<'JS'
+          import fs from 'node:fs';
+          import { chromium } from 'playwright';
+
+          const url='https://kayfabizarro.pages.dev/kfb-hub/stage/travel/travel-mode-bridge/tmb1/mount.html';
+          const sourceUrl='https://kayfabizarro.pages.dev/kfb-hub/stage/travel/travel-mode-bridge/tmb1/MOUNT_SOURCE.json';
+          const expectedRevision='TMB1-MOUNT-NEUTRAL-01';
+          const expectedTravelHead='5ffde49422b9e473edc478f9c1539365de723f49';
+          const expectedCarrier='2eef4db5aa38fffc8e9c23457815e3be12fc3bd8';
+          const expectedActor='4785276defdb929cb397954eb74b76aecb84486b';
+          const expectedArt='36da589c1227dc796097d71bd0fd30a539905b1f';
+
+          const report={url,sourceUrl,checks:[],errors:[],httpErrors:[]};
+          const check=(name,pass,detail=null)=>{
+            report.checks.push({name,pass:!!pass,detail});
+            if(!pass) process.exitCode=1;
+          };
+          const near=(a,b,eps=1e-6)=>Number.isFinite(Number(a))&&Math.abs(Number(a)-Number(b))<=eps;
+          const sleep=ms=>new Promise(r=>setTimeout(r,ms));
+
+          const browser=await chromium.launch({
+            headless:true,
+            args:['--use-angle=swiftshader','--enable-unsafe-swiftshader','--enable-webgl','--ignore-gpu-blocklist']
+          });
+          const page=await browser.newPage({viewport:{width:1440,height:920},deviceScaleFactor:1});
+          page.on('pageerror',e=>report.errors.push('pageerror: '+String(e)));
+          page.on('console',m=>{if(m.type()==='error'&&!/favicon/i.test(m.text()))report.errors.push('console: '+m.text())});
+          page.on('response',r=>{if(r.status()>=400&&!/favicon/i.test(r.url()))report.httpErrors.push({status:r.status(),url:r.url()})});
+          page.on('requestfailed',r=>report.httpErrors.push({status:0,url:r.url(),error:r.failure()?.errorText}));
+
+          try{
+            let marker=null,last=null;
+            for(let i=0;i<80;i++){
+              try{
+                const r=await page.request.get(sourceUrl+'?proof='+Date.now(),{timeout:15000});
+                const text=await r.text();
+                let j=null;try{j=JSON.parse(text)}catch{}
+                last={
+                  status:r.status(),
+                  revision:j?.revision||null,
+                  travelHead:j?.travel?.head||null,
+                  actor:j?.sources?.actor?.blob||null,
+                  carrier:j?.sources?.carrier?.blob||null
+                };
+                if(r.ok() &&
+                   j?.revision===expectedRevision &&
+                   j?.travel?.head===expectedTravelHead &&
+                   j?.sources?.actor?.blob===expectedActor &&
+                   j?.sources?.carrier?.blob===expectedCarrier){
+                  marker=j;break;
+                }
+              }catch(e){last={error:String(e)}}
+              await sleep(3000);
+            }
+            check('deployed MOUNT_SOURCE marker',!!marker,last);
+            if(!marker) throw Error('Mount Stage marker timeout '+JSON.stringify(last));
+            report.marker=marker;
+            check('marker phase',marker.phase==='NEUTRAL_MEASURED_MOUNT',marker.phase);
+            check('marker card art blob',marker.sources?.cardArtwork?.blob===expectedArt,marker.sources?.cardArtwork?.blob);
+            check('marker actor scale derived',near(marker.derived?.actorScale,0.3789375002829705,1e-12),marker.derived?.actorScale);
+            check('marker Ground height',near(marker.derived?.groundBodyHeight,0.022,1e-12),marker.derived?.groundBodyHeight);
+            check('marker yaw 180',marker.derived?.mountYawDegrees===180,marker.derived?.mountYawDegrees);
+            check('marker no Surf',marker.surfPoseApplied===false,marker.surfPoseApplied);
+            check('marker no transition',marker.transitionImplemented===false,marker.transitionImplemented);
+
+            const response=await page.goto(url,{waitUntil:'domcontentloaded',timeout:90000});
+            check('Stage HTTP',!!response&&response.ok(),response?.status());
+            check('Stage title',await page.title()==='KFB Travel Mode Bridge · TMB-1 · Neutral Measured Mount',await page.title());
+
+            await page.waitForFunction(
+              ()=>window.__TMB1_MOUNT_PROOF__?.sourceObjectVisible===true || (window.__TMB1_MOUNT_PROOF__?.runtimeErrors||[]).length>0,
+              null,{timeout:120000}
+            );
+            await page.waitForTimeout(1200);
+
+            const snap=await page.evaluate(()=>({
+              proof:window.__TMB1_MOUNT_PROOF__,
+              stateText:document.querySelector('#proof-state')?.textContent||'',
+              canvas:{
+                width:document.querySelector('#view')?.width||0,
+                height:document.querySelector('#view')?.height||0
+              }
+            }));
+            report.snap=snap;
+            const p=snap.proof;
+
+            check('mount visible',p?.sourceObjectVisible===true,p);
+            check('runtime phase',p?.phase==='NEUTRAL_MEASURED_MOUNT',p?.phase);
+            check('exact carrier blob',p?.sources?.carrier?.blob===expectedCarrier,p?.sources?.carrier);
+            check('exact actor blob',p?.sources?.actor?.blob===expectedActor,p?.sources?.actor);
+            check('exact art blob',p?.sources?.cardArtwork?.blob===expectedArt,p?.sources?.cardArtwork);
+
+            check('foot bones found',Array.isArray(p?.measurement?.footBoneNames)&&p.measurement.footBoneNames.length>0,p?.measurement?.footBoneNames);
+            check('foot vertices measured',Number(p?.measurement?.footPoints)>0,p?.measurement?.footPoints);
+            check('footprint inside card',p?.measurement?.insideCard===true,p?.measurement);
+            check('footprint radius positive',Number(p?.measurement?.footprintRadius)>0,p?.measurement?.footprintRadius);
+            check('seat footprint equals measurement',near(p?.mount?.seatFootprint,p?.measurement?.footprintRadius,1e-6),{seat:p?.mount?.seatFootprint,r:p?.measurement?.footprintRadius});
+            check('seat lift finite',Number.isFinite(Number(p?.mount?.seatLift)),p?.mount?.seatLift);
+            check('seat lift equals -lowest foot',near(p?.mount?.seatLift,-Number(p?.measurement?.contactLowestY),1e-6),{lift:p?.mount?.seatLift,lowest:p?.measurement?.contactLowestY});
+
+            check('actor scale exact',near(p?.mount?.actorScale,0.3789375002829705,1e-12),p?.mount?.actorScale);
+            check('Ground-equivalent world height',near(p?.mount?.actorEquivalentWorldHeight,0.022,1e-9),p?.mount?.actorEquivalentWorldHeight);
+            check('yaw 180',p?.mount?.mountYawDegrees===180,p?.mount?.mountYawDegrees);
+            check('source +Z',p?.mount?.sourceForwardAxis==='+Z',p?.mount?.sourceForwardAxis);
+            check('carrier -Z',p?.mount?.carrierForwardAxis==='-Z',p?.mount?.carrierForwardAxis);
+            check('parented under carrier seat',p?.mount?.parentedUnderCarrierSeat===true,p?.mount?.parentedUnderCarrierSeat);
+            check('clip owner CardCarrier',p?.mount?.clipOwner==='card-carrier',p?.mount?.clipOwner);
+
+            check('carrier runtime identity',p?.runtime?.carrierName==='card-carrier',p?.runtime?.carrierName);
+            check('seat planted',p?.runtime?.seatPlanted===true,p?.runtime?.seatPlanted);
+            check('no AnimationMixer',p?.runtime?.animationMixerCreated===false,p?.runtime?.animationMixerCreated);
+            check('no root motion',p?.runtime?.rootMotionApplied===false,p?.runtime?.rootMotionApplied);
+            check('no movement owner',p?.runtime?.movementOwnerCreated===false,p?.runtime?.movementOwnerCreated);
+            check('no Surf pose',p?.runtime?.surfPoseApplied===false,p?.runtime?.surfPoseApplied);
+            check('no transition',p?.runtime?.transitionImplemented===false,p?.runtime?.transitionImplemented);
+            check('visible measured marker',/MEASURED MOUNT/.test(snap.stateText),snap.stateText);
+            check('canvas sized',snap.canvas.width>0&&snap.canvas.height>0,snap.canvas);
+            check('no runtime errors',(p?.runtimeErrors||[]).length===0,p?.runtimeErrors);
+            check('no page errors',report.errors.length===0,report.errors);
+            check('no failed HTTP assets',report.httpErrors.length===0,report.httpErrors);
+
+            await page.screenshot({path:'tmb1-mount-public-proof/01-neutral-measured-mount.png',fullPage:true});
+          }catch(e){
+            report.errors.push(String(e?.stack||e));
+            process.exitCode=1;
+          }finally{
+            report.status=process.exitCode?'FAIL':'PASS';
+            fs.writeFileSync('tmb1-mount-public-proof/report.json',JSON.stringify(report,null,2)+'\n');
+            console.log(JSON.stringify({
+              status:report.status,
+              pass:report.checks.filter(x=>x.pass).length,
+              total:report.checks.length,
+              errors:report.errors.length,
+              httpErrors:report.httpErrors.length,
+              footprintRadius:report.snap?.proof?.measurement?.footprintRadius ?? null,
+              seatLift:report.snap?.proof?.mount?.seatLift ?? null,
+              equivalentWorldHeight:report.snap?.proof?.mount?.actorEquivalentWorldHeight ?? null
+            },null,2));
+            await browser.close();
+          }
+          JS
+          node tmb1-mount-public-proof/check.mjs
+
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: travel-tmb1-neutral-mount-cloudflare-proof
+          path: tmb1-mount-public-proof
+          retention-days: 90
