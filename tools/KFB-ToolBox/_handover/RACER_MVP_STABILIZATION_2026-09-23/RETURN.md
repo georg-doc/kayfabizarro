@@ -149,3 +149,35 @@ Review only:
 2. support endpoints around the previous 166 / 179 / 187 region.
 
 Only a human **ACCEPT** advances the project to **RSTAB-2 hard-curve stability**.
+
+
+## Zero-install Stage packaging · 2026-09-23
+
+Human review no longer depends on Git/Terminal/Python.
+
+Intended Stage route:
+
+`https://kayfabizarro.pages.dev/kfb-hub/stage/stunt-world/cologne-option-c-rstab1/`
+
+Build marker:
+
+`https://kayfabizarro.pages.dev/kfb-hub/stage/stunt-world/cologne-option-c-rstab1/BUILD.json`
+
+Packaging state:
+
+- Race Draft PR #32 current handoff head: `d712a17904f532c2eca9f120d24924073eae0f3c`;
+- exact runtime-tested candidate remains `e9c72a404aff63d46762d9101a727a9e7f94a6b0`;
+- kayfabizarro Draft PR #178;
+- Stage source branch `stage/racer-rstab1-review-2026-09-23@13191b0f600878f96b06db8142d8d7393411a67d`;
+- Stage `lab-v9` parity: **20/20 filename + blob SHA identical** to Race RSTAB-1;
+- Cloudflare route source commit `77e4bd44aac0d0ce720c5b0149eedb3eef62ac36`;
+- Cloudflare Hub metadata commit `a075934bb5f8628535b673459b0b9ddcc0af5312`;
+- main Hub metadata commit `fd7680034171f9a327936e9ee7fa2a3cc1f6b4dc`.
+
+Public route verification is **UNKNOWN / PENDING**: the current execution environment cannot resolve/access `kayfabizarro.pages.dev` through either Web fetch or container DNS.
+
+Therefore no `PUBLIC_VERIFIED` or live claim is made.
+
+Exactly one next gate remains:
+
+**RSTAB-1 HUMAN GEOMETRY GATE** on the Stage route once its public `BUILD.json` visibly reports Race runtime source `8dd3cd15147fe403090e00495bb632bd1cf1a203`.
