@@ -184,3 +184,31 @@ Exactly one next gate:
 
 Exactly one next gate:
 **R3c · TRACK BODY + ROUNDED FRAMES CHAT HTML HUMAN REVIEW**.
+
+
+## 2026-09-23 · R3d volumetric barrier + clean ground layer
+
+- R3c remained TUNE: stepped orange/brown barrier edge, strip artifacts, thin band-like boundary, multi-plane underside/terrain, frames too thin;
+- source diagnosis found duplicate side ownership from closed track-body + legacy track-wall/cap ribbons;
+- flat lane-band ribbons remained;
+- deep ground was rectangular bbox PlaneGeometry;
+- R3d track presentation now uses one 12-point closed barrier/body profile;
+- presentation geometry sampled 4× denser than route/physics;
+- legacy track-wall-left/right removed;
+- separate wall-cap ribbons removed;
+- flat lane-band ribbons removed;
+- TARCH frame radius 0.48→0.96 m;
+- TARCH radial segments 10→14;
+- frame bases moved to barrier-cap midpoint u=1.39 / lift=1.265;
+- deep ground changed to ShapeGeometry following actual void contour;
+- Dropbox owner/donor document re-read only; no mutation;
+- final runtime/test head `dad35bdf0f3e19fdc2c5902e154140353db590f9`;
+- CI runs `35891959912` and `35891969220`: SUCCESS;
+- **24/24 PASS · 0 fail · 0 skipped**;
+- Race PR #33 current docs head `05b3cf357b022d75ff4f7433f5ee51ed474f9b49`;
+- R3d artifact `KFB_Racer_TARCH0_R3d_track_barrier_ground_review.html`;
+- SHA-256 `d2e147d3abcd005769867bf523bcac1a49cc3eff9491511875c80b37c287a018`;
+- Cloudflare remains deferred.
+
+Exactly one next gate:
+**R3d · TRACK/BARRIER/GROUND LAYER CHAT HTML HUMAN REVIEW**.
