@@ -4,8 +4,8 @@
   "source": {
     "repo": "georg-doc/kayfabizarro",
     "branch": "chatgpt-web/kfb-hybrid-production-handoff-2026-09-23",
-    "head": "fa7e4579f8fb0e4c0bc07f7efe70ff4d238f5439",
-    "note": "Snapshot inputs refreshed on PR #193 before this state-file commit; Coworker must re-fetch exact heads before rendering."
+    "head": "bafa409391ab1be8350894a254803b2142cdb271",
+    "note": "Seed snapshot; Coworker must re-fetch exact branch/pr heads before rendering."
   },
   "now": [
     {
@@ -97,6 +97,18 @@
       "id": "vfx-sfx-consolidation",
       "provider": "Fresh Web",
       "state": "PREPARED_BRIEF"
+    },
+    {
+      "id": "production-desk-autosync",
+      "provider": "Coworker/GitHub Actions",
+      "state": "PREPARED",
+      "brief": "PRODUCTION_DESK_AUTOSYNC_V1.md"
+    },
+    {
+      "id": "world-god-01",
+      "provider": "Coworker + Claude Design + Blender",
+      "state": "PLANNING_ONLY",
+      "brief": "WORLDBUILDER_GOD_MODE_V0.md"
     }
   ],
   "wsa": {
