@@ -299,3 +299,41 @@ Post-decision CI:
 
 ### Next
 TMB-3 intentional landing remains HOLD until Georg explicitly opens it.
+
+
+## Racer check-in · R3d current
+
+### Für Georg
+Der Racer-Chat ist sauber beendet.
+
+R3d ist technisch fertig und recoverbar:
+- ein geschlossener Track-/Barrier-Körper;
+- echte Unterseite;
+- dickere runde Bögen;
+- saubere Deep-Ground-Schicht;
+- keine parallelen dünnen Wall-/Cap-Bänder mehr.
+
+Aktuell fehlt nur deine Sichtentscheidung zu R3d.
+
+Wenn das passt, geht Racer danach **nicht** in R3e-Architektur, sondern endlich zu **Vehicle Grounding / Contact**.
+
+### GitHub
+Repo:
+`georg-doc/KFB-Stunt-Car-Race`
+
+PR:
+`#33`
+
+Docs/recovery head:
+`05b3cf357b022d75ff4f7433f5ee51ed474f9b49`
+
+Runtime/test head:
+`dad35bdf0f3e19fdc2c5902e154140353db590f9`
+
+Tests:
+**24/24 PASS**
+
+### Review recovery caveat
+The R3d marker, filename, runtime head and SHA-256 are persisted, but the actual generated HTML is not currently stored in the GitHub tree or CI artifact.
+
+Future human-gate HTMLs must be durably persisted in addition to direct chat delivery.
