@@ -130,3 +130,37 @@ No merge.
 ## Exactly one next gate
 
 **CCW-WS0-R1 · run one REVIEW_ONLY pass against one current PR, using the compact review template, then compare usefulness/token cost with the existing Web chat review.**
+
+
+## Additive result · communication + Hub hygiene
+
+### Für Georg
+Agenten sollen ab jetzt zuerst sagen, was etwas praktisch bedeutet und was du als Nächstes tun sollst. Technische Kürzel kommen erst danach.
+
+Der Hub wurde in der GitHub-Quelle aufgeräumt:
+- 36 TODOs → 8;
+- vier aktuelle KFB-Prüfpunkte stehen vorne;
+- alte Briefings werden standardmäßig nicht mehr als aktuelle Aufgaben gezeigt;
+- alte Starttexte tragen eine Warnung;
+- Quick Links zeigen auf die aktuell laufenden PRs.
+
+### Files added/updated
+- `skills/chat/HUMAN_READABLE_STATUS.md`
+- `skills/chat/START_HERE.md`
+- Coworker `START_HERE.md`
+- Coworker `OPERATING_CONTRACT.md`
+- `HUB_HYGIENE.md`
+- `HUB_CLEANUP_AUDIT_2026-09-23.md`
+- `kfb-hub/index.html`
+- Coworker `CHANGELOG.md`
+- this `RETURN.md`
+
+### Evidence
+- Hub JS syntax: PASS
+- current TODOs: 8
+- current briefing allowlist: 6
+- Cloudflare: not run
+- public Hub: unchanged
+
+### Next
+Use the cleaner Hub source after merge; publication can wait for the next meaningful batch.
