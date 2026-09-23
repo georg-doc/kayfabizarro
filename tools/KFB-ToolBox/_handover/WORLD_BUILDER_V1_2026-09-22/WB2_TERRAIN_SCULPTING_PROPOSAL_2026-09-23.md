@@ -1,6 +1,6 @@
 # WorldBuilder WB2 · Terrain Sculpting Proposal · 2026-09-23
 
-Status: **NEXT FUNCTIONAL TERRAIN SLICE · PLANNING READY · RUNTIME NOT STARTED**
+Status: **CURRENT NEXT FUNCTIONAL TERRAIN SLICE · GEORG REPRIORITIZED WB2 · RUNTIME NOT STARTED**
 Owner: **WorldBuilder terrain authoring**
 Shared object-edit owner: **ToolBox `lib/edit-layer.js`**
 Current accepted foundation: **WB1 R1 + shared inline editor R2 HUMAN PASS**
@@ -284,13 +284,13 @@ Cloudflare:
 
 ## Sequencing
 
-Current live WorldBuilder gate on PR #186 remains the separate R3 uniform-size human review.
+Georg has now explicitly accepted the current WB1 foundation and asked to continue with the terrain-authoring direction.
 
-WB2 runtime implementation begins:
-- after R3 PASS; or
-- earlier only if Georg explicitly reprioritizes terrain sculpting over the optional uniform-size convenience gate.
+**WB2-TERRAIN-SCULPT-01 is the current next functional WorldBuilder gate.**
 
-Planning may proceed now. Runtime owners must not change.
+The R3 uniform `−/+` size gesture remains a useful shared-editor candidate, but it is now **optional / non-blocking** for WB2 and may be reviewed/promoted separately.
+
+Runtime owners must not change.
 
 ## One next WB2 gate
 
