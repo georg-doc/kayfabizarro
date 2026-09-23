@@ -486,3 +486,22 @@ Current router:
 `tools/KFB-ToolBox/_handover/RACER_MVP_STABILIZATION_2026-09-23/START_HERE.md`.
 
 Exactly one next gate: **RSTAB-1 · static geometry intrusions — ground wedges + support pillars.** No global FLOW/FEEL or curve tuning before that gate is clear.
+
+
+## 2026-09-23 · WorldBuilder v1 · WB1-P1 candidate preserved
+
+Current WorldBuilder branch is `chatgpt-web/world-builder-p1-environment-profile-2026-09-23`, Draft PR #177.
+
+WB1-P1 implementation/static evidence is preserved:
+- `kfb.environment-profile/1`;
+- real KayKit mounted-torch source-object-first contract;
+- 8/8 repository-native tests PASS;
+- 4/4 module syntax checks PASS;
+- material profile remains orthogonal/reversible.
+
+Browser/visible evidence is **BLOCKED**, not PASS: two Chromium navigation attempts stopped before page load with `ERR_BLOCKED_BY_ADMINISTRATOR`. Screenshots = 0; browser console result = UNKNOWN.
+
+Current recovery:
+`tools/KFB-ToolBox/_handover/WORLD_BUILDER_V1_2026-09-22/WB1_P1_FAILURE_RECOVERY_2026-09-23.md`
+
+Exactly one next gate: **WB1-P1 Browser Verify**. WB1-P2 remains HOLD.

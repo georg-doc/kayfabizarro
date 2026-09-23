@@ -1,137 +1,129 @@
-# RETURN · KFB WorldBuilder v1 · WB1-P0 · 2026-09-23
+# RETURN · KFB WorldBuilder v1 · WB1-P1 · 2026-09-23
 
-Status: **WB1-P0 COMPLETE / REVALIDATED · DRAFT PR · NO RUNTIME / STAGE / LIVE PROMOTION**
+Status: **WB1-P1 CANDIDATE PRESERVED · STATIC PASS · BROWSER / VISIBLE PROOF BLOCKED · DO NOT START P2**
 
 ## Repository / branch / PR
 
-Repository:
-`georg-doc/kayfabizarro`
+- Repository: `georg-doc/kayfabizarro`
+- Branch: `chatgpt-web/world-builder-p1-environment-profile-2026-09-23`
+- Draft PR: **#177 · WorldBuilder v1 · WB1-P1 Environment Profile candidate**
+- Coordination main reconciled before final metadata: `92f7e54e6e08cce4a07f87d9a26200032ee54797`
+- P0 evidence reconciliation checkpoint: `b5bb97c0bc2181287019d640009b939758b9e53c`
+- P1 implementation checkpoint: `bbf9a8ead0750dcb69be68d4d1a2a7136bd25ceb`
+- P1 test / recovery checkpoint: `6b745a555c80cd0e64d411141c8e346b5e60fd47`
+- Current-main reconciliation checkpoint before this metadata commit: `782500cf4ceeabfe28509ce2256bf652a9138b5f`
 
-Branch:
-`chatgpt-web/world-building-preflight-2026-09-22`
-
-Draft PR:
-`#175` — `WorldBuilder v1 · WB1-P0 source/reuse/license revalidation`
-
-Coordination `main` re-read immediately before RETURN:
-`7b732d0fcee16afcc8c5d77bb7e8a3de48fd91d5`
-
-P0 content/evidence head immediately before this RETURN metadata commit:
-`65b18a0700fb8f1648a4ece2d867919582978fd9`
-
-The commit that adds this file necessarily advances the branch head. Therefore this file does not pretend to contain its own commit SHA. The authoritative exact final handoff head is recorded on Draft PR #175 after this RETURN write and in the chat handoff.
+This metadata commit necessarily advances the branch once more. The authoritative exact final handoff head is recorded on Draft PR #177 after readback and in the chat handoff.
 
 ## Outcome
 
-WB1-P0 is complete and limited to source/reuse/license evidence.
+A bounded standalone Environment Profile candidate now exists under:
 
-The matrix now answers:
+`tools/KFB-ToolBox/world-building-preflight/environment-profile/`
 
-- what KFB already owns and can reuse directly;
-- what should be adapted without moving source ownership;
-- which external repositories are research-only;
-- what must not be imported;
-- which licenses require caution;
-- which runtime owners remain protected.
+It owns only:
+- DAY diagnostic / WhackMan-derived DUSK world lighting;
+- depth fog;
+- warm torch source behavior;
+- physical torch falloff;
+- fixed nearest-light pool, maximum 6;
+- asynchronous two-frequency flicker;
+- visible glow source;
+- local visibility light;
+- exposure.
 
-No World runtime, Environment Profile, Surface Adapter, editor, OSM conversion or Stage was implemented.
+It does **not** own:
+- WhackMan movement, MazeGraph, pursuers, pickups, combat or game state;
+- World topology / Surface Adapter;
+- material policy.
 
-## Key revalidation delta
+Material remains a separate reversible `MaterialProfileRef`.
 
-- The existing P0 candidate branch was preserved and reconciled additively with current coordination `main`.
-- The KFB donor source paths used by the original matrix did not change across the coordination-main drift.
-- Travel current `main` remains `8614282aab2ced43bb5dda9fcf7abadf9768100a`.
-- Combat Spindle planning branch remains `735b5449bf09fb1a069d4a81db44608a58166677`.
-- Eight external research repositories were rechecked.
-- Only `ZyFou/ProceduralTerrains` advanced; it is now pinned to `f58a8ddb81d1fbb526a41282a9a7e9c05c2d2070`.
-- Its MIT license blob remains `30d8711c055630ea5d7a481e20c81766a5fa5abd`.
-- `willjoe/terranian` still has no repository-root license file and remains `DO_NOT_IMPORT`.
-- Dropbox provenance was checked read-only for the WhackMan v1-1 Session Cut and Hex WorldBuilder corpus. GitHub remains SSOT.
+## Source-object-first proof contract
 
-## Protected owners retained
+The preview is intentionally locked to this order:
 
-- Travel / TinySkies: terrain-height truth and existing World Recipe/runtime seams.
-- Race: movement/contact/route/camera state.
-- OSM City Lab: geographic/semantic source truth and footprint/collision source representation.
-- Hex modules: grid/edge/rotation/topology/solver truth.
-- Dungeon owner functions: structural Dungeon layout/topology.
-- Scene Patch / current authoring seam: edit/history/persistence architecture.
-- Asset Librarian: common asset discovery.
+1. load and show the real KayKit `torch_mounted.gltf` source object alone;
+2. measure its flame point using existing Dungeon-owner functions;
+3. render multiple source-only frames;
+4. only then unlock the integrated ENVIRONMENT proof.
 
-P0 creates no second owner for any of these.
+The implementation exists, but the visible browser observation is still unresolved because browser navigation was blocked before page load.
 
-## Changed files
+## Intentional donor deltas
 
-P0 branch delta contains the following WorldBuilder/handoff metadata files:
+`wd-light.js` was used as the small extraction/adaptation donor, but P1 does not promote its lab-only calibration over the final WhackMan source:
 
-1. `tools/KFB-ToolBox/world-building-preflight/SOURCE_REUSE_MATRIX.md`
-2. `tools/KFB-ToolBox/world-building-preflight/TEST_REPORT.md`
-3. `tools/KFB-ToolBox/world-building-preflight/CHANGELOG.md`
-4. `tools/KFB-ToolBox/world-building-preflight/RETURN.md`
-5. `tools/KFB-ToolBox/_handover/README.md`
-6. `skills/chat/START_HERE.md`
-7. `skills/chat/CHANGELOG.md`
-8. `kfb-hub/index.html`
-9. `kfb-hub/stage/toolbox/index.html`
+- exposure: `1.0` from final `wm-boot.js`, not lab `0.98`;
+- local visibility: max intensity `46`, range `26`, decay `1.6` from final `wm-gate-c.js`;
+- material matte behavior is separate and reversible rather than embedded in Environment Profile.
 
-The branch also contains the additive merge reconciliation that brought the original P0 candidate onto the current `main` tree without discarding the matrix.
+Exact pins are recorded in `environment-profile/SOURCE.json`.
 
-## Checks actually run
+## Tests actually run
 
-Current P0 revalidation checks:
+Repository-native:
+- profile/core tests: **8/8 PASS**
+- module syntax checks: **4/4 PASS**
 
-- coordination drift audit: **1/1 completed**;
-- branch reconciliation check: **1/1 completed**;
-- Travel owner-head equality: **1/1 completed**;
-- Combat Spindle planning-head equality: **1/1 completed**;
-- external research head inspections: **8/8 completed**;
-- external license-state inspections: **8/8 completed**;
-- Dropbox source-provenance searches: **2/2 completed**.
-
-Total bounded source/provenance/license checks: **22/22 completed**.
-
-One external-head check intentionally produced a change rather than equality: ProceduralTerrains advanced by two commits and was re-pinned. No unresolved license contradiction remains in the matrix.
-
-## Tests / evidence not run
-
-- runtime tests: **0**
-- browser tests: **0**
-- gameplay tests: **0**
+Browser attempts:
+- attempt 1: local HTTP → **blocked before page load**
+- attempt 2: intercepted test origin → **blocked before page load**
+- blocker: `net::ERR_BLOCKED_BY_ADMINISTRATOR`
+- successful app page loads: **0**
+- browser console-error verification: **UNKNOWN**
+- source-object visible proof: **NOT OBSERVED**
 - screenshots: **0**
-- visual comparison: **N/A for P0**
-- local preview: **N/A for P0**
-- Work / WSA: **not used**
-- sealed Game Development Studio run: **not required for P0**
-- Meshy / Blender / paid generation: **not used**
+- interactive control tests: **0**
+
+Per the two-repair-pass rule, no third browser transport attempt was made.
+
+## Dropbox / Game Development Studio
+
+Read-only Dropbox provenance found:
+- WhackMan v1-1 Session Cut;
+- WorldDesign Lab 2026-09-23.
+
+GitHub remains SSOT.
+
+Optional `game-dev` CLI was unavailable. Sealed Game Development Studio evidence is not required by WB1-P1, so repository-native checks were used as the allowed fallback.
+
+## Portable Preview
+
+Preview package files are persisted in the candidate folder:
+- `LOCAL_PREVIEW.md`
+- `START_PREVIEW.command`
+- `STOP_PREVIEW.command`
+- `REVISION.json`
+
+This is **LOCAL REVIEW CANDIDATE · NOT PUBLIC** and is not an acceptance surface until the Browser Verify gate is observed.
 
 ## Stage / publication
 
-Direct Stage URL for P0:
-**none — documentation/source-evidence gate only.**
+Direct Cloudflare Stage URL: **none — prohibited/not requested for this WB1-P1 slice.**
 
-Intended future World Building preflight route remains:
-`https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/world-building-preflight/`
+- Cloudflare deploy: **0**
+- public browser verification: **0**
+- Live promotion: **0**
+- auto-merge: **not used**
 
-It was **not published, opened or verified in P0** and is not claimed as a human acceptance surface.
+## Recovery
 
-Hub source was updated only to route the work state:
+Canonical recovery export:
 
-- **WB1-P0 complete / revalidated**
-- **WB1-P1 Environment Profile = next**
-- **WB1-P2 FLAT/SPHERE/TORUS = HOLD after P1**
+`tools/KFB-ToolBox/_handover/WORLD_BUILDER_V1_2026-09-22/WB1_P1_FAILURE_RECOVERY_2026-09-23.md`
 
-No Cloudflare or Live write was performed.
+## Unresolved
 
-## Unresolved / deferred
+- required visible source-object isolation proof;
+- 0-console-error browser proof;
+- integrated Environment Profile screenshot / visible evidence;
+- interactive DAY/DUSK / torch / local visibility / reversible material checks.
 
-- WB1-P1 Environment Profile has not been implemented.
-- WB1-P2 Surface Adapter proof has not been started.
-- StoryMap current water appearance remains `DO_NOT_IMPORT` as visual canon.
-- Terranian remains research-only / no-import until a license is explicitly established.
-- No public WorldBuilder Stage exists from this slice.
+These are evidence gaps, not permission to redesign the candidate.
 
 ## Exactly one next gate
 
-**WB1-P1 · isolate the proven WhackMan dusk/fog/torch-pool/local-visibility/matte behaviour as a standalone Environment Profile without WhackMan gameplay, movement, MazeGraph, pickup or combat ownership.**
+**WB1-P1 Browser Verify.**
 
-Stop after P1 is committed and verified. Do not start WB1-P2 in the same work cycle.
+Use the persisted candidate unchanged first. Prove the real source object in isolation, then the integrated Environment Profile. Only after that gate passes may WB1-P2 be considered.

@@ -1,5 +1,13 @@
 # KFB WorldBuilder v1 · Web-first execution · 2026-09-22
 
+## WB1-P1 CURRENT RECOVERY OVERRIDE · 2026-09-23
+
+WB1-P1 implementation is **already preserved on Draft PR #177**. Static tests are 8/8 PASS, but required browser/visible proof was blocked twice before page load by `ERR_BLOCKED_BY_ADMINISTRATOR`.
+
+**Do not rerun WB1-P0. Do not rebuild WB1-P1 from memory. Do not start WB1-P2.**
+
+Resume only from [WB1_P1_FAILURE_RECOVERY_2026-09-23.md](WB1_P1_FAILURE_RECOVERY_2026-09-23.md). Exactly one next gate is **WB1-P1 Browser Verify** using the persisted Portable Preview.
+
 Status: **PREPARED · WEB FIRST · CLAUDE DESIGN AFTER TECHNICAL PREFLIGHT · WORK ESCALATION ONLY**
 Owner: existing KFB World / Travel / ToolBox owners; no new universal runtime owner.
 

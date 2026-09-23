@@ -1232,3 +1232,13 @@ WorldBuilder START/Fresh Web prompt and KFB Hub were advanced to P1. Cloudflare-
 - Hub now routes current Racer work to RSTAB-1 and marks the older Cologne Stage as historical / not C-3 proof.
 
 Exactly one next gate: **RSTAB-1 · static geometry intrusions — ground wedges + support pillars.**
+
+
+## 2026-09-23 · WorldBuilder WB1-P1 candidate / recovery routing
+
+- Preserved standalone `kfb.environment-profile/1` candidate on Draft PR #177.
+- Reconciled the candidate with current kayfabizarro `main@92f7e54e6e08cce4a07f87d9a26200032ee54797` without discarding concurrent Racer router/Hub changes.
+- Repository-native tests: **8/8 PASS**; module syntax: **4/4 PASS**.
+- Required browser proof remains blocked after two pre-load `ERR_BLOCKED_BY_ADMINISTRATOR` attempts; no screenshot or public PASS claim.
+- Router now points to **WB1-P1 Browser Verify**; WB1-P2 remains HOLD.
+- No Cloudflare Stage/Live promotion and no merge.

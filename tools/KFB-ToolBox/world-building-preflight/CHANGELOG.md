@@ -29,3 +29,24 @@ Exactly one next gate:
 **WB1-P1 · isolate the WhackMan Environment Profile without WhackMan gameplay.**
 
 Do not start WB1-P2 in the same work cycle.
+
+
+## 2026-09-23 · WB1-P1 Environment Profile candidate · browser proof blocked
+
+- Reconciled the completed WB1-P0 evidence onto current coordination main without reopening P0.
+- Created branch `chatgpt-web/world-builder-p1-environment-profile-2026-09-23` and Draft PR #177.
+- Isolated `kfb.environment-profile/1` from the pinned WhackMan light/fog/torch/local-visibility behaviour.
+- Reused `wd-light.js` as the adaptation donor but returned source-critical calibration to final WhackMan truth: exposure `1.0`; local visibility max `46`, range `26`, decay `1.6`.
+- Kept material calibration orthogonal through reversible `SOURCE_MATERIAL` / `WHACKMAN_MATTE_CANDIDATE` references.
+- Wired the real KayKit `torch_mounted.gltf` as the required source-object-first proof and the existing Dungeon-owner `collectTris()` + `measureFlame()` functions.
+- Repository-native tests: **8/8 PASS**; module syntax checks: **4/4 PASS**.
+- Chromium browser transport failed twice before page load with `net::ERR_BLOCKED_BY_ADMINISTRATOR`; per recovery protocol no third pass was attempted.
+- Visible source-object proof: **0 observed**; screenshots: **0**; browser console-error assertion: **UNKNOWN**.
+- Preserved full recovery at `tools/KFB-ToolBox/_handover/WORLD_BUILDER_V1_2026-09-22/WB1_P1_FAILURE_RECOVERY_2026-09-23.md`.
+- Optional `game-dev` CLI unavailable; sealed Game Development Studio evidence was not required for this gate and repository-native checks were used.
+- No Cloudflare Stage/Public/Live promotion.
+- **WB1-P2 remains HOLD.**
+
+Exactly one next gate:
+
+**WB1-P1 Browser Verify · run the persisted Portable Preview outside the restricted browser container, prove the real source torch in isolation first, then integrated Environment Profile, console errors = 0, and capture visible evidence.**

@@ -1,5 +1,11 @@
 # Paste-ready · KFB WorldBuilder v1 · Fresh Web Chat
 
+## CURRENT RESUME OVERRIDE · 2026-09-23
+
+WB1-P1 code already exists on Draft PR #177. The implementation/static gate is green (**8/8 tests + 4/4 syntax**); the browser evidence gate is blocked after two pre-load navigation failures (`ERR_BLOCKED_BY_ADMINISTRATOR`).
+
+Do **not** restart P0 or rebuild P1. Open `WB1_P1_FAILURE_RECOVERY_2026-09-23.md` and do exactly one gate: **WB1-P1 Browser Verify**. P2 remains HOLD.
+
 @GitHub
 
 We start KFB WorldBuilder v1 with **Web-first / no-Work-by-default** execution.
