@@ -41,11 +41,15 @@ h1{font-size:15px;letter-spacing:.06em;margin:0 0 2px}
 .badge.ok{border-color:#587a55;color:var(--ok)}
 #doc{white-space:pre-wrap;max-height:170px;overflow:auto;background:#13110d;border:1px solid var(--line);border-radius:8px;padding:8px;font:10px ui-monospace,SFMono-Regular,Menlo,monospace;color:#cfc2aa}
 #selftest{display:none}
-@media(max-width:820px){
-  #app{grid-template-columns:1fr}
-  #side{position:absolute;left:8px;top:8px;bottom:8px;width:min(330px,calc(100vw - 16px));border:1px solid var(--line);border-radius:12px;max-height:52vh}
-  #stage{grid-column:1;grid-row:1}
-  #status{left:auto;right:12px}
+@media(max-width:900px){
+  #app{grid-template-columns:minmax(240px,280px) 1fr}
+}
+@media(max-width:620px){
+  #app{grid-template-columns:1fr;grid-template-rows:minmax(180px,38vh) 1fr}
+  #side{position:relative;left:auto;top:auto;bottom:auto;width:auto;max-height:none;border-right:0;border-bottom:1px solid var(--line);border-radius:0;padding:10px 12px}
+  #stage{grid-column:1;grid-row:2;min-height:0}
+  #status{left:10px;right:auto;top:10px}
+  #hint{left:10px;right:10px;bottom:10px}
 }
 </style>
 </head>
@@ -183,6 +187,10 @@ const ACTOR={
   path:'media/3D_Assets/KayKit_Mystery_Series6/8 - February 2025 - Caveman/characters/Caveman.glb',
   commit:ASSET_COMMIT,
   fit:{height:2.2},
+  texture:{
+    path:'media/3D_Assets/KayKit_Mystery_Series6/8 - February 2025 - Caveman/assets/gltf/caveman_texture.png',
+    commit:ASSET_COMMIT
+  },
   clip:{
     name:'Melee_Unarmed_Idle',
     path:'media/3D_Assets/KayKit_Character_Animations_1.1/Animations/gltf/Rig_Medium/Rig_Medium_CombatMelee.glb',
@@ -211,13 +219,13 @@ const DEFAULT_DOC={
     {
       id:ACTOR.id,kind:ACTOR.kind,name:ACTOR.name,
       source:{path:ACTOR.path,commit:ACTOR.commit},
-      resident:{id:ACTOR.residentId,rigFamily:ACTOR.rigFamily,clip:{name:ACTOR.clip.name,path:ACTOR.clip.path,commit:ACTOR.clip.commit}},
-      transform:{position:[-2.2,0,0.2],rotation:[0,0.35,0]}
+      resident:{id:ACTOR.residentId,rigFamily:ACTOR.rigFamily,texture:{path:ACTOR.texture.path,commit:ACTOR.texture.commit},clip:{name:ACTOR.clip.name,path:ACTOR.clip.path,commit:ACTOR.clip.commit}},
+      transform:{position:[-2.2,null,0.2],rotation:[0,0.35,0]}
     },
     {
       id:PROP.id,kind:PROP.kind,name:PROP.name,
       source:{path:PROP.path,commit:PROP.commit},
-      transform:{position:[2.2,0,-0.6],rotation:[0,-0.45,0]}
+      transform:{position:[2.2,null,-0.6],rotation:[0,-0.45,0]}
     }
   ]
 };
@@ -334,9 +342,59 @@ function disposeTerrain(){
 function resetMixer(){
   if(currentMixer){try{currentMixer.stopAllAction()}catch{}currentMixer=null}
 }
+const explicitTextureCache=new Map();
+async function loadExplicitTexture(path,commit){
+  const url=raw(path,commit);
+  if(!explicitTextureCache.has(url)){
+    explicitTextureCache.set(url,(async()=>{
+      let tex=null;
+      if(typeof fetch==='function'&&typeof createImageBitmap==='function'){
+        try{
+          const response=await fetch(url,{mode:'cors'});
+          if(!response.ok)throw Error('HTTP '+response.status);
+          const bitmap=await createImageBitmap(await response.blob());
+          tex=new THREE.Texture(bitmap);tex.needsUpdate=true;
+        }catch(err){console.warn('explicit texture fetch/ImageBitmap failed; trying TextureLoader',url,err)}
+      }
+      if(!tex){
+        const tl=new THREE.TextureLoader();tl.setCrossOrigin('anonymous');
+        tex=await tl.loadAsync(url);
+      }
+      tex.colorSpace=THREE.SRGBColorSpace;
+      tex.flipY=false;
+      tex.magFilter=THREE.NearestFilter;
+      tex.minFilter=THREE.LinearMipmapLinearFilter;
+      tex.needsUpdate=true;
+      return tex;
+    })());
+  }
+  return explicitTextureCache.get(url);
+}
+async function applyExplicitTexture(node,textureRef){
+  if(!textureRef?.path)return 0;
+  const tex=await loadExplicitTexture(textureRef.path,textureRef.commit||ASSET_COMMIT);
+  let applied=0;
+  node.traverse(o=>{
+    if(!(o.isMesh||o.isSkinnedMesh)||!o.material)return;
+    const wasArray=Array.isArray(o.material);
+    const mats=(wasArray?o.material:[o.material]).filter(Boolean).map(m=>{
+      const n=m.clone();
+      n.map=tex;
+      n.needsUpdate=true;
+      applied++;
+      return n;
+    });
+    if(mats.length)o.material=wasArray?mats:mats[0];
+  });
+  node.userData.sourceTexture=textureRef.path;
+  node.userData.sourceTextureApplied=applied;
+  return applied;
+}
 async function loadActorModel(animated=true){
   const gltf=await loader.loadAsync(raw(ACTOR.path,ACTOR.commit));
   const model=gltf.scene;fitObject(model,ACTOR.fit);
+  try{await applyExplicitTexture(model,ACTOR.texture)}
+  catch(err){model.userData.sourceTextureError=String(err?.message||err);console.warn('explicit Caveman texture unavailable in this host',err)}
   if(animated){
     const ag=await loader.loadAsync(raw(ACTOR.clip.path,ACTOR.clip.commit));
     const clip=ag.animations.find(c=>c.name===ACTOR.clip.name);
@@ -401,7 +459,9 @@ function buildTerrain(){
 function makeRoot(record){
   const root=new THREE.Group();
   root.name=record.name;root.userData.sceneObjectId=record.id;root.userData.kind=record.kind;
-  root.position.fromArray(record.transform.position||[0,0,0]);
+  const p=record.transform.position||[0,0,0];
+  root.position.set(Number(p[0])||0,p[1]==null?0:(Number(p[1])||0),Number(p[2])||0);
+  root.userData.needsInitialGround=p[1]==null;
   root.rotation.fromArray((record.transform.rotation||[0,0,0]).concat(['XYZ']).slice(0,4));
   worldRoot.add(root);sceneObjects.set(record.id,root);return root;
 }
@@ -416,9 +476,8 @@ async function buildSceneObjects(token){
     if(token!==sceneLoadToken)return;
     root.add(model);
     root.userData.model=model;
-    root.userData.groundLock=rec.kind==='resident';
     if(rec.kind==='resident')groundModelLocal(model);
-    dropRoot(root);
+    if(root.userData.needsInitialGround){dropRoot(root);root.userData.needsInitialGround=false;updateRecordFromRoot(root)}
   }
   refreshAddButtons();refreshDoc();
 }
@@ -457,7 +516,6 @@ function selectRoot(root){
 }
 gizmo.addEventListener('objectChange',()=>{
   if(!selected)return;
-  if(selected.userData.groundLock)dropRoot(selected);
   updateRecordFromRoot(selected);refreshDoc();
 });
 
@@ -480,7 +538,7 @@ renderer.domElement.addEventListener('pointerup',e=>{
 
 function sourceFacts(kind){
   if(kind==='actor'){
-    return '<b>Exact Resident Atlas source</b><br>'+ACTOR.path+'<br>@ '+ACTOR.commit.slice(0,12)+'<br><b>Rig:</b> '+ACTOR.rigFamily+' · <b>clip:</b> '+ACTOR.clip.name+' @ '+ACTOR.clip.commit.slice(0,12);
+    return '<b>Exact Resident Atlas source</b><br>'+ACTOR.path+'<br>@ '+ACTOR.commit.slice(0,12)+'<br><b>Texture:</b> '+ACTOR.texture.path+'<br><b>Rig:</b> '+ACTOR.rigFamily+' · <b>clip:</b> '+ACTOR.clip.name+' @ '+ACTOR.clip.commit.slice(0,12);
   }
   return '<b>Exact source landmark</b><br>'+PROP.path+'<br>@ '+PROP.commit.slice(0,12)+'<br><b>Staging:</b> whole authored asset · fit max 1.35';
 }
@@ -493,7 +551,9 @@ async function showActor(){
   E('viewActor').classList.add('active');E('viewProp').classList.remove('active');E('viewScene').classList.remove('active');
   E('sourceFacts').innerHTML=sourceFacts('actor');
   status('loading exact Caveman source…');
-  const model=await loadActorModel(true);previewRoot.add(model);setCameraForObject(model);actorSourceReady=true;status('source actor loaded · '+ACTOR.clip.name,'ok');
+  const model=await loadActorModel(true);previewRoot.add(model);setCameraForObject(model);actorSourceReady=true;
+  const textureState=model.userData.sourceTextureApplied?' · texture bound':' · texture host fallback unavailable';
+  status('source actor loaded · '+ACTOR.clip.name+textureState,model.userData.sourceTextureApplied?'ok':'bad');
   updateReviewUnlock();
 }
 async function showProp(){
@@ -599,7 +659,6 @@ renderer.setAnimationLoop(()=>{
     const actorRoot=sceneObjects.get(ACTOR.id);
     if(actorRoot&&actorRoot.userData.model){
       groundModelLocal(actorRoot.userData.model);
-      if(actorRoot.userData.groundLock)dropRoot(actorRoot);
     }
   }
   controls.update();renderer.render(scene,camera);
@@ -615,11 +674,15 @@ async function runSelfTest(){
   localStorage.removeItem(STORAGE_KEY);
   await showActor();ok('exact actor source visible',previewRoot.children.length===1&&mode==='actor');
   ok('actor clip bound',currentMixer&&previewRoot.children[0].userData.clip===ACTOR.clip.name);
+  ok('explicit actor texture bound',previewRoot.children[0].userData.sourceTexture===ACTOR.texture.path&&previewRoot.children[0].userData.sourceTextureApplied>0);
   await showProp();ok('exact prop source visible',previewRoot.children.length===1&&mode==='prop');
   ok('scene gate unlocked',!E('viewScene').disabled);
   await showScene();ok('continuous terrain mesh exists',terrain&&terrain.geometry.attributes.position.count>1000);
   ok('resident loaded',sceneObjects.has(ACTOR.id));
   ok('prop loaded',sceneObjects.has(PROP.id));
+  const actor=sceneObjects.get(ACTOR.id),actorY=actor.position.y+1.1;
+  actor.position.y=actorY;updateRecordFromRoot(actor);
+  ok('resident Y transform is editable',near(sceneDoc.objects.find(o=>o.id===ACTOR.id).transform.position[1],actorY));
   const a=terrainHeightAt(-4,-4),b=terrainHeightAt(4,4);ok('terrain varies',!near(a,b,1e-4),a+' / '+b);
   const prop=sceneObjects.get(PROP.id);selectRoot(prop);
   prop.position.x+=1.2;prop.position.z-=.7;prop.rotation.y+=THREE.MathUtils.degToRad(15);dropRoot(prop);updateRecordFromRoot(prop);
@@ -630,6 +693,7 @@ async function runSelfTest(){
   ok('save/reload restores x',near(before.position[0],after.position[0]));
   ok('save/reload restores z',near(before.position[2],after.position[2]));
   ok('save/reload restores rotation',near(before.rotation[1],after.rotation[1]));
+  ok('save/reload restores resident Y',near(sceneObjects.get(ACTOR.id).position.y,actorY));
   ok('scene document stores references not bytes',JSON.stringify(sceneDoc).length<12000&&sceneDoc.objects.every(o=>o.source&&o.source.path&&o.source.commit));
   document.body.dataset.selftest='PASS';
   document.body.dataset.selftestCount=report.length+'/'+report.length;
