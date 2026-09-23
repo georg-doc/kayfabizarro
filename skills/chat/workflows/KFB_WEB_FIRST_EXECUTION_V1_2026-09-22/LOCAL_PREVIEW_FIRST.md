@@ -96,3 +96,18 @@ A failed HTML review does not trigger Work.
 Web/Claude fixes the source.
 
 Use Work only when the next required action truly needs a capability unavailable to Web/Claude/HTML review.
+
+
+## Reuse before new review chrome
+
+Before generating a new browser/game/3D review artifact, read:
+
+- `REVIEW_TEMPLATE_POOL.md`
+- `review-templates/REGISTRY.json`
+
+If a verified donor matches the focus, fork its accepted harness and change only the documented adaptation seam.
+
+Current verified 3D donor:
+`threejs-focus-review-v1`.
+
+Do not redesign camera controls, panel grammar, toggle grammar or review chrome merely because the subject changed.
