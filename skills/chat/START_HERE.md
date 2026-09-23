@@ -651,3 +651,20 @@ Current project router:
 
 Exactly one next gate:
 **TARCH-0 HUMAN ARCHITECTURE GATE · R1 CHAT HTML**.
+
+
+## KFB Authoring Recovery · 2026-09-23
+
+After timeout/context loss across the current authoring lanes, use:
+
+`tools/KFB-ToolBox/_handover/KFB_AUTHORING_RECOVERY_2026-09-23/START_HERE.md`
+
+Fresh-chat prompt:
+
+`tools/KFB-ToolBox/_handover/KFB_AUTHORING_RECOVERY_2026-09-23/FRESH_WEB_START.md`
+
+This recovers current ToolBox Stage-First, WorldBuilder Terrain-First and Orc Band POC routing, then selects exactly one lane for execution.
+
+Normal visual loop is:
+`GitHub checkpoint → zero-install REVIEW.html → Georg feedback`.
+Cloudflare and Work are not part of ordinary iteration.
