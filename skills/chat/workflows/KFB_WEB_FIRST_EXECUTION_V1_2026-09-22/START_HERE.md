@@ -383,3 +383,24 @@ If the public Combat MVP needs a new feature:
 For the next browser/game slice, prove this workflow in practice:
 
 **Web implements one small change and supplies one zero-install REVIEW.html artifact in chat. Georg reviews it directly. No Work and no Cloudflare until the slice is accepted enough to justify publication.**
+
+
+## Production Flow v2 override · 2026-09-23
+
+This Web-first workflow remains valid for source recovery and small implementation, but routine production no longer defaults to one Georg gate per small technical transition.
+
+Current orchestration:
+`../KFB_PRODUCTION_FLOW_V2_2026-09-23/START_HERE.md`
+
+Default:
+`source/donor lock → Production Packet → Coworker or Claude productive session → coherent review artifact → Georg milestone gate`
+
+Micro-gates remain only for:
+- disputed donor/source identity;
+- irreversible/destructive decisions;
+- visible product choices that block further work.
+
+For working donors:
+`../KFB_DESIGN_DONOR_LOCK_V1_2026-09-23/START_HERE.md`
+
+WSA remains escalation-only and receives a prepared packet, never open archaeology.
