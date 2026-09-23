@@ -2,6 +2,39 @@
 
 Alte Einträge bleiben unverändert. Korrekturen als neue CORRECTION/SUPERSEDES-Einträge mit Bezug ergänzen. Aktuelle Momentaufnahme im MASTERPLAN/Return, Geschichte hier.
 
+
+## 2026-09-23 · WB1-TERRAIN-SCENE-01 local review candidate
+
+### IMPLEMENTATION
+Added the bounded WorldBuilder runtime source and the zero-install review copy under
+`tools/KFB-ToolBox/worldbuilder/wb1-terrain-scene-01/`.
+
+The slice reuses:
+- deterministic terrain primitives from `ZyFou/ProceduralTerrains@f58a8ddb81d1fbb526a41282a9a7e9c05c2d2070` (MIT);
+- the existing S21/S22 TransformControls / select / snap / drop / local-patch seam;
+- Resident Atlas Caveman · `Rig_Medium` · existing `Melee_Unarmed_Idle`;
+- the exact KayKit Forest `Rock_3_E_Color1.gltf` landmark.
+
+Source actor and source prop are isolated gates before the composed scene can unlock. The scene document stores source references and transforms, not model/animation bytes.
+
+### REPAIR
+One bounded repair pass corrected posed grounding from world-Y to parent/terrain-Y and made Scene Editor unlock depend on successful isolated actor + prop loads.
+
+### EVIDENCE
+- source static/deterministic logic: **21/21 PASS**;
+- exact pinned donor paths: **3/3 PASS**;
+- review-copy integrity/parity: **5/5 PASS**;
+- automated browser runtime: **0**;
+- screenshots: **0**.
+
+Browser/visual acceptance is therefore still a human gate; no browser PASS is claimed.
+
+### PUBLICATION
+Cloudflare remains **HOLD · NOT PUBLISHED**. No Stage or Live route changed.
+
+### NEXT
+Georg reviews `WB1_TERRAIN_SCENE_01_REVIEW.html`. Claude Design, Orc Band integration and wider terrain modes remain HOLD until that review.
+
 ## 2026-09-23 · WorldBuilder → ToolBox Scene Authoring correction
 
 ### USER DIRECTION
