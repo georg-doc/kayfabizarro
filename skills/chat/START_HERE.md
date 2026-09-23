@@ -755,3 +755,44 @@ Exactly one next gate:
 **R3 · TRACK EDGE + BANKING CHAT HTML HUMAN REVIEW**
 
 Do not start vehicle grounding/contact, clamp/jitter, trails or jump/landing before R3 acceptance. Cloudflare remains deferred.
+
+
+## 2026-09-23 · Racer R3b · Review-Harness Recheck
+
+Current Racer owner:
+- Race Draft PR **#33**
+- branch `chat/racer-tarch0-sp13ktra-2026-09-23`
+- current docs head `308ed3b7e464f573b85d004f13fbf9e0642c818c`
+- runtime/test head `5f1ec224a96af7444f0c86ebbcf178dc70d35b72`
+
+R3 runtime state:
+- TARCH architecture remains accepted in principle;
+- corrected banking remains active;
+- CI remains **11/11 PASS · 0 fail · 0 skipped**.
+
+R3 human review failed only at the **review harness**:
+- arch frames visible;
+- track largely missing in CHASE.
+
+Proven cause:
+- one long road/shoulder/wall review polygon was discarded when any vertex went behind camera.
+
+R3b review repair:
+- road/shoulder/walls restored to short segment quads;
+- continuous city-ground review edge retained;
+- banking visualization unchanged;
+- **no runtime file changed**.
+
+Artifact:
+`KFB_Racer_TARCH0_R3b_track_edge_banking_review.html`
+
+Expected SHA-256:
+`100310fbc4794f317ce572d403142ee464e6b2a57a4e32a5a84382294b03fd3b`
+
+Exactly one next gate:
+**R3b · TRACK EDGE + BANKING CHAT HTML HUMAN RECHECK**
+
+Still blocked until after R3b:
+vehicle grounding/contact → hard-clamp/jitter → trails/speedlines → jump/landing.
+
+Cloudflare remains deferred.
