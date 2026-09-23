@@ -562,44 +562,35 @@ After WEDGE ACCEPT, sequence is locked:
 
 Do not start curve/trail tuning before the WEDGE human recheck.
 
-## 2026-09-23 · Travel Mode Bridge v1 · TMB-1E Repair Pass 2
+## 2026-09-23 · Travel Mode Bridge v1 · TMB-1E accepted · TMB-2 active
 
 Coordination:
 `tools/KFB-ToolBox/_handover/TRAVEL_MODE_BRIDGE_V1_2026-09-23/START_HERE.md`
 
-Travel Draft PR #37 remains the owner.
+Travel owner remains private `georg-doc/KFB-Travel-Globe`.
 
-Correct capacity trio:
-`ActionFigure / Rig_Medium · Orc Brute / Rig_Large · Warband Orc B / Rig_Legacy`
+TMB-1E is **HUMAN_ACCEPTED**:
+- accepted Travel commit `603f2a9e8fb2c8efd1008ed67607cf7a712de0bd`;
+- accepted visible trio: `ActionFigure / Rig_Medium · Orc Brute / Rig_Large · Warband Orc B / Rig_Legacy`;
+- accepted capacity/rider relation: **2.0× candidate**;
+- CardCarrier geometry/thickness unchanged;
+- native rig-class proportions preserved;
+- Chat attachment texture adapter human-passed;
+- PR #37 remains Draft / not merged / not public.
 
-Repair Pass 1 human result:
-- direct Chat attachment stopped with `ActionFigure embedded texture missing`;
-- review was blank;
-- this contradicted the already documented ChatGPT HTML texture-host limitation.
+Current gate:
+**TMB-2 · Ground → Flight Double-Space intent / ownership handoff proof.**
 
-Repair Pass 2:
-- implementation `d6e147e3a753babc935f94743a62097dd61bcc3a`;
-- technical head `3bfba40c5168fdf288944497b87885e50555d010`;
-- Return handoff `a30fddd0cc629d90413c73afaf6755bfe1eb2005`;
-- CI `35863095347 / 107187870055`: **103/103 PASS · build PASS · verify PASS**;
-- artifact `10750629040`.
+Locked:
+- first fresh Space = immediate Ground jump;
+- second fresh Space inside a bounded review window = `REQUEST_FLIGHT`;
+- first jump is never delayed;
+- existing `site/world-builder/runtime-mode.js` remains the Ground↔Flight seam;
+- exactly one movement writer and one active camera writer;
+- double-tap timing is human-reviewed in TMB-2;
+- TMB-3 landing remains HOLD.
 
-It reuses the HUMAN-PASSED WorldBuilder Chat texture adapter:
-`fetch → Blob → createImageBitmap → THREE.Texture` → `TextureLoader` fallback, sRGB, `flipY=false`.
-
-Exact maps are pinned for:
-- ActionFigure body + face atlas;
-- Orc Brute A texture.
-Legacy Orc B remains on source named materials.
-
-Missing Chat-host texture decode is now non-fatal; the scene stays visible and reports `HOST_TEXTURE_LIMITATION`.
-
-Exactly one next gate:
-**GEORG HUMAN RE-REVIEW · Repair Pass 2 three-rig Capacity HTML.**
-
-This is the second repair pass. Same-gate failure again => STOP + failure-recovery export; no Repair Pass 3.
-
-TMB-2 remains HOLD.
+No merge or Live promotion is authorized.
 
 ## 2026-09-23 · ToolBox / WorldBuilder / Orc Band current routing
 
