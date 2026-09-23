@@ -1,5 +1,30 @@
 # Claude Design Brief · Theatre Curtain visual refinement
 
+## GATE 0 · EXACT DONOR RESTORATION
+
+**STOP. Do not design yet.**
+
+The prior Claude 2D/SVG curtain is rejected.
+
+Before any refinement, copy/consume the exact working donor:
+
+- `game-ready/theatre-curtain-v1/runtime/kfb-theatre-curtain.mjs`
+- `kfb-hub/stage/game-dev-studio/theatre-curtain-v1/lab.mjs`
+- `kfb-hub/stage/game-dev-studio/theatre-curtain-v1/index.html`
+- branch `chat/gds-theatre-curtain-v1-2026-09-20`
+
+Read:
+- `skills/session-entry-use-what-works_v1.md`
+- `DONOR_LOCK_USE_WHAT_WORKS.md`
+- `REJECTED_OUTPUT_RECOVERY_2026-09-23.md`
+
+The first visible output must be the donor unchanged.
+
+No SVG. No CSS curtain. No Canvas-2D curtain. No flat replacement. No new frame/curtain mock.
+
+Stop after donor proof and wait for Georg's confirmation.
+
+
 ## Task
 
 Refine the already-proven Theatre Curtain v1/Core v2 **visually only**.
