@@ -467,3 +467,32 @@ For browser/game/3D slices use:
 `workflows/KFB_WEB_FIRST_EXECUTION_V1_2026-09-22/LOCAL_PREVIEW_FIRST.md`.
 
 Cloudflare Stage is a milestone/public acceptance surface, not the normal debugging loop.
+
+
+## 2026-09-23 · ToolBox Fractal Authoring · post-WB1-P2
+
+Prepared future authoring brief:
+
+`tools/KFB-ToolBox/_handover/TOOLBOX_FRACTAL_AUTHORING_POST_WB1_P2_2026-09-23/START_HERE.md`
+
+Status: **PREPARED BRIEF · NO RUNTIME BUILD · EXECUTE AFTER WORLDBUILDER WB1-P0–P2**.
+
+Organization decision:
+
+- the fresh **KFB ToolBox Claude Design project** is the authoring-consolidation home for nested Actor / Head / Face / EyeRig / Brows / Pose / Scene workflows;
+- the separate **World Design / WhackMan-lighting Claude project** remains the WorldBuilder visual/environment context;
+- integrate the two through existing owner seams rather than merging them into one Claude project.
+
+Current GitHub correction:
+
+- merged Stage-First v1 intake is current GitHub truth;
+- the Claude-summary path `STAGE_FIRST_V1_PROMOTION_2026-09-18/` and promoted `tools/KFB-ToolBox/stage-first/` path are not present on current main at preparation time;
+- therefore first post-P2 gate is `TFA-0`: export/reconcile the actual current KFB ToolBox Claude project before further visual implementation.
+
+First Claude proof after reconciliation:
+
+`FrizzleBob → Head/Graft → Face → EyeRig → Brows`
+
+Reuse EyeRig v6 and `brow-rig.v2.js`; do not create second face/eye/brow owners. Brow acceptance explicitly checks that Width changes do not make each eyebrow drift away from its eye. Legacy integration, shared scene editing and WorldBuilder bridging follow only after that human gate.
+
+No Stage/public claim from this routing entry.

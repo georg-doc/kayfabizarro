@@ -1,0 +1,180 @@
+# RETURN · KFB ToolBox Fractal Authoring · post-WB1-P2
+
+**Date:** 2026-09-23  
+**Status:** PREPARED BRIEFING SLICE · DOCS / SOURCE RECOVERY ONLY
+
+## GitHub handoff
+
+- Repo: `georg-doc/kayfabizarro`
+- Branch: `chatgpt-web/toolbox-fractal-authoring-brief-2026-09-23`
+- Draft PR: **#176** · https://github.com/georg-doc/kayfabizarro/pull/176
+- Base at branch creation: `main@8f9810e1a2c5ec1cf0e2c5d8a5947b9150f1a4a2`
+- No merge / no Live promotion requested.
+
+## Outcome
+
+Prepared a bounded post-WorldBuilder-P2 consolidation plan for the KFB ToolBox.
+
+Primary organizational decision:
+
+- **WorldBuilder visual authoring stays in the World Design / WhackMan-lighting Claude project.**
+- **ToolBox nested Actor/Face/Pose/Scene authoring stays in the fresh KFB ToolBox Claude project.**
+- the two lanes integrate through existing source-object / scene-patch / host seams instead of sharing one giant Claude project.
+
+## Current GitHub correction
+
+Current `main` does **not** contain:
+
+- `tools/KFB-ToolBox/stage-first/`;
+- `_handover/STAGE_FIRST_V1_PROMOTION_2026-09-18/`.
+
+Therefore the user-supplied Claude summary about an ~80% Stage-First promotion is treated as **external Claude-project state**, not GitHub SSOT.
+
+Current canonical Stage-First truth on main remains the merged intake:
+
+`tools/KFB-ToolBox/_handover/STAGE_FIRST_V1_INTAKE_2026-09-18/START_HERE.md`
+
+PR #49 is merged.
+
+## Existing reusable owners pinned in the brief
+
+- Stage-First source export/intake;
+- Minimal Stage-First UX;
+- Asset Librarian / Resource Picker seam;
+- EyeRig v6;
+- `brow-rig.v2.js`;
+- FrizzleBob graft modules;
+- Resident Atlas;
+- KayKit Motion Lab;
+- Batch EyeRig;
+- Rig_Legacy EyeRig stacked PR;
+- shared in-scene editor / `kfb.scene-patch.v1`;
+- WorldBuilder v1 prerequisite sequence.
+
+## Current PR state captured
+
+At preparation:
+
+- PR #104 · Batch EyeRig Atlas · Draft/Open · head `e277c3456651d314a01adea046e0105d2a12cdd1` · not merged;
+- PR #162 · Rig_Legacy EyeRig 17/17 · Draft/Open · head `7b1b52a60d64c9dc710514a59d1a7365f8a168e7` · stacked on #104 · not merged;
+- PR #127 · KayKit Motion Lab v1 · Draft/Open · head `7c8cc218ec46dabb20409c9e0b5368afcf5845c6` · not merged.
+
+The ToolBox consolidation must re-fetch/reconcile these before implementation.
+
+## Fractal authoring model
+
+Prepared machine-readable contract:
+
+`FRACTAL_AUTHORING_CONTRACT_v0.json`
+
+Hierarchy:
+
+`World → Story Zone → Scene → Actor/Body → Pose/Motion + Head/Graft → Face → EyeRig → Brows/Lashes`
+
+Persistence stays owner-separated.
+
+## First Claude pass
+
+Prepared:
+
+`CLAUDE_DESIGN_BRIEF.md`
+
+First deliverable only:
+
+**TFA-CD1 · FrizzleBob Nested Authoring Proof**
+
+Required edit path:
+
+`Actor → Head/Graft → Face → EyeRig → Brows`
+
+No Legacy, Scene Builder or WorldBuilder implementation in TFA-CD1.
+
+## Brow requirement
+
+Current owner:
+
+`brow-rig.v2.js`
+
+The brief exposes current real parameters first.
+
+Human/visual invariant:
+
+> changing Width must not unintentionally translate each brow's visual centre away from its corresponding eye.
+
+If current pair-wide geometry itself is proven to cause the problem, extend the same brow owner with a measured per-eye-centred width/spacing mode.
+
+Do not create a second brow runtime.
+
+## Later arbitrary-object EyeRig
+
+Prepared as deferred direction:
+
+`Manual FaceHost`
+
+Later flow:
+
+`select car/prop → define face plane/orientation → place FaceFrame → mount existing EyeRig v6 → save host-specific profile`
+
+No guessed automatic car-eye placement in the first consolidation slice.
+
+## Files added
+
+- `START_HERE.md`
+- `CURRENT_STATE.md`
+- `FRACTAL_AUTHORING_CONTRACT_v0.json`
+- `CLAUDE_DESIGN_BRIEF.md`
+- `RETURN.md`
+- `CHANGELOG.md`
+
+## Changed files · this slice
+
+1. `tools/KFB-ToolBox/_handover/TOOLBOX_FRACTAL_AUTHORING_POST_WB1_P2_2026-09-23/START_HERE.md`
+2. `tools/KFB-ToolBox/_handover/TOOLBOX_FRACTAL_AUTHORING_POST_WB1_P2_2026-09-23/CURRENT_STATE.md`
+3. `tools/KFB-ToolBox/_handover/TOOLBOX_FRACTAL_AUTHORING_POST_WB1_P2_2026-09-23/FRACTAL_AUTHORING_CONTRACT_v0.json`
+4. `tools/KFB-ToolBox/_handover/TOOLBOX_FRACTAL_AUTHORING_POST_WB1_P2_2026-09-23/CLAUDE_DESIGN_BRIEF.md`
+5. `tools/KFB-ToolBox/_handover/TOOLBOX_FRACTAL_AUTHORING_POST_WB1_P2_2026-09-23/RETURN.md`
+6. `tools/KFB-ToolBox/_handover/TOOLBOX_FRACTAL_AUTHORING_POST_WB1_P2_2026-09-23/CHANGELOG.md`
+7. `tools/KFB-ToolBox/START_HERE.md`
+8. `tools/KFB-ToolBox/_handover/README.md`
+9. `skills/chat/START_HERE.md`
+10. `kfb-hub/index.html`
+
+No runtime source file was modified.
+
+## Tests / evidence
+
+- current GitHub source reads: PASS;
+- Stage-First promoted-path existence check on main: **ABSENT**;
+- current Stage-First intake source: PASS;
+- current brow owner source: PASS;
+- current EyeRig Batch / Motion / Resident / in-scene-editor docs: PASS;
+- Fractal authoring JSON parse: **1/1 PASS**;
+- runtime tests: **0**;
+- browser tests: **0**;
+- screenshots generated by this slice: **0**;
+- user-supplied screenshot inspected: yes;
+- current Claude editable export supplied in this turn: **NO**.
+
+## Reserved future Stage
+
+`https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/fractal-authoring/`
+
+**RESERVED ONLY · NOT BUILT · NOT DEPLOYED · NOT PUBLIC_VERIFIED**
+
+## Open items
+
+- actual current KFB ToolBox Claude project export must be obtained/reconciled in TFA-0;
+- Stage-First owner-repo source promotion still needs a current source truth;
+- Draft PR stacks must be refreshed before code reuse;
+- TFA-BROW-01 needs a real visual proof;
+- Story Zone concepts from separate PR #174 need explicit reconciliation before runtime consumption.
+
+## Exactly one next gate
+
+**Finish WorldBuilder WB1-P0 → WB1-P1 → WB1-P2.**
+
+After P2, execute:
+
+**TFA-0 · export/reconcile the current KFB ToolBox Claude project against current GitHub truth.**
+
+Do not start TFA-CD1 before TFA-0.

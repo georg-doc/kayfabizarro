@@ -1,0 +1,345 @@
+{
+  "schema": "kfb.fractal-authoring-contract.v0",
+  "status": "PROPOSAL_ONLY_NOT_RUNTIME_CANON",
+  "date": "2026-09-23",
+  "owner": "KFB ToolBox / Stage-First authoring shell",
+  "prerequisite": "WorldBuilder WB1-P0, WB1-P1 and WB1-P2 green before Claude Design execution",
+  "purpose": "Route nested authoring edits to existing owners without creating a monolithic editor, second registry, second rig runtime or second world owner.",
+  "shell": {
+    "navigation": [
+      "Actor",
+      "Face",
+      "Pose",
+      "Motion",
+      "Voice",
+      "Stage"
+    ],
+    "uiRule": "one global bar + dominant 3D stage + one contextual palette",
+    "hierarchyPresentation": "compact selection breadcrumb / enter-exit group controls; no permanent giant scene tree"
+  },
+  "hierarchy": [
+    {
+      "level": "world-placement",
+      "display": "World",
+      "owner": "receiving WorldBuilder / world host",
+      "edits": [
+        "placement",
+        "surface mount",
+        "world route/nav references",
+        "environment profile ref"
+      ],
+      "persistence": "host/world recipe",
+      "children": [
+        "story-zone",
+        "scene"
+      ],
+      "firstSlice": "read-only context in ToolBox consolidation"
+    },
+    {
+      "level": "story-zone",
+      "display": "Story Zone",
+      "owner": "ToolBox composition proposal / receiving host",
+      "status": "proposal lineage currently lives on separate Resident Story Zones concept work; reconcile before runtime use",
+      "edits": [
+        "local zone root",
+        "cast/activity/path/anchor references"
+      ],
+      "persistence": "Story Zone recipe proposal",
+      "children": [
+        "scene"
+      ],
+      "firstSlice": "deferred until nested Actor + Scene proof is stable"
+    },
+    {
+      "level": "scene",
+      "display": "Scene",
+      "owner": "shared in-scene editor seam + receiving host",
+      "source": "skills/chat/workflows/KFB_INSCENE_EDITOR_MODULE_V1_2026-09-20/START_HERE.md",
+      "edits": [
+        "select",
+        "move",
+        "rotate",
+        "scale",
+        "annotate",
+        "group-local transforms"
+      ],
+      "persistence": "kfb.scene-patch.v1",
+      "children": [
+        "actor",
+        "prop",
+        "activity-station"
+      ],
+      "invariants": [
+        "host keeps loader/camera/physics/nav/save destination",
+        "source identity required",
+        "no anonymous placeholder"
+      ]
+    },
+    {
+      "level": "actor",
+      "display": "Actor / Body",
+      "owner": "Resident Atlas / selected actor runtime",
+      "source": "tools/resident_atlas_s6/",
+      "edits": [
+        "actor selection",
+        "actor profile",
+        "body/source variant where supported",
+        "prop/activity bindings"
+      ],
+      "persistence": "actor/resident profile or host recipe",
+      "children": [
+        "body-pose-motion",
+        "head-graft"
+      ],
+      "invariants": [
+        "source GLB/GLTF not destructively modified"
+      ]
+    },
+    {
+      "level": "body-pose-motion",
+      "display": "Pose / Motion",
+      "owner": "ToolBox Motion/Pose owners",
+      "donors": [
+        "KayKit Motion Lab v1",
+        "Resident Atlas pose/clip evidence",
+        "existing pose-rig"
+      ],
+      "edits": [
+        "pose",
+        "clip preview",
+        "play/stop/rest",
+        "approved motion profile"
+      ],
+      "persistence": "existing pose/motion profile owner",
+      "children": [],
+      "invariants": [
+        "consumer movement/physics remains external",
+        "rig families stay distinct"
+      ]
+    },
+    {
+      "level": "head-graft",
+      "display": "Head / Graft",
+      "owner": "current graft / actor composition owner",
+      "source": "tools/KFB-ToolBox/kfb-rigs-embed-v3/frizzlegraft-v1/",
+      "edits": [
+        "head/graft selection where supported",
+        "graft-local profile/transform",
+        "visibility of source sibling meshes where supported"
+      ],
+      "persistence": "graft/actor profile",
+      "children": [
+        "face"
+      ],
+      "invariants": [
+        "do not treat graft as loose scene prop when it is actor identity"
+      ]
+    },
+    {
+      "level": "face",
+      "display": "Face",
+      "owner": "current Face/Graft modules",
+      "edits": [
+        "face module enable/config",
+        "nose",
+        "mouth",
+        "moustache",
+        "brow overlay",
+        "EyeRig child selection"
+      ],
+      "persistence": "existing actor/face profile configuration",
+      "children": [
+        "eye-rig",
+        "brows",
+        "lashes"
+      ],
+      "invariants": [
+        "face modules share measured EyeRig/FaceHost anchors where designed",
+        "no second face runtime"
+      ]
+    },
+    {
+      "level": "eye-rig",
+      "display": "EyeRig",
+      "owner": "EyeRig v6",
+      "source": "tools/KFB-ToolBox/kfb-rigs-embed-v3/petstudio-v9/studio-v12/pet-eye-rig.v6.js",
+      "edits": [
+        "anchor",
+        "eye shape/profile",
+        "pupil",
+        "gaze",
+        "blink",
+        "lids",
+        "splay",
+        "life",
+        "optional lashes where supported"
+      ],
+      "persistence": "kfb.eye-profile candidate/current EyeRig profile owner",
+      "children": [
+        "brows",
+        "lashes"
+      ],
+      "invariants": [
+        "EyeRig update lifecycle remains owned by EyeRig adapter",
+        "Batch profiles are not source-model edits"
+      ]
+    },
+    {
+      "level": "brows",
+      "display": "Brows",
+      "owner": "brow-rig.v2.js",
+      "source": "tools/KFB-ToolBox/kfb-rigs-embed-v3/petstudio-v9/studio-v12/brow-rig.v2.js",
+      "edits": [
+        "length/width",
+        "mask/gap",
+        "thickness",
+        "height",
+        "x",
+        "y",
+        "tiltLeft",
+        "tiltRight",
+        "bendLeft",
+        "bendRight",
+        "follow",
+        "lift",
+        "solid/even/cap"
+      ],
+      "persistence": "existing brow params inside face/actor profile",
+      "children": [],
+      "uiFriendlyMapping": {
+        "length": "Width",
+        "mask": "Inner gap",
+        "thickness": "Thickness",
+        "height": "Height",
+        "x": "Horizontal position",
+        "y": "Vertical offset",
+        "tiltLeft": "Tilt L",
+        "tiltRight": "Tilt R",
+        "bendLeft": "Arch L",
+        "bendRight": "Arch R",
+        "follow": "Follow head",
+        "lift": "Depth / lift"
+      },
+      "acceptanceInvariant": "changing Width must not unintentionally translate the visual centre of each brow away from its corresponding eye",
+      "repairRule": "first verify UI/profile use of existing fields; only if pair-wide geometry is proven to cause drift, extend this same owner with a measured per-eye-centred width/spacing mode"
+    },
+    {
+      "level": "lashes",
+      "display": "Lashes",
+      "owner": "EyeRig v6 optional feature",
+      "edits": [
+        "enable/length/style only where existing owner supports"
+      ],
+      "persistence": "Eye/face profile",
+      "children": [],
+      "firstSlice": "optional; do not block FrizzleBob brow gate"
+    }
+  ],
+  "resourcePicker": {
+    "owner": "Asset Registry/Librarian discovery + receiving ToolBox suitability",
+    "source": "tools/KFB-ToolBox/_handover/UI_RESET_MINIMAL_STAGE_FIRST_2026-09-15/ASSET_LIBRARIAN_INTEGRATION_2026-09-15.md",
+    "modes": [
+      "actor",
+      "rig-part",
+      "motion",
+      "prop",
+      "stage",
+      "performance"
+    ],
+    "rule": "one context-aware Browse → Preview → Accept/Revert drawer; no second asset index"
+  },
+  "arbitraryHostLater": {
+    "id": "manual-facehost-v0",
+    "status": "DEFERRED_AFTER_CHARACTER_PROOFS",
+    "useCase": "car/prop/non-character receives EyeRig",
+    "flow": [
+      "select host object",
+      "define face plane/orientation",
+      "place/size FaceFrame",
+      "mount existing EyeRig v6",
+      "save host-specific profile"
+    ],
+    "rule": "no automatic guessed car-eye placement in first consolidation slice"
+  },
+  "persistenceRules": [
+    "save edits at the lowest existing owner that can express them",
+    "scene transform patches do not carry EyeRig/brow internals",
+    "EyeRig/brow profiles do not carry world placement",
+    "WorldBuilder does not duplicate actor/face runtime",
+    "ToolBox does not duplicate world navigation/physics/save destination",
+    "Registry source identity remains canonical",
+    "no destructive source GLB/GLTF edits",
+    "no giant flattened all-state JSON"
+  ],
+  "firstFixtures": {
+    "faceNested": {
+      "id": "TFA-FRIZZLE-01",
+      "actor": "FrizzleBob Yellow / Graft Driver",
+      "breadcrumb": [
+        "Actor",
+        "Head/Graft",
+        "Face",
+        "EyeRig",
+        "Brows"
+      ],
+      "acceptance": [
+        "select each nested scope",
+        "edit EyeRig without moving body",
+        "edit brow width/gap/position visibly",
+        "save/reload same face state",
+        "return to Actor/Pose without losing face state"
+      ]
+    },
+    "brow": {
+      "id": "TFA-BROW-01",
+      "acceptance": [
+        "front and 3/4 views",
+        "minimum/default/maximum width stress test",
+        "each brow centre stays visually registered to its eye",
+        "inner gap can change independently of width where supported",
+        "no duplicate brow runtime"
+      ]
+    },
+    "legacy": {
+      "id": "TFA-LEGACY-01",
+      "source": "consume reconciled PR #104 + stacked PR #162 evidence/implementation",
+      "acceptance": [
+        "load one Legacy actor",
+        "apply approved/candidate EyeRig profile",
+        "edit/save profile through same Face surface",
+        "no special second UI"
+      ]
+    },
+    "nestedScene": {
+      "id": "TFA-SCENE-01",
+      "acceptance": [
+        "Actor can be selected as one scene object",
+        "enter Actor → Head → Face scopes",
+        "exit back to Scene",
+        "move Scene/Actor root via scene patch without corrupting face profile",
+        "export/reload preserves both namespaces"
+      ]
+    }
+  },
+  "buildLadder": [
+    "TFA-0 export/reconcile current KFB ToolBox Claude project against GitHub",
+    "TFA-1 promote/reuse Stage-First shell in owner repo; no redesign",
+    "TFA-2 wire nested selection/breadcrumb over real FrizzleBob actor",
+    "TFA-3 expose existing EyeRig + brow controls and pass TFA-BROW-01",
+    "TFA-4 consume one reconciled Legacy EyeRig profile through same Face surface",
+    "TFA-5 integrate shared in-scene editor selection/transform + separate patch namespaces",
+    "TFA-6 bridge the shell into proven WorldBuilder/Scene context after owner seams are green",
+    "TFA-7 later manual FaceHost proof on one non-character object such as a car"
+  ],
+  "nonGoals": [
+    "new world renderer",
+    "new lighting system",
+    "new Asset Librarian",
+    "new EyeRig runtime",
+    "new brow runtime",
+    "new Resident Atlas",
+    "generic monolithic Three.js editor",
+    "automatic arbitrary-object face detection",
+    "WorldBuilder implementation before WB1-P2"
+  ]
+}

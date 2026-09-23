@@ -97,3 +97,29 @@ Briefs:
 - `../../skills/chat/workflows/KFB_TOOLBOX_FLUID_CARD_VOXEL_CONSOLIDATION_V1_2026-09-21/START_HERE.md`
 - `../../skills/chat/workflows/KFB_THEATRE_CURTAIN_CORE_V2_2026-09-21/START_HERE.md`
 - `../../skills/chat/workflows/KFB_PLAYABLE_MVP_CONSOLIDATION_V1_2026-09-21/START_HERE.md`
+
+
+## PREPARED FUTURE · Fractal Authoring Consolidation · post-WB1-P2 · 2026-09-23
+
+Prepared briefing:
+
+`_handover/TOOLBOX_FRACTAL_AUTHORING_POST_WB1_P2_2026-09-23/START_HERE.md`
+
+Purpose:
+
+- consolidate existing Stage-First / EyeRig / Graft / Pose/Motion / Resident / in-scene-editor owners into one nested authoring shell;
+- preserve the hierarchy `EyeRig/Brows → Face → Head/Graft → Actor → Scene → World`;
+- first Claude proof is FrizzleBob nested Face/EyeRig/Brow authoring;
+- current `brow-rig.v2.js` remains owner and receives any measured width/spacing repair;
+- later Legacy and arbitrary-object/manual-FaceHost proofs reuse the same shell.
+
+Organization:
+
+- actual WorldBuilder visual lane stays in the World Design / WhackMan-lighting Claude project;
+- ToolBox authoring consolidation stays in the fresh KFB ToolBox Claude project.
+
+**Do not execute yet.**
+
+Current WorldBuilder sequence must first complete `WB1-P0 → WB1-P1 → WB1-P2`.
+
+Then run `TFA-0`: export/reconcile the current KFB ToolBox Claude project against GitHub before any new visual authoring.

@@ -20,6 +20,8 @@ Bei Ablösung neuen Auftrag anlegen und alten mit einem additiven Nachfolgerhinw
 
 - [Batch EyeRig Atlas · Rig_Medium → Rig_Large → Legacy](EYE_RIG_BATCH_2026-09-18/START_HERE.md) — **PREPARED TOOLBOX/RIGGING SLICE**. Bestehendes EyeRig v6 + gemessener FaceHost, Atlas-artige Batch-Freigabe, Profile Export/Import, später Consumer-Handoff. Noch keine Runtime.
 
+- [ToolBox Fractal Authoring · post-WB1-P2](TOOLBOX_FRACTAL_AUTHORING_POST_WB1_P2_2026-09-23/START_HERE.md) — **PREPARED FUTURE BRIEF**. Nach WorldBuilder P0–P2 zuerst den aktuellen KFB-ToolBox-Claude-Export gegen GitHub reconciliieren (`TFA-0`), dann FrizzleBob als verschachtelten `Actor → Head → Face → EyeRig → Brows` Proof im frischen ToolBox-Designprojekt bauen. World-/WhackMan-Licht bleibt im separaten World-Design-/WorldBuilder-Kontext; keine Runtime-/Stage-Behauptung.
+
 - [Stage-First v1 · Intake + Promotion](STAGE_FIRST_V1_INTAKE_2026-09-18/START_HERE.md) — **CURRENT TOOLBOX INTAKE**. Vollständiger Export liegt transportbedingt im Stunt-Race-Inbox; ToolBox-Owner bleibt dieses Repo. GitHub-Asset-Gaps korrigiert, Birthday explizit archiviert, Promotion-/Browser-Gate definiert.
 
 - [Atlas Intake · Resident S6 + Environment / Kit Lab](ATLAS_INTAKE_2026-09-17/START_HERE.md) — REVIEWED INTAKE der neuen Resident-/Environment-Exporte; Originale bleiben im Inbox-Pfad, GitHub-first Assetregel und Promotion-Reihenfolge dokumentiert. Keine Travel-/Consumer-Abnahme.
