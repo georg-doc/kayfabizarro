@@ -158,3 +158,38 @@ Finish central routing:
 Then open one Draft PR for this consolidation and stop.
 
 No runtime merge/promotion in this control-plane slice.
+
+
+## Blender MCP production lane
+
+Current proof:
+PR #192
+`claude/blender-mcp-animation-poc-2026-09-23@b49fb6e1adde070d658e1cc21dadb3294164cb29`
+
+Clown JUG-P1:
+- reproducible Blender Python;
+- GLB;
+- GIF;
+- deformed-mesh clearance checks;
+- Georg visual PASS ~80 %;
+- browser playback still open.
+
+Current live authoring:
+Orc Warband performance in Blender MCP.
+
+Onboarding:
+`BLENDER_MCP_PRODUCTION_ONBOARDING.md`
+
+Continuation prompt:
+`BLENDER_MCP_WARBAND_CONTINUE_PROMPT.md`
+
+Do not restart the active Warband session because of recovery.
+At the next meaningful checkpoint require:
+- editable .blend;
+- reproducible script where practical;
+- GLB/GLTF;
+- preview;
+- source/measurement record;
+- Return.
+
+Blender remains authoring, not gameplay/runtime ownership.
