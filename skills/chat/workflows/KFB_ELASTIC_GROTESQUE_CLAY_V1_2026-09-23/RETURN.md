@@ -217,3 +217,25 @@ with **21/21 PASS · 3/3 WebGL2 · 0 page/console errors**.
 
 Exactly one gate remains unchanged:
 **Georg human visual review of Hürth 01 V2 actual form language.**
+
+
+## 2026-09-24 · Chat mirror correction / recovery
+
+Georg reviewed the simplified self-contained Canvas chat mirror and rejected it as a faithful representation of V2.
+
+Observed in the mirror:
+- wrong / reduced building rendering;
+- facade details such as doors/windows not correctly placed/readable;
+- overall shrink/simplification impression versus the previously accepted/good-looking V2 direction.
+
+Decision:
+- **mirror = REJECTED AS VISUAL REVIEW AUTHORITY**;
+- do not tune from it;
+- do not use it as donor or continuation source;
+- canonical tested V2 Three.js runtime remains unchanged and CURRENT.
+
+Current short recovery is now:
+`CHAT_RECOVERY_CURRENT.md`
+
+Exactly one next gate remains:
+**show/recover the ACTUAL tested Hürth 01 V2 result for Georg visual review — no substitute renderer.**
