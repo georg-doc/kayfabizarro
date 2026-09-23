@@ -925,6 +925,7 @@ export function buildGround(THREE, ctx, route) {
       }
 
       edge.push({
+        routeIndex: i, tunnel: isTunnel(i),
         covered, leftHalf, rightHalf, shellSpan,
         lx: p.x + p.nx * leftHalf, lz: p.z + p.nz * leftHalf,
         rx: p.x - p.nx * rightHalf, rz: p.z - p.nz * rightHalf,
@@ -981,15 +982,28 @@ export function buildGround(THREE, ctx, route) {
   // §3 als ERSTES laufen lassen will. Getrennt benannt ist jede Huelle ehrlich
   // und jedes Teil einzeln adressierbar (§10).
   if (edge.length > 1) {
+    const shellOwnsCutSegment = (A, B) =>
+      A.tunnel && B.tunnel && (A.covered || B.covered);
+
+    // Human gate 2026-09-23: two brown wedges remained exactly where the cut
+    // switched uncovered <-> covered (route 99->100 and 133->134). Both endpoints
+    // are already inside the rendered tunnel run, so the shell exists across the
+    // entire segment. Emitting the brown cut wall/invert there creates a diagonal
+    // transition quad that can read inside the road even though its endpoints are
+    // individually valid. The shell owns those two handoff segments as well as the
+    // fully covered interior. Crucially 90->91 remains ground-owned because neither
+    // endpoint is covered, preserving the historical tunnel-mouth closure.
+    const shellOwnedTransitions = [];
+    for (let i = 0; i < edge.length - 1; i++) {
+      const A = edge[i], B = edge[i + 1];
+      if (A.tunnel && B.tunnel && A.covered !== B.covered)
+        shellOwnedTransitions.push([A.routeIndex, B.routeIndex]);
+    }
+
     const strip = (fn) => {
       const v = [];
-      // Unter einer Tunnelschale gibt es keine Grabenwand und keine Sohle: dort
-      // schliesst die Schale selbst den Boden. RSTAB-1 setzt "covered" erst,
-      // wenn die zehnstuetzige asymmetrische Blende die echte banked/faceted
-      // Shell-Naht erreicht hat. Deshalb bleibt der Uebergang selbst Wand/Sohle
-      // und nur ein Segment mit ZWEI tatsaechlich gedeckten Enden wird ausgelassen.
       for (let i = 0; i < edge.length - 1; i++) {
-        if (edge[i].covered && edge[i + 1].covered) continue;
+        if (shellOwnsCutSegment(edge[i], edge[i + 1])) continue;
         fn(v, edge[i], edge[i + 1]);
       }
       const g = new THREE.BufferGeometry();
@@ -1028,6 +1042,7 @@ export function buildGround(THREE, ctx, route) {
       coverBlendPoints: COVER_BLEND,
       shellSeamClearanceM: SHELL_SEAM_CLEARANCE_M,
       asymmetricShellSpan: true,
+      shellOwnedTransitions,
       maxEdgeStepM: +Math.max(0, ...edge.slice(1).flatMap((e, i) => [
         Math.abs(e.leftHalf - edge[i].leftHalf),
         Math.abs(e.rightHalf - edge[i].rightHalf)
