@@ -78,3 +78,44 @@ Dated 18 Sep quick links were replaced by current WorldBuilder #186, Travel #37,
 ### EVIDENCE
 Hub JavaScript syntax compile check: PASS.
 Cloudflare publication: not run.
+
+
+## 2026-09-23 · Long-chat recovery + WSA workshop setup
+
+### USER DIRECTION
+Keep this long Web Lead chat recoverable and prepare the next useful WSA/Work workshop so the new Web/Coworker/Design split survives into Work.
+
+### RECOVERY
+Added `RECOVERY.md` with:
+- current coordination owner;
+- current project PRs/gates;
+- Coworker review/integration lessons;
+- existing `kfb.scene-patch.v1` correction;
+- Hub hygiene state;
+- capacity-aware routing;
+- one next coordination gate.
+
+### WSA SETUP
+Added `WSA_INTEGRATION_WORKSHOP_SETUP.md`.
+
+New rule:
+WSA receives only a prepared integration slice with exact heads, owners, closed scope, already-run tests, human review where applicable, one WSA-only capability, one smoke gate and one stop condition.
+
+Ordinary review/debug/adapter work stays Web/Coworker.
+
+### CAPACITY STRATEGY
+Georg reports a refreshed Claude usage window. Treat this as an opportunity to use Coworker/Design more heavily where they fit, but do not hard-code quota dates or make capacity the owner decision.
+
+### CURRENT TRAVEL UPDATE
+Travel PR #37 is now `HUMAN_ACCEPTED · TMB-1E CLOSED`.
+Accepted head:
+`603f2a9e8fb2c8efd1008ed67607cf7a712de0bd`.
+
+Next Travel gate:
+`TMB-2 · Ground → Flight Double-Space ownership handoff`.
+
+Hub working source and Coworker sprint matrix were refreshed accordingly.
+
+### PUBLICATION
+No Cloudflare.
+No merge.
