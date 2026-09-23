@@ -58,3 +58,28 @@ No public Stage and no Live promotion before that gate.
 
 ### NEXT GATE
 Georg visual review of the **actual v2 3D translation**. Blender-MCP generalization waits for that gate.
+
+
+## 2026-09-24 · HÜRTH 01 V2 · LEAD ANTI-REGRESSION + SELF-CONTAINED CHAT REVIEW
+
+### ROUTING
+- added `LEAD_OVERRIDE_2026-09-24.md`;
+- registered the slice in `skills/chat/REGISTRY.json` as `CURRENT_REFERENCE`;
+- marked old City-Lab GROTESQUE as comparison evidence only;
+- marked Hürth 01 V1 as superseded for continuation;
+- retained V2 candidate `ELASTIC_GROUP_WARP_V2` / `KFB_WONKY_90S_CLAY_V1`.
+
+### REVIEW TRANSPORT
+- diagnosed the prior chat preview as an external iframe/source-chain wrapper;
+- switched the chat-facing review contract to single-file/self-contained HTML;
+- explicit rule: no iframe, CDN, runtime fetch or cross-origin module chain;
+- canonical PR #194 V2 Three.js runtime remains unchanged.
+
+### TESTED RUNTIME
+- tested runtime/source head remains `0c59e92d9d8688f5a88cd309ae8891dcd174c2fc`;
+- run `35909757979`: **21/21 PASS**;
+- **3/3 WebGL2**;
+- **0 page/console errors**.
+
+### NEXT GATE
+**Georg human visual review of the Hürth 01 V2 actual form language.**
