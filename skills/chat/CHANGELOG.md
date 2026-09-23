@@ -1,3 +1,30 @@
+## 2026-09-23 · Claude Coworker WS0 onboarding
+
+### USER DIRECTION
+Add Claude Coworker as a parallel technical lane for code review, Web-aligned integration planning, WSA/Work slice preparation and optionally productive bounded GitHub slices.
+
+### ROLE
+Web Lead and existing project owners remain authoritative. Coworker has three modes:
+`REVIEW_ONLY` · `PROPOSAL_ONLY` · `BOUNDED_WRITE`.
+
+### REVIEW / TOKEN POLICY
+Coworker reuses the existing verified Review HTML pool and Local Preview First workflow. No second review framework and no routine Cloudflare loop.
+
+Default boot is intentionally small: central router + Coworker START/contract + current sprint matrix + one task-specific workflow.
+
+### CURRENT EXAMPLES
+Onboarding checked current Racer PR #33, Travel PR #37, ToolBox PR #185 and WorldBuilder PR #186.
+
+### WRITE POLICY
+Productive code changes require a Slice Card with owner repo, branch, one outcome, closed file roster, tests, review gate and stop condition. No auto-merge or Live promotion.
+
+### WSA
+Coworker may prepare an integration proposal. It becomes WSA-ready only after Web Lead / Georg alignment.
+
+### RESULT
+Documentation-only WS0. Runtime tests 0; browser tests 0; Cloudflare 0; Work/WSA runs 0.
+
+
 ## 2026-09-20 · KCC-1A FrizzleBob Race secondary-motion facts
 
 ### SUPERSEDES · PUBLICATION STATUS ONLY
