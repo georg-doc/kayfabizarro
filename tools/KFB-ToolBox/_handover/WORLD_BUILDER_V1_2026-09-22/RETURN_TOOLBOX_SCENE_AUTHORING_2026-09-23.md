@@ -1,6 +1,6 @@
 # RETURN · WB1-TERRAIN-SCENE-01 · local HTML review candidate · 2026-09-23
 
-Status: **IMPLEMENTED · EVIDENCE PASS · HUMAN HTML REVIEW PENDING**
+Status: **R1 HUMAN FEEDBACK REPAIRED · EVIDENCE PASS · HUMAN HTML RE-REVIEW PENDING**
 
 ## Result
 
@@ -27,16 +27,16 @@ Draft PR:
 `#186`
 
 Verified pre-Return branch head:
-`732f5a1fc1f90964277c4f6bed673fd26a421cf9`
+`8138f873509d47b3af144108b9de5525a2f89cb9`
 
 Current canonical source blob:
-`60a8ca090b92fd8ff0d1ed77a70aea23f3d3e031`
+`a0ae15e822ef8283abafcf84483498814b1be3b8`
 
 Current zero-install review blob:
-`b7b0648b16134ad5570f3f6329f84f4e926f0932`
+`dd6379815295adf07bdf0132210e1f7e6c9a3b49`
 
-Review-sync checkpoint recorded by the canonical test report:
-`d4715f6fa3082d1c12d60e67cb82ed828a2b467e`
+Review-sync checkpoint for the repaired candidate:
+`f3dfe50f4832ef7c2f36833cf983a699f6811fc0`
 
 ## Candidate files
 
@@ -82,17 +82,35 @@ One bounded repair pass before the review candidate corrected:
 - posed Caveman grounding from implicit world-Y grounding to parent / terrain Y;
 - Scene Editor unlock from “tab visited” to “source loaded successfully”.
 
+## R1 human feedback and repair
+
+Georg's first HTML review found:
+- Caveman texture missing in the ChatGPT preview;
+- Character green Y-axis movement snapping back / not moving vertically;
+- palette/sidebar covering the 3D field of view.
+
+Repaired candidate:
+- binds the exact Resident Atlas `caveman_texture.png` source explicitly; no replacement material;
+- tries fetch/Blob/ImageBitmap first with TextureLoader fallback for the ChatGPT attachment host;
+- keeps actor model grounding inside the Character root but stops forcing the root itself to terrain Y during gizmo changes / animation frames;
+- uses one-shot ground-on-spawn for new fixture objects, then preserves authored numeric Y through save/reload;
+- keeps `Drop to terrain` as the explicit re-ground action;
+- uses non-overlay responsive grid rows for narrow previews.
+
+Shared host limitation note:
+`skills/chat/workflows/KFB_WEB_FIRST_EXECUTION_V1_2026-09-22/CHATGPT_HTML_TEXTURE_PREVIEW_LIMITATION_2026-09-23.md`
 ## Tests / evidence actually recorded
 
 Canonical `TEST_REPORT.md`:
 
-- source static + deterministic logic: **21/21 PASS**;
-- exact pinned donor path checks: **3/3 PASS**;
+- repaired source/static contract: **26/26 PASS**;
+- exact pinned actor/prop/animation/texture paths: **4/4 PASS**;
 - review-copy integrity / parity: **5/5 PASS**;
+- embedded browser self-test: **15 assertions prepared / 0 executed**;
 - automated browser runtime: **0**;
 - screenshots: **0**.
 
-The embedded `?selftest=1` browser harness is present but was not executed in this connector-only gate.
+The embedded `?selftest=1` browser harness now contains 15 assertions, including texture binding and Character Y edit/save-reload, but was not executed in this connector-only gate.
 
 No browser PASS, visual PASS, Stage PASS or Live claim is made.
 
@@ -134,7 +152,7 @@ That is a review watchpoint, not a claimed arbitrary-orientation PASS.
 
 ## One next gate
 
-**Georg human HTML review of `WB1_TERRAIN_SCENE_01_REVIEW.html`.**
+**Georg human HTML re-review of the repaired `WB1_TERRAIN_SCENE_01_REVIEW.html` — texture, Character Y, palette/FOV, then save/reload.**
 
 STOP there.
 
