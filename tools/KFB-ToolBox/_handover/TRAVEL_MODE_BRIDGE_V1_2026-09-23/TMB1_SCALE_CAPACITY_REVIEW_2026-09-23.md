@@ -1,6 +1,6 @@
 # KFB Travel Mode Bridge v1 · TMB-1E Scale / Capacity Review · 2026-09-23
 
-**Status:** IMPLEMENTED HTML REVIEW CANDIDATE · TECHNICAL / CI PASS · GEORG HUMAN REVIEW PENDING · NOT PUBLIC  
+**Status:** REPAIR PASS 1 · TECHNICAL / CI PASS · GEORG HUMAN RE-REVIEW PENDING · NOT PUBLIC  
 **Owner:** `georg-doc/KFB-Travel-Globe`  
 **Coordination / Review owner:** `georg-doc/kayfabizarro`  
 **Base Travel candidate:** Draft PR #36 · `chatgpt-web/travel-mode-bridge-tmb1-surf-2026-09-23@88382c111acf32f6b934c15ce7b6b1f6d4d15283`  
@@ -18,11 +18,12 @@ Current human feedback:
 - test the rider at roughly `1.8×–2.0×` the current rider size;
 - keep / refine a clear Surf / Ride pose rather than returning to a neutral standing pose;
 - a later Studio v17 Surf pose may be a stronger pose donor, but Studio v17 is **reference only here** unless an exact source is verified;
-- compare flight-mobile capacity with the three already source-backed Orc figures on one card:
-  - Legacy Warband Orc A on one side;
+- corrected human intent for the capacity comparison is three **different rig classes**:
+  - the existing ActionFigure / Rig_Medium on one side;
   - Orc Brute / Rig_Large in the center;
-  - Legacy Warband Orc B on the other side;
-- the earlier “Large Rick” wording is resolved as **Large Rig**, not as a separate fourth/XL character source;
+  - Legacy Warband Orc B / Rig_Legacy on the other side;
+- the earlier first implementation using Legacy Orc A + Brute + Legacy Orc B was a misread and is HUMAN_REJECTED;
+- “Large Rick” is resolved as **Large Rig**, not as a separate fourth character source;
 - the goal is to judge **character ↔ card proportion and plausible passenger capacity**, not to build party-flight gameplay.
 
 This is still TMB-1 visual/product calibration. It does not authorize TMB-2 Ground↔Flight transition work.
@@ -77,7 +78,7 @@ Use one exact animated CardCarrier and the three already verified Orc-family sou
 
 Target arrangement:
 
-`Legacy Orc A · Orc Brute / Rig_Large · Legacy Orc B`
+`ActionFigure / Rig_Medium · Orc Brute / Rig_Large · Warband Orc B / Rig_Legacy`
 
 Placement:
 
@@ -101,7 +102,7 @@ Before integrating the three together, each source used in this comparison must 
 
 A loaded URL alone is not donor proof.
 
-“Large Rick” is treated as the speech-to-text form of **Large Rig** here. The center actor is therefore the already measured Orc Brute / `Rig_Large`; no substitute XL actor is introduced.
+“Large Rick” is treated as the speech-to-text form of **Large Rig** here. The center actor is the already measured Orc Brute / `Rig_Large`; the other two are the existing Medium ActionFigure and one Legacy Warband Orc B. No substitute fourth actor is introduced.
 
 ## Acceptance question
 
@@ -235,3 +236,52 @@ Decide only:
 - whether the unchanged card reads large enough for Legacy Orc A + Rig_Large Brute + Legacy Orc B.
 
 Do not start TMB-2 from this slice.
+
+
+## Repair Pass 1 · human rejection / corrected capacity trio
+
+Georg's first direct HTML review rejected the initial capacity artifact.
+
+Findings:
+- the intended comparison was **not three Orc-family actors**;
+- the required trio is **Medium + Large + Legacy**;
+- the downloaded capacity HTML also hit a real `THREE.GLTFLoader: Failed to load buffer "data:application/octet-stream;base64,..."` error;
+- visible material/texture presentation was not acceptable.
+
+Corrected Travel implementation is Draft PR #37:
+- repair implementation: `360836ce494f76ea4c1b3133d566bd3b39e14970`;
+- hardened tests: `fd3b665174184d6ee4f6e0db23a2568f4cd9c366`;
+- corrected source/evidence head: `bb8541267723ba9d980650735c5dcc437e36736d`;
+- Return handoff head: `658e95af4963b25c7d3224d4b1d7fb2e43880896`.
+
+Corrected exact trio:
+1. ActionFigure / `Rig_Medium` · blob `4785276defdb929cb397954eb74b76aecb84486b`;
+2. Orc Brute / `Rig_Large` · blob `1b56aac3d98cc978bd1311ddc61f1260a870494d`;
+3. Warband Orc B / `Rig_Legacy` · parts blob `2dfd0bf6661bb207516053758a26baf5cb6407f1`, Legacy rig blob `7ea2893af394b00dd1b33de296c5d5104819d9c7`.
+
+Material truth:
+- ActionFigure: embedded `actionfigure_texture.png` + `actionfigure_faces.png`;
+- Orc Brute: embedded `orcbrute_texture_A.png`;
+- Legacy Orc B: source-authored named materials, not a texture-sheet map.
+
+Legacy repair:
+- reuse Resident Atlas assembly rule (four rigid source groups → six-bone Legacy rig via `skeleton.boneInverses`);
+- convert the exact embedded Orc-B JSON+BIN to an in-memory GLB before `GLTFLoader.parseAsync()`, bypassing the failed nested data-URI FileLoader path;
+- no geometry or material value is rewritten.
+
+Repair CI:
+- run `35860054421`;
+- job `107177777296`;
+- **102 PASS · 0 FAIL · 0 skipped**;
+- build PASS;
+- verify PASS;
+- artifact `10750096111`;
+- digest `sha256:0065f59d330a31d11c15d4a66019d6ad6200744e4c653f0f48e099d28dff273f`.
+
+The repaired capacity review uses the **2.0× rider-size candidate** while preserving native Medium/Large/Legacy proportions.
+
+Exactly one next gate remains:
+
+**GEORG HUMAN RE-REVIEW · repaired three-rig Capacity HTML.**
+
+TMB-2 remains HOLD.
