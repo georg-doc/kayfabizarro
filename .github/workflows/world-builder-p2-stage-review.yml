@@ -1,0 +1,128 @@
+name: WorldBuilder WB1-P2 public Stage browser proof
+on:
+  push:
+    branches:
+      - 'chatgpt-web/world-builder-p2-surface-adapter-2026-09-23'
+    paths:
+      - 'kfb-hub/stage/toolbox/world-building-preflight/**'
+      - '.github/workflows/world-builder-p2-stage-review.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  public-proof:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Wait for exact Cloudflare Stage marker
+        env:
+          URL: https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/world-building-preflight/
+        run: |
+          for i in $(seq 1 180); do
+            BODY="$(curl -fsS "$URL" || true)"
+            if printf '%s' "$BODY" | grep -q 'WB1-P2 · STAGE 49CC790'; then
+              echo "DEPLOYED_MARKER_OK attempt=$i"
+              exit 0
+            fi
+            sleep 2
+          done
+          echo "Cloudflare marker not observed"
+          exit 1
+      - name: Install Playwright Chromium
+        run: |
+          npm install --no-save playwright@1.55.0
+          npx playwright install --with-deps chromium
+      - name: Browser proof
+        env:
+          URL: https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/world-building-preflight/
+        run: |
+          mkdir -p wb1-p2-stage-evidence
+          node --input-type=module <<'NODE'
+          import { chromium } from 'playwright';
+          import assert from 'node:assert/strict';
+
+          const browser = await chromium.launch({headless:true});
+          const page = await browser.newPage({viewport:{width:1440,height:900}});
+          const pageErrors = [];
+          const requestFailures = [];
+          page.on('pageerror', e => pageErrors.push(String(e)));
+          page.on('requestfailed', r => requestFailures.push(r.url()+' :: '+(r.failure()?.errorText||'failed')));
+
+          await page.goto(process.env.URL,{waitUntil:'domcontentloaded',timeout:120000});
+          await page.waitForFunction(() => window.__WB1_P2?.snapshot?.().sourceIsolationRendered === true,{timeout:120000});
+
+          const source = await page.evaluate(() => window.__WB1_P2.snapshot());
+          assert.equal(source.proof,'SOURCE');
+          assert.equal(source.sourceIsolationRendered,true);
+          assert.equal(source.consoleErrors,0);
+          assert.equal(source.cellCount,7);
+          assert.equal(source.propIdentity,'kaykit-medieval-hexagon-pack-1-0-free|target');
+          assert.equal(source.surfaceFxType,'KFB_RADIAL_RIPPLE');
+          const sourceStatus = await page.locator('#status').textContent();
+          assert.ok(sourceStatus?.includes('SOURCE OBJECT RENDERED · SURFACE PROOF UNLOCKED'),sourceStatus);
+          await page.screenshot({path:'wb1-p2-stage-evidence/00-source-prop.png',fullPage:true});
+
+          const expectedFingerprint = source.recipeFingerprint;
+          const expectedCells = JSON.stringify(source.cellIdentities);
+          const expectedRoute = source.routeData;
+          const expectedProp = source.propIdentity;
+          const expectedEnv = source.environmentProfileRef;
+          const expectedFx = source.surfaceFxType;
+          const results = {};
+
+          for (const id of ['FLAT','SPHERE','TORUS']) {
+            await page.evaluate((surface) => window.__WB1_P2.setSurface(surface),id);
+            await page.waitForFunction((surface) => window.__WB1_P2.snapshot().activeSurface === surface,id,{timeout:30000});
+            await page.waitForTimeout(400);
+
+            let snap = await page.evaluate(() => window.__WB1_P2.snapshot());
+            assert.equal(snap.proof,'SURFACE');
+            assert.equal(snap.activeSurface,id);
+            assert.equal(snap.consoleErrors,0);
+            assert.equal(snap.recipeFingerprint,expectedFingerprint);
+            assert.equal(JSON.stringify(snap.cellIdentities),expectedCells);
+            assert.equal(snap.routeData,expectedRoute);
+            assert.equal(snap.propIdentity,expectedProp);
+            assert.equal(snap.environmentProfileRef,expectedEnv);
+            assert.equal(snap.surfaceFxType,expectedFx);
+            assert.equal(snap.cellCount,7);
+            assert.equal(snap.centerFrame.finite,true);
+            assert.equal(snap.centerFrame.handedness,1);
+            assert.ok(Math.abs(snap.centerFrame.normalLength-1)<1e-6);
+            assert.ok(Math.abs(snap.centerFrame.uLength-1)<1e-6);
+            assert.ok(Math.abs(snap.centerFrame.vLength-1)<1e-6);
+            assert.ok(Math.abs(snap.centerFrame.nu)<1e-6);
+            assert.ok(Math.abs(snap.centerFrame.nv)<1e-6);
+            assert.ok(Math.abs(snap.centerFrame.uv)<1e-6);
+
+            await page.evaluate(() => window.__WB1_P2.triggerFx());
+            await page.waitForTimeout(350);
+            snap = await page.evaluate(() => window.__WB1_P2.snapshot());
+            assert.equal(snap.consoleErrors,0);
+            const status = await page.locator('#status').textContent();
+            assert.ok(status?.includes('SAME RECIPE'),status);
+            await page.screenshot({path:`wb1-p2-stage-evidence/${id.toLowerCase()}.png`,fullPage:true});
+            results[id] = snap;
+          }
+
+          assert.deepEqual(pageErrors,[]);
+          assert.deepEqual(requestFailures,[]);
+          console.log('SOURCE',JSON.stringify(source));
+          console.log('SURFACES',JSON.stringify(results));
+          console.log('PAGE_ERRORS',JSON.stringify(pageErrors));
+          console.log('REQUEST_FAILURES',JSON.stringify(requestFailures));
+          await browser.close();
+          NODE
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: wb1-p2-stage-evidence
+          path: wb1-p2-stage-evidence
+          if-no-files-found: ignore
+          retention-days: 14
