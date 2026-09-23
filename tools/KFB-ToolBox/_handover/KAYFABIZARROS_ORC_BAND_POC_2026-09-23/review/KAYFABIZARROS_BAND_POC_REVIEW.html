@@ -1,0 +1,286 @@
+<meta charset="utf-8">
+<title>KayfaBizarros Bandstand</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bungee&family=Barlow+Condensed:wght@500;600;700&family=JetBrains+Mono:wght@500&display=swap">
+<style>
+  :root{
+    color-scheme: dark;
+    --night:#16120e;      /* camp at night */
+    --dirt:#2a2017;       /* trampled ground, panel ground */
+    --dirt-2:#3a2c1f;
+    --bone:#efe4cc;       /* text */
+    --bone-dim:#b8aa8e;
+    --banner:#e0452f;     /* Warband red, the one accent */
+    --orc:#8cc152;        /* beat lamp "on" */
+    --line:rgba(239,228,204,.14);
+    --display:"Bungee", "Arial Black", Impact, sans-serif;
+    --ui:"Barlow Condensed", "Arial Narrow", "Helvetica Neue", sans-serif;
+    --mono:"JetBrains Mono", ui-monospace, Menlo, Consolas, monospace;
+  }
+  html,body{height:100%}
+  body{background:var(--night);color:var(--bone);font-family:var(--ui);font-size:16px;overflow:hidden}
+  #app{position:relative;height:100%;display:flex;flex-direction:column}
+  #stage{position:relative;flex:1;min-height:0}
+  #c{position:absolute;inset:0;width:100%;height:100%;display:block;touch-action:none}
+  .marquee{position:absolute;left:16px;top:12px;pointer-events:none;display:flex;flex-direction:column;gap:2px}
+  .marquee h1{margin:0;font-family:var(--display);font-weight:400;font-size:clamp(20px,3.4vw,34px);letter-spacing:.02em;line-height:1;color:var(--bone);text-shadow:0 2px 0 #000,0 0 18px rgba(224,69,47,.35);text-wrap:balance}
+  .marquee h1 span{color:var(--banner)}
+  .marquee p{margin:0;font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--bone-dim)}
+  .lamps{position:absolute;right:16px;top:14px;display:flex;gap:8px;align-items:center}
+  .lamp{width:16px;height:16px;border-radius:50%;background:var(--dirt-2);border:2px solid #0008;transition:background .06s, box-shadow .06s}
+  .lamp.on{background:var(--orc);box-shadow:0 0 14px var(--orc)}
+  .lamp.one.on{background:var(--banner);box-shadow:0 0 16px var(--banner)}
+  .count{font-family:var(--mono);font-size:13px;color:var(--bone-dim);min-width:64px;text-align:right;font-variant-numeric:tabular-nums}
+  #status{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);font-family:var(--mono);font-size:13px;color:var(--bone-dim);background:#000a;padding:8px 12px;border-radius:6px}
+  .deck{background:var(--dirt);border-top:3px solid var(--banner);padding:10px 16px calc(10px + env(safe-area-inset-bottom,0px));display:flex;flex-wrap:wrap;gap:10px 18px;align-items:center}
+  .grp{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+  .lbl{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--bone-dim)}
+  button,.file{font-family:var(--ui);font-weight:600;font-size:15px;letter-spacing:.04em;color:var(--bone);background:var(--dirt-2);border:1px solid var(--line);border-radius:4px;padding:7px 12px;cursor:pointer}
+  button:hover,.file:hover{border-color:var(--bone-dim)}
+  button:focus-visible,input:focus-visible,.file:focus-within{outline:2px solid var(--orc);outline-offset:2px}
+  #play{background:var(--banner);border-color:var(--banner);color:#fff;min-width:96px;font-family:var(--display);font-weight:400;font-size:15px;letter-spacing:.06em}
+  input[type=number]{width:74px;font-family:var(--mono);font-size:14px;background:var(--night);color:var(--bone);border:1px solid var(--line);border-radius:4px;padding:6px 6px;font-variant-numeric:tabular-nums}
+  .file input{position:absolute;width:1px;height:1px;opacity:0;pointer-events:none}
+  .file{position:relative;display:inline-block}
+  .tog{display:flex;align-items:center;gap:5px;font-size:15px;cursor:pointer}
+  .tog input{accent-color:var(--orc);width:16px;height:16px}
+  .src{flex-basis:100%;font-family:var(--mono);font-size:11px;color:var(--bone-dim);line-height:1.5;border-top:1px solid var(--line);padding-top:8px;display:flex;flex-wrap:wrap;gap:4px 16px}
+  .src b{color:var(--bone);font-weight:500}
+  #track{font-family:var(--mono);font-size:12px;color:var(--bone);max-width:28ch;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+  @media (max-width:640px){ .deck{gap:8px 12px} .src{display:none} #track{max-width:18ch} .lamps{top:auto;bottom:10px} }
+  @media (prefers-reduced-motion: reduce){ .lamp{transition:none} }
+</style>
+
+<div id="app">
+  <div id="stage">
+    <canvas id="c" aria-label="3D band stage"></canvas>
+    <div class="marquee">
+      <h1>The Kayfa<span>Bizarros</span></h1>
+      <p>ORB-P1 · beat module v5 · drummer restored to v0</p>
+    </div>
+    <div class="lamps" aria-label="Beat counter">
+      <span class="lamp one" id="l0"></span><span class="lamp" id="l1"></span><span class="lamp" id="l2"></span><span class="lamp" id="l3"></span>
+      <span class="count" id="count">1 · 1</span>
+    </div>
+    <div id="status">Loading band…</div>
+  </div>
+
+  <div class="deck">
+    <div class="grp">
+      <button id="play" type="button">Play</button>
+      <button id="restart" type="button" title="Jump to bar 1, beat 1">Bar 1</button>
+    </div>
+    <div class="grp">
+      <span class="lbl">Track</span><span id="track">Rubbish Groove 2min A extend 01</span>
+      <label class="file">Own track…<input id="file" type="file" accept="audio/*"></label>
+    </div>
+    <div class="grp">
+      <label class="lbl" for="bpm">BPM</label><input id="bpm" type="number" step="0.1" min="40" max="220" value="100">
+      <label class="lbl" for="phase">Beat 1 at (s)</label><input id="phase" type="number" step="0.005" value="0.465">
+      <button id="tap" type="button" title="Tap along on the beat">Tap</button>
+      <button id="detect" type="button" title="Estimate BPM and beat phase from the loaded track">Detect</button>
+    </div>
+    <div class="grp">
+      <label class="tog"><input id="t-leader" type="checkbox" checked>Leader</label>
+      <label class="tog"><input id="t-guitar" type="checkbox" checked>Guitar</label>
+      <label class="tog"><input id="t-drum" type="checkbox" checked>Drums</label>
+      <label class="tog"><input id="t-scene" type="checkbox" checked>Camp</label>
+      <label class="tog"><input id="t-loud" type="checkbox" checked>Jump follows loudness</label>
+    </div>
+    <div class="src">
+      <span>module <b>orb-kayfabizarros-band v5</b></span>
+      <span>clips <b>leader dance 8 beats · strum 1 beat · drum 2 beats</b></span>
+      <span>track blob <b>368eb5ae</b> · measured <b>100.0 BPM · beat 1 at 0.465 s</b></span>
+      <span>authored <b>Blender 5.2.2 via MCP</b> · status <b>candidate-only</b></span>
+    </div>
+  </div>
+</div>
+
+<script type="importmap">
+{ "imports": {
+  "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+  "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
+} }
+</script>
+<script type="module">
+import * as THREE from 'three';
+import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
+import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+
+// The artifact sandbox blocks fetch() of blob: URLs, which three.js' ImageBitmapLoader uses for textures
+// embedded in a GLB. Without createImageBitmap, GLTFLoader falls back to <img>-based TextureLoader (allowed).
+try { window.createImageBitmap = undefined; } catch (e) {}
+const $ = id => document.getElementById(id);
+const canvas = $('c'), stage = $('stage'), status = $('status');
+
+// ---------- renderer / scene
+const renderer = new THREE.WebGLRenderer({ canvas, antialias: true });
+renderer.setPixelRatio(Math.min(devicePixelRatio, 2));
+renderer.outputColorSpace = THREE.SRGBColorSpace;
+renderer.shadowMap.enabled = true; renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+const scene = new THREE.Scene();
+scene.background = new THREE.Color('#16120e');
+scene.fog = new THREE.Fog('#16120e', 18, 34);
+const camera = new THREE.PerspectiveCamera(34, 1, 0.1, 100);
+camera.position.set(0.3, 6.2, 13.8);
+const controls = new OrbitControls(camera, canvas);
+controls.target.set(0, 1.9, -0.3); controls.enableDamping = true;
+controls.minDistance = 5; controls.maxDistance = 24; controls.maxPolarAngle = Math.PI * 0.49;
+scene.add(new THREE.HemisphereLight('#fff1dc', '#3a2c1f', 1.6));
+const key = new THREE.DirectionalLight('#ffd9a8', 2.4); key.position.set(5, 9, 7); key.castShadow = true;
+key.shadow.mapSize.set(2048, 2048); Object.assign(key.shadow.camera, { left: -7, right: 7, top: 7, bottom: -7 }); key.shadow.bias = -0.0005;
+scene.add(key);
+const rim = new THREE.DirectionalLight('#9fb8ff', 0.9); rim.position.set(-6, 5, -8); scene.add(rim);
+const fire = new THREE.PointLight('#ff7a3a', 6, 9, 1.6); fire.position.set(-1.6, 1.2, -3.4); scene.add(fire);
+
+const home = new THREE.Vector3(0.3, 6.2, 13.8);
+let userMoved = false; controls.addEventListener('start', () => userMoved = true);
+function resize() {
+  const w = stage.clientWidth, h = stage.clientHeight;
+  renderer.setSize(w, h, false); camera.aspect = w / h; camera.updateProjectionMatrix();
+  if (!userMoved) {   // keep the whole band in frame on tall/narrow screens
+    const k = Math.max(1, 1.45 / camera.aspect);
+    camera.position.copy(controls.target).add(home.clone().sub(controls.target).multiplyScalar(k));
+  }
+}
+new ResizeObserver(resize).observe(stage); resize();
+
+// ---------- beat clock (one owner: this state; performers only read beatPos)
+const S = { bpm: 100, phase: 0.465, playing: false, silentT0: performance.now(), taps: [] };
+const audio = new Audio('rubbish_groove.mp3'); audio.loop = true; audio.preload = 'auto';
+let actx = null, analyser = null, buf = null, loud = 0, decoded = null;
+function ensureAudioGraph() {
+  if (actx) return;
+  actx = new (window.AudioContext || window.webkitAudioContext)();
+  const srcNode = actx.createMediaElementSource(audio);
+  analyser = actx.createAnalyser(); analyser.fftSize = 1024; buf = new Float32Array(analyser.fftSize);
+  srcNode.connect(analyser); analyser.connect(actx.destination);
+}
+function songTime() {
+  // Silent preview runs its own clock so the band is already playing at rest; Play hands over to the audio clock.
+  return S.playing ? audio.currentTime : (performance.now() - S.silentT0) / 1000 + S.phase;
+}
+const beatPos = () => (songTime() - S.phase) * S.bpm / 60;
+
+$('play').onclick = async () => {
+  ensureAudioGraph();
+  if (actx.state === 'suspended') await actx.resume();
+  if (S.playing) { audio.pause(); S.playing = false; S.silentT0 = performance.now() - (audio.currentTime - S.phase) * 1000; $('play').textContent = 'Play'; }
+  else { try { await audio.play(); S.playing = true; $('play').textContent = 'Pause'; } catch (e) { status.hidden = false; status.textContent = 'Audio could not start: ' + e.message; } }
+};
+$('restart').onclick = () => { audio.currentTime = Math.max(0, S.phase); S.silentT0 = performance.now(); };
+$('bpm').oninput = e => { const v = parseFloat(e.target.value); if (v > 30 && v < 260) S.bpm = v; };
+$('phase').oninput = e => { const v = parseFloat(e.target.value); if (!isNaN(v)) S.phase = v; };
+$('tap').onclick = () => {
+  const t = performance.now(); S.taps = S.taps.filter(x => t - x < 3000); S.taps.push(t);
+  if (S.taps.length >= 4) {
+    const d = S.taps.slice(1).map((x, i) => x - S.taps[i]); const avg = d.reduce((a, b) => a + b) / d.length;
+    S.bpm = +(60000 / avg).toFixed(1); $('bpm').value = S.bpm;
+    if (S.playing) { S.phase = +(audio.currentTime % (60 / S.bpm)).toFixed(3); $('phase').value = S.phase; }
+  }
+};
+$('file').onchange = async e => {
+  const f = e.target.files[0]; if (!f) return;
+  audio.pause(); S.playing = false; $('play').textContent = 'Play';
+  audio.src = URL.createObjectURL(f); $('track').textContent = f.name; decoded = await f.arrayBuffer();
+  status.hidden = false; status.textContent = 'Track loaded · press Detect or tap the tempo';
+  setTimeout(() => status.hidden = true, 2600);
+};
+$('detect').onclick = async () => {
+  ensureAudioGraph();
+  status.hidden = false; status.textContent = 'Listening for the beat…';
+  try {
+    const bytes = decoded ? decoded.slice(0) : await (await fetch('rubbish_groove.mp3')).arrayBuffer();
+    const ab = await actx.decodeAudioData(bytes);
+    const r = detectBeat(ab); S.bpm = r.bpm; S.phase = r.phase; $('bpm').value = r.bpm; $('phase').value = r.phase;
+    status.textContent = `Estimate: ${r.bpm} BPM · beat 1 at ${r.phase} s`;
+  } catch (e) { status.textContent = 'Detect failed: ' + e.message; }
+  setTimeout(() => status.hidden = true, 2600);
+};
+// energy-flux onsets → coarse autocorrelation → fine search on fold sharpness (phase = fold peak)
+function detectBeat(ab) {
+  const sr = ab.sampleRate, ch = ab.getChannelData(0), hop = 512, n = Math.floor(ch.length / hop);
+  const env = new Float32Array(n); let prev = 0;
+  for (let i = 0; i < n; i++) { let e = 0; for (let j = 0; j < hop; j++) { const s = ch[i * hop + j]; e += s * s; } e = Math.sqrt(e / hop); env[i] = Math.max(0, e - prev); prev = e; }
+  const fps = sr / hop; let best = -1, bpm = 100;
+  for (let b = 70; b <= 180; b += 0.5) {
+    const lag = fps * 60 / b, L = Math.floor(lag), fr = lag - L, m = n - L - 1; let s = 0;
+    for (let i = 0; i < m; i++) s += env[i] * (env[i + L] * (1 - fr) + env[i + L + 1] * fr);
+    s /= m; if (s > best) { best = s; bpm = b; }
+  }
+  const bins = 48; let top = null;
+  for (let b = bpm - 1.5; b <= bpm + 1.5; b += 0.02) {
+    const per = 60 / b, acc = new Float32Array(bins); let sum = 0;
+    for (let i = 0; i < n; i++) { const t = i / fps; acc[Math.floor((t % per) / per * bins) % bins] += env[i]; sum += env[i]; }
+    let k = 0; for (let j = 1; j < bins; j++) if (acc[j] > acc[k]) k = j;
+    const sharp = acc[k] / (sum / bins); if (!top || sharp > top.sharp) top = { sharp, b, k };
+  }
+  return { bpm: +top.b.toFixed(2), phase: +((top.k + 0.5) / bins * 60 / top.b).toFixed(3) };
+}
+
+// ---------- band module
+const perf = {};
+let mixer, clips = {}, leaderBody = null, leaderBaseY = 0;
+// The module ships as glTF-JSON with an embedded buffer; rebuild a GLB in memory so nothing fetches a data: URI.
+async function loadModule(url) {
+  const j = await (await fetch(url)).json();
+  const uri = j.buffers[0].uri; delete j.buffers[0].uri;
+  const bin = Uint8Array.from(atob(uri.slice(uri.indexOf(',') + 1)), c => c.charCodeAt(0));
+  const enc = new TextEncoder().encode(JSON.stringify(j));
+  const jl = Math.ceil(enc.length / 4) * 4, bl = Math.ceil(bin.length / 4) * 4;
+  const out = new Uint8Array(12 + 8 + jl + 8 + bl), dv = new DataView(out.buffer);
+  dv.setUint32(0, 0x46546C67, true); dv.setUint32(4, 2, true); dv.setUint32(8, out.length, true);
+  dv.setUint32(12, jl, true); dv.setUint32(16, 0x4E4F534A, true); out.fill(0x20, 20, 20 + jl); out.set(enc, 20);
+  dv.setUint32(20 + jl, bl, true); dv.setUint32(24 + jl, 0x004E4942, true); out.set(bin, 28 + jl);
+  return new Promise((res, rej) => new GLTFLoader().parse(out.buffer, '', res, rej));
+}
+loadModule('orb_band_module.gltf.json').then(gltf => {
+  const root = gltf.scene; scene.add(root);
+  root.traverse(o => { if (o.isMesh) { o.castShadow = true; o.receiveShadow = o.name === 'Ground'; if (o.material?.map) o.material.map.anisotropy = 4; } });
+  const N = n => root.getObjectByName(n);
+  perf.leader = [N('character_orcBBody')];
+  perf.guitar = [N('Rig_Raider')];
+  perf.drum = [N('Rig_Brute'), N('Orc_Wardrum')];
+  perf.scene = [N('Ground'), N('Orc_Banner_Large')];
+  leaderBody = N('character_orcBBody'); leaderBaseY = 0;
+  mixer = new THREE.AnimationMixer(root);
+  for (const c of gltf.animations) { const a = mixer.clipAction(c); a.play(); clips[c.name] = { action: a, dur: c.duration, beats: Math.max(1, Math.round(c.duration)) /* 24 f per beat @ 24 fps: seconds = beats */ }; }
+  status.hidden = true;
+}).catch(e => { status.textContent = 'Could not load the band module: ' + (e.message || e); });
+
+for (const k of ['leader', 'guitar', 'drum', 'scene']) $('t-' + k).onchange = e => (perf[k] || []).forEach(o => o && (o.visible = e.target.checked));
+
+// ---------- loop
+const lamps = [0, 1, 2, 3].map(i => $('l' + i));
+let lastBeat = -1;
+function frame() {
+  requestAnimationFrame(frame);
+  controls.update();
+  const bp = beatPos();
+  if (mixer) {
+    for (const k in clips) {
+      const c = clips[k]; const b = ((bp % c.beats) + c.beats) % c.beats;
+      c.action.time = b * c.dur / c.beats;
+    }
+    mixer.update(0);
+    // loudness drives jump height: additive scale on the clip's own height, never the clip timing
+    if (analyser && S.playing) {
+      analyser.getFloatTimeDomainData(buf); let s = 0; for (const v of buf) s += v * v;
+      const rms = Math.sqrt(s / buf.length); loud += (rms - loud) * 0.08;
+    } else loud += (0.12 - loud) * 0.05;
+    if (leaderBody && $('t-loud').checked) {
+      const g = Math.min(1.45, Math.max(0.55, 0.55 + loud * 4.5));
+      leaderBody.position.y = leaderBaseY + (leaderBody.position.y - leaderBaseY) * g;
+    }
+  }
+  const beat = Math.floor(bp);
+  if (beat !== lastBeat) {
+    lastBeat = beat; const i = ((beat % 4) + 4) % 4, bar = Math.floor(beat / 4) + 1;
+    lamps.forEach((l, j) => l.classList.toggle('on', j === i));
+    $('count').textContent = `${Math.max(1, bar)} · ${i + 1}`;
+  }
+  renderer.render(scene, camera);
+}
+frame();
+</script>
