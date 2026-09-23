@@ -36,7 +36,8 @@ Base:
 - Racer exact R3d HTML has been recovered and persisted to Race PR #33.
 - Racer next planning target is Anatomy Foundation.
 - Curtain and Billboard recovery prompts are ready but not auto-launched.
-- new Rocko/Wallace form-language chat has no separate verified GitHub export yet; current verified synthesis is captured locally in this handoff.
+- the form-language lane now has a source-backed current GitHub POC on Draft PR #194 (Hürth 01); human visual review pending, no public Stage.
+- read-only Dropbox recon shows an ORB-P1 Warband v4 candidate, but it is not GitHub-returned or human-accepted yet; PR #192 remains the durable Blender proof.
 
 ## Prior control-plane
 
@@ -54,6 +55,8 @@ Coworker completes Source-Safe ToolBox Integration 01 to its full coherent miles
 Then Coworker returns one current-state check-in + one next MVP proposal.
 
 No WSA before that unless an explicit capability gap appears.
+
+Optional Game Development Studio CLI check in this chat: `game-dev` unavailable; recorded once as `GAME_DEV_CLI_UNAVAILABLE · OPTIONAL FALLBACK USED`.
 
 
 ## Control-plane identity
