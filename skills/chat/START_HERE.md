@@ -459,3 +459,32 @@ Working authoring grammar:
 `EyeRig → Face → Head/Graft → Resident → Activity → Scene → Story Zone → World placement`
 
 Current first implementation fixture, only after explicit build approval: **Lore Keeper · Open-Air Study Story Zone** with staged LK-L1 study → LK-L2 Desk/Shelf → LK-L3 book/Card POI discovery. Park Bench remains a later minimal regression fixture. Social ideation now also includes Social Attention / proximity-based NPC noticing, a source-backed Gift Drive, food-gift/gag framing from real KayKit/Tiny Treats props, a semantic Reaction Library, and a Kayfabe buddy-banter → optional social-melee → explicit repair loop. Bond / temporary Heat / topic stance stay separate; gifts add shared history rather than numeric friendship. Current technical concept gate is now **Shared Social / Gift Data Contract v0** on top of Minimal Resident Decision Loop v0. Machine-readable records cover ActivityState, PerceptionCandidate, Motive, SocialPair, EncounterBit, PlayerCall, GiftInventoryItem and MemoryReceipt; deterministic fixtures cover Resident→Resident, Resident→Player and player re-gift. Static shape check is 2/2 JSON parse, 8/8 records, 3/3 fixtures, 12 invariants. Player-facing extension retains short in-world KayfaBINGO/KayfaBONGO/KayfaBOGGLE/BLÖDSINN! Bubble calls, bounded provenance-aware Backpack and re-gifting. **Persistence concept:** Gift Inventory + provenance + Lean Memory live in the existing Session/Journey/Fractal Almanac layer. **First Player Proof is now selected:** Orc → Player → Tiny Treats `donut_pink.gltf` → one Bubble Call → transfer → Backpack → Almanac provenance → resume. Access Props/Keys are a separate future lane using verified KayKit key/keyring/keyring_hanging + Quaternius keycard donors; gold/silver are desired variants with exact source proof pending. Combat/World VFX are another separate future lane and must reuse the existing `kfb-vfx.js` donor first; current candidate families include muzzle, slash/sweep, impact, electric/blitz, blood, explosion, fire/smoke and access/world cues. Historical no-blood donor evidence is preserved while Georg's current direction reopens stylized blood as a candidate. `media/3D_Assets/KFB/` is a curated future donor shortlist, not a second registry. Internal host actor IDs and ChatterBox caller names are implementation details, not Georg gates. Protagonist A/B backpack sibling meshes remain donor candidates for the Goth Girl + Elisa setting; Elisa remains receiving context, not an invented KayKit actor. A prepared **Orc Band World-Life packet** now adds Legacy Orc A + Medium Orc Raider electric guitar + Large Orc Brute war drums, spatial-audio approach cues, and Offica Doppeldenk as a Toy-Soldier/Nutcracker patrol interrupter using the existing present reveal; no guitar/drum/trumpet clip is invented. The packet is future WorldBuilder input only: current WorldBuilder SSOT still requires WB1-P0→P1→P2 before Claude input. The Orc Band is now **The KayfaBizarros**. Human-selected signature candidate remains **Permitless Funk** using `Rubbish Groove 2min A extend 01.mp3`. Exact bouncing black-ponytail bandleader is pinned to Legacy `character_orcB.gltf`; Tourbus donor is pinned to `Truck Armored by Quaternius - VvX8nmoCN5.glb`, first used only as a parked scenic landmark and later delegated to the existing Vehicle/Cartoon-Deformer owner. First visualizer remains full-mix `beat/level/pulse/bpm` driven with no stems required. Current World Building / Surface Adapter preflight remains separate and must be consumed rather than duplicated.
+
+
+## 2026-09-23 · Billboard Media Residency lane
+
+Resident Story Zones concept now also includes a source-backed **Billboard / Media Residency** family.
+
+Recovered prior KFB direction: **“Die Straße selbst sendet.”**
+
+Reuse, do not rebuild:
+- real Kenney/KFB billboard donors;
+- Racer `buildBillboard()`;
+- Racer `renderCardQuarter()` / PDF.js / Card CanvasTexture;
+- ChatterBox/Triplet content owner;
+- Almanac memory owner.
+
+Proposed billboard content modes:
+`CARD_PDF · TRIPLET · COLLAGE_LOOP · HERO_INTERACTIVE`.
+
+Signature Billboard Triplets may use a media/sponsor persona with stable seeded SHOW IT → SPIN IT → SELL IT messages. Avoid random slogan spam.
+
+First proof `BBS-01` is deliberately small:
+one real billboard + clean mini terrain + 2–3 scenic props + measured CanvasTexture plane + switchable Card/Triplet/Collage content.
+
+No video or async LLM required for BBS-01.
+
+Scene Lab template correction: remove the visible black terrain/debug base; future review dioramas use no visible underside or a thin terrain-coloured skirt.
+
+Machine-readable:
+`tools/KFB-ToolBox/_handover/RESIDENT_STORY_ZONE_IDEATION_2026-09-22/BILLBOARD_MEDIA_SCENE_v0.json`
