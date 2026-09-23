@@ -562,35 +562,41 @@ After WEDGE ACCEPT, sequence is locked:
 
 Do not start curve/trail tuning before the WEDGE human recheck.
 
-## 2026-09-23 · Travel Mode Bridge v1 · TMB-1E accepted · TMB-2 active
+## 2026-09-23 · Travel Mode Bridge v1 · TMB-2 human timing review
 
 Coordination:
 `tools/KFB-ToolBox/_handover/TRAVEL_MODE_BRIDGE_V1_2026-09-23/START_HERE.md`
 
 Travel owner remains private `georg-doc/KFB-Travel-Globe`.
 
-TMB-1E is **HUMAN_ACCEPTED**:
+TMB-1E remains **HUMAN_ACCEPTED**:
 - accepted Travel commit `603f2a9e8fb2c8efd1008ed67607cf7a712de0bd`;
-- accepted visible trio: `ActionFigure / Rig_Medium · Orc Brute / Rig_Large · Warband Orc B / Rig_Legacy`;
-- accepted capacity/rider relation: **2.0× candidate**;
-- CardCarrier geometry/thickness unchanged;
-- native rig-class proportions preserved;
-- Chat attachment texture adapter human-passed;
-- PR #37 remains Draft / not merged / not public.
+- accepted rider/capacity relation: **2.0× candidate**;
+- CardCarrier geometry/thickness unchanged.
 
-Current gate:
-**TMB-2 · Ground → Flight Double-Space intent / ownership handoff proof.**
+TMB-2 is technically green on Draft PR #38:
+- branch `chatgpt-web/travel-mode-bridge-tmb2-double-space-2026-09-23`;
+- Return head `f7d65faff02cfe21bf82ee06150efc94068d150a`;
+- final review head `ff148d317d1b2a1cbc4f16fb1841d948ac9187c7`;
+- pure mode-intent adapter `site/world-builder/mode-intent.js`;
+- Ground event order: existing jump queue → fresh-tap observer → capture-phase event claim;
+- second fresh Space inside the active window emits `REQUEST_FLIGHT`;
+- request routes only through existing `setLocomotion('FLIGHT') → runtime-mode.js`;
+- no new keyboard, movement or camera owner;
+- CI `35873967992 / 107224966389`: **119/119 PASS · build PASS · verify PASS**;
+- artifact `10756465783`, digest `sha256:083b53e95488ddedd4daea2fa4b2ec15749973d14db6d2c32ed318dd40f953bd`.
 
-Locked:
-- first fresh Space = immediate Ground jump;
-- second fresh Space inside a bounded review window = `REQUEST_FLIGHT`;
-- first jump is never delayed;
-- existing `site/world-builder/runtime-mode.js` remains the Ground↔Flight seam;
-- exactly one movement writer and one active camera writer;
-- double-tap timing is human-reviewed in TMB-2;
-- TMB-3 landing remains HOLD.
+Current human gate:
+**TMB-2 DOUBLE-SPACE TIMING REVIEW**
 
-No merge or Live promotion is authorized.
+Review candidates:
+- 240 ms;
+- 320 ms;
+- 400 ms.
+
+Single Space must remain immediate Ground jump. The same second Ground Space must not also fire the Flight Space action.
+
+TMB-3 landing remains HOLD. No merge or Live promotion is authorized.
 
 ## 2026-09-23 · ToolBox / WorldBuilder / Orc Band current routing
 
